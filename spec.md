@@ -9,38 +9,57 @@
 
 ## 1. 제품 정의
 
-단어에 AI 생성 이미지를 1:1로 매칭하고, 이미지를 통해 의미를 기억시키는 학습 서비스.
+단어에 AI 생성 이미지를 매칭하고, 이미지를 통해 의미를 기억시키는 학습 서비스.
 이미지는 장식이 아니라 학습 요소이며, 이미지 스타일 자체를 디자인 시스템의 일부로 관리한다.
 
 최종 지향은 단어장이 아니라 **단어를 허브로 문법·회화·예문이 연결되는 학습 시스템**이다.
 다만 v1은 단어 학습 경험의 완성도만 다룬다.
 
+### 핵심 구조: 개념(concept)이 중심이다
+
+이 서비스의 축은 단어가 아니라 **개념**이다.
+
+> 바나나 그림은 하나면 된다. 일본어로 배우든 독일어로 배우든 같은 그림이다.
+> 언어마다 달라지는 것은 표기·읽기·발음뿐이다.
+
+따라서:
+
+| 개념에 속하는 것 | 단어에 속하는 것 |
+|---|---|
+| 이미지 | 표기 (`バナナ`, `Banane`) |
+| 한국어 뜻 | 읽기 |
+| 이미지 프롬프트 | 로마자 |
+| 덱 소속 | 발음 오디오 |
+| 카테고리 | 품사 · 언어별 문법 속성 |
+
+수동 이미지 파이프라인이 이 서비스의 유일한 병목이다. 개념을 분리하면
+8개 언어 × 60단어를 이미지 60장으로 감당한다. 언어 추가는 **표기 몇 줄을 더 쓰는 일**이 된다.
+
 ### 대상 언어
 
 - **v1 콘텐츠**: 일본어만
 - **최종 목표**: 영어, 일본어, 중국어, 독일어, 러시아어, 프랑스어, 스페인어, 아랍어
-- 따라서 **스키마와 라우팅은 처음부터 언어 중립**으로 설계한다. 콘텐츠만 일본어다.
+- 스키마와 라우팅은 처음부터 언어 중립. 콘텐츠만 일본어다.
 
 ### 사용자
 
 - v1은 **로그인 없음**. 익명 사용.
-- 학습 진도는 브라우저 `localStorage`에만 저장한다.
+- 학습 진도와 학습 언어 설정은 브라우저 `localStorage`에만 저장한다.
 - 서버 쪽 쓰기 경로가 v1에는 존재하지 않는다. Supabase는 읽기 전용으로 쓴다.
 
 ---
 
 ## 2. 비범위 (v1에서 만들지 않는 것)
 
-명시적으로 제외한다. 나중에 필요해지면 그때 추가한다.
-
 | 항목 | 이유 |
 |---|---|
 | 인증 / 계정 / 서버 진도 동기화 | 익명 + localStorage로 시작 |
 | `learning_records` 테이블 | 진도가 클라이언트에만 있으므로 v1에 불필요 |
 | 관리자 웹 UI | 데이터 저작은 레포 내 seed 파일 + 스크립트로 한다 |
+| 언어 전환 UI | v1은 일본어 하나뿐이라 고를 게 없다. 설정 값과 오버라이드 파라미터만 구현한다 |
 | 예문 · 문법 · 회화 | Word Detail은 이미지·표기·읽기·뜻까지만 |
-| `word_senses` / 다의어 정규화 | `meaning_ko` 단일 텍스트로 시작 |
-| `word_images` 1:N | 단어당 이미지 1장 |
+| `word_senses` / 다의어 정규화 | 개념의 `meaning_ko` 단일 텍스트로 시작 |
+| 개념당 이미지 여러 장 | 개념당 이미지 1장 |
 | 학습 모드 4종(Word→Image, Word→Meaning, Meaning→Word, Image-only Recall) | v1은 2종만 |
 | 스트릭 · 일일 목표 · 배지 | Leitner에서 계산되는 값만 보여준다 |
 | 서비스워커 / 오프라인 학습 | PWA는 manifest + 아이콘까지만 |
@@ -55,18 +74,24 @@
 하단 탭 3개. 데스크톱에서는 좌측 사이드 내비게이션으로 전환한다.
 
 ```
-/                      → /ja 로 리다이렉트
-/ja                    Home
-/ja/words              Words (그리드 ↔ 리스트 전환, 검색)
-/ja/words/[slug]       Word Detail
-/ja/learn              자유 연습 (덱·모드 선택)
-/ja/session            학습 세션 (클라이언트)
+/                Home
+/words           Words (그리드 ↔ 리스트 전환, 검색)
+/{concept}       Concept Detail   예: /banana, /cat, /eat
+/learn           자유 연습 (덱·모드 선택)
+/session         학습 세션 (클라이언트)
 ```
 
-- 언어는 **경로 접두사**(`app/[lang]/`). 언어 추가는 데이터 추가만으로 끝나고 공유 링크가 깨지지 않는다.
-- `/ja/words`의 뷰 모드와 검색어는 URL 쿼리로 유지한다: `?view=list`, `?q=ねこ`
-- 세션은 `/ja/session?deck=animals&mode=flashcard` 형태로 파라미터를 받는다. 파라미터가 없으면 기본 혼합 세션.
-- 검색은 별도 탭이 아니라 Words 화면 내부에 둔다.
+**언어는 URL에 없다.** 학습 언어는 앱 설정(`localStorage`)이며, `?lang=ja`로 일시 오버라이드할 수 있다.
+공유 링크에 언어를 담고 싶을 때만 쓴다.
+
+개념 상세가 루트에 붙으므로 **개념 slug는 예약어를 쓸 수 없다**:
+`words` `learn` `session` `settings` `api` `icons` `_next` `favicon.ico` `manifest.webmanifest`
+seed 스크립트가 이 목록과 대조해 위반 시 실패시킨다.
+
+`/words`의 뷰 모드와 검색어는 URL 쿼리로 유지한다: `?view=list`, `?q=ねこ`
+세션은 `/session?deck=food&mode=flashcard` 형태로 파라미터를 받는다. 없으면 기본 혼합 세션.
+
+검색은 별도 탭이 아니라 Words 화면 내부에 둔다.
 
 ### 화면별 내용
 
@@ -81,9 +106,10 @@ CTA 하나가 기본 동선이다. 덱과 모드를 묻지 않는다.
 - 기본은 **Visual Words Grid**: 모바일 2열, 정사각 이미지 + 표기 한 줄. 뜻·읽기는 넣지 않는다.
 - 리스트 뷰 토글: 표기 · 읽기 · 뜻 한 줄씩, 작은 썸네일. 많은 단어를 빠르게 훑는 용도.
 - 검색: 클라이언트 필터. `term` / `reading` / `romanization` / `meaning_ko` 를 모두 매칭한다.
-- 이미지가 없는 단어는 그리드에서 placeholder 타일로 표시한다.
+- **현재 학습 언어에 단어가 존재하는 개념만** 보여준다.
+- 이미지가 없는 개념은 placeholder 타일로 표시한다.
 
-**Word Detail**
+**Concept Detail** (`/banana`)
 
 정보 계층 순서:
 ```
@@ -91,6 +117,7 @@ CTA 하나가 기본 동선이다. 덱과 모드를 묻지 않는다.
 ```
 - 발음 버튼은 항상 노출한다. `audio_path`가 있으면 재생하고, 없으면 토스트로 안내한다
   (`아직 발음이 준비되지 않았어요`).
+- 이 페이지는 모든 언어의 단어를 함께 받아 렌더한다. 표시는 현재 언어 하나뿐이다 (§8 참고).
 
 **Learn**
 - 덱 선택 → 모드 선택 → 세션. 특정 덱만 파거나 모드를 골라 연습하는 자유 연습장.
@@ -108,43 +135,65 @@ CTA 하나가 기본 동선이다. 덱과 모드를 묻지 않는다.
 Supabase PostgreSQL. RLS는 `select`만 `anon`에게 허용한다.
 
 ```sql
-create table decks (
-  id          uuid primary key default gen_random_uuid(),
-  language    text not null,
-  slug        text not null,
-  title       text not null,
-  description text,
-  sort_order  int  not null default 0,
-  created_at  timestamptz not null default now(),
-  unique (language, slug)
+create table concepts (
+  id           uuid primary key default gen_random_uuid(),
+  slug         text not null unique,     -- URL이자 파일명. 영어 소문자 + 하이픈
+  meaning_ko   text not null,            -- 학습 언어와 무관한 한국어 뜻
+  category     text,                     -- 'noun' | 'verb' | 'adjective' | 'scene' | 'abstract'
+  image_path   text,                     -- Storage 경로. null이면 이미지 없음(추상어)
+  image_prompt text,                      -- 재생성용. IMAGE_STYLE.md의 STYLE_PROMPT는 포함하지 않는다
+  created_at   timestamptz not null default now()
 );
 
 create table words (
   id             uuid primary key default gen_random_uuid(),
+  concept_id     uuid not null references concepts(id) on delete cascade,
   language       text not null,
-  slug           text not null,
-  term           text not null,          -- 표기.        ja: 食べる / de: Hund / ar: كتاب
+  term           text not null,          -- 표기.  ja: 食べる / de: essen / ar: أكل
   reading        text,                   -- 해당 언어 독자용 읽기. ja: たべる / zh: chī
-  romanization   text,                   -- 로마자.      ja: taberu / ru: kniga
-  meaning_ko     text not null,          -- 한국어 뜻. 다의어는 쉼표로 나열
+  romanization   text,                   -- 로마자. ja: taberu / ru: kniga
   part_of_speech text,
   attributes     jsonb not null default '{}'::jsonb,
-  image_path     text,                   -- Storage 경로. null이면 이미지 없음
   audio_path     text,                   -- Storage 경로. null이면 발음 없음
   created_at     timestamptz not null default now(),
-  unique (language, slug)
+  unique (concept_id, language)
 );
 
-create table deck_words (
+create table decks (
+  id          uuid primary key default gen_random_uuid(),
+  slug        text not null unique,
+  title       text not null,
+  description text,
+  sort_order  int  not null default 0,
+  created_at  timestamptz not null default now()
+);
+
+create table deck_concepts (
   deck_id    uuid not null references decks(id) on delete cascade,
-  word_id    uuid not null references words(id) on delete cascade,
+  concept_id uuid not null references concepts(id) on delete cascade,
   sort_order int  not null default 0,
-  primary key (deck_id, word_id)
+  primary key (deck_id, concept_id)
 );
 
 create index on words (language);
-create index on deck_words (word_id);
+create index on words (concept_id);
+create index on deck_concepts (concept_id);
 ```
+
+### `(concept_id, language)` 유니크 — 의도된 제약이다
+
+한 개념에 한 언어의 단어는 최대 하나다. 이 제약이 개념 정의를 강제한다.
+
+일본어 `水`(찬물)와 `お湯`(더운물)은 영어로는 둘 다 water지만, **개념을 쪼갠다**:
+`cold-water`, `hot-water`. 개념은 사전 표제어가 아니라 **시각화 가능한 지시체** 단위다.
+이미지가 하나로 그려지지 않으면 개념이 둘이라는 뜻이다.
+
+### 언어에 따라 단어가 없는 개념은 정상이다
+
+모든 개념이 모든 언어에 대응하지 않는다. `words` 행이 없으면 그 언어 학습자에게
+그 개념이 보이지 않을 뿐이다. 반대로 `いただきます`처럼 특정 언어에만 있는 개념도
+개념으로 만들고 일본어 `words` 행만 둔다. 개념 집합이 완전한 언어 중립이라는 전제는
+참이 아니고, 참일 필요도 없다.
 
 ### 언어별 속성은 `attributes` JSONB로
 
@@ -157,23 +206,19 @@ type Attributes =
   | { tones?: number[] }                                                                                   // zh
 ```
 
-### 왜 `deck_words` M:N인가
+### 덱은 개념 묶음이다
 
-덱 축이 둘이기 때문이다 — v1은 주제별(음식/동물/동작)이지만, JLPT 레벨별 덱을 나중에 붙이면
-한 단어가 `동물`과 `N5`에 동시에 속한다. 지금 조인 테이블 하나를 두는 편이 나중 마이그레이션보다 싸다.
+`decks`에 `language`가 없다. `음식과 사물` 덱은 언어와 무관한 개념 20개의 묶음이고,
+일본어 학습자와 독일어 학습자가 같은 덱을 각자의 언어로 학습한다.
 
-### slug 규칙
-
-- seed에 사람이 직접 쓴다. 로마자 소문자 + 하이픈.
-- 동음이의어는 접미사로 구분한다: `hashi-chopsticks`, `hashi-bridge`
-- `(language, slug)`가 유니크. seed 스크립트가 중복을 검사해 **작성 시점에** 실패시킨다.
-- 이미지·오디오 파일명, URL이 모두 이 slug를 따른다.
+JLPT 레벨처럼 언어에 종속적인 덱이 필요해지면 그때 `decks.language`를 nullable로 추가한다.
+v1의 주제별 덱은 언어 중립이므로 지금은 넣지 않는다.
 
 ### Storage 경로
 
 ```
-words/{language}/{slug}.webp      이미지
-audio/{language}/{slug}.mp3       발음
+concepts/{concept_slug}.webp        이미지 — 언어 무관, 전 언어 공유
+audio/{language}/{concept_slug}.mp3 발음 — 언어별
 ```
 버킷은 public read. 재생성 시 같은 경로에 덮어쓴다.
 
@@ -181,76 +226,101 @@ audio/{language}/{slug}.mp3       발음
 
 ## 5. 콘텐츠 파이프라인
 
-단어·프롬프트·이미지의 단일 진실 소스는 **레포 내 seed 파일**이다.
+단일 진실 소스는 **레포 내 seed 파일**이다. 덱 하나가 파일 하나다.
 
 ```
-content/ja/food.json
-content/ja/animals.json
-content/ja/actions.json
+content/food.json
+content/animals.json
+content/actions.json
 ```
 
 ```jsonc
 {
   "deck": { "slug": "food", "title": "음식과 사물", "description": "매일 쓰는 먹을거리와 물건" },
-  "words": [
+  "concepts": [
     {
-      "slug": "ringo",
-      "term": "りんご",
-      "reading": "りんご",
-      "romanization": "ringo",
-      "meaning_ko": "사과",
-      "part_of_speech": "명사",
-      "attributes": { "jlpt": "N5" },
-      "image_prompt": "a single red apple with one green leaf on the stem, seen from the side"
+      "slug": "banana",
+      "meaning_ko": "바나나",
+      "category": "noun",
+      "image_prompt": "a single ripe yellow banana lying flat, seen from the side",
+      "words": {
+        "ja": {
+          "term": "バナナ",
+          "reading": "バナナ",
+          "romanization": "banana",
+          "part_of_speech": "명사",
+          "attributes": { "jlpt": "N5" }
+        }
+      }
     }
   ]
 }
 ```
 
-`image_prompt`는 **내용만** 쓴다. 스타일 문구는 절대 여기 쓰지 않는다 — `IMAGE_STYLE.md`의 `STYLE_PROMPT`가
-빌드 시점에 앞에 붙는다. 스타일이 바뀌면 한 파일만 고친다.
+**언어 추가는 각 개념의 `words`에 블록 하나를 더 쓰는 일이다.**
+
+```jsonc
+"words": {
+  "ja": { "term": "バナナ", "reading": "バナナ", "romanization": "banana", "part_of_speech": "명사" },
+  "de": { "term": "Banane", "romanization": "banane", "part_of_speech": "명사",
+          "attributes": { "article": "die", "plural": "Bananen" } }
+}
+```
+
+이미지도, 뜻도, 덱 소속도 건드리지 않는다.
+
+`image_prompt`는 **내용만** 쓴다. 스타일 문구는 절대 여기 쓰지 않는다 —
+`IMAGE_STYLE.md`의 `STYLE_PROMPT`가 빌드 시점에 앞에 붙는다. 스타일이 바뀌면 한 파일만 고친다.
 
 ### 스크립트
 
 | 명령 | 하는 일 |
 |---|---|
-| `pnpm seed` | `content/**/*.json` → 검증(slug 중복·필수 필드) → Supabase upsert |
-| `pnpm prompts` | `image_path`가 없는 단어만 골라 `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
-| `pnpm images` | `.images/{slug}.png` → 512×512 webp 변환 → Storage 업로드 → `image_path` 갱신 |
-| `pnpm audio` | `.audio/{slug}.mp3` → Storage 업로드 → `audio_path` 갱신 |
+| `pnpm seed` | `content/*.json` → 검증 → Supabase upsert |
+| `pnpm prompts` | `image_path`가 없는 개념만 골라 `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
+| `pnpm images` | `.images/{slug}.png` → 512×512 webp → Storage 업로드 → `image_path` 갱신 |
+| `pnpm audio` | `.audio/{lang}/{slug}.mp3` → Storage 업로드 → `audio_path` 갱신 |
+
+`pnpm seed`의 검증 항목:
+- 개념 slug 중복
+- 개념 slug가 예약어(§3)와 충돌
+- 개념 slug가 `^[a-z0-9-]+$` 위반
+- 필수 필드 누락 (`slug`, `meaning_ko`, 각 언어의 `term`)
 
 ### 사람이 하는 단계
 
-1. seed 파일에 단어와 `image_prompt`를 쓴다
+1. seed 파일에 개념과 `image_prompt`, 그리고 언어별 표기를 쓴다
 2. `pnpm seed`
 3. `pnpm prompts` 출력을 ChatGPT / Codex ImageGen에 붙여넣어 이미지를 생성한다
 4. 받은 PNG를 `.images/{slug}.png`로 저장한다
 5. `pnpm images`
 
-발음도 같은 흐름이다 (AI로 생성 → `.audio/{slug}.mp3` → `pnpm audio`).
+발음도 같은 흐름이다 (AI로 생성 → `.audio/ja/{slug}.mp3` → `pnpm audio`).
 
-`.images/`와 `.audio/`는 **gitignore**한다. 원본을 레포에 넣지 않아 clone이 가벼운 대신,
-Storage가 사실상의 원본 저장소다. 이미지 재생성이 필요하면 `pnpm prompts`로 프롬프트를 다시 얻을 수 있다.
+`.images/`와 `.audio/`는 **gitignore**한다. 원본을 레포에 넣지 않아 clone이 가벼운 대신
+Storage가 사실상의 원본 저장소다. 재생성이 필요하면 `pnpm prompts`로 프롬프트를 다시 얻는다.
 
 ---
 
 ## 6. 학습 엔진
 
-모든 상태는 클라이언트에 있다.
+모든 상태는 클라이언트에 있다. **진도는 언어별로 분리된다** — 일본어 진도와 독일어 진도는 별개다.
 
 ### 저장 형식
 
 ```ts
-// localStorage key: `lingo.progress.ja`
+// localStorage key: `lingo.progress.{language}`   예: lingo.progress.ja
 type Progress = {
   version: 1
-  cards: Record<string, {   // key = word.id
+  cards: Record<string, {   // key = word.id  (개념이 아니라 단어. 언어마다 따로 외운다)
     box: 1 | 2 | 3 | 4 | 5
     dueAt: string           // 'YYYY-MM-DD'
     seenAt: string          // 'YYYY-MM-DD'
   }>
   newIntroduced: Record<string, number>  // 'YYYY-MM-DD' → 그날 처음 본 단어 수
 }
+
+// localStorage key: `lingo.language`  → 'ja'
 ```
 
 ### Leitner 5상자
@@ -265,7 +335,7 @@ type Progress = {
 
 - 정답 → `box = min(box + 1, 5)`
 - 오답 → `box = 1`
-- 플래시카드에서 "알아요/몰라요"도 같은 규칙을 적용한다
+- 플래시카드의 "알아요/몰라요"도 같은 규칙
 - 새 단어는 첫 노출 후 `box = 1`
 
 ### 세션 구성
@@ -286,13 +356,14 @@ type Progress = {
 - 앞면: 이미지 + 표기
 - 탭 → 뒷면: 읽기 + 뜻 + 발음 버튼
 - 하단: `몰라요` / `알아요`
-- `image_path`가 없는 단어도 출제 가능하다 (표기만 크게 보여준다)
+- 개념에 이미지가 없어도 출제 가능하다 (표기만 크게 보여준다)
 
 **Image → Word (4지선다)**
 - 상단: 이미지
 - 하단: 표기 4개
-- **`image_path`가 있는 단어만 출제**한다. 없으면 플래시카드로만 노출된다
-- 오답 3개는 **같은 덱**에서 `image_path`가 있는 단어 중 무작위. 같은 덱에 4개가 안 되면 같은 언어 전체 풀로 넓힌다
+- **개념에 `image_path`가 있는 단어만 출제**한다. 없으면 플래시카드로만 노출된다
+- 오답 3개는 **같은 덱**에서 이미지가 있고 현재 언어에 단어가 존재하는 개념 중 무작위.
+  같은 덱에 4개가 안 되면 같은 언어 전체 풀로 넓힌다
 - 정답: 초록 테두리 → 400ms 후 자동으로 다음 문항
 - 오답: 고른 것은 빨강, 정답은 초록으로 표시하고 탭해야 다음으로 넘어간다
 
@@ -301,7 +372,7 @@ type Progress = {
 `Progress`에서 계산만 한다. 별도 상태를 저장하지 않는다.
 
 - 오늘 복습 수 = `dueAt <= 오늘`인 카드 수 (최대 `SESSION_SIZE`로 표시)
-- 덱 진행률 = 그 덱 단어 중 `cards`에 존재하는 것 / 전체
+- 덱 진행률 = 그 덱 개념 중 현재 언어에 단어가 있고 `cards`에 존재하는 것 / 현재 언어에 단어가 있는 것
 
 localStorage가 없거나 깨졌으면 빈 진도로 초기화한다. 마이그레이션은 `version` 필드로 처리한다.
 
@@ -347,21 +418,36 @@ localStorage가 없거나 깨졌으면 빈 진도로 초기화한다. 마이그�
 
 | 영역 | 선택 | 비고 |
 |---|---|---|
-| 프레임워크 | Next.js App Router | `app/[lang]/` |
+| 프레임워크 | Next.js App Router | |
 | 언어 | TypeScript | |
 | 스타일 | Tailwind CSS | 토큰은 CSS 변수로 정의하고 Tailwind에서 참조 |
 | 컴포넌트 | shadcn/ui 최소 | `button` `card` `input` `tabs` `progress` `sonner` 만 |
 | DB | Supabase PostgreSQL | anon `select`만 허용 |
 | 스토리지 | Supabase Storage | public read 버킷 |
-| 상태 | React 기본 | 진도는 `localStorage` 래퍼 훅 하나 |
+| 상태 | React 기본 | 진도·언어 설정은 `localStorage` 래퍼 훅 하나 |
 | PWA | manifest + 아이콘 | 서비스워커 없음 |
 
-### 렌더링
+### 렌더링 — 언어가 URL에 없을 때 정적 생성을 지키는 법
+
+언어가 클라이언트 설정이므로 서버는 렌더 시점에 학습 언어를 모른다. 쿠키를 읽어 동적 렌더링으로
+가면 정적 생성을 잃는다. 그래서 **개념 페이지에 전 언어의 단어를 함께 담아 정적으로 굽고,
+클라이언트가 현재 언어 하나만 표시**한다.
+
+```
+/banana  →  { concept, words: { ja: {...}, de: {...} } }  를 정적 생성
+            클라이언트가 localStorage의 언어(또는 ?lang=)로 하나를 골라 렌더
+```
+
+개념당 언어 8개여도 텍스트 몇 줄이라 페이로드가 사실상 늘지 않는다.
 
 - 단어 데이터는 **서버 컴포넌트에서 `supabase-js`로 직접 조회**한다. 클라이언트 번들에 Supabase 클라이언트와 키가 들어가지 않는다
-- `generateStaticParams`로 Word Detail을 미리 생성하고 `revalidate = 3600`
-- 세션 화면만 클라이언트 컴포넌트다. 진입 시 대상 단어 전체를 서버에서 한 번 받아 메모리에서 굴린다 (60단어 = 수십 KB)
+- `generateStaticParams`로 개념 상세를 미리 생성하고 `revalidate = 3600`
+- `/words`도 전 언어 단어를 담아 정적 생성하고 필터링은 클라이언트에서 한다
+- 세션 화면만 클라이언트 컴포넌트다. 진입 시 대상 개념 전체를 서버에서 한 번 받아 메모리에서 굴린다
 - 이미지는 `next/image` + Supabase Storage 도메인을 `remotePatterns`에 등록
+- 이미지 URL은 개념 slug만으로 결정되므로 언어를 바꿔도 이미지 캐시가 그대로 유지된다
+
+**감수하는 것**: 공유 링크를 열면 받는 사람의 설정 언어로 보인다. 언어를 고정해 공유하려면 `?lang=ja`를 붙인다.
 
 ---
 
@@ -369,17 +455,18 @@ localStorage가 없거나 깨졌으면 빈 진도로 초기화한다. 마이그�
 
 각 단계는 그 자체로 확인 가능해야 한다.
 
-1. **셸** — Next.js·Tailwind·shadcn 최소 설치, 토큰 정의, `app/[lang]/` 레이아웃, 하단 탭 3개(데스크톱 사이드), 빈 화면 3개
-2. **데이터** — Supabase 스키마 마이그레이션, `pnpm seed` 스크립트, 덱 3개 × 20단어 작성 (`image_prompt` 포함)
+1. **셸** — Next.js·Tailwind·shadcn 최소 설치, 토큰 정의, 레이아웃, 하단 탭 3개(데스크톱 사이드), 빈 화면 3개
+2. **데이터** — Supabase 스키마 마이그레이션, `pnpm seed` + 검증, 덱 3개 × 개념 20개 작성 (일본어 표기 + `image_prompt`)
 3. **이미지** — `IMAGE_STYLE.md` 확정, `pnpm prompts` / `pnpm images`, 이미지 60장 생성·업로드
-4. **Words** — 그리드/리스트 전환, 검색, Word Detail, 발음 버튼(+없을 때 토스트)
-5. **학습 엔진** — Leitner·세션 구성 로직과 그 단위 테스트, `localStorage` 훅
-6. **세션 화면** — Flashcard, Image→Word, 결과 화면
-7. **Home** — CTA, 덱 진행률
-8. **Learn** — 덱·모드 선택 자유 연습
-9. **마무리** — PWA manifest, 아이콘, 메타데이터, 배포
+4. **언어 컨텍스트** — `localStorage` 언어 훅, `?lang=` 오버라이드, 개념+전언어단어를 고르는 셀렉터
+5. **Words** — 그리드/리스트 전환, 검색, 개념 상세, 발음 버튼(+없을 때 토스트)
+6. **학습 엔진** — Leitner·세션 구성 로직과 그 단위 테스트
+7. **세션 화면** — Flashcard, Image→Word, 결과 화면
+8. **Home** — CTA, 덱 진행률
+9. **Learn** — 덱·모드 선택 자유 연습
+10. **마무리** — PWA manifest, 아이콘, 메타데이터, 배포
 
-3단계까지 끝나면 콘텐츠가 확보되므로, 4단계부터는 실제 데이터로 개발한다.
+3단계까지 끝나면 콘텐츠가 확보되므로, 5단계부터는 실제 데이터로 개발한다.
 
 ---
 
@@ -389,10 +476,11 @@ localStorage가 없거나 깨졌으면 빈 진도로 초기화한다. 마이그�
 
 | 시점 | 추가 | 영향 |
 |---|---|---|
-| 2번째 언어 | `content/en/*.json` + seed | 스키마 변경 없음. `/en/...` 경로가 그대로 생김 |
+| 2번째 언어 | 각 개념의 `words`에 언어 블록 추가 + `pnpm seed` | **이미지 재생성 없음.** 발음만 새로 생성. 언어 전환 UI 추가 |
 | 로그인 | Supabase Auth + `learning_records` | 기존 `localStorage` 진도를 최초 로그인 시 서버로 올리는 1회 마이그레이션 |
+| 언어 종속 덱 (JLPT 등) | `decks.language` nullable 컬럼 | null이면 전 언어 공용, 값이 있으면 그 언어 전용 |
 | 학습 모드 추가 | 세션 엔진의 (문제면, 정답면) 파라미터화 | 화면 컴포넌트만 추가 |
-| 예문 | `sentences` 테이블 + `word_id` FK | Word Detail에 섹션 추가 |
+| 예문 | `sentences` 테이블 + `word_id` FK | 언어별이므로 개념이 아니라 단어에 붙는다 |
 | 문법·회화 | `grammar_points`, `conversations` + 단어 연결 테이블 | 단어가 허브가 되는 구조 |
-| 다의어 | `word_senses` 분리 | `meaning_ko`를 백필 후 제거 |
-| 앱 내 이미지 생성 | OpenAI Images API | 파이프라인이 이미 프롬프트를 분리 관리하므로 그대로 재사용 |
+| 다의어 | `word_senses` 분리 | 개념 분리로 상당 부분 이미 해소됨 |
+| 앱 내 이미지 생성 | OpenAI Images API | 파이프라인이 이미 프롬프트를 개념에 분리 보관하므로 그대로 재사용 |
