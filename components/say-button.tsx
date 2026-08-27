@@ -29,9 +29,13 @@ export function SayButton({
   const [playing, setPlaying] = useState(false)
 
   useEffect(() => {
-    // 파일이 없으면 조용히 비활성. 발음이 아직 없는 개념은 정상이다
+    // 파일이 없으면 조용히 비활성. 발음이 아직 없는 개념은 정상이다.
+    //
+    // preload='none'이면 요청이 안 나가서 error도 안 뜬다 — 파일이 없어도
+    // 버튼이 활성으로 보이다가 누른 뒤에야 실패한다. metadata는 헤더만
+    // 받아오므로 없는 파일을 미리 걸러낸다. 있으면 재생도 빨라진다.
     const audio = new Audio(audioPath(slug, lang))
-    audio.preload = 'none'
+    audio.preload = 'metadata'
     audio.addEventListener('error', () => setAvailable(false))
     audio.addEventListener('ended', () => setPlaying(false))
     audioRef.current = audio
