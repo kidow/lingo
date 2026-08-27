@@ -3,37 +3,61 @@
 시각 중심 언어 학습 서비스. v1은 일본어 단어 학습.
 
 이 문서는 **v1에서 무엇을 만들고 무엇을 만들지 않는지**를 확정한다.
-이미지 스타일 규칙은 별도 문서 [IMAGE_STYLE.md](IMAGE_STYLE.md)에 있다.
+이미지 스타일 규칙은 [IMAGE_STYLE.md](IMAGE_STYLE.md), 시각 규칙은 [brand-spec.md](brand-spec.md)에 있다.
 
 ---
 
 ## 1. 제품 정의
 
-단어에 AI 생성 이미지를 매칭하고, 이미지를 통해 의미를 기억시키는 학습 서비스.
+단어에 AI 생성 이미지를 매칭하고, **끝이 없는 세로 피드를 훑으면서** 의미를 기억시키는 학습 서비스.
+
+숏폼을 빠르게 넘기는 습관을 학습 메커니즘으로 쓴다. 그래서 이 서비스에는
+**세션도, 오늘의 목표도, 결과 화면도 없다.** 열면 카드가 떠 있고, 위로 밀면 다음 카드가 온다.
+
 이미지는 장식이 아니라 학습 요소이며, 이미지 스타일 자체를 디자인 시스템의 일부로 관리한다.
 
 최종 지향은 단어장이 아니라 **단어를 허브로 문법·회화·예문이 연결되는 학습 시스템**이다.
-다만 v1은 단어 학습 경험의 완성도만 다룬다.
+다만 v1은 피드 하나의 완성도만 다룬다.
 
-### 핵심 구조: 개념(concept)이 중심이다
+### 핵심 구조 1: 개념(concept)이 중심이다
 
 이 서비스의 축은 단어가 아니라 **개념**이다.
 
 > 바나나 그림은 하나면 된다. 일본어로 배우든 독일어로 배우든 같은 그림이다.
 > 언어마다 달라지는 것은 표기·읽기·발음뿐이다.
 
-따라서:
-
 | 개념에 속하는 것 | 단어에 속하는 것 |
 |---|---|
 | 이미지 | 표기 (`バナナ`, `Banane`) |
 | 한국어 뜻 | 읽기 |
 | 이미지 프롬프트 | 로마자 |
-| 덱 소속 | 발음 오디오 |
 | 카테고리 | 품사 · 언어별 문법 속성 |
+| | 발음 오디오 |
 
 수동 이미지 파이프라인이 이 서비스의 유일한 병목이다. 개념을 분리하면
 8개 언어 × 60단어를 이미지 60장으로 감당한다. 언어 추가는 **표기 몇 줄을 더 쓰는 일**이 된다.
+
+### 핵심 구조 2: 학습 대상은 언어마다 하나로 고정한다
+
+일본어 단어에는 표시할 텍스트가 둘이다 — 표기 `猫`와 읽기 `ねこ`.
+**둘 중 하나만 정답으로 쓴다.** v1 일본어는 **읽기(かな)** 다.
+
+근거:
+
+- 한자를 모르는 초급자에게 `猫`를 보여주고 `ねこ`를 묻는 것은 순환 논리다.
+  한자를 알아야 풀 수 있는데 그 한자를 아직 안 배웠다.
+- 학습 순서 권장안은 어디서든 같다 — **가나 완성 → 기초 어휘 → 한자는 그 다음, 전용 도구로.**
+- Duolingo 일본어도 초급 구간을 가나로 출제한다. 이유를 둘로 밝힌다 —
+  한자 수백 개로 압도하지 않기 위해서, JLPT도 모든 어휘의 한자를 요구하지 않기 때문에.
+- 그 Duolingo가 **정확히 이 지점에서 가장 많이 비판받는다**: "같은 단어가 어떤 레슨에선 한자로,
+  다른 레슨에선 히라가나로 나오는데 규칙이 없다." 가나냐 한자냐보다 **하나를 정해 일관되게 지키는 것**이
+  더 중요하다.
+- 로마자는 "처음엔 필요악이지만 금세 심각한 장애물"이 된다는 게 중평이다.
+  `romanization`은 소개 카드의 참고 표시로만 쓰고 **보기·정답에는 절대 쓰지 않는다.**
+
+한자는 소개 카드에서 작게 참고로만 보여준다. 한자 학습은 별도 트랙으로 나중에 다룬다.
+
+언어마다 이 선택이 달라질 수 있으므로 **하드코딩하지 않고 설정표로 둔다** (§4).
 
 ### 대상 언어
 
@@ -53,15 +77,19 @@
 
 | 항목 | 이유 |
 |---|---|
+| 단어장 화면 · 설정 화면 | MVP는 피드 하나다. 탭 자체가 없다 |
+| 홈 · 세션 · 결과 화면 | 피드에는 시작도 끝도 없다 |
+| 덱 (`decks`, `deck_concepts`) | 피드가 전체 단어를 섞는다. 고를 게 없다 |
+| Leitner 5상자 | 날짜 기반 상자 스케줄을 피드 모델로 대체 (§6) |
+| 자가판정 ("알아요 / 몰라요") | 객관적으로 채점되는 카드만 남긴다 |
 | 인증 / 계정 / 서버 진도 동기화 | 익명 + localStorage로 시작 |
-| `learning_records` 테이블 | 진도가 클라이언트에만 있으므로 v1에 불필요 |
 | 관리자 웹 UI | 데이터 저작은 레포 내 seed 파일 + 스크립트로 한다 |
 | 언어 전환 UI | v1은 일본어 하나뿐이라 고를 게 없다. 설정 값과 오버라이드 파라미터만 구현한다 |
-| 예문 · 문법 · 회화 | Word Detail은 이미지·표기·읽기·뜻까지만 |
+| 한자 학습 트랙 | 학습 대상은 읽기 하나로 고정 (§1) |
+| 예문 · 문법 · 회화 | 카드는 이미지·읽기·뜻까지만 |
 | `word_senses` / 다의어 정규화 | 개념의 `meaning_ko` 단일 텍스트로 시작 |
 | 개념당 이미지 여러 장 | 개념당 이미지 1장 |
-| 학습 모드 4종(Word→Image, Word→Meaning, Meaning→Word, Image-only Recall) | v1은 2종만 |
-| 스트릭 · 일일 목표 · 배지 | Leitner에서 계산되는 값만 보여준다 |
+| 스트릭 · 일일 목표 · 배지 | 목표가 없는 피드에는 붙일 자리가 없다 |
 | 서비스워커 / 오프라인 학습 | PWA는 manifest + 아이콘까지만 |
 | 다크모드 | warm paper 라이트 단일 |
 | 앱 내 이미지 생성(OpenAI Images API) | 이미지는 수동 파이프라인 |
@@ -69,64 +97,49 @@
 
 ---
 
-## 3. 정보 구조 · 라우팅
+## 3. 화면
 
-하단 탭 3개. 데스크톱에서는 좌측 사이드 내비게이션으로 전환한다.
+**화면은 하나다.**
 
 ```
-/                Home
-/words           Words (그리드 ↔ 리스트 전환, 검색)
-/{concept}       Concept Detail   예: /banana, /cat, /eat
-/learn           자유 연습 (덱·모드 선택)
-/session         학습 세션 (클라이언트)
+/            피드
 ```
 
-**언어는 URL에 없다.** 학습 언어는 앱 설정(`localStorage`)이며, `?lang=ja`로 일시 오버라이드할 수 있다.
-공유 링크에 언어를 담고 싶을 때만 쓴다.
+상단 탭도 하단 탭도 없다. 뒤로 갈 곳도, 끝낼 곳도 없다.
 
-개념 상세가 루트에 붙으므로 **개념 slug는 예약어를 쓸 수 없다**:
-`words` `learn` `session` `settings` `api` `icons` `_next` `favicon.ico` `manifest.webmanifest`
-seed 스크립트가 이 목록과 대조해 위반 시 실패시킨다.
+### 피드
 
-`/words`의 뷰 모드와 검색어는 URL 쿼리로 유지한다: `?view=list`, `?q=ねこ`
-세션은 `/session?deck=food&mode=flashcard` 형태로 파라미터를 받는다. 없으면 기본 혼합 세션.
+세로 무한 캐러셀. 한 장이 화면 하나를 꽉 채운다. 위로 밀면 다음 카드.
 
-검색은 별도 탭이 아니라 Words 화면 내부에 둔다.
+카드 안 구성은 세 종류 모두 같은 골격이다.
 
-### 화면별 내용
-
-**Home**
-1. 인사말
-2. 단일 CTA — `오늘 복습 12개 시작` / 부제 `새 단어 4개 포함 · 약 3분`
-3. 덱 목록 (썸네일 · 제목 · `12 / 20` · 진행 바)
-
-CTA 하나가 기본 동선이다. 덱과 모드를 묻지 않는다.
-
-**Words**
-- 기본은 **Visual Words Grid**: 모바일 2열, 정사각 이미지 + 표기 한 줄. 뜻·읽기는 넣지 않는다.
-- 리스트 뷰 토글: 표기 · 읽기 · 뜻 한 줄씩, 작은 썸네일. 많은 단어를 빠르게 훑는 용도.
-- 검색: 클라이언트 필터. `term` / `reading` / `romanization` / `meaning_ko` 를 모두 매칭한다.
-- **현재 학습 언어에 단어가 존재하는 개념만** 보여준다.
-- 이미지가 없는 개념은 placeholder 타일로 표시한다.
-
-**Concept Detail** (`/banana`)
-
-정보 계층 순서:
 ```
-이미지 → 표기 → 읽기 → 뜻 → (발음 재생 버튼)
+┌─────────────────┐
+│                 │
+│     이미지       │  정사각. 우측 하단에 발음 버튼 고정
+│              🔊 │
+│                 │
+├─────────────────┤
+│    카드별 본문    │  아래 §5
+├─────────────────┤
+│  위로 밀어 다음   │
+└─────────────────┘
 ```
-- 발음 버튼은 항상 노출한다. `audio_path`가 있으면 재생하고, 없으면 토스트로 안내한다
-  (`아직 발음이 준비되지 않았어요`).
-- 이 페이지는 모든 언어의 단어를 함께 받아 렌더한다. 표시는 현재 언어 하나뿐이다 (§8 참고).
 
-**Learn**
-- 덱 선택 → 모드 선택 → 세션. 특정 덱만 파거나 모드를 골라 연습하는 자유 연습장.
-- 기본 학습은 Home CTA가 담당하므로 Learn은 보조 동선이다.
+**스와이프 규칙**
 
-**Session**
-- 상단: 진행률 바 (`3 / 12`), 닫기 버튼
-- 본문: 모드별 카드
-- 종료 시: 맞힌 개수 / 다음 복습 안내 / 홈으로
+- **소개 카드** — 자유롭게 넘긴다. 넘기는 순간 학습한 것으로 인정한다.
+- **퀴즈 카드** — **답하기 전에는 잠긴다.** 스킵할 수 없다.
+- 정답이든 오답이든 **자동 진행은 없다.** 항상 사용자가 직접 민다.
+  피드 속도는 전적으로 손에 있다.
+
+**발음 버튼**
+
+- 이미지 우측 하단에 **항상 같은 자리**에 있다. 위치가 흔들리지 않는다.
+- **자동 재생하지 않는다.**
+- 소개 카드에서는 바로 누를 수 있다.
+- 퀴즈 카드에서는 **답한 뒤에 활성화**된다 — 정답이 읽기라서, 답하기 전에 누르면 정답이 그대로 들린다.
+- `audio_path`가 없으면 비활성 상태로 둔다.
 
 ---
 
@@ -137,11 +150,11 @@ Supabase PostgreSQL. RLS는 `select`만 `anon`에게 허용한다.
 ```sql
 create table concepts (
   id           uuid primary key default gen_random_uuid(),
-  slug         text not null unique,     -- URL이자 파일명. 영어 소문자 + 하이픈
+  slug         text not null unique,     -- 파일명이자 식별자. 영어 소문자 + 하이픈
   meaning_ko   text not null,            -- 학습 언어와 무관한 한국어 뜻
-  category     text,                     -- 'noun' | 'verb' | 'adjective' | 'scene' | 'abstract'
-  image_path   text,                     -- Storage 경로. null이면 이미지 없음(추상어)
-  image_prompt text,                      -- 재생성용. IMAGE_STYLE.md의 STYLE_PROMPT는 포함하지 않는다
+  category     text not null,            -- 'noun' | 'verb' | 'adjective' | 'scene'
+  image_path   text,                     -- Storage 경로. null이면 아직 생성 전 → 플레이스홀더
+  image_prompt text,                     -- 재생성용. STYLE_PROMPT는 포함하지 않는다
   created_at   timestamptz not null default now()
 );
 
@@ -149,9 +162,9 @@ create table words (
   id             uuid primary key default gen_random_uuid(),
   concept_id     uuid not null references concepts(id) on delete cascade,
   language       text not null,
-  term           text not null,          -- 표기.  ja: 食べる / de: essen / ar: أكل
-  reading        text,                   -- 해당 언어 독자용 읽기. ja: たべる / zh: chī
-  romanization   text,                   -- 로마자. ja: taberu / ru: kniga
+  term           text not null,          -- 표기.  ja: 猫 / de: Katze
+  reading        text,                   -- 읽기.  ja: ねこ
+  romanization   text,                   -- 로마자. ja: neko
   part_of_speech text,
   attributes     jsonb not null default '{}'::jsonb,
   audio_path     text,                   -- Storage 경로. null이면 발음 없음
@@ -159,26 +172,17 @@ create table words (
   unique (concept_id, language)
 );
 
-create table decks (
-  id          uuid primary key default gen_random_uuid(),
-  slug        text not null unique,
-  title       text not null,
-  description text,
-  sort_order  int  not null default 0,
-  created_at  timestamptz not null default now()
-);
-
-create table deck_concepts (
-  deck_id    uuid not null references decks(id) on delete cascade,
-  concept_id uuid not null references concepts(id) on delete cascade,
-  sort_order int  not null default 0,
-  primary key (deck_id, concept_id)
-);
-
 create index on words (language);
 create index on words (concept_id);
-create index on deck_concepts (concept_id);
+create index on concepts (category);
 ```
+
+`decks`와 `deck_concepts`는 **없다.** 피드가 전체를 섞으므로 묶음이 필요 없다.
+
+### `category`는 장식이 아니라 출제 규칙이다
+
+덱이 사라졌으므로 오답 보기를 뽑을 근거가 `category`뿐이다 (§5).
+명사 문제에 동사 보기가 섞이면 답이 그냥 보이므로 **not null로 강제한다.**
 
 ### `(concept_id, language)` 유니크 — 의도된 제약이다
 
@@ -188,12 +192,31 @@ create index on deck_concepts (concept_id);
 `cold-water`, `hot-water`. 개념은 사전 표제어가 아니라 **시각화 가능한 지시체** 단위다.
 이미지가 하나로 그려지지 않으면 개념이 둘이라는 뜻이다.
 
-### 언어에 따라 단어가 없는 개념은 정상이다
+### 이미지가 없는 개념은 없다
 
-모든 개념이 모든 언어에 대응하지 않는다. `words` 행이 없으면 그 언어 학습자에게
-그 개념이 보이지 않을 뿐이다. 반대로 `いただきます`처럼 특정 언어에만 있는 개념도
-개념으로 만들고 일본어 `words` 행만 둔다. 개념 집합이 완전한 언어 중립이라는 전제는
-참이 아니고, 참일 필요도 없다.
+추상어처럼 그릴 수 없는 개념은 **콘텐츠에 넣지 않는다.** 카드 3종이 전부 이미지를 전제하기 때문이다.
+
+`image_path`가 `null`인 것은 "이 개념은 그림이 없다"가 아니라 **"아직 생성 전"** 이라는 뜻이다.
+그 경우 앱은 **공통 플레이스홀더 이미지 한 장**으로 대체하고 정상 출제한다.
+
+### 언어별 학습 전략은 설정표로
+
+어느 필드가 정답인지는 언어마다 다르다. 코드에 박지 않는다.
+
+```ts
+type LangStrategy = {
+  answer: 'reading' | 'term'   // 보기·정답·빈칸에 쓰는 필드
+  aside: ('term' | 'romanization')[]  // 소개 카드 참고줄
+}
+
+const LANG: Record<string, LangStrategy> = {
+  ja: { answer: 'reading', aside: ['term', 'romanization'] },
+  // de: { answer: 'term',    aside: [] },
+  // zh: { answer: 'reading', aside: ['term'] },
+}
+```
+
+`answer` 필드가 비어 있는 단어는 그 언어에서 출제되지 않는다.
 
 ### 언어별 속성은 `attributes` JSONB로
 
@@ -201,53 +224,180 @@ create index on deck_concepts (concept_id);
 
 ```ts
 type Attributes =
-  | { jlpt?: 'N5'|'N4'|'N3'|'N2'|'N1'; pitchAccent?: number; conjugation?: 'godan'|'ichidan'|'irregular' } // ja
-  | { article?: 'der'|'die'|'das'; plural?: string }                                                       // de
-  | { tones?: number[] }                                                                                   // zh
+  | { jlpt?: 'N5'|'N4'|'N3'|'N2'|'N1'; pitchAccent?: number }  // ja
+  | { article?: 'der'|'die'|'das'; plural?: string }           // de
+  | { tones?: number[] }                                       // zh
 ```
-
-### 덱은 개념 묶음이다
-
-`decks`에 `language`가 없다. `음식과 사물` 덱은 언어와 무관한 개념 20개의 묶음이고,
-일본어 학습자와 독일어 학습자가 같은 덱을 각자의 언어로 학습한다.
-
-JLPT 레벨처럼 언어에 종속적인 덱이 필요해지면 그때 `decks.language`를 nullable로 추가한다.
-v1의 주제별 덱은 언어 중립이므로 지금은 넣지 않는다.
 
 ### Storage 경로
 
 ```
 concepts/{concept_slug}.webp        이미지 — 언어 무관, 전 언어 공유
+concepts/_placeholder.webp          생성 전 개념용 공통 대체 이미지
 audio/{language}/{concept_slug}.mp3 발음 — 언어별
 ```
+
 버킷은 public read. 재생성 시 같은 경로에 덮어쓴다.
 
 ---
 
-## 5. 콘텐츠 파이프라인
+## 5. 카드 3종
 
-단일 진실 소스는 **레포 내 seed 파일**이다. 덱 하나가 파일 하나다.
+같은 단어가 숙련도에 따라 세 가지 모습으로 나온다.
+난이도 순서는 기억 연구의 표준 분류를 따른다 —
+**Recognition(재인) ≈ Aided Recall(단서 회상) < Recall(순수 회상)**. 재인이 가장 쉽다.
+
+순수 회상 칸은 **두지 않는다.** 정답을 보고 스스로 맞았다고 판정하는 방식은
+채점이 주관적이라 진도 데이터를 오염시킨다. **객관적으로 채점되는 카드만 남긴다.**
+
+| rung | 이름 | 테스트 | 화면 |
+|---|---|---|---|
+| 0 | 소개 | 없음 | 이미지 + 읽기 + 뜻 + (한자·로마자 참고) |
+| 1 | 재인 | Recognition | 이미지 + 읽기 보기 4개 (2×2) |
+| 2 | 단서 회상 | Aided Recall | 이미지 + 읽기 일부를 빈칸 + 후보 글자 4개 |
+
+**문항 지시문을 쓰지 않는다.** 이미지와 보기만으로 무엇을 묻는지 자명하다.
+
+### 0. 소개
+
+전부 노출한다. 읽고 넘긴다. 마찰 0 — 숏폼의 진입 감각을 그대로 둔다.
+표기와 읽기가 같은 단어(`バナナ`)는 참고줄에서 표기를 빼 중복을 없앤다.
+
+### 1. 재인 — 4지선다
+
+- 정답은 `LANG[lang].answer` 필드값
+- **오답 3개는 같은 `category`의 다른 개념에서** 무작위. 모자라면 전체 풀로 넓힌다
+- 2×2 그리드. 보기 하나가 최소 44px 이상
+- 정답 → 초록 / 오답 → 고른 것 빨강 + 정답 초록
+
+### 2. 단서 회상 — 빈칸
+
+- 읽기의 한 글자를 빈칸으로 만든다
+- **OS 키보드를 쓰지 않는다.** 후보 글자 4개를 탭해서 채운다 (IME 의존 제거)
+- 오답 후보는 **시각적으로 비슷한 가나**를 쓴다 (`ナ / タ / ソ / ン`) — 표기 정확도까지 잡힌다
+- 읽기가 한 글자인 단어(`き`, `め`)는 빈칸이 성립하지 않으므로 rung 1에 머문다
+
+---
+
+## 6. 학습 엔진
+
+모든 상태는 클라이언트에 있다. **진도는 언어별로 분리된다.**
+
+### 왜 Leitner를 버렸나
+
+Leitner는 "오늘 복습할 것"을 날짜로 정한다. 무한 피드에는 오늘도 마감도 없다.
+알고리즘 비교에서 Leitner가 지적받는 지점도 정확히 우리 문제다 —
+**같은 상자 카드를 전부 동일하게 취급하고, 간격이 사용자에게 적응하지 않는다.**
+
+대신 **두 층으로 나눈다.** 각 층이 답하는 질문이 다르다.
+
+| 층 | 답하는 질문 | 단위 | 도구 |
+|---|---|---|---|
+| **시간 층** | 이 카드를 오늘 꺼낼까, 2주 뒤에 꺼낼까 | 일(day) | `ts-fsrs` |
+| **피드 층** | 지금 이 자리에서 몇 장 뒤에 다시 꽂을까 | 장(card) | 직접 구현 |
+
+FSRS의 망각곡선은 일 단위다. 방금 맞힌 카드를 3분 뒤에 물으면 회상확률이 거의 안 떨어져
+가중치가 0에 가깝다. **한 번 앉아서 스와이프하는 동안의 재등장은 FSRS가 못 정한다.**
+그 구간을 피드 층이 맡는다.
+
+### 시간 층 — ts-fsrs
+
+`ts-fsrs` (FSRS v6, MIT, 의존성 0). SM-2 대비 같은 retention에 리뷰 20~30% 감소가 보고돼 있다.
+
+```ts
+import { createEmptyCard, fsrs, Rating } from 'ts-fsrs'
+
+const scheduler = fsrs()
+const next = scheduler.next(card, new Date(), correct ? Rating.Good : Rating.Again)
+const R = scheduler.get_retrievability(next.card, new Date(), false)  // 0~1
+```
+
+등급은 4개지만 채점이 2진이므로 **`Good`(정답) / `Again`(오답)만** 쓴다.
+
+### 피드 층 — 다음 카드 뽑기
 
 ```
-content/food.json
-content/animals.json
-content/actions.json
+1. 예약 큐에 도래한 카드가 있으면 그것을 낸다
+2. 없으면 15% 확률로 미소개 단어 (신규 유입)
+3. 나머지 85%는 (1 - R) 가중 무작위 추출, 최근 K장 쿨다운 제외
+```
+
+**예약 거리** — 답한 카드를 이 거리만큼 뒤에 다시 꽂는다.
+
+| 상황 | 거리 |
+|---|---|
+| 소개 직후 | 3장 |
+| 정답 | 8장 |
+| 연속 2회 정답 | 20장 |
+| 오답 | 2장 |
+
+**신규 유입 15%는 조건부가 아니라 고정 비율이다.**
+"복습이 다 끝나면 새 단어"처럼 미루면 피드가 굳는다. 추천 시스템이 노벨티를 확률적으로
+강제 주입하는 이유와 같다 — 신선도가 없는 피드는 content fatigue로 붕괴한다.
+프로덕션 관행 수치대(신선 콘텐츠 약 10%)와도 맞다.
+
+**신선도 부스트** — 막 소개한 단어는 한동안 가중치에 가산점을 주고 지수적으로 깎는다.
+
+> 확장 간격(3 → 8 → 20)을 정밀하게 튜닝할 필요는 없다.
+> Landauer & Bjork의 확장 스케줄 우위는 단기(10분 후)에만 재현되고,
+> 2일 후 테스트에선 균등 간격이 더 좋았으며, 4주 어휘 학습에선 8주 후 결과가 동등했다.
+> **간격이 벌어진다는 사실 자체가 중요하지, 수열의 정확한 모양이 중요한 게 아니다.**
+
+### 저장 형식
+
+```ts
+// localStorage key: `lingo.progress.{language}`   예: lingo.progress.ja
+type Progress = {
+  version: 1
+  cards: Record<string, {        // key = word.id (언어마다 따로 외운다)
+    rung: 0 | 1 | 2              // 카드 타입 (§5)
+    streak: number               // 연속 정답 수. 예약 거리 계산용
+    fsrs: SerializedFSRSCard     // due·last_review는 timestamp로
+  }>
+  introducedAt: Record<string, number>  // wordId → 최초 노출 시각. 신선도 부스트용
+}
+
+// localStorage key: `lingo.language`  → 'ja'
+```
+
+`cards`에 항목이 없으면 미소개 단어다.
+
+### rung 이동
+
+- **소개 카드를 넘김** → `rung = 1`, FSRS 카드 생성
+- **정답** → `rung = min(rung + 1, 2)`, `streak += 1`, `Rating.Good`
+- **오답** → `rung = max(rung - 1, 0)`, `streak = 0`, `Rating.Again`
+
+오답은 **한 칸만 내린다.** 바닥까지 떨어뜨리지 않는다.
+승률이 무너지면 무한 스와이프의 동력이 끊긴다.
+
+localStorage가 없거나 깨졌으면 빈 진도로 초기화한다. 마이그레이션은 `version` 필드로 처리한다.
+
+---
+
+## 7. 콘텐츠 파이프라인
+
+단일 진실 소스는 **레포 내 seed 파일**이다. 덱이 없으므로 파일은 주제별 묶음이 아니라
+편의상의 분할일 뿐이며, 앱은 전부를 하나의 풀로 읽는다.
+
+```
+content/nouns.json
+content/verbs.json
 ```
 
 ```jsonc
 {
-  "deck": { "slug": "food", "title": "음식과 사물", "description": "매일 쓰는 먹을거리와 물건" },
   "concepts": [
     {
-      "slug": "banana",
-      "meaning_ko": "바나나",
+      "slug": "cat",
+      "meaning_ko": "고양이",
       "category": "noun",
-      "image_prompt": "a single ripe yellow banana lying flat, seen from the side",
+      "image_prompt": "one sitting cat facing forward, tail curled around its front paws",
       "words": {
         "ja": {
-          "term": "バナナ",
-          "reading": "バナナ",
-          "romanization": "banana",
+          "term": "猫",
+          "reading": "ねこ",
+          "romanization": "neko",
           "part_of_speech": "명사",
           "attributes": { "jlpt": "N5" }
         }
@@ -258,19 +408,10 @@ content/actions.json
 ```
 
 **언어 추가는 각 개념의 `words`에 블록 하나를 더 쓰는 일이다.**
-
-```jsonc
-"words": {
-  "ja": { "term": "バナナ", "reading": "バナナ", "romanization": "banana", "part_of_speech": "명사" },
-  "de": { "term": "Banane", "romanization": "banane", "part_of_speech": "명사",
-          "attributes": { "article": "die", "plural": "Bananen" } }
-}
-```
-
-이미지도, 뜻도, 덱 소속도 건드리지 않는다.
+이미지도, 뜻도 건드리지 않는다.
 
 `image_prompt`는 **내용만** 쓴다. 스타일 문구는 절대 여기 쓰지 않는다 —
-`IMAGE_STYLE.md`의 `STYLE_PROMPT`가 빌드 시점에 앞에 붙는다. 스타일이 바뀌면 한 파일만 고친다.
+`IMAGE_STYLE.md`의 `STYLE_PROMPT`가 빌드 시점에 앞에 붙는다.
 
 ### 스크립트
 
@@ -282,135 +423,24 @@ content/actions.json
 | `pnpm audio` | `.audio/{lang}/{slug}.mp3` → Storage 업로드 → `audio_path` 갱신 |
 
 `pnpm seed`의 검증 항목:
+
 - 개념 slug 중복
-- 개념 slug가 예약어(§3)와 충돌
 - 개념 slug가 `^[a-z0-9-]+$` 위반
+- `category` 누락 — 오답 보기 규칙이 여기 의존한다
 - 필수 필드 누락 (`slug`, `meaning_ko`, 각 언어의 `term`)
+- **`LANG[lang].answer` 필드 누락** — 일본어인데 `reading`이 없으면 출제 불가
 
 ### 사람이 하는 단계
 
-1. seed 파일에 개념과 `image_prompt`, 그리고 언어별 표기를 쓴다
+1. seed 파일에 개념과 `image_prompt`, 언어별 표기·읽기를 쓴다
 2. `pnpm seed`
-3. `pnpm prompts` 출력을 ChatGPT / Codex ImageGen에 붙여넣어 이미지를 생성한다
+3. `pnpm prompts` 출력을 ImageGen에 넣어 이미지를 생성한다
 4. 받은 PNG를 `.images/{slug}.png`로 저장한다
 5. `pnpm images`
 
-발음도 같은 흐름이다 (AI로 생성 → `.audio/ja/{slug}.mp3` → `pnpm audio`).
+발음도 같은 흐름이다.
 
-`.images/`와 `.audio/`는 **gitignore**한다. 원본을 레포에 넣지 않아 clone이 가벼운 대신
-Storage가 사실상의 원본 저장소다. 재생성이 필요하면 `pnpm prompts`로 프롬프트를 다시 얻는다.
-
----
-
-## 6. 학습 엔진
-
-모든 상태는 클라이언트에 있다. **진도는 언어별로 분리된다** — 일본어 진도와 독일어 진도는 별개다.
-
-### 저장 형식
-
-```ts
-// localStorage key: `lingo.progress.{language}`   예: lingo.progress.ja
-type Progress = {
-  version: 1
-  cards: Record<string, {   // key = word.id  (개념이 아니라 단어. 언어마다 따로 외운다)
-    box: 1 | 2 | 3 | 4 | 5
-    dueAt: string           // 'YYYY-MM-DD'
-    seenAt: string          // 'YYYY-MM-DD'
-  }>
-  newIntroduced: Record<string, number>  // 'YYYY-MM-DD' → 그날 처음 본 단어 수
-}
-
-// localStorage key: `lingo.language`  → 'ja'
-```
-
-### Leitner 5상자
-
-| box | 다음 복습까지 |
-|---|---|
-| 1 | 1일 |
-| 2 | 3일 |
-| 3 | 7일 |
-| 4 | 14일 |
-| 5 | 30일 |
-
-- 정답 → `box = min(box + 1, 5)`
-- 오답 → `box = 1`
-- 플래시카드의 "알아요/몰라요"도 같은 규칙
-- 새 단어는 첫 노출 후 `box = 1`
-
-### 세션 구성
-
-상수: `SESSION_SIZE = 12`, `NEW_PER_DAY = 5`
-
-1. `dueAt <= 오늘`인 카드를 `dueAt` 오름차순으로 최대 12개 담는다
-2. 12개가 안 차면 **아직 안 본 단어**로 채운다. 단 오늘 도입한 신규가 5개를 넘지 않게 제한한다
-3. 그래도 12개가 안 되면 그 길이로 진행한다 (`오늘 복습 7개 시작`)
-4. 세션 안에서 문항 순서는 섞는다
-
-**신규 단어 처리**: 처음 보는 단어는 먼저 플래시카드로 소개하고, 같은 세션 뒤쪽에서 퀴즈로 한 번 더 낸다.
-소개와 퀴즈는 합쳐서 1문항으로 센다.
-
-### 모드
-
-**Flashcard (reveal)**
-- 앞면: 이미지 + 표기
-- 탭 → 뒷면: 읽기 + 뜻 + 발음 버튼
-- 하단: `몰라요` / `알아요`
-- 개념에 이미지가 없어도 출제 가능하다 (표기만 크게 보여준다)
-
-**Image → Word (4지선다)**
-- 상단: 이미지
-- 하단: 표기 4개
-- **개념에 `image_path`가 있는 단어만 출제**한다. 없으면 플래시카드로만 노출된다
-- 오답 3개는 **같은 덱**에서 이미지가 있고 현재 언어에 단어가 존재하는 개념 중 무작위.
-  같은 덱에 4개가 안 되면 같은 언어 전체 풀로 넓힌다
-- 정답: 초록 테두리 → 400ms 후 자동으로 다음 문항
-- 오답: 고른 것은 빨강, 정답은 초록으로 표시하고 탭해야 다음으로 넘어간다
-
-### Home의 "오늘 복습 N개"
-
-`Progress`에서 계산만 한다. 별도 상태를 저장하지 않는다.
-
-- 오늘 복습 수 = `dueAt <= 오늘`인 카드 수 (최대 `SESSION_SIZE`로 표시)
-- 덱 진행률 = 그 덱 개념 중 현재 언어에 단어가 있고 `cards`에 존재하는 것 / 현재 언어에 단어가 있는 것
-
-localStorage가 없거나 깨졌으면 빈 진도로 초기화한다. 마이그레이션은 `version` 필드로 처리한다.
-
----
-
-## 7. 디자인
-
-### 톤
-
-**warm paper.** 생성 이미지의 배경(`#FAF6EF`)과 화면 배경을 가깝게 두어 이미지가 UI에 녹아들게 한다.
-이미지가 화면의 주인공이므로 카드 경계보다 이미지가 앞선다.
-
-### 토큰
-
-```css
-:root {
-  --bg:        #F4F1EC;  /* 화면 배경 */
-  --surface:   #FBF9F5;  /* 카드 */
-  --img-bg:    #FAF6EF;  /* 이미지 캔버스 = 생성 이미지 배경과 동일 */
-  --ink:       #1C1917;  /* 본문 */
-  --sub:       #8A8177;  /* 보조 텍스트 */
-  --line:      #E7E2DA;  /* 경계 */
-  --accent:    #C2410C;  /* CTA · 활성 탭 · 진행 바 */
-  --accent-fg: #FFF7ED;
-  --ok:        #4B7A57;  /* 정답 */
-  --err:       #B4472F;  /* 오답 */
-}
-```
-
-- 라운드: 카드 `14px`, 버튼 `12px`, 이미지 타일 `14px`
-- 그림자는 쓰지 않는다. 경계는 `--line` 1px로 표현한다
-- 이미지 타일 배경은 반드시 `--img-bg`. 이미지 자체 배경과 이어져 사각형 경계가 사라진다
-
-### 타이포
-
-- 본문·UI: 시스템 스택 + Pretendard
-- 일본어 표기: `system-ui` 폴백에 `"Hiragino Sans", "Noto Sans JP"` 추가
-- 표기는 항상 가장 큰 글자. 읽기와 뜻은 `--sub`
+`.images/`와 `.audio/`는 **gitignore**한다. Storage가 사실상의 원본 저장소다.
 
 ---
 
@@ -421,66 +451,76 @@ localStorage가 없거나 깨졌으면 빈 진도로 초기화한다. 마이그�
 | 프레임워크 | Next.js App Router | |
 | 언어 | TypeScript | |
 | 스타일 | Tailwind CSS | 토큰은 CSS 변수로 정의하고 Tailwind에서 참조 |
-| 컴포넌트 | shadcn/ui 최소 | `button` `card` `input` `tabs` `progress` `sonner` 만 |
+| 캐러셀 | `embla-carousel-react` | `axis: 'y'`. 잠금은 `reInit({ watchDrag: false })` |
+| 학습 스케줄 | `ts-fsrs` | FSRS v6. MIT, 의존성 0 |
+| 컴포넌트 | shadcn/ui 최소 | 피드 하나뿐이라 거의 쓰지 않는다 |
 | DB | Supabase PostgreSQL | anon `select`만 허용 |
 | 스토리지 | Supabase Storage | public read 버킷 |
 | 상태 | React 기본 | 진도·언어 설정은 `localStorage` 래퍼 훅 하나 |
 | PWA | manifest + 아이콘 | 서비스워커 없음 |
 
-### 렌더링 — 언어가 URL에 없을 때 정적 생성을 지키는 법
+### 렌더링
 
-언어가 클라이언트 설정이므로 서버는 렌더 시점에 학습 언어를 모른다. 쿠키를 읽어 동적 렌더링으로
-가면 정적 생성을 잃는다. 그래서 **개념 페이지에 전 언어의 단어를 함께 담아 정적으로 굽고,
-클라이언트가 현재 언어 하나만 표시**한다.
-
-```
-/banana  →  { concept, words: { ja: {...}, de: {...} } }  를 정적 생성
-            클라이언트가 localStorage의 언어(또는 ?lang=)로 하나를 골라 렌더
-```
-
-개념당 언어 8개여도 텍스트 몇 줄이라 페이로드가 사실상 늘지 않는다.
-
-- 단어 데이터는 **서버 컴포넌트에서 `supabase-js`로 직접 조회**한다. 클라이언트 번들에 Supabase 클라이언트와 키가 들어가지 않는다
-- `generateStaticParams`로 개념 상세를 미리 생성하고 `revalidate = 3600`
-- `/words`도 전 언어 단어를 담아 정적 생성하고 필터링은 클라이언트에서 한다
-- 세션 화면만 클라이언트 컴포넌트다. 진입 시 대상 개념 전체를 서버에서 한 번 받아 메모리에서 굴린다
-- 이미지는 `next/image` + Supabase Storage 도메인을 `remotePatterns`에 등록
-- 이미지 URL은 개념 slug만으로 결정되므로 언어를 바꿔도 이미지 캐시가 그대로 유지된다
-
-**감수하는 것**: 공유 링크를 열면 받는 사람의 설정 언어로 보인다. 언어를 고정해 공유하려면 `?lang=ja`를 붙인다.
+- 개념 + 전 언어 단어를 **한 번에 정적으로 굽고**, 클라이언트가 현재 언어 하나만 골라 쓴다.
+  언어가 URL에 없어도 정적 생성을 잃지 않는다.
+- 데이터는 **서버 컴포넌트에서 `supabase-js`로 직접 조회**한다.
+  클라이언트 번들에 Supabase 클라이언트와 키가 들어가지 않는다.
+- `revalidate = 3600`
+- 피드는 클라이언트 컴포넌트다. 진입 시 전체 단어를 한 번 받아 메모리에서 굴린다.
+  단어가 60개 수준이라 페이로드가 문제되지 않는다.
+- 이미지는 `next/image` + Supabase Storage 도메인을 `remotePatterns`에 등록.
+  이미지 URL은 개념 slug만으로 결정되므로 언어를 바꿔도 캐시가 유지된다.
+- **카드 마운트는 지연한다.** 미응답 퀴즈 다음 카드는 아예 렌더하지 않는다 —
+  잠금을 CSS가 아니라 DOM 구조로 거는 것이 훨씬 견고하다.
 
 ---
 
-## 9. 구현 순서
+## 9. 아직 정하지 않은 것
+
+구현 전에 답이 필요하다.
+
+| # | 항목 | 지금 상태 |
+|---|---|---|
+| 1 | 예약 거리 수치 (3 / 8 / 20 / 2장) | 제안치. 실사용 감각으로 조정 |
+| 2 | 쿨다운 K와 신선도 부스트 감쇠율 | 미정 |
+| 3 | 체류 시간을 `Rating.Hard`로 쓸지 | 보류. 지금은 2진 채점 |
+| 4 | 피드 소진 — 60단어를 다 소개하면 신규 15%를 뽑을 데가 없다 | 미정 |
+| 5 | 플레이스홀더 이미지 실물 | 코드 폴백만 있고 그림이 없다 |
+| 6 | 반복 오답 쌍을 confusion 카드로 잡을지 | v2 후보 |
+
+---
+
+## 10. 구현 순서
 
 각 단계는 그 자체로 확인 가능해야 한다.
 
-1. **셸** — Next.js·Tailwind·shadcn 최소 설치, 토큰 정의, 레이아웃, 하단 탭 3개(데스크톱 사이드), 빈 화면 3개
-2. **데이터** — Supabase 스키마 마이그레이션, `pnpm seed` + 검증, 덱 3개 × 개념 20개 작성 (일본어 표기 + `image_prompt`)
-3. **이미지** — `IMAGE_STYLE.md` 확정, `pnpm prompts` / `pnpm images`, 이미지 60장 생성·업로드
-4. **언어 컨텍스트** — `localStorage` 언어 훅, `?lang=` 오버라이드, 개념+전언어단어를 고르는 셀렉터
-5. **Words** — 그리드/리스트 전환, 검색, 개념 상세, 발음 버튼(+없을 때 토스트)
-6. **학습 엔진** — Leitner·세션 구성 로직과 그 단위 테스트
-7. **세션 화면** — Flashcard, Image→Word, 결과 화면
-8. **Home** — CTA, 덱 진행률
-9. **Learn** — 덱·모드 선택 자유 연습
-10. **마무리** — PWA manifest, 아이콘, 메타데이터, 배포
+1. **셸** — Next.js·Tailwind 설치, 토큰 정의(§brand-spec), 전체화면 피드 컨테이너
+2. **데이터** — Supabase 스키마 마이그레이션, `pnpm seed` + 검증, 개념 60개 작성
+3. **이미지** — `pnpm prompts` / `pnpm images`, 이미지 60장 + 플레이스홀더 생성·업로드
+4. **카드 3종** — 소개 / 재인 / 단서 회상 렌더러와 채점. 정적 배열로 먼저 굴린다
+5. **캐러셀** — embla `axis:'y'`, 지연 마운트, 퀴즈 잠금
+6. **학습 엔진** — `ts-fsrs` 연결, rung 이동, 예약 큐, 가중 샘플러 + 단위 테스트
+7. **발음** — 오디오 생성·업로드, 버튼 활성화 규칙
+8. **마무리** — PWA manifest, 아이콘, 메타데이터, 배포
 
-3단계까지 끝나면 콘텐츠가 확보되므로, 5단계부터는 실제 데이터로 개발한다.
+3단계까지 끝나면 콘텐츠가 확보되므로, 4단계부터는 실제 데이터로 개발한다.
+
+동작 참고 구현은 [lingo-feed-prototype.html](lingo-feed-prototype.html)에 있다.
 
 ---
 
-## 10. 확장 경로
+## 11. 확장 경로
 
 지금 만들지 않지만 구조가 막지 않아야 하는 것들.
 
 | 시점 | 추가 | 영향 |
 |---|---|---|
-| 2번째 언어 | 각 개념의 `words`에 언어 블록 추가 + `pnpm seed` | **이미지 재생성 없음.** 발음만 새로 생성. 언어 전환 UI 추가 |
-| 로그인 | Supabase Auth + `learning_records` | 기존 `localStorage` 진도를 최초 로그인 시 서버로 올리는 1회 마이그레이션 |
-| 언어 종속 덱 (JLPT 등) | `decks.language` nullable 컬럼 | null이면 전 언어 공용, 값이 있으면 그 언어 전용 |
-| 학습 모드 추가 | 세션 엔진의 (문제면, 정답면) 파라미터화 | 화면 컴포넌트만 추가 |
+| 2번째 언어 | 각 개념의 `words`에 언어 블록 + `LANG` 항목 추가 | **이미지 재생성 없음.** 발음만 새로 생성 |
+| 한자 트랙 | `LANG.ja` 옆에 `answer: 'term'` 전략 추가 | 같은 개념을 두 트랙으로 각각 외운다. 진도 키만 분리 |
+| 단어장 화면 | 라우트 추가 + 상단 탭 | 진도 시각화가 여기로 들어온다 |
+| 설정 화면 | 라우트 추가 | 음소거, 학습 대상 전환 |
+| 로그인 | Supabase Auth + `learning_records` | 기존 `localStorage` 진도를 최초 로그인 시 1회 마이그레이션 |
+| 카드 타입 추가 | rung 테이블에 행 추가 | 렌더러 컴포넌트만 추가 |
 | 예문 | `sentences` 테이블 + `word_id` FK | 언어별이므로 개념이 아니라 단어에 붙는다 |
 | 문법·회화 | `grammar_points`, `conversations` + 단어 연결 테이블 | 단어가 허브가 되는 구조 |
-| 다의어 | `word_senses` 분리 | 개념 분리로 상당 부분 이미 해소됨 |
-| 앱 내 이미지 생성 | OpenAI Images API | 파이프라인이 이미 프롬프트를 개념에 분리 보관하므로 그대로 재사용 |
+| 앱 내 이미지 생성 | OpenAI Images API | 프롬프트를 개념에 분리 보관하므로 그대로 재사용 |
