@@ -133,7 +133,7 @@
 | Selected | `--accent` 경계 + `--pick` 배경 |
 | Correct | `--ok` 경계 + `--ok-soft` 배경 + `--ok` 글자 |
 | Wrong | 고른 것 `--err` 계열, **동시에 정답에 `--ok` 계열** |
-| Disabled (발음) | `opacity: .32`, `cursor: default`. 사라지지 않는다 — 위치가 흔들리면 안 된다 |
+| Disabled (발음) | **아이콘만** 흐려진다(`--sub` 45%). 테두리와 배경은 그대로 둔다 — 버튼이 사라지면 위치가 흔들린다. 버튼 전체에 투명도를 걸면 `--surface`가 `--img-bg`와 거의 같아 증발한다 |
 | Locked (피드) | 다음 카드를 **DOM에 마운트하지 않는다.** CSS로 막지 않는다 |
 
 답한 뒤에는 보기 전체가 `pointer-events: none`이 된다. 두 번 답할 수 없다.

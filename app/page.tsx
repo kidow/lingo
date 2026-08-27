@@ -1,37 +1,43 @@
-import { CardBody, Cue, Feed, FeedCard, ImageTile } from '@/components/feed'
+import { Card } from '@/components/cards'
+import { Feed } from '@/components/feed'
 import { entriesFor } from '@/lib/content'
-import { asideOf, DEFAULT_LANGUAGE } from '@/lib/lang'
+import { DEFAULT_LANGUAGE } from '@/lib/lang'
+import { buildBlank, buildChoice, buildIntro, canBlank, type Question } from '@/lib/quiz'
 
 /**
- * 2단계 — 타입과 로더.
+ * 3단계 — 카드 3종.
  *
- * 카드 3종은 3단계에서 붙인다. 지금 확인할 것은 데이터가 흐르는지다.
- *   1. content/*.json이 빌드 시점에 로드되는가
- *   2. LANG 전략대로 읽기가 정답 자리에 오는가
- *   3. 참고줄에서 정답과 겹치는 값이 빠지는가 (`バナナ`)
+ * 순서를 여기서 손으로 짠다. 무엇을 언제 꽂을지 정하는 건 5단계(학습 엔진)다.
+ * 지금은 세 렌더러와 채점이 제대로 도는지만 본다.
  */
 export default function Page() {
   const lang = DEFAULT_LANGUAGE
   const entries = entriesFor(lang)
+  const by = (slug: string) => entries.find((e) => e.concept.slug === slug)
+
+  const questions: Question[] = []
+  const push = (q: Question | undefined) => q && questions.push(q)
+
+  const intro = by('banana')
+  if (intro) push(buildIntro(intro))
+
+  const choice = by('cat')
+  if (choice) push(buildChoice(choice, entries))
+
+  // 정답이 한 글자면 뚫을 자리가 없다. 그런 단어는 재인 칸에 머문다
+  const blank = by('clock')
+  if (blank) push(canBlank(blank) ? buildBlank(blank) : buildChoice(blank, entries))
+
+  const choice2 = by('bread')
+  if (choice2) push(buildChoice(choice2, entries))
+
+  const blank2 = by('banana')
+  if (blank2 && canBlank(blank2)) push(buildBlank(blank2))
 
   return (
     <Feed>
-      {entries.map(({ concept, word, answer }) => (
-        <FeedCard key={concept.slug}>
-          <ImageTile>
-            <div className="grid h-full place-items-center text-sm text-sub">{concept.slug}</div>
-          </ImageTile>
-
-          <CardBody>
-            <p className="text-center font-jp text-4xl font-bold">{answer}</p>
-            <p className="text-center text-lg font-semibold">{concept.meaning_ko}</p>
-            <p className="text-center font-jp text-sm text-sub">
-              {asideOf(word, lang).join(' · ')}
-            </p>
-          </CardBody>
-
-          <Cue>위로 밀어 다음</Cue>
-        </FeedCard>
+      {questions.map((question, i) => (
+        <Card key={`${question.entry.concept.slug}-${question.kind}-${i}`} question={question} lang={lang} first={i === 0} />
       ))}
     </Feed>
   )
