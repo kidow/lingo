@@ -1,109 +1,172 @@
 # Lingo 브랜드 명세
 
-Quizlet의 학습 구조와 단일 강조색 원칙을 Lingo의 개인용 일본어 단어장에 맞게 적용한다. 화면은 빠르게 훑고 바로 복습할 수 있어야 하며, 친근하지만 유아적으로 보이지 않아야 한다.
+화면이 하나뿐인 세로 피드의 시각 규칙. 제품 결정은 [spec.md](spec.md), 이미지 생성 규칙은
+[IMAGE_STYLE.md](IMAGE_STYLE.md)에 있다. 이 문서는 **색·형태·타이포·상태**만 다룬다.
 
 ## 기반 원칙
 
-- 모바일 우선. 콘텐츠 레일은 모든 화면에서 최대 `560px`로 중앙 고정한다.
-- 공통 상단 헤더를 두지 않는다. 주요 화면 탐색은 하단 탭 3개로 유지한다.
-- 페이지 캔버스, 흰 학습 표면, 단일 Iris 강조색의 3단 위계를 사용한다.
-- 파스텔은 오늘의 학습이나 학습 모드처럼 큰 기능 영역에만 쓴다. 버튼·입력·일반 본문에는 확장하지 않는다.
-- 이미지 스프라이트의 따뜻한 배경은 학습 대상 자체의 시각적 구분을 위해 유지한다.
+- **이미지가 주인공이다.** 카드 경계보다 그림이 앞선다.
+- **따뜻한 종이 위에 파란 볼펜.** 바탕은 생성 이미지와 같은 계열의 warm off-white,
+  강조는 채도 높은 Iris 하나. 이미지는 배경에 녹아 사각형 경계가 사라지고,
+  선택·정답·오답만 튄다.
+- 모바일 우선. 카드 레일은 최대 `480px`로 중앙 고정한다.
+- **상단 헤더도 하단 탭도 없다.** 화면에 있는 것은 카드뿐이다.
+- 하단 여백은 장식이 아니라 **"다음 장이 있다"는 신호**다. 무엇으로도 채우지 않는다.
+- 엄지 사정권(화면 하단)에 탭 대상을 두지 않는다. 스와이프 경로와 겹쳐 오터치가 난다.
 
 ## 핵심 토큰
 
 ```css
 :root {
-  --bg: #f6f7fb;
-  --surface: #ffffff;
-  --surface-tint: #edefff;
-  --surface-accent: #dbdfff;
+  /* 바탕 — warm paper */
+  --bg:        #F4F1EC;  /* 화면 배경 */
+  --surface:   #FBF9F5;  /* 보기 버튼, 후보 글자 */
+  --img-bg:    #FAF6EF;  /* 이미지 캔버스 = 생성 이미지 배경과 동일 */
 
-  --fg: #282e3e;
-  --fg-secondary: #2e3856;
-  --muted: #586380;
-  --placeholder: #6f7892;
-  --border: #d9dde8;
+  --ink:       #1C1917;  /* 본문 */
+  --sub:       #8A8177;  /* 보조 텍스트 */
+  --line:      #E7E2DA;  /* 경계 */
 
-  --accent: #4255ff;
-  --accent-hover: #3347e8;
-  --accent-active: #2638c9;
-  --focus: #1f33d4;
-  --accent-fg: #ffffff;
+  /* 강조 — Iris */
+  --accent:    #4255ff;
+  --accent-fg: #FFFFFF;
+  --pick:      #EDEFFF;  /* 선택 상태 배경 */
+  --focus:     #1F33D4;
 
-  --ok: #168b64;
-  --ok-soft: #e8f7f1;
-  --err: #c83b4c;
-  --err-soft: #fff0f2;
+  /* 판정 */
+  --ok:        #168B64;
+  --ok-soft:   #E8F7F1;
+  --err:       #C83B4C;
+  --err-soft:  #FFF0F2;
 
-  --img-bg: #fbf7ef;
   --gap-xs: 8px;
-  --gap-sm: 12px;
-  --gap-md: 16px;
-  --gap-lg: 24px;
-  --gap-xl: 40px;
+  --gap-sm: 10px;
+  --gap-md: 14px;
+  --gap-lg: 18px;
+  --gap-xl: 22px;
 
-  --radius-control: 8px;
-  --radius-card: 12px;
-  --radius-feature: 24px;
-  --radius-pill: 200px;
-
-  --shadow-sm: 0 2px 4px rgba(40, 46, 62, .08);
-  --shadow-md: 0 8px 24px rgba(40, 46, 62, .09);
+  --radius-card: 14px;  /* 이미지 타일 */
+  --radius-ctrl: 12px;  /* 보기 버튼, 후보 글자 */
+  --radius-pill: 200px; /* 발음 버튼 */
 }
 ```
 
-## 글꼴
-
-- 한국어/UI: `"Avenir Next", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif`
-- 일본어: `"Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif`
-- 단일 산세리프 체계에서 400·600·700 굵기만 사용한다.
-- 기본 본문은 16px 이상, 줄높이 1.5 전후를 유지한다.
-- 일본어 단어는 가장 크게 두되 한글·가나에 강한 음수 자간을 적용하지 않는다.
-- 학습 수치와 진행 번호에는 `font-variant-numeric: tabular-nums`를 사용한다.
-
-## 표면과 형태
-
-- AppShell: `width: min(100%, 560px)`. 데스크톱에서는 바깥 캔버스와 얕은 그림자로 레일을 구분한다.
-- 일반 카드: 흰 표면, 1px Mist 경계, 12px 반경.
-- 기능 카드: Lilac Wash 또는 Feature Pastel, 24px 반경. 화면당 한두 개로 제한한다.
-- 검색창과 주요 버튼: 200px pill. 일반 선택지와 답안은 8px 반경을 사용한다.
-- 카드 내부 간격은 16–24px, 주요 섹션 간격은 모바일 40px을 기본으로 한다.
-- 그림자는 목록 전체가 아니라 클릭 가능한 핵심 카드와 학습 카드에만 사용한다.
+`--img-bg`는 IMAGE_STYLE.md의 `STYLE_PROMPT`가 못 박은 값이다. **바꾸려면 이미지를 전부 다시 만들어야 한다.**
 
 ## 색상 역할
 
-- `#4255ff`: 화면당 단일 주요 행동, 현재 위치, 진행률, 선택 상태.
-- `#282e3e`: 제목과 본문.
-- `#586380`: 보조 설명과 메타데이터. 핵심 정보에는 쓰지 않는다.
-- `#d9dde8`: 구조 경계. 선택이나 focus를 이 색만으로 표현하지 않는다.
-- 성공과 오류는 색상과 함께 문구·아이콘·정답 노출을 병행한다.
+| 색 | 쓰는 곳 |
+|---|---|
+| `#4255ff` | 선택 상태, 빈칸 밑줄, 채운 글자, 잠금 상태의 안내 문구, focus |
+| `#1C1917` | 읽기·뜻 등 본문 |
+| `#8A8177` | 한자·로마자 참고줄, 하단 안내 문구 |
+| `#E7E2DA` | 보기 버튼과 이미지 타일의 경계 |
+| `#168B64` / `#C83B4C` | 정답 / 오답 |
+
+- **그림자를 쓰지 않는다.** 경계는 `--line` 1px로만 표현한다. 그림자는 warm paper의 평면감을 깬다.
+- 파스텔을 확장하지 않는다. 화면에 파랑이 나타나는 순간은 **사용자가 무언가를 골랐을 때뿐**이어야 한다.
+- 정답·오답은 색과 함께 **테두리 + 정답 자동 노출**을 병행한다. 색만으로 전달하지 않는다.
+
+## 글꼴
+
+```css
+--font-body: "Avenir Next", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+--font-jp:   "Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+```
+
+- 400·600·700 세 굵기만 쓴다.
+- **읽기(かな)가 항상 가장 크다.** 학습 대상이기 때문이다.
+- 한자와 로마자는 `--sub` 색의 작은 참고줄로 내린다. 절대 강조하지 않는다.
+- 한글·가나에 강한 음수 자간을 주지 않는다.
+
+| 요소 | 크기 |
+|---|---|
+| 소개 카드 읽기 | `clamp(34px, 10vw, 42px)` / 700 |
+| 뜻 | 19px / 600 |
+| 참고줄 (한자·로마자) | 13.5px / 400 / `--sub` |
+| 보기 버튼 | 22px / 600 |
+| 빈칸 슬롯 | 38px / 700 |
+| 후보 글자 | 22px / 600 |
+| 하단 안내 문구 | 12px / 400 |
+
+표기와 읽기가 같은 단어(`バナナ`)는 **참고줄에서 표기를 뺀다.** 같은 글자를 두 번 보여주지 않는다.
+
+## 표면과 형태
+
+- **AppShell** — 전체화면. 카드는 `width: 100%; max-width: 480px; margin-inline: auto`.
+- **이미지 타일** — 정사각. `--img-bg` 배경, `--radius-card`.
+  높이가 화면을 넘지 않도록 `width: min(100%, 48dvh)`로 가둔다.
+- **보기 버튼 / 후보 글자** — `--surface` 배경, `--line` 1px, `--radius-ctrl`.
+- 카드 내부 간격 `--gap-lg`, 카드 패딩 `22px 20px 18px`.
+- 모든 터치 대상은 최소 **44×44px**.
+
+## 컴포넌트
+
+| 컴포넌트 | 규칙 |
+|---|---|
+| **FeedCard** | 화면 하나를 꽉 채운다. 골격은 이미지 → 본문 → 하단 안내 3단 고정 |
+| **ImageTile** | 정사각. 배경이 생성 이미지 배경과 같아 경계가 사라진다 |
+| **SayButton** | 이미지 **우측 하단 고정**. 44px 원형. 카드 종류가 바뀌어도 위치가 흔들리지 않는다 |
+| **IntroBody** | 읽기(크게) → 뜻 → 참고줄. 판정 없음 |
+| **ChoiceGrid** | 2×2. 보기 최소 높이 72px. **문항 지시문을 넣지 않는다** |
+| **BlankSlots** | 읽기를 글자 단위로 늘어놓고 한 칸만 `--accent` 밑줄. 채우면 글자가 `--accent`로 나타난다 |
+| **KeyRow** | 후보 글자 4개. OS 키보드를 쓰지 않는다 |
+| **RevealLine** | 답한 뒤에만 나타나는 `뜻 · 한자` 한 줄 |
+| **Cue** | 하단 한 줄. 잠금 중에는 `--accent` 600, 해제되면 `--sub` 400 |
+
+### Cue 문구
+
+| 상태 | 문구 | 색 |
+|---|---|---|
+| 소개 카드 | `위로 밀어 다음` | `--sub` |
+| 미응답 4지선다 | `답을 고르세요` | `--accent` |
+| 미응답 빈칸 | `빠진 글자를 채우세요` | `--accent` |
+| 답한 뒤 | `위로 밀어 다음` | `--sub` |
 
 ## 상태 규칙
 
-- Hover: fine pointer에서만 배경 또는 경계를 짧게 변화시킨다.
-- Focus: `#1f33d4` 3px 외곽선과 2–3px 간격을 사용한다.
-- Active: 버튼은 `#2638c9`와 `scale(.98)`로 즉시 반응한다.
-- Selected: Iris 경계, 연한 Lilac 배경, 라디오 점을 함께 사용한다.
-- Disabled: 투명도만 낮추지 않고 포인터를 제거하며 기존 문맥은 읽을 수 있게 유지한다.
-- Correct / Wrong: 녹색·빨강 배경과 경계, 정답 자동 노출을 함께 사용한다.
-- 모든 터치 대상은 최소 44×44px을 확보한다.
+| 상태 | 표현 |
+|---|---|
+| Hover | fine pointer에서만. 경계를 `--accent`로 짧게 |
+| Focus | `--focus` 3px 외곽선, 2–3px 간격 |
+| Active | `transform: scale(.985)`, 100ms |
+| Selected | `--accent` 경계 + `--pick` 배경 |
+| Correct | `--ok` 경계 + `--ok-soft` 배경 + `--ok` 글자 |
+| Wrong | 고른 것 `--err` 계열, **동시에 정답에 `--ok` 계열** |
+| Disabled (발음) | `opacity: .32`, `cursor: default`. 사라지지 않는다 — 위치가 흔들리면 안 된다 |
+| Locked (피드) | 다음 카드를 **DOM에 마운트하지 않는다.** CSS로 막지 않는다 |
 
-## 컴포넌트 규칙
+답한 뒤에는 보기 전체가 `pointer-events: none`이 된다. 두 번 답할 수 없다.
 
-- BottomNav: 홈·단어·연습 3개. 현재 항목은 Iris 색, 굵기, 상단 3px 표식으로 구분한다.
-- ReviewCTA: 복습량·새 단어·예상 시간과 단일 시작 버튼을 Lilac 기능 카드에 묶는다.
-- DeckCard: 대표 이미지, 제목, 학습 수치, Iris 진행률을 한 표면에 담는다.
-- WordTile / WordRow: 같은 데이터를 그리드와 목록으로 전환한다.
-- SearchField / SegmentedControl: 단어 화면 안에서만 검색과 보기 방식을 바꾼다.
-- PronunciationButton / Toast: 발음 행동은 항상 보이고, 준비되지 않은 상태를 한국어로 알린다.
-- StudyCard / ChoiceButton / SessionProgress: 플래시카드와 4지선다를 같은 학습 셸에서 처리한다.
-- Result: 기억한 단어와 다시 볼 단어를 숫자와 레이블로 나누고, 다음 복습 행동을 설명한다.
+## 모션
 
-## 모션과 접근성
+- 누름 피드백 100–150ms. 상태 전환 120ms.
+- **자동 스크롤이 없다.** 정답이든 오답이든 다음 장으로 넘기는 것은 항상 사용자다.
+- 이동은 `transform`과 `opacity`만 쓴다.
+- 세로 스냅은 `scroll-snap-type: y mandatory` + `scroll-snap-stop: always`.
+  실제 구현은 embla `axis: 'y'`.
 
-- 누름 피드백은 100–150ms, 화면 전환은 200–300ms로 제한한다.
-- 이동은 transform과 opacity만 사용한다.
-- `prefers-reduced-motion: reduce`에서 전환 시간을 사실상 제거한다.
-- placeholder는 레이블 대체 수단으로 쓰지 않는다. 검색 입력에는 접근 가능한 이름을 제공한다.
-- 색상만으로 현재 위치, 선택, 정오답을 전달하지 않는다.
+```css
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .feed { scroll-behavior: auto; }
+}
+```
+
+## 접근성
+
+- 모든 터치 대상 44×44px 이상.
+- 색만으로 정답·오답·선택을 전달하지 않는다 — 테두리 굵기와 정답 자동 노출을 함께 쓴다.
+- 발음 버튼에 접근 가능한 이름을 준다: `aria-label="ねこ 발음 듣기"`.
+- 이미지 `alt`는 한국어 뜻을 쓴다.
+- 버튼에 `user-select: none`, `-webkit-tap-highlight-color: transparent`.
+  탭할 때 글자가 선택되어 파랗게 반전되면 정답 하이라이트와 헷갈린다.
+- 잠금 상태를 색으로만 알리지 않는다. Cue 문구가 무엇을 해야 하는지 말한다.
+
+## 참고
+
+동작하는 구현은 [lingo-feed-prototype.html](lingo-feed-prototype.html)에 있다.
+
+프로토타입은 색·형태·컴포넌트 규칙을 그대로 따르지만 **아직 반영되지 않은 것이 둘 있다** —
+`--focus` 외곽선 스타일과 간격 토큰(`--gap-*`)이다. 프로토타입은 간격을 리터럴로 쓰고 있고
+키보드 포커스 링을 브라우저 기본값에 맡긴다. 본 구현에서는 이 문서를 따른다.
