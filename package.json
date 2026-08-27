@@ -9,12 +9,14 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "check": "node scripts/check.ts",
-    "image": "node scripts/image.ts"
+    "image": "node scripts/image.ts",
+    "test": "node --test \"lib/*.test.ts\""
   },
   "dependencies": {
     "next": "^16.3.3",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "ts-fsrs": "^5.4.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",

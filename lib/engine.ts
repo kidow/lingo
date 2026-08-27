@@ -1,0 +1,266 @@
+import { fsrs, Rating } from 'ts-fsrs'
+import type { Entry } from './entries.ts'
+import {
+  RUNG_BLANK,
+  RUNG_CHOICE,
+  RUNG_INTRO,
+  RUNG_MAX,
+  emptyProgress,
+  freshCard,
+  storeCard,
+  type CardState,
+  type Progress,
+  type Rung,
+} from './progress.ts'
+import { buildBlank, buildChoice, buildIntro, canBlank, type Question } from './quiz.ts'
+
+/**
+ * 학습 엔진. (spec.md §6)
+ *
+ * 두 층으로 나뉜다.
+ *   시간 층 — 이 카드를 오늘 꺼낼까 2주 뒤에 꺼낼까. ts-fsrs가 맡는다
+ *   피드 층 — 지금 이 자리에서 몇 장 뒤에 다시 꽂을까. 여기서 맡는다
+ *
+ * FSRS의 망각곡선은 일 단위다. 방금 맞힌 카드를 3분 뒤에 물으면 회상확률이
+ * 거의 안 떨어져 가중치가 0에 가깝다. 한 번 앉아서 스와이프하는 동안의
+ * 재등장은 FSRS가 못 정하므로 예약 큐가 대신한다.
+ *
+ * 모든 함수는 순수하다. 난수와 시각을 주입받아 테스트 가능하게 둔다.
+ */
+
+/** 답한 카드를 몇 장 뒤에 다시 꽂을까 */
+export const DISTANCE = {
+  intro: 3,
+  correct: 8,
+  /** 연속 2회 이상 맞히면 더 멀리 */
+  streak: 20,
+  wrong: 2,
+} as const
+
+/** 매 카드마다 이 확률로 새 단어를 꽂는다. 조건부가 아니라 고정 비율이다 */
+export const NEW_RATE = 0.15
+/** 최근 이만큼은 다시 뽑지 않는다 */
+export const COOLDOWN = 5
+/** 갓 소개한 단어에 주는 가중치 가산점과 감쇠 반감기(ms) */
+export const FRESH_BOOST = 1.5
+export const FRESH_HALFLIFE = 10 * 60 * 1000
+
+const scheduler = fsrs()
+
+export type EngineState = {
+  progress: Progress
+  /** 지금까지 낸 카드 수 */
+  cursor: number
+  /** slug → 이 cursor에 다시 낸다 */
+  reservations: Record<string, number>
+  /** 최근에 낸 slug들. 앞이 오래된 것 */
+  recent: string[]
+}
+
+export const initialState = (progress: Progress = emptyProgress()): EngineState => ({
+  progress,
+  cursor: 0,
+  reservations: {},
+  recent: [],
+})
+
+export type Rng = () => number
+export type Clock = () => number
+
+/* ── 뽑기 ────────────────────────────────────────────────────────── */
+
+/**
+ * 다음 카드를 고른다.
+ *
+ *   1. 예약이 도래한 카드가 있으면 그것
+ *   2. 없으면 NEW_RATE 확률로 아직 안 본 단어
+ *   3. 나머지는 (1 - 회상확률) 가중 추출. 최근 COOLDOWN장은 제외
+ *
+ * 낼 게 없으면 null. 단어가 0개일 때만 일어난다.
+ */
+export function pickNext(
+  state: EngineState,
+  entries: Entry[],
+  rng: Rng,
+  now: number,
+): Entry | null {
+  if (entries.length === 0) return null
+
+  const bySlug = new Map(entries.map((e) => [e.concept.slug, e]))
+
+  // 1. 예약 도래 — 가장 오래 기다린 것부터
+  const due = Object.entries(state.reservations)
+    .filter(([slug, at]) => at <= state.cursor && bySlug.has(slug))
+    .sort((a, b) => a[1] - b[1])
+  if (due.length > 0) return bySlug.get(due[0][0]) ?? null
+
+  // 쿨다운이 단어 수보다 크면 후보가 전멸해 방금 낸 카드를 또 내게 된다.
+  // 풀 크기에 맞춰 줄여 항상 최소 한 장은 남긴다
+  const cooldown = Math.min(COOLDOWN, Math.max(entries.length - 1, 0))
+  const recent = new Set(state.recent.slice(state.recent.length - cooldown))
+  const fresh = (e: Entry) => !recent.has(e.concept.slug)
+
+  const unseen = entries.filter((e) => !state.progress.cards[e.concept.slug] && fresh(e))
+  const seen = entries.filter((e) => state.progress.cards[e.concept.slug] && fresh(e))
+
+  // 2. 신규 유입은 고정 비율이다. 복습이 끝나기를 기다리지 않는다 —
+  //    노벨티를 조건부로 미루면 피드가 굳는다
+  if (unseen.length > 0 && (seen.length === 0 || rng() < NEW_RATE)) {
+    return unseen[Math.floor(rng() * unseen.length)]
+  }
+
+  // 3. 가중 추출
+  if (seen.length > 0) return weightedPick(seen, state.progress, rng, now)
+  if (unseen.length > 0) return unseen[Math.floor(rng() * unseen.length)]
+
+  // 쿨다운에 전부 걸렸다. 그중 가장 오래된 것을 낸다
+  const oldest = entries.find((e) => e.concept.slug === state.recent[0])
+  return oldest ?? entries[Math.floor(rng() * entries.length)]
+}
+
+/** 회상확률이 낮을수록, 갓 소개한 것일수록 자주 나온다 */
+function weightedPick(pool: Entry[], progress: Progress, rng: Rng, now: number): Entry {
+  const weights = pool.map((entry) => weightOf(entry, progress, now))
+  const total = weights.reduce((sum, w) => sum + w, 0)
+  if (total <= 0) return pool[Math.floor(rng() * pool.length)]
+
+  let roll = rng() * total
+  for (let i = 0; i < pool.length; i += 1) {
+    roll -= weights[i]
+    if (roll <= 0) return pool[i]
+  }
+  return pool[pool.length - 1]
+}
+
+export function weightOf(entry: Entry, progress: Progress, now: number): number {
+  const slug = entry.concept.slug
+  const card = progress.cards[slug]
+  if (!card) return 1
+
+  const retrievability = scheduler.get_retrievability(card.fsrs, new Date(now), false)
+  // 잊었을 확률이 곧 가중치다. 완전히 잊은 것도 0이 되지 않게 바닥을 둔다
+  let weight = Math.max(1 - retrievability, 0.02)
+
+  // 갓 소개한 단어는 한동안 자주 나오다 서서히 정상 주기로 편입된다
+  const introduced = progress.introducedAt[slug]
+  if (introduced) {
+    const age = Math.max(now - introduced, 0)
+    weight += FRESH_BOOST * Math.pow(0.5, age / FRESH_HALFLIFE)
+  }
+  return weight
+}
+
+/* ── 문항 만들기 ─────────────────────────────────────────────────── */
+
+/** rung이 카드 종류를 정한다. 빈칸을 못 만드는 단어는 재인 칸에 머문다 */
+export function questionFor(entry: Entry, state: EngineState, entries: Entry[]): Question {
+  const card = state.progress.cards[entry.concept.slug]
+  const rung: Rung = card?.rung ?? RUNG_INTRO
+  const attempt = card?.fsrs.reps ?? 0
+
+  if (rung === RUNG_INTRO) return buildIntro(entry)
+  if (rung === RUNG_BLANK && canBlank(entry)) return buildBlank(entry, attempt)
+  return buildChoice(entry, entries, attempt)
+}
+
+/** 뽑기 + 문항 만들기 + 낸 것으로 기록. 상태를 새로 만들어 돌려준다 */
+export function nextQuestion(
+  state: EngineState,
+  entries: Entry[],
+  rng: Rng,
+  now: number,
+): { question: Question; state: EngineState } | null {
+  const entry = pickNext(state, entries, rng, now)
+  if (!entry) return null
+
+  const question = questionFor(entry, state, entries)
+  const slug = entry.concept.slug
+
+  const reservations = { ...state.reservations }
+  delete reservations[slug]
+
+  return {
+    question,
+    state: {
+      ...state,
+      cursor: state.cursor + 1,
+      reservations,
+      recent: [...state.recent, slug].slice(-COOLDOWN),
+    },
+  }
+}
+
+/* ── 기록 ────────────────────────────────────────────────────────── */
+
+/**
+ * 소개 카드를 지나갔다. 넘기는 순간 학습으로 인정한다.
+ * 판정이 없으므로 FSRS 등급을 매기지 않고 카드만 만든다.
+ */
+export function recordIntro(state: EngineState, slug: string, now: number): EngineState {
+  const existing = state.progress.cards[slug]
+
+  // 강등돼 rung 0으로 내려온 카드도 소개를 지나가면 다시 재인 칸으로 올라간다.
+  // 여기서 멈추면 그 단어는 소개 카드로 영원히 맴돈다 — 실제로 맴돌았다.
+  const card = existing ?? { rung: RUNG_INTRO, streak: 0, fsrs: freshCard(new Date(now)) }
+
+  return {
+    ...state,
+    progress: {
+      ...state.progress,
+      cards: { ...state.progress.cards, [slug]: { ...card, rung: RUNG_CHOICE } },
+      // 신선도 부스트는 진짜 처음 본 시각을 쓴다. 다시 만난 것은 새것이 아니다
+      introducedAt: existing
+        ? state.progress.introducedAt
+        : { ...state.progress.introducedAt, [slug]: now },
+    },
+    reservations: { ...state.reservations, [slug]: state.cursor + DISTANCE.intro },
+  }
+}
+
+/**
+ * 퀴즈에 답했다.
+ *
+ * 정답 → rung +1 (최대 2), streak +1, Rating.Good
+ * 오답 → rung -1 (최소 0), streak 0, Rating.Again
+ *
+ * 오답은 한 칸만 내린다. 바닥까지 떨어뜨리면 승률이 무너지고,
+ * 승률이 무너지면 무한 스와이프의 동력이 끊긴다.
+ */
+export function recordAnswer(
+  state: EngineState,
+  slug: string,
+  correct: boolean,
+  now: number,
+): EngineState {
+  const previous = state.progress.cards[slug]
+  const base: CardState = previous ?? {
+    rung: RUNG_CHOICE,
+    streak: 0,
+    fsrs: freshCard(new Date(now)),
+  }
+
+  const graded = scheduler.next(base.fsrs, new Date(now), correct ? Rating.Good : Rating.Again)
+
+  const rung = (
+    correct ? Math.min(base.rung + 1, RUNG_MAX) : Math.max(base.rung - 1, RUNG_INTRO)
+  ) as Rung
+  const streak = correct ? base.streak + 1 : 0
+
+  const distance = !correct
+    ? DISTANCE.wrong
+    : streak >= 2
+      ? DISTANCE.streak
+      : DISTANCE.correct
+
+  return {
+    ...state,
+    progress: {
+      ...state.progress,
+      cards: {
+        ...state.progress.cards,
+        [slug]: { rung, streak, fsrs: storeCard(graded.card) },
+      },
+    },
+    reservations: { ...state.reservations, [slug]: state.cursor + distance },
+  }
+}
