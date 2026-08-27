@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "check": "node scripts/check.ts"
+    "check": "node scripts/check.ts",
+    "image": "node scripts/image.ts"
   },
   "dependencies": {
     "next": "^16.3.3",
@@ -20,6 +21,7 @@
     "@types/node": "^26.4.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   }
