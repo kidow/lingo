@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/**
+ * 디자인 토큰 — brand-spec.md가 단일 진실 소스다.
+ *
+ * Tailwind v4는 네임스페이스 접두사로 유틸리티를 만든다. 그래서 문서의
+ * `--bg`는 여기서 `--color-bg`가 되고 `bg-bg` 유틸리티로 나온다.
+ * 값은 문서와 1:1로 같다. 색을 바꾸려면 문서를 먼저 고친다.
+ */
+@theme {
+  /* 바탕 — warm paper */
+  --color-bg: #f4f1ec;
+  --color-surface: #fbf9f5;
+  --color-img-bg: #faf6ef; /* IMAGE_STYLE.md가 못 박은 값. 바꾸면 이미지 전체 재생성 */
+
+  --color-ink: #1c1917;
+  --color-sub: #8a8177;
+  --color-line: #e7e2da;
+
+  /* 강조 — Iris */
+  --color-accent: #4255ff;
+  --color-accent-fg: #ffffff;
+  --color-pick: #edefff;
+  --color-focus: #1f33d4;
+
+  /* 판정 */
+  --color-ok: #168b64;
+  --color-ok-soft: #e8f7f1;
+  --color-err: #c83b4c;
+  --color-err-soft: #fff0f2;
+
+  /* 간격 — 문서의 --gap-* 가 여기서는 --spacing-* 다 */
+  --spacing-xs: 8px;
+  --spacing-sm: 10px;
+  --spacing-md: 14px;
+  --spacing-lg: 18px;
+  --spacing-xl: 22px;
+
+  /* 형태 */
+  --radius-card: 14px;
+  --radius-ctrl: 12px;
+  --radius-pill: 200px;
+
+  /* 글꼴 */
+  --font-body: "Avenir Next", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-jp: "Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    /* 페이지 자체는 스크롤하지 않는다. 스크롤은 피드가 가진다. */
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  /* 탭할 때 글자가 선택되어 파랗게 반전되면 정답 하이라이트와 헷갈린다 */
+  button {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
