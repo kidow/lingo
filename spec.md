@@ -69,7 +69,7 @@
 
 - v1은 **로그인 없음**. 익명 사용.
 - 학습 진도와 학습 언어 설정은 브라우저 `localStorage`에만 저장한다.
-- 서버 쪽 쓰기 경로가 v1에는 존재하지 않는다. Supabase는 읽기 전용으로 쓴다.
+- **서버가 없다.** 콘텐츠는 레포에 정적으로 들어가고 빌드 시점에 번들된다 (§4).
 
 ---
 
@@ -82,8 +82,10 @@
 | 덱 (`decks`, `deck_concepts`) | 피드가 전체 단어를 섞는다. 고를 게 없다 |
 | Leitner 5상자 | 날짜 기반 상자 스케줄을 피드 모델로 대체 (§6) |
 | 자가판정 ("알아요 / 몰라요") | 객관적으로 채점되는 카드만 남긴다 |
+| 데이터베이스 (Supabase 등) | 콘텐츠가 레포 안에 있고 진도는 localStorage다. 서버가 할 일이 없다 (§4) |
 | 인증 / 계정 / 서버 진도 동기화 | 익명 + localStorage로 시작 |
-| 관리자 웹 UI | 데이터 저작은 레포 내 seed 파일 + 스크립트로 한다 |
+| 관리자 웹 UI | 데이터 저작은 레포 내 JSON 파일을 손으로 고쳐서 한다 |
+| 단어 일괄 투입 | 개념을 하나씩 지명해서 추가한다 (§7) |
 | 언어 전환 UI | v1은 일본어 하나뿐이라 고를 게 없다. 설정 값과 오버라이드 파라미터만 구현한다 |
 | 한자 학습 트랙 | 학습 대상은 읽기 하나로 고정 (§1) |
 | 예문 · 문법 · 회화 | 카드는 이미지·읽기·뜻까지만 |
@@ -139,54 +141,85 @@
 - **자동 재생하지 않는다.**
 - 소개 카드에서는 바로 누를 수 있다.
 - 퀴즈 카드에서는 **답한 뒤에 활성화**된다 — 정답이 읽기라서, 답하기 전에 누르면 정답이 그대로 들린다.
-- `audio_path`가 없으면 비활성 상태로 둔다.
+- 발음 파일이 아직 없으면 비활성 상태로 둔다.
 
 ---
 
 ## 4. 데이터 모델
 
-Supabase PostgreSQL. RLS는 `select`만 `anon`에게 허용한다.
+**데이터베이스가 없다.** 콘텐츠는 레포 안의 JSON이고, 빌드 시점에 번들된다.
 
-```sql
-create table concepts (
-  id           uuid primary key default gen_random_uuid(),
-  slug         text not null unique,     -- 파일명이자 식별자. 영어 소문자 + 하이픈
-  meaning_ko   text not null,            -- 학습 언어와 무관한 한국어 뜻
-  category     text not null,            -- 'noun' | 'verb' | 'adjective' | 'scene'
-  image_path   text,                     -- Storage 경로. null이면 아직 생성 전 → 플레이스홀더
-  image_prompt text,                     -- 재생성용. STYLE_PROMPT는 포함하지 않는다
-  created_at   timestamptz not null default now()
-);
+### 왜 DB를 안 쓰나 — 용량을 실측했다
 
-create table words (
-  id             uuid primary key default gen_random_uuid(),
-  concept_id     uuid not null references concepts(id) on delete cascade,
-  language       text not null,
-  term           text not null,          -- 표기.  ja: 猫 / de: Katze
-  reading        text,                   -- 읽기.  ja: ねこ
-  romanization   text,                   -- 로마자. ja: neko
-  part_of_speech text,
-  attributes     jsonb not null default '{}'::jsonb,
-  audio_path     text,                   -- Storage 경로. null이면 발음 없음
-  created_at     timestamptz not null default now(),
-  unique (concept_id, language)
-);
+| 항목 | 실측 |
+|---|---|
+| PNG 1024 생성 원본 (gitignore 대상) | 평균 883KB |
+| **WebP 512 q80** (배포용) | 평균 **5.1KB** |
+| MP3 48kbps 모노 1.2초 (발음) | **7.4KB** |
+| **개념 1개당** | **12.5KB** |
 
-create index on words (language);
-create index on words (concept_id);
-create index on concepts (category);
+플랫 일러스트라 압축이 극단적으로 잘 먹는다. 그래서:
+
+| 개념 | 총량 |
+|---:|---:|
+| 60 | 0.7MB |
+| 1,000 | 12.2MB |
+| 5,000 | 61MB |
+| 10,000 | 122MB |
+
+이미지는 개념당 1장을 전 언어가 공유하므로, 8개 언어를 다 채워도 이미지 총량은 늘지 않는다.
+**용량이 제약이 아니다.** 진도는 localStorage에 있고 쓰기 경로가 없으므로 서버가 할 일도 없다.
+
+반대 방향의 마찰은 실재한다 — 무료 티어 DB는 무활동 시 일시정지되고, 개념을 하나씩 손으로
+추가하는 워크플로(§7)에서는 어차피 매번 커밋하므로 "재배포 없이 콘텐츠 수정"이라는 장점도
+살아나지 않는다.
+
+DB는 **로그인과 진도 동기화가 필요해질 때** 도입한다 (§11).
+
+### 타입
+
+```ts
+type Category = 'noun' | 'verb' | 'adjective' | 'scene'
+
+type Concept = {
+  slug: string            // 파일명이자 식별자. ^[a-z0-9-]+$
+  meaning_ko: string      // 학습 언어와 무관한 한국어 뜻
+  category: Category      // 오답 보기를 뽑는 근거. 생략 불가
+  image_prompt: string    // 재생성용. STYLE_PROMPT는 포함하지 않는다
+  words: Partial<Record<Language, Word>>
+}
+
+type Word = {
+  term: string            // 표기.  ja: 猫 / de: Katze
+  reading?: string        // 읽기.  ja: ねこ
+  romanization?: string   // 로마자. ja: neko
+  part_of_speech?: string
+  attributes?: Attributes
+}
 ```
+
+이미지와 오디오는 필드로 들고 다니지 않는다. **경로가 slug에서 결정되기 때문**이다.
+
+```
+public/concepts/{slug}.webp          이미지 — 언어 무관, 전 언어 공유
+public/concepts/_placeholder.webp    아직 생성 전인 개념용 공통 대체 이미지
+public/audio/{language}/{slug}.mp3   발음 — 언어별
+```
+
+파일이 있으면 쓰고, 없으면 이미지는 플레이스홀더로 폴백하고 발음 버튼은 비활성으로 둔다.
+`image_path` / `audio_path` 같은 컬럼이 없으므로 **파일과 데이터가 어긋날 여지도 없다.**
 
 `decks`와 `deck_concepts`는 **없다.** 피드가 전체를 섞으므로 묶음이 필요 없다.
 
 ### `category`는 장식이 아니라 출제 규칙이다
 
 덱이 사라졌으므로 오답 보기를 뽑을 근거가 `category`뿐이다 (§5).
-명사 문제에 동사 보기가 섞이면 답이 그냥 보이므로 **not null로 강제한다.**
+명사 문제에 동사 보기가 섞이면 답이 그냥 보이므로 **생략을 허용하지 않는다.**
+검증 스크립트가 누락을 실패시킨다 (§7).
 
-### `(concept_id, language)` 유니크 — 의도된 제약이다
+### 한 개념에 한 언어의 단어는 하나다 — 의도된 제약이다
 
-한 개념에 한 언어의 단어는 최대 하나다. 이 제약이 개념 정의를 강제한다.
+`words`가 언어를 키로 갖는 맵인 것이 이 제약이다. 그리고 이 제약이 개념 정의를 강제한다.
 
 일본어 `水`(찬물)와 `お湯`(더운물)은 영어로는 둘 다 water지만, **개념을 쪼갠다**:
 `cold-water`, `hot-water`. 개념은 사전 표제어가 아니라 **시각화 가능한 지시체** 단위다.
@@ -196,8 +229,8 @@ create index on concepts (category);
 
 추상어처럼 그릴 수 없는 개념은 **콘텐츠에 넣지 않는다.** 카드 3종이 전부 이미지를 전제하기 때문이다.
 
-`image_path`가 `null`인 것은 "이 개념은 그림이 없다"가 아니라 **"아직 생성 전"** 이라는 뜻이다.
-그 경우 앱은 **공통 플레이스홀더 이미지 한 장**으로 대체하고 정상 출제한다.
+`public/concepts/{slug}.webp`가 없는 것은 "이 개념은 그림이 없다"가 아니라
+**"아직 생성 전"** 이라는 뜻이다. 그 경우 앱은 **공통 플레이스홀더 한 장**으로 대체하고 정상 출제한다.
 
 ### 언어별 학습 전략은 설정표로
 
@@ -218,9 +251,9 @@ const LANG: Record<string, LangStrategy> = {
 
 `answer` 필드가 비어 있는 단어는 그 언어에서 출제되지 않는다.
 
-### 언어별 속성은 `attributes` JSONB로
+### 언어별 속성은 `attributes`로 몰아넣는다
 
-컬럼을 언어마다 늘리지 않는다. TypeScript에서 언어별 타입만 좁혀 안전성을 확보한다.
+필드를 언어마다 늘리지 않는다. TypeScript에서 언어별 타입만 좁혀 안전성을 확보한다.
 
 ```ts
 type Attributes =
@@ -228,16 +261,6 @@ type Attributes =
   | { article?: 'der'|'die'|'das'; plural?: string }           // de
   | { tones?: number[] }                                       // zh
 ```
-
-### Storage 경로
-
-```
-concepts/{concept_slug}.webp        이미지 — 언어 무관, 전 언어 공유
-concepts/_placeholder.webp          생성 전 개념용 공통 대체 이미지
-audio/{language}/{concept_slug}.mp3 발음 — 언어별
-```
-
-버킷은 public read. 재생성 시 같은 경로에 덮어쓴다.
 
 ---
 
@@ -377,8 +400,8 @@ localStorage가 없거나 깨졌으면 빈 진도로 초기화한다. 마이그�
 
 ## 7. 콘텐츠 파이프라인
 
-단일 진실 소스는 **레포 내 seed 파일**이다. 덱이 없으므로 파일은 주제별 묶음이 아니라
-편의상의 분할일 뿐이며, 앱은 전부를 하나의 풀로 읽는다.
+단일 진실 소스는 **레포 내 JSON 파일**이다. 덱이 없으므로 파일 분할은 편의일 뿐이고,
+앱은 전부를 하나의 풀로 읽는다.
 
 ```
 content/nouns.json
@@ -411,36 +434,54 @@ content/verbs.json
 이미지도, 뜻도 건드리지 않는다.
 
 `image_prompt`는 **내용만** 쓴다. 스타일 문구는 절대 여기 쓰지 않는다 —
-`IMAGE_STYLE.md`의 `STYLE_PROMPT`가 빌드 시점에 앞에 붙는다.
+`IMAGE_STYLE.md`의 `STYLE_PROMPT`가 앞에 붙는다.
+
+### 개념은 하나씩 추가한다
+
+**단어 목록을 미리 만들어두지 않는다.** 개념 하나를 지명하고, 그 하나를 끝까지 완성한 뒤
+다음으로 넘어간다. 60개를 한꺼번에 쏟아붓지 않는 이유는 두 가지다.
+
+- 이미지가 유일한 병목이고 **수작업이다.** 60개를 미리 써두면 그림 없는 개념이 60개 쌓인다.
+- 개념 정의의 옳고 그름은 **그림을 그려봐야 드러난다.** 한 장에 안 담기면 개념이 둘이라는
+  신호이므로(§4), 목록을 먼저 굳히면 그 신호를 받을 자리가 없다.
+
+한 개념을 추가하는 절차:
+
+1. `content/*.json`에 개념 블록을 쓴다 — `slug`, `meaning_ko`, `category`, `image_prompt`, 언어별 표기·읽기
+2. `pnpm check` — 검증 (아래)
+3. `pnpm prompt <slug>` 출력을 ImageGen에 넣어 1024 PNG를 생성한다
+4. 받은 PNG를 `.images/{slug}.png`에 두고 `pnpm image <slug>` — 512 WebP로 변환해 `public/concepts/`에 넣는다
+5. **80×80으로 줄여도 알아볼 수 있는지 확인한다** (IMAGE_STYLE.md 검수 체크리스트)
+6. 발음을 생성해 `.audio/ja/{slug}.mp3`에 두고 `pnpm audio <slug>`
+7. 커밋
+
+발음은 나중에 몰아서 해도 되지만, 이미지는 3~5단계를 붙여서 한다.
 
 ### 스크립트
 
+업로드가 없으므로 스크립트는 **검증과 변환만** 한다.
+
 | 명령 | 하는 일 |
 |---|---|
-| `pnpm seed` | `content/*.json` → 검증 → Supabase upsert |
-| `pnpm prompts` | `image_path`가 없는 개념만 골라 `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
-| `pnpm images` | `.images/{slug}.png` → 512×512 webp → Storage 업로드 → `image_path` 갱신 |
-| `pnpm audio` | `.audio/{lang}/{slug}.mp3` → Storage 업로드 → `audio_path` 갱신 |
+| `pnpm check` | `content/*.json` 전체 검증. CI에서도 돈다 |
+| `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
+| `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
+| `pnpm audio <slug>` | `.audio/{lang}/{slug}.mp3` → `public/audio/{lang}/{slug}.mp3` |
 
-`pnpm seed`의 검증 항목:
+`slug`를 생략하면 아직 결과물이 없는 개념 전체에 대해 돈다.
+
+`pnpm check`의 검증 항목:
 
 - 개념 slug 중복
 - 개념 slug가 `^[a-z0-9-]+$` 위반
 - `category` 누락 — 오답 보기 규칙이 여기 의존한다
-- 필수 필드 누락 (`slug`, `meaning_ko`, 각 언어의 `term`)
+- 필수 필드 누락 (`slug`, `meaning_ko`, `image_prompt`, 각 언어의 `term`)
 - **`LANG[lang].answer` 필드 누락** — 일본어인데 `reading`이 없으면 출제 불가
+- **`category`별 개념 수가 4개 미만** — 오답 보기 3개를 못 뽑는다. 경고로 알린다
 
-### 사람이 하는 단계
-
-1. seed 파일에 개념과 `image_prompt`, 언어별 표기·읽기를 쓴다
-2. `pnpm seed`
-3. `pnpm prompts` 출력을 ImageGen에 넣어 이미지를 생성한다
-4. 받은 PNG를 `.images/{slug}.png`로 저장한다
-5. `pnpm images`
-
-발음도 같은 흐름이다.
-
-`.images/`와 `.audio/`는 **gitignore**한다. Storage가 사실상의 원본 저장소다.
+`.images/`와 `.audio/`는 **gitignore**한다. 1024 PNG는 개당 약 883KB이고 재생성 때마다
+git 히스토리에 영구히 쌓이기 때문이다. 레포에 들어가는 것은 변환 결과물(개당 5.1KB)뿐이며,
+프롬프트가 `content/*.json`에 남아 있으므로 원본이 필요하면 다시 생성한다.
 
 ---
 
@@ -454,22 +495,25 @@ content/verbs.json
 | 캐러셀 | `embla-carousel-react` | `axis: 'y'`. 잠금은 `reInit({ watchDrag: false })` |
 | 학습 스케줄 | `ts-fsrs` | FSRS v6. MIT, 의존성 0 |
 | 컴포넌트 | shadcn/ui 최소 | 피드 하나뿐이라 거의 쓰지 않는다 |
-| DB | Supabase PostgreSQL | anon `select`만 허용 |
-| 스토리지 | Supabase Storage | public read 버킷 |
+| 데이터 | `content/*.json` | 빌드 시점 import. DB 없음 (§4) |
+| 정적 자산 | `public/` | 이미지·오디오. CDN 없음 |
 | 상태 | React 기본 | 진도·언어 설정은 `localStorage` 래퍼 훅 하나 |
+| 이미지 변환 | `sharp` (devDependency) | `pnpm image` 스크립트 전용. 런타임에 안 들어간다 |
 | PWA | manifest + 아이콘 | 서비스워커 없음 |
+
+런타임 의존성이 사실상 `next` · `react` · `embla-carousel-react` · `ts-fsrs` 넷뿐이다.
+환경변수도, API 키도 없다.
 
 ### 렌더링
 
-- 개념 + 전 언어 단어를 **한 번에 정적으로 굽고**, 클라이언트가 현재 언어 하나만 골라 쓴다.
-  언어가 URL에 없어도 정적 생성을 잃지 않는다.
-- 데이터는 **서버 컴포넌트에서 `supabase-js`로 직접 조회**한다.
-  클라이언트 번들에 Supabase 클라이언트와 키가 들어가지 않는다.
-- `revalidate = 3600`
-- 피드는 클라이언트 컴포넌트다. 진입 시 전체 단어를 한 번 받아 메모리에서 굴린다.
-  단어가 60개 수준이라 페이로드가 문제되지 않는다.
-- 이미지는 `next/image` + Supabase Storage 도메인을 `remotePatterns`에 등록.
-  이미지 URL은 개념 slug만으로 결정되므로 언어를 바꿔도 캐시가 유지된다.
+- `content/*.json`을 **빌드 시점에 import**한다. 전 언어 단어가 그대로 번들에 들어가고,
+  클라이언트가 현재 언어 하나만 골라 쓴다. 언어가 URL에 없어도 정적 생성을 잃지 않는다.
+- 페이지 전체가 **완전 정적**이다. `revalidate`도 서버 조회도 없다.
+- 피드는 클라이언트 컴포넌트다. 진입 시 전체 개념을 메모리에 올려 굴린다.
+  개념 1,000개여도 텍스트만 수백 KB 수준이라 문제되지 않는다.
+- 이미지는 `next/image`로 `public/concepts/{slug}.webp`를 가리킨다.
+  외부 도메인이 없으므로 `remotePatterns` 설정이 필요 없다.
+  URL이 개념 slug만으로 결정되므로 언어를 바꿔도 캐시가 유지된다.
 - **카드 마운트는 지연한다.** 미응답 퀴즈 다음 카드는 아예 렌더하지 않는다 —
   잠금을 CSS가 아니라 DOM 구조로 거는 것이 훨씬 견고하다.
 
@@ -481,29 +525,35 @@ content/verbs.json
 
 | # | 항목 | 지금 상태 |
 |---|---|---|
-| 1 | 예약 거리 수치 (3 / 8 / 20 / 2장) | 제안치. 실사용 감각으로 조정 |
-| 2 | 쿨다운 K와 신선도 부스트 감쇠율 | 미정 |
-| 3 | 체류 시간을 `Rating.Hard`로 쓸지 | 보류. 지금은 2진 채점 |
-| 4 | 피드 소진 — 60단어를 다 소개하면 신규 15%를 뽑을 데가 없다 | 미정 |
-| 5 | 플레이스홀더 이미지 실물 | 코드 폴백만 있고 그림이 없다 |
-| 6 | 반복 오답 쌍을 confusion 카드로 잡을지 | v2 후보 |
+| 1 | **단어 목록** | **없다.** 미리 만들지 않고 하나씩 지명해 추가한다 (§7) |
+| 2 | 예약 거리 수치 (3 / 8 / 20 / 2장) | 제안치. 실사용 감각으로 조정 |
+| 3 | 쿨다운 K와 신선도 부스트 감쇠율 | 미정 |
+| 4 | 체류 시간을 `Rating.Hard`로 쓸지 | 보류. 지금은 2진 채점 |
+| 5 | 피드 소진 — 개념을 다 소개하면 신규 15%를 뽑을 데가 없다 | 미정 |
+| 6 | 플레이스홀더 이미지 실물 | 코드 폴백만 있고 그림이 없다 |
+| 7 | 반복 오답 쌍을 confusion 카드로 잡을지 | v2 후보 |
+
+문서 곳곳의 "60개"는 규모 감각을 위한 예시일 뿐 목표 수치가 아니다.
 
 ---
 
 ## 10. 구현 순서
 
 각 단계는 그 자체로 확인 가능해야 한다.
+**콘텐츠가 한 개도 없어도 1~6단계가 진행된다** — 개념은 그 사이에 하나씩 늘어난다.
 
 1. **셸** — Next.js·Tailwind 설치, 토큰 정의(§brand-spec), 전체화면 피드 컨테이너
-2. **데이터** — Supabase 스키마 마이그레이션, `pnpm seed` + 검증, 개념 60개 작성
-3. **이미지** — `pnpm prompts` / `pnpm images`, 이미지 60장 + 플레이스홀더 생성·업로드
-4. **카드 3종** — 소개 / 재인 / 단서 회상 렌더러와 채점. 정적 배열로 먼저 굴린다
-5. **캐러셀** — embla `axis:'y'`, 지연 마운트, 퀴즈 잠금
-6. **학습 엔진** — `ts-fsrs` 연결, rung 이동, 예약 큐, 가중 샘플러 + 단위 테스트
-7. **발음** — 오디오 생성·업로드, 버튼 활성화 규칙
-8. **마무리** — PWA manifest, 아이콘, 메타데이터, 배포
+2. **타입과 검증** — `Concept` / `Word` / `LangStrategy` 타입, `content/` 로더, `pnpm check`
+3. **카드 3종** — 소개 / 재인 / 단서 회상 렌더러와 채점. 손으로 쓴 개념 2~3개로 굴린다
+4. **캐러셀** — embla `axis:'y'`, 지연 마운트, 퀴즈 잠금
+5. **학습 엔진** — `ts-fsrs` 연결, rung 이동, 예약 큐, 가중 샘플러 + 단위 테스트
+6. **이미지 파이프라인** — `pnpm prompt` / `pnpm image`, 플레이스홀더 제작
+7. **발음** — `pnpm audio`, 버튼 활성화 규칙
+8. **콘텐츠** — 개념을 하나씩 추가한다. 여기서부터는 끝이 없다
+9. **마무리** — PWA manifest, 아이콘, 메타데이터, 배포
 
-3단계까지 끝나면 콘텐츠가 확보되므로, 4단계부터는 실제 데이터로 개발한다.
+DB 단계가 없다. 3단계에서 필요한 개념 2~3개는 이미 있는
+`banana` · `cat` · `bread` · `clock` 이미지를 그대로 쓴다.
 
 동작 참고 구현은 [lingo-feed-prototype.html](lingo-feed-prototype.html)에 있다.
 
@@ -519,8 +569,9 @@ content/verbs.json
 | 한자 트랙 | `LANG.ja` 옆에 `answer: 'term'` 전략 추가 | 같은 개념을 두 트랙으로 각각 외운다. 진도 키만 분리 |
 | 단어장 화면 | 라우트 추가 + 상단 탭 | 진도 시각화가 여기로 들어온다 |
 | 설정 화면 | 라우트 추가 | 음소거, 학습 대상 전환 |
-| 로그인 | Supabase Auth + `learning_records` | 기존 `localStorage` 진도를 최초 로그인 시 1회 마이그레이션 |
-| 카드 타입 추가 | rung 테이블에 행 추가 | 렌더러 컴포넌트만 추가 |
-| 예문 | `sentences` 테이블 + `word_id` FK | 언어별이므로 개념이 아니라 단어에 붙는다 |
-| 문법·회화 | `grammar_points`, `conversations` + 단어 연결 테이블 | 단어가 허브가 되는 구조 |
+| 카드 타입 추가 | rung 표에 행 추가 | 렌더러 컴포넌트만 추가 |
+| **DB 도입** | 로그인·진도 동기화가 필요해지는 시점 | 콘텐츠는 계속 레포에 둔 채 진도만 서버로 올려도 된다. §4 타입이 그대로 스키마가 된다 |
+| 로그인 | Auth + `learning_records` | 기존 `localStorage` 진도를 최초 로그인 시 1회 마이그레이션 |
+| 예문 | `sentences` — 언어별이므로 개념이 아니라 단어에 붙는다 | 콘텐츠가 커지면 그때 DB를 검토한다 |
+| 문법·회화 | `grammar_points`, `conversations` + 단어 연결 | 단어가 허브가 되는 구조 |
 | 앱 내 이미지 생성 | OpenAI Images API | 프롬프트를 개념에 분리 보관하므로 그대로 재사용 |
