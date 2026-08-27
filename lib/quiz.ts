@@ -1,6 +1,6 @@
-import { distractorPool, type Entry } from './content'
-import { pickConfusables } from './kana'
-import { hashString, makeRng, sample, shuffled } from './random'
+import { distractorPool, type Entry } from './entries.ts'
+import { pickConfusables } from './kana.ts'
+import { hashString, makeRng, sample, shuffled } from './random.ts'
 
 /**
  * 문항 만들기. (spec.md §5)

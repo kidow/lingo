@@ -1,4 +1,4 @@
-import type { Language, Word } from './types'
+import type { Language, Word } from './types.ts'
 
 /**
  * 언어별 학습 전략. (spec.md §1, §4)
