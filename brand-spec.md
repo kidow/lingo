@@ -143,8 +143,7 @@
 - 누름 피드백 100–150ms. 상태 전환 120ms.
 - **자동 스크롤이 없다.** 정답이든 오답이든 다음 장으로 넘기는 것은 항상 사용자다.
 - 이동은 `transform`과 `opacity`만 쓴다.
-- 세로 스냅은 `scroll-snap-type: y mandatory` + `scroll-snap-stop: always`.
-  실제 구현은 embla `axis: 'y'`.
+- 세로 스냅은 `scroll-snap-type: y mandatory` + `scroll-snap-stop: always`. 라이브러리를 쓰지 않는다.
 
 ```css
 @media (prefers-reduced-motion: reduce) {
