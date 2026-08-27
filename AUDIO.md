@@ -1,0 +1,177 @@
+# AUDIO
+
+발음 오디오 규칙. **이 파일이 오디오의 단일 진실 소스**다.
+
+이미지와 달리 오디오는 스크립트가 없다. 손으로 만들어 손으로 넣는다.
+넣기만 하면 앱이 알아서 집어간다 — 등록할 곳도, 갱신할 필드도 없다.
+
+---
+
+## 무엇을 읽히나
+
+**그 언어의 정답 필드를 읽힌다.** 일본어는 **읽기(かな)** 다.
+
+| slug | 읽힐 텍스트 | 읽히면 안 되는 것 |
+|---|---|---|
+| `cat` | `ねこ` | ~~`猫`~~ · ~~`neko`~~ · ~~`고양이`~~ |
+| `clock` | `とけい` | ~~`時計`~~ |
+| `banana` | `バナナ` | |
+| `bread` | `パン` | |
+
+`content/*.json`의 `words.ja.reading` 값 그대로다.
+
+표기(`猫`)를 읽히면 억양이 더 자연스러울 수는 있다. 그래도 읽기를 쓴다 —
+학습자가 고르는 정답이 읽기이므로 **들리는 소리와 정답이 어긋나면 안 되고**,
+다음톤 한자를 엉뚱하게 읽을 위험도 없앤다.
+
+한국어 뜻이나 로마자는 절대 읽히지 않는다.
+
+---
+
+## 포맷 규격
+
+| 항목 | 값 |
+|---|---|
+| 컨테이너 | **MP3** |
+| 샘플레이트 | **24000 Hz** |
+| 비트레이트 | **64 kbps** |
+| 채널 | 모노 (스테레오여도 무방하나 크기만 커진다) |
+| 길이 | 단어 하나. 1초 안팎 |
+| 크기 | 개당 **10KB 안팎** |
+
+**MP3 아니면 WAV여야 한다.** `pcm` · `mulaw` · `alaw`는 브라우저가 재생하지 못한다 —
+`<audio>`와 `decodeAudioData()`가 컨테이너 포맷만 받는다. WAV는 같은 길이에 6배 무겁다.
+
+비트레이트를 128kbps로 올리면 개당 19KB가 된다. 이미지가 5KB인데 소리가 19KB면
+균형이 맞지 않는다. 사람 목소리는 24kHz 64kbps에서 열화가 거의 들리지 않는다.
+
+---
+
+## 만드는 법 — xAI TTS
+
+[문서](https://docs.x.ai/developers/model-capabilities/audio/text-to-speech) ·
+[플레이그라운드](https://console.x.ai/team/default/voice/text-to-speech) ·
+[API 키 발급](https://console.x.ai/team/default/api-keys)
+
+### 파라미터
+
+| 파라미터 | 값 | 비고 |
+|---|---|---|
+| `text` | 읽기 (`ねこ`) | 위 표 참고 |
+| `language` | `ja` | BCP-47. xAI가 일본어를 지원한다 |
+| `voice_id` | `sal` | 발음 참조용이라 중립적이고 또렷한 쪽. 기본값 `eve`는 밝고 들뜬 톤이라 안 맞는다 |
+| `output_format` | `{ "codec": "mp3", "sample_rate": 24000, "bit_rate": 64000 }` | 생략하면 128kbps가 나온다 |
+| `speed` | `1.0` | 느리게 하고 싶으면 `0.9`까지. 그 아래는 부자연스럽다 |
+
+목소리 후보: `sal`(smooth and balanced) · `rex`(confident and clear) · `ara`(warm and friendly).
+**한 번 정하면 바꾸지 않는다.** 단어마다 목소리가 달라지면 피드가 어수선해진다.
+
+### curl
+
+```bash
+curl -X POST https://api.x.ai/v1/tts \
+  -H "Authorization: Bearer $XAI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "text": "ねこ",
+    "language": "ja",
+    "voice_id": "sal",
+    "output_format": { "codec": "mp3", "sample_rate": 24000, "bit_rate": 64000 }
+  }' \
+  --output public/audio/ja/cat.mp3
+```
+
+`text`와 출력 파일명만 바꿔가며 반복한다. 응답이 바로 mp3 바이트다.
+
+### 플레이그라운드로 만들 때
+
+콘솔에서 받으면 포맷이 기본값(128kbps)일 수 있다. 받은 뒤 확인하고, 다르면 다시 인코딩한다.
+
+```bash
+ffmpeg -i 받은파일.mp3 -ac 1 -ar 24000 -b:a 64k public/audio/ja/cat.mp3
+```
+
+---
+
+## 어디에 넣나
+
+```
+public/audio/{language}/{slug}.mp3
+```
+
+`language`는 `content/*.json`의 `words` 키(`ja`), `slug`는 개념 slug다.
+
+```
+public/audio/ja/banana.mp3
+public/audio/ja/bread.mp3
+public/audio/ja/cat.mp3
+public/audio/ja/clock.mp3
+```
+
+**파일명이 slug와 한 글자라도 다르면 앱이 못 찾는다.** 경로가 slug에서 계산되기 때문에
+데이터에 경로 필드가 없고, 따라서 오타를 잡아줄 곳도 없다.
+
+디렉터리가 없으면 만든다.
+
+```bash
+mkdir -p public/audio/ja
+```
+
+파일은 레포에 커밋한다. 개당 10KB라 이미지와 같은 취급이다.
+
+---
+
+## 넣은 뒤
+
+등록 절차가 없다. 파일을 놓고 새로고침하면 발음 버튼이 켜진다.
+
+```bash
+pnpm check     # 어느 단어에 발음이 없는지 알려준다
+```
+
+`pnpm check`는 발음이 없다고 실패하지 않는다. 없는 것은 정상이고, 그 단어의 버튼이
+비활성으로 남을 뿐이다.
+
+---
+
+## 검수 체크리스트
+
+넣기 전에 들어본다. 하나라도 걸리면 다시 만든다.
+
+- [ ] **읽기를 읽는다** — 한자 표기나 한국어 뜻이 아니다
+- [ ] 억양이 맞다 — `はし`(다리/젓가락)처럼 고저로 뜻이 갈리는 단어는 특히 확인한다
+- [ ] 앞뒤 무음이 길지 않다 — 탭했을 때 바로 소리가 나야 한다
+- [ ] 볼륨이 다른 파일들과 비슷하다
+- [ ] 목소리가 다른 파일들과 같다
+- [ ] 파일명이 slug와 정확히 같다
+- [ ] mp3이고 10KB 안팎이다
+
+포맷 확인:
+
+```bash
+ffprobe -v error -show_entries format=duration,bit_rate,size \
+  -show_entries stream=codec_name,sample_rate,channels \
+  -of default=noprint_wrappers=1 public/audio/ja/cat.mp3
+```
+
+---
+
+## 발음이 없어도 된다
+
+이미지와 다르다. **이미지는 모든 개념에 있어야 하지만**(카드 3종이 전부 이미지를 전제한다),
+**발음은 없어도 학습이 돌아간다.** 없으면 버튼이 비활성으로 남는다.
+
+버튼은 사라지지 않는다. 이미지 우측 하단 자리를 지키고 아이콘만 흐려진다 —
+카드마다 버튼 위치가 흔들리면 안 된다.
+
+---
+
+## 나중에 바꿀 때
+
+목소리나 포맷을 바꾸면 **기존 파일과 새 파일이 섞인다.** 같은 피드 안에서 목소리가
+바뀌면 어수선하므로, 변경은 전체 재생성을 원칙으로 한다.
+
+`public/audio/`를 통째로 비우고 다시 만든다.
+
+> 주의 — Next 이미지·정적 자산은 캐시가 살아 있으면 파일을 교체해도 브라우저가 옛 것을
+> 계속 쓸 수 있다. 배포 후 소리가 안 바뀌면 강력 새로고침으로 먼저 확인한다.
