@@ -4,9 +4,8 @@
 # 디자인 논의용 임시 시각 자료
 .visualstorming/
 
-# 콘텐츠 파이프라인 원본 — 레포에는 변환 결과물만 들어간다 (spec.md §7)
+# 이미지 생성 원본 — 레포에는 변환 결과물만 들어간다 (spec.md §7)
 .images/
-.audio/
 
 # 도구가 흘리고 간 것
 output.mp3
@@ -16,3 +15,8 @@ node_modules/
 .next/
 next-env.d.ts
 *.tsbuildinfo
+
+# API 키. 절대 커밋하지 않는다
+.env
+.env.*
+!.env.example
