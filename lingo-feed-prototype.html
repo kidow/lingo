@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Lingo · 세로 피드 프로토타입</title>
+<style>
+  :root{
+    /* 톤: warm paper 바탕 + Iris 강조 */
+    --bg:#F4F1EC;
+    --surface:#FBF9F5;
+    --img-bg:#FAF6EF;      /* IMAGE_STYLE.md가 못 박은 생성 이미지 배경 */
+    --ink:#1C1917;
+    --sub:#8A8177;
+    --line:#E7E2DA;
+    --accent:#4255ff;
+    --accent-fg:#ffffff;
+    --pick:#EDEFFF;
+    --ok:#168b64;
+    --ok-soft:#E8F7F1;
+    --err:#c83b4c;
+    --err-soft:#FFF0F2;
+
+    --radius-card:14px;
+    --radius-ctrl:12px;
+
+    --font-body:"Avenir Next",Pretendard,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    --font-jp:"Avenir Next","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:#dfe2ec;color:var(--ink);
+    font-family:var(--font-body);font-size:16px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,p{margin:0}
+  button{font:inherit;cursor:pointer;color:inherit;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+
+  /* ── 데스크톱에서는 폰 프레임 + 설명, 모바일에서는 전체화면 ───────────── */
+  .stage{min-height:100dvh;display:flex;align-items:center;justify-content:center;gap:44px;padding:40px 24px}
+  .device{width:390px;height:min(844px,92dvh);background:#000;border-radius:40px;padding:9px;box-shadow:0 22px 50px rgba(28,25,23,.22);flex:0 0 auto}
+  .app{position:relative;width:100%;height:100%;border-radius:32px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
+
+  /* ── 피드 ──────────────────────────────────────────────────────────── */
+  .feed{
+    flex:1;min-height:0;
+    overflow-y:scroll;
+    scroll-snap-type:y mandatory;
+    overscroll-behavior:contain;
+    scrollbar-width:none;
+  }
+  .feed::-webkit-scrollbar{display:none}
+
+  .card{
+    height:100%;scroll-snap-align:start;scroll-snap-stop:always;
+    display:flex;flex-direction:column;
+    padding:22px 20px 18px;gap:18px;
+    width:100%;max-width:480px;margin-inline:auto;
+  }
+
+  /* 이미지 — 정사각을 유지하되 카드 높이를 넘지 않게 가둔다 */
+  .imgwrap{
+    position:relative;flex:0 1 auto;
+    background:var(--img-bg);border-radius:var(--radius-card);
+    aspect-ratio:1/1;overflow:hidden;
+    width:min(100%,48dvh);margin-inline:auto;
+  }
+  .imgwrap img{display:block;width:100%;height:100%;object-fit:cover}
+  .imgwrap.placeholder{display:grid;place-items:center;color:var(--sub);font-size:13px}
+
+  /* 발음 버튼 — 이미지 우측 하단 고정 */
+  .say{
+    position:absolute;right:10px;bottom:10px;
+    width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--line);background:rgba(251,249,245,.92);
+    backdrop-filter:blur(6px);
+    display:grid;place-items:center;
+    transition:opacity .15s ease, transform .1s ease;
+  }
+  .say svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .say:active{transform:scale(.94)}
+  .say[disabled]{opacity:.32;cursor:default}
+  .say.playing{border-color:var(--accent)}
+  .say.playing svg{stroke:var(--accent)}
+
+  /* 카드 본문 */
+  .body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:14px}
+
+  .term{font-family:var(--font-jp);font-size:clamp(34px,10vw,42px);font-weight:700;text-align:center;letter-spacing:-.01em}
+  .meaning{font-size:19px;font-weight:600;text-align:center}
+  .aside{text-align:center;font-size:13.5px;color:var(--sub);font-family:var(--font-jp)}
+
+  /* 4지선다 2×2 */
+  .choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:0 0 auto}
+  .choice{
+    border:1px solid var(--line);background:var(--surface);border-radius:var(--radius-ctrl);
+    font-family:var(--font-jp);font-size:22px;font-weight:600;
+    display:grid;place-items:center;padding:18px 6px;min-height:72px;
+    transition:border-color .12s ease, background .12s ease, transform .1s ease;
+  }
+  .choice:active{transform:scale(.985)}
+  .choice.correct{border-color:var(--ok);background:var(--ok-soft);color:var(--ok)}
+  .choice.wrong{border-color:var(--err);background:var(--err-soft);color:var(--err)}
+  .choices[data-answered="true"] .choice{pointer-events:none}
+
+  /* 빈칸 */
+  .slots{display:flex;justify-content:center;gap:9px;align-items:baseline}
+  .slot{font-family:var(--font-jp);font-size:38px;font-weight:700;min-width:34px;text-align:center}
+  .slot.hole{border-bottom:3px solid var(--accent);color:transparent}
+  .slot.hole.filled{color:var(--accent);border-bottom-color:var(--accent)}
+  .slot.hole.filled.bad{color:var(--err);border-bottom-color:var(--err)}
+  .keys{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+  .key{
+    border:1px solid var(--line);background:var(--surface);border-radius:var(--radius-ctrl);
+    min-width:60px;padding:14px 8px;font-family:var(--font-jp);font-size:22px;font-weight:600;
+    transition:border-color .12s ease, background .12s ease, transform .1s ease;
+  }
+  .key:active{transform:scale(.96)}
+  .key.correct{border-color:var(--ok);background:var(--ok-soft);color:var(--ok)}
+  .key.wrong{border-color:var(--err);background:var(--err-soft);color:var(--err)}
+  .keys[data-answered="true"] .key{pointer-events:none}
+
+  /* 하단 힌트 — 다음 장이 있다는 신호 */
+  .cue{flex:0 0 auto;height:22px;display:grid;place-items:center;color:var(--sub);font-size:12px;letter-spacing:.02em}
+  .cue[data-locked="true"]{color:var(--accent);font-weight:600}
+
+  /* 답한 뒤 노출되는 정답 줄 */
+  .reveal{text-align:center;display:none;gap:3px;flex-direction:column}
+  .reveal[data-on="true"]{display:flex}
+  .reveal .r-term{font-family:var(--font-jp);font-size:26px;font-weight:700}
+  .reveal .r-mean{font-size:15px;color:var(--sub)}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+    .feed{scroll-behavior:auto}
+  }
+
+  /* ── 설명 패널 (데스크톱 전용) ─────────────────────────────────────── */
+  .notes{max-width:340px;color:#2f3646}
+  .notes h1{font-size:21px;font-weight:700;letter-spacing:-.01em}
+  .notes > p{font-size:13.5px;color:#586380;margin-top:8px;line-height:1.55}
+  .notes dl{margin:20px 0 0;display:grid;gap:11px}
+  .notes dt{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8A8177}
+  .notes dd{margin:2px 0 0;font-size:13.5px;line-height:1.5}
+  .notes dd b{font-weight:600}
+  .notes .warn{margin-top:20px;background:#FFF7ED;border:1px solid #F0DCC4;border-radius:10px;padding:11px 13px;font-size:12.5px;line-height:1.5;color:#7A4B12}
+
+  @media (max-width:900px){
+    .stage{padding:0;gap:0}
+    .notes{display:none}
+    .device{width:100%;height:100dvh;border-radius:0;padding:0;box-shadow:none}
+    .app{border-radius:0}
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="device">
+    <div class="app">
+      <div class="feed" id="feed"></div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    <h1>Lingo — 세로 피드 MVP</h1>
+    <p>화면은 이 하나다. 탭도 홈도 결과 화면도 없다. 열면 카드가 떠 있고 위로 밀면 다음 카드가 온다.</p>
+    <dl>
+      <dt>카드 3종</dt>
+      <dd><b>소개</b> 이미지·표기·읽기·뜻 전부 노출, 판정 없음 · <b>재인</b> 4지선다 2×2 · <b>단서 회상</b> 빈칸 채우기</dd>
+
+      <dt>학습 대상</dt>
+      <dd>일본어는 <b>읽기(かな)</b>. 보기·정답·빈칸이 전부 かな다. 한자와 로마자는 소개 카드에서 참고로만 보여준다.</dd>
+
+      <dt>스와이프</dt>
+      <dd>소개 카드는 자유. <b>퀴즈는 답할 때까지 잠긴다.</b> 정답이든 오답이든 자동 진행은 없고 직접 밀어야 넘어간다.</dd>
+
+      <dt>발음</dt>
+      <dd>이미지 우측 하단 고정. 자동 재생 없음. 퀴즈 카드에서는 <b>답한 뒤에 활성화</b>된다 — 그전에 누르면 정답이 들리기 때문.</dd>
+
+      <dt>스케줄</dt>
+      <dd>세션 간은 <b>ts-fsrs</b>가 회상확률로, 세션 안은 거리 규칙(정답 8장 뒤 · 오답 2장 뒤)이 담당한다. 새 단어는 <b>15% 고정 비율</b>로 섞고 갓 소개한 건 한동안 가중치를 더 준다.</dd>
+
+      <dt>오답 보기</dt>
+      <dd>같은 <b>category</b>에서만 뽑는다. 덱은 없앴다.</dd>
+    </dl>
+    <p class="warn">프로토타입은 CSS <code>scroll-snap</code>으로 세로 페이징을 흉내낸다. 실제 구현은 embla-carousel의 <code>axis:'y'</code>를 쓰고, 잠금은 <code>reInit({watchDrag:false})</code>로 건다.</p>
+  </aside>
+
+</div>
+
+<script>
+/* ── 개념 데이터 (v1 일본어) ─────────────────────────────────────────── */
+const CONCEPTS = {
+  banana: { slug:'banana', meaning:'바나나', category:'noun',
+            term:'バナナ', reading:'バナナ', roma:'banana', img:'assets/concepts/banana.png' },
+  cat:    { slug:'cat',    meaning:'고양이', category:'noun',
+            term:'猫',     reading:'ねこ',   roma:'neko',   img:'assets/concepts/cat.png' },
+  bread:  { slug:'bread',  meaning:'빵',     category:'noun',
+            term:'パン',   reading:'パン',   roma:'pan',    img:'assets/concepts/bread.png' },
+  clock:  { slug:'clock',  meaning:'시계',   category:'noun',
+            term:'時計',   reading:'とけい', roma:'tokei',  img:'assets/concepts/clock.png' },
+};
+
+/* 언어별 학습 전략 — 어느 필드가 정답인지 */
+const LANG = {
+  ja: { answer:'reading', aside:['term','roma'] },
+  // de: { answer:'term', aside:[] },
+};
+const L = LANG.ja;
+const answerOf = c => c[L.answer];
+
+/* 데모용 카드 순서. 실제로는 ts-fsrs + 거리 규칙이 만든다. */
+const QUEUE = [
+  { type:'intro',  slug:'banana' },
+  { type:'choice', slug:'cat',    distractors:['banana','bread','clock'] },
+  { type:'blank',  slug:'clock',  holes:[1], keys:['け','げ','は','ほ'] },
+  { type:'intro',  slug:'bread' },
+  { type:'choice', slug:'clock',  distractors:['cat','banana','bread'] },
+  { type:'blank',  slug:'banana', holes:[2], keys:['ナ','タ','ソ','ン'] },
+  { type:'intro',  slug:'cat' },
+  { type:'choice', slug:'bread',  distractors:['clock','cat','banana'] },
+];
+
+const feed = document.getElementById('feed');
+
+/* ── 조각 ─────────────────────────────────────────────────────────── */
+function imageBlock(c, { sayEnabled }) {
+  const wrap = document.createElement('div');
+  wrap.className = 'imgwrap';
+
+  const img = document.createElement('img');
+  img.src = c.img;
+  img.alt = c.meaning;
+  /* 이미지가 아직 없는 개념은 공통 플레이스홀더로 떨어진다 */
+  img.onerror = () => { wrap.classList.add('placeholder'); wrap.textContent = '이미지 준비 중'; wrap.appendChild(say); };
+  wrap.appendChild(img);
+
+  const say = document.createElement('button');
+  say.className = 'say';
+  say.type = 'button';
+  say.setAttribute('aria-label', `${answerOf(c)} 발음 듣기`);
+  say.innerHTML = '<svg viewBox="0 0 24 24"><path d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/><path d="M16 9.2a4 4 0 0 1 0 5.6"/><path d="M18.6 6.6a7.6 7.6 0 0 1 0 10.8"/></svg>';
+  say.disabled = !sayEnabled;
+  say.addEventListener('click', () => {
+    /* ponytail: audio_path 붙으면 new Audio(path).play()로 교체 */
+    say.classList.add('playing');
+    setTimeout(() => say.classList.remove('playing'), 600);
+  });
+  wrap.appendChild(say);
+
+  return { wrap, say };
+}
+
+function cue(text, locked) {
+  const el = document.createElement('div');
+  el.className = 'cue';
+  el.dataset.locked = String(!!locked);
+  el.textContent = text;
+  return el;
+}
+
+/* 잠금은 CSS가 아니라 DOM으로 건다 — 다음 카드를 안 붙이면 갈 데가 없다.
+   실제 구현에서는 embla의 reInit({watchDrag:false})가 같은 일을 한다. */
+let cursor = 0;
+function mountNext() {
+  const item = QUEUE[cursor % QUEUE.length];
+  cursor += 1;
+  const card = RENDER[item.type](item);
+  feed.appendChild(card);
+  /* 소개 카드는 판정이 없으므로 즉시 다음 장을 붙여 항상 한 칸 앞을 열어둔다 */
+  if (item.type === 'intro') mountNext();
+}
+
+/* ── 카드 3종 ─────────────────────────────────────────────────────── */
+function introCard(item) {
+  const c = CONCEPTS[item.slug];
+  const card = document.createElement('section');
+  card.className = 'card';
+
+  const { wrap } = imageBlock(c, { sayEnabled:true });
+  card.appendChild(wrap);
+
+  const body = document.createElement('div');
+  body.className = 'body';
+  /* 표기와 읽기가 같은 단어(バナナ)는 참고줄에서 표기를 빼 중복을 없앤다 */
+  const aside = [c.term !== answerOf(c) ? c.term : null, c.roma].filter(Boolean).join(' · ');
+  body.innerHTML =
+    `<p class="term">${answerOf(c)}</p>` +
+    `<p class="meaning">${c.meaning}</p>` +
+    `<p class="aside">${aside}</p>`;
+  card.appendChild(body);
+
+  card.appendChild(cue('위로 밀어 다음', false));
+  return card;
+}
+
+function choiceCard(item) {
+  const c = CONCEPTS[item.slug];
+  const card = document.createElement('section');
+  card.className = 'card';
+
+  const { wrap, say } = imageBlock(c, { sayEnabled:false });
+  card.appendChild(wrap);
+
+  const body = document.createElement('div');
+  body.className = 'body';
+
+  const grid = document.createElement('div');
+  grid.className = 'choices';
+  grid.dataset.answered = 'false';
+
+  const options = shuffle([c.slug, ...item.distractors]);
+  const tail = cue('답을 고르세요', true);
+
+  options.forEach(slug => {
+    const o = CONCEPTS[slug];
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'choice';
+    b.textContent = answerOf(o);
+    b.addEventListener('click', () => {
+      if (grid.dataset.answered === 'true') return;
+      grid.dataset.answered = 'true';
+      const right = slug === c.slug;
+      b.classList.add(right ? 'correct' : 'wrong');
+      if (!right) {
+        [...grid.children].find(x => x.textContent === answerOf(c))?.classList.add('correct');
+      }
+      say.disabled = false;                 /* 답한 뒤 발음 활성화 */
+      reveal.dataset.on = 'true';
+      tail.textContent = '위로 밀어 다음';
+      tail.dataset.locked = 'false';
+      mountNext();                          /* 잠금 해제 = 다음 카드 붙이기 */
+    });
+    grid.appendChild(b);
+  });
+
+  const reveal = document.createElement('div');
+  reveal.className = 'reveal';
+  reveal.dataset.on = 'false';
+  reveal.innerHTML = `<span class="r-mean">${c.meaning} · ${c.term}</span>`;
+
+  body.appendChild(grid);
+  body.appendChild(reveal);
+  card.appendChild(body);
+  card.appendChild(tail);
+  return card;
+}
+
+function blankCard(item) {
+  const c = CONCEPTS[item.slug];
+  const card = document.createElement('section');
+  card.className = 'card';
+
+  const { wrap, say } = imageBlock(c, { sayEnabled:false });
+  card.appendChild(wrap);
+
+  const body = document.createElement('div');
+  body.className = 'body';
+
+  const chars = [...answerOf(c)];
+  const holeIdx = item.holes[0];
+
+  const slots = document.createElement('div');
+  slots.className = 'slots';
+  const slotEls = chars.map((ch, i) => {
+    const s = document.createElement('span');
+    s.className = 'slot' + (i === holeIdx ? ' hole' : '');
+    s.textContent = ch;
+    slots.appendChild(s);
+    return s;
+  });
+
+  const keys = document.createElement('div');
+  keys.className = 'keys';
+  keys.dataset.answered = 'false';
+
+  const tail = cue('빠진 글자를 채우세요', true);
+
+  shuffle([...item.keys]).forEach(ch => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'key';
+    b.textContent = ch;
+    b.addEventListener('click', () => {
+      if (keys.dataset.answered === 'true') return;
+      keys.dataset.answered = 'true';
+      const right = ch === chars[holeIdx];
+      b.classList.add(right ? 'correct' : 'wrong');
+      slotEls[holeIdx].classList.add('filled');
+      if (!right) {
+        slotEls[holeIdx].classList.add('bad');
+        [...keys.children].find(x => x.textContent === chars[holeIdx])?.classList.add('correct');
+      }
+      say.disabled = false;
+      reveal.dataset.on = 'true';
+      tail.textContent = '위로 밀어 다음';
+      tail.dataset.locked = 'false';
+      mountNext();
+    });
+    keys.appendChild(b);
+  });
+
+  const reveal = document.createElement('div');
+  reveal.className = 'reveal';
+  reveal.dataset.on = 'false';
+  reveal.innerHTML = `<span class="r-mean">${c.meaning} · ${c.term}</span>`;
+
+  body.appendChild(slots);
+  body.appendChild(keys);
+  body.appendChild(reveal);
+  card.appendChild(body);
+  card.appendChild(tail);
+  return card;
+}
+
+const RENDER = { intro:introCard, choice:choiceCard, blank:blankCard };
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+/* ── 조립 ─────────────────────────────────────────────────────────── */
+mountNext();   /* 첫 장부터. 소개 카드면 다음 장까지 연쇄로 붙는다 */
+</script>
+</body>
+</html>
