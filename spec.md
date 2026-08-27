@@ -453,21 +453,38 @@ content/verbs.json
 3. `pnpm prompt <slug>` 출력을 ImageGen에 넣어 1024 PNG를 생성한다
 4. 받은 PNG를 `.images/{slug}.png`에 두고 `pnpm image <slug>` — 512 WebP로 변환해 `public/concepts/`에 넣는다
 5. **80×80으로 줄여도 알아볼 수 있는지 확인한다** (IMAGE_STYLE.md 검수 체크리스트)
-6. 발음을 생성해 `.audio/ja/{slug}.mp3`에 두고 `pnpm audio <slug>`
+6. `pnpm audio <slug>` — 발음을 받아 `public/audio/{lang}/`에 넣는다
 7. 커밋
 
 발음은 나중에 몰아서 해도 되지만, 이미지는 3~5단계를 붙여서 한다.
 
+### 발음
+
+[xAI TTS](https://docs.x.ai/developers/model-capabilities/audio/text-to-speech)를 쓴다.
+`POST https://api.x.ai/v1/tts`, 키는 환경변수 `XAI_API_KEY`로만 받는다. 레포에 넣지 않는다.
+
+| 항목 | 값 | 이유 |
+|---|---|---|
+| 코덱 | `mp3` | `pcm`·`mulaw`·`alaw`는 브라우저가 재생하지 못한다. `<audio>`는 컨테이너 포맷만 받는다 |
+| 샘플레이트 | `24000` | 사람 목소리에 충분하다 |
+| 비트레이트 | `64000` | 단어 하나가 1초 남짓이다. 기본값 128kbps는 개당 19KB로 이미지(5KB)와 균형이 안 맞는다. 64kbps는 개당 10KB 안팎이고 열화가 거의 들리지 않는다 |
+| 목소리 | `sal` | 발음 참조용이라 중립적이고 또렷한 쪽. 기본값 `eve`는 밝고 들뜬 톤이다. `--voice`로 바꾼다 |
+| 언어 | `LANG`의 키 그대로 | xAI가 BCP-47을 받고 `ja`를 지원한다 |
+
+**읽히는 것은 그 언어의 정답 필드다** (`LANG[lang].answer`). 일본어는 읽기(かな)이므로
+들리는 소리와 정답이 정확히 같다. 표기(`猫`)를 넘기면 억양이 더 자연스러울 수 있지만
+다음톤 한자를 잘못 읽을 위험이 있고, 무엇보다 들리는 것과 정답이 어긋난다.
+
 ### 스크립트
 
-업로드가 없으므로 스크립트는 **검증과 변환만** 한다.
+업로드가 없으므로 스크립트는 **검증과 변환, 그리고 발음 내려받기만** 한다.
 
 | 명령 | 하는 일 |
 |---|---|
 | `pnpm check` | `content/*.json` 전체 검증. CI에서도 돈다 |
 | `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
-| `pnpm audio <slug>` | `.audio/{lang}/{slug}.mp3` → `public/audio/{lang}/{slug}.mp3` |
+| `pnpm audio <slug>` | xAI TTS로 발음을 만들어 `public/audio/{lang}/{slug}.mp3`에 쓴다 |
 
 `slug`를 생략하면 아직 결과물이 없는 개념 전체에 대해 돈다.
 
@@ -480,9 +497,11 @@ content/verbs.json
 - **`LANG[lang].answer` 필드 누락** — 일본어인데 `reading`이 없으면 출제 불가
 - **`category`별 개념 수가 4개 미만** — 오답 보기 3개를 못 뽑는다. 경고로 알린다
 
-`.images/`와 `.audio/`는 **gitignore**한다. 1024 PNG는 개당 약 883KB이고 재생성 때마다
-git 히스토리에 영구히 쌓이기 때문이다. 레포에 들어가는 것은 변환 결과물(개당 5.1KB)뿐이며,
-프롬프트가 `content/*.json`에 남아 있으므로 원본이 필요하면 다시 생성한다.
+`.images/`는 **gitignore**한다. 1024 PNG는 개당 약 883KB이고 재생성 때마다 git 히스토리에
+영구히 쌓이기 때문이다. 레포에 들어가는 것은 변환 결과물(개당 5.1KB)뿐이며, 프롬프트가
+`content/*.json`에 남아 있으므로 원본이 필요하면 다시 생성한다.
+
+오디오는 변환 단계가 없다. TTS가 이미 최종 포맷으로 주므로 받은 파일이 곧 배포본이다.
 
 ---
 
