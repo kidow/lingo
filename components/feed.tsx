@@ -1,11 +1,31 @@
+'use client'
+
+import { useCallback, useState } from 'react'
+import { Card } from './cards'
+import type { Question } from '@/lib/quiz'
+import type { Language } from '@/lib/types'
+
 /**
- * 세로 무한 피드의 껍데기. (spec.md §3)
+ * 세로 무한 피드. (spec.md §3)
  *
- * 지금은 CSS scroll-snap이다. 4단계에서 embla(axis:'y')로 교체하면서
- * 미응답 퀴즈 잠금을 붙인다. 잠금은 CSS가 아니라 다음 카드를 마운트하지
- * 않는 방식으로 건다.
+ * 스크롤은 CSS scroll-snap이 한다. 휠·터치·관성·키보드를 브라우저가 공짜로
+ * 주고 의존성이 0이다.
+ *
+ * 잠금은 CSS가 아니라 **DOM으로** 건다. 미응답 퀴즈 다음 카드를 아예
+ * 마운트하지 않으면 갈 곳이 없다. overflow를 토글하는 방식은 스크롤이 이미
+ * 진행 중이면 늦어서 뚫린다 — 실제로 뚫렸다.
  */
-export function Feed({ children }: { children: React.ReactNode }) {
+export function Feed({ questions, lang }: { questions: Question[]; lang: Language }) {
+  const [mounted, setMounted] = useState(() => mountThrough(questions, 0))
+
+  const handleAnswer = useCallback(
+    (index: number) => {
+      // 답한 카드 다음을 연다. 소개 카드가 이어지면 판정이 없으므로 연쇄로 열린다
+      setMounted((current) => Math.max(current, mountThrough(questions, index + 1)))
+    },
+    [questions],
+  )
+
   return (
     <main
       className="
@@ -14,9 +34,30 @@ export function Feed({ children }: { children: React.ReactNode }) {
         [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
       "
     >
-      {children}
+      {questions.slice(0, mounted).map((question, i) => (
+        <Card
+          key={`${question.entry.concept.slug}-${question.kind}-${i}`}
+          question={question}
+          lang={lang}
+          first={i === 0}
+          onAnswer={() => handleAnswer(i)}
+        />
+      ))}
     </main>
   )
+}
+
+/**
+ * `from`번째 카드를 마운트하고, 그게 판정 없는 소개 카드면 다음 것까지 계속 연다.
+ * 항상 **한 칸 앞이 열려 있어야** 스와이프가 자연스럽다.
+ */
+function mountThrough(questions: Question[], from: number): number {
+  let n = from
+  while (n < questions.length) {
+    n += 1
+    if (questions[n - 1].kind !== 'intro') break
+  }
+  return n
 }
 
 /**
@@ -42,9 +83,7 @@ export function ImageTile({ children }: { children?: React.ReactNode }) {
 
 /** 카드별 본문이 들어가는 자리. 남는 높이를 다 먹고 가운데 정렬한다. */
 export function CardBody({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex min-h-0 flex-1 flex-col justify-center gap-md">{children}</div>
-  )
+  return <div className="flex min-h-0 flex-1 flex-col justify-center gap-md">{children}</div>
 }
 
 /**
