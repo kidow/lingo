@@ -42,17 +42,32 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
     <FeedCard>
       <ImageTile>
         <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />
-        <SayButton slug={concept.slug} lang={lang} label={answer} />
       </ImageTile>
 
       <CardBody>
-        <p className="text-center font-jp text-[clamp(34px,10vw,42px)] leading-tight font-bold tracking-tight">
-          {answer}
-        </p>
-        <p className="text-center text-lg font-semibold">{concept.meaning_ko}</p>
-        {aside.length > 0 && (
-          <p className="text-center font-jp text-sm text-sub">{aside.join(' · ')}</p>
-        )}
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center justify-between gap-md">
+            <p className="font-jp text-[clamp(34px,10vw,42px)] leading-tight font-bold tracking-tight">
+              {answer}
+            </p>
+            <SayButton slug={concept.slug} lang={lang} label={answer} />
+          </div>
+          {/* 첫 항목이 발음 보조다. 큰 글자가 이미 읽기라 여기 오는 건 로마자 (lib/lang.ts) */}
+          {aside.length > 0 && (
+            <p className="font-jp text-sm text-sub">
+              {aside.map((value, i) => (i === 0 ? `[${value}]` : value)).join(' · ')}
+            </p>
+          )}
+        </div>
+
+        <div className="flex items-center gap-xs">
+          {word.part_of_speech && (
+            <span className="shrink-0 rounded-pill border border-line bg-surface px-2 py-0.5 text-xs font-semibold text-sub">
+              {word.part_of_speech}
+            </span>
+          )}
+          <p className="text-lg font-semibold">{concept.meaning_ko}</p>
+        </div>
       </CardBody>
     </FeedCard>
   )
@@ -71,7 +86,6 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
     <FeedCard>
       <ImageTile>
         <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />
-        <SayButton slug={concept.slug} lang={lang} label={answer} enabled={answered} />
       </ImageTile>
 
       <CardBody>
@@ -97,7 +111,7 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
             </button>
           ))}
         </div>
-        <Reveal show={answered} correct={correct} question={question} />
+        <Reveal show={answered} correct={correct} question={question} lang={lang} />
       </CardBody>
 
       {!answered && <Cue locked>답을 고르세요</Cue>}
@@ -119,7 +133,6 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
     <FeedCard>
       <ImageTile>
         <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />
-        <SayButton slug={concept.slug} lang={lang} label={answer} enabled={answered} />
       </ImageTile>
 
       <CardBody>
@@ -170,7 +183,7 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
           ))}
         </div>
 
-        <Reveal show={answered} correct={correct} question={question} />
+        <Reveal show={answered} correct={correct} question={question} lang={lang} />
       </CardBody>
 
       {!answered && <Cue locked>빠진 글자를 채우세요</Cue>}
@@ -195,19 +208,25 @@ function Reveal({
   show,
   correct,
   question,
+  lang,
 }: {
   show: boolean
   correct: boolean
   question: ChoiceQuestion | BlankQuestion
+  lang: Language
 }) {
   if (!show) return null
   const { concept, word, answer } = question.entry
   const extra = word.term !== answer ? ` · ${word.term}` : ''
   return (
-    <p className="text-center text-sm text-sub" role="status">
-      <span className="sr-only">{correct ? '정답입니다. ' : '틀렸습니다. 정답은 '}</span>
-      {concept.meaning_ko}
-      {extra}
-    </p>
+    <div className="flex items-center justify-center gap-sm">
+      <p className="text-sm text-sub" role="status">
+        <span className="sr-only">{correct ? '정답입니다. ' : '틀렸습니다. 정답은 '}</span>
+        {concept.meaning_ko}
+        {extra}
+      </p>
+      {/* 답하기 전에는 이 줄 자체가 없다. 잠금을 disabled가 아니라 렌더로 건다 */}
+      <SayButton slug={concept.slug} lang={lang} label={answer} />
+    </div>
   )
 }
