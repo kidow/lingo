@@ -148,6 +148,7 @@ export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
     <main
       ref={scroller}
       className="
+        feed-root
         h-dvh overflow-y-scroll overscroll-contain
         snap-y snap-mandatory
         [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
