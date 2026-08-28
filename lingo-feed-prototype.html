@@ -122,7 +122,7 @@
   .key.wrong{border-color:var(--err);background:var(--err-soft);color:var(--err)}
   .keys[data-answered="true"] .key{pointer-events:none}
 
-  /* 하단 힌트 — 다음 장이 있다는 신호 */
+  /* 하단 힌트 — 잠긴 카드에서 필요한 행동만 안내 */
   .cue{flex:0 0 auto;height:22px;display:grid;place-items:center;color:var(--sub);font-size:12px;letter-spacing:.02em}
   .cue[data-locked="true"]{color:var(--accent);font-weight:600}
 
@@ -293,7 +293,6 @@ function introCard(item) {
     `<p class="aside">${aside}</p>`;
   card.appendChild(body);
 
-  card.appendChild(cue('위로 밀어 다음', false));
   return card;
 }
 
@@ -331,8 +330,7 @@ function choiceCard(item) {
       }
       say.disabled = false;                 /* 답한 뒤 발음 활성화 */
       reveal.dataset.on = 'true';
-      tail.textContent = '위로 밀어 다음';
-      tail.dataset.locked = 'false';
+      tail.remove();
       mountNext();                          /* 잠금 해제 = 다음 카드 붙이기 */
     });
     grid.appendChild(b);
@@ -397,8 +395,7 @@ function blankCard(item) {
       }
       say.disabled = false;
       reveal.dataset.on = 'true';
-      tail.textContent = '위로 밀어 다음';
-      tail.dataset.locked = 'false';
+      tail.remove();
       mountNext();
     });
     keys.appendChild(b);

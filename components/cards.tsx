@@ -54,8 +54,6 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
           <p className="text-center font-jp text-sm text-sub">{aside.join(' · ')}</p>
         )}
       </CardBody>
-
-      <Cue>위로 밀어 다음</Cue>
     </FeedCard>
   )
 }
@@ -102,7 +100,7 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
         <Reveal show={answered} correct={correct} question={question} />
       </CardBody>
 
-      <Cue locked={!answered}>{answered ? '위로 밀어 다음' : '답을 고르세요'}</Cue>
+      {!answered && <Cue locked>답을 고르세요</Cue>}
     </FeedCard>
   )
 }
@@ -175,7 +173,7 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
         <Reveal show={answered} correct={correct} question={question} />
       </CardBody>
 
-      <Cue locked={!answered}>{answered ? '위로 밀어 다음' : '빠진 글자를 채우세요'}</Cue>
+      {!answered && <Cue locked>빠진 글자를 채우세요</Cue>}
     </FeedCard>
   )
 }

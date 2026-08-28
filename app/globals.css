@@ -74,6 +74,38 @@
   }
 }
 
+/*
+ * 480px 모바일 레일보다 넓고 충분히 긴 화면에서만 학습 요소를 한 묶음으로
+ * 재배치한다. 이미지 기준선과 본문 슬롯을 고정해 카드 종류가 바뀌어도
+ * 스와이프 중 시선이 흔들리지 않는다.
+ */
+@media (min-width: 481px) and (min-height: 800px) {
+  .feed-card {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 196px;
+    align-content: start;
+    row-gap: var(--spacing-lg);
+    padding-top: max(
+      var(--spacing-xl),
+      calc(46dvh - min(220px, 24dvh) - 107px)
+    );
+  }
+
+  .feed-card .card-body {
+    flex: none;
+    height: 196px;
+    justify-content: flex-start;
+  }
+
+  .feed-card .cue {
+    position: absolute;
+    right: 20px;
+    bottom: var(--spacing-lg);
+    left: 20px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
