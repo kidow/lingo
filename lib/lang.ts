@@ -12,12 +12,17 @@ import type { Language, Word } from './types.ts'
 export type LangStrategy = {
   /** 보기·정답·빈칸에 쓰는 필드 */
   answer: 'reading' | 'term'
-  /** 소개 카드 참고줄에 작게 붙이는 필드 */
+  /**
+   * 소개 카드 참고줄에 작게 붙이는 필드.
+   *
+   * **첫 항목은 발음 보조로 취급한다** — 큰 글자가 이미 읽기라서 그 자리에
+   * 오는 것은 로마자다. 소개 카드가 첫 항목만 대괄호로 감싼다. (spec.md §5)
+   */
   aside: ('term' | 'romanization')[]
 }
 
 export const LANG: Record<Language, LangStrategy> = {
-  ja: { answer: 'reading', aside: ['term', 'romanization'] },
+  ja: { answer: 'reading', aside: ['romanization', 'term'] },
   // de: { answer: 'term', aside: [] },
   // zh: { answer: 'reading', aside: ['term'] },
 }
