@@ -29,12 +29,11 @@ for (const { file, size } of OUTPUTS) {
 
 /**
  * 안드로이드 적응형 아이콘은 바깥을 잘라낸다. 안전 영역이 가운데 80%뿐이라
- * 그대로 넣으면 Iris 사각형 모서리가 깎인다. 70%로 줄여 여백을 준다.
- * 배경색이 SVG와 같아 이어붙인 티가 나지 않는다.
+ * 내부 카드와 L을 70%로 줄여 여백을 준다. 전면 Iris 배경은 끝까지 이어진다.
  */
 const MASKABLE = join(PUBLIC, 'icon-maskable-512.png')
 const inner = Math.round(512 * 0.7)
-await sharp({ create: { width: 512, height: 512, channels: 4, background: '#F4F1EC' } })
+await sharp({ create: { width: 512, height: 512, channels: 4, background: '#4255FF' } })
   .composite([
     {
       input: await sharp(SRC, { density: 384 }).resize(inner, inner).png().toBuffer(),
