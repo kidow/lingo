@@ -230,19 +230,6 @@ export function CardSheet({ children }: { children: React.ReactNode }) {
   )
 }
 
-/** 정사각 이미지 타일. 카드가 아닌 화면(안내)에서 쓴다. */
-export function ImageTile({ children }: { children?: React.ReactNode }) {
-  return (
-    <div className="image-tile relative mx-auto aspect-square w-[min(100%,48dvh)] shrink overflow-hidden rounded-card bg-img-bg">
-      {children}
-    </div>
-  )
-}
-
-/** 카드별 본문이 들어가는 자리. 남는 높이를 다 먹고 가운데 정렬한다. */
-export function CardBody({ children }: { children?: React.ReactNode }) {
-  return <div className="card-body flex min-h-0 flex-1 flex-col justify-center gap-md">{children}</div>
-}
 
 /**
  * 잠금 중 무엇을 해야 하는지 알려 주는 하단 한 줄. (brand-spec.md — Cue 문구)
