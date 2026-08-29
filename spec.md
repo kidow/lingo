@@ -664,7 +664,12 @@ content/verbs.json
 |---|---|---|
 | Free Dictionary (`dictionaryapi.dev`) | 영어 정의 | 키 없음 |
 | 영어 위키낱말사전 | 한국어 번역 후보 | CC BY-SA |
-| Jisho (JMdict) | 일본어 읽기와 영어 뜻 | |
+| Jisho (JMdict) | 일본어 읽기·영어 뜻·**JLPT 등급** | 구 출제기준 기반 |
+| complete-hsk-vocabulary | 중국어 **HSK 등급** | MIT. **HSK 3.0**(`new-N`)을 쓴다 |
+
+**레벨은 조회로 채우고 비면 비운 채로 둔다.** 시험 등급은 지어낼 수 없다 —
+JMdict의 JLPT 태그에는 가타카나 외래어가 빠져 있고, HSK 표에도 사무 어휘 상당수가
+없다. 값이 없으면 카드에 레벨 줄이 아예 나오지 않는다 (§5).
 
 **`pnpm check`와 분리한다.** check는 CI에서도 돌고 오프라인이어야 하는데 이쪽은 남의
 서버에 의존한다. 콘텐츠를 넣을 때 사람이 한 번 돌려보는 자리다.
