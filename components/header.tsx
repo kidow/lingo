@@ -1,6 +1,13 @@
 'use client'
 
 import { ChevronDown } from 'lucide-react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import { LANGUAGE_LABEL, LANGUAGES } from '@/lib/lang'
 import type { Language } from '@/lib/types'
 
@@ -12,6 +19,9 @@ import type { Language } from '@/lib/types'
  * 카드는 넘기는 물건이라 설정이 섞이면 오터치가 난다.
  *
  * 그래서 헤더에는 언어만 있다. 탭도, 뒤로가기도, 메뉴도 없다.
+ *
+ * 고르는 행위라 항목을 **라디오**로 둔다. 지금 무엇이 켜져 있는지가 체크
+ * 표시로 드러나고, 스크린리더에도 그렇게 읽힌다.
  */
 export function Header({
   lang,
@@ -22,27 +32,28 @@ export function Header({
 }) {
   return (
     <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
-      {/*
-        네이티브 select를 투명하게 덮어씌운다. 모바일에서는 OS 피커가 그대로
-        뜨고 키보드 조작과 접근성도 브라우저가 준다 — 목록이 둘뿐인데 직접
-        만들 이유가 없다.
-      */}
-      <label className="relative inline-flex items-center gap-1">
-        <span className="text-lg font-bold tracking-tight">{LANGUAGE_LABEL[lang]}</span>
-        <ChevronDown className="size-4 text-sub" strokeWidth={2.5} aria-hidden />
-        <select
-          value={lang}
-          onChange={(event) => onChange(event.target.value as Language)}
+      <DropdownMenu>
+        <DropdownMenuTrigger
           aria-label="학습 언어"
-          className="absolute inset-0 cursor-pointer opacity-0"
+          className="flex items-center gap-1 rounded-ctrl outline-none"
         >
-          {LANGUAGES.map((value) => (
-            <option key={value} value={value}>
-              {LANGUAGE_LABEL[value]}
-            </option>
-          ))}
-        </select>
-      </label>
+          <span className="text-lg font-bold tracking-tight">{LANGUAGE_LABEL[lang]}</span>
+          <ChevronDown className="size-4 text-sub" strokeWidth={2.5} aria-hidden />
+        </DropdownMenuTrigger>
+
+        <DropdownMenuContent align="start" sideOffset={10} className="min-w-36">
+          <DropdownMenuRadioGroup
+            value={lang}
+            onValueChange={(value) => onChange(value as Language)}
+          >
+            {LANGUAGES.map((value) => (
+              <DropdownMenuRadioItem key={value} value={value} className="text-[15px]">
+                {LANGUAGE_LABEL[value]}
+              </DropdownMenuRadioItem>
+            ))}
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </header>
   )
 }
