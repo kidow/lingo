@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CardImage, CardSheet, FeedCard } from './feed'
+import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { asideOf } from '@/lib/lang'
@@ -76,6 +76,9 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
             <p className="mt-1 text-sm text-sub">{word.example.ko}</p>
           </div>
         )}
+
+        {/* 소개 카드는 언제나 넘길 수 있다 */}
+        <SwipeHint />
       </CardSheet>
     </FeedCard>
   )
@@ -120,6 +123,8 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
           ))}
         </div>
         <Reveal show={answered} correct={correct} question={question} lang={lang} />
+        {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
+        {answered && <SwipeHint />}
       </CardSheet>
     </FeedCard>
   )
@@ -190,6 +195,8 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
         </div>
 
         <Reveal show={answered} correct={correct} question={question} lang={lang} />
+        {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
+        {answered && <SwipeHint />}
       </CardSheet>
     </FeedCard>
   )

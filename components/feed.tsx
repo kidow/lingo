@@ -1,5 +1,6 @@
 'use client'
 
+import { ChevronsUp } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Card } from './cards'
 import type { Entry } from '@/lib/entries'
@@ -169,6 +170,28 @@ export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
         ))
       )}
     </main>
+  )
+}
+
+/**
+ * 다음 카드가 있다는 신호. 시트 맨 아래에서 위로 튄다. (spec.md §3)
+ *
+ * 문구 대신 아이콘 하나다. `답을 고르세요` 같은 지시문은 쓰지 않기로 했고
+ * (§5), 여기서 말하려는 것은 "무엇을 하라"가 아니라 **"위로 갈 수 있다"** 다.
+ *
+ * 뜨는 조건이 카드마다 다르다. 소개 카드는 언제나 넘길 수 있으니 상시,
+ * 퀴즈 카드는 답해야 다음이 열리므로 답한 뒤다. **화살표가 보이는 것과
+ * 실제로 넘어갈 수 있는 것이 항상 같다** — 보이면 열려 있다.
+ *
+ * 스크린리더에는 숨긴다. 스크롤은 원래 되는 것이고, 이 아이콘은 그 사실을
+ * 눈으로만 알려 준다. 움직임을 줄이는 설정에서는 globals.css가 애니메이션을
+ * 멈춰 화살표만 남는다.
+ */
+export function SwipeHint() {
+  return (
+    <div className="mt-auto grid h-7 shrink-0 place-items-center text-sub" aria-hidden>
+      <ChevronsUp className="size-5 animate-bounce" strokeWidth={1.8} />
+    </div>
   )
 }
 
