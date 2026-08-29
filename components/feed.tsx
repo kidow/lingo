@@ -149,8 +149,7 @@ export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
     <main
       ref={scroller}
       className="
-        feed-root
-        h-dvh overflow-y-scroll overscroll-contain
+        min-h-0 flex-1 overflow-y-scroll overscroll-contain
         snap-y snap-mandatory
         [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
       "
@@ -159,7 +158,9 @@ export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
         <Skeleton empty={ready && entries.length === 0} />
       ) : (
         questions.map((question, i) => (
-          <div key={`${question.entry.concept.slug}-${question.kind}-${i}`} data-index={i}>
+          // 래퍼도 높이를 넘겨받아야 카드가 화면 하나를 채운다. 여기가 auto면
+          // 카드가 내용 높이로 줄어 스냅이 어긋난다
+          <div key={`${question.entry.concept.slug}-${question.kind}-${i}`} data-index={i} className="h-full">
             <Card
               question={question}
               lang={lang}
@@ -216,7 +217,7 @@ function Skeleton({ empty }: { empty: boolean }) {
  */
 export function FeedCard({ children }: { children: React.ReactNode }) {
   return (
-    <section className="feed-card h-dvh snap-start snap-always mx-auto flex w-full max-w-[480px] flex-col">
+    <section className="feed-card h-full snap-start snap-always mx-auto flex w-full max-w-[480px] flex-col">
       {children}
     </section>
   )

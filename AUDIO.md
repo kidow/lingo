@@ -9,16 +9,19 @@
 
 ## 무엇을 읽히나
 
-**그 언어의 정답 필드를 읽힌다.** 일본어는 **읽기(かな)** 다.
+**그 언어의 정답 필드를 읽힌다.** 일본어는 **읽기(かな)**, 영어는 **표기**다.
 
-| slug | 읽힐 텍스트 | 읽히면 안 되는 것 |
-|---|---|---|
-| `cat` | `ねこ` | ~~`猫`~~ · ~~`neko`~~ · ~~`고양이`~~ |
-| `clock` | `とけい` | ~~`時計`~~ |
-| `banana` | `バナナ` | |
-| `bread` | `パン` | |
+| slug | 언어 | 읽힐 텍스트 | 읽히면 안 되는 것 |
+|---|---|---|---|
+| `cat` | `en` | `cat` | ~~`고양이`~~ |
+| `cat` | `ja` | `ねこ` | ~~`猫`~~ · ~~`neko`~~ · ~~`고양이`~~ |
+| `clock` | `en` | `clock` | ~~`시계`~~ |
+| `clock` | `ja` | `とけい` | ~~`時計`~~ |
+| `banana` | `ja` | `バナナ` | |
+| `bread` | `ja` | `パン` | |
 
-`content/*.json`의 `words.ja.reading` 값 그대로다.
+`content/*.json`에서 그 언어의 **정답 필드** 값 그대로다 — 일본어는 `words.ja.reading`,
+영어는 `words.en.term`이다. 어느 필드가 정답인지는 `lib/lang.ts`의 `LANG`이 정한다.
 
 표기(`猫`)를 읽히면 억양이 더 자연스러울 수는 있다. 그래도 읽기를 쓴다 —
 학습자가 고르는 정답이 읽기이므로 **들리는 소리와 정답이 어긋나면 안 되고**,
@@ -143,14 +146,18 @@ curl -X POST https://api.x.ai/v1/tts \
 public/audio/{language}/{slug}.mp3
 ```
 
-`language`는 `content/*.json`의 `words` 키(`ja`), `slug`는 개념 slug다.
+`language`는 `content/*.json`의 `words` 키(`en` · `ja`), `slug`는 개념 slug다.
 
 ```
+public/audio/en/banana.mp3
 public/audio/ja/banana.mp3
 public/audio/ja/bread.mp3
 public/audio/ja/cat.mp3
 public/audio/ja/clock.mp3
 ```
+
+**같은 개념이라도 언어마다 파일이 따로다.** 이미지는 개념 하나에 한 장이지만
+소리는 언어의 것이기 때문이다. 영어 발음을 넣어도 일본어 파일은 그대로 쓴다.
 
 **파일명이 slug와 한 글자라도 다르면 앱이 못 찾는다.** 경로가 slug에서 계산되기 때문에
 데이터에 경로 필드가 없고, 따라서 오타를 잡아줄 곳도 없다.
