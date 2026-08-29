@@ -92,6 +92,15 @@ for (const file of files) {
       // 정답으로 쓸 필드가 비면 그 언어에서 출제 불가다
       if (!word[strategy.answer])
         fail(where, `${lang}.${strategy.answer} 누락 — 이 언어의 정답 필드입니다`)
+
+      // 예문은 선택이다. 있다면 두 줄이 다 있어야 하고, 그 단어가 실제로 들어 있어야 한다
+      const example = word.example as Record<string, unknown> | undefined
+      if (example) {
+        if (!example.text || !example.ko) fail(where, `${lang}.example은 text와 ko가 모두 필요합니다`)
+        const answer = word[strategy.answer]
+        if (typeof example.text === 'string' && typeof answer === 'string' && !example.text.includes(answer))
+          warn(`${where} — ${lang}.example에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`)
+      }
     }
 
     // 결과물 유무는 실패가 아니다. 이미지가 없으면 플레이스홀더로 나간다

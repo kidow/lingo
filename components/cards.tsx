@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CardBody, Cue, FeedCard, ImageTile } from './feed'
+import { CardImage, CardSheet, Cue, FeedCard } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { asideOf } from '@/lib/lang'
@@ -40,11 +40,11 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
 
   return (
     <FeedCard>
-      <ImageTile>
+      <CardImage>
         <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />
-      </ImageTile>
+      </CardImage>
 
-      <CardBody>
+      <CardSheet>
         <div className="flex flex-col gap-1">
           <div className="flex items-center justify-between gap-md">
             <p className="font-jp text-[clamp(34px,10vw,42px)] leading-tight font-bold tracking-tight">
@@ -68,7 +68,15 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
           )}
           <p className="text-lg font-semibold">{concept.meaning_ko}</p>
         </div>
-      </CardBody>
+
+        {/* 예문은 소개 카드에만 둔다. 정답 단어가 그대로 들어 있어 퀴즈에 못 쓴다 */}
+        {word.example && (
+          <div className="border-t border-line pt-md">
+            <p className="font-jp text-[15px] leading-relaxed">{word.example.text}</p>
+            <p className="mt-1 text-sm text-sub">{word.example.ko}</p>
+          </div>
+        )}
+      </CardSheet>
     </FeedCard>
   )
 }
@@ -84,11 +92,11 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
 
   return (
     <FeedCard>
-      <ImageTile>
+      <CardImage>
         <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />
-      </ImageTile>
+      </CardImage>
 
-      <CardBody>
+      <CardSheet>
         <div className="grid grid-cols-2 gap-sm">
           {options.map((option) => (
             <button
@@ -112,9 +120,8 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
           ))}
         </div>
         <Reveal show={answered} correct={correct} question={question} lang={lang} />
-      </CardBody>
-
-      {!answered && <Cue locked>답을 고르세요</Cue>}
+        {!answered && <Cue locked>답을 고르세요</Cue>}
+      </CardSheet>
     </FeedCard>
   )
 }
@@ -131,11 +138,11 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
 
   return (
     <FeedCard>
-      <ImageTile>
+      <CardImage>
         <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />
-      </ImageTile>
+      </CardImage>
 
-      <CardBody>
+      <CardSheet>
         <div className="flex items-baseline justify-center gap-2.5">
           {chars.map((char, i) => {
             const hole = i === holeIndex
@@ -184,9 +191,8 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
         </div>
 
         <Reveal show={answered} correct={correct} question={question} lang={lang} />
-      </CardBody>
-
-      {!answered && <Cue locked>빠진 글자를 채우세요</Cue>}
+        {!answered && <Cue locked>빠진 글자를 채우세요</Cue>}
+      </CardSheet>
     </FeedCard>
   )
 }

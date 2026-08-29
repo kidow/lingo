@@ -24,6 +24,14 @@ export type Word = {
   /** 로마자. ja: neko — 참고 표시 전용. 보기나 정답으로 절대 쓰지 않는다 */
   romanization?: string
   part_of_speech?: string
+  /**
+   * 짧은 예문. 소개 카드 하단에만 나온다. (spec.md §5)
+   *
+   * 학습 대상이 읽기이므로 かな로 쓰고 띄어쓰기로 끊는다. 한자를 쓰지 않는
+   * 이유는 소개 카드가 한자를 참고로만 다루기 때문이다 (§1).
+   * 정답 단어가 문장에 그대로 들어 있어 퀴즈 카드에는 쓸 수 없다.
+   */
+  example?: { text: string; ko: string }
   attributes?: Attributes
 }
 
