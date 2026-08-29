@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CardImage, CardSheet, Cue, FeedCard } from './feed'
+import { CardImage, CardSheet, FeedCard } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { asideOf } from '@/lib/lang'
@@ -120,7 +120,6 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
           ))}
         </div>
         <Reveal show={answered} correct={correct} question={question} lang={lang} />
-        {!answered && <Cue locked>답을 고르세요</Cue>}
       </CardSheet>
     </FeedCard>
   )
@@ -191,7 +190,6 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
         </div>
 
         <Reveal show={answered} correct={correct} question={question} lang={lang} />
-        {!answered && <Cue locked>빠진 글자를 채우세요</Cue>}
       </CardSheet>
     </FeedCard>
   )
