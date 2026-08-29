@@ -238,6 +238,16 @@ test('4지선다 보기는 정답 포함 4개이고 중복이 없다', () => {
   assert.ok(q.options.includes('ねこ'))
 })
 
+test('정답과 글자가 같은 개념은 오답 보기에서 빠진다', () => {
+  // 歯도 葉도 읽기가 は다. 슬러그만 보고 거르면 같은 글자가 두 칸에 선다
+  const leaf = entry('leaf', 'は')
+  const entries = [entry('tooth', 'は'), ...ENTRIES.slice(1), leaf]
+  const state = introduced(initialState(), 'tooth')
+  const q = questionFor(entries[0], state, entries)
+  if (q.kind !== 'choice') return assert.fail('choice가 아니다')
+  assert.equal(q.options.filter((option) => option === 'は').length, 1)
+})
+
 test('오답 보기는 같은 category에서 나온다', () => {
   const verb = entry('eat', 'たべる', 'verb')
   const entries = [...ENTRIES, verb]

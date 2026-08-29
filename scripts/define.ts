@@ -35,14 +35,33 @@ type Lookup = {
   jlpt?: string
 }
 
+/**
+ * 실패를 두 가지로 나눈다.
+ *
+ *   404 — 사전에 그 낱말이 없다. `null`을 돌려준다
+ *   그 외 — 네트워크나 429다. 세 번까지 물러서며 다시 걸고, 끝내 안 되면 **던진다**
+ *
+ * 던지는 이유가 있다. `pnpm levels`는 조회 결과가 비면 등급을 **지운다** —
+ * 429 한 번을 "그 단어에 등급이 없다"로 읽으면 멀쩡한 N4가 소리 없이 사라진다.
+ * 실제로 그렇게 사라졌다.
+ */
 async function json(url: string): Promise<unknown | null> {
-  try {
-    const res = await fetch(url, { headers: UA })
-    if (!res.ok) return null
-    return await res.json()
-  } catch {
-    return null
+  let last = ''
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    if (attempt > 0) await new Promise((r) => setTimeout(r, 500 * 2 ** attempt))
+    try {
+      const res = await fetch(url, { headers: UA })
+      if (res.status === 404) return null
+      if (!res.ok) {
+        last = `HTTP ${res.status}`
+        continue
+      }
+      return await res.json()
+    } catch (error) {
+      last = String(error)
+    }
   }
+  throw new Error(`조회 실패 (${last}): ${url}`)
 }
 
 /** 영어 정의. 첫 뜻 두 개만 — 사전을 옮겨 적으려는 게 아니라 확인하려는 것이다 */
@@ -80,15 +99,23 @@ async function japanese(term: string): Promise<Lookup> {
     `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(term)}`,
   )) as {
     data?: Array<{
-      japanese?: Array<{ reading?: string }>
+      japanese?: Array<{ word?: string; reading?: string }>
       senses?: Array<{ english_definitions?: string[] }>
       jlpt?: string[]
     }>
   } | null
 
-  const first = data?.data?.[0]
+  // 첫 결과를 그냥 쓰면 안 된다. `葉`을 검색하면 `葉っぱ`·`言葉`가 먼저 오고
+  // 정작 `葉`(N4)은 뒤에 있어 등급이 통째로 빈다. 표기나 읽기가 정확히 같은
+  // 항목을 먼저 찾고, 없을 때만 첫 결과로 돌아간다 — 표제어가 한자인데 우리가
+  // 가나로 쓰는 낱말이 있다(`コップ`의 표제어는 `洋杯`다)
+  const matches = (entry: { japanese?: Array<{ word?: string; reading?: string }> }) =>
+    entry.japanese?.some((j) => j.word === term || j.reading === term) ?? false
+  const first = data?.data?.find(matches) ?? data?.data?.[0]
+  const japaneseForm = first?.japanese?.find((j) => j.word === term || j.reading === term)
+
   return {
-    reading: first?.japanese?.[0]?.reading,
+    reading: (japaneseForm ?? first?.japanese?.[0])?.reading,
     definitions: (first?.senses ?? []).slice(0, 2).flatMap((s) => s.english_definitions ?? []),
     korean: [],
     // jlpt-n5 → N5. 구 출제기준 기반이라 공식은 아니지만 추정보다 낫다
