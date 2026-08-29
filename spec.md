@@ -562,6 +562,10 @@ content/verbs.json
 
 발음은 없어도 학습이 돌아가므로 나중에 몰아서 해도 된다. 이미지는 3~5단계를 붙여서 한다.
 
+이 절차는 [.claude/skills/add-concept](.claude/skills/add-concept/SKILL.md)에 스킬로도 있다.
+규칙이 이 문서와 IMAGE_STYLE·AUDIO 셋에 흩어져 있어 한 번에 꺼내 쓰라고 묶어둔 것이다.
+**규칙의 출처는 여전히 이 세 문서다** — 스킬은 절차만 갖는다.
+
 ### 발음
 
 규격과 생성 절차는 [AUDIO.md](AUDIO.md)에 있다. 스크립트가 없다 — 손으로 만들어
