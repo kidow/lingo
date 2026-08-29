@@ -47,7 +47,14 @@ export function Header({
             onValueChange={(value) => onChange(value as Language)}
           >
             {LANGUAGES.map((value) => (
-              <DropdownMenuRadioItem key={value} value={value} className="text-[15px]">
+              // Base UI의 라디오 항목은 기본적으로 메뉴를 열어 둔다. 여러 개를
+              // 연달아 고르는 자리라면 맞지만 여기서는 하나를 고르면 끝이다
+              <DropdownMenuRadioItem
+                key={value}
+                value={value}
+                closeOnClick
+                className="text-[15px]"
+              >
                 {LANGUAGE_LABEL[value]}
               </DropdownMenuRadioItem>
             ))}
