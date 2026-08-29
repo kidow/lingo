@@ -176,26 +176,61 @@ export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
 function Skeleton({ empty }: { empty: boolean }) {
   return (
     <FeedCard>
-      <ImageTile />
-      <CardBody />
-      <Cue>{empty ? '아직 배울 단어가 없어요' : ' '}</Cue>
+      <CardImage />
+      <CardSheet>
+        <Cue>{empty ? '아직 배울 단어가 없어요' : ' '}</Cue>
+      </CardSheet>
     </FeedCard>
   )
 }
 
 /**
  * 카드 한 장 = 화면 하나. 골격은 세 종류가 모두 같다.
- *   이미지 → 본문 → 잠금 중 하단 안내
+ *   이미지 → 본문 시트
+ *
+ * 카드 자체는 여백을 갖지 않는다. 이미지가 레일 폭을 꽉 채우고 시트가 자기
+ * 패딩을 들고 있기 때문이다.
  */
 export function FeedCard({ children }: { children: React.ReactNode }) {
   return (
-    <section className="feed-card h-dvh snap-start snap-always mx-auto flex w-full max-w-[480px] flex-col gap-lg px-5 pt-xl pb-lg">
+    <section className="feed-card h-dvh snap-start snap-always mx-auto flex w-full max-w-[480px] flex-col">
       {children}
     </section>
   )
 }
 
-/** 정사각 이미지 타일. 화면이 낮아도 카드를 밀어내지 않도록 높이를 가둔다. */
+/**
+ * 카드 상단 이미지. 레일 폭을 꽉 채운다. (spec.md §3)
+ *
+ * 모바일 전용이 되면서 이미지를 가운데 띄워 둘 이유가 사라졌다. 폭을 그대로
+ * 쓰고 아래 시트가 그 위로 올라타 이미지와 글자가 한 덩어리로 읽힌다.
+ *
+ * 정사각이되 높이에 상한을 둔다. 짧은 화면에서 정사각을 고집하면 시트가
+ * 밀려 예문이 잘린다.
+ */
+export function CardImage({ children }: { children?: React.ReactNode }) {
+  return (
+    <div className="relative aspect-square max-h-[52dvh] w-full shrink-0 overflow-hidden bg-img-bg">
+      {children}
+    </div>
+  )
+}
+
+/**
+ * 본문 시트. 이미지 위로 올라타 둘을 한 덩어리로 만든다.
+ *
+ * 테두리를 두르지 않는다. 선을 그으면 그림이 사각형 안에 갇혀
+ * "이미지가 배경에 녹는다"는 원칙이 깨진다. (brand-spec.md)
+ */
+export function CardSheet({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative -mt-lg flex min-h-0 flex-1 flex-col gap-md rounded-t-card bg-surface px-5 pt-lg pb-lg">
+      {children}
+    </div>
+  )
+}
+
+/** 정사각 이미지 타일. 카드가 아닌 화면(안내)에서 쓴다. */
 export function ImageTile({ children }: { children?: React.ReactNode }) {
   return (
     <div className="image-tile relative mx-auto aspect-square w-[min(100%,48dvh)] shrink overflow-hidden rounded-card bg-img-bg">
@@ -215,7 +250,7 @@ export function CardBody({ children }: { children?: React.ReactNode }) {
 export function Cue({ children, locked = false }: { children: React.ReactNode; locked?: boolean }) {
   return (
     <p
-      className={`cue grid h-[22px] shrink-0 place-items-center text-xs tracking-wide ${
+      className={`cue mt-auto grid h-[22px] shrink-0 place-items-center text-xs tracking-wide ${
         locked ? 'font-semibold text-accent' : 'text-sub'
       }`}
     >
