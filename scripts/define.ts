@@ -31,6 +31,8 @@ type Lookup = {
   /** 사전이 주는 한국어 번역 후보 */
   korean: string[]
   reading?: string
+  /** JLPT 등급. Jisho(JMdict)가 주는 값이다 */
+  jlpt?: string
 }
 
 async function json(url: string): Promise<unknown | null> {
@@ -72,18 +74,31 @@ async function koreanTranslations(word: string): Promise<string[]> {
   return [...new Set(found)]
 }
 
-/** 일본어는 JMdict를 본다. 읽기와 영어 뜻이 나온다 */
+/** 일본어는 JMdict를 본다. 읽기·영어 뜻·JLPT 등급이 나온다 */
 async function japanese(term: string): Promise<Lookup> {
   const data = (await json(
     `https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(term)}`,
-  )) as { data?: Array<{ japanese?: Array<{ reading?: string }>; senses?: Array<{ english_definitions?: string[] }> }> } | null
+  )) as {
+    data?: Array<{
+      japanese?: Array<{ reading?: string }>
+      senses?: Array<{ english_definitions?: string[] }>
+      jlpt?: string[]
+    }>
+  } | null
 
   const first = data?.data?.[0]
   return {
     reading: first?.japanese?.[0]?.reading,
     definitions: (first?.senses ?? []).slice(0, 2).flatMap((s) => s.english_definitions ?? []),
     korean: [],
+    // jlpt-n5 → N5. 구 출제기준 기반이라 공식은 아니지만 추정보다 낫다
+    jlpt: first?.jlpt?.[0]?.replace(/^jlpt-n(\d)$/, 'N$1'),
   }
+}
+
+/** 일본어 단어의 JLPT 등급만 조회한다. 없으면 undefined */
+export async function jlptOf(term: string): Promise<string | undefined> {
+  return (await japanese(term)).jlpt
 }
 
 async function lookup(word: string, lang: string): Promise<Lookup> {
@@ -112,6 +127,7 @@ async function one(word: string) {
   console.log(`\n${word}  (${lang})`)
   console.log(line(40))
   if (result.reading) console.log(`읽기       ${result.reading}`)
+  if (result.jlpt) console.log(`JLPT       ${result.jlpt}`)
   if (result.korean.length) console.log(`한국어     ${result.korean.join(' · ')}`)
   if (result.definitions.length) {
     console.log('뜻')
@@ -156,5 +172,9 @@ async function audit() {
   console.log()
 }
 
-const [word] = process.argv.slice(2)
-await (word ? one(word) : audit())
+// 직접 실행할 때만 돈다. 다른 스크립트가 jlptOf만 쓰려고 import해도
+// 사전 조회가 통째로 돌아버리면 안 된다
+if (import.meta.main) {
+  const [word] = process.argv.slice(2)
+  await (word ? one(word) : audit())
+}

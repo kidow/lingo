@@ -1,5 +1,6 @@
 import everyday from '@/content/everyday.json'
 import office from '@/content/office.json'
+import travel from '@/content/travel.json'
 import { entriesFor as selectEntries, type Entry } from './entries.ts'
 import { trackOf, type TrackId } from './track.ts'
 import type { Concept, ContentFile } from './types.ts'
@@ -15,7 +16,11 @@ import type { Concept, ContentFile } from './types.ts'
  *
  * 파일을 추가하면 여기 배열에도 넣는다. 정적 import여야 번들러가 잡는다.
  */
-const FILES: ContentFile[] = [everyday as ContentFile, office as ContentFile]
+const FILES: ContentFile[] = [
+  everyday as ContentFile,
+  office as ContentFile,
+  travel as ContentFile,
+]
 
 export const CONCEPTS: Concept[] = FILES.flatMap((file) => file.concepts)
 
