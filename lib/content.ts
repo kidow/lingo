@@ -1,5 +1,6 @@
 import everyday from '@/content/everyday.json'
 import food from '@/content/food.json'
+import home from '@/content/home.json'
 import office from '@/content/office.json'
 import travel from '@/content/travel.json'
 import { entriesFor as selectEntries, type Entry } from './entries.ts'
@@ -22,6 +23,7 @@ const FILES: ContentFile[] = [
   office as ContentFile,
   travel as ContentFile,
   food as ContentFile,
+  home as ContentFile,
 ]
 
 export const CONCEPTS: Concept[] = FILES.flatMap((file) => file.concepts)
