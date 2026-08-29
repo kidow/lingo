@@ -651,6 +651,7 @@ content/verbs.json
 | `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
 | `pnpm define <word>` | 사전에서 뜻을 찾는다. 생략하면 콘텐츠 전체의 `meaning_ko`를 대조한다 |
+| `pnpm audio` | 발음 현황. `list <lang>`으로 만들 것을, `place <lang> <slug> <파일>`로 받은 파일을 넣는다 |
 
 `slug`를 생략하면 아직 결과물이 없는 개념 전체에 대해 돈다.
 
