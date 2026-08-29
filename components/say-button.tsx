@@ -50,41 +50,10 @@ export function SayButton({
   const audioRef = useRef<HTMLAudioElement | null>(null)
   /** 누른 횟수. 홀짝으로 속도가 갈린다 */
   const taps = useRef(0)
-  /** 이미 저절로 울렸는지. 효과가 두 번 실행돼도 두 번 울리지 않는다 */
-  const autoPlayed = useRef(false)
-  /** 어느 단어의 상태인지. 단어가 바뀌면 횟수를 처음부터 센다 */
-  const key = `${lang}/${slug}`
-  const keyRef = useRef(key)
-
-  // 렌더 중에 되돌린다. 효과에 두면 개발 모드의 이중 실행에서 자동 재생 뒤에
-  // 리셋이 한 번 더 돌아 "다시 = 천천히"가 깨진다
-  if (keyRef.current !== key) {
-    keyRef.current = key
-    taps.current = 0
-    autoPlayed.current = false
-  }
   const [available, setAvailable] = useState(true)
   const [playing, setPlaying] = useState(false)
 
-  useEffect(() => {
-    // 파일이 없으면 조용히 비활성. 발음이 아직 없는 개념은 정상이다.
-    //
-    // preload='none'이면 요청이 안 나가서 error도 안 뜬다 — 파일이 없어도
-    // 버튼이 활성으로 보이다가 누른 뒤에야 실패한다. metadata는 헤더만
-    // 받아오므로 없는 파일을 미리 걸러낸다. 있으면 재생도 빨라진다.
-    const audio = new Audio(audioPath(slug, lang))
-    audio.preload = 'metadata'
-    audio.addEventListener('error', () => setAvailable(false))
-    audio.addEventListener('ended', () => setPlaying(false))
-    audioRef.current = audio
-    return () => {
-      audio.pause()
-      audioRef.current = null
-    }
-  }, [slug, lang])
-
-  const play = useCallback(() => {
-    const audio = audioRef.current
+  const play = useCallback((audio: HTMLAudioElement | null = audioRef.current) => {
     if (!audio) return
 
     taps.current += 1
@@ -97,17 +66,34 @@ export function SayButton({
     audio.currentTime = 0
     // 실패해도 버튼을 죽이지 않는다. 재생이 막히거나(자동재생 정책) 중단되는
     // 것은(NotAllowedError · AbortError) 파일 문제가 아니다. 파일이 없다는
-    // 판정은 위 'error' 이벤트 하나가 맡는다 — 그게 유일한 근거다
+    // 판정은 아래 'error' 이벤트 하나가 맡는다 — 그게 유일한 근거다
     audio.play().catch(() => setPlaying(false))
   }, [])
 
-  // 판정 직후 한 번. 사용자의 탭에서 이어진 흐름이라 브라우저 자동재생 정책에
-  // 걸리지 않는다 — 이 컴포넌트는 답을 고른 뒤에야 마운트된다
   useEffect(() => {
-    if (!autoPlay || autoPlayed.current) return
-    autoPlayed.current = true
-    play()
-  }, [autoPlay, play])
+    // 파일이 없으면 조용히 비활성. 발음이 아직 없는 개념은 정상이다.
+    //
+    // preload='none'이면 요청이 안 나가서 error도 안 뜬다 — 파일이 없어도
+    // 버튼이 활성으로 보이다가 누른 뒤에야 실패한다. metadata는 헤더만
+    // 받아오므로 없는 파일을 미리 걸러낸다. 있으면 재생도 빨라진다.
+    const audio = new Audio(audioPath(slug, lang))
+    audio.preload = 'metadata'
+    audio.addEventListener('error', () => setAvailable(false))
+    audio.addEventListener('ended', () => setPlaying(false))
+    audioRef.current = audio
+
+    // 자동 재생은 **이 오디오에** 건다. 이 효과 밖에 두면 정리 함수의 pause()가
+    // 방금 시작한 재생을 끊어버린다 — 개발 모드의 이중 실행에서 실제로 그랬고,
+    // 첫 오디오는 중단되고 두 번째 오디오는 이미 울렸다고 판단해 건너뛰어
+    // 아무 소리도 나지 않았다. 오디오와 그 재생의 수명을 같이 둔다.
+    taps.current = 0
+    if (autoPlay) play(audio)
+
+    return () => {
+      audio.pause()
+      audioRef.current = null
+    }
+  }, [slug, lang, autoPlay, play])
 
   const disabled = !enabled || !available
 
@@ -116,7 +102,7 @@ export function SayButton({
       type="button"
       disabled={disabled}
       aria-label={`${label} 발음 듣기`}
-      onClick={play}
+      onClick={() => play()}
       // 발음 파일이 없어도 사라지지 않는다. 자리가 비면 옆 글자가 밀리므로
       // 테두리와 배경은 그대로 두고 아이콘만 흐려진다. (brand-spec.md)
       className={`
