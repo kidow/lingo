@@ -1,3 +1,4 @@
+import body from '@/content/body.json'
 import everyday from '@/content/everyday.json'
 import food from '@/content/food.json'
 import home from '@/content/home.json'
@@ -19,6 +20,7 @@ import type { Concept, ContentFile } from './types.ts'
  * 파일을 추가하면 여기 배열에도 넣는다. 정적 import여야 번들러가 잡는다.
  */
 const FILES: ContentFile[] = [
+  body as ContentFile,
   everyday as ContentFile,
   office as ContentFile,
   travel as ContentFile,
