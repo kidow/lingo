@@ -113,7 +113,7 @@
 | **FeedCard** | 화면 하나를 꽉 채운다. 여백을 갖지 않는다 — 이미지가 폭을 채우고 시트가 자기 패딩을 든다 |
 | **CardSheet** | 본문 면. `--surface`, 위쪽 모서리만 `--radius-card`, 이미지 위로 `18px` 올라탄다. **테두리 없음** |
 | **CardImage** | 정사각, 레일 폭을 꽉 채운다. 높이 상한 `52dvh` — 짧은 화면에서 예문이 밀리지 않게 |
-| **SayButton** | **정답 텍스트 오른쪽**. 44px 원형, `--surface` 배경에 `--line` 테두리. 아이콘은 lucide `audio-lines`. 퀴즈 카드에서는 답하기 전에 아예 렌더하지 않는다 |
+| **SayButton** | **정답 텍스트 오른쪽**. 44px 원형, `--surface` 배경에 `--line` 테두리. 아이콘은 lucide `audio-lines`. 퀴즈 카드에서는 답하기 전에 아예 렌더하지 않는다. 누를 때마다 `1.0`배 / `0.8`배가 번갈아 난다 |
 | **IntroBody** | **좌측 정렬.** 읽기(크게, 오른쪽 끝에 SayButton) → `[로마자] · 표기` → 품사 알약 + 뜻. 판정 없음 |
 | **PosPill** | 품사 알약. `--surface` 배경, `--line` 1px, `--radius-pill`, `--sub` 글자. `part_of_speech` 값을 그대로 넣는다 |
 | **ChoiceGrid** | 2×2. 보기 최소 높이 72px. **문항 지시문을 넣지 않는다** |
