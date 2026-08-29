@@ -113,6 +113,32 @@ for (const file of files) {
   })
 }
 
+/*
+ * 고아 오디오 — 어느 slug와도 맞지 않는 파일.
+ *
+ * 경로가 slug에서 계산되므로 파일명이 한 글자만 달라도 앱은 조용히 못 찾는다.
+ * 읽기나 로마자로 저장하기 쉬운데(`cat` 개념을 `neko.mp3`로), 그러면 발음이
+ * 있는데도 버튼이 비활성으로 남는다. 눈에 안 띄는 실패라 여기서 잡는다.
+ */
+const audioRoot = join(PUBLIC_DIR, 'audio')
+if (existsSync(audioRoot)) {
+  for (const lang of readdirSync(audioRoot, { withFileTypes: true })) {
+    if (!lang.isDirectory()) continue
+    for (const file of readdirSync(join(audioRoot, lang.name))) {
+      if (!file.endsWith('.mp3')) continue
+      const slug = file.slice(0, -'.mp3'.length)
+      if (seen.has(slug)) continue
+      const guess = [...seen.keys()].find((s) => s.startsWith(slug) || slug.startsWith(s))
+      fail(
+        join(audioRoot, lang.name, file),
+        `어느 개념 slug와도 맞지 않습니다 — 이 발음은 앱에 연결되지 않습니다${
+          guess ? `. "${guess}.mp3" 를 의도했나요?` : ''
+        }`,
+      )
+    }
+  }
+}
+
 // 4지선다는 같은 category에서 오답 3개를 뽑는다. 모자라면 전체 풀로 넓혀야 한다
 for (const [category, count] of Object.entries(perCategory)) {
   if (count > 0 && count < MIN_PER_CATEGORY)

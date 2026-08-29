@@ -55,7 +55,9 @@ export default function DebugPage() {
         <Stat label="예문" value={`${rows.length - missingExample}/${rows.length}`} bad={missingExample > 0} />
       </dl>
 
-      <table className="w-full overflow-hidden rounded-ctrl border border-line bg-surface text-left text-[13px]">
+      {/* 좁은 창에서 칸이 짓눌리는 대신 표째로 가로 스크롤한다 */}
+      <div className="overflow-x-auto rounded-ctrl border border-line">
+      <table className="w-full min-w-[720px] bg-surface text-left text-[13px]">
         <thead>
           <tr className="text-[11px] tracking-wide text-sub uppercase">
             <Th />
@@ -132,6 +134,7 @@ export default function DebugPage() {
           })}
         </tbody>
       </table>
+      </div>
     </main>
   )
 }
