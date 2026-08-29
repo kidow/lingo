@@ -1,5 +1,5 @@
 import { distractorPool, type Entry } from './entries.ts'
-import { blankable, pickConfusables } from './confusables.ts'
+import { blankable, blankableChar, pickConfusables } from './confusables.ts'
 import { hashString, makeRng, sample, shuffled } from './random.ts'
 
 /**
@@ -56,14 +56,27 @@ export function buildChoice(entry: Entry, entries: Entry[], attempt = 0): Choice
  * (spec.md §5) 호출부가 `canBlank`로 먼저 거른다.
  */
 export function canBlank(entry: Entry): boolean {
-  return [...entry.answer].length >= 2 && blankable(entry.answer)
+  return blankable(entry.answer) && holesOf(entry.answer).length > 0
+}
+
+/**
+ * 뚫을 수 있는 자리들.
+ *
+ * 첫 글자는 단서로 남긴다 — 그래야 순수 회상이 아니라 단서 회상이 된다.
+ * 공백은 뚫지 않는다. 뚫어도 후보로 깔 것이 없고, 맞혀도 배우는 게 없다.
+ */
+function holesOf(answer: string): number[] {
+  const chars = [...answer]
+  return chars
+    .map((ch, i) => (i > 0 && blankableChar(ch) ? i : -1))
+    .filter((i) => i >= 0)
 }
 
 export function buildBlank(entry: Entry, attempt = 0): BlankQuestion {
   const rng = makeRng(seedOf(entry, 'blank', attempt))
   const chars = [...entry.answer]
-  // 첫 글자는 남겨 단서로 쓴다. 그래야 순수 회상이 아니라 단서 회상이 된다
-  const holeIndex = 1 + Math.floor(rng() * (chars.length - 1))
+  const holes = holesOf(entry.answer)
+  const holeIndex = holes[Math.floor(rng() * holes.length)]
   const answerChar = chars[holeIndex]
   const distractors = pickConfusables(answerChar, KEY_COUNT - 1, rng, shuffled)
   return {

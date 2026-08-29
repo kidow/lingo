@@ -86,6 +86,93 @@ const CONFUSABLE: Record<string, string[]> = {
   x: ['s', 'k', 'z'],
   y: ['v', 'j', 'g'],
   z: ['s', 'x', 'n'],
+
+  // 한자 — 획이 하나 다르거나 부수가 같아 헷갈리는 짝
+  未: ['末', '术', '禾'],
+  末: ['未', '木', '本'],
+  木: ['本', '术', '禾'],
+  本: ['木', '末', '体'],
+  土: ['士', '工', '干'],
+  士: ['土', '干', '王'],
+  王: ['玉', '主', '土'],
+  日: ['曰', '目', '白'],
+  白: ['自', '百', '日'],
+  自: ['白', '目', '首'],
+  目: ['日', '且', '自'],
+  口: ['回', '曰', '田'],
+  田: ['由', '甲', '申'],
+  由: ['田', '甲', '申'],
+  电: ['申', '由', '甩'],
+  人: ['入', '八', '个'],
+  入: ['人', '八', '大'],
+  大: ['天', '太', '犬'],
+  天: ['夫', '大', '关'],
+  干: ['千', '于', '士'],
+  千: ['干', '于', '牛'],
+  牛: ['午', '生', '半'],
+  午: ['牛', '干', '斗'],
+  手: ['毛', '于', '乎'],
+  水: ['永', '冰', '求'],
+  火: ['灭', '大', '尖'],
+  山: ['出', '凶', '幽'],
+  河: ['何', '沙', '汉'],
+  花: ['化', '芯', '苹'],
+  茶: ['荼', '苯', '菜'],
+  书: ['出', '曲', '车'],
+  车: ['东', '年', '轧'],
+  门: ['问', '闪', '们'],
+  包: ['句', '勺', '旬'],
+  钟: ['种', '钢', '针'],
+  鱼: ['鲁', '龟', '免'],
+  鸟: ['乌', '鸡', '岛'],
+  猫: ['描', '苗', '狗'],
+  狗: ['猫', '句', '构'],
+  树: ['村', '林', '材'],
+  伞: ['个', '介', '全'],
+  鞋: ['靴', '难', '推'],
+  工: ['土', '干', '王'],
+  台: ['合', '抬', '始'],
+
+  // 콘텐츠에서 실제로 뚫리는 자리의 글자들 — 부수나 획이 겹치는 것으로 채운다
+  蕉: ['蔬', '薯', '藻'],
+  蛋: ['蚕', '虽', '蛙'],
+  饭: ['饮', '馆', '饼'],
+  奶: ['妈', '奴', '妨'],
+  果: ['菜', '东', '枣'],
+  子: ['了', '孔', '孑'],
+  笔: ['筷', '答', '等'],
+  户: ['卢', '尸', '庐'],
+  行: ['街', '衍', '衔'],
+  票: ['栗', '粟', '要'],
+  据: ['惧', '剧', '居'],
+  封: ['对', '村', '时'],
+  机: ['朵', '杭', '权'],
+  字: ['宁', '安', '宇'],
+  板: ['扳', '版', '枝'],
+  文: ['交', '父', '支'],
+  算: ['第', '筑', '管'],
+  器: ['嚣', '哭', '噪'],
+  印: ['卯', '即', '却'],
+  盘: ['盆', '盒', '盐'],
+  示: ['宗', '余', '未'],
+  影: ['景', '彰', '彭'],
+  仪: ['议', '伙', '仗'],
+  牌: ['脾', '碑', '牲'],
+  送: ['迷', '逆', '运'],
+  带: ['帘', '席', '布'],
+  库: ['庆', '应', '庙'],
+  箱: ['筒', '箭', '篮'],
+  裹: ['衷', '哀', '衰'],
+  形: ['刑', '邢', '型'],
+  码: ['吗', '妈', '玛'],
+  动: ['劝', '助', '幼'],
+  扶: ['扑', '拱', '技'],
+  梯: ['样', '杨', '桃'],
+  李: ['季', '秀', '杏'],
+  道: ['遍', '遣', '逝'],
+  资: ['姿', '次', '咨'],
+  件: ['伟', '住', '付'],
+  夹: ['头', '买', '实'],
 }
 
 /** 문자 체계별 예비 풀. 닮은 글자가 부족할 때만 쓴다. */
@@ -94,22 +181,39 @@ const KATAKANA = [...'アイウエオカキクケコサシスセソタチツテ�
 
 const LATIN = [...'abcdefghijklmnopqrstuvwxyz']
 
+/**
+ * 한자 예비 풀. 닮은 짝이 모자랄 때만 쓴다.
+ *
+ * 무작위 한자를 널리 긁어오면 획수가 전혀 다른 글자가 깔려 소거법으로 풀린다.
+ * 콘텐츠에 실제로 나오는 수준(HSK 1~2)의 흔한 글자만 둔다.
+ */
+const HANZI = [...'一二三人入八大天木本水火土工山口日月目白自田电车门问包花茶书钟鱼鸟牛午手千干王主生年生半个中的了在有我你他好不上下左右前后']
+
 const isKatakana = (ch: string) => ch >= '゠' && ch <= 'ヿ'
-const isLatin = (ch: string) => /^[a-z]$/i.test(ch)
+// 발음 부호가 붙은 글자도 라틴 문자다 — código · écran · reçu
+const isLatin = (ch: string) => /\p{Script=Latin}/u.test(ch)
+/** 후보를 찾을 때만 부호를 벗긴다. ó 의 닮은 글자는 o 의 것과 같다 */
+const bare = (ch: string) => ch.normalize('NFD').replace(/\p{Mark}/gu, '').toLowerCase()
 const isHiragana = (ch: string) => ch >= 'ぁ' && ch <= 'ゖ'
+/** CJK 통합 한자 */
+const isHanzi = (ch: string) => ch >= '\u4e00' && ch <= '\u9fff'
+
+/** 이 글자에 빈칸을 뚫어도 되는지. 닮은 오답을 깔 수 있는 문자 체계만 허용한다 */
+export const blankableChar = (ch: string) =>
+  isLatin(ch) || isHiragana(ch) || isKatakana(ch) || isHanzi(ch)
 
 /**
- * 빈칸을 뚫어도 되는 글자인지.
+ * 빈칸을 뚫어도 되는 단어인지.
  *
- * 닮은 오답을 깔 수 있는 문자 체계만 허용한다. 한자는 예비 풀이 없어서
- * 뚫으면 엉뚱한 문자(히라가나)가 후보로 깔린다 — 그런 단어는 재인 칸에
- * 머문다. 중국어를 제대로 출제하려면 상용한자 풀이 먼저 필요하다. (spec.md §9)
+ * **공백은 세지 않는다.** `código de barras`처럼 띄어쓰기가 든 단어를 통째로
+ * 막을 이유가 없다 — 공백 자리만 안 뚫으면 된다 (`buildBlank`).
  */
 export const blankable = (text: string) =>
-  [...text].every((ch) => isLatin(ch) || isHiragana(ch) || isKatakana(ch))
+  [...text].some(blankableChar) && [...text].every((ch) => ch === ' ' || blankableChar(ch))
 
 /** 같은 문자 체계 안에서만 고른다. 가나 문제에 알파벳이 섞이면 답이 보인다 */
-const poolFor = (char: string) => (isLatin(char) ? LATIN : isKatakana(char) ? KATAKANA : HIRAGANA)
+const poolFor = (char: string) =>
+  isLatin(char) ? LATIN : isHanzi(char) ? HANZI : isKatakana(char) ? KATAKANA : HIRAGANA
 
 /**
  * `char`의 오답 후보 `count`개.
@@ -123,9 +227,9 @@ export function pickConfusables(
   rng: () => number,
   shuffle: <T>(items: readonly T[], rng: () => number) => T[],
 ): string[] {
-  const near = shuffle(CONFUSABLE[char.toLowerCase()] ?? CONFUSABLE[char] ?? [], rng)
+  const near = shuffle(CONFUSABLE[char.toLowerCase()] ?? CONFUSABLE[bare(char)] ?? CONFUSABLE[char] ?? [], rng)
   if (near.length >= count) return near.slice(0, count)
 
-  const fallback = poolFor(char).filter((c) => c !== char && !near.includes(c))
+  const fallback = poolFor(char).filter((c) => c !== char && c !== bare(char) && !near.includes(c))
   return [...near, ...shuffle(fallback, rng).slice(0, count - near.length)]
 }
