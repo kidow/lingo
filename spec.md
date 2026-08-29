@@ -130,7 +130,7 @@
 둘 수 없다 — 카드는 넘기는 물건이라 설정이 섞이면 오터치가 난다.
 
 - 왼쪽에 드롭다운 하나. `영어` / `일본어`가 그대로 텍스트다.
-- shadcn/ui `dropdown-menu`(Radix 기반)를 쓴다. 항목은 **라디오**다 — 고르는 행위이므로
+- shadcn/ui `dropdown-menu`(Base UI 기반)를 쓴다. 항목은 **라디오**다 — 고르는 행위이므로
   지금 무엇이 켜져 있는지가 체크 표시로 드러나고 스크린리더에도 그렇게 읽힌다.
   포커스 관리·Esc·바깥 클릭을 직접 짜지 않는다. (§8)
 - 언어를 바꾸면 피드를 통째로 새로 만든다. **진도는 언어별로 갈라져 있으므로**(§6)
@@ -619,7 +619,7 @@ content/verbs.json
 | 캐러셀 | 없음 — CSS `scroll-snap` | 휠·터치·관성·키보드를 브라우저가 준다. 잠금은 DOM으로 건다 |
 | 학습 스케줄 | `ts-fsrs` | FSRS v6. MIT, 의존성 0 |
 | 아이콘 | `lucide-react` | 발음 버튼 하나(`audio-lines`)에 쓴다. ISC |
-| 컴포넌트 | shadcn/ui — `dropdown-menu` 하나 | 언어 선택에만 쓴다. 색은 브랜드 토큰으로 갈아끼웠고 다크 변형은 지웠다 (§2) |
+| 컴포넌트 | shadcn/ui (Base UI) — `dropdown-menu` 하나 | 언어 선택에만 쓴다. 색은 브랜드 토큰으로 갈아끼웠고 다크 변형은 지웠다 (§2) |
 | 데이터 | `content/*.json` | 빌드 시점 import. DB 없음 (§4) |
 | 정적 자산 | `public/` | 이미지·오디오. CDN 없음 |
 | 상태 | React 기본 | 진도·언어 설정은 `localStorage` 래퍼 훅 하나 |
@@ -628,7 +628,11 @@ content/verbs.json
 | 배포 | 정적 파일 | `output: 'export'` → `out/`. 서버가 필요 없다 |
 
 런타임 의존성은 `next` · `react` · `ts-fsrs` · `lucide-react`에 shadcn이 딸고 온
-`radix-ui` · `clsx` · `tailwind-merge`가 더해진 일곱이다. 환경변수도, API 키도 없다.
+`@base-ui/react` · `clsx` · `tailwind-merge`가 더해진 일곱이다. 환경변수도, API 키도 없다.
+
+shadcn은 같은 컴포넌트를 Base UI · React Aria · Radix 세 가지로 낸다. **Base UI**를
+쓴다. 어느 것을 받을지는 `components.json`의 `style`이 정한다 — `base-vega`처럼
+`base-` 로 시작하는 값이어야 하고, `new-york` 같은 옛 이름을 두면 Radix가 딸려 온다.
 
 > 오래 미뤄둔 결정이었다. 처음에는 매칭되는 것이 `Button` 하나뿐이라 도입할 이유가
 > 없었다. 언어 드롭다운이 생기면서 **포커스 관리·Esc·바깥 클릭·ARIA**라는, 직접 짜면
