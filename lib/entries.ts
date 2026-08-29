@@ -32,17 +32,25 @@ export function entriesFor(lang: Language, concepts: Concept[]): Entry[] {
   return entries
 }
 
-/** 오답 보기를 뽑을 후보. 같은 category에서만 고른다. (spec.md §5) */
+/**
+ * 오답 보기를 뽑을 후보. 같은 category에서만 고른다. (spec.md §5)
+ *
+ * **정답과 글자가 같은 개념도 뺀다.** 개념이 달라도 그 언어에서 같은 낱말인
+ * 경우가 있다 — 프랑스어 `glace`는 얼음이자 아이스크림이고, 일본어 정답은
+ * 읽기라 歯와 葉이 둘 다 `は`다. 슬러그만 보고 거르면 보기 두 칸에 같은
+ * 글자가 나란히 서고, 그중 하나만 정답 처리된다.
+ */
 export function distractorPool(entry: Entry, entries: Entry[]): Entry[] {
+  const other = (candidate: Entry) =>
+    candidate.concept.slug !== entry.concept.slug && candidate.answer !== entry.answer
+
   const sameCategory = entries.filter(
-    (other) =>
-      other.concept.slug !== entry.concept.slug &&
-      other.concept.category === entry.concept.category,
+    (candidate) => other(candidate) && candidate.concept.category === entry.concept.category,
   )
   if (sameCategory.length >= 3) return sameCategory
 
   // 같은 category가 모자라면 전체 풀로 넓힌다
-  return entries.filter((other) => other.concept.slug !== entry.concept.slug)
+  return entries.filter(other)
 }
 
 export function countByCategory(entries: Entry[]): Record<Category, number> {

@@ -75,6 +75,15 @@ async function germanLevels(): Promise<Map<string, string>> {
   return levels
 }
 
+/**
+ * 괴테 목록에 있지만 **뜻이 우리 개념과 다른** 낱말. 등급을 붙이지 않는다.
+ *
+ * 목록은 표제어만 있고 뜻은 예문으로만 드러난다. 표기가 같아도 같은 낱말이
+ * 아니면 A1이라는 표시가 거짓말이 된다 — `die Bank`는 은행이지 벤치가 아니고,
+ * `die Karte`는 승차권·카드지 지도가 아니다.
+ */
+const GERMAN_HOMONYMS = new Set(['Bank', 'Karte'])
+
 const german = await germanLevels()
 const only = process.argv[2]
 const files = readdirSync('content')
@@ -111,7 +120,8 @@ for (const file of files) {
 
     apply('ja', 'jlpt', concept.words.ja && (await jlptOf(concept.words.ja.term)))
     apply('zh', 'hsk', concept.words.zh && (await hskOf(concept.words.zh.term)))
-    apply('de', 'cefr', concept.words.de && german.get(concept.words.de.term))
+    const de = concept.words.de?.term
+    apply('de', 'cefr', de && !GERMAN_HOMONYMS.has(de) ? german.get(de) : undefined)
   }
 
   writeFileSync(path, JSON.stringify(data, null, 2) + '\n')
