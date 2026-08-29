@@ -28,7 +28,8 @@ export const TRACKS: Track[] = [
   { id: 'hsk', label: 'HSK', language: 'zh' },
   { id: 'dele', label: 'DELE', language: 'es' },
   { id: 'delf', label: 'DELF', language: 'fr' },
-  { id: 'telc', label: 'telc', language: 'de' },
+  // telc 공식 표기는 소문자지만 나머지 다섯이 두문자어라 혼자 소문자면 오타로 읽힌다
+  { id: 'telc', label: 'TELC', language: 'de' },
 ]
 
 export const TRACK_IDS = TRACKS.map((track) => track.id)
