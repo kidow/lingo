@@ -584,8 +584,29 @@ content/verbs.json
 | `pnpm check` | `content/*.json` 전체 검증. CI에서도 돈다 |
 | `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
+| `pnpm define <word>` | 사전에서 뜻을 찾는다. 생략하면 콘텐츠 전체의 `meaning_ko`를 대조한다 |
 
 `slug`를 생략하면 아직 결과물이 없는 개념 전체에 대해 돈다.
+
+### 뜻은 기억으로 쓰지 않는다 — `pnpm define`
+
+`meaning_ko`는 사람이 타이핑하는 유일한 의미 정보다. 틀려도 빌드가 깨지지 않고
+화면도 멀쩡해서 **눈에 띄지 않는다.** 그래서 사전에서 확인한다.
+
+| 출처 | 주는 것 | 비고 |
+|---|---|---|
+| Free Dictionary (`dictionaryapi.dev`) | 영어 정의 | 키 없음 |
+| 영어 위키낱말사전 | 한국어 번역 후보 | CC BY-SA |
+| Jisho (JMdict) | 일본어 읽기와 영어 뜻 | |
+
+**`pnpm check`와 분리한다.** check는 CI에서도 돌고 오프라인이어야 하는데 이쪽은 남의
+서버에 의존한다. 콘텐츠를 넣을 때 사람이 한 번 돌려보는 자리다.
+
+대조 결과가 어긋나도 **실패가 아니다.** 사전이 넓게 잡거나(`hedge → 울타리`) 표기가
+다를 뿐일 수 있다(`주전자` / `주전자(酒煎子)`). 이미지가 가리키는 것과 맞는지 보고 정한다.
+
+> 네이버 사전은 쓰지 않는다. `robots.txt`가 ClaudeBot을 비롯한 자동 수집을 명시적으로
+> 막고 있고 공개 API도 없다. 사람이 직접 열어 보는 것은 별개다.
 
 ### 점검 화면 — `/debug`
 
