@@ -237,7 +237,7 @@ function Reveal({
         {extra}
       </p>
       {/* 답하기 전에는 이 줄 자체가 없다. 잠금을 disabled가 아니라 렌더로 건다 */}
-      <SayButton slug={concept.slug} lang={lang} label={answer} />
+      <SayButton slug={concept.slug} lang={lang} label={answer} autoPlay />
     </div>
   )
 }
