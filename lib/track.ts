@@ -6,12 +6,13 @@ import type { Language } from './types.ts'
  * 사용자가 고르는 단위는 언어가 아니라 **시험**이다. 무엇을 공부하는지가
  * "일본어"보다 "JLPT"에 더 가깝기 때문이다.
  *
- * 트랙은 언어를 대체하지 않고 **위에 얹힌다.** 발음은 시험이 아니라 언어의
- * 것이라(`public/audio/{language}/`) 같은 단어를 다른 트랙이 써도 mp3를
- * 공유한다. 나중에 JLPT를 N5·N4로 쪼개거나 같은 영어에 다른 트랙을 더해도
- * 이 구조가 버틴다 — 트랙만 늘고 언어는 그대로다.
+ * 트랙은 언어를 대체하지 않고 **위에 얹힌다.** 개념은 트랙이 아니라 전체가
+ * 공유하고, 트랙은 **자기 언어의 단어가 있는 개념만** 골라 출제한다 (§1).
+ * 그래서 `cat` 그림 한 장을 여섯 트랙이 같이 쓴다 — 트랙을 더해도 그려야 할
+ * 그림은 늘지 않는다. 발음도 시험이 아니라 언어의 것이라
+ * `public/audio/{language}/`를 공유한다.
  */
-export type TrackId = 'toeic' | 'jlpt'
+export type TrackId = 'toeic' | 'jlpt' | 'hsk' | 'dele' | 'delf' | 'telc'
 
 export type Track = {
   id: TrackId
@@ -24,6 +25,10 @@ export type Track = {
 export const TRACKS: Track[] = [
   { id: 'toeic', label: 'TOEIC', language: 'en' },
   { id: 'jlpt', label: 'JLPT', language: 'ja' },
+  { id: 'hsk', label: 'HSK', language: 'zh' },
+  { id: 'dele', label: 'DELE', language: 'es' },
+  { id: 'delf', label: 'DELF', language: 'fr' },
+  { id: 'telc', label: 'telc', language: 'de' },
 ]
 
 export const TRACK_IDS = TRACKS.map((track) => track.id)

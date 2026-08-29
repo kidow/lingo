@@ -24,9 +24,20 @@ export type LangStrategy = {
 export const LANG: Record<Language, LangStrategy> = {
   en: { answer: 'term', aside: [] },
   ja: { answer: 'reading', aside: ['romanization', 'term'] },
-  // de: { answer: 'term', aside: [] },
-  // zh: { answer: 'reading', aside: ['term'] },
+  zh: { answer: 'term', aside: ['romanization'] },
+  es: { answer: 'term', aside: [] },
+  fr: { answer: 'term', aside: [] },
+  de: { answer: 'term', aside: [] },
 }
+
+/**
+ * 중국어만 일본어와 갈린다. 일본어는 읽기(かな)를 정답으로 쓰는데, 중국어는
+ * **표기(汉字)를 정답으로 쓰고 병음을 참고줄로 내린다.** HSK는 한자를 읽는
+ * 것 자체가 학습 목표이고, 병음은 발음 보조일 뿐 실제 표기가 아니기 때문이다.
+ *
+ * 유럽 언어 셋은 영어와 같다 — 표기가 곧 읽기다. 성·관사는 `attributes`에
+ * 담아 두되 카드에는 아직 쓰지 않는다.
+ */
 
 /**
  * 영어는 참고줄이 없다. 표기가 곧 읽기라서 일본어처럼 두 형태로 갈라지지

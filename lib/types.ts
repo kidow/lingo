@@ -4,18 +4,24 @@
  * DB가 없으므로 이 타입이 곧 스키마다. 나중에 DB를 붙이면 그대로 테이블이 된다.
  */
 
-/** 언어를 추가하면 여기와 lib/lang.ts를 같이 고친다. */
-export type Language = 'ja' | 'en'
+/** 언어를 추가하면 여기와 lib/lang.ts, lib/track.ts를 같이 고친다. */
+export type Language = 'en' | 'ja' | 'zh' | 'es' | 'fr' | 'de'
 
 /** 오답 보기를 뽑는 근거다. 생략할 수 없다. (spec.md §4) */
 export type Category = 'noun' | 'verb' | 'adjective' | 'scene'
 
 /** 언어별 문법 속성. 필드를 언어마다 늘리지 않고 여기로 몰아넣는다. */
+/**
+ * 언어별 문법 속성. 필드를 언어마다 늘리지 않고 여기로 몰아넣는다.
+ *
+ * 레벨 필드(`jlpt` · `hsk` · `cefr`)는 카드 좌하단에 그대로 표시된다 (spec.md §5).
+ * 시험마다 등급 체계가 다르므로 하나로 합치지 않는다 — JLPT는 N5~N1,
+ * HSK는 1~6, 유럽 시험은 CEFR A1~C2다.
+ */
 export type Attributes =
-  /** jlpt는 카드 좌하단에 그대로 표시된다 (spec.md §5) */
   | { jlpt?: 'N5' | 'N4' | 'N3' | 'N2' | 'N1'; pitchAccent?: number } // ja
-  | { article?: 'der' | 'die' | 'das'; plural?: string } // de
-  | { tones?: number[] } // zh
+  | { hsk?: 1 | 2 | 3 | 4 | 5 | 6; tones?: number[] } // zh
+  | { cefr?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'; article?: string; gender?: 'm' | 'f' | 'n' } // es · fr · de
 
 export type Word = {
   /** 표기.  ja: 猫 / de: Katze */
