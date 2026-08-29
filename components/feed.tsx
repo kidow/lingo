@@ -13,6 +13,7 @@ import {
 } from '@/lib/engine'
 import { loadProgress, saveProgress } from '@/lib/progress'
 import type { Question } from '@/lib/quiz'
+import type { TrackId } from '@/lib/track'
 import type { Language } from '@/lib/types'
 
 /**
@@ -28,7 +29,17 @@ import type { Language } from '@/lib/types'
  * 진도는 localStorage에 있으므로 서버는 무엇을 낼지 모른다. 그래서 카드는
  * 마운트 후에 만들어진다. 그전에는 뼈대만 보여준다.
  */
-export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
+export function Feed({
+  entries,
+  track,
+  lang,
+}: {
+  entries: Entry[]
+  /** 진도가 갈리는 단위 */
+  track: TrackId
+  /** 발음 파일과 정답 필드가 따르는 단위 */
+  lang: Language
+}) {
   const [questions, setQuestions] = useState<Question[]>([])
   const [ready, setReady] = useState(false)
   const [current, setCurrent] = useState(0)
@@ -44,9 +55,9 @@ export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
   const commit = useCallback(
     (state: EngineState) => {
       engine.current = state
-      saveProgress(lang, state.progress)
+      saveProgress(track, state.progress)
     },
-    [lang],
+    [track],
   )
 
   /**
@@ -72,14 +83,14 @@ export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
 
   // 마운트 후에 진도를 읽는다. 첫 카드는 아래 '한 칸 앞' 효과가 만든다
   useEffect(() => {
-    engine.current = initialState(loadProgress(lang))
+    engine.current = initialState(loadProgress(track))
     recorded.current = new Set()
     setAnswered(new Set())
     setQuestions([])
     setCurrent(0)
     extendedFrom.current = -1
     setReady(true)
-  }, [lang, entries])
+  }, [track, entries])
 
   // 지금 보고 있는 카드를 추적한다. 소개 카드를 언제 지나갔는지 알아야 한다
   useEffect(() => {
@@ -190,7 +201,7 @@ export function Feed({ entries, lang }: { entries: Entry[]; lang: Language }) {
  */
 export function SwipeHint() {
   return (
-    <div className="mt-auto grid h-7 shrink-0 place-items-center text-sub" aria-hidden>
+    <div className="grid h-7 shrink-0 place-items-center text-sub" aria-hidden>
       <ChevronsUp className="size-5 animate-bounce" strokeWidth={1.8} />
     </div>
   )
@@ -202,7 +213,8 @@ function Skeleton({ empty }: { empty: boolean }) {
     <FeedCard>
       <CardImage />
       <CardSheet>
-        {empty && <p className="text-sm text-sub">아직 배울 단어가 없어요</p>}
+        {/* 단어는 있는데 그림이 없을 수도 있다. 그 경우와 구분되게 쓴다 */}
+        {empty && <p className="text-sm text-sub">그림이 준비된 단어가 아직 없어요</p>}
       </CardSheet>
     </FeedCard>
   )

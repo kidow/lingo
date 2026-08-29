@@ -33,15 +33,7 @@ export const LANG: Record<Language, LangStrategy> = {
  * 않는다. 발음기호를 넣을 수도 있지만 IPA는 초급자에게 오히려 장벽이다.
  */
 
-/** 헤더 드롭다운에 보이는 이름. 순서가 곧 드롭다운 순서다 */
-export const LANGUAGE_LABEL: Record<Language, string> = {
-  en: '영어',
-  ja: '일본어',
-}
-
-export const LANGUAGES = Object.keys(LANGUAGE_LABEL) as Language[]
-
-export const DEFAULT_LANGUAGE: Language = 'en'
+export const LANGUAGES = Object.keys(LANG) as Language[]
 
 /** 그 언어에서 정답으로 쓰는 문자열. 없으면 출제할 수 없다. */
 export function answerOf(word: Word, lang: Language): string | undefined {

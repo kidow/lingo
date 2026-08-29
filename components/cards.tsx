@@ -37,6 +37,7 @@ export function Card({ question, ...rest }: { question: Question } & Common) {
 function IntroCard({ question, lang, first }: { question: IntroQuestion } & Common) {
   const { concept, word, answer } = question.entry
   const aside = asideOf(word, lang)
+  const level = word.attributes && 'jlpt' in word.attributes ? word.attributes.jlpt : undefined
 
   return (
     <FeedCard>
@@ -77,8 +78,18 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
           </div>
         )}
 
-        {/* 소개 카드는 언제나 넘길 수 있다 */}
-        <SwipeHint />
+        {/*
+          레벨은 배지가 아니라 조용한 한 줄이다. 학습 대상이 아니라 참고
+          정보라서 시선이 마지막에 닿는 자리에 둔다. 값이 없는 트랙(TOEIC)은
+          자리째 빠진다 — 없는 등급을 지어내지 않는다
+        */}
+        <div className="relative mt-auto">
+          {level && (
+            <span className="absolute bottom-0 left-0 text-xs text-sub">{level}</span>
+          )}
+          {/* 소개 카드는 언제나 넘길 수 있다 */}
+          <SwipeHint />
+        </div>
       </CardSheet>
     </FeedCard>
   )
@@ -124,7 +135,7 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
         </div>
         <Reveal show={answered} correct={correct} question={question} lang={lang} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
-        {answered && <SwipeHint />}
+        <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
     </FeedCard>
   )
@@ -196,7 +207,7 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
 
         <Reveal show={answered} correct={correct} question={question} lang={lang} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
-        {answered && <SwipeHint />}
+        <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
     </FeedCard>
   )

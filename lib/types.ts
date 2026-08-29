@@ -12,6 +12,7 @@ export type Category = 'noun' | 'verb' | 'adjective' | 'scene'
 
 /** 언어별 문법 속성. 필드를 언어마다 늘리지 않고 여기로 몰아넣는다. */
 export type Attributes =
+  /** jlpt는 카드 좌하단에 그대로 표시된다 (spec.md §5) */
   | { jlpt?: 'N5' | 'N4' | 'N3' | 'N2' | 'N1'; pitchAccent?: number } // ja
   | { article?: 'der' | 'die' | 'das'; plural?: string } // de
   | { tones?: number[] } // zh

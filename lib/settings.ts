@@ -1,21 +1,19 @@
-import { DEFAULT_LANGUAGE, LANGUAGES } from './lang.ts'
-import type { Language } from './types.ts'
+import { DEFAULT_TRACK, TRACK_IDS, type TrackId } from './track.ts'
+import { TRACK_KEY } from './progress.ts'
 
 /**
- * 학습 언어 설정. (spec.md §3)
+ * 학습 트랙 설정. (spec.md §3)
  *
  * 진도와 마찬가지로 서버가 모르는 값이라 localStorage에만 있다. 진도는
- * 언어별로 갈라져 저장되므로(lib/progress.ts) 언어를 오가도 서로를 덮지 않는다.
+ * 트랙별로 갈라져 저장되므로(lib/progress.ts) 트랙을 오가도 서로를 덮지 않는다.
  */
-const KEY = 'lingo.language'
-
-export function loadLanguage(): Language {
-  if (typeof localStorage === 'undefined') return DEFAULT_LANGUAGE
-  const stored = localStorage.getItem(KEY)
-  return LANGUAGES.includes(stored as Language) ? (stored as Language) : DEFAULT_LANGUAGE
+export function loadTrack(): TrackId {
+  if (typeof localStorage === 'undefined') return DEFAULT_TRACK
+  const stored = localStorage.getItem(TRACK_KEY)
+  return TRACK_IDS.includes(stored as TrackId) ? (stored as TrackId) : DEFAULT_TRACK
 }
 
-export function saveLanguage(lang: Language) {
+export function saveTrack(track: TrackId) {
   if (typeof localStorage === 'undefined') return
-  localStorage.setItem(KEY, lang)
+  localStorage.setItem(TRACK_KEY, track)
 }

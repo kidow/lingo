@@ -9,6 +9,7 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { LANG } from '../lib/lang.ts'
+import { TRACK_IDS, trackOf, type TrackId } from '../lib/track.ts'
 
 const CONTENT_DIR = 'content'
 const PUBLIC_DIR = 'public'
@@ -53,6 +54,14 @@ for (const file of files) {
     continue
   }
 
+  // 파일명이 곧 트랙이다 (lib/content.ts). 이름이 트랙과 다르면 로더가 못 읽는다
+  const track = file.replace(/\.json$/, '') as TrackId
+  if (!TRACK_IDS.includes(track)) {
+    fail(path, `파일명이 트랙이 아닙니다 — ${TRACK_IDS.join(' | ')} 중 하나여야 합니다`)
+    continue
+  }
+  const trackLanguage = trackOf(track).language
+
   const concepts = (parsed as { concepts?: unknown }).concepts
   if (!Array.isArray(concepts)) {
     fail(path, '최상위에 concepts 배열이 없습니다')
@@ -81,6 +90,9 @@ for (const file of files) {
 
     const words = c.words as Record<string, Record<string, unknown>> | undefined
     if (!words || Object.keys(words).length === 0) return fail(where, 'words 누락')
+
+    if (!words[trackLanguage])
+      fail(where, `${trackLanguage} 단어가 없습니다 — ${track} 트랙은 이 언어로 출제합니다`)
 
     for (const [lang, word] of Object.entries(words)) {
       const strategy = LANG[lang as keyof typeof LANG]
@@ -156,7 +168,8 @@ console.log(
 
 if (notes.length) {
   console.log(`\n${line(4)} 아직 없는 결과물 ${notes.length}건`)
-  for (const n of notes) console.log(`  · ${n}`)
+  for (const n of notes.slice(0, 10)) console.log(`  · ${n}`)
+  if (notes.length > 10) console.log(`  … 외 ${notes.length - 10}건. 전체는 pnpm dev → /debug`)
 }
 if (warnings.length) {
   console.log(`\n${line(4)} 경고 ${warnings.length}건`)
