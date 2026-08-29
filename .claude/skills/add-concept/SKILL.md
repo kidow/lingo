@@ -17,14 +17,15 @@ description: lingo 콘텐츠에 개념(단어)을 하나 추가한다. content/*
 
 - **그릴 수 있는가.** 추상어는 넣지 않는다. 카드 3종이 전부 이미지를 전제한다 (§4).
 - **개념이 하나인가.** `水`(찬물)/`お湯`(더운물)처럼 그림이 갈리면 개념을 쪼갠다.
-- **그 트랙에서 배울 값이 있는가.** 트랙마다 개념 집합이 다르다 — 파일이 다르기 때문이다.
+- **어느 트랙이 이 개념을 쓸 수 있는가.** 개념은 트랙이 공유한다. 일상 명사는 여섯 트랙이
+  다 쓰지만 사무 어휘는 TOEIC만 쓴다. 쓸 트랙의 단어를 `words`에 나란히 넣는다.
 - **교재를 복제하지 않는다.** 레포가 공개다. 목록은 직접 뽑고 `pnpm define`으로 대조한다.
 
 ## 절차
 
 ```bash
 pnpm define <word>     # 1. 뜻을 사전에서 확인한다 (기억으로 쓰지 않는다)
-# 2. content/{track}.json 에 개념 블록을 쓴다 (toeic.json · jlpt.json)
+# 2. content/{topic}.json 에 개념 블록을 쓴다 (everyday.json · office.json)
 pnpm check             # 3. 검증
 pnpm prompt <slug>     # 4. 최종 이미지 프롬프트 출력 → 그대로 생성 (한 글자도 고치지 않는다)
 # 5. 받은 PNG를 .images/{slug}.png 에 둔다
@@ -63,7 +64,8 @@ JLPT는 `reading`·`romanization`과 `attributes.jlpt`(`N5`~`N1`)를 더 쓴다.
   STYLE_PROMPT를 앞에 붙인다. **여기에는 무엇을 그릴지만** 쓴다.
 - 예문은 かな/영어 한 줄 + 한국어 한 줄. **그 단어가 문장에 들어가야 한다** — check가 경고한다.
 - 일본어는 `reading`이 정답 필드다. 영어는 `term`이고 참고줄이 없다 (`lib/lang.ts`).
-- **파일에 없는 언어를 쓰지 않는다.** `jlpt.json`에는 `ja`, `toeic.json`에는 `en`. check가 잡는다.
+- 레벨은 `attributes`에 넣는다 — `jlpt`(N5~N1) · `hsk`(1~6) · `cefr`(A1~C2). 카드 좌하단에 그대로 나온다.
+- 한자는 빈칸 카드를 만들지 않는다. 닮은 오답을 깔 풀이 없어서다 (spec.md §9).
 
 ## 자주 걸리는 것
 

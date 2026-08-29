@@ -1,5 +1,5 @@
 import { distractorPool, type Entry } from './entries.ts'
-import { pickConfusables } from './confusables.ts'
+import { blankable, pickConfusables } from './confusables.ts'
 import { hashString, makeRng, sample, shuffled } from './random.ts'
 
 /**
@@ -52,10 +52,11 @@ export function buildChoice(entry: Entry, entries: Entry[], attempt = 0): Choice
  * 빈칸은 한 글자만 뚫는다.
  *
  * 정답이 한 글자면 뚫을 자리가 없다 — 그런 단어는 재인 칸에 머문다.
+ * 한자처럼 닮은 오답을 깔 수 없는 문자도 같은 이유로 뚫지 않는다.
  * (spec.md §5) 호출부가 `canBlank`로 먼저 거른다.
  */
 export function canBlank(entry: Entry): boolean {
-  return [...entry.answer].length >= 2
+  return [...entry.answer].length >= 2 && blankable(entry.answer)
 }
 
 export function buildBlank(entry: Entry, attempt = 0): BlankQuestion {

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
 import { CONCEPTS, audioPath, imagePath } from '@/lib/content'
 import { answerOf, asideOf } from '@/lib/lang'
+import { levelOf } from '@/lib/level'
 import { TRACK_IDS, trackOf } from '@/lib/track'
 
 /**
@@ -23,31 +24,32 @@ import { TRACK_IDS, trackOf } from '@/lib/track'
 export default function DebugPage() {
   if (process.env.NODE_ENV !== 'development') notFound()
 
-  // 한 줄 = 개념 하나. 개념은 파일 하나에만 있으므로 트랙도 하나다
-  const rows: DebugRow[] = CONCEPTS.flatMap((concept) => {
-    const { language } = trackOf(concept.track)
-    const word = concept.words[language]
-    if (!word) return []
+  // 한 줄 = 개념 하나 × 트랙 하나. 한 개념이 여러 트랙에 나온다 — 그게 요점이다
+  const rows: DebugRow[] = CONCEPTS.flatMap((concept) =>
+    TRACK_IDS.flatMap((track) => {
+      const { language } = trackOf(track)
+      const word = concept.words[language]
+      if (!word) return []
 
-    const audio = fileInfo(join('public', audioPath(concept.slug, language)))
-    const attributes = word.attributes
-    return [
-      {
-        slug: concept.slug,
-        track: concept.track,
-        level: attributes && 'jlpt' in attributes ? attributes.jlpt : undefined,
-        answer: answerOf(word, language),
-        aside: asideOf(word, language),
-        meaning: concept.meaning_ko,
-        partOfSpeech: word.part_of_speech,
-        example: word.example?.text,
-        imagePath: imagePath(concept.slug),
-        hasImage: fileInfo(join('public', imagePath(concept.slug))) !== null,
-        audioSize: audio?.size ?? null,
-        audioPath: audioPath(concept.slug, language),
-      },
-    ]
-  })
+      const audio = fileInfo(join('public', audioPath(concept.slug, language)))
+      return [
+        {
+          slug: concept.slug,
+          track,
+          level: levelOf(word),
+          answer: answerOf(word, language),
+          aside: asideOf(word, language),
+          meaning: concept.meaning_ko,
+          partOfSpeech: word.part_of_speech,
+          example: word.example?.text,
+          imagePath: imagePath(concept.slug),
+          hasImage: fileInfo(join('public', imagePath(concept.slug))) !== null,
+          audioSize: audio?.size ?? null,
+          audioPath: audioPath(concept.slug, language),
+        },
+      ]
+    }),
+  )
 
   return (
     <main className="h-dvh overflow-y-auto p-6">

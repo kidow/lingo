@@ -9,7 +9,7 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { LANG } from '../lib/lang.ts'
-import { TRACK_IDS, trackOf, type TrackId } from '../lib/track.ts'
+import { TRACKS } from '../lib/track.ts'
 
 const CONTENT_DIR = 'content'
 const PUBLIC_DIR = 'public'
@@ -38,6 +38,8 @@ const loaderSource = existsSync('lib/content.ts') ? readFileSync('lib/content.ts
 
 const seen = new Map<string, string>()
 const perCategory: Record<string, number> = { noun: 0, verb: 0, adjective: 0, scene: 0 }
+/** 언어별 단어 수. 트랙이 실제로 출제할 수 있는 양이다 */
+const perLanguage: Record<string, number> = {}
 let total = 0
 
 for (const file of files) {
@@ -53,14 +55,6 @@ for (const file of files) {
     fail(path, `JSON 파싱 실패: ${(e as Error).message}`)
     continue
   }
-
-  // 파일명이 곧 트랙이다 (lib/content.ts). 이름이 트랙과 다르면 로더가 못 읽는다
-  const track = file.replace(/\.json$/, '') as TrackId
-  if (!TRACK_IDS.includes(track)) {
-    fail(path, `파일명이 트랙이 아닙니다 — ${TRACK_IDS.join(' | ')} 중 하나여야 합니다`)
-    continue
-  }
-  const trackLanguage = trackOf(track).language
 
   const concepts = (parsed as { concepts?: unknown }).concepts
   if (!Array.isArray(concepts)) {
@@ -91,15 +85,13 @@ for (const file of files) {
     const words = c.words as Record<string, Record<string, unknown>> | undefined
     if (!words || Object.keys(words).length === 0) return fail(where, 'words 누락')
 
-    if (!words[trackLanguage])
-      fail(where, `${trackLanguage} 단어가 없습니다 — ${track} 트랙은 이 언어로 출제합니다`)
-
     for (const [lang, word] of Object.entries(words)) {
       const strategy = LANG[lang as keyof typeof LANG]
       if (!strategy) {
         warn(`${where} — 언어 "${lang}"이 lib/lang.ts에 없습니다. 출제되지 않습니다`)
         continue
       }
+      perLanguage[lang] = (perLanguage[lang] ?? 0) + 1
       if (!word.term) fail(where, `${lang}.term 누락`)
       // 정답으로 쓸 필드가 비면 그 언어에서 출제 불가다
       if (!word[strategy.answer])
@@ -158,12 +150,20 @@ for (const [category, count] of Object.entries(perCategory)) {
 }
 
 const line = (n: number) => '─'.repeat(n)
+
+
 console.log(`\n개념 ${total}개 · 파일 ${files.length}개`)
 console.log(
   Object.entries(perCategory)
     .filter(([, n]) => n > 0)
     .map(([c, n]) => `  ${c} ${n}`)
     .join('') || '  (없음)',
+)
+
+// 트랙별 출제 가능 개수. 개념 공유가 실제로 되고 있는지가 여기서 보인다
+console.log(
+  '\n' +
+    TRACKS.map(({ label, language }) => `  ${label} ${perLanguage[language] ?? 0}`).join(''),
 )
 
 if (notes.length) {

@@ -96,6 +96,17 @@ const LATIN = [...'abcdefghijklmnopqrstuvwxyz']
 
 const isKatakana = (ch: string) => ch >= '゠' && ch <= 'ヿ'
 const isLatin = (ch: string) => /^[a-z]$/i.test(ch)
+const isHiragana = (ch: string) => ch >= 'ぁ' && ch <= 'ゖ'
+
+/**
+ * 빈칸을 뚫어도 되는 글자인지.
+ *
+ * 닮은 오답을 깔 수 있는 문자 체계만 허용한다. 한자는 예비 풀이 없어서
+ * 뚫으면 엉뚱한 문자(히라가나)가 후보로 깔린다 — 그런 단어는 재인 칸에
+ * 머문다. 중국어를 제대로 출제하려면 상용한자 풀이 먼저 필요하다. (spec.md §9)
+ */
+export const blankable = (text: string) =>
+  [...text].every((ch) => isLatin(ch) || isHiragana(ch) || isKatakana(ch))
 
 /** 같은 문자 체계 안에서만 고른다. 가나 문제에 알파벳이 섞이면 답이 보인다 */
 const poolFor = (char: string) => (isLatin(char) ? LATIN : isKatakana(char) ? KATAKANA : HIRAGANA)

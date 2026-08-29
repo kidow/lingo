@@ -5,6 +5,7 @@ import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { asideOf } from '@/lib/lang'
+import { levelOf } from '@/lib/level'
 import type { BlankQuestion, ChoiceQuestion, IntroQuestion, Question } from '@/lib/quiz'
 import type { Language } from '@/lib/types'
 
@@ -37,7 +38,7 @@ export function Card({ question, ...rest }: { question: Question } & Common) {
 function IntroCard({ question, lang, first }: { question: IntroQuestion } & Common) {
   const { concept, word, answer } = question.entry
   const aside = asideOf(word, lang)
-  const level = word.attributes && 'jlpt' in word.attributes ? word.attributes.jlpt : undefined
+  const level = levelOf(word)
 
   return (
     <FeedCard>
