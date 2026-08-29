@@ -1,7 +1,7 @@
 import { statSync } from 'node:fs'
 import { join } from 'node:path'
 import { notFound } from 'next/navigation'
-import { DebugPlay } from '@/components/debug-play'
+import { DebugTable, type DebugRow } from '@/components/debug-table'
 import { CONCEPTS, audioPath, imagePath } from '@/lib/content'
 import { answerOf, asideOf, LANG } from '@/lib/lang'
 import type { Language } from '@/lib/types'
@@ -17,7 +17,8 @@ import type { Language } from '@/lib/types'
  * out/debug.html 파일 자체는 생기지만 내용은 404 페이지다 — 목록이 새지 않는다.
  *
  * 파일 유무는 서버에서 fs로 직접 본다. 존재뿐 아니라 크기까지 알 수 있어
- * 0바이트로 남은 실패작을 잡아낸다.
+ * 0바이트로 남은 실패작을 잡아낸다. 여기서 훑은 결과를 표에 넘기고, 거르고
+ * 세는 일은 표가 한다 — 표는 파일 시스템을 모른다.
  */
 export default function DebugPage() {
   if (process.env.NODE_ENV !== 'development') notFound()
@@ -25,24 +26,27 @@ export default function DebugPage() {
   const langs = Object.keys(LANG) as Language[]
 
   // 한 줄 = 개념 하나 × 언어 하나. 언어가 늘면 줄이 늘 뿐 표 모양은 그대로다
-  const rows = CONCEPTS.flatMap((concept) =>
+  const rows: DebugRow[] = CONCEPTS.flatMap((concept) =>
     langs
       .filter((lang) => concept.words[lang])
-      .map((lang) => ({
-        concept,
-        lang,
-        word: concept.words[lang]!,
-        answer: answerOf(concept.words[lang]!, lang),
-        aside: asideOf(concept.words[lang]!, lang),
-        image: fileInfo(join('public', imagePath(concept.slug))),
-        audio: fileInfo(join('public', audioPath(concept.slug, lang))),
-        src: audioPath(concept.slug, lang),
-      })),
+      .map((lang) => {
+        const word = concept.words[lang]!
+        const audio = fileInfo(join('public', audioPath(concept.slug, lang)))
+        return {
+          slug: concept.slug,
+          lang,
+          answer: answerOf(word, lang),
+          aside: asideOf(word, lang),
+          meaning: concept.meaning_ko,
+          partOfSpeech: word.part_of_speech,
+          example: word.example?.text,
+          imagePath: imagePath(concept.slug),
+          hasImage: fileInfo(join('public', imagePath(concept.slug))) !== null,
+          audioSize: audio?.size ?? null,
+          audioPath: audioPath(concept.slug, lang),
+        }
+      }),
   )
-
-  const missingImage = rows.filter((r) => !r.image).length
-  const missingAudio = rows.filter((r) => !r.audio).length
-  const missingExample = rows.filter((r) => !r.word.example).length
 
   return (
     <main className="h-dvh overflow-y-auto p-6">
@@ -53,92 +57,7 @@ export default function DebugPage() {
         </p>
       </header>
 
-      <dl className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-ctrl border border-line bg-surface px-3 py-2.5 text-[13px] text-sub">
-        <Stat label="개념" value={`${CONCEPTS.length}`} />
-        <Stat label="단어" value={`${rows.length}`} />
-        <Stat label="이미지" value={`${rows.length - missingImage}/${rows.length}`} bad={missingImage > 0} />
-        <Stat label="발음" value={`${rows.length - missingAudio}/${rows.length}`} bad={missingAudio > 0} />
-        <Stat label="예문" value={`${rows.length - missingExample}/${rows.length}`} bad={missingExample > 0} />
-      </dl>
-
-      {/* 좁은 창에서 칸이 짓눌리는 대신 표째로 가로 스크롤한다 */}
-      <div className="overflow-x-auto rounded-ctrl border border-line">
-      <table className="w-full min-w-[720px] bg-surface text-left text-[13px]">
-        <thead>
-          <tr className="text-[11px] tracking-wide text-sub uppercase">
-            <Th />
-            <Th>slug</Th>
-            <Th>언어</Th>
-            <Th>읽기 · 참고</Th>
-            <Th>뜻</Th>
-            <Th>품사</Th>
-            <Th>예문</Th>
-            <Th>발음</Th>
-            <Th />
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map(({ concept, lang, word, answer, aside, image, audio, src }) => {
-            return (
-              <tr key={`${concept.slug}:${lang}`} className="border-t border-line align-middle">
-                <Td>
-                  <span className="grid size-9 place-items-center overflow-hidden rounded-md bg-img-bg">
-                    {image ? (
-                      // 최적화가 꺼져 있어(next.config.ts) img로도 같은 파일이 그대로 나간다
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={imagePath(concept.slug)} alt="" className="size-full object-cover" />
-                    ) : (
-                      <span className="text-[10px] text-err">없음</span>
-                    )}
-                  </span>
-                </Td>
-                <Td>
-                  <span className="font-mono text-xs text-sub">{concept.slug}</span>
-                </Td>
-                <Td>
-                  <span className="font-mono text-xs text-sub">{lang}</span>
-                </Td>
-                <Td>
-                  {answer ? (
-                    <>
-                      <span className="font-jp font-semibold">{answer}</span>{' '}
-                      {aside.length > 0 && (
-                        <span className="font-jp text-xs text-sub">
-                          {aside.map((v, i) => (i === 0 ? `[${v}]` : v)).join(' · ')}
-                        </span>
-                      )}
-                    </>
-                  ) : (
-                    <Missing>출제 불가</Missing>
-                  )}
-                </Td>
-                <Td>{concept.meaning_ko}</Td>
-                <Td>
-                  {word?.part_of_speech ?? <span className="text-sub">—</span>}
-                </Td>
-                <Td>
-                  {word?.example ? (
-                    <span className="font-jp text-xs">{word.example.text}</span>
-                  ) : (
-                    <Missing>없음</Missing>
-                  )}
-                </Td>
-                <Td>
-                  {audio ? (
-                    <span className="rounded-pill border border-ok/30 bg-ok-soft px-2 py-0.5 text-[11px] font-semibold text-ok">
-                      {kb(audio.size)}
-                    </span>
-                  ) : (
-                    <Missing>없음</Missing>
-                  )}
-                </Td>
-                <Td>{audio ? <DebugPlay src={src} /> : <span className="block size-7" />}</Td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-      </div>
+      <DebugTable rows={rows} langs={langs} />
     </main>
   )
 }
@@ -152,24 +71,3 @@ function fileInfo(path: string): { size: number } | null {
     return null
   }
 }
-
-const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)}KB`
-
-function Stat({ label, value, bad = false }: { label: string; value: string; bad?: boolean }) {
-  return (
-    <div className="flex items-baseline gap-1.5">
-      <dt>{label}</dt>
-      <dd className={`font-semibold ${bad ? 'text-err' : 'text-ink'}`}>{value}</dd>
-    </div>
-  )
-}
-
-const Th = ({ children }: { children?: React.ReactNode }) => (
-  <th className="px-2.5 py-2 font-semibold">{children}</th>
-)
-const Td = ({ children }: { children?: React.ReactNode }) => <td className="px-2.5 py-2">{children}</td>
-const Missing = ({ children }: { children: React.ReactNode }) => (
-  <span className="rounded-pill border border-err/25 bg-err-soft px-2 py-0.5 text-[11px] font-semibold text-err">
-    {children}
-  </span>
-)
