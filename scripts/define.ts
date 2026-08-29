@@ -96,6 +96,37 @@ async function japanese(term: string): Promise<Lookup> {
   }
 }
 
+/**
+ * 중국어 HSK 등급.
+ *
+ * 출처는 complete-hsk-vocabulary (MIT). HSK는 공식 어휘표가 공개되어 있고
+ * 이 데이터셋이 그것을 정리해 둔 것이라 추정이 들어가지 않는다.
+ *
+ * `new-N`을 쓴다 — 2021년 개정된 **HSK 3.0**이 현행 표준이다. 같은 데이터에
+ * `old-N`(HSK 2.0)도 있는데 등급이 다르다(`苹果`는 3.0에서 3급, 2.0에서 1급).
+ */
+const HSK_URL = 'https://raw.githubusercontent.com/drkameleon/complete-hsk-vocabulary/main/complete.min.json'
+let hskTable: Map<string, number> | null = null
+
+async function hskLevels(): Promise<Map<string, number>> {
+  if (hskTable) return hskTable
+  const table = new Map<string, number>()
+  // min 판은 키가 축약돼 있다 — simplified→s, level→l, new-3→n3
+  const data = (await json(HSK_URL)) as Array<{ s?: string; l?: string[] }> | null
+  for (const entry of data ?? []) {
+    const level = entry.l?.find((l) => /^n[1-9]$/.test(l))?.slice(1)
+    if (entry.s && level) table.set(entry.s, Number(level))
+  }
+  hskTable = table
+  return table
+}
+
+export async function hskOf(term: string): Promise<number | undefined> {
+  const level = (await hskLevels()).get(term)
+  // 7~9급은 하나의 묶음이라 타입이 받는 1~6에 넣지 않는다
+  return level && level <= 6 ? level : undefined
+}
+
 /** 일본어 단어의 JLPT 등급만 조회한다. 없으면 undefined */
 export async function jlptOf(term: string): Promise<string | undefined> {
   return (await japanese(term)).jlpt
