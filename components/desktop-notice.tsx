@@ -12,7 +12,7 @@ import { CardImage, CardSheet, FeedCard } from './feed'
  */
 export function DesktopNotice() {
   return (
-    <div className="desktop-notice">
+    <div className="desktop-notice h-dvh">
       <FeedCard>
         <CardImage>
           <PhoneIcon />

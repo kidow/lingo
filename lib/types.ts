@@ -4,8 +4,8 @@
  * DB가 없으므로 이 타입이 곧 스키마다. 나중에 DB를 붙이면 그대로 테이블이 된다.
  */
 
-/** v1은 일본어 하나. 언어를 추가하면 여기와 lib/lang.ts를 같이 고친다. */
-export type Language = 'ja'
+/** 언어를 추가하면 여기와 lib/lang.ts를 같이 고친다. */
+export type Language = 'ja' | 'en'
 
 /** 오답 보기를 뽑는 근거다. 생략할 수 없다. (spec.md §4) */
 export type Category = 'noun' | 'verb' | 'adjective' | 'scene'

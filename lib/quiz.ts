@@ -1,5 +1,5 @@
 import { distractorPool, type Entry } from './entries.ts'
-import { pickConfusables } from './kana.ts'
+import { pickConfusables } from './confusables.ts'
 import { hashString, makeRng, sample, shuffled } from './random.ts'
 
 /**

@@ -1,9 +1,13 @@
 /**
- * 시각적으로 헷갈리는 가나.
+ * 시각적으로 헷갈리는 글자.
  *
- * 빈칸 카드의 오답 후보를 여기서 뽑는다. 무작위 가나를 깔면 모양이 전혀
+ * 빈칸 카드의 오답 후보를 여기서 뽑는다. 무작위 글자를 깔면 모양이 전혀
  * 달라서 소거법으로 풀리지만, 닮은 글자를 깔면 표기 정확도까지 훈련된다.
  * (spec.md §5 — 단서 회상)
+ *
+ * 문자 체계가 늘어도 규칙은 같다 — 가나는 가나끼리, 알파벳은 알파벳끼리 닮은
+ * 것을 준다. 영어에서는 모양뿐 아니라 **소리가 겹치는 짝**(c/k, s/z)도 넣는다.
+ * 철자 오류가 실제로 그 지점에서 난다.
  */
 const CONFUSABLE: Record<string, string[]> = {
   // 가타카나
@@ -54,13 +58,47 @@ const CONFUSABLE: Record<string, string[]> = {
   ろ: ['る', 'こ', 'ら'],
   つ: ['う', 'し', 'づ'],
   し: ['つ', 'レ', 'い'],
+
+  // 알파벳 — 모양이 닮았거나 소리가 겹치는 짝
+  a: ['e', 'o', 'u'],
+  b: ['d', 'p', 'h'],
+  c: ['k', 's', 'e'],
+  d: ['b', 'p', 'q'],
+  e: ['a', 'i', 'o'],
+  f: ['t', 'l', 'v'],
+  g: ['q', 'j', 'y'],
+  h: ['n', 'b', 'k'],
+  i: ['l', 'j', 'e'],
+  j: ['i', 'g', 'y'],
+  k: ['c', 'h', 'x'],
+  l: ['i', 't', 'f'],
+  m: ['n', 'w', 'h'],
+  n: ['m', 'h', 'r'],
+  o: ['a', 'e', 'u'],
+  p: ['b', 'd', 'q'],
+  q: ['g', 'p', 'd'],
+  r: ['n', 'v', 'x'],
+  s: ['z', 'c', 'x'],
+  t: ['l', 'f', 'd'],
+  u: ['v', 'o', 'n'],
+  v: ['u', 'w', 'y'],
+  w: ['v', 'm', 'u'],
+  x: ['s', 'k', 'z'],
+  y: ['v', 'j', 'g'],
+  z: ['s', 'x', 'n'],
 }
 
-/** 히라가나·가타카나 각각의 예비 풀. 닮은 글자가 부족할 때만 쓴다. */
+/** 문자 체계별 예비 풀. 닮은 글자가 부족할 때만 쓴다. */
 const HIRAGANA = [...'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわを']
 const KATAKANA = [...'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲ']
 
+const LATIN = [...'abcdefghijklmnopqrstuvwxyz']
+
 const isKatakana = (ch: string) => ch >= '゠' && ch <= 'ヿ'
+const isLatin = (ch: string) => /^[a-z]$/i.test(ch)
+
+/** 같은 문자 체계 안에서만 고른다. 가나 문제에 알파벳이 섞이면 답이 보인다 */
+const poolFor = (char: string) => (isLatin(char) ? LATIN : isKatakana(char) ? KATAKANA : HIRAGANA)
 
 /**
  * `char`의 오답 후보 `count`개.
@@ -74,11 +112,9 @@ export function pickConfusables(
   rng: () => number,
   shuffle: <T>(items: readonly T[], rng: () => number) => T[],
 ): string[] {
-  const near = shuffle(CONFUSABLE[char] ?? [], rng)
+  const near = shuffle(CONFUSABLE[char.toLowerCase()] ?? CONFUSABLE[char] ?? [], rng)
   if (near.length >= count) return near.slice(0, count)
 
-  const fallback = (isKatakana(char) ? KATAKANA : HIRAGANA).filter(
-    (c) => c !== char && !near.includes(c),
-  )
+  const fallback = poolFor(char).filter((c) => c !== char && !near.includes(c))
   return [...near, ...shuffle(fallback, rng).slice(0, count - near.length)]
 }

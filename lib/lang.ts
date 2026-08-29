@@ -22,12 +22,26 @@ export type LangStrategy = {
 }
 
 export const LANG: Record<Language, LangStrategy> = {
+  en: { answer: 'term', aside: [] },
   ja: { answer: 'reading', aside: ['romanization', 'term'] },
   // de: { answer: 'term', aside: [] },
   // zh: { answer: 'reading', aside: ['term'] },
 }
 
-export const DEFAULT_LANGUAGE: Language = 'ja'
+/**
+ * 영어는 참고줄이 없다. 표기가 곧 읽기라서 일본어처럼 두 형태로 갈라지지
+ * 않는다. 발음기호를 넣을 수도 있지만 IPA는 초급자에게 오히려 장벽이다.
+ */
+
+/** 헤더 드롭다운에 보이는 이름. 순서가 곧 드롭다운 순서다 */
+export const LANGUAGE_LABEL: Record<Language, string> = {
+  en: '영어',
+  ja: '일본어',
+}
+
+export const LANGUAGES = Object.keys(LANGUAGE_LABEL) as Language[]
+
+export const DEFAULT_LANGUAGE: Language = 'en'
 
 /** 그 언어에서 정답으로 쓰는 문자열. 없으면 출제할 수 없다. */
 export function answerOf(word: Word, lang: Language): string | undefined {

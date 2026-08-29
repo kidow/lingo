@@ -23,21 +23,26 @@ export default function DebugPage() {
   if (process.env.NODE_ENV !== 'development') notFound()
 
   const langs = Object.keys(LANG) as Language[]
-  const rows = CONCEPTS.map((concept) => ({
-    concept,
-    image: fileInfo(join('public', imagePath(concept.slug))),
-    audio: langs.map((lang) => ({
-      lang,
-      info: fileInfo(join('public', audioPath(concept.slug, lang))),
-      src: audioPath(concept.slug, lang),
-    })),
-  }))
+
+  // 한 줄 = 개념 하나 × 언어 하나. 언어가 늘면 줄이 늘 뿐 표 모양은 그대로다
+  const rows = CONCEPTS.flatMap((concept) =>
+    langs
+      .filter((lang) => concept.words[lang])
+      .map((lang) => ({
+        concept,
+        lang,
+        word: concept.words[lang]!,
+        answer: answerOf(concept.words[lang]!, lang),
+        aside: asideOf(concept.words[lang]!, lang),
+        image: fileInfo(join('public', imagePath(concept.slug))),
+        audio: fileInfo(join('public', audioPath(concept.slug, lang))),
+        src: audioPath(concept.slug, lang),
+      })),
+  )
 
   const missingImage = rows.filter((r) => !r.image).length
-  const missingAudio = rows.filter((r) => r.audio.some((a) => !a.info)).length
-  const missingExample = rows.filter((r) =>
-    langs.some((lang) => r.concept.words[lang] && !r.concept.words[lang]?.example),
-  ).length
+  const missingAudio = rows.filter((r) => !r.audio).length
+  const missingExample = rows.filter((r) => !r.word.example).length
 
   return (
     <main className="h-dvh overflow-y-auto p-6">
@@ -49,7 +54,8 @@ export default function DebugPage() {
       </header>
 
       <dl className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-ctrl border border-line bg-surface px-3 py-2.5 text-[13px] text-sub">
-        <Stat label="개념" value={`${rows.length}`} />
+        <Stat label="개념" value={`${CONCEPTS.length}`} />
+        <Stat label="단어" value={`${rows.length}`} />
         <Stat label="이미지" value={`${rows.length - missingImage}/${rows.length}`} bad={missingImage > 0} />
         <Stat label="발음" value={`${rows.length - missingAudio}/${rows.length}`} bad={missingAudio > 0} />
         <Stat label="예문" value={`${rows.length - missingExample}/${rows.length}`} bad={missingExample > 0} />
@@ -62,6 +68,7 @@ export default function DebugPage() {
           <tr className="text-[11px] tracking-wide text-sub uppercase">
             <Th />
             <Th>slug</Th>
+            <Th>언어</Th>
             <Th>읽기 · 참고</Th>
             <Th>뜻</Th>
             <Th>품사</Th>
@@ -71,15 +78,9 @@ export default function DebugPage() {
           </tr>
         </thead>
         <tbody>
-          {rows.map(({ concept, image, audio }) => {
-            const lang = langs[0]
-            const word = concept.words[lang]
-            const answer = word && answerOf(word, lang)
-            const aside = word ? asideOf(word, lang) : []
-            const say = audio[0]
-
+          {rows.map(({ concept, lang, word, answer, aside, image, audio, src }) => {
             return (
-              <tr key={concept.slug} className="border-t border-line align-middle">
+              <tr key={`${concept.slug}:${lang}`} className="border-t border-line align-middle">
                 <Td>
                   <span className="grid size-9 place-items-center overflow-hidden rounded-md bg-img-bg">
                     {image ? (
@@ -93,6 +94,9 @@ export default function DebugPage() {
                 </Td>
                 <Td>
                   <span className="font-mono text-xs text-sub">{concept.slug}</span>
+                </Td>
+                <Td>
+                  <span className="font-mono text-xs text-sub">{lang}</span>
                 </Td>
                 <Td>
                   {answer ? (
@@ -120,15 +124,15 @@ export default function DebugPage() {
                   )}
                 </Td>
                 <Td>
-                  {say.info ? (
+                  {audio ? (
                     <span className="rounded-pill border border-ok/30 bg-ok-soft px-2 py-0.5 text-[11px] font-semibold text-ok">
-                      {kb(say.info.size)}
+                      {kb(audio.size)}
                     </span>
                   ) : (
                     <Missing>없음</Missing>
                   )}
                 </Td>
-                <Td>{say.info ? <DebugPlay src={say.src} /> : <span className="block size-7" />}</Td>
+                <Td>{audio ? <DebugPlay src={src} /> : <span className="block size-7" />}</Td>
               </tr>
             )
           })}
