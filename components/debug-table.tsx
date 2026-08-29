@@ -2,11 +2,10 @@
 
 import { useMemo, useState } from 'react'
 import { DebugPlay } from './debug-play'
-import { LANGUAGE_LABEL } from '@/lib/lang'
-import type { Language } from '@/lib/types'
+import { TRACKS, trackOf, type TrackId } from '@/lib/track'
 
 /**
- * 점검 표. 언어로 걸러 본다. (spec.md §7)
+ * 점검 표. 트랙으로 걸러 본다. (spec.md §7)
  *
  * 서버가 fs로 훑은 결과를 그대로 받아 그리기만 한다 — 표는 파일 시스템을
  * 모른다. 필터는 화면에서만 도는 상태다. 정적 export라 쿼리 파라미터를
@@ -14,7 +13,9 @@ import type { Language } from '@/lib/types'
  */
 export type DebugRow = {
   slug: string
-  lang: Language
+  track: TrackId
+  /** 그림이 없으면 피드에 안 나온다. 목록에만 있는 상태다 */
+  level?: string
   answer?: string
   aside: string[]
   meaning: string
@@ -27,13 +28,13 @@ export type DebugRow = {
 }
 
 const ALL = 'all' as const
-type Filter = Language | typeof ALL
+type Filter = TrackId | typeof ALL
 
-export function DebugTable({ rows, langs }: { rows: DebugRow[]; langs: Language[] }) {
+export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId[] }) {
   const [filter, setFilter] = useState<Filter>(ALL)
 
   const shown = useMemo(
-    () => (filter === ALL ? rows : rows.filter((row) => row.lang === filter)),
+    () => (filter === ALL ? rows : rows.filter((row) => row.track === filter)),
     [rows, filter],
   )
 
@@ -45,7 +46,7 @@ export function DebugTable({ rows, langs }: { rows: DebugRow[]; langs: Language[
   return (
     <>
       <div className="mb-3 flex flex-wrap items-center gap-1.5">
-        {[ALL, ...langs].map((value) => (
+        {[ALL, ...tracks].map((value) => (
           <button
             key={value}
             type="button"
@@ -57,9 +58,9 @@ export function DebugTable({ rows, langs }: { rows: DebugRow[]; langs: Language[
                 : 'border-line bg-surface text-sub'
             }`}
           >
-            {value === ALL ? '전체' : LANGUAGE_LABEL[value]}
+            {value === ALL ? '전체' : (TRACKS.find((track) => track.id === value)?.label ?? value)}
             <span className="ml-1.5 font-normal opacity-60">
-              {value === ALL ? rows.length : rows.filter((row) => row.lang === value).length}
+              {value === ALL ? rows.length : rows.filter((row) => row.track === value).length}
             </span>
           </button>
         ))}
@@ -81,7 +82,7 @@ export function DebugTable({ rows, langs }: { rows: DebugRow[]; langs: Language[
             <tr className="text-[11px] tracking-wide text-sub uppercase">
               <Th />
               <Th>slug</Th>
-              <Th>언어</Th>
+              <Th>트랙</Th>
               <Th>읽기 · 참고</Th>
               <Th>뜻</Th>
               <Th>품사</Th>
@@ -92,7 +93,7 @@ export function DebugTable({ rows, langs }: { rows: DebugRow[]; langs: Language[
           </thead>
           <tbody>
             {shown.map((row) => (
-              <tr key={`${row.slug}:${row.lang}`} className="border-t border-line align-middle">
+              <tr key={`${row.slug}:${row.track}`} className="border-t border-line align-middle">
                 <Td>
                   <span className="grid size-9 place-items-center overflow-hidden rounded-md bg-img-bg">
                     {row.hasImage ? (
@@ -108,7 +109,8 @@ export function DebugTable({ rows, langs }: { rows: DebugRow[]; langs: Language[
                   <span className="font-mono text-xs text-sub">{row.slug}</span>
                 </Td>
                 <Td>
-                  <span className="font-mono text-xs text-sub">{row.lang}</span>
+                  <span className="font-mono text-xs text-sub">{row.track}</span>
+                  {row.level && <span className="ml-1.5 text-xs text-sub">{row.level}</span>}
                 </Td>
                 <Td>
                   {row.answer ? (

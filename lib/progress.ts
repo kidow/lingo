@@ -1,11 +1,12 @@
 import { createEmptyCard, type Card as FsrsCard } from 'ts-fsrs'
-import type { Language } from './types.ts'
+import type { TrackId } from './track.ts'
 
 /**
  * 진도. (spec.md §6)
  *
- * 서버가 없다. 전부 localStorage에 있고 언어별로 분리된다.
- * 일본어 진도와 독일어 진도는 별개다.
+ * 서버가 없다. 전부 localStorage에 있고 **트랙별로** 분리된다.
+ * TOEIC 진도와 JLPT 진도는 별개이며, 나중에 같은 언어에 트랙이 둘이 되어도
+ * 서로를 덮지 않는다.
  */
 
 export const PROGRESS_VERSION = 1
@@ -57,14 +58,14 @@ export function freshCard(now: Date): StoredCard {
 
 /* ── 저장소 ──────────────────────────────────────────────────────── */
 
-export const progressKey = (lang: Language) => `lingo.progress.${lang}`
-export const LANGUAGE_KEY = 'lingo.language'
+export const progressKey = (track: TrackId) => `lingo.progress.${track}`
+export const TRACK_KEY = 'lingo.track'
 
 /** 없거나 깨졌으면 빈 진도로 시작한다. 던지지 않는다. */
-export function loadProgress(lang: Language): Progress {
+export function loadProgress(track: TrackId): Progress {
   if (typeof localStorage === 'undefined') return emptyProgress()
   try {
-    const raw = localStorage.getItem(progressKey(lang))
+    const raw = localStorage.getItem(progressKey(track))
     if (!raw) return emptyProgress()
     const parsed = JSON.parse(raw) as Partial<Progress>
     if (parsed.version !== PROGRESS_VERSION) return emptyProgress()
@@ -79,10 +80,10 @@ export function loadProgress(lang: Language): Progress {
 }
 
 /** 저장 실패는 학습을 막을 이유가 아니다 (사파리 프라이빗 모드 등). */
-export function saveProgress(lang: Language, progress: Progress): void {
+export function saveProgress(track: TrackId, progress: Progress): void {
   if (typeof localStorage === 'undefined') return
   try {
-    localStorage.setItem(progressKey(lang), JSON.stringify(progress))
+    localStorage.setItem(progressKey(track), JSON.stringify(progress))
   } catch {
     /* 무시 */
   }
