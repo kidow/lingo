@@ -16,7 +16,17 @@ import type { Language } from '@/lib/types'
  * 렌더 여부로 건다 — 없는 버튼은 뚫리지 않는다.
  *
  * 위치는 이 컴포넌트가 정하지 않는다. 부모가 놓는 자리에 선다.
+ *
+ * **누를 때마다 속도가 번갈아 바뀐다.** 홀수 번째는 1.0배, 짝수 번째는 0.8배다.
+ * 한 번 듣고 못 알아들었을 때 다시 누르는 행동이 그대로 "천천히 다시"가 된다 —
+ * 안내 문구도 새 버튼도 필요 없다. (spec.md §3)
+ *
+ * 파일 자체는 항상 1.0배로 만든다(AUDIO.md). 느린 소리를 구워 두면 그게 원본이
+ * 되어 정상 속도를 영영 못 내고, 속도를 바꿀 때마다 전체 재생성을 해야 한다.
  */
+/** 짝수 번째 탭의 재생 속도. 0.7 아래로는 말이 늘어져 오히려 안 들린다 */
+const SLOW_RATE = 0.8
+
 export function SayButton({
   slug,
   lang,
@@ -29,6 +39,8 @@ export function SayButton({
   enabled?: boolean
 }) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  /** 누른 횟수. 홀짝으로 속도가 갈린다 */
+  const taps = useRef(0)
   const [available, setAvailable] = useState(true)
   const [playing, setPlaying] = useState(false)
 
@@ -43,6 +55,7 @@ export function SayButton({
     audio.addEventListener('error', () => setAvailable(false))
     audio.addEventListener('ended', () => setPlaying(false))
     audioRef.current = audio
+    taps.current = 0
     return () => {
       audio.pause()
       audioRef.current = null
@@ -59,6 +72,13 @@ export function SayButton({
       onClick={() => {
         const audio = audioRef.current
         if (!audio) return
+
+        taps.current += 1
+        // 음높이는 유지한다. 이게 없으면 느린 재생에서 목소리가 굵어져
+        // 발음 참조로 쓸 수 없다. 기본값이 true지만 명시한다
+        audio.preservesPitch = true
+        audio.playbackRate = taps.current % 2 === 1 ? 1 : SLOW_RATE
+
         setPlaying(true)
         audio.currentTime = 0
         audio.play().catch(() => {
