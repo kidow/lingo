@@ -178,7 +178,7 @@ function Skeleton({ empty }: { empty: boolean }) {
     <FeedCard>
       <CardImage />
       <CardSheet>
-        <Cue>{empty ? '아직 배울 단어가 없어요' : ' '}</Cue>
+        {empty && <p className="text-sm text-sub">아직 배울 단어가 없어요</p>}
       </CardSheet>
     </FeedCard>
   )
@@ -230,18 +230,3 @@ export function CardSheet({ children }: { children: React.ReactNode }) {
   )
 }
 
-
-/**
- * 잠금 중 무엇을 해야 하는지 알려 주는 하단 한 줄. (brand-spec.md — Cue 문구)
- */
-export function Cue({ children, locked = false }: { children: React.ReactNode; locked?: boolean }) {
-  return (
-    <p
-      className={`cue mt-auto grid h-[22px] shrink-0 place-items-center text-xs tracking-wide ${
-        locked ? 'font-semibold text-accent' : 'text-sub'
-      }`}
-    >
-      {children}
-    </p>
-  )
-}
