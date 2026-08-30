@@ -8,6 +8,7 @@ import nature from '@/content/nature.json'
 import office from '@/content/office.json'
 import quality from '@/content/quality.json'
 import scene from '@/content/scene.json'
+import school from '@/content/school.json'
 import travel from '@/content/travel.json'
 import { entriesForTrack as selectEntries, type Entry } from './entries.ts'
 import type { TrackId } from './track.ts'
@@ -32,6 +33,7 @@ const FILES: ContentFile[] = [
   office as ContentFile,
   quality as ContentFile,
   scene as ContentFile,
+  school as ContentFile,
   travel as ContentFile,
   food as ContentFile,
   home as ContentFile,
