@@ -320,7 +320,8 @@ public/audio/{language}/{slug}.mp3   발음 — 언어별
 ### 파일은 주제고, 트랙은 언어로 고른다
 
 `content/everyday.json` · `office.json` · `travel.json` · `food.json` · `home.json` ·
-`body.json` · `nature.json` · `city.json`. 개념은 트랙에 속하지 않는다 —
+`body.json` · `nature.json` · `city.json`, 그리고 품사가 다른 `action.json`(동사).
+개념은 트랙에 속하지 않는다 —
 `cat` 하나에 `words.ja` · `words.zh` · `words.es`가 나란히 들어가고, 각 트랙은
 **자기 언어의 단어가 있는 개념만** 골라 출제한다.
 
@@ -434,6 +435,9 @@ type Attributes =
   값이 없으면 자리째 빠진다. **없는 등급을 지어내지 않는다.** TOEIC은 등급이
   아예 없어서 `TSL 19`처럼 목록 이름과 순위를 그대로 적는다 — 등급인 척하지 않는다.
 - 하단에 **예문 한 줄**을 둔다. 구분선 아래 かな 문장과 한국어 뜻 두 줄이다.
+  - **동사는 예문을 원형으로 쓴다.** 정답이 사전형(`たべる`·`comprar`)인데 예문에서
+    활용해 버리면 정답이 화면에 안 보인다. `パンを たべる。` · `Quiero comprar pan.`
+    처럼 원형이 그대로 오는 자리를 쓴다 — `pnpm check`가 이 규칙을 강제한다.
   - **かな로 쓰고 띄어쓰기로 끊는다.** 학습 대상이 읽기이므로 한자를 쓰지 않고,
     かな만 이어 붙이면 읽기 어려우므로 어절을 띄운다 — `パンを かいます。`
   - 예문에는 그 단어가 반드시 들어간다. `pnpm check`가 빠졌으면 경고한다.
@@ -680,6 +684,11 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | complete-hsk-vocabulary | 중국어 **HSK 등급** | MIT. **HSK 3.0**(`new-N`)을 쓴다. 7~9급은 원래 한 묶음이라 `7`로 저장하고 `HSK 7-9`로 적는다 |
 | Goethe-Institut Wortliste | 독일어 **CEFR 등급** | 공식 무료 PDF. A1~B1까지만 낸다 |
 | TOEIC Service List (TSL 1.2) | 영어 **TOEIC 빈도 순위** | Browne & Culligan, **CC BY-SA 4.0**. 1,250단어로 최근 TOEIC의 98.5%를 덮는다 |
+
+**독일어 CEFR은 명사만 채워진다.** 괴테 목록은 PDF라 표제어와 예문이 한 덩어리로
+붙어 나온다. 대문자로 시작하는 낱말만 긁어 독일어 명사를 골라내는데, 동사·형용사는
+소문자여서 함께 걸리지 않는다. 소문자까지 긁으면 예문 속 낱말이 전부 들어와 B1
+동사가 A1으로 찍힌다 — 정확도를 잃느니 비워 둔다(`action.json`의 CEFR이 0인 이유다).
 
 **JLPT 등급은 절반쯤만 채워진다.** 2010년 개편 이후 JLPT는 공식 어휘 목록을
 내지 않아, JMdict의 태그는 그 이전 출제기준을 따른다. 그 목록은 일반 어휘라
