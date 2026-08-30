@@ -15,6 +15,7 @@ import scene from '@/content/scene.json'
 import school from '@/content/school.json'
 import sport from '@/content/sport.json'
 import time from '@/content/time.json'
+import transport from '@/content/transport.json'
 import travel from '@/content/travel.json'
 import { entriesForTrack as selectEntries, type Entry } from './entries.ts'
 import type { TrackId } from './track.ts'
@@ -44,6 +45,7 @@ const FILES: ContentFile[] = [
   school as ContentFile,
   sport as ContentFile,
   time as ContentFile,
+  transport as ContentFile,
   travel as ContentFile,
   family as ContentFile,
   food as ContentFile,
