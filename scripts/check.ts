@@ -110,7 +110,7 @@ for (const file of files) {
         if (typeof example.text === 'string' && typeof answer === 'string' && !example.text.includes(answer))
           warn(`${where} — ${lang}.example에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`)
         // ja·zh는 예문도 읽을 수 있어야 한다. pnpm romanize가 채운다
-        if ((lang === 'ja' || lang === 'zh') && !example.romanization)
+        if ((lang === 'ja' || lang === 'zh' || lang === 'ru') && !example.romanization)
           warn(`${where} — ${lang}.example에 로마자가 없습니다. pnpm romanize를 돌리세요`)
       }
     }

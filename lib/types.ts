@@ -5,7 +5,7 @@
  */
 
 /** 언어를 추가하면 여기와 lib/lang.ts, lib/track.ts를 같이 고친다. */
-export type Language = 'en' | 'ja' | 'zh' | 'es' | 'fr' | 'de'
+export type Language = 'en' | 'ja' | 'zh' | 'es' | 'fr' | 'de' | 'ru'
 
 /** 오답 보기를 뽑는 근거다. 생략할 수 없다. (spec.md §4) */
 export type Category = 'noun' | 'verb' | 'adjective' | 'scene'
@@ -27,6 +27,9 @@ export type Attributes =
   | { hsk?: 1 | 2 | 3 | 4 | 5 | 6 | 7; tones?: number[] } // zh
   | { cefr?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'; article?: string; gender?: 'm' | 'f' | 'n' } // es · fr · de
   | { tsl?: number } // en
+  // ru: TORFL(ТРКИ)은 공식 어휘 목록을 기계가 읽을 수 있게 내놓지 않는다.
+  // 등급을 지어내지 않으므로 지금은 비어 있다 (spec.md §7)
+  | { torfl?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2' } // ru
 
 export type Word = {
   /** 표기.  ja: 猫 / de: Katze */

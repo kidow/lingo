@@ -28,6 +28,9 @@ export const LANG: Record<Language, LangStrategy> = {
   es: { answer: 'term', aside: [] },
   fr: { answer: 'term', aside: [] },
   de: { answer: 'term', aside: [] },
+  // 러시아어는 키릴 문자라 표기를 그대로 읽을 수 없다. 로마자를 참고줄에 둔다 —
+  // 규칙적인 문자라 scripts/romanize.ts가 표로 만든다 (§7)
+  ru: { answer: 'term', aside: ['romanization'] },
 }
 
 /**
