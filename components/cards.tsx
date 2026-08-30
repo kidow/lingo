@@ -76,6 +76,10 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
         {word.example && (
           <div className="border-t border-line pt-md">
             <p className="font-jp text-[15px] leading-relaxed">{word.example.text}</p>
+            {/* 예문도 소리 내 볼 수 있어야 한다. ja·zh만 값이 있다 (lib/types.ts) */}
+            {word.example.romanization && (
+              <p className="mt-0.5 text-xs text-sub">{word.example.romanization}</p>
+            )}
             <p className="mt-1 text-sm text-sub">{word.example.ko}</p>
           </div>
         )}
