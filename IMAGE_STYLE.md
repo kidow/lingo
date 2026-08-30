@@ -129,16 +129,26 @@ stadium     → one oval stadium bowl with tiered seating and a green field, see
 
 요소를 늘릴수록 80×80에서 죽는다. **셋을 넘기지 않는다**는 규칙이 여기서도 그대로다.
 
-### 추상어
+### 추상어 — 뜻이 아니라 **예문 장면**을 그린다
 
-**억지로 이미지를 만들지 않는다.** `image_prompt`를 비우고 `image_path`를 `null`로 둔다.
+`deadline`·`refund`·`authorize`는 그 자체로 그릴 것이 없다. 낱말을 그리려 하지 말고
+**예문이 말하는 한 장면**을 그린다. 그림이 뜻을 정의하지 못해도 된다 — 뜻은 카드에
+한국어로 이미 적혀 있고, 그림은 그 낱말이 사는 자리를 기억에 걸어 두는 고리다.
 
-그 결과:
-- Words 그리드에서 placeholder 타일로 나온다
-- Image → Word 퀴즈에 출제되지 않는다 (정답으로도, 오답 보기로도)
-- 플래시카드로만 학습된다
+```
+deadline  → one wall calendar with a single date circled in red and a small hourglass
+             in front of it            ("보고서는 마감 기한 전에 내야 합니다")
+refund    → one hand passing banknotes back across a counter to another hand holding
+             a receipt                 ("가게에서 환불해 주었습니다")
+authorize → one hand pressing a round rubber stamp onto a sheet of paper
+                                       ("관리자가 결제를 승인할 겁니다")
+```
 
-추상어는 나중에 mnemonic·예문·문맥으로 다룬다. v1에서는 이미지 없이 둔다.
+**여섯 언어의 예문이 같은 장면을 말해야 한다.** 그림은 개념당 한 장인데 예문이
+언어마다 다른 상황이면 다섯 트랙에서 그림과 문장이 어긋난다.
+
+나머지 규칙은 그대로다 — 요소 셋 이하, 글자·숫자 없음(체크표·엑스표도 글자다),
+80×80에서 판독. 장면이 세 요소로 안 담기면 그 낱말은 아직 넣지 않는다.
 
 ### 이미지가 하나로 안 그려지면 개념이 둘이다
 
