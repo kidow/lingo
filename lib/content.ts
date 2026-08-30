@@ -2,6 +2,7 @@ import action from '@/content/action.json'
 import body from '@/content/body.json'
 import city from '@/content/city.json'
 import everyday from '@/content/everyday.json'
+import family from '@/content/family.json'
 import food from '@/content/food.json'
 import home from '@/content/home.json'
 import job from '@/content/job.json'
@@ -38,6 +39,7 @@ const FILES: ContentFile[] = [
   school as ContentFile,
   time as ContentFile,
   travel as ContentFile,
+  family as ContentFile,
   food as ContentFile,
   home as ContentFile,
   job as ContentFile,
