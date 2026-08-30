@@ -23,7 +23,8 @@ export type Category = 'noun' | 'verb' | 'adjective' | 'scene'
  */
 export type Attributes =
   | { jlpt?: 'N5' | 'N4' | 'N3' | 'N2' | 'N1'; pitchAccent?: number } // ja
-  | { hsk?: 1 | 2 | 3 | 4 | 5 | 6; tones?: number[] } // zh
+  // hsk 7은 HSK 3.0의 7~9급 묶음이다. 8·9는 따로 없다 (lib/level.ts가 편다)
+  | { hsk?: 1 | 2 | 3 | 4 | 5 | 6 | 7; tones?: number[] } // zh
   | { cefr?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'; article?: string; gender?: 'm' | 'f' | 'n' } // es · fr · de
   | { tsl?: number } // en
 

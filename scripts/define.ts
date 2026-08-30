@@ -150,8 +150,12 @@ async function hskLevels(): Promise<Map<string, number>> {
 
 export async function hskOf(term: string): Promise<number | undefined> {
   const level = (await hskLevels()).get(term)
-  // 7~9급은 하나의 묶음이라 타입이 받는 1~6에 넣지 않는다
-  return level && level <= 6 ? level : undefined
+  // 7~9급은 HSK 3.0에서 **하나의 묶음**이다. 데이터셋이 n7로 주므로 7로 두고,
+  // 화면에는 `HSK 7-9`로 적는다 (lib/level.ts). 8·9는 따로 존재하지 않는다.
+  //
+  // 한때 7 이상을 버렸는데, 그러면 枕头·地毯·抽屉 같은 생활 명사가 통째로
+  // 등급 없음이 된다 — 목록에 없어서가 아니라 우리가 버려서였다.
+  return level
 }
 
 /** 일본어 단어의 JLPT 등급만 조회한다. 없으면 undefined */
