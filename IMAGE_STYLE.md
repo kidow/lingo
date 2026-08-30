@@ -107,6 +107,20 @@ small → one small teapot centered, with a much larger teapot of the same shape
         cropped at the left edge behind it
 ```
 
+### 색 이름 — 팔레트 규칙을 **그 색에만** 푼다
+
+`red`·`blue` 같은 색 이름은 색 자체가 뜻이다. 공통 팔레트(무채도 4~6색)를
+그대로 적용하면 빨강과 주황이 같은 흙색으로 뭉개져 카드가 구별되지 않는다.
+
+그래서 색 이름 개념에서는 **피사체 하나만 그 색을 또렷하게** 칠하고, 배경과
+나머지 요소는 규격대로 둔다. 형태는 색을 담는 그릇일 뿐이므로 짜 놓은 물감
+덩어리처럼 단순한 것으로 통일한다 — 형태가 다르면 학습자가 형태를 외운다.
+
+```
+red  → one open paint tube with a thick blob of clear red paint squeezed out
+blue → one open paint tube with a thick blob of clear blue paint squeezed out
+```
+
 ### 감정 · 상태 — 얼굴이 아니라 **몸과 상황**으로 그린다
 
 스타일이 이목구비를 그리지 않으므로 표정으로는 감정을 전할 수 없다. 대신 세 가지를 쓴다.
