@@ -43,7 +43,11 @@ export type Word = {
    * 이유는 소개 카드가 한자를 참고로만 다루기 때문이다 (§1).
    * 정답 단어가 문장에 그대로 들어 있어 퀴즈 카드에는 쓸 수 없다.
    */
-  example?: { text: string; ko: string }
+  /**
+   * 로마자 예문은 ja·zh만 갖는다. `pnpm romanize`가 규칙으로 채운다 —
+   * 손으로 쓰지 않는다 (scripts/romanize.ts).
+   */
+  example?: { text: string; ko: string; romanization?: string }
   attributes?: Attributes
 }
 
