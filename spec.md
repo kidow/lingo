@@ -81,7 +81,7 @@
 |---|---|---|
 | TOEIC | 영어 | `TSL 1`~`TSL 1250` — 등급이 아니라 빈도 순위다 |
 | JLPT | 일본어 | `N5`~`N1` |
-| HSK | 중국어 | `1`~`6` |
+| HSK | 중국어 | `1`~`6` · `7-9` (7~9급은 한 묶음이다) |
 | DELE | 스페인어 | CEFR `A1`~`C2` |
 | DELF | 프랑스어 | CEFR |
 | TELC | 독일어 | CEFR |
@@ -677,7 +677,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | Free Dictionary (`dictionaryapi.dev`) | 영어 정의 | 키 없음 |
 | 영어 위키낱말사전 | 한국어 번역 후보 | CC BY-SA |
 | Jisho (JMdict) | 일본어 읽기·영어 뜻·**JLPT 등급** | 구 출제기준 기반 |
-| complete-hsk-vocabulary | 중국어 **HSK 등급** | MIT. **HSK 3.0**(`new-N`)을 쓴다 |
+| complete-hsk-vocabulary | 중국어 **HSK 등급** | MIT. **HSK 3.0**(`new-N`)을 쓴다. 7~9급은 원래 한 묶음이라 `7`로 저장하고 `HSK 7-9`로 적는다 |
 | Goethe-Institut Wortliste | 독일어 **CEFR 등급** | 공식 무료 PDF. A1~B1까지만 낸다 |
 | TOEIC Service List (TSL 1.2) | 영어 **TOEIC 빈도 순위** | Browne & Culligan, **CC BY-SA 4.0**. 1,250단어로 최근 TOEIC의 98.5%를 덮는다 |
 
