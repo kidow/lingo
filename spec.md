@@ -676,10 +676,21 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 |---|---|---|
 | Free Dictionary (`dictionaryapi.dev`) | 영어 정의 | 키 없음 |
 | 영어 위키낱말사전 | 한국어 번역 후보 | CC BY-SA |
-| Jisho (JMdict) | 일본어 읽기·영어 뜻·**JLPT 등급** | 구 출제기준 기반 |
+| Jisho (JMdict) | 일본어 읽기·영어 뜻·**JLPT 등급** | 구 출제기준 기반. 아래 한계 참고 |
 | complete-hsk-vocabulary | 중국어 **HSK 등급** | MIT. **HSK 3.0**(`new-N`)을 쓴다. 7~9급은 원래 한 묶음이라 `7`로 저장하고 `HSK 7-9`로 적는다 |
 | Goethe-Institut Wortliste | 독일어 **CEFR 등급** | 공식 무료 PDF. A1~B1까지만 낸다 |
 | TOEIC Service List (TSL 1.2) | 영어 **TOEIC 빈도 순위** | Browne & Culligan, **CC BY-SA 4.0**. 1,250단어로 최근 TOEIC의 98.5%를 덮는다 |
+
+**JLPT 등급은 절반쯤만 채워진다.** 2010년 개편 이후 JLPT는 공식 어휘 목록을
+내지 않아, JMdict의 태그는 그 이전 출제기준을 따른다. 그 목록은 일반 어휘라
+전문어와 파생 복합어가 빠져 있다 — `説明`은 N4인데 `説明書`는 없고, `実験`은
+N3인데 `実験室`은 없다. 외래어도 `パン`·`パソコン`은 있고 `ホチキス`·`プリンター`는
+없다.
+
+그래서 사무 어휘가 많은 파일일수록 비어 보인다(office 18/53). 조회해 보면
+35개 중 34개가 **표제어는 있는데 등급만 없다** — 우리 표기가 틀린 게 아니다.
+등급을 얻자고 `ノートパソコン`을 `パソコン`(N4)으로 바꾸지 않는다. 노트북이
+아니라 컴퓨터가 된다.
 
 TSL은 CC BY-SA 4.0이므로 출처를 밝힌다 — Browne, C., Culligan, B. (2013).
 *The TOEIC Service List*. www.newgeneralservicelist.com
