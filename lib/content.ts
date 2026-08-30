@@ -5,8 +5,8 @@ import home from '@/content/home.json'
 import nature from '@/content/nature.json'
 import office from '@/content/office.json'
 import travel from '@/content/travel.json'
-import { entriesFor as selectEntries, type Entry } from './entries.ts'
-import { trackOf, type TrackId } from './track.ts'
+import { entriesForTrack as selectEntries, type Entry } from './entries.ts'
+import type { TrackId } from './track.ts'
 import type { Concept, ContentFile } from './types.ts'
 
 /**
@@ -32,9 +32,9 @@ const FILES: ContentFile[] = [
 
 export const CONCEPTS: Concept[] = FILES.flatMap((file) => file.concepts)
 
-/** 그 트랙에서 출제 가능한 목록. 트랙이 쓰는 언어로 정답을 뽑는다 */
+/** 그 트랙에서 출제 가능한 목록. 규칙은 lib/entries.ts가 갖는다 */
 export function entriesFor(track: TrackId, concepts: Concept[] = CONCEPTS): Entry[] {
-  return selectEntries(trackOf(track).language, concepts)
+  return selectEntries(track, concepts)
 }
 
 export type { Entry }

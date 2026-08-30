@@ -10,6 +10,7 @@
  *   JLPT  Jisho(JMdict). 구 출제기준 기반이라 가타카나 외래어가 빠져 있다
  *   HSK   complete-hsk-vocabulary (MIT). HSK 3.0 기준
  *   CEFR  Goethe-Institut 공식 Wortliste. 독일어만, A1~B1까지
+ *   TSL   TOEIC Service List (Browne & Culligan, CC BY-SA 4.0). 등급이 아니라 순위다
  *
  * 스페인어·프랑스어는 채우지 않는다. Cervantes PCIC는 robots.txt가 자동 수집을
  * 막고 있고, 프랑스어는 공개된 기계 판독 목록이 없다.
@@ -21,6 +22,29 @@ import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { inflateSync } from 'node:zlib'
 import { hskOf, jlptOf } from './define.ts'
 import type { Concept } from '../lib/types.ts'
+
+/**
+ * TOEIC Service List 1.2 — 1,250단어. NGSL과 합쳐 최근 TOEIC의 98.5%를 덮는다.
+ *
+ * ETS는 공식 어휘 목록을 내지 않는다. 시중의 "필수 1000단어"는 교재사 편집물이라
+ * 공개 레포에 못 쓰지만, TSL은 TOEIC 대비 교재 150만 단어 코퍼스에서 뽑은
+ * 학술 목록이고 **CC BY-SA 4.0**이라 쓸 수 있다. 출처는 spec.md §7 표에 적는다.
+ *
+ *   Browne, C., Culligan, B. (2013). The TOEIC Service List.
+ *   www.newgeneralservicelist.com
+ */
+const TSL_URL = 'https://www.newgeneralservicelist.com/s/TSL_12_stats.csv'
+
+/** 표제어 → 순위. CSV는 `Word,TSL Rank,SFI,U` 네 칸이다 */
+async function tslRanks(): Promise<Map<string, number>> {
+  const csv = await (await fetch(TSL_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })).text()
+  const ranks = new Map<string, number>()
+  for (const row of csv.split(/\r?\n/).slice(1)) {
+    const [word, rank] = row.split(',')
+    if (word?.trim()) ranks.set(word.replace(/"/g, '').trim().toLowerCase(), Number(rank))
+  }
+  return ranks
+}
 
 const GOETHE: Array<[string, string]> = [
   ['B1', 'https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Wortliste.pdf'],
@@ -85,6 +109,7 @@ async function germanLevels(): Promise<Map<string, string>> {
 const GERMAN_HOMONYMS = new Set(['Bank', 'Karte'])
 
 const german = await germanLevels()
+const tsl = await tslRanks()
 const only = process.argv[2]
 const files = readdirSync('content')
   .filter((f) => f.endsWith('.json'))
@@ -99,11 +124,15 @@ if (files.length === 0) {
 for (const file of files) {
   const path = `content/${file}`
   const data = JSON.parse(readFileSync(path, 'utf8')) as { concepts: Concept[] }
-  const counts = { jlpt: 0, hsk: 0, cefr: 0 }
-  let words = { ja: 0, zh: 0, de: 0 }
+  const counts = { jlpt: 0, hsk: 0, cefr: 0, tsl: 0 }
+  let words = { ja: 0, zh: 0, de: 0, en: 0 }
 
   for (const concept of data.concepts) {
-    const apply = (lang: 'ja' | 'zh' | 'de', key: 'jlpt' | 'hsk' | 'cefr', value: unknown) => {
+    const apply = (
+      lang: 'ja' | 'zh' | 'de' | 'en',
+      key: 'jlpt' | 'hsk' | 'cefr' | 'tsl',
+      value: unknown,
+    ) => {
       const word = concept.words[lang]
       if (!word) return
       words[lang] += 1
@@ -122,11 +151,16 @@ for (const file of files) {
     apply('zh', 'hsk', concept.words.zh && (await hskOf(concept.words.zh.term)))
     const de = concept.words.de?.term
     apply('de', 'cefr', de && !GERMAN_HOMONYMS.has(de) ? german.get(de) : undefined)
+    // 표기가 정확히 같을 때만 붙인다. TSL은 표제어 목록이라 `shoes`는 없고
+    // `shoe`만 있는데, 복수형을 잘라 맞추면 `glasses`(안경)가 `glass`(유리컵)의
+    // 순위를 물려받는다 — 독일어 Bank·Karte에서 겪은 것과 같은 함정이다
+    apply('en', 'tsl', concept.words.en && tsl.get(concept.words.en.term.toLowerCase()))
   }
 
   writeFileSync(path, JSON.stringify(data, null, 2) + '\n')
   console.log(
     `${file.replace('.json', '').padEnd(10)} JLPT ${counts.jlpt}/${words.ja}` +
-      ` · HSK ${counts.hsk}/${words.zh} · CEFR ${counts.cefr}/${words.de}`,
+      ` · HSK ${counts.hsk}/${words.zh} · CEFR ${counts.cefr}/${words.de}` +
+      ` · TSL ${counts.tsl}/${words.en}`,
   )
 }

@@ -2,7 +2,7 @@ import { statSync } from 'node:fs'
 import { join } from 'node:path'
 import { notFound } from 'next/navigation'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
-import { CONCEPTS, audioPath, imagePath } from '@/lib/content'
+import { audioPath, entriesFor, imagePath } from '@/lib/content'
 import { answerOf, asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import { TRACK_IDS, trackOf } from '@/lib/track'
@@ -24,12 +24,11 @@ import { TRACK_IDS, trackOf } from '@/lib/track'
 export default function DebugPage() {
   if (process.env.NODE_ENV !== 'development') notFound()
 
-  // 한 줄 = 개념 하나 × 트랙 하나. 한 개념이 여러 트랙에 나온다 — 그게 요점이다
-  const rows: DebugRow[] = CONCEPTS.flatMap((concept) =>
-    TRACK_IDS.flatMap((track) => {
+  // 한 줄 = 개념 하나 × 트랙 하나. 한 개념이 여러 트랙에 나온다 — 그게 요점이다.
+  // 트랙이 실제로 출제하는 것만 나열한다 — TOEIC은 TSL로 한 번 더 걸린다
+  const rows: DebugRow[] = TRACK_IDS.flatMap((track) =>
+    entriesFor(track).flatMap(({ concept, word }) => {
       const { language } = trackOf(track)
-      const word = concept.words[language]
-      if (!word) return []
 
       const audio = fileInfo(join('public', audioPath(concept.slug, language)))
       return [

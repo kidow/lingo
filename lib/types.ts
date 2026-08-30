@@ -14,14 +14,18 @@ export type Category = 'noun' | 'verb' | 'adjective' | 'scene'
 /**
  * 언어별 문법 속성. 필드를 언어마다 늘리지 않고 여기로 몰아넣는다.
  *
- * 레벨 필드(`jlpt` · `hsk` · `cefr`)는 카드 좌하단에 그대로 표시된다 (spec.md §5).
+ * 레벨 필드(`jlpt` · `hsk` · `cefr` · `tsl`)는 카드 좌하단에 그대로 표시된다 (spec.md §5).
  * 시험마다 등급 체계가 다르므로 하나로 합치지 않는다 — JLPT는 N5~N1,
  * HSK는 1~6, 유럽 시험은 CEFR A1~C2다.
+ *
+ * `tsl`만 등급이 아니라 **순위**다. TOEIC은 공식 어휘 등급이 없어 대신
+ * TOEIC Service List의 빈도 순위(1~1250)를 쓴다. 작을수록 자주 나온다.
  */
 export type Attributes =
   | { jlpt?: 'N5' | 'N4' | 'N3' | 'N2' | 'N1'; pitchAccent?: number } // ja
   | { hsk?: 1 | 2 | 3 | 4 | 5 | 6; tones?: number[] } // zh
   | { cefr?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'; article?: string; gender?: 'm' | 'f' | 'n' } // es · fr · de
+  | { tsl?: number } // en
 
 export type Word = {
   /** 표기.  ja: 猫 / de: Katze */
