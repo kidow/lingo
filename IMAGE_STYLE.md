@@ -80,11 +80,31 @@ sleep → one person lying on their side asleep under a blanket, seen from the s
 
 ### 형용사 · 상태
 
-한 프레임 안에서 대비로 보여주거나, 상태가 명확한 단일 객체로 표현한다.
+셋 중 하나를 고른다.
+
+1. **성질형** — 물체 자체가 그 뜻인 것. 제일 좋다
+2. **상태형** — 같은 물체의 상태만 다르게. 반의어 쌍에 잘 맞는다
+3. **대비형** — 둘을 나란히. 마지막 수단이다
 
 ```
-big → two identical boxes side by side, the left one much larger than the right
-hot → one steaming cup with three wavy heat lines rising from it
+hot   → one cup with three wavy heat lines rising from it        (성질형)
+slow  → one snail crawling to the right leaving a short trail    (성질형)
+empty → one drinking glass with nothing inside                   (상태형)
+full  → one drinking glass filled to the brim with orange juice  (상태형)
+```
+
+**대비형은 주인공을 키운다.** 크기가 다른 물체 둘을 그냥 나란히 두면 `big`과
+`small`이 같은 그림이 된다 — 학습자가 보는 것은 "크기가 다른 물체 둘"이지
+어느 쪽을 가리키는지가 아니다. 실제로 그렇게 나왔다.
+
+말하려는 쪽을 **중앙에 크게** 두고, 비교 대상은 **가장자리에 작게 또는 잘라서**
+둔다. 시선이 먼저 닿는 것이 정답이다.
+
+```
+big   → one large suitcase filling most of the frame, with a much smaller
+        suitcase of the same shape at the lower right corner
+small → one small teapot centered, with a much larger teapot of the same shape
+        cropped at the left edge behind it
 ```
 
 ### 상황 · 장면

@@ -320,8 +320,8 @@ public/audio/{language}/{slug}.mp3   발음 — 언어별
 ### 파일은 주제고, 트랙은 언어로 고른다
 
 `content/everyday.json` · `office.json` · `travel.json` · `food.json` · `home.json` ·
-`body.json` · `nature.json` · `city.json`, 그리고 품사가 다른 `action.json`(동사).
-개념은 트랙에 속하지 않는다 —
+`body.json` · `nature.json` · `city.json`, 그리고 품사가 다른 `action.json`(동사)와
+`quality.json`(형용사). 개념은 트랙에 속하지 않는다 —
 `cat` 하나에 `words.ja` · `words.zh` · `words.es`가 나란히 들어가고, 각 트랙은
 **자기 언어의 단어가 있는 개념만** 골라 출제한다.
 
@@ -685,10 +685,10 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | Goethe-Institut Wortliste | 독일어 **CEFR 등급** | 공식 무료 PDF. A1~B1까지만 낸다 |
 | TOEIC Service List (TSL 1.2) | 영어 **TOEIC 빈도 순위** | Browne & Culligan, **CC BY-SA 4.0**. 1,250단어로 최근 TOEIC의 98.5%를 덮는다 |
 
-**독일어 CEFR은 명사만 채워진다.** 괴테 목록은 PDF라 표제어와 예문이 한 덩어리로
+**독일어 CEFR은 명사만 채워진다.** (`action.json`·`quality.json`이 0인 이유다.) 괴테 목록은 PDF라 표제어와 예문이 한 덩어리로
 붙어 나온다. 대문자로 시작하는 낱말만 긁어 독일어 명사를 골라내는데, 동사·형용사는
 소문자여서 함께 걸리지 않는다. 소문자까지 긁으면 예문 속 낱말이 전부 들어와 B1
-동사가 A1으로 찍힌다 — 정확도를 잃느니 비워 둔다(`action.json`의 CEFR이 0인 이유다).
+동사가 A1으로 찍힌다 — 정확도를 잃느니 비워 둔다.
 
 **JLPT 등급은 절반쯤만 채워진다.** 2010년 개편 이후 JLPT는 공식 어휘 목록을
 내지 않아, JMdict의 태그는 그 이전 출제기준을 따른다. 그 목록은 일반 어휘라
