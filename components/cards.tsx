@@ -102,8 +102,10 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
 function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuestion } & Common) {
   const { entry, options } = question
   const { concept, answer } = entry
+  // null = 아직 안 답함, GAVE_UP = 모른다고 눌렀음, 그 외 = 고른 보기
   const [picked, setPicked] = useState<string | null>(null)
   const answered = picked !== null
+  const gaveUp = picked === GAVE_UP
   const correct = picked === answer
 
   return (
@@ -135,7 +137,27 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
             </button>
           ))}
         </div>
-        <Reveal show={answered} correct={correct} question={question} lang={lang} />
+
+        {/*
+          찍어서 맞히면 FSRS에는 "안다"로 기록된다. 그 한 번이 다음 복습을
+          몇 주 뒤로 밀어 버리므로, 모를 때 모른다고 말할 자리를 준다.
+          보기와 같은 모양이면 다섯 번째 보기로 읽히므로 테두리 없는
+          조용한 글자 버튼으로 두고, 답한 뒤에는 자리째 사라진다.
+        */}
+        {!answered && (
+          <button
+            type="button"
+            onClick={() => {
+              setPicked(GAVE_UP)
+              onAnswer?.(false)
+            }}
+            className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
+          >
+            모르겠어요
+          </button>
+        )}
+
+        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
@@ -217,6 +239,9 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
 
 /* ── 공통 ─────────────────────────────────────────────────────────── */
 
+/** 보기 문자열과 절대 겹치지 않는 값. 모른다고 누른 상태를 나타낸다 */
+const GAVE_UP = '\u0000gave-up'
+
 /**
  * 색만으로 정오답을 전달하지 않는다. 틀렸을 때 정답도 함께 초록으로
  * 드러내고, 아래 Reveal이 뜻과 표기를 말로 보여준다. (brand-spec.md)
@@ -231,21 +256,24 @@ function verdictClass(answered: boolean, isAnswer: boolean, isPicked: boolean) {
 function Reveal({
   show,
   correct,
+  gaveUp = false,
   question,
   lang,
 }: {
   show: boolean
   correct: boolean
+  gaveUp?: boolean
   question: ChoiceQuestion | BlankQuestion
   lang: Language
 }) {
   if (!show) return null
   const { concept, word, answer } = question.entry
   const extra = word.term !== answer ? ` · ${word.term}` : ''
+  const verdict = gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '
   return (
     <div className="flex items-center justify-center gap-sm">
       <p className="text-sm text-sub" role="status">
-        <span className="sr-only">{correct ? '정답입니다. ' : '틀렸습니다. 정답은 '}</span>
+        <span className="sr-only">{verdict}</span>
         {concept.meaning_ko}
         {extra}
       </p>
