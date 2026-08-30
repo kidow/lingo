@@ -8,6 +8,7 @@ import food from '@/content/food.json'
 import home from '@/content/home.json'
 import job from '@/content/job.json'
 import nature from '@/content/nature.json'
+import number from '@/content/number.json'
 import office from '@/content/office.json'
 import quality from '@/content/quality.json'
 import scene from '@/content/scene.json'
@@ -35,6 +36,7 @@ const FILES: ContentFile[] = [
   city as ContentFile,
   clothes as ContentFile,
   everyday as ContentFile,
+  number as ContentFile,
   office as ContentFile,
   quality as ContentFile,
   scene as ContentFile,
