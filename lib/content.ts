@@ -1,4 +1,5 @@
 import body from '@/content/body.json'
+import city from '@/content/city.json'
 import everyday from '@/content/everyday.json'
 import food from '@/content/food.json'
 import home from '@/content/home.json'
@@ -22,6 +23,7 @@ import type { Concept, ContentFile } from './types.ts'
  */
 const FILES: ContentFile[] = [
   body as ContentFile,
+  city as ContentFile,
   everyday as ContentFile,
   office as ContentFile,
   travel as ContentFile,

@@ -27,7 +27,9 @@ Flat editorial illustration.
 Square 1:1 canvas. Plain warm off-white background (#FAF6EF) — no pattern, no
 gradient, no vignette, no frame, no border.
 
-A single subject, centered, occupying 65-75% of the frame. Generous even margins.
+One subject, centered, occupying 65-75% of the frame. Generous even margins. The
+subject may be a single object, or a small scene of at most three related elements
+that read as one thing.
 
 Limited palette of 4-6 muted earthy colors. Low to medium detail built from simple
 geometric shapes. The silhouette must stay clear and recognizable when the image is
@@ -49,6 +51,11 @@ elements, no captions.
 
 `image_prompt`에는 **내용만** 쓴다. 스타일 단어(flat, minimal, illustration, pastel 등)를
 넣으면 STYLE_PROMPT와 충돌하므로 쓰지 않는다.
+
+**사물 한 개로 그려야 하는 것은 아니다.** 단어가 요구하면 장면으로 간다 —
+`cafeteria`를 쟁반 하나로 그리면 쟁반이 된다. 대신 공통 규격(배경·팔레트·글자
+없음·80×80 판독)은 어떤 유형이든 그대로다. 유형별로 달라지는 것은 **무엇을
+프레임에 담느냐**뿐이다.
 
 ### 구체 명사 (사물 · 동물 · 음식)
 
@@ -87,6 +94,20 @@ hot → one steaming cup with three wavy heat lines rising from it
 ```
 station → a train stopped at a simple platform with one waiting person, side view
 ```
+
+### 장소 · 시설
+
+건물은 정면 한 채로, 실내는 **그 공간을 그 공간으로 만드는 요소 두셋**으로 그린다.
+사물 하나로는 못 그리는 단어가 있다 — `cafeteria`를 쟁반 하나로 그리면 쟁반이 된다.
+
+```
+supermarket → one shop front with a wide window and two shopping carts outside, seen from the front
+cafeteria   → two long tables with bench seats and a counter behind them, seen from the front
+aisle       → two tall shelf units facing each other with a walkway between them, seen straight down the walkway
+stadium     → one oval stadium bowl with tiered seating and a green field, seen slightly from above
+```
+
+요소를 늘릴수록 80×80에서 죽는다. **셋을 넘기지 않는다**는 규칙이 여기서도 그대로다.
 
 ### 추상어
 

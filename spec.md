@@ -320,7 +320,7 @@ public/audio/{language}/{slug}.mp3   발음 — 언어별
 ### 파일은 주제고, 트랙은 언어로 고른다
 
 `content/everyday.json` · `office.json` · `travel.json` · `food.json` · `home.json` ·
-`body.json`. 개념은 트랙에 속하지 않는다 —
+`body.json` · `nature.json` · `city.json`. 개념은 트랙에 속하지 않는다 —
 `cat` 하나에 `words.ja` · `words.zh` · `words.es`가 나란히 들어가고, 각 트랙은
 **자기 언어의 단어가 있는 개념만** 골라 출제한다.
 
