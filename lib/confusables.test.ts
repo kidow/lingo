@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { answerSize, optionColumns, optionSize } from './fit.ts'
 import { test } from 'node:test'
 import { blankable, pickConfusables } from './confusables.ts'
 import { shuffled } from './random.ts'
@@ -39,4 +40,18 @@ test('후보에 정답이 섞이지 않는다', () => {
     assert.equal(picked.includes(char), false, `${char} 자신이 오답에 들어갔다`)
     assert.equal(new Set(picked).size, 3, `${char} 후보가 중복됐다`)
   }
+})
+
+/* ── 길이에 맞춘 글자 크기 ─────────────────────────────────────────── */
+
+test('정답이 길수록 작은 글자 크기를 고른다', () => {
+  assert.match(answerSize('ねこ'), /42px/)
+  assert.match(answerSize('ショッピングモール'), /32px/)
+  assert.match(answerSize('おかいけい おねがいします'), /24px/)
+})
+
+test('보기가 길면 한 줄에 하나씩 쌓는다', () => {
+  assert.equal(optionColumns(['ねこ', 'いぬ', 'とり', 'さかな']), 2)
+  assert.equal(optionColumns(['ねこ', 'おかいけい おねがいします', 'とり', 'さかな']), 1)
+  assert.match(optionSize(['ねこ', 'おかいけい おねがいします']), /14px/)
 })

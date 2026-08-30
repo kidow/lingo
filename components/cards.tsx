@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
+import { answerSize, optionColumns, optionSize } from '@/lib/fit'
 import { asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import type { BlankQuestion, ChoiceQuestion, IntroQuestion, Question } from '@/lib/quiz'
@@ -49,7 +50,7 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
       <CardSheet>
         <div className="flex flex-col gap-1">
           <div className="flex items-center justify-between gap-md">
-            <p className="font-jp text-[clamp(34px,10vw,42px)] leading-tight font-bold tracking-tight">
+            <p className={`font-jp ${answerSize(answer)} leading-tight font-bold tracking-tight`}>
               {answer}
             </p>
             <SayButton slug={concept.slug} lang={lang} label={answer} />
@@ -112,7 +113,7 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
       </CardImage>
 
       <CardSheet>
-        <div className="grid grid-cols-2 gap-sm">
+        <div className={`grid gap-sm ${optionColumns(options) === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
           {options.map((option) => (
             <button
               key={option}
@@ -125,7 +126,7 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
               }}
               className={`
                 grid min-h-[72px] place-items-center rounded-ctrl border px-1.5 py-4
-                font-jp text-[22px] font-semibold transition active:scale-[.985]
+                font-jp ${optionSize(options)} font-semibold transition active:scale-[.985]
                 disabled:active:scale-100
                 ${verdictClass(answered, option === answer, option === picked)}
               `}
