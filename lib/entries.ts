@@ -1,4 +1,5 @@
 import { answerOf } from './lang.ts'
+import { trackOf, type TrackId } from './track.ts'
 import type { Category, Concept, Language, Word } from './types.ts'
 
 /**
@@ -30,6 +31,24 @@ export function entriesFor(lang: Language, concepts: Concept[]): Entry[] {
     entries.push({ concept, word, answer })
   }
   return entries
+}
+
+/**
+ * 그 **트랙**에서 출제 가능한 목록.
+ *
+ * 다섯 트랙은 언어만 보면 되는데 TOEIC은 한 겹 더 거른다 — TOEIC Service List에
+ * 있는 단어만 낸다. `cat`·`rice`는 JLPT N5·HSK 1급으로는 제값을 하지만 TOEIC
+ * 시험에는 나오지 않는다. 개념을 지우는 게 아니라 이 트랙에서만 빼는 것이다.
+ *
+ * 규칙이 여기 하나만 있어야 앱과 `pnpm check`와 `/debug`가 같은 수를 센다.
+ */
+export function entriesForTrack(track: TrackId, concepts: Concept[]): Entry[] {
+  const entries = entriesFor(trackOf(track).language, concepts)
+  if (track !== 'toeic') return entries
+  return entries.filter((entry) => {
+    const attributes = entry.word.attributes
+    return Boolean(attributes && 'tsl' in attributes && attributes.tsl)
+  })
 }
 
 /**

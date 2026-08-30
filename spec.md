@@ -79,14 +79,19 @@
 
 | 트랙 | 언어 | 레벨 |
 |---|---|---|
-| TOEIC | 영어 | 없음 — 공식 어휘 등급이 존재하지 않는다 |
+| TOEIC | 영어 | `TSL 1`~`TSL 1250` — 등급이 아니라 빈도 순위다 |
 | JLPT | 일본어 | `N5`~`N1` |
 | HSK | 중국어 | `1`~`6` |
 | DELE | 스페인어 | CEFR `A1`~`C2` |
 | DELF | 프랑스어 | CEFR |
 | TELC | 독일어 | CEFR |
 
-레벨은 트랙을 쪼개지 않고 **카드에 표시만** 한다 (§5).
+레벨은 트랙을 쪼개지 않고 **카드에 표시만** 한다 (§5). 예외가 하나 있다 —
+**TOEIC만 출제 대상을 거른다.** ETS는 공식 어휘 목록을 내지 않으므로 TOEIC
+Service List(§7)에 있는 단어만 낸다. `cat`·`rice`는 JLPT N5·HSK 1급으로는
+제값을 하지만 TOEIC 시험에는 나오지 않는다 — 개념을 여섯 트랙이 공유하는
+구조의 대가이고, 개념을 지우는 게 아니라 이 트랙에서만 빼는 것이다.
+규칙은 `lib/entries.ts`의 `entriesForTrack` 하나에 있다.
 
 **트랙은 언어를 대체하지 않고 위에 얹힌다.** 그리고 **개념은 트랙이 공유한다** —
 `cat` 그림 한 장을 여섯 트랙이 같이 쓴다. 어느 트랙에 나올지는 그 개념이 그 언어의
@@ -424,9 +429,10 @@ type Attributes =
   `category`는 출제 규칙 전용이라(§4) 화면에 드러내지 않는다 — `scene`은 품사가 아니다.
 - 레벨이 있으면 **시트 좌하단에 한 줄**로 적는다(`N5` · `HSK 1` · `A1`). 시험마다
   등급 체계가 달라 하나로 합치지 않고 `attributes`에 있는 것을 그대로 읽는다
-  (`jlpt` · `hsk` · `cefr`). 배지가 아니라 `--sub` 색의
+  (`jlpt` · `hsk` · `cefr` · `tsl`). 배지가 아니라 `--sub` 색의
   조용한 텍스트다 — 학습 대상이 아니라 참고 정보라서 시선이 마지막에 닿는 자리에 둔다.
-  값이 없는 트랙(TOEIC)은 자리째 빠진다. **없는 등급을 지어내지 않는다.**
+  값이 없으면 자리째 빠진다. **없는 등급을 지어내지 않는다.** TOEIC은 등급이
+  아예 없어서 `TSL 19`처럼 목록 이름과 순위를 그대로 적는다 — 등급인 척하지 않는다.
 - 하단에 **예문 한 줄**을 둔다. 구분선 아래 かな 문장과 한국어 뜻 두 줄이다.
   - **かな로 쓰고 띄어쓰기로 끊는다.** 학습 대상이 읽기이므로 한자를 쓰지 않고,
     かな만 이어 붙이면 읽기 어려우므로 어절을 띄운다 — `パンを かいます。`
@@ -613,6 +619,10 @@ content/verbs.json
 "필수 1000단어" 류는 교재사의 편집물이다. 레포가 공개이므로 복제하지 않는다. 대신
 주제별로 직접 뽑고 `pnpm define`으로 뜻을 사전과 대조한다.
 
+다만 **어느 단어가 그 시험에 나오는지**는 공개 학술 목록으로 확인한다. 영어는
+TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘텐츠를 만드는 게
+아니라, 우리가 뽑은 단어가 시험 어휘인지 대조하고 아니면 그 트랙에서 빼는 데 쓴다.
+
 한 개념을 추가하는 절차:
 
 1. 주제 파일(`content/{topic}.json`)에 개념 블록을 쓴다 — `slug`, `meaning_ko`, `category`, `image_prompt`, 언어별 단어
@@ -652,7 +662,8 @@ content/verbs.json
 | `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
 | `pnpm define <word>` | 사전에서 뜻을 찾는다. 생략하면 콘텐츠 전체의 `meaning_ko`를 대조한다 |
-| `pnpm audio` | 발음 현황. `list <lang>`으로 만들 것을, `place <lang> <slug> <파일>`로 받은 파일을 넣는다 |
+| `pnpm audio` | 발음 현황. `list <lang>`으로 만들 것을, `place <lang> <slug> <파일>`로 받은 파일을 넣는다. 키가 있으면 `make <lang> <n>`이 API로 만든다 ([AUDIO.md](AUDIO.md)) |
+| `pnpm levels [파일]` | 시험 등급·순위를 출처에서 채운다 — JLPT · HSK · CEFR · TSL. 추정하지 않고 없으면 비운다 |
 
 `slug`를 생략하면 아직 결과물이 없는 개념 전체에 대해 돈다.
 
@@ -668,6 +679,10 @@ content/verbs.json
 | Jisho (JMdict) | 일본어 읽기·영어 뜻·**JLPT 등급** | 구 출제기준 기반 |
 | complete-hsk-vocabulary | 중국어 **HSK 등급** | MIT. **HSK 3.0**(`new-N`)을 쓴다 |
 | Goethe-Institut Wortliste | 독일어 **CEFR 등급** | 공식 무료 PDF. A1~B1까지만 낸다 |
+| TOEIC Service List (TSL 1.2) | 영어 **TOEIC 빈도 순위** | Browne & Culligan, **CC BY-SA 4.0**. 1,250단어로 최근 TOEIC의 98.5%를 덮는다 |
+
+TSL은 CC BY-SA 4.0이므로 출처를 밝힌다 — Browne, C., Culligan, B. (2013).
+*The TOEIC Service List*. www.newgeneralservicelist.com
 
 독일어만 CEFR이 붙는다. 스페인어는 Instituto Cervantes의 PCIC가 있으나 평탄한 목록이
 아니고 판권이 걸려 있으며, 프랑스어는 공개된 기계 판독 목록을 찾지 못했다. 셋을 맞추려고

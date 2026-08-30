@@ -8,8 +8,10 @@
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
+import { entriesForTrack } from '../lib/entries.ts'
 import { LANG } from '../lib/lang.ts'
 import { TRACKS } from '../lib/track.ts'
+import type { Concept } from '../lib/types.ts'
 
 const CONTENT_DIR = 'content'
 const PUBLIC_DIR = 'public'
@@ -38,8 +40,10 @@ const loaderSource = existsSync('lib/content.ts') ? readFileSync('lib/content.ts
 
 const seen = new Map<string, string>()
 const perCategory: Record<string, number> = { noun: 0, verb: 0, adjective: 0, scene: 0 }
-/** 언어별 단어 수. 트랙이 실제로 출제할 수 있는 양이다 */
+/** 언어별 단어 수 */
 const perLanguage: Record<string, number> = {}
+/** 트랙별 출제 수를 세려면 개념이 통째로 있어야 한다 */
+const all: Concept[] = []
 let total = 0
 
 for (const file of files) {
@@ -67,6 +71,7 @@ for (const file of files) {
     const slug = typeof c.slug === 'string' ? c.slug : ''
     const where = `${path} [${slug || i}]`
     total += 1
+    all.push(raw as Concept)
 
     if (!slug) return fail(where, 'slug 누락')
     if (!SLUG_RE.test(slug)) fail(where, `slug가 ^[a-z0-9-]+$ 위반: "${slug}"`)
@@ -160,10 +165,15 @@ console.log(
     .join('') || '  (없음)',
 )
 
-// 트랙별 출제 가능 개수. 개념 공유가 실제로 되고 있는지가 여기서 보인다
+// 트랙별 출제 가능 개수. 개념 공유가 실제로 되고 있는지가 여기서 보인다.
+// TOEIC은 언어 단어 수보다 적다 — TSL에 있는 것만 낸다 (lib/entries.ts)
 console.log(
   '\n' +
-    TRACKS.map(({ label, language }) => `  ${label} ${perLanguage[language] ?? 0}`).join(''),
+    TRACKS.map(({ id, label, language }) => {
+      const asked = entriesForTrack(id, all).length
+      const words = perLanguage[language] ?? 0
+      return `  ${label} ${asked}${asked === words ? '' : `/${words}`}`
+    }).join(''),
 )
 
 if (notes.length) {
