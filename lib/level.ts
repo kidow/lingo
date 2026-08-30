@@ -17,5 +17,6 @@ export function levelOf(word: Word): string | undefined {
     return `HSK ${attributes.hsk >= 7 ? '7-9' : attributes.hsk}`
   if ('cefr' in attributes && attributes.cefr) return attributes.cefr
   if ('tsl' in attributes && attributes.tsl) return `TSL ${attributes.tsl}`
+  if ('torfl' in attributes && attributes.torfl) return attributes.torfl
   return undefined
 }

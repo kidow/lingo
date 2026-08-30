@@ -12,7 +12,7 @@ import type { Language } from './types.ts'
  * 그림은 늘지 않는다. 발음도 시험이 아니라 언어의 것이라
  * `public/audio/{language}/`를 공유한다.
  */
-export type TrackId = 'toeic' | 'jlpt' | 'hsk' | 'dele' | 'delf' | 'telc'
+export type TrackId = 'toeic' | 'jlpt' | 'hsk' | 'dele' | 'delf' | 'telc' | 'torfl'
 
 export type Track = {
   id: TrackId
@@ -30,6 +30,8 @@ export const TRACKS: Track[] = [
   { id: 'delf', label: 'DELF', language: 'fr' },
   // telc 공식 표기는 소문자지만 나머지 다섯이 두문자어라 혼자 소문자면 오타로 읽힌다
   { id: 'telc', label: 'TELC', language: 'de' },
+  // TORFL은 러시아어 능력 시험(ТРКИ)의 영어 표기다
+  { id: 'torfl', label: 'TORFL', language: 'ru' },
 ]
 
 export const TRACK_IDS = TRACKS.map((track) => track.id)

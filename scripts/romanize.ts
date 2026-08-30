@@ -183,6 +183,36 @@ function romajiSentence(text: string, known: Set<string>): string {
     .trim()
 }
 
+// ── 러시아어: 키릴 → 로마자 ────────────────────────────────────────────
+
+/**
+ * 키릴은 글자와 소리가 거의 일대일이라 표 하나로 끝난다. 사전이 필요 없다.
+ *
+ * 표기는 BGN/PCGN을 따르되 학습자용으로 경음·연음 부호(ъ·ь)는 버린다 —
+ * 소리로 드러나지 않는 기호를 로마자에 남기면 읽기만 어려워진다.
+ */
+const CYRILLIC: Record<string, string> = {
+  а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', е: 'e', ё: 'yo', ж: 'zh', з: 'z',
+  и: 'i', й: 'y', к: 'k', л: 'l', м: 'm', н: 'n', о: 'o', п: 'p', р: 'r',
+  с: 's', т: 't', у: 'u', ф: 'f', х: 'kh', ц: 'ts', ч: 'ch', ш: 'sh',
+  щ: 'shch', ъ: '', ы: 'y', ь: '', э: 'e', ю: 'yu', я: 'ya',
+}
+
+function translit(text: string): string {
+  let out = ''
+  for (const ch of text) {
+    const lower = ch.toLowerCase()
+    const mapped = CYRILLIC[lower]
+    if (mapped === undefined) {
+      out += ch
+      continue
+    }
+    // 대문자는 첫 글자만 올린다. `Я` → `Ya`이지 `YA`가 아니다
+    out += ch === lower ? mapped : mapped.charAt(0).toUpperCase() + mapped.slice(1)
+  }
+  return out
+}
+
 // ── 중국어: 한자 → 병음 (CC-CEDICT 낱말 단위 최장 일치) ────────────────
 
 const TONES: Record<string, string[]> = {
@@ -344,14 +374,31 @@ for (const name of files) {
   for (const concept of data.concepts) {
     for (const [lang, word] of Object.entries(concept.words) as [string, Record<string, any>][]) {
       const example = word.example
-      if (!example?.text) continue
+      if (!example?.text && lang !== 'ru') continue
+      if (!example?.text && lang === 'ru') {
+        if (word.term && word.romanization !== translit(word.term)) {
+          word.romanization = translit(word.term)
+          touched += 1
+        }
+        continue
+      }
       const value =
         lang === 'ja' ? romajiSentence(example.text, known)
         : lang === 'zh' ? pinyinSentence(example.text, dict)
+        : lang === 'ru' ? translit(example.text)
         : undefined
-      if (!value || example.romanization === value) continue
-      example.romanization = value
-      touched += 1
+      if (value && example.romanization !== value) {
+        example.romanization = value
+        touched += 1
+      }
+      // 러시아어는 낱말 자체도 키릴이라 참고줄에 로마자가 필요하다 (lib/lang.ts)
+      if (lang === 'ru' && word.term) {
+        const term = translit(word.term)
+        if (word.romanization !== term) {
+          word.romanization = term
+          touched += 1
+        }
+      }
     }
   }
   if (touched > 0) {
