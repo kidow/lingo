@@ -137,12 +137,17 @@ function install(source: string, target: string): boolean {
  * 값이라 콘솔로 만든 파일과 섞여도 소리가 튀지 않는다.
  */
 async function make(lang: Language, limit: number) {
+  // 레포 루트 .env를 읽는다. .gitignore가 이미 막고 있어 커밋될 일이 없고,
+  // 셸을 새로 열 때마다 export를 다시 칠 이유도 없다
+  if (existsSync('.env')) process.loadEnvFile('.env')
+
   const key = process.env.XAI_API_KEY
   if (!key) {
     fail(
       'XAI_API_KEY 가 없습니다.\n' +
-        '  https://console.x.ai 에서 키를 발급해 셸에 넣고 다시 실행하세요:\n' +
-        '    export XAI_API_KEY=...',
+        '  https://console.x.ai 에서 키를 발급해 레포 루트 .env 에 넣으세요:\n' +
+        '    XAI_API_KEY=xai-...\n' +
+        '  (.env 는 .gitignore에 있습니다. 셸에 export 해도 됩니다)',
     )
   }
   if (!LANG[lang]) fail(`알 수 없는 언어: ${lang}`)
