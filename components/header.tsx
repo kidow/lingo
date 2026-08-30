@@ -23,13 +23,26 @@ import { TRACKS, trackOf, type TrackId } from '@/lib/track'
  *
  * 고르는 행위라 항목을 **라디오**로 둔다. 지금 무엇이 켜져 있는지가 체크
  * 표시로 드러나고, 스크린리더에도 그렇게 읽힌다.
+ *
+ * 트랙 옆에 숙련도가 하나 더 붙는다. 이것은 목표가 아니라 **상태**다 —
+ * 하루가 지나도 리셋되지 않고, 채워도 축하하지 않으며, 채우라고 조르지도
+ * 않는다. 그래서 스트릭·일일 목표를 배제한 §2와 부딪히지 않는다.
+ *
+ * 트리거 **밖**에 둔다. 안에 넣으면 `학습 트랙` 라벨에 숫자가 섞여 버튼
+ * 이름이 "학습 트랙 12%"가 된다 — 버튼이 하는 일과 무관한 말이다.
  */
 export function Header({
   track,
   onChange,
+  mastery,
 }: {
   track: TrackId
   onChange: (track: TrackId) => void
+  /**
+   * 완전히 외운 비율. 아직 없으면 null이고, 그러면 헤더는 트랙 하나뿐이던
+   * 시절과 똑같다. (lib/progress.ts)
+   */
+  mastery?: string | null
 }) {
   return (
     <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
@@ -57,6 +70,21 @@ export function Header({
           </DropdownMenuRadioGroup>
         </DropdownMenuContent>
       </DropdownMenu>
+
+      {/*
+        숫자만 있으면 무엇의 12%인지 알 수 없다. 눈으로는 옆의 트랙 이름이
+        그 말을 대신하지만 스크린리더에는 따로 붙여 준다.
+
+        자릿수가 바뀔 때 글자가 밀리지 않게 고정폭 숫자를 쓴다
+      */}
+      {mastery && (
+        <span
+          className="ml-sm text-sm font-semibold text-sub tabular-nums"
+          aria-label={`완전히 외운 단어 ${mastery}`}
+        >
+          {mastery}
+        </span>
+      )}
     </header>
   )
 }

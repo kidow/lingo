@@ -1,9 +1,16 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Feed } from './feed'
 import { Header } from './header'
 import type { Entry } from '@/lib/entries'
+import {
+  emptyProgress,
+  loadProgress,
+  masteredCount,
+  masteryLabel,
+  type Progress,
+} from '@/lib/progress'
 import { loadTrack, saveTrack } from '@/lib/settings'
 import { DEFAULT_TRACK, trackOf, type TrackId } from '@/lib/track'
 
@@ -16,22 +23,44 @@ import { DEFAULT_TRACK, trackOf, type TrackId } from '@/lib/track'
  *
  * 트랙이 바뀌면 Feed를 통째로 새로 만든다(`key`). 진도도 카드도 트랙별로
  * 갈라져 있으므로 이어붙이지 않고 처음부터 굴리는 편이 정확하다.
+ *
+ * 헤더의 숙련도도 여기서 산다. 진도는 Feed 안에 있고 헤더는 그 형제라
+ * 둘의 공통 조상이 여기뿐이다. (spec.md §3)
  */
 export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
   const [track, setTrack] = useState<TrackId>(DEFAULT_TRACK)
+  const [progress, setProgress] = useState<Progress>(emptyProgress)
 
   // 설정은 마운트 후에 읽는다. 서버가 그리는 첫 화면은 기본 트랙이다
   useEffect(() => setTrack(loadTrack()), [])
+
+  // 트랙이 바뀌면 여기서 바로 읽는다. Feed가 알려 주기를 기다리면 한 프레임
+  // 동안 이전 트랙의 숙련도가 헤더에 남는다
+  useEffect(() => setProgress(loadProgress(track)), [track])
 
   const change = useCallback((next: TrackId) => {
     setTrack(next)
     saveTrack(next)
   }, [])
 
+  // 분모는 그 트랙에서 **출제 가능한** 개념 수다. TOEIC은 TSL 필터를 한 겹 더
+  // 거치므로 다른 트랙보다 작다 (lib/entries.ts)
+  const slugs = useMemo(
+    () => entries[track].map((entry) => entry.concept.slug),
+    [entries, track],
+  )
+  const mastery = masteryLabel(masteredCount(progress, slugs), slugs.length)
+
   return (
     <div className="feed-root flex h-dvh flex-col">
-      <Header track={track} onChange={change} />
-      <Feed key={track} entries={entries[track]} track={track} lang={trackOf(track).language} />
+      <Header track={track} onChange={change} mastery={mastery} />
+      <Feed
+        key={track}
+        entries={entries[track]}
+        track={track}
+        lang={trackOf(track).language}
+        onProgress={setProgress}
+      />
     </div>
   )
 }

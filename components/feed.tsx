@@ -11,7 +11,7 @@ import {
   recordIntro,
   type EngineState,
 } from '@/lib/engine'
-import { loadProgress, saveProgress } from '@/lib/progress'
+import { loadProgress, saveProgress, type Progress } from '@/lib/progress'
 import type { Question } from '@/lib/quiz'
 import type { TrackId } from '@/lib/track'
 import type { Language } from '@/lib/types'
@@ -33,12 +33,20 @@ export function Feed({
   entries,
   track,
   lang,
+  onProgress,
 }: {
   entries: Entry[]
   /** 진도가 갈리는 단위 */
   track: TrackId
   /** 발음 파일과 정답 필드가 따르는 단위 */
   lang: Language
+  /**
+   * 진도가 바뀔 때마다 부른다. 헤더의 숙련도가 이걸로 산다. (spec.md §3)
+   *
+   * 진도는 여기 `useRef`에 있어 헤더가 볼 수 없다. 저장소를 헤더가 다시
+   * 읽게 하면 언제 읽을지를 또 정해야 하므로, 쓰는 쪽이 알리는 편이 짧다.
+   */
+  onProgress?: (progress: Progress) => void
 }) {
   const [questions, setQuestions] = useState<Question[]>([])
   const [ready, setReady] = useState(false)
@@ -56,8 +64,9 @@ export function Feed({
     (state: EngineState) => {
       engine.current = state
       saveProgress(track, state.progress)
+      onProgress?.(state.progress)
     },
-    [track],
+    [track, onProgress],
   )
 
   /**
