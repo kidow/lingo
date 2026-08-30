@@ -129,14 +129,44 @@ function install(source: string, target: string): boolean {
   return matches
 }
 
+/** 한 낱말을 만들어 제자리에 넣는다. 실패하면 던진다 */
+async function makeOne(key: string, lang: Language, row: { slug: string; text: string; path: string }) {
+  const res = await fetch('https://api.x.ai/v1/tts', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      text: row.text,
+      language: lang,
+      voice_id: VOICE,
+      speed: 1.0,
+      optimize_streaming_latency: 0,
+      text_normalization: false,
+      output_format: { codec: 'mp3', sample_rate: FORMAT.sampleRate, bit_rate: FORMAT.bitRate },
+    }),
+  })
+  if (!res.ok) throw new Error(`${row.slug} 실패 (HTTP ${res.status}) ${(await res.text()).slice(0, 200)}`)
+
+  // 임시 파일은 slug별로 따로 둔다 — 동시에 여러 개가 오가므로 한 이름을
+  // 나눠 쓰면 서로 덮어쓴다
+  const temp = join('.audio-tmp', `${lang}-${row.slug}.mp3`)
+  mkdirSync(dirname(temp), { recursive: true })
+  writeFileSync(temp, Buffer.from(await res.arrayBuffer()))
+  install(temp, row.path)
+  rmSync(temp, { force: true })
+}
+
 /**
  * xAI TTS로 직접 만든다. **호출마다 크레딧이 나간다** — 그래서 개수를 인자로
- * 받고 기본값을 5로 둔다. 한 번에 201개를 굽는 명령은 일부러 두지 않았다.
+ * 받는다. `all`을 주면 그 언어를 끝까지 만든다.
+ *
+ * 한 번에 여러 개를 부른다. 한 낱말은 1초가 안 걸리지만 14,000개를 하나씩
+ * 부르면 몇 시간이 된다 — 동시 실행 수를 두어 벽시계 시간을 줄인다. 실패가
+ * 나면 그 자리에서 멈춘다(키·크레딧 문제면 나머지도 다 실패한다).
  *
  * 파라미터는 AUDIO.md 표 그대로다. 콘솔의 Broadcast · High · Quality와 같은
  * 값이라 콘솔로 만든 파일과 섞여도 소리가 튀지 않는다.
  */
-async function make(lang: Language, limit: number) {
+async function make(lang: Language, limit: number, concurrency = 8) {
   // 레포 루트 .env를 읽는다. .gitignore가 이미 막고 있어 커밋될 일이 없고,
   // 셸을 새로 열 때마다 export를 다시 칠 이유도 없다
   if (existsSync('.env')) process.loadEnvFile('.env')
@@ -155,44 +185,34 @@ async function make(lang: Language, limit: number) {
   const rows = missing(lang).slice(0, limit)
   if (rows.length === 0) return console.log(`\n${lang} 는 다 만들어져 있습니다.`)
 
-  console.log(`\n${lang} ${rows.length}개를 만듭니다 — 호출마다 크레딧이 나갑니다\n${line(52)}`)
-  const temp = join('.audio-tmp', `${lang}.mp3`)
-  mkdirSync(dirname(temp), { recursive: true })
+  console.log(`\n${lang} ${rows.length}개를 만듭니다 — 호출마다 크레딧이 나갑니다 (동시 ${concurrency})\n${line(52)}`)
 
   let done = 0
-  for (const row of rows) {
-    const res = await fetch('https://api.x.ai/v1/tts', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        text: row.text,
-        language: lang,
-        voice_id: VOICE,
-        speed: 1.0,
-        optimize_streaming_latency: 0,
-        text_normalization: false,
-        output_format: { codec: 'mp3', sample_rate: FORMAT.sampleRate, bit_rate: FORMAT.bitRate },
-      }),
-    })
+  let stopped: Error | null = null
+  const queue = [...rows]
 
-    // 첫 실패에서 멈춘다. 키가 틀렸거나 크레딧이 없으면 나머지도 다 실패한다 —
-    // 200번 더 부르며 같은 오류를 쌓을 이유가 없다
-    if (!res.ok) {
-      rmSync('.audio-tmp', { recursive: true, force: true })
-      fail(`${row.slug} 실패 (HTTP ${res.status})\n  ${(await res.text()).slice(0, 300)}`)
+  async function worker() {
+    for (;;) {
+      if (stopped) return
+      const row = queue.shift()
+      if (!row) return
+      try {
+        await makeOne(key!, lang, row)
+      } catch (error) {
+        // 첫 실패에서 전체를 멈춘다. 키가 틀렸거나 크레딧이 없으면 나머지도
+        // 다 실패한다 — 14,000번 더 부르며 같은 오류를 쌓을 이유가 없다
+        stopped = error as Error
+        return
+      }
+      done += 1
+      if (done % 50 === 0) console.log(`  ${done}/${rows.length}`)
     }
-
-    writeFileSync(temp, Buffer.from(await res.arrayBuffer()))
-    const copied = install(temp, row.path)
-    const after = probe(row.path)
-    done += 1
-    console.log(
-      `  ${row.slug.padEnd(14)}${row.text.padEnd(10)} ${after.duration.toFixed(2)}초 · ` +
-        `${(statSync(row.path).size / 1024).toFixed(1)}KB${copied ? '' : ' (재인코딩)'}`,
-    )
   }
 
+  await Promise.all(Array.from({ length: Math.min(concurrency, rows.length) }, worker))
   rmSync('.audio-tmp', { recursive: true, force: true })
+
+  if (stopped) fail(`${done}개까지 만들고 멈췄습니다\n  ${stopped.message}`)
   console.log(`\n${done}개 완료 · ${lang} 남은 것 ${missing(lang).length}개`)
 }
 
@@ -225,7 +245,10 @@ function fail(message: string): never {
 const [command, ...rest] = process.argv.slice(2)
 if (!command || command === 'summary') summary()
 else if (command === 'list') list((rest[0] ?? 'ja') as Language, Number(rest[1] ?? 10))
-else if (command === 'make') await make((rest[0] ?? 'ja') as Language, Number(rest[1] ?? 5))
+else if (command === 'make') {
+  const count = rest[1] === 'all' ? Number.MAX_SAFE_INTEGER : Number(rest[1] ?? 5)
+  await make((rest[0] ?? 'ja') as Language, count, Number(rest[2] ?? 8))
+}
 else if (command === 'place') {
   const [lang, slug, file] = rest
   if (!lang || !slug || !file) fail('사용법: place <lang> <slug> <파일>')
