@@ -107,6 +107,23 @@ small → one small teapot centered, with a much larger teapot of the same shape
         cropped at the left edge behind it
 ```
 
+### 감정 · 상태 — 얼굴이 아니라 **몸과 상황**으로 그린다
+
+스타일이 이목구비를 그리지 않으므로 표정으로는 감정을 전할 수 없다. 대신 세 가지를 쓴다.
+
+1. **자세** — 처진 어깨, 든 팔, 웅크린 등
+2. **거리와 위치** — 넓은 화면에 홀로 앉은 사람(외로움), 문 뒤에 반쯤 숨은 사람(부끄러움)
+3. **곁의 사물 하나** — 텅 빈 접시(배고픔), 쌓인 서류(바쁨), 비어서 뒤집힌 지갑(가난)
+
+```
+tired  → one figure slumped over a desk with their head resting on both arms
+lonely → one small figure sitting alone on a bench with wide empty space around
+busy   → one figure carrying a tall stack of folders with a phone in the other hand
+```
+
+기호는 최소한만 쓴다. 머리 위 먹구름·김 나는 선 정도는 허용하되, 말풍선과
+글자·기호는 여전히 금지다(체크표·물음표도 글자다).
+
 ### 상황 · 장면
 
 요소는 **최대 3개**. 그 이상은 작게 줄였을 때 죽는다.
