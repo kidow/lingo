@@ -1,6 +1,7 @@
 import action from '@/content/action.json'
 import body from '@/content/body.json'
 import city from '@/content/city.json'
+import clothes from '@/content/clothes.json'
 import everyday from '@/content/everyday.json'
 import family from '@/content/family.json'
 import food from '@/content/food.json'
@@ -32,6 +33,7 @@ const FILES: ContentFile[] = [
   action as ContentFile,
   body as ContentFile,
   city as ContentFile,
+  clothes as ContentFile,
   everyday as ContentFile,
   office as ContentFile,
   quality as ContentFile,
