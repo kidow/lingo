@@ -56,6 +56,9 @@ export function buildChoice(entry: Entry, entries: Entry[], attempt = 0): Choice
  * (spec.md §5) 호출부가 `canBlank`로 먼저 거른다.
  */
 export function canBlank(entry: Entry): boolean {
+  // 상황 표현은 문장이다. 한 글자를 뚫어 봐야 문장 전체가 그대로 보이므로
+  // 회상 훈련이 되지 않고, 글자별로 늘어놓는 빈칸 카드가 화면을 넘긴다
+  if (entry.concept.category === 'scene') return false
   return blankable(entry.answer) && holesOf(entry.answer).length > 0
 }
 

@@ -257,6 +257,15 @@ test('오답 보기는 같은 category에서 나온다', () => {
   assert.ok(!q.options.includes('たべる'))
 })
 
+test('상황 표현은 빈칸 칸으로 올라가지 않는다', () => {
+  const scene = entry('check-please', 'おかいけい おねがいします', 'scene')
+  const entries = [scene, entry('order', 'ちゅうもん おねがいします', 'scene'), entry('help', 'たすけて', 'scene')]
+  let state = introduced(initialState(), 'check-please')
+  state = recordAnswer(state, 'check-please', true, NOW)
+  const q = questionFor(scene, state, entries)
+  assert.equal(q.kind, 'choice')
+})
+
 /* ── 가중치 ──────────────────────────────────────────────────────── */
 
 test('오래 안 본 카드일수록 가중치가 크다', () => {
