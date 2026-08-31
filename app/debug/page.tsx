@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import { notFound } from 'next/navigation'
 import { Toaster } from 'sonner'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
-import { audioPath, entriesFor, imagePath } from '@/lib/content'
+import { audioFile, audioPath, entriesFor, imagePath } from '@/lib/content'
 import { answerOf, asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import { TRACK_IDS, trackOf } from '@/lib/track'
@@ -31,7 +31,8 @@ export default function DebugPage() {
     entriesFor(track).flatMap(({ concept, word }) => {
       const { language } = trackOf(track)
 
-      const audio = fileInfo(join('public', audioPath(concept.slug, language)))
+      // 파일 유무는 저장소 안을 본다. 주소는 CDN을 가리킬 수 있어 fs로 못 연다
+      const audio = fileInfo(audioFile(concept.slug, language))
       return [
         {
           slug: concept.slug,

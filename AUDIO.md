@@ -210,7 +210,46 @@ public/audio/ja/clock.mp3
 mkdir -p public/audio/ja
 ```
 
-파일은 레포에 커밋한다. 개당 10KB라 이미지와 같은 취급이다.
+파일은 **레포에 커밋하지 않는다.** 개당 12KB지만 개념당 7개(언어 수)라
+14,448개 170MB가 됐다 — clone·push가 그만큼 무거워지고, 정적 호스팅은 배포당
+**파일 개수**에 한도가 있어 용량보다 개수가 먼저 걸린다(이미지까지 16,551개).
+로컬에는 그대로 둔다. `pnpm audio`도 `/debug` 점검도 파일을 직접 보기 때문이다.
+
+---
+
+## 올리기 — R2
+
+한 번만 하는 준비.
+
+```bash
+brew install rclone
+rclone config          # n → 이름 r2 → s3 → provider Cloudflare → 키 입력
+```
+
+`.env`에 리모트를 적는다 (`.env.example` 참고).
+
+```
+R2_REMOTE=r2:lingo-audio
+```
+
+만들고 나서 올린다. 바뀐 것만 올라간다 — 내용(체크섬)으로 보므로 다시 뽑아도
+같은 파일이면 건너뛴다.
+
+```bash
+pnpm audio sync
+```
+
+앱이 보는 주소는 **`NEXT_PUBLIC_AUDIO_BASE`** 가 정한다.
+
+| 어디 | 값 | 결과 |
+|---|---|---|
+| 로컬 | 비워 둔다 | `/audio/ja/cat.mp3` — `public/`을 그대로 본다 |
+| 배포 | `https://pub-xxxx.r2.dev` | `https://pub-xxxx.r2.dev/audio/ja/cat.mp3` |
+
+빌드 때 값이 박히므로 런타임 분기가 없다. 로컬과 배포가 같은 코드로 돈다.
+
+> 로컬에서 `out/`을 그대로 올려 배포한다면 `out/audio/`가 딸려 간다 —
+> `public/`에 파일이 남아 있어서다. 그 경우 지우고 올린다: `rm -rf out/audio`
 
 ---
 
@@ -265,7 +304,9 @@ ffprobe -v error -show_entries format=duration,bit_rate,size \
 목소리나 포맷을 바꾸면 **기존 파일과 새 파일이 섞인다.** 같은 피드 안에서 목소리가
 바뀌면 어수선하므로, 변경은 전체 재생성을 원칙으로 한다.
 
-`public/audio/`를 통째로 비우고 다시 만든다.
+`public/audio/`를 통째로 비우고 다시 만든 뒤 `pnpm audio sync`로 다시 올린다.
+파일명이 slug 고정이라 **주소가 그대로다** — CDN 캐시를 비우지 않으면 옛 소리가
+계속 나간다.
 
 > 주의 — Next 이미지·정적 자산은 캐시가 살아 있으면 파일을 교체해도 브라우저가 옛 것을
 > 계속 쓸 수 있다. 배포 후 소리가 안 바뀌면 강력 새로고침으로 먼저 확인한다.

@@ -83,6 +83,26 @@ export function imagePath(slug: string): string {
   return `/concepts/${slug}.webp`
 }
 
+/**
+ * 발음 파일의 앞자리. 비어 있으면 지금까지처럼 `public/audio/`를 그대로 쓴다.
+ *
+ * 발음은 개념당 7개(언어 수)라 개수가 콘텐츠의 7배로 늘어난다 — 14,448개
+ * 170MB. 정적 호스팅은 대개 배포당 **파일 개수**에 한도가 있어서(이미지까지
+ * 16,551개) 용량보다 개수가 먼저 걸린다. 그래서 발음만 밖으로 뺀다.
+ *
+ * 빌드 때 값이 박히므로 런타임 분기가 아니다. 로컬에서는 비워 두고 파일을
+ * 그대로 보고, 배포에서만 채운다 — 둘 다 같은 코드가 돈다.
+ */
+const AUDIO_BASE = (process.env.NEXT_PUBLIC_AUDIO_BASE ?? '').replace(/\/$/, '')
+
 export function audioPath(slug: string, lang: Language): string {
-  return `/audio/${lang}/${slug}.mp3`
+  return `${AUDIO_BASE}/audio/${lang}/${slug}.mp3`
+}
+
+/**
+ * 저장소 안의 실제 파일 자리. 화면이 보는 주소(`audioPath`)와 달리 CDN을
+ * 타지 않는다 — 파일이 있나 없나를 fs로 보는 쪽은 이것을 쓴다.
+ */
+export function audioFile(slug: string, lang: Language): string {
+  return `public/audio/${lang}/${slug}.mp3`
 }
