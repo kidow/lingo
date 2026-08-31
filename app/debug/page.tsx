@@ -36,6 +36,7 @@ export default function DebugPage() {
       return [
         {
           slug: concept.slug,
+          category: concept.category,
           track,
           level: levelOf(word),
           answer: answerOf(word, language),

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { toast } from 'sonner'
 import { DebugPlay } from './debug-play'
 import { TRACKS, trackOf, type TrackId } from '@/lib/track'
+import type { Concept } from '@/lib/types'
 
 /**
  * 점검 표. 트랙으로 걸러 본다. (spec.md §7)
@@ -25,6 +26,8 @@ import { TRACKS, trackOf, type TrackId } from '@/lib/track'
  */
 export type DebugRow = {
   slug: string
+  /** 상황 표현은 예문을 세는 분모에서 빠진다 — 정답이 이미 문장이다 */
+  category: Concept['category']
   track: TrackId
   /** 그림이 없으면 피드에 안 나온다. 목록에만 있는 상태다 */
   level?: string
@@ -84,7 +87,10 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
   const concepts = new Set(shown.map((row) => row.slug)).size
   const missingImage = shown.filter((row) => !row.hasImage).length
   const missingAudio = shown.filter((row) => row.audioSize === null).length
-  const missingExample = shown.filter((row) => !row.example).length
+  // 상황 표현은 정답이 문장이라 예문을 쓰지 않는다 (spec.md §5). 분모에서 뺀다 —
+  // 넣지 않기로 한 것을 결손으로 세면 빨간 숫자가 영원히 안 사라진다
+  const wantExample = shown.filter((row) => row.category !== 'scene')
+  const missingExample = wantExample.filter((row) => !row.example).length
 
   return (
     <>
@@ -115,7 +121,11 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
         <Stat label="단어" value={`${shown.length}`} />
         <Stat label="이미지" value={`${shown.length - missingImage}/${shown.length}`} bad={missingImage > 0} />
         <Stat label="발음" value={`${shown.length - missingAudio}/${shown.length}`} bad={missingAudio > 0} />
-        <Stat label="예문" value={`${shown.length - missingExample}/${shown.length}`} bad={missingExample > 0} />
+        <Stat
+          label="예문"
+          value={`${wantExample.length - missingExample}/${wantExample.length}`}
+          bad={missingExample > 0}
+        />
       </dl>
 
       {/* 좁은 창에서 칸이 짓눌리는 대신 표째로 가로 스크롤한다 */}
