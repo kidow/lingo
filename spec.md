@@ -340,12 +340,24 @@ public/concepts/{slug}.webp          이미지 — 언어 무관, 전 언어 공
 public/audio/{language}/{slug}.mp3   발음 — 언어별
 ```
 
-**발음만 저장소 밖에 둔다.** 개념당 7개(언어 수)라 14,448개 170MB가 됐고,
-정적 호스팅은 배포당 **파일 개수**에 한도가 있어 용량보다 개수가 먼저 걸린다
-(이미지까지 16,551개). 파일은 로컬 `public/audio/`에 그대로 두고 git에서만
-빼며, 올리는 것은 `pnpm audio sync`가 한다. 앱이 보는 주소는
-`NEXT_PUBLIC_AUDIO_BASE`가 정한다 — **비어 있으면 지금까지처럼 `public/`을
-본다.** 로컬은 비워 두고 배포에만 넣으므로 코드는 한 갈래다.
+**발음은 저장소에 그대로 둔다.** 개념당 7개(언어 수)라 15,000개를 넘고 200MB가
+넘지만, **Vercel에 배포하므로 옮기지 않는다** — Git 연동 배포는 빌드가 Vercel에서
+돌아 `out/`이 그대로 서빙되고, 공개 문서에 정적 파일 개수 하드 캡이 없다. CLI로
+직접 올릴 때 파일 수가 많아 걸리면 `vercel deploy --archive=tgz`를 쓰라는 안내가
+있을 뿐이다([CLI 문서](https://vercel.com/docs/cli/deploy)). 배포당 파일 개수
+한도(예: Cloudflare Pages 20,000개)가 있는 호스팅으로 옮길 때 다시 계산한다.
+
+**옮길 길은 내 두었다.** 앱이 보는 주소는 `NEXT_PUBLIC_AUDIO_BASE`가 정한다 —
+**비어 있으면 `public/`을 본다.** 채우면 그 앞자리가 붙어 CDN을 본다. 올리는 것은
+`pnpm audio sync`(rclone, S3 호환이면 어디든)가 한다. 지금은 둘 다 쓰지 않는다.
+
+옮길 신호는 셋이다.
+
+| 신호 | 왜 |
+|---|---|
+| clone·push가 견디기 어려워질 때 | 지금 pack 180MB대. CI가 매번 받는다 |
+| 발음을 전량 재생성할 때 | 히스토리에 사본이 한 벌 더 쌓인다 |
+| 파일 개수 한도가 있는 호스팅으로 옮길 때 | 이미지까지 17,000개가 넘는다 |
 
 파일이 있으면 쓰고, 없으면 이미지는 플레이스홀더로 폴백하고 발음 버튼은 비활성으로 둔다.
 **플레이스홀더는 파일이 아니라 인라인 SVG다.** 바이너리를 하나 더 두고 관리할 이유가 없고,
@@ -865,11 +877,11 @@ JMdict의 JLPT 태그에는 가타카나 외래어가 빠져 있고, HSK 표에�
 | 아이콘 | `lucide-react` | 발음 버튼 하나(`audio-lines`)에 쓴다. ISC |
 | 컴포넌트 | shadcn/ui (Base UI) — `dropdown-menu` 하나 | 언어 선택에만 쓴다. 색은 브랜드 토큰으로 갈아끼웠고 다크 변형은 지웠다 (§2) |
 | 데이터 | `content/{topic}.json` | 빌드 시점 import. 파일은 주제고 트랙은 언어로 고른다 (§4). DB 없음 |
-| 정적 자산 | `public/` | 이미지는 저장소에, 발음은 R2에. 주소는 `NEXT_PUBLIC_AUDIO_BASE` |
+| 정적 자산 | `public/` | 이미지·발음 모두 저장소에. CDN으로 옮기는 스위치는 `NEXT_PUBLIC_AUDIO_BASE` |
 | 상태 | React 기본 | 진도·언어 설정은 `localStorage` 래퍼 훅 하나 |
 | 이미지 변환 | `sharp` (devDependency) | `pnpm image` 스크립트 전용. 런타임에 안 들어간다 |
 | PWA | manifest + 아이콘 | 서비스워커 없음. `app/icon.svg` 하나에서 `pnpm icons`가 나머지를 만든다 |
-| 배포 | 정적 파일 | `output: 'export'` → `out/`. 서버가 필요 없다 |
+| 배포 | Vercel (정적) | `output: 'export'` → `out/`. 서버가 필요 없다 |
 
 런타임 의존성은 `next` · `react` · `ts-fsrs` · `lucide-react` · `sonner`에 shadcn이 딸고 온
 `@base-ui/react` · `clsx` · `tailwind-merge`가 더해진 여덟이다. API 키는 런타임에 없다 —
