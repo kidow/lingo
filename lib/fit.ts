@@ -33,3 +33,18 @@ export function optionSize(options: string[]): string {
 export function optionColumns(options: string[]): 1 | 2 {
   return options.some((o) => [...o].length > 12) ? 1 : 2
 }
+
+/**
+ * 보기 상자의 높이. 열 수와 같은 기준(글자 수)을 쓴다.
+ *
+ * 1열은 보기 넷이 세로로 쌓이므로 상자 높이가 그대로 화면을 먹는다. 넷이
+ * 다 크면 아래의 **모르겠어요가 접힌 자리로 밀려난다** — 모를 때 모른다고
+ * 말할 자리가 사라지면 찍기가 늘고, 찍어서 맞힌 한 번이 다음 복습을 몇 주
+ * 뒤로 민다 (§5). 그래서 1열일수록 상자를 낮춘다.
+ *
+ * 2열은 짧은 낱말이라 상자가 낮아도 눌리는 면적이 충분하다. 다만 손가락이
+ * 닿는 최소 크기(44px)보다 작아지지 않게 둔다.
+ */
+export function optionBox(options: string[]): string {
+  return optionColumns(options) === 1 ? 'min-h-[52px] py-2.5' : 'min-h-[60px] py-3'
+}
