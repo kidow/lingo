@@ -130,6 +130,29 @@ function tagged() {
   console.log(`  ${'TORFL'.padEnd(12)} ${'—'.padStart(11)}  ТРКИ는 목록을 기계가 읽게 내놓지 않는다`)
 }
 
+/**
+ * 주제 축별 개수. 편차가 벌어지면 어떤 주제는 사흘이면 바닥나고 어떤 주제는
+ * 한 달이 걸린다 — 얇은 축부터 채우려면 순위가 보여야 한다.
+ */
+function axes() {
+  const counts = readdirSync('content')
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => {
+      const name = f.replace('.json', '')
+      const items = JSON.parse(readFileSync(join('content', f), 'utf8')).concepts as Concept[]
+      return [name, items.length] as const
+    })
+    .sort((a, b) => a[1] - b[1])
+
+  const most = counts[counts.length - 1][1]
+  console.log(`\n주제 축 — 적은 순\n${line(46)}`)
+  for (const [name, count] of counts) {
+    const bar = '■'.repeat(Math.round((count / most) * 18)).padEnd(18, '·')
+    console.log(`  ${name.padEnd(10)} ${bar} ${String(count).padStart(4)}`)
+  }
+  console.log(`\n  가장 얇은 축이 ${counts[0][0]}(${counts[0][1]}), 두꺼운 축이 ${counts[counts.length - 1][0]}(${most})다`)
+}
+
 function shape() {
   const counts: Record<string, number> = { noun: 0, verb: 0, adjective: 0, scene: 0 }
   for (const concept of concepts) counts[concept.category] += 1
@@ -141,6 +164,7 @@ function shape() {
 }
 
 shape()
+axes()
 await tsl()
 await hsk()
 tagged()
