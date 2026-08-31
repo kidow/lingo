@@ -15,6 +15,7 @@
  *
  *   TSL   TOEIC Service List 1,250개 — 표제어 목록이 CSV로 있다
  *   HSK   HSK 3.0 — complete-hsk-vocabulary (MIT)
+ *   TORFL ТРКИ 어휘 최소치 A1~B2 — ros-edu.ru가 JSON으로 내놓는다 (scripts/torfl.ts)
  *
  * JLPT·CEFR은 목록 대비 비율을 못 낸다. JMdict의 JLPT 태그는 낱말에 붙어
  * 있을 뿐 "N5 전체 목록"이 아니고, 괴테 목록은 PDF에서 긁은 표제어라
@@ -23,6 +24,7 @@
  */
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { bare, torflLevels } from './torfl.ts'
 import type { Concept } from '../lib/types.ts'
 
 const TSL_URL = 'https://www.newgeneralservicelist.com/s/TSL_12_stats.csv'
@@ -37,12 +39,20 @@ const concepts: Concept[] = readdirSync('content')
 const line = (n: number) => '─'.repeat(n)
 const pct = (a: number, b: number) => (b === 0 ? '—' : `${((100 * a) / b).toFixed(1)}%`)
 
-/** 우리가 쓰는 그 언어의 표기 모음 */
-function terms(lang: 'en' | 'zh'): Set<string> {
+/**
+ * 우리가 쓰는 그 언어의 표기 모음.
+ *
+ * 대조 방식이 언어마다 다르다. 영어는 대소문자를 접고, 러시아어는 목록 쪽에
+ * 얹힌 강세 부호를 떼야 만난다 (scripts/torfl.ts). 중국어는 그대로 쓴다.
+ */
+function terms(lang: 'en' | 'zh' | 'ru'): Set<string> {
   const set = new Set<string>()
   for (const concept of concepts) {
     const word = concept.words[lang]
-    if (word) set.add(lang === 'en' ? word.term.toLowerCase() : word.term)
+    if (!word) continue
+    if (lang === 'en') set.add(word.term.toLowerCase())
+    else if (lang === 'ru') set.add(bare(word.term))
+    else set.add(word.term)
   }
   return set
 }
@@ -107,11 +117,55 @@ async function hsk() {
   console.log(`\n  1~3급 ${upTo(3)} · 1~6급 ${upTo(6)}`)
 }
 
+/**
+ * ТРКИ 어휘 최소치 — 등급별.
+ *
+ * 등급은 누적이 아니다. 각 낱말이 **처음 나오는** 등급 하나에만 센다. HSK와
+ * 같은 모양으로 읽히도록 아래에 누적도 한 줄 붙인다.
+ */
+async function torfl() {
+  const levels = await torflLevels()
+  const mine = terms('ru')
+
+  const order = ['A1', 'A2', 'B1', 'B2'] as const
+  const total = new Map<string, number>()
+  const covered = new Map<string, number>()
+  for (const [term, grade] of levels) {
+    total.set(grade, (total.get(grade) ?? 0) + 1)
+    if (mine.has(term)) covered.set(grade, (covered.get(grade) ?? 0) + 1)
+  }
+
+  console.log(`\nTORFL (ТРКИ) — 등급별\n${line(46)}`)
+  let sumTotal = 0
+  let sumCovered = 0
+  for (const grade of order) {
+    const t = total.get(grade) ?? 0
+    const c = covered.get(grade) ?? 0
+    sumTotal += t
+    sumCovered += c
+    console.log(`  ${grade.padEnd(6)} ${String(c).padStart(5)}/${String(t).padStart(5)}  ${pct(c, t)}`)
+  }
+  console.log(`  ${'합계'.padEnd(5)} ${String(sumCovered).padStart(5)}/${String(sumTotal).padStart(5)}  ${pct(sumCovered, sumTotal)}`)
+
+  const upTo = (max: number) => {
+    let t = 0
+    let c = 0
+    for (const grade of order.slice(0, max)) {
+      t += total.get(grade) ?? 0
+      c += covered.get(grade) ?? 0
+    }
+    return `${c}/${t} (${pct(c, t)})`
+  }
+  console.log(`\n  A1~A2 ${upTo(2)} · A1~B1 ${upTo(3)}`)
+  console.log(`  C1·C2는 목록에 없다 — 사이트가 B2까지만 싣는다`)
+}
+
 /** 목록이 없는 트랙은 "우리 낱말 중 등급이 붙은 비율"만 낸다 */
 function tagged() {
-  const rows: Array<[string, 'ja' | 'de', 'jlpt' | 'cefr']> = [
+  const rows: Array<[string, 'ja' | 'de' | 'ru', 'jlpt' | 'cefr' | 'torfl']> = [
     ['JLPT', 'ja', 'jlpt'],
     ['CEFR (TELC)', 'de', 'cefr'],
+    ['TORFL', 'ru', 'torfl'],
   ]
   console.log(`\n등급이 붙은 낱말 — 분모가 목록이 아니라 우리 콘텐츠다\n${line(46)}`)
   for (const [label, lang, key] of rows) {
@@ -127,7 +181,6 @@ function tagged() {
     console.log(`  ${label.padEnd(12)} ${String(has).padStart(5)}/${String(all).padStart(5)}  ${pct(has, all)}`)
   }
   console.log(`  ${'DELE·DELF'.padEnd(12)} ${'—'.padStart(11)}  낱말별 등급을 담은 공개 목록이 없다`)
-  console.log(`  ${'TORFL'.padEnd(12)} ${'—'.padStart(11)}  ТРКИ는 목록을 기계가 읽게 내놓지 않는다`)
 }
 
 /**
@@ -185,5 +238,6 @@ shape()
 axes()
 await tsl()
 await hsk()
+await torfl()
 tagged()
 console.log('')

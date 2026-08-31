@@ -11,6 +11,7 @@
  *   HSK   complete-hsk-vocabulary (MIT). HSK 3.0 기준
  *   CEFR  Goethe-Institut 공식 Wortliste. 독일어만, A1~B1까지
  *   TSL   TOEIC Service List (Browne & Culligan, CC BY-SA 4.0). 등급이 아니라 순위다
+ *   TORFL ros-edu.ru의 ТРКИ 어휘 최소치. A1~B2까지다 (scripts/torfl.ts)
  *
  * 스페인어·프랑스어는 채우지 않는다. Cervantes PCIC는 robots.txt가 자동 수집을
  * 막고 있고, 프랑스어는 공개된 기계 판독 목록이 없다.
@@ -21,6 +22,7 @@
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { inflateSync } from 'node:zlib'
 import { hskOf, jlptOf } from './define.ts'
+import { bare, torflLevels } from './torfl.ts'
 import type { Concept } from '../lib/types.ts'
 
 /**
@@ -110,6 +112,7 @@ const GERMAN_HOMONYMS = new Set(['Bank', 'Karte'])
 
 const german = await germanLevels()
 const tsl = await tslRanks()
+const torfl = await torflLevels()
 const only = process.argv[2]
 const files = readdirSync('content')
   .filter((f) => f.endsWith('.json'))
@@ -124,13 +127,13 @@ if (files.length === 0) {
 for (const file of files) {
   const path = `content/${file}`
   const data = JSON.parse(readFileSync(path, 'utf8')) as { concepts: Concept[] }
-  const counts = { jlpt: 0, hsk: 0, cefr: 0, tsl: 0 }
-  let words = { ja: 0, zh: 0, de: 0, en: 0 }
+  const counts = { jlpt: 0, hsk: 0, cefr: 0, tsl: 0, torfl: 0 }
+  let words = { ja: 0, zh: 0, de: 0, en: 0, ru: 0 }
 
   for (const concept of data.concepts) {
     const apply = (
-      lang: 'ja' | 'zh' | 'de' | 'en',
-      key: 'jlpt' | 'hsk' | 'cefr' | 'tsl',
+      lang: 'ja' | 'zh' | 'de' | 'en' | 'ru',
+      key: 'jlpt' | 'hsk' | 'cefr' | 'tsl' | 'torfl',
       value: unknown,
     ) => {
       const word = concept.words[lang]
@@ -155,12 +158,14 @@ for (const file of files) {
     // `shoe`만 있는데, 복수형을 잘라 맞추면 `glasses`(안경)가 `glass`(유리컵)의
     // 순위를 물려받는다 — 독일어 Bank·Karte에서 겪은 것과 같은 함정이다
     apply('en', 'tsl', concept.words.en && tsl.get(concept.words.en.term.toLowerCase()))
+    // 목록은 강세를 얹어 싣는다. 뗀 표기끼리 맞춘다 (scripts/torfl.ts)
+    apply('ru', 'torfl', concept.words.ru && torfl.get(bare(concept.words.ru.term)))
   }
 
   writeFileSync(path, JSON.stringify(data, null, 2) + '\n')
   console.log(
     `${file.replace('.json', '').padEnd(10)} JLPT ${counts.jlpt}/${words.ja}` +
       ` · HSK ${counts.hsk}/${words.zh} · CEFR ${counts.cefr}/${words.de}` +
-      ` · TSL ${counts.tsl}/${words.en}`,
+      ` · TSL ${counts.tsl}/${words.en} · TORFL ${counts.torfl}/${words.ru}`,
   )
 }
