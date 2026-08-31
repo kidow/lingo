@@ -1,0 +1,82 @@
+/**
+ * TORFL(ТРКИ) 어휘 목록. (spec.md §7)
+ *
+ * 오래 비어 있던 트랙이다. ТРКИ의 «Лексический минимум»은 Златоуст에서 나온
+ * 책이라 PDF조차 공개되지 않고, 시중의 "토르플 필수 어휘 2000"은 교재사
+ * 편집물이라 쓸 수 없었다. 그래서 등급을 짓지 않고 비워 뒀다.
+ *
+ * 그 최소치를 **웹으로 그대로 내놓는 곳**이 있다. ros-edu.ru의 «Лексический
+ * минимум»은 A1~B2 네 등급을 낱말마다 붙여 두고, 목록 화면이 그리는 JSON을
+ * 그대로 받아올 수 있다. robots.txt가 막는 것은 `/assets/...`뿐이라 Cervantes
+ * PCIC를 거른 기준(§7)을 통과한다.
+ *
+ *   POST /380  action=getPublications&page=N&level_id=0&category_id=0
+ *   → { data: [{ word_rus, word_eng, level_ids, categories }], count }
+ *
+ * 한 쪽에 40개씩 4,361줄이 온다. `level_ids`는 그 낱말이 **속한 모든 등급**이라
+ * ("1, 2, 3, 4" = A1부터 쭉) 등급은 그중 가장 낮은 것이다.
+ *
+ * C1·C2는 이 목록에 없다. 사이트가 네 등급까지만 싣는다 — 없는 것을 채우지
+ * 않으므로(§5) 상위 두 등급은 여전히 비어 있다.
+ */
+
+const URL = 'https://www.ros-edu.ru/380'
+const PER_PAGE = 40
+
+/** level_ids의 숫자가 곧 등급이다. 사이트의 필터 이름을 그대로 옮겼다 */
+const GRADES = { 1: 'A1', 2: 'A2', 3: 'B1', 4: 'B2' } as const
+
+export type TorflLevel = (typeof GRADES)[keyof typeof GRADES]
+
+type Row = { word_rus?: string; level_ids?: string }
+
+/**
+ * 강세 부호를 뗀 표기.
+ *
+ * 목록은 학습용이라 `абсолю́тный`처럼 강세를 결합 문자(U+0301)로 얹어 놓는데
+ * 우리 콘텐츠는 얹지 않는다. NFD로 풀어 그 한 글자만 빼면 나머지 표기는 건드리지
+ * 않는다 — `ё`는 `е`로 바꾸지 않는다. `все`와 `всё`가 다른 낱말이기 때문이다.
+ */
+export const bare = (term: string): string =>
+  term.normalize('NFD').replace(/́/g, '').normalize('NFC').trim().toLowerCase()
+
+async function page(n: number): Promise<{ data: Row[]; count: number }> {
+  const body = `action=getPublications&collection_id=0&page=${n}&level_id=0&category_id=0&query=`
+  const response = await fetch(URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'X-Requested-With': 'XMLHttpRequest',
+      'User-Agent': 'lingo-content-tool/1.0 (+https://github.com/kidow/lingo)',
+    },
+    body,
+  })
+  return (await response.json()) as { data: Row[]; count: number }
+}
+
+/** 표기 → 등급. 낱말이 처음 나오는 등급 하나만 남긴다 */
+export async function torflLevels(): Promise<Map<string, TorflLevel>> {
+  const first = await page(1)
+  const rows = [...first.data]
+  for (let n = 2; n <= Math.ceil(first.count / PER_PAGE); n += 1) rows.push(...(await page(n)).data)
+
+  const levels = new Map<string, TorflLevel>()
+  const rank = new Map<string, number>()
+  for (const row of rows) {
+    if (!row.word_rus) continue
+    const grades = String(row.level_ids ?? '')
+      .split(',')
+      .map((x) => Number(x.trim()))
+      .filter((n): n is 1 | 2 | 3 | 4 => n >= 1 && n <= 4)
+    if (grades.length === 0) continue
+
+    const lowest = Math.min(...grades) as 1 | 2 | 3 | 4
+    const term = bare(row.word_rus)
+    // 같은 표기가 뜻마다 따로 실린다. 낮은 등급이 이긴다 — 그 낱말을 처음 만나는 때다
+    if (!rank.has(term) || lowest < rank.get(term)!) {
+      rank.set(term, lowest)
+      levels.set(term, GRADES[lowest])
+    }
+  }
+  return levels
+}
