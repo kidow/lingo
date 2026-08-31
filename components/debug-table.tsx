@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { toast } from 'sonner'
 import { DebugPlay } from './debug-play'
 import { TRACKS, trackOf, type TrackId } from '@/lib/track'
 
@@ -18,6 +19,9 @@ import { TRACKS, trackOf, type TrackId } from '@/lib/track'
  * 그래서 **한 줄은 정확히 한 줄 높이**여야 한다 — 예문이 접히면 줄 높이가
  * 제각각이 되어 스크롤 위치에서 몇 번째 줄인지 계산할 수 없다. 예문은 접지
  * 않고 잘라 두고, 잘린 것은 title로 남긴다.
+ *
+ * 단어와 예문은 눌러서 복사한다. 콘텐츠를 고치러 갈 때 화면에 보이는 글자를
+ * 그대로 집어 가는 자리다 — 잘린 예문은 눈으로 못 읽어도 복사는 전문이 된다.
  */
 export type DebugRow = {
   slug: string
@@ -170,7 +174,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
                 <Td>
                   {row.answer ? (
                     <>
-                      <span className="font-jp font-semibold">{row.answer}</span>{' '}
+                      <Copy text={row.answer} className="font-jp font-semibold" />{' '}
                       {row.aside.length > 0 && (
                         <span className="font-jp text-xs text-sub">
                           {row.aside.map((value, i) => (i === 0 ? `[${value}]` : value)).join(' · ')}
@@ -185,9 +189,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
                 <Td>{row.partOfSpeech ?? <span className="text-sub">—</span>}</Td>
                 <Td>
                   {row.example ? (
-                    <span className="font-jp text-xs" title={row.example}>
-                      {row.example}
-                    </span>
+                    <Copy text={row.example} className="font-jp text-xs" />
                   ) : (
                     <Missing>없음</Missing>
                   )}
@@ -215,6 +217,31 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
         </table>
       </div>
     </>
+  )
+}
+
+/**
+ * 눌러서 복사하는 글자. 붙여넣을 곳까지 손으로 옮겨 적던 것을 없앤다.
+ *
+ * 클립보드는 보안 컨텍스트(localhost·https)에서만 열린다. 점검 화면은 개발
+ * 서버에서만 뜨므로 늘 열려 있지만, 막힌 경우를 조용히 넘기면 복사된 줄
+ * 알고 엉뚱한 것을 붙여넣게 된다 — 실패도 토스트로 말한다.
+ */
+function Copy({ text, className = '' }: { text: string; className?: string }) {
+  return (
+    <button
+      type="button"
+      title={text}
+      onClick={() =>
+        navigator.clipboard.writeText(text).then(
+          () => toast.success('복사했습니다', { description: text }),
+          () => toast.error('복사하지 못했습니다', { description: text }),
+        )
+      }
+      className={`max-w-full cursor-pointer truncate align-bottom hover:underline ${className}`}
+    >
+      {text}
+    </button>
   )
 }
 

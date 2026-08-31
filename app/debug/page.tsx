@@ -1,6 +1,7 @@
 import { statSync } from 'node:fs'
 import { join } from 'node:path'
 import { notFound } from 'next/navigation'
+import { Toaster } from 'sonner'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
 import { audioPath, entriesFor, imagePath } from '@/lib/content'
 import { answerOf, asideOf } from '@/lib/lang'
@@ -60,6 +61,9 @@ export default function DebugPage() {
       </header>
 
       <DebugTable rows={rows} tracks={TRACK_IDS} />
+
+      {/* 복사했는지 알려 준다. 표가 화면을 꽉 채우므로 위 가운데에 띄운다 */}
+      <Toaster position="top-center" />
     </main>
   )
 }
