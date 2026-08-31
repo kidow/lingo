@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
-import { answerSize, optionColumns, optionSize } from '@/lib/fit'
+import { answerSize, optionBox, optionColumns, optionSize } from '@/lib/fit'
 import { asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import type { BlankQuestion, ChoiceQuestion, IntroQuestion, Question } from '@/lib/quiz'
@@ -129,7 +129,7 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
                 onAnswer?.(option === answer)
               }}
               className={`
-                grid min-h-[72px] place-items-center rounded-ctrl border px-1.5 py-4
+                grid ${optionBox(options)} place-items-center rounded-ctrl border px-1.5
                 font-jp ${optionSize(options)} font-semibold transition active:scale-[.985]
                 disabled:active:scale-100
                 ${verdictClass(answered, option === answer, option === picked)}
