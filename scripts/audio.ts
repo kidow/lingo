@@ -188,10 +188,12 @@ async function make(lang: Language, limit: number, concurrency = 8) {
   console.log(`\n${lang} ${rows.length}개를 만듭니다 — 호출마다 크레딧이 나갑니다 (동시 ${concurrency})\n${line(52)}`)
 
   let done = 0
-  let stopped: Error | null = null
+  let stopped = false
   const queue = [...rows]
 
-  async function worker() {
+  // 실패는 반환값으로 꺼낸다. 클로저 안에서 바깥 변수에 담으면 TS가 좁힌
+  // 타입을 되돌리지 못해 나중에 읽을 수 없다
+  async function worker(): Promise<Error | undefined> {
     for (;;) {
       if (stopped) return
       const row = queue.shift()
@@ -201,18 +203,19 @@ async function make(lang: Language, limit: number, concurrency = 8) {
       } catch (error) {
         // 첫 실패에서 전체를 멈춘다. 키가 틀렸거나 크레딧이 없으면 나머지도
         // 다 실패한다 — 14,000번 더 부르며 같은 오류를 쌓을 이유가 없다
-        stopped = error as Error
-        return
+        stopped = true
+        return error as Error
       }
       done += 1
       if (done % 50 === 0) console.log(`  ${done}/${rows.length}`)
     }
   }
 
-  await Promise.all(Array.from({ length: Math.min(concurrency, rows.length) }, worker))
+  const results = await Promise.all(Array.from({ length: Math.min(concurrency, rows.length) }, worker))
   rmSync('.audio-tmp', { recursive: true, force: true })
 
-  if (stopped) fail(`${done}개까지 만들고 멈췄습니다\n  ${stopped.message}`)
+  const failure = results.find((r) => r !== undefined)
+  if (failure) fail(`${done}개까지 만들고 멈췄습니다\n  ${failure.message}`)
   console.log(`\n${done}개 완료 · ${lang} 남은 것 ${missing(lang).length}개`)
 }
 
