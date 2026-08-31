@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { Toaster } from 'sonner'
 import './globals.css'
 
 const TITLE = 'Lingo'
@@ -27,7 +28,11 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* 복사했는지 알려 준다. 카드가 화면을 꽉 채우므로 위 가운데에 띄운다 */}
+        <Toaster position="top-center" />
+      </body>
     </html>
   )
 }

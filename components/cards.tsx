@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { toast } from 'sonner'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
@@ -50,9 +51,10 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
       <CardSheet>
         <div className="flex flex-col gap-1">
           <div className="flex items-center justify-between gap-md">
-            <p className={`font-jp ${answerSize(answer)} leading-tight font-bold tracking-tight`}>
-              {answer}
-            </p>
+            <Copy
+              text={answer}
+              className={`font-jp ${answerSize(answer)} leading-tight font-bold tracking-tight`}
+            />
             <SayButton slug={concept.slug} lang={lang} label={answer} />
           </div>
           {/* 첫 항목이 발음 보조다. 큰 글자가 이미 읽기라 여기 오는 건 로마자 (lib/lang.ts) */}
@@ -81,7 +83,7 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
         {/* 예문은 소개 카드에만 둔다. 정답 단어가 그대로 들어 있어 퀴즈에 못 쓴다 */}
         {word.example && (
           <div className="border-t border-line pt-md">
-            <p className="font-jp text-[15px] leading-relaxed">{word.example.text}</p>
+            <Copy text={word.example.text} className="font-jp text-[15px] leading-relaxed" />
             {/* 예문도 소리 내 볼 수 있어야 한다. ja·zh만 값이 있다 (lib/types.ts) */}
             {word.example.romanization && (
               <p className="mt-0.5 text-xs text-sub">{word.example.romanization}</p>
@@ -253,6 +255,31 @@ function verdictClass(answered: boolean, isAnswer: boolean, isPicked: boolean) {
   if (isAnswer) return 'border-ok bg-ok-soft text-ok'
   if (isPicked) return 'border-err bg-err-soft text-err'
   return 'border-line bg-surface text-sub opacity-60'
+}
+
+/**
+ * 눌러서 복사하는 글자. **모양은 그대로 둔다** — 밑줄도 색도 커서도 바꾸지
+ * 않는다. 카드는 읽는 화면이지 조작하는 화면이 아니라서, 눌러도 되는 자리처럼
+ * 보이기 시작하면 시선이 그리로 끌린다. 필요할 때 눌러 보면 복사가 될 뿐이다.
+ *
+ * 클립보드는 보안 컨텍스트(localhost·https)에서만 열린다. 막힌 경우를 조용히
+ * 넘기면 복사된 줄 알고 엉뚱한 것을 붙여넣게 되므로 실패도 토스트로 말한다.
+ */
+function Copy({ text, className = '' }: { text: string; className?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() =>
+        navigator.clipboard.writeText(text).then(
+          () => toast.success('복사했습니다', { description: text }),
+          () => toast.error('복사하지 못했습니다', { description: text }),
+        )
+      }
+      className={`text-left ${className}`}
+    >
+      {text}
+    </button>
+  )
 }
 
 function Reveal({
