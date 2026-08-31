@@ -62,4 +62,4 @@ export function entriesFor(track: TrackId, concepts: Concept[] = CONCEPTS): Entr
 }
 
 export type { Entry }
-export { audioPath, countByCategory, distractorPool, imagePath } from './entries.ts'
+export { audioFile, audioPath, countByCategory, distractorPool, imagePath } from './entries.ts'

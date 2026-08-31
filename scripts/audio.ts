@@ -5,6 +5,7 @@
  *   node scripts/audio.ts list ja            그 언어에서 만들 것을 순서대로 출력
  *   node scripts/audio.ts place ja cat ~/Downloads/speech.mp3
  *   node scripts/audio.ts make ja 10        API로 10개를 만들어 바로 넣는다
+ *   node scripts/audio.ts sync              만든 것을 R2로 올린다
  *
  * 콘솔에서 사람이 만들어 `place`로 넣어도 되고, 키가 있으면 `make`가 만들기까지
  * 한다. 어느 쪽이든 규격(AUDIO.md)과 저장 경로는 이 스크립트가 지킨다.
@@ -240,6 +241,54 @@ function place(lang: Language, slug: string, source: string) {
   console.log(`\n${lang} 남은 것 ${missing(lang).length}개`)
 }
 
+/**
+ * 발음을 R2(또는 S3 호환 어디든)로 올린다.
+ *
+ * 발음은 저장소에 두지 않는다 — 14,448개 170MB라 clone과 배포가 그만큼
+ * 느려지고, 정적 호스팅의 배포당 파일 개수 한도에 먼저 걸린다. 파일은 로컬에
+ * 남겨 둔다: `pnpm audio`도 /debug 점검도 파일을 직접 보기 때문이다.
+ *
+ * 올리는 일은 rclone에 맡긴다. 바뀐 것만 올리고(체크섬), 병렬로 붓고,
+ * 자격증명을 자기 설정에 넣어 둔다 — 여기서 다시 만들 이유가 없다.
+ *
+ *   rclone config                       한 번, r2 리모트를 만든다
+ *   R2_REMOTE=r2:lingo-audio            .env 에 적는다
+ */
+function sync() {
+  if (existsSync('.env')) process.loadEnvFile('.env')
+
+  const remote = process.env.R2_REMOTE
+  if (!remote) {
+    fail(
+      'R2_REMOTE 가 없습니다.\n' +
+        '  rclone으로 리모트를 만든 뒤(.env 에 적습니다):\n' +
+        '    R2_REMOTE=r2:버킷이름\n' +
+        '  리모트 만들기: rclone config → n → s3 → Cloudflare R2',
+    )
+  }
+
+  try {
+    execFileSync('rclone', ['version'], { stdio: 'ignore' })
+  } catch {
+    fail('rclone 이 없습니다. brew install rclone')
+  }
+
+  const local = join('public', 'audio')
+  const count = readdirSync(local).reduce(
+    (sum, lang) => sum + readdirSync(join(local, lang)).length,
+    0,
+  )
+  console.log(`\n${local} → ${remote}/audio  (${count}개, 바뀐 것만 올라갑니다)\n${line(52)}`)
+
+  // --checksum: 시각이 아니라 내용을 본다. 파일을 다시 뽑아도 내용이 같으면
+  // 올리지 않는다 — 시각으로 보면 전량이 다시 올라간다
+  execFileSync('rclone', ['sync', local, `${remote}/audio`, '--checksum', '--transfers', '32', '--progress'], {
+    stdio: 'inherit',
+  })
+
+  console.log(`\n올렸습니다. 배포에서 쓰려면 NEXT_PUBLIC_AUDIO_BASE 에 공개 주소를 넣습니다`)
+}
+
 function fail(message: string): never {
   console.error(`\n${message}\n`)
   process.exit(1)
@@ -252,6 +301,7 @@ else if (command === 'make') {
   const count = rest[1] === 'all' ? Number.MAX_SAFE_INTEGER : Number(rest[1] ?? 5)
   await make((rest[0] ?? 'ja') as Language, count, Number(rest[2] ?? 8))
 }
+else if (command === 'sync') sync()
 else if (command === 'place') {
   const [lang, slug, file] = rest
   if (!lang || !slug || !file) fail('사용법: place <lang> <slug> <파일>')

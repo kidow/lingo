@@ -340,6 +340,13 @@ public/concepts/{slug}.webp          이미지 — 언어 무관, 전 언어 공
 public/audio/{language}/{slug}.mp3   발음 — 언어별
 ```
 
+**발음만 저장소 밖에 둔다.** 개념당 7개(언어 수)라 14,448개 170MB가 됐고,
+정적 호스팅은 배포당 **파일 개수**에 한도가 있어 용량보다 개수가 먼저 걸린다
+(이미지까지 16,551개). 파일은 로컬 `public/audio/`에 그대로 두고 git에서만
+빼며, 올리는 것은 `pnpm audio sync`가 한다. 앱이 보는 주소는
+`NEXT_PUBLIC_AUDIO_BASE`가 정한다 — **비어 있으면 지금까지처럼 `public/`을
+본다.** 로컬은 비워 두고 배포에만 넣으므로 코드는 한 갈래다.
+
 파일이 있으면 쓰고, 없으면 이미지는 플레이스홀더로 폴백하고 발음 버튼은 비활성으로 둔다.
 **플레이스홀더는 파일이 아니라 인라인 SVG다.** 바이너리를 하나 더 두고 관리할 이유가 없고,
 토큰을 그대로 따라가며, 요청도 나가지 않는다.
@@ -740,6 +747,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
 | `pnpm define <word>` | 사전에서 뜻을 찾는다. 생략하면 콘텐츠 전체의 `meaning_ko`를 대조한다 |
 | `pnpm audio` | 발음 현황. `list <lang>`으로 만들 것을, `place <lang> <slug> <파일>`로 받은 파일을 넣는다. 키가 있으면 `make <lang> <n>`이 API로 만든다 ([AUDIO.md](AUDIO.md)) |
+| `pnpm audio sync` | 만든 발음을 R2로 올린다. rclone이 바뀐 것만 올린다 ([AUDIO.md](AUDIO.md)) |
 | `pnpm levels [파일]` | 시험 등급·순위를 출처에서 채운다 — JLPT · HSK · CEFR · TSL. 추정하지 않고 없으면 비운다 |
 | `pnpm romanize [파일]` | ja·zh·ru의 로마자를 규칙으로 채운다. 사람이 쓰지 않는다 |
 
@@ -857,14 +865,15 @@ JMdict의 JLPT 태그에는 가타카나 외래어가 빠져 있고, HSK 표에�
 | 아이콘 | `lucide-react` | 발음 버튼 하나(`audio-lines`)에 쓴다. ISC |
 | 컴포넌트 | shadcn/ui (Base UI) — `dropdown-menu` 하나 | 언어 선택에만 쓴다. 색은 브랜드 토큰으로 갈아끼웠고 다크 변형은 지웠다 (§2) |
 | 데이터 | `content/{topic}.json` | 빌드 시점 import. 파일은 주제고 트랙은 언어로 고른다 (§4). DB 없음 |
-| 정적 자산 | `public/` | 이미지·오디오. CDN 없음 |
+| 정적 자산 | `public/` | 이미지는 저장소에, 발음은 R2에. 주소는 `NEXT_PUBLIC_AUDIO_BASE` |
 | 상태 | React 기본 | 진도·언어 설정은 `localStorage` 래퍼 훅 하나 |
 | 이미지 변환 | `sharp` (devDependency) | `pnpm image` 스크립트 전용. 런타임에 안 들어간다 |
 | PWA | manifest + 아이콘 | 서비스워커 없음. `app/icon.svg` 하나에서 `pnpm icons`가 나머지를 만든다 |
 | 배포 | 정적 파일 | `output: 'export'` → `out/`. 서버가 필요 없다 |
 
-런타임 의존성은 `next` · `react` · `ts-fsrs` · `lucide-react`에 shadcn이 딸고 온
-`@base-ui/react` · `clsx` · `tailwind-merge`가 더해진 일곱이다. 환경변수도, API 키도 없다.
+런타임 의존성은 `next` · `react` · `ts-fsrs` · `lucide-react` · `sonner`에 shadcn이 딸고 온
+`@base-ui/react` · `clsx` · `tailwind-merge`가 더해진 여덟이다. API 키는 런타임에 없다 —
+환경변수는 발음 주소(`NEXT_PUBLIC_AUDIO_BASE`) 하나뿐이고, 그것도 빌드 때 박힌다.
 
 shadcn은 같은 컴포넌트를 Base UI · React Aria · Radix 세 가지로 낸다. **Base UI**를
 쓴다. 어느 것을 받을지는 `components.json`의 `style`이 정한다 — `base-vega`처럼
