@@ -51,8 +51,8 @@ export default function DebugPage() {
   )
 
   return (
-    <main className="h-dvh overflow-y-auto p-6">
-      <header className="mb-4">
+    <main className="flex h-dvh flex-col overflow-hidden p-6">
+      <header className="mb-4 shrink-0">
         <h1 className="text-lg font-semibold">콘텐츠 점검</h1>
         <p className="mt-1 text-sm text-sub">
           개발 서버에서만 열린다. 결손은 실패가 아니라 &ldquo;아직 만들지 않았다&rdquo;는 뜻이다.
