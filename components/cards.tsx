@@ -63,6 +63,11 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
           )}
         </div>
 
+        {/*
+          레벨은 뜻 줄 오른쪽 끝에 붙인다. 배지가 아니라 조용한 한 줄이다 —
+          학습 대상이 아니라 참고 정보라서 크기와 색을 뜻보다 낮춘다. 값이 없는
+          트랙(TOEIC·TORFL)은 자리째 빠진다 — 없는 등급을 지어내지 않는다
+        */}
         <div className="flex items-center gap-xs">
           {word.part_of_speech && (
             <span className="shrink-0 rounded-pill border border-line bg-surface px-2 py-0.5 text-xs font-semibold text-sub">
@@ -70,6 +75,7 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
             </span>
           )}
           <p className="text-lg font-semibold">{concept.meaning_ko}</p>
+          {level && <span className="ml-auto shrink-0 text-xs text-sub">{level}</span>}
         </div>
 
         {/* 예문은 소개 카드에만 둔다. 정답 단어가 그대로 들어 있어 퀴즈에 못 쓴다 */}
@@ -84,16 +90,8 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
           </div>
         )}
 
-        {/*
-          레벨은 배지가 아니라 조용한 한 줄이다. 학습 대상이 아니라 참고
-          정보라서 시선이 마지막에 닿는 자리에 둔다. 값이 없는 트랙(TOEIC)은
-          자리째 빠진다 — 없는 등급을 지어내지 않는다
-        */}
-        <div className="relative mt-auto">
-          {level && (
-            <span className="absolute bottom-0 left-0 text-xs text-sub">{level}</span>
-          )}
-          {/* 소개 카드는 언제나 넘길 수 있다 */}
+        {/* 소개 카드는 언제나 넘길 수 있다 */}
+        <div className="mt-auto">
           <SwipeHint />
         </div>
       </CardSheet>
