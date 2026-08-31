@@ -203,6 +203,50 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 
 ---
 
+## 얼굴 감사 — 인물이 든 그림을 한 번에 본다
+
+인물 그림은 시간이 지나면 **얼굴이 슬금슬금 그려진다.** 프롬프트에
+`no facial features`가 빠진 채 생성되면 모델이 표정을 넣기 때문이다.
+한 장씩 열어 보면 못 잡으므로 대지(contact sheet)로 묶어서 본다.
+
+```bash
+# 인물이 든 프롬프트 가운데 no facial features가 빠진 것만 모아 격자로 붙인다
+python3 - <<'EOF'
+import json, glob, re
+from PIL import Image, ImageDraw
+slugs = [c['slug'] for f in glob.glob('content/*.json')
+         for c in json.load(open(f))['concepts']
+         if re.search(r'\bfigure|\bperson|\bpeople|\bworker\b', (c.get('image_prompt') or '').lower())
+         and 'no facial features' not in c['image_prompt'].lower()]
+CELL, COLS = 250, 5
+for n in range(0, len(slugs), 25):
+    group = slugs[n:n + 25]
+    rows = (len(group) + COLS - 1) // COLS
+    sheet = Image.new('RGB', (COLS * CELL, rows * (CELL + 16)), 'white')
+    draw = ImageDraw.Draw(sheet)
+    for i, slug in enumerate(group):
+        im = Image.open(f'public/concepts/{slug}.webp').convert('RGB').resize((CELL - 8, CELL - 8))
+        x, y = (i % COLS) * CELL, (i // COLS) * (CELL + 16)
+        sheet.paste(im, (x + 4, y + 4))
+        draw.text((x + 6, y + CELL - 2), slug, fill='black')
+    sheet.save(f'/tmp/faces{n // 25}.png')
+EOF
+```
+
+**판정 기준은 입과 눈썹이다.**
+
+| 봐서 | 판정 |
+|---|---|
+| 옆모습에 눈 점 하나 · 감은 눈 선 | 통과. 규칙이 허용하는 "점 두 개까지" 안이다 |
+| 뒷모습 · 얼굴이 가려진 자세 | 통과 |
+| **입이 그려졌다 · 눈썹으로 표정을 만들었다** | **위반** — 다시 뽑는다 |
+
+고칠 때는 그림만 다시 뽑지 말고 **`image_prompt` 끝에 `, no facial features`를
+붙인 뒤** 뽑는다. 프롬프트를 고치지 않으면 다음에 재생성할 때 같은 얼굴이
+돌아온다 — 그림은 프롬프트에서 재현되어야 한다.
+
+---
+
 ## 검수 체크리스트
 
 업로드 전 확인한다. 하나라도 걸리면 다시 생성한다.
