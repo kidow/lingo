@@ -131,9 +131,16 @@ function tagged() {
 }
 
 /**
- * 주제 축별 개수. 편차가 벌어지면 어떤 주제는 사흘이면 바닥나고 어떤 주제는
- * 한 달이 걸린다 — 얇은 축부터 채우려면 순위가 보여야 한다.
+ * 파일별 개수. 파일은 이미지 작업을 몰아서 하기 좋은 단위이지 학습자에게
+ * 보이는 구분이 아니다 (§4) — 얇은 축부터 채우는 것은 균형 때문이다.
+ *
+ * **주제 파일과 품사 파일을 섞어 세지 않는다.** action(동사)·quality(형용사)·
+ * scene(상황 표현)은 주제가 아니라 품사라 분모가 다르다. 한 표에 놓으면
+ * "scene 230이 제일 두껍다"가 주제 편중처럼 읽히는데, 실제로는 비교 대상이
+ * 아니다. 얇은 축을 고를 때 보는 것은 **주제 쪽 표 하나**다.
  */
+const BY_PART = new Set(['action', 'quality', 'scene'])
+
 function axes() {
   const counts = readdirSync('content')
     .filter((f) => f.endsWith('.json'))
@@ -144,13 +151,24 @@ function axes() {
     })
     .sort((a, b) => a[1] - b[1])
 
-  const most = counts[counts.length - 1][1]
-  console.log(`\n주제 축 — 적은 순\n${line(46)}`)
-  for (const [name, count] of counts) {
-    const bar = '■'.repeat(Math.round((count / most) * 18)).padEnd(18, '·')
-    console.log(`  ${name.padEnd(10)} ${bar} ${String(count).padStart(4)}`)
+  const topics = counts.filter(([name]) => !BY_PART.has(name))
+  const parts = counts.filter(([name]) => BY_PART.has(name))
+
+  const draw = (rows: typeof counts, scale: number) => {
+    for (const [name, count] of rows) {
+      const bar = '■'.repeat(Math.round((count / scale) * 18)).padEnd(18, '·')
+      console.log(`  ${name.padEnd(10)} ${bar} ${String(count).padStart(4)}`)
+    }
   }
-  console.log(`\n  가장 얇은 축이 ${counts[0][0]}(${counts[0][1]}), 두꺼운 축이 ${counts[counts.length - 1][0]}(${most})다`)
+
+  const widest = topics[topics.length - 1]
+  console.log(`\n주제 축 — 적은 순\n${line(46)}`)
+  draw(topics, widest[1])
+  console.log(`\n  가장 얇은 축이 ${topics[0][0]}(${topics[0][1]}), 두꺼운 축이 ${widest[0]}(${widest[1]})다`)
+  console.log(`  ${'차이'.padEnd(4)} ${(widest[1] / topics[0][1]).toFixed(1)}배 — 다음 배치는 위쪽부터 고른다`)
+
+  console.log(`\n품사 파일 — 주제와 분모가 다르다\n${line(46)}`)
+  draw(parts, parts[parts.length - 1][1])
 }
 
 function shape() {
