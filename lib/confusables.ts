@@ -7,7 +7,8 @@
  *
  * 문자 체계가 늘어도 규칙은 같다 — 가나는 가나끼리, 알파벳은 알파벳끼리 닮은
  * 것을 준다. 영어에서는 모양뿐 아니라 **소리가 겹치는 짝**(c/k, s/z)도 넣는다.
- * 철자 오류가 실제로 그 지점에서 난다.
+ * 철자 오류가 실제로 그 지점에서 난다. 러시아어도 같다 — 세로줄이 늘어선
+ * 글자(и·н·п)와 강세 없이 뭉개지는 모음(а·о)이 오류가 나는 자리다.
  */
 const CONFUSABLE: Record<string, string[]> = {
   // 가타카나
@@ -173,6 +174,43 @@ const CONFUSABLE: Record<string, string[]> = {
   资: ['姿', '次', '咨'],
   件: ['伟', '住', '付'],
   夹: ['头', '买', '实'],
+
+  // 키릴 — 모양이 닮았거나 소리가 겹치는 짝.
+  // 러시아어 철자 오류는 두 곳에서 난다. 세로줄이 늘어선 글자(и·н·п)를 헷갈리는
+  // 것과, 강세 없는 모음이 뭉개져 들리는 대로 적는 것(корова를 карова로)이다.
+  а: ['о', 'я', 'е'],
+  б: ['в', 'ь', 'п'],
+  в: ['б', 'ь', 'ф'],
+  г: ['т', 'к', 'р'],
+  д: ['л', 'т', 'б'],
+  е: ['ё', 'и', 'э'],
+  ё: ['е', 'ю', 'о'],
+  ж: ['ш', 'х', 'з'],
+  з: ['э', 'с', 'ж'],
+  и: ['й', 'н', 'п'],
+  й: ['и', 'ц', 'н'],
+  к: ['ж', 'х', 'г'],
+  л: ['д', 'м', 'я'],
+  м: ['л', 'н', 'ш'],
+  н: ['п', 'и', 'м'],
+  о: ['а', 'с', 'е'],
+  п: ['н', 'и', 'б'],
+  р: ['ф', 'г', 'в'],
+  с: ['о', 'е', 'з'],
+  т: ['г', 'д', 'п'],
+  у: ['ч', 'ц', 'ю'],
+  ф: ['р', 'в', 'ю'],
+  х: ['ж', 'к', 'у'],
+  ц: ['щ', 'ш', 'ч'],
+  ч: ['у', 'ц', 'ш'],
+  ш: ['щ', 'ц', 'ж'],
+  щ: ['ш', 'ц', 'ч'],
+  ъ: ['ь', 'ы', 'б'],
+  ы: ['ь', 'ъ', 'б'],
+  ь: ['ъ', 'ы', 'б'],
+  э: ['з', 'е', 'с'],
+  ю: ['ё', 'у', 'ф'],
+  я: ['а', 'л', 'е'],
 }
 
 /** 문자 체계별 예비 풀. 닮은 글자가 부족할 때만 쓴다. */
@@ -180,6 +218,8 @@ const HIRAGANA = [...'あいうえおかきくけこさしすせそたちつて�
 const KATAKANA = [...'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲ']
 
 const LATIN = [...'abcdefghijklmnopqrstuvwxyz']
+
+const CYRILLIC = [...'абвгдеёжзийклмнопрстуфхцчшщъыьэюя']
 
 /**
  * 한자 예비 풀. 닮은 짝이 모자랄 때만 쓴다.
@@ -190,6 +230,7 @@ const LATIN = [...'abcdefghijklmnopqrstuvwxyz']
 const HANZI = [...'一二三人入八大天木本水火土工山口日月目白自田电车门问包花茶书钟鱼鸟牛午手千干王主生年生半个中的了在有我你他好不上下左右前后']
 
 const isKatakana = (ch: string) => ch >= '゠' && ch <= 'ヿ'
+const isCyrillic = (ch: string) => /\p{Script=Cyrillic}/u.test(ch)
 // 발음 부호가 붙은 글자도 라틴 문자다 — código · écran · reçu
 const isLatin = (ch: string) => /\p{Script=Latin}/u.test(ch)
 /** 후보를 찾을 때만 부호를 벗긴다. ó 의 닮은 글자는 o 의 것과 같다 */
@@ -200,7 +241,7 @@ const isHanzi = (ch: string) => ch >= '\u4e00' && ch <= '\u9fff'
 
 /** 이 글자에 빈칸을 뚫어도 되는지. 닮은 오답을 깔 수 있는 문자 체계만 허용한다 */
 export const blankableChar = (ch: string) =>
-  isLatin(ch) || isHiragana(ch) || isKatakana(ch) || isHanzi(ch)
+  isLatin(ch) || isCyrillic(ch) || isHiragana(ch) || isKatakana(ch) || isHanzi(ch)
 
 /**
  * 빈칸을 뚫어도 되는 단어인지.
@@ -213,7 +254,15 @@ export const blankable = (text: string) =>
 
 /** 같은 문자 체계 안에서만 고른다. 가나 문제에 알파벳이 섞이면 답이 보인다 */
 const poolFor = (char: string) =>
-  isLatin(char) ? LATIN : isHanzi(char) ? HANZI : isKatakana(char) ? KATAKANA : HIRAGANA
+  isLatin(char)
+    ? LATIN
+    : isCyrillic(char)
+      ? CYRILLIC
+      : isHanzi(char)
+        ? HANZI
+        : isKatakana(char)
+          ? KATAKANA
+          : HIRAGANA
 
 /**
  * `char`의 오답 후보 `count`개.
