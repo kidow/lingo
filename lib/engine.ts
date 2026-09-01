@@ -48,6 +48,15 @@ export const DISTANCE = {
   wrong: 2,
 } as const
 
+/**
+ * 사다리 꼭대기에서 이만큼 연속으로 맞히면 그 세션 동안 예약을 놓아준다.
+ *
+ * 4인 이유는 꼭대기(rung 3)에 닿는 데 정답 세 번이 들고, 거기서 **한 번 더**
+ * 맞혀야 "오늘은 됐다"고 볼 수 있기 때문이다. 그 아래에서 놓아주면 방금 처음
+ * 맞힌 낱말이 세션에서 사라진다.
+ */
+export const SETTLED_STREAK = 4
+
 /** 매 카드마다 이 확률로 새 단어를 꽂는다. 조건부가 아니라 고정 비율이다 */
 export const NEW_RATE = 0.15
 /** 최근 이만큼은 다시 뽑지 않는다 */
@@ -286,6 +295,21 @@ export function recordAnswer(
       ? DISTANCE.streak
       : DISTANCE.correct
 
+  /**
+   * 사다리를 다 오르고 내리 맞히는 카드는 **예약하지 않는다.**
+   *
+   * 예약 큐는 뽑기의 1순위라 가중치를 통째로 건너뛴다. 그래서 맞힐 때마다
+   * 다시 예약하면 꼭대기에 앉은 낱말이 20장마다 **영원히** 돌아온다 — 맞혀도
+   * 한 글자 카드가 계속 나오던 이유가 이것이었다. 예약은 아직 배우는 중인
+   * 카드를 한 세션 안에 다시 만나게 하려는 장치이고, 그 위의 재등장 간격은
+   * 날짜 단위라 FSRS가 정한다. 놓아주면 회상확률이 1에 가까워 가중치가
+   * 바닥(0.02)에 붙고, 하루가 지나 확률이 떨어지면 저절로 다시 올라온다.
+   */
+  const settled = correct && rung === RUNG_MAX && streak >= SETTLED_STREAK
+  const reservations = { ...state.reservations }
+  if (settled) delete reservations[slug]
+  else reservations[slug] = state.cursor + distance
+
   return {
     ...state,
     progress: {
@@ -295,6 +319,6 @@ export function recordAnswer(
         [slug]: { rung, streak, fsrs: storeCard(graded.card) },
       },
     },
-    reservations: { ...state.reservations, [slug]: state.cursor + distance },
+    reservations,
   }
 }
