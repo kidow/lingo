@@ -18,8 +18,10 @@ import {
   buildChoice,
   buildCloze,
   buildIntro,
+  buildListen,
   canBlank,
   canCloze,
+  canListen,
   type Question,
 } from './quiz.ts'
 
@@ -165,8 +167,9 @@ export function weightOf(entry: Entry, progress: Progress, now: number): number 
  * rung이 카드 종류를 정한다.
  *
  * 못 만드는 카드는 **재인으로 떨어뜨린다.** 상황 표현은 예문이 없어 문맥
- * 칸을 못 만들고, 한 글자짜리 낱말은 철자 칸을 못 만든다 — 그런 카드도
- * 복습은 돌아야 하므로 만들 수 있는 것 중 가장 가까운 것을 낸다.
+ * 칸을 못 만들고, 한 글자짜리 낱말은 철자 칸을 못 만들며, 발음이 없는 낱말은
+ * 듣기 칸을 못 만든다 — 그런 카드도 복습은 돌아야 하므로 만들 수 있는 것 중
+ * 가장 가까운 것을 낸다.
  */
 export function questionFor(entry: Entry, state: EngineState, entries: Entry[]): Question {
   const card = state.progress.cards[entry.concept.slug]
@@ -176,6 +179,10 @@ export function questionFor(entry: Entry, state: EngineState, entries: Entry[]):
   if (rung === RUNG_INTRO) return buildIntro(entry)
   if (rung === RUNG_BLANK && canBlank(entry)) return buildBlank(entry, attempt)
   if (rung >= RUNG_CLOZE && canCloze(entry)) return buildCloze(entry, entries, attempt)
+
+  // 재인 칸은 두 모습으로 번갈아 나온다. 사다리를 늘리지 않는 이유는 듣기가
+  // 더 어려운 단계가 아니라 **같은 재인을 다른 감각으로 하는 것**이기 때문이다
+  if (attempt % 2 === 1 && canListen(entry)) return buildListen(entry, entries, attempt)
   return buildChoice(entry, entries, attempt)
 }
 

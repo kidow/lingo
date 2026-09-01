@@ -30,7 +30,7 @@ function entry(slug: string, reading: string, category: Category = 'noun'): Entr
     image_prompt: 'x',
     words: { ja: { term: slug, reading } },
   }
-  return { concept, word: concept.words.ja!, answer: reading }
+  return { concept, word: concept.words.ja!, lang: 'ja', answer: reading }
 }
 
 /** 예문이 있는 항목. 문맥 칸(예문 빈칸)은 예문이 있어야 만들어진다 */
@@ -236,7 +236,8 @@ test('예문이 없으면 문맥 칸을 못 만들어 재인에 머문다', () =
   let state = introduced(initialState(), 'cat')
   state = recordAnswer(state, 'cat', true, NOW)
   assert.equal(state.progress.cards.cat.rung, RUNG_CLOZE)
-  assert.equal(questionFor(cat, state, ENTRIES).kind, 'choice')
+  // 재인 칸은 그림 보기와 듣기 두 모습으로 나온다. 문맥 칸만 아니면 된다
+  assert.ok(['choice', 'listen'].includes(questionFor(cat, state, ENTRIES).kind))
 })
 
 test('읽기가 한 글자면 빈칸을 못 만들어 재인에 머문다', () => {
@@ -299,7 +300,36 @@ test('상황 표현은 빈칸 칸으로 올라가지 않는다', () => {
   let state = introduced(initialState(), 'check-please')
   state = recordAnswer(state, 'check-please', true, NOW)
   const q = questionFor(scene, state, entries)
-  assert.equal(q.kind, 'choice')
+  assert.ok(['choice', 'listen'].includes(q.kind), '빈칸도 문맥도 아니다')
+})
+
+test('재인 칸은 그림 보기와 듣기를 번갈아 낸다', () => {
+  const cat = ENTRIES[0]
+  let state = introduced(initialState(), 'cat')
+  const kinds: string[] = []
+  for (let i = 0; i < 4; i += 1) {
+    kinds.push(questionFor(cat, state, ENTRIES).kind)
+    // 오답으로 되돌려 rung을 재인에 묶어 둔 채 회차만 올린다
+    state = recordAnswer(state, 'cat', i % 2 === 0, NOW + i * DAY)
+    state = { ...state, progress: { ...state.progress,
+      cards: { ...state.progress.cards, cat: { ...state.progress.cards.cat, rung: RUNG_CHOICE } } } }
+  }
+  assert.ok(kinds.includes('choice'), '그림 보기가 한 번은 나온다')
+  assert.ok(kinds.includes('listen'), '듣기가 한 번은 나온다')
+})
+
+test('듣기 카드는 그림 넷을 보기로 깐다', () => {
+  const cat = ENTRIES[0]
+  let state = introduced(initialState(), 'cat')
+  state = recordAnswer(state, 'cat', false, NOW) // reps 1 → 홀수 회차
+  state = { ...state, progress: { ...state.progress,
+    cards: { ...state.progress.cards, cat: { ...state.progress.cards.cat, rung: RUNG_CHOICE } } } }
+  const q = questionFor(cat, state, ENTRIES)
+  assert.equal(q.kind, 'listen')
+  if (q.kind !== 'listen') return
+  assert.equal(q.options.length, 4)
+  assert.ok(q.options.some((o) => o.concept.slug === 'cat'), '정답이 보기에 있다')
+  assert.equal(new Set(q.options.map((o) => o.concept.slug)).size, 4, '보기에 중복이 없다')
 })
 
 /* ── 가중치 ──────────────────────────────────────────────────────── */

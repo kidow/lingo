@@ -58,6 +58,30 @@ function missing(lang: Language) {
 
 const line = (n: number) => '─'.repeat(n)
 
+/**
+ * 발음이 없는 자리를 `lib/audio-have.ts`에 적는다.
+ *
+ * 앱은 정적 내보내기라 도는 중에 파일 존재를 물어볼 서버가 없다. 듣기 카드가
+ * 소리 없는 문제를 내지 않으려면 **빌드 때 알고 있어야** 한다. 없는 것만 적는
+ * 이유는 있는 것을 다 적으면 20,671줄이 번들에 실리기 때문이다.
+ */
+function manifest() {
+  const gone: string[] = []
+  for (const { language } of TRACKS)
+    for (const { slug } of missing(language)) gone.push(`${language}/${slug}`)
+  gone.sort()
+
+  const path = join('lib', 'audio-have.ts')
+  const source = readFileSync(path, 'utf8')
+  const body = gone.length === 0 ? '[]' : `[\n${gone.map((k) => `  '${k}',`).join('\n')}\n]`
+  const next = source.replace(
+    /export const AUDIO_MISSING: ReadonlySet<string> = new Set\([\s\S]*?\)\n/,
+    `export const AUDIO_MISSING: ReadonlySet<string> = new Set(${body})\n`,
+  )
+  writeFileSync(path, next)
+  console.log(`\n발음 없는 자리 ${gone.length}건을 ${path}에 적었습니다\n`)
+}
+
 function summary() {
   console.log(`\n발음 현황 — 없는 것만 만들면 된다\n${line(46)}`)
   for (const { label, language } of TRACKS) {
@@ -302,6 +326,7 @@ else if (command === 'make') {
   await make((rest[0] ?? 'ja') as Language, count, Number(rest[2] ?? 8))
 }
 else if (command === 'sync') sync()
+else if (command === 'manifest') manifest()
 else if (command === 'place') {
   const [lang, slug, file] = rest
   if (!lang || !slug || !file) fail('사용법: place <lang> <slug> <파일>')

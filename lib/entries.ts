@@ -13,6 +13,8 @@ import type { Category, Concept, Language, Word } from './types.ts'
 export type Entry = {
   concept: Concept
   word: Word
+  /** 어느 언어로 출제되는가. 발음 파일 자리를 여기서 찾는다 */
+  lang: Language
   /** 그 언어에서 정답으로 쓰는 문자열 */
   answer: string
 }
@@ -28,7 +30,7 @@ export function entriesFor(lang: Language, concepts: Concept[]): Entry[] {
     if (!word) continue
     const answer = answerOf(word, lang)
     if (!answer) continue
-    entries.push({ concept, word, answer })
+    entries.push({ concept, word, lang, answer })
   }
   return entries
 }
