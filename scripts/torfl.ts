@@ -54,28 +54,95 @@ async function page(n: number): Promise<{ data: Row[]; count: number }> {
   return (await response.json()) as { data: Row[]; count: number }
 }
 
-/** 표기 → 등급. 낱말이 처음 나오는 등급 하나만 남긴다 */
-export async function torflLevels(): Promise<Map<string, TorflLevel>> {
+/**
+ * 한 표제어가 여러 표기를 담는다. 갈래로 펼친다.
+ *
+ * 목록은 사람이 읽는 책이라 한 줄에 여러 모양을 넣는다 — `зонт; зонтик`,
+ * `извини(те)`, `из, изо`, `лист 1`. 줄을 통째로 열쇠로 쓰면 그 낱말은
+ * 무엇과도 안 맞아 영영 "빠진 것"이 된다. 뜻을 짐작하는 것이 아니라
+ * **적힌 모양을 그대로 나누는** 일이라 안전하다.
+ */
+export function forms(headword: string): string[] {
+  const out = new Set<string>()
+  for (const raw of headword.split(/[;,]/)) {
+    const part = raw
+      .trim()
+      .replace(/[!?.]+$/, '')
+      // `лист 1`·`мир 1` — 같은 표기의 다른 뜻을 숫자로 가른다
+      .replace(/\s+\d+$/, '')
+      .trim()
+    if (!part) continue
+    // `извини(те)` — 괄호 안이 붙은 모양과 안 붙은 모양 둘 다다
+    const optional = /^(.+?)\((.+?)\)$/.exec(part)
+    if (optional) {
+      out.add(optional[1].trim())
+      out.add((optional[1] + optional[2]).trim())
+    } else out.add(part)
+  }
+  return [...out].filter(Boolean)
+}
+
+export type TorflEntry = { forms: string[]; level: TorflLevel }
+
+/**
+ * 목록 한 줄이 한 항목이다. 갈래는 그 안에 담는다.
+ *
+ * 분모를 세는 쪽은 이것을 쓴다. 펼친 표기로 세면 `зонт; зонтик` 한 줄이 두 개가
+ * 되어 목록이 실제보다 커진다.
+ */
+export async function torflEntries(): Promise<TorflEntry[]> {
+  const rows = await allRows()
+  const entries = new Map<string, TorflEntry>()
+  const rank = new Map<string, number>()
+  for (const row of rows) {
+    const lowest = lowestGrade(row)
+    if (!lowest || !row.word_rus) continue
+    const headword = bare(row.word_rus)
+    if (!rank.has(headword) || lowest < rank.get(headword)!) {
+      rank.set(headword, lowest)
+      entries.set(headword, { forms: forms(headword), level: GRADES[lowest] })
+    }
+  }
+  return [...entries.values()]
+}
+
+/** 목록 전체를 한 번만 받아 둔다. 한 쪽에 40줄씩 온다 */
+let cached: Row[] | null = null
+async function allRows(): Promise<Row[]> {
+  if (cached) return cached
   const first = await page(1)
   const rows = [...first.data]
   for (let n = 2; n <= Math.ceil(first.count / PER_PAGE); n += 1) rows.push(...(await page(n)).data)
+  cached = rows
+  return rows
+}
+
+/** 그 낱말이 처음 나오는 등급. 없으면 null */
+function lowestGrade(row: Row): 1 | 2 | 3 | 4 | null {
+  const grades = String(row.level_ids ?? '')
+    .split(',')
+    .map((x) => Number(x.trim()))
+    .filter((n): n is 1 | 2 | 3 | 4 => n >= 1 && n <= 4)
+  return grades.length === 0 ? null : (Math.min(...grades) as 1 | 2 | 3 | 4)
+}
+
+/** 표기 → 등급. 갈래를 펼쳐 열쇠로 둔다 */
+export async function torflLevels(): Promise<Map<string, TorflLevel>> {
+  const rows = await allRows()
 
   const levels = new Map<string, TorflLevel>()
   const rank = new Map<string, number>()
   for (const row of rows) {
     if (!row.word_rus) continue
-    const grades = String(row.level_ids ?? '')
-      .split(',')
-      .map((x) => Number(x.trim()))
-      .filter((n): n is 1 | 2 | 3 | 4 => n >= 1 && n <= 4)
-    if (grades.length === 0) continue
-
-    const lowest = Math.min(...grades) as 1 | 2 | 3 | 4
-    const term = bare(row.word_rus)
-    // 같은 표기가 뜻마다 따로 실린다. 낮은 등급이 이긴다 — 그 낱말을 처음 만나는 때다
-    if (!rank.has(term) || lowest < rank.get(term)!) {
-      rank.set(term, lowest)
-      levels.set(term, GRADES[lowest])
+    const lowest = lowestGrade(row)
+    if (!lowest) continue
+    // 한 줄이 여러 모양을 담는다. 갈래마다 열쇠를 둔다 (`forms`)
+    for (const term of forms(bare(row.word_rus))) {
+      // 같은 표기가 뜻마다 따로 실린다. 낮은 등급이 이긴다 — 그 낱말을 처음 만나는 때다
+      if (!rank.has(term) || lowest < rank.get(term)!) {
+        rank.set(term, lowest)
+        levels.set(term, GRADES[lowest])
+      }
     }
   }
   return levels
