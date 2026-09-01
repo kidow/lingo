@@ -22,7 +22,9 @@ export type LangStrategy = {
 }
 
 export const LANG: Record<Language, LangStrategy> = {
-  en: { answer: 'term', aside: [] },
+  // 영어는 적힌 대로 읽지 않는다 — `receipt`도 `colonel`도 그렇다. 참고줄에
+  // 로마자가 아니라 **발음기호**를 둔다. CMU 사전에서 받아 온다 (scripts/ipa.ts)
+  en: { answer: 'term', aside: ['romanization'] },
   ja: { answer: 'reading', aside: ['romanization', 'term'] },
   zh: { answer: 'term', aside: ['romanization'] },
   es: { answer: 'term', aside: [] },
@@ -43,8 +45,12 @@ export const LANG: Record<Language, LangStrategy> = {
  */
 
 /**
- * 영어는 참고줄이 없다. 표기가 곧 읽기라서 일본어처럼 두 형태로 갈라지지
- * 않는다. 발음기호를 넣을 수도 있지만 IPA는 초급자에게 오히려 장벽이다.
+ * 영어만 유럽 언어 셋과 갈린다. 스페인어·프랑스어·독일어는 철자와 소리가
+ * 규칙으로 이어져 표기를 보면 읽을 수 있지만, 영어는 그 규칙이 깨진 언어다.
+ * 그래서 TOEIC 카드만 참고줄에 발음기호를 단다 — JLPT가 읽기를 다는 자리다.
+ *
+ * IPA가 초급자에게 장벽이라는 반론이 있었지만, 없는 편이 더 나쁘다. 소리를
+ * 모른 채 외운 낱말은 들어도 못 알아듣는다. 사전에 없는 낱말은 비워 둔다.
  */
 
 export const LANGUAGES = Object.keys(LANG) as Language[]
