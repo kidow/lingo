@@ -5,12 +5,15 @@
 세션도, 오늘의 목표도, 결과 화면도 없다. 카드가 떠 있고 위로 밀면 다음 카드가 온다.
 숏폼을 빠르게 넘기는 습관을 그대로 학습 메커니즘으로 쓴다.
 
-트랙은 **TOEIC · JLPT · HSK · DELE · DELF · TELC** 여섯. 학습 대상은 언어마다 하나로
-고정한다 — 일본어는 **읽기(かな)**, 나머지는 표기다. 상단 헤더의 드롭다운으로 트랙을
-바꾸고 진도는 트랙별로 갈라진다.
+트랙은 **TOEIC · JLPT · HSK · DELE · DELF · TELC · TORFL** 일곱. 학습 대상은 언어마다
+하나로 고정한다 — 일본어는 **읽기(かな)**, 나머지는 표기다. 상단 헤더의 드롭다운으로
+트랙을 바꾸고 진도는 트랙별로 갈라진다.
 
-**개념은 트랙이 공유한다.** `cat` 그림 한 장을 여섯 트랙이 같이 쓴다 — 트랙을 더해도
+**개념은 트랙이 공유한다.** `cat` 그림 한 장을 일곱 트랙이 같이 쓴다 — 트랙을 더해도
 그려야 할 그림은 늘지 않는다.
+
+카드는 다섯 종이다 — 소개 · 재인(그림→낱말) · 듣기(소리→그림) · 문맥(예문 빈칸) ·
+단서 회상(철자 빈칸). 전부 객관적으로 채점된다.
 
 단어 목록은 로드맵이라 그림보다 앞서 쌓인다. **그림이 있는 개념만 피드에 나온다.**
 
@@ -29,7 +32,7 @@
 
 ```bash
 pnpm install
-pnpm dev
+pnpm dev      # http://localhost:5757
 ```
 
 ## 스크립트
@@ -43,6 +46,12 @@ pnpm build              # 정적 내보내기 → out/
 pnpm prompt [slug]      # 이미지 생성 프롬프트 출력
 pnpm image  [slug]      # .images/*.png → public/concepts/*.webp
 pnpm icons              # app/icon.svg → PWA·애플 아이콘
+
+pnpm coverage           # 시험 목록 대비 우리 위치
+pnpm levels [파일]       # JLPT·HSK·CEFR·TSL·TORFL 등급을 출처에서 채운다
+pnpm romanize [파일]     # ja·zh·ru 로마자
+pnpm ipa [파일]          # 영어 발음기호(IPA)
+pnpm audio              # 발음 현황. make/list/place/manifest
 ```
 
 `slug`를 생략하면 아직 결과물이 없는 개념에 대해서만 돈다.
@@ -57,7 +66,8 @@ pnpm icons              # app/icon.svg → PWA·애플 아이콘
 3. `pnpm prompt <slug>` 출력을 ImageGen에 넣어 1024 PNG를 만든다
 4. `.images/{slug}.png`에 두고 `pnpm image <slug>`
 5. **80×80으로 줄여도 알아볼 수 있는지 확인한다**
-6. 발음을 만들어 `public/audio/ja/{slug}.mp3`에 넣는다 ([AUDIO.md](AUDIO.md))
+6. `pnpm audio make <lang> <n>`으로 발음을 만든다 — 언어마다 하나씩 일곱 개다 ([AUDIO.md](AUDIO.md))
+7. `pnpm audio manifest` — 듣기 카드가 볼 목록을 다시 적는다
 7. 커밋
 
 발음은 없어도 학습이 돌아간다. 버튼이 비활성으로 남을 뿐이다.
