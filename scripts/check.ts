@@ -59,6 +59,18 @@ const perLanguage: Record<string, number> = {}
 const all: Concept[] = []
 let total = 0
 
+/**
+ * 빈칸 틀 — 예문에서 정답을 뚫고 남은 문장.
+ *
+ * 오답은 같은 주제 파일 · 같은 category에서 온다(`nearPool`). 그래서 그 안에서
+ * 두 낱말이 **같은 틀**을 쓰면 어느 쪽을 뽑아도 답이 된다 — `The car is in the ___.`가
+ * showroom과 garage 양쪽에 있으면 문항이 성립하지 않는다.
+ *
+ * 이건 겹치는 것만 세는 자리다. 겹치지 않아도 얇은 문장(`The ___ answered questions.`)은
+ * 여전히 사람이 읽어야 걸러진다 — 기계로 정할 수 있는 데까지만 본다.
+ */
+const frames: Record<string, Map<string, Set<string>>> = {}
+
 for (const file of files) {
   const path = join(CONTENT_DIR, file)
   if (loaderSource && !loaderSource.includes(`${CONTENT_DIR}/${file}`)) {
@@ -146,6 +158,12 @@ for (const file of files) {
               : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`,
           )
         // ja·zh·ru는 예문도 읽을 수 있어야 한다. pnpm romanize가 채운다
+        if (typeof example.text === 'string' && typeof answer === 'string' && example.text.includes(answer)) {
+          const key = `${file}|${c.category}|${example.text.split(answer).join('___')}`
+          const seen = (frames[lang] ??= new Map())
+          if (!seen.has(key)) seen.set(key, new Set())
+          seen.get(key)?.add(slug)
+        }
         if ((lang === 'ja' || lang === 'zh' || lang === 'ru') && !example.romanization)
           warn(`${where} — ${lang}.${at}에 로마자가 없습니다. pnpm romanize를 돌리세요`)
       })
@@ -191,6 +209,16 @@ if (existsSync(audioRoot)) {
 for (const [category, count] of Object.entries(perCategory)) {
   if (count > 0 && count < MIN_PER_CATEGORY)
     warn(`category "${category}" 개념이 ${count}개뿐입니다 — 오답 보기를 전체 풀에서 뽑게 됩니다`)
+}
+
+// 겹치는 빈칸 틀. 같은 주제·같은 품사에서 두 낱말이 같은 문장을 쓰면 답이 둘이다
+for (const [lang, seen] of Object.entries(frames)) {
+  const clashes = [...seen.values()].filter((slugs) => slugs.size > 1)
+  if (clashes.length === 0) continue
+  const sample = [...seen.entries()].find(([, slugs]) => slugs.size > 1)
+  notes.push(
+    `${lang} — 겹치는 빈칸 틀 ${clashes.length}개 (예: ${[...(sample?.[1] ?? [])].join(', ')})`,
+  )
 }
 
 const line = (n: number) => '─'.repeat(n)
