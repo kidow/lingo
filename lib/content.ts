@@ -32,29 +32,36 @@ import type { Concept, ContentFile } from './types.ts'
  *
  * 파일을 추가하면 여기 배열에도 넣는다. 정적 import여야 번들러가 잡는다.
  */
-const FILES: ContentFile[] = [
-  action as ContentFile,
-  body as ContentFile,
-  city as ContentFile,
-  clothes as ContentFile,
-  everyday as ContentFile,
-  number as ContentFile,
-  office as ContentFile,
-  quality as ContentFile,
-  scene as ContentFile,
-  school as ContentFile,
-  sport as ContentFile,
-  time as ContentFile,
-  transport as ContentFile,
-  travel as ContentFile,
-  family as ContentFile,
-  food as ContentFile,
-  home as ContentFile,
-  job as ContentFile,
-  nature as ContentFile,
+const FILES: [topic: string, file: ContentFile][] = [
+  ['action', action as ContentFile],
+  ['body', body as ContentFile],
+  ['city', city as ContentFile],
+  ['clothes', clothes as ContentFile],
+  ['everyday', everyday as ContentFile],
+  ['number', number as ContentFile],
+  ['office', office as ContentFile],
+  ['quality', quality as ContentFile],
+  ['scene', scene as ContentFile],
+  ['school', school as ContentFile],
+  ['sport', sport as ContentFile],
+  ['time', time as ContentFile],
+  ['transport', transport as ContentFile],
+  ['travel', travel as ContentFile],
+  ['family', family as ContentFile],
+  ['food', food as ContentFile],
+  ['home', home as ContentFile],
+  ['job', job as ContentFile],
+  ['nature', nature as ContentFile],
 ]
 
-export const CONCEPTS: Concept[] = FILES.flatMap((file) => file.concepts)
+/**
+ * 파일 이름을 개념에 붙여 둔다. JSON에 넣지 않는 이유는 그것이 **콘텐츠가
+ * 아니라 배치 정보**여서다 — 개념을 다른 파일로 옮기면 값이 따라 바뀌어야
+ * 하는데, JSON에 적어 두면 두 곳을 맞춰야 한다.
+ */
+export const CONCEPTS: Concept[] = FILES.flatMap(([topic, file]) =>
+  file.concepts.map((concept) => ({ ...concept, topic })),
+)
 
 /** 그 트랙에서 출제 가능한 목록. 규칙은 lib/entries.ts가 갖는다 */
 export function entriesFor(track: TrackId, concepts: Concept[] = CONCEPTS): Entry[] {

@@ -1,4 +1,4 @@
-import { distractorPool, type Entry } from './entries.ts'
+import { distractorPool, nearPool, type Entry } from './entries.ts'
 import { blankable, blankableChar, pickConfusables } from './confusables.ts'
 import { hashString, makeRng, sample, shuffled } from './random.ts'
 import { hasAudio } from './audio-have.ts'
@@ -119,14 +119,15 @@ export function canCloze(entry: Entry): boolean {
  * `receipt`의 `p`를 맞히는 것과 "영수증을 주세요"에서 `receipt`를 고르는 것은
  * 다른 일이다. 이 칸은 **문장 안에서 쓰이는 자리**를 묻는다.
  *
- * 오답은 재인 칸과 같은 풀(같은 category)에서 뽑는다. 그래야 문맥을 읽지 않고
- * 품사만 보고 걸러내지 못한다.
+ * 오답은 **같은 주제 파일**에서 먼저 뽑는다 (`nearPool`). category만 보면
+ * `The ___ is clean.`에 `downstairs`가 섞이는데, 문법으로는 들어가지만 문맥으로는
+ * 어울리지 않아 문장을 읽지 않고도 걸러진다.
  */
 export function buildCloze(entry: Entry, entries: Entry[], attempt = 0): ClozeQuestion {
   const rng = makeRng(seedOf(entry, 'cloze', attempt))
   const text = entry.word.example?.text ?? ''
   const at = text.indexOf(entry.answer)
-  const pool = distractorPool(entry, entries)
+  const pool = nearPool(entry, entries)
   const distractors = sample(pool, CHOICE_COUNT - 1, rng).map((e) => e.answer)
   return {
     kind: 'cloze',

@@ -232,9 +232,12 @@ function ListenCard({ question, lang, onAnswer, first }: { question: ListenQuest
                   onAnswer?.(isAnswer)
                 }}
                 // 정사각으로 깔면 넷이 세로를 다 먹어 모르겠어요가 접힌 자리로
-                // 밀린다. 4:3이면 그림은 그대로 읽히면서 80px이 남는다
+                // 밀린다. 4:3이면 그림은 그대로 읽히면서 80px이 남고, 세로가
+                // 700px 아래인 화면에서는 3:2로 더 눕힌다 — 320×568에서 4:3은
+                // 10px이 모자랐다
                 className={`
-                  relative aspect-[4/3] overflow-hidden rounded-ctrl border transition
+                  relative aspect-[4/3] [@media(max-height:700px)]:aspect-[3/2]
+                  overflow-hidden rounded-ctrl border transition
                   active:scale-[.985] disabled:active:scale-100
                   ${verdictClass(answered, isAnswer, option.concept.slug === picked)}
                 `}

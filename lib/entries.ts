@@ -74,6 +74,30 @@ export function distractorPool(entry: Entry, entries: Entry[]): Entry[] {
   return entries.filter(other)
 }
 
+/**
+ * 문맥 카드의 오답 풀. 같은 주제 파일에서 먼저 찾는다.
+ *
+ * category만 보면 `The ___ is clean.`에 `downstairs`가 섞인다 — 문법으로는
+ * 들어가지만 문맥으로는 어울리지 않아 **문장을 읽지 않고도** 걸러진다.
+ * 같은 주제(집·음식·교통)에서 뽑으면 넷이 다 그럴듯해져 문장을 읽어야 풀린다.
+ *
+ * 주제가 없거나(구버전 데이터) 셋을 못 채우면 넓은 풀로 돌아간다 — 문항이
+ * 안 만들어지는 것보다 오답이 헐거운 편이 낫다.
+ */
+export function nearPool(entry: Entry, entries: Entry[]): Entry[] {
+  const topic = entry.concept.topic
+  if (!topic) return distractorPool(entry, entries)
+
+  const near = entries.filter(
+    (candidate) =>
+      candidate.concept.slug !== entry.concept.slug &&
+      candidate.answer !== entry.answer &&
+      candidate.concept.topic === topic &&
+      candidate.concept.category === entry.concept.category,
+  )
+  return near.length >= 3 ? near : distractorPool(entry, entries)
+}
+
 export function countByCategory(entries: Entry[]): Record<Category, number> {
   const counts: Record<Category, number> = { noun: 0, verb: 0, adjective: 0, scene: 0 }
   for (const entry of entries) counts[entry.concept.category] += 1

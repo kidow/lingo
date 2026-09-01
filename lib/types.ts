@@ -63,6 +63,13 @@ export type Concept = {
   /** 재생성용. IMAGE_STYLE.md의 STYLE_PROMPT는 포함하지 않는다 */
   image_prompt: string
   words: Partial<Record<Language, Word>>
+  /**
+   * 어느 주제 파일에서 왔는가. **JSON에는 없다** — 로더가 파일 이름을 붙인다
+   * (lib/content.ts). 파일은 학습자에게 보이는 구분이 아니라 이미지 작업을
+   * 몰아서 하는 단위지만(§4), 문맥 카드의 오답을 고를 때는 쓸모가 있다 —
+   * 같은 주제에서 뽑아야 문맥을 읽어야 풀린다.
+   */
+  topic?: string
 }
 
 /** content/*.json 한 파일의 모양 */
