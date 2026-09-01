@@ -116,6 +116,23 @@ export function isListenTurn(entry: Entry, attempt: number): boolean {
   return canListen(entry) && hashString(`${entry.concept.slug}:turn:${attempt}`) % 2 === 1
 }
 
+/**
+ * 철자 칸에서 이번 회차를 문맥으로 낼까.
+ *
+ * 철자 칸은 사다리 꼭대기라 위로 갈 데가 없다. 그래서 한 낱말이 거기 앉으면
+ * 남은 복습이 **전부** 한 글자 빈칸이 된다 — 뚫는 자리는 돌아가지만 카드
+ * 모양은 끝까지 하나다.
+ *
+ * 세 번에 한 번만 문맥으로 바꾼다. 절반씩 가르지 않는 이유는 문맥이 한 칸
+ * 아래이기 때문이다 — 꼭대기에서 훈련해야 할 것은 회상이고, 변화는 지루함을
+ * 깨는 만큼만 있으면 된다.
+ *
+ * 듣기와 다른 씨앗을 쓴다. 같은 씨앗이면 두 갈림이 붙어 다닌다.
+ */
+export function isClozeTurn(entry: Entry, attempt: number): boolean {
+  return hashString(`${entry.concept.slug}:cloze-turn:${attempt}`) % 3 === 0
+}
+
 export function canListen(entry: Entry): boolean {
   return hasAudio(entry.concept.slug, entry.lang)
 }

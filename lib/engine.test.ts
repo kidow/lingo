@@ -332,6 +332,29 @@ test('오답 보기는 같은 category에서 나온다', () => {
   assert.ok(!q.options.includes('たべる'))
 })
 
+test('철자 칸에도 문맥이 섞인다 — 꼭대기가 한 모양으로 굳지 않는다', () => {
+  const cat = entryWithExample('cat', 'ねこ')
+  const entries = [cat, ...ENTRIES.slice(1)]
+  let state = introduced(initialState(), 'cat')
+  for (let i = 0; i < 3; i += 1) state = recordAnswer(state, 'cat', true, NOW + i * DAY)
+  assert.equal(state.progress.cards.cat.rung, RUNG_BLANK)
+
+  // 회차만 바꿔 가며 어떤 카드가 나오는지 본다
+  const kinds = new Set<string>()
+  for (let reps = 0; reps < 30; reps += 1) {
+    const card = state.progress.cards.cat
+    const at: EngineState = {
+      ...state,
+      progress: {
+        ...state.progress,
+        cards: { ...state.progress.cards, cat: { ...card, fsrs: { ...card.fsrs, reps } } },
+      },
+    }
+    kinds.add(questionFor(cat, at, entries).kind)
+  }
+  assert.deepEqual(kinds, new Set(['blank', 'cloze']), '빈칸이 주고 문맥이 섞인다')
+})
+
 test('상황 표현은 빈칸 칸으로 올라가지 않는다', () => {
   const scene = entry('check-please', 'おかいけい おねがいします', 'scene')
   const entries = [scene, entry('order', 'ちゅうもん おねがいします', 'scene'), entry('help', 'たすけて', 'scene')]

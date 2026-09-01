@@ -21,6 +21,7 @@ import {
   buildListen,
   canBlank,
   canCloze,
+  isClozeTurn,
   isListenTurn,
   type Question,
 } from './quiz.ts'
@@ -186,7 +187,18 @@ export function questionFor(entry: Entry, state: EngineState, entries: Entry[]):
   const attempt = card?.fsrs.reps ?? 0
 
   if (rung === RUNG_INTRO) return buildIntro(entry)
-  if (rung === RUNG_BLANK && canBlank(entry)) return buildBlank(entry, attempt)
+
+  /**
+   * 철자 칸에는 문맥이 세 번에 한 번 끼어든다.
+   *
+   * 꼭대기는 위로 갈 데가 없어서 한 낱말이 거기 앉으면 남은 복습이 전부 한 글자
+   * 빈칸이었다. 아래 두 칸은 듣기와 번갈아 도는데 여기만 한 모양이었다.
+   * 듣기를 넣지 않는 것은 듣기가 재인 — 사다리에서 두 칸 아래이기 때문이다.
+   */
+  if (rung === RUNG_BLANK && canBlank(entry)) {
+    if (isClozeTurn(entry, attempt) && canCloze(entry)) return buildCloze(entry, entries, attempt)
+    return buildBlank(entry, attempt)
+  }
 
   /**
    * 듣기는 재인·문맥 두 칸에서 번갈아 끼어든다.
