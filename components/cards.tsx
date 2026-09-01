@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
-import { answerSize, optionBox, optionColumns, optionSize } from '@/lib/fit'
+import { answerSize, blankRow, optionBox, optionColumns, optionSize } from '@/lib/fit'
 import { asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import type { BlankQuestion, ChoiceQuestion, IntroQuestion, Question } from '@/lib/quiz'
@@ -175,6 +175,8 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
   const { entry, chars, holeIndex, keys } = question
   const { concept, answer } = entry
   const answerChar = chars[holeIndex]
+  // 낱말이 길면 글자를 줄이고 줄바꿈을 허용한다 (lib/fit.ts)
+  const { row, cell } = blankRow(chars)
   const [picked, setPicked] = useState<string | null>(null)
   const answered = picked !== null
   const correct = picked === answerChar
@@ -186,12 +188,12 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
       </CardImage>
 
       <CardSheet>
-        <div className="flex items-baseline justify-center gap-2.5">
+        <div className={`flex flex-wrap items-baseline justify-center ${row}`}>
           {chars.map((char, i) => {
             const hole = i === holeIndex
             if (!hole)
               return (
-                <span key={i} className="min-w-[34px] text-center font-jp text-[38px] font-bold">
+                <span key={i} className={`${cell} text-center font-jp font-bold`}>
                   {char}
                 </span>
               )
@@ -201,7 +203,7 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
                 // 답하기 전에는 정답을 DOM에 두지 않는다. 투명하게 칠하기만 하면
                 // 스크린리더가 읽고 복사도 된다
                 className={`
-                  min-w-[34px] border-b-[3px] text-center font-jp text-[38px] font-bold
+                  ${cell} border-b-[3px] text-center font-jp font-bold
                   ${!answered ? 'border-accent' : correct ? 'border-ok text-ok' : 'border-err text-err'}
                 `}
               >
