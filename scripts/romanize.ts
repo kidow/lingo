@@ -373,7 +373,25 @@ for (const name of files) {
   let touched = 0
   for (const concept of data.concepts) {
     for (const [lang, word] of Object.entries(concept.words) as [string, Record<string, any>][]) {
-      const example = word.example
+      // 예문은 한 줄일 수도 여러 줄일 수도 있다 (lib/types.ts). 전부 채운다
+      const sentences: Record<string, any>[] = word.examples?.length
+        ? word.examples
+        : word.example
+          ? [word.example]
+          : []
+      for (const example of sentences) {
+        const value =
+          lang === 'ja' ? romajiSentence(example.text, known)
+          : lang === 'zh' ? pinyinSentence(example.text, dict)
+          : lang === 'ru' ? translit(example.text)
+          : undefined
+        if (value && example.romanization !== value) {
+          example.romanization = value
+          touched += 1
+        }
+      }
+
+      const example = sentences[0]
       if (!example?.text && lang !== 'ru') continue
       if (!example?.text && lang === 'ru') {
         if (word.term && word.romanization !== translit(word.term)) {
@@ -381,15 +399,6 @@ for (const name of files) {
           touched += 1
         }
         continue
-      }
-      const value =
-        lang === 'ja' ? romajiSentence(example.text, known)
-        : lang === 'zh' ? pinyinSentence(example.text, dict)
-        : lang === 'ru' ? translit(example.text)
-        : undefined
-      if (value && example.romanization !== value) {
-        example.romanization = value
-        touched += 1
       }
       // 러시아어는 낱말 자체도 키릴이라 참고줄에 로마자가 필요하다 (lib/lang.ts)
       if (lang === 'ru' && word.term) {

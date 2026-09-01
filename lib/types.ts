@@ -50,9 +50,19 @@ export type Word = {
    * 로마자 예문은 ja·zh만 갖는다. `pnpm romanize`가 규칙으로 채운다 —
    * 손으로 쓰지 않는다 (scripts/romanize.ts).
    */
-  example?: { text: string; ko: string; romanization?: string }
+  /**
+   * 예문. 한 줄이면 `example`, 여럿이면 `examples`다.
+   *
+   * 배열로 갈아엎지 않고 **얹는다.** 이미 18,000줄이 `example`에 들어 있고
+   * 로마자·검증·카드가 모두 그 필드를 본다 — 통째로 옮기는 마이그레이션이
+   * 곧 위험이다. 읽는 쪽은 `examplesOf()` 하나로 둘을 합쳐 본다.
+   */
+  example?: Example
+  examples?: Example[]
   attributes?: Attributes
 }
+
+export type Example = { text: string; ko: string; romanization?: string }
 
 export type Concept = {
   /** 파일명이자 식별자. ^[a-z0-9-]+$ */
