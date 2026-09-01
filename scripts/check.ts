@@ -15,6 +15,9 @@ import { clozeAt } from '../lib/quiz.ts'
 import { TRACKS } from '../lib/track.ts'
 import type { Concept, Language } from '../lib/types.ts'
 
+/** 굽은 아포스트로피. 곧은 '와 섞이면 표제어와 예문이 어긋난다 */
+const CURLY_APOSTROPHE = '\u2019'
+
 const CONTENT_DIR = 'content'
 const PUBLIC_DIR = 'public'
 const SLUG_RE = /^[a-z0-9-]+$/
@@ -129,6 +132,10 @@ for (const file of files) {
       }
       perLanguage[lang] = (perLanguage[lang] ?? 0) + 1
       if (!word.term) fail(where, `${lang}.term 누락`)
+      // 아포스트로피는 곧은 것 하나로 쓴다. 두 모양이 섞이면 표제어와 예문이
+      // 다른 글자를 쓰게 되어 문맥 카드가 낱말을 못 찾는다 (`aujourd'hui`)
+      if (typeof word.term === 'string' && word.term.includes(CURLY_APOSTROPHE))
+        fail(where, `${lang}.term에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
       // 정답으로 쓸 필드가 비면 그 언어에서 출제 불가다
       if (!word[strategy.answer])
         fail(where, `${lang}.${strategy.answer} 누락 — 이 언어의 정답 필드입니다`)
@@ -157,6 +164,8 @@ for (const file of files) {
               ? `${where} — ${lang}.${at}의 "${answer}"가 긴 낱말 안에만 있습니다. 빈칸이 낱말을 자릅니다`
               : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`,
           )
+        if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
+          fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
         // ja·zh·ru는 예문도 읽을 수 있어야 한다. pnpm romanize가 채운다
         if (typeof example.text === 'string' && typeof answer === 'string' && example.text.includes(answer)) {
           const key = `${file}|${c.category}|${example.text.split(answer).join('___')}`
