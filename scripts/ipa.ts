@@ -27,7 +27,14 @@ const CONTENT_DIR = 'content'
 const DICT_URL = 'https://raw.githubusercontent.com/cmusphinx/cmudict/master/cmudict.dict'
 
 /**
- * ARPAbet → IPA. 강세 숫자(0·1·2)는 따로 떼어 ˈ와 ˌ로 옮긴다.
+ * ARPAbet → IPA. 강세 숫자 1만 떼어 ˈ로 옮긴다.
+ *
+ * **2단계는 버린다.** 사전이 2를 "제2강세"가 아니라 "안 뭉개진 모음"에 가깝게
+ * 매겨 놓아서 믿을 수 없다 — `borrow`와 `shadow`는 2인데 `narrow`·`yellow`·
+ * `window`는 0이고, 아무 사전도 2강세를 달지 않는 `hospital`에 2가 붙어 있다.
+ * 진짜 제2강세(`laptop`)와 잡음(`hospital`)을 우리 쪽에서 가를 방법이 없으므로,
+ * 반은 틀린 표지를 다느니 1강세만 남긴다. 학습자 사전(케임브리지·옥스퍼드)도
+ * 대개 2강세를 적지 않고, 실제 리듬은 발음 버튼이 들려준다.
  *
  * 모음은 미국식 사전에 맞춘다 — `ɑ`(father)와 `ɔ`(thought)를 가른다.
  *
@@ -70,9 +77,9 @@ const ONSETS = new Set([
  * 강세 부호는 **음절 앞**에 붙는다 — `ˈkɑfi`이지 `kˈɑfi`가 아니다.
  *
  * 사전은 강세를 모음에 매겨 두므로 그 모음 앞의 자음을 거슬러 올라가 음절
- * 머리를 찾는다. 다만 **끝까지 거슬러 올라가면 안 된다.** `EH1 R P AO2 R T`에서
- * `rp`를 통째로 머리로 잡으면 `ˈɛˌrpɔrt`가 되는데, `r`은 앞 음절 `ɛr`의 꼬리다.
- * 올릴 수 있는 뭉치는 `ONSETS`가 정한다 — 실제 값은 `ˈɛrˌpɔrt`가 된다.
+ * 머리를 찾는다. 다만 **끝까지 거슬러 올라가면 안 된다.** `K AH0 N V IY1 N Y AH0 N T`에서
+ * `nv`를 통째로 머리로 잡으면 `kəˈnvinjənt`가 되는데, `n`은 앞 음절 `kən`의 꼬리다.
+ * 올릴 수 있는 뭉치는 `ONSETS`가 정한다 — 실제 값은 `kənˈvinjənt`가 된다.
  */
 function toIpa(arpabet: string[]): string | null {
   const out: string[] = []
@@ -84,7 +91,7 @@ function toIpa(arpabet: string[]): string | null {
     const sound = schwa(symbol, stress) ?? ARPA[symbol]
     if (!sound) return null
     if (isVowel(token)) {
-      const mark = stress === '1' ? 'ˈ' : stress === '2' ? 'ˌ' : ''
+      const mark = stress === '1' ? 'ˈ' : ''
       if (mark) out.splice(headOf(out, onset), 0, mark)
       out.push(sound)
       onset = out.length // 다음 음절의 머리는 이 모음 바로 뒤부터다
