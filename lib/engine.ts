@@ -166,10 +166,10 @@ export function weightOf(entry: Entry, progress: Progress, now: number): number 
 /**
  * rung이 카드 종류를 정한다.
  *
- * 못 만드는 카드는 **재인으로 떨어뜨린다.** 상황 표현은 예문이 없어 문맥
- * 칸을 못 만들고, 한 글자짜리 낱말은 철자 칸을 못 만들며, 발음이 없는 낱말은
+ * 못 만드는 카드는 **재인으로 떨어뜨린다.** 한 글자짜리 낱말은 철자 칸을 못
+ * 만들고, 상황 표현은 문장이라 철자 칸으로 올라가지 않으며, 발음이 없는 낱말은
  * 듣기 칸을 못 만든다 — 그런 카드도 복습은 돌아야 하므로 만들 수 있는 것 중
- * 가장 가까운 것을 낸다.
+ * 가장 가까운 것을 낸다. 상황 표현은 철자 칸에서 문맥 칸으로 내려앉는다.
  */
 export function questionFor(entry: Entry, state: EngineState, entries: Entry[]): Question {
   const card = state.progress.cards[entry.concept.slug]
@@ -183,10 +183,10 @@ export function questionFor(entry: Entry, state: EngineState, entries: Entry[]):
    * 듣기는 재인·문맥 두 칸에서 번갈아 끼어든다.
    *
    * 재인 칸에서는 **같은 재인을 다른 감각으로** 하려는 것이고, 문맥 칸에서는
-   * 이유가 하나 더 있다 — **같은 문장이 반복되는 것을 절반으로 줄인다.**
-   * 예문은 낱말당 하나뿐이라 문맥 카드를 다시 만나면 문장이 그대로다.
-   * 엔진을 3,000장 돌려 보면 문맥 카드 600장이 낱말 열댓 개에 몰리고 한
-   * 낱말이 최대 156번까지 나온다 — 그 절반을 듣기가 가져간다.
+   * 이유가 하나 더 있다 — **같은 문장이 반복되는 것을 줄인다.** 예문이 둘이면
+   * 회차로 돌아가지만 세 번째 회차에서 첫 문장이 되돌아온다. 엔진을 3,000장
+   * 돌려 보면 문맥 카드 600장이 낱말 열댓 개에 몰리고 한 낱말이 최대 156번까지
+   * 나온다 — 그 절반을 듣기가 가져간다.
    */
   const listenTurn = isListenTurn(entry, attempt)
 
