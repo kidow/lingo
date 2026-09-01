@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import { notFound } from 'next/navigation'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
 import { audioFile, audioPath, entriesFor, imagePath } from '@/lib/content'
+import { examplesOf } from '@/lib/entries'
 import { answerOf, asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import { TRACK_IDS, trackOf } from '@/lib/track'
@@ -42,7 +43,9 @@ export default function DebugPage() {
           aside: asideOf(word, language),
           meaning: concept.meaning_ko,
           partOfSpeech: word.part_of_speech,
-          example: word.example?.text,
+          // 예문은 `example`과 `examples` 두 모양이 있다. 손으로 첫 줄을 꺼내면
+          // 한쪽만 보게 되므로 카드가 쓰는 것과 같은 함수를 통해 읽는다
+          example: examplesOf(word)[0]?.text,
           imagePath: imagePath(concept.slug),
           hasImage: fileInfo(join('public', imagePath(concept.slug))) !== null,
           audioSize: audio?.size ?? null,
