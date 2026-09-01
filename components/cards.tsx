@@ -6,7 +6,7 @@ import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { answerSize, blankRow, optionBox, optionColumns, optionSize } from '@/lib/fit'
-import { examplesOf } from '@/lib/entries'
+import { examplesOf, type Entry } from '@/lib/entries'
 import { asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import type {
@@ -217,7 +217,7 @@ function ChoiceCard({ question, lang, onAnswer, first, pick }: { question: Choic
  * 곧장 뜻으로 간다.
  *
  * 위쪽 그림 자리에는 **소리 버튼만** 놓는다. 정답 그림을 띄워 놓으면 듣지 않고
- * 풀 수 있다. 답한 뒤에 그 자리에 정답 그림이 들어온다.
+ * 풀 수 있다. 답한 뒤에는 그 자리에 낱말과 뜻과 예문이 들어온다 (`ListenBrief`).
  */
 function ListenCard({ question, lang, onAnswer, first, pick }: { question: ListenQuestion } & Common) {
   const { entry, options } = question
@@ -231,7 +231,7 @@ function ListenCard({ question, lang, onAnswer, first, pick }: { question: Liste
     <FeedCard>
       <CardImage>
         {answered ? (
-          <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />
+          <ListenBrief entry={entry} lang={lang} correct={correct} gaveUp={gaveUp} />
         ) : (
           <div className="grid h-full place-items-center">
             {/* 답하기 전에는 이 버튼이 문제 전체다. 눌러 다시 들을 수 있고, 두 번째부터는 느리게 나온다 */}
@@ -289,10 +289,64 @@ function ListenCard({ question, lang, onAnswer, first, pick }: { question: Liste
           </button>
         )}
 
-        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} />
+        {/*
+          `Reveal`을 두지 않는다. 뜻도 소리 버튼도 위 판이 이미 들고 있어서
+          같은 줄을 한 화면에 두 번 찍게 된다
+        */}
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
     </FeedCard>
+  )
+}
+
+/**
+ * 듣기 카드가 답을 받은 뒤 그림 자리에 들어가는 판.
+ *
+ * 전에는 정답 그림이 그 자리에 들어왔다. 그런데 보기 넷 가운데 하나가 이미
+ * 초록 테두리를 두르고 서 있어 **같은 그림이 한 화면에 두 번** 보였다. 두 번째
+ * 그림은 새로 알려주는 것이 없다.
+ *
+ * 그래서 그 자리에는 아직 안 보여준 것을 놓는다 — 낱말과 읽기와 뜻과 예문.
+ * 듣기 카드는 소리에서 뜻으로 바로 가는 카드라 **철자를 한 번도 보지 않고**
+ * 지나간다. 답한 뒤가 그것을 볼 유일한 자리다.
+ */
+function ListenBrief({
+  entry,
+  lang,
+  correct,
+  gaveUp,
+}: {
+  entry: Entry
+  lang: Language
+  correct: boolean
+  gaveUp: boolean
+}) {
+  const { concept, word, answer } = entry
+  const aside = asideOf(word, lang)
+  const [example] = examplesOf(word)
+  const verdict = gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '
+
+  return (
+    // 그림 자리와 같은 크기라 넘칠 수 있다. 자르지 않고 굴린다 (CardSheet와 같은 이유)
+    <div className="flex h-full flex-col justify-center gap-1.5 overflow-y-auto px-5 py-4 text-center" role="status">
+      <span className="sr-only">{verdict}</span>
+      <div className="flex items-center justify-center gap-sm">
+        <Copy text={answer} className={`font-jp ${answerSize(answer)} leading-tight font-bold tracking-tight`} />
+        <SayButton slug={concept.slug} lang={lang} label={answer} />
+      </div>
+      {aside.length > 0 && (
+        <p className="font-jp text-sm text-sub">
+          {aside.map((value, i) => (i === 0 ? `[${value}]` : value)).join(' · ')}
+        </p>
+      )}
+      <p className="text-lg font-semibold">{concept.meaning_ko}</p>
+      {example && (
+        <div className="mt-1 border-t border-line pt-2">
+          <p className="font-jp text-[15px] leading-relaxed">{example.text}</p>
+          <p className="mt-1 text-sm text-sub">{example.ko}</p>
+        </div>
+      )}
+    </div>
   )
 }
 
