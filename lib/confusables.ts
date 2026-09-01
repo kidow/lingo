@@ -244,13 +244,21 @@ export const blankableChar = (ch: string) =>
   isLatin(ch) || isCyrillic(ch) || isHiragana(ch) || isKatakana(ch) || isHanzi(ch)
 
 /**
+ * 글자를 잇는 부호. 뚫지는 않지만 낱말을 통째로 막지도 않는다.
+ *
+ * `x-ray`·`U-Bahn`·`секонд-хенд`·`aujourd'hui`가 여기 걸려 철자 칸에 못 올랐다.
+ * 뚫을 수 없는 것은 **그 부호 자리**이지 낱말 전체가 아니다.
+ */
+const JOINER = new Set([' ', '-', "'", '\u2019'])
+
+/**
  * 빈칸을 뚫어도 되는 단어인지.
  *
- * **공백은 세지 않는다.** `código de barras`처럼 띄어쓰기가 든 단어를 통째로
- * 막을 이유가 없다 — 공백 자리만 안 뚫으면 된다 (`buildBlank`).
+ * **잇는 부호는 세지 않는다.** `código de barras`나 `x-ray`처럼 공백·붙임표가
+ * 든 단어를 통째로 막을 이유가 없다 — 그 자리만 안 뚫으면 된다 (`holesOf`).
  */
 export const blankable = (text: string) =>
-  [...text].some(blankableChar) && [...text].every((ch) => ch === ' ' || blankableChar(ch))
+  [...text].some(blankableChar) && [...text].every((ch) => JOINER.has(ch) || blankableChar(ch))
 
 /** 같은 문자 체계 안에서만 고른다. 가나 문제에 알파벳이 섞이면 답이 보인다 */
 const poolFor = (char: string) =>

@@ -12,8 +12,12 @@ test('빈칸은 문자 체계를 가린다', () => {
   assert.equal(blankable('invoice'), true)
   assert.equal(blankable('面包'), true, '한자도 이제 뚫는다')
   assert.equal(blankable('стол'), true, '키릴도 이제 뚫는다')
-  // 띄어쓰기가 든 단어를 통째로 막지 않는다 — 공백 자리만 안 뚫으면 된다
+  // 잇는 부호가 든 단어를 통째로 막지 않는다 — 그 자리만 안 뚫으면 된다
   assert.equal(blankable('código de barras'), true)
+  assert.equal(blankable('x-ray'), true, '붙임표')
+  assert.equal(blankable("aujourd'hui"), true, '작은따옴표')
+  assert.equal(blankable('s\u2019asseoir'), true, '유니코드 따옴표')
+  assert.equal(blankable('-'), false, '부호만 있으면 뚫을 글자가 없다')
   assert.equal(blankable('   '), false, '뚫을 글자가 하나도 없다')
 })
 
