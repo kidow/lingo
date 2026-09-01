@@ -87,10 +87,9 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
   const concepts = new Set(shown.map((row) => row.slug)).size
   const missingImage = shown.filter((row) => !row.hasImage).length
   const missingAudio = shown.filter((row) => row.audioSize === null).length
-  // 상황 표현은 정답이 문장이라 예문을 쓰지 않는다 (spec.md §5). 분모에서 뺀다 —
-  // 넣지 않기로 한 것을 결손으로 세면 빨간 숫자가 영원히 안 사라진다
-  const wantExample = shown.filter((row) => row.category !== 'scene')
-  const missingExample = wantExample.filter((row) => !row.example).length
+  // 상황 표현도 이제 예문을 갖는다 (spec.md §5) — 예전에는 정답이 문장이라
+  // 예문을 두지 않았고 그래서 분모에서 뺐다. 지금은 뺄 이유가 없다
+  const missingExample = shown.filter((row) => !row.example).length
 
   return (
     <>
@@ -123,7 +122,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
         <Stat label="발음" value={`${shown.length - missingAudio}/${shown.length}`} bad={missingAudio > 0} />
         <Stat
           label="예문"
-          value={`${wantExample.length - missingExample}/${wantExample.length}`}
+          value={`${shown.length - missingExample}/${shown.length}`}
           bad={missingExample > 0}
         />
       </dl>
