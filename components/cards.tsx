@@ -8,11 +8,17 @@ import { SayButton } from './say-button'
 import { answerSize, blankRow, optionBox, optionColumns, optionSize } from '@/lib/fit'
 import { asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
-import type { BlankQuestion, ChoiceQuestion, IntroQuestion, Question } from '@/lib/quiz'
+import type {
+  BlankQuestion,
+  ChoiceQuestion,
+  ClozeQuestion,
+  IntroQuestion,
+  Question,
+} from '@/lib/quiz'
 import type { Language } from '@/lib/types'
 
 /**
- * 카드 3종. (spec.md §5)
+ * 카드 4종. (spec.md §5)
  *
  * 문항 지시문을 쓰지 않는다. 이미지와 보기만으로 무엇을 묻는지 자명하다.
  * 자가판정이 없다 — 객관적으로 채점되는 카드만 있다.
@@ -30,6 +36,8 @@ export function Card({ question, ...rest }: { question: Question } & Common) {
       return <IntroCard question={question} {...rest} />
     case 'choice':
       return <ChoiceCard question={question} {...rest} />
+    case 'cloze':
+      return <ClozeCard question={question} {...rest} />
     case 'blank':
       return <BlankCard question={question} {...rest} />
   }
@@ -169,7 +177,94 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
   )
 }
 
-/* ── 2. 단서 회상 — 빈칸 ──────────────────────────────────────────── */
+/* ── 2. 문맥 — 예문 빈칸 ──────────────────────────────────────────── */
+
+/**
+ * 예문에서 낱말을 뚫고 넷 중 고른다.
+ *
+ * 4지선다는 그림을 보고 이름을 고른다. 여기서는 **문장이 그림 자리를 대신**
+ * 한다 — 그림은 위에 그대로 있지만 단서는 문장이다. 뜻을 아는 것과 문장 안
+ * 자리를 아는 것은 다른 일이라 사다리의 칸을 따로 둔다 (lib/progress.ts).
+ *
+ * 답한 뒤에는 빈칸을 정답으로 메워 문장을 완성해 보여 준다. 틀린 채로 문장이
+ * 비어 있으면 무엇이 맞았는지 읽을 자리가 없다.
+ *
+ * **그림은 답한 뒤에 나온다.** 위에 수건 그림을 띄워 놓고 "The ___ is clean."을
+ * 물으면 문장을 읽지 않고도 답이 되어 재인 칸과 같은 문제가 된다. 자리는
+ * 비워 두되 없애지는 않는다 — 없애면 카드 높이가 달라져 넘길 때 튄다.
+ */
+function ClozeCard({ question, lang, onAnswer, first }: { question: ClozeQuestion } & Common) {
+  const { entry, options, before, after } = question
+  const { concept, answer } = entry
+  const [picked, setPicked] = useState<string | null>(null)
+  const answered = picked !== null
+  const gaveUp = picked === GAVE_UP
+  const correct = picked === answer
+
+  return (
+    <FeedCard>
+      <CardImage>
+        {answered && <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />}
+      </CardImage>
+
+      <CardSheet>
+        <p className="font-jp text-[17px] leading-relaxed">
+          {before}
+          <span
+            className={`
+              mx-0.5 inline-block min-w-[64px] border-b-[3px] text-center align-baseline font-bold
+              ${!answered ? 'border-accent' : correct ? 'border-ok text-ok' : 'border-err text-err'}
+            `}
+          >
+            {answered ? answer : ' '}
+          </span>
+          {after}
+        </p>
+
+        <div className={`grid gap-sm ${optionColumns(options) === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+          {options.map((option) => (
+            <button
+              key={option}
+              type="button"
+              disabled={answered}
+              onClick={() => {
+                if (answered) return
+                setPicked(option)
+                onAnswer?.(option === answer)
+              }}
+              className={`
+                grid ${optionBox(options)} place-items-center rounded-ctrl border px-1.5
+                font-jp ${optionSize(options)} font-semibold transition active:scale-[.985]
+                disabled:active:scale-100
+                ${verdictClass(answered, option === answer, option === picked)}
+              `}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+
+        {!answered && (
+          <button
+            type="button"
+            onClick={() => {
+              setPicked(GAVE_UP)
+              onAnswer?.(false)
+            }}
+            className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
+          >
+            모르겠어요
+          </button>
+        )}
+
+        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} />
+        <div className="mt-auto">{answered && <SwipeHint />}</div>
+      </CardSheet>
+    </FeedCard>
+  )
+}
+
+/* ── 3. 단서 회상 — 빈칸 ──────────────────────────────────────────── */
 
 function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestion } & Common) {
   const { entry, chars, holeIndex, keys } = question
@@ -294,7 +389,7 @@ function Reveal({
   show: boolean
   correct: boolean
   gaveUp?: boolean
-  question: ChoiceQuestion | BlankQuestion
+  question: ChoiceQuestion | BlankQuestion | ClozeQuestion
   lang: Language
 }) {
   if (!show) return null

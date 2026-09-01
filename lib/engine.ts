@@ -3,6 +3,7 @@ import type { Entry } from './entries.ts'
 import {
   RUNG_BLANK,
   RUNG_CHOICE,
+  RUNG_CLOZE,
   RUNG_INTRO,
   RUNG_MAX,
   emptyProgress,
@@ -12,7 +13,15 @@ import {
   type Progress,
   type Rung,
 } from './progress.ts'
-import { buildBlank, buildChoice, buildIntro, canBlank, type Question } from './quiz.ts'
+import {
+  buildBlank,
+  buildChoice,
+  buildCloze,
+  buildIntro,
+  canBlank,
+  canCloze,
+  type Question,
+} from './quiz.ts'
 
 /**
  * 학습 엔진. (spec.md §6)
@@ -152,7 +161,13 @@ export function weightOf(entry: Entry, progress: Progress, now: number): number 
 
 /* ── 문항 만들기 ─────────────────────────────────────────────────── */
 
-/** rung이 카드 종류를 정한다. 빈칸을 못 만드는 단어는 재인 칸에 머문다 */
+/**
+ * rung이 카드 종류를 정한다.
+ *
+ * 못 만드는 카드는 **재인으로 떨어뜨린다.** 상황 표현은 예문이 없어 문맥
+ * 칸을 못 만들고, 한 글자짜리 낱말은 철자 칸을 못 만든다 — 그런 카드도
+ * 복습은 돌아야 하므로 만들 수 있는 것 중 가장 가까운 것을 낸다.
+ */
 export function questionFor(entry: Entry, state: EngineState, entries: Entry[]): Question {
   const card = state.progress.cards[entry.concept.slug]
   const rung: Rung = card?.rung ?? RUNG_INTRO
@@ -160,6 +175,7 @@ export function questionFor(entry: Entry, state: EngineState, entries: Entry[]):
 
   if (rung === RUNG_INTRO) return buildIntro(entry)
   if (rung === RUNG_BLANK && canBlank(entry)) return buildBlank(entry, attempt)
+  if (rung >= RUNG_CLOZE && canCloze(entry)) return buildCloze(entry, entries, attempt)
   return buildChoice(entry, entries, attempt)
 }
 
