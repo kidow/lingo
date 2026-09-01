@@ -13,6 +13,22 @@ import { hasAudio } from './audio-have.ts'
 export const CHOICE_COUNT = 4
 export const KEY_COUNT = 4
 
+/**
+ * 몇 번째 회차부터 오답을 같은 주제에서 뽑을 것인가.
+ *
+ * 재인 칸은 그 낱말을 **처음 시험하는 자리**다. 여기서 오답을 촘촘히 깔면
+ * 처음 본 낱말을 바로 정밀 변별로 묻게 되어 초반 승률이 떨어진다 — 승률이
+ * 무너지면 무한 스와이프의 동력이 끊긴다 (§6).
+ *
+ * 그렇다고 계속 넓게 두면 반대 문제가 생긴다. `towel` 문제에 `photographer`가
+ * 깔리면 "욕실 물건 같은 것"만 떠올려도 셋이 지워져, 낱말을 아는지가 아니라
+ * 어느 분야인지를 묻게 된다.
+ *
+ * 그래서 **같은 칸이 회차마다 조여진다.** 처음 두 번은 넓게, 그 뒤로는 같은
+ * 주제에서 뽑는다. 사다리를 늘리지 않고 난이도만 올리는 방법이다.
+ */
+export const NEAR_FROM_ATTEMPT = 2
+
 export type IntroQuestion = { kind: 'intro'; entry: Entry }
 
 export type ChoiceQuestion = {
@@ -64,9 +80,14 @@ export function buildIntro(entry: Entry): IntroQuestion {
   return { kind: 'intro', entry }
 }
 
+/** 회차가 쌓이면 같은 주제에서 뽑는다 (NEAR_FROM_ATTEMPT) */
+function poolFor(entry: Entry, entries: Entry[], attempt: number): Entry[] {
+  return attempt >= NEAR_FROM_ATTEMPT ? nearPool(entry, entries) : distractorPool(entry, entries)
+}
+
 export function buildChoice(entry: Entry, entries: Entry[], attempt = 0): ChoiceQuestion {
   const rng = makeRng(seedOf(entry, 'choice', attempt))
-  const pool = distractorPool(entry, entries)
+  const pool = poolFor(entry, entries, attempt)
   const distractors = sample(pool, CHOICE_COUNT - 1, rng).map((e) => e.answer)
   return { kind: 'choice', entry, options: shuffled([entry.answer, ...distractors], rng) }
 }
@@ -91,10 +112,12 @@ export function canListen(entry: Entry): boolean {
  * 낱말 대신 **그림**을 보기로 깐다. 글자를 깔면 듣기가 아니라 받아쓰기가 된다 —
  * 소리를 철자로 옮긴 다음에야 고를 수 있기 때문이다. 그림은 소리에서 곧장 뜻으로
  * 간다.
+ *
+ * 오답 풀은 4지선다와 같은 규칙으로 회차에 따라 좁아진다 (NEAR_FROM_ATTEMPT).
  */
 export function buildListen(entry: Entry, entries: Entry[], attempt = 0): ListenQuestion {
   const rng = makeRng(seedOf(entry, 'listen', attempt))
-  const pool = distractorPool(entry, entries)
+  const pool = poolFor(entry, entries, attempt)
   const distractors = sample(pool, CHOICE_COUNT - 1, rng)
   return { kind: 'listen', entry, options: shuffled([entry, ...distractors], rng) }
 }
