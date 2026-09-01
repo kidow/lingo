@@ -13,12 +13,13 @@ import type {
   ChoiceQuestion,
   ClozeQuestion,
   IntroQuestion,
+  ListenQuestion,
   Question,
 } from '@/lib/quiz'
 import type { Language } from '@/lib/types'
 
 /**
- * 카드 4종. (spec.md §5)
+ * 카드 5종. (spec.md §5)
  *
  * 문항 지시문을 쓰지 않는다. 이미지와 보기만으로 무엇을 묻는지 자명하다.
  * 자가판정이 없다 — 객관적으로 채점되는 카드만 있다.
@@ -36,6 +37,8 @@ export function Card({ question, ...rest }: { question: Question } & Common) {
       return <IntroCard question={question} {...rest} />
     case 'choice':
       return <ChoiceCard question={question} {...rest} />
+    case 'listen':
+      return <ListenCard question={question} {...rest} />
     case 'cloze':
       return <ClozeCard question={question} {...rest} />
     case 'blank':
@@ -171,6 +174,95 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
 
         <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
+        <div className="mt-auto">{answered && <SwipeHint />}</div>
+      </CardSheet>
+    </FeedCard>
+  )
+}
+
+/* ── 1'. 재인 — 듣고 그림 고르기 ──────────────────────────────────── */
+
+/**
+ * 소리를 듣고 그림 넷 중 고른다. (spec.md §5)
+ *
+ * 재인 칸의 두 번째 모습이다. 사다리를 늘리지 않은 이유는 듣기가 더 어려운
+ * 단계가 아니라 **같은 재인을 다른 감각으로 하는 것**이기 때문이다.
+ *
+ * 보기가 글자가 아니라 그림인 이유는, 글자를 깔면 듣기가 아니라 받아쓰기가
+ * 되기 때문이다 — 소리를 철자로 옮긴 다음에야 고를 수 있다. 그림은 소리에서
+ * 곧장 뜻으로 간다.
+ *
+ * 위쪽 그림 자리에는 **소리 버튼만** 놓는다. 정답 그림을 띄워 놓으면 듣지 않고
+ * 풀 수 있다. 답한 뒤에 그 자리에 정답 그림이 들어온다.
+ */
+function ListenCard({ question, lang, onAnswer, first }: { question: ListenQuestion } & Common) {
+  const { entry, options } = question
+  const { concept, answer } = entry
+  const [picked, setPicked] = useState<string | null>(null)
+  const answered = picked !== null
+  const gaveUp = picked === GAVE_UP
+  const correct = picked === concept.slug
+
+  return (
+    <FeedCard>
+      <CardImage>
+        {answered ? (
+          <ConceptImage slug={concept.slug} alt={concept.meaning_ko} priority={first} />
+        ) : (
+          <div className="grid h-full place-items-center">
+            {/* 답하기 전에는 이 버튼이 문제 전체다. 눌러 다시 들을 수 있고, 두 번째부터는 느리게 나온다 */}
+            <SayButton slug={concept.slug} lang={lang} label={answer} autoPlay />
+          </div>
+        )}
+      </CardImage>
+
+      <CardSheet>
+        <div className="grid grid-cols-2 gap-sm">
+          {options.map((option) => {
+            const isAnswer = option.concept.slug === concept.slug
+            return (
+              <button
+                key={option.concept.slug}
+                type="button"
+                disabled={answered}
+                aria-label={option.concept.meaning_ko}
+                onClick={() => {
+                  if (answered) return
+                  setPicked(option.concept.slug)
+                  onAnswer?.(isAnswer)
+                }}
+                // 정사각으로 깔면 넷이 세로를 다 먹어 모르겠어요가 접힌 자리로
+                // 밀린다. 4:3이면 그림은 그대로 읽히면서 80px이 남는다
+                className={`
+                  relative aspect-[4/3] overflow-hidden rounded-ctrl border transition
+                  active:scale-[.985] disabled:active:scale-100
+                  ${verdictClass(answered, isAnswer, option.concept.slug === picked)}
+                `}
+              >
+                <ConceptImage
+                  slug={option.concept.slug}
+                  alt={option.concept.meaning_ko}
+                  priority={first}
+                />
+              </button>
+            )
+          })}
+        </div>
+
+        {!answered && (
+          <button
+            type="button"
+            onClick={() => {
+              setPicked(GAVE_UP)
+              onAnswer?.(false)
+            }}
+            className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
+          >
+            모르겠어요
+          </button>
+        )}
+
+        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} />
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
     </FeedCard>
@@ -389,7 +481,7 @@ function Reveal({
   show: boolean
   correct: boolean
   gaveUp?: boolean
-  question: ChoiceQuestion | BlankQuestion | ClozeQuestion
+  question: ChoiceQuestion | BlankQuestion | ClozeQuestion | ListenQuestion
   lang: Language
 }) {
   if (!show) return null

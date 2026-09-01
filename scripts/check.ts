@@ -8,6 +8,7 @@
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
+import { AUDIO_MISSING } from '../lib/audio-have.ts'
 import { entriesForTrack } from '../lib/entries.ts'
 import { LANG } from '../lib/lang.ts'
 import { TRACKS } from '../lib/track.ts'
@@ -201,6 +202,28 @@ if (notes.length) {
   for (const n of notes.slice(0, 10)) console.log(`  · ${n}`)
   if (notes.length > 10) console.log(`  … 외 ${notes.length - 10}건. 전체는 pnpm dev → /debug`)
 }
+/**
+ * 듣기 카드는 발음이 없는 자리를 `lib/audio-have.ts`에서 읽는다. 정적
+ * 내보내기라 도는 중에 파일을 못 물어보기 때문이다 — 그 목록이 낡으면
+ * 소리 없는 문제가 나간다. 여기서 실물과 대조한다.
+ */
+{
+  const gone: string[] = []
+  for (const { language } of TRACKS)
+    for (const concept of all) {
+      const word = concept.words[language]
+      if (!word || !word[LANG[language].answer]) continue
+      if (!existsSync(join(PUBLIC_DIR, 'audio', language, `${concept.slug}.mp3`)))
+        gone.push(`${language}/${concept.slug}`)
+    }
+  const stale =
+    gone.length !== AUDIO_MISSING.size || gone.some((key) => !AUDIO_MISSING.has(key))
+  if (stale)
+    warn(
+      `lib/audio-have.ts가 낡았습니다 — 발음 없는 자리 ${gone.length}건 vs 적힌 것 ${AUDIO_MISSING.size}건. node scripts/audio.ts manifest 를 돌리세요`,
+    )
+}
+
 if (warnings.length) {
   console.log(`\n${line(4)} 경고 ${warnings.length}건`)
   for (const w of warnings) console.log(`  ! ${w}`)

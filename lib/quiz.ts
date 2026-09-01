@@ -1,6 +1,7 @@
 import { distractorPool, type Entry } from './entries.ts'
 import { blankable, blankableChar, pickConfusables } from './confusables.ts'
 import { hashString, makeRng, sample, shuffled } from './random.ts'
+import { hasAudio } from './audio-have.ts'
 
 /**
  * 문항 만들기. (spec.md §5)
@@ -42,7 +43,19 @@ export type ClozeQuestion = {
   options: string[]
 }
 
-export type Question = IntroQuestion | ChoiceQuestion | BlankQuestion | ClozeQuestion
+export type ListenQuestion = {
+  kind: 'listen'
+  entry: Entry
+  /** 정답 1 + 오답 3, 섞인 순서. 그림으로 보여주므로 문자열이 아니라 항목이다 */
+  options: Entry[]
+}
+
+export type Question =
+  | IntroQuestion
+  | ChoiceQuestion
+  | BlankQuestion
+  | ClozeQuestion
+  | ListenQuestion
 
 const seedOf = (entry: Entry, kind: string, attempt: number) =>
   hashString(`${entry.concept.slug}:${kind}:${attempt}`)
@@ -56,6 +69,34 @@ export function buildChoice(entry: Entry, entries: Entry[], attempt = 0): Choice
   const pool = distractorPool(entry, entries)
   const distractors = sample(pool, CHOICE_COUNT - 1, rng).map((e) => e.answer)
   return { kind: 'choice', entry, options: shuffled([entry.answer, ...distractors], rng) }
+}
+
+/**
+ * 듣기 카드를 만들 수 있는가.
+ *
+ * 소리가 유일한 단서라 발음 파일이 없으면 문제가 성립하지 않는다. 정적
+ * 내보내기라 도는 중에 파일을 물어볼 수 없으므로 빌드 때 적어 둔 목록을 본다
+ * (lib/audio-have.ts). 없으면 재인 카드가 대신 나간다.
+ */
+export function canListen(entry: Entry): boolean {
+  return hasAudio(entry.concept.slug, entry.lang)
+}
+
+/**
+ * 소리를 듣고 그림 넷 중 고른다.
+ *
+ * 앱이 지금까지 훈련한 것은 **보고 읽기뿐**이었다. 소리에서 뜻으로 가는 길은
+ * 20,671개 발음 파일을 쌓아 두고도 한 번도 열지 않았다. 이 카드가 그 길이다.
+ *
+ * 낱말 대신 **그림**을 보기로 깐다. 글자를 깔면 듣기가 아니라 받아쓰기가 된다 —
+ * 소리를 철자로 옮긴 다음에야 고를 수 있기 때문이다. 그림은 소리에서 곧장 뜻으로
+ * 간다.
+ */
+export function buildListen(entry: Entry, entries: Entry[], attempt = 0): ListenQuestion {
+  const rng = makeRng(seedOf(entry, 'listen', attempt))
+  const pool = distractorPool(entry, entries)
+  const distractors = sample(pool, CHOICE_COUNT - 1, rng)
+  return { kind: 'listen', entry, options: shuffled([entry, ...distractors], rng) }
 }
 
 /**
