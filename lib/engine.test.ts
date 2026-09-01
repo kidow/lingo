@@ -14,6 +14,7 @@ import {
   type EngineState,
 } from './engine.ts'
 import { RUNG_BLANK, RUNG_CHOICE, RUNG_INTRO } from './progress.ts'
+import { buildBlank } from './quiz.ts'
 import type { Category, Concept } from './types.ts'
 
 /* ── 도구 ────────────────────────────────────────────────────────── */
@@ -323,4 +324,27 @@ test('100장을 뽑아도 멈추지 않고 같은 카드가 연달아 나오지 
 
   // 여섯 단어를 다 소개했어야 한다
   assert.equal(Object.keys(state.progress.cards).length, ENTRIES.length)
+})
+
+/* ── 빈칸 자리 ───────────────────────────────────────────────────── */
+
+test('빈칸 자리는 복습마다 옮겨 간다 — 연달아 같은 칸이 나오지 않는다', () => {
+  const target = entry('banana', 'banana')
+  const picks = [0, 1, 2, 3, 4, 5].map((attempt) => buildBlank(target, attempt).holeIndex)
+  for (let i = 1; i < picks.length; i += 1) {
+    assert.notEqual(picks[i], picks[i - 1], `${i}회차가 앞 회차와 같은 자리다`)
+  }
+})
+
+test('한 바퀴 돌면 뚫을 수 있는 자리를 모두 한 번씩 묻는다', () => {
+  const target = entry('banana', 'banana')
+  // 첫 글자는 단서로 남기므로 b를 뺀 다섯 자리다
+  const seen = new Set([0, 1, 2, 3, 4].map((attempt) => buildBlank(target, attempt).holeIndex))
+  assert.equal(seen.size, 5)
+  assert.ok(![...seen].includes(0), '첫 글자는 뚫지 않는다')
+})
+
+test('같은 회차를 다시 그리면 같은 자리가 나온다 — 다시 그릴 때 답이 튀지 않는다', () => {
+  const target = entry('banana', 'banana')
+  assert.equal(buildBlank(target, 3).holeIndex, buildBlank(target, 3).holeIndex)
 })

@@ -75,11 +75,27 @@ function holesOf(answer: string): number[] {
     .filter((i) => i >= 0)
 }
 
+/**
+ * 이번 회차에 뚫을 자리.
+ *
+ * 회차마다 새로 뽑으면 **같은 자리가 연달아 나온다.** `banana`는 뚫을 자리가
+ * 셋인데 세 번 연속 같은 칸이 나오기도 했다 — 순수 난수라 그렇다. 그러면
+ * 복습이 같은 글자만 반복해 묻고 나머지 자리는 영영 안 나온다.
+ *
+ * 그래서 뽑지 않고 **돌린다.** 자리 순서를 낱말마다 한 번 섞어 두고 복습
+ * 횟수로 그 순서를 돈다. 낱말마다 순서가 다르고, 같은 자리가 연달아 나오지
+ * 않으며, 한 바퀴 돌면 모든 자리를 한 번씩 묻는다.
+ */
+function holeFor(entry: Entry, holes: number[], attempt: number): number {
+  const order = shuffled(holes, makeRng(seedOf(entry, 'holes', 0)))
+  return order[attempt % order.length]
+}
+
 export function buildBlank(entry: Entry, attempt = 0): BlankQuestion {
   const rng = makeRng(seedOf(entry, 'blank', attempt))
   const chars = [...entry.answer]
   const holes = holesOf(entry.answer)
-  const holeIndex = holes[Math.floor(rng() * holes.length)]
+  const holeIndex = holeFor(entry, holes, attempt)
   const answerChar = chars[holeIndex]
   const distractors = pickConfusables(answerChar, KEY_COUNT - 1, rng, shuffled)
   return {
