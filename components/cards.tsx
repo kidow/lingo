@@ -28,9 +28,26 @@ import type { Language } from '@/lib/types'
  * 채점 결과는 onAnswer로 올려보낸다. 이걸 받아 rung을 옮기고 다음 등장을
  * 예약하는 건 5단계(학습 엔진)다. 지금은 화면만 한다.
  */
-export type AnswerHandler = (correct: boolean) => void
+/**
+ * 채점 결과를 올려보낸다. **무엇을 골랐는지도 함께 준다** — 피드가 그 값을
+ * 들고 있어야 카드를 떼었다 다시 붙여도 답한 모습이 그대로 돌아온다
+ * (components/feed.tsx의 창).
+ */
+export type AnswerHandler = (correct: boolean, picked: string) => void
 
-type Common = { lang: Language; onAnswer?: AnswerHandler; first?: boolean }
+type Common = {
+  lang: Language
+  onAnswer?: AnswerHandler
+  first?: boolean
+  /**
+   * 이미 답한 카드라면 그때 고른 값.
+   *
+   * 답한 상태는 카드 안에 있다. 화면 밖 카드를 떼는 순간 그 상태도 사라지므로
+   * 다시 붙일 때 피드가 되돌려 준다 — 없으면 답이 지워진 채로 되살아나고,
+   * 같은 문제를 두 번 채점하게 된다.
+   */
+  pick?: string | null
+}
 
 export function Card({ question, ...rest }: { question: Question } & Common) {
   switch (question.kind) {
@@ -120,11 +137,12 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
 
 /* ── 1. 재인 — 4지선다 ────────────────────────────────────────────── */
 
-function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuestion } & Common) {
+function ChoiceCard({ question, lang, onAnswer, first, pick }: { question: ChoiceQuestion } & Common) {
   const { entry, options } = question
   const { concept, answer } = entry
-  // null = 아직 안 답함, GAVE_UP = 모른다고 눌렀음, 그 외 = 고른 보기
-  const [picked, setPicked] = useState<string | null>(null)
+  // null = 아직 안 답함, GAVE_UP = 모른다고 눌렀음, 그 외 = 고른 보기.
+  // 다시 붙는 카드는 피드가 준 값으로 시작한다
+  const [picked, setPicked] = useState<string | null>(pick ?? null)
   const answered = picked !== null
   const gaveUp = picked === GAVE_UP
   const correct = picked === answer
@@ -145,7 +163,7 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
               onClick={() => {
                 if (answered) return
                 setPicked(option)
-                onAnswer?.(option === answer)
+                onAnswer?.(option === answer, option)
               }}
               className={`
                 grid ${optionBox(options)} place-items-center rounded-ctrl border px-1.5
@@ -170,7 +188,7 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
             type="button"
             onClick={() => {
               setPicked(GAVE_UP)
-              onAnswer?.(false)
+              onAnswer?.(false, GAVE_UP)
             }}
             className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
           >
@@ -201,10 +219,10 @@ function ChoiceCard({ question, lang, onAnswer, first }: { question: ChoiceQuest
  * 위쪽 그림 자리에는 **소리 버튼만** 놓는다. 정답 그림을 띄워 놓으면 듣지 않고
  * 풀 수 있다. 답한 뒤에 그 자리에 정답 그림이 들어온다.
  */
-function ListenCard({ question, lang, onAnswer, first }: { question: ListenQuestion } & Common) {
+function ListenCard({ question, lang, onAnswer, first, pick }: { question: ListenQuestion } & Common) {
   const { entry, options } = question
   const { concept, answer } = entry
-  const [picked, setPicked] = useState<string | null>(null)
+  const [picked, setPicked] = useState<string | null>(pick ?? null)
   const answered = picked !== null
   const gaveUp = picked === GAVE_UP
   const correct = picked === concept.slug
@@ -235,7 +253,7 @@ function ListenCard({ question, lang, onAnswer, first }: { question: ListenQuest
                 onClick={() => {
                   if (answered) return
                   setPicked(option.concept.slug)
-                  onAnswer?.(isAnswer)
+                  onAnswer?.(isAnswer, option.concept.slug)
                 }}
                 // 정사각으로 깔면 넷이 세로를 다 먹어 모르겠어요가 접힌 자리로
                 // 밀린다. 4:3이면 그림은 그대로 읽히면서 80px이 남고, 세로가
@@ -263,7 +281,7 @@ function ListenCard({ question, lang, onAnswer, first }: { question: ListenQuest
             type="button"
             onClick={() => {
               setPicked(GAVE_UP)
-              onAnswer?.(false)
+              onAnswer?.(false, GAVE_UP)
             }}
             className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
           >
@@ -294,10 +312,10 @@ function ListenCard({ question, lang, onAnswer, first }: { question: ListenQuest
  * 물으면 문장을 읽지 않고도 답이 되어 재인 칸과 같은 문제가 된다. 자리는
  * 비워 두되 없애지는 않는다 — 없애면 카드 높이가 달라져 넘길 때 튄다.
  */
-function ClozeCard({ question, lang, onAnswer, first }: { question: ClozeQuestion } & Common) {
+function ClozeCard({ question, lang, onAnswer, first, pick }: { question: ClozeQuestion } & Common) {
   const { entry, options, before, after } = question
   const { concept, answer } = entry
-  const [picked, setPicked] = useState<string | null>(null)
+  const [picked, setPicked] = useState<string | null>(pick ?? null)
   const answered = picked !== null
   const gaveUp = picked === GAVE_UP
   const correct = picked === answer
@@ -331,7 +349,7 @@ function ClozeCard({ question, lang, onAnswer, first }: { question: ClozeQuestio
               onClick={() => {
                 if (answered) return
                 setPicked(option)
-                onAnswer?.(option === answer)
+                onAnswer?.(option === answer, option)
               }}
               className={`
                 grid ${optionBox(options)} place-items-center rounded-ctrl border px-1.5
@@ -350,7 +368,7 @@ function ClozeCard({ question, lang, onAnswer, first }: { question: ClozeQuestio
             type="button"
             onClick={() => {
               setPicked(GAVE_UP)
-              onAnswer?.(false)
+              onAnswer?.(false, GAVE_UP)
             }}
             className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
           >
@@ -367,13 +385,13 @@ function ClozeCard({ question, lang, onAnswer, first }: { question: ClozeQuestio
 
 /* ── 3. 단서 회상 — 빈칸 ──────────────────────────────────────────── */
 
-function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestion } & Common) {
+function BlankCard({ question, lang, onAnswer, first, pick }: { question: BlankQuestion } & Common) {
   const { entry, chars, holeIndex, keys } = question
   const { concept, answer } = entry
   const answerChar = chars[holeIndex]
   // 낱말이 길면 글자를 줄이고 줄바꿈을 허용한다 (lib/fit.ts)
   const { row, cell } = blankRow(chars)
-  const [picked, setPicked] = useState<string | null>(null)
+  const [picked, setPicked] = useState<string | null>(pick ?? null)
   const answered = picked !== null
   const correct = picked === answerChar
 
@@ -418,7 +436,7 @@ function BlankCard({ question, lang, onAnswer, first }: { question: BlankQuestio
               onClick={() => {
                 if (answered) return
                 setPicked(key)
-                onAnswer?.(key === answerChar)
+                onAnswer?.(key === answerChar, key)
               }}
               className={`
                 min-w-[60px] rounded-ctrl border px-2 py-3.5 font-jp text-[22px] font-semibold

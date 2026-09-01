@@ -29,6 +29,21 @@ import type { Language } from '@/lib/types'
  * 진도는 localStorage에 있으므로 서버는 무엇을 낼지 모른다. 그래서 카드는
  * 마운트 후에 만들어진다. 그전에는 뼈대만 보여준다.
  */
+/**
+ * 앞뒤로 몇 장까지 실제로 그릴까.
+ *
+ * 카드는 한 장씩 늘어나기만 하고 줄지 않는다 — 200장을 넘긴 세션이면 지나간
+ * 199장이 그대로 문서에 남는다. 카드 한 장이 노드 60개와 이미지 하나를 쓰므로
+ * 오래 앉아 있을수록 무거워진다. 무한 스와이프가 목표라면(spec.md §6) 한계가
+ * 없다는 뜻이라 그대로 둘 수 없다.
+ *
+ * 1이면 현재·직전·직후 세 장이다. 스냅이 한 칸씩 움직이므로 넘기는 동안
+ * 화면에 걸치는 것은 많아야 두 장이고, 되돌아가는 한 칸도 이미 그려져 있다.
+ * 아주 세게 튕겨 두 칸 이상을 한 번에 지나가면 빈 자리가 잠깐 보일 수 있다 —
+ * 그 자리는 스냅이 멈추는 곳이 아니라 지나가는 곳이다.
+ */
+const WINDOW = 1
+
 export function Feed({
   entries,
   track,
@@ -51,7 +66,13 @@ export function Feed({
   const [questions, setQuestions] = useState<Question[]>([])
   const [ready, setReady] = useState(false)
   const [current, setCurrent] = useState(0)
-  const [answered, setAnswered] = useState<Set<number>>(new Set())
+  /**
+   * 답한 카드의 인덱스 → 그때 고른 값.
+   *
+   * 무엇을 골랐는지까지 들고 있는 이유는 **화면 밖 카드를 떼기 때문이다.**
+   * 다시 붙을 때 이 값을 되돌려 주지 않으면 답이 지워진 채로 되살아난다.
+   */
+  const [picks, setPicks] = useState<Map<number, string>>(new Map())
 
   const engine = useRef<EngineState>(initialState())
   /** 소개 카드를 이미 기록했는지. 인덱스 기준 */
@@ -94,7 +115,7 @@ export function Feed({
   useEffect(() => {
     engine.current = initialState(loadProgress(track))
     recorded.current = new Set()
-    setAnswered(new Set())
+    setPicks(new Map())
     setQuestions([])
     setCurrent(0)
     extendedFrom.current = -1
@@ -151,18 +172,21 @@ export function Feed({
     }
     const last = questions.length - 1
     const q = questions[last]
-    const finished = q.kind === 'intro' || answered.has(last)
+    const finished = q.kind === 'intro' || picks.has(last)
     if (current >= last && finished) extendOne(questions.length)
-  }, [ready, current, questions, answered, extendOne])
+  }, [ready, current, questions, picks, extendOne])
 
   const handleAnswer = useCallback(
-    (index: number, correct: boolean) => {
+    (index: number, correct: boolean, picked: string) => {
       const question = questions[index]
       if (!question) return
+      // 같은 카드를 두 번 채점하지 않는다. 버튼은 답한 뒤 잠기지만, 카드가
+      // 떼였다 붙는 자리라 잠금이 한 번 풀린 것처럼 보일 수 있다
+      if (picks.has(index)) return
       commit(recordAnswer(engine.current, question.entry.concept.slug, correct, Date.now()))
-      setAnswered((previous) => new Set(previous).add(index))
+      setPicks((previous) => new Map(previous).set(index, picked))
     },
-    [questions, commit],
+    [questions, picks, commit],
   )
 
   return (
@@ -179,14 +203,24 @@ export function Feed({
       ) : (
         questions.map((question, i) => (
           // 래퍼도 높이를 넘겨받아야 카드가 화면 하나를 채운다. 여기가 auto면
-          // 카드가 내용 높이로 줄어 스냅이 어긋난다
-          <div key={`${question.entry.concept.slug}-${question.kind}-${i}`} data-index={i} className="h-full">
-            <Card
-              question={question}
-              lang={lang}
-              first={i === 0}
-              onAnswer={(correct) => handleAnswer(i, correct)}
-            />
+          // 카드가 내용 높이로 줄어 스냅이 어긋난다.
+          //
+          // 스냅과 높이는 **래퍼가** 들고 있다. 안이 비어도 자리와 스냅점이
+          // 그대로 남아야 카드를 떼도 스크롤이 밀리지 않는다
+          <div
+            key={`${question.entry.concept.slug}-${question.kind}-${i}`}
+            data-index={i}
+            className="h-full snap-start snap-always"
+          >
+            {Math.abs(i - current) <= WINDOW && (
+              <Card
+                question={question}
+                lang={lang}
+                first={i === 0}
+                pick={picks.get(i) ?? null}
+                onAnswer={(correct, picked) => handleAnswer(i, correct, picked)}
+              />
+            )}
           </div>
         ))
       )}
