@@ -479,6 +479,26 @@ test('문맥 카드 오답은 같은 주제에서 먼저 뽑는다', () => {
   assert.deepEqual(new Set(topics), new Set(['home']), '넷 다 같은 주제다')
 })
 
+test('문맥 카드는 같은 틀을 쓰는 오답을 뺀다 — 넣어도 맞는 보기는 오답이 아니다', () => {
+  const withText = (slug: string, reading: string, text: string): Entry => {
+    const e = entry(slug, reading)
+    e.concept.topic = 'clothes'
+    e.word.example = { text, ko: `${slug} 예문` }
+    return e
+  }
+  const coat = withText('coat', 'コート', 'コートを きる。')
+  const entries = [
+    coat,
+    withText('shirt', 'シャツ', 'シャツを きる。'), // 같은 틀 — 넣어도 맞는다
+    withText('cap', 'ぼうし', 'ぼうしが あたらしい。'),
+    withText('sock', 'くつした', 'くつしたを あらう。'),
+    withText('belt', 'ベルト', 'ベルトが みじかい。'),
+  ]
+  const q = buildCloze(coat, entries)
+  assert.ok(q.options.includes('コート'))
+  assert.ok(!q.options.includes('シャツ'), '같은 틀을 쓰는 낱말은 오답에 들어가지 않는다')
+})
+
 test('같은 주제에 셋이 모자라면 넓은 풀로 돌아간다', () => {
   const lonely = entryWithExample('towel', 'タオル')
   lonely.concept.topic = 'home'

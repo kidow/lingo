@@ -201,7 +201,7 @@ export function buildCloze(entry: Entry, entries: Entry[], attempt = 0): ClozeQu
   const sentences = clozeExamples(entry)
   const text = sentences.length > 0 ? sentences[attempt % sentences.length].text : ''
   const at = clozeAt(text, entry.answer, entry.lang)
-  const pool = nearPool(entry, entries)
+  const pool = clozePool(entry, entries, text)
   const distractors = sample(pool, CHOICE_COUNT - 1, rng).map((e) => e.answer)
   return {
     kind: 'cloze',
@@ -210,6 +210,43 @@ export function buildCloze(entry: Entry, entries: Entry[], attempt = 0): ClozeQu
     after: text.slice(at + entry.answer.length),
     options: shuffled([entry.answer, ...distractors], rng),
   }
+}
+
+/**
+ * 예문에서 정답 자리를 자리표로 바꾼 문장. 뚫을 수 없으면 null이다.
+ *
+ * 두 낱말이 **같은 틀**을 쓰면 어느 쪽을 넣어도 문장이 성립한다.
+ */
+function frameOf(text: string, answer: string, lang: Language): string | null {
+  const at = clozeAt(text, answer, lang)
+  if (at < 0) return null
+  return `${text.slice(0, at)}\u0000${text.slice(at + answer.length)}`
+}
+
+/**
+ * 문맥 카드의 오답 풀. 이 문장에 **들어가도 말이 되는** 낱말을 뺀다.
+ *
+ * 오답은 같은 주제·같은 품사에서 온다(`nearPool`). 그래서 `___を きる。`처럼
+ * 흔한 틀에는 그 주제의 옷이 전부 들어맞는다 — 정답이 둘 이상인 문항이 된다.
+ * 어떤 낱말이 이 문장에 들어가도 되는지는 그 낱말의 **자기 예문**이 알려준다.
+ * 같은 틀을 쓰는 예문을 가진 후보는 그 자리에 넣어도 맞는 문장이므로 뺀다.
+ *
+ * 이건 **증명되는 것만** 거른다. 틀이 달라도 뜻으로 들어맞는 오답(`The ___
+ * answered questions.`에 cashier)은 여기서 안 걸리고 예문을 고쳐야 한다.
+ *
+ * 셋이 안 남으면 원래 풀로 돌아간다 — 보기가 셋뿐인 문항보다 헐거운 오답이 낫다.
+ */
+function clozePool(entry: Entry, entries: Entry[], text: string): Entry[] {
+  const near = nearPool(entry, entries)
+  const frame = frameOf(text, entry.answer, entry.lang)
+  if (frame === null) return near
+  const safe = near.filter(
+    (candidate) =>
+      !examplesOf(candidate.word).some(
+        (example) => frameOf(example.text, candidate.answer, candidate.lang) === frame,
+      ),
+  )
+  return safe.length >= CHOICE_COUNT - 1 ? safe : near
 }
 
 /**
