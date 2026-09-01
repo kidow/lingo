@@ -998,6 +998,7 @@ JMdict의 JLPT 태그에는 가타카나 외래어가 빠져 있고, HSK 표에�
 | 이미지 변환 | `sharp` (devDependency) | `pnpm image` 스크립트 전용. 런타임에 안 들어간다 |
 | PWA | manifest + 아이콘 | 서비스워커 없음. `app/icon.svg` 하나에서 `pnpm icons`가 나머지를 만든다 |
 | 배포 | Vercel (정적) | `output: 'export'` → `out/`. 서버가 필요 없다 |
+| 개발 서버 | `pnpm dev` → **5757** | Next의 기본값 3000은 다른 프로젝트와 부딪힌다. 포트를 스크립트에 박아 두면 어느 창에서 켜도 같은 주소다 |
 
 런타임 의존성은 `next` · `react` · `ts-fsrs` · `lucide-react` · `sonner`에 shadcn이 딸고 온
 `@base-ui/react` · `clsx` · `tailwind-merge`가 더해진 여덟이다. API 키는 런타임에 없다 —
