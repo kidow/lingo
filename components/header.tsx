@@ -52,6 +52,8 @@ export function Header({
           className="flex items-center gap-1 rounded-ctrl outline-none"
         >
           <span className="text-lg font-bold tracking-tight">{trackOf(track).label}</span>
+          {/* 국기는 이름 뒤에 붙는 표지다 (lib/track.ts). 버튼 이름에는 안 섞인다 */}
+          <span aria-hidden className="text-lg leading-none">{trackOf(track).flag}</span>
           <ChevronDown className="size-4 text-sub" strokeWidth={2.5} aria-hidden />
         </DropdownMenuTrigger>
 
@@ -66,11 +68,8 @@ export function Header({
               <DropdownMenuRadioItem key={id} value={id} closeOnClick className="text-[15px]">
                 {label}
                 {/*
-                  국기는 이름 뒤에 붙는 표지다 (lib/track.ts). 스크린리더에는
-                  읽히지 않는다 — "TOEIC 미국 국기"는 항목 이름이 아니다.
-
-                  트리거에는 붙이지 않는다. 지금 무엇이 켜져 있는지는 이미 이름
-                  하나로 충분하고, 헤더 왼쪽 끝은 숙련도까지 함께 서는 자리다
+                  스크린리더에는 읽히지 않는다 — "TOEIC 미국 국기"는 항목
+                  이름이 아니다. 트리거에도 같은 표지가 선다
                 */}
                 <span aria-hidden>{flag}</span>
               </DropdownMenuRadioItem>
