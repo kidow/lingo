@@ -60,11 +60,19 @@ export function Header({
             value={track}
             onValueChange={(value) => onChange(value as TrackId)}
           >
-            {TRACKS.map(({ id, label }) => (
+            {TRACKS.map(({ id, label, flag }) => (
               // Base UI의 라디오 항목은 기본적으로 메뉴를 열어 둔다. 여러 개를
               // 연달아 고르는 자리라면 맞지만 여기서는 하나를 고르면 끝이다
               <DropdownMenuRadioItem key={id} value={id} closeOnClick className="text-[15px]">
                 {label}
+                {/*
+                  국기는 이름 뒤에 붙는 표지다 (lib/track.ts). 스크린리더에는
+                  읽히지 않는다 — "TOEIC 미국 국기"는 항목 이름이 아니다.
+
+                  트리거에는 붙이지 않는다. 지금 무엇이 켜져 있는지는 이미 이름
+                  하나로 충분하고, 헤더 왼쪽 끝은 숙련도까지 함께 서는 자리다
+                */}
+                <span aria-hidden>{flag}</span>
               </DropdownMenuRadioItem>
             ))}
           </DropdownMenuRadioGroup>

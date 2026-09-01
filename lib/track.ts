@@ -18,20 +18,33 @@ export type Track = {
   id: TrackId
   /** 헤더 드롭다운에 보이는 이름 */
   label: string
+  /**
+   * 드롭다운 항목 뒤에 붙는 국기.
+   *
+   * 두문자어 일곱 개는 서로 닮아 눈으로 훑을 때 걸리는 데가 없다 — DELE와
+   * DELF는 글자 하나만 다르다. 국기는 **읽지 않고도** 갈라지는 표지라
+   * 목록을 훑는 시간을 줄인다.
+   *
+   * 이름을 대신하지는 않는다. 국기 하나로는 시험을 특정할 수 없고(영어권
+   * 시험은 여럿이다) 문화권과 언어가 일대일도 아니라, 어디까지나 이름 옆의
+   * 보조 표지다. 그래서 스크린리더에는 읽히지 않는다.
+   */
+  flag: string
   language: Language
 }
 
 /** 순서가 곧 드롭다운 순서다 */
 export const TRACKS: Track[] = [
-  { id: 'toeic', label: 'TOEIC', language: 'en' },
-  { id: 'jlpt', label: 'JLPT', language: 'ja' },
-  { id: 'hsk', label: 'HSK', language: 'zh' },
-  { id: 'dele', label: 'DELE', language: 'es' },
-  { id: 'delf', label: 'DELF', language: 'fr' },
+  // TOEIC은 미국 ETS가 내고 발음도 미국식이라 성조기를 붙인다
+  { id: 'toeic', label: 'TOEIC', flag: '🇺🇸', language: 'en' },
+  { id: 'jlpt', label: 'JLPT', flag: '🇯🇵', language: 'ja' },
+  { id: 'hsk', label: 'HSK', flag: '🇨🇳', language: 'zh' },
+  { id: 'dele', label: 'DELE', flag: '🇪🇸', language: 'es' },
+  { id: 'delf', label: 'DELF', flag: '🇫🇷', language: 'fr' },
   // telc 공식 표기는 소문자지만 나머지 다섯이 두문자어라 혼자 소문자면 오타로 읽힌다
-  { id: 'telc', label: 'TELC', language: 'de' },
+  { id: 'telc', label: 'TELC', flag: '🇩🇪', language: 'de' },
   // TORFL은 러시아어 능력 시험(ТРКИ)의 영어 표기다
-  { id: 'torfl', label: 'TORFL', language: 'ru' },
+  { id: 'torfl', label: 'TORFL', flag: '🇷🇺', language: 'ru' },
 ]
 
 export const TRACK_IDS = TRACKS.map((track) => track.id)
