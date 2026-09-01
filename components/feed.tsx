@@ -80,6 +80,9 @@ export function Feed({
   /** 마지막으로 카드를 늘린 시점의 길이. 같은 길이에서 두 번 늘리지 않는다 */
   const extendedFrom = useRef(-1)
   const scroller = useRef<HTMLElement | null>(null)
+  const observer = useRef<IntersectionObserver | null>(null)
+  /** 몇 번째 자리까지 관찰에 넣었는지 */
+  const observedUpTo = useRef(0)
 
   const commit = useCallback(
     (state: EngineState) => {
@@ -122,12 +125,18 @@ export function Feed({
     setReady(true)
   }, [track, entries])
 
-  // 지금 보고 있는 카드를 추적한다. 소개 카드를 언제 지나갔는지 알아야 한다
+  /**
+   * 지금 보고 있는 카드를 추적한다. 소개 카드를 언제 지나갔는지 알아야 한다.
+   *
+   * 관찰자는 **한 번만** 만든다. 카드가 늘 때마다 새로 만들어 전체를 다시
+   * 관찰하면 자리가 n개일 때 등록이 n²/2번이 된다 — 무한 스와이프에서는
+   * 앉아 있을수록 넘기는 손이 무거워진다는 뜻이다.
+   */
   useEffect(() => {
     const root = scroller.current
     if (!root) return
 
-    const observer = new IntersectionObserver(
+    observer.current = new IntersectionObserver(
       (records) => {
         for (const record of records) {
           if (record.intersectionRatio < 0.6) continue
@@ -138,8 +147,36 @@ export function Feed({
       { root, threshold: [0.6] },
     )
 
-    for (const child of Array.from(root.children)) observer.observe(child)
-    return () => observer.disconnect()
+    return () => {
+      observer.current?.disconnect()
+      observer.current = null
+    }
+  }, [])
+
+  /**
+   * 새로 붙은 자리만 관찰에 넣는다. 이미 보고 있는 자리는 그대로 둔다.
+   *
+   * 자리 수와 카드 수가 1:1이라 인덱스로 어디까지 넣었는지만 세면 된다.
+   * 트랙이 바뀌면 카드가 0으로 돌아가고 자리도 통째로 갈리므로, 옛 자리를
+   * 붙들지 않도록 그때만 관찰을 끊는다 — 사라진 DOM을 관찰자가 붙잡고 있으면
+   * 회수되지 않는다.
+   */
+  useEffect(() => {
+    const root = scroller.current
+    const io = observer.current
+    if (!root || !io) return
+
+    if (questions.length === 0) {
+      io.disconnect()
+      observedUpTo.current = 0
+      return
+    }
+
+    for (let i = observedUpTo.current; i < questions.length; i += 1) {
+      const slot = root.children[i]
+      if (slot) io.observe(slot)
+    }
+    observedUpTo.current = questions.length
   }, [questions.length])
 
   // 소개 카드는 판정이 없다. **지나가는 순간** 학습으로 인정한다 (spec.md §3)
