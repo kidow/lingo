@@ -52,10 +52,27 @@ const schwa = (symbol: string, stress: string) => (symbol === 'AH' && stress ===
 const isVowel = (token: string) => /[0-2]$/.test(token)
 
 /**
+ * 영어가 음절 **머리로 쓸 수 있는** 자음 뭉치.
+ *
+ * 앞 모음과 뒤 모음 사이의 자음이 전부 뒷 음절 머리인 것은 아니다. `airport`의
+ * `rp`처럼 영어가 낱말 앞에 못 세우는 뭉치는 앞 자음이 **앞 음절의 꼬리**다.
+ * 세울 수 있는 것 중 가장 긴 것을 머리로 잡는다(최대 개시 원칙).
+ */
+const ONSETS = new Set([
+  'pl', 'pr', 'pj', 'bl', 'br', 'bj', 'tr', 'tw', 'tj', 'dr', 'dw', 'dj',
+  'kl', 'kr', 'kw', 'kj', 'gl', 'gr', 'gw', 'fl', 'fr', 'fj', 'vj',
+  'θr', 'θw', 'ʃr', 'sp', 'st', 'sk', 'sl', 'sm', 'sn', 'sw', 'sf',
+  'hj', 'mj', 'nj', 'lj',
+  'spr', 'str', 'skr', 'spl', 'skw',
+])
+
+/**
  * 강세 부호는 **음절 앞**에 붙는다 — `ˈkɑfi`이지 `kˈɑfi`가 아니다.
  *
- * 사전은 강세를 모음에 매겨 두므로 그 모음 앞에 붙은 자음까지 거슬러 올라가
- * 음절 머리를 찾아야 한다. 앞 모음 다음의 자음들이 그 음절의 머리다.
+ * 사전은 강세를 모음에 매겨 두므로 그 모음 앞의 자음을 거슬러 올라가 음절
+ * 머리를 찾는다. 다만 **끝까지 거슬러 올라가면 안 된다.** `EH1 R P AO2 R T`에서
+ * `rp`를 통째로 머리로 잡으면 `ˈɛˌrpɔrt`가 되는데, `r`은 앞 음절 `ɛr`의 꼬리다.
+ * 올릴 수 있는 뭉치는 `ONSETS`가 정한다 — 실제 값은 `ˈɛrˌpɔrt`가 된다.
  */
 function toIpa(arpabet: string[]): string | null {
   const out: string[] = []
@@ -68,7 +85,7 @@ function toIpa(arpabet: string[]): string | null {
     if (!sound) return null
     if (isVowel(token)) {
       const mark = stress === '1' ? 'ˈ' : stress === '2' ? 'ˌ' : ''
-      if (mark) out.splice(onset, 0, mark)
+      if (mark) out.splice(headOf(out, onset), 0, mark)
       out.push(sound)
       onset = out.length // 다음 음절의 머리는 이 모음 바로 뒤부터다
     } else {
@@ -76,6 +93,20 @@ function toIpa(arpabet: string[]): string | null {
     }
   }
   return out.join('')
+}
+
+/**
+ * 자음 뭉치 `out[from..]` 가운데 음절 머리가 시작되는 자리.
+ *
+ * 낱말 첫머리는 앞 음절이 없으니 통째로 머리다. 그 밖에는 영어가 세울 수 있는
+ * 가장 긴 뭉치만 가져가고 나머지는 앞 음절에 남긴다.
+ */
+function headOf(out: string[], from: number): number {
+  if (from === 0) return 0
+  for (let take = Math.min(3, out.length - from); take >= 2; take -= 1) {
+    if (ONSETS.has(out.slice(out.length - take).join(''))) return out.length - take
+  }
+  return out.length - Math.min(1, out.length - from)
 }
 
 /** 낱말 → 발음기호. 동음이의 항목(`read(2)`)은 첫 번째만 쓴다 */
@@ -108,7 +139,9 @@ function lookup(term: string, dict: Map<string, string>): string | null {
   return parts.join(' ')
 }
 
-const only = process.argv[2]
+/** 이미 있는 값까지 다시 계산해 덮는다. 변환 규칙을 고쳤을 때 쓴다 */
+const force = process.argv.includes('--force')
+const only = process.argv.slice(2).find((arg) => !arg.startsWith('--'))
 const files = readdirSync(CONTENT_DIR)
   .filter((name) => name.endsWith('.json'))
   .filter((name) => !only || name === `${only}.json`)
@@ -130,13 +163,14 @@ for (const name of files) {
 
   for (const concept of data.concepts) {
     const word = concept.words.en
-    if (!word || word.romanization) continue
+    if (!word || (word.romanization && !force)) continue
     const ipa = lookup(word.term, dict)
     if (!ipa) {
       missing += 1
       unknown.push(word.term)
       continue
     }
+    if (word.romanization === ipa) continue
     word.romanization = ipa
     filled += 1
     touched = true
