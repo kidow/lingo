@@ -252,10 +252,14 @@ export function FeedCard({ children }: { children: React.ReactNode }) {
  *
  * 정사각이되 높이에 상한을 둔다. 짧은 화면에서 정사각을 고집하면 시트가
  * 밀려 예문이 잘린다.
+ *
+ * **세로가 700px 아래면 상한을 더 낮춘다.** 320×568(구형 4인치)에서 52dvh는
+ * 295px이라 시트에 235px밖에 안 남는데, 소개 카드 한 장이 236px을 쓴다 —
+ * 1px 차이로 넘길 화살표가 잘렸다. 40dvh면 시트가 90px 넓어진다.
  */
 export function CardImage({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="relative aspect-square max-h-[52dvh] w-full shrink-0 overflow-hidden bg-img-bg">
+    <div className="relative aspect-square max-h-[52dvh] [@media(max-height:700px)]:max-h-[40dvh] w-full shrink-0 overflow-hidden bg-img-bg">
       {children}
     </div>
   )
@@ -266,10 +270,15 @@ export function CardImage({ children }: { children?: React.ReactNode }) {
  *
  * 테두리를 두르지 않는다. 선을 그으면 그림이 사각형 안에 갇혀
  * "이미지가 배경에 녹는다"는 원칙이 깨진다. (brand-spec.md)
+ *
+ * 넘치면 **자른다가 아니라 굴린다.** 상황 표현 넷이 한 열로 쌓이는 4지선다는
+ * 짧은 화면에서 시트보다 길어지는데, 잘리면 마지막 보기와 모르겠어요가
+ * 사라져 카드가 못 쓰게 된다. 스크롤 체이닝은 막지 않는다 — 끝까지 굴리면
+ * 그대로 다음 카드로 넘어간다.
  */
 export function CardSheet({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative -mt-lg flex min-h-0 flex-1 flex-col gap-md rounded-t-card bg-surface px-5 pt-lg pb-lg">
+    <div className="relative -mt-lg flex min-h-0 flex-1 flex-col gap-md overflow-y-auto rounded-t-card bg-surface px-5 pt-lg pb-lg">
       {children}
     </div>
   )
