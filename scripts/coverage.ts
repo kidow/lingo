@@ -24,7 +24,7 @@
  */
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { bare, torflLevels } from './torfl.ts'
+import { bare, torflEntries } from './torfl.ts'
 import type { Concept } from '../lib/types.ts'
 
 const TSL_URL = 'https://www.newgeneralservicelist.com/s/TSL_12_stats.csv'
@@ -46,6 +46,42 @@ const MISSING = process.argv.includes('--missing')
   ? (process.argv[process.argv.indexOf('--missing') + 1]?.replace(/^--/, '') ?? 'all')
   : null
 const wants = (name: string) => MISSING === 'all' || MISSING === name
+
+/**
+ * 우리 글 어딘가에 그 낱말이 **낱말로** 나오는가.
+ *
+ * 빠진 목록에는 세 종류가 섞여 있다. `остановка`는 표제어로는 없지만
+ * `какая следующая остановка`(상황 표현) 안에 있고, 어떤 낱말은 예문에만 있다.
+ * 셋을 갈라야 **정말 없는 것**만 남는다 — 그것이 다음 배치 후보다.
+ */
+function sieve(words: string[], haystacks: { terms: string; texts: string; spaced: boolean }) {
+  // 띄어쓰기가 없는 중국어는 낱말 경계를 볼 수 없다. 그냥 들어 있으면 된다
+  const shows = (hay: string, word: string) =>
+    haystacks.spaced
+      ? new RegExp(`(^|[^\\p{L}\\p{N}])${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^\\p{L}\\p{N}]|$)`, 'u').test(hay)
+      : hay.includes(word)
+  const buckets = { term: [] as string[], text: [] as string[], none: [] as string[] }
+  for (const word of words) {
+    if (shows(haystacks.terms, word)) buckets.term.push(word)
+    else if (shows(haystacks.texts, word)) buckets.text.push(word)
+    else buckets.none.push(word)
+  }
+  return buckets
+}
+
+/** 빠진 낱말을 세 갈래로 갈라 찍는다. 정말 없는 것만 목록으로 낸다 */
+function showSieved(
+  title: string,
+  words: string[],
+  haystacks: { terms: string; texts: string; spaced: boolean },
+) {
+  const { term, text, none } = sieve(words, haystacks)
+  showMissing(`${title} — 정말 없는 것`, none)
+  console.log(
+    `    표제어 안에 든 것 ${term.length}개 · 예문에만 있는 것 ${text.length}개는 뺐다` +
+      ` (빠진 것 전체 ${words.length}개)`,
+  )
+}
 
 /** 빠진 낱말을 줄바꿈해 찍는다. 목록이 길어도 한 줄에 몰지 않는다 */
 function showMissing(title: string, words: string[]) {
@@ -70,6 +106,21 @@ const pct = (a: number, b: number) => (b === 0 ? '—' : `${((100 * a) / b).toFi
  * 대조 방식이 언어마다 다르다. 영어는 대소문자를 접고, 러시아어는 목록 쪽에
  * 얹힌 강세 부호를 떼야 만난다 (scripts/torfl.ts). 중국어는 그대로 쓴다.
  */
+/** 우리 표기와 예문을 한 덩어리로. `sieve`가 여기서 찾는다 */
+function haystacks(lang: 'en' | 'zh' | 'ru') {
+  const termList: string[] = []
+  const textList: string[] = []
+  for (const concept of concepts) {
+    const word = concept.words[lang]
+    if (!word) continue
+    const fold = (t: string) => (lang === 'en' ? t.toLowerCase() : lang === 'ru' ? bare(t) : t)
+    termList.push(fold(word.term))
+    for (const example of word.examples ?? (word.example ? [word.example] : []))
+      textList.push(fold(example.text))
+  }
+  return { terms: termList.join(' | '), texts: textList.join(' | '), spaced: lang !== 'zh' }
+}
+
 function terms(lang: 'en' | 'zh' | 'ru'): Set<string> {
   const set = new Set<string>()
   for (const concept of concepts) {
@@ -100,7 +151,7 @@ async function tsl() {
   console.log(`  ${covered}/${words.length}  ${pct(covered, words.length)}`)
   console.log(`  남은 것 ${missing.length}개`)
   // CSV가 순위 순이라 이 목록도 빈도 순이다 — 위에서부터 채우면 된다
-  if (wants('tsl')) showMissing('TSL 빠진 낱말 (빈도 순)', missing)
+  if (wants('tsl')) showSieved('TSL 빠진 낱말 (빈도 순)', missing, haystacks('en'))
 }
 
 async function hsk() {
@@ -150,7 +201,7 @@ async function hsk() {
   console.log(`\n  1~3급 ${upTo(3)} · 1~6급 ${upTo(6)}`)
   if (wants('hsk'))
     for (const grade of [...missing.keys()].sort((a, b) => a - b))
-      showMissing(`HSK ${grade >= 7 ? '7-9' : grade}급 빠진 낱말`, missing.get(grade) ?? [])
+      showSieved(`HSK ${grade >= 7 ? '7-9' : grade}급 빠진 낱말`, missing.get(grade) ?? [], haystacks('zh'))
 }
 
 /**
@@ -160,17 +211,18 @@ async function hsk() {
  * 같은 모양으로 읽히도록 아래에 누적도 한 줄 붙인다.
  */
 async function torfl() {
-  const levels = await torflLevels()
+  const entries = await torflEntries()
   const mine = terms('ru')
 
   const order = ['A1', 'A2', 'B1', 'B2'] as const
   const total = new Map<string, number>()
   const covered = new Map<string, number>()
   const missing = new Map<string, string[]>()
-  for (const [term, grade] of levels) {
+  for (const { forms, level: grade } of entries) {
     total.set(grade, (total.get(grade) ?? 0) + 1)
-    if (mine.has(term)) covered.set(grade, (covered.get(grade) ?? 0) + 1)
-    else (missing.get(grade) ?? missing.set(grade, []).get(grade)!).push(term)
+    // 한 줄에 여러 모양이 있으면 하나만 있어도 덮은 것이다 (`зонт; зонтик`)
+    if (forms.some((form) => mine.has(form))) covered.set(grade, (covered.get(grade) ?? 0) + 1)
+    else (missing.get(grade) ?? missing.set(grade, []).get(grade)!).push(forms[0])
   }
 
   console.log(`\nTORFL (ТРКИ) — 등급별\n${line(46)}`)
@@ -197,7 +249,8 @@ async function torfl() {
   console.log(`\n  A1~A2 ${upTo(2)} · A1~B1 ${upTo(3)}`)
   console.log(`  C1·C2는 목록에 없다 — 사이트가 B2까지만 싣는다`)
   if (wants('torfl'))
-    for (const grade of order) showMissing(`TORFL ${grade} 빠진 낱말`, missing.get(grade) ?? [])
+    for (const grade of order)
+      showSieved(`TORFL ${grade} 빠진 낱말`, missing.get(grade) ?? [], haystacks('ru'))
 }
 
 /** 목록이 없는 트랙은 "우리 낱말 중 등급이 붙은 비율"만 낸다 */
