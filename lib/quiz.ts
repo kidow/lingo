@@ -140,10 +140,13 @@ export function buildListen(entry: Entry, entries: Entry[], attempt = 0): Listen
 /**
  * 예문 빈칸을 만들 수 있는가.
  *
- * 상황 표현은 예문이 없다 — 표현 자체가 문장이라 예문을 따로 두지 않는다.
- * 예문이 있어도 정답이 그 안에 **그대로** 보여야 뚫을 수 있다. `pnpm check`가
- * 모든 언어에서 이걸 보증하지만(경고 0건), 데이터가 앞서 나갈 수 있으므로
- * 여기서도 확인하고 안 되면 재인 칸에 머문다.
+ * 정답이 예문 안에 **그대로** 보여야 뚫을 수 있다. `pnpm check`가 모든 언어에서
+ * 이걸 보증하지만(경고 0건), 데이터가 앞서 나갈 수 있으므로 여기서도 확인하고
+ * 안 되면 재인 칸에 머문다.
+ *
+ * 상황 표현도 여기에 들어온다. 뚫는 것이 표현 **전체**라 빈칸에는 문장이 통째로
+ * 들어가고, 감싸는 한 줄이 상황을 만든다 — "어떤 상황에 어떤 말을 하는가"를 묻는
+ * 카드가 된다 (spec.md §5).
  */
 export function canCloze(entry: Entry): boolean {
   return clozeExamples(entry).length > 0
