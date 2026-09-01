@@ -8,7 +8,7 @@ import { levelOf } from '@/lib/level'
 import { TRACK_IDS, trackOf } from '@/lib/track'
 
 /**
- * 콘텐츠 점검용 개발 화면. `pnpm dev` → http://localhost:3000/debug
+ * 콘텐츠 점검용 개발 화면. `pnpm dev` → http://localhost:5757/debug
  *
  * 개념을 하나씩 손으로 늘리는 워크플로(spec.md §7)에서 "무엇이 아직 없는지"를
  * 눈으로 확인하는 자리다. `pnpm check`가 터미널에서 하는 일을 화면에서 하되,
