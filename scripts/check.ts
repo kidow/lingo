@@ -120,17 +120,27 @@ for (const file of files) {
       if (!word[strategy.answer])
         fail(where, `${lang}.${strategy.answer} 누락 — 이 언어의 정답 필드입니다`)
 
-      // 예문은 선택이다. 있다면 두 줄이 다 있어야 하고, 그 단어가 실제로 들어 있어야 한다
-      const example = word.example as Record<string, unknown> | undefined
-      if (example) {
-        if (!example.text || !example.ko) fail(where, `${lang}.example은 text와 ko가 모두 필요합니다`)
+      /**
+       * 예문은 선택이다. 있다면 두 줄이 다 있어야 하고, 그 단어가 실제로
+       * 들어 있어야 한다 — 문맥 카드가 그 자리를 뚫기 때문이다 (§5).
+       *
+       * 한 줄이면 `example`, 여럿이면 `examples`다. **둘 다 같은 규칙을 받는다** —
+       * 두 번째 예문이 규칙을 비켜 가면 그 회차에만 문항이 안 만들어진다.
+       */
+      const single = word.example as Record<string, unknown> | undefined
+      const many = word.examples as Record<string, unknown>[] | undefined
+      if (single && many?.length) warn(`${where} — ${lang}에 example과 examples가 함께 있습니다. examples만 씁니다`)
+      const sentences = many?.length ? many : single ? [single] : []
+      sentences.forEach((example, i) => {
+        const at = sentences.length > 1 ? `examples[${i}]` : 'example'
+        if (!example.text || !example.ko) fail(where, `${lang}.${at}은 text와 ko가 모두 필요합니다`)
         const answer = word[strategy.answer]
         if (typeof example.text === 'string' && typeof answer === 'string' && !example.text.includes(answer))
-          warn(`${where} — ${lang}.example에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`)
-        // ja·zh는 예문도 읽을 수 있어야 한다. pnpm romanize가 채운다
+          warn(`${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`)
+        // ja·zh·ru는 예문도 읽을 수 있어야 한다. pnpm romanize가 채운다
         if ((lang === 'ja' || lang === 'zh' || lang === 'ru') && !example.romanization)
-          warn(`${where} — ${lang}.example에 로마자가 없습니다. pnpm romanize를 돌리세요`)
-      }
+          warn(`${where} — ${lang}.${at}에 로마자가 없습니다. pnpm romanize를 돌리세요`)
+      })
     }
 
     // 결과물 유무는 실패가 아니다. 이미지가 없으면 플레이스홀더로 나간다

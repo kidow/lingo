@@ -6,6 +6,7 @@ import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { answerSize, blankRow, optionBox, optionColumns, optionSize } from '@/lib/fit'
+import { examplesOf } from '@/lib/entries'
 import { asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import type {
@@ -52,6 +53,7 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
   const { concept, word, answer } = question.entry
   const aside = asideOf(word, lang)
   const level = levelOf(word)
+  const [example] = examplesOf(word)
 
   return (
     <FeedCard>
@@ -91,15 +93,19 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
           {level && <span className="ml-auto shrink-0 text-xs text-sub">{level}</span>}
         </div>
 
-        {/* 예문은 소개 카드에만 둔다. 정답 단어가 그대로 들어 있어 퀴즈에 못 쓴다 */}
-        {word.example && (
+        {/*
+          예문은 소개 카드에만 둔다. 정답 단어가 그대로 들어 있어 퀴즈에 못 쓴다.
+          여럿이어도 **첫 줄만** 보여준다 — 소개 카드의 일은 한 번 보여주는 것이지
+          다 보여주는 것이 아니다. 나머지는 문맥 카드가 회차로 돌려 쓴다
+        */}
+        {example && (
           <div className="border-t border-line pt-md">
-            <Copy text={word.example.text} className="font-jp text-[15px] leading-relaxed" />
-            {/* 예문도 소리 내 볼 수 있어야 한다. ja·zh만 값이 있다 (lib/types.ts) */}
-            {word.example.romanization && (
-              <p className="mt-0.5 text-xs text-sub">{word.example.romanization}</p>
+            <Copy text={example.text} className="font-jp text-[15px] leading-relaxed" />
+            {/* 예문도 소리 내 볼 수 있어야 한다. ja·zh·ru만 값이 있다 (lib/types.ts) */}
+            {example.romanization && (
+              <p className="mt-0.5 text-xs text-sub">{example.romanization}</p>
             )}
-            <p className="mt-1 text-sm text-sub">{word.example.ko}</p>
+            <p className="mt-1 text-sm text-sub">{example.ko}</p>
           </div>
         )}
 

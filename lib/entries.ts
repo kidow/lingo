@@ -1,6 +1,6 @@
 import { answerOf } from './lang.ts'
 import { trackOf, type TrackId } from './track.ts'
-import type { Category, Concept, Language, Word } from './types.ts'
+import type { Category, Concept, Example, Language, Word } from './types.ts'
 
 /**
  * 개념을 다루는 순수 함수들.
@@ -96,6 +96,17 @@ export function nearPool(entry: Entry, entries: Entry[]): Entry[] {
       candidate.concept.category === entry.concept.category,
   )
   return near.length >= 3 ? near : distractorPool(entry, entries)
+}
+
+/**
+ * 그 낱말의 예문 전부. `example`과 `examples`를 한 줄로 합쳐 본다.
+ *
+ * 순서가 곧 우선순위다 — 소개 카드는 첫 줄만 보여주고, 문맥 카드는 회차로
+ * 돌려 가며 쓴다.
+ */
+export function examplesOf(word: Word): Example[] {
+  if (word.examples?.length) return word.examples
+  return word.example ? [word.example] : []
 }
 
 export function countByCategory(entries: Entry[]): Record<Category, number> {

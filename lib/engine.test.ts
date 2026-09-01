@@ -14,7 +14,7 @@ import {
   type EngineState,
 } from './engine.ts'
 import { RUNG_BLANK, RUNG_CHOICE, RUNG_CLOZE, RUNG_INTRO } from './progress.ts'
-import { buildBlank, buildChoice, buildListen, NEAR_FROM_ATTEMPT } from './quiz.ts'
+import { buildBlank, buildChoice, buildCloze, buildListen, NEAR_FROM_ATTEMPT } from './quiz.ts'
 import type { Category, Concept } from './types.ts'
 
 /* ── 도구 ────────────────────────────────────────────────────────── */
@@ -225,10 +225,37 @@ test('rung이 카드 종류를 정한다', () => {
   assert.equal(questionFor(cat, state, entries).kind, 'choice')
 
   state = recordAnswer(state, 'cat', true, NOW)
-  assert.equal(questionFor(cat, state, entries).kind, 'cloze')
+  // 문맥 칸에서도 듣기가 번갈아 끼어든다 — 같은 문장이 반복되는 것을 줄인다
+  assert.ok(['cloze', 'listen'].includes(questionFor(cat, state, entries).kind))
 
   state = recordAnswer(state, 'cat', true, NOW + DAY)
   assert.equal(questionFor(cat, state, entries).kind, 'blank')
+})
+
+test('문맥 칸은 문맥과 듣기를 번갈아 낸다 — 같은 문장이 매번 나오지 않는다', () => {
+  const cat = entryWithExample('cat', 'ねこ')
+  const entries = [cat, ...ENTRIES.slice(1)]
+  const kinds = new Set<string>()
+  for (let attempt = 0; attempt < 12; attempt += 1) {
+    let state = introduced(initialState(), 'cat')
+    // rung 2에 세우고 회차만 바꿔 가며 어떤 카드가 나오는지 본다
+    state = {
+      ...state,
+      progress: {
+        ...state.progress,
+        cards: {
+          ...state.progress.cards,
+          cat: {
+            ...state.progress.cards.cat,
+            rung: RUNG_CLOZE,
+            fsrs: { ...state.progress.cards.cat.fsrs, reps: attempt },
+          },
+        },
+      },
+    }
+    kinds.add(questionFor(cat, state, entries).kind)
+  }
+  assert.deepEqual(kinds, new Set(['cloze', 'listen']), '둘 다 나온다')
 })
 
 test('예문이 없으면 문맥 칸을 못 만들어 재인에 머문다', () => {
@@ -253,9 +280,7 @@ test('읽기가 한 글자면 빈칸을 못 만들어 재인에 머문다', () =
 test('문맥 칸은 예문에서 낱말 자리를 뚫는다', () => {
   const cat = entryWithExample('cat', 'ねこ')
   const entries = [cat, ...ENTRIES.slice(1)]
-  let state = introduced(initialState(), 'cat')
-  state = recordAnswer(state, 'cat', true, NOW)
-  const q = questionFor(cat, state, entries)
+  const q = buildCloze(cat, entries, 0)
   assert.equal(q.kind, 'cloze')
   if (q.kind !== 'cloze') return
   assert.equal(q.before + 'ねこ' + q.after, cat.word.example!.text, '앞뒤를 붙이면 예문 그대로다')

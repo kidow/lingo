@@ -1,4 +1,4 @@
-import { distractorPool, nearPool, type Entry } from './entries.ts'
+import { distractorPool, examplesOf, nearPool, type Entry } from './entries.ts'
 import { blankable, blankableChar, pickConfusables } from './confusables.ts'
 import { hashString, makeRng, sample, shuffled } from './random.ts'
 import { hasAudio } from './audio-have.ts'
@@ -99,6 +99,21 @@ export function buildChoice(entry: Entry, entries: Entry[], attempt = 0): Choice
  * 내보내기라 도는 중에 파일을 물어볼 수 없으므로 빌드 때 적어 둔 목록을 본다
  * (lib/audio-have.ts). 없으면 재인 카드가 대신 나간다.
  */
+/**
+ * 이번 회차를 듣기로 낼까.
+ *
+ * 회차의 홀짝으로 가르면 **갈리지 않는다.** 답할 때마다 rung과 회차가 같이
+ * 1씩 움직여서 `rung + attempt`의 홀짝이 변하지 않기 때문이다 — 한 칸에
+ * 머무는 동안 늘 같은 쪽만 나온다. 사다리 양 끝(0에서 틀리거나 3에서 맞히면
+ * rung이 안 움직인다)에서만 뒤집히는데, 그건 규칙이 아니라 사고다.
+ *
+ * 그래서 홀짝 대신 **회차를 섞은 값**으로 던진다. 같은 회차면 같은 결과라
+ * 카드를 다시 그려도 종류가 바뀌지 않고, 회차가 오르면 새로 갈린다.
+ */
+export function isListenTurn(entry: Entry, attempt: number): boolean {
+  return canListen(entry) && hashString(`${entry.concept.slug}:turn:${attempt}`) % 2 === 1
+}
+
 export function canListen(entry: Entry): boolean {
   return hasAudio(entry.concept.slug, entry.lang)
 }
@@ -131,8 +146,12 @@ export function buildListen(entry: Entry, entries: Entry[], attempt = 0): Listen
  * 여기서도 확인하고 안 되면 재인 칸에 머문다.
  */
 export function canCloze(entry: Entry): boolean {
-  const text = entry.word.example?.text
-  return Boolean(text && text.includes(entry.answer))
+  return clozeExamples(entry).length > 0
+}
+
+/** 정답이 그대로 보이는 예문만 뚫을 수 있다 */
+function clozeExamples(entry: Entry) {
+  return examplesOf(entry.word).filter((example) => example.text.includes(entry.answer))
 }
 
 /**
@@ -142,13 +161,18 @@ export function canCloze(entry: Entry): boolean {
  * `receipt`의 `p`를 맞히는 것과 "영수증을 주세요"에서 `receipt`를 고르는 것은
  * 다른 일이다. 이 칸은 **문장 안에서 쓰이는 자리**를 묻는다.
  *
+ * 예문이 여럿이면 회차마다 다른 문장을 쓴다. 하나뿐이면 같은 문장이 다시
+ * 나오는데, 그 반복은 듣기 카드가 번갈아 끼어들어 절반으로 줄인다 (lib/engine.ts).
+ *
  * 오답은 **같은 주제 파일**에서 먼저 뽑는다 (`nearPool`). category만 보면
  * `The ___ is clean.`에 `downstairs`가 섞이는데, 문법으로는 들어가지만 문맥으로는
  * 어울리지 않아 문장을 읽지 않고도 걸러진다.
  */
 export function buildCloze(entry: Entry, entries: Entry[], attempt = 0): ClozeQuestion {
   const rng = makeRng(seedOf(entry, 'cloze', attempt))
-  const text = entry.word.example?.text ?? ''
+  // 예문이 여럿이면 회차로 돌린다. 뚫을 자리를 돌리는 것과 같은 방식이다
+  const sentences = clozeExamples(entry)
+  const text = sentences.length > 0 ? sentences[attempt % sentences.length].text : ''
   const at = text.indexOf(entry.answer)
   const pool = nearPool(entry, entries)
   const distractors = sample(pool, CHOICE_COUNT - 1, rng).map((e) => e.answer)

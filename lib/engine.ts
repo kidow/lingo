@@ -21,7 +21,7 @@ import {
   buildListen,
   canBlank,
   canCloze,
-  canListen,
+  isListenTurn,
   type Question,
 } from './quiz.ts'
 
@@ -178,11 +178,22 @@ export function questionFor(entry: Entry, state: EngineState, entries: Entry[]):
 
   if (rung === RUNG_INTRO) return buildIntro(entry)
   if (rung === RUNG_BLANK && canBlank(entry)) return buildBlank(entry, attempt)
-  if (rung >= RUNG_CLOZE && canCloze(entry)) return buildCloze(entry, entries, attempt)
 
-  // 재인 칸은 두 모습으로 번갈아 나온다. 사다리를 늘리지 않는 이유는 듣기가
-  // 더 어려운 단계가 아니라 **같은 재인을 다른 감각으로 하는 것**이기 때문이다
-  if (attempt % 2 === 1 && canListen(entry)) return buildListen(entry, entries, attempt)
+  /**
+   * 듣기는 재인·문맥 두 칸에서 번갈아 끼어든다.
+   *
+   * 재인 칸에서는 **같은 재인을 다른 감각으로** 하려는 것이고, 문맥 칸에서는
+   * 이유가 하나 더 있다 — **같은 문장이 반복되는 것을 절반으로 줄인다.**
+   * 예문은 낱말당 하나뿐이라 문맥 카드를 다시 만나면 문장이 그대로다.
+   * 엔진을 3,000장 돌려 보면 문맥 카드 600장이 낱말 열댓 개에 몰리고 한
+   * 낱말이 최대 156번까지 나온다 — 그 절반을 듣기가 가져간다.
+   */
+  const listenTurn = isListenTurn(entry, attempt)
+
+  if (rung >= RUNG_CLOZE && canCloze(entry)) {
+    return listenTurn ? buildListen(entry, entries, attempt) : buildCloze(entry, entries, attempt)
+  }
+  if (listenTurn) return buildListen(entry, entries, attempt)
   return buildChoice(entry, entries, attempt)
 }
 
