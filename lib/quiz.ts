@@ -32,7 +32,17 @@ export type BlankQuestion = {
   keys: string[]
 }
 
-export type Question = IntroQuestion | ChoiceQuestion | BlankQuestion
+export type ClozeQuestion = {
+  kind: 'cloze'
+  entry: Entry
+  /** 예문을 정답 자리에서 자른 앞뒤 토막 */
+  before: string
+  after: string
+  /** 정답 1 + 오답 3, 섞인 순서 */
+  options: string[]
+}
+
+export type Question = IntroQuestion | ChoiceQuestion | BlankQuestion | ClozeQuestion
 
 const seedOf = (entry: Entry, kind: string, attempt: number) =>
   hashString(`${entry.concept.slug}:${kind}:${attempt}`)
@@ -46,6 +56,44 @@ export function buildChoice(entry: Entry, entries: Entry[], attempt = 0): Choice
   const pool = distractorPool(entry, entries)
   const distractors = sample(pool, CHOICE_COUNT - 1, rng).map((e) => e.answer)
   return { kind: 'choice', entry, options: shuffled([entry.answer, ...distractors], rng) }
+}
+
+/**
+ * 예문 빈칸을 만들 수 있는가.
+ *
+ * 상황 표현은 예문이 없다 — 표현 자체가 문장이라 예문을 따로 두지 않는다.
+ * 예문이 있어도 정답이 그 안에 **그대로** 보여야 뚫을 수 있다. `pnpm check`가
+ * 모든 언어에서 이걸 보증하지만(경고 0건), 데이터가 앞서 나갈 수 있으므로
+ * 여기서도 확인하고 안 되면 재인 칸에 머문다.
+ */
+export function canCloze(entry: Entry): boolean {
+  const text = entry.word.example?.text
+  return Boolean(text && text.includes(entry.answer))
+}
+
+/**
+ * 예문에서 낱말을 뚫고 넷 중 고르게 한다.
+ *
+ * 철자 빈칸(`buildBlank`)은 글자 하나를 묻는다 — 형태는 보지만 뜻은 안 본다.
+ * `receipt`의 `p`를 맞히는 것과 "영수증을 주세요"에서 `receipt`를 고르는 것은
+ * 다른 일이다. 이 칸은 **문장 안에서 쓰이는 자리**를 묻는다.
+ *
+ * 오답은 재인 칸과 같은 풀(같은 category)에서 뽑는다. 그래야 문맥을 읽지 않고
+ * 품사만 보고 걸러내지 못한다.
+ */
+export function buildCloze(entry: Entry, entries: Entry[], attempt = 0): ClozeQuestion {
+  const rng = makeRng(seedOf(entry, 'cloze', attempt))
+  const text = entry.word.example?.text ?? ''
+  const at = text.indexOf(entry.answer)
+  const pool = distractorPool(entry, entries)
+  const distractors = sample(pool, CHOICE_COUNT - 1, rng).map((e) => e.answer)
+  return {
+    kind: 'cloze',
+    entry,
+    before: text.slice(0, at),
+    after: text.slice(at + entry.answer.length),
+    options: shuffled([entry.answer, ...distractors], rng),
+  }
 }
 
 /**

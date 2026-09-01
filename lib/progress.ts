@@ -9,13 +9,20 @@ import type { TrackId } from './track.ts'
  * 서로를 덮지 않는다.
  */
 
-export const PROGRESS_VERSION = 1
+export const PROGRESS_VERSION = 2
 
-/** 카드 난이도 사다리. 0 소개 → 1 재인 → 2 단서 회상 */
-export type Rung = 0 | 1 | 2
+/**
+ * 카드 난이도 사다리. 0 소개 → 1 재인 → 2 문맥 → 3 단서 회상
+ *
+ * 예문 빈칸(2)이 재인과 철자 사이에 들어간다. 그림을 보고 낱말을 고르는
+ * 것과 낱말의 철자 한 글자를 떠올리는 것 사이에는 **문장 안에서 그 낱말이
+ * 설 자리를 아는가**라는 단계가 있다. 그 사이가 비어 있었다.
+ */
+export type Rung = 0 | 1 | 2 | 3
 export const RUNG_INTRO = 0 satisfies Rung
 export const RUNG_CHOICE = 1 satisfies Rung
-export const RUNG_BLANK = 2 satisfies Rung
+export const RUNG_CLOZE = 2 satisfies Rung
+export const RUNG_BLANK = 3 satisfies Rung
 export const RUNG_MAX = RUNG_BLANK
 
 /**
@@ -115,13 +122,20 @@ export function masteryLabel(mastered: number, total: number): string | null {
 export const progressKey = (track: TrackId) => `lingo.progress.${track}`
 export const TRACK_KEY = 'lingo.track'
 
-/** 없거나 깨졌으면 빈 진도로 시작한다. 던지지 않는다. */
+/**
+ * 없거나 깨졌으면 빈 진도로 시작한다. 던지지 않는다.
+ *
+ * 버전이 낮으면 **버리지 않고 옮긴다.** 진도는 서버에 사본이 없어서 한 번
+ * 버리면 그걸로 끝이다 — 몇 달치 복습 간격이 사라진다.
+ */
 export function loadProgress(track: TrackId): Progress {
   if (typeof localStorage === 'undefined') return emptyProgress()
   try {
     const raw = localStorage.getItem(progressKey(track))
     if (!raw) return emptyProgress()
-    const parsed = JSON.parse(raw) as Partial<Progress>
+    // 저장된 값은 예전 스키마일 수 있다. version은 넓게 읽는다
+    const parsed = JSON.parse(raw) as Omit<Partial<Progress>, 'version'> & { version?: number }
+    if (parsed.version === 1) return migrateFromV1(parsed)
     if (parsed.version !== PROGRESS_VERSION) return emptyProgress()
     return {
       version: PROGRESS_VERSION,
@@ -131,6 +145,21 @@ export function loadProgress(track: TrackId): Progress {
   } catch {
     return emptyProgress()
   }
+}
+
+/**
+ * v1 → v2. 사다리 가운데에 문맥 칸이 끼면서 철자 칸이 2에서 3으로 밀렸다.
+ *
+ * v1에서 2였던 카드는 철자까지 올라간 카드다. 그대로 두면 문맥 칸으로
+ * **강등**되므로 3으로 올린다. 0·1은 뜻이 그대로라 손대지 않는다.
+ * FSRS 상태는 건드리지 않는다 — 다음 복습 시각은 rung이 아니라 거기 있다.
+ */
+function migrateFromV1(parsed: { cards?: Record<string, CardState>; introducedAt?: Record<string, number> }): Progress {
+  const cards: Record<string, CardState> = {}
+  for (const [slug, card] of Object.entries(parsed.cards ?? {})) {
+    cards[slug] = card.rung === 2 ? { ...card, rung: RUNG_BLANK } : card
+  }
+  return { version: PROGRESS_VERSION, cards, introducedAt: parsed.introducedAt ?? {} }
 }
 
 /** 저장 실패는 학습을 막을 이유가 아니다 (사파리 프라이빗 모드 등). */

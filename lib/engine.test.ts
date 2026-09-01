@@ -13,7 +13,7 @@ import {
   weightOf,
   type EngineState,
 } from './engine.ts'
-import { RUNG_BLANK, RUNG_CHOICE, RUNG_INTRO } from './progress.ts'
+import { RUNG_BLANK, RUNG_CHOICE, RUNG_CLOZE, RUNG_INTRO } from './progress.ts'
 import { buildBlank } from './quiz.ts'
 import type { Category, Concept } from './types.ts'
 
@@ -31,6 +31,13 @@ function entry(slug: string, reading: string, category: Category = 'noun'): Entr
     words: { ja: { term: slug, reading } },
   }
   return { concept, word: concept.words.ja!, answer: reading }
+}
+
+/** 예문이 있는 항목. 문맥 칸(예문 빈칸)은 예문이 있어야 만들어진다 */
+function entryWithExample(slug: string, reading: string, category: Category = 'noun'): Entry {
+  const e = entry(slug, reading, category)
+  e.word.example = { text: `${reading}が すきです。`, ko: `${slug}를 좋아합니다.` }
+  return e
 }
 
 const ENTRIES = [
@@ -157,12 +164,12 @@ test('강등돼 내려온 카드도 소개를 지나가면 다시 재인 칸으�
 test('정답은 rung을 한 칸 올리고 streak을 쌓는다', () => {
   let state = introduced(initialState(), 'cat')
   state = recordAnswer(state, 'cat', true, NOW)
-  assert.equal(state.progress.cards.cat.rung, RUNG_BLANK)
+  assert.equal(state.progress.cards.cat.rung, RUNG_CLOZE)
   assert.equal(state.progress.cards.cat.streak, 1)
   assert.equal(state.reservations.cat, DISTANCE.correct)
 })
 
-test('rung은 2를 넘지 않는다', () => {
+test('rung은 사다리 꼭대기를 넘지 않는다', () => {
   let state = introduced(initialState(), 'cat')
   for (let i = 0; i < 5; i += 1) state = recordAnswer(state, 'cat', true, NOW + i * DAY)
   assert.equal(state.progress.cards.cat.rung, RUNG_BLANK)
@@ -178,7 +185,7 @@ test('연속 2회 정답부터는 더 멀리 예약된다', () => {
 
 test('오답은 한 칸만 내리고 바닥으로 떨어뜨리지 않는다', () => {
   let state = introduced(initialState(), 'cat')
-  state = recordAnswer(state, 'cat', true, NOW) // rung 2
+  state = recordAnswer(state, 'cat', true, NOW) // rung 2 = 문맥
   state = recordAnswer(state, 'cat', false, NOW + DAY)
   assert.equal(state.progress.cards.cat.rung, RUNG_CHOICE) // 2 → 1, 0이 아니다
   assert.equal(state.progress.cards.cat.streak, 0)
@@ -209,24 +216,52 @@ test('Review까지 올라간 카드가 틀리면 lapses가 오른다', () => {
 /* ── 문항 ────────────────────────────────────────────────────────── */
 
 test('rung이 카드 종류를 정한다', () => {
-  const cat = ENTRIES[0]
+  const cat = entryWithExample('cat', 'ねこ')
+  const entries = [cat, ...ENTRIES.slice(1)]
   let state = initialState()
-  assert.equal(questionFor(cat, state, ENTRIES).kind, 'intro')
+  assert.equal(questionFor(cat, state, entries).kind, 'intro')
 
   state = introduced(state, 'cat')
-  assert.equal(questionFor(cat, state, ENTRIES).kind, 'choice')
+  assert.equal(questionFor(cat, state, entries).kind, 'choice')
 
   state = recordAnswer(state, 'cat', true, NOW)
-  assert.equal(questionFor(cat, state, ENTRIES).kind, 'blank')
+  assert.equal(questionFor(cat, state, entries).kind, 'cloze')
+
+  state = recordAnswer(state, 'cat', true, NOW + DAY)
+  assert.equal(questionFor(cat, state, entries).kind, 'blank')
+})
+
+test('예문이 없으면 문맥 칸을 못 만들어 재인에 머문다', () => {
+  const cat = ENTRIES[0] // 예문 없음
+  let state = introduced(initialState(), 'cat')
+  state = recordAnswer(state, 'cat', true, NOW)
+  assert.equal(state.progress.cards.cat.rung, RUNG_CLOZE)
+  assert.equal(questionFor(cat, state, ENTRIES).kind, 'choice')
 })
 
 test('읽기가 한 글자면 빈칸을 못 만들어 재인에 머문다', () => {
   const tree = entry('tree', 'き')
   const entries = [...ENTRIES, tree]
   let state = introduced(initialState(), 'tree')
-  state = recordAnswer(state, 'tree', true, NOW) // rung 2
+  state = recordAnswer(state, 'tree', true, NOW)
+  state = recordAnswer(state, 'tree', true, NOW + DAY)
   assert.equal(state.progress.cards.tree.rung, RUNG_BLANK)
   assert.equal(questionFor(tree, state, entries).kind, 'choice')
+})
+
+test('문맥 칸은 예문에서 낱말 자리를 뚫는다', () => {
+  const cat = entryWithExample('cat', 'ねこ')
+  const entries = [cat, ...ENTRIES.slice(1)]
+  let state = introduced(initialState(), 'cat')
+  state = recordAnswer(state, 'cat', true, NOW)
+  const q = questionFor(cat, state, entries)
+  assert.equal(q.kind, 'cloze')
+  if (q.kind !== 'cloze') return
+  assert.equal(q.before + 'ねこ' + q.after, cat.word.example!.text, '앞뒤를 붙이면 예문 그대로다')
+  assert.ok(!q.before.includes('ねこ') && !q.after.includes('ねこ'), '정답이 남아 있으면 안 된다')
+  assert.equal(q.options.length, 4)
+  assert.ok(q.options.includes('ねこ'))
+  assert.equal(new Set(q.options).size, 4, '보기에 중복이 없다')
 })
 
 test('4지선다 보기는 정답 포함 4개이고 중복이 없다', () => {
