@@ -92,7 +92,10 @@ async function pdfWords(url: string): Promise<string[]> {
     }
     i = e + 9
   }
-  return text.match(/[A-ZÄÖÜ][a-zäöüß]+/g) ?? []
+  // **소문자도 긁는다.** 대문자로 시작하는 것만 받으면 명사만 남는다 —
+  // 독일어 동사·형용사는 목록에도 소문자로 실려서 `essen`·`groß`가 통째로
+  // 빠졌다. 등급이 붙은 낱말 670개가 전부 명사였던 이유가 이것이다
+  return text.match(/[A-Za-zÄÖÜäöüß]{2,}/g) ?? []
 }
 
 async function germanLevels(): Promise<Map<string, string>> {
