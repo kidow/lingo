@@ -52,6 +52,18 @@ export function SayButton({
   const taps = useRef(0)
   const [available, setAvailable] = useState(true)
   const [playing, setPlaying] = useState(false)
+  /**
+   * 저절로 울리려다 브라우저에 막혔는가.
+   *
+   * iOS 사파리는 사용자가 건드리지 않은 소리를 막는다. 넘기는 손짓은 제스처지만
+   * 재생은 그 손짓의 호출 스택 밖(렌더 뒤 효과)에서 일어나므로 막힌다 —
+   * 듣기 카드에서는 화면에 아무 소리도 안 나는 셈이다.
+   *
+   * 지시문을 쓰지 않는다는 원칙(§5) 때문에 "눌러서 들으세요"를 띄울 수 없다.
+   * 대신 **버튼이 기다리는 모양이 된다** — 강조 테두리에 맥박. 눌러야 한다는
+   * 것을 글자 없이 말한다.
+   */
+  const [blocked, setBlocked] = useState(false)
 
   const play = useCallback((audio: HTMLAudioElement | null = audioRef.current) => {
     if (!audio) return
@@ -67,7 +79,13 @@ export function SayButton({
     // 실패해도 버튼을 죽이지 않는다. 재생이 막히거나(자동재생 정책) 중단되는
     // 것은(NotAllowedError · AbortError) 파일 문제가 아니다. 파일이 없다는
     // 판정은 아래 'error' 이벤트 하나가 맡는다 — 그게 유일한 근거다
-    audio.play().catch(() => setPlaying(false))
+    audio
+      .play()
+      .then(() => setBlocked(false))
+      .catch((error: unknown) => {
+        setPlaying(false)
+        if ((error as { name?: string })?.name === 'NotAllowedError') setBlocked(true)
+      })
   }, [])
 
   useEffect(() => {
@@ -110,7 +128,8 @@ export function SayButton({
         border border-line bg-surface
         transition active:scale-95
         disabled:cursor-default disabled:active:scale-100
-        ${playing ? 'border-accent text-accent' : disabled ? 'text-sub/45' : 'text-ink'}
+        ${blocked ? 'motion-safe:animate-pulse' : ''}
+        ${playing || blocked ? 'border-accent text-accent' : disabled ? 'text-sub/45' : 'text-ink'}
       `}
     >
       <AudioLines className="size-5" strokeWidth={1.8} aria-hidden />

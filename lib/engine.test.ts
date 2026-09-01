@@ -413,3 +413,42 @@ test('같은 회차를 다시 그리면 같은 자리가 나온다 — 다시 �
   const target = entry('banana', 'banana')
   assert.equal(buildBlank(target, 3).holeIndex, buildBlank(target, 3).holeIndex)
 })
+
+/* ── 문맥 카드 오답 ───────────────────────────────────────────────── */
+
+test('문맥 카드 오답은 같은 주제에서 먼저 뽑는다', () => {
+  const withTopic = (slug: string, reading: string, topic: string): Entry => {
+    const e = entryWithExample(slug, reading)
+    e.concept.topic = topic
+    return e
+  }
+  const towel = withTopic('towel', 'タオル', 'home')
+  const entries = [
+    towel,
+    withTopic('curtain', 'カーテン', 'home'),
+    withTopic('carpet', 'カーペット', 'home'),
+    withTopic('pillow', 'まくら', 'home'),
+    withTopic('salad', 'サラダ', 'food'),
+    withTopic('pizza', 'ピザ', 'food'),
+    withTopic('coupon', 'クーポン', 'office'),
+  ]
+  let state = introduced(initialState(), 'towel')
+  state = recordAnswer(state, 'towel', true, NOW)
+  const q = questionFor(towel, state, entries)
+  assert.equal(q.kind, 'cloze')
+  if (q.kind !== 'cloze') return
+  const topics = q.options.map((o) => entries.find((e) => e.answer === o)!.concept.topic)
+  assert.deepEqual(new Set(topics), new Set(['home']), '넷 다 같은 주제다')
+})
+
+test('같은 주제에 셋이 모자라면 넓은 풀로 돌아간다', () => {
+  const lonely = entryWithExample('towel', 'タオル')
+  lonely.concept.topic = 'home'
+  const entries = [lonely, ...ENTRIES.slice(1)] // 나머지는 주제가 없다
+  let state = introduced(initialState(), 'towel')
+  state = recordAnswer(state, 'towel', true, NOW)
+  const q = questionFor(lonely, state, entries)
+  assert.equal(q.kind, 'cloze')
+  if (q.kind !== 'cloze') return
+  assert.equal(q.options.length, 4, '문항은 그래도 만들어진다')
+})
