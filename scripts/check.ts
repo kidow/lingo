@@ -20,6 +20,17 @@ const CATEGORIES = ['noun', 'verb', 'adjective', 'scene']
 /** 4지선다는 정답 1 + 오답 3이 필요하다 */
 const MIN_PER_CATEGORY = 4
 
+/**
+ * 인물이 든 프롬프트는 `no facial features`를 달아야 한다. (IMAGE_STYLE)
+ *
+ * 전수 감사에서 세 장(crawl·lift·tutor)이 눈·입까지 그려진 채 들어와 있었는데,
+ * 셋 다 프롬프트에 그 문구가 없었다. 그림을 눈으로 훑어 잡을 일이 아니라
+ * **문구를 쓸 때 잡을 일**이라 여기서 경고한다. 손만 나오는 그림은 얼굴이
+ * 없으므로 hand는 제외한다 — 그러면 대부분의 동작 카드가 헛경고를 낸다.
+ */
+const PERSON_RE = /\b(figure|figures|person|people|baby|child|children|adult|man|woman|worker|passenger|customer)\b/i
+const NO_FACE_RE = /no facial features/i
+
 const errors: string[] = []
 const warnings: string[] = []
 const notes: string[] = []
@@ -80,6 +91,12 @@ for (const file of files) {
 
     if (!c.meaning_ko) fail(where, 'meaning_ko 누락')
     if (!c.image_prompt) fail(where, 'image_prompt 누락 — 이미지를 재생성할 수 없습니다')
+    else if (
+      typeof c.image_prompt === 'string' &&
+      PERSON_RE.test(c.image_prompt) &&
+      !NO_FACE_RE.test(c.image_prompt)
+    )
+      warn(`${where} — 인물이 든 프롬프트인데 "no facial features"가 없습니다. 모델이 얼굴을 그립니다 (IMAGE_STYLE)`)
 
     // category는 오답 보기를 뽑는 근거라 생략을 허용하지 않는다 (spec.md §4)
     if (!c.category) fail(where, 'category 누락')
