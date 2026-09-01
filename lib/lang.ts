@@ -19,20 +19,28 @@ export type LangStrategy = {
    * 오는 것은 로마자다. 소개 카드가 첫 항목만 대괄호로 감싼다. (spec.md §5)
    */
   aside: ('term' | 'romanization')[]
+  /**
+   * 낱말을 띄어쓰기로 가르는 언어인가.
+   *
+   * 문맥 빈칸이 예문에서 정답을 찾을 때 쓴다. 띄어쓰는 언어는 굴절된 긴 낱말
+   * **안**을 파면 안 된다 — `hands`에서 `hand`만 뚫으면 `___s`가 남는다.
+   * 일본어·중국어는 낱말 사이에 공백이 없어 그 규칙을 적용할 수 없다.
+   */
+  spaced: boolean
 }
 
 export const LANG: Record<Language, LangStrategy> = {
   // 영어는 적힌 대로 읽지 않는다 — `receipt`도 `colonel`도 그렇다. 참고줄에
   // 로마자가 아니라 **발음기호**를 둔다. CMU 사전에서 받아 온다 (scripts/ipa.ts)
-  en: { answer: 'term', aside: ['romanization'] },
-  ja: { answer: 'reading', aside: ['romanization', 'term'] },
-  zh: { answer: 'term', aside: ['romanization'] },
-  es: { answer: 'term', aside: [] },
-  fr: { answer: 'term', aside: [] },
-  de: { answer: 'term', aside: [] },
+  en: { answer: 'term', aside: ['romanization'], spaced: true },
+  ja: { answer: 'reading', aside: ['romanization', 'term'], spaced: false },
+  zh: { answer: 'term', aside: ['romanization'], spaced: false },
+  es: { answer: 'term', aside: [], spaced: true },
+  fr: { answer: 'term', aside: [], spaced: true },
+  de: { answer: 'term', aside: [], spaced: true },
   // 러시아어는 키릴 문자라 표기를 그대로 읽을 수 없다. 로마자를 참고줄에 둔다 —
   // 규칙적인 문자라 scripts/romanize.ts가 표로 만든다 (§7)
-  ru: { answer: 'term', aside: ['romanization'] },
+  ru: { answer: 'term', aside: ['romanization'], spaced: true },
 }
 
 /**

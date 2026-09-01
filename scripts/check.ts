@@ -11,8 +11,9 @@ import { join } from 'node:path'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
 import { entriesForTrack } from '../lib/entries.ts'
 import { LANG } from '../lib/lang.ts'
+import { clozeAt } from '../lib/quiz.ts'
 import { TRACKS } from '../lib/track.ts'
-import type { Concept } from '../lib/types.ts'
+import type { Concept, Language } from '../lib/types.ts'
 
 const CONTENT_DIR = 'content'
 const PUBLIC_DIR = 'public'
@@ -135,8 +136,15 @@ for (const file of files) {
         const at = sentences.length > 1 ? `examples[${i}]` : 'example'
         if (!example.text || !example.ko) fail(where, `${lang}.${at}은 text와 ko가 모두 필요합니다`)
         const answer = word[strategy.answer]
-        if (typeof example.text === 'string' && typeof answer === 'string' && !example.text.includes(answer))
-          warn(`${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`)
+        // 들어 있기만 해서는 안 되고 **온전한 낱말**이어야 한다. `hands` 속의
+        // `hand`를 뚫으면 `___s`가 남아 정답 모양이 새고, 앞이 굴절형이면
+        // 빈칸이 엉뚱한 데 뚫려 진짜 정답이 문장에 그대로 보인다 (lib/quiz.ts)
+        if (typeof example.text === 'string' && typeof answer === 'string' && clozeAt(example.text, answer, lang as Language) < 0)
+          warn(
+            example.text.includes(answer)
+              ? `${where} — ${lang}.${at}의 "${answer}"가 긴 낱말 안에만 있습니다. 빈칸이 낱말을 자릅니다`
+              : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`,
+          )
         // ja·zh·ru는 예문도 읽을 수 있어야 한다. pnpm romanize가 채운다
         if ((lang === 'ja' || lang === 'zh' || lang === 'ru') && !example.romanization)
           warn(`${where} — ${lang}.${at}에 로마자가 없습니다. pnpm romanize를 돌리세요`)
