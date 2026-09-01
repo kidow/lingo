@@ -4,6 +4,7 @@ import type { Entry } from './entries.ts'
 import {
   COOLDOWN,
   DISTANCE,
+  SETTLED_STREAK,
   initialState,
   nextQuestion,
   pickNext,
@@ -181,6 +182,18 @@ test('연속 2회 정답부터는 더 멀리 예약된다', () => {
   assert.equal(state.reservations.cat, DISTANCE.correct)
   state = recordAnswer(state, 'cat', true, NOW + DAY)
   assert.equal(state.reservations.cat, DISTANCE.streak)
+})
+
+test('꼭대기에서 내리 맞히면 예약을 놓아준다 — 다 외운 낱말이 20장마다 돌아오지 않는다', () => {
+  let state = introduced(initialState(), 'cat')
+  for (let i = 0; i < SETTLED_STREAK - 1; i += 1) state = recordAnswer(state, 'cat', true, NOW + i * DAY)
+  assert.equal(state.progress.cards.cat.rung, RUNG_BLANK)
+  assert.ok(state.reservations.cat !== undefined) // 아직은 예약된다
+  state = recordAnswer(state, 'cat', true, NOW + SETTLED_STREAK * DAY)
+  assert.equal(state.reservations.cat, undefined)
+  // 한 번 틀리면 다시 예약이 붙는다
+  state = recordAnswer(state, 'cat', false, NOW + (SETTLED_STREAK + 1) * DAY)
+  assert.equal(state.reservations.cat, state.cursor + DISTANCE.wrong)
 })
 
 test('오답은 한 칸만 내리고 바닥으로 떨어뜨리지 않는다', () => {
