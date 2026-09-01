@@ -14,7 +14,7 @@ import {
   type EngineState,
 } from './engine.ts'
 import { RUNG_BLANK, RUNG_CHOICE, RUNG_CLOZE, RUNG_INTRO } from './progress.ts'
-import { buildBlank } from './quiz.ts'
+import { buildBlank, buildChoice, buildListen, NEAR_FROM_ATTEMPT } from './quiz.ts'
 import type { Category, Concept } from './types.ts'
 
 /* ── 도구 ────────────────────────────────────────────────────────── */
@@ -451,4 +451,44 @@ test('같은 주제에 셋이 모자라면 넓은 풀로 돌아간다', () => {
   assert.equal(q.kind, 'cloze')
   if (q.kind !== 'cloze') return
   assert.equal(q.options.length, 4, '문항은 그래도 만들어진다')
+})
+
+/* ── 재인 오답이 회차마다 조여진다 ────────────────────────────────── */
+
+test('재인 오답은 처음 두 번은 넓게, 그 뒤로는 같은 주제에서 뽑는다', () => {
+  const topic = (slug: string, reading: string, name: string): Entry => {
+    const e = entry(slug, reading)
+    e.concept.topic = name
+    return e
+  }
+  const towel = topic('towel', 'タオル', 'travel')
+  const entries = [
+    towel,
+    topic('passport', 'パスポート', 'travel'),
+    topic('map', 'ちず', 'travel'),
+    topic('camera', 'カメラ', 'travel'),
+    topic('oven', 'オーブン', 'home'),
+    topic('sofa', 'ソファ', 'home'),
+    topic('salad', 'サラダ', 'food'),
+    topic('pizza', 'ピザ', 'food'),
+  ]
+  const topicsOf = (q: ReturnType<typeof buildChoice>) =>
+    q.options
+      .filter((o) => o !== towel.answer)
+      .map((o) => entries.find((e) => e.answer === o)!.concept.topic)
+
+  // 첫 회차 — 넓은 풀이라 다른 주제가 섞일 수 있다
+  const early = buildChoice(towel, entries, 0)
+  assert.equal(early.options.length, 4)
+
+  // 두 번째 회차부터 — 오답 셋이 모두 같은 주제다
+  const late = buildChoice(towel, entries, NEAR_FROM_ATTEMPT)
+  assert.deepEqual(new Set(topicsOf(late)), new Set(['travel']))
+
+  // 듣기 카드도 같은 규칙을 쓴다
+  const heard = buildListen(towel, entries, NEAR_FROM_ATTEMPT)
+  const heardTopics = heard.options
+    .filter((o) => o.concept.slug !== 'towel')
+    .map((o) => o.concept.topic)
+  assert.deepEqual(new Set(heardTopics), new Set(['travel']))
 })
