@@ -39,7 +39,10 @@ const TSL_URL = 'https://www.newgeneralservicelist.com/s/TSL_12_stats.csv'
 
 /** 표제어 → 순위. CSV는 `Word,TSL Rank,SFI,U` 네 칸이다 */
 async function tslRanks(): Promise<Map<string, number>> {
-  const csv = await (await fetch(TSL_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })).text()
+  // CSV가 UTF-8이 아니다. 그대로 읽으면 `résumé`·`café`가 깨져 영영 안 맞는다
+  const csv = new TextDecoder('windows-1252').decode(
+    await (await fetch(TSL_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })).arrayBuffer(),
+  )
   const ranks = new Map<string, number>()
   for (const row of csv.split(/\r?\n/).slice(1)) {
     const [word, rank] = row.split(',')

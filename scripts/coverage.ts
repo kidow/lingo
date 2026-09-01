@@ -36,6 +36,31 @@ const concepts: Concept[] = readdirSync('content')
   .sort()
   .flatMap((f) => JSON.parse(readFileSync(join('content', f), 'utf8')).concepts)
 
+/**
+ * 빠진 낱말을 실제로 찍는다 — `pnpm coverage --missing [tsl|hsk|torfl]`.
+ *
+ * 숫자만으로는 다음에 뭘 채울지 정할 수 없다. "656개 남음"은 일감이 아니라
+ * 성적표다. 목록을 찍으면 그대로 배치 후보가 된다. 인자가 없으면 셋 다 찍는다.
+ */
+const MISSING = process.argv.includes('--missing')
+  ? (process.argv[process.argv.indexOf('--missing') + 1]?.replace(/^--/, '') ?? 'all')
+  : null
+const wants = (name: string) => MISSING === 'all' || MISSING === name
+
+/** 빠진 낱말을 줄바꿈해 찍는다. 목록이 길어도 한 줄에 몰지 않는다 */
+function showMissing(title: string, words: string[]) {
+  console.log(`\n  ${title} — ${words.length}개`)
+  let row = '   '
+  for (const word of words) {
+    if (row.length + word.length + 1 > 78) {
+      console.log(row)
+      row = '   '
+    }
+    row += ` ${word}`
+  }
+  if (row.trim()) console.log(row)
+}
+
 const line = (n: number) => '─'.repeat(n)
 const pct = (a: number, b: number) => (b === 0 ? '—' : `${((100 * a) / b).toFixed(1)}%`)
 
@@ -58,7 +83,10 @@ function terms(lang: 'en' | 'zh' | 'ru'): Set<string> {
 }
 
 async function tsl() {
-  const csv = await (await fetch(TSL_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })).text()
+  // CSV가 UTF-8이 아니다. 그대로 읽으면 `résumé`·`café`가 깨져 영영 안 맞는다
+  const csv = new TextDecoder('windows-1252').decode(
+    await (await fetch(TSL_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })).arrayBuffer(),
+  )
   const words = csv
     .split(/\r?\n/)
     .slice(1)
@@ -66,10 +94,13 @@ async function tsl() {
     .filter((w): w is string => Boolean(w))
 
   const mine = terms('en')
-  const covered = words.filter((w) => mine.has(w)).length
+  const missing = words.filter((w) => !mine.has(w))
+  const covered = words.length - missing.length
   console.log(`\nTSL (TOEIC) — 표제어 목록\n${line(46)}`)
   console.log(`  ${covered}/${words.length}  ${pct(covered, words.length)}`)
-  console.log(`  남은 것 ${words.length - covered}개`)
+  console.log(`  남은 것 ${missing.length}개`)
+  // CSV가 순위 순이라 이 목록도 빈도 순이다 — 위에서부터 채우면 된다
+  if (wants('tsl')) showMissing('TSL 빠진 낱말 (빈도 순)', missing)
 }
 
 async function hsk() {
@@ -88,6 +119,8 @@ async function hsk() {
 
   const mine = terms('zh')
   const covered = new Map<number, number>()
+  const missing = new Map<number, string[]>()
+  for (const [word, grade] of level) if (!mine.has(word)) (missing.get(grade) ?? missing.set(grade, []).get(grade)!).push(word)
   for (const [word, grade] of level)
     if (mine.has(word)) covered.set(grade, (covered.get(grade) ?? 0) + 1)
 
@@ -115,6 +148,9 @@ async function hsk() {
     return `${c}/${t} (${pct(c, t)})`
   }
   console.log(`\n  1~3급 ${upTo(3)} · 1~6급 ${upTo(6)}`)
+  if (wants('hsk'))
+    for (const grade of [...missing.keys()].sort((a, b) => a - b))
+      showMissing(`HSK ${grade >= 7 ? '7-9' : grade}급 빠진 낱말`, missing.get(grade) ?? [])
 }
 
 /**
@@ -130,9 +166,11 @@ async function torfl() {
   const order = ['A1', 'A2', 'B1', 'B2'] as const
   const total = new Map<string, number>()
   const covered = new Map<string, number>()
+  const missing = new Map<string, string[]>()
   for (const [term, grade] of levels) {
     total.set(grade, (total.get(grade) ?? 0) + 1)
     if (mine.has(term)) covered.set(grade, (covered.get(grade) ?? 0) + 1)
+    else (missing.get(grade) ?? missing.set(grade, []).get(grade)!).push(term)
   }
 
   console.log(`\nTORFL (ТРКИ) — 등급별\n${line(46)}`)
@@ -158,6 +196,8 @@ async function torfl() {
   }
   console.log(`\n  A1~A2 ${upTo(2)} · A1~B1 ${upTo(3)}`)
   console.log(`  C1·C2는 목록에 없다 — 사이트가 B2까지만 싣는다`)
+  if (wants('torfl'))
+    for (const grade of order) showMissing(`TORFL ${grade} 빠진 낱말`, missing.get(grade) ?? [])
 }
 
 /** 목록이 없는 트랙은 "우리 낱말 중 등급이 붙은 비율"만 낸다 */
