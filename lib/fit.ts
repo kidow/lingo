@@ -48,3 +48,21 @@ export function optionColumns(options: string[]): 1 | 2 {
 export function optionBox(options: string[]): string {
   return optionColumns(options) === 1 ? 'min-h-[52px] py-2.5' : 'min-h-[60px] py-3'
 }
+
+/**
+ * 빈칸 카드의 글자 줄. 낱말이 길면 한 줄에 안 들어간다.
+ *
+ * `convenient`는 열 글자인데 한 칸이 34px에 간격이 10px이라 440px을 먹는다 —
+ * 폭 390px 화면에서 양끝이 잘려 나간다. 잘린 글자는 문제 자체가 안 보이는
+ * 것이라 크기를 줄이고 **줄바꿈을 허용한다**. 두 줄이 되는 편이 잘리는 것보다
+ * 언제나 낫다.
+ *
+ * 칸 너비를 함께 줄이는 이유는, 글자만 줄이면 빈칸 밑줄이 글자보다 훨씬 길어져
+ * 어느 자리가 비었는지가 흐려지기 때문이다.
+ */
+export function blankRow(chars: string[]): { row: string; cell: string } {
+  const n = chars.length
+  if (n <= 8) return { row: 'gap-2.5', cell: 'min-w-[34px] text-[38px]' }
+  if (n <= 12) return { row: 'gap-x-1.5 gap-y-2', cell: 'min-w-[24px] text-[30px]' }
+  return { row: 'gap-x-1 gap-y-1.5', cell: 'min-w-[18px] text-[24px]' }
+}
