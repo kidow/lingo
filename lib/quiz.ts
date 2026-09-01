@@ -2,6 +2,8 @@ import { distractorPool, examplesOf, nearPool, type Entry } from './entries.ts'
 import { blankable, blankableChar, pickConfusables } from './confusables.ts'
 import { hashString, makeRng, sample, shuffled } from './random.ts'
 import { hasAudio } from './audio-have.ts'
+import { LANG } from './lang.ts'
+import type { Language } from './types.ts'
 
 /**
  * 문항 만들기. (spec.md §5)
@@ -140,9 +142,9 @@ export function buildListen(entry: Entry, entries: Entry[], attempt = 0): Listen
 /**
  * 예문 빈칸을 만들 수 있는가.
  *
- * 정답이 예문 안에 **그대로** 보여야 뚫을 수 있다. `pnpm check`가 모든 언어에서
- * 이걸 보증하지만(경고 0건), 데이터가 앞서 나갈 수 있으므로 여기서도 확인하고
- * 안 되면 재인 칸에 머문다.
+ * 정답이 예문 안에 **온전한 낱말로** 보여야 뚫을 수 있다 (`clozeAt`). `pnpm check`가
+ * 모든 언어에서 이걸 보증하지만(경고 0건), 데이터가 앞서 나갈 수 있으므로 여기서도
+ * 확인하고 안 되면 재인 칸에 머문다.
  *
  * 상황 표현도 여기에 들어온다. 뚫는 것이 표현 **전체**라 빈칸에는 문장이 통째로
  * 들어가고, 감싸는 한 줄이 상황을 만든다 — "어떤 상황에 어떤 말을 하는가"를 묻는
@@ -152,9 +154,31 @@ export function canCloze(entry: Entry): boolean {
   return clozeExamples(entry).length > 0
 }
 
-/** 정답이 그대로 보이는 예문만 뚫을 수 있다 */
+/** 정답이 온전한 낱말로 보이는 예문만 뚫을 수 있다 */
 function clozeExamples(entry: Entry) {
-  return examplesOf(entry.word).filter((example) => example.text.includes(entry.answer))
+  return examplesOf(entry.word).filter((example) => clozeAt(example.text, entry.answer, entry.lang) >= 0)
+}
+
+const LETTER = /[\p{L}\p{N}]/u
+
+/**
+ * 예문에서 뚫을 자리. 없으면 -1이다.
+ *
+ * `indexOf`만 쓰면 굴절된 **긴 낱말 안**을 판다. `Wash your hands.`에서 `hand`를
+ * 찾으면 `Wash your ___s.`가 되어 꼬리가 정답의 모양을 알려주고, 더 나쁘게는
+ * `В чайнике остыл чай.`에서 앞의 `чайнике`가 뚫려 **정답이 뒤에 그대로 남는다**.
+ * 그래서 앞뒤가 글자가 아닌 자리만 고른다.
+ *
+ * 일본어·중국어는 낱말 사이에 공백이 없어 이 규칙을 적용할 수 없다 (lib/lang.ts).
+ */
+export function clozeAt(text: string, answer: string, lang: Language): number {
+  if (!LANG[lang].spaced) return text.indexOf(answer)
+  for (let at = text.indexOf(answer); at >= 0; at = text.indexOf(answer, at + 1)) {
+    const before = text[at - 1]
+    const after = text[at + answer.length]
+    if (!LETTER.test(before ?? ' ') && !LETTER.test(after ?? ' ')) return at
+  }
+  return -1
 }
 
 /**
@@ -176,7 +200,7 @@ export function buildCloze(entry: Entry, entries: Entry[], attempt = 0): ClozeQu
   // 예문이 여럿이면 회차로 돌린다. 뚫을 자리를 돌리는 것과 같은 방식이다
   const sentences = clozeExamples(entry)
   const text = sentences.length > 0 ? sentences[attempt % sentences.length].text : ''
-  const at = text.indexOf(entry.answer)
+  const at = clozeAt(text, entry.answer, entry.lang)
   const pool = nearPool(entry, entries)
   const distractors = sample(pool, CHOICE_COUNT - 1, rng).map((e) => e.answer)
   return {
