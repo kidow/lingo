@@ -29,16 +29,19 @@ const DICT_URL = 'https://raw.githubusercontent.com/cmusphinx/cmudict/master/cmu
 /**
  * ARPAbet → IPA. 강세 숫자(0·1·2)는 따로 떼어 ˈ와 ˌ로 옮긴다.
  *
- * 모음은 미국식 사전에 맞춘다 — `ɑ`(father)와 `ɔ`(thought)를 가르고, r 붙은
- * 모음은 `ɚ`·`ɝ`로 적는다. 영국식으로 바꾸려면 이 표만 갈아 끼우면 된다.
+ * 모음은 미국식 사전에 맞춘다 — `ɑ`(father)와 `ɔ`(thought)를 가른다.
+ *
+ * 자음 R은 음성학 기호 `ɹ`가 아니라 **`r`로 적는다.** 옥스퍼드·롱맨 같은
+ * 학습자 사전이 그렇게 싣기 때문이다 — 카드를 보는 사람은 음성학자가 아니라
+ * 학습자다. 같은 이유로 ER은 `ɝ` 대신 `ɜr`로 푼다.
  */
 const ARPA: Record<string, string> = {
   AA: 'ɑ', AE: 'æ', AH: 'ʌ', AO: 'ɔ', AW: 'aʊ', AY: 'aɪ',
-  EH: 'ɛ', ER: 'ɝ', EY: 'eɪ', IH: 'ɪ', IY: 'i', OW: 'oʊ',
+  EH: 'ɛ', ER: 'ɜr', EY: 'eɪ', IH: 'ɪ', IY: 'i', OW: 'oʊ',
   OY: 'ɔɪ', UH: 'ʊ', UW: 'u',
   B: 'b', CH: 'tʃ', D: 'd', DH: 'ð', F: 'f', G: 'ɡ', HH: 'h',
   JH: 'dʒ', K: 'k', L: 'l', M: 'm', N: 'n', NG: 'ŋ', P: 'p',
-  R: 'ɹ', S: 's', SH: 'ʃ', T: 't', TH: 'θ', V: 'v', W: 'w',
+  R: 'r', S: 's', SH: 'ʃ', T: 't', TH: 'θ', V: 'v', W: 'w',
   Y: 'j', Z: 'z', ZH: 'ʒ',
 }
 
