@@ -101,3 +101,40 @@ export type Concept = {
 export type ContentFile = {
   concepts: Concept[]
 }
+
+/* ── 상식 ─────────────────────────────────────────────────────────── */
+
+/**
+ * 상식 문항 하나. (spec.md §4)
+ *
+ * 개념(`Concept`)과 **나란히 서는 별개의 단위**다. 개념은 일곱 트랙이 그림 한
+ * 장을 같이 쓰지만, 상식은 그럴 수가 없다 — `は`가 わ로 읽히는 것은 일본어에만
+ * 있는 사실이고 다른 언어로 번역되지 않는다. 그래서 언어가 파일을 가른다
+ * (`content/trivia/{lang}.json`).
+ *
+ * 그림이 없다. 개념 카드는 그림이 곧 문제지만 여기서는 **질문 문장이 문제다** —
+ * 없는 그림을 지어내면 문항과 무관한 삽화가 된다 (spec.md §5).
+ *
+ * 오답도 콘텐츠다. 낱말 카드는 같은 category에서 자동으로 뽑지만(`distractorPool`)
+ * 상식은 문항마다 그럴듯한 오답이 다르다 — 기계가 정할 수 없어 손으로 적는다.
+ */
+export type Trivia = {
+  /** 파일 안에서 유일한 식별자. ^[a-z0-9-]+$ */
+  id: string
+  /** 물음. 지시문이 아니라 문장 하나다 */
+  question: string
+  /** 정답 1 + 오답 3. 순서는 화면에서 섞인다 */
+  choices: string[]
+  /** `choices` 중 하나와 정확히 같아야 한다 */
+  answer: string
+  /** 답한 뒤 뜨는 한 줄. 왜 그런지를 적는다 */
+  note: string
+  /** 어느 노트에서 왔는가. 고칠 때 원문을 찾기 위한 자리다 */
+  source?: string
+}
+
+/** content/trivia/{lang}.json 한 파일의 모양 */
+export type TriviaFile = {
+  lang: Language
+  items: Trivia[]
+}
