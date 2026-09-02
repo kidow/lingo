@@ -17,8 +17,10 @@ import sport from '@/content/sport.json'
 import time from '@/content/time.json'
 import transport from '@/content/transport.json'
 import travel from '@/content/travel.json'
+import triviaDe from '@/content/trivia/de.json'
 import triviaEn from '@/content/trivia/en.json'
 import triviaJa from '@/content/trivia/ja.json'
+import triviaRu from '@/content/trivia/ru.json'
 import { entriesForTrack as selectEntries, type Entry } from './entries.ts'
 import { triviaEntries, type TriviaEntry } from './trivia.ts'
 import type { TrackId } from './track.ts'
@@ -73,6 +75,8 @@ export const CONCEPTS: Concept[] = FILES.flatMap(([topic, file]) =>
 const TRIVIA: Partial<Record<Language, TriviaFile>> = {
   en: triviaEn as TriviaFile,
   ja: triviaJa as TriviaFile,
+  de: triviaDe as TriviaFile,
+  ru: triviaRu as TriviaFile,
 }
 
 /** 그 언어의 상식 목록. 없으면 빈 배열이고, 그러면 탭이 서지 않는다 */
