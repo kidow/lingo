@@ -29,6 +29,7 @@ import {
   writeFileSync,
 } from 'node:fs'
 import { dirname, join } from 'node:path'
+import { exampleAudioKey } from '../lib/entries.ts'
 import { answerOf, LANG } from '../lib/lang.ts'
 import { TRACKS } from '../lib/track.ts'
 import type { Concept, Language } from '../lib/types.ts'
@@ -65,21 +66,50 @@ const line = (n: number) => '─'.repeat(n)
  * 소리 없는 문제를 내지 않으려면 **빌드 때 알고 있어야** 한다. 없는 것만 적는
  * 이유는 있는 것을 다 적으면 20,671줄이 번들에 실리기 때문이다.
  */
+/**
+ * 예문 소리 중 **있는** 것. 낱말과 방향이 반대다 (lib/audio-have.ts).
+ *
+ * 이름이 문장 해시라 예문을 고치면 열쇠가 바뀐다. 낡은 파일은 여기에 안 잡히고
+ * `pnpm check`가 고아로 잡는다.
+ */
+function examplesPresent(): string[] {
+  const keys: string[] = []
+  for (const { language } of TRACKS)
+    for (const concept of concepts) {
+      const word = concept.words[language]
+      if (!word) continue
+      const list = word.examples ?? (word.example ? [word.example] : [])
+      list.forEach((example, index) => {
+        const key = exampleAudioKey(concept.slug, index, example.text)
+        if (existsSync(join('public', 'audio', language, 'ex', `${key}.mp3`)))
+          keys.push(`${language}/${key}`)
+      })
+    }
+  return keys.sort()
+}
+
 function manifest() {
   const gone: string[] = []
   for (const { language } of TRACKS)
     for (const { slug } of missing(language)) gone.push(`${language}/${slug}`)
   gone.sort()
+  const here = examplesPresent()
 
   const path = join('lib', 'audio-have.ts')
   const source = readFileSync(path, 'utf8')
-  const body = gone.length === 0 ? '[]' : `[\n${gone.map((k) => `  '${k}',`).join('\n')}\n]`
-  const next = source.replace(
-    /export const AUDIO_MISSING: ReadonlySet<string> = new Set\([\s\S]*?\)\n/,
-    `export const AUDIO_MISSING: ReadonlySet<string> = new Set(${body})\n`,
-  )
+  const list = (keys: string[]) =>
+    keys.length === 0 ? '[]' : `[\n${keys.map((k) => `  '${k}',`).join('\n')}\n]`
+  const next = source
+    .replace(
+      /export const AUDIO_MISSING: ReadonlySet<string> = new Set\([\s\S]*?\)\n/,
+      `export const AUDIO_MISSING: ReadonlySet<string> = new Set(${list(gone)})\n`,
+    )
+    .replace(
+      /export const EXAMPLE_AUDIO: ReadonlySet<string> = new Set\([\s\S]*?\)\n/,
+      `export const EXAMPLE_AUDIO: ReadonlySet<string> = new Set(${list(here)})\n`,
+    )
   writeFileSync(path, next)
-  console.log(`\n발음 없는 자리 ${gone.length}건을 ${path}에 적었습니다\n`)
+  console.log(`\n발음 없는 자리 ${gone.length}건 · 예문 소리 ${here.length}건을 ${path}에 적었습니다\n`)
 }
 
 function summary() {

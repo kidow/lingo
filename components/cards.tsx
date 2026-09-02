@@ -6,7 +6,8 @@ import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { answerSize, blankRow, optionBox, optionColumns, optionSize } from '@/lib/fit'
-import { examplesOf, type Entry } from '@/lib/entries'
+import { examplesOf, exampleAudioKey, exampleAudioPath, type Entry } from '@/lib/entries'
+import { EXAMPLE_AUDIO } from '@/lib/audio-have'
 import { asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import type {
@@ -126,8 +127,24 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
         */}
         {example && (
           <div className="border-t border-line pt-md">
-            <Copy text={example.text} className="font-jp text-[15px] leading-relaxed" />
-            {/* 예문도 소리 내 볼 수 있어야 한다. ja·zh·ru만 값이 있다 (lib/types.ts) */}
+            <div className="flex items-start justify-between gap-md">
+              <Copy text={example.text} className="font-jp text-[15px] leading-relaxed" />
+              {/*
+                예문 소리는 **파일이 있을 때만** 자리를 잡는다. 낱말 발음 버튼과
+                달리 비활성으로 남겨 두지 않는다 — 낱말은 언젠가 다 채울 자리라
+                빈 버튼이 자리를 지켜야 글자가 안 밀리지만, 예문 소리는 아직
+                한 자리도 없어서 3,031장에 회색 버튼만 늘어놓게 된다 (§5)
+              */}
+              {EXAMPLE_AUDIO.has(`${lang}/${exampleAudioKey(concept.slug, 0, example.text)}`) && (
+                <SayButton
+                  slug={concept.slug}
+                  lang={lang}
+                  label={example.text}
+                  src={exampleAudioPath(lang, concept.slug, 0, example.text)}
+                />
+              )}
+            </div>
+            {/* 로마자는 ja·zh·ru만 값이 있다 (lib/types.ts) */}
             {example.romanization && (
               <p className="mt-0.5 text-xs text-sub">{example.romanization}</p>
             )}

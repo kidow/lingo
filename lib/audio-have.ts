@@ -92,3 +92,17 @@ export const AUDIO_MISSING: ReadonlySet<string> = new Set([
 export function hasAudio(slug: string, lang: string): boolean {
   return !AUDIO_MISSING.has(`${lang}/${slug}`)
 }
+
+/**
+ * 예문 소리가 **있는** 자리. 낱말과 반대로 적는다.
+ *
+ * 낱말은 20,671자리가 거의 다 차 있어 **없는 것**을 적는 편이 짧다. 예문은
+ * 42,000자리가 거의 다 비어 있어 **있는 것**을 적는 편이 짧다. 같은 이유로
+ * 방향만 뒤집었다 — 목록이 번들에 실리므로 짧은 쪽을 고른다.
+ *
+ * 열쇠는 `{lang}/{slug}-{index}-{해시}`다. 해시가 문장에서 나오므로(lib/entries.ts)
+ * 예문을 고치면 열쇠가 달라지고, 이 목록에 없으니 버튼이 조용히 안 뜬다.
+ *
+ *   node scripts/audio.ts manifest    다시 만든다
+ */
+export const EXAMPLE_AUDIO: ReadonlySet<string> = new Set([])

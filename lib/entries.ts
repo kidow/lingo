@@ -137,6 +137,51 @@ export function audioPath(slug: string, lang: Language): string {
 }
 
 /**
+ * 예문 소리의 이름표. 문장 자체의 지문이다. (spec.md §5, AUDIO.md)
+ *
+ * 낱말 발음은 `{slug}.mp3`로 충분하다 — 표제어는 거의 안 바뀐다. 예문은 다르다.
+ * 한 세션에 870개를 갈아 끼운 적이 있는데, 이름을 `{slug}-{i}`로 지었다면 파일은
+ * 그대로 남아 **문장과 다른 소리**가 났을 것이다. 파일이 있으니 버튼은 켜지고
+ * 학습자는 틀린 소리를 듣는다 — 눈에 안 띄는 실패다.
+ *
+ * 그래서 문장의 해시를 이름에 넣는다. 예문을 고치면 이름이 바뀌어 파일이
+ * 사라지고, 버튼은 조용히 안 뜬다. 낡은 파일은 `pnpm check`가 고아로 잡는다.
+ *
+ * `slug-i`를 앞에 남기는 이유는 사람이 찾을 수 있어야 해서다. 해시만 쓰면
+ * 손으로 넣을 때(`audio.ts place`) 무엇이 무엇인지 알 수 없다.
+ */
+export function exampleAudioKey(slug: string, index: number, text: string): string {
+  return `${slug}-${index}-${textHash(text)}`
+}
+
+export function exampleAudioPath(
+  lang: Language,
+  slug: string,
+  index: number,
+  text: string,
+): string {
+  return `${AUDIO_BASE}/audio/${lang}/ex/${exampleAudioKey(slug, index, text)}.mp3`
+}
+
+/**
+ * 문장 → 16진 열두 자리. FNV-1a 64비트에서 아래 48비트를 쓴다.
+ *
+ * 브라우저와 스크립트가 **같은 값**을 내야 해서 의존성 없이 손으로 짠다.
+ * WebCrypto의 sha256은 비동기라 렌더 중에 쓸 수 없다.
+ *
+ * 48비트면 예문 4만 2천 개에서 충돌 확률이 백만분의 3이다. 충돌해도 잃는 것은
+ * 소리 하나이지 데이터가 아니다.
+ */
+function textHash(text: string): string {
+  let hash = 0xcbf29ce484222325n
+  for (const char of text) {
+    hash ^= BigInt(char.codePointAt(0) ?? 0)
+    hash = (hash * 0x100000001b3n) & 0xffffffffffffffffn
+  }
+  return (hash & 0xffffffffffffn).toString(16).padStart(12, '0')
+}
+
+/**
  * 저장소 안의 실제 파일 자리. 화면이 보는 주소(`audioPath`)와 달리 CDN을
  * 타지 않는다 — 파일이 있나 없나를 fs로 보는 쪽은 이것을 쓴다.
  */

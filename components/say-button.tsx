@@ -37,12 +37,20 @@ export function SayButton({
   slug,
   lang,
   label,
+  src,
   enabled = true,
   autoPlay = false,
 }: {
   slug: string
   lang: Language
   label: string
+  /**
+   * 재생할 파일. 안 주면 그 낱말의 발음(`audioPath`)이다.
+   *
+   * 예문 소리는 이름이 문장 해시라 부모만 안다 (lib/entries.ts). 버튼이 경로를
+   * 짓는 대신 받아 쓰게 두면 낱말과 예문이 같은 버튼을 나눠 쓴다.
+   */
+  src?: string
   enabled?: boolean
   /** 마운트 직후 한 번 저절로 재생한다. 퀴즈 판정 직후에 쓴다 */
   autoPlay?: boolean
@@ -94,7 +102,7 @@ export function SayButton({
     // preload='none'이면 요청이 안 나가서 error도 안 뜬다 — 파일이 없어도
     // 버튼이 활성으로 보이다가 누른 뒤에야 실패한다. metadata는 헤더만
     // 받아오므로 없는 파일을 미리 걸러낸다. 있으면 재생도 빨라진다.
-    const audio = new Audio(audioPath(slug, lang))
+    const audio = new Audio(src ?? audioPath(slug, lang))
     audio.preload = 'metadata'
     audio.addEventListener('error', () => setAvailable(false))
     audio.addEventListener('ended', () => setPlaying(false))
@@ -111,7 +119,7 @@ export function SayButton({
       audio.pause()
       audioRef.current = null
     }
-  }, [slug, lang, autoPlay, play])
+  }, [slug, lang, src, autoPlay, play])
 
   const disabled = !enabled || !available
 
