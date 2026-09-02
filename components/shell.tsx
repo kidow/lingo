@@ -4,11 +4,14 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Feed } from './feed'
 import { Header } from './header'
 import type { Entry } from '@/lib/entries'
+import { triviaFor } from '@/lib/content'
 import {
   emptyProgress,
   loadProgress,
   masteredCount,
   masteryLabel,
+  TRIVIA_LADDER,
+  WORD_LADDER,
   type Progress,
 } from '@/lib/progress'
 import { loadDeck, loadTrack, saveDeck, saveTrack } from '@/lib/settings'
@@ -53,28 +56,55 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
     saveDeck(next)
   }, [])
 
-  // 분모는 그 트랙에서 **출제 가능한** 개념 수다. TOEIC은 TSL 필터를 한 겹 더
-  // 거치므로 다른 트랙보다 작다 (lib/entries.ts)
-  const slugs = useMemo(
-    () => entries[track].map((entry) => entry.concept.slug),
-    [entries, track],
-  )
-  const mastery = masteryLabel(masteredCount(progress, slugs), slugs.length)
+  /**
+   * 상식은 언어의 것이라 트랙이 아니라 **언어로** 고른다 (lib/trivia.ts).
+   * 아직 안 쓴 언어는 빈 배열이고, 그러면 탭이 서지 않는다.
+   */
+  const trivia = useMemo(() => triviaFor(trackOf(track).language), [track])
 
   /**
-   * 덱은 걸러 보는 창이다. 진도는 트랙 하나로 두므로 숙련도 분모는 위 그대로다.
-   *
-   * 표현이 하나도 없는 트랙에서는 탭을 세우지 않는다 — 눌러도 빈 피드가 되는
-   * 자리를 남겨 둘 이유가 없다 (lib/deck.ts)
+   * 덱은 걸러 보는 창이다. 표현이 하나도 없는 트랙에서는 탭을 세우지 않는다 —
+   * 눌러도 빈 피드가 되는 자리를 남겨 둘 이유가 없다 (lib/deck.ts)
    */
   const hasPhrases = useMemo(
     () => entries[track].some((entry) => entry.concept.category === 'scene'),
     [entries, track],
   )
-  // 표현이 없는 트랙에서는 저장된 값이 phrase여도 단어로 본다. 탭이 안 서는데
+  // 표현도 상식도 없는 트랙에서는 저장된 값이 무엇이든 단어로 본다. 탭이 안 서는데
   // 거르기만 남으면 빈 피드가 된다 — TOEIC에서 실제로 그랬다
-  const shownDeck = hasPhrases ? deck : DEFAULT_DECK
-  const shown = useMemo(() => entriesForDeck(shownDeck, entries[track]), [shownDeck, entries, track])
+  const decks = useMemo(
+    () =>
+      (['word', hasPhrases && 'phrase', trivia.length > 0 && 'trivia'] as const).filter(
+        Boolean,
+      ) as DeckId[],
+    [hasPhrases, trivia.length],
+  )
+  const shownDeck = decks.includes(deck) ? deck : DEFAULT_DECK
+
+  const shown = useMemo(
+    () => (shownDeck === 'trivia' ? trivia : entriesForDeck(shownDeck, entries[track])),
+    [shownDeck, entries, track, trivia],
+  )
+
+  /**
+   * 숙련도의 분모.
+   *
+   * 낱말과 상식을 **한 줄에 합치지 않는다.** 세는 단위가 달라서 합치면 그 숫자가
+   * 무엇의 비율인지 흐려지고, 낱말을 하나도 안 늘려도 상식을 풀어 퍼센트가
+   * 오른다 (lib/deck.ts). 그래서 지금 보고 있는 쪽의 비율만 말한다.
+   *
+   * 낱말 쪽 분모는 표현까지 포함한 트랙 전체다 — 단어·표현은 진도를 나누지
+   * 않기 때문이다. TOEIC은 TSL 필터를 한 겹 더 거치므로 다른 트랙보다 작다.
+   */
+  const keys = useMemo(
+    () =>
+      shownDeck === 'trivia'
+        ? trivia.map((item) => item.key)
+        : entries[track].map((entry) => entry.key),
+    [shownDeck, trivia, entries, track],
+  )
+  const ladder = shownDeck === 'trivia' ? TRIVIA_LADDER : WORD_LADDER
+  const mastery = masteryLabel(masteredCount(progress, keys, ladder), keys.length)
 
   return (
     <div className="feed-root flex h-dvh flex-col">
@@ -82,14 +112,16 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
         track={track}
         onChange={change}
         mastery={mastery}
-        deck={hasPhrases ? shownDeck : undefined}
-        onDeck={hasPhrases ? changeDeck : undefined}
+        decks={decks}
+        deck={shownDeck}
+        onDeck={changeDeck}
       />
       <Feed
         key={`${track}-${shownDeck}`}
         entries={shown}
         track={track}
         lang={trackOf(track).language}
+        ladder={ladder}
         onProgress={setProgress}
       />
     </div>

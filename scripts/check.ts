@@ -363,6 +363,66 @@ if (notes.length) {
     )
 }
 
+/**
+ * 상식 파일 검증. (spec.md §4, §7)
+ *
+ * 낱말과 규칙이 다르다 — 그림도 발음도 예문도 없고, 대신 **오답이 콘텐츠 안에**
+ * 있다. 자동으로 뽑지 않으므로 넷이 다 채워졌는지, 정답이 그중에 있는지를
+ * 기계가 봐야 한다. 손으로 적는 자리라 오타 하나로 정답 없는 문항이 나간다.
+ */
+{
+  const TRIVIA_DIR = join(CONTENT_DIR, 'trivia')
+  const ID_RE = /^[a-z0-9-]+$/
+  const loaderHasTrivia = readFileSync('lib/content.ts', 'utf8')
+  let triviaTotal = 0
+  const perTrivia: string[] = []
+
+  const triviaFiles = existsSync(TRIVIA_DIR)
+    ? readdirSync(TRIVIA_DIR).filter((f) => f.endsWith('.json')).sort()
+    : []
+
+  for (const file of triviaFiles) {
+    const where = `trivia/${file}`
+    const lang = file.replace(/\.json$/, '')
+    if (!loaderHasTrivia.includes(`content/trivia/${file}`))
+      fail(where, 'lib/content.ts에 등록되지 않아 앱에 안 들어갑니다')
+
+    const parsed = JSON.parse(readFileSync(join(TRIVIA_DIR, file), 'utf8')) as {
+      lang?: string
+      items?: Array<Record<string, unknown>>
+    }
+    if (parsed.lang !== lang) fail(where, `lang이 파일 이름과 다릅니다 — ${parsed.lang}`)
+    if (!LANG[lang as Language]) fail(where, `모르는 언어입니다 — ${lang}`)
+
+    const items = parsed.items ?? []
+    const ids = new Set<string>()
+    for (const item of items) {
+      const id = String(item.id ?? '')
+      const at = `${where}:${id || '(id 없음)'}`
+      if (!ID_RE.test(id)) fail(at, 'id는 ^[a-z0-9-]+$ 여야 합니다')
+      if (ids.has(id)) fail(at, 'id가 중복됩니다')
+      ids.add(id)
+
+      const question = String(item.question ?? '')
+      if (!question.trim()) fail(at, '물음이 비었습니다')
+      if (!String(item.note ?? '').trim()) fail(at, '해설(note)이 비었습니다 — 답한 뒤 배울 것이 없습니다')
+
+      const choices = Array.isArray(item.choices) ? (item.choices as unknown[]).map(String) : []
+      if (choices.length !== 4) fail(at, `보기가 4개여야 합니다 — ${choices.length}개`)
+      if (new Set(choices).size !== choices.length) fail(at, '보기에 같은 것이 두 번 있습니다')
+      if (choices.some((choice) => !choice.trim())) fail(at, '빈 보기가 있습니다')
+
+      const answer = String(item.answer ?? '')
+      if (!choices.includes(answer)) fail(at, `정답이 보기에 없습니다 — ${answer}`)
+    }
+    triviaTotal += items.length
+    perTrivia.push(`  ${lang} ${items.length}`)
+  }
+
+  if (triviaFiles.length)
+    console.log(`\n상식 ${triviaTotal}문항 · 파일 ${triviaFiles.length}개\n` + perTrivia.join(''))
+}
+
 if (warnings.length) {
   console.log(`\n${line(4)} 경고 ${warnings.length}건`)
   for (const w of warnings) console.log(`  ! ${w}`)

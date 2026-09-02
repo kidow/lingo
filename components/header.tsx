@@ -36,12 +36,18 @@ export function Header({
   track,
   onChange,
   mastery,
+  decks = [],
   deck,
   onDeck,
 }: {
   track: TrackId
   onChange: (track: TrackId) => void
-  /** 지금 보는 덱. 표현이 없는 트랙(TOEIC)에서는 undefined라 탭이 서지 않는다 */
+  /**
+   * 이 트랙에 세울 탭. 하나뿐이면 자리째 빠진다 — 표현도 상식도 없는 트랙이
+   * 있고(TOEIC), 고를 것이 하나면 그건 고르는 자리가 아니다 (lib/deck.ts)
+   */
+  decks?: DeckId[]
+  /** 지금 보는 덱 */
   deck?: DeckId
   onDeck?: (deck: DeckId) => void
   /**
@@ -93,7 +99,9 @@ export function Header({
       {mastery && (
         <span
           className="ml-sm text-sm font-semibold text-sub tabular-nums"
-          aria-label={`완전히 외운 단어 ${mastery}`}
+          // 덱마다 세는 대상이 다르다. "단어"라고 못 박으면 상식 탭에서 틀린
+          // 말이 된다 (lib/deck.ts)
+          aria-label={`완전히 외운 비율 ${mastery}`}
         >
           {mastery}
         </span>
@@ -102,16 +110,21 @@ export function Header({
       {/*
         덱 탭. 한 트랙 안에서 낱말과 통짜 표현을 갈라 본다 (lib/deck.ts).
 
-        드롭다운이 아니라 **늘 보이는 두 글자**로 둔다 — 고를 것이 둘뿐이고,
-        지금 무엇을 보고 있는지가 트랙만큼 자주 바뀌기 때문이다. 진도는 갈리지
-        않으므로 왼쪽 숙련도는 덱과 무관하게 트랙 전체를 가리킨다.
+        드롭다운이 아니라 **늘 보이는 두 글자**로 둔다 — 고를 것이 두셋뿐이고,
+        지금 무엇을 보고 있는지가 트랙만큼 자주 바뀌기 때문이다.
 
-        표현이 없는 트랙에서는 자리째 빠진다. TOEIC은 TSL 표제어만 내는데
+        왼쪽 숙련도는 단어·표현일 때 트랙 전체를 가리키고, 상식일 때만 상식
+        안에서의 비율이 된다 — 세는 단위가 달라 한 줄에 못 합친다 (lib/deck.ts)
+
+        고를 것이 하나뿐인 트랙에서는 자리째 빠진다. TOEIC은 TSL 표제어만 내는데
         통짜 표현은 그 목록에 없다 (lib/entries.ts)
+
+        상식은 트랙이 아니라 **언어**의 것이라 아직 안 쓴 언어에서는 안 선다
+        (lib/trivia.ts)
       */}
-      {deck && onDeck && (
+      {deck && onDeck && decks.length > 1 && (
         <div className="ml-auto flex items-center gap-2 text-[15px]">
-          {DECKS.map(({ id, label }, i) => (
+          {DECKS.filter(({ id }) => decks.includes(id)).map(({ id, label }, i) => (
             <span key={id} className="flex items-center gap-2">
               {i > 0 && <span aria-hidden className="text-line">|</span>}
               <button

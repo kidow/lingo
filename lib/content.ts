@@ -17,9 +17,12 @@ import sport from '@/content/sport.json'
 import time from '@/content/time.json'
 import transport from '@/content/transport.json'
 import travel from '@/content/travel.json'
+import triviaEn from '@/content/trivia/en.json'
+import triviaJa from '@/content/trivia/ja.json'
 import { entriesForTrack as selectEntries, type Entry } from './entries.ts'
+import { triviaEntries, type TriviaEntry } from './trivia.ts'
 import type { TrackId } from './track.ts'
-import type { Concept, ContentFile } from './types.ts'
+import type { Concept, ContentFile, Language, TriviaFile } from './types.ts'
 
 /**
  * 콘텐츠 로더. (spec.md §4, §8)
@@ -62,6 +65,21 @@ const FILES: [topic: string, file: ContentFile][] = [
 export const CONCEPTS: Concept[] = FILES.flatMap(([topic, file]) =>
   file.concepts.map((concept) => ({ ...concept, topic })),
 )
+
+/**
+ * 상식 파일. **언어가 파일을 가른다** — 개념과 달리 트랙이 공유하지 못한다
+ * (lib/trivia.ts). 아직 안 쓴 언어는 자리 자체가 없다.
+ */
+const TRIVIA: Partial<Record<Language, TriviaFile>> = {
+  en: triviaEn as TriviaFile,
+  ja: triviaJa as TriviaFile,
+}
+
+/** 그 언어의 상식 목록. 없으면 빈 배열이고, 그러면 탭이 서지 않는다 */
+export function triviaFor(lang: Language): TriviaEntry[] {
+  const file = TRIVIA[lang]
+  return file ? triviaEntries(lang, file.items) : []
+}
 
 /** 그 트랙에서 출제 가능한 목록. 규칙은 lib/entries.ts가 갖는다 */
 export function entriesFor(track: TrackId, concepts: Concept[] = CONCEPTS): Entry[] {
