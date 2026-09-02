@@ -140,8 +140,11 @@ const PARTICLES: [string, string][] = [
 /** 붙여 쓰지만 한 낱말로 읽는 꼬리. 조사보다 먼저 뗀다 */
 const TAILS: [string, string][] = [['ですか', 'desu ka'], ['でした', 'deshita'], ['です', 'desu']]
 
+/** 조사처럼 끝나지만 한 낱말인 부사. 콘텐츠 읽기 사전에 없어서 따로 적는다 */
+const WHOLE = new Set(['とても', 'いつも', 'でも', 'まだ', 'もっと', 'いちども'])
+
 function splitParticle(token: string, known: Set<string>): string[] {
-  if (known.has(token)) return [token]
+  if (known.has(token) || WHOLE.has(token)) return [token]
   for (const [tail, romaji] of TAILS) {
     if (token.endsWith(tail) && token.length > tail.length) {
       const stem = token.slice(0, -tail.length)
@@ -251,6 +254,7 @@ const ZH_PUNCT: Record<string, string> = {
  */
 const SINGLE_CHAR: Record<string, string> = {
   还: 'hai2', 的: 'de5', 了: 'le5', 得: 'de5', 地: 'di4', 着: 'zhe5', 过: 'guo4',
+  吗: 'ma5', 呢: 'ne5', 吧: 'ba5',
   都: 'dou1', 会: 'hui4', 好: 'hao3', 为: 'wei4', 中: 'zhong1', 行: 'xing2',
   教: 'jiao1', 干: 'gan4', 空: 'kong1', 少: 'shao3', 只: 'zhi3', 重: 'zhong4',
 }
@@ -341,6 +345,11 @@ function pinyinSentence(text: string, dict: Map<string, string>): string {
   return sentence.charAt(0).toUpperCase() + sentence.slice(1)
 }
 
+/** 낱말은 문장이 아니다. 병음 첫 글자를 도로 내린다 — `Zǎoshang` → `zǎoshang` */
+function lowerHead(value: string): string {
+  return value.charAt(0).toLowerCase() + value.slice(1)
+}
+
 // ── 실행 ────────────────────────────────────────────────────────────────
 
 const only = process.argv[2]
@@ -401,11 +410,12 @@ for (const name of files) {
        *
        * 일본어는 **읽기**에서 딴다 — 표기는 한자라 소리가 안 나온다.
        */
+      /** 손으로 넣은 값은 띄어쓰기가 더 낫다. 빈자리만 채운다 */
       const surface = lang === 'ja' ? word.reading : word.term
-      if (surface) {
+      if (surface && !word.romanization) {
         const value =
           lang === 'ja' ? romajiSentence(surface, known)
-          : lang === 'zh' ? pinyinSentence(surface, dict)
+          : lang === 'zh' ? lowerHead(pinyinSentence(surface, dict))
           : lang === 'ru' ? translit(surface)
           : undefined
         if (value && word.romanization !== value) {
