@@ -17,6 +17,7 @@ import type {
   IntroQuestion,
   ListenQuestion,
   Question,
+  TriviaQuestion,
 } from '@/lib/quiz'
 import type { Language } from '@/lib/types'
 
@@ -71,6 +72,8 @@ export function Card({ question, ...rest }: { question: Question } & Common) {
       return <ClozeCard question={question} {...rest} />
     case 'blank':
       return <BlankCard question={question} {...rest} />
+    case 'trivia':
+      return <TriviaCard question={question} {...rest} />
   }
 }
 
@@ -544,6 +547,100 @@ function BlankCard({ question, lang, onAnswer, first, pick, active }: { question
 
         <Reveal show={answered} correct={correct} question={question} lang={lang} active={active} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
+        <div className="mt-auto">{answered && <SwipeHint />}</div>
+      </CardSheet>
+    </FeedCard>
+  )
+}
+
+/* ── 4. 상식 — 4지선다 ────────────────────────────────────────────── */
+
+/**
+ * 그 언어에 대한 사실을 넷 중 고른다. (spec.md §5)
+ *
+ * **그림이 없다.** 낱말 카드는 그림이 곧 문제지만 여기서는 질문 문장이 문제다 —
+ * 없는 그림을 지어 넣으면 문항과 무관한 삽화가 위쪽 절반을 차지한다. 그래서
+ * 시트가 화면을 통째로 쓴다(`bare`).
+ *
+ * 답한 뒤에 한 줄이 뜬다. 낱말 카드의 `Reveal`이 뜻을 말해 주는 자리인데,
+ * 상식에는 말해 줄 뜻이 없고 대신 **왜 그런지**가 있다. 그 한 줄이 없으면
+ * 맞아도 틀려도 배우는 것이 없다.
+ */
+function TriviaCard({ question, onAnswer, pick }: { question: TriviaQuestion } & Common) {
+  const { item, options } = question
+  const { question: prompt, answer, note } = item.trivia
+  const [picked, setPicked] = useState<string | null>(pick ?? null)
+  const answered = picked !== null
+  const gaveUp = picked === GAVE_UP
+  const correct = picked === answer
+
+  return (
+    <FeedCard>
+      <CardSheet bare>
+        {/*
+          그림이 없어 위쪽 절반이 통째로 빈다. 낱말 카드는 이미지가 그 자리를 채우지만
+          여기는 채울 것이 없어서 물음과 보기를 **화면 가운데로 모은다** — 위에 붙여
+          두면 카드 아래 3분의 2가 빈 종이가 된다.
+
+          물음은 본문보다 크고 정답 글자(42px)보다는 작다. 읽는 문장이지 외우는
+          낱말이 아니다.
+        */}
+        <div className="flex flex-1 flex-col justify-center gap-md">
+          <p className="font-jp text-[19px] leading-relaxed font-semibold">{prompt}</p>
+
+          <div
+            className={`grid gap-sm ${optionColumns(options) === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}
+          >
+            {options.map((option) => (
+              <button
+                key={option}
+                type="button"
+                disabled={answered}
+                onClick={() => {
+                  if (answered) return
+                  setPicked(option)
+                  onAnswer?.(option === answer, option)
+                }}
+                className={`
+                  grid ${optionBox(options)} place-items-center rounded-ctrl border px-3
+                  text-center font-jp ${optionSize(options)} font-semibold transition
+                  active:scale-[.985] disabled:active:scale-100
+                  ${verdictClass(answered, option === answer, option === picked)}
+                `}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+
+          {!answered && (
+            <button
+              type="button"
+              onClick={() => {
+                setPicked(GAVE_UP)
+                onAnswer?.(false, GAVE_UP)
+              }}
+              className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
+            >
+              모르겠어요
+            </button>
+          )}
+
+          {answered && (
+            <p
+              className="border-t border-line pt-md font-jp text-[15px] leading-relaxed text-sub"
+              role="status"
+            >
+              {/* 색만으로 정오답을 전하지 않는다. 눈으로는 보기 테두리가, 귀로는 이 줄이 말한다 */}
+              <span className="sr-only">
+                {gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '}
+                {answer}.{' '}
+              </span>
+              {note}
+            </p>
+          )}
+        </div>
+
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
     </FeedCard>

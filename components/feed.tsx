@@ -3,7 +3,6 @@
 import { ChevronsUp } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Card } from './cards'
-import type { Entry } from '@/lib/entries'
 import {
   initialState,
   nextQuestion,
@@ -11,8 +10,9 @@ import {
   recordIntro,
   type EngineState,
 } from '@/lib/engine'
-import { loadProgress, saveProgress, type Progress } from '@/lib/progress'
-import type { Question } from '@/lib/quiz'
+import { loadProgress, saveProgress, WORD_LADDER, type Ladder, type Progress } from '@/lib/progress'
+import { questionKey, type Question } from '@/lib/quiz'
+import type { LearnItem } from '@/lib/trivia'
 import type { TrackId } from '@/lib/track'
 import type { Language } from '@/lib/types'
 
@@ -48,11 +48,14 @@ export function Feed({
   entries,
   track,
   lang,
+  ladder = WORD_LADDER,
   onProgress,
 }: {
-  entries: Entry[]
+  entries: LearnItem[]
   /** 진도가 갈리는 단위 */
   track: TrackId
+  /** 이 덱의 사다리. 상식은 한 칸이다 (lib/progress.ts) */
+  ladder?: Ladder
   /** 발음 파일과 정답 필드가 따르는 단위 */
   lang: Language
   /**
@@ -188,7 +191,7 @@ export function Feed({
       const question = questions[i]
       if (!question || question.kind !== 'intro' || recorded.current.has(i)) continue
       recorded.current.add(i)
-      state = recordIntro(state, question.entry.concept.slug, Date.now())
+      state = recordIntro(state, questionKey(question), Date.now())
       changed = true
     }
 
@@ -220,10 +223,10 @@ export function Feed({
       // 같은 카드를 두 번 채점하지 않는다. 버튼은 답한 뒤 잠기지만, 카드가
       // 떼였다 붙는 자리라 잠금이 한 번 풀린 것처럼 보일 수 있다
       if (picks.has(index)) return
-      commit(recordAnswer(engine.current, question.entry.concept.slug, correct, Date.now()))
+      commit(recordAnswer(engine.current, questionKey(question), correct, Date.now(), ladder))
       setPicks((previous) => new Map(previous).set(index, picked))
     },
-    [questions, picks, commit],
+    [questions, picks, commit, ladder],
   )
 
   return (
@@ -245,7 +248,7 @@ export function Feed({
           // 스냅과 높이는 **래퍼가** 들고 있다. 안이 비어도 자리와 스냅점이
           // 그대로 남아야 카드를 떼도 스크롤이 밀리지 않는다
           <div
-            key={`${question.entry.concept.slug}-${question.kind}-${i}`}
+            key={`${questionKey(question)}-${question.kind}-${i}`}
             data-index={i}
             className="h-full snap-start snap-always"
           >
@@ -348,9 +351,20 @@ export function CardImage({ children }: { children?: React.ReactNode }) {
  * 사라져 카드가 못 쓰게 된다. 스크롤 체이닝은 막지 않는다 — 끝까지 굴리면
  * 그대로 다음 카드로 넘어간다.
  */
-export function CardSheet({ children }: { children: React.ReactNode }) {
+/**
+ * `bare`는 위에 이미지가 없는 카드다 — 상식 카드 하나뿐이다 (spec.md §5).
+ *
+ * 물고 올라갈 그림이 없으므로 음수 여백도 둥근 모서리도 뺀다. 그것들은
+ * "이미지와 글자가 한 덩어리로 읽힌다"를 만드는 장치인데(§3), 그림이 없는
+ * 자리에 남겨 두면 시트가 허공 위로 3rem 떠올라 헤더를 파고든다.
+ */
+export function CardSheet({ children, bare = false }: { children: React.ReactNode; bare?: boolean }) {
   return (
-    <div className="relative -mt-lg flex min-h-0 flex-1 flex-col gap-md overflow-y-auto rounded-t-card bg-surface px-5 pt-lg pb-lg">
+    <div
+      className={`relative flex min-h-0 flex-1 flex-col gap-md overflow-y-auto bg-surface px-5 pb-lg ${
+        bare ? 'pt-md' : '-mt-lg rounded-t-card pt-lg'
+      }`}
+    >
       {children}
     </div>
   )

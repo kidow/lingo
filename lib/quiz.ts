@@ -3,6 +3,7 @@ import { blankable, blankableChar, pickConfusables } from './confusables.ts'
 import { hashString, makeRng, sample, shuffled } from './random.ts'
 import { hasAudio } from './audio-have.ts'
 import { LANG } from './lang.ts'
+import type { TriviaEntry } from './trivia.ts'
 import type { Language } from './types.ts'
 
 /**
@@ -68,18 +69,52 @@ export type ListenQuestion = {
   options: Entry[]
 }
 
+/**
+ * 상식 4지선다. (spec.md §5)
+ *
+ * 낱말 4지선다와 모양은 같고 두 가지가 다르다 — **그림이 없고**, 오답이
+ * 풀에서 오지 않고 **문항에 적혀 있다**. 그래서 `entries`를 받지 않는다.
+ */
+export type TriviaQuestion = {
+  kind: 'trivia'
+  item: TriviaEntry
+  /** 정답 1 + 오답 3, 섞인 순서 */
+  options: string[]
+}
+
 export type Question =
   | IntroQuestion
   | ChoiceQuestion
   | BlankQuestion
   | ClozeQuestion
   | ListenQuestion
+  | TriviaQuestion
+
+/**
+ * 이 카드의 진도 키. 카드 종류마다 항목이 어디 붙어 있는지가 달라서
+ * 피드가 매번 갈라 보지 않게 여기 모은다.
+ */
+export function questionKey(question: Question): string {
+  return question.kind === 'trivia' ? question.item.key : question.entry.key
+}
 
 const seedOf = (entry: Entry, kind: string, attempt: number) =>
   hashString(`${entry.concept.slug}:${kind}:${attempt}`)
 
 export function buildIntro(entry: Entry): IntroQuestion {
   return { kind: 'intro', entry }
+}
+
+/**
+ * 상식 문항. 보기 넷을 섞기만 한다.
+ *
+ * 오답을 풀에서 뽑지 않으므로 `entries`가 필요 없다. 대신 **섞는 순서는
+ * 회차마다 달라진다** — 자리를 외워서 맞히는 것을 막는다. 낱말 카드와 같은
+ * 이유로 시드를 쓴다(같은 회차면 같은 배치라 다시 그려도 안 흔들린다).
+ */
+export function buildTrivia(item: TriviaEntry, attempt = 0): TriviaQuestion {
+  const rng = makeRng(hashString(`${item.key}:trivia:${attempt}`))
+  return { kind: 'trivia', item, options: shuffled(item.trivia.choices, rng) }
 }
 
 /** 회차가 쌓이면 같은 주제에서 뽑는다 (NEAR_FROM_ATTEMPT) */

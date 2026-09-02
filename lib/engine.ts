@@ -1,15 +1,17 @@
 import { fsrs, Rating } from 'ts-fsrs'
 import type { Entry } from './entries.ts'
+import { isTrivia, type LearnItem } from './trivia.ts'
 import {
   RUNG_BLANK,
   RUNG_CHOICE,
   RUNG_CLOZE,
   RUNG_INTRO,
-  RUNG_MAX,
   emptyProgress,
   freshCard,
   storeCard,
+  WORD_LADDER,
   type CardState,
+  type Ladder,
   type Progress,
   type Rung,
 } from './progress.ts'
@@ -19,6 +21,7 @@ import {
   buildCloze,
   buildIntro,
   buildListen,
+  buildTrivia,
   canBlank,
   canCloze,
   isClozeTurn,
@@ -99,15 +102,15 @@ export type Clock = () => number
  *
  * 낼 게 없으면 null. 단어가 0개일 때만 일어난다.
  */
-export function pickNext(
+export function pickNext<T extends LearnItem>(
   state: EngineState,
-  entries: Entry[],
+  entries: T[],
   rng: Rng,
   now: number,
-): Entry | null {
+): T | null {
   if (entries.length === 0) return null
 
-  const bySlug = new Map(entries.map((e) => [e.concept.slug, e]))
+  const bySlug = new Map(entries.map((e) => [e.key, e]))
 
   // 1. 예약 도래 — 가장 오래 기다린 것부터
   const due = Object.entries(state.reservations)
@@ -119,10 +122,10 @@ export function pickNext(
   // 풀 크기에 맞춰 줄여 항상 최소 한 장은 남긴다
   const cooldown = Math.min(COOLDOWN, Math.max(entries.length - 1, 0))
   const recent = new Set(state.recent.slice(state.recent.length - cooldown))
-  const fresh = (e: Entry) => !recent.has(e.concept.slug)
+  const fresh = (e: T) => !recent.has(e.key)
 
-  const unseen = entries.filter((e) => !state.progress.cards[e.concept.slug] && fresh(e))
-  const seen = entries.filter((e) => state.progress.cards[e.concept.slug] && fresh(e))
+  const unseen = entries.filter((e) => !state.progress.cards[e.key] && fresh(e))
+  const seen = entries.filter((e) => state.progress.cards[e.key] && fresh(e))
 
   // 2. 신규 유입은 고정 비율이다. 복습이 끝나기를 기다리지 않는다 —
   //    노벨티를 조건부로 미루면 피드가 굳는다
@@ -135,12 +138,12 @@ export function pickNext(
   if (unseen.length > 0) return unseen[Math.floor(rng() * unseen.length)]
 
   // 쿨다운에 전부 걸렸다. 그중 가장 오래된 것을 낸다
-  const oldest = entries.find((e) => e.concept.slug === state.recent[0])
+  const oldest = entries.find((e) => e.key === state.recent[0])
   return oldest ?? entries[Math.floor(rng() * entries.length)]
 }
 
 /** 회상확률이 낮을수록, 갓 소개한 것일수록 자주 나온다 */
-function weightedPick(pool: Entry[], progress: Progress, rng: Rng, now: number): Entry {
+function weightedPick<T extends LearnItem>(pool: T[], progress: Progress, rng: Rng, now: number): T {
   const weights = pool.map((entry) => weightOf(entry, progress, now))
   const total = weights.reduce((sum, w) => sum + w, 0)
   if (total <= 0) return pool[Math.floor(rng() * pool.length)]
@@ -153,8 +156,8 @@ function weightedPick(pool: Entry[], progress: Progress, rng: Rng, now: number):
   return pool[pool.length - 1]
 }
 
-export function weightOf(entry: Entry, progress: Progress, now: number): number {
-  const slug = entry.concept.slug
+export function weightOf(entry: LearnItem, progress: Progress, now: number): number {
+  const slug = entry.key
   const card = progress.cards[slug]
   if (!card) return 1
 
@@ -181,10 +184,23 @@ export function weightOf(entry: Entry, progress: Progress, now: number): number 
  * 듣기 칸을 못 만든다 — 그런 카드도 복습은 돌아야 하므로 만들 수 있는 것 중
  * 가장 가까운 것을 낸다. 상황 표현은 철자 칸에서 문맥 칸으로 내려앉는다.
  */
-export function questionFor(entry: Entry, state: EngineState, entries: Entry[]): Question {
-  const card = state.progress.cards[entry.concept.slug]
+export function questionFor(
+  item: LearnItem,
+  state: EngineState,
+  entries: LearnItem[],
+): Question {
+  const card = state.progress.cards[item.key]
   const rung: Rung = card?.rung ?? RUNG_INTRO
   const attempt = card?.fsrs.reps ?? 0
+
+  /**
+   * 상식은 사다리가 한 칸이라 갈림이 없다 (TRIVIA_LADDER).
+   *
+   * 한 덱에 두 종류가 섞이지 않으므로(lib/deck.ts) 여기서 갈리면 아래 낱말
+   * 경로는 `entries`가 전부 `Entry`임을 믿어도 된다.
+   */
+  if (isTrivia(item)) return buildTrivia(item, attempt)
+  const entry = item
 
   if (rung === RUNG_INTRO) return buildIntro(entry)
 
@@ -195,8 +211,10 @@ export function questionFor(entry: Entry, state: EngineState, entries: Entry[]):
    * 빈칸이었다. 아래 두 칸은 듣기와 번갈아 도는데 여기만 한 모양이었다.
    * 듣기를 넣지 않는 것은 듣기가 재인 — 사다리에서 두 칸 아래이기 때문이다.
    */
+  const words = entries as Entry[]
+
   if (rung === RUNG_BLANK && canBlank(entry)) {
-    if (isClozeTurn(entry, attempt) && canCloze(entry)) return buildCloze(entry, entries, attempt)
+    if (isClozeTurn(entry, attempt) && canCloze(entry)) return buildCloze(entry, words, attempt)
     return buildBlank(entry, attempt)
   }
 
@@ -212,16 +230,16 @@ export function questionFor(entry: Entry, state: EngineState, entries: Entry[]):
   const listenTurn = isListenTurn(entry, attempt)
 
   if (rung >= RUNG_CLOZE && canCloze(entry)) {
-    return listenTurn ? buildListen(entry, entries, attempt) : buildCloze(entry, entries, attempt)
+    return listenTurn ? buildListen(entry, words, attempt) : buildCloze(entry, words, attempt)
   }
-  if (listenTurn) return buildListen(entry, entries, attempt)
-  return buildChoice(entry, entries, attempt)
+  if (listenTurn) return buildListen(entry, words, attempt)
+  return buildChoice(entry, words, attempt)
 }
 
 /** 뽑기 + 문항 만들기 + 낸 것으로 기록. 상태를 새로 만들어 돌려준다 */
-export function nextQuestion(
+export function nextQuestion<T extends LearnItem>(
   state: EngineState,
-  entries: Entry[],
+  entries: T[],
   rng: Rng,
   now: number,
 ): { question: Question; state: EngineState } | null {
@@ -229,7 +247,7 @@ export function nextQuestion(
   if (!entry) return null
 
   const question = questionFor(entry, state, entries)
-  const slug = entry.concept.slug
+  const slug = entry.key
 
   const reservations = { ...state.reservations }
   delete reservations[slug]
@@ -286,10 +304,12 @@ export function recordAnswer(
   slug: string,
   correct: boolean,
   now: number,
+  /** 덱마다 다르다. 상식은 위아래 끝이 같은 한 칸이다 (lib/progress.ts) */
+  ladder: Ladder = WORD_LADDER,
 ): EngineState {
   const previous = state.progress.cards[slug]
   const base: CardState = previous ?? {
-    rung: RUNG_CHOICE,
+    rung: ladder.min === RUNG_INTRO ? RUNG_CHOICE : ladder.min,
     streak: 0,
     fsrs: freshCard(new Date(now)),
   }
@@ -297,7 +317,7 @@ export function recordAnswer(
   const graded = scheduler.next(base.fsrs, new Date(now), correct ? Rating.Good : Rating.Again)
 
   const rung = (
-    correct ? Math.min(base.rung + 1, RUNG_MAX) : Math.max(base.rung - 1, RUNG_INTRO)
+    correct ? Math.min(base.rung + 1, ladder.max) : Math.max(base.rung - 1, ladder.min)
   ) as Rung
   const streak = correct ? base.streak + 1 : 0
 
@@ -317,7 +337,7 @@ export function recordAnswer(
    * 날짜 단위라 FSRS가 정한다. 놓아주면 회상확률이 1에 가까워 가중치가
    * 바닥(0.02)에 붙고, 하루가 지나 확률이 떨어지면 저절로 다시 올라온다.
    */
-  const settled = correct && rung === RUNG_MAX && streak >= SETTLED_STREAK
+  const settled = correct && rung === ladder.max && streak >= SETTLED_STREAK
   const reservations = { ...state.reservations }
   if (settled) delete reservations[slug]
   else reservations[slug] = state.cursor + distance

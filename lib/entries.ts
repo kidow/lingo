@@ -11,6 +11,15 @@ import type { Category, Concept, Example, Language, Word } from './types.ts'
 
 /** 개념 + 그 언어의 단어. 카드가 실제로 다루는 단위다. */
 export type Entry = {
+  /**
+   * 진도가 이 카드를 부르는 이름. 낱말은 `concept.slug`가 그대로 온다.
+   *
+   * 엔진은 카드가 무엇인지 모른다 — 키 하나만 안다(lib/engine.ts). 상식 문항이
+   * 낱말과 같은 엔진을 타는 것도 이 필드 덕이다. 진도 키는 이미 저장된 값이라
+   * 낱말 쪽은 **slug 그대로여야 한다** — 접두사를 붙이면 지금까지의 진도가
+   * 전부 남남이 된다.
+   */
+  key: string
   concept: Concept
   word: Word
   /** 어느 언어로 출제되는가. 발음 파일 자리를 여기서 찾는다 */
@@ -30,7 +39,7 @@ export function entriesFor(lang: Language, concepts: Concept[]): Entry[] {
     if (!word) continue
     const answer = answerOf(word, lang)
     if (!answer) continue
-    entries.push({ concept, word, lang, answer })
+    entries.push({ key: concept.slug, concept, word, lang, answer })
   }
   return entries
 }

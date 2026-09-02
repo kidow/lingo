@@ -14,8 +14,16 @@ import {
   weightOf,
   type EngineState,
 } from './engine.ts'
-import { RUNG_BLANK, RUNG_CHOICE, RUNG_CLOZE, RUNG_INTRO } from './progress.ts'
-import { buildBlank, buildChoice, buildCloze, buildListen, NEAR_FROM_ATTEMPT } from './quiz.ts'
+import { RUNG_BLANK, RUNG_CHOICE, RUNG_CLOZE, RUNG_INTRO, TRIVIA_LADDER } from './progress.ts'
+import { triviaKey, type TriviaEntry } from './trivia.ts'
+import {
+  buildBlank,
+  buildChoice,
+  buildCloze,
+  buildListen,
+  questionKey,
+  NEAR_FROM_ATTEMPT,
+} from './quiz.ts'
 import type { Category, Concept } from './types.ts'
 
 /* ── 도구 ────────────────────────────────────────────────────────── */
@@ -31,7 +39,7 @@ function entry(slug: string, reading: string, category: Category = 'noun'): Entr
     image_prompt: 'x',
     words: { ja: { term: slug, reading } },
   }
-  return { concept, word: concept.words.ja!, lang: 'ja', answer: reading }
+  return { key: slug, concept, word: concept.words.ja!, lang: 'ja', answer: reading }
 }
 
 /** 예문이 있는 항목. 문맥 칸(예문 빈칸)은 예문이 있어야 만들어진다 */
@@ -413,13 +421,55 @@ test('안 본 단어의 가중치는 1이다', () => {
   assert.equal(weightOf(ENTRIES[0], initialState().progress, NOW), 1)
 })
 
+/* ── 상식 ────────────────────────────────────────────────────────── */
+
+const TRIVIA: TriviaEntry[] = [
+  {
+    key: triviaKey('ja', 'particle-wa'),
+    lang: 'ja',
+    trivia: {
+      id: 'particle-wa',
+      question: '조사 は는 어떻게 읽나요?',
+      choices: ['わ', 'は', 'あ', 'や'],
+      answer: 'わ',
+      note: 'ハ行転呼音의 흔적입니다.',
+    },
+  },
+]
+
+test('상식은 소개 카드를 거치지 않고 바로 4지선다로 나온다', () => {
+  const question = questionFor(TRIVIA[0], initialState(), TRIVIA)
+  assert.equal(question.kind, 'trivia')
+  assert.equal(new Set((question as { options: string[] }).options).size, 4)
+})
+
+test('상식의 rung은 사다리가 한 칸이라 맞혀도 오르지 않는다', () => {
+  let state = initialState()
+  state = recordAnswer(state, TRIVIA[0].key, true, NOW, TRIVIA_LADDER)
+  assert.equal(state.progress.cards[TRIVIA[0].key].rung, RUNG_CHOICE)
+  state = recordAnswer(state, TRIVIA[0].key, true, NOW, TRIVIA_LADDER)
+  assert.equal(state.progress.cards[TRIVIA[0].key].rung, RUNG_CHOICE, '꼭대기를 넘지 않는다')
+})
+
+test('상식은 틀려도 소개 칸으로 내려가지 않는다 — 내려갈 칸이 없다', () => {
+  let state = recordAnswer(initialState(), TRIVIA[0].key, true, NOW, TRIVIA_LADDER)
+  state = recordAnswer(state, TRIVIA[0].key, false, NOW, TRIVIA_LADDER)
+  assert.equal(state.progress.cards[TRIVIA[0].key].rung, RUNG_CHOICE)
+  assert.equal(state.progress.cards[TRIVIA[0].key].streak, 0)
+})
+
+test('상식 진도 키는 낱말 slug와 겹치지 않는다', () => {
+  assert.equal(triviaKey('ja', 'cat'), 'trivia:ja:cat')
+  assert.notEqual(triviaKey('ja', 'cat'), 'cat')
+})
+
 /* ── 전체 흐름 ───────────────────────────────────────────────────── */
 
 test('nextQuestion은 cursor를 올리고 예약을 지우고 recent에 넣는다', () => {
   const before = introduced(initialState(), 'cat')
   const result = nextQuestion({ ...before, cursor: DISTANCE.intro }, ENTRIES, rngOf(0.9), NOW)
   assert.ok(result)
-  assert.equal(result.question.entry.concept.slug, 'cat')
+  assert.equal(questionKey(result.question), 'cat')
   assert.equal(result.state.cursor, DISTANCE.intro + 1)
   assert.equal(result.state.reservations.cat, undefined)
   assert.deepEqual(result.state.recent, ['cat'])
@@ -437,7 +487,7 @@ test('100장을 뽑아도 멈추지 않고 같은 카드가 연달아 나오지 
   for (let i = 0; i < 100; i += 1) {
     const result = nextQuestion(state, ENTRIES, rng, NOW + i * 1000)
     assert.ok(result, `${i}번째에서 멈췄다`)
-    const slug = result.question.entry.concept.slug
+    const slug = questionKey(result.question)
     assert.notEqual(slug, previous, `${i}번째에서 같은 카드가 연달아 나왔다: ${slug}`)
     previous = slug
 

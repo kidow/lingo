@@ -26,6 +26,20 @@ export const RUNG_BLANK = 3 satisfies Rung
 export const RUNG_MAX = RUNG_BLANK
 
 /**
+ * 사다리의 위아래 끝. **덱마다 다르다.** (spec.md §6)
+ *
+ * 낱말은 네 칸을 다 쓴다. 상식은 4지선다 한 칸뿐이다 — 그림이 없어 소개 카드가
+ * 성립하지 않고, 정답이 낱말이 아니라 문장이라 철자 빈칸도 문맥 빈칸도 만들 수
+ * 없다. 칸이 하나면 `rung`은 움직이지 않고 **재등장 간격만 FSRS가 정한다.**
+ *
+ * 사다리를 없애지 않고 폭만 좁히는 이유는, 없애면 진도·숙련도·예약이 저마다
+ * 상식을 예외로 알아야 하기 때문이다. 끝을 옮기면 나머지 규칙이 그대로 돈다.
+ */
+export type Ladder = { min: Rung; max: Rung }
+export const WORD_LADDER: Ladder = { min: RUNG_INTRO, max: RUNG_BLANK }
+export const TRIVIA_LADDER: Ladder = { min: RUNG_CHOICE, max: RUNG_CHOICE }
+
+/**
  * ts-fsrs의 Card를 그대로 두되 Date만 숫자로 바꾼다.
  * CardInput이 due를 number로도 받으므로 되돌릴 필요가 없다.
  */
@@ -82,9 +96,9 @@ export function freshCard(now: Date): StoredCard {
  */
 export const MASTERED_STABILITY = 21
 
-export function isMastered(card: CardState | undefined): boolean {
+export function isMastered(card: CardState | undefined, ladder: Ladder = WORD_LADDER): boolean {
   if (!card) return false
-  return card.rung === RUNG_MAX && card.fsrs.stability >= MASTERED_STABILITY
+  return card.rung === ladder.max && card.fsrs.stability >= MASTERED_STABILITY
 }
 
 /**
@@ -95,9 +109,13 @@ export function isMastered(card: CardState | undefined): boolean {
  * 거치므로(lib/entries.ts) 필터가 바뀌면 실제로 남는다. 목록을 돌면 분자가
  * 분모를 넘는 일이 생기지 않는다.
  */
-export function masteredCount(progress: Progress, slugs: string[]): number {
+export function masteredCount(
+  progress: Progress,
+  keys: string[],
+  ladder: Ladder = WORD_LADDER,
+): number {
   let count = 0
-  for (const slug of slugs) if (isMastered(progress.cards[slug])) count += 1
+  for (const key of keys) if (isMastered(progress.cards[key], ladder)) count += 1
   return count
 }
 
