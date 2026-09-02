@@ -111,6 +111,15 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
         </div>
 
         {/*
+          같은 뜻의 다른 말 (lib/types.ts). 뜻줄 **아래**에 둔다 — 뜻을 읽은
+          다음에야 "이 말도 같은 뜻"이 이해되기 때문이다. 큰 글자 옆에 붙이면
+          무엇이 학습 대상인지 흐려진다. 퀴즈에는 한 번도 안 나온다
+        */}
+        {word.also && word.also.length > 0 && (
+          <p className="-mt-2 font-jp text-sm text-sub">또는 {word.also.join(' · ')}</p>
+        )}
+
+        {/*
           예문은 소개 카드에만 둔다. 정답 단어가 그대로 들어 있어 퀴즈에 못 쓴다.
           여럿이어도 **첫 줄만** 보여준다 — 소개 카드의 일은 한 번 보여주는 것이지
           다 보여주는 것이 아니다. 나머지는 문맥 카드가 회차로 돌려 쓴다
