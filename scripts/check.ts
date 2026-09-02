@@ -248,7 +248,19 @@ for (const [category, count] of Object.entries(perCategory)) {
     warn(`category "${category}" 개념이 ${count}개뿐입니다 — 오답 보기를 전체 풀에서 뽑게 됩니다`)
 }
 
-// `also`가 다른 개념의 정답과 겹치는지. 겹치면 그 낱말을 소개 카드가 미리 흘린다
+/**
+ * `also`가 다른 개념의 정답과 겹치는 자리.
+ *
+ * 처음에는 경고로 뒀다 — 소개 카드가 나중에 보기로 나올 말을 미리 흘린다고
+ * 봤다. 그런데 걸린 것들이 하나같이 **진짜 다의어**였다. `apartment`의 `flat`,
+ * `autumn`의 `fall`, `necktie`의 `tie`는 영어에서 실제로 두 뜻을 다 갖는다.
+ * 그걸 막으면 사실을 안 가르치게 된다.
+ *
+ * 오답으로 만나지도 않는다. 오답은 같은 주제·같은 품사에서 오는데(`nearPool`)
+ * 이 쌍들은 주제가 다르다 — `necktie`는 clothes의 명사, `tie`는 action의 동사다.
+ *
+ * 그래서 경고가 아니라 **참고**로 적는다. 지어낸 짝이 섞이면 여기서 보인다.
+ */
 for (const [lang, table] of alsoTable) {
   const answers = new Map<string, string>()
   for (const concept of all) {
@@ -259,7 +271,7 @@ for (const [lang, table] of alsoTable) {
   for (const [form, slug] of table) {
     const owner = answers.get(form)
     if (owner && owner !== slug)
-      warn(`${slug} — ${lang}.also의 "${form}"이 ${owner}의 정답입니다. 보기로 나올 말을 미리 보여줍니다`)
+      notes.push(`${slug} — ${lang}.also의 "${form}"은 ${owner}의 정답이기도 하다 (다의어)`)
   }
 }
 
