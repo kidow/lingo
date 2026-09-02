@@ -18,6 +18,13 @@ import type { Concept, Language } from '../lib/types.ts'
 /** 굽은 아포스트로피. 곧은 '와 섞이면 표제어와 예문이 어긋난다 */
 const CURLY_APOSTROPHE = '\u2019'
 
+/** 언어별 `also` 표기 → 그것을 적은 개념. 다른 개념의 정답과 겹치는지 나중에 본다 */
+const alsoTable = new Map<string, Map<string, string>>()
+const alsoOf = (lang: string) => {
+  if (!alsoTable.has(lang)) alsoTable.set(lang, new Map())
+  return alsoTable.get(lang)!
+}
+
 const CONTENT_DIR = 'content'
 const PUBLIC_DIR = 'public'
 const SLUG_RE = /^[a-z0-9-]+$/
@@ -141,6 +148,27 @@ for (const file of files) {
         fail(where, `${lang}.${strategy.answer} 누락 — 이 언어의 정답 필드입니다`)
 
       /**
+       * 같은 뜻의 다른 표기. 표시 전용이라 규칙이 두 가지다 (lib/types.ts).
+       *
+       * 정답과 같으면 같은 말을 두 번 적은 것이고, 다른 개념의 정답과 같으면
+       * 그 개념을 여기서 미리 알려주는 셈이다 — 4지선다에서 보기 하나가
+       * 소개 카드에 이미 나온 말이 된다.
+       */
+      const also = word.also as unknown
+      if (also !== undefined) {
+        if (!Array.isArray(also) || also.some((x) => typeof x !== 'string' || !x.trim()))
+          fail(where, `${lang}.also는 비어 있지 않은 문자열 배열이어야 합니다`)
+        else {
+          const list = also as string[]
+          if (new Set(list).size !== list.length) fail(where, `${lang}.also에 같은 표기가 두 번 있습니다`)
+          const answer = word[strategy.answer]
+          if (list.includes(word.term as string) || list.includes(answer as string))
+            fail(where, `${lang}.also에 표제어와 같은 표기가 있습니다`)
+          for (const other of list) alsoOf(lang).set(other, slug)
+        }
+      }
+
+      /**
        * 예문은 선택이다. 있다면 두 줄이 다 있어야 하고, 그 단어가 실제로
        * 들어 있어야 한다 — 문맥 카드가 그 자리를 뚫기 때문이다 (§5).
        *
@@ -218,6 +246,21 @@ if (existsSync(audioRoot)) {
 for (const [category, count] of Object.entries(perCategory)) {
   if (count > 0 && count < MIN_PER_CATEGORY)
     warn(`category "${category}" 개념이 ${count}개뿐입니다 — 오답 보기를 전체 풀에서 뽑게 됩니다`)
+}
+
+// `also`가 다른 개념의 정답과 겹치는지. 겹치면 그 낱말을 소개 카드가 미리 흘린다
+for (const [lang, table] of alsoTable) {
+  const answers = new Map<string, string>()
+  for (const concept of all) {
+    const word = concept.words[lang as Language]
+    const answer = word && LANG[lang as Language] && word[LANG[lang as Language].answer]
+    if (answer) answers.set(answer, concept.slug)
+  }
+  for (const [form, slug] of table) {
+    const owner = answers.get(form)
+    if (owner && owner !== slug)
+      warn(`${slug} — ${lang}.also의 "${form}"이 ${owner}의 정답입니다. 보기로 나올 말을 미리 보여줍니다`)
+  }
 }
 
 // 겹치는 빈칸 틀. 같은 주제·같은 품사에서 두 낱말이 같은 문장을 쓰면 답이 둘이다
