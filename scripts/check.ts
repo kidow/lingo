@@ -9,7 +9,7 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
-import { entriesForTrack } from '../lib/entries.ts'
+import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
 import { LANG } from '../lib/lang.ts'
 import { clozeAt } from '../lib/quiz.ts'
 import { TRACKS } from '../lib/track.ts'
@@ -223,6 +223,16 @@ for (const file of files) {
  * 읽기나 로마자로 저장하기 쉬운데(`cat` 개념을 `neko.mp3`로), 그러면 발음이
  * 있는데도 버튼이 비활성으로 남는다. 눈에 안 띄는 실패라 여기서 잡는다.
  */
+/** 지금 예문에서 나오는 소리 이름표 전부. 낡은 파일을 가려내는 데 쓴다 */
+const exampleKeys = new Set<string>()
+for (const concept of all)
+  for (const word of Object.values(concept.words)) {
+    const list = word.examples ?? (word.example ? [word.example] : [])
+    list.forEach((example, index) => {
+      if (example?.text) exampleKeys.add(exampleAudioKey(concept.slug, index, example.text))
+    })
+  }
+
 const audioRoot = join(PUBLIC_DIR, 'audio')
 if (existsSync(audioRoot)) {
   for (const lang of readdirSync(audioRoot, { withFileTypes: true })) {
@@ -238,6 +248,25 @@ if (existsSync(audioRoot)) {
           guess ? `. "${guess}.mp3" 를 의도했나요?` : ''
         }`,
       )
+    }
+
+    /*
+     * 낡은 예문 소리 — 예문을 고쳐 이름이 달라진 파일.
+     *
+     * 이름에 문장 해시가 들어 있어(lib/entries.ts) 예문을 고치면 열쇠가 바뀐다.
+     * 앱은 새 열쇠로 찾으니 옛 파일은 조용히 버려지는데, 지우지 않으면 저장소에
+     * 쌓이고 무엇이 살아 있는 파일인지 알 수 없게 된다.
+     */
+    const exDir = join(audioRoot, lang.name, 'ex')
+    if (existsSync(exDir)) {
+      for (const file of readdirSync(exDir)) {
+        if (!file.endsWith('.mp3')) continue
+        if (exampleKeys.has(file.slice(0, -'.mp3'.length))) continue
+        fail(
+          join(exDir, file),
+          '지금 예문과 맞지 않습니다 — 예문을 고친 뒤 남은 소리로 보입니다',
+        )
+      }
     }
   }
 }
