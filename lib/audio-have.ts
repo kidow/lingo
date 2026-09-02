@@ -15,7 +15,43 @@
  * 낡으면 `pnpm check`가 경고한다. 콘텐츠를 넣고 발음을 아직 안 만들었는데 이
  * 목록이 옛날 그대로면 듣기 카드가 빈 소리를 내기 때문이다.
  */
-export const AUDIO_MISSING: ReadonlySet<string> = new Set([])
+export const AUDIO_MISSING: ReadonlySet<string> = new Set([
+  'de/octagon',
+  'de/pendulum-clock',
+  'de/pentagon',
+  'de/quarter-past',
+  'de/semicircle',
+  'en/octagon',
+  'en/pendulum-clock',
+  'en/pentagon',
+  'en/quarter-past',
+  'en/semicircle',
+  'es/octagon',
+  'es/pendulum-clock',
+  'es/pentagon',
+  'es/quarter-past',
+  'es/semicircle',
+  'fr/octagon',
+  'fr/pendulum-clock',
+  'fr/pentagon',
+  'fr/quarter-past',
+  'fr/semicircle',
+  'ja/octagon',
+  'ja/pendulum-clock',
+  'ja/pentagon',
+  'ja/quarter-past',
+  'ja/semicircle',
+  'ru/octagon',
+  'ru/pendulum-clock',
+  'ru/pentagon',
+  'ru/quarter-past',
+  'ru/semicircle',
+  'zh/octagon',
+  'zh/pendulum-clock',
+  'zh/pentagon',
+  'zh/quarter-past',
+  'zh/semicircle',
+])
 
 /** 그 언어에 그 개념의 발음이 있는가 */
 export function hasAudio(slug: string, lang: string): boolean {
