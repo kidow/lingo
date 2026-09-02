@@ -186,7 +186,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
                       <Copy text={row.answer} className="font-jp font-semibold" />{' '}
                       {row.aside.length > 0 && (
                         <span className="font-jp text-xs text-sub">
-                          {row.aside.map((value, i) => (i === 0 ? `[${value}]` : value)).join(' · ')}
+                          {row.aside.join(' · ')}
                         </span>
                       )}
                     </>
@@ -214,7 +214,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
                 </Td>
                 <Td>
                   {row.audioSize !== null ? (
-                    <DebugPlay src={row.audioPath} />
+                    <DebugPlay src={row.audioPath} missing={row.audioSize === null} />
                   ) : (
                     <span className="block size-7" />
                   )}

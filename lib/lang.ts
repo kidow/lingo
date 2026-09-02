@@ -68,10 +68,18 @@ export function answerOf(word: Word, lang: Language): string | undefined {
   return word[LANG[lang].answer]
 }
 
-/** 소개 카드 참고줄. 정답과 같은 값은 중복이므로 뺀다 (`バナナ` 같은 경우). */
-export function asideOf(word: Word, lang: Language): string[] {
+/**
+ * 소개 카드 참고줄. 정답과 같은 값은 중복이므로 뺀다 (`バナナ` 같은 경우).
+ *
+ * `sound`는 그 항목이 **발음 보조**인지다. 카드가 대괄호를 씌울지 정한다 —
+ * 예전에는 첫 항목이면 무조건 씌웠는데, 로마자가 비면 표기가 첫 항목이 되어
+ * `[計量カップ]`처럼 한자를 발음인 양 보여줬다.
+ */
+export function asideOf(word: Word, lang: Language): Array<{ value: string; sound: boolean }> {
   const answer = answerOf(word, lang)
   return LANG[lang].aside
-    .map((field) => word[field])
-    .filter((value): value is string => Boolean(value) && value !== answer)
+    .map((field) => ({ value: word[field], sound: field === 'romanization' }))
+    .filter((item): item is { value: string; sound: boolean } =>
+      Boolean(item.value) && item.value !== answer,
+    )
 }

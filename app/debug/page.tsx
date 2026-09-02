@@ -40,7 +40,8 @@ export default function DebugPage() {
           track,
           level: levelOf(word),
           answer: answerOf(word, language),
-          aside: asideOf(word, language),
+          // 디버그 표는 대괄호를 씌우지 않는다. 문자열만 넘긴다 (lib/lang.ts)
+          aside: asideOf(word, language).map((item) => item.value),
           meaning: concept.meaning_ko,
           partOfSpeech: word.part_of_speech,
           // 예문은 `example`과 `examples` 두 모양이 있다. 손으로 첫 줄을 꺼내면

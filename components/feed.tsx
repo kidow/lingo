@@ -254,6 +254,7 @@ export function Feed({
                 question={question}
                 lang={lang}
                 first={i === 0}
+                active={i === current}
                 pick={picks.get(i) ?? null}
                 onAnswer={(correct, picked) => handleAnswer(i, correct, picked)}
               />
