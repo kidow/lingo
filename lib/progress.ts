@@ -121,6 +121,8 @@ export function masteryLabel(mastered: number, total: number): string | null {
 
 export const progressKey = (track: TrackId) => `lingo.progress.${track}`
 export const TRACK_KEY = 'lingo.track'
+/** 덱은 트랙과 달리 하나만 저장한다 — 진도를 나누지 않기 때문이다 (lib/deck.ts) */
+export const DECK_KEY = 'lingo.deck'
 
 /**
  * 없거나 깨졌으면 빈 진도로 시작한다. 던지지 않는다.

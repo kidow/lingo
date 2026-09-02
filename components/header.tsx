@@ -8,6 +8,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { DECKS, type DeckId } from '@/lib/deck'
 import { TRACKS, trackOf, type TrackId } from '@/lib/track'
 
 /**
@@ -35,9 +36,14 @@ export function Header({
   track,
   onChange,
   mastery,
+  deck,
+  onDeck,
 }: {
   track: TrackId
   onChange: (track: TrackId) => void
+  /** 지금 보는 덱. 표현이 없는 트랙(TOEIC)에서는 undefined라 탭이 서지 않는다 */
+  deck?: DeckId
+  onDeck?: (deck: DeckId) => void
   /**
    * 완전히 외운 비율. 아직 없으면 null이고, 그러면 헤더는 트랙 하나뿐이던
    * 시절과 똑같다. (lib/progress.ts)
@@ -91,6 +97,34 @@ export function Header({
         >
           {mastery}
         </span>
+      )}
+
+      {/*
+        덱 탭. 한 트랙 안에서 낱말과 통짜 표현을 갈라 본다 (lib/deck.ts).
+
+        드롭다운이 아니라 **늘 보이는 두 글자**로 둔다 — 고를 것이 둘뿐이고,
+        지금 무엇을 보고 있는지가 트랙만큼 자주 바뀌기 때문이다. 진도는 갈리지
+        않으므로 왼쪽 숙련도는 덱과 무관하게 트랙 전체를 가리킨다.
+
+        표현이 없는 트랙에서는 자리째 빠진다. TOEIC은 TSL 표제어만 내는데
+        통짜 표현은 그 목록에 없다 (lib/entries.ts)
+      */}
+      {deck && onDeck && (
+        <div className="ml-auto flex items-center gap-2 text-[15px]">
+          {DECKS.map(({ id, label }, i) => (
+            <span key={id} className="flex items-center gap-2">
+              {i > 0 && <span aria-hidden className="text-line">|</span>}
+              <button
+                type="button"
+                aria-pressed={deck === id}
+                onClick={() => onDeck(id)}
+                className={`rounded-ctrl transition ${deck === id ? 'font-bold' : 'text-sub'}`}
+              >
+                {label}
+              </button>
+            </span>
+          ))}
+        </div>
       )}
     </header>
   )
