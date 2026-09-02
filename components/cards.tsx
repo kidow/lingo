@@ -41,6 +41,15 @@ type Common = {
   onAnswer?: AnswerHandler
   first?: boolean
   /**
+   * 지금 화면에 있는 카드인가. 소리를 저절로 울릴지 정한다.
+   *
+   * 피드는 앞뒤 한 장씩을 미리 그려 둔다(components/feed.tsx). 그래서 **붙는
+   * 시점과 보이는 시점이 다르다** — 답을 맞혀 다음 카드가 생기면 아직 보이지도
+   * 않는 그 카드가 소리를 냈다. 답한 카드의 소리와 겹쳐 두 번 울린 이유가
+   * 이것이다. 소리는 붙을 때가 아니라 **볼 때** 난다.
+   */
+  active?: boolean
+  /**
    * 이미 답한 카드라면 그때 고른 값.
    *
    * 답한 상태는 카드 안에 있다. 화면 밖 카드를 떼는 순간 그 상태도 사라지므로
@@ -88,10 +97,14 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
             />
             <SayButton slug={concept.slug} lang={lang} label={answer} />
           </div>
-          {/* 첫 항목이 발음 보조다. 큰 글자가 이미 읽기라 여기 오는 건 로마자 (lib/lang.ts) */}
+          {/*
+            발음 보조에만 대괄호를 씌운다 (lib/lang.ts). 예전에는 **첫 항목**이면
+            씌웠는데, 로마자가 비면 표기가 첫 항목으로 올라와 `[計量カップ]`처럼
+            한자를 발음인 양 보여줬다
+          */}
           {aside.length > 0 && (
             <p className="font-jp text-sm text-sub">
-              {aside.map((value, i) => (i === 0 ? `[${value}]` : value)).join(' · ')}
+              {aside.map(({ value, sound }) => (sound ? `[${value}]` : value)).join(' · ')}
             </p>
           )}
         </div>
@@ -163,7 +176,7 @@ function IntroCard({ question, lang, first }: { question: IntroQuestion } & Comm
 
 /* ── 1. 재인 — 4지선다 ────────────────────────────────────────────── */
 
-function ChoiceCard({ question, lang, onAnswer, first, pick }: { question: ChoiceQuestion } & Common) {
+function ChoiceCard({ question, lang, onAnswer, first, pick, active }: { question: ChoiceQuestion } & Common) {
   const { entry, options } = question
   const { concept, answer } = entry
   // null = 아직 안 답함, GAVE_UP = 모른다고 눌렀음, 그 외 = 고른 보기.
@@ -222,7 +235,7 @@ function ChoiceCard({ question, lang, onAnswer, first, pick }: { question: Choic
           </button>
         )}
 
-        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} />
+        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} active={active} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
@@ -245,7 +258,7 @@ function ChoiceCard({ question, lang, onAnswer, first, pick }: { question: Choic
  * 위쪽 그림 자리에는 **소리 버튼만** 놓는다. 정답 그림을 띄워 놓으면 듣지 않고
  * 풀 수 있다. 답한 뒤에는 그 자리에 낱말과 뜻과 예문이 들어온다 (`ListenBrief`).
  */
-function ListenCard({ question, lang, onAnswer, first, pick }: { question: ListenQuestion } & Common) {
+function ListenCard({ question, lang, onAnswer, first, pick, active }: { question: ListenQuestion } & Common) {
   const { entry, options } = question
   const { concept, answer } = entry
   const [picked, setPicked] = useState<string | null>(pick ?? null)
@@ -261,7 +274,7 @@ function ListenCard({ question, lang, onAnswer, first, pick }: { question: Liste
         ) : (
           <div className="grid h-full place-items-center">
             {/* 답하기 전에는 이 버튼이 문제 전체다. 눌러 다시 들을 수 있고, 두 번째부터는 느리게 나온다 */}
-            <SayButton slug={concept.slug} lang={lang} label={answer} autoPlay />
+            <SayButton slug={concept.slug} lang={lang} label={answer} autoPlay={active} />
           </div>
         )}
       </CardImage>
@@ -362,7 +375,7 @@ function ListenBrief({
       </div>
       {aside.length > 0 && (
         <p className="font-jp text-sm text-sub">
-          {aside.map((value, i) => (i === 0 ? `[${value}]` : value)).join(' · ')}
+          {aside.map(({ value, sound }) => (sound ? `[${value}]` : value)).join(' · ')}
         </p>
       )}
       <p className="text-lg font-semibold">{concept.meaning_ko}</p>
@@ -392,7 +405,7 @@ function ListenBrief({
  * 물으면 문장을 읽지 않고도 답이 되어 재인 칸과 같은 문제가 된다. 자리는
  * 비워 두되 없애지는 않는다 — 없애면 카드 높이가 달라져 넘길 때 튄다.
  */
-function ClozeCard({ question, lang, onAnswer, first, pick }: { question: ClozeQuestion } & Common) {
+function ClozeCard({ question, lang, onAnswer, first, pick, active }: { question: ClozeQuestion } & Common) {
   const { entry, options, before, after } = question
   const { concept, answer } = entry
   const [picked, setPicked] = useState<string | null>(pick ?? null)
@@ -456,7 +469,7 @@ function ClozeCard({ question, lang, onAnswer, first, pick }: { question: ClozeQ
           </button>
         )}
 
-        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} />
+        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} active={active} />
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
     </FeedCard>
@@ -465,7 +478,7 @@ function ClozeCard({ question, lang, onAnswer, first, pick }: { question: ClozeQ
 
 /* ── 3. 단서 회상 — 빈칸 ──────────────────────────────────────────── */
 
-function BlankCard({ question, lang, onAnswer, first, pick }: { question: BlankQuestion } & Common) {
+function BlankCard({ question, lang, onAnswer, first, pick, active }: { question: BlankQuestion } & Common) {
   const { entry, chars, holeIndex, keys } = question
   const { concept, answer } = entry
   const answerChar = chars[holeIndex]
@@ -529,7 +542,7 @@ function BlankCard({ question, lang, onAnswer, first, pick }: { question: BlankQ
           ))}
         </div>
 
-        <Reveal show={answered} correct={correct} question={question} lang={lang} />
+        <Reveal show={answered} correct={correct} question={question} lang={lang} active={active} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
@@ -584,12 +597,15 @@ function Reveal({
   gaveUp = false,
   question,
   lang,
+  active,
 }: {
   show: boolean
   correct: boolean
   gaveUp?: boolean
   question: ChoiceQuestion | BlankQuestion | ClozeQuestion | ListenQuestion
   lang: Language
+  /** 보고 있는 카드에서만 저절로 울린다 */
+  active?: boolean
 }) {
   if (!show) return null
   const { concept, word, answer } = question.entry
@@ -603,7 +619,7 @@ function Reveal({
         {extra}
       </p>
       {/* 답하기 전에는 이 줄 자체가 없다. 잠금을 disabled가 아니라 렌더로 건다 */}
-      <SayButton slug={concept.slug} lang={lang} label={answer} autoPlay />
+      <SayButton slug={concept.slug} lang={lang} label={answer} autoPlay={active} />
     </div>
   )
 }

@@ -11,10 +11,14 @@ import { useEffect, useRef, useState } from 'react'
  * 알려줬다. 목록이 수백 줄이 되어도 열기만 해서는 요청이 나가지 않는다.
  *
  * 한 번에 하나만 울린다. 앞엣것을 멈추고 다음을 눌러야 연속으로 검수할 수 있다.
+ *
+ * **파일이 없으면 눌리지 않는다.** 서버가 이미 fs로 훑어 알고 있는데도 버튼을
+ * 열어 두면, 눌렀을 때 브라우저가 `NotSupportedError`("지원되는 소스가 없음")를
+ * 던진다 — 없는 파일을 재생하려 한 것뿐인데 오류 화면이 뜬다.
  */
 let current: HTMLAudioElement | null = null
 
-export function DebugPlay({ src }: { src: string }) {
+export function DebugPlay({ src, missing = false }: { src: string; missing?: boolean }) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [playing, setPlaying] = useState(false)
 
@@ -26,6 +30,7 @@ export function DebugPlay({ src }: { src: string }) {
   }, [])
 
   const toggle = () => {
+    if (missing) return
     const audio = (audioRef.current ??= new Audio(src))
     audio.onended = () => setPlaying(false)
 
@@ -44,8 +49,9 @@ export function DebugPlay({ src }: { src: string }) {
     <button
       type="button"
       onClick={toggle}
-      aria-label={playing ? '정지' : '재생'}
-      className="grid size-7 place-items-center rounded-pill border border-line bg-surface transition active:scale-95"
+      disabled={missing}
+      aria-label={missing ? '발음 없음' : playing ? '정지' : '재생'}
+      className="grid size-7 place-items-center rounded-pill border border-line bg-surface transition active:scale-95 disabled:cursor-default disabled:text-sub/40 disabled:active:scale-100"
     >
       {playing ? (
         <Square className="size-3.5 fill-current" strokeWidth={0} />

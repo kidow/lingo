@@ -391,6 +391,29 @@ for (const name of files) {
         }
       }
 
+      /**
+       * 낱말 자체의 로마자.
+       *
+       * 오래 러시아어에만 채웠다. 그래서 일본어·중국어에는 빈 자리가 817개
+       * 남았고, 소개 카드가 그 자리를 표기로 메워 `[計量カップ]`처럼 한자를
+       * 발음인 양 보여줬다. 카드 쪽도 고쳤지만(components/cards.tsx) 값이
+       * 있어야 발음 보조가 제 일을 한다.
+       *
+       * 일본어는 **읽기**에서 딴다 — 표기는 한자라 소리가 안 나온다.
+       */
+      const surface = lang === 'ja' ? word.reading : word.term
+      if (surface) {
+        const value =
+          lang === 'ja' ? romajiSentence(surface, known)
+          : lang === 'zh' ? pinyinSentence(surface, dict)
+          : lang === 'ru' ? translit(surface)
+          : undefined
+        if (value && word.romanization !== value) {
+          word.romanization = value
+          touched += 1
+        }
+      }
+
       const example = sentences[0]
       if (!example?.text && lang !== 'ru') continue
       if (!example?.text && lang === 'ru') {

@@ -103,7 +103,10 @@ export function SayButton({
     // 버튼이 활성으로 보이다가 누른 뒤에야 실패한다. metadata는 헤더만
     // 받아오므로 없는 파일을 미리 걸러낸다. 있으면 재생도 빨라진다.
     const audio = new Audio(src ?? audioPath(slug, lang))
-    audio.preload = 'metadata'
+    // 저절로 울릴 카드는 데이터까지 미리 받는다. 헤더만 받아 두면 재생을
+    // 걸고 나서 파일을 받기 시작해 소리가 한참 뒤에 난다 — 그동안 사용자는
+    // 다음 카드로 넘어가 있고, 그제야 울린 소리가 딴 카드의 것처럼 들린다
+    audio.preload = autoPlay ? 'auto' : 'metadata'
     audio.addEventListener('error', () => setAvailable(false))
     audio.addEventListener('ended', () => setPlaying(false))
     audioRef.current = audio
@@ -112,6 +115,9 @@ export function SayButton({
     // 방금 시작한 재생을 끊어버린다 — 개발 모드의 이중 실행에서 실제로 그랬고,
     // 첫 오디오는 중단되고 두 번째 오디오는 이미 울렸다고 판단해 건너뛰어
     // 아무 소리도 나지 않았다. 오디오와 그 재생의 수명을 같이 둔다.
+    //
+    // `autoPlay`는 **보고 있는 카드**에서만 참이다(components/cards.tsx). 피드가
+    // 앞뒤 한 장을 미리 그리므로 붙는 시점에 울리면 안 보이는 카드가 소리를 낸다.
     taps.current = 0
     if (autoPlay) play(audio)
 
