@@ -88,7 +88,7 @@
 | HSK | 중국어 | `1`~`6` · `7-9` (7~9급은 한 묶음이다) |
 | TOCFL | 중국어(번체) | `準備1`·`準備2`·`L1`~`L5` |
 | DELE | 스페인어 | **비어 있다** — 낱말별 등급을 담은 공개 목록이 없다 |
-| DELF | 프랑스어 | **비어 있다** — FLELex는 등급이 아니라 등급별 빈도 분포다 |
+| DELF | 프랑스어 | CEFR `A1`~`C2` (FLELex/Beacco) |
 | TELC | 독일어 | CEFR `A1`~`B1` (Goethe 목록이 B1까지다) |
 | TORFL | 러시아어 | CEFR `A1`~`B2` (ros-edu.ru의 ТРКИ 최소치가 B2까지다) |
 
@@ -104,7 +104,7 @@
 그대로 공유한다 — 간체든 번체든 읽는 소리가 같아서다(scripts/tocfl.ts).
 
 레벨이 채워지는 정도는 트랙마다 다르다. **숫자는 `pnpm coverage`가 낸다** —
-배치를 한 번 돌 때마다 낡으므로 여기 박지 않는다 (§7). DELE·DELF만 0%다.
+배치를 한 번 돌 때마다 낡으므로 여기 박지 않는다 (§7). DELE만 0%다.
 **UI는 트랙을 가리지 않는다**(같은 코드가 `levelOf`를 읽는다). 차이는
 데이터이고, 채울 수 없는 것은 비운다.
 
@@ -1102,6 +1102,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | Jisho (JMdict) | 일본어 읽기·영어 뜻·**JLPT 등급** | 구 출제기준 기반. 아래 한계 참고 |
 | complete-hsk-vocabulary | 중국어 **HSK 등급** | MIT. **HSK 3.0**(`new-N`)을 쓴다. 7~9급은 원래 한 묶음이라 `7`로 저장하고 `HSK 7-9`로 적는다 |
 | Goethe-Institut Wortliste | 독일어 **CEFR 등급** | 공식 무료 PDF. A1~B1까지만 낸다 |
+| FLELex/Beacco (CEFRLex, UCLouvain CENTAL) | 프랑스어 **CEFR 등급** | **CC BY-NC-SA 4.0**. A1~C2 다 낸다. 아래 한계 참고 |
 | TOEIC Service List (TSL 1.2) | 영어 **TOEIC 빈도 순위** | Browne & Culligan, **CC BY-SA 4.0**. 1,250단어로 최근 TOEIC의 98.5%를 덮는다 |
 | CC-CEDICT | 중국어 **예문 병음** | **CC BY-SA 4.0**. 낱말 단위 최장 일치로 끊는다 — 글자 단위로 찍으면 다음자에서 틀린다 |
 
@@ -1121,6 +1122,14 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 소문자여서 함께 걸리지 않는다. 소문자까지 긁으면 예문 속 낱말이 전부 들어와 B1
 동사가 A1으로 찍힌다 — 정확도를 잃느니 비워 둔다.
 
+**프랑스어 CEFR은 FLELex 기본판이 아니라 Beacco 버전을 쓴다.** 기본 FLELex는
+낱말마다 A1~C2 여섯 등급의 **빈도**만 주는 분포표라, 등급 하나를 정하려면
+우리가 임계값을 지어내야 한다. Beacco 버전은 전문가 판단과 빈도를 합쳐
+그 작업을 논문으로 끝낸 결과물이라(Pintard & François, 2020) 정해진 값을
+그대로 읽는다. 표제어+품사로만 묶여서 뜻이 갈리는 동철이의어는 흔한 뜻의
+등급을 물려받는다 — `vol`(비행/절도)·`livre`(책/파운드)·`poêle`(프라이팬/난로)가
+그래서 비어 있다(`scripts/levels.ts`의 `FRENCH_HOMONYMS`).
+
 **JLPT 등급은 절반쯤만 채워진다.** 2010년 개편 이후 JLPT는 공식 어휘 목록을
 내지 않아, JMdict의 태그는 그 이전 출제기준을 따른다. 그 목록은 일반 어휘라
 전문어와 파생 복합어가 빠져 있다 — `説明`은 N4인데 `説明書`는 없고, `実験`은
@@ -1135,10 +1144,11 @@ N3인데 `実験室`은 없다. 외래어도 `パン`·`パソコン`은 있고 
 TSL은 CC BY-SA 4.0이므로 출처를 밝힌다 — Browne, C., Culligan, B. (2013).
 *The TOEIC Service List*. www.newgeneralservicelist.com
 
-유럽 세 언어 중 **독일어와 러시아어만** CEFR 등급이 붙는다. 스페인어는 Instituto
-Cervantes의 PCIC가 있으나 평탄한 목록이 아니고 판권이 걸려 있으며, 프랑스어는 공개된
-기계 판독 목록을 찾지 못했다. 둘을 맞추려고 지어내지 않는다 — 없으면 그 카드에 레벨
-줄이 안 나온다.
+유럽 세 언어 중 **스페인어만** CEFR 등급이 안 붙는다. Instituto Cervantes의 PCIC는
+`cvc.cervantes.es`가 robots.txt로 전체 크롤링을 막고(`Disallow: /`), 같은 계열의
+ELELex(CEFRLex 프로젝트)는 등급별 빈도 **분포**만 준다 — 프랑스어의 FLELex와 달리
+단일 등급으로 정리한 Beacco 버전이 없어서, 등급 하나를 고르려면 우리가 추정해야
+한다. 맞추려고 지어내지 않는다 — 없으면 그 카드에 레벨 줄이 안 나온다.
 
 **러시아어는 ros-edu.ru에서 받는다.** ТРКИ 어휘 최소치를 A1~B2 네 등급으로 싣고,
 목록 화면이 쓰는 `POST /380`이 그대로 JSON을 준다. robots.txt가 막는 것은
