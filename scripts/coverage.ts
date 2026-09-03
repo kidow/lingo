@@ -31,10 +31,19 @@ const TSL_URL = 'https://www.newgeneralservicelist.com/s/TSL_12_stats.csv'
 const HSK_URL =
   'https://raw.githubusercontent.com/drkameleon/complete-hsk-vocabulary/main/complete.min.json'
 
+/**
+ * `content/`에는 개념 파일이 아닌 것도 있다 — `kana.json`은 가나 표라
+ * `concepts`가 없다. 개념을 세는 자리에서는 그런 파일을 건너뛴다.
+ */
+function conceptsOf(file: string): Concept[] {
+  const parsed = JSON.parse(readFileSync(join('content', file), 'utf8'))
+  return (parsed.concepts as Concept[] | undefined) ?? []
+}
+
 const concepts: Concept[] = readdirSync('content')
   .filter((f) => f.endsWith('.json'))
   .sort()
-  .flatMap((f) => JSON.parse(readFileSync(join('content', f), 'utf8')).concepts)
+  .flatMap(conceptsOf)
 
 /**
  * 빠진 낱말을 실제로 찍는다 — `pnpm coverage --missing [tsl|hsk|torfl]`.
@@ -290,11 +299,8 @@ const BY_PART = new Set(['action', 'quality', 'scene'])
 function axes() {
   const counts = readdirSync('content')
     .filter((f) => f.endsWith('.json'))
-    .map((f) => {
-      const name = f.replace('.json', '')
-      const items = JSON.parse(readFileSync(join('content', f), 'utf8')).concepts as Concept[]
-      return [name, items.length] as const
-    })
+    .map((f) => [f.replace('.json', ''), conceptsOf(f).length] as const)
+    .filter(([, count]) => count > 0)
     .sort((a, b) => a[1] - b[1])
 
   const topics = counts.filter(([name]) => !BY_PART.has(name))
