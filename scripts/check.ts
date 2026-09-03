@@ -554,10 +554,14 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
         // 열 이름이 없는 표(외래어 조합)는 첫 줄의 칸 수를 기준으로 삼는다
         const width =
           columns.length > 0 ? columns.length : ((rows[0] as { cells?: unknown[] })?.cells?.length ?? 0)
+        // 줄 이름은 화면에서 줄을 가리키는 열쇠라 표 안에서 겹치면 안 된다
+        const labels = new Set<string>()
         for (const row of rows as Array<Record<string, unknown>>) {
           const label = String(row.label ?? '')
           const cells = Array.isArray(row.cells) ? row.cells : []
           if (!label.trim()) fail(at, '줄 이름이 비었습니다')
+          if (labels.has(label)) fail(at, `줄 이름 "${label}"이 두 번 있습니다`)
+          labels.add(label)
           if (cells.length !== width)
             fail(`${at}/${label}`, `칸이 ${width}개여야 하는데 ${cells.length}개입니다 — 빈 칸은 null로 둡니다`)
           for (const cell of cells) {

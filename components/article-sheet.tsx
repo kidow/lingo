@@ -102,8 +102,9 @@ function Table({ table }: { table: KanaTable }) {
               <tr>
                 {/* 줄 이름 칸. 머리글이 없어 스크린리더에는 빈 칸으로 읽힌다 */}
                 <th className="w-[4.5rem] pb-1.5" />
-                {table.columns.map((column) => (
-                  <th key={column} className="pb-1.5 text-xs font-medium text-sub">
+                {/* 열 이름은 비어 있을 수 있다(성모·운모 표) — 키는 자리로 잡는다 */}
+                {table.columns.map((column, i) => (
+                  <th key={i} className="pb-1.5 text-xs font-medium text-sub">
                     {column}
                   </th>
                 ))}

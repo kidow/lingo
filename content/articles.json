@@ -2547,6 +2547,799 @@
           ]
         }
       ]
+    },
+    {
+      "id": "german-noun",
+      "title": "명사와 관사",
+      "summary": "정관사·부정관사 격변화, 성 예측, 복수 다섯 갈래, 전치사와 격",
+      "lang": "de",
+      "tables": [
+        {
+          "title": "정관사 — der · die · das",
+          "columns": [
+            "남성",
+            "여성",
+            "중성",
+            "복수"
+          ],
+          "rows": [
+            {
+              "label": "Nominativ 주어",
+              "cells": [
+                {
+                  "kana": "der"
+                },
+                {
+                  "kana": "die"
+                },
+                {
+                  "kana": "das"
+                },
+                {
+                  "kana": "die"
+                }
+              ]
+            },
+            {
+              "label": "Akkusativ 목적어",
+              "cells": [
+                {
+                  "kana": "den"
+                },
+                {
+                  "kana": "die"
+                },
+                {
+                  "kana": "das"
+                },
+                {
+                  "kana": "die"
+                }
+              ]
+            },
+            {
+              "label": "Dativ ~에게",
+              "cells": [
+                {
+                  "kana": "dem"
+                },
+                {
+                  "kana": "der"
+                },
+                {
+                  "kana": "dem"
+                },
+                {
+                  "kana": "den"
+                }
+              ]
+            },
+            {
+              "label": "Genitiv ~의",
+              "cells": [
+                {
+                  "kana": "des"
+                },
+                {
+                  "kana": "der"
+                },
+                {
+                  "kana": "des"
+                },
+                {
+                  "kana": "der"
+                }
+              ]
+            }
+          ],
+          "caption": "이 어미가 형용사·지시관사·소유관사에 되풀이된다. 넷 중 이 표 하나가 뼈대다."
+        },
+        {
+          "title": "부정관사 — ein",
+          "columns": [
+            "남성",
+            "여성",
+            "중성",
+            ""
+          ],
+          "rows": [
+            {
+              "label": "Nominativ",
+              "cells": [
+                {
+                  "kana": "ein"
+                },
+                {
+                  "kana": "eine"
+                },
+                {
+                  "kana": "ein"
+                },
+                null
+              ]
+            },
+            {
+              "label": "Akkusativ",
+              "cells": [
+                {
+                  "kana": "einen"
+                },
+                {
+                  "kana": "eine"
+                },
+                {
+                  "kana": "ein"
+                },
+                null
+              ]
+            },
+            {
+              "label": "Dativ",
+              "cells": [
+                {
+                  "kana": "einem"
+                },
+                {
+                  "kana": "einer"
+                },
+                {
+                  "kana": "einem"
+                },
+                null
+              ]
+            },
+            {
+              "label": "Genitiv",
+              "cells": [
+                {
+                  "kana": "eines"
+                },
+                {
+                  "kana": "einer"
+                },
+                {
+                  "kana": "eines"
+                },
+                null
+              ]
+            }
+          ],
+          "caption": "복수에는 부정관사가 없다. 그 자리를 kein이 대신한다."
+        },
+        {
+          "title": "부정형 — kein",
+          "columns": [
+            "남성",
+            "여성",
+            "중성",
+            "복수"
+          ],
+          "rows": [
+            {
+              "label": "Nominativ",
+              "cells": [
+                {
+                  "kana": "kein"
+                },
+                {
+                  "kana": "keine"
+                },
+                {
+                  "kana": "kein"
+                },
+                {
+                  "kana": "keine"
+                }
+              ]
+            },
+            {
+              "label": "Akkusativ",
+              "cells": [
+                {
+                  "kana": "keinen"
+                },
+                {
+                  "kana": "keine"
+                },
+                {
+                  "kana": "kein"
+                },
+                {
+                  "kana": "keine"
+                }
+              ]
+            },
+            {
+              "label": "Dativ",
+              "cells": [
+                {
+                  "kana": "keinem"
+                },
+                {
+                  "kana": "keiner"
+                },
+                {
+                  "kana": "keinem"
+                },
+                {
+                  "kana": "keinen"
+                }
+              ]
+            },
+            {
+              "label": "Genitiv",
+              "cells": [
+                {
+                  "kana": "keines"
+                },
+                {
+                  "kana": "keiner"
+                },
+                {
+                  "kana": "keines"
+                },
+                {
+                  "kana": "keiner"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "지시관사 — dieser",
+          "columns": [
+            "남성",
+            "여성",
+            "중성",
+            "복수"
+          ],
+          "rows": [
+            {
+              "label": "Nominativ",
+              "cells": [
+                {
+                  "kana": "dieser"
+                },
+                {
+                  "kana": "diese"
+                },
+                {
+                  "kana": "dieses"
+                },
+                {
+                  "kana": "diese"
+                }
+              ]
+            },
+            {
+              "label": "Akkusativ",
+              "cells": [
+                {
+                  "kana": "diesen"
+                },
+                {
+                  "kana": "diese"
+                },
+                {
+                  "kana": "dieses"
+                },
+                {
+                  "kana": "diese"
+                }
+              ]
+            },
+            {
+              "label": "Dativ",
+              "cells": [
+                {
+                  "kana": "diesem"
+                },
+                {
+                  "kana": "dieser"
+                },
+                {
+                  "kana": "diesem"
+                },
+                {
+                  "kana": "diesen"
+                }
+              ]
+            },
+            {
+              "label": "Genitiv",
+              "cells": [
+                {
+                  "kana": "dieses"
+                },
+                {
+                  "kana": "dieser"
+                },
+                {
+                  "kana": "dieses"
+                },
+                {
+                  "kana": "dieser"
+                }
+              ]
+            }
+          ],
+          "caption": "dies-에 정관사 어미를 그대로 붙인다. jeder·welcher·jener도 같은 der-Wörter다."
+        },
+        {
+          "title": "성을 알려주는 어미",
+          "columns": [],
+          "rows": [
+            {
+              "label": "여성 die",
+              "cells": [
+                {
+                  "kana": "-ung",
+                  "roman": "Zeitung"
+                },
+                {
+                  "kana": "-heit · -keit",
+                  "roman": "Freiheit"
+                },
+                {
+                  "kana": "-tion",
+                  "roman": "Nation"
+                },
+                {
+                  "kana": "-schaft",
+                  "roman": "Mannschaft"
+                },
+                {
+                  "kana": "-in",
+                  "roman": "Lehrerin"
+                }
+              ]
+            },
+            {
+              "label": "여성 die ·",
+              "cells": [
+                {
+                  "kana": "-ei",
+                  "roman": "Türkei"
+                },
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "label": "중성 das",
+              "cells": [
+                {
+                  "kana": "-chen · -lein",
+                  "roman": "Mädchen"
+                },
+                {
+                  "kana": "-um",
+                  "roman": "Zentrum"
+                },
+                {
+                  "kana": "-ment",
+                  "roman": "Instrument"
+                },
+                {
+                  "kana": "동사 명사화",
+                  "roman": "das Essen"
+                },
+                null
+              ]
+            },
+            {
+              "label": "남성 der",
+              "cells": [
+                {
+                  "kana": "-er",
+                  "roman": "Lehrer",
+                  "note": "행위자를 가리킬 때"
+                },
+                {
+                  "kana": "-ling",
+                  "roman": "Frühling"
+                },
+                null,
+                null,
+                null
+              ]
+            }
+          ],
+          "caption": "아랫줄은 예시다. -ung과 -chen은 예외가 거의 없다."
+        },
+        {
+          "title": "뜻으로 성을 짐작하기",
+          "columns": [],
+          "rows": [
+            {
+              "label": "남성 der",
+              "cells": [
+                {
+                  "kana": "요일",
+                  "roman": "Montag"
+                },
+                {
+                  "kana": "월",
+                  "roman": "Januar"
+                },
+                {
+                  "kana": "계절",
+                  "roman": "Frühling"
+                },
+                {
+                  "kana": "방향",
+                  "roman": "Norden"
+                },
+                null
+              ]
+            },
+            {
+              "label": "여성 die",
+              "cells": [
+                {
+                  "kana": "숫자",
+                  "roman": "die Eins"
+                },
+                {
+                  "kana": "독일 강",
+                  "roman": "die Elbe",
+                  "note": "der Rhein·der Main은 예외"
+                },
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "label": "중성 das",
+              "cells": [
+                {
+                  "kana": "나라·도시·대륙",
+                  "roman": "Berlin",
+                  "note": "보통 관사 없이 쓴다"
+                },
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "title": "복수형 다섯 갈래",
+          "columns": [],
+          "rows": [
+            {
+              "label": "-e",
+              "cells": [
+                {
+                  "kana": "der Hund → die Hunde",
+                  "roman": "남성·중성에 많다"
+                }
+              ]
+            },
+            {
+              "label": "-er",
+              "cells": [
+                {
+                  "kana": "das Kind → die Kinder",
+                  "roman": "중성에 많다. 움라우트가 함께 붙기도 한다"
+                }
+              ]
+            },
+            {
+              "label": "-en · -n",
+              "cells": [
+                {
+                  "kana": "die Frau → die Frauen",
+                  "roman": "여성에 많다"
+                }
+              ]
+            },
+            {
+              "label": "-s",
+              "cells": [
+                {
+                  "kana": "das Auto → die Autos",
+                  "roman": "외래어"
+                }
+              ]
+            },
+            {
+              "label": "무변화",
+              "cells": [
+                {
+                  "kana": "der Lehrer → die Lehrer",
+                  "roman": "-er로 끝나는 남성"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "전치사가 요구하는 격",
+          "columns": [],
+          "rows": [
+            {
+              "label": "언제나 Akkusativ",
+              "cells": [
+                {
+                  "kana": "durch"
+                },
+                {
+                  "kana": "für"
+                },
+                {
+                  "kana": "gegen"
+                },
+                {
+                  "kana": "ohne"
+                },
+                {
+                  "kana": "um"
+                }
+              ]
+            },
+            {
+              "label": "언제나 Dativ",
+              "cells": [
+                {
+                  "kana": "aus"
+                },
+                {
+                  "kana": "bei"
+                },
+                {
+                  "kana": "mit"
+                },
+                {
+                  "kana": "nach"
+                },
+                {
+                  "kana": "seit"
+                }
+              ]
+            },
+            {
+              "label": "언제나 Dativ ·",
+              "cells": [
+                {
+                  "kana": "von"
+                },
+                {
+                  "kana": "zu"
+                },
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "label": "둘 다 받는다",
+              "cells": [
+                {
+                  "kana": "an"
+                },
+                {
+                  "kana": "auf"
+                },
+                {
+                  "kana": "hinter"
+                },
+                {
+                  "kana": "in"
+                },
+                {
+                  "kana": "neben"
+                }
+              ]
+            },
+            {
+              "label": "둘 다 받는다 ·",
+              "cells": [
+                {
+                  "kana": "über"
+                },
+                {
+                  "kana": "unter"
+                },
+                {
+                  "kana": "vor"
+                },
+                {
+                  "kana": "zwischen"
+                },
+                null
+              ]
+            }
+          ],
+          "caption": "규칙에 논리가 없어 묶음째 외운다. 마지막 아홉은 이동이면 Akkusativ, 위치면 Dativ다."
+        },
+        {
+          "title": "전치사 + 관사 축약형",
+          "columns": [],
+          "rows": [
+            {
+              "label": "in",
+              "cells": [
+                {
+                  "kana": "in + dem",
+                  "roman": "im",
+                  "note": "im Haus"
+                },
+                {
+                  "kana": "in + das",
+                  "roman": "ins",
+                  "note": "ins Kino"
+                }
+              ]
+            },
+            {
+              "label": "an",
+              "cells": [
+                {
+                  "kana": "an + dem",
+                  "roman": "am",
+                  "note": "am Montag"
+                },
+                {
+                  "kana": "an + das",
+                  "roman": "ans",
+                  "note": "ans Meer"
+                }
+              ]
+            },
+            {
+              "label": "zu",
+              "cells": [
+                {
+                  "kana": "zu + dem",
+                  "roman": "zum",
+                  "note": "zum Arzt"
+                },
+                {
+                  "kana": "zu + der",
+                  "roman": "zur",
+                  "note": "zur Schule"
+                }
+              ]
+            },
+            {
+              "label": "그 밖",
+              "cells": [
+                {
+                  "kana": "bei + dem",
+                  "roman": "beim"
+                },
+                {
+                  "kana": "von + dem",
+                  "roman": "vom"
+                }
+              ]
+            }
+          ],
+          "caption": "분리형은 어색하게 들린다. 원어민은 늘 축약형을 쓴다."
+        },
+        {
+          "title": "약변화 명사 — n-Deklination",
+          "columns": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            {
+              "label": "Nominativ",
+              "cells": [
+                {
+                  "kana": "der Mensch"
+                },
+                {
+                  "kana": "der Student"
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "label": "Akkusativ",
+              "cells": [
+                {
+                  "kana": "den Menschen"
+                },
+                {
+                  "kana": "den Studenten"
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "label": "Dativ",
+              "cells": [
+                {
+                  "kana": "dem Menschen"
+                },
+                {
+                  "kana": "dem Studenten"
+                },
+                null,
+                null
+              ]
+            },
+            {
+              "label": "Genitiv",
+              "cells": [
+                {
+                  "kana": "des Menschen"
+                },
+                {
+                  "kana": "des Studenten"
+                },
+                null,
+                null
+              ]
+            }
+          ],
+          "caption": "Nominativ 단수만 빼고 전 격에 -en이 붙는다. 남성 사람·직업·국적 명사에 몰려 있다."
+        }
+      ],
+      "rules": [
+        {
+          "title": "이동이냐 위치냐로 격이 갈린다",
+          "body": "an·auf·in처럼 두 격을 다 받는 전치사는 뒤에 오는 명사의 격으로 뜻을 가른다.",
+          "examples": [
+            {
+              "text": "Ich lege es auf den Tisch.",
+              "gloss": "Akkusativ — 책상 위로 옮긴다"
+            },
+            {
+              "text": "Es liegt auf dem Tisch.",
+              "gloss": "Dativ — 책상 위에 놓여 있다"
+            }
+          ]
+        },
+        {
+          "title": "관사를 쓰지 않는 자리",
+          "body": "직업·국적·재료·고유명사·복수 총칭 앞에서는 관사가 빠진다.",
+          "examples": [
+            {
+              "text": "Ich bin Lehrer.",
+              "gloss": "sein 뒤의 직업"
+            },
+            {
+              "text": "Ich bin ein guter Lehrer.",
+              "gloss": "형용사가 붙으면 관사가 돌아온다"
+            },
+            {
+              "text": "Das Haus ist aus Holz.",
+              "gloss": "재료"
+            },
+            {
+              "text": "Hunde sind treu.",
+              "gloss": "복수로 종 전체를 가리킬 때"
+            }
+          ]
+        },
+        {
+          "title": "명사는 관사와 함께 외운다",
+          "body": "성은 규칙으로 거의 잡히지 않는다. 뜻만 먼저 외우고 성을 나중에 붙이면 끝내 안 붙는다.",
+          "examples": [
+            {
+              "text": "der Tisch",
+              "gloss": "Tisch 하나가 아니라 der-Tisch 한 덩어리로"
+            },
+            {
+              "text": "die Gabel · das Messer",
+              "gloss": "사전에서 뜻보다 관사를 먼저 본다"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
