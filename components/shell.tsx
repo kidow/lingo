@@ -122,6 +122,7 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
         track={track}
         lang={trackOf(track).language}
         ladder={ladder}
+        ordered={shownDeck === 'trivia'}
         onProgress={setProgress}
       />
     </div>

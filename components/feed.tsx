@@ -49,6 +49,7 @@ export function Feed({
   track,
   lang,
   ladder = WORD_LADDER,
+  ordered = false,
   onProgress,
 }: {
   entries: LearnItem[]
@@ -56,6 +57,8 @@ export function Feed({
   track: TrackId
   /** 이 덱의 사다리. 상식은 한 칸이다 (lib/progress.ts) */
   ladder?: Ladder
+  /** 새 카드를 목록 앞에서부터 낼지. 상식은 배열 순서가 커리큘럼이다 (lib/engine.ts) */
+  ordered?: boolean
   /** 발음 파일과 정답 필드가 따르는 단위 */
   lang: Language
   /**
@@ -109,12 +112,12 @@ export function Feed({
       if (extendedFrom.current === from) return
       extendedFrom.current = from
 
-      const result = nextQuestion(engine.current, entries, Math.random, Date.now())
+      const result = nextQuestion(engine.current, entries, Math.random, Date.now(), ordered)
       if (!result) return
       commit(result.state)
       setQuestions((previous) => [...previous, result.question])
     },
-    [entries, commit],
+    [entries, commit, ordered],
   )
 
   // 마운트 후에 진도를 읽는다. 첫 카드는 아래 '한 칸 앞' 효과가 만든다

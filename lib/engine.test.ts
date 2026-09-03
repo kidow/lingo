@@ -82,6 +82,19 @@ test('단어가 없으면 null', () => {
   assert.equal(pickNext(initialState(), [], rngOf(), NOW), null)
 })
 
+test('ordered면 난수와 무관하게 목록 앞에서부터 나온다', () => {
+  // 상식은 배열 순서가 커리큘럼이라 난수가 뒤쪽을 가리켜도 앞엣것이 나온다
+  const picked = pickNext(initialState(), ENTRIES, rngOf(0.99), NOW, true)
+  assert.equal(picked?.concept.slug, ENTRIES[0].concept.slug)
+})
+
+test('ordered여도 이미 본 카드는 건너뛰고 다음 미소개를 낸다', () => {
+  const state = introduced(initialState(), ENTRIES[0].concept.slug)
+  // 본 것이 생기면 NEW_RATE 판정을 지나야 하므로 신규 쪽으로 떨어지는 난수를 준다
+  const picked = pickNext(state, ENTRIES, rngOf(0), NOW, true)
+  assert.equal(picked?.concept.slug, ENTRIES[1].concept.slug)
+})
+
 test('예약이 도래하면 그 카드가 먼저 나온다', () => {
   // 복습 후보가 둘이어야 예약의 효과가 드러난다. cat을 쿨다운에 넣어둔다
   let state = introduced(initialState(), 'cat', 'dog')
