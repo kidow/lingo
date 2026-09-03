@@ -41,7 +41,8 @@ const VOICE = 'ara'
 const concepts: Concept[] = readdirSync('content')
   .filter((f) => f.endsWith('.json'))
   .sort()
-  .flatMap((f) => JSON.parse(readFileSync(join('content', f), 'utf8')).concepts)
+  // 개념이 없는 콘텐츠 파일도 있다 — kana.json은 가나 표다
+  .flatMap((f) => (JSON.parse(readFileSync(join('content', f), 'utf8')).concepts ?? []) as Concept[])
 
 const audioPath = (lang: string, slug: string) => join('public', 'audio', lang, `${slug}.mp3`)
 
