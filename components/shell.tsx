@@ -114,6 +114,7 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
         mastery={mastery}
         decks={decks}
         deck={shownDeck}
+        kana={trackOf(track).language === 'ja'}
         onDeck={changeDeck}
       />
       <Feed

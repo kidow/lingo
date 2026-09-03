@@ -1,6 +1,7 @@
 'use client'
 
 import { ChevronDown } from 'lucide-react'
+import { KanaDrawer } from './kana-drawer'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -39,6 +40,7 @@ export function Header({
   decks = [],
   deck,
   onDeck,
+  kana = false,
 }: {
   track: TrackId
   onChange: (track: TrackId) => void
@@ -55,6 +57,11 @@ export function Header({
    * 시절과 똑같다. (lib/progress.ts)
    */
   mastery?: string | null
+  /**
+   * 가나 표 버튼을 세울지. 가나는 일본어에만 있어 다른 트랙에서는 자리째
+   * 빠진다 — 덱 탭이 트랙에 따라 서고 마는 것과 같은 이유다 (content/kana.json)
+   */
+  kana?: boolean
 }) {
   return (
     <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
@@ -122,23 +129,29 @@ export function Header({
         상식은 트랙이 아니라 **언어**의 것이라 아직 안 쓴 언어에서는 안 선다
         (lib/trivia.ts)
       */}
-      {deck && onDeck && decks.length > 1 && (
-        <div className="ml-auto flex items-center gap-2 text-[15px]">
-          {DECKS.filter(({ id }) => decks.includes(id)).map(({ id, label }, i) => (
-            <span key={id} className="flex items-center gap-2">
-              {i > 0 && <span aria-hidden className="text-line">|</span>}
-              <button
-                type="button"
-                aria-pressed={deck === id}
-                onClick={() => onDeck(id)}
-                className={`rounded-ctrl transition ${deck === id ? 'font-bold' : 'text-sub'}`}
-              >
-                {label}
-              </button>
-            </span>
-          ))}
-        </div>
-      )}
+      {/* 오른쪽에 서는 것들을 한 묶음으로 둔다. 덱 탭이 없는 트랙에서도 가나
+          버튼은 같은 자리에 서야 해서 ml-auto를 바깥이 든다 */}
+      <div className="ml-auto flex items-center gap-3">
+        {deck && onDeck && decks.length > 1 && (
+          <div className="flex items-center gap-2 text-[15px]">
+            {DECKS.filter(({ id }) => decks.includes(id)).map(({ id, label }, i) => (
+              <span key={id} className="flex items-center gap-2">
+                {i > 0 && <span aria-hidden className="text-line">|</span>}
+                <button
+                  type="button"
+                  aria-pressed={deck === id}
+                  onClick={() => onDeck(id)}
+                  className={`rounded-ctrl transition ${deck === id ? 'font-bold' : 'text-sub'}`}
+                >
+                  {label}
+                </button>
+              </span>
+            ))}
+          </div>
+        )}
+
+        {kana && <KanaDrawer />}
+      </div>
     </header>
   )
 }
