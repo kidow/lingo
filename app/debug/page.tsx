@@ -3,12 +3,14 @@ import { join } from 'node:path'
 import { notFound } from 'next/navigation'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
 import { DebugTabs } from '@/components/debug-tabs'
+import { DebugSuspects } from '@/components/debug-suspects'
 import { DebugTrivia, type TriviaNote } from '@/components/debug-trivia'
 import { audioFile, audioPath, entriesFor, imagePath, triviaFor } from '@/lib/content'
 import { examplesOf } from '@/lib/entries'
 import { answerOf, asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import { TRACKS, TRACK_IDS, trackOf } from '@/lib/track'
+import { auditTrivia, type Suspect } from '@/lib/trivia-audit'
 import type { Language } from '@/lib/types'
 
 /**
@@ -71,6 +73,7 @@ export default function DebugPage() {
       <DebugTabs
         words={<DebugTable rows={rows} tracks={TRACK_IDS} />}
         trivia={<DebugTrivia notes={triviaNotes()} />}
+        suspects={<DebugSuspects suspects={triviaSuspects()} />}
       />
     </main>
   )
@@ -126,6 +129,21 @@ function triviaNotes(): TriviaNote[] {
   }
 
   return notes
+}
+
+/**
+ * 오답 품질이 의심되는 문항. 판정은 전부 lib/trivia-audit.ts가 한다.
+ *
+ * `pnpm check`도 같은 함수를 부르지만 거기서는 건수만 세고 넘어간다 — 어느
+ * 문항이 왜 걸렸는지는 표로 봐야 읽힌다.
+ */
+function triviaSuspects(): Suspect[] {
+  return TRACKS.flatMap(({ language }) =>
+    auditTrivia(
+      language,
+      triviaFor(language).map((entry) => entry.trivia),
+    ),
+  )
 }
 
 /** 파일이 없으면 null. 있으면 크기를 들고 온다 — 0바이트가 곧 실패작이다 */
