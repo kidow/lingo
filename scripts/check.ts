@@ -371,6 +371,30 @@ if (notes.length) {
  * 있다. 자동으로 뽑지 않으므로 넷이 다 채워졌는지, 정답이 그중에 있는지를
  * 기계가 봐야 한다. 손으로 적는 자리라 오타 하나로 정답 없는 문항이 나간다.
  */
+/**
+ * 사람이 읽고 **넘기기로 한** 의심 문항 수. (lib/trivia-audit.ts)
+ *
+ * 남은 것은 전부 괄호가 표기의 일부라 뗄 수 없는 자리다 — `没(有)`·`母 (はは)`·
+ * `ts (츠)`·`être (ét-)`. 괄호를 떼면 답이 부서지므로 고칠 것이 없다.
+ *
+ * **규칙으로는 못 가른다.** 좁힘 후보를 옛 문항에 돌려 재 봤다. "괄호가 끝에
+ * 공백 두고 붙은 것만" 보면 진짜 표지 16건 중 4건을 놓치면서 헛경고는 6건이
+ * 남고, "괄호 안에 원어가 든 것만" 보면 6건을 놓친다 — 원어 괄호가
+ * `남성만 (der → den)`에서는 표지이고 `母 (はは)`에서는 표기라 같은 모양이다.
+ *
+ * 그래서 규칙 대신 **숫자를 박는다.** 늘면 새로 들어온 문항이 걸린 것이니
+ * 경고하고, 줄면 여기를 낮추라고 알린다. 늘 켜져 있는 경고는 아무도 안 본다.
+ */
+const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
+  de: 3,
+  en: 0,
+  es: 1,
+  fr: 2,
+  ja: 2,
+  ru: 2,
+  zh: 4,
+}
+
 {
   const TRIVIA_DIR = join(CONTENT_DIR, 'trivia')
   const ID_RE = /^[a-z0-9-]+$/
@@ -418,18 +442,24 @@ if (notes.length) {
       if (!choices.includes(answer)) fail(at, `정답이 보기에 없습니다 — ${answer}`)
     }
     /**
-     * 오답 품질은 **경고로만** 낸다 (lib/trivia-audit.ts).
+     * 오답 품질은 **기준선을 넘을 때만** 경고한다 (lib/trivia-audit.ts).
      *
      * 위 검사들과 달리 이건 규칙 위반이 아니라 사람이 다시 읽어 볼 후보다 —
      * 정답이 길다고 틀린 문항이 아니다. 전체 목록은 `pnpm dev` → /debug의
-     * 「의심 문항」 탭에서 본다. 여기서는 몇 개인지만 알린다.
+     * 「의심 문항」 탭에서 본다.
      */
     // 위에서 모양을 이미 검증했으므로 여기서는 Trivia로 봐도 된다
     const suspects = auditTrivia(lang as Language, items as unknown as Trivia[])
-    if (suspects.length > 0) {
-      triviaSuspects += suspects.length
-      warn(`${where} — 오답 품질 의심 ${suspects.length}건 (/debug의 「의심 문항」 탭에서 확인)`)
-    }
+    const baseline = TRIVIA_SUSPECT_BASELINE[lang as Language] ?? 0
+    triviaSuspects += suspects.length
+    if (suspects.length > baseline)
+      warn(
+        `${where} — 오답 품질 의심 ${suspects.length}건, 기준선 ${baseline}건보다 ${suspects.length - baseline}건 많습니다 (/debug의 「의심 문항」 탭에서 확인)`,
+      )
+    else if (suspects.length < baseline)
+      warn(
+        `${where} — 의심이 ${baseline}건에서 ${suspects.length}건으로 줄었습니다. scripts/check.ts의 TRIVIA_SUSPECT_BASELINE을 낮추세요`,
+      )
 
     triviaTotal += items.length
     perTrivia.push(`  ${lang} ${items.length}`)
