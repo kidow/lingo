@@ -9,11 +9,12 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
+import { auditTrivia } from '../lib/trivia-audit.ts'
 import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
 import { LANG } from '../lib/lang.ts'
 import { clozeAt } from '../lib/quiz.ts'
 import { TRACKS } from '../lib/track.ts'
-import type { Concept, Language } from '../lib/types.ts'
+import type { Concept, Language, Trivia } from '../lib/types.ts'
 
 /** 굽은 아포스트로피. 곧은 '와 섞이면 표제어와 예문이 어긋난다 */
 const CURLY_APOSTROPHE = '\u2019'
@@ -375,6 +376,7 @@ if (notes.length) {
   const ID_RE = /^[a-z0-9-]+$/
   const loaderHasTrivia = readFileSync('lib/content.ts', 'utf8')
   let triviaTotal = 0
+  let triviaSuspects = 0
   const perTrivia: string[] = []
 
   const triviaFiles = existsSync(TRIVIA_DIR)
@@ -415,12 +417,31 @@ if (notes.length) {
       const answer = String(item.answer ?? '')
       if (!choices.includes(answer)) fail(at, `정답이 보기에 없습니다 — ${answer}`)
     }
+    /**
+     * 오답 품질은 **경고로만** 낸다 (lib/trivia-audit.ts).
+     *
+     * 위 검사들과 달리 이건 규칙 위반이 아니라 사람이 다시 읽어 볼 후보다 —
+     * 정답이 길다고 틀린 문항이 아니다. 전체 목록은 `pnpm dev` → /debug의
+     * 「의심 문항」 탭에서 본다. 여기서는 몇 개인지만 알린다.
+     */
+    // 위에서 모양을 이미 검증했으므로 여기서는 Trivia로 봐도 된다
+    const suspects = auditTrivia(lang as Language, items as unknown as Trivia[])
+    if (suspects.length > 0) {
+      triviaSuspects += suspects.length
+      warn(`${where} — 오답 품질 의심 ${suspects.length}건 (/debug의 「의심 문항」 탭에서 확인)`)
+    }
+
     triviaTotal += items.length
     perTrivia.push(`  ${lang} ${items.length}`)
   }
 
   if (triviaFiles.length)
-    console.log(`\n상식 ${triviaTotal}문항 · 파일 ${triviaFiles.length}개\n` + perTrivia.join(''))
+    console.log(
+      `\n상식 ${triviaTotal}문항 · 파일 ${triviaFiles.length}개` +
+        (triviaSuspects > 0 ? ` · 의심 ${triviaSuspects}건` : '') +
+        `\n` +
+        perTrivia.join(''),
+    )
 }
 
 if (warnings.length) {
