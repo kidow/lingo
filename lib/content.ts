@@ -7,6 +7,7 @@ import family from '@/content/family.json'
 import food from '@/content/food.json'
 import home from '@/content/home.json'
 import job from '@/content/job.json'
+import kana from '@/content/kana.json'
 import nature from '@/content/nature.json'
 import number from '@/content/number.json'
 import office from '@/content/office.json'
@@ -27,7 +28,7 @@ import triviaZh from '@/content/trivia/zh.json'
 import { entriesForTrack as selectEntries, type Entry } from './entries.ts'
 import { triviaEntries, type TriviaEntry } from './trivia.ts'
 import type { TrackId } from './track.ts'
-import type { Concept, ContentFile, Language, TriviaFile } from './types.ts'
+import type { Concept, ContentFile, KanaFile, Language, TriviaFile } from './types.ts'
 
 /**
  * 콘텐츠 로더. (spec.md §4, §8)
@@ -87,6 +88,15 @@ const TRIVIA: Record<Language, TriviaFile> = {
 }
 
 /** 그 언어의 상식 목록. 비면 탭이 서지 않는다 (components/shell.tsx) */
+/**
+ * 가나 표. (spec.md §4)
+ *
+ * 트랙이 아니라 **문자에 딸린 것**이라 언어별 파일로 가르지 않는다 — 가나는
+ * 일본어에만 있고, 다른 언어에 같은 표가 필요해지면 그때 파일을 나눈다.
+ * 지금 나누면 여섯 개가 빈 파일이 된다.
+ */
+export const KANA = kana as KanaFile
+
 export function triviaFor(lang: Language): TriviaEntry[] {
   const file = TRIVIA[lang]
   return file ? triviaEntries(lang, file.items) : []
