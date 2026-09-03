@@ -136,7 +136,7 @@ for (const file of files) {
   const counts = { jlpt: 0, hsk: 0, cefr: 0, tsl: 0, torfl: 0 }
   let words = { ja: 0, zh: 0, de: 0, en: 0, ru: 0 }
 
-  for (const concept of data.concepts) {
+  for (const concept of data.concepts ?? []) {
     const apply = (
       lang: 'ja' | 'zh' | 'de' | 'en' | 'ru',
       key: 'jlpt' | 'hsk' | 'cefr' | 'tsl' | 'torfl',

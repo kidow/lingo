@@ -381,7 +381,7 @@ for (const name of files) {
   const path = join(CONTENT_DIR, name)
   const data = JSON.parse(readFileSync(path, 'utf8'))
   let touched = 0
-  for (const concept of data.concepts) {
+  for (const concept of data.concepts ?? []) {
     for (const [lang, word] of Object.entries(concept.words) as [string, Record<string, any>][]) {
       // 예문은 한 줄일 수도 여러 줄일 수도 있다 (lib/types.ts). 전부 채운다
       const sentences: Record<string, any>[] = word.examples?.length
