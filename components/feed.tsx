@@ -259,6 +259,7 @@ export function Feed({
               <Card
                 question={question}
                 lang={lang}
+                track={track}
                 first={i === 0}
                 active={i === current}
                 pick={picks.get(i) ?? null}

@@ -12,7 +12,7 @@ import type { Language } from './types.ts'
  * 그림은 늘지 않는다. 발음도 시험이 아니라 언어의 것이라
  * `public/audio/{language}/`를 공유한다.
  */
-export type TrackId = 'toeic' | 'jlpt' | 'hsk' | 'dele' | 'delf' | 'telc' | 'torfl'
+export type TrackId = 'toeic' | 'jlpt' | 'hsk' | 'tocfl' | 'dele' | 'delf' | 'telc' | 'torfl'
 
 export type Track = {
   id: TrackId
@@ -39,6 +39,10 @@ export const TRACKS: Track[] = [
   { id: 'toeic', label: 'TOEIC', flag: '🇺🇸', language: 'en' },
   { id: 'jlpt', label: 'JLPT', flag: '🇯🇵', language: 'ja' },
   { id: 'hsk', label: 'HSK', flag: '🇨🇳', language: 'zh' },
+  // HSK와 언어(zh)를 나눠 쓰는 첫 트랙이다 — 카드에 뭘 보여줄지는
+  // lib/lang.ts의 TRACK_OVERRIDE가, 어느 낱말을 낼지는 lib/entries.ts의
+  // tocfl 필터가 가른다. 대만 시험이라 국기도 따로다
+  { id: 'tocfl', label: 'TOCFL', flag: '🇹🇼', language: 'zh' },
   { id: 'dele', label: 'DELE', flag: '🇪🇸', language: 'es' },
   { id: 'delf', label: 'DELF', flag: '🇫🇷', language: 'fr' },
   // telc 공식 표기는 소문자지만 나머지 다섯이 두문자어라 혼자 소문자면 오타로 읽힌다
