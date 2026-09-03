@@ -1,29 +1,30 @@
 'use client'
 
-import { X } from 'lucide-react'
+import { BookOpen, X } from 'lucide-react'
 import { Drawer } from 'vaul'
-import { KanaSheet } from './kana-sheet'
+import type { Article } from '@/lib/types'
+import { ArticleSheet } from './article-sheet'
 
 /**
- * 가나 표를 여는 바텀시트. (spec.md §5)
+ * 참고 글을 여는 바텀시트. (spec.md §5)
  *
  * **끌어서 닫지 않는다.** 피드가 세로 스크롤로 카드를 넘기고(components/feed.tsx)
- * 오십음도는 시트 안에서 또 세로로 길다 — 여기에 끌어 닫기까지 얹으면 세로
- * 제스처가 세 겹이 된다. `handleOnly`를 켜고 `Drawer.Handle`을 두지 않아
- * 끌 자리 자체를 없앴다. 여닫는 것은 버튼이 한다.
+ * 표는 시트 안에서 또 세로로 길다 — 여기에 끌어 닫기까지 얹으면 세로 제스처가
+ * 세 겹이 된다. `handleOnly`를 켜고 `Drawer.Handle`을 두지 않아 끌 자리 자체를
+ * 없앴다. 여닫는 것은 버튼이 한다.
  *
  * 배경을 눌러 닫는 것과 ESC는 살려 둔다 — 그 둘은 세로 제스처가 아니라
- * 부딪히지 않고, 표 하나 보고 나가는 자리에서 닫는 길이 버튼 하나뿐이면
+ * 부딪히지 않고, 글 하나 보고 나가는 자리에서 닫는 길이 버튼 하나뿐이면
  * 답답하다.
  */
-export function KanaDrawer() {
+export function ReferenceDrawer({ articles }: { articles: Article[] }) {
   return (
     <Drawer.Root handleOnly>
       <Drawer.Trigger
-        aria-label="가나 표"
-        className="font-jp rounded-ctrl border border-line bg-surface px-2.5 py-1 text-[15px] leading-none font-semibold text-sub transition outline-none active:scale-[.985]"
+        aria-label="참고 글"
+        className="rounded-ctrl p-1 text-sub transition outline-none active:scale-[.985]"
       >
-        あ
+        <BookOpen className="size-[18px]" strokeWidth={2.25} aria-hidden />
       </Drawer.Trigger>
 
       <Drawer.Portal>
@@ -37,7 +38,7 @@ export function KanaDrawer() {
           "
         >
           <div className="flex shrink-0 items-center justify-between px-lg pt-lg pb-3">
-            <Drawer.Title className="text-lg font-bold tracking-tight">가나 표</Drawer.Title>
+            <Drawer.Title className="text-lg font-bold tracking-tight">참고</Drawer.Title>
             <Drawer.Close
               aria-label="닫기"
               className="-mr-1.5 rounded-ctrl p-1.5 text-sub transition outline-none active:scale-[.985]"
@@ -52,10 +53,10 @@ export function KanaDrawer() {
             자리인지 전해지지 않는다
           */}
           <Drawer.Description className="sr-only">
-            히라가나와 가타카나 오십음도, 요음, 발음 규칙을 훑어봅니다.
+            지금 트랙의 언어에 딸린 참고 글을 골라 봅니다.
           </Drawer.Description>
 
-          <KanaSheet />
+          <ArticleSheet articles={articles} />
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>

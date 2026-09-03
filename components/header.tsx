@@ -1,7 +1,7 @@
 'use client'
 
 import { ChevronDown } from 'lucide-react'
-import { KanaDrawer } from './kana-drawer'
+import { ReferenceDrawer } from './reference-drawer'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { DECKS, type DeckId } from '@/lib/deck'
+import type { Article } from '@/lib/types'
 import { TRACKS, trackOf, type TrackId } from '@/lib/track'
 
 /**
@@ -40,7 +41,7 @@ export function Header({
   decks = [],
   deck,
   onDeck,
-  kana = false,
+  articles = [],
 }: {
   track: TrackId
   onChange: (track: TrackId) => void
@@ -58,10 +59,10 @@ export function Header({
    */
   mastery?: string | null
   /**
-   * 가나 표 버튼을 세울지. 가나는 일본어에만 있어 다른 트랙에서는 자리째
-   * 빠진다 — 덱 탭이 트랙에 따라 서고 마는 것과 같은 이유다 (content/kana.json)
+   * 이 트랙에서 볼 수 있는 참고 글. 없으면 버튼이 자리째 빠진다 — 덱 탭이
+   * 트랙에 따라 서고 마는 것과 같은 이유다 (content/articles.json)
    */
-  kana?: boolean
+  articles?: Article[]
 }) {
   return (
     <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
@@ -150,7 +151,7 @@ export function Header({
           </div>
         )}
 
-        {kana && <KanaDrawer />}
+        {articles.length > 0 && <ReferenceDrawer articles={articles} />}
       </div>
     </header>
   )
