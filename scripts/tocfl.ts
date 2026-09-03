@@ -314,6 +314,123 @@ function resolve(
   return { candidates: shown.slice(0, 6) }
 }
 
+/**
+ * 여섯 자료로도 안 갈린 95곳. 사람이 중국어를 몰라도 되는 자리다 — 重編國語辭典의
+ * 표제어 釋義(뜻풀이)를 직접 찾아 확인했다. 후보 목록 밖의 글자를 쓴 자리도 있다
+ * (`乾淨`의 淨, `雙槓`의 槓, `迴紋針`의 紋) — Unihan이 놓친 변체이거나 애초에
+ * 원문과 다른 낱말이 대만 표준이라, 표제어로 다시 확인해 그대로 썼다.
+ *
+ * 자리마다 근거:
+ *   板/闆   闆은 오직 「老闆」뿐이다 — 나머지는 전부 板
+ *   台/臺/檯/颱  臺=무대·받침대·공공 설비, 檯=책상형 기물, 颱=오직 颱風
+ *   发/髮/發  머리카락 뜻일 때만 髮
+ *   干/乾/幹  마르다=乾, 나머지 뜻은 그대로 두거나(干涉 등) 幹
+ *   系/係/繫  묶다·매다·잠그다 동작은 繫
+ *   表/錶   錶는 「몸에 지니는 계시기」뿐이다(手錶) — 문서·계기판은 表
+ *   卷/捲   두루마리(명사)는 卷, "말다" 동작에서 온 말은 捲
+ *   杆/桿   막대 도구(레버·채)는 桿
+ * 나머지는 낱말별로 重編·簡編 표제어를 찾아 확인했다.
+ */
+const MANUAL: Record<string, string> = {
+  'action.json:paint': '塗',
+  'action.json:fold': '摺',
+  'action.json:tie': '繫',
+  'action.json:borrow': '借',
+  'action.json:spill': '灑',
+  'action.json:lend': '借出',
+  'action.json:drain': '瀝乾',
+  'body.json:medicine': '藥',
+  'body.json:pharmacy': '藥店',
+  'body.json:cotton-swab': '棉籤',
+  'city.json:pharmacy-cross': '藥店標誌',
+  'city.json:playground-swing': '鞦韆',
+  'city.json:drinking-fountain': '飲水臺',
+  'clothes.json:headband': '髮箍',
+  'clothes.json:hem': '下襬',
+  'clothes.json:fabric-roll': '布卷',
+  'clothes.json:ironing-board': '熨衣板',
+  'everyday.json:smart-watch': '智能手錶',
+  'everyday.json:hair-tie': '髮圈',
+  'everyday.json:desk-fan': '檯式風扇',
+  'everyday.json:desktop': '檯式電腦',
+  'everyday.json:pill-organizer': '藥盒',
+  'family.json:guest-book': '來賓簽名簿',
+  'family.json:changing-table': '尿布檯',
+  'food.json:pasta': '意大利麵',
+  'food.json:cutting-board': '菜板',
+  'food.json:homemade': '自製',
+  'food.json:skewer': '串籤',
+  'food.json:ginger': '薑',
+  'home.json:curtain': '窗簾',
+  'home.json:rack': '掛衣桿',
+  'home.json:extension-cord': '插線板',
+  'home.json:shower-curtain': '浴簾',
+  'home.json:watering-can': '灑水壺',
+  'home.json:curtain-rod': '窗簾桿',
+  'job.json:baker': '麵包師',
+  'job.json:potter': '陶藝家',
+  'job.json:archaeologist': '考古學家',
+  'job.json:vise': '檯鉗',
+  'nature.json:cloud': '雲',
+  'nature.json:hurricane': '颱風',
+  'number.json:centimeter': '厘米',
+  'number.json:gram': '克',
+  'number.json:thousand': '一千',
+  'number.json:odometer': '里程表',
+  'number.json:micrometer': '千分尺',
+  'number.json:speedometer': '車速表',
+  'number.json:pressure-gauge': '壓力表',
+  'office.json:clipboard': '寫字板',
+  'office.json:itinerary': '行程表',
+  'office.json:confirmation': '確認單',
+  'office.json:timesheet': '考勤表',
+  'office.json:payroll': '工資表',
+  'quality.json:dry': '乾',
+  'quality.json:clean': '乾淨',
+  'quality.json:dirty': '髒',
+  'quality.json:tired': '累',
+  'quality.json:sleepy': '睏',
+  'quality.json:salty': '鹹',
+  'quality.json:cloudy': '多雲',
+  'quality.json:loose': '鬆',
+  'quality.json:windy': '颳風',
+  'quality.json:folded': '摺疊',
+  'quality.json:rolled': '捲起的',
+  'quality.json:laced': '繫帶的',
+  'quality.json:pickled': '腌製的',
+  'school.json:sharpener': '卷筆刀',
+  'school.json:marker': '馬克筆',
+  'school.json:paperclip': '迴紋針',
+  'school.json:periodic-chart': '元素表',
+  'sport.json:saxophone': '薩克斯',
+  'sport.json:shin-guard': '護腿板',
+  'sport.json:skipping-timer': '比賽計時鐘',
+  'sport.json:podium-stand': '領獎臺',
+  'sport.json:rowing-machine': '划船機',
+  'sport.json:chess-clock': '棋鐘',
+  'sport.json:surf-wax': '衝浪蠟',
+  'sport.json:kickboard': '浮板',
+  'sport.json:kayak': '皮划艇',
+  'sport.json:golf-club': '高爾夫球桿',
+  'sport.json:parallel-bars': '雙槓',
+  'sport.json:high-jump-bar': '跳高橫桿',
+  'time.json:cuckoo-clock': '布穀鳥鐘',
+  'time.json:water-clock': '水鐘',
+  'time.json:advent-calendar': '降臨節日曆',
+  'time.json:clock': '鐘',
+  'time.json:wristwatch': '手錶',
+  'transport.json:gear-shift': '變速桿',
+  'transport.json:dashboard': '儀表盤',
+  'transport.json:fasten-belt': '繫上',
+  'transport.json:fuel-gauge': '油量表',
+  'travel.json:surfboard': '衝浪板',
+  'travel.json:check-in-counter': '值機櫃檯',
+  'travel.json:tray-table': '小桌板',
+  'travel.json:diving-mask': '潛水面鏡',
+  'travel.json:selfie-stick': '自拍桿',
+  'travel.json:paddleboard': '槳板',
+}
+
 /* ── 실행 ──────────────────────────────────────────────────────────── */
 
 console.log('공식 자료 여섯을 내려받습니다 (수십 MB — 시간이 걸립니다)…')
@@ -367,16 +484,26 @@ for (const file of files) {
     words += 1
 
     const result = resolve(word.term, { variants, official, revised, hanSet, crossStrait })
+    let picked: string
+    let pickedHow: string
     if ('candidates' in result) {
-      unresolved.push({ file, slug: concept.slug, zh: word.term, candidates: result.candidates })
-      continue
+      const manual = MANUAL[`${file}:${concept.slug}`]
+      if (!manual) {
+        unresolved.push({ file, slug: concept.slug, zh: word.term, candidates: result.candidates })
+        continue
+      }
+      picked = manual
+      pickedHow = '표제어 확인'
+    } else {
+      picked = result.traditional
+      pickedHow = result.how
     }
 
-    word.traditional = result.traditional
+    word.traditional = picked
     resolved += 1
-    how[result.how] = (how[result.how] ?? 0) + 1
+    how[pickedHow] = (how[pickedHow] ?? 0) + 1
 
-    const level = tocfl.levelOf.get(result.traditional)
+    const level = tocfl.levelOf.get(picked)
     const attributes = (word.attributes ?? {}) as Record<string, unknown>
     if (level) {
       attributes.tocfl = level
