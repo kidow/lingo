@@ -2080,6 +2080,240 @@
       "answer": "눈앞에 있는 걸 못 보다",
       "note": "한국어 「눈에 뭐 씌었나」와 쓰임새가 거의 같습니다.",
       "source": "독일어_관용구"
+    },
+    {
+      "id": "vorgangs-vs-zustand",
+      "question": "Die Tür wird geöffnet과 Die Tür ist geöffnet의 차이는?",
+      "choices": [
+        "열리는 중인 과정과 열려 있는 상태",
+        "말할 때 쓰는 꼴과 글에서 쓰는 꼴",
+        "이미 열린 문과 앞으로 열릴 문",
+        "행위자를 밝힌 것과 감춘 것"
+      ],
+      "answer": "열리는 중인 과정과 열려 있는 상태",
+      "note": "werden+과거분사는 Vorgangspassiv(과정), sein+과거분사는 Zustandspassiv(상태)입니다. 한국어 「~되고 있다」와 「~되어 있다」에 대응합니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "zustandspassiv-vs-adjektiv",
+      "question": "Die Tür ist geöffnet과 Die Tür ist offen은 무엇이 다른가요?",
+      "choices": [
+        "동사의 과거분사와 순수 형용사",
+        "현재 시제와 과거 시제",
+        "구어에서 쓰는 꼴과 문어에서 쓰는 꼴",
+        "강조하는 말과 담담하게 말하는 꼴"
+      ],
+      "answer": "동사의 과거분사와 순수 형용사",
+      "note": "뜻은 비슷하지만 geöffnet은 öffnen의 과거분사라 상태수동이고, offen은 처음부터 형용사입니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "unpersoenliches-passiv",
+      "question": "목적어가 없는 자동사를 수동으로 만들 때 주어 자리에 오는 것은?",
+      "choices": [
+        "형식 주어 es",
+        "형식 주어 man",
+        "행위자를 그대로 둔다",
+        "주어 없이 동사만 쓴다"
+      ],
+      "answer": "형식 주어 es",
+      "note": "Man tanzt hier viel이 Es wird hier viel getanzt가 됩니다. 가리키는 대상이 없는 es입니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "passiv-es-drop",
+      "question": "Es wird hier viel getanzt에서 es가 사라지는 때는?",
+      "choices": [
+        "다른 요소가 1번 자리에 올 때",
+        "행위자를 밝힐 때",
+        "부정문으로 바꿀 때",
+        "화법조동사가 들어갈 때"
+      ],
+      "answer": "다른 요소가 1번 자리에 올 때",
+      "note": "Hier wird viel getanzt처럼 1번 자리가 차면 es가 빠집니다. V2 법칙에 따른 자리 다툼입니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "modal-passiv",
+      "question": "Das muss gemacht werden에서 문장 끝에 오는 것은?",
+      "choices": [
+        "과거분사 + werden 원형",
+        "werden 원형 + 과거분사",
+        "과거분사 + sein 원형",
+        "화법조동사 원형만"
+      ],
+      "answer": "과거분사 + werden 원형",
+      "note": "과거분사와 werden 원형이 하나의 「수동 원형」처럼 붙습니다. Ich kann das machen의 machen 자리입니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "sich-lassen",
+      "question": "Die Tür lässt sich öffnen과 뜻이 같은 문장은?",
+      "choices": [
+        "Die Tür kann geöffnet werden",
+        "Die Tür muss geöffnet werden",
+        "Die Tür wird geöffnet",
+        "Die Tür ist geöffnet"
+      ],
+      "answer": "Die Tür kann geöffnet werden",
+      "note": "sich lassen+원형은 「~될 수 있다」를 간결하게 말하는 방법이라 구어에서 선호됩니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "sich-lassen-limit",
+      "question": "sich lassen + 원형이 대체할 수 없는 것은?",
+      "choices": [
+        "의무와 허가",
+        "가능성",
+        "과정 수동",
+        "상태 수동"
+      ],
+      "answer": "의무와 허가",
+      "note": "Das lässt sich machen müssen은 틀립니다. 의무는 Das muss gemacht werden으로 씁니다. sich lassen은 가능성만 대체합니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "bekommen-passiv",
+      "question": "Dativ 목적어를 주어로 올리는 수동태의 조동사는?",
+      "choices": [
+        "bekommen · kriegen",
+        "werden · sein",
+        "haben · sein",
+        "lassen · machen"
+      ],
+      "answer": "bekommen · kriegen",
+      "note": "Der Lehrer schenkt mir ein Buch가 Ich bekomme ein Buch geschenkt가 됩니다. kriegen은 구어체입니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "werden-passiv-case",
+      "question": "werden 수동태가 주어로 올릴 수 있는 목적어의 격은?",
+      "choices": [
+        "Akkusativ만",
+        "Dativ만",
+        "Genitiv만",
+        "Akkusativ와 Dativ 둘 다"
+      ],
+      "answer": "Akkusativ만",
+      "note": "Dativ 목적어는 bekommen 수동태로 올립니다. 격에 따라 조동사가 갈립니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "bekommen-helfen",
+      "question": "Ich bekomme geholfen이 성립하는 이유는?",
+      "choices": [
+        "helfen이 Dativ를 요구하는 동사라서",
+        "helfen이 Akkusativ를 요구하는 동사라서",
+        "helfen이 자동사라 목적어가 없어서",
+        "helfen이 분리동사라서"
+      ],
+      "answer": "helfen이 Dativ를 요구하는 동사라서",
+      "note": "helfen의 Dativ 목적어가 주어 자리로 올라온 것입니다. geben·schenken·zeigen도 같습니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "stolz-auf-case",
+      "question": "stolz auf 뒤 명사의 격은?",
+      "choices": [
+        "Akkusativ",
+        "Dativ",
+        "Genitiv",
+        "Nominativ"
+      ],
+      "answer": "Akkusativ",
+      "note": "Ich bin stolz auf meinen Sohn입니다. 형용사가 아니라 전치사가 격을 정합니다.",
+      "source": "독일어_형용사_전치사_지배"
+    },
+    {
+      "id": "zufrieden-mit-case",
+      "question": "zufrieden mit 뒤 명사의 격은?",
+      "choices": [
+        "Dativ",
+        "Akkusativ",
+        "Genitiv",
+        "Nominativ"
+      ],
+      "answer": "Dativ",
+      "note": "Sie ist zufrieden mit ihrer Arbeit입니다. mit은 언제나 Dativ를 지배합니다.",
+      "source": "독일어_형용사_전치사_지배"
+    },
+    {
+      "id": "interessiert-praeposition",
+      "question": "동사는 sich interessieren für인데 형용사 interessiert는 어느 전치사를 쓰나요?",
+      "choices": [
+        "an",
+        "für",
+        "auf",
+        "mit"
+      ],
+      "answer": "an",
+      "note": "Ich interessiere mich für Musik / Ich bin interessiert an Musik입니다. 같은 뜻인데 전치사가 갈립니다.",
+      "source": "독일어_형용사_전치사_지배"
+    },
+    {
+      "id": "adj-prep-wo",
+      "question": "stolz auf로 사물을 물을 때 쓰는 말은?",
+      "choices": [
+        "worauf",
+        "wofür",
+        "womit",
+        "wovon"
+      ],
+      "answer": "worauf",
+      "note": "wo(r)+전치사 규칙 그대로입니다. zufrieden mit이면 womit이 됩니다.",
+      "source": "독일어_형용사_전치사_지배"
+    },
+    {
+      "id": "adj-prep-person",
+      "question": "stolz auf로 사람을 물을 때 쓰는 말은?",
+      "choices": [
+        "Auf wen",
+        "Worauf",
+        "Auf was",
+        "Wem"
+      ],
+      "answer": "Auf wen",
+      "note": "사람은 wo(r)-복합어를 쓰지 않고 전치사+wen/wem으로 묻습니다.",
+      "source": "독일어_형용사_전치사_지배"
+    },
+    {
+      "id": "adj-prep-answer",
+      "question": "Worauf bist du stolz?에 사물로 답할 때 쓰는 말은?",
+      "choices": [
+        "darauf",
+        "dafür",
+        "damit",
+        "auf es"
+      ],
+      "answer": "darauf",
+      "note": "묻는 쪽이 wo(r)-면 답하는 쪽은 da(r)-입니다. 사람이면 auf ihn처럼 전치사+대명사입니다.",
+      "source": "독일어_형용사_전치사_지배"
+    },
+    {
+      "id": "abhaengig-von-case",
+      "question": "abhängig von 뒤 명사의 격은?",
+      "choices": [
+        "Dativ",
+        "Akkusativ",
+        "Genitiv",
+        "Nominativ"
+      ],
+      "answer": "Dativ",
+      "note": "Ich bin abhängig von meinem Handy입니다. überzeugt von·enttäuscht von도 같습니다.",
+      "source": "독일어_형용사_전치사_지배"
+    },
+    {
+      "id": "genitiv-adjektiv",
+      "question": "Genitiv를 요구하는 극소수 형용사는?",
+      "choices": [
+        "bewusst · sicher · schuldig",
+        "stolz · böse · zufrieden",
+        "abhängig · überzeugt · traurig",
+        "interessiert · verheiratet · enttäuscht"
+      ],
+      "answer": "bewusst · sicher · schuldig",
+      "note": "Ich bin mir des Problems bewusst는 격식체입니다. 일상에서는 Ich weiß von dem Problem처럼 전치사로 바꿉니다.",
+      "source": "독일어_형용사_전치사_지배"
     }
   ]
 }
