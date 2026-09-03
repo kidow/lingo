@@ -461,6 +461,30 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
         `${where} — 의심이 ${baseline}건에서 ${suspects.length}건으로 줄었습니다. scripts/check.ts의 TRIVIA_SUSPECT_BASELINE을 낮추세요`,
       )
 
+    /**
+     * **배열 순서가 곧 커리큘럼이다.** (spec.md §4)
+     *
+     * 상식은 새 카드를 목록 앞에서부터 낸다(lib/engine.ts의 `ordered`).
+     * 그래서 문항을 파일 끝에 그냥 붙이면 히라가나를 지나기도 전에 접속법이
+     * 나온다. brain의 학습 순서(`_data/notes_order.yml`)를 여기서 직접
+     * 확인할 수는 없지만 — 그 폴더가 없어도 검사는 돌아야 한다 — **같은
+     * 노트의 문항이 한 덩어리로 모여 있는지**는 파일만 보고 알 수 있고,
+     * 순서가 깨지는 가장 흔한 경우가 바로 그것이다.
+     */
+    const seenSources = new Set<string>()
+    let previous = ''
+    for (const item of items) {
+      const source = String(item.source ?? '')
+      if (source === previous) continue
+      if (seenSources.has(source))
+        fail(
+          `${where}:${String(item.id)}`,
+          `노트 "${source}"의 문항이 앞뒤로 흩어져 있습니다 — 같은 노트끼리 모으고 brain의 학습 순서대로 두세요`,
+        )
+      seenSources.add(source)
+      previous = source
+    }
+
     triviaTotal += items.length
     perTrivia.push(`  ${lang} ${items.length}`)
   }

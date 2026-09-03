@@ -101,12 +101,19 @@ export type Clock = () => number
  *   3. 나머지는 (1 - 회상확률) 가중 추출. 최근 COOLDOWN장은 제외
  *
  * 낼 게 없으면 null. 단어가 0개일 때만 일어난다.
+ *
+ * **`ordered`면 새 카드를 목록 앞에서부터 낸다.** 낱말은 개념 사이에 배우는
+ * 순서가 없어 아무거나 먼저 나와도 되지만, 상식은 `content/trivia/*.json`의
+ * 배열 순서가 곧 커리큘럼이다 (spec.md §4). 히라가나를 지나기 전에 접속법이
+ * 나오면 답할 수가 없다. 복습이 섞이는 비율(NEW_RATE)은 그대로 두고 **새로
+ * 들어오는 카드의 차례만** 정한다.
  */
 export function pickNext<T extends LearnItem>(
   state: EngineState,
   entries: T[],
   rng: Rng,
   now: number,
+  ordered = false,
 ): T | null {
   if (entries.length === 0) return null
 
@@ -129,13 +136,15 @@ export function pickNext<T extends LearnItem>(
 
   // 2. 신규 유입은 고정 비율이다. 복습이 끝나기를 기다리지 않는다 —
   //    노벨티를 조건부로 미루면 피드가 굳는다
+  const nextUnseen = () => (ordered ? unseen[0] : unseen[Math.floor(rng() * unseen.length)])
+
   if (unseen.length > 0 && (seen.length === 0 || rng() < NEW_RATE)) {
-    return unseen[Math.floor(rng() * unseen.length)]
+    return nextUnseen()
   }
 
   // 3. 가중 추출
   if (seen.length > 0) return weightedPick(seen, state.progress, rng, now)
-  if (unseen.length > 0) return unseen[Math.floor(rng() * unseen.length)]
+  if (unseen.length > 0) return nextUnseen()
 
   // 쿨다운에 전부 걸렸다. 그중 가장 오래된 것을 낸다
   const oldest = entries.find((e) => e.key === state.recent[0])
@@ -242,8 +251,9 @@ export function nextQuestion<T extends LearnItem>(
   entries: T[],
   rng: Rng,
   now: number,
+  ordered = false,
 ): { question: Question; state: EngineState } | null {
-  const entry = pickNext(state, entries, rng, now)
+  const entry = pickNext(state, entries, rng, now, ordered)
   if (!entry) return null
 
   const question = questionFor(entry, state, entries)

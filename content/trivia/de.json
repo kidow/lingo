@@ -535,6 +535,188 @@
       "source": "독일어_문자"
     },
     {
+      "id": "ordinal-irregular-de",
+      "question": "drei의 서수사는?",
+      "choices": [
+        "dritte",
+        "dreite",
+        "dreiste",
+        "drittste"
+      ],
+      "answer": "dritte",
+      "note": "1(erste)·3(dritte)·7(siebte)·8(achte)가 불규칙입니다. 나머지는 -te/-ste를 붙입니다.",
+      "source": "독일어_숫자와_시간"
+    },
+    {
+      "id": "date-am-dativ",
+      "question": "「5월 3일에」를 독일어로 쓰면?",
+      "choices": [
+        "am dritten Mai",
+        "der dritte Mai",
+        "an dritte Mai",
+        "im dritten Mai"
+      ],
+      "answer": "am dritten Mai",
+      "note": "am = an dem이라 Dativ 어미가 붙습니다. 날짜를 말할 때는 der dritte Mai입니다.",
+      "source": "독일어_숫자와_시간"
+    },
+    {
+      "id": "german-decimal",
+      "question": "독일어에서 1.000.000,50이 뜻하는 것은?",
+      "choices": [
+        "백만 점 오영 — 마침표가 천단위, 쉼표가 소수점",
+        "1.00000050",
+        "천 점 영영영오",
+        "표기 오류"
+      ],
+      "answer": "백만 점 오영 — 마침표가 천단위, 쉼표가 소수점",
+      "note": "영어와 정확히 반대입니다.",
+      "source": "독일어_숫자와_시간"
+    },
+    {
+      "id": "million-noun",
+      "question": "hundert·tausend와 달리 Million을 띄어 쓰는 이유는?",
+      "choices": [
+        "명사라서",
+        "외래어라서",
+        "복수라서",
+        "격이 달라서"
+      ],
+      "answer": "명사라서",
+      "note": "eine Million·zwei Millionen처럼 관사와 복수 어미가 붙습니다.",
+      "source": "독일어_숫자와_시간"
+    },
+    {
+      "id": "seit-vs-fuer",
+      "question": "「1년째 여기 살고 있다」에 맞는 전치사는?",
+      "choices": [
+        "seit",
+        "für",
+        "vor",
+        "in"
+      ],
+      "answer": "seit",
+      "note": "seit는 지금도 이어지는 기간, für는 끝난 기간입니다.",
+      "source": "독일어_숫자와_시간"
+    },
+    {
+      "id": "vor-in-time",
+      "question": "「일주일 후에」를 독일어로 쓰면?",
+      "choices": [
+        "in einer Woche",
+        "vor einer Woche",
+        "für eine Woche",
+        "seit einer Woche"
+      ],
+      "answer": "in einer Woche",
+      "note": "vor는 과거(~전에), in은 미래(~후에)이며 둘 다 Dativ를 씁니다.",
+      "source": "독일어_숫자와_시간"
+    },
+    {
+      "id": "jeden-montag-case",
+      "question": "jeden Montag의 격은?",
+      "choices": [
+        "Akkusativ",
+        "Dativ",
+        "Genitiv",
+        "Nominativ"
+      ],
+      "answer": "Akkusativ",
+      "note": "jeder의 Akkusativ 남성 어미 -en입니다. 시간부사인데도 격이 드러나는 자리입니다.",
+      "source": "독일어_요일_시간대_표현"
+    },
+    {
+      "id": "jeden-no-preposition",
+      "question": "「매주 월요일에」를 an jeden Montag으로 쓰면?",
+      "choices": [
+        "틀리다 — 전치사 없이 쓴다",
+        "맞다 — an이 있어야 시점이 된다",
+        "맞지만 구어에서만 쓴다",
+        "맞지만 격이 Dativ로 바뀐다"
+      ],
+      "answer": "틀리다 — 전치사 없이 쓴다",
+      "note": "jeden Montag만으로 시간부사가 됩니다. Ich gehe jeden Montag ins Fitnessstudio.",
+      "source": "독일어_요일_시간대_표현"
+    },
+    {
+      "id": "jeden-gender",
+      "question": "Woche와 Wochenende에 붙는 형태는?",
+      "choices": [
+        "jede Woche · jedes Wochenende",
+        "jeden Woche · jeden Wochenende",
+        "jede Woche · jede Wochenende",
+        "jedes Woche · jedes Wochenende"
+      ],
+      "answer": "jede Woche · jedes Wochenende",
+      "note": "der-Wörter 어미 규칙 그대로입니다. 여성은 jede, 중성은 jedes, 남성 Akkusativ는 jeden입니다.",
+      "source": "독일어_요일_시간대_표현"
+    },
+    {
+      "id": "s-adverb",
+      "question": "morgens·montags의 -s가 더하는 뜻은?",
+      "choices": [
+        "습관적으로 되풀이된다",
+        "한 번만 일어난다",
+        "앞으로 일어날 것이다",
+        "방금 끝났다"
+      ],
+      "answer": "습관적으로 되풀이된다",
+      "note": "관사도 전치사도 없이 그 자체로 부사입니다. montags는 jeden Montag과 같은 뜻이면서 더 간결합니다.",
+      "source": "독일어_요일_시간대_표현"
+    },
+    {
+      "id": "morgen-vs-morgens",
+      "question": "Der Morgen과 morgens의 차이는?",
+      "choices": [
+        "명사와 부사",
+        "단수와 복수",
+        "현재와 과거",
+        "격식체와 구어체"
+      ],
+      "answer": "명사와 부사",
+      "note": "Der Morgen ist schön은 관사가 필요하고 Morgens ist es kalt는 관사가 없습니다.",
+      "source": "독일어_요일_시간대_표현"
+    },
+    {
+      "id": "morgen-frueh",
+      "question": "「내일 아침」을 독일어로 뭐라고 하나요?",
+      "choices": [
+        "morgen früh",
+        "morgen Morgen",
+        "morgens früh",
+        "am Morgen morgen"
+      ],
+      "answer": "morgen früh",
+      "note": "morgen(내일, 부사)과 Morgen(아침, 명사)이 겹쳐서 생긴 예외입니다.",
+      "source": "독일어_요일_시간대_표현"
+    },
+    {
+      "id": "heute-morgen-vs-morgens",
+      "question": "Heute Morgen과 Morgens의 차이는?",
+      "choices": [
+        "오늘 하루의 시점과 매일의 습관",
+        "오전과 오후",
+        "격식체와 구어체",
+        "과거와 미래"
+      ],
+      "answer": "오늘 하루의 시점과 매일의 습관",
+      "note": "Heute Morgen habe ich Kaffee getrunken은 오늘만이고 Morgens trinke ich Kaffee는 매일입니다.",
+      "source": "독일어_요일_시간대_표현"
+    },
+    {
+      "id": "montagabend-gender",
+      "question": "Montagabend의 성을 정하는 것은?",
+      "choices": [
+        "뒤에 오는 Abend",
+        "앞에 오는 Montag",
+        "음절 수",
+        "언제나 중성이다"
+      ],
+      "answer": "뒤에 오는 Abend",
+      "note": "복합명사의 성은 마지막 명사가 정합니다. der Abend라서 der Montagabend입니다.",
+      "source": "독일어_요일_시간대_표현"
+    },
+    {
       "id": "nouns-capital",
       "question": "독일어에서 명사는 어떻게 쓰나요?",
       "choices": [
@@ -704,173 +886,329 @@
       "source": "독일어_명사"
     },
     {
-      "id": "fugenelement",
-      "question": "Geburtstag의 가운데 -s-를 뭐라 부르나요?",
+      "id": "welches-der-word",
+      "question": "welcher/welche/welches가 따르는 어미 패턴은?",
       "choices": [
-        "Fugenelement",
-        "Umlaut",
-        "Suffix",
-        "Präfix"
+        "정관사 der/die/das",
+        "부정관사 ein",
+        "형용사 강변화",
+        "변하지 않는다"
       ],
-      "answer": "Fugenelement",
-      "note": "-ung·-heit·-keit·-tion으로 끝나는 여성 명사 뒤에는 거의 항상 -s-가 붙습니다.",
-      "source": "독일어_복합어"
+      "answer": "정관사 der/die/das",
+      "note": "der→welcher처럼 어간만 welch-로 바꾸면 됩니다. der-Wörter 계열입니다.",
+      "source": "독일어_의문관사"
     },
     {
-      "id": "fugen-n",
-      "question": "Straßenbahn(트램)의 가운데 -n-은 무엇인가요?",
+      "id": "was-fuer-ein",
+      "question": "welches와 was für ein의 차이는?",
       "choices": [
-        "명사를 잇는 연결음",
-        "복수형 어미",
-        "Dativ 어미",
-        "형용사 어미"
+        "정해진 선택지 중 고르기와 종류·성질 묻기",
+        "말에서 쓰느냐 글에서 쓰느냐",
+        "사람에게 쓰느냐 사물에게 쓰느냐",
+        "단수에 쓰느냐 복수에 쓰느냐"
       ],
-      "answer": "명사를 잇는 연결음",
-      "note": "Sonnenschein도 같습니다. -s-와 -n- 중 무엇이 붙는지는 규칙보다 예외가 많아 외웁니다.",
-      "source": "독일어_복합어"
+      "answer": "정해진 선택지 중 고르기와 종류·성질 묻기",
+      "note": "welches는 der-Wörter, was für ein은 ein-Wörter라 형태 차이가 의미 차이와 그대로 대응합니다.",
+      "source": "독일어_의문관사"
     },
     {
-      "id": "compound-parse",
-      "question": "긴 복합어는 어느 쪽부터 분해해 읽나요?",
+      "id": "was-fuer-eins",
+      "question": "was für ein에서 명사를 생략하면 ein은?",
       "choices": [
-        "오른쪽부터",
-        "왼쪽부터",
-        "가운데부터",
-        "연결음 기준으로"
+        "eins가 된다",
+        "ein 그대로",
+        "eine가 된다",
+        "사라진다"
       ],
-      "answer": "오른쪽부터",
-      "note": "맨 오른쪽이 의미의 핵심이자 문법 성의 기준입니다. Bundesgesundheitsministerium은 결국 Ministerium입니다.",
-      "source": "독일어_복합어"
+      "answer": "eins가 된다",
+      "note": "ein-Wörter가 명사 없이 홀로 설 때 -s를 붙이는 규칙입니다(meins와 같은 패턴). welches는 그대로입니다.",
+      "source": "독일어_의문관사"
     },
     {
-      "id": "compound-adjective-stem",
-      "question": "Schreibtisch(책상)의 앞부분 Schreib-는 무엇인가요?",
+      "id": "welcher-der-word",
+      "question": "welcher가 따르는 어간 교체 규칙은?",
       "choices": [
-        "동사 schreiben의 어간",
-        "명사 Schrift의 줄임",
-        "형용사",
-        "외래어"
+        "정관사의 der·die·das를 welch-로 바꾼다",
+        "부정관사 ein에 -er을 붙인다",
+        "형용사 어미를 그대로 쓴다",
+        "격변화를 하지 않는다"
       ],
-      "answer": "동사 schreiben의 어간",
-      "note": "-en을 뗀 어간이 붙습니다. Schlafzimmer·Parkplatz도 같은 방식입니다.",
-      "source": "독일어_복합어"
+      "answer": "정관사의 der·die·das를 welch-로 바꾼다",
+      "note": "der→welcher, die→welche, das→welches입니다. dieser와 같은 der-word 계열입니다.",
+      "source": "독일어_의문관사"
     },
     {
-      "id": "compound-hyphen",
-      "question": "See-Elefant에 하이픈을 넣는 이유는?",
+      "id": "was-fuer-invariable",
+      "question": "was für ein에서 격에 따라 변하는 부분은?",
       "choices": [
-        "같은 글자가 셋 연속되기 때문",
-        "고유명사이기 때문",
-        "너무 길기 때문",
-        "외래어이기 때문"
+        "ein만",
+        "was만",
+        "für만",
+        "was für 전체"
       ],
-      "answer": "같은 글자가 셋 연속되기 때문",
-      "note": "Seeelefant가 되면 e가 셋입니다. 고유명사·약어·숫자가 섞일 때도 하이픈을 씁니다.",
-      "source": "독일어_복합어"
+      "answer": "ein만",
+      "note": "Was für eine Farbe처럼 ein만 바뀝니다. was für 자체는 고정입니다.",
+      "source": "독일어_의문관사"
     },
     {
-      "id": "staubsaugen",
-      "question": "staubsaugen(청소기 돌리다)처럼 명사+동사로 만든 복합동사는?",
+      "id": "was-fuer-plural",
+      "question": "복수명사에 was für를 쓸 때는?",
       "choices": [
-        "분리동사처럼 앞부분이 문장 끝으로 간다",
-        "분리되지 않고 통째로 움직인다",
-        "항상 조동사와 함께 쓴다",
-        "명령형으로만 쓴다"
+        "ein 없이 was für만",
+        "was für eine",
+        "was für eins",
+        "was für einen"
       ],
-      "answer": "분리동사처럼 앞부분이 문장 끝으로 간다",
-      "note": "Ich sauge heute Staub. 앞부분에 강세가 있으면 분리입니다(STAUBsaugen, TEILnehmen).",
-      "source": "독일어_복합어"
+      "answer": "ein 없이 was für만",
+      "note": "Was für Bücher liest du?입니다. 복수에는 부정관사 자체가 없습니다.",
+      "source": "독일어_의문관사"
     },
     {
-      "id": "du-sie-criterion",
-      "question": "du와 Sie를 가르는 기준은?",
+      "id": "welches-vs-was-fuer-form",
+      "question": "welches와 was für ein의 형태 계열은?",
       "choices": [
-        "관계가 얼마나 공식적인가",
-        "나이 차이가 얼마나 나는가",
-        "직급이 누가 높은가",
-        "대화 장소가 어디인가"
+        "der-word와 ein-word",
+        "ein-word와 der-word",
+        "둘 다 der-word",
+        "둘 다 ein-word"
       ],
-      "answer": "관계가 얼마나 공식적인가",
-      "note": "동갑이라도 낯선 사람이면 Sie, 나이 차가 커도 가족이면 du입니다. 한국어와 다른 지점입니다.",
-      "source": "독일어_존댓말과_격식체"
+      "answer": "der-word와 ein-word",
+      "note": "형태 차이가 「정해진 것 중 선택」과 「무한한 범주 중 성질」이라는 뜻 차이에 그대로 대응합니다.",
+      "source": "독일어_의문관사"
     },
     {
-      "id": "duzen-anbieten",
-      "question": "「말 놓자」는 제안은 누가 먼저 하는 게 예의인가요?",
+      "id": "welches-alone",
+      "question": "명사를 생략해도 welches가 그대로인 이유는?",
       "choices": [
-        "나이·지위가 높은 쪽",
-        "나이·지위가 낮은 쪽",
-        "먼저 말을 꺼낸 쪽",
-        "누가 해도 상관없다"
+        "der-word라 원래 혼자 설 수 있어서",
+        "중성형이라서",
+        "의문사라서",
+        "격변화를 안 해서"
       ],
-      "answer": "나이·지위가 높은 쪽",
-      "note": "Wollen wir uns duzen?이라고 묻습니다. 아랫사람이 먼저 제안하면 실례입니다.",
-      "source": "독일어_존댓말과_격식체"
+      "answer": "der-word라 원래 혼자 설 수 있어서",
+      "note": "was für ein은 ein-word라 eins로 바뀝니다. 소유대명사 독립형 meins와 같은 패턴입니다.",
+      "source": "독일어_의문관사"
     },
     {
-      "id": "politeness-ladder",
-      "question": "다음 중 가장 정중한 부탁 표현은?",
+      "id": "indirect-question-de",
+      "question": "「Wann kommst du?」를 간접의문문으로 바꾸면 동사는 어디로 가나요?",
       "choices": [
-        "Wären Sie so freundlich…?",
-        "Kannst du…?",
-        "Können Sie…?",
-        "Könnten Sie…?"
+        "절의 맨 끝",
+        "두 번째 자리",
+        "맨 앞",
+        "주어 앞"
       ],
-      "answer": "Wären Sie so freundlich…?",
-      "note": "Können < Könnten < Würden < Wären so freundlich 순으로 올라갑니다. 접속법 II가 정중함의 도구입니다.",
-      "source": "독일어_존댓말과_격식체"
+      "answer": "절의 맨 끝",
+      "note": "Ich weiß nicht, wann du kommst — 종속절의 V-Letzt 규칙이 그대로 적용됩니다.",
+      "source": "독일어_간접의문문"
     },
     {
-      "id": "email-greeting-de",
-      "question": "받는 사람을 모를 때 쓰는 독일어 이메일 첫인사는?",
+      "id": "ob-yes-no",
+      "question": "의문사가 없는 예·아니오 의문문을 간접화할 때 붙이는 것은?",
       "choices": [
-        "Sehr geehrte Damen und Herren,",
-        "Hallo zusammen,",
-        "Liebe Grüße,",
-        "Mit freundlichen Grüßen,"
+        "ob",
+        "dass",
+        "wenn",
+        "weil"
       ],
-      "answer": "Sehr geehrte Damen und Herren,",
-      "note": "Mit freundlichen Grüßen은 맺음말입니다. 남성에게는 Sehr geehrter Herr, 여성에게는 Sehr geehrte Frau입니다.",
-      "source": "독일어_존댓말과_격식체"
+      "answer": "ob",
+      "note": "Ich weiß nicht, ob du kommst입니다. 여기서도 동사는 끝으로 갑니다.",
+      "source": "독일어_간접의문문"
     },
     {
-      "id": "email-lowercase",
-      "question": "독일어 편지에서 첫인사 뒤 콤마 다음 문장은?",
+      "id": "indirect-politeness-de",
+      "question": "「Können Sie mir sagen, wo der Bahnhof ist?」가 더 공손한 이유는?",
       "choices": [
-        "소문자로 시작한다",
-        "대문자로 시작한다",
-        "줄을 비우고 대문자로 쓴다",
-        "규칙이 없다"
+        "질문을 다른 문장으로 한 번 감쌌기 때문",
+        "존댓말이라서",
+        "의문사를 썼기 때문",
+        "길기 때문"
       ],
-      "answer": "소문자로 시작한다",
-      "note": "Sehr geehrter Herr Schmidt, ich schreibe… 처럼 ich가 소문자입니다.",
-      "source": "독일어_존댓말과_격식체"
+      "answer": "질문을 다른 문장으로 한 번 감쌌기 때문",
+      "note": "한국어 「어디 있는지 여쭤봐도 될까요?」와 같은 원리입니다.",
+      "source": "독일어_간접의문문"
     },
     {
-      "id": "formal-vocabulary-de",
-      "question": "bekommen(받다)의 격식체 표현은?",
+      "id": "indirect-v-letzt",
+      "question": "간접의문문의 어순이 바뀌는 것이 새 규칙이 아닌 이유는?",
       "choices": [
-        "erhalten",
-        "erwerben",
-        "mitteilen",
-        "beginnen"
+        "종속절 V-Letzt 규칙이 그대로 적용돼서",
+        "의문사가 접속사로 바뀌어서",
+        "주어가 생략돼서",
+        "동사가 두 개라서"
       ],
-      "answer": "erhalten",
-      "note": "격식체는 문법뿐 아니라 어휘도 갈립니다. sagen→mitteilen, kaufen→erwerben, anfangen→beginnen입니다.",
-      "source": "독일어_존댓말과_격식체"
+      "answer": "종속절 V-Letzt 규칙이 그대로 적용돼서",
+      "note": "wann이 이끄는 절이 종속절이 되므로 동사가 끝으로 갑니다.",
+      "source": "독일어_간접의문문"
     },
     {
-      "id": "sich-befinden",
-      "question": "「Wo befinden Sie sich?」가 「Wo bist du?」와 다른 점은?",
+      "id": "ob-vs-w",
+      "question": "간접의문문에서 W-의문사와 ob를 가르는 기준은?",
       "choices": [
-        "격식체 어휘와 존댓말을 쓴다",
-        "과거를 묻는다",
-        "여러 명에게 묻는다",
-        "장소가 아니라 이유를 묻는다"
+        "원래 질문에 의문사가 있었는가",
+        "정중한 자리인가",
+        "동사가 무엇인가",
+        "주어가 사람인가"
       ],
-      "answer": "격식체 어휘와 존댓말을 쓴다",
-      "note": "sich befinden은 sein의 격식체입니다. 공지·표지판·관공서 문서에서 이런 어휘가 몰려 나옵니다.",
-      "source": "독일어_존댓말과_격식체"
+      "answer": "원래 질문에 의문사가 있었는가",
+      "note": "있으면 그대로 쓰고 없으면 ob를 새로 붙입니다. 둘 다 동사는 끝으로 갑니다.",
+      "source": "독일어_간접의문문"
+    },
+    {
+      "id": "ich-frage-mich",
+      "question": "「~인지 궁금해」에 해당하는 도입구는?",
+      "choices": [
+        "Ich frage mich, …",
+        "Ich weiß nicht, …",
+        "Weißt du, …?",
+        "Können Sie mir sagen, …?"
+      ],
+      "answer": "Ich frage mich, …",
+      "note": "Ich weiß nicht은 모르겠다, Weißt du는 아느냐고 되묻는 자리입니다.",
+      "source": "독일어_간접의문문"
+    },
+    {
+      "id": "politeness-wrapping",
+      "question": "질문을 다른 문장으로 감싸면 공손해지는 원리와 같은 것은?",
+      "choices": [
+        "스페인어 quisiera처럼 돌려 말하기",
+        "접속법으로 시제를 옮기기",
+        "존칭 대명사 쓰기",
+        "목소리를 낮추기"
+      ],
+      "answer": "스페인어 quisiera처럼 돌려 말하기",
+      "note": "한국어 「역이 어디 있는지 여쭤봐도 될까요」와 같은 발상입니다.",
+      "source": "독일어_간접의문문"
+    },
+    {
+      "id": "akk-ihn",
+      "question": "인칭대명사 Akkusativ 중 형태가 완전히 달라지는 것은?",
+      "choices": [
+        "er → ihn",
+        "sie → sie",
+        "es → es",
+        "wir → uns"
+      ],
+      "answer": "er → ihn",
+      "note": "명사의 der→den 변화에 대응합니다. 나머지는 주격과 같거나 규칙적입니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "dativ-ihnen",
+      "question": "「당신에게」를 뜻하는 Dativ 대명사는?",
+      "choices": [
+        "Ihnen",
+        "ihnen",
+        "ihm",
+        "euch"
+      ],
+      "answer": "Ihnen",
+      "note": "소리는 ihnen(그들에게)과 같고 대문자로만 구분합니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "euer-elision",
+      "question": "euer에 어미가 붙으면?",
+      "choices": [
+        "e가 탈락해 eure가 된다",
+        "그대로 euere가 된다",
+        "euren으로만 쓴다",
+        "변하지 않는다"
+      ],
+      "answer": "e가 탈락해 eure가 된다",
+      "note": "eure Mutter입니다. 소유형용사는 ein-Wörter 패턴으로 어미가 붙습니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "es-gibt-case",
+      "question": "es gibt 뒤에 오는 격은?",
+      "choices": [
+        "Akkusativ",
+        "Nominativ",
+        "Dativ",
+        "Genitiv"
+      ],
+      "answer": "Akkusativ",
+      "note": "Es gibt einen Park hier처럼 남성은 einen이 됩니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "man-pronoun",
+      "question": "부정대명사 man의 동사 활용은?",
+      "choices": [
+        "항상 3인칭 단수",
+        "항상 복수",
+        "1인칭 단수",
+        "문맥에 따라 다르다"
+      ],
+      "answer": "항상 3인칭 단수",
+      "note": "Man spricht hier Deutsch입니다. 소문자 man은 der Mann(남자)과 전혀 다른 단어입니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "etwas-neues",
+      "question": "「새로운 것」을 독일어로 쓰면?",
+      "choices": [
+        "etwas Neues",
+        "etwas Neue",
+        "etwas Neuer",
+        "etwas Neuen"
+      ],
+      "answer": "etwas Neues",
+      "note": "etwas·nichts 뒤 형용사는 무관사 규칙으로 항상 -es가 됩니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "denen-dative-plural",
+      "question": "지시·관계대명사에서 정관사와 형태가 다른 자리는?",
+      "choices": [
+        "Dativ 복수 — denen",
+        "Nominativ 남성",
+        "Akkusativ 여성",
+        "Genitiv 중성"
+      ],
+      "answer": "Dativ 복수 — denen",
+      "note": "관사는 den이지만 대명사는 denen입니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "pronoun-order",
+      "question": "대명사가 둘 나올 때의 어순은?",
+      "choices": [
+        "Akkusativ → Dativ",
+        "Dativ → Akkusativ",
+        "성에 따라 다르다",
+        "자유롭다"
+      ],
+      "answer": "Akkusativ → Dativ",
+      "note": "Ich gebe es ihm입니다. 명사끼리일 때(Dativ→Akkusativ)와 정반대입니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "possessive-standalone",
+      "question": "「그건 내 거야」를 독일어로 흔히 쓰면?",
+      "choices": [
+        "Das ist meins.",
+        "Das ist mein.",
+        "Das ist meiner Buch.",
+        "Das ist meine."
+      ],
+      "answer": "Das ist meins.",
+      "note": "독립형은 der-Wörter 어미를 따릅니다 — meiner(남)/meine(여)/meins(중).",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "relative-case-rule",
+      "question": "독일어 관계대명사의 성과 격은 각각 어디서 오나요?",
+      "choices": [
+        "성은 선행사, 격은 관계절 안의 역할",
+        "둘 다 선행사",
+        "둘 다 관계절",
+        "성은 관계절, 격은 선행사"
+      ],
+      "answer": "성은 선행사, 격은 관계절 안의 역할",
+      "note": "Der Mann, dem ich helfe — helfen이 Dativ를 요구해 dem이 됩니다.",
+      "source": "독일어_대명사"
     },
     {
       "id": "verb-infinitive-en",
@@ -1133,422 +1471,6 @@
       "source": "독일어_동사"
     },
     {
-      "id": "genitive-prepositions",
-      "question": "다음 중 Genitiv를 요구하는 전치사는?",
-      "choices": [
-        "während",
-        "mit",
-        "für",
-        "bei"
-      ],
-      "answer": "während",
-      "note": "trotz·wegen·statt도 같습니다. 구어에서 wegen은 Dativ로도 흔히 씁니다.",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "gegenueber-position",
-      "question": "대명사와 함께 쓸 때 gegenüber의 자리는?",
-      "choices": [
-        "대명사 뒤",
-        "대명사 앞",
-        "문장 끝",
-        "동사 앞"
-      ],
-      "answer": "대명사 뒤",
-      "note": "명사와는 앞뒤 둘 다 가능하지만 대명사와는 뒤가 표준입니다 — mir gegenüber.",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "entlang-case",
-      "question": "「den Fluss entlang」에서 entlang이 요구하는 격은?",
-      "choices": [
-        "Akkusativ",
-        "Dativ",
-        "Genitiv",
-        "Nominativ"
-      ],
-      "answer": "Akkusativ",
-      "note": "명사 뒤가 표준입니다. 앞에 오면 Genitiv가 됩니다(entlang des Flusses).",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "bis-combination",
-      "question": "장소를 말할 때 bis는 어떻게 쓰나요?",
-      "choices": [
-        "다른 전치사와 결합해 그 격을 따른다",
-        "항상 Akkusativ",
-        "항상 Dativ",
-        "항상 Genitiv"
-      ],
-      "answer": "다른 전치사와 결합해 그 격을 따른다",
-      "note": "bis zum Bahnhof·bis nach Berlin입니다. 시간 표현은 bis 단독으로 씁니다.",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "freuen-auf-ueber",
-      "question": "sich freuen auf와 sich freuen über의 차이는?",
-      "choices": [
-        "미래를 기대하는 것과 이미 일어난 일을 기뻐하는 것",
-        "혼자 기뻐하는 것과 남과 함께 기뻐하는 것",
-        "잠깐 스치는 기쁨과 오래 가는 기쁨",
-        "말로 드러내는 것과 속으로만 느끼는 것"
-      ],
-      "answer": "미래를 기대하는 것과 이미 일어난 일을 기뻐하는 것",
-      "note": "Ich freue mich auf die Ferien(기대) / über das Geschenk(기쁨)입니다.",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "da-compound",
-      "question": "「Ich warte auf es」 대신 쓰는 형태는?",
-      "choices": [
-        "Ich warte darauf.",
-        "Ich warte aufes.",
-        "Ich warte es auf.",
-        "Ich warte worauf."
-      ],
-      "answer": "Ich warte darauf.",
-      "note": "사물 대명사는 da(r)+전치사 복합어로 받습니다. 사람이면 auf ihn을 씁니다.",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "wo-compound-question",
-      "question": "사물에 대해 「무엇을 기다리니?」를 묻는 형태는?",
-      "choices": [
-        "Worauf wartest du?",
-        "Auf wen wartest du?",
-        "Was wartest du auf?",
-        "Wem wartest du?"
-      ],
-      "answer": "Worauf wartest du?",
-      "note": "사물은 wo(r)+전치사, 사람은 전치사+wen/wem입니다.",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "um-zu",
-      "question": "「독일에서 일하기 위해 독일어를 배운다」의 구조는?",
-      "choices": [
-        "um … zu + 원형",
-        "ohne … zu + 원형",
-        "statt … zu + 원형",
-        "damit + 원형"
-      ],
-      "answer": "um … zu + 원형",
-      "note": "주어가 주절과 같을 때 씁니다. 분리동사는 zu가 접두사와 어간 사이에 들어갑니다(einzukaufen).",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "dank-vs-wegen",
-      "question": "dank와 wegen의 뉘앙스 차이는?",
-      "choices": [
-        "dank는 긍정적 원인에 쓴다",
-        "dank가 더 격식이다",
-        "wegen은 미래에만 쓴다",
-        "차이가 없다"
-      ],
-      "answer": "dank는 긍정적 원인에 쓴다",
-      "note": "Dank deiner Hilfe…처럼 씁니다. wegen은 중립·부정적 원인도 받습니다.",
-      "source": "독일어_전치사"
-    },
-    {
-      "id": "akk-ihn",
-      "question": "인칭대명사 Akkusativ 중 형태가 완전히 달라지는 것은?",
-      "choices": [
-        "er → ihn",
-        "sie → sie",
-        "es → es",
-        "wir → uns"
-      ],
-      "answer": "er → ihn",
-      "note": "명사의 der→den 변화에 대응합니다. 나머지는 주격과 같거나 규칙적입니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "dativ-ihnen",
-      "question": "「당신에게」를 뜻하는 Dativ 대명사는?",
-      "choices": [
-        "Ihnen",
-        "ihnen",
-        "ihm",
-        "euch"
-      ],
-      "answer": "Ihnen",
-      "note": "소리는 ihnen(그들에게)과 같고 대문자로만 구분합니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "euer-elision",
-      "question": "euer에 어미가 붙으면?",
-      "choices": [
-        "e가 탈락해 eure가 된다",
-        "그대로 euere가 된다",
-        "euren으로만 쓴다",
-        "변하지 않는다"
-      ],
-      "answer": "e가 탈락해 eure가 된다",
-      "note": "eure Mutter입니다. 소유형용사는 ein-Wörter 패턴으로 어미가 붙습니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "es-gibt-case",
-      "question": "es gibt 뒤에 오는 격은?",
-      "choices": [
-        "Akkusativ",
-        "Nominativ",
-        "Dativ",
-        "Genitiv"
-      ],
-      "answer": "Akkusativ",
-      "note": "Es gibt einen Park hier처럼 남성은 einen이 됩니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "man-pronoun",
-      "question": "부정대명사 man의 동사 활용은?",
-      "choices": [
-        "항상 3인칭 단수",
-        "항상 복수",
-        "1인칭 단수",
-        "문맥에 따라 다르다"
-      ],
-      "answer": "항상 3인칭 단수",
-      "note": "Man spricht hier Deutsch입니다. 소문자 man은 der Mann(남자)과 전혀 다른 단어입니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "etwas-neues",
-      "question": "「새로운 것」을 독일어로 쓰면?",
-      "choices": [
-        "etwas Neues",
-        "etwas Neue",
-        "etwas Neuer",
-        "etwas Neuen"
-      ],
-      "answer": "etwas Neues",
-      "note": "etwas·nichts 뒤 형용사는 무관사 규칙으로 항상 -es가 됩니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "denen-dative-plural",
-      "question": "지시·관계대명사에서 정관사와 형태가 다른 자리는?",
-      "choices": [
-        "Dativ 복수 — denen",
-        "Nominativ 남성",
-        "Akkusativ 여성",
-        "Genitiv 중성"
-      ],
-      "answer": "Dativ 복수 — denen",
-      "note": "관사는 den이지만 대명사는 denen입니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "pronoun-order",
-      "question": "대명사가 둘 나올 때의 어순은?",
-      "choices": [
-        "Akkusativ → Dativ",
-        "Dativ → Akkusativ",
-        "성에 따라 다르다",
-        "자유롭다"
-      ],
-      "answer": "Akkusativ → Dativ",
-      "note": "Ich gebe es ihm입니다. 명사끼리일 때(Dativ→Akkusativ)와 정반대입니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "possessive-standalone",
-      "question": "「그건 내 거야」를 독일어로 흔히 쓰면?",
-      "choices": [
-        "Das ist meins.",
-        "Das ist mein.",
-        "Das ist meiner Buch.",
-        "Das ist meine."
-      ],
-      "answer": "Das ist meins.",
-      "note": "독립형은 der-Wörter 어미를 따릅니다 — meiner(남)/meine(여)/meins(중).",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "relative-case-rule",
-      "question": "독일어 관계대명사의 성과 격은 각각 어디서 오나요?",
-      "choices": [
-        "성은 선행사, 격은 관계절 안의 역할",
-        "둘 다 선행사",
-        "둘 다 관계절",
-        "성은 관계절, 격은 선행사"
-      ],
-      "answer": "성은 선행사, 격은 관계절 안의 역할",
-      "note": "Der Mann, dem ich helfe — helfen이 Dativ를 요구해 dem이 됩니다.",
-      "source": "독일어_대명사"
-    },
-    {
-      "id": "coordinating-no-inversion",
-      "question": "und·aber·denn 같은 등위접속사가 어순에 미치는 영향은?",
-      "choices": [
-        "없다 — 0번 자리 취급",
-        "동사를 끝으로 보낸다",
-        "동사를 도치시킨다",
-        "주어를 생략시킨다"
-      ],
-      "answer": "없다 — 0번 자리 취급",
-      "note": "denn(등위)과 weil(종속)은 뜻이 같아도 어순이 다릅니다.",
-      "source": "독일어_접속사"
-    },
-    {
-      "id": "aber-vs-sondern",
-      "question": "sondern을 쓸 수 있는 조건은?",
-      "choices": [
-        "앞 문장이 부정이고 그것을 정정할 때",
-        "앞 문장이 긍정일 때",
-        "이유를 말할 때",
-        "선택지를 나열할 때"
-      ],
-      "answer": "앞 문장이 부정이고 그것을 정정할 때",
-      "note": "Das ist nicht rot, sondern blau입니다. 단순 대조는 aber를 씁니다.",
-      "source": "독일어_접속사"
-    },
-    {
-      "id": "damit-vs-um-zu",
-      "question": "damit과 um…zu를 가르는 기준은?",
-      "choices": [
-        "주절과 종속절의 주어가 같은가",
-        "격식도",
-        "시제",
-        "동사의 종류"
-      ],
-      "answer": "주절과 종속절의 주어가 같은가",
-      "note": "주어가 같으면 um…zu, 다르면 damit입니다.",
-      "source": "독일어_접속사"
-    },
-    {
-      "id": "subordinate-clause-first",
-      "question": "종속절이 문장 맨 앞에 오면 주절은?",
-      "choices": [
-        "동사가 콤마 바로 뒤에 온다",
-        "주어가 콤마 바로 뒤에 온다",
-        "동사가 끝으로 간다",
-        "어순이 바뀌지 않는다"
-      ],
-      "answer": "동사가 콤마 바로 뒤에 온다",
-      "note": "Weil es regnet, bleibe ich zu Hause — 종속절 전체가 1번 자리를 차지합니다.",
-      "source": "독일어_접속사"
-    },
-    {
-      "id": "weder-noch",
-      "question": "weder…noch를 쓸 때 주의할 점은?",
-      "choices": [
-        "이미 부정이라 nicht를 겹쳐 쓰지 않는다",
-        "항상 복수 동사를 쓴다",
-        "반드시 문장 앞에 온다",
-        "종속절을 만든다"
-      ],
-      "answer": "이미 부정이라 nicht를 겹쳐 쓰지 않는다",
-      "note": "Weder er noch sie hat es gewusst입니다.",
-      "source": "독일어_접속사"
-    },
-    {
-      "id": "conjunctional-adverb",
-      "question": "deshalb·trotzdem 같은 접속부사의 어순 특징은?",
-      "choices": [
-        "1번 자리를 차지해 동사가 도치된다",
-        "어순에 영향이 없다",
-        "동사를 끝으로 보낸다",
-        "주어를 생략한다"
-      ],
-      "answer": "1번 자리를 차지해 동사가 도치된다",
-      "note": "Es regnet, deshalb bleibe ich zu Hause입니다. 등위접속사와 정반대로 움직입니다.",
-      "source": "독일어_접속사"
-    },
-    {
-      "id": "relative-was",
-      "question": "「Das ist alles, ___ ich weiß」에 맞는 관계대명사는?",
-      "choices": [
-        "was",
-        "das",
-        "der",
-        "dem"
-      ],
-      "answer": "was",
-      "note": "alles·etwas·nichts·das·최상급·문장 전체가 선행사면 was를 씁니다.",
-      "source": "독일어_관계문"
-    },
-    {
-      "id": "relative-wo-proper-noun",
-      "question": "「Berlin, ___ ich wohne, ist groß」에 맞는 것은?",
-      "choices": [
-        "wo",
-        "in dem",
-        "in der",
-        "das"
-      ],
-      "answer": "wo",
-      "note": "고유명사는 관사가 없어 der/die/das로 못 받습니다. 그래서 wo가 필수입니다.",
-      "source": "독일어_관계문"
-    },
-    {
-      "id": "free-relative-wer",
-      "question": "「Wer zu spät kommt, den bestraft das Leben」의 wer는?",
-      "choices": [
-        "선행사 없이 「~하는 사람」을 뜻하는 자유 관계문",
-        "앞 문장 전체를 받는 관계대명사",
-        "「누가」를 묻는 의문사를 그대로 쓴 것",
-        "두 문장을 잇기만 하는 접속사"
-      ],
-      "answer": "선행사 없이 「~하는 사람」을 뜻하는 자유 관계문",
-      "note": "was의 사람 버전입니다. 주절에서 der/den/dem으로 다시 받습니다.",
-      "source": "독일어_관계문"
-    },
-    {
-      "id": "dessen-deren",
-      "question": "「Die Frau, ___ Sohn hier arbeitet」에 맞는 것은?",
-      "choices": [
-        "deren",
-        "dessen",
-        "derer",
-        "der"
-      ],
-      "answer": "deren",
-      "note": "여성·복수는 deren, 남성·중성은 dessen입니다. 뒤 명사에는 관사를 붙이지 않습니다.",
-      "source": "독일어_관계문"
-    },
-    {
-      "id": "relative-preposition-front",
-      "question": "관계절 안의 전치사는 어디에 오나요?",
-      "choices": [
-        "관계대명사 바로 앞",
-        "절의 맨 끝",
-        "동사 앞",
-        "생략한다"
-      ],
-      "answer": "관계대명사 바로 앞",
-      "note": "mit dem ich spreche입니다. 영어처럼 문장 끝에 남길 수 없습니다.",
-      "source": "독일어_관계문"
-    },
-    {
-      "id": "konjunktiv-wuerde",
-      "question": "Konjunktiv II의 가장 실용적인 형태는?",
-      "choices": [
-        "würde + 원형",
-        "werden + 원형",
-        "hatte + 과거분사",
-        "war + 원형"
-      ],
-      "answer": "würde + 원형",
-      "note": "Futur I(werden+원형)와 구조가 같고 뜻만 가정·비현실입니다.",
-      "source": "독일어_접속법"
-    },
-    {
-      "id": "waere-haette",
-      "question": "sein·haben의 Konjunktiv II 형태는?",
-      "choices": [
-        "wäre · hätte",
-        "würde sein · würde haben",
-        "war · hatte",
-        "sei · habe"
-      ],
-      "answer": "wäre · hätte",
-      "note": "würde+원형보다 이쪽이 훨씬 자주 쓰입니다.",
-      "source": "독일어_접속법"
-    },
-    {
       "id": "predicative-no-ending",
       "question": "「Der Mann ist groß」에서 groß에 어미가 안 붙는 이유는?",
       "choices": [
@@ -1731,84 +1653,6 @@
       "source": "독일어_형용사"
     },
     {
-      "id": "ordinal-irregular-de",
-      "question": "drei의 서수사는?",
-      "choices": [
-        "dritte",
-        "dreite",
-        "dreiste",
-        "drittste"
-      ],
-      "answer": "dritte",
-      "note": "1(erste)·3(dritte)·7(siebte)·8(achte)가 불규칙입니다. 나머지는 -te/-ste를 붙입니다.",
-      "source": "독일어_숫자와_시간"
-    },
-    {
-      "id": "date-am-dativ",
-      "question": "「5월 3일에」를 독일어로 쓰면?",
-      "choices": [
-        "am dritten Mai",
-        "der dritte Mai",
-        "an dritte Mai",
-        "im dritten Mai"
-      ],
-      "answer": "am dritten Mai",
-      "note": "am = an dem이라 Dativ 어미가 붙습니다. 날짜를 말할 때는 der dritte Mai입니다.",
-      "source": "독일어_숫자와_시간"
-    },
-    {
-      "id": "german-decimal",
-      "question": "독일어에서 1.000.000,50이 뜻하는 것은?",
-      "choices": [
-        "백만 점 오영 — 마침표가 천단위, 쉼표가 소수점",
-        "1.00000050",
-        "천 점 영영영오",
-        "표기 오류"
-      ],
-      "answer": "백만 점 오영 — 마침표가 천단위, 쉼표가 소수점",
-      "note": "영어와 정확히 반대입니다.",
-      "source": "독일어_숫자와_시간"
-    },
-    {
-      "id": "million-noun",
-      "question": "hundert·tausend와 달리 Million을 띄어 쓰는 이유는?",
-      "choices": [
-        "명사라서",
-        "외래어라서",
-        "복수라서",
-        "격이 달라서"
-      ],
-      "answer": "명사라서",
-      "note": "eine Million·zwei Millionen처럼 관사와 복수 어미가 붙습니다.",
-      "source": "독일어_숫자와_시간"
-    },
-    {
-      "id": "seit-vs-fuer",
-      "question": "「1년째 여기 살고 있다」에 맞는 전치사는?",
-      "choices": [
-        "seit",
-        "für",
-        "vor",
-        "in"
-      ],
-      "answer": "seit",
-      "note": "seit는 지금도 이어지는 기간, für는 끝난 기간입니다.",
-      "source": "독일어_숫자와_시간"
-    },
-    {
-      "id": "vor-in-time",
-      "question": "「일주일 후에」를 독일어로 쓰면?",
-      "choices": [
-        "in einer Woche",
-        "vor einer Woche",
-        "für eine Woche",
-        "seit einer Woche"
-      ],
-      "answer": "in einer Woche",
-      "note": "vor는 과거(~전에), in은 미래(~후에)이며 둘 다 Dativ를 씁니다.",
-      "source": "독일어_숫자와_시간"
-    },
-    {
       "id": "tekamolo",
       "question": "독일어 부사 어순 TeKaMoLo의 순서는?",
       "choices": [
@@ -1874,121 +1718,199 @@
       "source": "독일어_부사"
     },
     {
-      "id": "indirect-question-de",
-      "question": "「Wann kommst du?」를 간접의문문으로 바꾸면 동사는 어디로 가나요?",
+      "id": "genitive-prepositions",
+      "question": "다음 중 Genitiv를 요구하는 전치사는?",
       "choices": [
-        "절의 맨 끝",
-        "두 번째 자리",
-        "맨 앞",
-        "주어 앞"
+        "während",
+        "mit",
+        "für",
+        "bei"
       ],
-      "answer": "절의 맨 끝",
-      "note": "Ich weiß nicht, wann du kommst — 종속절의 V-Letzt 규칙이 그대로 적용됩니다.",
-      "source": "독일어_간접의문문"
+      "answer": "während",
+      "note": "trotz·wegen·statt도 같습니다. 구어에서 wegen은 Dativ로도 흔히 씁니다.",
+      "source": "독일어_전치사"
     },
     {
-      "id": "ob-yes-no",
-      "question": "의문사가 없는 예·아니오 의문문을 간접화할 때 붙이는 것은?",
+      "id": "gegenueber-position",
+      "question": "대명사와 함께 쓸 때 gegenüber의 자리는?",
       "choices": [
-        "ob",
-        "dass",
-        "wenn",
-        "weil"
+        "대명사 뒤",
+        "대명사 앞",
+        "문장 끝",
+        "동사 앞"
       ],
-      "answer": "ob",
-      "note": "Ich weiß nicht, ob du kommst입니다. 여기서도 동사는 끝으로 갑니다.",
-      "source": "독일어_간접의문문"
+      "answer": "대명사 뒤",
+      "note": "명사와는 앞뒤 둘 다 가능하지만 대명사와는 뒤가 표준입니다 — mir gegenüber.",
+      "source": "독일어_전치사"
     },
     {
-      "id": "indirect-politeness-de",
-      "question": "「Können Sie mir sagen, wo der Bahnhof ist?」가 더 공손한 이유는?",
+      "id": "entlang-case",
+      "question": "「den Fluss entlang」에서 entlang이 요구하는 격은?",
       "choices": [
-        "질문을 다른 문장으로 한 번 감쌌기 때문",
-        "존댓말이라서",
-        "의문사를 썼기 때문",
-        "길기 때문"
+        "Akkusativ",
+        "Dativ",
+        "Genitiv",
+        "Nominativ"
       ],
-      "answer": "질문을 다른 문장으로 한 번 감쌌기 때문",
-      "note": "한국어 「어디 있는지 여쭤봐도 될까요?」와 같은 원리입니다.",
-      "source": "독일어_간접의문문"
+      "answer": "Akkusativ",
+      "note": "명사 뒤가 표준입니다. 앞에 오면 Genitiv가 됩니다(entlang des Flusses).",
+      "source": "독일어_전치사"
     },
     {
-      "id": "welches-der-word",
-      "question": "welcher/welche/welches가 따르는 어미 패턴은?",
+      "id": "bis-combination",
+      "question": "장소를 말할 때 bis는 어떻게 쓰나요?",
       "choices": [
-        "정관사 der/die/das",
-        "부정관사 ein",
-        "형용사 강변화",
-        "변하지 않는다"
+        "다른 전치사와 결합해 그 격을 따른다",
+        "항상 Akkusativ",
+        "항상 Dativ",
+        "항상 Genitiv"
       ],
-      "answer": "정관사 der/die/das",
-      "note": "der→welcher처럼 어간만 welch-로 바꾸면 됩니다. der-Wörter 계열입니다.",
-      "source": "독일어_의문관사"
+      "answer": "다른 전치사와 결합해 그 격을 따른다",
+      "note": "bis zum Bahnhof·bis nach Berlin입니다. 시간 표현은 bis 단독으로 씁니다.",
+      "source": "독일어_전치사"
     },
     {
-      "id": "was-fuer-ein",
-      "question": "welches와 was für ein의 차이는?",
+      "id": "freuen-auf-ueber",
+      "question": "sich freuen auf와 sich freuen über의 차이는?",
       "choices": [
-        "정해진 선택지 중 고르기와 종류·성질 묻기",
-        "말에서 쓰느냐 글에서 쓰느냐",
-        "사람에게 쓰느냐 사물에게 쓰느냐",
-        "단수에 쓰느냐 복수에 쓰느냐"
+        "미래를 기대하는 것과 이미 일어난 일을 기뻐하는 것",
+        "혼자 기뻐하는 것과 남과 함께 기뻐하는 것",
+        "잠깐 스치는 기쁨과 오래 가는 기쁨",
+        "말로 드러내는 것과 속으로만 느끼는 것"
       ],
-      "answer": "정해진 선택지 중 고르기와 종류·성질 묻기",
-      "note": "welches는 der-Wörter, was für ein은 ein-Wörter라 형태 차이가 의미 차이와 그대로 대응합니다.",
-      "source": "독일어_의문관사"
+      "answer": "미래를 기대하는 것과 이미 일어난 일을 기뻐하는 것",
+      "note": "Ich freue mich auf die Ferien(기대) / über das Geschenk(기쁨)입니다.",
+      "source": "독일어_전치사"
     },
     {
-      "id": "was-fuer-eins",
-      "question": "was für ein에서 명사를 생략하면 ein은?",
+      "id": "da-compound",
+      "question": "「Ich warte auf es」 대신 쓰는 형태는?",
       "choices": [
-        "eins가 된다",
-        "ein 그대로",
-        "eine가 된다",
-        "사라진다"
+        "Ich warte darauf.",
+        "Ich warte aufes.",
+        "Ich warte es auf.",
+        "Ich warte worauf."
       ],
-      "answer": "eins가 된다",
-      "note": "ein-Wörter가 명사 없이 홀로 설 때 -s를 붙이는 규칙입니다(meins와 같은 패턴). welches는 그대로입니다.",
-      "source": "독일어_의문관사"
+      "answer": "Ich warte darauf.",
+      "note": "사물 대명사는 da(r)+전치사 복합어로 받습니다. 사람이면 auf ihn을 씁니다.",
+      "source": "독일어_전치사"
     },
     {
-      "id": "ver-prefix",
-      "question": "접두사 ver-가 더하는 대표적 뉘앙스가 아닌 것은?",
+      "id": "wo-compound-question",
+      "question": "사물에 대해 「무엇을 기다리니?」를 묻는 형태는?",
       "choices": [
-        "존경",
-        "의미 반전 (kaufen→verkaufen)",
-        "완전히·끝까지",
-        "잘못됨"
+        "Worauf wartest du?",
+        "Auf wen wartest du?",
+        "Was wartest du auf?",
+        "Wem wartest du?"
       ],
-      "answer": "존경",
-      "note": "versprechen·verstehen·verkaufen처럼 원래 뜻에서 벗어난 변형을 만듭니다.",
-      "source": "독일어_조어법"
+      "answer": "Worauf wartest du?",
+      "note": "사물은 wo(r)+전치사, 사람은 전치사+wen/wem입니다.",
+      "source": "독일어_전치사"
     },
     {
-      "id": "be-prefix",
-      "question": "접두사 be-의 대표적 기능은?",
+      "id": "um-zu",
+      "question": "「독일에서 일하기 위해 독일어를 배운다」의 구조는?",
       "choices": [
-        "전치사를 없애고 목적어를 직접 받는 타동사로 만든다",
-        "동사를 명사로 만든다",
-        "분리동사로 만든다",
-        "부정을 만든다"
+        "um … zu + 원형",
+        "ohne … zu + 원형",
+        "statt … zu + 원형",
+        "damit + 원형"
       ],
-      "answer": "전치사를 없애고 목적어를 직접 받는 타동사로 만든다",
-      "note": "antworten auf → beantworten처럼 전치사 없이 4격을 바로 받습니다.",
-      "source": "독일어_조어법"
+      "answer": "um … zu + 원형",
+      "note": "주어가 주절과 같을 때 씁니다. 분리동사는 zu가 접두사와 어간 사이에 들어갑니다(einzukaufen).",
+      "source": "독일어_전치사"
     },
     {
-      "id": "wortbildung-three",
-      "question": "독일어에서 새 단어를 만드는 세 방법은?",
+      "id": "dank-vs-wegen",
+      "question": "dank와 wegen의 뉘앙스 차이는?",
       "choices": [
-        "합성 · 파생 · 전환",
-        "굴절 · 축약 · 차용",
-        "합성 · 굴절 · 도치",
-        "파생 · 도치 · 차용"
+        "dank는 긍정적 원인에 쓴다",
+        "dank가 더 격식이다",
+        "wegen은 미래에만 쓴다",
+        "차이가 없다"
       ],
-      "answer": "합성 · 파생 · 전환",
-      "note": "전환은 형태를 안 바꾸고 품사만 바꾸는 것입니다(laufen → das Laufen).",
-      "source": "독일어_조어법"
+      "answer": "dank는 긍정적 원인에 쓴다",
+      "note": "Dank deiner Hilfe…처럼 씁니다. wegen은 중립·부정적 원인도 받습니다.",
+      "source": "독일어_전치사"
+    },
+    {
+      "id": "coordinating-no-inversion",
+      "question": "und·aber·denn 같은 등위접속사가 어순에 미치는 영향은?",
+      "choices": [
+        "없다 — 0번 자리 취급",
+        "동사를 끝으로 보낸다",
+        "동사를 도치시킨다",
+        "주어를 생략시킨다"
+      ],
+      "answer": "없다 — 0번 자리 취급",
+      "note": "denn(등위)과 weil(종속)은 뜻이 같아도 어순이 다릅니다.",
+      "source": "독일어_접속사"
+    },
+    {
+      "id": "aber-vs-sondern",
+      "question": "sondern을 쓸 수 있는 조건은?",
+      "choices": [
+        "앞 문장이 부정이고 그것을 정정할 때",
+        "앞 문장이 긍정일 때",
+        "이유를 말할 때",
+        "선택지를 나열할 때"
+      ],
+      "answer": "앞 문장이 부정이고 그것을 정정할 때",
+      "note": "Das ist nicht rot, sondern blau입니다. 단순 대조는 aber를 씁니다.",
+      "source": "독일어_접속사"
+    },
+    {
+      "id": "damit-vs-um-zu",
+      "question": "damit과 um…zu를 가르는 기준은?",
+      "choices": [
+        "주절과 종속절의 주어가 같은가",
+        "격식도",
+        "시제",
+        "동사의 종류"
+      ],
+      "answer": "주절과 종속절의 주어가 같은가",
+      "note": "주어가 같으면 um…zu, 다르면 damit입니다.",
+      "source": "독일어_접속사"
+    },
+    {
+      "id": "subordinate-clause-first",
+      "question": "종속절이 문장 맨 앞에 오면 주절은?",
+      "choices": [
+        "동사가 콤마 바로 뒤에 온다",
+        "주어가 콤마 바로 뒤에 온다",
+        "동사가 끝으로 간다",
+        "어순이 바뀌지 않는다"
+      ],
+      "answer": "동사가 콤마 바로 뒤에 온다",
+      "note": "Weil es regnet, bleibe ich zu Hause — 종속절 전체가 1번 자리를 차지합니다.",
+      "source": "독일어_접속사"
+    },
+    {
+      "id": "weder-noch",
+      "question": "weder…noch를 쓸 때 주의할 점은?",
+      "choices": [
+        "이미 부정이라 nicht를 겹쳐 쓰지 않는다",
+        "항상 복수 동사를 쓴다",
+        "반드시 문장 앞에 온다",
+        "종속절을 만든다"
+      ],
+      "answer": "이미 부정이라 nicht를 겹쳐 쓰지 않는다",
+      "note": "Weder er noch sie hat es gewusst입니다.",
+      "source": "독일어_접속사"
+    },
+    {
+      "id": "conjunctional-adverb",
+      "question": "deshalb·trotzdem 같은 접속부사의 어순 특징은?",
+      "choices": [
+        "1번 자리를 차지해 동사가 도치된다",
+        "어순에 영향이 없다",
+        "동사를 끝으로 보낸다",
+        "주어를 생략한다"
+      ],
+      "answer": "1번 자리를 차지해 동사가 도치된다",
+      "note": "Es regnet, deshalb bleibe ich zu Hause입니다. 등위접속사와 정반대로 움직입니다.",
+      "source": "독일어_접속사"
     },
     {
       "id": "dativ-verbs-list",
@@ -2041,175 +1963,6 @@
       "answer": "mir",
       "note": "별도 목적어(die Hände)가 있으면 재귀대명사가 Dativ로 밀립니다. Ich wasche mich는 전신을 씻는 것입니다.",
       "source": "독일어_동사_격지배"
-    },
-    {
-      "id": "nur-bahnhof",
-      "question": "「Ich verstehe nur Bahnhof」의 뜻은?",
-      "choices": [
-        "무슨 말인지 하나도 모르겠다",
-        "기차역에 가고 싶다",
-        "역만 알고 있다",
-        "이해했다"
-      ],
-      "answer": "무슨 말인지 하나도 모르겠다",
-      "note": "1차대전 병사들이 집에 갈 기차역만 생각했다는 데서 왔다는 설이 있습니다.",
-      "source": "독일어_관용구"
-    },
-    {
-      "id": "hund-begraben",
-      "question": "「Da liegt der Hund begraben」의 뜻은?",
-      "choices": [
-        "바로 그게 문제의 핵심이다",
-        "개를 묻었다",
-        "일이 끝났다",
-        "비밀이 있다"
-      ],
-      "answer": "바로 그게 문제의 핵심이다",
-      "note": "보물을 묻은 자리를 개가 지킨다는 옛 미신에서 「진짜 중요한 게 숨겨진 자리」로 확장됐습니다.",
-      "source": "독일어_관용구"
-    },
-    {
-      "id": "tomaten-augen",
-      "question": "「Tomaten auf den Augen haben」의 뜻은?",
-      "choices": [
-        "눈앞에 있는 걸 못 보다",
-        "눈이 빨갛다",
-        "울고 있다",
-        "요리를 잘하다"
-      ],
-      "answer": "눈앞에 있는 걸 못 보다",
-      "note": "한국어 「눈에 뭐 씌었나」와 쓰임새가 거의 같습니다.",
-      "source": "독일어_관용구"
-    },
-    {
-      "id": "vorgangs-vs-zustand",
-      "question": "Die Tür wird geöffnet과 Die Tür ist geöffnet의 차이는?",
-      "choices": [
-        "열리는 중인 과정과 열려 있는 상태",
-        "말할 때 쓰는 꼴과 글에서 쓰는 꼴",
-        "이미 열린 문과 앞으로 열릴 문",
-        "행위자를 밝힌 것과 감춘 것"
-      ],
-      "answer": "열리는 중인 과정과 열려 있는 상태",
-      "note": "werden+과거분사는 Vorgangspassiv(과정), sein+과거분사는 Zustandspassiv(상태)입니다. 한국어 「~되고 있다」와 「~되어 있다」에 대응합니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "zustandspassiv-vs-adjektiv",
-      "question": "Die Tür ist geöffnet과 Die Tür ist offen은 무엇이 다른가요?",
-      "choices": [
-        "동사의 과거분사와 순수 형용사",
-        "현재 시제와 과거 시제",
-        "구어에서 쓰는 꼴과 문어에서 쓰는 꼴",
-        "강조하는 말과 담담하게 말하는 꼴"
-      ],
-      "answer": "동사의 과거분사와 순수 형용사",
-      "note": "뜻은 비슷하지만 geöffnet은 öffnen의 과거분사라 상태수동이고, offen은 처음부터 형용사입니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "unpersoenliches-passiv",
-      "question": "목적어가 없는 자동사를 수동으로 만들 때 주어 자리에 오는 것은?",
-      "choices": [
-        "형식 주어 es",
-        "형식 주어 man",
-        "행위자를 그대로 둔다",
-        "주어 없이 동사만 쓴다"
-      ],
-      "answer": "형식 주어 es",
-      "note": "Man tanzt hier viel이 Es wird hier viel getanzt가 됩니다. 가리키는 대상이 없는 es입니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "passiv-es-drop",
-      "question": "Es wird hier viel getanzt에서 es가 사라지는 때는?",
-      "choices": [
-        "다른 요소가 1번 자리에 올 때",
-        "행위자를 밝힐 때",
-        "부정문으로 바꿀 때",
-        "화법조동사가 들어갈 때"
-      ],
-      "answer": "다른 요소가 1번 자리에 올 때",
-      "note": "Hier wird viel getanzt처럼 1번 자리가 차면 es가 빠집니다. V2 법칙에 따른 자리 다툼입니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "modal-passiv",
-      "question": "Das muss gemacht werden에서 문장 끝에 오는 것은?",
-      "choices": [
-        "과거분사 + werden 원형",
-        "werden 원형 + 과거분사",
-        "과거분사 + sein 원형",
-        "화법조동사 원형만"
-      ],
-      "answer": "과거분사 + werden 원형",
-      "note": "과거분사와 werden 원형이 하나의 「수동 원형」처럼 붙습니다. Ich kann das machen의 machen 자리입니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "sich-lassen",
-      "question": "Die Tür lässt sich öffnen과 뜻이 같은 문장은?",
-      "choices": [
-        "Die Tür kann geöffnet werden",
-        "Die Tür muss geöffnet werden",
-        "Die Tür wird geöffnet",
-        "Die Tür ist geöffnet"
-      ],
-      "answer": "Die Tür kann geöffnet werden",
-      "note": "sich lassen+원형은 「~될 수 있다」를 간결하게 말하는 방법이라 구어에서 선호됩니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "sich-lassen-limit",
-      "question": "sich lassen + 원형이 대체할 수 없는 것은?",
-      "choices": [
-        "의무와 허가",
-        "가능성",
-        "과정 수동",
-        "상태 수동"
-      ],
-      "answer": "의무와 허가",
-      "note": "Das lässt sich machen müssen은 틀립니다. 의무는 Das muss gemacht werden으로 씁니다. sich lassen은 가능성만 대체합니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "bekommen-passiv",
-      "question": "Dativ 목적어를 주어로 올리는 수동태의 조동사는?",
-      "choices": [
-        "bekommen · kriegen",
-        "werden · sein",
-        "haben · sein",
-        "lassen · machen"
-      ],
-      "answer": "bekommen · kriegen",
-      "note": "Der Lehrer schenkt mir ein Buch가 Ich bekomme ein Buch geschenkt가 됩니다. kriegen은 구어체입니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "werden-passiv-case",
-      "question": "werden 수동태가 주어로 올릴 수 있는 목적어의 격은?",
-      "choices": [
-        "Akkusativ만",
-        "Dativ만",
-        "Genitiv만",
-        "Akkusativ와 Dativ 둘 다"
-      ],
-      "answer": "Akkusativ만",
-      "note": "Dativ 목적어는 bekommen 수동태로 올립니다. 격에 따라 조동사가 갈립니다.",
-      "source": "독일어_수동태"
-    },
-    {
-      "id": "bekommen-helfen",
-      "question": "Ich bekomme geholfen이 성립하는 이유는?",
-      "choices": [
-        "helfen이 Dativ를 요구하는 동사라서",
-        "helfen이 Akkusativ를 요구하는 동사라서",
-        "helfen이 자동사라 목적어가 없어서",
-        "helfen이 분리동사라서"
-      ],
-      "answer": "helfen이 Dativ를 요구하는 동사라서",
-      "note": "helfen의 Dativ 목적어가 주어 자리로 올라온 것입니다. geben·schenken·zeigen도 같습니다.",
-      "source": "독일어_수동태"
     },
     {
       "id": "stolz-auf-case",
@@ -2407,108 +2160,160 @@
       "source": "독일어_명사_전치사_지배"
     },
     {
-      "id": "jeden-montag-case",
-      "question": "jeden Montag의 격은?",
+      "id": "vorgangs-vs-zustand",
+      "question": "Die Tür wird geöffnet과 Die Tür ist geöffnet의 차이는?",
       "choices": [
-        "Akkusativ",
-        "Dativ",
-        "Genitiv",
-        "Nominativ"
+        "열리는 중인 과정과 열려 있는 상태",
+        "말할 때 쓰는 꼴과 글에서 쓰는 꼴",
+        "이미 열린 문과 앞으로 열릴 문",
+        "행위자를 밝힌 것과 감춘 것"
       ],
-      "answer": "Akkusativ",
-      "note": "jeder의 Akkusativ 남성 어미 -en입니다. 시간부사인데도 격이 드러나는 자리입니다.",
-      "source": "독일어_요일_시간대_표현"
+      "answer": "열리는 중인 과정과 열려 있는 상태",
+      "note": "werden+과거분사는 Vorgangspassiv(과정), sein+과거분사는 Zustandspassiv(상태)입니다. 한국어 「~되고 있다」와 「~되어 있다」에 대응합니다.",
+      "source": "독일어_수동태"
     },
     {
-      "id": "jeden-no-preposition",
-      "question": "「매주 월요일에」를 an jeden Montag으로 쓰면?",
+      "id": "zustandspassiv-vs-adjektiv",
+      "question": "Die Tür ist geöffnet과 Die Tür ist offen은 무엇이 다른가요?",
       "choices": [
-        "틀리다 — 전치사 없이 쓴다",
-        "맞다 — an이 있어야 시점이 된다",
-        "맞지만 구어에서만 쓴다",
-        "맞지만 격이 Dativ로 바뀐다"
+        "동사의 과거분사와 순수 형용사",
+        "현재 시제와 과거 시제",
+        "구어에서 쓰는 꼴과 문어에서 쓰는 꼴",
+        "강조하는 말과 담담하게 말하는 꼴"
       ],
-      "answer": "틀리다 — 전치사 없이 쓴다",
-      "note": "jeden Montag만으로 시간부사가 됩니다. Ich gehe jeden Montag ins Fitnessstudio.",
-      "source": "독일어_요일_시간대_표현"
+      "answer": "동사의 과거분사와 순수 형용사",
+      "note": "뜻은 비슷하지만 geöffnet은 öffnen의 과거분사라 상태수동이고, offen은 처음부터 형용사입니다.",
+      "source": "독일어_수동태"
     },
     {
-      "id": "jeden-gender",
-      "question": "Woche와 Wochenende에 붙는 형태는?",
+      "id": "unpersoenliches-passiv",
+      "question": "목적어가 없는 자동사를 수동으로 만들 때 주어 자리에 오는 것은?",
       "choices": [
-        "jede Woche · jedes Wochenende",
-        "jeden Woche · jeden Wochenende",
-        "jede Woche · jede Wochenende",
-        "jedes Woche · jedes Wochenende"
+        "형식 주어 es",
+        "형식 주어 man",
+        "행위자를 그대로 둔다",
+        "주어 없이 동사만 쓴다"
       ],
-      "answer": "jede Woche · jedes Wochenende",
-      "note": "der-Wörter 어미 규칙 그대로입니다. 여성은 jede, 중성은 jedes, 남성 Akkusativ는 jeden입니다.",
-      "source": "독일어_요일_시간대_표현"
+      "answer": "형식 주어 es",
+      "note": "Man tanzt hier viel이 Es wird hier viel getanzt가 됩니다. 가리키는 대상이 없는 es입니다.",
+      "source": "독일어_수동태"
     },
     {
-      "id": "s-adverb",
-      "question": "morgens·montags의 -s가 더하는 뜻은?",
+      "id": "passiv-es-drop",
+      "question": "Es wird hier viel getanzt에서 es가 사라지는 때는?",
       "choices": [
-        "습관적으로 되풀이된다",
-        "한 번만 일어난다",
-        "앞으로 일어날 것이다",
-        "방금 끝났다"
+        "다른 요소가 1번 자리에 올 때",
+        "행위자를 밝힐 때",
+        "부정문으로 바꿀 때",
+        "화법조동사가 들어갈 때"
       ],
-      "answer": "습관적으로 되풀이된다",
-      "note": "관사도 전치사도 없이 그 자체로 부사입니다. montags는 jeden Montag과 같은 뜻이면서 더 간결합니다.",
-      "source": "독일어_요일_시간대_표현"
+      "answer": "다른 요소가 1번 자리에 올 때",
+      "note": "Hier wird viel getanzt처럼 1번 자리가 차면 es가 빠집니다. V2 법칙에 따른 자리 다툼입니다.",
+      "source": "독일어_수동태"
     },
     {
-      "id": "morgen-vs-morgens",
-      "question": "Der Morgen과 morgens의 차이는?",
+      "id": "modal-passiv",
+      "question": "Das muss gemacht werden에서 문장 끝에 오는 것은?",
       "choices": [
-        "명사와 부사",
-        "단수와 복수",
-        "현재와 과거",
-        "격식체와 구어체"
+        "과거분사 + werden 원형",
+        "werden 원형 + 과거분사",
+        "과거분사 + sein 원형",
+        "화법조동사 원형만"
       ],
-      "answer": "명사와 부사",
-      "note": "Der Morgen ist schön은 관사가 필요하고 Morgens ist es kalt는 관사가 없습니다.",
-      "source": "독일어_요일_시간대_표현"
+      "answer": "과거분사 + werden 원형",
+      "note": "과거분사와 werden 원형이 하나의 「수동 원형」처럼 붙습니다. Ich kann das machen의 machen 자리입니다.",
+      "source": "독일어_수동태"
     },
     {
-      "id": "morgen-frueh",
-      "question": "「내일 아침」을 독일어로 뭐라고 하나요?",
+      "id": "sich-lassen",
+      "question": "Die Tür lässt sich öffnen과 뜻이 같은 문장은?",
       "choices": [
-        "morgen früh",
-        "morgen Morgen",
-        "morgens früh",
-        "am Morgen morgen"
+        "Die Tür kann geöffnet werden",
+        "Die Tür muss geöffnet werden",
+        "Die Tür wird geöffnet",
+        "Die Tür ist geöffnet"
       ],
-      "answer": "morgen früh",
-      "note": "morgen(내일, 부사)과 Morgen(아침, 명사)이 겹쳐서 생긴 예외입니다.",
-      "source": "독일어_요일_시간대_표현"
+      "answer": "Die Tür kann geöffnet werden",
+      "note": "sich lassen+원형은 「~될 수 있다」를 간결하게 말하는 방법이라 구어에서 선호됩니다.",
+      "source": "독일어_수동태"
     },
     {
-      "id": "heute-morgen-vs-morgens",
-      "question": "Heute Morgen과 Morgens의 차이는?",
+      "id": "sich-lassen-limit",
+      "question": "sich lassen + 원형이 대체할 수 없는 것은?",
       "choices": [
-        "오늘 하루의 시점과 매일의 습관",
-        "오전과 오후",
-        "격식체와 구어체",
-        "과거와 미래"
+        "의무와 허가",
+        "가능성",
+        "과정 수동",
+        "상태 수동"
       ],
-      "answer": "오늘 하루의 시점과 매일의 습관",
-      "note": "Heute Morgen habe ich Kaffee getrunken은 오늘만이고 Morgens trinke ich Kaffee는 매일입니다.",
-      "source": "독일어_요일_시간대_표현"
+      "answer": "의무와 허가",
+      "note": "Das lässt sich machen müssen은 틀립니다. 의무는 Das muss gemacht werden으로 씁니다. sich lassen은 가능성만 대체합니다.",
+      "source": "독일어_수동태"
     },
     {
-      "id": "montagabend-gender",
-      "question": "Montagabend의 성을 정하는 것은?",
+      "id": "bekommen-passiv",
+      "question": "Dativ 목적어를 주어로 올리는 수동태의 조동사는?",
       "choices": [
-        "뒤에 오는 Abend",
-        "앞에 오는 Montag",
-        "음절 수",
-        "언제나 중성이다"
+        "bekommen · kriegen",
+        "werden · sein",
+        "haben · sein",
+        "lassen · machen"
       ],
-      "answer": "뒤에 오는 Abend",
-      "note": "복합명사의 성은 마지막 명사가 정합니다. der Abend라서 der Montagabend입니다.",
-      "source": "독일어_요일_시간대_표현"
+      "answer": "bekommen · kriegen",
+      "note": "Der Lehrer schenkt mir ein Buch가 Ich bekomme ein Buch geschenkt가 됩니다. kriegen은 구어체입니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "werden-passiv-case",
+      "question": "werden 수동태가 주어로 올릴 수 있는 목적어의 격은?",
+      "choices": [
+        "Akkusativ만",
+        "Dativ만",
+        "Genitiv만",
+        "Akkusativ와 Dativ 둘 다"
+      ],
+      "answer": "Akkusativ만",
+      "note": "Dativ 목적어는 bekommen 수동태로 올립니다. 격에 따라 조동사가 갈립니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "bekommen-helfen",
+      "question": "Ich bekomme geholfen이 성립하는 이유는?",
+      "choices": [
+        "helfen이 Dativ를 요구하는 동사라서",
+        "helfen이 Akkusativ를 요구하는 동사라서",
+        "helfen이 자동사라 목적어가 없어서",
+        "helfen이 분리동사라서"
+      ],
+      "answer": "helfen이 Dativ를 요구하는 동사라서",
+      "note": "helfen의 Dativ 목적어가 주어 자리로 올라온 것입니다. geben·schenken·zeigen도 같습니다.",
+      "source": "독일어_수동태"
+    },
+    {
+      "id": "konjunktiv-wuerde",
+      "question": "Konjunktiv II의 가장 실용적인 형태는?",
+      "choices": [
+        "würde + 원형",
+        "werden + 원형",
+        "hatte + 과거분사",
+        "war + 원형"
+      ],
+      "answer": "würde + 원형",
+      "note": "Futur I(werden+원형)와 구조가 같고 뜻만 가정·비현실입니다.",
+      "source": "독일어_접속법"
+    },
+    {
+      "id": "waere-haette",
+      "question": "sein·haben의 Konjunktiv II 형태는?",
+      "choices": [
+        "wäre · hätte",
+        "würde sein · würde haben",
+        "war · hatte",
+        "sei · habe"
+      ],
+      "answer": "wäre · hätte",
+      "note": "würde+원형보다 이쪽이 훨씬 자주 쓰입니다.",
+      "source": "독일어_접속법"
     },
     {
       "id": "wuerde-vs-werden",
@@ -2680,6 +2485,188 @@
       "source": "독일어_접속법"
     },
     {
+      "id": "relative-was",
+      "question": "「Das ist alles, ___ ich weiß」에 맞는 관계대명사는?",
+      "choices": [
+        "was",
+        "das",
+        "der",
+        "dem"
+      ],
+      "answer": "was",
+      "note": "alles·etwas·nichts·das·최상급·문장 전체가 선행사면 was를 씁니다.",
+      "source": "독일어_관계문"
+    },
+    {
+      "id": "relative-wo-proper-noun",
+      "question": "「Berlin, ___ ich wohne, ist groß」에 맞는 것은?",
+      "choices": [
+        "wo",
+        "in dem",
+        "in der",
+        "das"
+      ],
+      "answer": "wo",
+      "note": "고유명사는 관사가 없어 der/die/das로 못 받습니다. 그래서 wo가 필수입니다.",
+      "source": "독일어_관계문"
+    },
+    {
+      "id": "free-relative-wer",
+      "question": "「Wer zu spät kommt, den bestraft das Leben」의 wer는?",
+      "choices": [
+        "선행사 없이 「~하는 사람」을 뜻하는 자유 관계문",
+        "앞 문장 전체를 받는 관계대명사",
+        "「누가」를 묻는 의문사를 그대로 쓴 것",
+        "두 문장을 잇기만 하는 접속사"
+      ],
+      "answer": "선행사 없이 「~하는 사람」을 뜻하는 자유 관계문",
+      "note": "was의 사람 버전입니다. 주절에서 der/den/dem으로 다시 받습니다.",
+      "source": "독일어_관계문"
+    },
+    {
+      "id": "dessen-deren",
+      "question": "「Die Frau, ___ Sohn hier arbeitet」에 맞는 것은?",
+      "choices": [
+        "deren",
+        "dessen",
+        "derer",
+        "der"
+      ],
+      "answer": "deren",
+      "note": "여성·복수는 deren, 남성·중성은 dessen입니다. 뒤 명사에는 관사를 붙이지 않습니다.",
+      "source": "독일어_관계문"
+    },
+    {
+      "id": "relative-preposition-front",
+      "question": "관계절 안의 전치사는 어디에 오나요?",
+      "choices": [
+        "관계대명사 바로 앞",
+        "절의 맨 끝",
+        "동사 앞",
+        "생략한다"
+      ],
+      "answer": "관계대명사 바로 앞",
+      "note": "mit dem ich spreche입니다. 영어처럼 문장 끝에 남길 수 없습니다.",
+      "source": "독일어_관계문"
+    },
+    {
+      "id": "fugenelement",
+      "question": "Geburtstag의 가운데 -s-를 뭐라 부르나요?",
+      "choices": [
+        "Fugenelement",
+        "Umlaut",
+        "Suffix",
+        "Präfix"
+      ],
+      "answer": "Fugenelement",
+      "note": "-ung·-heit·-keit·-tion으로 끝나는 여성 명사 뒤에는 거의 항상 -s-가 붙습니다.",
+      "source": "독일어_복합어"
+    },
+    {
+      "id": "fugen-n",
+      "question": "Straßenbahn(트램)의 가운데 -n-은 무엇인가요?",
+      "choices": [
+        "명사를 잇는 연결음",
+        "복수형 어미",
+        "Dativ 어미",
+        "형용사 어미"
+      ],
+      "answer": "명사를 잇는 연결음",
+      "note": "Sonnenschein도 같습니다. -s-와 -n- 중 무엇이 붙는지는 규칙보다 예외가 많아 외웁니다.",
+      "source": "독일어_복합어"
+    },
+    {
+      "id": "compound-parse",
+      "question": "긴 복합어는 어느 쪽부터 분해해 읽나요?",
+      "choices": [
+        "오른쪽부터",
+        "왼쪽부터",
+        "가운데부터",
+        "연결음 기준으로"
+      ],
+      "answer": "오른쪽부터",
+      "note": "맨 오른쪽이 의미의 핵심이자 문법 성의 기준입니다. Bundesgesundheitsministerium은 결국 Ministerium입니다.",
+      "source": "독일어_복합어"
+    },
+    {
+      "id": "compound-adjective-stem",
+      "question": "Schreibtisch(책상)의 앞부분 Schreib-는 무엇인가요?",
+      "choices": [
+        "동사 schreiben의 어간",
+        "명사 Schrift의 줄임",
+        "형용사",
+        "외래어"
+      ],
+      "answer": "동사 schreiben의 어간",
+      "note": "-en을 뗀 어간이 붙습니다. Schlafzimmer·Parkplatz도 같은 방식입니다.",
+      "source": "독일어_복합어"
+    },
+    {
+      "id": "compound-hyphen",
+      "question": "See-Elefant에 하이픈을 넣는 이유는?",
+      "choices": [
+        "같은 글자가 셋 연속되기 때문",
+        "고유명사이기 때문",
+        "너무 길기 때문",
+        "외래어이기 때문"
+      ],
+      "answer": "같은 글자가 셋 연속되기 때문",
+      "note": "Seeelefant가 되면 e가 셋입니다. 고유명사·약어·숫자가 섞일 때도 하이픈을 씁니다.",
+      "source": "독일어_복합어"
+    },
+    {
+      "id": "staubsaugen",
+      "question": "staubsaugen(청소기 돌리다)처럼 명사+동사로 만든 복합동사는?",
+      "choices": [
+        "분리동사처럼 앞부분이 문장 끝으로 간다",
+        "분리되지 않고 통째로 움직인다",
+        "항상 조동사와 함께 쓴다",
+        "명령형으로만 쓴다"
+      ],
+      "answer": "분리동사처럼 앞부분이 문장 끝으로 간다",
+      "note": "Ich sauge heute Staub. 앞부분에 강세가 있으면 분리입니다(STAUBsaugen, TEILnehmen).",
+      "source": "독일어_복합어"
+    },
+    {
+      "id": "ver-prefix",
+      "question": "접두사 ver-가 더하는 대표적 뉘앙스가 아닌 것은?",
+      "choices": [
+        "존경",
+        "의미 반전 (kaufen→verkaufen)",
+        "완전히·끝까지",
+        "잘못됨"
+      ],
+      "answer": "존경",
+      "note": "versprechen·verstehen·verkaufen처럼 원래 뜻에서 벗어난 변형을 만듭니다.",
+      "source": "독일어_조어법"
+    },
+    {
+      "id": "be-prefix",
+      "question": "접두사 be-의 대표적 기능은?",
+      "choices": [
+        "전치사를 없애고 목적어를 직접 받는 타동사로 만든다",
+        "동사를 명사로 만든다",
+        "분리동사로 만든다",
+        "부정을 만든다"
+      ],
+      "answer": "전치사를 없애고 목적어를 직접 받는 타동사로 만든다",
+      "note": "antworten auf → beantworten처럼 전치사 없이 4격을 바로 받습니다.",
+      "source": "독일어_조어법"
+    },
+    {
+      "id": "wortbildung-three",
+      "question": "독일어에서 새 단어를 만드는 세 방법은?",
+      "choices": [
+        "합성 · 파생 · 전환",
+        "굴절 · 축약 · 차용",
+        "합성 · 굴절 · 도치",
+        "파생 · 도치 · 차용"
+      ],
+      "answer": "합성 · 파생 · 전환",
+      "note": "전환은 형태를 안 바꾸고 품사만 바꾸는 것입니다(laufen → das Laufen).",
+      "source": "독일어_조어법"
+    },
+    {
       "id": "ent-prefix",
       "question": "접두사 ent-의 핵심 뜻은?",
       "choices": [
@@ -2849,121 +2836,134 @@
       "source": "독일어_조어법"
     },
     {
-      "id": "indirect-v-letzt",
-      "question": "간접의문문의 어순이 바뀌는 것이 새 규칙이 아닌 이유는?",
+      "id": "du-sie-criterion",
+      "question": "du와 Sie를 가르는 기준은?",
       "choices": [
-        "종속절 V-Letzt 규칙이 그대로 적용돼서",
-        "의문사가 접속사로 바뀌어서",
-        "주어가 생략돼서",
-        "동사가 두 개라서"
+        "관계가 얼마나 공식적인가",
+        "나이 차이가 얼마나 나는가",
+        "직급이 누가 높은가",
+        "대화 장소가 어디인가"
       ],
-      "answer": "종속절 V-Letzt 규칙이 그대로 적용돼서",
-      "note": "wann이 이끄는 절이 종속절이 되므로 동사가 끝으로 갑니다.",
-      "source": "독일어_간접의문문"
+      "answer": "관계가 얼마나 공식적인가",
+      "note": "동갑이라도 낯선 사람이면 Sie, 나이 차가 커도 가족이면 du입니다. 한국어와 다른 지점입니다.",
+      "source": "독일어_존댓말과_격식체"
     },
     {
-      "id": "ob-vs-w",
-      "question": "간접의문문에서 W-의문사와 ob를 가르는 기준은?",
+      "id": "duzen-anbieten",
+      "question": "「말 놓자」는 제안은 누가 먼저 하는 게 예의인가요?",
       "choices": [
-        "원래 질문에 의문사가 있었는가",
-        "정중한 자리인가",
-        "동사가 무엇인가",
-        "주어가 사람인가"
+        "나이·지위가 높은 쪽",
+        "나이·지위가 낮은 쪽",
+        "먼저 말을 꺼낸 쪽",
+        "누가 해도 상관없다"
       ],
-      "answer": "원래 질문에 의문사가 있었는가",
-      "note": "있으면 그대로 쓰고 없으면 ob를 새로 붙입니다. 둘 다 동사는 끝으로 갑니다.",
-      "source": "독일어_간접의문문"
+      "answer": "나이·지위가 높은 쪽",
+      "note": "Wollen wir uns duzen?이라고 묻습니다. 아랫사람이 먼저 제안하면 실례입니다.",
+      "source": "독일어_존댓말과_격식체"
     },
     {
-      "id": "ich-frage-mich",
-      "question": "「~인지 궁금해」에 해당하는 도입구는?",
+      "id": "politeness-ladder",
+      "question": "다음 중 가장 정중한 부탁 표현은?",
       "choices": [
-        "Ich frage mich, …",
-        "Ich weiß nicht, …",
-        "Weißt du, …?",
-        "Können Sie mir sagen, …?"
+        "Wären Sie so freundlich…?",
+        "Kannst du…?",
+        "Können Sie…?",
+        "Könnten Sie…?"
       ],
-      "answer": "Ich frage mich, …",
-      "note": "Ich weiß nicht은 모르겠다, Weißt du는 아느냐고 되묻는 자리입니다.",
-      "source": "독일어_간접의문문"
+      "answer": "Wären Sie so freundlich…?",
+      "note": "Können < Könnten < Würden < Wären so freundlich 순으로 올라갑니다. 접속법 II가 정중함의 도구입니다.",
+      "source": "독일어_존댓말과_격식체"
     },
     {
-      "id": "politeness-wrapping",
-      "question": "질문을 다른 문장으로 감싸면 공손해지는 원리와 같은 것은?",
+      "id": "email-greeting-de",
+      "question": "받는 사람을 모를 때 쓰는 독일어 이메일 첫인사는?",
       "choices": [
-        "스페인어 quisiera처럼 돌려 말하기",
-        "접속법으로 시제를 옮기기",
-        "존칭 대명사 쓰기",
-        "목소리를 낮추기"
+        "Sehr geehrte Damen und Herren,",
+        "Hallo zusammen,",
+        "Liebe Grüße,",
+        "Mit freundlichen Grüßen,"
       ],
-      "answer": "스페인어 quisiera처럼 돌려 말하기",
-      "note": "한국어 「역이 어디 있는지 여쭤봐도 될까요」와 같은 발상입니다.",
-      "source": "독일어_간접의문문"
+      "answer": "Sehr geehrte Damen und Herren,",
+      "note": "Mit freundlichen Grüßen은 맺음말입니다. 남성에게는 Sehr geehrter Herr, 여성에게는 Sehr geehrte Frau입니다.",
+      "source": "독일어_존댓말과_격식체"
     },
     {
-      "id": "welcher-der-word",
-      "question": "welcher가 따르는 어간 교체 규칙은?",
+      "id": "email-lowercase",
+      "question": "독일어 편지에서 첫인사 뒤 콤마 다음 문장은?",
       "choices": [
-        "정관사의 der·die·das를 welch-로 바꾼다",
-        "부정관사 ein에 -er을 붙인다",
-        "형용사 어미를 그대로 쓴다",
-        "격변화를 하지 않는다"
+        "소문자로 시작한다",
+        "대문자로 시작한다",
+        "줄을 비우고 대문자로 쓴다",
+        "규칙이 없다"
       ],
-      "answer": "정관사의 der·die·das를 welch-로 바꾼다",
-      "note": "der→welcher, die→welche, das→welches입니다. dieser와 같은 der-word 계열입니다.",
-      "source": "독일어_의문관사"
+      "answer": "소문자로 시작한다",
+      "note": "Sehr geehrter Herr Schmidt, ich schreibe… 처럼 ich가 소문자입니다.",
+      "source": "독일어_존댓말과_격식체"
     },
     {
-      "id": "was-fuer-invariable",
-      "question": "was für ein에서 격에 따라 변하는 부분은?",
+      "id": "formal-vocabulary-de",
+      "question": "bekommen(받다)의 격식체 표현은?",
       "choices": [
-        "ein만",
-        "was만",
-        "für만",
-        "was für 전체"
+        "erhalten",
+        "erwerben",
+        "mitteilen",
+        "beginnen"
       ],
-      "answer": "ein만",
-      "note": "Was für eine Farbe처럼 ein만 바뀝니다. was für 자체는 고정입니다.",
-      "source": "독일어_의문관사"
+      "answer": "erhalten",
+      "note": "격식체는 문법뿐 아니라 어휘도 갈립니다. sagen→mitteilen, kaufen→erwerben, anfangen→beginnen입니다.",
+      "source": "독일어_존댓말과_격식체"
     },
     {
-      "id": "was-fuer-plural",
-      "question": "복수명사에 was für를 쓸 때는?",
+      "id": "sich-befinden",
+      "question": "「Wo befinden Sie sich?」가 「Wo bist du?」와 다른 점은?",
       "choices": [
-        "ein 없이 was für만",
-        "was für eine",
-        "was für eins",
-        "was für einen"
+        "격식체 어휘와 존댓말을 쓴다",
+        "과거를 묻는다",
+        "여러 명에게 묻는다",
+        "장소가 아니라 이유를 묻는다"
       ],
-      "answer": "ein 없이 was für만",
-      "note": "Was für Bücher liest du?입니다. 복수에는 부정관사 자체가 없습니다.",
-      "source": "독일어_의문관사"
+      "answer": "격식체 어휘와 존댓말을 쓴다",
+      "note": "sich befinden은 sein의 격식체입니다. 공지·표지판·관공서 문서에서 이런 어휘가 몰려 나옵니다.",
+      "source": "독일어_존댓말과_격식체"
     },
     {
-      "id": "welches-vs-was-fuer-form",
-      "question": "welches와 was für ein의 형태 계열은?",
+      "id": "nur-bahnhof",
+      "question": "「Ich verstehe nur Bahnhof」의 뜻은?",
       "choices": [
-        "der-word와 ein-word",
-        "ein-word와 der-word",
-        "둘 다 der-word",
-        "둘 다 ein-word"
+        "무슨 말인지 하나도 모르겠다",
+        "기차역에 가고 싶다",
+        "역만 알고 있다",
+        "이해했다"
       ],
-      "answer": "der-word와 ein-word",
-      "note": "형태 차이가 「정해진 것 중 선택」과 「무한한 범주 중 성질」이라는 뜻 차이에 그대로 대응합니다.",
-      "source": "독일어_의문관사"
+      "answer": "무슨 말인지 하나도 모르겠다",
+      "note": "1차대전 병사들이 집에 갈 기차역만 생각했다는 데서 왔다는 설이 있습니다.",
+      "source": "독일어_관용구"
     },
     {
-      "id": "welches-alone",
-      "question": "명사를 생략해도 welches가 그대로인 이유는?",
+      "id": "hund-begraben",
+      "question": "「Da liegt der Hund begraben」의 뜻은?",
       "choices": [
-        "der-word라 원래 혼자 설 수 있어서",
-        "중성형이라서",
-        "의문사라서",
-        "격변화를 안 해서"
+        "바로 그게 문제의 핵심이다",
+        "개를 묻었다",
+        "일이 끝났다",
+        "비밀이 있다"
       ],
-      "answer": "der-word라 원래 혼자 설 수 있어서",
-      "note": "was für ein은 ein-word라 eins로 바뀝니다. 소유대명사 독립형 meins와 같은 패턴입니다.",
-      "source": "독일어_의문관사"
+      "answer": "바로 그게 문제의 핵심이다",
+      "note": "보물을 묻은 자리를 개가 지킨다는 옛 미신에서 「진짜 중요한 게 숨겨진 자리」로 확장됐습니다.",
+      "source": "독일어_관용구"
+    },
+    {
+      "id": "tomaten-augen",
+      "question": "「Tomaten auf den Augen haben」의 뜻은?",
+      "choices": [
+        "눈앞에 있는 걸 못 보다",
+        "눈이 빨갛다",
+        "울고 있다",
+        "요리를 잘하다"
+      ],
+      "answer": "눈앞에 있는 걸 못 보다",
+      "note": "한국어 「눈에 뭐 씌었나」와 쓰임새가 거의 같습니다.",
+      "source": "독일어_관용구"
     },
     {
       "id": "bahnhof-idiom-use",
