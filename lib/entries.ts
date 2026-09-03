@@ -31,13 +31,16 @@ export type Entry = {
 /**
  * 그 언어로 **출제 가능한** 개념만 추린다.
  * 단어가 없거나 정답 필드가 비어 있으면 조용히 빠진다. (spec.md §4)
+ *
+ * `track`은 카드에 낼 표기를 정할 때만 쓴다(lib/lang.ts) — HSK와 TOCFL처럼
+ * 트랙 둘이 언어 하나를 나눠 쓰는 자리가 있어서다. 생략하면 언어의 기본값이다.
  */
-export function entriesFor(lang: Language, concepts: Concept[]): Entry[] {
+export function entriesFor(lang: Language, concepts: Concept[], track?: TrackId): Entry[] {
   const entries: Entry[] = []
   for (const concept of concepts) {
     const word = concept.words[lang]
     if (!word) continue
-    const answer = answerOf(word, lang)
+    const answer = answerOf(word, lang, track)
     if (!answer) continue
     entries.push({ key: concept.slug, concept, word, lang, answer })
   }
@@ -47,18 +50,21 @@ export function entriesFor(lang: Language, concepts: Concept[]): Entry[] {
 /**
  * 그 **트랙**에서 출제 가능한 목록.
  *
- * 다섯 트랙은 언어만 보면 되는데 TOEIC은 한 겹 더 거른다 — TOEIC Service List에
- * 있는 단어만 낸다. `cat`·`rice`는 JLPT N5·HSK 1급으로는 제값을 하지만 TOEIC
- * 시험에는 나오지 않는다. 개념을 지우는 게 아니라 이 트랙에서만 빼는 것이다.
+ * 여섯 트랙은 언어만 보면 되는데 TOEIC과 TOCFL은 한 겹 더 거른다. TOEIC은
+ * TOEIC Service List에 있는 단어만 낸다 — `cat`·`rice`는 JLPT N5·HSK 1급으로는
+ * 제값을 하지만 TOEIC 시험에는 나오지 않는다. TOCFL도 같은 이유다 — 八千詞表에
+ * 없는 그림 명사(체크인 카운터 같은)까지 다 내면 시험에 안 나오는 낱말로 채워진다.
+ * 개념을 지우는 게 아니라 이 트랙에서만 빼는 것이다.
  *
  * 규칙이 여기 하나만 있어야 앱과 `pnpm check`와 `/debug`가 같은 수를 센다.
  */
 export function entriesForTrack(track: TrackId, concepts: Concept[]): Entry[] {
-  const entries = entriesFor(trackOf(track).language, concepts)
-  if (track !== 'toeic') return entries
+  const entries = entriesFor(trackOf(track).language, concepts, track)
+  const key = track === 'toeic' ? 'tsl' : track === 'tocfl' ? 'tocfl' : null
+  if (!key) return entries
   return entries.filter((entry) => {
-    const attributes = entry.word.attributes
-    return Boolean(attributes && 'tsl' in attributes && attributes.tsl)
+    const attributes = entry.word.attributes as Record<string, unknown> | undefined
+    return Boolean(attributes && key in attributes && attributes[key])
   })
 }
 

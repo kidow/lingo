@@ -19,6 +19,7 @@ import type {
   Question,
   TriviaQuestion,
 } from '@/lib/quiz'
+import type { TrackId } from '@/lib/track'
 import type { Language } from '@/lib/types'
 
 /**
@@ -39,6 +40,8 @@ export type AnswerHandler = (correct: boolean, picked: string) => void
 
 type Common = {
   lang: Language
+  /** zh처럼 트랙 둘이 언어를 나눠 쓸 때 카드에 낼 표기를 가른다 (lib/lang.ts) */
+  track: TrackId
   onAnswer?: AnswerHandler
   first?: boolean
   /**
@@ -79,10 +82,10 @@ export function Card({ question, ...rest }: { question: Question } & Common) {
 
 /* ── 0. 소개 — 판정 없음 ──────────────────────────────────────────── */
 
-function IntroCard({ question, lang, first }: { question: IntroQuestion } & Common) {
+function IntroCard({ question, lang, track, first }: { question: IntroQuestion } & Common) {
   const { concept, word, answer } = question.entry
-  const aside = asideOf(word, lang)
-  const level = levelOf(word)
+  const aside = asideOf(word, lang, track)
+  const level = levelOf(word, track)
   const [example] = examplesOf(word)
 
   return (
@@ -261,7 +264,15 @@ function ChoiceCard({ question, lang, onAnswer, first, pick, active }: { questio
  * 위쪽 그림 자리에는 **소리 버튼만** 놓는다. 정답 그림을 띄워 놓으면 듣지 않고
  * 풀 수 있다. 답한 뒤에는 그 자리에 낱말과 뜻과 예문이 들어온다 (`ListenBrief`).
  */
-function ListenCard({ question, lang, onAnswer, first, pick, active }: { question: ListenQuestion } & Common) {
+function ListenCard({
+  question,
+  lang,
+  track,
+  onAnswer,
+  first,
+  pick,
+  active,
+}: { question: ListenQuestion } & Common) {
   const { entry, options } = question
   const { concept, answer } = entry
   const [picked, setPicked] = useState<string | null>(pick ?? null)
@@ -273,7 +284,7 @@ function ListenCard({ question, lang, onAnswer, first, pick, active }: { questio
     <FeedCard>
       <CardImage>
         {answered ? (
-          <ListenBrief entry={entry} lang={lang} correct={correct} gaveUp={gaveUp} />
+          <ListenBrief entry={entry} lang={lang} track={track} correct={correct} gaveUp={gaveUp} />
         ) : (
           <div className="grid h-full place-items-center">
             {/* 답하기 전에는 이 버튼이 문제 전체다. 눌러 다시 들을 수 있고, 두 번째부터는 느리게 나온다 */}
@@ -355,16 +366,18 @@ function ListenCard({ question, lang, onAnswer, first, pick, active }: { questio
 function ListenBrief({
   entry,
   lang,
+  track,
   correct,
   gaveUp,
 }: {
   entry: Entry
   lang: Language
+  track: TrackId
   correct: boolean
   gaveUp: boolean
 }) {
   const { concept, word, answer } = entry
-  const aside = asideOf(word, lang)
+  const aside = asideOf(word, lang, track)
   const [example] = examplesOf(word)
   const verdict = gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '
 

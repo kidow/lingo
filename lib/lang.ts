@@ -1,3 +1,4 @@
+import type { TrackId } from './track.ts'
 import type { Language, Word } from './types.ts'
 
 /**
@@ -11,7 +12,7 @@ import type { Language, Word } from './types.ts'
  */
 export type LangStrategy = {
   /** 보기·정답·빈칸에 쓰는 필드 */
-  answer: 'reading' | 'term'
+  answer: 'reading' | 'term' | 'traditional'
   /**
    * 소개 카드 참고줄에 작게 붙이는 필드.
    *
@@ -63,9 +64,32 @@ export const LANG: Record<Language, LangStrategy> = {
 
 export const LANGUAGES = Object.keys(LANG) as Language[]
 
-/** 그 언어에서 정답으로 쓰는 문자열. 없으면 출제할 수 없다. */
-export function answerOf(word: Word, lang: Language): string | undefined {
-  return word[LANG[lang].answer]
+/**
+ * 트랙이 언어의 기본 전략을 덮어쓰는 자리. HSK와 TOCFL이 `zh`를 나눠 쓰면서
+ * 생겼다 — 언어는 하나인데 트랙마다 카드에 낼 표기가 다르다.
+ *
+ * TOCFL은 대만 시험이니 번체가 정답이다. 참고줄의 병음도 대만 학습자에게는
+ * 발음 보조로 덜 쓸모 있어 빼고, 대신 간체(`term`)를 곁들인다 — 대조가
+ * 대만 학습자에게도 쓸모 있다(§4).
+ */
+const TRACK_OVERRIDE: Partial<Record<TrackId, Partial<LangStrategy>>> = {
+  tocfl: { answer: 'traditional', aside: ['term'] },
+}
+
+function strategyFor(lang: Language, track?: TrackId): LangStrategy {
+  const override = track && TRACK_OVERRIDE[track]
+  return override ? { ...LANG[lang], ...override } : LANG[lang]
+}
+
+/**
+ * 그 언어(또는 트랙)에서 정답으로 쓰는 문자열. 없으면 출제할 수 없다.
+ *
+ * `track`을 생략하면 언어의 기본값이다 — 발음 생성처럼 트랙을 모르는
+ * 자리(scripts/audio.ts)는 항상 이 기본값을 쓴다. 간체든 번체든 읽는
+ * 소리가 같아서, 트랙별로 다시 녹음할 이유가 없다(scripts/tocfl.ts).
+ */
+export function answerOf(word: Word, lang: Language, track?: TrackId): string | undefined {
+  return word[strategyFor(lang, track).answer]
 }
 
 /**
@@ -75,9 +99,14 @@ export function answerOf(word: Word, lang: Language): string | undefined {
  * 예전에는 첫 항목이면 무조건 씌웠는데, 로마자가 비면 표기가 첫 항목이 되어
  * `[計量カップ]`처럼 한자를 발음인 양 보여줬다.
  */
-export function asideOf(word: Word, lang: Language): Array<{ value: string; sound: boolean }> {
-  const answer = answerOf(word, lang)
-  return LANG[lang].aside
+export function asideOf(
+  word: Word,
+  lang: Language,
+  track?: TrackId,
+): Array<{ value: string; sound: boolean }> {
+  const strategy = strategyFor(lang, track)
+  const answer = answerOf(word, lang, track)
+  return strategy.aside
     .map((field) => ({ value: word[field], sound: field === 'romanization' }))
     .filter((item): item is { value: string; sound: boolean } =>
       Boolean(item.value) && item.value !== answer,
