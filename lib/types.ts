@@ -24,7 +24,12 @@ export type Category = 'noun' | 'verb' | 'adjective' | 'scene'
 export type Attributes =
   | { jlpt?: 'N5' | 'N4' | 'N3' | 'N2' | 'N1'; pitchAccent?: number } // ja
   // hsk 7은 HSK 3.0의 7~9급 묶음이다. 8·9는 따로 없다 (lib/level.ts가 편다)
-  | { hsk?: 1 | 2 | 3 | 4 | 5 | 6 | 7; tones?: number[] } // zh
+  // tocfl은 별개 시험이다 — 八千詞表는 준비급을 둘로 나눠 싣어서 하나로 접지 않는다 (scripts/tocfl.ts)
+  | {
+      hsk?: 1 | 2 | 3 | 4 | 5 | 6 | 7
+      tocfl?: '準備1' | '準備2' | 'L1' | 'L2' | 'L3' | 'L4' | 'L5'
+      tones?: number[]
+    } // zh
   | { cefr?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'; article?: string; gender?: 'm' | 'f' | 'n' } // es · fr · de
   | { tsl?: number } // en
   // ru: TORFL(ТРКИ)은 공식 어휘 목록을 기계가 읽을 수 있게 내놓지 않는다.
@@ -38,6 +43,12 @@ export type Word = {
   reading?: string
   /** 로마자. ja: neko — 참고 표시 전용. 보기나 정답으로 절대 쓰지 않는다 */
   romanization?: string
+  /**
+   * 번체 표기. zh만 갖는다 — `term`은 간체로 고정하고(§4) 이 자리에 대만 번체를
+   * 따로 둔다. 발음은 같아서(자소만 다르다) 별도 음성이 없다 — 어휘 자체가
+   * 兩岸에서 갈리는 자리만 예외다 (scripts/tocfl.ts).
+   */
+  traditional?: string
   /**
    * 같은 뜻의 다른 표기. 소개 카드에만 조용히 붙는다. (spec.md §5)
    *
