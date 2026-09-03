@@ -397,7 +397,7 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
   fr: 2,
   ja: 2,
   ru: 2,
-  zh: 4,
+  zh: 2,
 }
 
 {
