@@ -1,12 +1,15 @@
-import { statSync } from 'node:fs'
+import { existsSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { notFound } from 'next/navigation'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
-import { audioFile, audioPath, entriesFor, imagePath } from '@/lib/content'
+import { DebugTabs } from '@/components/debug-tabs'
+import { DebugTrivia, type TriviaNote } from '@/components/debug-trivia'
+import { audioFile, audioPath, entriesFor, imagePath, triviaFor } from '@/lib/content'
 import { examplesOf } from '@/lib/entries'
 import { answerOf, asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
-import { TRACK_IDS, trackOf } from '@/lib/track'
+import { TRACKS, TRACK_IDS, trackOf } from '@/lib/track'
+import type { Language } from '@/lib/types'
 
 /**
  * 콘텐츠 점검용 개발 화면. `pnpm dev` → http://localhost:5757/debug
@@ -65,9 +68,64 @@ export default function DebugPage() {
         </p>
       </header>
 
-      <DebugTable rows={rows} tracks={TRACK_IDS} />
+      <DebugTabs
+        words={<DebugTable rows={rows} tracks={TRACK_IDS} />}
+        trivia={<DebugTrivia notes={triviaNotes()} />}
+      />
     </main>
   )
+}
+
+/**
+ * brain 노트가 있는 자리. 없으면 캔 노트만 세고 조용히 넘어간다.
+ *
+ * 상식 문항은 이 레포 안에 있지만 원본 노트는 옆 레포에 있다 — 그래서 이
+ * 화면은 **옆 레포를 못 찾아도 돌아가야 한다.** 못 찾으면 "안 캔 노트" 줄이
+ * 안 나올 뿐이고, 캔 노트의 문항 수는 문항 자체(`source`)에서 나오므로
+ * 그대로 보인다. 개발 서버 전용 화면이라 fs로 직접 본다.
+ */
+const BRAIN_NOTES = process.env.BRAIN_NOTES ?? '../brain/notes'
+
+/** 언어 → brain 노트 폴더 이름. 폴더가 한국어라 코드로 이어지지 않는다 */
+const NOTE_DIR: Record<Language, string> = {
+  en: '영어',
+  ja: '일본어',
+  zh: '중국어',
+  es: '스페인어',
+  fr: '프랑스어',
+  de: '독일어',
+  ru: '러시아어',
+}
+
+/**
+ * 노트 하나 = 한 줄. 문항의 `source`를 세고, 옆 레포를 찾을 수 있으면
+ * 아직 한 문항도 안 나온 노트를 0으로 채워 넣는다.
+ */
+function triviaNotes(): TriviaNote[] {
+  const notes: TriviaNote[] = []
+
+  for (const { language } of TRACKS) {
+    const counts = new Map<string, number>()
+
+    // 옆 레포를 찾으면 그 폴더의 노트를 전부 0으로 깔아 둔다. 캔 것만 세면
+    // "안 캔 노트"가 목록에 아예 안 나와 다음에 뭘 캘지 알 수 없다
+    const dir = join(BRAIN_NOTES, NOTE_DIR[language])
+    if (existsSync(dir)) {
+      for (const file of readdirSync(dir)) {
+        if (file.endsWith('.md')) counts.set(file.replace(/\.md$/, ''), 0)
+      }
+    }
+
+    for (const { trivia } of triviaFor(language)) {
+      // `source`는 선택 항목이다 (lib/types.ts). 없는 문항은 한 줄로 몰아 센다
+      const key = trivia.source ?? '(출처 없음)'
+      counts.set(key, (counts.get(key) ?? 0) + 1)
+    }
+
+    for (const [note, count] of counts) notes.push({ lang: language, note, count })
+  }
+
+  return notes
 }
 
 /** 파일이 없으면 null. 있으면 크기를 들고 온다 — 0바이트가 곧 실패작이다 */
