@@ -177,7 +177,7 @@ function loadConcepts(): Concept[] {
   if (!existsSync(dir)) return []
   return readdirSync(dir)
     .filter((f) => f.endsWith('.json'))
-    .flatMap((f) => JSON.parse(readFileSync(join(dir, f), 'utf8')).concepts as Concept[])
+    .flatMap((f) => (JSON.parse(readFileSync(join(dir, f), 'utf8')).concepts ?? []) as Concept[])
 }
 
 const line = (n: number) => '─'.repeat(n)

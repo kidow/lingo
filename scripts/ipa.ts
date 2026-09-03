@@ -168,7 +168,7 @@ for (const name of files) {
   const data = JSON.parse(readFileSync(path, 'utf8')) as { concepts: Concept[] }
   let touched = false
 
-  for (const concept of data.concepts) {
+  for (const concept of data.concepts ?? []) {
     const word = concept.words.en
     if (!word || (word.romanization && !force)) continue
     const ipa = lookup(word.term, dict)
