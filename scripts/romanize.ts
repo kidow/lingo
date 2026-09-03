@@ -368,7 +368,8 @@ const dict = await cedict()
 const known = new Set<string>()
 for (const name of readdirSync(CONTENT_DIR).filter((n) => n.endsWith('.json'))) {
   const data = JSON.parse(readFileSync(join(CONTENT_DIR, name), 'utf8'))
-  for (const concept of data.concepts) {
+  // 개념이 없는 콘텐츠 파일도 있다 — kana.json은 가나 표다
+  for (const concept of data.concepts ?? []) {
     const reading = concept.words?.ja?.reading
     if (reading) known.add(reading)
   }
