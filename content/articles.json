@@ -3806,6 +3806,214 @@
           ]
         }
       ]
+    },
+    {
+      "id": "spanish-accent",
+      "title": "악센트와 강세",
+      "summary": "악센트가 하는 일 셋, 강세 규칙, 이중모음과 히아토",
+      "lang": "es",
+      "tables": [
+        {
+          "title": "악센트가 붙는 모음",
+          "columns": [],
+          "rows": [
+            {
+              "label": "악센트 붙는 모음",
+              "cells": [
+                {
+                  "kana": "á"
+                },
+                {
+                  "kana": "é"
+                },
+                {
+                  "kana": "í"
+                },
+                {
+                  "kana": "ó"
+                },
+                {
+                  "kana": "ú"
+                }
+              ]
+            }
+          ],
+          "caption": "모양은 하나뿐이다. 성조 표시가 아니라 「이 음절을 세게」라는 자리 표시다."
+        },
+        {
+          "title": "악센트가 없을 때의 강세",
+          "columns": [],
+          "rows": [
+            {
+              "label": "모음 · n · s로 끝나면",
+              "cells": [
+                {
+                  "kana": "끝에서 두 번째 음절",
+                  "roman": "CA-sa · CO-men"
+                }
+              ]
+            },
+            {
+              "label": "그 밖의 자음으로 끝나면",
+              "cells": [
+                {
+                  "kana": "마지막 음절",
+                  "roman": "ha-BLAR · ciu-DAD"
+                }
+              ]
+            }
+          ],
+          "caption": "악센트가 적힌 단어는 이 규칙에서 벗어난 것이다 — café는 CA-fe가 될 뻔했고, árbol은 ar-BOL이 될 뻔했다."
+        },
+        {
+          "title": "이중모음 — 두 모음이 한 음절",
+          "columns": [],
+          "rows": [
+            {
+              "label": "i · u + 다른 모음",
+              "cells": [
+                {
+                  "kana": "ia",
+                  "roman": "야 · gracias"
+                },
+                {
+                  "kana": "ie",
+                  "roman": "예 · bien"
+                },
+                {
+                  "kana": "ue",
+                  "roman": "웨 · bueno"
+                },
+                {
+                  "kana": "au",
+                  "roman": "아우 · auto"
+                },
+                {
+                  "kana": "ei",
+                  "roman": "에이 · seis"
+                }
+              ]
+            }
+          ],
+          "caption": "i나 u가 다른 모음과 만나면 한 음절로 붙는다. 악센트가 없을 때만이다."
+        },
+        {
+          "title": "히아토 — 두 모음이 갈라진 음절",
+          "columns": [],
+          "rows": [
+            {
+              "label": "강모음 + 강모음",
+              "cells": [
+                {
+                  "kana": "real",
+                  "roman": "re-al · 2음절"
+                },
+                {
+                  "kana": "poeta",
+                  "roman": "po-e-ta · 3음절"
+                },
+                {
+                  "kana": "teatro",
+                  "roman": "te-a-tro · 3음절"
+                }
+              ]
+            },
+            {
+              "label": "í · ú가 있을 때",
+              "cells": [
+                {
+                  "kana": "hacía",
+                  "roman": "ha-cí-a · 3음절"
+                },
+                {
+                  "kana": "día",
+                  "roman": "dí-a · 2음절"
+                },
+                {
+                  "kana": "país",
+                  "roman": "pa-ís · 2음절"
+                }
+              ]
+            }
+          ],
+          "caption": "아랫줄이 음절 나눔이다. real이 영어 「리얼」과 달리 두 음절인 것이 여기서 나온다."
+        },
+        {
+          "title": "악센트 하나로 뜻이 갈리는 짝",
+          "columns": [],
+          "rows": [
+            {
+              "label": "짝 ·",
+              "cells": [
+                {
+                  "kana": "si · sí",
+                  "roman": "만약 · 네"
+                },
+                {
+                  "kana": "el · él",
+                  "roman": "정관사 · 그"
+                },
+                {
+                  "kana": "tu · tú",
+                  "roman": "너의 · 너"
+                }
+              ]
+            },
+            {
+              "label": "짝 ··",
+              "cells": [
+                {
+                  "kana": "mi · mí",
+                  "roman": "나의 · 나"
+                },
+                {
+                  "kana": "se · sé",
+                  "roman": "재귀 · 안다"
+                },
+                {
+                  "kana": "mas · más",
+                  "roman": "그러나 · 더"
+                }
+              ]
+            }
+          ],
+          "caption": "소리는 같고 뜻만 다르다. 이때 악센트는 강세가 아니라 표기를 가르는 표지다."
+        }
+      ],
+      "rules": [
+        {
+          "title": "악센트가 하는 일 셋",
+          "body": "모양은 하나지만 쓰이는 자리가 셋으로 갈린다.",
+          "examples": [
+            {
+              "text": "hablo · habló",
+              "gloss": "강세 자리를 옮긴다 — 나는 말한다 · 그가 말했다"
+            },
+            {
+              "text": "si · sí",
+              "gloss": "같은 소리의 두 낱말을 가른다"
+            },
+            {
+              "text": "hacia · hacía",
+              "gloss": "붙어 있던 모음을 갈라 음절을 늘린다"
+            }
+          ]
+        },
+        {
+          "title": "히아토가 되는 두 자리",
+          "body": "이중모음으로 붙지 않고 음절이 갈라지는 조건이다.",
+          "examples": [
+            {
+              "text": "a · e · o끼리 만나면",
+              "gloss": "언제나 갈라진다 — poeta는 po-e-ta"
+            },
+            {
+              "text": "i나 u에 악센트가 붙으면",
+              "gloss": "강제로 갈라진다 — día는 dí-a"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

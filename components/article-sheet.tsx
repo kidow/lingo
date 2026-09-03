@@ -89,29 +89,34 @@ export function ArticleSheet({ articles }: { articles: Article[] }) {
   )
 }
 
-/** 줄 이름 칸의 폭. 아래 최소 폭 계산이 이 값을 깔고 간다 */
-const LABEL_WIDTH = 76
-
 /**
- * 표가 눌리지 않을 최소 폭.
+ * 표가 눌리지 않을 폭.
  *
- * 칸 수와 **가장 긴 글자**로 잡는다. 오십음도는 한 칸이 한 글자지만 활용표는
- * `finissons`처럼 열 자까지 간다 — 폭을 하나로 못 박으면 긴 쪽이 서로 붙어
- * 읽히지 않는다. 넘치면 표만 옆으로 밀리고 시트는 흔들리지 않는다.
+ * 줄 이름 칸과 나머지 칸을 따로 잰다. 둘 다 **가장 긴 글자**를 기준으로 삼는데,
+ * 표마다 사정이 다르기 때문이다 — 오십음도는 한 칸이 한 글자지만 활용표는
+ * `finissons`처럼 열 자까지 가고, 줄 이름도 `-er · parler`처럼 길어진다.
+ * 폭을 하나로 못 박으면 긴 쪽이 서로 붙어 읽히지 않는다.
+ *
+ * 넘치면 표만 옆으로 밀리고 시트는 흔들리지 않는다.
  */
-function minWidthOf(table: KanaTable) {
+function widthsOf(table: KanaTable) {
   const columns = table.columns.length || (table.rows[0]?.cells.length ?? 1)
-  const longest = Math.max(
+  const longestCell = Math.max(
     1,
     ...table.rows.flatMap((row) =>
       row.cells.map((cell) => (cell ? [...cell.kana].length : 0)),
     ),
   )
-  // +24는 칸의 좌우 여백이다. 이 여유가 없으면 sommes 같은 긴 활용형이 2px 넘친다
-  return LABEL_WIDTH + columns * Math.max(46, longest * 9 + 24)
+  const longestLabel = Math.max(1, ...table.rows.map((row) => [...row.label].length))
+  // 줄 이름은 한글이 섞여 글자가 넓다. 칸 쪽 +24는 좌우 여백이다 —
+  // 그 여유가 없으면 sommes 같은 긴 활용형이 2px 넘친다
+  const label = Math.max(64, longestLabel * 8 + 16)
+  return { label, min: label + columns * Math.max(46, longestCell * 9 + 24) }
 }
 
 function Table({ table }: { table: KanaTable }) {
+  const widths = widthsOf(table)
+
   return (
     <section>
       <h4 className="text-[15px] font-semibold">{table.title}</h4>
@@ -120,13 +125,13 @@ function Table({ table }: { table: KanaTable }) {
       <div className="-mx-lg mt-2.5 overflow-x-auto px-lg">
         <table
           className="w-full table-fixed border-collapse text-center"
-          style={{ minWidth: minWidthOf(table) }}
+          style={{ minWidth: widths.min }}
         >
           {table.columns.length > 0 && (
             <thead>
               <tr>
                 {/* 줄 이름 칸. 머리글이 없어 스크린리더에는 빈 칸으로 읽힌다 */}
-                <th className="pb-1.5" style={{ width: LABEL_WIDTH }} />
+                <th className="pb-1.5" style={{ width: widths.label }} />
                 {/* 열 이름은 비어 있을 수 있다(성모·운모 표) — 키는 자리로 잡는다 */}
                 {table.columns.map((column, i) => (
                   <th key={i} className="pb-1.5 text-xs font-medium text-sub">
@@ -142,6 +147,7 @@ function Table({ table }: { table: KanaTable }) {
                 <th
                   scope="row"
                   className="text-left align-middle text-xs font-medium whitespace-nowrap text-sub"
+                  style={{ width: widths.label }}
                 >
                   {row.label}
                 </th>
