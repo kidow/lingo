@@ -563,8 +563,8 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
           for (const cell of cells) {
             if (cell === null) continue
             const c = cell as Record<string, unknown>
+            // 읽기(roman)는 선택이다 — 병음처럼 글자가 곧 로마자인 문자도 있다
             if (!String(c.kana ?? '').trim()) fail(`${at}/${label}`, '글자가 비었습니다')
-            if (!String(c.roman ?? '').trim()) fail(`${at}/${label}`, `${String(c.kana)}에 로마자가 없습니다`)
             count++
           }
         }
