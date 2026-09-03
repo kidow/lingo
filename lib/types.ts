@@ -138,3 +138,66 @@ export type TriviaFile = {
   lang: Language
   items: Trivia[]
 }
+
+/* ── 가나 표 ─────────────────────────────────────────────────────── */
+
+/**
+ * 오십음도 한 칸. 빈 칸은 `null`이다 — や행의 yi·ye처럼 음운 체계에서
+ * 빠진 자리가 있어서, 5열을 채우려면 구멍을 자리로 남겨야 한다.
+ */
+export type KanaCell = {
+  /** 글자. 요음·외래어 조합은 두 글자다 (きゃ · ファ) */
+  kana: string
+  /** 헵번식 로마자 */
+  roman: string
+  /**
+   * 곁들이는 글자. 가타카나 표에서 대응하는 히라가나를 여기 둔다 —
+   * 두 문자를 나란히 보는 것이 가타카나를 익히는 가장 빠른 길이라
+   * 표를 둘로 나누지 않고 한 칸에 겹쳐 싣는다.
+   */
+  pair?: string
+  /** 그 칸에만 붙는 주석. ぢ·づ처럼 발음이 겹치는 자리에 쓴다 */
+  note?: string
+}
+
+/** 표의 한 줄. `cells`는 열 수만큼이고 빈 칸은 null이다 */
+export type KanaRow = {
+  /** 줄 이름. あ행 · か행 k처럼 자음까지 적는다 */
+  label: string
+  cells: (KanaCell | null)[]
+}
+
+/** 표 하나. 청음·탁음·반탁음처럼 성격이 다른 묶음마다 하나씩 */
+export type KanaTable = {
+  title: string
+  /** 표 아래 한 줄. 없으면 안 그린다 */
+  caption?: string
+  /** 열 이름. 오십음도는 a·i·u·e·o, 요음은 ゃ·ゅ·ょ다 */
+  columns: string[]
+  rows: KanaRow[]
+}
+
+/** 표로 그리기 어려운 규칙. 촉음·장음처럼 예시가 곧 설명인 것들 */
+export type KanaRule = {
+  title: string
+  /** 규칙 한 줄 */
+  body: string
+  /** 예시. `text`가 글자, `gloss`가 읽기와 뜻이다 */
+  examples: { text: string; gloss: string }[]
+}
+
+/** 히라가나·가타카나 한 벌 */
+export type KanaScript = {
+  /** 탭에 쓰는 식별자 */
+  id: 'hiragana' | 'katakana'
+  label: string
+  tables: KanaTable[]
+  rules: KanaRule[]
+}
+
+/** content/kana.json 한 파일의 모양 */
+export type KanaFile = {
+  /** 어느 노트에서 왔는가. 상식 문항의 `source`와 같은 자리다 */
+  source: string
+  scripts: KanaScript[]
+}

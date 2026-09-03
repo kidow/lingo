@@ -56,7 +56,12 @@ if (!existsSync(CONTENT_DIR)) {
   process.exit(1)
 }
 
-const files = readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json')).sort()
+/** 개념이 아닌 콘텐츠. 모양이 달라 아래 개념 검사를 지나가면 안 된다 */
+const NOT_CONCEPTS = new Set(['kana.json'])
+
+const files = readdirSync(CONTENT_DIR)
+  .filter((f) => f.endsWith('.json') && !NOT_CONCEPTS.has(f))
+  .sort()
 if (files.length === 0) fail(CONTENT_DIR, '개념 파일이 하나도 없습니다')
 
 /** lib/content.ts에 등록되지 않은 파일은 앱에 안 들어간다 */
@@ -496,6 +501,82 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
         `\n` +
         perTrivia.join(''),
     )
+}
+
+/**
+ * 가나 표 검증. (spec.md §4, §5)
+ *
+ * 표는 **자리가 곧 뜻이다** — 오십음도에서 か행 세 번째 칸이 비면 く가
+ * 사라진 것이 아니라 표가 어긋난 것이다. 그래서 줄마다 칸 수가 열 수와
+ * 같은지를 본다. 빈 칸(`null`)은 정상이지만 **칸 자체가 모자라면** 뒤 글자가
+ * 통째로 밀린다.
+ */
+{
+  const KANA_PATH = join(CONTENT_DIR, 'kana.json')
+  if (!existsSync(KANA_PATH)) fail('content/kana.json', '파일이 없습니다')
+  else {
+    if (!readFileSync('lib/content.ts', 'utf8').includes('content/kana.json'))
+      fail('content/kana.json', 'lib/content.ts에 등록되지 않아 앱에 안 들어갑니다')
+
+    const kana = JSON.parse(readFileSync(KANA_PATH, 'utf8')) as {
+      scripts?: Array<Record<string, unknown>>
+    }
+    const scripts = kana.scripts ?? []
+    if (scripts.length === 0) fail('content/kana.json', 'scripts가 비었습니다')
+
+    let glyphs = 0
+    const per: string[] = []
+    for (const script of scripts) {
+      const id = String(script.id ?? '')
+      const where = `kana.json:${id || '(id 없음)'}`
+      if (id !== 'hiragana' && id !== 'katakana') fail(where, 'id는 hiragana 또는 katakana여야 합니다')
+      if (!String(script.label ?? '').trim()) fail(where, 'label이 비었습니다')
+
+      const tables = Array.isArray(script.tables) ? script.tables : []
+      if (tables.length === 0) fail(where, '표가 없습니다')
+      let count = 0
+      for (const table of tables as Array<Record<string, unknown>>) {
+        const title = String(table.title ?? '')
+        const at = `${where}/${title || '(제목 없음)'}`
+        if (!title.trim()) fail(at, '표 제목이 비었습니다')
+
+        const columns = Array.isArray(table.columns) ? table.columns : []
+        const rows = Array.isArray(table.rows) ? table.rows : []
+        if (rows.length === 0) fail(at, '줄이 없습니다')
+
+        // 열 이름이 없는 표(외래어 조합)는 첫 줄의 칸 수를 기준으로 삼는다
+        const width = columns.length > 0 ? columns.length : ((rows[0] as { cells?: unknown[] })?.cells?.length ?? 0)
+        for (const row of rows as Array<Record<string, unknown>>) {
+          const label = String(row.label ?? '')
+          const cells = Array.isArray(row.cells) ? row.cells : []
+          if (!label.trim()) fail(at, '줄 이름이 비었습니다')
+          if (cells.length !== width)
+            fail(`${at}/${label}`, `칸이 ${width}개여야 하는데 ${cells.length}개입니다 — 빈 칸은 null로 둡니다`)
+          for (const cell of cells) {
+            if (cell === null) continue
+            const c = cell as Record<string, unknown>
+            if (!String(c.kana ?? '').trim()) fail(`${at}/${label}`, '글자가 비었습니다')
+            if (!String(c.roman ?? '').trim()) fail(`${at}/${label}`, `${String(c.kana)}에 로마자가 없습니다`)
+            count++
+          }
+        }
+      }
+
+      for (const rule of (Array.isArray(script.rules) ? script.rules : []) as Array<
+        Record<string, unknown>
+      >) {
+        const title = String(rule.title ?? '')
+        if (!title.trim()) fail(where, '규칙 제목이 비었습니다')
+        if (!String(rule.body ?? '').trim()) fail(`${where}/${title}`, '규칙 설명이 비었습니다')
+        const examples = Array.isArray(rule.examples) ? rule.examples : []
+        if (examples.length === 0) fail(`${where}/${title}`, '예시가 없습니다 — 규칙만 있으면 읽을 것이 없습니다')
+      }
+
+      glyphs += count
+      per.push(`  ${String(script.label)} ${count}`)
+    }
+    console.log(`\n가나 ${glyphs}자 · 문자 ${scripts.length}종\n` + per.join(''))
+  }
 }
 
 if (warnings.length) {
