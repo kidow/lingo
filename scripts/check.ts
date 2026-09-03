@@ -391,12 +391,14 @@ if (notes.length) {
  * 경고하고, 줄면 여기를 낮추라고 알린다. 늘 켜져 있는 경고는 아무도 안 본다.
  */
 const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
-  de: 3,
+  de: 0,
   en: 0,
-  es: 1,
-  fr: 2,
+  es: 0,
+  fr: 0,
+  // 母 (はは)·死人(시체) — 한자에 읽기와 뜻을 달아야 물음이 성립한다
   ja: 2,
-  ru: 2,
+  ru: 0,
+  // 没(有)·V了没(有) — 괄호가 「있어도 되고 없어도 된다」는 표기 그 자체다
   zh: 2,
 }
 
