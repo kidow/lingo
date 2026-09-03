@@ -19,8 +19,11 @@ import transport from '@/content/transport.json'
 import travel from '@/content/travel.json'
 import triviaDe from '@/content/trivia/de.json'
 import triviaEn from '@/content/trivia/en.json'
+import triviaEs from '@/content/trivia/es.json'
+import triviaFr from '@/content/trivia/fr.json'
 import triviaJa from '@/content/trivia/ja.json'
 import triviaRu from '@/content/trivia/ru.json'
+import triviaZh from '@/content/trivia/zh.json'
 import { entriesForTrack as selectEntries, type Entry } from './entries.ts'
 import { triviaEntries, type TriviaEntry } from './trivia.ts'
 import type { TrackId } from './track.ts'
@@ -70,16 +73,20 @@ export const CONCEPTS: Concept[] = FILES.flatMap(([topic, file]) =>
 
 /**
  * 상식 파일. **언어가 파일을 가른다** — 개념과 달리 트랙이 공유하지 못한다
- * (lib/trivia.ts). 아직 안 쓴 언어는 자리 자체가 없다.
+ * (lib/trivia.ts). 일곱 언어가 다 찼으므로 `Partial`이 아니다 — 언어를 더하면
+ * 여기서 컴파일이 깨져 파일을 빠뜨릴 수 없다.
  */
-const TRIVIA: Partial<Record<Language, TriviaFile>> = {
+const TRIVIA: Record<Language, TriviaFile> = {
   en: triviaEn as TriviaFile,
   ja: triviaJa as TriviaFile,
+  zh: triviaZh as TriviaFile,
+  es: triviaEs as TriviaFile,
+  fr: triviaFr as TriviaFile,
   de: triviaDe as TriviaFile,
   ru: triviaRu as TriviaFile,
 }
 
-/** 그 언어의 상식 목록. 없으면 빈 배열이고, 그러면 탭이 서지 않는다 */
+/** 그 언어의 상식 목록. 비면 탭이 서지 않는다 (components/shell.tsx) */
 export function triviaFor(lang: Language): TriviaEntry[] {
   const file = TRIVIA[lang]
   return file ? triviaEntries(lang, file.items) : []
