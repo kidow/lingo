@@ -925,6 +925,162 @@
       "source": "독일어_명사"
     },
     {
+      "id": "kompositum-gender",
+      "question": "Handschuh의 성을 정하는 것은?",
+      "choices": [
+        "마지막 명사 Schuh",
+        "첫 명사 Hand",
+        "더 긴 쪽",
+        "언제나 중성"
+      ],
+      "answer": "마지막 명사 Schuh",
+      "note": "der Schuh라서 der Handschuh입니다. Krankenhaus는 das Haus라서 das입니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "n-deklination",
+      "question": "der Student를 목적어로 쓰면?",
+      "choices": [
+        "den Studenten",
+        "den Student",
+        "dem Student",
+        "des Student"
+      ],
+      "answer": "den Studenten",
+      "note": "약변화 명사는 Nominativ 단수만 빼고 전 격에 -en이 붙습니다. Mensch·Junge·Polizist도 같습니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "n-deklination-group",
+      "question": "약변화 명사가 몰려 있는 무리는?",
+      "choices": [
+        "남성 사람·직업·국적 명사",
+        "여성 추상명사",
+        "중성 합성어",
+        "복수 전용 명사"
+      ],
+      "answer": "남성 사람·직업·국적 명사",
+      "note": "단어장에 der Student, -en처럼 적혀 있으면 약변화 신호입니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "nominalization-gender",
+      "question": "동사 원형을 대문자로 쓰고 관사를 붙이면 성은?",
+      "choices": [
+        "언제나 중성",
+        "언제나 남성",
+        "언제나 여성",
+        "동사에 따라 갈린다"
+      ],
+      "answer": "언제나 중성",
+      "note": "das Schlafen·das Essen·das Leben입니다. 형용사 명사화는 관사에 따라 형태가 갈립니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "suffix-ung-gender",
+      "question": "-ung으로 만든 명사가 언제나 여성인 이유는?",
+      "choices": [
+        "-ung 자체가 여성 명사를 만드는 접미사라서",
+        "동사에서 왔기 때문",
+        "추상명사이기 때문",
+        "두 음절이 넘기 때문"
+      ],
+      "answer": "-ung 자체가 여성 명사를 만드는 접미사라서",
+      "note": "die Bewegung·die Entscheidung·die Lösung입니다. 가장 생산적인 명사화 접미사입니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "essen-vs-loesung",
+      "question": "das Essen과 die Lösung의 뉘앙스 차이는?",
+      "choices": [
+        "동작 그 자체와 완성된 결과",
+        "구어체와 문어체",
+        "단수와 복수",
+        "추상과 구체"
+      ],
+      "answer": "동작 그 자체와 완성된 결과",
+      "note": "동사 명사화는 행위를 통째로 가리키고 -ung 파생어는 보통 결과물을 가리킵니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "suffix-heit-keit",
+      "question": "형용사를 추상적 성질의 명사로 만드는 접미사는?",
+      "choices": [
+        "-heit · -keit · -igkeit",
+        "-ung · -er · -chen",
+        "-lich · -ig · -bar",
+        "-los · -voll · -sam"
+      ],
+      "answer": "-heit · -keit · -igkeit",
+      "note": "frei→die Freiheit입니다. 이 접미사로 만든 명사도 언제나 여성입니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "praeposition-contraction",
+      "question": "zu + der의 축약형은?",
+      "choices": [
+        "zur",
+        "zum",
+        "zus",
+        "zurd"
+      ],
+      "answer": "zur",
+      "note": "zu+dem은 zum, in+dem은 im, in+das는 ins입니다. 원어민은 늘 축약형을 씁니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "gender-by-meaning",
+      "question": "요일·월·계절·방향의 성은?",
+      "choices": [
+        "남성",
+        "여성",
+        "중성",
+        "제각각이다"
+      ],
+      "answer": "남성",
+      "note": "독일 강은 대부분 여성(die Elbe), 나라·도시는 대부분 중성이며 보통 무관사입니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "country-with-article",
+      "question": "관사를 붙여 쓰는 나라 이름은?",
+      "choices": [
+        "die Schweiz",
+        "Korea",
+        "Berlin",
+        "Deutschland"
+      ],
+      "answer": "die Schweiz",
+      "note": "die Türkei·die Ukraine·der Iran도 예외입니다. 나머지는 무관사입니다.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "nullartikel-job",
+      "question": "Ich bin Lehrer에 관사가 없는 이유는?",
+      "choices": [
+        "sein 뒤의 직업·국적은 관사를 쓰지 않아서",
+        "Lehrer가 복수라서",
+        "ich가 주어라서",
+        "Lehrer가 고유명사라서"
+      ],
+      "answer": "sein 뒤의 직업·국적은 관사를 쓰지 않아서",
+      "note": "형용사가 붙으면 관사가 돌아옵니다 — Ich bin ein guter Lehrer.",
+      "source": "독일어_명사"
+    },
+    {
+      "id": "dieser-endings",
+      "question": "dieser의 어미가 따르는 것은?",
+      "choices": [
+        "정관사 어미",
+        "부정관사 어미",
+        "형용사 약변화 어미",
+        "명사 복수 어미"
+      ],
+      "answer": "정관사 어미",
+      "note": "dies-에 der/die/das 어미를 그대로 붙입니다. jeder·welcher·jener도 같은 der-Wörter입니다.",
+      "source": "독일어_명사"
+    },
+    {
       "id": "welches-der-word",
       "question": "welcher/welche/welches가 따르는 어미 패턴은?",
       "choices": [
@@ -1247,6 +1403,58 @@
       ],
       "answer": "성은 선행사, 격은 관계절 안의 역할",
       "note": "Der Mann, dem ich helfe — helfen이 Dativ를 요구해 dem이 됩니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "es-obligatory",
+      "question": "Heute regnet es에서 es가 남아 있는 이유는?",
+      "choices": [
+        "V2 법칙 때문에 주어 자리가 비면 안 돼서",
+        "heute가 주어가 아니라서",
+        "regnen이 타동사라서",
+        "es가 heute를 가리켜서"
+      ],
+      "answer": "V2 법칙 때문에 주어 자리가 비면 안 돼서",
+      "note": "1번 자리를 다른 요소가 채워도 형식 주어는 사라지지 않습니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "jemand-declension",
+      "question": "Ich sehe ___ (누군가를)의 빈칸은?",
+      "choices": [
+        "jemanden",
+        "jemand",
+        "jemandem",
+        "jemands"
+      ],
+      "answer": "jemanden",
+      "note": "jemand·niemand는 -en/-em으로 격변화합니다. Ich helfe niemandem처럼 씁니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "etwas-adjective",
+      "question": "etwas 뒤에 오는 형용사의 어미는?",
+      "choices": [
+        "언제나 -es",
+        "성에 따라 갈린다",
+        "어미가 붙지 않는다",
+        "언제나 -en"
+      ],
+      "answer": "언제나 -es",
+      "note": "etwas Neues·nichts Interessantes입니다. 무관사 규칙이 적용돼 중성으로 고정됩니다.",
+      "source": "독일어_대명사"
+    },
+    {
+      "id": "etwas-nichts-invariable",
+      "question": "etwas·nichts가 jemand·niemand와 다른 점은?",
+      "choices": [
+        "격변화를 하지 않는다",
+        "부정에만 쓰인다",
+        "복수형만 있다",
+        "관사를 요구한다"
+      ],
+      "answer": "격변화를 하지 않는다",
+      "note": "앞의 둘은 사물이라 불변이고 뒤의 둘은 사람이라 격에 따라 바뀝니다.",
       "source": "독일어_대명사"
     },
     {
@@ -1757,6 +1965,45 @@
       "source": "독일어_부사"
     },
     {
+      "id": "schon-vs-erst",
+      "question": "Es ist schon 10 Uhr와 Es ist erst 10 Uhr의 차이는?",
+      "choices": [
+        "벌써라고 느끼는가 아직이라고 느끼는가",
+        "오전인가 오후인가",
+        "정확한가 대략인가",
+        "격식체인가 구어체인가"
+      ],
+      "answer": "벌써라고 느끼는가 아직이라고 느끼는가",
+      "note": "같은 사실인데 화자의 기대치에 따라 단어가 갈립니다.",
+      "source": "독일어_부사"
+    },
+    {
+      "id": "noch-vs-erst",
+      "question": "Ich bin noch hier와 Ich bin erst hier의 차이는?",
+      "choices": [
+        "계속 있는 중과 이제야 겨우 도착",
+        "가까움과 멂",
+        "확실함과 불확실함",
+        "과거와 현재"
+      ],
+      "answer": "계속 있는 중과 이제야 겨우 도착",
+      "note": "noch는 아직 지속 중, erst는 예상보다 늦게 도달했다는 뜻입니다.",
+      "source": "독일어_부사"
+    },
+    {
+      "id": "pronoun-before-tekamolo",
+      "question": "대명사 목적어가 TeKaMoLo 부사보다 앞에 오는 이유는?",
+      "choices": [
+        "대명사는 명사보다 앞으로 당겨져서",
+        "부사가 문장 끝에만 와서",
+        "대명사에 격이 없어서",
+        "시간 부사가 가장 늦게 와서"
+      ],
+      "answer": "대명사는 명사보다 앞으로 당겨져서",
+      "note": "Ich gebe ihm heute das Buch입니다. 명사 목적어면 시간 부사 뒤로 갑니다.",
+      "source": "독일어_부사"
+    },
+    {
       "id": "genitive-prepositions",
       "question": "다음 중 Genitiv를 요구하는 전치사는?",
       "choices": [
@@ -1949,6 +2196,45 @@
       ],
       "answer": "1번 자리를 차지해 동사가 도치된다",
       "note": "Es regnet, deshalb bleibe ich zu Hause입니다. 등위접속사와 정반대로 움직입니다.",
+      "source": "독일어_접속사"
+    },
+    {
+      "id": "waehrend-two-roles",
+      "question": "während가 전치사일 때와 접속사일 때 뒤에 오는 것은?",
+      "choices": [
+        "Genitiv 명사와 절",
+        "Dativ 명사와 절",
+        "절과 Genitiv 명사",
+        "둘 다 절"
+      ],
+      "answer": "Genitiv 명사와 절",
+      "note": "Während des Urlaubs는 전치사, Während ich arbeite는 접속사입니다. 같은 형태의 다른 단어입니다.",
+      "source": "독일어_접속사"
+    },
+    {
+      "id": "nachdem-bevor",
+      "question": "「~한 후에」와 「~하기 전에」에 해당하는 종속접속사는?",
+      "choices": [
+        "nachdem과 bevor",
+        "bevor와 nachdem",
+        "sobald와 während",
+        "obwohl와 weil"
+      ],
+      "answer": "nachdem과 bevor",
+      "note": "둘 다 V-Letzt를 만듭니다. sobald는 ~하자마자입니다.",
+      "source": "독일어_접속사"
+    },
+    {
+      "id": "obwohl-meaning",
+      "question": "obwohl이 나타내는 관계는?",
+      "choices": [
+        "양보",
+        "이유",
+        "조건",
+        "목적"
+      ],
+      "answer": "양보",
+      "note": "weil이 이유, wenn이 조건, damit이 목적입니다. 전부 동사를 절 끝으로 보냅니다.",
       "source": "독일어_접속사"
     },
     {
