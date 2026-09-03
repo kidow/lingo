@@ -68,12 +68,12 @@ export const LANGUAGES = Object.keys(LANG) as Language[]
  * 트랙이 언어의 기본 전략을 덮어쓰는 자리. HSK와 TOCFL이 `zh`를 나눠 쓰면서
  * 생겼다 — 언어는 하나인데 트랙마다 카드에 낼 표기가 다르다.
  *
- * TOCFL은 대만 시험이니 번체가 정답이다. 참고줄의 병음도 대만 학습자에게는
- * 발음 보조로 덜 쓸모 있어 빼고, 대신 간체(`term`)를 곁들인다 — 대조가
- * 대만 학습자에게도 쓸모 있다(§4).
+ * TOCFL은 대만 시험이니 번체가 정답이다. 학습자는 한국 사용자이지 대만
+ * 원어민이 아니라서 **병음은 그대로 둔다** — 빼면 발음 보조가 사라져
+ * 소리 없이는 한자만 보고 읽어야 한다. 간체(`term`)는 곁다리로 얹는다.
  */
 const TRACK_OVERRIDE: Partial<Record<TrackId, Partial<LangStrategy>>> = {
-  tocfl: { answer: 'traditional', aside: ['term'] },
+  tocfl: { answer: 'traditional', aside: ['romanization', 'term'] },
 }
 
 function strategyFor(lang: Language, track?: TrackId): LangStrategy {
