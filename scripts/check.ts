@@ -57,7 +57,7 @@ if (!existsSync(CONTENT_DIR)) {
 }
 
 /** 개념이 아닌 콘텐츠. 모양이 달라 아래 개념 검사를 지나가면 안 된다 */
-const NOT_CONCEPTS = new Set(['kana.json'])
+const NOT_CONCEPTS = new Set(['articles.json'])
 
 const files = readdirSync(CONTENT_DIR)
   .filter((f) => f.endsWith('.json') && !NOT_CONCEPTS.has(f))
@@ -504,7 +504,7 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
 }
 
 /**
- * 가나 표 검증. (spec.md §4, §5)
+ * 참고 글 검증. (spec.md §5)
  *
  * 표는 **자리가 곧 뜻이다** — 오십음도에서 か행 세 번째 칸이 비면 く가
  * 사라진 것이 아니라 표가 어긋난 것이다. 그래서 줄마다 칸 수가 열 수와
@@ -512,28 +512,35 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
  * 통째로 밀린다.
  */
 {
-  const KANA_PATH = join(CONTENT_DIR, 'kana.json')
-  if (!existsSync(KANA_PATH)) fail('content/kana.json', '파일이 없습니다')
+  const ARTICLE_ID_RE = /^[a-z0-9-]+$/
+  const ARTICLES_PATH = join(CONTENT_DIR, 'articles.json')
+  if (!existsSync(ARTICLES_PATH)) fail('content/articles.json', '파일이 없습니다')
   else {
-    if (!readFileSync('lib/content.ts', 'utf8').includes('content/kana.json'))
-      fail('content/kana.json', 'lib/content.ts에 등록되지 않아 앱에 안 들어갑니다')
+    if (!readFileSync('lib/content.ts', 'utf8').includes('content/articles.json'))
+      fail('content/articles.json', 'lib/content.ts에 등록되지 않아 앱에 안 들어갑니다')
 
-    const kana = JSON.parse(readFileSync(KANA_PATH, 'utf8')) as {
-      scripts?: Array<Record<string, unknown>>
+    const parsed = JSON.parse(readFileSync(ARTICLES_PATH, 'utf8')) as {
+      articles?: Array<Record<string, unknown>>
     }
-    const scripts = kana.scripts ?? []
-    if (scripts.length === 0) fail('content/kana.json', 'scripts가 비었습니다')
+    const list = parsed.articles ?? []
+    if (list.length === 0) fail('content/articles.json', 'articles가 비었습니다')
 
+    const ids = new Set<string>()
     let glyphs = 0
     const per: string[] = []
-    for (const script of scripts) {
-      const id = String(script.id ?? '')
-      const where = `kana.json:${id || '(id 없음)'}`
-      if (id !== 'hiragana' && id !== 'katakana') fail(where, 'id는 hiragana 또는 katakana여야 합니다')
-      if (!String(script.label ?? '').trim()) fail(where, 'label이 비었습니다')
+    for (const article of list) {
+      const id = String(article.id ?? '')
+      const where = `articles.json:${id || '(id 없음)'}`
+      if (!ARTICLE_ID_RE.test(id)) fail(where, 'id는 ^[a-z0-9-]+$ 여야 합니다')
+      if (ids.has(id)) fail(where, 'id가 중복됩니다')
+      ids.add(id)
+      if (!String(article.title ?? '').trim()) fail(where, '제목이 비었습니다')
+      // 목록에서 제목만 보고는 열어 볼지 판단이 안 된다
+      if (!String(article.summary ?? '').trim()) fail(where, '한 줄 설명이 비었습니다')
+      const lang = String(article.lang ?? '')
+      if (!LANG[lang as Language]) fail(where, `언어 "${lang}"이 lib/lang.ts에 없습니다`)
 
-      const tables = Array.isArray(script.tables) ? script.tables : []
-      if (tables.length === 0) fail(where, '표가 없습니다')
+      const tables = Array.isArray(article.tables) ? article.tables : []
       let count = 0
       for (const table of tables as Array<Record<string, unknown>>) {
         const title = String(table.title ?? '')
@@ -545,7 +552,8 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
         if (rows.length === 0) fail(at, '줄이 없습니다')
 
         // 열 이름이 없는 표(외래어 조합)는 첫 줄의 칸 수를 기준으로 삼는다
-        const width = columns.length > 0 ? columns.length : ((rows[0] as { cells?: unknown[] })?.cells?.length ?? 0)
+        const width =
+          columns.length > 0 ? columns.length : ((rows[0] as { cells?: unknown[] })?.cells?.length ?? 0)
         for (const row of rows as Array<Record<string, unknown>>) {
           const label = String(row.label ?? '')
           const cells = Array.isArray(row.cells) ? row.cells : []
@@ -562,20 +570,24 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
         }
       }
 
-      for (const rule of (Array.isArray(script.rules) ? script.rules : []) as Array<
+      for (const rule of (Array.isArray(article.rules) ? article.rules : []) as Array<
         Record<string, unknown>
       >) {
         const title = String(rule.title ?? '')
         if (!title.trim()) fail(where, '규칙 제목이 비었습니다')
         if (!String(rule.body ?? '').trim()) fail(`${where}/${title}`, '규칙 설명이 비었습니다')
         const examples = Array.isArray(rule.examples) ? rule.examples : []
-        if (examples.length === 0) fail(`${where}/${title}`, '예시가 없습니다 — 규칙만 있으면 읽을 것이 없습니다')
+        if (examples.length === 0)
+          fail(`${where}/${title}`, '예시가 없습니다 — 규칙만 있으면 읽을 것이 없습니다')
       }
 
+      if (tables.length === 0 && !Array.isArray(article.rules))
+        fail(where, '표도 규칙도 없습니다 — 열어도 볼 것이 없습니다')
+
       glyphs += count
-      per.push(`  ${String(script.label)} ${count}`)
+      per.push(`  ${String(article.title)} ${count}자`)
     }
-    console.log(`\n가나 ${glyphs}자 · 문자 ${scripts.length}종\n` + per.join(''))
+    console.log(`\n참고 글 ${list.length}편 · 글자 ${glyphs}개\n` + per.join(''))
   }
 }
 

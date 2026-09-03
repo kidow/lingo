@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Feed } from './feed'
 import { Header } from './header'
 import type { Entry } from '@/lib/entries'
-import { triviaFor } from '@/lib/content'
+import { articlesFor, triviaFor } from '@/lib/content'
 import {
   emptyProgress,
   loadProgress,
@@ -61,6 +61,7 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
    * 아직 안 쓴 언어는 빈 배열이고, 그러면 탭이 서지 않는다.
    */
   const trivia = useMemo(() => triviaFor(trackOf(track).language), [track])
+  const articles = useMemo(() => articlesFor(trackOf(track).language), [track])
 
   /**
    * 덱은 걸러 보는 창이다. 표현이 하나도 없는 트랙에서는 탭을 세우지 않는다 —
@@ -114,7 +115,7 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
         mastery={mastery}
         decks={decks}
         deck={shownDeck}
-        kana={trackOf(track).language === 'ja'}
+        articles={articles}
         onDeck={changeDeck}
       />
       <Feed

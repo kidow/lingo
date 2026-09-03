@@ -186,18 +186,30 @@ export type KanaRule = {
   examples: { text: string; gloss: string }[]
 }
 
-/** 히라가나·가타카나 한 벌 */
-export type KanaScript = {
-  /** 탭에 쓰는 식별자 */
-  id: 'hiragana' | 'katakana'
-  label: string
+/**
+ * 참고 글 하나. (spec.md §5)
+ *
+ * 히라가나 치트시트와 가타카나 치트시트가 각각 한 편이다. **가나 표만 들어올
+ * 자리가 아니라서** 글로 두고 목록을 세운다 — 조사표든 활용표든 나중에 오는
+ * 것도 같은 모양이면 목록에 한 줄이 늘 뿐이다.
+ *
+ * 지금은 본문이 표와 규칙뿐이라 필드가 둘이지만, 다른 글이 다른 모양을
+ * 요구하면 그때 `body`를 유니온으로 넓힌다.
+ */
+export type Article = {
+  /** 파일 안에서 유일한 식별자. ^[a-z0-9-]+$ */
+  id: string
+  /** 목록과 본문 머리에 서는 이름 */
+  title: string
+  /** 목록에서 제목 아래 한 줄. 무엇이 들어 있는지 말한다 */
+  summary: string
+  /** 어느 언어의 글인가. 그 언어 트랙에서만 목록에 선다 */
+  lang: Language
   tables: KanaTable[]
   rules: KanaRule[]
 }
 
-/** content/kana.json 한 파일의 모양 */
-export type KanaFile = {
-  /** 어느 노트에서 왔는가. 상식 문항의 `source`와 같은 자리다 */
-  source: string
-  scripts: KanaScript[]
+/** content/articles.json 한 파일의 모양 */
+export type ArticleFile = {
+  articles: Article[]
 }
