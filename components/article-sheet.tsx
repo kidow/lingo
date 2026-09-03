@@ -89,6 +89,28 @@ export function ArticleSheet({ articles }: { articles: Article[] }) {
   )
 }
 
+/** 줄 이름 칸의 폭. 아래 최소 폭 계산이 이 값을 깔고 간다 */
+const LABEL_WIDTH = 76
+
+/**
+ * 표가 눌리지 않을 최소 폭.
+ *
+ * 칸 수와 **가장 긴 글자**로 잡는다. 오십음도는 한 칸이 한 글자지만 활용표는
+ * `finissons`처럼 열 자까지 간다 — 폭을 하나로 못 박으면 긴 쪽이 서로 붙어
+ * 읽히지 않는다. 넘치면 표만 옆으로 밀리고 시트는 흔들리지 않는다.
+ */
+function minWidthOf(table: KanaTable) {
+  const columns = table.columns.length || (table.rows[0]?.cells.length ?? 1)
+  const longest = Math.max(
+    1,
+    ...table.rows.flatMap((row) =>
+      row.cells.map((cell) => (cell ? [...cell.kana].length : 0)),
+    ),
+  )
+  // +24는 칸의 좌우 여백이다. 이 여유가 없으면 sommes 같은 긴 활용형이 2px 넘친다
+  return LABEL_WIDTH + columns * Math.max(46, longest * 9 + 24)
+}
+
 function Table({ table }: { table: KanaTable }) {
   return (
     <section>
@@ -96,12 +118,15 @@ function Table({ table }: { table: KanaTable }) {
 
       {/* 좁은 화면에서 표만 옆으로 밀린다. 시트 전체가 가로로 흔들리면 안 된다 */}
       <div className="-mx-lg mt-2.5 overflow-x-auto px-lg">
-        <table className="w-full min-w-[320px] table-fixed border-collapse text-center">
+        <table
+          className="w-full table-fixed border-collapse text-center"
+          style={{ minWidth: minWidthOf(table) }}
+        >
           {table.columns.length > 0 && (
             <thead>
               <tr>
                 {/* 줄 이름 칸. 머리글이 없어 스크린리더에는 빈 칸으로 읽힌다 */}
-                <th className="w-[4.5rem] pb-1.5" />
+                <th className="pb-1.5" style={{ width: LABEL_WIDTH }} />
                 {/* 열 이름은 비어 있을 수 있다(성모·운모 표) — 키는 자리로 잡는다 */}
                 {table.columns.map((column, i) => (
                   <th key={i} className="pb-1.5 text-xs font-medium text-sub">
