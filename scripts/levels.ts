@@ -9,12 +9,15 @@
  *
  *   JLPT  Jisho(JMdict). 구 출제기준 기반이라 가타카나 외래어가 빠져 있다
  *   HSK   complete-hsk-vocabulary (MIT). HSK 3.0 기준
- *   CEFR  Goethe-Institut 공식 Wortliste. 독일어만, A1~B1까지
+ *   CEFR  독일어는 Goethe-Institut 공식 Wortliste(A1~B1). 프랑스어는 FLELex/Beacco
+ *         (UCLouvain CENTAL, CC BY-NC-SA 4.0) — A1~C2 여섯 등급 다 낸다
  *   TSL   TOEIC Service List (Browne & Culligan, CC BY-SA 4.0). 등급이 아니라 순위다
  *   TORFL ros-edu.ru의 ТРКИ 어휘 최소치. A1~B2까지다 (scripts/torfl.ts)
  *
- * 스페인어·프랑스어는 채우지 않는다. Cervantes PCIC는 robots.txt가 자동 수집을
- * 막고 있고, 프랑스어는 공개된 기계 판독 목록이 없다.
+ * 스페인어는 채우지 않는다. Instituto Cervantes PCIC는 `cvc.cervantes.es`가
+ * robots.txt로 전체 크롤링을 막고(`Disallow: /`), 같은 계열의 ELELex(CEFRLex
+ * 프로젝트)는 등급별 빈도 **분포**만 준다 — FLELex와 달리 단일 등급으로 정리한
+ * 버전(Beacco)이 없어서, 등급 하나를 고르려면 우리가 추정해야 한다.
  *
  * **표기가 같아도 뜻이 다르면 사람이 지운다.** 대조는 표기로만 하므로 동형어가
  * 다른 뜻의 등급을 물려받는다 — Bank(벤치/은행), Karte(지도/카드)가 그랬다.
@@ -108,6 +111,33 @@ async function germanLevels(): Promise<Map<string, string>> {
 }
 
 /**
+ * FLELex/Beacco — 프랑스어 CEFR 등급.
+ *
+ * 기본 FLELex는 낱말마다 A1~C2 여섯 등급의 **빈도**를 주는 분포표라, 등급 하나를
+ * 정하려면 우리가 임계값을 지어내야 한다. Beacco 버전은 그 작업을 이미 논문으로
+ * 끝냈다 — 전문가 판단과 빈도를 합쳐 낱말마다 등급 하나를 확정해 `level` 열에
+ * 낸다(Pintard & François, 2020). 출처가 정한 값을 그대로 읽을 뿐이다.
+ *
+ *   Pintard, A., François, T. (2020). Combining expert knowledge with frequency
+ *   information to infer CEFR levels for words. READI 워크숍, LREC 2020.
+ */
+const FLELEX_BEACCO_URL =
+  'https://cental.uclouvain.be/cefrlex/static/resources/fr/FleLex_TT_Beacco.tsv'
+
+async function frenchLevels(): Promise<Map<string, string>> {
+  const tsv = await (
+    await fetch(FLELEX_BEACCO_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+  ).text()
+  const levels = new Map<string, string>()
+  for (const row of tsv.split('\n').slice(1)) {
+    const cells = row.split('\t')
+    const [word, level] = [cells[0], cells[9]]
+    if (word && level) levels.set(word, level.trim())
+  }
+  return levels
+}
+
+/**
  * 괴테 목록에 있지만 **뜻이 우리 개념과 다른** 낱말. 등급을 붙이지 않는다.
  *
  * 목록은 표제어만 있고 뜻은 예문으로만 드러난다. 표기가 같아도 같은 낱말이
@@ -116,7 +146,21 @@ async function germanLevels(): Promise<Map<string, string>> {
  */
 const GERMAN_HOMONYMS = new Set(['Bank', 'Karte'])
 
+/**
+ * FLELex 목록에 있지만 **뜻이 우리 개념과 다른** 낱말. FLELex는 표기+품사로만
+ * 묶어서, 뜻이 갈리는 동철이의어는 두 뜻의 빈도가 한 등급에 섞인다. 흔한 뜻이
+ * 우리가 쓰는 낱은 뜻의 등급을 덮어써 버리는 자리를 걷어낸다.
+ *
+ *   vol    A1 — `절도`가 아니라 `비행`(공항 어휘)이 붙인 등급이다
+ *   livre  A1 — `파운드`(무게 단위)가 아니라 `책`이 붙인 등급이다. 프랑스는
+ *          미터법을 써서 livre가 무게로 잘 안 쓰인다
+ *   poêle  B2 — 요리 어휘 `프라이팬`치고 높다. `le poêle`(난로)가 더 무거운
+ *          말이라 그쪽이 등급을 끌어올렸을 가능성이 크다
+ */
+const FRENCH_HOMONYMS = new Set(['vol', 'livre', 'poêle'])
+
 const german = await germanLevels()
+const french = await frenchLevels()
 const tsl = await tslRanks()
 const torfl = await torflLevels()
 const only = process.argv[2]
@@ -134,11 +178,11 @@ for (const file of files) {
   const path = `content/${file}`
   const data = JSON.parse(readFileSync(path, 'utf8')) as { concepts: Concept[] }
   const counts = { jlpt: 0, hsk: 0, cefr: 0, tsl: 0, torfl: 0 }
-  let words = { ja: 0, zh: 0, de: 0, en: 0, ru: 0 }
+  let words = { ja: 0, zh: 0, de: 0, fr: 0, en: 0, ru: 0 }
 
   for (const concept of data.concepts ?? []) {
     const apply = (
-      lang: 'ja' | 'zh' | 'de' | 'en' | 'ru',
+      lang: 'ja' | 'zh' | 'de' | 'fr' | 'en' | 'ru',
       key: 'jlpt' | 'hsk' | 'cefr' | 'tsl' | 'torfl',
       value: unknown,
     ) => {
@@ -160,6 +204,8 @@ for (const file of files) {
     apply('zh', 'hsk', concept.words.zh && (await hskOf(concept.words.zh.term)))
     const de = concept.words.de?.term
     apply('de', 'cefr', de && !GERMAN_HOMONYMS.has(de) ? german.get(de) : undefined)
+    const fr = concept.words.fr?.term
+    apply('fr', 'cefr', fr && !FRENCH_HOMONYMS.has(fr) ? french.get(fr) : undefined)
     // 표기가 정확히 같을 때만 붙인다. TSL은 표제어 목록이라 `shoes`는 없고
     // `shoe`만 있는데, 복수형을 잘라 맞추면 `glasses`(안경)가 `glass`(유리컵)의
     // 순위를 물려받는다 — 독일어 Bank·Karte에서 겪은 것과 같은 함정이다
@@ -171,7 +217,8 @@ for (const file of files) {
   writeFileSync(path, JSON.stringify(data, null, 2) + '\n')
   console.log(
     `${file.replace('.json', '').padEnd(10)} JLPT ${counts.jlpt}/${words.ja}` +
-      ` · HSK ${counts.hsk}/${words.zh} · CEFR ${counts.cefr}/${words.de}` +
+      // CEFR는 de·fr을 합쳐 하나로 센다 — 속성 열쇠(cefr)가 둘이 같아서 나뉘지 않는다
+      ` · HSK ${counts.hsk}/${words.zh} · CEFR ${counts.cefr}/${words.de + words.fr}` +
       ` · TSL ${counts.tsl}/${words.en} · TORFL ${counts.torfl}/${words.ru}`,
   )
 }
