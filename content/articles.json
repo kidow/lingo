@@ -1624,6 +1624,523 @@
           ]
         }
       ]
+    },
+    {
+      "id": "pinyin",
+      "title": "병음 표",
+      "summary": "성모 21개와 운모, 성조 넷과 변성조 규칙",
+      "lang": "zh",
+      "tables": [
+        {
+          "title": "성모 — 첫소리 자음 21개",
+          "columns": [
+            "무기음",
+            "유기음",
+            "비음·마찰·기타"
+          ],
+          "caption": "무기음은 숨을 참고, 유기음은 훅 내보낸다. 입 앞에 종이를 대면 유기음에서만 흔들린다.",
+          "rows": [
+            {
+              "label": "순음 두 입술",
+              "cells": [
+                {
+                  "kana": "b",
+                  "roman": "bo"
+                },
+                {
+                  "kana": "p",
+                  "roman": "po"
+                },
+                {
+                  "kana": "m",
+                  "roman": "mo"
+                }
+              ]
+            },
+            {
+              "label": "순치음 윗니+아랫입술",
+              "cells": [
+                null,
+                null,
+                {
+                  "kana": "f",
+                  "roman": "fo"
+                }
+              ]
+            },
+            {
+              "label": "설첨음 혀끝+잇몸",
+              "cells": [
+                {
+                  "kana": "d",
+                  "roman": "de"
+                },
+                {
+                  "kana": "t",
+                  "roman": "te"
+                },
+                {
+                  "kana": "n",
+                  "roman": "ne"
+                }
+              ]
+            },
+            {
+              "label": "설측음 혀 옆",
+              "cells": [
+                null,
+                null,
+                {
+                  "kana": "l",
+                  "roman": "le"
+                }
+              ]
+            },
+            {
+              "label": "연구개음 혀뒤+연구개",
+              "cells": [
+                {
+                  "kana": "g",
+                  "roman": "ge"
+                },
+                {
+                  "kana": "k",
+                  "roman": "ke"
+                },
+                {
+                  "kana": "h",
+                  "roman": "he"
+                }
+              ]
+            },
+            {
+              "label": "구개음 혀+경구개",
+              "cells": [
+                {
+                  "kana": "j",
+                  "roman": "ji"
+                },
+                {
+                  "kana": "q",
+                  "roman": "qi"
+                },
+                {
+                  "kana": "x",
+                  "roman": "xi"
+                }
+              ]
+            },
+            {
+              "label": "권설음 혀 말아 올려",
+              "cells": [
+                {
+                  "kana": "zh",
+                  "roman": "zhi"
+                },
+                {
+                  "kana": "ch",
+                  "roman": "chi"
+                },
+                {
+                  "kana": "sh",
+                  "roman": "shi"
+                }
+              ]
+            },
+            {
+              "label": "권설 유음",
+              "cells": [
+                null,
+                null,
+                {
+                  "kana": "r",
+                  "roman": "ri"
+                }
+              ]
+            },
+            {
+              "label": "치음 혀끝+앞니 뒤",
+              "cells": [
+                {
+                  "kana": "z",
+                  "roman": "zi"
+                },
+                {
+                  "kana": "c",
+                  "roman": "ci"
+                },
+                {
+                  "kana": "s",
+                  "roman": "si"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "운모 — 성모 뒤에 오는 부분",
+          "columns": [],
+          "caption": "아래 칸의 두 번째 줄은 성모가 없을 때의 표기다. i·u·ü 계열은 홀로 설 때 y·w로 바꿔 적는다.",
+          "rows": [
+            {
+              "label": "단운모",
+              "cells": [
+                {
+                  "kana": "a",
+                  "roman": ""
+                },
+                {
+                  "kana": "o",
+                  "roman": ""
+                },
+                {
+                  "kana": "e",
+                  "roman": ""
+                },
+                {
+                  "kana": "er",
+                  "roman": ""
+                },
+                null
+              ]
+            },
+            {
+              "label": "복운모",
+              "cells": [
+                {
+                  "kana": "ai",
+                  "roman": ""
+                },
+                {
+                  "kana": "ei",
+                  "roman": ""
+                },
+                {
+                  "kana": "ao",
+                  "roman": ""
+                },
+                {
+                  "kana": "ou",
+                  "roman": ""
+                },
+                null
+              ]
+            },
+            {
+              "label": "비운모",
+              "cells": [
+                {
+                  "kana": "an",
+                  "roman": ""
+                },
+                {
+                  "kana": "en",
+                  "roman": ""
+                },
+                {
+                  "kana": "ang",
+                  "roman": ""
+                },
+                {
+                  "kana": "eng",
+                  "roman": ""
+                },
+                {
+                  "kana": "ong",
+                  "roman": ""
+                }
+              ]
+            },
+            {
+              "label": "i 계열",
+              "cells": [
+                {
+                  "kana": "i",
+                  "roman": "yi"
+                },
+                {
+                  "kana": "ia",
+                  "roman": "ya"
+                },
+                {
+                  "kana": "iao",
+                  "roman": "yao"
+                },
+                {
+                  "kana": "ie",
+                  "roman": "ye"
+                },
+                {
+                  "kana": "iu",
+                  "roman": "you"
+                }
+              ]
+            },
+            {
+              "label": "i 계열 ·",
+              "cells": [
+                {
+                  "kana": "ian",
+                  "roman": "yan"
+                },
+                {
+                  "kana": "in",
+                  "roman": "yin"
+                },
+                {
+                  "kana": "iang",
+                  "roman": "yang"
+                },
+                {
+                  "kana": "ing",
+                  "roman": "ying"
+                },
+                {
+                  "kana": "iong",
+                  "roman": "yong"
+                }
+              ]
+            },
+            {
+              "label": "u 계열",
+              "cells": [
+                {
+                  "kana": "u",
+                  "roman": "wu"
+                },
+                {
+                  "kana": "ua",
+                  "roman": "wa"
+                },
+                {
+                  "kana": "uo",
+                  "roman": "wo"
+                },
+                {
+                  "kana": "uai",
+                  "roman": "wai"
+                },
+                {
+                  "kana": "ui",
+                  "roman": "wei"
+                }
+              ]
+            },
+            {
+              "label": "u 계열 ·",
+              "cells": [
+                {
+                  "kana": "uan",
+                  "roman": "wan"
+                },
+                {
+                  "kana": "un",
+                  "roman": "wen"
+                },
+                {
+                  "kana": "uang",
+                  "roman": "wang"
+                },
+                {
+                  "kana": "ueng",
+                  "roman": "weng"
+                },
+                null
+              ]
+            },
+            {
+              "label": "ü 계열",
+              "cells": [
+                {
+                  "kana": "ü",
+                  "roman": "yu"
+                },
+                {
+                  "kana": "üe",
+                  "roman": "yue"
+                },
+                {
+                  "kana": "üan",
+                  "roman": "yuan"
+                },
+                {
+                  "kana": "ün",
+                  "roman": "yun"
+                },
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "title": "성조 — 음높이의 궤적",
+          "columns": [],
+          "caption": "숫자는 5단계 음높이다. 55는 높은 데서 평평하게, 51은 높은 데서 아래로 뚝 떨어진다.",
+          "rows": [
+            {
+              "label": "1성",
+              "cells": [
+                {
+                  "kana": "ā",
+                  "roman": "55 · 높고 평평하게"
+                },
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "label": "2성",
+              "cells": [
+                {
+                  "kana": "á",
+                  "roman": "35 · 끝을 올려서"
+                },
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "label": "3성",
+              "cells": [
+                {
+                  "kana": "ǎ",
+                  "roman": "214 · 내렸다 올려서"
+                },
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "label": "4성",
+              "cells": [
+                {
+                  "kana": "à",
+                  "roman": "51 · 뚝 떨어뜨려"
+                },
+                null,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "label": "경성",
+              "cells": [
+                {
+                  "kana": "a",
+                  "roman": "짧고 가볍게"
+                },
+                null,
+                null,
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "title": "3성이 이어지면 앞이 2성이 된다",
+          "body": "표기는 원래대로 두고 발음만 바뀐다.",
+          "examples": [
+            {
+              "text": "你好 nǐhǎo",
+              "gloss": "실제로는 níhǎo로 소리 난다"
+            },
+            {
+              "text": "很好 hěnhǎo",
+              "gloss": "hénhǎo"
+            }
+          ]
+        },
+        {
+          "title": "不는 4성 앞에서 2성이 된다",
+          "body": "그 밖에는 본래 4성 그대로다.",
+          "examples": [
+            {
+              "text": "不是 bú shì",
+              "gloss": "뒤가 4성이라 bú"
+            },
+            {
+              "text": "不吃 bù chī",
+              "gloss": "뒤가 1성이라 bù 그대로"
+            }
+          ]
+        },
+        {
+          "title": "一는 뒤 성조에 따라 갈린다",
+          "body": "4성 앞에서는 2성, 1·2·3성 앞에서는 4성이 된다. 서수·날짜에서는 1성을 지킨다.",
+          "examples": [
+            {
+              "text": "一个 yí gè",
+              "gloss": "뒤가 4성이라 yí"
+            },
+            {
+              "text": "一天 yì tiān",
+              "gloss": "뒤가 1성이라 yì"
+            },
+            {
+              "text": "一月 yī yuè",
+              "gloss": "달 이름이라 yī 그대로"
+            }
+          ]
+        },
+        {
+          "title": "성조 부호를 붙일 모음 고르기",
+          "body": "a나 e가 있으면 거기, 없고 ou면 o, 그 밖에는 마지막 모음에 붙인다.",
+          "examples": [
+            {
+              "text": "hǎo",
+              "gloss": "a가 있어 a 위에"
+            },
+            {
+              "text": "xiè",
+              "gloss": "e가 있어 e 위에"
+            },
+            {
+              "text": "duì",
+              "gloss": "둘 다 없어 마지막 i 위에"
+            },
+            {
+              "text": "liú",
+              "gloss": "마지막 u 위에"
+            }
+          ]
+        },
+        {
+          "title": "경성으로 읽는 자리",
+          "body": "본래 성조를 잃고 짧고 가볍게 읽는 음절이다.",
+          "examples": [
+            {
+              "text": "吗 · 呢 · 吧",
+              "gloss": "문장 끝 어기조사"
+            },
+            {
+              "text": "桌子 zhuōzi · 我们 wǒmen",
+              "gloss": "접미사 子·们·的"
+            },
+            {
+              "text": "爸爸 bàba · 妈妈 māma",
+              "gloss": "겹쳐 부르는 가족 이름"
+            },
+            {
+              "text": "看看 kànkan",
+              "gloss": "되풀이한 동사의 둘째 음절"
+            },
+            {
+              "text": "进来 jìnlai · 出去 chūqu",
+              "gloss": "방향보어"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

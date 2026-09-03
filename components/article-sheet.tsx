@@ -143,7 +143,9 @@ function Cell({ cell }: { cell: KanaCell }) {
       title={cell.note}
     >
       <span className="font-jp text-lg leading-none">{cell.kana}</span>
-      <span className="mt-1 text-[11px] leading-none text-sub">{cell.roman}</span>
+      {cell.roman && (
+        <span className="mt-1 text-[11px] leading-none text-sub">{cell.roman}</span>
+      )}
       {/* 가타카나 표에만 있다. 대응하는 히라가나를 같은 칸에 겹쳐 싣는다 */}
       {cell.pair && (
         <span className="font-jp mt-1 text-[11px] leading-none text-sub opacity-70">
