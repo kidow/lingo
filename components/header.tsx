@@ -1,7 +1,6 @@
 'use client'
 
 import { ChevronDown } from 'lucide-react'
-import { ReferenceDrawer } from './reference-drawer'
 import { SearchDrawer } from './search-drawer'
 import {
   DropdownMenu,
@@ -164,13 +163,19 @@ export function Header({
           </div>
         )}
 
-        {/* 검색은 트랙을 안 가리므로 언제나 선다 — 참고 글 버튼과 달리
-            서고 마는 조건이 없다 */}
+        {/*
+          찾기는 **언제나 선다.** 검색이 트랙을 안 가리기 때문이다 — 참고 글만
+          있던 시절에는 글이 없는 트랙에서 자리째 빠졌는데, 그래서 헤더 오른쪽
+          끝이 트랙마다 들쭉날쭉했다 (components/search-sheet.tsx)
+        */}
         {concepts.length > 0 && (
-          <SearchDrawer concepts={concepts} trivia={trivia} articles={allArticles} />
+          <SearchDrawer
+            concepts={concepts}
+            trivia={trivia}
+            articles={allArticles}
+            trackArticles={articles}
+          />
         )}
-
-        {articles.length > 0 && <ReferenceDrawer articles={articles} />}
       </div>
     </header>
   )
