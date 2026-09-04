@@ -20,6 +20,8 @@
  * 않으므로(§5) 상위 두 등급은 여전히 비어 있다.
  */
 
+import { readJson, writeJson } from './cache.ts'
+
 const URL = 'https://www.ros-edu.ru/380'
 const PER_PAGE = 40
 
@@ -106,14 +108,25 @@ export async function torflEntries(): Promise<TorflEntry[]> {
   return [...entries.values()]
 }
 
-/** 목록 전체를 한 번만 받아 둔다. 한 쪽에 40줄씩 온다 */
+/**
+ * 목록 전체를 한 번만 받아 둔다. 한 쪽에 40줄씩 온다.
+ *
+ * 쪽을 하나씩 도느라 실행마다 백 번 넘게 요청한다 — 목록은 연 단위로나 바뀌므로
+ * 받은 줄을 `.cache/torfl.json`에 두고 다시 쓴다 (scripts/cache.ts).
+ */
 let cached: Row[] | null = null
 async function allRows(): Promise<Row[]> {
   if (cached) return cached
+  const saved = readJson<Row[]>('torfl.json')
+  if (saved && saved.length > 0) {
+    cached = saved
+    return saved
+  }
   const first = await page(1)
   const rows = [...first.data]
   for (let n = 2; n <= Math.ceil(first.count / PER_PAGE); n += 1) rows.push(...(await page(n)).data)
   cached = rows
+  writeJson('torfl.json', rows)
   return rows
 }
 

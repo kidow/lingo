@@ -3,6 +3,11 @@
  *
  *   node scripts/levels.ts            콘텐츠 전체
  *   node scripts/levels.ts food       한 파일만
+ *   node scripts/levels.ts --refresh  캐시를 버리고 목록을 다시 받는다
+ *
+ * 받은 목록은 `.cache/`에 둔다 (scripts/cache.ts). 시험 어휘는 연 단위로나
+ * 바뀌는데 매 실행마다 다시 받으면 20분이 걸리고, 그중 한 요청만 실패해도
+ * 실행이 통째로 죽는다.
  *
  * 등급을 **추정하지 않는다.** 세 출처를 조회해 있는 것만 붙이고, 없으면 비운다 —
  * 비면 그 카드에 레벨 줄이 안 나온다 (§5).
@@ -24,6 +29,7 @@
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { inflateSync } from 'node:zlib'
+import { cachedBytes } from './cache.ts'
 import { hskOf, jlptOf } from './define.ts'
 import { bare, torflLevels } from './torfl.ts'
 import type { Concept } from '../lib/types.ts'
@@ -44,7 +50,11 @@ const TSL_URL = 'https://www.newgeneralservicelist.com/s/TSL_12_stats.csv'
 async function tslRanks(): Promise<Map<string, number>> {
   // CSV가 UTF-8이 아니다. 그대로 읽으면 `résumé`·`café`가 깨져 영영 안 맞는다
   const csv = new TextDecoder('windows-1252').decode(
-    await (await fetch(TSL_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })).arrayBuffer(),
+    await cachedBytes('tsl.csv', async () =>
+      Buffer.from(
+        await (await fetch(TSL_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })).arrayBuffer(),
+      ),
+    ),
   )
   const ranks = new Map<string, number>()
   for (const row of csv.split(/\r?\n/).slice(1)) {
@@ -67,9 +77,9 @@ const GOETHE: Array<[string, string]> = [
  * 있는 콘텐츠 스트림만** 쓴다 — 글꼴 프로그램에는 그 연산자가 없어서 이 한 줄로
  * 바이너리가 걸러진다.
  */
-async function pdfWords(url: string): Promise<string[]> {
-  const buf = Buffer.from(
-    await (await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })).arrayBuffer(),
+async function pdfWords(url: string, cacheName: string): Promise<string[]> {
+  const buf = await cachedBytes(cacheName, async () =>
+    Buffer.from(await (await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })).arrayBuffer()),
   )
   let text = ''
   let i = 0
@@ -105,7 +115,7 @@ async function germanLevels(): Promise<Map<string, string>> {
   const levels = new Map<string, string>()
   // 높은 등급부터 넣어 낮은 등급이 덮어쓰게 한다
   for (const [level, url] of GOETHE) {
-    for (const word of await pdfWords(url)) levels.set(word, level)
+    for (const word of await pdfWords(url, `goethe-${level}.pdf`)) levels.set(word, level)
   }
   return levels
 }
@@ -125,9 +135,15 @@ const FLELEX_BEACCO_URL =
   'https://cental.uclouvain.be/cefrlex/static/resources/fr/FleLex_TT_Beacco.tsv'
 
 async function frenchLevels(): Promise<Map<string, string>> {
-  const tsv = await (
-    await fetch(FLELEX_BEACCO_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })
-  ).text()
+  const tsv = (
+    await cachedBytes('flelex-fr.tsv', async () =>
+      Buffer.from(
+        await (
+          await fetch(FLELEX_BEACCO_URL, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+        ).arrayBuffer(),
+      ),
+    )
+  ).toString('utf8')
   const levels = new Map<string, string>()
   for (const row of tsv.split('\n').slice(1)) {
     const cells = row.split('\t')
