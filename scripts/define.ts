@@ -12,6 +12,9 @@
  * 이어야 하는데, 이 스크립트는 남의 서버에 의존한다. 콘텐츠를 넣을 때 사람이
  * 한 번 돌려보는 자리다.
  *
+ * 조회 결과는 `.cache/`에 둔다 (scripts/cache.ts). JLPT는 낱말당 요청이 하나라
+ * 캐시가 없으면 `pnpm levels`가 매번 3,400번을 묻는다.
+ *
  * 출처:
  * - 영어 정의 — Free Dictionary (dictionaryapi.dev). 키 없음
  * - 한국어 번역 — 영어 위키낱말사전의 번역 절. CC BY-SA
@@ -22,6 +25,7 @@
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
+import { cachedBytes, readJson, writeJson } from './cache.ts'
 import type { Concept } from '../lib/types.ts'
 
 const UA = { 'User-Agent': 'lingo-content-tool/1.0 (+https://github.com/kidow/lingo)' }
@@ -142,7 +146,11 @@ async function hskLevels(): Promise<Map<string, number>> {
   if (hskTable) return hskTable
   const table = new Map<string, number>()
   // min 판은 키가 축약돼 있다 — simplified→s, level→l, new-3→n3
-  const data = (await json(HSK_URL)) as Array<{ s?: string; l?: string[] }> | null
+  const bytes = await cachedBytes('hsk.json', async () => {
+    const data = await json(HSK_URL)
+    return Buffer.from(JSON.stringify(data))
+  })
+  const data = JSON.parse(bytes.toString('utf8')) as Array<{ s?: string; l?: string[] }> | null
   for (const entry of data ?? []) {
     const level = entry.l?.find((l) => /^n[1-9]$/.test(l))?.slice(1)
     if (entry.s && level) table.set(entry.s, Number(level))
@@ -161,9 +169,39 @@ export async function hskOf(term: string): Promise<number | undefined> {
   return level
 }
 
+/**
+ * 낱말 → JLPT 등급. 등급이 없는 낱말은 `null`로 적는다.
+ *
+ * null도 적어야 한다. 안 그러면 등급 없는 낱말은 매 실행마다 다시 조회한다 —
+ * 콘텐츠의 절반이 그렇다.
+ */
+const JLPT_CACHE = 'jlpt.json'
+let jlptTable: Record<string, string | null> | null = null
+/** 마지막 저장 뒤로 새로 받은 낱말 수. 중간에 죽어도 앞부분은 남기려고 센다 */
+let jlptPending = 0
+
+function flushJlpt(): void {
+  if (jlptTable && jlptPending > 0) {
+    writeJson(JLPT_CACHE, jlptTable)
+    jlptPending = 0
+  }
+}
+process.on('exit', flushJlpt)
+
 /** 일본어 단어의 JLPT 등급만 조회한다. 없으면 undefined */
 export async function jlptOf(term: string): Promise<string | undefined> {
-  return (await japanese(term)).jlpt
+  jlptTable ??= readJson<Record<string, string | null>>(JLPT_CACHE) ?? {}
+  if (term in jlptTable) return jlptTable[term] ?? undefined
+
+  // 조회가 끝내 실패하면 던진다(json 참고). 캐시에는 아무것도 안 적는다 —
+  // 502를 "등급 없음"으로 적어 두면 그 낱말은 영영 등급을 못 받는다
+  const level = (await japanese(term)).jlpt
+  jlptTable[term] = level ?? null
+  jlptPending += 1
+  // 50개마다 한 번 저장한다. 매번 쓰면 3,400번 쓰고, 끝에만 쓰면 중간에 죽을 때
+  // 다 잃는다
+  if (jlptPending >= 50) flushJlpt()
+  return level
 }
 
 async function lookup(word: string, lang: string): Promise<Lookup> {
