@@ -38,28 +38,7 @@ export function ArticleSheet({ articles }: { articles: Article[] }) {
         </div>
 
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-lg">
-          <h3 className="text-[17px] font-bold tracking-tight">{article.title}</h3>
-
-          <div className="mt-4 flex flex-col gap-7">
-            {article.tables.map((table) => (
-              <Table key={table.title} table={table} />
-            ))}
-
-            {article.rules.map((rule) => (
-              <section key={rule.title}>
-                <h4 className="text-[15px] font-semibold">{rule.title}</h4>
-                <p className="mt-1 text-sm text-sub">{rule.body}</p>
-                <dl className="mt-2.5 flex flex-col gap-1.5">
-                  {rule.examples.map((example) => (
-                    <div key={example.text} className="flex items-baseline gap-2.5">
-                      <dt className="font-jp shrink-0 text-[15px]">{example.text}</dt>
-                      <dd className="text-sm text-sub">{example.gloss}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </section>
-            ))}
-          </div>
+          <ArticleBody article={article} />
         </div>
       </div>
     )
@@ -86,6 +65,40 @@ export function ArticleSheet({ articles }: { articles: Article[] }) {
         ))}
       </ul>
     </div>
+  )
+}
+
+/**
+ * 글 한 편의 본문. 표와 규칙만 그리고 **스크롤 상자는 부르는 쪽이 든다** —
+ * 참고 시트와 검색 미리보기가 같은 글을 다른 껍데기 안에서 보여주기 때문이다
+ * (components/search-sheet.tsx).
+ */
+export function ArticleBody({ article }: { article: Article }) {
+  return (
+    <>
+      <h3 className="text-[17px] font-bold tracking-tight">{article.title}</h3>
+
+      <div className="mt-4 flex flex-col gap-7">
+        {article.tables.map((table) => (
+          <Table key={table.title} table={table} />
+        ))}
+
+        {article.rules.map((rule) => (
+          <section key={rule.title}>
+            <h4 className="text-[15px] font-semibold">{rule.title}</h4>
+            <p className="mt-1 text-sm text-sub">{rule.body}</p>
+            <dl className="mt-2.5 flex flex-col gap-1.5">
+              {rule.examples.map((example) => (
+                <div key={example.text} className="flex items-baseline gap-2.5">
+                  <dt className="font-jp shrink-0 text-[15px]">{example.text}</dt>
+                  <dd className="text-sm text-sub">{example.gloss}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        ))}
+      </div>
+    </>
   )
 }
 

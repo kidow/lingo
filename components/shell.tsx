@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Feed } from './feed'
 import { Header } from './header'
 import type { Entry } from '@/lib/entries'
-import { articlesFor, triviaFor } from '@/lib/content'
+import { ALL_ARTICLES, ALL_TRIVIA, articlesFor, CONCEPTS, triviaFor } from '@/lib/content'
 import {
   emptyProgress,
   loadProgress,
@@ -117,6 +117,10 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
         deck={shownDeck}
         articles={articles}
         onDeck={changeDeck}
+        // 검색은 트랙에 걸리지 않은 전량을 훑는다 (lib/content.ts)
+        concepts={CONCEPTS}
+        trivia={ALL_TRIVIA}
+        allArticles={ALL_ARTICLES}
       />
       <Feed
         key={`${track}-${shownDeck}`}
