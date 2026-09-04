@@ -130,6 +130,107 @@ test('어느 표기로 걸렸는지를 들고 온다', () => {
   assert.equal(byKorean.kind === 'word' && byKorean.text, undefined)
 })
 
+test('치다 만 글자도 자모로 걸린다', () => {
+  // `커ㅍ`는 글자로는 어디에도 없지만 자모로 풀면 `ㅋㅓㅍ`이라 `커피` 안에 있다
+  assert.ok(search(index, '커ㅍ').some((h) => h.key === 'coffee'))
+  assert.ok(search(index, '거ㄹ').some((h) => h.key === 'street'))
+})
+
+test('자판을 잘못 두고 쳐도 되돌려 찾는다', () => {
+  // zjvl → 커피. 멀쩡한 영어로 찾은 것이 있으면 되돌리지 않는다
+  assert.ok(search(index, 'zjvl').some((h) => h.key === 'coffee'))
+  assert.deepEqual(
+    search(index, 'cafe').map((h) => h.key),
+    ['coffee'],
+    'cafe는 영어로 이미 걸리므로 ㅊㅁ뮤로 뒤집지 않는다',
+  )
+})
+
+test('초성 동점은 기초 어휘가 먼저다', () => {
+  // ㅋㅍ 하나에 넷이 통째로 맞는다. 시험이 여럿 낮은 등급으로 올린 쪽이 앞선다
+  const tie = buildIndex(
+    [
+      concept({ slug: 'kickboard', meaning_ko: '킥판', words: { en: { term: 'kickboard' } } }),
+      concept({
+        slug: 'carpet',
+        meaning_ko: '카펫',
+        words: {
+          ja: { term: 'カーペット', attributes: { jlpt: 'N2' } },
+          de: { term: 'Teppich', attributes: { cefr: 'B1' } },
+        },
+      }),
+      concept({
+        slug: 'coffee2',
+        meaning_ko: '커피',
+        words: {
+          ja: { term: 'コーヒー', attributes: { jlpt: 'N5' } },
+          de: { term: 'Kaffee', attributes: { cefr: 'A1' } },
+        },
+      }),
+    ],
+    [],
+    [],
+  )
+  assert.deepEqual(
+    search(tie, 'ㅋㅍ').map((h) => h.key),
+    ['coffee2', 'carpet', 'kickboard'],
+    '등급이 낮은 것 → 높은 것 → 아예 없는 것',
+  )
+})
+
+test('등급 하나짜리가 여럿짜리를 밀어내지 않는다', () => {
+  // 쿠폰은 TSL 75위 하나뿐이라 「있는 것만 평균」이면 0.06으로 커피(0.10)를
+  // 이겼다. 빈자리를 벌점으로 세면 뒤집힌다
+  const tie = buildIndex(
+    [
+      concept({ slug: 'coupon', meaning_ko: '쿠폰', words: { en: { term: 'coupon', attributes: { tsl: 75 } } } }),
+      concept({
+        slug: 'coffee3',
+        meaning_ko: '커피',
+        words: {
+          ja: { term: 'コーヒー', attributes: { jlpt: 'N5' } },
+          zh: { term: '咖啡', attributes: { hsk: 3, tocfl: '準備2' } },
+          de: { term: 'Kaffee', attributes: { cefr: 'A1' } },
+          ru: { term: 'кофе', attributes: { torfl: 'A1' } },
+        },
+      }),
+    ],
+    [],
+    [],
+  )
+  assert.deepEqual(
+    search(tie, 'ㅋㅍ').map((h) => h.key),
+    ['coffee3', 'coupon'],
+  )
+})
+
+test('등급을 매긴 시험이 많은 쪽이 먼저다', () => {
+  const tie = buildIndex(
+    [
+      concept({
+        slug: 'few',
+        meaning_ko: '카페',
+        words: { de: { term: 'Café', attributes: { cefr: 'A1' } } },
+      }),
+      concept({
+        slug: 'many',
+        meaning_ko: '커피',
+        words: {
+          de: { term: 'Kaffee', attributes: { cefr: 'A1' } },
+          ja: { term: 'コーヒー', attributes: { jlpt: 'N5' } },
+          ru: { term: 'кофе', attributes: { torfl: 'A1' } },
+        },
+      }),
+    ],
+    [],
+    [],
+  )
+  assert.deepEqual(
+    search(tie, 'ㅋㅍ').map((h) => h.key),
+    ['many', 'few'],
+  )
+})
+
 test('빈 검색어는 아무것도 안 낸다', () => {
   assert.deepEqual(search(index, ''), [])
   assert.deepEqual(search(index, '   '), [])
