@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { ArticleBody } from './article-sheet'
 import { ConceptImage } from './concept-image'
+import { SayButton } from './say-button'
 import { LANG_LABEL } from '@/lib/lang'
 import { buildIndex, search, type Hit, type SearchIndex } from '@/lib/search'
 import type { TriviaEntry } from '@/lib/trivia'
@@ -193,16 +194,26 @@ function WordPreview({ concept }: { concept: Concept }) {
 
       <dl className="mt-3 flex flex-col">
         {words.map(([lang, word]) => (
-          <div key={lang} className="flex items-baseline gap-3 border-t border-line py-2.5">
+          <div key={lang} className="flex items-center gap-3 border-t border-line py-2.5">
             <dt className="w-14 shrink-0 text-[13px] text-sub">{LANG_LABEL[lang]}</dt>
-            <dd className="min-w-0 flex-1">
-              <span className="font-jp text-[15px] font-semibold">{word!.term}</span>
-              {/* 읽기와 로마자는 언어마다 있고 없다. 있는 것만 잇는다 (lib/lang.ts) */}
-              {(word!.reading || word!.romanization) && (
-                <span className="font-jp ml-2 text-[13px] text-sub">
-                  {[word!.reading, word!.romanization].filter(Boolean).join(' · ')}
-                </span>
-              )}
+            <dd className="flex min-w-0 flex-1 items-center gap-2">
+              <span className="min-w-0">
+                <span className="font-jp text-[15px] font-semibold">{word!.term}</span>
+                {/* 읽기와 로마자는 언어마다 있고 없다. 있는 것만 잇는다 (lib/lang.ts) */}
+                {(word!.reading || word!.romanization) && (
+                  <span className="font-jp ml-2 text-[13px] text-sub">
+                    {[word!.reading, word!.romanization].filter(Boolean).join(' · ')}
+                  </span>
+                )}
+              </span>
+              {/*
+                발음은 시험이 아니라 **언어**의 것이라 일곱 줄이 각자 자기 소리를
+                갖는다(§1). 파일이 없는 자리도 버튼이 사라지지 않고 흐려지기만
+                하므로 줄 끝이 들쭉날쭉해지지 않는다 (components/say-button.tsx)
+              */}
+              <span className="ml-auto shrink-0">
+                <SayButton slug={concept.slug} lang={lang} label={word!.term} />
+              </span>
             </dd>
           </div>
         ))}
