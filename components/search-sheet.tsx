@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react'
 import { useMemo, useState } from 'react'
-import { ArticleBody } from './article-sheet'
+import { ArticleBody } from './article-body'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { LANG_LABEL } from '@/lib/lang'
@@ -11,11 +11,17 @@ import type { TriviaEntry } from '@/lib/trivia'
 import type { Article, Concept, Language } from '@/lib/types'
 
 /**
- * 전역 검색. (spec.md §3, §5)
+ * 찾아보는 자리 — 검색과 참고 글이 한 시트에 산다. (spec.md §3, §5)
  *
- * **트랙을 가리지 않는다.** JLPT를 보고 있어도 `커피`를 치면 일곱 언어가 다
- * 걸리고 상식·참고 글까지 함께 선다 — 찾는 사람은 그것이 어느 덱에 있는지
- * 모르는 채로 찾기 때문이다.
+ * **빈 칸이 곧 참고 글 목록이다.** 둘을 따로 두었을 때 헤더에 아이콘이 둘
+ * 나란히 섰는데, 참고 글은 트랙에 따라 서고 마는 반면 검색은 늘 서서 자리가
+ * 들쭉날쭉했다. 게다가 검색창을 열면 아무것도 없는 화면이 먼저 나왔다 —
+ * 마침 그 자리에 **지금 트랙에서 펴 볼 글**이 있다.
+ *
+ * **검색은 트랙을 안 가리고 참고 글은 가린다.** 어긋나 보이지만 하는 일이
+ * 다르다 — 찾는 사람은 그것이 어느 덱에 있는지 모르는 채로 찾고(그래서 일곱
+ * 언어를 다 뒤진다), 참고 글은 지금 공부하는 언어의 것을 펴 보는 자리다.
+ * 그래서 `히라가나`라고 치면 트랙과 무관하게 그 글이 걸린다.
  *
  * **누르면 시트 안에서 펼친다.** 피드로 보내지 않는다 — 다음에 무엇이 나올지는
  * 엔진이 정하는 것이라(lib/engine.ts) 임의의 카드로 건너뛰는 길이 없고, 만들면
@@ -42,10 +48,14 @@ export function SearchSheet({
   concepts,
   trivia,
   articles,
+  trackArticles,
 }: {
   concepts: Concept[]
   trivia: TriviaEntry[]
+  /** 검색이 훑을 것 — 언어를 가리지 않은 전량 */
   articles: Article[]
+  /** 빈 칸일 때 세울 것 — 지금 트랙의 글만 */
+  trackArticles: Article[]
 }) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState<Hit | null>(null)
@@ -53,7 +63,9 @@ export function SearchSheet({
   const index = useMemo(() => sharedIndex(concepts, trivia, articles), [concepts, trivia, articles])
   const hits = useMemo(() => search(index, query), [index, query])
 
-  if (open) return <Preview hit={open} onBack={() => setOpen(null)} />
+  // 돌아가는 자리 이름이 갈린다 — 친 게 있으면 결과 목록이고, 비었으면 참고 글이다
+  if (open)
+    return <Preview hit={open} back={query ? '결과' : '목록'} onBack={() => setOpen(null)} />
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -85,10 +97,32 @@ export function SearchSheet({
 
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-lg">
         {/*
-          아직 아무것도 안 친 자리에는 안내만 둔다. 결과 대신 목록을 미리
-          깔면 3,756개가 스크롤로 쏟아진다
+          빈 칸에는 지금 트랙의 참고 글을 세운다. 낱말 목록을 미리 깔지 않는
+          이유는 3,756개가 스크롤로 쏟아지기 때문이고, 참고 글은 많아야 두어
+          편이라 그대로 목록이 된다.
+
+          글이 없는 트랙(TOEIC)에서는 안내 한 줄만 남는다 — 자리를 비우면
+          검색창만 덩그러니 뜬다
         */}
-        {!query && <Hint>단어와 상식을 한 번에 찾습니다. 초성으로도 됩니다.</Hint>}
+        {!query &&
+          (trackArticles.length > 0 ? (
+            <>
+              <h3 className="px-1 pb-2 text-[13px] font-semibold text-sub">참고 글</h3>
+              <ul className="flex flex-col gap-2">
+                {trackArticles.map((article) => (
+                  <li key={article.id}>
+                    <Row
+                      hit={{ kind: 'article', key: article.id, article }}
+                      onOpen={() => setOpen({ kind: 'article', key: article.id, article })}
+                      showTag={false}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <Hint>단어와 상식을 한 번에 찾습니다. 초성으로도 됩니다.</Hint>
+          ))}
 
         {/*
           **두 글자를 넘겨야 「없음」을 띄운다.** 한 글자씩 칠 때마다 「결과
@@ -114,9 +148,11 @@ function Hint({ children }: { children: React.ReactNode }) {
   return <p className="px-1 py-6 text-center text-sm text-sub">{children}</p>
 }
 
-/** 결과 한 줄. 참고 글 목록과 같은 모양이다 (components/article-sheet.tsx) */
-function Row({ hit, onOpen }: { hit: Hit; onOpen: () => void }) {
-  const [title, sub, tag] = rowText(hit)
+/** 목록 한 줄. 검색 결과와 참고 글이 같은 모양을 쓴다 */
+function Row({ hit, onOpen, showTag = true }: { hit: Hit; onOpen: () => void; showTag?: boolean }) {
+  const [title, sub, rawTag] = rowText(hit)
+  // 참고 글 목록에서는 머리글이 이미 「참고 글」이라 줄마다 되풀이하지 않는다
+  const tag = showTag ? rawTag : null
   return (
     <button
       type="button"
@@ -153,7 +189,7 @@ function rowText(hit: Hit): [title: string, sub: string | null, tag: string | nu
  * 가리지 않는 것이 앞뒤가 맞고, 한 그림에 일곱 언어가 붙어 있다는 구조가
  * 여기서 제일 잘 드러난다 (spec.md §1).
  */
-function Preview({ hit, onBack }: { hit: Hit; onBack: () => void }) {
+function Preview({ hit, back, onBack }: { hit: Hit; back: string; onBack: () => void }) {
   return (
     <div className="flex h-full min-h-0 flex-col">
       <div className="shrink-0 px-lg pb-3">
@@ -163,7 +199,7 @@ function Preview({ hit, onBack }: { hit: Hit; onBack: () => void }) {
           className="-ml-1.5 flex items-center gap-0.5 rounded-ctrl py-1 pr-2 pl-1 text-sm text-sub transition active:scale-[.985]"
         >
           <ChevronLeft className="size-4" strokeWidth={2.5} aria-hidden />
-          결과
+          {back}
         </button>
       </div>
 

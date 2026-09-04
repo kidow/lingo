@@ -1,76 +1,16 @@
 'use client'
 
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState } from 'react'
 import type { Article, KanaCell, KanaTable } from '@/lib/types'
 
 /**
- * 참고 글을 훑는 자리. (spec.md §5)
- *
- * **목록이 먼저다.** 지금은 히라가나·가타카나 두 편뿐이지만 가나 표만 들어올
- * 자리가 아니라서, 처음부터 목록을 세우고 글을 그 아래 둔다 — 탭으로 두면
- * 셋째 글이 오는 순간 다시 짜야 한다.
+ * 참고 글 한 편의 본문. (spec.md §5)
  *
  * **푸는 것이 아니라 보는 것이다.** 상식 탭에도 같은 지식이 문항으로 있지만
  * 쓰임이 다르다 — 문항은 답해서 확인하는 것이고 이 글은 카드를 풀다 막혔을
  * 때 열어 보는 것이다. 그래서 채점도 진도도 없다.
  *
- * **껍데기는 부르는 쪽이 씌운다.** 여는 방식과 섞이지 않아야 다른 자리에
- * 다시 쓸 수 있다 (components/reference-drawer.tsx).
- */
-export function ArticleSheet({ articles }: { articles: Article[] }) {
-  const [openId, setOpenId] = useState<string | null>(null)
-  const article = articles.find((a) => a.id === openId) ?? null
-
-  if (article) {
-    return (
-      <div className="flex h-full min-h-0 flex-col">
-        {/* 목록으로 돌아가는 길. 시트를 닫았다 다시 여는 것보다 짧아야 한다 */}
-        <div className="shrink-0 px-lg pb-3">
-          <button
-            type="button"
-            onClick={() => setOpenId(null)}
-            className="-ml-1.5 flex items-center gap-0.5 rounded-ctrl py-1 pr-2 pl-1 text-sm text-sub transition active:scale-[.985]"
-          >
-            <ChevronLeft className="size-4" strokeWidth={2.5} aria-hidden />
-            목록
-          </button>
-        </div>
-
-        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-lg">
-          <ArticleBody article={article} />
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-lg">
-      <ul className="flex flex-col gap-2">
-        {articles.map((a) => (
-          <li key={a.id}>
-            <button
-              type="button"
-              onClick={() => setOpenId(a.id)}
-              className="flex w-full items-center gap-3 rounded-ctrl border border-line bg-surface px-4 py-3 text-left transition active:scale-[.985]"
-            >
-              <span className="min-w-0 flex-1">
-                <span className="block text-[15px] font-semibold">{a.title}</span>
-                {/* 제목만으로는 열어 볼지 판단이 안 된다. 무엇이 들어 있는지 말한다 */}
-                <span className="mt-0.5 block text-[13px] text-sub">{a.summary}</span>
-              </span>
-              <ChevronRight className="size-4 shrink-0 text-sub" strokeWidth={2.5} aria-hidden />
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-/**
- * 글 한 편의 본문. 표와 규칙만 그리고 **스크롤 상자는 부르는 쪽이 든다** —
- * 참고 시트와 검색 미리보기가 같은 글을 다른 껍데기 안에서 보여주기 때문이다
+ * 표와 규칙만 그리고 **스크롤 상자와 목록은 부르는 쪽이 든다.** 찾기 시트가
+ * 빈 칸일 때는 참고 글 목록으로, 검색 결과에서는 한 편으로 이 본문을 편다
  * (components/search-sheet.tsx).
  */
 export function ArticleBody({ article }: { article: Article }) {
