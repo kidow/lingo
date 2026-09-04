@@ -310,6 +310,43 @@ for (const [lang, table] of alsoTable) {
   }
 }
 
+/**
+ * 같은 것을 두 번 만든 자리.
+ *
+ * 뜻이 같은 개념은 널려 있고 그건 정상이다 — 한국어 한 낱말이 두 가지를
+ * 가리키는 것뿐이라 `눈`은 snow와 eye, `배`는 ship과 pear다. 그림이 갈리므로
+ * 개념도 갈린다 (§4).
+ *
+ * 문제는 **뜻도 같고 표기까지 겹치는** 자리다. `apartment`와 `condominium`이
+ * 그랬다 — 뜻이 둘 다 "아파트"인데 중국어·스페인어·프랑스어 표기가 글자까지
+ * 같았고 그림도 같은 아파트 건물이었다. 개념이 둘일 이유가 없다. `eyebrow`와
+ * `eyebrows`도 단수·복수 차이뿐이었다.
+ *
+ * 동음이의어는 뜻(meaning_ko)이 다르니 여기 안 걸린다.
+ */
+{
+  const sameMeaning = new Map<string, Concept[]>()
+  for (const concept of all) {
+    const list = sameMeaning.get(concept.meaning_ko) ?? []
+    list.push(concept)
+    sameMeaning.set(concept.meaning_ko, list)
+  }
+  for (const [meaning, group] of sameMeaning) {
+    if (group.length < 2) continue
+    for (let i = 0; i < group.length; i += 1)
+      for (let j = i + 1; j < group.length; j += 1) {
+        const shared = Object.keys(group[i]!.words).filter(
+          (lang) =>
+            group[i]!.words[lang as Language]?.term === group[j]!.words[lang as Language]?.term,
+        )
+        if (shared.length > 0)
+          warn(
+            `${group[i]!.slug} 와 ${group[j]!.slug} — 뜻이 둘 다 "${meaning}"인데 ${shared.join('·')} 표기까지 같습니다. 개념이 둘일 이유가 있는지 보세요 (§4)`,
+          )
+      }
+  }
+}
+
 // 겹치는 빈칸 틀. 같은 주제·같은 품사에서 두 낱말이 같은 문장을 쓰면 답이 둘이다
 for (const [lang, seen] of Object.entries(frames)) {
   const clashes = [...seen.values()].filter((slugs) => slugs.size > 1)
