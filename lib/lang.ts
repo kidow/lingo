@@ -65,6 +65,23 @@ export const LANG: Record<Language, LangStrategy> = {
 export const LANGUAGES = Object.keys(LANG) as Language[]
 
 /**
+ * 화면에 적는 언어 이름.
+ *
+ * 트랙 이름(JLPT·HSK)과 다른 자리다. 트랙은 **시험**이고 이건 **언어**라,
+ * 트랙을 가리지 않고 훑는 자리에서만 쓴다 — 전역 검색이 그렇다
+ * (components/search-sheet.tsx). 중국어는 트랙이 둘이지만 언어는 하나다.
+ */
+export const LANG_LABEL: Record<Language, string> = {
+  en: '영어',
+  ja: '일본어',
+  zh: '중국어',
+  es: '스페인어',
+  fr: '프랑스어',
+  de: '독일어',
+  ru: '러시아어',
+}
+
+/**
  * 트랙이 언어의 기본 전략을 덮어쓰는 자리. HSK와 TOCFL이 `zh`를 나눠 쓰면서
  * 생겼다 — 언어는 하나인데 트랙마다 카드에 낼 표기가 다르다.
  *

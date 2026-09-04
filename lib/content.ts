@@ -105,6 +105,16 @@ export function triviaFor(lang: Language): TriviaEntry[] {
   return file ? triviaEntries(lang, file.items) : []
 }
 
+/**
+ * 언어를 가리지 않은 전량. 전역 검색만 쓴다 (components/search-sheet.tsx).
+ *
+ * 트랙별로 거르는 `triviaFor`·`articlesFor`와 일부러 나눠 둔다 — 찾는 사람은
+ * 그것이 어느 트랙에 있는지 모르는 채로 찾기 때문이다. 번들에는 어차피 전량이
+ * 들어 있어서 새로 실리는 것이 없다.
+ */
+export const ALL_TRIVIA: TriviaEntry[] = (Object.keys(TRIVIA) as Language[]).flatMap(triviaFor)
+export const ALL_ARTICLES: Article[] = ARTICLES
+
 /** 그 트랙에서 출제 가능한 목록. 규칙은 lib/entries.ts가 갖는다 */
 export function entriesFor(track: TrackId, concepts: Concept[] = CONCEPTS): Entry[] {
   return selectEntries(track, concepts)
