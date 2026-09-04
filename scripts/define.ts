@@ -39,7 +39,10 @@ type Lookup = {
  * 실패를 두 가지로 나눈다.
  *
  *   404 — 사전에 그 낱말이 없다. `null`을 돌려준다
- *   그 외 — 네트워크나 429다. 세 번까지 물러서며 다시 걸고, 끝내 안 되면 **던진다**
+ *   그 외 — 네트워크나 429·502다. 여섯 번까지 물러서며 다시 걸고, 끝내 안 되면 **던진다**
+ *
+ * 여섯 번인 이유는 jisho가 몇십 초씩 502를 뱉는 날이 있어서다. 세 번(총 3초)으로는
+ * 그 창을 못 넘겨 3천 개짜리 실행이 낱말 하나 때문에 통째로 죽었다.
  *
  * 던지는 이유가 있다. `pnpm levels`는 조회 결과가 비면 등급을 **지운다** —
  * 429 한 번을 "그 단어에 등급이 없다"로 읽으면 멀쩡한 N4가 소리 없이 사라진다.
@@ -47,8 +50,8 @@ type Lookup = {
  */
 async function json(url: string): Promise<unknown | null> {
   let last = ''
-  for (let attempt = 0; attempt < 3; attempt += 1) {
-    if (attempt > 0) await new Promise((r) => setTimeout(r, 500 * 2 ** attempt))
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    if (attempt > 0) await new Promise((r) => setTimeout(r, Math.min(500 * 2 ** attempt, 8000)))
     try {
       const res = await fetch(url, { headers: UA })
       if (res.status === 404) return null
