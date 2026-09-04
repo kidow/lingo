@@ -179,7 +179,14 @@ function WordPreview({ concept }: { concept: Concept }) {
   const words = Object.entries(concept.words) as [Language, Concept['words'][Language]][]
   return (
     <>
-      <div className="overflow-hidden rounded-card border border-line bg-surface">
+      {/*
+        `ConceptImage`는 `fill`이라 **크기가 정해진 부모**가 있어야 한다. 없으면
+        절대 위치가 시트 밖으로 새어 화면을 통째로 덮는다.
+
+        카드와 달리 여기서는 그림이 주인공이 아니다 — 찾은 것이 맞는지 눈으로
+        확인하는 표지라 배너 높이면 충분하고, 그래야 일곱 언어가 접히지 않는다
+      */}
+      <div className="relative h-40 overflow-hidden rounded-card border border-line bg-surface">
         <ConceptImage slug={concept.slug} alt={concept.meaning_ko} />
       </div>
       <h3 className="mt-4 text-[17px] font-bold tracking-tight">{concept.meaning_ko}</h3>
