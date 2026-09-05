@@ -119,12 +119,16 @@ export function Header({
         자릿수가 바뀔 때 글자가 밀리지 않게 고정폭 숫자를 쓴다
       */}
       {mastery && (
-        <span
-          className="ml-sm text-sm font-semibold text-sub tabular-nums"
-          // 덱마다 세는 대상이 다르다. "단어"라고 못 박으면 상식 탭에서 틀린
-          // 말이 된다 (lib/deck.ts)
-          aria-label={`완전히 외운 비율 ${mastery}`}
-        >
+        <span className="ml-sm text-sm font-semibold text-sub tabular-nums">
+          {/*
+            `aria-label`을 span에 걸어 뒀는데 **읽히지 않는 자리다** — role이
+            없는 요소는 이름을 가질 수 없어서 스크린리더가 그냥 "12%"라고
+            읽었다. 무엇의 12%인지를 숨은 글자로 앞에 붙인다.
+
+            덱마다 세는 대상이 다르다. "단어"라고 못 박으면 상식 탭에서 틀린
+            말이 된다 (lib/deck.ts)
+          */}
+          <span className="sr-only">완전히 외운 비율 </span>
           {mastery}
         </span>
       )}
