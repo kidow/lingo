@@ -6,6 +6,7 @@
  *   node scripts/audio.ts place ja cat ~/Downloads/speech.mp3
  *   node scripts/audio.ts make ja 10        API로 10개를 만들어 바로 넣는다
  *   node scripts/audio.ts sync              만든 것을 R2로 올린다
+ *   node scripts/audio.ts peaks [ja]        듣기 카드에 깔 파형을 미리 뽑는다
  *
  * 콘솔에서 사람이 만들어 `place`로 넣어도 되고, 키가 있으면 `make`가 만들기까지
  * 한다. 어느 쪽이든 규격(AUDIO.md)과 저장 경로는 이 스크립트가 지킨다.
@@ -87,6 +88,112 @@ function examplesPresent(): string[] {
       })
     }
   return keys.sort()
+}
+
+/* ── 파형 ────────────────────────────────────────────────────────── */
+
+/**
+ * 막대 수. 375px 화면에서 막대 3px에 사이가 6px이면 40개로 폭이 찬다.
+ * 늘릴수록 파일이 그대로 커진다 — 한 칸이 글자 하나다
+ */
+const PEAK_BARS = 40
+/** 앞뒤 무음을 떼는 문턱. 최대 진폭의 3%. 안 떼면 파형이 가운데로 쪼그라든다 */
+const SILENCE = 0.03
+
+const peaksPath = (lang: string) => join('public', 'peaks', `${lang}.json`)
+
+/**
+ * mp3 하나의 파형을 0~9 마흔 자로 적는다.
+ *
+ * **숫자 문자열이다.** 32바이트를 base64로 적으면 44자라 오히려 길고, 열어서
+ * 눈으로 볼 수도 없다. 0~9면 3px짜리 막대에 남을 해상도가 넘치고 gzip도 잘
+ * 먹는다.
+ *
+ * 앞뒤 무음을 떼고 남은 구간만 그린다. 파일마다 앞에 0.2초쯤 여유가 있어서
+ * 그대로 그리면 낱말은 가운데에 뭉치고 양끝은 늘 납작하다 — 어느 낱말이든
+ * 같은 모양으로 보인다.
+ *
+ * 최대치로 나눠 세로를 채운다. 절대 음량을 살리면 조용히 녹음된 낱말이 평생
+ * 납작한 선으로 남는데, 여기서 읽을 것은 음량이 아니라 **모양**이다.
+ */
+function peaksOf(file: string): string {
+  const pcm = execFileSync('ffmpeg', ['-v', 'error', '-i', file, '-ac', '1', '-ar', '8000', '-f', 's16le', '-'], {
+    maxBuffer: 1 << 26,
+  })
+  const count = Math.floor(pcm.length / 2)
+  const amp = (i: number) => Math.abs(pcm.readInt16LE(i * 2))
+
+  let peak = 0
+  for (let i = 0; i < count; i += 1) if (amp(i) > peak) peak = amp(i)
+  if (peak === 0) return '0'.repeat(PEAK_BARS)
+
+  const gate = peak * SILENCE
+  let start = 0
+  let end = count - 1
+  while (start < end && amp(start) < gate) start += 1
+  while (end > start && amp(end) < gate) end -= 1
+
+  const span = Math.max(end - start, 1)
+  let out = ''
+  for (let bar = 0; bar < PEAK_BARS; bar += 1) {
+    let max = 0
+    const from = start + Math.floor((bar * span) / PEAK_BARS)
+    const to = start + Math.floor(((bar + 1) * span) / PEAK_BARS)
+    for (let i = from; i < to; i += 1) if (amp(i) > max) max = amp(i)
+    out += Math.min(9, Math.round((max / peak) * 9))
+  }
+  return out
+}
+
+/**
+ * 언어별 파형표를 `public/peaks/<lang>.json`에 적는다. (spec.md §5)
+ *
+ * 듣기 카드의 그림 자리에 깔 파형이다. 브라우저에서 그때그때 해석할 수도
+ * 있지만 그러려면 mp3를 `fetch`로 받아야 하고, 파일은 R2에 있어 CORS를 탄다 —
+ * 재생(`new Audio`)은 안 타는데 해석은 탄다. 미리 뽑아 두면 그 문제가 없고
+ * 카드가 뜨자마자 그려진다.
+ *
+ * **번들이 아니라 정적 파일이다.** 언어 하나가 300KB쯤이라 `lib/`에 두면
+ * 일곱 언어가 모든 방문자에게 실린다. `public/`에 두면 듣기 카드를 처음
+ * 만났을 때 그 언어 것만 한 번 받는다 (lib/peaks.ts).
+ *
+ * 이미 적힌 것은 다시 안 잰다. mp3 하나에 50ms이라 3만 개를 다시 재면 25분이
+ * 걸리는데, 발음을 몇 개 넣고 다시 돌리는 일이 훨씬 잦다. `--force`로 전부
+ * 다시 잰다.
+ */
+function peaks(only?: Language) {
+  const langs = only ? [only] : [...new Set(TRACKS.map(({ language }) => language))]
+  const force = process.argv.includes('--force')
+  mkdirSync(join('public', 'peaks'), { recursive: true })
+
+  for (const lang of langs) {
+    const path = peaksPath(lang)
+    const before: Record<string, string> =
+      !force && existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : {}
+
+    const rows: Record<string, string> = {}
+    let made = 0
+    for (const concept of concepts) {
+      const file = audioPath(lang, concept.slug)
+      if (!existsSync(file)) continue
+      // 소리가 사라진 개념은 따라서 빠진다. 낡은 줄이 남으면 없는 소리의
+      // 파형을 그리게 된다
+      const kept = before[concept.slug]
+      if (kept) {
+        rows[concept.slug] = kept
+        continue
+      }
+      rows[concept.slug] = peaksOf(file)
+      made += 1
+      if (made % 200 === 0) process.stdout.write(`\r  ${lang} ${made}개…`)
+    }
+
+    // 키를 정렬해 적는다. 콘텐츠가 늘 때 줄이 끼어들 뿐이라 diff가 읽힌다
+    const sorted = Object.fromEntries(Object.keys(rows).sort().map((slug) => [slug, rows[slug]]))
+    writeFileSync(path, `${JSON.stringify(sorted, null, 0)}\n`)
+    const size = Math.round(statSync(path).size / 1024)
+    console.log(`\r  ${lang} ${Object.keys(sorted).length}개 (새로 ${made}) · ${size}KB → ${path}`)
+  }
 }
 
 function manifest() {
@@ -358,6 +465,7 @@ else if (command === 'make') {
 }
 else if (command === 'sync') sync()
 else if (command === 'manifest') manifest()
+else if (command === 'peaks') peaks(rest[0] as Language | undefined)
 else if (command === 'place') {
   const [lang, slug, file] = rest
   if (!lang || !slug || !file) fail('사용법: place <lang> <slug> <파일>')

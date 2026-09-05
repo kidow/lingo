@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from './feed'
 import { ConceptImage } from './concept-image'
@@ -10,6 +10,7 @@ import { examplesOf, exampleAudioKey, exampleAudioPath, type Entry } from '@/lib
 import { EXAMPLE_AUDIO } from '@/lib/audio-have'
 import { asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
+import { barsOf, loadPeaks } from '@/lib/peaks'
 import type {
   BlankQuestion,
   ChoiceQuestion,
@@ -288,7 +289,7 @@ function ListenCard({
         {answered ? (
           <ListenBrief entry={entry} lang={lang} track={track} correct={correct} gaveUp={gaveUp} />
         ) : (
-          <ListenStage playing={sounding}>
+          <ListenStage slug={concept.slug} lang={lang} playing={sounding}>
             {/* 답하기 전에는 이 버튼이 문제 전체다. 눌러 다시 들을 수 있고, 두 번째부터는 느리게 나온다 */}
             <SayButton
               slug={concept.slug}
@@ -368,57 +369,80 @@ function ListenCard({
  * 것**이 안 읽힌다. 지시문을 쓰지 않기로 했으므로(spec.md §5) 글자로 채울 수는
  * 없다.
  *
- * 그래서 파형을 놓는다. 좌우로 뻗은 막대는 재생 컨트롤에서 이미 본 모양이라
- * "여기서 나는 것은 소리다"를 글자 없이 말하고, 그림 없는 개념 자리에 인라인
- * SVG를 두는 것과 같은 방식이다 (components/concept-image.tsx).
+ * 그래서 **그 낱말 소리의 진짜 파형**을 깐다. 파일마다 모양이 달라 카드마다
+ * 다른 그림이 되고, 좌우로 뻗은 막대는 재생 컨트롤에서 이미 본 모양이라
+ * "여기서 나는 것은 소리다"를 글자 없이 말한다. 값은 미리 뽑아 둔다 —
+ * 브라우저에서 해석하려면 mp3를 `fetch`로 받아야 하는데 파일이 R2에 있어
+ * CORS를 탄다 (lib/peaks.ts).
  *
- * **소리가 나는 동안에만 움직인다.** 이것이 장식과 갈리는 지점이다 — 무음
- * 스위치나 자동재생 차단으로 아무 소리도 안 났을 때 화면이 그대로 멈춰 있어,
+ * 버튼은 파형 **위**에 뜬다. 파형은 배경이고 누를 것은 하나뿐이라, 둘을 나란히
+ * 놓으면 파형 막대도 누르는 것처럼 보인다.
+ *
+ * **소리가 나는 동안 명암이 뒤집힌다.** 이것이 장식과 갈리는 지점이다 — 무음
+ * 스위치나 자동재생 차단으로 아무 소리도 안 났을 때 파형이 흐린 채로 있어,
  * 눌러야 한다는 것을 버튼의 맥박과 같이 말한다 (components/say-button.tsx).
  *
- * 정답은 새지 않는다. 막대 높이는 고정된 표라 낱말과 아무 관계가 없다 —
- * 길이도 세기도 여기서 읽어낼 수 없다.
+ * 파형은 정답을 말하지 않는다. 소리의 세기 곡선일 뿐이라 어느 그림인지로
+ * 이어지지 않고, 어차피 그 소리를 듣고 고르는 카드다.
  */
-function ListenStage({ children, playing }: { children: React.ReactNode; playing: boolean }) {
+function ListenStage({
+  slug,
+  lang,
+  playing,
+  children,
+}: {
+  slug: string
+  lang: Language
+  playing: boolean
+  children: React.ReactNode
+}) {
+  const bars = usePeaks(slug, lang)
+
   return (
-    <div className="flex h-full items-center justify-center gap-md px-lg">
-      <Wave heights={WAVE_LEFT} playing={playing} />
-      {children}
-      <Wave heights={WAVE} playing={playing} />
+    <div className="relative grid h-full place-items-center">
+      {/* 소리의 그림일 뿐이라 읽히지 않는다. 무엇을 누르는 자리인지는 버튼이 말한다 */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 items-center justify-between px-lg"
+      >
+        {bars.map((value, i) => (
+          <span
+            key={i}
+            // 0도 자리를 지킨다. 무음 구간이 사라지면 막대 사이가 벌어져 낱말이
+            // 실제보다 짧아 보인다
+            style={{ height: 5 + value * 88 }}
+            className={`w-[3px] shrink-0 rounded-pill transition-colors duration-300 ${playing ? 'bg-accent/70' : 'bg-line'}`}
+          />
+        ))}
+      </div>
+
+      {/* 파형 위에 뜬다. 버튼의 bg-surface가 뒤를 가려 테두리가 안 묻힌다 */}
+      <div className="relative">{children}</div>
     </div>
   )
 }
 
 /**
- * 막대 높이(px). 소리에서 뽑은 값이 아니라 **그린 것**이다 — 파일을 해석해
- * 그리려면 재생 전에 통째로 받아 디코딩해야 하고, 그렇게 얻은 그림은 낱말
- * 길이를 그대로 흘린다.
+ * 아직 못 받았거나 파형이 없는 낱말에 쓰는 모양. 자리를 비워 두면 소리를
+ * 받는 동안 버튼만 덩그러니 있다가 파형이 튀어나온다
  */
-const WAVE = [10, 22, 40, 26, 58, 84, 46, 70, 30, 52, 18, 36, 12]
-/** 왼쪽은 거울상이라 버튼을 가운데 두고 좌우가 같은 무게로 뻗는다 */
-const WAVE_LEFT = [...WAVE].reverse()
+const FALLBACK = barsOf('1234565432345678987654345676543212345432') ?? []
 
-function Wave({ heights, playing }: { heights: number[]; playing: boolean }) {
-  return (
-    // 소리의 그림일 뿐이라 읽히지 않는다. 무엇을 누르는 자리인지는 버튼이 말한다.
-    //
-    // 막대 사이를 고정 간격이 아니라 **남는 만큼**으로 벌린다. 붙여 놓으면 넓은
-    // 그림 자리 한가운데에 작은 뭉치가 하나 더 생길 뿐이라, 버튼만 있던 때와
-    // 허전하기는 매한가지다
-    <div aria-hidden className="flex min-w-0 flex-1 items-center justify-between">
-      {heights.map((height, i) => (
-        <span
-          key={i}
-          // 막대마다 시작을 늦춰 한 덩어리로 뛰지 않고 물결이 되게 한다
-          style={{ height, animationDelay: `${i * 80}ms` }}
-          className={`
-            w-[3px] shrink-0 rounded-pill transition-colors
-            ${playing ? 'bg-accent/55 motion-safe:animate-wave' : 'bg-line'}
-          `}
-        />
-      ))}
-    </div>
-  )
+function usePeaks(slug: string, lang: Language): number[] {
+  const [bars, setBars] = useState<number[] | null>(null)
+
+  useEffect(() => {
+    let alive = true
+    // 언어당 한 번만 받는다. 두 번째 듣기 카드부터는 이미 손에 있다
+    void loadPeaks(lang).then((rows) => {
+      if (alive) setBars(barsOf(rows[slug]))
+    })
+    return () => {
+      alive = false
+    }
+  }, [slug, lang])
+
+  return bars ?? FALLBACK
 }
 
 /**

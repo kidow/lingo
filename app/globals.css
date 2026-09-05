@@ -41,24 +41,6 @@
   --radius-ctrl: 12px;
   --radius-pill: 200px;
 
-  /*
-   * 움직임 — 듣기 카드의 파형 막대 하나가 오르내리는 몸짓이다.
-   *
-   * 막대마다 시작을 늦춰 물결이 된다(components/cards.tsx). 소리가 나는
-   * 동안에만 붙으므로, 멈춘 파형은 그대로 정지 화면이 된다.
-   */
-  --animate-wave: wave 900ms ease-in-out infinite;
-
-  @keyframes wave {
-    0%,
-    100% {
-      transform: scaleY(0.35);
-    }
-    50% {
-      transform: scaleY(1);
-    }
-  }
-
   /* 글꼴 */
   --font-body: "Avenir Next", Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   --font-jp: "Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
