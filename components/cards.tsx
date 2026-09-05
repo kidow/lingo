@@ -276,6 +276,8 @@ function ListenCard({
   const { entry, options } = question
   const { concept, answer } = entry
   const [picked, setPicked] = useState<string | null>(pick ?? null)
+  /** 지금 소리가 나고 있는가. 파형이 움직일지 정한다 (`ListenStage`) */
+  const [sounding, setSounding] = useState(false)
   const answered = picked !== null
   const gaveUp = picked === GAVE_UP
   const correct = picked === concept.slug
@@ -286,10 +288,16 @@ function ListenCard({
         {answered ? (
           <ListenBrief entry={entry} lang={lang} track={track} correct={correct} gaveUp={gaveUp} />
         ) : (
-          <div className="grid h-full place-items-center">
+          <ListenStage playing={sounding}>
             {/* 답하기 전에는 이 버튼이 문제 전체다. 눌러 다시 들을 수 있고, 두 번째부터는 느리게 나온다 */}
-            <SayButton slug={concept.slug} lang={lang} label={answer} autoPlay={active} />
-          </div>
+            <SayButton
+              slug={concept.slug}
+              lang={lang}
+              label={answer}
+              autoPlay={active}
+              onPlayingChange={setSounding}
+            />
+          </ListenStage>
         )}
       </CardImage>
 
@@ -349,6 +357,67 @@ function ListenCard({
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
     </FeedCard>
+  )
+}
+
+/**
+ * 듣기 카드에서 소리 버튼이 서는 자리.
+ *
+ * 이 칸은 다른 카드에서 그림이 차지하는 자리다 — 세로 절반이 넘는다. 거기에
+ * 44px짜리 버튼 하나만 두면 카드가 비어 보이고, 무엇보다 **그 버튼이 문제라는
+ * 것**이 안 읽힌다. 지시문을 쓰지 않기로 했으므로(spec.md §5) 글자로 채울 수는
+ * 없다.
+ *
+ * 그래서 파형을 놓는다. 좌우로 뻗은 막대는 재생 컨트롤에서 이미 본 모양이라
+ * "여기서 나는 것은 소리다"를 글자 없이 말하고, 그림 없는 개념 자리에 인라인
+ * SVG를 두는 것과 같은 방식이다 (components/concept-image.tsx).
+ *
+ * **소리가 나는 동안에만 움직인다.** 이것이 장식과 갈리는 지점이다 — 무음
+ * 스위치나 자동재생 차단으로 아무 소리도 안 났을 때 화면이 그대로 멈춰 있어,
+ * 눌러야 한다는 것을 버튼의 맥박과 같이 말한다 (components/say-button.tsx).
+ *
+ * 정답은 새지 않는다. 막대 높이는 고정된 표라 낱말과 아무 관계가 없다 —
+ * 길이도 세기도 여기서 읽어낼 수 없다.
+ */
+function ListenStage({ children, playing }: { children: React.ReactNode; playing: boolean }) {
+  return (
+    <div className="flex h-full items-center justify-center gap-md px-lg">
+      <Wave heights={WAVE_LEFT} playing={playing} />
+      {children}
+      <Wave heights={WAVE} playing={playing} />
+    </div>
+  )
+}
+
+/**
+ * 막대 높이(px). 소리에서 뽑은 값이 아니라 **그린 것**이다 — 파일을 해석해
+ * 그리려면 재생 전에 통째로 받아 디코딩해야 하고, 그렇게 얻은 그림은 낱말
+ * 길이를 그대로 흘린다.
+ */
+const WAVE = [10, 22, 40, 26, 58, 84, 46, 70, 30, 52, 18, 36, 12]
+/** 왼쪽은 거울상이라 버튼을 가운데 두고 좌우가 같은 무게로 뻗는다 */
+const WAVE_LEFT = [...WAVE].reverse()
+
+function Wave({ heights, playing }: { heights: number[]; playing: boolean }) {
+  return (
+    // 소리의 그림일 뿐이라 읽히지 않는다. 무엇을 누르는 자리인지는 버튼이 말한다.
+    //
+    // 막대 사이를 고정 간격이 아니라 **남는 만큼**으로 벌린다. 붙여 놓으면 넓은
+    // 그림 자리 한가운데에 작은 뭉치가 하나 더 생길 뿐이라, 버튼만 있던 때와
+    // 허전하기는 매한가지다
+    <div aria-hidden className="flex min-w-0 flex-1 items-center justify-between">
+      {heights.map((height, i) => (
+        <span
+          key={i}
+          // 막대마다 시작을 늦춰 한 덩어리로 뛰지 않고 물결이 되게 한다
+          style={{ height, animationDelay: `${i * 80}ms` }}
+          className={`
+            w-[3px] shrink-0 rounded-pill transition-colors
+            ${playing ? 'bg-accent/55 motion-safe:animate-wave' : 'bg-line'}
+          `}
+        />
+      ))}
+    </div>
   )
 }
 

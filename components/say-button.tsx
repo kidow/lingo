@@ -40,6 +40,7 @@ export function SayButton({
   src,
   enabled = true,
   autoPlay = false,
+  onPlayingChange,
 }: {
   slug: string
   lang: Language
@@ -54,6 +55,17 @@ export function SayButton({
   enabled?: boolean
   /** 마운트 직후 한 번 저절로 재생한다. 퀴즈 판정 직후에 쓴다 */
   autoPlay?: boolean
+  /**
+   * 소리가 나기 시작하고 끝날 때 알린다.
+   *
+   * 버튼은 자기 테두리로만 재생 중임을 말한다 — 44px짜리 표시라 옆에 글자가
+   * 붙어 있을 때는 충분하지만, 듣기 카드처럼 이 버튼이 화면의 전부인 자리에서는
+   * 안 보인다. 그 자리에서 더 큰 몸짓을 그리려면 부모가 상태를 알아야 한다
+   * (components/cards.tsx의 `ListenStage`).
+   *
+   * 안 주면 아무 일도 없다. 상태를 밖으로 내보낼 뿐 버튼의 행동은 안 바뀐다.
+   */
+  onPlayingChange?: (playing: boolean) => void
 }) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   /** 누른 횟수. 홀짝으로 속도가 갈린다 */
@@ -95,6 +107,11 @@ export function SayButton({
         if ((error as { name?: string })?.name === 'NotAllowedError') setBlocked(true)
       })
   }, [])
+
+  // 부모가 준 함수는 대개 setState라 값이 그대로면 다시 그리지 않는다
+  useEffect(() => {
+    onPlayingChange?.(playing)
+  }, [playing, onPlayingChange])
 
   useEffect(() => {
     // 파일이 없으면 조용히 비활성. 발음이 아직 없는 개념은 정상이다.
