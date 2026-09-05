@@ -362,10 +362,20 @@ export function CardImage({ children }: { children?: React.ReactNode }) {
  * "이미지와 글자가 한 덩어리로 읽힌다"를 만드는 장치인데(§3), 그림이 없는
  * 자리에 남겨 두면 시트가 허공 위로 3rem 떠올라 헤더를 파고든다.
  */
+/**
+ * 바닥 여백에 **안전영역을 더한다.** manifest가 `standalone`이고 viewport가
+ * `viewportFit: 'cover'`라(app/layout.tsx) 홈 인디케이터가 있는 기기에서는
+ * 화면 맨 아래가 앱의 것이면서 손가락이 닿지 않는 자리다 — 넘길 화살표와
+ * 1열로 쌓인 마지막 보기가 그 아래로 들어간다.
+ *
+ * 위쪽은 더하지 않는다. `statusBarStyle: 'default'`라 상태바가 불투명하고
+ * 웹뷰가 그 아래에서 시작하므로 헤더를 밀 이유가 없다 — `black-translucent`로
+ * 바꾸는 날 여기도 같이 봐야 한다.
+ */
 export function CardSheet({ children, bare = false }: { children: React.ReactNode; bare?: boolean }) {
   return (
     <div
-      className={`relative flex min-h-0 flex-1 flex-col gap-md overflow-y-auto bg-surface px-5 pb-lg ${
+      className={`relative flex min-h-0 flex-1 flex-col gap-md overflow-y-auto bg-surface px-5 pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))] ${
         bare ? 'pt-md' : '-mt-lg rounded-t-card pt-lg'
       }`}
     >

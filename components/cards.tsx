@@ -259,7 +259,10 @@ function ChoiceCard({
               setPicked(GAVE_UP)
               onAnswer?.(false, GAVE_UP)
             }}
-            className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
+            // 36px이라 손가락에 모자란다. 위아래 패딩으로 44px을 만들되 같은
+            // 만큼 당겨 **시트 높이는 그대로** 둔다 — 짧은 화면에서 8px이
+            // 늘면 이 버튼이 접힌 자리로 밀린다 (lib/fit.ts)
+            className="mx-auto -my-1 rounded-ctrl px-4 py-3 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
           >
             모르겠어요
           </button>
@@ -368,7 +371,10 @@ function ListenCard({
               setPicked(GAVE_UP)
               onAnswer?.(false, GAVE_UP)
             }}
-            className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
+            // 36px이라 손가락에 모자란다. 위아래 패딩으로 44px을 만들되 같은
+            // 만큼 당겨 **시트 높이는 그대로** 둔다 — 짧은 화면에서 8px이
+            // 늘면 이 버튼이 접힌 자리로 밀린다 (lib/fit.ts)
+            className="mx-auto -my-1 rounded-ctrl px-4 py-3 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
           >
             모르겠어요
           </button>
@@ -614,7 +620,10 @@ function ClozeCard({
               setPicked(GAVE_UP)
               onAnswer?.(false, GAVE_UP)
             }}
-            className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
+            // 36px이라 손가락에 모자란다. 위아래 패딩으로 44px을 만들되 같은
+            // 만큼 당겨 **시트 높이는 그대로** 둔다 — 짧은 화면에서 8px이
+            // 늘면 이 버튼이 접힌 자리로 밀린다 (lib/fit.ts)
+            className="mx-auto -my-1 rounded-ctrl px-4 py-3 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
           >
             모르겠어요
           </button>
@@ -779,7 +788,10 @@ function TriviaCard({ question, onAnswer, pick }: { question: TriviaQuestion } &
                 setPicked(GAVE_UP)
                 onAnswer?.(false, GAVE_UP)
               }}
-              className="mx-auto rounded-ctrl px-4 py-2 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
+              // 36px이라 손가락에 모자란다. 위아래 패딩으로 44px을 만들되 같은
+            // 만큼 당겨 **시트 높이는 그대로** 둔다 — 짧은 화면에서 8px이
+            // 늘면 이 버튼이 접힌 자리로 밀린다 (lib/fit.ts)
+            className="mx-auto -my-1 rounded-ctrl px-4 py-3 text-sm text-sub underline underline-offset-4 transition active:scale-[.985]"
             >
               모르겠어요
             </button>
