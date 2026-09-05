@@ -79,9 +79,14 @@ export function Shell({
   /**
    * 언어가 바뀌면 새로 받는다. 받는 동안에는 **뼈대로 되돌린다** — 옛 언어의
    * 카드를 남겨 두면 헤더는 새 트랙인데 카드는 이전 언어인 화면이 된다.
+   *
+   * **설정을 읽기 전에는 아무것도 받지 않는다.** `track`의 첫 값은 저장된
+   * 것이 아니라 기본 트랙이라, 그대로 두면 HSK를 보던 사람이 일본어 한 벌을
+   * 받아 버리고 나서 중국어를 또 받았다 — 1.5~2.4MB가 통째로 버려진다.
    */
   const language = trackOf(track).language
   useEffect(() => {
+    if (!ready) return
     let alive = true
     setCorpus(null)
     void loadCorpus(language).then((next) => {
@@ -90,7 +95,7 @@ export function Shell({
     return () => {
       alive = false
     }
-  }, [language])
+  }, [ready, language])
 
   const change = useCallback((next: TrackId) => {
     setTrack(next)
@@ -208,35 +213,45 @@ export function Shell({
  * 진짜 요소들과 같은 상자를 쓴다(`FeedCard`·`CardImage`·`CardSheet`). 뼈대가
  * 따로 치수를 들고 있으면 카드 높이를 고칠 때마다 여기가 조용히 어긋난다.
  *
- * 읽히지 않는다. 잠깐 있다 사라지는 자리라 스크린리더에는 없느니만 못하다 —
- * 진짜 카드가 들어오면 그때 읽힌다.
+ * 뼈대 자체는 읽히지 않는다. 글자 자리를 흉내 낸 회색 막대를 읽어 봐야
+ * 소용이 없다.
+ *
+ * **다만 기다리는 중이라는 것은 말한다.** 예전에는 설정을 읽는 한 프레임이라
+ * 알릴 것도 없었는데, 이제 이 자리에 콘텐츠를 받는 시간이 낀다
+ * (lib/corpus.ts) — 느린 회선에서 스크린리더 사용자가 **아무것도 없는
+ * 페이지**를 만나게 된다.
  */
 /** 뼈대 조각 하나. 숨 쉬듯 흐려졌다 진해진다 — 멈춘 회색 덩어리는 고장으로 보인다 */
 const BAR = 'bg-line motion-safe:animate-pulse'
 
 function Skeleton() {
   return (
-    <div className="feed-root flex h-dvh flex-col" aria-hidden>
-      <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
-        {/* 트랙 이름 자리. 국기와 화살표까지 합친 너비다 */}
-        <div className={`h-5 w-24 rounded-pill ${BAR}`} />
-        {/* 덱 탭과 찾기가 서는 자리 (components/header.tsx) */}
-        <div className={`ml-auto h-4 w-28 rounded-pill ${BAR}`} />
-      </header>
+    <>
+      <span role="status" className="sr-only">
+        불러오는 중
+      </span>
+      <div className="feed-root flex h-dvh flex-col" aria-hidden>
+        <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
+          {/* 트랙 이름 자리. 국기와 화살표까지 합친 너비다 */}
+          <div className={`h-5 w-24 rounded-pill ${BAR}`} />
+          {/* 덱 탭과 찾기가 서는 자리 (components/header.tsx) */}
+          <div className={`ml-auto h-4 w-28 rounded-pill ${BAR}`} />
+        </header>
 
-      {/* 피드의 스크롤 상자와 같은 자리를 잡는다. 카드가 h-full이라 이게 없으면
-          헤더 높이만큼 아래로 흘러넘친다 (components/feed.tsx) */}
-      <main className="min-h-0 flex-1">
-        <FeedCard>
-          {/* 그림 자리는 비워 둔다. bg-img-bg가 이미 그 자리의 색이다 */}
-          <CardImage />
-          <CardSheet>
-            <div className={`h-9 w-2/5 rounded-ctrl ${BAR}`} />
-            <div className={`h-4 w-1/4 rounded-pill ${BAR}`} />
-            <div className={`h-5 w-1/3 rounded-pill ${BAR}`} />
-          </CardSheet>
-        </FeedCard>
-      </main>
-    </div>
+        {/* 피드의 스크롤 상자와 같은 자리를 잡는다. 카드가 h-full이라 이게 없으면
+            헤더 높이만큼 아래로 흘러넘친다 (components/feed.tsx) */}
+        <main className="min-h-0 flex-1">
+          <FeedCard>
+            {/* 그림 자리는 비워 둔다. bg-img-bg가 이미 그 자리의 색이다 */}
+            <CardImage />
+            <CardSheet>
+              <div className={`h-9 w-2/5 rounded-ctrl ${BAR}`} />
+              <div className={`h-4 w-1/4 rounded-pill ${BAR}`} />
+              <div className={`h-5 w-1/3 rounded-pill ${BAR}`} />
+            </CardSheet>
+          </FeedCard>
+        </main>
+      </div>
+    </>
   )
 }

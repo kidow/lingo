@@ -1391,7 +1391,7 @@ shadcn은 같은 컴포넌트를 Base UI · React Aria · Radix 세 가지로 �
 
 ### 렌더링
 
-- `content/*.json`을 **빌드 시점에 언어별로 갈라 굽는다** (`scripts/pack.ts`).
+- `content/*.json`을 **빌드 시점에 언어별로 갈라 굽는다** (`scripts/split.ts`).
   화면은 지금 트랙의 언어 한 벌만 받는다 (`lib/corpus.ts`).
 
   전 언어를 번들에 통째로 넣던 시절에는 청크 하나가 **11.5MB**였고 그중 70%가
