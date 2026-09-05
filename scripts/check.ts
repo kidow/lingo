@@ -9,11 +9,13 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
+import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import { auditTrivia } from '../lib/trivia-audit.ts'
 import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
 import { LANG } from '../lib/lang.ts'
 import { clozeAt } from '../lib/quiz.ts'
 import { TRACKS } from '../lib/track.ts'
+import { fingerprint } from './levels-stamp.ts'
 import type { Concept, Language, Trivia } from '../lib/types.ts'
 
 /** 굽은 아포스트로피. 곧은 '와 섞이면 표제어와 예문이 어긋난다 */
@@ -73,6 +75,8 @@ const perCategory: Record<string, number> = { noun: 0, verb: 0, adjective: 0, sc
 const perLanguage: Record<string, number> = {}
 /** 트랙별 출제 수를 세려면 개념이 통째로 있어야 한다 */
 const all: Concept[] = []
+/** 파일별 개념. 등급 지문을 파일 단위로 대조한다 */
+const byFile = new Map<string, Concept[]>()
 let total = 0
 
 /**
@@ -106,6 +110,8 @@ for (const file of files) {
     fail(path, '최상위에 concepts 배열이 없습니다')
     continue
   }
+
+  byFile.set(file, concepts as Concept[])
 
   concepts.forEach((raw, i) => {
     const c = raw as Record<string, unknown>
@@ -403,6 +409,23 @@ if (notes.length) {
   if (stale)
     warn(
       `lib/audio-have.ts가 낡았습니다 — 발음 없는 자리 ${gone.length}건 vs 적힌 것 ${AUDIO_MISSING.size}건. node scripts/audio.ts manifest 를 돌리세요`,
+    )
+}
+
+/**
+ * 등급이 콘텐츠를 따라왔는지 본다. (spec.md §7, scripts/levels-stamp.ts)
+ *
+ * 등급 없는 낱말은 원래도 많다 — 시험 목록에 없으면 비우는 것이 맞다. 그래서
+ * 빠뜨린 자리와 원래 없는 자리를 눈으로 가릴 수 없어 **조용히 어긋난다.**
+ * 실제로 추상 축 160개가 등급 없이 들어간 적이 있다.
+ */
+{
+  const stale: string[] = []
+  for (const [file, concepts] of byFile)
+    if (LEVELS_STAMP[file] !== fingerprint(concepts)) stale.push(file.replace('.json', ''))
+  if (stale.length > 0)
+    warn(
+      `등급이 낡았습니다 — ${stale.join(' · ')}의 낱말이 바뀐 뒤 pnpm levels 를 안 돌렸습니다`,
     )
 }
 
