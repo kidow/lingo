@@ -35,8 +35,11 @@ export function SearchDrawer({
 }) {
   return (
     <Drawer.Root handleOnly>
-      {/* 덱 탭과 같은 글자 크기·색이다. 다만 탭이 아니라서 눌린 상태가 없다 */}
-      <Drawer.Trigger className="rounded-ctrl text-[15px] text-sub transition active:scale-[.985]">
+      {/*
+        덱 탭과 같은 줄에 서므로 글자 크기·색·누르는 넓이가 다 같다. 다만
+        탭이 아니라서 눌린 상태가 없다 (components/header.tsx)
+      */}
+      <Drawer.Trigger className="-my-3 grid min-w-11 place-items-center rounded-ctrl px-2.5 py-3 text-[15px] text-sub transition active:scale-[.985]">
         찾기
       </Drawer.Trigger>
 
@@ -64,7 +67,9 @@ export function SearchDrawer({
             <Drawer.Title className="text-lg font-bold tracking-tight">찾기</Drawer.Title>
             <Drawer.Close
               aria-label="닫기"
-              className="-mr-1.5 rounded-ctrl p-1.5 text-sub transition active:scale-[.985]"
+              // 아이콘이 20px이라 그대로는 32px이다. 패딩으로 44px을 만들고
+              // 같은 만큼 당겨 시트 머리줄이 두꺼워지지 않게 한다
+              className="-my-3 -mr-3 rounded-ctrl p-3 text-sub transition active:scale-[.985]"
             >
               <X className="size-5" strokeWidth={2.5} aria-hidden />
             </Drawer.Close>

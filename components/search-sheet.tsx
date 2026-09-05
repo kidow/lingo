@@ -70,7 +70,13 @@ export function SearchSheet({
   return (
     <div className="flex h-full min-h-0 flex-col">
       <div className="shrink-0 px-lg pb-3">
-        <div className="flex items-center gap-2 rounded-ctrl border border-line bg-surface px-3 py-2.5">
+        {/*
+          높이를 **못 박는다.** 지우기는 글자를 쳐야 나타나는데 그 버튼이
+          손가락 크기(44px)를 가지면 창이 첫 글자에서 튄다 — 패딩으로 높이를
+          정하면 안에 무엇이 서느냐에 따라 창이 달라진다. 44px은 어차피
+          누르는 자리의 최소 크기라 여기 그대로 쓴다 (brand-spec.md)
+        */}
+        <div className="flex h-11 items-center gap-2 rounded-ctrl border border-line bg-surface px-3">
           <Search className="size-4 shrink-0 text-sub" strokeWidth={2.5} aria-hidden />
           <input
             autoFocus
@@ -87,7 +93,9 @@ export function SearchSheet({
               type="button"
               aria-label="지우기"
               onClick={() => setQuery('')}
-              className="-mr-1 rounded-ctrl p-1 text-sub transition active:scale-[.985]"
+              // 아이콘 16px에 패딩 4px이면 24px이라 손가락에 모자란다.
+              // 창이 이미 44px이므로 그 높이를 그대로 채운다
+              className="-mr-2 grid size-11 shrink-0 place-items-center rounded-ctrl text-sub transition active:scale-[.985]"
             >
               <X className="size-4" strokeWidth={2.5} aria-hidden />
             </button>
@@ -95,7 +103,8 @@ export function SearchSheet({
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-lg">
+      {/* 시트가 화면 바닥에 붙으므로 카드 시트와 같은 안전영역이 필요하다 (components/feed.tsx) */}
+      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))]">
         {/*
           빈 칸에는 지금 트랙의 참고 글을 세운다. 낱말 목록을 미리 깔지 않는
           이유는 3,756개가 스크롤로 쏟아지기 때문이고, 참고 글은 많아야 두어
@@ -207,14 +216,15 @@ function Preview({ hit, back, onBack }: { hit: Hit; back: string; onBack: () => 
         <button
           type="button"
           onClick={onBack}
-          className="-ml-1.5 flex items-center gap-0.5 rounded-ctrl py-1 pr-2 pl-1 text-sm text-sub transition active:scale-[.985]"
+          className="-my-2 -ml-1.5 flex items-center gap-0.5 rounded-ctrl py-3 pr-2 pl-1 text-sm text-sub transition active:scale-[.985]"
         >
           <ChevronLeft className="size-4" strokeWidth={2.5} aria-hidden />
           {back}
         </button>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-lg">
+      {/* 시트가 화면 바닥에 붙으므로 카드 시트와 같은 안전영역이 필요하다 (components/feed.tsx) */}
+      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))]">
         {hit.kind === 'word' && <WordPreview concept={hit.concept} />}
         {hit.kind === 'trivia' && <TriviaPreview trivia={hit.trivia} />}
         {hit.kind === 'article' && <ArticleBody article={hit.article} />}

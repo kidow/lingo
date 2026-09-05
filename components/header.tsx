@@ -81,7 +81,9 @@ export function Header({
       <DropdownMenu>
         <DropdownMenuTrigger
           aria-label="학습 트랙"
-          className="flex items-center gap-1 rounded-ctrl"
+          // 글자 높이가 28px이라 손가락에 모자란다. 위아래로 8px씩 넓히고
+          // 같은 만큼 당겨 **레이아웃은 그대로** 둔다 (brand-spec.md)
+          className="-my-2 flex items-center gap-1 rounded-ctrl py-2"
         >
           <span className="text-lg font-bold tracking-tight">{trackOf(track).label}</span>
           {/* 국기는 이름 뒤에 붙는 표지다 (lib/track.ts). 버튼 이름에는 안 섞인다 */}
@@ -152,18 +154,27 @@ export function Header({
         읽힌다 — 구분선은 종류를 나누는 표시가 아니라 **낱말끼리 붙지 않게 하는
         칸막이**다
       */}
-      <div className="ml-auto flex items-center gap-2 text-[15px]">
+      {/*
+        누르는 자리를 44px로 넓히면서 **간격은 지킨다.** 패딩이 커지면 글자
+        사이가 그만큼 벌어지므로 `gap`을 0으로 내려 패딩이 그 자리를 대신
+        들게 했다 — 글자 사이는 20px에서 24px이 되고, 히트 영역은 26×23에서
+        46×47이 된다 (brand-spec.md)
+      */}
+      <div className="ml-auto flex items-center gap-0 text-[15px]">
         {deck &&
           onDeck &&
           decks.length > 1 &&
           DECKS.filter(({ id }) => decks.includes(id)).map(({ id, label }, i) => (
-            <span key={id} className="flex items-center gap-2">
+            <span key={id} className="flex items-center gap-0">
               {i > 0 && <span aria-hidden className="text-line">|</span>}
               <button
                 type="button"
                 aria-pressed={deck === id}
                 onClick={() => onDeck(id)}
-                className={`rounded-ctrl transition ${deck === id ? 'font-bold' : 'text-sub'}`}
+                className={`
+                  -my-3 grid min-w-11 place-items-center rounded-ctrl px-2.5 py-3 transition
+                  ${deck === id ? 'font-bold' : 'text-sub'}
+                `}
               >
                 {label}
               </button>
@@ -179,7 +190,7 @@ export function Header({
           찾기 앞에 칸막이만 덩그러니 남으면 안 된다
         */}
         {concepts.length > 0 && (
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-0">
             {deck && onDeck && decks.length > 1 && (
               <span aria-hidden className="text-line">|</span>
             )}
