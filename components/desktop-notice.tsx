@@ -23,7 +23,8 @@ export function DesktopNotice() {
             눕혔거나. "휴대폰에서 열어 주세요"는 이미 폰을 든 사람에게는
             할 수 있는 일이 아니라서 둘 다에게 통하는 말로 적는다
           */}
-          <p className="text-lg font-semibold">화면이 너무 넓어요</p>
+          {/* 이 화면에도 제목이 하나는 있어야 한다. 피드 쪽은 트랙 이름이 그 자리다 */}
+          <h1 className="text-lg font-semibold">화면이 너무 넓어요</h1>
           <p className="text-sm text-sub">휴대폰을 세로로 두거나 창을 좁혀 주세요</p>
         </CardSheet>
       </FeedCard>
