@@ -64,6 +64,13 @@ export function Shell({
    * 받은 것은 다시 받지 않는다 (lib/corpus.ts).
    */
   const [corpus, setCorpus] = useState<Corpus | null>(null)
+  /**
+   * 못 받았는가. **빈 것과 가른다** — 콘텐츠가 아직 없는 것과 지금 못 받은
+   * 것은 사용자가 할 일이 다르다 (lib/corpus.ts).
+   */
+  const [failed, setFailed] = useState(false)
+  /** 다시 시도를 세는 값. 바뀌면 아래 효과가 다시 돈다 */
+  const [attempt, setAttempt] = useState(0)
 
   // 설정은 마운트 후에 읽는다. localStorage는 서버에 없다
   useEffect(() => {
@@ -89,13 +96,16 @@ export function Shell({
     if (!ready) return
     let alive = true
     setCorpus(null)
+    setFailed(false)
     void loadCorpus(language).then((next) => {
-      if (alive) setCorpus(next)
+      if (!alive) return
+      if (next) setCorpus(next)
+      else setFailed(true)
     })
     return () => {
       alive = false
     }
-  }, [ready, language])
+  }, [ready, language, attempt])
 
   const change = useCallback((next: TrackId) => {
     setTrack(next)
@@ -177,7 +187,7 @@ export function Shell({
   const ladder = shownDeck === 'trivia' ? TRIVIA_LADDER : WORD_LADDER
   const mastery = masteryLabel(masteredCount(progress, keys, ladder), keys.length)
 
-  if (!ready || !corpus) return <Skeleton />
+  if (!ready || (!corpus && !failed)) return <Skeleton />
 
   return (
     <div className="feed-root flex h-dvh flex-col">
@@ -190,16 +200,59 @@ export function Shell({
         articles={articles}
         onDeck={changeDeck}
       />
-      <Feed
-        key={`${track}-${shownDeck}`}
-        entries={shown}
-        track={track}
-        lang={trackOf(track).language}
-        ladder={ladder}
-        ordered={shownDeck === 'trivia'}
-        onProgress={setProgress}
-      />
+      {/*
+        헤더는 그대로 둔다. 트랙 드롭다운이 살아 있어야 한 언어를 못 받았을 때
+        다른 트랙으로 옮겨 갈 수 있다 — 여기서 화면을 통째로 갈아 끼우면
+        새로고침 말고는 길이 없다
+      */}
+      {failed ? (
+        <Retry onRetry={() => setAttempt((n) => n + 1)} />
+      ) : (
+        <Feed
+          key={`${track}-${shownDeck}`}
+          entries={shown}
+          track={track}
+          lang={trackOf(track).language}
+          ladder={ladder}
+          ordered={shownDeck === 'trivia'}
+          onProgress={setProgress}
+        />
+      )}
     </div>
+  )
+}
+
+/**
+ * 콘텐츠를 못 받았을 때 피드 자리에 서는 한 장.
+ *
+ * **"그림이 준비된 단어가 아직 없어요"와 갈라야 한다.** 그 말은 콘텐츠가 아직
+ * 없다는 뜻이라 기다리라는 안내가 되는데, 여기서 필요한 것은 다시 시도하는
+ * 일이다 (lib/corpus.ts).
+ *
+ * 카드와 **같은 골격**이다 — 넓은 화면 안내가 그런 것과 같은 이유로, 이
+ * 제품에 있는 것은 카드뿐이다 (components/desktop-notice.tsx).
+ *
+ * 왜 못 받았는지는 말하지 않는다. 연결이 끊겼는지 파일이 없는지 브라우저는
+ * 구별해 주지 않고, 어느 쪽이든 사용자가 할 일은 같다.
+ */
+function Retry({ onRetry }: { onRetry: () => void }) {
+  return (
+    <main className="min-h-0 flex-1">
+      <FeedCard>
+        <CardImage />
+        <CardSheet>
+          <p className="text-lg font-semibold">단어를 불러오지 못했어요</p>
+          <p className="-mt-2 text-sm text-sub">연결을 확인하고 다시 시도해 주세요</p>
+          <button
+            type="button"
+            onClick={onRetry}
+            className="mt-md grid h-11 place-items-center rounded-ctrl border border-line bg-surface px-5 text-[15px] font-semibold transition active:scale-[.985]"
+          >
+            다시 시도
+          </button>
+        </CardSheet>
+      </FeedCard>
+    </main>
   )
 }
 

@@ -54,8 +54,11 @@ function useIndex(): SearchIndex | null {
   useEffect(() => {
     if (cached) return
     let alive = true
-    void loadSearchCorpus().then(({ concepts, trivia, articles }) => {
-      cached ??= buildIndex(concepts, trivia, articles)
+    void loadSearchCorpus().then((corpus) => {
+      // 못 받았으면 색인을 만들지 않는다. 빈 색인을 두면 「찾은 것이
+      // 없습니다」가 뜨는데, 없는 것이 아니라 못 받은 것이다 (lib/corpus.ts)
+      if (!corpus) return
+      cached ??= buildIndex(corpus.concepts, corpus.trivia, corpus.articles)
       if (alive) setIndex(cached)
     })
     return () => {

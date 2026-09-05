@@ -21,30 +21,42 @@ export type Corpus = {
   articles: Article[]
 }
 
-const EMPTY: Corpus = { concepts: [], trivia: [], articles: [] }
-
 /**
- * 한 번 받은 것은 다시 받지 않는다. **실패한 약속도 그대로 담아 둔다** —
- * 파일이 없는데 트랙을 오갈 때마다 다시 찾아가면 요청만 쌓인다 (lib/peaks.ts).
+ * 한 번 받은 것은 다시 받지 않는다. **못 받은 것은 붙들지 않는다** — 다시
+ * 시도하면 다시 받아야 하기 때문이다.
+ *
+ * `lib/peaks.ts`는 실패한 약속까지 담아 둔다. 파형은 없어도 카드가 성립해서
+ * 다시 찾아갈 이유가 없기 때문인데, 콘텐츠는 없으면 **화면이 서지 않는다.**
+ * 무게가 다르므로 규칙도 갈린다.
  */
-const loaded = new Map<string, Promise<Corpus>>()
+const loaded = new Map<string, Promise<Corpus | null>>()
 
-function get(name: string): Promise<Corpus> {
+/** `null`이면 못 받은 것이다. 빈 것과 다르다 — 부르는 쪽이 그 둘을 가른다 */
+function get(name: string): Promise<Corpus | null> {
   const cached = loaded.get(name)
   if (cached) return cached
 
   const pending = fetch(`/content/${name}.json`)
-    .then((res) => (res.ok ? (res.json() as Promise<Corpus>) : EMPTY))
-    // 못 받으면 빈 피드가 된다. 그 자리에는 이미 "그림이 준비된 단어가 아직
-    // 없어요"가 서 있어서(components/feed.tsx) 화면이 깨지지는 않는다
-    .catch(() => EMPTY)
+    .then((res) => (res.ok ? (res.json() as Promise<Corpus>) : null))
+    .catch(() => null)
+    .then((corpus) => {
+      if (!corpus) loaded.delete(name)
+      return corpus
+    })
 
   loaded.set(name, pending)
   return pending
 }
 
-/** 그 언어의 개념·상식·참고 글. 피드와 헤더가 쓴다 */
-export function loadCorpus(lang: Language): Promise<Corpus> {
+/**
+ * 그 언어의 개념·상식·참고 글. 피드와 헤더가 쓴다.
+ *
+ * **못 받은 것과 빈 것을 가른다.** 예전에는 실패를 빈 코퍼스로 바꿔 돌려줬는데,
+ * 그러면 화면이 "그림이 준비된 단어가 아직 없어요"라고 말한다 — 콘텐츠가
+ * 아직 없다는 뜻이라 기다리라는 말이 되고, 정작 필요한 것은 다시 시도하는
+ * 일이다 (components/shell.tsx).
+ */
+export function loadCorpus(lang: Language): Promise<Corpus | null> {
   return get(lang)
 }
 
@@ -54,6 +66,6 @@ export function loadCorpus(lang: Language): Promise<Corpus> {
  * 검색은 트랙을 안 가리므로 전량이 필요하지만(lib/search.ts) 예문은 한 줄도
  * 안 본다. 시트를 열기 전에는 받지 않는다 — 안 여는 사람에게는 0바이트다.
  */
-export function loadSearchCorpus(): Promise<Corpus> {
+export function loadSearchCorpus(): Promise<Corpus | null> {
   return get('search')
 }

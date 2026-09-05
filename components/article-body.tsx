@@ -95,9 +95,14 @@ function Table({ table, tag }: { table: KanaTable; tag: string }) {
               <tr>
                 {/* 줄 이름 칸. 머리글이 없어 스크린리더에는 빈 칸으로 읽힌다 */}
                 <th className="pb-1.5" style={{ width: widths.label }} />
-                {/* 열 이름은 비어 있을 수 있다(성모·운모 표) — 키는 자리로 잡는다 */}
+                {/*
+                  열 이름은 비어 있을 수 있다(성모·운모 표) — 키는 자리로 잡는다.
+
+                  `scope`는 줄 이름 쪽에만 있었다. 오십음도가 5×11이라 한쪽만
+                  붙어 있으면 스크린리더가 칸과 머리글을 반쪽만 잇는다
+                */}
                 {table.columns.map((column, i) => (
-                  <th key={i} className="pb-1.5 text-xs font-medium text-sub">
+                  <th key={i} scope="col" className="pb-1.5 text-xs font-medium text-sub">
                     {column}
                   </th>
                 ))}
