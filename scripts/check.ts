@@ -6,7 +6,7 @@
  *
  *   node scripts/check.ts
  */
-import { readdirSync, readFileSync, existsSync } from 'node:fs'
+import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
@@ -410,6 +410,38 @@ if (notes.length) {
     warn(
       `lib/audio-have.ts가 낡았습니다 — 발음 없는 자리 ${gone.length}건 vs 적힌 것 ${AUDIO_MISSING.size}건. node scripts/audio.ts manifest 를 돌리세요`,
     )
+}
+
+/**
+ * 화면이 읽는 것이 콘텐츠를 따라왔는지 본다. (scripts/split.ts)
+ *
+ * `public/content/`는 `content/*.json`에서 갈라 구운 파생물이라 저장소에 없다.
+ * `pnpm dev`와 `pnpm build`가 먼저 굽지만 **dev 서버를 켜 둔 채 콘텐츠를
+ * 고치면 낡는다** — 화면은 옛 낱말을 그대로 보여주고, 고친 사람은 왜 안
+ * 바뀌는지 모른 채 파일을 다시 들여다본다.
+ *
+ * 파일 시각만 본다. 내용을 다시 만들어 대조하면 여기서 pack을 한 번 더 도는
+ * 셈이라, 낡았는지만 알면 되는 자리에 그만한 값을 치를 이유가 없다.
+ */
+{
+  const packed = join(PUBLIC_DIR, 'content')
+  if (!existsSync(packed)) {
+    warn('public/content/ 가 없습니다 — 화면이 읽을 것이 없습니다. pnpm split 을 돌리세요')
+  } else {
+    const newest = Math.max(
+      ...readdirSync(CONTENT_DIR)
+        .filter((name) => name.endsWith('.json'))
+        .map((name) => statSync(join(CONTENT_DIR, name)).mtimeMs),
+      ...readdirSync(join(CONTENT_DIR, 'trivia')).map((name) =>
+        statSync(join(CONTENT_DIR, 'trivia', name)).mtimeMs,
+      ),
+    )
+    const oldest = Math.min(
+      ...readdirSync(packed).map((name) => statSync(join(packed, name)).mtimeMs),
+    )
+    if (oldest < newest)
+      warn('public/content/ 가 낡았습니다 — 콘텐츠를 고친 뒤 pnpm split 을 안 돌렸습니다')
+  }
 }
 
 /**

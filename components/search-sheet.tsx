@@ -150,9 +150,13 @@ export function SearchSheet({
 
         {/*
           **두 글자를 넘겨야 「없음」을 띄운다.** 한 글자씩 칠 때마다 「결과
-          없음」이 깜빡이면 아직 치는 중인 사람을 재촉하는 꼴이 된다
+          없음」이 깜빡이면 아직 치는 중인 사람을 재촉하는 꼴이 된다.
+
+          **색인이 있어야 말한다.** 훑을 것을 받는 동안에도 `hits`는 빈
+          배열이라, 이 조건에 색인을 넣지 않으면 아직 받는 중인데 「없습니다」
+          라고 말하게 된다 — 있는 것을 없다고 하는 셈이다 (`useIndex`)
         */}
-        {query.length > 2 && hits.length === 0 && <Hint>찾은 것이 없습니다.</Hint>}
+        {index && query.length > 2 && hits.length === 0 && <Hint>찾은 것이 없습니다.</Hint>}
 
         {hits.length > 0 && (
           <ul className="flex flex-col gap-2">

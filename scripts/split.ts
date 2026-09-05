@@ -15,7 +15,10 @@ import type {
 /**
  * 콘텐츠를 **언어별로 갈라 public/에 굽는다.** (spec.md §4, §8)
  *
- *   node scripts/pack.ts
+ *   pnpm split
+ *
+ * 이름이 `pack`이 아닌 이유는 `pnpm pack`이 npm 내장 명령이어서다 — 스크립트
+ * 대신 tarball을 만든다.
  *
  * 개념 하나에 일곱 언어가 붙어 있다(§1). 그 구조가 콘텐츠에는 맞지만 화면에는
  * 맞지 않는다 — JLPT를 보는 사람에게 러시아어 예문 5만 줄이 같이 실린다.

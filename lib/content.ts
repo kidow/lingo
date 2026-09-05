@@ -42,7 +42,7 @@ import type { Article, ArticleFile, Concept, ContentFile, Language, TriviaFile }
  * 경로 함수는 `lib/entries.ts`에서 직접 가져온다.
  *
  * 여기를 쓰는 곳은 셋이다 — 빌드 때 그림 유무를 보는 `app/page.tsx`, 개발용
- * `app/debug/page.tsx`, 그리고 갈라 굽는 `scripts/pack.ts`. 다 서버에서 돈다.
+ * `app/debug/page.tsx`, 그리고 갈라 굽는 `scripts/split.ts`. 다 서버에서 돈다.
  *
  * **파일은 주제고, 트랙은 언어로 고른다.** 개념은 트랙에 속하지 않는다 —
  * `cat` 하나를 JLPT도 HSK도 DELE도 쓴다. 어느 트랙에 나올지는 그 개념이

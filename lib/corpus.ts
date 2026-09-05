@@ -8,7 +8,7 @@ import type { Article, Concept, Language } from './types.ts'
  * JLPT를 보는 사람에게 러시아어 예문까지 같이 간다 — 청크 하나가 11.5MB였고
  * 그중 70%가 지금 보는 언어와 무관한 예문이었다.
  *
- * 그래서 `scripts/pack.ts`가 **읽는 단위로 잘라 `public/content/`에 구워 두고**,
+ * 그래서 `scripts/split.ts`가 **읽는 단위로 잘라 `public/content/`에 구워 두고**,
  * 여기서 필요한 것만 받아 온다. `lib/peaks.ts`가 파형에 대해 이미 같은 판단을
  * 했다 — 언어 하나가 230KB라 일곱을 실을 이유가 없다.
  *

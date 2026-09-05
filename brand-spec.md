@@ -38,7 +38,7 @@
   --focus:     #1F33D4;
 
   /* 판정 */
-  --ok:        #168B64;
+  --ok:        #137A58;  /* 연초록 바탕 위 4.81:1 (WCAG AA) */
   --ok-soft:   #E8F7F1;
   --err:       #C83B4C;
   --err-soft:  #FFF0F2;
