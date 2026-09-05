@@ -22,7 +22,7 @@ export const LEVELS_STAMP: Readonly<Record<string, string>> = {
   'nature.json': '7c0ceeec0ab2',
   'number.json': '30ba2d8d1d47',
   'office.json': 'f83f6c5abb60',
-  'quality.json': '621154ae49a0',
+  'quality.json': 'fce1b139e108',
   'scene.json': 'c8ba25307fca',
   'school.json': '1d2b3b6b22d5',
   'sport.json': '6c47bab1fbe1',
