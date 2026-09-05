@@ -5,7 +5,7 @@ import { useMemo, useState } from 'react'
 import { ArticleBody } from './article-body'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
-import { LANG_LABEL } from '@/lib/lang'
+import { bcp47, LANG_LABEL } from '@/lib/lang'
 import { buildIndex, search, type Hit, type SearchIndex } from '@/lib/search'
 import type { TriviaEntry } from '@/lib/trivia'
 import type { Article, Concept, Language } from '@/lib/types'
@@ -78,7 +78,7 @@ export function SearchSheet({
             onChange={(event) => setQuery(event.target.value)}
             placeholder="단어 · 뜻 · 상식"
             aria-label="검색"
-            className="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-sub"
+            className="min-w-0 flex-1 bg-transparent text-[15px] placeholder:text-sub"
           />
           {/* 지우기는 값이 있을 때만 자리를 잡는다. 빈 칸에 ✕가 서 있으면 무엇을
               지우라는 것인지 알 수 없다 */}
@@ -161,7 +161,18 @@ function Row({ hit, onOpen, showTag = true }: { hit: Hit; onOpen: () => void; sh
     >
       <span className="min-w-0 flex-1">
         <span className="font-jp block truncate text-[15px] font-semibold">{title}</span>
-        {sub && <span className="font-jp mt-0.5 block truncate text-[13px] text-sub">{sub}</span>}
+        {/*
+          낱말 결과에서만 아랫줄이 외국어다 — 윗줄은 한국어 뜻이고, 상식과
+          참고 글은 두 줄 다 한국어라 붙일 것이 없다 (lib/search.ts)
+        */}
+        {sub && (
+          <span
+            lang={hit.kind === 'word' && hit.lang ? bcp47(hit.lang) : undefined}
+            className="font-jp mt-0.5 block truncate text-[13px] text-sub"
+          >
+            {sub}
+          </span>
+        )}
       </span>
       {/* 어느 언어의 것인지가 없으면 같은 뜻의 일곱 줄이 구별되지 않는다 */}
       {tag && <span className="shrink-0 text-[11px] text-sub">{tag}</span>}
@@ -234,8 +245,18 @@ function WordPreview({ concept }: { concept: Concept }) {
             <dt className="w-14 shrink-0 text-[13px] text-sub">{LANG_LABEL[lang]}</dt>
             <dd className="flex min-w-0 flex-1 items-center gap-2">
               <span className="min-w-0">
-                <span className="font-jp text-[15px] font-semibold">{word!.term}</span>
-                {/* 읽기와 로마자는 언어마다 있고 없다. 있는 것만 잇는다 (lib/lang.ts) */}
+                {/*
+                  일곱 줄이 각자 다른 언어다. 줄마다 태그가 달라야 스크린리더가
+                  제 소리로 읽는다 (lib/lang.ts)
+                */}
+                <span lang={bcp47(lang)} className="font-jp text-[15px] font-semibold">
+                  {word!.term}
+                </span>
+                {/*
+                  읽기와 로마자는 언어마다 있고 없다. 있는 것만 잇는다 (lib/lang.ts).
+                  읽기(かな)는 그 언어지만 로마자는 아니라 한 줄에 섞여 있어
+                  태그를 못 붙인다 — 소개 카드의 `Aside`가 둘을 갈라 놓는 자리다
+                */}
                 {(word!.reading || word!.romanization) && (
                   <span className="font-jp ml-2 text-[13px] text-sub">
                     {[word!.reading, word!.romanization].filter(Boolean).join(' · ')}

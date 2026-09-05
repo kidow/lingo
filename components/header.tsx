@@ -81,7 +81,7 @@ export function Header({
       <DropdownMenu>
         <DropdownMenuTrigger
           aria-label="학습 트랙"
-          className="flex items-center gap-1 rounded-ctrl outline-none"
+          className="flex items-center gap-1 rounded-ctrl"
         >
           <span className="text-lg font-bold tracking-tight">{trackOf(track).label}</span>
           {/* 국기는 이름 뒤에 붙는 표지다 (lib/track.ts). 버튼 이름에는 안 섞인다 */}

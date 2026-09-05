@@ -36,13 +36,24 @@ export function SearchDrawer({
   return (
     <Drawer.Root handleOnly>
       {/* 덱 탭과 같은 글자 크기·색이다. 다만 탭이 아니라서 눌린 상태가 없다 */}
-      <Drawer.Trigger className="rounded-ctrl text-[15px] text-sub transition outline-none active:scale-[.985]">
+      <Drawer.Trigger className="rounded-ctrl text-[15px] text-sub transition active:scale-[.985]">
         찾기
       </Drawer.Trigger>
 
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 z-40 bg-ink/40" />
 
+        {/*
+          `outline-none`은 **여기만** 남긴다. vaul이 시트를 열며 이 상자에
+          포커스를 주는데, 링이 뜨면 화면 절반에 3px 테두리가 둘린다 — 누를
+          것이 아니라 담는 것이라 포커스를 눈으로 알릴 이유가 없다.
+
+          누르는 자리에는 붙이지 않는다. Tailwind v4의 `outline-none`은
+          `outline-style: none`이고 utilities 레이어가 base를 이겨서,
+          globals.css의 `:focus-visible` 규칙을 **통째로 무효화한다** —
+          트리거와 닫기와 검색 칸 넷이 그렇게 포커스 링을 잃고 있었다
+          (WCAG 2.4.7, brand-spec.md)
+        */}
         <Drawer.Content
           className="
             fixed inset-x-0 bottom-0 z-50 mx-auto flex h-[85dvh] w-full max-w-[480px]
@@ -53,7 +64,7 @@ export function SearchDrawer({
             <Drawer.Title className="text-lg font-bold tracking-tight">찾기</Drawer.Title>
             <Drawer.Close
               aria-label="닫기"
-              className="-mr-1.5 rounded-ctrl p-1.5 text-sub transition outline-none active:scale-[.985]"
+              className="-mr-1.5 rounded-ctrl p-1.5 text-sub transition active:scale-[.985]"
             >
               <X className="size-5" strokeWidth={2.5} aria-hidden />
             </Drawer.Close>

@@ -68,6 +68,12 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  /*
+   * 누르는 자리에 `outline-none`을 붙이지 않는다. Tailwind v4에서 그 유틸리티는
+   * `outline-style: none`이고 utilities 레이어가 base를 이겨서, 이 규칙이
+   * 통째로 무효화된다 — 특이도 싸움이 아니라 레이어 순서라 `!important`로도
+   * 안 뒤집힌다. 담는 상자(시트·메뉴 팝업)에만 예외를 둔다.
+   */
   :focus-visible {
     outline: 3px solid var(--color-focus);
     outline-offset: 3px;
