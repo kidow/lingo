@@ -18,9 +18,13 @@ export function DesktopNotice() {
           <PhoneIcon />
         </CardImage>
         <CardSheet>
-          {/* 기기를 지칭하지 않는다. 가로로 눕힌 폰도 이 화면을 본다 */}
+          {/*
+            **여기 오는 길이 둘이다.** 넓은 창에서 열었거나, 폰을 가로로
+            눕혔거나. "휴대폰에서 열어 주세요"는 이미 폰을 든 사람에게는
+            할 수 있는 일이 아니라서 둘 다에게 통하는 말로 적는다
+          */}
           <p className="text-lg font-semibold">화면이 너무 넓어요</p>
-          <p className="text-sm text-sub">휴대폰에서 열거나 창을 좁혀 주세요</p>
+          <p className="text-sm text-sub">휴대폰을 세로로 두거나 창을 좁혀 주세요</p>
         </CardSheet>
       </FeedCard>
     </div>

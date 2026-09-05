@@ -228,7 +228,13 @@ function ChoiceCard({
               // 않으면 스크린리더가 한국어 음성으로 읽는다 (lib/lang.ts)
               lang={tag}
               type="button"
-              disabled={answered}
+              /*
+                `disabled`가 아니라 `aria-disabled`다. 진짜 `disabled`는 그
+                버튼을 포커스 순서에서 빼는데, 방금 누른 버튼이 그렇게 되면
+                포커스가 `<body>`로 떨어져 키보드 사용자가 자리를 잃는다.
+                다시 눌리는 것은 아래 `onClick`의 가드가 막는다
+              */
+              aria-disabled={answered}
               onClick={() => {
                 if (answered) return
                 setPicked(option)
@@ -237,7 +243,7 @@ function ChoiceCard({
               className={`
                 grid ${optionBox(options)} place-items-center rounded-ctrl border px-1.5
                 font-jp ${optionSize(options)} font-semibold transition active:scale-[.985]
-                disabled:active:scale-100
+                aria-disabled:active:scale-100
                 ${verdictClass(answered, option === answer, option === picked)}
               `}
             >
@@ -268,7 +274,14 @@ function ChoiceCard({
           </button>
         )}
 
-        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} active={active} />
+        <Verdict
+          answered={answered}
+          correct={correct}
+          gaveUp={gaveUp}
+          answer={answer}
+          gloss={concept.meaning_ko}
+        />
+        <Reveal show={answered} question={question} lang={lang} active={active} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
@@ -313,7 +326,7 @@ function ListenCard({
     <FeedCard>
       <CardImage>
         {answered ? (
-          <ListenBrief entry={entry} lang={lang} track={track} correct={correct} gaveUp={gaveUp} />
+          <ListenBrief entry={entry} lang={lang} track={track} />
         ) : (
           <ListenStage slug={concept.slug} lang={lang} playing={sounding}>
             {/* 답하기 전에는 이 버튼이 문제 전체다. 눌러 다시 들을 수 있고, 두 번째부터는 느리게 나온다 */}
@@ -336,7 +349,7 @@ function ListenCard({
               <button
                 key={option.concept.slug}
                 type="button"
-                disabled={answered}
+                aria-disabled={answered}
                 aria-label={option.concept.meaning_ko}
                 onClick={() => {
                   if (answered) return
@@ -350,7 +363,7 @@ function ListenCard({
                 className={`
                   relative aspect-[4/3] [@media(max-height:700px)]:aspect-[3/2]
                   overflow-hidden rounded-ctrl border transition
-                  active:scale-[.985] disabled:active:scale-100
+                  active:scale-[.985] aria-disabled:active:scale-100
                   ${verdictClass(answered, isAnswer, option.concept.slug === picked)}
                 `}
               >
@@ -379,6 +392,14 @@ function ListenCard({
             모르겠어요
           </button>
         )}
+
+        <Verdict
+          answered={answered}
+          correct={correct}
+          gaveUp={gaveUp}
+          answer={answer}
+          gloss={concept.meaning_ko}
+        />
 
         {/*
           `Reveal`을 두지 않는다. 뜻도 소리 버튼도 위 판이 이미 들고 있어서
@@ -489,26 +510,21 @@ function ListenBrief({
   entry,
   lang,
   track,
-  correct,
-  gaveUp,
 }: {
   entry: Entry
   lang: Language
   track: TrackId
-  correct: boolean
-  gaveUp: boolean
 }) {
   const { concept, word, answer } = entry
   const aside = asideOf(word, lang, track)
   const tag = bcp47(lang, track)
   const baseTag = bcp47(lang)
   const [example] = examplesOf(word)
-  const verdict = gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '
 
   return (
-    // 그림 자리와 같은 크기라 넘칠 수 있다. 자르지 않고 굴린다 (CardSheet와 같은 이유)
-    <div className="flex h-full flex-col justify-center gap-1.5 overflow-y-auto px-5 py-4 text-center" role="status">
-      <span className="sr-only">{verdict}</span>
+    // 그림 자리와 같은 크기라 넘칠 수 있다. 자르지 않고 굴린다 (CardSheet와 같은 이유).
+    // 판정은 시트 쪽 `Verdict`가 말한다
+    <div className="flex h-full flex-col justify-center gap-1.5 overflow-y-auto px-5 py-4 text-center">
       <div className="flex items-center justify-center gap-sm">
         <Copy
           text={answer}
@@ -595,7 +611,13 @@ function ClozeCard({
               // 않으면 스크린리더가 한국어 음성으로 읽는다 (lib/lang.ts)
               lang={tag}
               type="button"
-              disabled={answered}
+              /*
+                `disabled`가 아니라 `aria-disabled`다. 진짜 `disabled`는 그
+                버튼을 포커스 순서에서 빼는데, 방금 누른 버튼이 그렇게 되면
+                포커스가 `<body>`로 떨어져 키보드 사용자가 자리를 잃는다.
+                다시 눌리는 것은 아래 `onClick`의 가드가 막는다
+              */
+              aria-disabled={answered}
               onClick={() => {
                 if (answered) return
                 setPicked(option)
@@ -604,7 +626,7 @@ function ClozeCard({
               className={`
                 grid ${optionBox(options)} place-items-center rounded-ctrl border px-1.5
                 font-jp ${optionSize(options)} font-semibold transition active:scale-[.985]
-                disabled:active:scale-100
+                aria-disabled:active:scale-100
                 ${verdictClass(answered, option === answer, option === picked)}
               `}
             >
@@ -629,7 +651,14 @@ function ClozeCard({
           </button>
         )}
 
-        <Reveal show={answered} correct={correct} gaveUp={gaveUp} question={question} lang={lang} active={active} />
+        <Verdict
+          answered={answered}
+          correct={correct}
+          gaveUp={gaveUp}
+          answer={answer}
+          gloss={concept.meaning_ko}
+        />
+        <Reveal show={answered} question={question} lang={lang} active={active} />
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
     </FeedCard>
@@ -696,7 +725,7 @@ function BlankCard({
               key={key}
               lang={tag}
               type="button"
-              disabled={answered}
+              aria-disabled={answered}
               onClick={() => {
                 if (answered) return
                 setPicked(key)
@@ -704,7 +733,7 @@ function BlankCard({
               }}
               className={`
                 min-w-[60px] rounded-ctrl border px-2 py-3.5 font-jp text-[22px] font-semibold
-                transition active:scale-95 disabled:active:scale-100
+                transition active:scale-95 aria-disabled:active:scale-100
                 ${verdictClass(answered, key === answerChar, key === picked)}
               `}
             >
@@ -713,7 +742,9 @@ function BlankCard({
           ))}
         </div>
 
-        <Reveal show={answered} correct={correct} question={question} lang={lang} active={active} />
+        {/* 고른 것은 한 글자지만 배우는 것은 낱말이라 낱말째로 말한다 */}
+        <Verdict answered={answered} correct={correct} answer={answer} gloss={concept.meaning_ko} />
+        <Reveal show={answered} question={question} lang={lang} active={active} />
         {/* 답해야 다음 카드가 열린다. 화살표는 열린 뒤에만 뜬다 */}
         <div className="mt-auto">{answered && <SwipeHint />}</div>
       </CardSheet>
@@ -763,7 +794,7 @@ function TriviaCard({ question, onAnswer, pick }: { question: TriviaQuestion } &
               <button
                 key={option}
                 type="button"
-                disabled={answered}
+                aria-disabled={answered}
                 onClick={() => {
                   if (answered) return
                   setPicked(option)
@@ -772,7 +803,7 @@ function TriviaCard({ question, onAnswer, pick }: { question: TriviaQuestion } &
                 className={`
                   grid ${optionBox(options)} place-items-center rounded-ctrl border px-3
                   text-center font-jp ${optionSize(options)} font-semibold transition
-                  active:scale-[.985] disabled:active:scale-100
+                  active:scale-[.985] aria-disabled:active:scale-100
                   ${verdictClass(answered, option === answer, option === picked)}
                 `}
               >
@@ -797,16 +828,16 @@ function TriviaCard({ question, onAnswer, pick }: { question: TriviaQuestion } &
             </button>
           )}
 
+          <Verdict
+            answered={answered}
+            correct={correct}
+            gaveUp={gaveUp}
+            answer={answer}
+            gloss={note}
+          />
+
           {answered && (
-            <p
-              className="border-t border-line pt-md font-jp text-[15px] leading-relaxed text-sub"
-              role="status"
-            >
-              {/* 색만으로 정오답을 전하지 않는다. 눈으로는 보기 테두리가, 귀로는 이 줄이 말한다 */}
-              <span className="sr-only">
-                {gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '}
-                {answer}.{' '}
-              </span>
+            <p className="border-t border-line pt-md font-jp text-[15px] leading-relaxed text-sub">
               {note}
             </p>
           )}
@@ -822,6 +853,47 @@ function TriviaCard({ question, onAnswer, pick }: { question: TriviaQuestion } &
 
 /** 보기 문자열과 절대 겹치지 않는 값. 모른다고 누른 상태를 나타낸다 */
 const GAVE_UP = '\u0000gave-up'
+
+/**
+ * 판정을 귀로 알리는 자리. 눈에는 보이지 않는다.
+ *
+ * **답하기 전부터 DOM에 서 있다.** `aria-live` 영역은 자리가 먼저 있어야
+ * 내용이 바뀔 때 읽힌다 — 예전에는 판정 줄 자체가 답한 뒤에 **내용을 담은 채로**
+ * 새로 붙었는데, 여러 스크린리더가 그것을 "바뀜"으로 보지 않고 지나간다.
+ *
+ * **문장을 완결한다.** 라이브 영역은 자기 안의 것만 읽으므로, 옆에 있는 뜻줄이
+ * 이어서 읽히리라 기대할 수 없다. 판정과 정답과 뜻을 한 문장에 담는다.
+ *
+ * 눈으로는 보기 테두리와 색이 같은 말을 한다 — 색만으로 전하지 않는다는 규칙이
+ * 여기서 지켜진다 (brand-spec.md).
+ */
+function Verdict({
+  answered,
+  correct,
+  gaveUp = false,
+  answer,
+  gloss,
+}: {
+  answered: boolean
+  correct: boolean
+  /** 모른다고 눌렀나. 틀렸다고 말하지 않는다 — 찍지 않은 것은 틀린 것과 다르다 */
+  gaveUp?: boolean
+  answer: string
+  /** 뜻이나 해설. 정답만 읽어 주면 무엇인지 모른 채 지나간다 */
+  gloss?: string
+}) {
+  const say = !answered
+    ? ''
+    : correct
+      ? `정답입니다. ${answer}. ${gloss ?? ''}`
+      : `${gaveUp ? '' : '틀렸습니다. '}정답은 ${answer}. ${gloss ?? ''}`
+
+  return (
+    <span role="status" className="sr-only">
+      {say}
+    </span>
+  )
+}
 
 /**
  * 큰 글자 아래 붙는 참고줄. 소개 카드와 듣기 카드가 나눠 쓴다.
@@ -896,15 +968,11 @@ function Copy({
 
 function Reveal({
   show,
-  correct,
-  gaveUp = false,
   question,
   lang,
   active,
 }: {
   show: boolean
-  correct: boolean
-  gaveUp?: boolean
   question: ChoiceQuestion | BlankQuestion | ClozeQuestion | ListenQuestion
   lang: Language
   /** 보고 있는 카드에서만 저절로 울린다 */
@@ -913,11 +981,11 @@ function Reveal({
   if (!show) return null
   const { concept, word, answer } = question.entry
   const extra = word.term !== answer ? word.term : null
-  const verdict = gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '
   return (
+    // 판정은 `Verdict`가 따로 말한다. 여기에 라이브 영역을 겹치면 같은 말이
+    // 두 번 나가고, 답한 뒤에 붙는 자리라 어차피 안 읽힌다
     <div className="flex items-center justify-center gap-sm">
-      <p className="text-sm text-sub" role="status">
-        <span className="sr-only">{verdict}</span>
+      <p className="text-sm text-sub">
         {concept.meaning_ko}
         {/*
           뜻은 한국어고 표기는 그 언어라 한 줄에 섞여 있다. 태그를 줄 전체에
