@@ -7,6 +7,7 @@ import everyday from '@/content/everyday.json'
 import family from '@/content/family.json'
 import food from '@/content/food.json'
 import home from '@/content/home.json'
+import idea from '@/content/idea.json'
 import job from '@/content/job.json'
 import nature from '@/content/nature.json'
 import number from '@/content/number.json'
@@ -61,6 +62,7 @@ const FILES: [topic: string, file: ContentFile][] = [
   ['home', home as ContentFile],
   ['job', job as ContentFile],
   ['nature', nature as ContentFile],
+  ['idea', idea as ContentFile],
 ]
 
 /**
