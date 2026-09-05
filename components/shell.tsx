@@ -3,8 +3,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CardImage, CardSheet, Feed, FeedCard } from './feed'
 import { Header } from './header'
-import type { Entry } from '@/lib/entries'
-import { ALL_ARTICLES, ALL_TRIVIA, articlesFor, CONCEPTS, triviaFor } from '@/lib/content'
+import {
+  ALL_ARTICLES,
+  ALL_TRIVIA,
+  articlesFor,
+  CONCEPTS,
+  entriesFor,
+  triviaFor,
+} from '@/lib/content'
 import {
   emptyProgress,
   loadProgress,
@@ -22,8 +28,13 @@ import { DEFAULT_TRACK, trackOf, type TrackId } from '@/lib/track'
  * 헤더 + 피드. 트랙 선택이 사는 곳이다. (spec.md §3)
  *
  * 서버는 어느 트랙을 볼지 모른다 — 설정이 localStorage에 있기 때문이다.
- * 그래서 **전 트랙의 출제 목록을 다 받아 두고** 클라이언트가 하나를 고른다.
- * 콘텐츠는 어차피 빌드 시점에 번들에 들어가 있어 추가 비용이 없다. (§8)
+ * 그래서 **출제 목록을 여기서 만든다.** 콘텐츠는 검색 때문에 어차피 이 모듈이
+ * 정적 import로 들고 있어(`CONCEPTS`) 추가로 실리는 것이 없다. (§8)
+ *
+ * 예전에는 서버가 트랙 일곱 벌을 추려 prop으로 넘겼는데, 이 파일이
+ * `'use client'`라 그 배열이 RSC 페이로드로 HTML에 직렬화됐다 — 같은 18MB가
+ * 번들과 HTML에 **두 번** 실려 index.html이 17.9MB였다. 서버만 아는 사실은
+ * 그림 파일이 있느냐 없느냐뿐이라 그것만 받는다 (app/page.tsx).
  *
  * 트랙이 바뀌면 Feed를 통째로 새로 만든다(`key`). 진도도 카드도 트랙별로
  * 갈라져 있으므로 이어붙이지 않고 처음부터 굴리는 편이 정확하다.
@@ -31,7 +42,12 @@ import { DEFAULT_TRACK, trackOf, type TrackId } from '@/lib/track'
  * 헤더의 숙련도도 여기서 산다. 진도는 Feed 안에 있고 헤더는 그 형제라
  * 둘의 공통 조상이 여기뿐이다. (spec.md §3)
  */
-export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
+export function Shell({
+  undrawn,
+}: {
+  /** 그림이 아직 없어 피드에서 빼는 개념. 지금 열일곱이다 (app/page.tsx) */
+  undrawn: string[]
+}) {
   const [track, setTrack] = useState<TrackId>(DEFAULT_TRACK)
   const [deck, setDeck] = useState<DeckId>(DEFAULT_DECK)
   const [progress, setProgress] = useState<Progress>(emptyProgress)
@@ -76,12 +92,25 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
   const articles = useMemo(() => articlesFor(trackOf(track).language), [track])
 
   /**
+   * 이 트랙에서 출제할 수 있는 것. 규칙은 lib/entries.ts가 갖는다.
+   *
+   * **그림이 있는 개념만 남긴다.** 단어 목록은 로드맵이라 그림보다 앞서
+   * 쌓이는데(§7), 그림 없는 카드가 피드에 섞이면 학습이 아니라 빈칸 넘기기가
+   * 된다. 어느 것이 비었는지는 서버가 빌드 때 fs로 보고 알려 준다.
+   */
+  const hidden = useMemo(() => new Set(undrawn), [undrawn])
+  const trackEntries = useMemo(
+    () => entriesFor(track).filter((entry) => !hidden.has(entry.concept.slug)),
+    [track, hidden],
+  )
+
+  /**
    * 덱은 걸러 보는 창이다. 표현이 하나도 없는 트랙에서는 탭을 세우지 않는다 —
    * 눌러도 빈 피드가 되는 자리를 남겨 둘 이유가 없다 (lib/deck.ts)
    */
   const hasPhrases = useMemo(
-    () => entries[track].some((entry) => entry.concept.category === 'scene'),
-    [entries, track],
+    () => trackEntries.some((entry) => entry.concept.category === 'scene'),
+    [trackEntries],
   )
   // 표현도 상식도 없는 트랙에서는 저장된 값이 무엇이든 단어로 본다. 탭이 안 서는데
   // 거르기만 남으면 빈 피드가 된다 — TOEIC에서 실제로 그랬다
@@ -95,8 +124,8 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
   const shownDeck = decks.includes(deck) ? deck : DEFAULT_DECK
 
   const shown = useMemo(
-    () => (shownDeck === 'trivia' ? trivia : entriesForDeck(shownDeck, entries[track])),
-    [shownDeck, entries, track, trivia],
+    () => (shownDeck === 'trivia' ? trivia : entriesForDeck(shownDeck, trackEntries)),
+    [shownDeck, trackEntries, trivia],
   )
 
   /**
@@ -113,8 +142,8 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
     () =>
       shownDeck === 'trivia'
         ? trivia.map((item) => item.key)
-        : entries[track].map((entry) => entry.key),
-    [shownDeck, trivia, entries, track],
+        : trackEntries.map((entry) => entry.key),
+    [shownDeck, trivia, trackEntries],
   )
   const ladder = shownDeck === 'trivia' ? TRIVIA_LADDER : WORD_LADDER
   const mastery = masteryLabel(masteredCount(progress, keys, ladder), keys.length)
