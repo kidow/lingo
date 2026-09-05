@@ -142,39 +142,54 @@ export function Header({
         상식은 트랙이 아니라 **언어**의 것이라 아직 안 쓴 언어에서는 안 선다
         (lib/trivia.ts)
       */}
-      {/* 오른쪽에 서는 것들을 한 묶음으로 둔다. 덱 탭이 없는 트랙에서도 가나
-          버튼은 같은 자리에 서야 해서 ml-auto를 바깥이 든다 */}
-      <div className="ml-auto flex items-center gap-3">
-        {deck && onDeck && decks.length > 1 && (
-          <div className="flex items-center gap-2 text-[15px]">
-            {DECKS.filter(({ id }) => decks.includes(id)).map(({ id, label }, i) => (
-              <span key={id} className="flex items-center gap-2">
-                {i > 0 && <span aria-hidden className="text-line">|</span>}
-                <button
-                  type="button"
-                  aria-pressed={deck === id}
-                  onClick={() => onDeck(id)}
-                  className={`rounded-ctrl transition ${deck === id ? 'font-bold' : 'text-sub'}`}
-                >
-                  {label}
-                </button>
-              </span>
-            ))}
-          </div>
-        )}
+      {/*
+        오른쪽에 서는 것들을 한 줄로 둔다. 덱 탭이 없는 트랙에서도 찾기는 같은
+        자리에 서야 해서 ml-auto를 바깥이 든다.
+
+        **찾기도 덱 탭과 같은 구분선으로 잇는다.** 셋은 탭이고 하나는 아니라서
+        따로 떼어 놨었는데, 그러면 마지막 탭과 찾기 사이만 간격이 달라 줄이
+        어긋나 보인다. 누르는 자리가 나란히 있다는 사실이 탭이냐 아니냐보다 먼저
+        읽힌다 — 구분선은 종류를 나누는 표시가 아니라 **낱말끼리 붙지 않게 하는
+        칸막이**다
+      */}
+      <div className="ml-auto flex items-center gap-2 text-[15px]">
+        {deck &&
+          onDeck &&
+          decks.length > 1 &&
+          DECKS.filter(({ id }) => decks.includes(id)).map(({ id, label }, i) => (
+            <span key={id} className="flex items-center gap-2">
+              {i > 0 && <span aria-hidden className="text-line">|</span>}
+              <button
+                type="button"
+                aria-pressed={deck === id}
+                onClick={() => onDeck(id)}
+                className={`rounded-ctrl transition ${deck === id ? 'font-bold' : 'text-sub'}`}
+              >
+                {label}
+              </button>
+            </span>
+          ))}
 
         {/*
           찾기는 **언제나 선다.** 검색이 트랙을 안 가리기 때문이다 — 참고 글만
           있던 시절에는 글이 없는 트랙에서 자리째 빠졌는데, 그래서 헤더 오른쪽
           끝이 트랙마다 들쭉날쭉했다 (components/search-sheet.tsx)
+
+          앞선 덱 탭이 **설 때만** 구분선이 붙는다. 탭이 없는 트랙(TOEIC)에서
+          찾기 앞에 칸막이만 덩그러니 남으면 안 된다
         */}
         {concepts.length > 0 && (
-          <SearchDrawer
-            concepts={concepts}
-            trivia={trivia}
-            articles={allArticles}
-            trackArticles={articles}
-          />
+          <span className="flex items-center gap-2">
+            {deck && onDeck && decks.length > 1 && (
+              <span aria-hidden className="text-line">|</span>
+            )}
+            <SearchDrawer
+              concepts={concepts}
+              trivia={trivia}
+              articles={allArticles}
+              trackArticles={articles}
+            />
+          </span>
         )}
       </div>
     </header>
