@@ -8,8 +8,11 @@ import {
   RUNG_INTRO,
   emptyProgress,
   isMastered,
+  loadProgress,
   masteredCount,
   masteryLabel,
+  progressKey,
+  saveProgress,
   storeCard,
   type CardState,
   type Progress,
@@ -123,4 +126,112 @@ test('나머지는 정수 퍼센트다', () => {
   assert.equal(masteryLabel(1344, 1344), '100%')
   // TOEIC은 분모가 386이라 같은 개수가 더 크게 잡힌다
   assert.equal(masteryLabel(4, 386), '1%')
+})
+
+/* ── 저장소 ──────────────────────────────────────────────────────── */
+
+/**
+ * localStorage 스텁. `limit`을 넘기면 브라우저처럼 던진다.
+ *
+ * 진도는 서버에 사본이 없어서 여기서 잘못되면 되돌릴 방법이 없다. 그래서
+ * 깨진 값·모르는 버전·용량 초과 셋을 다 짚는다.
+ */
+function useStore(limit = Infinity) {
+  const store = new Map<string, string>()
+  ;(globalThis as { localStorage?: unknown }).localStorage = {
+    getItem: (key: string) => store.get(key) ?? null,
+    setItem: (key: string, value: string) => {
+      if (value.length > limit) throw new Error('QuotaExceededError')
+      store.set(key, value)
+    },
+    removeItem: (key: string) => store.delete(key),
+  }
+  return store
+}
+
+const stored = (rung: Rung): CardState => ({ rung, streak: 1, fsrs: storeCard(createEmptyCard(NOW)) })
+
+test('깨진 카드는 그것만 빠지고 나머지 진도는 산다', () => {
+  // fsrs가 없는 카드 하나가 isMastered에서 던져 흰 화면이 됐다.
+  // 진도는 그대로라 새로고침해도 같은 자리에서 또 죽었다
+  const store = useStore()
+  store.set(
+    progressKey('jlpt'),
+    JSON.stringify({
+      version: 2,
+      cards: { broken: { rung: 3, streak: 1 }, alive: stored(3) },
+      introducedAt: {},
+    }),
+  )
+  const progress = loadProgress('jlpt')
+  assert.deepEqual(Object.keys(progress.cards), ['alive'])
+  assert.doesNotThrow(() => masteredCount(progress, ['broken', 'alive']))
+})
+
+test('rung이 사다리 밖이면 그 카드는 안 읽는다', () => {
+  const store = useStore()
+  store.set(
+    progressKey('jlpt'),
+    JSON.stringify({
+      version: 2,
+      cards: { bad: { ...stored(3), rung: 9 }, worse: { ...stored(3), rung: '3' }, ok: stored(2) },
+      introducedAt: {},
+    }),
+  )
+  assert.deepEqual(Object.keys(loadProgress('jlpt').cards), ['ok'])
+})
+
+test('모르는 버전이어도 버리지 않는다', () => {
+  // 새 버전을 쓰다 캐시된 옛 코드로 돌아가면 실제로 일어난다.
+  // 조용히 비우면 그때 몇 달치 복습 간격이 사라진다
+  const store = useStore()
+  store.set(
+    progressKey('jlpt'),
+    JSON.stringify({ version: 9, cards: { cat: stored(3) }, introducedAt: { cat: 1 } }),
+  )
+  assert.deepEqual(Object.keys(loadProgress('jlpt').cards), ['cat'])
+})
+
+test('v1의 철자 칸은 3으로 올린다', () => {
+  // 사다리 가운데에 문맥 칸이 끼면서 철자가 2에서 3으로 밀렸다
+  const store = useStore()
+  store.set(
+    progressKey('jlpt'),
+    JSON.stringify({
+      version: 1,
+      cards: { top: stored(2), mid: stored(1) },
+      introducedAt: {},
+    }),
+  )
+  const cards = loadProgress('jlpt').cards
+  assert.equal(cards.top.rung, RUNG_BLANK)
+  assert.equal(cards.mid.rung, RUNG_CHOICE)
+})
+
+test('쓰레기가 들어 있으면 빈 진도로 시작한다', () => {
+  const store = useStore()
+  store.set(progressKey('jlpt'), 'not json')
+  assert.deepEqual(loadProgress('jlpt').cards, {})
+})
+
+test('신선도가 다한 자리는 저장하지 않는다', () => {
+  // 반감기가 10분이라 하루면 가산점이 0이다. slug마다 영원히 들고 있을 이유가 없다
+  const store = useStore()
+  const now = NOW.getTime()
+  const progress: Progress = {
+    ...emptyProgress(),
+    introducedAt: { fresh: now - 60_000, stale: now - 3 * 24 * 60 * 60 * 1000 },
+  }
+  saveProgress('jlpt', progress, now)
+  const saved = JSON.parse(store.get(progressKey('jlpt')) ?? '{}') as Progress
+  assert.deepEqual(Object.keys(saved.introducedAt), ['fresh'])
+})
+
+test('저장하지 못하면 그 사실을 알려준다', () => {
+  // 여덟 트랙을 다 공부하면 6MB가 되는데 한도는 대개 5MB다.
+  // 조용히 넘기면 그때부터 공부한 것이 전부 날아간다
+  useStore(50)
+  const big: Progress = { ...emptyProgress(), cards: { a: stored(3), b: stored(3) } }
+  assert.equal(saveProgress('jlpt', big), false)
+  assert.equal(saveProgress('jlpt', emptyProgress()), true)
 })

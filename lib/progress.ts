@@ -143,10 +143,53 @@ export const TRACK_KEY = 'lingo.track'
 export const DECK_KEY = 'lingo.deck'
 
 /**
+ * 저장된 카드 하나가 쓸 만한 모양인가.
+ *
+ * localStorage는 **아무나 고칠 수 있고** 예전 스키마가 남아 있을 수도 있다.
+ * 예전에는 파싱만 감싸고 안을 안 봐서, `fsrs`가 빠진 카드 하나가
+ * `isMastered`에서 던졌다 — 에러 경계가 없어 흰 화면이 되고, 진도는 그대로라
+ * 새로고침해도 같은 자리에서 또 죽는다. **스스로 빠져나올 길이 없었다.**
+ *
+ * 그래서 카드마다 본다. 깨진 것은 그 카드만 빠지고 나머지 진도는 산다.
+ */
+function usableCard(value: unknown): value is CardState {
+  if (typeof value !== 'object' || value === null) return false
+  const card = value as Record<string, unknown>
+  const fsrs = card.fsrs as Record<string, unknown> | undefined
+  return (
+    typeof card.rung === 'number' &&
+    card.rung >= RUNG_INTRO &&
+    card.rung <= RUNG_MAX &&
+    typeof card.streak === 'number' &&
+    typeof fsrs === 'object' &&
+    fsrs !== null &&
+    typeof fsrs.stability === 'number' &&
+    typeof fsrs.due === 'number'
+  )
+}
+
+function usableCards(value: unknown): Record<string, CardState> {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) return {}
+  const out: Record<string, CardState> = {}
+  for (const [slug, card] of Object.entries(value)) if (usableCard(card)) out[slug] = card
+  return out
+}
+
+function usableTimes(value: unknown): Record<string, number> {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) return {}
+  const out: Record<string, number> = {}
+  for (const [slug, at] of Object.entries(value)) if (typeof at === 'number') out[slug] = at
+  return out
+}
+
+/**
  * 없거나 깨졌으면 빈 진도로 시작한다. 던지지 않는다.
  *
- * 버전이 낮으면 **버리지 않고 옮긴다.** 진도는 서버에 사본이 없어서 한 번
- * 버리면 그걸로 끝이다 — 몇 달치 복습 간격이 사라진다.
+ * **버리지 않는다.** 진도는 서버에 사본이 없어서 한 번 버리면 그걸로 끝이다 —
+ * 몇 달치 복습 간격이 사라진다. 낮은 버전은 옮기고(`migrateFromV1`),
+ * **모르는 버전도 그대로 읽어 본다** — 새 버전을 쓰다 캐시된 옛 코드로
+ * 돌아가면 실제로 일어나는 일이라, 조용히 비우면 그때 진도가 날아간다.
+ * 스키마가 호환되면 카드가 그대로 살고, 아니면 검증에서 그 카드만 빠진다.
  */
 export function loadProgress(track: TrackId): Progress {
   if (typeof localStorage === 'undefined') return emptyProgress()
@@ -154,13 +197,12 @@ export function loadProgress(track: TrackId): Progress {
     const raw = localStorage.getItem(progressKey(track))
     if (!raw) return emptyProgress()
     // 저장된 값은 예전 스키마일 수 있다. version은 넓게 읽는다
-    const parsed = JSON.parse(raw) as Omit<Partial<Progress>, 'version'> & { version?: number }
-    if (parsed.version === 1) return migrateFromV1(parsed)
-    if (parsed.version !== PROGRESS_VERSION) return emptyProgress()
+    const parsed = JSON.parse(raw) as { version?: number; cards?: unknown; introducedAt?: unknown }
+    const cards = usableCards(parsed.cards)
     return {
       version: PROGRESS_VERSION,
-      cards: parsed.cards ?? {},
-      introducedAt: parsed.introducedAt ?? {},
+      cards: parsed.version === 1 ? liftBlankRung(cards) : cards,
+      introducedAt: usableTimes(parsed.introducedAt),
     }
   } catch {
     return emptyProgress()
@@ -174,20 +216,44 @@ export function loadProgress(track: TrackId): Progress {
  * **강등**되므로 3으로 올린다. 0·1은 뜻이 그대로라 손대지 않는다.
  * FSRS 상태는 건드리지 않는다 — 다음 복습 시각은 rung이 아니라 거기 있다.
  */
-function migrateFromV1(parsed: { cards?: Record<string, CardState>; introducedAt?: Record<string, number> }): Progress {
-  const cards: Record<string, CardState> = {}
-  for (const [slug, card] of Object.entries(parsed.cards ?? {})) {
-    cards[slug] = card.rung === 2 ? { ...card, rung: RUNG_BLANK } : card
+function liftBlankRung(cards: Record<string, CardState>): Record<string, CardState> {
+  const out: Record<string, CardState> = {}
+  for (const [slug, card] of Object.entries(cards)) {
+    out[slug] = card.rung === RUNG_CLOZE ? { ...card, rung: RUNG_BLANK } : card
   }
-  return { version: PROGRESS_VERSION, cards, introducedAt: parsed.introducedAt ?? {} }
+  return out
 }
 
-/** 저장 실패는 학습을 막을 이유가 아니다 (사파리 프라이빗 모드 등). */
-export function saveProgress(track: TrackId, progress: Progress): void {
-  if (typeof localStorage === 'undefined') return
+/**
+ * 신선도 부스트가 아직 도는 기간. 이보다 오래된 자리는 저장하지 않는다.
+ *
+ * 반감기가 10분이라(lib/engine.ts) 하루면 가산점이 2의 -144제곱이다 — 0과
+ * 같은 값을 slug마다 영원히 들고 있을 이유가 없다. 트랙 하나에 4,486자리라
+ * 그 목록만 112KB다.
+ */
+const FRESH_SPAN = 24 * 60 * 60 * 1000
+
+/**
+ * 진도를 저장한다. **저장했는지 알려준다.**
+ *
+ * 실패는 두 가지다. 사파리 프라이빗 모드처럼 애초에 못 쓰는 경우는 학습을
+ * 막을 이유가 아니라 조용히 넘긴다 — 그 브라우저에서는 처음부터 진도가 없다.
+ *
+ * **용량 초과는 다르다.** 여덟 트랙을 다 공부하면 6MB가 되는데 한도는 대개
+ * 5MB다. 그때부터 공부한 것이 전부 날아가는데 화면이 아무 말도 안 하면
+ * 몇 시간을 헛되이 밀게 된다. 부르는 쪽이 한 번 알려 준다
+ * (components/feed.tsx).
+ */
+export function saveProgress(track: TrackId, progress: Progress, now = Date.now()): boolean {
+  if (typeof localStorage === 'undefined') return true
+  const introducedAt: Record<string, number> = {}
+  for (const [slug, at] of Object.entries(progress.introducedAt))
+    if (now - at < FRESH_SPAN) introducedAt[slug] = at
+
   try {
-    localStorage.setItem(progressKey(track), JSON.stringify(progress))
+    localStorage.setItem(progressKey(track), JSON.stringify({ ...progress, introducedAt }))
+    return true
   } catch {
-    /* 무시 */
+    return false
   }
 }
