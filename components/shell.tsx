@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { Feed } from './feed'
+import { CardImage, CardSheet, Feed, FeedCard } from './feed'
 import { Header } from './header'
 import type { Entry } from '@/lib/entries'
 import { ALL_ARTICLES, ALL_TRIVIA, articlesFor, CONCEPTS, triviaFor } from '@/lib/content'
@@ -35,11 +35,23 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
   const [track, setTrack] = useState<TrackId>(DEFAULT_TRACK)
   const [deck, setDeck] = useState<DeckId>(DEFAULT_DECK)
   const [progress, setProgress] = useState<Progress>(emptyProgress)
+  /**
+   * 저장된 설정을 읽었는가.
+   *
+   * 읽기 전에는 **아무 트랙도 그리지 않는다.** 서버는 어느 트랙인지 모르므로
+   * 첫 화면이 늘 기본 트랙(JLPT)인데, 마운트 직후 저장된 트랙으로 갈아 끼우면
+   * HSK를 보던 사람에게 일본어 카드가 한 번 번쩍인다 — 트랙만 바뀌는 게
+   * 아니라 카드와 그림과 숙련도가 통째로 갈린다.
+   *
+   * 서버와 클라이언트의 첫 그림이 똑같이 뼈대라 어긋남도 없다.
+   */
+  const [ready, setReady] = useState(false)
 
-  // 설정은 마운트 후에 읽는다. 서버가 그리는 첫 화면은 기본 트랙이다
+  // 설정은 마운트 후에 읽는다. localStorage는 서버에 없다
   useEffect(() => {
     setTrack(loadTrack())
     setDeck(loadDeck())
+    setReady(true)
   }, [])
 
   // 트랙이 바뀌면 여기서 바로 읽는다. Feed가 알려 주기를 기다리면 한 프레임
@@ -107,6 +119,8 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
   const ladder = shownDeck === 'trivia' ? TRIVIA_LADDER : WORD_LADDER
   const mastery = masteryLabel(masteredCount(progress, keys, ladder), keys.length)
 
+  if (!ready) return <Skeleton />
+
   return (
     <div className="feed-root flex h-dvh flex-col">
       <Header
@@ -131,6 +145,49 @@ export function Shell({ entries }: { entries: Record<TrackId, Entry[]> }) {
         ordered={shownDeck === 'trivia'}
         onProgress={setProgress}
       />
+    </div>
+  )
+}
+
+/**
+ * 설정을 읽기 전에 세우는 뼈대. (spec.md §3)
+ *
+ * 첫 카드를 흉내 내지 않는다 — 글자 자리를 정확히 맞춰 봐야 다음 순간 다른
+ * 낱말이 들어오고, 그 어긋남이 오히려 눈에 띈다. 헤더 한 줄과 그림 자리와
+ * 시트 세 줄, 화면이 어떻게 나뉘는지까지만 말한다.
+ *
+ * 진짜 요소들과 같은 상자를 쓴다(`FeedCard`·`CardImage`·`CardSheet`). 뼈대가
+ * 따로 치수를 들고 있으면 카드 높이를 고칠 때마다 여기가 조용히 어긋난다.
+ *
+ * 읽히지 않는다. 잠깐 있다 사라지는 자리라 스크린리더에는 없느니만 못하다 —
+ * 진짜 카드가 들어오면 그때 읽힌다.
+ */
+/** 뼈대 조각 하나. 숨 쉬듯 흐려졌다 진해진다 — 멈춘 회색 덩어리는 고장으로 보인다 */
+const BAR = 'bg-line motion-safe:animate-pulse'
+
+function Skeleton() {
+  return (
+    <div className="feed-root flex h-dvh flex-col" aria-hidden>
+      <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
+        {/* 트랙 이름 자리. 국기와 화살표까지 합친 너비다 */}
+        <div className={`h-5 w-24 rounded-pill ${BAR}`} />
+        {/* 덱 탭과 찾기가 서는 자리 (components/header.tsx) */}
+        <div className={`ml-auto h-4 w-28 rounded-pill ${BAR}`} />
+      </header>
+
+      {/* 피드의 스크롤 상자와 같은 자리를 잡는다. 카드가 h-full이라 이게 없으면
+          헤더 높이만큼 아래로 흘러넘친다 (components/feed.tsx) */}
+      <main className="min-h-0 flex-1">
+        <FeedCard>
+          {/* 그림 자리는 비워 둔다. bg-img-bg가 이미 그 자리의 색이다 */}
+          <CardImage />
+          <CardSheet>
+            <div className={`h-9 w-2/5 rounded-ctrl ${BAR}`} />
+            <div className={`h-4 w-1/4 rounded-pill ${BAR}`} />
+            <div className={`h-5 w-1/3 rounded-pill ${BAR}`} />
+          </CardSheet>
+        </FeedCard>
+      </main>
     </div>
   )
 }
