@@ -264,25 +264,42 @@ async function torfl() {
 
 /** 목록이 없는 트랙은 "우리 낱말 중 등급이 붙은 비율"만 낸다 */
 function tagged() {
-  const rows: Array<[string, 'ja' | 'de' | 'ru', 'jlpt' | 'cefr' | 'torfl']> = [
+  const rows: Array<[string, 'ja' | 'de' | 'fr' | 'ru', 'jlpt' | 'cefr' | 'torfl']> = [
     ['JLPT', 'ja', 'jlpt'],
+    // CEFR는 언어마다 출처가 달라 한 줄로 합치면 안 된다. 독일어는 Goethe
+    // 목록이라 B1이 천장이고, 프랑스어는 FLELex라 C2까지 나온다 (spec.md §7)
     ['CEFR (TELC)', 'de', 'cefr'],
+    ['CEFR (DELF)', 'fr', 'cefr'],
     ['TORFL', 'ru', 'torfl'],
   ]
   console.log(`\n등급이 붙은 낱말 — 분모가 목록이 아니라 우리 콘텐츠다\n${line(46)}`)
   for (const [label, lang, key] of rows) {
     let has = 0
     let all = 0
+    const spread = new Map<string, number>()
     for (const concept of concepts) {
       const word = concept.words[lang]
       if (!word) continue
       all += 1
       const attributes = word.attributes as Record<string, unknown> | undefined
-      if (attributes?.[key]) has += 1
+      const grade = attributes?.[key]
+      if (!grade) continue
+      has += 1
+      if (key === 'cefr') spread.set(String(grade), (spread.get(String(grade)) ?? 0) + 1)
     }
-    console.log(`  ${label.padEnd(12)} ${String(has).padStart(5)}/${String(all).padStart(5)}  ${pct(has, all)}`)
+    const tail =
+      spread.size > 0
+        ? `  ${[...spread].sort().map(([g, n]) => `${g} ${n}`).join(' · ')}`
+        : ''
+    console.log(
+      `  ${label.padEnd(12)} ${String(has).padStart(5)}/${String(all).padStart(5)}  ${pct(has, all)}${tail}`,
+    )
   }
-  console.log(`  ${'DELE·DELF'.padEnd(12)} ${'—'.padStart(11)}  낱말별 등급을 담은 공개 목록이 없다`)
+  console.log(`  ${'DELE'.padEnd(12)} ${'—'.padStart(11)}  낱말별 등급을 담은 공개 목록이 없다`)
+  console.log(
+    `\n  독일어가 낮은 것은 덜 채워서가 아니다 — Goethe 목록이 B1까지라\n` +
+      `  B2 이상 낱말은 붙을 자리가 없다 (spec.md §7)`,
+  )
 }
 
 /**
