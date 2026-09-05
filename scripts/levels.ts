@@ -31,7 +31,9 @@ import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { inflateSync } from 'node:zlib'
 import { cachedBytes } from './cache.ts'
 import { hskOf, jlptOf } from './define.ts'
+import { fingerprint, stampSource } from './levels-stamp.ts'
 import { bare, torflLevels } from './torfl.ts'
+import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import type { Concept } from '../lib/types.ts'
 
 /**
@@ -190,6 +192,9 @@ if (files.length === 0) {
   process.exit(1)
 }
 
+/** 한 파일만 돌렸으면 나머지 지문은 그대로 둔다 */
+const stamp: Record<string, string> = { ...LEVELS_STAMP }
+
 for (const file of files) {
   const path = `content/${file}`
   const data = JSON.parse(readFileSync(path, 'utf8')) as { concepts: Concept[] }
@@ -231,6 +236,7 @@ for (const file of files) {
   }
 
   writeFileSync(path, JSON.stringify(data, null, 2) + '\n')
+  stamp[file] = fingerprint(data.concepts ?? [])
   console.log(
     `${file.replace('.json', '').padEnd(10)} JLPT ${counts.jlpt}/${words.ja}` +
       // CEFR는 de·fr을 합쳐 하나로 센다 — 속성 열쇠(cefr)가 둘이 같아서 나뉘지 않는다
@@ -238,3 +244,7 @@ for (const file of files) {
       ` · TSL ${counts.tsl}/${words.en} · TORFL ${counts.torfl}/${words.ru}`,
   )
 }
+
+// 사라진 파일의 지문은 버린다 — 통째로 돌렸을 때만 알 수 있다
+if (!only) for (const file of Object.keys(stamp)) if (!files.includes(file)) delete stamp[file]
+writeFileSync('lib/levels-stamp.ts', stampSource(stamp))
