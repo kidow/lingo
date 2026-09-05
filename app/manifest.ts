@@ -12,7 +12,10 @@ export const dynamic = 'force-static'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Lingo — 이미지로 기억하는 일본어',
+    // 홈 화면에 담기면 이 이름이 뜬다. **언어를 못 박지 않는다** — 일곱
+    // 트랙이 한 그림을 나눠 쓰는 구조라(spec.md §1) `일본어`라고 적으면
+    // TOEIC·HSK·TORFL을 보는 사람에게 틀린 말이 된다
+    name: 'Lingo — 그림으로 외우는 일곱 언어',
     short_name: 'Lingo',
     description: '그림을 보고 단어를 떠올리는 세로 피드. 열면 바로 시작한다.',
     lang: 'ko',
