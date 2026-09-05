@@ -1,6 +1,7 @@
 'use client'
 
 import { ChevronsUp } from 'lucide-react'
+import { toast } from 'sonner'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Card } from './cards'
 import {
@@ -90,10 +91,24 @@ export function Feed({
   /** 몇 번째 자리까지 관찰에 넣었는지 */
   const observedUpTo = useRef(0)
 
+  /**
+   * 진도를 못 저장했다고 이미 말했는가.
+   *
+   * 카드마다 저장하므로 실패도 카드마다 난다. 그때마다 띄우면 넘길 때마다
+   * 같은 말이 쌓인다 — 한 번이면 족하다 (lib/progress.ts)
+   */
+  const warned = useRef(false)
+
   const commit = useCallback(
     (state: EngineState) => {
       engine.current = state
-      saveProgress(track, state.progress)
+      if (!saveProgress(track, state.progress) && !warned.current) {
+        warned.current = true
+        toast.error('진도를 저장하지 못했어요', {
+          description: '브라우저 저장 공간이 찼습니다',
+          duration: 8000,
+        })
+      }
       onProgress?.(state.progress)
     },
     [track, onProgress],

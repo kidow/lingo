@@ -273,6 +273,45 @@ const poolFor = (char: string) =>
           : HIRAGANA
 
 /**
+ * 후보에 **정답의 겉모습을 입힌다.**
+ *
+ * 닮은 짝은 부호를 벗긴 글자로 찾는다(`bare`) — `é`의 짝은 `e`의 것이고
+ * `ざ`의 짝은 `さ`의 것이다. 그런데 그렇게 찾은 후보를 그대로 깔면 **정답만
+ * 부호를 달고 서서** 글자를 몰라도 눈으로 골라진다.
+ *
+ *   résumé  정답 é   보기  é i o a      ← 부호 있는 것이 하나뿐
+ *   たべる   정답 べ   보기  ね べ む ゆ   ← 탁점 있는 것이 하나뿐
+ *
+ * 그래서 정답에 붙은 결합 부호를 후보에도 붙인다. **합쳐서 진짜 글자가 되는
+ * 것만 남긴다** — `き`에 탁점을 붙이면 `ぎ`가 되지만 `ね`에 붙이면 그런 글자가
+ * 없다. 이 한 규칙이 라틴 악센트와 가나 탁음·반탁음을 함께 처리한다.
+ *
+ * 대문자도 같은 이유로 옮긴다 (`SIMカード`의 `M`, `卡拉OK`의 `K`).
+ *
+ * **정답 자신은 뺀다.** 닮은 짝 표가 서로를 가리키다 보니 `さ`의 짝에 `ざ`가
+ * 들어 있어서, `ざ`를 물으면 보기에 `ざ`가 두 번 섰다 — 넷처럼 보이지만 고를
+ * 것은 셋이었다.
+ */
+function likeAnswer(char: string, candidates: readonly string[]): string[] {
+  const marks = char.normalize('NFD').slice(1)
+  const upper = char !== char.toLowerCase() && char === char.toUpperCase()
+
+  const out: string[] = []
+  for (const candidate of candidates) {
+    let value = candidate
+    if (marks) {
+      const composed = (candidate.normalize('NFD')[0] + marks).normalize('NFC')
+      // 합쳐지지 않으면 그런 글자가 없다는 뜻이다
+      if ([...composed].length !== 1) continue
+      value = composed
+    }
+    if (upper) value = value.toUpperCase()
+    if (value !== char && !out.includes(value)) out.push(value)
+  }
+  return out
+}
+
+/**
  * `char`의 오답 후보 `count`개.
  *
  * 닮은 글자를 **먼저** 쓴다. 전체를 한 번에 섞으면 예비 풀이 이기고
@@ -284,9 +323,10 @@ export function pickConfusables(
   rng: () => number,
   shuffle: <T>(items: readonly T[], rng: () => number) => T[],
 ): string[] {
-  const near = shuffle(CONFUSABLE[char.toLowerCase()] ?? CONFUSABLE[bare(char)] ?? CONFUSABLE[char] ?? [], rng)
+  const table = CONFUSABLE[char.toLowerCase()] ?? CONFUSABLE[bare(char)] ?? CONFUSABLE[char] ?? []
+  const near = shuffle(likeAnswer(char, table), rng)
   if (near.length >= count) return near.slice(0, count)
 
-  const fallback = poolFor(char).filter((c) => c !== char && c !== bare(char) && !near.includes(c))
-  return [...near, ...shuffle(fallback, rng).slice(0, count - near.length)]
+  const rest = likeAnswer(char, poolFor(char)).filter((c) => !near.includes(c))
+  return [...near, ...shuffle(rest, rng).slice(0, count - near.length)]
 }

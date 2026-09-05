@@ -47,11 +47,46 @@ test('오답 후보는 같은 문자 체계에서만 나온다', () => {
 })
 
 test('후보에 정답이 섞이지 않는다', () => {
-  for (const char of ['ね', '未', 'a', 'ン', 'ы', 'и', 'ё']) {
+  // 탁음은 청음의 표에서 짝을 찾는데(`bare`), `さ`의 짝에 `ざ`가 들어 있어서
+  // `ざ`를 물으면 보기에 `ざ`가 두 번 섰다 — 넷처럼 보이지만 셋이었다
+  for (const char of ['ね', '未', 'a', 'ン', 'ы', 'и', 'ё', 'ざ', 'げ', 'べ', 'é']) {
     const picked = pickConfusables(char, 3, rng, shuffled)
     assert.equal(picked.includes(char), false, `${char} 자신이 오답에 들어갔다`)
     assert.equal(new Set(picked).size, 3, `${char} 후보가 중복됐다`)
   }
+})
+
+test('정답에 붙은 부호를 후보에도 붙인다', () => {
+  // 부호 있는 것이 하나뿐이면 글자를 몰라도 눈으로 골라진다
+  const marked = (c: string) => c.normalize('NFD').length > 1
+  for (const char of ['é', 'ü', 'ç', 'べ', 'ざ', 'ぱ', 'ヴ']) {
+    const picked = pickConfusables(char, 3, rng, shuffled)
+    assert.ok(
+      picked.every(marked),
+      `${char} 후보에 맨 글자가 섞였다: ${picked.join(' ')}`,
+    )
+  }
+})
+
+test('정답이 대문자면 후보도 대문자다', () => {
+  // `SIMカード`의 M, `卡拉OK`의 K가 이 자리다
+  for (const char of ['M', 'K', 'O']) {
+    const picked = pickConfusables(char, 3, rng, shuffled)
+    assert.ok(
+      picked.every((c) => c === c.toUpperCase()),
+      `${char} 후보에 소문자가 섞였다: ${picked.join(' ')}`,
+    )
+  }
+})
+
+test('합쳐서 글자가 되지 않는 조합은 버린다', () => {
+  // `き`에 탁점을 붙이면 `ぎ`가 되지만 `ね`에 붙이면 그런 글자가 없다
+  const picked = pickConfusables('べ', 3, rng, shuffled)
+  assert.equal(picked.length, 3)
+  assert.ok(
+    picked.every((c) => [...c].length === 1),
+    `합쳐지지 않은 자모가 남았다: ${picked.join(' ')}`,
+  )
 })
 
 /* ── 길이에 맞춘 글자 크기 ─────────────────────────────────────────── */
