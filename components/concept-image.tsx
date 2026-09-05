@@ -2,7 +2,9 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { imagePath } from '@/lib/content'
+// 경로 함수만 쓴다. `@/lib/content`를 거치면 그 모듈이 정적 import한 콘텐츠
+// 18MB가 클라이언트 번들로 딸려 온다 (lib/corpus.ts)
+import { imagePath } from '@/lib/entries'
 
 /**
  * 개념 이미지.
