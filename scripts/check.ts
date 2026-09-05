@@ -91,6 +91,16 @@ let total = 0
  */
 const frames: Record<string, Map<string, Set<string>>> = {}
 
+/**
+ * 문맥 카드를 만들 수 있는 자리와, 예문이 있는데 한 줄도 못 뚫는 자리.
+ *
+ * 못 뚫는 이유는 대개 낱말에 무언가 **붙어 있어서**다 — 프랑스어 축약(`d'aider`)
+ * 이나 합성어 하이픈(`___-Brot`). 뚫으면 그 부호가 정답의 첫 소리나 나머지
+ * 반쪽을 알려줘 문장을 읽지 않고도 풀린다 (lib/quiz.ts의 `GLUED`).
+ */
+const clozable = new Set<string>()
+const stuck = new Map<string, string>()
+
 for (const file of files) {
   const path = join(CONTENT_DIR, file)
   if (loaderSource && !loaderSource.includes(`${CONTENT_DIR}/${file}`)) {
@@ -195,15 +205,20 @@ for (const file of files) {
         const at = sentences.length > 1 ? `examples[${i}]` : 'example'
         if (!example.text || !example.ko) fail(where, `${lang}.${at}은 text와 ko가 모두 필요합니다`)
         const answer = word[strategy.answer]
-        // 들어 있기만 해서는 안 되고 **온전한 낱말**이어야 한다. `hands` 속의
-        // `hand`를 뚫으면 `___s`가 남아 정답 모양이 새고, 앞이 굴절형이면
-        // 빈칸이 엉뚱한 데 뚫려 진짜 정답이 문장에 그대로 보인다 (lib/quiz.ts)
-        if (typeof example.text === 'string' && typeof answer === 'string' && clozeAt(example.text, answer, lang as Language) < 0)
-          warn(
-            example.text.includes(answer)
-              ? `${where} — ${lang}.${at}의 "${answer}"가 긴 낱말 안에만 있습니다. 빈칸이 낱말을 자릅니다`
-              : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`,
-          )
+        /*
+         * 낱말이 들어 있기만 해서는 안 되고 **뚫을 수 있어야** 한다 (`clozeAt`).
+         *
+         * 아예 없는 것은 예문이 그 낱말을 안 보여주는 것이라 곧바로 경고한다.
+         * 있는데 못 뚫는 것은 회차마다 갈리는 문제라 낱말 단위로 모아 뒀다가
+         * **예문이 하나도 못 뚫을 때만** 말한다 — 예문 둘 중 하나만 되면 문맥
+         * 카드는 만들어지고, 줄마다 경고하면 764줄이 되어 아무도 안 읽는다.
+         */
+        if (typeof example.text === 'string' && typeof answer === 'string') {
+          if (!example.text.includes(answer))
+            warn(`${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`)
+          else if (clozeAt(example.text, answer, lang as Language) >= 0) clozable.add(`${slug}|${lang}`)
+          else stuck.set(`${slug}|${lang}`, `${where} — ${lang}의 예문에서 "${answer}"를 뚫을 자리가 없습니다`)
+        }
         if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
           fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
         // ja·zh·ru는 예문도 읽을 수 있어야 한다. pnpm romanize가 채운다
@@ -716,6 +731,20 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
       per.push(`  ${String(article.title)} ${count}자`)
     }
     console.log(`\n참고 글 ${list.length}편 · 글자 ${glyphs}개\n` + per.join(''))
+  }
+}
+
+/** 예문이 있는데 한 줄도 못 뚫는 낱말. 그 낱말은 재인·듣기 칸에 머문다 */
+{
+  const blocked = [...stuck].filter(([key]) => !clozable.has(key))
+  if (blocked.length > 0) {
+    const byLang = new Map<string, number>()
+    for (const [key] of blocked) {
+      const lang = key.split('|')[1]
+      byLang.set(lang, (byLang.get(lang) ?? 0) + 1)
+    }
+    const per = [...byLang].map(([lang, n]) => `${lang} ${n}`).join(' · ')
+    warn(`문맥 카드를 못 만드는 낱말 ${blocked.length}개 (${per}) — 예문에 낱말이 붙어 있습니다`)
   }
 }
 

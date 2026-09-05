@@ -211,15 +211,31 @@ function clozeExamples(entry: Entry) {
   return examplesOf(entry.word).filter((example) => clozeAt(example.text, entry.answer, entry.lang) >= 0)
 }
 
-const LETTER = /[\p{L}\p{N}]/u
+/**
+ * 낱말에 **붙어 있는** 것. 이 옆자리는 뚫지 않는다.
+ *
+ * 글자와 숫자는 굴절이다 — `Wash your hands.`에서 `hand`를 찾으면
+ * `Wash your ___s.`가 되어 꼬리가 정답의 모양을 알려주고, 더 나쁘게는
+ * `В чайнике остыл чай.`에서 앞의 `чайнике`가 뚫려 **정답이 뒤에 그대로 남는다**.
+ *
+ * **아포스트로피와 하이픈도 같은 일을 한다.** 글자가 아니라서 오래 통과했는데,
+ * 프랑스어의 `d'`·`l'`·`s'`는 **뒤에 모음이 온다는 표시**라 자음으로 시작하는
+ * 오답이 문법으로 지워진다 — 문장을 읽지 않고도 걸러진다는 뜻이다.
+ * 하이픈은 합성어의 나머지 반쪽을 보여준다.
+ *
+ *   Merci d'___ par cette porte.     보기 넷 중 셋이 자음 시작 → 1지선다
+ *   Ich machte ein ___-Brot.         `-Brot`가 답의 절반을 말한다
+ *
+ * 프랑스어 문맥 카드 776건이 이 상태였고, 문항당 평균 2.40개의 오답이 뜻과
+ * 무관하게 탈락했다. `clozePool`이 **뜻으로** 들어맞는 오답을 거르는 것과
+ * 같은 목적이다 — 문장을 읽어야 풀리게 둔다.
+ */
+const GLUED = /[\p{L}\p{N}'\u2019-]/u
 
 /**
  * 예문에서 뚫을 자리. 없으면 -1이다.
  *
- * `indexOf`만 쓰면 굴절된 **긴 낱말 안**을 판다. `Wash your hands.`에서 `hand`를
- * 찾으면 `Wash your ___s.`가 되어 꼬리가 정답의 모양을 알려주고, 더 나쁘게는
- * `В чайнике остыл чай.`에서 앞의 `чайнике`가 뚫려 **정답이 뒤에 그대로 남는다**.
- * 그래서 앞뒤가 글자가 아닌 자리만 고른다.
+ * 앞뒤에 아무것도 붙어 있지 않은 자리만 고른다 (`GLUED`).
  *
  * 일본어·중국어는 낱말 사이에 공백이 없어 이 규칙을 적용할 수 없다 (lib/lang.ts).
  */
@@ -228,7 +244,7 @@ export function clozeAt(text: string, answer: string, lang: Language): number {
   for (let at = text.indexOf(answer); at >= 0; at = text.indexOf(answer, at + 1)) {
     const before = text[at - 1]
     const after = text[at + answer.length]
-    if (!LETTER.test(before ?? ' ') && !LETTER.test(after ?? ' ')) return at
+    if (!GLUED.test(before ?? ' ') && !GLUED.test(after ?? ' ')) return at
   }
   return -1
 }
