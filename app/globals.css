@@ -55,6 +55,13 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
+    /*
+     * warm paper 하나로 간다 — 다크모드는 비범위다 (spec.md §2). 그 사실을
+     * 브라우저에도 말해 둔다. 선언이 없으면 기기 설정이 어두울 때 브라우저가
+     * 제 나름대로 색을 뒤집는데, 그 대상이 되는 것은 우리가 안 칠한 자리 —
+     * 검색 칸(`bg-transparent`)과 스크롤바다.
+     */
+    color-scheme: light;
   }
 
   body {

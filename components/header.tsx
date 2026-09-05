@@ -66,39 +66,50 @@ export function Header({
 }) {
   return (
     <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
-      <DropdownMenu>
-        <DropdownMenuTrigger
-          aria-label="학습 트랙"
-          // 글자 높이가 28px이라 손가락에 모자란다. 위아래로 8px씩 넓히고
-          // 같은 만큼 당겨 **레이아웃은 그대로** 둔다 (brand-spec.md)
-          className="-my-2 flex items-center gap-1 rounded-ctrl py-2"
-        >
-          <span className="text-lg font-bold tracking-tight">{trackOf(track).label}</span>
-          {/* 국기는 이름 뒤에 붙는 표지다 (lib/track.ts). 버튼 이름에는 안 섞인다 */}
-          <span aria-hidden className="text-lg leading-none">{trackOf(track).flag}</span>
-          <ChevronDown className="size-4 text-sub" strokeWidth={2.5} aria-hidden />
-        </DropdownMenuTrigger>
+      {/*
+        **이 화면의 제목은 지금 트랙이다.** 문서에 heading이 하나도 없어서
+        스크린리더가 페이지에 도착했을 때 여기가 무엇인지 짚을 자리가 없었다 —
+        찾기 시트를 열면 그 안의 `찾기`(h2)가 h1 없이 서기도 했다.
 
-        <DropdownMenuContent align="start" sideOffset={10} className="min-w-36">
-          <DropdownMenuRadioGroup
-            value={track}
-            onValueChange={(value) => onChange(value as TrackId)}
+        고르는 버튼을 그대로 감싼다. 제목과 고르는 자리가 같은 것이라 둘을
+        따로 두면 `JLPT`가 화면에 두 번 적힌다. Tailwind가 heading 크기를
+        되돌려 놓으므로 보이는 모양은 그대로다.
+      */}
+      <h1>
+        <DropdownMenu>
+          <DropdownMenuTrigger
+            aria-label="학습 트랙"
+            // 글자 높이가 28px이라 손가락에 모자란다. 위아래로 8px씩 넓히고
+            // 같은 만큼 당겨 **레이아웃은 그대로** 둔다 (brand-spec.md)
+            className="-my-2 flex items-center gap-1 rounded-ctrl py-2"
           >
-            {TRACKS.map(({ id, label, flag }) => (
-              // Base UI의 라디오 항목은 기본적으로 메뉴를 열어 둔다. 여러 개를
-              // 연달아 고르는 자리라면 맞지만 여기서는 하나를 고르면 끝이다
-              <DropdownMenuRadioItem key={id} value={id} closeOnClick className="text-[15px]">
-                {label}
-                {/*
-                  스크린리더에는 읽히지 않는다 — "TOEIC 미국 국기"는 항목
-                  이름이 아니다. 트리거에도 같은 표지가 선다
-                */}
-                <span aria-hidden>{flag}</span>
-              </DropdownMenuRadioItem>
-            ))}
-          </DropdownMenuRadioGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
+            <span className="text-lg font-bold tracking-tight">{trackOf(track).label}</span>
+            {/* 국기는 이름 뒤에 붙는 표지다 (lib/track.ts). 버튼 이름에는 안 섞인다 */}
+            <span aria-hidden className="text-lg leading-none">{trackOf(track).flag}</span>
+            <ChevronDown className="size-4 text-sub" strokeWidth={2.5} aria-hidden />
+          </DropdownMenuTrigger>
+
+          <DropdownMenuContent align="start" sideOffset={10} className="min-w-36">
+            <DropdownMenuRadioGroup
+              value={track}
+              onValueChange={(value) => onChange(value as TrackId)}
+            >
+              {TRACKS.map(({ id, label, flag }) => (
+                // Base UI의 라디오 항목은 기본적으로 메뉴를 열어 둔다. 여러 개를
+                // 연달아 고르는 자리라면 맞지만 여기서는 하나를 고르면 끝이다
+                <DropdownMenuRadioItem key={id} value={id} closeOnClick className="text-[15px]">
+                  {label}
+                  {/*
+                    스크린리더에는 읽히지 않는다 — "TOEIC 미국 국기"는 항목
+                    이름이 아니다. 트리거에도 같은 표지가 선다
+                  */}
+                  <span aria-hidden>{flag}</span>
+                </DropdownMenuRadioItem>
+              ))}
+            </DropdownMenuRadioGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </h1>
 
       {/*
         숫자만 있으면 무엇의 12%인지 알 수 없다. 눈으로는 옆의 트랙 이름이
