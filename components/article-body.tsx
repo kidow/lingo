@@ -1,5 +1,6 @@
 'use client'
 
+import { bcp47 } from '@/lib/lang'
 import type { Article, KanaCell, KanaTable } from '@/lib/types'
 
 /**
@@ -14,13 +15,20 @@ import type { Article, KanaCell, KanaTable } from '@/lib/types'
  * (components/search-sheet.tsx).
  */
 export function ArticleBody({ article }: { article: Article }) {
+  /*
+   * 제목·해설은 한국어고 표 안의 글자와 예문만 그 언어다. 글 전체에 태그를
+   * 붙이면 설명까지 그 언어로 읽히므로 **글자가 서는 자리에만** 내려보낸다
+   * (lib/lang.ts)
+   */
+  const tag = bcp47(article.lang)
+
   return (
     <>
       <h3 className="text-[17px] font-bold tracking-tight">{article.title}</h3>
 
       <div className="mt-4 flex flex-col gap-7">
         {article.tables.map((table) => (
-          <Table key={table.title} table={table} />
+          <Table key={table.title} table={table} tag={tag} />
         ))}
 
         {article.rules.map((rule) => (
@@ -30,7 +38,9 @@ export function ArticleBody({ article }: { article: Article }) {
             <dl className="mt-2.5 flex flex-col gap-1.5">
               {rule.examples.map((example) => (
                 <div key={example.text} className="flex items-baseline gap-2.5">
-                  <dt className="font-jp shrink-0 text-[15px]">{example.text}</dt>
+                  <dt lang={tag} className="font-jp shrink-0 text-[15px]">
+                    {example.text}
+                  </dt>
                   <dd className="text-sm text-sub">{example.gloss}</dd>
                 </div>
               ))}
@@ -67,7 +77,7 @@ function widthsOf(table: KanaTable) {
   return { label, min: label + columns * Math.max(46, longestCell * 9 + 24) }
 }
 
-function Table({ table }: { table: KanaTable }) {
+function Table({ table, tag }: { table: KanaTable; tag: string }) {
   const widths = widthsOf(table)
 
   return (
@@ -107,7 +117,7 @@ function Table({ table }: { table: KanaTable }) {
                 {row.cells.map((cell, i) => (
                   // 빈 칸은 음운 체계에서 빠진 자리다 — や행의 yi·ye처럼
                   <td key={i} className="p-0.5">
-                    {cell ? <Cell cell={cell} /> : <span className="sr-only">없음</span>}
+                    {cell ? <Cell cell={cell} tag={tag} /> : <span className="sr-only">없음</span>}
                   </td>
                 ))}
               </tr>
@@ -121,19 +131,21 @@ function Table({ table }: { table: KanaTable }) {
   )
 }
 
-function Cell({ cell }: { cell: KanaCell }) {
+function Cell({ cell, tag }: { cell: KanaCell; tag: string }) {
   return (
     <span
       className="flex flex-col items-center justify-center rounded-ctrl border border-line bg-surface py-1.5"
       title={cell.note}
     >
-      <span className="font-jp text-lg leading-none">{cell.kana}</span>
+      <span lang={tag} className="font-jp text-lg leading-none">
+        {cell.kana}
+      </span>
       {cell.roman && (
         <span className="mt-1 text-[11px] leading-none text-sub">{cell.roman}</span>
       )}
       {/* 가타카나 표에만 있다. 대응하는 히라가나를 같은 칸에 겹쳐 싣는다 */}
       {cell.pair && (
-        <span className="font-jp mt-1 text-[11px] leading-none text-sub opacity-70">
+        <span lang={tag} className="font-jp mt-1 text-[11px] leading-none text-sub opacity-70">
           {cell.pair}
         </span>
       )}

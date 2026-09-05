@@ -8,7 +8,7 @@ import { SayButton } from './say-button'
 import { answerSize, blankRow, optionBox, optionColumns, optionSize } from '@/lib/fit'
 import { examplesOf, exampleAudioKey, exampleAudioPath, type Entry } from '@/lib/entries'
 import { EXAMPLE_AUDIO } from '@/lib/audio-have'
-import { asideOf } from '@/lib/lang'
+import { asideOf, bcp47 } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import { barsOf, loadPeaks } from '@/lib/peaks'
 import type {
@@ -86,6 +86,19 @@ export function Card({ question, ...rest }: { question: Question } & Common) {
 function IntroCard({ question, lang, track, first }: { question: IntroQuestion } & Common) {
   const { concept, word, answer } = question.entry
   const aside = asideOf(word, lang, track)
+  /*
+   * 태그가 둘이다. 트랙이 정답 표기를 덮어쓸 수 있기 때문이다 — TOCFL은
+   * 번체를 정답으로 내지만 예문도 참고줄의 표기도 간체 그대로다
+   * (lib/lang.ts의 `TRACK_OVERRIDE`). 하나로 묶으면 둘 중 하나가 틀린 글자로
+   * 읽힌다.
+   *
+   *   tag       정답·보기·빈칸 — 트랙이 덮어쓴 표기
+   *   baseTag   예문·참고줄·다른 말 — 그 언어의 기본 표기
+   *
+   * zh 말고는 둘이 같은 값이라 다른 언어에서는 이 갈림이 보이지 않는다.
+   */
+  const tag = bcp47(lang, track)
+  const baseTag = bcp47(lang)
   const level = levelOf(word, track)
   const [example] = examplesOf(word)
 
@@ -100,20 +113,12 @@ function IntroCard({ question, lang, track, first }: { question: IntroQuestion }
           <div className="flex items-center justify-between gap-md">
             <Copy
               text={answer}
+              lang={tag}
               className={`font-jp ${answerSize(answer)} leading-tight font-bold tracking-tight`}
             />
             <SayButton slug={concept.slug} lang={lang} label={answer} />
           </div>
-          {/*
-            발음 보조에만 대괄호를 씌운다 (lib/lang.ts). 예전에는 **첫 항목**이면
-            씌웠는데, 로마자가 비면 표기가 첫 항목으로 올라와 `[計量カップ]`처럼
-            한자를 발음인 양 보여줬다
-          */}
-          {aside.length > 0 && (
-            <p className="font-jp text-sm text-sub">
-              {aside.map(({ value, sound }) => (sound ? `[${value}]` : value)).join(' · ')}
-            </p>
-          )}
+          <Aside items={aside} tag={baseTag} />
         </div>
 
         {/*
@@ -137,7 +142,9 @@ function IntroCard({ question, lang, track, first }: { question: IntroQuestion }
           무엇이 학습 대상인지 흐려진다. 퀴즈에는 한 번도 안 나온다
         */}
         {word.also && word.also.length > 0 && (
-          <p className="-mt-2 font-jp text-sm text-sub">또는 {word.also.join(' · ')}</p>
+          <p className="-mt-2 font-jp text-sm text-sub">
+            또는 <span lang={baseTag}>{word.also.join(' · ')}</span>
+          </p>
         )}
 
         {/*
@@ -148,7 +155,11 @@ function IntroCard({ question, lang, track, first }: { question: IntroQuestion }
         {example && (
           <div className="border-t border-line pt-md">
             <div className="flex items-start justify-between gap-md">
-              <Copy text={example.text} className="font-jp text-[15px] leading-relaxed" />
+              <Copy
+                text={example.text}
+                lang={baseTag}
+                className="font-jp text-[15px] leading-relaxed"
+              />
               {/*
                 예문 소리는 **파일이 있을 때만** 자리를 잡는다. 낱말 발음 버튼과
                 달리 비활성으로 남겨 두지 않는다 — 낱말은 언젠가 다 채울 자리라
@@ -183,9 +194,18 @@ function IntroCard({ question, lang, track, first }: { question: IntroQuestion }
 
 /* ── 1. 재인 — 4지선다 ────────────────────────────────────────────── */
 
-function ChoiceCard({ question, lang, onAnswer, first, pick, active }: { question: ChoiceQuestion } & Common) {
+function ChoiceCard({
+  question,
+  lang,
+  track,
+  onAnswer,
+  first,
+  pick,
+  active,
+}: { question: ChoiceQuestion } & Common) {
   const { entry, options } = question
   const { concept, answer } = entry
+  const tag = bcp47(lang, track)
   // null = 아직 안 답함, GAVE_UP = 모른다고 눌렀음, 그 외 = 고른 보기.
   // 다시 붙는 카드는 피드가 준 값으로 시작한다
   const [picked, setPicked] = useState<string | null>(pick ?? null)
@@ -204,6 +224,9 @@ function ChoiceCard({ question, lang, onAnswer, first, pick, active }: { questio
           {options.map((option) => (
             <button
               key={option}
+              // 보기는 그 언어의 낱말이다. 문서는 `<html lang="ko">`라 붙이지
+              // 않으면 스크린리더가 한국어 음성으로 읽는다 (lib/lang.ts)
+              lang={tag}
               type="button"
               disabled={answered}
               onClick={() => {
@@ -471,6 +494,8 @@ function ListenBrief({
 }) {
   const { concept, word, answer } = entry
   const aside = asideOf(word, lang, track)
+  const tag = bcp47(lang, track)
+  const baseTag = bcp47(lang)
   const [example] = examplesOf(word)
   const verdict = gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '
 
@@ -479,18 +504,20 @@ function ListenBrief({
     <div className="flex h-full flex-col justify-center gap-1.5 overflow-y-auto px-5 py-4 text-center" role="status">
       <span className="sr-only">{verdict}</span>
       <div className="flex items-center justify-center gap-sm">
-        <Copy text={answer} className={`font-jp ${answerSize(answer)} leading-tight font-bold tracking-tight`} />
+        <Copy
+          text={answer}
+          lang={tag}
+          className={`font-jp ${answerSize(answer)} leading-tight font-bold tracking-tight`}
+        />
         <SayButton slug={concept.slug} lang={lang} label={answer} />
       </div>
-      {aside.length > 0 && (
-        <p className="font-jp text-sm text-sub">
-          {aside.map(({ value, sound }) => (sound ? `[${value}]` : value)).join(' · ')}
-        </p>
-      )}
+      <Aside items={aside} tag={baseTag} />
       <p className="text-lg font-semibold">{concept.meaning_ko}</p>
       {example && (
         <div className="mt-1 border-t border-line pt-2">
-          <p className="font-jp text-[15px] leading-relaxed">{example.text}</p>
+          <p lang={baseTag} className="font-jp text-[15px] leading-relaxed">
+            {example.text}
+          </p>
           <p className="mt-1 text-sm text-sub">{example.ko}</p>
         </div>
       )}
@@ -514,9 +541,20 @@ function ListenBrief({
  * 물으면 문장을 읽지 않고도 답이 되어 재인 칸과 같은 문제가 된다. 자리는
  * 비워 두되 없애지는 않는다 — 없애면 카드 높이가 달라져 넘길 때 튄다.
  */
-function ClozeCard({ question, lang, onAnswer, first, pick, active }: { question: ClozeQuestion } & Common) {
+function ClozeCard({
+  question,
+  lang,
+  track,
+  onAnswer,
+  first,
+  pick,
+  active,
+}: { question: ClozeQuestion } & Common) {
   const { entry, options, before, after } = question
   const { concept, answer } = entry
+  const tag = bcp47(lang, track)
+  // 문장은 예문이고 빈칸에 들어가는 것은 정답이라 태그가 갈린다 (IntroCard)
+  const baseTag = bcp47(lang)
   const [picked, setPicked] = useState<string | null>(pick ?? null)
   const answered = picked !== null
   const gaveUp = picked === GAVE_UP
@@ -529,9 +567,10 @@ function ClozeCard({ question, lang, onAnswer, first, pick, active }: { question
       </CardImage>
 
       <CardSheet>
-        <p className="font-jp text-[17px] leading-relaxed">
+        <p lang={baseTag} className="font-jp text-[17px] leading-relaxed">
           {before}
           <span
+            lang={tag}
             className={`
               mx-0.5 inline-block min-w-[64px] border-b-[3px] text-center align-baseline font-bold
               ${!answered ? 'border-accent' : correct ? 'border-ok text-ok' : 'border-err text-err'}
@@ -546,6 +585,9 @@ function ClozeCard({ question, lang, onAnswer, first, pick, active }: { question
           {options.map((option) => (
             <button
               key={option}
+              // 보기는 그 언어의 낱말이다. 문서는 `<html lang="ko">`라 붙이지
+              // 않으면 스크린리더가 한국어 음성으로 읽는다 (lib/lang.ts)
+              lang={tag}
               type="button"
               disabled={answered}
               onClick={() => {
@@ -587,9 +629,18 @@ function ClozeCard({ question, lang, onAnswer, first, pick, active }: { question
 
 /* ── 3. 단서 회상 — 빈칸 ──────────────────────────────────────────── */
 
-function BlankCard({ question, lang, onAnswer, first, pick, active }: { question: BlankQuestion } & Common) {
+function BlankCard({
+  question,
+  lang,
+  track,
+  onAnswer,
+  first,
+  pick,
+  active,
+}: { question: BlankQuestion } & Common) {
   const { entry, chars, holeIndex, keys } = question
   const { concept, answer } = entry
+  const tag = bcp47(lang, track)
   const answerChar = chars[holeIndex]
   // 낱말이 길면 글자를 줄이고 줄바꿈을 허용한다 (lib/fit.ts)
   const { row, cell } = blankRow(chars)
@@ -604,7 +655,8 @@ function BlankCard({ question, lang, onAnswer, first, pick, active }: { question
       </CardImage>
 
       <CardSheet>
-        <div className={`flex flex-wrap items-baseline justify-center ${row}`}>
+        {/* 낱자로 흩어 놔도 소리는 그 언어의 것이라 줄 전체에 붙인다 (lib/lang.ts) */}
+        <div lang={tag} className={`flex flex-wrap items-baseline justify-center ${row}`}>
           {chars.map((char, i) => {
             const hole = i === holeIndex
             if (!hole)
@@ -633,6 +685,7 @@ function BlankCard({ question, lang, onAnswer, first, pick, active }: { question
           {keys.map((key) => (
             <button
               key={key}
+              lang={tag}
               type="button"
               disabled={answered}
               onClick={() => {
@@ -759,6 +812,31 @@ function TriviaCard({ question, onAnswer, pick }: { question: TriviaQuestion } &
 const GAVE_UP = '\u0000gave-up'
 
 /**
+ * 큰 글자 아래 붙는 참고줄. 소개 카드와 듣기 카드가 나눠 쓴다.
+ *
+ * **발음 보조에만 대괄호를 씌운다** (lib/lang.ts). 예전에는 첫 항목이면 무조건
+ * 씌웠는데, 로마자가 비면 표기가 첫 항목으로 올라와 `[計量カップ]`처럼 한자를
+ * 발음인 양 보여줬다.
+ *
+ * **`lang`도 그 갈림을 따른다.** 표기에는 붙이고 발음 보조에는 안 붙인다 —
+ * `shukushaku`는 일본어가 아니라 일본어를 로마자로 적은 것이고 `[ˈbʌtɜr]`는
+ * 아무 언어도 아니다. 붙이면 스크린리더가 라틴 글자를 일본어로 읽으려 든다.
+ */
+function Aside({ items, tag }: { items: ReturnType<typeof asideOf>; tag: string }) {
+  if (items.length === 0) return null
+  return (
+    <p className="font-jp text-sm text-sub">
+      {items.map(({ value, sound }, i) => (
+        <span key={value}>
+          {i > 0 && ' · '}
+          {sound ? `[${value}]` : <span lang={tag}>{value}</span>}
+        </span>
+      ))}
+    </p>
+  )
+}
+
+/**
  * 색만으로 정오답을 전달하지 않는다. 틀렸을 때 정답도 함께 초록으로
  * 드러내고, 아래 Reveal이 뜻과 표기를 말로 보여준다. (brand-spec.md)
  */
@@ -777,10 +855,20 @@ function verdictClass(answered: boolean, isAnswer: boolean, isPicked: boolean) {
  * 클립보드는 보안 컨텍스트(localhost·https)에서만 열린다. 막힌 경우를 조용히
  * 넘기면 복사된 줄 알고 엉뚱한 것을 붙여넣게 되므로 실패도 토스트로 말한다.
  */
-function Copy({ text, className = '' }: { text: string; className?: string }) {
+function Copy({
+  text,
+  lang,
+  className = '',
+}: {
+  text: string
+  /** BCP-47 태그. 그 언어의 글이면 준다 (lib/lang.ts) */
+  lang?: string
+  className?: string
+}) {
   return (
     <button
       type="button"
+      lang={lang}
       onClick={() =>
         navigator.clipboard.writeText(text).then(
           () => toast.success('복사했습니다', { description: text }),
@@ -812,14 +900,27 @@ function Reveal({
 }) {
   if (!show) return null
   const { concept, word, answer } = question.entry
-  const extra = word.term !== answer ? ` · ${word.term}` : ''
+  const extra = word.term !== answer ? word.term : null
   const verdict = gaveUp ? '정답은 ' : correct ? '정답입니다. ' : '틀렸습니다. 정답은 '
   return (
     <div className="flex items-center justify-center gap-sm">
       <p className="text-sm text-sub" role="status">
         <span className="sr-only">{verdict}</span>
         {concept.meaning_ko}
-        {extra}
+        {/*
+          뜻은 한국어고 표기는 그 언어라 한 줄에 섞여 있다. 태그를 줄 전체에
+          붙이면 뜻까지 그 언어로 읽히므로 표기에만 붙인다.
+
+          트랙을 모르는 자리라 중국어는 기본값(간체)이 되는데, 여기 서는 것이
+          정답과 **다른** 표기라 TOCFL에서는 정답이 번체고 이 자리가 간체다 —
+          기본값이 그대로 맞다 (lib/lang.ts)
+        */}
+        {extra && (
+          <>
+            {' · '}
+            <span lang={bcp47(lang)}>{extra}</span>
+          </>
+        )}
       </p>
       {/* 답하기 전에는 이 줄 자체가 없다. 잠금을 disabled가 아니라 렌더로 건다 */}
       <SayButton slug={concept.slug} lang={lang} label={answer} autoPlay={active} />

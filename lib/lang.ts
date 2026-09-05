@@ -129,3 +129,23 @@ export function asideOf(
       Boolean(item.value) && item.value !== answer,
     )
 }
+
+/**
+ * 스크린리더가 이 낱말을 읽을 때 쓸 태그. (WCAG 3.1.2 Language of Parts)
+ *
+ * 문서는 `<html lang="ko">`다. 카드 위의 `泰迪熊`도 `ねこ`도 그 선언 아래
+ * 있어서, 붙이지 않으면 **중국어를 한국어 음성으로 읽는다.** 발음 파일을
+ * 20,671자리 만들어 놓고 스크린리더에는 틀린 소리가 나가는 셈이다.
+ *
+ * **중국어만 트랙으로 갈린다.** 글자가 다르니 태그도 달라야 한다 — 번체를
+ * 간체로 읽거나 그 반대면 붙인 뜻이 없다. 정답 필드가 이미 그 갈림을 들고
+ * 있어(`TRACK_OVERRIDE`) 여기서 다시 적지 않는다.
+ *
+ * **로마자에는 붙이지 않는다.** `shukushaku`는 일본어가 아니라 일본어를 로마자로
+ * 적은 것이고 `[ˈbʌtɜr]`는 아무 언어도 아니다. 붙이면 라틴 글자를 일본어로
+ * 읽으려 든다 (components/cards.tsx의 `Aside`).
+ */
+export function bcp47(lang: Language, track?: TrackId): string {
+  if (lang !== 'zh') return lang
+  return strategyFor(lang, track).answer === 'traditional' ? 'zh-Hant' : 'zh-Hans'
+}
