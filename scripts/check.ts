@@ -407,6 +407,36 @@ if (notes.length) {
 }
 
 /**
+ * 듣기 카드에 깔 파형이 실물 mp3를 따라왔는지 본다. (spec.md §5)
+ *
+ * 낡아도 카드는 성립한다 — 없는 낱말은 기본 모양으로 떨어진다(lib/peaks.ts).
+ * 다만 발음을 새로 넣고 파형을 안 뽑으면 그 낱말만 남들과 다른 모양이라,
+ * 조용히 어긋나는 자리다.
+ */
+{
+  const behind: string[] = []
+  const peaksRoot = join(PUBLIC_DIR, 'peaks')
+  for (const lang of new Set(TRACKS.map(({ language }) => language))) {
+    const path = join(peaksRoot, `${lang}.json`)
+    const rows: Record<string, string> = existsSync(path)
+      ? JSON.parse(readFileSync(path, 'utf8'))
+      : {}
+    let missing = 0
+    for (const concept of all)
+      if (
+        existsSync(join(PUBLIC_DIR, 'audio', lang, `${concept.slug}.mp3`)) &&
+        !rows[concept.slug]
+      )
+        missing += 1
+    if (missing > 0) behind.push(`${lang} ${missing}건`)
+  }
+  if (behind.length > 0)
+    warn(
+      `public/peaks가 낡았습니다 — 파형 없는 발음 ${behind.join(' · ')}. node scripts/audio.ts peaks 를 돌리세요`,
+    )
+}
+
+/**
  * 상식 파일 검증. (spec.md §4, §7)
  *
  * 낱말과 규칙이 다르다 — 그림도 발음도 예문도 없고, 대신 **오답이 콘텐츠 안에**
