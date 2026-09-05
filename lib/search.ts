@@ -146,12 +146,27 @@ type Doc = {
 
 export type SearchIndex = Doc[]
 
-/** 한 낱말에서 검색에 걸릴 표기 전부. 없는 필드는 조용히 빠진다 */
+/**
+ * 한 낱말에서 검색에 걸릴 표기 전부. 없는 필드는 조용히 빠진다.
+ *
+ * **번체도 넣는다.** 중국어는 `term`이 간체로 고정되고 번체는 따로 사는데
+ * (lib/types.ts), 그 필드를 안 보는 동안 번체로는 아무것도 못 찾았다 —
+ * 간체와 다른 낱말 1,764개 가운데 1,645개가 그랬다. TOCFL은 번체를 정답으로
+ * 내므로(lib/lang.ts) **카드에서 본 글자를 검색창에 쳐도 안 나왔다.**
+ *
+ * 같은 값이 두 필드에 들어 있으면 한 번만 센다 — 번체와 간체가 같은 낱말이
+ * 흔하고, 두 벌을 훑어 봐야 결과가 달라지지 않는다.
+ */
 function wordFields(lang: Language, word: Word): Field[] {
-  const values = [word.term, word.reading, word.romanization, ...(word.also ?? [])]
-  return values
-    .filter((value): value is string => Boolean(value))
-    .map((text) => ({ folded: fold(text), text, lang }))
+  const values = [word.term, word.traditional, word.reading, word.romanization, ...(word.also ?? [])]
+  const seen = new Set<string>()
+  const fields: Field[] = []
+  for (const text of values) {
+    if (!text || seen.has(text)) continue
+    seen.add(text)
+    fields.push({ folded: fold(text), text, lang })
+  }
+  return fields
 }
 
 /**

@@ -75,8 +75,8 @@ function triviaOf(lang: Language) {
  * `ㅋㅍ` 하나에 쿠폰·카페·커피가 콘텐츠 파일 순서대로 선다.
  */
 function thin(word: Word): Word {
-  const { term, reading, romanization, also, attributes } = word
-  return { term, reading, romanization, also, attributes }
+  const { term, traditional, reading, romanization, also, attributes } = word
+  return { term, traditional, reading, romanization, also, attributes }
 }
 
 /** JSON에서 `undefined` 필드를 지운다. 그대로 두면 키만 남아 자리를 먹는다 */

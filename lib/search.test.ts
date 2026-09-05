@@ -33,6 +33,11 @@ const CONCEPTS: Concept[] = [
     meaning_ko: '아이스커피',
     words: { en: { term: 'iced coffee' } },
   }),
+  concept({
+    slug: 'read',
+    meaning_ko: '읽다',
+    words: { zh: { term: '读', traditional: '讀', romanization: 'dú' } },
+  }),
 ]
 
 const TRIVIA: TriviaEntry[] = [
@@ -54,6 +59,18 @@ const ARTICLES: Article[] = [
 ]
 
 const index = buildIndex(CONCEPTS, TRIVIA, ARTICLES)
+
+test('번체로도 찾는다', () => {
+  // `term`은 간체로 고정이고 번체는 따로 산다. TOCFL은 번체를 정답으로 내므로
+  // 카드에서 본 글자를 그대로 쳤을 때 나와야 한다
+  const [hit] = search(index, '讀')
+  assert.equal(hit?.kind, 'word')
+  assert.equal(hit?.kind === 'word' && hit.key, 'read')
+  assert.equal(hit?.kind === 'word' && hit.text, '讀', '걸린 표기를 결과 줄에 적는다')
+
+  // 간체로도 그대로 걸린다
+  assert.equal(search(index, '读')[0]?.kind === 'word' && search(index, '读')[0].key, 'read')
+})
 
 test('부호를 뗀 표기끼리 맞춘다', () => {
   assert.equal(fold('café'), 'cafe')
