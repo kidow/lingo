@@ -1,10 +1,11 @@
 'use client'
 
 import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ArticleBody } from './article-body'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
+import { loadSearchCorpus } from '@/lib/corpus'
 import { bcp47, LANG_LABEL } from '@/lib/lang'
 import { buildIndex, search, type Hit, type SearchIndex } from '@/lib/search'
 import type { TriviaEntry } from '@/lib/trivia'
@@ -32,36 +33,50 @@ import type { Article, Concept, Language } from '@/lib/types'
 /**
  * 색인은 앱이 사는 동안 한 벌만 만든다.
  *
- * 접는 일이 6만 번이라 만드는 데 0.6초쯤 걸린다. 시트는 닫히면 통째로 사라져
- * (vaul Portal) 열 때마다 다시 만들게 되는데, 그러면 두 번째로 여는 사람이
- * 매번 그 0.6초를 다시 문다. 훑는 대상은 번들에 구워진 상수라(lib/content.ts)
- * 한 번 만든 것이 낡지 않는다.
+ * 시트는 닫히면 통째로 사라져(vaul Portal) 열 때마다 다시 만들게 되는데,
+ * 훑는 대상이 낡지 않으므로 한 번 만든 것을 붙들어 둔다.
  */
 let cached: SearchIndex | null = null
 
-function sharedIndex(concepts: Concept[], trivia: TriviaEntry[], articles: Article[]) {
-  cached ??= buildIndex(concepts, trivia, articles)
-  return cached
+/**
+ * 훑을 것을 **시트를 열 때 받는다.** (lib/corpus.ts)
+ *
+ * 검색은 트랙을 안 가려서 일곱 언어가 다 필요한데, 그 한 벌을 번들에 구우면
+ * 찾기를 한 번도 안 여는 사람까지 같이 문다. 예문이 빠진 판이라 전량이어도
+ * 2.4MB고, 안 여는 사람에게는 0바이트다.
+ *
+ * 받는 동안에는 아무것도 그리지 않는다 — 자판이 이미 올라와 있고 목록 자리가
+ * 잠깐 비는 것뿐이라, 여기에 뼈대를 세우면 오히려 깜빡임이 는다.
+ */
+function useIndex(): SearchIndex | null {
+  const [index, setIndex] = useState<SearchIndex | null>(cached)
+
+  useEffect(() => {
+    if (cached) return
+    let alive = true
+    void loadSearchCorpus().then(({ concepts, trivia, articles }) => {
+      cached ??= buildIndex(concepts, trivia, articles)
+      if (alive) setIndex(cached)
+    })
+    return () => {
+      alive = false
+    }
+  }, [])
+
+  return index
 }
 
 export function SearchSheet({
-  concepts,
-  trivia,
-  articles,
   trackArticles,
 }: {
-  concepts: Concept[]
-  trivia: TriviaEntry[]
-  /** 검색이 훑을 것 — 언어를 가리지 않은 전량 */
-  articles: Article[]
   /** 빈 칸일 때 세울 것 — 지금 트랙의 글만 */
   trackArticles: Article[]
 }) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState<Hit | null>(null)
 
-  const index = useMemo(() => sharedIndex(concepts, trivia, articles), [concepts, trivia, articles])
-  const hits = useMemo(() => search(index, query), [index, query])
+  const index = useIndex()
+  const hits = useMemo(() => (index ? search(index, query) : []), [index, query])
 
   // 돌아가는 자리 이름이 갈린다 — 친 게 있으면 결과 목록이고, 비었으면 참고 글이다
   if (open)

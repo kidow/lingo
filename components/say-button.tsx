@@ -2,7 +2,9 @@
 
 import { AudioLines } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { audioPath } from '@/lib/content'
+// 경로 함수만 쓴다. `@/lib/content`는 콘텐츠 전량을 정적 import하므로
+// 클라이언트에서 거치지 않는다 (lib/corpus.ts)
+import { audioPath } from '@/lib/entries'
 import type { Language } from '@/lib/types'
 
 /**

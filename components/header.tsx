@@ -10,8 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { DECKS, type DeckId } from '@/lib/deck'
-import type { TriviaEntry } from '@/lib/trivia'
-import type { Article, Concept } from '@/lib/types'
+import type { Article } from '@/lib/types'
 import { TRACKS, trackOf, type TrackId } from '@/lib/track'
 
 /**
@@ -43,9 +42,6 @@ export function Header({
   deck,
   onDeck,
   articles = [],
-  concepts = [],
-  trivia = [],
-  allArticles = [],
 }: {
   track: TrackId
   onChange: (track: TrackId) => void
@@ -67,14 +63,6 @@ export function Header({
    * 트랙에 따라 서고 마는 것과 같은 이유다 (content/articles.json)
    */
   articles?: Article[]
-  /**
-   * 검색이 훑을 것. **트랙에 걸리지 않은 전량**이라 위의 `articles`와 다르다 —
-   * 찾는 사람은 그것이 어느 트랙에 있는지 모르는 채로 찾는다
-   * (components/search-sheet.tsx)
-   */
-  concepts?: Concept[]
-  trivia?: TriviaEntry[]
-  allArticles?: Article[]
 }) {
   return (
     <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
@@ -193,19 +181,12 @@ export function Header({
           앞선 덱 탭이 **설 때만** 구분선이 붙는다. 탭이 없는 트랙(TOEIC)에서
           찾기 앞에 칸막이만 덩그러니 남으면 안 된다
         */}
-        {concepts.length > 0 && (
-          <span className="flex items-center gap-0">
-            {deck && onDeck && decks.length > 1 && (
-              <span aria-hidden className="text-line">|</span>
-            )}
-            <SearchDrawer
-              concepts={concepts}
-              trivia={trivia}
-              articles={allArticles}
-              trackArticles={articles}
-            />
-          </span>
-        )}
+        <span className="flex items-center gap-0">
+          {deck && onDeck && decks.length > 1 && (
+            <span aria-hidden className="text-line">|</span>
+          )}
+          <SearchDrawer trackArticles={articles} />
+        </span>
       </div>
     </header>
   )

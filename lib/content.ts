@@ -32,9 +32,17 @@ import type { TrackId } from './track.ts'
 import type { Article, ArticleFile, Concept, ContentFile, Language, TriviaFile } from './types.ts'
 
 /**
- * 콘텐츠 로더. (spec.md §4, §8)
+ * 콘텐츠 로더 — **서버 전용이다.** (spec.md §4, §8)
  *
- * DB도 fetch도 없다. JSON을 빌드 시점에 import해 번들에 굽는다.
+ * DB가 없다. JSON을 빌드 시점에 통째로 import한다.
+ *
+ * **클라이언트에서 이 모듈을 스치지 않는다.** 정적 import 스물여덟 개가 딸려
+ * 와서 18MB가 번들에 실린다 — 경로 함수 하나를 쓰려고 여기를 거쳤다가 청크가
+ * 11.5MB가 된 적이 있다. 화면이 읽는 것은 `lib/corpus.ts`가 언어별로 나눠 받고,
+ * 경로 함수는 `lib/entries.ts`에서 직접 가져온다.
+ *
+ * 여기를 쓰는 곳은 셋이다 — 빌드 때 그림 유무를 보는 `app/page.tsx`, 개발용
+ * `app/debug/page.tsx`, 그리고 갈라 굽는 `scripts/pack.ts`. 다 서버에서 돈다.
  *
  * **파일은 주제고, 트랙은 언어로 고른다.** 개념은 트랙에 속하지 않는다 —
  * `cat` 하나를 JLPT도 HSK도 DELE도 쓴다. 어느 트랙에 나올지는 그 개념이

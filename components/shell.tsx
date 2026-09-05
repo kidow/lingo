@@ -3,14 +3,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CardImage, CardSheet, Feed, FeedCard } from './feed'
 import { Header } from './header'
-import {
-  ALL_ARTICLES,
-  ALL_TRIVIA,
-  articlesFor,
-  CONCEPTS,
-  entriesFor,
-  triviaFor,
-} from '@/lib/content'
+import { loadCorpus, type Corpus } from '@/lib/corpus'
+import { entriesForTrack } from '@/lib/entries'
 import {
   emptyProgress,
   loadProgress,
@@ -28,13 +22,14 @@ import { DEFAULT_TRACK, trackOf, type TrackId } from '@/lib/track'
  * 헤더 + 피드. 트랙 선택이 사는 곳이다. (spec.md §3)
  *
  * 서버는 어느 트랙을 볼지 모른다 — 설정이 localStorage에 있기 때문이다.
- * 그래서 **출제 목록을 여기서 만든다.** 콘텐츠는 검색 때문에 어차피 이 모듈이
- * 정적 import로 들고 있어(`CONCEPTS`) 추가로 실리는 것이 없다. (§8)
+ * 그래서 **읽을 것을 여기서 받아 온다.** 지금 트랙의 언어 한 벌이다
+ * (lib/corpus.ts). 일곱을 다 싣던 시절에는 청크 하나가 11.5MB였고 그중
+ * 70%가 보지도 않는 언어의 예문이었다. (§8)
  *
- * 예전에는 서버가 트랙 일곱 벌을 추려 prop으로 넘겼는데, 이 파일이
- * `'use client'`라 그 배열이 RSC 페이로드로 HTML에 직렬화됐다 — 같은 18MB가
- * 번들과 HTML에 **두 번** 실려 index.html이 17.9MB였다. 서버만 아는 사실은
- * 그림 파일이 있느냐 없느냐뿐이라 그것만 받는다 (app/page.tsx).
+ * 서버가 트랙 일곱 벌을 prop으로 넘기던 시절도 있었다. 이 파일이
+ * `'use client'`라 그 배열이 RSC 페이로드로 HTML에 직렬화돼 index.html이
+ * 17.9MB였다. 서버만 아는 사실은 그림 파일이 있느냐 없느냐뿐이라 그것만
+ * 받는다 (app/page.tsx).
  *
  * 트랙이 바뀌면 Feed를 통째로 새로 만든다(`key`). 진도도 카드도 트랙별로
  * 갈라져 있으므로 이어붙이지 않고 처음부터 굴리는 편이 정확하다.
@@ -62,6 +57,13 @@ export function Shell({
    * 서버와 클라이언트의 첫 그림이 똑같이 뼈대라 어긋남도 없다.
    */
   const [ready, setReady] = useState(false)
+  /**
+   * 지금 언어의 콘텐츠. 받기 전에는 `null`이라 뼈대가 선다.
+   *
+   * 트랙이 아니라 **언어**가 단위다 — HSK와 TOCFL은 같은 파일을 쓰고, 한 번
+   * 받은 것은 다시 받지 않는다 (lib/corpus.ts).
+   */
+  const [corpus, setCorpus] = useState<Corpus | null>(null)
 
   // 설정은 마운트 후에 읽는다. localStorage는 서버에 없다
   useEffect(() => {
@@ -74,6 +76,22 @@ export function Shell({
   // 동안 이전 트랙의 숙련도가 헤더에 남는다
   useEffect(() => setProgress(loadProgress(track)), [track])
 
+  /**
+   * 언어가 바뀌면 새로 받는다. 받는 동안에는 **뼈대로 되돌린다** — 옛 언어의
+   * 카드를 남겨 두면 헤더는 새 트랙인데 카드는 이전 언어인 화면이 된다.
+   */
+  const language = trackOf(track).language
+  useEffect(() => {
+    let alive = true
+    setCorpus(null)
+    void loadCorpus(language).then((next) => {
+      if (alive) setCorpus(next)
+    })
+    return () => {
+      alive = false
+    }
+  }, [language])
+
   const change = useCallback((next: TrackId) => {
     setTrack(next)
     saveTrack(next)
@@ -85,11 +103,12 @@ export function Shell({
   }, [])
 
   /**
-   * 상식은 언어의 것이라 트랙이 아니라 **언어로** 고른다 (lib/trivia.ts).
+   * 상식과 참고 글은 언어의 것이라 트랙이 아니라 **언어로** 갈린다
+   * (lib/trivia.ts). 파일이 이미 언어별로 갈려 있어 여기서 거르지 않는다 —
    * 아직 안 쓴 언어는 빈 배열이고, 그러면 탭이 서지 않는다.
    */
-  const trivia = useMemo(() => triviaFor(trackOf(track).language), [track])
-  const articles = useMemo(() => articlesFor(trackOf(track).language), [track])
+  const trivia = corpus?.trivia ?? []
+  const articles = corpus?.articles ?? []
 
   /**
    * 이 트랙에서 출제할 수 있는 것. 규칙은 lib/entries.ts가 갖는다.
@@ -100,8 +119,13 @@ export function Shell({
    */
   const hidden = useMemo(() => new Set(undrawn), [undrawn])
   const trackEntries = useMemo(
-    () => entriesFor(track).filter((entry) => !hidden.has(entry.concept.slug)),
-    [track, hidden],
+    () =>
+      corpus
+        ? entriesForTrack(track, corpus.concepts).filter(
+            (entry) => !hidden.has(entry.concept.slug),
+          )
+        : [],
+    [track, corpus, hidden],
   )
 
   /**
@@ -148,7 +172,7 @@ export function Shell({
   const ladder = shownDeck === 'trivia' ? TRIVIA_LADDER : WORD_LADDER
   const mastery = masteryLabel(masteredCount(progress, keys, ladder), keys.length)
 
-  if (!ready) return <Skeleton />
+  if (!ready || !corpus) return <Skeleton />
 
   return (
     <div className="feed-root flex h-dvh flex-col">
@@ -160,10 +184,6 @@ export function Shell({
         deck={shownDeck}
         articles={articles}
         onDeck={changeDeck}
-        // 검색은 트랙에 걸리지 않은 전량을 훑는다 (lib/content.ts)
-        concepts={CONCEPTS}
-        trivia={ALL_TRIVIA}
-        allArticles={ALL_ARTICLES}
       />
       <Feed
         key={`${track}-${shownDeck}`}

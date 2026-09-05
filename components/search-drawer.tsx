@@ -3,8 +3,7 @@
 import { X } from 'lucide-react'
 import { Drawer } from 'vaul'
 import { SearchSheet } from './search-sheet'
-import type { TriviaEntry } from '@/lib/trivia'
-import type { Article, Concept } from '@/lib/types'
+import type { Article } from '@/lib/types'
 
 /**
  * 찾아보기를 여는 바텀시트. (spec.md §3)
@@ -22,17 +21,7 @@ import type { Article, Concept } from '@/lib/types'
  * 두되 `dvh`가 자판을 반영해 줄어들므로, 안쪽이 `min-h-0`으로 눌려 목록만
  * 짧아진다 (components/search-sheet.tsx).
  */
-export function SearchDrawer({
-  concepts,
-  trivia,
-  articles,
-  trackArticles,
-}: {
-  concepts: Concept[]
-  trivia: TriviaEntry[]
-  articles: Article[]
-  trackArticles: Article[]
-}) {
+export function SearchDrawer({ trackArticles }: { trackArticles: Article[] }) {
   return (
     <Drawer.Root handleOnly>
       {/*
@@ -80,12 +69,7 @@ export function SearchDrawer({
             찾습니다.
           </Drawer.Description>
 
-          <SearchSheet
-            concepts={concepts}
-            trivia={trivia}
-            articles={articles}
-            trackArticles={trackArticles}
-          />
+          <SearchSheet trackArticles={trackArticles} />
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>
