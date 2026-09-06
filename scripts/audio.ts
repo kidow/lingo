@@ -197,10 +197,11 @@ function peaks(only?: Language) {
 }
 
 function manifest() {
-  const gone: string[] = []
-  for (const { language } of TRACKS)
-    for (const { slug } of missing(language)) gone.push(`${language}/${slug}`)
-  gone.sort()
+  // 한 언어에 트랙이 둘인 자리가 있다 — 중국어는 HSK와 TOCFL이다. 열쇠는
+  // 언어로 짓지 트랙으로 짓지 않으므로 겹치는 것을 접는다
+  const gone = [
+    ...new Set(TRACKS.flatMap(({ language }) => missing(language).map(({ slug }) => `${language}/${slug}`))),
+  ].sort()
   const here = examplesPresent()
 
   const path = join('lib', 'audio-have.ts')

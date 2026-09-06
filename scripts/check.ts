@@ -411,19 +411,21 @@ if (notes.length) {
  * 소리 없는 문제가 나간다. 여기서 실물과 대조한다.
  */
 {
-  const gone: string[] = []
+  // 한 언어에 트랙이 둘인 자리가 있다 — 중국어는 HSK와 TOCFL이다. 열쇠는
+  // 언어로 짓지 트랙으로 짓지 않으므로 겹치는 것을 접는다. 접지 않으면 중국어
+  // 발음이 빌 때마다 실물과 목록이 어긋난 것처럼 보인다
+  const gone = new Set<string>()
   for (const { language } of TRACKS)
     for (const concept of all) {
       const word = concept.words[language]
       if (!word || !word[LANG[language].answer]) continue
       if (!existsSync(join(PUBLIC_DIR, 'audio', language, `${concept.slug}.mp3`)))
-        gone.push(`${language}/${concept.slug}`)
+        gone.add(`${language}/${concept.slug}`)
     }
-  const stale =
-    gone.length !== AUDIO_MISSING.size || gone.some((key) => !AUDIO_MISSING.has(key))
+  const stale = gone.size !== AUDIO_MISSING.size || [...gone].some((key) => !AUDIO_MISSING.has(key))
   if (stale)
     warn(
-      `lib/audio-have.ts가 낡았습니다 — 발음 없는 자리 ${gone.length}건 vs 적힌 것 ${AUDIO_MISSING.size}건. node scripts/audio.ts manifest 를 돌리세요`,
+      `lib/audio-have.ts가 낡았습니다 — 발음 없는 자리 ${gone.size}건 vs 적힌 것 ${AUDIO_MISSING.size}건. node scripts/audio.ts manifest 를 돌리세요`,
     )
 }
 
