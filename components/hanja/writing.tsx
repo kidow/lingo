@@ -2,7 +2,7 @@
 
 import { ArrowLeft, Trash2, Undo2 } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react'
-import { hunEum, type HanjaCharacter } from '@/lib/hanja'
+import { gradeLabel, hunEum, type HanjaCharacter } from '@/lib/hanja'
 import { HANJA_FONT } from './card'
 
 type Point = { x: number; y: number }
@@ -70,7 +70,7 @@ export function WritingPractice({ character, onClose }: { character: HanjaCharac
         <span className="text-sm text-sub">쓰기 연습</span>
       </div>
       <h2 className="text-3xl font-semibold">{hunEum(character)}</h2>
-      <p className="text-sm text-sub">{character.readingGrade}</p>
+      <p className="text-sm text-sub">{gradeLabel(character.readingGrade)}</p>
       <div className="relative mx-auto mt-2 aspect-square w-full max-w-[340px] shrink-0 overflow-hidden rounded-card border border-line bg-img-bg">
         <div className="pointer-events-none absolute inset-y-0 left-1/2 border-l border-dashed border-line" />
         <div className="pointer-events-none absolute inset-x-0 top-1/2 border-t border-dashed border-line" />

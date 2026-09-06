@@ -1,6 +1,6 @@
 import { fsrs, Rating } from 'ts-fsrs'
 import type { Entry } from './entries.ts'
-import { buildHanjaChoice, hanjaKey, isHanja } from './hanja.ts'
+import { buildHanjaChoice, hanjaKey, isHanja, type HanjaEntry } from './hanja.ts'
 import { isTrivia, type LearnItem } from './trivia.ts'
 import {
   RUNG_BLANK,
@@ -219,7 +219,7 @@ export function questionFor(
   if (isHanja(item)) {
     return rung === RUNG_INTRO
       ? { kind: 'hanja-intro', entry: item }
-      : buildHanjaChoice(item, entries.filter(isHanja), attempt)
+      : buildHanjaChoice(item, entries as HanjaEntry[], attempt)
   }
 
   /**

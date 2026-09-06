@@ -2,7 +2,7 @@
 
 import { Check, X } from 'lucide-react'
 import { useRef, useState } from 'react'
-import { hunEum, type HanjaCharacter, type HanjaQuestion } from '@/lib/hanja'
+import { gradeLabel, hanjaReadings, hunEum, type HanjaCharacter, type HanjaQuestion } from '@/lib/hanja'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from '../feed'
 import { WritingPractice } from './writing'
 
@@ -14,18 +14,21 @@ export function HanjaDetails({ character }: { character: HanjaCharacter }) {
   return (
     <>
       <h2 className="text-3xl font-semibold tracking-tight">{hunEum(character)}</h2>
+      {hanjaReadings(character).length > 1 && (
+        <p className="text-sm text-sub">{hanjaReadings(character).slice(1).map(({ hun, eum }) => `${hun} ${eum}`).join(' · ')}</p>
+      )}
       <div className="flex items-center gap-3 text-sm text-sub">
-        <span className="rounded-pill border border-line px-2 py-0.5">{character.readingGrade}</span>
+        <span className="rounded-pill border border-line px-2 py-0.5">{gradeLabel(character.readingGrade)}</span>
         <span>부수 <span style={HANJA_FONT}>{character.radical}</span></span>
         <span>{character.strokes}획</span>
       </div>
-      <div className="mt-3 border-t border-line pt-4">
+      {character.example && <div className="mt-3 border-t border-line pt-4">
         <p className="flex items-center gap-3">
           <span style={HANJA_FONT} className="text-2xl tracking-widest">{character.example.word}</span>
           <span>{character.example.reading}</span>
         </p>
         <p className="mt-2 text-sm text-sub">{character.example.meaning}</p>
-      </div>
+      </div>}
     </>
   )
 }
@@ -61,7 +64,7 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
               ? 'text-[clamp(112px,40vw,176px)] leading-none' : 'text-4xl font-semibold'}
           >{intro ? character.glyph : question.prompt}</span>
         </div>
-        {!intro && <span className="absolute right-5 bottom-7 text-sm text-sub">{character.readingGrade}</span>}
+        {!intro && <span className="absolute right-5 bottom-7 text-sm text-sub">{gradeLabel(character.readingGrade)}</span>}
       </CardImage>
       <CardSheet>
         {intro ? <HanjaDetails character={character} /> : (
@@ -77,7 +80,7 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
                     aria-disabled={answered}
                     onClick={() => { if (!answered) onAnswer(option === question.answer, option) }}
                     className={`relative grid min-h-20 place-items-center rounded-ctrl border px-5 py-3 font-semibold transition active:scale-[.985] aria-disabled:active:scale-100
-                      ${question.entry.skill === 'recognition' ? 'text-4xl' : 'text-2xl'}
+                      ${question.entry.skill === 'recognition' ? 'text-4xl' : Math.max(...question.options.map((value) => value.length)) > 10 ? 'text-base' : 'text-2xl'}
                       ${correct ? 'border-ok bg-ok-soft text-ok' : wrong ? 'border-err bg-err-soft text-err' : answered ? 'border-line opacity-40' : 'border-line bg-surface'}`}
                     style={question.entry.skill === 'recognition' ? HANJA_FONT : undefined}
                   >

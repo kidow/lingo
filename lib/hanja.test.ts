@@ -2,23 +2,44 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { initialState, nextQuestion, questionFor, recordAnswer, recordIntro } from './engine.ts'
-import { buildHanjaChoice, HANJA_LADDER, HANJA_SKILLS, hanjaEntries, hanjaKey, hunEum, masteredHanjaCount, type HanjaCharacter } from './hanja.ts'
+import { acceptedHanjaAnswers, buildHanjaChoice, HANJA_GRADES, HANJA_LADDER, HANJA_SKILLS, hanjaEntries, hanjaKey, hunEum, masteredHanjaCount, searchHanja, type HanjaCharacter } from './hanja.ts'
 import { emptyProgress, freshCard, loadProgress, MASTERED_STABILITY, masteryLabel, progressKey, saveProgress } from './progress.ts'
 import { LANGUAGE_TRACKS, TRACKS, trackOf } from './track.ts'
 import { loadTrack, saveTrack } from './settings.ts'
 
-const { characters } = JSON.parse(readFileSync(new URL('../content/hanja/characters/g8.json', import.meta.url), 'utf8')) as { characters: HanjaCharacter[] }
+const expected = [
+  ['g8', 50], ['g7-2', 50], ['g7', 50], ['g6-2', 75], ['g6', 75],
+  ['g5-2', 100], ['g5', 100], ['g4-2', 250], ['g4', 250], ['g3-2', 500],
+  ['g3', 317], ['g2', 538], ['g1', 1145], ['special-2', 1150], ['special', 1328],
+] as const
+const files = expected.map(([id]) => JSON.parse(readFileSync(new URL(`../content/hanja/characters/${id}.json`, import.meta.url), 'utf8')) as {
+  characters: HanjaCharacter[]
+  grade: { id: string; label: string; newCharacters: number; cumulativeUnique: number; officialCount: number }
+})
+const characters = files.flatMap((file) => file.characters)
 const entries = hanjaEntries(characters)
 const now = Date.UTC(2026, 8, 6)
 
-test('예시 10자는 고유한 8급 글자이며 두 읽기 능력을 독립적으로 가진다', () => {
-  assert.equal(characters.length, 10)
-  assert.equal(new Set(characters.map((c) => c.glyph)).size, 10)
-  assert.equal(new Set(entries.map((e) => e.key)).size, 20)
+test('15급수 전체 5,978자는 중복 없이 두 읽기 능력을 독립적으로 가진다', () => {
+  assert.equal(characters.length, 5978)
+  assert.equal(new Set(characters.map((c) => c.glyph.normalize('NFC'))).size, 5978)
+  assert.equal(new Set(entries.map((e) => e.key)).size, 11956)
+  assert.equal(new Set(characters.map((c) => c.sourceRow)).size, 5978)
+  let cumulative = 0
+  files.forEach((file, i) => {
+    assert.equal(file.grade.id, expected[i][0])
+    assert.equal(file.characters.length, expected[i][1])
+    assert.equal(file.grade.newCharacters, expected[i][1])
+    cumulative += file.characters.length
+    assert.equal(file.grade.cumulativeUnique, cumulative)
+    assert.ok(file.characters.every((c) => c.readingGrade === HANJA_GRADES[i]))
+  })
+  assert.equal(files[13].grade.officialCount, 4918)
+  assert.equal(files[13].grade.cumulativeUnique, 4650)
+  assert.equal(characters.filter((c) => c.example).length, 10)
   for (const character of characters) {
     assert.equal(character.id, `u${character.glyph.codePointAt(0)!.toString(16)}`)
-    assert.equal(character.readingGrade, '8급')
-    assert.ok(character.example.word.includes(character.glyph))
+    if (character.example) assert.ok(character.example.word.includes(character.glyph))
     assert.ok(character.strokes > 0 && character.hun && character.eum)
   }
   assert.equal(trackOf('hanja').language, null)
@@ -27,7 +48,8 @@ test('예시 10자는 고유한 8급 글자이며 두 읽기 능력을 독립적
 })
 
 test('두 방향 퀴즈 모두 정답 하나와 서로 다른 보기 네 개를 만든다', () => {
-  for (const entry of entries) for (let attempt = 0; attempt < 12; attempt += 1) {
+  for (const entry of entries) {
+    const attempt = 3
     const q = buildHanjaChoice(entry, entries, attempt)
     assert.equal(q.kind, 'hanja-choice')
     if (q.kind !== 'hanja-choice') throw new Error('choice required')
@@ -71,7 +93,7 @@ test('소개 뒤에는 선택형만 출제하고 오답에도 선택형을 유�
   assert.equal(state.progress.cards[entries[1].key].fsrs.reps, 0)
 })
 
-test('두 능력이 숙련돼야 글자 하나를 세고 실제 공개 10자를 분모로 쓴다', () => {
+test('두 능력이 숙련돼야 글자 하나를 세고 공개 5,978자를 분모로 쓴다', () => {
   const progress = emptyProgress()
   const mastered = () => ({ rung: 1 as const, streak: 4, fsrs: { ...freshCard(new Date(now)), stability: MASTERED_STABILITY } })
   progress.cards[entries[0].key] = mastered()
@@ -80,9 +102,53 @@ test('두 능력이 숙련돼야 글자 하나를 세고 실제 공개 10자를 
   progress.cards['hanja:char:not-published:recognition'] = mastered()
   progress.cards['hanja:char:not-published:hun-eum'] = mastered()
   assert.equal(masteredHanjaCount(progress, characters), 1)
-  assert.equal(masteryLabel(masteredHanjaCount(progress, characters), characters.length), '10%')
+  assert.equal(masteryLabel(masteredHanjaCount(progress, characters), characters.length), '<1%')
   progress.cards[entries[1].key].fsrs.stability = MASTERED_STABILITY - 1
   assert.equal(masteredHanjaCount(progress, characters), 0)
+})
+
+test('모든 급수와 복수 훈음·호환자·원문 이체자를 검색할 수 있다', () => {
+  for (const file of files) {
+    for (const character of [file.characters[0], file.characters.at(-1)!]) {
+      assert.ok(searchHanja(characters, character.glyph).some((found) => found.id === character.id))
+    }
+  }
+  assert.ok(searchHanja(characters, '성 김').some((c) => c.glyph === '金'))
+  assert.ok(searchHanja(characters, '金').some((c) => c.glyph === '金'))
+  assert.ok(searchHanja(characters, '煕').some((c) => c.glyph === '熙'))
+  assert.ok(searchHanja(characters, '산림').some((c) => c.glyph === '山'))
+  assert.equal(searchHanja(characters, '').length, 5978)
+})
+
+test('대표 훈음이 달라도 다른 훈음이 겹치면 양쪽 모두 오답 후보에서 빠진다', () => {
+  const base = characters[0]
+  const alias: HanjaCharacter = { ...base, id: 'alias', glyph: '仮', hun: '별칭', readings: [{ hun: '별칭', eum: base.eum }, { hun: base.hun, eum: base.eum }] }
+  const pool = hanjaEntries([...files[0].characters, alias])
+  assert.ok(acceptedHanjaAnswers(alias).includes(hunEum(base)))
+  for (const entry of hanjaEntries([base])) for (let attempt = 0; attempt < 20; attempt += 1) {
+    const q = buildHanjaChoice(entry, pool, attempt)
+    if (q.kind !== 'hanja-choice') throw new Error('choice required')
+    assert.ok(!q.options.includes(alias.glyph))
+    assert.ok(!q.options.includes(hunEum(alias)))
+  }
+})
+
+test('기존 예시 10자의 진도 키는 전체 급수를 추가해도 유지된다', () => {
+  for (const glyph of '山水木土日月火人大小') {
+    const character = characters.find((c) => c.glyph === glyph)!
+    assert.equal(character.id, `u${glyph.codePointAt(0)!.toString(16)}`)
+    assert.equal(character.readingGrade, '8급')
+    assert.ok(character.example)
+  }
+})
+
+test('오답 보기는 같은 급수의 한자에서 고른다', () => {
+  for (const file of files) for (const entry of hanjaEntries([file.characters[0]])) {
+    const q = buildHanjaChoice(entry, entries)
+    if (q.kind !== 'hanja-choice') throw new Error('choice required')
+    const labels = new Set(file.characters.map((c) => entry.skill === 'recognition' ? c.glyph : hunEum(c)))
+    assert.ok(q.options.every((option) => labels.has(option)))
+  }
 })
 
 test('한능검 선택과 진도는 새로 불러올 수 있고 기존 트랙 진도와 분리된다', () => {

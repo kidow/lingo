@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import data from '@/content/hanja/characters/g8.json'
-import { HANJA_LADDER, hanjaEntries, masteredHanjaCount, type HanjaCharacter } from '@/lib/hanja'
+import { HANJA_CHARACTERS as characters } from '@/lib/hanja-corpus'
+import { HANJA_LADDER, hanjaEntries, masteredHanjaCount } from '@/lib/hanja'
 import { loadProgress, masteryLabel } from '@/lib/progress'
 import type { TrackId } from '@/lib/track'
 import { Feed } from '../feed'
@@ -10,7 +10,6 @@ import { Header } from '../header'
 import { HanjaSearch } from './search'
 
 // 이 모듈은 트랙을 고른 뒤에만 로드한다. 외국어 코퍼스·음성은 요구하지 않는다.
-const characters = data.characters as HanjaCharacter[]
 const entries = hanjaEntries(characters)
 
 export function HanjaShell({ onChange }: { onChange: (track: TrackId) => void }) {
