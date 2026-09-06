@@ -5,9 +5,9 @@ import { HANJA_STROKES, HANJA_STROKE_SOURCE, hanjaStrokeData, STROKE_DURATION, S
 
 const g8 = JSON.parse(readFileSync(new URL('../content/hanja/characters/g8.json', import.meta.url), 'utf8'))
 
-test('공식 도해로 대조한 14자만 필순을 제공하고 원문 획수와 일치한다', () => {
-  assert.deepEqual([...HANJA_STROKES.map((d) => d.glyph)].sort(), [...'人一日十大木月二土火山三小水'].sort())
-  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 14)
+test('공식 도해로 대조한 18자만 필순을 제공하고 원문 획수와 일치한다', () => {
+  assert.deepEqual([...HANJA_STROKES.map((d) => d.glyph)].sort(), [...'校敎九兄人一日十大木月二土火山三小水'].sort())
+  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 18)
   for (const data of HANJA_STROKES) {
     const character = g8.characters.find((c: { glyph: string }) => c.glyph === data.glyph)
     assert.ok(character)
