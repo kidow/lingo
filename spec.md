@@ -748,9 +748,23 @@ type Attributes =
     트랙에서 **재인·듣기 칸에만 머문다.** 지시사나 소유사로 한 줄을 열어 둔다 —
     `Cette immunité dure des années.` · `Son adversaire s'assied en face.`
 
-    콘텐츠 전체에서 이 자리가 286개다(`pnpm check`가 센다). 고치려면 성을 아는
-    한정사가 필요한데 `attributes.gender`가 없는 낱말이 그 가운데 248개라 기계로는
-    못 고친다. 새로 넣는 것부터 막는다.
+    **성을 묻지 않는 한정사를 쓴다.** 처음에는 `cet`·`cette`로 고치려 했는데
+    `attributes.gender`가 비어 있는 낱말이 79개라 어느 쪽인지 알 수 없었다.
+    그런데 프랑스어는 모음 앞에서 **여성 명사도 `son`을 받는다**(`son épaule`).
+    소유사(`son`·`mon`·`ton`·`notre`)와 `chaque`·`sans`·`en`은 성을 몰라도
+    쓸 수 있어, 사전을 한 번도 더 묻지 않고 101개를 전부 열었다.
+
+    286개에서 시작해 0이다. `pnpm check`가 센다.
+
+  - **독일어 형용사는 서술·부사 자리에 둔다.** 명사 앞에 서면 반드시 어미가
+    붙어(`täglich` → `tägliche`) 정답이 사라진다. 사전형이 그대로 서는 자리는
+    `Der Pass ist ausländisch.`(서술)이나 `Der Rundgang findet täglich statt.`
+    (부사)뿐이다.
+
+    **여섯은 열지 못한다.** `link`·`recht`·`liebst`·`ehemalig`·`abendlich`·
+    `höchst`는 붙임꼴로만 쓰는 형용사라 서술 자리에 세우면 독일어가 아니거나
+    (`Das Scharnier ist link.`) 뜻이 달라진다(`höchst` = 몹시). 억지로 짜느니
+    남겨 둔다 — 이 여섯은 독일어 트랙에서 재인·듣기 칸에만 머문다.
 
   - **명사·형용사 예문은 낱말을 문장 첫머리에 두지 않는다.** 정답은 소문자인데
     문장 첫 글자는 대문자라 `Инспекция` ≠ `инспекция`가 된다. 앞에 부사구를 두어
