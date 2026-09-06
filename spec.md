@@ -87,7 +87,7 @@
 | JLPT | 일본어 | `N5`~`N1` |
 | HSK | 중국어 | `1`~`6` · `7-9` (7~9급은 한 묶음이다) |
 | TOCFL | 중국어(번체) | `準備1`·`準備2`·`L1`~`L5` |
-| DELE | 스페인어 | **비어 있다** — 낱말별 등급을 담은 공개 목록이 없다 |
+| DELE | 스페인어 | **비어 있다** — 전량 목록이 §7 기준을 통과하지 못한다 |
 | DELF | 프랑스어 | CEFR `A1`~`C2` (FLELex/Beacco) |
 | TELC | 독일어 | CEFR `A1`~`B1` (Goethe 목록이 B1까지다) |
 | TORFL | 러시아어 | CEFR `A1`~`B2` (ros-edu.ru의 ТРКИ 최소치가 B2까지다) |
@@ -1244,11 +1244,30 @@ N3인데 `実験室`은 없다. 외래어도 `パン`·`パソコン`은 있고 
 TSL은 CC BY-SA 4.0이므로 출처를 밝힌다 — Browne, C., Culligan, B. (2013).
 *The TOEIC Service List*. www.newgeneralservicelist.com
 
-유럽 세 언어 중 **스페인어만** CEFR 등급이 안 붙는다. Instituto Cervantes의 PCIC는
-`cvc.cervantes.es`가 robots.txt로 전체 크롤링을 막고(`Disallow: /`), 같은 계열의
-ELELex(CEFRLex 프로젝트)는 등급별 빈도 **분포**만 준다 — 프랑스어의 FLELex와 달리
-단일 등급으로 정리한 Beacco 버전이 없어서, 등급 하나를 고르려면 우리가 추정해야
-한다. 맞추려고 지어내지 않는다 — 없으면 그 카드에 레벨 줄이 안 나온다.
+유럽 세 언어 중 **스페인어만** CEFR 등급이 안 붙는다. 목록이 없어서가 아니다 —
+낱말마다 A1~C2를 적은 공식 자료는 있다. **전량을 우리 기준으로 받을 길이 없다.**
+
+Instituto Cervantes의 PCIC는 `cvc.cervantes.es`가 robots.txt로 전체 크롤링을
+막는다(`Disallow: /`). 러시아어를 ros-edu.ru에서 받은 근거가 robots였으므로 같은
+자를 여기에도 댄다. 같은 계열의 ELELex(CEFRLex 프로젝트)는 등급별 빈도 **분포**만
+준다 — 프랑스어의 FLELex와 달리 단일 등급으로 정리한 Beacco 버전이 없어서, 등급
+하나를 고르려면 우리가 추정해야 한다. iRead4Skills의 `Easy`·`Plain`도 A1~B1에
+**대략 대응**한다고만 적혀 있어 같은 자리다.
+
+**GEOLEXI는 규정이 아니라 양에서 막힌다.** Cervantes와 UNED의 공개 검색으로
+(`POST geolexi.cervantes.es/geolexiPHP.php`) PCIC 등급을 낱말마다 돌려주고
+robots는 걸리지 않는다. 그런데 전체가 1,428개다 — 우리 스페인어 표기 4,700여 개가
+전부 맞아떨어져도 30%가 천장이다. 실제로 재 보니 표본 150개에서 한 낱말짜리는
+11.3%, 여러 낱말짜리까지 넣으면 2.7%가 등급을 받았다. 콘텐츠 전체로는 **7%
+언저리**다 — DELF 47.9% · JLPT 46.2% · TORFL 38.7%와 같은 표에 놓을 수 없다.
+
+받는다 해도 **등급이 낱말이 아니라 뜻에 붙어 있다.** `trampa`는 B2로 오지만 그
+뜻은 "속임수"고 우리 개념은 덫이다 — `Bank`(벤치/은행)와 같은 함정인데, PCIC는 한
+낱말을 뜻마다 다른 등급에 놓아 더 자주 걸린다. 조회 쪽 함정도 하나 있다. 결과가
+없으면 `termino: "errorBD"` 한 줄이 **HTTP 200으로** 온다.
+
+조사 원문은 [docs/dele-vocabulary-research.md](docs/dele-vocabulary-research.md)에
+있다. 맞추려고 지어내지 않는다 — 없으면 그 카드에 레벨 줄이 안 나온다.
 
 **러시아어는 ros-edu.ru에서 받는다.** ТРКИ 어휘 최소치를 A1~B2 네 등급으로 싣고,
 목록 화면이 쓰는 `POST /380`이 그대로 JSON을 준다. robots.txt가 막는 것은

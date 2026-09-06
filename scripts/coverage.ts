@@ -295,7 +295,8 @@ function tagged() {
       `  ${label.padEnd(12)} ${String(has).padStart(5)}/${String(all).padStart(5)}  ${pct(has, all)}${tail}`,
     )
   }
-  console.log(`  ${'DELE'.padEnd(12)} ${'—'.padStart(11)}  낱말별 등급을 담은 공개 목록이 없다`)
+  // 목록이 없는 것이 아니라 전량을 받을 길이 없다. 무엇이 막는지는 spec.md §7에 적었다
+  console.log(`  ${'DELE'.padEnd(12)} ${'—'.padStart(11)}  전량 목록이 §7 기준을 통과하지 못한다`)
   console.log(
     `\n  독일어가 낮은 것은 덜 채워서가 아니다 — Goethe 목록이 B1까지라\n` +
       `  B2 이상 낱말은 붙을 자리가 없다 (spec.md §7)`,
