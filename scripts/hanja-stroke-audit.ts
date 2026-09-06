@@ -4,16 +4,17 @@ import { readFile, readdir } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { HANJA_STROKES } from '../lib/hanja-strokes.ts'
+import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
 
 export const CANDIDATE_SOURCE = {
   url: 'https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt',
   sha256: '7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e',
-  license: 'Arphic Public License; candidates are not bundled in the application',
+  license: 'Arphic Public License; reviewed subset and license in public/hanja-strokes/',
 } as const
 
 type Character = { glyph: string; strokes: number; readingGrade: string }
 type Candidate = { character: string; strokes: string[]; medians: number[][][] }
-type Verified = { glyph: string; paths: readonly string[]; sourceImage: string; sourceRow: number }
+type Verified = { glyph: string; paths: readonly string[]; sourceImage: string; sourceRow: number; geometrySource?: string }
 
 export function parseCandidates(bytes: Uint8Array): Candidate[] {
   if (createHash('sha256').update(bytes).digest('hex') !== CANDIDATE_SOURCE.sha256) {
@@ -43,15 +44,21 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
       && Array.isArray(candidate.medians) && candidate.medians.length === candidate.strokes.length
       && candidate.medians.every((points) => Array.isArray(points) && points.length >= 2
         && points.every((point) => Array.isArray(point) && point.length === 2 && point.every(Number.isFinite)))
+    const reviewedCandidate = review?.geometrySource === CANDIDATE_SOURCE.sha256
+    if (review?.geometrySource && (!reviewedCandidate || !valid
+      || JSON.stringify(review.paths) !== JSON.stringify(normalizeMedians(candidate.medians)))) {
+      throw new Error(`Reviewed geometry mismatch: ${character.glyph}`)
+    }
     const candidateStatus = !candidate ? 'missing' : !valid ? 'invalid'
-      : candidate.strokes.length !== character.strokes ? 'count-mismatch' : 'needs-official-review'
+      : candidate.strokes.length !== character.strokes ? 'count-mismatch'
+      : reviewedCandidate ? 'verified' : 'needs-official-review'
     return {
       glyph: character.glyph,
       grade: character.readingGrade,
       expectedStrokes: character.strokes,
       candidateStrokes: candidate?.strokes?.length ?? null,
       candidateStatus,
-      // Approved paths remain our independently reviewed paths, never the candidate's paths.
+      // Only the explicit official-review registry permits playback.
       playback: review ? 'verified' : 'unavailable',
       evidence: review ? { image: review.sourceImage, row: review.sourceRow } : null,
     }
