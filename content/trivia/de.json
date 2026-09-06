@@ -16,15 +16,15 @@
     },
     {
       "id": "v2-rule",
-      "question": "독일어 어순의 핵심 규칙 V2는 무엇인가요?",
+      "question": "Heute lese ich ein Buch 같은 독립 평서 주절에서 V2는 무엇을 뜻하나요?",
       "choices": [
-        "정동사가 항상 두 번째 자리",
-        "동사가 항상 문장 끝",
-        "주어가 항상 첫 자리",
-        "목적어가 동사 앞"
+        "정동사가 두 번째 문장 성분 자리에 온다",
+        "정동사가 두 번째 글자에 온다",
+        "정동사가 언제나 문장 끝에 온다",
+        "동사를 두 번 반복한다"
       ],
-      "answer": "정동사가 항상 두 번째 자리",
-      "note": "Heute lese ich ein Buch처럼 앞에 무엇이 오든 동사는 둘째 자리를 지킵니다.",
+      "answer": "정동사가 두 번째 문장 성분 자리에 온다",
+      "note": "두 번째 자리는 단어 수가 아니라 문장 성분의 자리입니다. 의문문·명령문·종속절까지 모두 이 어순을 따른다는 뜻은 아닙니다.",
       "source": "독일어_특징"
     },
     {
@@ -68,15 +68,15 @@
     },
     {
       "id": "swiss-german",
-      "question": "스위스에서 일상 대화에 쓰는 말은?",
+      "question": "스위스의 독일어권 지역에서 일상 대화에 흔히 쓰는 말은?",
       "choices": [
         "Schweizerdeutsch",
-        "표준 독일어 그대로",
-        "프랑스어",
-        "오스트리아 독일어"
+        "프랑스어만",
+        "이탈리아어만",
+        "라틴어"
       ],
       "answer": "Schweizerdeutsch",
-      "note": "외국인과 말할 때는 Hochdeutsch로 바꿔 줍니다. 옆 사람들끼리 하는 대화는 못 알아들을 수 있습니다.",
+      "note": "스위스 독일어 방언들을 가리킵니다. 스위스 전체의 언어가 같지는 않으며, 표준 독일어로 전환하는지는 상대와 상황에 따라 다릅니다.",
       "source": "독일어_특징"
     },
     {
@@ -107,15 +107,15 @@
     },
     {
       "id": "maedchen-neuter",
-      "question": "「소녀」를 뜻하는 Mädchen이 중성인 이유는?",
+      "question": "Mädchen이 중성인 이유는?",
       "choices": [
-        "-chen으로 끝나는 명사는 무조건 중성이라서",
-        "어린이는 성이 없어서",
-        "외래어라서",
-        "복합어라서"
+        "축소 접미사 -chen이 붙은 명사이기 때문에",
+        "사람을 뜻하는 명사는 모두 중성이기 때문에",
+        "두 음절 명사는 모두 중성이기 때문에",
+        "복수 명사이기 때문에"
       ],
-      "answer": "-chen으로 끝나는 명사는 무조건 중성이라서",
-      "note": "-chen·-lein은 「작은 ~」을 뜻하는 축소어미이고 뜻과 무관하게 성을 중성으로 만듭니다.",
+      "answer": "축소 접미사 -chen이 붙은 명사이기 때문에",
+      "note": "축소 접미사 -chen·-lein으로 만든 명사는 중성입니다. der Kuchen처럼 철자만 chen으로 끝나는 모든 명사에 적용하는 규칙은 아닙니다.",
       "source": "독일어_특징"
     },
     {
@@ -432,15 +432,15 @@
     },
     {
       "id": "long-short-vowel",
-      "question": "독일어에서 모음이 짧아지는 조건은?",
+      "question": "Bett의 tt가 앞 모음 e의 길이에 주는 표기상의 단서는?",
       "choices": [
-        "뒤에 자음이 둘 이상 올 때",
-        "뒤에 자음이 하나일 때",
-        "뒤에 h가 올 때",
-        "같은 모음이 겹칠 때"
+        "앞 모음이 짧다는 것",
+        "앞 모음이 반드시 길다는 것",
+        "e가 발음되지 않는다는 것",
+        "e가 이중모음이라는 것"
       ],
-      "answer": "뒤에 자음이 둘 이상 올 때",
-      "note": "Bett은 짧고 Weg은 깁니다. 모음+h(Bahn)와 겹모음(See)도 장모음 신호입니다.",
+      "answer": "앞 모음이 짧다는 것",
+      "note": "Bett의 모음은 짧습니다. 중복 자음은 중요한 단서이지만 서로 다른 자음이 둘 이상 이어지는 모든 단어의 모음이 짧다는 뜻은 아닙니다.",
       "source": "독일어_문자"
     },
     {
@@ -757,15 +757,15 @@
     },
     {
       "id": "plural-article-de",
-      "question": "복수형 명사의 정관사는?",
+      "question": "복수 주격 명사 앞에 쓰는 정관사는?",
       "choices": [
-        "성과 무관하게 항상 die",
-        "원래 성을 그대로 쓴다",
-        "항상 der",
-        "복수에는 관사가 없다"
+        "die",
+        "der",
+        "das",
+        "den"
       ],
-      "answer": "성과 무관하게 항상 die",
-      "note": "der Hund → die Hunde, das Kind → die Kinder입니다.",
+      "answer": "die",
+      "note": "주격 복수는 성에 관계없이 die입니다. 다른 격에서는 복수 여격 den, 생격 der처럼 형태가 달라집니다.",
       "source": "독일어_명사"
     },
     {
@@ -1069,15 +1069,15 @@
     },
     {
       "id": "was-fuer-eins",
-      "question": "was für ein에서 명사를 생략하면 ein은?",
+      "question": "중성 주격에서 Was für ein Buch?의 Buch를 생략한 일상적인 표현은?",
       "choices": [
-        "eins가 된다",
-        "ein 그대로",
-        "eine가 된다",
-        "사라진다"
+        "Was für eins?",
+        "Was für einer?",
+        "Was für eine?",
+        "Was für einen?"
       ],
-      "answer": "eins가 된다",
-      "note": "ein-Wörter가 명사 없이 홀로 설 때 -s를 붙이는 규칙입니다(meins와 같은 패턴). welches는 그대로입니다.",
+      "answer": "Was für eins?",
+      "note": "중성 주격에서는 eins로 쓸 수 있습니다. 남성·여성 및 다른 격에서는 형태가 달라지므로 명사를 생략하면 항상 -s를 붙인다고 외우지 않습니다.",
       "source": "독일어_의문관사"
     },
     {
@@ -1303,15 +1303,15 @@
     },
     {
       "id": "denen-dative-plural",
-      "question": "지시·관계대명사에서 정관사와 형태가 다른 자리는?",
+      "question": "복수 여격에서 정관사 den에 대응하는 관계대명사는?",
       "choices": [
-        "Dativ 복수 — denen",
-        "Nominativ 남성",
-        "Akkusativ 여성",
-        "Genitiv 중성"
+        "denen",
+        "dessen",
+        "deren",
+        "das"
       ],
-      "answer": "Dativ 복수 — denen",
-      "note": "관사는 den이지만 대명사는 denen입니다.",
+      "answer": "denen",
+      "note": "복수 여격 관계대명사는 denen입니다. 생격 dessen·deren도 정관사 des·der와 다르므로 여격 복수만 다른 것은 아닙니다.",
       "source": "독일어_대명사"
     },
     {
@@ -1355,15 +1355,15 @@
     },
     {
       "id": "es-obligatory",
-      "question": "Heute regnet es에서 es가 남아 있는 이유는?",
+      "question": "Heute regnet es에서 es를 쓰는 이유는?",
       "choices": [
-        "V2 법칙 때문에 주어 자리가 비면 안 돼서",
-        "heute가 주어가 아니라서",
-        "regnen이 타동사라서",
-        "es가 heute를 가리켜서"
+        "regnen을 비인칭 날씨 동사로 쓰기 때문에",
+        "V2 문장에는 반드시 es가 필요하기 때문에",
+        "Heute가 목적어이기 때문에",
+        "비가 복수 명사이기 때문에"
       ],
-      "answer": "V2 법칙 때문에 주어 자리가 비면 안 돼서",
-      "note": "1번 자리를 다른 요소가 채워도 형식 주어는 사라지지 않습니다.",
+      "answer": "regnen을 비인칭 날씨 동사로 쓰기 때문에",
+      "note": "이 용법의 regnen은 형식 주어 es와 결합합니다. V2 자체가 es를 요구하는 것이 아니며, weil es regnet 같은 종속절에도 es가 있습니다.",
       "source": "독일어_대명사"
     },
     {
@@ -1381,15 +1381,15 @@
     },
     {
       "id": "etwas-adjective",
-      "question": "etwas 뒤에 오는 형용사의 어미는?",
+      "question": "주격·대격에서 etwas 뒤에 중성 명사처럼 쓰는 형용사의 어미는?",
       "choices": [
-        "언제나 -es",
-        "성에 따라 갈린다",
-        "어미가 붙지 않는다",
-        "언제나 -en"
+        "-es",
+        "-er",
+        "-e",
+        "어미 없음"
       ],
-      "answer": "언제나 -es",
-      "note": "etwas Neues·nichts Interessantes입니다. 무관사 규칙이 적용돼 중성으로 고정됩니다.",
+      "answer": "-es",
+      "note": "etwas Neues·etwas Interessantes처럼 씁니다. 격이 달라지면 zu etwas Neuem처럼 -em도 쓰이므로 언제나 -es는 아닙니다.",
       "source": "독일어_대명사"
     },
     {
@@ -1693,28 +1693,28 @@
     },
     {
       "id": "definite-article-adjective",
-      "question": "정관사 뒤 형용사가 -e가 되는 자리는?",
+      "question": "정관사 뒤 형용사가 -e로 끝나는 기본 자리는?",
       "choices": [
-        "Nominativ 전부와 Akkusativ 여성·중성",
-        "Dativ 전부",
-        "Genitiv 전부",
-        "복수 전부"
+        "단수 주격 전체와 단수 대격 여성·중성",
+        "복수 주격 전체",
+        "여격 전체",
+        "생격 전체"
       ],
-      "answer": "Nominativ 전부와 Akkusativ 여성·중성",
-      "note": "나머지(Akkusativ 남성·복수·Dativ·Genitiv)는 전부 -en입니다.",
+      "answer": "단수 주격 전체와 단수 대격 여성·중성",
+      "note": "der gute Mann, die gute Frau, das gute Kind처럼 단수 주격은 -e입니다. 복수 주격 die guten Leute를 포함한 나머지 기본 자리는 -en입니다.",
       "source": "독일어_형용사"
     },
     {
       "id": "strong-declension",
-      "question": "관사 없이 형용사만 쓸 때 어미는?",
+      "question": "관사 없는 형용사의 강변화 어미에 대한 설명은?",
       "choices": [
-        "정관사 어미를 그대로 흉내낸다",
-        "항상 -e",
-        "항상 -en",
-        "붙지 않는다"
+        "정관사 어미와 대체로 대응하지만 차이도 있다",
+        "정관사 어미와 예외 없이 같다",
+        "모든 격에서 -e만 쓴다",
+        "모든 격에서 어미를 생략한다"
       ],
-      "answer": "정관사 어미를 그대로 흉내낸다",
-      "note": "guten Wein·frisches Brot처럼 형용사가 관사 자리를 대신 채웁니다.",
+      "answer": "정관사 어미와 대체로 대응하지만 차이도 있다",
+      "note": "형용사가 성·수·격 정보를 나타냅니다. 남성·중성 생격의 guten Weines·frischen Brotes처럼 -en을 쓰는 점은 관사 des의 -es와 다릅니다.",
       "source": "독일어_형용사"
     },
     {
@@ -2889,15 +2889,15 @@
     },
     {
       "id": "staubsaugen",
-      "question": "staubsaugen(청소기 돌리다)처럼 명사+동사로 만든 복합동사는?",
+      "question": "「청소기를 돌리다」의 staubsaugen과 Staub saugen에 대한 설명은?",
       "choices": [
-        "분리동사처럼 앞부분이 문장 끝으로 간다",
-        "분리되지 않고 통째로 움직인다",
-        "항상 조동사와 함께 쓴다",
-        "명령형으로만 쓴다"
+        "붙여 쓴 동사와 명사+동사 구문을 구분해야 한다",
+        "명사+동사는 예외 없이 분리동사다",
+        "붙여 쓰면 과거형을 만들 수 없다",
+        "띄어 쓰면 항상 수동태다"
       ],
-      "answer": "분리동사처럼 앞부분이 문장 끝으로 간다",
-      "note": "Ich sauge heute Staub. 앞부분에 강세가 있으면 분리입니다(STAUBsaugen, TEILnehmen).",
+      "answer": "붙여 쓴 동사와 명사+동사 구문을 구분해야 한다",
+      "note": "Ich staubsauge와 Ich sauge Staub처럼 표현할 수 있습니다. 명사+동사로 만들어졌다는 이유만으로 모든 합성동사를 분리형으로 분류하지 않습니다.",
       "source": "독일어_복합어"
     },
     {
@@ -3162,15 +3162,15 @@
     },
     {
       "id": "email-lowercase",
-      "question": "독일어 편지에서 첫인사 뒤 콤마 다음 문장은?",
+      "question": "Sehr geehrter Herr Schmidt, 다음에 이어지는 ich schreibe…의 ich는?",
       "choices": [
         "소문자로 시작한다",
-        "대문자로 시작한다",
-        "줄을 비우고 대문자로 쓴다",
-        "규칙이 없다"
+        "반드시 대문자 Ich로 쓴다",
+        "모두 대문자 ICH로 쓴다",
+        "대명사를 생략해야 한다"
       ],
       "answer": "소문자로 시작한다",
-      "note": "Sehr geehrter Herr Schmidt, ich schreibe… 처럼 ich가 소문자입니다.",
+      "note": "쉼표 뒤에서 문장을 이어 쓰므로 ich는 소문자입니다. 명사·고유명사·존칭 Sie 등 원래 대문자를 쓰는 단어까지 소문자로 바꾸지는 않습니다.",
       "source": "독일어_존댓말과_격식체"
     },
     {
