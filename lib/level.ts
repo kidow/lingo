@@ -19,7 +19,7 @@ export function levelOf(word: Word, track?: TrackId): string | undefined {
   if ('jlpt' in attributes && attributes.jlpt) return attributes.jlpt
   if (track === 'tocfl')
     return 'tocfl' in attributes && attributes.tocfl ? `TOCFL ${attributes.tocfl}` : undefined
-  // HSK 3.0의 7~9급은 나뉘지 않은 한 묶음이다. 데이터가 7로 오므로 여기서 편다
+  // HSK의 7~9급은 나뉘지 않은 한 묶음이다(2026 대강도 같다). 데이터가 7로 오므로 여기서 편다
   if ('hsk' in attributes && attributes.hsk)
     return `HSK ${attributes.hsk >= 7 ? '7-9' : attributes.hsk}`
   if ('cefr' in attributes && attributes.cefr) return attributes.cefr

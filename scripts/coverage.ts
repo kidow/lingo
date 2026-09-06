@@ -14,7 +14,7 @@
  * 잴 수 있는 것은 **낱말 목록이 공개된 시험뿐**이다.
  *
  *   TSL   TOEIC Service List 1,250개 — 표제어 목록이 CSV로 있다
- *   HSK   HSK 3.0 — complete-hsk-vocabulary (MIT)
+ *   HSK   2026 시험 대강 — complete-hsk-vocabulary (MIT)
  *   TORFL ТРКИ 어휘 최소치 A1~B2 — ros-edu.ru가 JSON으로 내놓는다 (scripts/torfl.ts)
  *
  * JLPT·CEFR은 목록 대비 비율을 못 낸다. JMdict의 JLPT 태그는 낱말에 붙어
@@ -166,11 +166,12 @@ async function tsl() {
 async function hsk() {
   const data = (await (await fetch(HSK_URL)).json()) as Array<{ s?: string; l?: string[] }>
 
-  // l은 ["n7"] 또는 ["t7","n6"] 꼴이다. n이 HSK 3.0 급이고 t는 구 등급이다
+  // l은 ["t7"] 또는 ["t7","n6"] 꼴이다. t가 2026 시험 대강, n이 2021년 HSK 3.0,
+  // o가 HSK 2.0이다 — 어느 것이 최신인지는 급별 낱말 수로 갈랐다 (scripts/define.ts)
   const level = new Map<string, number>()
   const total = new Map<number, number>()
   for (const entry of data) {
-    const tag = (entry.l ?? []).find((x) => /^n\d$/.test(x))
+    const tag = (entry.l ?? []).find((x) => /^t\d$/.test(x))
     if (!tag || !entry.s) continue
     const grade = Number(tag[1])
     level.set(entry.s, grade)
@@ -184,7 +185,7 @@ async function hsk() {
   for (const [word, grade] of level)
     if (mine.has(word)) covered.set(grade, (covered.get(grade) ?? 0) + 1)
 
-  console.log(`\nHSK 3.0 — 급별\n${line(46)}`)
+  console.log(`\nHSK (2026 대강) — 급별\n${line(46)}`)
   let sumTotal = 0
   let sumCovered = 0
   for (const grade of [...total.keys()].sort((a, b) => a - b)) {

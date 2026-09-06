@@ -13,7 +13,7 @@
  * 비면 그 카드에 레벨 줄이 안 나온다 (§5).
  *
  *   JLPT  Jisho(JMdict). 구 출제기준 기반이라 가타카나 외래어가 빠져 있다
- *   HSK   complete-hsk-vocabulary (MIT). HSK 3.0 기준
+ *   HSK   complete-hsk-vocabulary (MIT). 2026 시험 대강 기준
  *   CEFR  독일어는 Goethe-Institut 공식 Wortliste(A1~B1). 프랑스어는 FLELex/Beacco
  *         (UCLouvain CENTAL, CC BY-NC-SA 4.0) — A1~C2 여섯 등급 다 낸다
  *   TSL   TOEIC Service List (Browne & Culligan, CC BY-SA 4.0). 등급이 아니라 순위다

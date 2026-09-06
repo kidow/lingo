@@ -23,7 +23,7 @@ export type Category = 'noun' | 'verb' | 'adjective' | 'scene'
  */
 export type Attributes =
   | { jlpt?: 'N5' | 'N4' | 'N3' | 'N2' | 'N1'; pitchAccent?: number } // ja
-  // hsk 7은 HSK 3.0의 7~9급 묶음이다. 8·9는 따로 없다 (lib/level.ts가 편다)
+  // hsk 7은 7~9급 묶음이다. 8·9는 따로 없다 (lib/level.ts가 편다)
   // tocfl은 별개 시험이다 — 八千詞表는 준비급을 둘로 나눠 싣어서 하나로 접지 않는다 (scripts/tocfl.ts)
   | {
       hsk?: 1 | 2 | 3 | 4 | 5 | 6 | 7
