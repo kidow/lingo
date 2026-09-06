@@ -102,8 +102,8 @@ function strategyFor(lang: Language, track?: TrackId): LangStrategy {
  * 그 언어(또는 트랙)에서 정답으로 쓰는 문자열. 없으면 출제할 수 없다.
  *
  * `track`을 생략하면 언어의 기본값이다 — 발음 생성처럼 트랙을 모르는
- * 자리(scripts/audio.ts)는 항상 이 기본값을 쓴다. 간체든 번체든 읽는
- * 소리가 같아서, 트랙별로 다시 녹음할 이유가 없다(scripts/tocfl.ts).
+ * 자리(scripts/audio.ts)는 항상 이 기본값을 쓴다. 현재 HSK와 TOCFL은
+ * zh 음성을 공유한다. 이는 구현 선택이며 지역별 독음이 모두 같다는 뜻은 아니다.
  */
 export function answerOf(word: Word, lang: Language, track?: TrackId): string | undefined {
   return word[strategyFor(lang, track).answer]

@@ -16,14 +16,15 @@ export type Category = 'noun' | 'verb' | 'adjective' | 'scene'
  *
  * 레벨 필드(`jlpt` · `hsk` · `cefr` · `tsl`)는 카드 좌하단에 그대로 표시된다 (spec.md §5).
  * 시험마다 등급 체계가 다르므로 하나로 합치지 않는다 — JLPT는 N5~N1,
- * HSK는 1~6, 유럽 시험은 CEFR A1~C2다.
+ * HSK 어휘 자료는 1~6 및 7~9급 묶음, CEFR은 A1~C2를 쓴다.
+ * 어휘별 출처의 분류와 시험 전체의 등급 체계는 구분한다.
  *
  * `tsl`만 등급이 아니라 **순위**다. TOEIC은 공식 어휘 등급이 없어 대신
  * TOEIC Service List의 빈도 순위(1~1250)를 쓴다. 작을수록 자주 나온다.
  */
 export type Attributes =
   | { jlpt?: 'N5' | 'N4' | 'N3' | 'N2' | 'N1'; pitchAccent?: number } // ja
-  // hsk 7은 7~9급 묶음이다. 8·9는 따로 없다 (lib/level.ts가 편다)
+  // 어휘 자료의 7~9급 묶음을 hsk: 7로 저장한다. 시험의 8·9급이 없다는 뜻은 아니다
   // tocfl은 별개 시험이다 — 八千詞表는 준비급을 둘로 나눠 싣어서 하나로 접지 않는다 (scripts/tocfl.ts)
   | {
       hsk?: 1 | 2 | 3 | 4 | 5 | 6 | 7
@@ -32,8 +33,8 @@ export type Attributes =
     } // zh
   | { cefr?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'; article?: string; gender?: 'm' | 'f' | 'n' } // es · fr · de
   | { tsl?: number } // en
-  // ru: TORFL(ТРКИ)은 공식 어휘 목록을 기계가 읽을 수 있게 내놓지 않는다.
-  // 등급을 지어내지 않으므로 지금은 비어 있다 (spec.md §7)
+  // ru: 현재 수집은 ros-edu.ru의 A1~B2 어휘 최소치다 (scripts/torfl.ts).
+  // 수집 범위가 시험의 전체 등급 범위를 뜻하지는 않는다 (spec.md §7)
   | { torfl?: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2' } // ru
 
 export type Word = {
@@ -45,8 +46,8 @@ export type Word = {
   romanization?: string
   /**
    * 번체 표기. zh만 갖는다 — `term`은 간체로 고정하고(§4) 이 자리에 대만 번체를
-   * 따로 둔다. 발음은 같아서(자소만 다르다) 별도 음성이 없다 — 어휘 자체가
-   * 兩岸에서 갈리는 자리만 예외다 (scripts/tocfl.ts).
+   * 따로 둔다. 현재 앱은 zh 음성을 공유한다. 간체·번체의 변환과 대륙·대만의
+   * 어휘·독음 차이는 별개이며, 지역별 발음을 모두 구현했다는 뜻은 아니다.
    */
   traditional?: string
   /**

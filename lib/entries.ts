@@ -50,11 +50,10 @@ export function entriesFor(lang: Language, concepts: Concept[], track?: TrackId)
 /**
  * 그 **트랙**에서 출제 가능한 목록.
  *
- * 여섯 트랙은 언어만 보면 되는데 TOEIC과 TOCFL은 한 겹 더 거른다. TOEIC은
- * TOEIC Service List에 있는 단어만 낸다 — `cat`·`rice`는 JLPT N5·HSK 1급으로는
- * 제값을 하지만 TOEIC 시험에는 나오지 않는다. TOCFL도 같은 이유다 — 八千詞表에
- * 없는 그림 명사(체크인 카운터 같은)까지 다 내면 시험에 안 나오는 낱말로 채워진다.
- * 개념을 지우는 게 아니라 이 트랙에서만 빼는 것이다.
+ * TOEIC과 TOCFL은 앱이 채택한 어휘 목록으로 한 겹 더 거른다. TOEIC은
+ * TOEIC Service List, TOCFL은 八千詞表의 속성이 있는 항목만 낸다.
+ * 목록에 없다는 것은 이 앱의 선택 범위에서 빠진다는 뜻이며, 실제 시험에
+ * 출제되지 않는다는 뜻은 아니다. 개념은 다른 트랙에서도 계속 공유한다.
  *
  * 규칙이 여기 하나만 있어야 앱과 `pnpm check`와 `/debug`가 같은 수를 센다.
  */

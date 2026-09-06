@@ -39,7 +39,7 @@ export type HanjaTrack = { id: 'hanja'; label: string; flag: string; language: n
 export type Track = LanguageTrack | HanjaTrack
 
 export const LANGUAGE_TRACKS: LanguageTrack[] = [
-  // TOEIC은 미국 ETS가 내고 발음도 미국식이라 성조기를 붙인다
+  // 미국 ETS가 개발한 시험의 보조 표지다. TOEIC 듣기는 여러 영어권 발음을 사용한다
   { id: 'toeic', label: 'TOEIC', flag: '🇺🇸', language: 'en' },
   { id: 'jlpt', label: 'JLPT', flag: '🇯🇵', language: 'ja' },
   { id: 'hsk', label: 'HSK', flag: '🇨🇳', language: 'zh' },
@@ -48,7 +48,7 @@ export const LANGUAGE_TRACKS: LanguageTrack[] = [
   // tocfl 필터가 가른다. 대만 시험이라 국기도 따로다
   { id: 'tocfl', label: 'TOCFL', flag: '🇹🇼', language: 'zh' },
   { id: 'dele', label: 'DELE', flag: '🇪🇸', language: 'es' },
-  { id: 'delf', label: 'DELF', flag: '🇫🇷', language: 'fr' },
+  { id: 'delf', label: 'DELF·DALF', flag: '🇫🇷', language: 'fr' },
   // telc 공식 표기는 소문자지만 나머지 다섯이 두문자어라 혼자 소문자면 오타로 읽힌다
   { id: 'telc', label: 'TELC', flag: '🇩🇪', language: 'de' },
   // TORFL은 러시아어 능력 시험(ТРКИ)의 영어 표기다
@@ -58,7 +58,7 @@ export const LANGUAGE_TRACKS: LanguageTrack[] = [
 export const LANGUAGE_TRACK_IDS = LANGUAGE_TRACKS.map((track) => track.id)
 export const TRACKS: Track[] = [
   ...LANGUAGE_TRACKS,
-  { id: 'hanja', label: '한능검', flag: '🇰🇷', language: null },
+  { id: 'hanja', label: '한자능력검정', flag: '🇰🇷', language: null },
 ]
 export const TRACK_IDS = TRACKS.map((track) => track.id)
 

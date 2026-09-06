@@ -4,13 +4,15 @@ import test from 'node:test'
 import { HANJA_STROKES, HANJA_STROKE_SOURCE, hanjaStrokeData, STROKE_DURATION, STROKE_GAP, strokeDuration, strokeNumberAt } from './hanja-strokes.ts'
 
 const g8 = JSON.parse(readFileSync(new URL('../content/hanja/characters/g8.json', import.meta.url), 'utf8'))
+const g7II = JSON.parse(readFileSync(new URL('../content/hanja/characters/g7-2.json', import.meta.url), 'utf8'))
+const characters = [...g8.characters, ...g7II.characters]
 
-test('8급은 공식 도해로 대조한 49자만 제공하고 萬은 보류한다', () => {
+test('8급 49자와 7급Ⅱ 50자를 제공하고 萬은 보류한다', () => {
   assert.deepEqual([...HANJA_STROKES.map((d) => d.glyph)].sort(),
-    g8.characters.filter((c: { glyph: string }) => c.glyph !== '萬').map((c: { glyph: string }) => c.glyph).sort())
-  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 49)
+    characters.filter((c: { glyph: string }) => c.glyph !== '萬').map((c: { glyph: string }) => c.glyph).sort())
+  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 99)
   for (const data of HANJA_STROKES) {
-    const character = g8.characters.find((c: { glyph: string }) => c.glyph === data.glyph)
+    const character = characters.find((c: { glyph: string }) => c.glyph === data.glyph)
     assert.ok(character)
     assert.equal(data.paths.length, character.strokes, data.glyph)
     assert.equal(hanjaStrokeData(character), data)
@@ -25,6 +27,8 @@ test('8급은 공식 도해로 대조한 49자만 제공하고 萬은 보류한�
 })
 
 test('검증되지 않은 한자나 획수가 달라진 자형에 필순을 추정하지 않는다', () => {
+  assert.equal(hanjaStrokeData({ glyph: '歌', strokes: 14 }), null)
+  assert.equal(hanjaStrokeData({ glyph: '毎', strokes: 7 }), null)
   assert.equal(hanjaStrokeData({ glyph: '漢', strokes: 15 }), null)
   assert.equal(hanjaStrokeData({ glyph: '萬', strokes: 13 }), null)
   assert.equal(hanjaStrokeData({ glyph: '萬', strokes: 12 }), null)
