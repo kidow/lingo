@@ -1,7 +1,10 @@
 /** Order checked against the cumulative diagrams in 한국어문회 f37.hwp.
- * Paths are original, simplified centerlines; the source images are not bundled.
+ * Paths are simplified centerlines; imported geometry is separately attributed.
+ * Official source images are not bundled.
  * Never infer unlisted characters from radicals or a foreign stroke-order corpus.
  */
+import reviewedGrade8 from '../public/hanja-strokes/g8-reviewed.json' with { type: 'json' }
+
 export const HANJA_STROKE_SOURCE = {
   title: '필순 정정 및 500자 필순',
   url: 'https://www.hanja.re.kr/kccpt/exam/otherData.do?search_option=subject&search_text=%ED%95%84%EC%88%9C',
@@ -17,11 +20,14 @@ export type HanjaStrokeData = {
   sourceRow: number
   /** Date this entry was visually compared with the official cumulative diagrams. */
   verifiedAt?: string
+  /** SHA-256 of the independently reviewed upstream geometry, if imported. */
+  geometrySource?: string
   /** One SVG path per pen-down stroke, in the observed source order. */
   paths: readonly string[]
 }
 
 export const HANJA_STROKES: readonly HanjaStrokeData[] = [
+  ...reviewedGrade8.characters,
   { glyph: '校', sourceImage: 'BIN0009.gif', sourceRow: 3, verifiedAt: '2026-09-07', paths: [
     'M12 38 L39 38', 'M27 15 L27 87', 'M26 40 Q22 57 10 70', 'M30 49 L40 61',
     'M58 16 L65 24', 'M46 33 L85 33', 'M55 42 Q50 50 44 55', 'M70 42 Q79 47 84 54',

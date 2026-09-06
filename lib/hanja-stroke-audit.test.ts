@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { auditStrokes, parseCandidates } from '../scripts/hanja-stroke-audit.ts'
+import { auditStrokes, parseCandidates, CANDIDATE_SOURCE } from '../scripts/hanja-stroke-audit.ts'
+import { normalizeMedians } from './hanja-stroke-geometry.ts'
 
 const character = { glyph: '山', strokes: 3, readingGrade: '8' }
 const candidate = { character: '山', strokes: ['M0 0 L1 1', 'M1 1 L2 2', 'M2 2 L3 3'],
@@ -29,4 +30,22 @@ test('검증된 자체 경로와 후보의 검토 상태를 별도로 유지한�
   assert.equal(entry.candidateStatus, 'needs-official-review')
   assert.deepEqual(entry.evidence, { image: 'BIN0016.gif', row: 18 })
   assert.throws(() => auditStrokes([{ ...character, strokes: 4 }], [candidate], [verified]), /mismatch/)
+})
+
+test('공식 대조한 후보도 출처 해시와 획 좌표가 달라지면 거부한다', () => {
+  const review = { glyph: '山', paths: normalizeMedians(candidate.medians), sourceImage: 'BIN0016.gif', sourceRow: 18,
+    geometrySource: CANDIDATE_SOURCE.sha256 }
+  const entry = auditStrokes([character], [candidate], [review]).entries[0]
+  assert.equal(entry.candidateStatus, 'verified')
+  assert.equal(entry.playback, 'verified')
+  assert.throws(() => auditStrokes([character], [candidate], [{ ...review, geometrySource: 'changed' }]), /geometry mismatch/)
+  assert.throws(() => auditStrokes([character], [candidate], [{ ...review, paths: ['M0 0', ...review.paths.slice(1)] }]), /geometry mismatch/)
+  assert.throws(() => auditStrokes([character], [], [review]), /geometry mismatch/)
+})
+
+test('중심선 변환은 획 순서와 연결을 유지하고 좌표만 맞춘다', () => {
+  assert.deepEqual(normalizeMedians([[[0, 100], [100, 0]], [[50, 100], [50, 0]]]),
+    ['M10 10 L90 90', 'M50 10 L50 90'])
+  assert.throws(() => normalizeMedians([[[0, 0]]]), /Invalid/)
+  assert.throws(() => normalizeMedians([[[0, 0], [0, 0]]]), /Empty/)
 })

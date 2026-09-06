@@ -5,9 +5,10 @@ import { HANJA_STROKES, HANJA_STROKE_SOURCE, hanjaStrokeData, STROKE_DURATION, S
 
 const g8 = JSON.parse(readFileSync(new URL('../content/hanja/characters/g8.json', import.meta.url), 'utf8'))
 
-test('공식 도해로 대조한 18자만 필순을 제공하고 원문 획수와 일치한다', () => {
-  assert.deepEqual([...HANJA_STROKES.map((d) => d.glyph)].sort(), [...'校敎九兄人一日十大木月二土火山三小水'].sort())
-  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 18)
+test('8급은 공식 도해로 대조한 49자만 제공하고 萬은 보류한다', () => {
+  assert.deepEqual([...HANJA_STROKES.map((d) => d.glyph)].sort(),
+    g8.characters.filter((c: { glyph: string }) => c.glyph !== '萬').map((c: { glyph: string }) => c.glyph).sort())
+  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 49)
   for (const data of HANJA_STROKES) {
     const character = g8.characters.find((c: { glyph: string }) => c.glyph === data.glyph)
     assert.ok(character)
@@ -17,14 +18,16 @@ test('공식 도해로 대조한 18자만 필순을 제공하고 원문 획수�
     assert.ok(data.sourceRow >= 1 && data.sourceRow <= 25)
     for (const path of data.paths) {
       assert.equal((path.match(/M/g) ?? []).length, 1, 'a pen-down stroke must remain connected')
-      assert.ok((path.match(/\d+/g) ?? []).every((n) => Number(n) >= 0 && Number(n) <= 100))
+      assert.ok((path.match(/-?\d+(?:\.\d+)?/g) ?? []).every((n) => Number(n) >= 0 && Number(n) <= 100))
     }
   }
   assert.equal(HANJA_STROKE_SOURCE.sha256, '4e191bbee54edd6db595f16fc83a15b9929eba0e3e01095da1e828c70e10760c')
 })
 
 test('검증되지 않은 한자나 획수가 달라진 자형에 필순을 추정하지 않는다', () => {
-  assert.equal(hanjaStrokeData({ glyph: '韓', strokes: 17 }), null)
+  assert.equal(hanjaStrokeData({ glyph: '漢', strokes: 15 }), null)
+  assert.equal(hanjaStrokeData({ glyph: '萬', strokes: 13 }), null)
+  assert.equal(hanjaStrokeData({ glyph: '萬', strokes: 12 }), null)
   assert.equal(hanjaStrokeData({ glyph: '山', strokes: 4 }), null)
   assert.equal(hanjaStrokeData({ glyph: '⼭', strokes: 3 }), null)
 })
