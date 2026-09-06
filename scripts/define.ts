@@ -25,7 +25,7 @@
  */
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
-import { cachedBytes, readJson, writeJson } from './cache.ts'
+import { readJson, writeJson } from './cache.ts'
 import type { Concept } from '../lib/types.ts'
 
 const UA = { 'User-Agent': 'lingo-content-tool/1.0 (+https://github.com/kidow/lingo)' }
@@ -133,45 +133,29 @@ async function japanese(term: string): Promise<Lookup> {
 /**
  * 중국어 HSK 등급.
  *
- * 출처는 complete-hsk-vocabulary (MIT). HSK는 공식 어휘표가 공개되어 있고
- * 이 데이터셋이 그것을 정리해 둔 것이라 추정이 들어가지 않는다.
+ * 출처는 **출제기관의 대강 표**다 — `scripts/hsk-2026.json`은 공식 PDF에서
+ * 뽑은 생성물이고 `pnpm hsk`가 다시 만든다 (scripts/hsk-syllabus.ts).
+ * 2025-11에 발표하고 2026-07에 시행하는 판이라, 지금 시험을 보는 사람이 받는
+ * 등급이 이것이다.
  *
- * `newest-N`을 쓴다 — **2026년 시험 대강**이다. 2025-11에 발표하고 2026-07에
- * 시행하는 판이라, 지금 시험을 보는 사람이 받는 등급이 이것이다. 같은 데이터에
- * `new-N`(2021년 HSK 3.0)과 `old-N`(HSK 2.0)도 있는데 셋의 등급이 다르다 —
- * `苹果`는 2026에서 1급, 2021에서 3급, 2.0에서 1급이다.
+ * 한때 complete-hsk-vocabulary(MIT)의 `newest-N` 태그를 썼다. 그 데이터는 등급을
+ * **틀리게 주지는 않았다** — 우리 낱말 1,734개를 공식 표와 전수 대조했을 때
+ * 어긋난 것이 0이었고, 데이터셋 10,057개 전체가 공식 표의 부분집합이었다.
+ * 다만 839개를 빠뜨렸고 그중 51개가 우리 콘텐츠였다 — `头痛`·`电子书`·`橙子`·
+ * `肺炎`처럼 등급이 빌 이유가 없는 낱말이다. 그래서 원본으로 옮겼다.
  *
- * 셋을 가른 근거는 급별 낱말 수다. 축약 키만 보고는 어느 것이 최신인지 알 수 없어
- * (`t`가 old라고 적어 둔 자리가 실제로 있었다) 공식 누적 수와 맞춰 확인했다.
- *
- *   o  150·300·599·1200·2498·4998          HSK 2.0 (공식 150·300·600·1200·2500·5000)
- *   n  506·1256·2209·3181·4240·5363·10969  HSK 3.0
- *   t  294·491·978·1950·3497·5181·10057    2026 대강 (공식 300·500·1000·2000·3600·5400·11000)
- *
- * `t`가 공식 표보다 조금 적은 것은 데이터가 표기를 합치기 때문이다. 표의 번호는
- * 같은 낱말을 품사별로 여러 번 싣는다.
- *
- * **2021 등급으로 되돌리지 않는다.** 우리 콘텐츠에서 두 판이 다 아는 낱말
- * 1,692개 가운데 925개(54.7%)가 등급이 다르다 — 1급이 500개에서 300개로 줄어
- * 아래쪽 낱말이 위로 밀렸다(`跑`·`走`·`洗`가 1급에서 2급). 낡은 등급을 보여 주는
- * 것은 빈칸보다 나쁘다.
+ * **판을 섞지 않는다.** 2021년 HSK 3.0과 2026 대강은 같은 낱말에 다른 등급을
+ * 준다 — 두 판이 다 아는 우리 낱말 1,692개 중 925개(54.7%)가 다르고, 1급이
+ * 500개에서 300개로 줄어 `跑`·`走`·`洗`가 1급에서 2급이 됐다. 새 표에 없는
+ * 낱말을 옛 등급으로 메우지 않는다. 시험에서 안 나오는 등급은 빈칸보다 나쁘다.
  */
-const HSK_URL = 'https://raw.githubusercontent.com/drkameleon/complete-hsk-vocabulary/main/complete.min.json'
 let hskTable: Map<string, number> | null = null
 
 async function hskLevels(): Promise<Map<string, number>> {
   if (hskTable) return hskTable
   const table = new Map<string, number>()
-  // min 판은 키가 축약돼 있다 — simplified→s, level→l, newest-3→t3
-  const bytes = await cachedBytes('hsk.json', async () => {
-    const data = await json(HSK_URL)
-    return Buffer.from(JSON.stringify(data))
-  })
-  const data = JSON.parse(bytes.toString('utf8')) as Array<{ s?: string; l?: string[] }> | null
-  for (const entry of data ?? []) {
-    const level = entry.l?.find((l) => /^t[1-9]$/.test(l))?.slice(1)
-    if (entry.s && level) table.set(entry.s, Number(level))
-  }
+  const rows = JSON.parse(readFileSync(join('scripts', 'hsk-2026.json'), 'utf8')) as Record<string, number>
+  for (const [word, level] of Object.entries(rows)) table.set(word, level)
   hskTable = table
   return table
 }

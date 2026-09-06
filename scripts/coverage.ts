@@ -14,7 +14,7 @@
  * 잴 수 있는 것은 **낱말 목록이 공개된 시험뿐**이다.
  *
  *   TSL   TOEIC Service List 1,250개 — 표제어 목록이 CSV로 있다
- *   HSK   2026 시험 대강 — complete-hsk-vocabulary (MIT)
+ *   HSK   2026 시험 대강 — 공식 PDF에서 뽑아 둔다 (scripts/hsk-syllabus.ts)
  *   TORFL ТРКИ 어휘 최소치 A1~B2 — ros-edu.ru가 JSON으로 내놓는다 (scripts/torfl.ts)
  *
  * JLPT·CEFR은 목록 대비 비율을 못 낸다. JMdict의 JLPT 태그는 낱말에 붙어
@@ -28,8 +28,8 @@ import { bare, torflEntries } from './torfl.ts'
 import type { Concept } from '../lib/types.ts'
 
 const TSL_URL = 'https://www.newgeneralservicelist.com/s/TSL_12_stats.csv'
-const HSK_URL =
-  'https://raw.githubusercontent.com/drkameleon/complete-hsk-vocabulary/main/complete.min.json'
+/** 공식 대강에서 뽑은 낱말별 등급. `pnpm hsk`가 만든다 (scripts/hsk-syllabus.ts) */
+const HSK_TABLE = join('scripts', 'hsk-2026.json')
 
 /**
  * `content/`에는 개념 파일이 아닌 것도 있다 — `kana.json`은 가나 표라
@@ -163,18 +163,14 @@ async function tsl() {
   if (wants('tsl')) showSieved('TSL 빠진 낱말 (빈도 순)', missing, haystacks('en'))
 }
 
-async function hsk() {
-  const data = (await (await fetch(HSK_URL)).json()) as Array<{ s?: string; l?: string[] }>
+function hsk() {
+  // 분모도 출제기관의 표에서 온다. 남의 저장소를 쓸 때는 839개가 빠져 있었다
+  const rows = JSON.parse(readFileSync(HSK_TABLE, 'utf8')) as Record<string, number>
 
-  // l은 ["t7"] 또는 ["t7","n6"] 꼴이다. t가 2026 시험 대강, n이 2021년 HSK 3.0,
-  // o가 HSK 2.0이다 — 어느 것이 최신인지는 급별 낱말 수로 갈랐다 (scripts/define.ts)
   const level = new Map<string, number>()
   const total = new Map<number, number>()
-  for (const entry of data) {
-    const tag = (entry.l ?? []).find((x) => /^t\d$/.test(x))
-    if (!tag || !entry.s) continue
-    const grade = Number(tag[1])
-    level.set(entry.s, grade)
+  for (const [word, grade] of Object.entries(rows)) {
+    level.set(word, grade)
     total.set(grade, (total.get(grade) ?? 0) + 1)
   }
 
@@ -355,7 +351,7 @@ function shape() {
 shape()
 axes()
 await tsl()
-await hsk()
+hsk()
 await torfl()
 tagged()
 console.log('')
