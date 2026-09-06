@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { CardImage, CardSheet, Feed, FeedCard } from './feed'
 import { Header } from './header'
 import { loadCorpus, type Corpus } from '@/lib/corpus'
@@ -17,6 +18,8 @@ import {
 import { loadDeck, loadTrack, saveDeck, saveTrack } from '@/lib/settings'
 import { DEFAULT_DECK, entriesForDeck, type DeckId } from '@/lib/deck'
 import { DEFAULT_TRACK, trackOf, type TrackId } from '@/lib/track'
+
+const HanjaShell = dynamic(() => import('./hanja/shell').then((module) => module.HanjaShell))
 
 /**
  * 헤더 + 피드. 트랙 선택이 사는 곳이다. (spec.md §3)
@@ -93,7 +96,7 @@ export function Shell({
    */
   const language = trackOf(track).language
   useEffect(() => {
-    if (!ready) return
+    if (!ready || !language) return
     let alive = true
     setCorpus(null)
     setFailed(false)
@@ -187,7 +190,9 @@ export function Shell({
   const ladder = shownDeck === 'trivia' ? TRIVIA_LADDER : WORD_LADDER
   const mastery = masteryLabel(masteredCount(progress, keys, ladder), keys.length)
 
-  if (!ready || (!corpus && !failed)) return <Skeleton />
+  if (!ready) return <Skeleton />
+  if (track === 'hanja') return <HanjaShell onChange={change} />
+  if (!corpus && !failed) return <Skeleton />
 
   return (
     <div className="feed-root flex h-dvh flex-col">

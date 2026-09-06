@@ -14,7 +14,7 @@ import { auditTrivia } from '../lib/trivia-audit.ts'
 import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
 import { LANG } from '../lib/lang.ts'
 import { clozeAt } from '../lib/quiz.ts'
-import { TRACKS } from '../lib/track.ts'
+import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import { fingerprint } from './levels-stamp.ts'
 import type { Concept, Language, Trivia } from '../lib/types.ts'
 

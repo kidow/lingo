@@ -9,7 +9,7 @@ import { audioFile, audioPath, entriesFor, imagePath, triviaFor } from '@/lib/co
 import { examplesOf } from '@/lib/entries'
 import { answerOf, asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
-import { TRACKS, TRACK_IDS, trackOf } from '@/lib/track'
+import { LANGUAGE_TRACKS as TRACKS, LANGUAGE_TRACK_IDS as TRACK_IDS, trackOf } from '@/lib/track'
 import { auditTrivia, type Suspect } from '@/lib/trivia-audit'
 import type { Language } from '@/lib/types'
 

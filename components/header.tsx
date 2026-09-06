@@ -1,6 +1,7 @@
 'use client'
 
 import { ChevronDown } from 'lucide-react'
+import type { ReactNode } from 'react'
 import { SearchDrawer } from './search-drawer'
 import {
   DropdownMenu,
@@ -42,6 +43,7 @@ export function Header({
   deck,
   onDeck,
   articles = [],
+  search,
 }: {
   track: TrackId
   onChange: (track: TrackId) => void
@@ -63,6 +65,7 @@ export function Header({
    * 트랙에 따라 서고 마는 것과 같은 이유다 (content/articles.json)
    */
   articles?: Article[]
+  search?: ReactNode
 }) {
   return (
     <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
@@ -196,7 +199,7 @@ export function Header({
           {deck && onDeck && decks.length > 1 && (
             <span aria-hidden className="text-line">|</span>
           )}
-          <SearchDrawer trackArticles={articles} />
+          {search ?? <SearchDrawer trackArticles={articles} />}
         </span>
       </div>
     </header>

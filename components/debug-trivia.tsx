@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { TRACKS } from '@/lib/track'
+import { LANGUAGE_TRACKS as TRACKS } from '@/lib/track'
 import type { Language } from '@/lib/types'
 
 /**

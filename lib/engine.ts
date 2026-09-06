@@ -1,5 +1,6 @@
 import { fsrs, Rating } from 'ts-fsrs'
 import type { Entry } from './entries.ts'
+import { buildHanjaChoice, hanjaKey, isHanja } from './hanja.ts'
 import { isTrivia, type LearnItem } from './trivia.ts'
 import {
   RUNG_BLANK,
@@ -141,7 +142,10 @@ export function pickNext<T extends LearnItem>(
   const recent = new Set(state.recent.slice(state.recent.length - cooldown))
   const fresh = (e: T) => !recent.has(e.key)
 
-  const unseen = entries.filter((e) => !state.progress.cards[e.key] && fresh(e))
+  const unseen = entries.filter((e) => !state.progress.cards[e.key] && fresh(e) && (
+    !isHanja(e) || e.skill === 'recognition' ||
+    state.progress.cards[hanjaKey(e.character.id, 'recognition')]
+  ))
   const seen = entries.filter((e) => state.progress.cards[e.key] && fresh(e))
 
   // 2. 신규 유입은 고정 비율이다. 복습이 끝나기를 기다리지 않는다 —
@@ -211,6 +215,12 @@ export function questionFor(
   const card = state.progress.cards[item.key]
   const rung: Rung = card?.rung ?? RUNG_INTRO
   const attempt = card?.fsrs.reps ?? 0
+
+  if (isHanja(item)) {
+    return rung === RUNG_INTRO
+      ? { kind: 'hanja-intro', entry: item }
+      : buildHanjaChoice(item, entries.filter(isHanja), attempt)
+  }
 
   /**
    * 상식은 사다리가 한 칸이라 갈림이 없다 (TRIVIA_LADDER).

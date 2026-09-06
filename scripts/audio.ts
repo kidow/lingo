@@ -32,7 +32,7 @@ import {
 import { dirname, join } from 'node:path'
 import { exampleAudioKey } from '../lib/entries.ts'
 import { answerOf, LANG } from '../lib/lang.ts'
-import { TRACKS } from '../lib/track.ts'
+import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import type { Concept, Language } from '../lib/types.ts'
 
 /** AUDIO.md가 정한 규격. 콘솔에서는 Broadcast · High가 이 값이다 */

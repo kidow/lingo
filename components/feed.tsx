@@ -13,6 +13,8 @@ import {
 } from '@/lib/engine'
 import { loadProgress, saveProgress, WORD_LADDER, type Ladder, type Progress } from '@/lib/progress'
 import { questionKey, type Question } from '@/lib/quiz'
+import { HANJA_SKILLS, hanjaKey } from '@/lib/hanja'
+import { HanjaCard } from './hanja/card'
 import type { LearnItem } from '@/lib/trivia'
 import type { TrackId } from '@/lib/track'
 import type { Language } from '@/lib/types'
@@ -61,7 +63,7 @@ export function Feed({
   /** 새 카드를 목록 앞에서부터 낼지. 상식은 배열 순서가 커리큘럼이다 (lib/engine.ts) */
   ordered?: boolean
   /** 발음 파일과 정답 필드가 따르는 단위 */
-  lang: Language
+  lang?: Language
   /**
    * 진도가 바뀔 때마다 부른다. 헤더의 숙련도가 이걸로 산다. (spec.md §3)
    *
@@ -207,9 +209,12 @@ export function Feed({
 
     for (let i = 0; i < current; i += 1) {
       const question = questions[i]
-      if (!question || question.kind !== 'intro' || recorded.current.has(i)) continue
+      if (!question || (question.kind !== 'intro' && question.kind !== 'hanja-intro') || recorded.current.has(i)) continue
       recorded.current.add(i)
-      state = recordIntro(state, questionKey(question), Date.now())
+      const keys = question.kind === 'hanja-intro'
+        ? HANJA_SKILLS.map((skill) => hanjaKey(question.entry.character.id, skill))
+        : [questionKey(question)]
+      for (const key of keys) state = recordIntro(state, key, Date.now())
       changed = true
     }
 
@@ -230,7 +235,7 @@ export function Feed({
     }
     const last = questions.length - 1
     const q = questions[last]
-    const finished = q.kind === 'intro' || picks.has(last)
+    const finished = q.kind === 'intro' || q.kind === 'hanja-intro' || picks.has(last)
     if (current >= last && finished) extendOne(questions.length)
   }, [ready, current, questions, picks, extendOne])
 
@@ -271,6 +276,14 @@ export function Feed({
             className="h-full snap-start snap-always"
           >
             {Math.abs(i - current) <= WINDOW && (
+              question.kind === 'hanja-intro' || question.kind === 'hanja-choice' ? (
+                <HanjaCard
+                  question={question}
+                  active={i === current}
+                  pick={picks.get(i) ?? null}
+                  onAnswer={(correct, picked) => handleAnswer(i, correct, picked)}
+                />
+              ) : lang ? (
               <Card
                 question={question}
                 lang={lang}
@@ -280,6 +293,7 @@ export function Feed({
                 pick={picks.get(i) ?? null}
                 onAnswer={(correct, picked) => handleAnswer(i, correct, picked)}
               />
+              ) : null
             )}
           </div>
         ))
@@ -398,4 +412,3 @@ export function CardSheet({ children, bare = false }: { children: React.ReactNod
     </div>
   )
 }
-

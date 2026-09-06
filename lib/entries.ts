@@ -59,6 +59,7 @@ export function entriesFor(lang: Language, concepts: Concept[], track?: TrackId)
  * 규칙이 여기 하나만 있어야 앱과 `pnpm check`와 `/debug`가 같은 수를 센다.
  */
 export function entriesForTrack(track: TrackId, concepts: Concept[]): Entry[] {
+  if (track === 'hanja') return []
   const entries = entriesFor(trackOf(track).language, concepts, track)
   const key = track === 'toeic' ? 'tsl' : track === 'tocfl' ? 'tocfl' : null
   if (!key) return entries

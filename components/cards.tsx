@@ -17,7 +17,7 @@ import type {
   ClozeQuestion,
   IntroQuestion,
   ListenQuestion,
-  Question,
+  LanguageQuestion as Question,
   TriviaQuestion,
 } from '@/lib/quiz'
 import type { TrackId } from '@/lib/track'

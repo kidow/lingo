@@ -12,10 +12,11 @@ import type { Language } from './types.ts'
  * 그림은 늘지 않는다. 발음도 시험이 아니라 언어의 것이라
  * `public/audio/{language}/`를 공유한다.
  */
-export type TrackId = 'toeic' | 'jlpt' | 'hsk' | 'tocfl' | 'dele' | 'delf' | 'telc' | 'torfl'
+export type LanguageTrackId = 'toeic' | 'jlpt' | 'hsk' | 'tocfl' | 'dele' | 'delf' | 'telc' | 'torfl'
+export type TrackId = LanguageTrackId | 'hanja'
 
-export type Track = {
-  id: TrackId
+export type LanguageTrack = {
+  id: LanguageTrackId
   /** 헤더 드롭다운에 보이는 이름 */
   label: string
   /**
@@ -34,7 +35,10 @@ export type Track = {
 }
 
 /** 순서가 곧 드롭다운 순서다 */
-export const TRACKS: Track[] = [
+export type HanjaTrack = { id: 'hanja'; label: string; flag: string; language: null }
+export type Track = LanguageTrack | HanjaTrack
+
+export const LANGUAGE_TRACKS: LanguageTrack[] = [
   // TOEIC은 미국 ETS가 내고 발음도 미국식이라 성조기를 붙인다
   { id: 'toeic', label: 'TOEIC', flag: '🇺🇸', language: 'en' },
   { id: 'jlpt', label: 'JLPT', flag: '🇯🇵', language: 'ja' },
@@ -51,8 +55,16 @@ export const TRACKS: Track[] = [
   { id: 'torfl', label: 'TORFL', flag: '🇷🇺', language: 'ru' },
 ]
 
+export const LANGUAGE_TRACK_IDS = LANGUAGE_TRACKS.map((track) => track.id)
+export const TRACKS: Track[] = [
+  ...LANGUAGE_TRACKS,
+  { id: 'hanja', label: '한능검', flag: '🇰🇷', language: null },
+]
 export const TRACK_IDS = TRACKS.map((track) => track.id)
 
+export function trackOf(id: LanguageTrackId): LanguageTrack
+export function trackOf(id: 'hanja'): HanjaTrack
+export function trackOf(id: TrackId): Track
 export function trackOf(id: TrackId): Track {
   const found = TRACKS.find((track) => track.id === id)
   if (!found) throw new Error(`알 수 없는 트랙: ${id}`)

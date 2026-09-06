@@ -82,13 +82,15 @@ export type TriviaQuestion = {
   options: string[]
 }
 
-export type Question =
+export type LanguageQuestion =
   | IntroQuestion
   | ChoiceQuestion
   | BlankQuestion
   | ClozeQuestion
   | ListenQuestion
   | TriviaQuestion
+
+export type Question = LanguageQuestion | import('./hanja.ts').HanjaQuestion
 
 /**
  * 이 카드의 진도 키. 카드 종류마다 항목이 어디 붙어 있는지가 달라서
