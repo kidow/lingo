@@ -1145,6 +1145,11 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 3. `pnpm prompt <slug>` 출력을 ImageGen에 넣어 1024 PNG를 생성한다
 4. 받은 PNG를 `.images/{slug}.png`에 두고 `pnpm image <slug>` — 512 WebP로 변환해 `public/concepts/`에 넣는다
 5. **80×80으로 줄여도 알아볼 수 있는지 확인한다** (IMAGE_STYLE.md 검수 체크리스트)
+   - 배치로 여러 장을 뽑았으면 `pnpm sheet <slug...>`로 한 장에 붙여 훑는다.
+     **기계가 못 잡는 두 가지가 여기서만 걸린다** — 그림이 서로 뒤바뀐 것(같은
+     그림이면 `md5`가 잡지만 **다른** 그림이 엉뚱한 자리에 들어가면 아무것도 안
+     걸린다)과, 프롬프트에 없던 사람이 들어온 것(`pnpm check`의 인물 규칙은
+     프롬프트만 본다 — `boast`가 그랬다)
 6. 발음을 만들어 `public/audio/{lang}/{slug}.mp3`에 넣는다 ([AUDIO.md](AUDIO.md))
 7. 커밋
 
@@ -1176,6 +1181,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm check` | `content/*.json` 전체 검증. CI에서도 돈다 |
 | `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
+| `pnpm sheet <slug...>` | 그림 여러 장을 `.images/sheet.png` 한 장으로 붙인다. 배치를 넣고 눈으로 훑는 자리다 |
 | `pnpm define <word>` | 사전에서 뜻을 찾는다. 생략하면 콘텐츠 전체의 `meaning_ko`를 대조한다 |
 | `pnpm audio` | 발음 현황. `list <lang>`으로 만들 것을, `place <lang> <slug> <파일>`로 받은 파일을 넣는다. 키가 있으면 `make <lang> <n>`이 API로 만든다 ([AUDIO.md](AUDIO.md)) |
 | `pnpm audio sync` | 만든 발음을 R2로 올린다. rclone이 바뀐 것만 올린다 ([AUDIO.md](AUDIO.md)) |
