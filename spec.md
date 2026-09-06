@@ -1238,6 +1238,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm audio sync` | 만든 발음을 R2로 올린다. rclone이 바뀐 것만 올린다 ([AUDIO.md](AUDIO.md)) |
 | `pnpm levels [파일]` | 시험 등급·순위를 출처에서 채운다 — JLPT · HSK · CEFR · TSL. 추정하지 않고 없으면 비운다 |
 | `pnpm tocfl [파일]` | zh의 번체 표기·TOCFL 등급을 여섯 공식 자료에서 채운다. 후보가 갈리면 비우고 터미널에 찍는다 |
+| `pnpm gender` | 프랑스어 명사의 성을 위키낱말사전에서 채운다. 남녀 같은 꼴(`mf`)은 비운다 |
 | `pnpm romanize [파일]` | ja·zh·ru의 로마자를 규칙으로 채운다. 사람이 쓰지 않는다 |
 | `pnpm ipa [파일]` | 영어 발음기호를 CMU 사전에서 채운다. 사전에 없으면 비운다 |
 | `pnpm audio manifest` | 발음이 **없는** 자리를 `lib/audio-have.ts`에 적는다. 듣기 카드가 이걸 보고 건너뛴다 (§5) |
