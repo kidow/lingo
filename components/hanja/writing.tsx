@@ -3,7 +3,7 @@
 import { ArrowLeft, Trash2, Undo2 } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react'
 import { gradeLabel, hunEum, type HanjaCharacter } from '@/lib/hanja'
-import { HANJA_FONT } from './card'
+import { HanjaGlyph } from './glyph'
 import { StrokePlayback } from './stroke-player'
 
 type Point = { x: number; y: number }
@@ -76,8 +76,10 @@ export function WritingPractice({ character, onClose }: { character: HanjaCharac
       <div className="relative mx-auto mt-2 aspect-square w-full max-w-[340px] shrink-0 overflow-hidden rounded-card border border-line bg-img-bg">
         <div className="pointer-events-none absolute inset-y-0 left-1/2 border-l border-dashed border-line" />
         <div className="pointer-events-none absolute inset-x-0 top-1/2 border-t border-dashed border-line" />
-        {diagram ? <div className={`pointer-events-none absolute inset-4 text-accent/60 ${reference || started ? '' : 'invisible'}`}>{diagram}</div>
-          : reference && <span style={HANJA_FONT} className="pointer-events-none absolute inset-0 grid place-items-center text-[clamp(140px,50vw,220px)] leading-none text-accent/20" aria-hidden>{character.glyph}</span>}
+        {reference && !started && <div className="pointer-events-none absolute inset-4 text-accent/20" aria-hidden>
+          <HanjaGlyph glyph={character.glyph} className="h-full w-full" decorative />
+        </div>}
+        {diagram && <div className={`pointer-events-none absolute inset-4 text-accent/60 ${started ? '' : 'invisible'}`}>{diagram}</div>}
         <canvas
           ref={canvas}
           aria-label={`${hunEum(character)} 한자 쓰기 칸`}

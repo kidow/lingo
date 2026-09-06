@@ -4,7 +4,8 @@ import { ArrowLeft, X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Drawer } from 'vaul'
 import { gradeLabel, hunEum, searchHanja, type HanjaCharacter } from '@/lib/hanja'
-import { HANJA_FONT, HanjaDetails, HanjaIllustration } from './card'
+import { HanjaDetails, HanjaIllustration } from './card'
+import { HanjaGlyph } from './glyph'
 
 export function HanjaSearch({ characters }: { characters: HanjaCharacter[] }) {
   const [query, setQuery] = useState('')
@@ -35,7 +36,7 @@ export function HanjaSearch({ characters }: { characters: HanjaCharacter[] }) {
                 <div className="grid grid-cols-3 gap-x-3 gap-y-1">
                   {matches.slice(0, limit).map((character) => (
                     <button key={character.id} type="button" onClick={() => setSelected(character)} className="flex min-w-0 flex-col items-center gap-2 border-b border-line px-1 py-4 text-center">
-                      <span style={HANJA_FONT} className="text-4xl">{character.glyph}</span>
+                      <HanjaGlyph glyph={character.glyph} className="text-4xl" />
                       <span className="w-full break-words text-sm">{hunEum(character)}<span className="mt-1 block text-xs text-sub">{gradeLabel(character.readingGrade)}</span></span>
                     </button>
                   ))}

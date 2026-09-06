@@ -6,16 +6,17 @@ import { gradeLabel, hanjaReadings, hunEum, type HanjaCharacter, type HanjaQuest
 import { CardImage, CardSheet, FeedCard, SwipeHint } from '../feed'
 import { WritingPractice } from './writing'
 import { StrokePlayback } from './stroke-player'
+import { HanjaGlyph, HanjaGlyphs } from './glyph'
 
-/** 한국 한자 자형을 우선한다. 글꼴 윤곽은 필순이나 채점 근거가 아니다. */
-export const HANJA_FONT = { fontFamily: '"AppleMyungjo", "Noto Serif CJK KR", "Noto Serif KR", serif' }
 const GAVE_UP = '__hanja_gave_up__'
 
 export function HanjaIllustration({ character, active = true }: { character: HanjaCharacter; active?: boolean }) {
-  return <StrokePlayback character={character} active={active}>{({ diagram, controls }) => (
+  return <StrokePlayback character={character} active={active}>{({ diagram, controls, started }) => (
     <div className="flex h-full flex-col items-center justify-center gap-2 pb-10" lang="ko">
-      {diagram ? <div className="size-[clamp(112px,40vw,176px)] shrink-0">{diagram}</div>
-        : <span style={HANJA_FONT} className="text-[clamp(112px,40vw,176px)] leading-none">{character.glyph}</span>}
+      <div className="relative size-[clamp(112px,40vw,176px)] shrink-0">
+        <HanjaGlyph glyph={character.glyph} className={`h-full w-full ${started ? 'invisible' : ''}`} />
+        {diagram && <div className={`absolute inset-0 ${started ? '' : 'invisible'}`}>{diagram}</div>}
+      </div>
       {controls}
     </div>
   )}</StrokePlayback>
@@ -30,12 +31,12 @@ export function HanjaDetails({ character }: { character: HanjaCharacter }) {
       )}
       <div className="flex items-center gap-3 text-sm text-sub">
         <span className="rounded-pill border border-line px-2 py-0.5">{gradeLabel(character.readingGrade)}</span>
-        <span>부수 <span style={HANJA_FONT}>{character.radical}</span></span>
+        <span>부수 <HanjaGlyph glyph={character.radical} /></span>
         <span>{character.strokes}획</span>
       </div>
       {character.example && <div className="mt-3 border-t border-line pt-4">
         <p className="flex items-center gap-3">
-          <span style={HANJA_FONT} className="text-2xl tracking-widest">{character.example.word}</span>
+          <HanjaGlyphs text={character.example.word} className="gap-0.5 text-2xl" />
           <span>{character.example.reading}</span>
         </p>
         <p className="mt-2 text-sm text-sub">{character.example.meaning}</p>
@@ -69,11 +70,9 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
     <FeedCard>
       <CardImage>
         {intro ? <HanjaIllustration character={character} active={active} /> : <div className="flex h-full items-center justify-center pb-4" lang="ko">
-          <span
-            style={question.entry.skill === 'hun-eum' ? HANJA_FONT : undefined}
-            className={question.entry.skill === 'hun-eum'
-              ? 'text-[clamp(112px,40vw,176px)] leading-none' : 'text-4xl font-semibold'}
-          >{question.prompt}</span>
+          {question.entry.skill === 'hun-eum'
+            ? <HanjaGlyph glyph={question.prompt} className="size-[clamp(112px,40vw,176px)]" />
+            : <span className="text-4xl font-semibold">{question.prompt}</span>}
         </div>}
         {!intro && <span className="absolute right-5 bottom-7 text-sm text-sub">{gradeLabel(character.readingGrade)}</span>}
       </CardImage>
@@ -93,9 +92,8 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
                     className={`relative grid min-h-20 place-items-center rounded-ctrl border px-5 py-3 font-semibold transition active:scale-[.985] aria-disabled:active:scale-100
                       ${question.entry.skill === 'recognition' ? 'text-4xl' : Math.max(...question.options.map((value) => value.length)) > 10 ? 'text-base' : 'text-2xl'}
                       ${correct ? 'border-ok bg-ok-soft text-ok' : wrong ? 'border-err bg-err-soft text-err' : answered ? 'border-line opacity-40' : 'border-line bg-surface'}`}
-                    style={question.entry.skill === 'recognition' ? HANJA_FONT : undefined}
                   >
-                    {option}
+                    {question.entry.skill === 'recognition' ? <HanjaGlyph glyph={option} /> : option}
                     {correct && <Check className="absolute top-2 right-2 size-4" aria-hidden />}
                     {wrong && <X className="absolute top-2 right-2 size-4" aria-hidden />}
                   </button>

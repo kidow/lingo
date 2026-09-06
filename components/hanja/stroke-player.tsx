@@ -8,7 +8,7 @@ import type { HanjaCharacter } from '@/lib/hanja'
 type PlaybackView = { diagram: ReactNode; controls: ReactNode; started: boolean; reset: () => void }
 type Props = { character: HanjaCharacter; active?: boolean; children: (view: PlaybackView) => ReactNode }
 
-/** Unsupported characters retain their font glyph and have no playback affordance. */
+/** Unsupported characters have static SVG outlines but no playback affordance. */
 export function StrokePlayback({ character, active = true, children }: Props) {
   const data = hanjaStrokeData(character)
   return data
