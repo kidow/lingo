@@ -5,10 +5,21 @@ import { useRef, useState } from 'react'
 import { gradeLabel, hanjaReadings, hunEum, type HanjaCharacter, type HanjaQuestion } from '@/lib/hanja'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from '../feed'
 import { WritingPractice } from './writing'
+import { StrokePlayback } from './stroke-player'
 
 /** 한국 한자 자형을 우선한다. 글꼴 윤곽은 필순이나 채점 근거가 아니다. */
 export const HANJA_FONT = { fontFamily: '"AppleMyungjo", "Noto Serif CJK KR", "Noto Serif KR", serif' }
 const GAVE_UP = '__hanja_gave_up__'
+
+export function HanjaIllustration({ character, active = true }: { character: HanjaCharacter; active?: boolean }) {
+  return <StrokePlayback character={character} active={active}>{({ diagram, controls }) => (
+    <div className="flex h-full flex-col items-center justify-center gap-2 pb-10" lang="ko">
+      {diagram ? <div className="size-[clamp(112px,40vw,176px)] shrink-0">{diagram}</div>
+        : <span style={HANJA_FONT} className="text-[clamp(112px,40vw,176px)] leading-none">{character.glyph}</span>}
+      {controls}
+    </div>
+  )}</StrokePlayback>
+}
 
 export function HanjaDetails({ character }: { character: HanjaCharacter }) {
   return (
@@ -57,13 +68,13 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
   return (
     <FeedCard>
       <CardImage>
-        <div className="flex h-full items-center justify-center pb-4" lang="ko">
+        {intro ? <HanjaIllustration character={character} active={active} /> : <div className="flex h-full items-center justify-center pb-4" lang="ko">
           <span
-            style={intro || question.entry.skill === 'hun-eum' ? HANJA_FONT : undefined}
-            className={intro || question.entry.skill === 'hun-eum'
+            style={question.entry.skill === 'hun-eum' ? HANJA_FONT : undefined}
+            className={question.entry.skill === 'hun-eum'
               ? 'text-[clamp(112px,40vw,176px)] leading-none' : 'text-4xl font-semibold'}
-          >{intro ? character.glyph : question.prompt}</span>
-        </div>
+          >{question.prompt}</span>
+        </div>}
         {!intro && <span className="absolute right-5 bottom-7 text-sm text-sub">{gradeLabel(character.readingGrade)}</span>}
       </CardImage>
       <CardSheet>
