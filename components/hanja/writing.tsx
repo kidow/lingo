@@ -16,7 +16,7 @@ export function WritingPractice({ character, onClose }: { character: HanjaCharac
   const draft = useRef<Stroke | null>(null)
   const pointer = useRef<number | null>(null)
   const [count, setCount] = useState(0)
-  const [reference, setReference] = useState(false)
+  const [reference, setReference] = useState(true)
   const close = useRef<HTMLButtonElement>(null)
 
   const redraw = useCallback(() => {
@@ -65,7 +65,7 @@ export function WritingPractice({ character, onClose }: { character: HanjaCharac
   }
 
   return (
-    <StrokePlayback character={character}>{({ diagram, controls, started, reset }) => (
+    <StrokePlayback character={character} autoPlay guide={false}>{({ diagram, controls, started, reset }) => (
     <div className="flex h-full flex-col gap-3 overflow-y-auto bg-surface px-5 pt-3 pb-5" onKeyDown={(event) => { if (event.key === 'Escape') onClose() }}>
       <div className="flex items-center gap-2">
         <button ref={close} type="button" aria-label="카드로 돌아가기" onClick={onClose} className="-ml-3 grid size-11 place-items-center rounded-ctrl"><ArrowLeft className="size-5" aria-hidden /></button>
@@ -76,7 +76,7 @@ export function WritingPractice({ character, onClose }: { character: HanjaCharac
       <div className="relative mx-auto mt-2 aspect-square w-full max-w-[340px] shrink-0 overflow-hidden rounded-card border border-line bg-img-bg">
         <div className="pointer-events-none absolute inset-y-0 left-1/2 border-l border-dashed border-line" />
         <div className="pointer-events-none absolute inset-x-0 top-1/2 border-t border-dashed border-line" />
-        {reference && !started && <div className="pointer-events-none absolute inset-4 text-accent/20" aria-hidden>
+        {(reference || started) && <div className="pointer-events-none absolute inset-4 text-accent/20" aria-hidden>
           <HanjaGlyph glyph={character.glyph} className="h-full w-full" decorative />
         </div>}
         {diagram && <div className={`pointer-events-none absolute inset-4 text-accent/60 ${started ? '' : 'invisible'}`}>{diagram}</div>}

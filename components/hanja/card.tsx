@@ -10,8 +10,8 @@ import { HanjaGlyph, HanjaGlyphs } from './glyph'
 
 const GAVE_UP = '__hanja_gave_up__'
 
-export function HanjaIllustration({ character, active = true }: { character: HanjaCharacter; active?: boolean }) {
-  return <StrokePlayback character={character} active={active}>{({ diagram, controls, started }) => (
+export function HanjaIllustration({ character, active = true, autoPlay = false }: { character: HanjaCharacter; active?: boolean; autoPlay?: boolean }) {
+  return <StrokePlayback character={character} active={active} autoPlay={autoPlay}>{({ diagram, controls, started }) => (
     <div className="flex h-full flex-col items-center justify-center gap-2 pb-10" lang="ko">
       <div className="relative size-[clamp(112px,40vw,176px)] shrink-0">
         <HanjaGlyph glyph={character.glyph} className={`h-full w-full ${started ? 'invisible' : ''}`} />
@@ -69,7 +69,7 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
   return (
     <FeedCard>
       <CardImage>
-        {intro ? <HanjaIllustration character={character} active={active} /> : <div className="flex h-full items-center justify-center pb-4" lang="ko">
+        {intro ? <HanjaIllustration character={character} active={active} autoPlay /> : <div className="flex h-full items-center justify-center pb-4" lang="ko">
           {question.entry.skill === 'hun-eum'
             ? <HanjaGlyph glyph={question.prompt} className="size-[clamp(168px,60vw,264px)]" />
             : <span className="text-4xl font-semibold">{question.prompt}</span>}

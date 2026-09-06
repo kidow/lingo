@@ -6,26 +6,30 @@ import { hanjaStrokeData, STROKE_DURATION, STROKE_GAP, strokeDuration, strokeNum
 import type { HanjaCharacter } from '@/lib/hanja'
 
 type PlaybackView = { diagram: ReactNode; controls: ReactNode; started: boolean; reset: () => void }
-type Props = { character: HanjaCharacter; active?: boolean; children: (view: PlaybackView) => ReactNode }
+type Props = { character: HanjaCharacter; active?: boolean; autoPlay?: boolean; guide?: boolean; children: (view: PlaybackView) => ReactNode }
 
 /** Unsupported characters have static SVG outlines but no playback affordance. */
-export function StrokePlayback({ character, active = true, children }: Props) {
+export function StrokePlayback({ character, active = true, autoPlay = false, guide = true, children }: Props) {
   const data = hanjaStrokeData(character)
   return data
-    ? <VerifiedPlayback key={character.id} data={data} active={active}>{children}</VerifiedPlayback>
+    ? <VerifiedPlayback key={character.id} data={data} active={active} autoPlay={autoPlay} guide={guide}>{children}</VerifiedPlayback>
     : children({ diagram: null, controls: null, started: false, reset: () => {} })
 }
 
-function VerifiedPlayback({ data, active, children }: {
+function VerifiedPlayback({ data, active, autoPlay, guide, children }: {
   data: HanjaStrokeData
   active: boolean
+  autoPlay: boolean
+  guide: boolean
   children: (view: PlaybackView) => ReactNode
 }) {
   const paths = useRef<(SVGPathElement | null)[]>([])
   const animations = useRef<Animation[]>([])
   const frame = useRef<number | null>(null)
+  const autoStarted = useRef(false)
   const [phase, setPhase] = useState<'idle' | 'playing' | 'paused' | 'done'>('idle')
-  const [manual, setManual] = useState(false)
+  // Wait for the accessibility/API check before starting any automatic movement.
+  const [manual, setManual] = useState<boolean | null>(null)
   const [count, setCount] = useState(0)
   const total = data.paths.length
   const started = phase !== 'idle'
@@ -75,7 +79,7 @@ function VerifiedPlayback({ data, active, children }: {
 
   useEffect(() => { if (!active) pause() }, [active, pause])
 
-  function watch() {
+  const watch = useCallback(() => {
     stopFrame()
     const tick = () => {
       const first = animations.current[0]
@@ -84,10 +88,10 @@ function VerifiedPlayback({ data, active, children }: {
       if (first.playState === 'running' || first.pending) frame.current = requestAnimationFrame(tick)
     }
     tick()
-  }
+  }, [stopFrame, total])
 
-  function start() {
-    if (!active || document.hidden) return
+  const start = useCallback(() => {
+    if (!active || document.hidden || manual === null) return
     cancel()
     setCount(1)
     if (manual) {
@@ -115,7 +119,21 @@ function VerifiedPlayback({ data, active, children }: {
     }
     setPhase('playing')
     watch()
-  }
+  }, [active, cancel, manual, stopFrame, total, watch])
+
+  useEffect(() => {
+    if (!autoPlay || !active || manual !== false) return
+    const startWhenVisible = () => {
+      // A hidden/prefetched card waits. A paused or completed playback stays put.
+      if (!document.hidden && !autoStarted.current) {
+        autoStarted.current = true
+        start()
+      }
+    }
+    startWhenVisible()
+    document.addEventListener('visibilitychange', startWhenVisible)
+    return () => document.removeEventListener('visibilitychange', startWhenVisible)
+  }, [active, autoPlay, manual, start])
 
   function toggle() {
     if (!active || document.hidden) return
@@ -138,7 +156,7 @@ function VerifiedPlayback({ data, active, children }: {
   const diagram = (
     <svg viewBox="0 0 100 100" className="h-full w-full" role="img" aria-label={data.glyph}
       fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
-      {started && <g opacity="0.12" aria-hidden>{data.paths.map((d, i) => <path key={i} d={d} />)}</g>}
+      {guide && started && <g opacity="0.12" aria-hidden>{data.paths.map((d, i) => <path key={i} d={d} />)}</g>}
       {data.paths.map((d, i) => <path key={i} ref={(node) => { paths.current[i] = node }} d={d}
         visibility={started && i >= count ? 'hidden' : undefined}
         pathLength="1" strokeDasharray="1" strokeDashoffset={manual && started && i >= count ? 1 : 0} />)}
@@ -146,10 +164,10 @@ function VerifiedPlayback({ data, active, children }: {
   )
   const controls = (
     <div className="flex min-h-11 items-center justify-center gap-1 text-sub" role="group" aria-label={`${data.glyph} 필순 재생 조작`}>
-      <button type="button" onClick={toggle} disabled={!active} aria-label={label} title={label}
+      <button type="button" onClick={toggle} disabled={!active || manual === null} aria-label={label} title={label}
         className="grid size-11 place-items-center rounded-ctrl disabled:opacity-30"><Icon className="size-5" aria-hidden /></button>
       <span className="min-w-12 text-center text-sm tabular-nums" aria-live="polite" aria-atomic="true">{count} / {total}</span>
-      <button type="button" onClick={start} disabled={!active || !started} aria-label="필순 처음부터 재생" title="필순 처음부터 재생"
+      <button type="button" onClick={start} disabled={!active || manual === null} aria-label="필순 다시 재생" title="필순 다시 재생"
         className="grid size-11 place-items-center rounded-ctrl disabled:opacity-30"><RotateCcw className="size-5" aria-hidden /></button>
     </div>
   )
