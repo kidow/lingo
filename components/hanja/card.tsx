@@ -71,10 +71,10 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
       <CardImage>
         {intro ? <HanjaIllustration character={character} active={active} /> : <div className="flex h-full items-center justify-center pb-4" lang="ko">
           {question.entry.skill === 'hun-eum'
-            ? <HanjaGlyph glyph={question.prompt} className="size-[clamp(112px,40vw,176px)]" />
+            ? <HanjaGlyph glyph={question.prompt} className="size-[clamp(168px,60vw,264px)]" />
             : <span className="text-4xl font-semibold">{question.prompt}</span>}
         </div>}
-        {!intro && <span className="absolute right-5 bottom-7 text-sm text-sub">{gradeLabel(character.readingGrade)}</span>}
+        {!intro && answered && <span className="absolute right-5 bottom-7 text-sm text-sub">{gradeLabel(character.readingGrade)}</span>}
       </CardImage>
       <CardSheet>
         {intro ? <HanjaDetails character={character} /> : (
