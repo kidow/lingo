@@ -1,0 +1,44 @@
+{
+  "license": "Arphic Public License",
+  "copyright": "AnimCJK project - Copyright 2016-2026 - FM&SH; Arphic Technology Co., Ltd.",
+  "source": {
+    "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+    "commit": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+    "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e"
+  },
+  "modifications": "2026-09-07: Compared every cumulative stroke with Korean official f37.hwp. For 性, reordered original strokes using the one-based permutation [1,3,2,4,5,6,7,8]. Retained all median points and pen-down boundaries; flipped Y, uniformly fitted to 80 units centered in a 100-unit square, rounded to one decimal and encoded as SVG M/L centerlines. Filled outlines omitted. Official images are not distributed.",
+  "officialSource": {
+    "document": "f37.hwp",
+    "sha256": "4e191bbee54edd6db595f16fc83a15b9929eba0e3e01095da1e828c70e10760c",
+    "revision": "2010-03-22"
+  },
+  "characters": [
+    {
+      "glyph": "性",
+      "sourceImage": "BIN002A.gif",
+      "sourceRow": 21,
+      "verifiedAt": "2026-09-07",
+      "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "strokeOrder": [
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "paths": [
+        "M14.6 37.8 L10 58.6",
+        "M29.2 30.6 L39.4 37.5",
+        "M22.1 11.5 L27.9 16.8 L25.6 89",
+        "M46.6 25.3 L50 28.4 L48.6 33.5 L44.1 42.6 L37.2 50.2",
+        "M47.8 40.5 L79.6 34.7",
+        "M49.1 59.4 L76.4 56.3",
+        "M57.9 11 L63.1 16.3 L61.7 76",
+        "M36.3 79.1 L41.3 80.1 L80 75.2 L90 76.8"
+      ]
+    }
+  ]
+}

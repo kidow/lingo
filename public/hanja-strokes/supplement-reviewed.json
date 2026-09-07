@@ -1,0 +1,61 @@
+{
+  "license": "Arphic Public License",
+  "copyright": "AnimCJK project - Copyright 2016-2026 - FM&SH; Arphic Technology Co., Ltd.",
+  "source": {
+    "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+    "commit": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+    "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8"
+  },
+  "modifications": "2026-09-07: Compared every cumulative stroke with Korean official f37.hwp. For 回, 瓦 and 臼, retained original Japanese candidate stroke order. Retained all median points and pen-down boundaries; flipped Y, uniformly fitted to 80 units centered in a 100-unit square, rounded to one decimal and encoded as SVG M/L centerlines. Filled outlines omitted. Official images are not distributed.",
+  "officialSource": {
+    "document": "f37.hwp",
+    "sha256": "4e191bbee54edd6db595f16fc83a15b9929eba0e3e01095da1e828c70e10760c",
+    "revision": "2010-03-22"
+  },
+  "characters": [
+    {
+      "glyph": "回",
+      "sourceImage": "BIN0036.bmp",
+      "sourceWholeImage": true,
+      "verifiedAt": "2026-09-07",
+      "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "paths": [
+        "M10 18.9 L17.3 26.5 L24.9 81.9",
+        "M17.3 21 L23.5 22.9 L83 15.3 L90 19.2 L86.3 60.8 L80.4 84.7",
+        "M35.5 37.2 L39.6 40.8 L43.2 60.8",
+        "M41.7 39.8 L60.6 36.5 L64 38.2 L66.3 41.3 L61.8 54.2",
+        "M44.1 57.1 L66.2 55.3",
+        "M25.7 75.2 L70.5 71.4 L78.2 73.6"
+      ]
+    },
+    {
+      "glyph": "瓦",
+      "sourceImage": "BIN0038.bmp",
+      "sourceWholeImage": true,
+      "verifiedAt": "2026-09-07",
+      "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "paths": [
+        "M14.1 17.5 L24.3 18.2 L71.8 10.6",
+        "M25.1 21.7 L29.1 26.3 L26.3 46 L19.2 75.3 L14.6 78.2",
+        "M10 82.2 L15.2 82.9 L43.2 71.8",
+        "M30.2 41.5 L51.6 34.7 L58.1 36.7 L52.7 51.5 L52.2 68.3 L56.3 79.5 L65.4 87 L78.1 89.4 L87.6 86.6 L90 68.7",
+        "M30 51.9 L42.2 62"
+      ]
+    },
+    {
+      "glyph": "臼",
+      "sourceImage": "BIN0017.gif",
+      "sourceWholeImage": true,
+      "verifiedAt": "2026-09-07",
+      "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "paths": [
+        "M40.3 10 L45.9 16.4 L22.3 38.6",
+        "M12.7 34.9 L19.3 40.8 L26.3 86.8",
+        "M24.9 57.7 L45.9 55.6",
+        "M55.6 33 L80.8 31.6 L87.3 37.2 L74.5 90",
+        "M56.9 55.2 L80.7 53.9",
+        "M28.3 80.6 L73.2 79"
+      ]
+    }
+  ]
+}

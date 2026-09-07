@@ -1,0 +1,85 @@
+{
+  "license": "Arphic Public License",
+  "copyright": "AnimCJK project - Copyright 2016-2026 - FM&SH; Arphic Technology Co., Ltd.",
+  "source": {
+    "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+    "commit": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+    "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e"
+  },
+  "modifications": "2026-09-07: Compared every cumulative stage of 者 and 都 with Korean official f37.hwp. Preserved every upstream median point and stroke boundary; normalized to the existing 100-unit square. Inserted one separately authored short centerline at output stroke 5, based on the dot location in each glyph's official diagram. Original strokes 5 onward move to output 6 onward without geometry changes. sourceStrokeIndices uses one-based original indices; null means the new official-diagram-based centerline. pathsSha256 hashes UTF-8 JSON.stringify(paths). These are implementation centerlines, not official vector coordinates. APL notices preserved; official images are not distributed.",
+  "officialSource": {
+    "document": "f37.hwp",
+    "sha256": "4e191bbee54edd6db595f16fc83a15b9929eba0e3e01095da1e828c70e10760c",
+    "revision": "2010-03-22"
+  },
+  "characters": [
+    {
+      "glyph": "者",
+      "sourceImage": "BIN0001.gif",
+      "sourceRow": 10,
+      "verifiedAt": "2026-09-07",
+      "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "geometryCorrection": "official-dot-v1",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        null,
+        5,
+        6,
+        7,
+        8
+      ],
+      "pathsSha256": "9ed8dbfc6e6f78445e982ad0a1f8cbe76e87fbcdce6c245a1a08f7fa663d3c4f",
+      "paths": [
+        "M32.6 29.8 L62.5 27",
+        "M44.2 10 L49.6 14.4 L48.9 42.8",
+        "M14 46.9 L20.3 47.6 L79.7 40.2 L88.7 41.6",
+        "M68.2 18.3 L70.6 25.5 L52.8 47.5 L31.6 66 L11.3 78.1",
+        "M60 46 L63 49",
+        "M38.1 55.4 L41 59.7 L39.7 86.5",
+        "M41.1 56.6 L44.9 57.6 L59.4 54.5 L63.7 57.5 L63.3 90",
+        "M42.8 70.2 L57.3 68.3",
+        "M42.2 82.6 L59.4 80.9"
+      ]
+    },
+    {
+      "glyph": "都",
+      "sourceImage": "BIN0004.gif",
+      "sourceRow": 11,
+      "verifiedAt": "2026-09-07",
+      "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "geometryCorrection": "official-dot-v1",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        null,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pathsSha256": "da4332f2b07b0f9326db4cb0d3a4c09dc8d43733d719720a0c7d97366a23ae93",
+      "paths": [
+        "M27.7 25.7 L50.5 23.1",
+        "M36.1 10 L40.9 14.2 L39.4 38.2",
+        "M17.2 42.3 L22.5 43.2 L51.4 36.6 L60.4 36.4",
+        "M55.5 18.1 L57.6 22 L44.5 39.1 L27.1 58.8 L13.3 70",
+        "M49 41 L52 44",
+        "M31.9 49.6 L34.2 53.8 L33.9 76.2",
+        "M34 50.3 L48.4 48.6 L51.3 50.7 L50.5 78.4",
+        "M36.5 61.8 L45.8 60.1",
+        "M35.3 72.8 L47.9 71.6",
+        "M69.2 27.8 L79.3 23.6 L82.8 26.3 L73.8 41.3",
+        "M73.4 40.6 L83.2 48.7 L86.7 57.4 L86 61.6 L82.8 64.6 L74.3 59.2",
+        "M62.3 24.8 L66.7 29.2 L66.2 90"
+      ]
+    }
+  ]
+}

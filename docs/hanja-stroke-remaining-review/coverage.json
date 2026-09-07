@@ -1,0 +1,254 @@
+{
+  "reviewedAt": "2026-09-07",
+  "scope": {
+    "catalog": 5978,
+    "alreadyPlayable": 485,
+    "remaining": 5493,
+    "geometryUnion": 4720,
+    "noCandidateInSixSources": 773,
+    "newSupplementalCandidates": 3,
+    "blockedWithCorrectionEvidence": 15,
+    "productionChanges": false
+  },
+  "columns": [
+    "grade",
+    "remaining",
+    "AnimCJK_Ko",
+    "AnimCJK_Ja",
+    "AnimCJK_Hant",
+    "AnimCJK_Hans",
+    "MakeMeAHanzi",
+    "KanjiVG",
+    "TaiwanMOE_referenceOnly",
+    "sixCorpusUnion",
+    "missingFromSix"
+  ],
+  "rows": [
+    [
+      "g8",
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      "g7-2",
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      "g7",
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      0
+    ],
+    [
+      "g6-2",
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      0
+    ],
+    [
+      "g6",
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      0
+    ],
+    [
+      "g5-2",
+      4,
+      4,
+      4,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      0
+    ],
+    [
+      "g5",
+      3,
+      3,
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      0
+    ],
+    [
+      "g4-2",
+      250,
+      20,
+      246,
+      146,
+      211,
+      245,
+      241,
+      243,
+      248,
+      2
+    ],
+    [
+      "g4",
+      250,
+      0,
+      246,
+      104,
+      192,
+      247,
+      247,
+      246,
+      250,
+      0
+    ],
+    [
+      "g3-2",
+      500,
+      0,
+      495,
+      94,
+      360,
+      488,
+      488,
+      483,
+      499,
+      1
+    ],
+    [
+      "g3",
+      317,
+      0,
+      309,
+      52,
+      227,
+      304,
+      305,
+      302,
+      314,
+      3
+    ],
+    [
+      "g2",
+      538,
+      0,
+      451,
+      26,
+      349,
+      476,
+      458,
+      467,
+      512,
+      26
+    ],
+    [
+      "g1",
+      1145,
+      1,
+      1091,
+      44,
+      722,
+      1076,
+      1114,
+      1074,
+      1139,
+      6
+    ],
+    [
+      "special-2",
+      1150,
+      0,
+      794,
+      25,
+      576,
+      808,
+      793,
+      767,
+      948,
+      202
+    ],
+    [
+      "special",
+      1328,
+      1,
+      440,
+      12,
+      507,
+      648,
+      431,
+      500,
+      795,
+      533
+    ]
+  ],
+  "method": "Exact Unicode; no NFC/NFKC or aliases. Hanzi Writer is derived from Make Me a Hanzi and is not an independent corpus. KanjiVG only non-variant kanji/^[0-9a-f]{5,6}.svg$. Candidate availability is not Korean official approval.",
+  "pins": {
+    "officialHwp": {
+      "document": "f37.hwp",
+      "sha256": "4e191bbee54edd6db595f16fc83a15b9929eba0e3e01095da1e828c70e10760c"
+    },
+    "AnimCJK": {
+      "commit": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+      "Ko": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "Ja": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "Hant": "731fe26345833745dc7d37c8213f3ca91585aa0ee18179c0ccda91be41ff6aec",
+      "Hans": "5a5c157fddd0fd9bfaf5580b25c20a1ba2b0cabc0b7142e09f6149cbd5547798"
+    },
+    "MakeMeAHanzi": {
+      "commit": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee"
+    },
+    "KanjiVG": {
+      "commit": "55b5ba92a7cad78a62ef04db4be6f9562d949b7f",
+      "treeTruncated": false
+    },
+    "HanziWriterData": {
+      "commit": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+      "makemeahanziSubmodule": "6536095f55dc1ba9649326bb01c9b5fb9d619f54",
+      "treeTruncated": false
+    },
+    "TaiwanMOE": {
+      "records": 6063,
+      "sha256": "3ba06517f3a41a542102fcc35afd68aefbf194c9322bcb71e2811dce062ede12"
+    }
+  }
+}

@@ -59,7 +59,7 @@ def compare(document, candidates, name, row, glyph):
     image = image.crop((0, round((row - 1) * image.height / 25), image.width, round(row * image.height / 25)))
     output = io.BytesIO()
     image.save(output, format='PNG')
-    body = f'<h2>{html.escape(glyph)} — {name} / row {row}</h2><p>Official cumulative diagram</p><img style="max-width:100%" src="data:image/png;base64,{base64.b64encode(output.getvalue()).decode()}"><p>Candidate cumulative centerlines (blue=current stroke; red=start)</p><div style="display:flex;flex-wrap:wrap">'
+    body = f'<h2>{html.escape(glyph)} — {name} / row {row}</h2><p>Official cumulative diagram</p><img style="width:100%;image-rendering:pixelated" src="data:image/png;base64,{base64.b64encode(output.getvalue()).decode()}"><p>Candidate cumulative centerlines (blue=current stroke; red=start)</p><div style="display:flex;flex-wrap:wrap">'
     medians = candidates[glyph]['medians']
     for index in range(len(medians)):
         paths = ''
@@ -70,16 +70,69 @@ def compare(document, candidates, name, row, glyph):
         body += f'<div style="text-align:center"><svg width="90" height="100" viewBox="-40 -40 1100 1100">{paths}<circle cx="{x}" cy="{900-y}" r="22" fill="red"/></svg><div>{index+1}</div></div>'
     return body + '</div><hr>'
 
+def compare_reviewed(document, filenames=None):
+    """Show supplementary and corrected entries exactly as shipped."""
+    body = '<h1>Reviewed supplementary paths</h1>'
+    for filename in filenames or ['corrections-reviewed.json', 'supplement-reviewed.json', 'dots-reviewed.json']:
+        data = json.loads((ROOT / 'public/hanja-strokes' / filename).read_text())
+        if data['officialSource']['sha256'] != OFFICIAL_SHA:
+            raise ValueError('Official document mismatch')
+        for entry in data['characters']:
+            image = Image.open(io.BytesIO(zlib.decompress(document.stream(entry['sourceImage']), -15)))
+            row = entry.get('sourceRow')
+            if row is not None:
+                image = image.crop((0, round((row - 1) * image.height / 25), image.width, round(row * image.height / 25)))
+            elif entry.get('sourceWholeImage') is not True:
+                raise ValueError('Missing source region')
+            output = io.BytesIO()
+            image.save(output, format='PNG')
+            body += f'<h2>{html.escape(entry["glyph"])} — {entry["sourceImage"]} / {row or "whole image"}</h2><img style="max-width:100%" src="data:image/png;base64,{base64.b64encode(output.getvalue()).decode()}"><div style="display:flex;flex-wrap:wrap">'
+            for index in range(len(entry['paths'])):
+                paths = ''.join(f'<path d="{html.escape(path, quote=True)}" fill="none" stroke="{"#245fe5" if i == index else "#333"}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>' for i, path in enumerate(entry['paths'][:index + 1]))
+                body += f'<div style="text-align:center"><svg width="100" height="100" viewBox="0 0 100 100">{paths}</svg><div>{index + 1}</div></div>'
+            body += '</div><hr>'
+    return body
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=5865)
     args = parser.parse_args()
     document, candidates = load()
+    locations = json.loads((ROOT / 'scripts/hanja-stroke-locations.json').read_text())
+    if locations['sha256'] != OFFICIAL_SHA:
+        raise ValueError('Index document mismatch')
+    remaining = {c['glyph'] for grade in ['g7', 'g6-2', 'g6', 'g5-2', 'g5']
+        for c in json.loads((ROOT / f'content/hanja/characters/{grade}.json').read_text())['characters']}
+    rows = [(f'BIN{suffix}.gif', i + 1, glyph) for suffix, glyphs in locations['pages'].items()
+        for i, glyph in enumerate(glyphs) if glyph in remaining]
+    if len(rows) != 400 or {glyph for _, _, glyph in rows} != remaining:
+        raise ValueError('Index coverage mismatch')
     class Handler(http.server.BaseHTTPRequestHandler):
         def do_GET(self):
             try:
                 specs = urllib.parse.unquote(self.path).strip('/').split(',')
-                body = page_index(document) if specs == ['index'] else ''.join(compare(document, candidates, name, int(row), glyph) for name, row, glyph in (s.split('/') for s in specs))
+                if specs[0].startswith('data/'):
+                    glyph = specs[0].split('/')[1]
+                    payload = json.dumps({'sha256': CANDIDATE_SHA, 'candidate': candidates[glyph]}).encode()
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json')
+                    self.end_headers()
+                    self.wfile.write(payload)
+                    return
+                if specs == ['dots']:
+                    body = compare_reviewed(document, ['dots-reviewed.json'])
+                elif specs == ['reviewed']:
+                    body = compare_reviewed(document)
+                elif specs[0].startswith('batch/'):
+                    batch = int(specs[0].split('/')[1])
+                    selection = rows[batch * 6:(batch + 1) * 6]
+                    if batch < 0 or not selection:
+                        raise ValueError('No review batch')
+                    body = f'<h1>Review batch {batch} / 66</h1>' + ''.join(compare(document, candidates, name, row, glyph) for name, row, glyph in selection)
+                    if (batch + 1) * 6 < len(rows):
+                        body += f'<a href="/batch/{batch + 1}">Next batch</a>'
+                else:
+                    body = page_index(document) if specs == ['index'] else ''.join(compare(document, candidates, name, int(row), glyph) for name, row, glyph in (s.split('/') for s in specs))
                 payload = ('<!doctype html><meta charset="utf-8"><title>Hanja stroke review</title><body style="margin:20px;font-family:system-ui;background:white;color:#111">' + body).encode()
                 self.send_response(200)
                 self.send_header('Content-Type', 'text/html; charset=utf-8')
