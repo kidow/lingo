@@ -187,11 +187,14 @@ async function tsl() {
     .filter((w): w is string => Boolean(w))
 
   const mine = terms('en')
+  const side = alsoOnly('en')
   const missing = words.filter((w) => !mine.has(w))
   const covered = words.length - missing.length
+  const sideHits = words.filter((w) => side.has(w)).length
   console.log(`\nTSL (TOEIC) — 표제어 목록\n${line(46)}`)
   console.log(`  ${covered}/${words.length}  ${pct(covered, words.length)}`)
   console.log(`  남은 것 ${missing.length}개`)
+  console.log(`  실린 것 가운데 ${sideHits}개는 곁말(also)뿐이다 — 카드에 보이지만 퀴즈에는 안 나온다`)
   // CSV가 순위 순이라 이 목록도 빈도 순이다 — 위에서부터 채우면 된다
   if (wants('tsl')) showSieved('TSL 빠진 낱말 (빈도 순)', missing, haystacks('en'))
 }
@@ -199,6 +202,8 @@ async function tsl() {
 function hsk() {
   // 분모도 출제기관의 표에서 온다. 남의 저장소를 쓸 때는 839개가 빠져 있었다
   const rows = JSON.parse(readFileSync(HSK_TABLE, 'utf8')) as Record<string, number>
+  const side = alsoOnly('zh')
+  let sideHits = 0
 
   const level = new Map<string, number>()
   const total = new Map<number, number>()
@@ -212,7 +217,10 @@ function hsk() {
   const missing = new Map<number, string[]>()
   for (const [word, grade] of level) if (!mine.has(word)) (missing.get(grade) ?? missing.set(grade, []).get(grade)!).push(word)
   for (const [word, grade] of level)
-    if (mine.has(word)) covered.set(grade, (covered.get(grade) ?? 0) + 1)
+    if (mine.has(word)) {
+      covered.set(grade, (covered.get(grade) ?? 0) + 1)
+      if (side.has(word)) sideHits += 1
+    }
 
   console.log(`\nHSK (2026 대강) — 급별\n${line(46)}`)
   let sumTotal = 0
@@ -238,6 +246,7 @@ function hsk() {
     return `${c}/${t} (${pct(c, t)})`
   }
   console.log(`\n  1~3급 ${upTo(3)} · 1~6급 ${upTo(6)}`)
+  console.log(`  그 가운데 ${sideHits}개는 곁말(also)로만 실려 있다 — 카드에 보이지만 퀴즈에는 안 나온다`)
   if (wants('hsk'))
     for (const grade of [...missing.keys()].sort((a, b) => a - b))
       showSieved(`HSK ${grade >= 7 ? '7-9' : grade}급 빠진 낱말`, missing.get(grade) ?? [], haystacks('zh'))
