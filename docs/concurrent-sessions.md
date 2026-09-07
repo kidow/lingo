@@ -129,6 +129,22 @@ git update-ref HEAD COMMIT  # 여기서 처음 브랜치가 움직인다
 `git show --stat COMMIT`으로 **내 것만 들었는지 보고 나서** `update-ref`한다.
 확인과 반영 사이에 남이 끼어들 자리가 없다 — 트리는 이미 굳어 있다.
 
+`update-ref`에 **옛 값을 함께 준다**(`git update-ref HEAD <새> <옛>`). 그 사이
+남이 커밋했으면 실패하므로, 실패하면 새 HEAD를 부모로 다시 지으면 된다.
+덮어쓰기가 구조적으로 막힌다.
+
+**끝나고 공유 인덱스를 HEAD에 맞춘다.** 커밋은 개인 인덱스로 갔지만
+`.git/index`는 옛 HEAD를 그대로 들고 있다 — 그대로 두면 남이 인자 없이
+`git commit`할 때 **내 변경을 되돌리는 커밋**이 나간다. 내가 건드린 경로만
+되돌린다(다른 스테이징은 남는다).
+
+```bash
+git reset HEAD -- content/quality.json lib/levels-stamp.ts public/concepts/well-fed.webp
+```
+
+이 한 줄을 빼먹으면 절차가 도로 위험해진다. 처음 실제로 써 본 회차
+(`ed3c49db`)에서 바로 걸린 자리다.
+
 ```js
 // node로 실행한다. MINE만 이번 배치에 맞게 고친다
 import { execFileSync } from 'node:child_process'
