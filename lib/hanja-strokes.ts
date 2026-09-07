@@ -13,6 +13,7 @@ import reviewedGrade5 from '../public/hanja-strokes/g5-reviewed.json' with { typ
 import reviewedCorrections from '../public/hanja-strokes/corrections-reviewed.json' with { type: 'json' }
 import reviewedSupplement from '../public/hanja-strokes/supplement-reviewed.json' with { type: 'json' }
 import reviewedDots from '../public/hanja-strokes/dots-reviewed.json' with { type: 'json' }
+import reviewedSplits from '../public/hanja-strokes/splits-reviewed.json' with { type: 'json' }
 
 export const HANJA_STROKE_SOURCE = {
   title: '필순 정정 및 500자 필순',
@@ -37,7 +38,7 @@ export type HanjaStrokeData = {
   strokeOrder?: readonly number[]
   /** Explicit reviewed geometry recipe; absent for unchanged upstream geometry. */
   geometryCorrection?: string
-  /** One-based upstream indices; null denotes a separately authored inserted stroke. */
+  /** One-based upstream indices; repeats denote split portions, null a separately authored stroke. */
   sourceStrokeIndices?: readonly (number | null)[]
   /** SHA-256 of UTF-8 JSON.stringify(paths), after the recorded correction. */
   pathsSha256?: string
@@ -56,6 +57,7 @@ export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...reviewedCorrections.characters,
   ...reviewedSupplement.characters,
   ...reviewedDots.characters,
+  ...reviewedSplits.characters,
   { glyph: '校', sourceImage: 'BIN0009.gif', sourceRow: 3, verifiedAt: '2026-09-07', paths: [
     'M12 38 L39 38', 'M27 15 L27 87', 'M26 40 Q22 57 10 70', 'M30 49 L40 61',
     'M58 16 L65 24', 'M46 33 L85 33', 'M55 42 Q50 50 44 55', 'M70 42 Q79 47 84 54',
