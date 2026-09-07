@@ -124,4 +124,13 @@ fi
 
 rm -rf "$TMP"
 [ $bad -eq 0 ] || exit 1
-print -r -- "그림을 눈으로 확인하세요 — pnpm sheet $*"
+
+# 시트를 여기서 만든다. **md5로 못 잡는 사고가 남아 있기 때문이다** —
+# 그림이 서로 뒤바뀐 것은 바이트도 구조도 달라 어떤 검사도 못 본다. 눈으로
+# 보는 수밖에 없는데, 예전에는 이 줄이 "pnpm sheet를 돌리세요"라는 권유였고
+# 그래서 건너뛸 수 있었다. 붙여 두면 열어 보기만 하면 된다.
+#
+# 두 프로세스로 나눠 돌릴 때 서로 덮지 않도록 첫 slug를 이름에 넣는다
+SHEET="$REPO/.images/sheet-$1.png"
+node "$REPO/scripts/sheet.ts" --out "$SHEET" "$@"
+print -r -- "그림을 눈으로 확인하세요 — $SHEET"
