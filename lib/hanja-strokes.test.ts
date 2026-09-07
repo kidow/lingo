@@ -3,14 +3,18 @@ import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { HANJA_STROKES, HANJA_STROKE_SOURCE, hanjaStrokeData, STROKE_DURATION, STROKE_GAP, strokeDuration, strokeNumberAt } from './hanja-strokes.ts'
 
-const g8 = JSON.parse(readFileSync(new URL('../content/hanja/characters/g8.json', import.meta.url), 'utf8'))
-const g7II = JSON.parse(readFileSync(new URL('../content/hanja/characters/g7-2.json', import.meta.url), 'utf8'))
-const characters = [...g8.characters, ...g7II.characters]
+const grades = ['g8', 'g7-2', 'g7', 'g6-2', 'g6', 'g5-2', 'g5']
+const characters = grades.flatMap((grade) => JSON.parse(readFileSync(
+  new URL(`../content/hanja/characters/${grade}.json`, import.meta.url), 'utf8',
+)).characters)
+const blocked = new Set(Array.from('萬草花成藥苦英者敬觀舊性都落葉'))
+const locations = JSON.parse(readFileSync(new URL('../scripts/hanja-stroke-locations.json', import.meta.url), 'utf8'))
 
-test('8급 49자와 7급Ⅱ 50자를 제공하고 萬은 보류한다', () => {
+test('5급까지 500자 중 공식 필순 대조를 통과한 485자만 제공한다', () => {
+  assert.equal(characters.length, 500)
   assert.deepEqual([...HANJA_STROKES.map((d) => d.glyph)].sort(),
-    characters.filter((c: { glyph: string }) => c.glyph !== '萬').map((c: { glyph: string }) => c.glyph).sort())
-  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 99)
+    characters.filter((c: { glyph: string }) => !blocked.has(c.glyph)).map((c: { glyph: string }) => c.glyph).sort())
+  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 485)
   for (const data of HANJA_STROKES) {
     const character = characters.find((c: { glyph: string }) => c.glyph === data.glyph)
     assert.ok(character)
@@ -18,6 +22,7 @@ test('8급 49자와 7급Ⅱ 50자를 제공하고 萬은 보류한다', () => {
     assert.equal(hanjaStrokeData(character), data)
     assert.match(data.sourceImage, /^BIN[0-9A-F]{4}\.gif$/)
     assert.ok(data.sourceRow >= 1 && data.sourceRow <= 25)
+    assert.equal(Array.from(locations.pages[data.sourceImage.slice(3, 7)])[data.sourceRow - 1], data.glyph)
     for (const path of data.paths) {
       assert.equal((path.match(/M/g) ?? []).length, 1, 'a pen-down stroke must remain connected')
       assert.ok((path.match(/-?\d+(?:\.\d+)?/g) ?? []).every((n) => Number(n) >= 0 && Number(n) <= 100))
@@ -27,7 +32,12 @@ test('8급 49자와 7급Ⅱ 50자를 제공하고 萬은 보류한다', () => {
 })
 
 test('검증되지 않은 한자나 획수가 달라진 자형에 필순을 추정하지 않는다', () => {
-  assert.equal(hanjaStrokeData({ glyph: '歌', strokes: 14 }), null)
+  assert.equal(hanjaStrokeData({ glyph: '警', strokes: 20 }), null)
+  for (const glyph of blocked) {
+    const character = characters.find((c: { glyph: string }) => c.glyph === glyph)
+    assert.equal(hanjaStrokeData(character), null, glyph)
+  }
+  assert.equal(hanjaStrokeData({ glyph: '性', strokes: 8 }), null, 'same stroke count does not approve a different order')
   assert.equal(hanjaStrokeData({ glyph: '毎', strokes: 7 }), null)
   assert.equal(hanjaStrokeData({ glyph: '漢', strokes: 15 }), null)
   assert.equal(hanjaStrokeData({ glyph: '萬', strokes: 13 }), null)
