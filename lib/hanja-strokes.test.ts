@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
-import { HANJA_STROKES, HANJA_STROKE_SOURCE, hanjaStrokeData, STROKE_DURATION, STROKE_GAP, strokeDuration, strokeNumberAt } from './hanja-strokes.ts'
+import { HANJA_EOMUNHOE_STROKES, HANJA_STROKES, HANJA_STROKE_SOURCE, hanjaStrokeData, STROKE_DURATION, STROKE_GAP, strokeDuration, strokeNumberAt } from './hanja-strokes.ts'
 
 const grades = ['g8', 'g7-2', 'g7', 'g6-2', 'g6', 'g5-2', 'g5']
 const characters = grades.flatMap((grade) => JSON.parse(readFileSync(
@@ -13,13 +13,14 @@ const supplements = ['g4-2', 'g3-2', 'g1'].flatMap((grade) => JSON.parse(readFil
 const wholeImages: Record<string, string> = { 回: 'BIN0036.bmp', 瓦: 'BIN0038.bmp', 臼: 'BIN0017.gif' }
 const locations = JSON.parse(readFileSync(new URL('../scripts/hanja-stroke-locations.json', import.meta.url), 'utf8'))
 
-test('5급까지 500자 전체와 별도 공식 도해 3자를 합쳐 검토된 503자만 제공한다', () => {
+test('한국어문회 출처는 5급까지 500자 전체와 별도 공식 도해 3자의 정확한 집합을 유지한다', () => {
   assert.equal(characters.length, 500)
   assert.equal(supplements.length, 3)
-  assert.deepEqual([...HANJA_STROKES.map((d) => d.glyph)].sort(),
+  assert.deepEqual([...HANJA_EOMUNHOE_STROKES.map((d) => d.glyph)].sort(),
     [...characters, ...supplements].map((c: { glyph: string }) => c.glyph).sort())
-  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, 503)
-  for (const data of HANJA_STROKES) {
+  assert.equal(new Set(HANJA_EOMUNHOE_STROKES.map((d) => d.glyph)).size, 503)
+  assert.equal(new Set(HANJA_STROKES.map((d) => d.glyph)).size, HANJA_STROKES.length)
+  for (const data of HANJA_EOMUNHOE_STROKES) {
     const character = [...characters, ...supplements].find((c: { glyph: string }) => c.glyph === data.glyph)
     assert.ok(character)
     assert.equal(data.paths.length, character.strokes, data.glyph)

@@ -1,4 +1,4 @@
-/** Order checked against the cumulative diagrams in 한국어문회 f37.hwp.
+/** Explicitly reviewed order, with exam-body and textbook evidence kept distinct.
  * Paths are simplified centerlines; imported geometry is separately attributed.
  * Official source images are not bundled.
  * Never infer unlisted characters from radicals or a foreign stroke-order corpus.
@@ -14,6 +14,7 @@ import reviewedCorrections from '../public/hanja-strokes/corrections-reviewed.js
 import reviewedSupplement from '../public/hanja-strokes/supplement-reviewed.json' with { type: 'json' }
 import reviewedDots from '../public/hanja-strokes/dots-reviewed.json' with { type: 'json' }
 import reviewedSplits from '../public/hanja-strokes/splits-reviewed.json' with { type: 'json' }
+import { HANJA_TEXTBOOK_STROKES } from './hanja-stroke-textbook.ts'
 
 export const HANJA_STROKE_SOURCE = {
   title: '필순 정정 및 500자 필순',
@@ -24,14 +25,8 @@ export const HANJA_STROKE_SOURCE = {
   verifiedAt: '2026-09-06',
 } as const
 
-export type HanjaStrokeData = {
+type HanjaStrokeGeometry = {
   glyph: string
-  sourceImage: string
-  sourceRow?: number
-  /** Explicitly identifies a complete diagram outside the 25-row tables. */
-  sourceWholeImage?: boolean
-  /** Date this entry was visually compared with the official cumulative diagrams. */
-  verifiedAt?: string
   /** SHA-256 of the independently reviewed upstream geometry, if imported. */
   geometrySource?: string
   /** One-based upstream stroke indices, only for an explicitly reviewed correction. */
@@ -46,7 +41,36 @@ export type HanjaStrokeData = {
   paths: readonly string[]
 }
 
-export const HANJA_STROKES: readonly HanjaStrokeData[] = [
+export type HanjaEomunhoeStrokeData = HanjaStrokeGeometry & {
+  /** Omitted in the original f37 registry for backward compatibility. */
+  verificationSource?: 'eomunhoe-f37'
+  sourceImage: string
+  sourceRow?: number
+  /** A complete diagram outside the 25-row tables. */
+  sourceWholeImage?: boolean
+  verifiedAt?: string
+  sourceReference?: never
+}
+
+export type HanjaTextbookStrokeData = HanjaStrokeGeometry & {
+  verificationSource: 'vivasam-high-2022'
+  sourceImage?: never
+  sourceRow?: never
+  sourceWholeImage?: never
+  verifiedAt: string
+  geometrySource: string
+  pathsSha256: string
+  sourceReference: {
+    manifestSha256: string
+    manifestRow: string
+    glyph: string
+    videoFilename: string
+  }
+}
+
+export type HanjaStrokeData = HanjaEomunhoeStrokeData | HanjaTextbookStrokeData
+
+export const HANJA_EOMUNHOE_STROKES: readonly HanjaEomunhoeStrokeData[] = [
   ...reviewedGrade8.characters,
   ...reviewedGrade7II.characters,
   ...reviewedGrade7.characters,
@@ -122,6 +146,11 @@ export const HANJA_STROKES: readonly HanjaStrokeData[] = [
     'M50 16 L50 82 Q50 88 40 81', 'M18 40 L38 40 Q32 60 15 73',
     'M78 29 Q69 40 57 47', 'M52 42 Q65 66 85 76',
   ] },
+]
+
+export const HANJA_STROKES: readonly HanjaStrokeData[] = [
+  ...HANJA_EOMUNHOE_STROKES,
+  ...HANJA_TEXTBOOK_STROKES,
 ]
 
 const byGlyph = new Map(HANJA_STROKES.map((data) => [data.glyph, data]))
