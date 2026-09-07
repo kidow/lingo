@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-09-07",
+  "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+  "scope": "Exact-glyph inventory only. Candidate geometry and equal stroke counts do not establish Korean stroke-order correctness or authorize playback.",
+  "sourcePins": {
+    "textbookManifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+    "animCjkCommit": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+    "koreanSha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+    "japaneseSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8"
+  },
+  "catalogCharacters": 5978,
+  "runtimeApprovedCharacters": 503,
+  "manifestCharacters": 1800,
+  "exactCatalogMatches": 1772,
+  "exactAlreadyApproved": 488,
+  "exactNewReviewTargets": 1284,
+  "geometryCandidates": {
+    "korean": 20, "koreanCountMatches": 19,
+    "japanese": 1262, "japaneseCountMatches": 1103,
+    "either": 1262, "neither": 22
+  },
+  "byGrade": [
+    { "grade": "4급II", "newTargets": 244, "korean": 20, "koreanCountMatches": 19, "japanese": 240, "japaneseCountMatches": 216, "neither": 4 },
+    { "grade": "4급", "newTargets": 241, "korean": 0, "koreanCountMatches": 0, "japanese": 237, "japaneseCountMatches": 211, "neither": 4 },
+    { "grade": "3급II", "newTargets": 480, "korean": 0, "koreanCountMatches": 0, "japanese": 475, "japaneseCountMatches": 408, "neither": 5 },
+    { "grade": "3급", "newTargets": 314, "korean": 0, "koreanCountMatches": 0, "japanese": 306, "japaneseCountMatches": 264, "neither": 8 },
+    { "grade": "특급II", "newTargets": 4, "korean": 0, "koreanCountMatches": 0, "japanese": 3, "japaneseCountMatches": 3, "neither": 1 },
+    { "grade": "특급", "newTargets": 1, "korean": 0, "koreanCountMatches": 0, "japanese": 1, "japaneseCountMatches": 1, "neither": 0 }
+  ],
+  "normalizationOnlyNewGlyphs": ["更", "諾", "亂", "蘭", "濫", "兩", "連", "戀", "蓮", "嶺", "弄", "率", "吏"],
+  "unmatchedAfterNormalization": ["册", "奬", "姊", "衞", "隸"],
+  "reviewQueue": { "total": 20, "pending": 20, "matched": 0, "conflict": 0, "countMismatchGlyphs": ["警"] },
+  "emittedCharacters": 0,
+  "publishedBundleMatches": true,
+  "validation": {
+    "npmTestsPassed": 166, "npmTestsFailed": 0, "typecheck": "passed",
+    "liveManifestAndCandidateHashes": "passed",
+    "sourceParserChecks": "15 in-memory and live-source checks passed; reported separately from npm tests",
+    "newWholeGlyphVideoReviews": 0
+  }
+}

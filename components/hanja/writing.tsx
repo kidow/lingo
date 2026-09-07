@@ -1,7 +1,8 @@
 'use client'
 
-import { ArrowLeft, Trash2, Undo2 } from 'lucide-react'
+import { Trash2, Undo2, X } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react'
+import { Drawer } from 'vaul'
 import { gradeLabel, hunEum, type HanjaCharacter } from '@/lib/hanja'
 import { HanjaGlyph } from './glyph'
 import { StrokePlayback } from './stroke-player'
@@ -10,7 +11,7 @@ type Point = { x: number; y: number }
 type Stroke = Point[]
 
 /** 연습용 잉크만 보관한다. 그림 비교나 필순 판정으로 진도를 변경하지 않는다. */
-export function WritingPractice({ character, onClose }: { character: HanjaCharacter; onClose: () => void }) {
+export function WritingPractice({ character }: { character: HanjaCharacter }) {
   const canvas = useRef<HTMLCanvasElement>(null)
   const strokes = useRef<Stroke[]>([])
   const draft = useRef<Stroke | null>(null)
@@ -66,26 +67,29 @@ export function WritingPractice({ character, onClose }: { character: HanjaCharac
 
   return (
     <StrokePlayback character={character} autoPlay guide={false}>{({ diagram, controls, started, reset }) => (
-    <div className="flex h-full flex-col gap-3 overflow-y-auto bg-surface px-5 pt-3 pb-5" onKeyDown={(event) => { if (event.key === 'Escape') onClose() }}>
-      <div className="flex items-center gap-2">
-        <button ref={close} type="button" aria-label="카드로 돌아가기" onClick={onClose} className="-ml-3 grid size-11 place-items-center rounded-ctrl"><ArrowLeft className="size-5" aria-hidden /></button>
-        <span className="text-sm text-sub">쓰기 연습</span>
+    <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain px-5 pt-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+      <div className="flex shrink-0 items-center justify-between">
+        <Drawer.Title className="text-lg font-bold">쓰기 연습</Drawer.Title>
+        <Drawer.Close ref={close} type="button" aria-label="닫기" className="-my-3 -mr-3 rounded-ctrl p-3 text-sub"><X className="size-5" aria-hidden /></Drawer.Close>
       </div>
+      <Drawer.Description className="sr-only">{hunEum(character)}의 필순을 보고 캔버스에 따라 씁니다.</Drawer.Description>
       <h2 className="text-3xl font-semibold">{hunEum(character)}</h2>
       <p className="text-sm text-sub">{gradeLabel(character.readingGrade)}</p>
       <div className="relative mx-auto mt-2 aspect-square w-full max-w-[340px] shrink-0 overflow-hidden rounded-card border border-line bg-img-bg">
         <div className="pointer-events-none absolute inset-y-0 left-1/2 border-l border-dashed border-line" />
         <div className="pointer-events-none absolute inset-x-0 top-1/2 border-t border-dashed border-line" />
-        {(reference || started) && <div className="pointer-events-none absolute inset-4 text-accent/20" aria-hidden>
+        {reference && !started && <div className="pointer-events-none absolute inset-4 text-accent/20" aria-hidden>
           <HanjaGlyph glyph={character.glyph} className="h-full w-full" decorative />
         </div>}
         {diagram && <div className={`pointer-events-none absolute inset-4 text-accent/60 ${started ? '' : 'invisible'}`}>{diagram}</div>}
         <canvas
           ref={canvas}
+          data-vaul-no-drag
           aria-label={`${hunEum(character)} 한자 쓰기 칸`}
-          className="absolute inset-0 h-full w-full touch-none"
+          className="absolute inset-0 h-full w-full touch-none select-none"
           onPointerDown={(event) => {
             if (pointer.current !== null || !event.isPrimary || event.button !== 0) return
+            event.preventDefault()
             pointer.current = event.pointerId
             event.currentTarget.setPointerCapture(event.pointerId)
             draft.current = [point(event)]

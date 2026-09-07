@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-07",
+  "purpose": "Acquire references for subsequent per-character stroke-order review; no new runtime approvals.",
+  "baseline": {
+    "catalogCharacters": 5978,
+    "runtimeApprovedCharacters": 503,
+    "remainingCharacters": 5475
+  },
+  "sources": [
+    {
+      "id": "vivasam-high-2022",
+      "publisher": "비상교육",
+      "title": "2022 개정 고등학교 한문(이동재) 한문 교육용 기초 한자 필순 영상",
+      "authority": "Publisher-provided Korean textbook supplementary material; Korea Eomunhoe approval not established.",
+      "productUrl": "https://text.vivasam.com/detail/186",
+      "viewerUrl": "https://viewer.vivasam.com/qrviewer/viewer.html?qrcode=106502_171p_25_ST&teacher=false",
+      "manifestUrl": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/data/data_high.xlsx",
+      "manifestDiscovery": "Public viewer HTML -> js/scripts.js -> loadExcel('./data/data_high.xlsx')",
+      "manifestHttpStatus": 200,
+      "manifestBytes": 128318,
+      "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+      "manifestDataRows": 1800,
+      "manifestUniqueGlyphs": 1800,
+      "exactMatch": {
+        "catalog": 1772,
+        "alreadyApproved": 488,
+        "newReviewTargets": 1284,
+        "newTargetsByGrade": { "4급II": 244, "4급": 241, "3급II": 480, "3급": 314, "특급II": 4, "특급": 1 }
+      },
+      "nfcTrimMatch": {
+        "catalog": 1795,
+        "alreadyApproved": 498,
+        "newReviewTargets": 1297,
+        "newTargetsByGrade": { "4급II": 246, "4급": 243, "3급II": 488, "3급": 315, "특급II": 4, "특급": 1 },
+        "unmatchedGlyphs": ["册", "奬", "姊", "衞", "隸"]
+      },
+      "normalizationPolicy": "Trim surrounding whitespace and apply Unicode NFC for candidate lookup only. Preserve original glyph/row. No variant substitution or stroke-order approval.",
+      "specialGradeMatches": { "特級II": ["凉", "戱", "秘", "鐘"], "特級": ["鄰"] },
+      "reuseStatus": "No permission to embed, redistribute, trace or convert these video assets into app assets was acquired."
+    },
+    {
+      "id": "vivasam-middle-2022",
+      "publisher": "비상교육",
+      "title": "2022 개정 중학교 한문(이동재) 한문 교육용 기초 한자 필순 영상",
+      "productUrl": "https://text.vivasam.com/detail/120",
+      "viewerUrl": "https://viewer.vivasam.com/qrviewer/viewer.html?qrcode=106434_19p_31_ST&teacher=false",
+      "manifestUrl": "https://viewer.vivasam.com/VS/MS/CHI/106434/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EC%A4%91%ED%95%99_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/data/data_middle.xlsx",
+      "manifestHttpStatus": 200,
+      "manifestBytes": 72955,
+      "manifestSha256": "3b350c1f842e70b1bd28c613a3fb02b2668bf40351b390ab736056f6d3a47b20",
+      "manifestDataRows": 900,
+      "manifestUniqueGlyphs": 900,
+      "exactMatch": { "catalog": 885, "alreadyApproved": 458, "newReviewTargets": 427 },
+      "subsetOfHighManifest": { "exact": true, "nfcTrim": true },
+      "additionalUniqueGlyphsBeyondHighManifest": 0
+    },
+    {
+      "id": "vivasam-use-notice",
+      "title": "비바샘 콘텐츠 저작권 사용 기준 안내",
+      "publishedAt": "2025-11-04",
+      "url": "https://www.vivasam.com/support/notice/detail?noticeId=1570&page=3",
+      "termsUrl": "https://www.vivasam.com/public/terms",
+      "finding": "Publisher describes school-teaching uses and warns against unauthorized modification, external distribution and uses outside school teaching. Public viewing does not establish an app asset license."
+    },
+    {
+      "id": "eomunhoe-study-materials",
+      "title": "한국어문회 학습교재 안내",
+      "url": "https://www.hanja.re.kr/kccpt/exam/studyInfo.do",
+      "finding": "Official page links suppliers of Korean Language Education Research Association textbooks and Wafour app. No new complete per-character stroke-order chart acquired from these links.",
+      "textbookUrls": {
+        "4급II": "https://skymiru.co.kr/product01/detail.html?product_no=44",
+        "4급": "https://skymiru.co.kr/product01/detail.html?product_no=41",
+        "1급": "https://skymiru.co.kr/product01/detail.html?product_no=40",
+        "특급": "https://skymiru.co.kr/product01/detail.html?product_no=30"
+      },
+      "appUrl": "https://play.google.com/store/apps/details?id=com.wafour.hanzitest_am&pli=1&hl=ko",
+      "appFinding": "Publisher advertises exam-question and stroke-order-question practice; full per-character stroke data coverage and reuse rights remain unconfirmed.",
+      "errataUrl": "https://skymiru.co.kr/board/sub06/list.html?board_no=1002"
+    },
+    {
+      "id": "daolsoft-1800",
+      "title": "교육부 1800 상용한자 쓰기",
+      "publisher": "DaolSoft",
+      "url": "https://play.google.com/store/apps/details?hl=ko&id=com.daolsoft.Hanja1800",
+      "finding": "Developer lists 900 middle-school and 900 high-school characters with stroke-order information. Commercial app; not purchased or installed. Ministry-selected character scope does not establish Ministry-issued stroke data."
+    },
+    {
+      "id": "kpipa-hanja-1800-book",
+      "title": "술술 외워지는 한자 1800",
+      "url": "https://bnk.kpipa.or.kr/home/v3/addition/adiPromoMetaDataView/seq_20220717015303737452",
+      "isbn": "9788994465081",
+      "publishedAt": "2011-06-28",
+      "finding": "Public publishing metadata describes stroke-order content. No complete per-character pages acquired; government-hosted bibliographic metadata is not government approval of each stroke order."
+    },
+    {
+      "id": "kyohak-preview",
+      "title": "한자 필순 사전 공개 미리보기",
+      "url": "https://www.aladin.co.kr/shop/book/wletslookViewer.aspx?ItemId=6261775",
+      "finding": "Public preview exposes front/back cover navigation only. No inner stroke-order pages acquired."
+    }
+  ],
+  "sampleViewing": {
+    "checkedGlyphs": [
+      { "glyph": "渴", "sourceId": "vivasam-middle-2022", "row": "0027", "durationSeconds": 15 },
+      { "glyph": "假", "sourceId": "vivasam-high-2022", "row": "0002", "durationSeconds": 19 },
+      { "glyph": "警", "sourceId": "vivasam-high-2022", "row": "0103", "durationSeconds": 23 }
+    ],
+    "status": "Public browser playback sampled; all-stroke comparison against Korea Eomunhoe not completed.",
+    "otherHighManifestGlyphsNotViewed": 1797,
+    "videosCopied": 0,
+    "newRuntimeApprovals": 0
+  },
+  "nextReviewBatch": {
+    "basis": "All 20 unapproved grade-4II AnimCJK Ko candidates have exact glyph matches in the high-school manifest.",
+    "glyphs": ["假", "街", "減", "監", "講", "康", "個", "檢", "潔", "缺", "境", "經", "警", "慶", "係", "故", "官", "求", "句", "究"],
+    "countMismatch": { "glyph": "警", "catalogStrokes": 20, "pinnedKoCandidateStrokes": 19 },
+    "unmatchedKoCandidates": ["几", "冂"],
+    "policy": "Record complete order, stroke segmentation, source and conflicts per glyph. Do not promote to the existing Eomunhoe-verified runtime solely from publisher-list membership or matching stroke counts."
+  },
+  "historicalGeometrySnapshotDelta": {
+    "source": "../hanja-stroke-remaining-review/coverage.json",
+    "method": "Exact subtraction of 18 subsequently approved characters from the previous 485-character pinned corpus comparison; not a fresh upstream audit.",
+    "remainingWithAnyOfSixCandidateCorpora": 4702,
+    "remainingWithNoneOfSixCandidateCorpora": 773,
+    "unreviewedKoCandidates": 22,
+    "remainingJaCandidates": 4069
+  }
+}

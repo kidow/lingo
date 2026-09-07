@@ -162,7 +162,8 @@ export function hanjaStrokeData(character: { glyph: string; strokes: number }): 
 }
 
 // A deliberately slow, constant pen speed for watching and following each stroke.
-export const STROKE_DURATION = 650
-export const STROKE_GAP = 180
+const STROKE_PLAYBACK_SPEED = 1.5
+export const STROKE_DURATION = 650 / STROKE_PLAYBACK_SPEED
+export const STROKE_GAP = 180 / STROKE_PLAYBACK_SPEED
 export const strokeDuration = (count: number) => count * STROKE_DURATION + Math.max(0, count - 1) * STROKE_GAP
 export const strokeNumberAt = (elapsed: number, count: number) => Math.min(count, Math.floor(Math.max(0, elapsed) / (STROKE_DURATION + STROKE_GAP)) + 1)

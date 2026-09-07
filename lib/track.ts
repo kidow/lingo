@@ -58,7 +58,7 @@ export const LANGUAGE_TRACKS: LanguageTrack[] = [
 export const LANGUAGE_TRACK_IDS = LANGUAGE_TRACKS.map((track) => track.id)
 export const TRACKS: Track[] = [
   ...LANGUAGE_TRACKS,
-  { id: 'hanja', label: '한자능력검정', flag: '🇰🇷', language: null },
+  { id: 'hanja', label: '한능검', flag: '🇰🇷', language: null },
 ]
 export const TRACK_IDS = TRACKS.map((track) => track.id)
 

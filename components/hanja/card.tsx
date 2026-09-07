@@ -1,7 +1,8 @@
 'use client'
 
 import { Check, X } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
+import { Drawer } from 'vaul'
 import { gradeLabel, hanjaReadings, hunEum, type HanjaCharacter, type HanjaQuestion } from '@/lib/hanja'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from '../feed'
 import { WritingPractice } from './writing'
@@ -10,10 +11,10 @@ import { HanjaGlyph, HanjaGlyphs } from './glyph'
 
 const GAVE_UP = '__hanja_gave_up__'
 
-export function HanjaIllustration({ character, active = true, autoPlay = false }: { character: HanjaCharacter; active?: boolean; autoPlay?: boolean }) {
+export function HanjaIllustration({ character, active = true, autoPlay = false, large = false }: { character: HanjaCharacter; active?: boolean; autoPlay?: boolean; large?: boolean }) {
   return <StrokePlayback character={character} active={active} autoPlay={autoPlay}>{({ diagram, controls, started }) => (
     <div className="flex h-full flex-col items-center justify-center gap-2 pb-10" lang="ko">
-      <div className="relative size-[clamp(112px,40vw,176px)] shrink-0">
+      <div className={`relative shrink-0 ${large ? 'size-[clamp(168px,60vw,264px)]' : 'size-[clamp(112px,40vw,176px)]'}`}>
         <HanjaGlyph glyph={character.glyph} className={`h-full w-full ${started ? 'invisible' : ''}`} />
         {diagram && <div className={`absolute inset-0 ${started ? '' : 'invisible'}`}>{diagram}</div>}
       </div>
@@ -52,24 +53,15 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
   onAnswer: (correct: boolean, picked: string) => void
 }) {
   const [writing, setWriting] = useState(false)
-  const writeButton = useRef<HTMLButtonElement>(null)
   const character = question.entry.character
   const intro = question.kind === 'hanja-intro'
   const answered = pick !== null
 
-  if (writing && active) return (
-    <FeedCard>
-      <WritingPractice character={character} onClose={() => {
-        setWriting(false)
-        requestAnimationFrame(() => writeButton.current?.focus())
-      }} />
-    </FeedCard>
-  )
-
   return (
+    <Drawer.Root open={writing && active} onOpenChange={setWriting} handleOnly>
     <FeedCard>
       <CardImage>
-        {intro ? <HanjaIllustration character={character} active={active} autoPlay /> : <div className="flex h-full items-center justify-center pb-4" lang="ko">
+        {intro ? <HanjaIllustration character={character} active={active && !writing} autoPlay large /> : <div className="flex h-full items-center justify-center pb-4" lang="ko">
           {question.entry.skill === 'hun-eum'
             ? <HanjaGlyph glyph={question.prompt} className="size-[clamp(168px,60vw,264px)]" />
             : <span className="text-4xl font-semibold">{question.prompt}</span>}
@@ -108,11 +100,18 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
         )}
         {(intro || answered) && (
           <div className="mt-auto pt-3">
-            <button ref={writeButton} type="button" className="mx-auto block min-h-11 rounded-ctrl px-5 text-sm text-sub underline underline-offset-4" onClick={() => setWriting(true)}>써보기</button>
+            <Drawer.Trigger className="mx-auto block min-h-11 rounded-ctrl px-5 text-sm text-sub underline underline-offset-4">써보기</Drawer.Trigger>
             <SwipeHint />
           </div>
         )}
       </CardSheet>
     </FeedCard>
+    <Drawer.Portal>
+      <Drawer.Overlay className="fixed inset-0 z-40 bg-ink/40" />
+      <Drawer.Content className="fixed inset-x-0 bottom-0 z-50 mx-auto flex h-[85dvh] w-full max-w-[480px] flex-col overflow-hidden rounded-t-card bg-surface outline-none" lang="ko">
+        <WritingPractice character={character} />
+      </Drawer.Content>
+    </Drawer.Portal>
+    </Drawer.Root>
   )
 }

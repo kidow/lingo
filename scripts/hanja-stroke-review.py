@@ -70,14 +70,16 @@ def compare(document, candidates, name, row, glyph):
         body += f'<div style="text-align:center"><svg width="90" height="100" viewBox="-40 -40 1100 1100">{paths}<circle cx="{x}" cy="{900-y}" r="22" fill="red"/></svg><div>{index+1}</div></div>'
     return body + '</div><hr>'
 
-def compare_reviewed(document, filenames=None):
+def compare_reviewed(document, filenames=None, glyph=None):
     """Show supplementary and corrected entries exactly as shipped."""
     body = '<h1>Reviewed supplementary paths</h1>'
-    for filename in filenames or ['corrections-reviewed.json', 'supplement-reviewed.json', 'dots-reviewed.json']:
+    for filename in filenames or ['corrections-reviewed.json', 'supplement-reviewed.json', 'dots-reviewed.json', 'splits-reviewed.json']:
         data = json.loads((ROOT / 'public/hanja-strokes' / filename).read_text())
         if data['officialSource']['sha256'] != OFFICIAL_SHA:
             raise ValueError('Official document mismatch')
         for entry in data['characters']:
+            if glyph is not None and entry['glyph'] != glyph:
+                continue
             image = Image.open(io.BytesIO(zlib.decompress(document.stream(entry['sourceImage']), -15)))
             row = entry.get('sourceRow')
             if row is not None:
@@ -119,7 +121,12 @@ def main():
                     self.end_headers()
                     self.wfile.write(payload)
                     return
-                if specs == ['dots']:
+                if specs[0].startswith('split/'):
+                    glyph = specs[0].split('/')[1]
+                    if glyph not in '成萬草花藥苦英敬觀舊落葉':
+                        raise ValueError('No reviewed split')
+                    body = compare_reviewed(document, ['splits-reviewed.json'], glyph)
+                elif specs == ['dots']:
                     body = compare_reviewed(document, ['dots-reviewed.json'])
                 elif specs == ['reviewed']:
                     body = compare_reviewed(document)
