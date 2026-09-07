@@ -733,11 +733,11 @@ type Attributes =
     | 언어 | 원형이 서는 자리 | 걸리는 자리 |
     |---|---|---|
     | en | `begin to X` · `can X` · `try to X` | 3인칭 단수 `-s`, 과거형 |
-    | ja | 사전형 그대로. **읽기가 정답이라 かな로 쓴다** | 한자로 적으면 정답과 안 맞는다 |
+    | ja | 사전형 그대로. **읽기가 정답이라 かな로 쓴다** | 한자로 적으면 정답과 안 맞는다, **て형·ます형으로 활용하는 것**(`かけなおして`·`しっぱいしました` ≠ `かけなおす`·`しっぱいした`) |
     | zh | 굴절이 없어 그대로 둔다 | — |
     | es | `va a X` · `hay que X` · `empieza a X` · `puede X` | 현재형 굴절, 재귀 `-se`가 인칭을 따라가는 것(`probarte`) |
     | fr | `va X` · `il faut X` · `commence à X` · `peut X` | 현재형 굴절, 대명동사의 `se`가 바뀌는 것 |
-    | de | 조동사 + 문말 원형(`will X`) · `zu X` | **분리 동사가 갈라지는 것**(`kündigen … an` ≠ `ankündigen`), 재귀 `sich`와 본동사 사이에 낱말이 끼는 것(`sich nicht überessen`), 명사화(`zum Sonnenbaden` ≠ `sonnenbaden`) |
+    | de | 조동사 + 문말 원형(`will X`) | **분리 동사가 갈라지는 것**(`kündigen … an` ≠ `ankündigen`), **분리 동사에 `zu`가 끼는 것**(`aufzustocken` ≠ `aufstocken`), 재귀 `sich`와 본동사 사이에 낱말이 끼는 것(`sich zweimal abmelden` ≠ `sich abmelden`), 명사화(`zum Sonnenbaden` ≠ `sonnenbaden`) |
     | ru | `начинает X` · `можно X` · `надо X` · `будет X` | 인칭 변화 |
 
   - **같은 뜻의 다른 말은 `also`에 넣는다.** 목록의 낱말 가운데 상당수가 이미
