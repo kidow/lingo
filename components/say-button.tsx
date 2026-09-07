@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 // 경로 함수만 쓴다. `@/lib/content`는 콘텐츠 전량을 정적 import하므로
 // 클라이언트에서 거치지 않는다 (lib/corpus.ts)
 import { audioPath } from '@/lib/entries'
+import { hasAudio } from '@/lib/audio-have'
 import type { Language } from '@/lib/types'
 
 /**
@@ -73,6 +74,9 @@ export function SayButton({
   /** 누른 횟수. 홀짝으로 속도가 갈린다 */
   const taps = useRef(0)
   const [available, setAvailable] = useState(true)
+  // 낱말 음성은 목록에서 제외되면 CDN에 옛 파일이 남아 있어도 재생하지 않는다.
+  // 예문은 부모가 확인한 문장 해시 경로를 src로 받는다.
+  const catalogAvailable = src !== undefined || hasAudio(slug, lang)
   const [playing, setPlaying] = useState(false)
   /**
    * 저절로 울리려다 브라우저에 막혔는가.
@@ -100,7 +104,7 @@ export function SayButton({
     audio.currentTime = 0
     // 실패해도 버튼을 죽이지 않는다. 재생이 막히거나(자동재생 정책) 중단되는
     // 것은(NotAllowedError · AbortError) 파일 문제가 아니다. 파일이 없다는
-    // 판정은 아래 'error' 이벤트 하나가 맡는다 — 그게 유일한 근거다
+    // 네트워크 오류는 아래 error 이벤트에서 처리하고, 목록의 누락은 효과에서 거른다
     audio
       .play()
       .then(() => setBlocked(false))
@@ -116,6 +120,11 @@ export function SayButton({
   }, [playing, onPlayingChange])
 
   useEffect(() => {
+    setAvailable(true)
+    setPlaying(false)
+    setBlocked(false)
+    if (!enabled || !catalogAvailable) return
+
     // 파일이 없으면 조용히 비활성. 발음이 아직 없는 개념은 정상이다.
     //
     // preload='none'이면 요청이 안 나가서 error도 안 뜬다 — 파일이 없어도
@@ -144,9 +153,9 @@ export function SayButton({
       audio.pause()
       audioRef.current = null
     }
-  }, [slug, lang, src, autoPlay, play])
+  }, [slug, lang, src, autoPlay, enabled, catalogAvailable, play])
 
-  const disabled = !enabled || !available
+  const disabled = !enabled || !catalogAvailable || !available
 
   return (
     <button
