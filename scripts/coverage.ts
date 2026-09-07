@@ -130,16 +130,49 @@ function haystacks(lang: 'en' | 'zh' | 'ru') {
   return { terms: termList.join(' | '), texts: textList.join(' | '), spaced: lang !== 'zh' }
 }
 
+const fold = (lang: 'en' | 'zh' | 'ru', t: string) =>
+  lang === 'en' ? t.toLowerCase() : lang === 'ru' ? bare(t) : t
+
+/**
+ * 우리가 실은 표기.
+ *
+ * **`also`도 센다.** 같은 뜻의 다른 말이라 카드에 "또는"으로 함께 적히고
+ * 검색에도 걸린다 (lib/search.ts) — 목록의 그 낱말은 앱 안에 있다.
+ *
+ * 그런데 `also`는 **퀴즈에 한 번도 안 나온다** (lib/types.ts). 정답이 둘이
+ * 되면 4지선다가 깨지기 때문이다. 곁말로만 실린 낱말은 보기는 해도 회상
+ * 훈련은 못 하므로 `term`과 같은 무게로 읽으면 안 된다 — 그래서 세되
+ * **몇 개가 곁말뿐인지 따로 적는다** (`alsoOnly`).
+ */
 function terms(lang: 'en' | 'zh' | 'ru'): Set<string> {
   const set = new Set<string>()
   for (const concept of concepts) {
     const word = concept.words[lang]
     if (!word) continue
-    if (lang === 'en') set.add(word.term.toLowerCase())
-    else if (lang === 'ru') set.add(bare(word.term))
-    else set.add(word.term)
+    set.add(fold(lang, word.term))
+    for (const other of word.also ?? []) set.add(fold(lang, other))
   }
   return set
+}
+
+/** 표제 표기로는 없고 `also`에만 있는 것. 위의 주석을 보라 */
+function alsoOnly(lang: 'en' | 'zh' | 'ru'): Set<string> {
+  const heads = new Set<string>()
+  const extra = new Set<string>()
+  for (const concept of concepts) {
+    const word = concept.words[lang]
+    if (!word) continue
+    heads.add(fold(lang, word.term))
+  }
+  for (const concept of concepts) {
+    const word = concept.words[lang]
+    if (!word) continue
+    for (const other of word.also ?? []) {
+      const key = fold(lang, other)
+      if (!heads.has(key)) extra.add(key)
+    }
+  }
+  return extra
 }
 
 async function tsl() {
@@ -219,6 +252,8 @@ function hsk() {
 async function torfl() {
   const entries = await torflEntries()
   const mine = terms('ru')
+  const side = alsoOnly('ru')
+  let sideHits = 0
 
   const order = ['A1', 'A2', 'B1', 'B2'] as const
   const total = new Map<string, number>()
@@ -227,8 +262,10 @@ async function torfl() {
   for (const { forms, level: grade } of entries) {
     total.set(grade, (total.get(grade) ?? 0) + 1)
     // 한 줄에 여러 모양이 있으면 하나만 있어도 덮은 것이다 (`зонт; зонтик`)
-    if (forms.some((form) => mine.has(form))) covered.set(grade, (covered.get(grade) ?? 0) + 1)
-    else (missing.get(grade) ?? missing.set(grade, []).get(grade)!).push(forms[0])
+    if (forms.some((form) => mine.has(form))) {
+      covered.set(grade, (covered.get(grade) ?? 0) + 1)
+      if (forms.every((form) => side.has(form) || !mine.has(form))) sideHits += 1
+    } else (missing.get(grade) ?? missing.set(grade, []).get(grade)!).push(forms[0])
   }
 
   console.log(`\nTORFL (ТРКИ) — 등급별\n${line(46)}`)
@@ -253,6 +290,7 @@ async function torfl() {
     return `${c}/${t} (${pct(c, t)})`
   }
   console.log(`\n  A1~A2 ${upTo(2)} · A1~B1 ${upTo(3)}`)
+  console.log(`  그 가운데 ${sideHits}개는 곁말(also)로만 실려 있다 — 카드에 보이지만 퀴즈에는 안 나온다`)
   console.log(`  C1·C2는 목록에 없다 — 사이트가 B2까지만 싣는다`)
   if (wants('torfl'))
     for (const grade of order)
