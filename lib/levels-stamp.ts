@@ -8,9 +8,9 @@
  * 무엇을 재는지는 scripts/levels-stamp.ts에 적었다.
  */
 export const LEVELS_STAMP: Readonly<Record<string, string>> = {
-  'action.json': 'fe4415f437e9',
+  'action.json': 'df17c11d774f',
   'articles.json': 'da39a3ee5e6b',
-  'body.json': '30fa86a12ce5',
+  'body.json': '443c3a76e4ef',
   'city.json': '29a6ee6f3269',
   'clothes.json': '7b21bd37fcb1',
   'everyday.json': '232f57373984',
@@ -21,12 +21,12 @@ export const LEVELS_STAMP: Readonly<Record<string, string>> = {
   'job.json': '1e5f5e63ed6e',
   'nature.json': 'caef2b53a99e',
   'number.json': '68c674a9ce17',
-  'office.json': 'fd4a82f83ccd',
-  'quality.json': 'a021a2e4575d',
-  'scene.json': '66833abf8a07',
-  'school.json': '369db92f84c2',
-  'sport.json': 'e476a8bef660',
+  'office.json': 'ced1669f6591',
+  'quality.json': 'f5093c87a1e6',
+  'scene.json': 'd8c188abec28',
+  'school.json': 'd72c1e78fdab',
+  'sport.json': '71bd2825e16c',
   'time.json': '99063a0159a2',
   'transport.json': '36eeabf961a6',
-  'travel.json': '7d5b2c150dae',
+  'travel.json': '30116c4cbb79',
 }
