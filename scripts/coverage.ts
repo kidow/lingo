@@ -393,6 +393,30 @@ function shape() {
   console.log(`  개념 ${all}개 · 낱말 ${all * 7}개(7언어)`)
   for (const [key, value] of Object.entries(counts))
     console.log(`  ${key.padEnd(10)} ${String(value).padStart(5)}  ${pct(value, all)}`)
+  sceneLine(counts.scene, all)
+}
+
+/**
+ * 상황 표현 유지선. spec.md가 적어 둔 10%는 **분모가 늘면 저절로 깨진다** —
+ * 다른 세션이 명사 배치를 넣을 때마다 선이 내려간다.
+ *
+ * 필요한 수는 목표에서 현재를 빼는 것이 아니다. 상황 표현을 넣으면 분모도
+ * 같이 늘기 때문이다.
+ *
+ *   N = (0.1 × 전체 − 상황 표현) / 0.9
+ *
+ * 이 식을 손으로 셌다가 네 회차를 틀렸다 — 9.13%에서 "21개"로 적었지만 실제는
+ * 60개였다(docs/pos-saturation-audit.md). 그래서 여기에 박아 둔다.
+ */
+function sceneLine(scene: number, all: number) {
+  const need = Math.ceil((0.1 * all - scene) / 0.9)
+  if (need > 0) {
+    console.log(`\n  10%까지 상황 표현 ${need}개 — N = (0.1 × 전체 − 상황) / 0.9`)
+    return
+  }
+  const slack = Math.floor(scene / 0.1) - all
+  console.log(`\n  10% 유지 중 — 다른 개념 ${slack}개가 더 들어오면 선이 깨진다`)
+  console.log(`  그 뒤로는 다른 개념 100개마다 상황 표현 12개가 필요하다`)
 }
 
 shape()
