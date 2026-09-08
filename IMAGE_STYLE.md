@@ -321,6 +321,25 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 비교를 버리고 **한쪽만** 그리면 뜻이 선다 — `approximate`는 "삐뚤빼뚤한 원과 정확한
 원"을 버리고 "끝이 안 맞는 원 하나"로 적어서야 통했다.
 
+### 낱말이 제 뜻으로 안 읽히는 자리
+
+지시문이 사라지는 것과 다른 실패가 하나 더 있다. **낱말은 그려지는데 엉뚱한
+물건이 나온다.** 모델이 그 낱말을 다른 뜻으로 먼저 읽어서다.
+
+| 적은 것 | 나온 것 | 고친 말 |
+|---|---|---|
+| `one lens with a scratch` | 카메 렌즈 (두 번) | `one spectacle frame …` · `one single eyeglass lens standing in a clip stand` |
+| `one oil can with a tag` | 주전자 | (다시) `one squat oil bottle` → 올리브유 → `one dipstick with a dark oil mark` |
+| `a globe mark printed in its corner` | 야자수와 표지판 | `one certificate sheet with a second sheet clipped behind it` |
+| `one booklet with rows of small stamps` | 우표 수집책 · 식물 도감 | `one sheet with three round ink stamps and a small syringe` |
+
+**흔한 물건 이름일수록 다른 뜻이 세다.** `lens`는 사진 렌즈, `oil`은 식용유,
+`globe`는 여행, `stamp`는 우표다. 안경알을 그리려면 `spectacle`이나 `eyeglass`를
+붙여야 하고, 엔진 오일은 `dipstick`처럼 **그 맥락에만 있는 물건**으로 바꿔야 한다.
+
+같은 실수를 두 번 했다 — 24회차의 `lens-scratched`와 27회차의 `dizzy-glasses`가
+똑같이 카메라 렌즈로 나왔다. **시트를 봐야 걸린다**(twins도 해시도 못 잡는다).
+
 ---
 
 ## 얼굴 감사 — 인물이 든 그림을 한 번에 본다
