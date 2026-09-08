@@ -1163,13 +1163,14 @@ content/verbs.json
 pnpm coverage                  # 숫자만
 pnpm coverage --missing tsl    # 빠진 낱말을 실제로 찍는다 (tsl · hsk · torfl)
 pnpm dup <slug|뜻조각> …        # 후보가 이미 있는지 배치 앞에서 본다
-pnpm batch <slug…>             # 넣은 뒤에 늘 함께 도는 넷을 한 번에
+pnpm batch <slug…>             # 넣은 뒤에 늘 함께 도는 다섯을 한 번에
 ```
 
-**넣은 직후에는 넷이 늘 함께 돈다** — `props --in`(소품 겹침) · `romanize` ·
-`ipa` · `check`. `pnpm batch`가 그 순서로 돌린다. 순서에 뜻이 있다: 소품 겹침은
-그림을 뽑기 전에 알아야 고칠 수 있고, 로마자를 채우기 전에 `check`를 돌리면
-경고가 백 줄 넘게 나와 진짜 문제를 덮는다.
+**넣은 직후에는 다섯이 늘 함께 돈다** — `props --in`(소품 겹침) · `romanize` ·
+`ipa` · `split`(굽기) · `check`. `pnpm batch`가 그 순서로 돌린다. 순서에 뜻이
+있다: 소품 겹침은 그림을 뽑기 전에 알아야 고칠 수 있고, 로마자를 채우기 전에
+`check`를 돌리면 경고가 백 줄 넘게 나와 진짜 문제를 덮는다. 굽기는 1초라
+넣어도 값이 없고, 굽고 나면 dev 화면이 방금 넣은 개념을 바로 보여준다.
 
 **`pnpm claim`은 표기를, `pnpm dup`은 개념을 본다.** 상황 표현은 표기가 문장이라
 겹치는 일이 없고 겹치는 것은 언제나 slug와 뜻이다. 스물여덟 회차에서 세 번
