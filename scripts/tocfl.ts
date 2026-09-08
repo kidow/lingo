@@ -346,6 +346,7 @@ const MANUAL: Record<string, string> = {
   'city.json:pharmacy-cross': '藥店標誌',
   'city.json:playground-swing': '鞦韆',
   'city.json:drinking-fountain': '飲水臺',
+  'city.json:shop-counter': '櫃檯',
   'clothes.json:headband': '髮箍',
   'clothes.json:hem': '下襬',
   'clothes.json:fabric-roll': '布卷',
