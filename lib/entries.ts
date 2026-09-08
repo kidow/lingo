@@ -1,4 +1,4 @@
-import { answerOf } from './lang.ts'
+import { answerOf, usesTraditional } from './lang.ts'
 import { trackOf, type TrackId } from './track.ts'
 import type { Category, Concept, Example, Language, Word } from './types.ts'
 
@@ -26,6 +26,14 @@ export type Entry = {
   lang: Language
   /** 그 언어에서 정답으로 쓰는 문자열 */
   answer: string
+  /**
+   * 어느 트랙이 이 카드를 냈는가. `answer`를 정한 것과 같은 값이다.
+   *
+   * 정답만 트랙을 따르고 예문이 안 따라가면 둘이 어긋난다 — TOCFL은 정답이
+   * 번체인데 예문이 간체라 문맥 카드가 통째로 빠졌다. 예문을 고를 때도 이
+   * 값을 본다(`examplesOf`).
+   */
+  track?: TrackId
 }
 
 /**
@@ -42,7 +50,7 @@ export function entriesFor(lang: Language, concepts: Concept[], track?: TrackId)
     if (!word) continue
     const answer = answerOf(word, lang, track)
     if (!answer) continue
-    entries.push({ key: concept.slug, concept, word, lang, answer })
+    entries.push({ key: concept.slug, concept, word, lang, answer, track })
   }
   return entries
 }
@@ -118,10 +126,16 @@ export function nearPool(entry: Entry, entries: Entry[]): Entry[] {
  *
  * 순서가 곧 우선순위다 — 소개 카드는 첫 줄만 보여주고, 문맥 카드는 회차로
  * 돌려 가며 쓴다.
+ *
+ * **트랙이 번체를 쓰면 번체 문장으로 바꿔 준다** (`Example.traditional`).
+ * 없으면 간체 문장이 그대로 온다 — 그 낱말은 문맥 카드가 안 만들어지고
+ * 재인 칸에 머문다(lib/quiz.ts의 `canCloze`). `lang`을 안 주면 예전처럼
+ * 손대지 않는다 — /debug처럼 트랙을 모르는 자리가 있다.
  */
-export function examplesOf(word: Word): Example[] {
-  if (word.examples?.length) return word.examples
-  return word.example ? [word.example] : []
+export function examplesOf(word: Word, lang?: Language, track?: TrackId): Example[] {
+  const list = word.examples?.length ? word.examples : word.example ? [word.example] : []
+  if (!lang || !usesTraditional(lang, track)) return list
+  return list.map((example) => (example.traditional ? { ...example, text: example.traditional } : example))
 }
 
 export function countByCategory(entries: Entry[]): Record<Category, number> {

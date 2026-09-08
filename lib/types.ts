@@ -89,7 +89,15 @@ export type Word = {
   attributes?: Attributes
 }
 
-export type Example = { text: string; ko: string; romanization?: string }
+/**
+ * `traditional`은 zh 예문의 번체 표기다. **생성물이다** (`pnpm tocfl`).
+ *
+ * TOCFL은 정답이 번체(`Word.traditional`)인데 예문은 간체라, 정답 문자열이
+ * 문장에 없어 문맥 카드가 안 만들어졌다 — 번체가 간체와 다른 낱말 1,076개가
+ * 예외 없이 빠졌다(docs/tocfl-cloze-gap.md). 문장을 통째로 번체로 두는 것이
+ * 아니라 **간체 문장 옆에 번체 문장을 얹는다**. HSK는 `text`를 그대로 쓴다.
+ */
+export type Example = { text: string; ko: string; romanization?: string; traditional?: string }
 
 export type Concept = {
   /** 파일명이자 식별자. ^[a-z0-9-]+$ */

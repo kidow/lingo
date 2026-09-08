@@ -149,3 +149,14 @@ export function bcp47(lang: Language, track?: TrackId): string {
   if (lang !== 'zh') return lang
   return strategyFor(lang, track).answer === 'traditional' ? 'zh-Hant' : 'zh-Hans'
 }
+
+/**
+ * 이 트랙이 번체를 정답으로 쓰는가. 예문도 번체 쪽을 봐야 한다는 뜻이다.
+ *
+ * 정답만 번체로 바꾸면 예문은 간체로 남아 정답 문자열이 문장에 없다 —
+ * 문맥 카드가 통째로 빠진다(docs/tocfl-cloze-gap.md). `Example.traditional`이
+ * 그 자리를 채우고, 이 함수가 언제 그것을 쓸지 정한다.
+ */
+export function usesTraditional(lang: Language, track?: TrackId): boolean {
+  return lang === 'zh' && strategyFor(lang, track).answer === 'traditional'
+}

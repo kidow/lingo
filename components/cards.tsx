@@ -100,7 +100,7 @@ function IntroCard({ question, lang, track, first }: { question: IntroQuestion }
   const tag = bcp47(lang, track)
   const baseTag = bcp47(lang)
   const level = levelOf(word, track)
-  const [example] = examplesOf(word)
+  const [example] = examplesOf(word, lang, track)
 
   return (
     <FeedCard>
@@ -519,7 +519,7 @@ function ListenBrief({
   const aside = asideOf(word, lang, track)
   const tag = bcp47(lang, track)
   const baseTag = bcp47(lang)
-  const [example] = examplesOf(word)
+  const [example] = examplesOf(word, lang, track)
 
   return (
     // 그림 자리와 같은 크기라 넘칠 수 있다. 자르지 않고 굴린다 (CardSheet와 같은 이유).

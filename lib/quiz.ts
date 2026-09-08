@@ -210,7 +210,9 @@ export function canCloze(entry: Entry): boolean {
 
 /** 정답이 온전한 낱말로 보이는 예문만 뚫을 수 있다 */
 function clozeExamples(entry: Entry) {
-  return examplesOf(entry.word).filter((example) => clozeAt(example.text, entry.answer, entry.lang) >= 0)
+  return examplesOf(entry.word, entry.lang, entry.track).filter(
+    (example) => clozeAt(example.text, entry.answer, entry.lang) >= 0,
+  )
 }
 
 /**
@@ -312,7 +314,7 @@ function clozePool(entry: Entry, entries: Entry[], text: string): Entry[] {
   if (frame === null) return near
   const safe = near.filter(
     (candidate) =>
-      !examplesOf(candidate.word).some(
+      !examplesOf(candidate.word, candidate.lang, candidate.track).some(
         (example) => frameOf(example.text, candidate.answer, candidate.lang) === frame,
       ),
   )

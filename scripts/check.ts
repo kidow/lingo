@@ -230,6 +230,18 @@ for (const file of files) {
         }
         if ((lang === 'ja' || lang === 'zh' || lang === 'ru') && !example.romanization)
           warn(`${where} — ${lang}.${at}에 로마자가 없습니다. pnpm romanize를 돌리세요`)
+
+        /*
+         * TOCFL은 정답이 번체라 예문도 번체 쪽을 본다 (lib/entries.ts).
+         * 없거나 정답이 그 안에 없으면 **그 낱말만 조용히 문맥 카드를 잃는다** —
+         * 트랙 하나가 44.3%까지 내려갔던 자리다 (docs/tocfl-cloze-gap.md).
+         */
+        if (lang === 'zh' && (word.attributes as Record<string, unknown> | undefined)?.tocfl) {
+          const traditional = (example as { traditional?: string }).traditional
+          if (!traditional) warn(`${where} — zh.${at}에 번체가 없습니다. pnpm tocfl 을 돌리세요`)
+          else if (typeof word.traditional === 'string' && !traditional.includes(word.traditional))
+            warn(`${where} — zh.${at}의 번체에 "${word.traditional}"가 없습니다. 문맥 카드가 안 만들어집니다`)
+        }
       })
     }
 

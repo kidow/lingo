@@ -30,8 +30,9 @@
  * TOCFL 시험 자체의 어휘표가 아니다 — 등급을 섞으면 "TOCFL 등급"이 거짓말이 된다.
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { inflateRawSync } from 'node:zlib'
-import type { Concept } from '../lib/types.ts'
+import { gunzipSync, inflateRawSync } from 'node:zlib'
+import { cachedBytes } from './cache.ts'
+import type { Concept, Example } from '../lib/types.ts'
 
 const UA = { 'User-Agent': 'lingo-content-tool/1.0 (+https://github.com/kidow/lingo)' }
 
@@ -529,6 +530,13 @@ const MANUAL: Record<string, string> = {
   'transport.json:windscreen-wiper-blade': '雨刮片',
   'travel.json:shuttle-stop': '擺渡車站點',
   'travel.json:beach-shower': '戶外沖淋器',
+  /* 4차. 두루마리(명사)는 卷이다 — 머리말의 卷/捲 규칙 그대로 */
+  'home.json:paper-scroll': '卷',
+  /*
+   * 兩岸 표를 되돌리는 자리. `水平`은 대만에서도 「수평의」로 그대로 쓰고,
+   * 표가 갈아 끼우는 `水準`은 「수준·기준」이라 이 개념의 뜻이 아니다.
+   */
+  'quality.json:horizontal': '水平',
 
   /*
    * 3차. 2차 뒤에 들어온 낱말 일곱.
@@ -549,17 +557,228 @@ const MANUAL: Record<string, string> = {
   'quality.json:scratched': '有劃痕的',
 }
 
+/* ── 예문 번체 ─────────────────────────────────────────────────────── */
+
+/**
+ * 예문을 번체로도 적는다. TOCFL 카드가 그쪽을 본다 (lib/entries.ts).
+ *
+ * 정답만 번체로 두면 예문은 간체로 남아 정답 문자열이 문장에 없다 — 번체가
+ * 간체와 다른 낱말 1,076개가 예외 없이 문맥 카드를 잃었다
+ * (docs/tocfl-cloze-gap.md). 대만 시험 트랙에 간체 문장을 보여 주는 것 자체도
+ * 틀렸으므로, 문맥 카드는 그 결과지 이유가 아니다.
+ *
+ * **글자가 아니라 낱말로 옮긴다.** 글자 단위로는 한자 1,894자 중 372자가
+ * 갈리고 그중 `了`가 예문에 972번 나온다 — 문장마다 미확정이 찍힌다. 낱말로
+ * 분절하면 조각 18,895개 중 갈리는 것이 2,593개(13.7%)로 줄고, 그 13.7%가
+ * `了`·`是`·`里`·`着`·`个` 같은 짧은 목록에 몰린다. 그 목록만 손으로 정한다.
+ *
+ * 분절은 CC-CEDICT(CC BY-SA 4.0)의 간체 표제어로 최장일치한다. 조각마다
+ * 낱말 대조와 **같은 `resolve()`**를 태우므로 판정 근거가 낱말 쪽과 하나다.
+ */
+async function cedictSimplified(): Promise<Set<string>> {
+  const bytes = await cachedBytes('cedict.txt', async () => {
+    const gz = await fetchBuffer('https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz')
+    return Buffer.from(gunzipSync(gz))
+  })
+  const words = new Set<string>()
+  for (const line of bytes.toString('utf8').split('\n')) {
+    if (!line || line.startsWith('#')) continue
+    const at = line.indexOf(' ')
+    const to = line.indexOf(' ', at + 1)
+    if (at < 0 || to < 0) continue
+    const simplified = line.slice(at + 1, to)
+    if (HAN_ONLY.test(simplified)) words.add(simplified)
+  }
+  return words
+}
+
+const HAN_ONLY = /^[\u4e00-\u9fff]+$/
+const HAN = /[\u4e00-\u9fff]/
+
+/**
+ * 여섯 자료로도 안 갈린 조각. 낱말 쪽 `MANUAL`과 같은 성격이고 열쇠만 다르다 —
+ * 저쪽은 자리(`파일:슬러그`)로, 이쪽은 **조각 자체**로 잡는다. 같은 조각은
+ * 문장이 달라도 같은 번체를 쓰기 때문이다.
+ */
+const SEGMENT: Record<string, string> = {
+  /*
+   * 판정 근거는 **예문에 실제로 쓰인 문맥**이다. 조각마다 그 조각이 든 문장을
+   * 다 뽑아 보고 다수를 따랐다. 뜻이 갈리는 짝은 tocfl.ts 머리말의 규칙과
+   * 같다 — 아래는 그 규칙이 예문에서 어떻게 갈렸는지다.
+   *
+   *   了   瞭는 瞭解·瞭望뿐이고 예문에는 없다
+   *   里   전부 자리를 가리킨다(這裡·屋裡·水裡). 公里·鄰里는 낱말로 먼저 걸린다
+   *   只   只能·只好·只要가 다수다. 一隻은 「一只」가 낱말로 먼저 걸린다
+   *   干   未乾·擠乾·乾枯·乾淨처럼 마르다·깨끗하다뿐이다
+   *   面   낱말로 안 걸린 자리는 前面·後面·下面이라 麵이 아니다
+   *   发   出發·打發·發燒가 다수다. 頭髮은 「头发」가 낱말로 먼저 걸린다
+   *   脏   髒水·很髒이고 心臟은 「心脏」이 낱말로 먼저 걸린다
+   *   台   臺上·電臺·臺階·이 대다수다. 櫃檯·工作檯는 낱말로 잡았다
+   *   杆   欄杆·桅杆은 낱말로 걸리고, 남은 것은 橫桿·這根桿이다
+   */
+  了: '了', 里: '裡', 只: '只', 后: '後', 才: '才', 干: '乾', 别: '別', 面: '面',
+  家: '家', 钟: '鐘', 签: '簽', 发: '發', 借: '借', 向: '向', 出: '出', 摆: '擺',
+  台: '臺', 洒: '灑', 药: '藥', 累: '累', 坏: '壞', 云: '雲', 涂: '塗', 脏: '髒',
+  回: '回', 于: '於', 杆: '桿', 松: '鬆', 蜡: '蠟',
+  到了: '到了', 为了: '為了', 成了: '成了', 看得出: '看得出',
+  干净: '乾淨', 伙伴: '夥伴', 柜台: '櫃檯', 老板: '老闆', 手表: '手錶',
+  在台: '在臺', 后排: '後排',
+
+  /*
+   * 2차. 위를 넣고 98.1%가 된 뒤 남은 57종이다 — 전부 두 번 이하로 나온다.
+   * 대부분 위에서 정한 글자가 든 긴 낱말이라 판정이 같고, 갈리는 것만 적는다.
+   *
+   *   冲   沖坏·沖走처럼 씻어 내는 쪽이다. 衝은 衝擊·衝突에만 붙였다
+   *   系   「腰上繫皮帶」 하나뿐이라 매는 동작이다. 體系·關係는 낱말로 걸린다
+   *   准   標準·準備·準時이 다수다. 批准은 낱말로 먼저 걸린다
+   *   团   麵糰은 낱말로 걸리고, 남은 것은 團聚·團隊라 團이다
+   *   折   打折·折斷이라 摺이 아니다
+   */
+  冲: '沖', 团: '團', 系: '繫', 折: '折', 板: '板', 合: '合', 秋: '秋',
+  克: '克', 冬: '冬', 准: '準', 筑: '築', 当: '當', 咸: '鹹', 几: '幾',
+  擦干: '擦乾', 查出: '查出', 准备好了: '準備好了', 下发: '下發', 借给: '借給',
+  里加: '裡加', 哪里: '哪裡', 摆满: '擺滿', 台风: '颱風', 回复: '回覆',
+  买家: '買家', 湖里: '湖裡', 好几: '好幾', 药店: '藥店', 有助于: '有助於',
+  脏水: '髒水', 裙摆: '裙襬', 家长会: '家長會', 又来了: '又來了', 入冬: '入冬',
+  冲击: '衝擊', 战后: '戰後', 几年: '幾年', 借出: '借出', 迟了: '遲了',
+  手里: '手裡', 里带: '裡帶', 坏掉: '壞掉', 浮出水面: '浮出水面', 喷出: '噴出',
+  窗帘: '窗簾', 长出: '長出', 冲走: '沖走', 十克: '十克', 找出: '找出',
+  寄出: '寄出', 数出: '數出', 选出: '選出', 得出: '得出', 乒乓球台: '乒乓球檯',
+  刮风: '颳風', 在后: '在後', 派出: '派出',
+
+  /*
+   * 3차. 검사가 잡아 준 다섯. 낱말 쪽 번체가 문장에 안 들어간 자리다.
+   *
+   * 앞 둘은 내가 정한 기본값이 긴 낱말을 덮어 쓴 것이다 — 分節이 头/发로
+   * 갈리면 發가 붙어 頭發가 된다. 긴 쪽을 표에 올려 먼저 걸리게 한다.
+   * 뒤 셋은 글자가 아니라 **낱말이 다른** 자리다(兩岸 어휘). 낱말 대조는
+   * crossStrait으로 갈아 끼우는데 문장은 分節이 길어져 그 표를 비켜 갔다.
+   */
+  头发: '頭髮', 心脏: '心臟', 擦干净: '擦乾淨', 短视频: '短影片', 乒乓球台: '桌球檯',
+  卷: '卷', 卷起: '捲起',
+  /* 兩岸 표가 문장 안에서도 갈아 끼운다. 이 낱말은 대만에서도 水平이다 */
+  水平: '水平',
+}
+
+/**
+ * 미리 박을 조각. **두 글자 이상만 박는다.**
+ *
+ * 한 글자짜리는 사전이 못 자른 자리를 받는 기본값이지 자리를 주장하는 값이
+ * 아니다. 박아 버리면 그 글자가 든 긴 낱말을 통째로 깬다 — `发`를 박으면
+ * `发型`이 `发`와 `型`으로 갈려 `髮型`이 `發型`이 되고, `面`을 박으면
+ * `面包`가 `麵包`가 못 된다. 긴 것부터 박는 것은 표끼리의 순서다.
+ */
+const PINNED = Object.keys(SEGMENT)
+  .filter((key) => key.length >= 2)
+  .sort((a, b) => b.length - a.length)
+
+/**
+ * 최장일치로 자른다. 한자가 아닌 것은 한 글자씩 그대로 흘린다.
+ *
+ * **표에 올린 조각을 먼저 박는다.** 왼쪽부터 최장일치만 하면 사전이 더 긴
+ * 엉뚱한 낱말을 집어 표가 무력해진다 — `她把头发剪短了`에서 `把头`(십장)가
+ * 먼저 걸려 `头发`가 `头`와 `发`로 쪼개지고 `頭發`가 나왔다. `后心`이 `心脏`을,
+ * `擦干`이 `擦干净`을 같은 식으로 잘랐다. 표는 사람이 정한 값이므로 사전보다
+ * 세다 — 문장 전체에서 자리를 먼저 잡고, 남은 틈만 사전으로 자른다.
+ */
+function segments(text: string, dict: Set<string>, maxLen: number): string[] {
+  const pinned = new Array<string | null>(text.length).fill(null)
+  const taken = new Array<boolean>(text.length).fill(false)
+  for (const key of PINNED) {
+    for (let at = text.indexOf(key); at >= 0; at = text.indexOf(key, at + 1)) {
+      let free = true
+      for (let i = at; i < at + key.length; i += 1) if (taken[i]) free = false
+      if (!free) continue
+      pinned[at] = key
+      for (let i = at; i < at + key.length; i += 1) taken[i] = true
+    }
+  }
+
+  const out: string[] = []
+  for (let at = 0; at < text.length; ) {
+    const pin = pinned[at]
+    if (pin) {
+      out.push(pin)
+      at += pin.length
+      continue
+    }
+    if (!HAN.test(text[at]!)) {
+      out.push(text[at]!)
+      at += 1
+      continue
+    }
+    let hit = text[at]!
+    // 박아 둔 자리를 넘어서는 후보는 안 본다 — 넘으면 표를 다시 잘라먹는다
+    let room = 1
+    while (at + room < text.length && !taken[at + room]) room += 1
+    for (let len = Math.min(maxLen, room); len >= 2; len -= 1) {
+      const piece = text.slice(at, at + len)
+      if (dict.has(piece)) {
+        hit = piece
+        break
+      }
+    }
+    out.push(hit)
+    at += hit.length
+  }
+  return out
+}
+
+/** 문장 하나. 조각 하나라도 못 갈리면 null이다 — 반만 번체인 문장은 안 만든다 */
+function traditionalSentence(
+  text: string,
+  dict: Set<string>,
+  maxLen: number,
+  sources: Parameters<typeof resolve>[1],
+  stuck: Map<string, number>,
+): string | null {
+  let out = ''
+  let ok = true
+  for (const piece of segments(text, dict, maxLen)) {
+    if (!HAN.test(piece)) {
+      out += piece
+      continue
+    }
+    const manual = SEGMENT[piece]
+    if (manual) {
+      out += manual
+      continue
+    }
+    const result = resolve(piece, sources)
+    if ('candidates' in result) {
+      stuck.set(piece, (stuck.get(piece) ?? 0) + 1)
+      ok = false
+      continue
+    }
+    out += result.traditional
+  }
+  return ok ? out : null
+}
+
+const examplesOfWord = (word: { example?: Example; examples?: Example[] }): Example[] =>
+  word.examples?.length ? word.examples : word.example ? [word.example] : []
+
 /* ── 실행 ──────────────────────────────────────────────────────────── */
 
 console.log('공식 자료 여섯을 내려받습니다 (수십 MB — 시간이 걸립니다)…')
-const [variants, tocfl, naer, concised, revised, crossStrait] = await Promise.all([
+const [variants, tocfl, naer, concised, revised, crossStrait, cedict] = await Promise.all([
   traditionalVariants(),
   tocflWordList(),
   naerHeadwords(),
   concisedHeadwords(),
   revisedHeadwords(),
   crossStraitTable(),
+  cedictSimplified(),
 ])
+/**
+ * 최장일치의 상한. CC-CEDICT에는 스무 자가 넘는 성어·고유명사도 있는데 예문은
+ * 짧아서 걸릴 일이 없고, 상한이 길수록 조각마다 헛도는 회차만 는다.
+ */
+const CEDICT_MAX = 8
+/** 갈리지 않아 못 옮긴 조각. 빈도순으로 찍어 SEGMENT에 올릴 것을 고른다 */
+const stuckSegments = new Map<string, number>()
+let sentences = 0
+let converted = 0
 const official = new Set([...tocfl.headwords, ...naer, ...concised])
 // 漢字表가 없어도 된다 — 1글자 조각 검증은 簡編本(단자도 표제어로 싣는다)으로 충분하다
 const hanSet = concised
@@ -601,18 +820,24 @@ for (const file of files) {
     if (!word) continue
     words += 1
 
-    const result = resolve(word.term, { variants, official, revised, hanSet, crossStrait })
+    /*
+     * **손으로 적은 값이 먼저다.** 예전에는 여섯 자료가 갈리지 못했을 때만
+     * 봤는데, 그러면 兩岸 표가 낱말을 갈아 끼우는 자리를 못 되돌린다 —
+     * `水平`(수평의)이 「수준·기준」 뜻의 `水準`으로 바뀌어 예문과 어긋났다.
+     * 표는 사람이 자료를 보고 정한 값이므로 자료보다 세다 (SEGMENT와 같다).
+     */
+    const manual = MANUAL[`${file}:${concept.slug}`]
     let picked: string
     let pickedHow: string
-    if ('candidates' in result) {
-      const manual = MANUAL[`${file}:${concept.slug}`]
-      if (!manual) {
-        unresolved.push({ file, slug: concept.slug, zh: word.term, candidates: result.candidates })
-        continue
-      }
+    if (manual) {
       picked = manual
       pickedHow = '표제어 확인'
     } else {
+      const result = resolve(word.term, { variants, official, revised, hanSet, crossStrait })
+      if ('candidates' in result) {
+        unresolved.push({ file, slug: concept.slug, zh: word.term, candidates: result.candidates })
+        continue
+      }
       picked = result.traditional
       pickedHow = result.how
     }
@@ -629,6 +854,26 @@ for (const file of files) {
     } else delete attributes.tocfl
     if (Object.keys(attributes).length > 0) word.attributes = attributes as typeof word.attributes
     else delete word.attributes
+
+    // 예문 번체는 TOCFL 등급이 붙은 낱말만 만든다 — 그 트랙만 쓰기 때문이다
+    for (const example of examplesOfWord(word)) {
+      if (!level) {
+        delete example.traditional
+        continue
+      }
+      sentences += 1
+      const line = traditionalSentence(
+        example.text,
+        cedict,
+        CEDICT_MAX,
+        { variants, official, revised, hanSet, crossStrait },
+        stuckSegments,
+      )
+      if (line) {
+        example.traditional = line
+        converted += 1
+      } else delete example.traditional
+    }
   }
 
   writeFileSync(path, JSON.stringify(data, null, 2) + '\n')
@@ -639,6 +884,17 @@ for (const file of files) {
 
 console.log(`\n번체 확정 ${totalResolved}건 (${Object.entries(how).map(([k, v]) => `${k} ${v}`).join(' · ')})`)
 console.log(`TOCFL 등급 ${totalTocfl}건 · 미확정 ${unresolved.length}건`)
+console.log(`예문 번체 ${converted}/${sentences}문장 (${((100 * converted) / (sentences || 1)).toFixed(1)}%)`)
+if (stuckSegments.size) {
+  const top = [...stuckSegments].sort((a, b) => b[1] - a[1])
+  console.log(`\n안 갈린 조각 ${stuckSegments.size}종 — 잦은 순으로 SEGMENT에 올립니다:\n`)
+  for (const [piece, n] of top.slice(0, 200)) {
+    const result = resolve(piece, { variants, official, revised, hanSet, crossStrait })
+    const shown = 'candidates' in result ? result.candidates.join(' / ') : result.traditional
+    console.log(`  ${String(n).padStart(4)}회  ${piece.padEnd(6)} → ${shown}`)
+  }
+  if (top.length > 200) console.log(`  … 외 ${top.length - 200}종`)
+}
 if (unresolved.length) {
   console.log('\n미확정 — 후보가 갈려 사람이 고를 자리입니다:\n')
   for (const u of unresolved) console.log(`  ${u.file} ${u.slug.padEnd(20)} ${u.zh} → ${u.candidates.join(' / ')}`)
