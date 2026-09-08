@@ -284,6 +284,23 @@ git diff HEAD~1 HEAD -- lib/levels-stamp.ts
 `git commit --amend`한다. 남이 이미 내 개념까지 포함해 `pnpm levels`를 돌렸다면
 값이 같아 **손댈 것이 없는** 것이 정상이다 — 그때는 지문 파일을 커밋에서 빼면 된다.
 
+**생성물은 스크립트마다 읽는 자리가 다르다.** 다른 세션의 미완성 콘텐츠가
+생성물에 구워지지 않게 하려면 `git archive HEAD content`로 임시 트리를 만들어
+거기서 돌리는 방법을 쓰는데, **그게 통하는 스크립트와 안 통하는 스크립트가 있다.**
+
+| 스크립트 | 콘텐츠를 어디서 읽나 | 임시 트리로 가둘 수 있나 |
+| --- | --- | --- |
+| `scripts/audio.ts` | `join('content', …)` — 실행한 자리 | 된다 |
+| `scripts/split.ts` | `new URL('..', import.meta.url)` — **스크립트가 놓인 자리** | 안 된다. 심링크를 따라 레포를 읽는다 |
+
+`split`은 가둘 수 없지만 **가둘 이유도 없다** — `public/content/`는 `.gitignore`에
+있어 커밋에 실리지 않는다. 커밋되는 생성물(`lib/levels-stamp.ts`,
+`lib/audio-have.ts`)만 HEAD에서 구우면 된다.
+
+2026-09-09에 이 차이를 모르고 «HEAD로 구웠다»고 적었다가, 실제로는 `split`이
+작업 트리를 읽고 있었다. 커밋에는 영향이 없었지만 **확인 방법도 틀렸다** —
+`git status public/content`가 조용한 것은 최신이어서가 아니라 무시 대상이어서다.
+
 **푸시가 거절되면 fetch부터 한다.** 워크트리가 하나라 남의 커밋은 이미 로컬
 HEAD에 들어와 있고 거절은 대개 원격 참조가 낡아서 생긴다.
 

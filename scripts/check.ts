@@ -12,6 +12,7 @@ import { AUDIO_MISSING } from '../lib/audio-have.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import { auditTrivia } from '../lib/trivia-audit.ts'
 import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
+import { createHash } from 'node:crypto'
 import { LANG } from '../lib/lang.ts'
 import { clozeAt } from '../lib/quiz.ts'
 import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
@@ -614,13 +615,42 @@ if (notes.length) {
  * 고치면 낡는다** — 화면은 옛 낱말을 그대로 보여주고, 고친 사람은 왜 안
  * 바뀌는지 모른 채 파일을 다시 들여다본다.
  *
- * 파일 시각만 본다. 내용을 다시 만들어 대조하면 여기서 pack을 한 번 더 도는
- * 셈이라, 낡았는지만 알면 되는 자리에 그만한 값을 치를 이유가 없다.
+ * **원본 해시로 본다.** `pnpm split`이 구울 때 원본 파일의 해시를
+ * `public/content/source.json`에 함께 적는다. 파일 시각만 보던 때는 내용이
+ * 그대로여도 낡은 것이 됐다 — 다른 세션이 콘텐츠를 열었다 닫기만 해도, 브랜치를
+ * 오갔다 와도 시각이 밀린다. 2026-09-09에 그 경고를 보고 다시 구웠는데 파일이
+ * 하나도 안 바뀌었다.
+ *
+ * 해시를 적기 전에 구운 폴더가 있을 수 있으므로 `source.json`이 없으면 옛
+ * 방식(시각)으로 돌아간다.
  */
 {
   const packed = join(PUBLIC_DIR, 'content')
+  const sourcePath = join(packed, 'source.json')
   if (!existsSync(packed)) {
     warn('public/content/ 가 없습니다 — 화면이 읽을 것이 없습니다. pnpm split 을 돌리세요')
+  } else if (existsSync(sourcePath)) {
+    const baked = JSON.parse(readFileSync(sourcePath, 'utf8')) as Record<string, string>
+    const now: Record<string, string> = {}
+    for (const name of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json')))
+      now[name] = createHash('sha1')
+        .update(readFileSync(join(CONTENT_DIR, name)))
+        .digest('hex')
+        .slice(0, 12)
+    for (const name of readdirSync(join(CONTENT_DIR, 'trivia')))
+      now[`trivia/${name}`] = createHash('sha1')
+        .update(readFileSync(join(CONTENT_DIR, 'trivia', name)))
+        .digest('hex')
+        .slice(0, 12)
+    const changed = [...new Set([...Object.keys(now), ...Object.keys(baked)])].filter(
+      (name) => now[name] !== baked[name],
+    )
+    if (changed.length > 0)
+      warn(
+        `public/content/ 가 낡았습니다 — ${changed.slice(0, 4).join(' · ')}${
+          changed.length > 4 ? ` 외 ${changed.length - 4}개` : ''
+        }가 구운 뒤에 바뀌었습니다. pnpm split 을 돌리세요`,
+      )
   } else {
     const newest = Math.max(
       ...readdirSync(CONTENT_DIR)

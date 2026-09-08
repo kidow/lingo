@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto'
 import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { LANGUAGES } from '../lib/lang.ts'
@@ -116,6 +117,27 @@ const search = compact({
 })
 writeFileSync(join(OUT, 'search.json'), search)
 sizes.push(['search.json', search.length])
+
+/**
+ * **무엇에서 구웠는지 적어 둔다.**
+ *
+ * `pnpm check`는 이 폴더가 낡았는지 파일 시각으로 봤다. 시각은 내용이 그대로여도
+ * 밀린다 — 다른 세션이 콘텐츠를 열었다 닫기만 해도, 브랜치를 오갔다 와도 낡은
+ * 것이 된다. 2026-09-09에 헛경고를 보고 다시 구웠는데 파일이 하나도 안 바뀌었다.
+ *
+ * 그래서 원본 파일의 해시를 함께 굽는다. 검사는 이 값과 지금 콘텐츠를 대 보면
+ * 되고, 내용이 같으면 시각이 밀려도 조용하다. 굽는 값은 파일을 한 번 더 읽는
+ * 것뿐이라 싸다.
+ */
+const source: Record<string, string> = {}
+for (const name of readdirSync(CONTENT).filter((f) => f.endsWith('.json')))
+  source[name] = createHash('sha1').update(readFileSync(join(CONTENT, name))).digest('hex').slice(0, 12)
+for (const name of readdirSync(join(CONTENT, 'trivia')))
+  source[`trivia/${name}`] = createHash('sha1')
+    .update(readFileSync(join(CONTENT, 'trivia', name)))
+    .digest('hex')
+    .slice(0, 12)
+writeFileSync(join(OUT, 'source.json'), JSON.stringify(source, null, 2) + '\n')
 
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(0)} KB`.padStart(8)
 for (const [name, bytes] of sizes) console.log(`  ${name.padEnd(13)} ${kb(bytes)}`)
