@@ -66,10 +66,14 @@ async function page(n: number): Promise<{ data: Row[]; count: number }> {
  *
  * **대시는 양옆이 빈칸일 때만 가른다.** `по-русски`·`чуть-чуть`·`кто-нибудь`는
  * 붙임표가 낱말 안에 있으므로 가르면 안 된다.
+ *
+ * **앞에만 빈칸이 있는 붙임표는 어미 토막이다.** `осенний -яя`는 여성형
+ * 어미를 덧붙여 적은 것이라 통째로 열쇠가 되면 `осенний`가 영영 안 맞는다.
+ * 빈칸 뒤에 바로 붙임표가 오면 그 뒤는 버린다.
  */
 export function forms(headword: string): string[] {
   const out = new Set<string>()
-  for (const raw of headword.split(/[;,]|\s+[—–-]\s+/)) {
+  for (const raw of headword.split(/[;,]|\s+[—–-]\s+|\s+-(?=\S)/)) {
     const part = raw
       .trim()
       .replace(/[!?.]+$/, '')
