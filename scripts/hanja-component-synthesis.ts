@@ -3,6 +3,7 @@
  */
 import { createHash } from 'node:crypto'
 import { bounds, fitPaths, type Box } from './hanja-component-geometry.ts'
+import { resolveComponentLayout, type LayoutChild } from './hanja-component-layout.ts'
 
 export type Definition = { character: string; decomposition: string }
 export type CatalogCharacter = { glyph: string; strokes: number; readingGrade: string; hun?: string; eum?: string }
@@ -15,16 +16,27 @@ export type ApprovedDonor = {
 }
 export type Ids = { glyph: string } | { operator: string; children: Ids[] }
 export type Position = 'standalone' | 'left' | 'right' | 'top' | 'bottom' | 'enclosure'
+export type ReviewedParts = {
+  version: 1; splitHash: string
+  recipes: {
+    id: string; glyph: string; position: Exclude<Position, 'standalone'>
+    donorGlyph: string; donorPathsSha256: string; approvedPathIndices: number[]
+    review: { status: 'reviewed-component-assignment'; method: 'static-path-and-glyph-review'; notes: string; limitations: string }
+  }[]
+}
 export type Component = {
   id: string; glyph: string; position: Position; donorGlyph: string
   donorPathsSha256: string; approvedPathIndices: number[]; upstreamIndices: (number | null)[]
   paths: string[]; sourceBox: Box; donorBox: Box
-  assignment: 'approved-whole-glyph' | 'spatial-partition-inferred' | 'enclosure-rule-inferred'
+  assignment: 'approved-whole-glyph' | 'spatial-partition-inferred' | 'enclosure-rule-inferred' | 'reviewed-component-assignment'
+  assignmentReview?: { recipeId: string; reviewSha256: string; notes: string; limitations: string }
   evidence: { verificationSource: string; sourceImage?: string; sourceRow?: number; sourceReference?: unknown
     geometrySource?: string; geometryCorrection?: string; verifiedAt?: string }
 }
 export type Library = {
-  version: 'component-pilot-v1'; components: Component[]
+  version: 'component-pilot-v1' | 'component-pilot-v2'; components: Component[]
+  layoutMode?: 'position-profiles-v2'; reviewedPartsSha256?: string
+  skippedRecipes?: { id: string; donorGlyph: string; reason: string }[]
   layouts: { operator: string; first: string; second: string; ratio: number; donorGlyph: string }[]
   donorGlyphs: string[]; excludedDonors: { glyph: string; reason: string }[]
   forbiddenGlyphs: string[]; hash: string
@@ -40,6 +52,7 @@ export type Candidate = {
   reason?: string; paths: string[]; placements: Placement[]
   schedule: { instance: string; componentStroke: number }[]
   libraryHash: string; rules: string[]; provenance: 'component-derived-unreviewed'
+  layoutProfiles?: { instance: string; componentIds: string[]; donorGlyphs: string[]; mode: string }[]
 }
 
 const arity: Record<string, number> = { '⿰': 2, '⿱': 2, '⿲': 3, '⿳': 3,
@@ -48,12 +61,12 @@ const variantForms = new Set([...'亻氵扌忄艹辶阝礻衤犭灬刂冫饣纟�
 export const digest = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
 const codepointOrder = (a: string, b: string) => (a.codePointAt(0) ?? 0) - (b.codePointAt(0) ?? 0)
 
-export function parseIds(input: string): Ids | null {
+export function parseIds(input: string, allowUnknown = false): Ids | null {
   const chars = [...input]; let offset = 0
   function read(depth: number): Ids | null {
     if (depth > 32) return null
     const glyph = chars[offset++]
-    if (!glyph || glyph === '？' || glyph === '?' || /\s/u.test(glyph)) return null
+    if (!glyph || !allowUnknown && (glyph === '？' || glyph === '?') || /\s/u.test(glyph)) return null
     if (!(glyph in arity)) return { glyph }
     const children: Ids[] = []
     for (let i = 0; i < arity[glyph]; i++) { const child = read(depth + 1); if (!child) return null; children.push(child) }
@@ -139,7 +152,7 @@ function partition(paths: readonly string[], axis: 'x' | 'y', counts: (number | 
   return options.length === 1 ? options[0] : null
 }
 
-export function buildLibrary(approved: readonly ApprovedDonor[], definitions: ReadonlyMap<string, string>, catalog: ReadonlyMap<string, CatalogCharacter>, forbiddenGlyphs: readonly string[] = []): Library {
+export function buildLibrary(approved: readonly ApprovedDonor[], definitions: ReadonlyMap<string, string>, catalog: ReadonlyMap<string, CatalogCharacter>, forbiddenGlyphs: readonly string[] = [], options?: { reviewedParts: ReviewedParts; layoutMode: 'position-profiles-v2' }): Library {
   const forbidden = new Set(forbiddenGlyphs.map(g => g.normalize('NFC')))
   const patterns = new Set(forbiddenGlyphs.map(g => parseIds(definitions.get(g) ?? '')).filter((t): t is Ids => !!t && !('glyph' in t)).map(idsKey))
   const components: Component[] = [], layouts: Library['layouts'] = [], donorGlyphs: string[] = [], excludedDonors: Library['excludedDonors'] = []
@@ -183,7 +196,38 @@ export function buildLibrary(approved: readonly ApprovedDonor[], definitions: Re
       if (b.x - o.x >= 6 && b.y - o.y >= 6 && o.x + o.width - b.x - b.width >= 6 && o.y + o.height - b.y - b.height >= 6) components.push(outer, inner)
     }
   }
-  const value = { version: 'component-pilot-v1' as const, components, layouts, donorGlyphs, excludedDonors, forbiddenGlyphs: [...forbiddenGlyphs] }
+  const skippedRecipes: NonNullable<Library['skippedRecipes']> = []
+  if (options) {
+    const registry = options.reviewedParts
+    if (registry.version !== 1 || !/^[a-f0-9]{64}$/.test(registry.splitHash)) throw new Error('Invalid reviewed parts registry')
+    const ids = new Set<string>()
+    for (const recipe of registry.recipes) {
+      const donor = approved.find(d => d.glyph === recipe.donorGlyph)
+      const indices = recipe.approvedPathIndices
+      // Unknown siblings do not invalidate an explicitly named direct child.
+      // They remain unknown and are never usable synthesis inputs.
+      const tree = parseIds(definitions.get(recipe.donorGlyph) ?? '', true)
+      const operator = ['left', 'right'].includes(recipe.position) ? '⿰' : recipe.position === 'enclosure' ? '⿴' : '⿱'
+      const childIndex = ['right', 'bottom'].includes(recipe.position) ? 1 : 0
+      if (!recipe.id || ids.has(recipe.id) || typeof recipe.glyph !== 'string' || [...recipe.glyph].length !== 1 || ['?', '？'].includes(recipe.glyph)
+        || !['left', 'right', 'top', 'bottom', 'enclosure'].includes(recipe.position)
+        || !donor || recipe.donorPathsSha256 !== digest(donor.paths)
+        || !tree || 'glyph' in tree || tree.operator !== operator || leaf(tree.children[childIndex]) !== recipe.glyph
+        || !Array.isArray(indices) || !indices.length || indices.length >= donor.paths.length
+        || indices.some((n, i) => !Number.isInteger(n) || n < 1 || n > donor.paths.length || i > 0 && n <= indices[i - 1])
+        || recipe.review?.status !== 'reviewed-component-assignment' || recipe.review.method !== 'static-path-and-glyph-review'
+        || !recipe.review.notes?.trim() || !recipe.review.limitations?.trim()) throw new Error('Invalid reviewed component recipe: ' + recipe.id)
+      ids.add(recipe.id)
+      const excluded = excludedDonors.find(d => d.glyph === donor.glyph)
+      if (excluded) { skippedRecipes.push({ id: recipe.id, donorGlyph: donor.glyph, reason: excluded.reason }); continue }
+      const { id: _id, ...record } = component(donor, recipe.glyph, recipe.position, indices.map(n => n - 1), 'reviewed-component-assignment')
+      const reviewed = { ...record, assignmentReview: { recipeId: recipe.id, reviewSha256: digest(recipe.review), notes: recipe.review.notes, limitations: recipe.review.limitations } }
+      components.push({ id: digest(reviewed).slice(0, 24), ...reviewed })
+    }
+  }
+  const value = { version: options ? 'component-pilot-v2' as const : 'component-pilot-v1' as const,
+    components, layouts, donorGlyphs, excludedDonors, forbiddenGlyphs: [...forbiddenGlyphs],
+    ...(options ? { layoutMode: options.layoutMode, reviewedPartsSha256: digest(options.reviewedParts), skippedRecipes } : {}) }
   return { ...value, hash: digest(value) }
 }
 
@@ -202,17 +246,25 @@ export function compose(target: { glyph: string; strokes: number }, definitions:
     }
   }
   const placements: Placement[] = [], rules = new Set<string>()
+  const layoutProfiles: NonNullable<Candidate['layoutProfiles']> = []
   type Piece = { path: string; instance: string; componentStroke: number }
   const available = new Map<string, Component[]>()
   for (const part of library.components) available.set(part.glyph, [...(available.get(part.glyph) ?? []), part])
-  function emit(glyph: string, position: Position, box: Box, instance: string, ancestry: string[]): Piece[] {
-    if (ancestry.includes(glyph) || ancestry.length > 12) throw new CannotCompose('cyclic-or-deep-decomposition:' + glyph)
+  function choicesFor(glyph: string, position: Position) {
     const choices = (available.get(glyph) ?? []).filter(c => c.donorGlyph !== target.glyph && (c.position === position || c.position === 'standalone'))
     choices.sort((a, b) => Number(b.position === position) - Number(a.position === position)
+      || (library.layoutMode ? Number(b.assignment === 'reviewed-component-assignment') - Number(a.assignment === 'reviewed-component-assignment') : 0)
       || Number(a.assignment !== 'approved-whole-glyph') - Number(b.assignment !== 'approved-whole-glyph') || a.id.localeCompare(b.id))
-    const part = choices[0]
+    return choices
+  }
+  function emit(glyph: string, position: Position, box: Box, instance: string, ancestry: string[]): Piece[] {
+    if (ancestry.includes(glyph) || ancestry.length > 12) throw new CannotCompose('cyclic-or-deep-decomposition:' + glyph)
+    const part = choicesFor(glyph, position)[0]
     if (part) {
       if (library.forbiddenGlyphs.includes(part.donorGlyph) || !library.donorGlyphs.includes(part.donorGlyph)) throw new Error('Forbidden donor leaked into generation')
+      if (library.layoutMode && (box.width === 0 && part.sourceBox.width > 0 || box.height === 0 && part.sourceBox.height > 0)) {
+        throw new CannotCompose('profile-axis-collapse:' + glyph)
+      }
       const fitted = fitPaths(part.paths, box)
       placements.push({ instance, componentId: part.id, glyph, position, donorGlyph: part.donorGlyph,
         donorPathsSha256: part.donorPathsSha256, approvedPathIndices: part.approvedPathIndices,
@@ -235,9 +287,32 @@ export function compose(target: { glyph: string; strokes: number }, definitions:
       const horizontal = op === '⿰', gap = 6
       const usable = (horizontal ? box.width : box.height) - gap
       if (usable < 12) throw new CannotCompose('insufficient-layout-space')
-      const boxes: Box[] = horizontal
+      let boxes: Box[] = horizontal
         ? [{ ...box, width: usable * ratio }, { ...box, x: box.x + usable * ratio + gap, width: usable * (1 - ratio) }]
         : [{ ...box, height: usable * ratio }, { ...box, y: box.y + usable * ratio + gap, height: usable * (1 - ratio) }]
+      if (library.layoutMode === 'position-profiles-v2') {
+        const profileComponents: Component[] = []
+        const children = tree.children.map((child, i): LayoutChild => {
+          const glyph = leaf(child), position = horizontal ? (i ? 'right' : 'left') : (i ? 'bottom' : 'top')
+          const choices = glyph ? choicesFor(glyph, position) : []
+          const positionedChoices = choices.filter(c => c.position === position)
+          const reviewed = positionedChoices.filter(c => c.assignment === 'reviewed-component-assignment')
+          const positioned = reviewed.length ? reviewed : positionedChoices
+          profileComponents.push(...positioned)
+          return { glyph, intrinsicBox: choices[0]?.sourceBox, profiles: positioned.map(c => ({ glyph: c.glyph, position,
+            sourceBox: c.sourceBox, donorBox: c.donorBox, donorGlyph: c.donorGlyph, reviewed: c.assignment === 'reviewed-component-assignment' })) }
+        }) as [LayoutChild, LayoutChild]
+        try {
+          const layout = resolveComponentLayout(op, box, children, ratio)
+          boxes = layout.boxes
+          layoutProfiles.push({ instance: address, mode: layout.mode, donorGlyphs: layout.sourceDonors,
+            componentIds: profileComponents.filter(c => layout.sourceDonors.includes(c.donorGlyph)).map(c => c.id) })
+          rules.add('position-profile-layout-unreviewed')
+        } catch (error) {
+          if (!(error instanceof Error)) throw error
+          throw new CannotCompose('position-layout:' + error.message)
+        }
+      }
       return tree.children.flatMap((child, i) => {
         const position: Position = horizontal ? (i ? 'right' : 'left') : (i ? 'bottom' : 'top')
         return 'glyph' in child ? emit(child.glyph, position, boxes[i], address + '.' + i, ancestry)
@@ -263,7 +338,23 @@ export function compose(target: { glyph: string; strokes: number }, definitions:
     if (pieces.length !== target.strokes) throw new CannotCompose('target-stroke-count:' + pieces.length + '/' + target.strokes)
     const schedule = pieces.map(({ instance, componentStroke }) => ({ instance, componentStroke }))
     if (new Set(schedule.map(s => s.instance + ':' + s.componentStroke)).size !== pieces.length) throw new Error('Duplicated component stroke in schedule')
-    return { ...base, status: 'candidate-unreviewed', paths: pieces.map(p => p.path), placements, schedule, rules: [...rules] }
+    let paths = pieces.map(p => p.path)
+    if (library.layoutMode) {
+      // Cell containment preserves relative part proportions but may leave the entire
+      // glyph too short/narrow. Normalize once, after composition; never squeeze a gap.
+      const fitted = fitPaths(paths, { x: 10, y: 10, width: 80, height: 80 })
+      const t = fitted.transform
+      if (t.sx < 1 - 1e-6 || t.sy < 1 - 1e-6) throw new CannotCompose('final-layout-outside-target')
+      paths = fitted.paths
+      for (const placement of placements) {
+        const b = placement.targetBox, p = placement.transform
+        placement.targetBox = { x: b.x * t.sx + t.tx, y: b.y * t.sy + t.ty, width: b.width * t.sx, height: b.height * t.sy }
+        placement.transform = { sx: p.sx * t.sx, sy: p.sy * t.sy, tx: p.tx * t.sx + t.tx, ty: p.ty * t.sy + t.ty }
+      }
+      rules.add('whole-glyph-box-normalization-unreviewed')
+    }
+    return { ...base, status: 'candidate-unreviewed', paths, placements, schedule, rules: [...rules],
+      ...(library.layoutMode ? { layoutProfiles } : {}) }
   } catch (error) {
     if (!(error instanceof CannotCompose)) throw error
     return { ...base, status: 'abstained', reason: error.message, paths: [], placements: [], schedule: [], rules: [...rules] }
