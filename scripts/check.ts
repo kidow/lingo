@@ -59,6 +59,28 @@ function strayScripts(lang: string, text: string) {
   return (FORBIDDEN[lang] ?? []).filter((name) => SCRIPTS[name].test(text))
 }
 
+/**
+ * 러시아어에서 **어근이 같고 `-ся` 하나로 갈리는 짝**인지 본다.
+ *
+ * `открыть`(열다)와 `открываться`(열리다)는 주어가 다른 낱말이라 곁말이 아니다
+ * (spec.md §7). 사전은 둘 다 open으로 적어서 뜻만 보면 안 갈린다 — 그래서
+ * 2026-09-08 재검에서 이런 짝 스물둘이 곁말로 들어가 있었다.
+ *
+ * `ссориться`(다투다)처럼 짝이 되는 비재귀 동사가 아예 없는 낱말은 걸리지
+ * 않는다. 어근이 실제로 겹칠 때만 본다.
+ */
+function voicePair(term: string, other: string) {
+  const stem = (w: string) => w.replace(/(ся|сь)$/u, '').replace(/(ать|ять|ить|еть|уть|ти|чь)$/u, '')
+  if (/ся$/u.test(term) === /ся$/u.test(other)) return false
+  const a = stem(term)
+  const b = stem(other)
+  const short = Math.min(a.length, b.length)
+  if (short < 3) return false
+  let shared = 0
+  while (shared < short && a[shared] === b[shared]) shared += 1
+  return shared >= short - 1
+}
+
 /** 받침이 있으면 «이», 없으면 «가». 이름이 넷뿐이라 규칙 하나면 된다 */
 const subject = (word: string) =>
   ((word.charCodeAt(word.length - 1) - 0xac00) % 28 ? '이' : '가')
@@ -232,6 +254,14 @@ for (const file of files) {
           const answer = word[strategy.answer]
           if (list.includes(word.term as string) || list.includes(answer as string))
             fail(where, `${lang}.also에 표제어와 같은 표기가 있습니다`)
+          // 러시아어는 어근이 같고 -ся 하나로 갈리는 짝을 곁말로 두지 않는다 (spec.md §7)
+          if (lang === 'ru' && typeof word.term === 'string')
+            for (const other of list)
+              if (voicePair(word.term, other))
+                fail(
+                  where,
+                  `ru.also의 "${other}"는 "${word.term}"과 태가 다릅니다 — 곁말이 아니라 다른 개념입니다`,
+                )
           for (const other of list) alsoOf(lang).set(other, slug)
         }
       }
