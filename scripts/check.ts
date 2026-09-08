@@ -736,7 +736,12 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
   }
 }
 
-/** 예문이 있는데 한 줄도 못 뚫는 낱말. 그 낱말은 재인·듣기 칸에 머문다 */
+/**
+ * 예문이 있는데 한 줄도 못 뚫는 낱말. 그 낱말은 재인·듣기 칸에 머문다.
+ *
+ * **어느 낱말인지 함께 찍는다.** 개수만 찍던 때는 고치려면 매번 같은 조회를
+ * 손으로 다시 짜야 했다 — 경고는 셈이 아니라 할 일이어야 한다.
+ */
 {
   const blocked = [...stuck].filter(([key]) => !clozable.has(key))
   if (blocked.length > 0) {
@@ -746,7 +751,13 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
       byLang.set(lang, (byLang.get(lang) ?? 0) + 1)
     }
     const per = [...byLang].map(([lang, n]) => `${lang} ${n}`).join(' · ')
-    warn(`문맥 카드를 못 만드는 낱말 ${blocked.length}개 (${per}) — 예문에 낱말이 붙어 있습니다`)
+    const SHOWN = 12
+    const names = blocked.slice(0, SHOWN).map(([key]) => key.replace('|', ' '))
+    const rest = blocked.length > SHOWN ? ` 외 ${blocked.length - SHOWN}개` : ''
+    warn(
+      `문맥 카드를 못 만드는 낱말 ${blocked.length}개 (${per}) — 표제형이 예문에 그대로 서지 못합니다\n` +
+        `      ${names.join(' · ')}${rest}`,
+    )
   }
 }
 
