@@ -21,6 +21,48 @@ import type { Concept, Language, Trivia } from '../lib/types.ts'
 /** 굽은 아포스트로피. 곧은 '와 섞이면 표제어와 예문이 어긋난다 */
 const CURLY_APOSTROPHE = '\u2019'
 
+/**
+ * 언어마다 **들어와서는 안 되는 글자**. 표제어를 손으로 적다 보면 다른 글자가
+ * 섞여 든다 — 러시아어 표제어 하나에 한자 `管`이 붙어 나간 적이 있다
+ * (`Можно обратиться в管 управляющую контору`).
+ *
+ * 예문 대조가 결국 잡기는 한다. 표제어가 예문에 글자 그대로 없다고 경고하기
+ * 때문이다. 다만 그 경고는 «예문이 단어를 안 보여준다»라고만 말해서 **원인이
+ * 오타라는 것을 안 알려 준다** — 예문을 고치러 가게 된다. 그래서 글자 자체를
+ * 먼저 본다.
+ *
+ * 막는 것은 **다른 문자 체계**뿐이다. 한글은 어느 언어에도 안 들어가고
+ * (한국어는 `ko` 줄에 따로 적는다), 키릴은 러시아어에만, 가나는 일본어에만,
+ * 한자는 중국어와 일본어에만 선다. 라틴 문자는 막지 않는다 — 중국어·일본어
+ * 예문에 `wifi`처럼 섞이는 자리가 실제로 있다.
+ */
+const SCRIPTS = {
+  한글: /[\uac00-\ud7a3]/u,
+  키릴: /[\u0400-\u04ff]/u,
+  가나: /[\u3040-\u30ff]/u,
+  한자: /[\u4e00-\u9fff]/u,
+} as const
+
+/** 언어별로 금지된 문자 체계. 나머지는 그 언어가 실제로 쓴다 */
+const FORBIDDEN: Record<string, (keyof typeof SCRIPTS)[]> = {
+  en: ['한글', '키릴', '가나', '한자'],
+  es: ['한글', '키릴', '가나', '한자'],
+  fr: ['한글', '키릴', '가나', '한자'],
+  de: ['한글', '키릴', '가나', '한자'],
+  ru: ['한글', '가나', '한자'],
+  ja: ['한글', '키릴'],
+  zh: ['한글', '키릴', '가나'],
+}
+
+/** 섞여 든 문자 체계의 이름. 없으면 빈 배열 */
+function strayScripts(lang: string, text: string) {
+  return (FORBIDDEN[lang] ?? []).filter((name) => SCRIPTS[name].test(text))
+}
+
+/** 받침이 있으면 «이», 없으면 «가». 이름이 넷뿐이라 규칙 하나면 된다 */
+const subject = (word: string) =>
+  ((word.charCodeAt(word.length - 1) - 0xac00) % 28 ? '이' : '가')
+
 /** 언어별 `also` 표기 → 그것을 적은 개념. 다른 개념의 정답과 겹치는지 나중에 본다 */
 const alsoTable = new Map<string, Map<string, string>>()
 const alsoOf = (lang: string) => {
@@ -165,6 +207,10 @@ for (const file of files) {
       // 다른 글자를 쓰게 되어 문맥 카드가 낱말을 못 찾는다 (`aujourd'hui`)
       if (typeof word.term === 'string' && word.term.includes(CURLY_APOSTROPHE))
         fail(where, `${lang}.term에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
+      // 다른 문자 체계가 섞여 들었는지 본다. 예문 대조보다 먼저 원인을 말해 준다
+      if (typeof word.term === 'string')
+        for (const stray of strayScripts(lang, word.term))
+          fail(where, `${lang}.term에 ${stray}${subject(stray)} 섞여 있습니다 — "${word.term}"`)
       // 정답으로 쓸 필드가 비면 그 언어에서 출제 불가다
       if (!word[strategy.answer])
         fail(where, `${lang}.${strategy.answer} 누락 — 이 언어의 정답 필드입니다`)
@@ -221,6 +267,9 @@ for (const file of files) {
         }
         if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
           fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
+        if (typeof example.text === 'string')
+          for (const stray of strayScripts(lang, example.text))
+            fail(where, `${lang}.${at}에 ${stray}${subject(stray)} 섞여 있습니다 — "${example.text}"`)
         // ja·zh·ru는 예문도 읽을 수 있어야 한다. pnpm romanize가 채운다
         if (typeof example.text === 'string' && typeof answer === 'string' && example.text.includes(answer)) {
           const key = `${file}|${c.category}|${example.text.split(answer).join('___')}`
