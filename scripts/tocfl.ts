@@ -372,6 +372,7 @@ const MANUAL: Record<string, string> = {
   'job.json:baker': '麵包師',
   'job.json:potter': '陶藝家',
   'job.json:archaeologist': '考古學家',
+  'job.json:lever': '槓桿',
   'job.json:vise': '檯鉗',
   'nature.json:cloud': '雲',
   'nature.json:hurricane': '颱風',
