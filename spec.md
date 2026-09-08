@@ -1217,6 +1217,7 @@ pnpm claim обида поддержка ресница
 ```bash
 pnpm props suitcase map ticket
 pnpm props "one wall rack holding folded leaflets with a hand pulling one out"
+pnpm props --in borrow-book late-fee show-start
 ```
 
 `claim`이 표기의 임자를 본다면 이건 **그림**의 임자를 본다. 표기가 비어도 그리려는
@@ -1233,6 +1234,17 @@ pnpm props "one wall rack holding folded leaflets with a hand pulling one out"
 인자에 띄어쓰기가 있으면 **프롬프트로 보고 낱말을 뽑는다.** 초안을 통째로 넣으면
 어느 소품이 물려 있는지 한 번에 나온다. `pulling`·`out`처럼 개념 0.5%를 넘게 나오는
 낱말은 소품이 아니라 문장을 잇는 말이라 건너뛴다.
+
+`--in <slug...>`은 **이미 넣은 개념의 프롬프트**를 그대로 질의로 쓴다. 배치를
+넣고 나서 무엇과 물렸는지 한 줄로 보는 자리다 — 자기 자신은 결과에서 뺀다.
+슬러그를 둘 이상 주면 **배치 안에서 겹치는 소품**도 따로 찍는다. 남의 그림만
+보면 놓치는 자리가 있어서다 — 1회차에 문을 세 장 그려 놓고 그림이 다 나온 뒤에야
+알아챘고, 그 자리를 지금은 이렇게 잡는다.
+
+```
+배치 안에서 겹치는 소품 1개
+  door           any-vacancy · book-meeting-room
+```
 
 **판정하지 않는다.** 겹치는지는 그려봐야 알고 그건 twins와 눈이 한다. 여기서는
 어디를 피해야 하는지만 본다. 상황 표현 세 회차에서 이 조회를 손으로 했고 —
@@ -1335,7 +1347,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm coverage` | 시험 목록 대비 우리 위치를 잰다. 표를 문서에 박지 않고 여기서 뽑는다 |
 | `pnpm hsk` | 공식 HSK 대강 PDF에서 낱말별 등급표를 뽑아 `scripts/hsk-2026.json`에 적는다. macOS에서만 돈다 |
 | `pnpm claim <낱말...>` | 후보에 임자가 있는지 배치 **앞**에서 본다. 겹친 표기는 개념으로 만들 수 없다 |
-| `pnpm props <소품...>` | 그림 소품에 임자가 있는지 본다. 프롬프트를 통째로 줘도 된다 — 낱말을 뽑아 대조한다 |
+| `pnpm props <소품...>` | 그림 소품에 임자가 있는지 본다. 프롬프트를 통째로 줘도 되고, `--in <slug...>`으로 이미 넣은 개념의 프롬프트를 질의로 쓸 수도 있다 |
 
 `slug`를 생략하면 아직 결과물이 없는 개념 전체에 대해 돈다.
 

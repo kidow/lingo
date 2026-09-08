@@ -52,6 +52,7 @@ pnpm image  [slug]      # .images/*.png → public/concepts/*.webp
 pnpm icons              # app/icon.svg → PWA·애플 아이콘
 
 pnpm props <소품...>     # 그림 소품에 임자가 있는지 본다 (프롬프트를 통째로 줘도 된다)
+pnpm props --in <slug...> # 이미 넣은 개념의 프롬프트로 조회. 배치끼리 겹치는 소품도 찍는다
 
 pnpm coverage           # 시험 목록 대비 우리 위치
 pnpm levels [파일]       # JLPT·HSK·CEFR·TSL·TORFL 등급을 출처에서 채운다
