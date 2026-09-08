@@ -12,6 +12,7 @@ import { AUDIO_MISSING } from '../lib/audio-have.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import { auditTrivia } from '../lib/trivia-audit.ts'
 import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
+import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { LANG } from '../lib/lang.ts'
 import { clozeAt } from '../lib/quiz.ts'
@@ -600,11 +601,41 @@ if (notes.length) {
       if (!existsSync(join(PUBLIC_DIR, 'audio', language, `${concept.slug}.mp3`)))
         gone.add(`${language}/${concept.slug}`)
     }
-  const stale = gone.size !== AUDIO_MISSING.size || [...gone].some((key) => !AUDIO_MISSING.has(key))
-  if (stale)
-    warn(
-      `lib/audio-have.ts가 낡았습니다 — 발음 없는 자리 ${gone.size}건 vs 적힌 것 ${AUDIO_MISSING.size}건. node scripts/audio.ts manifest 를 돌리세요`,
+  const differing = [
+    ...[...gone].filter((key) => !AUDIO_MISSING.has(key)),
+    ...[...AUDIO_MISSING].filter((key) => !gone.has(key)),
+  ]
+  /*
+   * **아직 커밋되지 않은 콘텐츠 때문인지 가린다.**
+   *
+   * 이 목록은 커밋되는 생성물이라 HEAD 콘텐츠로 굽는다. 그런데 검사는 작업
+   * 트리를 보므로, 다른 세션이 개념을 넣어 두고 아직 커밋하지 않았으면 늘
+   * 어긋난 것으로 보인다 — 내 일이 아닌데 매번 뜬다.
+   *
+   * 어긋난 열쇠가 **전부 아직 커밋되지 않은 파일에서 왔으면** 경고 대신 기록만
+   * 남긴다. 그 콘텐츠를 커밋하는 사람이 그때 함께 구우면 되는 자리다.
+   */
+  if (differing.length > 0) {
+    const dirty = new Set(
+      spawnSync('git', ['diff', '--name-only', 'HEAD', '--', CONTENT_DIR], { encoding: 'utf8' })
+        .stdout?.split('\n')
+        .filter(Boolean) ?? [],
     )
+    const fileFor = (key: string) => fileOf.get(key.slice(key.indexOf('/') + 1))
+    const mine = differing.filter((key) => {
+      const file = fileFor(key)
+      return !file || !dirty.has(file)
+    })
+    if (mine.length > 0)
+      warn(
+        `lib/audio-have.ts가 낡았습니다 — 발음 없는 자리 ${gone.size}건 vs 적힌 것 ${AUDIO_MISSING.size}건. node scripts/audio.ts manifest 를 돌리세요`,
+      )
+    else
+      // 기록 묶음은 이 자리보다 앞에서 이미 찍혔다. 그래서 바로 낸다
+      console.log(
+        `  · lib/audio-have.ts와 ${differing.length}건 어긋나지만 전부 아직 커밋되지 않은 콘텐츠입니다 — 그 콘텐츠를 커밋할 때 함께 굽습니다`,
+      )
+  }
 }
 
 /**
