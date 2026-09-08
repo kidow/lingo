@@ -115,10 +115,24 @@ const mine = new Set(sources.map((r) => r.slug))
  * 프롬프트에서 뽑은 낱말 중 **너무 흔한 것**은 건너뛴다.
  *
  * 불용어 목록을 손으로 채워도 `pulling`·`out`처럼 프롬프트마다 나오는 낱말이
- * 남는다. 목록을 늘리는 대신 세어서 자른다 — 개념 0.5%(서른 장 남짓)를 넘게 나오는
- * 낱말은 소품이 아니라 문장을 잇는 말이다. 낱말을 직접 준 자리는 자르지 않는다.
+ * 남는다. 목록을 늘리는 대신 세어서 자른다 — 문턱을 넘게 나오는 낱말은 소품이
+ * 아니라 장면을 받치는 바닥이다. 낱말을 직접 준 자리는 자르지 않는다.
+ *
+ * **문턱은 실측으로 잡았다.** 상황 표현 스물여덟 회차에서 `--in`이 짚은 낱말을
+ * 모아 «고쳐야 했던 것»과 «헛일이었던 것»으로 갈라 빈도를 재 보니 깨끗하게
+ * 나뉘었다(2026-09-09, 프롬프트 6,748장).
+ *
+ *   헛일   folded 4.5% · wall 4.0% · paper 3.2% · desk 2.2% · box 2.2% ·
+ *          corner 1.1% · tray 1.1% · shelf 1.1% · bench 1.1% · slot 0.8% ·
+ *          hook 0.7% · envelope 0.7%
+ *   진짜   hair 0.50% · cord 0.47% · dial 0.41% · stool 0.33% · bicycle 0.28% ·
+ *          dog 0.25% · fruit 0.25% · coffee 0.21% · beans 0.12% · garage 0.04%
+ *
+ * 0.50%와 0.70% 사이가 비어 있다. 예전 문턱 0.5%는 그 틈의 **아래쪽 끝**이라
+ * `envelope`·`hook`·`slot`이 매번 걸렸다 — 회차마다 서넛씩 짚였는데 실제로
+ * 그림을 고친 것은 하나둘이었다. 0.6%로 올려 틈 한가운데에 둔다.
  */
-const COMMON = 0.005
+const COMMON = 0.006
 const line = (n: number) => '─'.repeat(n)
 const clip = (s: string, n: number) => (s.length > n ? s.slice(0, n - 1) + '…' : s)
 
@@ -161,9 +175,25 @@ if (skipped.length > 0)
  * 다 나온 뒤에야 알아챘다. 준 슬러그끼리도 맞춰 본다.
  */
 if (sources.length > 1) {
+  /*
+   * **여기서는 «개념 이름이라 남겨 둔다»가 통하지 않는다.**
+   *
+   * 위쪽 목록은 낱말이 다른 개념의 표기이면 흔하더라도 짚어 준다 — 그 개념과
+   * 그림이 겹치는지 봐야 하기 때문이다. 그런데 배치 안에서 겹치는지는 그것과
+   * 다른 물음이다. `wall`(벽)과 `tray`(쟁반)는 개념이면서 동시에 **장면을
+   * 받치는 바닥**이라, 한 배치의 두 장면이 둘 다 벽을 쓴다고 해서 그림이
+   * 닮지는 않는다.
+   *
+   * 그래서 여기서는 개념 여부를 보지 않고 빈도만 본다. 이 예외 때문에
+   * 회차마다 서넛씩 짚였는데 실제로 고친 것은 하나둘이었다.
+   */
+  const floor = (q: string) =>
+    fromPrompt.has(q) &&
+    rows.filter((r) => !mine.has(r.slug) && r.drawn.has(q)).length > rows.length * COMMON
+
   const shared = new Map<string, string[]>()
   for (const q of queries) {
-    if (skipped.includes(q)) continue
+    if (skipped.includes(q) || floor(q)) continue
     const who = sources.filter((r) => r.drawn.has(q)).map((r) => r.slug)
     if (who.length > 1) shared.set(q, who)
   }
