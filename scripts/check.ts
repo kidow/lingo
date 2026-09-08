@@ -81,6 +81,33 @@ function voicePair(term: string, other: string) {
   return shared >= short - 1
 }
 
+/**
+ * 러시아어 낱말의 품사를 **꼴로 짐작한다.** 모르겠으면 `null`이다.
+ *
+ * 곁말에는 품사를 적는 자리가 없다(lib/types.ts). 그런데 «같은 품사끼리만
+ * 붙인다»는 규칙은 품사를 봐야 지킬 수 있다 — 2026-09-08 재검에서 명사에 관계
+ * 형용사를 붙인 것(`культура`에 `культурный`)과 명사에 동사를 붙인 것
+ * (`попытка`에 `пытаться`)이 서른둘 나왔다.
+ *
+ * **곁말에 품사 칸을 새로 두지 않았다.** 3,883개를 개념의 품사로 자동으로
+ * 채우면 검사하려던 주장을 그대로 베껴 넣는 꼴이고, 손으로 채우려면 낱말마다
+ * 사전을 봐야 한다. 러시아어는 어미가 품사를 거의 다 알려주므로 **꼴에서
+ * 끌어내는 편이 싸고 정직하다.**
+ *
+ * 애매한 자리는 아예 판정하지 않는다 — `есть`·`красть`(동사)와 `новость`(명사)가
+ * 다 `-сть`로 끝나고, `ведущий`(사회자)는 형용사 꼴의 명사다.
+ */
+function ruPos(word: string) {
+  if (word.includes(' ')) return null
+  if (/(ость|есть)$/u.test(word)) return '명사'
+  if (/(сть|чь|шь|щий|щая)$/u.test(word)) return null
+  if (/(ание|ение|тие|ствие|ие|ье)$/u.test(word)) return '명사'
+  if (/[аяиеуо]ться$/u.test(word) || /[аяиеуо]ть$/u.test(word)) return '동사'
+  if (/(ый|ий|ой|ая|яя|ое|ые)$/u.test(word)) return '형용사'
+  if (/(ция|сия|ство|ка|ик|ок|ец|тель|ор|арь|изм|ура|ота)$/u.test(word)) return '명사'
+  return null
+}
+
 /** 받침이 있으면 «이», 없으면 «가». 이름이 넷뿐이라 규칙 하나면 된다 */
 const subject = (word: string) =>
   ((word.charCodeAt(word.length - 1) - 0xac00) % 28 ? '이' : '가')
@@ -256,12 +283,21 @@ for (const file of files) {
             fail(where, `${lang}.also에 표제어와 같은 표기가 있습니다`)
           // 러시아어는 어근이 같고 -ся 하나로 갈리는 짝을 곁말로 두지 않는다 (spec.md §7)
           if (lang === 'ru' && typeof word.term === 'string')
-            for (const other of list)
+            for (const other of list) {
               if (voicePair(word.term, other))
                 fail(
                   where,
                   `ru.also의 "${other}"는 "${word.term}"과 태가 다릅니다 — 곁말이 아니라 다른 개념입니다`,
                 )
+              // 품사가 갈리면 곁말이 아니다 (spec.md §7). 꼴로 짐작하고 애매하면 넘어간다
+              const mine = ruPos(word.term)
+              const theirs = ruPos(other)
+              if (mine && theirs && mine !== theirs)
+                fail(
+                  where,
+                  `ru.also의 "${other}"는 ${theirs}이고 "${word.term}"은 ${mine}입니다 — 곁말은 같은 품사끼리 붙습니다`,
+                )
+            }
           for (const other of list) alsoOf(lang).set(other, slug)
         }
       }
