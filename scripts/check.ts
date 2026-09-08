@@ -180,6 +180,8 @@ const perLanguage: Record<string, number> = {}
 const all: Concept[] = []
 /** 파일별 개념. 등급 지문을 파일 단위로 대조한다 */
 const byFile = new Map<string, Concept[]>()
+/** slug가 어느 파일에 있는지. 같은 파일 안의 뜻줄 중복을 볼 때 쓴다 */
+const fileOf = new Map<string, string>()
 let total = 0
 
 /**
@@ -232,6 +234,7 @@ for (const file of files) {
     const where = `${path} [${slug || i}]`
     total += 1
     all.push(raw as Concept)
+    if (slug) fileOf.set(slug, path)
 
     if (!slug) return fail(where, 'slug 누락')
     if (!SLUG_RE.test(slug)) fail(where, `slug가 ^[a-z0-9-]+$ 위반: "${slug}"`)
@@ -507,9 +510,29 @@ for (const [lang, table] of alsoTable) {
           (lang) =>
             group[i]!.words[lang as Language]?.term === group[j]!.words[lang as Language]?.term,
         )
-        if (shared.length > 0)
+        if (shared.length > 0) {
           warn(
             `${group[i]!.slug} 와 ${group[j]!.slug} — 뜻이 둘 다 "${meaning}"인데 ${shared.join('·')} 표기까지 같습니다. 개념이 둘일 이유가 있는지 보세요 (§4)`,
+          )
+          continue
+        }
+        /*
+         * 표기는 갈리는데 **같은 파일·같은 갈래**에서 뜻줄이 똑같은 자리.
+         *
+         * 개념으로는 옳다 — `서리`(frost)와 `밤서리`(night frost)는 다른 낱말이다.
+         * 다만 카드에 뜻줄이 그대로 나오므로(components/cards.tsx) 학습자에게는
+         * 같은 한국어가 두 번 뜨고, 오답은 같은 파일에서 먼저 뽑히므로
+         * (lib/quiz.ts의 `nearPool`) 그 둘이 한 화면에 나란히 설 수 있다.
+         *
+         * 정답은 slug로 고르니 틀린 문항이 되지는 않는다. 그래서 막지 않고
+         * **뜻줄을 갈라 적을지 보라고만** 한다 — 힘센/강력한, 서리/밤서리처럼.
+         */
+        if (
+          group[i]!.category === group[j]!.category &&
+          fileOf.get(group[i]!.slug) === fileOf.get(group[j]!.slug)
+        )
+          warn(
+            `${group[i]!.slug} 와 ${group[j]!.slug} — 같은 파일·같은 갈래인데 뜻줄이 둘 다 "${meaning}"입니다. 카드에 같은 한국어가 두 번 뜹니다 — 뜻줄을 갈라 적을지 보세요`,
           )
       }
   }
