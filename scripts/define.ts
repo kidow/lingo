@@ -17,6 +17,7 @@
  *
  * 출처:
  * - 영어 정의 — Free Dictionary (dictionaryapi.dev). 키 없음
+ *              죽으면 위키낱말사전 정의 엔드포인트로 물러선다 (아래)
  * - 한국어 번역 — 영어 위키낱말사전의 번역 절. CC BY-SA
  * - 일본어 — Jisho (JMdict). 읽기와 영어 뜻을 준다
  *
@@ -52,9 +53,9 @@ type Lookup = {
  * 429 한 번을 "그 단어에 등급이 없다"로 읽으면 멀쩡한 N4가 소리 없이 사라진다.
  * 실제로 그렇게 사라졌다.
  */
-async function json(url: string): Promise<unknown | null> {
+async function json(url: string, attempts = 6): Promise<unknown | null> {
   let last = ''
-  for (let attempt = 0; attempt < 6; attempt += 1) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
     if (attempt > 0) await new Promise((r) => setTimeout(r, Math.min(500 * 2 ** attempt, 8000)))
     try {
       const res = await fetch(url, { headers: UA })
@@ -71,18 +72,81 @@ async function json(url: string): Promise<unknown | null> {
   throw new Error(`조회 실패 (${last}): ${url}`)
 }
 
-/** 영어 정의. 첫 뜻 두 개만 — 사전을 옮겨 적으려는 게 아니라 확인하려는 것이다 */
-async function englishDefinitions(word: string): Promise<string[]> {
-  const data = (await json(
-    `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`,
-  )) as Array<{ meanings?: Array<{ partOfSpeech?: string; definitions?: Array<{ definition?: string }> }> }> | null
+/** 대신 출처가 있는 자리. 던지지 않고 실패를 값으로 돌려준다 */
+async function trySoft(url: string, attempts: number): Promise<unknown | null | typeof DOWN> {
+  try {
+    return await json(url, attempts)
+  } catch {
+    return DOWN
+  }
+}
 
-  return (data?.[0]?.meanings ?? [])
-    .flatMap((meaning) =>
-      (meaning.definitions ?? [])
-        .slice(0, 2)
-        .map((d) => `(${meaning.partOfSpeech ?? '?'}) ${d.definition ?? ''}`),
+/** 출처가 죽었다는 표시. `null`(그 낱말이 없다)과 갈라야 한다 */
+const DOWN = Symbol('출처가 죽었다')
+
+/**
+ * 영어 정의. 첫 뜻 두 개만 — 사전을 옮겨 적으려는 게 아니라 확인하려는 것이다.
+ *
+ * **출처가 둘이다.** dictionaryapi.dev는 무료 호스팅이라 통째로 내려가는 날이
+ * 있다 — 2026-09-08에 하루 종일 HTTP 522(Cloudflare가 원본에 못 닿음)였고,
+ * 그동안 `pnpm define`이 첫 낱말에서 죽었다. 그러면 add-concept 절차의 **첫
+ * 단계**가 막히는데, 그 단계는 "뜻을 기억으로 쓰지 않는다"를 지키는 자리라
+ * 건너뛰면 규율이 통째로 헐거워진다. 실제로 그날 세 세션이 다 건너뛰었다.
+ *
+ * 그래서 위키낱말사전의 정의 엔드포인트로 물러선다. 한국어 번역을 이미 같은
+ * 사이트에서 받아 오므로 **의존하는 곳이 느는 것이 아니다** — 오히려 둘 중
+ * 하나가 살아 있으면 돈다.
+ *
+ * 앞 출처는 **두 번만** 시도한다. 여섯 번(총 30초 남짓)을 낱말마다 기다리면
+ * 대신 있는 출처가 있어도 못 쓸 만큼 느려진다.
+ */
+async function englishDefinitions(word: string): Promise<string[]> {
+  const primary = await trySoft(
+    `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`,
+    2,
+  )
+  if (primary !== DOWN) {
+    const data = primary as Array<{
+      meanings?: Array<{ partOfSpeech?: string; definitions?: Array<{ definition?: string }> }>
+    }> | null
+    return (data?.[0]?.meanings ?? [])
+      .flatMap((meaning) =>
+        (meaning.definitions ?? [])
+          .slice(0, 2)
+          .map((d) => `(${meaning.partOfSpeech ?? '?'}) ${d.definition ?? ''}`),
+      )
+      .slice(0, 4)
+  }
+
+  if (!warnedFallback) {
+    console.error('  (dictionaryapi.dev가 응답하지 않아 위키낱말사전으로 물러섭니다)')
+    warnedFallback = true
+  }
+  return wiktionaryDefinitions(word)
+}
+
+/** 한 실행에 한 번만 알린다. 낱말마다 찍으면 결과가 안 보인다 */
+let warnedFallback = false
+
+/**
+ * 위키낱말사전 정의 엔드포인트. `{ en: [{ partOfSpeech, definitions: [{ definition }] }] }` 꼴이다.
+ *
+ * 정의에 HTML이 섞여 온다(`<span>`·`<a>`). 태그를 벗기고 빈 줄은 버린다 —
+ * 상위 항목만 있고 뜻이 비어 있는 자리가 있다.
+ */
+async function wiktionaryDefinitions(word: string): Promise<string[]> {
+  const data = (await json(
+    `https://en.wiktionary.org/api/rest_v1/page/definition/${encodeURIComponent(word)}`,
+  )) as { en?: Array<{ partOfSpeech?: string; definitions?: Array<{ definition?: string }> }> } | null
+
+  return (data?.en ?? [])
+    .flatMap((entry) =>
+      (entry.definitions ?? []).slice(0, 2).map((d) => {
+        const text = (d.definition ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+        return text ? `(${(entry.partOfSpeech ?? '?').toLowerCase()}) ${text}` : ''
+      }),
     )
+    .filter(Boolean)
     .slice(0, 4)
 }
 
