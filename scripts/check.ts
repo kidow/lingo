@@ -137,6 +137,18 @@ const MIN_PER_CATEGORY = 4
 const PERSON_RE = /\b(figure|figures|person|people|baby|child|children|adult|man|woman|worker|passenger|customer)\b/i
 const NO_FACE_RE = /no facial features/i
 
+/**
+ * **사물이 얼굴을 품는 자리.** 프롬프트에 사람이 하나도 없어도 신분증·여권·
+ * 사진틀을 그리라고 하면 모델이 그 안에 초상을 넣는다 — 28회차의
+ * `id-for-claim`이 그랬다. 인물 규칙은 사람 낱말만 보므로 이 자리를 못 잡는다.
+ *
+ * 막는 것이 아니라 **알려만 준다.** 닫힌 여권이나 이름 없는 명찰처럼 초상이
+ * 안 들어가는 자리가 더 많고, 들어갔는지는 결국 시트를 봐야 안다.
+ */
+const PORTRAIT_OBJECT_RE =
+  /\b(id card|identity card|passport|licence|license|badge|photo frame|portrait|headshot|id photo|visa)\b/i
+const NO_PORTRAIT_RE = /(no portrait|blank|closed|silhouette|shaped gap|no readable letters|no facial features)/i
+
 const errors: string[] = []
 const warnings: string[] = []
 const notes: string[] = []
@@ -234,6 +246,14 @@ for (const file of files) {
       !NO_FACE_RE.test(c.image_prompt)
     )
       warn(`${where} — 인물이 든 프롬프트인데 "no facial features"가 없습니다. 모델이 얼굴을 그립니다 (IMAGE_STYLE)`)
+    if (
+      typeof c.image_prompt === 'string' &&
+      PORTRAIT_OBJECT_RE.test(c.image_prompt) &&
+      !NO_PORTRAIT_RE.test(c.image_prompt)
+    )
+      warn(
+        `${where} — 신분증·여권류가 든 프롬프트입니다. 사람을 안 적어도 모델이 초상을 그려 넣습니다 — "blank"나 "no portrait"를 적고 시트에서 확인하세요 (IMAGE_STYLE)`,
+      )
 
     // category는 오답 보기를 뽑는 근거라 생략을 허용하지 않는다 (spec.md §4)
     if (!c.category) fail(where, 'category 누락')
