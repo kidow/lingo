@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>남은 한자 획 애니메이션 — 근거와 제작 경로</title>
+<style>
+:root{color-scheme:light;--paper:#f5f3ed;--ink:#222b27;--muted:#626d66;--line:#d7ded5;--green:#245b44;--tint:#e7ede4;--white:#fffefa;--amber:#856127}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.8;word-break:keep-all}main{max-width:1100px;margin:auto;padding:48px 42px 88px}a{color:var(--green);text-underline-offset:4px;text-decoration-thickness:1px}a:hover{color:#102e22}.topline{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:16px;color:var(--muted);font-size:13px;letter-spacing:.03em}.eyebrow{font-size:12px;color:var(--green);letter-spacing:.12em;font-weight:700;margin:40px 0 12px}h1{font-size:clamp(32px,5vw,53px);letter-spacing:-.06em;line-height:1.23;margin:0 0 24px;max-width:800px}h2{font-size:26px;letter-spacing:-.04em;line-height:1.4;margin:0 0 22px}h3{font-size:18px;margin:0 0 8px}p{margin:0 0 16px}.lead{font-size:20px;max-width:870px;color:#46574c}.decision{background:var(--green);color:white;padding:26px 30px;border-radius:10px;margin:28px 0 34px}.decision p{margin:0}.decision .label{display:block;opacity:.76;font-size:12px;margin-bottom:6px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0 16px}.metric{padding:21px;background:var(--white);border:1px solid var(--line);border-radius:9px}.metric strong{display:block;font-size:36px;letter-spacing:-.06em;line-height:1.3}.metric span{font-size:13px;color:var(--muted)}.note,.source{font-size:13px;color:var(--muted)}.source a{white-space:normal}.section{padding-top:45px;margin-top:42px;border-top:1px solid var(--line)}.section-no{display:block;font-size:12px;font-weight:700;color:var(--green);letter-spacing:.1em;margin-bottom:9px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px;margin:20px 0;background:var(--white)}table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;font-size:12px;font-weight:700;background:var(--tint);color:#425648;padding:13px 17px;white-space:nowrap}td{padding:16px 17px;border-top:1px solid var(--line);vertical-align:top}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.wide{min-width:650px}.compact{min-width:480px}.tag{display:inline-block;padding:1px 8px;border-radius:4px;background:var(--tint);font-size:11px;color:var(--green);margin-bottom:5px;white-space:nowrap}.tag.pending{background:#f2ebdc;color:var(--amber)}.callout{padding:19px 23px;background:var(--tint);border-left:3px solid var(--green);border-radius:0 7px 7px 0;margin:22px 0}.callout p:last-child{margin:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{padding:23px;background:var(--white);border:1px solid var(--line);border-radius:8px}.card p:last-child{margin:0}.steps{list-style:none;padding:0;margin:24px 0;counter-reset:step}.steps li{position:relative;padding:0 0 24px 47px;counter-increment:step}.steps li:before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:1px;font-size:14px;font-weight:700;color:var(--green)}.steps li strong{display:block;font-size:18px}.steps li p{margin:5px 0 0}details{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:17px 21px;margin-top:18px}summary{cursor:pointer;font-weight:600}details[open] summary{margin-bottom:18px}footer{margin-top:45px;border-top:1px solid var(--line);padding-top:22px;font-size:12px;color:var(--muted)}code{word-break:break-all;font-size:12px}ul{padding-left:20px}li+li{margin-top:8px}.steps li+li{margin-top:0}@media(max-width:650px){main{padding:25px 21px 55px}.topline{font-size:11px;gap:12px}.eyebrow{margin-top:30px}.lead{font-size:17px}.decision{padding:22px}.metrics{grid-template-columns:1fr 1fr;gap:9px}.metric{padding:16px}.metric strong{font-size:31px}.grid{grid-template-columns:1fr}.section{padding-top:30px;margin-top:30px}h2{font-size:23px}td{padding:13px}.card{padding:20px}.note{font-size:12px}}@media print{body{background:white}main{max-width:none;padding:0}.section{break-inside:avoid}.card,.metric,.decision{break-inside:avoid}a{color:inherit}.table-wrap{overflow:visible}table.wide,table.compact{min-width:0}.decision{color:var(--ink);background:#eef2ed}details{display:block}footer{margin-top:20px}}
+</style>
+</head>
+<body><main>
+<div class="topline"><span>LINGO · 한능검 조사 보고서</span><span>2026. 09. 08</span></div>
+<div class="eyebrow">STROKE ORDER / EVIDENCE REVIEW</div>
+<h1>남은 한자에도<br>획 애니메이션을 만들 수 있을까?</h1>
+<p class="lead">제작 후보와 대조 자료는 상당수 있습니다. 다만 근거 없이 생성한 순서를 한국 한능검의 정답으로 제공할 수는 없습니다. 제작 자동화와 필순 검증을 나누어 진행하는 것이 적절합니다.</p>
+<div class="decision"><span class="label">권장 결정</span><p><strong>공개 획 데이터 확보 → 한국 자료와 문자별 대조 → 부족한 글자는 전문가 검수.</strong><br>공식 시험기관 자료 대조, 자체 전문가 검수, 해외 자료 참고, 미검증 초안을 서로 구분합니다.</p></div>
+<div class="metrics">
+<div class="metric"><strong>503</strong><span>현재 적용 · 전체 5,978자</span></div>
+<div class="metric"><strong>5,475</strong><span>아직 미적용</span></div>
+<div class="metric"><strong>4,702</strong><span>공개 획 데이터에 제작 후보</span></div>
+<div class="metric"><strong>4,121</strong><span>비상·대만 목록에 대조 경로</span></div>
+</div>
+<p class="note">마지막 두 수는 서로 다른 집계이며 중복됩니다. 신규 승인 수가 아닙니다. 이번 조사에서 추가 적용한 애니메이션은 0자입니다.</p>
+
+<section class="section"><span class="section-no">01 / 자료 확보 범위</span><h2>‘아직 미적용’은 ‘근거 없음’이 아닙니다</h2>
+<p>대만 교육부의 6,063자 전체 CSV를 확보해 우리 목록과 직접 대조했습니다. 미적용 4,079자가 일치합니다. 기존 비상 1,800자 목록과 합치면 중복을 제외한 4,121자입니다. <strong>대만의 공식 자료라는 사실과 한국 필순에 맞는지는 별도 판단</strong>입니다.</p>
+<p class="source">출처: <a href="https://stroke-order.learningweb.moe.edu.tw/resource.jsp?ID=1">대만 교육부 다운로드</a> · <a href="https://text.vivasam.com/detail/186">비상 고등 한문</a> · <a href="https://viewer.vivasam.com/qrviewer/viewer.html?qrcode=106502_171p_25_ST&amp;teacher=false">비상 공개 자료 뷰어</a></p>
+<div class="table-wrap"><table class="wide"><thead><tr><th>대조 자료</th><th>이번 확인 결과</th><th>적용 전 남은 일</th></tr></thead><tbody>
+<tr><td><strong>비상교육</strong><br>2022 고등 한문</td><td><span class="tag">기존 자료 재검증</span><br>1,800행 해시 검증<br>미적용 <strong>1,284자</strong> 일치</td><td>글자별 영상 전체와 순서·방향·획 경계 대조</td></tr>
+<tr><td><strong>대만 교육부</strong><br>국자표준자체 필순</td><td><span class="tag">전체 목록 대조</span><br>6,063행의 문자·Unicode 검증<br>미적용 <strong>4,079자</strong> 일치</td><td>한국 기준과의 차이 확인<br>자산 복제·수정 이용 조건 확인</td></tr>
+<tr><td><a href="https://qr.t25.kr/HI22CHC00TOT01101"><strong>동아출판</strong></a><br>공개 기초 필순 영상</td><td><span class="tag">새 교차 근거</span><br>州·小·囚·中·犬·巡 목록<br>囚·巡 MP4 존재 확인</td><td>6자 모두 비상 목록에 포함: 문자 수 추가 0<br>영상 전체 필순은 아직 미검증</td></tr>
+<tr><td><a href="https://viewer.cmass.kr/html/textbook/view_h_35.shtml"><strong>씨마스</strong></a><br>언어생활과 한자</td><td><span class="tag pending">파일 미확보</span><br>필순 ZIP 제공 안내 확인</td><td><a href="https://teachingsaem.cmass.kr/textbook-material/detail/552">자료실</a>의 로그인·교사 인증 필요<br>포함 문자 수 확인 불가</td></tr>
+<tr><td><a href="https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202102/t20210226_515113.html"><strong>중국 교육부</strong></a><br>GF0023-2020</td><td>8,105자 대상 규범 공개</td><td>중국 규범과 한국 기준의 차이 확인<br>이번 조사에서 전수 교집합 미집계</td></tr>
+<tr><td><a href="https://hudong.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020150902457900316281.pdf"><strong>중국 교육부</strong></a><br>GF3002-1999</td><td><span class="tag pending">전수 표 미확보</span><br>규범의 명시 범위는 20,902자<br>내려받은 공개 PDF는 8쪽</td><td>20,902자 개별 필순표를 전부 확보한 것으로 계산하지 않음</td></tr>
+</tbody></table></div>
+<div class="callout"><p><strong>1,354자</strong>는 비상·대만의 두 목록에 없습니다. 모든 공식 자료에 없다는 뜻은 아닙니다. 조사 범위 밖의 교재·사전·규범이나 전문가 검토로 근거를 추가할 여지가 남아 있습니다.</p></div>
+</section>
+
+<section class="section"><span class="section-no">02 / 실제로 그릴 데이터</span><h2>4,702자에 제작 후보, 773자는 별도 제작 경로가 필요</h2>
+<p>6종 데이터의 실제 파일과 고정 커밋을 대조했습니다. 동일 Unicode만 일치시켰고, 간체·번체·이체자를 자동으로 합치지 않았습니다. 획수 일치는 오류 후보를 거르는 첫 검사이며, 올바른 순서의 증명은 아닙니다.</p>
+<div class="table-wrap"><table class="compact"><thead><tr><th>공개 데이터</th><th class="num">미적용 문자 일치</th><th class="num">그중 획수 일치</th></tr></thead><tbody>
+<tr><td>AnimCJK Ko</td><td class="num">22</td><td class="num">21</td></tr>
+<tr><td>AnimCJK Ja</td><td class="num">4,069</td><td class="num">3,607</td></tr>
+<tr><td>AnimCJK ZhHans</td><td class="num">3,141</td><td class="num">2,618</td></tr>
+<tr><td>AnimCJK ZhHant</td><td class="num">502</td><td class="num">485</td></tr>
+<tr><td>Make Me a Hanzi</td><td class="num">4,289</td><td class="num">3,682</td></tr>
+<tr><td>KanjiVG 기본 SVG</td><td class="num">4,074</td><td class="num">미집계</td></tr>
+<tr><td><strong>중복 제거 합집합</strong></td><td class="num"><strong>4,702</strong></td><td class="num">—</td></tr>
+</tbody></table></div>
+<p class="source">출처: <a href="https://github.com/parsimonhi/animCJK">AnimCJK</a> · <a href="https://github.com/skishore/makemeahanzi">Make Me a Hanzi</a> · <a href="https://github.com/KanjiVG/kanjivg">KanjiVG</a>. 각 행은 중복되며 합산할 수 없습니다. 773자는 이 6종에 후보가 없다는 뜻입니다.</p>
+<details><summary>급수별 제작 후보 범위</summary><div class="table-wrap"><table class="compact"><thead><tr><th>급수</th><th class="num">미적용</th><th class="num">제작 후보</th><th class="num">6종에 없음</th></tr></thead><tbody>
+<tr><td>4급II</td><td class="num">249</td><td class="num">247</td><td class="num">2</td></tr><tr><td>4급</td><td class="num">250</td><td class="num">250</td><td class="num">0</td></tr><tr><td>3급II</td><td class="num">499</td><td class="num">498</td><td class="num">1</td></tr><tr><td>3급</td><td class="num">317</td><td class="num">314</td><td class="num">3</td></tr><tr><td>2급</td><td class="num">538</td><td class="num">512</td><td class="num">26</td></tr><tr><td>1급</td><td class="num">1,144</td><td class="num">1,138</td><td class="num">6</td></tr><tr><td>특급II</td><td class="num">1,150</td><td class="num">948</td><td class="num">202</td></tr><tr><td>특급</td><td class="num">1,328</td><td class="num">795</td><td class="num">533</td></tr>
+</tbody></table></div></details>
+</section>
+
+<section class="section"><span class="section-no">03 / 정확성의 경계</span><h2>근거 없이 ‘정답 필순’을 생성할 수는 없습니다</h2>
+<div class="grid">
+<article class="card"><h3>일반 원칙에도 예외가 있습니다</h3><p>한국어문회의 2004년 상담 답변은 일부 교차획의 두 순서 모두 틀렸다고 할 수 없다고 설명합니다. 현행 전수 채점정책으로 일반화하지 않습니다. 국내 연구도 王·田에서 원칙만으로 순서를 확정하기 어렵다고 설명합니다.</p><p class="source"><a href="https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=78">한국어문회 상담 78</a> · <a href="https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART001831264">한연석 2013, 저자 초록</a></p></article>
+<article class="card"><h3>공식 도메인만으로는 부족합니다</h3><p>‘월따말 류’ 상담은 답변자도 확실히 모른다고 밝히며 유추를 제안합니다. 답변의 확정성과 실제 필순 설명을 확인해야 합니다.</p><p class="source"><a href="https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=9050">한국어문회 상담 9050</a></p></article>
+<article class="card"><h3>해외 데이터에는 다른 지역의 근거가 있습니다</h3><p>KanjiVG는 일본 문부성의 1958년 필순 지침 등을 참고합니다. 자료 자체가 무근거인 것은 아니지만, 한국 시험기관의 확인을 대신하지 않습니다.</p><p class="source"><a href="https://kanjivg.tagaini.net/ref.html">KanjiVG 참고문헌</a> · <a href="https://unicode.org/faq/han_cjk.html">Unicode의 지역 자형 설명</a></p></article>
+<article class="card"><h3>같은 데이터의 복제는 독립 검증이 아닙니다</h3><p>AnimCJK·Make Me a Hanzi·Hanzi Writer는 데이터 계보가 겹칩니다. 여러 저장소에서 같은 순서가 나와도 독립된 여러 근거가 동의한 것으로 계산하면 안 됩니다.</p><p class="source"><a href="https://github.com/parsimonhi/animCJK/blob/master/README.md">AnimCJK 출처</a> · <a href="https://github.com/chanind/hanzi-writer-data">Hanzi Writer 데이터 출처</a></p></article>
+</div>
+</section>
+
+<section class="section"><span class="section-no">04 / 자동화의 가능 범위</span><h2>Noto SVG·AI는 제작을 돕지만, 정답 근거를 만들지 않습니다</h2>
+<p>Noto의 완성 윤곽을 SVG로 바꿔도 사람이 쓰는 획의 분할·방향·순서가 복원되는 것은 아닙니다. 이는 윤곽 정보를 정의하는 <a href="https://learn.microsoft.com/en-us/typography/opentype/spec/cff">OpenType CFF 사양</a>에 근거한 기술적 판단입니다.</p>
+<div class="table-wrap"><table class="wide"><thead><tr><th>방법·연구</th><th>할 수 있는 일</th><th>남는 한계</th></tr></thead><tbody>
+<tr><td>기존 SVG / 중심선 재생</td><td>주어진 순서대로 JavaScript 재생</td><td>원본의 한국 필순 정확성 판정</td></tr>
+<tr><td>검증된 부품 합성</td><td>기하와 제작 작업 재사용</td><td>부품 간 순서·교차획 예외는 별도 검토</td></tr>
+<tr><td><a href="https://arxiv.org/html/2210.13826">CCSE · 2022</a></td><td>학습 데이터로 획 인스턴스 분할</td><td>주석 의존, 복잡한 중첩 획의 한계</td></tr>
+<tr><td><a href="https://arxiv.org/html/2307.04341">참조 영상 정합 · 2023</a></td><td>순서가 있는 참조 획을 목표 자형에 맞춤</td><td>올바른 참조가 먼저 필요</td></tr>
+<tr><td><a href="https://arxiv.org/html/2511.11119">LVGM · WACV 2026</a></td><td>학습한 획 시퀀스로 벡터 글자 생성</td><td>수작업 순서 주석에 의존<br>한국 5,978자의 정확성 보증 없음</td></tr>
+</tbody></table></div>
+<p class="note">LVGM의 약 90.7만 표본은 단어·성어·시구도 포함합니다. 서로 다른 한자 90.7만 자가 아닙니다. Hanzi Writer는 <a href="https://hanziwriter.org/docs.html#loading-character-data-link">외부 데이터를 불러오는 재생기</a>이며, Motion도 필순 검증 근거가 되는 도구는 아닙니다.</p>
+</section>
+
+<section class="section"><span class="section-no">05 / 이용 조건</span><h2>정확성 대조와 자산 재배포는 별도입니다</h2>
+<p>대만 교육부는 애니메이션 등에 <strong>CC BY-NC-ND 3.0 TW</strong>와 비상업적 iframe 이용 안내를 제공합니다. 공개되어 있다는 이유로 앱에서 수정·재배포할 수 있는 자산으로 취급하면 안 됩니다. 사실·방법을 참고하는 일과 영상·SVG 표현물을 복제하는 일도 구분해야 합니다.</p>
+<p class="source"><a href="https://stroke-order.learningweb.moe.edu.tw/page.jsp?ID=52">대만 교육부 저작권 안내</a> · <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/tw/deed.en">CC 조건 원문</a></p>
+<p>AnimCJK·Make Me a Hanzi 계열의 획 데이터는 Arphic Public License, KanjiVG는 CC BY-SA 3.0, Noto는 OFL을 사용합니다. 라이브러리 코드의 MIT가 획 데이터까지 MIT로 바꾸지 않습니다. 교과서의 학교 수업 사용 안내 또한 이 앱의 재배포 허락을 입증하지 않습니다.</p>
+<p class="source"><a href="https://github.com/parsimonhi/animCJK/blob/master/licenses/COPYING.txt">AnimCJK COPYING</a> · <a href="https://kanjivg.tagaini.net/files.html">KanjiVG 라이선스</a> · <a href="https://github.com/notofonts/noto-cjk/blob/main/Serif/LICENSE">Noto OFL</a> · <a href="https://www.vivasam.com/support/notice/detail?noticeId=1570&amp;page=3">비상 이용 안내</a></p>
+</section>
+
+<section class="section"><span class="section-no">06 / 다음 작업</span><h2>한국 자료가 있는 1,284자부터 검토합니다</h2>
+<ol class="steps">
+<li><strong>비상 목록을 급수순으로 대조</strong><p>현재 후보의 획수만 맞추는 검사를 넘어, 영상 전체의 순서·방향·획 분할·한국 자형을 비교합니다. 동아 자료는 같은 글자의 교차 근거로 사용합니다. 기존 첫 20자 중 警의 획수 차이는 별도 해결이 필요합니다.</p></li>
+<li><strong>문자별 근거와 판정 기록</strong><p>원문 URL, 영상·페이지 위치, 확인 날짜, 자형, 획수, 순서, 방향, 데이터 계보·라이선스, 검수자를 남깁니다. 한국어문회 자료 대조와 발행사 자료 대조를 구분합니다.</p></li>
+<li><strong>국내 자료가 부족하면 전문가 검수</strong><p>대만·중국·일본 자료를 보조 근거로 쓰되, 지역 차이가 남으면 한국 한자 교육 전문가가 검수합니다. 결과는 자체 검수로 기록하고 공식 확인으로 표현하지 않습니다.</p></li>
+<li><strong>조사한 6종에 벡터가 없는 글자는 근거 확보 후 제작</strong><p>직접 경로를 만들거나 자동화 초안을 보정할 수 있습니다. 검수 전에는 정적 SVG와 자유 쓰기를 유지합니다. 자동 테스트는 누락·경로·재생을, 원문 대조와 사람 검수는 필순 의미를 확인합니다.</p></li>
+</ol>
+</section>
+
+<section class="section"><span class="section-no">07 / 조사 방법과 한계</span><h2>확인한 만큼만 계산했습니다</h2>
+<p>카탈로그 JSON과 실제 런타임 승인 목록을 읽고, 고정 커밋의 공개 획 파일을 exact Unicode로 대조했습니다. 대만 CSV는 6,064행(헤더 포함)과 모든 문자·Unicode 대응을 검증했고, 비상 XLSX는 기존 읽기 전용 파서로 해시와 1,800행을 확인했습니다. 합집합에서는 중복 글자를 제거했습니다.</p>
+<p>모든 영상의 전 구간을 재생하거나 미적용 5,475자를 승인한 것은 아닙니다. 씨마스 ZIP은 확보하지 않았고, 중국 규범의 한국 카탈로그 전수 교집합도 미집계입니다. 한국의 전체 5,978자 전수 필순 규범을 확보하지 못했지만, 존재하지 않는다고 단정하지 않습니다.</p>
+<p class="note">재검증용 수치·커밋·파일 해시: <a href="coverage.json">coverage.json</a>. 주요 KB 라벨: <code>Official Taiwan character list current Hanja overlap and Korean textbook union</code>, <code>Fresh exact-Unicode remaining Hanja coverage six upstream stroke datasets</code>.</p>
+</section>
+<footer>조사 기준일 2026-09-08 · 출처는 각 주장 옆에 연결했습니다. 게시일 미표시 자료는 열람일 기준입니다.<br>자료 확보와 승인 상태를 구분한 조사 보고서입니다. 앱 코드·승인 데이터·배포 변경은 없습니다.</footer>
+</main></body></html>

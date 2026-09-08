@@ -7,6 +7,7 @@ import { HANJA_STROKES, HANJA_STROKE_SOURCE, type HanjaEomunhoeStrokeData, type 
 import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
 import { applyReviewedSplit, SPLIT_CORRECTIONS } from './hanja-stroke-splits.ts'
 import { validateTextbookReview } from './hanja-stroke-textbook.ts'
+import { textbookGeometry } from './hanja-stroke-textbook-corrections.ts'
 import locations from './hanja-stroke-locations.json' with { type: 'json' }
 
 export const CANDIDATE_SOURCE = {
@@ -21,10 +22,17 @@ export const JAPANESE_CANDIDATE_SOURCE = {
   sha256: '2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8',
 } as const
 
+// Geometry only. Every Korean textbook use still requires a complete video comparison.
+export const MAKE_ME_A_HANZI_SOURCE = {
+  ...CANDIDATE_SOURCE,
+  url: 'https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt',
+  sha256: 'a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee',
+} as const
+
 type Character = { glyph: string; strokes: number; readingGrade: string }
 type Candidate = { character: string; strokes: string[]; medians: number[][][] }
 type Verified = HanjaStrokeData
-type CandidateSource = typeof CANDIDATE_SOURCE | typeof JAPANESE_CANDIDATE_SOURCE
+type CandidateSource = typeof CANDIDATE_SOURCE | typeof JAPANESE_CANDIDATE_SOURCE | typeof MAKE_ME_A_HANZI_SOURCE
 const wholeImages: Record<string, string> = { 回: 'BIN0036.bmp', 瓦: 'BIN0038.bmp', 臼: 'BIN0017.gif' }
 const officialPages: Record<string, string> = locations.pages
 const dotCorrections: Record<string, { image: string; row: number; originalCount: number; path: string }> = {
@@ -99,16 +107,17 @@ function reviewedPaths(review: HanjaEomunhoeStrokeData, candidate: Candidate) {
   return normalizeMedians(expectedOrder ? expectedOrder.map((index) => candidate.medians[index - 1]) : candidate.medians)
 }
 
-export function auditStrokes(characters: Character[], candidates: Candidate[], verified: readonly Verified[], japaneseCandidates: Candidate[] = []) {
+export function auditStrokes(characters: Character[], candidates: Candidate[], verified: readonly Verified[], japaneseCandidates: Candidate[] = [], hanziCandidates: Candidate[] = []) {
   const byGlyph = indexCandidates(candidates)
   const japaneseByGlyph = indexCandidates(japaneseCandidates)
+  const hanziByGlyph = indexCandidates(hanziCandidates)
   const approved = new Map(verified.map((entry) => [entry.glyph, entry]))
   if (approved.size !== verified.length) throw new Error('Duplicate verified character')
   const entries = characters.map((character) => {
     const candidate = byGlyph.get(character.glyph)
     const review = approved.get(character.glyph)
     const textbookReview = review?.verificationSource === 'vivasam-high-2022'
-    if (textbookReview) validateTextbookReview(review, character.strokes)
+    const textbookRecord = textbookReview ? validateTextbookReview(review, character.strokes) : undefined
     const validEvidence = review && (textbookReview || (
       (review.verificationSource === undefined || review.verificationSource === 'eomunhoe-f37')
       && review.sourceReference === undefined && (review.sourceWholeImage === true
@@ -121,10 +130,11 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     const valid = validCandidate(candidate)
     const reviewedCandidate = review?.geometrySource === CANDIDATE_SOURCE.sha256
     const geometryCandidate = reviewedCandidate ? candidate
-      : review?.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256 ? japaneseByGlyph.get(character.glyph) : undefined
+      : review?.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256 ? japaneseByGlyph.get(character.glyph)
+        : textbookReview && review.geometrySource === MAKE_ME_A_HANZI_SOURCE.sha256 ? hanziByGlyph.get(character.glyph) : undefined
     if (review?.geometrySource && (!validCandidate(geometryCandidate)
       || JSON.stringify(review.paths) !== JSON.stringify(textbookReview
-        ? normalizeMedians(geometryCandidate.medians) : reviewedPaths(review, geometryCandidate)))) {
+        ? textbookGeometry(textbookRecord!, geometryCandidate.medians).paths : reviewedPaths(review, geometryCandidate)))) {
       throw new Error(`Reviewed geometry mismatch: ${character.glyph}`)
     }
     if ((review?.strokeOrder || review?.geometryCorrection || review?.sourceStrokeIndices || review?.pathsSha256)
@@ -158,12 +168,14 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
   return { source: CANDIDATE_SOURCE, supplementalSource: JAPANESE_CANDIDATE_SOURCE,
     // Candidate status remains the Korean corpus inventory; supplemental geometry is audited separately.
     supplementalCandidateTotal: japaneseCandidates.length,
+    makeMeAHanziSource: MAKE_ME_A_HANZI_SOURCE, makeMeAHanziCandidateTotal: hanziCandidates.length,
     verificationSources: {
       eomunhoe: verified.filter((entry) => entry.verificationSource !== 'vivasam-high-2022').length,
       textbook: verified.filter((entry) => entry.verificationSource === 'vivasam-high-2022').length,
     },
     reviewedGeometry: { korean: verified.filter((entry) => entry.geometrySource === CANDIDATE_SOURCE.sha256).length,
-      japanese: verified.filter((entry) => entry.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256).length },
+      japanese: verified.filter((entry) => entry.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256).length,
+      makeMeAHanzi: verified.filter((entry) => entry.geometrySource === MAKE_ME_A_HANZI_SOURCE.sha256).length },
     total: entries.length, candidateTotal: candidates.length,
     candidateStatus: counts('candidateStatus'), playback: counts('playback'), entries }
 }
@@ -173,12 +185,12 @@ async function main() {
   const folder = join(root, 'content/hanja/characters')
   const characters: Character[] = (await Promise.all((await readdir(folder)).filter((file) => file.endsWith('.json')).sort()
     .map(async (file) => JSON.parse(await readFile(join(folder, file), 'utf8')).characters))).flat()
-  const [korean, japanese] = await Promise.all([CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE].map(async (source) => {
+  const [korean, japanese, hanzi] = await Promise.all([CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE].map(async (source) => {
     const response = await fetch(source.url, { signal: AbortSignal.timeout(30_000) })
     if (!response.ok) throw new Error(`Candidate download: HTTP ${response.status}`)
     return parseCandidates(new Uint8Array(await response.arrayBuffer()), source)
   }))
-  const report = auditStrokes(characters, korean, HANJA_STROKES, japanese)
+  const report = auditStrokes(characters, korean, HANJA_STROKES, japanese, hanzi)
   if (process.argv.includes('--json')) console.log(JSON.stringify(report, null, 2))
   else {
     const { entries, ...summary } = report

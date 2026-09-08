@@ -9,20 +9,19 @@
  * 바뀌는데 매 실행마다 다시 받으면 20분이 걸리고, 그중 한 요청만 실패해도
  * 실행이 통째로 죽는다.
  *
- * 등급을 **추정하지 않는다.** 세 출처를 조회해 있는 것만 붙이고, 없으면 비운다 —
- * 비면 그 카드에 레벨 줄이 안 나온다 (§5).
+ * 이 스크립트가 새 등급을 추정하지는 않는다. 출처의 분류값을 조회해 붙이고,
+ * 없으면 비운다. 연구 자료의 추정값까지 공식 시험 등급이라는 뜻은 아니다 (§5).
  *
- *   JLPT  Jisho(JMdict). 구 출제기준 기반이라 가타카나 외래어가 빠져 있다
- *   HSK   complete-hsk-vocabulary (MIT). 2026 시험 대강 기준
+ *   JLPT  Jisho의 외부 JLPT 태그. 현행 시험이 공개한 공식 단어별 등급표가 아니다
+ *   HSK   출제기관의 2026 시험 대강에서 추출한 어휘표 (scripts/hsk-syllabus.ts)
  *   CEFR  독일어는 Goethe-Institut 공식 Wortliste(A1~B1). 프랑스어는 FLELex/Beacco
- *         (UCLouvain CENTAL, CC BY-NC-SA 4.0) — A1~C2 여섯 등급 다 낸다
+ *         (UCLouvain CENTAL, CC BY-NC-SA 4.0)의 연구 분류값. 공식 DELF/DALF 단어표가 아니다
  *   TSL   TOEIC Service List (Browne & Culligan, CC BY-SA 4.0). 등급이 아니라 순위다
  *   TORFL ros-edu.ru의 ТРКИ 어휘 최소치. A1~B2까지다 (scripts/torfl.ts)
  *
- * 스페인어는 채우지 않는다. Instituto Cervantes PCIC는 `cvc.cervantes.es`가
- * robots.txt로 전체 크롤링을 막고(`Disallow: /`), 같은 계열의 ELELex(CEFRLex
- * 프로젝트)는 등급별 빈도 **분포**만 준다 — FLELex와 달리 단일 등급으로 정리한
- * 버전(Beacco)이 없어서, 등급 하나를 고르려면 우리가 추정해야 한다.
+ * 스페인어는 채우지 않는다. 공식 교육과정의 수준별 항목과 완전한 DELE
+ * 단어별 등급표는 구분해야 한다. 원문에 없는 등급을 추정하거나 예문 속
+ * 모든 단어에 그 페이지의 수준을 부여하지 않는다 (docs/dele-vocabulary-research.md).
  *
  * **표기가 같아도 뜻이 다르면 사람이 지운다.** 대조는 표기로만 하므로 동형어가
  * 다른 뜻의 등급을 물려받는다 — Bank(벤치/은행), Karte(지도/카드)가 그랬다.
@@ -37,11 +36,11 @@ import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import type { Concept } from '../lib/types.ts'
 
 /**
- * TOEIC Service List 1.2 — 1,250단어. NGSL과 합쳐 최근 TOEIC의 98.5%를 덮는다.
+ * TOEIC Service List 1.2 — 1,250단어. 연구 코퍼스 기반의 빈도 목록이다.
  *
- * ETS는 공식 어휘 목록을 내지 않는다. 시중의 "필수 1000단어"는 교재사 편집물이라
- * 공개 레포에 못 쓰지만, TSL은 TOEIC 대비 교재 150만 단어 코퍼스에서 뽑은
- * 학술 목록이고 **CC BY-SA 4.0**이라 쓸 수 있다. 출처는 spec.md §7 표에 적는다.
+ * 공식 단어장 출판물은 있지만, 이를 자유롭게 재사용할 수 있는 공개 등급표와
+ * 동일시하지 않는다. TSL은 TOEIC 대비 교재 코퍼스에서 뽑은 학술 목록이며
+ * **CC BY-SA 4.0**으로 제공된다. 실제 시험의 출제 범위나 등급을 보증하지 않는다.
  *
  *   Browne, C., Culligan, B. (2013). The TOEIC Service List.
  *   www.newgeneralservicelist.com
@@ -127,8 +126,8 @@ async function germanLevels(): Promise<Map<string, string>> {
  *
  * 기본 FLELex는 낱말마다 A1~C2 여섯 등급의 **빈도**를 주는 분포표라, 등급 하나를
  * 정하려면 우리가 임계값을 지어내야 한다. Beacco 버전은 그 작업을 이미 논문으로
- * 끝냈다 — 전문가 판단과 빈도를 합쳐 낱말마다 등급 하나를 확정해 `level` 열에
- * 낸다(Pintard & François, 2020). 출처가 정한 값을 그대로 읽을 뿐이다.
+ * 수행했다 — 전문가 판단과 빈도를 결합한 연구 분류를 `level` 열에 낸다
+ * (Pintard & François, 2020). 값을 그대로 읽어도 공식 DELF/DALF 등급이 되지는 않는다.
  *
  *   Pintard, A., François, T. (2020). Combining expert knowledge with frequency
  *   information to infer CEFR levels for words. READI 워크숍, LREC 2020.

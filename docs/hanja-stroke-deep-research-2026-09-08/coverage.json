@@ -1,0 +1,50 @@
+{
+  "reviewedAt": "2026-09-08",
+  "scope": "Exact Unicode intersection with the current 5,978-character catalog; reference or vector presence is not animation approval.",
+  "catalog": 5978,
+  "runtimeApproved": 503,
+  "remaining": 5475,
+  "newApprovalsInThisResearch": 0,
+  "vectorUnion": { "remainingCandidates": 4702, "remainingWithoutCandidateInTheseSixDatasets": 773 },
+  "vectors": [
+    { "id": "AnimCJK-Ko", "file": "graphicsKo.txt", "sourceCharacters": 535, "remainingExact": 22, "remainingSameStrokeCount": 21, "bytes": 1387824, "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e" },
+    { "id": "AnimCJK-Ja", "file": "graphicsJa.txt", "sourceCharacters": 7007, "remainingExact": 4069, "remainingSameStrokeCount": 3607, "bytes": 21862957, "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8" },
+    { "id": "AnimCJK-ZhHans", "file": "graphicsZhHans.txt", "sourceCharacters": 8014, "remainingExact": 3141, "remainingSameStrokeCount": 2618, "bytes": 22561924, "sha256": "5a5c157fddd0fd9bfaf5580b25c20a1ba2b0cabc0b7142e09f6149cbd5547798" },
+    { "id": "AnimCJK-ZhHant", "file": "graphicsZhHant.txt", "sourceCharacters": 1013, "remainingExact": 502, "remainingSameStrokeCount": 485, "bytes": 2988095, "sha256": "731fe26345833745dc7d37c8213f3ca91585aa0ee18179c0ccda91be41ff6aec" },
+    { "id": "MakeMeAHanzi", "file": "graphics.txt", "sourceCharacters": 9574, "remainingExact": 4289, "remainingSameStrokeCount": 3682, "bytes": 30778076, "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee" },
+    { "id": "KanjiVG", "file": "kanji/[hex].svg", "sourceCharacters": 6704, "remainingExact": 4074, "remainingSameStrokeCount": null, "treeTruncated": false }
+  ],
+  "pins": {
+    "parsimonhi/animCJK": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+    "skishore/makemeahanzi": "bddc96d41bef78427ed0e034e9f7e31d71fd1b92",
+    "KanjiVG/kanjivg": "55b5ba92a7cad78a62ef04db4be6f9562d949b7f"
+  },
+  "remainingByGrade": [
+    { "grade": "4급II", "remaining": 249, "vectorCandidates": 247, "withoutVector": 2, "taiwanReference": 242 },
+    { "grade": "4급", "remaining": 250, "vectorCandidates": 250, "withoutVector": 0, "taiwanReference": 246 },
+    { "grade": "3급II", "remaining": 499, "vectorCandidates": 498, "withoutVector": 1, "taiwanReference": 482 },
+    { "grade": "3급", "remaining": 317, "vectorCandidates": 314, "withoutVector": 3, "taiwanReference": 302 },
+    { "grade": "2급", "remaining": 538, "vectorCandidates": 512, "withoutVector": 26, "taiwanReference": 467 },
+    { "grade": "1급", "remaining": 1144, "vectorCandidates": 1138, "withoutVector": 6, "taiwanReference": 1073 },
+    { "grade": "특급II", "remaining": 1150, "vectorCandidates": 948, "withoutVector": 202, "taiwanReference": 767 },
+    { "grade": "특급", "remaining": 1328, "vectorCandidates": 795, "withoutVector": 533, "taiwanReference": 500 }
+  ],
+  "references": {
+    "vivasam": { "sourceCharacters": 1800, "catalogExact": 1772, "approvedExact": 488, "remainingExact": 1284, "remainingNfcTrimmed": 1297, "sha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c", "sourceRecord": "../hanja-stroke-additional-sources/sources.json#vivasam-high-2022" },
+    "taiwanMoe": { "sourceCharacters": 6063, "catalogExact": 4572, "approvedExact": 493, "remainingExact": 4079, "csvRowsIncludingHeader": 6064, "glyphCodepointMismatches": 0, "bytes": 975092, "sha256": "44036a65a3a95b6dec5a538ce1cd58098370cd0e309ca5e12a72f0ceaf32e986", "url": "https://stroke-order.learningweb.moe.edu.tw/file/files/全筆順動畫嵌入碼網址列表.csv" },
+    "remainingVivasamOrTaiwan": 4121,
+    "remainingNeitherVivasamNorTaiwan": 1354,
+    "vivasamOnlyNotTaiwan": "却旣畓飜竝屛敍汚玆墻慙毁携鷄鑛鬪脚槪啓郞裏晩峯尙緖愼顔僞粧卽鎭値恒硏爲絶衆眞豊鄕凉戱",
+    "donga": { "publicVideoInventory": "州小囚中犬巡", "newCharactersBeyondVivasam": 0, "sampleMediaHead200": ["囚", "巡"], "allStrokesVisuallyVerified": false },
+    "cmass": { "zipAdvertised": true, "fileObtained": false, "characterCount": null },
+    "chinaGf3002": { "standardStatedScope": 20902, "retrievedPdfPages": 8, "fullCharacterTableVerified": false, "bytes": 6730497, "sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e", "url": "https://hudong.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020150902457900316281.pdf" }
+  },
+  "method": [
+    "Read content/hanja/characters/*.json characters arrays; import lib/hanja-strokes.ts HANJA_STROKES to subtract runtime-approved glyphs.",
+    "Fetch graphics*.txt from raw.githubusercontent.com at the recorded repository commits, hash raw bytes, and map JSONL character fields exactly. Compare strokes array length to catalog strokes only as a necessary preliminary check.",
+    "Read the non-truncated recursive KanjiVG Git tree at the recorded commit. Include only base kanji/ files matching 5-6 lowercase hexadecimal digits and .svg, excluding variant suffixes. Stroke counts were not inspected for this corpus.",
+    "Fetch the Taiwan MOE CSV linked by its official resource page; parse all rows, verify decimal Unicode against each glyph, then intersect the catalog by exact glyph identity.",
+    "Use the existing read-only scripts/hanja-stroke-textbook-source.py --json parser to verify and parse the pinned Vivasam XLSX. Main counts use exact Unicode, without merging compatibility forms or simplified/traditional characters.",
+    "Deduplicate glyphs before union counts. Corpus rows overlap and are not independent evidence votes. Reference-list entries do not prove full video playback, Korean conformity, redistribution permission, or runtime approval."
+  ]
+}

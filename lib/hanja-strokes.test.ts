@@ -42,7 +42,7 @@ test('한국어문회 출처는 5급까지 500자 전체와 별도 공식 도해
 })
 
 test('검증되지 않은 한자나 획수가 달라진 자형에 필순을 추정하지 않는다', () => {
-  assert.equal(hanjaStrokeData({ glyph: '警', strokes: 20 }), null)
+  assert.equal(hanjaStrokeData({ glyph: '警', strokes: 19 }), null)
   assert.equal(hanjaStrokeData({ glyph: '性', strokes: 7 }), null)
   assert.equal(hanjaStrokeData({ glyph: '毎', strokes: 7 }), null)
   assert.equal(hanjaStrokeData({ glyph: '漢', strokes: 15 }), null)

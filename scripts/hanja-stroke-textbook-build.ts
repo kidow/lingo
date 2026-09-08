@@ -8,8 +8,9 @@ import { isDeepStrictEqual, parseArgs, promisify } from 'node:util'
 import { HANJA_STROKES, type HanjaTextbookStrokeData } from '../lib/hanja-strokes.ts'
 import { HANJA_TEXTBOOK_SOURCE } from '../lib/hanja-stroke-textbook.ts'
 import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
-import { CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, parseCandidates } from './hanja-stroke-audit.ts'
-import { TEXTBOOK_REVIEW_REGISTRY, validateTextbookReview, type TextbookReviewRegistry } from './hanja-stroke-textbook.ts'
+import { CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE, parseCandidates } from './hanja-stroke-audit.ts'
+import { TEXTBOOK_REVIEW_REGISTRY, textbookGeometrySource, validateTextbookReview, type TextbookReviewRegistry } from './hanja-stroke-textbook.ts'
+import { textbookGeometry } from './hanja-stroke-textbook-corrections.ts'
 
 export type TextbookManifest = {
   source: { id: string; sha256: string; url: string }
@@ -37,23 +38,34 @@ function manifestIndex(manifest: TextbookManifest) {
   return indexBy(manifest.entries, (entry) => entry.glyph, 'manifest glyph')
 }
 
+function candidateIndexes(korean: readonly Candidate[], japanese: readonly Candidate[], hanzi: readonly Candidate[]) {
+  return new Map([
+    [CANDIDATE_SOURCE.sha256, indexBy(korean, (entry) => entry.character, 'Korean candidate glyph')],
+    [JAPANESE_CANDIDATE_SOURCE.sha256, indexBy(japanese, (entry) => entry.character, 'Japanese candidate glyph')],
+    [MAKE_ME_A_HANZI_SOURCE.sha256, indexBy(hanzi, (entry) => entry.character, 'Make Me a Hanzi candidate glyph')],
+  ])
+}
+
 /** Checks the original glyph/row/video mapping even while every review is pending. */
 export function inspectTextbookQueue(
   manifest: TextbookManifest,
   characters: readonly Character[],
   candidates: readonly Candidate[],
   ledger: TextbookReviewRegistry = TEXTBOOK_REVIEW_REGISTRY,
+  japanese: readonly Candidate[] = [],
+  hanzi: readonly Candidate[] = [],
 ) {
   const sources = manifestIndex(manifest)
   const catalog = indexBy(characters, (entry) => entry.glyph, 'catalog glyph')
-  const geometry = indexBy(candidates, (entry) => entry.character, 'candidate glyph')
+  const geometry = candidateIndexes(candidates, japanese, hanzi)
   indexBy(ledger.records, (entry) => entry.glyph, 'review glyph')
   if (ledger.sourceId !== manifest.source.id || ledger.manifestSha256 !== manifest.source.sha256
     || ledger.geometrySha256 !== CANDIDATE_SOURCE.sha256) throw new Error('Textbook review source changed')
   return ledger.records.map((record) => {
     const source = sources.get(record.glyph)
     const character = catalog.get(record.glyph)
-    const candidate = geometry.get(record.glyph)
+    const geometrySource = textbookGeometrySource(record)
+    const candidate = geometry.get(geometrySource)!.get(record.glyph)
     if (!['pending', 'matched', 'conflict'].includes(record.status)) throw new Error(`Unknown review status: ${record.glyph}`)
     if (!source || source.manifestRow !== record.manifestRow || source.videoFilename !== record.videoFilename) {
       throw new Error(`Textbook original row mismatch: ${record.glyph}`)
@@ -64,7 +76,7 @@ export function inspectTextbookQueue(
       throw new Error(`Textbook candidate/catalog mismatch: ${record.glyph}`)
     }
     const paths = normalizeMedians(candidate.medians)
-    return { glyph: record.glyph, grade: character.readingGrade, status: record.status,
+    return { glyph: record.glyph, grade: character.readingGrade, status: record.status, geometrySource,
       manifestRow: source.manifestRow, videoFilename: source.videoFilename,
       expectedStrokes: character.strokes, candidateStrokes: paths.length,
       countsMatch: character.strokes === paths.length,
@@ -72,20 +84,24 @@ export function inspectTextbookQueue(
   })
 }
 
-/** Generates unchanged Ko centerlines only after every recorded comparison passes. */
+/** Generates centerlines from each record's pinned corpus after all comparisons pass. */
 export function buildTextbookBundle(
   manifest: TextbookManifest,
   characters: readonly Character[],
   candidates: readonly Candidate[],
   ledger: TextbookReviewRegistry = TEXTBOOK_REVIEW_REGISTRY,
+  japanese: readonly Candidate[] = [],
+  hanzi: readonly Candidate[] = [],
 ) {
-  inspectTextbookQueue(manifest, characters, candidates, ledger)
-  const geometry = indexBy(candidates, (entry) => entry.character, 'candidate glyph')
+  inspectTextbookQueue(manifest, characters, candidates, ledger, japanese, hanzi)
+  const geometry = candidateIndexes(candidates, japanese, hanzi)
   const entries = ledger.records.filter((record) => record.status === 'matched').map((record) => {
-    const paths = normalizeMedians(geometry.get(record.glyph)!.medians)
+    const geometrySource = textbookGeometrySource(record)
+    const { paths, sourceStrokeIndices } = textbookGeometry(record, geometry.get(geometrySource)!.get(record.glyph)!.medians)
     const entry: HanjaTextbookStrokeData = {
       glyph: record.glyph, verificationSource: HANJA_TEXTBOOK_SOURCE.id,
-      verifiedAt: record.reviewedAt ?? '', geometrySource: CANDIDATE_SOURCE.sha256,
+      verifiedAt: record.reviewedAt ?? '', geometrySource,
+      ...(record.geometryCorrection ? { geometryCorrection: record.geometryCorrection, sourceStrokeIndices } : {}),
       pathsSha256: createHash('sha256').update(JSON.stringify(paths)).digest('hex'),
       sourceReference: { manifestSha256: manifest.source.sha256, manifestRow: record.manifestRow,
         glyph: record.glyph, videoFilename: record.videoFilename },
@@ -95,6 +111,12 @@ export function buildTextbookBundle(
     const { verificationSource: _source, ...published } = entry
     return published
   })
+  const sourceMetadata = (source: typeof CANDIDATE_SOURCE | typeof JAPANESE_CANDIDATE_SOURCE | typeof MAKE_ME_A_HANZI_SOURCE) => ({
+    url: source.url, sha256: source.sha256,
+    license: source.sha256 === MAKE_ME_A_HANZI_SOURCE.sha256
+      ? 'Arphic Public License; see ARPHICPL.txt and MAKEMEAHANZI-COPYING.txt in this directory.'
+      : 'Arphic Public License; see ARPHICPL.txt and COPYING.txt in this directory.',
+  })
   return {
     verificationSource: {
       id: HANJA_TEXTBOOK_SOURCE.id, publisher: HANJA_TEXTBOOK_SOURCE.publisher,
@@ -102,8 +124,11 @@ export function buildTextbookBundle(
       viewerUrl: HANJA_TEXTBOOK_SOURCE.viewerUrl, manifestSha256: HANJA_TEXTBOOK_SOURCE.manifestSha256,
       scope: 'Publisher-reference comparison, not Korea Eomunhoe certification.',
     },
-    geometrySource: { url: CANDIDATE_SOURCE.url, sha256: CANDIDATE_SOURCE.sha256,
-      license: 'Arphic Public License; see ARPHICPL.txt and COPYING.txt in this directory.' },
+    geometrySource: sourceMetadata(CANDIDATE_SOURCE),
+    ...(entries.some((entry) => entry.geometrySource !== CANDIDATE_SOURCE.sha256)
+      ? { geometrySources: [CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE]
+        .filter((source) => entries.some((entry) => entry.geometrySource === source.sha256)).map(sourceMetadata) }
+      : {}),
     characters: entries,
   }
 }
@@ -115,11 +140,13 @@ export function analyzeTextbookCoverage(
   approvedGlyphs: ReadonlySet<string>,
   korean: readonly Candidate[],
   japanese: readonly Candidate[],
+  hanzi: readonly Candidate[] = [],
 ) {
   const sources = manifestIndex(manifest)
   const catalog = indexBy(characters, (entry) => entry.glyph, 'catalog glyph')
   const ko = indexBy(korean, (entry) => entry.character, 'Korean candidate glyph')
   const ja = indexBy(japanese, (entry) => entry.character, 'Japanese candidate glyph')
+  const mm = indexBy(hanzi, (entry) => entry.character, 'Make Me a Hanzi candidate glyph')
   const entries = [...sources.values()].filter((source) => catalog.has(source.glyph) && !approvedGlyphs.has(source.glyph))
     .map((source) => {
       const character = catalog.get(source.glyph)!
@@ -127,8 +154,10 @@ export function analyzeTextbookCoverage(
       return { ...source, grade: character.readingGrade, expectedStrokes: character.strokes,
         koreanStrokes: koreanCandidate?.strokes.length ?? null,
         japaneseStrokes: japaneseCandidate?.strokes.length ?? null,
+        makeMeAHanziStrokes: mm.get(source.glyph)?.strokes.length ?? null,
         koreanCountMatches: koreanCandidate?.strokes.length === character.strokes,
-        japaneseCountMatches: japaneseCandidate?.strokes.length === character.strokes }
+        japaneseCountMatches: japaneseCandidate?.strokes.length === character.strokes,
+        makeMeAHanziCountMatches: mm.get(source.glyph)?.strokes.length === character.strokes }
     })
   const exactCatalog = manifest.entries.filter((entry) => catalog.has(entry.glyph))
   const normalized = new Set(manifest.entries.map((entry) => entry.glyph.trim().normalize('NFC')))
@@ -147,8 +176,10 @@ export function analyzeTextbookCoverage(
       koreanCountMatches: entries.filter((entry) => entry.koreanCountMatches).length,
       japanese: entries.filter((entry) => entry.japaneseStrokes !== null).length,
       japaneseCountMatches: entries.filter((entry) => entry.japaneseCountMatches).length,
-      either: entries.filter((entry) => entry.koreanStrokes !== null || entry.japaneseStrokes !== null).length,
-      neither: entries.filter((entry) => entry.koreanStrokes === null && entry.japaneseStrokes === null).length,
+      makeMeAHanzi: entries.filter((entry) => entry.makeMeAHanziStrokes !== null).length,
+      makeMeAHanziCountMatches: entries.filter((entry) => entry.makeMeAHanziCountMatches).length,
+      either: entries.filter((entry) => entry.koreanStrokes !== null || entry.japaneseStrokes !== null || entry.makeMeAHanziStrokes !== null).length,
+      neither: entries.filter((entry) => entry.koreanStrokes === null && entry.japaneseStrokes === null && entry.makeMeAHanziStrokes === null).length,
     },
     entries,
   }
@@ -168,7 +199,7 @@ async function main() {
   const sourceManifest = promisify(execFile)('python3', manifestArgs, {
     maxBuffer: 1_000_000, timeout: 60_000,
   }).then(({ stdout }) => JSON.parse(stdout) as TextbookManifest)
-  const candidateData = Promise.all([CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE].map(async (source) => {
+  const candidateData = Promise.all([CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE].map(async (source) => {
     const response = await fetch(source.url, { signal: AbortSignal.timeout(30_000) })
     if (!response.ok) throw new Error(`Candidate download: HTTP ${response.status}`)
     return parseCandidates(new Uint8Array(await response.arrayBuffer()), source)
@@ -176,15 +207,15 @@ async function main() {
   const folder = join(root, 'content/hanja/characters')
   const catalogData = readdir(folder).then((files) => Promise.all(files.filter((file) => file.endsWith('.json')).sort()
     .map(async (file) => JSON.parse(await readFile(join(folder, file), 'utf8')).characters as Character[])))
-  const [manifest, [korean, japanese], groups] = await Promise.all([sourceManifest, candidateData, catalogData])
+  const [manifest, [korean, japanese, hanzi], groups] = await Promise.all([sourceManifest, candidateData, catalogData])
   const characters = groups.flat()
-  const queue = inspectTextbookQueue(manifest, characters, korean)
-  const bundle = buildTextbookBundle(manifest, characters, korean)
+  const queue = inspectTextbookQueue(manifest, characters, korean, TEXTBOOK_REVIEW_REGISTRY, japanese, hanzi)
+  const bundle = buildTextbookBundle(manifest, characters, korean, TEXTBOOK_REVIEW_REGISTRY, japanese, hanzi)
   if (values.bundle) {
     console.log(JSON.stringify(bundle, null, 2))
     return
   }
-  const coverage = analyzeTextbookCoverage(manifest, characters, new Set(HANJA_STROKES.map((entry) => entry.glyph)), korean, japanese)
+  const coverage = analyzeTextbookCoverage(manifest, characters, new Set(HANJA_STROKES.map((entry) => entry.glyph)), korean, japanese, hanzi)
   let publishedBundleMatches: boolean | undefined
   if (values.check) {
     const published = JSON.parse(await readFile(join(root, 'public/hanja-strokes/textbook-reviewed.json'), 'utf8'))
