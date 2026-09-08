@@ -157,6 +157,13 @@ pnpm props "one foot pressing a car brake pedal"
 #   개념   brake(제동 장치)  one foot pressing a car brake pedal, seen from the side
 ```
 
+**이 문서의 회차로 세운 개념 서른한 개를 되짚어 봤다(2026-09-08).**
+`props --in`으로 전부 조회하고 `pnpm twins`를 돌렸다 — **물린 자리는 없다.**
+props가 배치 안에서 겹친다고 찍은 아홉(`wooden`·`folded`·`train` …)은 다
+낱말만 겹친 것이었다. `make-it-in-time`(닫히는 전동차 문)과 `goodbye`(객차 창의
+손)가 둘 다 전차라 가장 아슬아슬했는데, twins의 구조·색 검사에서 5,939장 중
+닮은 쌍이 0이었다. **props는 후보를 좁히는 자리고 판정은 twins와 눈이 한다.**
+
 ## A1 — 아흔 개를 하나씩 갈랐고, 그중 열하나를 넣었다
 
 | 갈래 | 개수 | 채울 수 있나 |
