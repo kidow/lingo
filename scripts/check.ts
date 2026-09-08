@@ -526,6 +526,13 @@ for (const [lang, table] of alsoTable) {
          *
          * 정답은 slug로 고르니 틀린 문항이 되지는 않는다. 그래서 막지 않고
          * **뜻줄을 갈라 적을지 보라고만** 한다 — 힘센/강력한, 서리/밤서리처럼.
+         *
+         * **파일이 다르면 안 본다.** 그 자리는 예순 짝인데 거의 다 진짜
+         * 동음이의어다 — `눈`은 eye와 snow, `벌`은 bee와 punishment, `배`는
+         * pear와 ship이다. 갈라 적으면 오히려 틀린 한국어가 된다. 오답 풀이
+         * category로 넓어지는 자리가 있어(lib/entries.ts의 `distractorPool`)
+         * 한 화면에 설 수는 있지만, 그때 둘을 가르는 것은 뜻줄이 아니라
+         * 그림이다.
          */
         if (
           group[i]!.category === group[j]!.category &&
