@@ -117,9 +117,27 @@ done
 wait
 print -r -- "총 $(( $(date +%s) - START ))초 · ${#wanted[@]} 장 · 동시 $PAR"
 
+# 안 나온 장은 **한 번 더 돌린다.**
+#
+# 회차마다 한두 장이 OK도 FAIL도 없이 파일만 없이 끝난다(열다섯 장에 한 장 꼴).
+# 손으로 다시 부르면 대개 한 번에 나오므로, 그 왕복을 여기서 없앤다. 두 번째도
+# 안 나오면 아래 검사가 잡아 0이 아닌 값으로 끝난다.
+#
+# 임시 자리를 지우고 새로 만든다 — 앞 시도가 반쯤 쓴 파일을 남겼을 수 있다.
+retry=()
+for slug in $wanted; do [ -f "$REPO/.images/$slug.png" ] || retry+=("$slug"); done
+if [ ${#retry[@]} -gt 0 ]; then
+  print -r -- "다시 — ${retry[*]}"
+  for slug in $retry; do
+    rm -rf "$TMP/$slug"
+    mkdir -p "$TMP/$slug"
+    if build "$slug" "$TMP/$slug"; then run_one "$slug"; fi
+  done
+fi
+
 bad=0
 
-# 빠진 장. 동시 실행에서 한 장이 OK도 FAIL도 없이 사라진 적이 있다
+# 빠진 장. 두 번 돌리고도 없는 것이다
 gone=()
 for slug in "$@"; do [ -f "$REPO/.images/$slug.png" ] || gone+=("$slug"); done
 if [ ${#gone[@]} -gt 0 ]; then
