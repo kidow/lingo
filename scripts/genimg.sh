@@ -124,8 +124,21 @@ fi
 
 # 같은 장이 두 slug에 들어간 자리. 디렉터리를 나눠도, 프로세스를 나눠도 겪었다.
 # **요청한 장만이 아니라 `.images/` 전체와 대조한다** — 다른 프로세스가 같은 그림을
-# 남의 슬러그에 넣었을 때 자기 목록끼리만 비교하면 영영 안 걸린다
-files=("$REPO"/.images/*.png(N))
+# 남의 슬러그에 넣었을 때 자기 목록끼리만 비교하면 영영 안 걸린다.
+#
+# 단, **개념 슬러그인 파일만 본다.** `.images/`에는 `pnpm sheet`가 붙인 시트도
+# 함께 쌓이고(지금 96장), 같은 배치를 두 번 붙이면 바이트가 같아 영영 중복으로
+# 걸린다. 그러면 `bad=1`이라 아래 시트를 안 만들고 끝나는데, 그 시트가
+# **뒤바뀜을 잡는 유일한 그물**이다 — 검사가 저를 끄는 꼴이었다.
+files=(${(f)"$(node -e '
+  const fs = require("fs"), path = require("path")
+  const dir = path.join(process.argv[1], ".images")
+  const slugs = new Set()
+  for (const f of fs.readdirSync("content").filter((f) => f.endsWith(".json") && f !== "articles.json"))
+    for (const c of JSON.parse(fs.readFileSync(path.join("content", f), "utf8")).concepts) slugs.add(c.slug)
+  for (const f of fs.readdirSync(dir))
+    if (f.endsWith(".png") && slugs.has(f.slice(0, -4))) console.log(path.join(dir, f))
+' "$REPO")"})
 if [ ${#files[@]} -gt 1 ]; then
   dupes=$(md5 -r "${files[@]}" 2>/dev/null | awk '{n=split($2,p,"/"); h[$1]=h[$1]" "p[n]} END {for (k in h) if (split(h[k],a," ")>1) print h[k]}')
   if [ -n "$dupes" ]; then
