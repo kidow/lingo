@@ -52,6 +52,37 @@ elements, no captions.
 `image_prompt`에는 **내용만** 쓴다. 스타일 단어(flat, minimal, illustration, pastel 등)를
 넣으면 STYLE_PROMPT와 충돌하므로 쓰지 않는다.
 
+### 「글자 없음」이 막는 것과 안 막는 것
+
+STYLE_PROMPT의 마지막 줄은 **읽히는 것**을 막는다 — text · letters · numbers ·
+logos · watermark · speech bubbles · UI elements · captions. 그림 기호는 그
+목록에 없다. 화살표·체크 표시·과녁·신호 표시는 **막지 않는다.**
+
+전수로 세어 보면 이 갈래가 갈린다.
+
+| | 개수 | 판정 |
+| --- | ---: | --- |
+| 프롬프트가 화살표·기호를 부른다 | 88 | 규격 위반이 아니다 |
+| 프롬프트가 금지 낱말을 그대로 부른다 | 7 | 아래 규칙으로 다 통과한다 |
+| 실제 위반 | **0** | |
+
+**금지 항목이 개념 자체일 때는 비워서 그린다.** `subtitles`(자막)·
+`dialogue`(대화)·`text-message`(문자)·`language`(언어)는 말풍선이나 자막 띠가
+없으면 그릴 수가 없다. 그래서 **틀만 그리고 안을 비운다** — 말풍선은 빈 채로,
+자막 띠는 물결 자국으로, 간판은 무늬 없는 판으로 둔다. 읽히지 않으면 규격을
+지킨 것이다.
+
+```
+text-message → a phone screen showing a single empty speech bubble
+dialogue     → two speech bubbles facing each other with plain line marks inside,
+                no readable letters
+subtitles    → a television screen … with a light caption bar of blank wavy marks
+```
+
+**이 자리는 검사로 옮기지 않는다.** 후보 88개 중 참이 0개라 경고가 전부
+헛것이 된다 — 시트 검사가 헛경고 때문에 스스로 꺼져 있던 사고와 같은 꼴이다
+(scripts/genimg.sh). 프롬프트를 쓸 때 위 세 줄을 지키는 것으로 갈음한다.
+
 **사물 한 개로 그려야 하는 것은 아니다.** 단어가 요구하면 장면으로 간다 —
 `cafeteria`를 쟁반 하나로 그리면 쟁반이 된다. 대신 공통 규격(배경·팔레트·글자
 없음·80×80 판독)은 어떤 유형이든 그대로다. 유형별로 달라지는 것은 **무엇을
