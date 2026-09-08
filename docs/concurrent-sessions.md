@@ -49,6 +49,24 @@
 담을 셈이었는데 `body`·`food`·`home`·`nature`·`number`·`quality`·`school`·
 `travel`과 그쪽 그림 스무 장이 함께 들어갔다. 사고 1의 정확한 역방향이다.
 
+**그 커밋에 든 개념 스물여섯 가운데 넷만 내 것이다.**
+
+| | slug |
+| --- | --- |
+| 내 것 (TORFL B1) | `add` · `praise` · `sulk` · `take-away` |
+| 다른 세션 것 | `weave` · `warm-oneself` · `cover-up` · `flicker` · `fracture` · `vegetarian-food` · `additive` · `roof-tile` · `hand-plane` · `poplar` · `blowing-sand` · `waters` · `radius` · `longitude` · `gorgeous` · `sparse` · `rich-aroma` · `fluorescence` · `lab-test` · `air-force` · `aircraft-cabin` · `borderland` |
+
+**그 스물둘의 기록은 이 표가 전부다.** 커밋 메시지는 러시아어 동사 얘기뿐이고,
+그 배치를 설명한 커밋은 히스토리에 없다(`git log --grep`으로 확인했다).
+`git log -S <slug>`로 찾아온 사람이 여기서 사정을 알게 하려고 적어 둔다.
+
+**히스토리는 고치지 않기로 했다.** 커밋을 둘로 쪼개려면 그 뒤에 쌓인 서른
+남짓을 다시 쓰고 force-push해야 하는데, `7e3b8f78`은 이미 이 문서와 커밋
+메시지 둘(`f144aba2`·`ed3c49db`)이 인용하고 있어 그 참조가 다 죽는다. 무엇보다
+다른 세션이 같은 워크트리에서 살아 있는 동안 force-push는 그쪽 인덱스와 HEAD를
+어긋나게 한다. 얻는 것은 메시지 정확도 하나인데, **스물둘을 왜 넣었는지는
+그 세션만 쓸 수 있으므로** 쪼개도 근거는 여전히 빈다.
+
 **규칙 1로는 못 막힌다.** `git add`에 파일 이름만 줬고, 스테이징 직후
 `git diff --cached --stat`도 내 것만 보였다. 그 확인과 `git commit` 사이에
 저쪽이 자기 파일을 스테이징했고, **인자 없는 `git commit`은 내가 add한 것이
