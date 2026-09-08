@@ -12,7 +12,7 @@ export const LEVELS_STAMP: Readonly<Record<string, string>> = {
   'articles.json': 'da39a3ee5e6b',
   'body.json': '2a47fb7b9e9f',
   'city.json': 'd9f5ea69f4ae',
-  'clothes.json': '7b21bd37fcb1',
+  'clothes.json': 'f38f99daf019',
   'everyday.json': '6410046f7067',
   'family.json': 'a7101c863433',
   'food.json': '20f221027d4d',
@@ -26,7 +26,7 @@ export const LEVELS_STAMP: Readonly<Record<string, string>> = {
   'scene.json': '6443d57aa52e',
   'school.json': '86638e798eaa',
   'sport.json': 'b2f07de51949',
-  'time.json': '8dfd2d7f384b',
-  'transport.json': '36eeabf961a6',
+  'time.json': 'bbed28ed6252',
+  'transport.json': '9ecee59a7c60',
   'travel.json': 'd5e2a54fee21',
 }
