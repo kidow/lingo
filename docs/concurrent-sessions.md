@@ -224,6 +224,35 @@ git(['update-index', '--cacheinfo', `100644,${git(['hash-object', '-w', file]).t
 
 곁말만 더한 파일은 `term`이 안 바뀌어 지문도 그대로다 — 손댈 것이 없다.
 
+**지문표는 커밋 직전의 HEAD에서 읽는다.** 배치를 시작할 때 `git show
+HEAD:lib/levels-stamp.ts`를 떠 두고 그림을 열다섯 장 만드는 동안 남이 커밋하면,
+그 사이 갱신된 남의 항목이 내 판본에는 없다. 그대로 커밋하면 **남의 지문을
+되돌린다.** 실제로 그렇게 나갈 뻔했다 — `action.json`·`body.json`·`city.json`
+셋이 옛 값으로 돌아가 있었다.
+
+커밋한 뒤 푸시 전에 한 줄로 본다. 내가 고친 파일의 줄만 나와야 한다.
+
+```bash
+git diff HEAD~1 HEAD -- lib/levels-stamp.ts
+```
+
+되돌린 것이 보이면 부모의 판본을 다시 읽어 내 파일만 갈아 끼우고
+`git commit --amend`한다. 남이 이미 내 개념까지 포함해 `pnpm levels`를 돌렸다면
+값이 같아 **손댈 것이 없는** 것이 정상이다 — 그때는 지문 파일을 커밋에서 빼면 된다.
+
+**푸시가 거절되면 fetch부터 한다.** 워크트리가 하나라 남의 커밋은 이미 로컬
+HEAD에 들어와 있고 거절은 대개 원격 참조가 낡아서 생긴다.
+
+```bash
+git fetch origin
+git log --oneline -2            # 내 커밋의 부모가 origin/main인지 본다
+git diff <부모> HEAD --stat     # 내 것만 들었는지 다시 본다
+git push
+```
+
+부모가 origin/main이 아니면 rebase가 아니라 **커밋을 다시 짓는다** — 새 HEAD의
+파일을 읽어 내 것만 얹는 절차(위)를 그대로 한 번 더 돌린다.
+
 ## 안 하기로 한 것
 
 **락 파일을 두지 않았다.** `.locks/<파일>`을 잡고 푸는 방식은 세션이 죽으면

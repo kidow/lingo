@@ -1379,7 +1379,8 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 
 섞였을 때 내 것만 인덱스에 넣는 절차와, 그때 `lib/levels-stamp.ts` 지문을 다시
 계산해야 하는 이유는 [docs/concurrent-sessions.md](docs/concurrent-sessions.md)에
-있다.
+있다. **생성물은 커밋 직전의 HEAD에서 다시 만든다** — 배치 앞에서 떠 둔 지문표로
+커밋하면 그 사이 남이 갱신한 항목을 되돌린다.
 
 ### 뜻은 기억으로 쓰지 않는다 — `pnpm define`
 
