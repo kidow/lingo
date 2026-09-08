@@ -1162,7 +1162,14 @@ content/verbs.json
 ```bash
 pnpm coverage                  # 숫자만
 pnpm coverage --missing tsl    # 빠진 낱말을 실제로 찍는다 (tsl · hsk · torfl)
+pnpm dup <slug|뜻조각> …        # 후보가 이미 있는지 배치 앞에서 본다
 ```
+
+**`pnpm claim`은 표기를, `pnpm dup`은 개념을 본다.** 상황 표현은 표기가 문장이라
+겹치는 일이 없고 겹치는 것은 언제나 slug와 뜻이다. 스물여덟 회차에서 세 번
+걸렸는데 자리가 매번 달랐다 — `engine-noise`는 slug가, `eye-drops`는 다른 파일이,
+`spare-part`는 slug와 뜻이 함께 있었다. 그래서 **content/ 전체**를 보고 **slug와
+뜻을 함께** 본다.
 
 **상황 표현 10%는 가만히 두면 깨진다.** 다른 배치가 명사를 넣을 때마다 분모가
 늘어 비율이 내려간다. 그래서 콘텐츠 구성 아래에 한 줄이 더 붙는다 — 선 아래면
