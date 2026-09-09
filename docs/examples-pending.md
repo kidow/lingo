@@ -65,10 +65,22 @@
 형제 예문이 살아 있어 문맥 카드는 만들어진다. 다만 **회차에 따라 그 줄이
 뽑히면 낱말을 안 보여준다.**
 
-### 대소문자만 다른 열넷
+### 대소문자만 다른 열넷 — 셋 끝냈다
 
 낱말이 문장 첫머리에 서서 커졌다. 고칠 곳은 낱말이 아니라 **문장**이다 —
 그 낱말을 첫머리 밖으로 옮긴다.
+
+2026-09-09에 파일이 비어 있던 셋을 그렇게 고쳤다. 주어를 하나 앞에 세우면
+끝난다.
+
+| 낱말 | 전 | 후 |
+| --- | --- | --- |
+| `medium-grade` en | `Medium grade wool sells fast.` | `The mill sells medium grade wool fast.` |
+| `overseas` en | `Overseas prices run higher.` | `Buyers say overseas prices run higher.` |
+| `wrong-way-driving` en | `Wrong-way driving caused the jam.` | `Police said wrong-way driving caused the jam.` |
+
+`clozeAt`이 셋 다 자리를 찾는다(9·15·12). 경고가 열넷에서 **열하나**로 줄었다.
+남은 열하나는 그 파일들이 만져지는 중이라 손대지 않았다.
 
 | 파일 | 낱말 | 예문 |
 | --- | --- | --- |
@@ -83,9 +95,9 @@
 | nature | `timely-snow` de | `Willkommener Schnee rettete die Saat.` |
 | office | `employment` en | `Employment rose after the mill opened.` |
 | office | `manual-operation` en | `Manual operation is slower.` |
-| quality | `medium-grade` en | `Medium grade wool sells fast.` |
-| travel | `overseas` en | `Overseas prices run higher.` |
-| travel | `wrong-way-driving` en | `Wrong-way driving caused the jam.` |
+| ~~quality `medium-grade` en~~ | — | **끝냈다** |
+| ~~travel `overseas` en~~ | — | **끝냈다** |
+| ~~travel `wrong-way-driving` en~~ | — | **끝냈다** |
 
 독일어 둘(`Ausbaggern`·`Gründen`)은 첫머리가 아니라 **동사가 명사로 굳으며**
 커진 자리다. 그쪽은 문장을 다시 써야 한다.
