@@ -11,7 +11,13 @@
 #   pnpm genimg  **이미 있는 그림**을 다시 그리려 하면 멈춘다
 #
 # 확인하려면 콘텐츠 파일이 더러워야 한다. 남의 파일을 건드릴 수는 없으므로
-# **`content/scene.json`에 빈 줄 하나를 붙였다 뗀다** — 내용은 그대로다.
+# **`content/scene.json`의 개념 하나에 공백 한 칸을 붙였다 뗀다.**
+#
+# 빈 줄만 붙이던 때는 이 시험이 헛돌았다. `genimg`의 막이가 **어느 개념이
+# 달라졌는지**를 보게 되면서(요청한 slug만 달라진 파일은 깨끗하게 친다) 개념이
+# 하나도 안 바뀐 파일은 막이의 눈에 깨끗해서다. 그래서 **시험이 건드리는 개념과
+# 다시 그리려는 개념을 서로 다르게** 둔다 — 그게 남이 만지는 상황이다.
+#
 # 끝나면 어떤 경로로 끝나든 원래대로 돌린다(trap).
 #
 # 2026-09-09에 이 막이들을 손으로 세 번 시험했다. 규칙을 손볼 때마다 같은 절차를
@@ -29,10 +35,20 @@ if [ -n "$(git diff --name-only HEAD -- content/scene.json)" ]; then
   exit 1
 fi
 
-restore() { node -e 'const fs=require("fs"),p=process.argv[1];fs.writeFileSync(p,fs.readFileSync(p,"utf8").replace(/\n+$/,"\n"))' $FILE }
+# 다시 그리려는 개념(pay-by-card)이 아닌 다른 개념을 건드린다 — 남이 만지는 상황
+MARK=pay-first
+restore() { git checkout -- content/scene.json 2>/dev/null }
 trap restore EXIT INT TERM
 
-printf '\n' >> $FILE
+MARK=$MARK node -e '
+const fs = require("fs")
+const p = "content/scene.json"
+const j = JSON.parse(fs.readFileSync(p, "utf8"))
+const c = j.concepts.find((c) => c.slug === process.env.MARK)
+if (!c) { console.error("시험용 개념이 없습니다"); process.exit(1) }
+c.image_prompt += " "
+fs.writeFileSync(p, JSON.stringify(j, null, 2) + "\n")
+'
 if [ -z "$(git diff --name-only HEAD -- content/scene.json)" ]; then
   print -r -- "실패 — 파일을 더럽히지 못했습니다"
   exit 1
