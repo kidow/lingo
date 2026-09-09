@@ -42,6 +42,45 @@
 `almost`는 물이 차 있어 갈리고, `approximate`↔`clean`(삐뚤한 원 ↔ 흰 접시)은
 구조만 닮았을 뿐 물건이 다르다.
 
+## 스무 파일을 다 훑었다 (2026-09-09)
+
+`--file`로 하나씩 봤다. 늦춘 문턱(65·0.30) 기준이다.
+
+| 0쌍 | 걸린 파일 |
+| --- | --- |
+| `action` · `idea` · `city` · `clothes` · `everyday` · `family` · `food` · `home` · `job` · `nature` · `number` · `transport` · `travel` | `time` 7 · `office` 4 · `quality` 4 · `school` 3 · `scene` 4(둘은 고쳤다) · `body` 1 · `sport` 1 |
+
+**열셋이 0쌍이다.** 사물 갈래(음식·옷·집·자연)는 그림이 서로 다르게 서 있다.
+걸린 자리는 **재는 물건과 화면**에 몰려 있다 — 시계·모래시계·달력, 서버 랙,
+브라우저 창, 종이 서식이다.
+
+### 시간 — 일곱 쌍
+
+같은 물건을 여러 개념이 나눠 쓴다.
+
+| 무리 | 개념 |
+| --- | --- |
+| 모래시계 | `hourglass`(모래시계) · `hourglass-stand`(모래시계 받침) · `now`(지금) |
+| 시계 얼굴 | `clock`(시계) · `hour`(시간) · `quarter-to`(십오 분 전) · `tide-clock`(조석 시계) |
+| 달력 한 장 | `date`(날짜) · `holiday`(휴일) |
+
+받침과 모래시계처럼 **한쪽이 다른 쪽을 품는 자리**는 개념이 옳으므로 그림에서
+갈라야 한다. `now`는 모래시계를 아예 빼는 편이 낫고(위 표), `hour`는 시계
+얼굴 대신 **한 시간이 지나간 흔적**으로 — 두 칸이 지워진 주차권처럼.
+
+### 사무 — 넉 쌍
+
+`database`↔`server`는 둘 다 서버 랙이고, `homepage`↔`web-page`는 둘 다 빈
+브라우저 창이며, `chip`↔`semiconductor`는 프롬프트가 거의 같은 문장이다
+(«a small dark square … with silver legs on a green board»). 셋 다 **뜻이
+상하위이거나 거의 같은 자리**라, 그림보다 먼저 개념이 둘일 이유를 봐야 한다.
+
+### 학교 · 몸 · 운동
+
+`paperclip`·`exam-paper`·`permission-slip` 셋이 서로 붙는다 — 종이 한 장
+갈래다. `cornea`↔`retina`는 눈 단면 둘, `cycling`↔`cyclist`는 자전거 탄 인물
+둘이다. 뒤의 둘은 **개념이 실제로 이웃**이라 그림을 갈래도 붙을 여지가 있다.
+
 ## 나머지 넷은 그냥 둔다
 
 `paperclip`↔`permission-slip`, `exam-paper`↔`permission-slip`, `fork`↔`toothbrush`,
