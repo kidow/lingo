@@ -37,8 +37,27 @@ const PER_SHEET = 6
 const args = process.argv.slice(2)
 const sheets = args.includes('--sheets')
 const numbers = args.filter((a) => !a.startsWith('--')).map(Number)
-const hashLimit = Number.isFinite(numbers[0]) ? numbers[0]! : 40
-const colourLimit = Number.isFinite(numbers[1]) ? numbers[1]! : 0.35
+/**
+ * 기본값은 실측으로 잡았다 (2026-09-09, 그림 6,700장).
+ *
+ * 예전 값(구조 40 · 색 0.35)은 **한 쌍도 못 잡았다.** 둘 다 자리를 잘못 잡고
+ * 있었다.
+ *
+ *   색   눈으로 확인한 닮은 쌍의 색 거리가 0.03~0.14다. 팔레트가 하나라
+ *        0.35는 아무것도 안 거르는 값이었다
+ *   구조 같은 쌍의 구조 거리가 45~80이다. 40은 그 아래라 전부 밖이었다
+ *
+ * 조합을 훑어 보니 구조 50 · 색 0.20에서 열 쌍이 나오고 그중 여섯이 진짜였다 —
+ * 계기판 둘(`return-with-fuel`·`speedometer`), 해먹 둘, 달력 둘, 모래시계 둘,
+ * 펼친 책 둘, 고개 숙인 자세 둘. 55로 올리면 열여섯 쌍인데 새로 드는 것은
+ * 길쭉한 물건끼리라 값이 없다.
+ *
+ * **여전히 못 잡는 것이 있다.** 같은 물건을 다른 구도로 그린 자리는 구조가
+ * 벌어진다 — 석고 모형을 스탠드에 세운 것과 접시에 놓은 것이 75다. 그건
+ * `pnpm props`가 프롬프트로 잡는다.
+ */
+const hashLimit = Number.isFinite(numbers[0]) ? numbers[0]! : 50
+const colourLimit = Number.isFinite(numbers[1]) ? numbers[1]! : 0.2
 
 type Signature = { bits: bigint; colour: number[] }
 
