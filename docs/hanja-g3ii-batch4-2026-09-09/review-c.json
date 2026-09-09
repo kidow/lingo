@@ -1,0 +1,4301 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-09",
+  "scope": "C twelve matched proposals from the fixed thirteen-glyph assignment. 奔 is separately recorded in pending-c.json and is not approved.",
+  "baselineCommit": "2e95083c312e3029595428a4b7476bfb4a155ef7",
+  "baselineRuntime": 1141,
+  "baselineBundleSha256": "d677f57190cbc98108e65a947993385590715eb5ea363ae4185e5ab91fe68e48",
+  "selectionSha256": "8891d760441d5282a0fd9e112ab3de8b911e5f7feda37def85e59d0c45367ac7",
+  "geometrySource": {
+    "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+    "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+    "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/"
+  },
+  "summary": {
+    "assigned": 13,
+    "matched": 12,
+    "corrected": 9,
+    "original": 3,
+    "held": 1,
+    "assignedExpectedStrokes": 143,
+    "matchedStrokes": 135,
+    "observedSourceStrokes": 144
+  },
+  "method": {
+    "overviewFps": 2,
+    "completionFps": 12,
+    "finalStrokeWidth": 5,
+    "sourceAuthority": "Individual Vivasam high-school textbook media; not individual examination-body certification.",
+    "mediaHandling": "Original video bytes, faststart and decoded frames were handled in RAM only.",
+    "timing": "Completed-by frame samples, not exact pen-lift timestamps."
+  },
+  "entries": [
+    {
+      "glyph": "封",
+      "originalMedians": [
+        [
+          [
+            195,
+            608
+          ],
+          [
+            252,
+            601
+          ],
+          [
+            488,
+            649
+          ]
+        ],
+        [
+          [
+            306,
+            825
+          ],
+          [
+            362,
+            779
+          ],
+          [
+            342,
+            508
+          ]
+        ],
+        [
+          [
+            59,
+            441
+          ],
+          [
+            127,
+            432
+          ],
+          [
+            499,
+            514
+          ]
+        ],
+        [
+          [
+            196,
+            312
+          ],
+          [
+            455,
+            360
+          ]
+        ],
+        [
+          [
+            322,
+            453
+          ],
+          [
+            354,
+            419
+          ],
+          [
+            334,
+            216
+          ]
+        ],
+        [
+          [
+            125,
+            159
+          ],
+          [
+            194,
+            135
+          ],
+          [
+            498,
+            255
+          ]
+        ],
+        [
+          [
+            552,
+            514
+          ],
+          [
+            860,
+            560
+          ],
+          [
+            948,
+            553
+          ]
+        ],
+        [
+          [
+            681,
+            852
+          ],
+          [
+            749,
+            794
+          ],
+          [
+            757,
+            82
+          ],
+          [
+            727,
+            -15
+          ],
+          [
+            601,
+            90
+          ]
+        ],
+        [
+          [
+            524,
+            398
+          ],
+          [
+            612,
+            283
+          ]
+        ]
+      ],
+      "originalMediansSha256": "35e406314e70ffdc10da2e8a07522f50e9889f9466ee53329898ccdfeeb1f48c",
+      "candidatePathsSha256": "f904c8dfca991544d21b150aa980b8e9fc56be37fd1cd02ec6d39471985b11c5",
+      "recipe": {
+        "glyph": "封",
+        "id": "textbook-5c01-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "2bd350368696460520eb18be0369deb1ffe59bfc565d7c9a4b44736dcc6e45d9",
+        "originalMediansSha256": "35e406314e70ffdc10da2e8a07522f50e9889f9466ee53329898ccdfeeb1f48c",
+        "strokes": [
+          {
+            "sourceStroke": 1
+          },
+          {
+            "sourceStroke": 2
+          },
+          {
+            "sourceStroke": 3
+          },
+          {
+            "sourceStroke": 4
+          },
+          {
+            "sourceStroke": 5
+          },
+          {
+            "sourceStroke": 6
+          },
+          {
+            "sourceStroke": 7,
+            "points": [
+              [
+                572.3975,
+                514.0675
+              ],
+              [
+                860.21125,
+                559.6287500000001
+              ],
+              [
+                948,
+                552.9612500000001
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 8
+          },
+          {
+            "sourceStroke": 9
+          }
+        ],
+        "notes": "9획 전체 순서와 완료 장면을 확인했다. 두 土, 寸 가로→세로갈고리→점 순서다. 원문에서 왼쪽 土의 긴 가로3과 寸 가로7은 흰 간격이 있다. 후보는 중심선 거리4.8로 폭5에서 접하므로 7획 시작을 오른쪽으로 이동해 분리를 복원했다. 다른8획은 유지했다."
+      },
+      "record": {
+        "glyph": "封",
+        "manifestRow": "0659",
+        "videoFilename": "0659 봉할 봉.mp4",
+        "expectedStrokes": 9,
+        "candidateStrokes": 9,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0659.mp4",
+          "sha256": "2bd350368696460520eb18be0369deb1ffe59bfc565d7c9a4b44736dcc6e45d9",
+          "bytes": 405016
+        },
+        "durationSeconds": 12.331,
+        "strokeEndsSeconds": [
+          0.75,
+          1.8333,
+          3.1667,
+          4.4167,
+          5.25,
+          6.4167,
+          7.75,
+          10.75,
+          12.1667
+        ],
+        "geometryCorrection": "textbook-5c01-g3ii-batch4-c-v1",
+        "correctionSha256": "519441d0cb499ef311611b2119748d19ff69386095560ef7dff714a7a5a68865",
+        "pathsSha256": "1a198b377d8a5dcac668404dbf003f746d8cf2dba6a5564ebb1d44d0cf39d287",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "9획 전체 순서와 완료 장면을 확인했다. 두 土, 寸 가로→세로갈고리→점 순서다. 원문에서 왼쪽 土의 긴 가로3과 寸 가로7은 흰 간격이 있다. 후보는 중심선 거리4.8로 폭5에서 접하므로 7획 시작을 오른쪽으로 이동해 분리를 복원했다. 다른8획은 유지했다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M22.2 32.9 L27.4 33.6 L48.6 29.3",
+        "M32.2 13.4 L37.3 17.6 L35.5 41.9",
+        "M10 48 L16.1 48.8 L49.6 41.4",
+        "M22.3 59.6 L45.6 55.3",
+        "M33.7 46.9 L36.5 50 L34.7 68.2",
+        "M15.9 73.4 L22.1 75.5 L49.5 64.7",
+        "M56.2 41.4 L82.1 37.3 L90 37.9",
+        "M66 11 L72.1 16.2 L72.8 80.3 L70.1 89 L58.8 79.6",
+        "M51.8 51.8 L59.8 62.2"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        1.8333333333333333,
+        2,
+        2.5,
+        3,
+        3.1666666666666665,
+        3.5,
+        4,
+        4.416666666666667,
+        4.5,
+        5,
+        5.25,
+        5.5,
+        6,
+        6.416666666666667,
+        6.5,
+        7,
+        7.5,
+        7.75,
+        8,
+        8.5,
+        9,
+        9.5,
+        10,
+        10.5,
+        10.75,
+        11,
+        11.5,
+        12,
+        12.166666666666666
+      ]
+    },
+    {
+      "glyph": "峯",
+      "originalMedians": [
+        [
+          [
+            501,
+            851
+          ],
+          [
+            545,
+            804
+          ],
+          [
+            530,
+            667
+          ]
+        ],
+        [
+          [
+            326,
+            759
+          ],
+          [
+            361,
+            714
+          ],
+          [
+            348,
+            635
+          ],
+          [
+            370,
+            604
+          ],
+          [
+            522,
+            655
+          ],
+          [
+            695,
+            672
+          ]
+        ],
+        [
+          [
+            712,
+            832
+          ],
+          [
+            751,
+            777
+          ],
+          [
+            710,
+            623
+          ]
+        ],
+        [
+          [
+            427,
+            597
+          ],
+          [
+            442,
+            542
+          ],
+          [
+            232,
+            381
+          ]
+        ],
+        [
+          [
+            437,
+            498
+          ],
+          [
+            597,
+            524
+          ],
+          [
+            634,
+            496
+          ],
+          [
+            409,
+            327
+          ],
+          [
+            158,
+            204
+          ]
+        ],
+        [
+          [
+            385,
+            461
+          ],
+          [
+            759,
+            273
+          ],
+          [
+            937,
+            267
+          ]
+        ],
+        [
+          [
+            361,
+            235
+          ],
+          [
+            658,
+            265
+          ]
+        ],
+        [
+          [
+            356,
+            169
+          ],
+          [
+            664,
+            196
+          ]
+        ],
+        [
+          [
+            227,
+            79
+          ],
+          [
+            719,
+            126
+          ],
+          [
+            813,
+            111
+          ]
+        ],
+        [
+          [
+            471,
+            318
+          ],
+          [
+            511,
+            284
+          ],
+          [
+            512,
+            -58
+          ]
+        ]
+      ],
+      "originalMediansSha256": "2aad1470e0332b1aca52b046309742822d18aeedd0c6260f147c694d11786ee9",
+      "candidatePathsSha256": "5fdff224ac626b88d81b0f53a371288d8da79ab0ba9850f02268022ab9315050",
+      "recipe": {
+        "glyph": "峯",
+        "id": "textbook-5cef-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "44965fd36902fec252c55048afcc9e6691553ede37dc72f800d079b0e22e90c8",
+        "originalMediansSha256": "2aad1470e0332b1aca52b046309742822d18aeedd0c6260f147c694d11786ee9",
+        "strokes": [
+          {
+            "sourceStroke": 1
+          },
+          {
+            "sourceStroke": 2
+          },
+          {
+            "sourceStroke": 3
+          },
+          {
+            "sourceStroke": 4
+          },
+          {
+            "sourceStroke": 5
+          },
+          {
+            "sourceStroke": 6
+          },
+          {
+            "sourceStroke": 7,
+            "points": [
+              [
+                361.15500000000003,
+                235.15249999999997
+              ],
+              [
+                632.71875,
+                265.83125
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 8
+          },
+          {
+            "sourceStroke": 9
+          },
+          {
+            "sourceStroke": 10
+          }
+        ],
+        "notes": "10획 전체를 대조했다. 山 중앙세로→왼세로·아래가로→오른세로, 夂의 삐침→꺾인 삐침→오른쪽 획, 아래 세 가로 뒤 마지막 중앙세로 순서다. 7획 짧은 가로 오른끝이 후보에서는 6획 긴 오른획에 닿으므로 끝을 조금 왼쪽으로 줄여 원문의 흰 간격을 유지했다. 10획 시작은 위 夂와 분리되어 있으며 유지했다. 9획 초기13.3333초 표본이 진행 중임을 확인해 완료 표본을 늦췄다."
+      },
+      "record": {
+        "glyph": "峯",
+        "manifestRow": "0660",
+        "videoFilename": "0660 봉우리 봉.mp4",
+        "expectedStrokes": 10,
+        "candidateStrokes": 10,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0660.mp4",
+          "sha256": "44965fd36902fec252c55048afcc9e6691553ede37dc72f800d079b0e22e90c8",
+          "bytes": 494696
+        },
+        "durationSeconds": 15.965,
+        "strokeEndsSeconds": [
+          0.6667,
+          2.5,
+          3.75,
+          5,
+          7.25,
+          9.25,
+          10.5833,
+          11.6667,
+          13.8333,
+          15.8333
+        ],
+        "geometryCorrection": "textbook-5cef-g3ii-batch4-c-v1",
+        "correctionSha256": "0d961eb7db6efab2ae45481df7172c69a01bbf9473252b68f4e0e20f6afab64a",
+        "pathsSha256": "9d005d149bbd231c48264e4f50d8c5ad894e2beac135819c6ce5358e99ecb01a",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "10획 전체를 대조했다. 山 중앙세로→왼세로·아래가로→오른세로, 夂의 삐침→꺾인 삐침→오른쪽 획, 아래 세 가로 뒤 마지막 중앙세로 순서다. 7획 짧은 가로 오른끝이 후보에서는 6획 긴 오른획에 닿으므로 끝을 조금 왼쪽으로 줄여 원문의 흰 간격을 유지했다. 10획 시작은 위 夂와 분리되어 있으며 유지했다. 9획 초기13.3333초 표본이 진행 중임을 확인해 완료 표본을 늦췄다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M45.9 10 L49.8 14.1 L48.5 26.2",
+        "M30.5 18.1 L33.6 22.1 L32.4 29 L34.4 31.7 L47.8 27.2 L63 25.8",
+        "M64.5 11.7 L67.9 16.5 L64.3 30.1",
+        "M39.4 32.4 L40.7 37.2 L22.2 51.4",
+        "M40.3 41.1 L54.4 38.8 L57.6 41.2 L37.8 56.1 L15.7 66.9",
+        "M35.7 44.3 L68.6 60.9 L84.3 61.4",
+        "M33.6 64.2 L57.5 61.5",
+        "M33.1 70 L60.3 67.6",
+        "M21.8 77.9 L65.1 73.8 L73.4 75.1",
+        "M43.3 56.9 L46.8 59.9 L46.9 90"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        0.6666666666666666,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        3.75,
+        4,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        7,
+        7.25,
+        7.5,
+        8,
+        8.5,
+        9,
+        9.25,
+        9.5,
+        10,
+        10.5,
+        10.583333333333334,
+        11,
+        11.5,
+        11.666666666666666,
+        12,
+        12.5,
+        13,
+        13.25,
+        13.333333333333334,
+        13.5,
+        13.666666666666666,
+        13.75,
+        13.833333333333334,
+        14,
+        14.5,
+        15,
+        15.5,
+        15.833333333333334
+      ]
+    },
+    {
+      "glyph": "逢",
+      "originalMedians": [
+        [
+          [
+            509,
+            834
+          ],
+          [
+            536,
+            792
+          ],
+          [
+            464,
+            684
+          ],
+          [
+            384,
+            619
+          ]
+        ],
+        [
+          [
+            528,
+            730
+          ],
+          [
+            661,
+            765
+          ],
+          [
+            694,
+            731
+          ],
+          [
+            516,
+            520
+          ],
+          [
+            334,
+            437
+          ]
+        ],
+        [
+          [
+            491,
+            665
+          ],
+          [
+            799,
+            480
+          ],
+          [
+            968,
+            482
+          ]
+        ],
+        [
+          [
+            458,
+            411
+          ],
+          [
+            720,
+            449
+          ]
+        ],
+        [
+          [
+            468,
+            316
+          ],
+          [
+            720,
+            351
+          ]
+        ],
+        [
+          [
+            406,
+            213
+          ],
+          [
+            812,
+            250
+          ]
+        ],
+        [
+          [
+            555,
+            499
+          ],
+          [
+            592,
+            466
+          ],
+          [
+            588,
+            80
+          ]
+        ],
+        [
+          [
+            203,
+            759
+          ],
+          [
+            275,
+            713
+          ],
+          [
+            305,
+            662
+          ]
+        ],
+        [
+          [
+            160,
+            629
+          ],
+          [
+            253,
+            547
+          ]
+        ],
+        [
+          [
+            92,
+            421
+          ],
+          [
+            220,
+            462
+          ],
+          [
+            264,
+            433
+          ],
+          [
+            203,
+            308
+          ],
+          [
+            251,
+            200
+          ],
+          [
+            239,
+            133
+          ]
+        ],
+        [
+          [
+            63,
+            103
+          ],
+          [
+            269,
+            110
+          ],
+          [
+            731,
+            -16
+          ],
+          [
+            955,
+            28
+          ]
+        ]
+      ],
+      "originalMediansSha256": "7511da59e7346a74e6390fe6ccd50ed3471906771e60115d7e034247cc753dfc",
+      "candidatePathsSha256": "d1d8b76a97158a9b076213ca385b580dabe421a024199216aa4f70313c9ef377",
+      "recipe": {
+        "glyph": "逢",
+        "id": "textbook-9022-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "9bdf16222c8bc17ba1c2b35238b19df72768c14c6bc4b16377b18fb873a3c0ff",
+        "originalMediansSha256": "7511da59e7346a74e6390fe6ccd50ed3471906771e60115d7e034247cc753dfc",
+        "strokes": [
+          {
+            "sourceStroke": 1
+          },
+          {
+            "sourceStroke": 2
+          },
+          {
+            "sourceStroke": 3
+          },
+          {
+            "sourceStroke": 4
+          },
+          {
+            "sourceStroke": 5
+          },
+          {
+            "sourceStroke": 6
+          },
+          {
+            "sourceStroke": 7,
+            "points": [
+              [
+                555.09375,
+                499.5
+              ],
+              [
+                592.425,
+                465.5625
+              ],
+              [
+                587.9,
+                23.243750000000034
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 8
+          },
+          {
+            "sourceStroke": 10,
+            "points": [
+              [
+                92.41250000000002,
+                421.44375
+              ],
+              [
+                220.24374999999998,
+                462.16875000000005
+              ],
+              [
+                264.3625,
+                432.75625
+              ],
+              [
+                203.27499999999998,
+                308.31875
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 10,
+            "points": [
+              [
+                203.27499999999998,
+                308.31875
+              ],
+              [
+                250.78750000000002,
+                199.71875
+              ],
+              [
+                239.47500000000002,
+                132.9749999999999
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 11
+          }
+        ],
+        "notes": "11획 전체를 직접 대조했다. 오른쪽 夂 3획, 세 가로와 중앙세로 뒤 辶의 점→가로꺾임→아래꺾임→긴 오른획 순서다. Ja의 두 번째 점9는 원문에 없고, Ja10을 실제 원문9·10의 펜 경계로 분할했다. 15.5–16.1667초 연속12fps에서 위 꺾임 완료 후 아래 꺾임의 새 진행을 확인했다. 7획 세로 끝은 마지막 긴 획11에 실제로 접하므로 연장해 접합을 확실히 보존했다."
+      },
+      "record": {
+        "glyph": "逢",
+        "manifestRow": "0658",
+        "videoFilename": "0658 만날 봉.mp4",
+        "expectedStrokes": 11,
+        "candidateStrokes": 11,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0658.mp4",
+          "sha256": "9bdf16222c8bc17ba1c2b35238b19df72768c14c6bc4b16377b18fb873a3c0ff",
+          "bytes": 669205
+        },
+        "durationSeconds": 20.548,
+        "strokeEndsSeconds": [
+          1.4167,
+          4.4167,
+          6.3333,
+          7.6667,
+          8.8333,
+          10.5,
+          12.8333,
+          14.1667,
+          15.8333,
+          16.8333,
+          20.4167
+        ],
+        "geometryCorrection": "textbook-9022-g3ii-batch4-c-v1",
+        "correctionSha256": "232a98f97f6caf166d5487a3c06435af9b01b5c044ddf9bce645125bd7788c7e",
+        "pathsSha256": "f40117a009e824e520cbd519e074660d0ba4ef0c7ba6b3c01e23256a768f14ca",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "11획 전체를 직접 대조했다. 오른쪽 夂 3획, 세 가로와 중앙세로 뒤 辶의 점→가로꺾임→아래꺾임→긴 오른획 순서다. Ja의 두 번째 점9는 원문에 없고, Ja10을 실제 원문9·10의 펜 경계로 분할했다. 15.5–16.1667초 연속12fps에서 위 꺾임 완료 후 아래 꺾임의 새 진행을 확인했다. 7획 세로 끝은 마지막 긴 획11에 실제로 접하므로 연장해 접합을 확실히 보존했다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M49.4 12.4 L51.8 16.1 L45.4 25.7 L38.4 31.4",
+        "M51.1 21.6 L62.9 18.5 L65.8 21.5 L50 40.2 L34 47.5",
+        "M47.8 27.4 L75.1 43.7 L90 43.5",
+        "M44.9 49.8 L68.1 46.5",
+        "M45.8 58.2 L68.1 55.1",
+        "M40.3 67.3 L76.2 64.1",
+        "M53.5 42 L56.8 45 L56.4 84.1",
+        "M22.4 19.1 L28.7 23.1 L31.4 27.6",
+        "M12.6 48.9 L23.9 45.3 L27.8 47.9 L22.4 58.9",
+        "M22.4 58.9 L26.6 68.5 L25.6 74.4",
+        "M10 77 L28.2 76.4 L69 87.6 L88.9 83.7"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        10,
+        11
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        1,
+        1.4166666666666667,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.416666666666667,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.333333333333333,
+        6.5,
+        7,
+        7.5,
+        7.666666666666667,
+        8,
+        8.5,
+        8.833333333333334,
+        9,
+        9.5,
+        10,
+        10.5,
+        11,
+        11.5,
+        12,
+        12.5,
+        12.833333333333334,
+        13,
+        13.5,
+        14,
+        14.166666666666666,
+        14.333333333333334,
+        14.5,
+        14.666666666666666,
+        15,
+        15.333333333333334,
+        15.5,
+        15.583333333333334,
+        15.666666666666666,
+        15.75,
+        15.833333333333334,
+        15.916666666666666,
+        16,
+        16.083333333333332,
+        16.166666666666668,
+        16.333333333333332,
+        16.5,
+        16.666666666666668,
+        16.833333333333332,
+        17,
+        17.333333333333332,
+        17.5,
+        18,
+        18.5,
+        19,
+        19.5,
+        20,
+        20.416666666666668
+      ]
+    },
+    {
+      "glyph": "符",
+      "originalMedians": [
+        [
+          [
+            298,
+            807
+          ],
+          [
+            333,
+            770
+          ],
+          [
+            311,
+            713
+          ],
+          [
+            187,
+            557
+          ]
+        ],
+        [
+          [
+            331,
+            687
+          ],
+          [
+            511,
+            715
+          ]
+        ],
+        [
+          [
+            340,
+            621
+          ],
+          [
+            400,
+            585
+          ],
+          [
+            422,
+            545
+          ]
+        ],
+        [
+          [
+            610,
+            847
+          ],
+          [
+            646,
+            811
+          ],
+          [
+            634,
+            771
+          ],
+          [
+            570,
+            654
+          ],
+          [
+            501,
+            583
+          ]
+        ],
+        [
+          [
+            637,
+            705
+          ],
+          [
+            850,
+            741
+          ]
+        ],
+        [
+          [
+            642,
+            643
+          ],
+          [
+            734,
+            579
+          ]
+        ],
+        [
+          [
+            325,
+            527
+          ],
+          [
+            362,
+            482
+          ],
+          [
+            345,
+            450
+          ],
+          [
+            214,
+            283
+          ],
+          [
+            92,
+            175
+          ]
+        ],
+        [
+          [
+            314,
+            346
+          ],
+          [
+            301,
+            6
+          ]
+        ],
+        [
+          [
+            391,
+            361
+          ],
+          [
+            799,
+            413
+          ],
+          [
+            920,
+            404
+          ]
+        ],
+        [
+          [
+            628,
+            533
+          ],
+          [
+            686,
+            475
+          ],
+          [
+            684,
+            59
+          ],
+          [
+            650,
+            -9
+          ],
+          [
+            555,
+            67
+          ]
+        ],
+        [
+          [
+            455,
+            292
+          ],
+          [
+            518,
+            235
+          ],
+          [
+            536,
+            187
+          ]
+        ]
+      ],
+      "originalMediansSha256": "2ae9b6a91f63ea6473c461cffc0484634aa2e9096f375f4be520602edfd4a2e3",
+      "candidatePathsSha256": "57e7ee776c8fb20940b29186ca9f6b49483d506efb19645979d9111b1d51c825",
+      "record": {
+        "glyph": "符",
+        "manifestRow": "0674",
+        "videoFilename": "0674 부신 부.mp4",
+        "expectedStrokes": 11,
+        "candidateStrokes": 11,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0674.mp4",
+          "sha256": "0184cc9eb8e04b95fe2c33fc6fb8e0e93827cf547676b69b96cc031903bee444",
+          "bytes": 453843
+        },
+        "durationSeconds": 12.965,
+        "strokeEndsSeconds": [
+          0.8333,
+          1.8333,
+          2.5,
+          3.5833,
+          4.5,
+          5.3333,
+          6.6667,
+          7.9167,
+          9.5833,
+          11.6667,
+          12.8333
+        ],
+        "pathsSha256": "57e7ee776c8fb20940b29186ca9f6b49483d506efb19645979d9111b1d51c825",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "11획 전체를 대조했다. 竹 양쪽을 각각 삐침→가로→점으로 쓴 뒤 亻 두 획, 寸 가로→세로갈고리→점이다. 竹의 두 점, 亻 시작과 왼쪽 점, 寸 시작과 오른쪽 점, 寸 안 점의 독립된 흰 간격을 폭5에서 확인했다. 원본 Ja 경로를 그대로 유지했다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M30.6 13.7 L33.8 17.2 L31.8 22.5 L20.2 37.1",
+        "M33.6 25 L50.5 22.3",
+        "M34.5 31.1 L40.1 34.5 L42.1 38.2",
+        "M59.7 10 L63.1 13.4 L62 17.1 L56 28 L49.5 34.7",
+        "M62.2 23.3 L82.1 19.9",
+        "M62.7 29.1 L71.3 35",
+        "M33.1 39.9 L36.5 44.1 L35 47.1 L22.7 62.7 L11.3 72.8",
+        "M32.1 56.8 L30.8 88.6",
+        "M39.3 55.4 L77.4 50.6 L88.7 51.4",
+        "M61.4 39.3 L66.8 44.8 L66.6 83.6 L63.5 90 L54.6 82.9",
+        "M45.2 61.9 L51.1 67.2 L52.8 71.7"
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        0.8333333333333334,
+        1,
+        1.5,
+        1.8333333333333333,
+        2,
+        2.5,
+        3,
+        3.5,
+        3.5833333333333335,
+        4,
+        4.5,
+        5,
+        5.333333333333333,
+        5.5,
+        6,
+        6.5,
+        6.666666666666667,
+        7,
+        7.5,
+        7.916666666666667,
+        8,
+        8.5,
+        9,
+        9.5,
+        9.583333333333334,
+        10,
+        10.5,
+        11,
+        11.5,
+        11.666666666666666,
+        12,
+        12.5,
+        12.833333333333334
+      ]
+    },
+    {
+      "glyph": "付",
+      "originalMedians": [
+        [
+          [
+            318,
+            807
+          ],
+          [
+            368,
+            760
+          ],
+          [
+            354,
+            702
+          ],
+          [
+            195,
+            441
+          ],
+          [
+            53,
+            278
+          ]
+        ],
+        [
+          [
+            287,
+            532
+          ],
+          [
+            308,
+            459
+          ],
+          [
+            287,
+            34
+          ]
+        ],
+        [
+          [
+            392,
+            463
+          ],
+          [
+            448,
+            454
+          ],
+          [
+            852,
+            521
+          ],
+          [
+            960,
+            509
+          ]
+        ],
+        [
+          [
+            665,
+            820
+          ],
+          [
+            737,
+            758
+          ],
+          [
+            734,
+            89
+          ],
+          [
+            702,
+            -5
+          ],
+          [
+            573,
+            102
+          ]
+        ],
+        [
+          [
+            465,
+            385
+          ],
+          [
+            558,
+            256
+          ]
+        ]
+      ],
+      "originalMediansSha256": "08160c4740aedd8d1b2d052d74eb918ae19ccf4749c071f30b87b607ac46a643",
+      "candidatePathsSha256": "dc2cfcb7af438d26983642cbefe061bcea27b5538f6caeb4ae86a17243b5ff6a",
+      "record": {
+        "glyph": "付",
+        "manifestRow": "0671",
+        "videoFilename": "0671 줄 부.mp4",
+        "expectedStrokes": 5,
+        "candidateStrokes": 5,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0671.mp4",
+          "sha256": "d083f2c2558bafcaf6484a52d79d0d63e0fae61bc7f61c33963aefd179b9e068",
+          "bytes": 333763
+        },
+        "durationSeconds": 9.881,
+        "strokeEndsSeconds": [
+          2.25,
+          3.8333,
+          5.8333,
+          8.6667,
+          9.75
+        ],
+        "pathsSha256": "dc2cfcb7af438d26983642cbefe061bcea27b5538f6caeb4ae86a17243b5ff6a",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "5획 전체를 대조했다. 亻 삐침→세로와 寸 가로→세로갈고리→점 순서다. 寸 가로와 亻의 분리, 안 점의 독립, 갈고리 끝의 방향을 폭5에서 확인했고 Ja 경로를 유지했다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M33.4 14.8 L37.8 18.9 L36.5 24 L22.5 47 L10 61.4",
+        "M30.6 39 L32.5 45.5 L30.6 82.9",
+        "M39.9 45.1 L44.8 45.9 L80.5 40 L90 41",
+        "M64 13.6 L70.3 19.1 L70.1 78.1 L67.2 86.4 L55.9 76.9",
+        "M46.3 52 L54.5 63.4"
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.25,
+        2.5,
+        3,
+        3.5,
+        3.8333333333333335,
+        4,
+        4.5,
+        5,
+        5.5,
+        5.833333333333333,
+        6,
+        6.5,
+        7,
+        7.5,
+        8,
+        8.5,
+        8.666666666666666,
+        9,
+        9.5,
+        9.75
+      ]
+    },
+    {
+      "glyph": "浮",
+      "originalMedians": [
+        [
+          [
+            199,
+            766
+          ],
+          [
+            314,
+            668
+          ]
+        ],
+        [
+          [
+            121,
+            551
+          ],
+          [
+            248,
+            463
+          ]
+        ],
+        [
+          [
+            128,
+            170
+          ],
+          [
+            170,
+            120
+          ],
+          [
+            281,
+            396
+          ]
+        ],
+        [
+          [
+            607,
+            841
+          ],
+          [
+            649,
+            800
+          ],
+          [
+            426,
+            703
+          ]
+        ],
+        [
+          [
+            392,
+            641
+          ],
+          [
+            465,
+            551
+          ]
+        ],
+        [
+          [
+            524,
+            678
+          ],
+          [
+            589,
+            599
+          ]
+        ],
+        [
+          [
+            758,
+            743
+          ],
+          [
+            784,
+            694
+          ],
+          [
+            653,
+            596
+          ]
+        ],
+        [
+          [
+            404,
+            498
+          ],
+          [
+            472,
+            487
+          ],
+          [
+            664,
+            540
+          ],
+          [
+            708,
+            499
+          ],
+          [
+            600,
+            400
+          ]
+        ],
+        [
+          [
+            539,
+            403
+          ],
+          [
+            608,
+            338
+          ],
+          [
+            623,
+            95
+          ],
+          [
+            600,
+            31
+          ],
+          [
+            558,
+            -4
+          ],
+          [
+            475,
+            45
+          ]
+        ],
+        [
+          [
+            291,
+            296
+          ],
+          [
+            357,
+            286
+          ],
+          [
+            849,
+            348
+          ],
+          [
+            932,
+            329
+          ]
+        ]
+      ],
+      "originalMediansSha256": "373cfca5e7f9dbdac00edbf80c82947e6c8a21bb14975198f154839fee019115",
+      "candidatePathsSha256": "6a20c2e275c6d7eb0a5b0659634603f7c838b1b3cc03bb4f216e44448e25c1fe",
+      "recipe": {
+        "glyph": "浮",
+        "id": "textbook-6d6e-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "a1a0bd0fd82b964f786370a89f36371550a88445d2ea52aa238e516c810cc577",
+        "originalMediansSha256": "373cfca5e7f9dbdac00edbf80c82947e6c8a21bb14975198f154839fee019115",
+        "strokes": [
+          {
+            "sourceStroke": 1
+          },
+          {
+            "sourceStroke": 2
+          },
+          {
+            "sourceStroke": 3,
+            "points": [
+              [
+                169.4875,
+                119.58125000000001
+              ],
+              [
+                281.45,
+                396.31874999999997
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 4,
+            "points": [
+              [
+                649.025,
+                841
+              ],
+              [
+                426.15625,
+                702.6312499999999
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 5,
+            "points": [
+              [
+                426.15625,
+                702.6312499999999
+              ],
+              [
+                412.425,
+                629.75
+              ],
+              [
+                327.92499999999995,
+                508.28125
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 6
+          },
+          {
+            "sourceStroke": 7,
+            "points": [
+              [
+                757.8187500000001,
+                742.76875
+              ],
+              [
+                843.375,
+                631.8625
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 8
+          },
+          {
+            "sourceStroke": 9
+          },
+          {
+            "sourceStroke": 10,
+            "points": [
+              [
+                322.64374999999995,
+                295.97499999999997
+              ],
+              [
+                357.5,
+                286.46875
+              ],
+              [
+                848.65625,
+                347.73125
+              ],
+              [
+                932.1000000000001,
+                328.71875
+              ]
+            ]
+          }
+        ],
+        "notes": "10획 전체를 대조했다. 氵 두 점과 올림 뒤 爫의 위 삐침→왼쪽 아래 삐침→두 오른내림점, 子의 꺾임→세로갈고리→가로 순서다. 후보5는 오른아래 점이지만 원문은 4획 끝에 이어지는 왼아래 삐침이고, 후보7 왼아래 삐침은 원문에서 오른아래 점이다. 개별 원문 진행에 맞춰5·7을 다시 그렸다. 마지막 가로10은 氵 올림과 분리되므로 시작점을 오른쪽으로 옮겼다. 교차 검토에서 1.6–2.3초와 2.5–3.333초를 12fps로 다시 확인했다. 3획 앞의 아래오른쪽 이동과 4획 앞의 위오른쪽 이동은 잉크가 없는 커서 이동이었다. 따라서 3획은 아래점에서 위오른쪽, 4획은 높은 오른쪽점에서 왼아래로 바로 시작하도록 원본 경로의 도입 굴곡을 제거했다."
+      },
+      "record": {
+        "glyph": "浮",
+        "manifestRow": "0668",
+        "videoFilename": "0668 뜰 부.mp4",
+        "expectedStrokes": 10,
+        "candidateStrokes": 10,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0668.mp4",
+          "sha256": "a1a0bd0fd82b964f786370a89f36371550a88445d2ea52aa238e516c810cc577",
+          "bytes": 331278
+        },
+        "durationSeconds": 10.081,
+        "strokeEndsSeconds": [
+          0.75,
+          1.4167,
+          2.25,
+          3.3333,
+          4.1667,
+          4.8333,
+          5.5,
+          6.8333,
+          8.5833,
+          9.9167
+        ],
+        "geometryCorrection": "textbook-6d6e-g3ii-batch4-c-v1",
+        "correctionSha256": "e8d6e42ad8f7fabd14c46f4a3840a7380683f3e4ea7924d281ee3c5d352e5064",
+        "pathsSha256": "b8762396926a61ff357baf6b36e8a6f8a1aa8cedc16baddf1cca3b2816591621",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "10획 전체를 대조했다. 氵 두 점과 올림 뒤 爫의 위 삐침→왼쪽 아래 삐침→두 오른내림점, 子의 꺾임→세로갈고리→가로 순서다. 후보5는 오른아래 점이지만 원문은 4획 끝에 이어지는 왼아래 삐침이고, 후보7 왼아래 삐침은 원문에서 오른아래 점이다. 개별 원문 진행에 맞춰5·7을 다시 그렸다. 마지막 가로10은 氵 올림과 분리되므로 시작점을 오른쪽으로 옮겼다. 교차 검토에서 1.6–2.3초와 2.5–3.333초를 12fps로 다시 확인했다. 3획 앞의 아래오른쪽 이동과 4획 앞의 위오른쪽 이동은 잉크가 없는 커서 이동이었다. 따라서 3획은 아래점에서 위오른쪽, 4획은 높은 오른쪽점에서 왼아래로 바로 시작하도록 원본 경로의 도입 굴곡을 제거했다."
+      },
+      "paths": [
+        "M19 17.1 L29.9 26.4",
+        "M11.6 37.5 L23.6 45.8",
+        "M16.2 78.3 L26.8 52.1",
+        "M61.6 10 L40.5 23.1",
+        "M40.5 23.1 L39.2 30 L31.2 41.5",
+        "M49.8 25.4 L55.9 32.9",
+        "M71.9 19.3 L80 29.8",
+        "M38.4 42.5 L44.8 43.5 L63 38.5 L67.2 42.4 L57 51.8",
+        "M51.2 51.5 L57.7 57.6 L59.1 80.6 L57 86.7 L53 90 L45.1 85.4",
+        "M30.7 61.6 L34 62.5 L80.5 56.7 L88.4 58.5"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        0.75,
+        1,
+        1.4166666666666667,
+        1.5,
+        1.5833333333333333,
+        1.6666666666666667,
+        1.75,
+        1.8333333333333333,
+        1.9166666666666667,
+        2,
+        2.0833333333333335,
+        2.1666666666666665,
+        2.25,
+        2.3333333333333335,
+        2.5,
+        2.6666666666666665,
+        2.8333333333333335,
+        3,
+        3.1666666666666665,
+        3.3333333333333335,
+        3.5,
+        4,
+        4.166666666666667,
+        4.5,
+        4.833333333333333,
+        5,
+        5.5,
+        6,
+        6.5,
+        6.833333333333333,
+        7,
+        7.5,
+        8,
+        8.5,
+        8.583333333333334,
+        9,
+        9.5,
+        9.916666666666666
+      ]
+    },
+    {
+      "glyph": "賦",
+      "originalMedians": [
+        [
+          [
+            141,
+            693
+          ],
+          [
+            174,
+            649
+          ],
+          [
+            178,
+            260
+          ]
+        ],
+        [
+          [
+            191,
+            668
+          ],
+          [
+            298,
+            697
+          ],
+          [
+            349,
+            669
+          ],
+          [
+            333,
+            248
+          ]
+        ],
+        [
+          [
+            195,
+            540
+          ],
+          [
+            289,
+            561
+          ]
+        ],
+        [
+          [
+            195,
+            428
+          ],
+          [
+            291,
+            446
+          ]
+        ],
+        [
+          [
+            192,
+            293
+          ],
+          [
+            306,
+            309
+          ]
+        ],
+        [
+          [
+            192,
+            230
+          ],
+          [
+            214,
+            195
+          ],
+          [
+            56,
+            18
+          ]
+        ],
+        [
+          [
+            278,
+            182
+          ],
+          [
+            345,
+            85
+          ]
+        ],
+        [
+          [
+            429,
+            594
+          ],
+          [
+            635,
+            623
+          ]
+        ],
+        [
+          [
+            404,
+            443
+          ],
+          [
+            449,
+            439
+          ],
+          [
+            790,
+            533
+          ],
+          [
+            889,
+            533
+          ]
+        ],
+        [
+          [
+            528,
+            442
+          ],
+          [
+            560,
+            405
+          ],
+          [
+            556,
+            199
+          ]
+        ],
+        [
+          [
+            580,
+            327
+          ],
+          [
+            681,
+            357
+          ]
+        ],
+        [
+          [
+            416,
+            328
+          ],
+          [
+            455,
+            289
+          ],
+          [
+            465,
+            175
+          ]
+        ],
+        [
+          [
+            380,
+            157
+          ],
+          [
+            448,
+            141
+          ],
+          [
+            702,
+            245
+          ]
+        ],
+        [
+          [
+            624,
+            830
+          ],
+          [
+            674,
+            788
+          ],
+          [
+            727,
+            399
+          ],
+          [
+            808,
+            177
+          ],
+          [
+            883,
+            67
+          ],
+          [
+            944,
+            15
+          ],
+          [
+            961,
+            183
+          ]
+        ],
+        [
+          [
+            787,
+            717
+          ],
+          [
+            858,
+            683
+          ],
+          [
+            897,
+            636
+          ]
+        ]
+      ],
+      "originalMediansSha256": "e764b3c0e58049cd4c23c07d0adfa0c97cf0080f221990f6cef5addd347ffa8b",
+      "candidatePathsSha256": "b3027b55433629a7a932bc344bc0bac8b361c3e3956ea1da86963329aac63aeb",
+      "recipe": {
+        "glyph": "賦",
+        "id": "textbook-8ce6-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "ce74967c36f0b65737e61a1d854fc4abc2264d2d7c808fc72eef282fdd631bda",
+        "originalMediansSha256": "e764b3c0e58049cd4c23c07d0adfa0c97cf0080f221990f6cef5addd347ffa8b",
+        "strokes": [
+          {
+            "sourceStroke": 1
+          },
+          {
+            "sourceStroke": 2
+          },
+          {
+            "sourceStroke": 3,
+            "points": [
+              [
+                195.14375,
+                540.15
+              ],
+              [
+                344.46875,
+                560.5125
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 4,
+            "points": [
+              [
+                195.14375,
+                428.15625
+              ],
+              [
+                341.07500000000005,
+                446.25625
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 5
+          },
+          {
+            "sourceStroke": 6,
+            "points": [
+              [
+                191.75,
+                192.85625000000002
+              ],
+              [
+                183.83125,
+                151
+              ],
+              [
+                56,
+                17.51249999999999
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 7
+          },
+          {
+            "sourceStroke": 8,
+            "points": [
+              [
+                429.3125,
+                594.45
+              ],
+              [
+                619.3625,
+                620.46875
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 9
+          },
+          {
+            "sourceStroke": 10
+          },
+          {
+            "sourceStroke": 11,
+            "points": [
+              [
+                579.76875,
+                327.475
+              ],
+              [
+                658.95625,
+                350.1
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 12
+          },
+          {
+            "sourceStroke": 13
+          },
+          {
+            "sourceStroke": 14
+          },
+          {
+            "sourceStroke": 15
+          }
+        ],
+        "notes": "15획 전체를 대조했다. 貝5획과 아래 두 획, 武 위짧은가로→긴가로→止중앙세로→짧은가로→왼세로→아래가로→긴굽은갈고리→오른점 순서다. 원문 貝 안가로3·4는 오른쪽 벽에 접하므로 끝을 연장했다. 貝 아래삐침6은 위 상자와 분리되어 있어 시작을 아래로 옮겼다. 武의 짧은 가로8·11이 긴굽은획14에 닿지 않도록 오른끝을 조금 줄였다. 실제 원문에서 확인한 독립된 점과 각 부품 간격을 유지했다."
+      },
+      "record": {
+        "glyph": "賦",
+        "manifestRow": "0678",
+        "videoFilename": "0678 구실 부.mp4",
+        "expectedStrokes": 15,
+        "candidateStrokes": 15,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0678.mp4",
+          "sha256": "ce74967c36f0b65737e61a1d854fc4abc2264d2d7c808fc72eef282fdd631bda",
+          "bytes": 606163
+        },
+        "durationSeconds": 19.331,
+        "strokeEndsSeconds": [
+          1.5833,
+          3.5833,
+          4.75,
+          5.8333,
+          6.4167,
+          7.4167,
+          8.1667,
+          9.1667,
+          10.3333,
+          11.5,
+          12.5,
+          13.3333,
+          14.3333,
+          18.1667,
+          19.1667
+        ],
+        "geometryCorrection": "textbook-8ce6-g3ii-batch4-c-v1",
+        "correctionSha256": "898b1b91f1865e325c6d8c98cd40aebb26c9a2d7f9177c91bec8af0017a07e5b",
+        "pathsSha256": "a261789d4fa4f68feae0976fce3462df73239af3ce0298755ef281ca2ffabc51",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "15획 전체를 대조했다. 貝5획과 아래 두 획, 武 위짧은가로→긴가로→止중앙세로→짧은가로→왼세로→아래가로→긴굽은갈고리→오른점 순서다. 원문 貝 안가로3·4는 오른쪽 벽에 접하므로 끝을 연장했다. 貝 아래삐침6은 위 상자와 분리되어 있어 시작을 아래로 옮겼다. 武의 짧은 가로8·11이 긴굽은획14에 닿지 않도록 오른끝을 조금 줄였다. 실제 원문에서 확인한 독립된 점과 각 부품 간격을 유지했다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M17.5 26.1 L20.4 30 L20.8 64.4",
+        "M21.9 28.3 L31.4 25.7 L35.9 28.2 L34.5 65.4",
+        "M22.3 39.6 L35.5 37.8",
+        "M22.3 49.5 L35.2 47.9",
+        "M22 61.4 L32.1 60",
+        "M22 70.3 L21.3 74 L10 85.8",
+        "M29.6 71.3 L35.5 79.8",
+        "M43 34.8 L59.8 32.5",
+        "M40.8 48.2 L44.7 48.5 L74.9 40.2 L83.6 40.2",
+        "M51.7 48.3 L54.6 51.5 L54.2 69.8",
+        "M56.3 58.4 L63.3 56.4",
+        "M41.8 58.4 L45.3 61.8 L46.2 71.9",
+        "M38.6 73.5 L44.7 74.9 L67.1 65.7",
+        "M60.2 14 L64.6 17.7 L69.3 52.1 L76.5 71.7 L83.1 81.4 L88.5 86 L90 71.2",
+        "M74.6 24 L80.9 27 L84.3 31.1"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        1,
+        1.5,
+        1.5833333333333333,
+        2,
+        2.5,
+        3,
+        3.5,
+        3.5833333333333335,
+        4,
+        4.5,
+        4.75,
+        5,
+        5.5,
+        5.833333333333333,
+        6,
+        6.416666666666667,
+        6.5,
+        7,
+        7.416666666666667,
+        7.5,
+        8,
+        8.166666666666666,
+        8.5,
+        9,
+        9.166666666666666,
+        9.5,
+        10,
+        10.333333333333334,
+        10.5,
+        11,
+        11.5,
+        12,
+        12.5,
+        13,
+        13.333333333333334,
+        13.5,
+        14,
+        14.333333333333334,
+        14.5,
+        15,
+        15.5,
+        16,
+        16.5,
+        17,
+        17.5,
+        18,
+        18.166666666666668,
+        18.5,
+        19,
+        19.166666666666668
+      ]
+    },
+    {
+      "glyph": "腐",
+      "originalMedians": [
+        [
+          [
+            476,
+            866
+          ],
+          [
+            550,
+            827
+          ],
+          [
+            577,
+            787
+          ]
+        ],
+        [
+          [
+            338,
+            730
+          ],
+          [
+            436,
+            724
+          ],
+          [
+            785,
+            771
+          ]
+        ],
+        [
+          [
+            260,
+            756
+          ],
+          [
+            308,
+            699
+          ],
+          [
+            263,
+            392
+          ],
+          [
+            199,
+            215
+          ],
+          [
+            73,
+            28
+          ]
+        ],
+        [
+          [
+            443,
+            675
+          ],
+          [
+            458,
+            633
+          ],
+          [
+            345,
+            499
+          ]
+        ],
+        [
+          [
+            430,
+            558
+          ],
+          [
+            436,
+            385
+          ]
+        ],
+        [
+          [
+            498,
+            593
+          ],
+          [
+            884,
+            630
+          ]
+        ],
+        [
+          [
+            692,
+            711
+          ],
+          [
+            731,
+            669
+          ],
+          [
+            727,
+            479
+          ],
+          [
+            707,
+            440
+          ],
+          [
+            631,
+            485
+          ]
+        ],
+        [
+          [
+            539,
+            536
+          ],
+          [
+            597,
+            475
+          ]
+        ],
+        [
+          [
+            343,
+            351
+          ],
+          [
+            378,
+            293
+          ],
+          [
+            352,
+            22
+          ]
+        ],
+        [
+          [
+            405,
+            330
+          ],
+          [
+            711,
+            366
+          ],
+          [
+            765,
+            340
+          ],
+          [
+            769,
+            20
+          ],
+          [
+            746,
+            -3
+          ],
+          [
+            666,
+            41
+          ]
+        ],
+        [
+          [
+            525,
+            420
+          ],
+          [
+            555,
+            388
+          ],
+          [
+            540,
+            314
+          ],
+          [
+            511,
+            264
+          ],
+          [
+            448,
+            220
+          ]
+        ],
+        [
+          [
+            553,
+            283
+          ],
+          [
+            665,
+            233
+          ]
+        ],
+        [
+          [
+            535,
+            237
+          ],
+          [
+            553,
+            199
+          ],
+          [
+            440,
+            84
+          ]
+        ],
+        [
+          [
+            552,
+            146
+          ],
+          [
+            657,
+            86
+          ]
+        ]
+      ],
+      "originalMediansSha256": "1cbb5cc430d47520b0d188a139c5b3f62e419165903335097b58b0904c3f44bb",
+      "candidatePathsSha256": "5f6d1083339aeabe337427b8d75c4e8334c9b9e61b6276ecda5ce2d9980c4007",
+      "recipe": {
+        "glyph": "腐",
+        "id": "textbook-8150-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "a630784daf5e903543da835ea5b5074651ed69ba662a3694476bc155d86d19d6",
+        "originalMediansSha256": "1cbb5cc430d47520b0d188a139c5b3f62e419165903335097b58b0904c3f44bb",
+        "strokes": [
+          {
+            "sourceStroke": 1,
+            "points": [
+              [
+                476.3275,
+                866
+              ],
+              [
+                528.4675,
+                842.1025
+              ],
+              [
+                552.365,
+                817.11875
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 2
+          },
+          {
+            "sourceStroke": 3
+          },
+          {
+            "sourceStroke": 4,
+            "points": [
+              [
+                442.65375000000006,
+                654.18125
+              ],
+              [
+                457.86125000000004,
+                633.5425
+              ],
+              [
+                344.89125,
+                498.8475
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 5,
+            "points": [
+              [
+                429.61875,
+                557.505
+              ],
+              [
+                436.13625,
+                406.51625
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 6
+          },
+          {
+            "sourceStroke": 7,
+            "points": [
+              [
+                692.49125,
+                690.0274999999999
+              ],
+              [
+                730.51,
+                669.38875
+              ],
+              [
+                727.25125,
+                479.29499999999996
+              ],
+              [
+                706.6125,
+                440.18999999999994
+              ],
+              [
+                630.575,
+                484.72625
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 8,
+            "points": [
+              [
+                511.0875,
+                535.78
+              ],
+              [
+                568.6587499999999,
+                474.95
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 9
+          },
+          {
+            "sourceStroke": 10
+          },
+          {
+            "sourceStroke": 11
+          },
+          {
+            "sourceStroke": 12
+          },
+          {
+            "sourceStroke": 13,
+            "points": [
+              [
+                534.985,
+                188.17999999999995
+              ],
+              [
+                538.24375,
+                152.33374999999995
+              ],
+              [
+                440.48125,
+                83.90000000000003
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 14,
+            "points": [
+              [
+                552.365,
+                145.81625000000003
+              ],
+              [
+                638.17875,
+                98.02125000000001
+              ]
+            ]
+          }
+        ],
+        "notes": "14획 전체를 대조했다. 广3획 뒤 付5획, 肉의 왼벽→위·오른벽갈고리→윗사람2획→아랫사람2획 순서다. 후보에서 广점1·亻머리4·寸머리7이 지붕에, 亻아래끝5가 肉지붕에 붙는 부분을 원문 흰 간격에 맞게 분리했다. 寸점8과 갈고리7, 肉 두 사람 사이도 실제 원문의 분리를 보존하도록 위치를 조정했다. 肉윗사람11 시작과 지붕10의 실제 접합은 유지했다. 아랫사람 오른획14의 끝도 바깥 갈고리10 끝에 닿지 않게 줄였다."
+      },
+      "record": {
+        "glyph": "腐",
+        "manifestRow": "0676",
+        "videoFilename": "0676 썩을 부.mp4",
+        "expectedStrokes": 14,
+        "candidateStrokes": 14,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0676.mp4",
+          "sha256": "a630784daf5e903543da835ea5b5074651ed69ba662a3694476bc155d86d19d6",
+          "bytes": 602250
+        },
+        "durationSeconds": 18.515,
+        "strokeEndsSeconds": [
+          0.8333,
+          2.6667,
+          5.5,
+          6.75,
+          7.4167,
+          8.5833,
+          9.75,
+          10.75,
+          12.0833,
+          14.75,
+          15.75,
+          16.4167,
+          17.5,
+          18.3333
+        ],
+        "geometryCorrection": "textbook-8150-g3ii-batch4-c-v1",
+        "correctionSha256": "ff2ce5fd2e0c37425015f392fc4f92b6e3d521f4769dbd615a89c7d28a69ec91",
+        "pathsSha256": "0b8b2da590752e3db55119d79f7e263e6de2e25eb37081906ef9c36d42f058ca",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "14획 전체를 대조했다. 广3획 뒤 付5획, 肉의 왼벽→위·오른벽갈고리→윗사람2획→아랫사람2획 순서다. 후보에서 广점1·亻머리4·寸머리7이 지붕에, 亻아래끝5가 肉지붕에 붙는 부분을 원문 흰 간격에 맞게 분리했다. 寸점8과 갈고리7, 肉 두 사람 사이도 실제 원문의 분리를 보존하도록 위치를 조정했다. 肉윗사람11 시작과 지붕10의 실제 접합은 유지했다. 아랫사람 오른획14의 끝도 바깥 갈고리10 끝에 닿지 않게 줄였다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M49.8 10 L54.6 12.2 L56.8 14.5",
+        "M37.1 22.5 L46.1 23.1 L78.2 18.7",
+        "M29.9 20.1 L34.3 25.4 L30.2 53.6 L24.3 69.9 L12.7 87.1",
+        "M46.7 29.5 L48.1 31.4 L37.7 43.8",
+        "M45.5 38.4 L46.1 52.3",
+        "M51.8 35.1 L87.3 31.7",
+        "M69.7 26.2 L73.2 28.1 L72.9 45.6 L71 49.2 L64 45.1",
+        "M53 40.4 L58.3 46",
+        "M37.5 57.4 L40.7 62.8 L38.4 87.7",
+        "M43.2 59.3 L71.4 56 L76.4 58.4 L76.7 87.9 L74.6 90 L67.3 85.9",
+        "M54.3 51.1 L57 54 L55.7 60.8 L53 65.4 L47.2 69.5",
+        "M56.9 63.7 L67.2 68.3",
+        "M55.2 72.4 L55.5 75.7 L46.5 82",
+        "M56.8 76.3 L64.7 80.7"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        0.8333333333333334,
+        1,
+        1.5,
+        2,
+        2.5,
+        2.6666666666666665,
+        3,
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        6.75,
+        7,
+        7.416666666666667,
+        7.5,
+        8,
+        8.5,
+        8.583333333333334,
+        9,
+        9.5,
+        9.75,
+        10,
+        10.5,
+        10.75,
+        11,
+        11.5,
+        12,
+        12.083333333333334,
+        12.5,
+        13,
+        13.5,
+        14,
+        14.5,
+        14.75,
+        15,
+        15.5,
+        15.75,
+        16,
+        16.416666666666668,
+        16.5,
+        17,
+        17.5,
+        18,
+        18.333333333333332
+      ]
+    },
+    {
+      "glyph": "附",
+      "originalMedians": [
+        [
+          [
+            215,
+            712
+          ],
+          [
+            337,
+            742
+          ],
+          [
+            363,
+            729
+          ],
+          [
+            374,
+            709
+          ],
+          [
+            295,
+            607
+          ]
+        ],
+        [
+          [
+            293,
+            612
+          ],
+          [
+            344,
+            535
+          ],
+          [
+            352,
+            475
+          ],
+          [
+            331,
+            455
+          ],
+          [
+            256,
+            491
+          ]
+        ],
+        [
+          [
+            158,
+            726
+          ],
+          [
+            199,
+            684
+          ],
+          [
+            203,
+            618
+          ],
+          [
+            189,
+            24
+          ]
+        ],
+        [
+          [
+            509,
+            742
+          ],
+          [
+            556,
+            681
+          ],
+          [
+            438,
+            448
+          ],
+          [
+            318,
+            284
+          ]
+        ],
+        [
+          [
+            458,
+            443
+          ],
+          [
+            474,
+            385
+          ],
+          [
+            466,
+            46
+          ]
+        ],
+        [
+          [
+            542,
+            463
+          ],
+          [
+            858,
+            508
+          ],
+          [
+            961,
+            502
+          ]
+        ],
+        [
+          [
+            710,
+            773
+          ],
+          [
+            773,
+            714
+          ],
+          [
+            777,
+            102
+          ],
+          [
+            746,
+            8
+          ],
+          [
+            650,
+            94
+          ]
+        ],
+        [
+          [
+            570,
+            365
+          ],
+          [
+            665,
+            278
+          ]
+        ]
+      ],
+      "originalMediansSha256": "969b1bfc9ffb5c3052b9bf4288af27ecb5e4a26745980c0685e513b7965eaa8f",
+      "candidatePathsSha256": "a552defea06c353d6f681e09d64bbea0caab14268487909b4c1f5387cf82ca2a",
+      "record": {
+        "glyph": "附",
+        "manifestRow": "0680",
+        "videoFilename": "0680 붙을 부.mp4",
+        "expectedStrokes": 8,
+        "candidateStrokes": 8,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0680.mp4",
+          "sha256": "e3392fdb9feeccd079f42cd64fe36496f0299e259a271d897e7e7b6ea6e2412d",
+          "bytes": 444092
+        },
+        "durationSeconds": 12.631,
+        "strokeEndsSeconds": [
+          1.3333,
+          2.5833,
+          4.6667,
+          6.1667,
+          7.6667,
+          8.8333,
+          11.3333,
+          12.5
+        ],
+        "pathsSha256": "a552defea06c353d6f681e09d64bbea0caab14268487909b4c1f5387cf82ca2a",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "8획 전체를 대조했다. 阝의 위꺾임→아래굽은갈고리→긴세로, 亻두획, 寸가로→세로갈고리→점 순서다. 阝갈고리 끝과 왼세로의 분리, 阝·亻·寸 사이 간격, 寸 안 점의 독립 및 갈고리 방향이 원문과 같아 Ja 원형을 유지했다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M15.7 18 L27.8 15 L30.4 16.3 L31.5 18.3 L23.6 28.4",
+        "M23.4 27.9 L28.5 35.6 L29.3 41.6 L27.2 43.6 L19.8 40",
+        "M10 16.6 L14.1 20.8 L14.5 27.3 L13.1 86.5",
+        "M45 15 L49.7 21.1 L37.9 44.3 L25.9 60.6",
+        "M39.9 44.8 L41.5 50.5 L40.7 84.3",
+        "M48.3 42.8 L79.7 38.3 L90 38.9",
+        "M65 11.9 L71.3 17.8 L71.7 78.7 L68.6 88.1 L59 79.5",
+        "M51 52.5 L60.5 61.2"
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        1,
+        1.3333333333333333,
+        1.5,
+        2,
+        2.5,
+        2.5833333333333335,
+        3,
+        3.5,
+        4,
+        4.5,
+        4.666666666666667,
+        5,
+        5.5,
+        6,
+        6.166666666666667,
+        6.5,
+        7,
+        7.5,
+        7.666666666666667,
+        8,
+        8.5,
+        8.833333333333334,
+        9,
+        9.5,
+        10,
+        10.5,
+        11,
+        11.333333333333334,
+        11.5,
+        12,
+        12.5
+      ]
+    },
+    {
+      "glyph": "簿",
+      "originalMedians": [
+        [
+          [
+            326,
+            820
+          ],
+          [
+            352,
+            775
+          ],
+          [
+            292,
+            685
+          ],
+          [
+            212,
+            619
+          ]
+        ],
+        [
+          [
+            342,
+            712
+          ],
+          [
+            514,
+            737
+          ]
+        ],
+        [
+          [
+            342,
+            662
+          ],
+          [
+            417,
+            601
+          ]
+        ],
+        [
+          [
+            583,
+            843
+          ],
+          [
+            608,
+            803
+          ],
+          [
+            521,
+            680
+          ]
+        ],
+        [
+          [
+            598,
+            738
+          ],
+          [
+            793,
+            771
+          ]
+        ],
+        [
+          [
+            642,
+            691
+          ],
+          [
+            714,
+            645
+          ]
+        ],
+        [
+          [
+            229,
+            539
+          ],
+          [
+            320,
+            457
+          ]
+        ],
+        [
+          [
+            152,
+            407
+          ],
+          [
+            239,
+            330
+          ]
+        ],
+        [
+          [
+            151,
+            107
+          ],
+          [
+            186,
+            74
+          ],
+          [
+            312,
+            311
+          ]
+        ],
+        [
+          [
+            445,
+            553
+          ],
+          [
+            703,
+            589
+          ]
+        ],
+        [
+          [
+            380,
+            481
+          ],
+          [
+            420,
+            437
+          ],
+          [
+            446,
+            286
+          ]
+        ],
+        [
+          [
+            428,
+            472
+          ],
+          [
+            726,
+            507
+          ],
+          [
+            759,
+            474
+          ],
+          [
+            698,
+            325
+          ]
+        ],
+        [
+          [
+            494,
+            399
+          ],
+          [
+            648,
+            421
+          ]
+        ],
+        [
+          [
+            465,
+            309
+          ],
+          [
+            680,
+            357
+          ]
+        ],
+        [
+          [
+            522,
+            647
+          ],
+          [
+            565,
+            606
+          ],
+          [
+            556,
+            355
+          ]
+        ],
+        [
+          [
+            771,
+            629
+          ],
+          [
+            844,
+            547
+          ]
+        ],
+        [
+          [
+            322,
+            202
+          ],
+          [
+            828,
+            268
+          ],
+          [
+            919,
+            255
+          ]
+        ],
+        [
+          [
+            622,
+            302
+          ],
+          [
+            665,
+            257
+          ],
+          [
+            663,
+            30
+          ],
+          [
+            639,
+            -21
+          ],
+          [
+            554,
+            30
+          ]
+        ],
+        [
+          [
+            453,
+            146
+          ],
+          [
+            511,
+            116
+          ],
+          [
+            531,
+            77
+          ]
+        ]
+      ],
+      "originalMediansSha256": "beace2d3437aa2c87f9c28cc3337e7a0773050f79182b74c693a667d49b18f48",
+      "candidatePathsSha256": "282ecbeed3dbb346550d6ef26025d0f69ffbd008b4c74db73d7c5c437ad3047f",
+      "recipe": {
+        "glyph": "簿",
+        "id": "textbook-7c3f-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "639ff816879b47dbe30ffee31cfd8fff6d0afce9752105ca1ed27e0a4b043c7b",
+        "originalMediansSha256": "beace2d3437aa2c87f9c28cc3337e7a0773050f79182b74c693a667d49b18f48",
+        "strokes": [
+          {
+            "sourceStroke": 1
+          },
+          {
+            "sourceStroke": 2
+          },
+          {
+            "sourceStroke": 3
+          },
+          {
+            "sourceStroke": 4
+          },
+          {
+            "sourceStroke": 5
+          },
+          {
+            "sourceStroke": 6
+          },
+          {
+            "sourceStroke": 7
+          },
+          {
+            "sourceStroke": 8
+          },
+          {
+            "sourceStroke": 9
+          },
+          {
+            "sourceStroke": 10
+          },
+          {
+            "sourceStroke": 11
+          },
+          {
+            "sourceStroke": 12
+          },
+          {
+            "sourceStroke": 13,
+            "points": [
+              [
+                493.96000000000004,
+                399.12
+              ],
+              [
+                738.04,
+                420.71999999999997
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 14
+          },
+          {
+            "sourceStroke": 15,
+            "points": [
+              [
+                559.8399999999999,
+                623.76
+              ],
+              [
+                565.24,
+                606.48
+              ],
+              [
+                555.52,
+                232.79999999999998
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 16
+          },
+          {
+            "sourceStroke": 17,
+            "points": [
+              [
+                340.6,
+                201.47999999999993
+              ],
+              [
+                827.68,
+                268.43999999999994
+              ],
+              [
+                919.48,
+                255.47999999999993
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 18,
+            "points": [
+              [
+                649.48,
+                279.23999999999995
+              ],
+              [
+                664.6,
+                256.56000000000006
+              ],
+              [
+                663.52,
+                29.75999999999999
+              ],
+              [
+                638.6800000000001,
+                -21
+              ],
+              [
+                554.4399999999999,
+                29.75999999999999
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 19,
+            "points": [
+              [
+                452.91999999999996,
+                146.39999999999998
+              ],
+              [
+                511.23999999999995,
+                116.16000000000003
+              ],
+              [
+                524.2,
+                92.39999999999998
+              ]
+            ]
+          }
+        ],
+        "notes": "19획 전체를 대조했다. 竹6획, 氵3획, 尃의 위가로→왼벽→위오른벽→안가로→아래가로→중앙세로→오른점, 寸가로→세로갈고리→점 순서다. 안가로13을 오른쪽 벽까지 연장하고 중앙세로15는 아래 상자를 넘어 寸가로17과 실제 잉크가 접하도록 연장했다. 13.8333/16.6667/18.6667/19.5833초 원해상도 크롭에서 커서가 옮겨간 뒤의 접합을 확인했다. 15 시작은 竹 끝과,18 시작은 위 상자와 분리하고,17 가로는 氵 올림에서 분리했다. 마지막 점19 끝은 寸 갈고리18의 끝과 분리되도록 조금 줄였다."
+      },
+      "record": {
+        "glyph": "簿",
+        "manifestRow": "0675",
+        "videoFilename": "0675 문서 부.mp4",
+        "expectedStrokes": 19,
+        "candidateStrokes": 19,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0675.mp4",
+          "sha256": "639ff816879b47dbe30ffee31cfd8fff6d0afce9752105ca1ed27e0a4b043c7b",
+          "bytes": 626905
+        },
+        "durationSeconds": 19.715,
+        "strokeEndsSeconds": [
+          0.8333,
+          1.8333,
+          2.5,
+          3.5,
+          4.3333,
+          5.1667,
+          6.1667,
+          6.8333,
+          7.8333,
+          8.8333,
+          9.8333,
+          10.8333,
+          11.6667,
+          12.6667,
+          14.0833,
+          14.8333,
+          16.6667,
+          18.6667,
+          19.5833
+        ],
+        "geometryCorrection": "textbook-7c3f-g3ii-batch4-c-v1",
+        "correctionSha256": "a9c02421eebd11ccd4353c5d5e62ebda06ec047b20c8a7b94c7165c200f5276f",
+        "pathsSha256": "a20655a1e73cb406f12866c18c1718223e300d5303d9c3888831a51af07b759a",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "19획 전체를 대조했다. 竹6획, 氵3획, 尃의 위가로→왼벽→위오른벽→안가로→아래가로→중앙세로→오른점, 寸가로→세로갈고리→점 순서다. 안가로13을 오른쪽 벽까지 연장하고 중앙세로15는 아래 상자를 넘어 寸가로17과 실제 잉크가 접하도록 연장했다. 13.8333/16.6667/18.6667/19.5833초 원해상도 크롭에서 커서가 옮겨간 뒤의 접합을 확인했다. 15 시작은 竹 끝과,18 시작은 위 상자와 분리하고,17 가로는 氵 올림에서 분리했다. 마지막 점19 끝은 寸 갈고리18의 끝과 분리되도록 조금 줄였다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M30.6 12.1 L33 16.3 L27.5 24.6 L20.1 30.7",
+        "M32.1 22.1 L48 19.8",
+        "M32.1 26.8 L39.1 32.4",
+        "M54.4 10 L56.7 13.7 L48.7 25.1",
+        "M55.8 19.7 L73.9 16.7",
+        "M59.9 24.1 L66.6 28.3",
+        "M21.6 38.1 L30.1 45.7",
+        "M14.5 50.4 L22.6 57.5",
+        "M14.4 78.1 L17.7 81.2 L29.3 59.3",
+        "M41.6 36.9 L65.5 33.5",
+        "M35.6 43.5 L39.3 47.6 L41.7 61.6",
+        "M40.1 44.4 L67.7 41.1 L70.7 44.2 L65.1 58",
+        "M46.2 51.1 L68.8 49.1",
+        "M43.5 59.4 L63.4 55",
+        "M52.3 30.3 L52.8 31.9 L51.9 66.5",
+        "M71.8 29.8 L78.6 37.4",
+        "M32 69.4 L77.1 63.2 L85.6 64.4",
+        "M60.6 62.2 L62 64.3 L61.9 85.3 L59.6 90 L51.8 85.3",
+        "M42.4 74.5 L47.8 77.3 L49 79.5"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        0.8333333333333334,
+        1,
+        1.5,
+        1.8333333333333333,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.333333333333333,
+        4.5,
+        5,
+        5.166666666666667,
+        5.5,
+        6,
+        6.166666666666667,
+        6.5,
+        6.833333333333333,
+        7,
+        7.5,
+        7.833333333333333,
+        8,
+        8.5,
+        8.833333333333334,
+        9,
+        9.5,
+        9.833333333333334,
+        10,
+        10.5,
+        10.833333333333334,
+        11,
+        11.5,
+        11.666666666666666,
+        12,
+        12.5,
+        12.666666666666666,
+        13,
+        13.5,
+        13.833333333333334,
+        13.916666666666666,
+        14,
+        14.083333333333334,
+        14.5,
+        14.833333333333334,
+        15,
+        15.5,
+        16,
+        16.5,
+        16.666666666666668,
+        17,
+        17.5,
+        18,
+        18.5,
+        18.666666666666668,
+        19,
+        19.5,
+        19.583333333333332
+      ]
+    },
+    {
+      "glyph": "扶",
+      "originalMedians": [
+        [
+          [
+            158,
+            529
+          ],
+          [
+            457,
+            572
+          ]
+        ],
+        [
+          [
+            289,
+            827
+          ],
+          [
+            347,
+            770
+          ],
+          [
+            334,
+            119
+          ],
+          [
+            310,
+            31
+          ],
+          [
+            198,
+            92
+          ]
+        ],
+        [
+          [
+            55,
+            219
+          ],
+          [
+            110,
+            211
+          ],
+          [
+            404,
+            430
+          ]
+        ],
+        [
+          [
+            505,
+            567
+          ],
+          [
+            818,
+            607
+          ]
+        ],
+        [
+          [
+            425,
+            386
+          ],
+          [
+            810,
+            441
+          ],
+          [
+            901,
+            426
+          ]
+        ],
+        [
+          [
+            597,
+            821
+          ],
+          [
+            651,
+            774
+          ],
+          [
+            600,
+            306
+          ],
+          [
+            529,
+            169
+          ],
+          [
+            395,
+            96
+          ]
+        ],
+        [
+          [
+            639,
+            370
+          ],
+          [
+            712,
+            244
+          ],
+          [
+            836,
+            105
+          ],
+          [
+            982,
+            64
+          ]
+        ]
+      ],
+      "originalMediansSha256": "805a3812cb24f38b3a16d08dc86cdc0125828e1df439674098c220ced10d671f",
+      "candidatePathsSha256": "f19f78fcd4557b6053d0d2e2f722b75c616b8f617dd4eb2ae1df383ef4b49d33",
+      "recipe": {
+        "glyph": "扶",
+        "id": "textbook-6276-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "f4a01e5ce41c4dee4ca2a1110ac527a3ad6cd24c0cbfd38955a6ee6bec1b1af9",
+        "originalMediansSha256": "805a3812cb24f38b3a16d08dc86cdc0125828e1df439674098c220ced10d671f",
+        "strokes": [
+          {
+            "sourceStroke": 1
+          },
+          {
+            "sourceStroke": 2
+          },
+          {
+            "sourceStroke": 3
+          },
+          {
+            "sourceStroke": 4,
+            "points": [
+              [
+                531.24625,
+                566.89125
+              ],
+              [
+                817.4575,
+                607.4475
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 5,
+            "points": [
+              [
+                464.03875,
+                386.12624999999997
+              ],
+              [
+                810.505,
+                440.5875
+              ],
+              [
+                900.8875,
+                425.52375
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 6
+          },
+          {
+            "sourceStroke": 7
+          }
+        ],
+        "notes": "7획 전체를 대조했다. 扌가로→세로갈고리→올림, 夫 두 가로→긴 왼삐침→오른획 순서다. 원문에서 扌가로1과 夫위가로4는 분리되어 있어4 시작을 오른쪽으로 옮겼다. 扌올림3과 夫아래가로5도 별개의 흰 간격이 있으므로5 시작을 오른쪽으로 옮겼다. 夫 두 긴획의 교차 및 왼삐침 끝의 분리는 유지했다."
+      },
+      "record": {
+        "glyph": "扶",
+        "manifestRow": "0667",
+        "videoFilename": "0667 도울 부.mp4",
+        "expectedStrokes": 7,
+        "candidateStrokes": 7,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0667.mp4",
+          "sha256": "f4a01e5ce41c4dee4ca2a1110ac527a3ad6cd24c0cbfd38955a6ee6bec1b1af9",
+          "bytes": 360136
+        },
+        "durationSeconds": 10.081,
+        "strokeEndsSeconds": [
+          0.8333,
+          2.8333,
+          3.9167,
+          4.9167,
+          6.1667,
+          8.3333,
+          9.9167
+        ],
+        "geometryCorrection": "textbook-6276-g3ii-batch4-c-v1",
+        "correctionSha256": "bef52a6d434cbd9d0f456f6c31d780b4f82633e55eb3f92f0e39a2c06ec5a115",
+        "pathsSha256": "367442c73ec249fc8984d04aeb6d076b2c795cea2b7700ed3097ada677cb06f5",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "7획 전체를 대조했다. 扌가로→세로갈고리→올림, 夫 두 가로→긴 왼삐침→오른획 순서다. 원문에서 扌가로1과 夫위가로4는 분리되어 있어4 시작을 오른쪽으로 옮겼다. 扌올림3과 夫아래가로5도 별개의 흰 간격이 있으므로5 시작을 오른쪽으로 옮겼다. 夫 두 긴획의 교차 및 왼삐침 끝의 분리는 유지했다. 전체 2fps 진행과 모든 완료 표본, 최종 폭5 경로를 직접 확인했다."
+      },
+      "paths": [
+        "M18.9 41.4 L44.7 37.7",
+        "M30.2 15.7 L35.2 20.6 L34.1 76.8 L32 84.3 L22.3 79.1",
+        "M10 68.1 L14.7 68.8 L40.1 49.9",
+        "M51.1 38.1 L75.8 34.6",
+        "M45.3 53.7 L75.2 49 L83 50.3",
+        "M56.8 16.2 L61.4 20.2 L57 60.6 L50.9 72.4 L39.3 78.7",
+        "M60.4 55.1 L66.7 66 L77.4 78 L90 81.5"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        0.8333333333333334,
+        1,
+        1.5,
+        2,
+        2.5,
+        2.8333333333333335,
+        3,
+        3.5,
+        3.9166666666666665,
+        4,
+        4.5,
+        4.916666666666667,
+        5,
+        5.5,
+        6,
+        6.166666666666667,
+        6.5,
+        7,
+        7.5,
+        8,
+        8.333333333333334,
+        8.5,
+        9,
+        9.5,
+        9.916666666666666
+      ]
+    },
+    {
+      "glyph": "奮",
+      "originalMedians": [
+        [
+          [
+            239,
+            702
+          ],
+          [
+            325,
+            693
+          ],
+          [
+            755,
+            742
+          ]
+        ],
+        [
+          [
+            432,
+            854
+          ],
+          [
+            466,
+            795
+          ],
+          [
+            368,
+            633
+          ],
+          [
+            239,
+            488
+          ],
+          [
+            106,
+            395
+          ]
+        ],
+        [
+          [
+            570,
+            710
+          ],
+          [
+            802,
+            508
+          ],
+          [
+            962,
+            489
+          ]
+        ],
+        [
+          [
+            392,
+            593
+          ],
+          [
+            410,
+            559
+          ],
+          [
+            249,
+            387
+          ]
+        ],
+        [
+          [
+            362,
+            463
+          ],
+          [
+            364,
+            239
+          ]
+        ],
+        [
+          [
+            471,
+            654
+          ],
+          [
+            562,
+            605
+          ]
+        ],
+        [
+          [
+            441,
+            534
+          ],
+          [
+            647,
+            562
+          ]
+        ],
+        [
+          [
+            514,
+            523
+          ],
+          [
+            539,
+            488
+          ],
+          [
+            532,
+            312
+          ]
+        ],
+        [
+          [
+            445,
+            446
+          ],
+          [
+            641,
+            476
+          ]
+        ],
+        [
+          [
+            443,
+            371
+          ],
+          [
+            650,
+            404
+          ]
+        ],
+        [
+          [
+            396,
+            286
+          ],
+          [
+            650,
+            321
+          ],
+          [
+            726,
+            312
+          ]
+        ],
+        [
+          [
+            266,
+            217
+          ],
+          [
+            311,
+            170
+          ],
+          [
+            359,
+            -52
+          ]
+        ],
+        [
+          [
+            309,
+            208
+          ],
+          [
+            352,
+            197
+          ],
+          [
+            667,
+            247
+          ],
+          [
+            712,
+            231
+          ],
+          [
+            730,
+            193
+          ],
+          [
+            668,
+            -75
+          ]
+        ],
+        [
+          [
+            472,
+            201
+          ],
+          [
+            502,
+            166
+          ],
+          [
+            494,
+            13
+          ]
+        ],
+        [
+          [
+            396,
+            96
+          ],
+          [
+            622,
+            118
+          ]
+        ],
+        [
+          [
+            361,
+            -7
+          ],
+          [
+            650,
+            14
+          ]
+        ]
+      ],
+      "originalMediansSha256": "044a08daf70b7e555f7f31efe25119cc79b358bff4b534d83e4050918a3df526",
+      "candidatePathsSha256": "6b167492e7024abec1994589d95708b873902667fc89a1ba199460dbea1520a1",
+      "recipe": {
+        "glyph": "奮",
+        "id": "textbook-596e-g3ii-batch4-c-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideoSha256": "adcab18a45e73d82f39bfb3ec17192625e7ae1ae1015cf0de6a6e01ba1866c5d",
+        "originalMediansSha256": "044a08daf70b7e555f7f31efe25119cc79b358bff4b534d83e4050918a3df526",
+        "strokes": [
+          {
+            "sourceStroke": 1
+          },
+          {
+            "sourceStroke": 2,
+            "points": [
+              [
+                431.81000000000006,
+                854
+              ],
+              [
+                465.48625000000004,
+                794.7762499999999
+              ],
+              [
+                344.71625000000006,
+                633.3625
+              ],
+              [
+                215.81750000000005,
+                488.20625
+              ],
+              [
+                105.49875000000003,
+                395.30625
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 3
+          },
+          {
+            "sourceStroke": 4,
+            "points": [
+              [
+                392.3275,
+                592.71875
+              ],
+              [
+                380.715,
+                552.075
+              ],
+              [
+                249.49375000000003,
+                387.17749999999995
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 5,
+            "points": [
+              [
+                327.2975,
+                462.65874999999994
+              ],
+              [
+                362.13500000000005,
+                430.14375
+              ],
+              [
+                364.4575,
+                267.56875
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 6,
+            "points": [
+              [
+                471.2925,
+                654.265
+              ],
+              [
+                550.2574999999999,
+                621.75
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 7
+          },
+          {
+            "sourceStroke": 9
+          },
+          {
+            "sourceStroke": 10
+          },
+          {
+            "sourceStroke": 8
+          },
+          {
+            "sourceStroke": 11
+          },
+          {
+            "sourceStroke": 12
+          },
+          {
+            "sourceStroke": 13
+          },
+          {
+            "sourceStroke": 15,
+            "points": [
+              [
+                327.2975,
+                91.05874999999997
+              ],
+              [
+                712.8325000000001,
+                117.76749999999993
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 14
+          },
+          {
+            "sourceStroke": 16
+          }
+        ],
+        "notes": "16획 전체를 대조했다. 大3획 다음 隹는 왼삐침·왼세로·점·위가로·중간가로·아래가로·중앙세로·바닥가로이고, 田은 왼벽·위오른벽·안가로·안세로·아래가로 순서다. Ja의 隹 중앙세로와 田 안세로 순서를 실제 원문 진행에 맞춰 뒤로 재배열했다. 隹 왼삐침4는 大 왼삐침2와 분리하고, 隹 왼세로5 아래끝은 田 지붕13에서 분리했다. 田 안가로14 끝은 오른쪽 벽에 접하도록 연장했다. 9.6667/10.75/22.0833초 원해상도에서 大왼획–隹왼획,隹왼획–위가로,점–위가로 사이 흰 간격을 확인했다. 大왼획의 중간 두 점과 隹왼획 시작 형태,점 길이를 국소 조정하고 隹왼세로 시작의 접합을 함께 맞췄다. 교차 검토에서 22.0833초 원문 확대의 田 안가로14–왼벽12 실제 잉크 접합을 확인했다. 안가로 시작을 왼벽까지 연장해 폭5의 불필요한 흰 간격을 제거했으며 양 벽과의 연결을 재검증했다."
+      },
+      "record": {
+        "glyph": "奮",
+        "manifestRow": "0685",
+        "videoFilename": "0685 떨칠 분.mp4",
+        "expectedStrokes": 16,
+        "candidateStrokes": 16,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "status": "matched",
+        "reviewedAt": "2026-09-09",
+        "reviewer": "Codex C full video and final geometry review",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0685.mp4",
+          "sha256": "adcab18a45e73d82f39bfb3ec17192625e7ae1ae1015cf0de6a6e01ba1866c5d",
+          "bytes": 708924
+        },
+        "durationSeconds": 22.248,
+        "strokeEndsSeconds": [
+          1.75,
+          4.4167,
+          6.5833,
+          7.75,
+          8.8333,
+          9.6667,
+          10.75,
+          11.75,
+          12.75,
+          14.0833,
+          15.1667,
+          16.5833,
+          18.75,
+          19.9167,
+          21,
+          22.0833
+        ],
+        "geometryCorrection": "textbook-596e-g3ii-batch4-c-v1",
+        "correctionSha256": "79b07eb7a6ad4833037331d9431239a4b18e2ebff8ed922cd83eeed74bb94189",
+        "pathsSha256": "0025d0ccccca69f468abab3c6cbbe07360d1546131f5f7da99cb7baaef3bd94d",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "16획 전체를 대조했다. 大3획 다음 隹는 왼삐침·왼세로·점·위가로·중간가로·아래가로·중앙세로·바닥가로이고, 田은 왼벽·위오른벽·안가로·안세로·아래가로 순서다. Ja의 隹 중앙세로와 田 안세로 순서를 실제 원문 진행에 맞춰 뒤로 재배열했다. 隹 왼삐침4는 大 왼삐침2와 분리하고, 隹 왼세로5 아래끝은 田 지붕13에서 분리했다. 田 안가로14 끝은 오른쪽 벽에 접하도록 연장했다. 9.6667/10.75/22.0833초 원해상도에서 大왼획–隹왼획,隹왼획–위가로,점–위가로 사이 흰 간격을 확인했다. 大왼획의 중간 두 점과 隹왼획 시작 형태,점 길이를 국소 조정하고 隹왼세로 시작의 접합을 함께 맞췄다. 교차 검토에서 22.0833초 원문 확대의 田 안가로14–왼벽12 실제 잉크 접합을 확인했다. 안가로 시작을 왼벽까지 연장해 폭5의 불필요한 흰 간격을 제거했으며 양 벽과의 연결을 재검증했다."
+      },
+      "paths": [
+        "M24.6 23.1 L32 23.9 L69.1 19.6",
+        "M41.2 10 L44.1 15.1 L33.7 29 L22.6 41.5 L13.1 49.5",
+        "M53.1 22.4 L73.1 39.8 L86.9 41.4",
+        "M37.8 32.5 L36.8 36 L25.5 50.2",
+        "M32.2 43.7 L35.2 46.5 L35.4 60.5",
+        "M44.6 27.2 L51.4 30",
+        "M42 37.6 L59.8 35.1",
+        "M42.4 45.1 L59.2 42.6",
+        "M42.2 51.6 L60 48.8",
+        "M48.3 38.5 L50.5 41.5 L49.8 56.7",
+        "M38.1 58.9 L60 55.9 L66.6 56.7",
+        "M26.9 64.9 L30.8 68.9 L35 88",
+        "M30.6 65.6 L34.3 66.6 L61.5 62.3 L65.3 63.6 L66.9 66.9 L61.6 90",
+        "M32.2 75.7 L65.4 73.4",
+        "M44.7 66.2 L47.3 69.2 L46.6 82.4",
+        "M35.1 84.1 L60 82.3"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        8,
+        11,
+        12,
+        13,
+        15,
+        14,
+        16
+      ],
+      "reviewedSampleTimes": [
+        0,
+        0.5,
+        1,
+        1.5,
+        1.75,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.416666666666667,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        6.583333333333333,
+        7,
+        7.5,
+        7.75,
+        8,
+        8.5,
+        8.833333333333334,
+        9,
+        9.5,
+        9.666666666666666,
+        10,
+        10.5,
+        10.75,
+        11,
+        11.5,
+        11.75,
+        12,
+        12.5,
+        12.75,
+        13,
+        13.5,
+        14,
+        14.083333333333334,
+        14.5,
+        15,
+        15.166666666666666,
+        15.5,
+        16,
+        16.5,
+        16.583333333333332,
+        17,
+        17.5,
+        18,
+        18.5,
+        18.75,
+        19,
+        19.5,
+        19.916666666666668,
+        20,
+        20.5,
+        21,
+        21.5,
+        22,
+        22.083333333333332
+      ]
+    }
+  ],
+  "validation": {
+    "actualBuilderMatches": 12,
+    "originalMediansHashesMatch": 12,
+    "pathHashesMatch": 12,
+    "recipeHashesMatch": 9,
+    "sourceIndicesMatch": 12,
+    "completionSamplesMatch": 135,
+    "errors": [],
+    "width5": {
+      "checks": 83,
+      "gapPairs": 57,
+      "contactPairs": 26,
+      "minimumSeparatedCenterlineDistance": 5.14782,
+      "errors": []
+    }
+  }
+}

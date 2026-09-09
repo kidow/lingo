@@ -1,0 +1,167 @@
+{
+  "verifiedAt": "2026-09-09",
+  "baselineCommit": "2e95083c312e3029595428a4b7476bfb4a155ef7",
+  "checks": {
+    "proposalReproduction": {
+      "characters": 49,
+      "paths": 526,
+      "corrections": 41,
+      "passed": true
+    },
+    "publisherBuildCheck": {
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "emittedCharacters": 687,
+      "publishedBundleMatches": true
+    },
+    "hanjaTests": {
+      "command": "node --test \"lib/hanja*.test.ts\"",
+      "exitCode": 0,
+      "passed": 134,
+      "failed": 0
+    },
+    "typecheck": {
+      "command": "pnpm run typecheck",
+      "exitCode": 0
+    },
+    "productionBuild": {
+      "command": "pnpm run build",
+      "exitCode": 0
+    },
+    "diffCheck": {
+      "command": "git diff --check -- <Hanja scope>",
+      "exitCode": 0
+    },
+    "documentChecks": {
+      "jsonParsed": true,
+      "trailingWhitespaceErrors": 0,
+      "checkedBeforeThisFile": 36,
+      "nextSelectionValid": true
+    },
+    "peerRecordPins": {
+      "uniqueApprovedCharacters": 23,
+      "approvedStrokes": 291,
+      "held": [
+        "奔"
+      ],
+      "sourceFiles": [
+        "peer-a.json",
+        "peer-b-extra.json",
+        "peer-b-more.json",
+        "peer-b.json",
+        "peer-c.json",
+        "peer-root-extra.json",
+        "peer-root.json"
+      ],
+      "errors": []
+    }
+  },
+  "preservation": {
+    "errors": [],
+    "preservation": [
+      {
+        "file": "scripts/hanja-stroke-textbook-review.json",
+        "removed": 49,
+        "matches": true,
+        "previousDataSha256": "e9e15b909641bbb00147d4287e28ed6ec42ef59377ab2c3dd28c89dd4ee2e24b"
+      },
+      {
+        "file": "scripts/hanja-stroke-textbook-corrections.json",
+        "removed": 41,
+        "matches": true,
+        "previousDataSha256": "910a6fc8edcbb4e23f0b28c3a5d9915686aaf9c45cb9bb0675cbbefbbf31c841"
+      },
+      {
+        "file": "public/hanja-strokes/textbook-reviewed.json",
+        "removed": 49,
+        "matches": true,
+        "previousDataSha256": "d769a648f1dd32b875896cc4f12d9289367cb901761d020440934d506ce8b651"
+      }
+    ],
+    "existingCharactersChecked": 638,
+    "frozenPriorFilesChecked": 61,
+    "runtime": 1190,
+    "total": 5978,
+    "remaining": 4788,
+    "publisher": 687,
+    "official": 503,
+    "grade3II": {
+      "applied": 200,
+      "total": 500
+    },
+    "added": 49,
+    "newPaths": 526,
+    "corrections": 41,
+    "pending": [
+      {
+        "glyph": "奔",
+        "expected": 8,
+        "observed": 9,
+        "reason": "source-count-conflict"
+      }
+    ],
+    "peer": {
+      "files": [
+        "peer-a.json",
+        "peer-b-extra.json",
+        "peer-b-more.json",
+        "peer-b.json",
+        "peer-c.json",
+        "peer-root-extra.json",
+        "peer-root.json"
+      ],
+      "characters": 23,
+      "strokes": 291,
+      "held": [
+        "奔"
+      ]
+    },
+    "publishedBundleSha256": "c67d5f8b26a83c7fe1d49053af4336ab771ea69631067db99e317bf6dc82bcb8",
+    "fileHashes": {
+      "docs/hanja-g3ii-batch4-2026-09-09/baseline.json": "15376b65e3d16cc651ebaf8d9494f43ccbe166a56585ea206bd32d1a3628b9f6",
+      "docs/hanja-g3ii-batch4-2026-09-09/inventory.json": "31b844edb8de61100ca7d9287c6ceeb5c02ec060faa357372ee9295edfdf4300",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-a.json": "0ba90d8595428213c2c752e85b7dfc2389bbe062ea2d2ff8663be0031a24b237",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-a.md": "04a32f660ded6fe814d871a995d56738006269d2f223e713859c6a85df3642dc",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-b-extra.json": "88e2d8db7bcc2030d48b120a64c28b481a01039cdf34c7a05d9c9a17f722c745",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-b-extra.md": "cebc84abafea60c7a47133787e53e45f406ab46faa2db25e5599564f87def8c8",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-b-more.json": "eece2768f1afc029fa117dc19b1013223597ac3c5449046543b708b98127b11f",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-b-more.md": "af4195baedd5cc38a9018f63ffc0f32b6afdd283dce13f489f054b2535c23850",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-b.json": "7b888d673bf6b7ea4779cf54c3fc1fcdd8b3601c8e60773dc91f672dfa957fac",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-b.md": "6c054710eb45fc327e4657546b3b728dac7513a634e79217e941992cbfe38b9f",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-c.json": "d05911c90addd7004ac70c33ccae580e946c9ed37808d84f47aa184c6e0b1cf2",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-c.md": "3f59ed7ecb1b4b85de50c8d2e92840af223a9f8418b48e5537e3af4c93e47ca9",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-root-extra.json": "2d99bd8f017d187cf575440437cdf832bc1bc0dfa660da5cb89dc4a6592246bd",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-root-extra.md": "89161b3d6286a8c236955d2cfe375ca6935eb423650da8b5d9a1692465521917",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-root.json": "6ad798056c6bc585595c454fea15810e651c4b960014c0e034ac9f45dd3f0442",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-root.md": "f5ba8e262c00d1016a35e62b64a92876d35609599ef744289f6f64cfb98adc7e",
+      "docs/hanja-g3ii-batch4-2026-09-09/peer-root.svg": "735ae46216af05ade374883675ff6c11a2076cd49856a9b2a8f30a7cf7173b84",
+      "docs/hanja-g3ii-batch4-2026-09-09/pending-c.json": "3c4635cdc60e9d55cb7023efaaaf68b64b3bc0b19b15e489effc93f203d15ac3",
+      "docs/hanja-g3ii-batch4-2026-09-09/pending-c.md": "8af499c555009c3ff05760264e03fb0b607801745e140bc0773288085a36fcc1",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-a.json": "2e8236e4ea8b616e9e0fdecdf80a4a5177bd56fa032f02b6c4841b9475b53894",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-a.md": "c6a1608d28e2de65da81ce5810c211110a5a699c116085353723d45227ec9126",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-a.svg": "30464046e43610e7d20b1f906c1a4271534c6c8c2505e33453765062374f5712",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-b.json": "254dd48daa97e8bc28220f999d529c7662935a414221c4784c4a65f1906d1ca9",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-b.md": "4287e0d949ff15f4186cf1ef6a207443f2680117abec5f225ec991a866e58707",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-b.svg": "5392c652acbc83ed231ebcadabdef9ced71766e8b2787217d7fcde97732f0a27",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-c.json": "94c95b8f05658b114652bc125f94bb6f8c809db0da010d849f66569f6b68f5e7",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-c.md": "eac5d0da825499eb9fc6de6241c18b3731b9be0ccfc3b7de3989910b4a57e69a",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-c.svg": "d4aee1e88ef7a70366318347193b7bf1bd6f56782008da0a2aa64a2134395210",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-root.json": "9c69404a095c3b25027f8526097f7f9b3ff0f3c492534920fec381b36be532fa",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-root.md": "f9f9b0ac6694594432929bdf8eb30d90425727bb2cab4a470bcb8bbd67d83cdf",
+      "docs/hanja-g3ii-batch4-2026-09-09/review-root.svg": "a2980ffe0dc8a5bd94b61afe9f9f335e0e7024d79f50bea08bcd737e67c87511",
+      "docs/hanja-g3ii-batch4-2026-09-09/root-candidates.json": "4bc94d186ed08bbd84f3b9ebf5d95a31755b216439cba81193f89d70c1330c3d"
+    }
+  },
+  "independentFinalAudit": {
+    "reviewer": "public_korean_stroke_sources",
+    "status": "passed",
+    "notes": "Read-only confirmation of exactly49 added characters/526 paths/41 recipes, unchanged638 public characters/640 ledger records/408 recipes/61 prior documents, no promotion of 奔, and current proposal/runtime/peer pins."
+  },
+  "concurrency": "The earlier100 Hanja additions were committed first. New batch4 edits are limited to Hanja review registries, the publisher bundle and this batch folder. Other-session changes were not staged or committed. No global content generator was running before production build.",
+  "commitState": {
+    "earlierCommit": "2e95083c312e3029595428a4b7476bfb4a155ef7",
+    "newBatchCommitted": false,
+    "pushed": false,
+    "stagedPaths": []
+  }
+}

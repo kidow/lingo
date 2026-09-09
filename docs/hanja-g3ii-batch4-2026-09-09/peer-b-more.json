@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "batch": 4,
+  "reviewedAt": "2026-09-09",
+  "owner": "b",
+  "reviewer": "Codex independent visual comparison",
+  "sourceFile": "docs/hanja-g3ii-batch4-2026-09-09/review-a.json",
+  "summary": {
+    "reviewed": 2,
+    "matched": 2,
+    "paths": 26,
+    "correctedAfterPeer": 1
+  },
+  "limitations": "출판사 개별 영상에 대한 Codex 시각 대조이며 한국어문회 개별 인증이나 인간 전문가 검토가 아니다. 시각은 12fps 표본에서 완료를 확인한 경계이며 정확한 펜 떼기 순간이 아니다. 픽셀 윤곽 복제가 아니라 순서·방향·펜 경계·자형과 실제 폭 5에서의 접합·분리를 확인했다.",
+  "validation": "독립 다운로드 SHA/bytes와 현재 textbookGeometry의 경로·계보·경로 SHA 재생성을 확인했다.",
+  "entries": [
+    {
+      "glyph": "迫",
+      "manifestRow": "0585",
+      "status": "matched",
+      "reviewedPathsSha256": "73a65af07cd5990b3f6c0f52d050befcb5ea4422b09a0550f71cd2eeb8331594",
+      "reviewedCorrectionSha256": "ff910a7ed94fbae417530fa5d66af41a93fa3527cbfa01d86b6f70336faa76c3",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0585.mp4",
+        "sha256": "206972cd69dc52c9cf080971b7f44943b7ebd7150da709756148677a9ee7a62d",
+        "bytes": 437045
+      },
+      "durationSeconds": 13.015,
+      "strokeEndsSeconds": [
+        1.1667,
+        3.0833,
+        5.0833,
+        6.0833,
+        6.9167,
+        7.9167,
+        9.1667,
+        10.3333,
+        12.8333
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7,
+        8
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "width5Contacts": "match"
+      },
+      "wholeOverviewFps": 2,
+      "completedSamplesFps": 12,
+      "wholeOverviewViewed": true,
+      "allEndingSamplesViewed": true,
+      "additionalIntervalsSeconds": [
+        [
+          8.75,
+          10
+        ]
+      ],
+      "notes": "9획 전체를 확인했다. 白 5획 뒤 辶의 점, 가로에서 왼쪽으로 꺾이는 획, 아래 굽은 획, 긴 파임의 경계를 확인했다. 8.75–10초의 12fps 연속 표본에서 7획 완료 후 펜의 위치 이동과 8획의 별도 잉크 진행이 나타나 원본 Ja 7획을 두 출력에 중복 대응한 분할이 적절하다. 최종 폭 5에서도 白 안가로의 양벽 접합, 白와 辶 사이 간격, 굽은 획과 마지막 파임의 접합이 일치한다.",
+      "resolvedFindings": []
+    },
+    {
+      "glyph": "薄",
+      "manifestRow": "0584",
+      "status": "matched",
+      "reviewedPathsSha256": "903a701656a4edf128c51e4de9a53e585007b938004521709e413165d9ad6bc8",
+      "reviewedCorrectionSha256": "4bfecbcbeb2c66169eb4bc8cf117d6d0649621a4357e2e5ae234dfd4fddbaf8d",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0584.mp4",
+        "sha256": "2968bcb588e5aa05283e210ad6f2def934aad4bf7215936a249aec2036a907f6",
+        "bytes": 683294
+      },
+      "durationSeconds": 20.048,
+      "strokeEndsSeconds": [
+        0.9167,
+        1.9167,
+        2.75,
+        3.6667,
+        4.8333,
+        5.8333,
+        6.6667,
+        7.9167,
+        9.5833,
+        11.0833,
+        11.9167,
+        12.75,
+        14,
+        14.8333,
+        16.4167,
+        18.5833,
+        19.9167
+      ],
+      "sourceStrokeIndices": [
+        2,
+        1,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "width5Contacts": "match"
+      },
+      "wholeOverviewFps": 2,
+      "completedSamplesFps": 12,
+      "wholeOverviewViewed": true,
+      "allEndingSamplesViewed": true,
+      "additionalIntervalsSeconds": [
+        [
+          12.8333,
+          13.6667
+        ]
+      ],
+      "notes": "17획 전체의 순서·방향·경계를 확인했다. 艹는 왼세로→왼가로→오른가로→오른세로의 4획이며, 원본 Ja 1번 가로를 두 출력에 중복 대응한 분할이 맞다. 이후 氵 3획·甫 7획·寸 3획을 각각 확인했다. 가운데 세로13과 寸 가로15는 실제로 이어지고, 寸 갈고리16의 머리와 甫 아래, 마지막 점17과 갈고리는 분리되어야 한다. 수정된 13획 시작 M54.8 24.5를 포함한 17획을 폭 5로 다시 렌더링했다. 풀머리 오른세로4와 13획 머리의 접합을 재현하며, 나머지 획의 순서·방향·경계·접합·분리는 보존된다.",
+      "resolvedFindings": [
+        "초기 경로 22b7c00b…의 13획 머리가 艹 오른세로4와 분리되었다. 원문 13.3333–13.6667초 및 850px 최종 확대에서 두 획의 잉크 접합을 확인하여 13획 머리의 국소 연장을 요청했다."
+      ]
+    }
+  ]
+}
