@@ -636,7 +636,7 @@ if (notes.length) {
     })
     if (mine.length > 0)
       warn(
-        `lib/audio-have.ts가 낡았습니다 — 발음 없는 자리 ${gone.size}건 vs 적힌 것 ${AUDIO_MISSING.size}건. node scripts/audio.ts manifest 를 돌리세요`,
+        `lib/audio-have.ts가 낡았습니다 — ${mine.length}건 어긋납니다 (${mine.slice(0, 5).join(' ')}${mine.length > 5 ? ' …' : ''}). node scripts/audio.ts manifest 를 돌리세요`,
       )
     else
       // 기록 묶음은 이 자리보다 앞에서 이미 찍혔다. 그래서 바로 낸다
