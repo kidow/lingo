@@ -232,6 +232,30 @@
   `clock`과 59다. 뚜껑을 젖힌 놋쇠 나침반을 손바닥 위에 놓거나, 판을 팔각으로
   깎아 시계와 윤곽부터 다르게 한다.
 
+### 고쳤다 (2026-09-09 밤) — 무리가 풀렸다
+
+`travel`과 `idea`가 동시에 빈 틈을 `pnpm pending --free`가 알려 줘서 둘을
+고쳤다. 세 번 막혔던 자리다.
+
+| 개념 | 전 | 후 |
+| --- | --- | --- |
+| `travel/compass`(나침반) | one round compass … single needle pointing up | **네모난 오리엔티어링 나침반 판** — 둥근 테를 버리니 시계 무리와 윤곽부터 갈린다 |
+| `idea/conviction-belief`(신념) | **one compass** with its needle held firmly | **기운 벽 옆에 곧게 드리운 다림줄** — 나침반을 아예 뺐다 |
+
+여덟 쌍을 다시 쟀다. 전부 **122~143**으로 늦춘 문턱(65) 밖이다.
+
+    compass ↔ clock 138 · quarter-to 133 · tide-clock 142 · steering-wheel 128
+    conviction-belief ↔ compass 143 · tide-clock 123 · steering-wheel 127 · pendulum 122
+
+전체 훑기도 따라 움직였다 — 늦춘 문턱의 쌍이 **80 → 73**, 허브가 **아홉 →
+넷**이 됐다. 시계 무리 다섯이 통째로 목록에서 빠졌다. 남은 것은 `time.json`
+안쪽 셋뿐이다(`quarter-to`↔`tide-clock` 53 · `clock`↔`hour` 57 ·
+`clock`↔`quarter-to` 59). **그건 그 파일의 몫이다** — 넷 다 시계 얼굴을 쓸
+이유가 있고, 밖에서 끼어든 둘이 비키니 나머지는 서로만 남았다.
+
+`cracked`(금 간)↔`plate`(접시)는 아직 남아 있다. `quality`·`food`가 비는 때를
+기다린다.
+
 **이 자리를 도구가 스스로 짚게 했다.** `pnpm twins`가 이제 「남의 몸통을 빌린
 쌍」을 따로 낸다 — `conviction-belief가 «compass»를 그립니다 — 임자 compass`.
 같은 잣대로 하나가 더 나왔다: `quality/cracked`(금 간)가 `food/plate`(접시)를
