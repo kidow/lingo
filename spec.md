@@ -1421,6 +1421,10 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm twins [구조] [색]` | 서로 닮은 **그림**을 찾는다. 기본 50·0.20은 실측값이다(닮은 쌍의 색 거리가 0.03~0.14라 예전 0.35는 아무것도 안 걸렀다). `--sheets`로 쌍을 붙여 본다 |
 | `pnpm also-audit [--list] [파일]` | 중국어 곁말이 정말 그 개념을 가리키는지 CC-CEDICT로 훑는다. 고치지 않고 목록만 낸다 ([docs/also-recheck.md](docs/also-recheck.md)) |
 
+동시 세션 막이 셋(`dup`·`props`·`genimg`)은 `pnpm guards`가 확인한다 —
+`content/scene.json`에 빈 줄 하나를 붙였다 떼는 방식이라 그림도 안 만들고
+남의 파일도 안 건드린다.
+
 **어느 그물이 무엇을 잡고 무엇을 놓치는지**는 [docs/nets.md](docs/nets.md)에
 한 장으로 모아 뒀다. 같은 사고를 두 번 겪고 나서야 «그건 다른 그물이 볼
 자리»인 것을 안 적이 여러 번이라 적어 뒀다 — 문턱을 왜 그 값으로 잡았는지도
