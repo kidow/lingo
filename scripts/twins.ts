@@ -264,6 +264,15 @@ if (found.length === 0) console.log('  닮은 쌍이 없습니다.')
  * 몸통은 맨 앞 수량사 뒤부터 전치사·쉼표 앞까지로 본다. 뒤에 곧바로 다른 명사가
  * 붙으면(`folded towel`) 표기와 안 맞아 빠지는데, 그 자리는 대개 배경이라 맞는
  * 결과다.
+ *
+ * **`props`에 옮겨 그림 뽑기 전에 잡으려다 접었다.** 같은 잣대를 프롬프트에만
+ * 대면 761장이 걸린다 — `scene`만 130장(16%)이고 `good-night`이 `bed`를,
+ * `soup`이 `bowl`을 그리는 자리라 거의 다 정당하다. 프롬프트 낱말이 얼마나
+ * 겹치는지(자카드)로 갈라 보려 했으나 진짜 둘이 0.20~0.22로 **헛것들보다
+ * 아래**였다(`print`↔`printer` 0.67 · `surfing`↔`surfboard` 0.60).
+ *
+ * 가르는 것은 결국 **그림이 실제로 닮았는지**이고, 그건 뽑은 뒤에만 안다.
+ * 그래서 이 판단은 여기 남는다.
  */
 const HEAD_RE =
   /^\s*(?:one|two|three|four|a|an|the)\s+([a-z ]+?)(?=\s+(?:with|on|in|at|beside|near|behind|from|to|under|over|by|against|seen|and|for|of|standing|lying|hanging|resting|held|set|pinned|open|closed)\b|,|\.|$)/i
