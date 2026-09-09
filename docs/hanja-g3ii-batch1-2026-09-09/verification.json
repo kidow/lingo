@@ -1,0 +1,72 @@
+{
+  "verifiedAt": "2026-09-09",
+  "baselineCommit": "7ffca28c17e0ef3497c9322283a7f0e7de5e0e29",
+  "checks": [
+    {
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "status": "passed",
+      "publishedBundleMatches": true,
+      "matched": 538,
+      "conflict": 2
+    },
+    {
+      "command": "node --test 'lib/hanja*.test.ts'",
+      "status": "passed",
+      "tests": 134,
+      "passed": 134,
+      "failed": 0
+    },
+    {
+      "command": "pnpm run typecheck",
+      "status": "passed"
+    },
+    {
+      "command": "pnpm run build",
+      "status": "passed",
+      "framework": "Next.js 16.3.3",
+      "staticRoutes": 6
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  ],
+  "preservation": {
+    "existingTextbookCharacters": 488,
+    "changedExistingTextbookCharacters": 0,
+    "addedCharacters": 50,
+    "selectionMatches": true,
+    "runtimeCharacters": 1041,
+    "officialEomunhoeCharacters": 503,
+    "reviewedTextbookCharacters": 538
+  },
+  "scope": {
+    "selectionChanged": false,
+    "newSourceFormExceptions": 0,
+    "uiCodeChanged": false,
+    "committedBeforeReview": "7ffca28c17e0ef3497c9322283a7f0e7de5e0e29",
+    "newReviewChangesCommitted": false
+  },
+  "peerReview": {
+    "reviewers": [
+      "hanja_component_geometry",
+      "stroke_generation_evidence_deep"
+    ],
+    "additionalSourceChecks": [
+      "冠",
+      "狂",
+      "壞",
+      "怪",
+      "巧",
+      "寬",
+      "館",
+      "槪"
+    ],
+    "adjustments": [
+      "巧 upper horizontal separation",
+      "館 first and third stroke separation",
+      "寬 left 艹 to 見 contact and final dot separation",
+      "寬 head dot to 宀 contact restored from enlarged source"
+    ]
+  }
+}
