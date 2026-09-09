@@ -246,6 +246,33 @@ for (const { dist, gap, a, b } of found)
 
 if (found.length === 0) console.log('  닮은 쌍이 없습니다.')
 
+/**
+ * **여러 쌍에 거듭 나오는 그림**을 따로 낸다.
+ *
+ * 문턱을 늦추면 걸리는 것이 닮은 쌍이라기보다 **바탕에 가까운 그림**이다.
+ * 미색 바탕에 흰 직사각형 하나인 `projector-screen`은 구름·좌표축·발찌·플루트와
+ * 짝지어 나오는데 그중 겹치는 것은 없다. 쌍으로만 읽으면 그런 줄이 불어나
+ * 진짜를 덮는다 — 2026-09-09에 65·0.32로 훑은 일흔아홉 쌍이 그랬다.
+ *
+ * 그날 손으로 세던 것을 여기 옮긴다. 문턱은 그때 분포에서 잡았다.
+ *
+ *   1쌍 86 · 2쌍 17 · **3쌍 4 · 4쌍 이상 5**
+ *
+ * 2와 3 사이가 꺾인다. 셋부터는 그 그림 자체를 다시 볼 값이 있다.
+ */
+const HUB = 3
+const appears = new Map<string, string[]>()
+for (const { a, b } of found) {
+  appears.set(a, [...(appears.get(a) ?? []), b])
+  appears.set(b, [...(appears.get(b) ?? []), a])
+}
+const hubs = [...appears].filter(([, with_]) => with_.length >= HUB).sort((x, y) => y[1].length - x[1].length)
+if (hubs.length > 0) {
+  console.log(`\n바탕에 가까운 그림 ${hubs.length}장 — ${HUB}쌍 이상에 나옵니다. 짝이 아니라 이 그림을 보세요`)
+  for (const [slug, with_] of hubs)
+    console.log(`  ${String(with_.length).padStart(2)}쌍  ${slug.padEnd(20)} ${with_.join(' · ')}`)
+}
+
 if (sheets && found.length > 0) {
   console.log(`\n대조표 — ${SHEET_DIR}/`)
   await drawSheets(found)
