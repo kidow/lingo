@@ -1,0 +1,660 @@
+{
+  "schemaVersion": 1,
+  "stage": 4,
+  "status": "complete",
+  "reviewedAt": "2026-09-09",
+  "reviewer": "Codex / hanja_component_geometry",
+  "runtimeMutated": false,
+  "sources": {
+    "archivePath": "docs/hanja-component-phase2-2026-09-09/replay-input.json",
+    "archiveFileSha256": "3b0ad533655bc596704bf529d2accf9a001f203db8381e89d0a4a792f422b70a",
+    "approvedSnapshotSha256": "7fde6fd393e3ec7421184736a6175a3006a67b19782721bf104a4f38f90d50f6",
+    "definitionsSha256": "6e78e6050eaa04e077438863f7e7a5f95108fe1d1cc8fbfbe8a5591f44001e7a",
+    "archivedApprovedCount": 743,
+    "allowedDonorCount": 585,
+    "splitPath": "scripts/hanja-component-phase3-split.json",
+    "splitHash": "82c340ef241cc0a7fd7df8de048e59e989ec92e83b11676d77516f15dc3704d7",
+    "previousRecipesPath": "scripts/hanja-component-reviewed-parts.json",
+    "previousRecipesFileSha256": "0e12975a9c57db5472ca0e0acea23a75426437b1e25bbcda6f2a9792ff9d1690"
+  },
+  "selection": {
+    "policy": "Allowed donor membership was checked before selecting or reading path data; selected the listed archived donors, not current runtime additions.",
+    "selectedDonors": [
+      "化",
+      "防",
+      "郡",
+      "快",
+      "打",
+      "社",
+      "然",
+      "用"
+    ],
+    "freshHeldOutTargetPathsViewed": false,
+    "freshHeldOutScoresViewed": false,
+    "oldRecipesCopiedUnchanged": 7,
+    "newActiveRecipes": 7,
+    "reviewedInactiveParts": 1,
+    "baselineAndExpandedRequireSameAllowedDonorPool": true
+  },
+  "visualReview": {
+    "method": "static-path-and-glyph-review",
+    "strokeWidth": 5,
+    "coordinateSystem": "100-unit frozen donor viewBox",
+    "renderMethod": "SVG rendered with sharp to WebP entirely in memory; whole donor, highlighted selected indices, and isolated component without fitting.",
+    "sheets": [
+      {
+        "donorGlyphs": [
+          "化",
+          "防"
+        ],
+        "svgSha256": "f3764b4897d9623694d3ef7835653da9bfb55a1a1f8c459dbbc677a1a79d8ae8"
+      },
+      {
+        "donorGlyphs": [
+          "郡",
+          "快"
+        ],
+        "svgSha256": "6a531383abd017132c53da5708eefdcb18cbf336a0516aba27288ad1dafbe349"
+      },
+      {
+        "donorGlyphs": [
+          "打",
+          "社"
+        ],
+        "svgSha256": "8e98d429cb3ff3ee2d526122c0e45d74f80fcda0baf3338ee8b71c8ad68cac35"
+      },
+      {
+        "donorGlyphs": [
+          "然",
+          "用"
+        ],
+        "svgSha256": "24cd1271e0062e5b20cc9fca0c7d98c9e10692c758448c6919d86ffe89c6aa78"
+      }
+    ],
+    "notes": "始点/終点 및 최종 획 번호를 표시해 donor의 다른 부품이 선택에 들어가지 않았는지 확인했다. 부품 자체를 다시 그리거나 확대 배치하지 않았다."
+  },
+  "validation": {
+    "archiveUnchanged": true,
+    "oldRecipeObjectsPreserved": 7,
+    "newActiveAccepted": 7,
+    "inactiveRejected": 1,
+    "allowedDonorPool": 585,
+    "skippedOldRecipes": [
+      {
+        "id": "grass-top-chuk-v1",
+        "donorGlyph": "蓄"
+      },
+      {
+        "id": "step-left-wang-v1",
+        "donorGlyph": "往"
+      },
+      {
+        "id": "silk-left-sun-v1",
+        "donorGlyph": "純"
+      }
+    ],
+    "registryCanonicalSha256": "ab956f010682ce56b1ef633489d1748d0bc4d4f7435af20fc76830bb0f30ff22",
+    "syntheticEnclosureProbe": {
+      "glyphType": "private-use synthetic fixture, not an evaluation target",
+      "operator": "⿵",
+      "status": "abstained",
+      "reason": "unsupported-operator:⿵"
+    },
+    "freshValidationTargetsExecuted": false,
+    "passed": true
+  },
+  "activeParts": [
+    {
+      "recipe": {
+        "id": "person-left-hwa-v1",
+        "glyph": "亻",
+        "position": "left",
+        "donorGlyph": "化",
+        "donorPathsSha256": "b45b8a6474c2a1d3e649acae360338ab439b0855932ada66fbfb014e29418a29",
+        "approvedPathIndices": [
+          1,
+          2
+        ],
+        "review": {
+          "status": "reviewed-component-assignment",
+          "method": "static-path-and-glyph-review",
+          "notes": "化 왼쪽의 최종 경로 1–2를 확인했다. 첫 긴 왼삐침과 그 안쪽에서 아래로 내려가는 세로를 亻에 배정하며, 오른쪽 匕의 3–4획은 포함하지 않았다.",
+          "limitations": "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다."
+        }
+      },
+      "active": true,
+      "actualForm": "亻 2획",
+      "donorDefinition": "⿰亻匕",
+      "donorEvidence": {
+        "glyph": "化",
+        "sourceImage": "BIN000F.gif",
+        "sourceRow": 14,
+        "verifiedAt": "2026-09-07",
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "frozenDonorPathsSha256": "b45b8a6474c2a1d3e649acae360338ab439b0855932ada66fbfb014e29418a29"
+      },
+      "selectedPaths": [
+        "M34.9 12.6 L39.5 19.3 L26.5 40.3 L10 58.6",
+        "M27.8 41.8 L31 49.6 L29.7 87.4"
+      ],
+      "selectedPathsSha256": "8d3274c38323d28650a2faef94ec60d03e85c9913524b23388a729ab530ca99b",
+      "upstreamIndices": [
+        1,
+        2
+      ],
+      "sourceBox": {
+        "x": 10,
+        "y": 12.6,
+        "width": 29.5,
+        "height": 74.80000000000001
+      },
+      "donorBox": {
+        "x": 10,
+        "y": 12.6,
+        "width": 80,
+        "height": 74.80000000000001
+      },
+      "checks": {
+        "allowedDonor": true,
+        "archivedApprovedDonor": true,
+        "exactFinalPathIndices": true,
+        "noCoordinateChanges": true,
+        "noBoundaryChanges": true,
+        "noOrderChanges": true,
+        "positionAssignmentVisuallyReviewed": true,
+        "newTargetApproval": false
+      }
+    },
+    {
+      "recipe": {
+        "id": "mound-left-bang-v1",
+        "glyph": "阝",
+        "position": "left",
+        "donorGlyph": "防",
+        "donorPathsSha256": "5bd2b28fcf50c4814dbec2079713f4d3c11a9c57022cb41df086c415bbbfc9d1",
+        "approvedPathIndices": [
+          1,
+          2,
+          3
+        ],
+        "review": {
+          "status": "reviewed-component-assignment",
+          "method": "static-path-and-glyph-review",
+          "notes": "防 왼쪽의 최종 경로 1–3을 확인했다. 위쪽 접힌 획, 아래로 굽은 별도 획, 마지막 긴 세로의 세 펜 경계를 그대로 보존한다. 오른쪽 方는 포함하지 않았다.",
+          "limitations": "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다. 왼쪽 阜 계열 위치에서만 검토했다. 오른쪽 邑 계열 阝의 자형이나 배치로 전이하지 않는다."
+        }
+      },
+      "active": true,
+      "actualForm": "왼쪽 阝 3획",
+      "donorDefinition": "⿰阝方",
+      "donorEvidence": {
+        "glyph": "防",
+        "verifiedAt": "2026-09-08",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "pathsSha256": "5bd2b28fcf50c4814dbec2079713f4d3c11a9c57022cb41df086c415bbbfc9d1",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "0602",
+          "glyph": "防",
+          "videoFilename": "0602 막을 방.mp4"
+        },
+        "verificationSource": "vivasam-high-2022",
+        "frozenDonorPathsSha256": "5bd2b28fcf50c4814dbec2079713f4d3c11a9c57022cb41df086c415bbbfc9d1"
+      },
+      "selectedPaths": [
+        "M17.6 22.8 L30.5 19 L33.8 20.9 L24.6 34.5",
+        "M24.7 36 L31.2 43.7 L33 50.9 L31.2 53 L19.7 50.3",
+        "M10 20.2 L14.3 24.4 L15 31.3 L12 87.9"
+      ],
+      "selectedPathsSha256": "4445f3a091889357c36d279f717872a78eb9e95c93b4bd3162e1d43e19d94e47",
+      "upstreamIndices": [
+        1,
+        2,
+        3
+      ],
+      "sourceBox": {
+        "x": 10,
+        "y": 19,
+        "width": 23.799999999999997,
+        "height": 68.9
+      },
+      "donorBox": {
+        "x": 10,
+        "y": 12.1,
+        "width": 80,
+        "height": 75.80000000000001
+      },
+      "checks": {
+        "allowedDonor": true,
+        "archivedApprovedDonor": true,
+        "exactFinalPathIndices": true,
+        "noCoordinateChanges": true,
+        "noBoundaryChanges": true,
+        "noOrderChanges": true,
+        "positionAssignmentVisuallyReviewed": true,
+        "newTargetApproval": false
+      }
+    },
+    {
+      "recipe": {
+        "id": "city-right-gun-v1",
+        "glyph": "阝",
+        "position": "right",
+        "donorGlyph": "郡",
+        "donorPathsSha256": "dce490a6aee5a39547667ab21ab219c44d4ed1d815e8c1832e0aae437de02125",
+        "approvedPathIndices": [
+          8,
+          9,
+          10
+        ],
+        "review": {
+          "status": "reviewed-component-assignment",
+          "method": "static-path-and-glyph-review",
+          "notes": "郡 오른쪽의 최종 경로 8–10을 확인했다. 위쪽 접힌 획, 오른쪽으로 크게 굽은 별도 획, 마지막 긴 세로를 그대로 선택하고 왼쪽 君의 1–7획은 제외했다.",
+          "limitations": "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다. 오른쪽 邑 계열 위치에서만 검토했다. 왼쪽 阜 계열 阝와 같은 위치·자형이라고 처리하지 않는다."
+        }
+      },
+      "active": true,
+      "actualForm": "오른쪽 阝 3획",
+      "donorDefinition": "⿰君阝",
+      "donorEvidence": {
+        "glyph": "郡",
+        "sourceImage": "BIN0009.gif",
+        "sourceRow": 16,
+        "verifiedAt": "2026-09-07",
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "frozenDonorPathsSha256": "dce490a6aee5a39547667ab21ab219c44d4ed1d815e8c1832e0aae437de02125"
+      },
+      "selectedPaths": [
+        "M68.5 20.6 L80.7 15 L85.2 18.4 L76 35.9",
+        "M76.9 34.4 L87.3 45.1 L89.8 54.6 L87.7 59.3 L84.7 59.9 L73.9 51.1",
+        "M60.3 16.4 L65.6 21.8 L64.8 90"
+      ],
+      "selectedPathsSha256": "f46cab6d6305eab39a25d0e5f4e35f54451488a4c7941d7ead1a029a403f09d6",
+      "upstreamIndices": [
+        8,
+        9,
+        10
+      ],
+      "sourceBox": {
+        "x": 60.3,
+        "y": 15,
+        "width": 29.5,
+        "height": 75
+      },
+      "donorBox": {
+        "x": 10.2,
+        "y": 10,
+        "width": 79.6,
+        "height": 80
+      },
+      "checks": {
+        "allowedDonor": true,
+        "archivedApprovedDonor": true,
+        "exactFinalPathIndices": true,
+        "noCoordinateChanges": true,
+        "noBoundaryChanges": true,
+        "noOrderChanges": true,
+        "positionAssignmentVisuallyReviewed": true,
+        "newTargetApproval": false
+      }
+    },
+    {
+      "recipe": {
+        "id": "heart-left-kwae-v1",
+        "glyph": "忄",
+        "position": "left",
+        "donorGlyph": "快",
+        "donorPathsSha256": "58916da9f9249db230509002a1cd9331a497e74114798d43eecbf795b41ddd18",
+        "approvedPathIndices": [
+          1,
+          2,
+          3
+        ],
+        "review": {
+          "status": "reviewed-component-assignment",
+          "method": "static-path-and-glyph-review",
+          "notes": "快 왼쪽의 최종 경로 1–3을 확인했다. 왼쪽 짧은 내려획, 오른쪽 작은 획, 위에서 아래로 이어지는 중앙 세로를 선택했다. 夬의 경로는 포함하지 않았다.",
+          "limitations": "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다."
+        }
+      },
+      "active": true,
+      "actualForm": "忄 3획",
+      "donorDefinition": "⿰忄夬",
+      "donorEvidence": {
+        "glyph": "快",
+        "verifiedAt": "2026-09-08",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "pathsSha256": "58916da9f9249db230509002a1cd9331a497e74114798d43eecbf795b41ddd18",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "1562",
+          "glyph": "快",
+          "videoFilename": "1562 쾌할 쾌.mp4"
+        },
+        "verificationSource": "vivasam-high-2022",
+        "frozenDonorPathsSha256": "58916da9f9249db230509002a1cd9331a497e74114798d43eecbf795b41ddd18"
+      },
+      "selectedPaths": [
+        "M12.2 36.4 L10 55.4",
+        "M28 34.5 L34.7 38.7 L36.5 42.3",
+        "M20 10.1 L26 16.2 L22.8 89.9"
+      ],
+      "selectedPathsSha256": "fd556bc58d57947b6b663c4906da546f416c7cee1ae3a9544867f89b6bc69e30",
+      "upstreamIndices": [
+        1,
+        2,
+        3
+      ],
+      "sourceBox": {
+        "x": 10,
+        "y": 10.1,
+        "width": 26.5,
+        "height": 79.80000000000001
+      },
+      "donorBox": {
+        "x": 10,
+        "y": 10.1,
+        "width": 80,
+        "height": 79.80000000000001
+      },
+      "checks": {
+        "allowedDonor": true,
+        "archivedApprovedDonor": true,
+        "exactFinalPathIndices": true,
+        "noCoordinateChanges": true,
+        "noBoundaryChanges": true,
+        "noOrderChanges": true,
+        "positionAssignmentVisuallyReviewed": true,
+        "newTargetApproval": false
+      }
+    },
+    {
+      "recipe": {
+        "id": "hand-left-ta-v1",
+        "glyph": "扌",
+        "position": "left",
+        "donorGlyph": "打",
+        "donorPathsSha256": "ea351fe596bfd4cbe47ad92ec635e456585d1a55f0831dc1afd478e28ce104b3",
+        "approvedPathIndices": [
+          1,
+          2,
+          3
+        ],
+        "review": {
+          "status": "reviewed-component-assignment",
+          "method": "static-path-and-glyph-review",
+          "notes": "打 왼쪽의 최종 경로 1–3을 확인했다. 가로, 세로갈고리, 왼아래에서 오른위로 향하는 획을 선택했고 오른쪽 丁의 4–5획은 포함하지 않았다.",
+          "limitations": "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다."
+        }
+      },
+      "active": true,
+      "actualForm": "扌 3획",
+      "donorDefinition": "⿰扌丁",
+      "donorEvidence": {
+        "glyph": "打",
+        "sourceImage": "BIN000D.gif",
+        "sourceRow": 22,
+        "verifiedAt": "2026-09-07",
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "frozenDonorPathsSha256": "ea351fe596bfd4cbe47ad92ec635e456585d1a55f0831dc1afd478e28ce104b3"
+      },
+      "selectedPaths": [
+        "M17.4 39.6 L47.1 34.9",
+        "M32.1 13 L37.3 17.3 L36.3 76.7 L33.6 84 L25 77.7",
+        "M10 65 L15.4 66.1 L45.1 48.3"
+      ],
+      "selectedPathsSha256": "302bcc6d303dbe90c9eae66b4d256b44847e524b8c9106805d57a082157121c8",
+      "upstreamIndices": [
+        1,
+        2,
+        3
+      ],
+      "sourceBox": {
+        "x": 10,
+        "y": 13,
+        "width": 37.1,
+        "height": 71
+      },
+      "donorBox": {
+        "x": 10,
+        "y": 13,
+        "width": 80,
+        "height": 74
+      },
+      "checks": {
+        "allowedDonor": true,
+        "archivedApprovedDonor": true,
+        "exactFinalPathIndices": true,
+        "noCoordinateChanges": true,
+        "noBoundaryChanges": true,
+        "noOrderChanges": true,
+        "positionAssignmentVisuallyReviewed": true,
+        "newTargetApproval": false
+      }
+    },
+    {
+      "recipe": {
+        "id": "show-left-sa-five-stroke-v1",
+        "glyph": "礻",
+        "position": "left",
+        "donorGlyph": "社",
+        "donorPathsSha256": "0abf32709b28b765dd9f4694d9b4352a034b9ca51bde4125a19e269af4fbc89b",
+        "approvedPathIndices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "review": {
+          "status": "reviewed-component-assignment",
+          "method": "static-path-and-glyph-review",
+          "notes": "社 왼쪽의 최종 경로 1–5는 두 가로, 중앙 세로, 왼쪽 획, 오른쪽 획으로 이루어진 한국 示형 5획이다. 입력 IDS의 직접 왼쪽 자식인 礻를 조회 키로만 유지하며, 4획 礻로 줄이거나 첫 가로를 점으로 바꾸지 않았다. 오른쪽 土의 6–8획은 포함하지 않았다.",
+          "limitations": "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다. 礻 키가 같아도 4획 礻 자형에 일반화하지 않는다. 생성 시 전체 획수 검사만으로 5획 示형 여부가 확정되지 않으므로 새 목표의 전체 자형·필순 대조를 별도로 요구한다."
+        }
+      },
+      "active": true,
+      "actualForm": "示형 5획; 礻는 IDS 조회 키",
+      "variant": {
+        "lookupGlyph": "礻",
+        "actualGlyphForm": "示",
+        "strokeCount": 5,
+        "automaticVariantInference": false,
+        "targetCountSufficientForVariant": false
+      },
+      "donorDefinition": "⿰礻土",
+      "donorEvidence": {
+        "glyph": "社",
+        "sourceImage": "BIN0016.gif",
+        "sourceRow": 11,
+        "verifiedAt": "2026-09-07",
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "frozenDonorPathsSha256": "0abf32709b28b765dd9f4694d9b4352a034b9ca51bde4125a19e269af4fbc89b"
+      },
+      "selectedPaths": [
+        "M14.6 23.8 L38 21.6",
+        "M10 36.8 L44.3 33.4",
+        "M24.4 37.2 L28.2 40.5 L28.2 84.7",
+        "M17.8 48.4 L20.1 52.1 L11.6 67",
+        "M34.4 46.4 L42.2 56.8"
+      ],
+      "selectedPathsSha256": "957999907fe4828d6abfdfab464733588b922f9f83c88044d1cda91afe2ae781",
+      "upstreamIndices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sourceBox": {
+        "x": 10,
+        "y": 21.6,
+        "width": 34.3,
+        "height": 63.1
+      },
+      "donorBox": {
+        "x": 10,
+        "y": 15.3,
+        "width": 80,
+        "height": 69.4
+      },
+      "checks": {
+        "allowedDonor": true,
+        "archivedApprovedDonor": true,
+        "exactFinalPathIndices": true,
+        "noCoordinateChanges": true,
+        "noBoundaryChanges": true,
+        "noOrderChanges": true,
+        "positionAssignmentVisuallyReviewed": true,
+        "newTargetApproval": false
+      }
+    },
+    {
+      "recipe": {
+        "id": "fire-bottom-yeon-v1",
+        "glyph": "灬",
+        "position": "bottom",
+        "donorGlyph": "然",
+        "donorPathsSha256": "14b9ad12f940c85529d661c4af42e9365703189960d4d01fea1f7ddb56e5dd0b",
+        "approvedPathIndices": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "review": {
+          "status": "reviewed-component-assignment",
+          "method": "static-path-and-glyph-review",
+          "notes": "然 아래의 최종 경로 9–12를 확인했다. 첫 획은 왼아래로 내려가고 나머지 세 획은 각각 오른아래로 향한다. 위쪽 肰의 1–8획을 제외하고 서로 구분된 아래 네 획을 그대로 선택했다.",
+          "limitations": "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다."
+        }
+      },
+      "active": true,
+      "actualForm": "灬 4획",
+      "donorDefinition": "⿱肰灬",
+      "donorEvidence": {
+        "glyph": "然",
+        "sourceImage": "BIN000B.gif",
+        "sourceRow": 4,
+        "verifiedAt": "2026-09-07",
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "frozenDonorPathsSha256": "14b9ad12f940c85529d661c4af42e9365703189960d4d01fea1f7ddb56e5dd0b"
+      },
+      "selectedPaths": [
+        "M20.1 73 L16.4 82.8 L10.9 90",
+        "M34 73.8 L39.4 84.6",
+        "M51.7 72.1 L58.4 78.6 L59.8 84.1",
+        "M71.3 72.7 L81.9 82.7 L84 89.5"
+      ],
+      "selectedPathsSha256": "95719ebfb16c0f7289bd0bc0a60fc810faa9d12ef351ffe14286c0d0ee9cb081",
+      "upstreamIndices": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "sourceBox": {
+        "x": 10.9,
+        "y": 72.1,
+        "width": 73.1,
+        "height": 17.900000000000006
+      },
+      "donorBox": {
+        "x": 10.9,
+        "y": 10,
+        "width": 78.19999999999999,
+        "height": 80
+      },
+      "checks": {
+        "allowedDonor": true,
+        "archivedApprovedDonor": true,
+        "exactFinalPathIndices": true,
+        "noCoordinateChanges": true,
+        "noBoundaryChanges": true,
+        "noOrderChanges": true,
+        "positionAssignmentVisuallyReviewed": true,
+        "newTargetApproval": false
+      }
+    }
+  ],
+  "reviewedInactiveParts": [
+    {
+      "recipe": {
+        "id": "open-enclosure-yong-v1",
+        "glyph": "冂",
+        "position": "enclosure",
+        "donorGlyph": "用",
+        "donorPathsSha256": "1151224338726b1dcb93ec8ba2fc62d4727cdbd5bf5ba2ca65c1b196e2379a34",
+        "approvedPathIndices": [
+          1,
+          2
+        ],
+        "review": {
+          "status": "reviewed-component-assignment",
+          "method": "static-path-and-glyph-review",
+          "notes": "用 바깥의 최종 경로 1–2를 확인했다. 왼쪽에서 아래·왼쪽으로 흐르는 첫 획과 위가로에서 오른세로·갈고리로 이어지는 둘째 획만 배정했다. 안쪽 두 가로와 중앙 세로의 3–5획은 제외했다.",
+          "limitations": "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다. 실제 donor IDS는 ⿵冂？이다. 현재 고정 엔진은 enclosure 레시피 donor를 ⿴로만 검증하고 합성도 ⿵를 지원하지 않으므로 활성 레지스트리에 넣지 않는다. 用의 왼삐침·오른갈고리를 다른 冂 자형에 자동 전이하지 않는다."
+        }
+      },
+      "active": false,
+      "actualForm": "用의 冂 2획",
+      "donorDefinition": "⿵冂？",
+      "donorEvidence": {
+        "glyph": "用",
+        "sourceImage": "BIN000B.gif",
+        "sourceRow": 20,
+        "verifiedAt": "2026-09-07",
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "frozenDonorPathsSha256": "1151224338726b1dcb93ec8ba2fc62d4727cdbd5bf5ba2ca65c1b196e2379a34"
+      },
+      "selectedPaths": [
+        "M26.9 12 L32.6 18.4 L31.7 45.2 L26.2 68.7 L15.7 87.2",
+        "M35 15 L76 10 L84.2 14.6 L84.3 84.6 L81.2 90 L68.7 82.2"
+      ],
+      "selectedPathsSha256": "2ded18f0e31b8c9cea86dd85932362264a9d4b390a7dc879fa4e815a319ffe25",
+      "upstreamIndices": [
+        1,
+        2
+      ],
+      "sourceBox": {
+        "x": 15.7,
+        "y": 10,
+        "width": 68.6,
+        "height": 80
+      },
+      "donorBox": {
+        "x": 15.7,
+        "y": 10,
+        "width": 68.6,
+        "height": 80
+      },
+      "checks": {
+        "allowedDonor": true,
+        "archivedApprovedDonor": true,
+        "exactFinalPathIndices": true,
+        "noCoordinateChanges": true,
+        "noBoundaryChanges": true,
+        "noOrderChanges": true,
+        "positionAssignmentVisuallyReviewed": true,
+        "newTargetApproval": false
+      },
+      "inactiveReason": "unsupported-⿵/enclosure-validation",
+      "actualDonorOperator": "⿵",
+      "engineRequiredEnclosureOperator": "⿴",
+      "passedToFixedEngine": false
+    }
+  ],
+  "limitations": [
+    "frozen 743 승인 snapshot 중 새 분할이 허용한 donor의 최종 경로를 정적으로 확인한 위치별 부품 배정이다. 이번 검토에서 원문 필순 영상·이미지를 다시 대조하지 않았다. 새 목표 한자의 전체 필순·방향·접합·자형 승인이나 다른 위치로의 전이 검증을 뜻하지 않는다. 선택한 최종 경로의 좌표·순서·펜 경계와 upstream 매핑을 변경하지 않았다.",
+    "社의 5획 示형은 礻 조회 키를 사용하지만 4획 礻와 같은 자형으로 판단하지 않는다. 전체 획수가 맞아도 목표 자형 검토는 별도다.",
+    "冂은 실제 ⿵ 구조를 보존하며 현재 고정 엔진에서는 비활성이다. ⿴로 재표기하거나 목표 IDS를 수정하지 않는다.",
+    "새 100자 평가의 정답 경로나 점수를 레시피 선택·수정에 사용하지 않았다. 새 표본 점수는 엔진과 레시피를 고정한 이후 별도 담당자가 계산한다."
+  ]
+}

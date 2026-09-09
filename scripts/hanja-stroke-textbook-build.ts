@@ -9,8 +9,9 @@ import { HANJA_STROKES, type HanjaTextbookStrokeData } from '../lib/hanja-stroke
 import { HANJA_TEXTBOOK_SOURCE } from '../lib/hanja-stroke-textbook.ts'
 import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
 import { CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE, parseCandidates } from './hanja-stroke-audit.ts'
-import { TEXTBOOK_REVIEW_REGISTRY, textbookGeometrySource, validateTextbookReview, type TextbookReviewRegistry } from './hanja-stroke-textbook.ts'
+import { TEXTBOOK_REVIEW_REGISTRY, textbookGeometrySource, textbookSourceGlyph, validateTextbookReview, type TextbookReviewRegistry } from './hanja-stroke-textbook.ts'
 import { textbookGeometry } from './hanja-stroke-textbook-corrections.ts'
+import { textbookAuthored, textbookAuthoredSourceMetadata, type TextbookAuthoredContext } from './hanja-stroke-textbook-authored.ts'
 
 export type TextbookManifest = {
   source: { id: string; sha256: string; url: string }
@@ -39,7 +40,7 @@ function manifestIndex(manifest: TextbookManifest) {
 }
 
 function candidateIndexes(korean: readonly Candidate[], japanese: readonly Candidate[], hanzi: readonly Candidate[]) {
-  return new Map([
+  return new Map<string, Map<string, Candidate>>([
     [CANDIDATE_SOURCE.sha256, indexBy(korean, (entry) => entry.character, 'Korean candidate glyph')],
     [JAPANESE_CANDIDATE_SOURCE.sha256, indexBy(japanese, (entry) => entry.character, 'Japanese candidate glyph')],
     [MAKE_ME_A_HANZI_SOURCE.sha256, indexBy(hanzi, (entry) => entry.character, 'Make Me a Hanzi candidate glyph')],
@@ -54,6 +55,7 @@ export function inspectTextbookQueue(
   ledger: TextbookReviewRegistry = TEXTBOOK_REVIEW_REGISTRY,
   japanese: readonly Candidate[] = [],
   hanzi: readonly Candidate[] = [],
+  authoredContext: TextbookAuthoredContext = {},
 ) {
   const sources = manifestIndex(manifest)
   const catalog = indexBy(characters, (entry) => entry.glyph, 'catalog glyph')
@@ -62,20 +64,22 @@ export function inspectTextbookQueue(
   if (ledger.sourceId !== manifest.source.id || ledger.manifestSha256 !== manifest.source.sha256
     || ledger.geometrySha256 !== CANDIDATE_SOURCE.sha256) throw new Error('Textbook review source changed')
   return ledger.records.map((record) => {
-    const source = sources.get(record.glyph)
+    const source = sources.get(textbookSourceGlyph(record))
     const character = catalog.get(record.glyph)
-    const geometrySource = textbookGeometrySource(record)
-    const candidate = geometry.get(geometrySource)!.get(record.glyph)
+    const geometrySource = textbookGeometrySource(record, authoredContext)
+    const authored = textbookAuthored(record, authoredContext)
+    const candidate = geometry.get(geometrySource)?.get(record.glyph)
     if (!['pending', 'matched', 'conflict'].includes(record.status)) throw new Error(`Unknown review status: ${record.glyph}`)
     if (!source || source.manifestRow !== record.manifestRow || source.videoFilename !== record.videoFilename) {
       throw new Error(`Textbook original row mismatch: ${record.glyph}`)
     }
     if (!character || character.strokes !== record.expectedStrokes
-      || !candidate || candidate.strokes.length !== record.candidateStrokes
-      || candidate.medians.length !== candidate.strokes.length) {
+      || (authored ? authored.paths.length !== record.candidateStrokes
+        : !candidate || candidate.strokes.length !== record.candidateStrokes
+          || candidate.medians.length !== candidate.strokes.length)) {
       throw new Error(`Textbook candidate/catalog mismatch: ${record.glyph}`)
     }
-    const paths = normalizeMedians(candidate.medians)
+    const paths = authored?.paths ?? normalizeMedians(candidate!.medians)
     return { glyph: record.glyph, grade: character.readingGrade, status: record.status, geometrySource,
       manifestRow: source.manifestRow, videoFilename: source.videoFilename,
       expectedStrokes: character.strokes, candidateStrokes: paths.length,
@@ -92,22 +96,31 @@ export function buildTextbookBundle(
   ledger: TextbookReviewRegistry = TEXTBOOK_REVIEW_REGISTRY,
   japanese: readonly Candidate[] = [],
   hanzi: readonly Candidate[] = [],
+  authoredContext: TextbookAuthoredContext = {},
 ) {
-  inspectTextbookQueue(manifest, characters, candidates, ledger, japanese, hanzi)
+  inspectTextbookQueue(manifest, characters, candidates, ledger, japanese, hanzi, authoredContext)
   const geometry = candidateIndexes(candidates, japanese, hanzi)
+  const authoredSources: ReturnType<typeof textbookAuthoredSourceMetadata>[] = []
   const entries = ledger.records.filter((record) => record.status === 'matched').map((record) => {
-    const geometrySource = textbookGeometrySource(record)
-    const { paths, sourceStrokeIndices } = textbookGeometry(record, geometry.get(geometrySource)!.get(record.glyph)!.medians)
+    const geometrySource = textbookGeometrySource(record, authoredContext)
+    const authored = textbookAuthored(record, authoredContext)
+    if (authored) authoredSources.push(textbookAuthoredSourceMetadata(authored))
+    const { paths, sourceStrokeIndices } = authored
+      ? { paths: authored.paths, sourceStrokeIndices: authored.paths.map(() => null) }
+      : textbookGeometry(record, geometry.get(geometrySource)!.get(record.glyph)!.medians)
     const entry: HanjaTextbookStrokeData = {
       glyph: record.glyph, verificationSource: HANJA_TEXTBOOK_SOURCE.id,
       verifiedAt: record.reviewedAt ?? '', geometrySource,
       ...(record.geometryCorrection ? { geometryCorrection: record.geometryCorrection, sourceStrokeIndices } : {}),
+      ...(authored ? { geometryAuthored: authored.id, sourceStrokeIndices } : {}),
       pathsSha256: createHash('sha256').update(JSON.stringify(paths)).digest('hex'),
       sourceReference: { manifestSha256: manifest.source.sha256, manifestRow: record.manifestRow,
-        glyph: record.glyph, videoFilename: record.videoFilename },
+        glyph: textbookSourceGlyph(record), videoFilename: record.videoFilename,
+        ...(record.sourceFormCorrection ? { formCorrection: record.sourceFormCorrection,
+          formCorrectionSha256: record.sourceFormCorrectionSha256 } : {}) },
       paths,
     }
-    validateTextbookReview(entry, record.expectedStrokes, ledger)
+    validateTextbookReview(entry, record.expectedStrokes, ledger, authoredContext)
     const { verificationSource: _source, ...published } = entry
     return published
   })
@@ -126,8 +139,8 @@ export function buildTextbookBundle(
     },
     geometrySource: sourceMetadata(CANDIDATE_SOURCE),
     ...(entries.some((entry) => entry.geometrySource !== CANDIDATE_SOURCE.sha256)
-      ? { geometrySources: [CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE]
-        .filter((source) => entries.some((entry) => entry.geometrySource === source.sha256)).map(sourceMetadata) }
+      ? { geometrySources: [...[CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE]
+        .filter((source) => entries.some((entry) => entry.geometrySource === source.sha256)).map(sourceMetadata), ...authoredSources] }
       : {}),
     characters: entries,
   }

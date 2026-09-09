@@ -27,7 +27,7 @@ export const HANJA_STROKE_SOURCE = {
 
 type HanjaStrokeGeometry = {
   glyph: string
-  /** SHA-256 of the independently reviewed upstream geometry, if imported. */
+  /** SHA-256 of upstream geometry, or of an explicitly local authored entry. */
   geometrySource?: string
   /** One-based upstream stroke indices, only for an explicitly reviewed correction. */
   strokeOrder?: readonly number[]
@@ -42,6 +42,7 @@ type HanjaStrokeGeometry = {
 }
 
 export type HanjaEomunhoeStrokeData = HanjaStrokeGeometry & {
+  geometryAuthored?: never
   /** Omitted in the original f37 registry for backward compatibility. */
   verificationSource?: 'eomunhoe-f37'
   sourceImage: string
@@ -53,6 +54,8 @@ export type HanjaEomunhoeStrokeData = HanjaStrokeGeometry & {
 }
 
 export type HanjaTextbookStrokeData = HanjaStrokeGeometry & {
+  /** Local authored registry ID; this geometry has all-null sourceStrokeIndices. */
+  geometryAuthored?: string
   verificationSource: 'vivasam-high-2022'
   sourceImage?: never
   sourceRow?: never
@@ -65,6 +68,8 @@ export type HanjaTextbookStrokeData = HanjaStrokeGeometry & {
     manifestRow: string
     glyph: string
     videoFilename: string
+    formCorrection?: string
+    formCorrectionSha256?: string
   }
 }
 

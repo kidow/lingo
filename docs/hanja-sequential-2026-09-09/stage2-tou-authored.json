@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-09",
+  "runtimePublished": false,
+  "purpose": "원본 전체 영상과 직접 대조한 鬪 로컬 authored 기하학 통합 제안",
+  "sourceManifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+  "sourceAuthority": "비상교육 2022 고등 한문 보조자료; 한국어문회의 개별 필순 승인으로 표기하지 않음",
+  "geometryAvailability": {
+    "Ko": null,
+    "Ja": null,
+    "MM": null,
+    "decision": "20개 로컬 authored 중앙선. 외부 원본 획 번호 전부 null."
+  },
+  "coordinateSystem": {
+    "viewBox": "0 0 100 100",
+    "strokeWidth": 5,
+    "linecap": "round",
+    "linejoin": "round"
+  },
+  "reviewEvidence": {
+    "wholeVideo": {
+      "fps": 2,
+      "frameCount": 53,
+      "firstSample": 0,
+      "lastSample": 26
+    },
+    "completedStrokeSamples": {
+      "fps": 12,
+      "strokeEndsSeconds": [
+        3.25,
+        4.5833,
+        5.5833,
+        6.3333,
+        7.4167,
+        8.3333,
+        9.3333,
+        10.3333,
+        11.3333,
+        15.5833,
+        16.4167,
+        17.3333,
+        18.3333,
+        19.0833,
+        19.9167,
+        20.8333,
+        21.9167,
+        22.8333,
+        25.0833,
+        26.3333
+      ],
+      "policy": "직접 확인한 프레임 표본. 자동 검출한 펜업 시각 아님."
+    },
+    "enlargedSamples": [
+      0,
+      4.6667,
+      6.4167,
+      11.4167,
+      15.6667,
+      19.1667,
+      22,
+      26.5
+    ],
+    "consecutiveIntervals": [
+      {
+        "start": 14.25,
+        "end": 15.75,
+        "fps": 12
+      },
+      {
+        "start": 17,
+        "end": 19.4167,
+        "fps": 12
+      },
+      {
+        "start": 24,
+        "end": 26.5,
+        "fps": 12
+      }
+    ],
+    "mediaHandling": "원본 MP4와 모든 프레임은 메모리에서만 처리. 배포 산출물에 원본 영상/프레임 없음.",
+    "perStrokeReview": [
+      {
+        "pathIndex": 1,
+        "sampleTimeSeconds": 3.25,
+        "part": "왼 바깥 세로",
+        "observation": "위→아래. 아래쪽에서 약간 왼쪽으로 흐르며, 마지막에 연결되는 가로 없음.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 2,
+        "sampleTimeSeconds": 4.5833,
+        "part": "왼 王 첫가로",
+        "observation": "왼→오른위. 바깥 세로와 시작점 분리.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 3,
+        "sampleTimeSeconds": 5.5833,
+        "part": "왼 王 안가로",
+        "observation": "왼→오른위.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 4,
+        "sampleTimeSeconds": 6.3333,
+        "part": "왼 王 중앙세로",
+        "observation": "위→아래. 첫가로에 닿아 시작하여 밑가로 위치까지.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 5,
+        "sampleTimeSeconds": 7.4167,
+        "part": "왼 王 밑가로",
+        "observation": "왼→오른위. 바깥 세로와 중앙세로에 닿음.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 6,
+        "sampleTimeSeconds": 8.3333,
+        "part": "오른 王 첫가로",
+        "observation": "왼→오른위. 왼 王 및 오른 바깥 세로와 분리.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 7,
+        "sampleTimeSeconds": 9.3333,
+        "part": "오른 王 안가로",
+        "observation": "왼→오른위.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 8,
+        "sampleTimeSeconds": 10.3333,
+        "part": "오른 王 중앙세로",
+        "observation": "위→아래. 첫가로와 밑가로에 닿음.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 9,
+        "sampleTimeSeconds": 11.3333,
+        "part": "오른 王 밑가로",
+        "observation": "왼→오른위. 양옆 부품과 분리.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 10,
+        "sampleTimeSeconds": 15.5833,
+        "part": "오른 바깥 세로갈고리",
+        "observation": "위→아래→왼위 갈고리. 14.25–15.75초 연속 12fps로 한 획의 이어짐 확인.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 11,
+        "sampleTimeSeconds": 16.4167,
+        "part": "豆 첫가로",
+        "observation": "왼→오른위. 王 밑가로 및 아래 口와 분리.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 12,
+        "sampleTimeSeconds": 17.3333,
+        "part": "豆 口 왼세로",
+        "observation": "위→아래오른쪽. 다음 꺾음과 별개 펜.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 13,
+        "sampleTimeSeconds": 18.3333,
+        "part": "豆 口 위오른꺾음",
+        "observation": "왼→오른위→아래. 17.00–18.3333초 연속 확대에서 가로에서 오른세로로 이어짐 확인.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 14,
+        "sampleTimeSeconds": 19.0833,
+        "part": "豆 口 밑가로",
+        "observation": "왼→오른위. 양 세로와 닿아 口를 닫음. 18.4167–19.0833초 확인.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 15,
+        "sampleTimeSeconds": 19.9167,
+        "part": "豆 왼점",
+        "observation": "왼위→오른아래. 아래 밑가로에 닿음.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 16,
+        "sampleTimeSeconds": 20.8333,
+        "part": "豆 오른삐침",
+        "observation": "오른위→왼아래. 아래 밑가로에 닿고 위 口와 분리.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 17,
+        "sampleTimeSeconds": 21.9167,
+        "part": "豆 밑가로",
+        "observation": "왼아래→오른위. 앞 두 획의 아래 끝에 닿음.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 18,
+        "sampleTimeSeconds": 22.8333,
+        "part": "寸 가로",
+        "observation": "왼→오른위 후 거의 수평. 오른 바깥 세로 및 豆 口와 분리.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 19,
+        "sampleTimeSeconds": 25.0833,
+        "part": "寸 세로갈고리",
+        "observation": "위→아래→왼위 갈고리. 24.00–25.0833초 연속 12fps에서 갈고리 진행 확인. 24.8초는 미완성.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      },
+      {
+        "pathIndex": 20,
+        "sampleTimeSeconds": 26.3333,
+        "part": "寸 점",
+        "observation": "왼위→오른아래. 세로갈고리와 분리. 25.25–26.5초 연속 12fps에서 방향과 완료 확인.",
+        "sequence": "match",
+        "direction": "match",
+        "penBoundary": "match",
+        "form": "match",
+        "joinsAtWidth5": "match"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "vivasam-1598-tou-authored-v1",
+      "glyph": "鬪",
+      "sourceVideoSha256": "c4435cfd4007431149e8ccd943fbfaaa9f6187aeb2746bfd1f455b64f3e20412",
+      "paths": [
+        "M11.89 15.81 L12.7 27.44 L12.16 51.1 L10 81.38",
+        "M22.16 16.22 L41.62 11.8",
+        "M23.24 26.04 L39.73 23.63",
+        "M31.62 14.61 L30.81 34.86",
+        "M13.78 39.67 L30.27 37.07 L41.62 33.86",
+        "M52.7 12.61 L74.05 10",
+        "M53.78 22.63 L74.05 20.23",
+        "M64.86 11.8 L63.78 31.25",
+        "M52.43 34.06 L77.84 30.45",
+        "M88.65 10.6 L90 19.82 L88.92 73.56 L88.38 87.39 L87.3 90 L77.57 81.38",
+        "M28.38 47.09 L41.35 44.89",
+        "M27.57 54.91 L29.46 62.13",
+        "M28.65 55.11 L41.62 52.31 L42.97 53.31 L41.62 60.73",
+        "M29.73 62.13 L41.62 59.92",
+        "M30 67.94 L32.43 72.16",
+        "M41.89 66.14 L38.65 71.75 L36.49 74.36",
+        "M25.95 78.57 L46.49 73.36",
+        "M52.97 55.11 L67.3 51.7 L78.11 51.9",
+        "M67.3 41.48 L67.84 47.29 L68.38 74.36 L67.57 78.97 L66.22 81.78 L59.73 79.37",
+        "M53.51 63.93 L58.92 67.54"
+      ],
+      "pathsSha256": "8913c66ba2fc1784ea9e351cfec507a6d8b5efc81fec727bc0c3f667f4d1f86c",
+      "authoredPathIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "borrowedParts": [],
+      "notes": [
+        "비상교육 2022 고등 한문 원문 1598 영상의 전체 순서·방향·펜 경계와 누적 자형을 직접 확인한 뒤 작성한 100×100 중앙선 좌표입니다.",
+        "정확한 鬪 기하학이 고정 Ko·Ja·Make Me a Hanzi에 없어 외부 경로를 복사하거나 다른 글자 이름으로 대체하지 않았습니다. 20획 모두 로컬 authored이며 모든 sourceStrokeIndices는 null입니다.",
+        "영상의 붓 외곽을 배포하지 않고 단순 중앙선만 별도로 기록했습니다. 출처 영상의 필순 근거와 로컬 좌표의 작성 주체를 분리합니다.",
+        "왼 바깥 세로 1획 → 왼 王 4획 → 오른 王 4획 → 오른 바깥 세로갈고리 1획 → 豆 7획 → 寸 3획의 순서를 유지합니다.",
+        "폭 5와 둥근 끝·접합에서 왼 王 밑가로와 바깥 세로, 王 중앙 세로와 가로, 豆 口 폐합 및 아래 두 획과 밑가로, 寸 가로와 세로의 접합을 확인했습니다. 좌우 王 사이와 오른 바깥 세로, 豆와寸은 분리합니다."
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "glyph": "鬪",
+      "hun": "싸움",
+      "eum": "투",
+      "grade": "4급",
+      "expectedStrokes": 20,
+      "sourceStatus": "exact",
+      "sourceGlyph": "鬪",
+      "manifestRow": "1598",
+      "videoFilename": "1598 싸울 투.mp4",
+      "status": "matched",
+      "geometryAuthored": "vivasam-1598-tou-authored-v1",
+      "geometrySource": "9b88b8f481d6d5e5cc2008557b33cec7a156608f66148f42247a81b6eb488617",
+      "sourceStrokeIndices": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1598.mp4",
+        "sha256": "c4435cfd4007431149e8ccd943fbfaaa9f6187aeb2746bfd1f455b64f3e20412",
+        "bytes": 908435
+      },
+      "durationSeconds": 26.565,
+      "strokeEndsSeconds": [
+        3.25,
+        4.5833,
+        5.5833,
+        6.3333,
+        7.4167,
+        8.3333,
+        9.3333,
+        10.3333,
+        11.3333,
+        15.5833,
+        16.4167,
+        17.3333,
+        18.3333,
+        19.0833,
+        19.9167,
+        20.8333,
+        21.9167,
+        22.8333,
+        25.0833,
+        26.3333
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "reviewedAt": "2026-09-09",
+      "reviewer": "Codex / hanja_component_geometry",
+      "reviewMethod": "video-frame-sequence",
+      "notes": "원본 전체 2fps 53프레임과 모든 20획 완료 표본을 독립 관찰했습니다. 12fps 확대 연속 구간으로 꺾음/갈고리의 한 펜 경계를 확인하고, 로컬 authored 20개 누적 경로 및 폭 5 접합을 전부 비교했습니다. 외부 corpus 기하학이 아닌 로컬 좌표를 직접 참조합니다."
+    }
+  ]
+}

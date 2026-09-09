@@ -7,6 +7,8 @@ export type TextbookCorrection = {
   glyph: string
   id: string
   geometrySource: string
+  /** Already reviewed display coordinates; omit for upstream corpus coordinates. */
+  coordinateSystem?: 'viewBox100'
   sourceVideoSha256: string
   originalMediansSha256: string
   /** null identifies a separately authored, video-reviewed stroke; explicit points are required. */
@@ -22,12 +24,14 @@ type CorrectionReview = {
   sourceVideo?: { sha256: string }
 }
 
-export const TEXTBOOK_CORRECTIONS: readonly TextbookCorrection[] = registry.recipes
+// JSON widens optional literals; textbookCorrection validates the discriminator at runtime.
+export const TEXTBOOK_CORRECTIONS = registry.recipes as readonly TextbookCorrection[]
 const koSha = '7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e'
 
 /** Pin both the output geometry and its exact correspondence to upstream strokes. */
 export function textbookCorrectionSha256(recipe: TextbookCorrection) {
   const canonical = { glyph: recipe.glyph, id: recipe.id, geometrySource: recipe.geometrySource,
+    ...(recipe.coordinateSystem !== undefined ? { coordinateSystem: recipe.coordinateSystem } : {}),
     sourceVideoSha256: recipe.sourceVideoSha256, originalMediansSha256: recipe.originalMediansSha256,
     strokes: recipe.strokes.map(({ sourceStroke, points }) => ({ sourceStroke, ...(points ? { points } : {}) })),
     notes: recipe.notes }
@@ -41,6 +45,7 @@ export function textbookCorrection(record: CorrectionReview,
   const matches = recipes.filter((recipe) => recipe.glyph === record.glyph && recipe.id === record.geometryCorrection)
   const recipe = matches[0]
   if (matches.length !== 1 || !recipe || recipe.geometrySource !== (record.geometrySource ?? koSha)
+    || (recipe.coordinateSystem !== undefined && recipe.coordinateSystem !== 'viewBox100')
     || !/^[a-f0-9]{64}$/.test(recipe.sourceVideoSha256)
     || recipe.sourceVideoSha256 !== record.sourceVideo?.sha256
     || record.correctionSha256 !== textbookCorrectionSha256(recipe)
@@ -58,6 +63,7 @@ export function textbookGeometry(record: CorrectionReview, original: Medians,
   if (recipe.originalMediansSha256 !== createHash('sha256').update(JSON.stringify(original)).digest('hex')) {
     throw new Error(`Textbook correction original geometry changed: ${record.glyph}`)
   }
+  const normalized = recipe.coordinateSystem === 'viewBox100' ? normalizeMedians(original) : undefined
   const medians = recipe.strokes.map(({ sourceStroke, points }) => {
     if (sourceStroke !== null && (!Number.isSafeInteger(sourceStroke) || sourceStroke < 1 || sourceStroke > original.length)) {
       throw new Error(`Textbook correction source index invalid: ${record.glyph}`)
@@ -66,7 +72,18 @@ export function textbookGeometry(record: CorrectionReview, original: Medians,
     if (!stroke || stroke.length < 2 || stroke.some((point) => point.length !== 2 || point.some((value) => !Number.isFinite(value)))) {
       throw new Error(`Textbook correction points invalid: ${record.glyph}`)
     }
+    if (normalized && points?.some(point => point.some(value => value < 0 || value > 100))) {
+      throw new Error(`Textbook correction display coordinates out of bounds: ${record.glyph}`)
+    }
     return stroke
   })
+  if (normalized) {
+    return {
+      paths: recipe.strokes.map(({ sourceStroke, points }) => points
+        ? points.map(([x, y], index) => `${index ? 'L' : 'M'}${x} ${y}`).join(' ')
+        : normalized[sourceStroke! - 1]),
+      sourceStrokeIndices: recipe.strokes.map(stroke => stroke.sourceStroke),
+    }
+  }
   return { paths: normalizeMedians(medians), sourceStrokeIndices: recipe.strokes.map((stroke) => stroke.sourceStroke) }
 }

@@ -1,0 +1,5269 @@
+{
+  "schemaVersion": 1,
+  "method": "reference-guided-whole-target-replacement",
+  "independentPredictionAccuracy": false,
+  "limitations": [
+    "현재 승인된 동일 글자의 전체 경로로 교체한 결과다. 독립 합성 예측의 정확도 평가가 아니다.",
+    "beforeComparison은 원래 초안과 참조 경로의 기하학적 진단이다. 필순의 언어적 정답률을 뜻하지 않는다.",
+    "원본 초안의 경로·부품 배치·실행 순서는 보존한다. 이 보고서는 런타임이나 승인 원장을 변경하지 않는다."
+  ],
+  "input": {
+    "frozenFileSha256": "cc8d31b3a612ed729c311122da7ea829eefc827a9af045cd63efe2ef7e378bf8",
+    "frozenResultSha256": "f2973957b5d311a2e709f357c63462e8dbebebd249f1fac07e9c010a6994dede",
+    "approvedSnapshotSha256": "6b1df5f75b96705e4bf1553b862f0d3d9de5f9bcb6cbf139c54f1ef94baddcf1",
+    "donorSnapshotSha256": "6b1df5f75b96705e4bf1553b862f0d3d9de5f9bcb6cbf139c54f1ef94baddcf1",
+    "ledgerSha256": "09b464a29b41c0363639b14cfa47b2e2c70915f9551f860e302b95426b74f989",
+    "authoredRegistrySha256": "be5f8438688bfb6d60a456cc52e75d63251d6b99f43e871ece8404a52d661fb5",
+    "correctionsRegistrySha256": "bc3680f524b42a313acc67eea39567ae32afc3f955fead162a7db54776aa40cf",
+    "sourceFormRegistrySha256": "ddfac00af86d5af8c273e9aaf0df0b1f5c239b42b92411bc0e0c3afc1aec0bd7"
+  },
+  "records": [
+    {
+      "glyph": "砲",
+      "expectedStrokes": 10,
+      "original": {
+        "glyph": "砲",
+        "expectedStrokes": 10,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M18.7875 24.575 L23.73625 25.7615 L47 20.422250001",
+          "M28.26875 26.86325 L30.11875 30.59225 L24.245 49.06775 L17.4 63.221 L10 73.47575",
+          "M24.29125 52.2035 L27.06625 79.577749999",
+          "M25.91 53.64425 L39.97 49.40675 L42.88375 51.10175 L44.3175 54.746 L40.47875 70.76375",
+          "M27.71375 74.9165 L41.21875 71.61125 L44.1325 72.62825",
+          "M63.150442478 10 L65.333333333 16.300000001 L59.384955752 31.9 L53 43.200000001",
+          "M60.912979351 31.9 L77.994100295 26.3 L80.94100295 28.9 L77.721238938 60 L75.156342183 64.4 L71.063421829 58.399999999",
+          "M55.401179941 47.7 L66.424778761 43.8 L67.516224189 45.699999999 L65.333333333 57.599999999",
+          "M57.747787611 60.3 L67.789085546 59",
+          "M56.383480826 47.7 L56.056047198 76.399999999 L57.147492625 82.699999999 L60.421828909 86.999999999 L67.461651917 90 L77.230088496 90 L87.325958702 84.399999999 L89.727138643 80.5 L90 66"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "cd1428613a3a6dd48fe8d3be",
+            "glyph": "石",
+            "position": "left",
+            "donorGlyph": "石",
+            "donorPathsSha256": "5cd473fb846307a567910f380a11fb376f11939dc7fd9ab5009e62141b9a963a",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10,
+              "y": 20.422250000579567,
+              "width": 37,
+              "height": 59.15549999884089
+            },
+            "transform": {
+              "sx": 0.4625,
+              "sy": 0.8474999999833938,
+              "tx": 5.375,
+              "ty": 7.625000000830326
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "ff376299ead837809be01e2a",
+            "glyph": "包",
+            "position": "right",
+            "donorGlyph": "包",
+            "donorPathsSha256": "72d63a882f44f7fa9d7e447cfcf326b6941d746355f1c3c137cd4bdc105bb624",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 53,
+              "y": 10.000000000783793,
+              "width": 37,
+              "height": 79.99999999843243
+            },
+            "transform": {
+              "sx": 0.5457227138643067,
+              "sy": 0.9999999999804053,
+              "tx": 44.21386430678466,
+              "ty": 9.797389566301717e-10
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급II",
+        "hun": "대포",
+        "eum": "포",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "caea4d7afac7915c3cd76746682d5bf6a9ab495c499e8f1cca27d26982bbc533",
+      "originalPathsSha256": "906e037b8e397526d4faa1d61f11f4c5f4cf11bb00d28e148ed01f51703296b0",
+      "status": "held",
+      "holdReason": "missing-whole-target-evidence",
+      "beforeComparison": null,
+      "corrected": null
+    },
+    {
+      "glyph": "略",
+      "expectedStrokes": 11,
+      "original": {
+        "glyph": "略",
+        "expectedStrokes": 11,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M10 20.078740157 L13.46875 29.737532808 L16.475 85.065616798",
+          "M13.4225 22.073490814 L16.15125 24.3832021 L41.7275 14.619422572 L46.1675 18.608923885 L47 21.54855643 L41.7275 85.380577428",
+          "M14.67125 50.62992126 L45.0575 44.960629921",
+          "M26.7425 22.17847769 L29.10125 27.322834646 L28.7775 72.782152231",
+          "M16.05875 76.351706037 L42.79125 72.362204724",
+          "M66.64375 10 L68.2625 14.199475066 L66.505 22.388451444 L62.805 34.146981627 L58.92 41.181102362",
+          "M67.29125 24.803149606 L74.5525 21.128608924 L75.80125 22.80839895 L76.495 24.803149606 L71.685 39.501312336 L63.68375 57.454068241 L58.59625 64.173228346 L53 68.057742782",
+          "M64.42375 32.677165354 L66.45875 34.251968504 L79.64 57.769028871 L90 59.658792651",
+          "M61.92625 67.007874016 L63.545 70.262467192 L65.34875 90",
+          "M64.285 68.057742782 L75.61625 64.69816273 L77.5125 68.687664042 L75.06125 80.866141732",
+          "M65.58 84.225721785 L77.65125 82.755905512"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "273be41c4f2f6b0f534b26a4",
+            "glyph": "田",
+            "position": "left",
+            "donorGlyph": "田",
+            "donorPathsSha256": "c289c2d598ee975628f4f33d098dc6755f90f0998e1d2db743818444656c8ee2",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10,
+              "y": 14.619422572178493,
+              "width": 37,
+              "height": 70.76115485564303
+            },
+            "transform": {
+              "sx": 0.4625,
+              "sy": 1.0498687664041992,
+              "tx": 5.375,
+              "ty": -2.493438320209961
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "94262a95cddd834a338913e3",
+            "glyph": "各",
+            "position": "right",
+            "donorGlyph": "各",
+            "donorPathsSha256": "973a3f2756e7f30dae44232ba2444c825f8ceb0b7663626ef849174c5abef287",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 53,
+              "y": 10,
+              "width": 37,
+              "height": 79.99999999999997
+            },
+            "transform": {
+              "sx": 0.4625,
+              "sy": 1.0498687664041995,
+              "tx": 48.375,
+              "ty": -2.493438320209968
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 6
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "간략할/약할",
+        "eum": "략",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "4f56d5ae96bbce7d0f238b83a42f08feb986dd3e5cb4d0deded40f8e94c3e960",
+      "originalPathsSha256": "987a254fd35bea5456661be016519db26d7f248911952fb54ebc6495f39c0e1e",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 12.960042951261626,
+        "unorderedMeanDistance": 12.960042951261626,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 18.156686733286882
+      },
+      "corrected": {
+        "paths": [
+          "M10 37.1 L12.7 40.7 L16.7 64.2",
+          "M14.5 37.6 L33.2 34.7 L37.6 37.7 L33.3 61",
+          "M17.9 48.4 L31.7 46.5",
+          "M22.6 38.5 L24.9 41 L24.8 56.7",
+          "M18.7 60.6 L31.3 57.3",
+          "M51.9 14.5 L55.4 19.3 L42.8 40.3",
+          "M52.4 31.5 L64.4 27.7 L68.6 30 L46.9 57.3 L27.5 73.3",
+          "M48.9 36.5 L74 58.4 L90 61.5",
+          "M42.3 65.3 L45.1 67.3 L48.7 85.5",
+          "M47.6 65.4 L66.9 63.8 L69.3 66.8 L64.4 76.2",
+          "M49.9 79.6 L69.7 78.5"
+        ],
+        "pathsSha256": "7e0103b5c3d2a0c6ef9b7198f4f02328516b533f5904690cdd0ab42b0f4b35fb",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "6f7f390370b21a48c0d7e832bf3cba8b024c117fc0e631a09c82f07bf606da1a",
+        "reviewRecordSha256": "6152368c68d160f3474e607970ea0f3109506f9a1127275f2c221080fce02830",
+        "runtimeReference": {
+          "glyph": "略",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-a-b-0400",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            4,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "pathsSha256": "7e0103b5c3d2a0c6ef9b7198f4f02328516b533f5904690cdd0ab42b0f4b35fb",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0400",
+            "glyph": "略",
+            "videoFilename": "0400 간략할 략.mp4"
+          },
+          "paths": [
+            "M10 37.1 L12.7 40.7 L16.7 64.2",
+            "M14.5 37.6 L33.2 34.7 L37.6 37.7 L33.3 61",
+            "M17.9 48.4 L31.7 46.5",
+            "M22.6 38.5 L24.9 41 L24.8 56.7",
+            "M18.7 60.6 L31.3 57.3",
+            "M51.9 14.5 L55.4 19.3 L42.8 40.3",
+            "M52.4 31.5 L64.4 27.7 L68.6 30 L46.9 57.3 L27.5 73.3",
+            "M48.9 36.5 L74 58.4 L90 61.5",
+            "M42.3 65.3 L45.1 67.3 L48.7 85.5",
+            "M47.6 65.4 L66.9 63.8 L69.3 66.8 L64.4 76.2",
+            "M49.9 79.6 L69.7 78.5"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "略",
+          "manifestRow": "0400",
+          "videoFilename": "0400 간략할 략.mp4",
+          "expectedStrokes": 11,
+          "candidateStrokes": 11,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-a-b-0400",
+          "correctionSha256": "1e5b399030ab7eb7a826e541c143c4028385af600370f2af2bedb0d5e86db4f5",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0400.mp4",
+            "sha256": "dc558cd4876368ff7fc08e0958bdf5932246427027a6461b13bf06a4857323bc",
+            "bytes": 572569
+          },
+          "strokeEndsSeconds": [
+            1.5,
+            3.5,
+            4.5,
+            5,
+            6,
+            7.5,
+            10.5,
+            12.5,
+            14,
+            15,
+            16.3
+          ],
+          "durationSeconds": 16.348,
+          "pathsSha256": "7e0103b5c3d2a0c6ef9b7198f4f02328516b533f5904690cdd0ab42b0f4b35fb",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "원본 田 내부는 가로3획 다음 세로4획이며 Ja3·4는 반대다. 원본6획 끝은 田 오른벽과 분리되지만 후보는 닿아 있다. Ja3·4를 원본의 가로3→세로4 순서로 바꿨다. 6획 왼내림 끝을 짧게 하여 田 오른벽과 분리했다. 口 시작과 위쪽 오른내림의 원본 접합은 유지했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+        }
+      }
+    },
+    {
+      "glyph": "鳴",
+      "expectedStrokes": 14,
+      "original": {
+        "glyph": "鳴",
+        "expectedStrokes": 14,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M10 27.96375 L14.11625 34.2495 L18.0475 74.34825",
+          "M14.995 30.56475 L18.00125 31.72075 L40.94125 25.65175 L45.28875 29.0475 L47 33.0935 L39.8775 62.93275",
+          "M19.3425 70.15775 L20.59125 68.207 L39.73875 64.3055 L45.0575 65.67825",
+          "M67.787197232 10 L70.219723183 14.1 L63.178200692 26.5",
+          "M57.801038062 25.500000001 L60.361591696 30.1 L59.785467128 65.500000001",
+          "M61.44982699 27.899999999 L77.64532872 23.1 L80.141868512 28.7 L75.020761246 42.699999999",
+          "M61.321799308 36.5 L71.5 33.5",
+          "M61.193771626 45.500000001 L74.956747405 40.299999999",
+          "M61.065743945 53.4 L75.788927336 49.3",
+          "M61.257785467 63.4 L62.474048443 61.500000001 L78.925605536 57 L86.671280277 56.100000001 L88.655709343 57.7 L90 60.6 L85.39100346 86.9 L82.446366782 90 L77.453287197 83.300000001",
+          "M53.384083045 69.3 L53 86.100000001",
+          "M59.785467128 69.3 L63.562283737 78.7",
+          "M67.275086505 66.800000001 L70.475778547 75.099999999",
+          "M74.444636678 63.800000001 L78.349480969 69.3 L79.1816609 74.2"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "cbb4c9283e3ec22d2866e353",
+            "glyph": "口",
+            "position": "left",
+            "donorGlyph": "口",
+            "donorPathsSha256": "52d101005c61056819b2d8d469be7996003988bd51068b6fc20ca110d649d12a",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10,
+              "y": 25.65174999982891,
+              "width": 37,
+              "height": 48.6965000003422
+            },
+            "transform": {
+              "sx": 0.4625,
+              "sy": 0.7225000000050771,
+              "tx": 5.375,
+              "ty": 13.874999999746152
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "06740bb6c1e542cd608a211f",
+            "glyph": "鳥",
+            "position": "right",
+            "donorGlyph": "鳥",
+            "donorPathsSha256": "88d159e1b2adea0756e371d5e3dfb5415f21c19ecb2bdfa3831a444ffa2ca4ee",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 53,
+              "y": 9.999999999718924,
+              "width": 37,
+              "height": 80.00000000056215
+            },
+            "transform": {
+              "sx": 0.6401384083044982,
+              "sy": 1.000000000007027,
+              "tx": 39.49307958477509,
+              "ty": -3.5134206655129674e-10
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 7
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 8
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 9
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 10
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 11
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "울",
+        "eum": "명",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "9dffdfe27b0d7eef33e948a76f6377f52179bfd9bf01307c296cfac7f1cf1b66",
+      "originalPathsSha256": "8ae7c7bc7f3981b524385d768cb1b7e300b9eec29d40a3e87735f948f1db85fb",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 11.46844715065007,
+        "unorderedMeanDistance": 11.46844715065007,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 21.695599296908068
+      },
+      "corrected": {
+        "paths": [
+          "M14 32.3 L17.2 36.2 L20 54.8",
+          "M19.3 33 L31.6 30.4 L36.3 33 L30.9 45.4",
+          "M21.8 50.2 L30 47.5 L36.1 47.8",
+          "M57.7 10 L61.1 14 L52.2 23.6",
+          "M45.1 24.9 L48.7 29.5 L48.2 66.5",
+          "M49.9 25.1 L68.4 21.6 L72.1 23.5 L73.7 26.8 L65.3 44.8",
+          "M48.6 36 L70.4 33.8",
+          "M50.9 44.7 L64.4 41.1",
+          "M51 54.3 L71.4 50.5",
+          "M51.4 64.8 L54.8 61.7 L78.4 58.2 L82.9 58.2 L86 60.9 L79.1 86.8 L73.7 90 L68.9 84.9",
+          "M33.5 70 L29.5 86",
+          "M44.1 72.3 L47.1 80.4",
+          "M55.7 71 L59.2 76.2",
+          "M65.1 68.9 L69.6 76"
+        ],
+        "pathsSha256": "75491e7803d92974293b2865e20467205f3a9f596ddbdda41bf29f1c0a74dcb0",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "86b6a1e981630680754d21180497327a439f9c4f2e6d0bd693ac4389b0d195bd",
+        "reviewRecordSha256": "9b7edf6ecb7e05918ac9145b013af1a7a27470b34b6d035d53f349e0e8c4bdfb",
+        "runtimeReference": {
+          "glyph": "鳴",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-a-b-0525",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "pathsSha256": "75491e7803d92974293b2865e20467205f3a9f596ddbdda41bf29f1c0a74dcb0",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0525",
+            "glyph": "鳴",
+            "videoFilename": "0525 울 명.mp4"
+          },
+          "paths": [
+            "M14 32.3 L17.2 36.2 L20 54.8",
+            "M19.3 33 L31.6 30.4 L36.3 33 L30.9 45.4",
+            "M21.8 50.2 L30 47.5 L36.1 47.8",
+            "M57.7 10 L61.1 14 L52.2 23.6",
+            "M45.1 24.9 L48.7 29.5 L48.2 66.5",
+            "M49.9 25.1 L68.4 21.6 L72.1 23.5 L73.7 26.8 L65.3 44.8",
+            "M48.6 36 L70.4 33.8",
+            "M50.9 44.7 L64.4 41.1",
+            "M51 54.3 L71.4 50.5",
+            "M51.4 64.8 L54.8 61.7 L78.4 58.2 L82.9 58.2 L86 60.9 L79.1 86.8 L73.7 90 L68.9 84.9",
+            "M33.5 70 L29.5 86",
+            "M44.1 72.3 L47.1 80.4",
+            "M55.7 71 L59.2 76.2",
+            "M65.1 68.9 L69.6 76"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "鳴",
+          "manifestRow": "0525",
+          "videoFilename": "0525 울 명.mp4",
+          "expectedStrokes": 14,
+          "candidateStrokes": 14,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-a-b-0525",
+          "correctionSha256": "4c9008e7f20308e142da6359f3122ed42c3240eee1e661cde90f1d0ed4aa6536",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0525.mp4",
+            "sha256": "246e75a646efb6f2543ae2364c5e4ffeafa08b64073b448950374bc36d40c7e8",
+            "bytes": 489887
+          },
+          "strokeEndsSeconds": [
+            1,
+            2.5,
+            3,
+            4,
+            5,
+            6.5,
+            7,
+            7.5,
+            8.5,
+            10.5,
+            11.5,
+            12,
+            12.5,
+            13.9
+          ],
+          "durationSeconds": 14.015,
+          "pathsSha256": "75491e7803d92974293b2865e20467205f3a9f596ddbdda41bf29f1c0a74dcb0",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체14획 순서·경계는 대응한다. 原本11획은 아래왼쪽으로 내리는 점이나 Ja는 세로다. 鳥7획 가로의 오른벽 연결과 아래12–14점의 윗가로 분리 보정이 필요하다. 원본11획 점이 아래왼쪽으로 내려가도록 로컬 중앙선을 조정했다. 鳥7획 가로는 양쪽 벽에 연결하고, 아래12–14획 점의 머리는 윗가로와 떨어지도록 줄였다. 나머지 순서·분할을 유지하고 전체14획을 재검토했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+        }
+      }
+    },
+    {
+      "glyph": "粉",
+      "expectedStrokes": 10,
+      "original": {
+        "glyph": "粉",
+        "expectedStrokes": 10,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M16.479946524 25.4 L20.140374332 29.9 L21.772727273 35.2",
+          "M35.42513369 16.900000001 L37.156417112 21.900000001 L30.82486631 32.4",
+          "M11.632352941 45.900000001 L14.352941176 47.000000001 L38.145721925 40.099999999 L41.558823529 41",
+          "M24.295454545 10 L27.263368984 15.500000001 L26.323529412 90",
+          "M25.235294118 45.5 L24.048128342 51.4 L19.200534759 63.7 L10 77.899999999",
+          "M27.659090909 45.699999999 L32.506684492 59.2 L37.848930481 69.8 L40.322192513 72.799999999 L47 74.3",
+          "M62.805 26.9055 L64.23875 31.113 L61.325 39.8085 L53 53.927",
+          "M67.66125 16.994500001 L70.89875 20.1735 L77.235 37.845 L81.16625 45.512 L90 48.504",
+          "M59.15125 53.2725 L62.11125 54.114 L73.72 48.5975 L76.2175 50.8415 L74.5525 70.196 L72.7025 79.8265 L70.205 82.724999999 L66.45875 77.3955",
+          "M65.53375 53.927 L66.7825 57.48 L63.96125 68.4195 L60.07625 77.0215 L55.405 83.005499999"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "b974dadc0adefa735b93efa5",
+            "glyph": "米",
+            "position": "left",
+            "donorGlyph": "米",
+            "donorPathsSha256": "642f452ef7cfd14466643b7e02c6e7b205ed031878a11fa79d36cd107ac02407",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10,
+              "y": 10.000000000637854,
+              "width": 37,
+              "height": 79.99999999872432
+            },
+            "transform": {
+              "sx": 0.4946524064171122,
+              "sy": 0.999999999984054,
+              "tx": 3.767379679144386,
+              "ty": 7.97307109223766e-10
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "adc48585d75a22ba541af81a",
+            "glyph": "分",
+            "position": "right",
+            "donorGlyph": "分",
+            "donorPathsSha256": "8dec3aef2345233956a5f588638ac72611688a9b327bf865097c5b480fb22217",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 53,
+              "y": 16.9945000005263,
+              "width": 37,
+              "height": 66.0109999989474
+            },
+            "transform": {
+              "sx": 0.4625,
+              "sy": 0.9349999999850906,
+              "tx": 48.375,
+              "ty": 3.250000000745473
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "가루",
+        "eum": "분",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "5c0e7eff4fe1b1c6098424575f788b20f83e479502da21a30635eda1d6242a4f",
+      "originalPathsSha256": "9fa104c4910deb189654376610aa84e63d8d5e081f21ef4d4ca1a0060f07017c",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 7.723204939969989,
+        "unorderedMeanDistance": 7.723204939969989,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 13.887611314496183
+      },
+      "corrected": {
+        "paths": [
+          "M18.8 30.5 L25.5 40.1",
+          "M42.8 26.3 L45.1 29.5 L38.4 37.7",
+          "M10 49 L15.7 49.6 L42.5 44.1",
+          "M27.9 13.9 L33.2 20.1 L31 86.1",
+          "M30 48.4 L25.1 59.6 L13 74.2",
+          "M34.7 54.5 L42.2 61.9",
+          "M51.6 33.2 L54 37.4 L42.4 53.6",
+          "M55.1 16.3 L59.6 19.2 L74 41.6 L77.3 44 L90 46.8",
+          "M50.5 54.3 L52.3 54.6 L68.9 50.5 L72.4 52.8 L66.8 77.2 L62.9 80.9 L57.4 77.1",
+          "M53.9 56.3 L56.3 59.6 L52.7 66.3 L38.6 82.2"
+        ],
+        "pathsSha256": "33e232e64333c1be5e21c1beebbdc0092c515bf0ad2b41c9f859afd3abe5b640",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "31fafb41fb4f7ffa0fdee63dff803fac4228ee4d0d7a49c4fb78ab61fb65a094",
+        "reviewRecordSha256": "875f27312ea1a59799c5ca444a286df364f8895e858db88c83403edff64af0d8",
+        "runtimeReference": {
+          "glyph": "粉",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "textbook-7c89-stage2-v1",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "pathsSha256": "33e232e64333c1be5e21c1beebbdc0092c515bf0ad2b41c9f859afd3abe5b640",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0687",
+            "glyph": "粉",
+            "videoFilename": "0687 가루 분.mp4"
+          },
+          "paths": [
+            "M18.8 30.5 L25.5 40.1",
+            "M42.8 26.3 L45.1 29.5 L38.4 37.7",
+            "M10 49 L15.7 49.6 L42.5 44.1",
+            "M27.9 13.9 L33.2 20.1 L31 86.1",
+            "M30 48.4 L25.1 59.6 L13 74.2",
+            "M34.7 54.5 L42.2 61.9",
+            "M51.6 33.2 L54 37.4 L42.4 53.6",
+            "M55.1 16.3 L59.6 19.2 L74 41.6 L77.3 44 L90 46.8",
+            "M50.5 54.3 L52.3 54.6 L68.9 50.5 L72.4 52.8 L66.8 77.2 L62.9 80.9 L57.4 77.1",
+            "M53.9 56.3 L56.3 59.6 L52.7 66.3 L38.6 82.2"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "粉",
+          "manifestRow": "0687",
+          "videoFilename": "0687 가루 분.mp4",
+          "expectedStrokes": 10,
+          "candidateStrokes": 10,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "status": "matched",
+          "strokeEndsSeconds": [
+            1,
+            2,
+            3.5,
+            6,
+            8,
+            9,
+            10,
+            12.5,
+            15,
+            16.5
+          ],
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체10획 및 완료원본600px 대조. 원본 分의 왼쪽7획 끝과 刀 시작9획은 떨어지나 선폭5 후보에서 닿는다. 나머지 순서·방향·펜경계는 대응. 分의 7획과 刀의 9획이 떨어지도록 9획 시작의 짧은 머리 부분을 줄인다. 방향과 나머지 경로는 유지한다. 부모 검토자가 원본 전체 2fps 진행표를 다시 확인하고, 실제 선폭 5의 최종 후보 모든 획을 대조했다. 16.4초 확대 완료 프레임에서 연결·분리를 재확인했다. 다른 획의 경로·순서·방향·경계는 변경하지 않았다. 출판사 영상 대조이며 한국어문회나 인간 전문가의 개별 인증이 아니다.",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0687.mp4",
+            "sha256": "6e775fb79cc4bd9fed2fcd534cfa0864bc52fa7d0f1f6888866b9aea696eb399",
+            "bytes": 571234
+          },
+          "durationSeconds": 16.598,
+          "geometryCorrection": "textbook-7c89-stage2-v1",
+          "correctionSha256": "026f87c5e18ad801643ad8af65df2f29be61accb1148a0bb371491e731b2d57b",
+          "pathsSha256": "33e232e64333c1be5e21c1beebbdc0092c515bf0ad2b41c9f859afd3abe5b640"
+        }
+      }
+    },
+    {
+      "glyph": "松",
+      "expectedStrokes": 8,
+      "original": {
+        "glyph": "松",
+        "expectedStrokes": 8,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M13.864229765 41.393775372 L46.806788512 35.98105548",
+          "M29.707571802 10 L34.924281984 15.845737483 L31.832898172 90",
+          "M32.219321149 38.795669824 L30.770234987 46.698240866 L25.746736292 56.441136671 L10 77.225981055",
+          "M35.697127937 49.621109608 L46.420365535 58.173207037",
+          "M62.755972585 42.125852803 L64.290192559 44.088688051 L62.012108355 48.668636962 L57.316465405 54.85911736 L52.806788512 58.633800528",
+          "M69.31127611 36.338005278 L71.961292428 38.049194981 L80.887663185 51.537396171 L90 54.305497162",
+          "M66.986700392 52.141345478 L68.846360966 55.060433795 L61.500701697 65.931521321 L61.826142298 66.938103499 L62.662989556 67.391065479 L76.424477807 64.069344291",
+          "M73.542003916 58.684129637 L77.865714752 63.717040528 L79.957832898 68.74995142"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "f3c616335c7437d3eddf12cd",
+            "glyph": "木",
+            "position": "left",
+            "donorGlyph": "朴",
+            "donorPathsSha256": "81db1fdfe874aa52c14799f8e1d935a8deb3e9acb63545cba28bfcb3d6add957",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "spatial-partition-inferred",
+            "targetBox": {
+              "x": 10,
+              "y": 10,
+              "width": 36.806788511749346,
+              "height": 80
+            },
+            "transform": {
+              "sx": 0.9660574412532639,
+              "sy": 1.0825439783491206,
+              "tx": -1.3028720626631873,
+              "ty": -1.5832205683355909
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "7bdda36abcc0acd4056b1f65",
+            "glyph": "公",
+            "position": "right",
+            "donorGlyph": "公",
+            "donorPathsSha256": "30ae70902af4999d9a9303206e22b9043a4942dc9f20fc0d2eeb56f74ccd382a",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 52.806788511749346,
+              "y": 36.33800527846183,
+              "width": 37.193211488250654,
+              "height": 32.41194614131722
+            },
+            "transform": {
+              "sx": 0.4649151436031332,
+              "sy": 0.5032910891508885,
+              "tx": 48.157637075718014,
+              "ty": 27.37942389157601
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "inferred-profile+intrinsic-contain",
+            "donorGlyphs": [
+              "朴"
+            ],
+            "componentIds": [
+              "f3c616335c7437d3eddf12cd"
+            ]
+          }
+        ],
+        "grade": "4급",
+        "hun": "소나무",
+        "eum": "송",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "5b13158b60e694279e7234a136a42d94a85b25f55aa22871d20ac873999704c8",
+      "originalPathsSha256": "e604527d267788e1fc4d3d4605f6fd8e48aae0e5abd7e03cedf50b2e89eadda4",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 7.599004173271752,
+        "unorderedMeanDistance": 7.599004173271752,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 14.164365107328422
+      },
+      "corrected": {
+        "paths": [
+          "M13.8 41.3 L42.4 36.8",
+          "M27.7 13.3 L33.1 19 L29.4 86.7",
+          "M29.5 42 L23.3 56.1 L10 72.5",
+          "M31 51.3 L36.7 57.3",
+          "M49.9 35 L52.2 38.7 L40.9 52.1",
+          "M58.3 22.1 L61.5 23.7 L78.4 47.6 L90 51",
+          "M55.3 49.3 L58.6 52.6 L56.4 58.1 L46.8 73.7 L48.9 75.1 L69.9 70.2",
+          "M65.7 60.1 L75.3 73.5 L75.7 78.5"
+        ],
+        "pathsSha256": "5616130ee522ba0e322987ea1738a60c3e77bed0bd1ba7cbf163c38fb2f9cc30",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "7a1f27264c9cbc061a7c8e73c82c78e81b4756993b64ddf1689256b6f8d9310d",
+        "reviewRecordSha256": "5624debe92e6ebb784d3ebac33a88a04006069c3e00687184ceda35507edf3c9",
+        "runtimeReference": {
+          "glyph": "松",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-b-0851",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "pathsSha256": "5616130ee522ba0e322987ea1738a60c3e77bed0bd1ba7cbf163c38fb2f9cc30",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0851",
+            "glyph": "松",
+            "videoFilename": "0851 소나무 송.mp4"
+          },
+          "paths": [
+            "M13.8 41.3 L42.4 36.8",
+            "M27.7 13.3 L33.1 19 L29.4 86.7",
+            "M29.5 42 L23.3 56.1 L10 72.5",
+            "M31 51.3 L36.7 57.3",
+            "M49.9 35 L52.2 38.7 L40.9 52.1",
+            "M58.3 22.1 L61.5 23.7 L78.4 47.6 L90 51",
+            "M55.3 49.3 L58.6 52.6 L56.4 58.1 L46.8 73.7 L48.9 75.1 L69.9 70.2",
+            "M65.7 60.1 L75.3 73.5 L75.7 78.5"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "松",
+          "manifestRow": "0851",
+          "videoFilename": "0851 소나무 송.mp4",
+          "expectedStrokes": 8,
+          "candidateStrokes": 8,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-b-0851",
+          "correctionSha256": "1e7e4968c55b27c20528623638d7c7b9861fd03e4cabfe7e98cfa1adf42c6a11",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0851.mp4",
+            "sha256": "521ea306c2f5267d330721a68aa14b3c33558988d152e1e9f8d98393692b7acf",
+            "bytes": 358026
+          },
+          "strokeEndsSeconds": [
+            1.5,
+            3.5,
+            5,
+            6,
+            7,
+            9,
+            11,
+            11.7
+          ],
+          "durationSeconds": 11.715,
+          "pathsSha256": "5616130ee522ba0e322987ea1738a60c3e77bed0bd1ba7cbf163c38fb2f9cc30",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체8획과 완료600px 대조. 원본 木4획 끝과 公5획 아래끝에는 흰 틈이 있으나 후보는 접합한다. 4획 木 오른쪽 점의 길이를 줄여 5획 八 왼쪽 내림과 분리했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+        }
+      }
+    },
+    {
+      "glyph": "誌",
+      "expectedStrokes": 14,
+      "original": {
+        "glyph": "誌",
+        "expectedStrokes": 14,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M24.367021277 10 L31.107712766 20.9",
+          "M10 32.1 L12.656914894 33.2 L41.784574468 25.9 L47 27.6",
+          "M20.676861702 42.4 L24.268617021 43.099999999 L35.043882979 39.7",
+          "M21.168882979 54.7 L34.650265957 52",
+          "M18.807180851 66.599999999 L20.72606383 70.100000001 L22.251329787 90",
+          "M21.710106383 67.9 L34.847074468 64.500000001 L36.765957447 68.2 L34.453457447 81.2",
+          "M22.694148936 85 L33.863031915 82.199999999 L36.962765957 83.6",
+          "M56.967700258 34.06614987 L63.468992248 34.163307494 L83.594315245 27.459431526",
+          "M67.484496124 11.136950906 L70.400516796 16.189147287 L69.54005168 48.736950905",
+          "M60.648578811 52.623255813 L75.754521964 49.222739017 L80.295865633 50.097157624",
+          "M56.394056848 65.448062016 L53 86.434108527",
+          "M61.413436693 65.059431525 L64.520671835 81.090439277 L70.448320413 88.280103359 L78.622739018 88.863049094 L82.972868217 85.754005167 L83.928940568 83.033591731 L78.766149871 73.026356588",
+          "M67.388888889 59.812919897 L72.790697674 71.471834625",
+          "M80.630490956 57.578294575 L86.701550388 63.602067183 L90 71.568992248"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "1e8faf228d7e9894ea1d0716",
+            "glyph": "言",
+            "position": "left",
+            "donorGlyph": "言",
+            "donorPathsSha256": "a6d7369f1c9a9dc450ab3cc129843bf8b20c2d2d91916a22ea18effc6a81c8fe",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10,
+              "y": 10.000000000345942,
+              "width": 37,
+              "height": 79.99999999930813
+            },
+            "transform": {
+              "sx": 0.49202127659574474,
+              "sy": 0.9999999999913516,
+              "tx": 3.8989361702127647,
+              "ty": 4.3242920355623937e-10
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "bf9ade2dfab038c7a9e435d8",
+            "glyph": "志",
+            "position": "right",
+            "donorGlyph": "志",
+            "donorPathsSha256": "1e3dd6c6fb3b304a0ec30e0d289bee9a75c5a8d32ec8377f74b08cf7cf8a37eb",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 53,
+              "y": 11.136950904728884,
+              "width": 37,
+              "height": 77.72609819054225
+            },
+            "transform": {
+              "sx": 0.47803617571059426,
+              "sy": 0.9715762273817782,
+              "tx": 47.59819121447028,
+              "ty": 1.4211886309111037
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 7
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 7
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "기록할",
+        "eum": "지",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "d2bc1774bd922ae900dc828b9b6e5ab9d5d80fb9cb1fb1ed989e7702b75d7d6f",
+      "originalPathsSha256": "30d083493481c565c4ddfedb884027bc2b77e70a58f2947da0805957c7c9dffa",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 6.892879295839656,
+        "unorderedMeanDistance": 6.892879295839656,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 10.642061822623912
+      },
+      "corrected": {
+        "paths": [
+          "M30.7 16.6 L38.4 21 L41.4 25.2",
+          "M10 40.7 L16.5 41.5 L44.9 35.4",
+          "M24.3 49.3 L40.3 46.5",
+          "M23.9 58.4 L40.3 55.6",
+          "M18.3 68.7 L21.7 72.5 L24.8 86.9",
+          "M23.3 69.3 L34 66.6 L36.7 68 L37.8 69.5 L34.5 77.9",
+          "M26.5 82.4 L32.7 79.6 L38.3 79.6",
+          "M46.6 40.8 L54.1 40.9 L78.1 34.8",
+          "M57.3 13.1 L62.9 17.7 L60.9 50.8",
+          "M49.6 54 L76.5 50.5",
+          "M45.5 69.5 L44 82.3",
+          "M50.8 69.4 L59.9 80.8 L73 83.9 L78.9 82.8 L83.9 79.9 L73.2 68.3",
+          "M56.9 61 L66.6 67.3",
+          "M76.8 57.6 L90 66.1"
+        ],
+        "pathsSha256": "94dd8fdee6b8f10d1488b5762071c5fa0f23666bccf8b4a8163000e8dad658e3",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "0dda9185269c31bd104532391e4b65588a3042005db80cfaf107cb7e643b6fb3",
+        "reviewRecordSha256": "fd8176d9cf9e1d101101327c35c309d32562e135fe66a4d6a739c19ad1eb5ee6",
+        "runtimeReference": {
+          "glyph": "誌",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "textbook-8a8c-stage2-c-v1",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "pathsSha256": "94dd8fdee6b8f10d1488b5762071c5fa0f23666bccf8b4a8163000e8dad658e3",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1417",
+            "glyph": "誌",
+            "videoFilename": "1417 기록할 지.mp4"
+          },
+          "paths": [
+            "M30.7 16.6 L38.4 21 L41.4 25.2",
+            "M10 40.7 L16.5 41.5 L44.9 35.4",
+            "M24.3 49.3 L40.3 46.5",
+            "M23.9 58.4 L40.3 55.6",
+            "M18.3 68.7 L21.7 72.5 L24.8 86.9",
+            "M23.3 69.3 L34 66.6 L36.7 68 L37.8 69.5 L34.5 77.9",
+            "M26.5 82.4 L32.7 79.6 L38.3 79.6",
+            "M46.6 40.8 L54.1 40.9 L78.1 34.8",
+            "M57.3 13.1 L62.9 17.7 L60.9 50.8",
+            "M49.6 54 L76.5 50.5",
+            "M45.5 69.5 L44 82.3",
+            "M50.8 69.4 L59.9 80.8 L73 83.9 L78.9 82.8 L83.9 79.9 L73.2 68.3",
+            "M56.9 61 L66.6 67.3",
+            "M76.8 57.6 L90 66.1"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "誌",
+          "sourceGlyph": "誌",
+          "manifestRow": "1417",
+          "videoFilename": "1417 기록할 지.mp4",
+          "expectedStrokes": 14,
+          "candidateStrokes": 14,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "textbook-8a8c-stage2-c-v1",
+          "correctionSha256": "82843deeb004d6c2173c489c3300df12982ac2c78147a2a0ec0b9f6971482791",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex / public_korean_stroke_sources",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1417.mp4",
+            "sha256": "388ec0b7f1a2a5486bf2163feb0ce7686dc94ecd860f4cf75753e4a592a2845c",
+            "bytes": 582803
+          },
+          "strokeEndsSeconds": [
+            1,
+            2.4,
+            3.2,
+            4.1,
+            5.4,
+            6.5,
+            7.2,
+            8.5,
+            10.5,
+            11.8,
+            12.7,
+            15.1,
+            16.2,
+            17.7
+          ],
+          "durationSeconds": 17.715,
+          "pathsSha256": "94dd8fdee6b8f10d1488b5762071c5fa0f23666bccf8b4a8163000e8dad658e3",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체 14획과 최종 폭5를 재대조했다. 心 왼 점을 言口 및 心 굽은 획에서 분리했으며 言7·士3·心4의 순서, 방향, 펜 경계를 확인했다."
+        }
+      }
+    },
+    {
+      "glyph": "討",
+      "expectedStrokes": 10,
+      "original": {
+        "glyph": "討",
+        "expectedStrokes": 10,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M24.367021277 10 L31.107712766 20.9",
+          "M10 32.1 L12.656914894 33.2 L41.784574468 25.9 L47 27.6",
+          "M20.676861702 42.4 L24.268617021 43.099999999 L35.043882979 39.7",
+          "M21.168882979 54.7 L34.650265957 52",
+          "M18.807180851 66.599999999 L20.72606383 70.100000001 L22.251329787 90",
+          "M21.710106383 67.9 L34.847074468 64.500000001 L36.765957447 68.2 L34.453457447 81.2",
+          "M22.694148936 85 L33.863031915 82.199999999 L36.962765957 83.6",
+          "M53 40.385822785 L56.372151899 42.099240507 L85.363291139 34.008101267 L90 36.863797469",
+          "M72.624050633 11.924050634 L75.574683544 16.969113925 L75.574683544 79.699240506 L74.263291139 88.075949366 L67.846835443 79.604050633",
+          "M61.711392405 48.286582278 L65.786075949 55.616202531 L67.003797468 61.232405062"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "1e8faf228d7e9894ea1d0716",
+            "glyph": "言",
+            "position": "left",
+            "donorGlyph": "言",
+            "donorPathsSha256": "a6d7369f1c9a9dc450ab3cc129843bf8b20c2d2d91916a22ea18effc6a81c8fe",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10,
+              "y": 10.000000000345942,
+              "width": 37,
+              "height": 79.99999999930813
+            },
+            "transform": {
+              "sx": 0.49202127659574474,
+              "sy": 0.9999999999913516,
+              "tx": 3.8989361702127647,
+              "ty": 4.3242920355623937e-10
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "e2a8d16dcc5d4fa148753640",
+            "glyph": "寸",
+            "position": "right",
+            "donorGlyph": "寸",
+            "donorPathsSha256": "b59bd5cc2bed30fab86525f40cb9c28bf0d9c35f060794ae4cca8791909df412",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 53,
+              "y": 11.924050633240697,
+              "width": 37,
+              "height": 76.15189873351862
+            },
+            "transform": {
+              "sx": 0.46835443037974683,
+              "sy": 0.9518987341689827,
+              "tx": 48.08227848101266,
+              "ty": 2.405063291550867
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 7
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "칠",
+        "eum": "토",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "72b872fa9dcc759a8ef3acd17c135348b70076d115392f76f8318b08aea9c99d",
+      "originalPathsSha256": "7599dec2d84e0d36821f0904d2ed5b5d42b31b639231dc092dafedff6bdd0a26",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 6.4605642252290725,
+        "unorderedMeanDistance": 6.4605642252290725,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 10.695560792279487
+      },
+      "corrected": {
+        "paths": [
+          "M32.4 13.8 L40 18.1 L42.9 22.5",
+          "M10 35.1 L14.8 36 L44.3 30",
+          "M24.2 43.4 L40.2 40.8",
+          "M23.6 53.5 L40.7 51.4",
+          "M17.3 63.5 L20.9 67.4 L24.4 81.7",
+          "M22.9 64 L37.5 61.5 L39.9 63.8 L35.4 72.5",
+          "M25.7 75.9 L40.7 74.1",
+          "M47.2 43.6 L80.3 37.8 L90 38",
+          "M64.6 12.6 L70.5 17.7 L70.9 80.8 L69.1 87.4 L57.2 80.2",
+          "M51.1 54.1 L56.6 59.7 L58.2 64.2"
+        ],
+        "pathsSha256": "16929fdea15702161908bddcede24d563bb437e2981d97e3632b0aaadbc1bddf",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "92767169a4b7f9449e4ec039c8903656d0cb21379cd178c28f46dc6a1a5f84c6",
+        "reviewRecordSha256": "c08613855cb0a3ce1ba174af657cabda6f96f85f1ddbeaf9920314c790ec00d8",
+        "runtimeReference": {
+          "glyph": "討",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "pathsSha256": "16929fdea15702161908bddcede24d563bb437e2981d97e3632b0aaadbc1bddf",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1591",
+            "glyph": "討",
+            "videoFilename": "1591 칠 토.mp4"
+          },
+          "paths": [
+            "M32.4 13.8 L40 18.1 L42.9 22.5",
+            "M10 35.1 L14.8 36 L44.3 30",
+            "M24.2 43.4 L40.2 40.8",
+            "M23.6 53.5 L40.7 51.4",
+            "M17.3 63.5 L20.9 67.4 L24.4 81.7",
+            "M22.9 64 L37.5 61.5 L39.9 63.8 L35.4 72.5",
+            "M25.7 75.9 L40.7 74.1",
+            "M47.2 43.6 L80.3 37.8 L90 38",
+            "M64.6 12.6 L70.5 17.7 L70.9 80.8 L69.1 87.4 L57.2 80.2",
+            "M51.1 54.1 L56.6 59.7 L58.2 64.2"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "討",
+          "sourceGlyph": "討",
+          "manifestRow": "1591",
+          "videoFilename": "1591 칠 토.mp4",
+          "expectedStrokes": 10,
+          "candidateStrokes": 10,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex / public_korean_stroke_sources",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1591.mp4",
+            "sha256": "7c94eb2386a40e05ab886595b15974548f476d8244387d136e1b2e0d9dac52d0",
+            "bytes": 445632
+          },
+          "strokeEndsSeconds": [
+            1.3,
+            2.4,
+            3.3,
+            4.4,
+            5.2,
+            6.4,
+            7.4,
+            8.6,
+            12.1,
+            13.5
+          ],
+          "durationSeconds": 13.515,
+          "pathsSha256": "16929fdea15702161908bddcede24d563bb437e2981d97e3632b0aaadbc1bddf",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "言7획 뒤 寸3획의 전체10획을 원본에서 확인했다. 言과 寸 사이 간격, 口 닫힘, 오른 아래 점 분리와 갈고리 방향까지 원본 Ja 중앙선과 일치하여 변경하지 않았다. 출판사 영상의 전 획·최종 형태와 대조한 중앙선 후보이며 완료 표본은 정확한 펜 떼기 시각을 뜻하지 않는다. 보정 후 모든 획의 진행·방향·경계와 완료 프레임을 다시 대조했고 선폭 5의 최종 후보 접합·분리를 확인했다."
+        }
+      }
+    },
+    {
+      "glyph": "評",
+      "expectedStrokes": 12,
+      "original": {
+        "glyph": "評",
+        "expectedStrokes": 12,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M24.367021277 10 L31.107712766 20.9",
+          "M10 32.1 L12.656914894 33.2 L41.784574468 25.9 L47 27.6",
+          "M20.676861702 42.4 L24.268617021 43.099999999 L35.043882979 39.7",
+          "M21.168882979 54.7 L34.650265957 52",
+          "M18.807180851 66.599999999 L20.72606383 70.100000001 L22.251329787 90",
+          "M21.710106383 67.9 L34.847074468 64.500000001 L36.765957447 68.2 L34.453457447 81.2",
+          "M22.694148936 85 L33.863031915 82.199999999 L36.962765957 83.6",
+          "M62.633419689 15.322279793 L79.216321244 11.03626943",
+          "M62.058290155 24.186528498 L63.591968912 29.154404145 L57.840673575 40.648704664",
+          "M76.244818653 22.335751295 L80.31865285 29.738860104 L81.420984456 35.193782384",
+          "M53 49.415544041 L56.163212435 50.681865285 L84.775906736 43.570984456 L90 45.129533679",
+          "M68.288860104 16.783419689 L70.637305699 20.192746114 L70.25388601 88.96373057"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "1e8faf228d7e9894ea1d0716",
+            "glyph": "言",
+            "position": "left",
+            "donorGlyph": "言",
+            "donorPathsSha256": "a6d7369f1c9a9dc450ab3cc129843bf8b20c2d2d91916a22ea18effc6a81c8fe",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10,
+              "y": 10.000000000345942,
+              "width": 37,
+              "height": 79.99999999930813
+            },
+            "transform": {
+              "sx": 0.49202127659574474,
+              "sy": 0.9999999999913516,
+              "tx": 3.8989361702127647,
+              "ty": 4.3242920355623937e-10
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "66fb48052c6c1b8af64707a2",
+            "glyph": "平",
+            "position": "right",
+            "donorGlyph": "平",
+            "donorPathsSha256": "8641933956d42ef320eadd9ad14752036ac0dcaf8be0929ed9714b7f215fe2fb",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 53,
+              "y": 11.036269430388792,
+              "width": 37,
+              "height": 77.92746113922244
+            },
+            "transform": {
+              "sx": 0.4792746113989638,
+              "sy": 0.9740932642402804,
+              "tx": 47.53626943005181,
+              "ty": 1.2953367879859883
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 7
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "평할",
+        "eum": "평",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "0af3a273bf493abdc818b1f36ab19fccd2ec3d6ea15e1b28c0a337eeaa33c1f1",
+      "originalPathsSha256": "0aa4ca0fca7ea3ec0bab252bf6490664c36eb01b6f0651bd9ee3d85b7380335b",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 8.387046949213323,
+        "unorderedMeanDistance": 8.387046949213323,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 14.548617217152339
+      },
+      "corrected": {
+        "paths": [
+          "M31.2 13.4 L41.6 20.8",
+          "M10 33.3 L15.2 34 L43.3 28.2",
+          "M23.1 41.3 L39.3 38.6",
+          "M23.4 49.5 L40.1 46.6",
+          "M18.7 57.9 L22 61.4 L25.1 78.3",
+          "M23.8 58.2 L37 56.5 L38.9 58.7 L35.6 66.1",
+          "M26.4 70.8 L40 67.8",
+          "M51 23.8 L77.4 19.2",
+          "M53 34 L47 44",
+          "M73 29 L80 39",
+          "M44.1 51.1 L80.6 45.6 L90 46.7",
+          "M59.9 26 L64.8 29.9 L63.7 86.6"
+        ],
+        "pathsSha256": "fd378fb35812d83a60bfc7d316e78837473af8c1aa74958a64535120f3916f33",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "ff300ac92f1869624b249225e1df667fc353ea4325d150afcd18e6199854cacd",
+        "reviewRecordSha256": "31aa331857e1dec5f57fd48e5b7d2ce66a0ed6597fb40239c45bfb4d942c803d",
+        "runtimeReference": {
+          "glyph": "評",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-c-b-1621",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "pathsSha256": "fd378fb35812d83a60bfc7d316e78837473af8c1aa74958a64535120f3916f33",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1621",
+            "glyph": "評",
+            "videoFilename": "1621 평할 평.mp4"
+          },
+          "paths": [
+            "M31.2 13.4 L41.6 20.8",
+            "M10 33.3 L15.2 34 L43.3 28.2",
+            "M23.1 41.3 L39.3 38.6",
+            "M23.4 49.5 L40.1 46.6",
+            "M18.7 57.9 L22 61.4 L25.1 78.3",
+            "M23.8 58.2 L37 56.5 L38.9 58.7 L35.6 66.1",
+            "M26.4 70.8 L40 67.8",
+            "M51 23.8 L77.4 19.2",
+            "M53 34 L47 44",
+            "M73 29 L80 39",
+            "M44.1 51.1 L80.6 45.6 L90 46.7",
+            "M59.9 26 L64.8 29.9 L63.7 86.6"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "評",
+          "manifestRow": "1621",
+          "videoFilename": "1621 평할 평.mp4",
+          "expectedStrokes": 12,
+          "candidateStrokes": 12,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-c-b-1621",
+          "correctionSha256": "a9e8d0f7aeb44057ba0f9e08b91e957f8dd17c42bfd50ae6479f63de4659dcb5",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1621.mp4",
+            "sha256": "fab867db560941cf459740cd0b89754c6ec352e0be1122dfd0b06105a7acda7f",
+            "bytes": 473488
+          },
+          "strokeEndsSeconds": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6.5,
+            7,
+            8.5,
+            10,
+            11,
+            12,
+            14.8
+          ],
+          "durationSeconds": 14.831,
+          "pathsSha256": "fd378fb35812d83a60bfc7d316e78837473af8c1aa74958a64535120f3916f33",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체12획을 비교했다. 원본 平의9획은 왼쪽아래,10획은 오른쪽아래로 향하므로 Ja의 안쪽 방향 두 점을 바깥 방향의 로컬 중앙선으로 바꿨다. 11획 시작과 言4획 끝의 흰 간격도 실제 폭5에서 남도록 조정했다. 言7획과 平8가로→9·10점→11가로→12세로 순서를 유지했다. 실제 개별 영상 전체0.5초 표본과 전 획 후보를 직접 대조하고, 완료 프레임을600px로 확대하여 실제 선폭5의 접합·분리를 확인했다. 완료 시각은 관찰된 표본이며 정확한 펜 떼기 시각이 아니다. 이 판정은 Codex 시각 대조이며 한국어문회 개별 승인이나 인간 전문가 확인을 뜻하지 않는다."
+        }
+      }
+    },
+    {
+      "glyph": "妹",
+      "expectedStrokes": 8,
+      "original": {
+        "glyph": "妹",
+        "expectedStrokes": 8,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M28.315 10 L32.6625 16.490066225 L23.5975 64.17218543 L38.305 80.463576159 L40.525 87.086092716",
+          "M37.195 36.622516556 L40.525 41.920529801 L34.3275 69.735099338 L25.8175 83.509933775 L16.9375 90",
+          "M10 48.278145696 L14.995 51.324503312 L36.825 43.907284768",
+          "M56.553233333 40.852273731 L60.726833333 41.230016778 L75.276466667 37.956243709",
+          "M50.003 51.995693599 L52.901333333 52.373436645 L75.508333333 47.966434437 L81.189066667 48.470091832",
+          "M62.755666667 28.260838852 L66.291633333 32.038269315 L65.248233333 78.626578367",
+          "M64.146866667 51.492036203 L55.7417 63.516856513 L46.525 70.50510287",
+          "M67.2191 51.240207506 L79.855833333 67.35724415 L90 69.749616778"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "cbc9f4b66775aea40474d64d",
+            "glyph": "女",
+            "position": "left",
+            "donorGlyph": "好",
+            "donorPathsSha256": "0d4bac4582b975cad3a199e958ce2196cee6ab854ebf2245812c9a8a6400b1e5",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "reviewed-component-assignment",
+            "targetBox": {
+              "x": 10,
+              "y": 10,
+              "width": 30.525,
+              "height": 80.00000000039735
+            },
+            "transform": {
+              "sx": 0.9249999999999999,
+              "sy": 1.3245033112648572,
+              "tx": 0.75,
+              "ty": -12.781456953755539
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "d3320a29a04380f363ae8637",
+            "glyph": "未",
+            "position": "right",
+            "donorGlyph": "未",
+            "donorPathsSha256": "6382cd2856fc930360039851e41bcde50fd1eaa9dd046292b91c54fa3480ba6f",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 46.525,
+              "y": 28.26083885218783,
+              "width": 43.475,
+              "height": 50.36573951459895
+            },
+            "transform": {
+              "sx": 0.5796666666666667,
+              "sy": 0.6295717439324868,
+              "tx": 39.27916666666667,
+              "ty": 21.965121412862963
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "reviewed-profile+intrinsic-contain",
+            "donorGlyphs": [
+              "好"
+            ],
+            "componentIds": [
+              "cbc9f4b66775aea40474d64d"
+            ]
+          }
+        ],
+        "grade": "4급",
+        "hun": "누이",
+        "eum": "매",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "3945ba5b7162e8605cf7a172e252b7e8d593b95b1925748c60a6d813020285fa",
+      "originalPathsSha256": "bb0f1d2fda999c7fc14e89e52faaed4c4d82944cfb5a49e005896ce7d66358f8",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 5.820288458382883,
+        "unorderedMeanDistance": 5.820288458382883,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 10.473718460800049
+      },
+      "corrected": {
+        "paths": [
+          "M26.5 17.2 L31.2 23.6 L22.2 60.1 L37.5 70.6 L39.2 74.9",
+          "M35.8 38.3 L39.5 42.8 L33.1 63.6 L25.4 72.9 L15.2 78.7",
+          "M10 47.1 L14.9 49.5 L36.5 44.5",
+          "M47.4 34.6 L73.3 30.4",
+          "M46.4 48.1 L72.8 43.7 L79.9 44.7",
+          "M54 12.6 L60 17.9 L58 87.4",
+          "M56.4 48 L53.4 56 L42 69.4",
+          "M60.8 48.8 L77.1 67.5 L90 70.3"
+        ],
+        "pathsSha256": "200b46212447a74c4831c6e98c0f12d5cd05b626ba7e1968ca2cf7fd2f546d81",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "c37fbce0dd768bde01e758427dc84c22a6b1212e768a498147506191698de4fc",
+        "reviewRecordSha256": "5c6a06c58b117b56522f7737709a5ace7c2fed4fbc9f062e3802ded2511011e9",
+        "runtimeReference": {
+          "glyph": "妹",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-a-b-0503",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "pathsSha256": "200b46212447a74c4831c6e98c0f12d5cd05b626ba7e1968ca2cf7fd2f546d81",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0503",
+            "glyph": "妹",
+            "videoFilename": "0503 손아래 누이 매.mp4"
+          },
+          "paths": [
+            "M26.5 17.2 L31.2 23.6 L22.2 60.1 L37.5 70.6 L39.2 74.9",
+            "M35.8 38.3 L39.5 42.8 L33.1 63.6 L25.4 72.9 L15.2 78.7",
+            "M10 47.1 L14.9 49.5 L36.5 44.5",
+            "M47.4 34.6 L73.3 30.4",
+            "M46.4 48.1 L72.8 43.7 L79.9 44.7",
+            "M54 12.6 L60 17.9 L58 87.4",
+            "M56.4 48 L53.4 56 L42 69.4",
+            "M60.8 48.8 L77.1 67.5 L90 70.3"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "妹",
+          "manifestRow": "0503",
+          "videoFilename": "0503 손아래 누이 매.mp4",
+          "expectedStrokes": 8,
+          "candidateStrokes": 8,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-a-b-0503",
+          "correctionSha256": "7756fb2e02f54ce17a9741e48fb18714996a207485656593c46bb38a5fefede8",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0503.mp4",
+            "sha256": "51233c39ce3c63a8e619a941034cffddc1319b011bdf41bca3522b5181768921",
+            "bytes": 477839
+          },
+          "strokeEndsSeconds": [
+            2.5,
+            4.5,
+            5.5,
+            6.5,
+            7.5,
+            10,
+            11.5,
+            13.3
+          ],
+          "durationSeconds": 13.365,
+          "pathsSha256": "200b46212447a74c4831c6e98c0f12d5cd05b626ba7e1968ca2cf7fd2f546d81",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체8획을 비교했다. 女 세획과未 다섯획의 순서·방향·펜 경계,未7획 끝이女1획 끝과 닿는 원본 접합을 후보가 재현한다. 최종 폭5 확대도 확인한다. 초기 전체 진행 대조 뒤 600px 완료 확대에서 未5획 시작과 女2획의 과접합을 추가로 발견했다. 未5획 시작만 줄여 원본 흰 간격을 복원하고 전 8획을 다시 대조했다. 원본에서 실제로 닿는 未7획 끝과 女1획 끝은 유지했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+        }
+      }
+    },
+    {
+      "glyph": "妙",
+      "expectedStrokes": 7,
+      "original": {
+        "glyph": "妙",
+        "expectedStrokes": 7,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M28.315 10 L32.6625 16.490066225 L23.5975 64.17218543 L38.305 80.463576159 L40.525 87.086092716",
+          "M37.195 36.622516556 L40.525 41.920529801 L34.3275 69.735099338 L25.8175 83.509933775 L16.9375 90",
+          "M10 48.278145696 L14.995 51.324503312 L36.825 43.907284768",
+          "M63.842339833 27.13848254 L67.899199164 30.360872733 L67.354247911 51.865395045 L65.598293872 55.811178956 L59.664380223 51.536579719",
+          "M53.24606546 38.844308141 L48.402054318 53.640997805",
+          "M77.889972145 36.871416186 L85.882590529 40.422621705 L90 44.631457876",
+          "M75.407416435 45.880956114 L77.345020891 50.221318415 L68.141399721 65.346823406 L57.121274373 74.882467856 L46.525 79.748934679"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "cbc9f4b66775aea40474d64d",
+            "glyph": "女",
+            "position": "left",
+            "donorGlyph": "好",
+            "donorPathsSha256": "0d4bac4582b975cad3a199e958ce2196cee6ab854ebf2245812c9a8a6400b1e5",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "reviewed-component-assignment",
+            "targetBox": {
+              "x": 10,
+              "y": 10,
+              "width": 30.525,
+              "height": 80.00000000039735
+            },
+            "transform": {
+              "sx": 0.9249999999999999,
+              "sy": 1.3245033112648572,
+              "tx": 0.75,
+              "ty": -12.781456953755539
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "d29d34eb0a95b8c5d477face",
+            "glyph": "少",
+            "position": "right",
+            "donorGlyph": "少",
+            "donorPathsSha256": "f2edfd18cfd79a330b1d5069b70ba83a30df13905d3566d254f1c69567d86158",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 46.525,
+              "y": 27.138482539884794,
+              "width": 43.475,
+              "height": 52.61045213920502
+            },
+            "transform": {
+              "sx": 0.6055013927576601,
+              "sy": 0.6576306517400629,
+              "tx": 37.98743036211699,
+              "ty": 20.562176022484163
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "reviewed-profile+intrinsic-contain",
+            "donorGlyphs": [
+              "好"
+            ],
+            "componentIds": [
+              "cbc9f4b66775aea40474d64d"
+            ]
+          }
+        ],
+        "grade": "4급",
+        "hun": "묘할",
+        "eum": "묘",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "0a1b8b79bba118d965cfa381efdd6ef41ed42b27b64d264c5d52c355d23899e4",
+      "originalPathsSha256": "8151c0d90b8d410915bcc7afc985c51f32daad103c94f984009824480895a6ef",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 6.059410632759234,
+        "unorderedMeanDistance": 6.059410632759234,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 9.048680520063433
+      },
+      "corrected": {
+        "paths": [
+          "M30.4 14.1 L35.2 19.3 L26.6 53.8 L41.3 65.8 L43.1 70.4",
+          "M40.2 36.8 L43.7 40.2 L37.7 60.1 L30 69.8 L17.9 76.7",
+          "M10 46.2 L15.1 48.4 L39.7 41.3",
+          "M60.9 12.5 L65.5 15.7 L64.1 52.2 L55.7 47.8",
+          "M53.4 33.5 L49.5 48.1",
+          "M74 31.4 L84.6 35.9 L90 41.5",
+          "M73.4 43.1 L76 48.2 L65.9 67.6 L52.7 80.6 L40.4 87.5"
+        ],
+        "pathsSha256": "02b9ebba23b284c82d1fe073c50bc46619cfd703484a7551f9ddff65c2f2a3be",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "f0c112ee4af655c8b2abe5ea643304f36c1fdeba955df5a4443fe22fd3ec48b4",
+        "reviewRecordSha256": "a86e5379a510eeca8bdf2868ad398b9682ba415a3127bcca9cca641e1c981f6f",
+        "runtimeReference": {
+          "glyph": "妙",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "pathsSha256": "02b9ebba23b284c82d1fe073c50bc46619cfd703484a7551f9ddff65c2f2a3be",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0547",
+            "glyph": "妙",
+            "videoFilename": "0547 묘할 묘.mp4"
+          },
+          "paths": [
+            "M30.4 14.1 L35.2 19.3 L26.6 53.8 L41.3 65.8 L43.1 70.4",
+            "M40.2 36.8 L43.7 40.2 L37.7 60.1 L30 69.8 L17.9 76.7",
+            "M10 46.2 L15.1 48.4 L39.7 41.3",
+            "M60.9 12.5 L65.5 15.7 L64.1 52.2 L55.7 47.8",
+            "M53.4 33.5 L49.5 48.1",
+            "M74 31.4 L84.6 35.9 L90 41.5",
+            "M73.4 43.1 L76 48.2 L65.9 67.6 L52.7 80.6 L40.4 87.5"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "妙",
+          "manifestRow": "0547",
+          "videoFilename": "0547 묘할 묘.mp4",
+          "expectedStrokes": 7,
+          "candidateStrokes": 7,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0547.mp4",
+            "sha256": "27d3401b77e9353aae106b1758998569219fa114897863e23641bc36bbb71969",
+            "bytes": 481318
+          },
+          "strokeEndsSeconds": [
+            3,
+            5.5,
+            7,
+            9.5,
+            10,
+            11,
+            14.4
+          ],
+          "durationSeconds": 14.431,
+          "pathsSha256": "02b9ebba23b284c82d1fe073c50bc46619cfd703484a7551f9ddff65c2f2a3be",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체7획 순서·방향·펜 경계 및 女와少 각 점·갈고리·왼내림 사이 분리가 일치한다. 마지막7획은 위에서 아래왼쪽으로 이어진다."
+        }
+      }
+    },
+    {
+      "glyph": "妨",
+      "expectedStrokes": 7,
+      "original": {
+        "glyph": "妨",
+        "expectedStrokes": 7,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M28.315 10 L32.6625 16.490066225 L23.5975 64.17218543 L38.305 80.463576159 L40.525 87.086092716",
+          "M37.195 36.622516556 L40.525 41.920529801 L34.3275 69.735099338 L25.8175 83.509933775 L16.9375 90",
+          "M10 48.278145696 L14.995 51.324503312 L36.825 43.907284768",
+          "M63.915 30.484014073 L69.784125 34.792645695 L72.0665625 38.274964404",
+          "M47.77490625 48.13169702 L51.36159375 48.839965232 L83.261375 43.823065398 L90 44.767423013",
+          "M67.9364375 53.089574504 L76.305375 55.391446192 L77.99003125 57.988429636 L74.07728125 70.501168047 L70.92534375 75.754157285 L69.29503125 76.403403146 L62.9368125 71.917704471",
+          "M66.1974375 47.246361755 L67.610375 50.079434603 L60.38265625 62.651195364 L54.78525 69.025609272 L46.525 74.632732616"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "cbc9f4b66775aea40474d64d",
+            "glyph": "女",
+            "position": "left",
+            "donorGlyph": "好",
+            "donorPathsSha256": "0d4bac4582b975cad3a199e958ce2196cee6ab854ebf2245812c9a8a6400b1e5",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "reviewed-component-assignment",
+            "targetBox": {
+              "x": 10,
+              "y": 10,
+              "width": 30.525,
+              "height": 80.00000000039735
+            },
+            "transform": {
+              "sx": 0.9249999999999999,
+              "sy": 1.3245033112648572,
+              "tx": 0.75,
+              "ty": -12.781456953755539
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "d991b7e7cf4daf8542ca8c2d",
+            "glyph": "方",
+            "position": "right",
+            "donorGlyph": "方",
+            "donorPathsSha256": "47833b88e8192c584f05f246358eebdb7570707cd7d958ebad973d91b492e6d2",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 46.525,
+              "y": 30.48401407294942,
+              "width": 43.475,
+              "height": 45.91938907307577
+            },
+            "transform": {
+              "sx": 0.5434375,
+              "sy": 0.5902235099367065,
+              "tx": 41.090624999999996,
+              "ty": 23.93253311265198
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "reviewed-profile+intrinsic-contain",
+            "donorGlyphs": [
+              "好"
+            ],
+            "componentIds": [
+              "cbc9f4b66775aea40474d64d"
+            ]
+          }
+        ],
+        "grade": "4급",
+        "hun": "방해할",
+        "eum": "방",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "68e0cefdc02afae27f0e9c639cb1ac6ba1bed299b84c5df5fef73005d04793cf",
+      "originalPathsSha256": "2a2889f50dbab5d94a95551f6f93b9d117de56004aaa50a99f8416db2d81ff21",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 4.981443731776147,
+        "unorderedMeanDistance": 4.981443731776147,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 9.741972848355712
+      },
+      "corrected": {
+        "paths": [
+          "M30.3 15 L35.3 21.1 L25.4 60.4 L39.8 70 L43.7 75.2",
+          "M39.2 40.4 L42.9 44.4 L37.5 63.2 L29.6 73.6 L17.5 80.7",
+          "M10 48.4 L14.9 50.6 L38.8 44.2",
+          "M60.4 20 L69.5 25.3 L71.8 30.4",
+          "M49.2 44 L81.3 38.5 L90 39.2",
+          "M68.3 52 L77 52.8 L80.1 56.6 L73.5 77.7 L70.1 83 L65.6 85 L59.2 77.6",
+          "M64.5 44.4 L67 47.5 L63.2 55.5 L49.2 72.1"
+        ],
+        "pathsSha256": "b5aeea5b389193e12967a6169bb481374bbd2d0debf274c099c5007e4a197df7",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "9fbadb990bc74bc4b7f7df8064e78faa2ac94248d77d878aaaf3966a04a47040",
+        "reviewRecordSha256": "f7b7d44be597114f97a14d07abeac82e234f8f2464f7c615b9ed4539c7abca05",
+        "runtimeReference": {
+          "glyph": "妨",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-a-b-0605",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "pathsSha256": "b5aeea5b389193e12967a6169bb481374bbd2d0debf274c099c5007e4a197df7",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0605",
+            "glyph": "妨",
+            "videoFilename": "0605 방해할 방.mp4"
+          },
+          "paths": [
+            "M30.3 15 L35.3 21.1 L25.4 60.4 L39.8 70 L43.7 75.2",
+            "M39.2 40.4 L42.9 44.4 L37.5 63.2 L29.6 73.6 L17.5 80.7",
+            "M10 48.4 L14.9 50.6 L38.8 44.2",
+            "M60.4 20 L69.5 25.3 L71.8 30.4",
+            "M49.2 44 L81.3 38.5 L90 39.2",
+            "M68.3 52 L77 52.8 L80.1 56.6 L73.5 77.7 L70.1 83 L65.6 85 L59.2 77.6",
+            "M64.5 44.4 L67 47.5 L63.2 55.5 L49.2 72.1"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "妨",
+          "manifestRow": "0605",
+          "videoFilename": "0605 방해할 방.mp4",
+          "expectedStrokes": 7,
+          "candidateStrokes": 7,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-a-b-0605",
+          "correctionSha256": "993302007d8a8acab85b57b2766de3443d09f1f090b8b3e3175c728d891b2da0",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0605.mp4",
+            "sha256": "70a63980411686a0643f948ec27f6e97e684a56e0ea055ddf0ed0bcba3e89c9c",
+            "bytes": 466065
+          },
+          "strokeEndsSeconds": [
+            3,
+            4.5,
+            6,
+            7,
+            8.5,
+            11,
+            12.6
+          ],
+          "durationSeconds": 12.681,
+          "pathsSha256": "b5aeea5b389193e12967a6169bb481374bbd2d0debf274c099c5007e4a197df7",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체7획 순서·방향·펜 경계는 같다. 마지막7획 왼내림 끝은 원본에서女1획 끝과 떨어지지만 후보는 붙는다. 마지막7획 왼내림 끝만 줄여 女1획 끝과의 원본 흰 간격을 복원했다. 나머지 6획의 경로와 전체 순서·방향·펜 경계를 유지했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+        }
+      }
+    },
+    {
+      "glyph": "標",
+      "expectedStrokes": 15,
+      "original": {
+        "glyph": "標",
+        "expectedStrokes": 15,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M13.864229765 41.393775372 L46.806788512 35.98105548",
+          "M29.707571802 10 L34.924281984 15.845737483 L31.832898172 90",
+          "M32.219321149 38.795669824 L30.770234987 46.698240866 L25.746736292 56.441136671 L10 77.225981055",
+          "M35.697127937 49.621109608 L46.420365535 58.173207037",
+          "M61.255377022 33.936662886 L66.305108086 34.094352 L80.33753383 31.518763136",
+          "M57.322413405 41.29548821 L59.458838086 42.924942389 L61.595262767 51.17733936",
+          "M60.284274895 41.715992514 L80.531754256 39.035277575 L82.571068724 41.400614286 L79.317876596 49.968389485",
+          "M64.751344682 36.669940864 L66.499328511 38.457084157 L67.32476532 48.444061382",
+          "M72.762937235 34.146915038 L74.365255745 35.934058331 L72.471606596 47.603052774",
+          "M62.080813831 49.758137334 L78.540994894 47.44536366",
+          "M62.614920001 54.64649987 L78.103998937 53.174734806",
+          "M52.806788512 60.743812283 L55.38020915 61.427131776 L85.047379149 58.273349495 L90 59.166921141",
+          "M69.752520639 60.218181902 L71.257728937 63.004022917 L70.432292128 73.569193562",
+          "M61.352487235 65.159107477 L56.836862341 73.358941409",
+          "M77.667002979 64.318098868 L83.493615745 69.784654823 L84.707493404 73.201252296"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "f3c616335c7437d3eddf12cd",
+            "glyph": "木",
+            "position": "left",
+            "donorGlyph": "朴",
+            "donorPathsSha256": "81db1fdfe874aa52c14799f8e1d935a8deb3e9acb63545cba28bfcb3d6add957",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "spatial-partition-inferred",
+            "targetBox": {
+              "x": 10,
+              "y": 10,
+              "width": 36.806788511749346,
+              "height": 80
+            },
+            "transform": {
+              "sx": 0.9660574412532639,
+              "sy": 1.0825439783491206,
+              "tx": -1.3028720626631873,
+              "ty": -1.5832205683355909
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "cd4e591b0c6d6c60ba08204d",
+            "glyph": "票",
+            "position": "right",
+            "donorGlyph": "票",
+            "donorPathsSha256": "804cf9bf0c947cad877c3c2d115858a414681cc7e163ed4e8d624bde22f9ab62",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 52.806788511749346,
+              "y": 31.51876313655068,
+              "width": 37.193211488250654,
+              "height": 42.05043042513951
+            },
+            "transform": {
+              "sx": 0.48555106381528274,
+              "sy": 0.5256303803142439,
+              "tx": 47.125841065110535,
+              "ty": 26.262459333408245
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 7
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 8
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 9
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 10
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 11
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "inferred-profile+intrinsic-contain",
+            "donorGlyphs": [
+              "朴"
+            ],
+            "componentIds": [
+              "f3c616335c7437d3eddf12cd"
+            ]
+          }
+        ],
+        "grade": "4급",
+        "hun": "표할",
+        "eum": "표",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "35aad85a94dc40c6f64a70c921f22b670506e8d80a744135417ed62b708550df",
+      "originalPathsSha256": "b2903353578afb30e0d3a014cd6664d23bcc1acbb17cb15e8b6b3d6ef4305f8c",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 10.37708142221056,
+        "unorderedMeanDistance": 10.37708142221056,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 17.95659749718087
+      },
+      "corrected": {
+        "paths": [
+          "M12.3 39.6 L36.5 35.1",
+          "M26.7 12.7 L32.4 18.4 L28.7 87.3",
+          "M30 37 L23.7 53.2 L10 71.6",
+          "M32.9 47.4 L40.5 54.4",
+          "M47.6 19.8 L78.5 14.8",
+          "M41.4 30.9 L45.1 34.1 L49.1 47.2",
+          "M46.3 32 L77.9 26.6 L81.6 30.3 L76 42.9",
+          "M52.2 21.6 L55.7 25.2 L57 43.1",
+          "M65.4 19.3 L68.4 22.7 L64.7 41.2",
+          "M49.9 44.9 L73 41.2",
+          "M49.2 53.4 L72.8 50",
+          "M38.9 64.3 L81.6 57.9 L90 58.8",
+          "M59.7 63.1 L62.7 66.4 L62.5 86.3",
+          "M48.2 69.8 L41.8 83.8",
+          "M72.6 69 L82.3 76.1 L85.2 82.2"
+        ],
+        "pathsSha256": "0bf40acd427b398acc4718a082a2a0901b39338deb30eb42661dceed78d2be77",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "e0776ad3088f4f962fa760515af7925f7d21128808d6fad7c745de5103a04ee8",
+        "reviewRecordSha256": "8b23b0b49a2797a4dec0297782c584449dac541f503ada5079b3eae493b9f520",
+        "runtimeReference": {
+          "glyph": "標",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-c-b-1639",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "pathsSha256": "0bf40acd427b398acc4718a082a2a0901b39338deb30eb42661dceed78d2be77",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1639",
+            "glyph": "標",
+            "videoFilename": "1639 표할 표.mp4"
+          },
+          "paths": [
+            "M12.3 39.6 L36.5 35.1",
+            "M26.7 12.7 L32.4 18.4 L28.7 87.3",
+            "M30 37 L23.7 53.2 L10 71.6",
+            "M32.9 47.4 L40.5 54.4",
+            "M47.6 19.8 L78.5 14.8",
+            "M41.4 30.9 L45.1 34.1 L49.1 47.2",
+            "M46.3 32 L77.9 26.6 L81.6 30.3 L76 42.9",
+            "M52.2 21.6 L55.7 25.2 L57 43.1",
+            "M65.4 19.3 L68.4 22.7 L64.7 41.2",
+            "M49.9 44.9 L73 41.2",
+            "M49.2 53.4 L72.8 50",
+            "M38.9 64.3 L81.6 57.9 L90 58.8",
+            "M59.7 63.1 L62.7 66.4 L62.5 86.3",
+            "M48.2 69.8 L41.8 83.8",
+            "M72.6 69 L82.3 76.1 L85.2 82.2"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "標",
+          "manifestRow": "1639",
+          "videoFilename": "1639 표할 표.mp4",
+          "expectedStrokes": 15,
+          "candidateStrokes": 15,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-c-b-1639",
+          "correctionSha256": "015848e6403cfcafa61ce7e53c03b330a45084962c126961ffbe521185a258dd",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1639.mp4",
+            "sha256": "fae211af92f0b7bad92087bb8e999fe156b860ef1bb101ba6dda915c6410745e",
+            "bytes": 749209
+          },
+          "strokeEndsSeconds": [
+            1.5,
+            5,
+            6,
+            7,
+            8.5,
+            9.5,
+            11,
+            12,
+            13,
+            14.5,
+            15.5,
+            17,
+            19,
+            20,
+            21
+          ],
+          "durationSeconds": 21.081,
+          "pathsSha256": "0bf40acd427b398acc4718a082a2a0901b39338deb30eb42661dceed78d2be77",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체15획을 직접 대조했다. 원본 示의13획은 아래로 내려오는 세로이며 왼쪽 갈고리가 없으므로 Ja13 끝의 갈고리를 제거했다. 木1 가로 끝과 오른쪽6획 머리의 간격, 오른쪽7획 끝과11획 가로의 간격을 원본대로 복원했다. 나머지順序와14왼점→15오른점 진행을 유지했다. 실제 개별 영상 전체0.5초 표본과 전 획 후보를 직접 대조하고, 완료 프레임을600px로 확대하여 실제 선폭5의 접합·분리를 확인했다. 완료 시각은 관찰된 표본이며 정확한 펜 떼기 시각이 아니다. 이 판정은 Codex 시각 대조이며 한국어문회 개별 승인이나 인간 전문가 확인을 뜻하지 않는다."
+        }
+      }
+    },
+    {
+      "glyph": "燃",
+      "expectedStrokes": 16,
+      "original": {
+        "glyph": "燃",
+        "expectedStrokes": 16,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M13.46875 34 Q16.9375 42 18.09375 54.571428571",
+          "M43.53125 28.285714286 Q40.0625 39.714285714 36.015625 46.571428571",
+          "M29.078125 10 Q30.8125 66 10 90",
+          "M28.5 50 Q36.015625 78.571428571 47 87.714285714",
+          "M62.557544757 14.550968213 L64.213554987 19.508220679 L58.961636829 36.718304713 L55.649616368 43.452685423",
+          "M62.037084399 31.948118378 L67.667519182 30.638655462 L69.086956522 33.351114359 L63.078005115 54.957252466 L56.31202046 66.555352576",
+          "M60.664961637 38.58896602 L63.929667519 43.639751553",
+          "M57.589514066 44.855681404 L60.712276215 52.899525027",
+          "M70.648337596 40.927292657 L84.416879795 37.466569236",
+          "M74.670076726 12.58677384 L77.319693095 17.26342711 L75.427109974 48.971136281 L72.351662404 58.979174277 L65.916879795 64.965290464",
+          "M76.799232737 45.884545123 L83.991048593 62.439897699 L90 65.05882353",
+          "M81.246803069 22.033613444 L84.842710997 26.336134454 L85.789002558 30.358056266",
+          "M57.352941176 71.512605042 L55.60230179 80.678845452 L53 87.41322616",
+          "M63.929667519 72.260869565 L66.484654731 82.362440629",
+          "M72.304347826 70.670807453 L75.474424552 76.750456704 L76.136828645 81.894775302",
+          "M81.578005115 71.232005845 L86.593350384 80.585312386 L87.586956522 86.945560833"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "54e2c5033dc0d4651d90604c",
+            "glyph": "火",
+            "position": "left",
+            "donorGlyph": "火",
+            "donorPathsSha256": "ffe978dbf2a41c8dfa7d8260cd62119c60f78f94711fec2437dd2cb4adde42f0",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10,
+              "y": 10,
+              "width": 37,
+              "height": 80
+            },
+            "transform": {
+              "sx": 0.578125,
+              "sy": 1.1428571428571428,
+              "tx": -0.984375,
+              "ty": -8.285714285714285
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "673ef7ae2dce50ef641e459c",
+            "glyph": "然",
+            "position": "right",
+            "donorGlyph": "然",
+            "donorPathsSha256": "14b9ad12f940c85529d661c4af42e9365703189960d4d01fea1f7ddb56e5dd0b",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 53,
+              "y": 12.58677383997076,
+              "width": 37,
+              "height": 74.82645232005848
+            },
+            "transform": {
+              "sx": 0.473145780051151,
+              "sy": 0.935330654000731,
+              "tx": 47.84271099744245,
+              "ty": 3.2334672999634506
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 7
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 8
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 9
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 10
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 11
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 12
+          }
+        ],
+        "rules": [
+          "left-before-right",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "탈",
+        "eum": "연",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "2ea8e999ccfc6d724a63eb2e9ca03fa06ebab7a79ed3134b036f062297dff9f9",
+      "originalPathsSha256": "1d9ce351dab652d5d7387fe71ea537247d1e0c322ad96eda0742345cb1c064bf",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 10.953897528170696,
+        "unorderedMeanDistance": 10.953897528170696,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 19.890671763402324
+      },
+      "corrected": {
+        "paths": [
+          "M15.6 34.3 L14.7 49.3",
+          "M33.9 27.7 L35.1 30.9 L28.9 36.8",
+          "M22.3 14.2 L27.2 18.4 L24.5 58.8 L18.6 74.2 L10 81.4",
+          "M27.6 56.4 L35 63.4",
+          "M45.4 18.7 L48.1 22.7 L34.3 45.3",
+          "M45.6 32.4 L54.5 31.7 L57.1 34.1 L48.4 50.7 L36.8 61.4",
+          "M42.5 37.7 L47.9 43.3",
+          "M38.8 43.8 L44.1 51.5",
+          "M60.3 41.1 L82.4 37",
+          "M64.5 14 L69.6 17.7 L67.3 39.4 L62.2 54.3 L53.2 65",
+          "M68.9 43.3 L80.9 60.5 L90 63.6",
+          "M76.6 24.1 L84 29.2",
+          "M38.9 71.3 L32.4 86",
+          "M47.3 71.3 L52.2 81.1",
+          "M59.4 71.1 L66.5 80.8",
+          "M73.6 70.4 L82.5 78.6 L84.9 85.5"
+        ],
+        "pathsSha256": "8c94649001ef3a91004c987bebfaad20999541811fa321e8a2baba3127f0ecfe",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "0dd6341e7b7c6552d7a73ea0e6584614c4438afee7f144a8fdc2af719e2d3e75",
+        "reviewRecordSha256": "4bbd0f5db42bf2228f836c6fa8073a98d4f8cb53a74ab0b8afd7832faa3450f5",
+        "runtimeReference": {
+          "glyph": "燃",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "pathsSha256": "8c94649001ef3a91004c987bebfaad20999541811fa321e8a2baba3127f0ecfe",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1031",
+            "glyph": "燃",
+            "videoFilename": "1031 불탈 연.mp4"
+          },
+          "paths": [
+            "M15.6 34.3 L14.7 49.3",
+            "M33.9 27.7 L35.1 30.9 L28.9 36.8",
+            "M22.3 14.2 L27.2 18.4 L24.5 58.8 L18.6 74.2 L10 81.4",
+            "M27.6 56.4 L35 63.4",
+            "M45.4 18.7 L48.1 22.7 L34.3 45.3",
+            "M45.6 32.4 L54.5 31.7 L57.1 34.1 L48.4 50.7 L36.8 61.4",
+            "M42.5 37.7 L47.9 43.3",
+            "M38.8 43.8 L44.1 51.5",
+            "M60.3 41.1 L82.4 37",
+            "M64.5 14 L69.6 17.7 L67.3 39.4 L62.2 54.3 L53.2 65",
+            "M68.9 43.3 L80.9 60.5 L90 63.6",
+            "M76.6 24.1 L84 29.2",
+            "M38.9 71.3 L32.4 86",
+            "M47.3 71.3 L52.2 81.1",
+            "M59.4 71.1 L66.5 80.8",
+            "M73.6 70.4 L82.5 78.6 L84.9 85.5"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "燃",
+          "manifestRow": "1031",
+          "videoFilename": "1031 불탈 연.mp4",
+          "expectedStrokes": 16,
+          "candidateStrokes": 16,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1031.mp4",
+            "sha256": "ea3ceef6b5af2646bde5e1ecdf3ec1f6725ff488870b2def6e7b070889ca68fe",
+            "bytes": 716804
+          },
+          "strokeEndsSeconds": [
+            1,
+            2,
+            5.5,
+            6.5,
+            8,
+            10,
+            11,
+            12,
+            13,
+            15.5,
+            16.5,
+            18,
+            19,
+            19.5,
+            20.5,
+            21.5
+          ],
+          "durationSeconds": 21.598,
+          "pathsSha256": "8c94649001ef3a91004c987bebfaad20999541811fa321e8a2baba3127f0ecfe",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체16획과 완료600px/선폭5 대조. 火1/2점후3/4획, 중앙5–8획,犬9–12획,아래13–16점순서가대응한다. 중앙6획 끝과火4획의접합,두내부7·8획의양끝연결,犬윗점과아래네점의분리를확인."
+        }
+      }
+    },
+    {
+      "glyph": "奇",
+      "expectedStrokes": 8,
+      "original": {
+        "glyph": "奇",
+        "expectedStrokes": 8,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M17.499999999 23.405797101 L81.500000001 23.405797101",
+          "M51.5 10 Q52.5 35.739130435 17.499999999 47",
+          "M49.5 27.15942029 Q64.500000001 42.173913043 82.500000001 47",
+          "M10 56.217391304 L17.2 57.343478261 L79.800000001 53 L90 54.179710145",
+          "M22.699999999 63.724637681 L26 65.386956522 L29.7 75.575362319",
+          "M27.399999999 64.314492754 L43.199999999 62.866666667 L47.3 64.153623188 L42.6 71.17826087",
+          "M30.5 72.947826087 L49.099999999 71.768115942",
+          "M59.4 55.198550725 L63.399999999 56.860869565 L63.8 58.415942029 L63.3 86.62173913 L59.6 90 L48.900000001 86.085507246"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "b6bd5bc0b79adfa6475f3a9f",
+            "glyph": "大",
+            "position": "top",
+            "donorGlyph": "大",
+            "donorPathsSha256": "7cdea35bf7cecece4f8f2ebd35e7b62269321f2e13dec7a9a2d16fbb4bfc7eb0",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 17.499999999516888,
+              "y": 10,
+              "width": 65.00000000096622,
+              "height": 37
+            },
+            "transform": {
+              "sx": 1.000000000014865,
+              "sy": 0.5362318840579711,
+              "tx": -0.5000000007506813,
+              "ty": 1.9565217391304337
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "c32e42c56786d2fcd577e019",
+            "glyph": "可",
+            "position": "bottom",
+            "donorGlyph": "可",
+            "donorPathsSha256": "4ccd1f2674ad390916245044a8dee16a0718374744cb6eb596c8cc4f02070578",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 9.999999999405404,
+              "y": 53,
+              "width": 80.0000000011892,
+              "height": 37
+            },
+            "transform": {
+              "sx": 1.000000000014865,
+              "sy": 0.5362318840579711,
+              "tx": -7.432490178871376e-10,
+              "ty": 44.68840579710145
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          }
+        ],
+        "rules": [
+          "top-before-bottom",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "기특할",
+        "eum": "기",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "15314c8fb0372ad6d8831a73e35c69857d8001d576718ac46a41c72319720575",
+      "originalPathsSha256": "75df473fca6c2de83234a9319c643bb3374730aa77346e0768343c8f167b8361",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 7.270977382662781,
+        "unorderedMeanDistance": 7.270977382662781,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 9.85358037095776
+      },
+      "corrected": {
+        "paths": [
+          "M31.7 25.2 L67.8 20.7",
+          "M45.1 10 L48.5 13 L45.9 25.5 L41.5 33.9 L34.1 41.7",
+          "M52.5 28.8 L59.7 32.8 L63.1 37.6",
+          "M11.7 49.5 L77.5 42.1 L88.3 43.5",
+          "M25.9 55.5 L28.9 57.9 L31.7 74.5",
+          "M30.9 57 L43.7 54.1 L46 55.1 L47.7 57.3 L44.4 66",
+          "M32.6 68.8 L48.6 67.3",
+          "M58.4 45.8 L62.3 49.5 L61.6 85.8 L59 90 L48.2 84.4"
+        ],
+        "pathsSha256": "4feecaf21ed5da4519c47c8453e233703002e709456cf6cf117443233f85f236",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "fd7b1f7cd98f8f0b5a8679aa55a6208967d4f3f80f8006ba66bd35887f7aa0ce",
+        "reviewRecordSha256": "5337187b9a1fe100e92b0e4d4bc95b21bc8a5fcee8076877e21fae074683f965",
+        "runtimeReference": {
+          "glyph": "奇",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "pathsSha256": "4feecaf21ed5da4519c47c8453e233703002e709456cf6cf117443233f85f236",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0265",
+            "glyph": "奇",
+            "videoFilename": "0265 기이할 기.mp4"
+          },
+          "paths": [
+            "M31.7 25.2 L67.8 20.7",
+            "M45.1 10 L48.5 13 L45.9 25.5 L41.5 33.9 L34.1 41.7",
+            "M52.5 28.8 L59.7 32.8 L63.1 37.6",
+            "M11.7 49.5 L77.5 42.1 L88.3 43.5",
+            "M25.9 55.5 L28.9 57.9 L31.7 74.5",
+            "M30.9 57 L43.7 54.1 L46 55.1 L47.7 57.3 L44.4 66",
+            "M32.6 68.8 L48.6 67.3",
+            "M58.4 45.8 L62.3 49.5 L61.6 85.8 L59 90 L48.2 84.4"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "奇",
+          "sourceGlyph": "奇",
+          "manifestRow": "0265",
+          "videoFilename": "0265 기이할 기.mp4",
+          "expectedStrokes": 8,
+          "candidateStrokes": 8,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0265.mp4",
+            "sha256": "c4eb612b031d7836fde12f6d5d709318c4bcafa509dc4d6f8516ac88b64dd967",
+            "bytes": 412445
+          },
+          "strokeEndsSeconds": [
+            1,
+            2.5,
+            3.5,
+            6,
+            7.5,
+            8.5,
+            9.5,
+            12.5
+          ],
+          "durationSeconds": 12.665,
+          "pathsSha256": "4feecaf21ed5da4519c47c8453e233703002e709456cf6cf117443233f85f236",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체 25개 2fps 프레임과 3.5/6초 확대 및 마지막 12–12.583초 12fps 확대를 대조. 大 3획·긴가로·口3획·마지막 세로갈고리의 8획. 마지막 갈고리의 왼위 방향 끝이 12.5초에 완성됨을 확인했다. 大 두 끝과 아래 긴가로의 분리, 口 폐합과 마지막 세로의 윗가로 접합이 Ja 8개 누적 경로와 일치. 기존 A 담당자의 개별 영상 전체 시각 대조 기록을 기존 배포 레코드 계약으로 옮겼다. 이번 통합 작업은 고정 원본·획 대응·경로·해시의 기술적 재현 검산이며 추가 영상 검토나 한국어문회 개별 승인이 아니다. 완료 시각은 A 담당자가 기록한 관찰 표본이다."
+        }
+      }
+    },
+    {
+      "glyph": "否",
+      "expectedStrokes": 7,
+      "original": {
+        "glyph": "否",
+        "expectedStrokes": 7,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M16.399999999 14.104396024 L23.2 15.177853446 L78.7 10 L88.700000001 11.389180193",
+          "M56.5 13.472950482 L59.9 16.882756409 L44.099999999 30.585124674 L29.599999999 38.983350384 L10 46.876419661",
+          "M45.100000001 21.555453421 L50.300000001 27.175318746 L48.900000001 58.873884961",
+          "M62.6 30.206257348 L83.100000001 39.109639493 L90 45.108372143",
+          "M12.864136655 66.404866881 L19.676293339 69.466830721 L26.488450024 90",
+          "M22.833146437 67.845791041 L73.84124649 64.873884961 L80.819553337 68.566253121 L69.687492413 80.814108481",
+          "M27.485351002 83.42578352 L80.819553337 82.70532144"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "b687c5bf8a49a7a9c1d4b7d9",
+            "glyph": "不",
+            "position": "top",
+            "donorGlyph": "不",
+            "donorPathsSha256": "78c101a96c19abf9873a907422fb839fae4187a931ea5f8e411da3fe38421f43",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 9.999999999210551,
+              "y": 10,
+              "width": 80.0000000015789,
+              "height": 48.873884961439586
+            },
+            "transform": {
+              "sx": 1.0000000000197362,
+              "sy": 0.6314455421374623,
+              "tx": -9.868124095646635e-10,
+              "ty": 2.864665373846676
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "2f173481a7989d26bba18e03",
+            "glyph": "口",
+            "position": "bottom",
+            "donorGlyph": "吉",
+            "donorPathsSha256": "00154b82491524f4a5f1b0fdae3c99a642edb4aa1c4f4f97ad34a9bdfec41592",
+            "approvedPathIndices": [
+              4,
+              5,
+              6
+            ],
+            "assignment": "spatial-partition-inferred",
+            "targetBox": {
+              "x": 12.8641366547539,
+              "y": 64.87388496143959,
+              "width": 67.95541668269757,
+              "height": 25.12611503856041
+            },
+            "transform": {
+              "sx": 1.6615016303838037,
+              "sy": 0.9005775999484018,
+              "tx": -31.664107039532052,
+              "ty": 8.948016004643833
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          }
+        ],
+        "rules": [
+          "top-before-bottom",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "inferred-profile+intrinsic-contain",
+            "donorGlyphs": [
+              "吉",
+              "告"
+            ],
+            "componentIds": [
+              "2f173481a7989d26bba18e03",
+              "464d890c7556fb3dddbae248"
+            ]
+          }
+        ],
+        "grade": "4급",
+        "hun": "아닐",
+        "eum": "부",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "df20935020f346bf855bed8edeeed762a5755152566d484250118624b87793c7",
+      "originalPathsSha256": "3e76c8d40a2c60c6a2b7f56f0068beda095f14a75289f6220a6a0f7573c90658",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 6.593475453245191,
+        "unorderedMeanDistance": 6.593475453245191,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 13.208605329192451
+      },
+      "corrected": {
+        "paths": [
+          "M18.9 16.3 L76.6 10.9 L86.2 12.4",
+          "M51.6 15.9 L53.7 20.8 L41.9 34.6 L25.1 48.4 L10 57.1",
+          "M44.1 22.7 L48.1 28.9 L47.6 51.5",
+          "M61.9 33.6 L82.8 42.9 L90 49.9",
+          "M28.1 58.8 L32.4 63.4 L37.4 89.1",
+          "M35.6 60.2 L66.1 57.2 L71.6 62.1 L65.8 75.7 L63.7 76.1",
+          "M39.3 80.3 L71.2 79.7"
+        ],
+        "pathsSha256": "aee719c9e398652cd153bab15dd92fc7d9781335b950c4a158d3a939c4ad443b",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "6f204d415e709f849f4ec61bfb653d1d9841c432280368c456874f7f249571e0",
+        "reviewRecordSha256": "13b8534e5f1bfb37c0cae7e583f36022aaf139a6295f57c033a132307fc02599",
+        "runtimeReference": {
+          "glyph": "否",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "textbook-5426-stage2-v1",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "pathsSha256": "aee719c9e398652cd153bab15dd92fc7d9781335b950c4a158d3a939c4ad443b",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0663",
+            "glyph": "否",
+            "videoFilename": "0663 아닐 부.mp4"
+          },
+          "paths": [
+            "M18.9 16.3 L76.6 10.9 L86.2 12.4",
+            "M51.6 15.9 L53.7 20.8 L41.9 34.6 L25.1 48.4 L10 57.1",
+            "M44.1 22.7 L48.1 28.9 L47.6 51.5",
+            "M61.9 33.6 L82.8 42.9 L90 49.9",
+            "M28.1 58.8 L32.4 63.4 L37.4 89.1",
+            "M35.6 60.2 L66.1 57.2 L71.6 62.1 L65.8 75.7 L63.7 76.1",
+            "M39.3 80.3 L71.2 79.7"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "否",
+          "manifestRow": "0663",
+          "videoFilename": "0663 아닐 부.mp4",
+          "expectedStrokes": 7,
+          "candidateStrokes": 7,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "status": "matched",
+          "strokeEndsSeconds": [
+            1.5,
+            3,
+            4,
+            5,
+            6.5,
+            8,
+            9.3
+          ],
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체7획 대조. 원본 不 세로3획 끝과 口 상단6획 사이에는 흰 간격이 있으나 후보는 이어진다. 不 세로 3획 끝을 줄여 아래 口와 분리한다. 부모 검토자가 원본 전체 2fps 진행표를 다시 확인하고, 실제 선폭 5의 최종 후보 모든 획을 대조했다. 9.2초 확대 완료 프레임에서 연결·분리를 재확인했다. 다른 획의 경로·순서·방향·경계는 변경하지 않았다. 출판사 영상 대조이며 한국어문회나 인간 전문가의 개별 인증이 아니다.",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0663.mp4",
+            "sha256": "bc0212a8d1df7f9215252ddcf3fb8cf6260a4ff08498141a68a578e6a1e9e027",
+            "bytes": 341618
+          },
+          "durationSeconds": 9.315,
+          "geometryCorrection": "textbook-5426-stage2-v1",
+          "correctionSha256": "cf147526920361e6c669c19dfd5a9e29db02c16eb33f306baf85fe7c28ab8ac8",
+          "pathsSha256": "aee719c9e398652cd153bab15dd92fc7d9781335b950c4a158d3a939c4ad443b"
+        }
+      }
+    },
+    {
+      "glyph": "崇",
+      "expectedStrokes": 11,
+      "original": {
+        "glyph": "崇",
+        "expectedStrokes": 11,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M50 10 L50 45.861538462",
+          "M10 21.384615385 L10 45.861538462 L90 45.861538462",
+          "M90 21.384615385 L90 47",
+          "M40.490740741 53 L56.740740741 57.67125",
+          "M17.018518518 59.89125 L18.342592592 61.9725 L11.962962962 67.245 L11.481481481 70.1125",
+          "M20.99074074 63.68375 L78.046296297 59.5675 L85.50925926 61.14 L88.518518519 62.3425 L75.87962963 65.95",
+          "M31.703703703 69.04875 L66.490740741 67.19875",
+          "M16.777777777 76.495 L71.064814815 73.67375 L82.25925926 74.275",
+          "M45.546296296 76.35625 L49.518518519 78.85375 L47.472222222 89.1675 L44.824074074 90 L32.305555555 87.54875",
+          "M22.796296296 80.61125 L12.444444444 88.84375",
+          "M65.648148148 80.33375 L80.814814815 84.77375 L86.231481482 88.705"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "790ee76e0be92a3fc683a42f",
+            "glyph": "山",
+            "position": "top",
+            "donorGlyph": "山",
+            "donorPathsSha256": "39641711715b88166a4d1f6d891bff5c4d23c395cfac62acc189e4bf22eeae41",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 9.999999999399407,
+              "y": 10,
+              "width": 80.0000000012012,
+              "height": 37
+            },
+            "transform": {
+              "sx": 1.481481481503726,
+              "sy": 0.5692307692307692,
+              "tx": -24.074074075186296,
+              "ty": 0.8923076923076927
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "3b5f4e791472af81f0119bfb",
+            "glyph": "宗",
+            "position": "bottom",
+            "donorGlyph": "宗",
+            "donorPathsSha256": "44178db9ffc00b3e3bd4f00278b991cb7c21494a427f6b9969d378c1a1e55e92",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 11.481481480903128,
+              "y": 53,
+              "width": 77.03703703819376,
+              "height": 37
+            },
+            "transform": {
+              "sx": 1.2037037037217775,
+              "sy": 0.4625,
+              "tx": -10.185185186088873,
+              "ty": 48.375
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 7
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 8
+          }
+        ],
+        "rules": [
+          "top-before-bottom",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "높을",
+        "eum": "숭",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "2fd94763b0a6fe4574384b845401010832fea358e21cac80df26201223947fef",
+      "originalPathsSha256": "405b2397ea611f4de212615e3f35f4732d32e42002352adbb4869711fbaf855c",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 15.181713489021014,
+        "unorderedMeanDistance": 15.17616725371082,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 0.9090909090909091,
+        "maxMeanDistance": 25.690497594702567
+      },
+      "corrected": {
+        "paths": [
+          "M46 10 L50.2 13.8 L48.3 25.9",
+          "M30.6 16.7 L32.8 20.1 L30.8 29.4 L32 31.1 L63.9 25.5",
+          "M66.7 12.8 L69.5 17.2 L64.9 31.8",
+          "M47 35.6 L51 37.3",
+          "M22.6 41.6 L23.3 46.7 L18.3 59.9",
+          "M26.2 47.2 L72.8 40.3 L76.8 41.5 L81.7 45.9 L70.9 51.6",
+          "M35.2 53.4 L60.3 51.8",
+          "M25.7 65.3 L30.8 66.2 L64.9 61.5 L73.3 62.8",
+          "M46.6 66 L49.6 69.9 L48.3 87.6 L46 90 L38.7 85.2",
+          "M31 72.4 L23.6 87.7",
+          "M61.8 71.4 L73.6 80.1 L76.6 86.6"
+        ],
+        "pathsSha256": "35b5d0efeb6fe354d419e9c5bc5feff9a8523280b1d51210810443363faadf09",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "79ab22e0bf62dd5d27784b240d277d8b03cd5d118a1b5675875402328feba3f9",
+        "reviewRecordSha256": "cb11abd0db4ed60fae8ccb7c00fb5461a0b24297dc3a8f09d9221749a3b05340",
+        "runtimeReference": {
+          "glyph": "崇",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-b-0903",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "pathsSha256": "35b5d0efeb6fe354d419e9c5bc5feff9a8523280b1d51210810443363faadf09",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "0903",
+            "glyph": "崇",
+            "videoFilename": "0903 높을 숭.mp4"
+          },
+          "paths": [
+            "M46 10 L50.2 13.8 L48.3 25.9",
+            "M30.6 16.7 L32.8 20.1 L30.8 29.4 L32 31.1 L63.9 25.5",
+            "M66.7 12.8 L69.5 17.2 L64.9 31.8",
+            "M47 35.6 L51 37.3",
+            "M22.6 41.6 L23.3 46.7 L18.3 59.9",
+            "M26.2 47.2 L72.8 40.3 L76.8 41.5 L81.7 45.9 L70.9 51.6",
+            "M35.2 53.4 L60.3 51.8",
+            "M25.7 65.3 L30.8 66.2 L64.9 61.5 L73.3 62.8",
+            "M46.6 66 L49.6 69.9 L48.3 87.6 L46 90 L38.7 85.2",
+            "M31 72.4 L23.6 87.7",
+            "M61.8 71.4 L73.6 80.1 L76.6 86.6"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "崇",
+          "manifestRow": "0903",
+          "videoFilename": "0903 높을 숭.mp4",
+          "expectedStrokes": 11,
+          "candidateStrokes": 11,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-b-0903",
+          "correctionSha256": "dce0486a9839707a9808038ea08453d00f56230226fe6a5110361aa2e76917fe",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0903.mp4",
+            "sha256": "750db397a79f089863f3b2e994fc23e35a385886f4ab26f168305876c95d157c",
+            "bytes": 438042
+          },
+          "strokeEndsSeconds": [
+            1,
+            2.5,
+            3.5,
+            4.5,
+            5,
+            6.5,
+            7.5,
+            9,
+            10,
+            11,
+            12.1
+          ],
+          "durationSeconds": 12.181,
+          "pathsSha256": "35b5d0efeb6fe354d419e9c5bc5feff9a8523280b1d51210810443363faadf09",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체11획 대조. 원본4획 점은 山 바닥과宀가로 사이에서 양쪽 모두 분리되어 있으나 후보4획은 두 부품을 잇는다. 4획 宀 점을 짧게 조정했다. 원본 완료 12.1초 확대에서 점의 잉크 몸체는 위 山·아래 宀 가로와 구분되며, 아래 가로에 닿을 듯한 얇은 외곽선은 추가 잉크 획으로 해석하지 않았다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+        }
+      }
+    },
+    {
+      "glyph": "異",
+      "expectedStrokes": 11,
+      "original": {
+        "glyph": "異",
+        "expectedStrokes": 11,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M10 12.854599407 L17.499999999 17.90504451 L23.999999999 46.835311573",
+          "M17.4 13.897626113 L23.299999999 15.105341246 L78.600000001 10 L88.2 12.086053412 L90 13.623145401 L78.600000001 47",
+          "M20.099999999 28.829376855 L85.8 25.864985163",
+          "M46.200000001 13.952522255 L51.300000001 16.642433234 L50.600000001 40.412462908",
+          "M23.099999999 42.278931751 L80.900000001 40.192878338",
+          "M27.215681234 65.697943445 L39.690745502 65.935732648 L72.870951157 62.749357326",
+          "M35.099228792 57.089974293 L39.690745502 60.133676093 L39.690745502 75.637532134",
+          "M55.111311053 53 L60.39588689 55.425449871 L56.150899743 74.543701799",
+          "M15.347043701 77.111825193 L21.324678663 77.63496144 L74.863496144 74.210796915 L84.652956299 74.924164524",
+          "M37.351670951 79.870179949 L39.60411311 82.723650386 L23.577120823 90",
+          "M57.190488432 79.394601542 L68.53933162 85.244215938 L72.611053985 89.619537275"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "273be41c4f2f6b0f534b26a4",
+            "glyph": "田",
+            "position": "top",
+            "donorGlyph": "田",
+            "donorPathsSha256": "c289c2d598ee975628f4f33d098dc6755f90f0998e1d2db743818444656c8ee2",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 9.999999999464869,
+              "y": 10,
+              "width": 80.00000000107028,
+              "height": 37
+            },
+            "transform": {
+              "sx": 1.0000000000133784,
+              "sy": 0.5489614243323442,
+              "tx": -6.689191422992735e-10,
+              "ty": 1.05192878338279
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "dd9a976de10cbd51c8cdc309",
+            "glyph": "共",
+            "position": "bottom",
+            "donorGlyph": "共",
+            "donorPathsSha256": "1debb554dd8b894e9f987d9577d41ab67839680c53b3b87ba92c45995ba785a5",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 15.347043701335892,
+              "y": 53,
+              "width": 69.30591259732822,
+              "height": 37
+            },
+            "transform": {
+              "sx": 0.8663239074666027,
+              "sy": 0.47557840616966573,
+              "tx": 6.683804626669861,
+              "ty": 47.72107969151671
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 6
+          }
+        ],
+        "rules": [
+          "top-before-bottom",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "다를",
+        "eum": "이",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "de2e768dd603189bda7ef43c6a06bf78f5e69e6d743bddefb57cd0a417d2b2f0",
+      "originalPathsSha256": "31c2bf8e57e69d973e9aa5666929f7757e267ae855ac604cfcc8611a9d90f46e",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 9.894193201241247,
+        "unorderedMeanDistance": 9.894193201241247,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 15.503889114415028
+      },
+      "corrected": {
+        "paths": [
+          "M28.1 13.2 L32.5 17.9 L38 39.7",
+          "M34.1 13.6 L65.3 10 L68.8 12.1 L70.3 15.2 L62.6 37.9",
+          "M34.4 25.9 L67.9 22.3",
+          "M47.2 14.5 L49.7 17.5 L48.7 32.6",
+          "M39.9 37.1 L60 32.8",
+          "M23.9 51.9 L28.9 53.2 L68.4 47.4 L75.4 48.1",
+          "M33.4 44.1 L37.8 48.6 L40 64.2",
+          "M56.9 39.7 L61 44.4 L55.4 61.9",
+          "M10 68 L17.1 69.8 L81.5 62.1 L90 65.1",
+          "M40.9 75 L41.4 75.8 L33 83.4 L21.6 89.9",
+          "M57.1 72.6 L69.1 81.8 L74.3 90"
+        ],
+        "pathsSha256": "c831081c9e180ff48fc6dbecc9ad078126c7bac4d7bc673f9309af9cb62420af",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "872f8c88ba59e2a12231b700a60125affd8e8f1b929a217d0511b4691b216aa1",
+        "reviewRecordSha256": "944b5885476b8c359e302862e7ef03fc9b5e78f18463844efa920b72d0338c65",
+        "runtimeReference": {
+          "glyph": "異",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-b-1190",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            4,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "pathsSha256": "c831081c9e180ff48fc6dbecc9ad078126c7bac4d7bc673f9309af9cb62420af",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1190",
+            "glyph": "異",
+            "videoFilename": "1190 다를 이.mp4"
+          },
+          "paths": [
+            "M28.1 13.2 L32.5 17.9 L38 39.7",
+            "M34.1 13.6 L65.3 10 L68.8 12.1 L70.3 15.2 L62.6 37.9",
+            "M34.4 25.9 L67.9 22.3",
+            "M47.2 14.5 L49.7 17.5 L48.7 32.6",
+            "M39.9 37.1 L60 32.8",
+            "M23.9 51.9 L28.9 53.2 L68.4 47.4 L75.4 48.1",
+            "M33.4 44.1 L37.8 48.6 L40 64.2",
+            "M56.9 39.7 L61 44.4 L55.4 61.9",
+            "M10 68 L17.1 69.8 L81.5 62.1 L90 65.1",
+            "M40.9 75 L41.4 75.8 L33 83.4 L21.6 89.9",
+            "M57.1 72.6 L69.1 81.8 L74.3 90"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "異",
+          "manifestRow": "1190",
+          "videoFilename": "1190 다를 이.mp4",
+          "expectedStrokes": 11,
+          "candidateStrokes": 11,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-b-1190",
+          "correctionSha256": "7ad655341d895a809573218259145cc3c734344b0390fdfda4f9b85a56364787",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1190.mp4",
+            "sha256": "d075ce8757736aa0cc5465eb96a9f0309c0ce86711e7d1d0d61f186c4d6dd4f9",
+            "bytes": 463100
+          },
+          "strokeEndsSeconds": [
+            1.5,
+            3,
+            4,
+            4.5,
+            5.5,
+            6.5,
+            8,
+            9,
+            11,
+            12.5,
+            13.1
+          ],
+          "durationSeconds": 13.131,
+          "pathsSha256": "c831081c9e180ff48fc6dbecc9ad078126c7bac4d7bc673f9309af9cb62420af",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체 11획을 대조했다. 田의 가로 접합과 共의 아래 점 분리가 원본과 일치하도록 보정해야 한다. 田3획 가로→4획 세로로 순서를 교체하고 가로를 양쪽 외벽에 연결했다. 10획 아래 점은 긴 가로와 분리했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+        }
+      }
+    },
+    {
+      "glyph": "姿",
+      "expectedStrokes": 9,
+      "original": {
+        "glyph": "姿",
+        "expectedStrokes": 9,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M18.774193547 18.404569892 L27.166129032 21.537634409 L29.800806451 24.521505376",
+          "M10.967741936 38.396505376 L17.603225807 39.689516129 L32.337903226 28.947580645",
+          "M49.121774194 10 L53.708064516 12.237903226 L51.268548386 17.11155914 L45.804032258 23.327956989 L37.607258065 28.549731183",
+          "M49.512096774 22.134408602 L74.199999999 19.946236559 L78.688709678 22.283602151 L66.198387097 27.107526882",
+          "M48.145967742 28.15188172 L52.634677418 29.991935484 L46.77983871 39.938172043 L38.192741936 44.215053763 L24.336290323 47",
+          "M54.195967742 33.622311828 L59.172580646 37.650537634 L73.029032259 45.060483871 L77.908064517 46.403225806 L89.032258064 46.950268817",
+          "M43.200000001 53 L48.899999999 56.567493113 L36.9 76.392561983 L61.999999999 83.272727273 L69.8 86.17768595 L75.6 90",
+          "M59.899999999 66.046831956 L62.8 69.104683196 L53 79.042699725 L41.5 84.342975207 L25.5 87.400826446",
+          "M10 70.939393939 L16.300000001 71.856749311 L81.300000001 67.932506887 L90 69.308539945"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "5880b0f8b16b1cf08279335a",
+            "glyph": "次",
+            "position": "top",
+            "donorGlyph": "次",
+            "donorPathsSha256": "32c96e4b5a1ad792f1862236bd540fac732fbe38471109995e943b4f970c584d",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10.967741935235964,
+              "y": 10,
+              "width": 78.06451612952807,
+              "height": 37
+            },
+            "transform": {
+              "sx": 0.975806451619101,
+              "sy": 0.4973118279569892,
+              "tx": 1.209677419044958,
+              "ty": 3.634408602150538
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "308d3fb295c9aa002388fdb9",
+            "glyph": "女",
+            "position": "bottom",
+            "donorGlyph": "女",
+            "donorPathsSha256": "9cb13992e9d1a8400b5fcbc5a74a445dcc47fa14889e719f7d4023babde33185",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 9.999999999745938,
+              "y": 53,
+              "width": 80.00000000050812,
+              "height": 37
+            },
+            "transform": {
+              "sx": 1.0000000000063516,
+              "sy": 0.509641873278237,
+              "tx": -3.175770757479768e-10,
+              "ty": 46.01790633608815
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          }
+        ],
+        "rules": [
+          "top-before-bottom",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "모양",
+        "eum": "자",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "6b7ade4bc649a63ff40cc0a3fbcfd03a6d8905524aacb335789ac511c4a7a226",
+      "originalPathsSha256": "9a87f4dda23a0f7e0eebf1a4778ef0e809af194715695f242b3f07070047c4f8",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 5.8776227925041145,
+        "unorderedMeanDistance": 5.8776227925041145,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 9.395294296520563
+      },
+      "corrected": {
+        "paths": [
+          "M25.8 17 L32.4 20.7 L35 24.9",
+          "M22.2 43.9 L24.5 48.1 L33.2 35.7",
+          "M47.6 10 L50.7 12.8 L49.9 16.4 L45 26.4 L39.4 32.6",
+          "M48.6 25 L68.8 21 L72.8 25.1 L62.4 31.4",
+          "M52.5 31.2 L53.5 32.8 L49.5 41.9 L43.6 47.8 L35.8 50.9",
+          "M54.4 37.6 L66.4 48.2 L80.9 50.4",
+          "M44.5 50.3 L45.1 54.2 L36.9 70.8 L60.3 81.6 L69.7 90",
+          "M54.8 54.8 L58.4 58.4 L54.6 68.5 L47.8 77.8 L37 83.9 L24.4 86",
+          "M13 62.8 L18.2 64.1 L76.8 58.9 L87 60.1"
+        ],
+        "pathsSha256": "481ab744a32d488496fb001e7496b847840ab72a088f7fd047ce8ee0a5bb0ce7",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "6badbc0c890b4dd9dfe0b033422f228379d1cf244263ee6b736aa4265e2edc39",
+        "reviewRecordSha256": "5165b6fee8dc891574cf00e16f27075acbc5e7a8ad63026619d3930c967a4269",
+        "runtimeReference": {
+          "glyph": "姿",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-b-1220",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "pathsSha256": "481ab744a32d488496fb001e7496b847840ab72a088f7fd047ce8ee0a5bb0ce7",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1220",
+            "glyph": "姿",
+            "videoFilename": "1220 모양 자.mp4"
+          },
+          "paths": [
+            "M25.8 17 L32.4 20.7 L35 24.9",
+            "M22.2 43.9 L24.5 48.1 L33.2 35.7",
+            "M47.6 10 L50.7 12.8 L49.9 16.4 L45 26.4 L39.4 32.6",
+            "M48.6 25 L68.8 21 L72.8 25.1 L62.4 31.4",
+            "M52.5 31.2 L53.5 32.8 L49.5 41.9 L43.6 47.8 L35.8 50.9",
+            "M54.4 37.6 L66.4 48.2 L80.9 50.4",
+            "M44.5 50.3 L45.1 54.2 L36.9 70.8 L60.3 81.6 L69.7 90",
+            "M54.8 54.8 L58.4 58.4 L54.6 68.5 L47.8 77.8 L37 83.9 L24.4 86",
+            "M13 62.8 L18.2 64.1 L76.8 58.9 L87 60.1"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "姿",
+          "manifestRow": "1220",
+          "videoFilename": "1220 모양 자.mp4",
+          "expectedStrokes": 9,
+          "candidateStrokes": 9,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "vivasam-stage2-b-1220",
+          "correctionSha256": "3d745fca90e808f64c261988a6c4c9828b1b534cb09c2dceae9a042be9e34408",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex visual comparison",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1220.mp4",
+            "sha256": "9ef5d8c69d60ba14eae43d897edf26a57aa4c896c114d537d4696a7849ac2d67",
+            "bytes": 575412
+          },
+          "strokeEndsSeconds": [
+            1.5,
+            2.5,
+            4,
+            5.5,
+            7,
+            8.5,
+            11.5,
+            13.5,
+            16
+          ],
+          "durationSeconds": 16.031,
+          "pathsSha256": "481ab744a32d488496fb001e7496b847840ab72a088f7fd047ce8ee0a5bb0ce7",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "전체 9획을 확인했다. 원본 女7획은 위5획 끝에 닿으므로 이 접합은 유지해야 하며, 상부 欠의 간격만 보정해야 한다. 2획 끝과 5획 시작을 줄여 위 欠의 간격을 확보했다. 女7획과 위5획 끝의 원본 접합은 그대로 보존했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+        }
+      }
+    },
+    {
+      "glyph": "智",
+      "expectedStrokes": 12,
+      "original": {
+        "glyph": "智",
+        "expectedStrokes": 12,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M31.6 10 L35.6 12.482981013 L33.000000001 16.747231013 L26.900000001 22.79275 L16.300000001 29.000202532",
+          "M28.3 23.818329114 L56.399999999 21.335348101",
+          "M10 36.773012658 L16.7 37.258813291 L57.199999999 32.994563291",
+          "M35.2 25.05981962 L40.2 27.758712025 L35.2 40.551462025 L25.300000001 48.37825 L13.600000001 52.6425",
+          "M43 39.903727848 L51.8 43.952066456 L55.6 48.162338608",
+          "M57.500000001 28.460424051 L61.099999999 30.18771519 L65.8 46.812892405",
+          "M62.999999999 29.000202532 L83.2 27.326889241 L89.499999999 28.946224684 L84.899999999 40.497484177",
+          "M66.5 42.440686709 L90 41.145218354",
+          "M15.149834293 60.4925 L20.128429393 64.1925 L18.405069551 87.04",
+          "M21.468820382 61.4175 L56.127501663 58.6425 L64.744300877 61.51 L61.872034472 90",
+          "M23.383664651 73.165 L50.191484427 71.5",
+          "M23.000695798 83.8025 L57.084923798 81.49"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "ccc1b32bb5f274781d9778c4",
+            "glyph": "知",
+            "position": "top",
+            "donorGlyph": "知",
+            "donorPathsSha256": "43a9c5f67eebc76b399e5fdf062f0aa4684ce558d95cc74d371c09bef705a00a",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10.000000000914575,
+              "y": 9.999999999999996,
+              "width": 79.99999999817086,
+              "height": 42.64250000000001
+            },
+            "transform": {
+              "sx": 0.9999999999771358,
+              "sy": 0.5397784810126584,
+              "tx": 1.143213523846498e-9,
+              "ty": 4.332325949367084
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "22d6a9ed208c9351705cd81b",
+            "glyph": "日",
+            "position": "bottom",
+            "donorGlyph": "春",
+            "donorPathsSha256": "c859e8db27173fab53e34893b64deda99171ee0bddc2c95dc70e3d0d432d8e37",
+            "approvedPathIndices": [
+              6,
+              7,
+              8,
+              9
+            ],
+            "assignment": "reviewed-component-assignment",
+            "targetBox": {
+              "x": 15.149834292536994,
+              "y": 58.642500000000005,
+              "width": 49.59446658369737,
+              "height": 31.357499999999998
+            },
+            "transform": {
+              "sx": 1.9148442696408248,
+              "sy": 0.9249999999999999,
+              "tx": -45.74221348204123,
+              "ty": 6.750000000000007
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 6
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 7
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 8
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          }
+        ],
+        "rules": [
+          "top-before-bottom",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "reviewed-profile+intrinsic-contain",
+            "donorGlyphs": [
+              "春"
+            ],
+            "componentIds": [
+              "22d6a9ed208c9351705cd81b"
+            ]
+          }
+        ],
+        "grade": "4급",
+        "hun": "슬기/지혜",
+        "eum": "지",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "7af1c9fc09816cacd320b63053c5c62a2d1d5188ca15ae9d1b2789f629fc4312",
+      "originalPathsSha256": "5b1207902635eadb9361f517c77c956c76f896d24f26c74b878494eb7a101fb4",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 8.321590318842652,
+        "unorderedMeanDistance": 8.321590318842652,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 23.849074947423023
+      },
+      "corrected": {
+        "paths": [
+          "M34.3 10 L37 13.7 L35.6 17.1 L29.9 26.1 L22.9 32.1",
+          "M34.2 23.6 L56.7 19.7",
+          "M16.6 39.1 L22.9 39.7 L57.2 33.5",
+          "M40.1 24.7 L43.6 28.2 L37.3 46 L30.9 53.4 L20.3 58.8",
+          "M45.3 41.3 L53.4 49.2",
+          "M58.8 26.4 L61.6 28.7 L65.6 46.7",
+          "M63.4 27.3 L80.5 26.3 L82.7 29.2 L77.6 40.5",
+          "M65.7 43 L83.4 41.7",
+          "M39.7 53.9 L43.4 58.2 L41.9 86.1",
+          "M44.7 58.1 L64.6 54.6 L69.2 58.2 L67.7 90",
+          "M45 69 L68.7 67.2",
+          "M44.1 81.9 L64.4 80.3"
+        ],
+        "pathsSha256": "c673193100275f2314010581456f84e738b2937a90bd7fdb17784c77075e7898",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "62b460749bd4280efd85f07fa54ab2540af85c370bd546f9f6922d7d07628cee",
+        "reviewRecordSha256": "7f88b863b9189f06fec873264d8ca7a3ff0ea570d928fe8c683266692e3f4d65",
+        "runtimeReference": {
+          "glyph": "智",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "textbook-667a-stage2-c-v1",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "pathsSha256": "c673193100275f2314010581456f84e738b2937a90bd7fdb17784c77075e7898",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1415",
+            "glyph": "智",
+            "videoFilename": "1415 슬기 지.mp4"
+          },
+          "paths": [
+            "M34.3 10 L37 13.7 L35.6 17.1 L29.9 26.1 L22.9 32.1",
+            "M34.2 23.6 L56.7 19.7",
+            "M16.6 39.1 L22.9 39.7 L57.2 33.5",
+            "M40.1 24.7 L43.6 28.2 L37.3 46 L30.9 53.4 L20.3 58.8",
+            "M45.3 41.3 L53.4 49.2",
+            "M58.8 26.4 L61.6 28.7 L65.6 46.7",
+            "M63.4 27.3 L80.5 26.3 L82.7 29.2 L77.6 40.5",
+            "M65.7 43 L83.4 41.7",
+            "M39.7 53.9 L43.4 58.2 L41.9 86.1",
+            "M44.7 58.1 L64.6 54.6 L69.2 58.2 L67.7 90",
+            "M45 69 L68.7 67.2",
+            "M44.1 81.9 L64.4 80.3"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "智",
+          "sourceGlyph": "智",
+          "manifestRow": "1415",
+          "videoFilename": "1415 슬기 지.mp4",
+          "expectedStrokes": 12,
+          "candidateStrokes": 12,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "textbook-667a-stage2-c-v1",
+          "correctionSha256": "6e3f98503c45ca968a2fba44ca1d972c32cca91c68216048e567a644581446c1",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex / public_korean_stroke_sources",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1415.mp4",
+            "sha256": "6b2b5bef1862d3124b811aa65db26950bcea6d2aa555e80e979e195e9ef13ff6",
+            "bytes": 514276
+          },
+          "strokeEndsSeconds": [
+            1.6,
+            2.4,
+            4,
+            6,
+            6.7,
+            8,
+            8.6,
+            10.2,
+            11.5,
+            13.4,
+            13.8,
+            15.2
+          ],
+          "durationSeconds": 15.265,
+          "pathsSha256": "c673193100275f2314010581456f84e738b2937a90bd7fdb17784c77075e7898",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "12획 전체 진행을 이미 대조한 뒤 최종 보정본과 매 획 완료 프레임을 다시 확인했다. 日 안쪽 가로 오른끝은 닫히고, 日 윗가로와 矢의 점은 원본처럼 분리된다. 위 矢·口와 아래 日의 순서 및 펜 경계가 일치한다."
+        }
+      }
+    },
+    {
+      "glyph": "泉",
+      "expectedStrokes": 9,
+      "original": {
+        "glyph": "泉",
+        "expectedStrokes": 9,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "provenance": "component-derived-unreviewed",
+        "status": "candidate-unreviewed",
+        "paths": [
+          "M45.579120879 10 L51.768351648 12.6825 L32.316483517 23.4125",
+          "M18.759120879 23.27375 L24.260659341 26.0025 L30.056923077 45.28875",
+          "M23.671208791 23.73625 L28.878021978 24.615 L73.47978022 21.1925 L79.669010989 22.6725 L81.240879121 23.7825 L71.22021978 47",
+          "M28.583296703 33.26375 L64.736263736 31.7375",
+          "M30.744615385 42.32875 L69.058901099 41.68125",
+          "M50 53 L50 88.510067114 Q50 91.738255034 38.571428572 87.972035794",
+          "M13.428571429 65.912751678 L36.285714286 65.912751678 Q29.42857143 76.673378076 10 83.667785235",
+          "M81.999999999 59.994407159 Q71.714285713 65.912751678 57.999999999 69.678970917",
+          "M52.285714286 66.988814318 Q67.142857143 79.901565996 90 85.281879195"
+        ],
+        "placements": [
+          {
+            "instance": "root.0",
+            "componentId": "c6726db00bd7338906965e95",
+            "glyph": "白",
+            "position": "top",
+            "donorGlyph": "白",
+            "donorPathsSha256": "144ded0dadbb5819c174d9590e6238722bff33beae0867e299284073980fc82a",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 18.75912087933986,
+              "y": 10,
+              "width": 62.48175824132031,
+              "height": 36.999999999928846
+            },
+            "transform": {
+              "sx": 0.9824175824106968,
+              "sy": 0.46249999999911057,
+              "tx": 0.8791208794651837,
+              "ty": 5.375000000008894
+            }
+          },
+          {
+            "instance": "root.1",
+            "componentId": "0cb788eb956a069cadde1b1e",
+            "glyph": "水",
+            "position": "bottom",
+            "donorGlyph": "水",
+            "donorPathsSha256": "e3b2b6ef13f5af681bc7ca5303ef991a8b892064b746e0905d8458326c377541",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph",
+            "targetBox": {
+              "x": 10.000000000280366,
+              "y": 52.99999999991731,
+              "width": 79.99999999943928,
+              "height": 36.99999999992885
+            },
+            "transform": {
+              "sx": 1.1428571428491325,
+              "sy": 0.5380313199094798,
+              "tx": -7.142857142456627,
+              "ty": 44.39149888136562
+            }
+          }
+        ],
+        "schedule": [
+          {
+            "instance": "root.0",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 4
+          },
+          {
+            "instance": "root.0",
+            "componentStroke": 5
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 1
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 2
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 3
+          },
+          {
+            "instance": "root.1",
+            "componentStroke": 4
+          }
+        ],
+        "rules": [
+          "top-before-bottom",
+          "position-profile-layout-unreviewed",
+          "whole-form-position-adaptation-unreviewed",
+          "whole-glyph-box-normalization-unreviewed"
+        ],
+        "layoutProfiles": [
+          {
+            "instance": "root",
+            "mode": "intrinsic-contain",
+            "donorGlyphs": [],
+            "componentIds": []
+          }
+        ],
+        "grade": "4급",
+        "hun": "샘",
+        "eum": "천",
+        "review": {
+          "status": "pending-whole-glyph-review",
+          "officialTargetEvidence": false
+        }
+      },
+      "originalSha256": "e86eac480afc04942552c970a310b4957096d8e920b895df424de18fc019d43c",
+      "originalPathsSha256": "33e22cb916a729160ef6f72c50846daa627c59aebcd8593a33f779eb51a6f66f",
+      "status": "reference-guided-whole-target-replacement",
+      "holdReason": null,
+      "beforeComparison": {
+        "countMatch": true,
+        "orderedMeanDistance": 7.286456437793856,
+        "unorderedMeanDistance": 7.286456437793856,
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "orderAgreement": 1,
+        "directionAgreement": 1,
+        "maxMeanDistance": 11.672664154449771
+      },
+      "corrected": {
+        "paths": [
+          "M44.5 10 L47.8 15 L35.7 28",
+          "M27.3 28.7 L30.3 31.1 L35.6 52.1",
+          "M32.9 29.2 L61.7 26.7 L64.4 30.5 L56.2 51.7",
+          "M35.6 39.4 L62.3 36",
+          "M37.5 50.1 L54.7 46.5",
+          "M41.6 50.6 L46.1 54.5 L44.9 87 L42.7 90 L33.1 84.6",
+          "M13.7 60.4 L19.2 61.4 L32 59.4 L35.1 61.7 L24 77.4 L10.1 86.6",
+          "M66.6 47.7 L68.8 53.5 L55 63.5",
+          "M48.5 59.1 L71.2 79.5 L89.9 82.1"
+        ],
+        "pathsSha256": "b877609dac1e39bb2f398a54d10ff64c290eecf4b0cfc4c567d8e63100d9d7c3",
+        "provenance": "exact-current-approved-whole-target-reference",
+        "runtimeReferenceSha256": "bdf0c8f8d52039e5b50bedd19b936d6211d799c519b5fe877ee2deb18fba32f7",
+        "reviewRecordSha256": "d85b989c230201cd943af9a73402cfb73ef5a81c9def7a27a04adb5c519c5bc5",
+        "runtimeReference": {
+          "glyph": "泉",
+          "verifiedAt": "2026-09-09",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "textbook-6cc9-stage2-c-v1",
+          "sourceStrokeIndices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "pathsSha256": "b877609dac1e39bb2f398a54d10ff64c290eecf4b0cfc4c567d8e63100d9d7c3",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1477",
+            "glyph": "泉",
+            "videoFilename": "1477 샘 천.mp4"
+          },
+          "paths": [
+            "M44.5 10 L47.8 15 L35.7 28",
+            "M27.3 28.7 L30.3 31.1 L35.6 52.1",
+            "M32.9 29.2 L61.7 26.7 L64.4 30.5 L56.2 51.7",
+            "M35.6 39.4 L62.3 36",
+            "M37.5 50.1 L54.7 46.5",
+            "M41.6 50.6 L46.1 54.5 L44.9 87 L42.7 90 L33.1 84.6",
+            "M13.7 60.4 L19.2 61.4 L32 59.4 L35.1 61.7 L24 77.4 L10.1 86.6",
+            "M66.6 47.7 L68.8 53.5 L55 63.5",
+            "M48.5 59.1 L71.2 79.5 L89.9 82.1"
+          ],
+          "verificationSource": "vivasam-high-2022"
+        },
+        "reviewRecord": {
+          "glyph": "泉",
+          "sourceGlyph": "泉",
+          "manifestRow": "1477",
+          "videoFilename": "1477 샘 천.mp4",
+          "expectedStrokes": 9,
+          "candidateStrokes": 9,
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "geometryCorrection": "textbook-6cc9-stage2-c-v1",
+          "correctionSha256": "a311b32d96293bc7820074d9193d8a02a2b3b6af436bba7584fa935ce80d731d",
+          "status": "matched",
+          "reviewedAt": "2026-09-09",
+          "reviewer": "Codex / public_korean_stroke_sources",
+          "reviewMethod": "video-frame-sequence",
+          "sourceVideo": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1477.mp4",
+            "sha256": "cbb04c89183539222bf03a9f831ca80a6dbce6786b585fb17c9e8387718ce64d",
+            "bytes": 447667
+          },
+          "strokeEndsSeconds": [
+            0.9,
+            2,
+            3.5,
+            4.8,
+            5.5,
+            7.9,
+            10,
+            10.9,
+            13
+          ],
+          "durationSeconds": 13.081,
+          "pathsSha256": "b877609dac1e39bb2f398a54d10ff64c290eecf4b0cfc4c567d8e63100d9d7c3",
+          "checks": {
+            "order": "match",
+            "direction": "match",
+            "boundaries": "match",
+            "glyphForm": "match"
+          },
+          "notes": "원본 9획 전체와 보정 후보를 재대조했다. 白 내부 가로의 닫힘, 水 세로 갈고리와 좌우 별도 획 경계, 오른쪽 두 획 접합을 확인했다."
+        }
+      }
+    }
+  ],
+  "summary": {
+    "originalDrafts": 20,
+    "referenceGuidedReplacements": 19,
+    "held": 1,
+    "currentRuntimeApproved": 991,
+    "additionalRuntimeApprovals": 0,
+    "published": 0
+  }
+}

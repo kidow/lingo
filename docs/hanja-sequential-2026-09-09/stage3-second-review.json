@@ -1,0 +1,1469 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-09",
+  "reviewer": "public_korean_stroke_sources",
+  "scope": {
+    "glyphs": [
+      "妨",
+      "標",
+      "燃",
+      "奇",
+      "否",
+      "崇",
+      "異",
+      "姿",
+      "智",
+      "泉"
+    ],
+    "count": 10,
+    "purpose": "frozen-v2-drafts-versus-already-approved-whole-glyph-reference",
+    "runtimeCountAtRead": 991,
+    "runtimeAdditions": 0,
+    "newApprovals": 0
+  },
+  "method": {
+    "visual": "두 경로 전체형을 100×100 좌표계/선폭5로 나란히 렌더링하고 모든 동일 인덱스 획을 별도 중첩 렌더링했다. SVG는 sharp로 메모리 WebP 변환해 직접 보았다.",
+    "reference": "현재 승인 경로와 그 경로 해시에 연결된 원장 sourceVideo·전체필순 관찰을 참조했다. 이번에는 원본 영상을 재다운로드하거나 새 영상 검토를 수행하지 않았다.",
+    "orderAndDirection": "각 paths 배열의 획 단위, 시작/끝, 진행을 렌더링 및 경로 좌표로 비교했다. 기하 거리 지표만으로 순서·방향을 판정하지 않았다.",
+    "numeric": "부품 bounds는 paths에서 계산했다. pairDistance는 획별256개 등거리 표본의 최소 중심선 거리(100단위 좌표계)로서 시각 확인 보조치이며 원본 영상 잉크의 정확한 접촉 판정값이 아니다.",
+    "limits": "이미 승인된 목표 전체 경로를 본 뒤 수행한 참조 기반 검토다. 독립 평가 성공 수, 한국 필순 정답률, 신규 적용 수를 늘리지 않는다. 승인 경로를 그대로 복사해 거리0이 되어도 합성기 품질 향상으로 세지 않는다."
+  },
+  "pins": {
+    "frozenResult": {
+      "path": "docs/hanja-component-phase2-2026-09-09/result.json",
+      "fileSha256": "cc8d31b3a612ed729c311122da7ea829eefc827a9af045cd63efe2ef7e378bf8",
+      "splitHash": "a398a419b5a720350c03032e2d438208824f51d236170c2a1f9e92587123ae85",
+      "recipeHash": "635f1d684e5108385a04aba22044bd6c80877d306971831b617b3953ef4df927"
+    },
+    "approvedExport": "lib/hanja-strokes.ts#HANJA_STROKES",
+    "ledger": {
+      "path": "scripts/hanja-stroke-textbook-review.json",
+      "fileSha256AtRead": "37a53fb065c0fc7272ffc316ac19059212aa7032b0451181294cc1a5427495e3"
+    }
+  },
+  "summary": {
+    "reviewed": 10,
+    "requiresReferenceGuidedRevision": 10,
+    "strokeCountMatches": 10,
+    "orderedStrokeCorrespondencesMatch": 10,
+    "actualReversedStrokesIdentified": 0,
+    "unchangedFrozenCandidates": true,
+    "productionFilesModified": false
+  },
+  "records": [
+    {
+      "glyph": "妨",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 7,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "68e0cefdc02afae27f0e9c639cb1ac6ba1bed299b84c5df5fef73005d04793cf",
+        "pathsSha256": "2a2889f50dbab5d94a95551f6f93b9d117de56004aaa50a99f8416db2d81ff21",
+        "components": [
+          {
+            "component": "女",
+            "position": "left",
+            "donorGlyph": "好",
+            "donorPathsSha256": "0d4bac4582b975cad3a199e958ce2196cee6ab854ebf2245812c9a8a6400b1e5",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "reviewed-component-assignment"
+          },
+          {
+            "component": "方",
+            "position": "right",
+            "donorGlyph": "方",
+            "donorPathsSha256": "47833b88e8192c584f05f246358eebdb7570707cd7d958ebad973d91b492e6d2",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "9fbadb990bc74bc4b7f7df8064e78faa2ac94248d77d878aaaf3966a04a47040",
+        "pathsSha256": "b5aeea5b389193e12967a6169bb481374bbd2d0debf274c099c5007e4a197df7",
+        "ledgerRecordSha256": "f7b7d44be597114f97a14d07abeac82e234f8f2464f7c615b9ed4539c7abca05",
+        "ledgerStatus": "matched",
+        "manifestRow": "0605",
+        "videoFilename": "0605 방해할 방.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": "vivasam-stage2-a-b-0605",
+        "correctionSha256": "993302007d8a8acab85b57b2766de3443d09f1f090b8b3e3175c728d891b2da0",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0605.mp4",
+          "sha256": "70a63980411686a0643f948ec27f6e97e684a56e0ea055ddf0ed0bcba3e89c9c",
+          "bytes": 466065
+        },
+        "durationSeconds": 12.681,
+        "strokeCompletionSamplesSeconds": [
+          3,
+          4.5,
+          6,
+          7,
+          8.5,
+          11,
+          12.6
+        ],
+        "sourceObservation": "전체7획 순서·방향·펜 경계는 같다. 마지막7획 왼내림 끝은 원본에서女1획 끝과 떨어지지만 후보는 붙는다. 마지막7획 왼내림 끝만 줄여 女1획 끝과의 원본 흰 간격을 복원했다. 나머지 6획의 경로와 전체 순서·방향·펜 경계를 유지했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 7,
+          "approved": 7
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "女 1–3 → 方 4–7. 방형 꺾임과 갈고리는 같은 획 안에 있다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "女가 세로 80단위로 늘어나고 方은 45.92단위로 줄어 아래로 내려갔다. 승인 참조에서는 女 65.7, 方 65단위이며 方 윗점은 y20(시안 y30.48)이다.",
+        "junctions": "기존 원장에는 女1 끝과 方7 왼아래 끝의 분리가 명시되어 있다. 시안에서도 둘은 분리되지만 현재 부품 비율을 고치면서 이 간격을 유지해야 한다.",
+        "shape": "女1·2 아래끝이 각각 시안 y87.09/90으로 과도하게 길고, 方6 갈고리 끝은 y76.40으로 짧다. 方은 참조 y85까지 내려간다.",
+        "componentBounds": [
+          {
+            "component": "女",
+            "position": "left",
+            "candidate": {
+              "x": 10,
+              "y": 10,
+              "width": 30.525,
+              "height": 80
+            },
+            "approved": {
+              "x": 10,
+              "y": 15,
+              "width": 33.7,
+              "height": 65.7
+            }
+          },
+          {
+            "component": "方",
+            "position": "right",
+            "candidate": {
+              "x": 46.525,
+              "y": 30.484014073,
+              "width": 43.475,
+              "height": 45.919389073000005
+            },
+            "approved": {
+              "x": 49.2,
+              "y": 20,
+              "width": 40.8,
+              "height": 65
+            }
+          }
+        ],
+        "sampledCenterlineDistances": []
+      },
+      "requiredRevision": "女의 세로 비율을 줄이고 方을 위로 옮겨 높이를 확보한다. 7획의 끝과 女1 사이를 전체 자형에서 다시 확인한다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "標",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 15,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "35aad85a94dc40c6f64a70c921f22b670506e8d80a744135417ed62b708550df",
+        "pathsSha256": "b2903353578afb30e0d3a014cd6664d23bcc1acbb17cb15e8b6b3d6ef4305f8c",
+        "components": [
+          {
+            "component": "木",
+            "position": "left",
+            "donorGlyph": "朴",
+            "donorPathsSha256": "81db1fdfe874aa52c14799f8e1d935a8deb3e9acb63545cba28bfcb3d6add957",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "spatial-partition-inferred"
+          },
+          {
+            "component": "票",
+            "position": "right",
+            "donorGlyph": "票",
+            "donorPathsSha256": "804cf9bf0c947cad877c3c2d115858a414681cc7e163ed4e8d624bde22f9ab62",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "assignment": "approved-whole-glyph"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "e0776ad3088f4f962fa760515af7925f7d21128808d6fad7c745de5103a04ee8",
+        "pathsSha256": "0bf40acd427b398acc4718a082a2a0901b39338deb30eb42661dceed78d2be77",
+        "ledgerRecordSha256": "8b23b0b49a2797a4dec0297782c584449dac541f503ada5079b3eae493b9f520",
+        "ledgerStatus": "matched",
+        "manifestRow": "1639",
+        "videoFilename": "1639 표할 표.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": "vivasam-stage2-c-b-1639",
+        "correctionSha256": "015848e6403cfcafa61ce7e53c03b330a45084962c126961ffbe521185a258dd",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1639.mp4",
+          "sha256": "fae211af92f0b7bad92087bb8e999fe156b860ef1bb101ba6dda915c6410745e",
+          "bytes": 749209
+        },
+        "durationSeconds": 21.081,
+        "strokeCompletionSamplesSeconds": [
+          1.5,
+          5,
+          6,
+          7,
+          8.5,
+          9.5,
+          11,
+          12,
+          13,
+          14.5,
+          15.5,
+          17,
+          19,
+          20,
+          21
+        ],
+        "sourceObservation": "전체15획을 직접 대조했다. 원본 示의13획은 아래로 내려오는 세로이며 왼쪽 갈고리가 없으므로 Ja13 끝의 갈고리를 제거했다. 木1 가로 끝과 오른쪽6획 머리의 간격, 오른쪽7획 끝과11획 가로의 간격을 원본대로 복원했다. 나머지順序와14왼점→15오른점 진행을 유지했다. 실제 개별 영상 전체0.5초 표본과 전 획 후보를 직접 대조하고, 완료 프레임을600px로 확대하여 실제 선폭5의 접합·분리를 확인했다. 완료 시각은 관찰된 표본이며 정확한 펜 떼기 시각이 아니다. 이 판정은 Codex 시각 대조이며 한국어문회 개별 승인이나 인간 전문가 확인을 뜻하지 않는다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 15,
+          "approved": 15
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "木 1–4 → 票 5–15. 13 직선 세로 뒤 14 왼점·15 오른점 순서가 이미 대응한다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "木는 시안 폭36.81, 票는 폭37.19·높이42.05로 배치되어 오른쪽이 지나치게 작다. 승인 票는 x38.9부터 폭51.1·높이71.5이며 시안보다 위와 아래로 넓게 분포한다.",
+        "junctions": "원장의 木1 오른끝–票6 시작, 票7 끝–示11 가로 사이 분리를 유지해야 한다. 작은 票를 단순 확대할 때 두 간격을 별도로 검토해야 한다.",
+        "shape": "시안 13획에는 이미 왼쪽 갈고리가 없다. 승인 참조의 '13획 갈고리 제거'를 시안에 남은 오류로 다시 세지 않는다.",
+        "componentBounds": [
+          {
+            "component": "木",
+            "position": "left",
+            "candidate": {
+              "x": 10,
+              "y": 10,
+              "width": 36.806788512,
+              "height": 80
+            },
+            "approved": {
+              "x": 10,
+              "y": 12.7,
+              "width": 30.5,
+              "height": 74.6
+            }
+          },
+          {
+            "component": "票",
+            "position": "right",
+            "candidate": {
+              "x": 52.806788512,
+              "y": 31.518763136,
+              "width": 37.193211488,
+              "height": 42.05043042599999
+            },
+            "approved": {
+              "x": 38.9,
+              "y": 14.8,
+              "width": 51.1,
+              "height": 71.5
+            }
+          }
+        ],
+        "sampledCenterlineDistances": []
+      },
+      "requiredRevision": "오른쪽 票의 위치별 형태와 비율을 적용하고, 13획의 직선 세로 및 14 왼점→15 오른점 순서를 유지한다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "燃",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 16,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "2ea8e999ccfc6d724a63eb2e9ca03fa06ebab7a79ed3134b036f062297dff9f9",
+        "pathsSha256": "1d9ce351dab652d5d7387fe71ea537247d1e0c322ad96eda0742345cb1c064bf",
+        "components": [
+          {
+            "component": "火",
+            "position": "left",
+            "donorGlyph": "火",
+            "donorPathsSha256": "ffe978dbf2a41c8dfa7d8260cd62119c60f78f94711fec2437dd2cb4adde42f0",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph"
+          },
+          {
+            "component": "然",
+            "position": "right",
+            "donorGlyph": "然",
+            "donorPathsSha256": "14b9ad12f940c85529d661c4af42e9365703189960d4d01fea1f7ddb56e5dd0b",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "assignment": "approved-whole-glyph"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "0dd6341e7b7c6552d7a73ea0e6584614c4438afee7f144a8fdc2af719e2d3e75",
+        "pathsSha256": "8c94649001ef3a91004c987bebfaad20999541811fa321e8a2baba3127f0ecfe",
+        "ledgerRecordSha256": "4bbd0f5db42bf2228f836c6fa8073a98d4f8cb53a74ab0b8afd7832faa3450f5",
+        "ledgerStatus": "matched",
+        "manifestRow": "1031",
+        "videoFilename": "1031 불탈 연.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": null,
+        "correctionSha256": null,
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1031.mp4",
+          "sha256": "ea3ceef6b5af2646bde5e1ecdf3ec1f6725ff488870b2def6e7b070889ca68fe",
+          "bytes": 716804
+        },
+        "durationSeconds": 21.598,
+        "strokeCompletionSamplesSeconds": [
+          1,
+          2,
+          5.5,
+          6.5,
+          8,
+          10,
+          11,
+          12,
+          13,
+          15.5,
+          16.5,
+          18,
+          19,
+          19.5,
+          20.5,
+          21.5
+        ],
+        "sourceObservation": "전체16획과 완료600px/선폭5 대조. 火1/2점후3/4획, 중앙5–8획,犬9–12획,아래13–16점순서가대응한다. 중앙6획 끝과火4획의접합,두내부7·8획의양끝연결,犬윗점과아래네점의분리를확인."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 16,
+          "approved": 16
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "火 1–4 → 중앙 5–8 → 犬 9–12 → 아래 네 점 13–16. 전체16획 대응 순서와 큰 진행 방향은 같다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "독립 火를 왼쪽에 세로로 늘리면서 폭37·높이80을 차지하고 然은 폭37로 압축됐다. 승인 참조의 火는 폭25.1이고 然은 폭57.6으로 중앙까지 들어온다.",
+        "junctions": "시안 火4와 중앙6은 떨어져 있다(표본 중심선 최소거리 약20.55). 승인 참조는 두 획이 선폭5에서 연결된다(약2.69). 실제 원장에서도 이 접합을 확인했다.",
+        "shape": "독립 火의 길게 오른아래로 뻗는 4획이 시안에서는 바닥까지 남는다. 승인 왼쪽 火4는 짧은 27.6,56.4→35,63.4 경로이다.",
+        "componentBounds": [
+          {
+            "component": "火",
+            "position": "left",
+            "candidate": {
+              "x": 10,
+              "y": 10,
+              "width": 37,
+              "height": 80
+            },
+            "approved": {
+              "x": 10,
+              "y": 14.2,
+              "width": 25.1,
+              "height": 67.2
+            }
+          },
+          {
+            "component": "然",
+            "position": "right",
+            "candidate": {
+              "x": 53,
+              "y": 12.58677384,
+              "width": 37,
+              "height": 74.82645231999999
+            },
+            "approved": {
+              "x": 32.4,
+              "y": 14,
+              "width": 57.6,
+              "height": 72
+            }
+          }
+        ],
+        "sampledCenterlineDistances": [
+          {
+            "strokes": [
+              4,
+              6
+            ],
+            "candidate": 20.548993551798237,
+            "approved": 2.6899286438842163
+          }
+        ]
+      },
+      "requiredRevision": "독립 火의 압축 대신 왼쪽 火의 짧은 4획을 포함한 위치형을 사용하고, 중앙6 끝과의 접합 및 내부7·8의 양끝 연결을 참조에 맞춘다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "奇",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 8,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "15314c8fb0372ad6d8831a73e35c69857d8001d576718ac46a41c72319720575",
+        "pathsSha256": "75df473fca6c2de83234a9319c643bb3374730aa77346e0768343c8f167b8361",
+        "components": [
+          {
+            "component": "大",
+            "position": "top",
+            "donorGlyph": "大",
+            "donorPathsSha256": "7cdea35bf7cecece4f8f2ebd35e7b62269321f2e13dec7a9a2d16fbb4bfc7eb0",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "approved-whole-glyph"
+          },
+          {
+            "component": "可",
+            "position": "bottom",
+            "donorGlyph": "可",
+            "donorPathsSha256": "4ccd1f2674ad390916245044a8dee16a0718374744cb6eb596c8cc4f02070578",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "fd7b1f7cd98f8f0b5a8679aa55a6208967d4f3f80f8006ba66bd35887f7aa0ce",
+        "pathsSha256": "4feecaf21ed5da4519c47c8453e233703002e709456cf6cf117443233f85f236",
+        "ledgerRecordSha256": "5337187b9a1fe100e92b0e4d4bc95b21bc8a5fcee8076877e21fae074683f965",
+        "ledgerStatus": "matched",
+        "manifestRow": "0265",
+        "videoFilename": "0265 기이할 기.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": null,
+        "correctionSha256": null,
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0265.mp4",
+          "sha256": "c4eb612b031d7836fde12f6d5d709318c4bcafa509dc4d6f8516ac88b64dd967",
+          "bytes": 412445
+        },
+        "durationSeconds": 12.665,
+        "strokeCompletionSamplesSeconds": [
+          1,
+          2.5,
+          3.5,
+          6,
+          7.5,
+          8.5,
+          9.5,
+          12.5
+        ],
+        "sourceObservation": "전체 25개 2fps 프레임과 3.5/6초 확대 및 마지막 12–12.583초 12fps 확대를 대조. 大 3획·긴가로·口3획·마지막 세로갈고리의 8획. 마지막 갈고리의 왼위 방향 끝이 12.5초에 완성됨을 확인했다. 大 두 끝과 아래 긴가로의 분리, 口 폐합과 마지막 세로의 윗가로 접합이 Ja 8개 누적 경로와 일치. 기존 A 담당자의 개별 영상 전체 시각 대조 기록을 기존 배포 레코드 계약으로 옮겼다. 이번 통합 작업은 고정 원본·획 대응·경로·해시의 기술적 재현 검산이며 추가 영상 검토나 한국어문회 개별 승인이 아니다. 완료 시각은 A 담당자가 기록한 관찰 표본이다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 8,
+          "approved": 8
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "大 1–3 → 긴가로4 → 口5–7 → 세로갈고리8. 별도 획 분할이나 순서 변경은 필요하지 않다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "大가 폭65로 넓은 반면 승인 참조는 폭36.1이다. 시안 可는 y53부터 시작해 높이37로 눌리고, 승인은 y42.1부터 높이47.9를 쓴다.",
+        "junctions": "시안 大2와 大3은 선폭5에서 붙는다(중심선 표본 약1.94). 승인 3획은 짧은 오른점이고 2획과 분리된다(약7.38). 大 두 끝과 아래4 가로의 분리는 계속 필요하다.",
+        "shape": "독립 大의 긴 오른 삐침을 그대로 축소한 3획이 원문의 짧은 오른점 형태와 다르다. 최종8의 왼위 갈고리는 두 경로 모두 같은 획 안에 있다.",
+        "componentBounds": [
+          {
+            "component": "大",
+            "position": "top",
+            "candidate": {
+              "x": 17.499999999,
+              "y": 10,
+              "width": 65.00000000200001,
+              "height": 37
+            },
+            "approved": {
+              "x": 31.7,
+              "y": 10,
+              "width": 36.099999999999994,
+              "height": 31.700000000000003
+            }
+          },
+          {
+            "component": "可",
+            "position": "bottom",
+            "candidate": {
+              "x": 10,
+              "y": 53,
+              "width": 80,
+              "height": 37
+            },
+            "approved": {
+              "x": 11.7,
+              "y": 42.1,
+              "width": 76.6,
+              "height": 47.9
+            }
+          }
+        ],
+        "sampledCenterlineDistances": [
+          {
+            "strokes": [
+              2,
+              3
+            ],
+            "candidate": 1.9417696028178,
+            "approved": 7.380615963128018
+          }
+        ]
+      },
+      "requiredRevision": "윗 大를 위치형으로 좁히고 3획을 원문의 짧은 점 형태로 바꾼다. 可의 높이를 확보하고 口 폐합·8획과4획의 접합을 유지한다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "否",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 7,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "df20935020f346bf855bed8edeeed762a5755152566d484250118624b87793c7",
+        "pathsSha256": "3e76c8d40a2c60c6a2b7f56f0068beda095f14a75289f6220a6a0f7573c90658",
+        "components": [
+          {
+            "component": "不",
+            "position": "top",
+            "donorGlyph": "不",
+            "donorPathsSha256": "78c101a96c19abf9873a907422fb839fae4187a931ea5f8e411da3fe38421f43",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph"
+          },
+          {
+            "component": "口",
+            "position": "bottom",
+            "donorGlyph": "吉",
+            "donorPathsSha256": "00154b82491524f4a5f1b0fdae3c99a642edb4aa1c4f4f97ad34a9bdfec41592",
+            "approvedPathIndices": [
+              4,
+              5,
+              6
+            ],
+            "assignment": "spatial-partition-inferred"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "6f204d415e709f849f4ec61bfb653d1d9841c432280368c456874f7f249571e0",
+        "pathsSha256": "aee719c9e398652cd153bab15dd92fc7d9781335b950c4a158d3a939c4ad443b",
+        "ledgerRecordSha256": "13b8534e5f1bfb37c0cae7e583f36022aaf139a6295f57c033a132307fc02599",
+        "ledgerStatus": "matched",
+        "manifestRow": "0663",
+        "videoFilename": "0663 아닐 부.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": "textbook-5426-stage2-v1",
+        "correctionSha256": "cf147526920361e6c669c19dfd5a9e29db02c16eb33f306baf85fe7c28ab8ac8",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0663.mp4",
+          "sha256": "bc0212a8d1df7f9215252ddcf3fb8cf6260a4ff08498141a68a578e6a1e9e027",
+          "bytes": 341618
+        },
+        "durationSeconds": 9.315,
+        "strokeCompletionSamplesSeconds": [
+          1.5,
+          3,
+          4,
+          5,
+          6.5,
+          8,
+          9.3
+        ],
+        "sourceObservation": "전체7획 대조. 원본 不 세로3획 끝과 口 상단6획 사이에는 흰 간격이 있으나 후보는 이어진다. 不 세로 3획 끝을 줄여 아래 口와 분리한다. 부모 검토자가 원본 전체 2fps 진행표를 다시 확인하고, 실제 선폭 5의 최종 후보 모든 획을 대조했다. 9.2초 확대 완료 프레임에서 연결·분리를 재확인했다. 다른 획의 경로·순서·방향·경계는 변경하지 않았다. 출판사 영상 대조이며 한국어문회나 인간 전문가의 개별 인증이 아니다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 7,
+          "approved": 7
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "不 1–4 → 口5–7. 대응 순서와 큰 진행 방향은 같다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "시안 口는 x12.86부터 폭67.96으로 넓고 y64.87부터 높이25.13으로 납작하다. 승인 口는 x28.1부터 폭43.5, y57.2부터 높이31.9다.",
+        "junctions": "不3 끝과 口6 윗가로는 양쪽 모두 분리된다(중심선 표본 시안7.44/승인7.48). 이미 충족한 분리를 오류로 다시 세지 않는다.",
+        "shape": "不의 획과 口의 3획 대응은 같으나, 吉에서 추출한 口의 전체 배치 프로필이 이 글자의 아래 口 위치와 맞지 않는다.",
+        "componentBounds": [
+          {
+            "component": "不",
+            "position": "top",
+            "candidate": {
+              "x": 10,
+              "y": 10,
+              "width": 80,
+              "height": 48.873884961
+            },
+            "approved": {
+              "x": 10,
+              "y": 10.9,
+              "width": 80,
+              "height": 46.2
+            }
+          },
+          {
+            "component": "口",
+            "position": "bottom",
+            "candidate": {
+              "x": 12.864136655,
+              "y": 64.873884961,
+              "width": 67.955416682,
+              "height": 25.126115039
+            },
+            "approved": {
+              "x": 28.1,
+              "y": 57.2,
+              "width": 43.49999999999999,
+              "height": 31.89999999999999
+            }
+          }
+        ],
+        "sampledCenterlineDistances": [
+          {
+            "strokes": [
+              3,
+              6
+            ],
+            "candidate": 7.441460218198203,
+            "approved": 7.484021456082188
+          }
+        ]
+      },
+      "requiredRevision": "下口를 좁혀 중앙에 놓고 위로 올려 높이를 늘린다. 不3 끝과의 분리는 유지한다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "崇",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 11,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "2fd94763b0a6fe4574384b845401010832fea358e21cac80df26201223947fef",
+        "pathsSha256": "405b2397ea611f4de212615e3f35f4732d32e42002352adbb4869711fbaf855c",
+        "components": [
+          {
+            "component": "山",
+            "position": "top",
+            "donorGlyph": "山",
+            "donorPathsSha256": "39641711715b88166a4d1f6d891bff5c4d23c395cfac62acc189e4bf22eeae41",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "approved-whole-glyph"
+          },
+          {
+            "component": "宗",
+            "position": "bottom",
+            "donorGlyph": "宗",
+            "donorPathsSha256": "44178db9ffc00b3e3bd4f00278b991cb7c21494a427f6b9969d378c1a1e55e92",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "assignment": "approved-whole-glyph"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "79ab22e0bf62dd5d27784b240d277d8b03cd5d118a1b5675875402328feba3f9",
+        "pathsSha256": "35b5d0efeb6fe354d419e9c5bc5feff9a8523280b1d51210810443363faadf09",
+        "ledgerRecordSha256": "cb11abd0db4ed60fae8ccb7c00fb5461a0b24297dc3a8f09d9221749a3b05340",
+        "ledgerStatus": "matched",
+        "manifestRow": "0903",
+        "videoFilename": "0903 높을 숭.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": "vivasam-stage2-b-0903",
+        "correctionSha256": "dce0486a9839707a9808038ea08453d00f56230226fe6a5110361aa2e76917fe",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0903.mp4",
+          "sha256": "750db397a79f089863f3b2e994fc23e35a385886f4ab26f168305876c95d157c",
+          "bytes": 438042
+        },
+        "durationSeconds": 12.181,
+        "strokeCompletionSamplesSeconds": [
+          1,
+          2.5,
+          3.5,
+          4.5,
+          5,
+          6.5,
+          7.5,
+          9,
+          10,
+          11,
+          12.1
+        ],
+        "sourceObservation": "전체11획 대조. 원본4획 점은 山 바닥과宀가로 사이에서 양쪽 모두 분리되어 있으나 후보4획은 두 부품을 잇는다. 4획 宀 점을 짧게 조정했다. 원본 완료 12.1초 확대에서 점의 잉크 몸체는 위 山·아래 宀 가로와 구분되며, 아래 가로에 닿을 듯한 얇은 외곽선은 추가 잉크 획으로 해석하지 않았다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 11,
+          "approved": 11
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "山 1–3 → 宀4–6 → 示7–11. 全11획 대응 순서는 같다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "시안 山은 폭80·높이37인 넓은 직각형이다. 승인 山은 x30.6부터 폭38.9·높이21.8이며, 宗은 시안 y53보다 높은 y35.6부터 시작한다.",
+        "junctions": "시안 宀4 점은 길어 6획 지붕과 선폭5에서 닿는다(중심선 표본 약3.43). 승인 점은 짧게 분리되어 있다(약6.16). 山2 아래와 점4는 양쪽 모두 분리된다.",
+        "shape": "山2는 모두 왼세로에서 아래 가로로 이어지는 한 획이지만, 승인 경로는 진입 굴곡과 비스듬한 아래 가로를 갖는다. 시안의 넓은 직각형과 다르다.",
+        "componentBounds": [
+          {
+            "component": "山",
+            "position": "top",
+            "candidate": {
+              "x": 10,
+              "y": 10,
+              "width": 80,
+              "height": 37
+            },
+            "approved": {
+              "x": 30.6,
+              "y": 10,
+              "width": 38.9,
+              "height": 21.8
+            }
+          },
+          {
+            "component": "宗",
+            "position": "bottom",
+            "candidate": {
+              "x": 11.481481481,
+              "y": 53,
+              "width": 77.037037038,
+              "height": 37
+            },
+            "approved": {
+              "x": 18.3,
+              "y": 35.6,
+              "width": 63.400000000000006,
+              "height": 54.4
+            }
+          }
+        ],
+        "sampledCenterlineDistances": [
+          {
+            "strokes": [
+              2,
+              4
+            ],
+            "candidate": 7.1387672407062155,
+            "approved": 7.0261133577765
+          },
+          {
+            "strokes": [
+              4,
+              6
+            ],
+            "candidate": 3.425907754501753,
+            "approved": 6.162021804586797
+          }
+        ],
+        "directionMetricCaveat": {
+          "stroke": 5,
+          "forwardMeanDistance": 15.511994069137122,
+          "reversedMeanDistance": 15.450985480724983,
+          "directionAgreement": 0.9090909090909091,
+          "interpretation": "공간적으로 아래로 밀린 宀 왼점의 역순 표본 오차가 0.06101단위 작다. 실제 시안과 승인 경로는 모두 위에서 아래·왼쪽으로 진행하므로 역필순 증거가 아니다."
+        }
+      },
+      "requiredRevision": "윗 山의 좁은 위치형 및 宗의 더 높은 세로 배치를 적용하고, 宀4 점–6 지붕 간격을 유지한다. 5획은 역방향으로 바꾸지 않는다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "異",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 11,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "de2e768dd603189bda7ef43c6a06bf78f5e69e6d743bddefb57cd0a417d2b2f0",
+        "pathsSha256": "31c2bf8e57e69d973e9aa5666929f7757e267ae855ac604cfcc8611a9d90f46e",
+        "components": [
+          {
+            "component": "田",
+            "position": "top",
+            "donorGlyph": "田",
+            "donorPathsSha256": "c289c2d598ee975628f4f33d098dc6755f90f0998e1d2db743818444656c8ee2",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph"
+          },
+          {
+            "component": "共",
+            "position": "bottom",
+            "donorGlyph": "共",
+            "donorPathsSha256": "1debb554dd8b894e9f987d9577d41ab67839680c53b3b87ba92c45995ba785a5",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "assignment": "approved-whole-glyph"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "872f8c88ba59e2a12231b700a60125affd8e8f1b929a217d0511b4691b216aa1",
+        "pathsSha256": "c831081c9e180ff48fc6dbecc9ad078126c7bac4d7bc673f9309af9cb62420af",
+        "ledgerRecordSha256": "944b5885476b8c359e302862e7ef03fc9b5e78f18463844efa920b72d0338c65",
+        "ledgerStatus": "matched",
+        "manifestRow": "1190",
+        "videoFilename": "1190 다를 이.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": "vivasam-stage2-b-1190",
+        "correctionSha256": "7ad655341d895a809573218259145cc3c734344b0390fdfda4f9b85a56364787",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1190.mp4",
+          "sha256": "d075ce8757736aa0cc5465eb96a9f0309c0ce86711e7d1d0d61f186c4d6dd4f9",
+          "bytes": 463100
+        },
+        "durationSeconds": 13.131,
+        "strokeCompletionSamplesSeconds": [
+          1.5,
+          3,
+          4,
+          4.5,
+          5.5,
+          6.5,
+          8,
+          9,
+          11,
+          12.5,
+          13.1
+        ],
+        "sourceObservation": "전체 11획을 대조했다. 田의 가로 접합과 共의 아래 점 분리가 원본과 일치하도록 보정해야 한다. 田3획 가로→4획 세로로 순서를 교체하고 가로를 양쪽 외벽에 연결했다. 10획 아래 점은 긴 가로와 분리했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 11,
+          "approved": 11
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "田 1–5 → 共6–11. 특히3 가로→4 세로가 승인 순서와 이미 같다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "시안 田는 폭80·높이37로 크게 퍼지고 共은 폭69.31·높이37로 눌린다. 승인 田는 폭42.2·높이29.7이고 共은 폭80·높이50.3이다.",
+        "junctions": "원장에 명시된 共10 왼점과9 긴가로의 분리가 필요하다. 시안은 10 시작이9 가까이 붙어 선폭5에서 이어지는 반면 승인 참조는 분리된다.",
+        "shape": "시안 田3은 이미 가로, 4는 세로이다. Ja 원본의 순서 문제가 시안에도 남았다고 주장하지 않는다.",
+        "componentBounds": [
+          {
+            "component": "田",
+            "position": "top",
+            "candidate": {
+              "x": 10,
+              "y": 10,
+              "width": 80,
+              "height": 37
+            },
+            "approved": {
+              "x": 28.1,
+              "y": 10,
+              "width": 42.199999999999996,
+              "height": 29.700000000000003
+            }
+          },
+          {
+            "component": "共",
+            "position": "bottom",
+            "candidate": {
+              "x": 15.347043701,
+              "y": 53,
+              "width": 69.30591259799999,
+              "height": 37
+            },
+            "approved": {
+              "x": 10,
+              "y": 39.7,
+              "width": 80,
+              "height": 50.3
+            }
+          }
+        ],
+        "sampledCenterlineDistances": []
+      },
+      "requiredRevision": "田를 좁히고 共의 세로 공간을 확보한다. 田3 가로→4 세로를 유지하고 아래10 점을9 가로에서 분리한다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "姿",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 9,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "6b7ade4bc649a63ff40cc0a3fbcfd03a6d8905524aacb335789ac511c4a7a226",
+        "pathsSha256": "9a87f4dda23a0f7e0eebf1a4778ef0e809af194715695f242b3f07070047c4f8",
+        "components": [
+          {
+            "component": "次",
+            "position": "top",
+            "donorGlyph": "次",
+            "donorPathsSha256": "32c96e4b5a1ad792f1862236bd540fac732fbe38471109995e943b4f970c584d",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "assignment": "approved-whole-glyph"
+          },
+          {
+            "component": "女",
+            "position": "bottom",
+            "donorGlyph": "女",
+            "donorPathsSha256": "9cb13992e9d1a8400b5fcbc5a74a445dcc47fa14889e719f7d4023babde33185",
+            "approvedPathIndices": [
+              1,
+              2,
+              3
+            ],
+            "assignment": "approved-whole-glyph"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "6badbc0c890b4dd9dfe0b033422f228379d1cf244263ee6b736aa4265e2edc39",
+        "pathsSha256": "481ab744a32d488496fb001e7496b847840ab72a088f7fd047ce8ee0a5bb0ce7",
+        "ledgerRecordSha256": "5165b6fee8dc891574cf00e16f27075acbc5e7a8ad63026619d3930c967a4269",
+        "ledgerStatus": "matched",
+        "manifestRow": "1220",
+        "videoFilename": "1220 모양 자.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": "vivasam-stage2-b-1220",
+        "correctionSha256": "3d745fca90e808f64c261988a6c4c9828b1b534cb09c2dceae9a042be9e34408",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1220.mp4",
+          "sha256": "9ef5d8c69d60ba14eae43d897edf26a57aa4c896c114d537d4696a7849ac2d67",
+          "bytes": 575412
+        },
+        "durationSeconds": 16.031,
+        "strokeCompletionSamplesSeconds": [
+          1.5,
+          2.5,
+          4,
+          5.5,
+          7,
+          8.5,
+          11.5,
+          13.5,
+          16
+        ],
+        "sourceObservation": "전체 9획을 확인했다. 원본 女7획은 위5획 끝에 닿으므로 이 접합은 유지해야 하며, 상부 欠의 간격만 보정해야 한다. 2획 끝과 5획 시작을 줄여 위 欠의 간격을 확보했다. 女7획과 위5획 끝의 원본 접합은 그대로 보존했다. 보정 뒤 전체 순서·방향·펜 경계와 완료 형태를 다시 대조했고 실제 선폭 5의 접합·분리를 확인했다. 완료 시각은 관찰 표본으로, 정확한 펜 떼기 시각이 아니다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 9,
+          "approved": 9
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "次1–6 → 女7–9. 순서·펜 경계와 큰 진행 방향은 같다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "시안 次는 폭78.06·높이37로 넓고 눌렸다. 승인 次는 폭58.7·높이40.9다. 아래 女의 긴9 가로도 시안 y68~72에서 승인 y59~64보다 내려가 있다.",
+        "junctions": "시안 上5–女7은 약10.10단위 떨어져 있다. 승인에서는 7 시작이5의 아래쪽에 닿는다(약2.66, 선폭5 접합). 이 글자는 위아래 부품의 일괄 분리가 정답이 아니다.",
+        "shape": "원장은 次2 끝과 欠5 시작의 간격도 확인했다. 下女의 상단을 올릴 때 이 상부 내부 간격과 5–7 접합을 구분해야 한다.",
+        "componentBounds": [
+          {
+            "component": "次",
+            "position": "top",
+            "candidate": {
+              "x": 10.967741936,
+              "y": 10,
+              "width": 78.06451612800001,
+              "height": 37
+            },
+            "approved": {
+              "x": 22.2,
+              "y": 10,
+              "width": 58.7,
+              "height": 40.9
+            }
+          },
+          {
+            "component": "女",
+            "position": "bottom",
+            "candidate": {
+              "x": 10,
+              "y": 53,
+              "width": 80,
+              "height": 37
+            },
+            "approved": {
+              "x": 13,
+              "y": 50.3,
+              "width": 74,
+              "height": 39.7
+            }
+          }
+        ],
+        "sampledCenterlineDistances": [
+          {
+            "strokes": [
+              5,
+              7
+            ],
+            "candidate": 10.096166283610337,
+            "approved": 2.6556979014527395
+          }
+        ]
+      },
+      "requiredRevision": "次 폭을 줄이고 女의 상단·9 가로를 올려 5–7의 실제 접합을 복원한다. 일반적인 부품 사이 여백 규칙으로 모두 띄우지 않는다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "智",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 12,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "7af1c9fc09816cacd320b63053c5c62a2d1d5188ca15ae9d1b2789f629fc4312",
+        "pathsSha256": "5b1207902635eadb9361f517c77c956c76f896d24f26c74b878494eb7a101fb4",
+        "components": [
+          {
+            "component": "知",
+            "position": "top",
+            "donorGlyph": "知",
+            "donorPathsSha256": "43a9c5f67eebc76b399e5fdf062f0aa4684ce558d95cc74d371c09bef705a00a",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "assignment": "approved-whole-glyph"
+          },
+          {
+            "component": "日",
+            "position": "bottom",
+            "donorGlyph": "春",
+            "donorPathsSha256": "c859e8db27173fab53e34893b64deda99171ee0bddc2c95dc70e3d0d432d8e37",
+            "approvedPathIndices": [
+              6,
+              7,
+              8,
+              9
+            ],
+            "assignment": "reviewed-component-assignment"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "62b460749bd4280efd85f07fa54ab2540af85c370bd546f9f6922d7d07628cee",
+        "pathsSha256": "c673193100275f2314010581456f84e738b2937a90bd7fdb17784c77075e7898",
+        "ledgerRecordSha256": "7f88b863b9189f06fec873264d8ca7a3ff0ea570d928fe8c683266692e3f4d65",
+        "ledgerStatus": "matched",
+        "manifestRow": "1415",
+        "videoFilename": "1415 슬기 지.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": "textbook-667a-stage2-c-v1",
+        "correctionSha256": "6e3f98503c45ca968a2fba44ca1d972c32cca91c68216048e567a644581446c1",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1415.mp4",
+          "sha256": "6b2b5bef1862d3124b811aa65db26950bcea6d2aa555e80e979e195e9ef13ff6",
+          "bytes": 514276
+        },
+        "durationSeconds": 15.265,
+        "strokeCompletionSamplesSeconds": [
+          1.6,
+          2.4,
+          4,
+          6,
+          6.7,
+          8,
+          8.6,
+          10.2,
+          11.5,
+          13.4,
+          13.8,
+          15.2
+        ],
+        "sourceObservation": "12획 전체 진행을 이미 대조한 뒤 최종 보정본과 매 획 완료 프레임을 다시 확인했다. 日 안쪽 가로 오른끝은 닫히고, 日 윗가로와 矢의 점은 원본처럼 분리된다. 위 矢·口와 아래 日의 순서 및 펜 경계가 일치한다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 12,
+          "approved": 12
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "知1–8 → 日9–12. 11 내부 가로와12 아래 가로 순서가 대응한다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "시안 日은 x15.15부터 폭49.59로 크게 왼쪽으로 치우친다. 승인 日은 x39.7부터 폭29.5이며 y53.9부터 더 높고 좁게 놓인다.",
+        "junctions": "시안 日11 내부 가로는 오른벽10에 닿지 않는다(표본 약11.86). 승인 11은 오른벽에 연결된다(약0.13). 원장은 日10 위와 矢5 점의 분리도 확인했다.",
+        "shape": "上知 역시 시안 폭80에 비해 승인 폭66.8이며, 春에서 가져온 日의 전체 도너 기준 위치 프로필을 智에 그대로 옮긴 결과가 맞지 않는다.",
+        "componentBounds": [
+          {
+            "component": "知",
+            "position": "top",
+            "candidate": {
+              "x": 10,
+              "y": 10,
+              "width": 80,
+              "height": 42.6425
+            },
+            "approved": {
+              "x": 16.6,
+              "y": 10,
+              "width": 66.80000000000001,
+              "height": 48.8
+            }
+          },
+          {
+            "component": "日",
+            "position": "bottom",
+            "candidate": {
+              "x": 15.149834293,
+              "y": 58.6425,
+              "width": 49.594466584,
+              "height": 31.3575
+            },
+            "approved": {
+              "x": 39.7,
+              "y": 53.9,
+              "width": 29.5,
+              "height": 36.1
+            }
+          }
+        ],
+        "sampledCenterlineDistances": [
+          {
+            "strokes": [
+              10,
+              11
+            ],
+            "candidate": 11.863442081283102,
+            "approved": 0.12847479072653298
+          }
+        ]
+      },
+      "requiredRevision": "日을 오른쪽의 중앙 위치로 좁혀 올리고, 11 가로를10 오른벽에 닿게 한다. 矢5–日10 간격은 유지한다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    },
+    {
+      "glyph": "泉",
+      "status": "reference-review-complete",
+      "conclusion": "requires-reference-guided-revision",
+      "frozen": {
+        "status": "candidate-unreviewed",
+        "provenance": "component-derived-unreviewed",
+        "expectedStrokes": 9,
+        "libraryHash": "0de1844af3d974ea64b23807bfbbc732b2e1b5043ec42520a20c96376d608345",
+        "candidateSha256": "e86eac480afc04942552c970a310b4957096d8e920b895df424de18fc019d43c",
+        "pathsSha256": "33e22cb916a729160ef6f72c50846daa627c59aebcd8593a33f779eb51a6f66f",
+        "components": [
+          {
+            "component": "白",
+            "position": "top",
+            "donorGlyph": "白",
+            "donorPathsSha256": "144ded0dadbb5819c174d9590e6238722bff33beae0867e299284073980fc82a",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "assignment": "approved-whole-glyph"
+          },
+          {
+            "component": "水",
+            "position": "bottom",
+            "donorGlyph": "水",
+            "donorPathsSha256": "e3b2b6ef13f5af681bc7ca5303ef991a8b892064b746e0905d8458326c377541",
+            "approvedPathIndices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "assignment": "approved-whole-glyph"
+          }
+        ]
+      },
+      "approvedReference": {
+        "objectSha256": "bdf0c8f8d52039e5b50bedd19b936d6211d799c519b5fe877ee2deb18fba32f7",
+        "pathsSha256": "b877609dac1e39bb2f398a54d10ff64c290eecf4b0cfc4c567d8e63100d9d7c3",
+        "ledgerRecordSha256": "d85b989c230201cd943af9a73402cfb73ef5a81c9def7a27a04adb5c519c5bc5",
+        "ledgerStatus": "matched",
+        "manifestRow": "1477",
+        "videoFilename": "1477 샘 천.mp4",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "geometryCorrection": "textbook-6cc9-stage2-c-v1",
+        "correctionSha256": "a311b32d96293bc7820074d9193d8a02a2b3b6af436bba7584fa935ce80d731d",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1477.mp4",
+          "sha256": "cbb04c89183539222bf03a9f831ca80a6dbce6786b585fb17c9e8387718ce64d",
+          "bytes": 447667
+        },
+        "durationSeconds": 13.081,
+        "strokeCompletionSamplesSeconds": [
+          0.9,
+          2,
+          3.5,
+          4.8,
+          5.5,
+          7.9,
+          10,
+          10.9,
+          13
+        ],
+        "sourceObservation": "원본 9획 전체와 보정 후보를 재대조했다. 白 내부 가로의 닫힘, 水 세로 갈고리와 좌우 별도 획 경계, 오른쪽 두 획 접합을 확인했다."
+      },
+      "observed": {
+        "strokeCounts": {
+          "frozen": 9,
+          "approved": 9
+        },
+        "order": {
+          "status": "same-observed-correspondence",
+          "notes": "白1–5 → 水6 세로갈고리 →7 왼쪽 꺾임 →8·9 오른쪽. 전체9획 대응 순서는 같다."
+        },
+        "direction": {
+          "status": "same-gross-progression-no-reversal-identified",
+          "notes": "시작·끝 및 주요 진행 방향이 대응한다. 국소 진입 굴곡과 곡선 형태 차이는 shape 항목에 별도로 기록한다."
+        },
+        "penBoundaries": {
+          "status": "same-observed-stroke-partition",
+          "notes": "동일 인덱스 경로가 같은 한 획에 대응하며, 별도 획 병합/분할 문제는 발견하지 않았다."
+        },
+        "positioning": "시안 白은 폭62.48·높이37로 넓고 낮다. 승인 白은 폭37.1·높이42.1이다. 시안 水는 y53에서 시작하지만 승인 水는 y47.7부터 白 아래와 겹친다.",
+        "junctions": "시안 白4 내부 가로–3 오른벽이 떨어진다(약8.64; 승인 약0.07). 白5 아래–水6 시작도 약11.00으로 분리되지만 승인에서는 약1.33으로 접합한다. 水8–9 접합은 양쪽 모두 유지된다.",
+        "shape": "水8은 시안의 매끈한 왼아래 곡선과 달리 승인에는 처음 오른아래로 짧게 진입한 뒤 왼아래로 꺾이는 부분이 있다. 획 경계는 하나로 같다.",
+        "componentBounds": [
+          {
+            "component": "白",
+            "position": "top",
+            "candidate": {
+              "x": 18.759120879,
+              "y": 10,
+              "width": 62.481758242000005,
+              "height": 37
+            },
+            "approved": {
+              "x": 27.3,
+              "y": 10,
+              "width": 37.10000000000001,
+              "height": 42.1
+            }
+          },
+          {
+            "component": "水",
+            "position": "bottom",
+            "candidate": {
+              "x": 10,
+              "y": 53,
+              "width": 80,
+              "height": 37.00000000015385
+            },
+            "approved": {
+              "x": 10.1,
+              "y": 47.7,
+              "width": 79.80000000000001,
+              "height": 42.3
+            }
+          }
+        ],
+        "sampledCenterlineDistances": [
+          {
+            "strokes": [
+              3,
+              4
+            ],
+            "candidate": 8.636218036011492,
+            "approved": 0.06856177854271976
+          },
+          {
+            "strokes": [
+              5,
+              6
+            ],
+            "candidate": 10.995097286173948,
+            "approved": 1.3294482035609956
+          },
+          {
+            "strokes": [
+              8,
+              9
+            ],
+            "candidate": 1.4556158001524409,
+            "approved": 1.0724278749455944
+          }
+        ]
+      },
+      "requiredRevision": "白을 좁혀 높이고 내부4 가로를 오른벽까지 연결한다. 水6 시작을 白5에 맞추고8의 짧은 진입 굴곡을 보존한다.",
+      "approvalBoundary": "참조에 맞춘 보정안 검토용이며 신규 승인이나 동결 독립 평가의 성능 개선 기록이 아니다."
+    }
+  ]
+}

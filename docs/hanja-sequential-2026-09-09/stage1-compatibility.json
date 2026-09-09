@@ -1,0 +1,602 @@
+{
+  "schemaVersion": 1,
+  "stage": 1,
+  "status": "reviewed-proposal-not-published",
+  "reviewedAt": "2026-09-09",
+  "sourceManifest": {
+    "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/data/data_high.xlsx",
+    "sha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+    "bytes": 128318
+  },
+  "sourceGlyphMappings": [
+    {
+      "glyph": "兩",
+      "sourceGlyph": "兩",
+      "sourceCodepoint": "U+F978",
+      "targetCodepoint": "U+5169",
+      "normalization": "NFC",
+      "manifestRow": "0401",
+      "videoFilename": "0401 둘 량.mp4"
+    },
+    {
+      "glyph": "連",
+      "sourceGlyph": "連",
+      "sourceCodepoint": "U+F99A",
+      "targetCodepoint": "U+9023",
+      "normalization": "NFC",
+      "manifestRow": "0416",
+      "videoFilename": "0416 이을 련.mp4"
+    }
+  ],
+  "candidateSources": {
+    "Ko": {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "counts": {
+        "兩": 0,
+        "連": 0
+      }
+    },
+    "Ja": {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "counts": {
+        "兩": 8,
+        "連": 10
+      }
+    },
+    "MM": {
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "counts": {
+        "兩": 8,
+        "連": 10
+      }
+    }
+  },
+  "records": [
+    {
+      "glyph": "兩",
+      "sourceGlyph": "兩",
+      "manifestRow": "0401",
+      "videoFilename": "0401 둘 량.mp4",
+      "expectedStrokes": 8,
+      "candidateStrokes": 8,
+      "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "status": "matched",
+      "reviewedAt": "2026-09-09",
+      "reviewer": "Codex visual comparison",
+      "reviewMethod": "video-frame-sequence",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0401.mp4",
+        "sha256": "74aafe6a4fe7a78250417e10bd225b341273568bce83c1852e72c02ad2024d9c",
+        "bytes": 386951
+      },
+      "durationSeconds": 11.781,
+      "strokeEndsSeconds": [
+        1.2,
+        2.8,
+        6.1,
+        8,
+        8.7,
+        9.6,
+        10.4,
+        11.4
+      ],
+      "pathsSha256": "1d18dd609e3638992db86657d096e464e054e78a7dde8846f339b603e6bf010a",
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "notes": "원문 兩(U+F978)·0401·0401 둘 량.mp4를 보존했다. NFC(兩)=兩이며 원본 영상의 두 량 자형도 직접 확인했다. Ja 원본 8획의 전체 순서(위 가로, 왼쪽 세로, 가로-오른쪽 세로-갈고리, 중앙 세로, 왼쪽 내부의 왼삐침·오른내림, 오른쪽 내부의 왼삐침·오른내림), 방향, 획 경계와 자형을 모두 대조했다. 중앙 세로의 상단 접합, 바깥 왼쪽 세로와 3획 가로의 접합, 3획의 안쪽 갈고리, 내부 두 쌍의 연결·중앙 세로와의 분리를 실제 선폭 5 후보에서 확인했다. 원본 Ja 중앙선을 수정하지 않았다. 전체 진행은 0.5초 표본, 매획 완료는 추가 0.1초 표본으로 확인했다. strokeEndsSeconds는 완료가 확인된 표본 시각이며 정확한 펜 떼기 시각을 추정한 값이 아니다. Codex 시각 대조이며 비상교육의 일반적 필순을 확인한 것으로 한국어문회 개별 승인이나 인간 전문가 확인을 의미하지 않는다."
+    },
+    {
+      "glyph": "連",
+      "sourceGlyph": "連",
+      "manifestRow": "0416",
+      "videoFilename": "0416 이을 련.mp4",
+      "expectedStrokes": 11,
+      "candidateStrokes": 10,
+      "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "geometryCorrection": "vivasam-2022-ja-u9023-v1",
+      "correctionSha256": "9e4df9bac3d3971296a5fd763f0aa68df588349d18be84e0305f4453302afc85",
+      "status": "matched",
+      "reviewedAt": "2026-09-09",
+      "reviewer": "Codex visual comparison",
+      "reviewMethod": "video-frame-sequence",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0416.mp4",
+        "sha256": "f84200515c9d1b26e275ea1c8f90a8772b9f9121ccb859ac7356f6ef3427ee4f",
+        "bytes": 506825
+      },
+      "durationSeconds": 14.331,
+      "strokeEndsSeconds": [
+        1.2,
+        2.3,
+        3.7,
+        4.5,
+        5.2,
+        6.6,
+        8.8,
+        9.7,
+        10.9,
+        11.8,
+        14.2
+      ],
+      "pathsSha256": "9ba0ea0d874733c7fe8b157d958d3f580b8807287a127852a300f9e866494100",
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "notes": "원문 連(U+F99A)·0416·0416 이을 련.mp4를 보존했다. NFC(連)=連이며 원본 영상의 이을 련 자형도 직접 확인했다. Ko에는 정규/호환 표기 후보가 없고 Ja/MM 원본은 각각 10획으로, 영상·카탈로그의 11획과 다르다. 영상 9획이 10.7–10.9초 굽은 선 중간에서 멈추고 다음 10획이 같은 지점에서 아래로 계속 내려가는 것을 0.1초 전체 경계 표본에서 확인했다. 원본 Ja 9획을 그 지점 [243,354]에서 나누어 sourceStrokeIndices 9,9를 유지했다. 또한 영상의 車 안쪽 가로(4획)가 양쪽 세로에 붙는 것과 달리 원본 후보에는 간격이 남아, 해당 양끝만 영상 접합을 반영한 로컬 좌표로 연장했다. 추가 재검토에서 7획 중앙 세로의 아래끝이 11획과 붙는 후보 결함을 찾아, 원본 14.2초 무축소 완료 프레임의 흰 간격에 맞춰 원본 끝점 [600,105]만 [600,130]으로 올렸다. 900px 선폭 5 렌더와 최단 거리 계산에서 두 획의 흰 간격 약 1.52단위가 확인되었다. 이 추가 보정을 포함한 11획 모두의 순서·방향·분할·자형과 선폭 5에서 4획 양끝 접합, 9/10 연속 지점, 10/11 하단 접합 및 주변 획 분리를 다시 확인했다. 전체 진행은 0.5초 표본, 세부 경계·완료는 0.1초 표본으로 확인했다. strokeEndsSeconds는 완료가 확인된 표본 시각이며 정확한 펜 떼기 시각을 추정한 값이 아니다. Codex 시각 대조이며 한국어문회 개별 승인이나 인간 전문가 확인을 의미하지 않는다."
+    }
+  ],
+  "recipes": [
+    {
+      "glyph": "連",
+      "id": "vivasam-2022-ja-u9023-v1",
+      "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "sourceVideoSha256": "f84200515c9d1b26e275ea1c8f90a8772b9f9121ccb859ac7356f6ef3427ee4f",
+      "originalMediansSha256": "3221a2344e2490803bf7c10b06d287ed943e9c889eed33c757f7406d000d0638",
+      "strokes": [
+        {
+          "sourceStroke": 1
+        },
+        {
+          "sourceStroke": 2
+        },
+        {
+          "sourceStroke": 3
+        },
+        {
+          "sourceStroke": 4,
+          "points": [
+            [
+              461,
+              445
+            ],
+            [
+              526,
+              453
+            ],
+            [
+              694,
+              474
+            ],
+            [
+              771,
+              484
+            ]
+          ]
+        },
+        {
+          "sourceStroke": 5
+        },
+        {
+          "sourceStroke": 6
+        },
+        {
+          "sourceStroke": 7,
+          "points": [
+            [
+              554,
+              804
+            ],
+            [
+              615,
+              761
+            ],
+            [
+              600,
+              130
+            ]
+          ]
+        },
+        {
+          "sourceStroke": 8
+        },
+        {
+          "sourceStroke": 9,
+          "points": [
+            [
+              93,
+              452
+            ],
+            [
+              250,
+              495
+            ],
+            [
+              296,
+              463
+            ],
+            [
+              243,
+              354
+            ]
+          ]
+        },
+        {
+          "sourceStroke": 9,
+          "points": [
+            [
+              243,
+              354
+            ],
+            [
+              290,
+              235
+            ],
+            [
+              272,
+              178
+            ]
+          ]
+        },
+        {
+          "sourceStroke": 10
+        }
+      ],
+      "notes": "비상교육 連 0416.mp4 전체 영상과 0.1초 표본을 직접 대조했다. 원본 Ja 4획의 안쪽 가로가 영상에서 양쪽 세로에 닿는 것을 3.8–4.5초에서 확인하여 양끝을 [461,445]와 [771,484]까지 연장했다. 이 좌표는 영상의 접합을 반영한 로컬 중앙선이며 출판사의 제공 좌표가 아니다. Ja 9획을 영상의 9획(가로 후 왼쪽으로 꺾여 내려옴; 10.9초 완료 확인)과 10획(같은 지점에서 아래로 굽어 내려옴; 11.8초 완료 확인)에 맞춰 [243,354]에서 분할했다. sourceStroke 9의 일대다 대응과 원래 진행 방향을 보존했다. 추가 재검토에서 원본 완료 프레임(14.2초)은 7획 중앙 세로 아래끝과 마지막 11획 사이에 흰 간격이 있지만, 기존 후보는 선폭 5에서 약 0.77단위 겹쳤다. 따라서 7획의 마지막 원본 점 [600,105]만 [600,130]으로 올려 선폭 5의 최단 흰 간격 약 1.52단위를 확보하고, 원본 영상의 분리와 일치함을 무축소 프레임·900px 후보로 확인했다. 이 좌표 역시 영상의 개별 분리를 반영한 로컬 중앙선이다. 나머지 1–3,5–6,8,10 원본 획의 순서와 방향을 유지했으며, 보정된 전체 11획의 경계·자형 및 실제 선폭 5에서 연결과 분리를 다시 확인했다. Codex 시각 대조이며 한국어문회 개별 승인이나 인간 전문가 확인을 의미하지 않는다."
+    }
+  ],
+  "geometryEvidence": {
+    "兩": {
+      "originalMedians": [
+        [
+          [
+            302,
+            717
+          ],
+          [
+            377,
+            705
+          ],
+          [
+            702,
+            743
+          ]
+        ],
+        [
+          [
+            130,
+            495
+          ],
+          [
+            176,
+            421
+          ],
+          [
+            183,
+            83
+          ]
+        ],
+        [
+          [
+            192,
+            460
+          ],
+          [
+            733,
+            537
+          ],
+          [
+            819,
+            529
+          ],
+          [
+            850,
+            495
+          ],
+          [
+            798,
+            87
+          ],
+          [
+            761,
+            37
+          ],
+          [
+            661,
+            123
+          ]
+        ],
+        [
+          [
+            437,
+            689
+          ],
+          [
+            485,
+            638
+          ],
+          [
+            480,
+            119
+          ]
+        ],
+        [
+          [
+            322,
+            320
+          ],
+          [
+            323,
+            287
+          ],
+          [
+            239,
+            208
+          ]
+        ],
+        [
+          [
+            260,
+            385
+          ],
+          [
+            375,
+            310
+          ],
+          [
+            411,
+            258
+          ]
+        ],
+        [
+          [
+            621,
+            357
+          ],
+          [
+            626,
+            323
+          ],
+          [
+            531,
+            242
+          ]
+        ],
+        [
+          [
+            554,
+            430
+          ],
+          [
+            710,
+            308
+          ],
+          [
+            749,
+            250
+          ]
+        ]
+      ],
+      "originalMediansSha256": "b247ee909396abff06ae17a8909de0773456f6b371c0e8d7c034f09a4c07172e",
+      "paths": [
+        "M29.1 13.7 L37.4 15 L73.6 10.8",
+        "M10 38.3 L15.1 46.6 L15.9 84.1",
+        "M16.9 42.2 L77 33.7 L86.6 34.6 L90 38.3 L84.2 83.7 L80.1 89.2 L69 79.7",
+        "M44.1 16.8 L49.4 22.4 L48.9 80.1",
+        "M31.3 57.8 L31.4 61.4 L22.1 70.2",
+        "M24.4 50.6 L37.2 58.9 L41.2 64.7",
+        "M64.6 53.7 L65.1 57.4 L54.6 66.4",
+        "M57.1 45.6 L74.4 59.1 L78.8 65.6"
+      ],
+      "pathsSha256": "1d18dd609e3638992db86657d096e464e054e78a7dde8846f339b603e6bf010a"
+    },
+    "連": {
+      "originalMedians": [
+        [
+          [
+            458,
+            661
+          ],
+          [
+            776,
+            706
+          ]
+        ],
+        [
+          [
+            410,
+            548
+          ],
+          [
+            444,
+            523
+          ],
+          [
+            494,
+            312
+          ]
+        ],
+        [
+          [
+            474,
+            543
+          ],
+          [
+            728,
+            583
+          ],
+          [
+            770,
+            571
+          ],
+          [
+            792,
+            545
+          ],
+          [
+            723,
+            334
+          ]
+        ],
+        [
+          [
+            526,
+            453
+          ],
+          [
+            694,
+            474
+          ]
+        ],
+        [
+          [
+            513,
+            341
+          ],
+          [
+            702,
+            381
+          ]
+        ],
+        [
+          [
+            388,
+            230
+          ],
+          [
+            789,
+            273
+          ],
+          [
+            873,
+            261
+          ]
+        ],
+        [
+          [
+            554,
+            804
+          ],
+          [
+            615,
+            761
+          ],
+          [
+            600,
+            105
+          ]
+        ],
+        [
+          [
+            208,
+            736
+          ],
+          [
+            290,
+            693
+          ],
+          [
+            324,
+            640
+          ]
+        ],
+        [
+          [
+            93,
+            452
+          ],
+          [
+            250,
+            495
+          ],
+          [
+            296,
+            463
+          ],
+          [
+            243,
+            354
+          ],
+          [
+            290,
+            235
+          ],
+          [
+            272,
+            178
+          ]
+        ],
+        [
+          [
+            92,
+            134
+          ],
+          [
+            300,
+            152
+          ],
+          [
+            723,
+            19
+          ],
+          [
+            935,
+            55
+          ]
+        ]
+      ],
+      "originalMediansSha256": "3221a2344e2490803bf7c10b06d287ed943e9c889eed33c757f7406d000d0638",
+      "paths": [
+        "M44.7 26.3 L74.9 22.1",
+        "M40.2 37 L43.4 39.4 L48.1 59.4",
+        "M46.3 37.5 L70.4 33.7 L74.3 34.9 L76.4 37.3 L69.9 57.4",
+        "M45 46.8 L51.2 46.1 L67.1 44.1 L74.4 43.1",
+        "M50 56.7 L67.9 52.9",
+        "M38.1 67.2 L76.1 63.1 L84.1 64.3",
+        "M53.8 12.8 L59.6 16.8 L58.2 76.7",
+        "M21 19.2 L28.8 23.3 L32 28.3",
+        "M10.1 46.2 L25 42.1 L29.4 45.1 L24.3 55.5",
+        "M24.3 55.5 L28.8 66.7 L27.1 72.2",
+        "M10 76.3 L29.7 74.6 L69.9 87.2 L90 83.8"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        9,
+        10
+      ],
+      "pathsSha256": "9ba0ea0d874733c7fe8b157d958d3f580b8807287a127852a300f9e866494100",
+      "candidatePathsSha256": "ae1e893b5f2243a906a477aa55d7fbe69af2bc86850e546f3b41c9e3546df046",
+      "recheck": {
+        "sourceCompletionFrameSeconds": 14.2,
+        "originalStroke7Endpoint": [
+          600,
+          105
+        ],
+        "correctedStroke7Endpoint": [
+          600,
+          130
+        ],
+        "renderedStrokeWidth": 5,
+        "previousCentralStroke7To11PaintGap": -0.770071857673047,
+        "correctedCentralStroke7To11PaintGap": 1.520071055748402,
+        "units": "100-unit viewBox; segment/cap centerline distance minus strokeWidth",
+        "status": "match",
+        "notes": "원본 영상의 7/11 분리와 보정 후 900px 전체 후보를 다시 대조했다. 나머지 10획의 경로와 원본 매핑은 전 단계 제안에서 바뀌지 않았다."
+      }
+    }
+  },
+  "observation": {
+    "sampleResolutionSeconds": 0.1,
+    "timelineResolutionSeconds": 0.5,
+    "renderedStrokeWidth": 5,
+    "method": "Pinned video bytes decoded in a temporary seekable MP4; PNG sheets emitted from memory and visually read, no frame images written by context-mode.",
+    "limitation": "Publisher video describes a general stroke order and explicitly allows alternative orders; not a unique Korean examination answer or human-expert certification."
+  }
+}

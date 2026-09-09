@@ -1,0 +1,779 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-09",
+  "purpose": "Stage1 candidate geometry, independently auditable before runtime promotion",
+  "runtimePublished": false,
+  "method": {
+    "targetCorpusProvenance": "all-null; borrowed donor provenance is stored separately",
+    "pathHash": "SHA256 of UTF-8 JSON.stringify(paths)",
+    "sourceReview": "Original publisher MP4 downloaded and hashed; frames decoded in memory, full timelines and every completed stroke compared to proposed paths",
+    "frameSampling": {
+      "overviewFps": 2,
+      "detailFps": 12
+    },
+    "limitations": [
+      "Review is a visual comparison against identified Korean publisher source, not official certification.",
+      "No source video or publisher artwork is copied into these artifacts.",
+      "SVG centerlines intentionally retain approved donor font differences and do not reproduce brush outlines."
+    ]
+  },
+  "publicGeometrySearch": {
+    "checkedAt": "2026-09-09",
+    "exactTargetFilesFound": 0,
+    "targets": [
+      "硏",
+      "鄕"
+    ],
+    "repositories": [
+      {
+        "repository": "KanjiVG/kanjivg",
+        "treeSha": "55b5ba92a7cad78a62ef04db4be6f9562d949b7f",
+        "truncated": false
+      },
+      {
+        "repository": "parsimonhi/animCJK",
+        "treeSha": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+        "truncated": false
+      }
+    ],
+    "scope": "Standard glyph filenames in complete repository trees; not a claim that every public source was exhausted"
+  },
+  "entries": [
+    {
+      "id": "textbook-784f-reviewed-parts-v1",
+      "glyph": "硏",
+      "paths": [
+        "M16.501547988 21.799076212 L38 18",
+        "M23.956656347 24.512702079 L26.643962848 27.009237875 L22.39628483 41.445727483 L10 62.937644342",
+        "M18.061919505 42.748267898 L20.749226006 46.438799076 L23.436532508 65",
+        "M21.442724458 43.182448037 L30.544891641 40.68591224 L34.099071207 42.422632794 L31.411764706 54.25404157",
+        "M24.910216718 59.138568129 L30.458204334 56.207852194 L34.965944272 56.424942263",
+        "M44 20 L57 17",
+        "M41 48 L60 41",
+        "M51 20 L52 47 Q52 68 39 82",
+        "M65 14 L82 10",
+        "M61 47 L90 43",
+        "M73 14 L73 90"
+      ],
+      "borrowedParts": [
+        {
+          "glyph": "破",
+          "approvedPathIndices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "donorPathsSha256": "4ac460f744aaececfcf4eab400696fade2fde08bf927058794ebac56b576e6e7",
+          "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+          "donorVerificationSource": "vivasam-high-2022",
+          "sourceReference": {
+            "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+            "manifestRow": "1601",
+            "glyph": "破",
+            "videoFilename": "1601 깨뜨릴 파.mp4"
+          },
+          "verifiedAt": "2026-09-08",
+          "upstreamIndices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sourceBox": {
+            "x": 10,
+            "y": 31.1,
+            "width": 32.3,
+            "height": 43.300000000000004
+          },
+          "targetBox": {
+            "x": 10,
+            "y": 18,
+            "width": 28,
+            "height": 47
+          },
+          "transform": {
+            "sx": 0.86687306501548,
+            "sy": 1.0854503464203231,
+            "tx": 1.3312693498452006,
+            "ty": -15.757505773672047
+          },
+          "paths": [
+            "M16.501547988 21.799076212 L38 18",
+            "M23.956656347 24.512702079 L26.643962848 27.009237875 L22.39628483 41.445727483 L10 62.937644342",
+            "M18.061919505 42.748267898 L20.749226006 46.438799076 L23.436532508 65",
+            "M21.442724458 43.182448037 L30.544891641 40.68591224 L34.099071207 42.422632794 L31.411764706 54.25404157",
+            "M24.910216718 59.138568129 L30.458204334 56.207852194 L34.965944272 56.424942263"
+          ],
+          "targetPathIndices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "authoredPathIndices": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "pathsSha256": "05e275566bd1707dbe0143d252eefe100bb83de92430ed4fe5b1de994f924928",
+      "sourceStrokeIndices": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sourceVideoSha256": "0875048a8ddd1d195450a72969903a9680231696c426034f803e01d0bbebe3fb",
+      "sourceReference": {
+        "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+        "manifestRow": "1026",
+        "glyph": "硏",
+        "videoFilename": "1026 갈 연.mp4"
+      },
+      "videoUrl": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1026.mp4",
+      "videoBytes": 470290,
+      "durationSeconds": 13.348,
+      "status": "source-reviewed-proposal",
+      "reviewedAt": "2026-09-09",
+      "sourceVerification": "vivasam-high-2022",
+      "sourceAuthority": "Korean textbook publisher supplementary stroke-order video; not a claim of Eomunhoe approval",
+      "geometryLicense": "Arphic Public License for borrowed geometry; preserve donor notices",
+      "coordinateSystem": {
+        "viewBox": "0 0 100 100",
+        "strokeWidth": 5,
+        "linecap": "round",
+        "linejoin": "round"
+      },
+      "strokeEndsSeconds": [
+        1.25,
+        2.667,
+        3.5,
+        4.417,
+        5.333,
+        6.167,
+        7.083,
+        8.917,
+        10.167,
+        11.083,
+        13.25
+      ],
+      "perStrokeReview": [
+        {
+          "index": 1,
+          "completedAtSeconds": 1.25,
+          "direction": "left-to-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "石 윗 가로획. 아래 2획과 접하고 오른쪽 6획과는 분리."
+        },
+        {
+          "index": 2,
+          "completedAtSeconds": 2.667,
+          "direction": "down-left",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "石 윗 가로획 아래에서 시작해 내려긋고 왼쪽 아래로 삐침. 도입의 작은 방향 전환은 같은 획."
+        },
+        {
+          "index": 3,
+          "completedAtSeconds": 3.5,
+          "direction": "down",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "口 왼쪽 세로획. 2획과 교차한 뒤 아래로 내려감."
+        },
+        {
+          "index": 4,
+          "completedAtSeconds": 4.417,
+          "direction": "left-to-right-then-down",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "口 위 가로와 오른쪽 세로를 한 획으로 연결."
+        },
+        {
+          "index": 5,
+          "completedAtSeconds": 5.333,
+          "direction": "left-to-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "口 아래 가로획. 별도 획으로 입구를 닫음."
+        },
+        {
+          "index": 6,
+          "completedAtSeconds": 6.167,
+          "direction": "left-to-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "幵 왼쪽 위 가로획. 石 윗 획과 합치지 않음."
+        },
+        {
+          "index": 7,
+          "completedAtSeconds": 7.083,
+          "direction": "left-to-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "幵 왼쪽 중간 가로획. 오른쪽 중간 가로획과 별개."
+        },
+        {
+          "index": 8,
+          "completedAtSeconds": 8.917,
+          "direction": "down-then-down-left",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "幵 왼쪽 세로: 두 가로획을 지나 아래 왼쪽으로 휘어짐. 중간 pen lift 없음."
+        },
+        {
+          "index": 9,
+          "completedAtSeconds": 10.167,
+          "direction": "left-to-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "幵 오른쪽 위 가로획. 왼쪽 위 획과 분리."
+        },
+        {
+          "index": 10,
+          "completedAtSeconds": 11.083,
+          "direction": "left-to-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "幵 오른쪽 중간 가로획. 왼쪽 7획과 두 개의 가로획을 유지."
+        },
+        {
+          "index": 11,
+          "completedAtSeconds": 13.25,
+          "direction": "down",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "幵 오른쪽 긴 세로획. 위에서 아래로, 끝의 추가 갈고리 없음."
+        }
+      ],
+      "notes": [
+        "Source uses 硏 = 石5 + 幵6 (11), not 研 = 石5 + 开4 (9).",
+        "Target-corpus exact geometry was absent in the checked Ko/Ja/MM data and standard filenames of KanjiVG/animCJK trees.",
+        "Paths 1–5 are affinely transformed approved 破 paths. Paths 6–11 are new source-guided centerlines.",
+        "石 target width changed 30→28 to keep the top 石 stroke separate from the next 幵 stroke at round width5; nearest endpoint gap sqrt(40)-5≈1.325 units.",
+        "Whole video reviewed at 2fps; stroke boundaries/directions inspected at 12fps and all 11 cumulative source/draft states compared. Geometry preserves stroke topology, not a pixel-exact brush outline."
+      ]
+    },
+    {
+      "id": "textbook-9115-reviewed-parts-v1",
+      "glyph": "鄕",
+      "paths": [
+        "M25 10 Q21 26 13 39 L28 34",
+        "M31 30 Q25 46 14 57 L29 51",
+        "M31 48 Q29 68 12 87",
+        "M51.014150943 15 L53.094339623 17.5375 L46.556603774 27.6875",
+        "M42 27.55625 L43.849056604 30.1375 L45.797169811 48.38125",
+        "M43.650943396 27.99375 L45.400943396 28.825 L60.391509434 25.5875 L62.471698113 26.9875 L63 28.0375 L59.632075472 50",
+        "M45.301886792 37.00625 L57.452830189 35.5625",
+        "M46.028301887 45.58125 L58.905660377 44.96875",
+        "M58.072319202 64.036090226 L58.119700748 66.914285714 L46.93765586 71.314285714",
+        "M44 60 L46.985037406 61.753383459 L45.563591022 73.464661654 L45.847880299 78.261654135 L46.93765586 80.544360902 L53.19201995 82 L61.436408978 81.239097744 L63 80.345864662 L62.810473815 75.317293233",
+        "M76.221311475 18.807228916 L85.327868852 14 L88.483606557 17.090361446 L80.368852459 34.259036145",
+        "M80.008196721 33.457831325 L88.844262295 42.728915663 L92 52.686746988 L91.368852459 57.493975904 L88.483606557 60.927710843 L80.819672131 54.746987952",
+        "M70 15.373493976 L73.967213115 20.409638554 L73.516393443 90"
+      ],
+      "borrowedParts": [
+        {
+          "glyph": "白",
+          "approvedPathIndices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "donorPathsSha256": "144ded0dadbb5819c174d9590e6238722bff33beae0867e299284073980fc82a",
+          "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+          "donorVerificationSource": "eomunhoe-f37",
+          "sourceImage": "BIN0029.gif",
+          "sourceRow": 10,
+          "verifiedAt": "2026-09-07",
+          "upstreamIndices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sourceBox": {
+            "x": 18.2,
+            "y": 10,
+            "width": 63.599999999999994,
+            "height": 80
+          },
+          "targetBox": {
+            "x": 42,
+            "y": 15,
+            "width": 21,
+            "height": 35
+          },
+          "transform": {
+            "sx": 0.33018867924528306,
+            "sy": 0.4375,
+            "tx": 35.990566037735846,
+            "ty": 10.625
+          },
+          "paths": [
+            "M51.014150943 15 L53.094339623 17.5375 L46.556603774 27.6875",
+            "M42 27.55625 L43.849056604 30.1375 L45.797169811 48.38125",
+            "M43.650943396 27.99375 L45.400943396 28.825 L60.391509434 25.5875 L62.471698113 26.9875 L63 28.0375 L59.632075472 50",
+            "M45.301886792 37.00625 L57.452830189 35.5625",
+            "M46.028301887 45.58125 L58.905660377 44.96875"
+          ],
+          "targetPathIndices": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "glyph": "化",
+          "approvedPathIndices": [
+            3,
+            4
+          ],
+          "donorPathsSha256": "b45b8a6474c2a1d3e649acae360338ab439b0855932ada66fbfb014e29418a29",
+          "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+          "donorVerificationSource": "eomunhoe-f37",
+          "sourceImage": "BIN000F.gif",
+          "sourceRow": 14,
+          "verifiedAt": "2026-09-07",
+          "upstreamIndices": [
+            3,
+            4
+          ],
+          "sourceBox": {
+            "x": 49.9,
+            "y": 16,
+            "width": 40.1,
+            "height": 66.5
+          },
+          "targetBox": {
+            "x": 44,
+            "y": 60,
+            "width": 19,
+            "height": 22
+          },
+          "transform": {
+            "sx": 0.4738154613466334,
+            "sy": 0.3308270676691729,
+            "tx": 20.356608478802993,
+            "ty": 54.70676691729324
+          },
+          "paths": [
+            "M58.072319202 64.036090226 L58.119700748 66.914285714 L46.93765586 71.314285714",
+            "M44 60 L46.985037406 61.753383459 L45.563591022 73.464661654 L45.847880299 78.261654135 L46.93765586 80.544360902 L53.19201995 82 L61.436408978 81.239097744 L63 80.345864662 L62.810473815 75.317293233"
+          ],
+          "targetPathIndices": [
+            9,
+            10
+          ]
+        },
+        {
+          "glyph": "都",
+          "approvedPathIndices": [
+            10,
+            11,
+            12
+          ],
+          "donorPathsSha256": "da4332f2b07b0f9326db4cb0d3a4c09dc8d43733d719720a0c7d97366a23ae93",
+          "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+          "donorVerificationSource": "eomunhoe-f37",
+          "sourceImage": "BIN0004.gif",
+          "sourceRow": 11,
+          "verifiedAt": "2026-09-07",
+          "upstreamIndices": [
+            9,
+            10,
+            11
+          ],
+          "sourceBox": {
+            "x": 62.3,
+            "y": 23.6,
+            "width": 24.400000000000006,
+            "height": 66.4
+          },
+          "targetBox": {
+            "x": 70,
+            "y": 14,
+            "width": 22,
+            "height": 76
+          },
+          "transform": {
+            "sx": 0.9016393442622949,
+            "sy": 1.1445783132530118,
+            "tx": 13.827868852459034,
+            "ty": -13.012048192771083
+          },
+          "paths": [
+            "M76.221311475 18.807228916 L85.327868852 14 L88.483606557 17.090361446 L80.368852459 34.259036145",
+            "M80.008196721 33.457831325 L88.844262295 42.728915663 L92 52.686746988 L91.368852459 57.493975904 L88.483606557 60.927710843 L80.819672131 54.746987952",
+            "M70 15.373493976 L73.967213115 20.409638554 L73.516393443 90"
+          ],
+          "targetPathIndices": [
+            11,
+            12,
+            13
+          ]
+        }
+      ],
+      "authoredPathIndices": [
+        1,
+        2,
+        3
+      ],
+      "pathsSha256": "e54986c25fa5bd5b16d6a83ea68ca180d3c17042017a6d5fae8108a0d8dd3db8",
+      "sourceStrokeIndices": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "sourceVideoSha256": "b8518b0dcaf7e9eb20b6c27859823ea020080e4c7a50bbfa16870a9299695f1b",
+      "sourceReference": {
+        "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+        "manifestRow": "1691",
+        "glyph": "鄕",
+        "videoFilename": "1691 시골 향.mp4"
+      },
+      "videoUrl": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1691.mp4",
+      "videoBytes": 730319,
+      "durationSeconds": 20.315,
+      "status": "source-reviewed-proposal",
+      "reviewedAt": "2026-09-09",
+      "sourceVerification": "vivasam-high-2022",
+      "sourceAuthority": "Korean textbook publisher supplementary stroke-order video; not a claim of Eomunhoe approval",
+      "geometryLicense": "Arphic Public License for borrowed geometry; preserve donor notices",
+      "coordinateSystem": {
+        "viewBox": "0 0 100 100",
+        "strokeWidth": 5,
+        "linecap": "round",
+        "linejoin": "round"
+      },
+      "strokeEndsSeconds": [
+        1.333,
+        4.333,
+        5.833,
+        6.5,
+        7.833,
+        9.083,
+        9.833,
+        10.667,
+        11.5,
+        13.833,
+        15.25,
+        17.75,
+        20.25
+      ],
+      "perStrokeReview": [
+        {
+          "index": 1,
+          "completedAtSeconds": 1.333,
+          "direction": "down-left-then-up-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "乡 첫 굽은 획. 아래 왼쪽으로 내린 다음 짧게 오른쪽 위로 접음."
+        },
+        {
+          "index": 2,
+          "completedAtSeconds": 4.333,
+          "direction": "down-left-then-up-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "乡 둘째 굽은 획. 진행 중 정지 구간을 pen lift로 세지 않음."
+        },
+        {
+          "index": 3,
+          "completedAtSeconds": 5.833,
+          "direction": "down-left",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "source-guided-authored",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "乡 긴 삐침. 둘째 굽은 획 아래에서 왼쪽 아래로 내려감."
+        },
+        {
+          "index": 4,
+          "completedAtSeconds": 6.5,
+          "direction": "down-left",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "白 머리 짧은 삐침. 흰 부품을 良으로 대체하지 않음."
+        },
+        {
+          "index": 5,
+          "completedAtSeconds": 7.833,
+          "direction": "down",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "白 왼쪽 세로획."
+        },
+        {
+          "index": 6,
+          "completedAtSeconds": 9.083,
+          "direction": "left-to-right-then-down",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "白 위 가로와 오른쪽 세로를 한 획으로 연결."
+        },
+        {
+          "index": 7,
+          "completedAtSeconds": 9.833,
+          "direction": "left-to-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "白 안쪽 가로획."
+        },
+        {
+          "index": 8,
+          "completedAtSeconds": 10.667,
+          "direction": "left-to-right",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "白 아래 가로획. 아래 匕와 분리."
+        },
+        {
+          "index": 9,
+          "completedAtSeconds": 11.5,
+          "direction": "down-left",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "匕 짧은 삐침: 오른쪽 위에서 왼쪽 아래로. 10획보다 먼저."
+        },
+        {
+          "index": 10,
+          "completedAtSeconds": 13.833,
+          "direction": "down-then-right-then-up",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "匕 세로굽은갈고리. 약 12.5초 정지는 같은 획 내부이며 한 획으로 유지."
+        },
+        {
+          "index": 11,
+          "completedAtSeconds": 15.25,
+          "direction": "left-to-right-then-down-left",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "오른쪽 邑 위 가로에서 접어 왼쪽 아래로. 그 다음 굽은 획과 pen lift로 분리."
+        },
+        {
+          "index": 12,
+          "completedAtSeconds": 17.75,
+          "direction": "down-right-then-down-left-then-up-left",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "오른쪽 邑 불룩한 곡선과 마지막 안쪽 갈고리. 11획 끝에서 시작한 별도 획."
+        },
+        {
+          "index": 13,
+          "completedAtSeconds": 20.25,
+          "direction": "down",
+          "penBoundary": "one SVG path per observed source stroke",
+          "origin": "approved-donor-affine",
+          "checks": {
+            "sequence": true,
+            "direction": true,
+            "penLift": true,
+            "form": true,
+            "joins": true
+          },
+          "note": "오른쪽 邑 마지막 긴 세로획. 11·12획을 그린 다음 위에서 아래로."
+        }
+      ],
+      "notes": [
+        "Source uses 鄕 = 乡3 + 白5 + 匕2 + right邑3 (13), not 鄉 or simplified 乡 alone.",
+        "Target-corpus exact geometry was absent in the checked Ko/Ja/MM data and standard filenames of KanjiVG/animCJK trees.",
+        "Paths 1–3 are source-guided authored centerlines. 白 / 匕 / right邑 reuse approved final paths from 白 / 化 / 都 with recorded affine transforms.",
+        "都 approved path10 maps to upstream path9 because the donor has an earlier inserted corrected stroke; final donor indices and upstream indices remain distinct.",
+        "The pause during source stroke10 is not a pen lift. Right邑 stroke11 and12 remain separate SVG paths.",
+        "Whole video reviewed at 2fps; key frames at 12fps and all13 cumulative source/draft states compared. Geometry preserves stroke topology, not a pixel-exact brush outline."
+      ]
+    }
+  ]
+}
