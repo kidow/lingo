@@ -30,17 +30,39 @@
  * **판정하지 않는다.** 겹치는지는 그림을 그려봐야 알고, 그건 twins와 눈이 한다.
  * 여기서는 어디를 피해야 하는지만 보여 준다.
  */
+import { spawnSync } from 'node:child_process'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { Concept } from '../lib/types.ts'
 
+/**
+ * **지금 다른 세션이 만지는 파일인지 함께 본다.**
+ *
+ * 소품에 임자가 있으면 «그럼 그 개념 쪽을 고치자»로 가기 쉬운데, 그 파일이
+ * 아직 커밋되지 않은 수정을 품고 있으면 남의 작업을 덮는다. 2026-09-09에 닮은
+ * 그림 여섯을 그렇게 고쳤다가 임자 세션의 프롬프트를 잃었다
+ * (docs/concurrent-sessions.md). `pnpm dup`과 같은 표시를 쓴다.
+ */
+const dirty = new Set(
+  spawnSync('git', ['diff', '--name-only', 'HEAD', '--', 'content'], { encoding: 'utf8' })
+    .stdout?.split('\n')
+    .filter(Boolean)
+    .map((path) => path.replace('content/', '').replace('.json', '')) ?? [],
+)
+
+const fileOf = new Map<string, string>()
 const concepts: Concept[] = readdirSync('content')
   .filter((f) => f.endsWith('.json'))
   .sort()
   .flatMap((f) => {
     const parsed = JSON.parse(readFileSync(join('content', f), 'utf8'))
-    return (parsed.concepts as Concept[] | undefined) ?? []
+    const list = (parsed.concepts as Concept[] | undefined) ?? []
+    for (const c of list) fileOf.set(c.slug, f.replace('.json', ''))
+    return list
   })
+
+/** 그 개념이 든 파일이 지금 만져지고 있으면 표시를 붙인다 */
+const busy = (slug: string) => (dirty.has(fileOf.get(slug) ?? '') ? ' ⟨손대는 중⟩' : '')
 
 /** 프롬프트를 낱말로 끊는다. 소품이 아닌 것은 여기서 떨어진다 */
 const STOP = new Set(
@@ -153,8 +175,10 @@ for (const q of queries) {
   }
 
   console.log(`\n${q}  ${line(Math.max(2, 40 - q.length))}`)
-  for (const r of named) console.log(`  개념   ${r.slug}(${r.meaning})  ${clip(r.prompt, 68)}`)
-  for (const r of drawn.slice(0, 5)) console.log(`  그림   ${r.slug}(${r.meaning})  ${clip(r.prompt, 68)}`)
+  for (const r of named)
+    console.log(`  개념   ${r.slug}(${r.meaning})${busy(r.slug)}  ${clip(r.prompt, 68)}`)
+  for (const r of drawn.slice(0, 5))
+    console.log(`  그림   ${r.slug}(${r.meaning})${busy(r.slug)}  ${clip(r.prompt, 68)}`)
   if (drawn.length > 5) console.log(`         … 그림에 나온 것 ${drawn.length}개 중 다섯만 찍었습니다`)
 }
 
