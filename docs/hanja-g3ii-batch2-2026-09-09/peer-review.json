@@ -1,0 +1,114 @@
+{
+  "reviewedAt": "2026-09-09",
+  "method": "Independent second inspection of exact publisher source samples and final width-5 geometry; not examination-body certification.",
+  "groups": [
+    {
+      "reviewer": "stroke_generation_evidence_deep",
+      "glyphs": [
+        "欄",
+        "浪",
+        "廊",
+        "郞",
+        "梁",
+        "突",
+        "凍",
+        "絡"
+      ],
+      "strokes": 96,
+      "outcome": "approved after 廊 and 絡 separation corrections",
+      "continuousInkChecks": [
+        "廊9",
+        "突9",
+        "絡4-6",
+        "浪9",
+        "凍2"
+      ],
+      "finalPins": {
+        "廊": "7e8acc7b39f19692886730aa2b11cdad2259fc6c53d449666256b6ccb0232874",
+        "絡": "07a6fa1b2aeaef5667b90a3c9004f50d7193ffa8e9860248619775aaa4361386"
+      }
+    },
+    {
+      "reviewer": "public_korean_stroke_sources",
+      "glyphs": [
+        "菊",
+        "菌",
+        "及",
+        "鬼",
+        "琴",
+        "騎"
+      ],
+      "strokes": 68,
+      "outcome": "approved after 騎 stroke10 head separation correction",
+      "continuousInkChecks": [
+        "及2-3"
+      ],
+      "finalPins": {
+        "騎": "f59c88b9a833924bd94bc71948a0ac9fd0c659480519a8e0a5e3ac90214745fc"
+      },
+      "separationCheck": {
+        "glyph": "騎",
+        "strokes": [
+          6,
+          10
+        ],
+        "minimumCenterlineDistance": 6.1061,
+        "playerStrokeWidth": 5,
+        "minimumVisibleGap": 1.1061
+      }
+    },
+    {
+      "reviewer": "hanja_component_geometry",
+      "glyphs": [
+        "糖",
+        "唐",
+        "桃",
+        "途"
+      ],
+      "strokes": 47,
+      "outcome": "approved without further change",
+      "continuousInkChecks": [
+        "途9-10"
+      ],
+      "observations": [
+        "糖 central stroke contacts the lower 口 roof, 唐 leaves a white gap",
+        "桃 dots and diagonal follow source order",
+        "途 source9 is split at the observed independent restart"
+      ]
+    },
+    {
+      "reviewer": "root",
+      "glyphs": [
+        "祈",
+        "畿",
+        "茶"
+      ],
+      "strokes": 34,
+      "outcome": "approved without further change",
+      "evidence": "peer-root.json"
+    }
+  ],
+  "corrections": [
+    {
+      "glyph": "廊",
+      "stroke": 8,
+      "change": "Head x 37.2 to 39.2; keep source gap from 广 side"
+    },
+    {
+      "glyph": "絡",
+      "stroke": 6,
+      "change": "Head to [32,65.7]; separate right dot from central vertical"
+    },
+    {
+      "glyph": "絡",
+      "stroke": 10,
+      "change": "Head to [43.2,68.2]; separate lower 口 from diagonal end"
+    },
+    {
+      "glyph": "騎",
+      "stroke": 10,
+      "change": "Head y 58.1 to 59.3; separate dot from 馬 body"
+    }
+  ],
+  "remainingFindings": 0
+}

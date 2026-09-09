@@ -1,0 +1,89 @@
+{
+  "verifiedAt": "2026-09-09",
+  "checks": {
+    "proposalReproduction": {
+      "characters": 50,
+      "paths": 658,
+      "corrections": 48,
+      "passed": true
+    },
+    "publisherBuildCheck": {
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "emittedCharacters": 638,
+      "publishedBundleMatches": true
+    },
+    "hanjaTests": {
+      "command": "node --test \"lib/hanja*.test.ts\"",
+      "exitCode": 0,
+      "passed": 134,
+      "failed": 0
+    },
+    "typecheck": {
+      "command": "pnpm run typecheck",
+      "exitCode": 0
+    },
+    "productionBuild": {
+      "command": "pnpm run build",
+      "exitCode": 0
+    },
+    "diffCheck": {
+      "command": "git diff --check",
+      "exitCode": 0
+    },
+    "peerRecordPins": {
+      "characters": 28,
+      "paths": 381,
+      "errors": []
+    }
+  },
+  "preservation": {
+    "errors": [],
+    "preserved": [
+      {
+        "file": "scripts/hanja-stroke-textbook-review.json",
+        "removed": 50,
+        "previousDataSha256": "099328b9f9abc5dee07b0782fa349492befbed0fe3412f91201cb9df370f5144",
+        "matches": true
+      },
+      {
+        "file": "scripts/hanja-stroke-textbook-corrections.json",
+        "removed": 48,
+        "previousDataSha256": "eba1af90a9f29941624ac761c9bf1bc7e911bf361eb815dd140fde61f6e1fa61",
+        "matches": true
+      },
+      {
+        "file": "public/hanja-strokes/textbook-reviewed.json",
+        "removed": 50,
+        "previousDataSha256": "deaffd892a0ceec2b5eb4607c11f7843db556c176eaca5d9d724803f9ab5f0d4",
+        "matches": true
+      }
+    ],
+    "existingCharactersChecked": 588,
+    "frozenBatch2FilesChecked": 23,
+    "runtime": 1141,
+    "total": 5978,
+    "remaining": 4837,
+    "publisher": 638,
+    "official": 503,
+    "grade3II": {
+      "applied": 151,
+      "total": 500
+    },
+    "added": 50,
+    "newPaths": 658,
+    "publishedBundleSha256": "d677f57190cbc98108e65a947993385590715eb5ea363ae4185e5ab91fe68e48"
+  },
+  "priorWorkingTreeFileHashes": {
+    "scripts/hanja-stroke-textbook-review.json": "54e4fa134e4af54d4ac208534d2a7e1e732c3b31e4843d58469d30a21d513035",
+    "scripts/hanja-stroke-textbook-corrections.json": "cf2a37fe35b9d4b80a0c9c1051ce716dd640588f09a27a66ea3af016aa60fb05",
+    "public/hanja-strokes/textbook-reviewed.json": "29b66aeab6843fc88cf82b775d2afa62afb737770ded0a50b619adbe70ceac94"
+  },
+  "priorWorkingTreeCanonicalHashes": {
+    "scripts/hanja-stroke-textbook-review.json": "099328b9f9abc5dee07b0782fa349492befbed0fe3412f91201cb9df370f5144",
+    "scripts/hanja-stroke-textbook-corrections.json": "eba1af90a9f29941624ac761c9bf1bc7e911bf361eb815dd140fde61f6e1fa61",
+    "public/hanja-strokes/textbook-reviewed.json": "deaffd892a0ceec2b5eb4607c11f7843db556c176eaca5d9d724803f9ab5f0d4"
+  },
+  "concurrency": "Only hanja review registries, the publisher bundle, and this batch folder were edited. Prior batch2 documents and all prior registry data were preserved; other-session changes were not staged or committed."
+}
+

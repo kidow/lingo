@@ -1,0 +1,74 @@
+{
+  "verifiedAt": "2026-09-09",
+  "baselineCommit": "e7c84fd7ee335c1fab33fb63dbb8da9037c73668",
+  "bundleSha256": "29b66aeab6843fc88cf82b775d2afa62afb737770ded0a50b619adbe70ceac94",
+  "checks": [
+    {
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "status": "passed",
+      "matched": 588,
+      "conflict": 2,
+      "publishedBundleMatches": true
+    },
+    {
+      "command": "node --test 'lib/hanja*.test.ts'",
+      "status": "passed",
+      "tests": 134,
+      "passed": 134,
+      "failed": 0
+    },
+    {
+      "command": "pnpm run typecheck",
+      "status": "passed"
+    },
+    {
+      "command": "pnpm run build",
+      "status": "passed",
+      "framework": "Next.js 16.3.3",
+      "staticRoutes": 6
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed"
+    },
+    {
+      "command": "Read-only proposal validation using textbookGeometry and textbookCorrectionSha256",
+      "status": "passed",
+      "characters": 50,
+      "paths": 513,
+      "recipeCorrections": 42,
+      "missingSelected": 0
+    }
+  ],
+  "preservation": {
+    "existingTextbookCharacters": 538,
+    "changedExistingTextbookCharacters": 0,
+    "addedCharacters": 50,
+    "selectionMatches": true,
+    "runtimeCharacters": 1091,
+    "officialEomunhoeCharacters": 503,
+    "reviewedTextbookCharacters": 588,
+    "grade": "3급II",
+    "gradeApplied": 101,
+    "gradeTotal": 500
+  },
+  "scope": {
+    "selectionChanged": false,
+    "newSourceFormExceptions": 0,
+    "uiCodeChanged": false,
+    "committedBeforeReview": "e7c84fd7ee335c1fab33fb63dbb8da9037c73668",
+    "newReviewChangesCommitted": false,
+    "pushed": false
+  },
+  "peerReview": {
+    "file": "peer-review.json",
+    "characters": 21,
+    "strokes": 245,
+    "remainingFindings": 0,
+    "correctedGlyphs": [
+      "廊",
+      "絡",
+      "騎"
+    ]
+  }
+}
