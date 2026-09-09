@@ -27,7 +27,7 @@
  * 리코더) 구조가 붙는 건 정상이라, 마지막 판단은 눈으로 한다. `--sheets`는 그
  * 눈품을 줄이려고 쌍을 한 장에 여섯씩 붙여 준다.
  */
-import { mkdirSync, readdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { basename, join } from 'node:path'
 import sharp from 'sharp'
 
@@ -40,7 +40,9 @@ const PER_SHEET = 6
 
 const args = process.argv.slice(2)
 const sheets = args.includes('--sheets')
-const numbers = args.filter((a) => !a.startsWith('--')).map(Number)
+const numbers = args
+  .filter((a, i) => !a.startsWith('--') && args[i - 1] !== '--file')
+  .map(Number)
 /**
  * 기본값은 실측으로 잡았다 (2026-09-09, 그림 6,700장).
  *
@@ -147,10 +149,30 @@ async function drawSheets(pairs: { a: string; b: string }[]): Promise<void> {
   }
 }
 
-const slugs = readdirSync(DIR)
+/**
+ * `--file <이름>`은 그 콘텐츠 파일의 개념만 본다.
+ *
+ * 전체를 훑으면 6,700장을 서로 대므로 한 회차에 몇 분 걸리고, 나오는 쌍도
+ * 남의 갈래가 섞인다. 한 파일 안에서만 보면 **오답이 실제로 붙는 자리**를 본다 —
+ * 오답 풀은 같은 주제 파일에서 먼저 뽑기 때문이다(lib/entries.ts의 `nearPool`).
+ */
+const fileArg = (() => {
+  const at = args.indexOf('--file')
+  return at >= 0 ? args[at + 1] : undefined
+})()
+
+let slugs = readdirSync(DIR)
   .filter((f) => f.endsWith('.webp'))
   .map((f) => basename(f, '.webp'))
   .sort()
+
+if (fileArg) {
+  const path = join('content', fileArg.endsWith('.json') ? fileArg : `${fileArg}.json`)
+  const json = JSON.parse(readFileSync(path, 'utf8')) as { concepts?: Array<{ slug: string }> }
+  const only = new Set((json.concepts ?? []).map((c) => c.slug))
+  slugs = slugs.filter((slug) => only.has(slug))
+  console.log(`\n${path} — 개념 ${only.size}개 중 그림 있는 ${slugs.length}장만 본다`)
+}
 
 const signatures = new Map<string, Signature>()
 for (const slug of slugs) signatures.set(slug, await signature(join(DIR, `${slug}.webp`)))
