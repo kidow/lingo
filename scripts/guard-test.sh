@@ -1,5 +1,5 @@
 #!/bin/zsh
-# 동시 세션 막이 셋이 실제로 도는지 확인한다. (docs/concurrent-sessions.md)
+# 동시 세션 막이가 실제로 도는지 확인한다. (docs/concurrent-sessions.md)
 #
 #   pnpm guards
 #
@@ -9,6 +9,9 @@
 #   pnpm dup     걸린 개념 줄에 ⟨손대는 중⟩을 붙인다
 #   pnpm props   임자 줄에 ⟨손대는 중⟩을 붙인다
 #   pnpm genimg  **이미 있는 그림**을 다시 그리려 하면 멈춘다
+#
+# `pnpm pending`도 여기서 한 번 부른다. 그건 막이가 아니라 넘김 목록이지만
+# 같은 `dirtyFiles`를 쓰고 배선이 끊기면 조용히 «0»이 되므로 함께 본다.
 #
 # 확인하려면 콘텐츠 파일이 더러워야 한다. 남의 파일을 건드릴 수는 없으므로
 # **`content/scene.json`의 개념 하나에 공백 한 칸을 붙였다 뗀다.**
@@ -77,6 +80,11 @@ out=$(pnpm genimg no-such-slug-for-guard-test 2>&1)
 if print -r -- "$out" | grep -q "멈춤 —"; then no "genimg이 채우기까지 막았다"
 else ok "genimg이 채우기는 지나간다"; fi
 
+# 5. pending — 넘김 문서를 읽어 목록을 낸다. 판단은 단위 시험이 지키므로
+#    여기서는 **도는지**만 본다 (lib/pending.test.ts)
+if pnpm pending 2>&1 | grep -q "넘긴 개념"; then ok "pending이 목록을 낸다"
+else no "pending이 목록을 못 냈다"; fi
+
 restore
 if [ -n "$(git diff --name-only HEAD -- content/scene.json)" ]; then
   print -r -- "  실패 원복이 안 됐습니다 — git checkout content/scene.json 을 하세요"
@@ -86,5 +94,5 @@ else
 fi
 
 print -r -- ""
-[ $fail -eq 0 ] && print -r -- "막이 셋 다 돕니다" || print -r -- "막이가 새고 있습니다"
+[ $fail -eq 0 ] && print -r -- "막이가 다 돕니다" || print -r -- "막이가 새고 있습니다"
 exit $fail

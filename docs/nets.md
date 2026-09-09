@@ -146,8 +146,12 @@ md5도 twins도 못 본다(바이트도 구조도 다르다). 낱말이 다른 �
 
 | 무엇 | 어디서 | 무엇을 본다 |
 | --- | --- | --- |
-| 판단 자체 | `lib/busy.ts` + `pnpm test` | git 출력 파싱과 표시 규칙. git을 부르지 않으므로 워크트리 상태에 안 기댄다 |
-| 배선 | `pnpm guards` | `dup`·`props`가 실제로 표시를 붙이는지, `genimg`이 **다시 그리기만** 막는지 |
+| 판단 자체 | `lib/busy.ts` · `lib/pending.ts` + `pnpm test` | git 출력 파싱과 표시 규칙, 넘김 문서에서 남은 일감을 고르는 규칙. 파일도 git도 부르지 않으므로 워크트리 상태에 안 기댄다 |
+| 배선 | `pnpm guards` | `dup`·`props`가 실제로 표시를 붙이는지, `genimg`이 **다시 그리기만** 막는지, `pending`이 목록을 내는지 |
+
+`pending`의 규칙은 사흘에 걸쳐 세 번 고쳤다 — 줄 번호를 붙이고, 끝난 절을
+빼고, 표와 목록 줄만 보게 했다. 그때마다 눈으로 확인했는데 이제 시험 열둘이
+지킨다(`lib/pending.test.ts`).
 
 레포에 CI 설정은 없다 — `pnpm check`는 Vercel 빌드가 부른다. 그래서 판단은
 단위 시험 여섯(`lib/busy.test.ts`)이 지키고, 배선은 사람이 `pnpm guards`로 확인한다.
