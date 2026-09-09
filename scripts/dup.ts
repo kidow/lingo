@@ -23,6 +23,7 @@
 import { spawnSync } from 'node:child_process'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { busyMark, busyNote, dirtyFiles } from '../lib/busy.ts'
 import type { Concept } from '../lib/types.ts'
 
 const CONTENT_DIR = 'content'
@@ -46,25 +47,11 @@ if (argv.length === 0) {
 
 const bySlug = new Map(rows.map((r) => [r.slug, r]))
 
-/**
- * **지금 다른 세션이 만지는 파일인지 함께 보여준다.**
- *
- * 후보가 걸렸을 때 «그럼 그 개념을 고치자»로 가기 쉬운데, 그 파일이 아직
- * 커밋되지 않은 수정을 품고 있으면 남의 작업을 덮게 된다. 2026-09-09에 닮은
- * 그림 여섯을 그렇게 고쳤다가 임자 세션의 프롬프트를 잃었다
- * (docs/concurrent-sessions.md).
- *
- * 워크트리가 하나라 `git diff`로 바로 보인다. 한 번만 묻고 캐시한다.
- */
-const dirty = new Set(
-  spawnSync('git', ['diff', '--name-only', 'HEAD', '--', CONTENT_DIR], { encoding: 'utf8' })
-    .stdout?.split('\n')
-    .filter(Boolean)
-    .map((path) => path.replace(`${CONTENT_DIR}/`, '').replace('.json', '')) ?? [],
+const dirty = dirtyFiles(
+  spawnSync('git', ['diff', '--name-only', 'HEAD', '--', CONTENT_DIR], { encoding: 'utf8' }).stdout ?? '',
 )
 
-const show = (r: Row) =>
-  `${r.slug}(${r.meaning})@${r.file}${dirty.has(r.file) ? ' ⟨손대는 중⟩' : ''}`
+const show = (r: Row) => `${r.slug}(${r.meaning})@${r.file}${busyMark(r.file, dirty)}`
 
 const taken: string[] = []
 const near: string[] = []
@@ -98,9 +85,5 @@ if (near.length) {
   for (const line of near) console.log(`  ${line}`)
 }
 if (free.length) console.log(`\n빈자리\n  ${free.join(' ')}`)
-if (dirty.size > 0)
-  console.log(
-    `\n⟨손대는 중⟩ = 아직 커밋되지 않은 수정이 있는 파일입니다 (${[...dirty].sort().join(' ')})` +
-      '\n  그 개념을 고치면 다른 세션의 작업을 덮습니다',
-  )
+if (dirty.size > 0) console.log(busyNote(dirty))
 console.log('')

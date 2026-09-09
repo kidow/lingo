@@ -33,21 +33,11 @@
 import { spawnSync } from 'node:child_process'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { busyMark, dirtyFiles } from '../lib/busy.ts'
 import type { Concept } from '../lib/types.ts'
 
-/**
- * **지금 다른 세션이 만지는 파일인지 함께 본다.**
- *
- * 소품에 임자가 있으면 «그럼 그 개념 쪽을 고치자»로 가기 쉬운데, 그 파일이
- * 아직 커밋되지 않은 수정을 품고 있으면 남의 작업을 덮는다. 2026-09-09에 닮은
- * 그림 여섯을 그렇게 고쳤다가 임자 세션의 프롬프트를 잃었다
- * (docs/concurrent-sessions.md). `pnpm dup`과 같은 표시를 쓴다.
- */
-const dirty = new Set(
-  spawnSync('git', ['diff', '--name-only', 'HEAD', '--', 'content'], { encoding: 'utf8' })
-    .stdout?.split('\n')
-    .filter(Boolean)
-    .map((path) => path.replace('content/', '').replace('.json', '')) ?? [],
+const dirty = dirtyFiles(
+  spawnSync('git', ['diff', '--name-only', 'HEAD', '--', 'content'], { encoding: 'utf8' }).stdout ?? '',
 )
 
 const fileOf = new Map<string, string>()
@@ -62,7 +52,7 @@ const concepts: Concept[] = readdirSync('content')
   })
 
 /** 그 개념이 든 파일이 지금 만져지고 있으면 표시를 붙인다 */
-const busy = (slug: string) => (dirty.has(fileOf.get(slug) ?? '') ? ' ⟨손대는 중⟩' : '')
+const busy = (slug: string) => busyMark(fileOf.get(slug), dirty)
 
 /** 프롬프트를 낱말로 끊는다. 소품이 아닌 것은 여기서 떨어진다 */
 const STOP = new Set(
