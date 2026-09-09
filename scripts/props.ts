@@ -150,6 +150,24 @@ const clip = (s: string, n: number) => (s.length > n ? s.slice(0, n - 1) + '…'
 
 let free = 0
 const skipped: string[] = []
+/**
+ * **다른 개념이 제 몸통으로 쓰는 낱말**만 따로 모은다.
+ *
+ * 목록에는 이미 `개념`과 `그림` 두 줄이 갈려 있는데, 소품을 열댓 개씩 물으면
+ * 화면이 길어져 그 구별이 묻힌다. 29회차에서 `form`(서식)·`cape`(망토)·
+ * `traffic cone`(라바콘)을 세 번 되짚었다 — 셋 다 목록에 `개념`으로 찍혀
+ * 있었는데 요약이 `임자 있음 22`라고만 해서 어느 스물둘인지 다시 봐야 했다.
+ *
+ * 둘은 무게가 다르다. **그림에 나온 것은 겹쳐도 될 때가 있지만**(벽·쟁반은
+ * 여러 장면을 받친다) **다른 개념의 몸통은 비켜야 한다** — 그 개념의 카드와
+ * 내 카드가 같은 그림이 된다.
+ *
+ * **몸통일 때만 그렇다.** 29회차의 `gym-towel`(수건 주나요?)은 `towel`(수건)과
+ * `basket`(바구니)을 둘 다 쓰는데, 선반과 바구니는 배경이라 그림이 멀리 떨어져
+ * 있다(`twins --pair towel gym-towel` → 구조 108 · 색 1.02). 그래서 이 줄은
+ * 막지 않고 **어디를 다시 볼지만** 알려 준다.
+ */
+const bodies: string[] = []
 for (const q of queries) {
   const named = rows.filter((r) => !mine.has(r.slug) && r.terms.has(q))
   const drawn = rows.filter((r) => !mine.has(r.slug) && !r.terms.has(q) && r.drawn.has(q))
@@ -164,6 +182,7 @@ for (const q of queries) {
     continue
   }
 
+  if (named.length > 0) bodies.push(q)
   console.log(`\n${q}  ${line(Math.max(2, 40 - q.length))}`)
   for (const r of named)
     console.log(`  개념   ${r.slug}(${r.meaning})${busy(r.slug)}  ${clip(r.prompt, 68)}`)
@@ -179,6 +198,11 @@ console.log(
   `\n소품 ${queries.length}개 — 임자 있음 ${queries.length - free - skipped.length}` +
     (clean.length > 0 ? ` · 빈자리 ${clean.length}\n  ${clean.join(' ')}` : ''),
 )
+if (bodies.length > 0)
+  console.log(
+    `\n다른 개념이 제 몸통으로 쓰는 낱말 ${bodies.length}개 — ${bodies.join(' · ')}` +
+      '\n  내 그림의 몸통이 이 중 하나면 비킵니다 — 배경으로만 쓰는 것은 괜찮습니다',
+  )
 if (skipped.length > 0)
   console.log(`\n흔한 낱말이라 건너뛴 것 ${skipped.length}개 — ${skipped.join(' ')}`)
 
