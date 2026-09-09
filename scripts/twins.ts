@@ -41,7 +41,13 @@ const PER_SHEET = 6
 const args = process.argv.slice(2)
 const sheets = args.includes('--sheets')
 const numbers = args
-  .filter((a, i) => !a.startsWith('--') && args[i - 1] !== '--file')
+  .filter(
+    (a, i) =>
+      !a.startsWith('--') &&
+      args[i - 1] !== '--file' &&
+      args[i - 1] !== '--pair' &&
+      args[i - 2] !== '--pair',
+  )
   .map(Number)
 /**
  * 기본값은 실측으로 잡았다 (2026-09-09, 그림 6,700장).
@@ -175,6 +181,44 @@ if (fileArg) {
   const only = new Set((json.concepts ?? []).map((c) => c.slug))
   slugs = slugs.filter((slug) => only.has(slug))
   console.log(`\n${path} — 개념 ${only.size}개 중 그림 있는 ${slugs.length}장만 본다`)
+}
+
+/**
+ * `--pair <a> <b>`는 **두 장의 거리만 잰다.**
+ *
+ * 문턱을 손볼 때 «이 쌍이 지금 얼마인가»를 알아야 하는데, 그때마다 임시
+ * 스크립트를 써 왔다. 2026-09-09에 네 번 썼고 그중 한 번은 `subject()`의
+ * `trim`을 빼먹어 눈금이 어긋난 값을 문서에 적었다 — 같은 쌍이 63과 35로
+ * 갈렸다. 도구 안에서 재면 그 실수가 안 난다.
+ */
+const pairArg = (() => {
+  const at = args.indexOf('--pair')
+  if (at < 0) return undefined
+  const a = args[at + 1]
+  const b = args[at + 2]
+  if (!a || !b) {
+    console.log('두 slug를 주세요 — pnpm twins --pair empty transparent')
+    process.exit(1)
+  }
+  return [a, b] as const
+})()
+
+if (pairArg) {
+  const [a, b] = pairArg
+  for (const slug of pairArg)
+    if (!slugs.includes(slug)) {
+      console.log(`그림이 없습니다: ${slug} (public/concepts/${slug}.webp)`)
+      process.exit(1)
+    }
+  const first = await signature(join(DIR, `${a}.webp`))
+  const second = await signature(join(DIR, `${b}.webp`))
+  const bits = apart(first.bits, second.bits)
+  const colour = colourGap(first.colour, second.colour)
+  const verdict =
+    bits <= hashLimit && colour <= colourLimit ? '문턱 안 — 닮았다' : '문턱 밖'
+  console.log(`\n  구조 ${bits}  색 ${colour.toFixed(3)}   ${a} ↔ ${b}`)
+  console.log(`  문턱 ${hashLimit} · ${colourLimit} → ${verdict}\n`)
+  process.exit(0)
 }
 
 const signatures = new Map<string, Signature>()
