@@ -95,6 +95,7 @@ md5도 twins도 못 본다(바이트도 구조도 다르다). 낱말이 다른 �
 내가 만들지 않은 개념에서 문제를 찾으면 **고치지 말고 적는다.**
 
 - 그림이 닮은 자리 → [twins-pending.md](twins-pending.md)
+- 예문이 낱말을 못 받치는 자리 → [examples-pending.md](examples-pending.md)
 - 중국어 곁말 → `pnpm also-audit --list <파일>`을 그 세션이 돌린다
 
 **«그림만 더하는 일»과 «그림을 바꾸는 일»은 다르다.**
