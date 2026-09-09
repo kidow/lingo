@@ -68,7 +68,8 @@ const numbers = args
  * 길쭉한 물건끼리라 값이 없다.
  *
  * **여전히 못 잡는 것이 있다.** 같은 물건을 다른 구도로 그린 자리는 구조가
- * 벌어진다 — 석고 모형을 스탠드에 세운 것과 접시에 놓은 것이 75다. 그건
+ * 벌어진다 — `database`와 `server`가 둘 다 서버 랙인데 59이고,
+ * `chip`과 `semiconductor`는 프롬프트가 거의 같은 문장인데 62다. 그건
  * `pnpm props`가 프롬프트로 잡는다.
  */
 const hashLimit = Number.isFinite(numbers[0]) ? numbers[0]! : 50
