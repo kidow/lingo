@@ -247,6 +247,59 @@ for (const { dist, gap, a, b } of found)
 if (found.length === 0) console.log('  닮은 쌍이 없습니다.')
 
 /**
+ * **한쪽이 다른 쪽의 몸통을 빌린 쌍**을 짚는다.
+ *
+ * `idea/conviction-belief`(신념)의 프롬프트가 `one compass with its needle …`
+ * 였다. `travel/compass`(나침반)가 제 몸통으로 쓰는 물건을 통째로 빌린 자리라
+ * 그림이 54·0.23으로 붙었다. 2026-09-09에 그걸 손으로 찾았다.
+ *
+ * **낱말만 보고는 못 잡는다.** 프롬프트의 몸통이 다른 개념의 영어 표기와 똑같은
+ * 자리가 754장인데 거의 다 정당하다 — `fly`(날다)는 `bird`를 그려야 하고
+ * `boil`(끓이다)은 `pot`을 그려야 한다. 그래서 `check`에 넣지 않았다.
+ *
+ * **닮음과 겹쳐야 좁아진다.** 그 754와 늦춘 문턱의 여든 쌍을 맞대니 **둘**만
+ * 남았다 — `conviction-belief`↔`compass`와 `cracked`(금 간)↔`plate`(접시)다.
+ * 손으로 찾은 것을 도구가 다시 찾았고, 하나를 더 찾았다.
+ *
+ * 몸통은 맨 앞 수량사 뒤부터 전치사·쉼표 앞까지로 본다. 뒤에 곧바로 다른 명사가
+ * 붙으면(`folded towel`) 표기와 안 맞아 빠지는데, 그 자리는 대개 배경이라 맞는
+ * 결과다.
+ */
+const HEAD_RE =
+  /^\s*(?:one|two|three|four|a|an|the)\s+([a-z ]+?)(?=\s+(?:with|on|in|at|beside|near|behind|from|to|under|over|by|against|seen|and|for|of|standing|lying|hanging|resting|held|set|pinned|open|closed)\b|,|\.|$)/i
+const concepts = new Map<string, { term: string; prompt: string }>()
+const byTerm = new Map<string, string>()
+for (const file of readdirSync('content').filter((f) => f.endsWith('.json'))) {
+  const parsed = JSON.parse(readFileSync(join('content', file), 'utf8')) as {
+    concepts?: { slug: string; image_prompt?: string; words?: { en?: { term?: string } } }[]
+  }
+  if (!Array.isArray(parsed.concepts)) continue
+  for (const c of parsed.concepts) {
+    const term = c.words?.en?.term?.toLowerCase() ?? ''
+    concepts.set(c.slug, { term, prompt: c.image_prompt ?? '' })
+    if (/^[a-z][a-z ]*$/.test(term)) byTerm.set(term, c.slug)
+  }
+}
+/** a의 프롬프트 몸통이 b의 표기이면 그 낱말. 아니면 빈 문자열 */
+function borrowed(a: string, b: string): string {
+  const head = HEAD_RE.exec(concepts.get(a)?.prompt ?? '')?.[1]?.trim().toLowerCase()
+  return head && byTerm.get(head) === b ? head : ''
+}
+const borrows = found
+  .map(({ a, b, dist, gap }) => {
+    const word = borrowed(a, b) || borrowed(b, a)
+    return word ? { a, b, dist, gap, word, taker: borrowed(a, b) ? a : b } : undefined
+  })
+  .filter((x) => x !== undefined)
+if (borrows.length > 0) {
+  console.log(`\n남의 몸통을 빌린 쌍 ${borrows.length}개 — 빌린 쪽이 다른 물건으로 갑니다`)
+  for (const { dist, gap, word, taker, a, b } of borrows)
+    console.log(
+      `  구조${String(dist).padStart(3)} 색${gap.toFixed(2)}  ${taker}가 «${word}»를 그립니다 — 임자 ${taker === a ? b : a}`,
+    )
+}
+
+/**
  * **여러 쌍에 거듭 나오는 그림**을 따로 낸다.
  *
  * 문턱을 늦추면 걸리는 것이 닮은 쌍이라기보다 **바탕에 가까운 그림**이다.
