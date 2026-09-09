@@ -78,6 +78,16 @@ for (const doc of docs) {
   if (line.startsWith('#')) done = DONE_RE.test(line)
   // 표 한 줄만 끝난 자리도 있다 — 취소선을 긋고 «끝냈다»를 적어 둔다
   if (done || line.includes('~~') || DONE_RE.test(line)) continue
+  /*
+   * **할 일은 표나 목록에 있다.** 산문에 나오는 이름은 대개 설명이다 —
+   * 「`hour`는 어제 뺐다」처럼 끝난 일을 적거나, 거리를 나열하거나, 예를 든다.
+   * 2026-09-10에 «지금 손댈 수 있는 것» 여덟이 전부 그런 자리였다.
+   *
+   * 그래서 `|`로 시작하는 표 줄과 `-`·`*`로 시작하는 목록 줄만 본다. 세 문서의
+   * 실제 일감은 지금까지 모두 표 아니면 목록에 있었다.
+   */
+  // 목록은 «- »·«* »처럼 빈칸이 따라온다. 그러지 않으면 **굵게**의 별표가 걸린다
+  if (!/^\s*(?:\||[-*] )/.test(line)) continue
   for (const [, token] of line.matchAll(/`([a-z][a-z0-9-]*(?:\/[a-z0-9-]+)?)`/g)) {
     const slug = token.includes('/') ? token.slice(token.indexOf('/') + 1) : token
     if (!fileOf.has(slug)) continue
