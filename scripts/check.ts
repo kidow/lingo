@@ -135,8 +135,32 @@ const MIN_PER_CATEGORY = 4
  * 셋 다 프롬프트에 그 문구가 없었다. 그림을 눈으로 훑어 잡을 일이 아니라
  * **문구를 쓸 때 잡을 일**이라 여기서 경고한다. 손만 나오는 그림은 얼굴이
  * 없으므로 hand는 제외한다 — 그러면 대부분의 동작 카드가 헛경고를 낸다.
+ *
+ * **`baby`·`child`·`adult`는 머리낱말일 때만 센다.** 이 넷은 사람만큼이나
+ * 수식어로 쓰인다 — `baby bottle`(젖병) · `child safety seat`(카시트) ·
+ * `adult shoe`(어른 신발)에는 사람이 없다. 그대로 세면 2026-09-09에 걸린 여섯
+ * 중 셋이 헛경고였다(`nap-blanket`·`adult-entry`·`brushing-tips`).
+ *
+ * 머리낱말인지는 **뒤에 오는 것**으로 가른다. 사람이면 쉼표로 끊기거나
+ * 전치사·`and`·`-ing`가 따라온다(`baby on hands` · `child sitting among` ·
+ * `adult and one teacher`). 수식어면 곧바로 다른 명사가 온다(`child blanket`).
+ * `adult hand at`처럼 몸의 한 부분만 나오는 자리도 이 잣대로 빠지는데, 손에는
+ * 얼굴이 없으니 맞는 결과다.
+ *
+ * 쉰셋을 이 잣대로 갈라 보니 사람 39 · 수식 14였고, 수식으로 빠진 열넷은
+ * 전부 물건 프롬프트였다 — 놓친 사람이 없다.
+ *
+ * 나머지(`person`·`figure`·`worker`…)는 조건 없이 센다. 수식어로 쓰인 자리가
+ * 레포에 없다.
  */
-const PERSON_RE = /\b(figure|figures|person|people|baby|child|children|adult|man|woman|worker|passenger|customer)\b/i
+const PERSON_HEAD =
+  /(?=\s*[,.]|\s+(?:and\b|[a-z]+ing\b|(?:on|in|at|with|beside|near|behind|from|to|under|over|by|against)\b))/
+    .source
+const PERSON_RE = new RegExp(
+  '\\b(?:figure|figures|person|people|man|woman|worker|passenger|customer)\\b' +
+    `|\\b(?:baby|child|children|adult)\\b${PERSON_HEAD}`,
+  'i',
+)
 const NO_FACE_RE = /no facial features/i
 
 /**
