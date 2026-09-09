@@ -375,6 +375,7 @@ const MANUAL: Record<string, string> = {
   'job.json:lever': '槓桿',
   'number.json:ten-thousand': '一萬',
   'nature.json:wax-block': '蠟',
+  'school.json:cloning': '克隆',
   'job.json:vise': '檯鉗',
   'nature.json:cloud': '雲',
   'nature.json:hurricane': '颱風',
