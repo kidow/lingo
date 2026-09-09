@@ -345,10 +345,18 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 | `one oil can with a tag` | 주전자 | (다시) `one squat oil bottle` → 올리브유 → `one dipstick with a dark oil mark` |
 | `a globe mark printed in its corner` | 야자수와 표지판 | `one certificate sheet with a second sheet clipped behind it` |
 | `one booklet with rows of small stamps` | 우표 수집책 · 식물 도감 | `one sheet with three round ink stamps and a small syringe` |
+| `one paper strip of a heart trace` | 사랑 하트 리본 | `one strip of graph paper with a jagged line that flattens into a gap` |
 
 **흔한 물건 이름일수록 다른 뜻이 세다.** `lens`는 사진 렌즈, `oil`은 식용유,
-`globe`는 여행, `stamp`는 우표다. 안경알을 그리려면 `spectacle`이나 `eyeglass`를
-붙여야 하고, 엔진 오일은 `dipstick`처럼 **그 맥락에만 있는 물건**으로 바꿔야 한다.
+`globe`는 여행, `stamp`는 우표, `heart`는 사랑 하트다. 안경알을 그리려면
+`spectacle`이나 `eyeglass`를 붙여야 하고, 엔진 오일은 `dipstick`처럼 **그
+맥락에만 있는 물건**으로 바꿔야 한다.
+
+**검사로 막지 않는다.** 이 다섯 낱말이 프롬프트 78곳에 쓰이는데 거의 다
+정당하다 — `lens`는 렌즈 개념이 쓰고, `stamp`는 우표와 도장이 쓰고, `heart`는
+심장이 쓴다(2026-09-09 실측). 낱말만 보고 경고하면 헛경고가 일흔여덟이고 진짜는
+회차에 하나다. **시트를 여는 것이 여전히 그물이다** — 여기 적어 두는 것은
+프롬프트를 쓸 때 미리 피하라는 뜻이지, 기계가 잡아 준다는 뜻이 아니다.
 
 같은 실수를 두 번 했다 — 24회차의 `lens-scratched`와 27회차의 `dizzy-glasses`가
 똑같이 카메라 렌즈로 나왔다. **시트를 봐야 걸린다**(twins도 해시도 못 잡는다).
