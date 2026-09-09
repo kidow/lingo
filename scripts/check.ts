@@ -376,7 +376,26 @@ for (const file of files) {
          */
         if (typeof example.text === 'string' && typeof answer === 'string') {
           if (!example.text.includes(answer))
-            warn(`${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`)
+            /*
+             * **대소문자만 다른 자리를 갈라 말한다.**
+             *
+             * 2026-09-09에 이 경고 스물둘을 세어 보니 **열넷이 대문자 하나**
+             * 때문이었다 — `Housework fills her mornings.`처럼 낱말이 문장
+             * 첫머리에 서서 대문자가 됐다. 독일어에는 `zum Ausbaggern`처럼
+             * 명사로 굳으며 커진 자리도 있다.
+             *
+             * 못 뚫는 것은 맞다. `clozeAt`이 `indexOf`라 대소문자까지 같아야
+             * 자리를 찾는다(lib/quiz.ts). 그래서 경고 자체는 옳다.
+             *
+             * 다만 «예문이 그 단어를 보여주지 않습니다»는 **틀린 말**이다 —
+             * 보여주고 있다. 고칠 곳도 다르다. 낱말을 바꿀 일이 아니라
+             * **문장에서 그 낱말을 첫머리 밖으로 옮길** 일이다.
+             */
+            warn(
+              example.text.toLowerCase().includes(answer.toLowerCase())
+                ? `${where} — ${lang}.${at}이 "${answer}"를 대문자로 씁니다. 뚫을 자리는 대소문자까지 맞아야 합니다 — 낱말이 문장 첫머리에 오지 않게 고치세요`
+                : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`,
+            )
           else if (clozeAt(example.text, answer, lang as Language) >= 0) clozable.add(`${slug}|${lang}`)
           else stuck.set(`${slug}|${lang}`, `${where} — ${lang}의 예문에서 "${answer}"를 뚫을 자리가 없습니다`)
         }
