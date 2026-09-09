@@ -31,6 +31,7 @@
 | [brand-spec.md](brand-spec.md) | 색·형태·타이포·상태 |
 | [IMAGE_STYLE.md](IMAGE_STYLE.md) | 개념 이미지 생성 규칙 |
 | [AUDIO.md](AUDIO.md) | 발음 오디오 제작 규칙 |
+| [docs/nets.md](docs/nets.md) | 어느 검사가 무엇을 잡고 무엇을 놓치는지 |
 
 ## 실행
 
