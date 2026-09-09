@@ -106,21 +106,45 @@ mkdir -p "$REPO/.images"
 #
 # 그래서 **그림이 이미 있는 slug**만 본다. 그 개념이 든 파일이 아직 커밋되지
 # 않은 수정을 품고 있으면 여기서 멈춘다. 뜻이 있어 덮는 것이라면 FORCE=1을 준다.
+# **내가 방금 고친 것은 남의 작업이 아니다.** 다시 그리려면 프롬프트를 먼저
+# 고치게 되는데, 그러면 그 파일이 더러워져 막이가 자기 자신을 막는다. 그래서
+# **요청한 slug만 달라진 파일은 깨끗한 것으로 본다** — 그 파일에 다른 개념의
+# 수정도 함께 있으면 그때는 남의 작업이므로 막는다.
 blocked=$(REPO=$REPO node -e '
 const {execSync} = require("child_process")
 const fs = require("fs"), path = require("path")
 const repo = process.env.REPO
-const dirty = new Set(
-  execSync("git diff --name-only HEAD -- content", {cwd: repo}).toString()
-    .split("\n").filter(Boolean))
-if (dirty.size === 0) process.exit(0)
+const asked = new Set(process.argv.slice(1))
+const dirty = execSync("git diff --name-only HEAD -- content", {cwd: repo}).toString()
+  .split("\n").filter(Boolean)
+if (dirty.length === 0) process.exit(0)
+
+/** 그 파일에서 HEAD와 달라진 개념 slug */
+function changed(file) {
+  const now = JSON.parse(fs.readFileSync(path.join(repo, file), "utf8")).concepts ?? []
+  const head = JSON.parse(execSync(`git show HEAD:${file}`, {cwd: repo, maxBuffer: 1 << 28}).toString()).concepts ?? []
+  const before = new Map(head.map(c => [c.slug, JSON.stringify(c)]))
+  const out = new Set()
+  for (const c of now) if (before.get(c.slug) !== JSON.stringify(c)) out.add(c.slug)
+  for (const c of head) if (!now.some(x => x.slug === c.slug)) out.add(c.slug)
+  return out
+}
+
+const busy = new Set()
+for (const file of dirty) {
+  const slugs = changed(file)
+  // 요청한 것 말고도 달라진 개념이 있으면 남이 만지는 중이다
+  if ([...slugs].some(s => !asked.has(s))) busy.add(file)
+}
+if (busy.size === 0) process.exit(0)
+
 const fileOf = new Map()
 for (const f of fs.readdirSync(path.join(repo, "content")).filter(f => f.endsWith(".json"))) {
   const j = JSON.parse(fs.readFileSync(path.join(repo, "content", f), "utf8"))
   for (const c of j.concepts ?? []) fileOf.set(c.slug, "content/" + f)
 }
-const hit = process.argv.slice(1).filter(slug =>
-  fs.existsSync(path.join(repo, "public/concepts", slug + ".webp")) && dirty.has(fileOf.get(slug)))
+const hit = [...asked].filter(slug =>
+  fs.existsSync(path.join(repo, "public/concepts", slug + ".webp")) && busy.has(fileOf.get(slug)))
 if (hit.length) console.log(hit.join(" "))
 ' "$@")
 
