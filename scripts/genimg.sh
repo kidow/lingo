@@ -97,6 +97,40 @@ run_one() {
 
 mkdir -p "$REPO/.images"
 
+# **다시 그리는 자리인데 그 파일을 남이 만지고 있으면 멈춘다.**
+#
+# 없는 그림을 채우는 것은 겹치지 않는다 — 프롬프트가 이미 있어 `.webp`만 는다.
+# 그런데 **있는 그림을 바꾸려면 프롬프트를 고쳐야 하고**, 그건 남의 파일 한 줄을
+# 바꾸는 일이다. 2026-09-09에 그걸 «그림만 바꾸는 일»로 여겨 여섯을 고쳤다가
+# 임자 세션의 미커밋 프롬프트를 잃었다 (docs/concurrent-sessions.md).
+#
+# 그래서 **그림이 이미 있는 slug**만 본다. 그 개념이 든 파일이 아직 커밋되지
+# 않은 수정을 품고 있으면 여기서 멈춘다. 뜻이 있어 덮는 것이라면 FORCE=1을 준다.
+blocked=$(REPO=$REPO node -e '
+const {execSync} = require("child_process")
+const fs = require("fs"), path = require("path")
+const repo = process.env.REPO
+const dirty = new Set(
+  execSync("git diff --name-only HEAD -- content", {cwd: repo}).toString()
+    .split("\n").filter(Boolean))
+if (dirty.size === 0) process.exit(0)
+const fileOf = new Map()
+for (const f of fs.readdirSync(path.join(repo, "content")).filter(f => f.endsWith(".json"))) {
+  const j = JSON.parse(fs.readFileSync(path.join(repo, "content", f), "utf8"))
+  for (const c of j.concepts ?? []) fileOf.set(c.slug, "content/" + f)
+}
+const hit = process.argv.slice(1).filter(slug =>
+  fs.existsSync(path.join(repo, "public/concepts", slug + ".webp")) && dirty.has(fileOf.get(slug)))
+if (hit.length) console.log(hit.join(" "))
+' "$@")
+
+if [ -n "$blocked" ] && [ "${FORCE:-0}" != "1" ]; then
+  print -r -- "멈춤 — 다시 그리려는 개념의 파일을 지금 다른 세션이 만지고 있습니다: $blocked"
+  print -r -- "  그림을 바꾸려면 프롬프트를 고쳐야 하고, 그러면 남의 미커밋 작업을 덮습니다."
+  print -r -- "  그래도 덮을 이유가 있으면 FORCE=1 pnpm genimg … 로 다시 부르세요."
+  exit 1
+fi
+
 wanted=()
 for slug in "$@"; do
   mkdir -p "$TMP/$slug"

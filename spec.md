@@ -1399,7 +1399,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm check` | `content/*.json` 전체 검증. CI에서도 돈다 |
 | `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
-| `pnpm genimg <slug...>` | 개념 그림을 배치로 만들어 `.images/`에 둔다. 빠진 장·같은 장을 검사하고 걸리면 0이 아닌 값으로 끝난다 |
+| `pnpm genimg <slug...>` | 개념 그림을 배치로 만들어 `.images/`에 둔다. 빠진 장·같은 장을 검사하고 걸리면 0이 아닌 값으로 끝난다. 안 나온 장은 한 번 더 돌린다. **이미 있는 그림을 다시 그리는데 그 개념의 파일을 남이 만지고 있으면 멈춘다**(`FORCE=1`로 덮는다) |
 | `pnpm sheet <slug...>` | 그림 여러 장을 `.images/sheet.png` 한 장으로 붙인다. `--out <경로>`로 자리를 바꾼다. 변환 전이면 `.images/<slug>.png`를 그대로 쓰므로 `pnpm image` 앞에서도 돈다. `pnpm genimg`이 끝에 자동으로 부른다 |
 | `pnpm define <word>` | 사전에서 뜻을 찾는다. 생략하면 콘텐츠 전체의 `meaning_ko`를 대조한다 |
 | `pnpm audio` | 발음 현황. `list <lang>`으로 만들 것을, `place <lang> <slug> <파일>`로 받은 파일을 넣는다. 키가 있으면 `make <lang> <n>`이 API로 만든다 ([AUDIO.md](AUDIO.md)) |
