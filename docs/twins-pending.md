@@ -154,7 +154,7 @@
 
 | 쌍 | 거리 | 왜 겹치나 | 갈래 낼 방법 |
 | --- | ---: | --- | --- |
-| `travel/compass`(나침반)<br>`time/clock`(시계) | 59 · 0.19 | **초록 테 두른 둥근 판에 바늘.** 시계 얼굴 무리에 나침반이 끼어들었다. `compass`는 `quarter-to`(64)·`tide-clock`(51)·`conviction-belief`(54)·`steering-wheel`(45)에도 붙는다 | 나침반은 **바늘이 아니라 방위**로 — N·S·E·W 글자가 선 팔각 판, 또는 손바닥 위에 놓인 뚜껑 열린 놋쇠 나침반 |
+| 둥근 판 여섯 | 45~65 | 아래 「둥근 판 무리」에 따로 적었다 — 한 쌍이 아니라 **열 쌍으로 얽힌 무리**다 | |
 | `everyday/door`(문)<br>`quality/shabby`(허름한) | 63 · 0.19 | 같은 초록 문이고 한쪽만 페인트가 벗겨졌다 | `shabby`를 문 말고 다른 물건으로 — 올 풀린 소매나 주저앉은 안락의자 |
 | `office/outline`(윤곽)<br>`quality/approximate`(대략의) | 61 · 0.09 | 둘 다 **한 줄로 그린 손그림 윤곽선**이다. 화법이 같아 물건이 달라도(꽃병·원) 붙는다 | `approximate`는 선이 아니라 **어림**이 보여야 한다 — 눈금 사이에 멈춘 바늘, 또는 물음표가 붙은 저울 |
 | `school/projector-screen`(스크린)<br>`office/whiteboard`(화이트보드) | 53 · 0.10 | 둘 다 미색 바탕에 선 흰 직사각형이다. 카드에서는 말아 올리는 축과 마커 받침으로 갈리지만 80×80에서는 안 보인다 | 스크린은 **빛이 비치는 것**으로 — 어두운 방에 빔이 닿은 화면 |
@@ -163,6 +163,55 @@
 **내 파일(`scene`)에 든 것은 하나도 없어 손대지 않았다.** 확인한 그날
 `content/`는 전부 깨끗했지만(만져지는 파일 0), 넘긴 것은 넘긴 채로 둔다
 ([nets.md](nets.md)).
+
+### 둥근 판 무리 — 여섯이 열 쌍으로 얽힌다
+
+`twins`의 허브 보고가 짚었다. 한 쌍씩 읽으면 «비슷한 물건이려니» 하고 넘어가는데,
+모아 놓으면 **여섯이 같은 몸통을 나눠 쓰고 있다.**
+
+| 거리 | 쌍 |
+| ---: | --- |
+| 45 · 0.31 | `compass` ↔ `steering-wheel` |
+| 51 · 0.27 | `compass` ↔ `tide-clock` |
+| 53 · 0.29 | `quarter-to` ↔ `tide-clock` |
+| 54 · 0.23 | `compass` ↔ `conviction-belief` |
+| 55 · 0.26 | `conviction-belief` ↔ `steering-wheel` |
+| 57 · 0.27 | `clock` ↔ `hour` |
+| 59 · 0.19 | `clock` ↔ `compass` |
+| 59 · 0.25 | `clock` ↔ `quarter-to` |
+| 64 · 0.16 | `compass` ↔ `quarter-to` |
+| 65 · 0.31 | `conviction-belief` ↔ `tide-clock` |
+
+프롬프트를 나란히 놓으면 **누가 끼어든 것인지 바로 보인다.**
+
+| 개념 | 프롬프트 |
+| --- | --- |
+| `time/clock`(시계) | one round wall clock … two simple hands |
+| `time/quarter-to`(십오 분 전) | one clock face with the hands set at forty-five minutes past |
+| `time/hour`(시간) | one round clock face with a wide wedge … shaded in |
+| `time/tide-clock`(조석 시계) | one round dial with a single hand and a wave symbol |
+| `transport/steering-wheel`(운전대) | one round steering wheel with three spokes |
+| `travel/compass`(나침반) | one round compass … single needle pointing up and four simple marks |
+| `idea/conviction-belief`(신념) | **one compass** with its needle held firmly on one bearing |
+
+**시계 넷이 서로 닮는 것은 그 파일의 설계 문제다.** `clock`·`quarter-to`·
+`hour`·`tide-clock`은 전부 `time.json`에 있고 넷 다 시계 얼굴을 쓸 이유가
+있다. 그건 그 파일을 만지는 사람이 한 번에 볼 일이다.
+
+**먼저 비켜야 하는 것은 밖에서 끼어든 둘이다.**
+
+- `idea/conviction-belief`(신념)이 프롬프트에 **`one compass`라고 그대로 적었다.**
+  `travel/compass`의 몸통을 빌린 자리라 `pnpm props`가 잡았어야 했다. 신념은
+  나침반 없이 그린다 — 폭풍에도 선 깃대, 또는 깊이 박혀 흔들리지 않는 말뚝.
+- `travel/compass`(나침반)는 시계 얼굴과 갈려야 한다. 둥근 판에 바늘 하나면
+  `clock`과 59다. 뚜껑을 젖힌 놋쇠 나침반을 손바닥 위에 놓거나, 판을 팔각으로
+  깎아 시계와 윤곽부터 다르게 한다.
+
+`steering-wheel`(운전대)은 정당하다 — 살 셋이 뚜렷해 사람 눈으로는 갈린다.
+나침반이 비키면 45와 55가 함께 풀린다.
+
+**세 번 시도했고 세 번 다 막혔다.** 2026-09-09에 `travel`·`idea`·`transport`가
+번갈아 ⟨손대는 중⟩이었다. 그래서 고치지 않고 여기 적어 둔다.
 
 ## 이 목록은 어떻게 다시 만드나
 
