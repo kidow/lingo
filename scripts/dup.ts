@@ -20,6 +20,7 @@
  * 조각으로 훑는다 — 뜻은 «산후 요가 있나요?»처럼 문장이라 부분으로 찾는 편이
  * 쓸모 있다.
  */
+import { spawnSync } from 'node:child_process'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { Concept } from '../lib/types.ts'
@@ -44,7 +45,26 @@ if (argv.length === 0) {
 }
 
 const bySlug = new Map(rows.map((r) => [r.slug, r]))
-const show = (r: Row) => `${r.slug}(${r.meaning})@${r.file}`
+
+/**
+ * **지금 다른 세션이 만지는 파일인지 함께 보여준다.**
+ *
+ * 후보가 걸렸을 때 «그럼 그 개념을 고치자»로 가기 쉬운데, 그 파일이 아직
+ * 커밋되지 않은 수정을 품고 있으면 남의 작업을 덮게 된다. 2026-09-09에 닮은
+ * 그림 여섯을 그렇게 고쳤다가 임자 세션의 프롬프트를 잃었다
+ * (docs/concurrent-sessions.md).
+ *
+ * 워크트리가 하나라 `git diff`로 바로 보인다. 한 번만 묻고 캐시한다.
+ */
+const dirty = new Set(
+  spawnSync('git', ['diff', '--name-only', 'HEAD', '--', CONTENT_DIR], { encoding: 'utf8' })
+    .stdout?.split('\n')
+    .filter(Boolean)
+    .map((path) => path.replace(`${CONTENT_DIR}/`, '').replace('.json', '')) ?? [],
+)
+
+const show = (r: Row) =>
+  `${r.slug}(${r.meaning})@${r.file}${dirty.has(r.file) ? ' ⟨손대는 중⟩' : ''}`
 
 const taken: string[] = []
 const near: string[] = []
@@ -78,4 +98,9 @@ if (near.length) {
   for (const line of near) console.log(`  ${line}`)
 }
 if (free.length) console.log(`\n빈자리\n  ${free.join(' ')}`)
+if (dirty.size > 0)
+  console.log(
+    `\n⟨손대는 중⟩ = 아직 커밋되지 않은 수정이 있는 파일입니다 (${[...dirty].sort().join(' ')})` +
+      '\n  그 개념을 고치면 다른 세션의 작업을 덮습니다',
+  )
 console.log('')
