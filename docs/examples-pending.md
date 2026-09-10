@@ -120,6 +120,57 @@
 표제형을 그대로 세우려면 문장을 `They pick fruit before the rain.`처럼
 정형으로 고친다.
 
+## 독일어 어순이 깨진 자리 (2026-09-10)
+
+`food/pick-fruit`을 고치다 옆줄에서 봤다.
+
+    Sie Obst pflücken vor Sonnenaufgang.     ← 동사가 둘째 자리에 없다
+    Sie pflücken Obst vor Sonnenaufgang.     ← 바른 어순
+
+**독일어는 정형 동사가 둘째 자리에 선다.** 그런데 표제형이 `Obst pflücken`
+처럼 동사구이면, 예문에 그대로 세우려다 동사를 뒤로 밀게 된다. 앞의 「대소문자」와
+같은 뿌리다 — **표제형을 글자 그대로 보이려다 문장을 망가뜨린 자리**다.
+
+`pnpm check`는 이걸 못 잡는다. 표제형이 예문에 있고 뚫리기까지 하므로 조용하다.
+**틀린 독일어인데 문맥 카드는 잘 만들어진다** — 그래서 더 나쁘다.
+
+동사구 표제어를 훑어 212줄이 걸렸는데 대부분 헛것이다. `scene`의 물음들
+(`Kann ich hier zahlen mit Karte?`)은 조동사가 둘째 자리에 있어 멀쩡하다.
+눈으로 갈라 **틀린 것만** 남긴다.
+
+| 파일 | 개념 | 표제형 | 예문 |
+| --- | --- | --- | --- |
+| action | `maintain`(정비하다) | `instand halten` | `Sie instand halten die Pumpe monatlich.` |
+| action | `diffuse`(퍼지다) | `sich ausbreiten` | `Gerüche sich ausbreiten im Flur.` |
+| action | `remain-over`(남다) | `übrig bleiben` | `Zwei Brote übrig bleiben abends.` |
+| action | `hold-in-palms`(두 손으로 들다) | `mit beiden Händen halten` | `Sie mit beiden Händen halten die Schale.` |
+| action | `carry-by-hand`(손에 들고 가다) | `in der Hand tragen` | `Sie in der Hand tragen die Kisten.` |
+| action | `cut-with-scissors`(가위질하다) | `mit der Schere schneiden` | `Sie mit der Schere schneiden am Falz.` |
+| action | `read-aloud`(소리 내어 읽다) | `laut vorlesen` | `Sie laut vorlesen jeden Morgen.` |
+| action | `gaze-into-distance`(먼 곳을 보다) | `in die Ferne blicken` | `Sie in die Ferne blicken vom Grat.` |
+| action | `patrol`(순찰하다) | `Streife gehen` | `Wächter Streife gehen bei Nacht.` |
+| action | `pace-back-and-forth`(서성이다) | `hin und her gehen` | `Sie hin und her gehen beim Warten.` |
+| action | `face-up-to`(맞서다) | `sich stellen` | `Sie sich stellen dem Verlust gemeinsam.` |
+| body | `raise-head`(고개를 들다) | `Kopf heben` | `Beim Geräusch Kopf heben sie.` |
+| food | `pick-fruit`(따다) | `Obst pflücken` | `Sie Obst pflücken vor Sonnenaufgang.` |
+| idea | `run-right-through`(관통하다) | `durchgehend verlaufen` | `Rohre durchgehend verlaufen im Mauerwerk.` |
+| job | `receive-guests`(손님을 맞다) | `Gäste empfangen` | `Sie Gäste empfangen am Markttag.` |
+| nature | `breed-animals`(가축을 치다) | `Tiere züchten` | `Sie Tiere züchten für den Markt.` |
+| office | `recruit`(사람을 뽑다) | `Personal suchen` | `Sie Personal suchen zweimal im Jahr.` |
+| transport | `intersect`(교차하다) | `sich kreuzen` | `Die Wege sich kreuzen am Brunnen.` · `Zwei Gleise sich kreuzen hier.` |
+
+**어형 변화를 안 시킨 자리도 둘 있다.** 표제형을 그대로 박느라 굴절을 뺐다.
+
+| 파일 | 개념 | 예문 | 바른 꼴 |
+| --- | --- | --- | --- |
+| city | `united-nations`(국제 연합) | `Die Vereinte Nationen schickten Hilfe.` | `Vereinten` |
+| time | `small-hours`(새벽) | `Die frühe Morgenstunden sind am kältesten.` | `frühen` |
+
+**고치는 길은 둘이고 독일어 형용사 여섯과 같다** (위 「카드가 아예 안 나오는
+일곱」). 조동사를 세워 표제형을 문장 끝으로 보내거나(`Sie wollen Obst
+pflücken.`), 표제형을 굴절형으로 박고 예문 둘을 거기 맞춘다. **어느 쪽이든
+표제형을 정하는 일이라 임자가 정한다.**
+
 ## 이 목록은 어떻게 다시 만드나
 
 `pnpm check`가 세 갈래를 각각 다른 문구로 낸다.
