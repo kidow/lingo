@@ -113,8 +113,8 @@
 | action | `avoid` es | `evitar` | `evitan` |
 | action | `avoid` fr | `éviter` | `évitent` |
 | action | `excavate` en | `excavate` | `excavating` |
-| food | `choke-on` de | `sich verschlucken` | `sich nicht verschlucken` — 사이에 낱말이 끼었다 |
-| food | `pick-fruit` en | `pick fruit` | `picking fruit` |
+| ~~food `choke-on` de~~ | — | — | **끝냈다** — `Beim Lachen kann man sich verschlucken.` |
+| ~~food `pick-fruit` en~~ | — | — | **끝냈다** — `When it rains they cannot pick fruit.` |
 
 영어 셋은 모두 **분사로 바꿔 쓴 자리**다(`Rain stops them picking fruit.`).
 표제형을 그대로 세우려면 문장을 `They pick fruit before the rain.`처럼
