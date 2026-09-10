@@ -1160,6 +1160,7 @@ content/verbs.json
 규칙상 못 들어간다. 그러니 진도는 목록에 대고 재고, 그 일은 스크립트가 한다.
 
 ```bash
+pnpm pending --free            # 넘겨 둔 것 중 지금 열린 파일이 있는지 (회차 앞)
 pnpm coverage                  # 숫자만
 pnpm coverage --missing tsl    # 빠진 낱말을 실제로 찍는다 (tsl · hsk · torfl)
 pnpm dup <slug|뜻조각> …        # 후보가 이미 있는지 배치 앞에서 본다
@@ -1352,11 +1353,13 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 
 한 개념을 추가하는 절차:
 
-1. 주제 파일(`content/{topic}.json`)에 개념 블록을 쓴다 — `slug`, `meaning_ko`, `category`, `image_prompt`, 언어별 단어
-2. `pnpm check` — 검증 (아래)
-3. `pnpm genimg <slug...>` — `pnpm prompt`의 문구로 1024 PNG를 만들어 `.images/`에 둔다 (한 장씩 도는 것이 기본이다. 아래)
-4. `pnpm image <slug>` — 512 WebP로 변환해 `public/concepts/`에 넣는다
-5. **80×80으로 줄여도 알아볼 수 있는지 확인한다** (IMAGE_STYLE.md 검수 체크리스트)
+0. `pnpm pending --free` — 남에게 넘겨 둔 것 가운데 **지금 열린 파일**이 있는지 본다. 회차마다 도는 자리다 ([AGENTS.md](AGENTS.md) · [docs/concurrent-sessions.md](docs/concurrent-sessions.md) 규칙 8)
+1. `pnpm dup <slug|뜻…>` — 그 개념이 이미 있는지 `content/` 전체에 대고 본다
+2. 주제 파일(`content/{topic}.json`)에 개념 블록을 쓴다 — `slug`, `meaning_ko`, `category`, `image_prompt`, 언어별 단어
+3. `pnpm batch <slug…>` — 소품 겹침·로마자·발음기호·굽기·검증을 한 번에 (`check`만 따로 돌리면 로마자가 빈 채로 경고가 이백 줄 난다)
+4. `pnpm genimg <slug...>` — `pnpm prompt`의 문구로 1024 PNG를 만들어 `.images/`에 둔다 (한 장씩 도는 것이 기본이다. 아래)
+5. `pnpm image <slug>` — 512 WebP로 변환해 `public/concepts/`에 넣는다
+6. **80×80으로 줄여도 알아볼 수 있는지 확인한다** (IMAGE_STYLE.md 검수 체크리스트)
    - **`pnpm genimg`이 끝나면서 시트를 이미 붙여 놓는다** (`.images/sheet-<첫 slug>.png`).
      열어 보기만 하면 된다 — 예전에는 "`pnpm sheet`를 돌리세요"라는 권유였고
      권유는 건너뛸 수 있었다.
@@ -1419,12 +1422,15 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm pending [--free]` | `docs/*-pending.md`와 `also-recheck.md`에 **넘겨 둔 개념**을 파일별로 묶어 `docs/…md:47` 꼴로 낸다. 지금 비어 있는 파일 것을 먼저 보여주고, `--free`면 그것만 낸다. 목록에 «지금 누가 만지는지»를 적지 않기로 했으므로(반나절이면 낡는다) 그 판단은 도구가 돌 때 한다. 「고쳤다」·「정당하다」가 붙은 제목과 줄은 빼고, **표와 목록 줄만** 본다 — 산문에 나오는 이름은 대개 끝난 일을 적거나 예를 든 것이다 |
 | `pnpm batch <slug...>` | 넣은 직후에 늘 함께 도는 다섯을 한 번에 — `props --in` · `romanize` · `ipa` · `split` · `check` |
 | `pnpm split` | 콘텐츠를 언어별로 갈라 `public/content/`에 굽는다. 원본 해시를 `source.json`에 함께 적어 `check`가 낡음을 시각이 아니라 내용으로 본다 |
-| `pnpm twins [구조] [색]` | 서로 닮은 **그림**을 찾는다. 기본 50·0.20은 실측값이다. `--file <이름>`으로 한 파일만, `--pair <a> <b>`로 두 장만 재고, `--sheets`로 쌍을 붙여 본다 |
+| `pnpm twins [구조] [색]` | 서로 닮은 **그림**을 찾는다. 기본 50·0.20은 실측값이다. `--file <이름>`으로 한 파일만, `--pair <a> <b>`로 두 장만 재고, `--sheets`로 쌍을 붙여 본다. 짝 목록 아래에 **남의 몸통을 빌린 쌍**과 **세 쌍 이상에 나오는 바탕 그림**을 따로 낸다 |
+| `pnpm pending [--free]` | 넘겨 둔 일감을 파일별로 묶어 `docs/…md:47` 꼴로 낸다. `--free`면 지금 열린 파일 것만. 판단은 `lib/pending.ts`에 있고 `pnpm test`가 지킨다 |
 | `pnpm also-audit [--list] [파일]` | 중국어 곁말이 정말 그 개념을 가리키는지 CC-CEDICT로 훑는다. 고치지 않고 목록만 낸다 ([docs/also-recheck.md](docs/also-recheck.md)) |
 
-동시 세션 막이 셋(`dup`·`props`·`genimg`)은 `pnpm guards`가 확인한다 —
-`content/scene.json`에 빈 줄 하나를 붙였다 떼는 방식이라 그림도 안 만들고
-남의 파일도 안 건드린다.
+동시 세션 막이 셋(`dup`·`props`·`genimg`)과 `pending`은 `pnpm guards`가
+확인한다 — `content/scene.json`의 개념 **하나**에 공백을 붙였다 떼는 방식이라
+그림도 안 만들고 남의 파일도 안 건드린다. 빈 줄만 붙이던 때는 시험이 헛돌았다.
+`genimg`의 막이가 **어느 개념이 달라졌는지**를 보게 되면서, 개념이 하나도 안
+바뀐 파일은 막이 눈에 깨끗했기 때문이다.
 
 **어느 그물이 무엇을 잡고 무엇을 놓치는지**는 [docs/nets.md](docs/nets.md)에
 한 장으로 모아 뒀다. 같은 사고를 두 번 겪고 나서야 «그건 다른 그물이 볼
