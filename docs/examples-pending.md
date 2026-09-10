@@ -151,22 +151,39 @@
 | action | `patrol`(순찰하다) | `Streife gehen` | `Wächter Streife gehen bei Nacht.` |
 | action | `pace-back-and-forth`(서성이다) | `hin und her gehen` | `Sie hin und her gehen beim Warten.` |
 | action | `face-up-to`(맞서다) | `sich stellen` | `Sie sich stellen dem Verlust gemeinsam.` |
-| body | `raise-head`(고개를 들다) | `Kopf heben` | `Beim Geräusch Kopf heben sie.` |
-| food | `pick-fruit`(따다) | `Obst pflücken` | `Sie Obst pflücken vor Sonnenaufgang.` |
-| idea | `run-right-through`(관통하다) | `durchgehend verlaufen` | `Rohre durchgehend verlaufen im Mauerwerk.` |
+| ~~body `raise-head`~~ | — | — | **끝냈다** — `Beim Geräusch mussten sie den Kopf heben.` |
+| ~~food `pick-fruit`~~ | — | — | **끝냈다** — `Sie wollen vor Sonnenaufgang Obst pflücken.` |
+| ~~idea `run-right-through`~~ | — | — | **끝냈다** — `Die Rohre sollen im Mauerwerk durchgehend verlaufen.` |
 | job | `receive-guests`(손님을 맞다) | `Gäste empfangen` | `Sie Gäste empfangen am Markttag.` |
-| nature | `breed-animals`(가축을 치다) | `Tiere züchten` | `Sie Tiere züchten für den Markt.` |
-| office | `recruit`(사람을 뽑다) | `Personal suchen` | `Sie Personal suchen zweimal im Jahr.` |
-| transport | `intersect`(교차하다) | `sich kreuzen` | `Die Wege sich kreuzen am Brunnen.` · `Zwei Gleise sich kreuzen hier.` |
+| ~~nature `breed-animals`~~ | — | — | **끝냈다** — `Sie wollen für den Markt Tiere züchten.` |
+| ~~office `recruit`~~ | — | — | **끝냈다** — `Zweimal im Jahr müssen sie Personal suchen.` |
+| ~~transport `intersect`~~ | — | — | **끝냈다** — `Am Brunnen können die Wege sich kreuzen.` · `Hier müssen zwei Gleise sich kreuzen.` |
 
 **어형 변화를 안 시킨 자리도 둘 있다.** 표제형을 그대로 박느라 굴절을 뺐다.
 
 | 파일 | 개념 | 예문 | 바른 꼴 |
 | --- | --- | --- | --- |
 | city | `united-nations`(국제 연합) | `Die Vereinte Nationen schickten Hilfe.` | `Vereinten` |
-| time | `small-hours`(새벽) | `Die frühe Morgenstunden sind am kältesten.` | `frühen` |
+| ~~time `small-hours`~~ | — | **끝냈다** — 관사를 빼면 강변화 어미가 맞다: `Am kältesten sind frühe Morgenstunden.` |
 
-**고치는 길은 둘이고 독일어 형용사 여섯과 같다** (위 「카드가 아예 안 나오는
+### 일곱은 예문만 고쳐 끝냈다 (2026-09-10)
+
+**표제형을 안 바꾸고도 되는 길이 있다.** 조동사를 세워 표제형을 문장 끝으로
+보내면 정형 동사가 둘째 자리를 되찾는다. 파일이 열려 있던 일곱을 그렇게 했다.
+
+    Sie Obst pflücken vor Sonnenaufgang.        ← 동사가 밀렸다
+    Sie wollen vor Sonnenaufgang Obst pflücken. ← wollen이 둘째 자리
+
+**같은 개념의 다른 예문이 이미 그 꼴이었다** — `Langsam wollte er den Kopf
+heben.` · `Das Werk will Personal suchen.` · `Die Straße wird durchgehend
+verlaufen.` 한 줄은 맞게 쓰고 다른 줄에서 지름길을 탄 자리다.
+
+`small-hours`는 어미 쪽이라 길이 달랐다. **관사를 빼면 강변화 어미가 맞는다** —
+`Die frühe Morgenstunden` ✗ · `frühe Morgenstunden` ✓. 두 줄 다 고쳤다.
+
+뚫을 자리는 일곱 다 살아 있다(7~30).
+
+**남은 것은 `action` 열하나와 `city/united-nations`뿐이고, 고치는 길은 둘이다** (위 「카드가 아예 안 나오는
 일곱」). 조동사를 세워 표제형을 문장 끝으로 보내거나(`Sie wollen Obst
 pflücken.`), 표제형을 굴절형으로 박고 예문 둘을 거기 맞춘다. **어느 쪽이든
 표제형을 정하는 일이라 임자가 정한다.**
