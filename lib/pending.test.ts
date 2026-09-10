@@ -59,3 +59,19 @@ test('한 문서에 여러 번 나와도 처음 줄만 남긴다', () => {
   const text = ['| `plate` | 첫 줄 |', '| `plate` | 다시 |'].join('\n')
   assert.deepEqual(find(text), [{ slug: 'plate', line: 1 }])
 })
+
+test('전·후 칸이 있는 표는 통째로 끝난 기록이다', () => {
+  // 고친 것을 «무엇을 무엇으로 바꿨는지»로 남기는 표다. 「끝냈다」가 없어 일감으로 읽혔다
+  const text = ['| 개념 | 전 | 후 |', '| --- | --- | --- |', '| `compass` | 둥근 판 | 네모 판 |'].join('\n')
+  assert.deepEqual(find(text), [])
+})
+
+test('표가 끝나면 다시 본다', () => {
+  const text = ['| 개념 | 전 | 후 |', '| `compass` | 둥근 판 | 네모 판 |', '', '| `plate` | 아직 |'].join('\n')
+  assert.deepEqual(find(text), [{ slug: 'plate', line: 4 }])
+})
+
+test('전·후가 없는 표는 그대로 일감이다', () => {
+  const text = ['| 쌍 | 거리 | 갈래 낼 방법 |', '| `plate` | 64 | 다른 물건으로 |'].join('\n')
+  assert.deepEqual(find(text), [{ slug: 'plate', line: 2 }])
+})
