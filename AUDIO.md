@@ -147,6 +147,10 @@ pnpm audio                      # 트랙별로 얼마나 남았는지
 pnpm audio list ja 10           # 만들 것 10개 — 읽힐 텍스트와 저장 경로
 pnpm audio place ja cat ~/Downloads/speech.mp3
 pnpm audio make ja 10           # API로 10개를 만들어 바로 제자리에 넣는다
+
+pnpm audio manifest             # 넣은 뒤 — 화면이 읽을 목록을 다시 적는다
+pnpm audio peaks [lang]         # 넣은 뒤 — 파형 막대를 굽는다
+pnpm audio sync                 # R2 같은 S3 호환 저장소로 올린다 (rclone)
 ```
 
 `make`는 위 파라미터 표 그대로 `POST /v1/tts`를 부르고, 받은 바이트를 규격에
@@ -303,13 +307,29 @@ pnpm audio sync
 
 ---
 
-## 넣은 뒤
+## 넣은 뒤 — 굽는 것이 둘 있다
 
-등록 절차가 없다. 파일을 놓고 새로고침하면 발음 버튼이 켜진다.
+파일을 놓는 것만으로는 끝이 아니다. **정적 내보내기라 도는 중에 디렉터리를 못
+물어본다** — 무엇이 있고 없는지를 미리 적어 두어야 화면이 안다.
 
 ```bash
-pnpm check     # 어느 단어에 발음이 없는지 알려준다
+pnpm audio manifest    # lib/audio-have.ts — 발음이 없는 자리와 예문 소리가 있는 자리
+pnpm audio peaks [lang] # public/peaks/<lang>.json — 듣기 카드에 깔리는 파형
+pnpm check             # 둘 다 낡았으면 여기서 운다
 ```
+
+`manifest`가 낡으면 **소리 없는 문제가 나간다** — 목록에 없는데 버튼이 켜진다.
+`check`가 어긋난 열쇠를 다섯 개까지 그대로 찍어 준다.
+
+    ! lib/audio-have.ts가 낡았습니다 — 1건 어긋납니다 (en/excuse-me).
+
+`peaks`는 `ffmpeg`으로 소리를 훑어 낱말마다 **0~9 마흔 자**를 적는다
+(`lib/peaks.ts`). 듣기 카드의 그림 자리에 깔리는 것이라 **없어도 카드는
+성립한다** — `lib/corpus.ts`가 그렇게 짜여 있다.
+
+**둘 다 커밋되는 생성물이라 HEAD 콘텐츠로 굽는다.** 다른 세션이 개념을 넣어
+두고 아직 커밋하지 않았으면 `check`는 경고 대신 기록만 남긴다 — 그 콘텐츠를
+커밋하는 쪽이 그때 함께 굽는 자리다 ([docs/concurrent-sessions.md](docs/concurrent-sessions.md)).
 
 `pnpm check`는 발음이 없다고 실패하지 않는다. 없는 것은 정상이고, 그 단어의 버튼이
 비활성으로 남을 뿐이다.
