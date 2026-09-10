@@ -154,7 +154,7 @@
 | ~~body `raise-head`~~ | — | — | **끝냈다** — `Beim Geräusch mussten sie den Kopf heben.` |
 | ~~food `pick-fruit`~~ | — | — | **끝냈다** — `Sie wollen vor Sonnenaufgang Obst pflücken.` |
 | ~~idea `run-right-through`~~ | — | — | **끝냈다** — `Die Rohre sollen im Mauerwerk durchgehend verlaufen.` |
-| job | `receive-guests`(손님을 맞다) | `Gäste empfangen` | `Sie Gäste empfangen am Markttag.` |
+| ~~job `receive-guests`~~ | — | — | **끝냈다** — `Am Markttag wollen sie Gäste empfangen.` |
 | ~~nature `breed-animals`~~ | — | — | **끝냈다** — `Sie wollen für den Markt Tiere züchten.` |
 | ~~office `recruit`~~ | — | — | **끝냈다** — `Zweimal im Jahr müssen sie Personal suchen.` |
 | ~~transport `intersect`~~ | — | — | **끝냈다** — `Am Brunnen können die Wege sich kreuzen.` · `Hier müssen zwei Gleise sich kreuzen.` |
@@ -271,11 +271,11 @@ verlaufen.` 한 줄은 맞게 쓰고 다른 줄에서 지름길을 탄 자리다
 
 | 파일 | 낱말 | 원문 | 전 | 후 |
 | --- | --- | --- | --- | --- |
-| family | `sibling` es | `Él vive con sus hermanos.` | 형제자매가 둘 있습니다 | 그는 형제자매와 삽니다 |
-| family | `sibling` de | `Er hat ältere Geschwister.` | 형제자매가 둘 있습니다 | 그는 손위 형제자매가 있습니다 |
-| time | `quarter-year` zh | `第一季度在三月结束。` | 분기가 끝났습니다 | 1분기는 3월에 끝납니다 |
-| time | `quarter-year` es | `El primer trimestre terminó en marzo.` | 분기가 끝났습니다 | 1분기는 3월에 끝났습니다 |
-| time | `quarter-year` fr | `Le premier trimestre s'est fini en mars.` | 분기가 끝났습니다 | 1분기는 3월에 끝났습니다 |
+| ~~family `sibling` es~~ **끝냈다** | `Él vive con sus hermanos.` | 형제자매가 둘 있습니다 | 그는 형제자매와 삽니다 |
+| ~~family `sibling` de~~ **끝냈다** | `Er hat ältere Geschwister.` | 형제자매가 둘 있습니다 | 그는 손위 형제자매가 있습니다 |
+| ~~time `quarter-year` zh~~ **끝냈다** | `第一季度在三月结束。` | 분기가 끝났습니다 | 1분기는 3월에 끝납니다 |
+| ~~time `quarter-year` es~~ **끝냈다** | `El primer trimestre terminó en marzo.` | 분기가 끝났습니다 | 1분기는 3월에 끝났습니다 |
+| ~~time `quarter-year` fr~~ **끝냈다** | `Le premier trimestre s'est fini en mars.` | 분기가 끝났습니다 | 1분기는 3월에 끝났습니다 |
 
 **나머지 넷 가운데 둘은 뜻이 같아 그냥 두어도 됐지만 갈라 적었다** —
 `travel/souvenir` ru와 `food/radish` ja다. 규칙을 참으로 만들어야 검사를 걸 수
