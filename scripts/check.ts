@@ -207,6 +207,8 @@ const all: Concept[] = []
 /** 파일별 개념. 등급 지문을 파일 단위로 대조한다 */
 const byFile = new Map<string, Concept[]>()
 /** slug가 어느 파일에 있는지. 같은 파일 안의 뜻줄 중복을 볼 때 쓴다 */
+/** 예문 둘의 한국어가 같은 자리. 아래에서 한 줄로 모아 낸다 */
+const sameKo: string[] = []
 const fileOf = new Map<string, string>()
 let total = 0
 
@@ -360,6 +362,25 @@ for (const file of files) {
        */
       const single = word.example as Record<string, unknown> | undefined
       const many = word.examples as Record<string, unknown>[] | undefined
+      /*
+       * **예문 둘이 문장은 다른데 한국어 줄이 똑같은 자리.**
+       *
+       * 둘째 줄을 새로 쓰면서 첫 줄의 한국어를 그대로 둔 자리다. 한국어가 두
+       * 문장에 다 걸리는 것처럼 보여 눈에 잘 안 띈다 — 2026-09-10에 열을
+       * 찾았고 여섯이 진짜였다(`Él vive con sus hermanos.`에 «형제자매가 둘
+       * 있습니다»가 붙어 있었다).
+       *
+       * **문장이 얼마나 겹치는지로는 못 가른다.** 진짜였던 `quarter-year`의
+       * 스페인어가 0.5인데 멀쩡한 `souvenir`의 러시아어가 0.40이다. 그래서
+       * 문턱을 두지 않고 **다 짚고 눈으로 가른다** — 전체에서 몇 자리뿐이라
+       * 그래도 된다.
+       *
+       * 언어끼리 대조하는 길은 막혀 있다. 한 개념·같은 차례의 한국어가 일곱
+       * 언어에 같은 자리는 2,395뿐이고 갈린 자리가 11,705다 — **낱말 개념은
+       * 언어마다 제 문장을 쓰는 것이 설계**다.
+       */
+      if (many?.length === 2 && many[0]?.ko === many[1]?.ko && many[0]?.text !== many[1]?.text)
+        sameKo.push(`${slug} ${lang}`)
       if (single && many?.length) warn(`${where} — ${lang}에 example과 examples가 함께 있습니다. examples만 씁니다`)
       const sentences = many?.length ? many : single ? [single] : []
       sentences.forEach((example, i) => {
@@ -597,6 +618,11 @@ for (const [lang, table] of alsoTable) {
       }
   }
 }
+
+if (sameKo.length > 0)
+  warn(
+    `예문 둘이 문장은 다른데 한국어 줄이 같은 자리 ${sameKo.length}개 (${sameKo.slice(0, 5).join(' · ')}${sameKo.length > 5 ? ' …' : ''}) — 둘째 줄을 쓰면서 첫 줄의 한국어를 그대로 뒀는지 보세요`,
+  )
 
 // 겹치는 빈칸 틀. 같은 주제·같은 품사에서 두 낱말이 같은 문장을 쓰면 답이 둘이다
 for (const [lang, seen] of Object.entries(frames)) {

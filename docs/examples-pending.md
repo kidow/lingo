@@ -277,8 +277,23 @@ verlaufen.` 한 줄은 맞게 쓰고 다른 줄에서 지름길을 탄 자리다
 | time | `quarter-year` es | `El primer trimestre terminó en marzo.` | 분기가 끝났습니다 | 1분기는 3월에 끝났습니다 |
 | time | `quarter-year` fr | `Le premier trimestre s'est fini en mars.` | 분기가 끝났습니다 | 1분기는 3월에 끝났습니다 |
 
-**남은 하나는 `nature/wave` zh다.** `海浪拍在岸边。`(파도가 물가를 친다)인데
-한국어 줄이 «파도가 높습니다»다. `nature.json`이 만져지는 중이라 못 고쳤다.
+**나머지 넷 가운데 둘은 뜻이 같아 그냥 두어도 됐지만 갈라 적었다** —
+`travel/souvenir` ru와 `food/radish` ja다. 규칙을 참으로 만들어야 검사를 걸 수
+있어서다.
+
+**남은 셋은 파일이 막혀 못 했다.**
+
+| 파일 | 낱말 | 원문 | 지금 한국어 |
+| --- | --- | --- | --- |
+| nature | `wave` zh | `海浪拍在岸边。` (파도가 물가를 친다) | 파도가 높습니다 ← **틀렸다** |
+| nature | `merge` de | `Hier sieht man die zwei Bäche zusammenfließen.` | 뜻은 같다. 갈라 적으면 검사가 조용해진다 |
+| sport | `catcher-mask` zh | `捕手面罩保护脸部。` | 뜻은 같다. 위와 같다 |
+
+**`pnpm check`가 이제 이 자리를 짚는다.** 문턱은 두지 않았다 — 문장이 얼마나
+겹치는지로는 못 가른다(진짜였던 `quarter-year` es가 0.5인데 멀쩡한 `souvenir`
+ru가 0.40이다). 전체에서 몇 자리뿐이라 다 짚고 눈으로 가른다.
+
+    ! 예문 둘이 문장은 다른데 한국어 줄이 같은 자리 3개 (wave zh · merge de · catcher-mask zh)
 
 **둘째 줄을 쓰면서 첫 줄의 한국어를 그대로 둔 자리들이다.** 짧은 쪽이 남고 긴
 쪽이 새로 생겼다 — 한국어가 두 문장에 다 걸리는 것처럼 보여 눈에 안 띈다.
