@@ -31,7 +31,10 @@
 | [brand-spec.md](brand-spec.md) | 색·형태·타이포·상태 |
 | [IMAGE_STYLE.md](IMAGE_STYLE.md) | 개념 이미지 생성 규칙 |
 | [AUDIO.md](AUDIO.md) | 발음 오디오 제작 규칙 |
+| [AGENTS.md](AGENTS.md) | 개념을 넣을 때의 작업 순서 |
 | [docs/nets.md](docs/nets.md) | 어느 검사가 무엇을 잡고 무엇을 놓치는지 |
+| [docs/concurrent-sessions.md](docs/concurrent-sessions.md) | 한 워크트리를 세션 둘이 쓸 때의 규칙 |
+| [docs/twins-pending.md](docs/twins-pending.md) · [examples-pending](docs/examples-pending.md) · [also-recheck](docs/also-recheck.md) | 남의 파일에서 찾은 문제를 임자에게 넘기는 목록. `pnpm pending`이 읽는다 |
 
 ## 실행
 
@@ -52,8 +55,18 @@ pnpm prompt [slug]      # 이미지 생성 프롬프트 출력
 pnpm image  [slug]      # .images/*.png → public/concepts/*.webp
 pnpm icons              # app/icon.svg → PWA·애플 아이콘
 
+pnpm dup <slug|뜻…>      # 그 개념이 이미 있는지 content/ 전체에 대고 본다
+pnpm claim <표기…>       # 그 표기에 임자가 있는지
 pnpm props <소품...>     # 그림 소품에 임자가 있는지 본다 (프롬프트를 통째로 줘도 된다)
 pnpm props --in <slug...> # 이미 넣은 개념의 프롬프트로 조회. 배치끼리 겹치는 소품도 찍는다
+pnpm pending [--free]   # 남에게 넘겨 둔 일감. --free면 지금 열린 파일 것만
+
+pnpm batch <slug...>    # 넣은 직후에 늘 함께 도는 다섯을 한 번에
+pnpm genimg <slug...>   # 그림을 뽑고 끝에 대조 시트를 붙인다
+pnpm sheet <slug...>    # 그림 여러 장을 한 장으로
+pnpm twins [구조] [색]   # 서로 닮은 그림. 바탕 그림과 몸통 빌린 쌍도 따로 낸다
+pnpm split              # 화면이 읽는 public/content/를 굽는다
+pnpm guards             # 동시 세션 막이가 실제로 도는지
 
 pnpm coverage           # 시험 목록 대비 우리 위치
 pnpm levels [파일]       # JLPT·HSK·CEFR·TSL·TORFL 등급을 출처에서 채운다
@@ -67,16 +80,21 @@ pnpm audio              # 발음 현황. make/list/place/manifest
 ## 개념 하나 추가하기
 
 단어 목록을 미리 만들지 않는다. 하나를 지명하고 끝까지 완성한 뒤 다음으로 넘어간다.
-이미지가 유일한 병목이자 수작업이고, 개념 정의가 옳은지는 그림을 그려봐야 드러나기 때문이다.
+그림이 유일한 병목이고, 개념 정의가 옳은지는 그려 봐야 드러나기 때문이다.
+**그리는 일은 스크립트가 하지만 마지막 확인은 여전히 눈이다** — 뒤바뀐 그림과
+낱말 오독은 어떤 검사도 못 잡는다 ([docs/nets.md](docs/nets.md)).
 
-1. `content/*.json`에 개념 블록을 쓴다
-2. `pnpm check`
-3. `pnpm prompt <slug>` 출력을 ImageGen에 넣어 1024 PNG를 만든다
-4. `.images/{slug}.png`에 두고 `pnpm image <slug>`
-5. **80×80으로 줄여도 알아볼 수 있는지 확인한다**
-6. `pnpm audio make <lang> <n>`으로 발음을 만든다 — 언어마다 하나씩 일곱 개다 ([AUDIO.md](AUDIO.md))
-7. `pnpm audio manifest` — 듣기 카드가 볼 목록을 다시 적는다
+0. `pnpm pending --free` — 남에게 넘겨 둔 것 중 지금 열린 파일이 있는지 본다
+1. `pnpm dup <slug|뜻…>` — 그 개념이 이미 있는지
+2. `content/*.json`에 개념 블록을 쓴다
+3. `pnpm batch <slug…>` — 소품 겹침·로마자·발음기호·굽기·검증을 한 번에
+4. `pnpm genimg <slug…>` — 그림을 뽑는다. 끝에 대조 시트를 붙여 준다
+5. **시트를 눈으로 본다.** 80×80으로 줄여도 알아볼 수 있는지, 그림이 서로 뒤바뀌지 않았는지, 낱말이 엉뚱한 뜻으로 그려지지 않았는지 — **기계가 못 잡는 자리다**
+6. `pnpm image <slug…>` — 512 WebP로 변환
 7. 커밋
+
+발음은 나중이다. `pnpm audio make <lang> <n>`으로 만들고 `pnpm audio manifest`로
+목록을 다시 적는다 ([AUDIO.md](AUDIO.md)).
 
 발음은 없어도 학습이 돌아간다. 버튼이 비활성으로 남을 뿐이다.
 
@@ -103,7 +121,7 @@ components/    Feed · Card 3종 · ConceptImage · SayButton
 lib/           types · lang · content · entries · quiz · engine · progress
 content/       개념 JSON — 단일 진실 소스
 public/        concepts/*.webp · audio/{lang}/*.mp3 · 아이콘
-scripts/       check · prompt · image · icons
+scripts/       check · dup · batch · genimg · image · twins · props · pending · …
 ```
 
 `lib/`은 JSON을 아는 모듈(`content.ts`)과 순수 로직(나머지)으로 갈라져 있다.
