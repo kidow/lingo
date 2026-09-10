@@ -85,6 +85,10 @@ else ok "genimg이 채우기는 지나간다"; fi
 if pnpm pending 2>&1 | grep -q "넘긴 개념"; then ok "pending이 목록을 낸다"
 else no "pending이 목록을 못 냈다"; fi
 
+# 6. trailers — 커밋 트레일러가 제 꼴인지. 나간 뒤에는 못 고치므로 여기서 본다
+if zsh $REPO/scripts/trailers.sh 50 >/dev/null 2>&1; then ok "커밋 트레일러가 제 꼴이다"
+else no "트레일러가 어긋난 커밋이 있다 — pnpm trailers 로 보세요"; fi
+
 restore
 if [ -n "$(git diff --name-only HEAD -- content/scene.json)" ]; then
   print -r -- "  실패 원복이 안 됐습니다 — git checkout content/scene.json 을 하세요"

@@ -1426,7 +1426,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm pending [--free]` | 넘겨 둔 일감을 파일별로 묶어 `docs/…md:47` 꼴로 낸다. `--free`면 지금 열린 파일 것만. 판단은 `lib/pending.ts`에 있고 `pnpm test`가 지킨다 |
 | `pnpm also-audit [--list] [파일]` | 중국어 곁말이 정말 그 개념을 가리키는지 CC-CEDICT로 훑는다. 고치지 않고 목록만 낸다 ([docs/also-recheck.md](docs/also-recheck.md)) |
 
-동시 세션 막이 셋(`dup`·`props`·`genimg`)과 `pending`은 `pnpm guards`가
+동시 세션 막이 셋(`dup`·`props`·`genimg`)과 `pending`·`trailers`는 `pnpm guards`가
 확인한다 — `content/scene.json`의 개념 **하나**에 공백을 붙였다 떼는 방식이라
 그림도 안 만들고 남의 파일도 안 건드린다. 빈 줄만 붙이던 때는 시험이 헛돌았다.
 `genimg`의 막이가 **어느 개념이 달라졌는지**를 보게 되면서, 개념이 하나도 안

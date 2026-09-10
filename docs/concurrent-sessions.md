@@ -192,6 +192,7 @@ pnpm pending --free     # 지금 열려 있는 파일의 일감만
 | `pnpm props <소품…>` | 임자 줄에 같은 표시를 붙인다 |
 | `pnpm genimg <slug…>` | **이미 있는 그림**을 다시 그리려는데 그 파일이 만져지고 있으면 **아예 멈춘다.** 없는 그림을 채우는 것은 막지 않는다 |
 | `pnpm pending [--free]` | 넘겨 둔 일감 가운데 지금 열린 파일 것을 고른다 (규칙 8) |
+| `pnpm trailers [개수]` | 커밋 트레일러가 제 꼴인지. **나간 뒤에는 못 고친다** — history를 다시 쓰려면 force-push를 해야 하고 남이 이미 받아 갔을 수 있다 |
 
 넷 다 `git diff --name-only HEAD -- content`를 본다. 판단은 `lib/busy.ts`와
 `lib/pending.ts`에 한 벌만 두고 **파일도 git도 그 안에서 부르지 않는다** —
