@@ -57,7 +57,13 @@ const dirty = dirtyFiles(
 )
 
 /** 어느 문서가 무엇을 넘겼는지 함께 보여준다 — 고치려면 그 문단을 읽어야 한다 */
-const docs = readdirSync(DOCS_DIR).filter((f) => f.endsWith('-pending.md') || f === 'also-recheck.md')
+/*
+ * **`also-recheck.md`는 안 읽는다.** 그 문서에는 slug 단위 일감이 없다 —
+ * 통계와 판정뿐이고, 하나 뽑히던 `apartment`도 «이건 헛것이다»를 설명하는
+ * 예였다. 그 문서의 결론 자체가 «목록을 다 끝낸다»가 아니라 «회차마다 자기가
+ * 넣은 것을 본다»라서, 목록이 아니라 절차로 안내한다(아래 끝줄).
+ */
+const docs = readdirSync(DOCS_DIR).filter((f) => f.endsWith('-pending.md'))
 /** slug → «문서:줄» 자리. 한 문서에 여러 번 나오면 **처음 나온 줄**만 남긴다 */
 const seen = new Map<string, Set<string>>()
 for (const doc of docs) {
@@ -103,3 +109,7 @@ console.log(
 if (free > 0 && !onlyFree) console.log('  --free 를 붙이면 손댈 수 있는 것만 봅니다')
 console.log('  줄 번호가 붙은 자리를 여세요 — 왜 넘겼는지 그 문단에 적혀 있습니다')
 console.log('  끝난 자리는 제목과 줄의 말로만 가릅니다. 더러 섞여 나오니 문단을 보고 정하세요')
+console.log(
+  '\n중국어 곁말은 여기 안 나옵니다 — 목록이 아니라 회차마다 도는 일입니다.' +
+    '\n  자기가 넣은 파일에 pnpm also-audit --list <파일> 을 돌리세요 (docs/also-recheck.md)',
+)

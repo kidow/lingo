@@ -34,7 +34,8 @@
 | [AGENTS.md](AGENTS.md) | 개념을 넣을 때의 작업 순서 |
 | [docs/nets.md](docs/nets.md) | 어느 검사가 무엇을 잡고 무엇을 놓치는지 |
 | [docs/concurrent-sessions.md](docs/concurrent-sessions.md) | 한 워크트리를 세션 둘이 쓸 때의 규칙 |
-| [docs/twins-pending.md](docs/twins-pending.md) · [examples-pending](docs/examples-pending.md) · [also-recheck](docs/also-recheck.md) | 남의 파일에서 찾은 문제를 임자에게 넘기는 목록. `pnpm pending`이 읽는다 |
+| [docs/twins-pending.md](docs/twins-pending.md) · [examples-pending](docs/examples-pending.md) | 남의 파일에서 찾은 문제를 임자에게 넘기는 목록. `pnpm pending`이 읽는다 |
+| [docs/also-recheck.md](docs/also-recheck.md) | 중국어 곁말. 목록이 아니라 **회차마다 도는 일**이라 `pnpm also-audit`으로 그때그때 본다 |
 
 ## 실행
 
