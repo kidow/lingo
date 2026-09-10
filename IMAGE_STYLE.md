@@ -334,6 +334,27 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 비교를 버리고 **한쪽만** 그리면 뜻이 선다 — `approximate`는 "삐뚤빼뚤한 원과 정확한
 원"을 버리고 "끝이 안 맞는 원 하나"로 적어서야 통했다.
 
+### 크기·비움을 적으면 흘린다
+
+낱말은 제 뜻으로 그려졌는데 **얼마나·어디까지가 안 지켜지는** 자리가 따로 있다.
+2026-09-10에 시트가 두 장을 그렇게 잡았다. 둘 다 `twins` 거리는 이미 넉넉히
+멀었다 — **기계가 아니라 눈만 잡는 자리다.**
+
+| 적은 것 | 나온 것 | 통한 말 |
+|---|---|---|
+| `one close view of the front of an eye in cross-section, the clear dome filling most of the frame` | **눈 전체 단면.** 각막은 왼쪽 끝에 작게 | `an extreme close-up cross-section of only the front of an eye … the rest of the eye cut off by the frame edge` |
+| `one printed page with a dense block of grey text lines in the middle and a wide untouched border` | 글줄이 종이를 **가득** 채워 여백이 사라졌다 | `one page holding a very small block of grey text lines in the centre, the empty border around it taking up most of the page` |
+
+**둘 다 같은 버릇이다.** 모델은 **물건을 통째로 프레임에 넣으려 하고, 빈 자리를
+채우려 한다.** 그래서 «가까이»·«여백»처럼 정도를 말하는 낱말은 흘러간다.
+
+- 잘라내기를 원하면 **잘린다고 적는다** — `extreme close-up` · `only the front
+  of` · `cut off by the frame edge`. «filling most of the frame»만으로는 안 된다.
+- 비움을 원하면 **비는 쪽을 주어로 삼는다** — `the empty border … taking up most
+  of the page`처럼. «wide border»는 크기를 말할 뿐이라 채워진다.
+- 무엇을 **작게** 두고 싶으면 그 물건에 `very small`을 붙인다. 큰 쪽을 키우는
+  말보다 작은 쪽을 줄이는 말이 잘 듣는다.
+
 ### 낱말이 제 뜻으로 안 읽히는 자리
 
 지시문이 사라지는 것과 다른 실패가 하나 더 있다. **낱말은 그려지는데 엉뚱한
