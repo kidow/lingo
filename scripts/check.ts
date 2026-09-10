@@ -99,6 +99,11 @@ function voicePair(term: string, other: string) {
  * 애매한 자리는 아예 판정하지 않는다 — `есть`·`красть`(동사)와 `новость`(명사)가
  * 다 `-сть`로 끝나고, `ведущий`(사회자)는 형용사 꼴의 명사다.
  */
+/** 명사에서 만든 관계 형용사의 어미 */
+const RU_RELATIONAL = /(н|ск|ов|ев|льн)(ый|ий|ой|ая|ое|ые)$/u
+/** 형용사 어미 전반 */
+const RU_ADJ = /(ый|ий|ой|ая|яя|ое|ые)$/u
+
 function ruPos(word: string) {
   if (word.includes(' ')) return null
   if (/(ость|есть)$/u.test(word)) return '명사'
@@ -348,6 +353,36 @@ for (const file of files) {
                   where,
                   `ru.also의 "${other}"는 ${theirs}이고 "${word.term}"은 ${mine}입니다 — 곁말은 같은 품사끼리 붙습니다`,
                 )
+              /*
+               * **어간이 같고 한쪽만 형용사 어미인 자리.**
+               *
+               * `ruPos`가 꼴에서 품사를 짐작하는데 자음으로 끝나는 명사를 모른다
+               * (`квадрат`·`шоколад`). 그래서 «명사 ← 관계 형용사» 쌍이 위 검사를
+               * 그대로 지나갔다 — 2026-09-10에 열둘이 남아 있었다.
+               *
+               * 어간을 견주는 쪽이 낫다. `-ный`·`-ский`·`-овый`를 떼고 상대와
+               * 겹치면 **명사에서 만든 형용사**이거나 **같은 형용사의 단어미**다.
+               * 어느 쪽이든 곁말이 아니다.
+               *
+               * **상대가 형용사면 넘어간다.** 그러지 않으면 `дружелюбный`↔
+               * `дружный`처럼 어간만 닮은 **서로 다른 형용사**가 걸린다. 이 한
+               * 줄로 헛것 셋이 빠지고 열넷이 남았다 — 열넷 다 손댈 자리다.
+               *
+               * `fail`이 아니라 `warn`이다. 열넷 가운데 열둘이 남이 만지는
+               * 파일에 있어 막아 버리면 그 세션이 못 돈다.
+               */
+              if (!word.term.includes(' ') && !other.includes(' '))
+                for (const [adj, plain] of [
+                  [word.term, other],
+                  [other, word.term],
+                ]) {
+                  if (!RU_RELATIONAL.test(adj) || RU_ADJ.test(plain)) continue
+                  const stem = adj.replace(RU_RELATIONAL, '')
+                  if (stem.length >= 4 && plain.startsWith(stem.slice(0, stem.length - 1)))
+                    warn(
+                      `${where} — ru.also의 "${other}"와 "${word.term}"은 어간이 같고 한쪽만 형용사 어미입니다. 같은 낱말의 다른 꼴이거나 품사가 다릅니다 — 곁말이 아닙니다`,
+                    )
+                }
             }
           for (const other of list) alsoOf(lang).set(other, slug)
         }
