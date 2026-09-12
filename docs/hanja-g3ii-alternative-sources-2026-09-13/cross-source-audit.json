@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "reviewer": "B",
+  "status": "passed",
+  "auditType": "independent-local-document-and-hash-cross-check",
+  "evidenceBoundary": "이 감사는 고정된 연구 문서의 수치·URL·해시·근거 등급·변경 범위를 대조했다. 각 연구자의 영상·원본 도해 시각 확인 기록을 취합하며, 감사자가 11자 영상을 새로 전부 시청한 것은 아니다. 이 단계에서 네트워크 재수신·영상 재검토·경로 승인을 하지 않았다.",
+  "summary": {
+    "characters": 11,
+    "catalogStrokes": 132,
+    "domesticWholeGlyphCandidates": 2,
+    "domesticCandidateCatalogStrokes": 28,
+    "domesticStillUnsecured": 9,
+    "domesticUnsecuredCatalogStrokes": 104,
+    "foreignOfficialCompleteSequences": 11,
+    "foreignSourceStrokes": 132,
+    "newPlaybackApprovals": 0,
+    "runtimeChanges": 0
+  },
+  "documentPins": [
+    {
+      "file": "scope.json",
+      "sha256": "179d3d6ca007d7214f830486812e560fe9765f878233e4caef7421877c24f99d"
+    },
+    {
+      "file": "vivasam-rendered-glyph-audit.json",
+      "sha256": "cbb70a8ccf336a90abdf8a837e532cb12ad939bf749b4f478fcd37d1aa0171f3"
+    },
+    {
+      "file": "next-review-queue.json",
+      "sha256": "355e9a744a232b75f364b21f810a6868b6b94c381fe6710c66f4d0631bdae3e5"
+    },
+    {
+      "file": "research-a.json",
+      "sha256": "a44f7a6472e1256a42a0d6cecce35b887c8c1abf678aaf91d950594d0bb42763"
+    },
+    {
+      "file": "research-b.json",
+      "sha256": "15b10fde9262cb1fbd81377bd6e9a9f450401b37897f5779d55cd283c92be8f5"
+    },
+    {
+      "file": "research-c.json",
+      "sha256": "078cfe8648173edd804e491fa61d0f3c7ac3afe77d54f3cba2aba9d38866bda3"
+    },
+    {
+      "file": "source-matrix.json",
+      "sha256": "fe0d24768fc21def066c71c04cf893c6ff77257d8b611daa88279ca1b532a407"
+    },
+    {
+      "file": "domestic-access-audit.json",
+      "sha256": "de5038bd39386dbc6e59d266cd43e60fa5df6f5ca6e69f3fa7e6d5751ef6a4f6"
+    }
+  ],
+  "checks": {
+    "fixedSelectionExact": true,
+    "characters": 11,
+    "catalogStrokes": 132,
+    "domesticCandidatePartitionExact": true,
+    "domesticCandidates": 2,
+    "domesticCandidateStrokes": 28,
+    "remainingDomesticPartitionExact": true,
+    "remainingDomesticCharacters": 9,
+    "remainingDomesticStrokes": 104,
+    "foreignExactGlyphSourceCountsAgree": true,
+    "foreignCharacters": 11,
+    "foreignStrokes": 132,
+    "matrixAuthorPinsMatchCurrentFiles": true,
+    "threeDomesticAccessLeadsRemainUnacquiredAndUnapproved": true,
+    "matrixForeignUrlsAndXmlHashesMatchAuthors": true,
+    "queueVideosAndHashesMatchRenderedGlyphAudit": true,
+    "rawPublisherLabelsPreserved": true,
+    "zeroPlaybackApprovalConsistent": true,
+    "sharedThreeFilesByteHashesMatchScopeBaseline": true
+  },
+  "evidenceGrades": {
+    "domesticLocated": "한국 교과서출판사 전체 영상의 존재와 target 자형을 root 및 담당 연구자가 확인한 후보. 전획 경계·방향·완료시각·생성 경로·독립 peer 전체 검토 완료라는 뜻은 아님.",
+    "domesticUnsecured": "이번 조사 경로에서 exact 한국 전획 자료 미확보. 모든 기관·판본에 자료가 없다는 뜻은 아님.",
+    "foreignExact": "대만 교육부 exact 코드포인트의 전체 원문 도해/순서와 XML 획수가 담당 문서에 기록됨. 한국 필순 동등성·앱 사용 허가·runtime 승인을 뜻하지 않음."
+  },
+  "entries": [
+    {
+      "glyph": "訣",
+      "catalogStrokes": 11,
+      "author": "research-a.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 11,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=35363",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "archiveMember": "6063png/訣.png",
+        "xmlSha256": "c98c39057de251a220dc089c4b11487275257fc43df16ccdec44e4cdecd1c29d",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "涼",
+      "catalogStrokes": 11,
+      "author": "research-a.json",
+      "domestic": {
+        "evidenceGrade": "Korean-publisher-video-candidate-pending-full-stroke-review",
+        "rawSourceGlyph": "凉",
+        "renderedGlyph": "涼",
+        "manifestRow": "0402",
+        "videoUrl": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0402.mp4",
+        "videoSha256": "98245b38aedcc703f699727db50e29aedbbbfc96012f93e8cd628b9414b59a1d",
+        "fullStrokeAndGeometryApproval": false
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 11,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=28092",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "archiveMember": "6063png/涼.png",
+        "xmlSha256": "e7cdd3f30f7cdf2639680a3476cce522e49f19cec3397a9670f4256aa401d612",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "紋",
+      "catalogStrokes": 10,
+      "author": "research-a.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 10,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=32011",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "archiveMember": "6063png/紋.png",
+        "xmlSha256": "004c83911987fc4c1282abdf4d6deb1b1c7927fccaee7e867bdc6a38c644a0e2",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "森",
+      "catalogStrokes": 12,
+      "author": "research-a.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 12,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=26862",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "archiveMember": "6063png/森.png",
+        "xmlSha256": "8a36123b99ac88ff95213795f122229101806e1accb8c36345544b01ca3664b4",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "阿",
+      "catalogStrokes": 8,
+      "author": "research-b.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 8,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=38463",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "archiveMember": "6063png/阿.png",
+        "xmlSha256": "2925da50831c78aeeab321ab14f3d13d5a5f1b8be236b05c72f848ac546ab77e",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "笛",
+      "catalogStrokes": 11,
+      "author": "research-b.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 11,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31515",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "archiveMember": "6063png/笛.png",
+        "xmlSha256": "89b3378bee7d925b5c4c4cfbd0a6df1862e50e590780c93ef1a1a133a92d947c",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "蹟",
+      "catalogStrokes": 18,
+      "author": "research-b.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 18,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=36447",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "archiveMember": "6063png/蹟.png",
+        "xmlSha256": "b3e217526856311e2c88b718642bd33a09432a575552f555edf7a677e6c0370b",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "稚",
+      "catalogStrokes": 13,
+      "author": "research-b.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 13,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31258",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "archiveMember": "6063png/稚.png",
+        "xmlSha256": "5b2836a30f9ecf57037a022b9ebf089ab53751631e7989e9d5efa4ff82fdc480",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "兔",
+      "catalogStrokes": 8,
+      "author": "research-c.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 8,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=20820",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/words/5154.png",
+        "xmlSha256": "352ac56b2faf6832ab1340682c28b1a8c0d470f9a05c49889bcfe99bb7cf0c02",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "楓",
+      "catalogStrokes": 13,
+      "author": "research-c.json",
+      "domestic": {
+        "evidenceGrade": "not-secured-in-investigated-routes"
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 13,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=26963",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/words/6953.png",
+        "xmlSha256": "0e108ad728b6940fd57fe533aba08c763b766e5ceb1ab7a506f379ef92c09162",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    },
+    {
+      "glyph": "戲",
+      "catalogStrokes": 17,
+      "author": "research-c.json",
+      "domestic": {
+        "evidenceGrade": "Korean-publisher-video-candidate-pending-full-stroke-review",
+        "rawSourceGlyph": "戱",
+        "renderedGlyph": "戲",
+        "manifestRow": "1799",
+        "videoUrl": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1799.mp4",
+        "videoSha256": "1f52bb20f69100fc10ec1519e8ec458c88399ba863bae8900c957bba3c16731f",
+        "fullStrokeAndGeometryApproval": false
+      },
+      "foreign": {
+        "evidenceGrade": "Taiwan-MOE-exact-whole-order-source",
+        "strokeCount": 17,
+        "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=25138",
+        "diagramUrl": "https://stroke-order.learningweb.moe.edu.tw/words/6232.png",
+        "xmlSha256": "94a709a5a26423214f5c46273cb8217134aa4707793f702b9ecaa5717a7f3c5e",
+        "authorClaimsWholeDiagramViewed": true
+      },
+      "newPlaybackApproval": false
+    }
+  ],
+  "importantIdentityChecks": [
+    {
+      "glyph": "涼",
+      "rawSourceGlyph": "凉",
+      "manifestRow": "0402",
+      "result": "두 표기를 구분하여 보존. 영상의 氵 세 획을 확인했다는 기존 관찰과 연결되며 일반적인 variant 동등성 규칙을 만들지 않음."
+    },
+    {
+      "glyph": "戲",
+      "rawSourceGlyph": "戱",
+      "manifestRow": "1799",
+      "result": "두 표기를 구분하여 보존. 영상의 虍+豆+戈 자형이라는 기존 관찰과 연결되며 source label은 그대로 유지."
+    },
+    {
+      "glyph": "蹟",
+      "excludedSourceGlyph": "跡",
+      "manifestRow": "1280",
+      "result": "원문 자형이 足+亦라는 root 관찰과 일치하여 한국 source 후보에서 제외. 해외 exact 蹟은18획으로 B문서와 matrix 모두 일치."
+    }
+  ],
+  "runtimeBaseline": {
+    "scopeFile": "scope.json",
+    "runtimeCharacters": 1470,
+    "publisherCharacters": 967,
+    "grade3IIApplied": 480,
+    "files": [
+      {
+        "file": "scripts/hanja-stroke-textbook-review.json",
+        "baselineSha256": "be7bd2d1914349036536e03a31ec0c7c31e85e6b66055c94c68253eb86ac7a6f",
+        "currentSha256": "be7bd2d1914349036536e03a31ec0c7c31e85e6b66055c94c68253eb86ac7a6f",
+        "unchanged": true
+      },
+      {
+        "file": "scripts/hanja-stroke-textbook-corrections.json",
+        "baselineSha256": "2555c9154ae84dfc01428a4fa1ec06065337a55d6ac4c01ef75560a13b6c69bc",
+        "currentSha256": "2555c9154ae84dfc01428a4fa1ec06065337a55d6ac4c01ef75560a13b6c69bc",
+        "unchanged": true
+      },
+      {
+        "file": "public/hanja-strokes/textbook-reviewed.json",
+        "baselineSha256": "539fc3ef00671c213f5e50672cab7e2b36416059ac0c74eb241f1f97d3fc18dd",
+        "currentSha256": "539fc3ef00671c213f5e50672cab7e2b36416059ac0c74eb241f1f97d3fc18dd",
+        "unchanged": true
+      }
+    ]
+  },
+  "writeScope": {
+    "newAuditFile": "docs/hanja-g3ii-alternative-sources-2026-09-13/cross-source-audit.json",
+    "auditModifiedSharedData": false,
+    "auditModifiedPriorDocuments": false,
+    "auditUsedGit": false,
+    "verificationLimit": "공유3의 현재 바이트 해시는 scope 기준과 직접 비교했다. 저장소 전체 변경을 Git으로 감사한 것은 아니며 전체 커밋 범위 검사는 root 담당이다."
+  },
+  "errors": []
+}

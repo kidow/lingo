@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "reviewer": "B",
+  "scope": [
+    "阿",
+    "笛",
+    "蹟",
+    "稚"
+  ],
+  "scopeCharacters": 4,
+  "scopeCatalogStrokes": 50,
+  "result": {
+    "koreanExactWholeOrderSourcesVerified": 0,
+    "foreignOfficialExactWholeOrderDiagramsViewed": 4,
+    "foreignOfficialStrokes": 50,
+    "runtimeApprovals": 0,
+    "conclusion": "담당4자 한국 공식 전획 자료는 이번 공개 접근 조사에서 미확보. 대만 교육부 exact 원문 도해4자는 실제 전부 열람했으나 한국 필순 승인으로 전환하지 않는다."
+  },
+  "method": {
+    "priority": [
+      "한국 시험기관",
+      "한국 공공교육기관",
+      "한국 교과서출판사",
+      "해외 공식 자료를 별도 표시"
+    ],
+    "evidenceBoundary": "검색 snippet, 뜻풀이, 배정한자 목록, 책 목차의 필순 표기만으로 exact 전획 확보를 판정하지 않는다. 검색 결과 없음은 전 세계 자료 부재를 뜻하지 않는다.",
+    "network": "읽기 전용 HTTP와 공식 공개 화면만 접근. 인증 우회·구매·문의 발송 없음.",
+    "storage": "원본 CSV, ZIP, HTML, PNG는 RAM에서만 취급. 문서에 원문 전체나 매체를 복제하지 않음.",
+    "visualScope": "B는 공식 ZIP의 阿·笛·蹟·稚 누적 필순 PNG 4개를 원본 그대로 모두 시각 열람했다. 蹟 공식 Chrome 플레이어의 최종 자형도 확인했다. 4개 동적 애니메이션의 전체 시간축을 시청했다고 주장하지 않음."
+  },
+  "priorResearchRead": [
+    "docs/hanja-stroke-deep-research-2026-09-08/korean-evidence.md",
+    "docs/hanja-stroke-deep-research-2026-09-08/report-source.md",
+    "docs/hanja-stroke-additional-sources/sources.json"
+  ],
+  "koreanLeads": [
+    {
+      "id": "eomunhoe-study",
+      "publisher": "사단법인 한국어문회",
+      "title": "시험 학습정보",
+      "url": "https://www.hanja.re.kr/kccpt/exam/studyInfo.do",
+      "publicationDate": null,
+      "access": {
+        "date": "2026-09-13",
+        "http": 200,
+        "detail": "web 도구 502 후 표준 TLS HTTP 읽기는 200. 공식 페이지에서 skymiru.co.kr 링크 확인."
+      },
+      "wholeOrderVerified": false,
+      "limitation": "공식 학습정보 연결 경로이다. 이 페이지 자체에서 담당4자의 전획 도해를 확보하지 못함."
+    },
+    {
+      "id": "eomunhoe-grade3ii-book",
+      "publisher": "한국어문교육연구회; 판매 페이지 푸른하늘미루",
+      "title": "한자능력검정시험 3급Ⅱ",
+      "author": "남기탁",
+      "url": "https://skymiru.co.kr/product/%ED%95%9C%EC%9E%90%EB%8A%A5%EB%A0%A5%EA%B2%80%EC%A0%95%EC%8B%9C%ED%97%98-3%EA%B8%89/43/",
+      "publicationDate": "2023-08",
+      "pages": 624,
+      "access": {
+        "date": "2026-09-13",
+        "http": 200
+      },
+      "wholeOrderVerified": false,
+      "exactTargetGlyphPagesViewed": 0,
+      "detail": "현재 상품 본문은 한국어문회 직접 발간 교재라고 설명하며 목차에 필순·3급Ⅱ 배정한자·본문학습을 열거함.",
+      "limitation": "목차는 담당4자의 전획 도해 존재·페이지·순서를 입증하지 않는다. 실제 책 해당 면과 판권·정오표 확인이 필요."
+    },
+    {
+      "id": "cmass-stroke-zip",
+      "publisher": "씨마스",
+      "title": "2022 개정 언어생활과 한자(김성중 외)",
+      "url": "https://viewer.cmass.kr/html/textbook/view_h_35.shtml",
+      "materialUrl": "https://teachingsaem.cmass.kr/textbook-material/detail/552",
+      "publicationDate": null,
+      "edition": "2022 개정 교육과정",
+      "access": {
+        "date": "2026-09-13",
+        "http": 200,
+        "detail": "공식 소개에 필순 ZIP 표시. 현재 자료실 HTML에서 로그인 및 교사인증 전용 접근 안내를 확인. 인증이 필요한 파일 진입은 하지 않음."
+      },
+      "wholeOrderVerified": false,
+      "limitation": "ZIP의 exact4 포함 여부·전체 획순·매체 URL은 확인하지 못함."
+    },
+    {
+      "id": "cmass-public-preview",
+      "publisher": "씨마스",
+      "title": "언어생활과 한자 교과서 및 교사용지도서 공개 미리보기",
+      "url": "https://viewer.cmass.kr/html/ebook/25exh/high/liberalarts/H22_ChineseCharacter/H22_ChineseCharacter_text/H22_ChineseCharacter_text.html",
+      "teacherGuideUrl": "https://viewer.cmass.kr/html/ebook/25exh/high/liberalarts/H22_ChineseCharacter/H22_ChineseCharacter_TG/H22_ChineseCharacter_TG.html",
+      "publicationDate": null,
+      "access": {
+        "date": "2026-09-13",
+        "http": 200
+      },
+      "wholeOrderVerified": false,
+      "detail": "공식 공개 교과서 검색 데이터 212항목 검사: 阿는 200/202 index의 阿鼻叫喚·阿斯達, 稚는205 index의 稚拙 어휘 예시. 笛·蹟 hit 없음. 공개 지도서 검색 데이터에서4자 hit 없음.",
+      "limitation": "텍스트 색인 검색은 모든 이미지의 부재 증명이 아니다. 어휘 예시는 전획 자료가 아니므로 확보판정에서 제외."
+    },
+    {
+      "id": "miraen-old-guide",
+      "publisher": "미래엔",
+      "title": "중학교 한문 교사용지도서 PDF",
+      "url": "https://textbook-miraen.cdn.x-cdn.com/textbook/newbook/mid/chinese/%EC%A4%91%29%ED%95%9C%EB%AC%B8_%EA%B5%90%EC%82%AC%EC%9A%A9%EC%A7%80%EB%8F%84%EC%84%9C.pdf",
+      "publicationDate": null,
+      "access": {
+        "date": "2026-09-13",
+        "http": null,
+        "detail": "검색 인덱스에 존재. web fetch cache miss, 표준 TLS 직접 요청은 인증서 호스트명 불일치로 실패. TLS 검증을 해제하지 않음."
+      },
+      "wholeOrderVerified": false,
+      "limitation": "PDF 내용을 열람하지 못했으므로 exact4 자형·전획 순서 모두 미확인."
+    }
+  ],
+  "searchCoverage": [
+    {
+      "queries": [
+        "각 exact字 + 필순",
+        "언덕 아 / 피리 적 / 자취 적 / 어릴 치 + 필순",
+        "각 exact字 + 한문 + 필순"
+      ],
+      "domains": [
+        "hanja.re.kr",
+        "hanja.or.kr",
+        "hanja.ne.kr",
+        "visang.com",
+        "vivasam.com",
+        "mirae-n.com",
+        "chunjae.co.kr",
+        "cmass.kr",
+        "douclass.com"
+      ],
+      "finding": "담당4 exact 전획 자료를 확인할 수 있는 새 공개 한국 공식 결과 미확보. 필터 검색의 빈 결과를 전체 자료 부재로 일반화하지 않음."
+    },
+    {
+      "queries": [
+        "피리 적 / 자취 적 / 어릴 치 + 한자 쓰기"
+      ],
+      "domains": [
+        "go.kr",
+        "edunet.net",
+        "ebs.co.kr",
+        "chunjae.co.kr",
+        "mirae-n.com"
+      ],
+      "finding": "사전·문화 설명·어휘 자료는 찾았으나 exact 전획 자료 미확보. EBS robots 제한은 내용 부재 판정으로 사용하지 않음."
+    },
+    {
+      "queries": [
+        "한자능력검정시험 3급Ⅱ 필순 한국어문교육연구회"
+      ],
+      "finding": "공식 연결 판매처의 2023-08 3급Ⅱ 교재 정보를 현재 HTTP로 확인. 실제 대상 면은 미열람."
+    }
+  ],
+  "exclusions": [
+    {
+      "glyph": "蹟",
+      "rejectedGlyph": "跡",
+      "reason": "별도 코드포인트 및 구성. 蹟(U+8E5F, 足+責,18) 대신 跡(U+8DE1, 足+亦,13)을 사용하지 않는다.",
+      "evidence": "대만 exact 蹟 원문 PNG/XML과 최종 플레이어 자형을 B가 확인. 기존 한국 manifest의 跡 row1280은 root 담당 검증이며 본 문서의 B 직접 영상 검토로 계수하지 않음."
+    },
+    {
+      "source": "상업 필순 사이트·사전·검색 미리보기",
+      "reason": "한국 시험기관/공공교육/교과서출판사 exact 전획 근거를 확인하지 못한 결과는 승인 근거에서 제외."
+    }
+  ],
+  "foreignSource": {
+    "id": "taiwan-moe-2025",
+    "publisher": "中華民國教育部 / Ministry of Education, R.O.C. (Taiwan)",
+    "title": "教育部《國字標準字體筆順學習網》2025",
+    "publicationDate": null,
+    "siteEdition": "2025",
+    "jurisdiction": "Taiwan",
+    "resourceUrl": "https://stroke-order.learningweb.moe.edu.tw/resource.jsp?ID=1",
+    "csv": {
+      "url": "https://stroke-order.learningweb.moe.edu.tw/file/files/%E5%85%A8%E7%AD%86%E9%A0%86%E5%8B%95%E7%95%AB%E5%B5%8C%E5%85%A5%E7%A2%BC%E7%B6%B2%E5%9D%80%E5%88%97%E8%A1%A8.csv",
+      "http": 200,
+      "bytes": 975092,
+      "sha256": "44036a65a3a95b6dec5a538ce1cd58098370cd0e309ca5e12a72f0ceaf32e986",
+      "exactSelectedRows": [
+        {
+          "sequence": 799,
+          "unicodeDecimal": 20820,
+          "glyph": "兔",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=20820"
+        },
+        {
+          "sequence": 1178,
+          "unicodeDecimal": 38463,
+          "glyph": "阿",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=38463"
+        },
+        {
+          "sequence": 1967,
+          "unicodeDecimal": 32011,
+          "glyph": "紋",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=32011"
+        },
+        {
+          "sequence": 2397,
+          "unicodeDecimal": 28092,
+          "glyph": "涼",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=28092"
+        },
+        {
+          "sequence": 2494,
+          "unicodeDecimal": 31515,
+          "glyph": "笛",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31515"
+        },
+        {
+          "sequence": 2592,
+          "unicodeDecimal": 35363,
+          "glyph": "訣",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=35363"
+        },
+        {
+          "sequence": 2854,
+          "unicodeDecimal": 26862,
+          "glyph": "森",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=26862"
+        },
+        {
+          "sequence": 3341,
+          "unicodeDecimal": 26963,
+          "glyph": "楓",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=26963"
+        },
+        {
+          "sequence": 3473,
+          "unicodeDecimal": 31258,
+          "glyph": "稚",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31258"
+        },
+        {
+          "sequence": 4973,
+          "unicodeDecimal": 25138,
+          "glyph": "戲",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=25138"
+        },
+        {
+          "sequence": 5374,
+          "unicodeDecimal": 36447,
+          "glyph": "蹟",
+          "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=36447"
+        }
+      ],
+      "coverage": "전11자 exact glyph와 decimal codepoint가 일치하는 행 확인. 타 담당7자의 전체 도해 B시각검토를 뜻하지 않음."
+    },
+    "pngZip": {
+      "url": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+      "http": 200,
+      "bytes": 16144520,
+      "sha256": "71ab4ab4f48c8503095819a88f0032b8408b1705afe89902196cc0be8d3fbfc3",
+      "archiveEntries": 6064,
+      "lastModifiedHTTP": "2026-04-14T08:54:32Z",
+      "dateQualification": "HTTP Last-Modified이며 개별 도해 제작·발행일을 뜻하지 않음.",
+      "filenameEncoding": "zipfile cp437 표시를 Big5로 복원하여 exact 파일명 매칭; 다른 Unicode 파일명은 유지."
+    },
+    "licenseNotice": {
+      "url": "https://stroke-order.learningweb.moe.edu.tw/page.jsp?ID=52",
+      "accessed": "2026-09-13",
+      "observed": "공식 설명은 애니메이션·전체 필순 도해에 CC BY-NC-ND 3.0 TW를 표시하고 기타 사용은 별도 신청을 안내한다. 이 연구는 앱 내 복제·변형 허가를 얻었다고 주장하지 않는다."
+    },
+    "limitation": "해외 공식 전획 증거 및 자형·획수 비교 자료. 한국 기준 필순·접점·방향 승인이나 배포 허가로 자동 변환하지 않음."
+  },
+  "entries": [
+    {
+      "glyph": "阿",
+      "catalogStrokes": 8,
+      "koreanEvidenceStatus": "not-secured-in-this-public-search",
+      "foreignEvidenceStatus": "official-exact-complete-diagram-visually-inspected",
+      "sourceFrame": {
+        "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=38463",
+        "http": 200,
+        "htmlBytes": 22982,
+        "htmlSha256": "495f2381a1f672676c65b6b719fcfe3164eee06190cdda5b6aed9e81cc45c69b",
+        "xmlSha256": "2925da50831c78aeeab321ab14f3d13d5a5f1b8be236b05c72f848ac546ab77e",
+        "xmlUnicode": "阿",
+        "xmlStrokeCount": 8,
+        "allStrokesHaveOutline": true,
+        "allStrokesHaveTrack": true
+      },
+      "wholeDiagram": {
+        "zipEntry": "6063png/阿.png",
+        "bytes": 2027,
+        "sha256": "acdbd09421567d72603ffedaba76f511d43f3d2b8a35b8ba5646b3deb57ef79a",
+        "allCumulativeStagesVisuallyInspected": true,
+        "observedStrokeCount": 8
+      },
+      "shapeFinding": "阝+可의 exact 阿 자형과8누적 도해 확인. 한국 阜 경계·방향과의 최종 대조는 미수행.",
+      "runtimeApproval": false
+    },
+    {
+      "glyph": "笛",
+      "catalogStrokes": 11,
+      "koreanEvidenceStatus": "not-secured-in-this-public-search",
+      "foreignEvidenceStatus": "official-exact-complete-diagram-visually-inspected",
+      "sourceFrame": {
+        "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31515",
+        "http": 200,
+        "htmlBytes": 25068,
+        "htmlSha256": "bea65ddc32abd844eb5f0a69625fc9c854f6eba9212c4d2b8cdb0fe7e51b42ee",
+        "xmlSha256": "89b3378bee7d925b5c4c4cfbd0a6df1862e50e590780c93ef1a1a133a92d947c",
+        "xmlUnicode": "笛",
+        "xmlStrokeCount": 11,
+        "allStrokesHaveOutline": true,
+        "allStrokesHaveTrack": true
+      },
+      "wholeDiagram": {
+        "zipEntry": "6063png/笛.png",
+        "bytes": 2347,
+        "sha256": "f4ad833bca7c295b1fcaddb29a571c071f099605fae9a6d51d45413b3bb46c4c",
+        "allCumulativeStagesVisuallyInspected": true,
+        "observedStrokeCount": 11
+      },
+      "shapeFinding": "竹+由의 exact 笛 자형과11누적 도해 확인. 한국 竹 첫6획의 방향·접점까지 승인한 것은 아님.",
+      "runtimeApproval": false
+    },
+    {
+      "glyph": "蹟",
+      "catalogStrokes": 18,
+      "koreanEvidenceStatus": "not-secured-in-this-public-search",
+      "foreignEvidenceStatus": "official-exact-complete-diagram-visually-inspected",
+      "sourceFrame": {
+        "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=36447",
+        "http": 200,
+        "htmlBytes": 39578,
+        "htmlSha256": "fc5f021b8f7f8a578ef284f452fffe6c0fa94b70108c268a44614a8a8cbd96b4",
+        "xmlSha256": "b3e217526856311e2c88b718642bd33a09432a575552f555edf7a677e6c0370b",
+        "xmlUnicode": "蹟",
+        "xmlStrokeCount": 18,
+        "allStrokesHaveOutline": true,
+        "allStrokesHaveTrack": true
+      },
+      "wholeDiagram": {
+        "zipEntry": "6063png/蹟.png",
+        "bytes": 4899,
+        "sha256": "5b2f3828af3c4d3a91fd77618b1a07068ba4ea1bdb47a1162a516a2e95206c33",
+        "allCumulativeStagesVisuallyInspected": true,
+        "observedStrokeCount": 18
+      },
+      "shapeFinding": "足+責의 蹟이다.18획이며17획 아님. 원본 좁은 PNG의 마지막17·18누적은 옆열 상단에 이어진다. Chrome 공식 플레이어 최종 자형도 확인.",
+      "runtimeApproval": false
+    },
+    {
+      "glyph": "稚",
+      "catalogStrokes": 13,
+      "koreanEvidenceStatus": "not-secured-in-this-public-search",
+      "foreignEvidenceStatus": "official-exact-complete-diagram-visually-inspected",
+      "sourceFrame": {
+        "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31258",
+        "http": 200,
+        "htmlBytes": 29800,
+        "htmlSha256": "1d81686e979f90c279d366e3843c1d29b1b51778aa60d74968e850d9eae1a07b",
+        "xmlSha256": "5b2836a30f9ecf57037a022b9ebf089ab53751631e7989e9d5efa4ff82fdc480",
+        "xmlUnicode": "稚",
+        "xmlStrokeCount": 13,
+        "allStrokesHaveOutline": true,
+        "allStrokesHaveTrack": true
+      },
+      "wholeDiagram": {
+        "zipEntry": "6063png/稚.png",
+        "bytes": 2677,
+        "sha256": "a398dc6b5e36764528e5a73822b634abd21afbf2e68bdbf0bb311de55a754af4",
+        "allCumulativeStagesVisuallyInspected": true,
+        "observedStrokeCount": 13
+      },
+      "shapeFinding": "禾+隹의 exact 稚 자형과13누적 도해 확인. 한국 禾·隹 개별 전획의 방향·접점 최종 대조는 미수행.",
+      "runtimeApproval": false
+    }
+  ],
+  "nextReviewPlan": [
+    {
+      "priority": 1,
+      "action": "공식 연결 2023-08 3급Ⅱ 지침서에서 담당4 exact 본문 면과 판권·정오표를 확보한다. 책 목차의 필순 표기만으로 개별 도해 존재를 추정하지 않는다.",
+      "neededEvidence": "阿8·笛11·蹟18·稚13의 전체 누적/번호 도해 또는 전 과정 영상. 잘린 면·부수 설명만은 제외."
+    },
+    {
+      "priority": 2,
+      "action": "정당한 교사 인증 접근권이 있는 자료 제공자가 씨마스 필순 ZIP의 포함 목록과 exact4 매체를 확인할 수 있다면 그것을 한국 출판사 대안으로 검토한다.",
+      "neededEvidence": "publisher/판본/원문 URL·파일명·해시를 보존한 전체 자료. 연구 단계에서 인증 우회나 문의 발송은 하지 않음."
+    },
+    {
+      "priority": 3,
+      "action": "한국 원문 확보 뒤 대만 도해와 후보 원본을 대조하되 개별 한국 원문 전획의 경계·순서·방향·자형을 먼저 판정한다. 蹟은 跡을 대체로 사용하지 않는다.",
+      "neededEvidence": "한국 자료 미확보인 글자는 그대로 미승인 유지. 후보 선택 후 실제 width5 누적 렌더·접점 및 독립 peer 검토는 별도 작업."
+    }
+  ],
+  "validation": {
+    "selectedChars": 4,
+    "selectedStrokes": 50,
+    "exactCSVRows": 11,
+    "exactForeignSourceDiagramsViewedByB": 4,
+    "newRuntimeApprovals": 0,
+    "sharedFilesModified": false,
+    "priorDocsModified": false
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "status": "passed",
+  "scope": "Source research documents only; no animation approval",
+  "baselineCommit": "4a31a7d5ffa88c5727d7fc83ed5fde26f93dfcfb",
+  "headAtValidation": "4a31a7d5ffa88c5727d7fc83ed5fde26f93dfcfb",
+  "counts": {
+    "characters": 11,
+    "catalogStrokes": 132,
+    "domesticWholeGlyphCandidates": 2,
+    "domesticCandidateCatalogStrokes": 28,
+    "domesticStillUnsecured": 9,
+    "domesticUnsecuredCatalogStrokes": 104,
+    "foreignOfficialCompleteSequences": 11,
+    "foreignSourceStrokes": 132,
+    "newPlaybackApprovals": 0,
+    "runtimeChanges": 0
+  },
+  "checks": {
+    "allJsonParsed": true,
+    "fixed11Characters132Strokes": true,
+    "noDuplicateCharacters": true,
+    "domesticQueueTwo28AndRemainingNine104": true,
+    "domesticQueuePartitionsFixedSelection": true,
+    "foreignExact11Sequences132RecordsWithAllStagesViewed": true,
+    "noKoreanEquivalenceOrReuseOrPlaybackApproval": true,
+    "authorReportHashesMatch": true,
+    "crossSourceAuditPassedAndPinnedFilesMatch": true,
+    "domesticVideoAndRawLabelsPreserved": true,
+    "localMarkdownLinksResolve": true,
+    "runtimeSharedThreeByteHashesUnchanged": true,
+    "sourceFormRegistryUnchanged": true,
+    "noExistingStagedChanges": true
+  },
+  "parsedJsonFiles": 10,
+  "badLocalMarkdownLinks": [],
+  "documentPins": [
+    {
+      "file": "README.md",
+      "sha256": "09f5b67aa164e4557943c56290024ddc4ac201aa743e328ff4459c4651c42797"
+    },
+    {
+      "file": "cross-source-audit.json",
+      "sha256": "902ac91e23faff8fdb51591fd49c0e161c9d973bef3d33fdce91547c1da8614d"
+    },
+    {
+      "file": "domestic-access-audit.json",
+      "sha256": "de5038bd39386dbc6e59d266cd43e60fa5df6f5ca6e69f3fa7e6d5751ef6a4f6"
+    },
+    {
+      "file": "next-review-queue.json",
+      "sha256": "355e9a744a232b75f364b21f810a6868b6b94c381fe6710c66f4d0631bdae3e5"
+    },
+    {
+      "file": "research-a.json",
+      "sha256": "a44f7a6472e1256a42a0d6cecce35b887c8c1abf678aaf91d950594d0bb42763"
+    },
+    {
+      "file": "research-a.md",
+      "sha256": "8a2d610b82d791685690f6af47adfa81fb48eff55f1ca9d7e75416f836bfb139"
+    },
+    {
+      "file": "research-b.json",
+      "sha256": "15b10fde9262cb1fbd81377bd6e9a9f450401b37897f5779d55cd283c92be8f5"
+    },
+    {
+      "file": "research-b.md",
+      "sha256": "6dd0922fd0bae98419472a59aa71bf896f24e5c351211100c9b32b7b7e6715b6"
+    },
+    {
+      "file": "research-c.json",
+      "sha256": "078cfe8648173edd804e491fa61d0f3c7ac3afe77d54f3cba2aba9d38866bda3"
+    },
+    {
+      "file": "research-c.md",
+      "sha256": "9281ac86dd7c7b96505f373d0b3432b86573d4f74f3e50f617189dc49007b062"
+    },
+    {
+      "file": "scope.json",
+      "sha256": "179d3d6ca007d7214f830486812e560fe9765f878233e4caef7421877c24f99d"
+    },
+    {
+      "file": "source-matrix.json",
+      "sha256": "fe0d24768fc21def066c71c04cf893c6ff77257d8b611daa88279ca1b532a407"
+    },
+    {
+      "file": "vivasam-rendered-glyph-audit.json",
+      "sha256": "cbb70a8ccf336a90abdf8a837e532cb12ad939bf749b4f478fcd37d1aa0171f3"
+    }
+  ],
+  "runtimeBaseline": [
+    {
+      "file": "scripts/hanja-stroke-textbook-review.json",
+      "sha256": "be7bd2d1914349036536e03a31ec0c7c31e85e6b66055c94c68253eb86ac7a6f",
+      "currentSha256": "be7bd2d1914349036536e03a31ec0c7c31e85e6b66055c94c68253eb86ac7a6f",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.json",
+      "sha256": "2555c9154ae84dfc01428a4fa1ec06065337a55d6ac4c01ef75560a13b6c69bc",
+      "currentSha256": "2555c9154ae84dfc01428a4fa1ec06065337a55d6ac4c01ef75560a13b6c69bc",
+      "unchanged": true
+    },
+    {
+      "file": "public/hanja-strokes/textbook-reviewed.json",
+      "sha256": "539fc3ef00671c213f5e50672cab7e2b36416059ac0c74eb241f1f97d3fc18dd",
+      "currentSha256": "539fc3ef00671c213f5e50672cab7e2b36416059ac0c74eb241f1f97d3fc18dd",
+      "unchanged": true
+    }
+  ],
+  "independentAudits": [
+    "cross-source-audit.json",
+    "README/source-matrix read-only evidence-claim review by hanja_b9_a"
+  ],
+  "build": {
+    "run": false,
+    "reason": "No app code or runtime data changed; source/count/pin/link/preservation checks executed for this documentation-only change."
+  },
+  "otherSessionChangesObserved": [
+    "M content/action.json",
+    " M content/body.json",
+    " M content/city.json",
+    " M content/clothes.json",
+    " M content/everyday.json",
+    " M content/food.json",
+    " M content/idea.json",
+    " M content/job.json",
+    " M content/nature.json",
+    " M content/quality.json",
+    " M content/school.json",
+    " M content/sport.json",
+    " M lib/audio-have.ts",
+    " M lib/levels-stamp.ts"
+  ],
+  "errors": []
+}

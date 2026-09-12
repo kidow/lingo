@@ -1,0 +1,516 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "owner": "a",
+  "task": "3급II 대체 전체 필순 출처 조사",
+  "completedAt": "2026-09-13T00:11:28+09:00",
+  "scope": {
+    "glyphs": [
+      "訣",
+      "涼",
+      "紋",
+      "森"
+    ],
+    "characters": 4,
+    "catalogStrokes": 44,
+    "catalogPath": "content/hanja/characters/g3-2.json",
+    "catalogSha256": "c37368100858256803d3797bbde4e46f8c03a25663283331e07e49d65e3e53a3"
+  },
+  "policy": "자료 확보 여부를 조사한다. 국내 출처, 해외 공식 자료, 목록·상담만 있는 자료를 구분한다. 검색 결과나 같은 코드포인트만으로 한국 필순 또는 재생을 승인하지 않는다.",
+  "summary": {
+    "domesticWholeGlyphSourcesLocated": [
+      "涼"
+    ],
+    "domesticWholeGlyphSourcesNotLocatedInThisInvestigation": [
+      "訣",
+      "紋",
+      "森"
+    ],
+    "overseasOfficialWholeGlyphSourcesLocated": [
+      "訣",
+      "涼",
+      "紋",
+      "森"
+    ],
+    "playbackApprovals": 0,
+    "runtimeChanges": 0
+  },
+  "priorEvidence": [
+    "docs/hanja-stroke-deep-research-2026-09-08/korean-evidence.md",
+    "docs/hanja-stroke-deep-research-2026-09-08/report-source.md",
+    "docs/hanja-g3ii-batch11-2026-09-12/next-review-queue.json"
+  ],
+  "entries": [
+    {
+      "glyph": "訣",
+      "catalogId": "u8a23",
+      "catalogSourceRow": 274,
+      "expectedStrokes": 11,
+      "hun": "이별할",
+      "eum": "결",
+      "domestic": {
+        "wholeGlyphSourceLocated": false,
+        "status": "not-located-in-investigated-routes",
+        "observation": "이번 국내 조사 경로에서 訣 자체의 전체 필순 영상·도해를 확보하지 못했다.",
+        "source": null,
+        "agencyCounsel": {
+          "publisher": "한국어문회",
+          "title": "한자 상담실 — 제목 검색 訣",
+          "url": "https://www.hanja.re.kr/klea/counsel/hanja.do?search_option=subject&search_text=%E8%A8%A3&pageSize=100",
+          "checkedAt": "2026-09-12T15:02:43.207167+00:00",
+          "httpStatus": 200,
+          "sha256": "3a406d4de84699eeac50eb89c9b3e780118fc2bc349866ab907903c21c3ed1ce",
+          "titleResultCount": 0,
+          "scope": "제목 검색만. 기관 전체 자료의 부재를 의미하지 않는다.",
+          "wholeStrokeEvidence": false,
+          "detailURLs": []
+        }
+      },
+      "overseasOfficial": {
+        "publisher": "교육부(Ministry of Education, Taiwan)",
+        "jurisdiction": "Taiwan",
+        "evidenceTier": "overseas-government-standard",
+        "title": "教育部《國字標準字體筆順學習網》2025",
+        "sourceGlyph": "訣",
+        "renderedGlyph": "訣",
+        "dictFrameURL": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=35363",
+        "checkedAt": "2026-09-12T15:08:52.421755+00:00",
+        "accessStatus": "HTTP-200-inline-sequence-and-live-browser-rendered",
+        "httpStatus": 200,
+        "htmlBytes": 29232,
+        "htmlSha256": "9c45e388dcb7d1a1baa838a52578dc879cd5ea87c83a731e835e63c8cb411002",
+        "xmlSha256": "c98c39057de251a220dc089c4b11487275257fc43df16ccdec44e4cdecd1c29d",
+        "xmlUnicode": "訣",
+        "xmlStrokeCount": 11,
+        "xmlOutlineCount": 11,
+        "xmlTrackCount": 11,
+        "confirmedDiagramStrokeCount": 11,
+        "pngURL": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "pngArchiveMember": "6063png/訣.png",
+        "pngBytes": 2192,
+        "pngSha256": "c4586e61bb6c29fd9cae212dba82bd92a7dd424ba8ada2af468f5cc79117a2f6",
+        "pngDimensions": [
+          50,
+          725
+        ],
+        "pngCheckedAt": "2026-09-12T15:10:23.295580+00:00",
+        "wholeStrokeSequenceAvailable": true,
+        "visualReview": {
+          "browserAnimationOpened": true,
+          "browserFinalGlyphActuallyViewed": true,
+          "originalPNGAllCumulativeStagesActuallyViewed": true,
+          "allAnimationFramesReviewed": false,
+          "koreanStrokeOrderEquivalenceReviewed": false,
+          "observation": "訣 원문 PNG의 11개 누적 단계를 모두 열람했다. 言을 마친 뒤 오른쪽으로 진행하는 전체 도해를 확보했다. 한국 필순과의 일치는 승인하지 않았다."
+        },
+        "reuseNoticeObserved": "애니메이션 페이지에 CC BY-NC-ND 3.0 Taiwan 표시. 이 조사는 재사용 적합성 판단이나 데이터 반영을 하지 않는다."
+      },
+      "decision": "overseas-official-comparison-candidate-no-approval"
+    },
+    {
+      "glyph": "涼",
+      "catalogId": "u6dbc",
+      "catalogSourceRow": 1313,
+      "expectedStrokes": 11,
+      "hun": "서늘할",
+      "eum": "량",
+      "domestic": {
+        "wholeGlyphSourceLocated": true,
+        "status": "located-pending-complete-stroke-review",
+        "observation": "비상교육 0402의 목록 글자는 凉이나 영상은 氵 세 획을 그리는 涼이다. 전체 영상 개관과 확대 완성 자형을 독립 확인했다.",
+        "source": {
+          "publisher": "비상교육",
+          "evidenceTier": "Korean-textbook-publisher",
+          "sourceTitle": "고등 한문 — 한문 교육용 기초 한자",
+          "manifestRow": "0402",
+          "sourceGlyph": "凉",
+          "renderedGlyph": "涼",
+          "sourceLabelMatchesTarget": false,
+          "targetGlyphVisuallyObserved": true,
+          "metadataEvidence": "docs/hanja-g3ii-alternative-sources-2026-09-13/vivasam-rendered-glyph-audit.json",
+          "checkedAt": "2026-09-13T00:05:54+09:00",
+          "video": {
+            "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0402.mp4",
+            "sha256": "98245b38aedcc703f699727db50e29aedbbbfc96012f93e8cd628b9414b59a1d",
+            "bytes": 363041
+          },
+          "durationSeconds": 10.981,
+          "accessStatus": "complete-MP4-fetched-to-RAM-and-decoded",
+          "independentVisualReview": {
+            "overviewFps": 2,
+            "overviewFrameCount": 22,
+            "overviewSampleTimes": [
+              0,
+              0.5,
+              1,
+              1.5,
+              2,
+              2.5,
+              3,
+              3.5,
+              4,
+              4.5,
+              5,
+              5.5,
+              6,
+              6.5,
+              7,
+              7.5,
+              8,
+              8.5,
+              9,
+              9.5,
+              10,
+              10.5
+            ],
+            "overviewWidth": 150,
+            "allOverviewFramesActuallyViewed": true,
+            "finalFps": 10,
+            "finalSampleTime": 10.8,
+            "finalWidth": 520,
+            "finalActuallyViewed": true,
+            "observation": "위 점·중간 점·아래 올림획으로 된 氵를 확인했다. 凉의 冫으로 보이지 않는다.",
+            "completeStrokeBoundaryReview": false,
+            "geometryReviewed": false
+          },
+          "nextAction": "목록 표기 凉를 보존하고 renderedGlyph 涼의 명시적 근거를 별도로 연결한 뒤, 11획 전체 완료 표본·경계·방향·경로·독립 peer를 검토한다."
+        },
+        "agencyCounsel": {
+          "publisher": "한국어문회",
+          "title": "한자 상담실 — 제목 검색 涼",
+          "url": "https://www.hanja.re.kr/klea/counsel/hanja.do?search_option=subject&search_text=%E6%B6%BC&pageSize=100",
+          "checkedAt": "2026-09-12T15:02:43.207167+00:00",
+          "httpStatus": 200,
+          "sha256": "d58b76a7239b0f5ee68e7580353cb0ef763fc263a6f30a052b04fe2c47ba62ac",
+          "titleResultCount": 0,
+          "scope": "제목 검색만. 기관 전체 자료의 부재를 의미하지 않는다.",
+          "wholeStrokeEvidence": false,
+          "detailURLs": []
+        }
+      },
+      "overseasOfficial": {
+        "publisher": "교육부(Ministry of Education, Taiwan)",
+        "jurisdiction": "Taiwan",
+        "evidenceTier": "overseas-government-standard",
+        "title": "教育部《國字標準字體筆順學習網》2025",
+        "sourceGlyph": "涼",
+        "renderedGlyph": "涼",
+        "dictFrameURL": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=28092",
+        "checkedAt": "2026-09-12T15:08:52.421755+00:00",
+        "accessStatus": "HTTP-200-inline-sequence-and-live-browser-rendered",
+        "httpStatus": 200,
+        "htmlBytes": 27317,
+        "htmlSha256": "ab2c9fec98d8cae3f0b9dd80775de2e56b7ceeb5c8aacf81a39e004e625003d6",
+        "xmlSha256": "e7cdd3f30f7cdf2639680a3476cce522e49f19cec3397a9670f4256aa401d612",
+        "xmlUnicode": "涼",
+        "xmlStrokeCount": 11,
+        "xmlOutlineCount": 11,
+        "xmlTrackCount": 11,
+        "confirmedDiagramStrokeCount": 11,
+        "pngURL": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "pngArchiveMember": "6063png/涼.png",
+        "pngBytes": 2178,
+        "pngSha256": "61dbf1591299828daab30e981769fe946d4da1acffcb5779d4c091b39e07293b",
+        "pngDimensions": [
+          50,
+          725
+        ],
+        "pngCheckedAt": "2026-09-12T15:10:23.295580+00:00",
+        "wholeStrokeSequenceAvailable": true,
+        "visualReview": {
+          "browserAnimationOpened": true,
+          "browserFinalGlyphActuallyViewed": true,
+          "originalPNGAllCumulativeStagesActuallyViewed": true,
+          "allAnimationFramesReviewed": false,
+          "koreanStrokeOrderEquivalenceReviewed": false,
+          "observation": "涼 원문 PNG의 11개 누적 단계를 모두 열람했다. 氵가 세 획으로 표시된다. 한국 자료와의 모든 획 비교는 미완료다."
+        },
+        "reuseNoticeObserved": "애니메이션 페이지에 CC BY-NC-ND 3.0 Taiwan 표시. 이 조사는 재사용 적합성 판단이나 데이터 반영을 하지 않는다."
+      },
+      "decision": "Korean-whole-source-candidate-prioritized-no-approval"
+    },
+    {
+      "glyph": "紋",
+      "catalogId": "u7d0b",
+      "catalogSourceRow": 1817,
+      "expectedStrokes": 10,
+      "hun": "무늬",
+      "eum": "문",
+      "domestic": {
+        "wholeGlyphSourceLocated": false,
+        "status": "not-located-in-investigated-routes",
+        "observation": "한국어문회 紋 상담 두 건은 표기·급수 답변이며 전체 필순 도해가 아니다. 이번 국내 조사 경로에서 전체 필순을 확보하지 못했다.",
+        "source": null,
+        "agencyCounsel": {
+          "publisher": "한국어문회",
+          "title": "한자 상담실 — 제목 검색 紋",
+          "url": "https://www.hanja.re.kr/klea/counsel/hanja.do?search_option=subject&search_text=%E7%B4%8B&pageSize=100",
+          "checkedAt": "2026-09-12T15:02:43.207167+00:00",
+          "httpStatus": 200,
+          "sha256": "f61f155f3f710f8bfa1d48777aff4d32574945b665e91c09371eb5d5c68d6761",
+          "titleResultCount": 2,
+          "scope": "제목 검색만. 기관 전체 자료의 부재를 의미하지 않는다.",
+          "wholeStrokeEvidence": false,
+          "detailURLs": [
+            "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=6474",
+            "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=294"
+          ]
+        }
+      },
+      "overseasOfficial": {
+        "publisher": "교육부(Ministry of Education, Taiwan)",
+        "jurisdiction": "Taiwan",
+        "evidenceTier": "overseas-government-standard",
+        "title": "教育部《國字標準字體筆順學習網》2025",
+        "sourceGlyph": "紋",
+        "renderedGlyph": "紋",
+        "dictFrameURL": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=32011",
+        "checkedAt": "2026-09-12T15:08:52.421755+00:00",
+        "accessStatus": "HTTP-200-inline-sequence-and-live-browser-rendered",
+        "httpStatus": 200,
+        "htmlBytes": 27080,
+        "htmlSha256": "e76a9198c6b602dc6533b22662a1cbf73dccd6903a8074afe370d0a9e620f0dd",
+        "xmlSha256": "004c83911987fc4c1282abdf4d6deb1b1c7927fccaee7e867bdc6a38c644a0e2",
+        "xmlUnicode": "紋",
+        "xmlStrokeCount": 10,
+        "xmlOutlineCount": 10,
+        "xmlTrackCount": 10,
+        "confirmedDiagramStrokeCount": 10,
+        "pngURL": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "pngArchiveMember": "6063png/紋.png",
+        "pngBytes": 2276,
+        "pngSha256": "371d4cc8ef6fa1a973052512649c2ecf4dd47fec91a32f7e345247d52a9a7292",
+        "pngDimensions": [
+          50,
+          725
+        ],
+        "pngCheckedAt": "2026-09-12T15:10:23.295580+00:00",
+        "wholeStrokeSequenceAvailable": true,
+        "visualReview": {
+          "browserAnimationOpened": true,
+          "browserFinalGlyphActuallyViewed": true,
+          "originalPNGAllCumulativeStagesActuallyViewed": true,
+          "allAnimationFramesReviewed": false,
+          "koreanStrokeOrderEquivalenceReviewed": false,
+          "observation": "紋 원문 PNG의 10개 누적 단계를 모두 열람했다. 糸 아래가 세 점으로 그려진 대만 자형이다. 한국용 자형·순서와 비교가 필요하다."
+        },
+        "reuseNoticeObserved": "애니메이션 페이지에 CC BY-NC-ND 3.0 Taiwan 표시. 이 조사는 재사용 적합성 판단이나 데이터 반영을 하지 않는다."
+      },
+      "decision": "overseas-official-comparison-candidate-no-approval"
+    },
+    {
+      "glyph": "森",
+      "catalogId": "u68ee",
+      "catalogSourceRow": 2442,
+      "expectedStrokes": 12,
+      "hun": "수풀",
+      "eum": "삼",
+      "domestic": {
+        "wholeGlyphSourceLocated": false,
+        "status": "not-located-in-investigated-routes",
+        "observation": "EBS의 森 표시는 훈음 채점 안내다. 이번 국내 조사 경로에서 森 자체의 전체 필순을 확보하지 못했다.",
+        "source": null,
+        "agencyCounsel": {
+          "publisher": "한국어문회",
+          "title": "한자 상담실 — 제목 검색 森",
+          "url": "https://www.hanja.re.kr/klea/counsel/hanja.do?search_option=subject&search_text=%E6%A3%AE&pageSize=100",
+          "checkedAt": "2026-09-12T15:02:43.207167+00:00",
+          "httpStatus": 200,
+          "sha256": "260d4e00e38c189b91879f4845591fb2e2f46d9525ef54a82aafd563792977c4",
+          "titleResultCount": 0,
+          "scope": "제목 검색만. 기관 전체 자료의 부재를 의미하지 않는다.",
+          "wholeStrokeEvidence": false,
+          "detailURLs": []
+        }
+      },
+      "overseasOfficial": {
+        "publisher": "교육부(Ministry of Education, Taiwan)",
+        "jurisdiction": "Taiwan",
+        "evidenceTier": "overseas-government-standard",
+        "title": "教育部《國字標準字體筆順學習網》2025",
+        "sourceGlyph": "森",
+        "renderedGlyph": "森",
+        "dictFrameURL": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=26862",
+        "checkedAt": "2026-09-12T15:08:52.421755+00:00",
+        "accessStatus": "HTTP-200-inline-sequence-and-live-browser-rendered",
+        "httpStatus": 200,
+        "htmlBytes": 29748,
+        "htmlSha256": "a0304846e46a4e1e440e0839c9a437bb60d9e9777c6bffc7b6020608f5585567",
+        "xmlSha256": "8a36123b99ac88ff95213795f122229101806e1accb8c36345544b01ca3664b4",
+        "xmlUnicode": "森",
+        "xmlStrokeCount": 12,
+        "xmlOutlineCount": 12,
+        "xmlTrackCount": 12,
+        "confirmedDiagramStrokeCount": 12,
+        "pngURL": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+        "pngArchiveMember": "6063png/森.png",
+        "pngBytes": 2439,
+        "pngSha256": "61b1f4b1a0d2a6dc73906aa94b4152f1c35884b6bcbadfc01590257046612a10",
+        "pngDimensions": [
+          50,
+          725
+        ],
+        "pngCheckedAt": "2026-09-12T15:10:23.295580+00:00",
+        "wholeStrokeSequenceAvailable": true,
+        "visualReview": {
+          "browserAnimationOpened": true,
+          "browserFinalGlyphActuallyViewed": true,
+          "originalPNGAllCumulativeStagesActuallyViewed": true,
+          "allAnimationFramesReviewed": false,
+          "koreanStrokeOrderEquivalenceReviewed": false,
+          "observation": "森 원문 PNG의 12개 누적 단계를 모두 열람했다. 위 木, 왼쪽 아래, 오른쪽 아래 순으로 진행한다. 한국 필순과의 일치는 승인하지 않았다."
+        },
+        "reuseNoticeObserved": "애니메이션 페이지에 CC BY-NC-ND 3.0 Taiwan 표시. 이 조사는 재사용 적합성 판단이나 데이터 반영을 하지 않는다."
+      },
+      "decision": "overseas-official-comparison-candidate-no-approval"
+    }
+  ],
+  "domesticRoutes": [
+    {
+      "publisher": "한국어문회",
+      "title": "한자 상담실 — 필순 제목 검색",
+      "url": "https://www.hanja.re.kr/klea/counsel/hanja.do?search_option=subject&search_text=%ED%95%84%EC%88%9C&pageSize=100",
+      "checkedAt": "2026-09-12T15:02:43.207167+00:00",
+      "httpStatus": 200,
+      "titleResultCount": 88,
+      "sha256": "f220f736c605409eb4205e84e04af969572abc6921664dc1433a4c3715c737a5",
+      "result": "필순 제목 88건. 네 대상 글자의 개별 제목 검색은 entries에 기록했다. 이 목록이나 일반 필순 규칙을 네 글자 전체 순서 근거로 쓰지 않았다."
+    },
+    {
+      "publisher": "한국어문회",
+      "title": "波文, 波紋",
+      "url": "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=6474",
+      "checkedAt": "2026-09-12T15:09:22.404464+00:00",
+      "httpStatus": 200,
+      "sha256": "e028d74e9d5ca7edb084201fdf165d61e8e34a0906c4f3e1f5145004e30181d0",
+      "result": "波紋 표기 답변. 전체 필순 없음."
+    },
+    {
+      "publisher": "한국어문회",
+      "title": "紋 무늬 문이 3급 글자 인가요?",
+      "url": "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=294",
+      "checkedAt": "2026-09-12T15:09:22.404464+00:00",
+      "httpStatus": 200,
+      "sha256": "6d4c34888d8adb496f8ebf418aa415058a945b362bad2ad754430f2795480d19",
+      "result": "紋 급수 배정 답변. 전체 필순 없음."
+    },
+    {
+      "publisher": "씨마스",
+      "title": "언어생활과 한자",
+      "url": "https://viewer.cmass.kr/html/textbook/view_h_35.shtml",
+      "checkedAt": "2026-09-12T15:11:27.693653+00:00",
+      "httpStatus": 200,
+      "sha256": "252386532d1005f8c5c6f0d5842b214693a79b513d9fbed64339e2b87ac9e507",
+      "result": "공식 교과서 전시관에 필순 ZIP 항목이 있다. ZIP 내용 및 네 글자 포함 여부는 미확보.",
+      "targetGlyphCoverageConfirmed": false
+    },
+    {
+      "publisher": "씨마스",
+      "title": "언어생활과 한자 /교과서 자료실 - 씨마스 티칭샘",
+      "url": "https://teachingsaem.cmass.kr/textbook-material/detail/552",
+      "checkedAt": "2026-09-12T15:11:27.693653+00:00",
+      "httpStatus": 200,
+      "sha256": "3d0397bb4d6ffae1f9d00d8cd9eb160139226896e2d8dba9291f78189f8f3d68",
+      "result": "자료실 페이지는 접근 가능하나 교사인증·로그인 기능이 표시된다. 필순 ZIP 본체를 확보하지 않았고 글자별 범위는 알 수 없다.",
+      "targetGlyphCoverageConfirmed": false
+    },
+    {
+      "publisher": "미래엔",
+      "title": "2022 개정 미래엔 교과서",
+      "url": "https://22txbook.m-teacher.co.kr/book/view?id=39",
+      "checkedAt": "2026-09-12T15:11:27.693653+00:00",
+      "httpStatus": 200,
+      "sha256": "cc7d89266a418bfcf678c48125cd743fa9755f7879578bc46394ab883eb3dd80",
+      "result": "공식 소개는 본문 한자의 뜻·음 확인 QR 카드라고 설명한다. 전체 필순 자료라고 명시하지 않는다.",
+      "targetGlyphCoverageConfirmed": false
+    },
+    {
+      "publisher": "미래엔",
+      "title": "미래앤 - 한문 카드 (QR CONTENT)",
+      "url": "https://qr.mirae-n.com/v/e9jkf9xz87",
+      "checkedAt": "2026-09-12T15:09:22.404464+00:00",
+      "httpStatus": 200,
+      "sha256": "60cc7b4a457caee0a1acd4cf30dbdfe3f2e3f5d787822312e26689d11eb28978",
+      "result": "실제 QR 연결 페이지 접근. 4 모양을 그린 한자의 음·뜻 카드 퀴즈이며 전체 필순은 확보하지 못함.",
+      "targetGlyphCoverageConfirmed": false
+    },
+    {
+      "publisher": "EBS / 원문 안내 한자교육진흥회",
+      "title": "[한자교육진흥회] 제79회 교양한자급수 7급 문제&정답",
+      "url": "https://www.ebs.co.kr/pass/examination/hanja/infomation/problem/10002223050",
+      "checkedAt": "2026-09-12T15:09:22.404464+00:00",
+      "httpStatus": 200,
+      "sha256": "676ea568f0648373fd8360aa3205b275deec65d516e6c9e1049d94566a4f1f0f",
+      "result": "森의 수풀·우거지다 훈음 채점 안내를 직접 읽었다. 森 전체 필순 영상·도해 근거로 사용하지 않는다."
+    }
+  ],
+  "overseasDiscovery": {
+    "resourcePage": "https://stroke-order.learningweb.moe.edu.tw/resource.jsp?ID=1",
+    "csv": {
+      "url": "https://stroke-order.learningweb.moe.edu.tw/file/files/%E5%85%A8%E7%AD%86%E9%A0%86%E5%8B%95%E7%95%AB%E5%B5%8C%E5%85%A5%E7%A2%BC%E7%B6%B2%E5%9D%80%E5%88%97%E8%A1%A8.csv",
+      "checkedAt": "2026-09-12T15:02:43.207167+00:00",
+      "httpStatus": 200,
+      "bytes": 975092,
+      "sha256": "44036a65a3a95b6dec5a538ce1cd58098370cd0e309ca5e12a72f0ceaf32e986",
+      "totalRowsIncludingHeader": 6064,
+      "matchingExactGlyphs": [
+        "訣",
+        "涼",
+        "紋",
+        "森"
+      ]
+    },
+    "pngArchive": {
+      "url": "https://stroke-order.learningweb.moe.edu.tw/download/6063png.zip",
+      "checkedAt": "2026-09-12T15:09:53.999593+00:00",
+      "httpStatus": 200,
+      "bytes": 16144520,
+      "sha256": "71ab4ab4f48c8503095819a88f0032b8408b1705afe89902196cc0be8d3fbfc3",
+      "members": 6064,
+      "filenameDecoding": "non-UTF8 ZIP names decoded from Python cp437 representation back to Big5",
+      "onlyAssignedFourMembersInspected": true
+    },
+    "oldEndpoint": "charactersQueryResult.do?words=… returned a web-tool safe-open error; current official CSV provided working dictFrame.jsp links. Do not treat the old endpoint tool error as source absence."
+  },
+  "recommendedNextReview": [
+    {
+      "priority": 1,
+      "glyphs": [
+        "涼"
+      ],
+      "catalogStrokes": 11,
+      "sourceTier": "Korean-textbook-publisher",
+      "action": "비상교육 0402의 원문 표기 凉와 실제 자형 涼를 분리하여 source 연결을 검토하고, 새 전체 획 검토를 수행한다.",
+      "approvalNow": false
+    },
+    {
+      "priority": 2,
+      "glyphs": [
+        "訣",
+        "紋",
+        "森"
+      ],
+      "catalogStrokes": 33,
+      "sourceTier": "overseas-official-comparison-only",
+      "action": "확보한 대만 교육부 전체 도해·애니메이션을 비교 자료로 보존하고 국내 교과서 본문/교사 자료 확보를 조사한다. 특히 紋의 糸 아래 세 점 등 지역 자형 차이를 명시적으로 비교한다.",
+      "approvalNow": false
+    },
+    {
+      "priority": 3,
+      "glyphs": [
+        "訣",
+        "涼",
+        "紋",
+        "森"
+      ],
+      "action": "씨마스 언어생활과 한자의 필순 ZIP에 대한 정당한 접근 경로와 exact 네 글자 수록 여부를 확인한다. 현재 공개 목록만으로 수록 또는 부재를 단정하지 않는다.",
+      "approvalNow": false
+    }
+  ],
+  "limitations": [
+    "국내 미확보는 이번 조사 경로에서의 결과이며 국내 공식 자료 자체가 없다는 뜻이 아니다.",
+    "대만 자료의 코드포인트·총획수·순차 도해 확보는 한국 표준 필순 또는 앱 재생 승인과 다르다.",
+    "비상교육 涼는 자형 식별용 전체 개관과 완성 프레임을 확인했으나 모든 완료 경계·방향 및 앱 실제 경로 검토는 아직 수행하지 않았다.",
+    "검색 결과만 확인한 비공식 사이트는 승인 근거에서 제외했다."
+  ]
+}
