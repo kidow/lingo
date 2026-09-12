@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Toaster } from 'sonner'
+import { LocalOnlyGate } from '@/components/local-only-gate'
 import './globals.css'
 
 const TITLE = 'Lingo'
@@ -28,8 +30,18 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
+      <head>
+        {/* react-grab: 개발 서버에서만 로드된다. https://www.react-grab.com/ */}
+        {process.env.NODE_ENV === 'development' && (
+          <Script
+            src="//unpkg.com/react-grab/dist/index.global.js"
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
+        )}
+      </head>
       <body>
-        {children}
+        <LocalOnlyGate>{children}</LocalOnlyGate>
         {/* 복사했는지 알려 준다. 카드가 화면을 꽉 채우므로 위 가운데에 띄운다 */}
         <Toaster position="top-center" />
       </body>
