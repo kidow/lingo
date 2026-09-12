@@ -157,21 +157,21 @@ export function SayButton({
 
   const disabled = !enabled || !catalogAvailable || !available
 
+  // 발음이 없으면 버튼째 없다. 눌러도 안 나는 버튼은 무엇을 기다리는지
+  // 알 수 없다 — 없는 버튼은 애초에 물을 것이 없다.
+  if (disabled) return null
+
   return (
     <button
       type="button"
-      disabled={disabled}
       aria-label={`${label} 발음 듣기`}
       onClick={() => play()}
-      // 발음 파일이 없어도 사라지지 않는다. 자리가 비면 옆 글자가 밀리므로
-      // 테두리와 배경은 그대로 두고 아이콘만 흐려진다. (brand-spec.md)
       className={`
         grid size-11 shrink-0 place-items-center rounded-pill
         border border-line bg-surface
         transition active:scale-95
-        disabled:cursor-default disabled:active:scale-100
         ${blocked ? 'motion-safe:animate-pulse' : ''}
-        ${playing || blocked ? 'border-accent text-accent' : disabled ? 'text-sub/45' : 'text-ink'}
+        ${playing || blocked ? 'border-accent text-accent' : 'text-ink'}
       `}
     >
       <AudioLines className="size-5" strokeWidth={1.8} aria-hidden />
