@@ -1,0 +1,811 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch11",
+  "auditor": "Codex C independent integration audit",
+  "auditedAt": "2026-09-12T14:53:55.106Z",
+  "status": "passed",
+  "method": "Read-only independent process: fresh full corpus and official manifest retrieval in RAM; actual generator/runtime imports; read-only git show of pinned baseline blobs. Shared files and Git state were not mutated. No visual approval is inferred by this structural audit; individual author and peer evidence remains authoritative.",
+  "baseline": {
+    "head": "e604f8b001b9ad55ea70873251d04a52ebdd325c",
+    "runtime": 1463,
+    "publisher": 960,
+    "grade3II": 473,
+    "priorDocuments": 41,
+    "inventorySha256": "ee2b91e636ec391a662f333cfe37bb265effa55bb13369a84966f3bf10946fc7",
+    "baselineSha256": "d1c06cf282369fc07dbf2ce052fa027c37835bbd9ac457f71defa74291ae4bc6",
+    "inputSelectionSha256": "05a1c4766f29185b96b430a21a0fabc1b762507328ed0f6bb1f41243f56a26cf"
+  },
+  "selection": {
+    "fixed": 8,
+    "catalogStrokes": 116,
+    "matched": 7,
+    "matchedStrokes": 101,
+    "held": 1,
+    "heldCatalogStrokes": 15,
+    "matchedGlyphs": [
+      "蘭",
+      "弄",
+      "嶺",
+      "戀",
+      "吏",
+      "諾",
+      "率"
+    ],
+    "heldGlyphs": [
+      "蓮"
+    ]
+  },
+  "authorPins": [
+    {
+      "owner": "a",
+      "file": "review-a.json",
+      "sha256": "26b57fca6a9f6f1dbee7091cd2c19aaadb34b113b8e9ab1aaf64fb7eea5702c1"
+    },
+    {
+      "owner": "b",
+      "file": "review-b.json",
+      "sha256": "3b8599006bf380ec4d5537c599c3dc21e77d28c773a0499d2f9986b7251cdd36"
+    },
+    {
+      "owner": "c",
+      "file": "review-c.json",
+      "sha256": "512b2f75aef5fede3c50099ad1cbf28d910eac9b4f12fd14363913f858f5416f"
+    },
+    {
+      "owner": "root",
+      "file": "review-root.json",
+      "sha256": "c53d0f015dde4e6b49942dafd373eb6ab23eca0a3e1e5ba10b4ed1cd75fea710"
+    }
+  ],
+  "counts": {
+    "catalog": 5978,
+    "runtimeArray": 1470,
+    "runtimeUnique": 1470,
+    "runtimeApplied": 1470,
+    "runtimeRemaining": 4508,
+    "publisher": 967,
+    "publisherRuntime": 967,
+    "examBody": 503,
+    "grade3II": {
+      "total": 500,
+      "applied": 480,
+      "remaining": 20
+    },
+    "approved": 7,
+    "approvedStrokes": 101
+  },
+  "sharedFiles": [
+    {
+      "file": "scripts/hanja-stroke-textbook-review.json",
+      "baselineGitBlob": "cd710ba6c38a96e38f0bb9c96f88892e396fd456",
+      "gitBlobMatches": true,
+      "baselineCanonicalSha256": "90218a41d996cc279d21a09a357ba9fda13d1cc971f15648a2911ca163dedde5",
+      "reconstructedCanonicalSha256": "90218a41d996cc279d21a09a357ba9fda13d1cc971f15648a2911ca163dedde5",
+      "expectedCanonicalSha256": "90218a41d996cc279d21a09a357ba9fda13d1cc971f15648a2911ca163dedde5",
+      "baselineAndReconstructedEqual": true,
+      "currentSha256": "be7bd2d1914349036536e03a31ec0c7c31e85e6b66055c94c68253eb86ac7a6f",
+      "pass": true
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.json",
+      "baselineGitBlob": "d19254647ab439b2b483cd47f933e5f91217eb07",
+      "gitBlobMatches": true,
+      "baselineCanonicalSha256": "1703ef6dc5536b771e9895a26f259c530adb76c418637910c8b5b4cee240ec72",
+      "reconstructedCanonicalSha256": "1703ef6dc5536b771e9895a26f259c530adb76c418637910c8b5b4cee240ec72",
+      "expectedCanonicalSha256": "1703ef6dc5536b771e9895a26f259c530adb76c418637910c8b5b4cee240ec72",
+      "baselineAndReconstructedEqual": true,
+      "currentSha256": "2555c9154ae84dfc01428a4fa1ec06065337a55d6ac4c01ef75560a13b6c69bc",
+      "pass": true
+    },
+    {
+      "file": "public/hanja-strokes/textbook-reviewed.json",
+      "baselineGitBlob": "e2300b16e9bfc09f412e58b06390b48ceb544a45",
+      "gitBlobMatches": true,
+      "baselineCanonicalSha256": "c1de6c5ee6ea0189fb2797cd49e56ce01c855f6c26881d4153aa53d0763583ed",
+      "reconstructedCanonicalSha256": "c1de6c5ee6ea0189fb2797cd49e56ce01c855f6c26881d4153aa53d0763583ed",
+      "expectedCanonicalSha256": "c1de6c5ee6ea0189fb2797cd49e56ce01c855f6c26881d4153aa53d0763583ed",
+      "baselineAndReconstructedEqual": true,
+      "currentSha256": "539fc3ef00671c213f5e50672cab7e2b36416059ac0c74eb241f1f97d3fc18dd",
+      "pass": true
+    }
+  ],
+  "oldPublicEntries": {
+    "checked": 960,
+    "unchanged": 960,
+    "canonicalSha256": "a80632f4a12baa70bb44312a6943c02418f70f4ea3b801155cf77a7df9763d9e",
+    "errors": []
+  },
+  "priorDocuments": [
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/README.md",
+      "sha256": "62d5d3ceefa482e201f6e38d97b727cfdd027390ff1d762703666c56c4939708",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/audit-integration.json",
+      "sha256": "f8257145a31c8d45aba02463cb0734c6c3a72efb9b9ece9cc3d5b128c3838842",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/audit-integration.md",
+      "sha256": "9c52d1de8dced9e1e186a11b1aeaf3cc9d093715acf4b62e795f3a7a3f46bebf",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/b-source-audit.json",
+      "sha256": "35720a5ad460f295255256abf0e48b4a8c4ce19ed73606a9b71af7686315f011",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/baseline.json",
+      "sha256": "f40a2c75358bd433ae5c0b6f1b35d88000f5f9c21aac424d89ca21052d8e82ca",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/c-cumulative.svg",
+      "sha256": "3899219796e5decbc5d2751018b1818131203699543c24f5584299077ab3c0fd",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/c-geometry-audit.json",
+      "sha256": "63013abfe0bc1f84d2b4500b524e470ee37b0c5bdb27a4b6d210f70714de584f",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/coverage.json",
+      "sha256": "ce7369a2cc18340b467b88d94f7a9db793054bbdbea395acc63564b96a66f3ba",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/geometry-audit-a.json",
+      "sha256": "2c500faafe33e04b10bca5d57b9eb44564989266d39e95779dc98d201aa01cdd",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/inventory.json",
+      "sha256": "5c40a430bc81a11926fa516873dcb2e1cb24b8054882a0afad036fc5da678b52",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/next-review-queue.json",
+      "sha256": "eed27f9af5be0f7d6c0f903eef4d0e434ef164d413d01b6c9d3a68688786696f",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/next-review-queue.md",
+      "sha256": "03133285ea24623bde76180ca585efc83a9753976e20432d473c923c2880c8e1",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/next-source-inventory.json",
+      "sha256": "23f121f544bc37cea1fa284d67c4f61b0759d38dfce99d2fc8e4d883f7f95406",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-a.json",
+      "sha256": "1421f214f5a82f53efda0a9734845a0a8b55f2a03f8a2ddd6a7179d8d0c8df7c",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-a.md",
+      "sha256": "456b7b01b5e836d578be8c125f0298cd69ff7dac71a6a64fd16a2c9a443f56a3",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-b.json",
+      "sha256": "1129c4c0fb8bb8d9f545a6cbda3f3d2c4de25885f33d63a30125767f85ed643d",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-b.md",
+      "sha256": "be9adbc2e62b0ffcfeb4000d6d18e97ebf375b41bca582aafed165527eebe34a",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-c.json",
+      "sha256": "8705850b3e36c83229703ad8f8f1320aea0df6e7de9ed2b7e5e1b758b8adaa76",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-c.md",
+      "sha256": "e62fbff7163aea10496c5bcb2f1bec15ed229d3f0a451783ee47012198a6840d",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-review.json",
+      "sha256": "2c04b1fdb34db64bfb59df02a696185f95ec2624c638bc7eec1e71fbde44f20c",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-root-to-c.json",
+      "sha256": "631296ecf5ea4187b878e7faf1996b61fb42b4b688e6d6452b923d01e11f6f4c",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/peer-root-to-c.md",
+      "sha256": "2cd1aade91f431f8a1b9351ab2eff60af8152e8bcda87017856a0b3927278b56",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/preservation.json",
+      "sha256": "906fbebfb9a78eda6768c8d0515dd1500c86ef26072cda505c677faea6047caf",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/result.json",
+      "sha256": "7f4717b664d320cdaa468592fcae0ab7c86a7ca1e9399d81c7470c569d92f91d",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-a.json",
+      "sha256": "096123dc28a0847ca0d86af35729880b5c3208d3d9bbcc38c3951e49a7cbc20a",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-a.md",
+      "sha256": "fd2b3458f6f57c4eb9c8231a03e7ee81b34757e9278f71261c249bd1641e9714",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-a.svg",
+      "sha256": "f0b789ef999eae76c6025e680b38b2f81902930808b84b0cc4821a9c28c1a6ee",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-b.json",
+      "sha256": "33e0c6151ba894a72c15ef0209f9ff15afc661d69d9c482561b4b453cd78763f",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-b.md",
+      "sha256": "d76a57ea00517b102fc1b61ca02dec58a9262527fa855fea9e032b118f39ccfa",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-b.svg",
+      "sha256": "e9b0ea201c782f35739f3b8b7309a2ce7947eab352e5512086442d2925094366",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-c.json",
+      "sha256": "f7ab44180eccc7c58cc9c78dfa614abd42cb868ee98afdc60ecc928c7297237f",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-c.md",
+      "sha256": "7d4bbeabbb4c2341ee0c2462177468090fbf747aa0c3ac0c6378247bd1dfe154",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-c.svg",
+      "sha256": "eeeae1e0afdd5b97cd973e3502c9e08d0aa219657149872983fc50beb3628954",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-root-paths.svg",
+      "sha256": "9f8bdde493eb2653c66ce0f23889a8d9ff9fdaacba1e532e5f6a6a08bc0637ba",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-root.json",
+      "sha256": "00b97bb499a3eeafebebd32a7fcfbda22ab5cb4bc4b03b46f3141bc22086d62a",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/review-root.md",
+      "sha256": "08100c2efb03eb09c58fbbe8a8f1db923f6a1a2efbdaf3f32e7cc3012b6f95d5",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/root-candidates.json",
+      "sha256": "610b17b3240188d0b6155fd62946f088108dec6e66704a8b61287f341668662e",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/root-geometry-audit.json",
+      "sha256": "247e04920c03e9c3742b96b7575e697f1ad9e514e0f976effd606ba3c70f5db4",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/source-audit.json",
+      "sha256": "df96230d353628017ca0f92a5b56b7e193fe3a8f01608c7ae8ce97f2aad82062",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/source-audit.md",
+      "sha256": "ffb5b0d0ac50987d4787de6cc2f4ef27d2d488da00400303eba7b05cb4ff68c0",
+      "pass": true
+    },
+    {
+      "file": "docs/hanja-g3ii-batch10-2026-09-12/verification.json",
+      "sha256": "c018603db80b8d9b1e8b2b3d5ca8b291cd1d2aad5f689f7c97b16eaaa2383e80",
+      "pass": true
+    }
+  ],
+  "peerPins": [
+    {
+      "file": "peer-root-a.json",
+      "sha256": "e8680746609f29f7cfd6181e94ef4ddc4fa53ef320c41137e159457e07543c76",
+      "authorFile": "review-a.json",
+      "authorFileSha256": "26b57fca6a9f6f1dbee7091cd2c19aaadb34b113b8e9ab1aaf64fb7eea5702c1",
+      "declaredAuthorPin": "26b57fca6a9f6f1dbee7091cd2c19aaadb34b113b8e9ab1aaf64fb7eea5702c1",
+      "glyphs": [
+        "蘭",
+        "弄"
+      ],
+      "pinPass": true,
+      "coveragePass": true
+    },
+    {
+      "file": "peer-a.json",
+      "sha256": "c3749efc1b9b4e8fc20d74aab3f2baa8b9b91651dc8dc965dd5ae983b038bef3",
+      "authorFile": "review-b.json",
+      "authorFileSha256": "3b8599006bf380ec4d5537c599c3dc21e77d28c773a0499d2f9986b7251cdd36",
+      "declaredAuthorPin": "3b8599006bf380ec4d5537c599c3dc21e77d28c773a0499d2f9986b7251cdd36",
+      "glyphs": [
+        "蓮",
+        "嶺"
+      ],
+      "pinPass": true,
+      "coveragePass": true
+    },
+    {
+      "file": "peer-b.json",
+      "sha256": "d8e19a49533520b117531d64d4ee578fd1ccc5a82c9f7608e02965ea9880fd44",
+      "authorFile": "review-c.json",
+      "authorFileSha256": "512b2f75aef5fede3c50099ad1cbf28d910eac9b4f12fd14363913f858f5416f",
+      "declaredAuthorPin": "512b2f75aef5fede3c50099ad1cbf28d910eac9b4f12fd14363913f858f5416f",
+      "glyphs": [
+        "戀",
+        "吏"
+      ],
+      "pinPass": true,
+      "coveragePass": true
+    },
+    {
+      "file": "peer-c.json",
+      "sha256": "2985151fe2e8bb9abf16706799ebe15a668e0e6ed4f3da4315a4fbb35d5128d4",
+      "authorFile": "review-root.json",
+      "authorFileSha256": "c53d0f015dde4e6b49942dafd373eb6ab23eca0a3e1e5ba10b4ed1cd75fea710",
+      "declaredAuthorPin": "c53d0f015dde4e6b49942dafd373eb6ab23eca0a3e1e5ba10b4ed1cd75fea710",
+      "glyphs": [
+        "諾",
+        "率"
+      ],
+      "pinPass": true,
+      "coveragePass": true
+    }
+  ],
+  "entryChecks": [
+    {
+      "glyph": "蘭",
+      "sourceGlyph": "蘭",
+      "owner": "a",
+      "strokes": 21,
+      "originalStrokes": 21,
+      "sourceVideoSha256": "245366072e4deca2d847173d88238e140752e5e6c7666f1154f4358afd9c6490",
+      "originalMediansSha256": "8be6bb89b73b694561e9e91e0924a8ca09eca1061bab185f79d712f5553e2f36",
+      "correctionSha256": "5dc60d61e04cb4fb95dc6fcabe177fec44732475c1a164168f9853d66f29c889",
+      "pathsSha256": "4ff1ae067c18e9904e982ac7db4faab47cea68e34b4fb8fda8fa9fb61d5805ae",
+      "checks": {
+        "fixedSelection": true,
+        "registryRecordExact": true,
+        "recipeExact": true,
+        "recipeHash": true,
+        "originalHash": true,
+        "candidateOriginalCount": true,
+        "allOriginalLineage": true,
+        "sourceVideoPin": true,
+        "actualGeneratorPaths": true,
+        "actualGeneratorLineage": true,
+        "pathHash": true,
+        "publicPaths": true,
+        "publicLineage": true,
+        "publicGeometryMetadata": true,
+        "publicRawSourceGlyph": true,
+        "publicSourceReference": true,
+        "runtimePaths": true
+      }
+    },
+    {
+      "glyph": "弄",
+      "sourceGlyph": "弄",
+      "owner": "a",
+      "strokes": 7,
+      "originalStrokes": 7,
+      "sourceVideoSha256": "ee5306cf810f3aace21446fc47b64a17694c492e3e45f95dc26d143e9cc9e8fa",
+      "originalMediansSha256": "23bd14f3dd4100d5a839a79e8ced15288a2139355bfafa00418f341db75d5dcd",
+      "correctionSha256": "e7cfeaef1da8f006c499be6ae2c6b3ed5519040809dbc4b65023df3a75e7fafa",
+      "pathsSha256": "fc9e28a4ec7a1cbe1697dbb0ce70cf808f34b35e3b945fe85a8f9d3d6393320e",
+      "checks": {
+        "fixedSelection": true,
+        "registryRecordExact": true,
+        "recipeExact": true,
+        "recipeHash": true,
+        "originalHash": true,
+        "candidateOriginalCount": true,
+        "allOriginalLineage": true,
+        "sourceVideoPin": true,
+        "actualGeneratorPaths": true,
+        "actualGeneratorLineage": true,
+        "pathHash": true,
+        "publicPaths": true,
+        "publicLineage": true,
+        "publicGeometryMetadata": true,
+        "publicRawSourceGlyph": true,
+        "publicSourceReference": true,
+        "runtimePaths": true
+      }
+    },
+    {
+      "glyph": "嶺",
+      "sourceGlyph": "嶺",
+      "owner": "b",
+      "strokes": 17,
+      "originalStrokes": 17,
+      "sourceVideoSha256": "ec3e7a633ea835abd2434f144cc9542facfd858b0992078d680ee27b28e0823a",
+      "originalMediansSha256": "000cf4486c234c15c3454b4dbcdc34b7acfdb50b76bbd7ba9b3e772470777640",
+      "correctionSha256": "1ec5418b0208d2a51ef36c790f746d114c5ee7c3fe27f3aa5da3d86af42c02c4",
+      "pathsSha256": "442d7a4857e64729de16c8c00e5bd050b772abe0c1642d7a9bf2aa964a1df984",
+      "checks": {
+        "fixedSelection": true,
+        "registryRecordExact": true,
+        "recipeExact": true,
+        "recipeHash": true,
+        "originalHash": true,
+        "candidateOriginalCount": true,
+        "allOriginalLineage": true,
+        "sourceVideoPin": true,
+        "actualGeneratorPaths": true,
+        "actualGeneratorLineage": true,
+        "pathHash": true,
+        "publicPaths": true,
+        "publicLineage": true,
+        "publicGeometryMetadata": true,
+        "publicRawSourceGlyph": true,
+        "publicSourceReference": true,
+        "runtimePaths": true
+      }
+    },
+    {
+      "glyph": "戀",
+      "sourceGlyph": "戀",
+      "owner": "c",
+      "strokes": 23,
+      "originalStrokes": 23,
+      "sourceVideoSha256": "40c4978ee66c447549921882e58f5de4caa844a955b9d66f234a568bc9ff3cb7",
+      "originalMediansSha256": "831f4eaffea3aa7fb09223e76ba6d663383954f2c665b075f1c43482803335e0",
+      "correctionSha256": "1768ad80d5216eeadf1a3afa6859e1998ea633002459cf17c4bb302740286909",
+      "pathsSha256": "f923bc6666ee8cc3ca43c2e0896b15cf856749b70befa3dd52aa9f91f13e4ec2",
+      "checks": {
+        "fixedSelection": true,
+        "registryRecordExact": true,
+        "recipeExact": true,
+        "recipeHash": true,
+        "originalHash": true,
+        "candidateOriginalCount": true,
+        "allOriginalLineage": true,
+        "sourceVideoPin": true,
+        "actualGeneratorPaths": true,
+        "actualGeneratorLineage": true,
+        "pathHash": true,
+        "publicPaths": true,
+        "publicLineage": true,
+        "publicGeometryMetadata": true,
+        "publicRawSourceGlyph": true,
+        "publicSourceReference": true,
+        "runtimePaths": true
+      }
+    },
+    {
+      "glyph": "吏",
+      "sourceGlyph": "吏",
+      "owner": "c",
+      "strokes": 6,
+      "originalStrokes": 6,
+      "sourceVideoSha256": "031e721fbc14e521fd76331ce35bcbe3c6cd1ae57fbe463999526b7a3e6f6bdd",
+      "originalMediansSha256": "ad95c19cbcff5ff5c84b770f2281081a4b8617574c99ed6dae17570bba896128",
+      "correctionSha256": "4c72121b4db1f3b653c5e4516133524559813c017d0b790f1ba3851ebfbc40c6",
+      "pathsSha256": "58ba20f13ca7dae9cfbe57646096f939e74cba3a47a5fe4c8a3182f633e54558",
+      "checks": {
+        "fixedSelection": true,
+        "registryRecordExact": true,
+        "recipeExact": true,
+        "recipeHash": true,
+        "originalHash": true,
+        "candidateOriginalCount": true,
+        "allOriginalLineage": true,
+        "sourceVideoPin": true,
+        "actualGeneratorPaths": true,
+        "actualGeneratorLineage": true,
+        "pathHash": true,
+        "publicPaths": true,
+        "publicLineage": true,
+        "publicGeometryMetadata": true,
+        "publicRawSourceGlyph": true,
+        "publicSourceReference": true,
+        "runtimePaths": true
+      }
+    },
+    {
+      "glyph": "諾",
+      "sourceGlyph": "諾",
+      "owner": "root",
+      "strokes": 16,
+      "originalStrokes": 16,
+      "sourceVideoSha256": "e0250178dee90283979a3234022cbed4da79d9a2315947329aadf5d79d7027af",
+      "originalMediansSha256": "667f22a8da7fe6a7e7def6a9821ae9f8f8e58788c2eaea577fe0d5efdc673104",
+      "correctionSha256": "171f39d81ccd545aeec56fa8854413b438b104430de796475e7603c5967bea47",
+      "pathsSha256": "1a84bb9f556cb5d704d3f6b7c9bafc1e1b906980ca28c2e7fa58b7266b2367c4",
+      "checks": {
+        "fixedSelection": true,
+        "registryRecordExact": true,
+        "recipeExact": true,
+        "recipeHash": true,
+        "originalHash": true,
+        "candidateOriginalCount": true,
+        "allOriginalLineage": true,
+        "sourceVideoPin": true,
+        "actualGeneratorPaths": true,
+        "actualGeneratorLineage": true,
+        "pathHash": true,
+        "publicPaths": true,
+        "publicLineage": true,
+        "publicGeometryMetadata": true,
+        "publicRawSourceGlyph": true,
+        "publicSourceReference": true,
+        "runtimePaths": true
+      }
+    },
+    {
+      "glyph": "率",
+      "sourceGlyph": "率",
+      "owner": "root",
+      "strokes": 11,
+      "originalStrokes": 11,
+      "sourceVideoSha256": "a87712c5c3b65940f942f7780c11310538e2ce93ecbdfe97e615e038fecb43a9",
+      "originalMediansSha256": "b7defe7708720760b9360d915c45a3bc27df1e809fba419074375add0c6c1459",
+      "correctionSha256": "95b6b33e39fdbe03621d3b13ee95555c2c7af174a973c2a9779e197e9f59fcf9",
+      "pathsSha256": "80da877f096d1522c5f390c7afbacd362a6519b30958238010eff900295d2cc6",
+      "checks": {
+        "fixedSelection": true,
+        "registryRecordExact": true,
+        "recipeExact": true,
+        "recipeHash": true,
+        "originalHash": true,
+        "candidateOriginalCount": true,
+        "allOriginalLineage": true,
+        "sourceVideoPin": true,
+        "actualGeneratorPaths": true,
+        "actualGeneratorLineage": true,
+        "pathHash": true,
+        "publicPaths": true,
+        "publicLineage": true,
+        "publicGeometryMetadata": true,
+        "publicRawSourceGlyph": true,
+        "publicSourceReference": true,
+        "runtimePaths": true
+      }
+    }
+  ],
+  "heldChecks": [
+    {
+      "glyph": "蓮",
+      "sourceGlyph": "蓮",
+      "catalogStrokes": 15,
+      "originalStrokes": 14,
+      "checks": {
+        "sourceGlyph": true,
+        "noPublic": true,
+        "noApprovedRegistry": true,
+        "noRecipe": true,
+        "noRuntime": true,
+        "noAuthorRecipe": true,
+        "boundaryInconclusive": true,
+        "originalCandidateCount": true
+      }
+    }
+  ],
+  "corpusVerification": {
+    "auditedAt": "2026-09-12T14:51:34.486Z",
+    "checks": [
+      {
+        "name": "ko",
+        "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+        "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "actualSha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "bytes": 1387824,
+        "total": 535,
+        "selected": [],
+        "errors": [],
+        "pass": true
+      },
+      {
+        "name": "ja",
+        "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+        "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "actualSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "bytes": 21862957,
+        "total": 7007,
+        "selected": [
+          {
+            "glyph": "嶺",
+            "status": "matched",
+            "originalStrokes": 17,
+            "originalMediansSha256": "000cf4486c234c15c3454b4dbcdc34b7acfdb50b76bbd7ba9b3e772470777640"
+          },
+          {
+            "glyph": "戀",
+            "status": "matched",
+            "originalStrokes": 23,
+            "originalMediansSha256": "831f4eaffea3aa7fb09223e76ba6d663383954f2c665b075f1c43482803335e0"
+          },
+          {
+            "glyph": "吏",
+            "status": "matched",
+            "originalStrokes": 6,
+            "originalMediansSha256": "ad95c19cbcff5ff5c84b770f2281081a4b8617574c99ed6dae17570bba896128"
+          },
+          {
+            "glyph": "率",
+            "status": "matched",
+            "originalStrokes": 11,
+            "originalMediansSha256": "b7defe7708720760b9360d915c45a3bc27df1e809fba419074375add0c6c1459"
+          }
+        ],
+        "errors": [],
+        "pass": true
+      },
+      {
+        "name": "mm",
+        "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+        "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "actualSha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "bytes": 30778076,
+        "total": 9574,
+        "selected": [
+          {
+            "glyph": "蘭",
+            "status": "matched",
+            "originalStrokes": 21,
+            "originalMediansSha256": "8be6bb89b73b694561e9e91e0924a8ca09eca1061bab185f79d712f5553e2f36"
+          },
+          {
+            "glyph": "弄",
+            "status": "matched",
+            "originalStrokes": 7,
+            "originalMediansSha256": "23bd14f3dd4100d5a839a79e8ced15288a2139355bfafa00418f341db75d5dcd"
+          },
+          {
+            "glyph": "蓮",
+            "status": "hold",
+            "originalStrokes": 14,
+            "originalMediansSha256": "00d29a6b3168a7544b0599853d8392f7bb45884efb1d13f8699f61b19bc4f4ca"
+          },
+          {
+            "glyph": "諾",
+            "status": "matched",
+            "originalStrokes": 16,
+            "originalMediansSha256": "667f22a8da7fe6a7e7def6a9821ae9f8f8e58788c2eaea577fe0d5efdc673104"
+          }
+        ],
+        "errors": [],
+        "pass": true
+      }
+    ],
+    "errors": []
+  },
+  "manifestVerification": {
+    "source": {
+      "id": "vivasam-high-2022",
+      "sha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+      "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/data/data_high.xlsx"
+    },
+    "total": 1800,
+    "checks": [
+      {
+        "glyph": "諾",
+        "sourceGlyph": "諾",
+        "sourceEntry": {
+          "glyph": "諾",
+          "manifestRow": "0281",
+          "videoFilename": "0281 허락할 낙.mp4"
+        },
+        "pass": true
+      },
+      {
+        "glyph": "蘭",
+        "sourceGlyph": "蘭",
+        "sourceEntry": {
+          "glyph": "蘭",
+          "manifestRow": "0391",
+          "videoFilename": "0391 난초 란.mp4"
+        },
+        "pass": true
+      },
+      {
+        "glyph": "蓮",
+        "sourceGlyph": "蓮",
+        "sourceEntry": {
+          "glyph": "蓮",
+          "manifestRow": "0420",
+          "videoFilename": "0420 연꽃 련.mp4"
+        },
+        "pass": true
+      },
+      {
+        "glyph": "戀",
+        "sourceGlyph": "戀",
+        "sourceEntry": {
+          "glyph": "戀",
+          "manifestRow": "0418",
+          "videoFilename": "0418 사모할 련.mp4"
+        },
+        "pass": true
+      },
+      {
+        "glyph": "嶺",
+        "sourceGlyph": "嶺",
+        "sourceEntry": {
+          "glyph": "嶺",
+          "manifestRow": "0430",
+          "videoFilename": "0430 고개 령.mp4"
+        },
+        "pass": true
+      },
+      {
+        "glyph": "弄",
+        "sourceGlyph": "弄",
+        "sourceEntry": {
+          "glyph": "弄",
+          "manifestRow": "0446",
+          "videoFilename": "0446 희롱할 롱.mp4"
+        },
+        "pass": true
+      },
+      {
+        "glyph": "率",
+        "sourceGlyph": "率",
+        "sourceEntry": {
+          "glyph": "率",
+          "manifestRow": "0468",
+          "videoFilename": "0468 비율 률.mp4"
+        },
+        "pass": true
+      },
+      {
+        "glyph": "吏",
+        "sourceGlyph": "吏",
+        "sourceEntry": {
+          "glyph": "吏",
+          "manifestRow": "0475",
+          "videoFilename": "0475 벼슬아치 리.mp4"
+        },
+        "pass": true
+      }
+    ]
+  },
+  "generatorPins": [
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.ts",
+      "sha256": "7cbf18ffe85fab362c0a29f8dfb00a4f140f3cdc676a082b7b44ccd12f78eb83"
+    },
+    {
+      "file": "lib/hanja-stroke-geometry.ts",
+      "sha256": "8e2b98e3064bd84e0ec1ad5cb05e56c624c0759cd10357e95fe8768e5d0dd06d"
+    },
+    {
+      "file": "lib/hanja-strokes.ts",
+      "sha256": "7f6f78daf98440cf961cee03a75b486be881e7b4553c6cb9b5f5f080bd6deeac"
+    },
+    {
+      "file": "lib/hanja-stroke-textbook.ts",
+      "sha256": "6dfa8e614b6ec0d7043584bdf5ce972bda915846b9e3ef0b2ba8e062e87b6c4e"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-source.py",
+      "sha256": "f325c11f9aa176177f539322355c524a9468e19b0c94fc629ed52749ee16866d"
+    }
+  ],
+  "errors": []
+}

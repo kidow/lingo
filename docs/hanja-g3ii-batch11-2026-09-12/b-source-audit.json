@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch11",
+  "owner": "b",
+  "status": "passed",
+  "scope": "Two selected primary characters. Fresh full corpus hashes plus exact chosen originals; visual and geometry evidence in review-b.json.",
+  "corpora": [
+    {
+      "name": "Ko",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "bytes": 1387824,
+      "actualSha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "actualBytes": 1387824,
+      "corpusEntries": 535,
+      "selectedCandidates": []
+    },
+    {
+      "name": "Ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957,
+      "actualSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "actualBytes": 21862957,
+      "corpusEntries": 7007,
+      "selectedCandidates": [
+        {
+          "glyph": "嶺",
+          "strokes": 17
+        },
+        {
+          "glyph": "蓮",
+          "strokes": 13
+        }
+      ]
+    },
+    {
+      "name": "MM",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "bytes": 30778076,
+      "actualSha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "actualBytes": 30778076,
+      "corpusEntries": 9574,
+      "selectedCandidates": [
+        {
+          "glyph": "嶺",
+          "strokes": 17
+        },
+        {
+          "glyph": "蓮",
+          "strokes": 14
+        }
+      ]
+    }
+  ],
+  "selectedCharacters": 2,
+  "selectedCatalogStrokes": 32,
+  "approvedCharacters": 1,
+  "approvedStrokes": 17,
+  "heldCharacters": 1,
+  "heldCatalogStrokes": 15,
+  "wholeVideoFrames": 81,
+  "approvedCompletedSamples": 17,
+  "heldContinuousSegmentSamples": 14,
+  "heldBoundaryDetailSamples": 29,
+  "sourceFinals420": 2,
+  "sourceFinals700": 1,
+  "actualCumulativePaths": 17,
+  "actualFinals420": 1,
+  "chosenOriginalStrokes": 31,
+  "originalMediansExact": true,
+  "sourceVideos": [
+    {
+      "row": "0420",
+      "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0420.mp4",
+      "sha256": "12a61e86c363f02ecd83b9b7df8f83c7b907fd7638beda6903dd1f30c4aad5cf",
+      "bytes": 730987,
+      "durationSeconds": 20.698
+    },
+    {
+      "row": "0430",
+      "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0430.mp4",
+      "sha256": "ec3e7a633ea835abd2434f144cc9542facfd858b0992078d680ee27b28e0823a",
+      "bytes": 675274,
+      "durationSeconds": 20.215
+    }
+  ],
+  "generatorSources": {
+    "scripts/hanja-stroke-textbook-corrections.ts": "7cbf18ffe85fab362c0a29f8dfb00a4f140f3cdc676a082b7b44ccd12f78eb83",
+    "lib/hanja-stroke-geometry.ts": "8e2b98e3064bd84e0ec1ad5cb05e56c624c0759cd10357e95fe8768e5d0dd06d"
+  },
+  "output": {
+    "glyph": "嶺",
+    "pathsSha256": "442d7a4857e64729de16c8c00e5bd050b772abe0c1642d7a9bf2aa964a1df984",
+    "correctionSha256": "1ec5418b0208d2a51ef36c790f746d114c5ee7c3fe27f3aa5da3d86af42c02c4",
+    "originalMediansSha256": "000cf4486c234c15c3454b4dbcdc34b7acfdb50b76bbd7ba9b3e772470777640",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "actualExportsReplayed": true,
+    "allPathsVisuallyInspected": true,
+    "nullSourceStrokes": 0,
+    "droppedOriginalStrokes": 0
+  },
+  "selectedGeometryRelations": 26,
+  "geometryErrors": [],
+  "errors": []
+}

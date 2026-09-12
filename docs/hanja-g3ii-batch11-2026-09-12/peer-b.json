@@ -1,0 +1,1014 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch11",
+  "reviewer": "b",
+  "reviewedAt": "2026-09-12",
+  "reviewedFile": "review-c.json",
+  "reviewedFileSha256": "512b2f75aef5fede3c50099ad1cbf28d910eac9b4f12fd14363913f858f5416f",
+  "status": "passed",
+  "selectedCharacters": 2,
+  "selectedCatalogStrokes": 29,
+  "matchedCharacters": 2,
+  "matchedStrokes": 29,
+  "holds": [],
+  "method": {
+    "source": "Independently freshly fetched both entire individual publisher MP4s into RAM. All74 source2fps frames,29 exploratory10fps samples,29 exact author10fps samples and19 focused timing samples were visually inspected. The two corrected final timestamps were inspected within those focused samples.",
+    "rawManifest": "Fresh whole pinned XLSX verifies sourceGlyph 戀/吏, exact rows0418/0475 and video basenames. Normalization is only the discovery key.",
+    "originals": "Fresh whole pinned Ko/Ja/MM corpora were hashed and parsed. Both chosen Ja originals are exactly equal to the frozen author coordinates.",
+    "render": "Invoked actual textbookGeometry/textbookCorrectionSha256. All29 cumulative states and both420px finals were rendered and visually inspected at width5 with round caps/joins.",
+    "geometry": "Recomputed the author's61 named full-polyline relations independently. The complete source and generated final forms were visually compared; three narrow relations plus the crowded left central junctions were also checked with crops of the700px source frame.",
+    "scope": "This peer directly inspected only 戀/吏. No component or corpus order was treated as source stroke-order evidence."
+  },
+  "summary": {
+    "wholeVideoFrames": 74,
+    "exploratory10fpsSamples": 29,
+    "exactAuthor10fpsSamples": 29,
+    "focusedTimingSamples": 19,
+    "approvedStrokes": 29,
+    "actualCumulativePathsViewed": 29,
+    "sourceFinals420": 2,
+    "generatedFinals420": 2,
+    "sourceFinals700": 1,
+    "selectedGeometryRelations": 61,
+    "originalMediansExactCharacters": 2,
+    "resolvedCompletionCorrections": 2,
+    "geometryCorrectionsRequested": 0
+  },
+  "resolvedFindings": [
+    {
+      "glyph": "戀",
+      "stroke": 12,
+      "previousCompletedBy": 10.8,
+      "correctedCompletedBy": 11.1,
+      "reason": "At10.8s the cursor is at the beginning of the left dot and most of the outline remains white. The dot fills at10.9s and is complete by11.0/11.1s.",
+      "sampleTimes": [
+        10.6,
+        10.7,
+        10.8,
+        10.9,
+        11,
+        11.1
+      ],
+      "width": 270,
+      "status": "resolved-in-final-author-pin"
+    },
+    {
+      "glyph": "戀",
+      "stroke": 21,
+      "previousCompletedBy": 21.2,
+      "correctedCompletedBy": 21.6,
+      "reason": "At21.2s the lower curve is filled but the upward-return hook is still white. The return fills at21.3/21.4s and is complete by21.5/21.6s.",
+      "sampleTimes": [
+        21,
+        21.1,
+        21.2,
+        21.3,
+        21.4,
+        21.5,
+        21.6
+      ],
+      "width": 270,
+      "status": "resolved-in-final-author-pin"
+    }
+  ],
+  "entries": [
+    {
+      "glyph": "戀",
+      "status": "passed",
+      "expectedStrokes": 23,
+      "sourceGlyph": "戀",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0418.mp4",
+        "sha256": "40c4978ee66c447549921882e58f5de4caa844a955b9d66f234a568bc9ff3cb7",
+        "bytes": 758728
+      },
+      "durationSeconds": 23.848,
+      "wholeVideoSampleTimes": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        7,
+        7.5,
+        8,
+        8.5,
+        9,
+        9.5,
+        10,
+        10.5,
+        11,
+        11.5,
+        12,
+        12.5,
+        13,
+        13.5,
+        14,
+        14.5,
+        15,
+        15.5,
+        16,
+        16.5,
+        17,
+        17.5,
+        18,
+        18.5,
+        19,
+        19.5,
+        20,
+        20.5,
+        21,
+        21.5,
+        22,
+        22.5,
+        23,
+        23.5
+      ],
+      "finalCompletedBySampleTimes": [
+        0.7,
+        1.9,
+        2.6,
+        3.4,
+        4.3,
+        5.4,
+        6,
+        7.5,
+        8.6,
+        9.3,
+        10.1,
+        11.1,
+        11.7,
+        13.2,
+        14.4,
+        15.2,
+        16.2,
+        17.1,
+        17.8,
+        19,
+        21.6,
+        22.3,
+        23.4
+      ],
+      "sourceFinal": {
+        "time": 23.6,
+        "width": 420,
+        "zoomWidth": 700,
+        "zoomTime": 23.6,
+        "sourceCrops": [
+          [
+            235,
+            110,
+            115,
+            105
+          ],
+          [
+            375,
+            150,
+            100,
+            90
+          ],
+          [
+            460,
+            350,
+            100,
+            110
+          ],
+          [
+            235,
+            210,
+            130,
+            160
+          ]
+        ]
+      },
+      "checks": {
+        "sourceHashAndBytesMatch": true,
+        "rawSourceGlyphRetained": true,
+        "wholeVideoSequenceViewed": true,
+        "allFinalCompletionSamplesViewed": true,
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "actualPathsMatch": true,
+        "pathsHashMatch": true,
+        "recipeHashMatch": true,
+        "allCumulativesAndFinalViewed": true
+      },
+      "originalMediansSha256": "831f4eaffea3aa7fb09223e76ba6d663383954f2c665b075f1c43482803335e0",
+      "pathsSha256": "f923bc6666ee8cc3ca43c2e0896b15cf856749b70befa3dd52aa9f91f13e4ec2",
+      "correctionSha256": "1768ad80d5216eeadf1a3afa6859e1998ea633002459cf17c4bb302740286909",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        11,
+        13,
+        14,
+        15,
+        16,
+        18,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "geometryRelations": [
+        {
+          "strokes": [
+            1,
+            2
+          ],
+          "label": "top dot / first horizontal",
+          "expected": "gap",
+          "centerlineDistance": 8.63417273111663,
+          "inkClearance": 3.63417273111663,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            3
+          ],
+          "label": "first / second horizontal",
+          "expected": "gap",
+          "centerlineDistance": 7.675920148849235,
+          "inkClearance": 2.675920148849235,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "label": "second / third horizontal",
+          "expected": "gap",
+          "centerlineDistance": 7.3935782947095365,
+          "inkClearance": 2.3935782947095365,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            5
+          ],
+          "label": "third horizontal / mouth left",
+          "expected": "gap",
+          "centerlineDistance": 7.0178344238091,
+          "inkClearance": 2.0178344238091004,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            6
+          ],
+          "label": "third horizontal / mouth top",
+          "expected": "gap",
+          "centerlineDistance": 6.550278913615347,
+          "inkClearance": 1.5502789136153474,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            6
+          ],
+          "label": "mouth upper-left",
+          "expected": "contact",
+          "centerlineDistance": 0.6154858936643113,
+          "inkClearance": -4.384514106335689,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            7
+          ],
+          "label": "mouth lower-left",
+          "expected": "contact",
+          "centerlineDistance": 0.509324812576299,
+          "inkClearance": -4.490675187423701,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            7
+          ],
+          "label": "mouth lower-right",
+          "expected": "contact",
+          "centerlineDistance": 0.1923047895281658,
+          "inkClearance": -4.8076952104718345,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            9
+          ],
+          "label": "first horizontal / left second fold",
+          "expected": "contact",
+          "centerlineDistance": 4.8846698967279245,
+          "inkClearance": -0.11533010327207549,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            9
+          ],
+          "label": "second horizontal / left second fold",
+          "expected": "gap",
+          "centerlineDistance": 6.976532089799343,
+          "inkClearance": 1.9765320897993428,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            10
+          ],
+          "label": "second horizontal / left slanted cap",
+          "expected": "gap",
+          "centerlineDistance": 7.592759709091288,
+          "inkClearance": 2.592759709091288,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            9
+          ],
+          "label": "third horizontal / left second fold",
+          "expected": "contact",
+          "centerlineDistance": 4.242640687119286,
+          "inkClearance": -0.7573593128807143,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            10
+          ],
+          "label": "third horizontal / left cap",
+          "expected": "contact",
+          "centerlineDistance": 3.6406905501500697,
+          "inkClearance": -1.3593094498499303,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            9
+          ],
+          "label": "mouth left / left fold tip",
+          "expected": "contact",
+          "centerlineDistance": 4.716990566028302,
+          "inkClearance": -0.2830094339716984,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            10
+          ],
+          "label": "mouth left / left cap",
+          "expected": "contact",
+          "centerlineDistance": 2.195449840010011,
+          "inkClearance": -2.804550159989989,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            9
+          ],
+          "label": "mouth top / left fold tip",
+          "expected": "gap",
+          "centerlineDistance": 5.280151512977638,
+          "inkClearance": 0.2801515129776382,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            10
+          ],
+          "label": "mouth top / left cap",
+          "expected": "contact",
+          "centerlineDistance": 2.7658633371878656,
+          "inkClearance": -2.2341366628121344,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            13
+          ],
+          "label": "mouth left / left right dot",
+          "expected": "gap",
+          "centerlineDistance": 5.723840750857457,
+          "inkClearance": 0.7238407508574571,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            13
+          ],
+          "label": "mouth bottom / left right dot",
+          "expected": "gap",
+          "centerlineDistance": 6.262587324740469,
+          "inkClearance": 1.262587324740469,
+          "pass": true
+        },
+        {
+          "strokes": [
+            8,
+            9
+          ],
+          "label": "left upper folds",
+          "expected": "contact",
+          "centerlineDistance": 2.723081270704982,
+          "inkClearance": -2.276918729295018,
+          "pass": true
+        },
+        {
+          "strokes": [
+            8,
+            10
+          ],
+          "label": "left first fold / cap",
+          "expected": "gap",
+          "centerlineDistance": 7.441102068914257,
+          "inkClearance": 2.4411020689142573,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            10
+          ],
+          "label": "left lower fold / cap",
+          "expected": "contact",
+          "centerlineDistance": 0.3589413218457853,
+          "inkClearance": -4.641058678154215,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            11
+          ],
+          "label": "left fold / central vertical",
+          "expected": "contact",
+          "centerlineDistance": 0.5587631127912951,
+          "inkClearance": -4.441236887208705,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            12
+          ],
+          "label": "left fold / left dot",
+          "expected": "gap",
+          "centerlineDistance": 7.454528824815153,
+          "inkClearance": 2.454528824815153,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            12
+          ],
+          "label": "left vertical / left dot",
+          "expected": "gap",
+          "centerlineDistance": 6.159074709561109,
+          "inkClearance": 1.159074709561109,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            13
+          ],
+          "label": "left vertical / right dot",
+          "expected": "gap",
+          "centerlineDistance": 5.751400718402625,
+          "inkClearance": 0.7514007184026248,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            14
+          ],
+          "label": "first horizontal / right first fold",
+          "expected": "gap",
+          "centerlineDistance": 6.210312913970699,
+          "inkClearance": 1.2103129139706992,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            14
+          ],
+          "label": "second horizontal / right first fold",
+          "expected": "gap",
+          "centerlineDistance": 5.1244511901275835,
+          "inkClearance": 0.12445119012758354,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            15
+          ],
+          "label": "third horizontal / right second fold",
+          "expected": "gap",
+          "centerlineDistance": 6.16781669841759,
+          "inkClearance": 1.1678166984175897,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            15
+          ],
+          "label": "mouth top / right second fold",
+          "expected": "gap",
+          "centerlineDistance": 6.435060217278467,
+          "inkClearance": 1.4350602172784672,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            18
+          ],
+          "label": "mouth right / right left dot",
+          "expected": "gap",
+          "centerlineDistance": 5.5768388963167785,
+          "inkClearance": 0.5768388963167785,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            18
+          ],
+          "label": "mouth bottom / right left dot",
+          "expected": "gap",
+          "centerlineDistance": 5.842088667591416,
+          "inkClearance": 0.8420886675914163,
+          "pass": true
+        },
+        {
+          "strokes": [
+            14,
+            15
+          ],
+          "label": "right upper folds",
+          "expected": "contact",
+          "centerlineDistance": 0.6160155208687665,
+          "inkClearance": -4.383984479131233,
+          "pass": true
+        },
+        {
+          "strokes": [
+            15,
+            16
+          ],
+          "label": "right second fold / cap",
+          "expected": "contact",
+          "centerlineDistance": 0.8932169084769809,
+          "inkClearance": -4.1067830915230195,
+          "pass": true
+        },
+        {
+          "strokes": [
+            15,
+            17
+          ],
+          "label": "right fold / central vertical",
+          "expected": "contact",
+          "centerlineDistance": 0.6969056518998528,
+          "inkClearance": -4.303094348100148,
+          "pass": true
+        },
+        {
+          "strokes": [
+            15,
+            18
+          ],
+          "label": "right fold / left dot",
+          "expected": "gap",
+          "centerlineDistance": 7.96210537177319,
+          "inkClearance": 2.96210537177319,
+          "pass": true
+        },
+        {
+          "strokes": [
+            16,
+            17
+          ],
+          "label": "right cap / vertical direct separation",
+          "expected": "gap",
+          "centerlineDistance": 5.816060097242183,
+          "inkClearance": 0.8160600972421834,
+          "pass": true
+        },
+        {
+          "strokes": [
+            16,
+            19
+          ],
+          "label": "right cap / right dot",
+          "expected": "gap",
+          "centerlineDistance": 5.772347875864727,
+          "inkClearance": 0.7723478758647273,
+          "pass": true
+        },
+        {
+          "strokes": [
+            17,
+            18
+          ],
+          "label": "right vertical / left dot",
+          "expected": "gap",
+          "centerlineDistance": 6.299999999999997,
+          "inkClearance": 1.2999999999999972,
+          "pass": true
+        },
+        {
+          "strokes": [
+            17,
+            19
+          ],
+          "label": "right vertical / right dot",
+          "expected": "gap",
+          "centerlineDistance": 6.785786800145382,
+          "inkClearance": 1.7857868001453818,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            22
+          ],
+          "label": "mouth bottom / heart middle dot",
+          "expected": "gap",
+          "centerlineDistance": 6.352952069707431,
+          "inkClearance": 1.352952069707431,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            20
+          ],
+          "label": "left vertical / heart left dot",
+          "expected": "gap",
+          "centerlineDistance": 9.06972987469859,
+          "inkClearance": 4.06972987469859,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            21
+          ],
+          "label": "left vertical / heart curve",
+          "expected": "gap",
+          "centerlineDistance": 10.478549517943788,
+          "inkClearance": 5.478549517943788,
+          "pass": true
+        },
+        {
+          "strokes": [
+            17,
+            23
+          ],
+          "label": "right vertical / heart right dot",
+          "expected": "gap",
+          "centerlineDistance": 5.412947441089741,
+          "inkClearance": 0.4129474410897407,
+          "pass": true
+        },
+        {
+          "strokes": [
+            20,
+            21
+          ],
+          "label": "heart left dot / curve",
+          "expected": "gap",
+          "centerlineDistance": 9.534149149242422,
+          "inkClearance": 4.534149149242422,
+          "pass": true
+        },
+        {
+          "strokes": [
+            20,
+            22
+          ],
+          "label": "heart left / middle dots",
+          "expected": "gap",
+          "centerlineDistance": 22.541073621280777,
+          "inkClearance": 17.541073621280777,
+          "pass": true
+        },
+        {
+          "strokes": [
+            20,
+            23
+          ],
+          "label": "heart outer dots",
+          "expected": "gap",
+          "centerlineDistance": 42.57933771208754,
+          "inkClearance": 37.57933771208754,
+          "pass": true
+        },
+        {
+          "strokes": [
+            21,
+            22
+          ],
+          "label": "heart curve / middle dot",
+          "expected": "gap",
+          "centerlineDistance": 10.756393447619887,
+          "inkClearance": 5.756393447619887,
+          "pass": true
+        },
+        {
+          "strokes": [
+            21,
+            23
+          ],
+          "label": "heart curve / right dot",
+          "expected": "gap",
+          "centerlineDistance": 12.050735580195663,
+          "inkClearance": 7.0507355801956635,
+          "pass": true
+        },
+        {
+          "strokes": [
+            22,
+            23
+          ],
+          "label": "heart middle / right dots",
+          "expected": "gap",
+          "centerlineDistance": 15.393829932801001,
+          "inkClearance": 10.393829932801001,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "glyph": "吏",
+      "status": "passed",
+      "expectedStrokes": 6,
+      "sourceGlyph": "吏",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0475.mp4",
+        "sha256": "031e721fbc14e521fd76331ce35bcbe3c6cd1ae57fbe463999526b7a3e6f6bdd",
+        "bytes": 426253
+      },
+      "durationSeconds": 12.765,
+      "wholeVideoSampleTimes": [
+        0,
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5,
+        4,
+        4.5,
+        5,
+        5.5,
+        6,
+        6.5,
+        7,
+        7.5,
+        8,
+        8.5,
+        9,
+        9.5,
+        10,
+        10.5,
+        11,
+        11.5,
+        12,
+        12.5
+      ],
+      "finalCompletedBySampleTimes": [
+        1.7,
+        2.9,
+        4.9,
+        6.2,
+        9.6,
+        12.3
+      ],
+      "sourceFinal": {
+        "time": 12.6,
+        "width": 420
+      },
+      "checks": {
+        "sourceHashAndBytesMatch": true,
+        "rawSourceGlyphRetained": true,
+        "wholeVideoSequenceViewed": true,
+        "allFinalCompletionSamplesViewed": true,
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "actualPathsMatch": true,
+        "pathsHashMatch": true,
+        "recipeHashMatch": true,
+        "allCumulativesAndFinalViewed": true
+      },
+      "originalMediansSha256": "ad95c19cbcff5ff5c84b770f2281081a4b8617574c99ed6dae17570bba896128",
+      "pathsSha256": "58ba20f13ca7dae9cfbe57646096f939e74cba3a47a5fe4c8a3182f633e54558",
+      "correctionSha256": "4c72121b4db1f3b653c5e4516133524559813c017d0b790f1ba3851ebfbc40c6",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "geometryRelations": [
+        {
+          "strokes": [
+            1,
+            2
+          ],
+          "label": "top horizontal / mouth left",
+          "expected": "gap",
+          "centerlineDistance": 13.102671483327356,
+          "inkClearance": 8.102671483327356,
+          "pass": true
+        },
+        {
+          "strokes": [
+            1,
+            3
+          ],
+          "label": "top horizontal / mouth top",
+          "expected": "gap",
+          "centerlineDistance": 12.393353540106679,
+          "inkClearance": 7.393353540106679,
+          "pass": true
+        },
+        {
+          "strokes": [
+            1,
+            5
+          ],
+          "label": "central vertical / top horizontal",
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkClearance": -5,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            3
+          ],
+          "label": "mouth upper-left",
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkClearance": -5,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            4
+          ],
+          "label": "mouth lower-left",
+          "expected": "contact",
+          "centerlineDistance": 0.2326584446558466,
+          "inkClearance": -4.767341555344154,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "label": "mouth lower-right",
+          "expected": "contact",
+          "centerlineDistance": 0.235045109299108,
+          "inkClearance": -4.764954890700892,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            5
+          ],
+          "label": "central vertical / mouth top",
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkClearance": -5,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            5
+          ],
+          "label": "central vertical / mouth bottom",
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkClearance": -5,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            6
+          ],
+          "label": "mouth left / lower right sweep start",
+          "expected": "gap",
+          "centerlineDistance": 7.840964673975067,
+          "inkClearance": 2.8409646739750674,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            6
+          ],
+          "label": "mouth bottom / lower right sweep",
+          "expected": "gap",
+          "centerlineDistance": 8.68226989650458,
+          "inkClearance": 3.6822698965045806,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            6
+          ],
+          "label": "lower sweeps cross",
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkClearance": -5,
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "corpusHashes": [
+    {
+      "name": "Ko",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "bytes": 1387824,
+      "hashMatches": true
+    },
+    {
+      "name": "Ja",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957,
+      "hashMatches": true
+    },
+    {
+      "name": "MM",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "bytes": 30778076,
+      "hashMatches": true
+    }
+  ],
+  "errors": []
+}

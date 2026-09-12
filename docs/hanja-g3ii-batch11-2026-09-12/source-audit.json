@@ -1,0 +1,1039 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch11",
+  "date": "2026-09-12",
+  "auditor": "b",
+  "status": "passed",
+  "scope": {
+    "freshSources": "Freshly fetched the entire pinned official XLSX and three pinned corpus files into RAM for this eight-character audit; checked bytes, SHA-256 and parsed records.",
+    "originals": "Compared all eight selected originalMedians arrays, including held 蓮, exactly against the newly parsed corpus coordinates. Raw arrays remain in the author files; this audit stores hashes and results.",
+    "generator": "Invoked the actual textbookGeometry and textbookCorrectionSha256 exports for every approved recipe; compared all paths, hashes and sourceStrokeIndices. No shared data was written.",
+    "videoEvidence": "This auditor personally fetched and visually inspected complete individual videos for 蓮,嶺,戀,吏 during primary/peer review. Video hashes and visual evidence for 諾,蘭,弄,率 are aggregated from their frozen authors and independent peers; no personal reinspection of those four is claimed.",
+    "compatibilityGlyphs": "Exact raw sourceGlyphs are checked against the fresh manifest. Unicode normalization is only a discovery check and does not establish glyph form or stroke approval.",
+    "visualArtifacts": "Per-character full-video and actual width5 round-cap/round-join cumulative/final visual checks are documented in the pinned owner and peer artifacts.",
+    "runtime": "Integration and public-bundle checks are recorded separately by the root."
+  },
+  "inputs": {
+    "inventoryFile": "inventory.json",
+    "inventoryFileSha256": "ee2b91e636ec391a662f333cfe37bb265effa55bb13369a84966f3bf10946fc7",
+    "baselineFile": "baseline.json",
+    "baselineFileSha256": "d1c06cf282369fc07dbf2ce052fa027c37835bbd9ac457f71defa74291ae4bc6",
+    "inputSelectionSha256": "05a1c4766f29185b96b430a21a0fabc1b762507328ed0f6bb1f41243f56a26cf",
+    "baseline": {
+      "head": "e604f8b001b9ad55ea70873251d04a52ebdd325c",
+      "runtime": 1463,
+      "publisher": 960,
+      "grade3II": 473
+    }
+  },
+  "summary": {
+    "selectedCharacters": 8,
+    "selectedCatalogStrokes": 116,
+    "approvedCharacters": 7,
+    "approvedStrokes": 101,
+    "heldCharacters": 1,
+    "heldCatalogStrokes": 15,
+    "heldGlyphs": [
+      "蓮"
+    ],
+    "exactOriginalCharacters": 8,
+    "chosenOriginalStrokes": 115,
+    "approvedOriginalStrokes": 101,
+    "candidateSlotsChecked": 24,
+    "availableExactCandidates": 16,
+    "recipesReplayed": 7,
+    "generatedPaths": 101,
+    "approvedNullSourceStrokes": 0,
+    "approvedDroppedOriginalStrokes": 0,
+    "approvedSplitStrokes": 0,
+    "heldGeneratedPaths": 0,
+    "authorDeclaredWhole2fpsFrames": 300,
+    "approvedCompletionSamples": 101,
+    "heldContinuousSegmentSamples": 14,
+    "independentPeerCharacters": 8,
+    "independentPeerCatalogStrokes": 116,
+    "independentPeerApprovedCharacters": 7,
+    "independentPeerApprovedStrokes": 101,
+    "personallyReviewedWholeVideoCharacters": 4,
+    "otherVideoRecordsAggregated": 4,
+    "previousBatchFilesChecked": 41,
+    "errors": 0
+  },
+  "ownerFiles": [
+    {
+      "owner": "a",
+      "file": "review-a.json",
+      "sha256": "26b57fca6a9f6f1dbee7091cd2c19aaadb34b113b8e9ab1aaf64fb7eea5702c1"
+    },
+    {
+      "owner": "b",
+      "file": "review-b.json",
+      "sha256": "3b8599006bf380ec4d5537c599c3dc21e77d28c773a0499d2f9986b7251cdd36"
+    },
+    {
+      "owner": "c",
+      "file": "review-c.json",
+      "sha256": "512b2f75aef5fede3c50099ad1cbf28d910eac9b4f12fd14363913f858f5416f"
+    },
+    {
+      "owner": "root",
+      "file": "review-root.json",
+      "sha256": "c53d0f015dde4e6b49942dafd373eb6ab23eca0a3e1e5ba10b4ed1cd75fea710"
+    }
+  ],
+  "peerFiles": [
+    {
+      "file": "peer-a.json",
+      "sha256": "c3749efc1b9b4e8fc20d74aab3f2baa8b9b91651dc8dc965dd5ae983b038bef3",
+      "authorFile": "review-b.json",
+      "authorFileSha256": "3b8599006bf380ec4d5537c599c3dc21e77d28c773a0499d2f9986b7251cdd36",
+      "authorPinMatches": true,
+      "sourceVideos": [
+        {
+          "glyph": "蓮",
+          "sha256": "12a61e86c363f02ecd83b9b7df8f83c7b907fd7638beda6903dd1f30c4aad5cf",
+          "bytes": 730987,
+          "shaAndBytesMatchAuthor": true
+        },
+        {
+          "glyph": "嶺",
+          "sha256": "ec3e7a633ea835abd2434f144cc9542facfd858b0992078d680ee27b28e0823a",
+          "bytes": 675274,
+          "shaAndBytesMatchAuthor": true
+        }
+      ]
+    },
+    {
+      "file": "peer-b.json",
+      "sha256": "d8e19a49533520b117531d64d4ee578fd1ccc5a82c9f7608e02965ea9880fd44",
+      "authorFile": "review-c.json",
+      "authorFileSha256": "512b2f75aef5fede3c50099ad1cbf28d910eac9b4f12fd14363913f858f5416f",
+      "authorPinMatches": true,
+      "sourceVideos": [
+        {
+          "glyph": "戀",
+          "sha256": "40c4978ee66c447549921882e58f5de4caa844a955b9d66f234a568bc9ff3cb7",
+          "bytes": 758728,
+          "shaAndBytesMatchAuthor": true
+        },
+        {
+          "glyph": "吏",
+          "sha256": "031e721fbc14e521fd76331ce35bcbe3c6cd1ae57fbe463999526b7a3e6f6bdd",
+          "bytes": 426253,
+          "shaAndBytesMatchAuthor": true
+        }
+      ]
+    },
+    {
+      "file": "peer-c.json",
+      "sha256": "2985151fe2e8bb9abf16706799ebe15a668e0e6ed4f3da4315a4fbb35d5128d4",
+      "authorFile": "review-root.json",
+      "authorFileSha256": "c53d0f015dde4e6b49942dafd373eb6ab23eca0a3e1e5ba10b4ed1cd75fea710",
+      "authorPinMatches": true,
+      "sourceVideos": [
+        {
+          "glyph": "諾",
+          "sha256": "e0250178dee90283979a3234022cbed4da79d9a2315947329aadf5d79d7027af",
+          "bytes": 652084,
+          "shaAndBytesMatchAuthor": true
+        },
+        {
+          "glyph": "率",
+          "sha256": "a87712c5c3b65940f942f7780c11310538e2ce93ecbdfe97e615e038fecb43a9",
+          "bytes": 476850,
+          "shaAndBytesMatchAuthor": true
+        }
+      ]
+    },
+    {
+      "file": "peer-root-a.json",
+      "sha256": "e8680746609f29f7cfd6181e94ef4ddc4fa53ef320c41137e159457e07543c76",
+      "authorFile": "review-a.json",
+      "authorFileSha256": "26b57fca6a9f6f1dbee7091cd2c19aaadb34b113b8e9ab1aaf64fb7eea5702c1",
+      "authorPinMatches": true,
+      "sourceVideos": [
+        {
+          "glyph": "蘭",
+          "sha256": "245366072e4deca2d847173d88238e140752e5e6c7666f1154f4358afd9c6490",
+          "bytes": 883658,
+          "shaAndBytesMatchAuthor": true
+        },
+        {
+          "glyph": "弄",
+          "sha256": "ee5306cf810f3aace21446fc47b64a17694c492e3e45f95dc26d143e9cc9e8fa",
+          "bytes": 340302,
+          "shaAndBytesMatchAuthor": true
+        }
+      ]
+    }
+  ],
+  "manifest": {
+    "source": {
+      "id": "vivasam-high-2022",
+      "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/data/data_high.xlsx",
+      "sha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+      "bytes": 128318
+    },
+    "dataRows": 1800,
+    "uniqueGlyphs": 1800,
+    "selected": [
+      {
+        "glyph": "諾",
+        "rawSourceGlyph": "諾",
+        "manifestRow": "0281",
+        "videoFilename": "0281 허락할 낙.mp4",
+        "rawSourceGlyphExact": true,
+        "filenameExact": true,
+        "normalizedSearchKeyMatches": true
+      },
+      {
+        "glyph": "蘭",
+        "rawSourceGlyph": "蘭",
+        "manifestRow": "0391",
+        "videoFilename": "0391 난초 란.mp4",
+        "rawSourceGlyphExact": true,
+        "filenameExact": true,
+        "normalizedSearchKeyMatches": true
+      },
+      {
+        "glyph": "蓮",
+        "rawSourceGlyph": "蓮",
+        "manifestRow": "0420",
+        "videoFilename": "0420 연꽃 련.mp4",
+        "rawSourceGlyphExact": true,
+        "filenameExact": true,
+        "normalizedSearchKeyMatches": true
+      },
+      {
+        "glyph": "戀",
+        "rawSourceGlyph": "戀",
+        "manifestRow": "0418",
+        "videoFilename": "0418 사모할 련.mp4",
+        "rawSourceGlyphExact": true,
+        "filenameExact": true,
+        "normalizedSearchKeyMatches": true
+      },
+      {
+        "glyph": "嶺",
+        "rawSourceGlyph": "嶺",
+        "manifestRow": "0430",
+        "videoFilename": "0430 고개 령.mp4",
+        "rawSourceGlyphExact": true,
+        "filenameExact": true,
+        "normalizedSearchKeyMatches": true
+      },
+      {
+        "glyph": "弄",
+        "rawSourceGlyph": "弄",
+        "manifestRow": "0446",
+        "videoFilename": "0446 희롱할 롱.mp4",
+        "rawSourceGlyphExact": true,
+        "filenameExact": true,
+        "normalizedSearchKeyMatches": true
+      },
+      {
+        "glyph": "率",
+        "rawSourceGlyph": "率",
+        "manifestRow": "0468",
+        "videoFilename": "0468 비율 률.mp4",
+        "rawSourceGlyphExact": true,
+        "filenameExact": true,
+        "normalizedSearchKeyMatches": true
+      },
+      {
+        "glyph": "吏",
+        "rawSourceGlyph": "吏",
+        "manifestRow": "0475",
+        "videoFilename": "0475 벼슬아치 리.mp4",
+        "rawSourceGlyphExact": true,
+        "filenameExact": true,
+        "normalizedSearchKeyMatches": true
+      }
+    ],
+    "errors": []
+  },
+  "corpora": [
+    {
+      "name": "Ko",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "bytes": 1387824,
+      "expectedSha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "expectedBytes": 1387824,
+      "hashMatches": true,
+      "bytesMatch": true,
+      "corpusEntries": 535,
+      "selectedCharacters": 0,
+      "selectedCandidateStrokes": 0
+    },
+    {
+      "name": "Ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957,
+      "expectedSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "expectedBytes": 21862957,
+      "hashMatches": true,
+      "bytesMatch": true,
+      "corpusEntries": 7007,
+      "selectedCharacters": 8,
+      "selectedCandidateStrokes": 111
+    },
+    {
+      "name": "MM",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "bytes": 30778076,
+      "expectedSha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "expectedBytes": 30778076,
+      "hashMatches": true,
+      "bytesMatch": true,
+      "corpusEntries": 9574,
+      "selectedCharacters": 8,
+      "selectedCandidateStrokes": 115
+    }
+  ],
+  "candidateComparisons": [
+    {
+      "glyph": "諾",
+      "source": "Ko",
+      "strokes": null,
+      "mediansSha256": null
+    },
+    {
+      "glyph": "諾",
+      "source": "Ja",
+      "strokes": 15,
+      "mediansSha256": "1d977de8fc700e5b67874b4aeda5a0c214e893d9ccc613a0db0803280402f63d"
+    },
+    {
+      "glyph": "諾",
+      "source": "MM",
+      "strokes": 16,
+      "mediansSha256": "667f22a8da7fe6a7e7def6a9821ae9f8f8e58788c2eaea577fe0d5efdc673104"
+    },
+    {
+      "glyph": "蘭",
+      "source": "Ko",
+      "strokes": null,
+      "mediansSha256": null
+    },
+    {
+      "glyph": "蘭",
+      "source": "Ja",
+      "strokes": 19,
+      "mediansSha256": "ea82adb805bf37b5056a20f59b26a8f9cac38f42cc1f536f7346fc21ae3d3e21"
+    },
+    {
+      "glyph": "蘭",
+      "source": "MM",
+      "strokes": 21,
+      "mediansSha256": "8be6bb89b73b694561e9e91e0924a8ca09eca1061bab185f79d712f5553e2f36"
+    },
+    {
+      "glyph": "蓮",
+      "source": "Ko",
+      "strokes": null,
+      "mediansSha256": null
+    },
+    {
+      "glyph": "蓮",
+      "source": "Ja",
+      "strokes": 13,
+      "mediansSha256": "35e761c00bea1fc4f2423dcb055486d59acc96ce4f26b246070916ef87f53d76"
+    },
+    {
+      "glyph": "蓮",
+      "source": "MM",
+      "strokes": 14,
+      "mediansSha256": "00d29a6b3168a7544b0599853d8392f7bb45884efb1d13f8699f61b19bc4f4ca"
+    },
+    {
+      "glyph": "戀",
+      "source": "Ko",
+      "strokes": null,
+      "mediansSha256": null
+    },
+    {
+      "glyph": "戀",
+      "source": "Ja",
+      "strokes": 23,
+      "mediansSha256": "831f4eaffea3aa7fb09223e76ba6d663383954f2c665b075f1c43482803335e0"
+    },
+    {
+      "glyph": "戀",
+      "source": "MM",
+      "strokes": 23,
+      "mediansSha256": "49551b505db9611150bdac80db10c648c3d407a1cc540fd9b7f4cea7f01b470a"
+    },
+    {
+      "glyph": "嶺",
+      "source": "Ko",
+      "strokes": null,
+      "mediansSha256": null
+    },
+    {
+      "glyph": "嶺",
+      "source": "Ja",
+      "strokes": 17,
+      "mediansSha256": "000cf4486c234c15c3454b4dbcdc34b7acfdb50b76bbd7ba9b3e772470777640"
+    },
+    {
+      "glyph": "嶺",
+      "source": "MM",
+      "strokes": 17,
+      "mediansSha256": "185452f112d8e79242c7687eab0896f9468a596ecdde23df74ef933c37c44d5e"
+    },
+    {
+      "glyph": "弄",
+      "source": "Ko",
+      "strokes": null,
+      "mediansSha256": null
+    },
+    {
+      "glyph": "弄",
+      "source": "Ja",
+      "strokes": 7,
+      "mediansSha256": "1b835dc0e5357ec79f952c13c1cd5b1d6c7f8b647d58f644cc759581f0f6d981"
+    },
+    {
+      "glyph": "弄",
+      "source": "MM",
+      "strokes": 7,
+      "mediansSha256": "23bd14f3dd4100d5a839a79e8ced15288a2139355bfafa00418f341db75d5dcd"
+    },
+    {
+      "glyph": "率",
+      "source": "Ko",
+      "strokes": null,
+      "mediansSha256": null
+    },
+    {
+      "glyph": "率",
+      "source": "Ja",
+      "strokes": 11,
+      "mediansSha256": "b7defe7708720760b9360d915c45a3bc27df1e809fba419074375add0c6c1459"
+    },
+    {
+      "glyph": "率",
+      "source": "MM",
+      "strokes": 11,
+      "mediansSha256": "8600b38e8056f6fadd750c72a4083e1017d3162096939209b3352bcfa574aee0"
+    },
+    {
+      "glyph": "吏",
+      "source": "Ko",
+      "strokes": null,
+      "mediansSha256": null
+    },
+    {
+      "glyph": "吏",
+      "source": "Ja",
+      "strokes": 6,
+      "mediansSha256": "ad95c19cbcff5ff5c84b770f2281081a4b8617574c99ed6dae17570bba896128"
+    },
+    {
+      "glyph": "吏",
+      "source": "MM",
+      "strokes": 6,
+      "mediansSha256": "14b5cad3c3decb2f6c4f81beb4aa13cd7b7f186653c1b0c4cacabbcfc428bcc4"
+    }
+  ],
+  "generator": {
+    "sourceFiles": {
+      "scripts/hanja-stroke-textbook-corrections.ts": "7cbf18ffe85fab362c0a29f8dfb00a4f140f3cdc676a082b7b44ccd12f78eb83",
+      "lib/hanja-stroke-geometry.ts": "8e2b98e3064bd84e0ec1ad5cb05e56c624c0759cd10357e95fe8768e5d0dd06d"
+    },
+    "exports": [
+      "textbookGeometry",
+      "textbookCorrectionSha256"
+    ],
+    "arrayHashEncoding": "SHA-256 of UTF-8 JSON.stringify(array)",
+    "recipeHashImplementation": "textbookCorrectionSha256(recipe)",
+    "everyApprovedOriginalUsedOnce": true
+  },
+  "entries": [
+    {
+      "glyph": "蘭",
+      "owner": "a",
+      "status": "matched",
+      "expectedStrokes": 21,
+      "sourceGlyph": "蘭",
+      "manifestRow": "0391",
+      "corpus": "MM",
+      "originalStrokes": 21,
+      "originalMediansSha256": "8be6bb89b73b694561e9e91e0924a8ca09eca1061bab185f79d712f5553e2f36",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0391.mp4",
+        "sha256": "245366072e4deca2d847173d88238e140752e5e6c7666f1154f4358afd9c6490",
+        "bytes": 883658
+      },
+      "durationSeconds": 26.265,
+      "completedBySampleTimes": [
+        0.7,
+        1.9,
+        3.3,
+        4.5,
+        6.6,
+        8.2,
+        8.8,
+        9.5,
+        10.6,
+        13.7,
+        14.4,
+        15.1,
+        16.8,
+        17.8,
+        19,
+        19.8,
+        20.8,
+        21.5,
+        23.3,
+        24.5,
+        26
+      ],
+      "completionInterpretation": "approved-completion-upper-bounds",
+      "authorDeclaredOverviewFrames": 53,
+      "personalWholeVideoReview": false,
+      "checks": {
+        "selectionAndCatalog": true,
+        "rawSourceGlyph": true,
+        "manifestReference": true,
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "sourceVideoReference": true,
+        "completionSamples": true,
+        "approvedChecks": true,
+        "authorWholeSequenceCoverage": true,
+        "pathsMatch": true,
+        "pathHashMatch": true,
+        "recipeHashMatch": true,
+        "lineageMatch": true,
+        "allOriginalStrokesCovered": true,
+        "noApprovedNull": true,
+        "personalVideoHashMatch": null
+      },
+      "generatedPaths": 21,
+      "pathsSha256": "4ff1ae067c18e9904e982ac7db4faab47cea68e34b4fb8fda8fa9fb61d5805ae",
+      "correctionSha256": "5dc60d61e04cb4fb95dc6fcabe177fec44732475c1a164168f9853d66f29c889",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "glyph": "弄",
+      "owner": "a",
+      "status": "matched",
+      "expectedStrokes": 7,
+      "sourceGlyph": "弄",
+      "manifestRow": "0446",
+      "corpus": "MM",
+      "originalStrokes": 7,
+      "originalMediansSha256": "23bd14f3dd4100d5a839a79e8ced15288a2139355bfafa00418f341db75d5dcd",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0446.mp4",
+        "sha256": "ee5306cf810f3aace21446fc47b64a17694c492e3e45f95dc26d143e9cc9e8fa",
+        "bytes": 340302
+      },
+      "durationSeconds": 10.931,
+      "completedBySampleTimes": [
+        0.8,
+        1.9,
+        3.2,
+        4.4,
+        6.9,
+        9,
+        10.8
+      ],
+      "completionInterpretation": "approved-completion-upper-bounds",
+      "authorDeclaredOverviewFrames": 22,
+      "personalWholeVideoReview": false,
+      "checks": {
+        "selectionAndCatalog": true,
+        "rawSourceGlyph": true,
+        "manifestReference": true,
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "sourceVideoReference": true,
+        "completionSamples": true,
+        "approvedChecks": true,
+        "authorWholeSequenceCoverage": true,
+        "pathsMatch": true,
+        "pathHashMatch": true,
+        "recipeHashMatch": true,
+        "lineageMatch": true,
+        "allOriginalStrokesCovered": true,
+        "noApprovedNull": true,
+        "personalVideoHashMatch": null
+      },
+      "generatedPaths": 7,
+      "pathsSha256": "fc9e28a4ec7a1cbe1697dbb0ce70cf808f34b35e3b945fe85a8f9d3d6393320e",
+      "correctionSha256": "e7cfeaef1da8f006c499be6ae2c6b3ed5519040809dbc4b65023df3a75e7fafa",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "glyph": "蓮",
+      "owner": "b",
+      "status": "hold",
+      "expectedStrokes": 15,
+      "sourceGlyph": "蓮",
+      "manifestRow": "0420",
+      "corpus": "MM",
+      "originalStrokes": 14,
+      "originalMediansSha256": "00d29a6b3168a7544b0599853d8392f7bb45884efb1d13f8699f61b19bc4f4ca",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0420.mp4",
+        "sha256": "12a61e86c363f02ecd83b9b7df8f83c7b907fd7638beda6903dd1f30c4aad5cf",
+        "bytes": 730987
+      },
+      "durationSeconds": 20.698,
+      "completedBySampleTimes": [
+        0.6,
+        1.7,
+        2.5,
+        3.6,
+        5,
+        6.1,
+        7.8,
+        8.7,
+        9.8,
+        11.3,
+        13.2,
+        14.2,
+        16.8,
+        20.2
+      ],
+      "completionInterpretation": "held-continuous-segment-upper-bounds",
+      "authorDeclaredOverviewFrames": 41,
+      "personalWholeVideoReview": true,
+      "checks": {
+        "selectionAndCatalog": true,
+        "rawSourceGlyph": true,
+        "manifestReference": true,
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "sourceVideoReference": true,
+        "completionSamples": true,
+        "approvedChecks": true,
+        "authorWholeSequenceCoverage": true,
+        "heldWithoutOutput": true,
+        "personalVideoHashMatch": true
+      }
+    },
+    {
+      "glyph": "嶺",
+      "owner": "b",
+      "status": "matched",
+      "expectedStrokes": 17,
+      "sourceGlyph": "嶺",
+      "manifestRow": "0430",
+      "corpus": "Ja",
+      "originalStrokes": 17,
+      "originalMediansSha256": "000cf4486c234c15c3454b4dbcdc34b7acfdb50b76bbd7ba9b3e772470777640",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0430.mp4",
+        "sha256": "ec3e7a633ea835abd2434f144cc9542facfd858b0992078d680ee27b28e0823a",
+        "bytes": 675274
+      },
+      "durationSeconds": 20.215,
+      "completedBySampleTimes": [
+        0.6,
+        2.1,
+        3.2,
+        5.5,
+        6.3,
+        7.3,
+        9.1,
+        10.2,
+        11.6,
+        12.5,
+        13.5,
+        15.1,
+        16.2,
+        16.8,
+        17.6,
+        18.8,
+        19.8
+      ],
+      "completionInterpretation": "approved-completion-upper-bounds",
+      "authorDeclaredOverviewFrames": 40,
+      "personalWholeVideoReview": true,
+      "checks": {
+        "selectionAndCatalog": true,
+        "rawSourceGlyph": true,
+        "manifestReference": true,
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "sourceVideoReference": true,
+        "completionSamples": true,
+        "approvedChecks": true,
+        "authorWholeSequenceCoverage": true,
+        "pathsMatch": true,
+        "pathHashMatch": true,
+        "recipeHashMatch": true,
+        "lineageMatch": true,
+        "allOriginalStrokesCovered": true,
+        "noApprovedNull": true,
+        "personalVideoHashMatch": true
+      },
+      "generatedPaths": 17,
+      "pathsSha256": "442d7a4857e64729de16c8c00e5bd050b772abe0c1642d7a9bf2aa964a1df984",
+      "correctionSha256": "1ec5418b0208d2a51ef36c790f746d114c5ee7c3fe27f3aa5da3d86af42c02c4",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "glyph": "戀",
+      "owner": "c",
+      "status": "matched",
+      "expectedStrokes": 23,
+      "sourceGlyph": "戀",
+      "manifestRow": "0418",
+      "corpus": "Ja",
+      "originalStrokes": 23,
+      "originalMediansSha256": "831f4eaffea3aa7fb09223e76ba6d663383954f2c665b075f1c43482803335e0",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0418.mp4",
+        "sha256": "40c4978ee66c447549921882e58f5de4caa844a955b9d66f234a568bc9ff3cb7",
+        "bytes": 758728
+      },
+      "durationSeconds": 23.848,
+      "completedBySampleTimes": [
+        0.7,
+        1.9,
+        2.6,
+        3.4,
+        4.3,
+        5.4,
+        6,
+        7.5,
+        8.6,
+        9.3,
+        10.1,
+        11.1,
+        11.7,
+        13.2,
+        14.4,
+        15.2,
+        16.2,
+        17.1,
+        17.8,
+        19,
+        21.6,
+        22.3,
+        23.4
+      ],
+      "completionInterpretation": "approved-completion-upper-bounds",
+      "authorDeclaredOverviewFrames": 48,
+      "personalWholeVideoReview": true,
+      "checks": {
+        "selectionAndCatalog": true,
+        "rawSourceGlyph": true,
+        "manifestReference": true,
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "sourceVideoReference": true,
+        "completionSamples": true,
+        "approvedChecks": true,
+        "authorWholeSequenceCoverage": true,
+        "pathsMatch": true,
+        "pathHashMatch": true,
+        "recipeHashMatch": true,
+        "lineageMatch": true,
+        "allOriginalStrokesCovered": true,
+        "noApprovedNull": true,
+        "personalVideoHashMatch": true
+      },
+      "generatedPaths": 23,
+      "pathsSha256": "f923bc6666ee8cc3ca43c2e0896b15cf856749b70befa3dd52aa9f91f13e4ec2",
+      "correctionSha256": "1768ad80d5216eeadf1a3afa6859e1998ea633002459cf17c4bb302740286909",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        11,
+        13,
+        14,
+        15,
+        16,
+        18,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "glyph": "吏",
+      "owner": "c",
+      "status": "matched",
+      "expectedStrokes": 6,
+      "sourceGlyph": "吏",
+      "manifestRow": "0475",
+      "corpus": "Ja",
+      "originalStrokes": 6,
+      "originalMediansSha256": "ad95c19cbcff5ff5c84b770f2281081a4b8617574c99ed6dae17570bba896128",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0475.mp4",
+        "sha256": "031e721fbc14e521fd76331ce35bcbe3c6cd1ae57fbe463999526b7a3e6f6bdd",
+        "bytes": 426253
+      },
+      "durationSeconds": 12.765,
+      "completedBySampleTimes": [
+        1.7,
+        2.9,
+        4.9,
+        6.2,
+        9.6,
+        12.3
+      ],
+      "completionInterpretation": "approved-completion-upper-bounds",
+      "authorDeclaredOverviewFrames": 26,
+      "personalWholeVideoReview": true,
+      "checks": {
+        "selectionAndCatalog": true,
+        "rawSourceGlyph": true,
+        "manifestReference": true,
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "sourceVideoReference": true,
+        "completionSamples": true,
+        "approvedChecks": true,
+        "authorWholeSequenceCoverage": true,
+        "pathsMatch": true,
+        "pathHashMatch": true,
+        "recipeHashMatch": true,
+        "lineageMatch": true,
+        "allOriginalStrokesCovered": true,
+        "noApprovedNull": true,
+        "personalVideoHashMatch": true
+      },
+      "generatedPaths": 6,
+      "pathsSha256": "58ba20f13ca7dae9cfbe57646096f939e74cba3a47a5fe4c8a3182f633e54558",
+      "correctionSha256": "4c72121b4db1f3b653c5e4516133524559813c017d0b790f1ba3851ebfbc40c6",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "glyph": "諾",
+      "owner": "root",
+      "status": "matched",
+      "expectedStrokes": 16,
+      "sourceGlyph": "諾",
+      "manifestRow": "0281",
+      "corpus": "MM",
+      "originalStrokes": 16,
+      "originalMediansSha256": "667f22a8da7fe6a7e7def6a9821ae9f8f8e58788c2eaea577fe0d5efdc673104",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0281.mp4",
+        "sha256": "e0250178dee90283979a3234022cbed4da79d9a2315947329aadf5d79d7027af",
+        "bytes": 652084
+      },
+      "durationSeconds": 19.531,
+      "completedBySampleTimes": [
+        0.9,
+        2.3,
+        3.2,
+        4.1,
+        5,
+        6.1,
+        7.1,
+        8.3,
+        9.3,
+        10.3,
+        11.5,
+        13.2,
+        15.7,
+        16.6,
+        17.9,
+        19.2
+      ],
+      "completionInterpretation": "approved-completion-upper-bounds",
+      "authorDeclaredOverviewFrames": 39,
+      "personalWholeVideoReview": false,
+      "checks": {
+        "selectionAndCatalog": true,
+        "rawSourceGlyph": true,
+        "manifestReference": true,
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "sourceVideoReference": true,
+        "completionSamples": true,
+        "approvedChecks": true,
+        "authorWholeSequenceCoverage": true,
+        "pathsMatch": true,
+        "pathHashMatch": true,
+        "recipeHashMatch": true,
+        "lineageMatch": true,
+        "allOriginalStrokesCovered": true,
+        "noApprovedNull": true,
+        "personalVideoHashMatch": null
+      },
+      "generatedPaths": 16,
+      "pathsSha256": "1a84bb9f556cb5d704d3f6b7c9bafc1e1b906980ca28c2e7fa58b7266b2367c4",
+      "correctionSha256": "171f39d81ccd545aeec56fa8854413b438b104430de796475e7603c5967bea47",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "glyph": "率",
+      "owner": "root",
+      "status": "matched",
+      "expectedStrokes": 11,
+      "sourceGlyph": "率",
+      "manifestRow": "0468",
+      "corpus": "Ja",
+      "originalStrokes": 11,
+      "originalMediansSha256": "b7defe7708720760b9360d915c45a3bc27df1e809fba419074375add0c6c1459",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0468.mp4",
+        "sha256": "a87712c5c3b65940f942f7780c11310538e2ce93ecbdfe97e615e038fecb43a9",
+        "bytes": 476850
+      },
+      "durationSeconds": 15.315,
+      "completedBySampleTimes": [
+        0.9,
+        2.3,
+        3.8,
+        5.7,
+        6.6,
+        7.3,
+        8.4,
+        9.4,
+        10.5,
+        12.8,
+        15
+      ],
+      "completionInterpretation": "approved-completion-upper-bounds",
+      "authorDeclaredOverviewFrames": 31,
+      "personalWholeVideoReview": false,
+      "checks": {
+        "selectionAndCatalog": true,
+        "rawSourceGlyph": true,
+        "manifestReference": true,
+        "originalMediansExact": true,
+        "candidateCount": true,
+        "sourceVideoReference": true,
+        "completionSamples": true,
+        "approvedChecks": true,
+        "authorWholeSequenceCoverage": true,
+        "pathsMatch": true,
+        "pathHashMatch": true,
+        "recipeHashMatch": true,
+        "lineageMatch": true,
+        "allOriginalStrokesCovered": true,
+        "noApprovedNull": true,
+        "personalVideoHashMatch": null
+      },
+      "generatedPaths": 11,
+      "pathsSha256": "80da877f096d1522c5f390c7afbacd362a6519b30958238010eff900295d2cc6",
+      "correctionSha256": "95b6b33e39fdbe03621d3b13ee95555c2c7af174a973c2a9779e197e9f59fcf9",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  ],
+  "hold": {
+    "glyph": "蓮",
+    "catalogStrokes": 15,
+    "chosenOriginalStrokes": 14,
+    "observedSeparateStrokeCount": null,
+    "observedContinuousSegments": 14,
+    "approved": false,
+    "reason": "Same-endpoint pauses at15.2–15.4s and16.2–16.4s before continuation do not prove independent lifts. No fifteenth path or approval recipe was authored."
+  },
+  "preservation": {
+    "previousBatchDirectory": "docs/hanja-g3ii-batch10-2026-09-12",
+    "checkedFiles": 41,
+    "changedFiles": [],
+    "sharedFilesWrittenByThisAudit": []
+  },
+  "errors": []
+}

@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch11",
+  "date": "2026-09-12",
+  "sourceQueue": "docs/hanja-g3ii-batch10-2026-09-12/next-review-queue.json",
+  "sourceQueueSha256": "eed27f9af5be0f7d6c0f903eef4d0e434ef164d413d01b6c9d3a68688786696f",
+  "inputSelectionSha256": "05a1c4766f29185b96b430a21a0fabc1b762507328ed0f6bb1f41243f56a26cf",
+  "selectedCharacters": 8,
+  "selectedCatalogStrokes": 116,
+  "manifestSource": {
+    "id": "vivasam-high-2022",
+    "sha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+    "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/data/data_high.xlsx"
+  },
+  "baseline": {
+    "runtime": 1463,
+    "publisher": 960,
+    "grade3II": 473
+  },
+  "excludedHolds": [
+    {
+      "glyph": "奔",
+      "origin": "prior-batch",
+      "expectedStrokes": 8,
+      "observedPublisherStrokes": 9,
+      "reason": "Catalog8 versus9 strokes observed in the individual publisher video; resolve the whole-glyph source conflict before reconsideration."
+    },
+    {
+      "glyph": "慈",
+      "origin": "prior-batch",
+      "expectedStrokes": 13,
+      "observedPublisherStrokes": 14,
+      "reason": "Catalog13 versus14 individual publisher strokes; the upper left and right horizontal portions are separated by intervening strokes."
+    },
+    {
+      "glyph": "遷",
+      "origin": "batch9",
+      "expectedStrokes": 15,
+      "observedPublisherStrokes": null,
+      "reason": "The independent middle bar in 己 is visibly painted separately. The 辶 turn pauses at the same endpoint; a lift/restart cannot be established. A proposed split gives16 rather than catalog15. Hold pending unambiguous whole-glyph boundary evidence.",
+      "evidence": "review-a.json"
+    },
+    {
+      "glyph": "追",
+      "origin": "batch9",
+      "expectedStrokes": 10,
+      "observedPublisherStrokes": null,
+      "reason": "Ja/MM original9 versus catalog10. The proposed split in 辶 has only a same-point pause, insufficient to prove separate strokes; diagnostic proposal remains held.",
+      "evidence": "review-a.json"
+    },
+    {
+      "glyph": "弊",
+      "origin": "batch9",
+      "expectedStrokes": 15,
+      "observedPublisherStrokes": 14,
+      "reason": "The source paints one continuous central vertical where Ja15 has two separate strokes. No source lift/restart was observed; retain the count conflict without an artificial split.",
+      "evidence": "review-c.json"
+    },
+    {
+      "glyph": "透",
+      "origin": "batch9",
+      "expectedStrokes": 11,
+      "observedPublisherStrokes": null,
+      "reason": "Ja original10 versus catalog11. A same-point pause near15.3–15.5s and resumption near15.6s does not prove the proposed separate 辶 boundary; the11-stroke proposal remains diagnostic-only.",
+      "evidence": "review-c.json"
+    },
+    {
+      "glyph": "響",
+      "origin": "batch10",
+      "expectedStrokes": 22,
+      "reason": "boundary-inconclusive",
+      "evidence": "review-a.json"
+    },
+    {
+      "glyph": "還",
+      "origin": "batch10",
+      "expectedStrokes": 17,
+      "reason": "boundary-inconclusive",
+      "evidence": "review-c.json"
+    }
+  ],
+  "selected": [
+    {
+      "index": 1,
+      "glyph": "諾",
+      "hun": "허락할",
+      "eum": "낙",
+      "grade": "3급II",
+      "expectedStrokes": 16,
+      "sourceGlyph": "諾",
+      "manifestRow": "0281",
+      "videoFilename": "0281 허락할 낙.mp4",
+      "status": "pending",
+      "matchMethod": "NFKC discovery only; actual video glyph and all stroke boundaries still require review",
+      "owner": "root"
+    },
+    {
+      "index": 2,
+      "glyph": "蘭",
+      "hun": "난초",
+      "eum": "란",
+      "grade": "3급II",
+      "expectedStrokes": 21,
+      "sourceGlyph": "蘭",
+      "manifestRow": "0391",
+      "videoFilename": "0391 난초 란.mp4",
+      "status": "pending",
+      "matchMethod": "NFKC discovery only; actual video glyph and all stroke boundaries still require review",
+      "owner": "a"
+    },
+    {
+      "index": 3,
+      "glyph": "蓮",
+      "hun": "연꽃",
+      "eum": "련",
+      "grade": "3급II",
+      "expectedStrokes": 15,
+      "sourceGlyph": "蓮",
+      "manifestRow": "0420",
+      "videoFilename": "0420 연꽃 련.mp4",
+      "status": "pending",
+      "matchMethod": "NFKC discovery only; actual video glyph and all stroke boundaries still require review",
+      "owner": "b"
+    },
+    {
+      "index": 4,
+      "glyph": "戀",
+      "hun": "그리워할/그릴",
+      "eum": "련",
+      "grade": "3급II",
+      "expectedStrokes": 23,
+      "sourceGlyph": "戀",
+      "manifestRow": "0418",
+      "videoFilename": "0418 사모할 련.mp4",
+      "status": "pending",
+      "matchMethod": "NFKC discovery only; actual video glyph and all stroke boundaries still require review",
+      "owner": "c"
+    },
+    {
+      "index": 5,
+      "glyph": "嶺",
+      "hun": "고개",
+      "eum": "령",
+      "grade": "3급II",
+      "expectedStrokes": 17,
+      "sourceGlyph": "嶺",
+      "manifestRow": "0430",
+      "videoFilename": "0430 고개 령.mp4",
+      "status": "pending",
+      "matchMethod": "NFKC discovery only; actual video glyph and all stroke boundaries still require review",
+      "owner": "b"
+    },
+    {
+      "index": 6,
+      "glyph": "弄",
+      "hun": "희롱할",
+      "eum": "롱",
+      "grade": "3급II",
+      "expectedStrokes": 7,
+      "sourceGlyph": "弄",
+      "manifestRow": "0446",
+      "videoFilename": "0446 희롱할 롱.mp4",
+      "status": "pending",
+      "matchMethod": "NFKC discovery only; actual video glyph and all stroke boundaries still require review",
+      "owner": "a"
+    },
+    {
+      "index": 7,
+      "glyph": "率",
+      "hun": "비율",
+      "eum": "률",
+      "grade": "3급II",
+      "expectedStrokes": 11,
+      "sourceGlyph": "率",
+      "manifestRow": "0468",
+      "videoFilename": "0468 비율 률.mp4",
+      "status": "pending",
+      "matchMethod": "NFKC discovery only; actual video glyph and all stroke boundaries still require review",
+      "owner": "root"
+    },
+    {
+      "index": 8,
+      "glyph": "吏",
+      "hun": "벼슬아치/관리",
+      "eum": "리",
+      "grade": "3급II",
+      "expectedStrokes": 6,
+      "sourceGlyph": "吏",
+      "manifestRow": "0475",
+      "videoFilename": "0475 벼슬아치 리.mp4",
+      "status": "pending",
+      "matchMethod": "NFKC discovery only; actual video glyph and all stroke boundaries still require review",
+      "owner": "c"
+    }
+  ]
+}

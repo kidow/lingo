@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch11",
+  "checks": [
+    {
+      "label": "hanja-tests",
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "durationMs": 6877,
+      "result": {
+        "tests": 134,
+        "pass": 134,
+        "fail": 0
+      }
+    },
+    {
+      "label": "typecheck",
+      "command": "pnpm run typecheck",
+      "exitCode": 0,
+      "durationMs": 2755,
+      "result": {
+        "typecheckPassed": true
+      }
+    },
+    {
+      "label": "bundle-reproduction",
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "durationMs": 1704,
+      "result": {
+        "emittedCharacters": 967,
+        "runtimeApprovedCharacters": 1470,
+        "publishedBundleMatches": true
+      }
+    },
+    {
+      "label": "production-build",
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "durationMs": 29332,
+      "result": {
+        "compiledSuccessfully": true,
+        "staticPagesGenerated": 7
+      }
+    }
+  ],
+  "sharedFileHashes": {
+    "scripts/hanja-stroke-textbook-review.json": "be7bd2d1914349036536e03a31ec0c7c31e85e6b66055c94c68253eb86ac7a6f",
+    "scripts/hanja-stroke-textbook-corrections.json": "2555c9154ae84dfc01428a4fa1ec06065337a55d6ac4c01ef75560a13b6c69bc",
+    "public/hanja-strokes/textbook-reviewed.json": "539fc3ef00671c213f5e50672cab7e2b36416059ac0c74eb241f1f97d3fc18dd"
+  },
+  "runtimeAudit": "runtime-audit.json",
+  "allPassed": true,
+  "scope": "Hanja data/docs only. Full production build includes current shared workspace; unrelated sessions were not edited or staged."
+}

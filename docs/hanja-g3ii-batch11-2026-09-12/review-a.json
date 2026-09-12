@@ -1,0 +1,1655 @@
+{
+  "schemaVersion": 1,
+  "batch": 11,
+  "reviewedAt": "2026-09-12",
+  "owner": "a",
+  "scope": "Fixed 蘭弄2 characters/catalog28 strokes; raw compatibility source glyphs retained.",
+  "inputSelectionSha256": "05a1c4766f29185b96b430a21a0fabc1b762507328ed0f6bb1f41243f56a26cf",
+  "baseline": {
+    "head": "e604f8b001b9ad55ea70873251d04a52ebdd325c",
+    "runtime": 1463,
+    "publisher": 960,
+    "grade3II": 473,
+    "bundleSha256": "0a6628738dcb92476447aa0d38743fe2d17adcff505b5526b87e07b2a912f459"
+  },
+  "corpusVerification": [
+    {
+      "corpus": "Ko",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "bytes": 1387824,
+      "freshFullFetch": true
+    },
+    {
+      "corpus": "Ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957,
+      "freshFullFetch": true
+    },
+    {
+      "corpus": "MM",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "bytes": 30778076,
+      "freshFullFetch": true
+    }
+  ],
+  "method": "Only the exact publisher individual glyph videos determine rendered form, order, direction and boundaries. Compatibility normalization is discovery only. Whole MP4s were freshly fetched and decoded in RAM. Source samples and actual generated cumulative paths were visually inspected; no dumped media files.",
+  "entries": [
+    {
+      "glyph": "蘭",
+      "record": {
+        "glyph": "蘭",
+        "sourceGlyph": "蘭",
+        "manifestRow": "0391",
+        "videoFilename": "0391 난초 란.mp4",
+        "expectedStrokes": 21,
+        "candidateStrokes": 21,
+        "geometrySource": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "reviewedAt": "2026-09-12",
+        "reviewer": "Codex / hanja_b11_a",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0391.mp4",
+          "sha256": "245366072e4deca2d847173d88238e140752e5e6c7666f1154f4358afd9c6490",
+          "bytes": 883658
+        },
+        "durationSeconds": 26.265,
+        "strokeEndsSeconds": [
+          0.7,
+          1.9,
+          3.3,
+          4.5,
+          6.6,
+          8.2,
+          8.8,
+          9.5,
+          10.6,
+          13.7,
+          14.4,
+          15.1,
+          16.8,
+          17.8,
+          19,
+          19.8,
+          20.8,
+          21.5,
+          23.3,
+          24.5,
+          26
+        ],
+        "status": "matched",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "원문은 풀머리 왼쪽 세로·왼쪽 가로·오른쪽 가로·오른쪽 삐침의 네 획을 쓴다. MM의3·4를 바꾼다. 이어 門 여덟 획, 안쪽 가로·왼 세로·가로 꺾임·점·짧은 삐침·바닥 가로·긴 세로·왼 삐침·오른 점의 아홉 획이 각각 구분된다. Ja19는 풀머리 가로와 안쪽 점·삐침을 하나씩 합쳐 원문 경계와 다르다. 원문의 풀머리/門, 門/중앙 가로, 내부 틀, 오른쪽 점/바깥 갈고리 사이의 접점과 간격을 굵기5로 보정한다. 원문19.8·20.8·26초700px 확대를 따라 점16과 왼쪽 틀14, 삐침17과 위/오른쪽 틀15 사이의 흰 틈을 실제 굵기5에서도 유지하도록 내부 두 획을 국소 보정했다. 풀머리 첫 세로1은 門 꺾임6과 접촉하고 오른 풀머리4는 門 왼 세로9와 분리된다. 전체2fps와 모든 완료10fps 표본, 원문700px/420px, 실제 생성기 모든 누적 경로와 최종420px를 직접 확인했다. 완료 시각은 표본 상한이며 정확한 펜 이탈 시각이 아니다.",
+        "geometryCorrection": "vivasam-g3ii-b11-a-0391-v1",
+        "correctionSha256": "5dc60d61e04cb4fb95dc6fcabe177fec44732475c1a164168f9853d66f29c889",
+        "pathsSha256": "4ff1ae067c18e9904e982ac7db4faab47cea68e34b4fb8fda8fa9fb61d5805ae"
+      },
+      "sourceReference": {
+        "publisherId": "vivasam-high-2022",
+        "manifestRow": "0391",
+        "sourceGlyph": "蘭",
+        "glyph": "蘭",
+        "videoUrl": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0391.mp4",
+        "discovery": "Compatibility normalization used only for discovery; actual source form and order reviewed."
+      },
+      "recipe": {
+        "glyph": "蘭",
+        "id": "vivasam-g3ii-b11-a-0391-v1",
+        "geometrySource": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "coordinateSystem": "viewBox100",
+        "sourceVideoSha256": "245366072e4deca2d847173d88238e140752e5e6c7666f1154f4358afd9c6490",
+        "originalMediansSha256": "8be6bb89b73b694561e9e91e0924a8ca09eca1061bab185f79d712f5553e2f36",
+        "strokes": [
+          {
+            "sourceStroke": 1,
+            "points": [
+              [
+                39,
+                8
+              ],
+              [
+                42.4,
+                24.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 2,
+            "points": [
+              [
+                23,
+                18.6
+              ],
+              [
+                49,
+                15.7
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 4,
+            "points": [
+              [
+                56,
+                15
+              ],
+              [
+                78,
+                11.6
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 3,
+            "points": [
+              [
+                62,
+                6
+              ],
+              [
+                61.5,
+                11.5
+              ],
+              [
+                56.5,
+                21.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 5,
+            "points": [
+              [
+                29.5,
+                31
+              ],
+              [
+                28.5,
+                67
+              ],
+              [
+                26.5,
+                85.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 6,
+            "points": [
+              [
+                29.5,
+                31
+              ],
+              [
+                44.5,
+                28.9
+              ],
+              [
+                45.5,
+                31.5
+              ],
+              [
+                41.3,
+                48
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 7,
+            "points": [
+              [
+                29.2,
+                40.2
+              ],
+              [
+                42.7,
+                37.9
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 8,
+            "points": [
+              [
+                28.8,
+                48
+              ],
+              [
+                41.3,
+                45.8
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 9,
+            "points": [
+              [
+                57,
+                27
+              ],
+              [
+                58,
+                44
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 10,
+            "points": [
+              [
+                57,
+                27
+              ],
+              [
+                74,
+                24
+              ],
+              [
+                77,
+                27
+              ],
+              [
+                76,
+                83
+              ],
+              [
+                74,
+                89
+              ],
+              [
+                69,
+                84
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 11,
+            "points": [
+              [
+                58,
+                35.5
+              ],
+              [
+                75.5,
+                32.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 12,
+            "points": [
+              [
+                58,
+                44
+              ],
+              [
+                76,
+                40.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 13,
+            "points": [
+              [
+                46,
+                51.5
+              ],
+              [
+                56.5,
+                49.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 14,
+            "points": [
+              [
+                38.5,
+                58
+              ],
+              [
+                41.5,
+                68
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 15,
+            "points": [
+              [
+                38.5,
+                58
+              ],
+              [
+                61,
+                54.5
+              ],
+              [
+                64.5,
+                56
+              ],
+              [
+                61,
+                68
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 16,
+            "points": [
+              [
+                45.5,
+                61
+              ],
+              [
+                47,
+                65
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 17,
+            "points": [
+              [
+                56,
+                61.5
+              ],
+              [
+                53.5,
+                64
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 18,
+            "points": [
+              [
+                41.5,
+                68
+              ],
+              [
+                61,
+                65.8
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 19,
+            "points": [
+              [
+                50.3,
+                45
+              ],
+              [
+                50.3,
+                63
+              ],
+              [
+                49.7,
+                87
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 20,
+            "points": [
+              [
+                48,
+                71
+              ],
+              [
+                42,
+                78
+              ],
+              [
+                34,
+                83
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 21,
+            "points": [
+              [
+                56,
+                74
+              ],
+              [
+                61,
+                77
+              ],
+              [
+                64,
+                80
+              ]
+            ]
+          }
+        ],
+        "notes": "원문은 풀머리 왼쪽 세로·왼쪽 가로·오른쪽 가로·오른쪽 삐침의 네 획을 쓴다. MM의3·4를 바꾼다. 이어 門 여덟 획, 안쪽 가로·왼 세로·가로 꺾임·점·짧은 삐침·바닥 가로·긴 세로·왼 삐침·오른 점의 아홉 획이 각각 구분된다. Ja19는 풀머리 가로와 안쪽 점·삐침을 하나씩 합쳐 원문 경계와 다르다. 원문의 풀머리/門, 門/중앙 가로, 내부 틀, 오른쪽 점/바깥 갈고리 사이의 접점과 간격을 굵기5로 보정한다. 원문19.8·20.8·26초700px 확대를 따라 점16과 왼쪽 틀14, 삐침17과 위/오른쪽 틀15 사이의 흰 틈을 실제 굵기5에서도 유지하도록 내부 두 획을 국소 보정했다. 풀머리 첫 세로1은 門 꺾임6과 접촉하고 오른 풀머리4는 門 왼 세로9와 분리된다."
+      },
+      "originalMedians": [
+        [
+          [
+            348,
+            828
+          ],
+          [
+            368,
+            819
+          ],
+          [
+            388,
+            800
+          ],
+          [
+            420,
+            662
+          ]
+        ],
+        [
+          [
+            168,
+            728
+          ],
+          [
+            206,
+            713
+          ],
+          [
+            240,
+            710
+          ],
+          [
+            467,
+            756
+          ]
+        ],
+        [
+          [
+            601,
+            869
+          ],
+          [
+            624,
+            832
+          ],
+          [
+            591,
+            740
+          ],
+          [
+            562,
+            681
+          ]
+        ],
+        [
+          [
+            559,
+            767
+          ],
+          [
+            609,
+            760
+          ],
+          [
+            767,
+            778
+          ],
+          [
+            791,
+            776
+          ],
+          [
+            825,
+            763
+          ]
+        ],
+        [
+          [
+            193,
+            607
+          ],
+          [
+            211,
+            593
+          ],
+          [
+            231,
+            562
+          ],
+          [
+            234,
+            479
+          ],
+          [
+            228,
+            202
+          ],
+          [
+            203,
+            31
+          ],
+          [
+            203,
+            -20
+          ]
+        ],
+        [
+          [
+            258,
+            586
+          ],
+          [
+            270,
+            580
+          ],
+          [
+            374,
+            614
+          ],
+          [
+            397,
+            608
+          ],
+          [
+            413,
+            590
+          ],
+          [
+            392,
+            437
+          ],
+          [
+            386,
+            422
+          ],
+          [
+            372,
+            421
+          ]
+        ],
+        [
+          [
+            259,
+            490
+          ],
+          [
+            269,
+            503
+          ],
+          [
+            295,
+            511
+          ],
+          [
+            338,
+            509
+          ]
+        ],
+        [
+          [
+            251,
+            403
+          ],
+          [
+            262,
+            414
+          ],
+          [
+            343,
+            430
+          ],
+          [
+            361,
+            440
+          ]
+        ],
+        [
+          [
+            578,
+            643
+          ],
+          [
+            600,
+            619
+          ],
+          [
+            610,
+            590
+          ],
+          [
+            611,
+            495
+          ],
+          [
+            619,
+            439
+          ]
+        ],
+        [
+          [
+            620,
+            636
+          ],
+          [
+            629,
+            628
+          ],
+          [
+            648,
+            626
+          ],
+          [
+            768,
+            654
+          ],
+          [
+            795,
+            639
+          ],
+          [
+            808,
+            622
+          ],
+          [
+            805,
+            535
+          ],
+          [
+            815,
+            240
+          ],
+          [
+            815,
+            16
+          ],
+          [
+            807,
+            -12
+          ],
+          [
+            795,
+            -26
+          ],
+          [
+            766,
+            -21
+          ],
+          [
+            678,
+            13
+          ]
+        ],
+        [
+          [
+            641,
+            538
+          ],
+          [
+            645,
+            547
+          ],
+          [
+            693,
+            559
+          ],
+          [
+            733,
+            556
+          ]
+        ],
+        [
+          [
+            636,
+            452
+          ],
+          [
+            655,
+            463
+          ],
+          [
+            741,
+            479
+          ],
+          [
+            763,
+            478
+          ],
+          [
+            773,
+            468
+          ]
+        ],
+        [
+          [
+            419,
+            377
+          ],
+          [
+            455,
+            378
+          ],
+          [
+            554,
+            403
+          ],
+          [
+            594,
+            400
+          ]
+        ],
+        [
+          [
+            329,
+            312
+          ],
+          [
+            347,
+            299
+          ],
+          [
+            360,
+            273
+          ],
+          [
+            389,
+            160
+          ]
+        ],
+        [
+          [
+            365,
+            312
+          ],
+          [
+            382,
+            304
+          ],
+          [
+            599,
+            341
+          ],
+          [
+            637,
+            342
+          ],
+          [
+            660,
+            336
+          ],
+          [
+            678,
+            304
+          ],
+          [
+            626,
+            196
+          ]
+        ],
+        [
+          [
+            412,
+            266
+          ],
+          [
+            445,
+            243
+          ],
+          [
+            453,
+            230
+          ]
+        ],
+        [
+          [
+            603,
+            281
+          ],
+          [
+            586,
+            283
+          ],
+          [
+            556,
+            251
+          ],
+          [
+            545,
+            247
+          ]
+        ],
+        [
+          [
+            404,
+            175
+          ],
+          [
+            422,
+            183
+          ],
+          [
+            556,
+            205
+          ],
+          [
+            598,
+            208
+          ],
+          [
+            607,
+            200
+          ]
+        ],
+        [
+          [
+            480,
+            457
+          ],
+          [
+            511,
+            421
+          ],
+          [
+            507,
+            144
+          ],
+          [
+            495,
+            14
+          ],
+          [
+            496,
+            -46
+          ]
+        ],
+        [
+          [
+            482,
+            173
+          ],
+          [
+            453,
+            125
+          ],
+          [
+            416,
+            86
+          ],
+          [
+            350,
+            37
+          ],
+          [
+            309,
+            19
+          ]
+        ],
+        [
+          [
+            574,
+            144
+          ],
+          [
+            646,
+            104
+          ],
+          [
+            673,
+            64
+          ]
+        ]
+      ],
+      "originalMediansSha256": "8be6bb89b73b694561e9e91e0924a8ca09eca1061bab185f79d712f5553e2f36",
+      "paths": [
+        "M39 8 L42.4 24.5",
+        "M23 18.6 L49 15.7",
+        "M56 15 L78 11.6",
+        "M62 6 L61.5 11.5 L56.5 21.5",
+        "M29.5 31 L28.5 67 L26.5 85.5",
+        "M29.5 31 L44.5 28.9 L45.5 31.5 L41.3 48",
+        "M29.2 40.2 L42.7 37.9",
+        "M28.8 48 L41.3 45.8",
+        "M57 27 L58 44",
+        "M57 27 L74 24 L77 27 L76 83 L74 89 L69 84",
+        "M58 35.5 L75.5 32.5",
+        "M58 44 L76 40.5",
+        "M46 51.5 L56.5 49.5",
+        "M38.5 58 L41.5 68",
+        "M38.5 58 L61 54.5 L64.5 56 L61 68",
+        "M45.5 61 L47 65",
+        "M56 61.5 L53.5 64",
+        "M41.5 68 L61 65.8",
+        "M50.3 45 L50.3 63 L49.7 87",
+        "M48 71 L42 78 L34 83",
+        "M56 74 L61 77 L64 80"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "runtimeApproved": true,
+      "candidateSelection": {
+        "chosen": "MM",
+        "reason": "MM has21 original strokes with separate left/right grass bars and inner dot/fall; source requires MM4 beforeMM3. Ja19 merges two visually distinct pairs.",
+        "alternatives": [
+          {
+            "corpus": "Ko",
+            "available": false,
+            "strokes": null
+          },
+          {
+            "corpus": "Ja",
+            "available": true,
+            "strokes": 19
+          },
+          {
+            "corpus": "MM",
+            "available": true,
+            "strokes": 21
+          }
+        ]
+      },
+      "reviewEvidence": {
+        "overview": {
+          "fps": 2,
+          "frameCount": 53,
+          "sampleTimes": [
+            0,
+            0.5,
+            1,
+            1.5,
+            2,
+            2.5,
+            3,
+            3.5,
+            4,
+            4.5,
+            5,
+            5.5,
+            6,
+            6.5,
+            7,
+            7.5,
+            8,
+            8.5,
+            9,
+            9.5,
+            10,
+            10.5,
+            11,
+            11.5,
+            12,
+            12.5,
+            13,
+            13.5,
+            14,
+            14.5,
+            15,
+            15.5,
+            16,
+            16.5,
+            17,
+            17.5,
+            18,
+            18.5,
+            19,
+            19.5,
+            20,
+            20.5,
+            21,
+            21.5,
+            22,
+            22.5,
+            23,
+            23.5,
+            24,
+            24.5,
+            25,
+            25.5,
+            26
+          ],
+          "allFramesVisuallyInspected": true
+        },
+        "completedSamples": {
+          "fps": 10,
+          "initialSampleTimes": [
+            0.7,
+            1.9,
+            3.3,
+            4.5,
+            6.6,
+            8.2,
+            8.8,
+            9.5,
+            10.6,
+            13.7,
+            14.4,
+            15.1,
+            16.8,
+            17.8,
+            19,
+            19.8,
+            20.6,
+            21.5,
+            23.3,
+            24.5,
+            26
+          ],
+          "verifiedCompletedByTimes": [
+            0.7,
+            1.9,
+            3.3,
+            4.5,
+            6.6,
+            8.2,
+            8.8,
+            9.5,
+            10.6,
+            13.7,
+            14.4,
+            15.1,
+            16.8,
+            17.8,
+            19,
+            19.8,
+            20.8,
+            21.5,
+            23.3,
+            24.5,
+            26
+          ],
+          "allFinalSamplesVisuallyInspected": true
+        },
+        "sourceFinal": {
+          "time": 26,
+          "widths": [
+            700,
+            420
+          ],
+          "directlyViewed": true,
+          "view420": "RAM resize from the fresh700px source frame"
+        },
+        "detailSamples": [
+          {
+            "fps": 10,
+            "times": [
+              0.7,
+              0.9,
+              6.6,
+              6.8,
+              8.2,
+              8.4,
+              19.8,
+              20,
+              20.6,
+              20.8
+            ],
+            "width": 220
+          },
+          {
+            "fps": 10,
+            "times": [
+              19.8,
+              20.8
+            ],
+            "width": 700
+          },
+          {
+            "fps": 10,
+            "times": [
+              26
+            ],
+            "width": 700,
+            "crops": [
+              [
+                235,
+                120,
+                455,
+                235
+              ],
+              [
+                245,
+                365,
+                470,
+                510
+              ],
+              [
+                250,
+                280,
+                460,
+                440
+              ]
+            ]
+          }
+        ],
+        "generated": {
+          "generator": "textbookGeometry",
+          "checksumGenerator": "textbookCorrectionSha256",
+          "cumulativeStates": 21,
+          "strokeWidth": 5,
+          "linecap": "round",
+          "linejoin": "round",
+          "allCumulativeStatesViewed": true,
+          "finalWidth": 420,
+          "finalViewed": true
+        },
+        "geometryRelations": 33
+      }
+    },
+    {
+      "glyph": "弄",
+      "record": {
+        "glyph": "弄",
+        "sourceGlyph": "弄",
+        "manifestRow": "0446",
+        "videoFilename": "0446 희롱할 롱.mp4",
+        "expectedStrokes": 7,
+        "candidateStrokes": 7,
+        "geometrySource": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "reviewedAt": "2026-09-12",
+        "reviewer": "Codex / hanja_b11_a",
+        "reviewMethod": "video-frame-sequence",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0446.mp4",
+          "sha256": "ee5306cf810f3aace21446fc47b64a17694c492e3e45f95dc26d143e9cc9e8fa",
+          "bytes": 340302
+        },
+        "durationSeconds": 10.931,
+        "strokeEndsSeconds": [
+          0.8,
+          1.9,
+          3.2,
+          4.4,
+          6.9,
+          9,
+          10.8
+        ],
+        "status": "matched",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "원문은 위 가로·가운데 가로·세로·아래 가로 다음에 긴 가로·왼 삐침·오른 세로의 일곱 획을 쓴다. MM 순서가 일치하며 Ja는 가운데 가로와 세로 순서가 반대다. 위 王의 아래 가로와 아래 두 세로 시작 사이의 흰 간격, 긴 가로를 가로지르는 왼 삐침과 오른 세로를 원문에 맞춘다. 전체2fps와 모든 완료10fps 표본, 원문700px/420px, 실제 생성기 모든 누적 경로와 최종420px를 직접 확인했다. 완료 시각은 표본 상한이며 정확한 펜 이탈 시각이 아니다.",
+        "geometryCorrection": "vivasam-g3ii-b11-a-0446-v1",
+        "correctionSha256": "e7cfeaef1da8f006c499be6ae2c6b3ed5519040809dbc4b65023df3a75e7fafa",
+        "pathsSha256": "fc9e28a4ec7a1cbe1697dbb0ce70cf808f34b35e3b945fe85a8f9d3d6393320e"
+      },
+      "sourceReference": {
+        "publisherId": "vivasam-high-2022",
+        "manifestRow": "0446",
+        "sourceGlyph": "弄",
+        "glyph": "弄",
+        "videoUrl": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0446.mp4",
+        "discovery": "Compatibility normalization used only for discovery; actual source form and order reviewed."
+      },
+      "recipe": {
+        "glyph": "弄",
+        "id": "vivasam-g3ii-b11-a-0446-v1",
+        "geometrySource": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "coordinateSystem": "viewBox100",
+        "sourceVideoSha256": "ee5306cf810f3aace21446fc47b64a17694c492e3e45f95dc26d143e9cc9e8fa",
+        "originalMediansSha256": "23bd14f3dd4100d5a839a79e8ced15288a2139355bfafa00418f341db75d5dcd",
+        "strokes": [
+          {
+            "sourceStroke": 1,
+            "points": [
+              [
+                36,
+                12
+              ],
+              [
+                69,
+                7.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 2,
+            "points": [
+              [
+                37,
+                27
+              ],
+              [
+                66,
+                22
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 3,
+            "points": [
+              [
+                51,
+                14
+              ],
+              [
+                51,
+                38
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 4,
+            "points": [
+              [
+                31,
+                41
+              ],
+              [
+                70,
+                35.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 5,
+            "points": [
+              [
+                15,
+                56
+              ],
+              [
+                78,
+                48.5
+              ],
+              [
+                88,
+                49.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 6,
+            "points": [
+              [
+                40,
+                47
+              ],
+              [
+                40.5,
+                53
+              ],
+              [
+                38,
+                65
+              ],
+              [
+                33,
+                75
+              ],
+              [
+                25,
+                82
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 7,
+            "points": [
+              [
+                62,
+                43
+              ],
+              [
+                62,
+                54
+              ],
+              [
+                62,
+                91
+              ]
+            ]
+          }
+        ],
+        "notes": "원문은 위 가로·가운데 가로·세로·아래 가로 다음에 긴 가로·왼 삐침·오른 세로의 일곱 획을 쓴다. MM 순서가 일치하며 Ja는 가운데 가로와 세로 순서가 반대다. 위 王의 아래 가로와 아래 두 세로 시작 사이의 흰 간격, 긴 가로를 가로지르는 왼 삐침과 오른 세로를 원문에 맞춘다."
+      },
+      "originalMedians": [
+        [
+          [
+            340,
+            747
+          ],
+          [
+            375,
+            738
+          ],
+          [
+            413,
+            737
+          ],
+          [
+            656,
+            776
+          ],
+          [
+            715,
+            774
+          ]
+        ],
+        [
+          [
+            349,
+            597
+          ],
+          [
+            390,
+            590
+          ],
+          [
+            439,
+            594
+          ],
+          [
+            543,
+            614
+          ],
+          [
+            620,
+            636
+          ],
+          [
+            674,
+            636
+          ]
+        ],
+        [
+          [
+            480,
+            718
+          ],
+          [
+            509,
+            692
+          ],
+          [
+            509,
+            539
+          ],
+          [
+            493,
+            514
+          ]
+        ],
+        [
+          [
+            272,
+            464
+          ],
+          [
+            317,
+            457
+          ],
+          [
+            511,
+            492
+          ],
+          [
+            666,
+            512
+          ],
+          [
+            713,
+            508
+          ],
+          [
+            746,
+            498
+          ]
+        ],
+        [
+          [
+            99,
+            301
+          ],
+          [
+            152,
+            291
+          ],
+          [
+            474,
+            337
+          ],
+          [
+            860,
+            369
+          ],
+          [
+            910,
+            361
+          ],
+          [
+            946,
+            348
+          ]
+        ],
+        [
+          [
+            355,
+            404
+          ],
+          [
+            376,
+            391
+          ],
+          [
+            392,
+            369
+          ],
+          [
+            384,
+            271
+          ],
+          [
+            360,
+            182
+          ],
+          [
+            327,
+            122
+          ],
+          [
+            300,
+            90
+          ],
+          [
+            261,
+            57
+          ],
+          [
+            207,
+            25
+          ]
+        ],
+        [
+          [
+            593,
+            440
+          ],
+          [
+            613,
+            430
+          ],
+          [
+            635,
+            403
+          ],
+          [
+            627,
+            -61
+          ]
+        ]
+      ],
+      "originalMediansSha256": "23bd14f3dd4100d5a839a79e8ced15288a2139355bfafa00418f341db75d5dcd",
+      "paths": [
+        "M36 12 L69 7.5",
+        "M37 27 L66 22",
+        "M51 14 L51 38",
+        "M31 41 L70 35.5",
+        "M15 56 L78 48.5 L88 49.5",
+        "M40 47 L40.5 53 L38 65 L33 75 L25 82",
+        "M62 43 L62 54 L62 91"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "runtimeApproved": true,
+      "candidateSelection": {
+        "chosen": "MM",
+        "reason": "MM seven-stroke order matches the source. Ja places the upper vertical before the middle horizontal; source does the horizontal first.",
+        "alternatives": [
+          {
+            "corpus": "Ko",
+            "available": false,
+            "strokes": null
+          },
+          {
+            "corpus": "Ja",
+            "available": true,
+            "strokes": 7
+          },
+          {
+            "corpus": "MM",
+            "available": true,
+            "strokes": 7
+          }
+        ]
+      },
+      "reviewEvidence": {
+        "overview": {
+          "fps": 2,
+          "frameCount": 22,
+          "sampleTimes": [
+            0,
+            0.5,
+            1,
+            1.5,
+            2,
+            2.5,
+            3,
+            3.5,
+            4,
+            4.5,
+            5,
+            5.5,
+            6,
+            6.5,
+            7,
+            7.5,
+            8,
+            8.5,
+            9,
+            9.5,
+            10,
+            10.5
+          ],
+          "allFramesVisuallyInspected": true
+        },
+        "completedSamples": {
+          "fps": 10,
+          "initialSampleTimes": [
+            0.8,
+            1.9,
+            3.2,
+            4.4,
+            6.9,
+            8.8,
+            10.7
+          ],
+          "verifiedCompletedByTimes": [
+            0.8,
+            1.9,
+            3.2,
+            4.4,
+            6.9,
+            9,
+            10.8
+          ],
+          "allFinalSamplesVisuallyInspected": true
+        },
+        "sourceFinal": {
+          "time": 10.7,
+          "widths": [
+            700,
+            420
+          ],
+          "directlyViewed": true,
+          "view420": "RAM resize from the fresh700px source frame"
+        },
+        "detailSamples": [
+          {
+            "fps": 10,
+            "times": [
+              8.6,
+              8.8,
+              9,
+              9.2,
+              10.5,
+              10.7,
+              10.8
+            ],
+            "width": 280
+          }
+        ],
+        "generated": {
+          "generator": "textbookGeometry",
+          "checksumGenerator": "textbookCorrectionSha256",
+          "cumulativeStates": 7,
+          "strokeWidth": 5,
+          "linecap": "round",
+          "linejoin": "round",
+          "allCumulativeStatesViewed": true,
+          "finalWidth": 420,
+          "finalViewed": true
+        },
+        "geometryRelations": 11
+      }
+    }
+  ],
+  "summary": {
+    "selectedCharacters": 2,
+    "selectedCatalogStrokes": 28,
+    "matchedCharacters": 2,
+    "matchedStrokes": 28,
+    "heldCharacters": [],
+    "sourceOverviewFrames": 75,
+    "generatedCumulativeStates": 28,
+    "numericalRelationsChecked": 44,
+    "numericalRelationsPassed": 44
+  }
+}
