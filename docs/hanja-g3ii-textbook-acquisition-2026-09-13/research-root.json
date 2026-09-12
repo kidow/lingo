@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "scope": "Nine fixed characters: additional public institutional worksheets",
+  "sources": [
+    {
+      "id": "seokam-grade3ii-allocation",
+      "publisher": "석암당서원",
+      "sourceType": "private educational institution allocation handout",
+      "pageUrl": "http://www.seokam.kr/bbs/board.php?bo_table=edu03&wr_id=23",
+      "publishedAt": "2017-05-18",
+      "access": "Public HTTP post and normal anonymous cookie-session download; no authenticated account used. HTTPS certificate was expired; no certificate validation was disabled.",
+      "attachments": [
+        {
+          "label": "3∥급 한자 [1].pdf",
+          "url": "http://www.seokam.kr/bbs/download.php?bo_table=edu03&wr_id=23&no=0",
+          "bytes": 397641,
+          "sha256": "f86a5fbbac12a2640b7768f73dd8ed3a17c31d0ec8643d25a1417e75a15f5e42",
+          "pages": 5,
+          "inspection": "All page text extracted in RAM; page 1 rendered and visually read. Four columns of single glyph, Korean meaning/reading and radical. 訣 row visible on page 1. No cumulative stroke sequence on the inspected page.",
+          "visuallyInspectedPdfPages": [
+            1
+          ]
+        },
+        {
+          "label": "3Ⅱ급 한자 [2].pdf",
+          "url": "http://www.seokam.kr/bbs/download.php?bo_table=edu03&wr_id=23&no=1",
+          "bytes": 552669,
+          "sha256": "f61b3a0c9f9c33bd2c3bbeeda49ac438bde6cb0cdac774977e4758a9bf26161e",
+          "pages": 10,
+          "inspection": "All page text extracted in RAM. Header identifies 1,500-character allocation list. Visual page inspection not completed; text extraction has broken character maps.",
+          "visuallyInspectedPdfPages": []
+        }
+      ],
+      "targetWholeSequenceSecured": 0,
+      "limitations": "Allocation/reading evidence is not whole-stroke evidence. Corrupt text mapping and limited visual scope prevent a global claim that no other page could contain relevant content."
+    },
+    {
+      "id": "songjeol-middle-public-worksheets",
+      "publisher": "송절중학교",
+      "sourceType": "public school learning worksheet",
+      "pageUrl": "https://school.cbe.go.kr/sjj-m/M01040808/view/3699363",
+      "title": "3 그려서 만든 한자(필순 한자 쓰기)",
+      "access": "Public attachment viewer. The UI shell remained blank, so the observed iframe URL and its documented public HTML fragments were read directly. No login or access-control bypass.",
+      "attachments": [
+        {
+          "label": "3월 23일 학습지.hwp",
+          "downloadUrl": "https://school.cbe.go.kr/_cmm/fileDownload/sjj-m/M01040808/ddcd3a55d6c5d355d0a6da752996139b",
+          "viewerUrl": "https://school.cbe.go.kr/_cmm/viewer/sjj-m/M01040808/ddcd3a55d6c5d355d0a6da752996139b",
+          "viewedHtmlBase": "https://school.cbe.go.kr/viewer/result/202609/30ea4fb900f8443594d82beed92b11cd.hwp.files/",
+          "pages": 2,
+          "learningRows": [
+            "日",
+            "月",
+            "山",
+            "耳",
+            "目",
+            "一",
+            "二",
+            "上",
+            "下",
+            "本",
+            "末",
+            "火",
+            "水",
+            "木",
+            "金",
+            "土"
+          ],
+          "pageHtmlSha256": [
+            "b3602e48bc2750bfddbd7347b596ec4d5b5fe8fb27ae230e906bb0f332af32f1",
+            "54fc71394615b538b532d4165695f79825b42028d7d9b1a3d6c652824994ae84"
+          ]
+        },
+        {
+          "label": "3월 30일 학습지.hwp",
+          "downloadUrl": "https://school.cbe.go.kr/_cmm/fileDownload/sjj-m/M01040808/782b69c0aa5d5251b2a2502887482016",
+          "viewerUrl": "https://school.cbe.go.kr/_cmm/viewer/sjj-m/M01040808/782b69c0aa5d5251b2a2502887482016",
+          "viewedHtmlBase": "https://school.cbe.go.kr/viewer/result/202609/196fba3d83854046aa5305fbe2d1fe23.hwp.files/",
+          "pages": 2,
+          "learningRows": [
+            "四",
+            "五",
+            "六",
+            "七",
+            "九",
+            "父",
+            "女",
+            "牛",
+            "羊",
+            "馬",
+            "鳥",
+            "位",
+            "降",
+            "根",
+            "端"
+          ],
+          "pageHtmlSha256": [
+            "6f8abc1e5b2e532586261cca480ff49591c9fa0b2ed4dbb2931340a5cb48c5dc",
+            "59003dad5dc139f2db4416732c764bdffcee4b61ff49b6d7305dcc4a4b076441"
+          ]
+        }
+      ],
+      "targetWholeSequenceSecured": 0,
+      "inspection": "Both two-page HTML bodies were read. None of the nine target glyphs is a named learning row. Non-target embedded stroke images were not independently evaluated. Viewer fragment hashes describe decoded HTML, not original HWP bytes.",
+      "limitations": "Temporary viewer result paths may change; reacquire through the stable school post/viewer URLs."
+    }
+  ],
+  "additionalPublisherLeads": [
+    {
+      "title": "암기박사식 한자 능시 2급",
+      "isbn": "9788983006141",
+      "printedPages": 440,
+      "url": "https://dongyangbooks.com/book/book_view.asp?menu_1=hanja&menu_2=han%5Fhanja&goods_code=991",
+      "finding": "Reached through the publisher's observed title-search form. Its public HTML had no download.asp or writing-note attachment reference. No exact target body page acquired. This does not establish absence from the printed book."
+    },
+    {
+      "title": "암기박사식 한자 능시 1급",
+      "isbn": "9788983005977",
+      "printedPages": 608,
+      "url": "https://dongyangbooks.com/book/book_view.asp?menu_1=hanja&menu_2=han%5Fhanja&goods_code=959",
+      "finding": "Reached through the same official title search. No writing-note download was located in the public book page. Printed-body coverage remains unverified."
+    }
+  ],
+  "runtimeChanges": 0,
+  "mediaRedistributed": false
+}

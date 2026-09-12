@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "owner": "a",
+  "task": "한국어문회 안내 한국어문교육연구회 3급Ⅱ 교재의 대상 9자 전체필순 본문 공개 확보 조사",
+  "baselineReference": "docs/hanja-g3ii-textbook-acquisition-2026-09-13/baseline.json",
+  "priorReference": "docs/hanja-g3ii-alternative-sources-2026-09-13/domestic-access-audit.json",
+  "scope": {
+    "characters": 9,
+    "catalogStrokes": 104,
+    "wholeStrokePagesAcquired": 0,
+    "wholeStrokeCharactersAcquired": 0,
+    "approvedCharacters": 0,
+    "animationAdditions": 0
+  },
+  "book": {
+    "title": "2023 한자능력검정시험 3급 2",
+    "coverTitle": "한자능력검정시험 3급Ⅱ",
+    "author": "남기탁",
+    "publisher": "한국어문교육연구회",
+    "isbn13": "9791191238570",
+    "published": "2023-08-10",
+    "retailerPages": 624,
+    "catalogDescription": "RISS: 9판, 619 p., [1]장(접지).",
+    "editionIdentityCaveat": "판매처43은 발행월/624쪽을 제공하고 ISBN은 노출하지 않는다. 알라딘의 실제 뒷표지와 알라딘·YES24·RISS 서지에서 ISBN을 확인했다. 서점624쪽과 도서관619 p.+접지의 차이를 삭제하거나 통일하지 않았다."
+  },
+  "sources": [
+    {
+      "id": "institution-store-link",
+      "publisher": "한국어문회",
+      "title": "시험정보 · 학습자료(교재)",
+      "url": "https://www.hanja.re.kr/kccpt/exam/studyInfo.do",
+      "finalUrl": "https://www.hanja.re.kr/kccpt/exam/studyInfo.do",
+      "checkedAt": "2026-09-12T16:11:54.841416+00:00",
+      "httpStatus": 200,
+      "bytes": 109950,
+      "sha256": "0418a9b2bde124cbd033fc995e21e45a1055ee15d6975dee6e7cbc8fa216788f",
+      "evidenceLevel": "institutional-navigation",
+      "finding": "어문회 학습자료 페이지가 푸른하늘미루 판매처를 직접 연결한다. 개별 9자의 필순 본문을 제공하는 페이지는 아니다."
+    },
+    {
+      "id": "linked-seller-book43",
+      "publisher": "푸른하늘미루",
+      "title": "한자능력검정시험 3급Ⅱ",
+      "url": "https://skymiru.co.kr/product/%ED%95%9C%EC%9E%90%EB%8A%A5%EB%A0%A5%EA%B2%80%EC%A0%95%EC%8B%9C%ED%97%98-3%EA%B8%89/43/",
+      "finalUrl": "https://skymiru.co.kr/product/%ED%95%9C%EC%9E%90%EB%8A%A5%EB%A0%A5%EA%B2%80%EC%A0%95%EC%8B%9C%ED%97%98-3%EA%B8%89/43/",
+      "checkedAt": "2026-09-12T16:11:54.841416+00:00",
+      "httpStatus": 200,
+      "bytes": 94746,
+      "sha256": "6c0e3a2fa896f93987b72390c961bbff0da07262cb2a76bdb64e116311bc2066",
+      "evidenceLevel": "bibliography-and-toc",
+      "finding": "남기탁·한국어문교육연구회, 2023년 8월, 624쪽. 목차에 한자의 기초/필순/본문학습이 있으나 대상 전체필순 페이지 미확보. 이 판매 HTML에서 ISBN13은 확인하지 못했다."
+    },
+    {
+      "id": "aladin-current-edition",
+      "publisher": "알라딘",
+      "title": "2023 한자능력검정시험 3급 2",
+      "url": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=324175468",
+      "finalUrl": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=324175468",
+      "checkedAt": "2026-09-12T16:15:49.291999+00:00",
+      "httpStatus": 200,
+      "bytes": 357390,
+      "sha256": "454e370b1011c22a6985c8f8d22ad2efc2374dfe6b7a0c84a0ea4d8b2520a74f",
+      "evidenceLevel": "bibliography",
+      "finding": "ISBN 9791191238570, 2023-08-10, 624쪽, 저자 남기탁·한국어문교육연구회. 판매처43과 제목·저자·출판사·발행월·쪽수 및 실제 표지가 일치한다."
+    },
+    {
+      "id": "aladin-two-cover-preview",
+      "publisher": "알라딘",
+      "title": "미리보기 - 2023 한자능력검정시험 3급 2",
+      "url": "https://www.aladin.co.kr/shop/book/wletslookViewer.aspx?ISBN=K092935897",
+      "finalUrl": "https://www.aladin.co.kr/shop/book/wletslookViewer.aspx?ItemId=324175468",
+      "checkedAt": "2026-09-12T16:12:27.223102+00:00",
+      "httpStatus": 200,
+      "bytes": 50563,
+      "sha256": "36a14b8b93de0e432e43a7984aae006af51b70cfd6d06e0bf2f7a38b029a15ba",
+      "evidenceLevel": "visually-inspected-covers",
+      "visualInspection": {
+        "completed": true,
+        "method": "Browser UI screenshot; front and back cover selected separately.",
+        "viewerPages": 2,
+        "viewerPageDescriptions": [
+          "앞표지",
+          "뒷표지"
+        ],
+        "printedBodyPages": [],
+        "finding": "1/2 앞표지와 2/2 뒷표지를 실제 열람. 뒷표지의 ISBN 979-11-91238-57-0이 상품 서지와 일치한다. 이 viewer에는 본문 페이지가 없다."
+      }
+    },
+    {
+      "id": "aladin-public-detail-image",
+      "publisher": "알라딘 상품 상세 이미지 (한국어문교육연구회 교재 홍보)",
+      "title": "2023 3급Ⅱ 교재 구성 안내 및 본문 견본",
+      "url": "https://image.aladin.co.kr/img/img_content/K092935897_01.jpg",
+      "finalUrl": "https://image.aladin.co.kr/img/img_content/K092935897_01.jpg",
+      "checkedAt": "2026-09-12T16:18:15.492897+00:00",
+      "httpStatus": 200,
+      "bytes": 687822,
+      "sha256": "1b249d9c1cf7b5b4bd4ef0e3accbbdfd79351510fe3bd656b77b0b63afee22fa",
+      "evidenceLevel": "visually-inspected-non-target-body-excerpts",
+      "dimensions": [
+        728,
+        4025
+      ],
+      "visualInspection": {
+        "completed": true,
+        "method": "Browser original image; overview and native-size enlarged regions inspected by scrolling.",
+        "printedPageLocators": [
+          {
+            "page": 50,
+            "kind": "본문 학습 견본 일부",
+            "visibleHeadwordGlyphs": [
+              "可",
+              "加",
+              "佳",
+              "暇"
+            ],
+            "completeStrokeOrderDiagram": false
+          },
+          {
+            "page": 562,
+            "kind": "제95회 3급Ⅱ 기출문제 견본",
+            "completeStrokeOrderDiagram": false
+          },
+          {
+            "page": 604,
+            "kind": "제1회 3급Ⅱ 실전문제 견본",
+            "completeStrokeOrderDiagram": false
+          }
+        ],
+        "otherRegions": "사자성어·장단음·반의/유의어·동음이의어·약자 부록의 축소 견본과 표지 모음.",
+        "finding": "본문 견본은 실제 존재하지만 목표 9자의 전체 필순 도해를 확보하지 못했다. p.50에 제시된 부수/나머지획 표시는 전체 획순 근거가 아니다."
+      },
+      "originalRedistributed": false
+    },
+    {
+      "id": "yes24-current-edition",
+      "publisher": "예스24",
+      "title": "2023 한자능력검정시험 3급 2",
+      "url": "https://www.yes24.com/product/goods/122308644",
+      "finalUrl": "https://www.yes24.com/product/goods/122308644",
+      "checkedAt": "2026-09-12T16:17:13.797634+00:00",
+      "httpStatus": 200,
+      "bytes": 307569,
+      "sha256": "4404b21dca11e8090d5ea6d4676a3d37bfcdcc4f37138c76756f6e3c8c285d8c",
+      "evidenceLevel": "bibliography-and-toc",
+      "visualInspection": {
+        "method": "Live browser accessibility/DOM inspected.",
+        "previewLinkObserved": false,
+        "detailImageUrl": "https://image.yes24.com/momo/Noimg_XL.jpg",
+        "finding": "동일 ISBN·발행일·624쪽 확인. 미리보기 링크가 없으며 상세 이미지 1은 Noimg_XL placeholder. 목차의 필순 항목만으로 대상 본문 확보를 주장하지 않는다."
+      }
+    },
+    {
+      "id": "kyobo-isbn-search",
+      "publisher": "교보문고",
+      "title": "동일 ISBN 검색 → 서비스 점검",
+      "url": "https://search.kyobobook.co.kr/search?keyword=9791191238570",
+      "finalUrl": "https://www.kyobobook.co.kr/newborn/kyobonotice.html",
+      "checkedAt": "2026-09-12T16:18:15.492897+00:00",
+      "httpStatus": null,
+      "sha256": null,
+      "evidenceLevel": "temporarily-unavailable",
+      "finding": "브라우저에서 공식 서비스 점검 안내를 확인. 공지 시간 2026-09-13 00:30–09:00 KST, 인터넷/모바일/eBook 등 전 서비스. 직접 HTTP 요청은 200/0바이트였으므로 본문 가용성 판정에 사용하지 않았다.",
+      "retryAfter": "2026-09-13T09:00:00+09:00",
+      "checkedAtScope": "HTTP probe timestamp; browser maintenance state observed earlier in the same research interval."
+    },
+    {
+      "id": "national-union-catalog",
+      "publisher": "국립중앙도서관 국가자료종합목록",
+      "title": "ISBN 9791191238570 통합검색",
+      "url": "https://www.nl.go.kr/kolisnet/search/searchResultAllList.do?keyword1=9791191238570&keywordType1=total&tab=ALL",
+      "finalUrl": "https://www.nl.go.kr/kolisnet/search/searchResultAllList.do?keyword1=9791191238570&keywordType1=total&tab=ALL",
+      "checkedAt": "2026-09-12T16:18:15.492897+00:00",
+      "httpStatus": 200,
+      "bytes": 96232,
+      "sha256": "72a54902c8cb33e746d0c805fba761164afcee48bf9a4dd58609958d7eb7c4d6",
+      "evidenceLevel": "catalog-discovery",
+      "finding": "대학도서관 종합목록 1건을 반환하고 RISS U17055990으로 연결. 일반도서 영역 결과0을 전체 도서관 미소장으로 해석하지 않았다."
+    },
+    {
+      "id": "riss-same-isbn-holdings",
+      "publisher": "한국교육학술정보원 RISS",
+      "title": "한자능력검정시험 : 3급 . 2",
+      "url": "https://www.riss.kr/link?id=U17055990",
+      "finalUrl": "https://www.riss.kr/search/detail/DetailView.do?p_mat_type=75f99de66db18cf6&control_no=ac4cba266ccd0a2affe0bdc3ef48d419",
+      "checkedAt": "2026-09-12T16:19:16.290964+00:00",
+      "httpStatus": 200,
+      "bytes": 214699,
+      "sha256": "4f1a8690c5d281272d020cd274228da84948adba7cb2af027f599511aaf4df33",
+      "canonicalUrl": "https://www.riss.kr/link?id=M17055990",
+      "evidenceLevel": "bibliography-and-holdings",
+      "isbn13": "9791191238570",
+      "edition": "9판",
+      "physicalDescription": "619 p., [1]장(접지) ; 26 cm.",
+      "holdingLibraries": [
+        "국립중앙도서관",
+        "서울시립대학교 도서관"
+      ],
+      "finding": "동일 ISBN의 소장 및 목차 확인. 이 상세 페이지에서 대상 필순의 공개 원문/미리보기 링크를 확인하지 못했다. 복사/대출신청 및 국립중앙도서관 우편복사 서비스 안내는 열람된 본문이 아니며 신청하지 않았다."
+    },
+    {
+      "id": "gimssine-same-isbn",
+      "publisher": "GIMSSINE",
+      "title": "2023 한자능력검정시험 3급 2",
+      "url": "https://gimssine.com/products/9791191238570",
+      "finalUrl": "https://gimssine.com/products/9791191238570",
+      "checkedAt": "2026-09-12T16:18:15.492897+00:00",
+      "httpStatus": 200,
+      "bytes": 216253,
+      "sha256": "5751bf2e39ff672070e55fa077be37fe7e129332bbe013a842496ce0454a688e",
+      "evidenceLevel": "bibliography-and-toc",
+      "finding": "동일 ISBN SKU 및 교재 설명/목차 확인. 페이지에서 대상 본문 미리보기는 확보하지 못했다."
+    }
+  ],
+  "entries": [
+    {
+      "glyph": "訣",
+      "expectedStrokes": 11,
+      "catalogId": "u8a23",
+      "catalogSourceRow": 274,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    },
+    {
+      "glyph": "紋",
+      "expectedStrokes": 10,
+      "catalogId": "u7d0b",
+      "catalogSourceRow": 1817,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    },
+    {
+      "glyph": "森",
+      "expectedStrokes": 12,
+      "catalogId": "u68ee",
+      "catalogSourceRow": 2442,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    },
+    {
+      "glyph": "阿",
+      "expectedStrokes": 8,
+      "catalogId": "u963f",
+      "catalogSourceRow": 3000,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    },
+    {
+      "glyph": "笛",
+      "expectedStrokes": 11,
+      "catalogId": "u7b1b",
+      "catalogSourceRow": 4114,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    },
+    {
+      "glyph": "蹟",
+      "expectedStrokes": 18,
+      "catalogId": "u8e5f",
+      "catalogSourceRow": 4116,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    },
+    {
+      "glyph": "稚",
+      "expectedStrokes": 13,
+      "catalogId": "u7a1a",
+      "catalogSourceRow": 5051,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    },
+    {
+      "glyph": "兔",
+      "expectedStrokes": 8,
+      "catalogId": "u5154",
+      "catalogSourceRow": 5204,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    },
+    {
+      "glyph": "楓",
+      "expectedStrokes": 13,
+      "catalogId": "u6953",
+      "catalogSourceRow": 5388,
+      "bookIsbn13": "9791191238570",
+      "status": "target-whole-stroke-page-not-acquired",
+      "sourceGlyphObserved": null,
+      "observedStrokeCount": null,
+      "completeStrokeOrderObserved": false,
+      "printedPage": null,
+      "pageSha256": null,
+      "sourceReferences": [
+        "aladin-two-cover-preview",
+        "aladin-public-detail-image",
+        "yes24-current-edition",
+        "riss-same-isbn-holdings"
+      ],
+      "reason": "공개 viewer는 표지2장, 상세 이미지는 비대상 본문/부록/시험 견본이다. 서지·목차·소장 확인을 이 글자의 본문/전체필순 열람으로 간주하지 않는다."
+    }
+  ],
+  "nextActions": [
+    {
+      "priority": 1,
+      "action": "교보문고 점검 종료 후 동일 ISBN 공개 미리보기 유무를 한 번 확인한다.",
+      "condition": "2026-09-13 09:00 KST 이후; 이 조사에서 예약/자동실행하지 않음.",
+      "approvalEffect": "없음"
+    },
+    {
+      "priority": 2,
+      "action": "해당 판본의 정당한 소장본 또는 도서관 이용 자격으로 실제 본문을 확인한다.",
+      "condition": "ISBN 9791191238570 및 인쇄판수 확인 후 대상별 정확한 페이지와 전체 필순 도해 유무부터 기록. 복사/대출/유료 신청은 별도 사용자 실행 또는 명시적 허가가 필요.",
+      "approvalEffect": "실제 전체순서 자료가 있어도 별도 검토 전 승인 없음"
+    }
+  ],
+  "limitations": [
+    "확인된 공개 경로에서 목표9자의 전체필순 본문을 확보하지 못했다는 결과이며, 책 자체에 필순이 없거나 국내 공식 자료가 존재하지 않는다는 결론이 아니다.",
+    "검색 결과의 다른 연도·급수·기출문제집을 같은 ISBN 교재의 본문으로 대체하지 않았다.",
+    "확인시각은 UTC ISO8601이며 날짜 기준은 Asia/Seoul이다. HTML 해시는 동적 페이지의 그 시점 응답 바이트를 식별한다.",
+    "원본 책/문서/이미지와 브라우저 스크린샷을 저장·재배포하지 않았다. 공개 상세 이미지는 RAM/브라우저에서만 열람했다.",
+    "로그인, 인증·유료 접근 우회, 구매, 복사/대출 신청, 외부 연락 및 런타임 변경을 수행하지 않았다."
+  ]
+}

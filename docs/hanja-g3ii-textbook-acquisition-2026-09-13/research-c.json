@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "owner": "C",
+  "task": "국내 한자 교재 공개 본문 확보 조사",
+  "baselineReference": "baseline.json",
+  "baselineCommit": "d5f7feaac390492524f731398952829a5c6b3ad4",
+  "scope": {
+    "glyphs": [
+      "訣",
+      "紋",
+      "森",
+      "阿",
+      "笛",
+      "蹟",
+      "稚",
+      "兔",
+      "楓"
+    ],
+    "characters": 9,
+    "catalogStrokes": 104
+  },
+  "summary": {
+    "basicLearningRows": 7,
+    "basicLearningRowCatalogStrokes": 79,
+    "completeStaticCumulativeOrders": 2,
+    "completeStaticCumulativeOrderCatalogStrokes": 16,
+    "partialCumulativeOrders": 5,
+    "partialCumulativeOrderCatalogStrokes": 63,
+    "notLocated": 2,
+    "notLocatedCatalogStrokes": 25,
+    "newAnimationApprovals": 0
+  },
+  "sources": [
+    {
+      "id": "sasa-practical3500",
+      "title": "실용한자 3500 8급에서 1급까지 완전정복",
+      "author": "사상사회연구소",
+      "publisher": "사사연",
+      "publicationDate": "2015-07-15",
+      "pages": 562,
+      "isbn": "9791195250172",
+      "url": "https://www.yes24.com/product/goods/18760757",
+      "mobileUrl": "https://m.yes24.com/goods/detail/18760757",
+      "access": {
+        "httpStatus": 200,
+        "accessDate": "2026-09-13",
+        "htmlBytes": 305946,
+        "htmlSha256": "4f43ae3983cf4dec250da900b35b0fce0291479ca061a1982ddda33d1b3edbf5"
+      },
+      "bodyAcquired": false,
+      "observation": "상품 페이지의 서지·소개·목차와 표지 기능을 확인했으나 본문 미리보기 버튼이나 대상 본문을 확보하지 못했다. 소개의 필순 수록 안내는 실제 도해 확인으로 계산하지 않았다.",
+      "previewScriptCaution": "일반 HTML의 ebookcode=0 미리보기 함수는 이 도서의 유효한 공개 미리보기로 실행하거나 판정하지 않았다."
+    },
+    {
+      "id": "dongyang-hanja3-note",
+      "title": "암기박사식 한자 능시 3급",
+      "supplementTitle": "한자능시 3급 쓰기노트",
+      "authors": [
+        "박원길",
+        "박두수",
+        "박정서"
+      ],
+      "publisher": "동양문고",
+      "officialHost": "동양북스",
+      "publicationDate": "2008-07-11",
+      "bookPages": 480,
+      "isbn": "9788983005991",
+      "assetPublicationDate": null,
+      "url": "https://dongyangbooks.com/book/book_view.asp?goods_code=979&menu_1=hanja&menu_2=han_hanja",
+      "downloadUrl": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+      "access": {
+        "httpStatus": 200,
+        "accessDate": "2026-09-13",
+        "officialLinkLabel": "첨부파일",
+        "publicNotice": "한자쓰기노트 PDF 무료 다운로드",
+        "loginRequired": false,
+        "purchasePerformed": false,
+        "tlsVerificationDisabled": false,
+        "htmlBytes": 63090,
+        "htmlSha256": "90a33e674ebdc8db82e781570c5d6ea26582b77fcec1374a6107a4a39b151dfc"
+      },
+      "archive": {
+        "name": "한자능시 3급 쓰기노트.zip",
+        "bytes": 77040295,
+        "sha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e"
+      },
+      "pdf": {
+        "entryName": "한자능시 3급 쓰기노트.pdf",
+        "bytes": 77369148,
+        "pages": 165,
+        "sha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48"
+      },
+      "rightsObservation": "공식 사이트가 공개 제공하는 부가 자료다. PDF 첫 페이지는 책 구입 독자용임과 무단 전재·복제 금지를 명시한다. 공개 열람을 원본 또는 파생 자료의 재배포 허락으로 해석하지 않았다.",
+      "bodyAcquired": true
+    }
+  ],
+  "method": {
+    "originalHandling": "공개 ZIP과 내부 PDF를 RAM으로 읽고 후보 페이지를 RAM 렌더하여 직접 열람했다. 이 조사 출력에는 원본 이미지·PDF를 포함하지 않는다.",
+    "renderer": "pypdfium2 to PIL; candidate pages enlarged to height 5000 then cropped in RAM",
+    "fullPagesVisuallyInspected": [
+      1,
+      2,
+      32,
+      35,
+      80,
+      111,
+      159,
+      165
+    ],
+    "targetRowCropsVisuallyInspected": 7,
+    "textLookupPages": 165,
+    "textLookupTerms": [
+      "訣",
+      "紋",
+      "森",
+      "阿",
+      "笛",
+      "蹟",
+      "稚",
+      "兔",
+      "楓",
+      "수풀",
+      "단풍",
+      "토끼"
+    ],
+    "searchLimit": "森·楓의 미검출은 미수록 확정이 아니다. 165페이지 전체 시각 전수는 하지 않았다. 표지 다음은 쓰기 행이고 마지막 확인 페이지도 쓰기 행이며, 활용할 수 있는 가나다 색인을 확보하지 못했다.",
+    "glyphMappingCaution": "p111 토끼 행의 추출 텍스트는 刻 등으로 잘못 매핑되어 있었다. 실제 머리글자와 누적 도해를 보고 兔로 판정했다.",
+    "orderCriterion": "회색 완성형 위에 검은 획이 하나씩 더해지는 누적 칸을 직접 세었다. 처음 여러 획이 이미 검은 칸에서 시작하면 전체 필순으로 인정하지 않았다. 아래 큰 회색 따라쓰기 칸은 누적 도해 개수에 포함하지 않았다."
+  },
+  "entries": [
+    {
+      "glyph": "訣",
+      "catalogStrokes": 11,
+      "basicLearningRowLocated": true,
+      "printedPage": 80,
+      "pdfPage": 80,
+      "sourceId": "dongyang-hanja3-note",
+      "exactHeadGlyphVisuallyConfirmed": true,
+      "cumulativePanels": 8,
+      "wholeOrderAcquired": false,
+      "status": "body-with-partial-cumulative-order",
+      "observation": "言의 점과 가로선들이 이미 검게 그려진 첫 칸에서 시작한다.",
+      "animationApproved": false,
+      "visualEvidence": {
+        "renderHeightBeforeCrop": 5000,
+        "cropBox": [
+          223,
+          2505,
+          1532,
+          2882
+        ],
+        "cropWebpSha256": "6ea9ea860a9165bc499f60636ca1e4f667565433a6d44dfa7e2e6e4a19cd876a"
+      }
+    },
+    {
+      "glyph": "紋",
+      "catalogStrokes": 10,
+      "basicLearningRowLocated": true,
+      "printedPage": 159,
+      "pdfPage": 159,
+      "sourceId": "dongyang-hanja3-note",
+      "exactHeadGlyphVisuallyConfirmed": true,
+      "cumulativePanels": 8,
+      "wholeOrderAcquired": false,
+      "status": "body-with-partial-cumulative-order",
+      "observation": "糸의 앞부분이 이미 검게 그려진 첫 칸에서 시작한다.",
+      "animationApproved": false,
+      "visualEvidence": {
+        "renderHeightBeforeCrop": 5000,
+        "cropBox": [
+          292,
+          1742,
+          1500,
+          2125
+        ],
+        "cropWebpSha256": "884d03ff49ed39c060e0a526281b6a43a168566877377487091013b31e68bfba"
+      }
+    },
+    {
+      "glyph": "森",
+      "catalogStrokes": 12,
+      "basicLearningRowLocated": false,
+      "printedPage": null,
+      "pdfPage": null,
+      "sourceId": null,
+      "exactHeadGlyphVisuallyConfirmed": false,
+      "cumulativePanels": null,
+      "wholeOrderAcquired": false,
+      "status": "not-located",
+      "observation": "정확 글자와 수풀 훈음 검색으로 기본 학습 행을 찾지 못했다. 林·麻·楚의 관련 설명은 森의 행이 아니다.",
+      "animationApproved": false
+    },
+    {
+      "glyph": "阿",
+      "catalogStrokes": 8,
+      "basicLearningRowLocated": true,
+      "printedPage": 35,
+      "pdfPage": 35,
+      "sourceId": "dongyang-hanja3-note",
+      "exactHeadGlyphVisuallyConfirmed": true,
+      "cumulativePanels": 8,
+      "wholeOrderAcquired": true,
+      "status": "complete-static-cumulative-order",
+      "observation": "첫 칸의 한 획부터 阝 세 획, 可 다섯 획이 순차적으로 더해져 마지막 칸에서 완성된다.",
+      "animationApproved": false,
+      "visualEvidence": {
+        "renderHeightBeforeCrop": 5000,
+        "cropBox": [
+          291,
+          4009,
+          1545,
+          4377
+        ],
+        "cropWebpSha256": "722e3085f12b1f1d8e58ae3fa9133995afbd3c6b4596df4888fa5a5b5a2f32ec"
+      }
+    },
+    {
+      "glyph": "笛",
+      "catalogStrokes": 11,
+      "basicLearningRowLocated": true,
+      "printedPage": 165,
+      "pdfPage": 165,
+      "sourceId": "dongyang-hanja3-note",
+      "exactHeadGlyphVisuallyConfirmed": true,
+      "cumulativePanels": 8,
+      "wholeOrderAcquired": false,
+      "status": "body-with-partial-cumulative-order",
+      "observation": "竹의 여러 앞획이 이미 검게 그려진 첫 칸에서 시작한다. p80의 吹笛는 관련 단어이며 이 기본 행과 구분한다.",
+      "animationApproved": false,
+      "visualEvidence": {
+        "renderHeightBeforeCrop": 5000,
+        "cropBox": [
+          292,
+          604,
+          1583,
+          988
+        ],
+        "cropWebpSha256": "ba06dd6cdfbdedceb84af2895b6863b18ca99440b23febb23ddb2d72297d874e"
+      }
+    },
+    {
+      "glyph": "蹟",
+      "catalogStrokes": 18,
+      "basicLearningRowLocated": true,
+      "printedPage": 32,
+      "pdfPage": 32,
+      "sourceId": "dongyang-hanja3-note",
+      "exactHeadGlyphVisuallyConfirmed": true,
+      "cumulativePanels": 8,
+      "wholeOrderAcquired": false,
+      "status": "body-with-partial-cumulative-order",
+      "observation": "足 전체와 責 윗부분이 이미 검게 그려진 첫 칸에서 시작한다.",
+      "animationApproved": false,
+      "visualEvidence": {
+        "renderHeightBeforeCrop": 5000,
+        "cropBox": [
+          273,
+          4273,
+          1727,
+          4864
+        ],
+        "cropWebpSha256": "b7be685f708f544ab5d41c184c25fd202177e6c0c5399685ad4b696bb34c0671"
+      }
+    },
+    {
+      "glyph": "稚",
+      "catalogStrokes": 13,
+      "basicLearningRowLocated": true,
+      "printedPage": 165,
+      "pdfPage": 165,
+      "sourceId": "dongyang-hanja3-note",
+      "exactHeadGlyphVisuallyConfirmed": true,
+      "cumulativePanels": 9,
+      "wholeOrderAcquired": false,
+      "status": "body-with-partial-cumulative-order",
+      "observation": "첫 칸에 禾가 이미 완성되어 있고 이후 隹가 더해진다.",
+      "animationApproved": false,
+      "visualEvidence": {
+        "renderHeightBeforeCrop": 5000,
+        "cropBox": [
+          292,
+          1363,
+          1625,
+          1746
+        ],
+        "cropWebpSha256": "5a3e10b1b3996ef85be652eb4278578002e95e48993bd577aa5ca4b5bd1c97d9"
+      }
+    },
+    {
+      "glyph": "兔",
+      "catalogStrokes": 8,
+      "basicLearningRowLocated": true,
+      "printedPage": 111,
+      "pdfPage": 111,
+      "sourceId": "dongyang-hanja3-note",
+      "exactHeadGlyphVisuallyConfirmed": true,
+      "cumulativePanels": 8,
+      "wholeOrderAcquired": true,
+      "status": "complete-static-cumulative-order",
+      "observation": "첫 칸의 한 획부터 여덟 누적 단계가 있으며 마지막에 별도 꼬리점이 더해진다. 큰 머리글자와 마지막 누적 글자는 兔이며 兎·免·菟로 대체하지 않았다.",
+      "animationApproved": false,
+      "visualEvidence": {
+        "renderHeightBeforeCrop": 5000,
+        "cropBox": [
+          292,
+          3625,
+          1500,
+          4013
+        ],
+        "cropWebpSha256": "aeb1fd2e4f40b6a76f2b0db9d8ca61036ac03a1e9f3953ab4fed3c5e7172e247"
+      }
+    },
+    {
+      "glyph": "楓",
+      "catalogStrokes": 13,
+      "basicLearningRowLocated": false,
+      "printedPage": null,
+      "pdfPage": null,
+      "sourceId": null,
+      "exactHeadGlyphVisuallyConfirmed": false,
+      "cumulativePanels": null,
+      "wholeOrderAcquired": false,
+      "status": "not-located",
+      "observation": "정확 글자와 단풍 훈음 검색으로 기본 학습 행을 찾지 못했다. 華 설명의 단풍은 楓의 행이 아니다.",
+      "animationApproved": false
+    }
+  ],
+  "limitations": [
+    "정적 누적 도해 확보와 새 애니메이션 승인은 별개이며 승인 수는 0이다.",
+    "화살표나 영상으로 획 진행 방향과 연속 획 경계를 검증한 기록이 아니다. 이후 승인 작업은 별도 전체 검토가 필요하다.",
+    "사사연 우선 후보에서 실제 공개 본문을 확보하지 못했다. 동명의 다른 출판사 도서를 같은 판본으로 취급하지 않았다.",
+    "森·楓은 본문 미확보 상태로 남기며 근사자나 단어 속 등장으로 대체하지 않았다."
+  ]
+}

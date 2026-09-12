@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "reviewer": "B",
+  "scope": "Independent visual completeness check of the single 兔 row in the publisher's public supplementary writing-note PDF. No animation or geometry approval.",
+  "target": {
+    "glyph": "兔",
+    "catalogStrokes": 8,
+    "sourceRowNumber": 391,
+    "pdfPage": 111,
+    "pdfPageIndex": 110,
+    "printedPageReportedByPrimary": 111,
+    "printedPageNumberIndependentlyRead": false
+  },
+  "source": {
+    "publisher": "동양북스",
+    "bookTitleReportedByPrimary": "암기박사식 한자 능시 3급",
+    "url": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+    "accessedAt": "2026-09-12T16:32:45.141Z",
+    "accessStatus": "Public publisher download successfully fetched into RAM by platform curl with normal certificate verification.",
+    "curlExitCode": 0,
+    "tlsVerificationDisabled": false,
+    "zipBytes": 77040295,
+    "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+    "pdfName": "한자능시 3급 쓰기노트.pdf",
+    "pdfBytes": 77369148,
+    "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+    "pdfPages": 165,
+    "primaryHashesIndependentlyMatched": true,
+    "sourceMediaPersisted": false,
+    "sourceMediaRedistributed": false
+  },
+  "inspection": {
+    "independentFreshRender": {
+      "method": "The independently fetched ZIP was held in a process buffer, its PDF extracted in RAM, and page index 110 rendered by pypdfium2. The row crop was emitted and visually inspected.",
+      "pagePointDimensions": [
+        532.9130249023438,
+        728.5040283203125
+      ],
+      "renderDimensions": [
+        3658,
+        5000
+      ],
+      "cropLtrbPixels": [
+        292,
+        3625,
+        1500,
+        4013
+      ],
+      "cropEncoding": "WebP quality 90 from the direct PDF raster",
+      "cropSha256": "b2dbfdc75c324b63a8c043f3a777c644b519da866d68fceeea33f26c715620be",
+      "visualReviewed": true
+    },
+    "sharedRamRender": {
+      "method": "Before the fresh retrieval, independently viewed the primary researcher's local RAM page render and enlarged adjacent cumulative cells. The server's full-page WebP was decoded, cropped, and re-encoded.",
+      "pdfPage": 111,
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "renderDimensions": [
+        3658,
+        5000
+      ],
+      "cropLtrbPixels": [
+        292,
+        3625,
+        1500,
+        4013
+      ],
+      "cropSha256": "aeb1fd2e4f40b6a76f2b0db9d8ca61036ac03a1e9f3953ab4fed3c5e7172e247",
+      "zoomFirstThree": {
+        "cropLtrbPixels": [
+          635,
+          3727,
+          860,
+          3809
+        ],
+        "scale": 5,
+        "encoding": "WebP quality 95",
+        "sha256": "cd411db4140088953b3ecc201375ff519a40178d82dc8b6cd663daf9c0ca8869"
+      },
+      "zoomLastFive": {
+        "cropLtrbPixels": [
+          900,
+          3727,
+          1360,
+          3809
+        ],
+        "scale": 4,
+        "encoding": "WebP quality 95",
+        "sha256": "fe8fb0941b80cb908dd3f30d016efc5906532fdb09f3947ab509f95ec78695d0"
+      },
+      "renderHashNote": "The shared-server row crop and direct-PDF row crop have different hashes because the former includes an extra full-page WebP encode/decode. ZIP and PDF source hashes match exactly."
+    },
+    "observedRowStructure": "Headword 兔 with reading 토, row 391, eight distinct small cumulative forms progressing from a single dark upper folded-hook shape to the complete dark glyph; grey complete-glyph guides remain in unfinished areas. Larger pale tracing forms below are not counted as cumulative stages.",
+    "stepChanges": [
+      {
+        "step": 1,
+        "observation": "위쪽 가로와 오른쪽으로 꺾여 내려오는 갈고리 모양만 검정이다. 그 아래 왼삐침 및 나머지 자형은 회색으로 남는다.",
+        "newDarkStrokeShape": "upper horizontal-fold-hook",
+        "firstStagePresent": true
+      },
+      {
+        "step": 2,
+        "observation": "윗부분 안쪽에서 왼쪽 아래로 뻗는 삐침이 검정으로 추가된다. 첫 칸과의 차이가 확대 화면에서 명확하다.",
+        "newDarkStrokeShape": "upper left-falling diagonal"
+      },
+      {
+        "step": 3,
+        "observation": "중간 네모꼴의 왼쪽 짧은 세로가 검정으로 추가된다.",
+        "newDarkStrokeShape": "left side of middle enclosure"
+      },
+      {
+        "step": 4,
+        "observation": "중간 네모꼴의 윗가로와 오른쪽으로 꺾여 내려오는 부분이 검정으로 추가된다. 밑가로는 아직 회색이다.",
+        "newDarkStrokeShape": "top and folded right side of middle enclosure"
+      },
+      {
+        "step": 5,
+        "observation": "중간 네모꼴의 밑가로가 검정으로 추가되어 네모꼴 테두리가 닫힌다.",
+        "newDarkStrokeShape": "bottom horizontal of middle enclosure"
+      },
+      {
+        "step": 6,
+        "observation": "중간 네모꼴을 관통하여 왼쪽 아래로 길게 빠지는 곡선이 검정으로 추가된다. 오른쪽 아래 굽은 부분과 작은 점은 아직 회색이다.",
+        "newDarkStrokeShape": "central descending left-sweeping curve"
+      },
+      {
+        "step": 7,
+        "observation": "오른쪽 아래로 내려가 바닥을 돌고 끝에서 올라오는 굽은 갈고리가 검정으로 추가된다. 그 안쪽 작은 점은 회색이다.",
+        "newDarkStrokeShape": "lower bent hook"
+      },
+      {
+        "step": 8,
+        "observation": "아래 오른쪽 굽은 부분 안쪽의 작은 독립 점이 검정으로 추가된다. 모든 자형이 완성된다.",
+        "newDarkStrokeShape": "separate interior dot"
+      }
+    ],
+    "glyphObservation": "The headword and eighth cumulative form show 兔 with a separate small dot. The observed row is the exact requested rabbit glyph rather than a substituted 兎 row.",
+    "fullVideoViewed": false,
+    "actualGeneratedPathsViewed": false
+  },
+  "result": {
+    "exactGlyphConfirmed": true,
+    "cumulativeStagesVisible": 8,
+    "firstStageMissing": false,
+    "allEightStageChangesIndependentlyViewed": true,
+    "staticWholeOrderDiagramAcquired": true,
+    "newPlaybackApprovals": 0,
+    "sharedSourceOrRuntimeChanges": 0,
+    "gitChanges": 0
+  },
+  "limitations": [
+    "This confirms the complete eight-stage static publisher diagram, not timing, continuous pen motion, stroke-width geometry, or the correctness of any generated animation.",
+    "The independent view covered the row crop and enlarged cumulative cells of PDF page 111, not all 165 PDF pages.",
+    "The printed page number was supplied by the primary researcher; this peer directly bound the row to zero-based PDF page 110 and independently read row number 391.",
+    "Initial Node and bundled-Python downloads failed normal TLS issuer-chain verification. Neither was weakened or bypassed. The later platform curl retrieval succeeded with default verification and no -k option.",
+    "No source image or video is stored in this metadata-only artifact."
+  ],
+  "errors": []
+}
