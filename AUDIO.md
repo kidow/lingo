@@ -286,17 +286,38 @@ R2 커스텀 도메인은 **버킷과 같은 Cloudflare 계정의 zone**이어�
 3. 붙인 뒤 **Public Development URL은 Disable** — 둘 다 열려 있으면 캐시가 우회된다
 4. Vercel 환경변수를 바꾸고 **재배포** (빌드 타임에 박힌다)
 
-### 히스토리에서 빼는 것은 아직 안 했다
+### 히스토리에서도 뺐다 — `.git` 979MB → 93MB
 
-추적만 뗐으므로 `.git` 982MB는 그대로다. 빼면 mp3 400MB가 줄어 **약 580MB**가
-된다. 커밋 해시가 전부 바뀌므로 **같은 워크트리를 쓰는 다른 세션이 멈춘 때**
-해야 한다 (docs/concurrent-sessions.md).
+같은 날 이어서 했다. 추적만 떼면 파일이 히스토리에 남아 clone이 그대로 무겁다.
 
 ```bash
-git branch backup/pre-filter-$(date +%F) && git push origin backup/pre-filter-$(date +%F)
-pipx run git-filter-repo --path public/audio --invert-paths --force
-git push --force-with-lease origin main
+git bundle create ~/lingo-pre-filter-$(date +%F).bundle --all   # 백업. 원격에 밀지 않는다
+git-filter-repo --path public/audio --invert-paths --force
+git remote add origin https://github.com/kidow/lingo.git        # filter-repo가 지운다
+git push --force origin main
 ```
+
+**백업은 원격에 밀지 않는다.** 백업 브랜치를 푸시하면 그 브랜치가 mp3를 붙잡아
+GitHub 쪽 용량이 그대로다. 로컬 번들 하나면 된다 — `git bundle verify`로
+"records a complete history"를 확인하고 넘어간다.
+
+**예상보다 많이 줄었다.** 580MB를 예상했는데 93MB가 됐다. 둘이 더 있었다.
+
+- **Codex 찌꺼기.** `refs/codex/turn-diffs/checkpoints/…` 세 개가 mp3 전량을
+  붙잡고 있었다. filter-repo가 "Unexpected object of type tree, skipping"으로
+  건너뛴 것들이다. `git update-ref -d`로 지워야 사라진다
+- **loose 객체.** `git gc --prune=now --aggressive`가 마저 걷는다
+
+`main`에서 도달하는 mp3가 0인지로 확인한다 — 전체 ref로 세면 저런 찌꺼기까지
+잡혀 안 줄어든 것처럼 보인다.
+
+```bash
+git rev-list --objects main | grep -c '\.mp3$'   # 0 이어야 한다
+git fsck --no-progress                           # 아무것도 안 나와야 한다
+```
+
+> **다른 곳의 클론은 전부 버린다.** 커밋 해시가 전부 바뀌었다. 옛 클론에서
+> 푸시하면 mp3가 되살아난다. 다시 클론하거나 `git fetch && git reset --hard origin/main`.
 
 ---
 
