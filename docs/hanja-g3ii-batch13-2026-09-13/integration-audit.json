@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 1,
+  "batch": 13,
+  "date": "2026-09-13",
+  "owner": "C",
+  "task": "Read-only integration design and current-state audit for 阿・兔",
+  "auditPhase": "before any batch13 shared-code or runtime integration",
+  "baselineCommit": "390bea3c4659784a9ecdae7b01011912f292f94d",
+  "scope": {
+    "underReview": [
+      {
+        "glyph": "阿",
+        "catalogStrokes": 8
+      },
+      {
+        "glyph": "兔",
+        "catalogStrokes": 8
+      }
+    ],
+    "newApprovalsByThisAudit": 0,
+    "sharedFilesModifiedByThisAudit": []
+  },
+  "currentState": {
+    "counts": {
+      "catalog": 5978,
+      "runtime": 1472,
+      "eomunhoe": 503,
+      "publisher": 969,
+      "grade": 500,
+      "appliedGrade": 482
+    },
+    "remaining": [
+      {
+        "glyph": "訣",
+        "strokes": 11
+      },
+      {
+        "glyph": "蓮",
+        "strokes": 15
+      },
+      {
+        "glyph": "紋",
+        "strokes": 10
+      },
+      {
+        "glyph": "奔",
+        "strokes": 8
+      },
+      {
+        "glyph": "森",
+        "strokes": 12
+      },
+      {
+        "glyph": "阿",
+        "strokes": 8
+      },
+      {
+        "glyph": "慈",
+        "strokes": 13
+      },
+      {
+        "glyph": "笛",
+        "strokes": 11
+      },
+      {
+        "glyph": "蹟",
+        "strokes": 18
+      },
+      {
+        "glyph": "遷",
+        "strokes": 15
+      },
+      {
+        "glyph": "追",
+        "strokes": 10
+      },
+      {
+        "glyph": "稚",
+        "strokes": 13
+      },
+      {
+        "glyph": "兔",
+        "strokes": 8
+      },
+      {
+        "glyph": "透",
+        "strokes": 11
+      },
+      {
+        "glyph": "弊",
+        "strokes": 15
+      },
+      {
+        "glyph": "楓",
+        "strokes": 13
+      },
+      {
+        "glyph": "響",
+        "strokes": 22
+      },
+      {
+        "glyph": "還",
+        "strokes": 17
+      }
+    ],
+    "ledger": {
+      "records": 971,
+      "statuses": {
+        "matched": 969,
+        "conflict": 2
+      },
+      "targetRecords": []
+    },
+    "targetCorrectionRecipes": 0,
+    "targetAuthored": 0,
+    "donors": [
+      {
+        "glyph": "院",
+        "paths": 10,
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "pathsSha256": "2eae9b3714e970aeb1c4e5cba33a3fc52fa5f930cb06cf7e2691a433cb6630fe",
+        "sourceImage": "BIN000C.gif",
+        "sourceRow": 7
+      },
+      {
+        "glyph": "河",
+        "paths": 8,
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "pathsSha256": "e8fbd5dc3c9820ba7ab4d60675243bb6161748d0d37c375b3c997967c767a54c",
+        "sourceImage": "BIN000E.gif",
+        "sourceRow": 17
+      },
+      {
+        "glyph": "何",
+        "paths": 7,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "verificationSource": "vivasam-high-2022",
+        "pathsSha256": "0379cbba829cab1da09af4cc9dcb1fdb1928d4a01a0afe7ea63b0b38f9e42f70",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "1655",
+          "glyph": "何",
+          "videoFilename": "1655 어찌 하.mp4"
+        }
+      },
+      {
+        "glyph": "逸",
+        "paths": 12,
+        "geometrySource": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "verificationSource": "vivasam-high-2022",
+        "pathsSha256": "1330fc5eb2a83c2456cdfc3d48c3ae9ecb10efff93c3be0a978811cb262e8eee",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "1208",
+          "glyph": "逸",
+          "videoFilename": "1208 편안할 일.mp4"
+        }
+      },
+      {
+        "glyph": "晩",
+        "paths": 11,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "verificationSource": "vivasam-high-2022",
+        "pathsSha256": "a46b7b1ca542482d07df64fe93d960fe4b93b356543d7d7c67a1a64c888d72f0",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "0490",
+          "glyph": "晩",
+          "videoFilename": "0490 늦을 만.mp4"
+        }
+      },
+      {
+        "glyph": "免",
+        "paths": 7,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "verificationSource": "vivasam-high-2022",
+        "pathsSha256": "3cc0a0217a6051b8241a6f8a6bbe28f8cc2b21931aff431ed9522f866c8a6b53",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "0516",
+          "glyph": "免",
+          "videoFilename": "0516 면할 면.mp4"
+        }
+      }
+    ],
+    "publicSha256": "aed1c17aa0a024f21015b9fcfb5661d7bb14d878c73560944c3e8efa1b442b12",
+    "partition": {
+      "underReview": [
+        {
+          "glyph": "阿",
+          "strokes": 8
+        },
+        {
+          "glyph": "兔",
+          "strokes": 8
+        }
+      ],
+      "underReviewCharacters": 2,
+      "underReviewStrokes": 16,
+      "domesticWholeOrderStillMissing": [
+        {
+          "glyph": "訣",
+          "strokes": 11
+        },
+        {
+          "glyph": "紋",
+          "strokes": 10
+        },
+        {
+          "glyph": "森",
+          "strokes": 12
+        },
+        {
+          "glyph": "笛",
+          "strokes": 11
+        },
+        {
+          "glyph": "蹟",
+          "strokes": 18
+        },
+        {
+          "glyph": "稚",
+          "strokes": 13
+        },
+        {
+          "glyph": "楓",
+          "strokes": 13
+        }
+      ],
+      "domesticWholeOrderStillMissingCharacters": 7,
+      "domesticWholeOrderStillMissingStrokes": 88,
+      "existingHolds": [
+        {
+          "glyph": "奔",
+          "strokes": 8
+        },
+        {
+          "glyph": "慈",
+          "strokes": 13
+        },
+        {
+          "glyph": "遷",
+          "strokes": 15
+        },
+        {
+          "glyph": "追",
+          "strokes": 10
+        },
+        {
+          "glyph": "弊",
+          "strokes": 15
+        },
+        {
+          "glyph": "透",
+          "strokes": 11
+        },
+        {
+          "glyph": "響",
+          "strokes": 22
+        },
+        {
+          "glyph": "還",
+          "strokes": 17
+        },
+        {
+          "glyph": "蓮",
+          "strokes": 15
+        }
+      ],
+      "existingHeldCharacters": 9,
+      "existingHeldStrokes": 126,
+      "totalRemainingCharacters": 18,
+      "totalRemainingStrokes": 230
+    },
+    "countCaution": "The existing nine holds are a document-level review set, not the registry conflict count. The current Vivasam registry contains only two conflict records."
+  },
+  "candidateAvailability": [
+    {
+      "glyph": "阿",
+      "reportedBy": "A fresh pinned-corpus review in this batch",
+      "korean": null,
+      "japanese": 8,
+      "makeMeAHanzi": 7,
+      "japaneseOriginalMediansSha256": "8d01e666fc12e8e14bb86eec2a88ca057d76b53357d7ae8c4e195496e863d3be",
+      "uncorrectedNormalizedPathsSha256": "bc3cd5900a549974a340df212086c644a6bb96c8def8df1558d1614b15a174fe",
+      "provisionalGeometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "status": "Ja whole-glyph geometry candidate; source direction and final geometry review still pending at this audit",
+      "reason": "MM merges the first two left-radical boundaries into one original stroke. An existing Ja8 candidate avoids introducing local authored composition."
+    },
+    {
+      "glyph": "兔",
+      "reportedBy": "B fresh pinned-corpus review in this batch",
+      "korean": null,
+      "japanese": 8,
+      "makeMeAHanzi": 8,
+      "japaneseOriginalMediansSha256": "64decbec9ead64ed115605c8b1fa7f8a1b90ea47ec496593028f3f9ad015dc2d",
+      "makeMeAHanziOriginalMediansSha256": "7f7f6d334067e9d130e967d0abd02e3e8066b890f507922059784a8a164d7d82",
+      "status": "hold likely; no geometry selected or approved",
+      "reason": "B reports both foreign vector candidates and MOE begin with the top slant before the fold, while the Korean PDF begins with a horizontal hooked fold before the slant and also differs in shape. Swapping indices alone does not resolve this."
+    }
+  ],
+  "existingGeometryReuse": {
+    "exactTargetRuntimeEntries": 0,
+    "exactTargetCorrectionRecipes": 0,
+    "exactTargetAuthoredEntries": 0,
+    "availableDonors": [
+      {
+        "glyph": "院",
+        "paths": 10,
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "pathsSha256": "2eae9b3714e970aeb1c4e5cba33a3fc52fa5f930cb06cf7e2691a433cb6630fe",
+        "sourceImage": "BIN000C.gif",
+        "sourceRow": 7
+      },
+      {
+        "glyph": "河",
+        "paths": 8,
+        "geometrySource": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "verificationSource": "eomunhoe-f37",
+        "pathsSha256": "e8fbd5dc3c9820ba7ab4d60675243bb6161748d0d37c375b3c997967c767a54c",
+        "sourceImage": "BIN000E.gif",
+        "sourceRow": 17
+      },
+      {
+        "glyph": "何",
+        "paths": 7,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "verificationSource": "vivasam-high-2022",
+        "pathsSha256": "0379cbba829cab1da09af4cc9dcb1fdb1928d4a01a0afe7ea63b0b38f9e42f70",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "1655",
+          "glyph": "何",
+          "videoFilename": "1655 어찌 하.mp4"
+        }
+      },
+      {
+        "glyph": "逸",
+        "paths": 12,
+        "geometrySource": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "verificationSource": "vivasam-high-2022",
+        "pathsSha256": "1330fc5eb2a83c2456cdfc3d48c3ae9ecb10efff93c3be0a978811cb262e8eee",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "1208",
+          "glyph": "逸",
+          "videoFilename": "1208 편안할 일.mp4"
+        }
+      },
+      {
+        "glyph": "晩",
+        "paths": 11,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "verificationSource": "vivasam-high-2022",
+        "pathsSha256": "a46b7b1ca542482d07df64fe93d960fe4b93b356543d7d7c67a1a64c888d72f0",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "0490",
+          "glyph": "晩",
+          "videoFilename": "0490 늦을 만.mp4"
+        }
+      },
+      {
+        "glyph": "免",
+        "paths": 7,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "verificationSource": "vivasam-high-2022",
+        "pathsSha256": "3cc0a0217a6051b8241a6f8a6bbe28f8cc2b21931aff431ed9522f866c8a6b53",
+        "sourceReference": {
+          "manifestSha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+          "manifestRow": "0516",
+          "glyph": "免",
+          "videoFilename": "0516 면할 면.mp4"
+        }
+      }
+    ],
+    "conclusion": "Approved donor paths are geometry material only. 院 and 河/何 could supply left-radical/right-component geometry, and 免/逸 contain related shapes, but none establishes the complete 阿 or 兔 order, direction or glyph form. Prefer the exact Ja8 阿 candidate if the independent source review passes; do not construct 兔 to overcome an unresolved source conflict."
+  },
+  "constraints": [
+    {
+      "file": "scripts/hanja-stroke-textbook.ts",
+      "symbols": [
+        "TextbookReviewRecord",
+        "validSourceVideo",
+        "validateTextbookReview"
+      ],
+      "finding": "Review validation is specifically bound to Vivasam ID, XLSX manifest SHA, row and video filename, row-derived MP4 URL, video-frame-sequence method, duration, per-stroke completion times, all four match checks and final path hash. Static PDF evidence cannot satisfy it honestly."
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-build.ts",
+      "symbols": [
+        "manifestIndex",
+        "inspectTextbookQueue",
+        "buildTextbookBundle"
+      ],
+      "finding": "Discovery, review records and published sourceReference all require the Vivasam manifest. The top-level bundle also labels every emitted entry as Vivasam. There is no document-source branch."
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.ts",
+      "symbols": [
+        "TextbookCorrection",
+        "textbookCorrectionSha256",
+        "textbookCorrection"
+      ],
+      "finding": "Recipes bind sourceVideoSha256. Changing that field to mean a PDF would misrepresent provenance; broad canonical-format changes would alter existing recipe pins."
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-authored.ts",
+      "symbols": [
+        "TextbookAuthored",
+        "textbookAuthored",
+        "validateTextbookAuthored"
+      ],
+      "finding": "Authored geometry and donor provenance are also video-bound. Existing approved donor paths never authorize a new whole glyph. A Ja8 阿 candidate makes an authored-registry extension unnecessary for this batch."
+    },
+    {
+      "file": "lib/hanja-strokes.ts",
+      "symbols": [
+        "HanjaTextbookStrokeData",
+        "HanjaStrokeData",
+        "HANJA_STROKES",
+        "hanjaStrokeData"
+      ],
+      "finding": "The publisher union currently allows only vivasam-high-2022. Playback resolves an explicit registered glyph and matching path count; keep that fail-closed lookup."
+    },
+    {
+      "file": "scripts/hanja-stroke-audit.ts",
+      "symbols": [
+        "auditStrokes"
+      ],
+      "finding": "The validation dispatch, evidence reporting and verification-source counts recognize only Vivasam as textbook evidence. A new document branch must not fall through to the Eomunhoe checks or be counted as exam-body approval."
+    }
+  ],
+  "recommendedMinimalDesign": {
+    "status": "proposal only; root owns implementation after source review passes",
+    "decision": "Add one explicit document-evidence branch without weakening or rewriting the existing Vivasam ledger, bundle or video checks.",
+    "sourceId": "dongyang-hanja3-note",
+    "sourceMetadata": {
+      "bookUrl": "https://dongyangbooks.com/book/book_view.asp?goods_code=979&menu_1=hanja&menu_2=han_hanja",
+      "downloadUrl": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+      "isbn": "9788983005991",
+      "zipBytes": 77040295,
+      "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+      "pdfEntry": "한자능시 3급 쓰기노트.pdf",
+      "pdfBytes": 77369148,
+      "pdfPages": 165,
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48"
+    },
+    "runtimeType": {
+      "name": "HanjaDocumentStrokeData",
+      "verificationSource": "dongyang-hanja3-note",
+      "reuse": [
+        "glyph",
+        "paths",
+        "geometrySource",
+        "pathsSha256",
+        "geometryCorrection?",
+        "sourceStrokeIndices?",
+        "verifiedAt"
+      ],
+      "geometryAuthored": "not supported for this limited branch",
+      "sourceReferenceFields": [
+        "documentSha256",
+        "pdfPage",
+        "printedPage",
+        "glyph",
+        "cumulativePanels",
+        "directionEvidenceSha256"
+      ],
+      "forbiddenBorrowedVideoFields": [
+        "manifestRow",
+        "manifestSha256",
+        "videoFilename",
+        "sourceVideo",
+        "strokeEndsSeconds"
+      ]
+    },
+    "reviewGuard": [
+      "Allowlisted exact document source ID, archive/PDF hashes, original URL, byte sizes, pages and source glyph.",
+      "Complete 1..expectedStrokes cumulative-panel mapping including the one-stroke initial state; pending, partial or conflict records do not publish.",
+      "Named reviewer/date and explicit order, direction, boundaries and glyphForm matches.",
+      "Separate official direction evidence with exact URL/hash/bytes, source glyph, stroke count and complete stroke-to-track mapping. Any source disagreement keeps the record out.",
+      "Pinned candidate corpus and exact original medians; explicit recipe sourceStroke mapping, reviewed points, canonical recipe hash and final path hash.",
+      "No source image or PDF media in the published runtime bundle."
+    ],
+    "geometryRecipe": "If 阿 needs coordinate or order correction, use a document-specific recipe with sourceDocumentSha256, originalMediansSha256, geometrySource, explicit sourceStroke/points and canonical recipe hash. Reuse normalizeMedians for unchanged candidate geometry. Do not relabel a PDF hash as sourceVideoSha256 or change old recipe hashing.",
+    "runtimeWiring": "Load a separate small document-reviewed bundle and append it explicitly to HANJA_STROKES; keep the existing 969-entry Vivasam bundle and all 503 exam-body entries intact. Update the general audit source dispatch/counts for the document branch.",
+    "singleGlyphTradeoff": "A single completely verified 阿 can justify this bounded source branch because existing schemas cannot represent its evidence. Avoid a generic source-framework rewrite, a new donor system or speculative entries. No infrastructure approval can resolve 兔 source disagreement."
+  },
+  "downloadAndCacheAudit": {
+    "currentCli": "scripts/hanja-stroke-textbook-build.ts supports --manifest-file only for the pinned Vivasam XLSX. It still downloads all three pinned candidate corpora on each run and has no document or candidate-cache input flags.",
+    "currentSourceParser": "scripts/hanja-stroke-textbook-source.py validates local or remote XLSX bytes against the fixed manifest SHA; it does not handle a PDF.",
+    "recommendedInput": "A separate document builder/check may read a supplied existing source ZIP/PDF path read-only, or fetch the allowlisted official ZIP to RAM. Always verify exact SHA and byte size; a cache hit never skips verification. Keep source files outside the repository and do not auto-persist a download.",
+    "extraction": "Extract the single named PDF entry in RAM with bounded compressed and expanded sizes. The exact PDF hash binds the reviewed page content; no PDF rendering or OCR is needed inside runtime delivery.",
+    "tls": "The previous acquisition used platform curl with default TLS certificate verification because Bun/Node certificate-chain lookup failed. Never disable TLS verification. Do not introduce a blind unverified fallback.",
+    "candidateInput": "Re-use the pinned corpus parser. Optional caller-supplied candidate files must pass the same complete-file SHA check, not merely the two selected records."
+  },
+  "requiredImplementationValidation": [
+    "Reject wrong document ID, URL, hash, page, glyph, byte size, panel count or missing initial stage.",
+    "Reject partial/pending/conflict records and foreign-direction substitution when the Korean order or form disagrees.",
+    "Reject missing/duplicate/out-of-range stroke mappings, source medians/recipe changes and altered final paths even when a caller updates only the output hash.",
+    "Reproduce the approved candidate geometry and final bundle with the actual generator; include only the completed glyph.",
+    "Retain the existing Vivasam tests unchanged, including rejection of missing videos and completion times.",
+    "Exercise general audit dispatch so the new source is counted as publisher evidence, never Eomunhoe evidence.",
+    "Compare all baseline1472 runtime entries and Vivasam969 public entries individually after integration; the old bundle SHA should remain unchanged for a separate bundle.",
+    "Run affected Hanja tests, typecheck, old Vivasam bundle --check, new document bundle --check and production build after implementation."
+  ],
+  "conditionalCounts": [
+    {
+      "condition": "No batch13 approval",
+      "runtime": 1472,
+      "publisher": 969,
+      "grade3IIApplied": 482,
+      "grade3IIRemaining": 18
+    },
+    {
+      "condition": "Only 阿 passes and is applied; 兔 formally held",
+      "runtime": 1473,
+      "publisher": 970,
+      "grade3IIApplied": 483,
+      "grade3IIRemaining": 17,
+      "remainingDomesticSourceGaps": 7,
+      "holdsIncludingRabbit": 10,
+      "heldCatalogStrokes": 134
+    }
+  ],
+  "inputFilePins": [
+    {
+      "file": "lib/hanja-strokes.ts",
+      "sha256": "7f6f78daf98440cf961cee03a75b486be881e7b4553c6cb9b5f5f080bd6deeac"
+    },
+    {
+      "file": "lib/hanja-stroke-textbook.ts",
+      "sha256": "6dfa8e614b6ec0d7043584bdf5ce972bda915846b9e3ef0b2ba8e062e87b6c4e"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook.ts",
+      "sha256": "7bff260071a5d0c1dba1c83174b99694cc37f3535fdf32439810e194c84008c1"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-build.ts",
+      "sha256": "c03afd921e14afc81274e21289067486e217ac6e36dd031ec8f262cea91459a0"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.ts",
+      "sha256": "7cbf18ffe85fab362c0a29f8dfb00a4f140f3cdc676a082b7b44ccd12f78eb83"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-authored.ts",
+      "sha256": "e9f831a796fd20390ff85048cec04b873bbee4198fb413ad972842897341c515"
+    },
+    {
+      "file": "scripts/hanja-stroke-audit.ts",
+      "sha256": "975000e83d3f516c36a13d087fdb6196a2bf0fc9301d578e2ef844e032e230fb"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-source.py",
+      "sha256": "f325c11f9aa176177f539322355c524a9468e19b0c94fc629ed52749ee16866d"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-review.json",
+      "sha256": "6ffa667a1a90cd64b6000c8879fb0a4a1d7ed2a1f1819158293bad1cbddd48dc"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.json",
+      "sha256": "bffa4d8738a96f9f71fe1876031f57ceaa7f05718d036a98e2466baa751c9a59"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-authored.json",
+      "sha256": "069401c60cfc0a1a46eaf5e4470c5e6961c32784e17e5f5e2e1cc088b65cb919"
+    },
+    {
+      "file": "public/hanja-strokes/textbook-reviewed.json",
+      "sha256": "aed1c17aa0a024f21015b9fcfb5661d7bb14d878c73560944c3e8efa1b442b12"
+    },
+    {
+      "file": "docs/hanja-g3ii-textbook-acquisition-2026-09-13/next-review-queue.json",
+      "sha256": "9066339ba5f7323039dd89f33f6481744d64156c2aba2d5e1c05d093bf2ea79d"
+    },
+    {
+      "file": "docs/hanja-g3ii-batch12-2026-09-13/next-review-queue.json",
+      "sha256": "109007af8afcbfe65397a84cd22d15f38bb4f79c3908c4827f99fee1c9872e34"
+    }
+  ],
+  "validation": {
+    "performed": [
+      "Executed actual Node runtime/catalog imports and exact target lookup.",
+      "Compared the 18 remaining glyphs against 2 current-review, 7 source-gap and 9 existing-hold sets.",
+      "Checked current registry statuses, missing target correction/authored records and approved donor metadata.",
+      "Hashed the examined pipeline files and current public bundle."
+    ],
+    "errors": [],
+    "notPerformed": "No implementation was changed, so this document does not claim new-source tests, build success or post-integration preservation."
+  }
+}

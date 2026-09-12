@@ -3,6 +3,9 @@ import { createHash } from 'node:crypto'
 import test from 'node:test'
 import { auditStrokes, parseCandidates, CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE } from '../scripts/hanja-stroke-audit.ts'
 import { normalizeMedians } from './hanja-stroke-geometry.ts'
+import { HANJA_STROKES, type HanjaTextbookStrokeData } from './hanja-strokes.ts'
+import { validateTextbookReview } from '../scripts/hanja-stroke-textbook.ts'
+import { textbookAuthored } from '../scripts/hanja-stroke-textbook-authored.ts'
 
 const character = { glyph: '山', strokes: 3, readingGrade: '8' }
 const candidate = { character: '山', strokes: ['M0 0 L1 1', 'M1 1 L2 2', 'M2 2 L3 3'],
@@ -113,4 +116,42 @@ test('중심선 변환은 획 순서와 연결을 유지하고 좌표만 맞춘�
     ['M10 10 L90 90', 'M50 10 L50 90'])
   assert.throws(() => normalizeMedians([[[0, 0]]]), /Invalid/)
   assert.throws(() => normalizeMedians([[[0, 0], [0, 0]]]), /Empty/)
+})
+
+test('槪 등 승인된 직접 작성 기하는 외부 후보 없이 실제 작성 등록부에서 재현한다', () => {
+  const authored = HANJA_STROKES.filter((entry): entry is HanjaTextbookStrokeData =>
+    entry.verificationSource === 'vivasam-high-2022' && entry.geometryAuthored !== undefined)
+  assert.ok(authored.some(entry => entry.glyph === '槪'))
+  for (const entry of authored) {
+    const record = validateTextbookReview(entry, entry.paths.length)
+    assert.deepEqual(textbookAuthored(record)!.paths, entry.paths)
+  }
+  const catalog = authored.map(entry => ({ glyph: entry.glyph, strokes: entry.paths.length, readingGrade: '3급II' }))
+  const report = auditStrokes(catalog, [], authored)
+  assert.equal(report.entries.length, authored.length)
+  assert.ok(report.entries.every(entry => entry.playback === 'textbook-reviewed'))
+  assert.ok(report.entries.every(entry => entry.candidateStatus === 'missing'))
+  assert.equal(report.verificationSources.textbook, authored.length)
+})
+
+test('직접 작성 ID·기하 해시·출력·원본 대응을 변조해도 외부 후보로 우회하지 않는다', () => {
+  const entry = HANJA_STROKES.find((review): review is HanjaTextbookStrokeData =>
+    review.glyph === '槪' && review.verificationSource === 'vivasam-high-2022')!
+  assert.ok(entry?.geometryAuthored)
+  const catalog = [{ glyph: entry.glyph, strokes: entry.paths.length, readingGrade: '3급II' }]
+  const fake = { character: entry.glyph, strokes: Array(entry.paths.length).fill('M0 0 L1 1'),
+    medians: Array.from({ length: entry.paths.length }, (_, index) => [[index, 0], [index + 1, 10]]) }
+  const altered = ['M0 0 L1 1', ...entry.paths.slice(1)]
+  const tampered: HanjaTextbookStrokeData[] = [
+    { ...entry, geometryAuthored: 'unreviewed-authored-entry' },
+    { ...entry, geometryAuthored: undefined },
+    { ...entry, geometrySource: CANDIDATE_SOURCE.sha256 },
+    { ...entry, geometrySource: '0'.repeat(64) },
+    { ...entry, sourceStrokeIndices: entry.paths.map((_, index) => index + 1) },
+    { ...entry, paths: altered, pathsSha256: createHash('sha256').update(JSON.stringify(altered)).digest('hex') },
+  ]
+  for (const review of tampered) {
+    assert.throws(() => auditStrokes(catalog, [fake], [review], [fake], [fake]), /provenance mismatch/)
+  }
+  assert.throws(() => auditStrokes([{ ...catalog[0], glyph: '概' }], [], [{ ...entry, glyph: '概' }]))
 })

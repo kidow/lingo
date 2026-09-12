@@ -8,6 +8,8 @@ import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
 import { applyReviewedSplit, SPLIT_CORRECTIONS } from './hanja-stroke-splits.ts'
 import { validateTextbookReview } from './hanja-stroke-textbook.ts'
 import { textbookGeometry } from './hanja-stroke-textbook-corrections.ts'
+import { textbookAuthored } from './hanja-stroke-textbook-authored.ts'
+import { validateDocumentReview, documentGeometry } from './hanja-stroke-documents.ts'
 import locations from './hanja-stroke-locations.json' with { type: 'json' }
 
 export const CANDIDATE_SOURCE = {
@@ -118,7 +120,11 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     const review = approved.get(character.glyph)
     const textbookReview = review?.verificationSource === 'vivasam-high-2022'
     const textbookRecord = textbookReview ? validateTextbookReview(review, character.strokes) : undefined
-    const validEvidence = review && (textbookReview || (
+    const authored = textbookRecord ? textbookAuthored(textbookRecord) : undefined
+    const documentReview = review?.verificationSource === 'dongyang-hanja3-note'
+    const documentRecord = documentReview ? validateDocumentReview(review, character.strokes) : undefined
+    const publisherReview = textbookReview || documentReview
+    const validEvidence = review && (publisherReview || (
       (review.verificationSource === undefined || review.verificationSource === 'eomunhoe-f37')
       && review.sourceReference === undefined && (review.sourceWholeImage === true
       ? review.sourceRow === undefined && wholeImages[review.glyph] === review.sourceImage
@@ -132,14 +138,20 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     const geometryCandidate = reviewedCandidate ? candidate
       : review?.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256 ? japaneseByGlyph.get(character.glyph)
         : textbookReview && review.geometrySource === MAKE_ME_A_HANZI_SOURCE.sha256 ? hanziByGlyph.get(character.glyph) : undefined
-    if (review?.geometrySource && (!validCandidate(geometryCandidate)
+    // The textbook builder validates local authored provenance before looking for a corpus candidate.
+    if (authored && JSON.stringify(review?.paths) !== JSON.stringify(authored.paths)) {
+      throw new Error(`Reviewed authored geometry mismatch: ${character.glyph}`)
+    }
+    if (!authored && review?.geometrySource && (!validCandidate(geometryCandidate)
       || JSON.stringify(review.paths) !== JSON.stringify(textbookReview
-        ? textbookGeometry(textbookRecord!, geometryCandidate.medians).paths : reviewedPaths(review, geometryCandidate)))) {
+        ? textbookGeometry(textbookRecord!, geometryCandidate.medians).paths
+        : documentReview ? documentGeometry(documentRecord!, geometryCandidate.medians).paths
+          : reviewedPaths(review, geometryCandidate)))) {
       throw new Error(`Reviewed geometry mismatch: ${character.glyph}`)
     }
     if ((review?.strokeOrder || review?.geometryCorrection || review?.sourceStrokeIndices || review?.pathsSha256)
       && !review.geometrySource) throw new Error(`Missing correction source: ${character.glyph}`)
-    if (review && !textbookReview && !review.sourceWholeImage
+    if (review && !publisherReview && !review.sourceWholeImage
       && (locations.sha256 !== HANJA_STROKE_SOURCE.sha256
         || Array.from(officialPages[review.sourceImage!.slice(3, 7)] ?? '')[review.sourceRow! - 1] !== review.glyph)) {
       throw new Error(`Verified source/glyph mismatch: ${character.glyph}`)
@@ -154,9 +166,9 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
       candidateStrokes: candidate?.strokes?.length ?? null,
       candidateStatus,
       // Keep publisher-reference comparisons distinct from the exam-body diagrams.
-      playback: review ? textbookReview ? 'textbook-reviewed' : 'verified' : 'unavailable',
+      playback: review ? documentReview ? 'document-reviewed' : textbookReview ? 'textbook-reviewed' : 'verified' : 'unavailable',
       geometrySource: review?.geometrySource ?? null,
-      evidence: review ? (textbookReview
+      evidence: review ? (publisherReview
         ? { source: review.verificationSource, ...review.sourceReference, reviewedAt: review.verifiedAt }
         : review.sourceWholeImage ? { image: review.sourceImage, wholeImage: true }
           : { image: review.sourceImage, row: review.sourceRow }) : null,
@@ -170,8 +182,9 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     supplementalCandidateTotal: japaneseCandidates.length,
     makeMeAHanziSource: MAKE_ME_A_HANZI_SOURCE, makeMeAHanziCandidateTotal: hanziCandidates.length,
     verificationSources: {
-      eomunhoe: verified.filter((entry) => entry.verificationSource !== 'vivasam-high-2022').length,
+      eomunhoe: verified.filter((entry) => entry.verificationSource === undefined || entry.verificationSource === 'eomunhoe-f37').length,
       textbook: verified.filter((entry) => entry.verificationSource === 'vivasam-high-2022').length,
+      documents: verified.filter((entry) => entry.verificationSource === 'dongyang-hanja3-note').length,
     },
     reviewedGeometry: { korean: verified.filter((entry) => entry.geometrySource === CANDIDATE_SOURCE.sha256).length,
       japanese: verified.filter((entry) => entry.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256).length,

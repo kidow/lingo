@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { HANJA_STROKES, hanjaStrokeData, type HanjaTextbookStrokeData } from './hanja-strokes.ts'
 import { HANJA_TEXTBOOK_SOURCE, HANJA_TEXTBOOK_STROKES } from './hanja-stroke-textbook.ts'
+import { HANJA_DOCUMENT_STROKES } from './hanja-stroke-documents.ts'
 import { normalizeMedians } from './hanja-stroke-geometry.ts'
 import { auditStrokes, CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE } from '../scripts/hanja-stroke-audit.ts'
 import { TEXTBOOK_REVIEW_REGISTRY, textbookGeometrySource, validateTextbookReview, type TextbookReviewRegistry } from '../scripts/hanja-stroke-textbook.ts'
@@ -50,7 +51,7 @@ test('교과서 발견 목록과 완료된 검토 등록부를 분리한다', ()
   if (!completed.some((record) => record.glyph === '假')) {
     assert.throws(() => auditStrokes([{ glyph: '假', strokes: 11, readingGrade: '4급II' }], [candidate], [review]), /not completed/)
   }
-  assert.equal(HANJA_STROKES.length, 503 + completed.length)
+  assert.equal(HANJA_STROKES.length, 503 + completed.length + HANJA_DOCUMENT_STROKES.length)
 })
 
 test('교과서 검토는 모든 획의 관찰 시점과 순서·방향·분할·자형 대조를 요구한다', () => {

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "batch": 13,
+  "date": "2026-09-13",
+  "reviewer": "root",
+  "decision": {
+    "approved": [
+      "阿"
+    ],
+    "held": [
+      "兔"
+    ],
+    "approvedStrokes": 8,
+    "heldStrokes": 8
+  },
+  "reviewedA": {
+    "authorRecordSha256": "b26b4e82805b8322e939fbdc59a77b975de2fdbbdf1644dcf2f24ad0b3ef905c",
+    "peerRecordSha256": "cd12b40940d0a9776755faaf881f0d4b55f129de22ffcd231b0a3f395b863e7b",
+    "geometryRecordSha256": "495a9d4efc87414a9cbda1a3a5c435c8c2ac195ff48df6a00a85c4057ca1d701",
+    "sourcePageObservation": {
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "page": 35,
+      "viewed": true,
+      "crop": [
+        270,
+        3930,
+        1900,
+        4380
+      ]
+    },
+    "outputObservation": {
+      "viewed": true,
+      "renderer": "sharp/libvips static SVG; no browser or script execution",
+      "pathsSha256": "6166f25e234229ef075c104fbee29ab5e98486d65df3e45dd352a8ad579037d9",
+      "cumulativeStages": 8,
+      "finalSize": 420
+    },
+    "geometryAudit": {
+      "file": "root-geometry-audit.json",
+      "allPairs": 28,
+      "contactPairs": 6,
+      "gapPairs": 22,
+      "passed": true
+    },
+    "sourceDirection": "Author and independent peer directly viewed all eight MOE animated directions and checked each against the corresponding Korean publisher cumulative stage. Root reviewed both records and the static original/output; root does not claim direct motion observation.",
+    "authorityLimit": "Korean publisher order and shape with Taiwan MOE direction cross-check, not Korean exam-body certification."
+  },
+  "reviewedRabbit": {
+    "recordSha256": "f0e97d52522e9ef1978c9f1939766e5bdca8f702dcd49029608648910c903073",
+    "sourcePageObservation": {
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "page": 111,
+      "viewed": true,
+      "crops": [
+        [
+          292,
+          3625,
+          1500,
+          4013
+        ],
+        [
+          635,
+          3727,
+          860,
+          3809
+        ]
+      ]
+    },
+    "reason": "Domestic p111 starts with the folded knife-like upper stroke and then a falling stroke. The MOE and available Ja/MM upper form/order differ; swapping the first two candidate paths still leaves a form and direction mismatch. No playback approval.",
+    "details": "root-rabbit-review.json"
+  },
+  "sourceMediaPersisted": false,
+  "foreignOfficialCoordinatesUsedForOutput": false,
+  "errors": []
+}

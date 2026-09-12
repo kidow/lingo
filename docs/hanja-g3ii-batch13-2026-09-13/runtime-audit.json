@@ -1,0 +1,227 @@
+{
+  "date": "2026-09-13",
+  "sources": [
+    {
+      "source": {
+        "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+        "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+        "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/"
+      },
+      "bytes": 1387824,
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "count": 535
+    },
+    {
+      "source": {
+        "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+        "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/"
+      },
+      "bytes": 21862957,
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "count": 7007
+    },
+    {
+      "source": {
+        "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+        "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/"
+      },
+      "bytes": 30778076,
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "count": 9574
+    }
+  ],
+  "audit": {
+    "source": {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/"
+    },
+    "supplementalSource": {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/"
+    },
+    "supplementalCandidateTotal": 7007,
+    "makeMeAHanziSource": {
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/"
+    },
+    "makeMeAHanziCandidateTotal": 9574,
+    "verificationSources": {
+      "eomunhoe": 503,
+      "textbook": 969,
+      "documents": 1
+    },
+    "reviewedGeometry": {
+      "korean": 502,
+      "japanese": 897,
+      "makeMeAHanzi": 51
+    },
+    "total": 5978,
+    "candidateTotal": 535,
+    "candidateStatus": {
+      "missing": 5456,
+      "needs-official-review": 20,
+      "textbook-reviewed": 19,
+      "count-mismatch": 15,
+      "verified": 468
+    },
+    "playback": {
+      "unavailable": 4505,
+      "verified": 503,
+      "textbook-reviewed": 969,
+      "document-reviewed": 1
+    }
+  },
+  "documentBundleExact": true,
+  "preserved": [
+    {
+      "file": "scripts/hanja-stroke-textbook-review.json",
+      "bytes": 2072419,
+      "sha256": "6ffa667a1a90cd64b6000c8879fb0a4a1d7ed2a1f1819158293bad1cbddd48dc",
+      "currentSha256": "6ffa667a1a90cd64b6000c8879fb0a4a1d7ed2a1f1819158293bad1cbddd48dc"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.json",
+      "bytes": 1970665,
+      "sha256": "bffa4d8738a96f9f71fe1876031f57ceaa7f05718d036a98e2466baa751c9a59",
+      "currentSha256": "bffa4d8738a96f9f71fe1876031f57ceaa7f05718d036a98e2466baa751c9a59"
+    },
+    {
+      "file": "scripts/hanja-stroke-source-forms.json",
+      "bytes": 2830,
+      "sha256": "8d8facf69c0b8a9b9483621f9fcdd16d50170a2ace7045314bbfe08a5675cba3",
+      "currentSha256": "8d8facf69c0b8a9b9483621f9fcdd16d50170a2ace7045314bbfe08a5675cba3"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-authored.json",
+      "bytes": 18523,
+      "sha256": "069401c60cfc0a1a46eaf5e4470c5e6961c32784e17e5f5e2e1cc088b65cb919",
+      "currentSha256": "069401c60cfc0a1a46eaf5e4470c5e6961c32784e17e5f5e2e1cc088b65cb919"
+    },
+    {
+      "file": "public/hanja-strokes/textbook-reviewed.json",
+      "bytes": 1179070,
+      "sha256": "aed1c17aa0a024f21015b9fcfb5661d7bb14d878c73560944c3e8efa1b442b12",
+      "currentSha256": "aed1c17aa0a024f21015b9fcfb5661d7bb14d878c73560944c3e8efa1b442b12"
+    },
+    {
+      "file": "lib/hanja-stroke-textbook.ts",
+      "bytes": 1196,
+      "sha256": "6dfa8e614b6ec0d7043584bdf5ce972bda915846b9e3ef0b2ba8e062e87b6c4e",
+      "currentSha256": "6dfa8e614b6ec0d7043584bdf5ce972bda915846b9e3ef0b2ba8e062e87b6c4e"
+    }
+  ],
+  "targets": [
+    {
+      "glyph": "阿",
+      "grade": "3급II",
+      "expectedStrokes": 8,
+      "candidateStrokes": null,
+      "candidateStatus": "missing",
+      "playback": "document-reviewed",
+      "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "evidence": {
+        "source": "dongyang-hanja3-note",
+        "documentSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+        "pdfPage": 35,
+        "printedPage": 35,
+        "glyph": "阿",
+        "cumulativePanels": 8,
+        "directionEvidenceSha256": "2925da50831c78aeeab321ab14f3d13d5a5f1b8be236b05c72f848ac546ab77e",
+        "reviewedAt": "2026-09-13"
+      }
+    },
+    {
+      "glyph": "兔",
+      "grade": "3급II",
+      "expectedStrokes": 8,
+      "candidateStrokes": null,
+      "candidateStatus": "missing",
+      "playback": "unavailable",
+      "geometrySource": null,
+      "evidence": null
+    }
+  ],
+  "runtime": {
+    "all": 1473,
+    "total": 5978,
+    "grade3IIApplied": 483,
+    "grade3IITotal": 500,
+    "grade3IIRemaining": [
+      {
+        "glyph": "訣",
+        "strokes": 11
+      },
+      {
+        "glyph": "蓮",
+        "strokes": 15
+      },
+      {
+        "glyph": "紋",
+        "strokes": 10
+      },
+      {
+        "glyph": "奔",
+        "strokes": 8
+      },
+      {
+        "glyph": "森",
+        "strokes": 12
+      },
+      {
+        "glyph": "慈",
+        "strokes": 13
+      },
+      {
+        "glyph": "笛",
+        "strokes": 11
+      },
+      {
+        "glyph": "蹟",
+        "strokes": 18
+      },
+      {
+        "glyph": "遷",
+        "strokes": 15
+      },
+      {
+        "glyph": "追",
+        "strokes": 10
+      },
+      {
+        "glyph": "稚",
+        "strokes": 13
+      },
+      {
+        "glyph": "兔",
+        "strokes": 8
+      },
+      {
+        "glyph": "透",
+        "strokes": 11
+      },
+      {
+        "glyph": "弊",
+        "strokes": 15
+      },
+      {
+        "glyph": "楓",
+        "strokes": 13
+      },
+      {
+        "glyph": "響",
+        "strokes": 22
+      },
+      {
+        "glyph": "還",
+        "strokes": 17
+      }
+    ],
+    "remainingStrokes": 222
+  },
+  "errors": []
+}

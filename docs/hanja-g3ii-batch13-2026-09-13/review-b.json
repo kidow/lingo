@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "batch": "hanja-g3ii-batch13-2026-09-13",
+  "date": "2026-09-13",
+  "owner": "B",
+  "scope": {
+    "glyphs": [
+      "兔"
+    ],
+    "characters": 1,
+    "catalogStrokes": 8
+  },
+  "status": "completed-review-with-hold",
+  "summary": {
+    "reviewedCharacters": 1,
+    "reviewedCatalogStrokes": 8,
+    "matchedCharacters": 0,
+    "matchedStrokes": 0,
+    "heldCharacters": 1,
+    "heldCatalogStrokes": 8,
+    "newPlaybackApprovals": 0
+  },
+  "entries": [],
+  "holds": [
+    {
+      "glyph": "兔",
+      "expectedStrokes": 8,
+      "status": "hold",
+      "reason": "Domestic and foreign upper stroke order and shape conflict; the domestic cumulative diagram does not directly establish within-stroke motion.",
+      "blockingDomesticSteps": [
+        1,
+        2
+      ],
+      "checks": {
+        "domesticEightStageOrder": "observed",
+        "domesticWithinStrokeDirection": "not-directly-established",
+        "foreignEightStrokeTracks": "direct-structured-source-available",
+        "domesticVsForeignUpperForm": "conflict",
+        "candidateFirstTwoSwap": "insufficient",
+        "runtimeEligibility": "not-approved"
+      },
+      "recipe": null,
+      "selectedGeometrySource": null
+    }
+  ],
+  "sources": {
+    "domestic": {
+      "publisher": "동양북스",
+      "title": "암기박사식 한자 능시 3급 — 한자능시 3급 쓰기노트.pdf",
+      "url": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+      "accessDate": "2026-09-13",
+      "accessMethod": "Fresh RAM-only platform curl retrieval using default TLS validation; ZIP decompression and pypdfium2 rendering in memory.",
+      "zipBytes": 77040295,
+      "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+      "pdfBytes": 77369148,
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "pdfPages": 165,
+      "pdfPage": 111,
+      "pdfPageIndex": 110,
+      "rowNumber": 391,
+      "renderDimensions": [
+        3658,
+        5000
+      ],
+      "sourceGlyph": "兔",
+      "visualReinspection": {
+        "complete": true,
+        "allEightCumulativeCellsViewed": true,
+        "firstCellNotMissing": true,
+        "firstTwoEnlarged": true,
+        "crops": [
+          {
+            "cropLtrbPixels": [
+              292,
+              3625,
+              1500,
+              4013
+            ],
+            "scale": 1,
+            "sha256": "395271fabb77523877cdc34e684cf0b6c2f1c0b06838f532176356b2ccf0315a",
+            "encoding": "WebP quality 90 after decoding the full-page RAM WebP"
+          },
+          {
+            "cropLtrbPixels": [
+              635,
+              3727,
+              860,
+              3809
+            ],
+            "scale": 5,
+            "sha256": "92c4f43b0dfeaba8e4cd5d8a109ccae605a824749c7faadd0b007c5502e6b2a2",
+            "encoding": "WebP quality 90 after decoding the full-page RAM WebP"
+          }
+        ]
+      },
+      "directEvidence": "The difference between successive printed cumulative cells establishes eight added units and their order. Cell 1 is the upper right-descending hooked shape; the left-falling stroke stays grey until cell 2.",
+      "notDirectEvidence": "No arrows, temporal drawing sequence, or explicit start/end markers were observed in this row. The word 'hook' describes shape and is not a verified drawing-direction claim."
+    },
+    "foreign": {
+      "publisher": "教育部 / Ministry of Education, R.O.C. (Taiwan)",
+      "jurisdiction": "Taiwan",
+      "title": "<兔>國字筆順 - 國字標準字體筆順學習網",
+      "url": "https://stroke-order.learningweb.moe.edu.tw/dictView.jsp?ID=20820",
+      "frameUrl": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=20820",
+      "accessDate": "2026-09-13",
+      "page": {
+        "httpStatus": 200,
+        "bytes": 23764,
+        "sha256": "6c6237787d4837db06ca07ee76fa295f06cdc650f2f65411250d9dcc223e1b9e",
+        "dynamicPageNote": "The HTML can vary while the embedded XML remains byte-identical."
+      },
+      "inlineXml": {
+        "bytes": 15841,
+        "sha256": "352ac56b2faf6832ab1340682c28b1a8c0d470f9a05c49889bcfe99bb7cf0c02",
+        "strokeCount": 8,
+        "trackPointCounts": [
+          2,
+          4,
+          2,
+          4,
+          2,
+          3,
+          6,
+          2
+        ],
+        "extraction": "Decoded the inline xml object string literal; each Stroke/Track child was parsed without executing downloaded source scripts."
+      },
+      "wholeOrderPng": {
+        "url": "https://stroke-order.learningweb.moe.edu.tw/words/5154.png",
+        "httpStatus": 200,
+        "bytes": 2124,
+        "sha256": "569462a194cb798cd2f6fa40623801b6760b3a03634a636a79d25c91529308aa",
+        "allEightCumulativeStatesViewed": true
+      },
+      "playerSources": [
+        {
+          "url": "https://stroke-order.learningweb.moe.edu.tw/js/stroke-player.js",
+          "status": 200,
+          "bytes": 10042,
+          "sha256": "899cd09f111fafc0075d972076fe16445525fbe365572dbf5a9a56acd7dd8416"
+        },
+        {
+          "url": "https://stroke-order.learningweb.moe.edu.tw/js/stroke.js",
+          "status": 200,
+          "bytes": 22367,
+          "sha256": "068103f1aecbdb5fab1cabb670f0109f37b31899c5f76c3649b3deccb16acb60"
+        }
+      ],
+      "trackDirectionSemantics": "stroke-player.js appends Track child points in document order. stroke.js consumes trackList[i] and increments i while drawing; source coordinates follow the SVG axes (rightward x, downward y). Ordered Track coordinates are direct foreign trajectory evidence.",
+      "browserObservation": {
+        "openedOfficialPage": true,
+        "firstStrokeInitialAndCompletedStatesViewed": true,
+        "secondStrokeEarlyProgressViewed": true,
+        "completedFinalViewed": true,
+        "everyIntermediateMovementFrameViewed": false,
+        "note": "Browser observations corroborate the first left-falling stroke and the upper-left-to-right beginning of the second stroke. The all-eight direction table relies on the explicit XML tracks, not an asserted full frame-by-frame animation review."
+      },
+      "licenseObserved": "CC BY-NC-ND 3.0 TW",
+      "koreanStrokeOrderAuthority": false
+    }
+  },
+  "stepComparison": [
+    {
+      "domesticStep": 1,
+      "domesticAddedShape": "윗가로와 오른쪽 내림·갈고리의 연결 형태",
+      "domesticPrintedStrokeUnitConfirmed": true,
+      "domesticStartPoint": null,
+      "domesticEndPoint": null,
+      "domesticWithinStrokeDirection": "not directly established by the static cumulative diagram",
+      "domesticLiftEvidence": "one new printed unit per cumulative cell; no timed pen-lift observation",
+      "foreignComparatorStroke": 2,
+      "foreignTrackPointCount": 4,
+      "foreignStartRegion": "left side of the upper fold",
+      "foreignEndRegion": "lower-left tip below the upper fold",
+      "foreignDirectionDescription": "left-of-upper-fold through an upper-right turn, then down-left",
+      "foreignTurnEvidence": "ordered Track points within one explicit Stroke element",
+      "correspondence": "order-and-shape-conflict",
+      "candidateSourceStroke": 2,
+      "candidateMappingAdopted": false
+    },
+    {
+      "domesticStep": 2,
+      "domesticAddedShape": "윗부분 왼삐침",
+      "domesticPrintedStrokeUnitConfirmed": true,
+      "domesticStartPoint": null,
+      "domesticEndPoint": null,
+      "domesticWithinStrokeDirection": "not directly established by the static cumulative diagram",
+      "domesticLiftEvidence": "one new printed unit per cumulative cell; no timed pen-lift observation",
+      "foreignComparatorStroke": 1,
+      "foreignTrackPointCount": 2,
+      "foreignStartRegion": "upper-right part of the upper left-falling stroke",
+      "foreignEndRegion": "lower-left tip of the upper left-falling stroke",
+      "foreignDirectionDescription": "upper-right to lower-left",
+      "foreignTurnEvidence": "ordered Track points within one explicit Stroke element",
+      "correspondence": "order-conflict-and-different-upper-layout",
+      "candidateSourceStroke": 1,
+      "candidateMappingAdopted": false
+    },
+    {
+      "domesticStep": 3,
+      "domesticAddedShape": "중간 네모꼴 왼쪽 세로",
+      "domesticPrintedStrokeUnitConfirmed": true,
+      "domesticStartPoint": null,
+      "domesticEndPoint": null,
+      "domesticWithinStrokeDirection": "not directly established by the static cumulative diagram",
+      "domesticLiftEvidence": "one new printed unit per cumulative cell; no timed pen-lift observation",
+      "foreignComparatorStroke": 3,
+      "foreignTrackPointCount": 2,
+      "foreignStartRegion": "upper end of the enclosure's left edge",
+      "foreignEndRegion": "lower end of the enclosure's left edge",
+      "foreignDirectionDescription": "upper-left to lower-right along the enclosure left side",
+      "foreignTurnEvidence": "ordered Track points within one explicit Stroke element",
+      "correspondence": "same broad added shape and ordinal position; foreign trajectory is not domestic proof",
+      "candidateSourceStroke": 3,
+      "candidateMappingAdopted": false
+    },
+    {
+      "domesticStep": 4,
+      "domesticAddedShape": "중간 네모꼴 윗가로와 오른쪽 꺾임",
+      "domesticPrintedStrokeUnitConfirmed": true,
+      "domesticStartPoint": null,
+      "domesticEndPoint": null,
+      "domesticWithinStrokeDirection": "not directly established by the static cumulative diagram",
+      "domesticLiftEvidence": "one new printed unit per cumulative cell; no timed pen-lift observation",
+      "foreignComparatorStroke": 4,
+      "foreignTrackPointCount": 4,
+      "foreignStartRegion": "left end of the enclosure's top edge",
+      "foreignEndRegion": "lower-left end of the enclosure's right edge",
+      "foreignDirectionDescription": "left along top edge toward upper-right turn, then down-left along the right edge",
+      "foreignTurnEvidence": "ordered Track points within one explicit Stroke element",
+      "correspondence": "same broad added shape and ordinal position; foreign trajectory is not domestic proof",
+      "candidateSourceStroke": 4,
+      "candidateMappingAdopted": false
+    },
+    {
+      "domesticStep": 5,
+      "domesticAddedShape": "중간 네모꼴 밑가로",
+      "domesticPrintedStrokeUnitConfirmed": true,
+      "domesticStartPoint": null,
+      "domesticEndPoint": null,
+      "domesticWithinStrokeDirection": "not directly established by the static cumulative diagram",
+      "domesticLiftEvidence": "one new printed unit per cumulative cell; no timed pen-lift observation",
+      "foreignComparatorStroke": 5,
+      "foreignTrackPointCount": 2,
+      "foreignStartRegion": "left end of the enclosure's bottom edge",
+      "foreignEndRegion": "right end of the enclosure's bottom edge",
+      "foreignDirectionDescription": "left to right with slight upward slope",
+      "foreignTurnEvidence": "ordered Track points within one explicit Stroke element",
+      "correspondence": "same broad added shape and ordinal position; foreign trajectory is not domestic proof",
+      "candidateSourceStroke": 5,
+      "candidateMappingAdopted": false
+    },
+    {
+      "domesticStep": 6,
+      "domesticAddedShape": "가운데를 관통하는 왼쪽 아래 곡선",
+      "domesticPrintedStrokeUnitConfirmed": true,
+      "domesticStartPoint": null,
+      "domesticEndPoint": null,
+      "domesticWithinStrokeDirection": "not directly established by the static cumulative diagram",
+      "domesticLiftEvidence": "one new printed unit per cumulative cell; no timed pen-lift observation",
+      "foreignComparatorStroke": 6,
+      "foreignTrackPointCount": 3,
+      "foreignStartRegion": "upper middle of the enclosure",
+      "foreignEndRegion": "far lower-left sweeping tip",
+      "foreignDirectionDescription": "upper-middle through lower-middle to far lower-left",
+      "foreignTurnEvidence": "ordered Track points within one explicit Stroke element",
+      "correspondence": "same broad added shape and ordinal position; foreign trajectory is not domestic proof",
+      "candidateSourceStroke": 6,
+      "candidateMappingAdopted": false
+    },
+    {
+      "domesticStep": 7,
+      "domesticAddedShape": "아래 오른쪽 굽은 갈고리",
+      "domesticPrintedStrokeUnitConfirmed": true,
+      "domesticStartPoint": null,
+      "domesticEndPoint": null,
+      "domesticWithinStrokeDirection": "not directly established by the static cumulative diagram",
+      "domesticLiftEvidence": "one new printed unit per cumulative cell; no timed pen-lift observation",
+      "foreignComparatorStroke": 7,
+      "foreignTrackPointCount": 6,
+      "foreignStartRegion": "upper-left end of the lower bent hook",
+      "foreignEndRegion": "upturned far-right hook tip",
+      "foreignDirectionDescription": "upper-left down to lower-left, across bottom right, then upward at the hook tip",
+      "foreignTurnEvidence": "ordered Track points within one explicit Stroke element",
+      "correspondence": "same broad added shape and ordinal position; foreign trajectory is not domestic proof",
+      "candidateSourceStroke": 7,
+      "candidateMappingAdopted": false
+    },
+    {
+      "domesticStep": 8,
+      "domesticAddedShape": "아래 안쪽의 별도 점",
+      "domesticPrintedStrokeUnitConfirmed": true,
+      "domesticStartPoint": null,
+      "domesticEndPoint": null,
+      "domesticWithinStrokeDirection": "not directly established by the static cumulative diagram",
+      "domesticLiftEvidence": "one new printed unit per cumulative cell; no timed pen-lift observation",
+      "foreignComparatorStroke": 8,
+      "foreignTrackPointCount": 2,
+      "foreignStartRegion": "upper-left of the isolated dot",
+      "foreignEndRegion": "lower-right end of the isolated dot",
+      "foreignDirectionDescription": "upper-left to lower-right",
+      "foreignTurnEvidence": "ordered Track points within one explicit Stroke element",
+      "correspondence": "same broad added shape and ordinal position; foreign trajectory is not domestic proof",
+      "candidateSourceStroke": 8,
+      "candidateMappingAdopted": false
+    }
+  ],
+  "findings": [
+    {
+      "type": "confirmed-domestic-order",
+      "finding": "The complete domestic row has eight stages. Its first added unit contains the upper horizontal and right descending hook; its second added unit is the upper left-falling stroke."
+    },
+    {
+      "type": "direct-foreign-trajectory",
+      "finding": "The foreign source begins with the upper left-falling stroke. Its second upper fold reaches toward the right then descends left toward the enclosure. This trajectory and upper outline differ from the domestic right-descending hook."
+    },
+    {
+      "type": "do-not-normalize",
+      "finding": "Both sources label the character 兔, yet their upper subforms differ. Equal code points and equal total counts do not authorize merging the forms or replacing the domestic order."
+    },
+    {
+      "type": "remaining-six",
+      "finding": "Domestic steps 3–8 and foreign strokes 3–8 add the same broad enclosure, sweep, bent-hook and dot units in the same ordinal positions. Direct domestic start/end/turn trajectories are still absent from the static row."
+    },
+    {
+      "type": "candidate-availability",
+      "finding": "The fresh pinned Ko corpus contains no 兔. Ja and MM each supply eight preserved original medians, both following the foreign-style upper order and shape."
+    },
+    {
+      "type": "candidate-reordering-insufficient",
+      "finding": "Actual width-5 generated candidates and their hypothetical [2,1,3,4,5,6,7,8] order-only swap were visually inspected. Reordering does not create the domestic upper right-descending hook."
+    }
+  ],
+  "candidateArtifacts": {
+    "geometryFile": "geometry-b.json",
+    "svgFile": "review-b.svg",
+    "approvedRecipe": null,
+    "correctedPaths": null,
+    "rawCandidatePathsOnly": true,
+    "allOriginalMediansPreserved": true,
+    "renderedOriginalCumulativeStates": 16,
+    "renderedSwapComparisonStates": 4,
+    "rendered420pxFinals": 2
+  },
+  "artifactPins": [
+    {
+      "path": "docs/hanja-g3ii-batch13-2026-09-13/geometry-b.json",
+      "bytes": 29337,
+      "sha256": "f1b9a1f75847500f6a3f88c12ce1aa99309a76740c46dadc6dccd62a0d8f6277"
+    },
+    {
+      "path": "docs/hanja-g3ii-batch13-2026-09-13/review-b.svg",
+      "bytes": 16029,
+      "sha256": "d0ce4769ae9b10d19eed8f75ef85b88a58985ac6ec576f8a0c84e6a2fc9ac00a"
+    },
+    {
+      "path": "docs/hanja-g3ii-textbook-acquisition-2026-09-13/research-rabbit-peer.json",
+      "bytes": 7163,
+      "sha256": "65f71e0015f25c7d28a2f1f1d8a961a4b1fb6e9c959c142789cba897db8b6484"
+    }
+  ],
+  "nextRequiredEvidence": "A Korean source that explicitly establishes the requested domestic upper shape's path and within-stroke direction, or a documented decision resolving the two upper forms, before authoring a correction or considering playback approval.",
+  "preservation": {
+    "sourceMediaSaved": false,
+    "foreignXmlOrPngRedistributed": false,
+    "sharedScriptsPublicLibModified": false,
+    "gitModified": false,
+    "mediaMemoryServerUsed": true
+  },
+  "errors": []
+}

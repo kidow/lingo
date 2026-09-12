@@ -15,6 +15,7 @@ import reviewedSupplement from '../public/hanja-strokes/supplement-reviewed.json
 import reviewedDots from '../public/hanja-strokes/dots-reviewed.json' with { type: 'json' }
 import reviewedSplits from '../public/hanja-strokes/splits-reviewed.json' with { type: 'json' }
 import { HANJA_TEXTBOOK_STROKES } from './hanja-stroke-textbook.ts'
+import { HANJA_DOCUMENT_STROKES, type HanjaDocumentStrokeData } from './hanja-stroke-documents.ts'
 
 export const HANJA_STROKE_SOURCE = {
   title: '필순 정정 및 500자 필순',
@@ -73,7 +74,7 @@ export type HanjaTextbookStrokeData = HanjaStrokeGeometry & {
   }
 }
 
-export type HanjaStrokeData = HanjaEomunhoeStrokeData | HanjaTextbookStrokeData
+export type HanjaStrokeData = HanjaEomunhoeStrokeData | HanjaTextbookStrokeData | HanjaDocumentStrokeData
 
 export const HANJA_EOMUNHOE_STROKES: readonly HanjaEomunhoeStrokeData[] = [
   ...reviewedGrade8.characters,
@@ -156,6 +157,7 @@ export const HANJA_EOMUNHOE_STROKES: readonly HanjaEomunhoeStrokeData[] = [
 export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...HANJA_EOMUNHOE_STROKES,
   ...HANJA_TEXTBOOK_STROKES,
+  ...HANJA_DOCUMENT_STROKES,
 ]
 
 const byGlyph = new Map(HANJA_STROKES.map((data) => [data.glyph, data]))
