@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "batch": 6,
+  "reviewedAt": "2026-09-12",
+  "reviewer": "Codex independent whole-video visual comparison (b)",
+  "scope": "owner-a five glyphs 芽審雙顔亞",
+  "status": "complete",
+  "summary": {
+    "glyphs": 5,
+    "strokes": 67,
+    "geometryMatched": 5,
+    "geometryCorrectedGlyphs": 2,
+    "geometryCorrectedPaths": 4,
+    "timingCorrectionsApplied": 0,
+    "held": 0
+  },
+  "method": {
+    "wholeOverviewFps": 2,
+    "completedSamplesFps": 10,
+    "finalSourceWidth": 600,
+    "playerStrokeWidth": 5,
+    "roundCaps": true,
+    "roundJoins": true,
+    "mediaStorage": "RAM only",
+    "humanExpertReview": false
+  },
+  "limitations": "개별 출판사 원문과의 AI 시각 대조이며 한국어문회 개별 승인이나 인간 전문가 확인이 아니다. 완료 시각은 표본에서 채움 완료를 확인한 상한이고 정확한 펜 떼기 순간이 아니다.",
+  "authorFile": "review-a.json",
+  "authorFileSha256": "3ac38d4313d2007cfaa0b6ed0063a01278dbd4927dd045ab7e904117b787a8c4",
+  "sourceAudit": [
+    {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957,
+      "characters": [
+        {
+          "glyph": "審",
+          "originalMediansSha256": "aa72322e5cd0aa7d6a26350cd8d1aaa594726473d6b5b6abf9627277a9fa7167",
+          "originalEqualsPinned": true
+        },
+        {
+          "glyph": "雙",
+          "originalMediansSha256": "e0d607ee7e078ee0e37f09437e3956e119d8c4131637359bb5a24557a0abf25b",
+          "originalEqualsPinned": true
+        },
+        {
+          "glyph": "亞",
+          "originalMediansSha256": "64c8acd3f03dfd4de8a4a62f062009e41b4cb0b050ee5d774a7d3cb21523105b",
+          "originalEqualsPinned": true
+        },
+        {
+          "glyph": "顔",
+          "originalMediansSha256": "772fbad65842c33b328b44abfc6e851929a851ffb892987215acf53d270a5c5e",
+          "originalEqualsPinned": true
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "bytes": 30778076,
+      "characters": [
+        {
+          "glyph": "芽",
+          "originalMediansSha256": "7f3b384f3f3075ea7400cd7258220e519a9dde496b456ef1e23dbcb5e54a0f3d",
+          "originalEqualsPinned": true
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "actualTextbookGeometryReproduced": true,
+    "sourceVideoFreshPinsEqual": true,
+    "errors": []
+  },
+  "entries": [
+    {
+      "glyph": "審",
+      "status": "matched",
+      "expectedStrokes": 15,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0946.mp4",
+        "sha256": "8b835db62c0632e7bd46f0d2ab4d806c7447d075f2ccdb39ab3cf8228e51076c",
+        "bytes": 698518
+      },
+      "durationSeconds": 20.681,
+      "comparedPathsSha256": "aea214661c3f846d28a4c3f4cd8e17a68f848885d59c38e8011cd71f95aa23b1",
+      "comparedRecipeSha256": "a2f692bcd6425c29e1b095162a67d3e7e97bb117281c401f142716d4d8d74237",
+      "comparedRecordSha256": "64d9c23d7e43d9d5c9517071f67f01f460b40d1b519f21fcfe1b1ad576efe4f7",
+      "originalMediansSha256": "aa72322e5cd0aa7d6a26350cd8d1aaa594726473d6b5b6abf9627277a9fa7167",
+      "observedCompletedSamplesSeconds": [
+        0.8,
+        2,
+        3.8,
+        5.4,
+        6.3,
+        7,
+        8.4,
+        10.3,
+        12.1,
+        14.2,
+        15.5,
+        17.7,
+        18.5,
+        19.3,
+        20.5
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        13,
+        15
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "width5Contacts": "match"
+      },
+      "notes": "15획을 원문으로 재확인했다. 宀 아래 釆의 짧은 삐침·점·가로·세로·좌우 긴 삐침 순서와 아래 田의 좌벽→위·우벽 꺾임→안 가로→안 세로→바닥 순서를 확인했다. 가운데 세로8의 끝과 田 윗부분은 떨어지며, 田의 안 가로/세로는 테두리와 접합한다.",
+      "timingCorrections": [],
+      "geometryCorrections": []
+    },
+    {
+      "glyph": "雙",
+      "status": "matched",
+      "expectedStrokes": 18,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0949.mp4",
+        "sha256": "458d9cad9cac6ff6df71c57741c38fd2f9df9fd68446c80d3be956f4a495f265",
+        "bytes": 725802
+      },
+      "durationSeconds": 23.081,
+      "comparedPathsSha256": "b3bac8648449bb732113e110afc0e8f334586dfa5caeeaa577058a98857e4fe8",
+      "comparedRecipeSha256": "ff17d6c331235ba30ae334fcc0d8def3977177c04de11595b9f1b7a9e116487b",
+      "comparedRecordSha256": "10cc13fe32a3120651da465b20bf5555be76f62356164e008f79d4b3533d23a5",
+      "originalMediansSha256": "e0d607ee7e078ee0e37f09437e3956e119d8c4131637359bb5a24557a0abf25b",
+      "observedCompletedSamplesSeconds": [
+        1.9,
+        3.4,
+        4.2,
+        4.9,
+        5.7,
+        6.5,
+        7.5,
+        8.1,
+        9.5,
+        11,
+        11.7,
+        12.4,
+        13.1,
+        13.8,
+        14.8,
+        15.7,
+        19.5,
+        22.9
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        13,
+        16,
+        17,
+        18
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "width5Contacts": "match"
+      },
+      "notes": "18획을 다시 확인했다. 양쪽 隹는 위 가로 다음 두 안 가로를 먼저 긋고 안 세로를 그린다. 오른쪽9의 짧은 삐침과10의 긴 세로는 별도 획이다. 왼 아래 가로8과 오른 바깥 세로10 사이 원문 흰 간격을 폭5에서 보정한 결과로 다시 확인했다. 0.0–0.5초 및8.9–9.4초에는 삐침1/9의 원문 미착색 커서 도입이 관찰되어, 이를 제외한 순방향 시작점 보정을 확인했다. 마지막 又 두 획은 위 두 隹와 분리된다.",
+      "timingCorrections": [],
+      "geometryCorrections": [
+        {
+          "stroke": 8,
+          "beforeEnd": [
+            51.6,
+            50
+          ],
+          "afterEnd": [
+            49.2,
+            50
+          ],
+          "reason": "Preserve the painted-source gap before the right outer vertical10.",
+          "appliedInOwnerRecord": true
+        },
+        {
+          "stroke": 1,
+          "beforeStart": [
+            28,
+            13.6
+          ],
+          "afterStart": [
+            31.1,
+            13.6
+          ],
+          "reason": "Exclude unpainted cursor approach; the ink descends before sweeping left.",
+          "appliedInOwnerRecord": true
+        },
+        {
+          "stroke": 9,
+          "beforeStart": [
+            56.6,
+            10
+          ],
+          "afterStart": [
+            58.9,
+            10
+          ],
+          "reason": "Exclude unpainted cursor approach; the ink descends before sweeping left.",
+          "appliedInOwnerRecord": true
+        }
+      ]
+    },
+    {
+      "glyph": "亞",
+      "status": "matched",
+      "expectedStrokes": 8,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0953.mp4",
+        "sha256": "0580ac59e16c77863890a6a9ac5e7802fee29c2d3054b0a36ad70c6eb5d84bb9",
+        "bytes": 401188
+      },
+      "durationSeconds": 12.715,
+      "comparedPathsSha256": "644015034a212f6aa2d30703a7eaa8ae560c1ccc5edd72f0f2eb4c73fd411e7b",
+      "comparedRecipeSha256": "02b83c3bbf47890d60a820157b07be1d7bacbb34864db65841e61d5eb526196c",
+      "comparedRecordSha256": "68f3384e124620de26c2022fac07e547c659c14c57fafd1b9506545b3433ccb0",
+      "originalMediansSha256": "64c8acd3f03dfd4de8a4a62f062009e41b4cb0b050ee5d774a7d3cb21523105b",
+      "observedCompletedSamplesSeconds": [
+        1.7,
+        2.8,
+        3.6,
+        5.8,
+        6.8,
+        8.8,
+        10.5,
+        12.5
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "width5Contacts": "match"
+      },
+      "notes": "8획의 펜 경계를 재확인했다. 왼3은 가로만 그리고 왼4는 아래→오른쪽→아래의 연결 꺾임이다. 오른5는 세로만, 오른6은 오른쪽→아래→왼쪽의 연결 꺾임이다. 이어 오른 아래 세로7, 긴 바닥8을 그린다. 양쪽 위 세로 및 아래 세로의 가로 접합을 폭5에서 확인했다.",
+      "timingCorrections": [],
+      "geometryCorrections": []
+    },
+    {
+      "glyph": "芽",
+      "status": "matched",
+      "expectedStrokes": 8,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0955.mp4",
+        "sha256": "72c5e538c7ae165fbd4117d21d04c9d468a5c3afd95050184c6009124a6ce479",
+        "bytes": 419738
+      },
+      "durationSeconds": 14.531,
+      "comparedPathsSha256": "911cf2b7d23f9c000e07fe2b92774db106b56f50ad9d0e8819f5968fcf973848",
+      "comparedRecipeSha256": "7c88281f8089d29a7d66031802ef337af71a3ef38e62dc7b9f6119cbdabbb20e",
+      "comparedRecordSha256": "d57526c5882db72d2d326ed5dd8144452c5032c77bf6c78258937890014d35ac",
+      "originalMediansSha256": "7f3b384f3f3075ea7400cd7258220e519a9dde496b456ef1e23dbcb5e54a0f3d",
+      "observedCompletedSamplesSeconds": [
+        0.8,
+        2.3,
+        3.5,
+        4.8,
+        6.8,
+        9.4,
+        12.3,
+        14.3
+      ],
+      "sourceStrokeIndices": [
+        2,
+        1,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "width5Contacts": "match"
+      },
+      "notes": "8획을 다시 확인했다. 艹의 왼 세로→왼 가로→오른 가로→오른 세로 네 획, 아래 牙의 위 가로→왼 세로·긴 가로 꺾임→가운데 갈고리→왼 삐침 네 획이다. 艹 양 가로의 흰 간격과 아래 牙 윗가로와의 분리, 긴 가로·가운데 세로·왼 삐침의 접합을 폭5에서 확인했다. MM 원본 첫 가로의 양쪽 분할 계보도 실제 생성기로 확인했다.",
+      "timingCorrections": [],
+      "geometryCorrections": []
+    },
+    {
+      "glyph": "顔",
+      "status": "matched",
+      "expectedStrokes": 18,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0963.mp4",
+        "sha256": "8a22d831d97b2a809f356ab092a3167601b0d772857eaac8f7c838848a4b7aae",
+        "bytes": 700613
+      },
+      "durationSeconds": 18.048,
+      "comparedPathsSha256": "271ac64e120b975dccd90ac7bd948f0385e3e660f0e75126196793f3bab88e82",
+      "comparedRecipeSha256": "66fdef2061a0d2cb12baebe096f9af777bc2440497b4a12ef69b163226456e70",
+      "comparedRecordSha256": "9e7cf1a84c04a18ff496418cee1d6ce6a443e4d373105f7b72bd6be0c85fc875",
+      "originalMediansSha256": "772fbad65842c33b328b44abfc6e851929a851ffb892987215acf53d270a5c5e",
+      "observedCompletedSamplesSeconds": [
+        0.7,
+        1.6,
+        2.7,
+        3.4,
+        4,
+        5.6,
+        6.4,
+        7.4,
+        8.5,
+        9.4,
+        10.2,
+        11.6,
+        12.9,
+        13.9,
+        14.7,
+        15.5,
+        16.6,
+        17.9
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "width5Contacts": "match"
+      },
+      "notes": "18획을 원문으로 재확인했다. 彥 위 교차는 오른위→왼아래3 다음 왼위→오른아래4이며, 좌우 위 가로2/10은 원문에서 분리된다. 새 가로10 시작점을 폭5로 다시 확인하여 그 흰 간격이 복원됐음을 확인했다. 彡 세 획과 頁 아래 두 다리의 독립 경계, 頁 안 두 가로의 양 벽 접합을 확인했다.",
+      "timingCorrections": [],
+      "geometryCorrections": [
+        {
+          "stroke": 10,
+          "beforeStart": [
+            55.9,
+            23.2
+          ],
+          "afterStart": [
+            60.2,
+            22.6
+          ],
+          "reason": "Separate the two top horizontal strokes as observed in the painted source.",
+          "appliedInOwnerRecord": true
+        }
+      ]
+    }
+  ]
+}

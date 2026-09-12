@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-12",
+  "uniqueCharacters": 22,
+  "assignedStrokes": 283,
+  "observedStrokes": 284,
+  "approvedCharacters": 21,
+  "approvedStrokes": 270,
+  "heldCharacters": [
+    "慈"
+  ],
+  "heldSourceStrokes": 14,
+  "status": "complete-with-one-source-count-hold",
+  "groups": [
+    {
+      "reviewer": "a",
+      "targets": [
+        "翼",
+        "逸",
+        "壬",
+        "賃",
+        "慈"
+      ],
+      "assignedStrokes": 59,
+      "observedStrokes": 60,
+      "file": "peer-a.json"
+    },
+    {
+      "reviewer": "b",
+      "targets": [
+        "胃",
+        "僞",
+        "謂",
+        "猶",
+        "維"
+      ],
+      "assignedStrokes": 65,
+      "observedStrokes": 65,
+      "file": "peer-b.json"
+    },
+    {
+      "reviewer": "c",
+      "targets": [
+        "跡",
+        "寂",
+        "摘",
+        "殿",
+        "淨",
+        "廷"
+      ],
+      "assignedStrokes": 69,
+      "observedStrokes": 69,
+      "file": "peer-c.json"
+    },
+    {
+      "reviewer": "root",
+      "targets": [
+        "莊",
+        "葬",
+        "臟",
+        "藏",
+        "載",
+        "著"
+      ],
+      "assignedStrokes": 90,
+      "observedStrokes": 90,
+      "file": "peer-root.json"
+    }
+  ],
+  "method": "Independent comparison of complete individual publisher videos, every observed completed-by sample, and cumulative rendered paths with actual stroke width 5 and round caps/joins. Completed-by times are sampled upper bounds, not exact pen-lift times.",
+  "resolvedFindings": [
+    "翼: strokes13 and14 now join the bottom of 田 as observed in the source.",
+    "殿: stroke9 endpoint now joins stroke12 as observed in the source.",
+    "葬: stroke7 completed-by sample corrected from8.5s to8.8s; next pen position is seen at8.9s."
+  ],
+  "heldFinding": "慈: publisher video visibly contains14 strokes against catalog13; independently confirmed and excluded from runtime.",
+  "finalPins": {
+    "docs/hanja-g3ii-batch7-2026-09-12/review-a.json": "d5d3716de2e984d010c51b1955cfd3615c07322251fadace2341f56fa05488d6",
+    "docs/hanja-g3ii-batch7-2026-09-12/peer-a.json": "6ea7bfe22355588486acdf26844730ecd7635ef9f8801e7bea21784f5f35f2be",
+    "docs/hanja-g3ii-batch7-2026-09-12/review-b.json": "eef4b816badbf90c9ba768ae5e3f73384bdb6b5f24b42809d05a2bab244d7d4e",
+    "docs/hanja-g3ii-batch7-2026-09-12/peer-b.json": "7dd403d48860dd1841be574e35fadec90a191c764599f4f414e6dd6a5a34f7de",
+    "docs/hanja-g3ii-batch7-2026-09-12/review-c.json": "a1051e4c4c6908a8fd7b0b721be8a746c73a64449ca62b794509fa121f4a905d",
+    "docs/hanja-g3ii-batch7-2026-09-12/peer-c.json": "47421b31a73bba8a0b2d6d76f2d1c865586f54f0daa4de0409d805898acf790a",
+    "docs/hanja-g3ii-batch7-2026-09-12/review-root.json": "34b6d31a64a90d961bc7a151ef6f5f63a61131459f7b75f6429d103a473f99e2",
+    "docs/hanja-g3ii-batch7-2026-09-12/peer-root.json": "bf65aa22c488bef7c59a22f2534d12b1faa0179d6636353e7050eb63047cc4f0"
+  },
+  "audit": "integration-audit.json"
+}
+

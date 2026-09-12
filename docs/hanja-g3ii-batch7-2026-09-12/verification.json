@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-12",
+  "checks": [
+    {
+      "id": "bundle",
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "durationMs": 2293,
+      "emittedCharacters": 836,
+      "publishedBundleMatches": true,
+      "outputTail": [
+        "      \"退\",",
+        "      \"賢\",",
+        "      \"護\",",
+        "      \"吸\",",
+        "      \"警\"",
+        "    ]",
+        "  },",
+        "  \"emittedCharacters\": 836,",
+        "  \"publishedBundleMatches\": true",
+        "}"
+      ]
+    },
+    {
+      "id": "tests",
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "durationMs": 6951,
+      "tests": 134,
+      "passed": 134,
+      "failed": 0,
+      "outputTail": [
+        "✔ 오답 보기는 같은 급수의 한자에서 고른다 (4.265958ms)",
+        "✔ 한능검 선택과 진도는 새로 불러올 수 있고 기존 트랙 진도와 분리된다 (0.286667ms)",
+        "ℹ tests 134",
+        "ℹ suites 0",
+        "ℹ pass 134",
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 6887.453584"
+      ]
+    },
+    {
+      "id": "typecheck",
+      "command": "pnpm run typecheck",
+      "exitCode": 0,
+      "durationMs": 18168,
+      "outputTail": [
+        "$ tsc --noEmit"
+      ]
+    },
+    {
+      "id": "build",
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "durationMs": 35369,
+      "outputTail": [
+        "  Finished TypeScript in 22.1s ...",
+        "  Collecting page data using 8 workers ...",
+        "  Generating static pages using 8 workers (0/7) ...",
+        "  Generating static pages using 8 workers (1/7) \r",
+        "  Generating static pages using 8 workers (3/7) \r",
+        "  Generating static pages using 8 workers (5/7) \r",
+        "✓ Generating static pages using 8 workers (7/7) in 509ms",
+        "  Finalizing page optimization ...",
+        "",
+        "Route (app)",
+        "┌ ○ /",
+        "├ ○ /_not-found",
+        "├ ○ /apple-icon.png",
+        "├ ○ /debug",
+        "├ ○ /icon.svg",
+        "└ ○ /manifest.webmanifest",
+        "",
+        "",
+        "○  (Static)  prerendered as static content",
+        "",
+        "",
+        "$ node scripts/split.ts",
+        "$ next build"
+      ]
+    }
+  ],
+  "preservationAudit": "integration-audit.json",
+  "originalCoordinatesAudit": "originals-audit.json",
+  "peerReview": "peer-review.json",
+  "publicBundleSha256": "5b81074a9b55596e6ff5fac1eb365030907d21c4222348ec00f6999e71aa0815",
+  "finalFileHashes": {
+    "scripts/hanja-stroke-textbook-review.json": "5fa0d17dcbc501ce2d8d1f36430553962f6fd06c0fe9de066a1042de7e5a0a38",
+    "scripts/hanja-stroke-textbook-corrections.json": "a45c0229ff2bde9782a9beeac32021c0ccc62fb6a6921e6d45b2cd9eb6a87187",
+    "public/hanja-strokes/textbook-reviewed.json": "5b81074a9b55596e6ff5fac1eb365030907d21c4222348ec00f6999e71aa0815",
+    "docs/hanja-g3ii-batch7-2026-09-12/review-a.json": "d5d3716de2e984d010c51b1955cfd3615c07322251fadace2341f56fa05488d6",
+    "docs/hanja-g3ii-batch7-2026-09-12/peer-a.json": "6ea7bfe22355588486acdf26844730ecd7635ef9f8801e7bea21784f5f35f2be",
+    "docs/hanja-g3ii-batch7-2026-09-12/review-b.json": "eef4b816badbf90c9ba768ae5e3f73384bdb6b5f24b42809d05a2bab244d7d4e",
+    "docs/hanja-g3ii-batch7-2026-09-12/peer-b.json": "7dd403d48860dd1841be574e35fadec90a191c764599f4f414e6dd6a5a34f7de",
+    "docs/hanja-g3ii-batch7-2026-09-12/review-c.json": "a1051e4c4c6908a8fd7b0b721be8a746c73a64449ca62b794509fa121f4a905d",
+    "docs/hanja-g3ii-batch7-2026-09-12/peer-c.json": "47421b31a73bba8a0b2d6d76f2d1c865586f54f0daa4de0409d805898acf790a",
+    "docs/hanja-g3ii-batch7-2026-09-12/review-root.json": "34b6d31a64a90d961bc7a151ef6f5f63a61131459f7b75f6429d103a473f99e2",
+    "docs/hanja-g3ii-batch7-2026-09-12/peer-root.json": "bf65aa22c488bef7c59a22f2534d12b1faa0179d6636353e7050eb63047cc4f0"
+  },
+  "counts": {
+    "runtime": 1339,
+    "publisher": 836,
+    "ledgerMatched": 836,
+    "ledgerConflict": 2,
+    "ledgerPending": 0,
+    "recipes": 595
+  },
+  "scope": "Production build, type check, all current hanja tests and fresh source builder check passed. Data-only change inspected using source-video frames and actual-width cumulative rendered paths; no new browser interaction check performed."
+}
+

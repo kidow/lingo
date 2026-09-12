@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-09-12",
+  "batch": "g3ii-batch7",
+  "status": "pending-source-resolution",
+  "baselineCommit": "30cba5d13acdada4b20f2439c435aa778d711129",
+  "baselineBundleSha256": "5b81074a9b55596e6ff5fac1eb365030907d21c4222348ec00f6999e71aa0815",
+  "manifestSource": {
+    "id": "vivasam-high-2022",
+    "sha256": "32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c",
+    "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/data/data_high.xlsx"
+  },
+  "scope": "3급II 미적용 exact-manifest 후보 중 확인된 전체 원문 획수 충돌만 정리한다. 문서 작성 시 manifest와 runtime을 새로 대조했으며, 奔 영상을 이번 회차에 새로 검토했다는 뜻은 아니다.",
+  "coverage": {
+    "all": {
+      "applied": 1339,
+      "total": 5978,
+      "remaining": 4639
+    },
+    "publisher": 836,
+    "examinationBody": 503,
+    "grade3II": {
+      "total": 500,
+      "applied": 349,
+      "remaining": 151,
+      "eligibleExactTargets": 132,
+      "heldExactTargets": 2,
+      "readyExactTargets": 130,
+      "outsideExactManifest": 19
+    }
+  },
+  "entries": [
+    {
+      "glyph": "奔",
+      "grade": "3급II",
+      "status": "source-count-conflict",
+      "firstHeldBatch": "g3ii-batch4",
+      "reviewedAt": "2026-09-09",
+      "manifestRow": "0684",
+      "videoFilename": "0684 달릴 분.mp4",
+      "expectedStrokes": 8,
+      "candidateStrokes": 8,
+      "observedSourceStrokes": 9,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0684.mp4",
+        "sha256": "c34ceafdf3d018a6bb23fc18d02438026df79d81b6cf22d691f720cb55b66ced",
+        "bytes": 557018
+      },
+      "durationSeconds": 16.731,
+      "strokeEndsSeconds": [
+        1.75,
+        4.5833,
+        6.75,
+        8.3333,
+        9.3333,
+        10.8333,
+        12.8333,
+        14.8333,
+        16.5833
+      ],
+      "sourceOrder": [
+        "大 가로",
+        "大 왼삐침",
+        "大 오른획",
+        "十 가로",
+        "十 세로",
+        "아래 왼가로",
+        "아래 왼삐침",
+        "아래 오른가로",
+        "아래 오른세로"
+      ],
+      "reason": "카탈로그와 고정 Ja 후보는8획이지만 기존에 검토한 개별 출판사 영상은9획이다. 아래 왼가로·왼삐침·오른가로·오른세로가 각각 독립 재생되므로 두 가로를 임의로 한 획으로 합치지 않는다.",
+      "releaseCondition": "목록의8획과 원본영상의9획 차이를 해소하는 별도의 한국 전체필순 근거 또는 출판사 원본 정정이 필요하다. 영상의 실제 두 가로를 임의로 한 획으로 합치지 않는다.",
+      "evidence": [
+        {
+          "path": "docs/hanja-g3ii-batch4-2026-09-09/pending-c.json",
+          "sha256": "3c4635cdc60e9d55cb7023efaaaf68b64b3bc0b19b15e489effc93f203d15ac3"
+        }
+      ],
+      "runtimeApproved": false,
+      "recipe": null,
+      "paths": []
+    },
+    {
+      "glyph": "慈",
+      "grade": "3급II",
+      "status": "source-count-conflict",
+      "firstHeldBatch": "g3ii-batch7",
+      "reviewedAt": "2026-09-12",
+      "manifestRow": "1216",
+      "videoFilename": "1216 사랑 자.mp4",
+      "expectedStrokes": 13,
+      "candidateStrokes": 13,
+      "observedSourceStrokes": 14,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1216.mp4",
+        "sha256": "e07182c826f36827532c2609a7949e8d632c98d29dbee0c0f139ddd91819de9f",
+        "bytes": 489787
+      },
+      "durationSeconds": 14.398,
+      "strokeEndsSeconds": [
+        0.7,
+        1.5,
+        2.6,
+        3.8,
+        4.4,
+        5.3,
+        6.3,
+        7.2,
+        8.6,
+        9.3,
+        10.1,
+        12.1,
+        12.9,
+        13.8
+      ],
+      "sourceGroups": [
+        {
+          "description": "left 玄",
+          "strokes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "description": "right 玄",
+          "strokes": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "description": "心",
+          "strokes": [
+            11,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "reason": "카탈로그와 고정 Ja/MM 후보는13획이지만 실제 출판사 영상은 왼玄5획→오른玄5획→心4획, 총14획이다. 좌우 위 가로가 떨어진 시점에 따로 재생되고 그 사이 다른 획들이 그려져 한 획으로 임의 병합할 수 없다.",
+      "releaseCondition": "배정13획에 맞는 별도의 한국 전체필순 근거 또는 출판사 원문 정정으로 차이를 해소한다. 근거 없이 획을 병합하거나 기대 획수를14로 바꾸지 않는다.",
+      "evidence": [
+        {
+          "path": "docs/hanja-g3ii-batch7-2026-09-12/review-b.json",
+          "sha256": "eef4b816badbf90c9ba768ae5e3f73384bdb6b5f24b42809d05a2bab244d7d4e"
+        },
+        {
+          "path": "docs/hanja-g3ii-batch7-2026-09-12/peer-a.json",
+          "sha256": "6ea7bfe22355588486acdf26844730ecd7635ef9f8801e7bea21784f5f35f2be"
+        }
+      ],
+      "runtimeApproved": false,
+      "recipe": null,
+      "paths": []
+    }
+  ],
+  "remainingCandidates": {
+    "exactIncludingHeld": 132,
+    "held": 2,
+    "exactExcludingHeld": 130,
+    "outsideExactManifest": 19,
+    "outsideExactGlyphs": [
+      "訣",
+      "諾",
+      "蘭",
+      "涼",
+      "蓮",
+      "戀",
+      "嶺",
+      "弄",
+      "率",
+      "吏",
+      "紋",
+      "森",
+      "阿",
+      "笛",
+      "蹟",
+      "稚",
+      "兔",
+      "楓",
+      "戲"
+    ]
+  },
+  "next": {
+    "path": "next50.json",
+    "selectionSha256": "f4eb91a9eb0dba0a6cd8757cfbc0bf40f2d480ece217ce14d58e3e71d986d9a6",
+    "count": 50,
+    "first": "諸",
+    "last": "淺",
+    "strokes": 554,
+    "status": "not-reviewed"
+  }
+}

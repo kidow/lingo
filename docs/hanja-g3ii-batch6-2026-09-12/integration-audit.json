@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "batch": 6,
+  "recordedAt": "2026-09-12T09:08:16.964Z",
+  "timezone": "UTC",
+  "agent": "/root/hanja_b6_b",
+  "status": "passed",
+  "scope": "Read-only post-integration audit of the fixed50 batch6 selection; this file records the completed audit and does not authorize additional characters.",
+  "methods": [
+    "Read review-a.results and review-b/review-c/review-root.entries; compare exact fixed inventory order, glyphs, manifest rows, filenames and expected strokes.",
+    "Match all50 original median hashes and source corpus hashes to originals-audit.json.",
+    "Call the actual textbookGeometry and textbookCorrectionSha256 exports against the integrated recipe registry; compare all50 resulting paths and provenance indices with author proposals and public entries.",
+    "Call the actual validateTextbookReview export for all50 runtime entries through HANJA_STROKES and the integrated review registry.",
+    "Remove only the50 selected new records/public entries and48 selected recipe IDs in memory; SHA-256 of JSON.stringify the remaining complete objects must equal baseline.json.canonicalHashes.",
+    "Compare every737 baseline public entry hash and every33 frozen prior-batch file hash; detect duplicate glyphs and recipe IDs.",
+    "Compare all22 peer entries against latest author data: path/recipe/optional record hashes, source video bytes/hash/URL, original median hashes, duration, completion samples, stroke count and available lineage pins; reproduce actual geometry again.",
+    "Verify declared whole-author-file pins in peer-a/b/c and snapshot SHA-256 for all14 input files. All shared code/data remained read-only during this audit."
+  ],
+  "additions": {
+    "records": 50,
+    "recipes": 48,
+    "characters": 50,
+    "strokes": 614
+  },
+  "validation": {
+    "actualGeneratorPassed": 50,
+    "actualRuntimeValidatorPassed": 50,
+    "originalsAuditMatched": 50,
+    "duplicateGlyphs": 0,
+    "duplicateRecipeIds": 0
+  },
+  "baselinePreservation": {
+    "baselineFile": "baseline.json",
+    "baselineFileSha256": "adaab484f1406fc136d2d02a035fc17d063f7815f3313838b89bf5216b103ba6",
+    "canonicalObjectsPreserved": {
+      "scripts/hanja-stroke-textbook-review.json": true,
+      "scripts/hanja-stroke-textbook-corrections.json": true,
+      "public/hanja-strokes/textbook-reviewed.json": true
+    },
+    "existingPublicEntriesPreserved": 737,
+    "frozenPriorFilesPreserved": 33
+  },
+  "peerReview": {
+    "files": 4,
+    "entries": 22,
+    "uniqueGlyphs": 22,
+    "strokes": 338,
+    "perGlyphPinsAllMatch": true,
+    "coverageByFile": {
+      "peer-a.json": {
+        "glyphs": [
+          "若",
+          "讓",
+          "壤",
+          "御",
+          "憶"
+        ],
+        "characters": 5,
+        "strokes": 80
+      },
+      "peer-b.json": {
+        "glyphs": [
+          "審",
+          "雙",
+          "亞",
+          "芽",
+          "顔"
+        ],
+        "characters": 5,
+        "strokes": 67
+      },
+      "peer-c.json": {
+        "glyphs": [
+          "獄",
+          "緩",
+          "慾",
+          "愚",
+          "羽",
+          "韻"
+        ],
+        "characters": 6,
+        "strokes": 82
+      },
+      "peer-root.json": {
+        "glyphs": [
+          "驛",
+          "沿",
+          "悅",
+          "鹽",
+          "譽",
+          "巖"
+        ],
+        "characters": 6,
+        "strokes": 109
+      }
+    },
+    "wholeFilePins": [
+      {
+        "file": "peer-a.json",
+        "target": "review-b.json",
+        "pinned": "ec52f1c181e98c70e7f294376d4c2ac753961840d1ed83248176818f10e115b7",
+        "actual": "ec52f1c181e98c70e7f294376d4c2ac753961840d1ed83248176818f10e115b7",
+        "match": true
+      },
+      {
+        "file": "peer-b.json",
+        "target": "review-a.json",
+        "pinned": "3ac38d4313d2007cfaa0b6ed0063a01278dbd4927dd045ab7e904117b787a8c4",
+        "actual": "3ac38d4313d2007cfaa0b6ed0063a01278dbd4927dd045ab7e904117b787a8c4",
+        "match": true
+      },
+      {
+        "file": "peer-c.json",
+        "target": "review-root.json",
+        "pinned": "5799b2928865a6687571730c0df42acdcd18f35f4d8a09d81906eb459f263745",
+        "actual": "5799b2928865a6687571730c0df42acdcd18f35f4d8a09d81906eb459f263745",
+        "match": true
+      }
+    ]
+  },
+  "counts": {
+    "expected": {
+      "runtime": 1290,
+      "uniqueRuntime": 1290,
+      "publisher": 787,
+      "catalog": 5978,
+      "remaining": 4688,
+      "gradeApplied": 300,
+      "gradeTotal": 500
+    },
+    "actual": {
+      "runtime": 1290,
+      "uniqueRuntime": 1290,
+      "publisher": 787,
+      "catalog": 5978,
+      "remaining": 4688,
+      "gradeApplied": 300,
+      "gradeTotal": 500
+    },
+    "grade": "3급II"
+  },
+  "publishedBundleSha256": "0b2a5196a16d5e59a68be45d2d2f52a543e3aa857f1d9b0c90a4384999ccb129",
+  "verifiedFileHashes": {
+    "docs/hanja-g3ii-batch6-2026-09-12/baseline.json": "adaab484f1406fc136d2d02a035fc17d063f7815f3313838b89bf5216b103ba6",
+    "docs/hanja-g3ii-batch6-2026-09-12/inventory.json": "618692c837e44b87faa61699ab472004dae50baa45f5bd3e4445d74d5b43ed58",
+    "docs/hanja-g3ii-batch6-2026-09-12/originals-audit.json": "da3aaccd59493a7cbfa7d90fe27b89f56fd23bd5f2c8f5dfce7dac467f3b57f1",
+    "docs/hanja-g3ii-batch6-2026-09-12/review-a.json": "3ac38d4313d2007cfaa0b6ed0063a01278dbd4927dd045ab7e904117b787a8c4",
+    "docs/hanja-g3ii-batch6-2026-09-12/review-b.json": "ec52f1c181e98c70e7f294376d4c2ac753961840d1ed83248176818f10e115b7",
+    "docs/hanja-g3ii-batch6-2026-09-12/review-c.json": "9628e71740e8cef2e3ddd3d8702cffea83b3e1fc3631ab4bb793389a845be95c",
+    "docs/hanja-g3ii-batch6-2026-09-12/review-root.json": "5799b2928865a6687571730c0df42acdcd18f35f4d8a09d81906eb459f263745",
+    "docs/hanja-g3ii-batch6-2026-09-12/peer-a.json": "4235531eb09dff701058b14844f083140ee067c919c41d42417dd945824d8f83",
+    "docs/hanja-g3ii-batch6-2026-09-12/peer-b.json": "9b4232312d06c32a86c76d1154c18d5dc6370cbc9fb4614ee06d934c95ac60ed",
+    "docs/hanja-g3ii-batch6-2026-09-12/peer-c.json": "c7798ed7b42a9ececf76261ae46e8eddbf77f0c9c4202512f01227966867d28b",
+    "docs/hanja-g3ii-batch6-2026-09-12/peer-root.json": "6cd26c52f7814d0f728efabd6bb61d0c760939b55bb69a32d8291c74db58ed5e",
+    "scripts/hanja-stroke-textbook-review.json": "8dd15154b90db645e17e66cf12ed0f4aee1adaa06b953f5487bd34a00313fed5",
+    "scripts/hanja-stroke-textbook-corrections.json": "8e2a881326062835fbd8e96999c2a93f36baea6c34efa12b7132ad4b8d5ff204",
+    "public/hanja-strokes/textbook-reviewed.json": "0b2a5196a16d5e59a68be45d2d2f52a543e3aa857f1d9b0c90a4384999ccb129"
+  },
+  "errors": []
+}
