@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-12",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "tests",
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "durationMs": 7205,
+      "tests": 134,
+      "passed": 134,
+      "failed": 0,
+      "output": "ℹ tests 134\nℹ suites 0\nℹ pass 134\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 7132.239959"
+    },
+    {
+      "name": "typecheck",
+      "command": "pnpm run typecheck",
+      "exitCode": 0,
+      "durationMs": 19878,
+      "output": "$ tsc --noEmit\n"
+    },
+    {
+      "name": "bundle",
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "durationMs": 1969,
+      "output": "{\n  \"source\": {\n    \"id\": \"vivasam-high-2022\",\n    \"sha256\": \"32853d2396dc4fe38362b9e51a828144d7e48889f60e28d850cae9fa2335620c\",\n    \"url\": \"https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/data/data_high.xlsx\"\n  },\n  \"catalogCharacters\": 5978,\n  \"runtimeApprovedCharacters\": 1389,\n  \"manifestCharacters\": 1800,\n  \"exactCatalogMatches\": 1772,\n  \"exactAlreadyApproved\": 1369,\n  \"exactNewReviewTargets\": 403,\n  \"exactNewByGrade\": {\n    \"3급\": 314,\n    \"특급II\": 4,\n    \"특급\": 1,\n    \"3급II\": 82,\n    \"4급II\": 2\n  },\n  \"normalizationOnlyNewGlyphs\": [\n    \"諾\",\n    \"蘭\",\n    \"濫\",\n    \"戀\",\n    \"蓮\",\n    \"嶺\",\n    \"弄\",\n    \"率\",\n    \"吏\"\n  ],\n  \"unmatchedAfterNormalization\": [\n    \"册\",\n    \"奬\",\n    \"姊\",\n    \"衞\",\n    \"隸\"\n  ],\n  \"geometryCandidates\": {\n    \"korean\": 0,\n    \"koreanCountMatches\": 0,\n    \"japanese\": 394,\n    \"japaneseCountMatches\": 340,\n    \"makeMeAHanzi\": 390,\n    \"makeMeAHanziCountMatches\": 335,\n    \"either\": 399,\n    \"neither\": 4\n  },\n  \"queue\": {\n    \"total\": 888,\n    \"pending\": 0,\n    \"matched\": 886,\n    \"conflict\": 2,\n    \"countMismatchGlyphs\": [\n      \"諸\",\n      \"蒸\",\n      \"之\",\n      \"菜\",\n      \"逸\",\n      \"莊\",\n      \"葬\",\n      \"著\",\n      \"芽\",\n      \"若\",\n      \"御\",\n      \"譽\",\n      \"署\",\n      \"巡\",\n      \"述\",\n      \"飾\",\n      \"迫\",\n      \"薄\",\n      \"飯\",\n      \"芳\",\n      \"邪\",\n      \"勵\",\n      \"隆\",\n      \"漠\",\n      \"莫\",\n      \"幕\",\n      \"晩\",\n      \"梅\",\n      \"免\",\n      \"慕\",\n      \"蒙\",\n      \"夢\",\n      \"茂\",\n      \"菊\",\n      \"菌\",\n      \"及\",\n      \"祈\",\n      \"茶\",\n      \"途\",\n      \"突\",\n      \"廊\",\n      \"館\",\n      \"降\",\n      \"傑\",\n      \"堅\",\n      \"驚\",\n      \"覽\",\n      \"勉\",\n      \"模\",\n      \"墓\",\n      \"舞\",\n      \"逃\",\n      \"避\",\n      \"適\",\n      \"遊\",\n      \"遺\",\n      \"隱\",\n      \"延\",\n      \"迎\",\n      \"遇\",\n      \"與\",\n      \"連\",\n      \"餘\",\n      \"權\",\n      \"極\",\n      \"器\",\n      \"難\",\n      \"達\",\n      \"導\",\n      \"毒\",\n      \"殺\",\n      \"城\",\n      \"盛\",\n      \"誠\",\n      \"送\",\n      \"視\",\n      \"逆\",\n      \"藝\",\n      \"造\",\n      \"進\",\n      \"蓄\",\n      \"退\",\n      \"賢\",\n      \"護\",\n      \"吸\",\n      \"警\"\n    ]\n  },\n  \"emittedCharacters\": 886,\n  \"publishedBundleMatches\": true\n}\n"
+    },
+    {
+      "name": "build",
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "durationMs": 31362,
+      "output": "  en.json        2183 KB\n  ja.json        2913 KB\n  zh.json        2916 KB\n  es.json        2129 KB\n  fr.json        2261 KB\n  de.json        2212 KB\n  ru.json        3071 KB\n  search.json    4055 KB\n\n개념 7233개 · 참고 글 7편 → public/content/\n▲ Next.js 16.3.3 (Turbopack)\n- Environments: .env\n✓ Running next.config.ts took 25ms\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 1561ms\n  Running TypeScript ...\n  Finished TypeScript in 19.5s ...\n  Collecting page data using 8 workers ...\n  Generating static pages using 8 workers (0/7) ...\n  Generating static pages using 8 workers (1/7) \r\n  Generating static pages using 8 workers (3/7) \r\n  Generating static pages using 8 workers (5/7) \r\n✓ Generating static pages using 8 workers (7/7) in 501ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ○ /apple-icon.png\n├ ○ /debug\n├ ○ /icon.svg\n└ ○ /manifest.webmanifest\n\n\n○  (Static)  prerendered as static content\n\n$ node scripts/split.ts\n$ next build\n"
+    }
+  ],
+  "ownerAndAuditPins": {
+    "review-a.json": "255068c9c84594f35e161e6f55c867913710047b5511c0afc07144107da9fabf",
+    "review-b.json": "d181bf903c6c56723845c53c9506906180086485d1f7d5196af0a09e070f9a73",
+    "review-c.json": "60da35b57d2dcd66ea67837d49b27256ed2ba7905d5f1a3e89341fc8d65958db",
+    "review-root.json": "472c828598755a03fe228b8cc3d680a52a204c5f3902a00ec15e19b2bded61d7",
+    "originals-audit.json": "26c46f34e08f22024d137413f973b1a19fa12a0adbfbda706d18700a4c8fc2c3",
+    "peer-review.json": "0dc22b43b906113470339ce531df30723b989e5f9e1c3bc4543f2a771fac9d5d"
+  },
+  "publishedBundleSha256": "52a2dd01a3af0ca2b9b1ab9cd00f0f572b90fdb74674b410e809eb9c189aa8bf",
+  "preservation": "See preservation.json: all3 prior canonical payloads,836 individual public entries and35 prior-batch documents unchanged.",
+  "limits": "Automated checks validate integrity and reproducibility; they do not constitute an independent stroke-order authority."
+}
