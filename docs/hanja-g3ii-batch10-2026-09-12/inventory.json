@@ -1,0 +1,934 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch10",
+  "date": "2026-09-12",
+  "sourceQueue": "docs/hanja-g3ii-batch9-2026-09-12/next-review-queue.json",
+  "inputSelectionSha256": "1ff4dfa6fa3040cdac7c946070bbfbe99f2992eefd05f4e125962041fbd5650c",
+  "selectedCharacters": 30,
+  "selectedCatalogStrokes": 378,
+  "baseline": {
+    "runtime": 1435,
+    "publisher": 932,
+    "grade3II": 445
+  },
+  "excludedHolds": [
+    {
+      "glyph": "奔",
+      "origin": "prior-batch",
+      "expectedStrokes": 8,
+      "observedPublisherStrokes": 9,
+      "reason": "Catalog8 versus9 strokes observed in the individual publisher video; resolve the whole-glyph source conflict before reconsideration."
+    },
+    {
+      "glyph": "慈",
+      "origin": "prior-batch",
+      "expectedStrokes": 13,
+      "observedPublisherStrokes": 14,
+      "reason": "Catalog13 versus14 individual publisher strokes; the upper left and right horizontal portions are separated by intervening strokes."
+    },
+    {
+      "glyph": "遷",
+      "origin": "batch9",
+      "expectedStrokes": 15,
+      "observedPublisherStrokes": null,
+      "reason": "The independent middle bar in 己 is visibly painted separately. The 辶 turn pauses at the same endpoint; a lift/restart cannot be established. A proposed split gives16 rather than catalog15. Hold pending unambiguous whole-glyph boundary evidence.",
+      "evidence": "review-a.json"
+    },
+    {
+      "glyph": "追",
+      "origin": "batch9",
+      "expectedStrokes": 10,
+      "observedPublisherStrokes": null,
+      "reason": "Ja/MM original9 versus catalog10. The proposed split in 辶 has only a same-point pause, insufficient to prove separate strokes; diagnostic proposal remains held.",
+      "evidence": "review-a.json"
+    },
+    {
+      "glyph": "弊",
+      "origin": "batch9",
+      "expectedStrokes": 15,
+      "observedPublisherStrokes": 14,
+      "reason": "The source paints one continuous central vertical where Ja15 has two separate strokes. No source lift/restart was observed; retain the count conflict without an artificial split.",
+      "evidence": "review-c.json"
+    },
+    {
+      "glyph": "透",
+      "origin": "batch9",
+      "expectedStrokes": 11,
+      "observedPublisherStrokes": null,
+      "reason": "Ja original10 versus catalog11. A same-point pause near15.3–15.5s and resumption near15.6s does not prove the proposed separate 辶 boundary; the11-stroke proposal remains diagnostic-only.",
+      "evidence": "review-c.json"
+    }
+  ],
+  "selected": [
+    {
+      "index": 1,
+      "glyph": "恒",
+      "hun": "항상",
+      "eum": "항",
+      "grade": "3급II",
+      "expectedStrokes": 9,
+      "manifestRow": "1675",
+      "videoFilename": "1675 항상 항.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 9,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 9,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "a"
+    },
+    {
+      "index": 2,
+      "glyph": "項",
+      "hun": "항목",
+      "eum": "항",
+      "grade": "3급II",
+      "expectedStrokes": 12,
+      "manifestRow": "1680",
+      "videoFilename": "1680 항목 항.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 12,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 12,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "a"
+    },
+    {
+      "index": 3,
+      "glyph": "響",
+      "hun": "울릴",
+      "eum": "향",
+      "grade": "3급II",
+      "expectedStrokes": 22,
+      "manifestRow": "1694",
+      "videoFilename": "1694 울릴 향.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 20,
+          "countMatchesCatalog": false
+        },
+        {
+          "source": "MM",
+          "strokes": 20,
+          "countMatchesCatalog": false
+        }
+      ],
+      "owner": "a"
+    },
+    {
+      "index": 4,
+      "glyph": "獻",
+      "hun": "드릴",
+      "eum": "헌",
+      "grade": "3급II",
+      "expectedStrokes": 20,
+      "manifestRow": "1698",
+      "videoFilename": "1698 드릴 헌.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 20,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 20,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "a"
+    },
+    {
+      "index": 5,
+      "glyph": "懸",
+      "hun": "달",
+      "eum": "현",
+      "grade": "3급II",
+      "expectedStrokes": 20,
+      "manifestRow": "1705",
+      "videoFilename": "1705 매달 현.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 20,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 20,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "a"
+    },
+    {
+      "index": 6,
+      "glyph": "玄",
+      "hun": "검을",
+      "eum": "현",
+      "grade": "3급II",
+      "expectedStrokes": 5,
+      "manifestRow": "1706",
+      "videoFilename": "1706 검을 현.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 5,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 5,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "a"
+    },
+    {
+      "index": 7,
+      "glyph": "穴",
+      "hun": "굴",
+      "eum": "혈",
+      "grade": "3급II",
+      "expectedStrokes": 5,
+      "manifestRow": "1711",
+      "videoFilename": "1711 구멍 혈.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 5,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 5,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "a"
+    },
+    {
+      "index": 8,
+      "glyph": "脅",
+      "hun": "위협할",
+      "eum": "협",
+      "grade": "3급II",
+      "expectedStrokes": 10,
+      "manifestRow": "1714",
+      "videoFilename": "1714 위협할 협.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 10,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 10,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "a"
+    },
+    {
+      "index": 9,
+      "glyph": "衡",
+      "hun": "저울대",
+      "eum": "형",
+      "grade": "3급II",
+      "expectedStrokes": 16,
+      "manifestRow": "1720",
+      "videoFilename": "1720 저울대 형.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 16,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 16,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "b"
+    },
+    {
+      "index": 10,
+      "glyph": "慧",
+      "hun": "슬기로울",
+      "eum": "혜",
+      "grade": "3급II",
+      "expectedStrokes": 15,
+      "manifestRow": "1723",
+      "videoFilename": "1723 지혜 혜.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 15,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 15,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "b"
+    },
+    {
+      "index": 11,
+      "glyph": "浩",
+      "hun": "넓을",
+      "eum": "호",
+      "grade": "3급II",
+      "expectedStrokes": 10,
+      "manifestRow": "1733",
+      "videoFilename": "1733 넓을 호.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 10,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 10,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "b"
+    },
+    {
+      "index": 12,
+      "glyph": "豪",
+      "hun": "호걸",
+      "eum": "호",
+      "grade": "3급II",
+      "expectedStrokes": 14,
+      "manifestRow": "1736",
+      "videoFilename": "1736 호걸 호.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 14,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 14,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "b"
+    },
+    {
+      "index": 13,
+      "glyph": "胡",
+      "hun": "되",
+      "eum": "호",
+      "grade": "3급II",
+      "expectedStrokes": 9,
+      "manifestRow": "1734",
+      "videoFilename": "1734 오랑캐 호.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 9,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 9,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "b"
+    },
+    {
+      "index": 14,
+      "glyph": "虎",
+      "hun": "범",
+      "eum": "호",
+      "grade": "3급II",
+      "expectedStrokes": 8,
+      "manifestRow": "1729",
+      "videoFilename": "1729 범 호.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 8,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 8,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "b"
+    },
+    {
+      "index": 15,
+      "glyph": "惑",
+      "hun": "미혹할",
+      "eum": "혹",
+      "grade": "3급II",
+      "expectedStrokes": 12,
+      "manifestRow": "1738",
+      "videoFilename": "1738 미혹할 혹.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 12,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 12,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "b"
+    },
+    {
+      "index": 16,
+      "glyph": "魂",
+      "hun": "넋",
+      "eum": "혼",
+      "grade": "3급II",
+      "expectedStrokes": 14,
+      "manifestRow": "1742",
+      "videoFilename": "1742 넋 혼.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 14,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 13,
+          "countMatchesCatalog": false
+        }
+      ],
+      "owner": "b"
+    },
+    {
+      "index": 17,
+      "glyph": "忽",
+      "hun": "갑자기",
+      "eum": "홀",
+      "grade": "3급II",
+      "expectedStrokes": 8,
+      "manifestRow": "1743",
+      "videoFilename": "1743 갑자기 홀.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 8,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 8,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "c"
+    },
+    {
+      "index": 18,
+      "glyph": "洪",
+      "hun": "넓을",
+      "eum": "홍",
+      "grade": "3급II",
+      "expectedStrokes": 9,
+      "manifestRow": "1746",
+      "videoFilename": "1746 넓을 홍.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 9,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 9,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "c"
+    },
+    {
+      "index": 19,
+      "glyph": "禍",
+      "hun": "재앙",
+      "eum": "화",
+      "grade": "3급II",
+      "expectedStrokes": 14,
+      "manifestRow": "1756",
+      "videoFilename": "1756 재앙 화.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 13,
+          "countMatchesCatalog": false
+        },
+        {
+          "source": "MM",
+          "strokes": 13,
+          "countMatchesCatalog": false
+        }
+      ],
+      "owner": "c"
+    },
+    {
+      "index": 20,
+      "glyph": "還",
+      "hun": "돌아올",
+      "eum": "환",
+      "grade": "3급II",
+      "expectedStrokes": 17,
+      "manifestRow": "1766",
+      "videoFilename": "1766 돌아올 환.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 16,
+          "countMatchesCatalog": false
+        },
+        {
+          "source": "MM",
+          "strokes": 16,
+          "countMatchesCatalog": false
+        }
+      ],
+      "owner": "c"
+    },
+    {
+      "index": 21,
+      "glyph": "換",
+      "hun": "바꿀",
+      "eum": "환",
+      "grade": "3급II",
+      "expectedStrokes": 12,
+      "manifestRow": "1764",
+      "videoFilename": "1764 바꿀 환.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 12,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 12,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "c"
+    },
+    {
+      "index": 22,
+      "glyph": "皇",
+      "hun": "임금",
+      "eum": "황",
+      "grade": "3급II",
+      "expectedStrokes": 9,
+      "manifestRow": "1768",
+      "videoFilename": "1768 임금 황.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 9,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 9,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "c"
+    },
+    {
+      "index": 23,
+      "glyph": "荒",
+      "hun": "거칠",
+      "eum": "황",
+      "grade": "3급II",
+      "expectedStrokes": 10,
+      "manifestRow": "1771",
+      "videoFilename": "1771 거칠 황.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 9,
+          "countMatchesCatalog": false
+        },
+        {
+          "source": "MM",
+          "strokes": 9,
+          "countMatchesCatalog": false
+        }
+      ],
+      "owner": "c"
+    },
+    {
+      "index": 24,
+      "glyph": "懷",
+      "hun": "품을",
+      "eum": "회",
+      "grade": "3급II",
+      "expectedStrokes": 19,
+      "manifestRow": "1775",
+      "videoFilename": "1775 품을 회.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 19,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 19,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "c"
+    },
+    {
+      "index": 25,
+      "glyph": "悔",
+      "hun": "뉘우칠",
+      "eum": "회",
+      "grade": "3급II",
+      "expectedStrokes": 10,
+      "manifestRow": "1774",
+      "videoFilename": "1774 뉘우칠 회.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 9,
+          "countMatchesCatalog": false
+        },
+        {
+          "source": "MM",
+          "strokes": 10,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "root"
+    },
+    {
+      "index": 26,
+      "glyph": "獲",
+      "hun": "얻을",
+      "eum": "획",
+      "grade": "3급II",
+      "expectedStrokes": 17,
+      "manifestRow": "1777",
+      "videoFilename": "1777 얻을 획.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 16,
+          "countMatchesCatalog": false
+        },
+        {
+          "source": "MM",
+          "strokes": 17,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "root"
+    },
+    {
+      "index": 27,
+      "glyph": "劃",
+      "hun": "그을",
+      "eum": "획",
+      "grade": "3급II",
+      "expectedStrokes": 14,
+      "manifestRow": "1776",
+      "videoFilename": "1776 그을 획.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 14,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 14,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "root"
+    },
+    {
+      "index": 28,
+      "glyph": "橫",
+      "hun": "가로",
+      "eum": "횡",
+      "grade": "3급II",
+      "expectedStrokes": 16,
+      "manifestRow": "1778",
+      "videoFilename": "1778 가로 횡.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 16,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 16,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "root"
+    },
+    {
+      "index": 29,
+      "glyph": "胸",
+      "hun": "가슴",
+      "eum": "흉",
+      "grade": "3급II",
+      "expectedStrokes": 10,
+      "manifestRow": "1793",
+      "videoFilename": "1793 가슴 흉.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 10,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 10,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "root"
+    },
+    {
+      "index": 30,
+      "glyph": "稀",
+      "hun": "드물",
+      "eum": "희",
+      "grade": "3급II",
+      "expectedStrokes": 12,
+      "manifestRow": "1800",
+      "videoFilename": "1800 드물 희.mp4",
+      "status": "pending",
+      "candidates": [
+        {
+          "source": "Ko",
+          "strokes": null,
+          "countMatchesCatalog": null
+        },
+        {
+          "source": "Ja",
+          "strokes": 12,
+          "countMatchesCatalog": true
+        },
+        {
+          "source": "MM",
+          "strokes": 12,
+          "countMatchesCatalog": true
+        }
+      ],
+      "owner": "root"
+    }
+  ]
+}

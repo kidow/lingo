@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch10",
+  "checkedAt": "2026-09-12",
+  "status": "passed",
+  "checks": [
+    {
+      "label": "tests",
+      "command": "node --test lib/hanja-strokes.test.ts lib/hanja-glyph.test.ts lib/hanja-stroke-source-forms.test.ts lib/hanja-stroke-splits.test.ts lib/hanja-stroke-textbook-authored.test.ts lib/hanja-component-geometry.test.ts lib/hanja-component-layout-integration.test.ts lib/hanja-stroke-textbook-build.test.ts lib/hanja-stroke-audit.test.ts lib/hanja-stroke-source-glyph.test.ts lib/hanja.test.ts lib/hanja-component-draft-review.test.ts lib/hanja-component-phase3.test.ts lib/hanja-stroke-textbook.test.ts lib/hanja-component-reviewed-parts.test.ts lib/hanja-component-layout.test.ts lib/hanja-stroke-textbook-corrections.test.ts lib/hanja-component-phase2.test.ts lib/hanja-component-synthesis.test.ts lib/hanja-stroke-display-corrections.test.ts",
+      "exitCode": 0,
+      "durationMs": 7173,
+      "summary": "134/134 passed across20 hanja test files"
+    },
+    {
+      "label": "typecheck",
+      "command": "pnpm run typecheck",
+      "exitCode": 0,
+      "durationMs": 1794,
+      "summary": "TypeScript noEmit passed"
+    },
+    {
+      "label": "final-tests",
+      "command": "node --test lib/hanja-stroke-textbook.test.ts lib/hanja-stroke-textbook-corrections.test.ts lib/hanja-stroke-textbook-build.test.ts lib/hanja-strokes.test.ts",
+      "exitCode": 0,
+      "durationMs": 212,
+      "summary": "23/23 affected tests passed after final path and completion-time corrections"
+    },
+    {
+      "label": "bundle",
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "durationMs": 2013,
+      "summary": "960 publisher entries reproduced from fresh pinned source corpora and manifest; publishedBundleMatches=true"
+    },
+    {
+      "label": "build",
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "durationMs": 29727,
+      "summary": "Next.js production compilation, TypeScript and7 static pages passed"
+    }
+  ],
+  "publishedBundleSha256": "0a6628738dcb92476447aa0d38743fe2d17adcff505b5526b87e07b2a912f459",
+  "scope": "Full hanja suite and standalone typecheck passed before final localized peer corrections. Affected23 tests, fresh-source full bundle reproduction, and production build passed after final corrections. No new application/UI code was changed."
+}
+

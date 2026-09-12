@@ -1,0 +1,1911 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch10",
+  "owner": "b",
+  "status": "passed",
+  "auditedAt": "2026-09-12",
+  "scope": "Eight fixed B characters only; independent full-batch provenance audit follows final author pins.",
+  "summary": {
+    "characters": 8,
+    "catalogStrokes": 98,
+    "approvedStrokes": 98,
+    "holds": 0,
+    "wholeVideo2fpsFrames": 285,
+    "completedBy10fpsSamples": 98,
+    "actualGeneratedCumulativePaths": 98,
+    "sourceFinal420px": 8,
+    "sourceFinal700px": 2,
+    "geometryRelations": 120,
+    "geometryRelationFailures": 0,
+    "jaOriginalsExactlyPreserved": 8,
+    "jaOriginalStrokes": 98,
+    "recipesReproduced": 8,
+    "reorders": [
+      "衡",
+      "虎",
+      "魂"
+    ],
+    "splits": [],
+    "authoredNullStrokes": 0
+  },
+  "corpora": [
+    {
+      "name": "Ko",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "bytes": 1387824,
+      "actualSha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "actualBytes": 1387824,
+      "exactBMatches": 0,
+      "matchedGlyphs": [],
+      "matchedStrokes": 0
+    },
+    {
+      "name": "Ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957,
+      "actualSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "actualBytes": 21862957,
+      "exactBMatches": 8,
+      "matchedGlyphs": [
+        "惑",
+        "慧",
+        "浩",
+        "胡",
+        "虎",
+        "衡",
+        "豪",
+        "魂"
+      ],
+      "matchedStrokes": 98
+    },
+    {
+      "name": "MM",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "bytes": 30778076,
+      "actualSha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "actualBytes": 30778076,
+      "exactBMatches": 8,
+      "matchedGlyphs": [
+        "惑",
+        "慧",
+        "浩",
+        "胡",
+        "虎",
+        "衡",
+        "豪",
+        "魂"
+      ],
+      "matchedStrokes": 97
+    }
+  ],
+  "method": "Fresh entire pinned corpora fetched in RAM and SHA256/bytes verified, selected exact glyphs retained unchanged. Actual textbookGeometry and textbookCorrectionSha256 exports reproduced all paths and correction hashes. Each source video was freshly RAM fetched for complete2fps sequence and all completed-by10fps samples, then420px source final; whole Ja/MM normalized originals were displayed, followed by every actual5-unit round-cap/join cumulative path and420px final. Source samples are completion upper bounds, not exact pen-up timestamps. Geometry relations are explicit checks of selected joins/gaps, not a proof of every geometric property.",
+  "entries": [
+    {
+      "glyph": "衡",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1720.mp4",
+        "sha256": "8bc46588a14471dd6283855748ac917cdb0a30a01baf5ea877088902f80985f6",
+        "bytes": 727968
+      },
+      "durationSeconds": 21.065,
+      "expectedStrokes": 16,
+      "chosenCorpus": "Ja",
+      "candidateStrokes": 16,
+      "originalMediansSha256": "9c6903ade5edec0f9e5d0dde5639321902d170bcaf45966842c0cc48f5f5d5bd",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "pathsSha256": "fe5c489c502da1d404ce0793953447b9f9fad9f664cb48d57c08c8e589909267",
+      "correctionSha256": "7ef4c982dee1dc4baada047bf173323bed1aee484fd06e4f11d4e1901168d17b",
+      "generatedPathCount": 16,
+      "originalMediansExact": true,
+      "actualGeneratorMatch": true,
+      "wholeVideoFps": 2,
+      "wholeVideoFrames": 42,
+      "completedBySampleTimes": [
+        1.2,
+        3.3,
+        5.1,
+        5.9,
+        7.2,
+        8.4,
+        9.8,
+        10.7,
+        11.5,
+        12.3,
+        13.5,
+        14.9,
+        15.9,
+        17.2,
+        18.2,
+        20.8
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "geometryRelations": [
+        {
+          "strokes": [
+            2,
+            3
+          ],
+          "expected": "contact",
+          "centerlineDistance": 4.193305978449669,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.1141720290623112,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.04787758985491216,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.9163739413197602,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.784464540552736,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.1251233615904355,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            8,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.392232270276368,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            12
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            12
+          ],
+          "expected": "contact",
+          "centerlineDistance": 4.238636306154263,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            15,
+            16
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.6575959492214293,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            15
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7.256297000112809,
+          "inkGap": 2.2562970001128093,
+          "pass": true
+        },
+        {
+          "strokes": [
+            12,
+            13
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.708203932499369,
+          "inkGap": 1.7082039324993694,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            13
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.014704844370676,
+          "inkGap": 1.0147048443706757,
+          "pass": true
+        },
+        {
+          "strokes": [
+            14,
+            15
+          ],
+          "expected": "gap",
+          "centerlineDistance": 17.75509062897859,
+          "inkGap": 12.75509062897859,
+          "pass": true
+        }
+      ],
+      "completionTimeRechecks": [
+        {
+          "glyph": "衡",
+          "stroke": 6,
+          "previous": 8,
+          "completedBy": 8.4,
+          "row": "1720",
+          "additionalSampleTimes": [
+            7.8,
+            8,
+            8.2,
+            8.4,
+            8.6,
+            8.8
+          ],
+          "sourceWidth": 240,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        }
+      ]
+    },
+    {
+      "glyph": "慧",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1723.mp4",
+        "sha256": "ec413fcd5cf7051dec51ba1d70e1b3d49ad4e19f1b51ab50417f5c32a2fa7383",
+        "bytes": 752560
+      },
+      "durationSeconds": 22.715,
+      "expectedStrokes": 15,
+      "chosenCorpus": "Ja",
+      "candidateStrokes": 15,
+      "originalMediansSha256": "db66a5200b2e31ec1407b986e6e677929f5b1ae8e52793e01bfcb517c13c9e26",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pathsSha256": "4cd402e870f9f3e24e8de708d10b655241244c85fc9d558953ff912580f786e6",
+      "correctionSha256": "dbe221dbfd88b5545e398ee1f7441bf15bad849e3bb08714115d27c0c40655ef",
+      "generatedPathCount": 15,
+      "originalMediansExact": true,
+      "actualGeneratorMatch": true,
+      "wholeVideoFps": 2,
+      "wholeVideoFrames": 46,
+      "completedBySampleTimes": [
+        0.8,
+        1.9,
+        3,
+        4.5,
+        6,
+        7.2,
+        8.4,
+        9.8,
+        12.5,
+        14,
+        15.5,
+        17.2,
+        20.1,
+        21.1,
+        22.5
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "geometryRelations": [
+        {
+          "strokes": [
+            1,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            8,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.3323542266360324,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            11
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            1,
+            5
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7,
+          "inkGap": 2,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            6
+          ],
+          "expected": "gap",
+          "centerlineDistance": 10.04987562112089,
+          "inkGap": 5.04987562112089,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            7
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6,
+          "inkGap": 1,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            12
+          ],
+          "expected": "gap",
+          "centerlineDistance": 11.40175425099138,
+          "inkGap": 6.401754250991379,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            13
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7.220619288429357,
+          "inkGap": 2.220619288429357,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            14
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.351748087746986,
+          "inkGap": 1.3517480877469863,
+          "pass": true
+        },
+        {
+          "strokes": [
+            12,
+            13
+          ],
+          "expected": "gap",
+          "centerlineDistance": 11,
+          "inkGap": 6,
+          "pass": true
+        },
+        {
+          "strokes": [
+            13,
+            14
+          ],
+          "expected": "gap",
+          "centerlineDistance": 10.77032961426901,
+          "inkGap": 5.770329614269009,
+          "pass": true
+        },
+        {
+          "strokes": [
+            13,
+            15
+          ],
+          "expected": "gap",
+          "centerlineDistance": 10.816653826391969,
+          "inkGap": 5.816653826391969,
+          "pass": true
+        },
+        {
+          "strokes": [
+            14,
+            15
+          ],
+          "expected": "gap",
+          "centerlineDistance": 20.248456731316587,
+          "inkGap": 15.248456731316587,
+          "pass": true
+        }
+      ],
+      "completionTimeRechecks": [
+        {
+          "glyph": "慧",
+          "stroke": 9,
+          "previous": 11.9,
+          "completedBy": 12.5,
+          "row": "1723",
+          "additionalSampleTimes": [
+            11.7,
+            11.9,
+            12.1,
+            12.3,
+            12.5
+          ],
+          "sourceWidth": 240,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        }
+      ]
+    },
+    {
+      "glyph": "浩",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1733.mp4",
+        "sha256": "804d1113c7644169aae87f3e08cbdda60f51b9d02deab0259ab5197e222de053",
+        "bytes": 469393
+      },
+      "durationSeconds": 14.098,
+      "expectedStrokes": 10,
+      "chosenCorpus": "Ja",
+      "candidateStrokes": 10,
+      "originalMediansSha256": "004f4c16dc47de0fe60a581b4ddbb8d5556453d30861ed7d86ff51b5945c3142",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "pathsSha256": "09a47dd24c7a825ada9924a791c6d1225fd7c1a664d6d1de46f06005deb81e50",
+      "correctionSha256": "8fd98656447149e896e23b89c3a8899118d5cfc4760e0341f0f67e4afc799342",
+      "generatedPathCount": 10,
+      "originalMediansExact": true,
+      "actualGeneratorMatch": true,
+      "wholeVideoFps": 2,
+      "wholeVideoFrames": 28,
+      "completedBySampleTimes": [
+        0.8,
+        2,
+        3.5,
+        5,
+        6,
+        7.9,
+        9.8,
+        10.9,
+        12.4,
+        13.7
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "geometryRelations": [
+        {
+          "strokes": [
+            4,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.788854381999832,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            6
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            8,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.9761870601839528,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            8,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.21693045781865627,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            1,
+            4
+          ],
+          "expected": "gap",
+          "centerlineDistance": 13.73151322489785,
+          "inkGap": 8.73151322489785,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            3
+          ],
+          "expected": "gap",
+          "centerlineDistance": 10.63014581273465,
+          "inkGap": 5.63014581273465,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "expected": "gap",
+          "centerlineDistance": 9.219544457292887,
+          "inkGap": 4.219544457292887,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            7
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.324555320336759,
+          "inkGap": 1.324555320336759,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            9
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.833089172863602,
+          "inkGap": 1.8330891728636018,
+          "pass": true
+        }
+      ],
+      "completionTimeRechecks": [
+        {
+          "glyph": "浩",
+          "stroke": 4,
+          "previous": 4.8,
+          "completedBy": 5,
+          "row": "1733",
+          "additionalSampleTimes": [
+            4.8,
+            5,
+            5.2,
+            12.2,
+            12.4,
+            12.6,
+            12.8
+          ],
+          "sourceWidth": 240,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        },
+        {
+          "glyph": "浩",
+          "stroke": 9,
+          "previous": 12.2,
+          "completedBy": 12.4,
+          "row": "1733",
+          "additionalSampleTimes": [
+            4.8,
+            5,
+            5.2,
+            12.2,
+            12.4,
+            12.6,
+            12.8
+          ],
+          "sourceWidth": 240,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        }
+      ]
+    },
+    {
+      "glyph": "豪",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1736.mp4",
+        "sha256": "7175fa2db65f3a7f2530e39a7982bd88b5c5347ae7cc2e1bfd3fba8c899a7360",
+        "bytes": 633047
+      },
+      "durationSeconds": 19.315,
+      "expectedStrokes": 14,
+      "chosenCorpus": "Ja",
+      "candidateStrokes": 14,
+      "originalMediansSha256": "47de5d96e89d92e1a60aa5cdfa3439680bc1d35b986f803755331dfd257775a6",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "pathsSha256": "84bec906ad4f052cad5ac03ff3c36dba5cbdd16ad5f307955c1c343e2df3a9e1",
+      "correctionSha256": "5b46bbe101c856403b9d397f8cbf708875bce585ed8e10e431197537c3d6606d",
+      "generatedPathCount": 14,
+      "originalMediansExact": true,
+      "actualGeneratorMatch": true,
+      "wholeVideoFps": 2,
+      "wholeVideoFrames": 39,
+      "completedBySampleTimes": [
+        0.8,
+        2.3,
+        3.8,
+        4.8,
+        5.8,
+        7,
+        8.4,
+        9.9,
+        11,
+        13.8,
+        14.9,
+        16,
+        17.2,
+        19.1
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "geometryRelations": [
+        {
+          "strokes": [
+            1,
+            2
+          ],
+          "expected": "contact",
+          "centerlineDistance": 4.070180792227284,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.9578262852211515,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.21693045781865627,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.7427813527082074,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            8,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.1671607219845073,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 2.121320343559643,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            11
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.299867367239363,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            12
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.18569533817705186,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            13
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.8569533817705188,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 2.0426487199475707,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            13,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 2.23606797749979,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            4
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.887998263769251,
+          "inkGap": 1.8879982637692514,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            7
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7.1248421192624685,
+          "inkGap": 2.1248421192624685,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 5.798408745995521,
+          "inkGap": 0.7984087459955207,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "glyph": "胡",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1734.mp4",
+        "sha256": "a7c4dcf13902517772144e8cd1eb03203dc987491ca0f8aaa3a9bc9f32cc52e4",
+        "bytes": 485634
+      },
+      "durationSeconds": 14.731,
+      "expectedStrokes": 9,
+      "chosenCorpus": "Ja",
+      "candidateStrokes": 9,
+      "originalMediansSha256": "d9139558773f320fc4f05910640c33e4d218df9e639cde8d3fbcba4d906f5ffc",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pathsSha256": "9ee104ec071bdc6debfb40d11932ebe66cd1a957e03edaa2cc00af8c5e5936e4",
+      "correctionSha256": "fe4d10aaf37b97bc3997bb554f17cbb94a22cedf078fafc833b607e2f2bde27a",
+      "generatedPathCount": 9,
+      "originalMediansExact": true,
+      "actualGeneratorMatch": true,
+      "wholeVideoFps": 2,
+      "wholeVideoFrames": 30,
+      "completedBySampleTimes": [
+        1.2,
+        3.1,
+        4,
+        5.5,
+        6.3,
+        9.1,
+        12.1,
+        13.2,
+        14.5
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "geometryRelations": [
+        {
+          "strokes": [
+            1,
+            2
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 3.766500829338728,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.24253562503633297,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.9987523388778448,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.09987523388778448,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            1,
+            6
+          ],
+          "expected": "gap",
+          "centerlineDistance": 10.387024324329586,
+          "inkGap": 5.387024324329586,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            6
+          ],
+          "expected": "gap",
+          "centerlineDistance": 12.935483472729858,
+          "inkGap": 7.935483472729858,
+          "pass": true
+        }
+      ],
+      "completionTimeRechecks": [
+        {
+          "glyph": "胡",
+          "stroke": 4,
+          "previous": 5.3,
+          "completedBy": 5.5,
+          "row": "1734",
+          "additionalSampleTimes": [
+            5.1,
+            5.3,
+            5.5,
+            5.7
+          ],
+          "sourceWidth": 240,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        }
+      ]
+    },
+    {
+      "glyph": "虎",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1729.mp4",
+        "sha256": "4d9d645fb9f70f9af1f2d1c573cbaf7a63ec8c0fb2232d1af1a2fa90aec367d2",
+        "bytes": 407823
+      },
+      "durationSeconds": 11.848,
+      "expectedStrokes": 8,
+      "chosenCorpus": "Ja",
+      "candidateStrokes": 8,
+      "originalMediansSha256": "8f648a28abeb16c88bf81a380ead540c9a2cf223203e1ed78b456b54c5580955",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "pathsSha256": "3d3c29addd86b720ceafb34e586c16756d848bccb13c2e996dfabf2e5e67c9d2",
+      "correctionSha256": "72b74cf69e1a34c0c0114b94c4cc8b1c76812cdb3d3a38b2ed5f24744d2c9e3f",
+      "generatedPathCount": 8,
+      "originalMediansExact": true,
+      "actualGeneratorMatch": true,
+      "wholeVideoFps": 2,
+      "wholeVideoFrames": 24,
+      "completedBySampleTimes": [
+        0.6,
+        1.4,
+        3.2,
+        5.2,
+        6.2,
+        7.8,
+        9.2,
+        11.6
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "geometryRelations": [
+        {
+          "strokes": [
+            1,
+            2
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            1,
+            3
+          ],
+          "expected": "contact",
+          "centerlineDistance": 2.5043961347997645,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            6
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            6
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.976532089799345,
+          "inkGap": 1.9765320897993446,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            3
+          ],
+          "expected": "gap",
+          "centerlineDistance": 10.816653826391969,
+          "inkGap": 5.816653826391969,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            7
+          ],
+          "expected": "gap",
+          "centerlineDistance": 15.231546211727817,
+          "inkGap": 10.231546211727817,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 11,
+          "inkGap": 6,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 12,
+          "inkGap": 7,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            7
+          ],
+          "expected": "gap",
+          "centerlineDistance": 13.89960053482201,
+          "inkGap": 8.89960053482201,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "glyph": "惑",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1738.mp4",
+        "sha256": "6413317a00f14bee78466bbc1ef148fa2e49d1efbc230a01d2dd1e700065b044",
+        "bytes": 598234
+      },
+      "durationSeconds": 18.065,
+      "expectedStrokes": 12,
+      "chosenCorpus": "Ja",
+      "candidateStrokes": 12,
+      "originalMediansSha256": "1b1a9483991eb7b235a11477339d15de0ea92491a9ac144267982e6c124a7e35",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "pathsSha256": "c54a47c975d02f926178e85c87e2d1a52ec3a015582e8ea033dfc45dc1e69ce4",
+      "correctionSha256": "72517d715909403e2c5afcf7f6a8c87a87336bc2f750695c9369a88f031db0aa",
+      "generatedPathCount": 12,
+      "originalMediansExact": true,
+      "actualGeneratorMatch": true,
+      "wholeVideoFps": 2,
+      "wholeVideoFrames": 36,
+      "completedBySampleTimes": [
+        1.3,
+        2.6,
+        3.8,
+        4.5,
+        5.7,
+        9.5,
+        10.7,
+        11.9,
+        13.2,
+        15.9,
+        16.9,
+        17.8
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "geometryRelations": [
+        {
+          "strokes": [
+            1,
+            6
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            3
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.4497190133975168,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.97439119569462,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            1,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.090199468098936,
+          "inkGap": 3.0901994680989358,
+          "pass": true
+        },
+        {
+          "strokes": [
+            1,
+            3
+          ],
+          "expected": "gap",
+          "centerlineDistance": 9.791431516767146,
+          "inkGap": 4.791431516767146,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            5
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.461623427559643,
+          "inkGap": 1.4616234275596431,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            7
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.516946235415336,
+          "inkGap": 1.516946235415336,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            10
+          ],
+          "expected": "gap",
+          "centerlineDistance": 9.055385138137417,
+          "inkGap": 4.055385138137417,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            11
+          ],
+          "expected": "gap",
+          "centerlineDistance": 10.04987562112089,
+          "inkGap": 5.04987562112089,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            12
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7.810249675906656,
+          "inkGap": 2.8102496759066558,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            12
+          ],
+          "expected": "gap",
+          "centerlineDistance": 16.492422502470642,
+          "inkGap": 11.492422502470642,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            12
+          ],
+          "expected": "gap",
+          "centerlineDistance": 9.203157784562165,
+          "inkGap": 4.2031577845621655,
+          "pass": true
+        }
+      ],
+      "completionTimeRechecks": [
+        {
+          "glyph": "惑",
+          "stroke": 3,
+          "previous": 3.6,
+          "completedBy": 3.8,
+          "row": "1738",
+          "additionalSampleTimes": [
+            3.4,
+            3.6,
+            3.8,
+            4
+          ],
+          "sourceWidth": 240,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        }
+      ]
+    },
+    {
+      "glyph": "魂",
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1742.mp4",
+        "sha256": "38e87af8d642065e10819636972cf45a7a570cf94ee3ec53dd0918441513edb4",
+        "bytes": 705442
+      },
+      "durationSeconds": 20.198,
+      "expectedStrokes": 14,
+      "chosenCorpus": "Ja",
+      "candidateStrokes": 14,
+      "originalMediansSha256": "a769efc42032a266868e1ed6d3438a8881f47d2cc033ead4b8e4a05dad053837",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "pathsSha256": "62ce5ec52d8d371d983547d976b034dbef253deaedfef7cb6f160650dbd6686c",
+      "correctionSha256": "698373c07e69586c2c73f572f266641aed5dc6b529f6380a9f8bbf918d8df126",
+      "generatedPathCount": 14,
+      "originalMediansExact": true,
+      "actualGeneratorMatch": true,
+      "wholeVideoFps": 2,
+      "wholeVideoFrames": 40,
+      "completedBySampleTimes": [
+        1.2,
+        2.5,
+        4.4,
+        5.5,
+        6.6,
+        7.8,
+        9.5,
+        10.4,
+        11.6,
+        12.1,
+        14.2,
+        17.1,
+        19,
+        19.9
+      ],
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "geometryRelations": [
+        {
+          "strokes": [
+            2,
+            3
+          ],
+          "expected": "contact",
+          "centerlineDistance": 4.865217860238759,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 4.395538046358049,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            5,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 2.983286778035259,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.8049844718999243,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.8049844718999244,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.28066816183499266,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 3.0503269303506584,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            8,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            9,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.042485928866208694,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            6,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            7,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.3742242157799906,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            11
+          ],
+          "expected": "contact",
+          "centerlineDistance": 2.8040713051697765,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            10,
+            12
+          ],
+          "expected": "contact",
+          "centerlineDistance": 3.526332095895325,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            13,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 3.3489378339086286,
+          "inkGap": 0,
+          "pass": true
+        },
+        {
+          "strokes": [
+            2,
+            6
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.171547617899419,
+          "inkGap": 1.171547617899419,
+          "pass": true
+        },
+        {
+          "strokes": [
+            3,
+            11
+          ],
+          "expected": "gap",
+          "centerlineDistance": 14.62235541929886,
+          "inkGap": 9.62235541929886,
+          "pass": true
+        },
+        {
+          "strokes": [
+            4,
+            11
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7.5366325288897205,
+          "inkGap": 2.5366325288897205,
+          "pass": true
+        },
+        {
+          "strokes": [
+            11,
+            12
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8,
+          "inkGap": 3,
+          "pass": true
+        },
+        {
+          "strokes": [
+            12,
+            13
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6,
+          "inkGap": 1,
+          "pass": true
+        },
+        {
+          "strokes": [
+            12,
+            14
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.809729348006677,
+          "inkGap": 1.8097293480066767,
+          "pass": true
+        }
+      ],
+      "completionTimeRechecks": [
+        {
+          "glyph": "魂",
+          "stroke": 1,
+          "previous": 0.8,
+          "completedBy": 1.2,
+          "row": "1742",
+          "additionalSampleTimes": [
+            0.8,
+            1,
+            1.2,
+            11.2,
+            11.4,
+            11.6,
+            18.6,
+            18.8,
+            19
+          ],
+          "sourceWidth": 220,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        },
+        {
+          "glyph": "魂",
+          "stroke": 9,
+          "previous": 11.2,
+          "completedBy": 11.6,
+          "row": "1742",
+          "additionalSampleTimes": [
+            0.8,
+            1,
+            1.2,
+            11.2,
+            11.4,
+            11.6,
+            18.6,
+            18.8,
+            19
+          ],
+          "sourceWidth": 220,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        },
+        {
+          "glyph": "魂",
+          "stroke": 13,
+          "previous": 18.6,
+          "completedBy": 19,
+          "row": "1742",
+          "additionalSampleTimes": [
+            0.8,
+            1,
+            1.2,
+            11.2,
+            11.4,
+            11.6,
+            18.6,
+            18.8,
+            19
+          ],
+          "sourceWidth": 220,
+          "reason": "Use the later independently viewed10fps sample with the painted stroke at its endpoint; sampled completion upper bound, not an exact pen-up time."
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

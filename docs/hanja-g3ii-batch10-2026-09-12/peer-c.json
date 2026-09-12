@@ -1,0 +1,1381 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch10",
+  "reviewedAt": "2026-09-12",
+  "reviewer": "Codex C independent peer reviewer",
+  "status": "passed",
+  "reviewFile": "review-root.json",
+  "reviewFileSha256": "00b97bb499a3eeafebebd32a7fcfbda22ab5cb4bc4b03b46f3141bc22086d62a",
+  "selectedGlyphs": [
+    "悔",
+    "獲",
+    "劃",
+    "橫"
+  ],
+  "summary": {
+    "characters": 4,
+    "strokes": 57,
+    "fullVideoFrames": 161,
+    "completedSamples": 57,
+    "cumulativeStages": 57,
+    "geometryChecks": 87,
+    "sourceFinals420": 4,
+    "sourceDetails700": 2
+  },
+  "method": "Independent fresh whole individual publisher MP4 bytes in RAM; inspect every decoded2fps frame, all57 completed-by samples at10fps and every actual generated cumulative stage width5 roundcaps/joins. Independently inspect420px final source for each glyph and700px final悔/獲. Fresh full Ko/Ja/MM corpus hashes and exact selected originals, plus actual textbookGeometry/textbookCorrectionSha256 exports, verified in a separate read-only process. No component-based order approval or inferred pen boundaries.",
+  "corpusVerification": [
+    {
+      "name": "ko",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "bytes": 1387824,
+      "total": 535,
+      "selected": 0,
+      "exactMatches": 0
+    },
+    {
+      "name": "ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957,
+      "total": 7007,
+      "selected": 2,
+      "exactMatches": 2
+    },
+    {
+      "name": "mm",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "bytes": 30778076,
+      "total": 9574,
+      "selected": 2,
+      "exactMatches": 2
+    }
+  ],
+  "entries": [
+    {
+      "glyph": "悔",
+      "status": "matched",
+      "strokes": 10,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1774.mp4",
+        "sha256": "6ed82cc4d5c2016a940147498a845e5298f67d9d3a718d27f0d88967ea8eef9d",
+        "bytes": 598732
+      },
+      "durationSeconds": 17.681,
+      "fullVideo": {
+        "fps": 2,
+        "totalFrames": 35,
+        "sampleTimes": [
+          0,
+          0.5,
+          1,
+          1.5,
+          2,
+          2.5,
+          3,
+          3.5,
+          4,
+          4.5,
+          5,
+          5.5,
+          6,
+          6.5,
+          7,
+          7.5,
+          8,
+          8.5,
+          9,
+          9.5,
+          10,
+          10.5,
+          11,
+          11.5,
+          12,
+          12.5,
+          13,
+          13.5,
+          14,
+          14.5,
+          15,
+          15.5,
+          16,
+          16.5,
+          17
+        ],
+        "allFramesViewed": true
+      },
+      "completedSamples": {
+        "fps": 10,
+        "times": [
+          0.9,
+          1.9,
+          4.6,
+          6.1,
+          7.3,
+          9.8,
+          13.1,
+          14.1,
+          15.2,
+          17.4
+        ],
+        "allViewed": true
+      },
+      "sourceFinal": {
+        "width": 420,
+        "time": 17.4,
+        "viewed": true
+      },
+      "sourceDetail": {
+        "width": 700,
+        "time": 17.4,
+        "viewed": true
+      },
+      "generatedCumulative": {
+        "stages": 10,
+        "strokeWidth": 5,
+        "linecap": "round",
+        "linejoin": "round",
+        "allVisuallyViewed": true
+      },
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "contactsAndGaps": "match"
+      },
+      "observation": "The whole source shows 忄 left dot, right dot, long vertical; then the top fall and horizontal; the lower two enclosing strokes; both isolated inner dots; finally the long crossing horizontal. Both inner dots have narrow white gaps around them in the independent700px source final. All10 output stages preserve those boundaries and gaps.",
+      "reproduction": {
+        "glyph": "悔",
+        "originalMediansSha256": "2f4d2566a2482518a8350b4df29f717963ef18e147b4013fd68a62b404c137dd",
+        "recipeSha256": "55e3eaf1fa725ae923b06f9b97e66a8e16dca72d77b742608cb7d42faeb28364",
+        "pathsSha256": "0ff3c1091a534d658be714bdebebea0cd1fbbd98e026510d7663b49995264d78",
+        "generatedPaths": 10,
+        "actualGeneratorMatches": true,
+        "recipeHashMatches": true,
+        "pathsHashMatches": true
+      },
+      "geometryChecks": [
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.4975,
+          "paintedEdgeGap": -3.5025,
+          "pass": true
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.1316,
+          "paintedEdgeGap": -3.8684,
+          "pass": true
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            6,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            7,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "expected": "gap",
+          "centerlineDistance": 10.8128,
+          "paintedEdgeGap": 5.8128,
+          "pass": true
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.1206,
+          "paintedEdgeGap": 1.1206,
+          "pass": true
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "expected": "gap",
+          "centerlineDistance": 9.0618,
+          "paintedEdgeGap": 4.0618,
+          "pass": true
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "expected": "gap",
+          "centerlineDistance": 11.5876,
+          "paintedEdgeGap": 6.5876,
+          "pass": true
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.8051,
+          "paintedEdgeGap": 3.8051,
+          "pass": true
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 5.8199,
+          "paintedEdgeGap": 0.8199,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            10
+          ],
+          "expected": "gap",
+          "centerlineDistance": 5.7344,
+          "paintedEdgeGap": 0.7344,
+          "pass": true
+        },
+        {
+          "pair": [
+            6,
+            9
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.0225,
+          "paintedEdgeGap": 1.0225,
+          "pass": true
+        },
+        {
+          "pair": [
+            7,
+            9
+          ],
+          "expected": "gap",
+          "centerlineDistance": 11.4546,
+          "paintedEdgeGap": 6.4546,
+          "pass": true
+        },
+        {
+          "pair": [
+            9,
+            10
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.3448,
+          "paintedEdgeGap": 1.3448,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            9
+          ],
+          "expected": "gap",
+          "centerlineDistance": 13.7084,
+          "paintedEdgeGap": 8.7084,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "glyph": "獲",
+      "status": "matched",
+      "strokes": 17,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1777.mp4",
+        "sha256": "db73b1b3a54ed7acd3d09579cc985e97aeabf8a2a398658e1c1acab78f848e37",
+        "bytes": 752308
+      },
+      "durationSeconds": 22.115,
+      "fullVideo": {
+        "fps": 2,
+        "totalFrames": 44,
+        "sampleTimes": [
+          0,
+          0.5,
+          1,
+          1.5,
+          2,
+          2.5,
+          3,
+          3.5,
+          4,
+          4.5,
+          5,
+          5.5,
+          6,
+          6.5,
+          7,
+          7.5,
+          8,
+          8.5,
+          9,
+          9.5,
+          10,
+          10.5,
+          11,
+          11.5,
+          12,
+          12.5,
+          13,
+          13.5,
+          14,
+          14.5,
+          15,
+          15.5,
+          16,
+          16.5,
+          17,
+          17.5,
+          18,
+          18.5,
+          19,
+          19.5,
+          20,
+          20.5,
+          21,
+          21.5
+        ],
+        "allFramesViewed": true
+      },
+      "completedSamples": {
+        "fps": 10,
+        "times": [
+          1.3,
+          4.7,
+          6.3,
+          7.2,
+          7.8,
+          8.7,
+          9.5,
+          10.3,
+          11.7,
+          12.5,
+          13.4,
+          14.4,
+          15.4,
+          16.4,
+          17.4,
+          19.9,
+          21.8
+        ],
+        "allViewed": true
+      },
+      "sourceFinal": {
+        "width": 420,
+        "time": 21.8,
+        "viewed": true
+      },
+      "sourceDetail": {
+        "width": 700,
+        "time": 21.8,
+        "viewed": true
+      },
+      "generatedCumulative": {
+        "stages": 17,
+        "strokeWidth": 5,
+        "linecap": "round",
+        "linejoin": "round",
+        "allVisuallyViewed": true
+      },
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "contactsAndGaps": "match"
+      },
+      "observation": "The full source shows17 strokes. Its upper four strokes are left vertical, left horizontal, right horizontal, right vertical. The dot below remains separate from both upper stems while touching the first inner horizontal. All three inner horizontals precede the central vertical; their left tips remain separate from the left wall, which meets the bottom bar. The two last strokes remain distinct and cross as shown.",
+      "reproduction": {
+        "glyph": "獲",
+        "originalMediansSha256": "e5452b8cc3f3489408c2276ee45b2593e5c307a02b2cfb73cb01469c0a0e9028",
+        "recipeSha256": "d579caa076e7ce3b6e90eb193f0e976a9409fb4761c2f6a902c815cccef76022",
+        "pathsSha256": "2e811f874b4f37220fa6868d439f9355153a73bf699c642364f7129f666425db",
+        "generatedPaths": 17,
+        "actualGeneratorMatches": true,
+        "recipeHashMatches": true,
+        "pathsHashMatches": true
+      },
+      "geometryChecks": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.7355,
+          "paintedEdgeGap": -4.2645,
+          "pass": true
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            6,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 2.432,
+          "paintedEdgeGap": -2.568,
+          "pass": true
+        },
+        {
+          "pair": [
+            9,
+            15
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            10,
+            11
+          ],
+          "expected": "contact",
+          "centerlineDistance": 2.0566,
+          "paintedEdgeGap": -2.9434,
+          "pass": true
+        },
+        {
+          "pair": [
+            11,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.2591,
+          "paintedEdgeGap": -4.7409,
+          "pass": true
+        },
+        {
+          "pair": [
+            12,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            13,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            14,
+            15
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.2054,
+          "paintedEdgeGap": -4.7946,
+          "pass": true
+        },
+        {
+          "pair": [
+            16,
+            17
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            3,
+            9
+          ],
+          "expected": "gap",
+          "centerlineDistance": 16.4803,
+          "paintedEdgeGap": 11.4803,
+          "pass": true
+        },
+        {
+          "pair": [
+            2,
+            9
+          ],
+          "expected": "gap",
+          "centerlineDistance": 14.2034,
+          "paintedEdgeGap": 9.2034,
+          "pass": true
+        },
+        {
+          "pair": [
+            4,
+            10
+          ],
+          "expected": "gap",
+          "centerlineDistance": 5.8873,
+          "paintedEdgeGap": 0.8873,
+          "pass": true
+        },
+        {
+          "pair": [
+            7,
+            10
+          ],
+          "expected": "gap",
+          "centerlineDistance": 5.622,
+          "paintedEdgeGap": 0.622,
+          "pass": true
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.5288,
+          "paintedEdgeGap": 3.5288,
+          "pass": true
+        },
+        {
+          "pair": [
+            9,
+            11
+          ],
+          "expected": "gap",
+          "centerlineDistance": 9.2418,
+          "paintedEdgeGap": 4.2418,
+          "pass": true
+        },
+        {
+          "pair": [
+            9,
+            12
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.9045,
+          "paintedEdgeGap": 3.9045,
+          "pass": true
+        },
+        {
+          "pair": [
+            9,
+            13
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.1373,
+          "paintedEdgeGap": 3.1373,
+          "pass": true
+        },
+        {
+          "pair": [
+            15,
+            16
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.0971,
+          "paintedEdgeGap": 1.0971,
+          "pass": true
+        },
+        {
+          "pair": [
+            5,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 9.3403,
+          "paintedEdgeGap": 4.3403,
+          "pass": true
+        },
+        {
+          "pair": [
+            4,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 5.3254,
+          "paintedEdgeGap": 0.3254,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            10
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.8057,
+          "paintedEdgeGap": 3.8057,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "glyph": "劃",
+      "status": "matched",
+      "strokes": 14,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1776.mp4",
+        "sha256": "9c8e32a2dfc837be13537bacad3d9836ca1c7b9c9f7b71b8123cf4142a8b292e",
+        "bytes": 726028
+      },
+      "durationSeconds": 20.065,
+      "fullVideo": {
+        "fps": 2,
+        "totalFrames": 40,
+        "sampleTimes": [
+          0,
+          0.5,
+          1,
+          1.5,
+          2,
+          2.5,
+          3,
+          3.5,
+          4,
+          4.5,
+          5,
+          5.5,
+          6,
+          6.5,
+          7,
+          7.5,
+          8,
+          8.5,
+          9,
+          9.5,
+          10,
+          10.5,
+          11,
+          11.5,
+          12,
+          12.5,
+          13,
+          13.5,
+          14,
+          14.5,
+          15,
+          15.5,
+          16,
+          16.5,
+          17,
+          17.5,
+          18,
+          18.5,
+          19,
+          19.5
+        ],
+        "allFramesViewed": true
+      },
+      "completedSamples": {
+        "fps": 10,
+        "times": [
+          1.7,
+          3,
+          4.1,
+          5.2,
+          7.3,
+          8.1,
+          9.1,
+          10.5,
+          11.2,
+          11.9,
+          12.7,
+          14.5,
+          15.9,
+          19.8
+        ],
+        "allViewed": true
+      },
+      "sourceFinal": {
+        "width": 420,
+        "time": 19.8,
+        "viewed": true
+      },
+      "generatedCumulative": {
+        "stages": 14,
+        "strokeWidth": 5,
+        "linecap": "round",
+        "linejoin": "round",
+        "allVisuallyViewed": true
+      },
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "contactsAndGaps": "match"
+      },
+      "observation": "The whole14-stroke video puts the long upper vertical after four upper strokes; the following horizontal precedes the lower enclosure. Inside田, the middle horizontal comes before the vertical. The final lower bar and two knife strokes are distinct. The generated enclosure joints, external gaps, and knife separation match the source.",
+      "reproduction": {
+        "glyph": "劃",
+        "originalMediansSha256": "1a00217ba778cd7007862cdc47a5407394ab850f819d1d6e7ad3a8e415fc221c",
+        "recipeSha256": "c31ece8c7c3f3291b4295032a1f401fe1c4478a46d69e12be60cf9ab552b0623",
+        "pathsSha256": "3411c35e8f581af2df7fe78acc661bf4b76154533ec464fdb0fdc2979b650f87",
+        "generatedPaths": 14,
+        "actualGeneratorMatches": true,
+        "recipeHashMatches": true,
+        "pathsHashMatches": true
+      },
+      "geometryChecks": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            3,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            4,
+            5
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.9735,
+          "paintedEdgeGap": -4.0265,
+          "pass": true
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            7,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            9
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.4602,
+          "paintedEdgeGap": -4.5398,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.1857,
+          "paintedEdgeGap": -4.8143,
+          "pass": true
+        },
+        {
+          "pair": [
+            9,
+            10
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            10,
+            11
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            7,
+            11
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.4086,
+          "paintedEdgeGap": -4.5914,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            11
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.0037,
+          "paintedEdgeGap": -4.9963,
+          "pass": true
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.0453,
+          "paintedEdgeGap": 3.0453,
+          "pass": true
+        },
+        {
+          "pair": [
+            4,
+            6
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.3679,
+          "paintedEdgeGap": 3.3679,
+          "pass": true
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7.1179,
+          "paintedEdgeGap": 2.1179,
+          "pass": true
+        },
+        {
+          "pair": [
+            11,
+            12
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7.0835,
+          "paintedEdgeGap": 2.0835,
+          "pass": true
+        },
+        {
+          "pair": [
+            2,
+            13
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.9354,
+          "paintedEdgeGap": 1.9354,
+          "pass": true
+        },
+        {
+          "pair": [
+            13,
+            14
+          ],
+          "expected": "gap",
+          "centerlineDistance": 14.8371,
+          "paintedEdgeGap": 9.8371,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            13
+          ],
+          "expected": "gap",
+          "centerlineDistance": 15.3013,
+          "paintedEdgeGap": 10.3013,
+          "pass": true
+        },
+        {
+          "pair": [
+            12,
+            14
+          ],
+          "expected": "gap",
+          "centerlineDistance": 11.6842,
+          "paintedEdgeGap": 6.6842,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "glyph": "橫",
+      "status": "matched",
+      "strokes": 16,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1778.mp4",
+        "sha256": "8110ec4103f42c9aabe7ea18bfa7f340ae3679ce242c0865d7202a379c23fcc3",
+        "bytes": 737260
+      },
+      "durationSeconds": 21.148,
+      "fullVideo": {
+        "fps": 2,
+        "totalFrames": 42,
+        "sampleTimes": [
+          0,
+          0.5,
+          1,
+          1.5,
+          2,
+          2.5,
+          3,
+          3.5,
+          4,
+          4.5,
+          5,
+          5.5,
+          6,
+          6.5,
+          7,
+          7.5,
+          8,
+          8.5,
+          9,
+          9.5,
+          10,
+          10.5,
+          11,
+          11.5,
+          12,
+          12.5,
+          13,
+          13.5,
+          14,
+          14.5,
+          15,
+          15.5,
+          16,
+          16.5,
+          17,
+          17.5,
+          18,
+          18.5,
+          19,
+          19.5,
+          20,
+          20.5
+        ],
+        "allFramesViewed": true
+      },
+      "completedSamples": {
+        "fps": 10,
+        "times": [
+          1.3,
+          4.4,
+          5.8,
+          6.7,
+          7.9,
+          8.7,
+          9.8,
+          10.7,
+          12.8,
+          14.4,
+          16,
+          16.8,
+          17.6,
+          18.4,
+          19.6,
+          20.9
+        ],
+        "allViewed": true
+      },
+      "sourceFinal": {
+        "width": 420,
+        "time": 20.9,
+        "viewed": true
+      },
+      "generatedCumulative": {
+        "stages": 16,
+        "strokeWidth": 5,
+        "linecap": "round",
+        "linejoin": "round",
+        "allVisuallyViewed": true
+      },
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match",
+        "contactsAndGaps": "match"
+      },
+      "observation": "The whole16-stroke video draws 木, the four upper甘strokes, then the long horizontal. Inside the lower enclosure the horizontal precedes the long central vertical, which starts at the upper long horizontal. The closing bottom and two detached falls follow. All wall contacts and the small gap before the left lower fall match the source.",
+      "reproduction": {
+        "glyph": "橫",
+        "originalMediansSha256": "76a82832a9c77fb4da1689fd8032f1f10053b0b1a8e78b80785af9e44fe0d9ad",
+        "recipeSha256": "083af131712a38e55eed3702530eb25a8a8de346da9e635a104c4ce9bdbbdd1f",
+        "pathsSha256": "620cfdf3218942967bf535219174d049c437d75275b33e84dd24b3e184ef9666",
+        "generatedPaths": 16,
+        "actualGeneratorMatches": true,
+        "recipeHashMatches": true,
+        "pathsHashMatches": true
+      },
+      "geometryChecks": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "expected": "contact",
+          "centerlineDistance": 1.0579,
+          "paintedEdgeGap": -3.9421,
+          "pass": true
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.3745,
+          "paintedEdgeGap": -4.6255,
+          "pass": true
+        },
+        {
+          "pair": [
+            5,
+            6
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            5,
+            7
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            6,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            7,
+            8
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            9,
+            13
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            10,
+            11
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            10,
+            12
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            10,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.0016,
+          "paintedEdgeGap": -4.9984,
+          "pass": true
+        },
+        {
+          "pair": [
+            11,
+            12
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.3607,
+          "paintedEdgeGap": -4.6393,
+          "pass": true
+        },
+        {
+          "pair": [
+            11,
+            13
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            11,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.2424,
+          "paintedEdgeGap": -4.7576,
+          "pass": true
+        },
+        {
+          "pair": [
+            12,
+            13
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0,
+          "paintedEdgeGap": -5,
+          "pass": true
+        },
+        {
+          "pair": [
+            13,
+            14
+          ],
+          "expected": "contact",
+          "centerlineDistance": 0.1022,
+          "paintedEdgeGap": -4.8978,
+          "pass": true
+        },
+        {
+          "pair": [
+            1,
+            5
+          ],
+          "expected": "gap",
+          "centerlineDistance": 11.4039,
+          "paintedEdgeGap": 6.4039,
+          "pass": true
+        },
+        {
+          "pair": [
+            4,
+            10
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.6678,
+          "paintedEdgeGap": 3.6678,
+          "pass": true
+        },
+        {
+          "pair": [
+            8,
+            9
+          ],
+          "expected": "gap",
+          "centerlineDistance": 6.5244,
+          "paintedEdgeGap": 1.5244,
+          "pass": true
+        },
+        {
+          "pair": [
+            9,
+            11
+          ],
+          "expected": "gap",
+          "centerlineDistance": 8.3025,
+          "paintedEdgeGap": 3.3025,
+          "pass": true
+        },
+        {
+          "pair": [
+            14,
+            15
+          ],
+          "expected": "gap",
+          "centerlineDistance": 5.4974,
+          "paintedEdgeGap": 0.4974,
+          "pass": true
+        },
+        {
+          "pair": [
+            14,
+            16
+          ],
+          "expected": "gap",
+          "centerlineDistance": 7.212,
+          "paintedEdgeGap": 2.212,
+          "pass": true
+        },
+        {
+          "pair": [
+            15,
+            16
+          ],
+          "expected": "gap",
+          "centerlineDistance": 13.3,
+          "paintedEdgeGap": 8.3,
+          "pass": true
+        },
+        {
+          "pair": [
+            2,
+            15
+          ],
+          "expected": "gap",
+          "centerlineDistance": 9.9725,
+          "paintedEdgeGap": 4.9725,
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "findings": [],
+  "errors": []
+}
