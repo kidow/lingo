@@ -31,34 +31,39 @@ export type LanguageTrack = {
    * 보조 표지다. 그래서 스크린리더에는 읽히지 않는다.
    */
   flag: string
+  /**
+   * 트리거·드롭다운에서 이모지 국기 대신 그리는 이미지 국기 코드
+   * (components/flags, flagcn.dev). 이모지는 debug 라벨에만 남는다
+   */
+  flagCode: string
   language: Language
 }
 
 /** 순서가 곧 드롭다운 순서다 */
-export type HanjaTrack = { id: 'hanja'; label: string; flag: string; language: null }
+export type HanjaTrack = { id: 'hanja'; label: string; flag: string; flagCode: string; language: null }
 export type Track = LanguageTrack | HanjaTrack
 
 export const LANGUAGE_TRACKS: LanguageTrack[] = [
   // 미국 ETS가 개발한 시험의 보조 표지다. TOEIC 듣기는 여러 영어권 발음을 사용한다
-  { id: 'toeic', label: 'TOEIC', flag: '🇺🇸', language: 'en' },
-  { id: 'jlpt', label: 'JLPT', flag: '🇯🇵', language: 'ja' },
-  { id: 'hsk', label: 'HSK', flag: '🇨🇳', language: 'zh' },
+  { id: 'toeic', label: 'TOEIC', flag: '🇺🇸', flagCode: 'us', language: 'en' },
+  { id: 'jlpt', label: 'JLPT', flag: '🇯🇵', flagCode: 'jp', language: 'ja' },
+  { id: 'hsk', label: 'HSK', flag: '🇨🇳', flagCode: 'cn', language: 'zh' },
   // HSK와 언어(zh)를 나눠 쓰는 첫 트랙이다 — 카드에 뭘 보여줄지는
   // lib/lang.ts의 TRACK_OVERRIDE가, 어느 낱말을 낼지는 lib/entries.ts의
   // tocfl 필터가 가른다. 대만 시험이라 국기도 따로다
-  { id: 'tocfl', label: 'TOCFL', flag: '🇹🇼', language: 'zh' },
-  { id: 'dele', label: 'DELE', flag: '🇪🇸', language: 'es' },
-  { id: 'delf', label: 'DELF·DALF', flag: '🇫🇷', language: 'fr' },
+  { id: 'tocfl', label: 'TOCFL', flag: '🇹🇼', flagCode: 'tw', language: 'zh' },
+  { id: 'dele', label: 'DELE', flag: '🇪🇸', flagCode: 'es', language: 'es' },
+  { id: 'delf', label: 'DELF·DALF', flag: '🇫🇷', flagCode: 'fr', language: 'fr' },
   // telc 공식 표기는 소문자지만 나머지 다섯이 두문자어라 혼자 소문자면 오타로 읽힌다
-  { id: 'telc', label: 'TELC', flag: '🇩🇪', language: 'de' },
+  { id: 'telc', label: 'TELC', flag: '🇩🇪', flagCode: 'de', language: 'de' },
   // TORFL은 러시아어 능력 시험(ТРКИ)의 영어 표기다
-  { id: 'torfl', label: 'TORFL', flag: '🇷🇺', language: 'ru' },
+  { id: 'torfl', label: 'TORFL', flag: '🇷🇺', flagCode: 'ru', language: 'ru' },
 ]
 
 export const LANGUAGE_TRACK_IDS = LANGUAGE_TRACKS.map((track) => track.id)
 export const TRACKS: Track[] = [
   ...LANGUAGE_TRACKS,
-  { id: 'hanja', label: '한능검', flag: '🇰🇷', language: null },
+  { id: 'hanja', label: '한능검', flag: '🇰🇷', flagCode: 'kr', language: null },
 ]
 export const TRACK_IDS = TRACKS.map((track) => track.id)
 

@@ -2,6 +2,7 @@
 
 import { ChevronDown } from 'lucide-react'
 import type { ReactNode } from 'react'
+import { Flag } from '@/components/flags/flag'
 import { SearchDrawer } from './search-drawer'
 import {
   DropdownMenu,
@@ -88,7 +89,7 @@ export function Header({
           >
             <span className="text-lg font-bold tracking-tight">{trackOf(track).label}</span>
             {/* 국기는 이름 뒤에 붙는 표지다 (lib/track.ts). 버튼 이름에는 안 섞인다 */}
-            <span aria-hidden className="text-lg leading-none">{trackOf(track).flag}</span>
+            <Flag code={trackOf(track).flagCode} decorative width={20} className="rounded-[2px]" />
             <ChevronDown className="size-4 text-sub" strokeWidth={2.5} aria-hidden />
           </DropdownMenuTrigger>
 
@@ -97,7 +98,7 @@ export function Header({
               value={track}
               onValueChange={(value) => onChange(value as TrackId)}
             >
-              {TRACKS.map(({ id, label, flag }) => (
+              {TRACKS.map(({ id, label, flagCode }) => (
                 // Base UI의 라디오 항목은 기본적으로 메뉴를 열어 둔다. 여러 개를
                 // 연달아 고르는 자리라면 맞지만 여기서는 하나를 고르면 끝이다
                 <DropdownMenuRadioItem key={id} value={id} closeOnClick className="text-[15px]">
@@ -106,7 +107,7 @@ export function Header({
                     스크린리더에는 읽히지 않는다 — "TOEIC 미국 국기"는 항목
                     이름이 아니다. 트리거에도 같은 표지가 선다
                   */}
-                  <span aria-hidden>{flag}</span>
+                  <Flag code={flagCode} decorative width={20} className="rounded-[2px]" />
                 </DropdownMenuRadioItem>
               ))}
             </DropdownMenuRadioGroup>
