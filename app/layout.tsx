@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { Toaster } from 'sonner'
-import { LocalOnlyGate } from '@/components/local-only-gate'
 import './globals.css'
 
 const TITLE = 'Lingo'
@@ -41,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
-        <LocalOnlyGate>{children}</LocalOnlyGate>
+        {children}
         {/* 복사했는지 알려 준다. 카드가 화면을 꽉 채우므로 위 가운데에 띄운다 */}
         <Toaster position="top-center" />
       </body>
