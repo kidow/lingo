@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "batch": 12,
+  "date": "2026-09-13",
+  "scope": "涼·戲28획 전체검토",
+  "inputQueue": "../hanja-g3ii-alternative-sources-2026-09-13/next-review-queue.json",
+  "inputQueueSha256": "355e9a744a232b75f364b21f810a6868b6b94c381fe6710c66f4d0631bdae3e5",
+  "baselineCommit": "0e9d365efab198be07994ee8a3534be5db8b8a0f",
+  "selected": [
+    {
+      "glyph": "涼",
+      "sourceGlyph": "凉",
+      "manifestRow": "0402",
+      "expectedStrokes": 11,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0402.mp4",
+        "sha256": "98245b38aedcc703f699727db50e29aedbbbfc96012f93e8cd628b9414b59a1d",
+        "bytes": 363041
+      }
+    },
+    {
+      "glyph": "戲",
+      "sourceGlyph": "戱",
+      "manifestRow": "1799",
+      "expectedStrokes": 17,
+      "sourceVideo": {
+        "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/1799.mp4",
+        "sha256": "1f52bb20f69100fc10ec1519e8ec458c88399ba863bae8900c957bba3c16731f",
+        "bytes": 765302
+      }
+    }
+  ],
+  "selectedCharacters": 2,
+  "selectedCatalogStrokes": 28,
+  "runtimeBefore": 1470,
+  "publisherBefore": 967,
+  "grade3IIBefore": 480,
+  "sharedFiles": [
+    {
+      "file": "scripts/hanja-stroke-textbook-review.json",
+      "sha256": "be7bd2d1914349036536e03a31ec0c7c31e85e6b66055c94c68253eb86ac7a6f",
+      "bytes": 2067469,
+      "count": 969
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.json",
+      "sha256": "2555c9154ae84dfc01428a4fa1ec06065337a55d6ac4c01ef75560a13b6c69bc",
+      "bytes": 1957905
+    },
+    {
+      "file": "scripts/hanja-stroke-source-forms.json",
+      "sha256": "7f48d7c7e943f9578285fb0ec42f185e38f4923eec2b04bacc88f2e9a8a10835",
+      "bytes": 992,
+      "count": 1
+    },
+    {
+      "file": "public/hanja-strokes/textbook-reviewed.json",
+      "sha256": "539fc3ef00671c213f5e50672cab7e2b36416059ac0c74eb241f1f97d3fc18dd",
+      "bytes": 1175665,
+      "count": 967
+    }
+  ],
+  "policy": [
+    "Preserve raw publisher labels 凉 and 戱; register only row-specific rendered-form observations.",
+    "Review every stroke's order, direction, boundaries, form, sampled completion bound, and generated geometry before approval.",
+    "Original source video stays in memory; only derived vector geometry and evidence metadata are checked in.",
+    "No foreign stroke-order equivalence or peer inspection is assumed."
+  ]
+}

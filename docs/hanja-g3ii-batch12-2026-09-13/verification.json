@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "batch": 12,
+  "date": "2026-09-13",
+  "status": "passed",
+  "scope": "Only 涼 and 戲 stroke data, source-form observations, binding regression tests, and batch review documents.",
+  "checks": [
+    {
+      "label": "hanja-tests",
+      "command": "node --test lib/hanja-strokes.test.ts lib/hanja-glyph.test.ts lib/hanja-stroke-source-forms.test.ts lib/hanja-stroke-splits.test.ts lib/hanja-stroke-textbook-authored.test.ts lib/hanja-component-geometry.test.ts lib/hanja-component-layout-integration.test.ts lib/hanja-stroke-textbook-build.test.ts lib/hanja-stroke-audit.test.ts lib/hanja-stroke-source-glyph.test.ts lib/hanja.test.ts lib/hanja-component-draft-review.test.ts lib/hanja-component-phase3.test.ts lib/hanja-stroke-textbook.test.ts lib/hanja-component-reviewed-parts.test.ts lib/hanja-component-layout.test.ts lib/hanja-stroke-textbook-corrections.test.ts lib/hanja-component-phase2.test.ts lib/hanja-component-synthesis.test.ts lib/hanja-stroke-display-corrections.test.ts",
+      "exitCode": 0,
+      "durationMs": 7495,
+      "result": {
+        "summary": [
+          "ℹ tests 135",
+          "ℹ pass 135",
+          "ℹ fail 0"
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "label": "typecheck",
+      "command": "pnpm run typecheck",
+      "exitCode": 0,
+      "durationMs": 20648,
+      "result": {
+        "passed": true
+      },
+      "stderr": "$ tsc --noEmit\n"
+    },
+    {
+      "label": "bundle-reproduction",
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "durationMs": 2054,
+      "result": {
+        "emittedCharacters": 969,
+        "runtimeApprovedCharacters": 1472,
+        "publishedBundleMatches": true,
+        "queue": {
+          "total": 971,
+          "pending": 0,
+          "matched": 969,
+          "conflict": 2
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "label": "production-build",
+      "command": "pnpm exec next build",
+      "exitCode": 0,
+      "durationMs": 31577,
+      "result": {
+        "compiledSuccessfully": true,
+        "staticPagesGenerated": 7
+      },
+      "summary": [
+        "▲ Next.js 16.3.3 (Turbopack)",
+        "✓ Running next.config.ts took 41ms",
+        "✓ Compiled successfully in 2.2s",
+        "✓ Generating static pages using 8 workers (7/7) in 513ms",
+        "Route (app)",
+        "┌ ○ /",
+        "├ ○ /_not-found",
+        "├ ○ /apple-icon.png",
+        "├ ○ /debug",
+        "├ ○ /icon.svg",
+        "└ ○ /manifest.webmanifest"
+      ],
+      "stderr": "",
+      "note": "Runs the same next build command as package.json build without rerunning the shared content prebuild generator."
+    }
+  ],
+  "dataAndEvidenceChecks": {
+    "allJsonParsed": true,
+    "authorPeerAndPublishedPathsAgree": true,
+    "independentPeerPassed2Characters28Strokes": true,
+    "independentAuditPinsValid": true,
+    "all28ActualGeneratedStatesViewed": true,
+    "existingDataPreservedAndCountsCorrect": true,
+    "remainingQueue18Characters230Strokes": true,
+    "localMarkdownLinksResolve": true,
+    "reviewSvgsContainNoEmbeddedSourceImages": true
+  },
+  "documentPins": [
+    {
+      "file": "README.md",
+      "sha256": "9375a19da86c9a1df0024a93d372e46eee9a1b31fd7650863b33dbcf48f2a0d1"
+    },
+    {
+      "file": "baseline.json",
+      "sha256": "e8a86a948db0c4f28c84d99e96bf52a06f62613cab4a7af3f45b61df81627bf4"
+    },
+    {
+      "file": "geometry-a.json",
+      "sha256": "65a74d7a5ed7c42c3e623253d476268f0b6a35cc7a1ba74fe4edea9bab8ae7d1"
+    },
+    {
+      "file": "geometry-c.json",
+      "sha256": "5931c0f25055c05d8cade45ae976cc461cae0cfca0217d693bd70bcf224a729d"
+    },
+    {
+      "file": "next-review-queue.json",
+      "sha256": "109007af8afcbfe65397a84cd22d15f38bb4f79c3908c4827f99fee1c9872e34"
+    },
+    {
+      "file": "peer-b.json",
+      "sha256": "05f9d7f986628365356485aa1e4a198c58c9718281611544bed453b7754face8"
+    },
+    {
+      "file": "peer-b.md",
+      "sha256": "c6e45b41e8193ddd19555021b0d06346c3b98fd36d82bc5eb362f150de406c01"
+    },
+    {
+      "file": "review-a.json",
+      "sha256": "09ce800fd6e9d5d01afb845bc0414c760ef801e1bbc387bd7411e8a04dbf27a2"
+    },
+    {
+      "file": "review-a.md",
+      "sha256": "0bbdcb21ddb038c50fe347f57484d008bb59eeabfafa3b713cd67906e780f2cc"
+    },
+    {
+      "file": "review-a.svg",
+      "sha256": "51aeaf5cd76219675cf3c60567b1e5eab882e71c65596adcc7786c9482e1ac5f"
+    },
+    {
+      "file": "review-audit-b.json",
+      "sha256": "b2459595161603e8933a10eef132b2c8d87d489fb5ea3263553577fe3237c615"
+    },
+    {
+      "file": "review-c.json",
+      "sha256": "3b6d10763993f225073cc40394b6d4f0ce846d944ca852a5d6ec5e6ed785e5c9"
+    },
+    {
+      "file": "review-c.md",
+      "sha256": "35957d4fa8eeb4f4996f100a47e3e205ed03b908e99e2d9b1062f876a53c2037"
+    },
+    {
+      "file": "review-c.svg",
+      "sha256": "2dea5f9608aeae87ad4c2ed0d3442f0fd467c9376ef3be3a1ad8eb719fdde5d8"
+    },
+    {
+      "file": "root-render-audit.json",
+      "sha256": "e1f8a8824ca463a2f7df619af81f1e48bebdf8f8866d3f310e04a3f6ce90360e"
+    },
+    {
+      "file": "root-source-audit.json",
+      "sha256": "0dbe694f62bc795a7efc2264c4c956b437915c51095f3bb26ded2db7e01d57fe"
+    },
+    {
+      "file": "runtime-audit.json",
+      "sha256": "7b705d1c2fe8a90405dbaecb15e8570506210fb6e1003a472f5e2d62590ea9fb"
+    }
+  ],
+  "codePins": [
+    {
+      "file": "scripts/hanja-stroke-textbook-review.json",
+      "sha256": "6ffa667a1a90cd64b6000c8879fb0a4a1d7ed2a1f1819158293bad1cbddd48dc"
+    },
+    {
+      "file": "scripts/hanja-stroke-textbook-corrections.json",
+      "sha256": "bffa4d8738a96f9f71fe1876031f57ceaa7f05718d036a98e2466baa751c9a59"
+    },
+    {
+      "file": "scripts/hanja-stroke-source-forms.json",
+      "sha256": "8d8facf69c0b8a9b9483621f9fcdd16d50170a2ace7045314bbfe08a5675cba3"
+    },
+    {
+      "file": "public/hanja-strokes/textbook-reviewed.json",
+      "sha256": "aed1c17aa0a024f21015b9fcfb5661d7bb14d878c73560944c3e8efa1b442b12"
+    },
+    {
+      "file": "lib/hanja-stroke-source-forms.test.ts",
+      "sha256": "6424a280b6335c256a3015430012122be5fba9b4e05d04f18cc5af1d18668cb2"
+    }
+  ],
+  "runtimeCounts": {
+    "catalog": 5978,
+    "runtime": 1472,
+    "unapplied": 4506,
+    "publisher": 969,
+    "grade3IITotal": 500,
+    "grade3IIApplied": 482,
+    "grade3IIRemaining": 18
+  },
+  "independentReviews": {
+    "strokePeer": "peer-b.json",
+    "sourceAndGeometryAudit": "review-audit-b.json",
+    "rootSource": "root-source-audit.json",
+    "rootRendering": "root-render-audit.json",
+    "finalReport": "Read-only README, next queue and runtime audit review by hanja_b9_a; no issues found."
+  },
+  "allPassed": true,
+  "errors": []
+}

@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "batch": 12,
+  "reviewedAt": "2026-09-13",
+  "reviewer": "B independent source and generator audit",
+  "status": "passed",
+  "scope": {
+    "characters": 2,
+    "catalogStrokes": 28,
+    "glyphs": [
+      "涼",
+      "戲"
+    ]
+  },
+  "documentPins": [
+    {
+      "file": "review-a.json",
+      "sha256": "09ce800fd6e9d5d01afb845bc0414c760ef801e1bbc387bd7411e8a04dbf27a2"
+    },
+    {
+      "file": "review-c.json",
+      "sha256": "3b6d10763993f225073cc40394b6d4f0ce846d944ca852a5d6ec5e6ed785e5c9"
+    },
+    {
+      "file": "baseline.json",
+      "sha256": "e8a86a948db0c4f28c84d99e96bf52a06f62613cab4a7af3f45b61df81627bf4"
+    },
+    {
+      "file": "peer-b.json",
+      "sha256": "05f9d7f986628365356485aa1e4a198c58c9718281611544bed453b7754face8"
+    }
+  ],
+  "sourceFormCodePins": [
+    {
+      "file": "scripts/hanja-stroke-source-forms.ts",
+      "sha256": "e3054c7091893c21e629df2f2c0066681eba46d58d0b86f6c3be573b2dfe72a8"
+    },
+    {
+      "file": "scripts/hanja-stroke-source-forms.json",
+      "sha256": "8d8facf69c0b8a9b9483621f9fcdd16d50170a2ace7045314bbfe08a5675cba3"
+    },
+    {
+      "file": "lib/hanja-stroke-source-forms.test.ts",
+      "sha256": "6424a280b6335c256a3015430012122be5fba9b4e05d04f18cc5af1d18668cb2"
+    }
+  ],
+  "method": "개별 한국 원문 영상과 실제 생성 경로를 직접 열람한 peer-b.json을 바탕으로 기록·원본 좌표 해시·보정 레시피·actual textbookGeometry 출력·source-form 연결을 독립 검증했다. 외국 필순이나 count 일치만으로 승인하지 않았다.",
+  "freshCorpora": [
+    {
+      "id": "Ko",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "status": 200,
+      "bytes": 1387824,
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "pinMatches": true,
+      "records": 535,
+      "selected": []
+    },
+    {
+      "id": "Ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "status": 200,
+      "bytes": 21862957,
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "pinMatches": true,
+      "records": 7007,
+      "selected": [
+        {
+          "glyph": "戲",
+          "strokes": 17,
+          "originalMediansSha256": "5e03025321765bf70336493852da42e718182eb3ce35246e59b4ff07ac4ff2ea"
+        },
+        {
+          "glyph": "涼",
+          "strokes": 11,
+          "originalMediansSha256": "a410749d637f0bdfeb72e3b94563d4bd2d8333b44418a5f20835dece825d0cab"
+        }
+      ]
+    },
+    {
+      "id": "MM",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "status": 200,
+      "bytes": 30778076,
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "pinMatches": true,
+      "records": 9574,
+      "selected": [
+        {
+          "glyph": "戲",
+          "strokes": 17,
+          "originalMediansSha256": "f4a43a8c766933f6250dbfe77e34861817276cf5c107be4ad5aa22e8b6e23c09"
+        },
+        {
+          "glyph": "涼",
+          "strokes": 11,
+          "originalMediansSha256": "d8d220c4e354e20a8617a9eb0fe3cb1413aa61a40e529f61d9f9480945a9ddce"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "glyph": "涼",
+      "checks": {
+        "sourceFormValidated": true,
+        "rawSourceGlyphPreserved": true,
+        "sourceVideoMatchesBaseline": true,
+        "candidateStrokesEqualsOriginal": true,
+        "originalMediansFreshExactHash": true,
+        "originalMedianPinMatches": true,
+        "generatedPathsExact": true,
+        "pathsSha256Matches": true,
+        "correctionSha256Matches": true,
+        "lineageExact": true,
+        "completeIdentityLineage": true,
+        "targetStrokeCount": true,
+        "allChecksMatch": true,
+        "completionSamplesPeerMatched": true,
+        "strictlyIncreasingCompletionBounds": true,
+        "authorFilePinMatches": true,
+        "authorSourceReferenceRawField": true,
+        "authorSourceReferenceObservedGlyph": true,
+        "authorSourceReferenceRow": true
+      },
+      "originalMediansSha256": "a410749d637f0bdfeb72e3b94563d4bd2d8333b44418a5f20835dece825d0cab",
+      "pathsSha256": "d5f9f6c082fc5bd842cf0f9cead71474c293a2bc93388fef6110adee90c2832b",
+      "correctionSha256": "6baa3eacf1ad2414899d30d18f229a68d26132276491217d1d5f4c1e3115456f",
+      "sourceFormCorrectionSha256": "223a2284b315446ffd51ad26aaa3dedc645d045eda8ef75a1abe857e8b2591b7"
+    },
+    {
+      "glyph": "戲",
+      "checks": {
+        "sourceFormValidated": true,
+        "rawSourceGlyphPreserved": true,
+        "sourceVideoMatchesBaseline": true,
+        "candidateStrokesEqualsOriginal": true,
+        "originalMediansFreshExactHash": true,
+        "originalMedianPinMatches": true,
+        "generatedPathsExact": true,
+        "pathsSha256Matches": true,
+        "correctionSha256Matches": true,
+        "lineageExact": true,
+        "completeIdentityLineage": true,
+        "targetStrokeCount": true,
+        "allChecksMatch": true,
+        "completionSamplesPeerMatched": true,
+        "strictlyIncreasingCompletionBounds": true,
+        "authorFilePinMatches": true,
+        "authorSourceReferenceRawField": true,
+        "authorSourceReferenceObservedGlyph": true,
+        "authorSourceReferenceRow": true
+      },
+      "originalMediansSha256": "f4a43a8c766933f6250dbfe77e34861817276cf5c107be4ad5aa22e8b6e23c09",
+      "pathsSha256": "601d88dc4cc6f2fefe51795d1d6ad7e7b2a87433353a4e9b015d765f631cb1f0",
+      "correctionSha256": "a0de69f036db6ed19952278a37fd8fd69f30850eafc07f343dff62b924fb070b",
+      "sourceFormCorrectionSha256": "81de2ec328c1dc5e0503f91b6fc23f4a52eec3cc45ea2e78e1c71d2d33e051f9"
+    }
+  ],
+  "sourceFormValidation": {
+    "api": "validateTextbookSourceForm",
+    "bothRecordsPassed": true,
+    "rawLabels": [
+      "凉",
+      "戱"
+    ],
+    "forms": [
+      {
+        "glyph": "涼",
+        "id": "vivasam-0402-rendered-ryang-v1",
+        "sha256": "223a2284b315446ffd51ad26aaa3dedc645d045eda8ef75a1abe857e8b2591b7",
+        "manifestRow": "0402",
+        "sourceVideoSha256": "98245b38aedcc703f699727db50e29aedbbbfc96012f93e8cd628b9414b59a1d"
+      },
+      {
+        "glyph": "戲",
+        "id": "vivasam-1799-rendered-hui-v1",
+        "sha256": "81de2ec328c1dc5e0503f91b6fc23f4a52eec3cc45ea2e78e1c71d2d33e051f9",
+        "manifestRow": "1799",
+        "sourceVideoSha256": "1f52bb20f69100fc10ec1519e8ec458c88399ba863bae8900c957bba3c16731f"
+      }
+    ]
+  },
+  "sourceReferenceSchemaNote": "저자 문서의 sourceReference는 설명용으로 raw sourceGlyph와 renderedGlyph/observedRenderedGlyph를 구분한다. published bundle sourceReference는 buildTextbookBundle이 record로부터 생성하는 별도 schema이며 glyph=raw label, formCorrection 및 formCorrectionSha256를 사용해야 한다. 이번 감사에서 설명용 reference를 published reference로 오인한 첫 내부 비교는 수정했으며, 저자 파일을 변경할 필요가 없었다.",
+  "tests": {
+    "command": "rtk proxy node --test lib/hanja-stroke-source-forms.test.ts",
+    "passed": 4,
+    "failed": 0,
+    "actuallyRunByReviewer": true,
+    "scope": "추가된 두 보정 기록의 영상·행·보정 ID/SHA 전이 거부와 미완성 geometry 승인 거부를 포함한 focused tests"
+  },
+  "visual": {
+    "wholeVideoFrames": 66,
+    "completedBySamples": 28,
+    "cumulativeGeneratedPaths": 28,
+    "generatedFinals": 2,
+    "numericalPairs": 191,
+    "see": "peer-b.json"
+  },
+  "resolvedGeometryFinding": {
+    "glyph": "戲",
+    "pair": "6/14",
+    "finalCenterlineDistance": 4.833218389437827,
+    "expected": "contact",
+    "result": "pass after source-backed correction"
+  },
+  "integrationBoundary": "이 문서의 passed는 두 저자 산출물과 독립 peer의 출처·geometry 정합성이다. shared registry 반영 뒤 public bundle의 sourceReference, 전체 runtime 검증·테스트·빌드·커밋은 root가 수행한다. B는 공유 코드/데이터나 Git을 변경하지 않았다.",
+  "errors": []
+}

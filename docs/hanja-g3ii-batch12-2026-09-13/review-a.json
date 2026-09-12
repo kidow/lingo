@@ -1,0 +1,801 @@
+{
+  "schemaVersion": 1,
+  "batch": 12,
+  "reviewedAt": "2026-09-13",
+  "owner": "a",
+  "scope": "Fixed 涼 1 character/catalog11 strokes.",
+  "inputSelectionSha256": "355e9a744a232b75f364b21f810a6868b6b94c381fe6710c66f4d0631bdae3e5",
+  "baseline": {
+    "head": "0e9d365efab198be07994ee8a3534be5db8b8a0f",
+    "runtime": 1470,
+    "publisher": 967,
+    "grade3II": 480,
+    "bundleSha256": "539fc3ef00671c213f5e50672cab7e2b36416059ac0c74eb241f1f97d3fc18dd"
+  },
+  "corpusVerification": [
+    {
+      "corpus": "Ko",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "bytes": 1387824,
+      "freshFullFetch": true,
+      "checkedAt": "2026-09-12T15:32:30.420505+00:00"
+    },
+    {
+      "corpus": "Ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "bytes": 21862957,
+      "freshFullFetch": true,
+      "checkedAt": "2026-09-12T15:32:30.420505+00:00"
+    },
+    {
+      "corpus": "MM",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "bytes": 30778076,
+      "freshFullFetch": true,
+      "checkedAt": "2026-09-12T15:32:30.420505+00:00"
+    }
+  ],
+  "method": "The exact individual publisher video determines form, order, direction and boundaries. Source-list label and rendered form remain distinct. Fresh complete corpora and videos stayed in RAM; no publisher media files were copied. Explicit corrected geometry was regenerated using the actual project function and visually inspected.",
+  "entries": [
+    {
+      "glyph": "涼",
+      "record": {
+        "glyph": "涼",
+        "expectedStrokes": 11,
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "sourceVideo": {
+          "url": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0402.mp4",
+          "sha256": "98245b38aedcc703f699727db50e29aedbbbfc96012f93e8cd628b9414b59a1d",
+          "bytes": 363041
+        },
+        "geometryCorrection": "vivasam-g3ii-b12-a-0402-v1",
+        "correctionSha256": "6baa3eacf1ad2414899d30d18f229a68d26132276491217d1d5f4c1e3115456f",
+        "pathsSha256": "d5f9f6c082fc5bd842cf0f9cead71474c293a2bc93388fef6110adee90c2832b",
+        "sourceGlyph": "凉",
+        "sourceFormCorrection": "vivasam-0402-rendered-ryang-v1",
+        "sourceFormCorrectionSha256": "223a2284b315446ffd51ad26aaa3dedc645d045eda8ef75a1abe857e8b2591b7",
+        "manifestRow": "0402",
+        "videoFilename": "0402 서늘할 량.mp4",
+        "candidateStrokes": 11,
+        "reviewedAt": "2026-09-13",
+        "reviewer": "Codex / hanja_b12_a",
+        "reviewMethod": "video-frame-sequence",
+        "durationSeconds": 10.981,
+        "strokeEndsSeconds": [
+          0.8,
+          1.6,
+          2.8,
+          3.5,
+          4.7,
+          5.6,
+          6.5,
+          7.3,
+          8.6,
+          9.5,
+          10.4
+        ],
+        "status": "matched",
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "비상교육 원문 목록 凉를 보존하며 0402 영상의 실제 자형 涼를 행·영상 해시 한정 관찰로 연결한다. 전체 2fps 22장 및 전체 10fps 110장, 11개 완료 표본, 원문 700px/420px를 직접 열람했다. 11획은 물변의 점·점·올림, 京의 점·가로·口 세 획·세로갈고리·왼빗금·오른빗금이다. Ja 원본 11획을 일대일 보존·연결하고 원문 기하로 보정했다. 실제 textbookGeometry의 모든 누적 상태와 420px 최종을 굵기5 roundcap/roundjoin으로 직접 확인했고 55쌍 접점/간격을 대조했다. 완료 시각은 10fps에서 관찰한 보수적 완료 상한이며 정확한 펜 이탈 시각이 아니다."
+      },
+      "sourceReference": {
+        "publisherId": "vivasam-high-2022",
+        "manifestRow": "0402",
+        "sourceGlyph": "凉",
+        "renderedGlyph": "涼",
+        "glyph": "涼",
+        "sourceFormCorrection": "vivasam-0402-rendered-ryang-v1",
+        "sourceFormCorrectionSha256": "223a2284b315446ffd51ad26aaa3dedc645d045eda8ef75a1abe857e8b2591b7",
+        "videoUrl": "https://viewer.vivasam.com/VS/HS/CHI/106502/QR/%5B%EB%B9%84%EC%83%81%EA%B5%90%EC%9C%A1%5D%20%EA%B3%A0%EB%93%B1_%ED%95%9C%EB%AC%B8_%ED%95%9C%EB%AC%B8%20%EA%B5%90%EC%9C%A1%EC%9A%A9%20%EA%B8%B0%EC%B4%88%20%ED%95%9C%EC%9E%90/media/video/0402.mp4",
+        "discovery": "목록의 凉와 실제 영상 涼의 차이를 행과 영상 SHA에 한정하여 기록한다. 일반 이체자 동등성이나 정규화 일치로 취급하지 않는다."
+      },
+      "recipe": {
+        "glyph": "涼",
+        "id": "vivasam-g3ii-b12-a-0402-v1",
+        "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "coordinateSystem": "viewBox100",
+        "sourceVideoSha256": "98245b38aedcc703f699727db50e29aedbbbfc96012f93e8cd628b9414b59a1d",
+        "originalMediansSha256": "a410749d637f0bdfeb72e3b94563d4bd2d8333b44418a5f20835dece825d0cab",
+        "strokes": [
+          {
+            "sourceStroke": 1,
+            "points": [
+              [
+                27,
+                10
+              ],
+              [
+                32,
+                13.5
+              ],
+              [
+                35.5,
+                17
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 2,
+            "points": [
+              [
+                19,
+                31.5
+              ],
+              [
+                24,
+                35.5
+              ],
+              [
+                28.5,
+                39
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 3,
+            "points": [
+              [
+                20.5,
+                76
+              ],
+              [
+                20,
+                72
+              ],
+              [
+                25,
+                60
+              ],
+              [
+                32.5,
+                49
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 4,
+            "points": [
+              [
+                53,
+                7.5
+              ],
+              [
+                58,
+                10
+              ],
+              [
+                62.5,
+                13
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 5,
+            "points": [
+              [
+                39.5,
+                28
+              ],
+              [
+                60.5,
+                24
+              ],
+              [
+                82,
+                21.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 6,
+            "points": [
+              [
+                44.5,
+                40
+              ],
+              [
+                46.5,
+                47
+              ],
+              [
+                49.5,
+                54.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 7,
+            "points": [
+              [
+                46.5,
+                40
+              ],
+              [
+                58,
+                37
+              ],
+              [
+                68.5,
+                35
+              ],
+              [
+                71.5,
+                36.5
+              ],
+              [
+                69.5,
+                49.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 8,
+            "points": [
+              [
+                49.5,
+                53
+              ],
+              [
+                60,
+                51
+              ],
+              [
+                71,
+                49.5
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 9,
+            "points": [
+              [
+                58.5,
+                53
+              ],
+              [
+                59.5,
+                62
+              ],
+              [
+                59.5,
+                83
+              ],
+              [
+                58.5,
+                87
+              ],
+              [
+                55.5,
+                84.5
+              ],
+              [
+                52,
+                82
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 10,
+            "points": [
+              [
+                43.5,
+                65
+              ],
+              [
+                42,
+                71.5
+              ],
+              [
+                38.5,
+                79
+              ]
+            ]
+          },
+          {
+            "sourceStroke": 11,
+            "points": [
+              [
+                70.5,
+                64
+              ],
+              [
+                76.5,
+                68.5
+              ],
+              [
+                81,
+                74
+              ],
+              [
+                83,
+                77
+              ]
+            ]
+          }
+        ],
+        "notes": "비상교육 0402 원문 표기는 凉이나 영상은 氵 세 획의 涼이다. 영상 전체 11획 순서를 따라 Ja 11획을 일대일 연결하며 좌표를 보정한다. 삼수변 점과 올림의 분리, 京 위점·가로와 口의 흰 간격, 口의 네 모서리 접촉, 아래 세로갈고리의 口 밑변 접촉과 좌우 빗금 분리를 원문에 맞춘다. 원본 Ja 좌표는 그대로 보존한다."
+      },
+      "originalMedians": [
+        [
+          [
+            210,
+            755
+          ],
+          [
+            297,
+            698
+          ],
+          [
+            313,
+            644
+          ]
+        ],
+        [
+          [
+            135,
+            540
+          ],
+          [
+            242,
+            445
+          ]
+        ],
+        [
+          [
+            132,
+            149
+          ],
+          [
+            177,
+            108
+          ],
+          [
+            297,
+            407
+          ]
+        ],
+        [
+          [
+            517,
+            819
+          ],
+          [
+            635,
+            754
+          ],
+          [
+            670,
+            699
+          ]
+        ],
+        [
+          [
+            351,
+            571
+          ],
+          [
+            812,
+            650
+          ],
+          [
+            909,
+            643
+          ]
+        ],
+        [
+          [
+            416,
+            470
+          ],
+          [
+            458,
+            427
+          ],
+          [
+            493,
+            306
+          ]
+        ],
+        [
+          [
+            470,
+            473
+          ],
+          [
+            716,
+            497
+          ],
+          [
+            742,
+            469
+          ],
+          [
+            684,
+            378
+          ]
+        ],
+        [
+          [
+            507,
+            320
+          ],
+          [
+            737,
+            355
+          ]
+        ],
+        [
+          [
+            575,
+            318
+          ],
+          [
+            608,
+            277
+          ],
+          [
+            599,
+            55
+          ],
+          [
+            570,
+            17
+          ],
+          [
+            481,
+            75
+          ]
+        ],
+        [
+          [
+            419,
+            243
+          ],
+          [
+            351,
+            70
+          ]
+        ],
+        [
+          [
+            702,
+            251
+          ],
+          [
+            829,
+            170
+          ],
+          [
+            875,
+            93
+          ]
+        ]
+      ],
+      "originalMediansSha256": "a410749d637f0bdfeb72e3b94563d4bd2d8333b44418a5f20835dece825d0cab",
+      "paths": [
+        "M27 10 L32 13.5 L35.5 17",
+        "M19 31.5 L24 35.5 L28.5 39",
+        "M20.5 76 L20 72 L25 60 L32.5 49",
+        "M53 7.5 L58 10 L62.5 13",
+        "M39.5 28 L60.5 24 L82 21.5",
+        "M44.5 40 L46.5 47 L49.5 54.5",
+        "M46.5 40 L58 37 L68.5 35 L71.5 36.5 L69.5 49.5",
+        "M49.5 53 L60 51 L71 49.5",
+        "M58.5 53 L59.5 62 L59.5 83 L58.5 87 L55.5 84.5 L52 82",
+        "M43.5 65 L42 71.5 L38.5 79",
+        "M70.5 64 L76.5 68.5 L81 74 L83 77"
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "candidateSelection": {
+        "chosen": "Ja",
+        "reason": "개별 한국 출판사 영상을 먼저 검토한 뒤 Ja와 MM의 11획 전체 순서가 같음을 확인했다. Ja의 간결한 11개 중선을 원본 계보로 선택하고, 영상과 다른 점 위치·올림 하단·口 비례·갈고리를 명시적 좌표로 보정했다.",
+        "alternatives": [
+          {
+            "corpus": "Ko",
+            "available": false,
+            "strokes": null
+          },
+          {
+            "corpus": "Ja",
+            "available": true,
+            "strokes": 11
+          },
+          {
+            "corpus": "MM",
+            "available": true,
+            "strokes": 11
+          }
+        ],
+        "originalNormalizedFinalsViewed": [
+          "Ja",
+          "MM"
+        ]
+      },
+      "strokeMap": [
+        {
+          "targetStroke": 1,
+          "sourceVideoStroke": 1,
+          "corpusStroke": 1,
+          "recipeStroke": 1,
+          "completedBySeconds": 0.8,
+          "motionSampleSeconds": 0.5,
+          "direction": "우하향 점",
+          "boundaryEvidence": "첫 먹선이 삼수변 위 점에서 시작하고 완성된다. 다음 먹선은 떨어진 중간 점에서 새로 시작한다.",
+          "geometryAdjustment": "영상의 짧은 점 길이·각도·위치를 반영한다.",
+          "targetPath": "M27 10 L32 13.5 L35.5 17"
+        },
+        {
+          "targetStroke": 2,
+          "sourceVideoStroke": 2,
+          "corpusStroke": 2,
+          "recipeStroke": 2,
+          "completedBySeconds": 1.6,
+          "motionSampleSeconds": 1.4,
+          "direction": "우하향 점",
+          "boundaryEvidence": "위 점과 떨어진 중간 점을 쓴다. 이어지는 올림획은 이 점 끝이 아닌 왼쪽 아래에서 시작한다.",
+          "geometryAdjustment": "첫 점보다 왼쪽 아래로 옮기고 올림획과의 간격을 유지한다.",
+          "targetPath": "M19 31.5 L24 35.5 L28.5 39"
+        },
+        {
+          "targetStroke": 3,
+          "sourceVideoStroke": 3,
+          "corpusStroke": 3,
+          "recipeStroke": 3,
+          "completedBySeconds": 2.8,
+          "motionSampleSeconds": 2.4,
+          "direction": "아래에서 오른쪽 위로 올림",
+          "boundaryEvidence": "왼쪽 아래에서 위로 올라가며 끝난다. 다음 획은 떨어진 京 위 점에서 새로 시작한다.",
+          "geometryAdjustment": "Ja 원본의 하단 선행 체크 모양을 영상에서 보이는 짧은 굽이 뒤 우상향 올림으로 보정한다. 획 수나 경계를 추가하지 않는다.",
+          "targetPath": "M20.5 76 L20 72 L25 60 L32.5 49"
+        },
+        {
+          "targetStroke": 4,
+          "sourceVideoStroke": 4,
+          "corpusStroke": 4,
+          "recipeStroke": 4,
+          "completedBySeconds": 3.5,
+          "motionSampleSeconds": 3.2,
+          "direction": "우하향 점",
+          "boundaryEvidence": "京 위 점을 쓴 뒤 아래 가로의 왼쪽 끝으로 이동한다. 두 먹선 사이에 흰 간격이 남는다.",
+          "geometryAdjustment": "京 위 점을 삼수변 위 점보다 오른쪽·조금 위에 놓고 긴 가로와 분리한다.",
+          "targetPath": "M53 7.5 L58 10 L62.5 13"
+        },
+        {
+          "targetStroke": 5,
+          "sourceVideoStroke": 5,
+          "corpusStroke": 5,
+          "recipeStroke": 5,
+          "completedBySeconds": 4.7,
+          "motionSampleSeconds": 4.3,
+          "direction": "왼쪽에서 오른쪽으로 약간 올라가는 가로",
+          "boundaryEvidence": "긴 가로를 오른쪽까지 쓴 뒤 떨어진 口 왼쪽 위로 이동한다.",
+          "geometryAdjustment": "원문의 약한 우상향 긴 가로와 아래 口 사이의 흰 간격을 반영한다.",
+          "targetPath": "M39.5 28 L60.5 24 L82 21.5"
+        },
+        {
+          "targetStroke": 6,
+          "sourceVideoStroke": 6,
+          "corpusStroke": 6,
+          "recipeStroke": 6,
+          "completedBySeconds": 5.6,
+          "motionSampleSeconds": 5.3,
+          "direction": "위에서 아래로 약간 오른쪽으로 기우는 세로",
+          "boundaryEvidence": "口 왼쪽 세로를 내려쓴 뒤 위쪽 가로 시작으로 이동한다. 다음 획은 이 세로의 아래 끝에서 연장되지 않는다.",
+          "geometryAdjustment": "원문의 口 왼쪽 세로 기울기와 윗변·밑변 접점을 반영한다.",
+          "targetPath": "M44.5 40 L46.5 47 L49.5 54.5"
+        },
+        {
+          "targetStroke": 7,
+          "sourceVideoStroke": 7,
+          "corpusStroke": 7,
+          "recipeStroke": 7,
+          "completedBySeconds": 6.5,
+          "motionSampleSeconds": 6.2,
+          "direction": "왼쪽→오른쪽 가로 뒤 같은 획으로 아래로 꺾음",
+          "boundaryEvidence": "口 윗변에서 오른쪽 모서리로 진행한 뒤 아래로 계속 꺾는다. 이 연속 경로는 한 획이며, 다음 먹선은 아래 왼쪽에서 새로 시작한다.",
+          "geometryAdjustment": "원문의 사다리꼴 口 윗변과 오른쪽 세로를 한 경로로 보정하고 양쪽 밑변 접점을 유지한다.",
+          "targetPath": "M46.5 40 L58 37 L68.5 35 L71.5 36.5 L69.5 49.5"
+        },
+        {
+          "targetStroke": 8,
+          "sourceVideoStroke": 8,
+          "corpusStroke": 8,
+          "recipeStroke": 8,
+          "completedBySeconds": 7.3,
+          "motionSampleSeconds": 6.9,
+          "direction": "왼쪽→오른쪽 아래 가로",
+          "boundaryEvidence": "口 아래 왼쪽에서 오른쪽까지 닫는다. 다음 획은 밑변 가운데 아래에서 시작한다.",
+          "geometryAdjustment": "口 아래 가로의 우상향 기울기와 양쪽 세로·아래 갈고리 시작 접점을 유지한다.",
+          "targetPath": "M49.5 53 L60 51 L71 49.5"
+        },
+        {
+          "targetStroke": 9,
+          "sourceVideoStroke": 9,
+          "corpusStroke": 9,
+          "recipeStroke": 9,
+          "completedBySeconds": 8.6,
+          "motionSampleSeconds": 8.1,
+          "direction": "아래로 내려간 뒤 왼쪽 위로 갈고리",
+          "boundaryEvidence": "口 밑변 가운데에서 내려가며 끝에서 왼쪽 위로 연속 갈고리한다. 다음 빗금은 떨어진 왼쪽 위에서 새로 시작한다.",
+          "geometryAdjustment": "口 밑변과 맞닿은 세로 시작, 아래의 짧은 왼쪽 위 갈고리, 양쪽 빗금과의 간격을 반영한다.",
+          "targetPath": "M58.5 53 L59.5 62 L59.5 83 L58.5 87 L55.5 84.5 L52 82"
+        },
+        {
+          "targetStroke": 10,
+          "sourceVideoStroke": 10,
+          "corpusStroke": 10,
+          "recipeStroke": 10,
+          "completedBySeconds": 9.5,
+          "motionSampleSeconds": 9.1,
+          "direction": "오른쪽 위→왼쪽 아래 빗금",
+          "boundaryEvidence": "아래 왼쪽 빗금을 내려쓴 뒤 떨어진 오른쪽 위로 이동한다.",
+          "geometryAdjustment": "원문의 독립된 아래 왼쪽 빗금 길이와 세로갈고리 간격을 반영한다.",
+          "targetPath": "M43.5 65 L42 71.5 L38.5 79"
+        },
+        {
+          "targetStroke": 11,
+          "sourceVideoStroke": 11,
+          "corpusStroke": 11,
+          "recipeStroke": 11,
+          "completedBySeconds": 10.4,
+          "motionSampleSeconds": 10,
+          "direction": "왼쪽 위→오른쪽 아래 빗금",
+          "boundaryEvidence": "아래 오른쪽 빗금을 내려쓰며 글자가 완성된다.",
+          "geometryAdjustment": "원문의 독립된 아래 오른쪽 빗금 길이·각도와 세로갈고리 간격을 반영한다.",
+          "targetPath": "M70.5 64 L76.5 68.5 L81 74 L83 77"
+        }
+      ],
+      "reviewEvidence": {
+        "overview": {
+          "fps": 2,
+          "frameCount": 22,
+          "sampleTimes": [
+            0,
+            0.5,
+            1,
+            1.5,
+            2,
+            2.5,
+            3,
+            3.5,
+            4,
+            4.5,
+            5,
+            5.5,
+            6,
+            6.5,
+            7,
+            7.5,
+            8,
+            8.5,
+            9,
+            9.5,
+            10,
+            10.5
+          ],
+          "width": 170,
+          "allFramesVisuallyInspected": true
+        },
+        "denseWholeVideo": {
+          "fps": 10,
+          "frameCount": 110,
+          "timeRangeSeconds": [
+            0,
+            10.9
+          ],
+          "chunks": [
+            [
+              0,
+              5.4
+            ],
+            [
+              5.5,
+              10.9
+            ]
+          ],
+          "width": 125,
+          "allFramesVisuallyInspected": true
+        },
+        "completedSamples": {
+          "fps": 10,
+          "verifiedCompletedByTimes": [
+            0.8,
+            1.6,
+            2.8,
+            3.5,
+            4.7,
+            5.6,
+            6.5,
+            7.3,
+            8.6,
+            9.5,
+            10.4
+          ],
+          "width": 220,
+          "allFinalSamplesVisuallyInspected": true
+        },
+        "sourceFinal": {
+          "time": 10.8,
+          "widths": [
+            700,
+            420
+          ],
+          "directlyViewed": true,
+          "view420": "RAM resize of the fresh700px source frame; media not persisted"
+        },
+        "generated": {
+          "generator": "textbookGeometry",
+          "checksumGenerator": "textbookCorrectionSha256",
+          "generatorFile": "scripts/hanja-stroke-textbook-corrections.ts",
+          "generatorFileSha256": "7cbf18ffe85fab362c0a29f8dfb00a4f140f3cdc676a082b7b44ccd12f78eb83",
+          "cumulativeStates": 11,
+          "strokeWidth": 5,
+          "linecap": "round",
+          "linejoin": "round",
+          "allCumulativeStatesViewed": true,
+          "finalWidth": 420,
+          "finalViewed": true
+        },
+        "geometryRelations": {
+          "file": "geometry-a.json",
+          "checked": 55,
+          "passed": 55,
+          "contacts": [
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "otherPairs": "gap"
+        },
+        "sourceVideoSha256MatchedAcrossAllFreshViews": true
+      },
+      "approvalStage": "author-review-complete-awaiting-independent-peer"
+    }
+  ],
+  "summary": {
+    "selectedCharacters": 1,
+    "selectedCatalogStrokes": 11,
+    "authorMatchedCharacters": 1,
+    "authorMatchedStrokes": 11,
+    "heldCharacters": [],
+    "sourceOverviewFrames": 22,
+    "sourceDenseFrames": 110,
+    "generatedCumulativeStates": 11,
+    "numericalRelationsChecked": 55,
+    "numericalRelationsPassed": 55,
+    "independentPeer": "pending"
+  }
+}

@@ -6,11 +6,12 @@ import { textbookSourceGlyph, type TextbookReviewRecord, type TextbookReviewRegi
 import { buildTextbookBundle, type TextbookManifest } from '../scripts/hanja-stroke-textbook-build.ts'
 import { CANDIDATE_SOURCE } from '../scripts/hanja-stroke-audit.ts'
 
-function fixture(): TextbookReviewRecord {
-  const form = TEXTBOOK_SOURCE_FORMS.find((entry) => entry.glyph === '祕')!
+function fixture(glyph = '祕'): TextbookReviewRecord {
+  const form = TEXTBOOK_SOURCE_FORMS.find((entry) => entry.glyph === glyph)!
   return { glyph: form.glyph, sourceGlyph: form.sourceGlyph, sourceFormCorrection: form.id,
     sourceFormCorrectionSha256: textbookSourceFormSha256(form), manifestRow: form.manifestRow,
-    videoFilename: form.videoFilename, expectedStrokes: 10, candidateStrokes: 10, status: 'pending',
+    videoFilename: form.videoFilename, expectedStrokes: form.expectedStrokes,
+    candidateStrokes: form.expectedStrokes, status: 'pending',
     sourceVideo: { url: new URL(`../media/video/${form.manifestRow}.mp4`, HANJA_TEXTBOOK_SOURCE.manifestUrl).href,
       sha256: form.sourceVideoSha256, bytes: form.sourceVideoBytes } }
 }
@@ -29,8 +30,23 @@ test('a rendered-glyph observation preserves the original label and binds the ex
   ]) assert.throws(() => textbookSourceGlyph({ ...record, ...change }), /rendered source form mismatch/)
 })
 
+test('涼 and 戲 observations cannot be transferred to another source video', () => {
+  const records = [fixture('涼'), fixture('戲')]
+  for (const [index, record] of records.entries()) {
+    assert.equal(textbookSourceGlyph(record), index === 0 ? '凉' : '戱')
+    const other = records[1 - index]
+    for (const change of [
+      { sourceFormCorrection: undefined, sourceFormCorrectionSha256: undefined },
+      { sourceGlyph: record.glyph },
+      { sourceVideo: other.sourceVideo },
+      { manifestRow: other.manifestRow, videoFilename: other.videoFilename },
+      { sourceFormCorrection: other.sourceFormCorrection, sourceFormCorrectionSha256: other.sourceFormCorrectionSha256 },
+    ]) assert.throws(() => textbookSourceGlyph({ ...record, ...change }), /rendered source form mismatch|NFC-compatible/)
+  }
+})
+
 test('similar meaning, known variants, and NFC alone cannot manufacture a video-form correction', () => {
-  for (const [glyph, sourceGlyph] of [['祕', '秘'], ['衛', '衞'], ['豊', '豐'], ['姉', '姊'], ['獎', '奬'], ['鍾', '鐘'], ['冊', '册']]) {
+  for (const [glyph, sourceGlyph] of [['祕', '秘'], ['涼', '凉'], ['戲', '戱'], ['衛', '衞'], ['豊', '豐'], ['姉', '姊'], ['獎', '奬'], ['鍾', '鐘'], ['冊', '册']]) {
     assert.throws(() => textbookSourceGlyph({ glyph, sourceGlyph }), /NFC-compatible/)
   }
   assert.equal(textbookSourceGlyph({ glyph: '更', sourceGlyph: '更' }), '更')
