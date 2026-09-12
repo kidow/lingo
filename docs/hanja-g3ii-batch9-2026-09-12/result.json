@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "batch": "g3ii-batch9",
+  "completedAt": "2026-09-12",
+  "status": "applied-with-holds",
+  "selectionSha256": "bba89ad8a93387735f2ac4db1441e949bc642798e23085abb00f620cde2796e6",
+  "inputSelectionSha256": "09581a03d6098b4fb8b21904913ea9947c5bde47371906acf85507c2a12377be",
+  "reviewedGlyphs": 50,
+  "selectedCatalogStrokes": 560,
+  "appliedGlyphs": 46,
+  "appliedStrokes": 509,
+  "newHolds": [
+    {
+      "glyph": "遷",
+      "expectedStrokes": 15,
+      "reason": "boundary-inconclusive"
+    },
+    {
+      "glyph": "追",
+      "expectedStrokes": 10,
+      "reason": "boundary-inconclusive"
+    },
+    {
+      "glyph": "透",
+      "expectedStrokes": 11,
+      "reason": "boundary-inconclusive"
+    },
+    {
+      "glyph": "弊",
+      "expectedStrokes": 15,
+      "observedStrokes": 14,
+      "reason": "source-count-conflict"
+    }
+  ],
+  "existingHolds": [
+    "奔",
+    "慈"
+  ],
+  "recipesAdded": 46,
+  "approvedOriginalStrokes": 507,
+  "splitGlyphs": [
+    "塔",
+    "荷"
+  ],
+  "peerReview": {
+    "glyphs": 24,
+    "catalogStrokes": 315,
+    "matchedGlyphs": 20,
+    "matchedStrokes": 264
+  },
+  "baseline": {
+    "runtime": 1389,
+    "publisher": 886,
+    "grade3II": 399
+  },
+  "after": {
+    "totalCharacters": 5978,
+    "runtime": 1435,
+    "publisher": 932,
+    "examinationBody": 503,
+    "remaining": 4543,
+    "grade3II": {
+      "applied": 445,
+      "total": 500,
+      "remaining": 55,
+      "percent": 89
+    },
+    "coveragePercent": 24
+  },
+  "previousBatchCommit": "6ef40ad1dd155b8d512d4ce0d590a3e6cf11dce8",
+  "publishedBundleSha256": "a24fd5cf803efda5e9ccc60d23cda6b353204aa494810437e04c329d464885eb",
+  "method": "Complete individual publisher videos and per-stroke sampled completion observations; actual width5 cumulative paths for proposals; independent24-character peer review. Unclear boundaries remain held instead of forced splits. Publisher-reference review is not examination-body certification.",
+  "nextRecommended": {
+    "glyphs": 30,
+    "strokes": 378,
+    "from": "恒",
+    "to": "稀",
+    "file": "next-review-queue.json"
+  },
+  "verification": "verification.json",
+  "preservation": "preservation.json",
+  "peerReviewFile": "peer-review.json",
+  "sourceAudit": "source-audit.json"
+}
