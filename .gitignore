@@ -12,6 +12,12 @@ output.mp3
 # audio make가 API 응답을 잠깐 떨궈 두는 자리
 .audio-tmp/
 
+# 발음. R2에 둔다 — 33,000개 476MB라 .git이 982MB까지 갔다 (AUDIO.md)
+# 로컬 파일은 지우지 않는다: pnpm audio도 /debug도 파일을 직접 본다
+public/audio/
+# pnpm audio sync 가 찍는 도장. pnpm check가 이보다 새로운 mp3를 센다
+.audio-synced
+
 # 내려받은 사전(CC-CEDICT). 결과만 content/에 들어간다
 .cache/
 

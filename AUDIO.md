@@ -239,22 +239,70 @@ public/audio/en/ex/spokesperson-1-4d81ee07a1b2.mp3
 mkdir -p public/audio/ja
 ```
 
-파일은 **레포에 커밋한다.** 개당 평균 12.7KB지만 개념당 7개(언어 수)라 지금
-**21,000개 · 261MB**다. 그래도 두는 이유는 **Vercel에 배포하기 때문**이다 — Git
-연동 배포는 빌드가 Vercel에서 돌고, 공개 문서에 정적 파일 개수 하드 캡이 없다.
-파일 개수 한도가 있는 호스팅으로 옮긴다면 그때 아래 절차로 밖으로 뺀다 —
-발음만 21,000개라 **Cloudflare Pages의 20,000개 한도는 이미 넘겼다.** Vercel에
-남는 이유가 이것이다.
+파일은 **레포에 커밋하지 않는다.** `.gitignore`가 `public/audio/`를 막는다.
+로컬에는 그대로 남는다 — `pnpm audio`도 `/debug` 점검도 파일을 직접 보기 때문이다.
+만든 뒤에는 **`pnpm audio sync`로 R2에 올린다.**
 
 ---
 
-## 밖으로 옮길 때 — S3 호환 어디든
+## 옮겼다 — R2 (2026-09-12)
 
-**지금은 하지 않는다.** 아래는 옮기기로 정했을 때의 절차다. 옮길 신호와 수치
-기준은 spec.md §4에 있다 — `.git` 500MB 초과 · 발음 전량 재생성을 정한 시점 ·
-파일 개수 한도가 있는 호스팅으로 이전.
+옮기기 전에는 레포에 뒀었다. Vercel이 Git 연동으로 빌드하고 정적 파일 개수
+하드 캡이 없어 버틸 수 있었다. 무너진 것은 `.git`이다 — **982MB**까지 갔고
+디스크 기준 기여도가 json 441MB · **mp3 400MB** · webp 44MB였다.
+spec.md §4가 잡은 신호(`.git` 500MB 초과)를 한참 넘긴 값이다.
 
-> 재생성은 **옮기고 나서** 한다. 저장소에 둔 채 20,000개를 다시 뽑으면
+> 참고로 발음만 33,000개라 **Cloudflare Pages의 20,000개 한도는 애초에 넘겼다.**
+> Vercel에 남는 이유가 이것이다.
+
+### 지금 상태
+
+| 무엇 | 값 |
+|---|---|
+| 버킷 | `lingo-audio` (`R2_REMOTE=r2:lingo-audio`) |
+| 공개 주소 | `https://pub-…r2.dev` — **Public Development URL** |
+| 낱말 | 33,155개 · 476MB |
+| 예문 | 아직 0개 (`<lang>/ex/`) |
+
+**용량 걱정은 없다.** R2 무료 티어는 저장 10 GB-month · 쓰기 100만/월 ·
+읽기 1,000만/월 · **egress 무료**다. 예문(95,796개 ≈ 4.3GB)까지 다 넣어도
+**약 5GB, 무료 한도의 절반**이다. 넘겨도 초과분이 GB당 월 $0.015다.
+
+### 커스텀 도메인은 아직 안 붙였다
+
+R2 커스텀 도메인은 **버킷과 같은 Cloudflare 계정의 zone**이어야 하는데
+`dongwook.kim`은 Vercel 네임서버에 있다. partial(CNAME) setup은 Business
+요금제 전용이라 쓸 수 없다. 그래서 지금은 r2.dev다.
+
+잃는 것은 둘뿐이다 — **엣지 캐시**(r2.dev는 Cloudflare Cache를 안 탄다)와
+**rate limit 보장**(문서가 숫자를 공개하지 않는다). 12KB mp3라 체감은 작다.
+
+붙이려면 이 순서다.
+
+1. Cloudflare에 `dongwook.kim`을 zone으로 추가하고 네임서버를 옮긴다 (무료)
+   — **기존 레코드를 먼저 전부 옮긴다.** apex A 2개 · `www` · 와일드카드 ·
+   그리고 **Daum 메일 MX 2개**. MX를 빠뜨리면 메일이 죽는다
+2. R2 → `lingo-audio` → Settings → Custom Domains → `audio.dongwook.kim`
+3. 붙인 뒤 **Public Development URL은 Disable** — 둘 다 열려 있으면 캐시가 우회된다
+4. Vercel 환경변수를 바꾸고 **재배포** (빌드 타임에 박힌다)
+
+### 히스토리에서 빼는 것은 아직 안 했다
+
+추적만 뗐으므로 `.git` 982MB는 그대로다. 빼면 mp3 400MB가 줄어 **약 580MB**가
+된다. 커밋 해시가 전부 바뀌므로 **같은 워크트리를 쓰는 다른 세션이 멈춘 때**
+해야 한다 (docs/concurrent-sessions.md).
+
+```bash
+git branch backup/pre-filter-$(date +%F) && git push origin backup/pre-filter-$(date +%F)
+pipx run git-filter-repo --path public/audio --invert-paths --force
+git push --force-with-lease origin main
+```
+
+---
+
+## 어떻게 올라가나 — S3 호환 어디든
+
+> 재생성은 **옮기고 나서** 한다. 저장소에 둔 채 33,000개를 다시 뽑으면
 > 히스토리에 사본이 한 벌 더 쌓이고, 그건 옮긴 뒤에도 사라지지 않는다.
 
 R2·Backblaze B2·S3 등 **S3 호환이면 무엇이든 된다.** 스크립트가 rclone에
@@ -293,6 +341,21 @@ R2_REMOTE=r2:lingo-audio
 pnpm audio sync
 ```
 
+**두 번 돈다.** 낱말과 예문은 이름 짓는 법이 달라 캐시 수명도 달라야 한다.
+
+| 무엇 | 이름 | 캐시 |
+|---|---|---|
+| 낱말 `<lang>/<slug>.mp3` | slug 고정 — 다시 뽑아도 주소가 같다 | `max-age=86400` (하루) |
+| 예문 `<lang>/ex/<slug>-<i>-<해시>.mp3` | 문장 해시가 이름에 있다 | `max-age=31536000, immutable` |
+
+> **소리를 바꾸면 하루를 기다린다.** 낱말은 주소가 그대로라 브라우저가 옛 것을
+> 하루까지 들고 있다. 급하면 강력 새로고침으로 먼저 확인한다. 예문은 이름이
+> 바뀌므로 이 문제가 없다.
+
+올리면 `.audio-synced` 도장이 찍힌다. 그보다 새로운 mp3가 있으면
+`pnpm check`가 **"발음 N개가 R2에 안 올라갔습니다"** 로 알려 준다 — 로컬에서는
+`public/`을 그대로 보므로 **안 올려도 내 화면에서는 멀쩡히 들린다.** 그게 위험하다.
+
 앱이 보는 주소는 **`NEXT_PUBLIC_AUDIO_BASE`** 가 정한다.
 
 | 어디 | 값 | 결과 |
@@ -301,6 +364,7 @@ pnpm audio sync
 | 배포 | `https://pub-xxxx.r2.dev` | `https://pub-xxxx.r2.dev/audio/ja/cat.mp3` |
 
 빌드 때 값이 박히므로 런타임 분기가 없다. 로컬과 배포가 같은 코드로 돈다.
+**배포 환경변수를 바꾸면 재배포해야 반영된다.**
 
 > 로컬에서 `out/`을 그대로 올려 배포한다면 `out/audio/`가 딸려 간다 —
 > `public/`에 파일이 남아 있어서다. 그 경우 지우고 올린다: `rm -rf out/audio`

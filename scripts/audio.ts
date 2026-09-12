@@ -407,7 +407,7 @@ function place(lang: Language, slug: string, source: string) {
 /**
  * 발음을 R2(또는 S3 호환 어디든)로 올린다.
  *
- * 발음은 저장소에 두지 않는다 — 14,448개 170MB라 clone과 배포가 그만큼
+ * 발음은 저장소에 두지 않는다 — 33,155개 476MB라 clone과 배포가 그만큼
  * 느려지고, 정적 호스팅의 배포당 파일 개수 한도에 먼저 걸린다. 파일은 로컬에
  * 남겨 둔다: `pnpm audio`도 /debug 점검도 파일을 직접 보기 때문이다.
  *
@@ -416,7 +416,17 @@ function place(lang: Language, slug: string, source: string) {
  *
  *   rclone config                       한 번, r2 리모트를 만든다
  *   R2_REMOTE=r2:lingo-audio            .env 에 적는다
+ *
+ * **두 번 돈다.** 낱말과 예문은 이름 짓는 법이 달라 캐시 수명도 달라야 한다.
+ *
+ *   낱말 `<lang>/<slug>.mp3`              slug 고정 — 다시 뽑아도 주소가 같다.
+ *                                         하루만 물린다. 안 그러면 소리를 바꿔도
+ *                                         옛 것이 계속 나온다 (AUDIO.md §다시 뽑기)
+ *   예문 `<lang>/ex/<slug>-<i>-<해시>.mp3`  문장 해시가 이름에 있다 (lib/entries.ts).
+ *                                         문장을 고치면 주소가 바뀌므로 영구 캐시가 안전하다
  */
+const SYNC_STAMP = '.audio-synced'
+
 function sync() {
   if (existsSync('.env')) process.loadEnvFile('.env')
 
@@ -437,19 +447,53 @@ function sync() {
   }
 
   const local = join('public', 'audio')
-  const count = readdirSync(local).reduce(
-    (sum, lang) => sum + readdirSync(join(local, lang)).length,
-    0,
-  )
+  const count = countAudio(local)
   console.log(`\n${local} → ${remote}/audio  (${count}개, 바뀐 것만 올라갑니다)\n${line(52)}`)
 
   // --checksum: 시각이 아니라 내용을 본다. 파일을 다시 뽑아도 내용이 같으면
   // 올리지 않는다 — 시각으로 보면 전량이 다시 올라간다
-  execFileSync('rclone', ['sync', local, `${remote}/audio`, '--checksum', '--transfers', '32', '--progress'], {
-    stdio: 'inherit',
-  })
+  const common = ['--checksum', '--transfers', '32', '--progress']
+
+  // 낱말. ex/ 를 빼고 올린다 — 빼지 않으면 예문이 하루짜리 캐시를 뒤집어쓴다
+  console.log('\n낱말')
+  execFileSync(
+    'rclone',
+    ['sync', local, `${remote}/audio`, '--exclude', '*/ex/**',
+      '--header-upload', 'Cache-Control: public, max-age=86400', ...common],
+    { stdio: 'inherit' },
+  )
+
+  // 예문. 이름에 해시가 있어 영구 캐시가 안전하다.
+  // --delete-excluded 를 안 쓰므로 위에서 올린 낱말은 지워지지 않는다
+  if (existsSync(join(local, 'ja', 'ex'))) {
+    console.log('\n예문')
+    execFileSync(
+      'rclone',
+      ['sync', local, `${remote}/audio`, '--include', '*/ex/**',
+        '--header-upload', 'Cache-Control: public, max-age=31536000, immutable', ...common],
+      { stdio: 'inherit' },
+    )
+  }
+
+  // 언제까지 올렸는지 남긴다. pnpm check 가 이보다 새로운 mp3를 세어 알려 준다
+  writeFileSync(SYNC_STAMP, '')
 
   console.log(`\n올렸습니다. 배포에서 쓰려면 NEXT_PUBLIC_AUDIO_BASE 에 공개 주소를 넣습니다`)
+}
+
+/** public/audio 아래 mp3 개수. ex/ 안쪽까지 센다 */
+function countAudio(local: string): number {
+  let n = 0
+  for (const lang of readdirSync(local)) {
+    const dir = join(local, lang)
+    if (!statSync(dir).isDirectory()) continue
+    for (const name of readdirSync(dir)) {
+      if (name === 'ex') {
+        n += readdirSync(join(dir, 'ex')).length
+      } else if (name.endsWith('.mp3')) n += 1
+    }
+  }
+  return n
 }
 
 function fail(message: string): never {

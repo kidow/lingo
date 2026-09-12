@@ -549,6 +549,35 @@ if (existsSync(audioRoot)) {
   }
 }
 
+/*
+ * 안 올라간 발음.
+ *
+ * 발음은 저장소가 아니라 R2에 있다 — 올리는 것은 `pnpm audio sync` 한 번이고,
+ * 그걸 잊으면 배포에서 그 소리만 조용히 404다. 로컬에서는 `public/audio/`를
+ * 그대로 보므로 **만든 사람 화면에서는 멀쩡히 들린다.** 그래서 눈에 안 띈다.
+ *
+ * R2와 개수를 대조하면 정확하지만 네트워크를 타 느리다. 대신 마지막 sync가
+ * 남긴 도장(`.audio-synced`)보다 새로운 mp3를 센다. 도장이 없으면 아직 한 번도
+ * 안 올린 것이니 말하지 않는다 — 옮기기 전 저장소에서는 그게 정상이다.
+ */
+const SYNC_STAMP = '.audio-synced'
+if (existsSync(SYNC_STAMP) && existsSync(audioRoot)) {
+  const syncedAt = statSync(SYNC_STAMP).mtimeMs
+  let stale = 0
+  for (const lang of readdirSync(audioRoot, { withFileTypes: true })) {
+    if (!lang.isDirectory()) continue
+    const dirs = [join(audioRoot, lang.name), join(audioRoot, lang.name, 'ex')]
+    for (const dir of dirs) {
+      if (!existsSync(dir)) continue
+      for (const file of readdirSync(dir)) {
+        if (!file.endsWith('.mp3')) continue
+        if (statSync(join(dir, file)).mtimeMs > syncedAt) stale += 1
+      }
+    }
+  }
+  if (stale > 0) warn(`발음 ${stale}개가 R2에 안 올라갔습니다 — pnpm audio sync`)
+}
+
 // 4지선다는 같은 category에서 오답 3개를 뽑는다. 모자라면 전체 풀로 넓혀야 한다
 for (const [category, count] of Object.entries(perCategory)) {
   if (count > 0 && count < MIN_PER_CATEGORY)
