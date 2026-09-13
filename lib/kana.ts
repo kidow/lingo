@@ -76,10 +76,24 @@ const ROMAJI_OVERRIDE: Record<string, string> = {
  * | `ヲ` | 가타카나 조사인데 현대 일본어는 조사를 히라가나로만 쓴다 |
  * | `ヂ`·`ヅ` | 옛 표기(`ラヂオ`)에만 남아 있다 |
  * | `みゅ`·`ピャ`·`ぴゅ` | 사전 조회에서 **한 건도 안 나온다** (고유명사까지 포함해서) |
+ * | 요음 열하나 | 걸리는 것이 고유명사(`ピョンヤン`)·생물학 표기(`ヒョウ`)·전문어(`ごびゅう`)뿐이다 |
+ *
+ * 요음 쪽은 Jisho의 `is_common`과 JLPT 태그로 갈랐다. 기억으로 적으면 근거가
+ * 없어서다 — 실제로 한 번 틀렸다. 「`ヒョ`에는 `ヒョウ`(표범)가 있다」고 적었는데
+ * 豹의 읽기는 히라가나 `ひょう`고 가타카나는 생물학 표기다.
+ *
+ * **`ギョ`가 아까운 자리다.** `ギョーザ`는 흔한 낱말인데 콘텐츠가 그 개념을
+ * 히라가나 `ぎょうざ`로 적어 두었다. 한 개념에 읽기를 둘 둘 수 없어 못 쓴다.
  *
  * 히라가나 `ぢ`·`づ`는 남는다. `ちぢむ`·`てつづき`처럼 실제로 쓰는 자리가 있다.
  */
-const UNUSED = new Set(['kata:wo', 'kata:dji', 'kata:dzu', 'hira:myu', 'kata:pya', 'hira:pyu'])
+const UNUSED = new Set([
+  'kata:wo', 'kata:dji', 'kata:dzu',
+  // 요음 — 사전에 보통 낱말이 없다
+  'hira:myu', 'kata:pya', 'hira:pyu',
+  'kata:kyo', 'kata:hya', 'hira:hyu', 'kata:hyo', 'kata:myo',
+  'kata:rya', 'kata:gyo', 'kata:bya', 'hira:byu', 'kata:byo', 'kata:pyo',
+])
 
 /** 히라가나를 가타카나로. 두 벌의 배열이 같아서 상수 덧셈으로 끝난다 */
 export const toKatakana = (text: string) =>
@@ -129,7 +143,7 @@ function parse(spec: string, kind: KanaKind): KanaUnit[] {
   })
 }
 
-/** 104마디. 쓰지 않는 표기 여섯을 빼면 카드는 202장이다 */
+/** 104마디. 쓰지 않는 표기 열일곱을 빼면 카드는 191장이다 */
 export const KANA_TABLE: KanaUnit[] = [
   ...parse(SEI, 'sei'),
   ...parse(DAKU, 'daku'),
@@ -164,7 +178,7 @@ export type KanaExamples = Record<string, Partial<Record<KanaScript, string[]>>>
  * 데 시간이 들고 시트로 한 번 훑은 것이라 버릴 이유가 없다. 여기 이름이
  * 오르는 날 그대로 선다.
  */
-export const KANA_OPEN: readonly KanaKind[] = ['sei', 'daku']
+export const KANA_OPEN: readonly KanaKind[] = ['sei', 'daku', 'yoon']
 
 /** 초안이 채우려는 예시 수. 모자라도 아래 최소만 넘으면 카드는 선다 */
 export const EXAMPLES_PER_CARD = 3

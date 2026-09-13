@@ -37,17 +37,18 @@ const full: KanaExamples = Object.fromEntries(
   ]),
 )
 
-test('도표는 104마디이고 쓰지 않는 표기 여섯이 빠져 202장이다', () => {
+test('도표는 104마디이고 쓰지 않는 표기 열일곱이 빠져 191장이다', () => {
   assert.equal(KANA_TABLE.length, 104)
   assert.equal(new Set(KANA_TABLE.map((unit) => unit.id)).size, 104)
 
   const glyphs = KANA_TABLE.flatMap((unit) =>
     KANA_SCRIPTS.map((script) => glyphOf(unit, script)).filter(Boolean),
   )
-  assert.equal(glyphs.length, 202)
-  // 현대 일본어가 쓰지 않는 표기 — 사전에 낱말이 없다
-  for (const id of ['wo', 'dji', 'dzu', 'pya']) assert.equal(kanaUnit(id).kata, null, id)
-  for (const id of ['myu', 'pyu']) assert.equal(kanaUnit(id).hira, null, id)
+  assert.equal(glyphs.length, 191)
+  // 현대 일본어가 쓰지 않는 표기 — 사전에 보통 낱말이 없다
+  for (const id of ['wo', 'dji', 'dzu', 'pya', 'kyo', 'hya', 'hyo', 'myo', 'rya', 'gyo', 'bya', 'byo', 'pyo'])
+    assert.equal(kanaUnit(id).kata, null, id)
+  for (const id of ['myu', 'pyu', 'hyu', 'byu']) assert.equal(kanaUnit(id).hira, null, id)
   // **짝까지 지우지 않는다.** みゅ는 비어도 ミュ에는 ミュージック이 있다
   assert.equal(kanaUnit('myu').kata, 'ミュ')
   assert.equal(kanaUnit('pyu').kata, 'ピュ')
@@ -56,10 +57,10 @@ test('도표는 104마디이고 쓰지 않는 표기 여섯이 빠져 202장이�
   assert.equal(kanaUnit('dji').hira, 'ぢ')
   assert.equal(kanaUnit('dzu').hira, 'づ')
   // 한 글자가 두 마디에 겹치면 4지선다에서 정답이 둘이 된다
-  assert.equal(new Set(glyphs).size, 202)
+  assert.equal(new Set(glyphs).size, 191)
 
   const ALL = ['sei', 'daku', 'yoon'] as const
-  assert.equal(kanaEntries(full, KANA_TABLE, ALL).length, 202 * KANA_SKILLS.length)
+  assert.equal(kanaEntries(full, KANA_TABLE, ALL).length, 191 * KANA_SKILLS.length)
 })
 
 test('가타카나는 히라가나에서 유도한다', () => {
@@ -193,23 +194,24 @@ test('content/kana.json의 예시가 실제 개념이고 그 글자를 품는다
 })
 
 test('연 갈래에는 구멍이 없다', () => {
-  assert.deepEqual([...KANA_OPEN], ['sei', 'daku'])
+  assert.deepEqual([...KANA_OPEN], ['sei', 'daku', 'yoon'])
 
   // 연 갈래는 **한 마디도 빠지지 않아야** 한다. 격자는 빠진 자리가 보인다
   for (const unit of KANA_TABLE.filter((item) => KANA_OPEN.includes(item.kind)))
     for (const script of KANA_SCRIPTS)
       if (glyphOf(unit, script))
-        assert.equal(
-          examples[unit.id]?.[script]?.length,
-          exampleQuota(script, unit.id),
+        assert.ok(
+          (examples[unit.id]?.[script]?.length ?? 0) >= exampleQuota(script, unit.id),
           `${glyphOf(unit, script)} 가 비었다`,
         )
 
-  assert.equal(kanaEntries(examples).length, (91 + 48) * KANA_SKILLS.length)
+  assert.equal(kanaEntries(examples).length, (91 + 48 + 52) * KANA_SKILLS.length)
 })
 
-test('안 연 갈래는 카드가 되지 않는다', () => {
-  // 요음은 아직 초안도 없다. 열린 것만 카드가 된다 (lib/kana.ts)
+test('세 갈래가 다 열렸다', () => {
   for (const entry of kanaEntries(examples)) assert.ok(KANA_OPEN.includes(entry.unit.kind))
-  assert.ok(!KANA_OPEN.includes('yoon'))
+  // 요음은 예시가 하나뿐인 카드가 많다. 그래도 카드는 선다 (MIN_BY_KIND)
+  const yoon = kanaEntries(examples).filter((entry) => entry.unit.kind === 'yoon')
+  assert.ok(yoon.some((entry) => entry.examples.length === 1))
+  assert.ok(yoon.every((entry) => entry.examples.length >= 1))
 })
