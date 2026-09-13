@@ -1,6 +1,7 @@
 import { fsrs, Rating } from 'ts-fsrs'
 import type { Entry } from './entries.ts'
 import { buildHanjaChoice, hanjaKey, isHanja, type HanjaEntry } from './hanja.ts'
+import { buildKanaChoice, isKana } from './kana.ts'
 import { isTrivia, type LearnItem } from './trivia.ts'
 import {
   RUNG_BLANK,
@@ -220,6 +221,22 @@ export function questionFor(
     return rung === RUNG_INTRO
       ? { kind: 'hanja-intro', entry: item }
       : buildHanjaChoice(item, entries as HanjaEntry[], attempt)
+  }
+
+  /**
+   * 가나도 사다리가 한 칸이라 소개 아니면 4지선다다 (KANA_LADDER).
+   *
+   * **소개는 글자마다 한 번이다.** 능력 둘이 카드 둘이라 그냥 두면 같은 글자의
+   * 소개가 두 번 선다. 읽기 쪽만 소개를 내고 쓰기 쪽은 바로 문제로 간다 —
+   * 글자와 예시를 한 번 본 사람에게 같은 화면을 또 보일 이유가 없다.
+   *
+   * 보기는 도표에서 뽑으므로(lib/kana.ts) `entries`를 넘기지 않는다. 지금
+   * 공개된 갈래만 가지고 오답을 만들면 청음만 열렸을 때 보기가 얕아진다.
+   */
+  if (isKana(item)) {
+    return rung === RUNG_INTRO && item.skill === 'read'
+      ? { kind: 'kana-intro', entry: item }
+      : buildKanaChoice(item, undefined, attempt)
   }
 
   /**

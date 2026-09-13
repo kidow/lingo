@@ -8,6 +8,7 @@ import { SayButton } from './say-button'
 import { loadSearchCorpus } from '@/lib/corpus'
 import { bcp47, LANG_LABEL } from '@/lib/lang'
 import { buildIndex, search, type Hit, type SearchIndex } from '@/lib/search'
+import { SCRIPT_LABEL, glyphOf, type KanaUnit } from '@/lib/kana'
 import type { TriviaEntry } from '@/lib/trivia'
 import type { Article, Concept, Language } from '@/lib/types'
 
@@ -71,15 +72,24 @@ function useIndex(): SearchIndex | null {
 
 export function SearchSheet({
   trackArticles,
+  kanaUnits = [],
 }: {
   /** 빈 칸일 때 세울 것 — 지금 트랙의 글만 */
   trackArticles: Article[]
+  /**
+   * 지금 트랙에서 공개된 가나 마디. JLPT에서만 차 있다 — 다른 트랙에서
+   * `ka`를 쳐서 열 수 없는 카드가 나오면 안 된다 (lib/search.ts)
+   */
+  kanaUnits?: KanaUnit[]
 }) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState<Hit | null>(null)
 
   const index = useIndex()
-  const hits = useMemo(() => (index ? search(index, query) : []), [index, query])
+  const hits = useMemo(
+    () => (index ? search(index, query, 40, kanaUnits) : []),
+    [index, query, kanaUnits],
+  )
 
   // 돌아가는 자리 이름이 갈린다 — 친 게 있으면 결과 목록이고, 비었으면 참고 글이다
   if (open)
@@ -219,6 +229,10 @@ function rowText(hit: Hit): [title: string, sub: string | null, tag: string | nu
       hit.text ?? null,
       hit.lang ? LANG_LABEL[hit.lang] : null,
     ]
+  if (hit.kind === 'kana') {
+    const glyph = glyphOf(hit.unit, hit.script)!
+    return [`${glyph} ${hit.unit.romaji}`, SCRIPT_LABEL[hit.script], '가나']
+  }
   if (hit.kind === 'trivia')
     return [hit.trivia.question, hit.trivia.answer, `상식 · ${LANG_LABEL[hit.lang]}`]
   return [hit.article.title, hit.article.summary, '참고 글']
@@ -247,10 +261,37 @@ function Preview({ hit, back, onBack }: { hit: Hit; back: string; onBack: () => 
 
       {/* 시트가 화면 바닥에 붙으므로 카드 시트와 같은 안전영역이 필요하다 (components/feed.tsx) */}
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))]">
+        {hit.kind === 'kana' && <KanaPreview unit={hit.unit} script={hit.script} />}
         {hit.kind === 'word' && <WordPreview concept={hit.concept} />}
         {hit.kind === 'trivia' && <TriviaPreview trivia={hit.trivia} />}
         {hit.kind === 'article' && <ArticleBody article={hit.article} />}
       </div>
+    </div>
+  )
+}
+
+/**
+ * 가나 한 마디를 펼친 자리. 「이 글자 뭐였지」에 답하는 화면이라 글자와
+ * 소리와 상대 표기까지만 있다 — 예시 낱말은 카드가 할 일이다
+ */
+function KanaPreview({ unit, script }: { unit: KanaUnit; script: 'hira' | 'kata' }) {
+  const other = script === 'hira' ? unit.kata : unit.hira
+  return (
+    <div className="flex flex-col items-center gap-3 py-6">
+      <span lang="ja" className="font-jp text-[96px] leading-none font-medium">
+        {glyphOf(unit, script)}
+      </span>
+      <p className="text-lg font-semibold text-sub">{unit.romaji}</p>
+      <p className="text-sm text-sub">
+        {SCRIPT_LABEL[script]}
+        {other ? (
+          <>
+            {' · '}
+            {SCRIPT_LABEL[script === 'hira' ? 'kata' : 'hira']}{' '}
+            <span lang="ja" className="font-jp">{other}</span>
+          </>
+        ) : null}
+      </p>
     </div>
   )
 }

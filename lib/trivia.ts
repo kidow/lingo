@@ -1,5 +1,6 @@
 import type { Entry } from './entries.ts'
 import type { HanjaEntry } from './hanja.ts'
+import type { KanaEntry } from './kana.ts'
 import type { Language, Trivia } from './types.ts'
 
 /**
@@ -27,7 +28,7 @@ export type TriviaEntry = {
 }
 
 /** 엔진과 피드가 다루는 카드. 한 덱 안에서는 한 종류만 섞인다 */
-export type LearnItem = Entry | TriviaEntry | HanjaEntry
+export type LearnItem = Entry | TriviaEntry | HanjaEntry | KanaEntry
 
 export const isTrivia = (item: LearnItem): item is TriviaEntry => 'trivia' in item
 

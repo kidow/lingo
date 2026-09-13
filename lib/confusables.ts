@@ -330,3 +330,12 @@ export function pickConfusables(
   const rest = likeAnswer(char, poolFor(char)).filter((c) => !near.includes(c))
   return [...near, ...shuffle(rest, rng).slice(0, count - near.length)]
 }
+
+/**
+ * 손으로 적어 둔 닮은 글자만 그대로 돌려준다. 예비 풀을 섞지 않는다.
+ *
+ * `pickConfusables`는 모자라면 같은 문자 체계에서 아무거나 채우는데, 가나
+ * 카드는 그 자리를 **격자**가 대신한다 — 같은 행과 같은 단이 무작위보다
+ * 정확한 오답이다 (lib/kana.ts). 이 표는 207마디 중 45만 덮는다.
+ */
+export const confusablesOf = (char: string): string[] => CONFUSABLE[char] ?? []

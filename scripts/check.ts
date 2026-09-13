@@ -8,6 +8,7 @@
  */
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs'
 import { join } from 'node:path'
+import { KANA_SCRIPTS, KANA_TABLE, exampleQuota, glyphOf, type KanaExamples, type KanaKind } from '../lib/kana.ts'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import { auditTrivia } from '../lib/trivia-audit.ts'
@@ -193,7 +194,8 @@ if (!existsSync(CONTENT_DIR)) {
 }
 
 /** 개념이 아닌 콘텐츠. 모양이 달라 아래 개념 검사를 지나가면 안 된다 */
-const NOT_CONCEPTS = new Set(['articles.json'])
+// 가나 예시는 개념이 아니라 도표에 붙는 참조다 (lib/kana.ts)
+const NOT_CONCEPTS = new Set(['articles.json', 'kana.json'])
 
 const files = readdirSync(CONTENT_DIR)
   .filter((f) => f.endsWith('.json') && !NOT_CONCEPTS.has(f))
@@ -1138,6 +1140,102 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
         `      ${names.join(' · ')}${rest}`,
     )
   }
+}
+
+/**
+ * 가나 카드. (docs/kana-tab-design.md §7)
+ *
+ * 일곱 가지를 본다. 눈으로 보는 것은 따로 있다 — `node scripts/kana.ts sheet`가
+ * 어색한 낱말과 초급이 모를 낱말을 잡는 자리다 (docs/nets.md).
+ */
+{
+  const examples = JSON.parse(readFileSync(join(CONTENT_DIR, 'kana.json'), 'utf8')) as KanaExamples
+  const where = 'content/kana.json'
+  const ja = new Map(
+    [...byFile.values()]
+      .flat()
+      .filter((concept) => concept.words?.ja)
+      .map((concept) => [concept.slug, concept]),
+  )
+
+  const used = new Map<string, number>()
+  const openedKinds = new Set<KanaKind>()
+
+  for (const [id, picked] of Object.entries(examples)) {
+    const unit = KANA_TABLE.find((item) => item.id === id)
+    // 6. 도표에 없는 id는 진도 키가 되어 버린 뒤에는 못 고친다
+    if (!unit) {
+      fail(where, `도표에 없는 마디 [${id}]`)
+      continue
+    }
+    for (const script of KANA_SCRIPTS) {
+      const list = picked[script]
+      if (!list?.length) continue
+      const glyph = glyphOf(unit, script)
+      if (!glyph) {
+        fail(where, `[${id}]에는 ${script} 표기가 없는데 예시가 붙었습니다`)
+        continue
+      }
+      openedKinds.add(unit.kind)
+      const quota = exampleQuota(script, id)
+      if (list.length !== quota) fail(where, `[${glyph}] 예시가 ${list.length}개입니다 — ${quota}개여야 합니다`)
+      if (new Set(list).size !== list.length) fail(where, `[${glyph}] 같은 낱말이 두 번 적혔습니다`)
+
+      for (const slug of list) {
+        const concept = ja.get(slug)
+        // 1. 실존하는 개념이고 일본어가 있는가
+        if (!concept) {
+          fail(where, `[${glyph}] ← ${slug} 없는 개념이거나 일본어가 없습니다`)
+          continue
+        }
+        const word = concept.words!.ja!
+        const reading = word.reading ?? word.term ?? ''
+        // 2. 그 마디를 실제로 품는가 — 오배정은 눈으로 못 잡는다
+        if (!reading.includes(glyph))
+          fail(where, `[${glyph}] ← ${slug}(${reading}) 그 글자가 없습니다`)
+        // 3. 발음이 있는가. 예시마다 재생 버튼이 선다
+        if (AUDIO_MISSING.has(`ja/${slug}`))
+          fail(where, `[${glyph}] ← ${slug} 발음이 없습니다 — 예시는 소리가 있어야 합니다`)
+        used.set(slug, (used.get(slug) ?? 0) + 1)
+      }
+    }
+  }
+
+  // 5. 한 낱말이 세 장 이상에 겹치면 같은 그림이 카드마다 되풀이된다
+  for (const [slug, count] of used)
+    if (count > 2) fail(where, `${slug}이 카드 ${count}장에 겹쳤습니다 — 최대 둘입니다`)
+
+  // 4. 연 갈래에는 구멍이 없어야 한다. 격자는 빠진 자리가 보인다
+  for (const unit of KANA_TABLE) {
+    if (!openedKinds.has(unit.kind)) continue
+    for (const script of KANA_SCRIPTS) {
+      const glyph = glyphOf(unit, script)
+      if (!glyph) continue
+      const count = examples[unit.id]?.[script]?.length ?? 0
+      if (count < exampleQuota(script, unit.id))
+        fail(where, `[${glyph}] 가 비었습니다 — ${unit.kind} 갈래를 열었으면 한 마디도 빠지면 안 됩니다`)
+    }
+  }
+
+  // 7. `소리 → 글자`에서 정답이 둘이 되지 않는가
+  const sounds = new Map<string, string>()
+  for (const unit of KANA_TABLE) {
+    const seen = sounds.get(unit.romaji)
+    if (seen) fail(where, `소리 [${unit.romaji}]가 ${seen}와 ${unit.id} 둘입니다 — 보기에서 정답이 갈립니다`)
+    sounds.set(unit.romaji, unit.id)
+  }
+
+  const cards = KANA_TABLE.reduce(
+    (sum, unit) =>
+      sum +
+      KANA_SCRIPTS.filter(
+        (script) =>
+          glyphOf(unit, script) &&
+          (examples[unit.id]?.[script]?.length ?? 0) >= exampleQuota(script, unit.id),
+      ).length,
+    0,
+  )
+  notes.push(`가나 ${cards}장 · 연 갈래 ${[...openedKinds].join('·') || '없음'}`)
 }
 
 if (warnings.length) {

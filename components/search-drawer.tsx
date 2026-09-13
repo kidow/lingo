@@ -4,6 +4,7 @@ import { Search, X } from 'lucide-react'
 import { Drawer } from 'vaul'
 import { FAB_CLASS } from './search-fab'
 import { SearchSheet } from './search-sheet'
+import type { KanaUnit } from '@/lib/kana'
 import type { Article } from '@/lib/types'
 
 /**
@@ -24,7 +25,14 @@ import type { Article } from '@/lib/types'
  * 두되 `dvh`가 자판을 반영해 줄어들므로, 안쪽이 `min-h-0`으로 눌려 목록만
  * 짧아진다 (components/search-sheet.tsx).
  */
-export function SearchDrawer({ trackArticles }: { trackArticles: Article[] }) {
+export function SearchDrawer({
+  trackArticles,
+  kanaUnits,
+}: {
+  trackArticles: Article[]
+  /** 지금 트랙에서 공개된 가나 마디 (lib/search.ts) */
+  kanaUnits?: KanaUnit[]
+}) {
   return (
     <Drawer.Root handleOnly>
       {/*
@@ -72,7 +80,7 @@ export function SearchDrawer({ trackArticles }: { trackArticles: Article[] }) {
             찾습니다.
           </Drawer.Description>
 
-          <SearchSheet trackArticles={trackArticles} />
+          <SearchSheet trackArticles={trackArticles} kanaUnits={kanaUnits} />
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>

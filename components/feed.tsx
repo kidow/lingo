@@ -15,9 +15,10 @@ import { loadProgress, saveProgress, WORD_LADDER, type Ladder, type Progress } f
 import { questionKey, type Question } from '@/lib/quiz'
 import { HANJA_SKILLS, hanjaKey } from '@/lib/hanja'
 import { HanjaCard } from './hanja/card'
+import { KanaCard } from './kana/card'
 import type { LearnItem } from '@/lib/trivia'
 import type { TrackId } from '@/lib/track'
-import type { Language } from '@/lib/types'
+import type { Concept, Language } from '@/lib/types'
 
 /**
  * 세로 무한 피드. (spec.md §3, §6)
@@ -53,6 +54,7 @@ export function Feed({
   lang,
   ladder = WORD_LADDER,
   ordered = false,
+  concepts,
   onProgress,
 }: {
   entries: LearnItem[]
@@ -64,6 +66,11 @@ export function Feed({
   ordered?: boolean
   /** 발음 파일과 정답 필드가 따르는 단위 */
   lang?: Language
+  /**
+   * slug로 개념을 찾는 표. 가나 카드가 예시 낱말을 여기서 꺼낸다 — 예시는
+   * 낱말이 아니라 **개념 참조**다 (docs/kana-tab-design.md §2)
+   */
+  concepts?: Map<string, Concept>
   /**
    * 진도가 바뀔 때마다 부른다. 헤더의 숙련도가 이걸로 산다. (spec.md §3)
    *
@@ -276,7 +283,14 @@ export function Feed({
             className="h-full snap-start snap-always"
           >
             {Math.abs(i - current) <= WINDOW && (
-              question.kind === 'hanja-intro' || question.kind === 'hanja-choice' ? (
+              question.kind === 'kana-intro' || question.kind === 'kana-choice' ? (
+                <KanaCard
+                  question={question}
+                  concepts={concepts ?? new Map()}
+                  pick={picks.get(i) ?? null}
+                  onAnswer={(correct, picked) => handleAnswer(i, correct, picked)}
+                />
+              ) : question.kind === 'hanja-intro' || question.kind === 'hanja-choice' ? (
                 <HanjaCard
                   question={question}
                   active={i === current}

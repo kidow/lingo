@@ -1,5 +1,6 @@
 import { convertQwertyToHangul, disassemble, getChoseong } from 'es-hangul'
 import type { TriviaEntry } from './trivia.ts'
+import { KANA_SCRIPTS, glyphOf, type KanaScript, type KanaUnit } from './kana.ts'
 import type { Article, Concept, Language, Word } from './types.ts'
 
 /**
@@ -125,6 +126,14 @@ function basicnessOf(concept: Concept): number {
 
 export type Hit =
   | { kind: 'word'; key: string; concept: Concept; lang?: Language; text?: string }
+  /**
+   * 가나 한 마디. **정확히 그 마디를 쳤을 때만** 선다 (docs/kana-tab-design.md §5).
+   *
+   * 목록에 섞지 않는 이유는 `あ`가 일본어 낱말 수백 개에 들어 있는 글자라서다 —
+   * 섞으면 한 글자 검색이 통째로 쓸모없어진다. 그렇다고 빼면 **「이 글자
+   * 뭐였지」**라는 가장 흔한 물음에 답할 데가 없다.
+   */
+  | { kind: 'kana'; key: string; unit: KanaUnit; script: KanaScript }
   | { kind: 'trivia'; key: string; lang: Language; trivia: TriviaEntry['trivia'] }
   | { kind: 'article'; key: string; article: Article }
 
@@ -238,7 +247,9 @@ export function buildIndex(
 const scoreOf = (folded: string, query: string) =>
   folded === query ? 0 : folded.startsWith(query) ? 1 : folded.includes(query) ? 2 : -1
 
-const KIND_ORDER = { word: 0, trivia: 1, article: 2 } as const
+// 가나는 색인을 지나지 않고 맨 앞에 따로 붙지만(kanaHits), 정렬표에 자리가
+// 없으면 타입이 뚫린다. 값은 쓰이지 않는다
+const KIND_ORDER = { kana: 0, word: 0, trivia: 1, article: 2 } as const
 
 /**
  * 접힌 색인에서 찾는다. 같은 점수면 낱말이 먼저다.
@@ -246,8 +257,33 @@ const KIND_ORDER = { word: 0, trivia: 1, article: 2 } as const
  * `limit`을 두는 이유는 성능이 아니라 화면이다 — `a`를 치면 수천 개가 걸리는데
  * 그걸 다 그리면 스크롤이 끝나지 않고, 그 목록에서 고를 수 있는 사람도 없다.
  */
-export function search(index: SearchIndex, raw: string, limit = 40): Hit[] {
-  const hits = run(index, fold(raw), limit)
+/**
+ * 친 것이 가나 한 마디 그 자체인가. 글자로도 로마자로도 찾는다.
+ *
+ * 도표가 아니라 **공개된 마디**에서만 찾는다 — 아직 안 연 요음을 찾아 주면
+ * 눌러도 갈 카드가 없다.
+ */
+export function kanaHits(units: KanaUnit[], raw: string): Hit[] {
+  const query = raw.trim().toLowerCase()
+  if (!query) return []
+  const hits: Hit[] = []
+  for (const unit of units) {
+    for (const script of KANA_SCRIPTS) {
+      const glyph = glyphOf(unit, script)
+      if (!glyph) continue
+      // 로마자는 구별 표시가 붙어 있을 수 있다 — `o (を·조사)`의 `o`로도 찾는다
+      const sound = unit.romaji.split(' ')[0].toLowerCase()
+      if (glyph === raw.trim() || sound === query || unit.id === query)
+        hits.push({ kind: 'kana', key: `kana:${script}:${unit.id}`, unit, script })
+    }
+  }
+  return hits
+}
+
+export function search(index: SearchIndex, raw: string, limit = 40, kana: KanaUnit[] = []): Hit[] {
+  // 맨 위 한 줄이다. 나머지 결과를 밀어내지 않는다
+  const first = kanaHits(kana, raw)
+  const hits = [...first, ...run(index, fold(raw), limit)]
   if (hits.length > 0) return hits
 
   /*
@@ -258,7 +294,7 @@ export function search(index: SearchIndex, raw: string, limit = 40): Hit[] {
   const latin = fold(raw)
   if (!isLatinQuery(latin)) return hits
   const hangul = convertQwertyToHangul(latin)
-  return hangul && hangul !== latin ? run(index, hangul, limit) : hits
+  return hangul && hangul !== latin ? [...first, ...run(index, hangul, limit)] : hits
 }
 
 function run(index: SearchIndex, query: string, limit: number): Hit[] {

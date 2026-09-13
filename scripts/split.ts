@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto'
 import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { LANGUAGES } from '../lib/lang.ts'
+import type { KanaExamples } from '../lib/kana.ts'
 import { triviaEntries } from '../lib/trivia.ts'
 import { validateNumberedBundle } from './hanja-stroke-numbered.ts'
 import type {
@@ -50,16 +51,32 @@ const ROOT = new URL('..', import.meta.url).pathname
 const CONTENT = join(ROOT, 'content')
 const OUT = join(ROOT, 'public/content')
 
+/**
+ * 개념이 아닌 파일. `content/`는 개념 파일만 있는 곳이 아니다 — 참고 글과
+ * 가나 도표의 예시가 같은 폴더에 산다. 이름을 적어 두지 않으면 아래에서
+ * `file.concepts`가 없어 그대로 터진다
+ */
+const NOT_CONCEPTS = new Set(['articles.json', 'kana.json'])
+
 /** 파일 이름을 개념에 붙인다. 문맥 카드의 오답이 같은 주제에서 나와야 한다 (lib/content.ts) */
 function conceptsOf(): Concept[] {
   return readdirSync(CONTENT)
-    .filter((name) => name.endsWith('.json') && name !== 'articles.json')
+    .filter((name) => name.endsWith('.json') && !NOT_CONCEPTS.has(name))
     .sort()
     .flatMap((name) => {
       const file = JSON.parse(readFileSync(join(CONTENT, name), 'utf8')) as ContentFile
       const topic = name.replace('.json', '')
       return file.concepts.map((concept) => ({ ...concept, topic }))
     })
+}
+
+/**
+ * 가나 카드의 예시. **`ja`에만 싣는다** — 가나는 일본어에만 있고, 예시가
+ * 개념 slug 참조라 개념 목록과 **같은 파일에 있어야 조회가 공짜다**
+ * (docs/kana-tab-design.md §3)
+ */
+function kanaOf(): KanaExamples {
+  return JSON.parse(readFileSync(join(CONTENT, 'kana.json'), 'utf8')) as KanaExamples
 }
 
 function articlesOf(): Article[] {
@@ -103,6 +120,7 @@ for (const lang of LANGUAGES) {
     concepts: mine,
     trivia: triviaOf(lang),
     articles: articles.filter((article) => article.lang === lang),
+    ...(lang === 'ja' ? { kana: kanaOf() } : {}),
   })
   writeFileSync(join(OUT, `${lang}.json`), body)
   sizes.push([`${lang}.json`, body.length])

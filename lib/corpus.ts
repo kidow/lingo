@@ -1,3 +1,4 @@
+import type { KanaExamples } from './kana.ts'
 import type { TriviaEntry } from './trivia.ts'
 import type { Article, Concept, Language } from './types.ts'
 
@@ -19,6 +20,11 @@ export type Corpus = {
   concepts: Concept[]
   trivia: TriviaEntry[]
   articles: Article[]
+  /**
+   * 가나 카드의 예시. **`ja`에만 있다** — 다른 언어 파일에는 이 키가 없고,
+   * 그러면 가나 탭이 안 선다 (lib/kana.ts)
+   */
+  kana?: KanaExamples
 }
 
 /**

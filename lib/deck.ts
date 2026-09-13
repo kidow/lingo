@@ -16,9 +16,12 @@ import type { Entry } from './entries.ts'
  * 몇백 개를 더하면 그 숫자가 무엇의 비율인지 흐려지고, 낱말을 하나도 안 늘려도
  * 상식을 풀어 퍼센트가 오른다. 세는 단위가 다르면 한 줄에 못 합친다 (§3).
  */
-export type DeckId = 'word' | 'phrase' | 'trivia'
+export type DeckId = 'kana' | 'word' | 'phrase' | 'trivia'
 
 export const DECKS: Array<{ id: DeckId; label: string }> = [
+  // 맨 앞이다. 문자를 모르면 단어 카드를 못 읽으므로 탭 순서가 그대로 학습
+  // 순서가 된다. 기본 덱은 여전히 `word`라 처음 여는 화면은 안 바뀐다
+  { id: 'kana', label: '가나' },
   { id: 'word', label: '단어' },
   { id: 'phrase', label: '표현' },
   { id: 'trivia', label: '상식' },
@@ -35,8 +38,9 @@ export const DEFAULT_DECK: DeckId = 'word'
  * 카테고리가 그대로 기준이 된다 (§4).
  */
 export function entriesForDeck(deck: DeckId, entries: Entry[]): Entry[] {
-  // 상식은 개념이 아니라 별개 목록이라 여기를 지나가지 않는다 (lib/trivia.ts)
-  if (deck === 'trivia') return []
+  // 상식과 가나는 개념이 아니라 별개 목록이라 여기를 지나가지 않는다
+  // (lib/trivia.ts, lib/kana.ts)
+  if (deck === 'trivia' || deck === 'kana') return []
   return entries.filter((entry) =>
     deck === 'phrase' ? entry.concept.category === 'scene' : entry.concept.category !== 'scene',
   )

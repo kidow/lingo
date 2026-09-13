@@ -11,6 +11,7 @@ import { entriesForTrack } from '@/lib/entries'
 import {
   emptyProgress,
   loadProgress,
+  isMastered,
   masteredCount,
   masteryLabel,
   TRIVIA_LADDER,
@@ -19,6 +20,7 @@ import {
 } from '@/lib/progress'
 import { loadDeck, loadTrack, saveDeck, saveTrack } from '@/lib/settings'
 import { DEFAULT_DECK, entriesForDeck, type DeckId } from '@/lib/deck'
+import { KANA_LADDER, kanaEntries, masteredKanaCount } from '@/lib/kana'
 import { DEFAULT_TRACK, trackOf, type TrackId } from '@/lib/track'
 
 const HanjaShell = dynamic(() => import('./hanja/shell').then((module) => module.HanjaShell))
@@ -131,6 +133,28 @@ export function Shell({
   const articles = corpus?.articles ?? []
 
   /**
+   * 가나 카드. **JLPT에만 있다** — 데이터가 `ja` 코퍼스에만 실리므로
+   * (scripts/split.ts) 다른 트랙에서는 빈 배열이고 탭이 안 선다.
+   *
+   * 예시가 덜 찬 글자는 `kanaEntries`가 뺀다. 갈래를 통째로 열고 닫는
+   * 규칙이라 청음이 다 차기 전에는 그 갈래가 통째로 빠진다
+   * (docs/kana-tab-design.md §8)
+   */
+  const kana = useMemo(() => (corpus?.kana ? kanaEntries(corpus.kana) : []), [corpus])
+
+  /** 찾기가 정확 일치로 찾아 주는 마디. 카드가 서는 것만이다 (lib/search.ts) */
+  const kanaShown = useMemo(
+    () => [...new Map(kana.map((entry) => [entry.unit.id, entry.unit])).values()],
+    [kana],
+  )
+
+  /** 가나 카드가 예시 낱말을 꺼내 쓰는 표 (components/kana/card.tsx) */
+  const bySlug = useMemo(
+    () => new Map((corpus?.concepts ?? []).map((concept) => [concept.slug, concept])),
+    [corpus],
+  )
+
+  /**
    * 이 트랙에서 출제할 수 있는 것. 규칙은 lib/entries.ts가 갖는다.
    *
    * **그림이 있는 개념만 남긴다.** 단어 목록은 로드맵이라 그림보다 앞서
@@ -160,16 +184,24 @@ export function Shell({
   // 거르기만 남으면 빈 피드가 된다 — TOEIC에서 실제로 그랬다
   const decks = useMemo(
     () =>
-      (['word', hasPhrases && 'phrase', trivia.length > 0 && 'trivia'] as const).filter(
-        Boolean,
-      ) as DeckId[],
-    [hasPhrases, trivia.length],
+      ([
+        kana.length > 0 && 'kana',
+        'word',
+        hasPhrases && 'phrase',
+        trivia.length > 0 && 'trivia',
+      ] as const).filter(Boolean) as DeckId[],
+    [kana.length, hasPhrases, trivia.length],
   )
   const shownDeck = decks.includes(deck) ? deck : DEFAULT_DECK
 
   const shown = useMemo(
-    () => (shownDeck === 'trivia' ? trivia : entriesForDeck(shownDeck, trackEntries)),
-    [shownDeck, trackEntries, trivia],
+    () =>
+      shownDeck === 'trivia'
+        ? trivia
+        : shownDeck === 'kana'
+          ? kana
+          : entriesForDeck(shownDeck, trackEntries),
+    [shownDeck, trackEntries, trivia, kana],
   )
 
   /**
@@ -186,11 +218,25 @@ export function Shell({
     () =>
       shownDeck === 'trivia'
         ? trivia.map((item) => item.key)
-        : trackEntries.map((entry) => entry.key),
-    [shownDeck, trivia, trackEntries],
+        : shownDeck === 'kana'
+          ? kana.map((entry) => entry.key)
+          : trackEntries.map((entry) => entry.key),
+    [shownDeck, trivia, kana, trackEntries],
   )
-  const ladder = shownDeck === 'trivia' ? TRIVIA_LADDER : WORD_LADDER
-  const mastery = masteryLabel(masteredCount(progress, keys, ladder), keys.length)
+  const ladder =
+    shownDeck === 'trivia' ? TRIVIA_LADDER : shownDeck === 'kana' ? KANA_LADDER : WORD_LADDER
+  /**
+   * 가나는 **글자**를 센다. 카드가 아니라 글자다 — 읽기와 쓰기 둘을 다 떼야
+   * 그 글자를 안다고 할 수 있어서, 카드로 세면 절반만 뗀 글자가 50%로 잡힌다
+   * (lib/kana.ts)
+   */
+  const mastery =
+    shownDeck === 'kana'
+      ? masteryLabel(
+          masteredKanaCount((key) => isMastered(progress.cards[key], KANA_LADDER), kana),
+          kana.length / 2,
+        )
+      : masteryLabel(masteredCount(progress, keys, ladder), keys.length)
 
   if (!ready) return <Skeleton />
   if (track === 'hanja') return <HanjaShell onChange={change} />
@@ -221,6 +267,7 @@ export function Shell({
             track={track}
             lang={trackOf(track).language}
             ladder={ladder}
+            concepts={bySlug}
             ordered={shownDeck === 'trivia'}
             onProgress={setProgress}
           />
@@ -229,7 +276,7 @@ export function Shell({
             눌러서 빈 목록을 보게 된다 — 다시 시도가 할 일의 전부인 화면이다
           */}
           <SearchFab>
-            <SearchDrawer trackArticles={articles} />
+            <SearchDrawer trackArticles={articles} kanaUnits={kanaShown} />
           </SearchFab>
         </>
       )}
