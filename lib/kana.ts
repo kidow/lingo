@@ -137,7 +137,7 @@ export type KanaExamples = Record<string, Partial<Record<KanaScript, string[]>>>
  * 데 시간이 들고 시트로 한 번 훑은 것이라 버릴 이유가 없다. 여기 이름이
  * 오르는 날 그대로 선다.
  */
-export const KANA_OPEN: readonly KanaKind[] = ['sei']
+export const KANA_OPEN: readonly KanaKind[] = ['sei', 'daku']
 
 /** 카드 하나가 요구하는 예시 수 */
 export const EXAMPLES_PER_CARD = 3

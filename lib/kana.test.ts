@@ -178,11 +178,11 @@ test('content/kana.json의 예시가 실제 개념이고 그 글자를 품는다
   for (const [slug, count] of seen) assert.ok(count <= 2, `${slug}이 ${count}장에 겹쳤다`)
 })
 
-test('연 갈래는 청음뿐이고 거기에는 구멍이 없다', () => {
-  assert.deepEqual([...KANA_OPEN], ['sei'])
+test('연 갈래에는 구멍이 없다', () => {
+  assert.deepEqual([...KANA_OPEN], ['sei', 'daku'])
 
   // 연 갈래는 **한 마디도 빠지지 않아야** 한다. 격자는 빠진 자리가 보인다
-  for (const unit of KANA_TABLE.filter((item) => item.kind === 'sei'))
+  for (const unit of KANA_TABLE.filter((item) => KANA_OPEN.includes(item.kind)))
     for (const script of KANA_SCRIPTS)
       if (glyphOf(unit, script))
         assert.equal(
@@ -191,13 +191,11 @@ test('연 갈래는 청음뿐이고 거기에는 구멍이 없다', () => {
           `${glyphOf(unit, script)} 가 비었다`,
         )
 
-  assert.equal(kanaEntries(examples).length, 91 * KANA_SKILLS.length)
+  assert.equal(kanaEntries(examples).length, (91 + 48) * KANA_SKILLS.length)
 })
 
-test('안 연 갈래의 초안은 파일에 쌓이되 카드가 되지 않는다', () => {
-  // 탁음 초안이 들어 있다 — 열리는 날 그대로 선다 (lib/kana.ts)
-  const daku = KANA_TABLE.filter((unit) => unit.kind === 'daku')
-  assert.ok(daku.some((unit) => (examples[unit.id]?.hira?.length ?? 0) > 0))
-  // 그래도 카드는 청음뿐이다
-  for (const entry of kanaEntries(examples)) assert.equal(entry.unit.kind, 'sei')
+test('안 연 갈래는 카드가 되지 않는다', () => {
+  // 요음은 아직 초안도 없다. 열린 것만 카드가 된다 (lib/kana.ts)
+  for (const entry of kanaEntries(examples)) assert.ok(KANA_OPEN.includes(entry.unit.kind))
+  assert.ok(!KANA_OPEN.includes('yoon'))
 })

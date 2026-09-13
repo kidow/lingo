@@ -215,8 +215,10 @@ files=(${(f)"$(node -e '
   const fs = require("fs"), path = require("path")
   const dir = path.join(process.argv[1], ".images")
   const slugs = new Set()
-  for (const f of fs.readdirSync("content").filter((f) => f.endsWith(".json") && f !== "articles.json"))
-    for (const c of JSON.parse(fs.readFileSync(path.join("content", f), "utf8")).concepts) slugs.add(c.slug)
+  // content/ 에는 개념 파일만 있는 것이 아니다 — 참고 글과 가나 예시가 같이 산다.
+  // `.concepts`가 없는 파일에서 그냥 터졌다 (scripts/split.ts도 같은 자리를 막는다)
+  for (const f of fs.readdirSync("content").filter((f) => f.endsWith(".json")))
+    for (const c of JSON.parse(fs.readFileSync(path.join("content", f), "utf8")).concepts ?? []) slugs.add(c.slug)
   for (const f of fs.readdirSync(dir))
     if (f.endsWith(".png") && slugs.has(f.slice(0, -4))) console.log(path.join(dir, f))
 ' "$REPO")"})
