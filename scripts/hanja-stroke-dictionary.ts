@@ -15,6 +15,12 @@ export type DictionaryCandidate = { character: string; medians: Medians; strokes
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
 const read = (path: string) => readFileSync(new URL('../' + path, import.meta.url), 'utf8')
 export const DICTIONARY_PROOF_PINS: Readonly<Record<string, string>> = {
+  'docs/hanja-g3ii-sam-pung-2026-09-13/originals.json': '4ee5ef9597f2c656ce8f0792f6d3e3db9735385f57786f3f5459b9e5f3cda257',
+  'docs/hanja-g3ii-sam-pung-2026-09-13/candidate-paths.json': '15a69cc6e275966fa173125d8a96281085b8ee266f76405e62d13f6bad84ee41',
+  'docs/hanja-g3ii-sam-pung-2026-09-13/review.json': 'e5929e944b1a1f9f044f5f4cf6abdba00f1eadc7c993cef27803fa26de37915b',
+  'docs/hanja-g3ii-dictionary-12-2026-09-13/sources.json': '9c446f8e8475b71c657b884300b648dd508d27432e410aadaaba13d5010f1f98',
+  'docs/hanja-g3ii-dictionary-12-2026-09-13/observations.json': 'a87ee0996533aa8a45f48c17712a609c1023f9e32d732a20e0c369e9f22efb32',
+  'docs/hanja-g3ii-dictionary-12-2026-09-13/review.json': 'a03a988581ae438f9db5e08fe6846854f0d343b1b2f2d89552a70a39b7409314',
   'docs/hanja-g3ii-direction-3-2026-09-13/direction-review.json': 'fb78cd80c63793d4edb5f0ce34adc7b9851207c39c69b5a905425fcddef25c78',
   'docs/hanja-g3ii-gyeol-mun-2026-09-13/candidate-paths.json': 'f180a3b12dba2e4e260adad2d2fd67804e3e7f97671f934a6c9b4b2ac27c507d',
   'docs/hanja-g3ii-gyeol-mun-2026-09-13/originals.json': '1af04d53757249d03adfed126e40659ba96d82046213a179eb8594d607380d84',
@@ -30,13 +36,16 @@ export function validateDictionaryProofs(readProof: (path: string) => string = r
   }
 }
 const oldDir = 'docs/hanja-g3ii-gyeol-mun-2026-09-13/'
+const fullReviewDir = 'docs/hanja-g3ii-sam-pung-2026-09-13/'
 type OriginalSource = { name: string; sha256: string; entries: { glyph: string; medians: Medians }[] }
 type Donor = { glyph: string; paths: string[]; hash: string; [key: string]: unknown }
 function originals() {
   const sources = JSON.parse(read(oldDir + 'originals.json')) as OriginalSource[]
   const source = sources.find(s => s.name === 'MM')
-  if (!source || source.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256) throw new Error('Dictionary corpus mismatch')
-  return source.entries
+  const fullSource = JSON.parse(read(fullReviewDir + 'originals.json')) as OriginalSource
+  if (!source || source.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
+    || fullSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256) throw new Error('Dictionary corpus mismatch')
+  return [...source.entries, ...fullSource.entries]
 }
 const points = (path: string) => {
   if (!/^M[-.\d]+ [-.\d]+(?: L[-.\d]+ [-.\d]+)+$/.test(path)) throw new Error('Dictionary path syntax')
@@ -73,13 +82,14 @@ export function buildDictionaryBundle(candidates?: readonly DictionaryCandidate[
   const expectedOriginals = originals()
   const input = candidates ?? expectedOriginals.map(e => ({ character: e.glyph, medians: e.medians }))
   const byGlyph = new Map(input.map(e => [e.character, e]))
-  if (byGlyph.size !== 2 || input.length !== 2 || input.some(e => !Object.hasOwn(DICTIONARY_REFERENCES, e.character))) throw new Error('Dictionary candidate set mismatch')
-  const frozen = JSON.parse(read(oldDir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }
+  const count = Object.keys(DICTIONARY_REFERENCES).length
+  if (byGlyph.size !== count || input.length !== count || input.some(e => !Object.hasOwn(DICTIONARY_REFERENCES, e.character))) throw new Error('Dictionary candidate set mismatch')
+  const frozen = [oldDir, fullReviewDir].flatMap(dir => (JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }).entries)
   return {
     verificationSource: HANJA_DICTIONARY_SOURCE, geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE,
     characters: Object.keys(DICTIONARY_REFERENCES).map(glyph => {
       const paths = dictionaryGeometry(glyph, byGlyph.get(glyph)!.medians)
-      if (!isDeepStrictEqual(paths.paths, frozen.entries.find(e => e.glyph === glyph)?.paths)) throw new Error('Dictionary frozen candidate mismatch')
+      if (!isDeepStrictEqual(paths.paths, frozen.find(e => e.glyph === glyph)?.paths)) throw new Error('Dictionary frozen candidate mismatch')
       return {
         glyph, verifiedAt: '2026-09-13', geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256,
         geometryCorrection: 'dictionary-crosscheck-' + glyph.codePointAt(0)!.toString(16) + '-v1',

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "scope": "Whole-glyph order, direction, stroke role and cumulative centerline geometry comparison for 森 and 楓 only. Domestic dictionary crosscheck, not examination-body certification or pixel-identical font matching.",
+  "evidence": {
+    "sources": "docs/hanja-g3ii-dictionary-12-2026-09-13/sources.json",
+    "movingObservations": "docs/hanja-g3ii-dictionary-12-2026-09-13/observations.json",
+    "priorDecision": "docs/hanja-g3ii-dictionary-12-2026-09-13/review.json",
+    "movingObservationCountFromPriorReview": 25,
+    "newCandidateCumulativeStagesViewed": 25,
+    "newMovingObservationsClaimed": 0,
+    "method": "Reopened both exact dictionary SVGs and compared their visible forms and previously recorded full moving sequences against the fixed MM candidates. Viewed all 25 cumulative candidate panels with start and end markers in review.html. No dictionary paths, scripts or media were copied."
+  },
+  "strokeRowFields": ["index", "role", "direction", "decision"],
+  "entries": [
+    {
+      "glyph": "森",
+      "strokes": 12,
+      "pathsSha256": "506e9158f1a5e4e060cf3e9637cc09355fb88fd4913eb0bd997e4c87ab59eff7",
+      "sourceStrokeIndices": [1,2,3,4,5,6,7,8,9,10,11,12],
+      "strokeReview": [
+        [1,"위 木 가로","왼쪽에서 오른쪽","verified"],
+        [2,"위 木 세로","위에서 아래","verified"],
+        [3,"위 木 왼삐침","중앙에서 왼쪽 아래","verified"],
+        [4,"위 木 오른파임","중앙에서 오른쪽 아래","verified"],
+        [5,"왼쪽 아래 木 가로","왼쪽에서 오른쪽","verified"],
+        [6,"왼쪽 아래 木 세로","위에서 아래","verified"],
+        [7,"왼쪽 아래 木 왼삐침","중앙에서 왼쪽 아래","verified"],
+        [8,"왼쪽 아래 木 짧은 점","왼쪽 위에서 오른쪽 아래","verified"],
+        [9,"오른쪽 아래 木 가로","왼쪽에서 오른쪽","verified"],
+        [10,"오른쪽 아래 木 세로","위에서 아래","verified"],
+        [11,"오른쪽 아래 木 왼삐침","중앙에서 왼쪽 아래","verified"],
+        [12,"오른쪽 아래 木 오른파임","중앙에서 오른쪽 아래","verified"]
+      ],
+      "geometryFindings": [
+        "위 木→왼쪽 아래 木→오른쪽 아래 木의 순서와 모든 시작·끝 방향을 대조했다.",
+        "8획은 오른쪽 木을 가로지르는 긴 파임이 아닌 짧은 점이며 12획은 바깥으로 뻗는 파임이다.",
+        "각 세로가 해당 가로를 가로지르고 세 木의 중심이 구분된다. 원본 폰트와 가로의 기울기·비율은 다르지만 획 역할과 누적 구조의 충돌은 발견하지 못했다."
+      ],
+      "geometryChanges": [],
+      "wholeCandidateGeometryReviewed": true,
+      "runtimeApproved": true
+    },
+    {
+      "glyph": "楓",
+      "strokes": 13,
+      "pathsSha256": "85cc8a6a9ec86dd5059c29fa134d5b44166704faae207527fde30509b957cb3a",
+      "sourceStrokeIndices": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+      "strokeReview": [
+        [1,"木 가로","왼쪽에서 오른쪽","verified"],
+        [2,"木 세로","위에서 아래","verified"],
+        [3,"木 왼삐침","중앙에서 왼쪽 아래","verified"],
+        [4,"木 짧은 점","왼쪽 위에서 오른쪽 아래","verified"],
+        [5,"風 왼쪽 외곽","위에서 아래로 내려온 뒤 왼쪽 아래","verified"],
+        [6,"風 윗가로·오른쪽 외곽·갈고리","왼쪽에서 오른쪽, 아래로 굽은 뒤 끝을 위로","verified"],
+        [7,"風 안쪽 윗삐침","오른쪽에서 왼쪽 아래","verified"],
+        [8,"虫 왼세로","위에서 아래","verified"],
+        [9,"虫 윗가로·오른세로","왼쪽에서 오른쪽 뒤 아래로 꺾음","verified"],
+        [10,"虫 아래가로","왼쪽에서 오른쪽","verified"],
+        [11,"虫 중앙세로","위에서 아래","verified"],
+        [12,"虫 밑가로","왼쪽에서 오른쪽 위","verified"],
+        [13,"虫 끝점","왼쪽 위에서 오른쪽 아래","verified"]
+      ],
+      "geometryFindings": [
+        "木1–4, 風 외곽5–6, 안쪽 윗삐침7, 虫8–13의 순서와 누적 구조를 대조했다.",
+        "6획은 분할 없이 윗가로에서 오른쪽 외곽과 끝 갈고리로 이어진다. 갈고리와 내부 虫의 오른쪽 사이 공간이 유지된다.",
+        "7획은 오른쪽에서 왼쪽으로 진행하고 11획이 뒤에 중앙을 관통한다. 9·10획의 오른쪽 접합과 12·13획의 교차는 원본 붓 윤곽과 중심선 굵기의 표현 차이를 고려해 보았다. 획 역할·연결 구조의 충돌은 발견하지 못했다."
+      ],
+      "geometryChanges": [],
+      "wholeCandidateGeometryReviewed": true,
+      "runtimeApproved": true
+    }
+  ],
+  "totals": {"glyphs":2,"strokes":25,"verifiedStrokes":25,"unresolvedStrokes":0,"reorderedStrokes":0,"reversedStrokes":0,"splitOrMergedStrokes":0},
+  "next": {"glyphs":["奔","慈"],"strokes":21,"action":"Compare exact 8- and 13-stroke candidates against the newly acquired dictionary order, including the shared horizontal strokes."}
+}
