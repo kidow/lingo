@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { LANGUAGE_TRACKS as TRACKS } from '@/lib/track'
+import { LANGUAGES, LANGUAGE_LABELS as LABEL } from '@/lib/track'
 import type { Language } from '@/lib/types'
 
 /**
@@ -26,9 +26,6 @@ export type TriviaNote = {
 const ALL = 'all' as const
 type Filter = Language | typeof ALL
 
-/** 언어 하나에 트랙 하나라 이름표는 트랙에서 빌려 쓴다 (lib/track.ts) */
-const LABEL = new Map(TRACKS.map((track) => [track.language, `${track.label} ${track.flag}`]))
-
 export function DebugTrivia({ notes }: { notes: TriviaNote[] }) {
   const [filter, setFilter] = useState<Filter>(ALL)
 
@@ -47,7 +44,7 @@ export function DebugTrivia({ notes }: { notes: TriviaNote[] }) {
   return (
     <>
       <div className="mb-3 flex shrink-0 flex-wrap items-center gap-1.5">
-        {[ALL, ...TRACKS.map((track) => track.language)].map((value) => (
+        {[ALL, ...LANGUAGES].map((value) => (
           <button
             key={value}
             type="button"

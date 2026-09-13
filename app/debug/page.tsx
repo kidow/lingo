@@ -9,7 +9,7 @@ import { audioFile, audioPath, entriesFor, imagePath, triviaFor } from '@/lib/co
 import { examplesOf } from '@/lib/entries'
 import { answerOf, asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
-import { LANGUAGE_TRACKS as TRACKS, LANGUAGE_TRACK_IDS as TRACK_IDS, trackOf } from '@/lib/track'
+import { LANGUAGES, LANGUAGE_TRACK_IDS as TRACK_IDS, trackOf } from '@/lib/track'
 import { auditTrivia, type Suspect } from '@/lib/trivia-audit'
 import type { Language } from '@/lib/types'
 
@@ -107,7 +107,8 @@ const NOTE_DIR: Record<Language, string> = {
 function triviaNotes(): TriviaNote[] {
   const notes: TriviaNote[] = []
 
-  for (const { language } of TRACKS) {
+  // 트랙이 아니라 언어로 돈다 — zh는 트랙이 둘(HSK·TOCFL)이라 같은 노트가 두 줄이 된다
+  for (const language of LANGUAGES) {
     const counts = new Map<string, number>()
 
     // 옆 레포를 찾으면 그 폴더의 노트를 전부 0으로 깔아 둔다. 캔 것만 세면
@@ -138,7 +139,8 @@ function triviaNotes(): TriviaNote[] {
  * 문항이 왜 걸렸는지는 표로 봐야 읽힌다.
  */
 function triviaSuspects(): Suspect[] {
-  return TRACKS.flatMap(({ language }) =>
+  // 트랙이 아니라 언어로 돈다 (triviaNotes와 같은 이유)
+  return LANGUAGES.flatMap((language) =>
     auditTrivia(
       language,
       triviaFor(language).map((entry) => entry.trivia),

@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import { LANGUAGE_TRACKS as TRACKS } from '@/lib/track'
+import { LANGUAGES, LANGUAGE_LABELS as LABEL } from '@/lib/track'
 import type { Suspect, SuspectKind } from '@/lib/trivia-audit'
 import type { Language } from '@/lib/types'
 
@@ -18,7 +18,6 @@ import type { Language } from '@/lib/types'
 const ALL = 'all' as const
 type Filter = Language | SuspectKind | typeof ALL
 
-const LABEL = new Map(TRACKS.map((track) => [track.language, `${track.label} ${track.flag}`]))
 
 /** 신호 이름표. 표 위 필터와 줄 안 배지가 같은 말을 쓴다 */
 const KIND: Record<SuspectKind, string> = {
@@ -51,7 +50,7 @@ export function DebugSuspects({ suspects }: { suspects: Suspect[] }) {
     <>
       {/* 두 줄로 나눈다 — 위는 언어, 아래는 신호. 섞어 놓으면 무엇으로 거르는지 흐려진다 */}
       <div className="mb-2 flex shrink-0 flex-wrap items-center gap-1.5">
-        {[ALL, ...TRACKS.map((track) => track.language)].map((value) => (
+        {[ALL, ...LANGUAGES].map((value) => (
           <Pill key={value} on={filter === value} onClick={() => setFilter(value)} count={count(value)}>
             {value === ALL ? '전체' : (LABEL.get(value) ?? value)}
           </Pill>

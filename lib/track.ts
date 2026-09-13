@@ -60,6 +60,19 @@ export const LANGUAGE_TRACKS: LanguageTrack[] = [
   { id: 'torfl', label: 'TORFL', flag: '🇷🇺', flagCode: 'ru', language: 'ru' },
 ]
 
+/**
+ * 언어 하나에 트랙 하나가 아니다 — zh는 HSK와 TOCFL 둘이다. 언어로 거르는
+ * 화면(components/debug-*.tsx)은 이 목록을 쓴다. 그냥 `map`하면 zh가 둘이라
+ * React key가 겹친다. 먼저 선 트랙이 그 언어의 이름표가 된다.
+ */
+export const LANGUAGES: Language[] = [...new Set(LANGUAGE_TRACKS.map((track) => track.language))]
+export const LANGUAGE_LABELS = new Map<Language, string>(
+  LANGUAGES.map((language) => {
+    const track = LANGUAGE_TRACKS.find((candidate) => candidate.language === language)!
+    return [language, `${track.label} ${track.flag}`]
+  }),
+)
+
 export const LANGUAGE_TRACK_IDS = LANGUAGE_TRACKS.map((track) => track.id)
 export const TRACKS: Track[] = [
   ...LANGUAGE_TRACKS,
