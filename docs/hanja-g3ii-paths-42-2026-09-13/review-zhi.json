@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "reviewer": "A",
+  "glyph": "稚",
+  "catalogStrokes": 13,
+  "status": "candidate-geometry-reviewed-source-gates-remain",
+  "summary": {
+    "candidateSetsReviewed": 2,
+    "candidateStrokePathsReviewed": 26,
+    "finalGeometryStrokePasses": 13,
+    "rawJaOrderNumberMismatches": 3,
+    "rawMMOrderNumberMismatches": 0,
+    "selectedCandidate": "MM",
+    "correctedStrokes": [
+      2
+    ],
+    "correctedCoordinateValues": 1,
+    "finalOrderOrBoundaryConflicts": 0,
+    "runtimeApprovals": 0
+  },
+  "sources": [
+    {
+      "id": "moya-numbered-zhi",
+      "classification": "Korean private public learning material; original source not identified",
+      "publisher": "모야랜드",
+      "pageUrl": "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1407917080",
+      "url": "https://www.moyaland.com/_new/data/item/1407917080_l2",
+      "sha256": "d6efe729bdcca536060dd7d24a982323f2a8d603579d65f9f36490beb3d69091",
+      "bytes": 109511,
+      "width": 642,
+      "height": 604,
+      "checkedAt": "2026-09-13T02:03:22.351343+00:00",
+      "viewedThisReview": true,
+      "viewedScope": "Full numbered13 diagram plus enlarged meaningful gap/contact area. Static shape/number observation only; no motion claimed."
+    },
+    {
+      "id": "crosscheck-b",
+      "file": "../hanja-g3ii-crosscheck-63-2026-09-13/review-b.json",
+      "sha256": "80b1e74cb9590544db806e17f77fc05a9f646317670417fffd8c902fd115187b",
+      "basis": "B's actual slow MOE playback84samples and publisher p1659visible cumulative states; read in this review."
+    },
+    {
+      "id": "moe-zhi",
+      "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31258",
+      "publisher": "中華民國教育部",
+      "classification": "Taiwan official auxiliary direction evidence",
+      "inlineXmlBytes": 21141,
+      "inlineXmlSha256": "5b2836a30f9ecf57037a022b9ebf089ab53751631e7989e9d5efa4ff82fdc480",
+      "directlyReplayedByThisAuthorThisReview": false,
+      "directionObservationAttribution": "Inherited from the pinned B crosscheck; B actually viewed84slow-playback samples and all13 stroke movements. The times below are B's elapsed observation windows, not new A captures."
+    },
+    {
+      "id": "dongyang-p165",
+      "url": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+      "publisher": "동양북스",
+      "classification": "Korean publisher public writing notebook",
+      "pdfEntry": "한자능시 3급 쓰기노트.pdf",
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "pdfBytes": 77369148,
+      "page": 165,
+      "visibleCumulativeStates": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "missingCumulativeStates": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "directlyRerenderedThisReview": false,
+      "evidenceAttribution": "Pinned B crosscheck. First5 strokes appear together in first displayed panel; their internal order is not verified by that panel alone."
+    }
+  ],
+  "inputPins": {
+    "candidatePaths": "d8693f82cda0caa806a006ea34e449910d0d8f0077d02995a8e0479416c8d4e1",
+    "sourceReproduction": "fdcd8a0c676e473405e7491d407539306fe170e2e77eb1efbf77e0549ab6df35"
+  },
+  "method": {
+    "actualViewsThisReview": [
+      "Fresh642x604 Moyaland numbered diagram and enlarged crop.",
+      "Both licensed candidates: all13 isolated paths with start/end markers, all13 remapped cumulative states, final420px.",
+      "Selected minimally corrected MM: all13 isolated/cumulative states from saved SVG, final420px and focused2/6detail."
+    ],
+    "allSourcesRamOnly": true,
+    "foreignCoordinatesUsedAsOutput": false,
+    "boundaryRule": "Each licensed path stays one stroke; no split/merge or inferred new boundary.",
+    "comparisonRule": "Basic role, source number, main direction, meaningful bends and contacts/gaps. Font silhouette and brief entry prefixes are not required to match exactly."
+  },
+  "strokeReviews": [
+    {
+      "targetIndex": 1,
+      "privateIndex": 1,
+      "moeIndex": 1,
+      "jaSourceIndex": 1,
+      "mmSourceIndex": 1,
+      "role": "왼 상단 삐침",
+      "mainDirection": "오른쪽 위에서 왼쪽 아래",
+      "start": [
+        44.9,
+        18.1
+      ],
+      "end": [
+        19.7,
+        28.7
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        0.402,
+        1.816
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "Ja에는 짧은 우하향 입구가 있으나 주 삐침은 좌하향이다. MM은 우측에서 좌향으로 시작해 내려가며 역할에 더 가깝다."
+    },
+    {
+      "targetIndex": 2,
+      "privateIndex": 2,
+      "moeIndex": 2,
+      "jaSourceIndex": 2,
+      "mmSourceIndex": 2,
+      "role": "왼 가로",
+      "mainDirection": "왼쪽에서 오른쪽으로 약간 상승",
+      "start": [
+        11.6,
+        43
+      ],
+      "end": [
+        41,
+        37.7
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        2.266,
+        4.149
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "MM 시작·진행 방향 유지. 오른끝 x만43.2→41로 줄여6과 분리했다."
+    },
+    {
+      "targetIndex": 3,
+      "privateIndex": 3,
+      "moeIndex": 3,
+      "jaSourceIndex": 3,
+      "mmSourceIndex": 3,
+      "role": "왼 중앙 세로",
+      "mainDirection": "위에서 아래로 거의 수직",
+      "start": [
+        30.5,
+        25.6
+      ],
+      "end": [
+        32.4,
+        83.6
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        4.609,
+        6.914
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "윗쪽 접합부터 아래까지 별도 세로1획. 작은 진입/끝 좌우 변화는 꺾임·갈고리 추가로 세지 않는다."
+    },
+    {
+      "targetIndex": 4,
+      "privateIndex": 4,
+      "moeIndex": 4,
+      "jaSourceIndex": 4,
+      "mmSourceIndex": 4,
+      "role": "왼 아래 삐침",
+      "mainDirection": "중앙 교차 부근에서 왼쪽 아래",
+      "start": [
+        30.7,
+        42.1
+      ],
+      "end": [
+        10,
+        69.4
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        7.374,
+        9.715
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "2/3 교차 근처에서 좌하향. 방향 역전이나 획 합침 없음."
+    },
+    {
+      "targetIndex": 5,
+      "privateIndex": 5,
+      "moeIndex": 5,
+      "jaSourceIndex": 5,
+      "mmSourceIndex": 5,
+      "role": "왼 오른쪽 점",
+      "mainDirection": "왼쪽 위에서 오른쪽 아래로 짧게",
+      "start": [
+        35.1,
+        48.2
+      ],
+      "end": [
+        42.5,
+        53.8
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        10.206,
+        11.166
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "3과 접합하고 오른 아래로 짧게 향한다. 2와는 간격이 있다."
+    },
+    {
+      "targetIndex": 6,
+      "privateIndex": 6,
+      "moeIndex": 6,
+      "jaSourceIndex": 6,
+      "mmSourceIndex": 6,
+      "role": "오른 상단 삐침",
+      "mainDirection": "상단에서 왼쪽 아래로 길게",
+      "start": [
+        59.1,
+        11.9
+      ],
+      "end": [
+        43.6,
+        43.4
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        11.641,
+        13.583
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "두 후보의 짧은 우하향 붓머리 이후 주 진행은 좌하향. 이 국소 prefix를 전체 역방향으로 판정하거나 임의 삭제하지 않았다."
+    },
+    {
+      "targetIndex": 7,
+      "privateIndex": 7,
+      "moeIndex": 7,
+      "jaSourceIndex": 7,
+      "mmSourceIndex": 7,
+      "role": "오른 왼 세로",
+      "mainDirection": "삐침 아래 부근에서 아래로",
+      "start": [
+        51.8,
+        37.5
+      ],
+      "end": [
+        53.2,
+        88.1
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        14.057,
+        16.441
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "6 아래 접합에서 내려가며13과 연결;9/10/11 시작과는 흰 간격 유지."
+    },
+    {
+      "targetIndex": 8,
+      "privateIndex": 8,
+      "moeIndex": 8,
+      "jaSourceIndex": 8,
+      "mmSourceIndex": 8,
+      "role": "오른 위 점",
+      "mainDirection": "왼쪽 위에서 오른쪽 아래로 짧게",
+      "start": [
+        67.3,
+        17.8
+      ],
+      "end": [
+        76,
+        25.8
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        16.915,
+        17.877
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "독립 우하향 점. Ja의6/8 접촉은 원문과 다르며 MM은0.385165의 작은 흰 간격 유지."
+    },
+    {
+      "targetIndex": 9,
+      "privateIndex": 9,
+      "moeIndex": 9,
+      "jaSourceIndex": 9,
+      "mmSourceIndex": 9,
+      "role": "오른 첫 가로",
+      "mainDirection": "왼쪽에서 오른쪽으로 약간 상승",
+      "start": [
+        58.2,
+        35.7
+      ],
+      "end": [
+        83.7,
+        32.9
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        18.358,
+        20.27
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "좌→우 첫 가로.7과 간격,12와는 실제 폭5에서 접촉한다."
+    },
+    {
+      "targetIndex": 10,
+      "privateIndex": 10,
+      "moeIndex": 10,
+      "jaSourceIndex": 11,
+      "mmSourceIndex": 10,
+      "role": "오른 둘째 가로",
+      "mainDirection": "왼쪽에서 오른쪽으로 약간 상승",
+      "start": [
+        61.1,
+        49.7
+      ],
+      "end": [
+        81,
+        47
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        20.761,
+        22.65
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "목표10은 둘째 가로이며 Ja source11, MM source10.12와 교차한다."
+    },
+    {
+      "targetIndex": 11,
+      "privateIndex": 11,
+      "moeIndex": 11,
+      "jaSourceIndex": 12,
+      "mmSourceIndex": 11,
+      "role": "오른 셋째 가로",
+      "mainDirection": "왼쪽에서 오른쪽으로",
+      "start": [
+        60.8,
+        60
+      ],
+      "end": [
+        81.3,
+        57.9
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        23.132,
+        25.535
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "목표11은 셋째 가로이며 Ja source12, MM source11.12와 교차한다."
+    },
+    {
+      "targetIndex": 12,
+      "privateIndex": 12,
+      "moeIndex": 12,
+      "jaSourceIndex": 10,
+      "mmSourceIndex": 12,
+      "role": "오른 중앙 세로",
+      "mainDirection": "첫 가로 아래 중앙에서 아래로",
+      "start": [
+        68.8,
+        37.5
+      ],
+      "end": [
+        70,
+        69.6
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        26.019,
+        27.907
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "목표12는 중앙 세로이며 Ja source10, MM source12.9 아래 접합에서10/11을 지나13에 닿는다."
+    },
+    {
+      "targetIndex": 13,
+      "privateIndex": 13,
+      "moeIndex": 13,
+      "jaSourceIndex": 13,
+      "mmSourceIndex": 13,
+      "role": "오른 바닥 가로",
+      "mainDirection": "왼쪽에서 오른쪽으로",
+      "start": [
+        56.6,
+        72.9
+      ],
+      "end": [
+        90,
+        71.9
+      ],
+      "directionBasis": "Pinned B actual MOE playback + current licensed path start/end progression; not inferred from static numbers.",
+      "priorObservedWindowSeconds": [
+        28.382,
+        30.809
+      ],
+      "staticSourceId": "moya-numbered-zhi",
+      "directionSourceId": "moe-zhi",
+      "geometryResult": "pass-after-selected-correction",
+      "note": "바닥 가로를 좌→우로 마침.7/12와 연결하고 왼쪽禾와 분리되어 있다."
+    }
+  ],
+  "geometryFile": "geometry-zhi.json",
+  "selectedPathsSha256": "42d7617cd5e612b9e593ece7a634dc07f075368b2b0bb6b630d9a5e82ca2bbd0",
+  "artifact": {
+    "file": "review-zhi.svg",
+    "sha256": "9b9fff6326ddd49e1048c5242a4e4cdffdc76c9b6f4fddefcaa66b26e25b91d4",
+    "viewed": true
+  },
+  "remainingSourceLimitations": [
+    "동양북스 국내 출판사 누적도해의 개별1–4상태가 없다.",
+    "모야랜드13번호 도해는 민간 공개 참고이며 원전·시험기관/출판사 승인 출처가 확인되지 않았다.",
+    "이 검토는 기존 자료 기준 후보 경로 비교를 마쳤다는 뜻이며 애니메이션/런타임 적용 승인이 아니다."
+  ],
+  "policyClarification": "Direct Korean motion is not introduced as a new prerequisite. Existing policy can combine domestic static order with matching MOE auxiliary direction; the remaining domestic source coverage/provenance gaps are preserved.",
+  "runtimeApproved": false
+}

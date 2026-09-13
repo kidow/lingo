@@ -1,0 +1,2068 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "owner": "C",
+  "glyph": "蹟",
+  "catalogStrokes": 18,
+  "result": {
+    "preferredCandidate": "MM",
+    "preferredTargetToSourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "MMRaw": {
+      "pass": 17,
+      "needsLocalCorrection": 1,
+      "correctionStrokes": [
+        12
+      ]
+    },
+    "JaRaw": {
+      "passWithoutChange": 14,
+      "needsRemapOrCorrection": 4,
+      "targetStrokes": [
+        9,
+        10,
+        12,
+        17
+      ]
+    },
+    "MMProposal": {
+      "authorGeometryPass": 18,
+      "authorGeometryHolds": 0,
+      "editedStrokes": [
+        12
+      ],
+      "unchangedStrokes": 17
+    },
+    "runtimeApproved": false,
+    "newRuntimeApprovals": 0,
+    "remainingSourceGates": [
+      "Domestic publisher cumulative stages1–8 and14–15 are absent.",
+      "Moyaland exact full numbered/cumulative diagrams have no identified institutional or textbook original."
+    ],
+    "directionPolicy": "The existing document workflow permits domestic publisher static cumulative order plus MOE supplementary direction; lack of directly animated Korean direction is not a separate requirement."
+  },
+  "artifacts": {
+    "geometryFile": "geometry-ji.json",
+    "geometryFileSha256": "16107a1693e589e9b8b79add5c4452fb29f2f292403f6de6652ffec62cab6316",
+    "svgFile": "review-ji.svg",
+    "svgFileSha256": "afa120e0039926bb867b5020ab933a5a738fcb5be9903443d1b3ceb920ce12e1",
+    "pathsSha256": "f38c85967b38104bac9e5fb22e3de005cb273e2c290b324ac7acc1ce0e77408f",
+    "recipeSha256": "b6a2a717f0d24ab892cc76be8db1cc106161402a068becd65af1706ca18f58c9"
+  },
+  "inputs": {
+    "file": "candidate-paths.json",
+    "fileSha256": "d8693f82cda0caa806a006ea34e449910d0d8f0077d02995a8e0479416c8d4e1",
+    "licensedCandidateSources": [
+      {
+        "name": "Ja",
+        "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+        "corpusSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+        "corpusBytes": 21862957,
+        "originalMediansSha256": "b6ddd1c821e201d325dfb4f79812c067a63ba441bc4c17e2550b2e23d919d009",
+        "normalizedPathsSha256": "cffe14ae36414c1d2b8972bc81991d11e4e8262c2b8db5c978779d033f01cca5",
+        "strokes": 18
+      },
+      {
+        "name": "MM",
+        "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+        "corpusSha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+        "corpusBytes": 30778076,
+        "originalMediansSha256": "78c12699d63b0040ad925e5b8371d8abcf1ca733a0224b14ca90e7bc431de448",
+        "normalizedPathsSha256": "28558a380fc40f2bd42a8d9f4b3885a49adfff7f311c151c73b9c626905fc38e",
+        "strokes": 18
+      }
+    ],
+    "Ko": "exact glyph absent",
+    "freshCorpusScope": "This turn consumes root-provided normalized licensed candidates whose complete source pins were independently verified in the previous crosscheck and recorded in candidate inventory. This turn verifies the exact input file and both normalized path hashes; it does not claim another full corpus download.",
+    "licenseFiles": [
+      "../../public/hanja-strokes/ARPHICPL.txt",
+      "../../public/hanja-strokes/COPYING.txt",
+      "../../public/hanja-strokes/MAKEMEAHANZI-COPYING.txt"
+    ]
+  },
+  "reference": {
+    "crosscheckFile": "../hanja-g3ii-crosscheck-63-2026-09-13/review-c.json",
+    "crosscheckFileSha256": "aaf5cba79f43f29ee492a44168e43c8f32202bc0bed8a0cae146b276a4b28ca4",
+    "crosscheckCoverage": "All18 MOE actual directions plus orderedTracks;125 actual browser samples viewed in that pinned review.",
+    "moya": {
+      "url": "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1427357210",
+      "numberedImageUrl": "https://www.moyaland.com/_new/data/item/1427357210_l2",
+      "numberedImageSha256": "4585b49068361cc31ed1a865369ea9c2ab7dfdd0a7bf5ec1cd267c19e1ee6df3",
+      "numberedSize": [
+        599,
+        611
+      ],
+      "all18NumbersAndWholeGlyphViewed": true,
+      "contactDetailFreshlyFetchedAndViewed": true,
+      "contactDetailCrop": [
+        205,
+        185,
+        555,
+        350
+      ],
+      "contactDetailDisplaySize": [
+        1050,
+        495
+      ],
+      "observation": "White separation between11 lower edge and12 head is visible.12 head joins13 top.貝 lower-left stroke17 is separated from12/16.",
+      "classification": "private primary learning material; institutional/textbook original not identified"
+    },
+    "dongyang": {
+      "pdfPage": 32,
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "completedStages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        16,
+        17,
+        18
+      ],
+      "missingStages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        14,
+        15
+      ]
+    },
+    "moe": {
+      "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=36447",
+      "xmlSha256": "b3e217526856311e2c88b718642bd33a09432a575552f555edf7a677e6c0370b",
+      "officialCoordinatesCopiedToGeometry": false
+    }
+  },
+  "orderComparison": {
+    "MoyaToMoe": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "MoyaToMM": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "MoyaToJa": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "note": "Reference8H→9H→10V→11H. Ja original9 is V and original10 is H. MM original8/9/10/11 already correspond."
+  },
+  "localCorrection": {
+    "stroke": 12,
+    "source": "MM",
+    "before": "M48.6 45 L49.8 45.8 L51.2 48.6 L50.8 68.7 L51.2 72.4",
+    "after": "M48.6 46.3 L49.8 46.6 L51.2 48.6 L50.8 68.7 L51.2 72.4",
+    "changedPoints": [
+      {
+        "pointIndex": 0,
+        "delta": [
+          0,
+          1.3
+        ]
+      },
+      {
+        "pointIndex": 1,
+        "delta": [
+          0,
+          0.8
+        ]
+      }
+    ],
+    "motivation": "Preserve a meaningful reference white gap, not typographic outline identity.",
+    "centerlineIntersectionBefore": false,
+    "beforeCenterlineDistance": 4.373155,
+    "beforeSignedInkGap": -0.626845,
+    "afterCenterlineDistance": 5.6442,
+    "afterSignedInkGap": 0.6442,
+    "roundCapExplanation": "The raw centerlines remain apart. Each width5 round stroke extends2.5 units, so the4.373155 centerline gap creates0.626845 ink overlap. Modified distance5.644200 leaves0.644200 ink gap.",
+    "preserved12_13Contact": {
+      "beforeDistance": 2.683282,
+      "afterDistance": 2.949235
+    }
+  },
+  "visualValidation": {
+    "renderEngine": "sharp0.35.4, SVG paths from licensed candidate data; all rendered in RAM",
+    "renderGeometry": {
+      "viewBox": "0 0 100 100",
+      "strokeWidth": 5,
+      "linecap": "round",
+      "linejoin": "round"
+    },
+    "rawJa": {
+      "individualPanels": 18,
+      "cumulativePanels": 18,
+      "wholeFinal420px": true
+    },
+    "rawMM": {
+      "individualPanels": 18,
+      "cumulativePanels": 18,
+      "wholeFinal420px": true
+    },
+    "finalMM": {
+      "individualPanels": 18,
+      "cumulativePanels": 18,
+      "wholeFinal420px": true,
+      "allActuallyViewed": true
+    },
+    "savedSvgActuallyRenderedAndViewed": true,
+    "svgContents": [
+      "Three whole glyphs: rawJa/rawMM/proposedMM",
+      "FinalMM18 numbered individual panels with green start and red end",
+      "FinalMM18 cumulative stages",
+      "Ja18 individual panels in target order with original source indices"
+    ],
+    "geometryApprovalScope": "Direction, start/end, bend, per-stroke segmentation and meaningful contacts/gaps. Exact font curve/thickness equality is not required."
+  },
+  "strokeReviews": [
+    {
+      "targetStroke": 1,
+      "location": "足의 口 왼세로",
+      "directionReference": "위에서 아래로 약간 오른쪽으로 기울어 내린다.",
+      "MM": {
+        "sourceStroke": 1,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          17.9,
+          23.7
+        ],
+        "finalEnd": [
+          23.9,
+          39.8
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 1,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          18.4,
+          23.4
+        ],
+        "end": [
+          24.2,
+          41
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 2,
+      "location": "足의 口 위·오른 꺾임",
+      "directionReference": "왼쪽에서 오른쪽 위로 간 뒤 꺾어 왼쪽 아래로 내린다.",
+      "MM": {
+        "sourceStroke": 2,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          22.3,
+          23.9
+        ],
+        "finalEnd": [
+          33.7,
+          33.1
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 2,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          23.2,
+          24.3
+        ],
+        "end": [
+          36.1,
+          35.6
+        ]
+      },
+      "boundaryVerdict": "One continuous bent polyline per reviewed bent stroke, no split/merge."
+    },
+    {
+      "targetStroke": 3,
+      "location": "足의 口 밑가로",
+      "directionReference": "왼쪽에서 오른쪽으로 약간 올려 긋는다.",
+      "MM": {
+        "sourceStroke": 3,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          25.4,
+          37.8
+        ],
+        "finalEnd": [
+          38.7,
+          35.3
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 3,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          24.9,
+          38.7
+        ],
+        "end": [
+          40.3,
+          36.1
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 4,
+      "location": "足 가운데 긴 세로",
+      "directionReference": "위에서 아래로 내리며 끝이 약간 왼쪽으로 기운다.",
+      "MM": {
+        "sourceStroke": 4,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          27.6,
+          38.7
+        ],
+        "finalEnd": [
+          29.4,
+          64
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 4,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          28.7,
+          38.7
+        ],
+        "end": [
+          30.7,
+          63.6
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 5,
+      "location": "足 가운데 오른쪽 짧은 가로",
+      "directionReference": "왼쪽에서 오른쪽 위로 짧게 긋는다.",
+      "MM": {
+        "sourceStroke": 5,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          33.6,
+          51.4
+        ],
+        "finalEnd": [
+          41.9,
+          49.1
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 5,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          33.1,
+          49.1
+        ],
+        "end": [
+          42.9,
+          48
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 6,
+      "location": "足 왼쪽 아래 세로",
+      "directionReference": "위에서 아래로 내린다. 작은 좌우 굴곡도 하나의 연속 획이다.",
+      "MM": {
+        "sourceStroke": 6,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          16.5,
+          50.5
+        ],
+        "finalEnd": [
+          20.4,
+          67
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 6,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          15.8,
+          48.5
+        ],
+        "end": [
+          21.2,
+          66.8
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 7,
+      "location": "足 밑에서 오른쪽 위로 향하는 획",
+      "directionReference": "왼쪽 아래에서 오른쪽 위로 올려 긋는다.",
+      "MM": {
+        "sourceStroke": 7,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          11.5,
+          71.4
+        ],
+        "finalEnd": [
+          43.3,
+          60.9
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 7,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          11.3,
+          69.5
+        ],
+        "end": [
+          40.7,
+          60
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 8,
+      "location": "責 첫 가로",
+      "directionReference": "왼쪽에서 오른쪽 위로 긋는다.",
+      "MM": {
+        "sourceStroke": 8,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          49.3,
+          22
+        ],
+        "finalEnd": [
+          76.1,
+          17.9
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 8,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          49.4,
+          24.5
+        ],
+        "end": [
+          77.8,
+          20.4
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 9,
+      "location": "責 둘째 가로",
+      "directionReference": "왼쪽에서 오른쪽 위로 긋는다.",
+      "MM": {
+        "sourceStroke": 9,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          51.2,
+          31.3
+        ],
+        "finalEnd": [
+          74.4,
+          27.3
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 10,
+        "originalOrderVerdict": "remap-required",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          51.8,
+          32.8
+        ],
+        "end": [
+          73.7,
+          29.5
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 10,
+      "location": "責 위 세로",
+      "directionReference": "위에서 아래로 내려 두 가로를 관통한다.",
+      "MM": {
+        "sourceStroke": 10,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          58.7,
+          10
+        ],
+        "finalEnd": [
+          59.8,
+          36
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 9,
+        "originalOrderVerdict": "remap-required",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          59,
+          10
+        ],
+        "end": [
+          62.1,
+          39.4
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 11,
+      "location": "責 아래 긴 가로",
+      "directionReference": "왼쪽에서 오른쪽 위로 길게 긋는다.",
+      "MM": {
+        "sourceStroke": 11,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          40.5,
+          40.8
+        ],
+        "finalEnd": [
+          88.5,
+          35.3
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 11,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          42.9,
+          42
+        ],
+        "end": [
+          88.7,
+          38.1
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 12,
+      "location": "貝 왼세로",
+      "directionReference": "위에서 아래로 내리며 말단이 약간 왼쪽으로 기운다.",
+      "MM": {
+        "sourceStroke": 12,
+        "rawVerdict": "gap-correction-required",
+        "finalVerdict": "pass",
+        "finalStart": [
+          48.6,
+          46.3
+        ],
+        "finalEnd": [
+          51.2,
+          72.4
+        ],
+        "direction": "First two licensed source points lowered; main top-to-bottom motion preserved."
+      },
+      "Ja": {
+        "sourceStroke": 12,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "gap-correction-required",
+        "start": [
+          49.7,
+          47.4
+        ],
+        "end": [
+          52.7,
+          73.2
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 13,
+      "location": "貝 위·오른 꺾임",
+      "directionReference": "왼쪽에서 오른쪽 위로 간 뒤 꺾어 아래로 내린다. 가로·오른세로가 연속한다.",
+      "MM": {
+        "sourceStroke": 13,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          52.7,
+          45.6
+        ],
+        "finalEnd": [
+          73.3,
+          71.9
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 13,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          53.8,
+          48.4
+        ],
+        "end": [
+          73,
+          72.9
+        ]
+      },
+      "boundaryVerdict": "One continuous bent polyline per reviewed bent stroke, no split/merge."
+    },
+    {
+      "targetStroke": 14,
+      "location": "貝 내부 첫 가로",
+      "directionReference": "왼쪽에서 오른쪽 위로 긋는다.",
+      "MM": {
+        "sourceStroke": 14,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          53.5,
+          54.2
+        ],
+        "finalEnd": [
+          67.3,
+          52.5
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 14,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          54,
+          57.1
+        ],
+        "end": [
+          66.8,
+          54.7
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 15,
+      "location": "貝 내부 둘째 가로",
+      "directionReference": "왼쪽에서 오른쪽으로 약간 올려 긋는다.",
+      "MM": {
+        "sourceStroke": 15,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          53.7,
+          62.4
+        ],
+        "finalEnd": [
+          67.3,
+          60.6
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 15,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          54.4,
+          63.9
+        ],
+        "end": [
+          67.4,
+          62.2
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 16,
+      "location": "貝 밑가로",
+      "directionReference": "왼쪽에서 오른쪽 위로 긋는다.",
+      "MM": {
+        "sourceStroke": 16,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          53.3,
+          70.6
+        ],
+        "finalEnd": [
+          69.8,
+          69
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 16,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          54.5,
+          71
+        ],
+        "end": [
+          71,
+          68.9
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 17,
+      "location": "貝 아래 왼쪽 획",
+      "directionReference": "오른쪽 위에서 왼쪽 아래로 굽어 뻗는다.",
+      "MM": {
+        "sourceStroke": 17,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          58.3,
+          76.9
+        ],
+        "finalEnd": [
+          38,
+          89.9
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 17,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "direction-and-separation-correction-required",
+        "start": [
+          54.6,
+          75.4
+        ],
+        "end": [
+          40.3,
+          89
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    },
+    {
+      "targetStroke": 18,
+      "location": "貝 아래 오른쪽 획",
+      "directionReference": "왼쪽 위에서 오른쪽 아래로 내린다.",
+      "MM": {
+        "sourceStroke": 18,
+        "rawVerdict": "pass",
+        "finalVerdict": "pass",
+        "finalStart": [
+          67.5,
+          76
+        ],
+        "finalEnd": [
+          78.7,
+          90
+        ],
+        "direction": "Start-to-end and bend sequence correspond to pinned MOE direction review."
+      },
+      "Ja": {
+        "sourceStroke": 18,
+        "originalOrderVerdict": "identity",
+        "geometryVerdict": "pass-after-number-remap",
+        "start": [
+          67.7,
+          76.1
+        ],
+        "end": [
+          79.9,
+          90
+        ]
+      },
+      "boundaryVerdict": "One licensed path per reviewed stroke; no split/merge."
+    }
+  ],
+  "contactGapAudit": {
+    "metric": "Exact minimum Euclidean distance between every pair of licensed polyline segments. Round width5 ink contacts when centerline distance<=5. signedInkGap=distance-5. This is geometric ink intersection, not an inferred pen-lift boundary.",
+    "pairCount": 153,
+    "rawJa": {
+      "contacts": 19,
+      "gaps": 134,
+      "signatureSha256": "e55c386d55dd2d1516be74b9da8c1805a3d8182480f6b0306efb3e2f0bcc1ae5"
+    },
+    "rawMM": {
+      "contacts": 17,
+      "gaps": 136,
+      "signatureSha256": "4d68383cf3ab9f9ef38a7b2272c9c3f0491e51652a699bf96652bea3bc2ba19c"
+    },
+    "proposal": {
+      "contacts": 16,
+      "gaps": 137,
+      "signatureSha256": "eb752dbf82231d958a41fd76cf03e572499baaa4ab9ed9929bac7b906bc0a9ee"
+    },
+    "signatureEncoding": "SHA256 of JSON.stringify([[strokeA,strokeB,minimumCenterlineDistanceRounded6], ...]) sorted by strokeA thenB",
+    "classificationChangesFromMM": [
+      [
+        11,
+        12
+      ]
+    ],
+    "proposalPairs": [
+      [
+        1,
+        2,
+        2.720294
+      ],
+      [
+        1,
+        3,
+        1.913187
+      ],
+      [
+        1,
+        4,
+        3.85287
+      ],
+      [
+        1,
+        5,
+        15.061374
+      ],
+      [
+        1,
+        6,
+        13.009612
+      ],
+      [
+        1,
+        7,
+        27.154112
+      ],
+      [
+        1,
+        8,
+        28.765606
+      ],
+      [
+        1,
+        9,
+        28.51467
+      ],
+      [
+        1,
+        10,
+        36.100554
+      ],
+      [
+        1,
+        11,
+        16.630093
+      ],
+      [
+        1,
+        12,
+        25.540948
+      ],
+      [
+        1,
+        13,
+        29.378223
+      ],
+      [
+        1,
+        14,
+        32.916865
+      ],
+      [
+        1,
+        15,
+        37.400535
+      ],
+      [
+        1,
+        16,
+        42.579338
+      ],
+      [
+        1,
+        17,
+        48.897955
+      ],
+      [
+        1,
+        18,
+        56.669216
+      ],
+      [
+        2,
+        3,
+        2.111924
+      ],
+      [
+        2,
+        4,
+        7.752419
+      ],
+      [
+        2,
+        5,
+        16.4878
+      ],
+      [
+        2,
+        6,
+        24.343575
+      ],
+      [
+        2,
+        7,
+        29.410882
+      ],
+      [
+        2,
+        8,
+        11.047624
+      ],
+      [
+        2,
+        9,
+        14.514854
+      ],
+      [
+        2,
+        10,
+        23.266222
+      ],
+      [
+        2,
+        11,
+        10.218167
+      ],
+      [
+        2,
+        12,
+        19.491793
+      ],
+      [
+        2,
+        13,
+        21.945615
+      ],
+      [
+        2,
+        14,
+        28.699744
+      ],
+      [
+        2,
+        15,
+        35.199785
+      ],
+      [
+        2,
+        16,
+        41.915391
+      ],
+      [
+        2,
+        17,
+        49.149771
+      ],
+      [
+        2,
+        18,
+        54.555017
+      ],
+      [
+        3,
+        4,
+        2.054725
+      ],
+      [
+        3,
+        5,
+        13.629747
+      ],
+      [
+        3,
+        6,
+        15.508062
+      ],
+      [
+        3,
+        7,
+        26.009998
+      ],
+      [
+        3,
+        8,
+        17.007351
+      ],
+      [
+        3,
+        9,
+        13.124405
+      ],
+      [
+        3,
+        10,
+        21.111608
+      ],
+      [
+        3,
+        11,
+        5.787055
+      ],
+      [
+        3,
+        12,
+        14.798986
+      ],
+      [
+        3,
+        13,
+        17.380736
+      ],
+      [
+        3,
+        14,
+        23.999712
+      ],
+      [
+        3,
+        15,
+        30.595424
+      ],
+      [
+        3,
+        16,
+        37.615157
+      ],
+      [
+        3,
+        17,
+        45.105432
+      ],
+      [
+        3,
+        18,
+        49.859101
+      ],
+      [
+        4,
+        5,
+        2.755337
+      ],
+      [
+        4,
+        6,
+        7.950853
+      ],
+      [
+        4,
+        7,
+        2.802766
+      ],
+      [
+        4,
+        8,
+        26.402462
+      ],
+      [
+        4,
+        9,
+        22.722016
+      ],
+      [
+        4,
+        10,
+        29.543527
+      ],
+      [
+        4,
+        11,
+        9.804591
+      ],
+      [
+        4,
+        12,
+        17.825351
+      ],
+      [
+        4,
+        13,
+        21.934761
+      ],
+      [
+        4,
+        14,
+        22.614133
+      ],
+      [
+        4,
+        15,
+        22.70022
+      ],
+      [
+        4,
+        16,
+        23.725514
+      ],
+      [
+        4,
+        17,
+        27.150258
+      ],
+      [
+        4,
+        18,
+        38.916577
+      ],
+      [
+        5,
+        6,
+        14.043148
+      ],
+      [
+        5,
+        7,
+        11.882761
+      ],
+      [
+        5,
+        8,
+        28.09217
+      ],
+      [
+        5,
+        9,
+        20.083077
+      ],
+      [
+        5,
+        10,
+        22.181524
+      ],
+      [
+        5,
+        11,
+        8.094631
+      ],
+      [
+        5,
+        12,
+        7.261543
+      ],
+      [
+        5,
+        13,
+        11.352973
+      ],
+      [
+        5,
+        14,
+        12.671622
+      ],
+      [
+        5,
+        15,
+        17.678235
+      ],
+      [
+        5,
+        16,
+        23.992082
+      ],
+      [
+        5,
+        17,
+        31.174669
+      ],
+      [
+        5,
+        18,
+        37.134485
+      ],
+      [
+        6,
+        7,
+        3.709988
+      ],
+      [
+        6,
+        8,
+        42.993023
+      ],
+      [
+        6,
+        9,
+        38.524018
+      ],
+      [
+        6,
+        10,
+        43.955091
+      ],
+      [
+        6,
+        11,
+        24.437676
+      ],
+      [
+        6,
+        12,
+        29.255899
+      ],
+      [
+        6,
+        13,
+        33.996765
+      ],
+      [
+        6,
+        14,
+        33.235157
+      ],
+      [
+        6,
+        15,
+        32.259107
+      ],
+      [
+        6,
+        16,
+        32.091899
+      ],
+      [
+        6,
+        17,
+        28.882001
+      ],
+      [
+        6,
+        18,
+        47.063468
+      ],
+      [
+        7,
+        8,
+        39.360005
+      ],
+      [
+        7,
+        9,
+        30.63609
+      ],
+      [
+        7,
+        10,
+        29.870721
+      ],
+      [
+        7,
+        11,
+        19.673586
+      ],
+      [
+        7,
+        12,
+        7.653708
+      ],
+      [
+        7,
+        13,
+        17.753028
+      ],
+      [
+        7,
+        14,
+        12.203688
+      ],
+      [
+        7,
+        15,
+        10.507616
+      ],
+      [
+        7,
+        16,
+        13.931619
+      ],
+      [
+        7,
+        17,
+        20.300246
+      ],
+      [
+        7,
+        18,
+        28.524551
+      ],
+      [
+        8,
+        9,
+        8.067656
+      ],
+      [
+        8,
+        10,
+        0
+      ],
+      [
+        8,
+        11,
+        16.407393
+      ],
+      [
+        8,
+        12,
+        24.234469
+      ],
+      [
+        8,
+        13,
+        23.20194
+      ],
+      [
+        8,
+        14,
+        30.589704
+      ],
+      [
+        8,
+        15,
+        38.615423
+      ],
+      [
+        8,
+        16,
+        46.561502
+      ],
+      [
+        8,
+        17,
+        54.7571
+      ],
+      [
+        8,
+        18,
+        55.071771
+      ],
+      [
+        9,
+        10,
+        0
+      ],
+      [
+        9,
+        11,
+        8.1049
+      ],
+      [
+        9,
+        12,
+        15.223666
+      ],
+      [
+        9,
+        13,
+        14.371736
+      ],
+      [
+        9,
+        14,
+        22.026898
+      ],
+      [
+        9,
+        15,
+        30.041691
+      ],
+      [
+        9,
+        16,
+        37.895689
+      ],
+      [
+        9,
+        17,
+        46.010868
+      ],
+      [
+        9,
+        18,
+        46.879425
+      ],
+      [
+        10,
+        11,
+        2.075751
+      ],
+      [
+        10,
+        12,
+        14.572577
+      ],
+      [
+        10,
+        13,
+        9.527881
+      ],
+      [
+        10,
+        14,
+        16.278821
+      ],
+      [
+        10,
+        15,
+        24.346252
+      ],
+      [
+        10,
+        16,
+        32.23892
+      ],
+      [
+        10,
+        17,
+        40.927497
+      ],
+      [
+        10,
+        18,
+        40.734384
+      ],
+      [
+        11,
+        12,
+        5.6442
+      ],
+      [
+        11,
+        13,
+        5.820294
+      ],
+      [
+        11,
+        14,
+        13.747564
+      ],
+      [
+        11,
+        15,
+        21.743942
+      ],
+      [
+        11,
+        16,
+        29.377382
+      ],
+      [
+        11,
+        17,
+        37.283153
+      ],
+      [
+        11,
+        18,
+        38.649412
+      ],
+      [
+        12,
+        13,
+        2.949235
+      ],
+      [
+        12,
+        14,
+        2.410965
+      ],
+      [
+        12,
+        15,
+        2.774078
+      ],
+      [
+        12,
+        16,
+        2.281302
+      ],
+      [
+        12,
+        17,
+        6.378087
+      ],
+      [
+        12,
+        18,
+        16.692813
+      ],
+      [
+        13,
+        14,
+        6.406426
+      ],
+      [
+        13,
+        15,
+        6.842676
+      ],
+      [
+        13,
+        16,
+        3.791422
+      ],
+      [
+        13,
+        17,
+        15.811388
+      ],
+      [
+        13,
+        18,
+        6.944612
+      ],
+      [
+        14,
+        15,
+        7.362705
+      ],
+      [
+        14,
+        16,
+        15.064644
+      ],
+      [
+        14,
+        17,
+        23.07342
+      ],
+      [
+        14,
+        18,
+        23.500851
+      ],
+      [
+        15,
+        16,
+        6.92315
+      ],
+      [
+        15,
+        17,
+        14.897315
+      ],
+      [
+        15,
+        18,
+        15.401299
+      ],
+      [
+        16,
+        17,
+        6.926038
+      ],
+      [
+        16,
+        18,
+        7.368175
+      ],
+      [
+        17,
+        18,
+        9.243917
+      ]
+    ],
+    "importantPairs": [
+      {
+        "pair": [
+          11,
+          12
+        ],
+        "referenceRelation": "gap",
+        "rawMM": {
+          "pair": [
+            11,
+            12
+          ],
+          "centerlineDistance": 4.373155,
+          "signedInkGap": -0.626845,
+          "contact": true,
+          "closest": {
+            "distance": 4.373154720271339,
+            "first": [
+              47.682168125360306,
+              40.72424663277606
+            ],
+            "second": [
+              48.6,
+              45
+            ]
+          }
+        },
+        "proposal": {
+          "pair": [
+            11,
+            12
+          ],
+          "centerlineDistance": 5.6442,
+          "signedInkGap": 0.6442,
+          "contact": false,
+          "closest": {
+            "distance": 5.644200391631951,
+            "first": [
+              47.41540275666894,
+              40.78151040301871
+            ],
+            "second": [
+              48.6,
+              46.3
+            ]
+          }
+        }
+      },
+      {
+        "pair": [
+          12,
+          13
+        ],
+        "referenceRelation": "contact",
+        "rawMM": {
+          "pair": [
+            12,
+            13
+          ],
+          "centerlineDistance": 2.683282,
+          "signedInkGap": -2.316718,
+          "contact": true,
+          "closest": {
+            "distance": 2.6832815729997472,
+            "first": [
+              50.300000000000004,
+              46.800000000000004
+            ],
+            "second": [
+              52.7,
+              45.6
+            ]
+          }
+        },
+        "proposal": {
+          "pair": [
+            12,
+            13
+          ],
+          "centerlineDistance": 2.949235,
+          "signedInkGap": -2.050765,
+          "contact": true,
+          "closest": {
+            "distance": 2.949234913868551,
+            "first": [
+              50.283892617449666,
+              47.291275167785244
+            ],
+            "second": [
+              52.7,
+              45.6
+            ]
+          }
+        }
+      },
+      {
+        "pair": [
+          12,
+          17
+        ],
+        "referenceRelation": "gap",
+        "rawMM": {
+          "pair": [
+            12,
+            17
+          ],
+          "centerlineDistance": 6.378087,
+          "signedInkGap": 1.378087,
+          "contact": false,
+          "closest": {
+            "distance": 6.378087487640785,
+            "first": [
+              51.2,
+              72.4
+            ],
+            "second": [
+              55.4,
+              77.2
+            ]
+          }
+        },
+        "proposal": {
+          "pair": [
+            12,
+            17
+          ],
+          "centerlineDistance": 6.378087,
+          "signedInkGap": 1.378087,
+          "contact": false,
+          "closest": {
+            "distance": 6.378087487640785,
+            "first": [
+              51.2,
+              72.4
+            ],
+            "second": [
+              55.4,
+              77.2
+            ]
+          }
+        }
+      },
+      {
+        "pair": [
+          16,
+          17
+        ],
+        "referenceRelation": "gap",
+        "rawMM": {
+          "pair": [
+            16,
+            17
+          ],
+          "centerlineDistance": 6.926038,
+          "signedInkGap": 1.926038,
+          "contact": false,
+          "closest": {
+            "distance": 6.926037828369126,
+            "first": [
+              53.3,
+              70.6
+            ],
+            "second": [
+              55.4,
+              77.2
+            ]
+          }
+        },
+        "proposal": {
+          "pair": [
+            16,
+            17
+          ],
+          "centerlineDistance": 6.926038,
+          "signedInkGap": 1.926038,
+          "contact": false,
+          "closest": {
+            "distance": 6.926037828369126,
+            "first": [
+              53.3,
+              70.6
+            ],
+            "second": [
+              55.4,
+              77.2
+            ]
+          }
+        }
+      },
+      {
+        "pair": [
+          13,
+          14
+        ],
+        "referenceRelation": "gap",
+        "rawMM": {
+          "pair": [
+            13,
+            14
+          ],
+          "centerlineDistance": 6.406426,
+          "signedInkGap": 1.406426,
+          "contact": false,
+          "closest": {
+            "distance": 6.406426074451986,
+            "first": [
+              55.9,
+              46.6
+            ],
+            "second": [
+              56.92303477344573,
+              52.92421496311907
+            ]
+          }
+        },
+        "proposal": {
+          "pair": [
+            13,
+            14
+          ],
+          "centerlineDistance": 6.406426,
+          "signedInkGap": 1.406426,
+          "contact": false,
+          "closest": {
+            "distance": 6.406426074451986,
+            "first": [
+              55.9,
+              46.6
+            ],
+            "second": [
+              56.92303477344573,
+              52.92421496311907
+            ]
+          }
+        }
+      },
+      {
+        "pair": [
+          13,
+          15
+        ],
+        "referenceRelation": "gap",
+        "rawMM": {
+          "pair": [
+            13,
+            15
+          ],
+          "centerlineDistance": 6.842676,
+          "signedInkGap": 1.842676,
+          "contact": false,
+          "closest": {
+            "distance": 6.842676202353497,
+            "first": [
+              74.14225850755379,
+              60.67560506638181
+            ],
+            "second": [
+              67.3,
+              60.6
+            ]
+          }
+        },
+        "proposal": {
+          "pair": [
+            13,
+            15
+          ],
+          "centerlineDistance": 6.842676,
+          "signedInkGap": 1.842676,
+          "contact": false,
+          "closest": {
+            "distance": 6.842676202353497,
+            "first": [
+              74.14225850755379,
+              60.67560506638181
+            ],
+            "second": [
+              67.3,
+              60.6
+            ]
+          }
+        }
+      },
+      {
+        "pair": [
+          13,
+          16
+        ],
+        "referenceRelation": "contact",
+        "rawMM": {
+          "pair": [
+            13,
+            16
+          ],
+          "centerlineDistance": 3.791422,
+          "signedInkGap": -1.208578,
+          "contact": true,
+          "closest": {
+            "distance": 3.7914220111227452,
+            "first": [
+              73.56945848375452,
+              69.40750902527076
+            ],
+            "second": [
+              69.8,
+              69
+            ]
+          }
+        },
+        "proposal": {
+          "pair": [
+            13,
+            16
+          ],
+          "centerlineDistance": 3.791422,
+          "signedInkGap": -1.208578,
+          "contact": true,
+          "closest": {
+            "distance": 3.7914220111227452,
+            "first": [
+              73.56945848375452,
+              69.40750902527076
+            ],
+            "second": [
+              69.8,
+              69
+            ]
+          }
+        }
+      },
+      {
+        "pair": [
+          13,
+          18
+        ],
+        "referenceRelation": "gap",
+        "rawMM": {
+          "pair": [
+            13,
+            18
+          ],
+          "centerlineDistance": 6.944612,
+          "signedInkGap": 1.944612,
+          "contact": false,
+          "closest": {
+            "distance": 6.9446121481944525,
+            "first": [
+              73.3,
+              71.9
+            ],
+            "second": [
+              68.59684725620413,
+              77.00959804264244
+            ]
+          }
+        },
+        "proposal": {
+          "pair": [
+            13,
+            18
+          ],
+          "centerlineDistance": 6.944612,
+          "signedInkGap": 1.944612,
+          "contact": false,
+          "closest": {
+            "distance": 6.9446121481944525,
+            "first": [
+              73.3,
+              71.9
+            ],
+            "second": [
+              68.59684725620413,
+              77.00959804264244
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "limits": [
+    "Reference provenance and domestic missing cumulative stages remain after geometry review.",
+    "This authored geometry proposal is not runtime approval.",
+    "No official image/XML geometry was traced or substituted into licensed candidate paths.",
+    "No shared runtime/code, previous batch documents, or Git state was modified by C."
+  ],
+  "handling": {
+    "sourceMediaRepositoryCopies": 0,
+    "foreignOfficialCoordinateRepositoryCopies": 0,
+    "outputGeometryLineage": "MM licensed normalized paths; explicit local12 point delta only",
+    "runtimeMutations": 0
+  }
+}

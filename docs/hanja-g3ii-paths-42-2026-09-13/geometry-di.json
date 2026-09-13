@@ -1,0 +1,2013 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "glyph": "笛",
+  "catalogStrokes": 11,
+  "status": "candidate-geometry-comparison-not-runtime",
+  "coordinateSystem": "normalized viewBox 0 0 100 100",
+  "strokeStyle": {
+    "width": 5,
+    "linecap": "round",
+    "linejoin": "round"
+  },
+  "candidateInput": {
+    "path": "candidate-paths.json",
+    "sha256": "d8693f82cda0caa806a006ea34e449910d0d8f0077d02995a8e0479416c8d4e1",
+    "corporaFreshlyFetchedByThisReviewer": false,
+    "corpusEvidence": "원본 corpus SHA 검증은 직전 cross63 candidate-inventory와 root 제공 자료에 근거. B는 이번 제공 path 배열의 SHA와 실제 렌더를 독립 확인함."
+  },
+  "geometryProvenance": "모든 paths/endpoint/entryPoints는 제공된 공개 라이선스 Ja 또는 Make Me a Hanzi 정규화 중앙선만 사용한다. MOE XML 좌표와 원본 매체를 복사하지 않는다.",
+  "licenseFiles": [
+    "../../public/hanja-strokes/ARPHICPL.txt",
+    "../../public/hanja-strokes/COPYING.txt",
+    "../../public/hanja-strokes/MAKEMEAHANZI-COPYING.txt"
+  ],
+  "referenceGraph": {
+    "source": "Moyaland 笛 numbered diagram",
+    "url": "https://www.moyaland.com/_new/data/item/1426582068_l2",
+    "sha256": "195b8499ae0ab432577394efe83538f62fb344c87851219f6b7093b1bfab1922",
+    "reviewedStrokeNumbers": true,
+    "contactPairs": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "otherPairs": "47 gaps among 55 unordered stroke pairs",
+    "observation": "전체 번호도해 및 아래부분 [0,290,505,616] 확대에서 검토. 안쪽가로9는 좌우 외곽7/8과 분리되어 있고 중앙세로10과 만난다.",
+    "limitation": "MOE의 모든 접점이나 공식 한국 원전의 연결 구조까지 같은 것으로 승인한 것이 아니다. source 윤곽의 정밀 수치 추출은 수행하지 않았다."
+  },
+  "distanceMethod": "선분 교차 및 네 끝점-반대 선분 최소거리로 모든 polyline 간 중심선 최소거리를 계산. 동일 굵기5 원형 끝·이음에서 최소거리≤5이면 접촉, >5이면 간격. inkClearance=centerlineDistance−5이며 음수는 겹침이다.",
+  "candidates": [
+    {
+      "name": "Ja",
+      "strokeCount": 11,
+      "originalMediansSha256": "b93553abcb204531412df9e18756507a92fbd21f231ec9329eb7035d3a5d0449",
+      "originalNormalizedPathsSha256": "f961dad89b77f31241a1ebf55ad077f1453df4c3019725f8c940e7bd6c05b1e0",
+      "providedHashVerified": true,
+      "paths": [
+        "M29 13.8 L32.3 17.5 L29.6 23.9 L22.6 34.3 L16 39.8",
+        "M32.2 24.2 L50.8 22.1",
+        "M30.7 33.1 L36.3 36.5 L38.6 40.6",
+        "M59.8 10 L63.3 13.7 L61.6 18.3 L57.3 25.9 L48.8 34.4",
+        "M63.3 21 L84 18.3",
+        "M61.1 30 L67.6 33.1 L71.5 37.8",
+        "M21.6 49.8 L26.6 55.4 L30.8 85.8",
+        "M27.7 52.1 L32.2 53 L67.2 47.1 L72.8 48.9 L74.7 51.5 L67.4 90",
+        "M43.6 38.9 L49.1 44 L47.1 79.9",
+        "M36.1 66.5 L61.2 65",
+        "M31.6 82.5 L65.9 79.1"
+      ],
+      "pathsStatus": "original-provided-unmodified",
+      "sourceStrokeToReviewedStrokeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        9,
+        11
+      ],
+      "reviewedOutputToSourceStrokeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        9,
+        11
+      ],
+      "reorderOnlyProposal": {
+        "paths": [
+          "M29 13.8 L32.3 17.5 L29.6 23.9 L22.6 34.3 L16 39.8",
+          "M32.2 24.2 L50.8 22.1",
+          "M30.7 33.1 L36.3 36.5 L38.6 40.6",
+          "M59.8 10 L63.3 13.7 L61.6 18.3 L57.3 25.9 L48.8 34.4",
+          "M63.3 21 L84 18.3",
+          "M61.1 30 L67.6 33.1 L71.5 37.8",
+          "M21.6 49.8 L26.6 55.4 L30.8 85.8",
+          "M27.7 52.1 L32.2 53 L67.2 47.1 L72.8 48.9 L74.7 51.5 L67.4 90",
+          "M36.1 66.5 L61.2 65",
+          "M43.6 38.9 L49.1 44 L47.1 79.9",
+          "M31.6 82.5 L65.9 79.1"
+        ],
+        "pathSha256": "ff0cb2d4fe14395c7aa535f8ff47c662393a37844fb4f7b3b6d42cb68e2d4be9",
+        "delta": [
+          {
+            "outputStroke": 9,
+            "sourceStroke": 10
+          },
+          {
+            "outputStroke": 10,
+            "sourceStroke": 9
+          }
+        ],
+        "status": "index-only-review-proposal; missing-hook remains unresolved; not adopted",
+        "coordinateEdits": []
+      },
+      "renderedPairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "centerlineDistance": 2.5121569701129456,
+          "strokeWidth": 5,
+          "inkClearance": -2.4878430298870544,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            1,
+            2
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "centerlineDistance": 6.049609113409274,
+          "strokeWidth": 5,
+          "inkClearance": 1.0496091134092742,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            3
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "centerlineDistance": 21.883555469804257,
+          "strokeWidth": 5,
+          "inkClearance": 16.883555469804257,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            4
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "centerlineDistance": 31.196954979612993,
+          "strokeWidth": 5,
+          "inkClearance": 26.196954979612993,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            5
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "centerlineDistance": 31.39404415315357,
+          "strokeWidth": 5,
+          "inkClearance": 26.39404415315357,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "centerlineDistance": 11.461239025515523,
+          "strokeWidth": 5,
+          "inkClearance": 6.461239025515523,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 8,
+          "centerlineDistance": 16.93927921512214,
+          "strokeWidth": 5,
+          "inkClearance": 11.939279215122141,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "centerlineDistance": 19.989873995521677,
+          "strokeWidth": 5,
+          "inkClearance": 14.989873995521677,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 10,
+          "centerlineDistance": 33.42005385992069,
+          "strokeWidth": 5,
+          "inkClearance": 28.420053859920692,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 11,
+          "centerlineDistance": 45.460422347356165,
+          "strokeWidth": 5,
+          "inkClearance": 40.460422347356165,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "centerlineDistance": 9.025519375637064,
+          "strokeWidth": 5,
+          "inkClearance": 4.025519375637064,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            3
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "centerlineDistance": 7.283199846221438,
+          "strokeWidth": 5,
+          "inkClearance": 2.2831998462214376,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            4
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "centerlineDistance": 12.54830665866913,
+          "strokeWidth": 5,
+          "inkClearance": 7.54830665866913,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            5
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "centerlineDistance": 12.980754985747172,
+          "strokeWidth": 5,
+          "inkClearance": 7.980754985747172,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "centerlineDistance": 27.707760645710795,
+          "strokeWidth": 5,
+          "inkClearance": 22.707760645710795,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 8,
+          "centerlineDistance": 27.378300933965612,
+          "strokeWidth": 5,
+          "inkClearance": 22.378300933965612,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "centerlineDistance": 15.886165823679628,
+          "strokeWidth": 5,
+          "inkClearance": 10.886165823679628,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 10,
+          "centerlineDistance": 42.47940677551888,
+          "strokeWidth": 5,
+          "inkClearance": 37.47940677551888,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 11,
+          "centerlineDistance": 57.95648529314208,
+          "strokeWidth": 5,
+          "inkClearance": 52.95648529314208,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "centerlineDistance": 11.929215059914936,
+          "strokeWidth": 5,
+          "inkClearance": 6.929215059914936,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            4
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "centerlineDistance": 31.13278015211619,
+          "strokeWidth": 5,
+          "inkClearance": 26.13278015211619,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            5
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 6,
+          "centerlineDistance": 24.871871662583015,
+          "strokeWidth": 5,
+          "inkClearance": 19.871871662583015,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "centerlineDistance": 18.80828532528199,
+          "strokeWidth": 5,
+          "inkClearance": 13.80828532528199,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "centerlineDistance": 11.163639131137868,
+          "strokeWidth": 5,
+          "inkClearance": 6.163639131137868,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 9,
+          "centerlineDistance": 5.281098370604359,
+          "strokeWidth": 5,
+          "inkClearance": 0.2810983706043588,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 10,
+          "centerlineDistance": 25.704737929411742,
+          "strokeWidth": 5,
+          "inkClearance": 20.704737929411742,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 11,
+          "centerlineDistance": 41.00515987223398,
+          "strokeWidth": 5,
+          "inkClearance": 36.00515987223398,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "centerlineDistance": 2.809167428143834,
+          "strokeWidth": 5,
+          "inkClearance": -2.190832571856166,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            4,
+            5
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "centerlineDistance": 5.5861435713737295,
+          "strokeWidth": 5,
+          "inkClearance": 0.5861435713737295,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "centerlineDistance": 30.546147243581203,
+          "strokeWidth": 5,
+          "inkClearance": 25.546147243581203,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 8,
+          "centerlineDistance": 15.581875272226707,
+          "strokeWidth": 5,
+          "inkClearance": 10.581875272226707,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 9,
+          "centerlineDistance": 6.835392436562811,
+          "strokeWidth": 5,
+          "inkClearance": 1.8353924365628114,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 10,
+          "centerlineDistance": 31.28522006923762,
+          "strokeWidth": 5,
+          "inkClearance": 26.28522006923762,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 11,
+          "centerlineDistance": 46.16877474594732,
+          "strokeWidth": 5,
+          "inkClearance": 41.16877474594732,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "centerlineDistance": 9.264987857520374,
+          "strokeWidth": 5,
+          "inkClearance": 4.264987857520374,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "centerlineDistance": 50.28685464589558,
+          "strokeWidth": 5,
+          "inkClearance": 45.28685464589558,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 8,
+          "centerlineDistance": 26.385193549824685,
+          "strokeWidth": 5,
+          "inkClearance": 21.385193549824685,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 9,
+          "centerlineDistance": 26.520309410592446,
+          "strokeWidth": 5,
+          "inkClearance": 21.520309410592446,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 10,
+          "centerlineDistance": 44.05008513045122,
+          "strokeWidth": 5,
+          "inkClearance": 39.05008513045122,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 11,
+          "centerlineDistance": 58.1581464628989,
+          "strokeWidth": 5,
+          "inkClearance": 53.1581464628989,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 7,
+          "centerlineDistance": 42.841685307653336,
+          "strokeWidth": 5,
+          "inkClearance": 37.841685307653336,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 8,
+          "centerlineDistance": 10.16970509572938,
+          "strokeWidth": 5,
+          "inkClearance": 5.16970509572938,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 9,
+          "centerlineDistance": 18.425028959098515,
+          "strokeWidth": 5,
+          "inkClearance": 13.425028959098515,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 10,
+          "centerlineDistance": 29.084875794818174,
+          "strokeWidth": 5,
+          "inkClearance": 24.084875794818174,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 11,
+          "centerlineDistance": 41.67793181049174,
+          "strokeWidth": 5,
+          "inkClearance": 36.67793181049174,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 7,
+          "b": 8,
+          "centerlineDistance": 3.018383466507715,
+          "strokeWidth": 5,
+          "inkClearance": -1.9816165334922848,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            7,
+            8
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 7,
+          "b": 9,
+          "centerlineDistance": 16.95408994468953,
+          "strokeWidth": 5,
+          "inkClearance": 11.954089944689532,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            7,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 7,
+          "b": 10,
+          "centerlineDistance": 7.8914885696807815,
+          "strokeWidth": 5,
+          "inkClearance": 2.8914885696807815,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            7,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 7,
+          "b": 11,
+          "centerlineDistance": 1.2441036980362221,
+          "strokeWidth": 5,
+          "inkClearance": -3.755896301963778,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            7,
+            11
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 8,
+          "b": 9,
+          "centerlineDistance": 0,
+          "strokeWidth": 5,
+          "inkClearance": -5,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            8,
+            10
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "centerlineDistance": 10.748745879712509,
+          "strokeWidth": 5,
+          "inkClearance": 5.748745879712509,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            8,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "centerlineDistance": 3.5043157269755985,
+          "strokeWidth": 5,
+          "inkClearance": -1.4956842730244015,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            8,
+            11
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 9,
+          "b": 10,
+          "centerlineDistance": 0,
+          "strokeWidth": 5,
+          "inkClearance": -5,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            9,
+            10
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 9,
+          "b": 11,
+          "centerlineDistance": 1.0583698763516167,
+          "strokeWidth": 5,
+          "inkClearance": -3.941630123648383,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            10,
+            11
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 10,
+          "b": 11,
+          "centerlineDistance": 14.49485125888254,
+          "strokeWidth": 5,
+          "inkClearance": 9.49485125888254,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            9,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        }
+      ],
+      "allPairs": 55,
+      "contacts": 8,
+      "gaps": 47,
+      "smallestPositiveInkClearance": 0.2810983706043588,
+      "minimumClearanceNote": "source3/reviewed10의 간격 약0.2811. 420px 실제 그림에서 매우 좁지만 분리됨.",
+      "sourceOrderMatches": false,
+      "endHookAtReviewedStroke8Present": false,
+      "renderedAndVisuallyInspected": {
+        "individualStrokes": 11,
+        "sourceOrderCumulativeStates": 11,
+        "finalGlyph420px": true
+      }
+    },
+    {
+      "name": "MM",
+      "strokeCount": 11,
+      "originalMediansSha256": "cc1434e3800482261bd5df01c2f508a7caa31f89874cf11fdb67236eed88f01e",
+      "originalNormalizedPathsSha256": "ee63d6d13e47d1243a617e7bd287b6314aaabfd0e1c1465e62b80440d6c61bdf",
+      "providedHashVerified": true,
+      "paths": [
+        "M27.8 13.7 L29.4 15.3 L30.5 17.7 L27.4 25.7 L24.7 30.5 L21.1 35 L14.3 41.2",
+        "M30.8 25 L32.9 24 L45.7 22 L50.1 22.3",
+        "M29.1 34.2 L34.9 37.7 L36.9 41.1",
+        "M60.7 10 L62.6 11.8 L63.7 14.1 L61.6 19.7 L57.4 26.9 L53.6 31.5 L49.1 35.2",
+        "M64.4 21.4 L72 20.5 L80.5 18.4 L85.7 18.8",
+        "M61.8 30.7 L69.6 34.9 L71.9 38",
+        "M20.1 52.4 L23.6 55.7 L24.8 58.4 L26.9 72.5 L27.6 82.4 L29.6 90",
+        "M26.6 54.1 L29.7 55.5 L51.5 52.6 L66.5 49.4 L70.9 49.4 L72.8 50.3 L75.5 53.3 L71.5 84.1 L69.2 87.9 L66 85.9 L64.7 83",
+        "M35.4 70.5 L38.4 70.6 L56.6 67.5 L61 68.2",
+        "M43.9 40.9 L48.6 44.7 L47.8 80.7 L46.1 82.9",
+        "M31.4 88 L33.1 86.6 L61.7 84.2 L63.5 82.9"
+      ],
+      "pathsStatus": "original-provided-unmodified",
+      "sourceStrokeToReviewedStrokeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "reviewedOutputToSourceStrokeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "reorderOnlyProposal": {
+        "paths": [
+          "M27.8 13.7 L29.4 15.3 L30.5 17.7 L27.4 25.7 L24.7 30.5 L21.1 35 L14.3 41.2",
+          "M30.8 25 L32.9 24 L45.7 22 L50.1 22.3",
+          "M29.1 34.2 L34.9 37.7 L36.9 41.1",
+          "M60.7 10 L62.6 11.8 L63.7 14.1 L61.6 19.7 L57.4 26.9 L53.6 31.5 L49.1 35.2",
+          "M64.4 21.4 L72 20.5 L80.5 18.4 L85.7 18.8",
+          "M61.8 30.7 L69.6 34.9 L71.9 38",
+          "M20.1 52.4 L23.6 55.7 L24.8 58.4 L26.9 72.5 L27.6 82.4 L29.6 90",
+          "M26.6 54.1 L29.7 55.5 L51.5 52.6 L66.5 49.4 L70.9 49.4 L72.8 50.3 L75.5 53.3 L71.5 84.1 L69.2 87.9 L66 85.9 L64.7 83",
+          "M35.4 70.5 L38.4 70.6 L56.6 67.5 L61 68.2",
+          "M43.9 40.9 L48.6 44.7 L47.8 80.7 L46.1 82.9",
+          "M31.4 88 L33.1 86.6 L61.7 84.2 L63.5 82.9"
+        ],
+        "pathSha256": "ee63d6d13e47d1243a617e7bd287b6314aaabfd0e1c1465e62b80440d6c61bdf",
+        "delta": [],
+        "status": "identity; no correction proposed",
+        "coordinateEdits": []
+      },
+      "renderedPairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "centerlineDistance": 2.917376234193211,
+          "strokeWidth": 5,
+          "inkClearance": -2.082623765806789,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            1,
+            2
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "centerlineDistance": 5.747194437500707,
+          "strokeWidth": 5,
+          "inkClearance": 0.7471944375007071,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            3
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "centerlineDistance": 23.68839378261009,
+          "strokeWidth": 5,
+          "inkClearance": 18.68839378261009,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            4
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 5,
+          "centerlineDistance": 34.10131962256007,
+          "strokeWidth": 5,
+          "inkClearance": 29.10131962256007,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            5
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "centerlineDistance": 33.8825917411093,
+          "strokeWidth": 5,
+          "inkClearance": 28.8825917411093,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 7,
+          "centerlineDistance": 12.612692020342045,
+          "strokeWidth": 5,
+          "inkClearance": 7.612692020342045,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 8,
+          "centerlineDistance": 17.819702836015846,
+          "strokeWidth": 5,
+          "inkClearance": 12.819702836015846,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 9,
+          "centerlineDistance": 36.10678606577993,
+          "strokeWidth": 5,
+          "inkClearance": 31.10678606577993,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 10,
+          "centerlineDistance": 21.832967204969957,
+          "strokeWidth": 5,
+          "inkClearance": 16.832967204969957,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 1,
+          "b": 11,
+          "centerlineDistance": 49.13857954804961,
+          "strokeWidth": 5,
+          "inkClearance": 44.13857954804961,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            1,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "centerlineDistance": 9.35574689696125,
+          "strokeWidth": 5,
+          "inkClearance": 4.35574689696125,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            3
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "centerlineDistance": 8.557675443060692,
+          "strokeWidth": 5,
+          "inkClearance": 3.557675443060692,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            4
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 5,
+          "centerlineDistance": 14.328293687665678,
+          "strokeWidth": 5,
+          "inkClearance": 9.328293687665678,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            5
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 6,
+          "centerlineDistance": 14.403124660989361,
+          "strokeWidth": 5,
+          "inkClearance": 9.403124660989361,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 7,
+          "centerlineDistance": 29.415132160165452,
+          "strokeWidth": 5,
+          "inkClearance": 24.415132160165452,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 8,
+          "centerlineDistance": 29.401530572403882,
+          "strokeWidth": 5,
+          "inkClearance": 24.401530572403882,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 9,
+          "centerlineDistance": 45.6649756377905,
+          "strokeWidth": 5,
+          "inkClearance": 40.6649756377905,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 10,
+          "centerlineDistance": 18.395549053403318,
+          "strokeWidth": 5,
+          "inkClearance": 13.395549053403318,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 2,
+          "b": 11,
+          "centerlineDistance": 61.5765790039031,
+          "strokeWidth": 5,
+          "inkClearance": 56.5765790039031,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            2,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "centerlineDistance": 13.551752654177246,
+          "strokeWidth": 5,
+          "inkClearance": 8.551752654177246,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            4
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 5,
+          "centerlineDistance": 33.691487410137526,
+          "strokeWidth": 5,
+          "inkClearance": 28.691487410137526,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            5
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 6,
+          "centerlineDistance": 26.984625252169057,
+          "strokeWidth": 5,
+          "inkClearance": 21.984625252169057,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 7,
+          "centerlineDistance": 19.74677648386919,
+          "strokeWidth": 5,
+          "inkClearance": 14.74677648386919,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "centerlineDistance": 13.324818729323761,
+          "strokeWidth": 5,
+          "inkClearance": 8.324818729323761,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 9,
+          "centerlineDistance": 29.333028959551886,
+          "strokeWidth": 5,
+          "inkClearance": 24.333028959551886,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 10,
+          "centerlineDistance": 7.002856560004639,
+          "strokeWidth": 5,
+          "inkClearance": 2.0028565600046386,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 3,
+          "b": 11,
+          "centerlineDistance": 45.022873487655325,
+          "strokeWidth": 5,
+          "inkClearance": 40.022873487655325,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            3,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 5,
+          "centerlineDistance": 3.2751616659065634,
+          "strokeWidth": 5,
+          "inkClearance": -1.7248383340934366,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            4,
+            5
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 6,
+          "centerlineDistance": 5.8123812057451,
+          "strokeWidth": 5,
+          "inkClearance": 0.8123812057451003,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 7,
+          "centerlineDistance": 32.71849629796577,
+          "strokeWidth": 5,
+          "inkClearance": 27.71849629796577,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 8,
+          "centerlineDistance": 17.517807686032196,
+          "strokeWidth": 5,
+          "inkClearance": 12.517807686032196,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 9,
+          "centerlineDistance": 33.1007429184226,
+          "strokeWidth": 5,
+          "inkClearance": 28.100742918422597,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 10,
+          "centerlineDistance": 7.701846330664947,
+          "strokeWidth": 5,
+          "inkClearance": 2.7018463306649467,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 4,
+          "b": 11,
+          "centerlineDistance": 49.826197928399075,
+          "strokeWidth": 5,
+          "inkClearance": 44.826197928399075,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            4,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "centerlineDistance": 9.656603957913985,
+          "strokeWidth": 5,
+          "inkClearance": 4.656603957913985,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            6
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 7,
+          "centerlineDistance": 53.30225135958143,
+          "strokeWidth": 5,
+          "inkClearance": 48.30225135958143,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 8,
+          "centerlineDistance": 28.07863956818421,
+          "strokeWidth": 5,
+          "inkClearance": 23.07863956818421,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 9,
+          "centerlineDistance": 46.75294950218277,
+          "strokeWidth": 5,
+          "inkClearance": 41.75294950218277,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 10,
+          "centerlineDistance": 28.052589588920345,
+          "strokeWidth": 5,
+          "inkClearance": 23.052589588920345,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 5,
+          "b": 11,
+          "centerlineDistance": 61.506585013313824,
+          "strokeWidth": 5,
+          "inkClearance": 56.506585013313824,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            5,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 7,
+          "centerlineDistance": 45.65347741410286,
+          "strokeWidth": 5,
+          "inkClearance": 40.65347741410286,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            7
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 8,
+          "centerlineDistance": 11.443775600735973,
+          "strokeWidth": 5,
+          "inkClearance": 6.443775600735973,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            8
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 9,
+          "centerlineDistance": 32.10685285106593,
+          "strokeWidth": 5,
+          "inkClearance": 27.10685285106593,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 10,
+          "centerlineDistance": 19.24162155328911,
+          "strokeWidth": 5,
+          "inkClearance": 14.24162155328911,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 6,
+          "b": 11,
+          "centerlineDistance": 45.67898860526578,
+          "strokeWidth": 5,
+          "inkClearance": 40.67898860526578,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            6,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 7,
+          "b": 8,
+          "centerlineDistance": 3.400000000000001,
+          "strokeWidth": 5,
+          "inkClearance": -1.5999999999999992,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            7,
+            8
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 7,
+          "b": 9,
+          "centerlineDistance": 8.701889118173012,
+          "strokeWidth": 5,
+          "inkClearance": 3.7018891181730122,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            7,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 7,
+          "b": 10,
+          "centerlineDistance": 17.763632289719137,
+          "strokeWidth": 5,
+          "inkClearance": 12.763632289719137,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            7,
+            10
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 7,
+          "b": 11,
+          "centerlineDistance": 2.249720765632049,
+          "strokeWidth": 5,
+          "inkClearance": -2.750279234367951,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            7,
+            11
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 8,
+          "b": 9,
+          "centerlineDistance": 12.460295209554172,
+          "strokeWidth": 5,
+          "inkClearance": 7.460295209554172,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            8,
+            9
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "centerlineDistance": 0,
+          "strokeWidth": 5,
+          "inkClearance": -5,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            8,
+            10
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 8,
+          "b": 11,
+          "centerlineDistance": 1.2041594578792318,
+          "strokeWidth": 5,
+          "inkClearance": -3.795840542120768,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            8,
+            11
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 9,
+          "b": 10,
+          "centerlineDistance": 0,
+          "strokeWidth": 5,
+          "inkClearance": -5,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            9,
+            10
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 9,
+          "b": 11,
+          "centerlineDistance": 14.911069713471267,
+          "strokeWidth": 5,
+          "inkClearance": 9.911069713471267,
+          "renderedRelation": "gap",
+          "reviewedPair": [
+            9,
+            11
+          ],
+          "moyaExpectedRelation": "gap",
+          "moyaRelationMatches": true
+        },
+        {
+          "a": 10,
+          "b": 11,
+          "centerlineDistance": 2.599952653383299,
+          "strokeWidth": 5,
+          "inkClearance": -2.400047346616701,
+          "renderedRelation": "contact",
+          "reviewedPair": [
+            10,
+            11
+          ],
+          "moyaExpectedRelation": "contact",
+          "moyaRelationMatches": true
+        }
+      ],
+      "allPairs": 55,
+      "contacts": 8,
+      "gaps": 47,
+      "smallestPositiveInkClearance": 0.7471944375007071,
+      "minimumClearanceNote": "source1/3의 간격 약0.7472. source4/6 약0.8124. 420px 실제 그림에서 분리됨.",
+      "sourceOrderMatches": true,
+      "endHookAtReviewedStroke8Present": true,
+      "renderedAndVisuallyInspected": {
+        "individualStrokes": 11,
+        "sourceOrderCumulativeStates": 11,
+        "finalGlyph420px": true
+      }
+    }
+  ],
+  "entrySegmentChecks": [
+    {
+      "candidate": "Ja",
+      "sourceStroke": 1,
+      "reviewedStroke": 1,
+      "firstSegmentStart": [
+        29,
+        13.8
+      ],
+      "firstSegmentEnd": [
+        32.3,
+        17.5
+      ],
+      "firstSegmentDelta": [
+        3.3,
+        3.7
+      ],
+      "firstSegmentDirection": "down-right",
+      "entrySegmentCount": 1,
+      "entryPoints": [
+        [
+          29,
+          13.8
+        ],
+        [
+          32.3,
+          17.5
+        ]
+      ],
+      "referenceMainDirection": "down-left",
+      "interpretation": "원본 폰트 중앙선의 진입 굴곡과 MOE 주 진행 방향 사이의 국소 차이. 이를 한자 획방향 오류 또는 점 삭제가 정당한 증거로 단정하지 않음.",
+      "pointDeletionProposed": false,
+      "needsIndependentDecision": true,
+      "coordinatesSource": "licensed candidate only"
+    },
+    {
+      "candidate": "Ja",
+      "sourceStroke": 4,
+      "reviewedStroke": 4,
+      "firstSegmentStart": [
+        59.8,
+        10
+      ],
+      "firstSegmentEnd": [
+        63.3,
+        13.7
+      ],
+      "firstSegmentDelta": [
+        3.5,
+        3.7
+      ],
+      "firstSegmentDirection": "down-right",
+      "entrySegmentCount": 1,
+      "entryPoints": [
+        [
+          59.8,
+          10
+        ],
+        [
+          63.3,
+          13.7
+        ]
+      ],
+      "referenceMainDirection": "down-left",
+      "interpretation": "원본 폰트 중앙선의 진입 굴곡과 MOE 주 진행 방향 사이의 국소 차이. 이를 한자 획방향 오류 또는 점 삭제가 정당한 증거로 단정하지 않음.",
+      "pointDeletionProposed": false,
+      "needsIndependentDecision": true,
+      "coordinatesSource": "licensed candidate only"
+    },
+    {
+      "candidate": "Ja",
+      "sourceStroke": 9,
+      "reviewedStroke": 10,
+      "firstSegmentStart": [
+        43.6,
+        38.9
+      ],
+      "firstSegmentEnd": [
+        49.1,
+        44
+      ],
+      "firstSegmentDelta": [
+        5.5,
+        5.1
+      ],
+      "firstSegmentDirection": "down-right",
+      "entrySegmentCount": 1,
+      "entryPoints": [
+        [
+          43.6,
+          38.9
+        ],
+        [
+          49.1,
+          44
+        ]
+      ],
+      "referenceMainDirection": "down",
+      "interpretation": "원본 폰트 중앙선의 진입 굴곡과 MOE 주 진행 방향 사이의 국소 차이. 이를 한자 획방향 오류 또는 점 삭제가 정당한 증거로 단정하지 않음.",
+      "pointDeletionProposed": false,
+      "needsIndependentDecision": true,
+      "coordinatesSource": "licensed candidate only"
+    },
+    {
+      "candidate": "MM",
+      "sourceStroke": 1,
+      "reviewedStroke": 1,
+      "firstSegmentStart": [
+        27.8,
+        13.7
+      ],
+      "firstSegmentEnd": [
+        29.4,
+        15.3
+      ],
+      "firstSegmentDelta": [
+        1.6,
+        1.6
+      ],
+      "firstSegmentDirection": "down-right",
+      "entrySegmentCount": 2,
+      "entryPoints": [
+        [
+          27.8,
+          13.7
+        ],
+        [
+          29.4,
+          15.3
+        ],
+        [
+          30.5,
+          17.7
+        ]
+      ],
+      "referenceMainDirection": "down-left",
+      "interpretation": "원본 폰트 중앙선의 진입 굴곡과 MOE 주 진행 방향 사이의 국소 차이. 이를 한자 획방향 오류 또는 점 삭제가 정당한 증거로 단정하지 않음.",
+      "pointDeletionProposed": false,
+      "needsIndependentDecision": true,
+      "coordinatesSource": "licensed candidate only"
+    },
+    {
+      "candidate": "MM",
+      "sourceStroke": 4,
+      "reviewedStroke": 4,
+      "firstSegmentStart": [
+        60.7,
+        10
+      ],
+      "firstSegmentEnd": [
+        62.6,
+        11.8
+      ],
+      "firstSegmentDelta": [
+        1.9,
+        1.8
+      ],
+      "firstSegmentDirection": "down-right",
+      "entrySegmentCount": 2,
+      "entryPoints": [
+        [
+          60.7,
+          10
+        ],
+        [
+          62.6,
+          11.8
+        ],
+        [
+          63.7,
+          14.1
+        ]
+      ],
+      "referenceMainDirection": "down-left",
+      "interpretation": "원본 폰트 중앙선의 진입 굴곡과 MOE 주 진행 방향 사이의 국소 차이. 이를 한자 획방향 오류 또는 점 삭제가 정당한 증거로 단정하지 않음.",
+      "pointDeletionProposed": false,
+      "needsIndependentDecision": true,
+      "coordinatesSource": "licensed candidate only"
+    },
+    {
+      "candidate": "MM",
+      "sourceStroke": 10,
+      "reviewedStroke": 10,
+      "firstSegmentStart": [
+        43.9,
+        40.9
+      ],
+      "firstSegmentEnd": [
+        48.6,
+        44.7
+      ],
+      "firstSegmentDelta": [
+        4.7,
+        3.8
+      ],
+      "firstSegmentDirection": "down-right",
+      "entrySegmentCount": 1,
+      "entryPoints": [
+        [
+          43.9,
+          40.9
+        ],
+        [
+          48.6,
+          44.7
+        ]
+      ],
+      "referenceMainDirection": "down",
+      "interpretation": "원본 폰트 중앙선의 진입 굴곡과 MOE 주 진행 방향 사이의 국소 차이. 이를 한자 획방향 오류 또는 점 삭제가 정당한 증거로 단정하지 않음.",
+      "pointDeletionProposed": false,
+      "needsIndependentDecision": true,
+      "coordinatesSource": "licensed candidate only"
+    }
+  ],
+  "appliedCoordinateCorrections": [],
+  "minimalPointDeletionProposal": null,
+  "preferredOriginalCandidate": "MM",
+  "preferredCorrectedGeometry": null,
+  "preferenceReason": "MM은 정적·동적 검토 순서와 identity이고 8획의 하강 뒤 왼위 갈고리를 보존한다. Ja는9/10 교환만으로 갈고리가 복원되지 않는다.",
+  "unresolvedGeometryDecisions": [
+    "MM1/4/10의 폰트 중앙선 진입 굴곡을 유지할지 최소 조정할지 독립 시각 검토가 필요함. 현재 점 삭제를 정당화하는 확정 근거는 없음.",
+    "Ja를 채택하려면9/10 순서와8획 갈고리 문제를 별도로 해결해야 함."
+  ],
+  "artifact": {
+    "svg": "review-di.svg",
+    "sha256": "519959d907216ddeb881235be958aa702f3563130dff79118c83c7787a0229d7",
+    "individualPanels": 22,
+    "cumulativePanels": 22,
+    "unmarkedFinalPanels420px": 2,
+    "mmEntryDetailPanels": 3
+  },
+  "runtimeApproved": false,
+  "errors": []
+}

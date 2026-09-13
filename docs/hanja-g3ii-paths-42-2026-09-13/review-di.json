@@ -1,0 +1,608 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "reviewer": "B",
+  "glyph": "笛",
+  "scope": {
+    "batchCharacters": 3,
+    "batchStrokes": 42,
+    "reviewedCharacters": 1,
+    "reviewedUniqueStrokes": 11,
+    "candidateSets": 2,
+    "candidateStrokeInstances": 22
+  },
+  "result": "MM-original-preferred-for-next-review; no corrected geometry adopted; no runtime approval",
+  "summary": {
+    "individualStrokePanelsVisuallyInspected": 22,
+    "cumulativePanelsVisuallyInspected": 22,
+    "final420pxGlyphsVisuallyInspected": 2,
+    "entryDetailPanelsVisuallyInspected": 3,
+    "pairsCalculated": 110,
+    "pairsMatchingMoyaGraph": 110,
+    "jaRequiredOrderSwap": [
+      9,
+      10
+    ],
+    "jaMissingReturnHookStroke": 8,
+    "mmRequiredOrderSwap": [],
+    "confirmedMmStrokeOrderErrors": 0,
+    "unresolvedMmFontEntryStrokes": [
+      1,
+      4,
+      10
+    ],
+    "newRuntimeApprovals": 0
+  },
+  "inputs": [
+    {
+      "path": "candidate-paths.json",
+      "sha256": "d8693f82cda0caa806a006ea34e449910d0d8f0077d02995a8e0479416c8d4e1"
+    },
+    {
+      "path": "../hanja-g3ii-crosscheck-63-2026-09-13/review-b.json",
+      "sha256": "80b1e74cb9590544db806e17f77fc05a9f646317670417fffd8c902fd115187b",
+      "evidence": "B가 이미 실제 관찰한 MOE 전체11획 방향·경계와 Moya번호 및 동양 p165의4–11 누적 대응"
+    },
+    {
+      "url": "https://www.moyaland.com/_new/data/item/1426582068_l2",
+      "sha256": "195b8499ae0ab432577394efe83538f62fb344c87851219f6b7093b1bfab1922",
+      "freshRamFetch": true,
+      "bytes": 92412,
+      "dimensions": [
+        505,
+        616
+      ],
+      "visualRecheck": "동일 글자 전체 번호도해를 대조하고 아래부분 crop [0,290,505,616]를 808px 폭으로 재열람"
+    }
+  ],
+  "method": {
+    "renderer": "sharp SVG→WebP in RAM; actual source paths, width5 round caps and joins",
+    "sourceMediaPersisted": false,
+    "browserLocalFileAccessUsed": false,
+    "outputGeometryCopiedFromOfficialXml": false,
+    "corpusRefetch": "이번 B는 재수신하지 않음. root가 이전에 검증해 제공한 후보와 SHA에 근거하며 path배열 SHA는 직접 확인함.",
+    "directionReference": "MOE 직접 재생 및 ordered Track의 이전 고정 B 검토. 한국 직접 동작의 부재를 새로운 승인 필수조건으로 추가하지 않음.",
+    "geometryReference": "Moya의 원전 미표시 번호도해를 기준으로 관찰 가능한 구조와 간격을 대조; 공식 기관 인증으로 승격하지 않음."
+  },
+  "candidates": [
+    {
+      "name": "Ja",
+      "pathSha256": "f961dad89b77f31241a1ebf55ad077f1453df4c3019725f8c940e7bd6c05b1e0",
+      "orderMapping": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        9,
+        11
+      ],
+      "comparison": [
+        {
+          "sourceStroke": 1,
+          "reviewedStroke": 1,
+          "shape": "상부 왼 삐침",
+          "licensedCandidateStart": [
+            29,
+            13.8
+          ],
+          "licensedCandidateEnd": [
+            16,
+            39.8
+          ],
+          "pointCount": 5,
+          "dominantDirection": "주 진행은 왼쪽 아래",
+          "startEndAssessment": "주 진행 방향 및 시작·끝 영역은 대응하나 초기 우하향 폰트 진입 구간은 별도 확인사항. 이를 획순 오류로 확정하지 않음.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-main-direction; unresolved-font-entry-detail",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 2,
+          "reviewedStroke": 2,
+          "shape": "상부 왼 가로",
+          "licensedCandidateStart": [
+            32.2,
+            24.2
+          ],
+          "licensedCandidateEnd": [
+            50.8,
+            22.1
+          ],
+          "pointCount": 2,
+          "dominantDirection": "왼쪽에서 오른쪽 위",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 3,
+          "reviewedStroke": 3,
+          "shape": "상부 왼 점",
+          "licensedCandidateStart": [
+            30.7,
+            33.1
+          ],
+          "licensedCandidateEnd": [
+            38.6,
+            40.6
+          ],
+          "pointCount": 3,
+          "dominantDirection": "오른쪽 아래로 점",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 4,
+          "reviewedStroke": 4,
+          "shape": "상부 오른 삐침",
+          "licensedCandidateStart": [
+            59.8,
+            10
+          ],
+          "licensedCandidateEnd": [
+            48.8,
+            34.4
+          ],
+          "pointCount": 5,
+          "dominantDirection": "주 진행은 왼쪽 아래",
+          "startEndAssessment": "주 진행 방향 및 시작·끝 영역은 대응하나 초기 우하향 폰트 진입 구간은 별도 확인사항. 이를 획순 오류로 확정하지 않음.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-main-direction; unresolved-font-entry-detail",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 5,
+          "reviewedStroke": 5,
+          "shape": "상부 오른 가로",
+          "licensedCandidateStart": [
+            63.3,
+            21
+          ],
+          "licensedCandidateEnd": [
+            84,
+            18.3
+          ],
+          "pointCount": 2,
+          "dominantDirection": "왼쪽에서 오른쪽 위",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 6,
+          "reviewedStroke": 6,
+          "shape": "상부 오른 점",
+          "licensedCandidateStart": [
+            61.1,
+            30
+          ],
+          "licensedCandidateEnd": [
+            71.5,
+            37.8
+          ],
+          "pointCount": 3,
+          "dominantDirection": "오른쪽 아래로 점",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 7,
+          "reviewedStroke": 7,
+          "shape": "아래 왼 세로",
+          "licensedCandidateStart": [
+            21.6,
+            49.8
+          ],
+          "licensedCandidateEnd": [
+            30.8,
+            85.8
+          ],
+          "pointCount": 3,
+          "dominantDirection": "아래로 약간 오른쪽",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 8,
+          "reviewedStroke": 8,
+          "shape": "아래 윗가로·오른 하강·갈고리",
+          "licensedCandidateStart": [
+            27.7,
+            52.1
+          ],
+          "licensedCandidateEnd": [
+            67.4,
+            90
+          ],
+          "pointCount": 6,
+          "dominantDirection": "오른쪽으로 가로, 아래로 꺾고 끝은 왼쪽 위",
+          "startEndAssessment": "시작·가로·하강은 대응하지만 마지막 위치가 하강 끝에 머물고 왼위 갈고리 되돌림이 없음.",
+          "boundaryAndBend": "단일 꺾임 획이지만 마지막 갈고리 굴곡이 누락됨.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "explicit-hook-shape-mismatch",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 9,
+          "reviewedStroke": 10,
+          "shape": "아래 중앙 세로",
+          "licensedCandidateStart": [
+            43.6,
+            38.9
+          ],
+          "licensedCandidateEnd": [
+            47.1,
+            79.9
+          ],
+          "pointCount": 3,
+          "dominantDirection": "주 진행은 위에서 아래",
+          "startEndAssessment": "주 진행 방향 및 시작·끝 영역은 대응하나 초기 우하향 폰트 진입 구간은 별도 확인사항. 이를 획순 오류로 확정하지 않음.",
+          "boundaryAndBend": "독립 중앙세로1획. 시작 사선과 끝의 작은 곡률은 본문 설명처럼 별도 판단.",
+          "orderStatus": "source9/10 must swap",
+          "geometryJudgment": "order-permutation-required",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 10,
+          "reviewedStroke": 9,
+          "shape": "아래 안쪽 가로",
+          "licensedCandidateStart": [
+            36.1,
+            66.5
+          ],
+          "licensedCandidateEnd": [
+            61.2,
+            65
+          ],
+          "pointCount": 2,
+          "dominantDirection": "왼쪽에서 오른쪽으로 가로",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "source9/10 must swap",
+          "geometryJudgment": "order-permutation-required",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 11,
+          "reviewedStroke": 11,
+          "shape": "아래 바닥 가로",
+          "licensedCandidateStart": [
+            31.6,
+            82.5
+          ],
+          "licensedCandidateEnd": [
+            65.9,
+            79.1
+          ],
+          "pointCount": 2,
+          "dominantDirection": "왼쪽에서 오른쪽으로 바닥 가로",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        }
+      ],
+      "decision": "not preferred; order swap and missing return hook remain",
+      "runtimeApproved": false
+    },
+    {
+      "name": "MM",
+      "pathSha256": "ee63d6d13e47d1243a617e7bd287b6314aaabfd0e1c1465e62b80440d6c61bdf",
+      "orderMapping": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "comparison": [
+        {
+          "sourceStroke": 1,
+          "reviewedStroke": 1,
+          "shape": "상부 왼 삐침",
+          "licensedCandidateStart": [
+            27.8,
+            13.7
+          ],
+          "licensedCandidateEnd": [
+            14.3,
+            41.2
+          ],
+          "pointCount": 7,
+          "dominantDirection": "주 진행은 왼쪽 아래",
+          "startEndAssessment": "주 진행 방향 및 시작·끝 영역은 대응하나 초기 우하향 폰트 진입 구간은 별도 확인사항. 이를 획순 오류로 확정하지 않음.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-main-direction; unresolved-font-entry-detail",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 2,
+          "reviewedStroke": 2,
+          "shape": "상부 왼 가로",
+          "licensedCandidateStart": [
+            30.8,
+            25
+          ],
+          "licensedCandidateEnd": [
+            50.1,
+            22.3
+          ],
+          "pointCount": 4,
+          "dominantDirection": "왼쪽에서 오른쪽 위",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 3,
+          "reviewedStroke": 3,
+          "shape": "상부 왼 점",
+          "licensedCandidateStart": [
+            29.1,
+            34.2
+          ],
+          "licensedCandidateEnd": [
+            36.9,
+            41.1
+          ],
+          "pointCount": 3,
+          "dominantDirection": "오른쪽 아래로 점",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 4,
+          "reviewedStroke": 4,
+          "shape": "상부 오른 삐침",
+          "licensedCandidateStart": [
+            60.7,
+            10
+          ],
+          "licensedCandidateEnd": [
+            49.1,
+            35.2
+          ],
+          "pointCount": 7,
+          "dominantDirection": "주 진행은 왼쪽 아래",
+          "startEndAssessment": "주 진행 방향 및 시작·끝 영역은 대응하나 초기 우하향 폰트 진입 구간은 별도 확인사항. 이를 획순 오류로 확정하지 않음.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-main-direction; unresolved-font-entry-detail",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 5,
+          "reviewedStroke": 5,
+          "shape": "상부 오른 가로",
+          "licensedCandidateStart": [
+            64.4,
+            21.4
+          ],
+          "licensedCandidateEnd": [
+            85.7,
+            18.8
+          ],
+          "pointCount": 4,
+          "dominantDirection": "왼쪽에서 오른쪽 위",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 6,
+          "reviewedStroke": 6,
+          "shape": "상부 오른 점",
+          "licensedCandidateStart": [
+            61.8,
+            30.7
+          ],
+          "licensedCandidateEnd": [
+            71.9,
+            38
+          ],
+          "pointCount": 3,
+          "dominantDirection": "오른쪽 아래로 점",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 7,
+          "reviewedStroke": 7,
+          "shape": "아래 왼 세로",
+          "licensedCandidateStart": [
+            20.1,
+            52.4
+          ],
+          "licensedCandidateEnd": [
+            29.6,
+            90
+          ],
+          "pointCount": 6,
+          "dominantDirection": "아래로 약간 오른쪽",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 8,
+          "reviewedStroke": 8,
+          "shape": "아래 윗가로·오른 하강·갈고리",
+          "licensedCandidateStart": [
+            26.6,
+            54.1
+          ],
+          "licensedCandidateEnd": [
+            64.7,
+            83
+          ],
+          "pointCount": 11,
+          "dominantDirection": "오른쪽으로 가로, 아래로 꺾고 끝은 왼쪽 위",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "단일 꺾임 획에서 오른 하강 후 왼위 되돌림을 보존. 시작의 작은 굴곡은 폰트 진입부.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 9,
+          "reviewedStroke": 9,
+          "shape": "아래 안쪽 가로",
+          "licensedCandidateStart": [
+            35.4,
+            70.5
+          ],
+          "licensedCandidateEnd": [
+            61,
+            68.2
+          ],
+          "pointCount": 4,
+          "dominantDirection": "왼쪽에서 오른쪽으로 가로",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 10,
+          "reviewedStroke": 10,
+          "shape": "아래 중앙 세로",
+          "licensedCandidateStart": [
+            43.9,
+            40.9
+          ],
+          "licensedCandidateEnd": [
+            46.1,
+            82.9
+          ],
+          "pointCount": 4,
+          "dominantDirection": "주 진행은 위에서 아래",
+          "startEndAssessment": "주 진행 방향 및 시작·끝 영역은 대응하나 초기 우하향 폰트 진입 구간은 별도 확인사항. 이를 획순 오류로 확정하지 않음.",
+          "boundaryAndBend": "독립 중앙세로1획. 시작 사선과 끝의 작은 곡률은 본문 설명처럼 별도 판단.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-main-direction; unresolved-font-entry-detail",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        },
+        {
+          "sourceStroke": 11,
+          "reviewedStroke": 11,
+          "shape": "아래 바닥 가로",
+          "licensedCandidateStart": [
+            31.4,
+            88
+          ],
+          "licensedCandidateEnd": [
+            63.5,
+            82.9
+          ],
+          "pointCount": 4,
+          "dominantDirection": "왼쪽에서 오른쪽으로 바닥 가로",
+          "startEndAssessment": "해당 획의 시작·끝 영역과 주 진행이 대응함. 공개 폰트 중앙선의 작은 굴곡까지 원문 궤적과 같다는 판정은 아님.",
+          "boundaryAndBend": "독립1획 단위를 유지하며 임의 분할 없음.",
+          "orderStatus": "matches reviewed number",
+          "geometryJudgment": "compatible-at-reviewed-structure-level",
+          "connectionAssessment": "geometry-di.json의 reviewedPair 기준55쌍 표를 참조. 두 후보 모두 Moya 기대 접촉8/간격47 관계와 일치.",
+          "correctionApplied": false
+        }
+      ],
+      "decision": "preferred original candidate; entry details remain for independent decision",
+      "runtimeApproved": false
+    }
+  ],
+  "preference": {
+    "originalCandidate": "MM",
+    "correctedGeometryCandidate": null,
+    "reasons": [
+      "MM의1–11이 검토 순서와 동일해 인덱스 보정 불필요.",
+      "MM8은 하강 후 왼위 갈고리를 보존하지만 Ja8은 하강에서 끝남.",
+      "MM3/10 간격은 약2.0029로 Ja 대응 간격0.2811보다 여유가 있음. 전체 모든 간격의 상대 우열을 뜻하지 않음."
+    ],
+    "entryDecision": "MM1/4/10 첫 segment를 주황색으로 확대 표시했다. 국소 우하향은 사실이나 폰트의 진입 굴곡을 획방향 오류로 단정할 근거는 충분하지 않다. 점 삭제·좌표 수정 proposal은 만들지 않았다."
+  },
+  "remainingIssues": {
+    "geometry": [
+      "MM1/4/10 시작 진입부에 대한 독립 판정. 필요성이 확인된 경우에만 허가된 후보의 최소 보정 및 재렌더.",
+      "Ja를 선택할 경우9/10교환과8갈고리 보완을 별도로 검토."
+    ],
+    "provenance": [
+      "동양북스 p165는4–11만 보여 국내 출판사 누적1–3 개별 상태가 없음.",
+      "모야랜드 도해의 원전 미확인 및 누적PNG 첫 상태 왼끝 잘림."
+    ],
+    "runtime": "기하 비교·후보 선호는 런타임 승인이 아님. 기존 국내 출판사 정적 순서+별도 공식 방향 결합 정책을 유지한다."
+  },
+  "artifacts": {
+    "geometry": "geometry-di.json",
+    "svg": "review-di.svg",
+    "svgSha256": "519959d907216ddeb881235be958aa702f3563130dff79118c83c7787a0229d7"
+  },
+  "constraints": {
+    "sharedCodeModified": false,
+    "runtimeModified": false,
+    "otherDocumentsModified": false,
+    "gitModified": false,
+    "rawOfficialCoordinatesPersisted": false,
+    "originalSourceMediaPersisted": false
+  },
+  "errors": []
+}

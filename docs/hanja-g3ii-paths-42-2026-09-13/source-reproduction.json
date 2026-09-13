@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-09-13T02:04:17.453Z",
+  "normalizerSha256": "8e2b98e3064bd84e0ec1ad5cb05e56c624c0759cd10357e95fe8768e5d0dd06d",
+  "results": [
+    {
+      "source": "Ko",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "bytes": 1387824,
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+      "candidates": 535,
+      "targets": [
+        {
+          "glyph": "笛",
+          "status": "missing"
+        },
+        {
+          "glyph": "蹟",
+          "status": "missing"
+        },
+        {
+          "glyph": "稚",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "source": "Ja",
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "bytes": 21862957,
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+      "candidates": 7007,
+      "targets": [
+        {
+          "glyph": "笛",
+          "strokes": 11,
+          "matched": true,
+          "normalizedPathsSha256": "f961dad89b77f31241a1ebf55ad077f1453df4c3019725f8c940e7bd6c05b1e0"
+        },
+        {
+          "glyph": "蹟",
+          "strokes": 18,
+          "matched": true,
+          "normalizedPathsSha256": "cffe14ae36414c1d2b8972bc81991d11e4e8262c2b8db5c978779d033f01cca5"
+        },
+        {
+          "glyph": "稚",
+          "strokes": 13,
+          "matched": true,
+          "normalizedPathsSha256": "0ae581a9486b8be02822fffef33bfa08fba5b4df3999450a3b5d05462d1ec3c8"
+        }
+      ]
+    },
+    {
+      "source": "MM",
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "bytes": 30778076,
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+      "candidates": 9574,
+      "targets": [
+        {
+          "glyph": "笛",
+          "strokes": 11,
+          "matched": true,
+          "normalizedPathsSha256": "ee63d6d13e47d1243a617e7bd287b6314aaabfd0e1c1465e62b80440d6c61bdf"
+        },
+        {
+          "glyph": "蹟",
+          "strokes": 18,
+          "matched": true,
+          "normalizedPathsSha256": "28558a380fc40f2bd42a8d9f4b3885a49adfff7f311c151c73b9c626905fc38e"
+        },
+        {
+          "glyph": "稚",
+          "strokes": 13,
+          "matched": true,
+          "normalizedPathsSha256": "c7b27f59a734af9bc03218d180efd1e39c96fdf40fdf63c8ef34a911ff5d9eb5"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "schemaVersion": 1,
+  "scope": "Fresh pinned-source reproduction of the 84 original paths across two candidate sets for 42 target strokes. This verifies origin and normalization, not Korean order or playback approval."
+}
