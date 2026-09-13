@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "owner": "A",
+  "completedAt": "2026-09-13T00:59:17Z",
+  "task": "訣·紋 누락 누적 단계의 국내 공개 원문 확보 조사",
+  "scope": {
+    "glyphs": [
+      "訣",
+      "紋"
+    ],
+    "characters": 2,
+    "catalogStrokes": 21
+  },
+  "summary": {
+    "newPublisherOrExamInstitutionCompleteOrders": 0,
+    "privateDomesticCompleteNumberedOrderReferences": {
+      "characters": 2,
+      "catalogStrokes": 21
+    },
+    "uncroppedCompleteCumulativeSequences": 0,
+    "newDirectionalAnimationsObserved": 0,
+    "newPathApprovals": 0,
+    "runtimeChanges": 0
+  },
+  "baselineReferences": [
+    "../hanja-g3ii-textbook-acquisition-2026-09-13/research-c.json",
+    "../hanja-g3ii-textbook-acquisition-2026-09-13/research-peer.json",
+    "../hanja-g3ii-batch13-2026-09-13/next-review-queue.json"
+  ],
+  "method": {
+    "access": "공개 원문만 플랫폼 /usr/bin/curl 기본 TLS 검증으로 RAM에 수신했다. 로그인을 우회하거나 구매·외부 연락하지 않았다.",
+    "visual": "이미지 바이트를 RAM에서 실제 열람했다. 작은 누적 PNG 전체를 2배 표시한 뒤 첫100px 영역을 6배 확대하여 경계 잘림을 확인했다. 큰 번호 도해 두 개는 원본 크기로 전부 열람했다. 동양 PDF는 pypdfium2로 높이5000px 렌더 후 대상 행 및 처음4~5칸을 RAM 확대하여 다시 열람했다.",
+    "originalHandling": "원본 PDF·ZIP·이미지와 해외 좌표를 저장하거나 이 산출물에 넣지 않았다. 다른 검토자에게 같은 PDF의 허용 페이지를 제공하는 임시 로컬 RAM 렌더러만 사용했다.",
+    "directionLimit": "번호와 누적 도형은 순서의 정적 근거다. 획 내부 진행 방향을 직접 관찰한 영상·화살표 근거로 취급하지 않는다.",
+    "referenceLimit": "민간 국내 자료 확보와 출판사·시험기관 원전 확보를 별도 집계한다. 이 조사만으로 기존 동양 도해에 누락 획을 합성하거나 애니메이션을 승인하지 않는다."
+  },
+  "sources": [
+    {
+      "id": "moyaland-private-hanja",
+      "title": "모야랜드 급수한자 개별 학습 페이지",
+      "operator": "모야랜드",
+      "authority": "domestic-private-learning-site",
+      "operatorEvidence": "본문 하단은 민간 사업자 정보와 대표 유태중, 사업자등록번호 113-90-68423을 표시한다. 출판사·시험기관 원전 명칭이나 해당 도해의 원저작자 귀속을 확인하지 못했다.",
+      "publicAccess": true,
+      "sourceArtworkProvenanceVerified": false,
+      "examInstitutionApprovalClaimed": false,
+      "pages": [
+        {
+          "pageUrl": "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1427260631",
+          "pageBytes": 27988,
+          "pageSha256": "6ae35c280e7fd08fc14574565b743ee798993a0c6536f2f4ac02b1f5b385b529",
+          "imageUrl": "https://www.moyaland.com/_new/data/cheditor4/1503/9b04c80cd71f79f8ac552a3e02a90b53_1xMcosn4i.png",
+          "imageBytes": 40963,
+          "imageSha256": "669bd1f2b0bfb1b2fb2144fe74cbfd56f777971bccbc5dfc8e62e6deebf55897",
+          "size": [
+            782,
+            50
+          ],
+          "checkedAt": "2026-09-13T00:52:04.013596+00:00"
+        },
+        {
+          "pageUrl": "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1426211138",
+          "pageBytes": 30351,
+          "pageSha256": "8605a85c67b3f978e630f95b6eb1fe0bab505fc0fa31df285cc15c031c4d3cbe",
+          "imageUrl": "https://www.moyaland.com/_new/data/cheditor4/1503/9b04c80cd71f79f8ac552a3e02a90b53_f98uZRKzt66kqTcx63MS5J.png",
+          "imageBytes": 37747,
+          "imageSha256": "44e705d40420b1042aaa430c24a55a3732c2f7fe43ba7c50002846668f7e8e88",
+          "size": [
+            793,
+            50
+          ],
+          "checkedAt": "2026-09-13T00:52:04.438814+00:00"
+        }
+      ],
+      "numberedAssets": [
+        {
+          "url": "https://www.moyaland.com/_new/data/item/1427260631_l2",
+          "exit": 0,
+          "bytes": 104235,
+          "sha256": "93c63fcc8a8175ad6045952529100159e9ac845d35a89eddf2ad3d66ed2704dc",
+          "checkedAt": "2026-09-13T00:53:19.472042+00:00",
+          "size": [
+            626,
+            574
+          ]
+        },
+        {
+          "url": "https://www.moyaland.com/_new/data/item/1426211138_l2",
+          "exit": 0,
+          "bytes": 104619,
+          "sha256": "c77dd057b7f4c88d5fb0f6a3d0088aff26abbb05b91bb7a1f5d24426be5bc5d0",
+          "checkedAt": "2026-09-13T00:53:20.208198+00:00",
+          "size": [
+            644,
+            595
+          ]
+        }
+      ],
+      "unusableLinkedAssets": [
+        {
+          "url": "https://www.moyaland.com/_new/data/item/1427260631_l4",
+          "exit": 0,
+          "bytes": 7173,
+          "sha256": "e532ac8e344574efa261081f2064b118799e0b08b708e5b47893a98fd2b20d5a",
+          "checkedAt": "2026-09-13T00:53:19.694767+00:00",
+          "error": "cannot identify image file <_io.BytesIO object at 0x10a4a1620>"
+        },
+        {
+          "url": "https://www.moyaland.com/_new/data/item/1426211138_l4",
+          "exit": 0,
+          "bytes": 7173,
+          "sha256": "e532ac8e344574efa261081f2064b118799e0b08b708e5b47893a98fd2b20d5a",
+          "checkedAt": "2026-09-13T00:53:20.332743+00:00",
+          "error": "cannot identify image file <_io.BytesIO object at 0x10a4a1c10>"
+        }
+      ],
+      "edgeInspection": [
+        {
+          "url": "https://www.moyaland.com/_new/data/cheditor4/1503/9b04c80cd71f79f8ac552a3e02a90b53_1xMcosn4i.png",
+          "sha256": "669bd1f2b0bfb1b2fb2144fe74cbfd56f777971bccbc5dfc8e62e6deebf55897",
+          "coloredEdgePixels": {
+            "left": 4,
+            "right": 2,
+            "top": 32,
+            "bottom": 0
+          }
+        },
+        {
+          "url": "https://www.moyaland.com/_new/data/cheditor4/1503/9b04c80cd71f79f8ac552a3e02a90b53_f98uZRKzt66kqTcx63MS5J.png",
+          "sha256": "44e705d40420b1042aaa430c24a55a3732c2f7fe43ba7c50002846668f7e8e88",
+          "coloredEdgePixels": {
+            "left": 2,
+            "right": 0,
+            "top": 10,
+            "bottom": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "dongyang-hanja3-note",
+      "title": "암기박사식 한자 능시 3급 — 한자능시 3급 쓰기노트",
+      "publisherAsListed": "동양문고",
+      "officialHost": "동양북스",
+      "isbn13": "9788983005991",
+      "officialPage": "https://dongyangbooks.com/book/book_view.asp?goods_code=979&menu_1=hanja&menu_2=han_hanja",
+      "sourceUrl": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+      "checkedAt": "2026-09-13T00:56:27.042433+00:00",
+      "zipBytes": 77040295,
+      "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+      "pdfBytes": 77369148,
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "pdfPages": 165,
+      "access": "public-publisher-supplement",
+      "freshPinMatchesPrevious": true,
+      "mediaSaved": false,
+      "inspections": [
+        {
+          "sourceUrl": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+          "zipBytes": 77040295,
+          "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+          "pdfBytes": 77369148,
+          "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+          "checkedAt": "2026-09-13T00:56:27.042433+00:00",
+          "pages": 165,
+          "pdfPage": 80,
+          "renderSize": [
+            3658,
+            5000
+          ],
+          "crop": [
+            223,
+            2432,
+            1800,
+            2882
+          ],
+          "size": [
+            1200,
+            342
+          ],
+          "imageSha256": "17b98ae65038a30269b3e33041310f29753b5b3f9a42b7e79f11a6bd2eb07e80"
+        },
+        {
+          "sourceUrl": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+          "zipBytes": 77040295,
+          "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+          "pdfBytes": 77369148,
+          "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+          "checkedAt": "2026-09-13T00:56:27.042433+00:00",
+          "pages": 165,
+          "pdfPage": 159,
+          "renderSize": [
+            3658,
+            5000
+          ],
+          "crop": [
+            292,
+            1700,
+            1750,
+            2125
+          ],
+          "size": [
+            1200,
+            350
+          ],
+          "imageSha256": "e238f75f6760c93aaa1d6a12b67da99d673f6bd5833f55dd2b146bbf23754bcb"
+        },
+        {
+          "sourceUrl": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+          "zipBytes": 77040295,
+          "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+          "pdfBytes": 77369148,
+          "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+          "checkedAt": "2026-09-13T00:56:27.042433+00:00",
+          "pages": 165,
+          "pdfPage": 80,
+          "renderSize": [
+            3658,
+            5000
+          ],
+          "crop": [
+            565,
+            2600,
+            1025,
+            2705
+          ],
+          "size": [
+            1400,
+            320
+          ],
+          "imageSha256": "f9e97f88df88385031aaf5672da17e18fbbe0b42c49684e2dd776a6f06affd78"
+        },
+        {
+          "sourceUrl": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+          "zipBytes": 77040295,
+          "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+          "pdfBytes": 77369148,
+          "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+          "checkedAt": "2026-09-13T00:56:27.042433+00:00",
+          "pages": 165,
+          "pdfPage": 159,
+          "renderSize": [
+            3658,
+            5000
+          ],
+          "crop": [
+            555,
+            1830,
+            995,
+            1925
+          ],
+          "size": [
+            1600,
+            345
+          ],
+          "imageSha256": "817db100001398fdccb0d1203a20d45aee6d2d95b2434de00efb5ef7b94306c5"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "glyph": "訣",
+      "catalogStrokes": 11,
+      "existingPublisherPage": {
+        "pdfPage": 80,
+        "printedPage": 80,
+        "visibleCumulativeStates": 8,
+        "observedCompletedStrokeCounts": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "missingCompletedStates": [
+          1,
+          2,
+          3
+        ],
+        "firstState": "말씀 言의 점과 가로3개가 검정이고 아래 口 및 오른쪽은 회색이다. 다음 세 칸에서 口의 세로, 윗가로·오른세로 꺾임, 아래가로를 차례로 더한다.",
+        "assessment": "기존의 초기1–3 누락 판정을 새 확대 원문으로 확인했다.",
+        "completeFromFirstStroke": false
+      },
+      "privateReference": {
+        "pageUrl": "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1426211138",
+        "exactGlyphObserved": true,
+        "numberedDiagramUrl": "https://www.moyaland.com/_new/data/item/1426211138_l2",
+        "visibleNumberLabels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "firstLabelObserved": true,
+        "completeNumberedOrderReference": true,
+        "cumulativeUrl": "https://www.moyaland.com/_new/data/cheditor4/1503/9b04c80cd71f79f8ac552a3e02a90b53_f98uZRKzt66kqTcx63MS5J.png",
+        "visibleCumulativeStates": 11,
+        "cumulativeStartsWithFirstStroke": true,
+        "cumulativeObservation": "분홍색 왼쪽 言이 점→가로선들→口 순서로 누적되고, 청록색 오른쪽 夬가 더해져 정확 訣로 끝난다.",
+        "imageBoundaryLimitation": "첫 점의 왼쪽이 원본 이미지 경계에서 잘린다. 일부 획도 상·하 경계에 닿아 있어 완전히 보이는 전체 누적도형으로 집계하지 않는다.",
+        "uncroppedCompleteCumulative": false,
+        "wholeOrderNewlyProvedByPublisherOrExamInstitution": false,
+        "directionDirectlyObserved": false
+      },
+      "verdict": "private-numbered-order-reference-acquired; publisher-complete-source-still-missing",
+      "animationApproved": false
+    },
+    {
+      "glyph": "紋",
+      "catalogStrokes": 10,
+      "existingPublisherPage": {
+        "pdfPage": 159,
+        "printedPage": 159,
+        "visibleCumulativeStates": 8,
+        "observedCompletedStrokeCounts": [
+          1,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "missingCompletedStates": [
+          2,
+          5
+        ],
+        "firstState": "糸 첫 꺾임 한 획만 검정이다. 둘째 칸에는 두 번째 꺾임과 짧은 점이 함께 더해져 있고, 셋째 칸에서 긴 세로, 넷째 칸에서 좌우 점 두 개가 함께 더해진다. 이후 文의 네 획은 각각 추가된다.",
+        "assessment": "정정: 누적 칸 수만으로 초기 두 단계를 생략했다고 해석하면 안 된다. 첫획은 존재하며, 개별 완료 상태2와5가 빠진 중간 단계 생략이다.",
+        "completeFromFirstStroke": true,
+        "everyStrokeCompletionIndividuallyShown": false,
+        "rootIndependentReinspectionAgreed": true
+      },
+      "privateReference": {
+        "pageUrl": "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1427260631",
+        "exactGlyphObserved": true,
+        "numberedDiagramUrl": "https://www.moyaland.com/_new/data/item/1427260631_l2",
+        "visibleNumberLabels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "firstLabelObserved": true,
+        "completeNumberedOrderReference": true,
+        "cumulativeUrl": "https://www.moyaland.com/_new/data/cheditor4/1503/9b04c80cd71f79f8ac552a3e02a90b53_1xMcosn4i.png",
+        "visibleCumulativeStates": 10,
+        "cumulativeStartsWithFirstStroke": true,
+        "cumulativeObservation": "분홍색 糸의 첫 꺾임→둘째 꺾임→짧은 점→긴 세로→좌점→우점이 개별 누적되고 청록색 文 네 획이 이어진다.",
+        "imageBoundaryLimitation": "첫 꺾임의 왼쪽·상단 부분이 원본 이미지 경계에서 잘리고 마지막 오른끝도 경계에 닿는다. 완전히 보이는 전체 누적도형으로 집계하지 않는다.",
+        "uncroppedCompleteCumulative": false,
+        "wholeOrderNewlyProvedByPublisherOrExamInstitution": false,
+        "directionDirectlyObserved": false
+      },
+      "verdict": "private-numbered-order-reference-acquired; publisher-intermediate-stages2-and5-still-missing",
+      "animationApproved": false
+    }
+  ],
+  "additionalDomesticRoutes": [
+    {
+      "id": "dongyang615",
+      "title": "이렇게만 준비하면 끝! 한자능력검정시험 3급·3급II (개정판)",
+      "url": "https://www.dongyangbooks.com/book/book_view.asp?goods_code=615&menu_1=hanja&menu_2=han_hanja",
+      "checkedAt": "2026-09-13T00:52:50.474155+00:00",
+      "bytes": 58559,
+      "sha256": "df5e029642724cb437b293cacfea01a879b8b0f74c4604366274a2a8534f30aa",
+      "observedResourceUrl": "https://www.dongyangbooks.com/book/download.asp?no=17&bsno=141",
+      "resourceCheckedAt": "2026-09-13T00:54:32.633444+00:00",
+      "resourceBytes": 121,
+      "resourceSha256": "58428385fbfb188ac45cb42a493308e069d50126cffbffb7ba22ecd60b9433cf",
+      "accessResult": "linked-resource-missing",
+      "observation": "공식 도서자료 링크는 파일이 존재하지 않는다는 JavaScript 안내를 반환했다. 대상 본문 확보0."
+    },
+    {
+      "id": "dongyang1727",
+      "title": "한자능력검정시험 8급~3급 배정한자 쓰기노트 부록 안내",
+      "url": "https://www.dongyangbooks.com/book/book_view.asp?goods_code=1727&menu_1=hanja&menu_2=han_hanja",
+      "checkedAt": "2026-09-13T00:52:50.471249+00:00",
+      "bytes": 58309,
+      "sha256": "07cca4f377fae9f0f36b86b1244be8df0a04f55b96fb010eedb8b1a7bd0dfa3a",
+      "accessResult": "book-description-only",
+      "observation": "1817자 쓰기 연습 부록이라는 소개와 도서자료 영역을 읽었지만 이 페이지에서 유효한 공개 대상 본문 링크를 확보하지 못했다. 소개만으로 필순 수록을 인정하지 않았다."
+    },
+    {
+      "id": "hyungminsa",
+      "url": "https://www.hanja114.com/",
+      "checkedAt": "2026-09-13T00:54:32.855043+00:00",
+      "bytes": 121157,
+      "sha256": "b59a7e36da10f7cb9b1d4422dea49d6643a45b2331779a716bfe14f04bfe5998",
+      "accessResult": "publisher-catalog-only",
+      "observation": "도서출판 형민사 공식 카탈로그에 3급 교재·연습문제집을 확인했다. 해당 두 글자의 본문은 열람하지 않았으며 후보 표지나 일반 상품 미리보기 기능을 필순 근거로 계산하지 않았다."
+    }
+  ],
+  "nextActions": [
+    "訣은 국내 출판사·시험기관의 같은 글자 첫1–3 완료 상태를 확보하거나 11획 전체 도해를 확보한다.",
+    "紋은 기존 동양 페이지의 누락 지점을 2·5로 정정하여, 같은 글자의 그 두 개별 완료 상태 또는 10획 전체 출판사 도해를 확보한다.",
+    "모야랜드 번호도해와 작은 누적 열은 민간 참고자료로 유지한다. 원전 귀속·잘림 없는 원본·직접 방향 근거를 확인하기 전 경로 승인으로 승격하지 않는다."
+  ]
+}
