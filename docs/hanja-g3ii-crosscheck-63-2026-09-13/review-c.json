@@ -1,0 +1,974 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "owner": "c",
+  "task": "蹟 18획 순서·방향 교차검토",
+  "target": {
+    "glyph": "蹟",
+    "codePoint": "U+8E5F",
+    "strokes": 18
+  },
+  "baseline": {
+    "reference": "baseline.json",
+    "commit": "ba3f1402008462050b47b42d1bbc3d03032cc022",
+    "runtime": 1473,
+    "grade3IIApplied": 483
+  },
+  "result": {
+    "status": "crosschecked-with-authority-gaps",
+    "reviewedStrokes": 18,
+    "moyaToMoeOrder": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "moyaToMoeOrderDifferences": [],
+    "allForeignDirectionsActuallyViewed": true,
+    "allForeignOrderedTracksExamined": true,
+    "allBasicStrokeShapesAndBoundariesCorrespond": true,
+    "koreanPublisherCompleteStages": 8,
+    "koreanPublisherMissingStages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      14,
+      15
+    ],
+    "newRuntimeApprovals": 0,
+    "runtimeChanges": false,
+    "reason": "민간 도해와 해외 공식 동작의 18획 대응은 확인했으나, 민간 원전 미표시와 국내 출판사 개별 완료 상태 10개 공백 및 허가 후보 경로 18획 미검토가 남는다.",
+    "admissibleMethod": "기존 문서 pipeline은 국내 출판사의 정적 누적 순서와 MOE 보조 방향의 결합을 허용한다. 한국 원문이 방향을 직접 보여주지 않는다는 사실 자체는 보류 사유가 아니다.",
+    "candidateGeometryReviewed": false
+  },
+  "sources": {
+    "moya": {
+      "provider": "모야랜드",
+      "classification": "국내 민간 학습자료; 시험기관·출판 교재 원전 미표시",
+      "title": "급수한자 3급Ⅱ 蹟 (자취 적)",
+      "pageUrl": "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1427357210",
+      "publicationDate": null,
+      "cumulative": {
+        "url": "https://www.moyaland.com/_new/data/cheditor4/1512/1b4f7dffb53f06669993a07f1cf43b59_sFRLLhts6O.jpg",
+        "bytes": 61673,
+        "sha256": "8aed22dcff7d8c3d8294bcc6825f0e37030b3daaf1227af863e1db4fbbb7e067",
+        "checkedAt": "2026-09-13T01:43:49.966539+00:00",
+        "size": [
+          799,
+          134
+        ]
+      },
+      "numbered": {
+        "url": "https://www.moyaland.com/_new/data/item/1427357210_l2",
+        "bytes": 115103,
+        "sha256": "4585b49068361cc31ed1a865369ea9c2ab7dfdd0a7bf5ec1cd267c19e1ee6df3",
+        "checkedAt": "2026-09-13T01:44:08.069162+00:00",
+        "size": [
+          599,
+          611
+        ]
+      },
+      "visualReopened": true,
+      "panels": 18,
+      "numberedStrokes": 18,
+      "stageLayout": "윗줄 1~10 / 아랫줄 11~18",
+      "limitations": [
+        "누적 원본 799×134는 작고 첫 칸의 시작이 원본 왼쪽 경계에 닿아 일부 잘림 가능성이 있다.",
+        "599×611 번호 도해는 순서 번호가 있지만 동적 진행이나 방향 화살표가 없다.",
+        "기관·교재 원전 미표시 한계가 이번 교차검토로 해소되지 않는다."
+      ]
+    },
+    "dongyang": {
+      "provider": "동양문고 / 동양북스 공식 배포",
+      "title": "암기박사식 한자능시 3급 쓰기노트",
+      "bookUrl": "https://dongyangbooks.com/book/book_view.asp?goods_code=979&menu_1=hanja&menu_2=han_hanja",
+      "sourceUrl": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+      "zipBytes": 77040295,
+      "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+      "pdfBytes": 77369148,
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "checkedAt": "2026-09-13T01:37:53.425209+00:00",
+      "pages": 165,
+      "pdfPage": 32,
+      "renderSize": [
+        3658,
+        5000
+      ],
+      "crop": [
+        554,
+        4486,
+        1305,
+        4568
+      ],
+      "size": [
+        1800,
+        197
+      ],
+      "imageSha256": "9f04459cb65863ff61f5c0ed58a0f10494f674edd39a81d3f272fddf73d56716",
+      "sourceRetrieval": "A가 공식 URL에서 기본 TLS로 새 RAM 수신; C가 공유 loopback RAM crop을 직접 열람",
+      "visibleCumulativeStages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        16,
+        17,
+        18
+      ],
+      "missingCumulativeStages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        14,
+        15
+      ],
+      "observations": "첫 칸은 足7+가로2=9획. 제6칸은 貝 내부 가로2개와 밑가로가 동시에 검정이 된16획 상태다. [9,10,11,12,13,16,17,18] 정정을 재확인했다.",
+      "directionDirectlyShown": false,
+      "consecutiveIndividualTransitionsShown": [
+        10,
+        11,
+        12,
+        13,
+        17,
+        18
+      ]
+    },
+    "moe": {
+      "provider": "中華民國教育部 / Ministry of Education, Taiwan",
+      "jurisdiction": "Taiwan",
+      "classification": "해외 공식 동작 교차근거",
+      "title": "教育部《國字標準字體筆順學習網》2025",
+      "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=36447",
+      "sourceGlyph": "蹟",
+      "accessDate": "2026-09-13",
+      "frame": {
+        "bytes": 39577,
+        "sha256": "d660ccdcef0cad58b5d54d58e2f102bec5f3b13cd405a96060c04c5421d07224"
+      },
+      "xml": {
+        "location": "inline var xml[36447] JSON string decoded exactly, UTF-8 bytes including trailing whitespace",
+        "bytes": 29811,
+        "sha256": "b3e217526856311e2c88b718642bd33a09432a575552f555edf7a677e6c0370b",
+        "glyph": "蹟",
+        "strokeCount": 18,
+        "allStrokesHaveOutlineAndOrderedTrack": true,
+        "coordinatesStored": false
+      },
+      "playerPins": [
+        {
+          "url": "https://stroke-order.learningweb.moe.edu.tw/js/stroke-player.js",
+          "bytes": 10042,
+          "sha256": "899cd09f111fafc0075d972076fe16445525fbe365572dbf5a9a56acd7dd8416"
+        },
+        {
+          "url": "https://stroke-order.learningweb.moe.edu.tw/view.js",
+          "bytes": 4178,
+          "sha256": "d5c55e0b66c768d92437bfdbfae7419b2d65b29269b4123be3c281689224e88f"
+        }
+      ],
+      "access": "공식 Chrome 플레이어 慢 선택 후 重播. 원문 HTML/XML/JS는 기본 TLS curl로 새 RAM 수신. web fetch cache miss는 Chrome/직접 수신으로 해소.",
+      "reuseBoundary": "공식 XML의 Outline/Track는 방향 확인에만 읽었다. 원본 좌표·도형·매체를 저장소나 출력 경로로 복사하지 않았다."
+    }
+  },
+  "animationObservation": {
+    "mode": "慢 / slow",
+    "elapsedOrigin": "각 重播 클릭 후 accessibility state가 돌아온 시점. 소스 영상 타임코드가 아닌 실제 관찰 경과 시간(ms).",
+    "method": "약 400ms 대기와 screenshot overhead로 약 2fps. 표시한 모든 표본을 직접 시각 열람.",
+    "replays": [
+      {
+        "id": "R1",
+        "startedAt": "2026-09-13T01:38:34.099Z",
+        "capturedCount": 135,
+        "actuallyViewedCount": 94,
+        "actuallyViewedSampleRange": [
+          1,
+          94
+        ],
+        "elapsedMs": [
+          80,
+          577,
+          1070,
+          1570,
+          2070,
+          2538,
+          3040,
+          3536,
+          4028,
+          4554,
+          5044,
+          5532,
+          6027,
+          6524,
+          7029,
+          7530,
+          8032,
+          8524,
+          9021,
+          9485,
+          9975,
+          10469,
+          10962,
+          11464,
+          11958,
+          12459,
+          12947,
+          13433,
+          13927,
+          14419,
+          14920,
+          15435,
+          15919,
+          16410,
+          16903,
+          17367,
+          17827,
+          18314,
+          18824,
+          19314,
+          19799,
+          20296,
+          20785,
+          21285,
+          21778,
+          22276,
+          22777,
+          23266,
+          23759,
+          24225,
+          24709,
+          25185,
+          25665,
+          26160,
+          26625,
+          27118,
+          27614,
+          28110,
+          28613,
+          29091,
+          29569,
+          30053,
+          30540,
+          31026,
+          31519,
+          38785,
+          39253,
+          39740,
+          40228,
+          40714,
+          41210,
+          41702,
+          42197,
+          42704,
+          43206,
+          43703,
+          44200,
+          44689,
+          45183,
+          45670,
+          46171,
+          46671,
+          47154,
+          47641,
+          48134,
+          48625,
+          49108,
+          49601,
+          50097,
+          50591,
+          51094,
+          51585,
+          52060,
+          52540
+        ],
+        "unusedCapturedSampleRange": [
+          95,
+          135
+        ],
+        "gap": {
+          "afterSample": 65,
+          "beforeSample": 66,
+          "fromMs": 31519,
+          "toMs": 38785,
+          "resolution": "R2의 28.083~42.378초 연속31표본으로13~15획을 보충"
+        }
+      },
+      {
+        "id": "R2",
+        "startedAt": "2026-09-13T01:41:28.143Z",
+        "capturedCount": 31,
+        "actuallyViewedCount": 31,
+        "actuallyViewedSampleRange": [
+          1,
+          31
+        ],
+        "elapsedMs": [
+          28083,
+          28566,
+          29047,
+          29530,
+          30006,
+          30473,
+          30951,
+          31438,
+          31911,
+          32388,
+          32862,
+          33336,
+          33812,
+          34287,
+          34763,
+          35238,
+          35719,
+          36195,
+          36670,
+          37154,
+          37631,
+          38110,
+          38580,
+          39055,
+          39530,
+          40005,
+          40478,
+          40952,
+          41433,
+          41906,
+          42378
+        ]
+      }
+    ],
+    "totalActuallyViewedSamples": 125,
+    "all18DirectionsActuallyViewed": true,
+    "unusedFramesClaimedAsViewed": false
+  },
+  "strokeMap": [
+    {
+      "stroke": 1,
+      "name": "足의 口 왼세로",
+      "moyaNumber": 1,
+      "moyaCumulativeStage": 1,
+      "moeStroke": 1,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "위에서 아래로 약간 오른쪽으로 기울어 내린다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          1,
+          3,
+          4
+        ],
+        "partialElapsedMs": [
+          80,
+          1070,
+          1570
+        ],
+        "completeObservedSample": 5,
+        "completeObservedElapsedMs": 2070
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 2,
+      "name": "足의 口 위·오른 꺾임",
+      "moyaNumber": 2,
+      "moyaCumulativeStage": 2,
+      "moeStroke": 2,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "가로에서 세로로 꺾이는 부분은 MOE의 단일 Stroke/연속동작이며 Moya의 한 번호·한 누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽 위로 간 뒤 꺾어 왼쪽 아래로 내린다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 4,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          7,
+          9,
+          10
+        ],
+        "partialElapsedMs": [
+          3040,
+          4028,
+          4554
+        ],
+        "completeObservedSample": 12,
+        "completeObservedElapsedMs": 5532
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 3,
+      "name": "足의 口 밑가로",
+      "moyaNumber": 3,
+      "moyaCumulativeStage": 3,
+      "moeStroke": 3,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽으로 약간 올려 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          13,
+          14,
+          15
+        ],
+        "partialElapsedMs": [
+          6027,
+          6524,
+          7029
+        ],
+        "completeObservedSample": 16,
+        "completeObservedElapsedMs": 7530
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 4,
+      "name": "足 가운데 긴 세로",
+      "moyaNumber": 4,
+      "moyaCumulativeStage": 4,
+      "moeStroke": 4,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "위에서 아래로 내리며 끝이 약간 왼쪽으로 기운다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 5,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          18,
+          20,
+          22
+        ],
+        "partialElapsedMs": [
+          8524,
+          9485,
+          10469
+        ],
+        "completeObservedSample": 24,
+        "completeObservedElapsedMs": 11464
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 5,
+      "name": "足 가운데 오른쪽 짧은 가로",
+      "moyaNumber": 5,
+      "moyaCumulativeStage": 5,
+      "moeStroke": 5,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽 위로 짧게 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 2,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          26,
+          27,
+          28
+        ],
+        "partialElapsedMs": [
+          12459,
+          12947,
+          13433
+        ],
+        "completeObservedSample": 29,
+        "completeObservedElapsedMs": 13927
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 6,
+      "name": "足 왼쪽 아래 세로",
+      "moyaNumber": 6,
+      "moyaCumulativeStage": 6,
+      "moeStroke": 6,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "위에서 아래로 내린다. 작은 좌우 굴곡도 하나의 연속 획이다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 4,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          30,
+          31,
+          32,
+          33
+        ],
+        "partialElapsedMs": [
+          14419,
+          14920,
+          15435,
+          15919
+        ],
+        "completeObservedSample": 35,
+        "completeObservedElapsedMs": 16903
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 7,
+      "name": "足 밑에서 오른쪽 위로 향하는 획",
+      "moyaNumber": 7,
+      "moyaCumulativeStage": 7,
+      "moeStroke": 7,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽 아래에서 오른쪽 위로 올려 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          36,
+          37,
+          39,
+          40
+        ],
+        "partialElapsedMs": [
+          17367,
+          17827,
+          18824,
+          19314
+        ],
+        "completeObservedSample": 41,
+        "completeObservedElapsedMs": 19799
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 8,
+      "name": "責 첫 가로",
+      "moyaNumber": 8,
+      "moyaCumulativeStage": 8,
+      "moeStroke": 8,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽 위로 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 2,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          42,
+          43
+        ],
+        "partialElapsedMs": [
+          20296,
+          20785
+        ],
+        "completeObservedSample": 44,
+        "completeObservedElapsedMs": 21285
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 9,
+      "name": "責 둘째 가로",
+      "moyaNumber": 9,
+      "moyaCumulativeStage": 9,
+      "moeStroke": 9,
+      "dongyangCompletedStagePresent": true,
+      "dongyangPanel": 1,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽 위로 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 2,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          45,
+          46
+        ],
+        "partialElapsedMs": [
+          21778,
+          22276
+        ],
+        "completeObservedSample": 47,
+        "completeObservedElapsedMs": 22777
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 10,
+      "name": "責 위 세로",
+      "moyaNumber": 10,
+      "moyaCumulativeStage": 10,
+      "moeStroke": 10,
+      "dongyangCompletedStagePresent": true,
+      "dongyangPanel": 2,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "위에서 아래로 내려 두 가로를 관통한다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          48,
+          50,
+          51
+        ],
+        "partialElapsedMs": [
+          23266,
+          24225,
+          24709
+        ],
+        "completeObservedSample": 53,
+        "completeObservedElapsedMs": 25665
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 11,
+      "name": "責 아래 긴 가로",
+      "moyaNumber": 11,
+      "moyaCumulativeStage": 11,
+      "moeStroke": 11,
+      "dongyangCompletedStagePresent": true,
+      "dongyangPanel": 3,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽 위로 길게 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 4,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          54,
+          55,
+          57
+        ],
+        "partialElapsedMs": [
+          26160,
+          26625,
+          27614
+        ],
+        "completeObservedSample": 59,
+        "completeObservedElapsedMs": 28613
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 12,
+      "name": "貝 왼세로",
+      "moyaNumber": 12,
+      "moyaCumulativeStage": 12,
+      "moeStroke": 12,
+      "dongyangCompletedStagePresent": true,
+      "dongyangPanel": 4,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "위에서 아래로 내리며 말단이 약간 왼쪽으로 기운다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "partialElapsedMs": [
+          29091,
+          29569,
+          30053,
+          30540
+        ],
+        "completeObservedSample": 65,
+        "completeObservedElapsedMs": 31519
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 13,
+      "name": "貝 위·오른 꺾임",
+      "moyaNumber": 13,
+      "moyaCumulativeStage": 13,
+      "moeStroke": 13,
+      "dongyangCompletedStagePresent": true,
+      "dongyangPanel": 5,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "가로에서 세로로 꺾이는 부분은 MOE의 단일 Stroke/연속동작이며 Moya의 한 번호·한 누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽 위로 간 뒤 꺾어 아래로 내린다. 가로·오른세로가 연속한다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 5,
+      "observation": {
+        "replay": "R2",
+        "partialSamples": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "partialElapsedMs": [
+          31911,
+          32388,
+          32862,
+          33336,
+          33812,
+          34287,
+          34763
+        ],
+        "completeObservedSample": 16,
+        "completeObservedElapsedMs": 35238
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 14,
+      "name": "貝 내부 첫 가로",
+      "moyaNumber": 14,
+      "moyaCumulativeStage": 14,
+      "moeStroke": 14,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽 위로 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R2",
+        "partialSamples": [
+          17,
+          18,
+          19
+        ],
+        "partialElapsedMs": [
+          35719,
+          36195,
+          36670
+        ],
+        "completeObservedSample": 20,
+        "completeObservedElapsedMs": 37154
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 15,
+      "name": "貝 내부 둘째 가로",
+      "moyaNumber": 15,
+      "moyaCumulativeStage": 15,
+      "moeStroke": 15,
+      "dongyangCompletedStagePresent": false,
+      "dongyangPanel": null,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽으로 약간 올려 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R2",
+        "partialSamples": [
+          23,
+          24,
+          25
+        ],
+        "partialElapsedMs": [
+          38580,
+          39055,
+          39530
+        ],
+        "completeObservedSample": 26,
+        "completeObservedElapsedMs": 40005
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 16,
+      "name": "貝 밑가로",
+      "moyaNumber": 16,
+      "moyaCumulativeStage": 16,
+      "moeStroke": 16,
+      "dongyangCompletedStagePresent": true,
+      "dongyangPanel": 6,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽에서 오른쪽 위로 긋는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          70,
+          71,
+          72,
+          73
+        ],
+        "partialElapsedMs": [
+          40714,
+          41210,
+          41702,
+          42197
+        ],
+        "completeObservedSample": 74,
+        "completeObservedElapsedMs": 42704
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 17,
+      "name": "貝 아래 왼쪽 획",
+      "moyaNumber": 17,
+      "moyaCumulativeStage": 17,
+      "moeStroke": 17,
+      "dongyangCompletedStagePresent": true,
+      "dongyangPanel": 7,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "오른쪽 위에서 왼쪽 아래로 굽어 뻗는다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 4,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          75,
+          77,
+          78,
+          79,
+          80
+        ],
+        "partialElapsedMs": [
+          43206,
+          44200,
+          44689,
+          45183,
+          45670
+        ],
+        "completeObservedSample": 81,
+        "completeObservedElapsedMs": 46171
+      },
+      "koreanDirectionDirectlyVerified": false
+    },
+    {
+      "stroke": 18,
+      "name": "貝 아래 오른쪽 획",
+      "moyaNumber": 18,
+      "moyaCumulativeStage": 18,
+      "moeStroke": 18,
+      "dongyangCompletedStagePresent": true,
+      "dongyangPanel": 8,
+      "orderComparison": "Moya/MOE identity",
+      "basicGlyphShape": "corresponds; exact coordinate/typographic equivalence not asserted",
+      "boundaryComparison": "MOE의 독립 Stroke 경계가 Moya의 해당 번호·누적 증가와 대응",
+      "direction": "왼쪽 위에서 오른쪽 아래로 내린다.",
+      "directionBasis": "MOE 공식 실제 동작과 원문 ordered Track를 함께 확인; 국내 정적 도해에서 방향을 추정하지 않음",
+      "orderedTrackPoints": 3,
+      "observation": {
+        "replay": "R1",
+        "partialSamples": [
+          82,
+          83,
+          84,
+          85
+        ],
+        "partialElapsedMs": [
+          46671,
+          47154,
+          47641,
+          48134
+        ],
+        "completeObservedSample": 86,
+        "completeObservedElapsedMs": 48625
+      },
+      "koreanDirectionDirectlyVerified": false
+    }
+  ],
+  "findings": [
+    "세 자료 모두 足+責 구조의 정확한 蹟이다. 跡·積·다른 足부수 글자의 순서로 대신하지 않았다.",
+    "責 윗부분의 Moya8/9/10/11은 MOE8/9/10/11과 같은 가로→가로→세로→긴가로 순서다. 실제8~11동작과 orderedTrack에 대조했다.",
+    "검토한 Moya/MOE 사이 순서 차이는 없다. 이 판정은 미검토 해외 후보 vector의 순서를 보증하지 않는다.",
+    "전체자형과 각 획의 기본 위치·꺾임·분리 경계는 대응하나 서체 곡률·굵기·접점 등 기하학적 동일성 및 출력 기하는 검토 범위가 아니다.",
+    "동양 PDF의 9획 첫 상태는 앞선1~8개의 개별 완료를 보여주지 않는다. 13→16은14·15의 개별 완료를 생략한다. 다른 자료와의 일치로 국내 원문 공백이 사라졌다고 처리하지 않는다."
+  ],
+  "limitations": [
+    "한국 출판사 원문 자체의18개 진행 방향을 실제 관찰한 것이 아니다. 해외 공식 방향 교차확인이다.",
+    "민간 원전 미표시·누적 첫 칸 잘림·국내 개별 완료10단계 공백이 유지된다.",
+    "동작 검토 결과를 한국 시험기관 승인이나 신규 런타임 승인으로 전환하지 않는다."
+  ],
+  "handling": {
+    "originalMediaRepositoryCopies": 0,
+    "officialCoordinatesRepositoryCopies": 0,
+    "geometryOutputCreated": false,
+    "sharedRuntimeCodeChanges": false,
+    "gitActions": false
+  },
+  "verification": {
+    "strokeRows": 18,
+    "foreignDirectionsReviewed": 18,
+    "moyaNumberCoverage": [
+      1,
+      18
+    ],
+    "dongyangVisiblePlusMissingCover18": true
+  }
+}

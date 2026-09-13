@@ -1,0 +1,1099 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "reviewer": "B",
+  "scope": "笛11·稚13의 정적 번호·누적 순서와 대만 교육부 동작·ordered Track 교차검토",
+  "scopeCounts": {
+    "characters": 2,
+    "catalogStrokes": 24
+  },
+  "summary": {
+    "moyaNumberedStrokesVisuallyRechecked": 24,
+    "moyaCumulativeStatesVisuallyRechecked": 24,
+    "publisherDisplayedCumulativeStatesVisuallyRechecked": 17,
+    "publisherMissingCumulativeStates": 7,
+    "publisherIndividuallyAddedStrokesAfterFirstGroup": 15,
+    "foreignOfficialDynamicStrokesVisuallyObserved": 24,
+    "foreignOfficialOrderedTrackUnits": 24,
+    "dynamicSamplesVisuallyObserved": 150,
+    "orderOrUnitBoundaryConflictsFound": 0,
+    "directKoreanDynamicDirectionEvidenceStrokes": 0,
+    "newRuntimeApprovals": 0
+  },
+  "inputDocumentPins": [
+    {
+      "path": "docs/hanja-g3ii-initial-stages-2026-09-13/research-b.json",
+      "sha256": "74e9c54cfc9897e0001f7c173a055540802de94375db039c591932d33c794c03"
+    },
+    {
+      "path": "docs/hanja-g3ii-alternative-sources-2026-09-13/research-b.json",
+      "sha256": "15b10fde9262cb1fbd81377bd6e9a9f450401b37897f5779d55cd283c92be8f5"
+    }
+  ],
+  "method": {
+    "privateStatic": "원전 미표시 모야랜드의 각 글자 누적 PNG 전체와 1–11/1–13 번호 도해를 새로 RAM 수신하고 실제 다시 열람했다.",
+    "publisherStatic": "A가 정상 TLS로 새로 수신한 공식 동양북스 PDF를 RAM 서버로 공유받아 p165 두 누적 띠를 B가 독립 다시 열람했다. B가 별도로 PDF를 내려받았다는 주장은 하지 않는다.",
+    "officialDynamic": "대만 교육부 dictFrame의 慢과 重播를 클릭하고 브라우저의 실제 변화 화면을 400ms 대기+캡처로 관찰했다. 화면은 298×298 영역이며 각각 전체 66/84표본을 직접 보았다. 400ms는 대기 간격이고 실제 캡처 간격은 도구 비용 때문에 더 길다.",
+    "timeOrigin": "重播 후 최신 접근성 상태 수신이 끝난 시점을 각 실행의 0으로 둔 Date.now 경과시간이다. 동영상 인코딩 타임코드나 정확한 획 시작·종료 시각이 아니다.",
+    "windowMeaning": "획별 sampleWindow/observationWindowSeconds는 해당 동작과 경계가 관찰된 표본 묶음이다. 완성 시간 상한 메타데이터나 정확한 펜 리프트 순간을 뜻하지 않는다.",
+    "orderedTrack": "같은 공식 dictFrame HTML의 var xml 문자열을 새로 파싱했다. XML의 Stroke 단위와 각 Track의 문서 순서, 점 수, 시작·끝·꺾임을 RAM에서 대조했으며 원본 좌표는 문서나 출력 기하에 저장하지 않는다. Python ElementTree로 속성 순서에 독립적인 파싱을 한 번 더 수행하여 24개 Track의 모든 MoveTo와 점 수가 빠짐없이 일치함을 확인했다.",
+    "directionBoundary": "방향 직접 근거는 MOE 동작과 ordered Track이다. 모야랜드 번호 및 동양북스 누적 도형은 정적 순서·단위 대응 근거이며, 그 자료가 자체적으로 방향을 증명한다고 해석하지 않는다.",
+    "geometryBoundary": "이번 검토는 출력 기하·굵기5 접점 감사가 아니다. 원본 사이의 붓모양 차이나 세부 간격을 픽셀 수준으로 같다고 판정하지 않는다."
+  },
+  "sources": {
+    "publisherPdf": {
+      "publisher": "동양북스(동양문고)",
+      "title": "암기박사식 한자 능시 3급 — 한자능시 3급 쓰기노트",
+      "url": "https://dongyangbooks.com/book/download.asp?no=352&bsno=6414",
+      "pdfPage": 165,
+      "printedPage": 165,
+      "zipBytes": 77040295,
+      "zipSha256": "3195ecb60797178be89e3013148c6c4dbfe609c4a65c60dd1701d7354bb2ac2e",
+      "pdfBytes": 77369148,
+      "pdfSha256": "c25485d2b26f9ea9c34c897ba41d953823ecdd07f65c81e05fef39b666782a48",
+      "totalPages": 165,
+      "ramProvider": "A",
+      "providerFreshAcquisitionCheckedAt": "2026-09-13T01:37:53.425209+00:00",
+      "crops": [
+        {
+          "glyph": "笛",
+          "renderSize": [
+            3658,
+            5000
+          ],
+          "crop": [
+            620,
+            695,
+            1370,
+            810
+          ],
+          "displaySize": [
+            1100,
+            169
+          ],
+          "renderedCropSha256": "cf4bc1f63882c0bbbb9a801d73cdf250e5666b22804722e6b105ef0567ea1725"
+        },
+        {
+          "glyph": "稚",
+          "renderSize": [
+            3658,
+            5000
+          ],
+          "crop": [
+            620,
+            1450,
+            1510,
+            1575
+          ],
+          "displaySize": [
+            1100,
+            154
+          ],
+          "renderedCropSha256": "dd131b8b5a7470e7f625d747eb8e5a60d84fb5ee202477146886f6ee56c20f0b"
+        }
+      ]
+    },
+    "moya": {
+      "publisher": "모야랜드",
+      "classification": "민간 한국어 교육 사이트, 원전 미표시",
+      "publicationDate": null,
+      "upstreamOriginalSourceIdentified": false,
+      "urls": [
+        "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1426582068",
+        "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1407917080"
+      ],
+      "freshAssets": [
+        {
+          "glyph": "笛",
+          "key": "cumulativePng",
+          "url": "https://www.moyaland.com/_new/data/cheditor4/1503/9b04c80cd71f79f8ac552a3e02a90b53_eUqEGuFt8VzqiahS8ZoRcWSbEZViTF81.png",
+          "status": 200,
+          "bytes": 43024,
+          "sha256": "9df8e5525481cee730f8c78d49fdf810ce62be6fb8cf53fcd4945bd16bbd273e",
+          "width": 790,
+          "height": 56
+        },
+        {
+          "glyph": "笛",
+          "key": "numberedDiagram",
+          "url": "https://www.moyaland.com/_new/data/item/1426582068_l2",
+          "status": 200,
+          "bytes": 92412,
+          "sha256": "195b8499ae0ab432577394efe83538f62fb344c87851219f6b7093b1bfab1922",
+          "width": 505,
+          "height": 616
+        },
+        {
+          "glyph": "稚",
+          "key": "cumulativePng",
+          "url": "https://www.moyaland.com/_new/data/cheditor4/1408/9b04c80cd71f79f8ac552a3e02a90b53_uoGyGpMTudd1SZ.png",
+          "status": 200,
+          "bytes": 43398,
+          "sha256": "4faddd9be7115f34760cfd013f0f531e9aa5504cb64f73a04b2b384fcb09d2e4",
+          "width": 795,
+          "height": 46
+        },
+        {
+          "glyph": "稚",
+          "key": "numberedDiagram",
+          "url": "https://www.moyaland.com/_new/data/item/1407917080_l2",
+          "status": 200,
+          "bytes": 109511,
+          "sha256": "d6efe729bdcca536060dd7d24a982323f2a8d603579d65f9f36490beb3d69091",
+          "width": 642,
+          "height": 604
+        }
+      ],
+      "limitations": [
+        "누적 PNG 첫 상태의 왼쪽 끝이 잘림. 稚는 위쪽 경계에도 닿음.",
+        "별도 번호 도해에는 두 글자의 모든 번호가 있지만 직접 방향 화살표나 동작은 없다.",
+        "공식 기관·교과서 원전으로 승격하지 않음."
+      ]
+    },
+    "moe": [
+      {
+        "id": 31515,
+        "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31515",
+        "httpStatus": 200,
+        "htmlBytes": 25068,
+        "htmlSha256": "cabef0915269dd1c0f7f6a66ee704a1655c84e03a5608f83baad2c8b7b9071f0",
+        "xmlBytes": 16998,
+        "xmlSha256": "89b3378bee7d925b5c4c4cfbd0a6df1862e50e590780c93ef1a1a133a92d947c",
+        "unicode": "笛",
+        "authority": "臺灣教育部",
+        "foreignReference": true,
+        "xmlStrokeCount": 11,
+        "outlineUnits": 11,
+        "orderedTrackUnits": 11,
+        "orderedTrackPointCounts": [
+          3,
+          2,
+          2,
+          3,
+          2,
+          2,
+          3,
+          7,
+          3,
+          3,
+          3
+        ],
+        "rawCoordinatesPersisted": false,
+        "visibleLicense": "CC BY-NC-ND 3.0 TW"
+      },
+      {
+        "id": 31258,
+        "url": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=31258",
+        "httpStatus": 200,
+        "htmlBytes": 29801,
+        "htmlSha256": "ce9f03c1a158a37493302d43c932ce1a7c883d9c333ccc7796addcfc5eea8769",
+        "xmlBytes": 21141,
+        "xmlSha256": "5b2836a30f9ecf57037a022b9ebf089ab53751631e7989e9d5efa4ff82fdc480",
+        "unicode": "稚",
+        "authority": "臺灣教育部",
+        "foreignReference": true,
+        "xmlStrokeCount": 13,
+        "outlineUnits": 13,
+        "orderedTrackUnits": 13,
+        "orderedTrackPointCounts": [
+          3,
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "rawCoordinatesPersisted": false,
+        "visibleLicense": "CC BY-NC-ND 3.0 TW"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "glyph": "笛",
+      "catalogStrokes": 11,
+      "result": "order-and-unit-correspondence-observed; foreign-direction-confirmed; Korean-direction-unproven; no-runtime-approval",
+      "moyaToMoeStrokeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "publisherDisplayedCumulativeStates": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "publisherMissingCumulativeStates": [
+        1,
+        2,
+        3
+      ],
+      "publisherFirstGroupLimitation": "첫 누적 칸에 상부 왼3획+오른 삐침이 이미 함께 검다. 그 안의 1–4 순서를 PDF로 검증하지 않았다.",
+      "animation": {
+        "speed": "慢",
+        "sampleCount": 66,
+        "sampleElapsedMs": [
+          403,
+          877,
+          1351,
+          1819,
+          2304,
+          2786,
+          3278,
+          3753,
+          4235,
+          4710,
+          5186,
+          5661,
+          6117,
+          6571,
+          7043,
+          7522,
+          7986,
+          8470,
+          8953,
+          9419,
+          9886,
+          10360,
+          10816,
+          11278,
+          11752,
+          12209,
+          12660,
+          13136,
+          13619,
+          14095,
+          14560,
+          15028,
+          15503,
+          15977,
+          16462,
+          16935,
+          17401,
+          17890,
+          18378,
+          18860,
+          19327,
+          19795,
+          20276,
+          20744,
+          21202,
+          21670,
+          22153,
+          22646,
+          23146,
+          23628,
+          24096,
+          24569,
+          25050,
+          25527,
+          26002,
+          26477,
+          26961,
+          27444,
+          27928,
+          28401,
+          28878,
+          29353,
+          29838,
+          30318,
+          30802,
+          31286
+        ],
+        "allSamplesVisuallyInspected": true,
+        "allStrokeMotionAndFinalGlyphObserved": true,
+        "viewportClip": {
+          "x": 16,
+          "y": 66,
+          "width": 298,
+          "height": 298
+        },
+        "finalSampleElapsedMs": 31286
+      },
+      "strokeComparison": [
+        {
+          "step": 1,
+          "shape": "상부 왼 삐침",
+          "moyaNumber": 1,
+          "moeStroke": 1,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            1,
+            4
+          ],
+          "observationWindowSeconds": [
+            0.403,
+            1.819
+          ],
+          "directionObserved": "왼쪽 상부 높은 곳에서 왼쪽 아래로 내려간다.",
+          "startRegion": "왼쪽 상부",
+          "endRegion": "왼쪽 아래",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "해당 개별 누적 단계가 없음. PDF 단독으로 순서·경계를 검증하지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 2,
+          "shape": "상부 왼 가로",
+          "moyaNumber": 2,
+          "moeStroke": 2,
+          "orderedTrackPointCount": 2,
+          "sampleWindow": [
+            5,
+            8
+          ],
+          "observationWindowSeconds": [
+            2.304,
+            3.753
+          ],
+          "directionObserved": "왼쪽 접점에서 오른쪽으로 약간 올라가며 이어진다.",
+          "startRegion": "상부 왼 삐침 중간 옆",
+          "endRegion": "그 오른쪽",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "해당 개별 누적 단계가 없음. PDF 단독으로 순서·경계를 검증하지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 3,
+          "shape": "상부 왼 점",
+          "moyaNumber": 3,
+          "moeStroke": 3,
+          "orderedTrackPointCount": 2,
+          "sampleWindow": [
+            9,
+            12
+          ],
+          "observationWindowSeconds": [
+            4.235,
+            5.661
+          ],
+          "directionObserved": "왼쪽 위에서 오른쪽 아래로 짧게 내려간다.",
+          "startRegion": "상부 왼 가로 아래",
+          "endRegion": "그 오른쪽 아래",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "해당 개별 누적 단계가 없음. PDF 단독으로 순서·경계를 검증하지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 4,
+          "shape": "상부 오른 삐침",
+          "moyaNumber": 4,
+          "moeStroke": 4,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            13,
+            17
+          ],
+          "observationWindowSeconds": [
+            6.117,
+            7.986
+          ],
+          "directionObserved": "오른쪽 상부 높은 곳에서 왼쪽 아래로 내려간다.",
+          "startRegion": "오른쪽 상부",
+          "endRegion": "그 왼쪽 아래",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "첫 표시 칸에 이 획을 포함한 초기 묶음이 이미 검다. 개별 추가 단계로 분리되어 있지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 5,
+          "shape": "상부 오른 가로",
+          "moyaNumber": 5,
+          "moeStroke": 5,
+          "orderedTrackPointCount": 2,
+          "sampleWindow": [
+            18,
+            21
+          ],
+          "observationWindowSeconds": [
+            8.47,
+            9.886
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 약간 올라가며 이어진다.",
+          "startRegion": "오른 삐침 중간 옆",
+          "endRegion": "상부 오른쪽",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 6,
+          "shape": "상부 오른 점",
+          "moyaNumber": 6,
+          "moeStroke": 6,
+          "orderedTrackPointCount": 2,
+          "sampleWindow": [
+            22,
+            24
+          ],
+          "observationWindowSeconds": [
+            10.36,
+            11.278
+          ],
+          "directionObserved": "왼쪽 위에서 오른쪽 아래로 짧게 내려간다.",
+          "startRegion": "오른 가로 아래",
+          "endRegion": "그 오른쪽 아래",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 7,
+          "shape": "아래 왼 세로",
+          "moyaNumber": 7,
+          "moeStroke": 7,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            25,
+            30
+          ],
+          "observationWindowSeconds": [
+            11.752,
+            14.095
+          ],
+          "directionObserved": "윗부분에서 아래로 약간 오른쪽으로 내려간다.",
+          "startRegion": "아래 네모의 왼쪽 위",
+          "endRegion": "아래 네모의 왼쪽 아래",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 8,
+          "shape": "아래 윗가로·오른 꺾임·갈고리",
+          "moyaNumber": 8,
+          "moeStroke": 8,
+          "orderedTrackPointCount": 7,
+          "sampleWindow": [
+            31,
+            41
+          ],
+          "observationWindowSeconds": [
+            14.56,
+            19.327
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 윗가로를 긋고 오른쪽에서 아래로 꺾은 뒤 끝을 왼쪽 위로 당긴다.",
+          "startRegion": "아래 네모의 왼쪽 위 안쪽",
+          "endRegion": "오른쪽 아래 갈고리의 왼쪽 위 끝",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "단일 Stroke 안에서 가로→하강→왼위 갈고리로 연속 진행. 꺾임·갈고리를 별도 획으로 나누지 않음.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 9,
+          "shape": "아래 안쪽 가로",
+          "moyaNumber": 9,
+          "moeStroke": 9,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            42,
+            46
+          ],
+          "observationWindowSeconds": [
+            19.795,
+            21.67
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 약간 올라가며 이어진다.",
+          "startRegion": "아래 네모의 안쪽 왼쪽",
+          "endRegion": "아래 네모의 안쪽 오른쪽",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 10,
+          "shape": "아래 중앙 세로",
+          "moyaNumber": 10,
+          "moeStroke": 10,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            47,
+            52
+          ],
+          "observationWindowSeconds": [
+            22.153,
+            24.569
+          ],
+          "directionObserved": "상부 아래의 높은 중앙에서 아래로 내려간다.",
+          "startRegion": "아래 네모 위 중앙",
+          "endRegion": "아래 네모의 바닥 부근 중앙",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 11,
+          "shape": "아래 바닥 가로",
+          "moyaNumber": 11,
+          "moeStroke": 11,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            53,
+            58
+          ],
+          "observationWindowSeconds": [
+            25.05,
+            27.444
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 이어진다.",
+          "startRegion": "아래 네모의 왼쪽 바닥",
+          "endRegion": "아래 네모의 오른쪽 바닥",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        }
+      ],
+      "formFinding": "전체 竹+由 자형과 11획의 위치·단위가 대응한다. 상부 6획과 아래 5획 순서 모두 모야랜드/MOE에서 일치하고, 동양북스 4–11상태도 일치한다.",
+      "conflicts": [],
+      "runtimeApproved": false
+    },
+    {
+      "glyph": "稚",
+      "catalogStrokes": 13,
+      "result": "order-and-unit-correspondence-observed; foreign-direction-confirmed; Korean-direction-unproven; no-runtime-approval",
+      "moyaToMoeStrokeNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "publisherDisplayedCumulativeStates": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "publisherMissingCumulativeStates": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "publisherFirstGroupLimitation": "첫 누적 칸에 禾5획이 이미 함께 검다. 그 안의 1–5 순서를 PDF로 검증하지 않았다.",
+      "animation": {
+        "speed": "慢",
+        "sampleCount": 84,
+        "sampleElapsedMs": [
+          402,
+          875,
+          1342,
+          1816,
+          2266,
+          2755,
+          3216,
+          3684,
+          4149,
+          4609,
+          5074,
+          5536,
+          5991,
+          6450,
+          6914,
+          7374,
+          7849,
+          8301,
+          8755,
+          9234,
+          9715,
+          10206,
+          10691,
+          11166,
+          11641,
+          12117,
+          12617,
+          13101,
+          13583,
+          14057,
+          14542,
+          15017,
+          15491,
+          15959,
+          16441,
+          16915,
+          17393,
+          17877,
+          18358,
+          18841,
+          19325,
+          19792,
+          20270,
+          20761,
+          21241,
+          21717,
+          22174,
+          22650,
+          23132,
+          23607,
+          24104,
+          24564,
+          25057,
+          25535,
+          26019,
+          26494,
+          26969,
+          27444,
+          27907,
+          28382,
+          28859,
+          29341,
+          29829,
+          30340,
+          30809,
+          31300,
+          31784,
+          32256,
+          32741,
+          33225,
+          33700,
+          34184,
+          34667,
+          35164,
+          35650,
+          36143,
+          36598,
+          37077,
+          37566,
+          38041,
+          38517,
+          38998,
+          39476,
+          39958
+        ],
+        "allSamplesVisuallyInspected": true,
+        "allStrokeMotionAndFinalGlyphObserved": true,
+        "viewportClip": {
+          "x": 16,
+          "y": 66,
+          "width": 298,
+          "height": 298
+        },
+        "finalSampleElapsedMs": 39958
+      },
+      "strokeComparison": [
+        {
+          "step": 1,
+          "shape": "왼 상단 삐침",
+          "moyaNumber": 1,
+          "moeStroke": 1,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            1,
+            4
+          ],
+          "observationWindowSeconds": [
+            0.402,
+            1.816
+          ],
+          "directionObserved": "오른쪽 위에서 왼쪽 아래로 짧게 휜다.",
+          "startRegion": "왼 부분의 오른쪽 위",
+          "endRegion": "왼 부분의 왼쪽 위",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "해당 개별 누적 단계가 없음. PDF 단독으로 순서·경계를 검증하지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 2,
+          "shape": "왼 가로",
+          "moyaNumber": 2,
+          "moeStroke": 2,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            5,
+            9
+          ],
+          "observationWindowSeconds": [
+            2.266,
+            4.149
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 약간 올라가며 이어진다.",
+          "startRegion": "왼 부분 가로의 왼 끝",
+          "endRegion": "왼 부분 가로의 오른 끝",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "해당 개별 누적 단계가 없음. PDF 단독으로 순서·경계를 검증하지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 3,
+          "shape": "왼 중앙 세로",
+          "moyaNumber": 3,
+          "moeStroke": 3,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            10,
+            15
+          ],
+          "observationWindowSeconds": [
+            4.609,
+            6.914
+          ],
+          "directionObserved": "윗부분에서 아래로 약간 왼쪽으로 내려간다.",
+          "startRegion": "왼 상단 삐침 아래 중앙",
+          "endRegion": "왼 부분 아래 끝",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "해당 개별 누적 단계가 없음. PDF 단독으로 순서·경계를 검증하지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 4,
+          "shape": "왼 아래 삐침",
+          "moyaNumber": 4,
+          "moeStroke": 4,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            16,
+            21
+          ],
+          "observationWindowSeconds": [
+            7.374,
+            9.715
+          ],
+          "directionObserved": "가로·세로 교차 근처에서 왼쪽 아래로 내려간다.",
+          "startRegion": "왼 부분의 교차 부근",
+          "endRegion": "왼쪽 아래",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "해당 개별 누적 단계가 없음. PDF 단독으로 순서·경계를 검증하지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 5,
+          "shape": "왼 오른쪽 점",
+          "moyaNumber": 5,
+          "moeStroke": 5,
+          "orderedTrackPointCount": 2,
+          "sampleWindow": [
+            22,
+            24
+          ],
+          "observationWindowSeconds": [
+            10.206,
+            11.166
+          ],
+          "directionObserved": "왼쪽 위에서 오른쪽 아래로 짧게 내려간다.",
+          "startRegion": "왼 부분 중앙 오른쪽",
+          "endRegion": "그 오른쪽 아래",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "첫 표시 칸에 이 획을 포함한 초기 묶음이 이미 검다. 개별 추가 단계로 분리되어 있지 않음.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 6,
+          "shape": "오른 상단 삐침",
+          "moyaNumber": 6,
+          "moeStroke": 6,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            25,
+            29
+          ],
+          "observationWindowSeconds": [
+            11.641,
+            13.583
+          ],
+          "directionObserved": "오른쪽 상단에서 왼쪽 아래로 내려간다.",
+          "startRegion": "오른 부분 높은 곳",
+          "endRegion": "오른 부분 왼쪽 중간",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 7,
+          "shape": "오른 왼 세로",
+          "moyaNumber": 7,
+          "moeStroke": 7,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            30,
+            35
+          ],
+          "observationWindowSeconds": [
+            14.057,
+            16.441
+          ],
+          "directionObserved": "삐침 아래 부근에서 거의 곧게 아래로 내려간다.",
+          "startRegion": "오른 삐침 중간 아래",
+          "endRegion": "오른 부분 왼쪽 아래 끝",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 8,
+          "shape": "오른 위 점",
+          "moyaNumber": 8,
+          "moeStroke": 8,
+          "orderedTrackPointCount": 2,
+          "sampleWindow": [
+            36,
+            38
+          ],
+          "observationWindowSeconds": [
+            16.915,
+            17.877
+          ],
+          "directionObserved": "왼쪽 위에서 오른쪽 아래로 짧게 내려간다.",
+          "startRegion": "오른 부분의 상단 점 위",
+          "endRegion": "그 오른쪽 아래",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 9,
+          "shape": "오른 첫 가로",
+          "moyaNumber": 9,
+          "moeStroke": 9,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            39,
+            43
+          ],
+          "observationWindowSeconds": [
+            18.358,
+            20.27
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 약간 올라가며 이어진다.",
+          "startRegion": "오른 부분 첫 가로의 왼 끝",
+          "endRegion": "오른 부분 첫 가로의 오른 끝",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 10,
+          "shape": "오른 둘째 가로",
+          "moyaNumber": 10,
+          "moeStroke": 10,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            44,
+            48
+          ],
+          "observationWindowSeconds": [
+            20.761,
+            22.65
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 약간 올라가며 이어진다.",
+          "startRegion": "오른 부분 둘째 가로의 왼 끝",
+          "endRegion": "오른 부분 둘째 가로의 오른 끝",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 11,
+          "shape": "오른 셋째 가로",
+          "moyaNumber": 11,
+          "moeStroke": 11,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            49,
+            54
+          ],
+          "observationWindowSeconds": [
+            23.132,
+            25.535
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 이어진다.",
+          "startRegion": "오른 부분 셋째 가로의 왼 끝",
+          "endRegion": "오른 부분 셋째 가로의 오른 끝",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 12,
+          "shape": "오른 중앙 세로",
+          "moyaNumber": 12,
+          "moeStroke": 12,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            55,
+            59
+          ],
+          "observationWindowSeconds": [
+            26.019,
+            27.907
+          ],
+          "directionObserved": "첫 가로 아래 부근에서 아래로 내려간다.",
+          "startRegion": "오른 부분 첫 가로 아래 중앙",
+          "endRegion": "오른 부분 바닥 가로 부근 중앙",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        },
+        {
+          "step": 13,
+          "shape": "오른 바닥 가로",
+          "moyaNumber": 13,
+          "moeStroke": 13,
+          "orderedTrackPointCount": 3,
+          "sampleWindow": [
+            60,
+            65
+          ],
+          "observationWindowSeconds": [
+            28.382,
+            30.809
+          ],
+          "directionObserved": "왼쪽에서 오른쪽으로 이어진다.",
+          "startRegion": "오른 부분 바닥 가로의 왼 끝",
+          "endRegion": "오른 부분 바닥 가로의 오른 끝",
+          "directionBasis": "MOE actual playback + ordered Track; not static-number inference",
+          "strokeBoundary": "MOE의 독립 Stroke 1개이며 번호·누적 도형의 해당 단위와 대응.",
+          "publisherEvidence": "바로 앞 표시 상태에서 이 획 하나가 추가되는 것을 확인.",
+          "orderConflictFound": false,
+          "unitBoundaryConflictFound": false,
+          "staticShapeCorrespondence": "동일 글자 내부의 해당 획 위치·단위로 식별. 세부 윤곽·접점의 동일성 판정은 아님.",
+          "directKoreanDirectionVerified": false
+        }
+      ],
+      "formFinding": "전체 禾+隹 자형과 13획의 위치·단위가 대응한다. 오른쪽 세 가로 뒤 중앙 세로, 마지막 바닥 가로의 9–13 순서까지 세 자료가 관찰 가능한 범위에서 일치한다.",
+      "conflicts": [],
+      "runtimeApproved": false
+    }
+  ],
+  "policy": {
+    "sourceMediaSavedOrRedistributed": false,
+    "rawMoeXmlOrCoordinatesSaved": false,
+    "outputGeometryCopiedOrAuthored": false,
+    "privateSourcePromotedToOfficial": false,
+    "foreignDirectionPromotedToKoreanApproval": false,
+    "sharedCodeOrRuntimeModified": false,
+    "gitModified": false,
+    "loginOrAuthenticationBypass": false
+  },
+  "nextReview": {
+    "status": "bounded-crosscheck-complete",
+    "allowedEvidenceCombination": "lib/hanja-stroke-documents.ts는 국내 출판사 누적 순서와 별도로 검토한 공식 방향 근거의 결합을 허용한다. 직접 한국 동작 근거 0은 관찰 사실이며 새로운 승인 필수조건이 아니다.",
+    "remainingEvidence": "국내 출판사 누적 7상태(笛1–3·稚1–4)의 공백, 민간 번호도해의 원전 미확인, 사용이 허가된 후보 24획 경로의 미검토. 다음 검토는 이 순서 근거 공백과 원전 확인 및 후보 경로·접점 검증에 한정한다.",
+    "runtimeDecision": "0 approvals"
+  },
+  "errors": []
+}

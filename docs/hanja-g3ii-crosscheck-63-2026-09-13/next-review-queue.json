@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "sourceMatrix": "source-matrix.json",
+  "items": [
+    {
+      "priority": 1,
+      "task": "Review licensed candidate paths for 笛·蹟·稚",
+      "glyphs": [
+        "笛",
+        "蹟",
+        "稚"
+      ],
+      "characters": 3,
+      "strokes": 42,
+      "input": "candidate-inventory.json",
+      "checks": [
+        "Compare each path's ordinal role, start/end, bends, direction and contacts with the reviewed evidence",
+        "Record candidate source mapping and corrections without copying official XML coordinates",
+        "Keep unapproved while publisher completion-stage gaps or provenance cannot be resolved"
+      ],
+      "runtimeApproved": false
+    },
+    {
+      "priority": 2,
+      "task": "Resolve domestic variants of 訣·紋",
+      "glyphs": [
+        "訣",
+        "紋"
+      ],
+      "characters": 2,
+      "strokes": 21,
+      "conflictingStrokeCount": 3,
+      "conflictingStrokes": [
+        {
+          "glyph": "訣",
+          "strokes": [
+            11
+          ]
+        },
+        {
+          "glyph": "紋",
+          "strokes": [
+            4,
+            5
+          ]
+        }
+      ],
+      "note": "紋6 is the same right dot. Merely swapping 4 and 5 does not turn MOE's central dot into the domestic long vertical.",
+      "runtimeApproved": false
+    },
+    {
+      "priority": 3,
+      "task": "Acquire source body or original attribution for missing publisher completion states",
+      "glyphs": [
+        "訣",
+        "紋",
+        "笛",
+        "蹟",
+        "稚"
+      ],
+      "characters": 5,
+      "missingCompletionStates": 22,
+      "canRunAlongsidePriority1": true,
+      "checks": [
+        "Identify the original source of private numbered diagrams or find a publisher/institutional full sequence",
+        "Preserve the current page-specific displayed-state corrections",
+        "Do not require Korean motion if the existing Korean-static-plus-official-direction evidence combination is satisfied"
+      ]
+    }
+  ]
+}
