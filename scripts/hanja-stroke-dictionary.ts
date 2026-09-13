@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs'
 import { isDeepStrictEqual } from 'node:util'
 import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
 import { HANJA_TEXTBOOK_STROKES } from '../lib/hanja-stroke-textbook.ts'
+import { jaDictionaryGeometry, validateJaDictionaryProofs, validateJaDictionaryReview, validateJaDictionaryBundle } from './hanja-stroke-dictionary-ja.ts'
 import {
   HANJA_DICTIONARY_SOURCE, HANJA_DICTIONARY_GEOMETRY_SOURCE, HANJA_DICTIONARY_STROKES,
   DICTIONARY_REFERENCES, dictionarySourceReference, dictionaryStrokeIndices,
@@ -41,6 +42,7 @@ export const DICTIONARY_PROOF_PINS: Readonly<Record<string, string>> = {
   'docs/hanja-g3ii-missing-17-2026-09-13/research-provenance.json': 'fbd7dcdd659bacd098b80849e57e4743dc7dc0b4302c2be63bebf889d0833a46',
 }
 export function validateDictionaryProofs(readProof: (path: string) => string = read) {
+  validateJaDictionaryProofs(readProof)
   for (const [path, expected] of Object.entries(DICTIONARY_PROOF_PINS)) {
     if (createHash('sha256').update(readProof(path)).digest('hex') !== expected) throw new Error('Dictionary proof mismatch: ' + path)
   }
@@ -72,6 +74,7 @@ const bounds = (paths: readonly string[]) => {
   return [Math.min(...p.map(p => p[0])), Math.min(...p.map(p => p[1])), Math.max(...p.map(p => p[0])), Math.max(...p.map(p => p[1]))]
 }
 export function dictionaryGeometry(glyph: string, medians: Medians) {
+  if (glyph === '響') return jaDictionaryGeometry(glyph, medians)
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref || hash(medians) !== ref.originalMediansSha256) throw new Error('Dictionary original medians mismatch: ' + glyph)
   let paths = normalizeMedians(medians)
@@ -130,11 +133,13 @@ export function buildDictionaryBundle(candidates?: readonly DictionaryCandidate[
   }
 }
 export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expectedStrokes: number) {
+  if (review.glyph === '響') return validateJaDictionaryReview(review, expectedStrokes)
   const expected = buildDictionaryBundle().characters.find(e => e.glyph === review.glyph)
   if (!expected || expected.paths.length !== expectedStrokes
     || !isDeepStrictEqual(review, { ...expected, verificationSource: HANJA_DICTIONARY_SOURCE.id })) throw new Error('Dictionary published entry mismatch')
 }
 export function validateDictionaryBundle(entries: readonly HanjaDictionaryStrokeData[] = HANJA_DICTIONARY_STROKES) {
+  validateJaDictionaryBundle()
   const expected = buildDictionaryBundle().characters.map(e => ({ ...e, verificationSource: HANJA_DICTIONARY_SOURCE.id }))
   if (!isDeepStrictEqual(entries, expected)) throw new Error('Dictionary published bundle mismatch')
 }
