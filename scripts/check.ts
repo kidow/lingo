@@ -8,7 +8,7 @@
  */
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { KANA_OPEN, KANA_SCRIPTS, KANA_TABLE, exampleQuota, glyphOf, type KanaExamples } from '../lib/kana.ts'
+import { EXAMPLES_PER_CARD, KANA_OPEN, KANA_SCRIPTS, KANA_TABLE, exampleQuota, glyphOf, type KanaExamples } from '../lib/kana.ts'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import { auditTrivia } from '../lib/trivia-audit.ts'
@@ -1175,10 +1175,12 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
         fail(where, `[${id}]에는 ${script} 표기가 없는데 예시가 붙었습니다`)
         continue
       }
-      const quota = exampleQuota(script, id)
-      // 연 갈래만 정확히 따진다. 안 연 갈래는 초안을 쌓는 중이라 덜 차 있다
-      if (KANA_OPEN.includes(unit.kind) ? list.length !== quota : list.length > quota)
-        fail(where, `[${glyph}] 예시가 ${list.length}개입니다 — ${quota}개여야 합니다`)
+      const least = exampleQuota(script, id)
+      if (list.length > EXAMPLES_PER_CARD)
+        fail(where, `[${glyph}] 예시가 ${list.length}개입니다 — ${EXAMPLES_PER_CARD}개까지입니다`)
+      // 연 갈래만 최소를 따진다. 안 연 갈래는 초안을 쌓는 중이라 덜 차 있다
+      if (KANA_OPEN.includes(unit.kind) && list.length < least)
+        fail(where, `[${glyph}] 예시가 ${list.length}개입니다 — 적어도 ${least}개여야 합니다`)
       if (new Set(list).size !== list.length) fail(where, `[${glyph}] 같은 낱말이 두 번 적혔습니다`)
 
       for (const slug of list) {

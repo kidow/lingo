@@ -37,24 +37,29 @@ const full: KanaExamples = Object.fromEntries(
   ]),
 )
 
-test('도표는 104마디이고 쓰지 않는 가타카나 셋이 빠져 205장이다', () => {
+test('도표는 104마디이고 쓰지 않는 표기 여섯이 빠져 202장이다', () => {
   assert.equal(KANA_TABLE.length, 104)
   assert.equal(new Set(KANA_TABLE.map((unit) => unit.id)).size, 104)
 
   const glyphs = KANA_TABLE.flatMap((unit) =>
     KANA_SCRIPTS.map((script) => glyphOf(unit, script)).filter(Boolean),
   )
-  assert.equal(glyphs.length, 205)
-  // ヲ·ヂ·ヅ는 현대 일본어가 쓰지 않아 예시를 영영 못 채운다
-  for (const id of ['wo', 'dji', 'dzu']) assert.equal(kanaUnit(id).kata, null, id)
-  // 히라가나 쪽은 살아 있다 — ちぢむ·てつづき처럼 쓰는 자리가 있다
+  assert.equal(glyphs.length, 202)
+  // 현대 일본어가 쓰지 않는 표기 — 사전에 낱말이 없다
+  for (const id of ['wo', 'dji', 'dzu', 'pya']) assert.equal(kanaUnit(id).kata, null, id)
+  for (const id of ['myu', 'pyu']) assert.equal(kanaUnit(id).hira, null, id)
+  // **짝까지 지우지 않는다.** みゅ는 비어도 ミュ에는 ミュージック이 있다
+  assert.equal(kanaUnit('myu').kata, 'ミュ')
+  assert.equal(kanaUnit('pyu').kata, 'ピュ')
+  assert.equal(kanaUnit('pya').hira, 'ぴゃ')
+  // 히라가나 ぢ·づ도 살아 있다 — ちぢむ·てつづき처럼 쓰는 자리가 있다
   assert.equal(kanaUnit('dji').hira, 'ぢ')
   assert.equal(kanaUnit('dzu').hira, 'づ')
   // 한 글자가 두 마디에 겹치면 4지선다에서 정답이 둘이 된다
-  assert.equal(new Set(glyphs).size, 205)
+  assert.equal(new Set(glyphs).size, 202)
 
   const ALL = ['sei', 'daku', 'yoon'] as const
-  assert.equal(kanaEntries(full, KANA_TABLE, ALL).length, 205 * KANA_SKILLS.length)
+  assert.equal(kanaEntries(full, KANA_TABLE, ALL).length, 202 * KANA_SKILLS.length)
 })
 
 test('가타카나는 히라가나에서 유도한다', () => {
@@ -105,6 +110,16 @@ test('같은 문항은 몇 번을 만들어도 같다', () => {
   const twice = buildKanaChoice(entry, KANA_TABLE, 3)
   assert.deepEqual(once, twice)
   assert.notDeepEqual(buildKanaChoice(entry, KANA_TABLE, 4), once)
+})
+
+test('점 유무를 오답으로 깐다', () => {
+  // が의 오답에 か가 서야 한다. 행(g·k)으로는 남이라 표로 잡는다 (lib/kana.ts)
+  const entry = kanaEntries(full, KANA_TABLE, ['sei', 'daku']).find(
+    (item) => item.unit.id === 'ga' && item.script === 'hira' && item.skill === 'write',
+  )!
+  const question = buildKanaChoice(entry, KANA_TABLE)
+  if (question.kind !== 'kana-choice') return assert.fail('4지선다가 아니다')
+  assert.ok(question.options.includes('か'), question.options.join(' '))
 })
 
 test('닮은 글자를 먼저 깐다', () => {
@@ -158,11 +173,10 @@ test('content/kana.json의 예시가 실제 개념이고 그 글자를 품는다
       if (!list) continue
       const glyph = glyphOf(unit, script)
       assert.ok(glyph, `${id} ${script} — 없는 표기에 예시가 붙었다`)
-      // 연 갈래는 정확히 채워야 하고, 안 연 갈래는 쌓는 중이라 덜 차 있어도 된다
+      // 상한은 늘 셋이다. 하한은 갈래마다 다르고 연 갈래에만 건다
+      assert.ok(list.length <= EXAMPLES_PER_CARD, `${glyph} 예시가 넘친다`)
       if (KANA_OPEN.includes(unit.kind))
-        assert.equal(list.length, exampleQuota(script, id), `${glyph} 예시 수`)
-      else assert.ok(list.length <= exampleQuota(script, id), `${glyph} 예시가 넘친다`)
-      assert.ok(exampleQuota(script, id) <= EXAMPLES_PER_CARD)
+        assert.ok(list.length >= exampleQuota(script, id), `${glyph} 예시가 모자란다`)
 
       for (const slug of list) {
         const concept = concepts.get(slug)

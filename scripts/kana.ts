@@ -17,7 +17,7 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
-import { KANA_SCRIPTS, KANA_TABLE, exampleQuota, glyphOf, type KanaExamples, type KanaKind, type KanaScript } from '../lib/kana.ts'
+import { EXAMPLES_PER_CARD, KANA_SCRIPTS, KANA_TABLE, exampleQuota, glyphOf, type KanaExamples, type KanaKind, type KanaScript } from '../lib/kana.ts'
 import type { Concept } from '../lib/types.ts'
 
 const CONTENT_DIR = 'content'
@@ -119,12 +119,16 @@ function draft(kinds: KanaKind[]) {
 
   let filled = 0
   const short: string[] = []
+  /** 최소는 넘었지만 셋을 못 채운 자리. 막힌 것이 아니라 얇은 것이다 */
+  const thin: string[] = []
   for (const unit of KANA_TABLE) {
     if (!kinds.includes(unit.kind)) continue
     for (const script of KANA_SCRIPTS) {
       const glyph = glyphOf(unit, script)
       if (!glyph) continue
-      const quota = exampleQuota(script, unit.id)
+      // **목표는 늘 셋이다.** 최소(요음 하나)는 카드가 서는 선이지 그만 채우라는
+      // 뜻이 아니다 — 있는 만큼 넣는다
+      const quota = Math.max(EXAMPLES_PER_CARD, exampleQuota(script, unit.id))
       const already = examples[unit.id]?.[script] ?? []
       if (already.length >= quota) continue
 
@@ -164,7 +168,9 @@ function draft(kinds: KanaKind[]) {
       // 파일에서 같아 보이면 다음 사람이 그 자리를 채우려 든다
       if (picked.length > 0) examples[unit.id] = { ...examples[unit.id], [script]: picked }
       filled += picked.length - already.length
-      if (picked.length < quota) short.push(`${glyph}(${picked.length}/${quota})`)
+      const need = exampleQuota(script, unit.id)
+      if (picked.length < need) short.push(`${glyph}(${picked.length}/${need})`)
+      else if (picked.length < quota) thin.push(`${glyph}(${picked.length})`)
     }
   }
 
@@ -174,6 +180,7 @@ function draft(kinds: KanaKind[]) {
 
   console.log(`${KANA_FILE} — 예시 ${filled}개를 새로 채웠습니다`)
   if (short.length) console.log(`  ! 아직 모자란 마디 ${short.length}개: ${short.join(' ')}`)
+  if (thin.length) console.log(`  · 예시가 셋에 못 미치는 마디 ${thin.length}개: ${thin.join(' ')}`)
   console.log('  시트를 보세요 — node scripts/kana.ts sheet')
 }
 

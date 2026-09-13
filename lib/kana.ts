@@ -28,11 +28,10 @@ export type KanaUnit = {
   /** 행. 오답 후보를 같은 자음에서 먼저 뽑는다 */
   row: string
   kind: KanaKind
-  hira: string
+  /** 히라가나 표기. `みゅ`·`ぴゅ`만 `null`이다 — 사전에 낱말이 없다 */
+  hira: string | null
   /**
-   * 가타카나 표기. 셋이 `null`이다 — `ヲ`·`ヂ`·`ヅ`는 글자는 있어도 현대
-   * 일본어가 쓰지 않아 예시 낱말을 **영영** 못 채운다. 콘텐츠 7,500개에
-   * 후보가 하나도 없었다 (docs/kana-tab-design.md §1)
+   * 가타카나 표기. `ヲ`·`ヂ`·`ヅ`·`ピャ`가 `null`이다 (위 `UNUSED`)
    */
   kata: string | null
 }
@@ -67,19 +66,47 @@ const ROMAJI_OVERRIDE: Record<string, string> = {
 }
 
 /**
- * 가타카나를 두지 않는 마디. 글자가 없는 것이 아니라 **쓰지 않는 것**이다.
+ * 쓰지 않는 표기. 글자가 없는 것이 아니라 **낱말이 없는 것**이다.
  *
- * `ヲ`는 가타카나 조사인데 현대 일본어에서 조사는 히라가나로만 쓴다. `ヂ`·`ヅ`는
- * 옛 표기(`ラヂオ`)에만 남아 있다. 셋 다 예시 낱말이 실물로 없다 — 억지로
- * 세우면 「이건 언제 쓰나」에 답할 수 없는 카드가 된다.
+ * **표기 하나씩 뺀다.** 마디째 빼면 멀쩡한 짝까지 사라진다 — `みゅ`는 일본어
+ * 사전에 한 건도 없지만 `ミュ`에는 `ミュージック`·`コミュニケーション`이 있다.
  *
- * 히라가나 `ぢ`·`づ`는 다르다. `ちぢむ`·`てつづき`처럼 실제로 쓰는 자리가 있다.
+ * | 뺀 것 | 왜 |
+ * |---|---|
+ * | `ヲ` | 가타카나 조사인데 현대 일본어는 조사를 히라가나로만 쓴다 |
+ * | `ヂ`·`ヅ` | 옛 표기(`ラヂオ`)에만 남아 있다 |
+ * | `みゅ`·`ピャ`·`ぴゅ` | 사전 조회에서 **한 건도 안 나온다** (고유명사까지 포함해서) |
+ *
+ * 히라가나 `ぢ`·`づ`는 남는다. `ちぢむ`·`てつづき`처럼 실제로 쓰는 자리가 있다.
  */
-const NO_KATAKANA = new Set(['wo', 'dji', 'dzu'])
+const UNUSED = new Set(['kata:wo', 'kata:dji', 'kata:dzu', 'hira:myu', 'kata:pya', 'hira:pyu'])
 
 /** 히라가나를 가타카나로. 두 벌의 배열이 같아서 상수 덧셈으로 끝난다 */
 export const toKatakana = (text: string) =>
   [...text].map((ch) => (ch >= 'ぁ' && ch <= 'ゖ' ? String.fromCharCode(ch.charCodeAt(0) + 0x60) : ch)).join('')
+
+/**
+ * 탁점으로 갈리는 짝. `か`·`が`, `は`·`ば`·`ぱ`가 한 묶음이다.
+ *
+ * **행으로는 못 잡는다.** `が`의 행은 `g`고 `か`는 `k`라 서로 남이고, 첫 글자
+ * 비교도 글자가 달라 빗나간다. 그래서 오답에 `か`를 깔겠다고 적어 두고도
+ * 실제로는 무작위 풀에서나 걸렸다 — 표로 박아 고친다.
+ *
+ * 점 유무를 가리는 것이 가나에서 실제로 틀리는 자리다.
+ */
+const VOICING = [
+  'かが', 'きぎ', 'くぐ', 'けげ', 'こご', 'さざ', 'しじ', 'すず', 'せぜ', 'そぞ',
+  'ただ', 'ちぢ', 'つづ', 'てで', 'とど', 'はばぱ', 'ひびぴ', 'ふぶぷ', 'へべぺ', 'ほぼぽ',
+]
+
+/** 그 글자와 점만 다른 글자들. 요음이면 작은 글자까지 붙여 돌려준다 */
+function voicingKin(hira: string | null): string[] {
+  if (!hira) return []
+  const head = hira[0]
+  const group = VOICING.find((set) => set.includes(head))
+  if (!group) return []
+  return [...group].filter((ch) => ch !== head).map((ch) => ch + hira.slice(1))
+}
 
 /** 행을 뽑는다. `きゃ`는 `か`행이다 — 오답을 같은 자음에서 먼저 준다 */
 function rowOf(id: string): string {
@@ -96,13 +123,13 @@ function parse(spec: string, kind: KanaKind): KanaUnit[] {
       romaji: ROMAJI_OVERRIDE[id] ?? id,
       row: rowOf(id),
       kind,
-      hira,
-      kata: NO_KATAKANA.has(id) ? null : toKatakana(hira),
+      hira: UNUSED.has(`hira:${id}`) ? null : hira,
+      kata: UNUSED.has(`kata:${id}`) ? null : toKatakana(hira),
     }
   })
 }
 
-/** 104마디. 가타카나가 없는 셋을 빼면 카드는 205장이다 */
+/** 104마디. 쓰지 않는 표기 여섯을 빼면 카드는 202장이다 */
 export const KANA_TABLE: KanaUnit[] = [
   ...parse(SEI, 'sei'),
   ...parse(DAKU, 'daku'),
@@ -115,7 +142,7 @@ export const kanaUnit = (id: string): KanaUnit => {
   return found
 }
 
-/** 그 마디의 글자. `を`의 가타카나는 없다 */
+/** 그 마디의 글자. 쓰지 않는 표기는 `null`이다 (`UNUSED`) */
 export const glyphOf = (unit: KanaUnit, script: KanaScript) =>
   script === 'hira' ? unit.hira : unit.kata
 
@@ -139,8 +166,21 @@ export type KanaExamples = Record<string, Partial<Record<KanaScript, string[]>>>
  */
 export const KANA_OPEN: readonly KanaKind[] = ['sei', 'daku']
 
-/** 카드 하나가 요구하는 예시 수 */
+/** 초안이 채우려는 예시 수. 모자라도 아래 최소만 넘으면 카드는 선다 */
 export const EXAMPLES_PER_CARD = 3
+
+/**
+ * 카드가 서는 **최소** 예시 수. 갈래마다 다르다.
+ *
+ * 청음·탁음은 셋을 다 채운다. 흔한 낱말이 넉넉하기 때문이다.
+ *
+ * **요음만 하나로 내린다.** 일본어 자체에 낱말이 없는 자리라서다 — 사전을
+ * 뒤져도 `ギョ`에는 `ギョーザ`, `キョ`에는 `キョロキョロ`, `ニャ`에는
+ * `コニャック` 하나뿐이다. 셋을 고집하면 그 마디들이 통째로 빠지는데,
+ * **`ギョ`는 교자의 교**라고 한 번 가르치는 카드가 없는 카드보다 낫다.
+ * 모자란 것은 콘텐츠가 아니라 어휘 자체다 (docs/kana-tab-design.md §8).
+ */
+const MIN_BY_KIND: Record<KanaKind, number> = { sei: 3, daku: 3, yoon: 1 }
 
 /**
  * 예시가 모자라도 카드를 세우는 자리. **여기 적힌 것만 예외다.**
@@ -152,8 +192,9 @@ export const EXAMPLES_PER_CARD = 3
  */
 export const EXAMPLE_SHORT: ReadonlyMap<string, number> = new Map([['kata:nu', 2]])
 
+/** 이 자리에 **적어도** 몇 개가 있어야 카드가 서는가 */
 export const exampleQuota = (script: KanaScript, id: string) =>
-  EXAMPLE_SHORT.get(`${script}:${id}`) ?? EXAMPLES_PER_CARD
+  EXAMPLE_SHORT.get(`${script}:${id}`) ?? MIN_BY_KIND[kanaUnit(id).kind]
 
 /** 배우는 능력. 읽기와 쓰기는 다른 일이라 진도를 따로 센다 (§4) */
 export const KANA_SKILLS = ['read', 'write'] as const
@@ -223,10 +264,12 @@ function pools(entry: KanaEntry, table: KanaUnit[], confusables: string[]): Kana
   const others = table.filter((unit) => unit.id !== mine.id && glyphOf(unit, entry.script))
   const confusable = new Set(confusables)
   const vowel = mine.id.match(/[aiueo]+$/)?.[0] ?? ''
+  const kin = voicingKin(mine.hira)
   return [
     others.filter((unit) => confusable.has(glyphOf(unit, entry.script)!)),
-    // 탁음 짝도 여기서 선다 — `が`의 오답에 `か`가 서면 점 유무를 훈련한다
-    others.filter((unit) => unit.row === mine.row || unit.hira.slice(0, 1) === mine.hira.slice(0, 1)),
+    // 점 유무를 훈련하는 자리 — `が`의 오답에 `か`가 선다
+    others.filter((unit) => kin.includes(unit.hira ?? '')),
+    others.filter((unit) => unit.row === mine.row),
     others.filter((unit) => vowel !== '' && unit.id.endsWith(vowel)),
     others,
   ].map((pool) => pool.filter((unit) => glyphOf(unit, entry.script) !== glyph))
