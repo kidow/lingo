@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-13",
+  "glyph": "弊",
+  "approvedStrokes": 14,
+  "pathsSha256": "c87a6d0f8aeed5310bc80ac08ef9435e873246eaa07a61d287f18e5f8e66cd6a",
+  "checks": [
+    { "command": "rtk proxy node --test 'lib/hanja*.test.ts'", "exitCode": 0, "files": 28, "tests": 186, "passed": 186, "failed": 0 },
+    { "command": "rtk proxy pnpm exec next build", "exitCode": 0, "nextVersion": "16.3.3", "typeScript": "passed", "staticPages": 7 },
+    { "check": "validateDictionaryProofs and validateDictionaryBundle", "exitCode": 0, "registeredDictionaryProofPins": 39 },
+    { "check": "prior dictionary entries compared structurally against HEAD before this batch", "unchangedEntries": 11, "addedGlyphs": ["弊"] }
+  ],
+  "geometry": {
+    "strokeWidth": 5,
+    "testedSeparatePairs": 17,
+    "minimumCenterlineDistance": 5.799999999999997,
+    "minimumVisibleGapRounded": 0.8,
+    "testedConnectedPairs": 8,
+    "exactCrossings": [[4, 5], [10, 11], [12, 13], [12, 14]],
+    "retainedMMStrokes": [9, 12],
+    "authoredReplacementCount": 12
+  },
+  "runtime": {
+    "totalCharacters": 5978,
+    "playableCharacters": 1489,
+    "remainingCharacters": 4489,
+    "grade3iiCharacters": 500,
+    "grade3iiPlayable": 499,
+    "grade3iiRemaining": ["遷"],
+    "pyePathCount": 14
+  },
+  "buildScope": "Direct next build; shared language prebuild generation was not run.",
+  "next": "Acquire accessible evidence for the remaining 15-stroke 遷."
+}

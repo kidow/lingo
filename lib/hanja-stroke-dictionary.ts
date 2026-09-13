@@ -5,7 +5,7 @@ export const HANJA_DICTIONARY_SOURCE = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
   "name": "Make Me a Hanzi with reviewed local corrections",
@@ -14,7 +14,7 @@ export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
 } as const
 export const DICTIONARY_REFERENCES: Readonly<Record<string, {
   strokes: number; pathsSha256: string; directions: string; svgUrl: string; svgSha256: string
-  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit'
+  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye'
   sourceStrokeIndices?: readonly (number | null)[]
 }>> = {
   "訣": {
@@ -168,6 +168,16 @@ export const DICTIONARY_REFERENCES: Readonly<Record<string, {
       null
     ]
   },
+  "弊": {
+    "strokes": 14,
+    "pathsSha256": "c87a6d0f8aeed5310bc80ac08ef9435e873246eaa07a61d287f18e5f8e66cd6a",
+    "originalMediansSha256": "ebab2929ffffca89b7d67b774840cca4f7c9711f3c8545c73f9c1aaaead66d77",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11,12,13,14",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5F00/5F0A.svg",
+    "svgSha256": "b345afcd709b8bfe29a05a6c979bbe2cd8464c7fa47ab78f3228a9812dfefd02",
+    "wholeGlyphReview": "pye",
+    "sourceStrokeIndices": [null, null, null, null, null, null, null, null, 9, null, null, 12, null, null]
+  },
   "兔": {
     "strokes": 8,
     "pathsSha256": "f632caf98a7bd2e97163ea60b075374042402b4d8e0cddc9842458fec7c80cde",
@@ -192,6 +202,13 @@ export const DICTIONARY_REFERENCES: Readonly<Record<string, {
 export function dictionarySourceReference(glyph: string) {
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref) throw new Error('Unreviewed dictionary glyph: ' + glyph)
+  if (ref.wholeGlyphReview === 'pye') return {
+    orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
+    dictionaryDirectionStrokes: ref.directions,
+    orderReviewSha256: '940f772e8bc3b67d686e7c5784b2a839d870a2486221e10acbee2ebffb7de547',
+    geometryReviewSha256: '940f772e8bc3b67d686e7c5784b2a839d870a2486221e10acbee2ebffb7de547',
+    directionReviewSha256: '9972837f8a54b241096b4c2b3cd109df3a78c18b121a6bc3e8814c3e80ec050e',
+  }
   if (ref.wholeGlyphReview === 'rabbit') return {
     orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
     dictionaryDirectionStrokes: ref.directions,
