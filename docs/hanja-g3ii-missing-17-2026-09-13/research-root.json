@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "reviewer": "root",
+  "scope": "Public association publisher catalogue, ISBN/library routes, and independent Moyaland source-owner checks.",
+  "findings": [
+    {
+      "id": "association-book",
+      "url": "https://www.hanja.re.kr/kccpt/exam/studyInfo.do?pageNo=4",
+      "title": "3급 1817자 필순과 쓰기노트",
+      "sourceClass": "exam-association-hosted publisher catalogue",
+      "publisher": "한국어문교육연구회",
+      "authorAsListed": "남기탁",
+      "status": 200,
+      "htmlSha256": "c264b0b907b06c59e35b573e4826251f470f71897aacbd3df5207228463d1bb6",
+      "observed": "Official catalogue says the book covers 1817 characters including the Ministry of Education 1800 and provides stroke order and writing spaces.",
+      "limitation": "Book-description body only; no target writing-note pages acquired.",
+      "newCumulativePanels": 0
+    },
+    {
+      "id": "riss-book",
+      "url": "https://www.riss.kr/link?id=M12571073",
+      "discoveryUrl": "https://www.nl.go.kr/kolisnet/search/searchResultAllList.do?tab=ALL&keywordType1=total&keyword1=9788994281193",
+      "title": "3급 1817자 필순과 쓰기노트",
+      "isbn": "9788994281193",
+      "publicationYear": 2010,
+      "publisher": "한국어문교육연구회",
+      "pagesAsListed": 254,
+      "holdings": [
+        "국립공주대학교 도서관",
+        "상명대학교 서울캠퍼스 도서관"
+      ],
+      "observed": "RISS bibliographic record and two holding institutions are visible.",
+      "limitation": "No public target full text acquired; no copy/loan order, purchase or contact made.",
+      "newCumulativePanels": 0
+    },
+    {
+      "id": "yes24-book",
+      "url": "https://www.yes24.com/product/goods/3938054",
+      "isbn": "9788994281193",
+      "publicationDate": "2010-06-18",
+      "pagesAsListed": 225,
+      "observed": "Original retailer record found; no exposed target preview found.",
+      "limitation": "RISS and YES24 page counts disagree (254 vs 225); do not invent a page locator from bibliography.",
+      "newCumulativePanels": 0
+    },
+    {
+      "id": "nl-search",
+      "urls": [
+        "https://www.nl.go.kr/NL/contents/search.do?srchTarget=total&kwd=9788994281193",
+        "https://www.nl.go.kr/NL/contents/search.do?srchTarget=total&kwd=1817%EC%9E%90%20%ED%95%84%EC%88%9C"
+      ],
+      "observed": "These two National Library search responses showed zero results. KOLISNET independently linked the RISS holding record.",
+      "limitation": "A zero result for these requests is not a claim that the book has no library holdings."
+    },
+    {
+      "id": "moya-owner-scope",
+      "url": "https://www.moyaland.com/_new/sub.php?mNum=10&sNum=2",
+      "status": 200,
+      "bytes": 36056,
+      "sha256": "3e2b034b7e8cbb140ebe0c34d00cc8022c60e9b04807c965bff7de9fbcc2b785",
+      "observed": "Chapter 1 article 2 expressly defines the offered content as digitized Hanja images; chapter 5 article 1 identifies the company as the copyright claimant for site content.",
+      "interpretation": "Source responsibility for the directly served Hanja educational diagrams can be attributed to Moyaland. This is not proof of a named illustrator, first creation date, or an external book page; those are unreported.",
+      "licensingConclusion": "No reuse permission inferred; source media were viewed in RAM only."
+    },
+    {
+      "id": "moya-company",
+      "pageUrl": "https://www.moyaland.com/_new/hanja/content.php?co_id=company",
+      "about": {
+        "url": "https://www.moyaland.com/_new/data/cheditor4/1508/9b04c80cd71f79f8ac552a3e02a90b53_ElalgjImhb9t6tCjvfZJ82KH.jpg",
+        "status": 200,
+        "sha256": "f6d2bd87f1dffc8b3ae280ad0750de782d3d012c7fc34426ba0c67a570b67759",
+        "size": 200478,
+        "width": 969,
+        "height": 560
+      },
+      "history": {
+        "url": "https://www.moyaland.com/_new/data/cheditor4/1805/c79a928bee71a5dfb28c41b7fcc6198b_MP59riP5.jpg",
+        "status": 200,
+        "sha256": "7124c2e2da89f8dc6b46875e631f1ca5221400b740a3e44acc41fe653229a280",
+        "size": 148146,
+        "width": 963,
+        "height": 1341
+      },
+      "observed": "Root visually inspected both original images: company identifies educational product/service development and production; history lists printed Hanja books, website development and revised e-books.",
+      "interpretation": "Moyaland is a domestic educational publisher/provider, not just an unattributed reposting label."
+    }
+  ],
+  "numberedDiagramsIndependentlyViewed": [
+    {
+      "glyph": "笛",
+      "url": "https://www.moyaland.com/_new/data/item/1426582068_l2",
+      "status": 200,
+      "sha256": "195b8499ae0ab432577394efe83538f62fb344c87851219f6b7093b1bfab1922",
+      "size": 92412,
+      "width": 505,
+      "height": 616,
+      "coveredTargetStates": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "glyph": "蹟",
+      "url": "https://www.moyaland.com/_new/data/item/1427357210_l2",
+      "status": 200,
+      "sha256": "4585b49068361cc31ed1a865369ea9c2ab7dfdd0a7bf5ec1cd267c19e1ee6df3",
+      "size": 115103,
+      "width": 599,
+      "height": 611,
+      "coveredTargetStates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        14,
+        15
+      ]
+    },
+    {
+      "glyph": "稚",
+      "url": "https://www.moyaland.com/_new/data/item/1407917080_l2",
+      "status": 200,
+      "sha256": "d6efe729bdcca536060dd7d24a982323f2a8d603579d65f9f36490beb3d69091",
+      "size": 109511,
+      "width": 642,
+      "height": 604,
+      "coveredTargetStates": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "newCumulativePanels": 0,
+  "scopeLimits": [
+    "No exam-body certification of these three website diagrams is claimed.",
+    "Existing full numbered diagrams are not new cumulative source panels.",
+    "No candidate paths or production files were changed."
+  ]
+}
