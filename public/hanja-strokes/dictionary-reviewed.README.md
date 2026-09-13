@@ -2,7 +2,8 @@
 
 `dictionary-reviewed.json` contains the complete modified centerline source for
 訣 (11 strokes), 紋 (10 strokes), 森 (12 strokes), 楓 (13 strokes),
-奔 (8 strokes) and 慈 (13 strokes),
+奔 (8 strokes), 慈 (13 strokes), 蓮 (15 strokes), 追 (10 strokes),
+透 (11 strokes) and 還 (17 strokes),
 modified for Lingo on 2026-09-13.
 
 ## Geometry copyright and modifications
@@ -43,6 +44,17 @@ variant, and 奔 was compared directly as an 8-stroke glyph.
 
 ## Verification is separate from geometry
 
+蓮, 追, 透 and 還 retain 33 normalized MM paths, including six reordered
+positions: 蓮 uses MM [2,1,4,3] for 艹 and 透 uses MM [7,6] for 乃.
+Their 16 walking-radical paths are independently authored as two dots, a
+horizontal-to-vertical fold and a rising-then-rightward sweep. These replace
+the original three-stroke, single-dot radical. Four further paths are local
+corrections: 蓮 8 connects the middle horizontal across 車; 還 10 and 13 meet
+the lower 口 and vertical; 還 11 ends downward without an upward lift.
+All 20 replacements carry null original indices; exact recipes and original
+medians are retained in `docs/hanja-g3ii-walk-4-2026-09-13/`.
+No walking-radical approval is transferred to other characters.
+
 The `ehanja-crosschecked` source means that existing per-stroke and domestic
 numbered-diagram reviews were supplemented with direct observation of e-hanja
 animations for 訣 stroke 11 and 紋 strokes 4–5 only. For 森 and 楓, all 25 dictionary
@@ -60,6 +72,11 @@ provenance and the character-specific corrections are recorded in
 `docs/hanja-g3ii-bun-ja-2026-09-13/`.
 
 No e-hanja outlines, centerlines, CSS, scripts or screenshots are redistributed.
+For 蓮, 追, 透 and 還, all 53 directions and cumulative candidates were reviewed.
+The 16 previously observed radical strokes were supplemented with 37 internal
+stroke observations, late terminal checks and a separate fresh 53-step
+active-prefix record. 蓮 is reviewed as U+84EE with 15 strokes, not the
+14-stroke compatibility entry 蓮.
 The dictionary supplies a comparison reference, not the bundled geometry or a
 license for copying its artwork. Source URLs, hashes and observation notes are
 recorded in `docs/hanja-g3ii-direction-3-2026-09-13/direction-review.json`.

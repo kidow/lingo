@@ -5,7 +5,7 @@ export const HANJA_DICTIONARY_SOURCE = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
   "name": "Make Me a Hanzi with reviewed local corrections",
@@ -14,7 +14,8 @@ export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
 } as const
 export const DICTIONARY_REFERENCES: Readonly<Record<string, {
   strokes: number; pathsSha256: string; directions: string; svgUrl: string; svgSha256: string
-  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja'
+  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four'
+  sourceStrokeIndices?: readonly (number | null)[]
 }>> = {
   "訣": {
     "strokes": 11,
@@ -69,6 +70,103 @@ export const DICTIONARY_REFERENCES: Readonly<Record<string, {
     "svgSha256": "fe8fd5c3afaad257df65d9949168dfca3b8770053a9036a4a328e37744f0dbdd",
     "originalMediansSha256": "a1272b070d7dfa02cd525d2cde65ce1abe021e2d8b8ce10308e9047eb0f4fca5",
     "wholeGlyphReview": "bun-ja"
+  },
+  "蓮": {
+    "strokes": 15,
+    "pathsSha256": "4918edf2d4ab5d93b01be3acf87af95a085ac3e22d35f28c348628f869b74a16",
+    "originalMediansSha256": "00d29a6b3168a7544b0599853d8392f7bb45884efb1d13f8699f61b19bc4f4ca",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8400/84EE.svg",
+    "svgSha256": "1fb3802ff4272b6f3b0b727b1a51530f32021cf9095e12a7f4b375f69d1024ce",
+    "wholeGlyphReview": "walk-four",
+    "sourceStrokeIndices": [
+      2,
+      1,
+      4,
+      3,
+      5,
+      6,
+      7,
+      null,
+      9,
+      10,
+      11,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "追": {
+    "strokes": 10,
+    "pathsSha256": "547868cfc4843ebe25bfe8df40faa77415f22d327c580ba3390c4681e6b0d615",
+    "originalMediansSha256": "8d2ccf0a6c97e9c7bf68ad830e2d1abc66962400aa03caf2d89be20e6f2d33f9",
+    "directions": "1,2,3,4,5,6,7,8,9,10",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8F00/8FFD.svg",
+    "svgSha256": "338e614fc7b83deb893cd20e34375186ce7e0db29b4938da5d7f67f75fa18d30",
+    "wholeGlyphReview": "walk-four",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "透": {
+    "strokes": 11,
+    "pathsSha256": "a46b02784da16f8616fdd83a158e7c3b7996b12227b53bf31bcf3a2b2c988558",
+    "originalMediansSha256": "3974c4c0610c036d39ab4d38f93265d5f1b867453263a082ed7039bc58f91dba",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/900F.svg",
+    "svgSha256": "16dd8dab8b0c3cfaa20411a0a6478036d0a553a5ac93c55e7ede21594b85cdf2",
+    "wholeGlyphReview": "walk-four",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      6,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "還": {
+    "strokes": 17,
+    "pathsSha256": "7459aa527953fc417e5374d15fcd2337f0ad2a798eb47e444eb7b1efbe89ce22",
+    "originalMediansSha256": "63dadcec72db2ec09f8037c3e8d9c08dda86504ff673a7f7fc9aad491a34558d",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/9084.svg",
+    "svgSha256": "ef8bc1e18d4b7e0a41f7ebc9945aed56ed19b73e027fd1d662648a524446ddc9",
+    "wholeGlyphReview": "walk-four",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      null,
+      null,
+      12,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
   }
 }
 
@@ -76,14 +174,15 @@ export function dictionarySourceReference(glyph: string) {
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref) throw new Error('Unreviewed dictionary glyph: ' + glyph)
   const bunJa = ref.wholeGlyphReview === 'bun-ja'
+  const walkFour = ref.wholeGlyphReview === 'walk-four'
   return {
     orderUrl: ref.wholeGlyphReview ? ref.svgUrl : 'https://www.moyaland.com/_new/hanja/item_01.php?it_id=' + ref.moyaId,
     dictionarySvgUrl: ref.svgUrl,
     dictionarySvgSha256: ref.svgSha256,
     dictionaryDirectionStrokes: ref.directions,
-    orderReviewSha256: ref.wholeGlyphReview ? 'a03a988581ae438f9db5e08fe6846854f0d343b1b2f2d89552a70a39b7409314' : 'ab877fcc6bcb0d24f78b0bfaa4890b1da76e7e1edb131f1bfa1f105462b5cd16',
-    geometryReviewSha256: bunJa ? 'e05ddc52b19c21c05c5c59d8f3b0c232d4fc6cb0f18d4a032f5dc781ad2626b2' : ref.wholeGlyphReview ? 'e5929e944b1a1f9f044f5f4cf6abdba00f1eadc7c993cef27803fa26de37915b' : '7a50a6ecc20a69e8311a57cf85960288735910cb7f0c66f890fad7ebdd413aef',
-    directionReviewSha256: bunJa ? '8a614fbbec1a255e1bba7c7e1c6dfe14e0e3528e0f2527a16e84dc246a25d915' : ref.wholeGlyphReview ? 'a87ee0996533aa8a45f48c17712a609c1023f9e32d732a20e0c369e9f22efb32' : 'fb78cd80c63793d4edb5f0ce34adc7b9851207c39c69b5a905425fcddef25c78',
+    orderReviewSha256: walkFour ? '9acf5db467609f2bb6d2fd23dca75b61fddf5f897be7b0b477a1e895f48c4a87' : ref.wholeGlyphReview ? 'a03a988581ae438f9db5e08fe6846854f0d343b1b2f2d89552a70a39b7409314' : 'ab877fcc6bcb0d24f78b0bfaa4890b1da76e7e1edb131f1bfa1f105462b5cd16',
+    geometryReviewSha256: walkFour ? '9acf5db467609f2bb6d2fd23dca75b61fddf5f897be7b0b477a1e895f48c4a87' : bunJa ? 'e05ddc52b19c21c05c5c59d8f3b0c232d4fc6cb0f18d4a032f5dc781ad2626b2' : ref.wholeGlyphReview ? 'e5929e944b1a1f9f044f5f4cf6abdba00f1eadc7c993cef27803fa26de37915b' : '7a50a6ecc20a69e8311a57cf85960288735910cb7f0c66f890fad7ebdd413aef',
+    directionReviewSha256: walkFour ? '487824b99172ff33f512773f5f83c23e86c2a20d3eb927b77b547e1672352a31' : bunJa ? '8a614fbbec1a255e1bba7c7e1c6dfe14e0e3528e0f2527a16e84dc246a25d915' : ref.wholeGlyphReview ? 'a87ee0996533aa8a45f48c17712a609c1023f9e32d732a20e0c369e9f22efb32' : 'fb78cd80c63793d4edb5f0ce34adc7b9851207c39c69b5a905425fcddef25c78',
   }
 }
 
@@ -117,6 +216,7 @@ function sameFields(value: unknown, expected: Readonly<Record<string, string>>) 
 export function dictionaryStrokeIndices(glyph: string) {
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref) throw new Error('Unreviewed dictionary glyph: ' + glyph)
+  if (ref.sourceStrokeIndices) return [...ref.sourceStrokeIndices]
   return Array.from({ length: ref.strokes }, (_, i) =>
     (glyph === '紋' && (i === 3 || i === 4)) || (glyph === '慈' && [3, 6, 10].includes(i)) ? null : i + 1)
 }

@@ -15,6 +15,11 @@ export type DictionaryCandidate = { character: string; medians: Medians; strokes
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
 const read = (path: string) => readFileSync(new URL('../' + path, import.meta.url), 'utf8')
 export const DICTIONARY_PROOF_PINS: Readonly<Record<string, string>> = {
+  'docs/hanja-g3ii-walk-4-2026-09-13/originals.json': '3337ca1ca0844e46e7b699002952e803418ee888f2a60956492ccd209ce98b07',
+  'docs/hanja-g3ii-walk-4-2026-09-13/corrections.json': '27f6b9df64985cd49251b6dbb7efa66bb0ca1e0edef136545ef11d164dc82975',
+  'docs/hanja-g3ii-walk-4-2026-09-13/observations.json': '487824b99172ff33f512773f5f83c23e86c2a20d3eb927b77b547e1672352a31',
+  'docs/hanja-g3ii-walk-4-2026-09-13/candidate-paths.json': '33d6443543b1b4809af7406016641316e90e9d3ffd638e7c823d9459ec6306f8',
+  'docs/hanja-g3ii-walk-4-2026-09-13/review.json': '9acf5db467609f2bb6d2fd23dca75b61fddf5f897be7b0b477a1e895f48c4a87',
   'docs/hanja-g3ii-bun-ja-2026-09-13/originals.json': '3029c0edf3131c63cf41b133f2d6d5ed3505bf9fc89a6cca595e82783db74908',
   'docs/hanja-g3ii-bun-ja-2026-09-13/corrections.json': 'e912e95a5fc05ae9db5d579762ea5ded9d50814b0cb24b98fd4554e5fb20f829',
   'docs/hanja-g3ii-bun-ja-2026-09-13/observations.json': '8a614fbbec1a255e1bba7c7e1c6dfe14e0e3528e0f2527a16e84dc246a25d915',
@@ -43,6 +48,7 @@ export function validateDictionaryProofs(readProof: (path: string) => string = r
 const oldDir = 'docs/hanja-g3ii-gyeol-mun-2026-09-13/'
 const fullReviewDir = 'docs/hanja-g3ii-sam-pung-2026-09-13/'
 const bunJaDir = 'docs/hanja-g3ii-bun-ja-2026-09-13/'
+const walkFourDir = 'docs/hanja-g3ii-walk-4-2026-09-13/'
 type OriginalSource = { name: string; sha256: string; entries: { glyph: string; medians: Medians }[] }
 type Donor = { glyph: string; paths: string[]; hash: string; [key: string]: unknown }
 function originals() {
@@ -50,10 +56,12 @@ function originals() {
   const source = sources.find(s => s.name === 'MM')
   const fullSource = JSON.parse(read(fullReviewDir + 'originals.json')) as OriginalSource
   const bunJaSource = JSON.parse(read(bunJaDir + 'originals.json')) as OriginalSource
+  const walkFourSource = JSON.parse(read(walkFourDir + 'originals.json')) as OriginalSource
   if (!source || source.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
     || fullSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
-    || bunJaSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256) throw new Error('Dictionary corpus mismatch')
-  return [...source.entries, ...fullSource.entries, ...bunJaSource.entries]
+    || bunJaSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
+    || walkFourSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256) throw new Error('Dictionary corpus mismatch')
+  return [...source.entries, ...fullSource.entries, ...bunJaSource.entries, ...walkFourSource.entries]
 }
 const points = (path: string) => {
   if (!/^M[-.\d]+ [-.\d]+(?: L[-.\d]+ [-.\d]+)+$/.test(path)) throw new Error('Dictionary path syntax')
@@ -86,6 +94,16 @@ export function dictionaryGeometry(glyph: string, medians: Medians) {
     if (corrections.glyph !== glyph || !isDeepStrictEqual(corrections.entries.map(e => e.stroke), [4, 7, 11])) throw new Error('Dictionary correction set mismatch')
     paths = paths.map((path, i) => corrections.entries.find(e => e.stroke === i + 1)?.path ?? path)
   }
+  if (ref.wholeGlyphReview === 'walk-four') {
+    const corrections = JSON.parse(read(walkFourDir + 'corrections.json')) as { entries: {
+      glyph: string; sourceStrokeIndices: (number | null)[]; authored: { stroke: number; path: string }[]
+    }[] }
+    const recipe = corrections.entries.find(e => e.glyph === glyph)
+    const indices = dictionaryStrokeIndices(glyph)
+    if (!recipe || !isDeepStrictEqual(recipe.sourceStrokeIndices, indices)
+      || !isDeepStrictEqual(recipe.authored.map(e => e.stroke), indices.flatMap((n, i) => n === null ? [i + 1] : []))) throw new Error('Dictionary correction set mismatch')
+    paths = indices.map((n, i) => n === null ? recipe.authored.find(e => e.stroke === i + 1)!.path : paths[n - 1])
+  }
   if (paths.length !== ref.strokes || hash(paths) !== ref.pathsSha256
     || paths.flatMap(points).some(p => p.some(n => !Number.isFinite(n) || n < 0 || n > 100))) throw new Error('Dictionary reconstructed geometry mismatch: ' + glyph)
   return { paths, pathsSha256: hash(paths) }
@@ -97,7 +115,7 @@ export function buildDictionaryBundle(candidates?: readonly DictionaryCandidate[
   const byGlyph = new Map(input.map(e => [e.character, e]))
   const count = Object.keys(DICTIONARY_REFERENCES).length
   if (byGlyph.size !== count || input.length !== count || input.some(e => !Object.hasOwn(DICTIONARY_REFERENCES, e.character))) throw new Error('Dictionary candidate set mismatch')
-  const frozen = [oldDir, fullReviewDir, bunJaDir].flatMap(dir => (JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }).entries)
+  const frozen = [oldDir, fullReviewDir, bunJaDir, walkFourDir].flatMap(dir => (JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }).entries)
   return {
     verificationSource: HANJA_DICTIONARY_SOURCE, geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE,
     characters: Object.keys(DICTIONARY_REFERENCES).map(glyph => {
