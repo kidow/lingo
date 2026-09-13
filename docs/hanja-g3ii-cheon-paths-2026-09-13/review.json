@@ -1,0 +1,39 @@
+{
+  "glyph": "遷",
+  "reviewedAt": "2026-09-14",
+  "status": "candidate-path-review-complete",
+  "runtimeApproved": false,
+  "pathsSha256": "ad14e4955ce0585f21eb3481c280d47b960c44e974ded49c33f0e9ed898d38ba",
+  "basis": "모야랜드의 15단계 누적 도해·번호 도해와 대만 교육부의 동일 자형 15획 애니메이션을 대조했다. 국내 시험기관의 공식 필순 승인이라는 뜻은 아니다. 두 제공자의 자료가 독립적으로 제작되었는지는 확인하지 못했다.",
+  "method": "공식 플레이어에서 각 획의 초기 진행과 완료 자형을 확인하고, 공개 페이지에 실린 Track의 진행 방향을 보조 대조했다. 후보의 15개 누적 SVG와 시작·끝 표시도 모두 확인했다. 원본 붓 외곽의 복제나 모든 미세 중심점의 일치 검사는 아니다.",
+  "strokes": [
+    { "stroke": 1, "result": "pass", "observation": "최상단 가로획이 왼쪽에서 오른쪽으로 진행한다." },
+    { "stroke": 2, "result": "pass", "observation": "상단 바깥틀의 왼쪽 세로획이 아래로 내려간다." },
+    { "stroke": 3, "result": "pass", "observation": "상단 틀의 윗변을 오른쪽으로 긋고 오른쪽 세로변으로 이어 내려간다." },
+    { "stroke": 4, "result": "pass", "observation": "상단 내부 왼쪽 세로획이 위에서 아래로 진행한다." },
+    { "stroke": 5, "result": "pass", "observation": "상단 내부 오른쪽 세로획이 아래쪽으로 진행한다." },
+    { "stroke": 6, "result": "pass", "observation": "상단 틀의 밑변이 왼쪽에서 오른쪽으로 닫힌다." },
+    { "stroke": 7, "result": "pass", "observation": "중간 긴 가로획이 왼쪽에서 오른쪽으로 진행한다." },
+    { "stroke": 8, "result": "pass", "observation": "중앙에서 왼쪽 아래로 길게 내려간다." },
+    { "stroke": 9, "result": "pass", "observation": "중간 가로획 아래에서 오른쪽 아래로 내려간다." },
+    { "stroke": 10, "result": "pass", "observation": "오른쪽 위로 가로를 긋고 아래로 꺾인 뒤 왼쪽 위로 거둔다. MM 후보의 짧은 시작 보조 구간을 제외한 주 진행과 끝 갈고리가 일치한다." },
+    { "stroke": 11, "result": "pass-after-correction", "observation": "왼쪽 세로를 내려가 밑을 오른쪽으로 돌아 끝을 왼쪽 위로 올린다. 후보의 마지막 점만 왼쪽으로 보정해 거의 수직이던 끝 방향을 수정했다." },
+    { "stroke": 12, "result": "pass", "observation": "책받침의 점이 왼쪽 위에서 오른쪽 아래로 진행한다." },
+    { "stroke": 13, "result": "pass-after-split", "observation": "책받침 윗부분을 오른쪽으로 시작해 왼쪽 아래 전환점에서 끝낸다. 공식 플레이어의 13획 완료 시 아래 굽음은 아직 채워지지 않는다." },
+    { "stroke": 14, "result": "pass-after-split", "observation": "13획의 왼쪽 전환점에서 오른쪽 아래로 굽고 다시 왼쪽 아래로 내려간다. 공식 플레이어의 14획 완료 시 긴 마지막 받침은 아직 채워지지 않는다." },
+    { "stroke": 15, "result": "pass", "observation": "왼쪽에서 시작한 받침이 오른쪽으로 길게 진행한다. 초기 채움과 마지막 완성 자형을 확인했다. 후보의 작은 시작 보조 굽음은 외곽의 미세한 차이로 구분했다." }
+  ],
+  "browserEvidence": {
+    "officialPlayer": "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=36983",
+    "completedFillCountsObserved": [10, 11, 13, 14, 15],
+    "activeStrokeCountAtFinalObservation": 0,
+    "candidateCumulativeCardsObserved": 15,
+    "criticalCandidateStrokesEnlarged": [10, 11, 13, 14],
+    "mediaCommitted": false
+  },
+  "corrections": [
+    "MM의 13번째 원본 경로를 공유점에서 13·14획으로 분리했다. 기존 점의 누락·역전은 없다.",
+    "11획 끝점 [790,263]을 [770,263]으로 보정했다. 교육부 좌표를 가져온 값이 아닌 후보 좌표계의 로컬 보정이다."
+  ],
+  "remaining": "서비스용 등록부에 출처·수정 경로를 연결하고 기존 배포 검사를 통과시키는 별도 반영 작업. 이번 검토에서는 遷을 실행 데이터에 추가하지 않았다."
+}

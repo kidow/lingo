@@ -1,0 +1,15 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>遷 15획 후보 경로 대조</title>
+<style>body{font:16px system-ui;margin:20px;background:#f5f2ec;color:#222}h1{font-size:22px}h2{font-size:17px}button,select{font:inherit;padding:7px}nav{display:flex;gap:12px;align-items:center}.strip{display:block;width:100%;max-width:1192px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}.pair img,.pair svg{height:390px;max-width:100%;display:block;margin:auto}.pair svg{background:#fff;border:1px solid #ddd}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.grid figure{margin:0;background:#fff;padding:8px}.grid svg{width:100%;max-height:180px}a{color:#225ca0}</style>
+<h1>遷 · 15획 후보 대조</h1><p>국내 순서 도해와 MM 중심선 후보. 초록은 시작, 빨강은 끝. 원문 애니메이션은 <a href="https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=36983" target="_blank">교육부 재생 화면</a>에서 별도로 확인합니다.</p>
+<img class="strip" src="/sequence" alt="모야랜드 15단계 누적 도해">
+<nav><label>후보 획 <select id="stroke"></select></label><button id="play">후보 재생</button><output id="status"></output></nav>
+<div class="pair"><section><h2>국내 1~15번 윤곽</h2><img src="/numbered" alt="모야랜드 15획 번호 윤곽"></section><section><h2>후보 누적 경로</h2><svg id="focus" viewBox="0 0 100 100" role="img" aria-label="선택 획까지의 후보 경로"></svg></section></div>
+<h2>15획 전체 누적 상태</h2><div class="grid" id="grid"></div>
+<script type="module">
+const ns='http://www.w3.org/2000/svg',data=await fetch('/candidate').then(r=>r.json()),select=document.querySelector('#stroke');
+function path(d,color){const p=document.createElementNS(ns,'path');for(const[k,v]of Object.entries({d,fill:'none',stroke:color,'stroke-width':5,'stroke-linecap':'round','stroke-linejoin':'round'}))p.setAttribute(k,v);return p}
+function paint(svg,n,markers=true){svg.replaceChildren();data.paths.slice(0,n).forEach((d,i)=>svg.append(path(d,i===n-1?'#7569da':'#262523')));if(markers){const pts=data.paths[n-1].match(/[ML][\d.]+ [\d.]+/g).map(s=>s.slice(1).split(' ').map(Number));[pts[0],pts.at(-1)].forEach(([x,y],i)=>{const c=document.createElementNS(ns,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',1.35);c.setAttribute('fill',i?'#d82929':'#13854b');svg.append(c)})}}
+for(let n=1;n<=15;n++){const o=document.createElement('option');o.value=n;o.textContent=n+'획';select.append(o);const f=document.createElement('figure'),c=document.createElement('figcaption'),s=document.createElementNS(ns,'svg');c.textContent=n+'획';s.setAttribute('viewBox','0 0 100 100');s.setAttribute('aria-label',n+'획 누적');paint(s,n);f.append(c,s);document.querySelector('#grid').append(f)}
+select.value='15';function show(){paint(document.querySelector('#focus'),Number(select.value));document.querySelector('#status').textContent=select.value+' / 15'}select.onchange=show;show();
+document.querySelector('#play').onclick=()=>{show();const p=[...document.querySelector('#focus').querySelectorAll('path')].at(-1),len=p.getTotalLength();p.animate([{strokeDasharray:len,strokeDashoffset:len},{strokeDasharray:len,strokeDashoffset:0}],{duration:1800,fill:'forwards'})};
+</script></html>

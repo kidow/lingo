@@ -1,0 +1,25 @@
+{
+  "glyph": "遷",
+  "version": "cheon-15-candidate-v2",
+  "expectedOriginalStrokes": 14,
+  "expectedCandidateStrokes": 15,
+  "split": {
+    "sourceStroke": 13,
+    "sharedPointIndex": 7,
+    "sharedPoint": [219, 330],
+    "resultStrokes": [13, 14],
+    "reason": "모야랜드는 책받침 위·아래 굽음을 13·14번으로 분리한다. 대만 교육부 동일 자형에서도 두 획이 별도이며 위 꺾임의 좌측 전환점에서 다음 아래 굽음이 시작한다. MM 13획의 동일 전환점을 공유하여 분리하며 어떤 원본 점도 삭제·역전하지 않는다."
+  },
+  "sourceStrokeIndices": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 13, 14],
+  "pointCorrections": [
+    {
+      "stroke": 11,
+      "pointIndex": 11,
+      "original": [790, 263],
+      "corrected": [770, 263],
+      "reason": "원본 MM의 마지막 구간은 거의 수직 위로 향한다. 국내 번호 도해의 끝모양과 교육부 동일 자형의 Track 방향은 왼쪽 위로 거둔다. 끝점만 로컬에서 왼쪽으로 보정했으며 교육부 좌표나 외곽을 복사하지 않았다."
+    }
+  ],
+  "normalization": "lib/hanja-stroke-geometry.ts normalizeMedians: uniform 80-unit fit in 100-unit square, no per-stroke scaling",
+  "runtimeApproved": false
+}
