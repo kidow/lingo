@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-13",
+  "scope": "弊 stroke-count correction; no animation approval",
+  "checks": [
+    {
+      "command": "rtk proxy python3 -B scripts/hanja-source.test.py",
+      "exitCode": 0,
+      "tests": 5,
+      "passed": 5,
+      "scope": "offline source-row normalization and changed-source guards"
+    },
+    {
+      "command": "rtk proxy node --test 'lib/hanja*.test.ts'",
+      "exitCode": 0,
+      "files": 27,
+      "tests": 181,
+      "passed": 181,
+      "failed": 0
+    },
+    {
+      "command": "rtk proxy pnpm exec next build",
+      "exitCode": 0,
+      "nextVersion": "16.3.3",
+      "typeScript": "passed",
+      "staticPagesGenerated": 7,
+      "note": "Direct Next build avoids the shared language-content prebuild generator."
+    }
+  ],
+  "catalogScope": {
+    "unchangedCharacters": 5977,
+    "changedCharacters": [{ "glyph": "弊", "before": 15, "after": 14, "sourceStrokes": 15 }],
+    "sourceAndGradeMetadataUnchanged": true,
+    "learningKeysUnchanged": true,
+    "historicalEvidencePinsVerified": 4
+  },
+  "runtime": {
+    "characters": 5978,
+    "playable": 1488,
+    "grade3iiCharacters": 500,
+    "grade3iiPlayable": 498,
+    "grade3iiPending": [{ "glyph": "遷", "strokes": 15 }, { "glyph": "弊", "strokes": 14 }],
+    "pyeAnimation": null
+  },
+  "next": "Review all 14 弊 strokes against domestic evidence before approving candidate geometry."
+}

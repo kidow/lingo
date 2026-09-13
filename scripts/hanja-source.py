@@ -23,6 +23,9 @@ import xlrd
 
 SOURCE_URL = "https://www.hanja.re.kr/kccpt/exam/levelConfirm.do"
 DOCUMENT = "배정한자 전체 대표훈음 부수 음표 명기본(xls).xls"
+STROKE_COUNT_CORRECTIONS = json.loads(
+    (Path(__file__).resolve().parent.parent / "content/hanja/stroke-count-corrections.json").read_text()
+)
 GRADES = [
     ("g8", "8급", ["80"], 50, 50),
     ("g7-2", "7급II", ["72"], 100, 100),
@@ -86,10 +89,22 @@ def character_from_row(row, label):
     if row["glyph"] != glyph:
         character["sourceGlyph"] = row["glyph"]
         character["glyphAliases"] = list(dict.fromkeys(value for value in [row["glyph"], unicodedata.normalize("NFC", row["glyph"])] if value != glyph))
+    corrections = [entry for entry in STROKE_COUNT_CORRECTIONS["entries"] if entry["glyph"] == glyph]
+    if corrections:
+        correction = corrections[0]
+        if (STROKE_COUNT_CORRECTIONS["version"] != 1 or len(corrections) != 1
+                or row["glyph"] != correction["sourceGlyph"]
+                or row["sourceRow"] != correction["sourceRow"]
+                or int(row["strokes"]) != correction["sourceStrokes"]):
+            raise ValueError(f"Recheck stroke-count correction against changed source: {glyph}")
+        character.update(strokes=correction["strokes"], sourceStrokes=correction["sourceStrokes"],
+                         strokeCountCorrection=correction["id"])
     return character
 
 
 def verify_root(data, root):
+    if data["source"]["sha256"] != STROKE_COUNT_CORRECTIONS["workbookSha256"]:
+        raise ValueError("Recheck stroke-count corrections against changed workbook")
     cumulative, jobs, all_ids = set(), [], set()
     for gid, label, codes, unique, advertised in GRADES:
         path = Path(root) / "content" / "hanja" / "characters" / f"{gid}.json"

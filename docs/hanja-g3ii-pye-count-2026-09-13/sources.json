@@ -1,0 +1,64 @@
+{
+  "date": "2026-09-13",
+  "glyph": "弊",
+  "decision": "correct-catalog-stroke-count-only",
+  "sources": [
+    {
+      "id": "eomunhoe-16411",
+      "title": "敝와, 敝가 들어간 한자들의 획순",
+      "url": "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=16411",
+      "published": "2025-08-21",
+      "bytes": 87560,
+      "sha256": "0f2605808364635f6bb5523757510c0703d42d46f81e1bcc637dcac48fd23f4e",
+      "finding": "질문이 弊 등을 명시하고, 답변은 㡀 안의 巾 세로획은 하나라고 설명한다. 총획 정정을 명시한 답변으로 취급하지 않는다."
+    },
+    {
+      "id": "eomunhoe-16424",
+      "title": "敝가 攴부 8획으로 여겨지는 까닭",
+      "url": "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=16424",
+      "published": "2025-09-13",
+      "bytes": 97729,
+      "sha256": "c281a39c5fff957d00d267e4d57679eaffcea4bca5e1e3eb14d505d1a889c38a",
+      "finding": "답변은 㡀 7획 기준을 弊 등에도 적용하고 기존 자전·교재의 8획 집계를 바로잡아야 한다고 설명한다.",
+      "inference": "弊 총 14획은 이 정정 기준으로 계산한 㡀 7 + 攵 4 + 廾 3이며 답변의 직접 인용이 아니다."
+    },
+    {
+      "id": "eomunhoe-xls-live",
+      "url": "https://www.hanja.re.kr/kccpt/exam/levelConfirm.do",
+      "downloadUrl": "https://www.hanja.re.kr/file/downloadDoc.do",
+      "document": "배정한자 전체 대표훈음 부수 음표 명기본(xls).xls",
+      "bytes": 971264,
+      "sha256": "97b8db715ebe1dd6e00e8e58d338a9ba70e7420bf5ec84da38f987d60eb64b17",
+      "sheet": "배정한자",
+      "rowNumbering": "one-based Excel rows",
+      "columns": ["대표음", "급수", "한자", "대표훈음", "부수", "획수", "총획", "음표"],
+      "rows": [
+        { "row": 2059, "values": ["별", "10", "瞥", "눈깜짝할 별", "目", "12", "17", ""] },
+        { "row": 5316, "values": ["폐", "32", "弊", "폐단/해질 폐:", "廾", "12", "15", ":"] },
+        { "row": 5317, "values": ["폐", "30", "幣", "화폐 폐:", "巾", "12", "15", ":"] },
+        { "row": 5318, "values": ["폐", "30", "蔽", "덮을 폐:", "艸", "12", "16", ":"] },
+        { "row": 5319, "values": ["폐", "10", "斃", "죽을 폐:", "攴", "14", "18", ":"] },
+        { "row": 5323, "values": ["폐", "00", "敝", "해질 폐:", "攴", "08", "12", ":"] }
+      ],
+      "parser": "xlrd 2.0.2; source bytes and trusted wheel loaded in memory, no repository dependency added"
+    },
+    {
+      "id": "e-hanja-u5f0a-live",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5F00/5F0A.svg",
+      "title": "弊",
+      "bytes": 7156,
+      "sha256": "b345afcd709b8bfe29a05a6c979bbe2cd8464c7fa47ab78f3228a9812dfefd02",
+      "strokeCount": 14,
+      "verification": "title, byte hash and all 14 timing rows rechecked; no new visual review in this batch",
+      "previouslyVisuallyObservedStrokes": [1, 2, 3, 4, 5, 6, 14]
+    }
+  ],
+  "priorEvidence": [
+    { "path": "docs/hanja-g3ii-batch9-2026-09-12/review-c.json", "sha256": "12972dc3d11c48ebe17d562e047e4e124294fb7b877053111eea12e0d4c6da2d" },
+    { "path": "docs/hanja-g3ii-batch9-2026-09-12/peer-root.json", "sha256": "2403f99443c70f519f727e22c4ea3d7107e8b67a15a8138c4a6213e8d515fdeb" },
+    { "path": "docs/hanja-g3ii-dictionary-12-2026-09-13/review.json", "sha256": "a03a988581ae438f9db5e08fe6846854f0d343b1b2f2d89552a70a39b7409314" },
+    { "path": "docs/hanja-g3ii-dictionary-12-2026-09-13/sources.json", "sha256": "9c446f8e8475b71c657b884300b648dd508d27432e410aadaaba13d5010f1f98" }
+  ],
+  "runtimeApproved": false,
+  "wholeCandidateGeometryReviewed": false
+}

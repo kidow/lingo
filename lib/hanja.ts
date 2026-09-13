@@ -25,6 +25,9 @@ export type HanjaCharacter = {
   sourceRow?: number
   sourceHunEum?: string
   sourceGlyph?: string
+  /** 공식 후속 설명으로 보정한 경우 배정표의 획수와 보정 기록 ID를 함께 보존한다. */
+  sourceStrokes?: number
+  strokeCountCorrection?: string
   /** 검수한 예시만 제공한다. 원자료에 없는 문장을 생성하지 않는다. */
   example?: { word: string; reading: string; meaning: string }
 }
