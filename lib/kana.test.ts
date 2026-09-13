@@ -7,6 +7,7 @@ import {
   KANA_LADDER,
   KANA_SCRIPTS,
   KANA_SKILLS,
+  KANA_OPEN,
   KANA_TABLE,
   buildKanaChoice,
   exampleQuota,
@@ -36,19 +37,24 @@ const full: KanaExamples = Object.fromEntries(
   ]),
 )
 
-test('도표는 104마디이고 ヲ가 빠져 카드는 207장이다', () => {
+test('도표는 104마디이고 쓰지 않는 가타카나 셋이 빠져 205장이다', () => {
   assert.equal(KANA_TABLE.length, 104)
   assert.equal(new Set(KANA_TABLE.map((unit) => unit.id)).size, 104)
 
   const glyphs = KANA_TABLE.flatMap((unit) =>
     KANA_SCRIPTS.map((script) => glyphOf(unit, script)).filter(Boolean),
   )
-  assert.equal(glyphs.length, 207)
-  assert.equal(kanaUnit('wo').kata, null)
+  assert.equal(glyphs.length, 205)
+  // ヲ·ヂ·ヅ는 현대 일본어가 쓰지 않아 예시를 영영 못 채운다
+  for (const id of ['wo', 'dji', 'dzu']) assert.equal(kanaUnit(id).kata, null, id)
+  // 히라가나 쪽은 살아 있다 — ちぢむ·てつづき처럼 쓰는 자리가 있다
+  assert.equal(kanaUnit('dji').hira, 'ぢ')
+  assert.equal(kanaUnit('dzu').hira, 'づ')
   // 한 글자가 두 마디에 겹치면 4지선다에서 정답이 둘이 된다
-  assert.equal(new Set(glyphs).size, 207)
+  assert.equal(new Set(glyphs).size, 205)
 
-  assert.equal(kanaEntries(full).length, 207 * KANA_SKILLS.length)
+  const ALL = ['sei', 'daku', 'yoon'] as const
+  assert.equal(kanaEntries(full, KANA_TABLE, ALL).length, 205 * KANA_SKILLS.length)
 })
 
 test('가타카나는 히라가나에서 유도한다', () => {
@@ -68,14 +74,14 @@ test('로마자가 겹치는 셋은 화면 글자를 갈라 둔다', () => {
 
 test('예시가 모자란 글자는 카드가 서지 않는다', () => {
   const thin: KanaExamples = { a: { hira: ['rain', 'ant'], kata: ['duck', 'eye-mask', 'questionnaire'] } }
-  const entries = kanaEntries(thin, [kanaUnit('a')])
+  const entries = kanaEntries(thin, [kanaUnit('a')], ['sei'])
   assert.deepEqual([...new Set(entries.map((entry) => entry.script))], ['kata'])
   assert.equal(entries.length, KANA_SKILLS.length)
 })
 
 test('4지선다는 같은 문자 체계에서만 보기를 뽑고 정답이 하나다', () => {
   const table = KANA_TABLE
-  for (const entry of kanaEntries(full)) {
+  for (const entry of kanaEntries(full, KANA_TABLE, ['sei', 'daku', 'yoon'])) {
     const question = buildKanaChoice(entry, table)
     assert.equal(question.kind, 'kana-choice')
     if (question.kind !== 'kana-choice') return
@@ -94,7 +100,7 @@ test('4지선다는 같은 문자 체계에서만 보기를 뽑고 정답이 하
 })
 
 test('같은 문항은 몇 번을 만들어도 같다', () => {
-  const [entry] = kanaEntries(full, [kanaUnit('ka')])
+  const [entry] = kanaEntries(full, [kanaUnit('ka')], ['sei'])
   const once = buildKanaChoice(entry, KANA_TABLE, 3)
   const twice = buildKanaChoice(entry, KANA_TABLE, 3)
   assert.deepEqual(once, twice)
@@ -102,7 +108,7 @@ test('같은 문항은 몇 번을 만들어도 같다', () => {
 })
 
 test('닮은 글자를 먼저 깐다', () => {
-  const entry = kanaEntries(full, [kanaUnit('shi')]).find(
+  const entry = kanaEntries(full, [kanaUnit('shi')], ['sei']).find(
     (item) => item.script === 'kata' && item.skill === 'write',
   )!
   const question = buildKanaChoice(entry, KANA_TABLE)
@@ -112,7 +118,7 @@ test('닮은 글자를 먼저 깐다', () => {
 })
 
 test('소개는 글자마다 한 번이다', () => {
-  const entries = kanaEntries(full, [kanaUnit('a')])
+  const entries = kanaEntries(full, [kanaUnit('a')], ['sei'])
   const state = initialState()
   const kinds = entries.map((entry) => questionFor(entry, state, entries).kind)
   // 읽기 넷·쓰기 넷이 아니라 글자 둘에 소개 둘이다
@@ -127,7 +133,7 @@ test('사다리는 한 칸이라 소개 다음이 바로 4지선다다', () => {
 })
 
 test('숙련도는 카드가 아니라 글자를 센다', () => {
-  const entries = kanaEntries(full, [kanaUnit('a')])
+  const entries = kanaEntries(full, [kanaUnit('a')], ['sei'])
   const read = new Set(entries.filter((entry) => entry.skill === 'read').map((entry) => entry.key))
   // 읽기만 뗐으면 아직 아는 글자가 아니다
   assert.equal(masteredKanaCount((key) => read.has(key), entries), 0)
@@ -152,7 +158,10 @@ test('content/kana.json의 예시가 실제 개념이고 그 글자를 품는다
       if (!list) continue
       const glyph = glyphOf(unit, script)
       assert.ok(glyph, `${id} ${script} — 없는 표기에 예시가 붙었다`)
-      assert.equal(list.length, exampleQuota(script, id), `${glyph} 예시 수`)
+      // 연 갈래는 정확히 채워야 하고, 안 연 갈래는 쌓는 중이라 덜 차 있어도 된다
+      if (KANA_OPEN.includes(unit.kind))
+        assert.equal(list.length, exampleQuota(script, id), `${glyph} 예시 수`)
+      else assert.ok(list.length <= exampleQuota(script, id), `${glyph} 예시가 넘친다`)
       assert.ok(exampleQuota(script, id) <= EXAMPLES_PER_CARD)
 
       for (const slug of list) {
@@ -169,15 +178,10 @@ test('content/kana.json의 예시가 실제 개념이고 그 글자를 품는다
   for (const [slug, count] of seen) assert.ok(count <= 2, `${slug}이 ${count}장에 겹쳤다`)
 })
 
-test('지금 공개된 것은 청음이고 갈래에 구멍이 없다', () => {
-  const opened = new Set(
-    KANA_TABLE.filter((unit) =>
-      KANA_SCRIPTS.some((script) => (examples[unit.id]?.[script]?.length ?? 0) > 0),
-    ).map((unit) => unit.kind),
-  )
-  assert.deepEqual([...opened], ['sei'])
+test('연 갈래는 청음뿐이고 거기에는 구멍이 없다', () => {
+  assert.deepEqual([...KANA_OPEN], ['sei'])
 
-  // 열린 갈래는 **한 마디도 빠지지 않아야** 한다. 격자는 빠진 자리가 보인다
+  // 연 갈래는 **한 마디도 빠지지 않아야** 한다. 격자는 빠진 자리가 보인다
   for (const unit of KANA_TABLE.filter((item) => item.kind === 'sei'))
     for (const script of KANA_SCRIPTS)
       if (glyphOf(unit, script))
@@ -188,4 +192,12 @@ test('지금 공개된 것은 청음이고 갈래에 구멍이 없다', () => {
         )
 
   assert.equal(kanaEntries(examples).length, 91 * KANA_SKILLS.length)
+})
+
+test('안 연 갈래의 초안은 파일에 쌓이되 카드가 되지 않는다', () => {
+  // 탁음 초안이 들어 있다 — 열리는 날 그대로 선다 (lib/kana.ts)
+  const daku = KANA_TABLE.filter((unit) => unit.kind === 'daku')
+  assert.ok(daku.some((unit) => (examples[unit.id]?.hira?.length ?? 0) > 0))
+  // 그래도 카드는 청음뿐이다
+  for (const entry of kanaEntries(examples)) assert.equal(entry.unit.kind, 'sei')
 })

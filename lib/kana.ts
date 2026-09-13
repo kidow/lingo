@@ -30,8 +30,9 @@ export type KanaUnit = {
   kind: KanaKind
   hira: string
   /**
-   * 가타카나 표기. `を`만 `null`이다 — `ヲ`는 현대 일본어에서 쓰지 않아
-   * 예시 낱말을 영영 못 채운다 (docs/kana-tab-design.md §1)
+   * 가타카나 표기. 셋이 `null`이다 — `ヲ`·`ヂ`·`ヅ`는 글자는 있어도 현대
+   * 일본어가 쓰지 않아 예시 낱말을 **영영** 못 채운다. 콘텐츠 7,500개에
+   * 후보가 하나도 없었다 (docs/kana-tab-design.md §1)
    */
   kata: string | null
 }
@@ -65,6 +66,17 @@ const ROMAJI_OVERRIDE: Record<string, string> = {
   dzu: 'zu (づ)',
 }
 
+/**
+ * 가타카나를 두지 않는 마디. 글자가 없는 것이 아니라 **쓰지 않는 것**이다.
+ *
+ * `ヲ`는 가타카나 조사인데 현대 일본어에서 조사는 히라가나로만 쓴다. `ヂ`·`ヅ`는
+ * 옛 표기(`ラヂオ`)에만 남아 있다. 셋 다 예시 낱말이 실물로 없다 — 억지로
+ * 세우면 「이건 언제 쓰나」에 답할 수 없는 카드가 된다.
+ *
+ * 히라가나 `ぢ`·`づ`는 다르다. `ちぢむ`·`てつづき`처럼 실제로 쓰는 자리가 있다.
+ */
+const NO_KATAKANA = new Set(['wo', 'dji', 'dzu'])
+
 /** 히라가나를 가타카나로. 두 벌의 배열이 같아서 상수 덧셈으로 끝난다 */
 export const toKatakana = (text: string) =>
   [...text].map((ch) => (ch >= 'ぁ' && ch <= 'ゖ' ? String.fromCharCode(ch.charCodeAt(0) + 0x60) : ch)).join('')
@@ -85,12 +97,12 @@ function parse(spec: string, kind: KanaKind): KanaUnit[] {
       row: rowOf(id),
       kind,
       hira,
-      kata: id === 'wo' ? null : toKatakana(hira),
+      kata: NO_KATAKANA.has(id) ? null : toKatakana(hira),
     }
   })
 }
 
-/** 104마디. 가타카나가 없는 `を`를 빼면 카드는 207장이다 */
+/** 104마디. 가타카나가 없는 셋을 빼면 카드는 205장이다 */
 export const KANA_TABLE: KanaUnit[] = [
   ...parse(SEI, 'sei'),
   ...parse(DAKU, 'daku'),
@@ -112,6 +124,20 @@ export const glyphOf = (unit: KanaUnit, script: KanaScript) =>
  * 값은 개념 slug라 낱말·읽기·뜻·발음·그림이 전부 개념에서 따라온다 (§2).
  */
 export type KanaExamples = Record<string, Partial<Record<KanaScript, string[]>>>
+
+/**
+ * 지금 연 갈래. **공개를 여기서 끊는다.** (docs/kana-tab-design.md §8)
+ *
+ * 갈래 단위로만 여는 이유는 가나가 **격자**라서다. 카드가 준비되는 대로 열면
+ * `さ`는 있는데 `し`가 없는 화면이 되는데, 낱말 피드에서는 개념 하나가 비어도
+ * 아무도 모르지만(`undrawn` 열일곱이 그렇게 빠져 있다) 여기서는 **빠진 자리가
+ * 보인다** — 학습자가 오십음도를 머릿속에 갖고 오기 때문이다.
+ *
+ * **아직 안 연 갈래의 예시도 `content/kana.json`에 쌓아 둔다.** 초안은 만드는
+ * 데 시간이 들고 시트로 한 번 훑은 것이라 버릴 이유가 없다. 여기 이름이
+ * 오르는 날 그대로 선다.
+ */
+export const KANA_OPEN: readonly KanaKind[] = ['sei']
 
 /** 카드 하나가 요구하는 예시 수 */
 export const EXAMPLES_PER_CARD = 3
@@ -161,9 +187,14 @@ export const isKana = (item: { key: string }): item is KanaEntry => 'unit' in it
  * 없어 소리만 외우게 되는데, 그건 낱말 없이 글자를 외우는 일이라 다음 날
  * 사라진다.
  */
-export function kanaEntries(examples: KanaExamples, table: KanaUnit[] = KANA_TABLE): KanaEntry[] {
+export function kanaEntries(
+  examples: KanaExamples,
+  table: KanaUnit[] = KANA_TABLE,
+  open: readonly KanaKind[] = KANA_OPEN,
+): KanaEntry[] {
   const entries: KanaEntry[] = []
   for (const unit of table) {
+    if (!open.includes(unit.kind)) continue
     for (const script of KANA_SCRIPTS) {
       if (!glyphOf(unit, script)) continue
       const picked = examples[unit.id]?.[script] ?? []

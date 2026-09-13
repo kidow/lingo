@@ -8,7 +8,7 @@
  */
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs'
 import { join } from 'node:path'
-import { KANA_SCRIPTS, KANA_TABLE, exampleQuota, glyphOf, type KanaExamples, type KanaKind } from '../lib/kana.ts'
+import { KANA_OPEN, KANA_SCRIPTS, KANA_TABLE, exampleQuota, glyphOf, type KanaExamples } from '../lib/kana.ts'
 import { AUDIO_MISSING } from '../lib/audio-have.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import { auditTrivia } from '../lib/trivia-audit.ts'
@@ -1159,7 +1159,6 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
   )
 
   const used = new Map<string, number>()
-  const openedKinds = new Set<KanaKind>()
 
   for (const [id, picked] of Object.entries(examples)) {
     const unit = KANA_TABLE.find((item) => item.id === id)
@@ -1176,9 +1175,10 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
         fail(where, `[${id}]에는 ${script} 표기가 없는데 예시가 붙었습니다`)
         continue
       }
-      openedKinds.add(unit.kind)
       const quota = exampleQuota(script, id)
-      if (list.length !== quota) fail(where, `[${glyph}] 예시가 ${list.length}개입니다 — ${quota}개여야 합니다`)
+      // 연 갈래만 정확히 따진다. 안 연 갈래는 초안을 쌓는 중이라 덜 차 있다
+      if (KANA_OPEN.includes(unit.kind) ? list.length !== quota : list.length > quota)
+        fail(where, `[${glyph}] 예시가 ${list.length}개입니다 — ${quota}개여야 합니다`)
       if (new Set(list).size !== list.length) fail(where, `[${glyph}] 같은 낱말이 두 번 적혔습니다`)
 
       for (const slug of list) {
@@ -1205,9 +1205,15 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
   for (const [slug, count] of used)
     if (count > 2) fail(where, `${slug}이 카드 ${count}장에 겹쳤습니다 — 최대 둘입니다`)
 
-  // 4. 연 갈래에는 구멍이 없어야 한다. 격자는 빠진 자리가 보인다
+  /**
+   * 4. **연 갈래**에는 구멍이 없어야 한다. 격자는 빠진 자리가 보인다.
+   *
+   * 연 갈래는 파일에서 읽지 않고 `KANA_OPEN`이 정한다 — 아직 안 연 갈래의
+   * 초안도 파일에 쌓이므로(lib/kana.ts) 파일만 보면 반쯤 채운 갈래가 열린
+   * 것으로 보인다
+   */
   for (const unit of KANA_TABLE) {
-    if (!openedKinds.has(unit.kind)) continue
+    if (!KANA_OPEN.includes(unit.kind)) continue
     for (const script of KANA_SCRIPTS) {
       const glyph = glyphOf(unit, script)
       if (!glyph) continue
@@ -1225,17 +1231,34 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
     sounds.set(unit.romaji, unit.id)
   }
 
-  const cards = KANA_TABLE.reduce(
-    (sum, unit) =>
-      sum +
-      KANA_SCRIPTS.filter(
-        (script) =>
-          glyphOf(unit, script) &&
-          (examples[unit.id]?.[script]?.length ?? 0) >= exampleQuota(script, unit.id),
-      ).length,
-    0,
-  )
-  notes.push(`가나 ${cards}장 · 연 갈래 ${[...openedKinds].join('·') || '없음'}`)
+  /**
+   * 갈래마다 얼마나 찼는지 **여기서 바로 찍는다.** 위쪽 `notes`는 이 블록보다
+   * 앞에서 이미 출력된 뒤라 담아 봐야 아무도 못 본다.
+   *
+   * 오류가 아니라 남은 일이다 — 안 연 갈래의 빈자리는 다음 회차의 목록이다
+   */
+  const progress: string[] = []
+  for (const kind of ['sei', 'daku', 'yoon'] as const) {
+    const slots = KANA_TABLE.filter((unit) => unit.kind === kind).flatMap((unit) =>
+      KANA_SCRIPTS.filter((script) => glyphOf(unit, script)).map((script) => ({ unit, script })),
+    )
+    const done = slots.filter(
+      ({ unit, script }) =>
+        (examples[unit.id]?.[script]?.length ?? 0) >= exampleQuota(script, unit.id),
+    )
+    const open = KANA_OPEN.includes(kind)
+    if (open) progress.push(`${kind} — ${done.length}장 공개`)
+    else if (done.length > 0) {
+      const left = slots
+        .filter((slot) => !done.includes(slot))
+        .map(({ unit, script }) => glyphOf(unit, script))
+      progress.push(`${kind} — ${done.length}/${slots.length}장 (미공개). 남은 자리: ${left.join(' ')}`)
+    }
+  }
+  if (progress.length) {
+    console.log(`\n${line(4)} 가나`)
+    for (const row of progress) console.log(`  · ${row}`)
+  }
 }
 
 if (warnings.length) {

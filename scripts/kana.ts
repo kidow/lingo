@@ -136,19 +136,33 @@ function draft(kinds: KanaKind[]) {
        * 한 바퀴를 겹치지 않게 돌고, 그래도 모자라면 겹침을 허용한다.
        */
       const heads = new Set<string>()
+      const taken: string[] = []
       for (const avoidRepeat of [true, false]) {
         for (const row of pool) {
           if (picked.length >= quota) break
           if (picked.includes(row.slug)) continue
           if ((used.get(row.slug) ?? 0) >= 2) continue
-          const head = row.reading.slice(0, glyph.length + 1)
-          if (avoidRepeat && heads.has(head)) continue
-          heads.add(head)
+          if (avoidRepeat) {
+            const head = row.reading.slice(0, glyph.length + 1)
+            if (heads.has(head)) continue
+            /**
+             * 한쪽이 다른 쪽을 통째로 품으면 같은 낱말이다. `ぴ`에
+             * `えんぴつ`(연필)과 `えんぴつグリップ`(연필 그립)이 나란히 앉았다 —
+             * 앞머리만 보면 둘 다 `えん`이라 머리 규칙에 걸리지만, 글자가
+             * 낱말 가운데 있으면 머리가 서로 달라도 이런 쌍이 생긴다
+             */
+            if (taken.some((seen) => seen.startsWith(row.reading) || row.reading.startsWith(seen)))
+              continue
+            heads.add(head)
+          }
+          taken.push(row.reading)
           picked.push(row.slug)
           used.set(row.slug, (used.get(row.slug) ?? 0) + 1)
         }
       }
-      examples[unit.id] = { ...examples[unit.id], [script]: picked }
+      // 빈 배열은 적지 않는다. 「예시를 고르는 중」과 「이 표기는 쓰지 않는다」가
+      // 파일에서 같아 보이면 다음 사람이 그 자리를 채우려 든다
+      if (picked.length > 0) examples[unit.id] = { ...examples[unit.id], [script]: picked }
       filled += picked.length - already.length
       if (picked.length < quota) short.push(`${glyph}(${picked.length}/${quota})`)
     }
