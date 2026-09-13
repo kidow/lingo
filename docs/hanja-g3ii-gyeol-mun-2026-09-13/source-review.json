@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "decision": "Candidate geometry reviewed; neither target added to runtime",
+  "newPrimarySource": {
+    "provider": "香港特別行政區政府教育局 課程發展處中國語文教育組",
+    "indexUrl": "https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/resources/primary/lang/curriculum-materials.html",
+    "portalUrl": "https://www.edbchinese.hk/lexlist_ch/",
+    "search": {
+      "url": "https://www.edbchinese.hk/lexlist_ch/result.jsp",
+      "method": "POST",
+      "fields": {
+        "searchMethod": "direct",
+        "searchCriteria": "target glyph",
+        "sortBy": "stroke",
+        "jpC": "lshk"
+      }
+    },
+    "inspection": "Opened the actual official stroke-demo pages and visually inspected completed glyphs in the browser. Did not observe a full live stroke playback or copy official path coordinates.",
+    "entries": [
+      {
+        "glyph": "訣",
+        "strokes": 11,
+        "radical": "言",
+        "resultHtmlSha256": "8d6ebc36b243fb6e7f843bd190806157b11a186b0af863173dcd341295749497",
+        "animationUrl": "https://www.edbchinese.hk/EmbziciwebRes/stkdemo_js/3001-4000/3767.html?lang=ch",
+        "animationHtmlBytes": 4146,
+        "animationHtmlSha256": "1849403d11a3c60d5fe4451f1ed1003fc0d1f50b8941bee734650e9ea0297bd7",
+        "observation": "Completed glyph uses a separated short right-falling dot, unlike the long final right-falling stroke in the domestic reference form.",
+        "resolvesPendingStrokes": []
+      },
+      {
+        "glyph": "紋",
+        "strokes": 10,
+        "radical": "糸",
+        "resultHtmlSha256": "38c8d8cf4d04882e248ca28cafe714f83d92b27859f053dc62265d93c4fa4867",
+        "animationUrl": "https://www.edbchinese.hk/EmbziciwebRes/stkdemo_js/3001-4000/3069.html?lang=ch",
+        "animationHtmlBytes": 4146,
+        "animationHtmlSha256": "955cafda76c213c01368ad26dd866bf8eaec90df0624b3efe29cdbd79d6dce38",
+        "observation": "Completed glyph uses three lower dots in the thread component, unlike the long central vertical stroke in the domestic reference form.",
+        "resolvesPendingStrokes": []
+      }
+    ]
+  },
+  "priorEvidence": [
+    {
+      "path": "../hanja-g3ii-crosscheck-63-2026-09-13/review-a.json",
+      "sha256": "ab877fcc6bcb0d24f78b0bfaa4890b1da76e7e1edb131f1bfa1f105462b5cd16",
+      "use": "Prior per-stroke MOE comparison and the three same-form conflicts; not a new visual inspection"
+    },
+    {
+      "path": "../hanja-g3ii-crosscheck-63-2026-09-13/source-matrix.json",
+      "sha256": "d278ec44ac5c0f3535fa0b91ce69446b9aad375ad1ac1094d0b58952155233ee",
+      "use": "Pinned domestic reference images and missing cumulative positions"
+    },
+    {
+      "path": "../hanja-g3ii-missing-17-2026-09-13/research-provenance.json",
+      "sha256": "fbd7dcdd659bacd098b80849e57e4743dc7dc0b4302c2be63bebf889d0833a46",
+      "use": "Moyaland publisher/provider identity; not Korea Eomunhoe certification"
+    }
+  ],
+  "retainedSources": [
+    {
+      "provider": "Taiwan Ministry of Education",
+      "urls": [
+        "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=35363",
+        "https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=32011"
+      ],
+      "use": "Prior actual step comparison retained; conflicts 訣 11 and 紋 4,5 remain"
+    },
+    {
+      "provider": "Moyaland",
+      "urls": [
+        "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1426211138",
+        "https://www.moyaland.com/_new/hanja/item_01.php?it_id=1427260631"
+      ],
+      "use": "Prior numbered domestic forms; no fresh visual image observation in this task"
+    },
+    {
+      "provider": "Dongyang Books",
+      "url": "https://dongyangbooks.com/book/book_view.asp?goods_code=979&menu_1=hanja&menu_2=han_hanja",
+      "use": "Prior writing-note inspection retained: 訣 page 80 lacks cumulative states 1,2,3; 紋 page 159 lacks 2,5. Current PDF retrieval failed TLS certificate validation; certificate checks were not disabled."
+    },
+    {
+      "provider": "Japan Kanji Aptitude Testing Foundation, Kanjipedia",
+      "urls": [
+        "https://www.kanjipedia.jp/kanji/0001870000",
+        "https://www.kanjipedia.jp/kanji/0006770300"
+      ],
+      "use": "11/10 stroke counts and forms only; no stroke animation found, no direction approval"
+    },
+    {
+      "provider": "The Education University of Hong Kong",
+      "url": "https://cclp.eduhk.hk/檢字表",
+      "use": "Lead for a 214-radical example platform; not direct whole-target evidence used here"
+    }
+  ],
+  "candidates": {
+    "files": [
+      "originals.json",
+      "donors.json",
+      "candidate-paths.json"
+    ],
+    "license": "Arphic Public License; existing upstream notices in ../../public/hanja-strokes/",
+    "domesticAnalogy": [
+      {
+        "target": "訣",
+        "stroke": 11,
+        "donor": "決",
+        "donorStroke": 7,
+        "use": "Long right-falling shape analogy only. No donor path was copied; selected MM path remains unchanged."
+      },
+      {
+        "target": "紋",
+        "strokes": [
+          4,
+          5
+        ],
+        "donor": "紅",
+        "donorStrokes": [
+          4,
+          5
+        ],
+        "use": "Actual existing reviewed paths mapped into the target thread-component bounds, preserving stroke order and direction. This does not establish the target character direction."
+      }
+    ]
+  },
+  "remaining": [
+    {
+      "glyph": "訣",
+      "strokes": [
+        11
+      ],
+      "needed": "A direct domestic reference showing the same long right-falling form and its direction"
+    },
+    {
+      "glyph": "紋",
+      "strokes": [
+        4,
+        5
+      ],
+      "needed": "A direct domestic reference showing central vertical then left-falling stroke and their directions; numbering alone does not resolve this"
+    }
+  ],
+  "limitations": [
+    "No new direct target-character direction approval. Reusing a verified radical path is a geometric inference.",
+    "The new Hong Kong source has a different completed form at the disputed strokes.",
+    "Direct Moyaland image URLs were blocked by the browser/web URL safety policy; no alternate access was used after that rejection.",
+    "Local file HTML preview was blocked by browser URL policy. No alternate browser/localhost route was used. Only the owned static SVG was rasterized in memory for image inspection.",
+    "No live playback of the corrected candidate, no build, and no app deployment was performed in this review-only task."
+  ]
+}

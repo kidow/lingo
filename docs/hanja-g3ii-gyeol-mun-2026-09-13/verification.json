@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "checks": [
+    {
+      "command": "node docs/hanja-g3ii-gyeol-mun-2026-09-13/verify.mjs",
+      "status": "passed",
+      "sourcePins": 5,
+      "originalCandidates": 4,
+      "originalStrokes": 42,
+      "candidateStrokes": 21,
+      "strokePairs": 100,
+      "changedStrokes": 2,
+      "changedContacts": [
+        {
+          "glyph": "紋",
+          "strokes": [
+            2,
+            4
+          ],
+          "before": false,
+          "after": true
+        }
+      ],
+      "newRuntimeApprovals": 0
+    },
+    {
+      "command": "node --test 'lib/hanja*.test.ts'",
+      "status": "passed",
+      "tests": 160,
+      "pass": 160,
+      "fail": 0,
+      "durationMs": 9155.235041
+    }
+  ],
+  "staticVisualInspection": {
+    "finalShapes": 2,
+    "cumulativePanels": 21,
+    "artifact": "review.svg",
+    "status": "completed",
+    "liveAnimationObserved": false
+  },
+  "runtime": {
+    "characters": 1476,
+    "totalCharacters": 5978,
+    "remaining": 4502,
+    "targetsPublished": []
+  },
+  "build": {
+    "run": false,
+    "reason": "Only isolated review documents, snapshots, and a read-only verifier were added; runtime and build inputs were unchanged."
+  }
+}
