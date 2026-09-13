@@ -51,7 +51,8 @@ function Example({ concept, glyph }: { concept: Concept; glyph: string }) {
           {word?.romanization ? ` · ${word.romanization}` : ''}
         </p>
       </div>
-      <SayButton slug={concept.slug} lang="ja" label={`${reading} 발음 듣기`} />
+      {/* 낱말만 넘긴다 — 「발음 듣기」는 SayButton이 붙인다 (components/say-button.tsx) */}
+      <SayButton slug={concept.slug} lang="ja" label={reading} />
     </li>
   )
 }
