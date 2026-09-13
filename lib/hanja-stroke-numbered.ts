@@ -19,6 +19,10 @@ export const HANJA_NUMBERED_GEOMETRY_SOURCE = {
 
 type NumberedReference = {
   strokes: number
+  originalStrokes?: number
+  verifiedAt?: string
+  sourceStrokeIndices?: readonly number[]
+  sourceReviewSha256?: string
   diagramId: string
   diagramSha256: string
   directionId: string
@@ -45,6 +49,20 @@ export const NUMBERED_REFERENCES: Readonly<Record<string, NumberedReference>> = 
     directionId: '31258', directionSha256: '5b2836a30f9ecf57037a022b9ebf089ab53751631e7989e9d5efa4ff82fdc480',
     pathsSha256: '42d7617cd5e612b9e593ece7a634dc07f075368b2b0bb6b630d9a5e82ca2bbd0',
   },
+  遷: {
+    strokes: 15, originalStrokes: 14, verifiedAt: '2026-09-14', diagramId: '1428026156',
+    diagramSha256: '08d73dbe0ac4b646f5801875a13ff8ceff8a55f2497752873be18e6f1e07deed',
+    directionId: '36983', directionSha256: 'a8d56f98029c3223cf820dcc75e59159eb9257c8e55d94bda35968e0b11a029a',
+    sourceReviewSha256: '3282cbc6b8942db232997aa6336621661a27e1e552ae94468c632db525884e90',
+    sourceStrokeIndices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 13, 14],
+    pathsSha256: 'ad14e4955ce0585f21eb3481c280d47b960c44e974ded49c33f0e9ed898d38ba',
+  },
+}
+
+export function numberedStrokeIndices(glyph: string) {
+  if (!Object.hasOwn(NUMBERED_REFERENCES, glyph)) throw new Error('Unsupported numbered glyph')
+  const ref = NUMBERED_REFERENCES[glyph]
+  return ref.sourceStrokeIndices ? [...ref.sourceStrokeIndices] : Array.from({ length: ref.strokes }, (_, i) => i + 1)
 }
 
 export function numberedSourceReference(glyph: string) {
@@ -57,7 +75,7 @@ export function numberedSourceReference(glyph: string) {
     directionUrl: 'https://stroke-order.learningweb.moe.edu.tw/dictFrame.jsp?ID=' + ref.directionId,
     directionEvidenceSha256: ref.directionSha256,
     publisherProvenanceSha256: HANJA_NUMBERED_SOURCE.publisherProvenanceSha256,
-    sourceReviewSha256: HANJA_NUMBERED_SOURCE.sourceReviewSha256,
+    sourceReviewSha256: ref.sourceReviewSha256 ?? HANJA_NUMBERED_SOURCE.sourceReviewSha256,
   }
 }
 
@@ -101,13 +119,13 @@ export function loadNumberedBundle(bundle: NumberedBundle): readonly HanjaNumber
   const seen = new Set<string>()
   return bundle.characters.map(entry => {
     const ref = entry && Object.hasOwn(NUMBERED_REFERENCES, entry.glyph) ? NUMBERED_REFERENCES[entry.glyph] : undefined
-    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== '2026-09-13'
+    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== (ref.verifiedAt ?? '2026-09-13')
       || entry.geometrySource !== HANJA_NUMBERED_GEOMETRY_SOURCE.sha256
       || entry.geometryCorrection !== 'reviewed-mm-' + entry.glyph.codePointAt(0)!.toString(16) + '-v1'
       || entry.pathsSha256 !== ref.pathsSha256 || !Array.isArray(entry.paths) || entry.paths.length !== ref.strokes
       || !entry.paths.every((path: unknown) => typeof path === 'string' && path.trim())
       || !Array.isArray(entry.sourceStrokeIndices) || entry.sourceStrokeIndices.length !== ref.strokes
-      || entry.sourceStrokeIndices.some((stroke: unknown, index: number) => stroke !== index + 1)
+      || entry.sourceStrokeIndices.some((stroke: unknown, index: number) => stroke !== numberedStrokeIndices(entry.glyph)[index])
       || !sameSourceFields(entry.sourceReference, numberedSourceReference(entry.glyph))
       || entry.sourceImage !== undefined || entry.sourceRow !== undefined || entry.sourceWholeImage !== undefined
       || entry.geometryAuthored !== undefined || entry.strokeOrder !== undefined) {

@@ -14,19 +14,19 @@ import originals from '../scripts/hanja-stroke-numbered-originals.json' with { t
 const clone = <T>(value: T): T => JSON.parse(JSON.stringify(value))
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
 
-test('all 42 published paths reproduce from pinned licensed originals and reviewed corrections', () => {
+test('all 57 published paths reproduce from pinned licensed originals and reviewed corrections', () => {
   const bundle = buildNumberedBundle()
   assert.equal(bundle.verificationSource.id, 'moyaland-numbered')
   assert.match(bundle.verificationSource.scope, /not exam-body certification/)
   assert.deepEqual(loadNumberedBundle(bundle), HANJA_NUMBERED_STROKES)
-  assert.equal(HANJA_NUMBERED_STROKES.reduce((n, entry) => n + entry.paths.length, 0), 42)
+  assert.equal(HANJA_NUMBERED_STROKES.reduce((n, entry) => n + entry.paths.length, 0), 57)
   validateNumberedBundle()
   for (const entry of HANJA_NUMBERED_STROKES) {
     validateNumberedReview(entry, NUMBERED_REFERENCES[entry.glyph].strokes)
     const original = originals.candidates.find(c => c.character === entry.glyph)!
     const uncorrected = normalizeMedians(original.medians)
     const changed = entry.paths.flatMap((p, i) => p === uncorrected[i] ? [] : [i + 1])
-    assert.deepEqual(changed, entry.glyph === '笛' ? [] : entry.glyph === '蹟' ? [12] : [2])
+    assert.deepEqual(changed, entry.glyph === '笛' ? [] : entry.glyph === '蹟' ? [12] : entry.glyph === '遷' ? [11, 13, 14, 15] : [2])
     assert.equal(hash(entry.paths), NUMBERED_REFERENCES[entry.glyph].pathsSha256)
   }
 })
@@ -41,7 +41,7 @@ test('JSON metadata key order cannot prevent a valid bundle from loading', () =>
   assert.deepEqual(loadNumberedBundle(reordered), HANJA_NUMBERED_STROKES)
 })
 
-test('three numbered characters play; 兔 stays outside this source and wrong counts remain unavailable', () => {
+test('four numbered characters play; 兔 stays outside this source and wrong counts remain unavailable', () => {
   for (const [glyph, reference] of Object.entries(NUMBERED_REFERENCES)) {
     const data = hanjaStrokeData({ glyph, strokes: reference.strokes })
     assert.ok(data)
@@ -61,7 +61,7 @@ test('runtime source loading rejects missing, duplicate, unsupported or misattri
     assert.throws(() => loadNumberedBundle(copy), /Numbered bundle/)
   }
   mutate(copy => { copy.characters = copy.characters.slice(1) })
-  mutate(copy => { copy.characters = [copy.characters[0], copy.characters[0], copy.characters[2]] })
+  mutate(copy => { copy.characters = [...copy.characters.slice(0, -1), copy.characters[0]] })
   mutate(copy => { copy.characters[0].glyph = '訣' })
   mutate(copy => { copy.characters[0].sourceStrokeIndices = [2, 1, ...copy.characters[0].sourceStrokeIndices.slice(2)] })
   mutate(copy => { copy.characters[0].sourceReference.directionEvidenceSha256 = '0'.repeat(64) })
@@ -100,8 +100,8 @@ test('the audit keeps publisher-numbered evidence distinct and verifies actual M
   const characters = Object.entries(NUMBERED_REFERENCES).map(([glyph, ref]) => ({ glyph, strokes: ref.strokes, readingGrade: '3급II' }))
   const candidates = originals.candidates.map(c => ({ ...c, strokes: normalizeMedians(c.medians) }))
   const report = auditStrokes(characters, [], HANJA_NUMBERED_STROKES, [], candidates)
-  assert.equal(report.playback['numbered-reviewed'], 3)
-  assert.equal(report.verificationSources.numbered, 3)
+  assert.equal(report.playback['numbered-reviewed'], 4)
+  assert.equal(report.verificationSources.numbered, 4)
   assert.equal(report.verificationSources.eomunhoe, 0)
   for (const entry of report.entries) {
     assert.ok(entry.evidence && 'source' in entry.evidence)
