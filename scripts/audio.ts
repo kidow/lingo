@@ -5,6 +5,7 @@
  *   node scripts/audio.ts list ja            그 언어에서 만들 것을 순서대로 출력
  *   node scripts/audio.ts place ja cat ~/Downloads/speech.mp3
  *   node scripts/audio.ts make ja 10        API로 10개를 만들어 바로 넣는다
+ *   node scripts/audio.ts make ja only shrink,flawless   그 낱말만 만든다
  *   node scripts/audio.ts sync              만든 것을 R2로 올린다
  *   node scripts/audio.ts peaks [ja]        듣기 카드에 깔 파형을 미리 뽑는다
  *
@@ -234,7 +235,6 @@ function summary() {
 
 function list(lang: Language, limit: number) {
   const rows = missing(lang).slice(0, limit)
-  if (rows.length === 0) return console.log(`\n${lang} 는 다 만들어져 있습니다.`)
 
   console.log(`\n${lang} — ${missing(lang).length}개 남음, 아래 ${rows.length}개\n${line(52)}`)
   console.log(`콘솔 설정: voice ${VOICE} · Output MP3 · Sample rate Broadcast · Bit rate High`)
@@ -330,7 +330,7 @@ async function makeOne(key: string, lang: Language, row: { slug: string; text: s
  * 파라미터는 AUDIO.md 표 그대로다. 콘솔의 Broadcast · High · Quality와 같은
  * 값이라 콘솔로 만든 파일과 섞여도 소리가 튀지 않는다.
  */
-async function make(lang: Language, limit: number, concurrency = 8) {
+async function make(lang: Language, limit: number, concurrency = 8, only?: string[]) {
   // 레포 루트 .env를 읽는다. .gitignore가 이미 막고 있어 커밋될 일이 없고,
   // 셸을 새로 열 때마다 export를 다시 칠 이유도 없다
   if (existsSync('.env')) process.loadEnvFile('.env')
@@ -346,7 +346,20 @@ async function make(lang: Language, limit: number, concurrency = 8) {
   }
   if (!LANG[lang]) fail(`알 수 없는 언어: ${lang}`)
 
-  const rows = missing(lang).slice(0, limit)
+  /**
+   * **고른 낱말만 만들 수 있다.** 개수만 받던 때는 `missing`의 앞에서부터
+   * 잘라 갔는데, 그러면 지금 막혀 있는 자리(가나 한 마디를 채울 낱말 하나)를
+   * 집어 만들 길이 없다 — 호출마다 크레딧이 나가므로 엉뚱한 2,800개를 먼저
+   * 만들 수는 없다 (docs/kana-tab-design.md §8).
+   */
+  const pool = missing(lang)
+  if (only?.length) {
+    const found = new Set(pool.map((row) => row.slug))
+    const absent = only.filter((slug) => !found.has(slug))
+    if (absent.length)
+      fail(`만들 것이 아닙니다 — 발음이 이미 있거나 ${lang} 낱말이 없습니다: ${absent.join(' ')}`)
+  }
+  const rows = (only?.length ? pool.filter((row) => only.includes(row.slug)) : pool).slice(0, limit)
   if (rows.length === 0) return console.log(`\n${lang} 는 다 만들어져 있습니다.`)
 
   console.log(`\n${lang} ${rows.length}개를 만듭니다 — 호출마다 크레딧이 나갑니다 (동시 ${concurrency})\n${line(52)}`)
@@ -505,8 +518,19 @@ const [command, ...rest] = process.argv.slice(2)
 if (!command || command === 'summary') summary()
 else if (command === 'list') list((rest[0] ?? 'ja') as Language, Number(rest[1] ?? 10))
 else if (command === 'make') {
-  const count = rest[1] === 'all' ? Number.MAX_SAFE_INTEGER : Number(rest[1] ?? 5)
-  await make((rest[0] ?? 'ja') as Language, count, Number(rest[2] ?? 8))
+  /**
+   * `only`와 그 목록을 **먼저 걷어낸다.** 자리로만 읽던 때는 slug 목록이
+   * 동시 실행 수 자리에 들어가 `Number()`가 NaN이 됐다 — 일꾼이 하나도 서지
+   * 않아 아무것도 만들지 않고 «0개 완료»를 찍었다
+   */
+  const onlyAt = rest.indexOf('only')
+  const only =
+    onlyAt === -1 ? undefined : (rest[onlyAt + 1] ?? '').split(',').filter(Boolean)
+  const positional = onlyAt === -1 ? rest : [...rest.slice(0, onlyAt), ...rest.slice(onlyAt + 2)]
+  const rawCount = positional[1]
+  const count =
+    rawCount === 'all' ? Number.MAX_SAFE_INTEGER : Number(rawCount ?? (only ? only.length : 5))
+  await make((positional[0] ?? 'ja') as Language, count, Number(positional[2] ?? 8), only)
 }
 else if (command === 'sync') sync()
 else if (command === 'manifest') manifest()
