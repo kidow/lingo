@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-13",
+  "status": "passed",
+  "newCharacters": ["訣", "紋"],
+  "newRuntimeStrokes": 21,
+  "newDirectlyObservedDirectionStrokes": 3,
+  "existingReviewedStrokes": 18,
+  "dictionaryScreenshotsObserved": 10,
+  "dictionaryArtworkRedistributed": false,
+  "dictionaryWholeGlyphMatchClaimed": false,
+  "examBodyCertificationClaimed": false,
+  "runtime": {
+    "catalogCharacters": 5978,
+    "playableCharacters": 1478,
+    "remainingCharacters": 4500,
+    "grade3iiNewCharacters": 500,
+    "grade3iiPlayableCharacters": 488,
+    "grade3iiRemaining": ["蓮", "奔", "森", "慈", "遷", "追", "兔", "透", "弊", "楓", "響", "還"]
+  },
+  "checks": [
+    {"command": "node --test lib/hanja-stroke-dictionary.test.ts", "passed": 7, "failed": 0},
+    {"command": "node --test 'lib/hanja*.test.ts'", "passed": 167, "failed": 0, "durationMs": 10992.76475},
+    {"command": "node docs/hanja-g3ii-gyeol-mun-2026-09-13/verify.mjs", "status": "passed", "reviewedCandidateStrokes": 21, "comparedStrokePairs": 100, "subsequentlyPublished": 2},
+    {"command": "pnpm exec tsc --noEmit", "status": "passed"},
+    {"command": "pnpm exec next build", "status": "passed", "compileSeconds": 2.6, "typeCheckSeconds": 33.5, "staticPages": 7}
+  ],
+  "buildScope": "Production Next build and its TypeScript check passed in the shared worktree. Full prebuild content regeneration was not run; dictionary regeneration and evidence validation ran offline in the targeted tests.",
+  "runtimeUiVisualCheck": "Not performed for the two newly published entries in this turn; the existing playback UI was unchanged.",
+  "initialRegressionFailure": "One previous numbered-source test still expected 訣 and 紋 to be unavailable. Updated that obsolete expectation; the newly added dictionary tests independently cover their availability and wrong-count rejection. All 167 tests then passed."
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "scope": "Direct direction verification of 訣 11 and 紋 4,5 only. Combine with the pinned earlier target order/form reviews; this is not a whole-glyph match to the dictionary font.",
+  "provider": {
+    "name": "(주)오픈마인드지앤에이 · e-hanja",
+    "homepage": "http://www.e-hanja.kr/",
+    "officialProductUrl": "https://play.google.com/store/apps/details?hl=ko&id=kr.openmindgna.ehanja",
+    "classification": "Domestic dictionary content provider; not Korea Eomunhoe or government certification",
+    "productClaim": "Developer describes animation for all headwords and supplying content to Naver. The web entries used here were publicly accessible without account or purchase."
+  },
+  "playback": {
+    "method": "Native browser navigation and image click on the original vendor SVG; no rewritten source, injected player, or altered animation speed",
+    "cssUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/libs/opmGna.svg.ani.min.css",
+    "cssSha256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18",
+    "scriptUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/libs/gna.lib.svg.ani.min.js",
+    "scriptSha256": "e807c25571b8c0c46a80a37d86ff7b982822303dfb28d7464e35dfdffb2d2690",
+    "semantics": "Delay --d controls order. Positive stroke-dashoffset decreases to zero during the reveal. Active ink is red, completed radical blue and ordinary strokes black. Browser screenshots were observed during the original playback."
+  },
+  "entries": [
+    {
+      "glyph": "訣",
+      "strokes": 11,
+      "sourceUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8A00/8A23.svg",
+      "sourceBytes": 5418,
+      "sourceSha256": "cb6e1872d42392cb31a33836fe73c904fe4e98819cce659db79e5911bf946ef5",
+      "dictionaryUrl": "http://www.e-hanja.kr/e-hanja/dic/contents/jajun_content.asp?backUrl=jajun_search%E3%86%8D%E3%86%8D%E3%86%8D1%E3%86%8D%E3%86%8D%E8%A8%A3&pageNo=1&hanja=%E8%A8%A3&keyword=%E8%A8%A3&keyfield=&snd=&qry=",
+      "observations": [
+        {
+          "stroke": 11,
+          "clipId": "U8A23c11",
+          "delayMs": 9491,
+          "durationMs": 825,
+          "initialDashoffset": 831,
+          "preScreenshotDashoffsets": [
+            751.493,
+            471.605,
+            202.999,
+            35.6575
+          ],
+          "screenshotsObserved": 4,
+          "sequence": "Follows the completed long descending/left-falling tenth stroke; the preceding ten strokes are visible completed.",
+          "direction": "Starts at the central crossing and progresses down-right into a long connected right-falling stroke.",
+          "candidateComparison": "The unchanged licensed MM candidate stroke 11 has the same long right-falling role, connection and direction.",
+          "decision": "verified"
+        }
+      ],
+      "excludedDifferences": [
+        "Dictionary 言 first stroke is horizontal; the candidate first stroke is a slanted dot. This dictionary observation is not used to approve stroke 1."
+      ],
+      "wholeGlyphMatchClaimed": false
+    },
+    {
+      "glyph": "紋",
+      "strokes": 10,
+      "sourceUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7D00/7D0B.svg",
+      "sourceBytes": 5329,
+      "sourceSha256": "a91427c241f313eaf0b6b344db307ef3987a9c41d70b1c2e13277bebd7f1a4c8",
+      "dictionaryUrl": "http://www.e-hanja.kr/e-hanja/dic/contents/jajun_content.asp?backUrl=jajun_search%E3%86%8D%E3%86%8D%E3%86%8D1%E3%86%8D%E3%86%8D%E7%B4%8B&pageNo=1&hanja=%E7%B4%8B&keyword=%E7%B4%8B&keyfield=&snd=&qry=",
+      "observations": [
+        {
+          "stroke": 4,
+          "clipId": "U7D0Bc4",
+          "delayMs": 3336,
+          "durationMs": 746,
+          "initialDashoffset": 752,
+          "preScreenshotDashoffsets": [
+            721.893,
+            441.792,
+            184.136
+          ],
+          "screenshotsObserved": 3,
+          "sequence": "After the upper thread component strokes 1–3, before either lower side stroke.",
+          "direction": "Starts where the central stem meets the upper thread component and progresses vertically downward.",
+          "candidateComparison": "The transformed reviewed 紅 donor stroke 4 is connected at the top and keeps the same long downward role and direction.",
+          "decision": "verified"
+        },
+        {
+          "stroke": 5,
+          "clipId": "U7D0Bc5",
+          "delayMs": 4282,
+          "durationMs": 610,
+          "initialDashoffset": 616,
+          "preScreenshotDashoffsets": [
+            569.144,
+            345.095,
+            86.7113
+          ],
+          "screenshotsObserved": 3,
+          "sequence": "After the completed blue central fourth stroke; before the right sixth stroke.",
+          "direction": "Starts at the top of the separate lower-left stroke and progresses down-left.",
+          "candidateComparison": "The transformed reviewed 紅 donor stroke 5 stays separate from the central stem and keeps the same down-left role and direction.",
+          "decision": "verified"
+        }
+      ],
+      "excludedDifferences": [
+        "Dictionary 文 top stroke 7 is vertical; the candidate seventh stroke is a slanted dot. This dictionary observation is not used to approve stroke 7."
+      ],
+      "wholeGlyphMatchClaimed": false
+    }
+  ],
+  "mediaPolicy": "Only source URLs, hashes, timing facts and original observation notes are recorded. Dictionary SVG outlines, animation centerlines, script/CSS contents and screenshots are not copied into the repository.",
+  "result": {
+    "targetDirectionStrokes": 3,
+    "verified": 3,
+    "unresolved": 0,
+    "liveScreenshotsObserved": 10
+  }
+}

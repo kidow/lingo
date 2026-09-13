@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { normalizeMedians } from '../../lib/hanja-stroke-geometry.ts'
 import { HANJA_STROKES } from '../../lib/hanja-strokes.ts'
+import { validateDictionaryReview } from '../../scripts/hanja-stroke-dictionary.ts'
 
 const root = new URL('../../', import.meta.url)
 const read = path => readFileSync(new URL(path, root), 'utf8')
@@ -101,10 +102,19 @@ assert.deepEqual(audit.flatMap(a => a.changedContacts.map(p => ({ glyph: a.glyph
   { glyph: '紋', strokes: [2, 4], contactBefore: false, contactAfter: true },
 ], 'only the intended upper-thread / central-stem connection changes')
 assert.ok(affine.scaleX > 0 && affine.scaleY > 0, 'donor mapping must not reflect or reverse the stroke')
-for (const entry of entries) assert.equal(HANJA_STROKES.some(d => d.glyph === entry.glyph), false, 'candidate must remain outside runtime: ' + entry.glyph)
+// This folder preserves the earlier pending snapshot. Later publication must have
+// its own validated direct-direction proof and exactly the same reviewed paths.
+for (const entry of entries) {
+  const published = HANJA_STROKES.find(d => d.glyph === entry.glyph)
+  if (published) {
+    assert.equal(published.verificationSource, 'ehanja-crosschecked')
+    validateDictionaryReview(published, entry.strokes)
+    assert.deepEqual(published.paths, entry.paths)
+  }
+}
 if (process.argv[2] === '--candidate') {
   console.log(JSON.stringify(candidate))
 } else {
   assert.deepEqual(JSON.parse(read(dir + 'candidate-paths.json')), candidate)
-  console.log(JSON.stringify({ status: 'passed', sourcePins: Object.keys(pins).length, originalCandidates: 4, originalStrokes: 42, reviewedCandidateStrokes: 21, changedStrokes: 2, sameGlyphDirectionPending: 3, newRuntimeApprovals: 0, runtimeCharacters: HANJA_STROKES.length, audit }, null, 2))
+  console.log(JSON.stringify({ status: 'passed', sourcePins: Object.keys(pins).length, originalCandidates: 4, originalStrokes: 42, reviewedCandidateStrokes: 21, changedStrokes: 2, historicalSameGlyphDirectionPending: 3, newRuntimeApprovals: 0, subsequentlyPublished: entries.filter(e => HANJA_STROKES.some(d => d.glyph === e.glyph)).length, runtimeCharacters: HANJA_STROKES.length, audit }, null, 2))
 }

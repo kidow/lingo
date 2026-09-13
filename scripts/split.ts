@@ -5,6 +5,7 @@ import { LANGUAGES } from '../lib/lang.ts'
 import type { KanaExamples } from '../lib/kana.ts'
 import { triviaEntries } from '../lib/trivia.ts'
 import { validateNumberedBundle } from './hanja-stroke-numbered.ts'
+import { validateDictionaryBundle } from './hanja-stroke-dictionary.ts'
 import type {
   Article,
   ArticleFile,
@@ -46,6 +47,7 @@ import type {
  */
 // Reject changed evidence or stroke paths before generating build assets.
 validateNumberedBundle()
+validateDictionaryBundle()
 
 const ROOT = new URL('..', import.meta.url).pathname
 const CONTENT = join(ROOT, 'content')

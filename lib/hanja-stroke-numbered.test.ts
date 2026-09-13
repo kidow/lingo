@@ -49,9 +49,7 @@ test('three reviewed characters play, while wrong counts and other held characte
     assert.equal(data.paths.length, reference.strokes)
     assert.equal(hanjaStrokeData({ glyph, strokes: reference.strokes - 1 }), null)
   }
-  for (const [glyph, strokes] of [['訣', 11], ['紋', 10], ['兔', 8]] as const) {
-    assert.equal(hanjaStrokeData({ glyph, strokes }), null)
-  }
+  assert.equal(hanjaStrokeData({ glyph: '兔', strokes: 8 }), null)
 })
 
 test('runtime source loading rejects missing, duplicate, unsupported or misattributed entries', () => {
