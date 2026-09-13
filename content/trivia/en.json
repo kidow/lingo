@@ -147,12 +147,7 @@
     {
       "id": "article-proper-noun-exception",
       "question": "고유명사인데 the가 붙는 예는?",
-      "choices": [
-        "the Philippines",
-        "Korea",
-        "Paris",
-        "Mount Everest"
-      ],
+      "choices": ["the Philippines", "Korea", "Paris", "Mount Everest"],
       "answer": "the Philippines",
       "note": "the Amazon도 같습니다. 규칙에 예외가 워낙 많아 규칙 암기만으로는 안 되고 읽으며 짚어 보는 훈련이 필요합니다.",
       "source": "영어_학습_팁"
@@ -173,12 +168,7 @@
     {
       "id": "word-stress-photograph",
       "question": "photograph와 photography는 무엇이 다른가요?",
-      "choices": [
-        "강세 위치",
-        "모음의 개수",
-        "자음의 종류",
-        "억양의 방향"
-      ],
+      "choices": ["강세 위치", "모음의 개수", "자음의 종류", "억양의 방향"],
       "answer": "강세 위치",
       "note": "PHO-to-graph, pho-TOG-ra-phy. 같은 어근이라도 파생형마다 강세가 옮겨 갑니다.",
       "source": "영어_발음"
@@ -225,12 +215,7 @@
     {
       "id": "linking-pick-it-up",
       "question": "「pick it up」의 자연스러운 발음에 가까운 것은?",
-      "choices": [
-        "피키텁",
-        "픽 잇 업",
-        "픽킷 업",
-        "피크 이트 업"
-      ],
+      "choices": ["피키텁", "픽 잇 업", "픽킷 업", "피크 이트 업"],
       "answer": "피키텁",
       "note": "자음 뒤에 모음이 오면 이어 붙습니다. 단어마다 끊어 읽으면 한국어식 리듬이 됩니다.",
       "source": "영어_발음"
@@ -264,12 +249,7 @@
     {
       "id": "minimal-pair",
       "question": "「bit / beat」처럼 소리 하나만 다른 낱말 쌍을 뭐라 하나요?",
-      "choices": [
-        "최소대립쌍",
-        "동음이의어",
-        "이중모음",
-        "연음쌍"
-      ],
+      "choices": ["최소대립쌍", "동음이의어", "이중모음", "연음쌍"],
       "answer": "최소대립쌍",
       "note": "ship/sheep, live/leave처럼 짝으로 훈련하면 귀와 입이 같이 잡힙니다.",
       "source": "영어_발음"
@@ -299,6 +279,87 @@
       "answer": "강세 위치",
       "note": "강세가 틀리면 원어민이 단어 자체를 못 알아듣습니다. 세부 음색은 그다음입니다.",
       "source": "영어_발음"
+    },
+    {
+      "id": "explicit-vs-implicit",
+      "question": "명시적 규칙 암기만으로 문법을 익힐 때 생기는 문제는?",
+      "choices": [
+        "실전에서 규칙을 떠올리느라 때를 놓친다",
+        "왜 틀렸는지 스스로 못 고친다",
+        "문제집 점수가 먼저 떨어진다",
+        "어휘가 함께 줄어든다"
+      ],
+      "answer": "실전에서 규칙을 떠올리느라 때를 놓친다",
+      "note": "반대로 암묵적 습득만 하면 틀린 곳을 스스로 못 고칩니다. 규칙은 지도로 가볍게 쥐고 노출과 출력으로 체화합니다.",
+      "source": "영어_문법_학습_전략"
+    },
+    {
+      "id": "krashen-i-plus-one",
+      "question": "Krashen의 Input Hypothesis가 말하는 i+1은?",
+      "choices": [
+        "지금 수준보다 한 단계 위 난이도의 입력",
+        "하루에 한 시간씩 더 늘린 학습량",
+        "한 문장에 새 단어를 하나만 넣은 자료",
+        "규칙 하나에 예문 하나를 짝지은 교재"
+      ],
+      "answer": "지금 수준보다 한 단계 위 난이도의 입력",
+      "note": "모르는 표현이 5~10% 섞인 자료가 적당합니다. 다 알면 자극이 없고, 너무 어려우면 이해 자체가 막힙니다.",
+      "source": "영어_문법_학습_전략"
+    },
+    {
+      "id": "spaced-repetition-timing",
+      "question": "간격 반복에서 복습하기 가장 좋은 때는?",
+      "choices": [
+        "잊히기 직전",
+        "외운 직후",
+        "완전히 잊은 뒤",
+        "매일 같은 시각"
+      ],
+      "answer": "잊히기 직전",
+      "note": "그때 다시 만나면 기억이 장기기억으로 넘어가며 다음 망각까지가 길어집니다. 그래서 간격을 1일·3일·1주로 늘립니다.",
+      "source": "영어_문법_학습_전략"
+    },
+    {
+      "id": "output-noticing",
+      "question": "Swain의 Output Hypothesis에서 출력이 하는 일은?",
+      "choices": [
+        "자기가 뭘 모르는지 드러낸다",
+        "이미 아는 규칙을 굳힌다",
+        "입력의 양을 대신한다",
+        "발음을 함께 교정한다"
+      ],
+      "answer": "자기가 뭘 모르는지 드러낸다",
+      "note": "읽기만 해서는 gap이 안 보입니다. 직접 써 보다가 「어제인데 go?」 하고 스스로 알아채는 순간이 noticing입니다.",
+      "source": "영어_문법_학습_전략"
+    },
+    {
+      "id": "high-frequency-first",
+      "question": "빈도 기반 우선순위에서 뒤로 미뤄도 되는 것은?",
+      "choices": ["도치구문", "현재완료", "관사 a와 the", "주어-동사 수 일치"],
+      "answer": "도치구문",
+      "note": "Never have I seen처럼 평생 몇 번 안 쓰는 구조입니다. 매일 쓰는 시제·관사·전치사부터 잡는 편이 낫습니다.",
+      "source": "영어_문법_학습_전략"
+    },
+    {
+      "id": "chunk-learning",
+      "question": "would를 규칙 대신 「I would like to...」 통째로 외우는 방식을 뭐라 하나요?",
+      "choices": ["청크 학습", "간격 반복", "인터리빙", "직독직해"],
+      "answer": "청크 학습",
+      "note": "원어민도 매번 규칙을 조합하지 않고 저장된 덩어리를 꺼내 씁니다. 그래서 처리 속도가 빠릅니다.",
+      "source": "영어_문법_학습_전략"
+    },
+    {
+      "id": "interleaving-vs-blocked",
+      "question": "한 유형만 몰아 푸는 블록 연습이 실전에 약한 까닭은?",
+      "choices": [
+        "어떤 문법을 쓸지 판단하는 단계를 건너뛴다",
+        "한 번에 푸는 문제 수가 너무 많다",
+        "정답을 확인하는 시간이 늦어진다",
+        "쉬운 문제가 앞에 몰려 있다"
+      ],
+      "answer": "어떤 문법을 쓸지 판단하는 단계를 건너뛴다",
+      "note": "「현재완료 챕터니까 현재완료」로 풀립니다. 여러 유형을 섞는 인터리빙이 그 판단 근육을 씁니다.",
+      "source": "영어_문법_학습_전략"
     },
     {
       "id": "end-focus",
@@ -394,12 +455,7 @@
     {
       "id": "substitution-one",
       "question": "「I need a pen. Do you have ___?」에 들어갈 말은?",
-      "choices": [
-        "one",
-        "it",
-        "so",
-        "생략한다"
-      ],
+      "choices": ["one", "it", "so", "생략한다"],
       "answer": "one",
       "note": "명사 대용은 one/ones입니다. 아무것도 안 쓰면 비문이 됩니다.",
       "source": "영어_문장_구조"
@@ -459,12 +515,7 @@
     {
       "id": "substitution-so",
       "question": "「Will you come?」 「I hope so.」의 so가 대신하는 것은?",
-      "choices": [
-        "앞 문장의 절 전체",
-        "주어 하나",
-        "동사 하나",
-        "명사 하나"
-      ],
+      "choices": ["앞 문장의 절 전체", "주어 하나", "동사 하나", "명사 하나"],
       "answer": "앞 문장의 절 전체",
       "note": "대용(substitution)입니다. I need a pen. Do you have one?의 one은 명사를 대신하는 같은 장치입니다.",
       "source": "영어_문장_구조"
@@ -563,12 +614,7 @@
     {
       "id": "linking-verb-adjective",
       "question": "「She looks ___」에 맞는 것은?",
-      "choices": [
-        "tired",
-        "tiredly",
-        "tiring를 쓴다",
-        "to tire"
-      ],
+      "choices": ["tired", "tiredly", "tiring를 쓴다", "to tire"],
       "answer": "tired",
       "note": "연결동사 뒤에는 보어인 형용사가 옵니다. 부사를 쓰면 틀립니다.",
       "source": "영어_5형식"
@@ -589,12 +635,7 @@
     {
       "id": "to-vs-for-dative",
       "question": "4형식을 3형식으로 바꿀 때 buy·make·cook에 붙는 전치사는?",
-      "choices": [
-        "for",
-        "to",
-        "with",
-        "at"
-      ],
+      "choices": ["for", "to", "with", "at"],
       "answer": "for",
       "note": "give·send·show처럼 전달하는 동사는 to, 혜택을 주는 동사는 for입니다.",
       "source": "영어_5형식"
@@ -602,12 +643,7 @@
     {
       "id": "get-to-infinitive",
       "question": "사역 의미로 쓰지만 to부정사를 취하는 동사는?",
-      "choices": [
-        "get",
-        "make",
-        "have",
-        "let"
-      ],
+      "choices": ["get", "make", "have", "let"],
       "answer": "get",
       "note": "I got him to fix the car입니다. make·have·let은 원형부정사를 씁니다.",
       "source": "영어_5형식"
@@ -641,12 +677,7 @@
     {
       "id": "uncountable-advice",
       "question": "다음 중 불가산명사가 아닌 것은?",
-      "choices": [
-        "idea",
-        "advice",
-        "furniture",
-        "information"
-      ],
+      "choices": ["idea", "advice", "furniture", "information"],
       "answer": "idea",
       "note": "advice·furniture·information·homework·news·research는 한국어 감으로 틀리기 쉬운 불가산명사입니다.",
       "source": "영어_가산_불가산_명사"
@@ -680,12 +711,7 @@
     {
       "id": "every-of-us",
       "question": "다음 중 틀린 표현은?",
-      "choices": [
-        "every of us",
-        "each of us",
-        "every one of us",
-        "none of us"
-      ],
+      "choices": ["every of us", "each of us", "every one of us", "none of us"],
       "answer": "every of us",
       "note": "every는 홀로 of 뒤에 오지 못하고 반드시 every one of가 됩니다.",
       "source": "영어_가산_불가산_명사"
@@ -693,12 +719,7 @@
     {
       "id": "many-much",
       "question": "「I don't have ___ time.」에 맞는 것은?",
-      "choices": [
-        "much",
-        "many",
-        "few",
-        "a few"
-      ],
+      "choices": ["much", "many", "few", "a few"],
       "answer": "much",
       "note": "time은 불가산이라 much입니다. 가산 복수에는 many를 씁니다.",
       "source": "영어_가산_불가산_명사"
@@ -706,12 +727,7 @@
     {
       "id": "a-lot-of-positive",
       "question": "긍정문에서 much/many 대신 더 자연스러운 표현은?",
-      "choices": [
-        "a lot of",
-        "very much of",
-        "plenty much",
-        "so many much"
-      ],
+      "choices": ["a lot of", "very much of", "plenty much", "so many much"],
       "answer": "a lot of",
       "note": "much/many는 부정문·의문문에서 자연스럽고, 긍정문에 쓰면 격식·문어체로 들립니다.",
       "source": "영어_가산_불가산_명사"
@@ -745,12 +761,7 @@
     {
       "id": "countable-both-paper",
       "question": "「I wrote a paper.」에서 paper의 뜻은?",
-      "choices": [
-        "논문 한 편",
-        "종이 한 장",
-        "신문 한 부",
-        "재료로서의 종이"
-      ],
+      "choices": ["논문 한 편", "종이 한 장", "신문 한 부", "재료로서의 종이"],
       "answer": "논문 한 편",
       "note": "불가산이면 재료(종이), 가산이면 구체적 개체(논문)가 됩니다. glass·light·room·work도 같은 방식으로 갈립니다.",
       "source": "영어_가산_불가산_명사"
@@ -758,12 +769,7 @@
     {
       "id": "scissors-plural",
       "question": "「The scissors ___ on the table.」에 맞는 동사는?",
-      "choices": [
-        "are",
-        "is",
-        "has",
-        "was"
-      ],
+      "choices": ["are", "is", "has", "was"],
       "answer": "are",
       "note": "가위·바지·안경은 늘 복수형이라 복수 동사를 씁니다. 한 개를 말할 때는 a pair of scissors입니다.",
       "source": "영어_가산_불가산_명사"
@@ -771,12 +777,7 @@
     {
       "id": "news-singular",
       "question": "「The news ___ good.」에 맞는 동사는?",
-      "choices": [
-        "is",
-        "are",
-        "were",
-        "have"
-      ],
+      "choices": ["is", "are", "were", "have"],
       "answer": "is",
       "note": "-s로 끝나지만 불가산입니다. mathematics·physics·economics도 단수 취급입니다.",
       "source": "영어_가산_불가산_명사"
@@ -784,12 +785,7 @@
     {
       "id": "police-plural",
       "question": "「The police ___ looking for him.」에 맞는 동사는?",
-      "choices": [
-        "are",
-        "is",
-        "has been",
-        "was"
-      ],
+      "choices": ["are", "is", "has been", "was"],
       "answer": "are",
       "note": "police·people·cattle은 -s가 없어도 항상 복수 동사를 씁니다.",
       "source": "영어_가산_불가산_명사"
@@ -836,12 +832,7 @@
     {
       "id": "a-university",
       "question": "다음 중 a를 쓰는 것은?",
-      "choices": [
-        "a university",
-        "an hour",
-        "an MBA",
-        "an FBI agent"
-      ],
+      "choices": ["a university", "an hour", "an MBA", "an FBI agent"],
       "answer": "a university",
       "note": "발음이 /juːnɪ/라 자음 y로 시작합니다. MBA·FBI는 「엠」·「에프」로 읽어 모음이라 an입니다.",
       "source": "영어_관사"
@@ -901,12 +892,7 @@
     {
       "id": "go-home",
       "question": "「집에 간다」를 영어로 옳게 쓰면?",
-      "choices": [
-        "go home",
-        "go to home",
-        "go to the home",
-        "go at home"
-      ],
+      "choices": ["go home", "go to home", "go to the home", "go at home"],
       "answer": "go home",
       "note": "home은 여기서 부사라 전치사가 붙지 않습니다. abroad·downtown도 같습니다.",
       "source": "영어_관사"
@@ -1018,12 +1004,7 @@
     {
       "id": "into-vs-in",
       "question": "「그녀는 방 안으로 걸어 들어갔다」라는 뜻으로 She walked ___ the room을 완성하면?",
-      "choices": [
-        "into",
-        "out of",
-        "away from",
-        "past"
-      ],
+      "choices": ["into", "out of", "away from", "past"],
       "answer": "into",
       "note": "into는 안쪽으로 들어가는 이동입니다. She walked in the room도 문법적이지만 방 안에서 걸었다는 뜻입니다.",
       "source": "영어_전치사"
@@ -1031,12 +1012,7 @@
     {
       "id": "through-vs-across",
       "question": "터널을 지날 때 쓰는 전치사는?",
-      "choices": [
-        "through",
-        "across",
-        "along",
-        "past"
-      ],
+      "choices": ["through", "across", "along", "past"],
       "answer": "through",
       "note": "through는 3차원 내부를 관통, across는 2차원 표면을 가로지릅니다.",
       "source": "영어_전치사"
@@ -1044,12 +1020,7 @@
     {
       "id": "over-vs-above",
       "question": "over와 above를 가르는 기준은?",
-      "choices": [
-        "접촉이나 덮음이 가능한가",
-        "높이",
-        "격식도",
-        "시제"
-      ],
+      "choices": ["접촉이나 덮음이 가능한가", "높이", "격식도", "시제"],
       "answer": "접촉이나 덮음이 가능한가",
       "note": "put a blanket over him(덮음) / the lamp above the table(떠 있음)입니다.",
       "source": "영어_전치사"
@@ -1057,12 +1028,7 @@
     {
       "id": "between-vs-among",
       "question": "「옷더미 속에서 폰을 찾았다」에 맞는 전치사는?",
-      "choices": [
-        "among",
-        "between",
-        "by",
-        "near"
-      ],
+      "choices": ["among", "between", "by", "near"],
       "answer": "among",
       "note": "between은 둘 또는 명확히 구분된 것들, among은 셋 이상 무리 속입니다.",
       "source": "영어_전치사"
@@ -1070,12 +1036,7 @@
     {
       "id": "by-vs-with-tool",
       "question": "「He opened the door ___ a key」에 맞는 전치사는?",
-      "choices": [
-        "with",
-        "by",
-        "through",
-        "from"
-      ],
+      "choices": ["with", "by", "through", "from"],
       "answer": "with",
       "note": "with는 손에 쥔 도구, by는 방법·수단입니다. by car처럼 교통수단에는 관사를 안 씁니다.",
       "source": "영어_전치사"
@@ -1083,12 +1044,7 @@
     {
       "id": "by-vs-until",
       "question": "「Submit it ___ Friday」에 맞는 전치사는?",
-      "choices": [
-        "by",
-        "until",
-        "during",
-        "for"
-      ],
+      "choices": ["by", "until", "during", "for"],
       "answer": "by",
       "note": "by는 완료 기한(순간 동사와), until은 지속 종료점(지속 동사와)입니다.",
       "source": "영어_전치사"
@@ -1096,12 +1052,7 @@
     {
       "id": "by-vs-before",
       "question": "by Friday와 before Friday의 차이는?",
-      "choices": [
-        "금요일 포함 여부",
-        "격식 차이",
-        "기간의 길이",
-        "시제"
-      ],
+      "choices": ["금요일 포함 여부", "격식 차이", "기간의 길이", "시제"],
       "answer": "금요일 포함 여부",
       "note": "by Friday는 금요일에 끝내도 되지만 before Friday는 목요일까지 끝내야 합니다.",
       "source": "영어_전치사"
@@ -1109,12 +1060,7 @@
     {
       "id": "go-home-no-to",
       "question": "「집에 간다」를 영어로 쓰면?",
-      "choices": [
-        "go home",
-        "go to home",
-        "go at home",
-        "go in home"
-      ],
+      "choices": ["go home", "go to home", "go at home", "go in home"],
       "answer": "go home",
       "note": "home·here·there는 장소 부사라 전치사가 없습니다. 다만 소유격이 붙으면 go to my home처럼 to가 돌아옵니다.",
       "source": "영어_전치사"
@@ -1122,12 +1068,7 @@
     {
       "id": "since-vs-from",
       "question": "「I ___ lived here since 2020」에 맞는 시제는?",
-      "choices": [
-        "have",
-        "did",
-        "was",
-        "will have와 함께만 가능"
-      ],
+      "choices": ["have", "did", "was", "will have와 함께만 가능"],
       "answer": "have",
       "note": "since는 완료·진행 시제와만 씁니다. from은 시제 제한이 없습니다(from 2pm to 4pm).",
       "source": "영어_전치사"
@@ -1174,12 +1115,7 @@
     {
       "id": "near-vs-by",
       "question": "near보다 더 가까움을 나타내는 전치사는?",
-      "choices": [
-        "by · beside",
-        "among",
-        "from",
-        "through"
-      ],
+      "choices": ["by · beside", "among", "from", "through"],
       "answer": "by · beside",
       "note": "near the station은 거리가 막연하고 sit by me는 바로 옆입니다.",
       "source": "영어_전치사"
@@ -1187,12 +1123,7 @@
     {
       "id": "about-vs-on-topic",
       "question": "강연·논문 제목에 어울리는 주제 전치사는?",
-      "choices": [
-        "on",
-        "about",
-        "of",
-        "for"
-      ],
+      "choices": ["on", "about", "of", "for"],
       "answer": "on",
       "note": "a lecture on economics는 격식, talk about money는 일상입니다.",
       "source": "영어_전치사"
@@ -1239,12 +1170,7 @@
     {
       "id": "noun-preposition-solution",
       "question": "solution 뒤에 오는 전치사는?",
-      "choices": [
-        "to",
-        "for",
-        "of",
-        "with"
-      ],
+      "choices": ["to", "for", "of", "with"],
       "answer": "to",
       "note": "answer to·key to·exception to도 같습니다. reason은 for, lack은 of를 씁니다.",
       "source": "영어_전치사"
@@ -1252,12 +1178,7 @@
     {
       "id": "noun-preposition-increase",
       "question": "increase·decrease 뒤에 오는 전치사는?",
-      "choices": [
-        "in",
-        "of",
-        "to",
-        "for"
-      ],
+      "choices": ["in", "of", "to", "for"],
       "answer": "in",
       "note": "increase in sales입니다. interest in·experience in도 같은 무리입니다.",
       "source": "영어_전치사"
@@ -1304,12 +1225,7 @@
     {
       "id": "adverb-not-noun",
       "question": "부사가 수식할 수 없는 것은?",
-      "choices": [
-        "명사",
-        "동사",
-        "형용사",
-        "다른 부사"
-      ],
+      "choices": ["명사", "동사", "형용사", "다른 부사"],
       "answer": "명사",
       "note": "명사를 꾸미는 것은 형용사의 몫입니다. 부사는 그 밖의 거의 모든 것을 꾸밉니다.",
       "source": "영어_부사"
@@ -1356,12 +1272,7 @@
     {
       "id": "lately",
       "question": "lately의 뜻은?",
-      "choices": [
-        "최근에",
-        "늦게",
-        "거의 ~않다",
-        "천천히"
-      ],
+      "choices": ["최근에", "늦게", "거의 ~않다", "천천히"],
       "answer": "최근에",
       "note": "late는 늦게, lately는 최근에입니다. 형태가 가깝지만 뜻이 이어지지 않습니다.",
       "source": "영어_부사"
@@ -1395,12 +1306,7 @@
     {
       "id": "frequency-be",
       "question": "be동사와 함께 쓰는 빈도부사의 자리는?",
-      "choices": [
-        "be 뒤",
-        "be 앞",
-        "문장 맨 끝",
-        "문장 맨 앞"
-      ],
+      "choices": ["be 뒤", "be 앞", "문장 맨 끝", "문장 맨 앞"],
       "answer": "be 뒤",
       "note": "He is always late입니다. He always is late는 틀립니다.",
       "source": "영어_부사"
@@ -1408,12 +1314,7 @@
     {
       "id": "frequency-general",
       "question": "일반동사와 함께 쓰는 빈도부사의 자리는?",
-      "choices": [
-        "동사 앞",
-        "동사 뒤",
-        "문장 맨 끝",
-        "목적어 뒤"
-      ],
+      "choices": ["동사 앞", "동사 뒤", "문장 맨 끝", "목적어 뒤"],
       "answer": "동사 앞",
       "note": "She always runs in the morning입니다. She runs always는 틀립니다.",
       "source": "영어_부사"
@@ -1421,12 +1322,7 @@
     {
       "id": "frequency-modal",
       "question": "조동사가 있을 때 빈도부사의 자리는?",
-      "choices": [
-        "조동사 뒤",
-        "조동사 앞",
-        "본동사 뒤",
-        "문장 맨 끝"
-      ],
+      "choices": ["조동사 뒤", "조동사 앞", "본동사 뒤", "문장 맨 끝"],
       "answer": "조동사 뒤",
       "note": "I will never do that입니다. be동사와 같은 자리 규칙입니다.",
       "source": "영어_부사"
@@ -1473,12 +1369,7 @@
     {
       "id": "ly-adverb-comparative",
       "question": "quickly의 비교급은?",
-      "choices": [
-        "more quickly",
-        "quicklier",
-        "quickerly",
-        "most quickly"
-      ],
+      "choices": ["more quickly", "quicklier", "quickerly", "most quickly"],
       "answer": "more quickly",
       "note": "-ly 부사는 more·most를 씁니다. fast·hard 같은 1음절 부사는 -er·-est를 붙입니다.",
       "source": "영어_부사"
@@ -1499,12 +1390,7 @@
     {
       "id": "modal-bare-infinitive",
       "question": "조동사 뒤에 오는 형태는?",
-      "choices": [
-        "동사원형",
-        "to부정사",
-        "동명사",
-        "과거분사"
-      ],
+      "choices": ["동사원형", "to부정사", "동명사", "과거분사"],
       "answer": "동사원형",
       "note": "3인칭 단수에도 -s를 붙이지 않고, 조동사를 두 개 연달아 쓰지도 못합니다(will can → will be able to).",
       "source": "영어_조동사"
@@ -1551,12 +1437,7 @@
     {
       "id": "possibility-scale",
       "question": "추측의 확신도가 가장 낮은 조동사는?",
-      "choices": [
-        "might",
-        "may",
-        "could",
-        "must"
-      ],
+      "choices": ["might", "may", "could", "must"],
       "answer": "might",
       "note": "can't(불가능) < might < could < may 순으로 가능성이 올라갑니다.",
       "source": "영어_조동사"
@@ -1629,12 +1510,7 @@
     {
       "id": "would-no-state",
       "question": "과거 습관의 would를 쓸 수 없는 동사는?",
-      "choices": [
-        "상태 동사",
-        "동작 동사",
-        "이동 동사",
-        "타동사"
-      ],
+      "choices": ["상태 동사", "동작 동사", "이동 동사", "타동사"],
       "answer": "상태 동사",
       "note": "He would always arrive late는 되지만 상태 동사에는 used to를 씁니다.",
       "source": "영어_조동사"
@@ -1655,12 +1531,7 @@
     {
       "id": "it-kind-of-you",
       "question": "「It is ___ of you to help」에서 of를 쓰는 형용사는?",
-      "choices": [
-        "kind",
-        "easy",
-        "important",
-        "possible"
-      ],
+      "choices": ["kind", "easy", "important", "possible"],
       "answer": "kind",
       "note": "사람 됨됨이를 평가하는 형용사(kind·stupid·rude·wise)는 of, 나머지는 for를 씁니다.",
       "source": "영어_to부정사"
@@ -1668,12 +1539,7 @@
     {
       "id": "infinitive-preposition",
       "question": "「She needs someone to talk ___」의 빈칸에 필요한 것은?",
-      "choices": [
-        "to",
-        "with",
-        "about",
-        "아무것도 필요 없다"
-      ],
+      "choices": ["to", "with", "about", "아무것도 필요 없다"],
       "answer": "to",
       "note": "원래 문장(talk to someone)의 전치사는 반드시 남깁니다. a chair to sit on도 같습니다.",
       "source": "영어_to부정사"
@@ -1681,12 +1547,7 @@
     {
       "id": "infinitive-negation",
       "question": "to부정사를 부정할 때 not의 자리는?",
-      "choices": [
-        "to 앞",
-        "to와 동사 사이",
-        "동사 뒤",
-        "문장 끝"
-      ],
+      "choices": ["to 앞", "to와 동사 사이", "동사 뒤", "문장 끝"],
       "answer": "to 앞",
       "note": "She told me not to worry입니다.",
       "source": "영어_to부정사"
@@ -1694,12 +1555,7 @@
     {
       "id": "perfect-infinitive",
       "question": "「She seems to have known the truth」의 to have known이 나타내는 것은?",
-      "choices": [
-        "주절보다 더 이전 시점",
-        "미래",
-        "수동",
-        "가정"
-      ],
+      "choices": ["주절보다 더 이전 시점", "미래", "수동", "가정"],
       "answer": "주절보다 더 이전 시점",
       "note": "완료부정사입니다. 수동은 to be p.p., 완료수동은 to have been p.p.입니다.",
       "source": "영어_to부정사"
@@ -1707,12 +1563,7 @@
     {
       "id": "why-to-infinitive",
       "question": "의문사+to부정사로 쓸 수 없는 것은?",
-      "choices": [
-        "why",
-        "what",
-        "how",
-        "where"
-      ],
+      "choices": ["why", "what", "how", "where"],
       "answer": "why",
       "note": "why는 반드시 절을 씁니다(I don't know why I should do this).",
       "source": "영어_to부정사"
@@ -1720,12 +1571,7 @@
     {
       "id": "independent-infinitive",
       "question": "「To be honest, I don't know」의 To be honest는?",
-      "choices": [
-        "독립부정사 관용 표현",
-        "주어",
-        "목적어",
-        "조건절"
-      ],
+      "choices": ["독립부정사 관용 표현", "주어", "목적어", "조건절"],
       "answer": "독립부정사 관용 표현",
       "note": "주어와 무관하게 문장 전체를 수식합니다. Dangling 규칙이 적용되지 않습니다.",
       "source": "영어_to부정사"
@@ -1733,12 +1579,7 @@
     {
       "id": "gerund-only-verbs",
       "question": "목적어로 동명사만 받는 동사는?",
-      "choices": [
-        "enjoy",
-        "want",
-        "decide",
-        "promise"
-      ],
+      "choices": ["enjoy", "want", "decide", "promise"],
       "answer": "enjoy",
       "note": "finish·avoid·mind·consider·suggest도 동명사만 받습니다. want·hope·decide는 to부정사만 받습니다.",
       "source": "영어_동명사"
@@ -1772,12 +1613,7 @@
     {
       "id": "look-forward-to",
       "question": "「I look forward to ___ you」에 맞는 형태는?",
-      "choices": [
-        "seeing",
-        "see",
-        "to see",
-        "saw"
-      ],
+      "choices": ["seeing", "see", "to see", "saw"],
       "answer": "seeing",
       "note": "여기서 to는 부정사가 아니라 전치사라 동명사가 옵니다. be used to -ing도 같습니다.",
       "source": "영어_동명사"
@@ -1876,12 +1712,7 @@
     {
       "id": "with-participle",
       "question": "「He sat with his arms ___」에 맞는 형태는?",
-      "choices": [
-        "folded",
-        "folding",
-        "to fold",
-        "fold"
-      ],
+      "choices": ["folded", "folding", "to fold", "fold"],
       "answer": "folded",
       "note": "with+목적어+분사에서 목적어가 당하는 쪽이면 과거분사입니다.",
       "source": "영어_분사"
@@ -1889,12 +1720,7 @@
     {
       "id": "the-number-of",
       "question": "「The number of students ___ increasing」에 맞는 동사는?",
-      "choices": [
-        "is",
-        "are",
-        "have",
-        "were"
-      ],
+      "choices": ["is", "are", "have", "were"],
       "answer": "is",
       "note": "「그 숫자」라는 단일 개념이 주어입니다. a number of는 반대로 복수를 받습니다.",
       "source": "영어_수_일치"
@@ -1902,12 +1728,7 @@
     {
       "id": "a-number-of",
       "question": "「A number of students ___ absent today」에 맞는 동사는?",
-      "choices": [
-        "are",
-        "is",
-        "has",
-        "was"
-      ],
+      "choices": ["are", "is", "has", "was"],
       "answer": "are",
       "note": "a number of는 many와 같은 수량 형용사라 뒤 명사가 진짜 주어입니다.",
       "source": "영어_수_일치"
@@ -1915,12 +1736,7 @@
     {
       "id": "collective-noun",
       "question": "「The team ___ arguing among themselves」에 자연스러운 동사는?",
-      "choices": [
-        "are",
-        "is",
-        "has",
-        "was"
-      ],
+      "choices": ["are", "is", "has", "was"],
       "answer": "are",
       "note": "구성원 각자가 행동하면 복수로 받습니다. 미국식은 대체로 단수, 영국식은 맥락에 따라 복수를 씁니다.",
       "source": "영어_수_일치"
@@ -1928,12 +1744,7 @@
     {
       "id": "either-or-proximity",
       "question": "「Either the students or the teacher ___ wrong」에 맞는 동사는?",
-      "choices": [
-        "is",
-        "are",
-        "have",
-        "were"
-      ],
+      "choices": ["is", "are", "have", "were"],
       "answer": "is",
       "note": "either A or B는 동사 바로 앞 명사에 맞춥니다(근접 일치). both A and B는 항상 복수입니다.",
       "source": "영어_수_일치"
@@ -1941,12 +1752,7 @@
     {
       "id": "partitive-agreement",
       "question": "「Most of the water ___ contaminated」에 맞는 동사는?",
-      "choices": [
-        "is",
-        "are",
-        "have",
-        "were"
-      ],
+      "choices": ["is", "are", "have", "were"],
       "answer": "is",
       "note": "most/all/none of는 of 뒤 명사가 수를 결정합니다. water가 불가산이라 단수입니다.",
       "source": "영어_수_일치"
@@ -1993,12 +1799,7 @@
     {
       "id": "colon-complete-clause",
       "question": "「___ milk, eggs, and bread.」 앞에 콜론을 쓰려면?",
-      "choices": [
-        "I need three things:",
-        "I need:",
-        "I need to buy:",
-        "For:"
-      ],
+      "choices": ["I need three things:", "I need:", "I need to buy:", "For:"],
       "answer": "I need three things:",
       "note": "콜론 앞은 반드시 완전한 절이어야 합니다. 「I need: milk…」는 앞이 불완전해 쓸 수 없습니다.",
       "source": "영어_구두점"
@@ -2006,12 +1807,7 @@
     {
       "id": "en-dash-range",
       "question": "「pages 10–20」처럼 범위를 나타낼 때 쓰는 부호는?",
-      "choices": [
-        "En dash (–)",
-        "Em dash (—)",
-        "하이픈 (-)",
-        "언더스코어 (_)"
-      ],
+      "choices": ["En dash (–)", "Em dash (—)", "하이픈 (-)", "언더스코어 (_)"],
       "answer": "En dash (–)",
       "note": "길이 순서는 하이픈 < En dash < Em dash입니다. Em dash는 삽입·급전환에 씁니다.",
       "source": "영어_구두점"
@@ -2032,12 +1828,7 @@
     {
       "id": "its-vs-it-is",
       "question": "「it's」는 무엇의 축약인가요?",
-      "choices": [
-        "it is / it has",
-        "its의 소유격",
-        "it was",
-        "it does"
-      ],
+      "choices": ["it is / it has", "its의 소유격", "it was", "it does"],
       "answer": "it is / it has",
       "note": "소유격은 아포스트로피 없는 its입니다. its'라는 형태는 아예 없습니다.",
       "source": "영어_구두점"
@@ -2045,12 +1836,7 @@
     {
       "id": "plural-no-apostrophe",
       "question": "1990년대를 옳게 쓴 것은?",
-      "choices": [
-        "the 1990s",
-        "the 1990's",
-        "the 1990s'",
-        "the '1990s"
-      ],
+      "choices": ["the 1990s", "the 1990's", "the 1990s'", "the '1990s"],
       "answer": "the 1990s",
       "note": "단순 복수에는 아포스트로피를 쓰지 않습니다. Apple's are delicious도 같은 실수입니다.",
       "source": "영어_구두점"
@@ -2058,12 +1844,7 @@
     {
       "id": "quotation-us-uk",
       "question": "마침표·쉼표를 따옴표 안에 넣는 쪽은?",
-      "choices": [
-        "미국식",
-        "영국식",
-        "둘 다 안에 넣는다",
-        "둘 다 밖에 둔다"
-      ],
+      "choices": ["미국식", "영국식", "둘 다 안에 넣는다", "둘 다 밖에 둔다"],
       "answer": "미국식",
       "note": "영국식은 밖에 둡니다. 물음표·느낌표는 인용 내용에 속하는지로 안팎이 갈립니다.",
       "source": "영어_구두점"
@@ -2097,12 +1878,7 @@
     {
       "id": "passive-be-not-have",
       "question": "수동태의 핵심 동사는?",
-      "choices": [
-        "be",
-        "have",
-        "do",
-        "get만 쓴다"
-      ],
+      "choices": ["be", "have", "do", "get만 쓴다"],
       "answer": "be",
       "note": "have+p.p.는 현재완료 능동입니다. 수동태는 be+p.p.입니다.",
       "source": "영어_수동태"
@@ -2123,12 +1899,7 @@
     {
       "id": "by-vs-with",
       "question": "「The window was broken with a rock」에서 with가 나타내는 것은?",
-      "choices": [
-        "도구",
-        "행위자",
-        "장소",
-        "시간"
-      ],
+      "choices": ["도구", "행위자", "장소", "시간"],
       "answer": "도구",
       "note": "by는 범인(주체), with는 흉기(도구)입니다.",
       "source": "영어_수동태"
@@ -2292,12 +2063,7 @@
     {
       "id": "future-perfect",
       "question": "By next year, I will have graduated에서 완료의 기준은?",
-      "choices": [
-        "미래의 한 시점",
-        "지금",
-        "과거의 한 시점",
-        "기준이 없다"
-      ],
+      "choices": ["미래의 한 시점", "지금", "과거의 한 시점", "기준이 없다"],
       "answer": "미래의 한 시점",
       "note": "현재완료는 지금, 과거완료는 과거의 한 시점이 기준입니다. by+시점과 자주 함께 옵니다.",
       "source": "영어_시제_심화"
@@ -2331,12 +2097,7 @@
     {
       "id": "zero-conditional",
       "question": "「If you heat water to 100°C, it boils」는 몇 차 가정법인가요?",
-      "choices": [
-        "0차 — 항상 참인 사실",
-        "1차",
-        "2차",
-        "3차"
-      ],
+      "choices": ["0차 — 항상 참인 사실", "1차", "2차", "3차"],
       "answer": "0차 — 항상 참인 사실",
       "note": "if를 when으로 바꿔도 뜻이 통합니다.",
       "source": "영어_가정법"
@@ -2344,12 +2105,7 @@
     {
       "id": "first-conditional-if-will",
       "question": "「If it ___ , I will stay home」에 맞는 것은?",
-      "choices": [
-        "rains",
-        "will rain",
-        "rained",
-        "would rain"
-      ],
+      "choices": ["rains", "will rain", "rained", "would rain"],
       "answer": "rains",
       "note": "if절 안에서는 미래도 현재형으로 씁니다.",
       "source": "영어_가정법"
@@ -2370,12 +2126,7 @@
     {
       "id": "mixed-conditional",
       "question": "「If I had studied medicine, I would be a doctor now」는?",
-      "choices": [
-        "혼합 가정법",
-        "3차 가정법",
-        "2차 가정법",
-        "1차 가정법"
-      ],
+      "choices": ["혼합 가정법", "3차 가정법", "2차 가정법", "1차 가정법"],
       "answer": "혼합 가정법",
       "note": "과거 조건에 현재 결과를 붙인 것입니다. 결과절에 now·today가 보이면 혼합 가정법 신호입니다.",
       "source": "영어_가정법"
@@ -2448,12 +2199,7 @@
     {
       "id": "its-time-past",
       "question": "「It's time you ___ to bed」에 맞는 것은?",
-      "choices": [
-        "went",
-        "go",
-        "will go",
-        "have gone"
-      ],
+      "choices": ["went", "go", "will go", "have gone"],
       "answer": "went",
       "note": "지금 안 하고 있는 일을 과거형으로 거리 두는 2차 가정법 원리입니다.",
       "source": "영어_가정법"
@@ -2461,12 +2207,7 @@
     {
       "id": "would-rather-subject",
       "question": "「I'd rather you ___ tomorrow」에 맞는 것은?",
-      "choices": [
-        "came",
-        "come",
-        "will come",
-        "coming"
-      ],
+      "choices": ["came", "come", "will come", "coming"],
       "answer": "came",
       "note": "would rather 뒤에 주어가 오면 과거형을 씁니다. 시제는 과거지만 뜻은 현재·미래입니다.",
       "source": "영어_가정법"
@@ -2474,12 +2215,7 @@
     {
       "id": "whose-only-possessive",
       "question": "영어의 유일한 소유격 관계대명사는?",
-      "choices": [
-        "whose",
-        "which's",
-        "that's",
-        "whom"
-      ],
+      "choices": ["whose", "which's", "that's", "whom"],
       "answer": "whose",
       "note": "선행사가 사람이든 사물이든 whose를 씁니다.",
       "source": "영어_관계대명사"
@@ -2487,12 +2223,7 @@
     {
       "id": "omit-object-relative",
       "question": "관계대명사를 생략할 수 있는 자리는?",
-      "choices": [
-        "목적격",
-        "주격",
-        "소유격",
-        "비제한적 용법"
-      ],
+      "choices": ["목적격", "주격", "소유격", "비제한적 용법"],
       "answer": "목적격",
       "note": "The man I called는 되지만 The man called me는 뜻이 달라집니다.",
       "source": "영어_관계대명사"
@@ -2500,12 +2231,7 @@
     {
       "id": "nonrestrictive-that",
       "question": "비제한적 용법(쉼표 뒤)에서 쓸 수 없는 관계대명사는?",
-      "choices": [
-        "that",
-        "which",
-        "who",
-        "whom"
-      ],
+      "choices": ["that", "which", "who", "whom"],
       "answer": "that",
       "note": "My car, that I bought last year는 틀립니다.",
       "source": "영어_관계대명사"
@@ -2513,12 +2239,7 @@
     {
       "id": "preposition-fronting",
       "question": "「The city in ___ I was born」에 맞는 것은?",
-      "choices": [
-        "which",
-        "that",
-        "where",
-        "what"
-      ],
+      "choices": ["which", "that", "where", "what"],
       "answer": "which",
       "note": "전치사를 앞으로 옮기면 that을 쓸 수 없습니다. 전치사를 뒤에 두면 that도 가능합니다.",
       "source": "영어_관계대명사"
@@ -2526,12 +2247,7 @@
     {
       "id": "that-only-superlative",
       "question": "선행사에 최상급·서수·the only·all이 붙으면 선호되는 관계대명사는?",
-      "choices": [
-        "that",
-        "which",
-        "who",
-        "what"
-      ],
+      "choices": ["that", "which", "who", "what"],
       "answer": "that",
       "note": "선행사가 강하게 한정될 때 that을 씁니다.",
       "source": "영어_관계대명사"
@@ -2591,12 +2307,7 @@
     {
       "id": "relative-adverb-role",
       "question": "관계부사가 대신하는 것은?",
-      "choices": [
-        "부사구",
-        "주어",
-        "목적어",
-        "보어"
-      ],
+      "choices": ["부사구", "주어", "목적어", "보어"],
       "answer": "부사구",
       "note": "전치사와 명사가 묶인 부사구를 대신합니다. in the city가 where가 되므로 뒤 절에는 빈 명사 자리가 없습니다.",
       "source": "영어_관계부사"
@@ -2630,12 +2341,7 @@
     {
       "id": "when-antecedent-omission",
       "question": "I remember when we first met에서 생략된 것은?",
-      "choices": [
-        "선행사 the time",
-        "관계부사 when",
-        "주어 we",
-        "전치사 in"
-      ],
+      "choices": ["선행사 the time", "관계부사 when", "주어 we", "전치사 in"],
       "answer": "선행사 the time",
       "note": "선행사가 뻔하면 생략합니다. 관계부사 쪽을 생략하는 경우도 있습니다.",
       "source": "영어_관계부사"
@@ -2643,12 +2349,7 @@
     {
       "id": "whatever-clause",
       "question": "「Whatever you say, I won't change my mind」에서 whatever절은?",
-      "choices": [
-        "양보절",
-        "명사절 주어",
-        "명사절 목적어",
-        "관계절"
-      ],
+      "choices": ["양보절", "명사절 주어", "명사절 목적어", "관계절"],
       "answer": "양보절",
       "note": "쉼표가 있으면 양보절, 없으면 명사절입니다(Whatever you say is fine).",
       "source": "영어_관계사"
@@ -2669,12 +2370,7 @@
     {
       "id": "which-whole-clause",
       "question": "「He was late, which made everyone angry」의 which가 가리키는 것은?",
-      "choices": [
-        "앞 절 전체",
-        "he",
-        "late",
-        "everyone"
-      ],
+      "choices": ["앞 절 전체", "he", "late", "everyone"],
       "answer": "앞 절 전체",
       "note": "반드시 쉼표 뒤에서만 가능하고 that으로 바꿀 수 없습니다.",
       "source": "영어_관계사"
@@ -2695,12 +2391,7 @@
     {
       "id": "of-whom",
       "question": "「She has three sisters, ___ are doctors」에 맞는 것은?",
-      "choices": [
-        "all of whom",
-        "all of them",
-        "all of which",
-        "all of who"
-      ],
+      "choices": ["all of whom", "all of them", "all of which", "all of who"],
       "answer": "all of whom",
       "note": "선행사가 사람이라 whom입니다. them을 쓰려면 and가 필요합니다.",
       "source": "영어_관계사"
@@ -2721,12 +2412,7 @@
     {
       "id": "what-is-called",
       "question": "「what is called」의 뜻은?",
-      "choices": [
-        "이른바·소위",
-        "게다가",
-        "설상가상으로",
-        "더 좋은 것은"
-      ],
+      "choices": ["이른바·소위", "게다가", "설상가상으로", "더 좋은 것은"],
       "answer": "이른바·소위",
       "note": "what is more는 게다가, what is worse는 설상가상으로입니다.",
       "source": "영어_관계사"
@@ -2786,12 +2472,7 @@
     {
       "id": "complement-clause",
       "question": "The problem is that we have no money에서 that절의 역할은?",
-      "choices": [
-        "보어절",
-        "목적어절",
-        "주어절",
-        "동격절"
-      ],
+      "choices": ["보어절", "목적어절", "주어절", "동격절"],
       "answer": "보어절",
       "note": "be동사 앞뒤면 보어절, 일반동사 뒤면 목적어절입니다. remain·seem·become 같은 연결동사 뒤도 보어절입니다.",
       "source": "영어_명사절"
@@ -2799,12 +2480,7 @@
     {
       "id": "whether-vs-if-subject",
       "question": "주어절에 쓸 수 없는 것은?",
-      "choices": [
-        "if",
-        "whether",
-        "whether or not",
-        "that"
-      ],
+      "choices": ["if", "whether", "whether or not", "that"],
       "answer": "if",
       "note": "Whether she'll come is uncertain은 되지만 If she'll come is uncertain은 안 됩니다. if는 목적어절 전용입니다.",
       "source": "영어_명사절"
@@ -2812,12 +2488,7 @@
     {
       "id": "whether-after-preposition",
       "question": "depends on 다음에 오는 것은?",
-      "choices": [
-        "whether",
-        "if",
-        "that",
-        "what"
-      ],
+      "choices": ["whether", "if", "that", "what"],
       "answer": "whether",
       "note": "전치사 뒤·or not 앞·to부정사 앞은 전부 whether 자리입니다. 헷갈리면 whether를 쓰면 됩니다.",
       "source": "영어_명사절"
@@ -2838,12 +2509,7 @@
     {
       "id": "appositive-nouns",
       "question": "fact · news · possibility 뒤에 붙는 that절은?",
-      "choices": [
-        "동격절",
-        "관계사절",
-        "부사절",
-        "조건절"
-      ],
+      "choices": ["동격절", "관계사절", "부사절", "조건절"],
       "answer": "동격절",
       "note": "앞 명사의 내용을 그대로 풀어 주는 절입니다. idea·hope·rumor·evidence도 같습니다.",
       "source": "영어_명사절"
@@ -2851,12 +2517,7 @@
     {
       "id": "subjunctive-suggest",
       "question": "I suggest that he ___ to the doctor의 빈칸에 오는 형태는?",
-      "choices": [
-        "go",
-        "goes",
-        "went",
-        "going"
-      ],
+      "choices": ["go", "goes", "went", "going"],
       "answer": "go",
       "note": "suggest·recommend·insist·demand 뒤 that절은 주어·시제와 무관하게 동사원형을 씁니다. 영국식은 should go도 허용합니다.",
       "source": "영어_명사절"
@@ -2864,12 +2525,7 @@
     {
       "id": "subjunctive-negative",
       "question": "I suggest that he ___ there의 부정형은?",
-      "choices": [
-        "not go",
-        "doesn't go",
-        "not goes",
-        "don't going"
-      ],
+      "choices": ["not go", "doesn't go", "not goes", "don't going"],
       "answer": "not go",
       "note": "가정법 현재의 부정은 not을 원형 앞에 그대로 붙입니다. 조동사 do를 쓰지 않습니다.",
       "source": "영어_명사절"
@@ -2877,12 +2533,7 @@
     {
       "id": "fanboys",
       "question": "등위접속사를 외우는 머리글자 FANBOYS에서 Y는?",
-      "choices": [
-        "yet",
-        "yes",
-        "you",
-        "year"
-      ],
+      "choices": ["yet", "yes", "you", "year"],
       "answer": "yet",
       "note": "for·and·nor·but·or·yet·so입니다. 두 절을 이을 때 앞에 쉼표를 찍습니다.",
       "source": "영어_접속사"
@@ -2903,12 +2554,7 @@
     {
       "id": "because-since-as",
       "question": "이유 접속사 중 「이미 알려진 배경」에 쓰며 가장 격식적인 것은?",
-      "choices": [
-        "as",
-        "because",
-        "since",
-        "so"
-      ],
+      "choices": ["as", "because", "since", "so"],
       "answer": "as",
       "note": "because(새 정보·강함) > since(알려진 정보) > as(고격식·약함) 순입니다.",
       "source": "영어_접속사"
@@ -2929,12 +2575,7 @@
     {
       "id": "though-sentence-final",
       "question": "양보 접속사 중 문장 끝에 올 수 있는 것은?",
-      "choices": [
-        "though",
-        "although",
-        "even though",
-        "whereas"
-      ],
+      "choices": ["though", "although", "even though", "whereas"],
       "answer": "though",
       "note": "It was cold, though.처럼 비격식에서 씁니다.",
       "source": "영어_접속사"
@@ -2942,12 +2583,7 @@
     {
       "id": "so-that-result",
       "question": "「It was so cold that I stayed home」이 나타내는 것은?",
-      "choices": [
-        "결과",
-        "목적",
-        "조건",
-        "양보"
-      ],
+      "choices": ["결과", "목적", "조건", "양보"],
       "answer": "결과",
       "note": "뒤에 조동사가 오면 목적(so that she could pass), 형용사·부사를 강조하면 결과입니다. 명사 앞이면 such … that입니다.",
       "source": "영어_접속사"
@@ -2968,12 +2604,7 @@
     {
       "id": "despite-vs-although",
       "question": "「despite」 뒤에 오는 것은?",
-      "choices": [
-        "명사구",
-        "절",
-        "동사",
-        "형용사"
-      ],
+      "choices": ["명사구", "절", "동사", "형용사"],
       "answer": "명사구",
       "note": "despite his tiredness는 되지만 despite he was tired는 안 됩니다. 절에는 although를 씁니다.",
       "source": "영어_접속사"
@@ -2981,12 +2612,7 @@
     {
       "id": "while-vs-whereas",
       "question": "대조를 나타내면서 격식체인 접속사는?",
-      "choices": [
-        "whereas",
-        "while",
-        "when",
-        "as"
-      ],
+      "choices": ["whereas", "while", "when", "as"],
       "answer": "whereas",
       "note": "while은 시간과 대조 둘 다 되지만 대조로 쓰면 비격식입니다.",
       "source": "영어_접속사"
@@ -2994,12 +2620,7 @@
     {
       "id": "as-four-uses",
       "question": "As I walked in, she left의 as는 어느 용법인가요?",
-      "choices": [
-        "시간",
-        "이유",
-        "방식",
-        "비례"
-      ],
+      "choices": ["시간", "이유", "방식", "비례"],
       "answer": "시간",
       "note": "Do as I say는 방식, As it was late는 이유, As you get older는 비례입니다.",
       "source": "영어_접속사"
@@ -3033,12 +2654,7 @@
     {
       "id": "no-sooner-inversion",
       "question": "No sooner가 문두에 올 때 반드시 일어나는 것은?",
-      "choices": [
-        "도치",
-        "시제 후퇴",
-        "접속사 생략",
-        "주어 생략"
-      ],
+      "choices": ["도치", "시제 후퇴", "접속사 생략", "주어 생략"],
       "answer": "도치",
       "note": "No sooner had she arrived than…입니다. Scarcely·Hardly도 같습니다. 일상에서는 as soon as를 씁니다.",
       "source": "영어_접속사"
@@ -3046,12 +2662,7 @@
     {
       "id": "lest-form",
       "question": "lest 뒤에 오는 동사 형태는?",
-      "choices": [
-        "동사원형",
-        "과거형",
-        "과거분사",
-        "현재분사"
-      ],
+      "choices": ["동사원형", "과거형", "과거분사", "현재분사"],
       "answer": "동사원형",
       "note": "He whispered lest anyone hear him입니다. 현대 영어에서는 드물어 일상에서는 in case를 씁니다.",
       "source": "영어_접속사"
@@ -3150,12 +2761,7 @@
     {
       "id": "as-as-form",
       "question": "as ~ as 사이에 들어가는 형태는?",
-      "choices": [
-        "원급",
-        "비교급",
-        "최상급",
-        "과거분사"
-      ],
+      "choices": ["원급", "비교급", "최상급", "과거분사"],
       "answer": "원급",
       "note": "as taller as는 틀립니다. She is as tall as her brother.",
       "source": "영어_비교급_최상급"
@@ -3176,12 +2782,7 @@
     {
       "id": "very-comparative",
       "question": "비교급 앞에 쓸 수 없는 강조어는?",
-      "choices": [
-        "very",
-        "much",
-        "far",
-        "even"
-      ],
+      "choices": ["very", "much", "far", "even"],
       "answer": "very",
       "note": "very는 원급 전용입니다. 비교급은 much·far·a lot·even·still로 강조합니다.",
       "source": "영어_비교급_최상급"
@@ -3215,12 +2816,7 @@
     {
       "id": "double-comparative",
       "question": "The more you practice, ___ you get의 빈칸은?",
-      "choices": [
-        "the better",
-        "better",
-        "the best",
-        "more better"
-      ],
+      "choices": ["the better", "better", "the best", "more better"],
       "answer": "the better",
       "note": "The + 비교급, the + 비교급 꼴입니다. The sooner, the better처럼 주어·동사를 생략하기도 합니다.",
       "source": "영어_비교급_최상급"
@@ -3228,12 +2824,7 @@
     {
       "id": "less-vs-fewer",
       "question": "가산 복수명사 앞에 쓰는 것은?",
-      "choices": [
-        "fewer",
-        "less",
-        "least",
-        "little"
-      ],
+      "choices": ["fewer", "less", "least", "little"],
       "answer": "fewer",
       "note": "fewer people·less water입니다. 구어에서는 less를 가산에도 쓰지만 격식 영어에서는 구분합니다.",
       "source": "영어_비교급_최상급"
@@ -3267,12 +2858,7 @@
     {
       "id": "it-cleft",
       "question": "「It was the window that she broke」에서 강조된 것은?",
-      "choices": [
-        "the window",
-        "she",
-        "broke",
-        "that"
-      ],
+      "choices": ["the window", "she", "broke", "that"],
       "answer": "the window",
       "note": "It is/was + 강조 대상 + that 구조입니다. 사람이면 that 대신 who도 씁니다.",
       "source": "영어_강조_구문"
@@ -3319,12 +2905,7 @@
     {
       "id": "so-do-i",
       "question": "「I love coffee」에 「나도 그래」로 답하면?",
-      "choices": [
-        "So do I.",
-        "So I do.",
-        "Also I.",
-        "Neither do I."
-      ],
+      "choices": ["So do I.", "So I do.", "Also I.", "Neither do I."],
       "answer": "So do I.",
       "note": "조동사는 앞 문장 동사에 맞춥니다. 부정 동의는 Neither/Nor do I입니다.",
       "source": "영어_강조_구문"
@@ -3332,12 +2913,7 @@
     {
       "id": "only-inversion",
       "question": "「Only then ___ I understand」에 맞는 형태는?",
-      "choices": [
-        "did",
-        "I",
-        "do",
-        "have"
-      ],
+      "choices": ["did", "I", "do", "have"],
       "answer": "did",
       "note": "Only+부사(구)가 문두에 오면 도치합니다. 다만 Only+주어면 도치하지 않습니다.",
       "source": "영어_강조_구문"
@@ -3371,12 +2947,7 @@
     {
       "id": "backshift-will",
       "question": "간접화법에서 will은 무엇으로 바뀌나요?",
-      "choices": [
-        "would",
-        "will",
-        "shall",
-        "would have"
-      ],
+      "choices": ["would", "will", "shall", "would have"],
       "answer": "would",
       "note": "can→could, may→might도 같은 한 단계 후퇴입니다.",
       "source": "영어_화법"
@@ -3475,12 +3046,7 @@
     {
       "id": "reporting-verb-choice",
       "question": "요청·부탁을 전달할 때 쓰는 동사는?",
-      "choices": [
-        "ask",
-        "tell",
-        "warn",
-        "forbid"
-      ],
+      "choices": ["ask", "tell", "warn", "forbid"],
       "answer": "ask",
       "note": "명령·지시는 tell, 충고는 advise, 경고는 warn, 금지는 forbid입니다.",
       "source": "영어_화법"
@@ -3553,12 +3119,7 @@
     {
       "id": "phrasal-register",
       "question": "논문·계약서에서 give up 대신 쓰는 말은?",
-      "choices": [
-        "abandon",
-        "give in",
-        "put up with",
-        "get over"
-      ],
+      "choices": ["abandon", "give in", "put up with", "get over"],
       "answer": "abandon",
       "note": "구동사는 구어·비격식, 단일 동사는 격식·문어입니다. find out은 discover, put off는 postpone입니다.",
       "source": "영어_동사구"
@@ -3566,12 +3127,7 @@
     {
       "id": "phrasal-polysemy",
       "question": "pick up이 문맥에 따라 갖는 뜻이 아닌 것은?",
-      "choices": [
-        "미루다",
-        "전화를 받다",
-        "데리러 가다",
-        "언어를 익히다"
-      ],
+      "choices": ["미루다", "전화를 받다", "데리러 가다", "언어를 익히다"],
       "answer": "미루다",
       "note": "미루다는 put off입니다. 구동사는 뜻이 여럿이라 암기보다 문맥으로 좁히는 편이 낫습니다.",
       "source": "영어_동사구"
@@ -3592,12 +3148,7 @@
     {
       "id": "put-out-meanings",
       "question": "put out의 뜻은?",
-      "choices": [
-        "불을 끄다",
-        "미루다",
-        "입다",
-        "참다"
-      ],
+      "choices": ["불을 끄다", "미루다", "입다", "참다"],
       "answer": "불을 끄다",
       "note": "미루다는 put off, 입다는 put on, 참다는 put up with입니다.",
       "source": "영어_동사구"
@@ -3605,12 +3156,7 @@
     {
       "id": "look-up-vs-up-to",
       "question": "look up to의 뜻은?",
-      "choices": [
-        "존경하다",
-        "찾아보다",
-        "무시하다",
-        "조사하다"
-      ],
+      "choices": ["존경하다", "찾아보다", "무시하다", "조사하다"],
       "answer": "존경하다",
       "note": "찾아보다는 look up, 무시하다는 look down on, 조사하다는 look into입니다.",
       "source": "영어_동사구"
@@ -3618,12 +3164,7 @@
     {
       "id": "carry-out",
       "question": "carry out의 뜻은?",
-      "choices": [
-        "실행하다",
-        "계속하다",
-        "드러내다",
-        "야기하다"
-      ],
+      "choices": ["실행하다", "계속하다", "드러내다", "야기하다"],
       "answer": "실행하다",
       "note": "계속하다는 carry on, 야기하다는 bring about, 드러내다는 bring out입니다.",
       "source": "영어_동사구"
@@ -3631,12 +3172,7 @@
     {
       "id": "root-rupt",
       "question": "interrupt·erupt·bankrupt가 함께 쓰는 어근의 뜻은?",
-      "choices": [
-        "끊다·깨다",
-        "운반하다",
-        "말하다",
-        "이끌다"
-      ],
+      "choices": ["끊다·깨다", "운반하다", "말하다", "이끌다"],
       "answer": "끊다·깨다",
       "note": "port는 운반하다(transport·export), dict는 말하다(predict·verdict), duc는 이끌다(produce·conduct)입니다.",
       "source": "영어_어휘_확장"
@@ -3644,12 +3180,7 @@
     {
       "id": "root-script",
       "question": "describe·prescription·manuscript의 어근이 뜻하는 것은?",
-      "choices": [
-        "쓰다",
-        "보다",
-        "읽다",
-        "자르다"
-      ],
+      "choices": ["쓰다", "보다", "읽다", "자르다"],
       "answer": "쓰다",
       "note": "vis/vid가 보다입니다(vision·evidence). script/scrib는 쓰다입니다.",
       "source": "영어_어휘_확장"
@@ -3683,12 +3214,7 @@
     {
       "id": "prefix-under",
       "question": "underestimate의 under-가 더하는 뜻은?",
-      "choices": [
-        "부족하게",
-        "지나치게",
-        "다시",
-        "미리"
-      ],
+      "choices": ["부족하게", "지나치게", "다시", "미리"],
       "answer": "부족하게",
       "note": "over-가 초과(overwork), re-가 다시, pre-가 이전입니다.",
       "source": "영어_어휘_확장"
@@ -3696,12 +3222,7 @@
     {
       "id": "suffix-decision",
       "question": "decide를 명사로 만드는 접미사는?",
-      "choices": [
-        "-sion",
-        "-ment",
-        "-ance",
-        "-ness"
-      ],
+      "choices": ["-sion", "-ment", "-ance", "-ness"],
       "answer": "-sion",
       "note": "develop→development, perform→performance처럼 동사마다 붙는 접미사가 정해져 있습니다.",
       "source": "영어_어휘_확장"
@@ -3709,12 +3230,7 @@
     {
       "id": "suffix-ity",
       "question": "possible을 명사로 만드는 접미사는?",
-      "choices": [
-        "-ity",
-        "-ness",
-        "-ment",
-        "-ence"
-      ],
+      "choices": ["-ity", "-ness", "-ment", "-ence"],
       "answer": "-ity",
       "note": "happy→happiness는 -ness입니다. 형용사에 따라 갈립니다.",
       "source": "영어_어휘_확장"
@@ -3722,12 +3238,7 @@
     {
       "id": "collocation-heavy-rain",
       "question": "「강한 비」를 영어로 하면?",
-      "choices": [
-        "heavy rain",
-        "strong rain",
-        "powerful rain",
-        "big rain"
-      ],
+      "choices": ["heavy rain", "strong rain", "powerful rain", "big rain"],
       "answer": "heavy rain",
       "note": "커피는 반대로 strong coffee입니다. 문법이 맞아도 원어민이 안 쓰는 조합이 있습니다.",
       "source": "영어_어휘_확장"
@@ -3735,12 +3246,7 @@
     {
       "id": "collocation-decision",
       "question": "decision과 짝을 이루는 동사는?",
-      "choices": [
-        "make",
-        "do",
-        "take",
-        "give"
-      ],
+      "choices": ["make", "do", "take", "give"],
       "answer": "make",
       "note": "do a decision은 안 씁니다. 반대로 숙제는 do homework입니다.",
       "source": "영어_어휘_확장"
@@ -3774,12 +3280,7 @@
     {
       "id": "headline-future",
       "question": "President to Visit China를 be to 구문으로 풀 때 필요한 be동사는?",
-      "choices": [
-        "is",
-        "are",
-        "be",
-        "been"
-      ],
+      "choices": ["is", "are", "be", "been"],
       "answer": "is",
       "note": "The president is to visit China로 풀 수 있습니다. 헤드라인에서는 be동사와 관사 등을 생략합니다. will을 빼서 to visit이 되는 것은 아닙니다.",
       "source": "영어_뉴스·시사_어휘"
@@ -3800,12 +3301,7 @@
     {
       "id": "headline-verbs",
       "question": "헤드라인이 criticize 대신 쓰는 짧고 강한 동사는?",
-      "choices": [
-        "slam",
-        "discuss",
-        "mention",
-        "review"
-      ],
+      "choices": ["slam", "discuss", "mention", "review"],
       "answer": "slam",
       "note": "blast·hit out at도 같은 무리입니다. 글자 수를 줄이면서 강도를 올립니다.",
       "source": "영어_뉴스·시사_어휘"
@@ -3826,12 +3322,7 @@
     {
       "id": "euphemism-framing",
       "question": "뉴스에서 같은 사건에 다른 단어를 고르는 것이 만드는 것은?",
-      "choices": [
-        "관점의 차이",
-        "사실의 차이",
-        "시제의 차이",
-        "격식의 차이"
-      ],
+      "choices": ["관점의 차이", "사실의 차이", "시제의 차이", "격식의 차이"],
       "answer": "관점의 차이",
       "note": "완곡어법과 프레이밍은 단어 선택만으로 독자가 사건을 보는 각도를 바꿉니다.",
       "source": "영어_뉴스·시사_어휘"
@@ -3982,12 +3473,7 @@
     {
       "id": "out-of-the-blue",
       "question": "「out of the blue」의 뜻은?",
-      "choices": [
-        "갑자기, 느닷없이",
-        "우울한 상태로",
-        "야외에서",
-        "공짜로"
-      ],
+      "choices": ["갑자기, 느닷없이", "우울한 상태로", "야외에서", "공짜로"],
       "answer": "갑자기, 느닷없이",
       "note": "부러움은 green with envy, 애매한 영역은 gray area입니다.",
       "source": "영어_슬랭·관용어"
@@ -4021,12 +3507,7 @@
     {
       "id": "lowkey",
       "question": "「I lowkey love that show.」에서 lowkey의 뜻은?",
-      "choices": [
-        "은근히·솔직히",
-        "전혀 아니다",
-        "아주 크게",
-        "예전에"
-      ],
+      "choices": ["은근히·솔직히", "전혀 아니다", "아주 크게", "예전에"],
       "answer": "은근히·솔직히",
       "note": "salty는 삐진, flex는 자랑하다, lit은 대박이라는 뜻입니다.",
       "source": "영어_슬랭·관용어"
@@ -4112,12 +3593,7 @@
     {
       "id": "euphemism-let-go",
       "question": "let someone go가 완곡하게 가리키는 것은?",
-      "choices": [
-        "해고",
-        "퇴직",
-        "휴직",
-        "승진"
-      ],
+      "choices": ["해고", "퇴직", "휴직", "승진"],
       "answer": "해고",
       "note": "between jobs는 실직 중, downsize는 인원 감축입니다. 불편한 말을 부드럽게 돌려 말하는 자리입니다.",
       "source": "영어_슬랭·관용어"
@@ -4125,12 +3601,7 @@
     {
       "id": "euphemism-fall-short",
       "question": "fall short가 완곡하게 가리키는 것은?",
-      "choices": [
-        "목표에 못 미침",
-        "키가 작음",
-        "넘어짐",
-        "시간이 모자람"
-      ],
+      "choices": ["목표에 못 미침", "키가 작음", "넘어짐", "시간이 모자람"],
       "answer": "목표에 못 미침",
       "note": "misspeak는 말실수, setback은 차질입니다. 과하면 오히려 뜻이 흐려집니다.",
       "source": "영어_슬랭·관용어"
@@ -4164,12 +3635,7 @@
     {
       "id": "call-the-shots",
       "question": "call the shots의 뜻은?",
-      "choices": [
-        "결정권을 쥐다",
-        "크게 소리치다",
-        "사진을 찍다",
-        "총을 쏘다"
-      ],
+      "choices": ["결정권을 쥐다", "크게 소리치다", "사진을 찍다", "총을 쏘다"],
       "answer": "결정권을 쥐다",
       "note": "under fire는 비난받는 중, hold the fort는 자리를 대신 지키는 것입니다.",
       "source": "영어_슬랭·관용어"
@@ -4216,12 +3682,7 @@
     {
       "id": "take-an-l",
       "question": "「Big L.」이라고 쓰면 무슨 뜻인가요?",
-      "choices": [
-        "크게 망했다",
-        "크게 성공했다",
-        "많이 웃었다",
-        "늦었다"
-      ],
+      "choices": ["크게 망했다", "크게 성공했다", "많이 웃었다", "늦었다"],
       "answer": "크게 망했다",
       "note": "L은 loss, W는 win입니다. 게임 스코어보드 표시가 일상어로 넘어왔습니다.",
       "source": "영어_인터넷_밈·은어"
@@ -4264,6 +3725,265 @@
       "answer": "인터넷에 너무 절어 현실 감각이 없는 상태",
       "note": "말기라는 의학 용어를 패러디한 표현입니다. chronically online도 거의 같은 뜻입니다.",
       "source": "영어_인터넷_밈·은어"
+    },
+    {
+      "id": "plain-english-swap",
+      "question": "Plain English로 고칠 때 「due to the fact that」을 대신하는 말은?",
+      "choices": ["because", "therefore", "in order to", "at this point"],
+      "answer": "because",
+      "note": "in order to는 to로, make a decision은 decide로 줄입니다. 같은 뜻이면 짧은 쪽이 낫습니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "topic-sentence-position",
+      "question": "영어 문단에서 핵심 주장이 서는 자리는?",
+      "choices": ["첫 문장", "마지막 문장", "가운데 문장", "정해진 자리 없음"],
+      "answer": "첫 문장",
+      "note": "결론을 뒤에 두는 한국어와 반대입니다. 첫 문장이 없으면 독자가 이 문단이 무슨 말인지 묻게 됩니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "one-idea-per-paragraph",
+      "question": "한 문단에 아이디어가 둘이면?",
+      "choices": [
+        "문단을 둘로 나눈다",
+        "연결어로 이어 붙인다",
+        "둘째를 각주로 내린다",
+        "첫 문장에 둘 다 적는다"
+      ],
+      "answer": "문단을 둘로 나눈다",
+      "note": "한 문단은 한 아이디어입니다. 나눠야 각 문단의 topic sentence가 제구실을 합니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "subject-line-bad",
+      "question": "업무 메일 제목 한 줄에 담아야 할 것은?",
+      "choices": [
+        "용건과 마감 날짜",
+        "인사와 안부 한마디",
+        "보내는 사람의 소속",
+        "본문 첫 문장 그대로"
+      ],
+      "answer": "용건과 마감 날짜",
+      "note": "Invoice #1234 — Payment Due July 5처럼 씁니다. Hello나 Question은 열어 봐야만 용건을 압니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "email-formality",
+      "question": "처음 연락하는 클라이언트에게 맞는 인사와 마무리는?",
+      "choices": [
+        "Dear Mr. Johnson — Best regards",
+        "Hey Mark — Thanks",
+        "Hi Mark — Thanks",
+        "Hello there — Cheers"
+      ],
+      "answer": "Dear Mr. Johnson — Best regards",
+      "note": "첫 메일은 격식으로 엽니다. 상대가 비격식으로 답하면 그때 수준을 맞춥니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "sentence-rhythm",
+      "question": "문장 길이에 변화를 주는 이유는?",
+      "choices": [
+        "짧은 문장으로 핵심을 때리기 위해",
+        "단어 수를 정확히 맞추기 위해",
+        "수동태를 피하기 위해",
+        "연결어를 줄이기 위해"
+      ],
+      "answer": "짧은 문장으로 핵심을 때리기 위해",
+      "note": "평균 15~20단어를 두고 길이를 섞습니다. 다 짧으면 전보 같고 다 길면 숨이 막힙니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "wordiness-nominalization",
+      "question": "「give consideration to」를 장황하다고 보는 까닭은?",
+      "choices": [
+        "동사를 명사로 풀어 썼다",
+        "수동태로 썼다",
+        "전치사가 빠졌다",
+        "시제가 흐릿하다"
+      ],
+      "answer": "동사를 명사로 풀어 썼다",
+      "note": "consider 한 낱말이면 됩니다. reach a conclusion은 conclude, provide assistance는 help입니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "thesis-strength",
+      "question": "다음 중 thesis statement로 가장 강한 것은?",
+      "choices": [
+        "Social media erodes attention spans by rewarding shallow engagement",
+        "Social media has good and bad sides",
+        "This essay will discuss social media",
+        "Many people use social media every day"
+      ],
+      "answer": "Social media erodes attention spans by rewarding shallow engagement",
+      "note": "thesis는 반박할 수 있어야 합니다. 좋다·나쁘다는 약하고, X가 Y 때문에 Z한다가 강합니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "quote-then-analyze",
+      "question": "인용을 넣은 뒤 반드시 따라와야 하는 것은?",
+      "choices": ["내 분석", "다른 인용", "출처 목록", "문단 나누기"],
+      "answer": "내 분석",
+      "note": "인용을 혼자 말하게 두면 안 됩니다. This shows that...으로 받아 내 주장에 붙여야 합니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "bluf",
+      "question": "보고서의 BLUF 원칙이 요구하는 것은?",
+      "choices": [
+        "결론을 맨 앞에 둔다",
+        "근거를 맨 앞에 둔다",
+        "배경을 길게 깐다",
+        "제안을 맨 뒤로 미룬다"
+      ],
+      "answer": "결론을 맨 앞에 둔다",
+      "note": "Bottom Line Up Front입니다. 바쁜 사람은 Executive Summary만 읽고 판단합니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "passive-when-ok",
+      "question": "수동태가 적절한 자리는?",
+      "choices": [
+        "행위자가 누구인지 중요하지 않을 때",
+        "문장을 길게 늘이고 싶을 때",
+        "주어가 사람일 때",
+        "문단 첫 문장일 때"
+      ],
+      "answer": "행위자가 누구인지 중요하지 않을 때",
+      "note": "The bridge was built in 1932가 그런 자리입니다. 기본은 능동태이고 수동태는 골라 쓰는 도구입니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "parallelism",
+      "question": "「She likes reading, to write, and swimming」이 어색한 이유는?",
+      "choices": [
+        "나열된 요소의 형태가 다르다",
+        "동사가 셋이나 된다",
+        "접속사 위치가 틀렸다",
+        "목적어가 빠졌다"
+      ],
+      "answer": "나열된 요소의 형태가 다르다",
+      "note": "동명사·to부정사·동명사가 섞였습니다. reading, writing, swimming으로 통일합니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "l1-article-drop",
+      "question": "한국어 화자가 영작에서 자주 빠뜨리는 것은?",
+      "choices": ["관사", "동사", "전치사구", "마침표"],
+      "answer": "관사",
+      "note": "한국어에 a·the에 해당하는 자리가 없어 생깁니다. 주어 생략과 과도한 헤징도 같은 간섭입니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "outline-first",
+      "question": "쓰기 전에 개요부터 짜는 까닭은?",
+      "choices": [
+        "내용 구상과 문장 완성을 동시에 못 해서",
+        "개요가 분량을 정확히 재 줘서",
+        "문법 실수를 미리 잡아서",
+        "인용을 먼저 골라야 해서"
+      ],
+      "answer": "내용 구상과 문장 완성을 동시에 못 해서",
+      "note": "구조를 먼저 정하면 막히는 순간이 줄어듭니다. 개요는 한국어로 짜도 됩니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "tense-consistency",
+      "question": "「I woke up early and made coffee. Then I check my emails」의 문제는?",
+      "choices": [
+        "이유 없이 시제가 바뀌었다",
+        "주어가 빠졌다",
+        "접속사가 겹쳤다",
+        "관사가 빠졌다"
+      ],
+      "answer": "이유 없이 시제가 바뀌었다",
+      "note": "한 서술 안에서는 시제를 통일합니다. 시점을 옮길 때는 back then·now 같은 신호를 답니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "editing-pass-order",
+      "question": "퇴고에서 가장 먼저 볼 것은?",
+      "choices": ["논리 흐름", "철자 오류", "문장부호", "반복 단어"],
+      "answer": "논리 흐름",
+      "note": "거시에서 미시로 내려갑니다. 문단을 통째로 들어낼 수도 있는데 철자부터 고치면 그 품이 버려집니다.",
+      "source": "영어_쓰기"
+    },
+    {
+      "id": "reading-modes",
+      "question": "기사에서 특정 날짜 하나만 찾을 때 쓰는 읽기 방식은?",
+      "choices": ["Scanning", "Skimming", "Close reading", "Active reading"],
+      "answer": "Scanning",
+      "note": "Skimming은 무슨 글인지 30초에 가리는 읽기이고, Close reading은 계약서처럼 다 이해해야 할 때입니다.",
+      "source": "영어_독해"
+    },
+    {
+      "id": "unknown-word-first",
+      "question": "모르는 단어를 만났을 때 먼저 할 일은?",
+      "choices": [
+        "문맥으로 뜻을 짐작한다",
+        "바로 사전을 찾는다",
+        "그 문장을 건너뛴다",
+        "단어장에 옮겨 적는다"
+      ],
+      "answer": "문맥으로 뜻을 짐작한다",
+      "note": "단어마다 멈추면 흐름이 끊깁니다. 문단 끝까지 읽고도 안 잡힐 때만 찾습니다.",
+      "source": "영어_독해"
+    },
+    {
+      "id": "signal-contrast",
+      "question": "however·yet·despite 뒤에 오는 내용은?",
+      "choices": [
+        "앞과 반대되는 내용",
+        "앞의 결과",
+        "앞과 같은 방향의 추가",
+        "앞 내용의 예시"
+      ],
+      "answer": "앞과 반대되는 내용",
+      "note": "대조 신호 뒤가 필자의 진짜 주장인 경우가 많습니다. therefore는 결과를, moreover는 추가를 예고합니다.",
+      "source": "영어_독해"
+    },
+    {
+      "id": "news-inverted-pyramid",
+      "question": "뉴스 기사의 역피라미드 구조에서 핵심은 어디 있나요?",
+      "choices": ["첫 문단", "마지막 문단", "가운데", "제목뿐"],
+      "answer": "첫 문단",
+      "note": "뒤로 갈수록 덜 중요합니다. 논설문은 반대로 첫 문단 마지막 문장의 thesis를 먼저 찾습니다.",
+      "source": "영어_독해"
+    },
+    {
+      "id": "imrad-order",
+      "question": "학술 논문을 효율적으로 읽는 순서는?",
+      "choices": [
+        "Abstract → Discussion → Introduction",
+        "Introduction → Methods → Results",
+        "Methods → Abstract → Results",
+        "Results → Methods → Abstract"
+      ],
+      "answer": "Abstract → Discussion → Introduction",
+      "note": "IMRAD는 글이 실린 순서일 뿐입니다. Methods는 방법론을 확인해야 할 때만 봅니다.",
+      "source": "영어_독해"
+    },
+    {
+      "id": "chunking-read",
+      "question": "독해 속도를 붙일 때 눈이 끊어 읽어야 하는 단위는?",
+      "choices": ["의미 덩어리", "단어 하나", "문장 전체", "문단 전체"],
+      "answer": "의미 덩어리",
+      "note": "The company / announced / a new product처럼 끊습니다. 속으로 중얼거리면 말하는 속도를 못 넘습니다.",
+      "source": "영어_독해"
+    },
+    {
+      "id": "demonstrative-this",
+      "question": "「Demand fell sharply. This led to layoffs」에서 This가 받는 것은?",
+      "choices": [
+        "앞 문장 전체",
+        "Demand라는 낱말",
+        "layoffs라는 낱말",
+        "뒤에 올 내용"
+      ],
+      "answer": "앞 문장 전체",
+      "note": "this·that은 앞 문장을 통째로 받는 일이 많습니다. 지시어와 대명사를 놓치면 글이 산만해 보입니다.",
+      "source": "영어_독해"
     },
     {
       "id": "linking-consonant-vowel",
@@ -4320,12 +4040,7 @@
     {
       "id": "chunking",
       "question": "청킹 청취가 듣는 단위는?",
-      "choices": [
-        "의미 덩어리",
-        "단어 하나",
-        "음절 하나",
-        "문장 전체"
-      ],
+      "choices": ["의미 덩어리", "단어 하나", "음절 하나", "문장 전체"],
       "answer": "의미 덩어리",
       "note": "단어 단위로 끊어 들으면 처리 속도를 못 따라갑니다.",
       "source": "영어_청취"
