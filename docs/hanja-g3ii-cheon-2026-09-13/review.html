@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>遷 15획 자료 대조</title>
+<style>
+body{font:16px system-ui;margin:24px;background:#f6f4ee;color:#222}h1{font-size:24px}button,select,input{font:inherit;padding:6px}nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.sequence{width:100%;max-width:1192px;display:block;margin:16px 0}.columns{display:grid;grid-template-columns:1fr 1fr 230px;gap:16px}.columns img,.columns video{width:100%;background:white}.columns h2{font-size:18px}#time{width:80px}p{line-height:1.6}output{font-variant-numeric:tabular-nums}
+</style>
+<h1>遷 · 15획 자료 대조</h1>
+<p>모야랜드의 누적 도해·번호 도해와 비상교육 영상, 앱의 정적 SVG. 출처 검토 화면이며 애니메이션 승인 화면이 아닙니다.</p>
+<img class="sequence" src="/moya-sequence" alt="모야랜드 누적 필순 도해 15단계">
+<nav>
+<label>영상 시점 <select id="sample"></select></label>
+<label>초 <input id="time" type="number" min="0" max="22.2" step="0.1" value="0"></label>
+<button id="seek">이동</button><button id="back">−0.1초</button><button id="next">+0.1초</button><output id="status"></output>
+</nav>
+<div class="columns">
+<section><h2>모야랜드 · 1~15번</h2><img src="/moya-numbered" alt="모야랜드 15획 번호와 전체 윤곽"></section>
+<section><h2>비상교육 · 원문 영상</h2><video id="video" controls muted preload="auto" src="/vivasam-video"></video></section>
+<section><h2>앱 정적 SVG</h2><img src="/app-glyph.svg" alt="Noto Serif CJK KR 기반 遷 정적 SVG"></section>
+</div>
+<script>
+const samples=[0,1.2,2.4,3.8,5.1,6.4,7.7,8.8,10,11.1,12.1,13,15.1,16.4,17.7,18.1,18.2,18.9,21.9];
+const video=document.querySelector('#video'),select=document.querySelector('#sample'),input=document.querySelector('#time'),status=document.querySelector('#status');
+samples.forEach(t=>{const option=document.createElement('option');option.value=t;option.textContent=`${t.toFixed(1)}초`;select.append(option)});
+function seek(t){video.pause();video.currentTime=Math.max(0,Math.min(22.2,t));input.value=video.currentTime.toFixed(1)}
+select.onchange=()=>seek(Number(select.value));document.querySelector('#seek').onclick=()=>seek(Number(input.value));document.querySelector('#back').onclick=()=>seek(video.currentTime-.1);document.querySelector('#next').onclick=()=>seek(video.currentTime+.1);
+video.onseeked=()=>{input.value=video.currentTime.toFixed(1);status.textContent=`정지 ${video.currentTime.toFixed(2)}초`};
+</script>
+</html>
