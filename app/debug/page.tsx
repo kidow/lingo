@@ -101,6 +101,22 @@ const NOTE_DIR: Record<Language, string> = {
 }
 
 /**
+ * 상식 문항이 나올 수 없는 노트. **0이라고 다 안 캔 것이 아니다.**
+ *
+ * `_회화`와 `_기초_어휘`는 낱말·표현 목록이라 "사실 하나 + 그럴듯한 오답 셋"
+ * 꼴로 떨어지지 않는다 (lib/types.ts의 Trivia). 오답이 그냥 다른 낱말이 되어
+ * 문항이 아니라 단어 문제가 된다 — 그쪽은 개념 카드(content/*.json)의 몫이다.
+ *
+ * 갈래를 이름으로 가르는 규칙이라 넓게 잡으면 멀쩡한 노트를 지운다. `_어휘`
+ * 전부를 빼려다 말았다 — 영어_뉴스·시사_어휘(9문항)나 일본어_계절_날씨_어휘
+ * (4문항)처럼 이미 캔 노트가 걸린다. 지금 이 둘만 반례가 없다.
+ *
+ * 한 문항이라도 나오면 이 표시는 저절로 사라진다 (`count > 0`). 규칙이 틀린
+ * 날을 코드가 아니라 콘텐츠가 알려 준다.
+ */
+const NOT_TRIVIA = /_(회화|기초_어휘)$/
+
+/**
  * 노트 하나 = 한 줄. 문항의 `source`를 세고, 옆 레포를 찾을 수 있으면
  * 아직 한 문항도 안 나온 노트를 0으로 채워 넣는다.
  */
@@ -126,7 +142,8 @@ function triviaNotes(): TriviaNote[] {
       counts.set(key, (counts.get(key) ?? 0) + 1)
     }
 
-    for (const [note, count] of counts) notes.push({ lang: language, note, count })
+    for (const [note, count] of counts)
+      notes.push({ lang: language, note, count, skip: count === 0 && NOT_TRIVIA.test(note) })
   }
 
   return notes

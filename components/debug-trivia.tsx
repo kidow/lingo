@@ -14,6 +14,10 @@ import type { Language } from '@/lib/types'
  * **문항이 적은 노트가 위로 온다.** 이 화면을 여는 이유가 "다음에 뭘 캘까"라서
  * 많이 캔 노트는 볼 일이 없다. 0은 손도 안 댄 노트다 — brain 폴더를 찾았을
  * 때만 나오고, 못 찾으면 캔 노트만 나열된다 (app/debug/page.tsx).
+ *
+ * 0이라고 다 할 일은 아니다. 낱말 목록처럼 애초에 문항이 안 나오는 노트는
+ * «갈래 아님»으로 맨 아래에 눕고 «캔 노트» 분모에서 빠진다. 이것까지 붉히면
+ * 화면의 절반이 영영 안 꺼지는 경고가 된다 (app/debug/page.tsx의 NOT_TRIVIA).
  */
 export type TriviaNote = {
   lang: Language
@@ -21,6 +25,11 @@ export type TriviaNote = {
   note: string
   /** 이 노트에서 뽑은 문항 수. 0이면 아직 안 캔 노트다 */
   count: number
+  /**
+   * 문항이 나올 수 없는 갈래인가 (app/debug/page.tsx의 `NOT_TRIVIA`).
+   * 0이지만 **안 캔 것이 아닌** 노트다 — 셈에서 빼고 맨 아래로 내린다
+   */
+  skip?: boolean
 }
 
 const ALL = 'all' as const
@@ -31,12 +40,20 @@ export function DebugTrivia({ notes }: { notes: TriviaNote[] }) {
 
   const shown = useMemo(() => {
     const rows = filter === ALL ? notes : notes.filter((note) => note.lang === filter)
-    // 적게 캔 것부터. 같은 수면 이름순이라 매번 같은 자리에 선다
-    return [...rows].sort((a, b) => a.count - b.count || a.note.localeCompare(b.note))
+    // 적게 캔 것부터. 같은 수면 이름순이라 매번 같은 자리에 선다.
+    // 갈래가 아닌 노트는 캘 일이 없으니 0이어도 맨 아래로 내린다
+    return [...rows].sort(
+      (a, b) =>
+        Number(a.skip ?? false) - Number(b.skip ?? false) ||
+        a.count - b.count ||
+        a.note.localeCompare(b.note),
+    )
   }, [notes, filter])
 
   const items = shown.reduce((sum, note) => sum + note.count, 0)
   const mined = shown.filter((note) => note.count > 0).length
+  /** 갈래가 아니라 캘 일이 없는 노트. 분모에 섞으면 "캔 노트"가 영영 안 찬다 */
+  const skipped = shown.filter((note) => note.skip).length
   /** 노트당 평균이 아니라 **캔 노트당** 평균이다. 0을 섞으면 밀도가 흐려진다 */
   const perNote = mined > 0 ? (items / mined).toFixed(1) : '—'
   const most = shown.reduce((max, note) => Math.max(max, note.count), 0)
@@ -70,7 +87,12 @@ export function DebugTrivia({ notes }: { notes: TriviaNote[] }) {
 
       <dl className="mb-4 flex shrink-0 flex-wrap items-center gap-x-5 gap-y-2 rounded-ctrl border border-line bg-surface px-3 py-2.5 text-[13px] text-sub">
         <Stat label="문항" value={`${items}`} />
-        <Stat label="캔 노트" value={`${mined}/${shown.length}`} bad={mined < shown.length} />
+        <Stat
+          label="캔 노트"
+          value={`${mined}/${shown.length - skipped}`}
+          bad={mined < shown.length - skipped}
+        />
+        {skipped > 0 && <Stat label="갈래 아님" value={`${skipped}`} />}
         <Stat label="노트당" value={perNote} />
       </dl>
 
@@ -102,7 +124,10 @@ export function DebugTrivia({ notes }: { notes: TriviaNote[] }) {
                     경고가 된다. 붉히는 것은 숫자 칸 하나로 족하다 */}
                 <Td>{note.note}</Td>
                 <Td>
-                  {note.count === 0 ? (
+                  {note.skip ? (
+                    // 붉히지 않는다. 할 일이 아니라 갈래가 아니라는 표시다
+                    <span className="text-xs text-sub opacity-60">갈래 아님</span>
+                  ) : note.count === 0 ? (
                     <span className="text-xs text-err">안 캠</span>
                   ) : (
                     <span className="tabular-nums">{note.count}</span>
