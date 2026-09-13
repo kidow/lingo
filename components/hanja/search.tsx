@@ -1,8 +1,9 @@
 'use client'
 
-import { ArrowLeft, X } from 'lucide-react'
+import { ArrowLeft, Search, X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Drawer } from 'vaul'
+import { FAB_CLASS } from '../search-fab'
 import { gradeLabel, hunEum, searchHanja, type HanjaCharacter } from '@/lib/hanja'
 import { HanjaDetails, HanjaIllustration } from './card'
 import { HanjaGlyph } from './glyph'
@@ -14,7 +15,10 @@ export function HanjaSearch({ characters }: { characters: HanjaCharacter[] }) {
   const matches = useMemo(() => searchHanja(characters, query), [characters, query])
   return (
     <Drawer.Root handleOnly onOpenChange={(open) => { if (!open) { setSelected(null); setQuery(''); setLimit(60) } }}>
-      <Drawer.Trigger className="-my-3 grid min-w-11 place-items-center rounded-ctrl px-2.5 py-3 text-[15px] text-sub">찾기</Drawer.Trigger>
+      {/* 낱말 트랙과 같은 자리·같은 모양이다 (components/search-fab.tsx) */}
+      <Drawer.Trigger aria-label="한자 찾기" className={FAB_CLASS}>
+        <Search className="size-5" strokeWidth={2.5} aria-hidden />
+      </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 z-40 bg-ink/40" />
         <Drawer.Content className="fixed inset-x-0 bottom-0 z-50 mx-auto flex h-[85dvh] w-full max-w-[480px] flex-col rounded-t-card bg-bg outline-none" lang="ko">

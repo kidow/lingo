@@ -1,16 +1,19 @@
 'use client'
 
-import { X } from 'lucide-react'
+import { Search, X } from 'lucide-react'
 import { Drawer } from 'vaul'
+import { FAB_CLASS } from './search-fab'
 import { SearchSheet } from './search-sheet'
 import type { Article } from '@/lib/types'
 
 /**
  * 찾아보기를 여는 바텀시트. (spec.md §3)
  *
- * **트리거가 아이콘이 아니라 낱말이다.** 덱 탭과 같은 줄에 서므로 같은 모양을
- * 쓴다 — 돋보기와 책 아이콘 둘이 나란히 있던 자리보다 무엇을 여는지가 분명하고,
- * 아이콘 하나를 알아보게 하는 것보다 두 글자를 읽는 편이 빠르다.
+ * **트리거는 카드 오른쪽 아래에 뜬 돋보기다.** 오래 덱 탭과 같은 줄에 선
+ * `찾기` 두 글자였는데, 탭이 넷이 되면서 헤더가 넘쳐 밖으로 나왔다
+ * (components/search-fab.tsx). 탭 줄을 떠나면서 낱말일 이유도 사라졌다 —
+ * 옆에 나란히 설 낱말이 없으면 두 글자보다 아이콘이 작고, 같은 자리에 늘
+ * 있는 것 하나는 모양만으로 외워진다.
  *
  * 여닫는 것은 버튼이 하고 끌어 닫기는 없다 — 피드가 세로로 넘기고 시트 안도
  * 세로로 길어서, 끌어 닫기까지 얹으면 세로 제스처가 세 겹이 된다. `handleOnly`를
@@ -25,11 +28,11 @@ export function SearchDrawer({ trackArticles }: { trackArticles: Article[] }) {
   return (
     <Drawer.Root handleOnly>
       {/*
-        덱 탭과 같은 줄에 서므로 글자 크기·색·누르는 넓이가 다 같다. 다만
-        탭이 아니라서 눌린 상태가 없다 (components/header.tsx)
+        아이콘뿐이라 이름을 따로 준다. 돋보기는 보편적이지만 보편적인 것은
+        보이는 사람에게만 그렇다
       */}
-      <Drawer.Trigger className="-my-3 grid min-w-11 place-items-center rounded-ctrl px-2.5 py-3 text-[15px] text-sub transition active:scale-[.985]">
-        찾기
+      <Drawer.Trigger aria-label="찾기" className={FAB_CLASS}>
+        <Search className="size-5" strokeWidth={2.5} aria-hidden />
       </Drawer.Trigger>
 
       <Drawer.Portal>

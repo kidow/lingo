@@ -7,6 +7,7 @@ import { loadProgress, masteryLabel } from '@/lib/progress'
 import type { TrackId } from '@/lib/track'
 import { Feed } from '../feed'
 import { Header } from '../header'
+import { SearchFab } from '../search-fab'
 import { HanjaSearch } from './search'
 
 // 이 모듈은 트랙을 고른 뒤에만 로드한다. 외국어 코퍼스·음성은 요구하지 않는다.
@@ -20,9 +21,11 @@ export function HanjaShell({ onChange }: { onChange: (track: TrackId) => void })
         track="hanja"
         onChange={onChange}
         mastery={masteryLabel(masteredHanjaCount(progress, characters), characters.length)}
-        search={<HanjaSearch characters={characters} />}
       />
       <Feed entries={entries} track="hanja" ladder={HANJA_LADDER} ordered onProgress={setProgress} />
+      <SearchFab>
+        <HanjaSearch characters={characters} />
+      </SearchFab>
     </div>
   )
 }

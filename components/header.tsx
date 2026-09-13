@@ -1,9 +1,7 @@
 'use client'
 
 import { ChevronDown } from 'lucide-react'
-import type { ReactNode } from 'react'
 import { Flag } from '@/components/flags/flag'
-import { SearchDrawer } from './search-drawer'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +10,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { DECKS, type DeckId } from '@/lib/deck'
-import type { Article } from '@/lib/types'
 import { TRACKS, trackOf, type TrackId } from '@/lib/track'
 
 /**
@@ -43,8 +40,6 @@ export function Header({
   decks = [],
   deck,
   onDeck,
-  articles = [],
-  search,
 }: {
   track: TrackId
   onChange: (track: TrackId) => void
@@ -61,12 +56,6 @@ export function Header({
    * 시절과 똑같다. (lib/progress.ts)
    */
   mastery?: string | null
-  /**
-   * 이 트랙에서 볼 수 있는 참고 글. 없으면 버튼이 자리째 빠진다 — 덱 탭이
-   * 트랙에 따라 서고 마는 것과 같은 이유다 (content/articles.json)
-   */
-  articles?: Article[]
-  search?: ReactNode
 }) {
   return (
     <header className="flex h-14 shrink-0 items-center border-b border-line px-5">
@@ -152,14 +141,10 @@ export function Header({
         (lib/trivia.ts)
       */}
       {/*
-        오른쪽에 서는 것들을 한 줄로 둔다. 덱 탭이 없는 트랙에서도 찾기는 같은
-        자리에 서야 해서 ml-auto를 바깥이 든다.
-
-        **찾기도 덱 탭과 같은 구분선으로 잇는다.** 셋은 탭이고 하나는 아니라서
-        따로 떼어 놨었는데, 그러면 마지막 탭과 찾기 사이만 간격이 달라 줄이
-        어긋나 보인다. 누르는 자리가 나란히 있다는 사실이 탭이냐 아니냐보다 먼저
-        읽힌다 — 구분선은 종류를 나누는 표시가 아니라 **낱말끼리 붙지 않게 하는
-        칸막이**다
+        오른쪽은 덱 탭뿐이다. 찾기는 카드 오른쪽 아래로 내려갔다
+        (components/search-fab.tsx) — 탭이 넷이 되면서 다섯을 세울 폭이
+        없어졌고, 탭은 지금 무엇을 보는지를 늘 말해야 하지만 찾기는 찾을 때만
+        필요하다. 덱 탭이 없는 트랙에서는 이 줄이 통째로 빈다
       */}
       {/*
         누르는 자리를 44px로 넓히면서 **간격은 지킨다.** 패딩이 커지면 글자
@@ -188,20 +173,6 @@ export function Header({
             </span>
           ))}
 
-        {/*
-          찾기는 **언제나 선다.** 검색이 트랙을 안 가리기 때문이다 — 참고 글만
-          있던 시절에는 글이 없는 트랙에서 자리째 빠졌는데, 그래서 헤더 오른쪽
-          끝이 트랙마다 들쭉날쭉했다 (components/search-sheet.tsx)
-
-          앞선 덱 탭이 **설 때만** 구분선이 붙는다. 탭이 없는 트랙(TOEIC)에서
-          찾기 앞에 칸막이만 덩그러니 남으면 안 된다
-        */}
-        <span className="flex items-center gap-0">
-          {deck && onDeck && decks.length > 1 && (
-            <span aria-hidden className="text-line">|</span>
-          )}
-          {search ?? <SearchDrawer trackArticles={articles} />}
-        </span>
       </div>
     </header>
   )
