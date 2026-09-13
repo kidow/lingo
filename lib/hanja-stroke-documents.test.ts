@@ -226,11 +226,12 @@ test('published document data reproduces exactly from the reviewed recipe and pi
   for (const entry of HANJA_DOCUMENT_STROKES) validateDocumentReview(entry, 8)
 })
 
-test('only reviewed 阿 plays; held 兔 and a changed 阿 stroke count remain unavailable', () => {
+test('阿 uses the document review; 兔 requires its separate dictionary approval', () => {
   const entry = hanjaStrokeData({ glyph: '阿', strokes: 8 })
   assert.ok(entry)
   assert.equal(entry.verificationSource, 'dongyang-hanja3-note')
   assert.equal(entry.paths.length, 8)
   assert.equal(hanjaStrokeData({ glyph: '阿', strokes: 7 }), null)
-  assert.equal(hanjaStrokeData({ glyph: '兔', strokes: 8 }), null)
+  assert.equal(HANJA_DOCUMENT_STROKES.some(e => e.glyph === '兔'), false)
+  assert.equal(hanjaStrokeData({ glyph: '兔', strokes: 8 })?.verificationSource, 'ehanja-crosschecked')
 })

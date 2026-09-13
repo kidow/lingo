@@ -3,10 +3,15 @@
 `dictionary-reviewed.json` contains the complete modified centerline source for
 訣 (11 strokes), 紋 (10 strokes), 森 (12 strokes), 楓 (13 strokes),
 奔 (8 strokes), 慈 (13 strokes), 蓮 (15 strokes), 追 (10 strokes),
-透 (11 strokes) and 還 (17 strokes),
+透 (11 strokes), 還 (17 strokes) and 兔 (8 strokes),
 modified for Lingo on 2026-09-13.
 
 ## Geometry copyright and modifications
+
+For 兔, normalized MM strokes 3, 4, 5, 6 and 8 are unchanged. Strokes 1, 2
+and 7 are locally authored replacements for the knife-shaped upper component
+and a connected lower right hook. Original medians and full modified source
+are retained in `docs/hanja-g3ii-rabbit-2026-09-13/` under the same Arphic terms.
 
 訣, 森, 楓, 奔, ten strokes of 慈 and eight strokes of 紋 derive from Make Me a Hanzi `graphics.txt`, commit
 `bddc96d41bef78427ed0e034e9f7e31d71fd1b92`. The complete pinned file hash is
@@ -72,6 +77,12 @@ provenance and the character-specific corrections are recorded in
 `docs/hanja-g3ii-bun-ja-2026-09-13/`.
 
 No e-hanja outlines, centerlines, CSS, scripts or screenshots are redistributed.
+For 兔, all eight strokes of the separately observed knife-top U+2F80F entry
+were compared. Unicode's exact U+2F80F → U+5154 mapping, the dictionary's
+same-character link and the Korean Language Society's form-specific answers
+bind this source to catalog 兔. The association's acceptance of the two upper
+forms is not certification of the dictionary animation. Full source, form,
+direction and geometry records are pinned in `docs/hanja-g3ii-rabbit-2026-09-13/`.
 For 蓮, 追, 透 and 還, all 53 directions and cumulative candidates were reviewed.
 The 16 previously observed radical strokes were supplemented with 37 internal
 stroke observations, late terminal checks and a separate fresh 53-step

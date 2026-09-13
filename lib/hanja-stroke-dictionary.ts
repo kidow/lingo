@@ -5,7 +5,7 @@ export const HANJA_DICTIONARY_SOURCE = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
   "name": "Make Me a Hanzi with reviewed local corrections",
@@ -14,7 +14,7 @@ export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
 } as const
 export const DICTIONARY_REFERENCES: Readonly<Record<string, {
   strokes: number; pathsSha256: string; directions: string; svgUrl: string; svgSha256: string
-  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four'
+  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit'
   sourceStrokeIndices?: readonly (number | null)[]
 }>> = {
   "訣": {
@@ -167,12 +167,38 @@ export const DICTIONARY_REFERENCES: Readonly<Record<string, {
       null,
       null
     ]
-  }
+  },
+  "兔": {
+    "strokes": 8,
+    "pathsSha256": "f632caf98a7bd2e97163ea60b075374042402b4d8e0cddc9842458fec7c80cde",
+    "originalMediansSha256": "7f7f6d334067e9d130e967d0abd02e3e8066b890f507922059784a8a164d7d82",
+    "directions": "1,2,3,4,5,6,7,8",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/2F800/2F80F.svg",
+    "svgSha256": "868c74b5d8f35142897d4e79cb62b02009f4d683839de016ac9f556edc9def53",
+    "wholeGlyphReview": "rabbit",
+    "sourceStrokeIndices": [
+      null,
+      null,
+      3,
+      4,
+      5,
+      6,
+      null,
+      8
+    ]
+  },
 }
 
 export function dictionarySourceReference(glyph: string) {
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref) throw new Error('Unreviewed dictionary glyph: ' + glyph)
+  if (ref.wholeGlyphReview === 'rabbit') return {
+    orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
+    dictionaryDirectionStrokes: ref.directions,
+    orderReviewSha256: 'b294d7b3ff0402827c92ccc52ff9d6aa56055ad1456660b820b43aa30daa4003',
+    geometryReviewSha256: 'b294d7b3ff0402827c92ccc52ff9d6aa56055ad1456660b820b43aa30daa4003',
+    directionReviewSha256: '63ab3c17716ef3da6e7be9fe62e3835e6c744ad468ae364030676d63dcc340fc',
+  }
   const bunJa = ref.wholeGlyphReview === 'bun-ja'
   const walkFour = ref.wholeGlyphReview === 'walk-four'
   return {

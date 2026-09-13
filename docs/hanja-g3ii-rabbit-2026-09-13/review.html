@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>兔 8획 후보 검토</title>
+<style>body{font:16px system-ui;background:#faf8f3;color:#25231f;margin:32px}h1{margin-bottom:8px}button{padding:12px 20px}#final{width:420px;max-width:100%}.grid{display:grid;grid-template-columns:repeat(4,minmax(200px,1fr));gap:18px}.cell{background:white;border:1px solid #ddd;padding:12px}.cell svg{width:100%}svg{display:block}path{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:5}@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(180px,1fr))}}</style>
+<h1>兔 · 8획</h1><p>국내 사전의 刀형 상단과 비교하는 자체 후보. 선 두께 5, 초록은 시작·빨강은 끝. 외부 사전 그림과 로컬 글꼴 SVG는 포함하지 않습니다.</p>
+<button id="replay">후보 재생</button><svg id="final" viewBox="0 0 100 100" aria-label="兔 후보"></svg><main class="grid" id="grid"></main>
+<script type="module">
+const {entries:[entry]}=await fetch('./candidate-paths.json').then(r=>r.json());const paths=entry.paths,ns='http://www.w3.org/2000/svg';
+function path(d,color){const p=document.createElementNS(ns,'path');p.setAttribute('d',d);p.setAttribute('stroke',color);return p}
+function svg(n,mark){const s=document.createElementNS(ns,'svg');s.setAttribute('viewBox','0 0 100 100');paths.slice(0,n).forEach((d,i)=>s.append(path(d,i===n-1?'#6863d9':'#bbb')));if(mark){const pts=[...paths[n-1].matchAll(/[ML]([-.\d]+) ([-.\d]+)/g)];[pts[0],pts.at(-1)].forEach((m,i)=>{const c=document.createElementNS(ns,'circle');c.setAttribute('cx',m[1]);c.setAttribute('cy',m[2]);c.setAttribute('r','1.5');c.setAttribute('fill',i?'#cc342e':'#159353');s.append(c)})}return s}
+for(let n=1;n<=paths.length;n++){const c=document.createElement('section');c.className='cell';const h=document.createElement('h2');h.textContent=n+'획';c.append(h,svg(n,true));document.querySelector('#grid').append(c)}
+const final=document.querySelector('#final');let run=0;async function replay(){const id=++run;final.replaceChildren();for(const d of paths){if(id!==run)return;const p=path(d,'#6863d9');final.append(p);const len=p.getTotalLength();p.style.strokeDasharray=len;const animation=p.animate([{strokeDashoffset:len},{strokeDashoffset:0}],{duration:450,fill:'forwards',easing:'linear'});await animation.finished;if(id!==run)return;await new Promise(r=>setTimeout(r,100))}}
+document.querySelector('#replay').addEventListener('click',replay);replay();
+</script></html>

@@ -41,7 +41,7 @@ test('JSON metadata key order cannot prevent a valid bundle from loading', () =>
   assert.deepEqual(loadNumberedBundle(reordered), HANJA_NUMBERED_STROKES)
 })
 
-test('three reviewed characters play, while wrong counts and other held characters stay unavailable', () => {
+test('three numbered characters play; 兔 stays outside this source and wrong counts remain unavailable', () => {
   for (const [glyph, reference] of Object.entries(NUMBERED_REFERENCES)) {
     const data = hanjaStrokeData({ glyph, strokes: reference.strokes })
     assert.ok(data)
@@ -49,7 +49,8 @@ test('three reviewed characters play, while wrong counts and other held characte
     assert.equal(data.paths.length, reference.strokes)
     assert.equal(hanjaStrokeData({ glyph, strokes: reference.strokes - 1 }), null)
   }
-  assert.equal(hanjaStrokeData({ glyph: '兔', strokes: 8 }), null)
+  assert.equal(HANJA_NUMBERED_STROKES.some(e => e.glyph === '兔'), false)
+  assert.equal(hanjaStrokeData({ glyph: '兔', strokes: 8 })?.verificationSource, 'ehanja-crosschecked')
 })
 
 test('runtime source loading rejects missing, duplicate, unsupported or misattributed entries', () => {
