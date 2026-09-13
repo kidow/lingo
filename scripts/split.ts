@@ -3,6 +3,7 @@ import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'nod
 import { join } from 'node:path'
 import { LANGUAGES } from '../lib/lang.ts'
 import { triviaEntries } from '../lib/trivia.ts'
+import { validateNumberedBundle } from './hanja-stroke-numbered.ts'
 import type {
   Article,
   ArticleFile,
@@ -42,6 +43,9 @@ import type {
  * 커밋해 두면 원본과 어긋날 자리만 생긴다. `pnpm dev`와 `pnpm build`가
  * 먼저 이 스크립트를 돌린다 (package.json).
  */
+// Reject changed evidence or stroke paths before generating build assets.
+validateNumberedBundle()
+
 const ROOT = new URL('..', import.meta.url).pathname
 const CONTENT = join(ROOT, 'content')
 const OUT = join(ROOT, 'public/content')

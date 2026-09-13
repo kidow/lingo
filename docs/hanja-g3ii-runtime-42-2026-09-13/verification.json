@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-13",
+  "scope": "Enable the three reviewed numbered-diagram characters only",
+  "verificationSource": "moyaland-numbered",
+  "examBodyCertification": false,
+  "added": [
+    {
+      "glyph": "笛",
+      "strokes": 11,
+      "pathsSha256": "ee63d6d13e47d1243a617e7bd287b6314aaabfd0e1c1465e62b80440d6c61bdf",
+      "correctedStrokes": []
+    },
+    {
+      "glyph": "蹟",
+      "strokes": 18,
+      "pathsSha256": "f38c85967b38104bac9e5fb22e3de005cb273e2c290b324ac7acc1ce0e77408f",
+      "correctedStrokes": [12]
+    },
+    {
+      "glyph": "稚",
+      "strokes": 13,
+      "pathsSha256": "42d7617cd5e612b9e593ece7a634dc07f075368b2b0bb6b630d9a5e82ca2bbd0",
+      "correctedStrokes": [2]
+    }
+  ],
+  "totalAddedStrokes": 42,
+  "runtime": {
+    "totalCharacters": 5978,
+    "animationCharacters": 1476,
+    "remainingCharacters": 4502,
+    "byVerificationSource": {
+      "eomunhoe-f37": 503,
+      "vivasam-high-2022": 969,
+      "dongyang-hanja3-note": 1,
+      "moyaland-numbered": 3
+    },
+    "grade3II": {
+      "scope": "incremental allocation",
+      "totalCharacters": 500,
+      "animationCharacters": 486,
+      "remainingCharacters": ["訣", "蓮", "紋", "奔", "森", "慈", "遷", "追", "兔", "透", "弊", "楓", "響", "還"]
+    }
+  },
+  "checks": {
+    "hanjaTests": {
+      "command": "node --test lib/hanja*.test.ts",
+      "passed": 160,
+      "failed": 0
+    },
+    "productionBuild": {
+      "command": "pnpm build",
+      "status": "passed",
+      "typescript": "passed",
+      "staticExport": "passed"
+    },
+    "corpusAudit": {
+      "command": "node scripts/hanja-stroke-audit.ts",
+      "status": "passed"
+    },
+    "approvedPathsReproduced": 42,
+    "pinnedPriorEvidenceFiles": 8,
+    "publicBundleSha256": "38cf688d6cb043fdaff25901b7f869741ee172caf027409a67bba1140afa07f6",
+    "exportBundleSha256": "38cf688d6cb043fdaff25901b7f869741ee172caf027409a67bba1140afa07f6",
+    "browserPlayback": {
+      "status": "not_completed",
+      "reason": "Development page remained loading; temporary static server refused connection; subsequent browser error-page operations were blocked by browser URL policy.",
+      "autoPlayObserved": false,
+      "replayObserved": false
+    }
+  },
+  "nextRecommendedCharacters": ["訣", "紋"],
+  "knowledgeBaseLabels": [
+    "Hanja numbered final metadata order regression",
+    "Hanja numbered final production build",
+    "Hanja numbered full corpus audit",
+    "Hanja numbered final runtime snapshot"
+  ]
+}

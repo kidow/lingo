@@ -10,6 +10,7 @@ import { validateTextbookReview } from './hanja-stroke-textbook.ts'
 import { textbookGeometry } from './hanja-stroke-textbook-corrections.ts'
 import { textbookAuthored } from './hanja-stroke-textbook-authored.ts'
 import { validateDocumentReview, documentGeometry } from './hanja-stroke-documents.ts'
+import { validateNumberedReview, numberedGeometry } from './hanja-stroke-numbered.ts'
 import locations from './hanja-stroke-locations.json' with { type: 'json' }
 
 export const CANDIDATE_SOURCE = {
@@ -24,7 +25,7 @@ export const JAPANESE_CANDIDATE_SOURCE = {
   sha256: '2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8',
 } as const
 
-// Geometry only. Every Korean textbook use still requires a complete video comparison.
+// Geometry only. Playback separately requires the complete review for its source category.
 export const MAKE_ME_A_HANZI_SOURCE = {
   ...CANDIDATE_SOURCE,
   url: 'https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt',
@@ -123,7 +124,9 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     const authored = textbookRecord ? textbookAuthored(textbookRecord) : undefined
     const documentReview = review?.verificationSource === 'dongyang-hanja3-note'
     const documentRecord = documentReview ? validateDocumentReview(review, character.strokes) : undefined
-    const publisherReview = textbookReview || documentReview
+    const numberedReview = review?.verificationSource === 'moyaland-numbered'
+    if (numberedReview) validateNumberedReview(review, character.strokes)
+    const publisherReview = textbookReview || documentReview || numberedReview
     const validEvidence = review && (publisherReview || (
       (review.verificationSource === undefined || review.verificationSource === 'eomunhoe-f37')
       && review.sourceReference === undefined && (review.sourceWholeImage === true
@@ -137,7 +140,7 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     const reviewedCandidate = review?.geometrySource === CANDIDATE_SOURCE.sha256
     const geometryCandidate = reviewedCandidate ? candidate
       : review?.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256 ? japaneseByGlyph.get(character.glyph)
-        : textbookReview && review.geometrySource === MAKE_ME_A_HANZI_SOURCE.sha256 ? hanziByGlyph.get(character.glyph) : undefined
+        : (textbookReview || numberedReview) && review.geometrySource === MAKE_ME_A_HANZI_SOURCE.sha256 ? hanziByGlyph.get(character.glyph) : undefined
     // The textbook builder validates local authored provenance before looking for a corpus candidate.
     if (authored && JSON.stringify(review?.paths) !== JSON.stringify(authored.paths)) {
       throw new Error(`Reviewed authored geometry mismatch: ${character.glyph}`)
@@ -146,6 +149,7 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
       || JSON.stringify(review.paths) !== JSON.stringify(textbookReview
         ? textbookGeometry(textbookRecord!, geometryCandidate.medians).paths
         : documentReview ? documentGeometry(documentRecord!, geometryCandidate.medians).paths
+          : numberedReview ? numberedGeometry(review.glyph, geometryCandidate.medians).paths
           : reviewedPaths(review, geometryCandidate)))) {
       throw new Error(`Reviewed geometry mismatch: ${character.glyph}`)
     }
@@ -166,7 +170,7 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
       candidateStrokes: candidate?.strokes?.length ?? null,
       candidateStatus,
       // Keep publisher-reference comparisons distinct from the exam-body diagrams.
-      playback: review ? documentReview ? 'document-reviewed' : textbookReview ? 'textbook-reviewed' : 'verified' : 'unavailable',
+      playback: review ? numberedReview ? 'numbered-reviewed' : documentReview ? 'document-reviewed' : textbookReview ? 'textbook-reviewed' : 'verified' : 'unavailable',
       geometrySource: review?.geometrySource ?? null,
       evidence: review ? (publisherReview
         ? { source: review.verificationSource, ...review.sourceReference, reviewedAt: review.verifiedAt }
@@ -185,6 +189,7 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
       eomunhoe: verified.filter((entry) => entry.verificationSource === undefined || entry.verificationSource === 'eomunhoe-f37').length,
       textbook: verified.filter((entry) => entry.verificationSource === 'vivasam-high-2022').length,
       documents: verified.filter((entry) => entry.verificationSource === 'dongyang-hanja3-note').length,
+      numbered: verified.filter((entry) => entry.verificationSource === 'moyaland-numbered').length,
     },
     reviewedGeometry: { korean: verified.filter((entry) => entry.geometrySource === CANDIDATE_SOURCE.sha256).length,
       japanese: verified.filter((entry) => entry.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256).length,
