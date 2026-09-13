@@ -36,8 +36,11 @@ export const LANG: Record<Language, LangStrategy> = {
   en: { answer: 'term', aside: ['romanization'], spaced: true },
   ja: { answer: 'reading', aside: ['romanization', 'term'], spaced: false },
   zh: { answer: 'term', aside: ['romanization'], spaced: false },
+  // 스페인어·독일어는 철자와 소리가 대체로 맞물린다. 참고줄을 두지 않는다
   es: { answer: 'term', aside: [], spaced: true },
-  fr: { answer: 'term', aside: [], spaced: true },
+  // 프랑스어는 다르다 — `doigt`는 /dwa/고 `seconde`의 c는 /g/다. 영어와 같은
+  // 이유로 발음기호를 둔다. Lexique 383에서 받아 온다 (scripts/ipa-fr.ts)
+  fr: { answer: 'term', aside: ['romanization'], spaced: true },
   de: { answer: 'term', aside: [], spaced: true },
   // 러시아어는 키릴 문자라 표기를 그대로 읽을 수 없다. 로마자를 참고줄에 둔다 —
   // 규칙적인 문자라 scripts/romanize.ts가 표로 만든다 (§7)
