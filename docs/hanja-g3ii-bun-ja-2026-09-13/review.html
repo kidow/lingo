@@ -1,0 +1,14 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>奔·慈 21획 경로 대조</title>
+<style>body{margin:24px;background:#faf7f2;color:#222;font:16px system-ui}h1{font-size:24px}.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.cell{background:white;border:1px solid #ddd;border-radius:8px;padding:8px}.cell svg{width:100%;height:auto}.caption{display:flex;justify-content:space-between;font-size:13px}section{margin-bottom:24px}a{color:#365b98}.key{color:#777}button{padding:8px 12px;margin:8px}svg{touch-action:none}</style>
+<h1>奔·慈 21획 경로 대조</h1><p class="key">회색: 이전 획 · 보라: 현재 획 · 초록: 시작 · 빨강: 끝. 원본 사전은 링크로 열어 대조합니다.</p><main></main>
+<script type="module">
+const {entries}=await(await fetch('./originals.json')).json();
+const frozen=await(await fetch('./candidate-paths.json')).json();
+for(const e of entries){
+ const d=frozen.entries.find(candidate=>candidate.glyph===e.glyph).paths;
+ const p=d.map(path=>Array.from(path.matchAll(/[ML]([-.\d]+) ([-.\d]+)/g),m=>[Number(m[1]),Number(m[2])]));
+ const section=document.createElement('section');section.innerHTML=`<h2>${e.glyph} · ${p.length}획 <a target="_blank" href="http://img.e-hanja.kr/hanjaSvg/aniSVG/${e.glyph==='奔'?'5900/5954':'6100/6148'}.svg">사전 원본</a></h2><div class="grid"></div>`;
+ for(let i=0;i<p.length;i++){const cell=document.createElement('div');cell.className='cell';cell.innerHTML=`<div class="caption"><b>${i+1}획</b><span>${p[i][0].join(',')} → ${p[i].at(-1).join(',')}</span></div><svg viewBox="0 0 100 100">${d.slice(0,i+1).map((path,j)=>`<path d="${path}" fill="none" stroke="${j===i?'#6660dc':'#d3d0c9'}" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round"/>`).join('')}<circle cx="${p[i][0][0]}" cy="${p[i][0][1]}" r="1.4" fill="#13945b"/><circle cx="${p[i].at(-1)[0]}" cy="${p[i].at(-1)[1]}" r="1.4" fill="#e14646"/></svg>`;section.querySelector('.grid').append(cell)}
+ document.querySelector('main').append(section);
+}
+</script></html>

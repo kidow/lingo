@@ -1,0 +1,75 @@
+{
+  "schemaVersion":1,
+  "date":"2026-09-13",
+  "scope":"Character-specific order, direction and cumulative centerline comparison for 奔8 and 慈13 against the exact e-hanja dictionary animations. This is domestic dictionary crosschecking, not exam-body certification or an exact font-outline match.",
+  "evidence":{
+    "sources":"docs/hanja-g3ii-dictionary-12-2026-09-13/sources.json",
+    "priorObservations":"docs/hanja-g3ii-dictionary-12-2026-09-13/observations.json",
+    "observations":"docs/hanja-g3ii-bun-ja-2026-09-13/observations.json",
+    "priorCoveredStrokes":9,
+    "newlyCoveredStrokes":12,
+    "additionalConflictFrames":5,
+    "movingScreenshotsObservedThisRun":17,
+    "combinedCoveredStrokes":21,
+    "cumulativeCandidateStagesReviewed":21,
+    "correctedCumulativeStagesRechecked":13
+  },
+  "strokeRowFields":["index","role","direction","decision"],
+  "entries":[
+    {
+      "glyph":"奔",
+      "strokes":8,
+      "strokeReview":[
+        [1,"大 가로","왼쪽에서 오른쪽","verified"],
+        [2,"大 왼삐침","위에서 아래로 지나 왼쪽 아래","verified"],
+        [3,"大 오른파임","중앙에서 오른쪽 아래","verified"],
+        [4,"중간 十 가로","왼쪽에서 오른쪽","verified"],
+        [5,"중간 十 세로","위에서 아래","verified"],
+        [6,"하단 공통 가로","왼쪽에서 오른쪽으로 연속","verified"],
+        [7,"하단 왼쪽 세로삐침","위에서 아래로 내려온 뒤 왼쪽 아래","verified"],
+        [8,"하단 오른세로","위에서 아래","verified"]
+      ],
+      "sourceStrokeIndices":[1,2,3,4,5,6,7,8],
+      "geometryChanges":[],
+      "geometryFindings":[
+        "8획 사전과 8획 원본 후보를 직접 대조했다. 기존9획 교재의 가로를 합쳐 만든 경로가 아니다.",
+        "가로1과 삐침2의 교차, 가로4와 세로5의 교차, 세로5와 가로6 사이 공간을 확인했다.",
+        "하단 가로6은 하나의 경로이며 7·8획이 뒤에 가로6을 각각 가로지른다. 전체8단계에서 획 순서·방향·구조의 충돌을 발견하지 못했다."
+      ],
+      "wholeCandidateGeometryReviewed":true,
+      "runtimeApproved":true
+    },
+    {
+      "glyph":"慈",
+      "strokes":13,
+      "strokeReview":[
+        [1,"상단 왼점","왼쪽 위에서 오른쪽 아래","verified"],
+        [2,"상단 오른삐침","오른쪽 위에서 왼쪽 아래","verified"],
+        [3,"상단 공통 가로","왼쪽에서 오른쪽으로 연속","verified"],
+        [4,"왼 幺 첫 꺾임","오른쪽 위에서 왼쪽 아래로 간 뒤 오른쪽 아래","verified"],
+        [5,"왼 幺 둘째 꺾임","오른쪽 위에서 왼쪽 아래로 간 뒤 오른쪽 위","verified"],
+        [6,"왼 幺 끝점","왼쪽 위에서 오른쪽 아래","verified"],
+        [7,"오른 幺 첫 꺾임","오른쪽 위에서 왼쪽 아래로 간 뒤 오른쪽 아래","verified"],
+        [8,"오른 幺 둘째 꺾임","오른쪽 위에서 왼쪽 아래로 간 뒤 오른쪽 위","verified"],
+        [9,"오른 幺 끝점","왼쪽 위에서 오른쪽 아래","verified"],
+        [10,"心 왼점","위에서 왼쪽 아래","verified"],
+        [11,"心 굽은 갈고리","위에서 아래로 내려온 뒤 오른쪽으로 굽고 끝을 오른쪽 위로","verified"],
+        [12,"心 가운데점","왼쪽 위에서 오른쪽 아래","verified"],
+        [13,"心 오른점","왼쪽 위에서 오른쪽 아래","verified"]
+      ],
+      "sourceStrokeIndices":[1,2,3,null,5,6,null,8,9,10,null,12,13],
+      "geometryChanges":[4,7,11],
+      "geometryFindings":[
+        "13획 원본 후보를 선택했다. 기존14획 교재의 두 가로를 합치지 않았으며, 가로3은 원래 하나의 경로다.",
+        "원본4·7획의 마지막 오른쪽 위 방향은 사전의 오른쪽 아래 방향과 달랐다. 원본11획의 갈고리는 왼쪽 위로 향하지만 사전은 오른쪽 위로 올라간다.",
+        "현재 검증된 玄·幼·心 등의 경로에서도 이번 끝 방향에 맞는 기증 경로를 찾지 못했다. corrections.json의 세 중심선은 관찰한 역할·꺾임·끝 방향을 바탕으로 별도 작성했다. 사전의 원본 path 데이터는 가져오지 않았다.",
+        "보정 후 13개의 누적 단계를 다시 보았다. 좌우 幺가 분리되고 두 끝점6·9가 해당 하단 가로와 연결된다. 心의 왼점·가운데점·오른점은 굽은11획과 구별되고, 갈고리 끝이 오른점과 충돌하지 않는다.",
+        "정확한 붓 윤곽·비율의 복제가 아닌 역할·방향을 보존하는 중심선 표현이다. 이 보정은 다른 幺·心 포함 글자의 승인을 의미하지 않는다."
+      ],
+      "wholeCandidateGeometryReviewed":true,
+      "runtimeApproved":true
+    }
+  ],
+  "totals":{"glyphs":2,"strokes":21,"verifiedStrokes":21,"unresolvedStrokes":0,"locallyAuthoredReplacementStrokes":3,"reorderedStrokes":0,"splitOrMergedStrokes":0},
+  "next":{"glyphs":["蓮","追","透","還"],"strokes":53,"action":"Compare the exact whole-glyph candidates against dictionary order, including the two dots, fold and final sweep of 辶."}
+}

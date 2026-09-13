@@ -1,0 +1,23 @@
+{
+  "date":"2026-09-13",
+  "status":"passed",
+  "targets":["奔","慈"],
+  "verifiedStrokes":21,
+  "locallyAuthoredReplacementStrokes":3,
+  "checks":[
+    {"command":"node --test lib/hanja-stroke-dictionary.test.ts","passed":9,"failed":0},
+    {"command":"node --test \"lib/hanja*.test.ts\"","passed":169,"failed":0},
+    {"command":"node docs/hanja-g3ii-bun-ja-2026-09-13/verify.mjs --online","status":"passed","liveSourcesChecked":2,"timingRowsChecked":21,"priorCoveredStrokes":9,"newlyCoveredStrokes":12,"additionalConflictFrames":5},
+    {"command":"pnpm exec next build","status":"passed","compiler":"Next.js 16.3.3 Turbopack","typescript":"passed","staticPages":7},
+    {"command":"git diff --check","status":"passed"}
+  ],
+  "coverage":{"total":5978,"before":1480,"after":1482,"remaining":4496,"grade3iiTotal":500,"grade3iiBefore":490,"grade3iiAfter":492},
+  "grade3iiRemaining":["蓮","遷","追","兔","透","弊","響","還"],
+  "existingFourPublishedEntriesUnchanged":true,
+  "limits":[
+    "Three 慈 paths are locally authored replacements based on observed directions, not copied dictionary artwork or reused approved donor paths.",
+    "No pixel-identical font matching, handwriting grading or exam-body certification is claimed.",
+    "Full shared content-generating prebuild was not run; its dictionary bundle validator was run separately.",
+    "No deployment or push was performed."
+  ]
+}

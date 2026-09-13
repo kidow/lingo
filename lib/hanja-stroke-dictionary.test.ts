@@ -18,17 +18,18 @@ const originalSources = JSON.parse(read('docs/hanja-g3ii-gyeol-mun-2026-09-13/or
   name: string; entries: { glyph: string; medians: number[][][] }[]
 }[]
 const fullOriginals = JSON.parse(read('docs/hanja-g3ii-sam-pung-2026-09-13/originals.json')) as typeof originalSources[number]
-const candidates = [...originalSources.find(s => s.name === 'MM')!.entries, ...fullOriginals.entries].map(e => ({
+const bunJaOriginals = JSON.parse(read('docs/hanja-g3ii-bun-ja-2026-09-13/originals.json')) as typeof originalSources[number]
+const candidates = [...originalSources.find(s => s.name === 'MM')!.entries, ...fullOriginals.entries, ...bunJaOriginals.entries].map(e => ({
   character: e.glyph, medians: e.medians, strokes: normalizeMedians(e.medians),
 }))
 const clone = <T>(value: T): T => structuredClone(value)
 
-test('dictionary crosscheck publishes four reviewed candidates and 46 strokes', () => {
+test('dictionary crosscheck publishes six reviewed candidates and 67 strokes', () => {
   const bundle = buildDictionaryBundle()
   assert.deepEqual(loadDictionaryBundle(bundle), HANJA_DICTIONARY_STROKES)
   assert.doesNotThrow(() => validateDictionaryBundle())
-  assert.deepEqual(HANJA_DICTIONARY_STROKES.map(e => e.glyph), ['訣', '紋', '森', '楓'])
-  assert.equal(HANJA_DICTIONARY_STROKES.reduce((n, e) => n + e.paths.length, 0), 46)
+  assert.deepEqual(HANJA_DICTIONARY_STROKES.map(e => e.glyph), ['訣', '紋', '森', '楓', '奔', '慈'])
+  assert.equal(HANJA_DICTIONARY_STROKES.reduce((n, e) => n + e.paths.length, 0), 67)
   for (const entry of HANJA_DICTIONARY_STROKES) {
     assert.deepEqual(hanjaStrokeData({ glyph: entry.glyph, strokes: entry.paths.length }), entry)
     assert.equal(hanjaStrokeData({ glyph: entry.glyph, strokes: entry.paths.length + 1 }), null)
@@ -124,6 +125,51 @@ test('runtime guards reject substituted sources, broader direction scope, extra 
   }
 })
 
+test('奔 and 慈 cover all 21 observed strokes and preserve the exact three local replacements', () => {
+  type Row = [string, number, number, number, number, boolean]
+  const previous = JSON.parse(read('docs/hanja-g3ii-dictionary-12-2026-09-13/observations.json')) as { rows: Row[] }
+  const observations = JSON.parse(read('docs/hanja-g3ii-bun-ja-2026-09-13/observations.json')) as { rows: Row[]; additionalDirectionObservations: Row[] }
+  const review = JSON.parse(read('docs/hanja-g3ii-bun-ja-2026-09-13/review.json')) as { entries: {
+    glyph: string; strokes: number; strokeReview: [number, string, string, string][];
+    sourceStrokeIndices: (number | null)[]; geometryChanges: number[]; wholeCandidateGeometryReviewed: boolean; runtimeApproved: boolean
+  }[] }
+  const corrections = JSON.parse(read('docs/hanja-g3ii-bun-ja-2026-09-13/corrections.json')) as { entries: { stroke: number; path: string }[] }
+  assert.deepEqual(corrections.entries.map(e => e.stroke), [4, 7, 11])
+  assert.deepEqual(review.entries.map(e => e.glyph), ['奔', '慈'])
+  assert.equal(observations.rows.length, 12)
+  assert.equal(observations.additionalDirectionObservations.length, 5)
+  for (const row of [...observations.rows, ...observations.additionalDirectionObservations]) {
+    assert.ok(row[2] > 0 && row[2] < row[3] && row[4] === row[1] - 1 && row[5])
+  }
+  for (const entry of review.entries) {
+    const sequence = Array.from({ length: entry.strokes }, (_, i) => i + 1)
+    const rows = [...previous.rows, ...observations.rows].filter(row => row[0] === entry.glyph).sort((a, b) => a[1] - b[1])
+    assert.deepEqual(rows.map(row => row[1]), sequence)
+    assert.deepEqual(entry.strokeReview.map(row => row[0]), sequence)
+    assert.ok(entry.strokeReview.every(row => row[1] && row[2] && row[3] === 'verified'))
+    assert.ok(entry.wholeCandidateGeometryReviewed && entry.runtimeApproved)
+    const published = HANJA_DICTIONARY_STROKES.find(e => e.glyph === entry.glyph)!
+    const original = normalizeMedians(bunJaOriginals.entries.find(e => e.glyph === entry.glyph)!.medians)
+    const changedIndices = published.paths.flatMap((path, i) => path === original[i] ? [] : [i + 1])
+    assert.deepEqual(changedIndices, entry.glyph === '慈' ? [4, 7, 11] : [])
+    assert.deepEqual(entry.geometryChanges, changedIndices)
+    assert.deepEqual(published.sourceStrokeIndices, entry.sourceStrokeIndices)
+    assert.equal(published.sourceReference.dictionaryDirectionStrokes, sequence.join(','))
+    assert.equal(published.sourceReference.orderUrl, published.sourceReference.dictionarySvgUrl)
+    for (const index of changedIndices) {
+      assert.equal(published.paths[index - 1], corrections.entries.find(e => e.stroke === index)!.path)
+      assert.equal(published.sourceStrokeIndices[index - 1], null)
+      const reverted = clone(published)
+      reverted.paths = published.paths.map((path, i) => i === index - 1 ? original[i] : path)
+      reverted.pathsSha256 = createHash('sha256').update(JSON.stringify(reverted.paths)).digest('hex')
+      assert.throws(() => validateDictionaryReview(reverted, entry.strokes), /published entry/)
+    }
+  }
+  for (const suffix of ['bun-ja-2026-09-13/review.json', 'bun-ja-2026-09-13/corrections.json', 'bun-ja-2026-09-13/observations.json']) {
+    assert.throws(() => validateDictionaryProofs(path => read(path) + (path.endsWith(suffix) ? ' ' : '')), /proof mismatch/)
+  }
+})
+
 test('reconstruction rejects missing, duplicate, moved, reordered or reversed original candidates', () => {
   assert.throws(() => buildDictionaryBundle(candidates.slice(1)), /candidate set/)
   assert.throws(() => buildDictionaryBundle([candidates[0], candidates[0]]), /candidate set/)
@@ -150,9 +196,9 @@ test('valid metadata or recalculated hashes cannot authorize edited or reordered
 test('audit reports the dictionary crosscheck separately and reconstructs both corrected and unchanged geometry', () => {
   const characters = Object.entries(DICTIONARY_REFERENCES).map(([glyph, ref]) => ({ glyph, strokes: ref.strokes, readingGrade: '3급II' }))
   const audit = auditStrokes(characters, [], HANJA_DICTIONARY_STROKES, [], candidates)
-  assert.equal(audit.verificationSources.dictionary, 4)
+  assert.equal(audit.verificationSources.dictionary, 6)
   assert.equal(audit.verificationSources.eomunhoe, 0)
-  assert.equal(audit.playback['dictionary-crosschecked'], 4)
+  assert.equal(audit.playback['dictionary-crosschecked'], 6)
   assert.throws(() => auditStrokes(characters, [], HANJA_DICTIONARY_STROKES), /geometry mismatch/)
   const corrupt = clone(candidates)
   corrupt[1].medians[0][0][0] += 1
