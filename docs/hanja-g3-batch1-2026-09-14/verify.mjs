@@ -17,6 +17,7 @@ const catalog = json('../../content/hanja/characters/g3.json').characters
 const held = [...'肩絹繫顧郭郊矯糾那奈稻']
 const corrected = [...'卿癸愧驅乃篤']
 const approved = review.records.filter(r => r.decision !== 'held')
+const runtimeBaseline = process.argv.includes('--runtime-baseline')
 const glyphs = list => list.map(r => r.glyph)
 const sum = list => list.reduce((n, r) => n + r.expectedStrokes, 0)
 
@@ -70,9 +71,10 @@ for (const r of review.records) {
   assert.deepEqual(displayed, order.map(i => normalized[i - 1]))
 
   if (r.decision === 'held') {
-    assert.equal(runtime, null, r.glyph + ' must remain disabled')
+    // Later documented batches can resolve these historical holds.
+    if (runtimeBaseline) assert.equal(runtime, null, r.glyph + ' must remain disabled at the original baseline')
     assert.ok(Object.values(r.checks).some(c => c !== 'match'))
-    assert.ok(!TEXTBOOK_REVIEW_REGISTRY.records.some(e => e.glyph === r.glyph))
+    if (runtimeBaseline) assert.ok(!TEXTBOOK_REVIEW_REGISTRY.records.some(e => e.glyph === r.glyph))
     continue
   }
   assert.deepEqual(r.checks, { order: 'match', direction: 'match', boundaries: 'match', glyphForm: 'match' })
@@ -112,10 +114,12 @@ for (const r of review.records) {
 for (const [file, before] of Object.entries(baseline)) {
   const list = json('../../' + file)[before.key]
   assert.equal(hash(list.slice(0, before.count)), before.prefixSha256, file)
-  const added = list.slice(before.count)
+  const added = list.slice(before.count, before.count + (before.key === 'recipes' ? corrected.length : approved.length))
   assert.deepEqual(glyphs(added), before.key === 'recipes' ? corrected : glyphs(approved))
 }
-assert.equal(HANJA_STROKES.length, 1540)
-assert.equal(catalog.filter(c => hanjaStrokeData(c)).length, 39)
+if (runtimeBaseline) {
+  assert.equal(HANJA_STROKES.length, 1540)
+  assert.equal(catalog.filter(c => hanjaStrokeData(c)).length, 39)
+}
 assert.equal(new Set(HANJA_STROKES.map(e => e.glyph)).size, HANJA_STROKES.length)
-console.log(JSON.stringify({ result: 'pass', reviewed: { characters: 50, strokes: 556 }, applied: { characters: 39, strokes: 420 }, orderCorrections: 6, held: { characters: 11, strokes: 136 }, runtime: { applied: 1540, total: 5978, remaining: 4438 }, grade3: { applied: 39, total: 317, remaining: 278 }, preservedPriorRecords: true, publisherAssetsCopied: 0 }))
+console.log(JSON.stringify({ result: 'pass', reviewed: { characters: 50, strokes: 556 }, applied: { characters: 39, strokes: 420 }, orderCorrections: 6, heldAtReview: { characters: 11, strokes: 136 }, runtimeAtReview: { applied: 1540, total: 5978, remaining: 4438 }, grade3AtReview: { applied: 39, total: 317, remaining: 278 }, currentRuntime: HANJA_STROKES.length, runtimeBaselineChecked: runtimeBaseline, preservedPriorRecords: true, publisherAssetsCopied: 0 }))
