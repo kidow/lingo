@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-14",
+  "scope": "4급II·4급 held 11: exact source acquisition and whole-glyph review only",
+  "sourceCheck": {
+    "command": "node docs/hanja-g4-held-11-2026-09-14/verify.mjs --online",
+    "status": "passed",
+    "exitCode": 0,
+    "targetGlyphs": 11,
+    "targetStrokes": 131,
+    "exactPublicSources": 11,
+    "sourceTimingRows": 131,
+    "priorReviewPins": 4,
+    "liveSourcesChecked": 11,
+    "newRuntimeApprovals": 0,
+    "currentRuntimeGlyphs": 1490,
+    "currentCatalogGlyphs": 5978,
+    "currentPlayableTargets": [],
+    "currentThroughG3iiPlayable": 1489,
+    "currentThroughG3iiTotal": 1500
+  },
+  "browser": {
+    "exactDetailPagesSelected": ["液", "藝", "衛", "砲", "豊", "筋", "姉", "獎", "鍾", "冊", "灰"],
+    "wholeGlyphSourceSvgObserved": ["液", "藝", "衛", "砲", "豊", "筋", "姉", "獎", "鍾", "冊", "灰"],
+    "fullStrokeDirectionAuditsCompleted": 0,
+    "candidatePathsApproved": 0,
+    "thirdPartyArtworkSaved": false
+  },
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 192,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "build": "Not rerun: only a research report, source facts and a standalone verification script were added; runtime code and data are unchanged.",
+  "nextRecommendedBatch": {"glyphs": ["冊", "灰", "姉"], "strokes": 19, "task": "Observe all stroke directions and compare licensed candidate paths."}
+}
