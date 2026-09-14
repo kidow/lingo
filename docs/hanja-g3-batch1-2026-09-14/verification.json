@@ -1,0 +1,62 @@
+{
+  "reviewedAt": "2026-09-14",
+  "batch": {
+    "result": "pass",
+    "reviewed": {
+      "characters": 50,
+      "strokes": 556
+    },
+    "applied": {
+      "characters": 39,
+      "strokes": 420
+    },
+    "orderCorrections": 6,
+    "held": {
+      "characters": 11,
+      "strokes": 136
+    },
+    "runtime": {
+      "applied": 1540,
+      "total": 5978,
+      "remaining": 4438
+    },
+    "grade3": {
+      "applied": 39,
+      "total": 317,
+      "remaining": 278
+    },
+    "preservedPriorRecords": true,
+    "publisherAssetsCopied": 0
+  },
+  "checks": {
+    "batchVerifier": {
+      "command": "node docs/hanja-g3-batch1-2026-09-14/verify.mjs",
+      "result": "pass"
+    },
+    "hanjaTests": {
+      "command": "node --test --test-reporter=spec \"lib/hanja*.test.ts\"",
+      "exitCode": 0,
+      "passed": 220,
+      "failed": 0
+    },
+    "freshBundle": {
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "publishedCharacters": 1008,
+      "publishedBundleMatches": true
+    },
+    "productionBuild": {
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "nextVersion": "16.3.3",
+      "typeScript": "passed",
+      "staticPages": 7
+    }
+  },
+  "limitations": [
+    "Publisher-reference comparison, not Korea Eomunhoe certification.",
+    "Source videos and frame sheets are not redistributed; original source URLs and hashes are recorded.",
+    "Source completion times are conservative sampled bounds, not exact pen-lift timestamps.",
+    "11 held characters remain disabled; no runtime paths were inferred for them."
+  ]
+}
