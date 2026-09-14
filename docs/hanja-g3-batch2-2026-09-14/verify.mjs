@@ -39,8 +39,14 @@ for (const item of queue.entries) {
   if (observation.decision === 'held') {
     assert.ok(observation.conflicts.length)
     assert.ok(observation.notes.trim())
-    assert.equal(HANJA_STROKES.find(e => e.glyph === item.glyph), undefined)
-    assert.equal(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), undefined)
+    const resolved = json('../hanja-g3-batch2-followup-2026-09-14/review.json').records.find(r => r.glyph === item.glyph)
+    if (resolved) {
+      assert.deepEqual(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), resolved)
+      validateTextbookReview(HANJA_STROKES.find(e => e.glyph === item.glyph), item.strokes)
+    } else {
+      assert.equal(HANJA_STROKES.find(e => e.glyph === item.glyph), undefined)
+      assert.equal(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), undefined)
+    }
     continue
   }
   const record = review.records.find(r => r.glyph === item.glyph)

@@ -1,0 +1,212 @@
+[
+  {
+    "glyph": "屯",
+    "decision": "held",
+    "conflicts": [3],
+    "corroboratedDirections": [1],
+    "notes": "Publisher stroke 1 is right-to-left, independently corroborated by Naver/e-hanja stroke 1. Publisher stroke 3 is bottom-to-top, but the dictionary stroke 3 is top-to-bottom. Sources conflict; no candidate reversal or runtime registration."
+  },
+  {
+    "glyph": "鈍",
+    "decision": "held",
+    "conflicts": [11],
+    "corroboratedDirections": [9],
+    "notes": "Both publisher and dictionary animation timings write 金 before 屯. Dictionary outline indices 1/3 are chronological strokes 9/11: their explicit timings are after 金 despite earlier XML order. They verify a right-to-left bar and top-to-bottom right stem. Publisher right stem (11) is bottom-to-top. Direction conflict remains; no runtime registration."
+  },
+  {
+    "glyph": "騰",
+    "decision": "matched",
+    "candidate": "MM",
+    "ends": [
+      2.5,
+      5,
+      6.5,
+      7.5,
+      8.5,
+      9.5,
+      10.5,
+      12,
+      14.5,
+      16,
+      17.5,
+      18.5,
+      19.5,
+      20,
+      21,
+      23,
+      24,
+      25,
+      25.5,
+      26.5
+    ],
+    "notes": "Reflected licensed dot paths 5/6 horizontally within each original bounding box: left-falling left mark, right-falling right mark. 馬 starts with candidate 12 then 11; all other source strokes preserved. All 20 cumulative corrected paths, start/end markers and publisher frames 0–26.5s were compared."
+  },
+  {
+    "glyph": "劣",
+    "decision": "matched",
+    "candidate": "Ja",
+    "ends": [
+      1,
+      2,
+      3,
+      6,
+      9,
+      11.5
+    ],
+    "notes": "Selected pinned animCJK Ja instead of MM: its first vertical includes the source leftward hook. All six unchanged Ja paths, their boundaries and direction, compared with publisher 0–11.5s."
+  },
+  {
+    "glyph": "廉",
+    "decision": "matched",
+    "candidate": "MM",
+    "ends": [
+      0.5,
+      2.5,
+      5,
+      6.5,
+      7.5,
+      8.5,
+      10.5,
+      12.5,
+      14.5,
+      16.5,
+      18.5,
+      20.5,
+      22
+    ],
+    "notes": "Reflected licensed stroke 4 horizontally to the publisher left-falling form; stroke 5 also falls left and is preserved. Remaining 12 paths preserved. All 13 corrected cumulative paths and publisher 0–22s checked."
+  },
+  {
+    "glyph": "零",
+    "decision": "matched",
+    "candidate": "MM",
+    "ends": [
+      1,
+      2.5,
+      4,
+      5,
+      5.5,
+      6.5,
+      7.5,
+      8.5,
+      10,
+      12,
+      13.5,
+      15.5,
+      16.5
+    ],
+    "notes": "Authored separate display-coordinate strokes 11–13 for the publisher Korean 令 form: short horizontal, horizontal-turn-down-left-hook, then central vertical. They have null upstream indices; no proprietary SVG paths copied. Original strokes 1–10 preserved. All 13 corrected cumulative paths and source 0–16.5s checked, plus enlarged final topology comparison."
+  },
+  {
+    "glyph": "淚",
+    "decision": "matched",
+    "candidate": "Ja",
+    "ends": [
+      0.5,
+      1.5,
+      3,
+      4,
+      5.5,
+      6.5,
+      9,
+      10.5,
+      12.5,
+      14.5,
+      15.5
+    ],
+    "notes": "Selected pinned animCJK Ja: stroke 4 is the required right-to-left 戶 roof. All 11 unchanged candidate strokes, water lift, 戶 body, 犬 crossing and final dot compared with source 0–15.5s."
+  },
+  {
+    "glyph": "冒",
+    "decision": "matched",
+    "candidate": "MM",
+    "ends": [
+      1,
+      3,
+      4,
+      5.5,
+      7,
+      9.5,
+      10.5,
+      11.5,
+      13
+    ],
+    "notes": "Shortened the endpoints of licensed stroke 4 to preserve two clearly detached horizontal bars inside 冃 at playback width 5. All other points and order retained. All nine cumulative paths, publisher 0–13s and enlarged final topology reviewed."
+  },
+  {
+    "glyph": "伴",
+    "decision": "matched",
+    "candidate": "MM",
+    "ends": [
+      1.5,
+      3,
+      4,
+      5,
+      6.5,
+      8,
+      10.5
+    ],
+    "notes": "Reflected each of licensed dots 3/4 horizontally inside its own bounding box: left mark falls left, right mark falls right. All seven corrected paths and publisher 0–10.5s checked."
+  },
+  {
+    "glyph": "叛",
+    "decision": "matched",
+    "candidate": "MM",
+    "ends": [
+      0.5,
+      1.5,
+      3,
+      4.5,
+      7.5,
+      8.5,
+      10.5,
+      13.5,
+      15
+    ],
+    "notes": "Reflected licensed dots 1/2 horizontally; preserved the long descending stem and right-to-left 反 roof, which the alternate Ja candidate did not match. All nine corrected paths and publisher 0–15s checked."
+  },
+  {
+    "glyph": "邦",
+    "decision": "matched",
+    "candidate": "Ja",
+    "ends": [
+      1,
+      2,
+      3.5,
+      6,
+      7.5,
+      9.5,
+      12
+    ],
+    "notes": "All seven Ja paths preserved. Independently numbered Naver/e-hanja outlines and frozen 0/25/50/75/100 percent reveals distinguish stroke 5 horizontal/fall from stroke 6 curve/left hook. Clip references and explicit animation schedule checked against SHA-pinned source; publisher 0–12s and all candidate paths agree."
+  },
+  {
+    "glyph": "飜",
+    "decision": "matched",
+    "candidate": "Ja",
+    "ends": [
+      1,
+      2,
+      3,
+      4,
+      5.5,
+      7,
+      8.5,
+      9.5,
+      11,
+      11.5,
+      12.5,
+      14,
+      17,
+      18,
+      19,
+      21.5,
+      22.6,
+      24.5,
+      28,
+      28.5,
+      29.5
+    ],
+    "notes": "Exchanged candidate 10/11 for 田 inner horizontal before vertical. Source 21.2–23.4s sampled at 5fps and enlarged: stroke 17 begins upper-right and falls down-left, so no reversal; reshaped its overly wide candidate route into a steeper left fall. All 21 corrected cumulative paths including final row, source 0–29.5s, and enlarged completed glyph checked."
+  }
+]
