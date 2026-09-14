@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "checkedAt": "2026-09-14",
+  "result": "pass",
+  "scope": "Source inventory only; no runtime approvals or per-stroke visual verification.",
+  "checks": [
+    {
+      "name": "online source audit",
+      "result": "pass",
+      "details": "Pinned 1800-row XLSX and three geometry corpus hashes verified; 315 video HEAD 200 and Range 206 responses with MP4 ftyp prefix."
+    },
+    {
+      "name": "supplemental exact-form sources",
+      "result": "pass",
+      "details": "Browser-rendered 隷 16 strokes and 隣 15 strokes; both SVG titles, distinct stroke ID counts and SHA-256 recorded. Entire animation sequences remain unreviewed."
+    },
+    {
+      "command": "node docs/hanja-g3-inventory-2026-09-14/verify.mjs --runtime-baseline",
+      "result": "pass",
+      "characters": 317,
+      "strokes": 3483,
+      "wholeStrokeReview": 286,
+      "sourceFormReview": 3,
+      "geometryCountReview": 25,
+      "geometryNeeded": 3,
+      "sourceUnavailable": 0,
+      "firstBatch": {
+        "characters": 50,
+        "strokes": 556
+      },
+      "runtime": {
+        "allCharacters": 1501,
+        "grade3Enabled": 0,
+        "newApprovals": 0
+      }
+    },
+    {
+      "command": "node --check docs/hanja-g3-inventory-2026-09-14/audit.mjs",
+      "result": "pass"
+    },
+    {
+      "name": "Node import of audit.mjs",
+      "result": "pass",
+      "nodeVersion": "v25.9.0",
+      "details": "All module dependencies resolve and the audit function exports without automatically running network work."
+    }
+  ],
+  "applicationCodeChanged": false,
+  "applicationBuildRun": false,
+  "applicationBuildReason": "Documentation and read-only discovery/verification scripts only; no application or runtime data changes."
+}
