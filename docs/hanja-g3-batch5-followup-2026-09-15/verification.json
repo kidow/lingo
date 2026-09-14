@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-15",
+  "status": "pass",
+  "reviewedCharacters": 10,
+  "reviewedStrokes": 120,
+  "addedCharacters": 10,
+  "addedStrokes": 120,
+  "coordinateCorrections": 20,
+  "orderCorrectedGlyphs": [
+    "墻",
+    "舟"
+  ],
+  "heldInThisFollowup": 0,
+  "runtime": {
+    "applied": 1721,
+    "total": 5978,
+    "remaining": 4257,
+    "percent": 28.8
+  },
+  "grade3": {
+    "applied": 220,
+    "total": 317,
+    "remaining": 97,
+    "percent": 69.4
+  },
+  "parentBatch": {
+    "initialHeld": 38,
+    "releasedByThisFollowup": 10,
+    "remainingHeld": 28,
+    "remainingHeldStrokes": 336
+  },
+  "checks": [
+    {
+      "command": "node docs/hanja-g3-batch5-followup-2026-09-15/verify.mjs --fresh",
+      "status": "pass",
+      "freshSourcePins": 10,
+      "existingPrefixesPreserved": true
+    },
+    {
+      "command": "node docs/hanja-g3-batch5-2026-09-15/verify.mjs",
+      "status": "pass"
+    },
+    {
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "status": "pass",
+      "emittedCharacters": 1189,
+      "publishedBundleMatches": true
+    },
+    {
+      "command": "node --test \"lib/hanja*.test.ts\"",
+      "status": "pass",
+      "tests": 231,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "pnpm run build",
+      "status": "pass"
+    }
+  ],
+  "proprietaryAssetsSaved": 0
+}
