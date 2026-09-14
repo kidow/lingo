@@ -1,0 +1,112 @@
+{
+  "status": "review-complete",
+  "date": "2026-09-15",
+  "kind": "stroke-boundary-and-count-followup",
+  "characters": 6,
+  "strokes": 87,
+  "glyphs": [
+    "爵",
+    "遵",
+    "遲",
+    "遞",
+    "逮",
+    "逐"
+  ],
+  "sourceQueue": "../hanja-g3-batch5-2026-09-15/queue.json",
+  "sourceObservations": "../hanja-g3-batch5-2026-09-15/observations.json",
+  "entries": [
+    {
+      "glyph": "爵",
+      "strokes": 18,
+      "candidate": "MM",
+      "candidateCounts": {
+        "MM": 17,
+        "Ja": 17,
+        "Ko": null
+      },
+      "conflicts": [
+        "stroke-count",
+        "boundaries",
+        "glyph-form"
+      ],
+      "notes": "Whole source sequence 0–18.5s and all 17 candidate paths inspected. Catalog/source use 18 strokes versus 17 in both candidate corpora. Lower-left structure and top right 爫 stroke differ. Do not split or relabel the candidate automatically; independent boundary mapping required."
+    },
+    {
+      "glyph": "遵",
+      "strokes": 16,
+      "candidate": "MM",
+      "candidateCounts": {
+        "MM": 15,
+        "Ja": 15,
+        "Ko": null
+      },
+      "conflicts": [
+        "stroke-count",
+        "boundaries",
+        "direction",
+        "glyph-form"
+      ],
+      "notes": "Source full sequence through 23s inspected versus all fifteen candidate strokes. Publisher top 八 opens outward rather than candidate inward 丷; source 辶 has an additional independently drawn stage. 16 catalog/source strokes versus 15 candidate requires boundary/path correction, not arbitrary splitting."
+    },
+    {
+      "glyph": "遲",
+      "strokes": 16,
+      "candidate": "Ja",
+      "candidateCounts": {
+        "MM": 15,
+        "Ja": 16,
+        "Ko": null
+      },
+      "conflicts": [
+        "boundaries",
+        "glyph-form"
+      ],
+      "notes": "Full source 0–21s and sixteen Ja paths inspected. Source 辶 uses one dot, a first bent stroke and a separate descending stroke; Ja uses two dots and one joined bent/descending stroke. Equal count does not preserve boundaries. Dense inner short bars also require spacing review."
+    },
+    {
+      "glyph": "遞",
+      "strokes": 14,
+      "candidate": "Ja",
+      "candidateCounts": {
+        "MM": 13,
+        "Ja": 14,
+        "Ko": null
+      },
+      "conflicts": [
+        "boundaries",
+        "glyph-form"
+      ],
+      "notes": "Whole 0–22.5s source and fourteen Ja cumulative paths reviewed. Source 辶 has one dot and two independently drawn bent/descending stages; Ja has two dots and one joined stage. Also inspect tight inner 虎 contacts after boundary correction."
+    },
+    {
+      "glyph": "逮",
+      "strokes": 12,
+      "candidate": "MM",
+      "candidateCounts": {
+        "MM": 11,
+        "Ja": 11,
+        "Ko": null
+      },
+      "conflicts": [
+        "stroke-count",
+        "boundaries"
+      ],
+      "notes": "Whole 0–18.5s source and eleven MM cumulative paths reviewed. Twelve catalog/source strokes versus eleven candidates; extra independent 辶 bent/descending boundary is absent in MM. Preserve hold until that split and corresponding paths are directly reviewed."
+    },
+    {
+      "glyph": "逐",
+      "strokes": 11,
+      "candidate": "MM",
+      "candidateCounts": {
+        "MM": 10,
+        "Ja": 10,
+        "Ko": null
+      },
+      "conflicts": [
+        "stroke-count",
+        "boundaries"
+      ],
+      "notes": "Whole 0–17s source and ten MM candidate paths reviewed. Eleven catalog/source strokes versus ten; publisher 辶 separately draws first bend then descending bend, MM combines them. Boundary evidence and path splitting must be reviewed before application."
+    }
+  ]
+}

@@ -15,14 +15,17 @@ const generated = prepare()
 const firstFollowUp = '../hanja-g3-batch5-followup-2026-09-15/'
 const secondFollowUp = '../hanja-g3-batch5-followup2-2026-09-15/'
 const thirdFollowUp = '../hanja-g3-batch5-followup3-2026-09-15/'
+const fourthFollowUp = '../hanja-g3-batch5-followup4-2026-09-15/'
 const firstReview = json(firstFollowUp + 'review.json').records
 const secondReview = json(secondFollowUp + 'review.json').records
 const thirdReview = json(thirdFollowUp + 'review.json').records
+const fourthReview = json(fourthFollowUp + 'review.json').records
 assert.deepEqual(firstReview.map(e => e.glyph), json('./next-batch.json').glyphs)
 assert.deepEqual(secondReview.map(e => e.glyph), json(firstFollowUp + 'next-batch.json').glyphs)
 assert.deepEqual(thirdReview.map(e => e.glyph), json(secondFollowUp + 'next-batch.json').glyphs)
-const followUpReview = [...firstReview, ...secondReview, ...thirdReview]
-const followUpCandidates = [firstFollowUp, secondFollowUp, thirdFollowUp].flatMap(path => json(path + 'candidate-paths.json').characters)
+assert.deepEqual(fourthReview.map(e => e.glyph), json(thirdFollowUp + 'next-batch.json').glyphs)
+const followUpReview = [...firstReview, ...secondReview, ...thirdReview, ...fourthReview]
+const followUpCandidates = [firstFollowUp, secondFollowUp, thirdFollowUp, fourthFollowUp].flatMap(path => json(path + 'candidate-paths.json').characters)
 assert.equal(queue.entries.length, 50)
 assert.equal(queue.entries.reduce((sum, e) => sum + e.strokes, 0), 573)
 assert.equal(new Set(queue.entries.map(e => e.glyph)).size, 50)
@@ -85,6 +88,7 @@ const catalog = json('../../content/hanja/characters/g3.json').characters
 const applied = new Set(HANJA_STROKES.map(e => e.glyph))
 const grade3Applied = catalog.filter(e => applied.has(e.glyph)).length
 const stillHeld = held.filter(e => !followUpReview.some(r => r.glyph === e.glyph))
+assert.deepEqual(stillHeld.map(e => e.glyph), json(fourthFollowUp + 'next-batch.json').glyphs)
 const result = {
   result: 'pass', reviewedCharacters: 50, reviewedStrokes: 573,
   addedCharacters: matched.length, addedStrokes: review.records.reduce((sum, r) => sum + r.expectedStrokes, 0),
