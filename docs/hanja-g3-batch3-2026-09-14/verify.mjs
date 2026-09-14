@@ -39,8 +39,17 @@ for (const item of queue.entries) {
   if (observation.decision === 'held') {
     assert.ok(observation.conflicts.length)
     assert.ok(observation.notes.trim())
-    assert.equal(HANJA_STROKES.find(e => e.glyph === item.glyph), undefined)
-    assert.equal(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), undefined)
+    // Preserve this batch's historical hold; a separate whole-glyph review may resolve it.
+    const resolved = json('../hanja-g3-batch3-followup-2026-09-14/review.json').records.find(e => e.glyph === item.glyph)
+    if (resolved) {
+      assert.deepEqual(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), resolved)
+      const entry = HANJA_TEXTBOOK_STROKES.find(e => e.glyph === item.glyph)
+      assert.ok(entry)
+      validateTextbookReview(entry, item.strokes)
+    } else {
+      assert.equal(HANJA_STROKES.find(e => e.glyph === item.glyph), undefined)
+      assert.equal(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), undefined)
+    }
     continue
   }
   assert.equal(original.medians.length, item.strokes)
