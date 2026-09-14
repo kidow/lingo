@@ -5,7 +5,7 @@ export const HANJA_DICTIONARY_SOURCE = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊·冊·灰. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊·冊·灰·液·砲·筋. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
   "name": "Make Me a Hanzi with reviewed local corrections",
@@ -14,7 +14,7 @@ export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
 } as const
 export const DICTIONARY_REFERENCES: Readonly<Record<string, {
   strokes: number; pathsSha256: string; directions: string; svgUrl: string; svgSha256: string
-  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye' | 'g4-three'
+  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye' | 'g4-three' | 'ek-po-geun'
   sourceStrokeIndices?: readonly (number | null)[]
 }>> = {
   "訣": {
@@ -230,11 +230,84 @@ export const DICTIONARY_REFERENCES: Readonly<Record<string, {
       null
     ]
   },
+  "液": {
+    "strokes": 11,
+    "pathsSha256": "ebbb0c1f212cf859ba0cf21c7a6c6fc9da32877fc7babcda25555f29ec53870c",
+    "originalMediansSha256": "e8563155d867cbc30342fbfac15635c7a05ae4a55fefc24d2bf2484f78c4d041",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6D00/6DB2.svg",
+    "svgSha256": "59a03301affa80f8972c9a8e07017b31aa0965b8a1d7ef88cd8dc9e5ee1d55d2",
+    "wholeGlyphReview": "ek-po-geun",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      null,
+      5,
+      6,
+      7,
+      8,
+      9,
+      null,
+      11
+    ]
+  },
+  "砲": {
+    "strokes": 10,
+    "pathsSha256": "a902f2539614204af647ecf958701d6aa815ec72f26ee90198ba430b96b855d2",
+    "originalMediansSha256": "96b8755ac3c9838b1b013a5c55c129c6eb9a8e8c19ed108de48ba0270b65b7e3",
+    "directions": "1,2,3,4,5,6,7,8,9,10",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7800/7832.svg",
+    "svgSha256": "8529fee989c031ad2a6023af849a88ac8494b024259322b2f20112de16d1ca14",
+    "wholeGlyphReview": "ek-po-geun",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      null,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "筋": {
+    "strokes": 12,
+    "pathsSha256": "522136746fce5f285f54ce9ff0b4f65323f3036dfee8f3d0226dee76e390a7de",
+    "originalMediansSha256": "b424b0af844a15f2a0d6805d9c0641e26037206995860dcef34b350b3d917425",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11,12",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7B00/7B4B.svg",
+    "svgSha256": "b8c90a36bed0061541950c9d91528b03a091d31be7c9cc68c4d909225f712790",
+    "wholeGlyphReview": "ek-po-geun",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      null,
+      4,
+      5,
+      null,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
 }
 
 export function dictionarySourceReference(glyph: string) {
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref) throw new Error('Unreviewed dictionary glyph: ' + glyph)
+  if (ref.wholeGlyphReview === 'ek-po-geun') return {
+    orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
+    dictionaryDirectionStrokes: ref.directions,
+    orderReviewSha256: 'cdae941e0f6123ea540335789f7cba4c6aa575d02cbff37e494470b86321262b',
+    geometryReviewSha256: 'cdae941e0f6123ea540335789f7cba4c6aa575d02cbff37e494470b86321262b',
+    directionReviewSha256: '34be6eceefc11bc26b767adfd261c0f6fefd50dc08ea5860d4d8c28931a31345',
+  }
   if (ref.wholeGlyphReview === 'g4-three') return {
     orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
     dictionaryDirectionStrokes: ref.directions,
@@ -311,7 +384,7 @@ export function loadDictionaryBundle(bundle: DictionaryBundle): readonly HanjaDi
   const seen = new Set<string>()
   return bundle.characters.map(entry => {
     const ref = entry && Object.hasOwn(DICTIONARY_REFERENCES, entry.glyph) ? DICTIONARY_REFERENCES[entry.glyph] : undefined
-    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== (ref.wholeGlyphReview === 'g4-three' ? '2026-09-14' : '2026-09-13')
+    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== (ref.wholeGlyphReview === 'g4-three' || ref.wholeGlyphReview === 'ek-po-geun' ? '2026-09-14' : '2026-09-13')
       || entry.geometrySource !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
       || entry.geometryCorrection !== 'dictionary-crosscheck-' + entry.glyph.codePointAt(0)!.toString(16) + '-v1'
       || entry.pathsSha256 !== ref.pathsSha256 || !Array.isArray(entry.paths) || entry.paths.length !== ref.strokes

@@ -23,17 +23,18 @@ const walkFourOriginals = JSON.parse(read('docs/hanja-g3ii-walk-4-2026-09-13/ori
 const rabbitOriginals = JSON.parse(read('docs/hanja-g3ii-rabbit-2026-09-13/originals.json')) as typeof originalSources[number]
 const pyeOriginals = JSON.parse(read('docs/hanja-g3ii-pye-2026-09-13/originals.json')) as typeof originalSources[number]
 const g4Originals = JSON.parse(read('docs/hanja-g4-chaek-hoe-ja-2026-09-14/originals.json')) as { sources: typeof originalSources }
-const candidates = [...originalSources.find(s => s.name === 'MM')!.entries, ...fullOriginals.entries, ...bunJaOriginals.entries, ...walkFourOriginals.entries, ...pyeOriginals.entries, ...rabbitOriginals.entries, ...g4Originals.sources.find(s => s.name === 'Make Me a Hanzi')!.entries].map(e => ({
+const ekPoGeunOriginals = JSON.parse(read('docs/hanja-g4-ek-po-geun-2026-09-14/originals.json')) as typeof originalSources[number]
+const candidates = [...originalSources.find(s => s.name === 'MM')!.entries, ...fullOriginals.entries, ...bunJaOriginals.entries, ...walkFourOriginals.entries, ...pyeOriginals.entries, ...rabbitOriginals.entries, ...g4Originals.sources.find(s => s.name === 'Make Me a Hanzi')!.entries, ...ekPoGeunOriginals.entries].map(e => ({
   character: e.glyph, medians: e.medians, strokes: normalizeMedians(e.medians),
 }))
 const clone = <T>(value: T): T => structuredClone(value)
 
-test('dictionary crosscheck publishes fourteen reviewed MM candidates including 冊 and 灰', () => {
+test('dictionary crosscheck publishes seventeen reviewed MM candidates including 液, 砲 and 筋', () => {
   const bundle = buildDictionaryBundle()
   assert.deepEqual(loadDictionaryBundle(bundle), HANJA_DICTIONARY_STROKES)
   assert.doesNotThrow(() => validateDictionaryBundle())
-  assert.deepEqual(HANJA_DICTIONARY_STROKES.map(e => e.glyph), ['訣', '紋', '森', '楓', '奔', '慈', '蓮', '追', '透', '還', '弊', '兔', '冊', '灰'])
-  assert.equal(HANJA_DICTIONARY_STROKES.reduce((n, e) => n + e.paths.length, 0), 153)
+  assert.deepEqual(HANJA_DICTIONARY_STROKES.map(e => e.glyph), ['訣', '紋', '森', '楓', '奔', '慈', '蓮', '追', '透', '還', '弊', '兔', '冊', '灰', '液', '砲', '筋'])
+  assert.equal(HANJA_DICTIONARY_STROKES.reduce((n, e) => n + e.paths.length, 0), 186)
   for (const entry of HANJA_DICTIONARY_STROKES) {
     assert.deepEqual(hanjaStrokeData({ glyph: entry.glyph, strokes: entry.paths.length }), entry)
     assert.equal(hanjaStrokeData({ glyph: entry.glyph, strokes: entry.paths.length + 1 }), null)
@@ -200,9 +201,9 @@ test('valid metadata or recalculated hashes cannot authorize edited or reordered
 test('audit reports the dictionary crosscheck separately and reconstructs both corrected and unchanged geometry', () => {
   const characters = Object.entries(DICTIONARY_REFERENCES).map(([glyph, ref]) => ({ glyph, strokes: ref.strokes, readingGrade: '3급II' }))
   const audit = auditStrokes(characters, [], HANJA_DICTIONARY_STROKES, [], candidates)
-  assert.equal(audit.verificationSources.dictionary, 14)
+  assert.equal(audit.verificationSources.dictionary, 17)
   assert.equal(audit.verificationSources.eomunhoe, 0)
-  assert.equal(audit.playback['dictionary-crosschecked'], 14)
+  assert.equal(audit.playback['dictionary-crosschecked'], 17)
   assert.throws(() => auditStrokes(characters, [], HANJA_DICTIONARY_STROKES), /geometry mismatch/)
   const corrupt = clone(candidates)
   corrupt[1].medians[0][0][0] += 1

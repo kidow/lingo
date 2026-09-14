@@ -4,9 +4,20 @@
 訣 (11 strokes), 紋 (10 strokes), 森 (12 strokes), 楓 (13 strokes),
 奔 (8 strokes), 慈 (13 strokes), 蓮 (15 strokes), 追 (10 strokes),
 透 (11 strokes), 還 (17 strokes), 兔 (8 strokes), 弊 (14 strokes),
-冊 (5 strokes) and 灰 (6 strokes), modified for Lingo on 2026-09-13–14.
+冊 (5 strokes), 灰 (6 strokes), 液 (11 strokes), 砲 (10 strokes) and
+筋 (12 strokes), modified for Lingo on 2026-09-13–14.
 
 ## Geometry copyright and modifications
+
+For 液, strokes 4 and 10 are locally authored to replace the diagonal dot
+with a connected vertical and close the inner down-right mark. For 砲,
+stroke 3 is locally authored to straighten and connect the left stone edge.
+For 筋, strokes 3 and 6 are locally authored to connect both bamboo marks.
+The other 28 normalized MM centerlines and all 33 original stroke positions
+are retained. Exact source-time observations, original medians, full modified
+source and approval are in `docs/hanja-g4-ek-po-geun-2026-09-14/`, under the
+same Arphic terms. These are private dictionary crosschecks, not exam-body
+certification.
 
 For 冊, the first centerline is locally authored and the retained MM strokes
 are reordered as 2, 4, 5, 3, placing the crossbar last. For 灰, centerlines 3

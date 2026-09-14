@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-14",
+  "result": "passed",
+  "newCharacters": ["液", "砲", "筋"],
+  "newStrokes": 33,
+  "authoredPaths": 5,
+  "retainedPaths": 28,
+  "visualReview": {
+    "sourceSamplesViewed": 99,
+    "sourceStrokesCovered": 33,
+    "originalCandidateCumulativeStagesViewed": 33,
+    "correctedCandidateCumulativeStagesViewed": 33,
+    "sourceFramesWithInvalidTimesOrMissingAnimations": 0,
+    "method": "Original source animations paused at verified 20%, 80% and 100% times; full corrected cumulative stages reviewed with start/end markers."
+  },
+  "checks": [
+    { "command": "node --test lib/hanja*.test.ts", "passed": 202, "failed": 0 },
+    { "command": "node docs/hanja-g4-ek-po-geun-2026-09-14/verify.mjs --online", "exitCode": 0, "sourcesWithMatchingBytesAndSha256": 3, "dependenciesWithMatchingBytesAndSha256": 2 },
+    { "command": "pnpm run build", "exitCode": 0, "typescript": "passed", "staticPages": "7/7" },
+    { "command": "git diff --check", "exitCode": 0 }
+  ],
+  "coverage": {
+    "applied": 1496,
+    "total": 5978,
+    "throughGrade3IIApplied": 1495,
+    "throughGrade3IITotal": 1500,
+    "throughGrade3IIRemaining": ["藝", "衛", "豊", "獎", "鍾"],
+    "throughGrade3IIRemainingStrokes": 79
+  },
+  "nextRecommended": { "characters": ["衛", "豊"], "strokes": 28 },
+  "evidenceClass": "Private Korean dictionary crosscheck, not exam-body certification",
+  "sourceArtworkCopied": false
+}

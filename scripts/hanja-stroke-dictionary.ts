@@ -16,6 +16,12 @@ export type DictionaryCandidate = { character: string; medians: Medians; strokes
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
 const read = (path: string) => readFileSync(new URL('../' + path, import.meta.url), 'utf8')
 export const DICTIONARY_PROOF_PINS: Readonly<Record<string, string>> = {
+  'docs/hanja-g4-ek-po-geun-2026-09-14/originals.json': '63d15ac14564f5640f81659a28ec2dd6eef596d4a3f342587421e541977f6644',
+  'docs/hanja-g4-ek-po-geun-2026-09-14/prior-candidate-paths.json': '9b560d8b10a643587f2f260916b78b3a43208075b2fc2080a60d800e455d190f',
+  'docs/hanja-g4-ek-po-geun-2026-09-14/candidate-paths.json': 'd2b081ad849d856ed4069e469680d0463d2c06854fd2eede367b85bc99a54d08',
+  'docs/hanja-g4-ek-po-geun-2026-09-14/corrections.json': '2ac054235f6dacd8b7da3c1460f81f854eb092242eaa23a7a80d2f3c479c95c7',
+  'docs/hanja-g4-ek-po-geun-2026-09-14/observations.json': '34be6eceefc11bc26b767adfd261c0f6fefd50dc08ea5860d4d8c28931a31345',
+  'docs/hanja-g4-ek-po-geun-2026-09-14/review.json': 'cdae941e0f6123ea540335789f7cba4c6aa575d02cbff37e494470b86321262b',
   'docs/hanja-g3ii-pye-2026-09-13/originals.json': '35b7f280db9dab023b1d0afa6729e5438b98ee864161b23f94c2ea8d8e88c822',
   'docs/hanja-g3ii-pye-2026-09-13/corrections.json': '972354bc2a548e393010d00f3351272f9522053b009b10d8be16bd9d67624824',
   'docs/hanja-g3ii-pye-2026-09-13/candidate-paths.json': '72cd1b09acaf17870f4e5761cfb504807876f8733a5d1ad2b13a1be889cfcbe1',
@@ -69,6 +75,7 @@ const walkFourDir = 'docs/hanja-g3ii-walk-4-2026-09-13/'
 const rabbitDir = 'docs/hanja-g3ii-rabbit-2026-09-13/'
 const pyeDir = 'docs/hanja-g3ii-pye-2026-09-13/'
 const g4Dir = 'docs/hanja-g4-corrections-2026-09-14/'
+const ekPoGeunDir = 'docs/hanja-g4-ek-po-geun-2026-09-14/'
 type OriginalSource = { name: string; sha256: string; entries: { glyph: string; medians: Medians }[] }
 type Donor = { glyph: string; paths: string[]; hash: string; [key: string]: unknown }
 function originals() {
@@ -79,6 +86,7 @@ function originals() {
   const walkFourSource = JSON.parse(read(walkFourDir + 'originals.json')) as OriginalSource
   const rabbitSource = JSON.parse(read(rabbitDir + 'originals.json')) as OriginalSource
   const pyeSource = JSON.parse(read(pyeDir + 'originals.json')) as OriginalSource
+  const ekPoGeunSource = JSON.parse(read(ekPoGeunDir + 'originals.json')) as OriginalSource
   const g4Sources = JSON.parse(read('docs/hanja-g4-chaek-hoe-ja-2026-09-14/originals.json')) as {
     sources: { name: string; sourceSha256: string; entries: OriginalSource['entries'] }[]
   }
@@ -89,8 +97,9 @@ function originals() {
     || walkFourSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
     || rabbitSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
     || pyeSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
-    || g4Source?.sourceSha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256) throw new Error('Dictionary corpus mismatch')
-  return [...source.entries, ...fullSource.entries, ...bunJaSource.entries, ...walkFourSource.entries, ...pyeSource.entries, ...rabbitSource.entries, ...g4Source.entries]
+    || g4Source?.sourceSha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
+    || ekPoGeunSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256) throw new Error('Dictionary corpus mismatch')
+  return [...source.entries, ...fullSource.entries, ...bunJaSource.entries, ...walkFourSource.entries, ...pyeSource.entries, ...rabbitSource.entries, ...g4Source.entries, ...ekPoGeunSource.entries]
 }
 const points = (path: string) => {
   if (!/^M[-.\d]+ [-.\d]+(?: L[-.\d]+ [-.\d]+)+$/.test(path)) throw new Error('Dictionary path syntax')
@@ -124,8 +133,8 @@ export function dictionaryGeometry(glyph: string, medians: Medians) {
     if (corrections.glyph !== glyph || !isDeepStrictEqual(corrections.entries.map(e => e.stroke), [4, 7, 11])) throw new Error('Dictionary correction set mismatch')
     paths = paths.map((path, i) => corrections.entries.find(e => e.stroke === i + 1)?.path ?? path)
   }
-  if (ref.wholeGlyphReview === 'walk-four' || ref.wholeGlyphReview === 'rabbit' || ref.wholeGlyphReview === 'pye' || ref.wholeGlyphReview === 'g4-three') {
-    const correctionDir = ref.wholeGlyphReview === 'g4-three' ? g4Dir : ref.wholeGlyphReview === 'pye' ? pyeDir : ref.wholeGlyphReview === 'rabbit' ? rabbitDir : walkFourDir
+  if (ref.wholeGlyphReview === 'walk-four' || ref.wholeGlyphReview === 'rabbit' || ref.wholeGlyphReview === 'pye' || ref.wholeGlyphReview === 'g4-three' || ref.wholeGlyphReview === 'ek-po-geun') {
+    const correctionDir = ref.wholeGlyphReview === 'ek-po-geun' ? ekPoGeunDir : ref.wholeGlyphReview === 'g4-three' ? g4Dir : ref.wholeGlyphReview === 'pye' ? pyeDir : ref.wholeGlyphReview === 'rabbit' ? rabbitDir : walkFourDir
     const corrections = JSON.parse(read(correctionDir + 'corrections.json')) as { entries: {
       glyph: string; sourceStrokeIndices: (number | null)[]; authored: { stroke: number; path: string }[]
     }[] }
@@ -146,14 +155,14 @@ export function buildDictionaryBundle(candidates?: readonly DictionaryCandidate[
   const byGlyph = new Map(input.map(e => [e.character, e]))
   const count = Object.keys(DICTIONARY_REFERENCES).length
   if (byGlyph.size !== count || input.length !== count || input.some(e => !Object.hasOwn(DICTIONARY_REFERENCES, e.character))) throw new Error('Dictionary candidate set mismatch')
-  const frozen = [oldDir, fullReviewDir, bunJaDir, walkFourDir, rabbitDir, pyeDir, g4Dir].flatMap(dir => (JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }).entries)
+  const frozen = [oldDir, fullReviewDir, bunJaDir, walkFourDir, rabbitDir, pyeDir, g4Dir, ekPoGeunDir].flatMap(dir => (JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }).entries)
   return {
     verificationSource: HANJA_DICTIONARY_SOURCE, geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE,
     characters: Object.keys(DICTIONARY_REFERENCES).map(glyph => {
       const paths = dictionaryGeometry(glyph, byGlyph.get(glyph)!.medians)
       if (!isDeepStrictEqual(paths.paths, frozen.find(e => e.glyph === glyph)?.paths)) throw new Error('Dictionary frozen candidate mismatch')
       return {
-        glyph, verifiedAt: DICTIONARY_REFERENCES[glyph].wholeGlyphReview === 'g4-three' ? '2026-09-14' : '2026-09-13', geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256,
+        glyph, verifiedAt: ['g4-three', 'ek-po-geun'].includes(DICTIONARY_REFERENCES[glyph].wholeGlyphReview ?? '') ? '2026-09-14' : '2026-09-13', geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256,
         geometryCorrection: 'dictionary-crosscheck-' + glyph.codePointAt(0)!.toString(16) + '-v1',
         sourceStrokeIndices: dictionaryStrokeIndices(glyph), ...paths, sourceReference: dictionarySourceReference(glyph),
       }
