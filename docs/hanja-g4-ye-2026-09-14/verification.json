@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "date": "2026-09-14",
+  "status": "passed",
+  "glyph": "藝",
+  "strokes": 19,
+  "visualReview": {
+    "sourceFramesObserved": 57,
+    "originalCumulativeStatesObserved": 19,
+    "correctedCumulativeStatesObserved": 19,
+    "result": "passed"
+  },
+  "runtimeIntegration": {
+    "status": "passed",
+    "reviewFileSha256": "1adec5d827a60b58dcd93e211e193d1858f040f55ff66176e453612c48c48774",
+    "pathsSha256": "638ab51bc8f7bc172a8664593968390f265252e4a0e40f1aa7faf8ad514a18f2"
+  },
+  "tests": {
+    "status": "passed",
+    "targeted": { "passed": 15, "failed": 0 },
+    "allHanja": { "passed": 220, "failed": 0, "skipped": 0 },
+    "command": "node --test lib/hanja*.test.ts"
+  },
+  "build": {
+    "status": "passed",
+    "command": "pnpm run build",
+    "nextVersion": "16.3.3",
+    "typeScript": "passed",
+    "staticPages": 7
+  },
+  "onlineSourceVerification": {
+    "status": "passed",
+    "command": "node docs/hanja-g4-ye-2026-09-14/verify.mjs --online",
+    "resources": [
+      { "name": "藝", "status": 200, "bytes": 10281, "sha256": "1f14646875c991d31c70dc81e3ecb264ffc14d834f1a91cf14a1d41651cf6a23" },
+      { "name": "opmGna.svg.ani.min.css", "status": 200, "bytes": 804, "sha256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18" },
+      { "name": "gna.lib.svg.ani.min.js", "status": 200, "bytes": 3865, "sha256": "e807c25571b8c0c46a80a37d86ff7b982822303dfb28d7464e35dfdffb2d2690" }
+    ]
+  },
+  "coverage": {
+    "catalogCharacters": 5978,
+    "runtimeCharacters": 1501,
+    "throughGrade3ii": { "total": 1500, "enabled": 1500, "remaining": 0 },
+    "allRemaining": 4477,
+    "nextGrade3": { "total": 317, "enabled": 0, "remaining": 317 }
+  },
+  "preservedPriorDictionaryEntries": { "count": 21, "unchanged": true }
+}

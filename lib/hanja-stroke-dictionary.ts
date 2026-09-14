@@ -5,7 +5,7 @@ export const HANJA_DICTIONARY_SOURCE = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊·冊·灰·液·砲·筋·衛·豊·獎·鍾. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊·冊·灰·液·砲·筋·衛·豊·獎·鍾·藝. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
   "name": "Make Me a Hanzi with reviewed local corrections",
@@ -14,7 +14,7 @@ export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
 } as const
 export const DICTIONARY_REFERENCES: Readonly<Record<string, {
   strokes: number; pathsSha256: string; directions: string; svgUrl: string; svgSha256: string
-  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye' | 'g4-three' | 'ek-po-geun' | 'wi-pung' | 'jang-jong'
+  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye' | 'g4-three' | 'ek-po-geun' | 'wi-pung' | 'jang-jong' | 'ye'
   sourceStrokeIndices?: readonly (number | null)[]
 }>> = {
   "訣": {
@@ -400,11 +400,48 @@ export const DICTIONARY_REFERENCES: Readonly<Record<string, {
       17
     ]
   },
+  "藝": {
+    "strokes": 19,
+    "pathsSha256": "638ab51bc8f7bc172a8664593968390f265252e4a0e40f1aa7faf8ad514a18f2",
+    "originalMediansSha256": "564570f6c01c27ac5834231980cff8ca81095cf391cc18909a784da7f8e8679a",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/85DD.svg",
+    "svgSha256": "1f14646875c991d31c70dc81e3ecb264ffc14d834f1a91cf14a1d41651cf6a23",
+    "wholeGlyphReview": "ye",
+    "sourceStrokeIndices": [
+      2,
+      1,
+      4,
+      3,
+      5,
+      6,
+      7,
+      8,
+      null,
+      10,
+      null,
+      12,
+      null,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
+  },
 }
 
 export function dictionarySourceReference(glyph: string) {
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref) throw new Error('Unreviewed dictionary glyph: ' + glyph)
+  if (ref.wholeGlyphReview === 'ye') return {
+    orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
+    dictionaryDirectionStrokes: ref.directions,
+    orderReviewSha256: '1adec5d827a60b58dcd93e211e193d1858f040f55ff66176e453612c48c48774',
+    geometryReviewSha256: '1adec5d827a60b58dcd93e211e193d1858f040f55ff66176e453612c48c48774',
+    directionReviewSha256: '048c5dfa0f93cba1a25f929b8bf250e0a2f38f967aca585d975c45153a3112f8',
+  }
   if (ref.wholeGlyphReview === 'jang-jong') return {
     orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
     dictionaryDirectionStrokes: ref.directions,
@@ -502,7 +539,7 @@ export function loadDictionaryBundle(bundle: DictionaryBundle): readonly HanjaDi
   const seen = new Set<string>()
   return bundle.characters.map(entry => {
     const ref = entry && Object.hasOwn(DICTIONARY_REFERENCES, entry.glyph) ? DICTIONARY_REFERENCES[entry.glyph] : undefined
-    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== (ref.wholeGlyphReview === 'g4-three' || ref.wholeGlyphReview === 'ek-po-geun' || ref.wholeGlyphReview === 'wi-pung' || ref.wholeGlyphReview === 'jang-jong' ? '2026-09-14' : '2026-09-13')
+    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== (ref.wholeGlyphReview === 'g4-three' || ref.wholeGlyphReview === 'ek-po-geun' || ref.wholeGlyphReview === 'wi-pung' || ref.wholeGlyphReview === 'jang-jong' || ref.wholeGlyphReview === 'ye' ? '2026-09-14' : '2026-09-13')
       || entry.geometrySource !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
       || entry.geometryCorrection !== 'dictionary-crosscheck-' + entry.glyph.codePointAt(0)!.toString(16) + '-v1'
       || entry.pathsSha256 !== ref.pathsSha256 || !Array.isArray(entry.paths) || entry.paths.length !== ref.strokes
