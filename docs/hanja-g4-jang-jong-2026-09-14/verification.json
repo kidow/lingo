@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-14",
+  "result": "passed",
+  "scope": {
+    "characters": 2,
+    "strokes": 32,
+    "sourceTimeSamplesObserved": 96,
+    "originalCumulativeStagesViewed": 32,
+    "correctedCumulativeStagesViewed": 32,
+    "locallyAuthoredStrokes": 6,
+    "retainedNormalizedMMStrokes": 26,
+    "reorderedRetainedPositions": {
+      "獎": [
+        1,
+        2
+      ]
+    }
+  },
+  "commands": [
+    {
+      "command": "node docs/hanja-g4-jang-jong-2026-09-14/verify.mjs --online",
+      "exitCode": 0
+    },
+    {
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "tests": 214,
+      "passed": 214,
+      "failed": 0
+    },
+    {
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "nextVersion": "16.3.3",
+      "typescript": "passed",
+      "staticPages": 7
+    }
+  ],
+  "onlineResources": [
+    {
+      "name": "獎",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7300/734E.svg",
+      "status": 200,
+      "bytes": 7460,
+      "sha256": "512b07a5e7edf2d2e351ef7849b9217160db2cc930d5982980d2ecba5546821d"
+    },
+    {
+      "name": "鍾",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9300/937E.svg",
+      "status": 200,
+      "bytes": 7993,
+      "sha256": "175d7465c46851e4e38be5fe47763a0f4be211fd7df27d10c6474c04a540bddc"
+    },
+    {
+      "name": "opmGna.svg.ani.min.css",
+      "status": 200,
+      "bytes": 804,
+      "sha256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18"
+    },
+    {
+      "name": "gna.lib.svg.ani.min.js",
+      "status": 200,
+      "bytes": 3865,
+      "sha256": "e807c25571b8c0c46a80a37d86ff7b982822303dfb28d7464e35dfdffb2d2690"
+    }
+  ],
+  "runtimeSnapshot": {
+    "catalogCharacters": 5978,
+    "enabledCharacters": 1500,
+    "throughGrade3II": {
+      "characters": 1500,
+      "enabled": 1499,
+      "remaining": [
+        {
+          "glyph": "藝",
+          "strokes": 19,
+          "readingGrade": "4급II"
+        }
+      ]
+    }
+  },
+  "existingDictionaryEntriesPreserved": 19,
+  "evidenceClass": "Korean private dictionary crosscheck, not examination-body certification",
+  "sourceArtworkRedistributed": false
+}

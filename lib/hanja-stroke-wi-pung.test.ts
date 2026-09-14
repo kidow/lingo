@@ -31,7 +31,7 @@ test('衛 and 豊 publish exactly 28 dictionary-crosschecked strokes', () => {
     assert.deepEqual(hanjaStrokeData({ glyph: e.glyph, strokes: e.paths.length }), e)
     assert.equal(hanjaStrokeData({ glyph: e.glyph, strokes: e.paths.length + 1 }), null)
   }
-  for (const glyph of ['藝', '獎', '鍾']) assert.ok(!HANJA_STROKES.some(e => e.glyph === glyph))
+  for (const glyph of ['藝']) assert.ok(!HANJA_STROKES.some(e => e.glyph === glyph))
 })
 
 test('84 observed source frames cover each exact original timing row once', () => {

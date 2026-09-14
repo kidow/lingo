@@ -5,7 +5,7 @@ export const HANJA_DICTIONARY_SOURCE = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊·冊·灰·液·砲·筋·衛·豊. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊·冊·灰·液·砲·筋·衛·豊·獎·鍾. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
   "name": "Make Me a Hanzi with reviewed local corrections",
@@ -14,7 +14,7 @@ export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
 } as const
 export const DICTIONARY_REFERENCES: Readonly<Record<string, {
   strokes: number; pathsSha256: string; directions: string; svgUrl: string; svgSha256: string
-  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye' | 'g4-three' | 'ek-po-geun' | 'wi-pung'
+  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye' | 'g4-three' | 'ek-po-geun' | 'wi-pung' | 'jang-jong'
   sourceStrokeIndices?: readonly (number | null)[]
 }>> = {
   "訣": {
@@ -346,11 +346,72 @@ export const DICTIONARY_REFERENCES: Readonly<Record<string, {
       13
     ]
   },
+  "獎": {
+    "strokes": 15,
+    "pathsSha256": "db6c558e00f85b0ca85aeb929f0f02a54c957506dd4225c4cfe37f801d943ca9",
+    "originalMediansSha256": "73167052c318491fa18291d0358e9d38c0a4536daa0bdbe49ec0c308931e2ab5",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7300/734E.svg",
+    "svgSha256": "512b07a5e7edf2d2e351ef7849b9217160db2cc930d5982980d2ecba5546821d",
+    "wholeGlyphReview": "jang-jong",
+    "sourceStrokeIndices": [
+      2,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      null,
+      12,
+      null,
+      14,
+      null
+    ]
+  },
+  "鍾": {
+    "strokes": 17,
+    "pathsSha256": "c1b95882431b7cdbdfc37d66d119e0c0454186ac5d8c0c89bd584eebca548bbf",
+    "originalMediansSha256": "e715964c450cea9fb82aaa83bfcbe7605ca6ee977b7a498688138aa9b33db855",
+    "directions": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9300/937E.svg",
+    "svgSha256": "175d7465c46851e4e38be5fe47763a0f4be211fd7df27d10c6474c04a540bddc",
+    "wholeGlyphReview": "jang-jong",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      null,
+      8,
+      9,
+      10,
+      null,
+      12,
+      null,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
 }
 
 export function dictionarySourceReference(glyph: string) {
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref) throw new Error('Unreviewed dictionary glyph: ' + glyph)
+  if (ref.wholeGlyphReview === 'jang-jong') return {
+    orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
+    dictionaryDirectionStrokes: ref.directions,
+    orderReviewSha256: 'a09f1363158dfbb6300aae8c48d732468073d182215c0412fa1613ea3e8830f1',
+    geometryReviewSha256: 'a09f1363158dfbb6300aae8c48d732468073d182215c0412fa1613ea3e8830f1',
+    directionReviewSha256: 'ef23f5a91613c2afddeeac6afbf29fa533a0f901d4d80f7d18936c1955f69e72',
+  }
   if (ref.wholeGlyphReview === 'wi-pung') return {
     orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
     dictionaryDirectionStrokes: ref.directions,
@@ -441,7 +502,7 @@ export function loadDictionaryBundle(bundle: DictionaryBundle): readonly HanjaDi
   const seen = new Set<string>()
   return bundle.characters.map(entry => {
     const ref = entry && Object.hasOwn(DICTIONARY_REFERENCES, entry.glyph) ? DICTIONARY_REFERENCES[entry.glyph] : undefined
-    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== (ref.wholeGlyphReview === 'g4-three' || ref.wholeGlyphReview === 'ek-po-geun' || ref.wholeGlyphReview === 'wi-pung' ? '2026-09-14' : '2026-09-13')
+    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== (ref.wholeGlyphReview === 'g4-three' || ref.wholeGlyphReview === 'ek-po-geun' || ref.wholeGlyphReview === 'wi-pung' || ref.wholeGlyphReview === 'jang-jong' ? '2026-09-14' : '2026-09-13')
       || entry.geometrySource !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
       || entry.geometryCorrection !== 'dictionary-crosscheck-' + entry.glyph.codePointAt(0)!.toString(16) + '-v1'
       || entry.pathsSha256 !== ref.pathsSha256 || !Array.isArray(entry.paths) || entry.paths.length !== ref.strokes

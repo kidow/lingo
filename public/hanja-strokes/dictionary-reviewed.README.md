@@ -5,10 +5,24 @@
 奔 (8 strokes), 慈 (13 strokes), 蓮 (15 strokes), 追 (10 strokes),
 透 (11 strokes), 還 (17 strokes), 兔 (8 strokes), 弊 (14 strokes),
 冊 (5 strokes), 灰 (6 strokes), 液 (11 strokes), 砲 (10 strokes) and
-筋 (12 strokes), 衛 (15 strokes) and 豊 (13 strokes),
+筋 (12 strokes), 衛 (15 strokes), 豊 (13 strokes),
+獎 (15 strokes) and 鍾 (17 strokes),
 modified for Lingo on 2026-09-13–14.
 
 ## Geometry copyright and modifications
+
+For 獎, the first two original MM centerlines are reordered so that the
+long vertical precedes the bent stroke. Strokes 11, 13 and 15 are local
+replacements that separate the central dot, keep the lower component
+apart from the upper left vertical, and correctly position the 犬 dot.
+For 鍾, strokes 7, 11 and 13 are local replacements that connect the 金
+diagonal, straighten the 田 left edge and connect its middle horizontal.
+All 32 source directions and corrected cumulative stages were inspected.
+The 26 retained centerlines preserve every normalized MM point; this
+includes the two reordered 獎 paths. Original medians, full modified
+source and private dictionary observations are in
+`docs/hanja-g4-jang-jong-2026-09-14/`, under the same Arphic terms.
+No approval transfers to 奬 or 鐘, and no exam-body certification is claimed.
 
 For 衛, strokes 7 and 11 are locally authored to straighten the mouth's
 left edge and connect the lower vertical-to-horizontal bend. For 豊,

@@ -7,12 +7,12 @@ import { normalizeMedians } from './hanja-stroke-geometry.ts'
 import { dictionaryGeometry, validateDictionaryProofs, validateDictionaryReview } from '../scripts/hanja-stroke-dictionary.ts'
 import { auditStrokes } from '../scripts/hanja-stroke-audit.ts'
 
-const dir = 'docs/hanja-g4-ek-po-geun-2026-09-14/'
+const dir = 'docs/hanja-g4-jang-jong-2026-09-14/'
 const read = (p: string) => readFileSync(new URL('../' + p, import.meta.url), 'utf8')
 const original = JSON.parse(read(dir + 'originals.json')) as { entries: { glyph: string; medians: number[][][] }[] }
 const before = JSON.parse(read(dir + 'prior-candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }
 const hash = (v: unknown) => createHash('sha256').update(JSON.stringify(v)).digest('hex')
-const runtime = HANJA_STROKES.filter(e => ['液', '砲', '筋'].includes(e.glyph))
+const runtime = HANJA_STROKES.filter(e => ['獎', '鍾'].includes(e.glyph))
 const points = (p: string) => [...p.matchAll(/[ML]([-.\d]+) ([-.\d]+)/g)].map(m => [+m[1], +m[2]])
 function gap(p: number[], path: string) {
   const ps = points(path)
@@ -23,8 +23,8 @@ function gap(p: number[], path: string) {
   }))
 }
 
-test('液, 砲 and 筋 publish exactly 33 dictionary-crosschecked strokes', () => {
-  assert.deepEqual(runtime.map(e => [e.glyph, e.paths.length]), [['液', 11], ['砲', 10], ['筋', 12]])
+test('獎 and 鍾 publish exactly 32 dictionary-crosschecked strokes', () => {
+  assert.deepEqual(runtime.map(e => [e.glyph, e.paths.length]), [['獎', 15], ['鍾', 17]])
   for (const e of runtime) {
     assert.equal(e.verificationSource, 'ehanja-crosschecked')
     assert.equal(e.verifiedAt, '2026-09-14')
@@ -34,11 +34,11 @@ test('液, 砲 and 筋 publish exactly 33 dictionary-crosschecked strokes', () =
   for (const glyph of ['藝']) assert.ok(!HANJA_STROKES.some(e => e.glyph === glyph))
 })
 
-test('99 observed source frames cover each exact original timing row once', () => {
+test('96 observed source frames cover each exact original timing row once', () => {
   const observed = JSON.parse(read(dir + 'observations.json')) as { samples: [string, number, number, number, number, number][] }
   const source = JSON.parse(read('docs/hanja-g4-held-11-2026-09-14/sources.json')) as { entries: { glyph: string; timingRows: number[][] }[] }
-  assert.equal(observed.samples.length, 33)
-  assert.equal(new Set(observed.samples.map(r => r[0] + r[1])).size, 33)
+  assert.equal(observed.samples.length, 32)
+  assert.equal(new Set(observed.samples.map(r => r[0] + r[1])).size, 32)
   for (const [glyph, n, count, ...times] of observed.samples) {
     const entry = source.entries.find(e => e.glyph === glyph)!, row = entry.timingRows[n - 1]
     assert.equal(count, entry.timingRows.length)
@@ -50,43 +50,70 @@ test('99 observed source frames cover each exact original timing row once', () =
   }
 })
 
-test('only the five approved replacements change the original normalized medians', () => {
-  const expected: Record<string, number[]> = { 液: [4, 10], 砲: [3], 筋: [3, 6] }
+test('six replacements and two reordered positions reconstruct the exact reviewed sequence', () => {
+  const authored: Record<string, number[]> = { 獎: [11, 13, 15], 鍾: [7, 11, 13] }
+  const changed: Record<string, number[]> = { 獎: [1, 2, 11, 13, 15], 鍾: [7, 11, 13] }
   for (const e of original.entries) {
     const old = before.entries.find(p => p.glyph === e.glyph)!, current = runtime.find(p => p.glyph === e.glyph)!
     assert.deepEqual(normalizeMedians(e.medians), old.paths)
-    assert.deepEqual(current.paths.flatMap((p, i) => p === old.paths[i] ? [] : [i + 1]), expected[e.glyph])
-    assert.deepEqual(current.sourceStrokeIndices?.flatMap((n, i) => n === null ? [i + 1] : []), expected[e.glyph])
+    assert.deepEqual(current.paths.flatMap((p, i) => p === old.paths[i] ? [] : [i + 1]), changed[e.glyph])
+    assert.deepEqual(current.sourceStrokeIndices?.flatMap((n, i) => n === null ? [i + 1] : []), authored[e.glyph])
+    current.sourceStrokeIndices?.forEach((n, i) => {
+      if (n !== null) assert.equal(current.paths[i], old.paths[n - 1])
+    })
     assert.deepEqual(dictionaryGeometry(e.glyph, e.medians).paths, current.paths)
     const forged = structuredClone(current)
     forged.paths = old.paths
     forged.pathsSha256 = hash(old.paths)
     assert.throws(() => validateDictionaryReview(forged as Parameters<typeof validateDictionaryReview>[0], current.paths.length), /published entry/)
   }
+  const jang = runtime.find(e => e.glyph === '獎')!
+  assert.deepEqual(jang.sourceStrokeIndices!.slice(0, 2), [2, 1])
+  const reversed = structuredClone(jang)
+  reversed.paths = [jang.paths[1], jang.paths[0], ...jang.paths.slice(2)]
+  reversed.pathsSha256 = hash(reversed.paths)
+  assert.throws(() => validateDictionaryReview(reversed as Parameters<typeof validateDictionaryReview>[0], 15), /published entry/)
 })
 
-test('verticals and connected marks retain their observed direction and close the old gaps', () => {
-  const paths = (g: string) => runtime.find(e => e.glyph === g)!.paths
-  for (const [g, n] of [['液', 4], ['砲', 3]] as const) {
-    const p = points(paths(g)[n - 1])
-    assert.equal(p[0][0], p.at(-1)![0]); assert.ok(p[0][1] < p.at(-1)![1])
+test('鍾 preserves observed connections and a downward left box edge at width 5', () => {
+  const ps = runtime.find(e => e.glyph === '鍾')!.paths
+  const vertical = points(ps[10]), crossbar = points(ps[12]), diagonal = points(ps[6])
+  assert.equal(vertical[0][0], vertical.at(-1)![0])
+  assert.ok(vertical.at(-1)![1] > vertical[0][1])
+  assert.ok(crossbar.every((p, i) => i === 0 || p[0] > crossbar[i - 1][0]))
+  assert.ok(diagonal.at(-1)![0] < diagonal[1][0] && diagonal.at(-1)![1] > diagonal[1][1])
+  for (const [n, target, end] of [[7, 5, true], [11, 12, false], [11, 14, true], [13, 11, false], [13, 12, true]] as const) {
+    const p = points(ps[n - 1])
+    assert.ok(gap(end ? p.at(-1)! : p[0], ps[target - 1]) < 5)
   }
-  for (const [g, n, target, end] of [['液', 4, 5, true], ['液', 10, 9, true], ['砲', 3, 4, false], ['筋', 3, 2, false], ['筋', 6, 5, false]] as const) {
-    const ps = paths(g), p = points(ps[n - 1])
-    assert.ok(gap(end ? p.at(-1)! : p[0], ps[target - 1]) < 3.2)
+  const old = before.entries.find(e => e.glyph === '鍾')!.paths
+  for (const [n, target, end] of [[7, 5, true], [13, 11, false], [13, 12, true]] as const) {
+    const p = points(old[n - 1])
+    assert.ok(gap(end ? p.at(-1)! : p[0], old[target - 1]) > 5)
   }
-  for (const [g, n] of [['液', 10], ['筋', 3], ['筋', 6]] as const) {
-    const p = points(paths(g)[n - 1])
-    assert.ok(p.at(-1)![0] > p[0][0] && p.at(-1)![1] > p[0][1])
+})
+
+test('獎 retains two separate down-right dots and a distinct lower 犬 component', () => {
+  const ps = runtime.find(e => e.glyph === '獎')!.paths
+  for (const [n, neighbors] of [[11, [9, 10]], [15, [10, 12, 13]]] as const) {
+    const dot = points(ps[n - 1])
+    assert.ok(dot.every((p, i) => i === 0 || (p[0] > dot[i - 1][0] && p[1] > dot[i - 1][1])))
+    for (const p of dot) for (const neighbor of neighbors) assert.ok(gap(p, ps[neighbor - 1]) > 5)
   }
+  const dogDot = points(ps[14])
+  assert.ok(Math.max(...dogDot.map(p => p[0])) < Math.max(...points(ps[11]).map(p => p[0])))
+  assert.ok(gap(points(ps[12])[0], ps[0]) > 5)
+  assert.ok(gap(points(ps[13])[0], ps[12]) < 5)
+  // The first two strokes were reordered but never replaced or merged.
+  assert.equal(ps.length, 15)
 })
 
 test('shared audit uses the exact MM originals and does not promote them to official evidence', () => {
   const candidates = original.entries.map(e => ({ character: e.glyph, medians: e.medians, strokes: normalizeMedians(e.medians) }))
-  const characters = runtime.map(e => ({ glyph: e.glyph, strokes: e.paths.length, readingGrade: e.glyph === '筋' ? '4급' : '4급II' }))
+  const characters = runtime.map(e => ({ glyph: e.glyph, strokes: e.paths.length, readingGrade: '4급' }))
   const audit = auditStrokes(characters, [], runtime, [], candidates)
-  assert.equal(audit.verificationSources.dictionary, 3)
+  assert.equal(audit.verificationSources.dictionary, 2)
   assert.equal(audit.verificationSources.eomunhoe, 0)
-  assert.equal(audit.playback['dictionary-crosschecked'], 3)
+  assert.equal(audit.playback['dictionary-crosschecked'], 2)
   assert.throws(() => auditStrokes(characters, [], runtime, candidates, []), /geometry mismatch/)
 })
