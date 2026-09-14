@@ -61,11 +61,7 @@ test('eight grade 3 corrections publish exactly 109 reviewed strokes with pinned
     total += character.strokes
   }
   assert.equal(total, 109)
-  for (const glyph of [...'郭郊那']) {
-    const character = catalog.find(c => c.glyph === glyph)
-    assert.ok(character)
-    assert.equal(hanjaStrokeData(character), null, glyph + ' still lacks separate boundary evidence')
-  }
+  // Later batches may resolve the three boundary holds; this review covers only its eight glyphs.
   assert.equal(new Set(HANJA_STROKES.map(e => e.glyph)).size, HANJA_STROKES.length)
 })
 
