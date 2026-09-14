@@ -16,12 +16,6 @@ export type DictionaryCandidate = { character: string; medians: Medians; strokes
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
 const read = (path: string) => readFileSync(new URL('../' + path, import.meta.url), 'utf8')
 export const DICTIONARY_PROOF_PINS: Readonly<Record<string, string>> = {
-  'docs/hanja-g4-ye-2026-09-14/originals.json': 'c56a6ddc7660e862fec2dbd70ef20936937d8dd9a51a0a963556ff81cd985c8b',
-  'docs/hanja-g4-ye-2026-09-14/prior-candidate-paths.json': '29cfdd4d72a18aeb3cdb2e112f470acf42899de3aa54abd3f42cd21e59771dc6',
-  'docs/hanja-g4-ye-2026-09-14/candidate-paths.json': '6e29407d402c0440291806c9cbd0ea351cc6c8731d5a33d089a654239156ba65',
-  'docs/hanja-g4-ye-2026-09-14/corrections.json': '6a6845180458168d9309a3a858f05f85445a4802f96a441e1199f0497571bfd1',
-  'docs/hanja-g4-ye-2026-09-14/observations.json': '048c5dfa0f93cba1a25f929b8bf250e0a2f38f967aca585d975c45153a3112f8',
-  'docs/hanja-g4-ye-2026-09-14/review.json': '1adec5d827a60b58dcd93e211e193d1858f040f55ff66176e453612c48c48774',
   'docs/hanja-g4-jang-jong-2026-09-14/originals.json': '00c46a9685a735f029f0f6b0a394b25b351f338bd83afd38b29495521b163d34',
   'docs/hanja-g4-jang-jong-2026-09-14/prior-candidate-paths.json': '08bd1ca270d011c8056d1b2f871a7d373e237ac959336e4537524ac79d7711e4',
   'docs/hanja-g4-jang-jong-2026-09-14/candidate-paths.json': '17ddd9d9baa4595ef2c7db37a69be537960b2678c4ebca64a89a3c28ebf41ca5',
@@ -96,7 +90,6 @@ const g4Dir = 'docs/hanja-g4-corrections-2026-09-14/'
 const ekPoGeunDir = 'docs/hanja-g4-ek-po-geun-2026-09-14/'
 const wiPungDir = 'docs/hanja-g4-wi-pung-2026-09-14/'
 const jangJongDir = 'docs/hanja-g4-jang-jong-2026-09-14/'
-const yeDir = 'docs/hanja-g4-ye-2026-09-14/'
 type OriginalSource = { name: string; sha256: string; entries: { glyph: string; medians: Medians }[] }
 type Donor = { glyph: string; paths: string[]; hash: string; [key: string]: unknown }
 function originals() {
@@ -110,7 +103,6 @@ function originals() {
   const ekPoGeunSource = JSON.parse(read(ekPoGeunDir + 'originals.json')) as OriginalSource
   const wiPungSource = JSON.parse(read(wiPungDir + 'originals.json')) as OriginalSource
   const jangJongSource = JSON.parse(read(jangJongDir + 'originals.json')) as OriginalSource
-  const yeSource = JSON.parse(read(yeDir + 'originals.json')) as OriginalSource
   const g4Sources = JSON.parse(read('docs/hanja-g4-chaek-hoe-ja-2026-09-14/originals.json')) as {
     sources: { name: string; sourceSha256: string; entries: OriginalSource['entries'] }[]
   }
@@ -124,9 +116,8 @@ function originals() {
     || g4Source?.sourceSha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
     || ekPoGeunSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
     || wiPungSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
-    || jangJongSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
-    || yeSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256) throw new Error('Dictionary corpus mismatch')
-  return [...source.entries, ...fullSource.entries, ...bunJaSource.entries, ...walkFourSource.entries, ...pyeSource.entries, ...rabbitSource.entries, ...g4Source.entries, ...ekPoGeunSource.entries, ...wiPungSource.entries, ...jangJongSource.entries, ...yeSource.entries]
+    || jangJongSource.sha256 !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256) throw new Error('Dictionary corpus mismatch')
+  return [...source.entries, ...fullSource.entries, ...bunJaSource.entries, ...walkFourSource.entries, ...pyeSource.entries, ...rabbitSource.entries, ...g4Source.entries, ...ekPoGeunSource.entries, ...wiPungSource.entries, ...jangJongSource.entries]
 }
 const points = (path: string) => {
   if (!/^M[-.\d]+ [-.\d]+(?: L[-.\d]+ [-.\d]+)+$/.test(path)) throw new Error('Dictionary path syntax')
@@ -160,8 +151,8 @@ export function dictionaryGeometry(glyph: string, medians: Medians) {
     if (corrections.glyph !== glyph || !isDeepStrictEqual(corrections.entries.map(e => e.stroke), [4, 7, 11])) throw new Error('Dictionary correction set mismatch')
     paths = paths.map((path, i) => corrections.entries.find(e => e.stroke === i + 1)?.path ?? path)
   }
-  if (ref.wholeGlyphReview === 'walk-four' || ref.wholeGlyphReview === 'rabbit' || ref.wholeGlyphReview === 'pye' || ref.wholeGlyphReview === 'g4-three' || ref.wholeGlyphReview === 'ek-po-geun' || ref.wholeGlyphReview === 'wi-pung' || ref.wholeGlyphReview === 'jang-jong' || ref.wholeGlyphReview === 'ye') {
-    const correctionDir = ref.wholeGlyphReview === 'ye' ? yeDir : ref.wholeGlyphReview === 'jang-jong' ? jangJongDir : ref.wholeGlyphReview === 'wi-pung' ? wiPungDir : ref.wholeGlyphReview === 'ek-po-geun' ? ekPoGeunDir : ref.wholeGlyphReview === 'g4-three' ? g4Dir : ref.wholeGlyphReview === 'pye' ? pyeDir : ref.wholeGlyphReview === 'rabbit' ? rabbitDir : walkFourDir
+  if (ref.wholeGlyphReview === 'walk-four' || ref.wholeGlyphReview === 'rabbit' || ref.wholeGlyphReview === 'pye' || ref.wholeGlyphReview === 'g4-three' || ref.wholeGlyphReview === 'ek-po-geun' || ref.wholeGlyphReview === 'wi-pung' || ref.wholeGlyphReview === 'jang-jong') {
+    const correctionDir = ref.wholeGlyphReview === 'jang-jong' ? jangJongDir : ref.wholeGlyphReview === 'wi-pung' ? wiPungDir : ref.wholeGlyphReview === 'ek-po-geun' ? ekPoGeunDir : ref.wholeGlyphReview === 'g4-three' ? g4Dir : ref.wholeGlyphReview === 'pye' ? pyeDir : ref.wholeGlyphReview === 'rabbit' ? rabbitDir : walkFourDir
     const corrections = JSON.parse(read(correctionDir + 'corrections.json')) as { entries: {
       glyph: string; sourceStrokeIndices: (number | null)[]; authored: { stroke: number; path: string }[]
     }[] }
@@ -182,14 +173,14 @@ export function buildDictionaryBundle(candidates?: readonly DictionaryCandidate[
   const byGlyph = new Map(input.map(e => [e.character, e]))
   const count = Object.keys(DICTIONARY_REFERENCES).length
   if (byGlyph.size !== count || input.length !== count || input.some(e => !Object.hasOwn(DICTIONARY_REFERENCES, e.character))) throw new Error('Dictionary candidate set mismatch')
-  const frozen = [oldDir, fullReviewDir, bunJaDir, walkFourDir, rabbitDir, pyeDir, g4Dir, ekPoGeunDir, wiPungDir, jangJongDir, yeDir].flatMap(dir => (JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }).entries)
+  const frozen = [oldDir, fullReviewDir, bunJaDir, walkFourDir, rabbitDir, pyeDir, g4Dir, ekPoGeunDir, wiPungDir, jangJongDir].flatMap(dir => (JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }).entries)
   return {
     verificationSource: HANJA_DICTIONARY_SOURCE, geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE,
     characters: Object.keys(DICTIONARY_REFERENCES).map(glyph => {
       const paths = dictionaryGeometry(glyph, byGlyph.get(glyph)!.medians)
       if (!isDeepStrictEqual(paths.paths, frozen.find(e => e.glyph === glyph)?.paths)) throw new Error('Dictionary frozen candidate mismatch')
       return {
-        glyph, verifiedAt: ['g4-three', 'ek-po-geun', 'wi-pung', 'jang-jong', 'ye'].includes(DICTIONARY_REFERENCES[glyph].wholeGlyphReview ?? '') ? '2026-09-14' : '2026-09-13', geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256,
+        glyph, verifiedAt: ['g4-three', 'ek-po-geun', 'wi-pung', 'jang-jong'].includes(DICTIONARY_REFERENCES[glyph].wholeGlyphReview ?? '') ? '2026-09-14' : '2026-09-13', geometrySource: HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256,
         geometryCorrection: 'dictionary-crosscheck-' + glyph.codePointAt(0)!.toString(16) + '-v1',
         sourceStrokeIndices: dictionaryStrokeIndices(glyph), ...paths, sourceReference: dictionarySourceReference(glyph),
       }

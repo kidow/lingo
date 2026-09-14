@@ -6,20 +6,10 @@
 透 (11 strokes), 還 (17 strokes), 兔 (8 strokes), 弊 (14 strokes),
 冊 (5 strokes), 灰 (6 strokes), 液 (11 strokes), 砲 (10 strokes) and
 筋 (12 strokes), 衛 (15 strokes), 豊 (13 strokes),
-獎 (15 strokes), 鍾 (17 strokes) and 藝 (19 strokes),
+獎 (15 strokes) and 鍾 (17 strokes),
 modified for Lingo on 2026-09-13–14.
 
 ## Geometry copyright and modifications
-
-For 藝, the first four retained MM paths are reordered as 2, 1, 4, 3.
-Strokes 9, 11 and 13 are local replacements: a down-then-right turn,
-a separate lower 土 vertical, and a descending 丸 start separated from
-the upper-right cross at width 5. The other 16 normalized MM centerlines
-preserve every point. All 19 original directions (57 temporal frames) and
-19 corrected cumulative states were inspected. Original medians, full
-modified source and private dictionary observations are in
-`docs/hanja-g4-ye-2026-09-14/`, under the same Arphic terms.
-No approval transfers to 艺 or 芸, and no exam-body certification is claimed.
 
 For 獎, the first two original MM centerlines are reordered so that the
 long vertical precedes the bent stroke. Strokes 11, 13 and 15 are local
