@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-14",
+  "result": "passed",
+  "newCharacters": ["冊", "灰", "姉"],
+  "newStrokes": 19,
+  "authoredPaths": 5,
+  "retainedOrReorderedPaths": 14,
+  "browserReview": {
+    "page": "review.html",
+    "correctedCumulativeStagesViewed": 19,
+    "startAndEndMarkersChecked": true,
+    "playbackAndReplayChecked": true,
+    "sourceDirections": "Reuse the preceding pinned 19-stroke observations; this review does not claim a second complete live source observation."
+  },
+  "checks": [
+    { "command": "node --test lib/hanja*.test.ts", "passed": 197, "failed": 0 },
+    { "command": "node docs/hanja-g4-corrections-2026-09-14/verify.mjs --online", "exitCode": 0, "sourcesWithMatchingBytesAndSha256": 3 },
+    { "command": "pnpm run build", "exitCode": 0, "typescript": "passed", "staticPages": "7/7" },
+    { "command": "git diff --check", "exitCode": 0 }
+  ],
+  "coverage": {
+    "applied": 1493,
+    "total": 5978,
+    "throughGrade3IIApplied": 1492,
+    "throughGrade3IITotal": 1500,
+    "throughGrade3IIRemaining": ["液", "藝", "衛", "砲", "豊", "筋", "獎", "鍾"]
+  },
+  "nextRecommended": { "characters": ["液", "砲", "筋"], "strokes": 33 },
+  "evidenceClass": "Private Korean dictionary crosscheck, not exam-body certification",
+  "sourceArtworkCopied": false
+}

@@ -3,10 +3,19 @@
 `dictionary-reviewed.json` contains the complete modified centerline source for
 訣 (11 strokes), 紋 (10 strokes), 森 (12 strokes), 楓 (13 strokes),
 奔 (8 strokes), 慈 (13 strokes), 蓮 (15 strokes), 追 (10 strokes),
-透 (11 strokes), 還 (17 strokes), 兔 (8 strokes) and 弊 (14 strokes),
-modified for Lingo on 2026-09-13.
+透 (11 strokes), 還 (17 strokes), 兔 (8 strokes), 弊 (14 strokes),
+冊 (5 strokes) and 灰 (6 strokes), modified for Lingo on 2026-09-13–14.
 
 ## Geometry copyright and modifications
+
+For 冊, the first centerline is locally authored and the retained MM strokes
+are reordered as 2, 4, 5, 3, placing the crossbar last. For 灰, centerlines 3
+and 6 are locally authored to correct the down-left direction and restore
+the missing upper segment. The other four MM centerlines are unchanged.
+All 11 cumulative stages were rechecked against prior exact-character
+dictionary observations. Original medians are in
+`docs/hanja-g4-chaek-hoe-ja-2026-09-14/`; complete modified source and review
+are in `docs/hanja-g4-corrections-2026-09-14/`, under the same Arphic terms.
 
 For 弊, normalized MM strokes 9 and 12 are unchanged. The other twelve
 centerlines are local replacements reviewed against the domestic dictionary's

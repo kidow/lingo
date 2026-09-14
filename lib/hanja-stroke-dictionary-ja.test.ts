@@ -82,11 +82,12 @@ test('Ja provenance cannot be relabeled as MM or bypass the shared audit', () =>
   assert.doesNotThrow(() => validateDictionaryBundle())
   const candidate = { character: '響', medians: originals.entries[0].medians, strokes: normalizeMedians(originals.entries[0].medians) }
   const characters = [{ glyph: '響', strokes: 22, readingGrade: '3급II' }]
-  const audit = auditStrokes(characters, [], HANJA_DICTIONARY_JA_STROKES, [candidate], [])
+  const reviews = HANJA_DICTIONARY_JA_STROKES.filter(e => e.glyph === '響')
+  const audit = auditStrokes(characters, [], reviews, [candidate], [])
   assert.equal(audit.verificationSources.dictionary, 1)
   assert.equal(audit.verificationSources.eomunhoe, 0)
   assert.equal(audit.playback['dictionary-crosschecked'], 1)
-  assert.throws(() => auditStrokes(characters, [], HANJA_DICTIONARY_JA_STROKES, [], [candidate]), /geometry mismatch/)
+  assert.throws(() => auditStrokes(characters, [], reviews, [], [candidate]), /geometry mismatch/)
   const wrongSource = structuredClone(buildJaDictionaryBundle())
   wrongSource.characters[0].geometrySource = 'a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee'
   assert.throws(() => loadJaDictionaryBundle(wrongSource), /entry mismatch/)

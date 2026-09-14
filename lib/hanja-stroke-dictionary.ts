@@ -5,7 +5,7 @@ export const HANJA_DICTIONARY_SOURCE = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: three disputed directions for 訣·紋, and complete sequences for 森·楓·奔·慈·蓮·追·透·還·兔·弊·冊·灰. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
   "name": "Make Me a Hanzi with reviewed local corrections",
@@ -14,7 +14,7 @@ export const HANJA_DICTIONARY_GEOMETRY_SOURCE = {
 } as const
 export const DICTIONARY_REFERENCES: Readonly<Record<string, {
   strokes: number; pathsSha256: string; directions: string; svgUrl: string; svgSha256: string
-  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye'
+  originalMediansSha256: string; moyaId?: string; wholeGlyphReview?: 'sam-pung' | 'bun-ja' | 'walk-four' | 'rabbit' | 'pye' | 'g4-three'
   sourceStrokeIndices?: readonly (number | null)[]
 }>> = {
   "訣": {
@@ -197,11 +197,51 @@ export const DICTIONARY_REFERENCES: Readonly<Record<string, {
       8
     ]
   },
+  "冊": {
+    "strokes": 5,
+    "pathsSha256": "fa59e6ef890902c3b6e377657d71c5c67690a63a13adb14c5230cb7fd5ea3a29",
+    "originalMediansSha256": "03e8b3373f8bd5858c9495f7072ca81e675762fe3e795f9004b416dd9126f524",
+    "directions": "1,2,3,4,5",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5100/518A.svg",
+    "svgSha256": "3908eff0d94902c38003ac910d9c24a026f455f1225f846deb5b8d2eda192db9",
+    "wholeGlyphReview": "g4-three",
+    "sourceStrokeIndices": [
+      null,
+      2,
+      4,
+      5,
+      3
+    ]
+  },
+  "灰": {
+    "strokes": 6,
+    "pathsSha256": "2a3f383cd60b11ef9224b2a1b57e5c8410127a70cb070ee5466d6a60d638c4e4",
+    "originalMediansSha256": "6d76f3359a06b4ee56ee39dbcf335f4b3326dabf95b867eeb46ad7d8249a895e",
+    "directions": "1,2,3,4,5,6",
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7000/7070.svg",
+    "svgSha256": "d889ab989c73d90c8cb554d99da31b5a4b96dd7c132291addd959ac669e4d89b",
+    "wholeGlyphReview": "g4-three",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      null,
+      4,
+      5,
+      null
+    ]
+  },
 }
 
 export function dictionarySourceReference(glyph: string) {
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref) throw new Error('Unreviewed dictionary glyph: ' + glyph)
+  if (ref.wholeGlyphReview === 'g4-three') return {
+    orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
+    dictionaryDirectionStrokes: ref.directions,
+    orderReviewSha256: '7124909e47f7c97355c9062b21af650826e8ada189888388a848827796285161',
+    geometryReviewSha256: '7124909e47f7c97355c9062b21af650826e8ada189888388a848827796285161',
+    directionReviewSha256: '07555e6ee2488a0613b3978a26c8afc65853682b2d76fef0a2a59c7cc0113e64',
+  }
   if (ref.wholeGlyphReview === 'pye') return {
     orderUrl: ref.svgUrl, dictionarySvgUrl: ref.svgUrl, dictionarySvgSha256: ref.svgSha256,
     dictionaryDirectionStrokes: ref.directions,
@@ -271,7 +311,7 @@ export function loadDictionaryBundle(bundle: DictionaryBundle): readonly HanjaDi
   const seen = new Set<string>()
   return bundle.characters.map(entry => {
     const ref = entry && Object.hasOwn(DICTIONARY_REFERENCES, entry.glyph) ? DICTIONARY_REFERENCES[entry.glyph] : undefined
-    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== '2026-09-13'
+    if (!ref || seen.has(entry.glyph) || entry.verifiedAt !== (ref.wholeGlyphReview === 'g4-three' ? '2026-09-14' : '2026-09-13')
       || entry.geometrySource !== HANJA_DICTIONARY_GEOMETRY_SOURCE.sha256
       || entry.geometryCorrection !== 'dictionary-crosscheck-' + entry.glyph.codePointAt(0)!.toString(16) + '-v1'
       || entry.pathsSha256 !== ref.pathsSha256 || !Array.isArray(entry.paths) || entry.paths.length !== ref.strokes

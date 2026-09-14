@@ -1,9 +1,17 @@
 # Dictionary-crosschecked AnimCJK geometry
 
 `dictionary-reviewed-ja.json` contains the complete modified centerline source
-for 響 (22 strokes), modified for Lingo on 2026-09-13.
+for 響 (22 strokes) and 姉 (8 strokes), modified for Lingo on 2026-09-13–14.
 
-The original 20-stroke medians derive from AnimCJK `graphicsJa.txt`, commit
+For 姉, normalized original Ja strokes 1–3 and 5–7 are retained. Locally
+authored strokes 4 and 8 form separate downward verticals on the same axis,
+meeting at stroke 5. The original detached diagonal dot is replaced.
+All eight cumulative stages were rechecked against prior exact-character
+dictionary observations. Original medians are in
+`docs/hanja-g4-chaek-hoe-ja-2026-09-14/`; complete modified source and review
+are in `docs/hanja-g4-corrections-2026-09-14/`, under the same Arphic terms.
+
+The original 響 20-stroke and 姉 8-stroke medians derive from AnimCJK `graphicsJa.txt`, commit
 `ec5e17cca76c87587790bcbce5ea0b4d4fb753d6`, SHA-256
 `2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8`.
 Preserved copyright and attribution: [COPYING.txt](COPYING.txt).

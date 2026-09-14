@@ -6,7 +6,7 @@ export const HANJA_DICTIONARY_JA_VERIFICATION = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosscheck: complete sequence for 響. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: complete sequences for 響·姉. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_JA_GEOMETRY = {
   "name": "AnimCJK Japanese corpus with reviewed local corrections",
@@ -55,6 +55,35 @@ export const HANJA_DICTIONARY_JA_ENTRY = {
 } as const
 export const HANJA_DICTIONARY_JA_ORIGINAL_SHA256 = '7caf6a90ffad284335bccf8063a872c59f8b84e0d1b9f8274d51c879694a7115'
 
+export const HANJA_DICTIONARY_JA_SISTER_ENTRY = {
+  "glyph": "姉",
+  "verifiedAt": "2026-09-14",
+  "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+  "geometryCorrection": "dictionary-crosscheck-59c9-v1",
+  "sourceStrokeIndices": [
+    1,
+    2,
+    3,
+    null,
+    5,
+    6,
+    7,
+    null
+  ],
+  "pathsSha256": "5c9d0bb0ca7cab5e9199036f120c6d000821cfe5454d4c74dd8894a834648a49",
+  "sourceReference": {
+    "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5900/59C9.svg",
+    "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5900/59C9.svg",
+    "dictionarySvgSha256": "3e7e7a2b2da8995f81ca9a5d4a47c251a17cce2ff1fd484e8ee924fef6da313d",
+    "dictionaryDirectionStrokes": "1,2,3,4,5,6,7,8",
+    "orderReviewSha256": "7124909e47f7c97355c9062b21af650826e8ada189888388a848827796285161",
+    "geometryReviewSha256": "7124909e47f7c97355c9062b21af650826e8ada189888388a848827796285161",
+    "directionReviewSha256": "07555e6ee2488a0613b3978a26c8afc65853682b2d76fef0a2a59c7cc0113e64"
+  }
+} as const
+export const HANJA_DICTIONARY_JA_SISTER_ORIGINAL_SHA256 = 'bf6e5cfafeebb78fe75178dc3d11d183a2893d8b61954dc00d9c90fb7515a009'
+const REVIEWED_ENTRIES = [HANJA_DICTIONARY_JA_ENTRY, HANJA_DICTIONARY_JA_SISTER_ENTRY] as const
+
 export type DictionaryJaBundle = {
   verificationSource: typeof HANJA_DICTIONARY_JA_VERIFICATION
   geometrySource: typeof HANJA_DICTIONARY_JA_GEOMETRY
@@ -75,12 +104,14 @@ export function loadJaDictionaryBundle(value: unknown): readonly HanjaDictionary
   const bundle = value as Record<string, unknown>
   if (Object.keys(bundle).length !== 3 || !same(bundle.verificationSource, HANJA_DICTIONARY_JA_VERIFICATION)
     || !same(bundle.geometrySource, HANJA_DICTIONARY_JA_GEOMETRY)
-    || !Array.isArray(bundle.characters) || bundle.characters.length !== 1) throw new Error('Ja dictionary bundle mismatch')
-  const entry = bundle.characters[0]
-  if (!entry || typeof entry !== 'object' || Array.isArray(entry)) throw new Error('Ja dictionary entry mismatch')
-  const { paths, ...metadata } = entry as Record<string, unknown>
-  if (!same(metadata, HANJA_DICTIONARY_JA_ENTRY) || !Array.isArray(paths) || paths.length !== 22
-    || !paths.every((path: unknown) => typeof path === 'string' && /^M[-.\d]+ [-.\d]+(?: L[-.\d]+ [-.\d]+)+$/.test(path))) throw new Error('Ja dictionary entry mismatch')
-  return [{ ...HANJA_DICTIONARY_JA_ENTRY, paths: paths as string[], verificationSource: HANJA_DICTIONARY_JA_VERIFICATION.id }]
+    || !Array.isArray(bundle.characters) || bundle.characters.length !== REVIEWED_ENTRIES.length) throw new Error('Ja dictionary bundle mismatch')
+  return bundle.characters.map((entry: unknown, index: number) => {
+    const reference = REVIEWED_ENTRIES[index]
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) throw new Error('Ja dictionary entry mismatch')
+    const { paths, ...metadata } = entry as Record<string, unknown>
+    if (!same(metadata, reference) || !Array.isArray(paths) || paths.length !== reference.sourceStrokeIndices.length
+      || !paths.every((path: unknown) => typeof path === 'string' && /^M[-.\d]+ [-.\d]+(?: L[-.\d]+ [-.\d]+)+$/.test(path))) throw new Error('Ja dictionary entry mismatch')
+    return { ...reference, paths: paths as string[], verificationSource: HANJA_DICTIONARY_JA_VERIFICATION.id }
+  })
 }
 export const HANJA_DICTIONARY_JA_STROKES = loadJaDictionaryBundle(reviewed)
