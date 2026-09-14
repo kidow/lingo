@@ -14,12 +14,15 @@ const corrections = json('./corrections.json'), candidates = json('./candidate-p
 const generated = prepare()
 const firstFollowUp = '../hanja-g3-batch5-followup-2026-09-15/'
 const secondFollowUp = '../hanja-g3-batch5-followup2-2026-09-15/'
+const thirdFollowUp = '../hanja-g3-batch5-followup3-2026-09-15/'
 const firstReview = json(firstFollowUp + 'review.json').records
 const secondReview = json(secondFollowUp + 'review.json').records
+const thirdReview = json(thirdFollowUp + 'review.json').records
 assert.deepEqual(firstReview.map(e => e.glyph), json('./next-batch.json').glyphs)
 assert.deepEqual(secondReview.map(e => e.glyph), json(firstFollowUp + 'next-batch.json').glyphs)
-const followUpReview = [...firstReview, ...secondReview]
-const followUpCandidates = [firstFollowUp, secondFollowUp].flatMap(path => json(path + 'candidate-paths.json').characters)
+assert.deepEqual(thirdReview.map(e => e.glyph), json(secondFollowUp + 'next-batch.json').glyphs)
+const followUpReview = [...firstReview, ...secondReview, ...thirdReview]
+const followUpCandidates = [firstFollowUp, secondFollowUp, thirdFollowUp].flatMap(path => json(path + 'candidate-paths.json').characters)
 assert.equal(queue.entries.length, 50)
 assert.equal(queue.entries.reduce((sum, e) => sum + e.strokes, 0), 573)
 assert.equal(new Set(queue.entries.map(e => e.glyph)).size, 50)
