@@ -281,12 +281,10 @@ verlaufen.` 한 줄은 맞게 쓰고 다른 줄에서 지름길을 탄 자리다
 `travel/souvenir` ru와 `food/radish` ja다. 규칙을 참으로 만들어야 검사를 걸 수
 있어서다.
 
-**남은 셋은 파일이 막혀 못 했다.**
+**남은 하나는 파일이 막혀 못 했다.**
 
 | 파일 | 낱말 | 원문 | 지금 한국어 |
 | --- | --- | --- | --- |
-| nature | `wave` zh | `海浪拍在岸边。` (파도가 물가를 친다) | 파도가 높습니다 ← **틀렸다** |
-| nature | `merge` de | `Hier sieht man die zwei Bäche zusammenfließen.` | 뜻은 같다. 갈라 적으면 검사가 조용해진다 |
 | sport | `catcher-mask` zh | `捕手面罩保护脸部。` | 뜻은 같다. 위와 같다 |
 
 **`pnpm check`가 이제 이 자리를 짚는다.** 문턱은 두지 않았다 — 문장이 얼마나
