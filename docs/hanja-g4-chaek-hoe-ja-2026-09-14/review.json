@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-14",
+  "scope": "冊·灰·姉 3자·19획 원본 움직임과 후보 누적 경로 대조",
+  "authority": "The Korean dictionary reference is e-hanja, a private domestic dictionary. This review does not claim Korea Eomunhoe or Ministry of Education certification.",
+  "rowFields": ["targetStroke", "role", "observedDirection", "originalCandidateStroke", "decision", "reason"],
+  "entries": [
+    {
+      "glyph": "冊", "strokes": 5,
+      "status": "order-and-outline-correction-required", "runtimeApproved": false,
+      "proposedOrder": [1,2,4,5,3],
+      "strokeReview": [
+        [1,"왼쪽 외곽 세로","위→아래",1,"reshape","Candidate bows markedly left toward the bottom; reference stays nearly vertical. Align the outer outline before claiming a geometry match."],
+        [2,"위 가로·오른쪽 세로·갈고리","왼쪽→오른쪽→아래→왼쪽 갈고리",2,"direction-match","The moving upper horizontal, later downward segment and completed hook agree in role. Recheck its join with corrected stroke1."],
+        [3,"내부 왼쪽 세로","위→아래",4,"reorder","Reference draws the left internal vertical before the crossing horizontal; map original candidate4 to target3."],
+        [4,"내부 오른쪽 세로","위→아래",5,"reorder","Map original candidate5 to target4."],
+        [5,"중간 가로","왼쪽→오른쪽",3,"reorder","Reference completes both internal verticals first. Move original candidate3 to the final stroke."]
+      ],
+      "nextCorrection": "Keep five strokes; reorder 1,2,4,5,3, align the left outer vertical and verify its top join. Reinspect all five cumulative stages."
+    },
+    {
+      "glyph": "灰", "strokes": 6,
+      "status": "geometry-correction-required", "runtimeApproved": false,
+      "proposedOrder": [1,2,3,4,5,6],
+      "strokeReview": [
+        [1,"위 가로","왼쪽→오른쪽",1,"direction-match","Same role and direction; reference crosses the left slant."],
+        [2,"왼쪽 긴 삐침","위→왼쪽 아래",2,"direction-match","Reference starts above the horizontal and descends past it to the lower left, as does the candidate."],
+        [3,"火의 왼쪽 짧은 획","위→왼쪽 아래",3,"reshape","Candidate ends to the right of its start; the moving reference curves down-left. Reversing the entire candidate would also reverse its vertical travel, so redraw this short path."],
+        [4,"火의 오른쪽 짧은 삐침","오른쪽 위→왼쪽 아래",4,"direction-match","Reference starts at the outer upper-right tip and travels toward the center. No direction reversal is needed."],
+        [5,"火의 긴 왼쪽 삐침","중앙 위→왼쪽 아래",5,"direction-match","Role and direction agree; its upper start is the anchor for comparing stroke6."],
+        [6,"火의 오른쪽 파임","중앙 위→오른쪽 아래",6,"extend-start","Candidate begins around mid-height (normalized y66.1) while reference begins beside the upper start of stroke5. Extend/reconstruct the initial segment; keep the right-down finish."]
+      ],
+      "nextCorrection": "Keep six strokes and the original order; reshape stroke3 down-left and extend stroke6 to the upper central start. Reinspect their interaction with strokes4 and5."
+    },
+    {
+      "glyph": "姉", "strokes": 8,
+      "status": "geometry-correction-required", "runtimeApproved": false,
+      "proposedOrder": [1,2,3,4,5,6,7,8],
+      "strokeReview": [
+        [1,"女의 꺾인 첫 획","위→왼쪽 아래→오른쪽 아래",1,"direction-match","Moving descending segment and completed bent tail agree with the candidate role."],
+        [2,"女의 긴 삐침","오른쪽 위→왼쪽 아래",2,"direction-match","Reference starts at the right upper intersection and moves down-left."],
+        [3,"女의 가로","왼쪽→오른쪽",3,"direction-match","Reference crosses the first stroke and ends at the upper right of 女."],
+        [4,"오른쪽 위 짧은 세로","위→아래, 5획 가로까지",4,"reshape-and-join","Candidate is a detached oblique dot. Reference is vertical and reaches the upper horizontal. This is a visible variant difference, not merely a stroke-count difference."],
+        [5,"오른쪽 위 가로","왼쪽→오른쪽",5,"direction-match","Reference crosses the bottom of stroke4. Its central join must be retained when correcting4 and8."],
+        [6,"巾의 왼쪽 세로","위→아래",6,"direction-match","Same separate left vertical role."],
+        [7,"巾의 위 가로·오른쪽 세로·갈고리","왼쪽→오른쪽→아래→왼쪽 갈고리",7,"direction-match","Moving upper horizontal and completed enclosure/hook agree in role."],
+        [8,"오른쪽 중앙 긴 세로","5획 가로에서 아래로",8,"align-start-and-axis","Reference begins immediately under stroke4 at the horizontal and descends straight. Candidate begins left of its long vertical with an oblique lead-in. Align it with corrected4, preserving two distinct strokes."]
+      ],
+      "nextCorrection": "Keep eight strokes and the original order; make4 the short upper vertical and align8 below it at5. Never merge4 and8 into one stroke."
+    }
+  ],
+  "priorPins": [
+    {"file":"docs/hanja-g4-held-11-2026-09-14/sources.json","bytes":13887,"sha256":"0217a3f6fd4ff7a1f80cdd59790ad8f7f7b36f2f966dd042e14608895e7152c5"},
+    {"file":"docs/hanja-g4-held-11-2026-09-14/verification.json","bytes":1415,"sha256":"ad5003f56072a08242e6bba276fa53d547e113d9c00866759fd07f2391249b9d"},
+    {"file":"public/hanja-strokes/MAKEMEAHANZI-COPYING.txt","bytes":1131,"sha256":"df2e856c73d2ddf036ba95556e25a27163de5cae6ef80e9509a86ec8ece9f84f"},
+    {"file":"public/hanja-strokes/COPYING.txt","bytes":1477,"sha256":"9e6b42c173ab88f7038534dd516a0a408866ca9eb9c02286422fd9525f790238"},
+    {"file":"public/hanja-strokes/ARPHICPL.txt","bytes":6902,"sha256":"76430f0e943a5a088af54d44a58af187be53528fffdfe5ce6abdfc44d508f78f"}
+  ],
+  "newRuntimeApprovals": 0,
+  "nextRecommendation": "Apply the recorded order/outline corrections for 冊 and geometry corrections for 灰3/6 and 姉4/8, re-review corrected cumulative stages, then decide runtime approval."
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-14",
+  "scope": "冊·灰·姉 all 19 strokes: source direction and original candidate review",
+  "proof": {
+    "command": "node docs/hanja-g4-chaek-hoe-ja-2026-09-14/verify.mjs --online",
+    "exitCode": 0,
+    "status": "passed",
+    "reviewedGlyphs": 3,
+    "reviewedStrokes": 19,
+    "observedMovingFrames": 20,
+    "cumulativeCandidateStages": 19,
+    "additionalReorderedStages": 5,
+    "originalCandidatesReproduced": 3,
+    "priorAndLicensePinsChecked": 5,
+    "liveDictionarySourcesChecked": 3,
+    "newRuntimeApprovals": 0,
+    "currentRuntimeGlyphs": 1490,
+    "currentCatalogGlyphs": 5978,
+    "currentPlayableTargets": [],
+    "correctionRequired": ["冊", "灰", "姉"]
+  },
+  "candidateSourceRetrieval": {
+    "fullSourceHashesMatched": 2,
+    "exactCandidateGlyphs": 3,
+    "note": "Pinned Make Me a Hanzi and AnimCJK graphics sources were fetched and hashed in memory. Only the three relevant medians were retained."
+  },
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 192,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "originalSourceMovingStrokes": 19,
+    "originalCandidateCumulativeStages": 19,
+    "reorderedChaekCumulativeStages": 5,
+    "sourceArtworkSaved": false
+  },
+  "build": "Not rerun: only review artifacts and a standalone proof script were added; no app code or runtime data changed."
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>冊·灰·姉 19획 후보 대조</title>
+<style>
+  body{margin:24px;background:#faf7f2;color:#222;font:15px system-ui}h1{font-size:24px}
+  .grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+  .cell{background:white;border:1px solid #ddd;border-radius:8px;padding:8px}.cell svg{width:100%;height:150px}
+  .caption{display:flex;justify-content:space-between;font-size:13px}section{margin:28px 0}a{color:#365b98}
+  .key{color:#666}button{padding:9px 14px;margin-right:8px}button[aria-pressed=true]{background:#222;color:white}
+  @media(max-width:600px){body{margin:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<h1>冊·灰·姉 19획 후보 대조</h1>
+<p>원본 후보의 누적 경로입니다. 순서 대조안에는 경로 보정이 포함되지 않았고, 앱 적용 승인도 아닙니다.</p>
+<p class="key">회색: 이전 획 · 보라: 현재 획 · 초록: 시작 · 빨강: 끝</p>
+<nav aria-label="대조할 한자"></nav><main></main>
+<script type="module">
+const {entries}=await(await fetch('./candidate-paths.json')).json();
+const sources=(await(await fetch('../hanja-g4-held-11-2026-09-14/sources.json')).json()).entries;
+function render(entry){
+ document.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed',String(button.textContent===entry.glyph)));
+ const main=document.querySelector('main');main.replaceChildren();
+ const source=sources.find(source=>source.glyph===entry.glyph);
+ for(const [label,order] of [['후보 원래 순서',entry.paths.map((_,index)=>index+1)],['사전 순서 대조안',entry.proposedOrder]]){
+  const section=document.createElement('section');
+  const title=document.createElement('h2');title.textContent=`${entry.glyph} · ${label}`;
+  const link=document.createElement('a');link.href=source.sourceUrl;link.target='_blank';link.rel='noopener';link.textContent='사전 원본';
+  section.append(title,link);const grid=document.createElement('div');grid.className='grid';section.append(grid);
+  const paths=order.map(index=>entry.paths[index-1]);
+  paths.forEach((path,index)=>{
+   const points=Array.from(path.matchAll(/[ML]([-.\d]+) ([-.\d]+)/g),match=>[Number(match[1]),Number(match[2])]);
+   const first=points[0],last=points.at(-1);const cell=document.createElement('div');cell.className='cell';
+   cell.innerHTML=`<div class="caption"><b>${index+1}획</b><span>원본 ${order[index]}번</span></div><svg viewBox="0 0 100 100" aria-label="${entry.glyph} ${index+1}획 누적 경로">${paths.slice(0,index+1).map((item,j)=>`<path d="${item}" fill="none" stroke="${j===index?'#6660dc':'#d3d0c9'}" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round"/>`).join('')}<circle cx="${first[0]}" cy="${first[1]}" r="1.5" fill="#138d57"/><circle cx="${last[0]}" cy="${last[1]}" r="1.5" fill="#d83939"/></svg>`;
+   grid.append(cell);
+  });main.append(section);
+ }
+}
+for(const entry of entries){const button=document.createElement('button');button.textContent=entry.glyph;button.type='button';button.onclick=()=>render(entry);document.querySelector('nav').append(button);}
+render(entries[0]);
+</script>
+</html>
