@@ -5,9 +5,21 @@
 奔 (8 strokes), 慈 (13 strokes), 蓮 (15 strokes), 追 (10 strokes),
 透 (11 strokes), 還 (17 strokes), 兔 (8 strokes), 弊 (14 strokes),
 冊 (5 strokes), 灰 (6 strokes), 液 (11 strokes), 砲 (10 strokes) and
-筋 (12 strokes), modified for Lingo on 2026-09-13–14.
+筋 (12 strokes), 衛 (15 strokes) and 豊 (13 strokes),
+modified for Lingo on 2026-09-13–14.
 
 ## Geometry copyright and modifications
+
+For 衛, strokes 7 and 11 are locally authored to straighten the mouth's
+left edge and connect the lower vertical-to-horizontal bend. For 豊,
+strokes 3, 8 and 11 are locally authored to connect the inner crossbar,
+straighten the lower mouth's left edge and place the dot below that mouth.
+The other 23 normalized MM centerlines retain every point and original
+position. All 28 source stroke directions and corrected cumulative stages
+were inspected. Exact source-time observations, original medians, modified
+source and approval are in `docs/hanja-g4-wi-pung-2026-09-14/`, under the
+same Arphic terms. These exact-character private dictionary crosschecks
+do not approve 衞 or 豐 and are not exam-body certification.
 
 For 液, strokes 4 and 10 are locally authored to replace the diagonal dot
 with a connected vertical and close the inner down-right mark. For 砲,

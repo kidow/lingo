@@ -29,7 +29,7 @@ test('all 19 reviewed strokes are available only for the three exact corrected g
     assert.deepEqual(hanjaStrokeData({ glyph: item.glyph, strokes: item.paths.length }), item)
     assert.equal(hanjaStrokeData({ glyph: item.glyph, strokes: item.paths.length + 1 }), null)
   }
-  for (const glyph of ['藝', '衛', '豊', '獎', '鍾']) assert.ok(!HANJA_STROKES.some(e => e.glyph === glyph))
+  for (const glyph of ['藝', '獎', '鍾']) assert.ok(!HANJA_STROKES.some(e => e.glyph === glyph))
 })
 
 test('all cumulative stages and direction observations are pinned without copying dictionary artwork', () => {

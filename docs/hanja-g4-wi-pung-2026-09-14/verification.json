@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-14",
+  "result": "passed",
+  "scope": {
+    "characters": 2,
+    "strokes": 28,
+    "sourceTimeSamplesObserved": 84,
+    "originalCumulativeStagesViewed": 28,
+    "correctedCumulativeStagesViewed": 28,
+    "additionalPungCumulativeRechecks": 13,
+    "locallyAuthoredStrokes": 5,
+    "unchangedNormalizedMMStrokes": 23
+  },
+  "commands": [
+    {
+      "command": "node docs/hanja-g4-wi-pung-2026-09-14/verify.mjs --online",
+      "exitCode": 0
+    },
+    {
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "tests": 208,
+      "passed": 208,
+      "failed": 0
+    },
+    {
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "nextVersion": "16.3.3",
+      "typescript": "passed",
+      "staticPages": 7
+    },
+    {
+      "command": "pnpm exec tsc --noEmit",
+      "exitCode": 0,
+      "note": "Final type check after adjusting the textbook-held assertion to allow separately reviewed exact-character sources."
+    }
+  ],
+  "onlineResources": [
+    {
+      "name": "衛",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8800/885B.svg",
+      "status": 200,
+      "bytes": 7911,
+      "sha256": "0f7b360be2770519d8a62d2767346af43fb58c87f5ac01c8481faf556d373fdb"
+    },
+    {
+      "name": "豊",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8C00/8C4A.svg",
+      "status": 200,
+      "bytes": 6211,
+      "sha256": "422130895490ea88ecb31e5cf4d9b73a64f7edf2631552a02f49e4b21040db6d"
+    },
+    {
+      "name": "opmGna.svg.ani.min.css",
+      "status": 200,
+      "bytes": 804,
+      "sha256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18"
+    },
+    {
+      "name": "gna.lib.svg.ani.min.js",
+      "status": 200,
+      "bytes": 3865,
+      "sha256": "e807c25571b8c0c46a80a37d86ff7b982822303dfb28d7464e35dfdffb2d2690"
+    }
+  ],
+  "runtimeSnapshot": {
+    "catalogCharacters": 5978,
+    "enabledCharacters": 1498,
+    "throughGrade3II": {
+      "characters": 1500,
+      "enabled": 1497,
+      "remaining": [
+        {
+          "glyph": "藝",
+          "strokes": 19,
+          "readingGrade": "4급II"
+        },
+        {
+          "glyph": "獎",
+          "strokes": 15,
+          "readingGrade": "4급"
+        },
+        {
+          "glyph": "鍾",
+          "strokes": 17,
+          "readingGrade": "4급"
+        }
+      ]
+    }
+  },
+  "existingDictionaryEntriesPreserved": 17,
+  "evidenceClass": "Korean private dictionary crosscheck, not examination-body certification",
+  "sourceArtworkRedistributed": false
+}

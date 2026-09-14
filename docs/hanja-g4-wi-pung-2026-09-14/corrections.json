@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "coordinateSystem": "viewBox100",
+  "strokeWidth": 5,
+  "sourceArtworkCopied": false,
+  "entries": [
+    {
+      "glyph": "衛",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        null,
+        8,
+        9,
+        10,
+        null,
+        12,
+        13,
+        14,
+        15
+      ],
+      "authored": [
+        {
+          "stroke": 7,
+          "path": "M40.4 44.8 L40.4 52.7",
+          "reason": "The dictionary's mouth left edge descends vertically. Replace the candidate's pronounced down-right diagonal and meet strokes 8 and 9."
+        },
+        {
+          "stroke": 11,
+          "path": "M39.3 59.9 L39.3 71.5 L56.5 68.4 L59.8 68.5 L63.7 69.3",
+          "reason": "Start on stroke 10, descend, then turn right as observed. The original candidate starts below and left of stroke 10, leaving a disconnected vertical bend at width 5."
+        }
+      ]
+    },
+    {
+      "glyph": "豊",
+      "sourceStrokeIndices": [
+        1,
+        2,
+        null,
+        4,
+        5,
+        6,
+        7,
+        null,
+        9,
+        10,
+        null,
+        12,
+        13
+      ],
+      "authored": [
+        {
+          "stroke": 3,
+          "path": "M28.2 35.8 L40.3 35.4 L58.8 31.6 L70.4 32.2",
+          "reason": "The observed middle horizontal of 曲 spans between its two outer sides. Extend the licensed candidate's endpoints to meet strokes 1 and 2; retain its interior points and left-to-right direction."
+        },
+        {
+          "stroke": 8,
+          "path": "M35.7 61.3 L35.7 75.1",
+          "reason": "Keep the 豆 mouth left edge vertical as observed, beginning on stroke 9 and reaching stroke 10 rather than leaning inward."
+        },
+        {
+          "stroke": 11,
+          "path": "M39 78.3 L42 79.5 L43.5 81.8",
+          "reason": "Place the down-right dot inside the horizontal extent below the 豆 mouth, as observed. Keep it separate from the mouth and bottom horizontal at runtime width 5; the original candidate starts outside the mouth's left edge."
+        }
+      ]
+    }
+  ]
+}

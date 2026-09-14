@@ -46,7 +46,12 @@ test('교과서 발견 목록과 완료된 검토 등록부를 분리한다', ()
   const completed = TEXTBOOK_REVIEW_REGISTRY.records.filter((record) => record.status === 'matched')
   assert.deepEqual(HANJA_TEXTBOOK_STROKES.map((entry) => entry.glyph).sort(), completed.map((entry) => entry.glyph).sort())
   for (const record of TEXTBOOK_REVIEW_REGISTRY.records.filter((entry) => entry.status !== 'matched')) {
-    assert.equal(hanjaStrokeData({ glyph: record.glyph, strokes: record.expectedStrokes }), null)
+    assert.ok(!HANJA_TEXTBOOK_STROKES.some(entry => entry.glyph === record.glyph))
+    // A held textbook variant does not invalidate a separately reviewed exact-character source.
+    const independent = [...HANJA_DOCUMENT_STROKES, ...HANJA_NUMBERED_STROKES,
+      ...HANJA_DICTIONARY_STROKES, ...HANJA_DICTIONARY_JA_STROKES]
+      .find(entry => entry.glyph === record.glyph && entry.paths.length === record.expectedStrokes)
+    assert.deepEqual(hanjaStrokeData({ glyph: record.glyph, strokes: record.expectedStrokes }), independent ?? null)
   }
   const { candidate, review } = fixture()
   const result = auditStrokes([{ glyph: '假', strokes: 11, readingGrade: '4급II' }], [candidate], [])
