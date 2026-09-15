@@ -1,0 +1,72 @@
+{
+  "date": "2026-09-15",
+  "result": "pass",
+  "review": {
+    "result": "pass",
+    "reviewedCharacters": 10,
+    "reviewedStrokes": 101,
+    "addedCharacters": 10,
+    "addedStrokes": 101,
+    "corrections": 10,
+    "heldCharacters": 0,
+    "runtime": 1784,
+    "remaining": 4194,
+    "grade3Applied": 283,
+    "grade3Remaining": 34,
+    "existingPrefixesPreserved": true,
+    "freshSourcePins": 10,
+    "proprietaryAssetsSaved": 0
+  },
+  "parent": {
+    "result": "pass",
+    "reviewedCharacters": 50,
+    "catalogStrokes": 547,
+    "observedStrokes": 545,
+    "addedCharacters": 15,
+    "addedStrokes": 97,
+    "initiallyHeldCharacters": 35,
+    "followUpApplied": 20,
+    "heldCharacters": 15,
+    "heldCatalogStrokes": 221,
+    "heldGlyphs": "誕遍幣蔽飽縣嫌螢毫昏鴻穫擴曉輝",
+    "runtime": 1784,
+    "remaining": 4194,
+    "grade3Applied": 283,
+    "grade3Remaining": 34,
+    "textbookPublished": 1252,
+    "reviewRecords": 1254,
+    "existingPrefixesPreserved": true,
+    "freshVideos": 0,
+    "proprietaryAssetsSaved": 0
+  },
+  "checks": [
+    {
+      "command": "node docs/hanja-g3-batch6-followup2-2026-09-15/verify.mjs --fresh",
+      "exitCode": 0
+    },
+    {
+      "command": "node docs/hanja-g3-batch6-2026-09-15/verify.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+      "exitCode": 0,
+      "emittedCharacters": 1252,
+      "publishedBundleMatches": true
+    },
+    {
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "tests": 231,
+      "passed": 231,
+      "failed": 0
+    },
+    {
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "productionBuild": "passed"
+    }
+  ],
+  "sharedChangesExcluded": true,
+  "pushRequested": false
+}

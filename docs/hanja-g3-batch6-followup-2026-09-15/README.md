@@ -50,8 +50,9 @@
 `node docs/hanja-g3-batch6-2026-09-15/verify.mjs`,
 `node scripts/hanja-stroke-textbook-build.ts --check`, `pnpm run build`.
 
-## 다음 권장 작업
+## 후속 완료
 
-**貝·抱·幅·漂·旱·咸·奚·該·軒·絃 10자·101획**의 경로·방향·순서 보정.
-[next-batch.json](next-batch.json)에 다음 10자와 나머지 보류 15자를 구분했다.
-幣·蔽의 배정 획수와 영상 경계 차이는 여전히 별도 검토 대상이다.
+이 문서의 다음 권장 대상이었던 **貝·抱·幅·漂·旱·咸·奚·該·軒·絃 10자·101획**도 적용했다.
+최신 누적은 **1,784자**, 3급 **283/317자**이며 원본 50자 묶음에서 **15자·221획**이 남았다.
+[최신 검토와 다음 권장 작업](../hanja-g3-batch6-followup2-2026-09-15/README.md)을 참고한다.
+위 결과는 이 문서 작성 당시의 기록이고 [next-batch.json](next-batch.json)은 당시 권장 범위를 보존한다.
