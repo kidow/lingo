@@ -226,7 +226,9 @@ if [ ${#files[@]} -gt 1 ]; then
   dupes=$(md5 -r "${files[@]}" 2>/dev/null | awk '{n=split($2,p,"/"); h[$1]=h[$1]" "p[n]} END {for (k in h) if (split(h[k],a," ")>1) print h[k]}')
   if [ -n "$dupes" ]; then
     print -r -- "경고 — 같은 그림이 여러 slug에 들어갔다:$dupes"
-    print -r -- "       해당 slug를 지우고 PAR=1로 다시 돌리세요."
+    print -r -- "       해당 slug를 지우고 한 장씩 따로 다시 돌리세요."
+    print -r -- "       둘을 같이 부르면 PAR=1이어도 또 같은 파일이 나온 적이 있습니다"
+    print -r -- "       — docs/genimg-same-image.md"
     bad=1
   fi
 fi
