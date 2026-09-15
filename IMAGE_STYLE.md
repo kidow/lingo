@@ -368,6 +368,15 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 | `one booklet with rows of small stamps` | 우표 수집책 · 식물 도감 | `one sheet with three round ink stamps and a small syringe` |
 | `one paper strip of a heart trace` | 사랑 하트 리본 | `one strip of graph paper with a jagged line that flattens into a gap` |
 | `one paper bill with a red stamp mark` | **지폐** | `one printed notice sheet with a red band across its top edge` |
+| `one earth bank with a wet line running out of it` | **지구본** | `one cracked water jar with a wet trail leading away` |
+| `one small round lump lifted out whole` | 호박 | `one glass phial holding one small pale round object` |
+| `one paper window with a small tear` | 봉투 | `one single blossom fallen off at a touch` |
+
+뒤의 셋은 두 글자 17회차에서 한 회차에 같이 나왔다. `earth`는 흙이 아니라
+지구로 읽히고, `lump`는 멍울이 아니라 둥근 열매로 읽히고, `paper window`는
+창호지가 아니라 **봉투의 비닐 창**으로 읽힌다. 셋 다 `pnpm props`가
+«임자 없음»으로 통과시킨 낱말이다 — props는 그 낱말에 임자가 있는지를 보지
+낱말이 다른 뜻으로 읽힐지는 보지 않는다.
 
 **흔한 물건 이름일수록 다른 뜻이 세다.** `lens`는 사진 렌즈, `oil`은 식용유,
 `globe`는 여행, `stamp`는 우표, `heart`는 사랑 하트, `bill`은 지폐다. 안경알을
