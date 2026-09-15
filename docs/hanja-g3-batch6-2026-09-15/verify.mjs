@@ -12,6 +12,10 @@ const queue = json('./queue.json'), observations = json('./observations.json').r
 const originals = json('./originals.json'), review = json('./review.json')
 const corrections = json('./corrections.json'), candidates = json('./candidate-paths.json')
 const generated = prepare()
+const followUp = '../hanja-g3-batch6-followup-2026-09-15/'
+const followUpReview = json(followUp + 'review.json').records
+const followUpCandidates = json(followUp + 'candidate-paths.json').characters
+assert.deepEqual(followUpReview.map(e => e.glyph), json('./next-batch.json').glyphs)
 assert.equal(queue.status, 'reviewed-with-holds')
 assert.equal(queue.entries.length, 50)
 assert.equal(queue.entries.reduce((sum, e) => sum + e.strokes, 0), 547)
@@ -43,8 +47,20 @@ for (const item of queue.entries) {
   observedStrokes += observation.ends.length
   if (observation.decision === 'held') {
     assert.ok(observation.conflicts.length)
-    assert.equal(HANJA_STROKES.find(e => e.glyph === item.glyph), undefined)
-    assert.equal(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), undefined)
+    const resolved = followUpReview.find(e => e.glyph === item.glyph)
+    if (resolved) {
+      assert.deepEqual(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), resolved)
+      assert.deepEqual(resolved.sourceVideo, item.sourceVideo)
+      const entry = HANJA_TEXTBOOK_STROKES.find(e => e.glyph === item.glyph)
+      assert.ok(entry)
+      const { verificationSource, ...published } = entry
+      assert.equal(verificationSource, queue.publisher.id)
+      assert.deepEqual(published, followUpCandidates.find(e => e.glyph === item.glyph))
+      validateTextbookReview(entry, item.strokes)
+    } else {
+      assert.equal(HANJA_STROKES.find(e => e.glyph === item.glyph), undefined)
+      assert.equal(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), undefined)
+    }
     continue
   }
   assert.equal(original.medians.length, item.strokes)
@@ -87,11 +103,14 @@ if (process.argv.includes('--fresh')) {
 const catalog = json('../../content/hanja/characters/g3.json').characters
 const applied = new Set(HANJA_STROKES.map(e => e.glyph))
 const grade3Applied = catalog.filter(e => applied.has(e.glyph)).length
+const stillHeld = held.filter(e => !followUpReview.some(r => r.glyph === e.glyph))
+assert.equal(stillHeld.length, 25)
 console.log(JSON.stringify({
   result: 'pass', reviewedCharacters: 50, catalogStrokes: 547, observedStrokes,
   addedCharacters: matched.length, addedStrokes: review.records.reduce((sum, r) => sum + r.expectedStrokes, 0),
-  heldCharacters: held.length, heldCatalogStrokes: queue.entries.filter(e => held.some(h => h.glyph === e.glyph)).reduce((sum, e) => sum + e.strokes, 0),
-  heldGlyphs: held.map(e => e.glyph).join(''),
+  initiallyHeldCharacters: held.length, followUpApplied: followUpReview.length,
+  heldCharacters: stillHeld.length, heldCatalogStrokes: queue.entries.filter(e => stillHeld.some(h => h.glyph === e.glyph)).reduce((sum, e) => sum + e.strokes, 0),
+  heldGlyphs: stillHeld.map(e => e.glyph).join(''),
   runtime: applied.size, remaining: 5978 - applied.size,
   grade3Applied, grade3Remaining: catalog.length - grade3Applied,
   textbookPublished: HANJA_TEXTBOOK_STROKES.length, reviewRecords: TEXTBOOK_REVIEW_REGISTRY.records.length,
