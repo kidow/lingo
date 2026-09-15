@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-16",
+  "targeted": {
+    "command": "node --test lib/hanja-stroke-dictionary-g2-batch4.test.ts",
+    "passed": 5,
+    "failed": 0
+  },
+  "hanja": {
+    "command": "node --test lib/hanja*.test.ts",
+    "files": 42,
+    "passed": 257,
+    "failed": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "typeScript": "passed",
+    "productionCompilation": "passed",
+    "staticPages": 7
+  },
+  "artifacts": {
+    "compilerMatchesArtifacts": true,
+    "proofPinsValid": true,
+    "uniqueRuntimeGlyphs": true,
+    "batchApprovalsComplete": true
+  },
+  "visualReview": {
+    "firstPass": {
+      "characters": 50,
+      "strokes": 594
+    },
+    "correctedForms": 32,
+    "held": 0
+  },
+  "regressionFixes": [
+    "Separated 繕 strokes 6 and 15 beyond the five-unit playback width, then visually rechecked all 18 stages."
+  ],
+  "knowledgeBaseLabel": "HANJA G2 batch4 completion 2026-09-16"
+}

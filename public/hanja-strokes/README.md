@@ -93,3 +93,15 @@ compared with their e-hanja sequence and all 30 corrected forms were rechecked.
 These entries are `ehanja-crosschecked`, not exam-body certification.
 Dictionary artwork is not distributed. Evidence and reproducible recipes:
 `docs/hanja-g2-batch3-2026-09-15/README.md`.
+
+`dictionary-reviewed-g2-batch4.json` adds 50 grade-2 characters (594 strokes),
+modified for Lingo on 2026-09-16: 48 use Make Me a Hanzi at
+`bddc96d41bef78427ed0e034e9f7e31d71fd1b92`; 汎·毘 use AnimCJK
+`graphicsJa.txt` at `ec5e17cca76c87587790bcbce5ea0b4d4fb753d6`.
+Both retain the Arphic Public License and upstream credits above.
+The modified source contains 531 retained and 63 locally corrected centerlines,
+plus six glyph-specific order permutations. All 50 glyphs were independently
+compared with their e-hanja sequence and all 32 corrected forms were rechecked.
+These entries are `ehanja-crosschecked`, not exam-body certification.
+Dictionary artwork is not distributed. Evidence and reproducible recipes:
+`docs/hanja-g2-batch4-2026-09-16/README.md`.

@@ -12,6 +12,7 @@ import { HANJA_DICTIONARY_G2_STROKES } from './hanja-stroke-dictionary-g2.ts'
 import { HANJA_DICTIONARY_G2_FOLLOWUP_STROKES } from './hanja-stroke-dictionary-g2-followup.ts'
 import { HANJA_DICTIONARY_G2_BATCH2_STROKES } from './hanja-stroke-dictionary-g2-batch2.ts'
 import { HANJA_DICTIONARY_G2_BATCH3_STROKES } from './hanja-stroke-dictionary-g2-batch3.ts'
+import { HANJA_DICTIONARY_G2_BATCH4_STROKES } from './hanja-stroke-dictionary-g2-batch4.ts'
 import { normalizeMedians } from './hanja-stroke-geometry.ts'
 import { auditStrokes, CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE, MAKE_ME_A_HANZI_SOURCE } from '../scripts/hanja-stroke-audit.ts'
 import { TEXTBOOK_REVIEW_REGISTRY, textbookGeometrySource, validateTextbookReview, type TextbookReviewRegistry } from '../scripts/hanja-stroke-textbook.ts'
@@ -53,7 +54,7 @@ test('교과서 발견 목록과 완료된 검토 등록부를 분리한다', ()
     assert.ok(!HANJA_TEXTBOOK_STROKES.some(entry => entry.glyph === record.glyph))
     // A held textbook variant does not invalidate a separately reviewed exact-character source.
     const independent = [...HANJA_DOCUMENT_STROKES, ...HANJA_NUMBERED_STROKES,
-      ...HANJA_DICTIONARY_STROKES, ...HANJA_DICTIONARY_JA_STROKES, ...HANJA_DICTIONARY_G2_STROKES, ...HANJA_DICTIONARY_G2_FOLLOWUP_STROKES, ...HANJA_DICTIONARY_G2_BATCH2_STROKES, ...HANJA_DICTIONARY_G2_BATCH3_STROKES]
+      ...HANJA_DICTIONARY_STROKES, ...HANJA_DICTIONARY_JA_STROKES, ...HANJA_DICTIONARY_G2_STROKES, ...HANJA_DICTIONARY_G2_FOLLOWUP_STROKES, ...HANJA_DICTIONARY_G2_BATCH2_STROKES, ...HANJA_DICTIONARY_G2_BATCH3_STROKES, ...HANJA_DICTIONARY_G2_BATCH4_STROKES]
       .find(entry => entry.glyph === record.glyph && entry.paths.length === record.expectedStrokes)
     assert.deepEqual(hanjaStrokeData({ glyph: record.glyph, strokes: record.expectedStrokes }), independent ?? null)
   }
@@ -63,7 +64,7 @@ test('교과서 발견 목록과 완료된 검토 등록부를 분리한다', ()
   if (!completed.some((record) => record.glyph === '假')) {
     assert.throws(() => auditStrokes([{ glyph: '假', strokes: 11, readingGrade: '4급II' }], [candidate], [review]), /not completed/)
   }
-  assert.equal(HANJA_STROKES.length, 503 + completed.length + HANJA_DOCUMENT_STROKES.length + HANJA_NUMBERED_STROKES.length + HANJA_DICTIONARY_STROKES.length + HANJA_DICTIONARY_JA_STROKES.length + HANJA_DICTIONARY_G2_STROKES.length + HANJA_DICTIONARY_G2_FOLLOWUP_STROKES.length + HANJA_DICTIONARY_G2_BATCH2_STROKES.length + HANJA_DICTIONARY_G2_BATCH3_STROKES.length)
+  assert.equal(HANJA_STROKES.length, 503 + completed.length + HANJA_DOCUMENT_STROKES.length + HANJA_NUMBERED_STROKES.length + HANJA_DICTIONARY_STROKES.length + HANJA_DICTIONARY_JA_STROKES.length + HANJA_DICTIONARY_G2_STROKES.length + HANJA_DICTIONARY_G2_FOLLOWUP_STROKES.length + HANJA_DICTIONARY_G2_BATCH2_STROKES.length + HANJA_DICTIONARY_G2_BATCH3_STROKES.length + HANJA_DICTIONARY_G2_BATCH4_STROKES.length)
 })
 
 test('교과서 검토는 모든 획의 관찰 시점과 순서·방향·분할·자형 대조를 요구한다', () => {
