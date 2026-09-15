@@ -34,7 +34,8 @@ def source(glyph):
         if root.find(NS + 'title').text != glyph:
             raise ValueError('Dictionary title changed')
         groups = list(root.iter(NS + 'g'))
-        if len(groups) != 1 or not re.fullmatch(r'scale\(1,-1\) translate\(0, -\d+\)', groups[0].get('transform', '')):
+        # Preserve the source's horizontal offset; 潭 uses translate(12, -830).
+        if len(groups) != 1 or not re.fullmatch(r'scale\(1,-1\) translate\(-?\d+, -\d+\)', groups[0].get('transform', '')):
             raise ValueError('Unrecognized coordinate transform')
         outlines = {p.get('id'): p for p in root.iter(NS + 'path') if p.get('id')}
         clips = {c.get('id'): next(iter(c)).get('{http://www.w3.org/1999/xlink}href').removeprefix('#') for c in root.iter(NS + 'clipPath')}
