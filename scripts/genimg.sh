@@ -3,6 +3,7 @@
 #
 #   pnpm genimg glitter wilt bury …        기본은 한 장씩 (PAR=1)
 #   PAR=2 pnpm genimg glitter wilt …       동시에 두 장 — 아래 경고를 읽을 것
+#   KEEP=1 pnpm genimg glitter wilt …      이미 있는 그림은 그대로 두고 없는 것만
 #
 # `pnpm prompt <slug>`이 만든 최종 문구를 gpt-image 스킬에 넘기고, 나온 PNG를
 # `.images/<slug>.png`에 둔다. 이어서 `pnpm image <slug>`로 WebP를 만든다.
@@ -165,6 +166,23 @@ for slug in "$@"; do
   fi
 done
 
+# **KEEP=1이면 이미 있는 그림은 건너뛴다.**
+#
+# 기본은 늘 다시 그린다 — 대개 프롬프트를 고쳐 놓고 부르기 때문이다. 그런데
+# 한 장이 실패해 시트를 다시 보고 싶을 때는 그 한 장만 채우면 되는데도 회차
+# 열여덟 장을 통째로 다시 뽑아야 했다 (2026-09-16, 789초). 그때 주는 스위치다.
+if [ "${KEEP:-0}" = "1" ]; then
+  fresh=()
+  for slug in $wanted; do
+    if [ -f "$REPO/.images/$slug.png" ]; then
+      print -r -- "  KEEP $slug — 이미 있는 그림을 둡니다"
+    else
+      fresh+=("$slug")
+    fi
+  done
+  wanted=($fresh)
+fi
+
 START=$(date +%s)
 pids=()
 for slug in $wanted; do
@@ -234,14 +252,25 @@ if [ ${#files[@]} -gt 1 ]; then
 fi
 
 rm -rf "$TMP"
-[ $bad -eq 0 ] || exit 1
 
 # 시트를 여기서 만든다. **md5로 못 잡는 사고가 남아 있기 때문이다** —
 # 그림이 서로 뒤바뀐 것은 바이트도 구조도 달라 어떤 검사도 못 본다. 눈으로
 # 보는 수밖에 없는데, 예전에는 이 줄이 "pnpm sheet를 돌리세요"라는 권유였고
 # 그래서 건너뛸 수 있었다. 붙여 두면 열어 보기만 하면 된다.
 #
+# **검사에 걸려도 만든다.** 예전에는 위에서 바로 끝내 버려 한 장이 안 나오면
+# 시트가 아예 없었다. 나머지 열일곱 장은 멀쩡히 뽑혔는데도 눈으로 볼 길이
+# 없어서, 실패한 한 장을 고친 뒤 시트를 보려고 회차를 통째로 다시 뽑았다
+# (2026-09-16). 검사가 또 저를 끄는 꼴이었다 — 빠진 장은 아래 exit가 여전히
+# 알리고, 나온 장은 지금 눈으로 볼 수 있어야 한다.
+#
 # 두 프로세스로 나눠 돌릴 때 서로 덮지 않도록 첫 slug를 이름에 넣는다
-SHEET="$REPO/.images/sheet-$1.png"
-node "$REPO/scripts/sheet.ts" --out "$SHEET" "$@"
-print -r -- "그림을 눈으로 확인하세요 — $SHEET"
+have=()
+for slug in "$@"; do [ -f "$REPO/.images/$slug.png" ] && have+=("$slug"); done
+if [ ${#have[@]} -gt 0 ]; then
+  SHEET="$REPO/.images/sheet-$have[1].png"
+  node "$REPO/scripts/sheet.ts" --out "$SHEET" "${have[@]}"
+  print -r -- "그림을 눈으로 확인하세요 — $SHEET"
+fi
+
+[ $bad -eq 0 ] || exit 1
