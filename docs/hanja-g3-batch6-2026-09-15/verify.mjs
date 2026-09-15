@@ -14,14 +14,18 @@ const corrections = json('./corrections.json'), candidates = json('./candidate-p
 const generated = prepare()
 const followUp = '../hanja-g3-batch6-followup-2026-09-15/'
 const followUp2 = '../hanja-g3-batch6-followup2-2026-09-15/'
+const followUp3 = '../hanja-g3-batch6-followup3-2026-09-15/'
 const firstFollowUpReview = json(followUp + 'review.json').records
 const secondFollowUpReview = json(followUp2 + 'review.json').records
+const thirdFollowUpReview = json(followUp3 + 'review.json').records
 assert.deepEqual(firstFollowUpReview.map(e => e.glyph), json('./next-batch.json').glyphs)
 assert.deepEqual(secondFollowUpReview.map(e => e.glyph), json(followUp + 'next-batch.json').glyphs)
-const followUpReview = [...firstFollowUpReview, ...secondFollowUpReview]
+assert.deepEqual(thirdFollowUpReview.map(e => e.glyph), json(followUp2 + 'next-batch.json').glyphs)
+const followUpReview = [...firstFollowUpReview, ...secondFollowUpReview, ...thirdFollowUpReview]
 const followUpCandidates = [
   ...json(followUp + 'candidate-paths.json').characters,
   ...json(followUp2 + 'candidate-paths.json').characters,
+  ...json(followUp3 + 'candidate-paths.json').characters,
 ]
 assert.equal(queue.status, 'reviewed-with-holds')
 assert.equal(queue.entries.length, 50)
@@ -111,7 +115,7 @@ const catalog = json('../../content/hanja/characters/g3.json').characters
 const applied = new Set(HANJA_STROKES.map(e => e.glyph))
 const grade3Applied = catalog.filter(e => applied.has(e.glyph)).length
 const stillHeld = held.filter(e => !followUpReview.some(r => r.glyph === e.glyph))
-assert.equal(stillHeld.length, 15)
+assert.equal(stillHeld.length, 5)
 console.log(JSON.stringify({
   result: 'pass', reviewedCharacters: 50, catalogStrokes: 547, observedStrokes,
   addedCharacters: matched.length, addedStrokes: review.records.reduce((sum, r) => sum + r.expectedStrokes, 0),

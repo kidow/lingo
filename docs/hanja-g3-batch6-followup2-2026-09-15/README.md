@@ -47,8 +47,9 @@
 `node docs/hanja-g3-batch6-2026-09-15/verify.mjs`,
 `node scripts/hanja-stroke-textbook-build.ts --check`, `pnpm run build`.
 
-## 다음 권장 작업
+## 후속 완료
 
-**縣·嫌·螢·毫·昏·鴻·穫·擴·曉·輝 10자·149획**의 경로·방향·순서 보정.
-[next-batch.json](next-batch.json)에 아직 검토하지 않은 다음 10자와 별도 보류 5자를 구분했다.
-誕·遍·幣·蔽·飽는 획 경계·획수 등 별도 검토를 계속한다.
+이 문서의 다음 대상이었던 **縣·嫌·螢·毫·昏·鴻·穫·擴·曉·輝 10자·149획**도 적용했다.
+최신 누적은 **1,794자**, 3급 **293/317자**이며 이 50자 묶음에서는 **5자·72획**이 남았다.
+[최신 검토와 다음 권장 작업](../hanja-g3-batch6-followup3-2026-09-15/README.md)을 참고한다.
+위 결과는 이 문서 작성 당시의 기록이고 [next-batch.json](next-batch.json)은 당시 권장 범위를 보존한다.
