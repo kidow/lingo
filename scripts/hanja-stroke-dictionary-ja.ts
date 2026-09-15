@@ -7,6 +7,7 @@ import {
   HANJA_DICTIONARY_JA_GEOMETRY, HANJA_DICTIONARY_JA_VERIFICATION, HANJA_DICTIONARY_JA_ENTRY,
   HANJA_DICTIONARY_JA_ORIGINAL_SHA256, HANJA_DICTIONARY_JA_STROKES, type DictionaryJaBundle,
   HANJA_DICTIONARY_JA_SISTER_ENTRY, HANJA_DICTIONARY_JA_SISTER_ORIGINAL_SHA256,
+  HANJA_DICTIONARY_JA_EXACT_ENTRIES,
 } from '../lib/hanja-stroke-dictionary-ja.ts'
 import type { HanjaDictionaryStrokeData } from '../lib/hanja-stroke-dictionary.ts'
 
@@ -14,6 +15,12 @@ const read = (path: string) => readFileSync(new URL('../' + path, import.meta.ur
 const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
 const dir = 'docs/hanja-g3ii-hyang-2026-09-13/'
 export const JA_DICTIONARY_PROOF_PINS: Readonly<Record<string, string>> = {
+  "docs/hanja-g3-exact-forms-2026-09-15/sources.json": "6bce6974350e29afd5ade6b06593c599c5f7c5e5798ad97008cdd67faec522ef",
+  "docs/hanja-g3-exact-forms-2026-09-15/observations.json": "83841493a02738390f9927d03fc6593c7b9cbf323d393476b9ce877c7968af01",
+  "docs/hanja-g3-exact-forms-2026-09-15/proposals.json": "b09a7eddf9ce279096dce6b91699f1aabb178d543c8f1db14b064f365e6f9302",
+  "docs/hanja-g3-exact-forms-2026-09-15/review.json": "72259e05c104d110bcb62e61c8570e46d8c3f6287504ab9c5c649983688799fe",
+  "docs/hanja-g3-exact-forms-2026-09-15/candidate-paths.json": "2f7fe0a93563164411027fb6cd8877aac179490ed46a47c6cd0312606c1855ce",
+  "docs/hanja-g3-exact-forms-2026-09-15/form-review.json": "f745da1a16033105722a33464226e02cb9aab5214bd3d0e767ac955a25dc071d",
   "docs/hanja-g4-held-11-2026-09-14/sources.json": "0217a3f6fd4ff7a1f80cdd59790ad8f7f7b36f2f966dd042e14608895e7152c5",
   "docs/hanja-g4-corrections-2026-09-14/review.json": "7124909e47f7c97355c9062b21af650826e8ada189888388a848827796285161",
   "docs/hanja-g4-corrections-2026-09-14/corrections.json": "f831a97b4022c74da77874eae77af091731e92ff785fb42ac290059c39550c5b",
@@ -34,6 +41,29 @@ export function validateJaDictionaryProofs(readProof: (path: string) => string =
   }
 }
 export function jaDictionaryGeometry(glyph: string, medians: Parameters<typeof normalizeMedians>[0]) {
+  const exact = HANJA_DICTIONARY_JA_EXACT_ENTRIES.find(e => e.glyph === glyph)
+  if (exact) {
+    const source = JSON.parse(read('docs/hanja-g3-exact-forms-2026-09-15/sources.json')) as {
+      geometry: { sha256: string }; originals: { glyph: string; medians: Parameters<typeof normalizeMedians>[0] }[]
+    }
+    const original = source.originals.find(e => e.glyph === glyph)
+    if (source.geometry.sha256 !== HANJA_DICTIONARY_JA_GEOMETRY.sha256
+      || !original || hash(medians) !== hash(original.medians)) throw new Error('Ja dictionary original mismatch')
+    const proposals = JSON.parse(read('docs/hanja-g3-exact-forms-2026-09-15/proposals.json')) as Record<string,
+      { sourceStroke: number | null; points?: number[][] }[]>
+    const recipe = proposals[glyph]
+    if (!recipe || !isDeepStrictEqual(recipe.map(s => s.sourceStroke), exact.sourceStrokeIndices)
+      || recipe.some(s => s.points && (s.points.length < 2
+        || s.points.some(p => p.length !== 2 || p.some(n => !Number.isFinite(n) || n < 0 || n > 100)))))
+      throw new Error('Ja dictionary recipe mismatch')
+    const originalPaths = normalizeMedians(medians)
+    const paths = recipe.map(s => s.points
+      ? s.points.map(([x,y],i) => (i ? 'L' : 'M') + x + ' ' + y).join(' ')
+      : s.sourceStroke === null ? '' : originalPaths[s.sourceStroke - 1])
+    if (paths.length !== exact.sourceStrokeIndices.length || hash(paths) !== exact.pathsSha256)
+      throw new Error('Ja dictionary reconstructed geometry mismatch')
+    return { paths, pathsSha256: hash(paths) }
+  }
   if (glyph === '姉') {
     if (hash(medians) !== HANJA_DICTIONARY_JA_SISTER_ORIGINAL_SHA256) throw new Error('Ja dictionary original mismatch')
     const corrections = JSON.parse(read('docs/hanja-g4-corrections-2026-09-14/corrections.json')) as {
@@ -81,9 +111,23 @@ export function buildJaDictionaryBundle(): DictionaryJaBundle {
   const sisterGeometry = jaDictionaryGeometry('姉', sisterSource.entries[0].medians)
   const sisterFrozen = JSON.parse(read('docs/hanja-g4-corrections-2026-09-14/candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }
   if (!isDeepStrictEqual(sisterGeometry.paths, sisterFrozen.entries.find(e => e.glyph === '姉')?.paths)) throw new Error('Ja dictionary frozen candidate mismatch')
+  const exactSource = JSON.parse(read('docs/hanja-g3-exact-forms-2026-09-15/sources.json')) as {
+    originals: { glyph: string; medians: Parameters<typeof normalizeMedians>[0] }[]
+  }
+  const exactFrozen = JSON.parse(read('docs/hanja-g3-exact-forms-2026-09-15/candidate-paths.json')) as {
+    entries: { glyph: string; paths: string[] }[]
+  }
+  const exactCharacters = HANJA_DICTIONARY_JA_EXACT_ENTRIES.map(entry => {
+    const original = exactSource.originals.find(e => e.glyph === entry.glyph)
+    if (!original) throw new Error('Ja dictionary original missing')
+    const geometry = jaDictionaryGeometry(entry.glyph, original.medians)
+    if (!isDeepStrictEqual(geometry.paths, exactFrozen.entries.find(e => e.glyph === entry.glyph)?.paths))
+      throw new Error('Ja dictionary frozen candidate mismatch')
+    return { ...entry, ...geometry }
+  })
   return {
     verificationSource: HANJA_DICTIONARY_JA_VERIFICATION, geometrySource: HANJA_DICTIONARY_JA_GEOMETRY,
-    characters: [{ ...HANJA_DICTIONARY_JA_ENTRY, ...geometry }, { ...HANJA_DICTIONARY_JA_SISTER_ENTRY, ...sisterGeometry }],
+    characters: [{ ...HANJA_DICTIONARY_JA_ENTRY, ...geometry }, { ...HANJA_DICTIONARY_JA_SISTER_ENTRY, ...sisterGeometry }, ...exactCharacters],
   }
 }
 export function validateJaDictionaryReview(entry: HanjaDictionaryStrokeData, expectedStrokes: number) {

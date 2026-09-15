@@ -81,7 +81,7 @@ test('unchanged originals reconstruct every path; changed data and forged hashes
     assert.throws(() => validateDictionaryReview(reversed as Parameters<typeof validateDictionaryReview>[0], expected.paths.length), /published entry/)
   }
   const bundle = structuredClone(buildJaDictionaryBundle())
-  assert.throws(() => loadJaDictionaryBundle({ ...bundle, characters: [bundle.characters[0], bundle.characters[0]] }), /entry mismatch/)
+  assert.throws(() => loadJaDictionaryBundle({ ...bundle, characters: bundle.characters.map((entry, i) => i === 1 ? bundle.characters[0] : entry) }), /entry mismatch/)
   assert.throws(() => loadJaDictionaryBundle({ ...bundle, characters: [bundle.characters[0]] }), /bundle mismatch/)
 })
 

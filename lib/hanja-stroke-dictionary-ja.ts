@@ -6,7 +6,7 @@ export const HANJA_DICTIONARY_JA_VERIFICATION = {
   "id": "ehanja-crosschecked",
   "title": "e-hanja 필순·방향 교차검토",
   "url": "http://www.e-hanja.kr/",
-  "scope": "Per-glyph Korean dictionary crosschecks: complete sequences for 響·姉. Not exam-body certification."
+  "scope": "Per-glyph Korean dictionary crosschecks: complete sequences for 響·姉·隷·隣. Not exam-body certification."
 } as const
 export const HANJA_DICTIONARY_JA_GEOMETRY = {
   "name": "AnimCJK Japanese corpus with reviewed local corrections",
@@ -82,7 +82,76 @@ export const HANJA_DICTIONARY_JA_SISTER_ENTRY = {
   }
 } as const
 export const HANJA_DICTIONARY_JA_SISTER_ORIGINAL_SHA256 = 'bf6e5cfafeebb78fe75178dc3d11d183a2893d8b61954dc00d9c90fb7515a009'
-const REVIEWED_ENTRIES = [HANJA_DICTIONARY_JA_ENTRY, HANJA_DICTIONARY_JA_SISTER_ENTRY] as const
+export const HANJA_DICTIONARY_JA_EXACT_ENTRIES = [
+  {
+    "glyph": "隷",
+    "verifiedAt": "2026-09-15",
+    "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+    "geometryCorrection": "dictionary-crosscheck-96b7-v1",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "pathsSha256": "3eef7ef715035c1e4b076971983341ffad3909c057a8a4edf597878cd84be4c6",
+    "sourceReference": {
+      "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9600/96B7.svg",
+      "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9600/96B7.svg",
+      "dictionarySvgSha256": "8861b0587d9bd368892ca7bf5de2d14fe8db5c1b87778abbd6b59b49b01a2eb2",
+      "dictionaryDirectionStrokes": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
+      "orderReviewSha256": "72259e05c104d110bcb62e61c8570e46d8c3f6287504ab9c5c649983688799fe",
+      "geometryReviewSha256": "72259e05c104d110bcb62e61c8570e46d8c3f6287504ab9c5c649983688799fe",
+      "directionReviewSha256": "83841493a02738390f9927d03fc6593c7b9cbf323d393476b9ce877c7968af01"
+    }
+  },
+  {
+    "glyph": "隣",
+    "verifiedAt": "2026-09-15",
+    "geometrySource": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+    "geometryCorrection": "dictionary-crosscheck-96a3-v1",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      null,
+      16
+    ],
+    "pathsSha256": "6795173c8adf1060b643fea8f591b916bb81a2d91d7866b7bf04d1aa5c626117",
+    "sourceReference": {
+      "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9600/96A3.svg",
+      "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9600/96A3.svg",
+      "dictionarySvgSha256": "d391cdc5917ca9c328fc2a7687ca4da8eaad10ebfdecb876d3a28858859cf8a6",
+      "dictionaryDirectionStrokes": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+      "orderReviewSha256": "72259e05c104d110bcb62e61c8570e46d8c3f6287504ab9c5c649983688799fe",
+      "geometryReviewSha256": "72259e05c104d110bcb62e61c8570e46d8c3f6287504ab9c5c649983688799fe",
+      "directionReviewSha256": "83841493a02738390f9927d03fc6593c7b9cbf323d393476b9ce877c7968af01"
+    }
+  }
+] as const
+const REVIEWED_ENTRIES = [HANJA_DICTIONARY_JA_ENTRY, HANJA_DICTIONARY_JA_SISTER_ENTRY, ...HANJA_DICTIONARY_JA_EXACT_ENTRIES] as const
 
 export type DictionaryJaBundle = {
   verificationSource: typeof HANJA_DICTIONARY_JA_VERIFICATION

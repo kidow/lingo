@@ -137,7 +137,7 @@ const bounds = (paths: readonly string[]) => {
   return [Math.min(...p.map(p => p[0])), Math.min(...p.map(p => p[1])), Math.max(...p.map(p => p[0])), Math.max(...p.map(p => p[1]))]
 }
 export function dictionaryGeometry(glyph: string, medians: Medians) {
-  if (glyph === '響' || glyph === '姉') return jaDictionaryGeometry(glyph, medians)
+  if (['響', '姉', '隷', '隣'].includes(glyph)) return jaDictionaryGeometry(glyph, medians)
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref || hash(medians) !== ref.originalMediansSha256) throw new Error('Dictionary original medians mismatch: ' + glyph)
   let paths = normalizeMedians(medians)
@@ -197,7 +197,7 @@ export function buildDictionaryBundle(candidates?: readonly DictionaryCandidate[
   }
 }
 export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expectedStrokes: number) {
-  if (review.glyph === '響' || review.glyph === '姉') return validateJaDictionaryReview(review, expectedStrokes)
+  if (['響', '姉', '隷', '隣'].includes(review.glyph)) return validateJaDictionaryReview(review, expectedStrokes)
   const expected = buildDictionaryBundle().characters.find(e => e.glyph === review.glyph)
   if (!expected || expected.paths.length !== expectedStrokes
     || !isDeepStrictEqual(review, { ...expected, verificationSource: HANJA_DICTIONARY_SOURCE.id })) throw new Error('Dictionary published entry mismatch')
