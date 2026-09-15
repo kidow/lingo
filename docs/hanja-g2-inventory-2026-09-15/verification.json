@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-09-15",
+  "command": "node docs/hanja-g2-inventory-2026-09-15/verify.mjs --runtime-baseline",
+  "result": {
+    "status": "passed",
+    "records": 538,
+    "strokes": 6668,
+    "dictionary": {
+      "countMatched": 529,
+      "countReview": 9,
+      "metadataReview": 0,
+      "unavailable": 0
+    },
+    "geometry": {
+      "countMatch": 461,
+      "countReview": 43,
+      "missing": 34
+    },
+    "nextBatch": {
+      "characters": 50,
+      "strokes": 581,
+      "from": "柯",
+      "through": "揆"
+    },
+    "runtimeAdded": 0,
+    "liveRuntimeChecked": true
+  },
+  "scope": "Inventory records and live runtime baseline. No application code or runtime data changed; production build was not rerun for this documentation/audit-only change."
+}
