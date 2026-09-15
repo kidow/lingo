@@ -5,6 +5,8 @@ import { isDeepStrictEqual } from 'node:util'
 import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
 import { HANJA_TEXTBOOK_STROKES } from '../lib/hanja-stroke-textbook.ts'
 import { jaDictionaryGeometry, validateJaDictionaryProofs, validateJaDictionaryReview, validateJaDictionaryBundle } from './hanja-stroke-dictionary-ja.ts'
+import { g2DictionaryGeometry, validateG2DictionaryReview, validateG2DictionaryBundle } from './hanja-stroke-dictionary-g2.ts'
+import { g2DictionaryReference } from '../lib/hanja-stroke-dictionary-g2.ts'
 import {
   HANJA_DICTIONARY_SOURCE, HANJA_DICTIONARY_GEOMETRY_SOURCE, HANJA_DICTIONARY_STROKES,
   DICTIONARY_REFERENCES, dictionarySourceReference, dictionaryStrokeIndices,
@@ -137,6 +139,7 @@ const bounds = (paths: readonly string[]) => {
   return [Math.min(...p.map(p => p[0])), Math.min(...p.map(p => p[1])), Math.max(...p.map(p => p[0])), Math.max(...p.map(p => p[1]))]
 }
 export function dictionaryGeometry(glyph: string, medians: Medians) {
+  if (g2DictionaryReference(glyph)) return g2DictionaryGeometry(glyph, medians)
   if (['響', '姉', '隷', '隣'].includes(glyph)) return jaDictionaryGeometry(glyph, medians)
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref || hash(medians) !== ref.originalMediansSha256) throw new Error('Dictionary original medians mismatch: ' + glyph)
@@ -197,6 +200,7 @@ export function buildDictionaryBundle(candidates?: readonly DictionaryCandidate[
   }
 }
 export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expectedStrokes: number) {
+  if (g2DictionaryReference(review.glyph)) return validateG2DictionaryReview(review, expectedStrokes)
   if (['響', '姉', '隷', '隣'].includes(review.glyph)) return validateJaDictionaryReview(review, expectedStrokes)
   const expected = buildDictionaryBundle().characters.find(e => e.glyph === review.glyph)
   if (!expected || expected.paths.length !== expectedStrokes
@@ -204,6 +208,7 @@ export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expe
 }
 export function validateDictionaryBundle(entries: readonly HanjaDictionaryStrokeData[] = HANJA_DICTIONARY_STROKES) {
   validateJaDictionaryBundle()
+  validateG2DictionaryBundle()
   const expected = buildDictionaryBundle().characters.map(e => ({ ...e, verificationSource: HANJA_DICTIONARY_SOURCE.id }))
   if (!isDeepStrictEqual(entries, expected)) throw new Error('Dictionary published bundle mismatch')
 }
