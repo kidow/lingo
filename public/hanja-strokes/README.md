@@ -129,3 +129,14 @@ were reinspected in full against the Korean e-hanja dictionary.
 This is an independent dictionary crosscheck, not exam-body certification.
 Dictionary artwork is not distributed. Evidence and reproducible recipes:
 `docs/hanja-g2-batch6-2026-09-16/README.md`.
+
+`dictionary-reviewed-g2-batch7.json` adds 50 grade-2 characters (615 strokes),
+modified for Lingo on 2026-09-16: 44 use Make Me a Hanzi at
+`bddc96d41bef78427ed0e034e9f7e31d71fd1b92` and 6 use AnimCJK Ja at
+`ec5e17cca76c87587790bcbce5ea0b4d4fb753d6` (艇, 鼎, 鄭, 彫, 祚, 濬).
+All 615 strokes were individually crosschecked against the Korean e-hanja dictionary.
+44 forms were corrected and fully reinspected: 125 locally edited centerlines,
+490 retained licensed paths, and 5 reviewed stroke-order permutations.
+This is a private dictionary crosscheck, not exam-body certification.
+Dictionary artwork is not distributed. Evidence and reproducible recipes:
+`docs/hanja-g2-batch7-2026-09-16/README.md`.

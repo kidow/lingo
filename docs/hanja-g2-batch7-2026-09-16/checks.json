@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-16",
+  "source": "e-hanja private Korean dictionary crosscheck; not exam-body certification",
+  "status": "passed",
+  "commands": [
+    {
+      "command": "node --test lib/hanja-stroke-dictionary-g2-batch7.test.ts",
+      "exitCode": 0,
+      "tests": 5
+    },
+    {
+      "command": "node docs/hanja-g2-batch7-2026-09-16/verify.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "files": 45,
+      "tests": 272
+    },
+    {
+      "command": "pnpm build",
+      "exitCode": 0,
+      "nextVersion": "16.3.3",
+      "typescript": "passed",
+      "staticPages": 7
+    }
+  ],
+  "review": {
+    "characters": 50,
+    "strokes": 615,
+    "correctedCharacters": 44,
+    "locallyEditedPaths": 125,
+    "retainedLicensedPaths": 490,
+    "reorderedCharacters": 5,
+    "completeCorrectedReinspections": 44,
+    "proprietaryAssetsSaved": 0
+  },
+  "proofPins": {
+    "initial-observations.json": "6f44a80aeb0e0af98ce9f1571a5e9ae13ce6164b966fc54ec76d16d099d80bd6",
+    "originals.json": "22f971d8f194ef5fbc84df24a0d5dd5eaf58d12572d9016f9ab86f88c7beb93a",
+    "observations.json": "35047de38fd75bc197756a0e532cd93cc1e8d6b0c3e771096b25d2cf0d0fc768",
+    "proposals.json": "ce539e984501cd34b67cffef508222f1f042afe9c72fe91043d7e535a9f80a21",
+    "source-checks.json": "588eb0c5a90072f549bb355cb27db9ca1c828d1316216afe850cbc9019e5b878",
+    "corrections.json": "0ecabbac56c0f9b5d031f2911400308acccf673037496fbe7fd7d5c7efeb7dfc",
+    "candidate-paths.json": "64f010221dcc84c00c7926d78a269cb6b26571ac18793cd0981ca77ebbc6e7e2",
+    "review.json": "222dbe68b4d735198ac7d13d487b1f5a9ceb385351a2bfd463a9b53206e14290"
+  },
+  "verification": {
+    "compilerMatchesArtifacts": true,
+    "proofPinsValid": true,
+    "uniqueRuntimeGlyphs": true,
+    "batch7ApprovalsComplete": true
+  }
+}
