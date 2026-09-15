@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-16",
+  "review": {
+    "characters": 50,
+    "strokes": 622,
+    "correctedCharacters": 33,
+    "correctedPaths": 99,
+    "fullyRecheckedCorrectedCharacters": 33,
+    "held": 0,
+    "source": "ehanja-crosschecked",
+    "officialExamCertification": false,
+    "proprietaryAssetsSaved": 0
+  },
+  "compiler": {
+    "command": "node docs/hanja-g2-batch5-2026-09-16/verify.mjs",
+    "passed": true,
+    "pinnedProofs": 8,
+    "sourceIdentitiesChecked": 50,
+    "geometryReproduced": true,
+    "runtimeGlyphsUnique": true
+  },
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "files": 43,
+    "tests": 262,
+    "passed": 262,
+    "failed": 0,
+    "coverage": [
+      "source provenance and corpus dispatch",
+      "complete corrected-form review and licensed stroke mapping",
+      "source-specific directions and enclosure connections",
+      "independent-mark clearance at playback width",
+      "proof tampering, source identity and incomplete bundle rejection"
+    ]
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "typescript": true,
+    "productionBundle": true,
+    "staticPages": 7
+  },
+  "knownLimitations": [
+    "Private Korean dictionary crosscheck is not examination-body certification.",
+    "Centerline geometry is licensed candidate geometry with reviewed local corrections; it is not an exact tracing of dictionary artwork.",
+    "This batch adds reviewed playback data, not handwriting grading."
+  ]
+}
