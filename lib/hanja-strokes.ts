@@ -20,6 +20,7 @@ import { HANJA_NUMBERED_STROKES, type HanjaNumberedStrokeData } from './hanja-st
 import { HANJA_DICTIONARY_STROKES, type HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 import { HANJA_DICTIONARY_JA_STROKES } from './hanja-stroke-dictionary-ja.ts'
 import { HANJA_DICTIONARY_G2_STROKES } from './hanja-stroke-dictionary-g2.ts'
+import { HANJA_DICTIONARY_G2_FOLLOWUP_STROKES } from './hanja-stroke-dictionary-g2-followup.ts'
 
 export const HANJA_STROKE_SOURCE = {
   title: '필순 정정 및 500자 필순',
@@ -166,6 +167,7 @@ export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...HANJA_DICTIONARY_STROKES,
   ...HANJA_DICTIONARY_JA_STROKES,
   ...HANJA_DICTIONARY_G2_STROKES,
+  ...HANJA_DICTIONARY_G2_FOLLOWUP_STROKES,
 ]
 
 const byGlyph = new Map(HANJA_STROKES.map((data) => [data.glyph, data]))

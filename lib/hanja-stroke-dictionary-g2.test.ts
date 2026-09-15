@@ -3,6 +3,8 @@ import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { HANJA_STROKES, hanjaStrokeData } from './hanja-strokes.ts'
 import { HANJA_DICTIONARY_G2_STROKES, G2_DICTIONARY_GEOMETRY, loadG2DictionaryBundle } from './hanja-stroke-dictionary-g2.ts'
+import { HANJA_DICTIONARY_G2_FOLLOWUP_STROKES } from './hanja-stroke-dictionary-g2-followup.ts'
+import { g2DictionaryGeometry } from '../scripts/hanja-stroke-dictionary-g2.ts'
 import { buildG2DictionaryBundle, G2_DICTIONARY_PROOF_PINS, validateG2DictionaryProofs, validateG2DictionaryBundle } from '../scripts/hanja-stroke-dictionary-g2.ts'
 import { dictionaryGeometry, validateDictionaryReview } from '../scripts/hanja-stroke-dictionary.ts'
 import { auditStrokes } from '../scripts/hanja-stroke-audit.ts'
@@ -15,7 +17,7 @@ const originals = (JSON.parse(read(dir + 'originals.json')) as {
 const held = ['迦', '甄', '雇', '膠', '絞', '窟']
 const published = (glyph: string) => HANJA_DICTIONARY_G2_STROKES.find(e => e.glyph === glyph)!
 
-test('only the 44 complete reviews enter playback; six held forms stay unavailable', () => {
+test('the original 44-review batch excludes its held forms; separate followup approval is required', () => {
   assert.equal(HANJA_DICTIONARY_G2_STROKES.length, 44)
   assert.equal(HANJA_DICTIONARY_G2_STROKES.reduce((n, e) => n + e.paths.length, 0), 506)
   assert.deepEqual(loadG2DictionaryBundle(buildG2DictionaryBundle()), HANJA_DICTIONARY_G2_STROKES)
@@ -23,8 +25,9 @@ test('only the 44 complete reviews enter playback; six held forms stay unavailab
   for (const original of originals) {
     const actual = hanjaStrokeData(original)
     if (held.includes(original.glyph)) {
-      assert.equal(actual, null, original.glyph)
-      assert.throws(() => dictionaryGeometry(original.glyph, original.medians), /mismatch/)
+      assert.equal(HANJA_DICTIONARY_G2_STROKES.find(e => e.glyph === original.glyph), undefined)
+      assert.deepEqual(actual, HANJA_DICTIONARY_G2_FOLLOWUP_STROKES.find(e => e.glyph === original.glyph))
+      assert.throws(() => g2DictionaryGeometry(original.glyph, original.medians), /mismatch/)
     } else {
       assert.deepEqual(actual, published(original.glyph))
       assert.equal(HANJA_STROKES.filter(e => e.glyph === original.glyph).length, 1)

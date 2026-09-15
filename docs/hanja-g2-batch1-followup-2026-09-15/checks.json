@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-15",
+  "verification": "passed",
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "tests": 243,
+    "passed": 243,
+    "failed": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "prebuildProofValidation": true,
+    "typescript": true,
+    "staticPages": 7
+  },
+  "artifacts": {
+    "command": "node docs/hanja-g2-batch1-followup-2026-09-15/verify.mjs",
+    "compilerMatchesArtifacts": true,
+    "proofPinsValid": true,
+    "uniqueRuntimeGlyphs": true,
+    "followupApprovalsComplete": true
+  },
+  "sourceRecheck": {
+    "characters": 6,
+    "strokes": 75,
+    "proprietaryAssetsSaved": 0
+  }
+}

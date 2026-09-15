@@ -27,14 +27,14 @@ const summarize = list => {
     totalStrokes: list.reduce((n, c) => n + c.strokes, 0), appliedStrokes: applied.reduce((n, c) => n + c.strokes, 0) }
 }
 const held = compiled.review.entries.filter(e => e.decision === 'held')
-for (const e of held) assert.equal(hanjaStrokeData(e), null)
+for (const e of held) assert.ok(!compiled.runtime.characters.some(c => c.glyph === e.glyph))
 const progress = {
   date: '2026-09-15', batch: { reviewed: 50, reviewedStrokes: 581, applied: 44, appliedStrokes: 506,
     unchanged: 35, corrected: 9, held: 6, heldStrokes: 75 },
   overall: summarize(characters),
   byGrade: grades.map(grade => ({ grade, ...summarize(characters.filter(c => c.readingGrade === grade)) })),
-  next: { task: 'Correct and reinspect all paths of the six held grade 2 characters',
-    glyphs: held.map(e => e.glyph), characters: 6, strokes: 75 },
+  next: { task: 'See the completed followup report for the current recommendation',
+    report: 'docs/hanja-g2-batch1-followup-2026-09-15/README.md' },
 }
 console.log(JSON.stringify({ verification: 'passed', compilerMatchesArtifacts: true, proofPinsValid: true,
-  uniqueRuntimeGlyphs: true, heldExcluded: true, progress }, null, 2))
+  uniqueRuntimeGlyphs: true, heldExcludedFromOriginalBatch: true, progress }, null, 2))
