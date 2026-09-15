@@ -1,67 +1,48 @@
 {
   "date": "2026-09-15",
-  "verification": {
-    "valid": true,
-    "selected": {
-      "characters": 50,
-      "strokes": 658
-    },
-    "reviewed": {
-      "characters": 23,
-      "strokes": 291
-    },
-    "matched": {
-      "characters": 20,
-      "strokes": 233
-    },
-    "held": [
-      {
-        "glyph": "驥",
-        "strokes": 26,
-        "issues": [
-          1,
-          2,
-          7
-        ]
-      },
-      {
-        "glyph": "麒",
-        "strokes": 19,
-        "issues": [
-          1
-        ]
-      },
-      {
-        "glyph": "溺",
-        "strokes": 13,
-        "issues": [
-          7,
-          8,
-          12,
-          13
-        ]
-      }
-    ],
-    "pending": {
-      "characters": 27,
-      "strokes": 367,
-      "first": "潭",
-      "last": "煉"
-    },
-    "publishedCharacters": 0
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 658,
+  "approvedCharacters": 50,
+  "approvedStrokes": 658,
+  "initiallyMatched": 33,
+  "correctedCharacters": 17,
+  "locallyCorrectedPaths": 26,
+  "reorderedCharacters": 3,
+  "heldCharacters": 0,
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 247,
+    "failed": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
   },
   "progress": {
     "overall": {
       "total": 5978,
-      "applied": 1868,
-      "remaining": 4110
+      "applied": 1918,
+      "remaining": 4060,
+      "percent": 32.1,
+      "totalStrokes": 74557,
+      "appliedStrokes": 20964
     },
     "grade2": {
+      "grade": "2급",
       "total": 538,
-      "applied": 50,
-      "remaining": 488
+      "applied": 100,
+      "remaining": 438,
+      "percent": 18.6,
+      "totalStrokes": 6668,
+      "appliedStrokes": 1239
     }
-  },
-  "runtimeChanged": false,
-  "browserReviewComplete": false
+  }
 }

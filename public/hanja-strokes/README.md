@@ -69,3 +69,15 @@ instructions. The audit checks both pinned corpora and the exact allowed correct
 The comparison verifies cumulative order and stroke structure against the
 official diagrams; it is not pixel-identical tracing, official certification,
 or handwriting grading. Noto static glyphs use a separate font and license.
+
+`dictionary-reviewed-g2-batch2.json` adds 50 grade-2 characters (658 strokes),
+modified for Lingo on 2026-09-15: 47 use Make Me a Hanzi at
+`bddc96d41bef78427ed0e034e9f7e31d71fd1b92`, and 垈·悳·惇 use AnimCJK
+`graphicsJa.txt` at `ec5e17cca76c87587790bcbce5ea0b4d4fb753d6`.
+Both retain the Arphic Public License and upstream credits in the notices above.
+The JSON is the complete modified centerline source: 632 retained paths,
+26 locally corrected paths and three character-specific order permutations.
+Each glyph was compared against its e-hanja dictionary sequence; all 17 corrected
+forms received a complete second review. These entries are `ehanja-crosschecked`,
+not exam-body certification. Dictionary artwork is not distributed.
+Evidence and reproducible recipes: `docs/hanja-g2-batch2-2026-09-15/README.md`.
