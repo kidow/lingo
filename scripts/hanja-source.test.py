@@ -58,12 +58,30 @@ class StrokeCountCorrectionTests(unittest.TestCase):
             SOURCE.verify_root({"source": {"sha256": "different-workbook"}}, ROOT)
 
     def test_shared_component_does_not_implicitly_correct_other_characters(self):
-        row = {"gradeCode": "30", "glyph": "幣", "hunEum": "화폐 폐:",
-               "radical": "巾", "strokes": "15", "sourceRow": 5317}
-        result = SOURCE.character_from_row(row, "3급")
-        self.assertEqual(result["strokes"], 15)
+        row = {"gradeCode": "10", "glyph": "斃", "hunEum": "죽을 폐:",
+               "radical": "攴", "strokes": "18", "sourceRow": 5319}
+        result = SOURCE.character_from_row(row, "1급")
+        self.assertEqual(result["strokes"], 18)
         self.assertNotIn("sourceStrokes", result)
         self.assertNotIn("strokeCountCorrection", result)
+
+    def test_individually_reviewed_grade3_counts_preserve_source_and_identity(self):
+        catalog = json.loads((ROOT / "content/hanja/characters/g3.json").read_text())
+        for glyph, hun, radical, original, corrected, source_row in [
+            ("幣", "화폐", "巾", 15, 14, 5317),
+            ("蔽", "덮을", "艸", 16, 15, 5318),
+        ]:
+            row = {"gradeCode": "30", "glyph": glyph, "hunEum": hun + " 폐:",
+                   "radical": radical, "strokes": str(original), "sourceRow": source_row}
+            with self.subTest(glyph=glyph):
+                result = SOURCE.character_from_row(row, "3급")
+                self.assertEqual(result, next(c for c in catalog["characters"] if c["glyph"] == glyph))
+                self.assertEqual(result["strokes"], corrected)
+                self.assertEqual(result["sourceStrokes"], original)
+                self.assertEqual(result["id"], f"u{ord(glyph):x}")
+                for change in [{"strokes": str(corrected)}, {"sourceRow": source_row + 1}]:
+                    with self.assertRaisesRegex(ValueError, "changed source"):
+                        SOURCE.character_from_row(row | change, "3급")
 
 
 if __name__ == "__main__":

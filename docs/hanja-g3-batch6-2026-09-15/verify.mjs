@@ -15,17 +15,22 @@ const generated = prepare()
 const followUp = '../hanja-g3-batch6-followup-2026-09-15/'
 const followUp2 = '../hanja-g3-batch6-followup2-2026-09-15/'
 const followUp3 = '../hanja-g3-batch6-followup3-2026-09-15/'
+const boundaries = '../hanja-g3-batch6-boundaries-2026-09-15/'
+const boundaryReview = json(boundaries + 'review.json').records
+const currentCatalog = json('../../content/hanja/characters/g3.json').characters
 const firstFollowUpReview = json(followUp + 'review.json').records
 const secondFollowUpReview = json(followUp2 + 'review.json').records
 const thirdFollowUpReview = json(followUp3 + 'review.json').records
 assert.deepEqual(firstFollowUpReview.map(e => e.glyph), json('./next-batch.json').glyphs)
 assert.deepEqual(secondFollowUpReview.map(e => e.glyph), json(followUp + 'next-batch.json').glyphs)
 assert.deepEqual(thirdFollowUpReview.map(e => e.glyph), json(followUp2 + 'next-batch.json').glyphs)
-const followUpReview = [...firstFollowUpReview, ...secondFollowUpReview, ...thirdFollowUpReview]
+assert.deepEqual(boundaryReview.map(e => e.glyph), json(followUp3 + 'next-batch.json').glyphs)
+const followUpReview = [...firstFollowUpReview, ...secondFollowUpReview, ...thirdFollowUpReview, ...boundaryReview]
 const followUpCandidates = [
   ...json(followUp + 'candidate-paths.json').characters,
   ...json(followUp2 + 'candidate-paths.json').characters,
   ...json(followUp3 + 'candidate-paths.json').characters,
+  ...json(boundaries + 'candidate-paths.json').characters,
 ]
 assert.equal(queue.status, 'reviewed-with-holds')
 assert.equal(queue.entries.length, 50)
@@ -67,7 +72,10 @@ for (const item of queue.entries) {
       const { verificationSource, ...published } = entry
       assert.equal(verificationSource, queue.publisher.id)
       assert.deepEqual(published, followUpCandidates.find(e => e.glyph === item.glyph))
-      validateTextbookReview(entry, item.strokes)
+      const current = currentCatalog.find(e => e.glyph === item.glyph)
+      assert.equal(resolved.expectedStrokes, current.strokes)
+      if (current.strokes !== item.strokes) assert.equal(current.sourceStrokes, item.strokes)
+      validateTextbookReview(entry, current.strokes)
     } else {
       assert.equal(HANJA_STROKES.find(e => e.glyph === item.glyph), undefined)
       assert.equal(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), undefined)
@@ -115,7 +123,7 @@ const catalog = json('../../content/hanja/characters/g3.json').characters
 const applied = new Set(HANJA_STROKES.map(e => e.glyph))
 const grade3Applied = catalog.filter(e => applied.has(e.glyph)).length
 const stillHeld = held.filter(e => !followUpReview.some(r => r.glyph === e.glyph))
-assert.equal(stillHeld.length, 5)
+assert.equal(stillHeld.length, 0)
 console.log(JSON.stringify({
   result: 'pass', reviewedCharacters: 50, catalogStrokes: 547, observedStrokes,
   addedCharacters: matched.length, addedStrokes: review.records.reduce((sum, r) => sum + r.expectedStrokes, 0),
