@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-16",
+  "status": "passed",
+  "scope": "Grade 2 batch 6; Korean dictionary comparison, not exam-body certification.",
+  "sourceAcquisition": {
+    "dictionaryCharacters": 50,
+    "dictionaryStrokes": 574,
+    "sha256AndTitleMatched": true,
+    "geometryCorpora": {
+      "MM": 44,
+      "Ja": 6
+    },
+    "proprietaryAssetsSaved": 0
+  },
+  "visualReview": {
+    "allCharacters": 50,
+    "allStrokes": 574,
+    "correctedCharacters": 37,
+    "locallyCorrectedPaths": 103,
+    "retainedPaths": 471,
+    "orderPermutations": 4,
+    "correctedCharactersRecheckedInFull": 37,
+    "held": 0
+  },
+  "offlineReproduction": {
+    "command": "node docs/hanja-g2-batch6-2026-09-16/verify.mjs",
+    "status": "passed",
+    "compilerMatchesArtifacts": true,
+    "proofPinsValid": true,
+    "uniqueRuntimeGlyphs": true
+  },
+  "tests": {
+    "files": 44,
+    "command": "node --test lib/hanja*.test.ts",
+    "status": 0,
+    "summary": [
+      "ℹ tests 267",
+      "ℹ suites 0",
+      "ℹ pass 267",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 9661.61425"
+    ],
+    "failures": []
+  },
+  "build": {
+    "command": "pnpm build",
+    "status": 0,
+    "output": "  en.json        2792 KB\n  ja.json        3635 KB\n  zh.json        3670 KB\n  es.json        2680 KB\n  fr.json        3066 KB\n  de.json        2771 KB\n  ru.json        3863 KB\n  search.json    5226 KB\n\n개념 8984개 · 참고 글 7편 → public/content/\n▲ Next.js 16.3.3 (Turbopack)\n- Environments: .env\n✓ Running next.config.ts took 41ms\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 1457ms\n  Running TypeScript ...\n  Finished TypeScript in 3.2s ...\n  Collecting page data using 8 workers ...\n  Generating static pages using 8 workers (0/7) ...\n  Generating static pages using 8 workers (1/7) \r\n  Generating static pages using 8 workers (3/7) \r\n  Generating static pages using 8 workers (5/7) \r\n✓ Generating static pages using 8 workers (7/7) in 601ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ○ /apple-icon.png\n├ ○ /debug\n├ ○ /icon.svg\n└ ○ /manifest.webmanifest\n\n\n○  (Static)  prerendered as static content\n\n$ node scripts/split.ts\n$ next build\n"
+  },
+  "integrationRegressionResolved": "The new dictionary spread was initially placed in the Eomunhoe array. It was moved to HANJA_STROKES; all 267 tests and the production build then passed."
+}

@@ -117,3 +117,15 @@ compared with their e-hanja sequence and all 33 corrected forms were rechecked.
 These entries are `ehanja-crosschecked`, not exam-body certification.
 Dictionary artwork is not distributed. Evidence and reproducible recipes:
 `docs/hanja-g2-batch5-2026-09-16/README.md`.
+
+`dictionary-reviewed-g2-batch6.json` adds 50 grade-2 characters (574 strokes),
+modified for Lingo on 2026-09-16: 44 use Make Me a Hanzi at
+`bddc96d41bef78427ed0e034e9f7e31d71fd1b92`; 甕·郁·魏·兪·踰·楡 use AnimCJK
+Japanese data at `ec5e17cca76c87587790bcbce5ea0b4d4fb753d6`.
+The Arphic Public License and upstream notices above apply. Of 574 paths,
+471 retain licensed normalized geometry and 103 were locally corrected.
+甕·佑·鬱·珥 have reviewed order permutations; all 37 corrected characters
+were reinspected in full against the Korean e-hanja dictionary.
+This is an independent dictionary crosscheck, not exam-body certification.
+Dictionary artwork is not distributed. Evidence and reproducible recipes:
+`docs/hanja-g2-batch6-2026-09-16/README.md`.
