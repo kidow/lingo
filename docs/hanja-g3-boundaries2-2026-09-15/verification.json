@@ -1,0 +1,149 @@
+{
+  "checkedAt": "2026-09-15T06:33:25.624Z",
+  "batch": {
+    "result": "pass",
+    "reviewedCharacters": 6,
+    "reviewedStrokes": 65,
+    "originalCatalogStrokes": 65,
+    "addedCharacters": 6,
+    "addedStrokes": 65,
+    "corrections": 6,
+    "heldCharacters": 0,
+    "runtime": 1810,
+    "remaining": 4168,
+    "grade3Applied": 309,
+    "grade3Remaining": 8,
+    "existingPrefixesPreserved": true,
+    "freshSourcePins": 6,
+    "freshManifest": true,
+    "proprietaryAssetsSaved": 0
+  },
+  "allTextbookReconstruction": {
+    "command": "node scripts/hanja-stroke-textbook-build.ts --check",
+    "exitCode": 0,
+    "emittedCharacters": 1278,
+    "publishedBundleMatches": true
+  },
+  "hanjaTests": {
+    "command": "node --test 'lib/hanja*.test.ts'",
+    "exitCode": 0,
+    "passed": 231,
+    "failed": 0
+  },
+  "build": {
+    "command": "pnpm run build",
+    "exitCode": 0,
+    "compiled": true,
+    "typecheck": true,
+    "staticRoutes": true
+  },
+  "progress": {
+    "applied": 1810,
+    "remaining": 4168,
+    "percent": 30.3,
+    "grade3Applied": 309,
+    "grade3Total": 317,
+    "grade3Percent": 97.5,
+    "grade3Remaining": [
+      {
+        "id": "u7553",
+        "glyph": "畓",
+        "hun": "논",
+        "eum": "답",
+        "readingGrade": "3급",
+        "radical": "田",
+        "strokes": 9,
+        "sourceRow": 1071,
+        "sourceHunEum": "논 답"
+      },
+      {
+        "id": "u5c6f",
+        "glyph": "屯",
+        "hun": "진칠",
+        "eum": "둔",
+        "readingGrade": "3급",
+        "radical": "屮",
+        "strokes": 4,
+        "sourceRow": 1227,
+        "sourceHunEum": "진칠 둔"
+      },
+      {
+        "id": "u920d",
+        "glyph": "鈍",
+        "hun": "둔할",
+        "eum": "둔",
+        "readingGrade": "3급",
+        "radical": "金",
+        "strokes": 12,
+        "sourceRow": 1228,
+        "sourceHunEum": "둔할 둔:"
+      },
+      {
+        "id": "u6feb",
+        "glyph": "濫",
+        "hun": "넘칠",
+        "eum": "람",
+        "readingGrade": "3급",
+        "radical": "水",
+        "strokes": 17,
+        "sourceRow": 1278,
+        "sourceHunEum": "넘칠 람:"
+      },
+      {
+        "id": "u96b7",
+        "glyph": "隷",
+        "hun": "종",
+        "eum": "례",
+        "readingGrade": "3급",
+        "radical": "隶",
+        "strokes": 16,
+        "sourceRow": 1406,
+        "sourceHunEum": "종 례:"
+      },
+      {
+        "id": "u96a3",
+        "glyph": "隣",
+        "hun": "이웃",
+        "eum": "린",
+        "readingGrade": "3급",
+        "radical": "阜",
+        "strokes": 15,
+        "sourceRow": 1566,
+        "sourceHunEum": "이웃 린"
+      },
+      {
+        "id": "u5c5b",
+        "glyph": "屛",
+        "hun": "병풍",
+        "eum": "병",
+        "readingGrade": "3급",
+        "radical": "尸",
+        "strokes": 11,
+        "sourceRow": 2065,
+        "sourceHunEum": "병풍 병(:)"
+      },
+      {
+        "id": "u643a",
+        "glyph": "携",
+        "hun": "이끌",
+        "eum": "휴",
+        "readingGrade": "3급",
+        "radical": "手",
+        "strokes": 13,
+        "sourceRow": 5908,
+        "sourceHunEum": "이끌 휴"
+      }
+    ],
+    "grade3RemainingStrokes": 97
+  },
+  "nextRecommended": {
+    "glyphs": [
+      "携",
+      "濫"
+    ],
+    "characters": 2,
+    "strokes": 30
+  },
+  "sourceChecks": "source-checks.json",
+  "proprietaryAssetsSaved": 0
+}
