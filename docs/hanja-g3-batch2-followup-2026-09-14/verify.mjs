@@ -27,8 +27,10 @@ const held = observations.filter(r => r.decision === 'held')
 assert.equal(held.map(r => r.glyph).join(''), '屯鈍')
 for (const row of held) {
   assert.ok(row.notes.trim() && row.conflicts.length)
-  assert.equal(HANJA_STROKES.find(r => r.glyph === row.glyph), undefined)
-  assert.equal(TEXTBOOK_REVIEW_REGISTRY.records.find(r => r.glyph === row.glyph), undefined)
+  const resolved = json('../hanja-g3-direction-2026-09-15/review.json').records.find(r => r.glyph === row.glyph)
+  assert.ok(resolved, 'Historical hold requires the exact direction re-review')
+  assert.deepEqual(TEXTBOOK_REVIEW_REGISTRY.records.find(r => r.glyph === row.glyph), resolved)
+  validateTextbookReview(HANJA_STROKES.find(r => r.glyph === row.glyph), resolved.expectedStrokes)
 }
 for (const record of records) {
   const item = queue.entries.find(e => e.glyph === record.glyph)

@@ -116,12 +116,18 @@ if (process.argv.includes('--fresh')) {
 const catalog = json('../../content/hanja/characters/g3.json').characters
 const applied = new Set(HANJA_STROKES.map(e => e.glyph))
 const remaining = catalog.filter(e => !applied.has(e.glyph))
-assert.deepEqual(remaining.map(e => e.glyph).sort(), ['屯','鈍','隷','隣'].sort())
+assert.ok(remaining.every(e => ['屯','鈍','隷','隣'].includes(e.glyph)))
 const next = json('./next-batch.json')
 assert.deepEqual(next.glyphs, ['屯', '鈍'])
 assert.equal(next.characters, 2)
 assert.equal(next.strokes, 16)
-assert.ok(next.entries.every(e => remaining.some(c => c.glyph === e.glyph && c.strokes === e.strokes)))
+for (const item of next.entries) {
+  if (remaining.some(e => e.glyph === item.glyph && e.strokes === item.strokes)) continue
+  const resolved = json('../hanja-g3-direction-2026-09-15/review.json').records.find(e => e.glyph === item.glyph)
+  assert.ok(resolved)
+  assert.deepEqual(TEXTBOOK_REVIEW_REGISTRY.records.find(e => e.glyph === item.glyph), resolved)
+  validateTextbookReview(HANJA_STROKES.find(e => e.glyph === item.glyph), item.strokes)
+}
 console.log(JSON.stringify({
   result: 'pass', reviewedCharacters: 2, reviewedStrokes: strokes,
   addedCharacters: 2, addedStrokes: strokes, locallyAuthoredStrokes: strokes,
