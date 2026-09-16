@@ -33,6 +33,7 @@ import { g2GeometryBatch8DictionaryGeometry, validateG2GeometryBatch8DictionaryR
 import { g2GeometryBatch9DictionaryGeometry, validateG2GeometryBatch9DictionaryReview, validateG2GeometryBatch9DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch9.ts'
 import { g2GeometryBatch10DictionaryGeometry, validateG2GeometryBatch10DictionaryReview, validateG2GeometryBatch10DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch10.ts'
 import { g2GeometryBatch11DictionaryGeometry, validateG2GeometryBatch11DictionaryReview, validateG2GeometryBatch11DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch11.ts'
+import { g2GeometryBatch12DictionaryGeometry, validateG2GeometryBatch12DictionaryReview, validateG2GeometryBatch12DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch12.ts'
 import { g2Batch2DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch2.ts'
 import { g2Batch3DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch3.ts'
 import { g2Batch4DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch4.ts'
@@ -57,6 +58,7 @@ import { g2GeometryBatch8DictionaryReference } from '../lib/hanja-stroke-diction
 import { g2GeometryBatch9DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch9.ts'
 import { g2GeometryBatch10DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch10.ts'
 import { g2GeometryBatch11DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch11.ts'
+import { g2GeometryBatch12DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch12.ts'
 import {
   HANJA_DICTIONARY_SOURCE, HANJA_DICTIONARY_GEOMETRY_SOURCE, HANJA_DICTIONARY_STROKES,
   DICTIONARY_REFERENCES, dictionarySourceReference, dictionaryStrokeIndices,
@@ -215,6 +217,7 @@ export function dictionaryGeometry(glyph: string, medians: Medians) {
   if (g2GeometryBatch9DictionaryReference(glyph)) return g2GeometryBatch9DictionaryGeometry(glyph, medians)
   if (g2GeometryBatch10DictionaryReference(glyph)) return g2GeometryBatch10DictionaryGeometry(glyph, medians)
   if (g2GeometryBatch11DictionaryReference(glyph)) return g2GeometryBatch11DictionaryGeometry(glyph, medians)
+  if (g2GeometryBatch12DictionaryReference(glyph)) return g2GeometryBatch12DictionaryGeometry(glyph, medians)
   if (['響', '姉', '隷', '隣'].includes(glyph)) return jaDictionaryGeometry(glyph, medians)
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref || hash(medians) !== ref.originalMediansSha256) throw new Error('Dictionary original medians mismatch: ' + glyph)
@@ -301,6 +304,7 @@ export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expe
   if (g2GeometryBatch9DictionaryReference(review.glyph)) return validateG2GeometryBatch9DictionaryReview(review, expectedStrokes)
   if (g2GeometryBatch10DictionaryReference(review.glyph)) return validateG2GeometryBatch10DictionaryReview(review, expectedStrokes)
   if (g2GeometryBatch11DictionaryReference(review.glyph)) return validateG2GeometryBatch11DictionaryReview(review, expectedStrokes)
+  if (g2GeometryBatch12DictionaryReference(review.glyph)) return validateG2GeometryBatch12DictionaryReview(review, expectedStrokes)
   if (['響', '姉', '隷', '隣'].includes(review.glyph)) return validateJaDictionaryReview(review, expectedStrokes)
   const expected = buildDictionaryBundle().characters.find(e => e.glyph === review.glyph)
   if (!expected || expected.paths.length !== expectedStrokes
@@ -334,6 +338,7 @@ export function validateDictionaryBundle(entries: readonly HanjaDictionaryStroke
   validateG2GeometryBatch9DictionaryBundle()
   validateG2GeometryBatch10DictionaryBundle()
   validateG2GeometryBatch11DictionaryBundle()
+  validateG2GeometryBatch12DictionaryBundle()
   const expected = buildDictionaryBundle().characters.map(e => ({ ...e, verificationSource: HANJA_DICTIONARY_SOURCE.id }))
   if (!isDeepStrictEqual(entries, expected)) throw new Error('Dictionary published bundle mismatch')
 }

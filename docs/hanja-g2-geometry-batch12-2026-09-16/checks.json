@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-16",
+  "verification": "passed",
+  "proofPins": {
+    "acquire.mjs": "5b0f0e351cc7768477fdbd7fd80fee6d7a1106737b81ceb87608e8735b146a1f",
+    "serve.py": "a92cb5bfdbd2ccaabecc1ff13526c1a1f2c78012ee7df31c860eb2b3f4697d65",
+    "prepare.mjs": "e9887a51801b666070cb91d1c9d98331b22dee257099f9c0048d905ab9938994",
+    "verify.mjs": "34d82482c5b18bf8e89fbecd5d6f9c4f161d153cde24eb6812e8b2968be3073e",
+    "initial-observations.json": "73327f36fa6009ca3290de25a523e8e50b3babc9e562c818f6f590538a7ef3a4",
+    "originals.json": "7ba1b52994cdfc701ff802bf5fa6ced62820aa6a271fe784bbe630f36d934aef",
+    "source-checks.json": "86e78809e2fb882b974d6d1281bf6134b302bcd5cda112690e5f7f4587070b00",
+    "observations.json": "2271415b38e012a5f6fe782525a6a8642a8e8c9930a8302bcebded34fa6cd39f",
+    "corrections.json": "b47b10422a9c9e4d0375e608120302e163aaa80dbba86f28721afccc0a0b649b",
+    "proposals.json": "bdd900bdc530a9395dc397203bb1e10b08c2498213d353c20814a186048a20e3",
+    "candidate-paths.json": "5c75d36192e300df9af7bd45e6b77c07a7a483715593db8c2f95c188b17af746",
+    "review.json": "e40a456890fcc92403f28c9109897d0da89fa5ae42423b68f5e77d797840fa06"
+  },
+  "sourceChecks": {
+    "characters": 3,
+    "dictionaryStages": 27,
+    "licensedOriginalStrokes": 24,
+    "correctedPaths": 27,
+    "retainedPaths": 0,
+    "contactPairs": 111,
+    "proprietaryAssetsSaved": 0,
+    "automaticRadicalApproval": false
+  },
+  "browserReview": {
+    "originalStages": 27,
+    "correctedStages": 27,
+    "maskRevealFractions": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "finalCumulativeForms": [
+      "陜",
+      "邢",
+      "祜"
+    ],
+    "elapsedTimeAnimationTest": false
+  },
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "files": 64,
+    "tests": 394,
+    "passed": 394,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "syntax": {
+    "acquireExitCode": 0,
+    "serveExitCode": 0
+  },
+  "reconstructionAndPublicationValid": true,
+  "catalogUnchanged": true
+}
