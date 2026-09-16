@@ -28,8 +28,28 @@ export type HanjaCharacter = {
   /** 공식 후속 설명으로 보정한 경우 배정표의 획수와 보정 기록 ID를 함께 보존한다. */
   sourceStrokes?: number
   strokeCountCorrection?: string
-  /** 검수한 예시만 제공한다. 원자료에 없는 문장을 생성하지 않는다. */
-  example?: { word: string; reading: string; meaning: string }
+  /**
+   * 활용 한자어 하나. 표준국어대사전 표제어에서 표기·독음만 옮긴다 — 뜻풀이는 싣지
+   * 않고, 구성 글자의 훈음은 배정표에서 렌더 시 찾는다 (docs/hanja-radical-example-design.md).
+   */
+  example?: HanjaExample
+}
+
+export type HanjaExample = {
+  word: string
+  reading: string
+  source: { dictionary: '표준국어대사전'; targetCode: number; url: string; verifiedAt: string }
+}
+
+/** 부수 한 자. 훈음은 배정자면 배정표에서, 아니면 표준국어대사전의 부수 명칭에서 온다. */
+export type HanjaRadical = {
+  glyph: string
+  /** 배정자가 아닌 부수의 명칭 (`엄호`·`갓머리`). 배정자는 비어 있고 글자 자체의 훈음을 쓴다. */
+  name?: { text: string; targetCode: number; url: string; verifiedAt: string }
+  /** 說文解字 원문. 위키문헌 大徐本. 없는 부수(亠·爿)는 null. */
+  shuowen: { volume: number; section: string; text: string; revisionId: number; url: string; sha256: string } | null
+  /** 원문의 우리말 번역. 번역자는 lingo. 원문이 없으면 비어 있다. */
+  translation?: string
 }
 
 export const HANJA_SKILLS = ['recognition', 'hun-eum'] as const
@@ -59,7 +79,7 @@ export function searchHanja(characters: HanjaCharacter[], query: string): HanjaC
   if (!term) return characters
   return characters.filter((character) => [
     character.glyph, ...(character.glyphAliases ?? []), ...acceptedHanjaAnswers(character),
-    ...(character.example ? Object.values(character.example) : []),
+    ...(character.example ? [character.example.word, character.example.reading] : []),
   ].some((value) => normalize(value).includes(term)))
 }
 

@@ -13,7 +13,9 @@ import g2 from '@/content/hanja/characters/g2.json'
 import g1 from '@/content/hanja/characters/g1.json'
 import special2 from '@/content/hanja/characters/special-2.json'
 import special from '@/content/hanja/characters/special.json'
-import type { HanjaCharacter } from './hanja'
+import radicals from '@/content/hanja/radicals.json'
+import type { HanjaCharacter, HanjaRadical } from './hanja'
+import { indexCharacters, indexRadicals } from './hanja-radicals'
 
 /** 각 파일은 신규 배정자만 가진다. 낮은 급수부터 한 번씩 소개한다. */
 const files: { characters: unknown[] }[] = [
@@ -21,3 +23,8 @@ const files: { characters: unknown[] }[] = [
 ]
 
 export const HANJA_CHARACTERS = files.flatMap((file) => file.characters) as HanjaCharacter[]
+export const HANJA_RADICALS = radicals.radicals as HanjaRadical[]
+/** 부수 글자 → 부수 항목과 훈음. 카드가 부수 블록을 그릴 때 쓴다 */
+export const RADICAL_INDEX = indexRadicals(HANJA_RADICALS, HANJA_CHARACTERS)
+/** 글자(호환 한자 포함) → 배정자. 한자어의 글자별 훈음을 찾을 때 쓴다 */
+export const CHARACTER_INDEX = indexCharacters(HANJA_CHARACTERS)

@@ -40,6 +40,15 @@
 - 원문에 한자어 예시는 없으므로 기존 10자의 예시만 유지한다. 예시가 없는 카드에는 빈 예시 영역을 만들지 않는다.
 - 기본 글자는 Noto Serif CJK KR 2.003에서 추출한 로컬 SVG로 표시한다. 한자 5,978자와 추가 부수 45자의 파일·출처·해시는 `public/hanja/`에 보존한다. 공식 필순 도해로 검증한 503자만 재생을 시작하면 기존 획별 SVG 중심선으로 전환한다. 표시용 폰트 윤곽이나 총획만으로 필순을 추정하지 않으며 손글씨 자동 판정은 제공하지 않는다. [SVG 표시 기록](hanja-svg-feasibility.md), [필순 검증 목록](hanja-stroke-sources.md#현재-적용한-503자).
 
+## 부수 해설과 활용 한자어
+
+배정표에는 부수 글자와 총획수만 있고, 부수 해설·한자어는 한국어문회에 없다. 부수 213자의 해설은 說文解字 원문(위키문헌 大徐本)과 우리말 번역으로, 글자마다의 활용 한자어는 표준국어대사전 오픈 API로 채운다. 결정과 출처·이용 조건은 [예시 단어·부수 해설 설계](hanja-radical-example-design.md), 원문·번역 검수표는 [부수 213자 검수표](hanja-radicals-shuowen-2026-09-17/README.md)에 있다.
+
+```bash
+pnpm hanja-radicals            # content/hanja/radicals.json 과 검수표를 다시 만든다
+pnpm hanja-examples [급수…]    # 사전에서 한자어를 골라 characters/*.json 의 example 에 쓴다
+```
+
 ## 파일과 재검증
 
 `content/hanja/characters/`의 15개 JSON에는 각 급수 신규 한자만 들어 있다. `lib/hanja-corpus.ts`는 이를 낮은 급수부터 합쳐 기존 한능검 셸에 공급한다.

@@ -4,6 +4,7 @@ import { Check, X } from 'lucide-react'
 import { useState } from 'react'
 import { Drawer } from 'vaul'
 import { gradeLabel, hanjaReadings, hunEum, type HanjaCharacter, type HanjaQuestion } from '@/lib/hanja'
+import { CHARACTER_INDEX, RADICAL_INDEX } from '@/lib/hanja-corpus'
 import { CardImage, CardSheet, FeedCard, SwipeHint } from '../feed'
 import { WritingPractice } from './writing'
 import { StrokePlayback } from './stroke-player'
@@ -23,6 +24,38 @@ export function HanjaIllustration({ character, active = true, autoPlay = false, 
   )}</StrokePlayback>
 }
 
+/**
+ * 부수 블록. 왼쪽에 부수 글자, 오른쪽에 훈음(배정자) 또는 명칭(엄호·갓머리), 說文解字 번역,
+ * 그 아래 원문 한 줄. 원문이 없는 부수(亠·爿)는 훈음만 (docs/hanja-radical-example-design.md).
+ */
+export function HanjaRadicalBlock({ character }: { character: HanjaCharacter }) {
+  const entry = RADICAL_INDEX.get(character.radical)
+  return (
+    <div className="flex items-start gap-3">
+      <HanjaGlyph glyph={character.radical} className="mt-0.5 text-4xl" />
+      <div className="min-w-0">
+        <p className="text-sm"><span className="text-sub">부수</span> {entry?.label}</p>
+        {entry?.radical.translation && <p className="mt-1 text-sm leading-relaxed text-sub">{entry.radical.translation}</p>}
+        {entry?.radical.shuowen && <p className="mt-1 text-xs leading-relaxed text-sub/70" lang="zh-Hant">說文 · {entry.radical.shuowen.text}</p>}
+      </div>
+    </div>
+  )
+}
+
+/** 한자어 표기·독음과 글자마다의 훈음. 뜻풀이는 싣지 않는다. */
+function HanjaExampleBlock({ example }: { example: NonNullable<HanjaCharacter['example']> }) {
+  const parts = [...example.word].map((glyph) => CHARACTER_INDEX.get(glyph)).filter((c) => c !== undefined)
+  return (
+    <>
+      <p className="flex items-center gap-3">
+        <HanjaGlyphs text={example.word} className="gap-0.5 text-2xl" />
+        <span>{example.reading}</span>
+      </p>
+      <p className="mt-1.5 text-sm text-sub">{parts.map((c) => hunEum(c)).join(' · ')}</p>
+    </>
+  )
+}
+
 export function HanjaDetails({ character }: { character: HanjaCharacter }) {
   return (
     <>
@@ -32,16 +65,10 @@ export function HanjaDetails({ character }: { character: HanjaCharacter }) {
       )}
       <div className="flex items-center gap-3 text-sm text-sub">
         <span className="rounded-pill border border-line px-2 py-0.5">{gradeLabel(character.readingGrade)}</span>
-        <span>부수 <HanjaGlyph glyph={character.radical} /></span>
         <span>{character.strokes}획</span>
       </div>
-      {character.example && <div className="mt-3 border-t border-line pt-4">
-        <p className="flex items-center gap-3">
-          <HanjaGlyphs text={character.example.word} className="gap-0.5 text-2xl" />
-          <span>{character.example.reading}</span>
-        </p>
-        <p className="mt-2 text-sm text-sub">{character.example.meaning}</p>
-      </div>}
+      <div className="mt-3 border-t border-line pt-4"><HanjaRadicalBlock character={character} /></div>
+      {character.example && <div className="mt-3 border-t border-line pt-4"><HanjaExampleBlock example={character.example} /></div>}
     </>
   )
 }
@@ -66,7 +93,7 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
             ? <HanjaGlyph glyph={question.prompt} className="size-[clamp(168px,60vw,264px)]" />
             : <span className="text-4xl font-semibold">{question.prompt}</span>}
         </div>}
-        {!intro && answered && <span className="absolute right-5 bottom-7 text-sm text-sub">{gradeLabel(character.readingGrade)}</span>}
+        {!intro && answered && <span className="absolute right-5 bottom-7 text-sm text-sub">{gradeLabel(character.readingGrade)} · {character.strokes}획</span>}
       </CardImage>
       <CardSheet>
         {intro ? <HanjaDetails character={character} /> : (
@@ -96,6 +123,7 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
               <button type="button" className="mx-auto min-h-11 px-4 text-sm text-sub underline underline-offset-4" onClick={() => onAnswer(false, GAVE_UP)}>모르겠어요</button>
             )}
             <p role="status" className="sr-only">{answered ? `정답 ${question.answer}. ${pick === question.answer ? '맞혔어요' : '다시 연습해 보세요'}` : ''}</p>
+            {answered && <div className="border-t border-line pt-3"><HanjaRadicalBlock character={character} /></div>}
           </>
         )}
         {(intro || answered) && (
