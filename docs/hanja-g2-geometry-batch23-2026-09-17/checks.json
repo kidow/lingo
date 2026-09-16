@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-17",
+  "verification": "passed-for-this-batch-with-unrelated-working-test-failure",
+  "proofPins": {
+    "compose.ts": "a1dcb1da03ce4d489e2e7e0f0fe28156544c4e1237d014411710949eee0b1cb7",
+    "acquire.mjs": "7e28880da7041a627ab532eed43cdd732a5b6652cf73cba5a5e6eba7b2a4efb9",
+    "serve.py": "76e5263a5437a98237e01b9885b378c5dc4e3723e69ab89bf0dd8eb8a19251a7",
+    "prepare.mjs": "d467364ef2ade60d8813f40b89a31df8c0b7df45e107df237aac4ed034f5d2a0",
+    "verify.mjs": "15127aa6cc09876f90252d25cbcb35b1339a56f49f07731d2665afa5e58f8cab",
+    "initial-observations.json": "43b4f4a91b422918db4c9080d59e95f1512cbb0f8eb8d1a3074d9c2c2eedd35e",
+    "originals.json": "b93430cc42a467a4846b8f89ff991062e53748c5513f575e3845d8e115200fb7",
+    "source-checks.json": "89fce1668b243cb169f6585bfd6d30b2b16d71148eb94d5daf753a98eaf2a13b",
+    "observations.json": "a2b2f61cd77454cc6c340b016bcc06d706b4956e3cd17e9f4e4c20d25948e322",
+    "corrections.json": "1c39d2ac89939a6c39fce9c8bbc29e632cdcac726ef5bd4a4c62e5c59d2e9947",
+    "proposals.json": "20405b6f5dad1806bfe570e53b5c7cb37c01449681d8ee92c687bf50b08aa5d8",
+    "candidate-paths.json": "7a63ba3bde2f4072d8e5ca9247e725ac1ff7abdd7e28af60feaf249b7241a822",
+    "review.json": "400bec4e1ee0bb38971c9ea0a8053efbde8e56fafaf39374bfe84787667d8021"
+  },
+  "sourceChecks": {
+    "characters": 3,
+    "dictionaryStages": 44,
+    "licensedComponentStrokes": 44,
+    "components": 12,
+    "correctedPaths": 44,
+    "retainedPaths": 0,
+    "contactPairs": 353,
+    "proprietaryAssetsSaved": 0,
+    "automaticRadicalApproval": false
+  },
+  "browserReview": {
+    "originalDictionaryStages": 44,
+    "originalCandidateStrokes": 44,
+    "correctedStages": 44,
+    "maskRevealFractions": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "finalCumulativeForms": [
+      "晙",
+      "埈",
+      "瓚"
+    ],
+    "elapsedTimeAnimationTest": false
+  },
+  "tests": {
+    "command": "node --test --test-reporter=tap <tracked lib/hanja*.test.ts> lib/hanja-stroke-dictionary-g2-geometry-batch23.test.ts",
+    "files": 76,
+    "tests": 485,
+    "passed": 484,
+    "failed": 1,
+    "skipped": 0,
+    "exitCode": 1,
+    "failures": [
+      "# Subtest: 15급수 전체 5,978자는 중복 없이 두 읽기 능력을 독립적으로 가진다",
+      "not ok 475 - 15급수 전체 5,978자는 중복 없이 두 읽기 능력을 독립적으로 가진다",
+      "  ---",
+      "  duration_ms: 3.779333",
+      "  type: 'test'",
+      "  location: '/Users/kidow/Documents/dev/kidow/lingo/lib/hanja.test.ts:23:1'",
+      "  failureType: 'testCodeFailure'",
+      "  error: \"Cannot read properties of undefined (reading 'dictionary')\"",
+      "  code: 'ERR_TEST_FAILURE'",
+      "  name: 'TypeError'",
+      "  stack: |-",
+      "    TestContext.<anonymous> (file:///Users/kidow/Documents/dev/kidow/lingo/lib/hanja.test.ts:50:27)",
+      "    Test.runInAsyncScope (node:async_hooks:226:14)",
+      "    Test.run (node:internal/test_runner/test:1201:25)",
+      "    Test.start (node:internal/test_runner/test:1096:17)",
+      "    startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)",
+      "  ...",
+      "# Subtest: 두 방향 퀴즈 모두 정답 하나와 서로 다른 보기 네 개를 만든다",
+      "ok 476 - 두 방향 퀴즈 모두 정답 하나와 서로 다른 보기 네 개를 만든다",
+      "  ---",
+      "  duration_ms: 6024.749041",
+      "  type: 'test'",
+      "  ...",
+      "# Subtest: 같은 훈음을 가진 다른 글자를 오답으로 내지 않는다",
+      "ok 477 - 같은 훈음을 가진 다른 글자를 오답으로 내지 않는다",
+      "  ---",
+      "  duration_ms: 1.361417",
+      "  type: 'test'",
+      "  ...",
+      "# Subtest: 소개를 미리 한 장 더 만들 때 같은 글자의 다른 능력 소개를 중복 출제하지 않는다",
+      "ok 478 - 소개를 미리 한 장 더 만들 때 같은 글자의 다른 능력 소개를 중복 출제하지 않는다",
+      "  ---",
+      "  duration_ms: 7.205709"
+    ],
+    "scope": "Tracked Hanja tests and the new batch test. The only failure is in another session’s uncommitted lib/hanja.test.ts source-field assertion; all eight new batch tests passed."
+  },
+  "committedTestRecheck": {
+    "method": "Run committed lib/hanja.test.ts in memory with TypeScript transpilation and original absolute import/file URLs; unrelated working test left untouched",
+    "exitCode": 0,
+    "summary": [
+      "# committed-test-base e13a4c32aadc5a260d3f715fffaf9c6d5c34530e"
+    ],
+    "failures": [],
+    "stderr": ""
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "syntax": {
+    "acquireExitCode": 0,
+    "prepareExitCode": 0,
+    "verifyExitCode": 0,
+    "serveExitCode": 0
+  },
+  "reconstructionAndPublicationValid": true,
+  "catalogUnchanged": true
+}
