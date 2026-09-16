@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-16",
+  "verification": "passed",
+  "proofPins": {
+    "split-review.json": "dcf14e1ad68a5b5cb1580c12e6dbb10d2bf94e45e0c1b7c1a2035172986d8cea",
+    "acquire.mjs": "3f8f199083c84f4e24f0c85625193e9c9e9e5277512a70d6d833ee68bd5b6555",
+    "serve.py": "b0516d9152909c78e6d9a5e579a30f221c68a8c444c0f15d18447783cb4018af",
+    "prepare.mjs": "787a88759ab4db01700494864dad1e94a5856aa75ca51c9c1c8c24fc53fe4b4c",
+    "verify.mjs": "d274a1aaadf74e9f27bece6125d82618c80ed9eb8a295cb449ae0f623da0a172",
+    "initial-observations.json": "d7e8a7daf755dabe7cc0de0cb97e1c7c0ca4bb233500bcc93ce1b4481b27fed0",
+    "originals.json": "707f2f1ddf7199e874de1f113492e8054b0a5dc8b6fe2523f0ee21b401c250e7",
+    "source-checks.json": "cc79128389e7dfba8284992baac5fe5b24dd7243e7d538689f72c5bb48705356",
+    "observations.json": "7196f3ea57c1990f2fffc7b9f8181c0866f004dcfe4e9fd1a0c95a022e4c2210",
+    "corrections.json": "4ba49a1c70a2238c772ac675ba0d93d1abedfb11d5ba16f5c6e068b08ecd6633",
+    "proposals.json": "acb1f50afb30317a9d9d6b5fb945a78b07a4ef7b75bc4985f350938d53a7b2f5",
+    "candidate-paths.json": "dadb92572e6de7829fe5080cbf8b51a894005f1b394647eb86068776cf36a8b8",
+    "review.json": "6c9ac3f98605c3f4733e66f536891e61a44e3f898326e4f072aa48088759f125"
+  },
+  "sourceChecks": {
+    "characters": 1,
+    "dictionaryStages": 11,
+    "licensedOriginalStrokes": 10,
+    "splitSourceStrokes": [
+      9
+    ],
+    "splitTargetStrokes": [
+      9,
+      10
+    ],
+    "correctedPaths": 11,
+    "retainedPaths": 0,
+    "contactPairs": 55,
+    "proprietaryAssetsSaved": 0,
+    "automaticRadicalApproval": false
+  },
+  "browserReview": {
+    "originalDictionaryStages": 11,
+    "originalCandidateStrokes": 10,
+    "correctedStages": 11,
+    "maskRevealFractions": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "finalCumulativeForms": [
+      "珽"
+    ],
+    "elapsedTimeAnimationTest": false
+  },
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "files": 68,
+    "tests": 425,
+    "passed": 425,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "syntax": {
+    "acquireExitCode": 0,
+    "prepareExitCode": 0,
+    "verifyExitCode": 0,
+    "serveExitCode": 0
+  },
+  "reconstructionAndPublicationValid": true,
+  "catalogUnchanged": true
+}
