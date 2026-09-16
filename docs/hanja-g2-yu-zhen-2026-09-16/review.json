@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-16",
+  "status": "held-after-target-candidate-recovery",
+  "approved": false,
+  "runtimeApprovalsAdded": 0,
+  "catalogChanged": false,
+  "recoveredCandidates": [
+    {
+      "glyph": "祐",
+      "sourceGlyph": "祐",
+      "strokes": 10,
+      "corpus": "Ja",
+      "mediansSha256": "e6ac1f1fabb7989142fe156a4e08c72a2ce7068ef672fff175a18ea2b04615fe"
+    },
+    {
+      "glyph": "禎",
+      "sourceGlyph": "禎",
+      "strokes": 14,
+      "corpus": "Ja",
+      "mediansSha256": "c15da6934d7dfc4072e20cd4c71203de903cfd7bc5397274abca8a38b82b3e5e"
+    }
+  ],
+  "entries": [
+    {
+      "glyph": "祐",
+      "strokes": 10,
+      "status": "held-source-order-conflict",
+      "candidateAvailable": true,
+      "geometryInspected": true,
+      "wholeTargetOrderVerified": false,
+      "reason": "Ten paths recovered, but candidate/MOE put the horizontal before the sweep in 右, opposite the domestic dictionary. The five-stroke 示 whole-target sequence also lacks independent target-form evidence."
+    },
+    {
+      "glyph": "禎",
+      "strokes": 14,
+      "status": "held-whole-target-source-and-endpoints",
+      "candidateAvailable": true,
+      "geometryInspected": true,
+      "wholeTargetOrderVerified": false,
+      "reason": "Fourteen paths recovered. Inner horizontal endpoints 10 and 11 need correction, and no independent whole fourteen-stroke reference has been established."
+    }
+  ],
+  "reopenConditions": [
+    "Obtain independent whole-target order/direction evidence for 示+右 and 示+貞 and record whether it is Korean or foreign supplementary evidence.",
+    "Resolve the 右 stroke-order difference explicitly; do not treat candidate availability or Unicode equivalence as approval.",
+    "Correct 禎 inner endpoints, then re-inspect every target path and cumulative state before runtime registration."
+  ],
+  "evidenceFiles": [
+    "source-checks.json",
+    "observations.json",
+    "originals.json"
+  ]
+}

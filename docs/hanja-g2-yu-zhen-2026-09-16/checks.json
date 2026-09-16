@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-16",
+  "verification": "passed",
+  "targetCandidateNormalizationValid": true,
+  "compatibilityGlyphsVerified": true,
+  "heldGlyphsAbsentFromRuntime": true,
+  "metadataAndObservationCoverageValid": true,
+  "catalogAndCoverageUnchanged": true,
+  "proprietaryAssetsSaved": 0,
+  "proofPins": {
+    "acquire.mjs": "05b392f0dc01512d7fc2a163f3e6d6cabab1f5275164811884be63a1995ac6b3",
+    "serve.py": "72b15e8e9d8f9fb2a05ac2ea1d5d7f01e4116d352c65436523851f3c79b8caf7",
+    "originals.json": "4371e4e56b1ba609af7cff238dda83237e5eb464a1eb8c25cf8c1e9904292330",
+    "source-checks.json": "4a7cd8f3fdb643fc294b12d960a7a276aed007e302047e7685956d0a121f6d5e",
+    "observations.json": "f3fc5a35d42386e5f92742f7e717d44e7fe20e2371cf3df1293a6f4210c788b6",
+    "review.json": "6be079c9c6e0d1cd2d42d71943c3a8757d35ffe2d50d4c3bb53908d3ea54ad6f",
+    "verify.mjs": "fc6bb8097008bdbb877679b59679186b75473651335288f0d53fe6ab738e49b9"
+  },
+  "tests": {
+    "command": "node --test lib/hanja-strokes.test.ts lib/hanja-stroke-audit.test.ts lib/hanja-component-geometry.test.ts",
+    "files": 3,
+    "passed": 23,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "viewer": {
+    "viewerSyntaxValid": true,
+    "appFormHashesVerified": 2,
+    "moeXmlPinsVerified": 2,
+    "acquireSyntaxValid": true
+  },
+  "visualReview": {
+    "targetCandidatePaths": 24,
+    "domesticDictionaryStages": 22,
+    "modernCandidatePaths": 12,
+    "moeStages": 4,
+    "appForms": 2,
+    "wholeTargetPathsSourceVerified": 0
+  },
+  "build": {
+    "run": false,
+    "reason": "Only read-only source review helpers and documentation changed; no application or runtime data changed."
+  }
+}
