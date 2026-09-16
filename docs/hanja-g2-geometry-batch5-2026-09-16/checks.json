@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-16",
+  "verification": "passed",
+  "proofPins": {
+    "acquire.mjs": "a5ca2e591bca983e296825cf513f313ef1a91d8a10d359fc67a27dcf3fc40bfe",
+    "serve.py": "a4e2af64fe1c968a994bd8029690ffa06454a6aaa6bcd85a318c3b2091577660",
+    "prepare.mjs": "c8ffb715cc905cbb4253c880e4ff93cdf62a84d6b62c592f330d6a23d7f48ff8",
+    "verify.mjs": "e4e843b21826fd43cf98e2c824c638f68fbf4c5b47bd591f320a2ce1d99530b4",
+    "initial-observations.json": "14e167efd66d5ad71144c76f992cb3b0d2948afacebc44d789020108e4b172b9",
+    "originals.json": "6942c6cd85af5ec54bab980f0dc3bd100e0fd1db4bec235245fa91a9869f1c09",
+    "source-checks.json": "2f8c10a112629ec7f76ac99e7f75e2826c4aba2ce9cb8c6c4ae2a3b7ad449060",
+    "observations.json": "f602af76e2a00ca80c0d463c0dcd3831ffa8b75e60025c425ab005e388879269",
+    "corrections.json": "4419cb5e4530eacb9a97970ff1765c8fbbe9eae1c139dd172ca215e0f1886c79",
+    "proposals.json": "01b1986859f8b8655ff56d473a421aba9e14cb8eb0da2822b268d61441008171",
+    "candidate-paths.json": "598c8d5b55cda31dd0225a4aa6e977b0a75ee6f8ae97e61cb099c98f8de807b0",
+    "review.json": "e61b4fc9caba4b50c3141584f3d01bca31e285fcfed87d02e9dcf678f671cb4d"
+  },
+  "checks": {
+    "reconstructionAndPublicationValid": true,
+    "allFortyStagesObserved": true,
+    "catalogUnchanged": true,
+    "proprietaryAssetsSaved": 0
+  },
+  "tests": {
+    "command": "node --test --test-reporter=tap lib/hanja*.test.ts (57 explicit file paths)",
+    "files": 57,
+    "tests": 338,
+    "passed": 338,
+    "failed": 0,
+    "exitCode": 0,
+    "newRegressionTests": 8
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "syntax": {
+    "acquireExitCode": 0,
+    "serveExitCode": 0,
+    "stderr": ""
+  },
+  "visual": {
+    "glyphs": [
+      "縫",
+      "蓬",
+      "芬"
+    ],
+    "stages": 40,
+    "correctedPathsReinspected": 27,
+    "finalCumulativeForms": 3,
+    "sourceArtSaved": false
+  }
+}

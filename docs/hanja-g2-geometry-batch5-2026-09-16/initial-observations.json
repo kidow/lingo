@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-16",
+  "status": "complete",
+  "entries": [
+    {
+      "glyph": "縫",
+      "candidateStrokes": 16,
+      "targetStrokes": 17,
+      "decision": "needs-geometry-correction",
+      "issues": [
+        {
+          "targetStroke": 1,
+          "sourceStroke": 1,
+          "reason": "The whole-glyph source first stroke descends left, turns briefly up-left, then ends down-right; replace the candidate rising-right tail and retain separation from stroke 2."
+        },
+        {
+          "targetStroke": 2,
+          "sourceStroke": 2,
+          "reason": "Keep the second oblique stroke separate from the first and extend its final rising bar to the following dot, matching the source boundary and progression."
+        },
+        {
+          "targetStroke": 4,
+          "sourceStroke": 5,
+          "reason": "The Korean whole-glyph source has a long central descending stroke here, not the licensed dot; connect it to stroke 2 and preserve gaps from the flanking strokes."
+        },
+        {
+          "targetStroke": 5,
+          "sourceStroke": 4,
+          "reason": "The source fifth stroke descends left, replacing the candidate down-right dot and remaining separate from the central vertical."
+        },
+        {
+          "targetStroke": 6,
+          "sourceStroke": 6,
+          "reason": "Place the right down-right dot beside the corrected central vertical, separately from the left sweep."
+        },
+        {
+          "targetStroke": 8,
+          "sourceStroke": 8,
+          "reason": "Start the bent roof on the preceding descending-left stroke as confirmed by the source contour contact."
+        },
+        {
+          "targetStroke": 9,
+          "sourceStroke": 9,
+          "reason": "Start the crossing down-right sweep at the shared junction of strokes 7 and 8."
+        },
+        {
+          "targetStroke": 13,
+          "sourceStroke": 13,
+          "reason": "Begin the vertical below the upper crossing, pass through all three bars, and end separately above the final sweep as confirmed in the source."
+        },
+        {
+          "targetStroke": 14,
+          "sourceStroke": 14,
+          "reason": "Move the first separate book-walk dot to the upper source position, keeping it away from the adjacent obliques."
+        },
+        {
+          "targetStroke": 15,
+          "sourceStroke": 14,
+          "reason": "The source contains a second independent down-right dot before the bent stroke. Derive its lower position from the licensed first dot."
+        },
+        {
+          "targetStroke": 16,
+          "sourceStroke": 15,
+          "reason": "The source bent stroke is a short horizontal followed by one descent after two separate dots; remove the licensed compound zigzag."
+        },
+        {
+          "targetStroke": 17,
+          "sourceStroke": 16,
+          "reason": "The source final sweep rises rightward to the preceding vertical endpoint before sweeping down-right and finishing slightly up-right. Preserve the gap below the central vertical."
+        }
+      ]
+    },
+    {
+      "glyph": "蓬",
+      "candidateStrokes": 14,
+      "targetStrokes": 15,
+      "decision": "needs-geometry-correction",
+      "issues": [
+        {
+          "targetStroke": 1,
+          "sourceStroke": 1,
+          "reason": "Split the continuous top bar at the whole-glyph first horizontal, with its overhang beyond the left vertical."
+        },
+        {
+          "targetStroke": 3,
+          "sourceStroke": 1,
+          "reason": "Place the separate right grass horizontal third, preserving the central pen-lift gap."
+        },
+        {
+          "targetStroke": 4,
+          "sourceStroke": 3,
+          "reason": "Shorten the right grass vertical to maintain its gap above the bent roof below."
+        },
+        {
+          "targetStroke": 5,
+          "sourceStroke": 4,
+          "reason": "Use the observed downward-left progression beneath the grass, without the candidate rightward entry."
+        },
+        {
+          "targetStroke": 6,
+          "sourceStroke": 5,
+          "reason": "Join the roof start to the preceding oblique at the source junction."
+        },
+        {
+          "targetStroke": 7,
+          "sourceStroke": 6,
+          "reason": "Start the down-right crossing sweep at the same upper junction as the bent roof."
+        },
+        {
+          "targetStroke": 11,
+          "sourceStroke": 10,
+          "reason": "Keep the central vertical separate from the crossing above and final book-walk sweep below, while crossing all three horizontal bars."
+        },
+        {
+          "targetStroke": 14,
+          "sourceStroke": 13,
+          "reason": "After the two separate dots, the dictionary shows one horizontal and one descent rather than the licensed undulating compound stroke."
+        },
+        {
+          "targetStroke": 15,
+          "sourceStroke": 14,
+          "reason": "Begin upward-right at the lower left to reach stroke 14, then sweep down-right, retaining the source final progression."
+        }
+      ]
+    },
+    {
+      "glyph": "芬",
+      "candidateStrokes": 7,
+      "targetStrokes": 8,
+      "decision": "needs-geometry-correction",
+      "issues": [
+        {
+          "targetStroke": 1,
+          "sourceStroke": 1,
+          "reason": "Split the first grass horizontal before the central pen-lift gap."
+        },
+        {
+          "targetStroke": 3,
+          "sourceStroke": 1,
+          "reason": "Add the separate third horizontal, retaining its crossing with the right grass vertical."
+        },
+        {
+          "targetStroke": 5,
+          "sourceStroke": 4,
+          "reason": "The source lower-left sweep progresses down-left; remove the licensed down-right entry."
+        },
+        {
+          "targetStroke": 6,
+          "sourceStroke": 5,
+          "reason": "The source right sweep begins with a short separate horizontal before descending right. Keep it detached from the grass vertical."
+        },
+        {
+          "targetStroke": 7,
+          "sourceStroke": 6,
+          "reason": "Connect the blade roof to the preceding left sweep and finish the descending blade with a short leftward hook, as in the whole-glyph source."
+        },
+        {
+          "targetStroke": 8,
+          "sourceStroke": 7,
+          "reason": "Start the final blade sweep on its roof and descend before curving left, preserving the source contact and progression."
+        }
+      ]
+    }
+  ]
+}
