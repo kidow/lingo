@@ -84,5 +84,21 @@ class StrokeCountCorrectionTests(unittest.TestCase):
                         SOURCE.character_from_row(row | change, "3급")
 
 
+    def test_display_variant_count_correction_preserves_the_exact_workbook_identity(self):
+        row = {"gradeCode": "20", "glyph": "煕", "hunEum": "빛날 희",
+               "radical": "火", "strokes": "13", "sourceRow": 5954}
+        catalog = json.loads((ROOT / "content/hanja/characters/g2.json").read_text())
+        expected = next(c for c in catalog["characters"] if c["glyph"] == "熙")
+        result = SOURCE.character_from_row(row, "2급")
+        self.assertEqual(result, expected)
+        self.assertEqual(result["id"], "u7199")
+        self.assertEqual(result["strokes"], 14)
+        self.assertEqual(result["sourceStrokes"], 13)
+        self.assertEqual(result["sourceGlyph"], "煕")
+        self.assertEqual(result["glyphAliases"], ["煕"])
+        for change in [{"glyph": "熙"}, {"sourceRow": 5955}, {"strokes": "14"}]:
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, "changed source"):
+                SOURCE.character_from_row(row | change, "2급")
+
 if __name__ == "__main__":
     unittest.main()

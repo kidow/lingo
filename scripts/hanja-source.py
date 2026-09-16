@@ -73,6 +73,7 @@ def display_glyph(glyph):
     normalized = unicodedata.normalize("NFC", glyph)
     # 급수별 HWP(2급 이상)는 熙, 전체 XLS는 煕로 적는다. HWP의 표시를 쓰고
     # XLS 원문은 sourceGlyph와 glyphAliases에 남겨 양쪽 모두 검색한다.
+    # 표시 자형 熙의 14획은 아래의 명시적 보정 목록에서 적용한다.
     return "熙" if normalized == "煕" else normalized
 
 

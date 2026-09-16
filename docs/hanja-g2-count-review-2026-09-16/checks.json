@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-16",
+  "status": "passed",
+  "scope": "Count reconciliation only; no runtime animation approval",
+  "commands": [
+    {
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "files": 48,
+      "tests": 289
+    },
+    {
+      "command": "python3 scripts/hanja-source.test.py",
+      "exitCode": 0,
+      "tests": 7
+    },
+    {
+      "command": "node docs/hanja-g2-count-review-2026-09-16/verify.mjs --derive",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "nextVersion": "16.3.3",
+      "typescript": "passed",
+      "staticPages": 7
+    }
+  ],
+  "review": {
+    "characters": 9,
+    "dictionaryStagesInspected": 125,
+    "countCorrections": 1,
+    "countsRetained": 8,
+    "runtimeApprovalsAdded": 0,
+    "proprietaryAssetsSaved": 0
+  },
+  "proofPins": {
+    "source-checks.json": "a3f664d4e9dd91787fb13d6f3543d9926dae6c8f7499bbf255a29e6546823e60",
+    "official-evidence.json": "7167a26a98e07caacc098f52ef9d68d2f0f3fbb2d09dabd48b291f71728cabf8",
+    "observations.json": "59b7be01d84273072ba5053fb29f701d132ca7568a0c68c70cd28ac60a1ee22a"
+  }
+}

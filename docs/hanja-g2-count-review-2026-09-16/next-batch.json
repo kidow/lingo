@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "title": "熙 14획 전체 경로·방향 검토",
+  "basis": "표시 자형과 획수가 공식 상담 및 국내 사전 자료에서 일치한다. MM 후보의 획수가 같다는 사실만으로 경로를 승인하지 않는다.",
+  "characters": 1,
+  "strokes": 14,
+  "entries": [
+    {
+      "glyph": "熙",
+      "strokes": 14,
+      "dictionaryDisplayedStrokes": 14,
+      "dictionaryAnimatedStrokes": 14,
+      "dictionaryTitle": "熙",
+      "dictionaryUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7100/7199.svg",
+      "dictionarySha256": "8568e7bbe38db81f6760f482d9142c8303cb4eafd583f1111bbbfe47609edd8c",
+      "licensedCandidates": [
+        {
+          "corpus": "MM",
+          "strokes": 14,
+          "sourceUrl": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+          "sourceSha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee"
+        },
+        {
+          "corpus": "Ja",
+          "strokes": 15,
+          "sourceUrl": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+          "sourceSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8"
+        }
+      ],
+      "status": "count-aligned-awaiting-full-stroke-review",
+      "catalogStrokesBefore": 13,
+      "correctionId": "eomunhoe-9699-u7199",
+      "preferredCandidate": "MM",
+      "fullCandidatePathReviewComplete": false
+    }
+  ],
+  "requiredReview": [
+    "Pin and refresh source title, all fourteen delays, clip coverage and complete stroke sequence.",
+    "Inspect each licensed MM stroke against the matching source stage for boundary, order, direction and shape.",
+    "Retain licensed geometry or document local corrections; never copy proprietary dictionary paths into runtime assets.",
+    "Reinspect corrected paths before adding provenance, runtime data and regression tests."
+  ],
+  "runtimeApprovalsAdded": 0
+}
