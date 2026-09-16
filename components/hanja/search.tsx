@@ -22,8 +22,10 @@ const PAGE = 60
  * 낱말 트랙이 «검색은 트랙을 안 가린다»고 한 것과 같은 이유다(spec.md §3).
  * 지우면 보던 급수로 돌아온다 — 검색은 덮개지 이동이 아니다.
  *
- * **글자 밑에 급수를 적지 않는다.** 급수 안에서는 다 같은 값이라 열다섯 번
- * 되풀이되고, 검색 결과에서도 그 글자를 열면 상세가 말해 준다.
+ * **급수 안에서는 글자 밑에 급수를 적지 않는다.** 오십 줄이 다 같은 값이라
+ * 되풀이될 뿐이다 — 어느 급수를 보고 있는지는 위 돌아가는 줄이 말한다.
+ * **검색 결과에는 적는다.** 거기서는 줄마다 값이 다르고, 찾은 글자가 몇 급인지가
+ * 곧 «지금 내가 볼 것인가»를 가른다.
  *
  * **접어도 지우지 않는다.** 예전에는 시트가 닫힐 때 검색어·선택을 되돌렸는데,
  * 닫힘이 접힘으로 바뀌면서 그 자리를 뺐다 — 뒤 카드를 흘긋 보려고 내린 사람이
@@ -95,7 +97,7 @@ export function HanjaSearch({ characters }: { characters: HanjaCharacter[] }) {
                 {shown.slice(0, limit).map((character) => (
                   <button key={character.id} type="button" onClick={() => setSelected(character)} className="flex min-w-0 flex-col items-center gap-2 border-b border-line px-1 py-4 text-center">
                     <HanjaGlyph glyph={character.glyph} className="text-4xl" />
-                    <span className="w-full break-words text-sm">{hunEum(character)}</span>
+                    <span className="w-full break-words text-sm">{hunEum(character)}{query && <span className="mt-1 block text-xs text-sub">{gradeLabel(character.readingGrade)}</span>}</span>
                   </button>
                 ))}
               </div>
