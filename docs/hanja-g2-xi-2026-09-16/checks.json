@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-16",
+  "status": "passed",
+  "source": "e-hanja private Korean dictionary crosscheck; official Eomunhoe ruling supports the glyph count, not certification of the animation",
+  "commands": [
+    {
+      "command": "node --test lib/hanja-stroke-dictionary-g2-xi.test.ts lib/hanja-stroke-textbook.test.ts",
+      "exitCode": 0,
+      "tests": 10
+    },
+    {
+      "command": "node docs/hanja-g2-xi-2026-09-16/verify.mjs --derive",
+      "exitCode": 0
+    },
+    {
+      "command": "node --test lib/hanja*.test.ts",
+      "exitCode": 0,
+      "files": 49,
+      "tests": 292
+    },
+    {
+      "command": "python3 scripts/hanja-source.test.py",
+      "exitCode": 0,
+      "tests": 7
+    },
+    {
+      "command": "pnpm run build",
+      "exitCode": 0,
+      "nextVersion": "16.3.3",
+      "typescript": "passed",
+      "staticPages": 7
+    }
+  ],
+  "review": {
+    "characters": 1,
+    "strokes": 14,
+    "correctedCharacters": 1,
+    "locallyEditedPaths": 2,
+    "retainedLicensedPaths": 12,
+    "reorderedCharacters": 0,
+    "completeCorrectedReinspections": 1,
+    "proprietaryAssetsSaved": 0
+  },
+  "proofPins": {
+    "initial-observations.json": "389a7bdbd087106f235486d101dfe8e48f3fd89ae93d3735c0e63fd55dfae31d",
+    "originals.json": "8d1d230095d2efef4566d71fa49e7d3e2adbc58a15f904507f8f9de582539e34",
+    "observations.json": "908569c2b9c74f33194c5f3efb342ac7b1cf40eeeedd139ac37f5531d2287c0d",
+    "proposals.json": "5fed0e6abf9372528e981dee6daf24a512146911088d73768a7f54822ff131c7",
+    "source-checks.json": "391b96abe2d11d3b2f9fd46a62081ac3e3bcb2529124d19b200a528712dc6b32",
+    "corrections.json": "684480a8043aac0142950356e11ea72fc42115a6e16941ca8a2c495e8d6a899f",
+    "count-basis.json": "79a9e0e5b38f72fa7d247fe751ab1d6e83c05998f9350b9c4b111dd92ea60b7b",
+    "candidate-paths.json": "2336db6854289318ac655d6f8f32ea4e839af4f8ea40a8386d6fc5b4ac908222",
+    "review.json": "7bf581eba3ca995cf8f044925a4950b23bfe43faff66ae17b87f6880225150ec"
+  }
+}
