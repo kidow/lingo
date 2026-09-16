@@ -40,6 +40,7 @@ import { buildG2GeometryBatch15DictionaryBundle, g2GeometryBatch15DictionaryGeom
 import { buildG2GeometryBatch16DictionaryBundle, g2GeometryBatch16DictionaryGeometry, validateG2GeometryBatch16DictionaryReview, validateG2GeometryBatch16DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch16.ts'
 import { buildG2GeometryBatch17DictionaryBundle, g2GeometryBatch17DictionaryGeometry, validateG2GeometryBatch17DictionaryReview, validateG2GeometryBatch17DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch17.ts'
 import { buildG2GeometryBatch18DictionaryBundle, g2GeometryBatch18DictionaryGeometry, validateG2GeometryBatch18DictionaryReview, validateG2GeometryBatch18DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch18.ts'
+import { buildG2GeometryBatch19DictionaryBundle, g2GeometryBatch19DictionaryGeometry, validateG2GeometryBatch19DictionaryReview, validateG2GeometryBatch19DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch19.ts'
 import { g2Batch2DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch2.ts'
 import { g2Batch3DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch3.ts'
 import { g2Batch4DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch4.ts'
@@ -71,6 +72,7 @@ import { g2GeometryBatch15DictionaryReference } from '../lib/hanja-stroke-dictio
 import { g2GeometryBatch16DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch16.ts'
 import { g2GeometryBatch17DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch17.ts'
 import { g2GeometryBatch18DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch18.ts'
+import { g2GeometryBatch19DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch19.ts'
 import {
   HANJA_DICTIONARY_SOURCE, HANJA_DICTIONARY_GEOMETRY_SOURCE, HANJA_DICTIONARY_STROKES,
   DICTIONARY_REFERENCES, dictionarySourceReference, dictionaryStrokeIndices,
@@ -208,6 +210,7 @@ export function dictionaryLocalGeometry(glyph: string) {
   if (g2GeometryBatch16DictionaryReference(glyph)) return buildG2GeometryBatch16DictionaryBundle().characters.find(entry => entry.glyph === glyph)
   if (g2GeometryBatch17DictionaryReference(glyph)) return buildG2GeometryBatch17DictionaryBundle().characters.find(entry => entry.glyph === glyph)
   if (g2GeometryBatch18DictionaryReference(glyph)) return buildG2GeometryBatch18DictionaryBundle().characters.find(entry => entry.glyph === glyph)
+  if (g2GeometryBatch19DictionaryReference(glyph)) return buildG2GeometryBatch19DictionaryBundle().characters.find(entry => entry.glyph === glyph)
   if (!g2GeometryBatch14DictionaryReference(glyph)) return undefined
   return buildG2GeometryBatch14DictionaryBundle().characters.find(entry => entry.glyph === glyph)
 }
@@ -246,6 +249,7 @@ export function dictionaryGeometry(glyph: string, medians: Medians) {
   if (g2GeometryBatch16DictionaryReference(glyph)) return g2GeometryBatch16DictionaryGeometry(glyph, medians)
   if (g2GeometryBatch17DictionaryReference(glyph)) return g2GeometryBatch17DictionaryGeometry(glyph, medians)
   if (g2GeometryBatch18DictionaryReference(glyph)) return g2GeometryBatch18DictionaryGeometry(glyph, medians)
+  if (g2GeometryBatch19DictionaryReference(glyph)) return g2GeometryBatch19DictionaryGeometry(glyph, medians)
   if (['響', '姉', '隷', '隣'].includes(glyph)) return jaDictionaryGeometry(glyph, medians)
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref || hash(medians) !== ref.originalMediansSha256) throw new Error('Dictionary original medians mismatch: ' + glyph)
@@ -339,6 +343,7 @@ export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expe
   if (g2GeometryBatch16DictionaryReference(review.glyph)) return validateG2GeometryBatch16DictionaryReview(review, expectedStrokes)
   if (g2GeometryBatch17DictionaryReference(review.glyph)) return validateG2GeometryBatch17DictionaryReview(review, expectedStrokes)
   if (g2GeometryBatch18DictionaryReference(review.glyph)) return validateG2GeometryBatch18DictionaryReview(review, expectedStrokes)
+  if (g2GeometryBatch19DictionaryReference(review.glyph)) return validateG2GeometryBatch19DictionaryReview(review, expectedStrokes)
   if (['響', '姉', '隷', '隣'].includes(review.glyph)) return validateJaDictionaryReview(review, expectedStrokes)
   const expected = buildDictionaryBundle().characters.find(e => e.glyph === review.glyph)
   if (!expected || expected.paths.length !== expectedStrokes
@@ -379,6 +384,7 @@ export function validateDictionaryBundle(entries: readonly HanjaDictionaryStroke
   validateG2GeometryBatch16DictionaryBundle()
   validateG2GeometryBatch17DictionaryBundle()
   validateG2GeometryBatch18DictionaryBundle()
+  validateG2GeometryBatch19DictionaryBundle()
   const expected = buildDictionaryBundle().characters.map(e => ({ ...e, verificationSource: HANJA_DICTIONARY_SOURCE.id }))
   if (!isDeepStrictEqual(entries, expected)) throw new Error('Dictionary published bundle mismatch')
 }
