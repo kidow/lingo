@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-16",
+  "glyph": "晟",
+  "decision": "correction-required",
+  "reviewedDictionaryStrokes": 10,
+  "catalogStrokes": 11,
+  "scope": "Fresh browser comparison of every dictionary playback stage against licensed MM geometry; official 成 component separately inspected.",
+  "findings": [
+    {
+      "strokes": [
+        5,
+        6
+      ],
+      "issue": "MM source 5 is horizontal and 6 descends left; dictionary playback 5 descends left and 6 is horizontal, matching official 成 stages 1 and 2.",
+      "correction": "swap MM 5 and 6"
+    },
+    {
+      "strokes": [
+        7
+      ],
+      "issue": "Dictionary and MM combine the inner horizontal and descending hook; official 晟 answer 10026 specifies 丁 as two strokes and official 成 row 19 shows the boundary.",
+      "correction": "split into runtime 7 and 8"
+    },
+    {
+      "strokes": [
+        3
+      ],
+      "issue": "MM 日 middle bar stops visibly short of the right side.",
+      "correction": "extend licensed path to meet the sides"
+    }
+  ],
+  "observedDictionaryDirections": [
+    "down",
+    "right then down",
+    "right",
+    "right",
+    "down then left",
+    "right",
+    "right then down then hook left/up",
+    "down-right then hook up",
+    "down-left",
+    "down-right"
+  ],
+  "sourceArtworkSaved": false,
+  "wholeGlyphElevenStageSourceFound": false
+}
