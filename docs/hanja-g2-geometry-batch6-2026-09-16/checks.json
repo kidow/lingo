@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-16",
+  "verification": "passed",
+  "proofPins": {
+    "acquire.mjs": "a2a91efab9c61174491bbff71cd1656828362183658f3fa3314d38abfd4ba68f",
+    "serve.py": "0b0d4e5ad7c924fba29f5e0c4ce69302110a60fe86507759c1068a294c59aee4",
+    "prepare.mjs": "c131e71ce730ae8cf576ef9b3050cf58bb14b82087cb4c4dea919f53dc33981c",
+    "verify.mjs": "7c1e6dc21903b4b16ee189ff66f9b4d16d094c6af0194a807c91bc624a530666",
+    "initial-observations.json": "23e9e26c6cea65381c17e0c887f3671ebb6c23d3a0eaef2ae6815011d962b07a",
+    "originals.json": "af9ac24fb1913d069c90d499511da894f3dc2ca24be543ea655dc167809dfd83",
+    "source-checks.json": "a61b9d7213714b3f94c37d80c88aaa910ff26c8d9b98fdc85ec088900919fb2a",
+    "observations.json": "6f86c6855e65b81c0d476f615a44e3e2729c8a510b5e79139a9985c17ce8d572",
+    "corrections.json": "0bb24a4e5e6b7eb4d20751b08e29333192ede6114161ff859ca290453a87d506",
+    "proposals.json": "6812df90bf474eef5d0987a3e825b802f5bfc25c25ab1f6ef1527e5fe51b3710",
+    "candidate-paths.json": "c72fff05046f46837be1a8e2e0961943b31a7ba9e775fa650082c4860f2f3bf3",
+    "review.json": "2e62627ddf9dd8012114bf369a1c002c4caf60e80ae875b61abdc4460561cf08"
+  },
+  "checks": {
+    "reconstructionAndPublicationValid": true,
+    "allFortyTwoStagesObserved": true,
+    "catalogUnchanged": true,
+    "proprietaryAssetsSaved": 0
+  },
+  "tests": {
+    "command": "node --test --test-reporter=tap lib/hanja*.test.ts (58 explicit file paths)",
+    "files": 58,
+    "tests": 346,
+    "passed": 346,
+    "failed": 0,
+    "exitCode": 0,
+    "newRegressionTests": 8
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "syntax": {
+    "acquireExitCode": 0,
+    "serveExitCode": 0,
+    "stderr": ""
+  },
+  "visual": {
+    "glyphs": [
+      "蔘",
+      "薛",
+      "陝"
+    ],
+    "stages": 42,
+    "correctedPathsReinspected": 42,
+    "finalCumulativeForms": 3,
+    "sourceContactPairs": 47,
+    "sourceAnimatedDirectionChecks": 24,
+    "sourceArtSaved": false
+  }
+}
