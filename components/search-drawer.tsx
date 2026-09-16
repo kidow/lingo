@@ -1,29 +1,20 @@
 'use client'
 
-import { Search, X } from 'lucide-react'
-import { Drawer } from 'vaul'
-import { FAB_CLASS } from './search-fab'
+import { PeekDrawer } from './peek-drawer'
 import { SearchSheet } from './search-sheet'
 import type { KanaUnit } from '@/lib/kana'
 import type { Article } from '@/lib/types'
 
 /**
- * 찾아보기를 여는 바텀시트. (spec.md §3)
+ * 낱말 트랙의 찾기. (spec.md §3)
  *
- * **트리거는 카드 오른쪽 아래에 뜬 돋보기다.** 오래 덱 탭과 같은 줄에 선
- * `찾기` 두 글자였는데, 탭이 넷이 되면서 헤더가 넘쳐 밖으로 나왔다
- * (components/search-fab.tsx). 탭 줄을 떠나면서 낱말일 이유도 사라졌다 —
- * 옆에 나란히 설 낱말이 없으면 두 글자보다 아이콘이 작고, 같은 자리에 늘
- * 있는 것 하나는 모양만으로 외워진다.
+ * **껍데기는 `PeekDrawer`가 든다** — 한자 트랙과 같은 것을 쓴다. 여기 남는
+ * 것은 이 트랙의 이름과 무엇을 훑을지뿐이다. 예전에는 이 파일이 트리거·시트
+ * 골격·머리줄을 다 들고 있었고, 한자 쪽이 그것을 그대로 베껴 두 벌이었다.
  *
- * 여닫는 것은 버튼이 하고 끌어 닫기는 없다 — 피드가 세로로 넘기고 시트 안도
- * 세로로 길어서, 끌어 닫기까지 얹으면 세로 제스처가 세 겹이 된다. `handleOnly`를
- * 켜고 `Drawer.Handle`을 두지 않아 끌 자리 자체를 없앴다. 배경 누르기와 ESC는
- * 살려 둔다.
- *
- * **자판이 올라온다는 점이 참고 글만 있던 시절과 다르다.** 시트 높이를 `85dvh`로
- * 두되 `dvh`가 자판을 반영해 줄어들므로, 안쪽이 `min-h-0`으로 눌려 목록만
- * 짧아진다 (components/search-sheet.tsx).
+ * **자판이 올라온다는 점이 참고 글만 있던 시절과 다르다.** 시트 높이가
+ * `85dvh`인데 `dvh`가 자판을 반영해 줄어들므로, 안쪽이 `min-h-0`으로 눌려
+ * 목록만 짧아진다 (components/search-sheet.tsx).
  */
 export function SearchDrawer({
   trackArticles,
@@ -34,53 +25,11 @@ export function SearchDrawer({
   kanaUnits?: KanaUnit[]
 }) {
   return (
-    <Drawer.Root handleOnly>
-      {/*
-        아이콘뿐이라 이름을 따로 준다. 돋보기는 보편적이지만 보편적인 것은
-        보이는 사람에게만 그렇다
-      */}
-      <Drawer.Trigger aria-label="찾기" className={FAB_CLASS}>
-        <Search className="size-5" strokeWidth={2.5} aria-hidden />
-      </Drawer.Trigger>
-
-      <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 z-40 bg-ink/40" />
-
-        {/*
-          vaul이 시트를 열며 이 상자에 포커스를 준다. 링이 뜨면 화면 절반에
-          테두리가 둘린다 — 누를 것이 아니라 담는 것이라 포커스를 눈으로
-          알릴 이유가 없다.
-
-          globals.css가 `:focus-visible`을 통째로 껐으므로 지금은 이것이
-          없어도 링이 서지 않는다. 그 결정을 되돌리는 날 여기가 다시
-          필요해지니 남겨 둔다.
-        */}
-        <Drawer.Content
-          className="
-            fixed inset-x-0 bottom-0 z-50 mx-auto flex h-[85dvh] w-full max-w-[480px]
-            flex-col rounded-t-card bg-bg outline-none
-          "
-        >
-          <div className="flex shrink-0 items-center justify-between px-lg pt-lg pb-3">
-            <Drawer.Title className="text-lg font-bold tracking-tight">찾기</Drawer.Title>
-            <Drawer.Close
-              aria-label="닫기"
-              // 아이콘이 20px이라 그대로는 32px이다. 패딩으로 44px을 만들고
-              // 같은 만큼 당겨 시트 머리줄이 두꺼워지지 않게 한다
-              className="-my-3 -mr-3 rounded-ctrl p-3 text-sub transition active:scale-[.985]"
-            >
-              <X className="size-5" strokeWidth={2.5} aria-hidden />
-            </Drawer.Close>
-          </div>
-
-          <Drawer.Description className="sr-only">
-            비워 두면 지금 트랙의 참고 글을, 치면 트랙을 가리지 않고 단어·상식·참고 글을
-            찾습니다.
-          </Drawer.Description>
-
-          <SearchSheet trackArticles={trackArticles} kanaUnits={kanaUnits} />
-        </Drawer.Content>
-      </Drawer.Portal>
-    </Drawer.Root>
+    <PeekDrawer
+      title="찾기"
+      description="비워 두면 지금 트랙의 참고 글을, 치면 트랙을 가리지 않고 단어·상식·참고 글을 찾습니다."
+    >
+      <SearchSheet trackArticles={trackArticles} kanaUnits={kanaUnits} />
+    </PeekDrawer>
   )
 }

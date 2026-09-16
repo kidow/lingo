@@ -414,11 +414,18 @@ export function CardImage({ children }: { children?: React.ReactNode }) {
  * 위쪽은 더하지 않는다. `statusBarStyle: 'default'`라 상태바가 불투명하고
  * 웹뷰가 그 아래에서 시작하므로 헤더를 밀 이유가 없다 — `black-translucent`로
  * 바꾸는 날 여기도 같이 봐야 한다.
+ *
+ * **`46px` 바닥은 안전영역과 무관한 별도의 이유다.** 화면 맨 아래 `28px`을
+ * 찾기 시트의 손잡이가 늘 차지한다(components/peek-drawer.tsx). 안전영역이
+ * 있는 기기는 `18+34=52px`이라 이미 넉넉하지만, 없는 기기(구형 iPhone SE,
+ * 상당수 안드로이드)는 `18px`이라 `SwipeHint`가 손잡이와 `10px` 겹쳤다.
+ * `max()`로 바닥을 깔아 **어느 기기에서나 화살표와 손잡이 사이가 벌어진다** —
+ * 둘 다 위를 가리키는 신호라 붙어 있으면 한 덩어리로 읽힌다.
  */
 export function CardSheet({ children, bare = false }: { children: React.ReactNode; bare?: boolean }) {
   return (
     <div
-      className={`relative flex min-h-0 flex-1 flex-col gap-md overflow-y-auto bg-surface px-5 pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))] ${
+      className={`relative flex min-h-0 flex-1 flex-col gap-md overflow-y-auto bg-surface px-5 pb-[max(46px,calc(var(--spacing-lg)+env(safe-area-inset-bottom)))] ${
         bare ? 'pt-md' : '-mt-lg rounded-t-card pt-lg'
       }`}
     >

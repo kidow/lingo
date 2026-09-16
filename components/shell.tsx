@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic'
 import { CardImage, CardSheet, Feed, FeedCard } from './feed'
 import { Header } from './header'
 import { SearchDrawer } from './search-drawer'
-import { SearchFab } from './search-fab'
 import { loadCorpus, type Corpus } from '@/lib/corpus'
 import { entriesForTrack } from '@/lib/entries'
 import {
@@ -272,12 +271,10 @@ export function Shell({
             onProgress={setProgress}
           />
           {/*
-            못 받았을 때는 세우지 않는다. 찾을 콘텐츠가 없는데 버튼만 떠 있으면
-            눌러서 빈 목록을 보게 된다 — 다시 시도가 할 일의 전부인 화면이다
+            못 받았을 때는 세우지 않는다. 찾을 콘텐츠가 없는데 손잡이만 떠 있으면
+            당겨서 빈 목록을 보게 된다 — 다시 시도가 할 일의 전부인 화면이다
           */}
-          <SearchFab>
-            <SearchDrawer trackArticles={articles} kanaUnits={kanaShown} />
-          </SearchFab>
+          <SearchDrawer trackArticles={articles} kanaUnits={kanaShown} />
         </>
       )}
     </div>

@@ -6,6 +6,7 @@ import { ArticleBody } from './article-body'
 import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { loadSearchCorpus } from '@/lib/corpus'
+import { usePeekOpened } from './peek-drawer'
 import { bcp47, LANG_LABEL } from '@/lib/lang'
 import { buildIndex, search, type Hit, type SearchIndex } from '@/lib/search'
 import { SCRIPT_LABEL, glyphOf, type KanaUnit } from '@/lib/kana'
@@ -34,8 +35,10 @@ import type { Article, Concept, Language } from '@/lib/types'
 /**
  * 색인은 앱이 사는 동안 한 벌만 만든다.
  *
- * 시트는 닫히면 통째로 사라져(vaul Portal) 열 때마다 다시 만들게 되는데,
- * 훑는 대상이 낡지 않으므로 한 번 만든 것을 붙들어 둔다.
+ * 시트가 이제 바닥에 상주해 언마운트되지 않으므로(components/peek-drawer.tsx)
+ * 접었다 폈다로는 다시 만들 일이 없다. 그래도 모듈에 둔다 — 트랙을 바꾸면
+ * `SearchSheet`가 통째로 새로 서는데, 훑는 대상은 트랙을 안 가리므로 낡지
+ * 않는다.
  */
 let cached: SearchIndex | null = null
 
@@ -46,14 +49,19 @@ let cached: SearchIndex | null = null
  * 찾기를 한 번도 안 여는 사람까지 같이 문다. 예문이 빠진 판이라 전량이어도
  * 2.4MB고, 안 여는 사람에게는 0바이트다.
  *
- * 받는 동안에는 아무것도 그리지 않는다 — 자판이 이미 올라와 있고 목록 자리가
- * 잠깐 비는 것뿐이라, 여기에 뼈대를 세우면 오히려 깜빡임이 는다.
+ * 받는 동안에는 아무것도 그리지 않는다 — 목록 자리가 잠깐 비는 것뿐이라,
+ * 여기에 뼈대를 세우면 오히려 깜빡임이 는다.
+ *
+ * **마운트가 신호였는데 이제 아니다.** 시트가 바닥에 상주하면서 이 컴포넌트는
+ * 첫 화면부터 서 있다 — 마운트 때 받으면 찾기를 한 번도 안 여는 사람까지 같이
+ * 문다. 그래서 `enabled`를 밖에서 받는다. 펼친 적이 있을 때만 켜진다
+ * (components/peek-drawer.tsx의 `usePeekOpened`).
  */
-function useIndex(): SearchIndex | null {
+function useIndex(enabled: boolean): SearchIndex | null {
   const [index, setIndex] = useState<SearchIndex | null>(cached)
 
   useEffect(() => {
-    if (cached) return
+    if (!enabled || cached) return
     let alive = true
     void loadSearchCorpus().then((corpus) => {
       // 못 받았으면 색인을 만들지 않는다. 빈 색인을 두면 「찾은 것이
@@ -65,7 +73,7 @@ function useIndex(): SearchIndex | null {
     return () => {
       alive = false
     }
-  }, [])
+  }, [enabled])
 
   return index
 }
@@ -85,7 +93,7 @@ export function SearchSheet({
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState<Hit | null>(null)
 
-  const index = useIndex()
+  const index = useIndex(usePeekOpened())
   const hits = useMemo(
     () => (index ? search(index, query, 40, kanaUnits) : []),
     [index, query, kanaUnits],
@@ -97,17 +105,28 @@ export function SearchSheet({
 
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <div className="shrink-0 px-lg pb-3">
+      <div className="shrink-0 px-lg pt-1 pb-3">
         {/*
+          **머리줄이 곧 검색 칸이다.** 예전에는 위에 「찾기」 제목 줄이 따로 서고
+          그 오른쪽에 ✕ 닫기가 있었다. 손잡이가 닫기를 대신하면서 제목만 남았는데,
+          손잡이를 당겨 올린 사람은 무엇을 여는지 이미 안다 — 두 글자가 44px을
+          쓰고 칸을 아래로 미는 대신 칸을 키웠다. 제목은 `Drawer.Title`에 `sr-only`로
+          남아 스크린리더가 그대로 읽는다 (components/peek-drawer.tsx).
+
           높이를 **못 박는다.** 지우기는 글자를 쳐야 나타나는데 그 버튼이
           손가락 크기(44px)를 가지면 창이 첫 글자에서 튄다 — 패딩으로 높이를
-          정하면 안에 무엇이 서느냐에 따라 창이 달라진다. 44px은 어차피
-          누르는 자리의 최소 크기라 여기 그대로 쓴다 (brand-spec.md)
+          정하면 안에 무엇이 서느냐에 따라 창이 달라진다.
         */}
-        <div className="flex h-11 items-center gap-2 rounded-ctrl border border-line bg-surface px-3">
+        <div className="flex h-12 items-center gap-2 rounded-ctrl border border-line bg-surface px-3">
           <Search className="size-4 shrink-0 text-sub" strokeWidth={2.5} aria-hidden />
+          {/*
+            **자동 포커스를 주지 않는다.** 시트가 바닥에 상주하므로 이 인풋은
+            첫 화면부터 DOM에 있다 — `autoFocus`가 달려 있으면 앱을 열자마자
+            자판이 튀어 오른다. 펼칠 때 주지도 않는다: 손잡이를 당기는 동작이
+            언제나 「치겠다」는 뜻은 아니고, 자판이 올라오면 목록이 반으로 줄어
+            참고 글을 펴 보려던 사람이 손해를 본다.
+          */}
           <input
-            autoFocus
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="단어 · 뜻 · 상식"
