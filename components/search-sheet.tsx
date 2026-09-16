@@ -112,7 +112,10 @@ export function SearchSheet({
             onChange={(event) => setQuery(event.target.value)}
             placeholder="단어 · 뜻 · 상식"
             aria-label="검색"
-            className="min-w-0 flex-1 bg-transparent text-[15px] placeholder:text-sub"
+            // iOS Safari는 font-size가 16px보다 작은 인풋에 포커스가 가면 화면을
+            // 제 나름대로 확대한다. viewport에서 maximumScale을 막지 않기로 한 이상
+            // (layout.tsx) 줌을 막을 자리는 여기뿐이다 — 15px로 내리지 않는다
+            className="min-w-0 flex-1 bg-transparent text-base placeholder:text-sub"
           />
           {/* 지우기는 값이 있을 때만 자리를 잡는다. 빈 칸에 ✕가 서 있으면 무엇을
               지우라는 것인지 알 수 없다 */}

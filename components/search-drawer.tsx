@@ -47,15 +47,13 @@ export function SearchDrawer({
         <Drawer.Overlay className="fixed inset-0 z-40 bg-ink/40" />
 
         {/*
-          `outline-none`은 **여기만** 남긴다. vaul이 시트를 열며 이 상자에
-          포커스를 주는데, 링이 뜨면 화면 절반에 3px 테두리가 둘린다 — 누를
-          것이 아니라 담는 것이라 포커스를 눈으로 알릴 이유가 없다.
+          vaul이 시트를 열며 이 상자에 포커스를 준다. 링이 뜨면 화면 절반에
+          테두리가 둘린다 — 누를 것이 아니라 담는 것이라 포커스를 눈으로
+          알릴 이유가 없다.
 
-          누르는 자리에는 붙이지 않는다. Tailwind v4의 `outline-none`은
-          `outline-style: none`이고 utilities 레이어가 base를 이겨서,
-          globals.css의 `:focus-visible` 규칙을 **통째로 무효화한다** —
-          트리거와 닫기와 검색 칸 넷이 그렇게 포커스 링을 잃고 있었다
-          (WCAG 2.4.7, brand-spec.md)
+          globals.css가 `:focus-visible`을 통째로 껐으므로 지금은 이것이
+          없어도 링이 서지 않는다. 그 결정을 되돌리는 날 여기가 다시
+          필요해지니 남겨 둔다.
         */}
         <Drawer.Content
           className="

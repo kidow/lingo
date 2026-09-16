@@ -88,14 +88,15 @@
   }
 
   /*
-   * 누르는 자리에 `outline-none`을 붙이지 않는다. Tailwind v4에서 그 유틸리티는
-   * `outline-style: none`이고 utilities 레이어가 base를 이겨서, 이 규칙이
-   * 통째로 무효화된다 — 특이도 싸움이 아니라 레이어 순서라 `!important`로도
-   * 안 뒤집힌다. 담는 상자(시트·메뉴 팝업)에만 예외를 둔다.
+   * 테두리를 그리지 않는다. Lingo는 모바일 전용이라(spec.md §3) 누르는 자리마다
+   * 파란 링이 서면 시트를 열자마자 검색 칸이 테두리를 두르고 앉는다 — 손가락은
+   * 자기가 어디를 눌렀는지 이미 안다.
+   *
+   * 대가는 분명하다. 키보드·스위치로 오는 사람은 지금 어디에 서 있는지 볼 길이
+   * 없다. 데스크톱을 범위에 들이는 날 `:focus-visible`을 되살린다.
    */
   :focus-visible {
-    outline: 3px solid var(--color-focus);
-    outline-offset: 3px;
+    outline: none;
   }
 
   *:hover {
