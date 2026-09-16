@@ -11,7 +11,7 @@ import { textbookGeometry } from './hanja-stroke-textbook-corrections.ts'
 import { textbookAuthored } from './hanja-stroke-textbook-authored.ts'
 import { validateDocumentReview, documentGeometry } from './hanja-stroke-documents.ts'
 import { validateNumberedReview, numberedGeometry } from './hanja-stroke-numbered.ts'
-import { validateDictionaryReview, dictionaryGeometry } from './hanja-stroke-dictionary.ts'
+import { validateDictionaryReview, dictionaryGeometry, dictionaryLocalGeometry } from './hanja-stroke-dictionary.ts'
 import locations from './hanja-stroke-locations.json' with { type: 'json' }
 
 export const CANDIDATE_SOURCE = {
@@ -122,7 +122,8 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     const review = approved.get(character.glyph)
     const textbookReview = review?.verificationSource === 'vivasam-high-2022'
     const textbookRecord = textbookReview ? validateTextbookReview(review, character.strokes) : undefined
-    const authored = textbookRecord ? textbookAuthored(textbookRecord) : undefined
+    const authored = textbookRecord ? textbookAuthored(textbookRecord)
+      : review?.verificationSource === 'ehanja-crosschecked' ? dictionaryLocalGeometry(character.glyph) : undefined
     const documentReview = review?.verificationSource === 'dongyang-hanja3-note'
     const documentRecord = documentReview ? validateDocumentReview(review, character.strokes) : undefined
     const numberedReview = review?.verificationSource === 'moyaland-numbered'
@@ -144,7 +145,7 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     const geometryCandidate = reviewedCandidate ? candidate
       : review?.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256 ? japaneseByGlyph.get(character.glyph)
         : (textbookReview || numberedReview || dictionaryReview) && review.geometrySource === MAKE_ME_A_HANZI_SOURCE.sha256 ? hanziByGlyph.get(character.glyph) : undefined
-    // The textbook builder validates local authored provenance before looking for a corpus candidate.
+    // Local builders validate pinned provenance before a reviewed candidate can bypass corpus lookup.
     if (authored && JSON.stringify(review?.paths) !== JSON.stringify(authored.paths)) {
       throw new Error(`Reviewed authored geometry mismatch: ${character.glyph}`)
     }
