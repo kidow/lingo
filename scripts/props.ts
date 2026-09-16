@@ -27,6 +27,12 @@
  * 둘 이상 주면 **배치 안에서 겹치는 소품**도 따로 찍는다. 상황 표현 1회차에서
  * 문을 세 장 그려 놓고 그림이 다 나온 뒤에야 알아챈 자리다.
  *
+ * **소품 말고 짜임도 본다.** 소품은 낱말로 대조하므로 «쪼갠 부절»과 «깨진 패»를
+ * 다른 것으로 본다 — 그런데 둘 다 «두 짝을 맞춰 본다»라는 한 그림이다. 算数를
+ * 그렇게 그렸다가 두 회차 앞 认证과 겹쳤는데 md5도 twins도 props도 지나갔고
+ * 시트에서 눈으로만 걸렸다(docs/nets.md). 그 빈칸을 메우려고 프롬프트에서
+ * **관계 꼴**을 따로 뽑아 맞춘다.
+ *
  * **판정하지 않는다.** 겹치는지는 그림을 그려봐야 알고, 그건 twins와 눈이 한다.
  * 여기서는 어디를 피해야 하는지만 보여 준다.
  */
@@ -145,6 +151,63 @@ const mine = new Set(sources.map((r) => r.slug))
  * 그림을 고친 것은 하나둘이었다. 0.6%로 올려 틈 한가운데에 둔다.
  */
 const COMMON = 0.006
+
+/**
+ * **짜임** — 소품이 아니라 «무엇이 무엇과 어떤 사이인가»다.
+ *
+ * 소품 대조는 낱말로 하므로 `token`과 `stick`을 다른 것으로 본다. 그런데
+ * 认证«맞다고 보증하다»의 «깨진 흙판 두 짝을 맞춘 것»과 算数«말한 것이 그대로
+ * 선다»의 «쪼갠 대나무 부절 두 짝을 맞춘 것»은 카드에서 같은 그림이다.
+ * 물건도 바이트도 구조도 달라 md5·twins·props가 셋 다 지나갔다.
+ *
+ * 문턱은 소품과 같은 자리에 떨어졌다. 9,393장에서 재 보니 이렇다.
+ *
+ *   드문 것   두 짝 맞춤 0.03% · 곁의 것과 견줌 0.02% · 위아래 두 자국 0.03% ·
+ *             한쪽 끝만 0.09% · 여럿 속 하나 0.10% · 크기순 셋 0.18% ·
+ *             한데 모임 0.24% · 한 번에 끊김 0.28% · 갈라 속 보임 0.15% ·
+ *             반만 된 것 0.31% · 뚫고 나옴 0.07% · 닳음과 성함 0.36% ·
+ *             빈 자리 0.49%
+ *   바닥      넘쳐 흐름 0.73% · 줄 세우고 하나만 다름 1.16% ·
+ *             한쪽으로 기움 2.33% · 자국만 남음 3.62%
+ *
+ * 0.49%와 0.73% 사이가 비어 있다 — 소품 문턱(0.6%)이 그대로 듣는다. 바닥에
+ * 닿는 짜임은 이 레포의 기본 어법이라 짚어도 값이 없다.
+ *
+ * **정규식이라 다 잡지는 못한다.** 프롬프트를 내가 한 사람 어법으로 써 왔기에
+ * 이만큼 듣는 것이고, 어법이 바뀌면 새 갈래를 손으로 더해야 한다. 놓친 자리는
+ * 여전히 시트가 잡는다.
+ *
+ * **짜임이 겹친다고 그림이 겹치는 것은 아니다.** 이 검사를 처음 돌리자
+ * hope·optimism·vitality-spark 셋이 다 «돌 틈으로 밀고 올라온 싹»으로 나왔는데,
+ * `twins --pair`로 재 보니 셋 다 구조 106~112로 문턱(50) 밖이었다. 짜임은
+ * **어디를 다시 볼지**만 말한다 — 소품 목록과 똑같다.
+ *
+ * **느슨하면 엉뚱한 것을 문다.** 처음에 「갈라서 속을 보인다」를
+ * `(split|cut) (open|across|through)`로만 적었더니 纵横의 «들을 가로지르는
+ * 물길»이 걸렸다 — 거기서 cut across는 «갈라서»가 아니라 «가로질러»다.
+ * **속을 보이는 말(showing·inside)을 함께 걸어야** 짜임이 갈린다. 「뚫는다」도
+ * 같은 이유로 미는 동작(pushing·driven)을 앞에 걸었다.
+ */
+const SHAPES: [name: string, rx: RegExp][] = [
+  ['두 짝을 맞춰 본다', /two halves[^.]*(fitted|matching|match|lines? up|together)/],
+  ['곁의 것과 견준다', /\b(beside|next to|side by side|against) (a|an|one|another)\b[^.]*\b(while|with the (other|rest)|and the (other|rest))/],
+  ['위아래로 두 자국', /\bone[^.]{0,24}above the other\b/],
+  ['한쪽 끝만 다르다', /\bone end\b[^.]*\b(other|nothing|bare|free)\b/],
+  ['여럿 속에 하나만', /\b(one|single)\b[^.]*\b(among|amid) (a |the )?(many|crowd|row|rest|others)/],
+  ['같은 것을 크기순으로', /\b(three|five)\b[^.]*\b(sizes?|of one shape|of the same shape)\b/],
+  ['한데로 모여든다', /\b(gathered|running together|joining|converges?|converging)\b/],
+  ['한 번에 끊겼다', /\b(in|at) (a|one) single (stroke|blow|cut|pull)\b/],
+  ['갈라서 속을 보인다', /\b(split|cut|sawn|broken) (open|across|through)\b[^.]*\b(showing|revealing|inside|to show)\b/],
+  ['반만 되어 있다', /\bhalf (taken down|finished|built|gone|sunk|open|buried)\b/],
+  ['하나가 다른 것을 뚫는다', /\b(pushing|running|driven|punched|growing|forced)\b[^.]*\b(through|out of|into)\b[^.]*\b(wall|gap|crack|fence|joint|seam|plank)\b/],
+  ['닳은 것과 성한 것', /\bworn\b[^.]*\b(while|and the|beside|among)\b/],
+  ['자리는 있는데 비었다', /\b(empty|bare|blank)\b[^.]*\b(peg|hook|socket|outline|place|seat|shelf|slot)\b/],
+  ['넘쳐 흘렀다', /\b(spill|spilled|spilling|overflow|overflowed|heaped)\b/],
+  ['줄 세우고 하나만 다르다', /\b(row|line|rack|set|crowd|stack|circle|ring) of\b[^.]*\b(one|single)\b/],
+  ['한쪽으로 기울었다', /\b(tilted|leaning|listing|low on one side|one side)\b/],
+  ['자국만 남았다', /\b(footprints?|print|tracks?|marks?|stain|ash|dust|cobweb|ripples?)\b/],
+]
+
 const line = (n: number) => '─'.repeat(n)
 const clip = (s: string, n: number) => (s.length > n ? s.slice(0, n - 1) + '…' : s)
 
@@ -238,4 +301,51 @@ if (sources.length > 1) {
   console.log(`\n배치 안에서 겹치는 소품 ${shared.size}개`)
   for (const [q, who] of shared) console.log(`  ${q.padEnd(14)} ${who.join(' · ')}`)
   if (shared.size === 0) console.log('  (없습니다)')
+}
+
+/**
+ * 짜임 대조.
+ *
+ * 소품 목록과 같은 꼴로 읽는다 — 드문 짜임은 임자를 찍고, 바닥에 닿는 짜임은
+ * 이름만 세어 준다. 배치 안에서 같은 짜임을 나눠 쓰는 자리는 따로 찍는다.
+ * 프롬프트를 통째로 준 자리(`pnpm props "one …"`)에서도 돈다.
+ */
+const shapesOf = (prompt: string) => SHAPES.filter(([, rx]) => rx.test(prompt.toLowerCase())).map(([n]) => n)
+const queryPrompts = IN ? sources.map((r) => r.prompt) : rest.filter((a) => a.includes(' '))
+
+if (queryPrompts.length > 0) {
+  /** 짜임마다 이 레포에서 몇 장이 쓰는지 (내 것은 뺀다) */
+  const holders = new Map<string, Row[]>()
+  for (const [name] of SHAPES) {
+    holders.set(
+      name,
+      rows.filter((r) => !mine.has(r.slug) && shapesOf(r.prompt).includes(name)),
+    )
+  }
+
+  const asked = [...new Set(queryPrompts.flatMap(shapesOf))]
+  const floorShapes = asked.filter((n) => (holders.get(n)?.length ?? 0) > rows.length * COMMON)
+  const rare = asked.filter((n) => !floorShapes.includes(n))
+
+  console.log(`\n짜임 ${asked.length}갈래 — 드문 것 ${rare.length} · 바닥 ${floorShapes.length}`)
+  for (const name of rare) {
+    const who = holders.get(name) ?? []
+    console.log(`\n  「${name}」  ${line(Math.max(2, 34 - name.length * 2))} 이미 ${who.length}장`)
+    for (const r of who.slice(0, 5))
+      console.log(`    ${r.slug}(${r.meaning})${busy(r.slug)}  ${clip(r.prompt, 62)}`)
+    if (who.length > 5) console.log(`    … ${who.length}장 가운데 다섯만 찍었습니다`)
+  }
+  if (floorShapes.length > 0)
+    console.log(`\n  바닥이라 건너뛴 짜임 — ${floorShapes.map((n) => `「${n}」`).join(' ')}`)
+
+  if (sources.length > 1) {
+    const both = new Map<string, string[]>()
+    for (const name of rare) {
+      const who = sources.filter((r) => shapesOf(r.prompt).includes(name)).map((r) => r.slug)
+      if (who.length > 1) both.set(name, who)
+    }
+    console.log(`\n배치 안에서 겹치는 짜임 ${both.size}갈래`)
+    for (const [name, who] of both) console.log(`  「${name}」  ${who.join(' · ')}`)
+    if (both.size === 0) console.log('  (없습니다)')
+  }
 }
