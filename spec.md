@@ -1224,14 +1224,27 @@ pnpm pending --free            # 넘겨 둔 것 중 지금 열린 파일이 있�
 pnpm coverage                  # 숫자만
 pnpm coverage --missing tsl    # 빠진 낱말을 실제로 찍는다 (tsl · hsk · torfl)
 pnpm dup <slug|뜻조각> …        # 후보가 이미 있는지 배치 앞에서 본다
-pnpm batch <slug…>             # 넣은 뒤에 늘 함께 도는 다섯을 한 번에
+pnpm batch <slug…>             # 넣은 뒤에 늘 함께 도는 아홉을 한 번에
 ```
 
-**넣은 직후에는 다섯이 늘 함께 돈다** — `props --in`(소품 겹침) · `romanize` ·
-`ipa` · `split`(굽기) · `check`. `pnpm batch`가 그 순서로 돌린다. 순서에 뜻이
+**넣은 직후에는 아홉이 늘 함께 돈다** — `props --in`(소품 겹침) · `romanize` ·
+`ipa` · `ipa-fr` · `tocfl`(번체·등급) · `levels`(시험 등급) · `audio manifest` ·
+`split`(굽기) · `check`. `pnpm batch`가 그 순서로 돌린다. 순서에 뜻이
 있다: 소품 겹침은 그림을 뽑기 전에 알아야 고칠 수 있고, 로마자를 채우기 전에
 `check`를 돌리면 경고가 백 줄 넘게 나와 진짜 문제를 덮는다. 굽기는 1초라
 넣어도 값이 없고, 굽고 나면 dev 화면이 방금 넣은 개념을 바로 보여준다.
+
+**채우는 셋(`tocfl` · `levels` · `audio manifest`)을 뒤늦게 넣었다.** `check`가
+`lib/audio-have.ts`와 `lib/levels-stamp.ts`를 읽고 번체가 빈 자리에 "pnpm tocfl
+을 돌리세요"라고 우는데, 배치에 없어서 **서른 회차 넘게 사람이 같은 세 줄을
+손으로 앞에 붙였다**. 셋을 합쳐 10초고 그 대부분이 `tocfl`이다(8.5초). 셋이
+적는 `lib/` 두 파일은 전역 생성물이라 커밋에 싣지 않는다 (아래 동시 세션 절).
+
+**같이 드러난 것이 `ipa-fr`다.** `pnpm ipa`는 `ipa.ts && ipa-fr.ts`인데 배치는
+`ipa.ts` 하나만 불렀다. 붙여서 처음 돌린 날 프랑스어 발음기호 **561건**이
+한꺼번에 채워졌다. 참고줄은 없어도 화면이 서는 자리라 `check`가 울지 않았다 —
+**package.json의 한 이름이 스크립트 둘을 가리키면, 그 이름 대신 안쪽을 부르는
+자리가 조용히 반쪽만 돈다.**
 
 **`pnpm claim`은 표기를, `pnpm dup`은 개념을 본다.** 상황 표현은 표기가 문장이라
 겹치는 일이 없고 겹치는 것은 언제나 slug와 뜻이다. 스물여덟 회차에서 세 번
@@ -1416,7 +1429,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 0. `pnpm pending --free` — 남에게 넘겨 둔 것 가운데 **지금 열린 파일**이 있는지 본다. 회차마다 도는 자리다 ([AGENTS.md](AGENTS.md) · [docs/concurrent-sessions.md](docs/concurrent-sessions.md) 규칙 8)
 1. `pnpm dup <slug|뜻…>` — 그 개념이 이미 있는지 `content/` 전체에 대고 본다
 2. 주제 파일(`content/{topic}.json`)에 개념 블록을 쓴다 — `slug`, `meaning_ko`, `category`, `image_prompt`, 언어별 단어
-3. `pnpm batch <slug…>` — 소품 겹침·로마자·발음기호·굽기·검증을 한 번에 (`check`만 따로 돌리면 로마자가 빈 채로 경고가 이백 줄 난다)
+3. `pnpm batch <slug…>` — 소품 겹침·로마자·발음기호·번체·시험 등급·발음 목록·굽기·검증을 한 번에 (`check`만 따로 돌리면 로마자가 빈 채로 경고가 이백 줄 난다)
 4. `pnpm genimg <slug...>` — `pnpm prompt`의 문구로 1024 PNG를 만들어 `.images/`에 둔다 (한 장씩 도는 것이 기본이다. 아래)
 5. `pnpm image <slug>` — 512 WebP로 변환해 `public/concepts/`에 넣는다
 6. **80×80으로 줄여도 알아볼 수 있는지 확인한다** (IMAGE_STYLE.md 검수 체크리스트)
@@ -1481,7 +1494,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm props <소품...>` | 그림 소품에 임자가 있는지 본다. 프롬프트를 통째로 줘도 되고, `--in <slug...>`으로 이미 넣은 개념의 프롬프트를 질의로 쓸 수도 있다. 흔한 낱말 문턱 0.6%는 실측값이고, 임자의 파일이 지금 만져지면 `⟨손대는 중⟩`이 붙는다 |
 | `pnpm dup <slug\|뜻조각...>` | 후보 **개념**이 이미 있는지 본다. `claim`이 표기를 보는 자리라면 이건 slug와 뜻을 `content/` 전체에 대고 본다. 걸린 개념의 파일이 지금 만져지고 있으면 `⟨손대는 중⟩`을 붙인다 |
 | `pnpm pending [--free]` | `docs/*-pending.md`에 **넘겨 둔 개념**을 파일별로 묶어 `docs/…md:47` 꼴로 낸다. 지금 비어 있는 파일 것을 먼저 보여주고, `--free`면 그것만 낸다. 목록에 «지금 누가 만지는지»를 적지 않기로 했으므로(반나절이면 낡는다) 그 판단은 도구가 돌 때 한다. 「고쳤다」·「정당하다」가 붙은 제목과 줄, **`전`·`후` 칸이 있는 표**는 빼고 **표와 목록 줄만** 본다 — 산문에 나오는 이름은 대개 끝난 일을 적거나 예를 든 것이다 |
-| `pnpm batch <slug...>` | 넣은 직후에 늘 함께 도는 다섯을 한 번에 — `props --in` · `romanize` · `ipa` · `split` · `check` |
+| `pnpm batch <slug...>` | 넣은 직후에 늘 함께 도는 아홉을 한 번에 — `props --in` · `romanize` · `ipa` · `ipa-fr` · `tocfl` · `levels` · `audio manifest` · `split` · `check` |
 | `pnpm split` | 콘텐츠를 언어별로 갈라 `public/content/`에 굽는다. 원본 해시를 `source.json`에 함께 적어 `check`가 낡음을 시각이 아니라 내용으로 본다 |
 | `pnpm twins [구조] [색]` | 서로 닮은 **그림**을 찾는다. 기본 50·0.20은 실측값이다. `--file <이름>`으로 한 파일만, `--pair <a> <b>`로 두 장만 재고, `--sheets`로 쌍을 붙여 본다. 짝 목록 아래에 **남의 몸통을 빌린 쌍**과 **세 쌍 이상에 나오는 바탕 그림**을 따로 낸다 |
 | `pnpm pending [--free]` | 넘겨 둔 일감을 파일별로 묶어 `docs/…md:47` 꼴로 낸다. `--free`면 지금 열린 파일 것만. 판단은 `lib/pending.ts`에 있고 `pnpm test`가 지킨다 |

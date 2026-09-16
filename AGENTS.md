@@ -14,7 +14,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 pnpm pending --free     # 0. 남에게 넘겨 둔 것 중 지금 열린 파일이 있는지 본다
 pnpm dup <slug|뜻…>     # 1. 이미 있는 개념인지 본다 (content/ 전체)
 #  content/*.json에 개념 블록을 쓴다
-pnpm batch <slug…>      # 2. 소품 겹침·로마자·발음기호·굽기·검증을 한 번에
+pnpm batch <slug…>      # 2. 소품 겹침·로마자·발음기호·번체·등급·발음 목록·굽기·검증을 한 번에
 pnpm genimg <slug…>     # 3. 그림을 뽑는다. 끝에 시트를 만들어 준다
 #  시트를 눈으로 본다 — 뒤바뀜과 낱말 오독은 여기서만 잡힌다
 pnpm image <slug…>      # 4. WebP로 변환
