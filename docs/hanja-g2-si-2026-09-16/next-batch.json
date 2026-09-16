@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "title": "祐·禎 2자·24획 자형과 전체 필순 근거 검토",
+  "basis": "Both dictionary/candidate forms have one fewer stroke than the catalog. Reconcile 示 and 礻 form evidence before path approval.",
+  "characters": 2,
+  "strokes": 24,
+  "strokeCountBasis": "Current catalog; not dictionary animation totals",
+  "entries": [
+    {
+      "glyph": "祐",
+      "strokes": 10,
+      "dictionaryDisplayedStrokes": 9,
+      "dictionaryAnimatedStrokes": 9,
+      "dictionaryTitle": "祐",
+      "dictionaryUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7900/7950.svg",
+      "dictionarySha256": "295892af0c487ad57be0a09a8155c2cc8ebf92f2d01a41be4acceacaad3b8b6f",
+      "licensedCandidates": [
+        {
+          "corpus": "Ja",
+          "strokes": 9,
+          "sourceUrl": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+          "sourceSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8"
+        }
+      ],
+      "status": "awaiting-target-form-and-whole-path-review"
+    },
+    {
+      "glyph": "禎",
+      "strokes": 14,
+      "dictionaryDisplayedStrokes": 13,
+      "dictionaryAnimatedStrokes": 13,
+      "dictionaryTitle": "禎",
+      "dictionaryUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7900/798E.svg",
+      "dictionarySha256": "4e4aeb27c5dfb0c7127107b5713e31f89b6cd53e31964a12991845d0de4d4937",
+      "licensedCandidates": [
+        {
+          "corpus": "MM",
+          "strokes": 13,
+          "sourceUrl": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+          "sourceSha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee"
+        },
+        {
+          "corpus": "Ja",
+          "strokes": 13,
+          "sourceUrl": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+          "sourceSha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8"
+        }
+      ],
+      "status": "awaiting-target-form-and-whole-path-review"
+    }
+  ],
+  "requiredReview": [
+    "Refresh Korean form guidance, dictionary counts and licensed source pins.",
+    "Locate whole-glyph sequence and direction evidence matching each current catalog form.",
+    "Review every target path and cumulative state; do not split strokes for count alone."
+  ],
+  "held": [
+    {
+      "glyph": "飼",
+      "strokes": 14,
+      "reason": "The Korean authority accepts both forms but provides no complete fourteen-stroke order. All fetched whole-glyph animations and candidates use thirteen strokes. CNS supplies only a nine-stroke component sequence; this does not establish all fourteen boundaries, directions and paths for the target compound.",
+      "review": "review.json",
+      "reopenConditions": [
+        "Obtain explicit fourteen-stroke whole-glyph order and direction evidence for 𩙿+司, with source scope recorded.",
+        "Obtain or author a separately licensed fourteen-path candidate matching that form; do not split the thirteen-path variant for count alone.",
+        "Inspect every path, stroke boundary, direction and cumulative state against the identified evidence before approval."
+      ]
+    }
+  ],
+  "runtimeApprovalsAdded": 0
+}

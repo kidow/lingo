@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-16",
+  "verification": "passed",
+  "heldGlyphAbsentFromRuntime": true,
+  "licensedCandidateNormalizationValid": true,
+  "metadataAndObservationCoverageValid": true,
+  "catalogAndCoverageUnchanged": true,
+  "proprietaryAssetsSaved": 0,
+  "proofPins": {
+    "acquire.mjs": "f7d8fad5ad9980f2b48faaa79d1914417bd82229a2f36a0446a6ad3b751c16e8",
+    "serve.py": "e7f292195261ee6883d0c366cc1151a0a525e72a31aac8c28324faaedf74b2f1",
+    "originals.json": "adeb5c960d6434a09bf2f10a2e2de0450cb66dc6a8cee7c261a39a55150267c8",
+    "source-checks.json": "ff01c68fbe90d007f2227252ad5e65e5fbd0cc849e4900dc49ed5bcc406585f9",
+    "observations.json": "dba9e6c5de5742b8df25863fd8448d9a8f06cce039b63fe7dbc54fe47d2ad9d9",
+    "review.json": "8686833acc05c0f8160931d6135c82aa6fa70ab12b5704acfe7e5b67964d407e",
+    "verify.mjs": "fdb7ba63f5808c7e8b3da0916f944ac4d7a0486a8619bdc876fc3d98e02cbac2"
+  },
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "files": 52,
+    "passed": 301,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "viewer": {
+    "syntax": "passed",
+    "staticFormPinsChecked": 3,
+    "staticFormPinsValid": true,
+    "visualReview": {
+      "candidatePaths": 13,
+      "dictionaryStages": 13,
+      "moeStages": 13,
+      "staticForms": 3,
+      "wholeTargetPaths": 0
+    }
+  },
+  "build": {
+    "run": false,
+    "reason": "Only review documentation and read-only review helpers changed; no application or runtime data changed."
+  }
+}
