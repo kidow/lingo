@@ -68,6 +68,7 @@ test('three full reviews reconstruct 41 strokes from alternate-corpus and compon
 
 
 test('塏 component candidates reconstruct from pinned 土 and 豈 geometry without approving related characters', () => {
+  assert.ok(!HANJA_DICTIONARY_G2_GEOMETRY_BATCH14_STROKES.some(e=>e.glyph==='騏'))
   const original=originals.find(e=>e.glyph==='塏')!
   assert.deepEqual(original.components!.map(p=>[p.glyph,p.medians.length]),[['土',3],['豈',10]])
   assert.deepEqual(compose(original.components!),original.medians)
@@ -76,7 +77,7 @@ test('塏 component candidates reconstruct from pinned 土 and 豈 geometry with
   assert.throws(()=>compose(changed),/medians mismatch/)
   const badBox=structuredClone(original.components!);badBox[0].targetBox[2]=0
   assert.throws(()=>compose(badBox),/target box/)
-  for(const g of ['土','豈','塤','騏'])assert.equal(dictionaryLocalGeometry(g),undefined)
+  for(const g of ['土','豈','塤'])assert.equal(dictionaryLocalGeometry(g),undefined)
 })
 test('local geometry audit rejects altered provenance and altered paths for the explicit three-glyph set', () => {
   for(const original of originals){
