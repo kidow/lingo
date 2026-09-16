@@ -54,6 +54,7 @@ import { HANJA_DICTIONARY_G2_GEOMETRY_BATCH17_STROKES } from './hanja-stroke-dic
 import { HANJA_DICTIONARY_G2_GEOMETRY_BATCH18_STROKES } from './hanja-stroke-dictionary-g2-geometry-batch18.ts'
 import { HANJA_DICTIONARY_G2_GEOMETRY_BATCH19_STROKES } from './hanja-stroke-dictionary-g2-geometry-batch19.ts'
 import { HANJA_DICTIONARY_G2_GEOMETRY_BATCH20_STROKES } from './hanja-stroke-dictionary-g2-geometry-batch20.ts'
+import { HANJA_DICTIONARY_G2_GEOMETRY_BATCH21_STROKES } from './hanja-stroke-dictionary-g2-geometry-batch21.ts'
 
 export const HANJA_STROKE_SOURCE = {
   title: '필순 정정 및 500자 필순',
@@ -234,6 +235,7 @@ export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...HANJA_DICTIONARY_G2_GEOMETRY_BATCH18_STROKES,
   ...HANJA_DICTIONARY_G2_GEOMETRY_BATCH19_STROKES,
   ...HANJA_DICTIONARY_G2_GEOMETRY_BATCH20_STROKES,
+  ...HANJA_DICTIONARY_G2_GEOMETRY_BATCH21_STROKES,
 ]
 
 const byGlyph = new Map(HANJA_STROKES.map((data) => [data.glyph, data]))
