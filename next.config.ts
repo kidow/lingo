@@ -14,6 +14,15 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   output: 'export',
   images: { unoptimized: true },
+  /*
+   * 개발 표식을 끈다. 화면이 하나뿐이라 그것이 알려 줄 것이 없는데(라우트가
+   * `/` 하나다) 왼쪽 아래에 앉아 **찾기 손잡이와 카드 바닥을 가린다** —
+   * 화면 맨 아래 28px을 시트가 쓰기로 한 뒤로 겹치는 자리가 됐다
+   * (components/peek-drawer.tsx).
+   *
+   * 컴파일·런타임 오류는 이 설정과 무관하게 그대로 뜬다.
+   */
+  devIndicators: false,
 }
 
 export default nextConfig
