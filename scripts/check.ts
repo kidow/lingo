@@ -1120,27 +1120,21 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
 /**
  * 예문이 있는데 한 줄도 못 뚫는 낱말. 그 낱말은 재인·듣기 칸에 머문다.
  *
- * **어느 낱말인지 함께 찍는다.** 개수만 찍던 때는 고치려면 매번 같은 조회를
- * 손으로 다시 짜야 했다 — 경고는 셈이 아니라 할 일이어야 한다.
+ * **낱말마다 한 줄씩 낸다.** 처음에는 개수만 찍었고, 그 다음에는 개수 뒤에
+ * 이름을 붙여 한 줄로 냈다. 둘 다 모자랐다 — **묶여 나오는 경고는 아무도
+ * 줍지 않는다.**
+ *
+ * 2026-09-17에 그 값을 쟀다. `pnpm pending`은 넘김 문서에서 slug를 뽑아 일감을
+ * 세는데, 넘김 문서는 `pnpm check`가 짚은 것을 사람이 옮겨 적어 만든다. 그런데
+ * 이 경고만 `[slug]` 꼴이 아니라 한 줄에 몰려 나와서, **다섯 낱말이 어느 문서에도
+ * 안 올라간 채 여드레를 남아 있었다**(public-order·air-of-the-place·
+ * a-certain-one·elder-of-the-family·gap-disparity, 전부 프랑스어 생략이었다).
+ * 다른 그물은 다 한 줄씩 내므로 그것들만 조용히 빠졌다.
+ *
+ * `stuck`은 이미 자리와 까닭을 들고 있다. 묶지 말고 그대로 내보낸다 — 언어별
+ * 셈은 각 줄에 언어가 적히므로 `grep`이 대신한다.
  */
-{
-  const blocked = [...stuck].filter(([key]) => !clozable.has(key))
-  if (blocked.length > 0) {
-    const byLang = new Map<string, number>()
-    for (const [key] of blocked) {
-      const lang = key.split('|')[1]
-      byLang.set(lang, (byLang.get(lang) ?? 0) + 1)
-    }
-    const per = [...byLang].map(([lang, n]) => `${lang} ${n}`).join(' · ')
-    const SHOWN = 12
-    const names = blocked.slice(0, SHOWN).map(([key]) => key.replace('|', ' '))
-    const rest = blocked.length > SHOWN ? ` 외 ${blocked.length - SHOWN}개` : ''
-    warn(
-      `문맥 카드를 못 만드는 낱말 ${blocked.length}개 (${per}) — 표제형이 예문에 그대로 서지 못합니다\n` +
-        `      ${names.join(' · ')}${rest}`,
-    )
-  }
-}
+for (const [key, message] of stuck) if (!clozable.has(key)) warn(message)
 
 /**
  * 가나 카드. (docs/kana-tab-design.md §7)
