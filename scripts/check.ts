@@ -170,6 +170,22 @@ const PERSON_RE = new RegExp(
 const NO_FACE_RE = /no facial features/i
 
 /**
+ * **막이 낱말을 사람으로 세지 않는다.**
+ *
+ * 프롬프트는 거의 다 `no letters, no people`로 끝난다. 그런데 `PERSON_RE`가
+ * 그 `people`을 사람으로 세어, **사람을 막으려고 적은 말 때문에 사람 경고가
+ * 났다.** 2026-09-17에 열여섯이 울고 있었는데 프롬프트를 열어 보니 **열넷이
+ * 이것**이었고, 그림에도 얼굴이 없었다. 남은 둘만 진짜였다 —
+ * `four-limbs`(관절 인형)와 `living-alone`(한 사람 몫으로 차린 상)이다.
+ *
+ * 그동안 이 경고가 열 몇씩 떠 있어 «그림 갈래는 원래 시끄럽다»가 되었고,
+ * 진짜 둘이 그 속에 묻혔다. **막이 낱말을 먼저 걷어 내고 센다.**
+ */
+const NEGATED_RE =
+  /\bno (?:letters|numbers|people|person|figures?|statues|portrait|readable letters|facial features)\b/gi
+const bodyOf = (prompt: string) => prompt.replace(NEGATED_RE, ' ')
+
+/**
  * **사물이 얼굴을 품는 자리.** 프롬프트에 사람이 하나도 없어도 신분증·여권·
  * 사진틀을 그리라고 하면 모델이 그 안에 초상을 넣는다 — 28회차의
  * `id-for-claim`이 그랬다. 인물 규칙은 사람 낱말만 보므로 이 자리를 못 잡는다.
@@ -280,7 +296,7 @@ for (const file of files) {
     if (!c.image_prompt) fail(where, 'image_prompt 누락 — 이미지를 재생성할 수 없습니다')
     else if (
       typeof c.image_prompt === 'string' &&
-      PERSON_RE.test(c.image_prompt) &&
+      PERSON_RE.test(bodyOf(c.image_prompt)) &&
       !NO_FACE_RE.test(c.image_prompt)
     )
       warn(`${where} — 인물이 든 프롬프트인데 "no facial features"가 없습니다. 모델이 얼굴을 그립니다 (IMAGE_STYLE)`)
