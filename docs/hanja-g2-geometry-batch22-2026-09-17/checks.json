@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-17",
+  "verification": "passed-for-this-commit-snapshot",
+  "proofPins": {
+    "compose.ts": "a1dcb1da03ce4d489e2e7e0f0fe28156544c4e1237d014411710949eee0b1cb7",
+    "acquire.mjs": "7d63e71fe8fc6b0892391c6b2484691ff4ed5a20c58576f4859044067b07d636",
+    "serve.py": "2d3106cf910aa6822eae3768a23ed9effbe102925833eb9f9cba948873f3ff20",
+    "prepare.mjs": "0b369753bf7151f73d808396d0bb3f811c99e03996401888e71ae97062bd14a8",
+    "verify.mjs": "003a19e33427b6e6e81a35fa9402cf5e16aa4c9b87afab31a59b11c56ef30795",
+    "initial-observations.json": "feb6940ec0da661f96378064a3c4810e8c8b1aacb8345d52f60a54e3180562b9",
+    "originals.json": "13a7c6aaeaeb0e0577248b50a8a884c1908438a6207cc47a9ff0e724c9ce5f3b",
+    "source-checks.json": "0b7db7bf7fee011c36dd54ea8813757439ddc65a695d0909af4263fc4d2ce2a9",
+    "observations.json": "d8ab219f945a99189a465c604cb24732ee7382c381a528b09d2a79484b4d6a79",
+    "corrections.json": "9591745f93d10d1c0c424c146387d903dad5549f26ca5ddcaebe411b2408c8ab",
+    "proposals.json": "bb500fce9274e823a8e30cf52bef5d6a58ee844e2db51166c23b46a3e6b8ffb8",
+    "candidate-paths.json": "6b832cb5fd274699c36da7f3723a9d1e581165af87b457fa6c7b8b2ef60e8d42",
+    "review.json": "014840d70dd4ef3a792b7d171f88bdd79603e5de2601c71648c039e0536a884d"
+  },
+  "sourceChecks": {
+    "characters": 3,
+    "dictionaryStages": 40,
+    "licensedComponentStrokes": 40,
+    "components": 7,
+    "correctedPaths": 40,
+    "retainedPaths": 0,
+    "contactPairs": 264,
+    "proprietaryAssetsSaved": 0,
+    "automaticRadicalApproval": false
+  },
+  "browserReview": {
+    "originalDictionaryStages": 40,
+    "originalCandidateStrokes": 40,
+    "correctedStages": 40,
+    "maskRevealFractions": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "finalCumulativeForms": [
+      "鈗",
+      "鎰",
+      "曺"
+    ],
+    "elapsedTimeAnimationTest": false
+  },
+  "tests": {
+    "command": "node --test --test-reporter=tap lib/hanja*.test.ts",
+    "files": 74,
+    "tests": 473,
+    "passed": 473,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 2,
+    "stdout": "components/hanja/card.tsx(43,65): error TS2339: Property 'meaning' does not exist on type 'HanjaExample'.\nlib/hanja.ts(83,31): error TS2345: Argument of type 'string | { dictionary: \"표준국어대사전\"; targetCode: number; url: string; verifiedAt: string; }' is not assignable to parameter of type 'string'.\n  Type '{ dictionary: \"표준국어대사전\"; targetCode: number; url: string; verifiedAt: string; }' is not assignable to type 'string'.\n",
+    "stderr": "",
+    "scope": "Shared worktree including another session’s in-progress HanjaExample changes; unrelated files were not changed by this task."
+  },
+  "snapshotTypecheck": {
+    "method": "TypeScript compiler API with tsconfig options, noEmit true and incremental false. Include tracked roots, this batch, next-env.d.ts and .next generated types. Restore unrelated uncommitted tracked files to the pinned base commit in memory only.",
+    "baseCommit": "379ee53e638debdee4e7beb962173d2d4de75fde",
+    "rootFiles": 295,
+    "foreignFilesRestoredInMemory": [
+      "content/scene.json",
+      "lib/audio-have.ts",
+      "lib/hanja.ts",
+      "lib/levels-stamp.ts"
+    ],
+    "excludedUntrackedRootFiles": [
+      "scripts/hanja-radicals.ts"
+    ],
+    "typeScriptVersion": "5.9.3",
+    "exitCode": 0,
+    "diagnostics": [],
+    "foreignWorkingHashes": {
+      "content/scene.json": "801dabdad4fc967fc969761b96275627f902641c4cb7a9b27175651e3dae7c7f",
+      "lib/audio-have.ts": "8f880d45f03007c31a1f940e003947a7ac796d5ddb11e50bd09da21d67edf89c",
+      "lib/hanja.ts": "0a72532471d55b32b0f3cfce712402a3ca989c73769fcc7ed2620f68107bdc14",
+      "lib/levels-stamp.ts": "ae880ef81e36d4b61eeb948e68b95c640a3ec7351468f230ed95f061fc902ff7"
+    },
+    "passed": true
+  },
+  "syntax": {
+    "acquireExitCode": 0,
+    "prepareExitCode": 0,
+    "verifyExitCode": 0,
+    "serveExitCode": 0
+  },
+  "reconstructionAndPublicationValid": true,
+  "catalogUnchanged": true
+}
