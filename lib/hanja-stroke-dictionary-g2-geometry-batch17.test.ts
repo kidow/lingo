@@ -77,7 +77,7 @@ test('six licensed components retain their own fingerprints and layouts without 
     const badBox=structuredClone(original.components!);badBox[0].targetBox[2]=0
     assert.throws(()=>compose(badBox),/target box/)
   }
-  for(const g of ['磻','裵','倂'])assert.equal(dictionaryLocalGeometry(g),undefined)
+  for(const g of ['磻','裵','倂'])assert.ok(!HANJA_DICTIONARY_G2_GEOMETRY_BATCH17_STROKES.some(e=>e.glyph===g))
 })
 test('騏 starts with the 馬 vertical then horizontal and preserves the hook and four separated dots', () => {
   const a=points('騏',1),b=points('騏',2)
