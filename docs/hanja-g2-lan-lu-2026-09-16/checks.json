@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-16",
+  "proofPins": {
+    "initial-observations.json": "d7f5f580cf37acae9a184597dcd2b95ae6f361294b67801ef6a42a5b13662448",
+    "originals.json": "13c55acda47eb945ee2a86f57315a86fc99b295e1ad3ce7729c2e4519a55a6c3",
+    "observations.json": "f0539749fe19a676a5a1f5a5e08718c99da5311ac79820c67621e3d373b4ec50",
+    "proposals.json": "9b9a4c94feeae6b99e6c72ac6dadbc84ad635f618857a88ef8b80d3e87f4eea9",
+    "source-checks.json": "8c0e73887551c3f54057869d557c6bed9d67475684adeee518cb7057ed8b0626",
+    "corrections.json": "3d842be7bb7eb296d98a185d6ec7cd85705af394398f9f13cd91efd8a94e447a",
+    "count-basis.json": "6c55df78d778ea01114985b0ca1cbe362f8308dec657555f522b05fd6677c5ac",
+    "candidate-paths.json": "87da57e1e2d84e211726a1808ac57fe5f843173b912a1c4f94128e8bbd8edc17",
+    "review.json": "3e97656f5a542508e24b21e89c8ee71da39424cf521e2702cc013a3e7d3536bb"
+  },
+  "checks": [
+    {
+      "command": "node --test lib/hanja*.test.ts",
+      "status": "passed",
+      "files": 51,
+      "tests": 298
+    },
+    {
+      "command": "python3 -B scripts/hanja-source.test.py",
+      "status": "passed",
+      "tests": 7
+    },
+    {
+      "command": "pnpm run build",
+      "status": "passed",
+      "note": "Production compile, TypeScript and static generation completed."
+    },
+    {
+      "command": "node docs/hanja-g2-lan-lu-2026-09-16/verify.mjs",
+      "status": "passed",
+      "note": "Reproduces evidence pins, runtime paths, coverage and the next review queue."
+    }
+  ],
+  "browserVisualReview": {
+    "dictionaryStages": 36,
+    "officialGrassStages": 4,
+    "candidatePaths": 38,
+    "correctedRuntimePaths": 38,
+    "proprietaryAssetsSaved": 0
+  }
+}
