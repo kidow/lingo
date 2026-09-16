@@ -42,6 +42,20 @@
 
 어느 쪽이든 `quality.json`을 만지는 일이라 임자가 정할 몫이다.
 
+**프랑스어 생략도 같은 자리를 막는다 (2026-09-17).** `clozeAt`은 아포스트로피를
+«붙어 있는 것»으로 보므로 `l'ordre public`은 못 뚫는다 — `l'`가 뒤에 모음이
+온다는 표시라서 자음으로 시작하는 오답이 문장을 안 읽고도 걸러지기 때문이다
+(lib/quiz.ts의 `GLUED`). 다섯이 걸려 있었는데 내 것 넷은 관사 없는 꼴로
+고쳤고(`un ordre public` · `cette ambiance` · `un certain` · `cet aîné de la
+famille`), 하나가 남는다.
+
+| 낱말 | 표제형 | 예문이 쓰는 꼴 |
+| --- | --- | --- |
+| `idea/gap-disparity` fr | `écart` | `L'écart entre les deux a grandi.` · `Le graphique montre l'écart.` |
+
+**표제형이 모음으로 시작하면 예문에서 관사를 생략시키지 않는다.** `un`·`cet`·
+`cette`처럼 띄어쓰기가 남는 한정사를 쓰거나, 표제를 관사 없이 세운다.
+
 ### 같은 병이 더 있는지 훑었다 — 없다 (2026-09-09)
 
 여섯이 한 갈래로 보여 **독일어 형용사 표제어 636개를 전수로** 봤다. 세 번
