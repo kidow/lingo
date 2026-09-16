@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-16",
+  "verification": "passed",
+  "proofPins": {
+    "acquire.mjs": "a42397cd0164d009214489955b16856a81bec46fff57cd348093023c87dd8648",
+    "serve.py": "b3b9c9c985a48acb829a354ee0cefdc1790b354b7e4cd0eab59cd735821dcede",
+    "prepare.mjs": "0a0973f5d58a9f08c2a09c6612eb21165a36b91e0f553054fefe0e61bd2c6b22",
+    "verify.mjs": "e4c1533dc85fe08f2ad2f73025ec3fdf0521fb535252a1e677dc807aadbbfd8a",
+    "initial-observations.json": "75c552b1618415d843c8d4d36f448a4db84b42f96659ffc675f24fb87bb6faad",
+    "originals.json": "a340e00c79ce62a8b2e7cf89ad8b692a5fc502eab0262a15217af03b3fd622fb",
+    "source-checks.json": "ebe2df5f37d39bd0894bf545acbc4d338ba5d50ea00c408742982ca550028ae9",
+    "observations.json": "cffdef0c796edfb4f931cb784f95180664cf3d8b5b0826570575f3e2a03c7bea",
+    "corrections.json": "0bc8162db8c326c4b7d4bc3da4dee0be02efa13c359f0bf91188e22ccdc1e6ff",
+    "proposals.json": "a26ed1cc57c2248b15ffbf24adee54fb5953fb9e6ff8e95cbd830d196d65eb2a",
+    "candidate-paths.json": "edc27e90a953e34019456ce1fbe69aefa93f93f4ce902d4b732fab75480a4e13",
+    "review.json": "e75a038df0228ec4fe95c2466ff1acb1a62f6002eec2c9f6a168bc3233f2436d"
+  },
+  "sourceChecks": {
+    "characters": 2,
+    "dictionaryStages": 27,
+    "licensedOriginalStrokes": 27,
+    "correctedPaths": 27,
+    "retainedPaths": 0,
+    "contactPairs": 189,
+    "proprietaryAssetsSaved": 0,
+    "automaticRadicalApproval": false
+  },
+  "browserReview": {
+    "originalStages": 27,
+    "correctedStages": 27,
+    "maskRevealFractions": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "finalCumulativeForms": [
+      "薰",
+      "姬"
+    ],
+    "elapsedTimeAnimationTest": false
+  },
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "files": 65,
+    "tests": 402,
+    "passed": 402,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "syntax": {
+    "acquireExitCode": 0,
+    "serveExitCode": 0
+  },
+  "reconstructionAndPublicationValid": true,
+  "catalogUnchanged": true
+}

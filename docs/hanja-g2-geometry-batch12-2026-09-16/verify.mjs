@@ -89,7 +89,7 @@ const nextBatch={schemaVersion:1,title:'薰·姬 2자·'+nextStrokes+'획 경로
 const progress={date:'2026-09-16',batch:{sourceAudited:3,reviewedStrokes:27,applied:3,appliedStrokes:27,held:0,authoredOrCorrectedPaths:27},
  overall:summarize(characters),byGrade:previous.byGrade.map(({grade})=>({grade,...summarize(characters.filter(c=>c.readingGrade===grade))})),
  remainingGrade2Queues:queues,sourceCountReviewStatus:previous.sourceCountReviewStatus,
- next:{task:nextBatch.title,characters:3,strokes:nextStrokes,glyphs:nextGlyphs}}
+ next:{task:nextBatch.title,characters:nextGlyphs.length,strokes:nextStrokes,glyphs:nextGlyphs}}
 assert.equal(progress.overall.total,previous.overall.total)
 assert.equal(progress.overall.totalStrokes,previous.overall.totalStrokes)
 assert.equal(progress.overall.applied,previous.overall.applied+3)
