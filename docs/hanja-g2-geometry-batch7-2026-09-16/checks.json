@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-16",
+  "verification": "passed",
+  "proofPins": {
+    "acquire.mjs": "230e03ad3e524c309f3e280014aec4f5353c5f6b7a1e2033084bf9c20f9e7391",
+    "serve.py": "8249d298e0f6299945e7cbeb72c8c0ad56e029ad80b8dac2ffeb5c28a661e4a1",
+    "prepare.mjs": "84fd0c19e57668f7997227f427ab3311479c21969c6c865432ba860bab61f623",
+    "verify.mjs": "9af600702f961015a0d0f528691a084ee2d054389c8307d237d30a55e6de2c6a",
+    "initial-observations.json": "63ba8ebe009cac72b53f68b32a72522e115a7f60fdff45d32ed9b6cb1d10ce40",
+    "originals.json": "235f35b653e672159bfac56000abfbc973603c25f039081ac407e4b879ddcf96",
+    "source-checks.json": "0443315fa0efaa23563d9808e56525b83e37d0eeaec9b1dd7d221c6c59608ecf",
+    "observations.json": "c81aeecff46ebbb0c7791abbf05c282dcbcacefdf8fa3c263526588ab61919eb",
+    "corrections.json": "fec172b1d200dd98ab34b6b77f3b90fd948c4e0eb2728682429ef344cd9f5c84",
+    "proposals.json": "10c0dd36639d5172249a4b88e40d64513ce380475552d3eefafc6b2afb27d0f8",
+    "candidate-paths.json": "f8d9084d8c23f4e714dd0bd993a67a49c4b825905e34638dc778abda40e0c679",
+    "review.json": "4bebeaf8e86fea5782da1ad5c28fe59e5940dfde9874c787a3cec5674cc67a84"
+  },
+  "checks": {
+    "reconstructionAndPublicationValid": true,
+    "allTwentyNineStagesObserved": true,
+    "catalogUnchanged": true,
+    "proprietaryAssetsSaved": 0
+  },
+  "tests": {
+    "command": "node --test --test-reporter=tap lib/hanja*.test.ts (59 explicit file paths)",
+    "files": 59,
+    "tests": 354,
+    "passed": 354,
+    "failed": 0,
+    "exitCode": 0,
+    "newRegressionTests": 8
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "syntax": {
+    "acquireExitCode": 0,
+    "serveExitCode": 0,
+    "stderr": ""
+  },
+  "visual": {
+    "glyphs": [
+      "荀",
+      "艾",
+      "惹"
+    ],
+    "stages": 29,
+    "correctedPathsReinspected": 27,
+    "finalCumulativeForms": 3,
+    "sourceContactPairs": 36,
+    "sourceAnimatedDirectionChecks": 29,
+    "sourceArtSaved": false
+  }
+}
