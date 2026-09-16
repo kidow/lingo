@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-16",
+  "verification": "passed",
+  "proofPins": {
+    "acquire.mjs": "dcad638d4f4cb1abc26a4adec4fabdbfeb6f9fb2c074d5f028f064583252003f",
+    "serve.py": "a7b29e1f15d0ef8bf2e80cf83eb1d1ac2c8aab75f4772832b25f41657a77bd0c",
+    "originals.json": "b7a94df75e9cafcfb4ac75c010fbefcf70dda6d819c08333cba996d0bd2bb136",
+    "source-checks.json": "18678b04a61098ee80f8d1d46ddfe63b1a7e6aacd6884a99994ec7ba8bf44285",
+    "observations.json": "e09a2f2306753070800b980e5512328faee1b1afb10dcfa229baf705c8b35762",
+    "review.json": "326f9bbe785199bfda22058f5b036857f483dabb7731db2928e85f9aff5d7b67",
+    "next-batch.json": "32e8fa7d45a98f1d26904f4870ea4a992ddf5ab4bdb3785a71210eb9747bf83e",
+    "verify.mjs": "af1db28373aff457147f4f2b0a7118f210f35908559640f6f52f06af98361a8f"
+  },
+  "checks": {
+    "candidateNormalizationValid": true,
+    "sourceMetadataAndCoverageValid": true,
+    "heldGlyphAbsentFromRuntime": true,
+    "nextBatchMatchesInventory": true,
+    "catalogAndCoverageUnchanged": true,
+    "proprietaryAssetsSaved": 0
+  },
+  "tests": {
+    "command": "node --test lib/hanja-strokes.test.ts lib/hanja-stroke-audit.test.ts lib/hanja-component-geometry.test.ts",
+    "files": 3,
+    "exitCode": 0
+  },
+  "syntax": {
+    "acquire": "node --check: passed",
+    "serve": "Python ast.parse: passed"
+  },
+  "visual": {
+    "dictionaryStages": 12,
+    "moeStages": 11,
+    "candidatePaths": 11,
+    "method": "CUA screenshots of RAM-only source viewer; screenshots not saved in repository"
+  }
+}
