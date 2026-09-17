@@ -36,9 +36,17 @@ export type HanjaCharacter = {
 }
 
 export type HanjaExample = {
+  /** 배정표 자형으로 적은 표기. 사전이 이체자로 적은 글자(絕)는 배정 자형(絶)으로 바꾼다 */
   word: string
   reading: string
-  source: { dictionary: '표준국어대사전'; targetCode: number; url: string; verifiedAt: string }
+  source: {
+    dictionary: '표준국어대사전'
+    targetCode: number
+    url: string
+    verifiedAt: string
+    /** 사전의 원어 표기가 `word`와 다를 때만. 유니코드 Unihan 이체자 표로 대응시킨 것 */
+    word?: string
+  }
 }
 
 /** 부수 한 자. 훈음은 배정자면 배정표에서, 아니면 표준국어대사전의 부수 명칭에서 온다. */

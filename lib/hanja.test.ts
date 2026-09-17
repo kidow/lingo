@@ -49,6 +49,12 @@ test('15급수 전체 5,978자는 중복 없이 두 읽기 능력을 독립적�
       assert.ok([...word].every((g) => rankOf.get(g)! <= rank.get(character.readingGrade)!), `${character.glyph} ${word}`)
       assert.equal(source.dictionary, '표준국어대사전')
       assert.ok(source.targetCode > 0 && source.url.includes(String(source.targetCode)))
+      // 사전이 이체자로 적은 것(絕交)은 배정 자형(絶交)으로 바꿔 적고 원문을 남긴다. 글자 수는 같고 한 자리만 다르다
+      if (source.word) {
+        assert.notEqual(source.word, word)
+        assert.equal([...source.word].length, 2)
+        assert.equal([...source.word].filter((g, i) => g !== [...word][i]).length, 1)
+      }
     }
     assert.ok(character.strokes > 0 && character.hun && character.eum)
   }

@@ -70,6 +70,13 @@
 - 배정 외 부수 45자의 명칭은 표준국어대사전에서 45자 모두 확인했다. 사전은 큰입구몸을 ‘口’, 스물입발을 ‘卄’으로 적어 두어 그 자형도 함께 대조한다.
 - 검수표는 `docs/hanja-radicals-shuowen-2026-09-17/README.md`. 스크립트가 만든다.
 
+### 이체자 (2026-09-18)
+
+- `/debug`에 빈 글자를 펼쳐 보다 4급II `絶`이 빈 것을 찾았다. 배정표는 絶(U+7D76), 표준국어대사전 원어는 絕(U+7D55)라 그대로 찾으면 0건이다. 姉/姊, 獎/奬도 같다. 빈 1,163자 중 이런 표기 차이가 21자, 급수 규칙에 막힌 것이 52자, 나머지 약 1,090자는 정말로 사전에 급수 안 2음절 한자어가 없다(2급 인명·지명용 글자, 특급 희귀자).
+- **유니코드 Unihan 이체자 표**(`Unihan_Variants.txt`의 kSemanticVariant·kSpecializedSemanticVariant·kZVariant·kJapaneseOld/NewVariant, 양방향)를 명시적 매핑으로 쓴다. 간체↔번체(kSimplified/kTraditional)는 다른 글자라 뺀다. NFKC 같은 자동 변환은 쓰지 않는다(트랙 설계 §6). 원문은 unicode.org의 Unihan.zip, `.cache/`에 둔다.
+- 표기는 **배정 자형으로 바꿔 적고**(絶交) 사전 원문(絕交)은 `example.source.word`에 남긴다 — 배정표의 `sourceGlyph` 관행과 같다. 카드에는 배정 자형이 보인다.
+- **이체자가 그 자체로 다른 배정한자면 섞지 않는다**(豊↔豐, 隣↔鄰, 晋↔晉, 杰↔傑). 사전이 한쪽 표기만 쓰므로 다른 쪽은 빈 채로 둔다 — 隣 카드에 近鄰을 보여주면 예시 안에 학습 글자가 없다. 이 글자들을 어떻게 할지는 후속.
+
 ## 구현 순서
 
 1. `lib/hanja.ts`: `example`에서 `meaning` 제거, `source` 추가. `HanjaRadical` 타입과 `content/hanja/radicals.json` 로더.
