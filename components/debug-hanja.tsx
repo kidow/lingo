@@ -21,6 +21,12 @@ import { useState } from 'react'
  * **빠진 글자를 펼쳐 볼 수 있다.** 숫자만으로는 다음에 무엇을 채울지 안 보인다 —
  * 줄을 누르면 그 급수에서 예시가 빈 글자가 깔린다. 스크립트에 그대로 넘길 수 있게
  * 글자만 이어 둔다.
+ *
+ * **채운 쪽이 아니라 남은 쪽을 그린다.** 처음에는 채움 비율 막대를 숫자 옆 빈 칸에
+ * 뒀는데 세 가지가 어긋났다 — 헤더가 비어 무엇의 막대인지 안 보였고, 다 찬 급수는
+ * 막대를 안 그려 «100%»가 «데이터 없음»으로 읽혔으며, 2급 필순 534/538처럼 잘된
+ * 값이 표에서 가장 요란했다. 지금은 `488/538` 꼴로 붙이고 **결손만 붉힌다.**
+ * 다 찬 줄은 조용하고 특급·1급만 눈에 든다.
  */
 export type HanjaGradeRow = {
   id: string
@@ -65,9 +71,9 @@ export function DebugHanja({ grades, radicals }: { grades: HanjaGradeRow[]; radi
       </dl>
 
       <div className="min-h-0 flex-1 overflow-auto rounded-ctrl border border-line">
-        <table className="w-full min-w-[560px] table-fixed bg-surface text-left text-[13px]">
+        <table className="w-full min-w-[400px] table-fixed bg-surface text-left text-[13px]">
           <colgroup>
-            {[92, 72, 92, 150, 92, 150].map((width, i) => (
+            {[80, 70, 125, 125].map((width, i) => (
               <col key={i} style={{ width }} />
             ))}
           </colgroup>
@@ -76,9 +82,7 @@ export function DebugHanja({ grades, radicals }: { grades: HanjaGradeRow[]; radi
               <Th>급수</Th>
               <Th>글자</Th>
               <Th>예시</Th>
-              <Th />
               <Th>필순</Th>
-              <Th />
             </tr>
           </thead>
           <tbody>
@@ -96,16 +100,10 @@ export function DebugHanja({ grades, radicals }: { grades: HanjaGradeRow[]; radi
                   <span className="tabular-nums">{grade.characters.toLocaleString()}</span>
                 </Td>
                 <Td>
-                  <span className="tabular-nums">{grade.examples.toLocaleString()}</span>
+                  <Filled filled={grade.examples} total={grade.characters} />
                 </Td>
                 <Td>
-                  <Bar filled={grade.examples} total={grade.characters} />
-                </Td>
-                <Td>
-                  <span className="tabular-nums">{grade.strokes.toLocaleString()}</span>
-                </Td>
-                <Td>
-                  <Bar filled={grade.strokes} total={grade.characters} />
+                  <Filled filled={grade.strokes} total={grade.characters} />
                 </Td>
               </tr>
             ))}
@@ -127,15 +125,16 @@ export function DebugHanja({ grades, radicals }: { grades: HanjaGradeRow[]; radi
   )
 }
 
-/** 채운 만큼 잠긴 막대. 다 찼으면 그리지 않는다 — 남은 급수만 눈에 들어와야 한다 */
-function Bar({ filled, total }: { filled: number; total: number }) {
-  if (total === 0 || filled === total) return null
+/**
+ * `488/538` 꼴. **결손만 붉힌다** — 다 찬 급수는 분모를 흐리게 눕혀 조용히 지나가고,
+ * 덜 찬 급수만 숫자가 붉어진다. 채운 쪽을 칠하면 잘된 급수가 제일 요란해진다.
+ */
+function Filled({ filled, total }: { filled: number; total: number }) {
+  const done = filled === total
   return (
-    <span className="block h-1.5 rounded-pill bg-line">
-      <span
-        className="block h-full rounded-pill bg-accent/60"
-        style={{ width: `${Math.max((filled / total) * 100, 2)}%` }}
-      />
+    <span className="tabular-nums">
+      <span className={done ? '' : 'font-semibold text-err'}>{filled.toLocaleString()}</span>
+      <span className="text-sub opacity-60">/{total.toLocaleString()}</span>
     </span>
   )
 }
