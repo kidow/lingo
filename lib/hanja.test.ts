@@ -36,10 +36,20 @@ test('15급수 전체 5,978자는 중복 없이 두 읽기 능력을 독립적�
   })
   assert.equal(files[13].grade.officialCount, 4918)
   assert.equal(files[13].grade.cumulativeUnique, 4650)
-  assert.equal(characters.filter((c) => c.example).length, 10)
+  const rank = new Map(HANJA_GRADES.map((grade, i) => [grade, i]))
+  const rankOf = new Map(characters.flatMap((c) => [c.glyph, ...(c.glyphAliases ?? [])].map((g) => [g, rank.get(c.readingGrade)!])))
   for (const character of characters) {
     assert.equal(character.id, `u${character.glyph.codePointAt(0)!.toString(16)}`)
-    if (character.example) assert.ok(character.example.word.includes(character.glyph))
+    if (character.example) {
+      // 표준국어대사전에서 고른 2음절 한자어: 목표 글자를 품고, 두 글자 다 그 급수 이하 배정자다
+      const { word, reading, source } = character.example
+      assert.ok([character.glyph, ...(character.glyphAliases ?? [])].some((g) => word.includes(g)), word)
+      assert.equal([...word].length, 2)
+      assert.equal(reading.length, 2)
+      assert.ok([...word].every((g) => rankOf.get(g)! <= rank.get(character.readingGrade)!), `${character.glyph} ${word}`)
+      assert.equal(source.dictionary, '표준국어대사전')
+      assert.ok(source.targetCode > 0 && source.url.includes(String(source.targetCode)))
+    }
     assert.ok(character.strokes > 0 && character.hun && character.eum)
   }
   assert.equal(trackOf('hanja').language, null)
@@ -116,7 +126,9 @@ test('모든 급수와 복수 훈음·호환자·원문 이체자를 검색할 �
   assert.ok(searchHanja(characters, '성 김').some((c) => c.glyph === '金'))
   assert.ok(searchHanja(characters, '金').some((c) => c.glyph === '金'))
   assert.ok(searchHanja(characters, '煕').some((c) => c.glyph === '熙'))
-  assert.ok(searchHanja(characters, '산림').some((c) => c.glyph === '山'))
+  const mountain = characters.find((c) => c.glyph === '山')!
+  assert.ok(searchHanja(characters, mountain.example!.reading).some((c) => c.glyph === '山'))
+  assert.ok(searchHanja(characters, mountain.example!.word).some((c) => c.glyph === '山'))
   assert.equal(searchHanja(characters, '').length, 5978)
 })
 

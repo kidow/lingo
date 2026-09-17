@@ -72,7 +72,7 @@ export function HanjaSearch({ characters }: { characters: HanjaCharacter[] }) {
       ) : (
         <>
           {/* 손잡이 바로 밑이다 — 「한자 찾기」 제목 줄은 sr-only로 내려갔다 (components/peek-drawer.tsx) */}
-          <input aria-label="한자 검색" placeholder="山, 메 산, 산림" value={query} onChange={(event) => go(() => setQuery(event.target.value))} className="mx-5 mt-1 mb-3 min-h-12 shrink-0 rounded-ctrl border border-line bg-surface px-4" />
+          <input aria-label="한자 검색" placeholder="山, 메 산, 남산" value={query} onChange={(event) => go(() => setQuery(event.target.value))} className="mx-5 mt-1 mb-3 min-h-12 shrink-0 rounded-ctrl border border-line bg-surface px-4" />
 
           {/* 급수 안에 있을 때만 나오는 돌아가는 줄. 검색 중에는 지우는 것이 돌아가는 길이라 세우지 않는다 */}
           {!query && grade && (
