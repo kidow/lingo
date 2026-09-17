@@ -268,7 +268,7 @@ Hanzi Writer의 퀴즈는 획마다 정오를 알려 주고 정해진 획을 따
 | `components/feed.tsx`, `components/cards.tsx` | Entry/Language와 기존 Question 종류에 결합 | 공통 피드 유지, 한자 문항 렌더링 분기와 불필요한 lang 의존 분리 |
 | `lib/corpus.ts`, `scripts/split.ts` | 언어별 청크와 출력 폴더 재생성 | 별도 한능검 로더·빌드 스크립트 연결 |
 | `lib/search.ts`, 검색 UI | 외국어 단어 중심 전역 검색 | 한자·훈음·한자어 전용 결과 형식과 명시적 연결 |
-| `app/debug/page.tsx`, `components/debug-*` | 언어·이미지·음성 자료를 기준으로 표시 | 외국어만 검사하는 분기와 한능검 데이터 검증 구분 |
+| `app/debug/page.tsx`, `components/debug-*` | 언어·이미지·음성 자료를 기준으로 표시 | ~~외국어만 검사하는 분기와 한능검 데이터 검증 구분~~ → 별도 `한능검` 탭으로 해결 (`components/debug-hanja.tsx`, 2026-09-18) |
 
 ### 권장 모듈 경계
 

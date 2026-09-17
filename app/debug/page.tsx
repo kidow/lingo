@@ -1,12 +1,16 @@
 import { existsSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { notFound } from 'next/navigation'
+import { DebugHanja, type HanjaGradeRow, type HanjaRadicalSummary } from '@/components/debug-hanja'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
 import { DebugTabs } from '@/components/debug-tabs'
 import { DebugSuspects } from '@/components/debug-suspects'
 import { DebugTrivia, type TriviaNote } from '@/components/debug-trivia'
 import { audioFile, audioPath, entriesFor, imagePath, triviaFor } from '@/lib/content'
 import { examplesOf } from '@/lib/entries'
+import { gradeLabel, HANJA_GRADES } from '@/lib/hanja'
+import { HANJA_CHARACTERS, HANJA_RADICALS } from '@/lib/hanja-corpus'
+import { hanjaStrokeData } from '@/lib/hanja-strokes'
 import { answerOf, asideOf } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import { LANGUAGES, LANGUAGE_TRACK_IDS as TRACK_IDS, trackOf } from '@/lib/track'
@@ -74,6 +78,7 @@ export default function DebugPage() {
         words={<DebugTable rows={rows} tracks={TRACK_IDS} />}
         trivia={<DebugTrivia notes={triviaNotes()} />}
         suspects={<DebugSuspects suspects={triviaSuspects()} />}
+        hanja={<DebugHanja grades={hanjaGrades()} radicals={hanjaRadicals()} />}
       />
     </main>
   )
@@ -163,6 +168,40 @@ function triviaSuspects(): Suspect[] {
       triviaFor(language).map((entry) => entry.trivia),
     ),
   )
+}
+
+/**
+ * 급수 하나 = 한 줄. 예시 한자어와 필순 데이터가 어디까지 찼는지 센다.
+ *
+ * 외국어 표와 달리 파일 시스템을 보지 않는다 — 한자는 그림도 발음도 없고
+ * (docs/hanja-track-design.md §1) 검사할 것이 콘텐츠 안에 다 있다. 필순만
+ * 별도 모듈이 글자별로 승인 여부를 안다 (lib/hanja-strokes.ts).
+ */
+function hanjaGrades(): HanjaGradeRow[] {
+  return HANJA_GRADES.map((grade) => {
+    const characters = HANJA_CHARACTERS.filter((character) => character.readingGrade === grade)
+    const missing = characters.filter((character) => !character.example)
+    return {
+      id: grade,
+      label: gradeLabel(grade),
+      characters: characters.length,
+      examples: characters.length - missing.length,
+      strokes: characters.filter((character) => hanjaStrokeData(character) !== null).length,
+      missing: missing.map((character) => character.glyph).join(''),
+    }
+  })
+}
+
+/** 부수는 급수와 무관하게 한 벌이라 표가 아니라 요약 줄로 낸다 */
+function hanjaRadicals(): HanjaRadicalSummary {
+  const withShuowen = HANJA_RADICALS.filter((radical) => radical.shuowen)
+  return {
+    total: HANJA_RADICALS.length,
+    shuowen: withShuowen.length,
+    translated: withShuowen.filter((radical) => radical.translation).length,
+    named: HANJA_RADICALS.filter((radical) => radical.name).length,
+    without: HANJA_RADICALS.filter((radical) => !radical.shuowen).map((radical) => radical.glyph).join('·'),
+  }
 }
 
 /** 파일이 없으면 null. 있으면 크기를 들고 온다 — 0바이트가 곧 실패작이다 */
