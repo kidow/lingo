@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-17",
+  "verification": "passed-for-this-batch-with-unrelated-working-test-failure",
+  "proofPins": {
+    "compose.ts": "a1dcb1da03ce4d489e2e7e0f0fe28156544c4e1237d014411710949eee0b1cb7",
+    "acquire.mjs": "95ed6b53b06d92c295875bc52896708ffb690a939c7143784af6d4b77b978c9d",
+    "serve.py": "440a5f8f906986498567e0f0c582d206552411b6804986ed2c8c9ffb69d33aac",
+    "prepare.mjs": "2de711c79488abc85fde5126f316365547ac9e7d3366bb554df07f5f331cb8a7",
+    "verify.mjs": "6e3ce38f3f7ff690cba3063144264fc7e276b4f860c4d959452d41a4128c0ea8",
+    "initial-observations.json": "909311d7e8ea4297390ce4b1a45f07a97690af32e4e364ee9a60115996bcf6df",
+    "originals.json": "42abc8fd2d6557f2bd5fdd7eda9be936ed4459adbb622f7741720dcad4e5d0b6",
+    "source-checks.json": "50a44c8a7ba6cd98f7c21f0242d38a635919997188c005d9e343227a9b502625",
+    "observations.json": "ea6d2e24f93db778ddea34b888e607f6a4a9d80e15f5ffa84724414465bb6df8",
+    "corrections.json": "2f5ea4f0f9ae13f9660fb5084ccedb1232f8fef87c8637134ab0b40a7bebbe78",
+    "proposals.json": "e7e8b8b29dbfd348e79dc1dcdd2b9a25ae71fa5a553ed240794872ebe06f2861",
+    "candidate-paths.json": "55ec5ee0ff03b57c65234066b8882beb456f055c1971acb094a2ec606f05936e",
+    "review.json": "3dc216a475e18481acee50d3b76480a025d9489a57a477681a610f018be102ad"
+  },
+  "sourceChecks": {
+    "characters": 3,
+    "dictionaryStages": 47,
+    "licensedComponentStrokes": 47,
+    "components": 10,
+    "correctedPaths": 47,
+    "retainedPaths": 0,
+    "contactPairs": 361,
+    "proprietaryAssetsSaved": 0,
+    "automaticRadicalApproval": false
+  },
+  "browserReview": {
+    "originalDictionaryStages": 47,
+    "originalCandidateStrokes": 47,
+    "correctedStages": 47,
+    "maskRevealFractions": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "finalCumulativeForms": [
+      "埰",
+      "爀",
+      "瀅"
+    ],
+    "elapsedTimeAnimationTest": false
+  },
+  "tests": {
+    "command": "node --test --test-reporter=tap (tracked lib/hanja*.test.ts plus batch24)",
+    "files": 77,
+    "exitCode": 1,
+    "tests": 493,
+    "pass": 492,
+    "fail": 1,
+    "cancelled": 0,
+    "skipped": 0,
+    "failures": [
+      "not ok 483 - 15급수 전체 5,978자는 중복 없이 두 읽기 능력을 독립적으로 가진다\n  ---\n  duration_ms: 11.253792\n  type: 'test'\n  location: '/Users/kidow/Documents/dev/kidow/lingo/lib/hanja.test.ts:23:1'\n  failureType: 'testCodeFailure'\n  error: \"Cannot read properties of undefined (reading 'dictionary')\"\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/kidow/Documents/dev/kidow/lingo/lib/hanja.test.ts:50:27)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1201:25)\n    Test.start (node:internal/test_runner/test:1096:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)\n  ...\n"
+    ],
+    "newBatch": [
+      "# Subtest: three complete reviews reconstruct 47 strokes from 44 licensed source strokes",
+      "ok 213 - three complete reviews reconstruct 47 strokes from 44 licensed source strokes",
+      "# Subtest: three full reviews reconstruct 47 strokes from individually reviewed component candidates",
+      "ok 253 - three full reviews reconstruct 47 strokes from individually reviewed component candidates",
+      "# Subtest: ten licensed components reconstruct the explicit layouts without approving related characters",
+      "ok 254 - ten licensed components reconstruct the explicit layouts without approving related characters",
+      "# Subtest: 埰 follows the dictionary upper sweep and two rightward dots before the connected 木 strokes",
+      "ok 255 - 埰 follows the dictionary upper sweep and two rightward dots before the connected 木 strokes",
+      "# Subtest: 爀 keeps its narrow 火 dot apart and each 赤 hook and free dot in the source order",
+      "ok 256 - 爀 keeps its narrow 火 dot apart and each 赤 hook and free dot in the source order",
+      "# Subtest: 瀅 keeps the lower water bend, two short 火 dots, separate roof and final 玉 dot",
+      "ok 257 - 瀅 keeps the lower water bend, two short 火 dots, separate roof and final 玉 dot",
+      "# Subtest: all 361 source-observed contacts and gaps survive the five-unit playback width",
+      "ok 258 - all 361 source-observed contacts and gaps survive the five-unit playback width"
+    ],
+    "scope": "Tracked Hanja tests plus the new batch test. The only failure is another session’s uncommitted lib/hanja.test.ts source-field assertion. All eight new batch tests passed."
+  },
+  "committedTestRecheck": {
+    "method": "Run committed lib/hanja.test.ts in memory with TypeScript transpilation and original absolute import/file URLs; unrelated working test left untouched",
+    "exitCode": 0,
+    "summary": [
+      "# committed-test-base 9632300d3520b30b2938f82ea1898558515c43e0",
+      "# tests 11",
+      "# pass 11",
+      "# fail 0",
+      "# skipped 0"
+    ],
+    "failures": [],
+    "stderr": ""
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "syntax": [
+    {
+      "file": "acquire.mjs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "file": "prepare.mjs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "file": "verify.mjs",
+      "exitCode": 0,
+      "error": ""
+    },
+    {
+      "file": "serve.py",
+      "exitCode": 0,
+      "error": ""
+    }
+  ],
+  "reconstructionAndPublicationValid": true,
+  "catalogUnchanged": true
+}
