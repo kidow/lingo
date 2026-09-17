@@ -41,9 +41,57 @@ import type { Concept, Language } from '../lib/types.ts'
  */
 const norm = (term: string) => term.replace(/́/g, '').trim().toLowerCase()
 
-type Owner = { slug: string; file: string; lang: Language; via: 'term' | 'also' }
+type Owner = { slug: string; file: string; lang: Language; via: 'term' | 'also'; gloss: string }
 
 const owners = new Map<string, Owner>()
+
+/**
+ * 러시아어 어간 한 집안.
+ *
+ * 임자가 없어도 못 쓰는 자리가 있다. `ввозить`는 `привозить`와 접두만 다르고,
+ * `унижать`는 `принижать`와, `эвакуировать`는 `эвакуироваться`와 어간이 같다.
+ * 배우는 쪽에는 **한 낱말의 다른 꼴**이라 곁말로 붙일 수 없고(검사가 건다),
+ * 개념으로 세우려면 뜻을 처음부터 달리 잡아야 한다.
+ *
+ * 그런데 지금은 배치를 다 쓴 뒤 `apply`가 표기 충돌을 낼 때에야 알아챈다.
+ * 2026-09-18 하루에만 네 번 되돌렸다. 그 조회를 앞으로 옮긴다.
+ *
+ * 어간은 **접두와 어미를 떼어** 잡는다. 언어학적으로 맞는 어근이 아니라 —
+ * `обостряться`는 `бостр`가 된다 — 같은 집안끼리 같은 열쇠로 모이면 된다.
+ * **판정하지 않는다.** 한 집안이라고 찍어 줄 뿐 쓸지 말지는 사람이 정한다.
+ */
+const RU_PREFIX = ['пере', 'пред', 'при', 'про', 'раз', 'рас', 'вы', 'вз', 'вс', 'за', 'из', 'на', 'об', 'от', 'по', 'под', 'пре', 'со', 'в', 'о', 'с', 'у']
+const RU_ENDING = ['оваться', 'иваться', 'ываться', 'аться', 'яться', 'иться', 'еться', 'ться', 'овать', 'ивать', 'ывать', 'ать', 'ять', 'ить', 'еть', 'ыть', 'ся', 'ого', 'ому', 'ый', 'ий', 'ой', 'ая', 'яя', 'ое', 'ее', 'ые', 'ие', 'а', 'о', 'у', 'ы', 'и', 'е', 'я', 'ь']
+
+/**
+ * 접두 하나와 어미 하나를 뗀 열쇠. 석 자 아래로 깎이면 떼지 않는다.
+ *
+ * **접두는 움직씨꼴에서만 뗀다.** 이름씨와 그림씨에서까지 떼면 뿌리의 첫 소리를
+ * 접두로 잘못 보아 남남이 한 집안이 된다 — `угол`(각도)이 `гол`로, `уличный`
+ * (거리의)가 `личный`로, `сообщение`(알림)이 `общение`으로 깎인다. 처음 돌렸을
+ * 때 걸린 쉰 줄 가운데 절반이 그런 자리였다. 움직씨는 접두로 방향이 갈리는 것이
+ * 본래 얼개라(`ввозить`·`привозить`·`вывозить`) 떼는 편이 맞다.
+ */
+export function ruStem(term: string): string {
+  let word = norm(term)
+  if (!/^[а-яё-]+$/.test(word)) return ''
+  const verb = /(ться|ть)$/.test(word)
+  for (const ending of RU_ENDING)
+    if (word.endsWith(ending) && word.length - ending.length >= 3) {
+      word = word.slice(0, -ending.length)
+      break
+    }
+  if (verb)
+    for (const prefix of RU_PREFIX)
+      if (word.startsWith(prefix) && word.length - prefix.length >= 3) {
+        word = word.slice(prefix.length)
+        break
+      }
+  return word.length >= 3 ? word : ''
+}
+
+/** 어간 → 그 어간을 쓰는 러시아어 표기들 */
+const family = new Map<string, Array<{ term: string; owner: Owner }>>()
 
 for (const file of readdirSync('content').filter((f) => f.endsWith('.json')).sort()) {
   const parsed = JSON.parse(readFileSync(join('content', file), 'utf8'))
@@ -52,8 +100,16 @@ for (const file of readdirSync('content').filter((f) => f.endsWith('.json')).sor
     for (const [lang, word] of Object.entries(concept.words ?? {})) {
       const put = (term: string | undefined, via: Owner['via']) => {
         const key = norm(term ?? '')
+        if (!key) return
+        const owner: Owner = { slug: concept.slug, file, lang: lang as Language, via, gloss: concept.meaning_ko ?? '' }
         // 먼저 적힌 것을 임자로 둔다. term이 also보다 먼저 들어오므로 정답이 이긴다
-        if (key && !owners.has(key)) owners.set(key, { slug: concept.slug, file, lang: lang as Language, via })
+        if (!owners.has(key)) owners.set(key, owner)
+        // 에두른 표제어는 여러 낱말이다. 낱말마다 집안에 넣는다
+        if (lang === 'ru')
+          for (const part of key.split(/\s+/)) {
+            const stem = ruStem(part)
+            if (stem) (family.get(stem) ?? family.set(stem, []).get(stem)!).push({ term: key, owner })
+          }
       }
       put(word.term, 'term')
       for (const alt of word.also ?? []) put(alt, 'also')
@@ -69,6 +125,7 @@ for (const file of readdirSync('content').filter((f) => f.endsWith('.json')).sor
  * 그쪽이 편하다.
  */
 const args = process.argv.slice(2)
+
 if (args.length === 0 && process.stdin.isTTY) {
   console.error('낱말을 인자로 주거나 표준 입력으로 흘려보냅니다.\n\n  pnpm claim обида поддержка\n  pbpaste | pnpm claim')
   process.exit(1)
@@ -121,4 +178,34 @@ if (close.length > 0) {
   console.log('')
 }
 
-if (free.length > 0) console.log(`빈자리\n  ${free.join(' ')}`)
+/**
+ * 임자는 없는데 어간이 같은 자리.
+ *
+ * 곁말로는 못 붙는다 — 한 낱말의 다른 꼴이라 검사가 건다. 개념으로 세우려면
+ * 뜻을 그 집안과 갈리게 처음부터 달리 잡아야 한다. 그래서 집안 식구의 **뜻을
+ * 같이 찍는다** — 뜻이 겹치는지는 표기가 아니라 뜻으로만 보인다.
+ *
+ * **곁말이 될 자리는 찍지 않는다. 재어 보고 버렸다.** ros-edu.ru 목록은 낱말마다
+ * 영어 뜻(`word_eng`)을 달아 두므로 그것을 우리 영어 표제어와 맞대면 곁말 후보가
+ * 기계로 나올 듯싶다. 2026-09-18에 B2에 남은 247을 그렇게 돌려 스물넷이 걸렸는데
+ * 쓸 수 있는 것은 둘이었다(`делегат`·`заместитель` → `депутат`). 나머지는 두
+ * 갈래다 — 열넷은 `шёлковый`↔`шёлк`처럼 **어간이 같아 이미 막힌** 자리였고,
+ * 여덟은 영어가 두 뜻을 겹쳐 쓰는 자리였다(`record` 음반/기록, `sign` 서명/조짐,
+ * `fan` 부채/열성팬, `present` 선물/지금). 스물넷을 사람이 보는 품이 둘을 줍는
+ * 값보다 크다. 막힌 자리를 미리 찍는 쪽만 남긴다.
+ */
+const kin = free
+  .map((term) => [term, (family.get(ruStem(term)) ?? []).filter((row) => row.term !== term)] as const)
+  .filter(([, rows]) => rows.length > 0)
+
+if (kin.length > 0) {
+  const width = Math.max(...kin.map(([term]) => term.length))
+  console.log('한 집안 — 어간이 같습니다. 곁말로는 못 붙이고, 뜻을 갈라 잡아야 합니다')
+  for (const [term, rows] of kin)
+    for (const { term: other, owner } of rows)
+      console.log(`  ${term.padEnd(width)}  ${other}  ${owner.gloss}  ${owner.slug}  ${owner.file}`)
+  console.log('')
+}
+
+const clear = free.filter((term) => !kin.some(([kinTerm]) => kinTerm === term))
+if (clear.length > 0) console.log(`빈자리\n  ${clear.join(' ')}`)
