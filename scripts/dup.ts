@@ -53,7 +53,7 @@ const spellKey = (s: string) => s.replace(/́/g, '').trim().toLowerCase()
  * 붙어 움직임만 만드는 말이라 「반칙하다」가 `do(하다)`에, 「손주를 보다」가
  * `see(보다)`에 걸린다. 개념이 겹친 것이 아니라 어미가 같을 뿐이다.
  */
-const LIGHT = new Set(['하다', '되다', '있다', '없다', '같다', '지다', '싶다', '보다', '주다', '받다', '나다', '내다'])
+const LIGHT = new Set(['하다', '되다', '있다', '없다', '같다', '지다', '싶다', '보다', '주다', '받다', '나다', '내다', '이다'])
 
 type Row = { file: string; slug: string; meaning: string }
 type Spell = Row & { lang: string; also: boolean }
