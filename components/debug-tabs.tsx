@@ -19,16 +19,19 @@ import { useState, type ReactNode } from 'react'
  */
 export function DebugTabs({
   words,
+  coverage,
   trivia,
   suspects,
   hanja,
 }: {
   words: ReactNode
+  /** 분모가 밖에 있는 유일한 표 — 시험이 공개한 목록이다 (components/debug-coverage.tsx) */
+  coverage: ReactNode
   trivia: ReactNode
   suspects: ReactNode
   hanja: ReactNode
 }) {
-  const [tab, setTab] = useState<'words' | 'trivia' | 'suspects' | 'hanja'>('words')
+  const [tab, setTab] = useState<'words' | 'coverage' | 'trivia' | 'suspects' | 'hanja'>('words')
 
   return (
     <>
@@ -36,6 +39,7 @@ export function DebugTabs({
         {(
           [
             ['words', '단어'],
+            ['coverage', '커버리지'],
             ['trivia', '상식'],
             ['suspects', '의심 문항'],
             ['hanja', '한능검'],
@@ -55,7 +59,15 @@ export function DebugTabs({
         ))}
       </div>
 
-      {tab === 'words' ? words : tab === 'trivia' ? trivia : tab === 'suspects' ? suspects : hanja}
+      {tab === 'words'
+        ? words
+        : tab === 'coverage'
+          ? coverage
+          : tab === 'trivia'
+            ? trivia
+            : tab === 'suspects'
+              ? suspects
+              : hanja}
     </>
   )
 }

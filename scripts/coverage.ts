@@ -57,6 +57,20 @@ const MISSING = process.argv.includes('--missing')
 const wants = (name: string) => MISSING === 'all' || MISSING === name
 
 /**
+ * 숫자만 한 덩어리로 — `pnpm coverage --json`.
+ *
+ * `/debug`가 같은 수를 보여주는데, 계산을 옮겨 적으면 두 곳이 어긋난다.
+ * 여기가 유일한 셈터이고 화면은 그 결과를 받아 그리기만 한다
+ * (app/debug/page.tsx).
+ *
+ * 사람이 읽는 줄은 이때 안 찍는다. 섞이면 파싱이 깨진다.
+ */
+const JSON_OUT = process.argv.includes('--json')
+const say = (...parts: unknown[]) => {
+  if (!JSON_OUT) console.log(...parts)
+}
+
+/**
  * 우리 글 어딘가에 그 낱말이 **낱말로** 나오는가.
  *
  * 빠진 목록에는 세 종류가 섞여 있다. `остановка`는 표제어로는 없지만
@@ -86,7 +100,7 @@ function showSieved(
 ) {
   const { term, text, none } = sieve(words, haystacks)
   showMissing(`${title} — 정말 없는 것`, none)
-  console.log(
+  say(
     `    표제어 안에 든 것 ${term.length}개 · 예문에만 있는 것 ${text.length}개는 뺐다` +
       ` (빠진 것 전체 ${words.length}개)`,
   )
@@ -94,16 +108,16 @@ function showSieved(
 
 /** 빠진 낱말을 줄바꿈해 찍는다. 목록이 길어도 한 줄에 몰지 않는다 */
 function showMissing(title: string, words: string[]) {
-  console.log(`\n  ${title} — ${words.length}개`)
+  say(`\n  ${title} — ${words.length}개`)
   let row = '   '
   for (const word of words) {
     if (row.length + word.length + 1 > 78) {
-      console.log(row)
+      say(row)
       row = '   '
     }
     row += ` ${word}`
   }
-  if (row.trim()) console.log(row)
+  if (row.trim()) say(row)
 }
 
 const line = (n: number) => '─'.repeat(n)
@@ -191,12 +205,13 @@ async function tsl() {
   const missing = words.filter((w) => !mine.has(w))
   const covered = words.length - missing.length
   const sideHits = words.filter((w) => side.has(w)).length
-  console.log(`\nTSL (TOEIC) — 표제어 목록\n${line(46)}`)
-  console.log(`  ${covered}/${words.length}  ${pct(covered, words.length)}`)
-  console.log(`  남은 것 ${missing.length}개`)
-  console.log(`  실린 것 가운데 ${sideHits}개는 곁말(also)뿐이다 — 카드에 보이지만 퀴즈에는 안 나온다`)
+  say(`\nTSL (TOEIC) — 표제어 목록\n${line(46)}`)
+  say(`  ${covered}/${words.length}  ${pct(covered, words.length)}`)
+  say(`  남은 것 ${missing.length}개`)
+  say(`  실린 것 가운데 ${sideHits}개는 곁말(also)뿐이다 — 카드에 보이지만 퀴즈에는 안 나온다`)
   // CSV가 순위 순이라 이 목록도 빈도 순이다 — 위에서부터 채우면 된다
   if (wants('tsl')) showSieved('TSL 빠진 낱말 (빈도 순)', missing, haystacks('en'))
+  return { covered, total: words.length, sideOnly: sideHits }
 }
 
 function hsk() {
@@ -222,7 +237,7 @@ function hsk() {
       if (side.has(word)) sideHits += 1
     }
 
-  console.log(`\nHSK (2026 대강) — 급별\n${line(46)}`)
+  say(`\nHSK (2026 대강) — 급별\n${line(46)}`)
   let sumTotal = 0
   let sumCovered = 0
   for (const grade of [...total.keys()].sort((a, b) => a - b)) {
@@ -231,9 +246,9 @@ function hsk() {
     sumTotal += t
     sumCovered += c
     const label = grade >= 7 ? '7-9급' : `${grade}급`
-    console.log(`  ${label.padEnd(6)} ${String(c).padStart(5)}/${String(t).padStart(5)}  ${pct(c, t)}`)
+    say(`  ${label.padEnd(6)} ${String(c).padStart(5)}/${String(t).padStart(5)}  ${pct(c, t)}`)
   }
-  console.log(`  ${'합계'.padEnd(5)} ${String(sumCovered).padStart(5)}/${String(sumTotal).padStart(5)}  ${pct(sumCovered, sumTotal)}`)
+  say(`  ${'합계'.padEnd(5)} ${String(sumCovered).padStart(5)}/${String(sumTotal).padStart(5)}  ${pct(sumCovered, sumTotal)}`)
 
   const upTo = (max: number) => {
     let t = 0
@@ -245,11 +260,24 @@ function hsk() {
       }
     return `${c}/${t} (${pct(c, t)})`
   }
-  console.log(`\n  1~3급 ${upTo(3)} · 1~6급 ${upTo(6)}`)
-  console.log(`  그 가운데 ${sideHits}개는 곁말(also)로만 실려 있다 — 카드에 보이지만 퀴즈에는 안 나온다`)
+  say(`\n  1~3급 ${upTo(3)} · 1~6급 ${upTo(6)}`)
+  say(`  그 가운데 ${sideHits}개는 곁말(also)로만 실려 있다 — 카드에 보이지만 퀴즈에는 안 나온다`)
   if (wants('hsk'))
     for (const grade of [...missing.keys()].sort((a, b) => a - b))
       showSieved(`HSK ${grade >= 7 ? '7-9' : grade}급 빠진 낱말`, missing.get(grade) ?? [], haystacks('zh'))
+
+  return {
+    levels: [...total.keys()]
+      .sort((a, b) => a - b)
+      .map((grade) => ({
+        label: grade >= 7 ? '7-9급' : `${grade}급`,
+        covered: covered.get(grade) ?? 0,
+        total: total.get(grade)!,
+      })),
+    covered: sumCovered,
+    total: sumTotal,
+    sideOnly: sideHits,
+  }
 }
 
 /**
@@ -277,7 +305,7 @@ async function torfl() {
     } else (missing.get(grade) ?? missing.set(grade, []).get(grade)!).push(forms[0])
   }
 
-  console.log(`\nTORFL (ТРКИ) — 등급별\n${line(46)}`)
+  say(`\nTORFL (ТРКИ) — 등급별\n${line(46)}`)
   let sumTotal = 0
   let sumCovered = 0
   for (const grade of order) {
@@ -285,9 +313,9 @@ async function torfl() {
     const c = covered.get(grade) ?? 0
     sumTotal += t
     sumCovered += c
-    console.log(`  ${grade.padEnd(6)} ${String(c).padStart(5)}/${String(t).padStart(5)}  ${pct(c, t)}`)
+    say(`  ${grade.padEnd(6)} ${String(c).padStart(5)}/${String(t).padStart(5)}  ${pct(c, t)}`)
   }
-  console.log(`  ${'합계'.padEnd(5)} ${String(sumCovered).padStart(5)}/${String(sumTotal).padStart(5)}  ${pct(sumCovered, sumTotal)}`)
+  say(`  ${'합계'.padEnd(5)} ${String(sumCovered).padStart(5)}/${String(sumTotal).padStart(5)}  ${pct(sumCovered, sumTotal)}`)
 
   const upTo = (max: number) => {
     let t = 0
@@ -298,12 +326,23 @@ async function torfl() {
     }
     return `${c}/${t} (${pct(c, t)})`
   }
-  console.log(`\n  A1~A2 ${upTo(2)} · A1~B1 ${upTo(3)}`)
-  console.log(`  그 가운데 ${sideHits}개는 곁말(also)로만 실려 있다 — 카드에 보이지만 퀴즈에는 안 나온다`)
-  console.log(`  C1·C2는 목록에 없다 — 사이트가 B2까지만 싣는다`)
+  say(`\n  A1~A2 ${upTo(2)} · A1~B1 ${upTo(3)}`)
+  say(`  그 가운데 ${sideHits}개는 곁말(also)로만 실려 있다 — 카드에 보이지만 퀴즈에는 안 나온다`)
+  say(`  C1·C2는 목록에 없다 — 사이트가 B2까지만 싣는다`)
   if (wants('torfl'))
     for (const grade of order)
       showSieved(`TORFL ${grade} 빠진 낱말`, missing.get(grade) ?? [], haystacks('ru'))
+
+  return {
+    levels: order.map((grade) => ({
+      label: grade,
+      covered: covered.get(grade) ?? 0,
+      total: total.get(grade) ?? 0,
+    })),
+    covered: sumCovered,
+    total: sumTotal,
+    sideOnly: sideHits,
+  }
 }
 
 /** 목록이 없는 트랙은 "우리 낱말 중 등급이 붙은 비율"만 낸다 */
@@ -316,7 +355,8 @@ function tagged() {
     ['CEFR (DELF)', 'fr', 'cefr'],
     ['TORFL', 'ru', 'torfl'],
   ]
-  console.log(`\n등급이 붙은 낱말 — 분모가 목록이 아니라 우리 콘텐츠다\n${line(46)}`)
+  say(`\n등급이 붙은 낱말 — 분모가 목록이 아니라 우리 콘텐츠다\n${line(46)}`)
+  const out: Array<{ label: string; has: number; all: number; spread: string }> = []
   for (const [label, lang, key] of rows) {
     let has = 0
     let all = 0
@@ -335,16 +375,18 @@ function tagged() {
       spread.size > 0
         ? `  ${[...spread].sort().map(([g, n]) => `${g} ${n}`).join(' · ')}`
         : ''
-    console.log(
+    say(
       `  ${label.padEnd(12)} ${String(has).padStart(5)}/${String(all).padStart(5)}  ${pct(has, all)}${tail}`,
     )
+    out.push({ label, has, all, spread: tail.trim() })
   }
   // 목록이 없는 것이 아니라 전량을 받을 길이 없다. 무엇이 막는지는 spec.md §7에 적었다
-  console.log(`  ${'DELE'.padEnd(12)} ${'—'.padStart(11)}  전량 목록이 §7 기준을 통과하지 못한다`)
-  console.log(
+  say(`  ${'DELE'.padEnd(12)} ${'—'.padStart(11)}  전량 목록이 §7 기준을 통과하지 못한다`)
+  say(
     `\n  독일어가 낮은 것은 덜 채워서가 아니다 — Goethe 목록이 B1까지라\n` +
       `  B2 이상 낱말은 붙을 자리가 없다 (spec.md §7)`,
   )
+  return out
 }
 
 /**
@@ -371,17 +413,17 @@ function axes() {
   const draw = (rows: typeof counts, scale: number) => {
     for (const [name, count] of rows) {
       const bar = '■'.repeat(Math.round((count / scale) * 18)).padEnd(18, '·')
-      console.log(`  ${name.padEnd(10)} ${bar} ${String(count).padStart(4)}`)
+      say(`  ${name.padEnd(10)} ${bar} ${String(count).padStart(4)}`)
     }
   }
 
   const widest = topics[topics.length - 1]
-  console.log(`\n주제 축 — 적은 순\n${line(46)}`)
+  say(`\n주제 축 — 적은 순\n${line(46)}`)
   draw(topics, widest[1])
-  console.log(`\n  가장 얇은 축이 ${topics[0][0]}(${topics[0][1]}), 두꺼운 축이 ${widest[0]}(${widest[1]})다`)
-  console.log(`  ${'차이'.padEnd(4)} ${(widest[1] / topics[0][1]).toFixed(1)}배 — 다음 배치는 위쪽부터 고른다`)
+  say(`\n  가장 얇은 축이 ${topics[0][0]}(${topics[0][1]}), 두꺼운 축이 ${widest[0]}(${widest[1]})다`)
+  say(`  ${'차이'.padEnd(4)} ${(widest[1] / topics[0][1]).toFixed(1)}배 — 다음 배치는 위쪽부터 고른다`)
 
-  console.log(`\n품사 파일 — 주제와 분모가 다르다\n${line(46)}`)
+  say(`\n품사 파일 — 주제와 분모가 다르다\n${line(46)}`)
   draw(parts, parts[parts.length - 1][1])
 }
 
@@ -389,10 +431,10 @@ function shape() {
   const counts: Record<string, number> = { noun: 0, verb: 0, adjective: 0, scene: 0 }
   for (const concept of concepts) counts[concept.category] += 1
   const all = concepts.length
-  console.log(`\n콘텐츠 구성\n${line(46)}`)
-  console.log(`  개념 ${all}개 · 낱말 ${all * 7}개(7언어)`)
+  say(`\n콘텐츠 구성\n${line(46)}`)
+  say(`  개념 ${all}개 · 낱말 ${all * 7}개(7언어)`)
   for (const [key, value] of Object.entries(counts))
-    console.log(`  ${key.padEnd(10)} ${String(value).padStart(5)}  ${pct(value, all)}`)
+    say(`  ${key.padEnd(10)} ${String(value).padStart(5)}  ${pct(value, all)}`)
   sceneLine(counts.scene, all)
 }
 
@@ -411,18 +453,16 @@ function shape() {
 function sceneLine(scene: number, all: number) {
   const need = Math.ceil((0.1 * all - scene) / 0.9)
   if (need > 0) {
-    console.log(`\n  10%까지 상황 표현 ${need}개 — N = (0.1 × 전체 − 상황) / 0.9`)
+    say(`\n  10%까지 상황 표현 ${need}개 — N = (0.1 × 전체 − 상황) / 0.9`)
     return
   }
   const slack = Math.floor(scene / 0.1) - all
-  console.log(`\n  10% 유지 중 — 다른 개념 ${slack}개가 더 들어오면 선이 깨진다`)
-  console.log(`  그 뒤로는 다른 개념 100개마다 상황 표현 12개가 필요하다`)
+  say(`\n  10% 유지 중 — 다른 개념 ${slack}개가 더 들어오면 선이 깨진다`)
+  say(`  그 뒤로는 다른 개념 100개마다 상황 표현 12개가 필요하다`)
 }
 
 shape()
 axes()
-await tsl()
-hsk()
-await torfl()
-tagged()
-console.log('')
+const result = { tsl: await tsl(), hsk: hsk(), torfl: await torfl(), tagged: tagged() }
+if (JSON_OUT) console.log(JSON.stringify(result))
+else console.log('')

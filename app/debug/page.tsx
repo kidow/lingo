@@ -1,7 +1,9 @@
+import { execFileSync } from 'node:child_process'
 import { existsSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { notFound } from 'next/navigation'
 import { DebugHanja, type HanjaGradeRow, type HanjaRadicalSummary } from '@/components/debug-hanja'
+import { DebugCoverage, type CoverageData } from '@/components/debug-coverage'
 import { DebugTable, type DebugRow } from '@/components/debug-table'
 import { DebugTabs } from '@/components/debug-tabs'
 import { DebugSuspects } from '@/components/debug-suspects'
@@ -76,12 +78,39 @@ export default function DebugPage() {
 
       <DebugTabs
         words={<DebugTable rows={rows} tracks={TRACK_IDS} />}
+        coverage={<DebugCoverage data={coverage()} />}
         trivia={<DebugTrivia notes={triviaNotes()} />}
         suspects={<DebugSuspects suspects={triviaSuspects()} />}
         hanja={<DebugHanja grades={hanjaGrades()} radicals={hanjaRadicals()} />}
       />
     </main>
   )
+}
+
+/**
+ * 시험 목록 대비 우리 위치. (scripts/coverage.ts)
+ *
+ * **셈을 옮겨 적지 않는다.** 그 스크립트가 유일한 셈터이고 여기서는 `--json`을
+ * 받아 그리기만 한다 — 두 곳에서 세면 반드시 어긋난다. 한 번 도는 데 0.9초고,
+ * 이 화면은 어차피 6만 줄을 fs로 훑고 있다.
+ *
+ * TSL 목록을 원격에서 받으므로 **네트워크가 없으면 못 센다.** 그때는 그 탭만
+ * 비고 나머지 표는 그대로 열린다 — 개발 서버 전용 화면이 커버리지 하나 때문에
+ * 통째로 죽으면 안 된다.
+ */
+function coverage(): CoverageData | null {
+  try {
+    const out = execFileSync('node', ['scripts/coverage.ts', '--json'], {
+      encoding: 'utf8',
+      // 사람이 읽는 줄은 `--json`이 이미 막지만, 스크립트가 경고를 흘리면
+      // 마지막 줄만 JSON이다
+      maxBuffer: 16 * 1024 * 1024,
+    })
+    const last = out.trim().split('\n').pop() ?? ''
+    return JSON.parse(last) as CoverageData
+  } catch {
+    return null
+  }
 }
 
 /**
