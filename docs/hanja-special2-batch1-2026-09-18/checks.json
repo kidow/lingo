@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 643,
+  "approvedCharacters": 50,
+  "approvedStrokes": 643,
+  "initiallyMatched": 38,
+  "correctedCharacters": 12,
+  "reorderedCharacters": 8,
+  "locallyCorrectedPaths": 5,
+  "heldCharacters": 0,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 11,
+    "flaggedStrokes": 19,
+    "correctedFromFlags": 11,
+    "retainedAfterInspection": [
+      "舡 6"
+    ]
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 505,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 2402,
+      "remaining": 3576,
+      "percent": 40.2,
+      "totalStrokes": 74558,
+      "appliedStrokes": 26988
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 50,
+      "remaining": 1100,
+      "percent": 4.3,
+      "totalStrokes": 15002,
+      "appliedStrokes": 643
+    }
+  }
+}
