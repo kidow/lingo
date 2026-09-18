@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 667,
+  "approvedCharacters": 50,
+  "approvedStrokes": 667,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 43,
+  "correctedCharacters": 7,
+  "reorderedCharacters": 4,
+  "locallyCorrectedPaths": 5,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 7,
+    "flaggedStrokes": 13,
+    "correctedFromFlags": 7,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 20,
+    "range": "45° to 60°",
+    "note": "Short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 41,
+    "Ja": 9,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "譚"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 587,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3357,
+      "remaining": 2621,
+      "percent": 56.2,
+      "totalStrokes": 74558,
+      "appliedStrokes": 39300
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 201,
+      "remaining": 944,
+      "percent": 17.6,
+      "totalStrokes": 14898,
+      "appliedStrokes": 2565
+    }
+  }
+}
