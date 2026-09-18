@@ -169,9 +169,10 @@ function siblings(term: string): string[] {
   } else if (term.endsWith('й')) add(term.slice(0, -1) + 'и')
   else if (term.endsWith('а')) add(term.slice(0, -1) + (HUSH.test(term.slice(0, -1)) ? 'и' : 'ы'))
   else if (/[ыи]$/u.test(term)) {
-    // 겹수 → 홑수. 어느 꼴이 맞는지는 알 수 없으니 셋을 다 둔다
+    // 겹수 → 홑수. 어느 꼴이 맞는지는 알 수 없으니 넷을 다 둔다.
+    // `-ок`은 겹수에서 통째로 빠지는 자리다 — `цветок`→`цветы`
     const stem = term.slice(0, -1)
-    add(stem, stem + 'ь', stem + 'а')
+    add(stem, stem + 'ь', stem + 'а', stem + 'ок')
   }
 
   return [...new Set(out)].filter((x) => x !== term)
