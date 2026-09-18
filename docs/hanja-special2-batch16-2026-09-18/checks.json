@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 647,
+  "approvedCharacters": 50,
+  "approvedStrokes": 647,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 32,
+  "correctedCharacters": 18,
+  "reorderedCharacters": 11,
+  "locallyCorrectedPaths": 12,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 16,
+    "flaggedStrokes": 32,
+    "correctedFromFlags": 16,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": []
+  },
+  "orderOnlyCorrections": {
+    "glyphs": ["浹", "夾", "驍"],
+    "note": "Same stroke directions at every index, so the probe stayed silent; the reorders (small 人 before 大 in 夾, inner bars before the middle vertical in 馬) were found in the stage-by-stage visual review and confirmed against endpoint coordinates."
+  },
+  "subThresholdSlants": {
+    "count": 10,
+    "range": "45° to 60°",
+    "note": "Short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in batches 1 to 15. The left 火 dot of 熒 (stroke 1, 52°) is also retained below threshold while its flagged siblings (5, 11) were mirrored."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "莢",
+      "豁"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 567,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3146,
+      "remaining": 2832,
+      "percent": 52.6,
+      "totalStrokes": 74558,
+      "appliedStrokes": 36603
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 794,
+      "remaining": 356,
+      "percent": 69,
+      "totalStrokes": 15002,
+      "appliedStrokes": 10258
+    }
+  }
+}
