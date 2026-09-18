@@ -14,6 +14,8 @@
  *   .cache/flelex-fr.tsv    FLELex/Beacco 원본
  *   .cache/goethe-{A1,A2,B1}.pdf
  *   .cache/torfl.json       ros-edu.ru에서 긁어 모은 줄
+ *   .cache/Unihan.zip · tocfl-8000.zip · naer-14452.xlsx
+ *   .cache/moe-concised.zip · moe-revised.zip   번체 판정에 쓰는 공식 자료 (scripts/tocfl.ts)
  *
  * `.cache/`는 커밋하지 않는다(.gitignore). 결과는 content/에 들어간다.
  *

@@ -36,11 +36,44 @@ import type { Concept, Example } from '../lib/types.ts'
 
 const UA = { 'User-Agent': 'lingo-content-tool/1.0 (+https://github.com/kidow/lingo)' }
 
-async function fetchBuffer(url: string): Promise<Buffer> {
-  const res = await fetch(url, { headers: UA })
+/**
+ * 통짜 파일 하나를 받는다. **끊기와 한 번 다시 걸기가 붙어 있다.**
+ *
+ * 2026-09-18에 두 회차 연속으로 이 자리에서 멎었다. 여섯 곳 가운데 하나가
+ * 응답하지 않으면 `fetch`가 하염없이 기다린다 — CPU 0%로 스무 분을 서 있었고,
+ * 사람이 프로세스를 죽여야 다음으로 갔다. 죽이고 똑같이 다시 걸면 한 번에
+ * 끝났으므로, 막힌 것이 아니라 **한 소켓이 응답을 안 준 것**이다.
+ *
+ * 그러니 기다리지 않는다. 두 자리를 끊는다 — 첫 응답까지, 그리고 몸통을
+ * 다 받을 때까지. 큰 파일이 수십 MB라 넉넉히 준다. 한 번은 다시 걸어 본다.
+ */
+const FETCH_TIMEOUT_MS = 90_000
+
+async function fetchOnce(url: string): Promise<Buffer> {
+  const res = await fetch(url, { headers: UA, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) })
   if (!res.ok) throw new Error(`${res.status} ${url}`)
   return Buffer.from(await res.arrayBuffer())
 }
+
+async function fetchBuffer(url: string): Promise<Buffer> {
+  try {
+    return await fetchOnce(url)
+  } catch (error) {
+    console.log(`  다시 겁니다 — ${(error as Error).message}`)
+    return await fetchOnce(url)
+  }
+}
+
+/**
+ * 받은 파일을 `.cache/`에 둔다 (scripts/cache.ts).
+ *
+ * 이 여섯은 관청과 유니코드가 내놓는 확정판이라 해 단위로나 바뀐다. 그런데
+ * 배치를 돌 때마다 수십 MB를 다시 받고 있었다 — 한 회차에 2분이고, 그것이
+ * 멎으면 스무 분이다. 목록 캐시와 같은 자리에 같은 규칙으로 둔다.
+ *
+ * 목록이 갱신됐을 때는 `--refresh`를 준다 — 캐시를 무시하고 다시 받는다.
+ */
+const cachedFetch = (name: string, url: string) => cachedBytes(name, () => fetchBuffer(url))
 
 /* ── zip · xlsx ──────────────────────────────────────────────────────
  *
@@ -135,7 +168,7 @@ const TOCFL_LEVELS: { level: TocflLevel; sheet: number; column: 'A' | 'B' }[] = 
 
 /** Unihan 글자 하나 → 번체 후보 목록. 후보가 없으면(이미 번체거나 무관자) 그 글자 자신 */
 async function traditionalVariants(): Promise<Map<string, string[]>> {
-  const zip = openZip(await fetchBuffer(UNIHAN_ZIP_URL))
+  const zip = openZip(await cachedFetch('Unihan.zip', UNIHAN_ZIP_URL))
   const text = zip.get('Unihan_Variants.txt').toString('utf8')
   const table = new Map<string, string[]>()
   for (const line of text.split('\n')) {
@@ -152,7 +185,7 @@ async function traditionalVariants(): Promise<Map<string, string[]>> {
 
 /** 八千詞表. 표제어(번체) → TOCFL 등급 + 표제어 집합(후보 검증용) */
 async function tocflWordList(): Promise<{ levelOf: Map<string, TocflLevel>; headwords: Set<string> }> {
-  const outer = openZip(await fetchBuffer(TOCFL_ZIP_URL))
+  const outer = openZip(await cachedFetch('tocfl-8000.zip', TOCFL_ZIP_URL))
   // 폰트 4개와 xlsx 하나가 中文 폴더 이름 아래 있다. 정확한 폴더명을 하드코딩하지 않고 찾는다
   const inner = openZip(outer.get(outer.find(/\.xlsx$/)))
   const ss = sharedStringsOf(inner)
@@ -176,7 +209,7 @@ async function tocflWordList(): Promise<{ levelOf: Map<string, TocflLevel>; head
 
 /** 三等七級詞語表. 표제어(번체) 집합만 쓴다 — 후보 검증용 */
 async function naerHeadwords(): Promise<Set<string>> {
-  const zip = openZip(await fetchBuffer(NAER_XLSX_URL))
+  const zip = openZip(await cachedFetch('naer-14452.xlsx', NAER_XLSX_URL))
   const ss = sharedStringsOf(zip)
   const rows = xlsxSheet(zip, 'xl/worksheets/sheet1.xml', ss).slice(1)
   return new Set(rows.map((r) => (r.B ?? '').trim()).filter(Boolean))
@@ -184,7 +217,7 @@ async function naerHeadwords(): Promise<Set<string>> {
 
 /** 簡編本. 표제어(번체) 집합. zip 안에 xlsx 하나뿐이다 */
 async function concisedHeadwords(): Promise<Set<string>> {
-  const outer = openZip(await fetchBuffer(CONCISED_ZIP_URL))
+  const outer = openZip(await cachedFetch('moe-concised.zip', CONCISED_ZIP_URL))
   const inner = openZip(outer.get(outer.find(/\.xlsx$/)))
   const ss = sharedStringsOf(inner)
   const rows = xlsxSheet(inner, 'xl/worksheets/sheet1.xml', ss).slice(1)
@@ -193,7 +226,7 @@ async function concisedHeadwords(): Promise<Set<string>> {
 
 /** 重編修訂本. 표제어(번체) 집합. 후보가 갈릴 때 최장 일치 분절에 쓴다 */
 async function revisedHeadwords(): Promise<Set<string>> {
-  const outer = openZip(await fetchBuffer(REVISED_ZIP_URL))
+  const outer = openZip(await cachedFetch('moe-revised.zip', REVISED_ZIP_URL))
   const inner = openZip(outer.get(outer.find(/^dict_revised.*\.xlsx$/)))
   const ss = sharedStringsOf(inner)
   const rows = xlsxSheet(inner, 'xl/worksheets/sheet1.xml', ss).slice(1)
@@ -212,7 +245,8 @@ async function crossStraitTable(): Promise<Map<string, string>> {
   const table = new Map<string, string>()
   for (const group of groups) {
     const url = CROSS_STRAIT_URL.replace('{SN}', encodeURIComponent(group))
-    const html = await (await fetch(url, { headers: UA })).text()
+    // 스물여덟 번을 도는 자리다. 한 묶음이 멎으면 전체가 멎으므로 같은 끊기를 쓴다
+    const html = (await fetchBuffer(url)).toString('utf8')
     const body = html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')
     // "臺灣語詞 大陸語詞" 다음부터 "1/1" 앞까지가 표다. 줄마다 注音 · 대만어 · 대륙어 세 토막이다
     const start = body.indexOf('臺灣語詞 大陸語詞')
