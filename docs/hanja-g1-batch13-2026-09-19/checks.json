@@ -1,0 +1,84 @@
+{
+  "date": "2026-09-19",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 614,
+  "approvedCharacters": 46,
+  "approvedStrokes": 556,
+  "heldCharacters": 4,
+  "heldGlyphs": [
+    "揄",
+    "癒",
+    "諭",
+    "愉"
+  ],
+  "initiallyMatched": 38,
+  "correctedCharacters": 8,
+  "reorderedCharacters": 6,
+  "locallyCorrectedPaths": 3,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 9,
+    "flaggedStrokes": 16,
+    "correctedFromFlags": 8,
+    "heldFromFlags": 1,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "揄 9·10 are the 兪 巜·刂 form difference itself, so the glyph is held rather than corrected; 癒·諭·愉 share the form difference without crossing the threshold and are held on the sheet."
+  },
+  "subThresholdSlants": {
+    "count": 16,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 16 rows, none corrected",
+    "note": "Seven rows sit in the held 癒·諭·愉; one (饒 5) is a pre-reorder misalignment resolved by the 飠 reorder; the remaining eight are short dots the dictionary draws vertically while the licensed corpora slant them, including two at exactly 60° (窈1, 宥1). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 41,
+    "Ja": 9,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "No dictionary SVG in this batch uses a translate(x, -y) horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 623,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3798,
+      "remaining": 2180,
+      "percent": 63.5,
+      "totalStrokes": 74558,
+      "appliedStrokes": 45058
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 642,
+      "remaining": 503,
+      "percent": 56.1,
+      "totalStrokes": 14898,
+      "appliedStrokes": 8323
+    }
+  }
+}
