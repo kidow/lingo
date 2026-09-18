@@ -17,30 +17,34 @@
 그 낱말은 문맥 카드가 안 만들어진다. 철자 카드와 듣기 카드는 그대로 나오므로
 **퀴즈가 깨지지는 않는다** — 카드 한 갈래가 조용히 빠질 뿐이다.
 
-## 카드가 아예 안 나오는 일곱
+## 카드가 아예 안 나오는 일곱 — 여섯을 치웠고 하나 남는다
 
 두 예문이 **둘 다** 못 뚫는 자리다.
 
 | 낱말 | 표제형 | 예문이 쓰는 꼴 |
 | --- | --- | --- |
 | `action/cut-with-scissors` ja | `はさみできる` | `はさみで切る` — 읽기는 가나인데 예문은 한자로 적었다 |
-| `quality/left-side` de | `link` | `der linke` · `ein linkes` |
-| `quality/right-side` de | `recht` | `der rechte` · `ein rechtes` |
-| `quality/favourite` de | `liebst` | `die liebste` |
-| `quality/former` de | `ehemalig` | `der ehemalige` |
-| `quality/evening-time` de | `abendlich` | `die abendliche` |
-| `quality/highest` de | `höchst` | `der höchste` |
 
-**독일어 여섯은 한 가지 문제다.** 형용사의 무변화형(`link`·`höchst`)은
-명사 앞에서 늘 어미를 받으므로 **문장에 그 꼴로 설 수 없다.** 예문을 고쳐
-될 일이 아니라 표제형을 정하는 방식의 문제다. 길은 둘이다.
+**독일어 여섯은 한 가지 문제였고 2026-09-19에 끝냈다.** 형용사의 무변화형
+(`link`·`höchst`)은 명사 앞에서 늘 어미를 받으므로 **문장에 그 꼴로 설 수
+없다.** 예문을 고쳐 될 일이 아니라 표제형을 정하는 방식의 문제였다. 길이
+둘이었는데 — 서술 용법으로 바꾸거나, 굴절형 하나로 박거나 — **굴절형으로
+박았다.** 뜻줄이 「왼쪽의」·「저녁의」처럼 죄다 꾸미는 자리라 서술로는 그
+개념이 안 된다.
 
-- 표제형을 **서술 용법**이 되는 자리로 바꾼다 — `Die Tasse ist mir am
-  liebsten.`처럼 어미가 붙지 않는 꼴을 쓰는 낱말로 고르거나,
-- 표제형을 **굴절형 하나**로 박는다(`linke`). 그러면 예문 둘이 다 그 꼴을
-  쓰게 맞춰야 한다.
+| 낱말 | 전 | 후 |
+| --- | --- | --- |
+| `quality/left-side` de | `link` | `linke` |
+| `quality/right-side` de | `recht` | `rechte` |
+| `quality/favourite` de | `liebst` | `liebste` |
+| `quality/former` de | `ehemalig` | `ehemalige` |
+| `quality/evening-time` de | `abendlich` | `abendliche` |
+| `quality/highest` de | `höchst` | `höchste` |
 
-어느 쪽이든 `quality.json`을 만지는 일이라 임자가 정할 몫이다.
+**정관사 뒤에서는 성·수와 무관하게 늘 `-e`다.** 그래서 예문 둘을 다 `der`·
+`die`·`das`로 맞추면 한 꼴로 선다 — 걸린 다섯은 둘째 줄이 `ein linkes`처럼
+부정관사라 `Das linke Scharnier…`로 고쳤다(`favourite`는 이미 둘 다 정관사라
+표제형만 바꿨다). `pnpm check` 경고가 33건에서 **27건**으로 내려갔다.
 
 **프랑스어 생략도 같은 자리를 막는다 (2026-09-17).** `clozeAt`은 아포스트로피를
 «붙어 있는 것»으로 보므로 `l'ordre public`은 못 뚫는다 — `l'`가 뒤에 모음이
@@ -71,8 +75,9 @@ famille`), 하나가 남는다.
 하나는 서술로(`ist nützlich`), 하나는 부가어로(`ein nützliches Werkzeug`)
 쓴 자리다. 카드는 서술 쪽에서 만들어지고, 두 용법을 다 보여주는 편이 낫다.
 
-그러니 이 여섯은 **더 큰 문제의 첫 사례가 아니라 그 자체로 닫힌 목록**이다.
-고치고 나면 이 절을 통째로 지운다.
+그러니 이 여섯은 **더 큰 문제의 첫 사례가 아니라 그 자체로 닫힌 목록**이었다.
+2026-09-19에 여섯을 다 굴절형으로 박았고 새로 걸린 것은 없다. 훑은 기록은
+남긴다 — 다음에 같은 병이 보일 때 «636개를 이미 봤다»가 근거가 된다.
 
 ## 카드는 나오지만 예문 한 줄이 죽은 자리
 
