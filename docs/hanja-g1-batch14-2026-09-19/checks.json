@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-19",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 591,
+  "approvedCharacters": 50,
+  "approvedStrokes": 591,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 34,
+  "correctedCharacters": 16,
+  "reorderedCharacters": 10,
+  "locallyCorrectedPaths": 13,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 13,
+    "flaggedStrokes": 30,
+    "correctedFromFlags": 13,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "爾 was reordered without a flag: its three 冂 strokes all run downward, so the sheet and the endpoint coordinates caught the order difference."
+  },
+  "subThresholdSlants": {
+    "count": 16,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 16 rows, none corrected",
+    "note": "Seven rows (嚼 14, 薔 6, 薔 10, 漿 1, 漿 2, 醬 1, 醬 2) are pre-reorder misalignments resolved by the reorders; the remaining nine are short dots the dictionary draws vertically or flat while the licensed corpora slant them (誼 8, 痍 1, 疵 1, 灼 7, 綽 5, 雀 1, 滓 4, 滓 7, 嫡 4). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 41,
+    "Ja": 9,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "薔"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 627,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3848,
+      "remaining": 2130,
+      "percent": 64.4,
+      "totalStrokes": 74558,
+      "appliedStrokes": 45649
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 692,
+      "remaining": 453,
+      "percent": 60.4,
+      "totalStrokes": 14898,
+      "appliedStrokes": 8914
+    }
+  }
+}
