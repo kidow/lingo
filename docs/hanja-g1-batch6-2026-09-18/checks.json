@@ -1,0 +1,82 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 723,
+  "approvedCharacters": 49,
+  "approvedStrokes": 710,
+  "heldCharacters": 1,
+  "heldGlyphs": [
+    "碌"
+  ],
+  "heldReason": "碌: the dictionary writes the first stroke of 彑 as a vertical that turns right at the bottom and the second as a bar that turns down at the right, while the pinned MM candidate writes the first as a bar that turns down at the right and the second as a short bar. The vertical of the dictionary's first stroke cannot be derived from the candidate bar's own points, so the glyph fails closed. The inventory lists a 13-stroke Ja candidate that a later batch could pin instead.",
+  "initiallyMatched": 34,
+  "correctedCharacters": 15,
+  "reorderedCharacters": 9,
+  "locallyCorrectedPaths": 15,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 16,
+    "flaggedStrokes": 38,
+    "correctedFromFlags": 15,
+    "heldFromFlags": 1,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 17,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°, none of them corrected",
+    "note": "Mostly short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in the earlier batches. The right 火 dot of 撈 (57°) and the left 糸 dot of 彎 (60°) lean the same way as their corrected partners but stay under the threshold."
+  },
+  "candidateCorpora": {
+    "MM": 45,
+    "Ja": 5,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "躪"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 595,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3454,
+      "remaining": 2524,
+      "percent": 57.8,
+      "totalStrokes": 74558,
+      "appliedStrokes": 40726
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 298,
+      "remaining": 847,
+      "percent": 26,
+      "totalStrokes": 14898,
+      "appliedStrokes": 3991
+    }
+  }
+}
