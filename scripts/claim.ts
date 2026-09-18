@@ -43,7 +43,22 @@ const norm = (term: string) => term.replace(/́/g, '').trim().toLowerCase()
 
 type Owner = { slug: string; file: string; lang: Language; via: 'term' | 'also'; gloss: string }
 
-const owners = new Map<string, Owner>()
+/**
+ * 표기 하나에 임자가 **여럿**일 수 있다.
+ *
+ * 처음에는 하나만 두고 «먼저 적힌 것이 이긴다»고 했는데, 그러면 같은 표기를
+ * 쓰는 나머지 언어가 안 보인다. 2026-09-18에 그 자리에서 세 번 되돌렸다 —
+ * `interminable`은 「es endless」라고만 찍혔는데 실은 그 개념의 **프랑스어**
+ * 표기였고, `流通`은 「zh」만 찍혔는데 **일본어** distribution이었고, `管理`는
+ * 「ja」만 찍혔는데 **중국어** 표기이기도 했다. 셋 다 배치를 다 쓴 뒤 apply가
+ * 막았고, 셋 다 그 회차를 한 번씩 더 돌렸다.
+ *
+ * 여럿을 다 들고 다 찍는다. 줄이 길어지는 만큼 되돌리는 회차가 준다.
+ */
+const owners = new Map<string, Owner[]>()
+
+/** 그 표기의 임자들. 없으면 빈 배열 */
+const ownersOf = (key: string): Owner[] => owners.get(key) ?? []
 
 /**
  * 러시아어 어간 한 집안.
@@ -205,8 +220,11 @@ for (const file of readdirSync('content').filter((f) => f.endsWith('.json')).sor
         const key = norm(term ?? '')
         if (!key) return
         const owner: Owner = { slug: concept.slug, file, lang: lang as Language, via, gloss: concept.meaning_ko ?? '' }
-        // 먼저 적힌 것을 임자로 둔다. term이 also보다 먼저 들어오므로 정답이 이긴다
-        if (!owners.has(key)) owners.set(key, owner)
+        // 같은 언어에서 같은 표기가 두 번 오면 먼저 적힌 것만 둔다 — 정답이 곁말보다 먼저 들어온다.
+        // 언어가 다르면 둘 다 둔다. `fiable`은 스페인어이자 프랑스어고, `perspective`는 영어이자 프랑스어다
+        const rows = owners.get(key) ?? []
+        if (!rows.some((r) => r.lang === owner.lang)) rows.push(owner)
+        owners.set(key, rows)
         // 러시아어는 에두른 표제어가 여러 낱말이라 낱말마다 집안에 넣는다.
         // **영어는 홑낱말만 넣는다.** 파생은 낱말 하나에서 자라는데, 구를 쪼개
         // 넣으면 `send`가 든 상황 표현 열일곱 줄이 `sender` 하나에 딸려 나온다.
@@ -246,7 +264,7 @@ const candidates = [...new Set(raw.map(norm).filter((t) => /\p{L}/u.test(t)))]
  * 그중 한 낱말이 이미 개념이다(`sweet cherry` ↔ `cherry`). 어느 쪽도 확정이
  * 아니므로 임자와 섞지 않는다 — 사람이 보고 정할 몫이다.
  */
-function near(term: string): Owner | null {
+function near(term: string): Owner[] {
   const forms = [
     term.replace(/ies$/, 'y'),
     term.replace(/(ch|sh|s|x|z)es$/, '$1'),
@@ -273,17 +291,20 @@ function near(term: string): Owner | null {
           `${term.slice(0, i)}-${term.slice(i)}`,
         ])),
   ]
-  for (const form of forms) if (form !== term && owners.has(form)) return owners.get(form)!
-  return null
+  for (const form of forms) if (form !== term && owners.has(form)) return ownersOf(form)
+  return []
 }
 
 const taken = candidates.filter((t) => owners.has(t))
 const rest = candidates.filter((t) => !owners.has(t))
-const close = rest.map((t) => [t, near(t)] as const).filter((row): row is [string, Owner] => row[1] !== null)
-const free = rest.filter((t) => near(t) === null)
+const close = rest.map((t) => [t, near(t)] as const).filter(([, rows]) => rows.length > 0)
+const free = rest.filter((t) => near(t).length === 0)
 
-const line = (term: string, owner: Owner, width: number) =>
-  `  ${term.padEnd(width)}  ${owner.lang}  ${owner.slug}${owner.via === 'also' ? ' (also)' : ''}  ${owner.file}`
+/** 임자가 여럿이면 한 줄에 다 적는다 — `fiable  es reliable · fr reliable` */
+const line = (term: string, rows: Owner[], width: number) =>
+  `  ${term.padEnd(width)}  ` +
+  rows.map((o) => `${o.lang} ${o.slug}${o.via === 'also' ? ' (also)' : ''}`).join(' · ') +
+  `  ${rows[0].file}`
 
 console.log(
   `후보 ${candidates.length} — 임자 있음 ${taken.length} · 비슷한 것 ${close.length} · 빈자리 ${free.length}\n`,
@@ -291,14 +312,14 @@ console.log(
 
 if (taken.length > 0) {
   const width = Math.max(...taken.map((t) => t.length))
-  for (const term of taken) console.log(line(term, owners.get(term)!, width))
+  for (const term of taken) console.log(line(term, ownersOf(term), width))
   console.log('')
 }
 
 if (close.length > 0) {
   const width = Math.max(...close.map(([term]) => term.length))
   console.log('비슷한 것 — 같은 개념인지 보고 정합니다')
-  for (const [term, owner] of close) console.log(line(term, owner, width))
+  for (const [term, rows] of close) console.log(line(term, rows, width))
   console.log('')
 }
 
