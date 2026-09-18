@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-19",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 701,
+  "approvedCharacters": 50,
+  "approvedStrokes": 701,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 38,
+  "correctedCharacters": 12,
+  "reorderedCharacters": 5,
+  "locallyCorrectedPaths": 10,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 12,
+    "flaggedStrokes": 21,
+    "correctedFromFlags": 12,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": ["鶯1"],
+    "note": "鶯1 measures 60°, at the flag threshold, but the sheet shows the first 火 left dot mirrored exactly like its flagged partner 鶯5, so it was corrected with it."
+  },
+  "subThresholdSlants": {
+    "count": 14,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 15 rows, of which only the mirrored 鶯1 dot was corrected",
+    "note": "The remaining fourteen are short dots the dictionary draws vertically while the licensed corpora slant them, including three at exactly 60° (闇9, 庵1, 裔1). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 41,
+    "Ja": 9,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": ["蘊"],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 619,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3752,
+      "remaining": 2226,
+      "percent": 62.8,
+      "totalStrokes": 74558,
+      "appliedStrokes": 44502
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 596,
+      "remaining": 549,
+      "percent": 52.1,
+      "totalStrokes": 14898,
+      "appliedStrokes": 7767
+    }
+  }
+}
