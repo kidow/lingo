@@ -91,6 +91,30 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
   // 예문을 두지 않았고 그래서 분모에서 뺐다. 지금은 뺄 이유가 없다
   const missingExample = shown.filter((row) => !row.example).length
 
+  /**
+   * 트랙마다 얼마나 찼는가.
+   *
+   * 위의 `Stat` 줄은 **걸러진 것만** 센다. 그래서 트랙별로 보려면 아홉 번을
+   * 눌러야 했고, 어느 트랙이 뒤처졌는지는 아홉 번을 다 누른 사람만 알았다.
+   *
+   * **한 번만 훑는다.** 트랙마다 `rows.filter`를 돌리면 6만 줄을 아홉 번
+   * 지나간다 — 줄을 한 번 지나가며 트랙 칸에 더한다.
+   */
+  const perTrack = useMemo(() => {
+    const tally = new Map(
+      tracks.map((track) => [track, { total: 0, image: 0, audio: 0, example: 0 }]),
+    )
+    for (const row of rows) {
+      const mine = tally.get(row.track)
+      if (!mine) continue
+      mine.total += 1
+      if (row.hasImage) mine.image += 1
+      if (row.audioSize !== null) mine.audio += 1
+      if (row.example) mine.example += 1
+    }
+    return tracks.map((track) => ({ track, ...tally.get(track)! }))
+  }, [rows, tracks])
+
   return (
     <>
       <div className="mb-3 flex shrink-0 flex-wrap items-center gap-1.5">
@@ -126,6 +150,51 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
           bad={missingExample > 0}
         />
       </dl>
+
+      {/*
+        트랙별 진행도. **전체를 볼 때만 선다** — 한 트랙을 고르면 위 `Stat`
+        줄이 이미 그 트랙의 숫자라 같은 말이 두 번 적힌다.
+
+        트랙 이름이 곧 필터 단추다. 뒤처진 자리를 눈으로 찾은 다음 바로
+        그리로 들어가는 것이 이 표를 보는 이유다.
+      */}
+      {filter === ALL && (
+        <div className="mb-4 shrink-0 overflow-x-auto rounded-ctrl border border-line bg-surface">
+          <table className="w-full text-[13px]">
+            <thead>
+              <tr className="border-b border-line text-sub">
+                <th scope="col" className="px-3 py-1.5 text-left font-medium">
+                  트랙
+                </th>
+                {['단어', '이미지', '발음', '예문'].map((label) => (
+                  <th key={label} scope="col" className="px-3 py-1.5 text-right font-medium">
+                    {label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {perTrack.map((row) => (
+                <tr key={row.track} className="border-t border-line first:border-t-0">
+                  <th scope="row" className="px-3 py-1.5 text-left font-medium">
+                    <button
+                      type="button"
+                      onClick={() => setFilter(row.track)}
+                      className="cursor-pointer hover:underline"
+                    >
+                      {TRACKS.find((track) => track.id === row.track)?.label ?? row.track}
+                    </button>
+                  </th>
+                  <td className="px-3 py-1.5 text-right tabular-nums">{row.total}</td>
+                  <Fill done={row.image} total={row.total} />
+                  <Fill done={row.audio} total={row.total} />
+                  <Fill done={row.example} total={row.total} />
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       {/* 좁은 창에서 칸이 짓눌리는 대신 표째로 가로 스크롤한다 */}
       <div
@@ -260,6 +329,24 @@ function Stat({ label, value, bad = false }: { label: string; value: string; bad
       <dt>{label}</dt>
       <dd className={`font-semibold ${bad ? 'text-err' : 'text-ink'}`}>{value}</dd>
     </div>
+  )
+}
+
+/**
+ * 트랙별 표의 한 칸. 다 찼으면 숫자 하나로 줄인다.
+ *
+ * 분모가 트랙마다 같은 줄에 이미 적혀 있어(`단어`) `6188/6188`처럼 쓰면
+ * 같은 수가 한 줄에 세 번 반복된다. **모자란 자리만** 분수로 적으면 눈이
+ * 그리로 먼저 간다 — 이 표를 여는 이유가 그것이다.
+ */
+function Fill({ done, total }: { done: number; total: number }) {
+  const short = total - done
+  return (
+    <td
+      className={`px-3 py-1.5 text-right tabular-nums ${short > 0 ? 'font-semibold text-err' : 'text-sub'}`}
+    >
+      {short > 0 ? `${done}/${total}` : done}
+    </td>
   )
 }
 
