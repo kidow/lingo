@@ -1,0 +1,74 @@
+import assert from 'node:assert/strict'
+import { test } from 'node:test'
+import { whyCapital, whyMissing, whyStuck } from './headword.ts'
+
+/*
+ * 아래 예문은 전부 **실제로 경고가 났던 줄**이다. 2026-09-18부터 열두 회차를
+ * 도는 동안 `pnpm check`가 짚었고, 고친 뒤 커밋에 적어 두었다.
+ */
+
+test('공백만 다른 자리 — ja 표제어 안이 벌어졌다', () => {
+  assert.match(whyMissing('ゆうがたに カーテンを ひく。', 'カーテンをひく', 'ja'), /붙여 쓰세요/)
+})
+
+test('zu가 분리동사 안에 끼었다 — de', () => {
+  const said = whyMissing('Leichter ist es aufzurunden als zu teilen.', 'aufrunden', 'de')
+  assert.match(said, /aufzurunden/)
+  assert.match(said, /화법조동사/)
+})
+
+test('표제어 사이에 다른 말이 끼었다 — de 어순', () => {
+  assert.match(
+    whyMissing('Ohne Notiz wird sich alles überschneiden.', 'sich überschneiden', 'de'),
+    /사이에 다른 말/,
+  )
+})
+
+test('꼴이 바뀐 자리 — 네 언어가 같은 뿌리다', () => {
+  /* de 형용사 어미 */
+  assert.match(whyMissing('Ein routinierter Torwart liest den Schuss früh.', 'routiniert', 'de'), /routinierter/)
+  /* de 격변화 — 표제어의 첫 낱말이 바뀐다 */
+  assert.match(
+    whyMissing('Die Sommer verbrachte man bei der mütterlichen Familie.', 'mütterliche Familie', 'de'),
+    /mütterlichen/,
+  )
+  /* en 동사구의 머리가 활용됐다 */
+  assert.match(whyMissing('Clear varnish stops it laddering the stocking.', 'ladder the stocking', 'en'), /laddering/)
+  /* es 재귀 수동 */
+  assert.match(whyMissing('Nadie discute si se canta el marcador.', 'cantar el marcador', 'es'), /canta/)
+  /* fr 여성형 */
+  assert.match(whyMissing('Une route sinueuse ralentit les camions.', 'sinueux', 'fr'), /sinueuse/)
+})
+
+test('짚을 것이 없으면 아무 말도 안 한다', () => {
+  assert.equal(whyMissing('The cat sat on the mat.', 'bicycle', 'en'), '')
+  /* 어간이 네 글자를 못 넘으면 닮았다고 하지 않는다 — 우연히 걸리는 자리다 */
+  assert.equal(whyMissing('Two cars pass.', 'cat', 'en'), '')
+})
+
+test('대문자 — 문장 첫머리와 명사화를 가른다', () => {
+  assert.match(whyCapital('Housework fills the morning.', 'housework'), /첫머리/)
+  assert.match(whyCapital('Ein wenig Ei reicht zum Garnieren.', 'garnieren'), /zu 부정사/)
+})
+
+test('못 뚫는 자리 — 앞에 붙은 아포스트로피', () => {
+  assert.match(
+    whyStuck("L'étiquette d'entretien est cousue dans la couture.", "étiquette d'entretien"),
+    /아포스트로피/,
+  )
+  assert.equal(whyStuck('Une étiquette d’entretien est cousue.', "étiquette d'entretien"), '')
+})
+
+test('짧은 동사가 통째로 앞머리인 자리 — set↔setting', () => {
+  assert.match(
+    whyMissing('Rain stopped them setting off fireworks.', 'set off fireworks', 'en'),
+    /setting/,
+  )
+})
+
+test('한 낱말만 갈린 자리 — 꼴이 아니라 말이 다르다', () => {
+  assert.match(
+    whyMissing('Er wollte damit niemanden tief verletzen.', 'jemanden tief verletzen', 'de'),
+    /"jemanden"만 예문에 없습니다/,
+  )
+})

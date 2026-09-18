@@ -16,6 +16,7 @@ import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
 import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { LANG } from '../lib/lang.ts'
+import { whyCapital, whyMissing, whyStuck } from '../lib/headword.ts'
 import { clozeAt } from '../lib/quiz.ts'
 import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import { fingerprint } from './levels-stamp.ts'
@@ -135,6 +136,9 @@ function ruPos(word: string) {
 /** 받침이 있으면 «이», 없으면 «가». 이름이 넷뿐이라 규칙 하나면 된다 */
 const subject = (word: string) =>
   ((word.charCodeAt(word.length - 1) - 0xac00) % 28 ? '이' : '가')
+
+/** 짚을 말이 있으면 경고 뒤에 붙인다. 없으면 경고를 그대로 둔다 */
+const hint = (said: string) => (said ? `. ${said}` : '')
 
 /** 언어별 `also` 표기 → 그것을 적은 개념. 다른 개념의 정답과 겹치는지 나중에 본다 */
 const alsoTable = new Map<string, Map<string, string>>()
@@ -485,13 +489,22 @@ for (const file of files) {
              * 보여주고 있다. 고칠 곳도 다르다. 낱말을 바꿀 일이 아니라
              * **문장에서 그 낱말을 첫머리 밖으로 옮길** 일이다.
              */
+            /*
+             * **왜 그런지까지 말한다.** 열두 회차에서 이 경고가 스물여덟 났고
+             * 자리가 다섯뿐이었다 — 어미 · 명사화 · zu 부정사 · 어순 · 축약.
+             * 어디를 고칠지는 lib/headword.ts가 짚는다.
+             */
             warn(
               example.text.toLowerCase().includes(answer.toLowerCase())
-                ? `${where} — ${lang}.${at}이 "${answer}"를 대문자로 씁니다. 뚫을 자리는 대소문자까지 맞아야 합니다 — 낱말이 문장 첫머리에 오지 않게 고치세요`
-                : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다`,
+                ? `${where} — ${lang}.${at}이 "${answer}"를 대문자로 씁니다. 뚫을 자리는 대소문자까지 맞아야 합니다 — ${whyCapital(example.text, answer)}`
+                : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다${hint(whyMissing(example.text, answer, lang))}`,
             )
           else if (clozeAt(example.text, answer, lang as Language) >= 0) clozable.add(`${slug}|${lang}`)
-          else stuck.set(`${slug}|${lang}`, `${where} — ${lang}의 예문에서 "${answer}"를 뚫을 자리가 없습니다`)
+          else
+            stuck.set(
+              `${slug}|${lang}`,
+              `${where} — ${lang}의 예문에서 "${answer}"를 뚫을 자리가 없습니다${hint(whyStuck(example.text, answer))}`,
+            )
         }
         if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
           fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
