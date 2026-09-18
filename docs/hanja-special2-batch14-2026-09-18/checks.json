@@ -1,0 +1,77 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 639,
+  "approvedCharacters": 49,
+  "approvedStrokes": 620,
+  "heldCharacters": 1,
+  "heldGlyphs": [
+    "鯖"
+  ],
+  "heldReason": "The dictionary writes 靑 with the 円 lower part (a short middle vertical) while the pinned MM candidate writes 青 with 月 (an inner bar); a vertical cannot be derived from the bar's own points, so the glyph fails closed. The Ja corpus keeps the 靑 form (瀞 in batch 12).",
+  "initiallyMatched": 37,
+  "correctedCharacters": 12,
+  "reorderedCharacters": 9,
+  "locallyCorrectedPaths": 3,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 13,
+    "flaggedStrokes": 25,
+    "correctedFromFlags": 12,
+    "heldFromFlags": 1,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 12,
+    "range": "45° to 60°",
+    "note": "Short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in batches 1 to 13."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "蹠",
+      "蔥"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 559,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3046,
+      "remaining": 2932,
+      "percent": 51,
+      "totalStrokes": 74558,
+      "appliedStrokes": 35370
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 694,
+      "remaining": 456,
+      "percent": 60.3,
+      "totalStrokes": 15002,
+      "appliedStrokes": 9025
+    }
+  }
+}
