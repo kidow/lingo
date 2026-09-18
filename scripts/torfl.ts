@@ -91,7 +91,91 @@ export function forms(headword: string): string[] {
   return [...out].filter(Boolean)
 }
 
+/**
+ * 목록에 섞인 라틴 글자를 키릴로 되돌린다.
+ *
+ * `cпециализироваться`는 첫 글자만 라틴 `c`다. 눈으로는 안 보이고 우리 표기와
+ * 영영 안 맞는다 — 이미 싣고 있는데도 "빠진 것"으로 센다. 웹으로 받아 온 목록에
+ * 흔한 흠이라, 낱말을 하나씩 고쳐 적지 않고 **모양이 같은 글자만** 되돌린다.
+ *
+ * 키릴이 이미 든 낱말에만 적용한다. 목록에 진짜 라틴 낱말이 실려 있다면
+ * (`e-mail` 같은) 건드리면 안 되기 때문이다.
+ */
+const LOOKALIKE: Record<string, string> = {
+  a: 'а', c: 'с', e: 'е', o: 'о', p: 'р', x: 'х', y: 'у',
+  A: 'А', B: 'В', C: 'С', E: 'Е', H: 'Н', K: 'К', M: 'М', O: 'О', P: 'Р', T: 'Т', X: 'Х',
+}
+function deLatin(term: string): string {
+  if (!/[Ѐ-ӿ]/.test(term)) return term
+  return term.replace(/[a-zA-Z]/g, (ch) => LOOKALIKE[ch] ?? ch)
+}
+
+/**
+ * 낱말이 아닌 줄인가. 앞가지는 표제어가 아니다.
+ *
+ * `анти-`·`взаимо-`·`пра-`는 낱말이 아니라 **앞에 붙이는 조각**이다. 목록은
+ * 사람이 읽는 책이라 이런 줄도 싣지만, 우리 카드에 올릴 자리가 없다. 분모에
+ * 두면 영영 못 채우는 빚이 된다 — 없는 것을 채우지 않으므로(§5) 아예 뺀다.
+ *
+ * 뒤에 붙임표가 오는 줄만이다. `по-русски`처럼 가운데 든 것은 낱말이다.
+ */
+function isPrefixOnly(term: string): boolean {
+  return term.endsWith('-')
+}
+
 export type TorflEntry = { forms: string[]; level: TorflLevel }
+
+/** 쉿소리 뒤에는 `ы`가 아니라 `и`가 온다 — 철자 규칙 */
+const HUSH = /[кгхжшчщ]$/u
+/** `й`는 넣지 않는다 — 겹수가 `трамвайы`가 아니라 `трамваи`고, `ый`로 끝나는 형용사를 자음 끝으로 읽는다 */
+const CONSONANT = /[бвгджзклмнпрстфхцчшщ]$/u
+
+/**
+ * 같은 낱말의 **다른 꼴**을 지어 본다.
+ *
+ * 목록은 낱말을 하나 고르면 한 꼴만 싣는다. 그런데 어느 꼴을 고르는지는
+ * 일정하지 않다 — `орех`는 홑수인데 `близнецы`는 겹수고, `виден`은 짧은꼴인데
+ * `открытый`는 긴꼴이다. 우리가 다른 꼴로 싣고 있으면 **이미 가르치고 있는데도**
+ * 빠진 것으로 센다. 2026-09-18에 그렇게 센 것이 일곱이었다.
+ *
+ * 뜻을 짐작하는 것이 아니라 **철자를 굴리는** 일이다. 그래서 지어낸 꼴은
+ * 등급을 찍는 쪽(`torflLevels`)에는 주지 않는다. 세는 쪽만 쓴다 — 닮은 표기에
+ * 등급이 잘못 붙는 것이 못 세는 것보다 나쁘다.
+ *
+ * 지은 꼴이 **목록의 다른 표제어와 같으면 버린다.** 그 줄과 이 줄을 한 낱말로
+ * 뭉개는 셈이라, `её`를 `ее`로 접는 것과 같은 잘못이 된다.
+ */
+function siblings(term: string): string[] {
+  const out: string[] = []
+  const add = (...xs: string[]) => out.push(...xs.filter((x) => x.length >= 4))
+
+  // ё를 е로 적는 것은 러시아어에서 흔하다. 목록의 `неопредёленный`처럼 ё가
+  // 엉뚱한 자리에 찍힌 오타도 이 접기로 함께 지워진다
+  if (term.includes('ё')) add(term.replace(/ё/g, 'е'))
+
+  if (/(ый|ий|ой)$/u.test(term)) {
+    // 형용사 긴꼴 → 짧은꼴. `открытый`→`открыт`, `видный`→`виден`
+    const stem = term.slice(0, -2)
+    add(stem)
+    // 짧은꼴에서 자음이 겹치면 사이에 `е`가 든다
+    const filled = stem.replace(/([бвгджзклмнпрстфхцчшщ])([нкл])$/u, '$1е$2')
+    if (filled !== stem) add(filled)
+  } else if (CONSONANT.test(term)) {
+    // 홑수 → 겹수, 그리고 형용사 짧은꼴 → 긴꼴. 자음 끝은 둘 다 될 수 있다
+    add(term + (HUSH.test(term) ? 'и' : 'ы'), term + 'ый')
+    // 짧은꼴의 사이 모음은 긴꼴에서 빠진다 — `виден`→`видный`
+    const dropped = term.replace(/([бвгджзклмнпрстфхцчшщ])[ео]([нкл])$/u, '$1$2')
+    if (dropped !== term) add(dropped + 'ый', dropped + 'ий')
+  } else if (term.endsWith('й')) add(term.slice(0, -1) + 'и')
+  else if (term.endsWith('а')) add(term.slice(0, -1) + (HUSH.test(term.slice(0, -1)) ? 'и' : 'ы'))
+  else if (/[ыи]$/u.test(term)) {
+    // 겹수 → 홑수. 어느 꼴이 맞는지는 알 수 없으니 셋을 다 둔다
+    const stem = term.slice(0, -1)
+    add(stem, stem + 'ь', stem + 'а')
+  }
+
+  return [...new Set(out)].filter((x) => x !== term)
+}
 
 /**
  * 목록 한 줄이 한 항목이다. 갈래는 그 안에 담는다.
@@ -106,11 +190,18 @@ export async function torflEntries(): Promise<TorflEntry[]> {
   for (const row of rows) {
     const lowest = lowestGrade(row)
     if (!lowest || !row.word_rus) continue
-    const headword = bare(row.word_rus)
+    const headword = deLatin(bare(row.word_rus))
+    if (isPrefixOnly(headword)) continue
     if (!rank.has(headword) || lowest < rank.get(headword)!) {
       rank.set(headword, lowest)
       entries.set(headword, { forms: forms(headword), level: GRADES[lowest] })
     }
+  }
+  // 지은 꼴이 다른 줄의 표제어면 두 줄을 한 낱말로 뭉갠다. 그런 것은 버린다
+  const headwords = new Set(entries.keys())
+  for (const entry of entries.values()) {
+    const grown = entry.forms.flatMap(siblings).filter((x) => !headwords.has(x))
+    entry.forms = [...new Set([...entry.forms, ...grown])]
   }
   return [...entries.values()]
 }
@@ -156,8 +247,11 @@ export async function torflLevels(): Promise<Map<string, TorflLevel>> {
     if (!row.word_rus) continue
     const lowest = lowestGrade(row)
     if (!lowest) continue
-    // 한 줄이 여러 모양을 담는다. 갈래마다 열쇠를 둔다 (`forms`)
-    for (const term of forms(bare(row.word_rus))) {
+    const headword = deLatin(bare(row.word_rus))
+    if (isPrefixOnly(headword)) continue
+    // 한 줄이 여러 모양을 담는다. 갈래마다 열쇠를 둔다 (`forms`).
+    // 지어낸 꼴(`siblings`)은 여기 안 쓴다 — 닮은 표기에 등급을 잘못 붙인다
+    for (const term of forms(headword)) {
       // 같은 표기가 뜻마다 따로 실린다. 낮은 등급이 이긴다 — 그 낱말을 처음 만나는 때다
       if (!rank.has(term) || lowest < rank.get(term)!) {
         rank.set(term, lowest)
