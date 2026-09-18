@@ -103,6 +103,43 @@ export function ruStem(term: string): string {
   return word.length >= 3 ? word : ''
 }
 
+/**
+ * 한 낱말이 내놓는 어간 열쇠들.
+ *
+ * 어미를 하나만 떼면 **그림씨와 이름씨가 갈린다.** `гармоничный`는 `гармонич`가
+ * 되고 `гармония`는 `гармони`가 되어 남남이 된다 — 뒤에 붙는 것이 어미 하나가
+ * 아니라 `-ич-`·`-ов-`·`-н-` 같은 파생 조각이기 때문이다. 조각을 다 알아내는
+ * 대신 **끝 한 글자를 깎은 열쇠를 하나 더 낸다.** 둘 중 하나라도 겹치면 한 집안이다.
+ *
+ * **두 글자까지 깎는다.** 2026-09-19에 B2에 남은 227로 재었다.
+ *
+ * | 열쇠 | 잡히는 낱말 | 줄 |
+ * | --- | --- | --- |
+ * | 어간만 | 40 | 195 |
+ * | 한 글자 깎기 | 56 | 238 |
+ * | 두 글자 깎기 | 88 | 369 |
+ *
+ * 한 글자에서 새로 걸린 열여섯은 모두 진짜였고(`акционерный`↔`акционер` ·
+ * `шоколадный`↔`шоколад` · `ювелирный`↔`ювелир`), 두 글자에서 더 걸린 서른둘도
+ * `африканец`↔`африканский` · `буддист`↔`буддизм` · `единичный`↔`единица` ·
+ * `зрительный`↔`зритель`처럼 대부분 진짜다. 손으로 갈라 보니 헛것은 `подвиг`↔
+ * `подвал` 하나였다. 줄이 백서른 늘지만 이 검사가 내놓는 신호는 **그 낱말이
+ * 집안에 걸리느냐**이고, 줄은 사람이 훑는다.
+ *
+ * 관계 형용사를 넣던 회차에 이 자리를 손으로 훑어 스물아홉을 찾았는데, 그 조회가
+ * 이것이다.
+ *
+ * 넉 자 아래로 깎이면 열쇠를 내지 않는다. `дам`이 `да`가 되면 남남끼리 묶인다.
+ */
+function ruKeys(term: string): string[] {
+  const stem = ruStem(term)
+  if (!stem) return []
+  const keys = [stem]
+  if (stem.length >= 5) keys.push(stem.slice(0, -1))
+  if (stem.length >= 6) keys.push(stem.slice(0, -2))
+  return keys
+}
+
 /** 어간 → 그 어간을 쓰는 러시아어 표기들 */
 const family = new Map<string, Array<{ term: string; owner: Owner }>>()
 
@@ -119,10 +156,9 @@ for (const file of readdirSync('content').filter((f) => f.endsWith('.json')).sor
         if (!owners.has(key)) owners.set(key, owner)
         // 에두른 표제어는 여러 낱말이다. 낱말마다 집안에 넣는다
         if (lang === 'ru')
-          for (const part of key.split(/\s+/)) {
-            const stem = ruStem(part)
-            if (stem) (family.get(stem) ?? family.set(stem, []).get(stem)!).push({ term: key, owner })
-          }
+          for (const part of key.split(/\s+/))
+            for (const stem of ruKeys(part))
+              (family.get(stem) ?? family.set(stem, []).get(stem)!).push({ term: key, owner })
       }
       put(word.term, 'term')
       for (const alt of word.also ?? []) put(alt, 'also')
@@ -208,7 +244,13 @@ if (close.length > 0) {
  * 값보다 크다. 막힌 자리를 미리 찍는 쪽만 남긴다.
  */
 const kin = free
-  .map((term) => [term, (family.get(ruStem(term)) ?? []).filter((row) => row.term !== term)] as const)
+  .map((term) => {
+    // 열쇠가 둘이면 같은 식구가 두 번 걸린다. 표기로 한 번만 남긴다
+    const seen = new Map<string, { term: string; owner: Owner }>()
+    for (const stem of ruKeys(term))
+      for (const row of family.get(stem) ?? []) if (row.term !== term) seen.set(row.term, row)
+    return [term, [...seen.values()]] as const
+  })
   .filter(([, rows]) => rows.length > 0)
 
 if (kin.length > 0) {
