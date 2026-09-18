@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 619,
+  "approvedCharacters": 50,
+  "approvedStrokes": 619,
+  "initiallyMatched": 37,
+  "correctedCharacters": 13,
+  "reorderedCharacters": 9,
+  "locallyCorrectedPaths": 10,
+  "heldCharacters": 0,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 13,
+    "flaggedStrokes": 30,
+    "correctedFromFlags": 13,
+    "retainedAfterInspection": []
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "蕎"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 509,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 2452,
+      "remaining": 3526,
+      "percent": 41,
+      "totalStrokes": 74558,
+      "appliedStrokes": 27607
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 100,
+      "remaining": 1050,
+      "percent": 8.7,
+      "totalStrokes": 15002,
+      "appliedStrokes": 1262
+    }
+  }
+}

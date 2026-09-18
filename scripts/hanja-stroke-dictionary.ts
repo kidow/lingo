@@ -48,6 +48,7 @@ import { buildG2GeometryBatch23DictionaryBundle, g2GeometryBatch23DictionaryGeom
 import { buildG2GeometryBatch24DictionaryBundle, g2GeometryBatch24DictionaryGeometry, validateG2GeometryBatch24DictionaryReview, validateG2GeometryBatch24DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch24.ts'
 import { buildG2GeometryBatch25DictionaryBundle, g2GeometryBatch25DictionaryGeometry, validateG2GeometryBatch25DictionaryReview, validateG2GeometryBatch25DictionaryBundle } from './hanja-stroke-dictionary-g2-geometry-batch25.ts'
 import { special2Batch1DictionaryGeometry, validateSpecial2Batch1DictionaryReview, validateSpecial2Batch1DictionaryBundle } from './hanja-stroke-dictionary-special2-batch1.ts'
+import { special2Batch2DictionaryGeometry, validateSpecial2Batch2DictionaryReview, validateSpecial2Batch2DictionaryBundle } from './hanja-stroke-dictionary-special2-batch2.ts'
 import { g2Batch2DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch2.ts'
 import { g2Batch3DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch3.ts'
 import { g2Batch4DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch4.ts'
@@ -87,6 +88,7 @@ import { g2GeometryBatch23DictionaryReference } from '../lib/hanja-stroke-dictio
 import { g2GeometryBatch24DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch24.ts'
 import { g2GeometryBatch25DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-geometry-batch25.ts'
 import { special2Batch1DictionaryReference } from '../lib/hanja-stroke-dictionary-special2-batch1.ts'
+import { special2Batch2DictionaryReference } from '../lib/hanja-stroke-dictionary-special2-batch2.ts'
 import {
   HANJA_DICTIONARY_SOURCE, HANJA_DICTIONARY_GEOMETRY_SOURCE, HANJA_DICTIONARY_STROKES,
   DICTIONARY_REFERENCES, dictionarySourceReference, dictionaryStrokeIndices,
@@ -277,6 +279,7 @@ export function dictionaryGeometry(glyph: string, medians: Medians) {
   if (g2GeometryBatch24DictionaryReference(glyph)) return g2GeometryBatch24DictionaryGeometry(glyph, medians)
   if (g2GeometryBatch25DictionaryReference(glyph)) return g2GeometryBatch25DictionaryGeometry(glyph, medians)
   if (special2Batch1DictionaryReference(glyph)) return special2Batch1DictionaryGeometry(glyph, medians)
+  if (special2Batch2DictionaryReference(glyph)) return special2Batch2DictionaryGeometry(glyph, medians)
   if (['響', '姉', '隷', '隣'].includes(glyph)) return jaDictionaryGeometry(glyph, medians)
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref || hash(medians) !== ref.originalMediansSha256) throw new Error('Dictionary original medians mismatch: ' + glyph)
@@ -378,6 +381,7 @@ export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expe
   if (g2GeometryBatch24DictionaryReference(review.glyph)) return validateG2GeometryBatch24DictionaryReview(review, expectedStrokes)
   if (g2GeometryBatch25DictionaryReference(review.glyph)) return validateG2GeometryBatch25DictionaryReview(review, expectedStrokes)
   if (special2Batch1DictionaryReference(review.glyph)) return validateSpecial2Batch1DictionaryReview(review, expectedStrokes)
+  if (special2Batch2DictionaryReference(review.glyph)) return validateSpecial2Batch2DictionaryReview(review, expectedStrokes)
   if (['響', '姉', '隷', '隣'].includes(review.glyph)) return validateJaDictionaryReview(review, expectedStrokes)
   const expected = buildDictionaryBundle().characters.find(e => e.glyph === review.glyph)
   if (!expected || expected.paths.length !== expectedStrokes
@@ -426,6 +430,7 @@ export function validateDictionaryBundle(entries: readonly HanjaDictionaryStroke
   validateG2GeometryBatch24DictionaryBundle()
   validateG2GeometryBatch25DictionaryBundle()
   validateSpecial2Batch1DictionaryBundle()
+  validateSpecial2Batch2DictionaryBundle()
   const expected = buildDictionaryBundle().characters.map(e => ({ ...e, verificationSource: HANJA_DICTIONARY_SOURCE.id }))
   if (!isDeepStrictEqual(entries, expected)) throw new Error('Dictionary published bundle mismatch')
 }
