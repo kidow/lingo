@@ -1,0 +1,74 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 631,
+  "approvedCharacters": 50,
+  "approvedStrokes": 631,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 41,
+  "correctedCharacters": 9,
+  "reorderedCharacters": 6,
+  "locallyCorrectedPaths": 4,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 9,
+    "flaggedStrokes": 20,
+    "correctedFromFlags": 9,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 29,
+    "range": "45° to 60°",
+    "note": "Short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in the earlier batches."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "莖",
+      "顴"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 579,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3257,
+      "remaining": 2721,
+      "percent": 54.5,
+      "totalStrokes": 74558,
+      "appliedStrokes": 38010
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 101,
+      "remaining": 1044,
+      "percent": 8.8,
+      "totalStrokes": 14898,
+      "appliedStrokes": 1275
+    }
+  }
+}
