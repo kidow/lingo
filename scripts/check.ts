@@ -379,10 +379,14 @@ for (const file of files) {
                   where,
                   `ru.also의 "${other}"는 "${word.term}"과 태가 다릅니다 — 곁말이 아니라 다른 개념입니다`,
                 )
-              // 품사가 갈리면 곁말이 아니다 (spec.md §7). 꼴로 짐작하고 애매하면 넘어간다
+              // 품사가 갈리면 곁말이 아니다 (spec.md §7). 꼴로 짐작하고 애매하면 넘어간다.
+              // 품는 관계는 뺀다 — 태와 같은 자리다. 구의 품사는 끝 낱말이 정하므로
+              // `исполнять приказ`(집행하다)은 이름씨로 읽히고 머리 낱말 `исполнять`는
+              // 움직씨라 갈린 것처럼 보인다. 구와 그 머리 낱말은 같은 어휘다
+              const nested = contains(word.term, other) || contains(other, word.term)
               const mine = ruPos(word.term)
               const theirs = ruPos(other)
-              if (mine && theirs && mine !== theirs)
+              if (!nested && mine && theirs && mine !== theirs)
                 fail(
                   where,
                   `ru.also의 "${other}"는 ${theirs}이고 "${word.term}"은 ${mine}입니다 — 곁말은 같은 품사끼리 붙습니다`,
