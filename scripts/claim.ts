@@ -140,7 +140,60 @@ function ruKeys(term: string): string[] {
   return keys
 }
 
-/** 어간 → 그 어간을 쓰는 러시아어 표기들 */
+/**
+ * 영어 어간 한 집안.
+ *
+ * 러시아어에서는 굴절이, 영어에서는 **파생이** 같은 일을 한다. `productivity`는
+ * `productive`와, `illogical`은 `logical`과, `renewal`은 `renew`와 한 집안이다.
+ * 곁말로 붙일 수 없고(품사가 다르다) 개념으로 세우려면 뜻을 갈라 잡아야 한다.
+ *
+ * 잡는 값은 러시아어와 다르다. 러시아어에서는 «막힌 자리를 미리 안다»가 값이었는데,
+ * 영어에서는 **그 개념이 이미 어딘가 서 있는지 가리키는 이정표**가 더 크다.
+ * TSL 회차를 돌 때 `renewal`이 `renew`를 가리키고 `eligible`이 `qualified`
+ * 곁으로 데려간다 — 뜻이 겹치는지는 사람이 보지만, 어디를 볼지는 이것이 정한다.
+ *
+ * **앞가지는 뒤가 넉 자 넘게 남을 때만 뗀다.** 안 그러면 `interest`가 `est`로,
+ * `impact`가 `pact`로 깎여 남남끼리 묶인다. 아니오 뜻 앞가지(`un`·`in`·`il`·`ir`)가
+ * 이 검사의 절반을 버는 자리라 떼기는 해야 한다 — `unhappy`·`incomplete`·
+ * `illogical`·`irregular`가 다 그 꼴이다.
+ */
+const EN_PREFIX = ['under', 'inter', 'over', 'anti', 'non', 'dis', 'mis', 'pre', 'sub', 'un', 'in', 'im', 'il', 'ir', 're', 'de']
+const EN_ENDING = ['ivities', 'ization', 'isation', 'ibility', 'ability', 'ational', 'fulness', 'iveness', 'ousness', 'ivity', 'ation', 'ition', 'ement', 'ingly', 'ively', 'ously', 'ance', 'ence', 'ment', 'ness', 'less', 'able', 'ible', 'tion', 'sion', 'ical', 'ally', 'ings', 'ful', 'ity', 'ive', 'ize', 'ise', 'ing', 'ers', 'est', 'ed', 'er', 'ly', 'al', 'ic', 'es', 's', 'y', 'e']
+
+/** 앞가지 하나와 어미 하나를 뗀 열쇠. 넉 자 아래로 깎이면 떼지 않는다 */
+export function enStem(term: string): string {
+  let word = norm(term)
+  if (!/^[a-z'-]+$/.test(word)) return ''
+  for (const prefix of EN_PREFIX)
+    if (word.startsWith(prefix) && word.length - prefix.length >= 5) {
+      word = word.slice(prefix.length)
+      break
+    }
+  for (const ending of EN_ENDING)
+    if (word.endsWith(ending) && word.length - ending.length >= 4) {
+      word = word.slice(0, -ending.length)
+      break
+    }
+  return word.length >= 4 ? word : ''
+}
+
+/**
+ * 영어 한 낱말이 내놓는 어간 열쇠들.
+ *
+ * 러시아어와 같은 손질이다 — 어미를 하나만 떼면 파생 조각이 남아 같은 집안이
+ * 갈린다. `product`와 `produce`는 끝 한 글자가 다르고, `explain`과 `explanatory`는
+ * 두 글자가 다르다. 끝을 한 글자·두 글자 깎은 열쇠를 더 낸다.
+ */
+function enKeys(term: string): string[] {
+  const stem = enStem(term)
+  if (!stem) return []
+  const keys = [stem]
+  if (stem.length >= 6) keys.push(stem.slice(0, -1))
+  if (stem.length >= 7) keys.push(stem.slice(0, -2))
+  return keys
+}
+
+/** 어간 → 그 어간을 쓰는 표기들. 러시아어는 굴절로, 영어는 파생으로 모인다 */
 const family = new Map<string, Array<{ term: string; owner: Owner }>>()
 
 for (const file of readdirSync('content').filter((f) => f.endsWith('.json')).sort()) {
@@ -154,11 +207,15 @@ for (const file of readdirSync('content').filter((f) => f.endsWith('.json')).sor
         const owner: Owner = { slug: concept.slug, file, lang: lang as Language, via, gloss: concept.meaning_ko ?? '' }
         // 먼저 적힌 것을 임자로 둔다. term이 also보다 먼저 들어오므로 정답이 이긴다
         if (!owners.has(key)) owners.set(key, owner)
-        // 에두른 표제어는 여러 낱말이다. 낱말마다 집안에 넣는다
-        if (lang === 'ru')
-          for (const part of key.split(/\s+/))
-            for (const stem of ruKeys(part))
-              (family.get(stem) ?? family.set(stem, []).get(stem)!).push({ term: key, owner })
+        // 러시아어는 에두른 표제어가 여러 낱말이라 낱말마다 집안에 넣는다.
+        // **영어는 홑낱말만 넣는다.** 파생은 낱말 하나에서 자라는데, 구를 쪼개
+        // 넣으면 `send`가 든 상황 표현 열일곱 줄이 `sender` 하나에 딸려 나온다.
+        // 재어 보니 660줄 가운데 절반이 그런 줄이었고, 진짜 식구는 다 홑낱말이다
+        const parts = lang === 'ru' ? key.split(/\s+/) : key.includes(' ') ? [] : [key]
+        if (lang === 'ru' || lang === 'en')
+          for (const part of parts)
+            for (const stem of (lang === 'ru' ? ruKeys : enKeys)(part))
+              (family.get(`${lang}:${stem}`) ?? family.set(`${lang}:${stem}`, []).get(`${lang}:${stem}`)!).push({ term: key, owner })
       }
       put(word.term, 'term')
       for (const alt of word.also ?? []) put(alt, 'also')
@@ -195,8 +252,26 @@ function near(term: string): Owner | null {
     term.replace(/(ch|sh|s|x|z)es$/, '$1'),
     term.replace(/s$/, ''),
     `${term}s`,
+    // 미국·영국 철자. 같은 낱말이라 곁말로 바로 붙는다
+    term.replace(/ize$/, 'ise'), term.replace(/ise$/, 'ize'),
+    term.replace(/ization$/, 'isation'), term.replace(/isation$/, 'ization'),
+    term.replace(/or$/, 'our'), term.replace(/our$/, 'or'),
+    term.replace(/orable$/, 'ourable'), term.replace(/ourable$/, 'orable'),
+    term.replace(/ward$/, 'wards'), term.replace(/wards$/, 'ward'),
+    // 끝 닿소리를 겹쳐 적는 자리 — `enrol`↔`enroll`·`travelled`↔`traveled`
+    term.replace(/([lpt])$/, '$1$1'), term.replace(/([lpt])\1$/, '$1'),
+    // 붙여 쓰기. 목록과 우리가 갈리는 자리다 — `webpage`↔`web page`
+    term.replace(/-/g, ''), term.replace(/-/g, ' '),
+    term.replace(/ /g, ''), term.replace(/ /g, '-'),
     // 여러 낱말이면 각각도 본다. 한 낱말짜리는 자기 자신이라 볼 것이 없다
     ...(term.includes(' ') ? term.split(' ') : []),
+    // 붙여 쓴 것을 갈라 본다 — `healthcare`↔`health care`
+    ...(term.includes(' ') || term.includes('-')
+      ? []
+      : Array.from({ length: Math.max(0, term.length - 5) }, (_, i) => i + 3).flatMap((i) => [
+          `${term.slice(0, i)} ${term.slice(i)}`,
+          `${term.slice(0, i)}-${term.slice(i)}`,
+        ])),
   ]
   for (const form of forms) if (form !== term && owners.has(form)) return owners.get(form)!
   return null
@@ -234,6 +309,22 @@ if (close.length > 0) {
  * 뜻을 그 집안과 갈리게 처음부터 달리 잡아야 한다. 그래서 집안 식구의 **뜻을
  * 같이 찍는다** — 뜻이 겹치는지는 표기가 아니라 뜻으로만 보인다.
  *
+ * **영어에서는 쓰임이 하나 더 있다.** 2026-09-18에 TSL에 남은 332로 쟀다.
+ *
+ * | | 걸린 낱말 | 줄 |
+ * | --- | --- | --- |
+ * | 구까지 넣었을 때 | 157 | 660 |
+ * | 홑낱말만 넣었을 때 | 132 | 210 |
+ *
+ * 줄이 3분의 1로 줄었는데 걸린 낱말은 84%가 남았다. 빠진 스물다섯은 `sender`가
+ * `send`가 든 상황 표현 열일곱을 끌고 오던 줄이라, 잃은 것이 없다.
+ *
+ * 남은 210줄은 **뜻을 갈라 잡을 자리를 가리키는 이정표**다 — `knowledgeable`이
+ * `knowledge`를, `purchaser`가 `purchase`를, `certification`이 `certificate`를
+ * 가리킨다. 그 개념이 이미 서 있으면 곁말 한 줄로 끝나고, 아니면 뜻을 어디서
+ * 갈라야 할지가 그 줄에 적혀 있다. 헛것도 섞인다(`distractor`↔`tractor`,
+ * `instruct`↔`structure`) — 뜻을 같이 찍는 까닭이 이것이다.
+ *
  * **곁말이 될 자리는 찍지 않는다. 재어 보고 버렸다.** ros-edu.ru 목록은 낱말마다
  * 영어 뜻(`word_eng`)을 달아 두므로 그것을 우리 영어 표제어와 맞대면 곁말 후보가
  * 기계로 나올 듯싶다. 2026-09-18에 B2에 남은 247을 그렇게 돌려 스물넷이 걸렸는데
@@ -247,8 +338,10 @@ const kin = free
   .map((term) => {
     // 열쇠가 둘이면 같은 식구가 두 번 걸린다. 표기로 한 번만 남긴다
     const seen = new Map<string, { term: string; owner: Owner }>()
-    for (const stem of ruKeys(term))
-      for (const row of family.get(stem) ?? []) if (row.term !== term) seen.set(row.term, row)
+    // 후보가 어느 글자인지로 가른다. 키릴이면 굴절, 로마자면 파생을 본다
+    const lang = /[а-яё]/.test(term) ? 'ru' : 'en'
+    for (const stem of (lang === 'ru' ? ruKeys : enKeys)(term))
+      for (const row of family.get(`${lang}:${stem}`) ?? []) if (row.term !== term) seen.set(row.term, row)
     return [term, [...seen.values()]] as const
   })
   .filter(([, rows]) => rows.length > 0)
