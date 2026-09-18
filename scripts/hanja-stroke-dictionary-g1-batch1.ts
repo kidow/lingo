@@ -1,0 +1,114 @@
+/** Offline, fail-closed reconstruction of licensed special grade II geometry. */
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+import { isDeepStrictEqual } from 'node:util'
+import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
+import type { HanjaDictionaryStrokeData } from '../lib/hanja-stroke-dictionary.ts'
+import {
+  G1_BATCH1_DICTIONARY_VERIFICATION, G1_BATCH1_DICTIONARY_GEOMETRY, G1_BATCH1_DICTIONARY_REFERENCES,
+  HANJA_DICTIONARY_G1_BATCH1_STROKES, g1Batch1DictionaryReference, g1Batch1DictionaryMetadata,
+  type G1Batch1DictionaryBundle,
+} from '../lib/hanja-stroke-dictionary-g1-batch1.ts'
+
+const dir = 'docs/hanja-g1-batch1-2026-09-18/'
+const read = (path: string) => readFileSync(new URL('../' + path, import.meta.url), 'utf8')
+const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
+type Medians = Parameters<typeof normalizeMedians>[0]
+type Original = {
+  glyph: string; strokes: number; corpus: keyof typeof G1_BATCH1_DICTIONARY_GEOMETRY
+  medians: Medians; originalMediansSha256: string; paths: string[]
+  dictionary: { url: string; bytes: number; sha256: string }
+}
+type Recipe = { sourceStroke: number | null; derivedFromStroke?: number; path?: string; reason?: string }
+type Observation = {
+  glyph: string; decision: string; initialDecision: string; directions: string[]
+  checks: Record<string, string>
+  correctedReview?: { completed: boolean; checks: Record<string, string> }
+}
+export const G1_BATCH1_DICTIONARY_PROOF_PINS: Readonly<Record<string, string>> = {
+  "docs/hanja-g1-batch1-2026-09-18/originals.json": "2cb87e1db323a8586127980e5698bd22cd7980e143e948fd35312895850cd36f",
+  "docs/hanja-g1-batch1-2026-09-18/observations.json": "d833fe0cc14b0dcad3cbf7d8763229f082aa4a7afba578a61827cac5efc5c676",
+  "docs/hanja-g1-batch1-2026-09-18/proposals.json": "af1eab51b308c86aeb5a031c15388355702d5d974ce412f8dc498d76057d67ee",
+  "docs/hanja-g1-batch1-2026-09-18/source-checks.json": "3a470fdd550c4ae74f7bab44a727fc4b20ca19b2965b575d2b130c5af7cc74db",
+  "docs/hanja-g1-batch1-2026-09-18/corrections.json": "f69d364a4e53f9b77560a4a15374d96292607be8f6a61506b7bd095c9df4a836",
+  "docs/hanja-g1-batch1-2026-09-18/candidate-paths.json": "ba6c892021aca1170b634669979eb4859c02161b82d81f77c9b019eb4c948b51",
+  "docs/hanja-g1-batch1-2026-09-18/review.json": "99470cbc0111ab1c3a8689bc05816c2457f27c6f943891b3711148760cc5d598"
+}
+export function validateG1Batch1DictionaryProofs(readProof: (path: string) => string = read) {
+  for (const [path, expected] of Object.entries(G1_BATCH1_DICTIONARY_PROOF_PINS)) {
+    if (createHash('sha256').update(readProof(path)).digest('hex') !== expected)
+      throw Error('G1 batch1 dictionary proof mismatch: ' + path)
+  }
+}
+export function g1Batch1DictionaryGeometry(glyph: string, medians: Medians) {
+  const ref = g1Batch1DictionaryReference(glyph)
+  if (!ref || hash(medians) !== ref.originalMediansSha256) throw Error('G1 batch1 dictionary original mismatch: ' + glyph)
+  const proposals = JSON.parse(read(dir + 'proposals.json')) as Record<string, Recipe[]>
+  const recipe = proposals[glyph]
+  if (!recipe || !isDeepStrictEqual(recipe.map(r => r.sourceStroke), ref.sourceStrokeIndices))
+    throw Error('G1 batch1 dictionary recipe mismatch')
+  const corrections = JSON.parse(read(dir + 'corrections.json')) as { edits: { glyph: string; stroke: number; path: string }[] }
+  const originalPaths = normalizeMedians(medians)
+  const paths = recipe.map((r, i) => {
+    if (r.sourceStroke !== null) {
+      if (!Number.isInteger(r.sourceStroke) || r.sourceStroke < 1 || r.sourceStroke > originalPaths.length || r.path)
+        throw Error('G1 batch1 dictionary source index mismatch')
+      return originalPaths[r.sourceStroke - 1]
+    }
+    const edit = corrections.edits.find(e => e.glyph === glyph && e.stroke === i + 1)
+    if (!edit || edit.path !== r.path || !r.reason || !r.derivedFromStroke) throw Error('G1 batch1 dictionary authored path mismatch')
+    return edit.path
+  })
+  if (paths.length !== ref.strokes || hash(paths) !== ref.pathsSha256) throw Error('G1 batch1 dictionary geometry mismatch')
+  return { paths, pathsSha256: hash(paths) }
+}
+export function buildG1Batch1DictionaryBundle(): G1Batch1DictionaryBundle {
+  validateG1Batch1DictionaryProofs()
+  const originals = JSON.parse(read(dir + 'originals.json')) as {
+    sources: typeof G1_BATCH1_DICTIONARY_GEOMETRY; entries: Original[]
+  }
+  const observations = JSON.parse(read(dir + 'observations.json')) as { status: string; entries: Observation[] }
+  const sourceChecks = JSON.parse(read(dir + 'source-checks.json')) as { entries: {
+    glyph: string; dictionary: Original['dictionary']
+    strokes: { xmlIndex: number; delay: number; duration: number }[]
+  }[] }
+  const frozen = JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }
+  const approvedGlyphs = G1_BATCH1_DICTIONARY_REFERENCES.map(r => r.glyph)
+  if (!isDeepStrictEqual(originals.sources, G1_BATCH1_DICTIONARY_GEOMETRY) || originals.entries.length !== 50
+    || new Set(originals.entries.map(e => e.glyph)).size !== 50 || observations.status !== 'complete'
+    || !isDeepStrictEqual(observations.entries.filter(e => e.decision === 'matched').map(e => e.glyph), approvedGlyphs)
+    || !isDeepStrictEqual(frozen.entries.map(e => e.glyph), approvedGlyphs)) throw Error('G1 batch1 dictionary approved set mismatch')
+  const characters = G1_BATCH1_DICTIONARY_REFERENCES.map(ref => {
+    const original = originals.entries.find(e => e.glyph === ref.glyph)
+    const observation = observations.entries.find(e => e.glyph === ref.glyph)
+    const source = sourceChecks.entries.find(e => e.glyph === ref.glyph)
+    const expectedChecks = { order: 'match', direction: 'match', boundaries: 'match', glyphForm: 'match' }
+    if (!original || original.corpus !== ref.corpus || original.strokes !== ref.strokes
+      || original.originalMediansSha256 !== ref.originalMediansSha256
+      || !isDeepStrictEqual(normalizeMedians(original.medians), original.paths)
+      || original.dictionary.url !== ref.dictionaryUrl || original.dictionary.sha256 !== ref.dictionarySha256
+      || !observation || observation.decision !== 'matched' || observation.directions.length !== ref.strokes
+      || !isDeepStrictEqual(observation.checks, expectedChecks)
+      || (observation.initialDecision !== 'matched' && (!observation.correctedReview?.completed
+        || !isDeepStrictEqual(observation.correctedReview.checks, expectedChecks)))
+      || !source || !isDeepStrictEqual(source.dictionary, original.dictionary)
+      || source.strokes.length !== ref.strokes || new Set(source.strokes.map(s => s.xmlIndex)).size !== ref.strokes
+      || source.strokes.some((s, i, list) => s.duration <= 0 || s.delay < 0 || (i > 0 && s.delay <= list[i - 1].delay)))
+      throw Error('G1 batch1 dictionary review incomplete: ' + ref.glyph)
+    const geometry = g1Batch1DictionaryGeometry(ref.glyph, original.medians)
+    if (!isDeepStrictEqual(geometry.paths, frozen.entries.find(e => e.glyph === ref.glyph)?.paths))
+      throw Error('G1 batch1 dictionary frozen candidate mismatch')
+    return { ...g1Batch1DictionaryMetadata(ref), ...geometry }
+  })
+  return { verificationSource: G1_BATCH1_DICTIONARY_VERIFICATION, geometrySources: G1_BATCH1_DICTIONARY_GEOMETRY, characters }
+}
+export function validateG1Batch1DictionaryReview(entry: HanjaDictionaryStrokeData, expectedStrokes: number) {
+  const found = buildG1Batch1DictionaryBundle().characters.find(e => e.glyph === entry.glyph)
+  if (!found || found.paths.length !== expectedStrokes
+    || !isDeepStrictEqual(entry, { ...found, verificationSource: G1_BATCH1_DICTIONARY_VERIFICATION.id }))
+    throw Error('G1 batch1 dictionary published entry mismatch')
+}
+export function validateG1Batch1DictionaryBundle(entries: readonly HanjaDictionaryStrokeData[] = HANJA_DICTIONARY_G1_BATCH1_STROKES) {
+  const expected = buildG1Batch1DictionaryBundle().characters.map(e => ({ ...e, verificationSource: G1_BATCH1_DICTIONARY_VERIFICATION.id }))
+  if (!isDeepStrictEqual(entries, expected)) throw Error('G1 batch1 dictionary published bundle mismatch')
+}
