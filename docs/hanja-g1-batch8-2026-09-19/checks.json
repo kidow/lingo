@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-19",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 632,
+  "approvedCharacters": 50,
+  "approvedStrokes": 632,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 40,
+  "correctedCharacters": 10,
+  "reorderedCharacters": 7,
+  "locallyCorrectedPaths": 6,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 10,
+    "flaggedStrokes": 18,
+    "correctedFromFlags": 10,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": ["畔7"],
+    "note": "畔7 measures 60°, just under the flag threshold, but the sheet shows the right 丷 dot mirrored exactly like its flagged partner 畔6, so it was corrected with it."
+  },
+  "subThresholdSlants": {
+    "count": 20,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 21 rows, of which only the mirrored 畔7 dot was corrected",
+    "note": "The remaining twenty are short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 45,
+    "Ja": 5,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "Every source in this batch uses scale(1,-1) translate(0, -y) only; no horizontal offset. serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 603,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3554,
+      "remaining": 2424,
+      "percent": 59.5,
+      "totalStrokes": 74558,
+      "appliedStrokes": 41961
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 398,
+      "remaining": 747,
+      "percent": 34.8,
+      "totalStrokes": 14898,
+      "appliedStrokes": 5226
+    }
+  }
+}
