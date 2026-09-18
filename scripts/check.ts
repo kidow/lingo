@@ -72,8 +72,24 @@ function strayScripts(lang: string, text: string) {
  * `ссориться`(다투다)처럼 짝이 되는 비재귀 동사가 아예 없는 낱말은 걸리지
  * 않는다. 어근이 실제로 겹칠 때만 본다.
  */
+/**
+ * 한쪽이 다른 쪽을 **낱말째로 품으면** 태 짝이 아니다.
+ *
+ * 표제어가 구일 때 `-ся` 판정이 구의 **끝 낱말**을 본다. `употребляться для`
+ * (쓰이다)는 `для`로 끝나니 «태가 없다»가 되고, 곁말 `употребляться`는 `-ся`로
+ * 끝나니 «태가 있다»가 되어 둘이 태 짝으로 걸린다. 그런데 이 둘은 서로 다른
+ * 낱말이 아니라 **구와 그 구의 머리 낱말**이다 — 러시아어에 낱말이 없어 돌려
+ * 적은 자리에 낱말이 들어온, 곁말이 가장 제 일을 하는 자리다.
+ *
+ * 품는 관계이면 같은 어휘이므로 태가 갈릴 수 없다. 그 자리를 먼저 뺀다.
+ */
+function contains(a: string, b: string) {
+  return new RegExp(`(^|\\s)${b.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\s|$)`, 'u').test(a)
+}
+
 function voicePair(term: string, other: string) {
   const stem = (w: string) => w.replace(/(ся|сь)$/u, '').replace(/(ать|ять|ить|еть|уть|ти|чь)$/u, '')
+  if (contains(term, other) || contains(other, term)) return false
   if (/ся$/u.test(term) === /ся$/u.test(other)) return false
   const a = stem(term)
   const b = stem(other)
