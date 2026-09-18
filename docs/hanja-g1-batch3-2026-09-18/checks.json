@@ -1,0 +1,77 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 623,
+  "approvedCharacters": 50,
+  "approvedStrokes": 623,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 40,
+  "correctedCharacters": 10,
+  "reorderedCharacters": 2,
+  "locallyCorrectedPaths": 11,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 10,
+    "flaggedStrokes": 15,
+    "correctedFromFlags": 10,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 17,
+    "range": "45° to 60°",
+    "note": "Short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 43,
+    "Ja": 6,
+    "Ko": 1,
+    "note": "几 is the first glyph pinned from the AnimCJK Ko corpus in a grade 1 batch; its two strokes matched the dictionary without change."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "No original in this batch uses a translate(x, -y) horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 583,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3307,
+      "remaining": 2671,
+      "percent": 55.3,
+      "totalStrokes": 74558,
+      "appliedStrokes": 38633
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 151,
+      "remaining": 994,
+      "percent": 13.2,
+      "totalStrokes": 14898,
+      "appliedStrokes": 1898
+    }
+  }
+}

@@ -1,0 +1,138 @@
+/** Fifty grade 1 forms (batch 3) individually reviewed, including 10 corrected forms. */
+import reviewed from '../public/hanja-strokes/dictionary-reviewed-g1-batch3.json' with { type: 'json' }
+import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
+
+export const G1_BATCH3_DICTIONARY_VERIFICATION = {
+  "id": "ehanja-crosschecked",
+  "title": "e-hanja 필순·방향 교차검토",
+  "url": "http://www.e-hanja.kr/",
+  "scope": "Grade 1 batch 3: 50 characters individually checked, 50 approved and 0 held; 10 corrected forms rechecked. Not exam-body certification."
+} as const
+export const G1_BATCH3_DICTIONARY_GEOMETRY = {
+  "MM": {
+    "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+    "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee",
+    "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/",
+    "bytes": 30778076
+  },
+  "Ja": {
+    "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+    "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8",
+    "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/",
+    "bytes": 21862957
+  },
+  "Ko": {
+    "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+    "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e",
+    "license": "Arphic Public License; reviewed subset and license in public/hanja-strokes/",
+    "bytes": 1387824
+  }
+} as const
+export type G1Batch3DictionaryReference = {
+  glyph: string; strokes: number; corpus: keyof typeof G1_BATCH3_DICTIONARY_GEOMETRY
+  originalMediansSha256: string; pathsSha256: string; dictionaryUrl: string; dictionarySha256: string
+  sourceStrokeIndices: readonly (number | null)[]
+}
+export const G1_BATCH3_DICTIONARY_REFERENCES: readonly G1Batch3DictionaryReference[] = [
+  {"glyph":"轎","strokes":19,"corpus":"MM","originalMediansSha256":"e4b8e3c95bc49dd7135fb2fc239fa19657a33c8afabb692a3cea49018090b70c","pathsSha256":"9a69c3ae7f34f3a454cd30b50d1d1c5bbf03b083a014406d55fc190285b31443","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8F00/8F4E.svg","dictionarySha256":"617e24f7afd71b992e604fda461ebfdfce57af2d3d4d25ae1956c8ec5067f120","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]},
+  {"glyph":"蛟","strokes":12,"corpus":"MM","originalMediansSha256":"103f3ce7f968c964a9955deca0b948c39d5daae0d98b0d59155c22b31afdeca8","pathsSha256":"7e7d29fe5453cf66ba43fb8f5c4cd85683ffb4d82ded05646b9c3e9a83632dfc","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8600/86DF.svg","dictionarySha256":"4ed86e13a095398dd35393da183c217b04739c09df788a34a140cd00786a0d66","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12]},
+  {"glyph":"皎","strokes":11,"corpus":"MM","originalMediansSha256":"836576691601dfde756ab56c9df39ef9b0edce411459814f6160f27d159f2146","pathsSha256":"4f19f333a56586d1ba404606c05c0866227413ff2d476f50738e01b4734bcc16","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7600/768E.svg","dictionarySha256":"2736989d2ac50266fd0f06d7f79bfb8a1f0bebc2fa05612f4b4352812f74583a","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11]},
+  {"glyph":"狡","strokes":9,"corpus":"MM","originalMediansSha256":"552c4a894d03f0c10fa5ba50a00b3ca6aa03dd92786075a3841908285a77daa6","pathsSha256":"64f643c50bb157b009cec0f4775d01e07cb3d88ab53850c67d6735755ef21e58","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7200/72E1.svg","dictionarySha256":"8e03c0bf20e1ae51548b1b08a3ebd722a4b12fca723d8278959c383133707e8d","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9]},
+  {"glyph":"嬌","strokes":15,"corpus":"MM","originalMediansSha256":"be04e6040472b07dd2daef15888ac8047c0d6046848b737346ea00b4048f6401","pathsSha256":"79e209a8b3f8139341f3003da427a7afd2ecd64f24ba838dc765d56f05ec08d7","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5B00/5B0C.svg","dictionarySha256":"6a171c07386b720c8b3b43a3776e0ca81ab952e91c04b1e9ce5f7d4f6eac9ad3","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},
+  {"glyph":"矩","strokes":10,"corpus":"Ja","originalMediansSha256":"5bed5b6a1618efdaede6429432004ec1fc89db344e87d5741a1ca7a864f6cf44","pathsSha256":"19b201b6b2cffac7506481f0b1fd13070ebbe28ce69b1986245f8075b23c396d","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7700/77E9.svg","dictionarySha256":"0fdf199e1ca8a260b06e476cef07a7506cb8fd3402502fd19055ab99cdba7538","sourceStrokeIndices":[1,2,3,4,5,7,6,8,9,10]},
+  {"glyph":"駒","strokes":15,"corpus":"MM","originalMediansSha256":"e7e2a03fd2e0fba725ba48f3c2d9c636057cfa4639455174c0391a10e17d2e61","pathsSha256":"bf7428c30429685d17cd5d992006747f20860fa450bc49d3271da05450b5d455","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/9900/99D2.svg","dictionarySha256":"7b2108c2e48a122ef47e2c4d9473aa3fe43cb152d2e44a224c3cb4e817e23f67","sourceStrokeIndices":[2,1,3,4,5,6,7,8,9,10,11,12,13,14,15]},
+  {"glyph":"鳩","strokes":13,"corpus":"MM","originalMediansSha256":"f3f3922a0aa77156478f3ffc4f6c35ebb7b34afa82f5082eaf92fd38bdfe282b","pathsSha256":"9f7c10f59f4686db5cc5f892f68a86712dc2dd955dddf74521ec4cb4c3ab6c7b","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/9C00/9CE9.svg","dictionarySha256":"021d99eecac4d1ee54e0abbde67bcd76a96e2c54e2f95b3a44890bfc6714b2cd","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13]},
+  {"glyph":"舅","strokes":13,"corpus":"MM","originalMediansSha256":"352ef3dd1b242ea3403df3c0bc9854a93930cb9c822fe99189d8708fb2352311","pathsSha256":"5fb35831f87cb9037926a86763ca1ba5cb818123a6c28d559442276a8ada8dc2","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/8205.svg","dictionarySha256":"d1f2f04be37ab2353b85dc0736fec8aa47b34d9bdd95d3b1fa411dbb204f7d1d","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13]},
+  {"glyph":"枸","strokes":9,"corpus":"MM","originalMediansSha256":"1a47a1d617285294e02a50beea2ac32dff12aa393b44cade6b388b4d5af5ba29","pathsSha256":"f329c3030dcb4c96e6a994f11fc87b2ab25fdcd10947f1a8ec87146282800d3b","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6700/67B8.svg","dictionarySha256":"1abb34ecbb5d0894d3ff97d7ec92b1ccf7216adcf6389bd15fee4210c5d9cef2","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9]},
+  {"glyph":"廏","strokes":14,"corpus":"Ja","originalMediansSha256":"f725ab3b98d88a7db79616302b729263fe104ffa552290cc573f13de8331ca56","pathsSha256":"fa073d5bf34770edcd2abc5cff8e48f31f26eb0953b3c6dec05830893c0a2cf1","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5E00/5ECF.svg","dictionarySha256":"a34dc7f5107e1f733000c208736abbf814289bd89a79e5f135c1e4124b64abd7","sourceStrokeIndices":[null,2,3,4,5,6,7,8,9,10,11,12,13,14]},
+  {"glyph":"寇","strokes":11,"corpus":"MM","originalMediansSha256":"fc9f885e9b515be1aef03e42be428457437c37c4802dbe5f81f61efbc905115f","pathsSha256":"862e9c3338582c627c8a789f4549e3304affe733961340e6f29779df17da6eb9","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5B00/5BC7.svg","dictionarySha256":"7096dd194a6d6ec79805fe5f9358d3d81ebc64880ceace6d320c730fd9a8a04d","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11]},
+  {"glyph":"嘔","strokes":14,"corpus":"MM","originalMediansSha256":"fef0790308dacc04f0d25b1ed3bcd20b2aad0af7dd691cd9d6b9d79c6cd49f80","pathsSha256":"8bec41b2540f2c8f62cd93b885a098dcafcdf2c1809b8522cc0c286be2ee4bf0","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5600/5614.svg","dictionarySha256":"58ac2445e48a43ed826cb48e0ab9aa9ec9350ad9b83d40537898599e48dbc9ac","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14]},
+  {"glyph":"仇","strokes":4,"corpus":"MM","originalMediansSha256":"34ae623c5d720b6f55e4416ba4a1737db9582e1591c72ce63034f3460650cbbd","pathsSha256":"9454e3d4546b82ac6cd5bbcb1d81164ebef58522b4656fac7c9c60d3b50daec6","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/4E00/4EC7.svg","dictionarySha256":"681c38789f8903ff2fdccbe9fb8cb09ee3053b180150fac53d53e780345dd746","sourceStrokeIndices":[1,2,3,4]},
+  {"glyph":"垢","strokes":9,"corpus":"MM","originalMediansSha256":"e43efc6cecbb65f8b9ebf3818aa6e1cd32c36f55b9ccf4f00f7a13eeb633266f","pathsSha256":"886aa9ea8402b91c875cd3879290499f64a9f43d15271c1f0f9091f27f5b695a","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5700/57A2.svg","dictionarySha256":"0f982548effd80bfd03cd0f032a760b906040ffcf47dc6c250aef7e956644acd","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9]},
+  {"glyph":"衢","strokes":24,"corpus":"MM","originalMediansSha256":"c69a0c98d8c67637d2d25110bd896000b7353ea3a0361f39679e39196e3fcf01","pathsSha256":"78d685902adc79957bce3ec22b7480ad08b644b28362ac98518413f6b2ac1235","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8800/8862.svg","dictionarySha256":"6c7bc247271eb1d5ab7917b6aac75257f0b588f46b06cb50ad3783b556f05a88","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,null,17,18,19,20,21,22,23,24]},
+  {"glyph":"鉤","strokes":13,"corpus":"MM","originalMediansSha256":"497b3a5b0448174e9bb1e43d0d0a6358e35cdc4493998726485b19761aae889f","pathsSha256":"bc1a9efc6affbd80fca65448b323969c36efde38274abb48361d5958aff56aff","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/9200/9264.svg","dictionarySha256":"4d6d4ac376fe62a53fe88bd2ed52b41b0ed411296e5535a0943dbeafcd7261ff","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13]},
+  {"glyph":"毆","strokes":15,"corpus":"MM","originalMediansSha256":"2e1f64964101e84cbc56b4cc97bb0d282b148700f8d66b86057015415625d5d8","pathsSha256":"b19956e13cdca76ac0288db650247278cd7b4bcc236f79131228513c6567f4c0","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6B00/6BC6.svg","dictionarySha256":"08c69474226159795b766d6f622d4910dbb663c950497eb68522815f471eeca4","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},
+  {"glyph":"溝","strokes":13,"corpus":"MM","originalMediansSha256":"9b411f3f3dcdf537b964df26ecda472eef524c95ef1e8fddcc9e1967a00db099","pathsSha256":"a9b2bf0448d3c967e2384d9c5e7ece2aa7dee4658bc4da0e1f617012b274bacb","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6E00/6E9D.svg","dictionarySha256":"c2765ac236865b3bdd4590365d2f3f261403f49b2f87a2f191eb5d0b0f1c458f","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13]},
+  {"glyph":"灸","strokes":7,"corpus":"MM","originalMediansSha256":"39ae4f581e3e6e84004f306c93a7028f8cbb8ffb1b5366fe3b8ee477419d0d71","pathsSha256":"6749fbe140d1d2609aa7dedd6481f89bec813601f6bcf14a2577fd474251a62d","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7000/7078.svg","dictionarySha256":"e280d283ad1153e3216157eba654b3af778b17e11f6b062248e7d820e99cb824","sourceStrokeIndices":[1,2,3,null,5,6,7]},
+  {"glyph":"軀","strokes":18,"corpus":"MM","originalMediansSha256":"2807d6e8a5cac746681e117f7f223598593efcc38b528e2baea9237934dfcd47","pathsSha256":"85e3de5ee95fb0acb976288ba5862048c7a49621cf8c905d0a4cf0554fedd23e","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8E00/8EC0.svg","dictionarySha256":"2d1d2a124469ade4241a284b7bc03a24d25311553b9c53e143365d7d4f6ce94f","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]},
+  {"glyph":"柩","strokes":9,"corpus":"MM","originalMediansSha256":"7c96f73839ca59f6aa66ed1ea50712f821568af8cd79c7bce3840de7e26d8dd5","pathsSha256":"2c8c0bbd0ae3f180eb9a35cc37bf55ce13f84e8bf849f0eed623cdba0854023d","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6700/67E9.svg","dictionarySha256":"dcb0f4d1297cdd0b314eff3e31f688733c7b7553abe1c512afa68eaeb8eb2efb","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9]},
+  {"glyph":"謳","strokes":18,"corpus":"MM","originalMediansSha256":"2632b4a5740b85df3a0bb572e1141121d2b5c2221a66ea107d3c387563957b53","pathsSha256":"4bb01111a05b8dc75bd0cc7296ae7c698c4919dacbb40df70f37d33f4c2f99df","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8B00/8B33.svg","dictionarySha256":"7595f6cf24991274f668d404eab1a8eba872bf99952317e2f1a74588546f5f95","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]},
+  {"glyph":"嶇","strokes":14,"corpus":"MM","originalMediansSha256":"6baf1215af7e8e62eed0a7970fa3133615fabce218e0d929cad52b9b6d608ecc","pathsSha256":"185342a81517b67443945af669ce5c99fb696816ac7651973672762ea28de244","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5D00/5D87.svg","dictionarySha256":"c52a84668c753d8043359ee35182787a72ede21ca85c05a60442382bc523a00f","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14]},
+  {"glyph":"窘","strokes":12,"corpus":"MM","originalMediansSha256":"05e920a44a7e071b679c30a5f463bd5701a0b47ce8237bf6c0fb06e47cf3fc31","pathsSha256":"079130cc877ff83d491382a4e8f9859ed20b5d0e7391e3ad0171b19e5d5fde5e","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7A00/7A98.svg","dictionarySha256":"0d5e3c12dd307a4b7ac1c30a91bc0ec437e1bc96bb7c0df84d75d12e58afd802","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12]},
+  {"glyph":"躬","strokes":10,"corpus":"MM","originalMediansSha256":"d35fcbf5405712c3b9c300eac968d8f445e61c71d95e4ec963ab8298107df68a","pathsSha256":"882afede7d1831325daa75bedcf5634fd21439ca2c6f9d7335a4a6c152acdc20","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8E00/8EAC.svg","dictionarySha256":"c697532593d125312bbfc6f74040c0ed9ff1c9c4ded85167a0d2b11fefbf546e","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10]},
+  {"glyph":"穹","strokes":8,"corpus":"MM","originalMediansSha256":"0db6f43f80b1ba89aa79503f5a4492366c2e3f3990e1bf9cd69b8e30b5c1d3f9","pathsSha256":"6012c1f97346e8ab6809872898b0bd23c1aac5c29c39401d23ea3dda222e6b7c","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7A00/7A79.svg","dictionarySha256":"eb289d4a704f88adf00b3b9ddf4f85b118169211afeb3b13a167d98821bfc849","sourceStrokeIndices":[1,2,3,4,5,6,7,8]},
+  {"glyph":"眷","strokes":11,"corpus":"MM","originalMediansSha256":"3ac4e48e1ec55196af6c13c6905c57f7a07e9d7ba14fd28fafe783d43f3c43ae","pathsSha256":"f8a23afbe469c29be8f5bb525e5785155a702125234740f1b778adf10bf617c0","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7700/7737.svg","dictionarySha256":"3d03d1f0d769fe93f9b225428b2e6331ff49b5d993d2115eee6febfed463cf62","sourceStrokeIndices":[null,null,3,4,5,6,7,8,9,10,11]},
+  {"glyph":"捲","strokes":11,"corpus":"MM","originalMediansSha256":"e414c479b040820f1324237c7324141f66d7dbd55c054755d8e25f55a0161f6a","pathsSha256":"e94abe85b86c90f4280e0c9f10d4543beaa062dbc072ca5b2e28f67e5a0c6db2","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6300/6372.svg","dictionarySha256":"3fa31f7e6226f94eb4b76a6219d0c23ed072fad4ce9b20748bc2b4aa24e3c8bf","sourceStrokeIndices":[1,2,3,null,null,6,7,8,9,10,11]},
+  {"glyph":"倦","strokes":10,"corpus":"MM","originalMediansSha256":"6fd6fd5504e8c84ca01a7195a442d2f270262340f4d75a7339d237ad32cc314c","pathsSha256":"8a25b6278a93782971be921004204ff2990bfb30ff25c07f6876c501bc964d8c","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5000/5026.svg","dictionarySha256":"98726ca4c82a80b8407893038526fee25ee05ba9a7e978314dcca7bb49d4e274","sourceStrokeIndices":[1,2,null,null,5,6,7,8,9,10]},
+  {"glyph":"蹶","strokes":19,"corpus":"MM","originalMediansSha256":"f21c401800d338f4db956cf40d012e760901d4b739038ef28ea50e7cd6e642e4","pathsSha256":"ed9833c80fbb4ca5ee2bb34544b77e6328039208403edfbebd65a78a85de8488","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8E00/8E76.svg","dictionarySha256":"6f09d1367a31bd11cfea11d5e29eabe4d93aaf9fbb1e66ae933ca5a7d2cac2ec","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]},
+  {"glyph":"潰","strokes":15,"corpus":"MM","originalMediansSha256":"d2935e73e54b8338a8607795c4845e501a507086533ace2bf5d4f7784c5e500e","pathsSha256":"c13855d7b0cc0bc8353c9d2c9fd8abd2c4ab354e84317c80fccaf152d38d1ae6","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6F00/6F70.svg","dictionarySha256":"47919ea9b2d96b0bc1cf79621cec46147fbe64a94114dd18ab9975a8eae77018","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]},
+  {"glyph":"詭","strokes":13,"corpus":"MM","originalMediansSha256":"f047d7dd3a1bea461ce4747d85d25abd66945eeed26a9296b4f22dc3c57509b1","pathsSha256":"d5276eead7a2b55c18fc894849e03cafa3060ac887fb473b98fa669cb36cb2e5","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8A00/8A6D.svg","dictionarySha256":"237ec04fee1a79a0119273580e7a2d2dfe7b44de397ea06d5f594a3a2aa5deac","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13]},
+  {"glyph":"几","strokes":2,"corpus":"Ko","originalMediansSha256":"1338a18923d7c88dc02fc0c4f1797fd050697b8633c4dac6cb552beba6289982","pathsSha256":"172e34de04c5dc6a7e33e49be5c8119d970d2b101a6b501d477bb3072c4d93ef","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5100/51E0.svg","dictionarySha256":"e9f44599aedf398b39f14af70546eb06834979ebac05921e7d9d7d635e2b7456","sourceStrokeIndices":[1,2]},
+  {"glyph":"櫃","strokes":18,"corpus":"MM","originalMediansSha256":"96820c11c4d834f3137810a6b5f97d9f49f4dd563a1e5ad6bab08421f78589ba","pathsSha256":"56203ff86ed791ddd570e50006a82994b2a07cd101980d0f6af344a38c0089c5","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6A00/6AC3.svg","dictionarySha256":"40e6bedbab9ef26b331d93535ab530bba006e3145e0c28330a83809968603e3d","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]},
+  {"glyph":"机","strokes":6,"corpus":"MM","originalMediansSha256":"756349e05069426bebd0731ae942be4cbdf98c5587b1e589a5ee2a4458f58705","pathsSha256":"32c0ccb9a1a70350afb982275d6829ab0ec6c65699933d9c48ea8e01818bd407","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6700/673A.svg","dictionarySha256":"612b639f6bfe70102a33c729cd407ab3e4de29cf3e3574a3c6bcebf5c3c87f50","sourceStrokeIndices":[1,2,3,4,5,6]},
+  {"glyph":"逵","strokes":12,"corpus":"Ja","originalMediansSha256":"3006e8f14290616f8d095a152a13aaaf9062d6260b93fe5e43733bddcec9fcd9","pathsSha256":"8bb29b92c631c929a8802339fef9ed3fbac4e6cc452c1df9369fed9870149eaa","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/9035.svg","dictionarySha256":"546f5c6a77b1c081afcf4318bbf77e8132cec13db5dac5f998893fa01632685b","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12]},
+  {"glyph":"窺","strokes":16,"corpus":"MM","originalMediansSha256":"56c027b79d09113a168bc270dc9f4b0c9ef8fa710040d6872f3f01fd0bda1f4f","pathsSha256":"a31ae00cd7cfe149337b311301b24016f5a35d5db3e2f7ada4886222d73345e6","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7A00/7ABA.svg","dictionarySha256":"257c35a78046bea5006c448f77385d2b94b48d660818b0f47c29a7201c9a0b56","sourceStrokeIndices":[null,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
+  {"glyph":"硅","strokes":11,"corpus":"MM","originalMediansSha256":"aa3e1bac696127686fa09cdbee522cd5bedafe99284e5d543b2b6e54b1474a29","pathsSha256":"f95ac2af85eec680836b4a52461bcfd37de1dc29ae5e60da9e955332fcf68589","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7800/7845.svg","dictionarySha256":"77b0847b0e48f15bada10cd74863a2594224096f47ddb873a87b381e452c0a9f","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11]},
+  {"glyph":"橘","strokes":16,"corpus":"MM","originalMediansSha256":"70968b5b1df21f695ad207f58800917eaafb9e2ab40b943ca32ce7b24a84c5c5","pathsSha256":"5a3d1060ee518418f767784414f21ae31c4df3cb933e2ac7c0860ab8d6b061a3","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6A00/6A58.svg","dictionarySha256":"e86a18878f565226a1968d59fb2f0ab9eb03a108a4e4854ad673060b30fad964","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
+  {"glyph":"隙","strokes":13,"corpus":"Ja","originalMediansSha256":"73216f9b59364eeebeab725056b568289f7552a0b28f81336b0ba5f1aaaceb87","pathsSha256":"818f0693fead4ff3640684338dbb8822c9dfd485841a31b6ef8f72fcc99b5aa0","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/9600/9699.svg","dictionarySha256":"d507208fcf95da14c67478cf5bca1c2b626ced61212ce0d94cf1b49a5327fd60","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13]},
+  {"glyph":"剋","strokes":9,"corpus":"MM","originalMediansSha256":"a390d6dfbc0c6db3fb95c19c3c996d0822d423b80c260ec8578ca626e369ed81","pathsSha256":"8e63f01c18b30c12a114504840f00560acbdaf72a99051b15d0d4e60753a00b1","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/5200/524B.svg","dictionarySha256":"1580da62f0a1da7b351de3e72ed6e3b4f8c5e7987a38257cda3f210ecf46dc6e","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9]},
+  {"glyph":"戟","strokes":12,"corpus":"MM","originalMediansSha256":"1466762756eae1671d372db13040b9bd7029ed0df7f0321883061b10aae84d42","pathsSha256":"447d45cdef66326af137758441d37b14f5deb5fca65bdf48097c36763c1026a8","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6200/621F.svg","dictionarySha256":"0acc62bffacb2db4c0b8322c9645a6e8610a713879cc2d0f3cd1c7f15bc9598e","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12]},
+  {"glyph":"棘","strokes":12,"corpus":"MM","originalMediansSha256":"9e4c66a3c7817047da0bbb398fa120ccf5db95e5f261581534069d2a2d5a2811","pathsSha256":"15315789fadbcc29886985bcfc5b03a83a9ffea7847d0f71cd2f5ca2791be38f","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6800/68D8.svg","dictionarySha256":"6ead27d7b1ca00b959354547ad082839acba3f84aa909f8f347353ac55a626f1","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12]},
+  {"glyph":"覲","strokes":18,"corpus":"MM","originalMediansSha256":"a79be3747911c5d31712b542bbde7e15bf4711fd12f6fa04c2df63bdcccbbc32","pathsSha256":"81dc9c8e0dd510159c39f6af12485959fcbc452a0d5d931eab36a07901df19dc","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8900/89B2.svg","dictionarySha256":"01642511377ac9ce30e4aa965c919f84e6385338fad84012ff7852e1500aded8","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]},
+  {"glyph":"襟","strokes":18,"corpus":"MM","originalMediansSha256":"1c4004dc329c809a2579319a1487e39cd11859fe1b53c5cc86b2a33fca2ba764","pathsSha256":"49178759116f361b2325a3aa74fd62e7fa5880ac7cdbf955efa99892f6db0cee","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8900/895F.svg","dictionarySha256":"40a67d4b25a8d39ef6448035cb9e6865623d71afca037b5d8947e7d549904288","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]},
+  {"glyph":"擒","strokes":16,"corpus":"Ja","originalMediansSha256":"33f2ffa3078499d8fe530f3c25e344af2b22479d83481c380023ad57310d42cb","pathsSha256":"7f55bf1713c7e1fef4e650b6f44968c94b3962fa7c1568468fd1ca34826df0c6","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6400/64D2.svg","dictionarySha256":"04087c015df90a275ef85fcf25d4db5372e27cd3bf00f5ccc6164bfb97d7b474","sourceStrokeIndices":[1,2,3,4,5,null,7,8,9,10,11,12,13,14,15,16]},
+  {"glyph":"衾","strokes":10,"corpus":"MM","originalMediansSha256":"5a2eea9e5941683aa749fc55a28525776934f8bc82d59b1fc7e646883f8028c8","pathsSha256":"909e9b52792bef7ba49a4084186cb831f922aeff7498182c8bd48d0d63562d1f","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8800/887E.svg","dictionarySha256":"0cf390f6ed30a805eae048fa97a83bc78095f6a626184c4b473a6bf4260600d4","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9,10]},
+  {"glyph":"汲","strokes":7,"corpus":"Ja","originalMediansSha256":"325e727007bd9d03c3411823671f914f7b41cbcf0fe6067f333370b38425f0da","pathsSha256":"7e370ef1e21306a222e4a35a90942db0ba534651b3d8a98718f6ec042f66cc03","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6C72.svg","dictionarySha256":"6f692cbe1cc835e8507bdf3e0153a670023f94ed2370b19aee52746614e890c3","sourceStrokeIndices":[1,2,3,4,5,6,7]},
+  {"glyph":"矜","strokes":9,"corpus":"MM","originalMediansSha256":"07d2a4df8abbd5e735851cc6b22f8114e2c145f99c07462c60f9b559d02b33e0","pathsSha256":"41f67950c78d5ef3e84ae7b8988dacd5eebb95c5bf80441c3d89c844001a1364","dictionaryUrl":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7700/77DC.svg","dictionarySha256":"4c966a5f4d964e7af49e542675e28ce57c97a9abc7e8a9f552f9fa0fd5288139","sourceStrokeIndices":[1,2,3,4,5,6,7,8,9]},
+]
+export const G1_BATCH3_DICTIONARY_REVIEW_SHA256 = '39b69cbdd41e0530e38a0912cec75c3faf22970f8d74c9cb2f5f5c5e5b675d7f'
+export const G1_BATCH3_DICTIONARY_DIRECTION_SHA256 = 'cf51a39620e465c0be5018066d366c197ac016ae41247801bf2c8c2393ce8718'
+const referencesByGlyph = new Map(G1_BATCH3_DICTIONARY_REFERENCES.map(r => [r.glyph, r]))
+export const g1Batch3DictionaryReference = (glyph: string) => referencesByGlyph.get(glyph)
+
+export function g1Batch3DictionaryMetadata(ref: G1Batch3DictionaryReference): Omit<HanjaDictionaryStrokeData, 'paths' | 'verificationSource'> {
+  return {
+    glyph: ref.glyph, verifiedAt: '2026-09-18',
+    geometrySource: G1_BATCH3_DICTIONARY_GEOMETRY[ref.corpus].sha256,
+    geometryCorrection: 'dictionary-g1-batch3-' + ref.glyph.codePointAt(0)!.toString(16) + '-v1',
+    sourceStrokeIndices: ref.sourceStrokeIndices, pathsSha256: ref.pathsSha256,
+    sourceReference: {
+      orderUrl: ref.dictionaryUrl, dictionarySvgUrl: ref.dictionaryUrl, dictionarySvgSha256: ref.dictionarySha256,
+      dictionaryDirectionStrokes: Array.from({ length: ref.strokes }, (_, i) => i + 1).join(','),
+      orderReviewSha256: G1_BATCH3_DICTIONARY_REVIEW_SHA256, geometryReviewSha256: G1_BATCH3_DICTIONARY_REVIEW_SHA256,
+      directionReviewSha256: G1_BATCH3_DICTIONARY_DIRECTION_SHA256,
+    },
+  }
+}
+export type G1Batch3DictionaryBundle = {
+  verificationSource: typeof G1_BATCH3_DICTIONARY_VERIFICATION
+  geometrySources: typeof G1_BATCH3_DICTIONARY_GEOMETRY
+  characters: readonly Omit<HanjaDictionaryStrokeData, 'verificationSource'>[]
+}
+function same(value: unknown, expected: unknown): boolean {
+  if (value === expected) return true
+  if (Array.isArray(expected)) return Array.isArray(value) && value.length === expected.length
+    && expected.every((e, i) => same(value[i], e))
+  if (!value || !expected || typeof value !== 'object' || typeof expected !== 'object' || Array.isArray(value)) return false
+  const actual = value as Record<string, unknown>, reference = expected as Record<string, unknown>
+  return Object.keys(actual).length === Object.keys(reference).length
+    && Object.entries(reference).every(([k, v]) => Object.hasOwn(actual, k) && same(actual[k], v))
+}
+export function loadG1Batch3DictionaryBundle(value: unknown): readonly HanjaDictionaryStrokeData[] {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) throw Error('G1 batch3 dictionary bundle mismatch')
+  const bundle = value as Record<string, unknown>
+  if (Object.keys(bundle).length !== 3 || !same(bundle.verificationSource, G1_BATCH3_DICTIONARY_VERIFICATION)
+    || !same(bundle.geometrySources, G1_BATCH3_DICTIONARY_GEOMETRY) || !Array.isArray(bundle.characters)
+    || bundle.characters.length !== G1_BATCH3_DICTIONARY_REFERENCES.length) throw Error('G1 batch3 dictionary bundle mismatch')
+  return bundle.characters.map((entry: unknown, i: number) => {
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) throw Error('G1 batch3 dictionary entry mismatch')
+    const { paths, ...metadata } = entry as Record<string, unknown>
+    const reference = G1_BATCH3_DICTIONARY_REFERENCES[i]
+    if (!same(metadata, g1Batch3DictionaryMetadata(reference)) || !Array.isArray(paths) || paths.length !== reference.strokes
+      || !paths.every((path: unknown) => typeof path === 'string' && /^M[-.\d]+ [-.\d]+(?: L[-.\d]+ [-.\d]+)+$/.test(path)
+        && path.match(/-?\d+(?:\.\d+)?/g)!.every(n => Number.isFinite(+n) && +n >= 0 && +n <= 100)))
+      throw Error('G1 batch3 dictionary entry mismatch')
+    return { ...g1Batch3DictionaryMetadata(reference), paths: paths as string[], verificationSource: G1_BATCH3_DICTIONARY_VERIFICATION.id }
+  })
+}
+export const HANJA_DICTIONARY_G1_BATCH3_STROKES = loadG1Batch3DictionaryBundle(reviewed)
