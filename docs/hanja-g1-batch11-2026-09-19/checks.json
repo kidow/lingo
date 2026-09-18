@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-19",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 622,
+  "approvedCharacters": 48,
+  "approvedStrokes": 589,
+  "heldCharacters": 2,
+  "heldGlyphs": ["贖", "猜"],
+  "heldReasons": {
+    "贖": "The dictionary writes the middle of 賣 as 四 with 儿 inside; the licensed MM original draws 罒 with two inner verticals (as 瀆·犢·牘·竇).",
+    "猜": "The dictionary writes the bottom of 靑 as 円 with a hanging vertical before the bar; the licensed MM original draws 月 with two inner bars (as 鯖)."
+  },
+  "initiallyMatched": 38,
+  "correctedCharacters": 10,
+  "reorderedCharacters": 8,
+  "locallyCorrectedPaths": 4,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 12,
+    "flaggedStrokes": 39,
+    "correctedFromFlags": 10,
+    "heldFromFlags": 2,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "贖 13-14 and 猜 10 were flagged and turned out to be form differences of the licensed originals rather than direction differences, so both glyphs were held instead of corrected."
+  },
+  "subThresholdSlants": {
+    "count": 11,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 11 rows, none direction-corrected; 讎10 and 蝕5 were pairings of strokes that the reorders realigned",
+    "note": "The other nine are short dots the dictionary draws vertically while the licensed corpora slant them, including the 亠 dot of 粹 at exactly 60°. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 43,
+    "Ja": 7,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": ["蒐"],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 615,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3702,
+      "remaining": 2276,
+      "percent": 61.9,
+      "totalStrokes": 74558,
+      "appliedStrokes": 43801
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 546,
+      "remaining": 599,
+      "percent": 47.7,
+      "totalStrokes": 14898,
+      "appliedStrokes": 7066
+    }
+  }
+}
