@@ -1,0 +1,72 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 784,
+  "approvedCharacters": 48,
+  "approvedStrokes": 745,
+  "heldCharacters": 2,
+  "heldGlyphs": [
+    "牘",
+    "竇"
+  ],
+  "heldReason": "Both write 賣 with 四 (inner 儿) in the dictionary while the licensed corpora have 罒 (two inner ticks), the same component form difference that held 犢 in batch 3.",
+  "initiallyMatched": 38,
+  "correctedCharacters": 10,
+  "reorderedCharacters": 5,
+  "locallyCorrectedPaths": 12,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 13,
+    "flaggedStrokes": 29,
+    "correctedFromFlags": 10,
+    "heldFromFlags": 2,
+    "retainedAfterInspection": []
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "蠣"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 519,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 2549,
+      "remaining": 3429,
+      "percent": 42.6,
+      "totalStrokes": 74558,
+      "appliedStrokes": 28962
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 197,
+      "remaining": 953,
+      "percent": 17.1,
+      "totalStrokes": 15002,
+      "appliedStrokes": 2617
+    }
+  }
+}
