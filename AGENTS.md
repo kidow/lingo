@@ -35,5 +35,6 @@ pnpm image <slug…>      # 4. WebP로 변환
 |---|---|
 | [spec.md](spec.md) §7 | 콘텐츠를 넣는 절차와 스크립트 표 |
 | [docs/nets.md](docs/nets.md) | 어느 검사가 무엇을 잡고 무엇을 놓치는지 |
+| [docs/headword-in-examples.md](docs/headword-in-examples.md) | 예문에 표제어를 그대로 두는 법 — 회차마다 걸리는 독일어 다섯 자리 |
 | [docs/concurrent-sessions.md](docs/concurrent-sessions.md) | 워크트리를 공유할 때의 규칙 |
 | [IMAGE_STYLE.md](IMAGE_STYLE.md) | 그림 규칙과 자주 걸리는 자리 |
