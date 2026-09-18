@@ -1,0 +1,74 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 621,
+  "approvedCharacters": 49,
+  "approvedStrokes": 611,
+  "heldCharacters": 1,
+  "heldGlyphs": [
+    "砥"
+  ],
+  "heldReason": "The dictionary closes 氐 with a long horizontal bar while the pinned MM candidate writes a short dot; a bar cannot be derived from the dot's own points without inventing extent, so the glyph fails closed. The Ja corpus keeps the bar form (祗 in this batch).",
+  "initiallyMatched": 42,
+  "correctedCharacters": 7,
+  "reorderedCharacters": 5,
+  "locallyCorrectedPaths": 3,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 7,
+    "flaggedStrokes": 13,
+    "correctedFromFlags": 7,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 7,
+    "range": "45° to 60°",
+    "note": "Short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in batches 1 to 12."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch uses a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 555,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 2997,
+      "remaining": 2981,
+      "percent": 50.1,
+      "totalStrokes": 74558,
+      "appliedStrokes": 34750
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 645,
+      "remaining": 505,
+      "percent": 56.1,
+      "totalStrokes": 15002,
+      "appliedStrokes": 8405
+    }
+  }
+}
