@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 586,
+  "approvedCharacters": 50,
+  "approvedStrokes": 586,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 38,
+  "correctedCharacters": 12,
+  "reorderedCharacters": 7,
+  "locallyCorrectedPaths": 17,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 12,
+    "flaggedStrokes": 36,
+    "correctedFromFlags": 12,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 22,
+    "range": "45° to 60°",
+    "note": "Short dots and verticals the dictionary draws straight while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in batches 1 to 14."
+  },
+  "permutedAuthoredStrokes": {
+    "glyph": "瀚",
+    "strokes": [15, 16, 18, 19],
+    "note": "The 习 interiors sit on reordered positions; each authored path derives only from its licensed source stroke's own points (derivedFromStroke in proposals.json and corrections.json)."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "榻",
+      "覇"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 563,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3096,
+      "remaining": 2882,
+      "percent": 51.8,
+      "totalStrokes": 74558,
+      "appliedStrokes": 35956
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 744,
+      "remaining": 406,
+      "percent": 64.7,
+      "totalStrokes": 15002,
+      "appliedStrokes": 9611
+    }
+  }
+}
