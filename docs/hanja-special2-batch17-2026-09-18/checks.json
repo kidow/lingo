@@ -1,0 +1,82 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 11,
+  "reviewedCharacters": 11,
+  "reviewedStrokes": 138,
+  "approvedCharacters": 11,
+  "approvedStrokes": 138,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 10,
+  "correctedCharacters": 1,
+  "reorderedCharacters": 0,
+  "locallyCorrectedPaths": 4,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 1,
+    "flaggedStrokes": 4,
+    "correctedFromFlags": 1,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 4,
+    "range": "45° to 60°",
+    "note": "Short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in batches 1 to 16."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch uses a horizontal offset."
+  },
+  "queueExhausted": {
+    "eligibleUnreviewedCharacters": 0,
+    "remainingSpecial2": 345,
+    "breakdown": {
+      "heldOutOfQueue": 6,
+      "dictionaryStrokeCountMismatch": 35,
+      "candidateStrokeCountMismatch": 87,
+      "noLicensedCandidate": 217
+    },
+    "note": "Every special grade II character with an exact dictionary title and a licensed candidate of matching stroke count has now been reviewed. verify.mjs reports an empty next batch instead of a range."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 571,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3157,
+      "remaining": 2821,
+      "percent": 52.8,
+      "totalStrokes": 74558,
+      "appliedStrokes": 36741
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 805,
+      "remaining": 345,
+      "percent": 70,
+      "totalStrokes": 15002,
+      "appliedStrokes": 10396
+    }
+  }
+}
