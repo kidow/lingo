@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 603,
+  "approvedCharacters": 50,
+  "approvedStrokes": 603,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 41,
+  "correctedCharacters": 9,
+  "reorderedCharacters": 7,
+  "locallyCorrectedPaths": 2,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 9,
+    "flaggedStrokes": 21,
+    "correctedFromFlags": 9,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": []
+  },
+  "subThresholdSlants": {
+    "count": 14,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°, none of them corrected",
+    "note": "Mostly short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 47,
+    "Ja": 3,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "襪",
+      "糢",
+      "蕪"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 599,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3504,
+      "remaining": 2474,
+      "percent": 58.6,
+      "totalStrokes": 74558,
+      "appliedStrokes": 41329
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 348,
+      "remaining": 797,
+      "percent": 30.4,
+      "totalStrokes": 14898,
+      "appliedStrokes": 4594
+    }
+  }
+}
