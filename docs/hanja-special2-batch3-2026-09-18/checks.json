@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 629,
+  "approvedCharacters": 49,
+  "approvedStrokes": 610,
+  "heldCharacters": 1,
+  "heldGlyphs": [
+    "犢"
+  ],
+  "heldReason": "The dictionary writes the middle of 賣 as 四 with 儿 inside; both licensed corpora have 罒 with two inner ticks. A component form cannot be reconciled by reordering or local correction.",
+  "initiallyMatched": 41,
+  "correctedCharacters": 8,
+  "reorderedCharacters": 5,
+  "locallyCorrectedPaths": 6,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 9,
+    "flaggedStrokes": 17,
+    "correctedFromFlags": 8,
+    "heldFromFlags": 1
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "覃"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 514,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 2501,
+      "remaining": 3477,
+      "percent": 41.8,
+      "totalStrokes": 74558,
+      "appliedStrokes": 28217
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 149,
+      "remaining": 1001,
+      "percent": 13,
+      "totalStrokes": 15002,
+      "appliedStrokes": 1872
+    }
+  }
+}
