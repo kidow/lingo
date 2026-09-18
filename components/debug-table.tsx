@@ -333,19 +333,39 @@ function Stat({ label, value, bad = false }: { label: string; value: string; bad
 }
 
 /**
- * 트랙별 표의 한 칸. 다 찼으면 숫자 하나로 줄인다.
+ * 얼마나 찼는가를 백분율로. (lib/progress.ts의 `masteryLabel`과 같은 규칙)
  *
- * 분모가 트랙마다 같은 줄에 이미 적혀 있어(`단어`) `6188/6188`처럼 쓰면
- * 같은 수가 한 줄에 세 번 반복된다. **모자란 자리만** 분수로 적으면 눈이
- * 그리로 먼저 간다 — 이 표를 여는 이유가 그것이다.
+ * **덜 찼는데 `100%`라고 쓰지 않는다.** TOEIC 이미지가 726/727이면 반올림이
+ * 100이 되는데, 그렇게 적으면 다 채운 트랙과 구별되지 않아 마지막 한 장이
+ * 영영 안 보인다. 반대쪽도 같다 — 하나라도 있는데 `0%`로 쓰면 아직 시작도
+ * 안 한 자리처럼 읽힌다.
+ *
+ * 그래서 양 끝은 **다 찼을 때와 하나도 없을 때만** 쓴다.
+ */
+function percentOf(done: number, total: number): string {
+  if (total === 0) return '—'
+  if (done === total) return '100%'
+  if (done === 0) return '0%'
+  const value = Math.round((done / total) * 100)
+  if (value === 0) return '<1%'
+  return `${Math.min(value, 99)}%`
+}
+
+/**
+ * 트랙별 표의 한 칸.
+ *
+ * 숫자는 `title`에 남긴다 — 퍼센트만 보면 몇 장이 모자란지 모르는데, 줄 높이를
+ * 늘리지 않고 그 수를 곁들일 자리가 여기뿐이다. 트랙 이름을 누르면 위 요약
+ * 줄에 분수가 그대로 나온다.
  */
 function Fill({ done, total }: { done: number; total: number }) {
   const short = total - done
   return (
     <td
+      title={`${done}/${total}${short > 0 ? ` · ${short} 남음` : ''}`}
       className={`px-3 py-1.5 text-right tabular-nums ${short > 0 ? 'font-semibold text-err' : 'text-sub'}`}
     >
-      {short > 0 ? `${done}/${total}` : done}
+      {percentOf(done, total)}
     </td>
   )
 }
