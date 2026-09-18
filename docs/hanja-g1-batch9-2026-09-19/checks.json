@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-19",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 609,
+  "approvedCharacters": 50,
+  "approvedStrokes": 609,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 42,
+  "correctedCharacters": 8,
+  "reorderedCharacters": 3,
+  "locallyCorrectedPaths": 8,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 7,
+    "flaggedStrokes": 12,
+    "correctedFromFlags": 7,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": ["孵6", "孵7"],
+    "note": "孵 was not flagged: the dictionary writes the right dot of 卵 before the long right vertical, and the two strokes' start-to-end vectors sit 22° and 46° apart, so the order difference only appeared on the sheet. Corrected as a reorder, not a direction edit."
+  },
+  "subThresholdSlants": {
+    "count": 16,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 17 rows, of which 孵7 became a reorder and none was direction-corrected",
+    "note": "The remaining sixteen are short dots the dictionary draws vertically while the licensed corpora slant them, plus two 爫 dots of 孵 that lean the other way by 58° and 53°. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 46,
+    "Ja": 4,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "Every source in this batch uses scale(1,-1) translate(0, -y) only; no horizontal offset. serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 607,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3604,
+      "remaining": 2374,
+      "percent": 60.3,
+      "totalStrokes": 74558,
+      "appliedStrokes": 42570
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 448,
+      "remaining": 697,
+      "percent": 39.1,
+      "totalStrokes": 14898,
+      "appliedStrokes": 5835
+    }
+  }
+}
