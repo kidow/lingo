@@ -106,7 +106,7 @@ famille`), 하나가 남는다.
 | action | `dredge` de | `Schlamm zwang sie zum Ausbaggern.` |
 | body | `emergency-room` es | `Urgencias estuvo lleno toda la noche.` |
 | body | `nursing-care` en | `Nursing care runs day and night.` |
-| everyday | `housework` en | `Housework fills her mornings.` |
+| ~~everyday `housework` en~~ | — | **끝냈다** — `Most days housework fills the morning.` |
 | home | `energy-saving` en | `Energy-saving cut the bill by half.` |
 | job | `amateur` en | `Amateur work still sells.` |
 | job | `start-a-business` de | `Zum Gründen braucht man Geld.` |
