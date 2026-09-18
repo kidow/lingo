@@ -1,0 +1,88 @@
+{
+  "date": "2026-09-18",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 744,
+  "approvedCharacters": 48,
+  "approvedStrokes": 716,
+  "heldCharacters": 2,
+  "heldGlyphs": [
+    "瀆",
+    "疼"
+  ],
+  "heldReason": "瀆: the dictionary writes the middle of 賣 as 四 (a short sweep and a small fold inside) while the pinned MM candidate writes 罒 with two inner verticals; neither stroke can be derived from a vertical's own points, and no Ja or Ko 18-stroke candidate exists (same form difference as 犢·牘·竇). 疼: the dictionary finishes 冬 with a long stroke rising to the right while the pinned MM candidate draws a short dot; the dot's points cannot give the stroke its length or direction (as 砥 was held for 氐's bar). A 10-stroke Ja candidate exists for 疼 and a later batch could pin it.",
+  "initiallyMatched": 36,
+  "correctedCharacters": 12,
+  "reorderedCharacters": 6,
+  "locallyCorrectedPaths": 10,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 13,
+    "flaggedStrokes": 27,
+    "correctedFromFlags": 12,
+    "heldFromFlags": 1,
+    "retainedAfterInspection": [
+      {
+        "glyph": "簾",
+        "stroke": 11,
+        "reason": "Both draw the right top stroke of 兼 descending to the lower left; the dictionary sweeps it flatter (61° from MM's short stroke). Reflecting or reversing the licensed stroke would turn it away from the observed direction, so the licensed geometry is kept."
+      }
+    ]
+  },
+  "subThresholdSlants": {
+    "count": 16,
+    "range": "45° to 60°",
+    "note": "Short dots the dictionary draws vertically while the licensed corpora slant them, below the inspection threshold, among the 48 approved glyphs. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 42,
+    "Ja": 8,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "逞"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 591,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3405,
+      "remaining": 2573,
+      "percent": 57,
+      "totalStrokes": 74558,
+      "appliedStrokes": 40016
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 249,
+      "remaining": 896,
+      "percent": 21.7,
+      "totalStrokes": 14898,
+      "appliedStrokes": 3281
+    }
+  }
+}
