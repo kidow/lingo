@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 624,
+  "approvedCharacters": 50,
+  "approvedStrokes": 624,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 45,
+  "correctedCharacters": 5,
+  "reorderedCharacters": 3,
+  "locallyCorrectedPaths": 2,
+  "corpusOverrides": {
+    "count": 1,
+    "glyphs": ["曩"],
+    "note": "Only 曩 needed a different corpus: the Japanese file writes the inner strokes of the 日 and 襄 bodies in a different order (three strokes over 60°, max 99°), and the simplified file already follows the dictionary except for one opening dot. selection.json records the starting corpus and the reason."
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharactersBeforeOverrides": 4,
+    "flaggedStrokesBeforeOverrides": 8,
+    "flaggedCharacters": 4,
+    "flaggedStrokes": 6,
+    "resolvedByCorpusChange": 0,
+    "correctedFromFlags": 4,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "The 曩 override removed two of the eight flagged strokes; the remaining four characters were resolved by reordering (覊, 儻) or by an authored path (曩, 甯). The endpoint assignment check added 糺, whose 糸 strokes run in the same direction and differ only in order. Recomputed against the published order and paths, no stroke is over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 6,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 6 rows between 45° and 60°, none corrected",
+    "note": "All six are short opening dots the dictionary draws vertically while the licensed corpora slant them (宄 1 at 52°, 襢 1 at 51° and 6 at 47°, 癉 1 at 56°, 螗 7 at 50°, 憝 1 at 60°). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "Ja": 30,
+    "MM": 17,
+    "Hans": 3,
+    "Hant": 0,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 690,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4376,
+      "remaining": 1602,
+      "percent": 73.2,
+      "totalStrokes": 74558,
+      "appliedStrokes": 52408
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 150,
+      "remaining": 1178,
+      "percent": 11.3,
+      "totalStrokes": 18270,
+      "appliedStrokes": 1873
+    }
+  }
+}
