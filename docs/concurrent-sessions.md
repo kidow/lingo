@@ -192,11 +192,32 @@ pnpm pending --free     # 지금 열려 있는 파일의 일감만
 | `pnpm props <소품…>` | 임자 줄에 같은 표시를 붙인다 |
 | `pnpm genimg <slug…>` | **이미 있는 그림**을 다시 그리려는데 그 파일이 만져지고 있으면 **아예 멈춘다.** 없는 그림을 채우는 것은 막지 않는다 |
 | `pnpm pending [--free]` | 넘겨 둔 일감 가운데 지금 열린 파일 것을 고른다 (규칙 8) |
-| `pnpm trailers [개수]` | 커밋 트레일러가 제 꼴인지. **나간 뒤에는 못 고친다** — history를 다시 쓰려면 force-push를 해야 하고 남이 이미 받아 갔을 수 있다 |
+| `pnpm trailers [개수]` | 커밋 트레일러가 제 꼴인지. **나간 뒤에는 못 고친다** — history를 다시 쓰려면 force-push를 해야 하고 남이 이미 받아 갔을 수 있다. `--self`를 붙이면 규칙만 시험한다 |
 
 넷 다 `git diff --name-only HEAD -- content`를 본다. 판단은 `lib/busy.ts`와
 `lib/pending.ts`에 한 벌만 두고 **파일도 git도 그 안에서 부르지 않는다** —
 그래야 `pnpm test`가 워크트리 상태에 안 기댄다. 배선은 `pnpm guards`가 본다.
+
+**함께 쓰는 세션은 제 모델 이름으로 적는다.** `pnpm trailers`는 오래
+`Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` 한 줄만 옳다고 봤는데,
+옆 세션이 `Claude Fable 5.1`로 적으면서 **열사흘 동안 계속 빨갰다.** 그 줄은
+틀린 것이 아니다 — 그 세션이 그 모델이다.
+
+그래서 무엇을 보는지 바꿨다(2026-09-20). 「이 문자열인가」가 아니라
+**「이 꼴인가」**다.
+
+    Co-Authored-By: Claude <모델> <noreply@anthropic.com>
+
+최근 400개를 세니 Opus 5가 306 · Fable 5.1이 30이고 둘 다 꼴이 옳다. 실제로
+틀렸던 것은 모델이 아니라 **주소**였다(`<maybe@noreply>`). 그것은 여전히
+걸린다.
+
+**규칙 자체도 막이가 시험한다** — `pnpm trailers --self`가 옳은 줄 둘과 틀린
+줄 넷을 넣어 본다. 정규식이 헐거워지면 「다 통과」가 되어 조용히 죽는데,
+커밋만 보면 그 죽음이 안 보인다.
+
+**늘 빨간 검사는 아무도 안 본다.** 이 파일이 막으려는 병이 그것이라, 검사
+자신이 그 병에 걸리면 검사를 고쳐야 한다.
 
 **`pnpm guards`는 그때 깨끗한 파일을 골라 쓴다.** 예전에는 `content/scene.json`에
 묶여 있어 그 파일이 더러우면 시험이 아예 안 돌았다 — 함께 쓰는 워크트리에서

@@ -129,6 +129,11 @@ if pnpm pending 2>&1 | grep -q "넘긴 개념"; then ok "pending이 목록을 �
 else no "pending이 목록을 못 냈다"; fi
 
 # 6. trailers — 커밋 트레일러가 제 꼴인지. 나간 뒤에는 못 고치므로 여기서 본다
+#
+#    규칙 자체도 함께 시험한다. 정규식이 헐거워지면 «다 통과»가 되어 조용히
+#    죽는데, 커밋만 보면 그 죽음이 안 보인다 — 다 통과한 것처럼 보이기 때문이다
+if zsh $REPO/scripts/trailers.sh --self >/dev/null 2>&1; then ok "트레일러 규칙이 옳은 줄과 틀린 줄을 가른다"
+else no "트레일러 규칙이 샌다 — pnpm trailers --self 로 보세요"; fi
 if zsh $REPO/scripts/trailers.sh 50 >/dev/null 2>&1; then ok "커밋 트레일러가 제 꼴이다"
 else no "트레일러가 어긋난 커밋이 있다 — pnpm trailers 로 보세요"; fi
 
