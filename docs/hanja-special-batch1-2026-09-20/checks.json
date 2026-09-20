@@ -1,0 +1,86 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 618,
+  "approvedCharacters": 50,
+  "approvedStrokes": 618,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 35,
+  "correctedCharacters": 15,
+  "reorderedCharacters": 11,
+  "locallyCorrectedPaths": 7,
+  "corpusOverrides": {
+    "count": 1,
+    "note": "珈 started on the Japanese file, which writes the 王 vertical before its second bar (2·3 at 103°·91°). Make Me a Hanzi carries the dictionary order with no stroke over 22°, so the corpus was replaced instead of the stroke order. selection.json records the starting corpus and the reason."
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 15,
+    "flaggedStrokes": 35,
+    "correctedFromFlags": 14,
+    "resolvedByCorpusChange": 1,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "Fourteen flagged characters were resolved by reordering (桷, 蕑, 减, 橿, 秬, 黥, 楛, 觚, 觳), by an authored path (蠲, 煢, 槀, 稾) or by both (雞); 珈 was resolved by changing corpus. The endpoint assignment check added 繳, whose 糸 strokes run in the same direction and differ only in order. Recomputed against the published order and paths, no stroke is over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 5,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 5 rows between 45° and 60°, none corrected",
+    "note": "Four are short dots the dictionary draws vertically while the licensed corpora slant them (袪 1 at 50°, 褰 1 and 11 at 59°, 鶊 1 at 51°), and one is the short 灬 dot of 黥 13 at 45°. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "Ja": 22,
+    "MM": 21,
+    "Hans": 5,
+    "Hant": 1,
+    "Ko": 1
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 680,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4276,
+      "remaining": 1702,
+      "percent": 71.5,
+      "totalStrokes": 74558,
+      "appliedStrokes": 51153
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 50,
+      "remaining": 1278,
+      "percent": 3.8,
+      "totalStrokes": 18270,
+      "appliedStrokes": 618
+    }
+  }
+}

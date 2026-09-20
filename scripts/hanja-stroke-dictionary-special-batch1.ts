@@ -1,0 +1,114 @@
+/** Offline, fail-closed reconstruction of licensed special grade geometry. */
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+import { isDeepStrictEqual } from 'node:util'
+import { normalizeMedians } from '../lib/hanja-stroke-geometry.ts'
+import type { HanjaDictionaryStrokeData } from '../lib/hanja-stroke-dictionary.ts'
+import {
+  SPECIAL_BATCH1_DICTIONARY_VERIFICATION, SPECIAL_BATCH1_DICTIONARY_GEOMETRY, SPECIAL_BATCH1_DICTIONARY_REFERENCES,
+  HANJA_DICTIONARY_SPECIAL_BATCH1_STROKES, specialBatch1DictionaryReference, specialBatch1DictionaryMetadata,
+  type SpecialBatch1DictionaryBundle,
+} from '../lib/hanja-stroke-dictionary-special-batch1.ts'
+
+const dir = 'docs/hanja-special-batch1-2026-09-20/'
+const read = (path: string) => readFileSync(new URL('../' + path, import.meta.url), 'utf8')
+const hash = (value: unknown) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
+type Medians = Parameters<typeof normalizeMedians>[0]
+type Original = {
+  glyph: string; strokes: number; corpus: keyof typeof SPECIAL_BATCH1_DICTIONARY_GEOMETRY
+  medians: Medians; originalMediansSha256: string; paths: string[]
+  dictionary: { url: string; bytes: number; sha256: string }
+}
+type Recipe = { sourceStroke: number | null; derivedFromStroke?: number; path?: string; reason?: string }
+type Observation = {
+  glyph: string; decision: string; initialDecision: string; directions: string[]
+  checks: Record<string, string>
+  correctedReview?: { completed: boolean; checks: Record<string, string> }
+}
+export const SPECIAL_BATCH1_DICTIONARY_PROOF_PINS: Readonly<Record<string, string>> = {
+  "docs/hanja-special-batch1-2026-09-20/originals.json": "917a8b16c8e734e1e5467654c482788528c4b67e94cd91e251cc5dacb83b7a92",
+  "docs/hanja-special-batch1-2026-09-20/observations.json": "637a73e94f8cac7c8d7c89e227c7cbf10ee129b6dc96206e4af0fc1a020db5ec",
+  "docs/hanja-special-batch1-2026-09-20/proposals.json": "fbb74f25b496ed368acad3411b3094b15e9c8a9ee6cc131a72c3d3f56e7a11bc",
+  "docs/hanja-special-batch1-2026-09-20/source-checks.json": "774e6ccca6c3827e4050b87897c2a69f87333a45fd0ff7017d2c73f6fdafadfb",
+  "docs/hanja-special-batch1-2026-09-20/corrections.json": "90591084945823f02fc2588f574f2b7a419d679c979262aa0875faeb74c6c7e5",
+  "docs/hanja-special-batch1-2026-09-20/candidate-paths.json": "9387021b5024d548fbd571ea5441641f145b51587f612e14c902bd6d92673203",
+  "docs/hanja-special-batch1-2026-09-20/review.json": "11fd7f32a2e14a355064a863156d9fd33df4ad88b829b8e4a5bbb6033adea1a8"
+}
+export function validateSpecialBatch1DictionaryProofs(readProof: (path: string) => string = read) {
+  for (const [path, expected] of Object.entries(SPECIAL_BATCH1_DICTIONARY_PROOF_PINS)) {
+    if (createHash('sha256').update(readProof(path)).digest('hex') !== expected)
+      throw Error('Special batch1 dictionary proof mismatch: ' + path)
+  }
+}
+export function specialBatch1DictionaryGeometry(glyph: string, medians: Medians) {
+  const ref = specialBatch1DictionaryReference(glyph)
+  if (!ref || hash(medians) !== ref.originalMediansSha256) throw Error('Special batch1 dictionary original mismatch: ' + glyph)
+  const proposals = JSON.parse(read(dir + 'proposals.json')) as Record<string, Recipe[]>
+  const recipe = proposals[glyph]
+  if (!recipe || !isDeepStrictEqual(recipe.map(r => r.sourceStroke), ref.sourceStrokeIndices))
+    throw Error('Special batch1 dictionary recipe mismatch')
+  const corrections = JSON.parse(read(dir + 'corrections.json')) as { edits: { glyph: string; stroke: number; path: string }[] }
+  const originalPaths = normalizeMedians(medians)
+  const paths = recipe.map((r, i) => {
+    if (r.sourceStroke !== null) {
+      if (!Number.isInteger(r.sourceStroke) || r.sourceStroke < 1 || r.sourceStroke > originalPaths.length || r.path)
+        throw Error('Special batch1 dictionary source index mismatch')
+      return originalPaths[r.sourceStroke - 1]
+    }
+    const edit = corrections.edits.find(e => e.glyph === glyph && e.stroke === i + 1)
+    if (!edit || edit.path !== r.path || !r.reason || !r.derivedFromStroke) throw Error('Special batch1 dictionary authored path mismatch')
+    return edit.path
+  })
+  if (paths.length !== ref.strokes || hash(paths) !== ref.pathsSha256) throw Error('Special batch1 dictionary geometry mismatch')
+  return { paths, pathsSha256: hash(paths) }
+}
+export function buildSpecialBatch1DictionaryBundle(): SpecialBatch1DictionaryBundle {
+  validateSpecialBatch1DictionaryProofs()
+  const originals = JSON.parse(read(dir + 'originals.json')) as {
+    sources: typeof SPECIAL_BATCH1_DICTIONARY_GEOMETRY; entries: Original[]
+  }
+  const observations = JSON.parse(read(dir + 'observations.json')) as { status: string; entries: Observation[] }
+  const sourceChecks = JSON.parse(read(dir + 'source-checks.json')) as { entries: {
+    glyph: string; dictionary: Original['dictionary']
+    strokes: { xmlIndex: number; delay: number; duration: number }[]
+  }[] }
+  const frozen = JSON.parse(read(dir + 'candidate-paths.json')) as { entries: { glyph: string; paths: string[] }[] }
+  const approvedGlyphs = SPECIAL_BATCH1_DICTIONARY_REFERENCES.map(r => r.glyph)
+  if (!isDeepStrictEqual(originals.sources, SPECIAL_BATCH1_DICTIONARY_GEOMETRY) || originals.entries.length !== 50
+    || new Set(originals.entries.map(e => e.glyph)).size !== 50 || observations.status !== 'complete'
+    || !isDeepStrictEqual(observations.entries.filter(e => e.decision === 'matched').map(e => e.glyph), approvedGlyphs)
+    || !isDeepStrictEqual(frozen.entries.map(e => e.glyph), approvedGlyphs)) throw Error('Special batch1 dictionary approved set mismatch')
+  const characters = SPECIAL_BATCH1_DICTIONARY_REFERENCES.map(ref => {
+    const original = originals.entries.find(e => e.glyph === ref.glyph)
+    const observation = observations.entries.find(e => e.glyph === ref.glyph)
+    const source = sourceChecks.entries.find(e => e.glyph === ref.glyph)
+    const expectedChecks = { order: 'match', direction: 'match', boundaries: 'match', glyphForm: 'match' }
+    if (!original || original.corpus !== ref.corpus || original.strokes !== ref.strokes
+      || original.originalMediansSha256 !== ref.originalMediansSha256
+      || !isDeepStrictEqual(normalizeMedians(original.medians), original.paths)
+      || original.dictionary.url !== ref.dictionaryUrl || original.dictionary.sha256 !== ref.dictionarySha256
+      || !observation || observation.decision !== 'matched' || observation.directions.length !== ref.strokes
+      || !isDeepStrictEqual(observation.checks, expectedChecks)
+      || (observation.initialDecision !== 'matched' && (!observation.correctedReview?.completed
+        || !isDeepStrictEqual(observation.correctedReview.checks, expectedChecks)))
+      || !source || !isDeepStrictEqual(source.dictionary, original.dictionary)
+      || source.strokes.length !== ref.strokes || new Set(source.strokes.map(s => s.xmlIndex)).size !== ref.strokes
+      || source.strokes.some((s, i, list) => s.duration <= 0 || s.delay < 0 || (i > 0 && s.delay <= list[i - 1].delay)))
+      throw Error('Special batch1 dictionary review incomplete: ' + ref.glyph)
+    const geometry = specialBatch1DictionaryGeometry(ref.glyph, original.medians)
+    if (!isDeepStrictEqual(geometry.paths, frozen.entries.find(e => e.glyph === ref.glyph)?.paths))
+      throw Error('Special batch1 dictionary frozen candidate mismatch')
+    return { ...specialBatch1DictionaryMetadata(ref), ...geometry }
+  })
+  return { verificationSource: SPECIAL_BATCH1_DICTIONARY_VERIFICATION, geometrySources: SPECIAL_BATCH1_DICTIONARY_GEOMETRY, characters }
+}
+export function validateSpecialBatch1DictionaryReview(entry: HanjaDictionaryStrokeData, expectedStrokes: number) {
+  const found = buildSpecialBatch1DictionaryBundle().characters.find(e => e.glyph === entry.glyph)
+  if (!found || found.paths.length !== expectedStrokes
+    || !isDeepStrictEqual(entry, { ...found, verificationSource: SPECIAL_BATCH1_DICTIONARY_VERIFICATION.id }))
+    throw Error('Special batch1 dictionary published entry mismatch')
+}
+export function validateSpecialBatch1DictionaryBundle(entries: readonly HanjaDictionaryStrokeData[] = HANJA_DICTIONARY_SPECIAL_BATCH1_STROKES) {
+  const expected = buildSpecialBatch1DictionaryBundle().characters.map(e => ({ ...e, verificationSource: SPECIAL_BATCH1_DICTIONARY_VERIFICATION.id }))
+  if (!isDeepStrictEqual(entries, expected)) throw Error('Special batch1 dictionary published bundle mismatch')
+}
