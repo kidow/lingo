@@ -23,6 +23,9 @@
  * 적어 두었다. 여기서는 그 문서의 어느 줄인지를 경고에 붙인다.
  */
 
+import { clozeAt } from './quiz.ts'
+import type { Language } from './types.ts'
+
 const SPACE = /\s+/gu
 /** 낱말로 자른다. 문장 부호는 떼고 본다 — «sinueuse.»의 마침표까지 세면 못 맞춘다 */
 const words = (text: string): string[] =>
@@ -181,4 +184,46 @@ export function whyStuck(text: string, answer: string): string {
   if (at >= 0 && !words(text).some((w) => lower(w) === lower(answer)))
     return '표제어가 낱말 안에만 있습니다 — 어미가 안 붙는 자리를 쓰거나 표제형을 굴절형으로 박으세요'
   return ''
+}
+
+/** 예문이 표제어를 못 보여주는 자리. `said`는 짚을 말이고, 없으면 빈 문자열이다 */
+export type Snag = {
+  /** capital 대소문자만 다름 · missing 아예 없음 · stuck 들어는 있는데 못 뚫음 */
+  kind: 'capital' | 'missing' | 'stuck'
+  said: string
+}
+
+/**
+ * 예문 하나를 재 본다. 걸릴 것이 없으면 `null`.
+ *
+ * 세 갈래를 가르는 판단은 오래 `scripts/check.ts` 안에만 있었다. 그래서 그
+ * 판단을 쓰려면 아홉 단계짜리 `pnpm batch`를 끝까지 돌려야 했다 — **쓰고 난
+ * 뒤에야** 무엇이 틀렸는지 알았다는 뜻이다. 열세 회차 내내 회차마다 서넛씩
+ * 같은 자리에서 걸렸다(영어 문장 첫머리 · 프랑스어 축약). 여기로 내려
+ * `scripts/ex.ts`가 **쓰기 전에** 같은 잣대로 잴 수 있게 한다.
+ */
+export function judgeExample(text: string, answer: string, lang: Language): Snag | null {
+  if (!text.includes(answer))
+    return text.toLowerCase().includes(answer.toLowerCase())
+      ? { kind: 'capital', said: whyCapital(text, answer) }
+      : { kind: 'missing', said: whyMissing(text, answer, lang) }
+  if (clozeAt(text, answer, lang) >= 0) return null
+  return { kind: 'stuck', said: whyStuck(text, answer) }
+}
+
+/**
+ * 낱말 하나의 예문을 다 재 본다. 차례(`at`)를 달아 돌려준다.
+ *
+ * 「못 뚫음」만 다르게 센다 — 예문 둘 가운데 하나만 뚫리면 문맥 카드는
+ * 만들어지므로 **다 막혔을 때만** 말한다. `scripts/check.ts`가 오래 그렇게
+ * 해 왔고(낱말마다 하나씩만 낸다), 여기서도 마지막 것 하나만 남긴다.
+ */
+export function judgeWord(texts: string[], answer: string, lang: Language): (Snag & { at: number })[] {
+  const all = texts
+    .map((text, at) => ({ at, snag: judgeExample(text, answer, lang) }))
+    .flatMap(({ at, snag }) => (snag ? [{ ...snag, at }] : []))
+  const stuck = all.filter((s) => s.kind === 'stuck')
+  // 하나라도 멀쩡히 뚫렸으면 막힌 자리는 접는다. 아니면 마지막 것만 낸다
+  const keep = all.length < texts.length ? [] : stuck.slice(-1)
+  return [...all.filter((s) => s.kind !== 'stuck'), ...keep].sort((a, b) => a.at - b.at)
 }

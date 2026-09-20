@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { whyCapital, whyMissing, whyStuck } from './headword.ts'
+import { judgeExample, judgeWord, whyCapital, whyMissing, whyStuck } from './headword.ts'
 
 /*
  * 아래 예문은 전부 **실제로 경고가 났던 줄**이다. 2026-09-18부터 열두 회차를
@@ -71,4 +71,48 @@ test('한 낱말만 갈린 자리 — 꼴이 아니라 말이 다르다', () => 
     whyMissing('Er wollte damit niemanden tief verletzen.', 'jemanden tief verletzen', 'de'),
     /"jemanden"만 예문에 없습니다/,
   )
+})
+
+/*
+ * `judgeExample`은 `pnpm check`와 `pnpm ex`가 함께 쓰는 잣대다. 세 갈래를
+ * 가르는 자리라, 갈래마다 **실제로 걸렸던 줄**을 하나씩 박아 둔다.
+ */
+
+test('멀쩡한 예문은 걸리지 않는다', () => {
+  assert.equal(judgeExample('The officials arrive an hour early.', 'officials', 'en'), null)
+})
+
+test('문장 첫머리 대문자는 capital이다 — 회차마다 나오는 자리', () => {
+  const snag = judgeExample('Employment rose after the mill opened.', 'employment', 'en')
+  assert.equal(snag?.kind, 'capital')
+  assert.match(snag?.said ?? '', /첫머리/)
+})
+
+test('프랑스어 축약은 stuck이다 — 들어는 있고 못 뚫는다', () => {
+  const snag = judgeExample("Le graphique montre l'écart.", 'écart', 'fr')
+  assert.equal(snag?.kind, 'stuck')
+  assert.match(snag?.said ?? '', /아포스트로피/)
+})
+
+test('꼴이 바뀐 자리는 missing이다', () => {
+  assert.equal(judgeExample('Frost stops them excavating.', 'excavate', 'en')?.kind, 'missing')
+})
+
+test('예문 둘 중 하나만 뚫리면 못 뚫은 자리는 접는다', () => {
+  const texts = ['Une heure de la marée décale.', "Le pêcheur lit l'heure de la marée."]
+  assert.deepEqual(judgeWord(texts, 'heure de la marée', 'fr'), [])
+})
+
+test('둘 다 막히면 뒤엣것 하나만 낸다 — check가 오래 그렇게 해 왔다', () => {
+  const texts = ["Il lit l'écart.", "Le graphique montre l'écart."]
+  const snags = judgeWord(texts, 'écart', 'fr')
+  assert.equal(snags.length, 1)
+  assert.equal(snags[0].at, 1)
+})
+
+test('없는 자리는 뚫린 예문이 있어도 그대로 짚는다', () => {
+  const texts = ['Frost stops them excavating.', 'They excavate the trench by hand.']
+  const snags = judgeWord(texts, 'excavate', 'en')
+  assert.equal(snags.length, 1)
+  assert.equal(snags[0].kind, 'missing')
 })

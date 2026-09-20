@@ -1235,6 +1235,7 @@ pnpm pending --free            # 넘겨 둔 것 중 지금 열린 파일이 있�
 pnpm coverage                  # 숫자만
 pnpm coverage --missing tsl    # 빠진 낱말을 실제로 찍는다 (tsl · hsk · torfl)
 pnpm dup <slug|뜻조각> …        # 후보가 이미 있는지 배치 앞에서 본다
+pnpm ex <배치.json>            # 예문이 표제어를 보여주는지, content/에 넣기 전에
 pnpm batch <slug…>             # 넣은 뒤에 늘 함께 도는 아홉을 한 번에
 ```
 
@@ -1524,11 +1525,13 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 
 0. `pnpm pending --free` — 남에게 넘겨 둔 것 가운데 **지금 열린 파일**이 있는지 본다. 회차마다 도는 자리다 ([AGENTS.md](AGENTS.md) · [docs/concurrent-sessions.md](docs/concurrent-sessions.md) 규칙 8)
 1. `pnpm dup <slug|뜻…>` — 그 개념이 이미 있는지 `content/` 전체에 대고 본다
-2. 주제 파일(`content/{topic}.json`)에 개념 블록을 쓴다 — `slug`, `meaning_ko`, `category`, `image_prompt`, 언어별 단어
-3. `pnpm batch <slug…>` — 소품 겹침·로마자·발음기호·번체·시험 등급·발음 목록·굽기·검증을 한 번에 (`check`만 따로 돌리면 로마자가 빈 채로 경고가 이백 줄 난다)
-4. `pnpm genimg <slug...>` — `pnpm prompt`의 문구로 1024 PNG를 만들어 `.images/`에 둔다 (한 장씩 도는 것이 기본이다. 아래)
-5. `pnpm image <slug>` — 512 WebP로 변환해 `public/concepts/`에 넣는다
-6. **80×80으로 줄여도 알아볼 수 있는지 확인한다** (IMAGE_STYLE.md 검수 체크리스트)
+2. 개념 블록을 쓴다 — `slug`, `meaning_ko`, `category`, `image_prompt`, 언어별 단어
+3. `pnpm ex <배치.json>` — **주제 파일에 넣기 전에** 예문이 표제어를 글자 그대로 보여주는지 본다. 받는 꼴이 `content/*.json`과 같아 쓰려던 것을 그대로 흘려보내면 된다. `check`와 같은 잣대라(`lib/headword.ts`) 여기를 지나가면 뒤에서 안 걸린다 (0.3초)
+4. 주제 파일(`content/{topic}.json`)에 넣는다
+5. `pnpm batch <slug…>` — 소품 겹침·로마자·발음기호·번체·시험 등급·발음 목록·굽기·검증을 한 번에 (`check`만 따로 돌리면 로마자가 빈 채로 경고가 이백 줄 난다)
+6. `pnpm genimg <slug...>` — `pnpm prompt`의 문구로 1024 PNG를 만들어 `.images/`에 둔다 (한 장씩 도는 것이 기본이다. 아래)
+7. `pnpm image <slug>` — 512 WebP로 변환해 `public/concepts/`에 넣는다
+8. **80×80으로 줄여도 알아볼 수 있는지 확인한다** (IMAGE_STYLE.md 검수 체크리스트)
    - **`pnpm genimg`이 끝나면서 시트를 이미 붙여 놓는다** (`.images/sheet-<첫 slug>.png`).
      열어 보기만 하면 된다 — 예전에는 "`pnpm sheet`를 돌리세요"라는 권유였고
      권유는 건너뛸 수 있었다.

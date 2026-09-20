@@ -16,8 +16,7 @@ import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
 import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { LANG } from '../lib/lang.ts'
-import { whyCapital, whyMissing, whyStuck } from '../lib/headword.ts'
-import { clozeAt } from '../lib/quiz.ts'
+import { judgeExample } from '../lib/headword.ts'
 import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import { fingerprint } from './levels-stamp.ts'
 import type { Concept, Language, Trivia } from '../lib/types.ts'
@@ -473,7 +472,13 @@ for (const file of files) {
          * 카드는 만들어지고, 줄마다 경고하면 764줄이 되어 아무도 안 읽는다.
          */
         if (typeof example.text === 'string' && typeof answer === 'string') {
-          if (!example.text.includes(answer))
+          /*
+           * 세 갈래를 가르는 판단은 `lib/headword.ts`에 있다. `pnpm ex`가
+           * **쓰기 전에** 같은 잣대로 재려면 한 벌이어야 한다. 여기는 그
+           * 판단을 말로 옮기는 자리다.
+           */
+          const snag = judgeExample(example.text, answer, lang as Language)
+          if (snag && snag.kind !== 'stuck')
             /*
              * **대소문자만 다른 자리를 갈라 말한다.**
              *
@@ -495,15 +500,15 @@ for (const file of files) {
              * 어디를 고칠지는 lib/headword.ts가 짚는다.
              */
             warn(
-              example.text.toLowerCase().includes(answer.toLowerCase())
-                ? `${where} — ${lang}.${at}이 "${answer}"를 대문자로 씁니다. 뚫을 자리는 대소문자까지 맞아야 합니다 — ${whyCapital(example.text, answer)}`
-                : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다${hint(whyMissing(example.text, answer, lang))}`,
+              snag.kind === 'capital'
+                ? `${where} — ${lang}.${at}이 "${answer}"를 대문자로 씁니다. 뚫을 자리는 대소문자까지 맞아야 합니다 — ${snag.said}`
+                : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다${hint(snag.said)}`,
             )
-          else if (clozeAt(example.text, answer, lang as Language) >= 0) clozable.add(`${slug}|${lang}`)
+          else if (!snag) clozable.add(`${slug}|${lang}`)
           else
             stuck.set(
               `${slug}|${lang}`,
-              `${where} — ${lang}의 예문에서 "${answer}"를 뚫을 자리가 없습니다${hint(whyStuck(example.text, answer))}`,
+              `${where} — ${lang}의 예문에서 "${answer}"를 뚫을 자리가 없습니다${hint(snag.said)}`,
             )
         }
         if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
