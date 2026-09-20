@@ -254,11 +254,13 @@ const DE_CLAUSE = /^(zu|und|oder|aber|sondern|denn|als|wie|weil|dass|ob|damit|we
 
 /** 뒤따라도 되는 정형 동사 — 종속절은 동사가 끝에 온다 (`… austragen muss`) */
 const DE_FINITE = new Set(
-  `ist sind war waren sei seien bin bist seid hat haben hatte hatten
-   wird werden wurde wurden würde würden kann können konnte konnten könnte könnten
-   muss müssen musste mussten müsste müssten soll sollen sollte sollten
-   will wollen wollte wollten darf dürfen durfte durften mag mögen mochte möchte möchten
-   lässt lassen ließ ließen bleibt bleiben blieb blieben`.split(/\s+/u),
+  `ist sind war waren sei seien bin bist seid hast habt hat haben hatte hatten
+   wird wirst werden wurde wurden würde würden
+   kann kannst können konnte konnten könnte könnten
+   muss musst müssen musste mussten müsste müssten soll sollst sollen sollte sollten
+   will willst wollen wollte wollten darf darfst dürfen durfte durften
+   mag magst mögen mochte möchte möchten
+   lässt lassen ließ ließen bleibt bleibst bleiben blieb blieben`.split(/\s+/u),
 )
 
 /**
@@ -270,10 +272,10 @@ const DE_FINITE = new Set(
  */
 const DE_TENSED = new Set(
   `ist sind war waren sei seien bin bist seid hast habt hat hatte hatten gilt
-   wird wurde wurden würde würden kann konnte konnten könnte könnten
-   muss musste mussten müsste müssten soll sollte sollten
-   will wollte wollten darf durfte durften mag mochte möchte möchten
-   lässt ließ ließen bleibt blieb blieben`.split(/\s+/u),
+   wird wirst wurde wurden würde würden kann kannst konnte konnten könnte könnten
+   muss musst musste mussten müsste müssten soll sollst sollte sollten
+   will willst wollte wollten darf darfst durfte durften mag magst mochte möchte möchten
+   lässt ließ ließen bleibt bleibst blieb blieben`.split(/\s+/u),
 )
 
 /** 앞에 오면 동사구가 아니라 **명사**인 자리 — `beim Bomben abwerfen` */

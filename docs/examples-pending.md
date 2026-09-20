@@ -174,14 +174,15 @@ famille`), 하나가 남는다.
 `check`에는 넣지 않았다. 경고 스물넷이 이백일흔이 되어 나머지를 덮는다.
 `pnpm props`·`pnpm twins`·`pnpm also-audit`과 같은 자리다 — **목록만 낸다.**
 
-### `action`·`idea`·`number`·`quality`를 치웠다 — 117 남는다 (2026-09-20)
+### 여덟 파일을 치웠다 — 69 남는다 (2026-09-20)
 
-한 파일씩 끊어 돈다. 네 파일의 어순은 이제 **0**이다(248 → 117).
+한 파일씩 끊어 돈다. `action`·`idea`·`number`·`quality`·`city`·`family`·
+`time`·`office`의 어순은 이제 **0**이다(248 → 69).
 
-| 남은 파일 | | | | | | | |
-| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| city 14 | family 13 | time 10 | office 10 | school 9 | everyday 9 | job 8 | clothes 8 |
-| travel 7 | nature 7 | body 6 | transport 5 | home 5 | sport 4 | food 2 | |
+| 남은 파일 | | | | | | |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| school 9 | everyday 9 | job 8 | travel 7 | nature 7 | clothes 7 | body 6 |
+| transport 5 | home 5 | sport 4 | food 2 | | | |
 
 **일흔일곱이 두 갈래였다.** 마흔일곱은 낱말 자리만 옮기면 됐고(조동사를 둘째
 자리에, 표제형을 끝으로), 서른은 **표제형이 전치사로 끝나** 고칠 길이 아예
@@ -236,8 +237,31 @@ famille`), 하나가 남는다.
 
 **부정이 걸림돌이다.** 독일어의 `nicht`는 부정사 바로 앞에 서므로
 `sich nicht fügen`처럼 표제형을 가른다. 길이 셋이다 — 부정을 `niemand`·`nie`로
-옮기거나(`Den Staub wird niemand beachten.`), 부정을 표제형에 넣거나
-(`nicht übereinstimmen`), 예문을 긍정으로 쓴다.
+옮기거나(`Den Staub wird niemand beachten.` · `Nie soll man sich einmischen.`),
+부정을 표제형에 넣거나(`nicht übereinstimmen`), 예문을 긍정으로 쓴다.
+
+#### `city`·`family`·`time`·`office` 마흔여섯 (2026-09-20)
+
+표제형은 둘만 바꿨다 — 전치사로 끝나는 자리가 둘뿐이었다.
+
+| 개념 | 전 | 후 |
+| --- | --- | --- |
+| `city/be-the-property-of` | `Eigentum sein von` | `Eigentum sein` |
+| `family/guard-against` | `sich hüten vor` | `sich hüten` |
+
+**절이 든 표제형에는 쉼표가 걸림돌이다.** 관계절을 품은 표제형
+(`Brüder die keinen Tag voneinander weichen`)은 독일어 쉼표 규칙이 표제형
+한가운데를 끊는다. 표제형이 **쉼표 앞에서 끝나도록** 문장을 돌린다 —
+`Brüder, die keinen Tag voneinander weichen, kennen einander ganz.`
+`um … zu`는 다르다. 1996년 이후 그 앞의 쉼표는 **선택**이라 그대로 설 수 있다
+(`sich vordrängen um der Erste zu sein`).
+
+**주어절을 뒤로 빼면 표제형이 붙는다.** `Wer spät zahlt, muss sich zuziehen
+eine Gebühr.`는 목적어가 뒤에 남는데, 주어절을 Nachfeld로 보내면 풀린다 —
+`Eine Gebühr muss sich zuziehen, wer spät zahlt.`
+
+그물에 **2인칭 정형**을 채웠다(`willst`·`kannst`·`musst`…). 빠져 있어
+`bevor du es von anderswo übernehmen willst`처럼 멀쩡한 종속절이 둘 걸렸다.
 
 | 파일 | 개념 | 표제형 | 예문 |
 | --- | --- | --- | --- |

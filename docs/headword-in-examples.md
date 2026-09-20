@@ -64,7 +64,7 @@
 남아도 되는 자리 넷을 뺀다 — 쉼표로 절이 이어짐 · 종속절의 정형 동사
 (`… austragen muss`) · 명사로 쓴 자리(`beim Bomben abwerfen`) · **표제어가
 정형 동사로 끝나는 자리**(`es ist seines` — 그건 왼쪽 괄호라 뒤에 말이 오는
-것이 맞다). `pnpm ex`가 돌리고 `check`는 안 돌린다. `content/` 전체에 117이
+것이 맞다). `pnpm ex`가 돌리고 `check`는 안 돌린다. `content/` 전체에 69가
 남아 있어서다 ([examples-pending.md](examples-pending.md)).
 
 ### 표제형이 전치사로 끝나면 문장에 못 선다
