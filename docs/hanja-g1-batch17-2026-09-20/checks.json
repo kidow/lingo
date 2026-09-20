@@ -1,0 +1,84 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 708,
+  "approvedCharacters": 46,
+  "approvedStrokes": 654,
+  "heldCharacters": 4,
+  "heldGlyphs": [
+    "讒",
+    "瘠",
+    "脊",
+    "凸"
+  ],
+  "initiallyMatched": 36,
+  "correctedCharacters": 10,
+  "reorderedCharacters": 4,
+  "locallyCorrectedPaths": 10,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 14,
+    "flaggedStrokes": 28,
+    "correctedFromFlags": 10,
+    "heldFromFlags": 4,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "讒 18, 凸 5, and the 脊-top flags of 瘠 and 脊 are the form and boundary differences themselves, so those glyphs are held rather than corrected."
+  },
+  "subThresholdSlants": {
+    "count": 9,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 9 rows, none corrected",
+    "note": "All nine are short opening dots the dictionary draws vertically while the licensed corpora slant them (擦 4, 站 1, 廠 1, 瘡 1, 寨 1, 瘠 1, 穿 1, 擅 4, 諦 8). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 49,
+    "Ja": 1,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "No dictionary SVG in this batch uses a translate(x, -y) horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 639,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 3991,
+      "remaining": 1987,
+      "percent": 66.8,
+      "totalStrokes": 74558,
+      "appliedStrokes": 47581
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 835,
+      "remaining": 310,
+      "percent": 72.9,
+      "totalStrokes": 14898,
+      "appliedStrokes": 10846
+    }
+  }
+}
