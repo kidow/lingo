@@ -1,0 +1,94 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 643,
+  "approvedCharacters": 48,
+  "approvedStrokes": 618,
+  "heldCharacters": 2,
+  "heldGlyphs": ["牖", "扆"],
+  "heldReason": {
+    "component": "戶",
+    "note": "The dictionary opens 戶 with a long bar — the 戸 form — where every licensed corpus draws a short dot: 57 units of width against 13 in 扆, and the same difference in 牖. That is a different stroke, not a different direction or order, so both glyphs fail closed and stay out of the runtime and out of later queues until a source carrying the dictionary form exists. Same treatment as 賣's 四·罒, 靑·青 and 兪's 巜·刂 in the earlier grades."
+  },
+  "initiallyMatched": 41,
+  "correctedCharacters": 7,
+  "reorderedCharacters": 4,
+  "locallyCorrectedPaths": 4,
+  "corpusOverrides": {
+    "count": 5,
+    "glyphs": ["喟", "鮪", "帷", "劓", "夤"],
+    "note": "Four started from Ja and one from MM. 喟 → MM and 劓 → Hans came out clean (two strokes over 60° each to none over 23° and 14°). 贏-style savings again: 鮪 → MM cut four flagged strokes to two and 帷 → Hans three to one. 夤 → Hans removed its single flag. selection.json records every starting corpus and reason.",
+    "startingCorpora": { "喟": "Ja", "鮪": "Ja", "帷": "Ja", "劓": "Ja", "夤": "MM" }
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharactersBeforeOverrides": 12,
+    "flaggedStrokesBeforeOverrides": 22,
+    "flaggedCharacters": 9,
+    "flaggedStrokes": 13,
+    "resolvedByCorpusChange": 3,
+    "correctedFromFlags": 7,
+    "heldFromFlags": 2,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "喟, 劓 and 夤 disappeared when the corpus changed. 濰, 黝, 鮪 and 囿 were resolved by reordering and 耰, 濰, 帷 and 軔 by an authored path. 扆 1 (141°) and 牖 5·6·8 turned out to be the 戶 form difference and were held. The endpoint assignment check added the 糸 pair in 濰 and proposed two swaps in 窬 and 异 whose gains were 0.8 and 3.4 — noise, left alone. Recomputed against the published order and paths, no stroke is over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 5,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 5 rows between 45° and 60°, none corrected",
+    "note": "Short opening dots and inner marks the dictionary draws vertically or steeper than the licensed corpora (窬 1 at 50° and 12 at 48°, 夤 4 at 60°, 袵 1 at 47°, 衽 1 at 48°). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "Ja": 21,
+    "MM": 19,
+    "Hans": 8,
+    "Hant": 0,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": ["闉"],
+    "note": "One dictionary group carries a horizontal offset, translate(12, -830), as in each batch since 厲 in batch 4. serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y), and the published paths come from the licensed corpus, so the offset only affects what the review sheet draws."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 721,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4674,
+      "remaining": 1304,
+      "percent": 78.2,
+      "totalStrokes": 74558,
+      "appliedStrokes": 56345
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 448,
+      "remaining": 880,
+      "percent": 33.7,
+      "totalStrokes": 18270,
+      "appliedStrokes": 5810
+    }
+  }
+}
