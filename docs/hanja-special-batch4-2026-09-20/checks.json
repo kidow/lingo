@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 714,
+  "approvedCharacters": 50,
+  "approvedStrokes": 714,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 32,
+  "correctedCharacters": 18,
+  "reorderedCharacters": 12,
+  "locallyCorrectedPaths": 11,
+  "corpusOverrides": {
+    "count": 2,
+    "glyphs": ["蠃", "雒"],
+    "note": "蠃 is the largest single saving so far: the Japanese file writes the whole 虫 body of 蠃 in a different order (five strokes over 60°, max 100°, and a ten-stroke permutation), while the simplified file follows the dictionary with no stroke over 53°. 雒 dropped from three flagged strokes to one, which then took an authored path. selection.json records both starting corpora and reasons."
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharactersBeforeOverrides": 15,
+    "flaggedStrokesBeforeOverrides": 44,
+    "flaggedCharacters": 14,
+    "flaggedStrokes": 37,
+    "resolvedByCorpusChange": 1,
+    "correctedFromFlags": 14,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "蠃 disappeared when the corpus changed. The rest were resolved by reordering (黷, 僮, 厲, 藘, 蘞, 罍, 霾, 篾) or by an authored path (螣, 雒, 捋, 稂, 僇, 廩). The endpoint assignment check added 綯, 孌, 繚 and 脢, whose strokes run in the same direction and differ only in order. Recomputed against the published order and paths, no stroke is over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 6,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 6 rows between 45° and 60°, none corrected",
+    "note": "All six are short dots the dictionary draws vertically or steeper than the licensed corpora (僮 3 at 54°, 蠃 1 at 51° and 19 at 53°, 懍 4 at 52°, 廩 4 at 60°, 旄 1 at 53°). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "Ja": 27,
+    "MM": 18,
+    "Hans": 5,
+    "Hant": 0,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": ["厲"],
+    "note": "厲 is the first special grade glyph whose dictionary group carries a horizontal offset, translate(12, -830). serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y), and the published paths come from the licensed corpus, so the offset only affects what the review sheet draws."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 695,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4426,
+      "remaining": 1552,
+      "percent": 74.0,
+      "totalStrokes": 74558,
+      "appliedStrokes": 53122
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 200,
+      "remaining": 1128,
+      "percent": 15.1,
+      "totalStrokes": 18270,
+      "appliedStrokes": 2587
+    }
+  }
+}
