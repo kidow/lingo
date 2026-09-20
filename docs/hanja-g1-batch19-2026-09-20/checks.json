@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 599,
+  "approvedCharacters": 50,
+  "approvedStrokes": 599,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 42,
+  "correctedCharacters": 8,
+  "reorderedCharacters": 6,
+  "locallyCorrectedPaths": 3,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 8,
+    "flaggedStrokes": 15,
+    "correctedFromFlags": 8,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "Every flagged character led to a correction; no flagged stroke was left as it stood. An endpoint assignment check over all fifty glyphs surfaced no order difference beyond the flagged 皮 (跛, 婆, 披), 長 (套), 馬 (騙) and 重 (慟) positions; the 巳 folds of 疱 differ by less than 0.3 in the 0-100 frame and keep the same order on both sides."
+  },
+  "subThresholdSlants": {
+    "count": 8,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 8 rows, none corrected",
+    "note": "Seven are short dots the dictionary draws vertically while the licensed corpora slant them (褪 1, 辦 1, 辦 10, 疱 1, 庖 1, 褒 1, 袍 1) and one is the 勺 dot of 豹 (10) the dictionary draws flat. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 44,
+    "Ja": 6,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 647,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4091,
+      "remaining": 1887,
+      "percent": 68.4,
+      "totalStrokes": 74558,
+      "appliedStrokes": 48852
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 935,
+      "remaining": 210,
+      "percent": 81.7,
+      "totalStrokes": 14898,
+      "appliedStrokes": 12117
+    }
+  }
+}
