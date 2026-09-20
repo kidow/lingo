@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { judgeExample, judgeWord, whyCapital, whyMissing, whyStuck } from './headword.ts'
+import { judgeExample, judgeWord, whyCapital, whyLateVerb, whyMissing, whyStuck } from './headword.ts'
 
 /*
  * 아래 예문은 전부 **실제로 경고가 났던 줄**이다. 2026-09-18부터 열두 회차를
@@ -115,4 +115,45 @@ test('없는 자리는 뚫린 예문이 있어도 그대로 짚는다', () => {
   const snags = judgeWord(texts, 'excavate', 'en')
   assert.equal(snags.length, 1)
   assert.equal(snags[0].kind, 'missing')
+})
+
+/*
+ * 독일어 동사 괄호. 아래는 전부 `content/`에 실제로 들어 있던 줄이다 —
+ * 걸려야 하는 것과 걸리면 안 되는 것을 나란히 둔다.
+ */
+
+test('동사구가 문장 끝에 안 오면 걸린다 — 정형 동사가 아예 없는 자리', () => {
+  const said = whyLateVerb('Sie instand halten die Pumpe monatlich.', 'instand halten', 'de', '동사')
+  assert.match(said, /둘째 자리/)
+  assert.match(said, /"die"/)
+})
+
+test('조동사를 세우고 끝으로 보내면 안 걸린다', () => {
+  assert.equal(whyLateVerb('Sie müssen die Pumpe monatlich instand halten.', 'instand halten', 'de', '동사'), '')
+  assert.equal(whyLateVerb('Staub lässt sich schwer instand halten.', 'instand halten', 'de', '동사'), '')
+})
+
+test('종속절은 동사가 끝에 온다 — 뒤의 정형 동사는 흠이 아니다', () => {
+  assert.equal(
+    whyLateVerb('Mauern fallen wenn man sie auf einmal überrennen kann.', 'sie auf einmal überrennen', 'de', '동사'),
+    '',
+  )
+})
+
+test('뒤에 절이 이어지는 자리도 아니다', () => {
+  assert.equal(
+    whyLateVerb('Hinter der Scheune soll sich befinden, was Wasser gibt.', 'sich befinden', 'de', '동사'),
+    '',
+  )
+  assert.equal(whyLateVerb('Sie kamen herein, um sich wärmen zu lassen.', 'sich wärmen', 'de', '동사'), '')
+})
+
+test('명사로 쓴 자리는 동사구가 아니다 — beim Bomben abwerfen', () => {
+  assert.equal(whyLateVerb('Beim Bomben abwerfen trafen sie die Brücke.', 'Bomben abwerfen', 'de', '동사'), '')
+})
+
+test('독일어 동사구가 아니면 아예 안 본다', () => {
+  assert.equal(whyLateVerb('They set off fireworks at dusk today.', 'set off fireworks', 'en', '동사'), '')
+  assert.equal(whyLateVerb('Sie instand halten die Pumpe monatlich.', 'instand halten', 'de', '명사'), '')
+  assert.equal(whyLateVerb('Sie wollen aufrunden bei jedem Preis.', 'aufrunden', 'de', '동사'), '')
 })

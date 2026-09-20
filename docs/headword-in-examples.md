@@ -41,6 +41,31 @@
 **한 줄로 줄이면 이렇다.** 독일어 예문은 표제어를 **화법조동사 뒤**(동사)나
 **서술 자리**(형용사)에 둔다. 그 둘이 어미도 대문자도 안 붙는 자리다.
 
+### 여섯째 자리 — 동사 괄호. `check`가 못 잡는다
+
+위의 다섯은 표제형이 예문에 **안 보이거나 못 뚫려서** `check`가 짚는다. 여섯째는
+다르다. 표제형이 글자 그대로 있고 뚫리기까지 하는데 **독일어가 틀렸다.**
+
+    Sie instand halten die Pumpe monatlich.        ← 정형 동사가 아예 없다
+    Sie müssen die Pumpe monatlich instand halten. ← müssen이 둘째, 부정사가 끝
+
+표제어가 `instand halten`·`in die Ferne blicken`처럼 **동사구**일 때만 난다.
+글자 그대로 세우려다 정형 동사를 뒤로 밀게 된다. 가장 흔한 꼴은 **전치사가
+딸린 표제어**다 — 목적어가 전치사 뒤로 밀리면서 부정사가 가운데 남는다.
+
+    Anwälte können sich berufen auf frühere Urteile.
+    Anwälte können sich auf frühere Urteile berufen.
+
+고치는 법은 하나다. **조동사를 둘째 자리에 세우고 표제형을 문장 끝으로 보낸다.**
+목적어를 앞머리(Vorfeld)로 올리면 재귀대명사가 표제어에서 안 떨어진다 —
+`Dem Verlust wollen sie sich stellen.`
+
+`whyLateVerb`(`lib/headword.ts`)가 이것만 본다: **표제어 뒤에 말이 남았는가.**
+남아도 되는 자리 셋을 뺀다 — 쉼표로 절이 이어짐 · 종속절의 정형 동사
+(`… austragen muss`) · 명사로 쓴 자리(`beim Bomben abwerfen`). `pnpm ex`가
+돌리고 `check`는 안 돌린다. `content/` 전체에 248이 남아 있어서다
+([examples-pending.md](examples-pending.md)).
+
 ## 프랑스어 — 축약
 
 `l'étiquette d'entretien`처럼 앞에 아포스트로피가 붙으면 낱말 경계가 사라져

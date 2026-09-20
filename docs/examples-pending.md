@@ -17,13 +17,13 @@
 그 낱말은 문맥 카드가 안 만들어진다. 철자 카드와 듣기 카드는 그대로 나오므로
 **퀴즈가 깨지지는 않는다** — 카드 한 갈래가 조용히 빠질 뿐이다.
 
-## 카드가 아예 안 나오는 일곱 — 여섯을 치웠고 하나 남는다
+## 카드가 아예 안 나오는 일곱 — 다 끝냈다
 
-두 예문이 **둘 다** 못 뚫는 자리다.
+두 예문이 **둘 다** 못 뚫던 자리다.
 
-| 낱말 | 표제형 | 예문이 쓰는 꼴 |
+| 낱말 | 전 | 후 |
 | --- | --- | --- |
-| `action/cut-with-scissors` ja | `はさみできる` | `はさみで切る` — 읽기는 가나인데 예문은 한자로 적었다 |
+| `action/cut-with-scissors` ja | `はさみで切る` | `はさみできる` — 읽기가 가나면 예문도 가나로 적는다 (2026-09-20) |
 
 **독일어 여섯은 한 가지 문제였고 2026-09-19에 끝냈다.** 형용사의 무변화형
 (`link`·`höchst`)은 명사 앞에서 늘 어미를 받으므로 **문장에 그 꼴로 설 수
@@ -157,19 +157,42 @@ famille`), 하나가 남는다.
 (`Kann ich hier zahlen mit Karte?`)은 조동사가 둘째 자리에 있어 멀쩡하다.
 눈으로 갈라 **틀린 것만** 남긴다.
 
+### 눈으로 훑어서는 안 되는 자리였다 (2026-09-20)
+
+아래 열하나를 **다 고쳤다.** 고치면서 그물을 놓았다 — `whyLateVerb`
+(`lib/headword.ts`)가 «표제어 뒤에 말이 남았는가»만 본다. 남아도 되는 자리
+셋을 뺀다: 쉼표로 절이 이어지는 자리 · 종속절의 정형 동사(`… austragen muss`) ·
+명사로 쓴 자리(`beim Bomben abwerfen`). `pnpm ex`가 돌린다.
+
+**그 그물을 `content/` 전체에 대니 248이 남았다.** 위의 열하나는 눈으로 훑어
+찾은 것인데, 기계는 스물두 배를 찾았다. 스물다섯씩 두 번 뽑아 눈으로 보니
+스물셋·스물둘이 진짜였다 — 이 갈래는 **눈으로 훑어서 끝낼 수 있는 크기가
+아니다.**
+
+    node scripts/ex.ts content/*.json | grep 어순
+
+`check`에는 넣지 않았다. 경고 스물넷이 이백일흔이 되어 나머지를 덮는다.
+`pnpm props`·`pnpm twins`·`pnpm also-audit`과 같은 자리다 — **목록만 낸다.**
+
+가장 흔한 꼴은 **전치사가 딸린 표제어**다. 목적어가 전치사 뒤로 밀리면서
+부정사가 문장 가운데 남는다.
+
+    Anwälte können sich berufen auf frühere Urteile.   ← auf가 뒤로 밀렸다
+    Anwälte können sich auf frühere Urteile berufen.   ← 부정사가 끝
+
 | 파일 | 개념 | 표제형 | 예문 |
 | --- | --- | --- | --- |
-| action | `maintain`(정비하다) | `instand halten` | `Sie instand halten die Pumpe monatlich.` |
-| action | `diffuse`(퍼지다) | `sich ausbreiten` | `Gerüche sich ausbreiten im Flur.` |
-| action | `remain-over`(남다) | `übrig bleiben` | `Zwei Brote übrig bleiben abends.` |
-| action | `hold-in-palms`(두 손으로 들다) | `mit beiden Händen halten` | `Sie mit beiden Händen halten die Schale.` |
-| action | `carry-by-hand`(손에 들고 가다) | `in der Hand tragen` | `Sie in der Hand tragen die Kisten.` |
-| action | `cut-with-scissors`(가위질하다) | `mit der Schere schneiden` | `Sie mit der Schere schneiden am Falz.` |
-| action | `read-aloud`(소리 내어 읽다) | `laut vorlesen` | `Sie laut vorlesen jeden Morgen.` |
-| action | `gaze-into-distance`(먼 곳을 보다) | `in die Ferne blicken` | `Sie in die Ferne blicken vom Grat.` |
-| action | `patrol`(순찰하다) | `Streife gehen` | `Wächter Streife gehen bei Nacht.` |
-| action | `pace-back-and-forth`(서성이다) | `hin und her gehen` | `Sie hin und her gehen beim Warten.` |
-| action | `face-up-to`(맞서다) | `sich stellen` | `Sie sich stellen dem Verlust gemeinsam.` |
+| ~~action `maintain`~~ | — | — | **끝냈다** — `Sie müssen die Pumpe monatlich instand halten.` |
+| ~~action `diffuse`~~ | — | — | **끝냈다** — `Im Flur können Gerüche sich ausbreiten.` |
+| ~~action `remain-over`~~ | — | — | **끝냈다** — `Abends können zwei Brote übrig bleiben.` |
+| ~~action `hold-in-palms`~~ | — | — | **끝냈다** — `Sie wollen die Schale mit beiden Händen halten.` |
+| ~~action `carry-by-hand`~~ | — | — | **끝냈다** — `Sie wollen die Kisten in der Hand tragen.` |
+| ~~action `cut-with-scissors`~~ | — | — | **끝냈다** — `Sie wollen am Falz mit der Schere schneiden.` |
+| ~~action `read-aloud`~~ | — | — | **끝냈다** — `Jeden Morgen wollen sie laut vorlesen.` |
+| ~~action `gaze-into-distance`~~ | — | — | **끝냈다** — `Vom Grat können sie in die Ferne blicken.` |
+| ~~action `patrol`~~ | — | — | **끝냈다** — `Bei Nacht müssen Wächter Streife gehen.` |
+| ~~action `pace-back-and-forth`~~ | — | — | **끝냈다** — `Vor der Tür konnte er hin und her gehen. · Beim Warten müssen sie hin und her gehen.` |
+| ~~action `face-up-to`~~ | — | — | **끝냈다** — `Der Rechnung musste er sich stellen. · Dem Verlust wollen sie sich stellen.` |
 | ~~body `raise-head`~~ | — | — | **끝냈다** — `Beim Geräusch mussten sie den Kopf heben.` |
 | ~~food `pick-fruit`~~ | — | — | **끝냈다** — `Sie wollen vor Sonnenaufgang Obst pflücken.` |
 | ~~idea `run-right-through`~~ | — | — | **끝냈다** — `Die Rohre sollen im Mauerwerk durchgehend verlaufen.` |

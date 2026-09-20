@@ -227,3 +227,61 @@ export function judgeWord(texts: string[], answer: string, lang: Language): (Sna
   const keep = all.length < texts.length ? [] : stuck.slice(-1)
   return [...all.filter((s) => s.kind !== 'stuck'), ...keep].sort((a, b) => a.at - b.at)
 }
+
+/*
+ * 독일어 동사 괄호(Satzklammer) — **부정사는 오른쪽 끝이다.**
+ *
+ * 표제어가 `instand halten`·`in die Ferne blicken`처럼 **동사구**이면, 예문에
+ * 글자 그대로 세우려다 정형 동사를 뒤로 밀게 된다.
+ *
+ *   Sie instand halten die Pumpe monatlich.      ← 정형 동사가 아예 없다
+ *   Sie müssen die Pumpe monatlich instand halten.
+ *
+ * **`check`도 `clozeAt`도 조용하다** — 표제형이 예문에 있고 뚫리기까지 하므로
+ * 문맥 카드는 잘 만들어진다. 틀린 독일어인데 그래서 더 나쁘다. 2026-09-10에
+ * 동사구 표제어를 눈으로 훑어 열하나를 찾아 넘겼는데(docs/examples-pending.md),
+ * 기계로 재 보니 240이었다. **눈으로 훑는 것으로는 안 되는 자리**다.
+ */
+
+/**
+ * 뒤따라도 되는 말 — 접속사가 오면 절이 이어지는 자리다.
+ *
+ * `der`·`die`·`das`는 **넣지 않는다.** 관계대명사이기도 하지만 독일어 관계절은
+ * 앞에 쉼표를 찍고, 쉼표는 이미 따로 뺀다. 쉼표 없이 오는 `die`는 거의 다
+ * 관사다 — 넣었더니 `Sie instand halten die Pumpe monatlich.`이 빠졌다.
+ */
+const DE_CLAUSE = /^(zu|und|oder|aber|sondern|denn|als|wie|weil|dass|ob|damit|wenn|um|wo|wer|was)$/u
+
+/** 뒤따라도 되는 정형 동사 — 종속절은 동사가 끝에 온다 (`… austragen muss`) */
+const DE_FINITE = new Set(
+  `ist sind war waren sei seien bin bist seid hat haben hatte hatten
+   wird werden wurde wurden würde würden kann können konnte konnten könnte könnten
+   muss müssen musste mussten müsste müssten soll sollen sollte sollten
+   will wollen wollte wollten darf dürfen durfte durften mag mögen mochte möchte möchten
+   lässt lassen ließ ließen bleibt bleiben blieb blieben`.split(/\s+/u),
+)
+
+/** 앞에 오면 동사구가 아니라 **명사**인 자리 — `beim Bomben abwerfen` */
+const DE_NOMINAL = new Set(['beim', 'zum', 'am', 'im', 'vom', 'ans', 'aufs', 'das', 'des', 'dem'])
+
+/**
+ * 독일어 동사구 표제어가 문장 끝에 안 왔을 때 짚을 말. 없으면 빈 문자열이다.
+ *
+ * 눈금은 하나뿐이다 — **표제어 뒤에 말이 남아 있는가.** 남아도 되는 자리를
+ * 셋 뺀다(절이 이어짐 · 종속절의 정형 동사 · 명사로 쓴 자리). 240을 세어
+ * 스물다섯씩 두 번 눈으로 보니 스물셋·스물넷이 진짜였다. 남는 헛것은
+ * `Zweimal die Lektion vorbereiten hilft.`처럼 **동사구가 주어인 자리**다 —
+ * 그래서 막지 않고 짚기만 한다.
+ */
+export function whyLateVerb(text: string, answer: string, lang: Language, pos: string): string {
+  if (lang !== 'de' || pos !== '동사' || !answer.includes(' ')) return ''
+  const at = text.indexOf(answer)
+  if (at < 0) return ''
+  const tail = text.slice(at + answer.length).trim()
+  if (!tail || /^[.!?…»"]*$/u.test(tail) || tail.startsWith(',')) return ''
+  const next = tail.split(/[\s.,;:!?]+/u)[0] ?? ''
+  if (DE_CLAUSE.test(next) || DE_FINITE.has(next.toLowerCase())) return ''
+  const prev = text.slice(0, at).trim().split(SPACE).at(-1) ?? ''
+  if (DE_NOMINAL.has(prev.toLowerCase())) return ''
+  return `동사구 뒤에 "${next}"가 남았습니다 — 조동사를 둘째 자리에 세우고 표제형을 문장 끝으로 보내세요`
+}

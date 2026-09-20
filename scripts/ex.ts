@@ -19,7 +19,7 @@
  * 여기를 지나간 예문이 나중에 check에서 걸리는 일은 없다.
  */
 import { readFileSync } from 'node:fs'
-import { judgeWord } from '../lib/headword.ts'
+import { judgeWord, whyLateVerb } from '../lib/headword.ts'
 import { LANG } from '../lib/lang.ts'
 import type { Language } from '../lib/types.ts'
 
@@ -75,6 +75,16 @@ for (const path of files)
       for (const [at, text] of texts.entries())
         if (text.includes(CURLY_APOSTROPHE))
           lines.push(`${slug}  ${lang}[${at}]  굽은 따옴표 — "${text}"\n    곧은 '를 쓰세요`)
+      /*
+       * 독일어 어순은 `check`가 안 보는 자리다 — 표제형이 예문에 있고 뚫리기
+       * 까지 하므로 조용하다. 여기서만 짚는다. `content/` 전체에 대면 240이
+       * 나오므로 `check`에 넣으면 경고 스물여섯이 이백예순이 되어 덮인다.
+       */
+      const pos = typeof word.part_of_speech === 'string' ? word.part_of_speech : ''
+      for (const [at, text] of texts.entries()) {
+        const late = whyLateVerb(text, answer, lang as Language, pos)
+        if (late) lines.push(`${slug}  ${lang}[${at}]  어순 "${answer}" — "${text}"\n    ${late}`)
+      }
       for (const snag of judgeWord(texts, answer, lang as Language))
         lines.push(
           `${slug}  ${lang}[${snag.at}]  ${KIND[snag.kind]} "${answer}" — "${texts[snag.at]}"` +
