@@ -4,6 +4,7 @@
  *   node scripts/prompt.ts          아직 이미지가 없는 개념만
  *   node scripts/prompt.ts cat      하나만
  *   node scripts/prompt.ts --all    전부
+ *   node scripts/prompt.ts --glyphs 글자·숫자를 부르는 프롬프트만 찍는다
  *
  * STYLE_PROMPT를 여기 복사하지 않는다. IMAGE_STYLE.md에서 읽는다 —
  * 스타일을 바꾸려면 그 파일 하나만 고치면 되어야 한다.
@@ -62,6 +63,31 @@ function readTargets(): Target[] {
     }
   }
   return targets
+}
+
+/**
+ * **글자·숫자를 부르는 프롬프트.** IMAGE_STYLE의 검수 규칙은 「이미지 안에
+ * 글자·숫자·로고가 없다」인데, 프롬프트가 `a scoreboard showing two to nil`
+ * 처럼 숫자를 시키면 모델은 숫자를 그린다. **그리고 그 숫자는 맞을 이유가
+ * 없다** — 2026-09-21에 `carry-a-digit`이 「7 + 24 = 36」으로 나왔다.
+ *
+ * 규칙을 어긴 프롬프트가 틀린 그림을 부른 것이지 모델이 헛나간 것이 아니다.
+ * 그런데 이 흠은 `pnpm check`가 안 보고 md5도 `twins`도 못 본다 — **시트를
+ * 눈으로 볼 때만** 걸린다. 여기서 미리 찍어 두면 뽑기 전에 고칠 수 있다.
+ *
+ * 이미 «no letters»라고 막아 둔 프롬프트는 뺀다 — 전체의 36%가 그렇게 끝난다.
+ */
+const GLYPH_WORD =
+  /\b(numeral|digit|digits|number|numbered|printed|written|writing|label|labelled|labeled|letters|word|words|text|price|date|score|fraction)\b/i
+const GLYPH_GUARD = /no (?:other )?letters|no readable letters|no text|no writing|no numbers/i
+
+if (args.includes('--glyphs')) {
+  const rows = readTargets().filter(
+    (t) => !GLYPH_GUARD.test(t.imagePrompt) && GLYPH_WORD.test(t.imagePrompt),
+  )
+  for (const row of rows) console.log(`  ${row.slug.padEnd(30)} ${row.imagePrompt}`)
+  console.log(`\n글자·숫자를 부르는 프롬프트 ${rows.length}개 — «no letters»로 막거나 다른 것을 그리게 하세요`)
+  process.exit(0)
 }
 
 const style = readStylePrompt()

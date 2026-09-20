@@ -752,7 +752,8 @@ EOF
 
 업로드 전 확인한다. 하나라도 걸리면 다시 생성한다.
 
-- [ ] 이미지 안에 글자·숫자·로고가 없다
+- [ ] 이미지 안에 글자·숫자·로고가 없다 — **프롬프트가 부르지 않았는지 먼저 본다**
+      (`pnpm prompt --glyphs`)
 - [ ] 배경이 단색 warm off-white다 (테두리·그림자·그라디언트 없음)
 - [ ] 피사체가 하나이고 중앙에 있다
 - [ ] **80×80으로 축소해도 무엇인지 알아볼 수 있다** — 가장 중요한 항목
@@ -764,6 +765,29 @@ EOF
       [docs/twins-pending.md](docs/twins-pending.md)에 적어 임자에게 넘긴다
 
 ---
+
+### 숫자를 시키면 모델은 틀린 숫자를 그린다
+
+2026-09-21에 열다섯 장을 뽑아 시트를 보다가 `carry-a-digit`이 「7 + 24 = 36」
+으로 나왔다. 프롬프트가 `a small numeral written above a column of two added
+numbers`였다 — **숫자를 그리라고 시켰으니 그린 것이고, 그 숫자가 맞을 이유는
+없다.** 모델이 헛나간 것이 아니라 규칙을 어긴 프롬프트가 틀린 그림을 부른 것이다.
+
+같은 자리에서 `at-a-disadvantage`는 점수판에 숫자를, `be-booked`은 카드를
+**빨갛게** 그렸다(옐로카드인데). 셋 다 md5도 `twins`도 `check`도 못 본다 —
+시트를 눈으로 볼 때만 걸린다.
+
+**그래서 뽑기 전에 본다.** `pnpm prompt --glyphs`가 «no letters»로 막지 않은
+채 글자·숫자를 부르는 프롬프트를 찍는다. 고치는 법은 그리는 것을 바꾸는 것이다.
+
+    a small numeral written above a column of two added numbers
+    → a counting frame with one bead lifted from the lower wire to the wire above
+
+    a numbered shirt and shorts laid flat side by side
+    → a plain shirt and shorts laid flat side by side, no letters
+
+색이 뜻을 나르는 자리는 **색을 못 박는다** — 「카드를 든다」가 아니라
+「노란 카드를 든다」다.
 
 ## 스타일을 바꿀 때
 
