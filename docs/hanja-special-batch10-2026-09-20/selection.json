@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-20",
+  "basis": "The queue's starting corpus is kept unless another corpus that carries the same stroke count follows the dictionary's per-stroke directions more closely, as established in the grade 1 batch 24 re-review and used in the earlier special grade batches. Only differences that change the flagged-stroke count are acted on; a few degrees is noise.",
+  "overrides": {
+    "灾": {
+      "corpus": "Hans",
+      "startingCorpus": "MM",
+      "reason": "MM leaves the opening dot of 火 just over the threshold (one stroke at 63°); the simplified file draws the same dot at 59°, which is inside the range kept as licensed geometry everywhere else."
+    },
+    "腆": {
+      "corpus": "Hans",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the inner bars of the 典 body in a different order (two strokes over 60°, max 98°); the simplified file follows the dictionary with no stroke over 17°."
+    },
+    "畋": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the inner bar of 田 after the vertical (two strokes over 60°, max 100°); MM follows the dictionary with no stroke over 18°."
+    }
+  }
+}
