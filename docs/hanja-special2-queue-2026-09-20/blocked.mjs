@@ -1,62 +1,72 @@
-/** Read-only: classify the special grade II characters that are still unreviewed, using only the
- *  2026-09-18 inventory files and the published runtime. Nothing is fetched and nothing is approved. */
+/** Read-only: classify the special grade II characters that are still unreviewed, against all five pinned
+ *  candidate corpora and the 2026-09-18 dictionary inventory. Downloads only pinned bytes, verifies their
+ *  hashes and prints counts; nothing proprietary is stored and nothing is approved here. */
+import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
 import { readFileSync, readdirSync } from 'node:fs'
+import { parseCandidates, MAKE_ME_A_HANZI_SOURCE, CANDIDATE_SOURCE, JAPANESE_CANDIDATE_SOURCE,
+  TRADITIONAL_CANDIDATE_SOURCE, SIMPLIFIED_CANDIDATE_SOURCE } from '../../scripts/hanja-stroke-audit.ts'
 
 const root = new URL('../../', import.meta.url)
 const read = path => JSON.parse(readFileSync(new URL(path, root), 'utf8'))
+const catalog = read('content/hanja/characters/special-2.json').characters
 const inventory = read('docs/hanja-special2-inventory-2026-09-18/inventory.json')
 const dictionary = read('docs/hanja-special2-inventory-2026-09-18/dictionary-inventory.json')
-const field = (list, name) => list.indexOf(name)
-const gi = field(inventory.fields, 'glyph'), ci = field(inventory.fields, 'catalogStrokes')
-const mm = field(inventory.fields, 'MMStrokes'), ja = field(inventory.fields, 'JaStrokes')
-const ko = field(inventory.fields, 'KoStrokes'), pm = field(inventory.fields, 'publisherMatch')
-const dg = field(dictionary.fields, 'glyph'), ds = field(dictionary.fields, 'displayedStrokes')
-const displayed = new Map(dictionary.rows.map(r => [r[dg], r[ds]]))
+const ii = Object.fromEntries(inventory.fields.map((f, i) => [f, i]))
+const di = Object.fromEntries(dictionary.fields.map((f, i) => [f, i]))
+const inventoryRows = new Map(inventory.rows.map(r => [r[ii.glyph], r]))
+const displayed = new Map(dictionary.rows.map(r => [r[di.glyph], r[di.displayedStrokes]]))
 
 const reviewed = new Set()
 for (const name of readdirSync(new URL('public/hanja-strokes/', root)))
-  if (name.startsWith('dictionary-reviewed-special2-'))
-    for (const entry of read('public/hanja-strokes/' + name).characters) reviewed.add(entry.glyph)
-// Characters that reached a review and were held there are a separate class from the ones intake never admitted.
-const heldGlyphs = new Set()
-for (const name of readdirSync(new URL('docs/', root)))
-  if (name.startsWith('hanja-special2-batch'))
-    for (const entry of read('docs/' + name + '/observations.json').entries)
-      if (entry.decision === 'held') heldGlyphs.add(entry.glyph)
+  if (name.endsWith('.json'))
+    for (const entry of (read('public/hanja-strokes/' + name).characters ?? [])) reviewed.add(entry.glyph)
 
-const groups = { eligibleAgain: [], textbookSource: [], heldAfterReview: [], dictionaryCountDiffers: [], candidateCountDiffers: [], noCandidate: [] }
-for (const row of inventory.rows) {
-  const glyph = row[gi]
-  if (reviewed.has(glyph)) continue
-  const catalog = row[ci], shown = displayed.get(glyph)
-  const candidates = { MM: row[mm], Ja: row[ja], Ko: row[ko] }
-  const record = { glyph, catalogStrokes: catalog, dictionaryStrokes: shown, candidates }
-  if (heldGlyphs.has(glyph)) { groups.heldAfterReview.push(record); continue }
-  if (row[pm] !== 'absent') { groups.textbookSource.push(record); continue }
-  if (shown !== catalog) { groups.dictionaryCountDiffers.push(record); continue }
-  if (Object.values(candidates).includes(catalog)) { groups.eligibleAgain.push(record); continue }
-  if (Object.values(candidates).some(Boolean)) {
-    const drawn = Object.values(candidates).filter(Boolean)
-    record.shortestGap = Math.min(...drawn.map(n => Math.abs(n - catalog)))
-    groups.candidateCountDiffers.push(record)
-    continue
-  }
-  groups.noCandidate.push(record)
+const pins = { Ko: CANDIDATE_SOURCE, Ja: JAPANESE_CANDIDATE_SOURCE, MM: MAKE_ME_A_HANZI_SOURCE,
+  Hant: TRADITIONAL_CANDIDATE_SOURCE, Hans: SIMPLIFIED_CANDIDATE_SOURCE }
+const corpora = {}
+for (const [id, pin] of Object.entries(pins)) {
+  const response = await fetch(pin.url, { signal: AbortSignal.timeout(300000) })
+  const bytes = Buffer.from(await response.arrayBuffer())
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), pin.sha256, id)
+  corpora[id] = new Map(parseCandidates(bytes, pin).map(c => [c.character, c.strokes.length]))
 }
-const strokes = list => list.reduce((n, e) => n + e.catalogStrokes, 0)
+
+const groups = { textbookSource: [], dictionaryCountDiffers: [], candidateOneStrokeShort: [], candidateOtherGap: [], noCandidateAnywhere: [] }
+for (const character of catalog) {
+  const { glyph, strokes, radical } = character
+  if (reviewed.has(glyph)) continue
+  const shown = displayed.get(glyph)
+  const carried = Object.entries(corpora).map(([id, map]) => [id, map.get(glyph)]).filter(([, n]) => n)
+  const record = { glyph, radical, catalogStrokes: strokes, dictionaryStrokes: shown,
+    corpora: Object.fromEntries(carried) }
+  if (inventoryRows.get(glyph)[ii.publisherMatch] !== 'absent') { groups.textbookSource.push(record); continue }
+  if (shown !== strokes) { groups.dictionaryCountDiffers.push(record); continue }
+  if (!carried.length) { groups.noCandidateAnywhere.push(record); continue }
+  record.shortestGap = Math.min(...carried.map(([, n]) => Math.abs(n - strokes)))
+  record.allShorter = carried.every(([, n]) => n < strokes)
+  ;(record.shortestGap === 1 && record.allShorter ? groups.candidateOneStrokeShort : groups.candidateOtherGap).push(record)
+}
+
+const strokesOf = list => list.reduce((n, e) => n + e.catalogStrokes, 0)
+const byRadical = list => Object.fromEntries(Object.entries(
+  list.reduce((counts, e) => ({ ...counts, [e.radical]: (counts[e.radical] ?? 0) + 1 }), {}))
+  .sort((a, b) => b[1] - a[1]).slice(0, 10))
 const summary = Object.fromEntries(Object.entries(groups)
-  .map(([name, list]) => [name, { characters: list.length, strokes: strokes(list) }]))
-summary.candidateGapHistogram = groups.candidateCountDiffers
-  .reduce((counts, e) => ({ ...counts, [e.shortestGap]: (counts[e.shortestGap] ?? 0) + 1 }), {})
+  .map(([name, list]) => [name, { characters: list.length, strokes: strokesOf(list), radicals: byRadical(list) }]))
+summary.specialTwoReviewed = catalog.filter(c => reviewed.has(c.glyph)).length
+summary.specialTwoTotal = catalog.length
 summary.dictionaryCountDiffersWithMatchingCandidate = groups.dictionaryCountDiffers
-  .filter(e => Object.values(e.candidates).includes(e.dictionaryStrokes)).length
+  .filter(e => Object.values(e.corpora).includes(e.dictionaryStrokes)).length
 
 console.log(JSON.stringify({
-  schemaVersion: 1, date: '2026-09-20',
-  purpose: 'Why the eligible special grade II queue is empty: classification of the characters that intake still rejects.',
-  inputs: ['docs/hanja-special2-inventory-2026-09-18/inventory.json',
+  schemaVersion: 2, date: '2026-09-20',
+  purpose: 'Why the eligible special grade II queue is empty: classification of the characters that intake still rejects, against all five pinned corpora.',
+  inputs: ['content/hanja/characters/special-2.json',
+    'docs/hanja-special2-inventory-2026-09-18/inventory.json',
     'docs/hanja-special2-inventory-2026-09-18/dictionary-inventory.json',
-    'public/hanja-strokes/dictionary-reviewed-special2-*.json'],
+    'public/hanja-strokes/*.json'],
+  corpora: Object.fromEntries(Object.entries(pins).map(([id, pin]) => [id, { url: pin.url, sha256: pin.sha256 }])),
   intakeRule: 'A character enters the review queue when the dictionary title and metadata are consistent, the dictionary stroke count equals the catalog count, and at least one licensed candidate corpus carries the same count.',
-  reviewedCharacters: reviewed.size, summary, groups,
+  proprietaryAssetsSaved: 0, summary, groups,
 }, null, 2))

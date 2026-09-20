@@ -1,3591 +1,2961 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "date": "2026-09-20",
-  "purpose": "Why the eligible special grade II queue is empty: classification of the characters that intake still rejects.",
+  "purpose": "Why the eligible special grade II queue is empty: classification of the characters that intake still rejects, against all five pinned corpora.",
   "inputs": [
+    "content/hanja/characters/special-2.json",
     "docs/hanja-special2-inventory-2026-09-18/inventory.json",
     "docs/hanja-special2-inventory-2026-09-18/dictionary-inventory.json",
-    "public/hanja-strokes/dictionary-reviewed-special2-*.json"
+    "public/hanja-strokes/*.json"
   ],
-  "intakeRule": "A character enters the review queue when the dictionary title and metadata are consistent, the dictionary stroke count equals the catalog count, and at least one licensed candidate corpus carries the same count.",
-  "reviewedCharacters": 805,
-  "summary": {
-    "eligibleAgain": {
-      "characters": 0,
-      "strokes": 0
+  "corpora": {
+    "Ko": {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsKo.txt",
+      "sha256": "7e703f34df54080281252a5c87a7106b85034b81fdbf93d37c07009a1448202e"
     },
+    "Ja": {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsJa.txt",
+      "sha256": "2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8"
+    },
+    "MM": {
+      "url": "https://raw.githubusercontent.com/skishore/makemeahanzi/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/graphics.txt",
+      "sha256": "a28c478b5178e98f67f510b2d52fde08a69dc664654ef43498253b9b764d46ee"
+    },
+    "Hant": {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsZhHant.txt",
+      "sha256": "731fe26345833745dc7d37c8213f3ca91585aa0ee18179c0ccda91be41ff6aec"
+    },
+    "Hans": {
+      "url": "https://raw.githubusercontent.com/parsimonhi/animCJK/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/graphicsZhHans.txt",
+      "sha256": "5a5c157fddd0fd9bfaf5580b25c20a1ba2b0cabc0b7142e09f6149cbd5547798"
+    }
+  },
+  "intakeRule": "A character enters the review queue when the dictionary title and metadata are consistent, the dictionary stroke count equals the catalog count, and at least one licensed candidate corpus carries the same count.",
+  "proprietaryAssetsSaved": 0,
+  "summary": {
     "textbookSource": {
       "characters": 1,
-      "strokes": 16
-    },
-    "heldAfterReview": {
-      "characters": 6,
-      "strokes": 100
+      "strokes": 16,
+      "radicals": {
+        "戈": 1
+      }
     },
     "dictionaryCountDiffers": {
       "characters": 35,
-      "strokes": 492
+      "strokes": 492,
+      "radicals": {
+        "艸": 6,
+        "口": 4,
+        "竹": 3,
+        "玉": 2,
+        "水": 2,
+        "夊": 1,
+        "糸": 1,
+        "牛": 1,
+        "鳥": 1,
+        "魚": 1
+      }
     },
-    "candidateCountDiffers": {
-      "characters": 87,
-      "strokes": 1120
+    "candidateOneStrokeShort": {
+      "characters": 88,
+      "strokes": 1129,
+      "radicals": {
+        "艸": 62,
+        "辵": 3,
+        "食": 3,
+        "手": 2,
+        "玉": 2,
+        "人": 2,
+        "邑": 2,
+        "阜": 2,
+        "示": 1,
+        "木": 1
+      }
     },
-    "noCandidate": {
-      "characters": 216,
-      "strokes": 2878
+    "candidateOtherGap": {
+      "characters": 2,
+      "strokes": 27,
+      "radicals": {
+        "广": 1,
+        "人": 1
+      }
     },
-    "candidateGapHistogram": {
-      "1": 87
+    "noCandidateAnywhere": {
+      "characters": 201,
+      "strokes": 2702,
+      "radicals": {
+        "玉": 25,
+        "水": 24,
+        "金": 16,
+        "日": 14,
+        "木": 13,
+        "火": 10,
+        "艸": 9,
+        "土": 7,
+        "心": 6,
+        "人": 6
+      }
     },
-    "dictionaryCountDiffersWithMatchingCandidate": 23
+    "specialTwoReviewed": 823,
+    "specialTwoTotal": 1150,
+    "dictionaryCountDiffersWithMatchingCandidate": 24
   },
   "groups": {
-    "eligibleAgain": [],
     "textbookSource": [
       {
         "glyph": "戱",
+        "radical": "戈",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      }
-    ],
-    "heldAfterReview": [
-      {
-        "glyph": "犢",
-        "catalogStrokes": 19,
-        "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": 19,
-          "Ja": 19,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "牘",
-        "catalogStrokes": 19,
-        "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": 19,
-          "Ja": 19,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "竇",
-        "catalogStrokes": 20,
-        "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": 20,
-          "Ja": 20,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "瑜",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": 13,
-          "Ja": 13,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "砥",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 10,
-          "Ja": 10,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "鯖",
-        "catalogStrokes": 19,
-        "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": 19,
-          "Ja": 19,
-          "Ko": null
-        }
+        "corpora": {}
       }
     ],
     "dictionaryCountDiffers": [
       {
         "glyph": "夔",
+        "radical": "夊",
         "catalogStrokes": 20,
         "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": 21,
+        "corpora": {
           "Ja": 21,
-          "Ko": null
+          "MM": 21,
+          "Hans": 21
         }
       },
       {
         "glyph": "纛",
+        "radical": "糸",
         "catalogStrokes": 25,
         "dictionaryStrokes": 24,
-        "candidates": {
-          "MM": 25,
+        "corpora": {
           "Ja": 24,
-          "Ko": null
+          "MM": 25,
+          "Hans": 25
         }
       },
       {
         "glyph": "蘿",
+        "radical": "艸",
         "catalogStrokes": 23,
         "dictionaryStrokes": 22,
-        "candidates": {
-          "MM": 23,
+        "corpora": {
           "Ja": 22,
-          "Ko": null
+          "MM": 23
         }
       },
       {
         "glyph": "犁",
+        "radical": "牛",
         "catalogStrokes": 12,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 11,
+        "corpora": {
           "Ja": 11,
-          "Ko": null
+          "MM": 11,
+          "Hans": 11
         }
       },
       {
         "glyph": "菉",
+        "radical": "艸",
         "catalogStrokes": 12,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "蓼",
+        "radical": "艸",
         "catalogStrokes": 15,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": 14,
+        "corpora": {
           "Ja": 14,
-          "Ko": null
+          "MM": 14,
+          "Hans": 14
         }
       },
       {
         "glyph": "藺",
+        "radical": "艸",
         "catalogStrokes": 20,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": 20,
+        "corpora": {
           "Ja": 19,
-          "Ko": null
+          "MM": 20
         }
       },
       {
         "glyph": "莽",
+        "radical": "艸",
         "catalogStrokes": 12,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 10,
+        "corpora": {
           "Ja": 9,
-          "Ko": null
+          "MM": 10,
+          "Hans": 10
         }
       },
       {
         "glyph": "珷",
+        "radical": "玉",
         "catalogStrokes": 11,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鵡",
+        "radical": "鳥",
         "catalogStrokes": 18,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": 19,
+        "corpora": {
           "Ja": 19,
-          "Ko": null
+          "MM": 19
         }
       },
       {
         "glyph": "鱉",
+        "radical": "魚",
         "catalogStrokes": 23,
         "dictionaryStrokes": 22,
-        "candidates": {
-          "MM": 22,
-          "Ja": null,
-          "Ko": null
+        "corpora": {
+          "MM": 22
         }
       },
       {
         "glyph": "珹",
+        "radical": "玉",
         "catalogStrokes": 11,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "宬",
+        "radical": "宀",
         "catalogStrokes": 10,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
+        "corpora": {
+          "Hans": 9
         }
       },
       {
         "glyph": "筬",
+        "radical": "竹",
         "catalogStrokes": 13,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": 12,
-          "Ko": null
+        "corpora": {
+          "Ja": 12
         }
       },
       {
         "glyph": "嘯",
+        "radical": "口",
         "catalogStrokes": 15,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": 16,
+        "corpora": {
           "Ja": 16,
-          "Ko": null
+          "MM": 16
         }
       },
       {
         "glyph": "瀟",
+        "radical": "水",
         "catalogStrokes": 19,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": 20,
+        "corpora": {
           "Ja": 19,
-          "Ko": null
+          "MM": 20
         }
       },
       {
         "glyph": "篠",
+        "radical": "竹",
         "catalogStrokes": 16,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": 17,
-          "Ko": null
+        "corpora": {
+          "Ja": 17
         }
       },
       {
         "glyph": "亐",
+        "radical": "乙",
         "catalogStrokes": 4,
         "dictionaryStrokes": 3,
-        "candidates": {
-          "MM": null,
-          "Ja": 3,
-          "Ko": null
+        "corpora": {
+          "Ja": 3
         }
       },
       {
         "glyph": "萸",
+        "radical": "艸",
         "catalogStrokes": 12,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": 11,
+        "corpora": {
           "Ja": 12,
-          "Ko": null
+          "MM": 11,
+          "Hans": 11
         }
       },
       {
         "glyph": "臾",
+        "radical": "臼",
         "catalogStrokes": 8,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 8,
+        "corpora": {
           "Ja": 9,
-          "Ko": null
+          "MM": 8,
+          "Hans": 8
         }
       },
       {
         "glyph": "贇",
+        "radical": "貝",
         "catalogStrokes": 18,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": null,
-          "Ja": 19,
-          "Ko": null
+        "corpora": {
+          "Ja": 19
         }
       },
       {
         "glyph": "奫",
+        "radical": "大",
         "catalogStrokes": 14,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "卄",
+        "radical": "一",
         "catalogStrokes": 4,
         "dictionaryStrokes": 3,
-        "candidates": {
-          "MM": 3,
+        "corpora": {
           "Ja": 3,
-          "Ko": null
+          "MM": 3,
+          "Hans": 3
         }
       },
       {
         "glyph": "渚",
+        "radical": "水",
         "catalogStrokes": 12,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 11,
+        "corpora": {
           "Ja": 11,
-          "Ko": null
+          "MM": 11,
+          "Hans": 11
         }
       },
       {
         "glyph": "猪",
+        "radical": "犬",
         "catalogStrokes": 12,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 11,
+        "corpora": {
           "Ja": 11,
-          "Ko": null
+          "MM": 11,
+          "Hans": 11
         }
       },
       {
         "glyph": "晸",
+        "radical": "日",
         "catalogStrokes": 12,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "簒",
+        "radical": "竹",
         "catalogStrokes": 16,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": 17,
-          "Ko": null
+        "corpora": {
+          "Ja": 17
         }
       },
       {
         "glyph": "砦",
+        "radical": "石",
         "catalogStrokes": 10,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 11,
+        "corpora": {
           "Ja": 11,
-          "Ko": null
+          "MM": 11
         }
       },
       {
         "glyph": "嘴",
+        "radical": "口",
         "catalogStrokes": 15,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": 16,
+        "corpora": {
           "Ja": 16,
-          "Ko": null
+          "MM": 16,
+          "Hant": 16,
+          "Hans": 16
         }
       },
       {
         "glyph": "穉",
+        "radical": "禾",
         "catalogStrokes": 16,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": 17,
-          "Ko": null
+        "corpora": {
+          "Ja": 17
         }
       },
       {
         "glyph": "兎",
+        "radical": "儿",
         "catalogStrokes": 7,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": 7,
-          "Ko": null
+        "corpora": {
+          "Ja": 7
         }
       },
       {
         "glyph": "啣",
+        "radical": "口",
         "catalogStrokes": 11,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": 12,
-          "Ko": null
+        "corpora": {
+          "Ja": 12
         }
       },
       {
         "glyph": "逈",
+        "radical": "辵",
         "catalogStrokes": 9,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "凞",
+        "radical": "冫",
         "catalogStrokes": 15,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "囍",
+        "radical": "口",
         "catalogStrokes": 22,
         "dictionaryStrokes": 24,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       }
     ],
-    "candidateCountDiffers": [
+    "candidateOneStrokeShort": [
       {
         "glyph": "茄",
+        "radical": "艸",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 8,
+        "corpora": {
           "Ja": 8,
-          "Ko": null
+          "MM": 8,
+          "Hans": 8
         },
-        "shortestGap": 1
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
         "glyph": "祛",
+        "radical": "示",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
+        "corpora": {
           "MM": 9,
-          "Ja": null,
-          "Ko": null
+          "Hans": 9
         },
-        "shortestGap": 1
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
         "glyph": "楗",
+        "radical": "木",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
+        "corpora": {
           "MM": 12,
-          "Ja": null,
-          "Ko": null
+          "Hans": 12
         },
-        "shortestGap": 1
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
         "glyph": "擎",
+        "radical": "手",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
+        "corpora": {
           "MM": 16,
-          "Ja": null,
-          "Ko": null
+          "Hans": 16
         },
-        "shortestGap": 1
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
         "glyph": "菰",
+        "radical": "艸",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": 11,
+        "corpora": {
           "Ja": 11,
-          "Ko": null
+          "MM": 11,
+          "Hans": 11
         },
-        "shortestGap": 1
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
         "glyph": "藁",
+        "radical": "艸",
         "catalogStrokes": 18,
         "dictionaryStrokes": 18,
-        "candidates": {
+        "corpora": {
+          "Ja": 17,
           "MM": 17,
-          "Ja": 17,
-          "Ko": null
+          "Hans": 17
         },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "菅",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": 11,
-          "Ja": 11,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "罐",
-        "catalogStrokes": 24,
-        "dictionaryStrokes": 24,
-        "candidates": {
-          "MM": 23,
-          "Ja": 23,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "适",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "廐",
-        "catalogStrokes": 14,
-        "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": 15,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "芎",
-        "catalogStrokes": 7,
-        "dictionaryStrokes": 7,
-        "candidates": {
-          "MM": 6,
-          "Ja": 6,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蕨",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": 15,
-          "Ja": 15,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "饋",
-        "catalogStrokes": 21,
-        "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": 20,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "芹",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": 7,
-          "Ja": 7,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "菫",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": 11,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "芩",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": 7,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "饑",
-        "catalogStrokes": 21,
-        "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": 20,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蕁",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": 15,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "荳",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": 10,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "藜",
-        "catalogStrokes": 19,
-        "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": 18,
-          "Ja": 18,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "莉",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 10,
-          "Ja": 10,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "邈",
-        "catalogStrokes": 18,
-        "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": 17,
-          "Ja": 17,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茉",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 8,
-          "Ja": 8,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "邙",
-        "catalogStrokes": 6,
-        "dictionaryStrokes": 6,
-        "candidates": {
-          "MM": 5,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茗",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": 9,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "摹",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": 14,
-          "Ja": 14,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "朦",
-        "catalogStrokes": 18,
-        "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": 17,
-          "Ja": 17,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蒡",
-        "catalogStrokes": 14,
-        "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": 13,
-          "Ja": 13,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蘗",
-        "catalogStrokes": 21,
-        "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": null,
-          "Ja": 20,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茯",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": 9,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "莩",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 10,
-          "Ja": 10,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "菲",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": 11,
-          "Ja": 11,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "莎",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 10,
-          "Ja": 10,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蒜",
-        "catalogStrokes": 14,
-        "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": 13,
-          "Ja": 13,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "芟",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": 7,
-          "Ja": 7,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蓆",
-        "catalogStrokes": 14,
-        "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": 13,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "僊",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": 14,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蓚",
-        "catalogStrokes": 14,
-        "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": 13,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茱",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": 9,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蕣",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": 15,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "陞",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蓍",
-        "catalogStrokes": 14,
-        "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": 13,
-          "Ja": 13,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "莘",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 10,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "芯",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": 7,
-          "Ja": 7,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "莪",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 10,
-          "Ja": 10,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "菴",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": 11,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蘖",
-        "catalogStrokes": 21,
-        "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": 20,
-          "Ja": 20,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "歟",
-        "catalogStrokes": 18,
-        "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": null,
-          "Ja": 17,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茹",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": 9,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "苒",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 8,
-          "Ja": 8,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蘂",
-        "catalogStrokes": 20,
-        "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": 19,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "獒",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": 14,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "藕",
-        "catalogStrokes": 19,
-        "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": 18,
-          "Ja": 18,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "芋",
-        "catalogStrokes": 7,
-        "dictionaryStrokes": 7,
-        "candidates": {
-          "MM": 6,
-          "Ja": 6,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "薏",
-        "catalogStrokes": 17,
-        "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": 16,
-          "Ja": 16,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "苡",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 7,
-          "Ja": 8,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "荑",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茵",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": 9,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "荏",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": 9,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茨",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": 9,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "藷",
-        "catalogStrokes": 20,
-        "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": 19,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "菹",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": 11,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "荻",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": 10,
-          "Ja": 10,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "迪",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 8,
-          "Ja": 8,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "鋌",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": 14,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "儁",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": 14,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "雋",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": 12,
-          "Ja": 12,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茁",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 8,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "芷",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": 7,
-          "Ja": 7,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "菁",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": 11,
-          "Ja": 11,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "苕",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 8,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "萩",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": 12,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "邰",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": 7,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "苞",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": 8,
-          "Ja": 8,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "陂",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": 7,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "荇",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "餉",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": 14,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蕙",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": 15,
-          "Ja": 15,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "蒿",
-        "catalogStrokes": 14,
-        "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": 13,
-          "Ja": 13,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "葫",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": 12,
-          "Ja": 12,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "芦",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": 7,
-          "Ja": 7,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "譁",
-        "catalogStrokes": 18,
-        "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": null,
-          "Ja": 17,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "潢",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": 14,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "璜",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": 15,
-          "Ja": null,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "茴",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": 9,
-          "Ja": 9,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "薨",
-        "catalogStrokes": 17,
-        "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": 16,
-          "Ja": 16,
-          "Ko": null
-        },
-        "shortestGap": 1
-      },
-      {
-        "glyph": "萱",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": 12,
-          "Ja": 12,
-          "Ko": null
-        },
-        "shortestGap": 1
-      }
-    ],
-    "noCandidate": [
-      {
-        "glyph": "慤",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "磵",
-        "catalogStrokes": 17,
-        "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "乫",
-        "catalogStrokes": 6,
-        "dictionaryStrokes": 6,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "鱇",
-        "catalogStrokes": 22,
-        "dictionaryStrokes": 22,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "堈",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "鈐",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "迲",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "俓",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "坰",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "暻",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "璥",
-        "catalogStrokes": 17,
-        "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "磎",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "棨",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "苽",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
         "glyph": "瓘",
+        "radical": "玉",
         "catalogStrokes": 22,
         "dictionaryStrokes": 22,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "Hans": 21
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "梡",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "glyph": "菅",
+        "radical": "艸",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {
+          "Ja": 11,
+          "MM": 11,
+          "Hans": 11
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "珖",
+        "glyph": "罐",
+        "radical": "缶",
+        "catalogStrokes": 24,
+        "dictionaryStrokes": 24,
+        "corpora": {
+          "Ja": 23,
+          "MM": 23,
+          "Hans": 23
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "适",
+        "radical": "辵",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "侊",
+        "glyph": "芎",
+        "radical": "艸",
+        "catalogStrokes": 7,
+        "dictionaryStrokes": 7,
+        "corpora": {
+          "Ja": 6,
+          "MM": 6,
+          "Hans": 6
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蕨",
+        "radical": "艸",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {
+          "Ja": 15,
+          "MM": 15,
+          "Hans": 15
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "饋",
+        "radical": "食",
+        "catalogStrokes": 21,
+        "dictionaryStrokes": 21,
+        "corpora": {
+          "MM": 20
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "芹",
+        "radical": "艸",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "Ja": 7,
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "炚",
+        "glyph": "菫",
+        "radical": "艸",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {
+          "Ja": 11
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "芩",
+        "radical": "艸",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "嶠",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "絿",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "坵",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "銶",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "耈",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "淃",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "畇",
-        "catalogStrokes": 9,
-        "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "劤",
-        "catalogStrokes": 6,
-        "dictionaryStrokes": 6,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "昑",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
         "glyph": "伋",
+        "radical": "人",
         "catalogStrokes": 6,
         "dictionaryStrokes": 6,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "Hans": 5
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "璂",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "glyph": "饑",
+        "radical": "食",
+        "catalogStrokes": 21,
+        "dictionaryStrokes": 21,
+        "corpora": {
+          "MM": 20
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "玘",
-        "catalogStrokes": 7,
-        "dictionaryStrokes": 7,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "錡",
+        "glyph": "蕁",
+        "radical": "艸",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "Ja": 15
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "錤",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "耭",
-        "catalogStrokes": 18,
-        "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "枏",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "湳",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "秊",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "寗",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "杻",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "澾",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "錟",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "坮",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "旽",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "焞",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "芚",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "擥",
-        "catalogStrokes": 18,
-        "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "崍",
+        "glyph": "荳",
+        "radical": "艸",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "Ja": 10
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "璉",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "岺",
-        "catalogStrokes": 8,
-        "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "笭",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "蔞",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "鏤",
+        "glyph": "藜",
+        "radical": "艸",
         "catalogStrokes": 19,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "Ja": 18,
+          "MM": 18,
+          "Hans": 18
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "璘",
-        "catalogStrokes": 16,
-        "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "glyph": "莉",
+        "radical": "艸",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {
+          "Ja": 10,
+          "MM": 10,
+          "Hans": 10
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "潾",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "glyph": "邈",
+        "radical": "辵",
+        "catalogStrokes": 18,
+        "dictionaryStrokes": 18,
+        "corpora": {
+          "Ja": 17,
+          "MM": 17,
+          "Hans": 17
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
-        "glyph": "唜",
+        "glyph": "茉",
+        "radical": "艸",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {
+          "Ja": 8,
+          "MM": 8,
+          "Hans": 8
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "邙",
+        "radical": "邑",
+        "catalogStrokes": 6,
+        "dictionaryStrokes": 6,
+        "corpora": {
+          "MM": 5,
+          "Hans": 5
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "茗",
+        "radical": "艸",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "輞",
-        "catalogStrokes": 15,
-        "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "椧",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "Ja": 9,
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
       },
       {
         "glyph": "芼",
+        "radical": "艸",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "摹",
+        "radical": "手",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {
+          "Ja": 14,
+          "MM": 14,
+          "Hans": 14
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "朦",
+        "radical": "月",
+        "catalogStrokes": 18,
+        "dictionaryStrokes": 18,
+        "corpora": {
+          "Ja": 17,
+          "MM": 17,
+          "Hans": 17
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蒡",
+        "radical": "艸",
+        "catalogStrokes": 14,
+        "dictionaryStrokes": 14,
+        "corpora": {
+          "Ja": 13,
+          "MM": 13,
+          "Hans": 13
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蘗",
+        "radical": "艸",
+        "catalogStrokes": 21,
+        "dictionaryStrokes": 21,
+        "corpora": {
+          "Ja": 20
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "茯",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "Ja": 9,
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "莩",
+        "radical": "艸",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {
+          "Ja": 10,
+          "MM": 10,
+          "Hans": 10
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "菲",
+        "radical": "艸",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {
+          "Ja": 11,
+          "MM": 11,
+          "Hans": 11
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "莎",
+        "radical": "艸",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {
+          "Ja": 10,
+          "MM": 10,
+          "Hans": 10
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蒜",
+        "radical": "艸",
+        "catalogStrokes": 14,
+        "dictionaryStrokes": 14,
+        "corpora": {
+          "Ja": 13,
+          "MM": 13,
+          "Hans": 13
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "芟",
+        "radical": "艸",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {
+          "Ja": 7,
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蓆",
+        "radical": "艸",
+        "catalogStrokes": 14,
+        "dictionaryStrokes": 14,
+        "corpora": {
+          "Ja": 13
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蓚",
+        "radical": "艸",
+        "catalogStrokes": 14,
+        "dictionaryStrokes": 14,
+        "corpora": {
+          "Ja": 13
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "茱",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "Ja": 9,
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蕣",
+        "radical": "艸",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {
+          "Ja": 15
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "陞",
+        "radical": "阜",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "MM": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蓍",
+        "radical": "艸",
+        "catalogStrokes": 14,
+        "dictionaryStrokes": 14,
+        "corpora": {
+          "Ja": 13,
+          "MM": 13,
+          "Hans": 13
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "莘",
+        "radical": "艸",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {
+          "MM": 10,
+          "Hans": 10
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "芯",
+        "radical": "艸",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {
+          "Ja": 7,
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "莪",
+        "radical": "艸",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {
+          "Ja": 10,
+          "MM": 10,
+          "Hans": 10
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "菴",
+        "radical": "艸",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {
+          "Ja": 11
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蘖",
+        "radical": "艸",
+        "catalogStrokes": 21,
+        "dictionaryStrokes": 21,
+        "corpora": {
+          "Ja": 20,
+          "MM": 20,
+          "Hans": 20
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "歟",
+        "radical": "欠",
+        "catalogStrokes": 18,
+        "dictionaryStrokes": 18,
+        "corpora": {
+          "Ja": 17
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "茹",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "Ja": 9,
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "苒",
+        "radical": "艸",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {
+          "Ja": 8,
+          "MM": 8,
+          "Hans": 8
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蘂",
+        "radical": "艸",
+        "catalogStrokes": 20,
+        "dictionaryStrokes": 20,
+        "corpora": {
+          "Ja": 19
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "獒",
+        "radical": "犬",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {
+          "MM": 14,
+          "Hans": 14
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "藕",
+        "radical": "艸",
+        "catalogStrokes": 19,
+        "dictionaryStrokes": 19,
+        "corpora": {
+          "Ja": 18,
+          "MM": 18,
+          "Hans": 18
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "芋",
+        "radical": "艸",
+        "catalogStrokes": 7,
+        "dictionaryStrokes": 7,
+        "corpora": {
+          "Ja": 6,
+          "MM": 6,
+          "Hans": 6
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "薏",
+        "radical": "艸",
+        "catalogStrokes": 17,
+        "dictionaryStrokes": 17,
+        "corpora": {
+          "Ja": 16,
+          "MM": 16,
+          "Hans": 16
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "苡",
+        "radical": "艸",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {
+          "Ja": 8,
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "荑",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "茵",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "Ja": 9,
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "荏",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "Ja": 9,
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "茨",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "Ja": 9,
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "藷",
+        "radical": "艸",
+        "catalogStrokes": 20,
+        "dictionaryStrokes": 20,
+        "corpora": {
+          "Ja": 19
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "菹",
+        "radical": "艸",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {
+          "MM": 11,
+          "Hans": 11
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "荻",
+        "radical": "艸",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {
+          "Ja": 10,
+          "MM": 10,
+          "Hans": 10
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "迪",
+        "radical": "辵",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {
+          "Ja": 8,
+          "MM": 8,
+          "Hans": 8
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "鋌",
+        "radical": "金",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {
+          "MM": 14
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "儁",
+        "radical": "人",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {
+          "Ja": 14
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "雋",
+        "radical": "隹",
+        "catalogStrokes": 13,
+        "dictionaryStrokes": 13,
+        "corpora": {
+          "Ja": 12,
+          "MM": 12
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "茁",
+        "radical": "艸",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {
+          "MM": 8,
+          "Hans": 8
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "芷",
+        "radical": "艸",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {
+          "Ja": 7,
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "菁",
+        "radical": "艸",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {
+          "Ja": 11,
+          "MM": 11,
+          "Hans": 11
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "苕",
+        "radical": "艸",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {
+          "MM": 8,
+          "Hans": 8
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "萩",
+        "radical": "艸",
+        "catalogStrokes": 13,
+        "dictionaryStrokes": 13,
+        "corpora": {
+          "Ja": 12,
+          "Hans": 12
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "邰",
+        "radical": "邑",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "苞",
+        "radical": "艸",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {
+          "Ja": 8,
+          "MM": 8,
+          "Hans": 8
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "陂",
+        "radical": "阜",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "荇",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "餉",
+        "radical": "食",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {
+          "MM": 14
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蕙",
+        "radical": "艸",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {
+          "Ja": 15,
+          "MM": 15,
+          "Hans": 15
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "蒿",
+        "radical": "艸",
+        "catalogStrokes": 14,
+        "dictionaryStrokes": 14,
+        "corpora": {
+          "Ja": 13,
+          "MM": 13,
+          "Hans": 13
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "葫",
+        "radical": "艸",
+        "catalogStrokes": 13,
+        "dictionaryStrokes": 13,
+        "corpora": {
+          "Ja": 12,
+          "MM": 12,
+          "Hans": 12
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "芦",
+        "radical": "艸",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {
+          "Ja": 7,
+          "MM": 7,
+          "Hans": 7
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "譁",
+        "radical": "言",
+        "catalogStrokes": 18,
+        "dictionaryStrokes": 18,
+        "corpora": {
+          "Ja": 17
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "潢",
+        "radical": "水",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {
+          "MM": 14,
+          "Hans": 14
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "璜",
+        "radical": "玉",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {
+          "MM": 15,
+          "Hans": 15
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "茴",
+        "radical": "艸",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {
+          "Ja": 9,
+          "MM": 9,
+          "Hans": 9
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "薨",
+        "radical": "艸",
+        "catalogStrokes": 17,
+        "dictionaryStrokes": 17,
+        "corpora": {
+          "Ja": 16,
+          "MM": 16,
+          "Hans": 16
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      },
+      {
+        "glyph": "萱",
+        "radical": "艸",
+        "catalogStrokes": 13,
+        "dictionaryStrokes": 13,
+        "corpora": {
+          "Ja": 12,
+          "MM": 12,
+          "Hans": 12
+        },
+        "shortestGap": 1,
+        "allShorter": true
+      }
+    ],
+    "candidateOtherGap": [
+      {
+        "glyph": "廐",
+        "radical": "广",
+        "catalogStrokes": 14,
+        "dictionaryStrokes": 14,
+        "corpora": {
+          "Ja": 15
+        },
+        "shortestGap": 1,
+        "allShorter": false
+      },
+      {
+        "glyph": "僊",
+        "radical": "人",
+        "catalogStrokes": 13,
+        "dictionaryStrokes": 13,
+        "corpora": {
+          "Ja": 14
+        },
+        "shortestGap": 1,
+        "allShorter": false
+      }
+    ],
+    "noCandidateAnywhere": [
+      {
+        "glyph": "慤",
+        "radical": "心",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "磵",
+        "radical": "石",
+        "catalogStrokes": 17,
+        "dictionaryStrokes": 17,
+        "corpora": {}
+      },
+      {
+        "glyph": "乫",
+        "radical": "乙",
+        "catalogStrokes": 6,
+        "dictionaryStrokes": 6,
+        "corpora": {}
+      },
+      {
+        "glyph": "鱇",
+        "radical": "魚",
+        "catalogStrokes": 22,
+        "dictionaryStrokes": 22,
+        "corpora": {}
+      },
+      {
+        "glyph": "堈",
+        "radical": "土",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {}
+      },
+      {
+        "glyph": "鈐",
+        "radical": "金",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {}
+      },
+      {
+        "glyph": "迲",
+        "radical": "辵",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {}
+      },
+      {
+        "glyph": "俓",
+        "radical": "人",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {}
+      },
+      {
+        "glyph": "坰",
+        "radical": "土",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "暻",
+        "radical": "日",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {}
+      },
+      {
+        "glyph": "璥",
+        "radical": "玉",
+        "catalogStrokes": 17,
+        "dictionaryStrokes": 17,
+        "corpora": {}
+      },
+      {
+        "glyph": "磎",
+        "radical": "石",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "苽",
+        "radical": "艸",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {}
+      },
+      {
+        "glyph": "梡",
+        "radical": "木",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {}
+      },
+      {
+        "glyph": "珖",
+        "radical": "玉",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {}
+      },
+      {
+        "glyph": "侊",
+        "radical": "人",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "炚",
+        "radical": "火",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "嶠",
+        "radical": "山",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "絿",
+        "radical": "糸",
+        "catalogStrokes": 13,
+        "dictionaryStrokes": 13,
+        "corpora": {}
+      },
+      {
+        "glyph": "坵",
+        "radical": "土",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "銶",
+        "radical": "金",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "耈",
+        "radical": "老",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {}
+      },
+      {
+        "glyph": "淃",
+        "radical": "水",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {}
+      },
+      {
+        "glyph": "畇",
+        "radical": "田",
+        "catalogStrokes": 9,
+        "dictionaryStrokes": 9,
+        "corpora": {}
+      },
+      {
+        "glyph": "劤",
+        "radical": "力",
+        "catalogStrokes": 6,
+        "dictionaryStrokes": 6,
+        "corpora": {}
+      },
+      {
+        "glyph": "昑",
+        "radical": "日",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "璂",
+        "radical": "玉",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "玘",
+        "radical": "玉",
+        "catalogStrokes": 7,
+        "dictionaryStrokes": 7,
+        "corpora": {}
+      },
+      {
+        "glyph": "錡",
+        "radical": "金",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {}
+      },
+      {
+        "glyph": "錤",
+        "radical": "金",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {}
+      },
+      {
+        "glyph": "耭",
+        "radical": "耒",
+        "catalogStrokes": 18,
+        "dictionaryStrokes": 18,
+        "corpora": {}
+      },
+      {
+        "glyph": "枏",
+        "radical": "木",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "湳",
+        "radical": "水",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {}
+      },
+      {
+        "glyph": "秊",
+        "radical": "禾",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "寗",
+        "radical": "宀",
+        "catalogStrokes": 13,
+        "dictionaryStrokes": 13,
+        "corpora": {}
+      },
+      {
+        "glyph": "澾",
+        "radical": "水",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {}
+      },
+      {
+        "glyph": "錟",
+        "radical": "金",
+        "catalogStrokes": 16,
+        "dictionaryStrokes": 16,
+        "corpora": {}
+      },
+      {
+        "glyph": "坮",
+        "radical": "土",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "旽",
+        "radical": "日",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "焞",
+        "radical": "火",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {}
+      },
+      {
+        "glyph": "芚",
+        "radical": "艸",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "擥",
+        "radical": "手",
+        "catalogStrokes": 18,
+        "dictionaryStrokes": 18,
+        "corpora": {}
+      },
+      {
+        "glyph": "崍",
+        "radical": "山",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {}
+      },
+      {
+        "glyph": "璉",
+        "radical": "玉",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "岺",
+        "radical": "山",
+        "catalogStrokes": 8,
+        "dictionaryStrokes": 8,
+        "corpora": {}
+      },
+      {
+        "glyph": "笭",
+        "radical": "竹",
+        "catalogStrokes": 11,
+        "dictionaryStrokes": 11,
+        "corpora": {}
+      },
+      {
+        "glyph": "蔞",
+        "radical": "艸",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "鏤",
+        "radical": "金",
+        "catalogStrokes": 19,
+        "dictionaryStrokes": 19,
+        "corpora": {}
+      },
+      {
+        "glyph": "潾",
+        "radical": "水",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "唜",
+        "radical": "口",
+        "catalogStrokes": 10,
+        "dictionaryStrokes": 10,
+        "corpora": {}
+      },
+      {
+        "glyph": "輞",
+        "radical": "車",
+        "catalogStrokes": 15,
+        "dictionaryStrokes": 15,
+        "corpora": {}
+      },
+      {
+        "glyph": "椧",
+        "radical": "木",
+        "catalogStrokes": 12,
+        "dictionaryStrokes": 12,
+        "corpora": {}
       },
       {
         "glyph": "竗",
+        "radical": "立",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "沕",
+        "radical": "水",
         "catalogStrokes": 7,
         "dictionaryStrokes": 7,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "渼",
+        "radical": "水",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "騈",
+        "radical": "馬",
         "catalogStrokes": 18,
         "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "棅",
+        "radical": "木",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "幷",
+        "radical": "干",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "輧",
+        "radical": "車",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "湺",
+        "radical": "水",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "琫",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "熢",
+        "radical": "火",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "昐",
+        "radical": "日",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "玭",
+        "radical": "玉",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "柶",
+        "radical": "木",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "僿",
+        "radical": "人",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "乷",
+        "radical": "乙",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鈒",
+        "radical": "金",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "捿",
+        "radical": "手",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "詵",
+        "radical": "言",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鐥",
+        "radical": "金",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "琁",
+        "radical": "玉",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "饍",
+        "radical": "食",
         "catalogStrokes": 21,
         "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "敾",
+        "radical": "攴",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "蓀",
+        "radical": "艸",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "飡",
+        "radical": "食",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "琇",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "峀",
+        "radical": "山",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "璲",
+        "radical": "玉",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "琡",
+        "radical": "玉",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "璹",
+        "radical": "玉",
         "catalogStrokes": 18,
         "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "潚",
+        "radical": "水",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "錞",
+        "radical": "金",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "栒",
-        "catalogStrokes": 10,
-        "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "橓",
+        "radical": "木",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鉥",
+        "radical": "金",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "篒",
+        "radical": "竹",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "侁",
+        "radical": "人",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "藎",
+        "radical": "艸",
         "catalogStrokes": 18,
         "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鮟",
+        "radical": "魚",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "昻",
+        "radical": "日",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "敭",
+        "radical": "攴",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "孼",
+        "radical": "子",
         "catalogStrokes": 19,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "璵",
+        "radical": "玉",
         "catalogStrokes": 18,
         "dictionaryStrokes": 18,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "轝",
+        "radical": "車",
         "catalogStrokes": 21,
         "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "礖",
+        "radical": "石",
         "catalogStrokes": 19,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "縯",
+        "radical": "糸",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "挻",
+        "radical": "手",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "堧",
+        "radical": "土",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "髥",
+        "radical": "髟",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "渶",
+        "radical": "水",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "濚",
+        "radical": "水",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "煐",
+        "radical": "火",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鍈",
+        "radical": "金",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "瀯",
+        "radical": "水",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "霙",
+        "radical": "雨",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "汭",
-        "catalogStrokes": 7,
-        "dictionaryStrokes": 7,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "筽",
+        "radical": "竹",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "旿",
+        "radical": "日",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "瑥",
+        "radical": "玉",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "琓",
+        "radical": "玉",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "釪",
+        "radical": "金",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "禑",
+        "radical": "示",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "旴",
+        "radical": "日",
         "catalogStrokes": 7,
         "dictionaryStrokes": 7,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "瑀",
-        "catalogStrokes": 13,
-        "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "栯",
+        "radical": "木",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "稶",
+        "radical": "禾",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "澐",
+        "radical": "水",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "橒",
+        "radical": "木",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "熉",
+        "radical": "火",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "嫄",
+        "radical": "女",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "暐",
+        "radical": "日",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "蔿",
+        "radical": "艸",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "褘",
+        "radical": "衣",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "堉",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "玧",
+        "radical": "玉",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "瀜",
+        "radical": "水",
         "catalogStrokes": 19,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "彛",
+        "radical": "彐",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "瀷",
+        "radical": "水",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "靷",
+        "radical": "革",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "絪",
+        "radical": "糸",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "馹",
+        "radical": "馬",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "芿",
+        "radical": "艸",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "欌",
+        "radical": "木",
         "catalogStrokes": 22,
         "dictionaryStrokes": 22,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "暲",
+        "radical": "日",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "渽",
+        "radical": "水",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "佺",
+        "radical": "人",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "塼",
+        "radical": "土",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鐫",
+        "radical": "金",
         "catalogStrokes": 21,
         "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "琠",
+        "radical": "玉",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "癤",
+        "radical": "疒",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "炡",
+        "radical": "火",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "姃",
+        "radical": "女",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "諪",
+        "radical": "言",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "綎",
+        "radical": "糸",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "檉",
+        "radical": "木",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "璪",
-        "catalogStrokes": 17,
-        "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鏃",
+        "radical": "金",
         "catalogStrokes": 19,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "悰",
+        "radical": "心",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "倧",
+        "radical": "人",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "畯",
-        "catalogStrokes": 12,
-        "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "寯",
+        "radical": "宀",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "瑨",
+        "radical": "玉",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "搢",
+        "radical": "手",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "縝",
+        "radical": "糸",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "蔯",
+        "radical": "艸",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "桭",
+        "radical": "木",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "璡",
+        "radical": "玉",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "瓆",
+        "radical": "玉",
         "catalogStrokes": 19,
         "dictionaryStrokes": 19,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "潗",
+        "radical": "水",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鏶",
+        "radical": "金",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "澯",
+        "radical": "水",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "纘",
+        "radical": "糸",
         "catalogStrokes": 25,
         "dictionaryStrokes": 25,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "寀",
+        "radical": "宀",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "慽",
+        "radical": "心",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "玔",
+        "radical": "玉",
         "catalogStrokes": 7,
         "dictionaryStrokes": 7,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "甛",
+        "radical": "甘",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "摠",
+        "radical": "手",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "憁",
+        "radical": "心",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "瑃",
+        "radical": "玉",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "晫",
+        "radical": "日",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "琸",
+        "radical": "玉",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "浿",
+        "radical": "水",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "驃",
+        "radical": "馬",
         "catalogStrokes": 21,
         "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "飇",
+        "radical": "風",
         "catalogStrokes": 21,
         "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "苾",
+        "radical": "艸",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "珌",
+        "radical": "玉",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "馝",
+        "radical": "香",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "昰",
+        "radical": "日",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鰕",
+        "radical": "魚",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "珦",
+        "radical": "玉",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "櫶",
+        "radical": "木",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "睍",
+        "radical": "目",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "晛",
+        "radical": "日",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "玹",
+        "radical": "玉",
         "catalogStrokes": 9,
         "dictionaryStrokes": 9,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "灐",
+        "radical": "水",
         "catalogStrokes": 21,
         "dictionaryStrokes": 21,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "泂",
+        "radical": "水",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "暳",
+        "radical": "日",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "頀",
+        "radical": "音",
         "catalogStrokes": 23,
         "dictionaryStrokes": 23,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "灝",
+        "radical": "水",
         "catalogStrokes": 24,
         "dictionaryStrokes": 24,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
-      },
-      {
-        "glyph": "淏",
-        "catalogStrokes": 11,
-        "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "濩",
+        "radical": "水",
         "catalogStrokes": 17,
         "dictionaryStrokes": 17,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "畵",
+        "radical": "田",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "碻",
+        "radical": "石",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "晥",
+        "radical": "日",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "榥",
+        "radical": "木",
         "catalogStrokes": 14,
         "dictionaryStrokes": 14,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "愰",
+        "radical": "心",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "澮",
+        "radical": "水",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "鐄",
+        "radical": "金",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "宖",
+        "radical": "宀",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "斅",
+        "radical": "攴",
         "catalogStrokes": 20,
         "dictionaryStrokes": 20,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "涍",
+        "radical": "水",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "帿",
+        "radical": "巾",
         "catalogStrokes": 12,
         "dictionaryStrokes": 12,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "珝",
+        "radical": "玉",
         "catalogStrokes": 10,
         "dictionaryStrokes": 10,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "焄",
+        "radical": "火",
         "catalogStrokes": 11,
         "dictionaryStrokes": 11,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "塤",
+        "radical": "土",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "煇",
+        "radical": "火",
         "catalogStrokes": 13,
         "dictionaryStrokes": 13,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "炘",
+        "radical": "火",
         "catalogStrokes": 8,
         "dictionaryStrokes": 8,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "熺",
+        "radical": "火",
         "catalogStrokes": 16,
         "dictionaryStrokes": 16,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       },
       {
         "glyph": "憘",
+        "radical": "心",
         "catalogStrokes": 15,
         "dictionaryStrokes": 15,
-        "candidates": {
-          "MM": null,
-          "Ja": null,
-          "Ko": null
-        }
+        "corpora": {}
       }
     ]
   }
