@@ -64,7 +64,7 @@
 남아도 되는 자리 넷을 뺀다 — 쉼표로 절이 이어짐 · 종속절의 정형 동사
 (`… austragen muss`) · 명사로 쓴 자리(`beim Bomben abwerfen`) · **표제어가
 정형 동사로 끝나는 자리**(`es ist seines` — 그건 왼쪽 괄호라 뒤에 말이 오는
-것이 맞다). `pnpm ex`가 돌리고 `check`는 안 돌린다. `content/` 전체에 171이
+것이 맞다). `pnpm ex`가 돌리고 `check`는 안 돌린다. `content/` 전체에 117이
 남아 있어서다 ([examples-pending.md](examples-pending.md)).
 
 ### 표제형이 전치사로 끝나면 문장에 못 선다
@@ -84,6 +84,16 @@
 **떼고 난 표기에 임자가 있으면 다른 낱말로 간다.** `zurückblicken`은
 `look-back`이, `festhalten`은 `keep-hold`가 쥐고 있어 `zurückdenken`·
 `bewahren`으로 갔다. `pnpm claim`을 먼저 돌린다.
+
+**정형 동사가 든 표제형도 같은 자리다.** `gilt als`·`stimmt nicht überein`은
+둘째 자리에 서는 왼쪽 괄호라, 뒤에 목적어까지 달리면 글자 그대로 이어질
+자리가 없다. 부정사로 바꾸면 오른쪽 괄호에 통째로 들어간다 —
+`nicht übereinstimmen`.
+
+**부정은 따로 생각한다.** `nicht`는 부정사 바로 앞에 서므로 `sich nicht fügen`
+처럼 표제형을 가른다. 부정을 `niemand`·`nie`로 옮기거나(`Den Staub wird
+niemand beachten.`), 부정을 표제형 안에 넣는다(`nicht haben`·`nicht
+übereinstimmen`).
 
 ## 프랑스어 — 축약
 

@@ -174,14 +174,14 @@ famille`), 하나가 남는다.
 `check`에는 넣지 않았다. 경고 스물넷이 이백일흔이 되어 나머지를 덮는다.
 `pnpm props`·`pnpm twins`·`pnpm also-audit`과 같은 자리다 — **목록만 낸다.**
 
-### `action` 일흔일곱을 치웠다 — 171 남는다 (2026-09-20)
+### `action`·`idea`·`number`·`quality`를 치웠다 — 117 남는다 (2026-09-20)
 
-한 파일씩 끊어 돈다. 첫 파일이 `action`이었고 그 파일의 어순은 이제 **0**이다.
+한 파일씩 끊어 돈다. 네 파일의 어순은 이제 **0**이다(248 → 117).
 
-| 남은 파일 | | | | | | | | |
-| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| idea 25 | number 15 | quality 14 | city 14 | family 13 | time 10 | office 10 | school 9 | everyday 9 |
-| job 8 | clothes 8 | travel 7 | nature 7 | body 6 | transport 5 | home 5 | sport 4 | food 2 |
+| 남은 파일 | | | | | | | |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| city 14 | family 13 | time 10 | office 10 | school 9 | everyday 9 | job 8 | clothes 8 |
+| travel 7 | nature 7 | body 6 | transport 5 | home 5 | sport 4 | food 2 | |
 
 **일흔일곱이 두 갈래였다.** 마흔일곱은 낱말 자리만 옮기면 됐고(조동사를 둘째
 자리에, 표제형을 끝으로), 서른은 **표제형이 전치사로 끝나** 고칠 길이 아예
@@ -210,11 +210,34 @@ famille`), 하나가 남는다.
 | `action/cause-to-be` | `bewirken dass` | `bewirken` — 독일어는 `bewirken, dass`라 쉼표가 낀다 |
 
 **떼고 난 표기에 임자가 있는지 `pnpm claim`으로 먼저 본다.** 열여섯 가운데
-둘이 걸렸다. 남은 열여덟(개념 열)도 전치사로 끝나므로 같은 길로 간다.
+둘이 걸렸다.
 
 그물도 한 자리 늘렸다. 표제형이 `es ist`처럼 **정형 동사로 끝나면** 그 동사구는
 오른쪽 괄호가 아니라 왼쪽 괄호라 뒤에 말이 오는 것이 맞다. `haben`·`werden`
 처럼 부정사와 꼴이 같은 것은 빼지 않는다 — 빼면 `nicht haben`이 빠진다.
+
+#### `idea`·`number`·`quality` 쉰넷 — 표제형 여덟을 더 바꿨다
+
+| 개념 | 전 | 후 |
+| --- | --- | --- |
+| `idea/derive-from` | `hervorgehen aus` | `hervorgehen` |
+| `idea/get-along-with` | `auskommen mit` | `auskommen` |
+| `idea/does-not-match` | `stimmt nicht überein` | `nicht übereinstimmen` — `fit-exactly`의 `übereinstimmen`과 짝이 된다 |
+| `idea/counts-as` | `gilt als` | `durchgehen` — `gelten`은 `be-taken-for`가 쥐고 있다 |
+| `idea/think-well-of` | `etwas halten von` | `etwas halten` |
+| `idea/be-loyal-to` | `treu sein zu` | `treu sein` |
+| `quality/mind-about` | `sich kümmern um` | `beachten` — `sich kümmern`은 `take-care`가 쥐고 있다 |
+| `quality/ought-by-rights` | `von Rechts wegen sollen` | `gebühren` |
+
+**정형 동사가 든 표제형도 같은 자리다.** `gilt als`·`stimmt nicht überein`은
+정형이라 둘째 자리에 서는데, 그 뒤에 목적어까지 달리면 표제형이 글자 그대로
+이어질 자리가 없다. 부정사로 바꾸면 오른쪽 괄호에 통째로 들어간다 —
+`Die Sohle kann mit dem Abdruck nicht übereinstimmen.`
+
+**부정이 걸림돌이다.** 독일어의 `nicht`는 부정사 바로 앞에 서므로
+`sich nicht fügen`처럼 표제형을 가른다. 길이 셋이다 — 부정을 `niemand`·`nie`로
+옮기거나(`Den Staub wird niemand beachten.`), 부정을 표제형에 넣거나
+(`nicht übereinstimmen`), 예문을 긍정으로 쓴다.
 
 | 파일 | 개념 | 표제형 | 예문 |
 | --- | --- | --- | --- |
