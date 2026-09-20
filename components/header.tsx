@@ -2,6 +2,7 @@
 
 import { ChevronDown } from 'lucide-react'
 import { Flag } from '@/components/flags/flag'
+import { SyncSheet } from '@/components/sync-sheet'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -173,6 +174,16 @@ export function Header({
             </span>
           ))}
 
+        {/*
+          동기화는 덱 탭 오른쪽 끝이다. 탭이 없는 트랙에서는 이것만 선다.
+
+          자리를 여기로 잡은 이유는 **덱 탭과 달리 트랙을 안 가려서**다 —
+          늘 같은 자리에 있어야 찾는다. 환경변수가 비면 자리째 빠진다
+          (components/sync-sheet.tsx)
+        */}
+        <span className="ml-3 flex items-center">
+          <SyncSheet />
+        </span>
       </div>
     </header>
   )

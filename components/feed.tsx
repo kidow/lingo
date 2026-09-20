@@ -12,6 +12,7 @@ import {
   type EngineState,
 } from '@/lib/engine'
 import { loadProgress, saveProgress, WORD_LADDER, type Ladder, type Progress } from '@/lib/progress'
+import { logReview, syncNow, RATING_AGAIN, RATING_GOOD, RATING_INTRO } from '@/lib/sync'
 import { questionKey, type Question } from '@/lib/quiz'
 import { HANJA_SKILLS, hanjaKey } from '@/lib/hanja'
 import { HanjaCard } from './hanja/card'
@@ -90,6 +91,13 @@ export function Feed({
    */
   const [picks, setPicks] = useState<Map<number, string>>(new Map())
 
+  /**
+   * 같은 값의 거울. **동기화 효과가 `picks`에 매달리지 않게** 하려고 둔다 —
+   * 매달면 한 장 답할 때마다 서버와 맞추러 간다 (lib/sync.ts).
+   */
+  const picksRef = useRef(picks)
+  picksRef.current = picks
+
   const engine = useRef<EngineState>(initialState())
   /** 소개 카드를 이미 기록했는지. 인덱스 기준 */
   const recorded = useRef<Set<number>>(new Set())
@@ -154,6 +162,32 @@ export function Feed({
     extendedFrom.current = -1
     setReady(true)
   }, [track, entries])
+
+  /**
+   * 서버와 맞춘다. **마운트와 트랙 전환 때만** 부른다 — 세션 중간에 진도가
+   * 바뀌면 보고 있던 카드 뭉치가 어긋난다 (lib/sync.ts).
+   *
+   * 첫 화면을 기다리게 하지 않는다. 피드는 로컬 진도로 이미 돌고 있고, 맞춘
+   * 결과는 늦게 도착해서 **저장부터** 된다. 살아 있는 엔진까지 갈아 끼우는
+   * 것은 아직 한 장도 안 답했을 때뿐이다 — 답하는 중이었다면 저장만 해 두고
+   * 다음 트랙 전환이나 새로고침이 그것을 집어 든다.
+   */
+  useEffect(() => {
+    let alive = true
+    void syncNow(track, loadProgress(track)).then((merged) => {
+      if (!alive || !merged) return
+      saveProgress(track, merged)
+      onProgress?.(merged)
+      if (picksRef.current.size > 0) return
+      engine.current = initialState(merged)
+      extendedFrom.current = -1
+      setQuestions([])
+      setCurrent(0)
+    })
+    return () => {
+      alive = false
+    }
+  }, [track, onProgress])
 
   /**
    * 지금 보고 있는 카드를 추적한다. 소개 카드를 언제 지나갔는지 알아야 한다.
@@ -221,12 +255,26 @@ export function Feed({
       const keys = question.kind === 'hanja-intro'
         ? HANJA_SKILLS.map((skill) => hanjaKey(question.entry.character.id, skill))
         : [questionKey(question)]
-      for (const key of keys) state = recordIntro(state, key, Date.now())
+      for (const key of keys) {
+        const at = Date.now()
+        state = recordIntro(state, key, at)
+        // 소개는 판정이 없지만 로그에는 남긴다. 안 남기면 다른 기기에서 그
+        // 낱말이 처음 보는 것으로 다시 나온다 (lib/sync.ts)
+        const card = state.progress.cards[key]
+        if (card)
+          logReview({
+            track,
+            slug: key,
+            at: new Date(at).toISOString(),
+            rating: RATING_INTRO,
+            rung: card.rung,
+          })
+      }
       changed = true
     }
 
     if (changed) commit(state)
-  }, [current, questions, commit])
+  }, [current, questions, commit, track])
 
   /**
    * 항상 한 칸 앞까지만 열어둔다.
@@ -253,10 +301,27 @@ export function Feed({
       // 같은 카드를 두 번 채점하지 않는다. 버튼은 답한 뒤 잠기지만, 카드가
       // 떼였다 붙는 자리라 잠금이 한 번 풀린 것처럼 보일 수 있다
       if (picks.has(index)) return
-      commit(recordAnswer(engine.current, questionKey(question), correct, Date.now(), ladder))
+
+      const slug = questionKey(question)
+      const at = Date.now()
+      const next = recordAnswer(engine.current, slug, correct, at, ladder)
+      commit(next)
+
+      // 사다리 규칙은 덱마다 달라서 동기화 쪽에서 다시 세지 않는다. **답한
+      // 뒤의** 칸을 그대로 적어 보낸다 (lib/sync.ts)
+      const card = next.progress.cards[slug]
+      if (card)
+        logReview({
+          track,
+          slug,
+          at: new Date(at).toISOString(),
+          rating: correct ? RATING_GOOD : RATING_AGAIN,
+          rung: card.rung,
+        })
+
       setPicks((previous) => new Map(previous).set(index, picked))
     },
-    [questions, picks, commit, ladder],
+    [questions, picks, commit, ladder, track],
   )
 
   return (
