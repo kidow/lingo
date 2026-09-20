@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 559,
+  "approvedCharacters": 50,
+  "approvedStrokes": 559,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 44,
+  "correctedCharacters": 6,
+  "reorderedCharacters": 6,
+  "locallyCorrectedPaths": 0,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 4,
+    "flaggedStrokes": 7,
+    "correctedFromFlags": 4,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "All four flagged characters (猾, 遑, 賄, 誨) led to a reorder and no flagged stroke was left as it stood. The endpoint assignment check added 晦 and 繪, whose strokes run in the same direction and differ only in order, and the corrected order leaves no pair over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 6,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the corrected order: 6 rows between 45° and 60°, none corrected",
+    "note": "Four are short dots the dictionary draws vertically while the licensed corpora slant them (宦 1, 麾 1, 痕 1, 歆 1) and two are the short strokes of 恢 6 and 彙 2. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 47,
+    "Ja": 3,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 655,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4191,
+      "remaining": 1787,
+      "percent": 70.1,
+      "totalStrokes": 74558,
+      "appliedStrokes": 50068
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 1035,
+      "remaining": 110,
+      "percent": 90.4,
+      "totalStrokes": 14898,
+      "appliedStrokes": 13333
+    }
+  }
+}
