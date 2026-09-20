@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 657,
+  "approvedCharacters": 50,
+  "approvedStrokes": 657,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 23,
+  "correctedCharacters": 27,
+  "reorderedCharacters": 25,
+  "locallyCorrectedPaths": 3,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 18,
+    "flaggedStrokes": 42,
+    "correctedFromFlags": 18,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "Every flagged character led to a correction and no flagged stroke was left as it stood. An endpoint assignment check over all fifty glyphs added nine order differences the angle probe cannot see (謔, 瘧, 轄, 緘, 絢, 骸, 俠, 挾, 狹, 頰, 鹹), and the whole batch was recomputed after the corrections: no pair exceeds 60°."
+  },
+  "subThresholdSlants": {
+    "count": 9,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the corrected order and paths: 9 rows between 45° and 60°, none corrected",
+    "note": "Six are short dots the dictionary draws vertically while the licensed corpora slant them (瘧 1, 咳 4, 劾 1, 嚮 4, 眩 6, 醯 8) and three are the short strokes of 轄 8, 骸 11 and 駭 11. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 41,
+    "Ja": 9,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "荊"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 651,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4141,
+      "remaining": 1837,
+      "percent": 69.3,
+      "totalStrokes": 74558,
+      "appliedStrokes": 49509
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 985,
+      "remaining": 160,
+      "percent": 86,
+      "totalStrokes": 14898,
+      "appliedStrokes": 12774
+    }
+  }
+}
