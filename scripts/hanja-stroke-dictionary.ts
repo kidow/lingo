@@ -64,6 +64,7 @@ import { special2Batch14DictionaryGeometry, validateSpecial2Batch14DictionaryRev
 import { special2Batch15DictionaryGeometry, validateSpecial2Batch15DictionaryReview, validateSpecial2Batch15DictionaryBundle } from './hanja-stroke-dictionary-special2-batch15.ts'
 import { special2Batch16DictionaryGeometry, validateSpecial2Batch16DictionaryReview, validateSpecial2Batch16DictionaryBundle } from './hanja-stroke-dictionary-special2-batch16.ts'
 import { special2Batch17DictionaryGeometry, validateSpecial2Batch17DictionaryReview, validateSpecial2Batch17DictionaryBundle } from './hanja-stroke-dictionary-special2-batch17.ts'
+import { special2Batch18DictionaryGeometry, validateSpecial2Batch18DictionaryReview, validateSpecial2Batch18DictionaryBundle } from './hanja-stroke-dictionary-special2-batch18.ts'
 import { g1Batch1DictionaryGeometry, validateG1Batch1DictionaryReview, validateG1Batch1DictionaryBundle } from './hanja-stroke-dictionary-g1-batch1.ts'
 import { g1Batch2DictionaryGeometry, validateG1Batch2DictionaryReview, validateG1Batch2DictionaryBundle } from './hanja-stroke-dictionary-g1-batch2.ts'
 import { g1Batch3DictionaryGeometry, validateG1Batch3DictionaryReview, validateG1Batch3DictionaryBundle } from './hanja-stroke-dictionary-g1-batch3.ts'
@@ -141,6 +142,7 @@ import { special2Batch14DictionaryReference } from '../lib/hanja-stroke-dictiona
 import { special2Batch15DictionaryReference } from '../lib/hanja-stroke-dictionary-special2-batch15.ts'
 import { special2Batch16DictionaryReference } from '../lib/hanja-stroke-dictionary-special2-batch16.ts'
 import { special2Batch17DictionaryReference } from '../lib/hanja-stroke-dictionary-special2-batch17.ts'
+import { special2Batch18DictionaryReference } from '../lib/hanja-stroke-dictionary-special2-batch18.ts'
 import { g1Batch1DictionaryReference } from '../lib/hanja-stroke-dictionary-g1-batch1.ts'
 import { g1Batch2DictionaryReference } from '../lib/hanja-stroke-dictionary-g1-batch2.ts'
 import { g1Batch3DictionaryReference } from '../lib/hanja-stroke-dictionary-g1-batch3.ts'
@@ -369,6 +371,7 @@ export function dictionaryGeometry(glyph: string, medians: Medians) {
   if (special2Batch15DictionaryReference(glyph)) return special2Batch15DictionaryGeometry(glyph, medians)
   if (special2Batch16DictionaryReference(glyph)) return special2Batch16DictionaryGeometry(glyph, medians)
   if (special2Batch17DictionaryReference(glyph)) return special2Batch17DictionaryGeometry(glyph, medians)
+  if (special2Batch18DictionaryReference(glyph)) return special2Batch18DictionaryGeometry(glyph, medians)
   if (g1Batch1DictionaryReference(glyph)) return g1Batch1DictionaryGeometry(glyph, medians)
   if (g1Batch2DictionaryReference(glyph)) return g1Batch2DictionaryGeometry(glyph, medians)
   if (g1Batch3DictionaryReference(glyph)) return g1Batch3DictionaryGeometry(glyph, medians)
@@ -508,6 +511,7 @@ export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expe
   if (special2Batch15DictionaryReference(review.glyph)) return validateSpecial2Batch15DictionaryReview(review, expectedStrokes)
   if (special2Batch16DictionaryReference(review.glyph)) return validateSpecial2Batch16DictionaryReview(review, expectedStrokes)
   if (special2Batch17DictionaryReference(review.glyph)) return validateSpecial2Batch17DictionaryReview(review, expectedStrokes)
+  if (special2Batch18DictionaryReference(review.glyph)) return validateSpecial2Batch18DictionaryReview(review, expectedStrokes)
   if (g1Batch1DictionaryReference(review.glyph)) return validateG1Batch1DictionaryReview(review, expectedStrokes)
   if (g1Batch2DictionaryReference(review.glyph)) return validateG1Batch2DictionaryReview(review, expectedStrokes)
   if (g1Batch3DictionaryReference(review.glyph)) return validateG1Batch3DictionaryReview(review, expectedStrokes)
@@ -594,6 +598,7 @@ export function validateDictionaryBundle(entries: readonly HanjaDictionaryStroke
   validateSpecial2Batch15DictionaryBundle()
   validateSpecial2Batch16DictionaryBundle()
   validateSpecial2Batch17DictionaryBundle()
+  validateSpecial2Batch18DictionaryBundle()
   validateG1Batch1DictionaryBundle()
   validateG1Batch2DictionaryBundle()
   validateG1Batch3DictionaryBundle()

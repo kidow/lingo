@@ -26,6 +26,20 @@ export const JAPANESE_CANDIDATE_SOURCE = {
   sha256: '2bcd1c6d186e5376c5f9202b4eae2eaeff13c2566675a55f1c9dd548a2ef31c8',
 } as const
 
+// Same pinned AnimCJK revision as the Korean and Japanese files; the Taiwan standard draws 艹 as four strokes.
+export const TRADITIONAL_CANDIDATE_SOURCE = {
+  ...CANDIDATE_SOURCE,
+  url: CANDIDATE_SOURCE.url.replace('graphicsKo.txt', 'graphicsZhHant.txt'),
+  sha256: '731fe26345833745dc7d37c8213f3ca91585aa0ee18179c0ccda91be41ff6aec',
+} as const
+
+// Same pinned revision again; carries rare name hanja the Korean, Japanese and Make Me a Hanzi files omit.
+export const SIMPLIFIED_CANDIDATE_SOURCE = {
+  ...CANDIDATE_SOURCE,
+  url: CANDIDATE_SOURCE.url.replace('graphicsKo.txt', 'graphicsZhHans.txt'),
+  sha256: '5a5c157fddd0fd9bfaf5580b25c20a1ba2b0cabc0b7142e09f6149cbd5547798',
+} as const
+
 // Geometry only. Playback separately requires the complete review for its source category.
 export const MAKE_ME_A_HANZI_SOURCE = {
   ...CANDIDATE_SOURCE,
@@ -37,6 +51,7 @@ type Character = { glyph: string; strokes: number; readingGrade: string }
 type Candidate = { character: string; strokes: string[]; medians: number[][][] }
 type Verified = HanjaStrokeData
 type CandidateSource = typeof CANDIDATE_SOURCE | typeof JAPANESE_CANDIDATE_SOURCE | typeof MAKE_ME_A_HANZI_SOURCE
+  | typeof TRADITIONAL_CANDIDATE_SOURCE | typeof SIMPLIFIED_CANDIDATE_SOURCE
 const wholeImages: Record<string, string> = { 回: 'BIN0036.bmp', 瓦: 'BIN0038.bmp', 臼: 'BIN0017.gif' }
 const officialPages: Record<string, string> = locations.pages
 const dotCorrections: Record<string, { image: string; row: number; originalCount: number; path: string }> = {
@@ -111,10 +126,12 @@ function reviewedPaths(review: HanjaEomunhoeStrokeData, candidate: Candidate) {
   return normalizeMedians(expectedOrder ? expectedOrder.map((index) => candidate.medians[index - 1]) : candidate.medians)
 }
 
-export function auditStrokes(characters: Character[], candidates: Candidate[], verified: readonly Verified[], japaneseCandidates: Candidate[] = [], hanziCandidates: Candidate[] = []) {
+export function auditStrokes(characters: Character[], candidates: Candidate[], verified: readonly Verified[], japaneseCandidates: Candidate[] = [], hanziCandidates: Candidate[] = [], traditionalCandidates: Candidate[] = [], simplifiedCandidates: Candidate[] = []) {
   const byGlyph = indexCandidates(candidates)
   const japaneseByGlyph = indexCandidates(japaneseCandidates)
   const hanziByGlyph = indexCandidates(hanziCandidates)
+  const traditionalByGlyph = indexCandidates(traditionalCandidates)
+  const simplifiedByGlyph = indexCandidates(simplifiedCandidates)
   const approved = new Map(verified.map((entry) => [entry.glyph, entry]))
   if (approved.size !== verified.length) throw new Error('Duplicate verified character')
   const entries = characters.map((character) => {
@@ -144,6 +161,8 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     const reviewedCandidate = review?.geometrySource === CANDIDATE_SOURCE.sha256
     const geometryCandidate = reviewedCandidate ? candidate
       : review?.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256 ? japaneseByGlyph.get(character.glyph)
+        : dictionaryReview && review.geometrySource === TRADITIONAL_CANDIDATE_SOURCE.sha256 ? traditionalByGlyph.get(character.glyph)
+        : dictionaryReview && review.geometrySource === SIMPLIFIED_CANDIDATE_SOURCE.sha256 ? simplifiedByGlyph.get(character.glyph)
         : (textbookReview || numberedReview || dictionaryReview) && review.geometrySource === MAKE_ME_A_HANZI_SOURCE.sha256 ? hanziByGlyph.get(character.glyph) : undefined
     // Local builders validate pinned provenance before a reviewed candidate can bypass corpus lookup.
     if (authored && JSON.stringify(review?.paths) !== JSON.stringify(authored.paths)) {
@@ -199,6 +218,8 @@ export function auditStrokes(characters: Character[], candidates: Candidate[], v
     },
     reviewedGeometry: { korean: verified.filter((entry) => entry.geometrySource === CANDIDATE_SOURCE.sha256).length,
       japanese: verified.filter((entry) => entry.geometrySource === JAPANESE_CANDIDATE_SOURCE.sha256).length,
+      traditional: verified.filter((entry) => entry.geometrySource === TRADITIONAL_CANDIDATE_SOURCE.sha256).length,
+      simplified: verified.filter((entry) => entry.geometrySource === SIMPLIFIED_CANDIDATE_SOURCE.sha256).length,
       makeMeAHanzi: verified.filter((entry) => entry.geometrySource === MAKE_ME_A_HANZI_SOURCE.sha256).length },
     total: entries.length, candidateTotal: candidates.length,
     candidateStatus: counts('candidateStatus'), playback: counts('playback'), entries }

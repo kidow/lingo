@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 12,
+  "reviewedCharacters": 12,
+  "reviewedStrokes": 140,
+  "approvedCharacters": 12,
+  "approvedStrokes": 140,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 10,
+  "correctedCharacters": 2,
+  "reorderedCharacters": 1,
+  "locallyCorrectedPaths": 1,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 2,
+    "flaggedStrokes": 3,
+    "correctedFromFlags": 2,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "棨 1 is the opening stroke of 戶, reflected as in 肇 and 騙; 琇 10 and 11 are the 乃 pair the dictionary writes in the other order. The endpoint assignment check agreed and nothing else differs."
+  },
+  "subThresholdSlants": {
+    "count": 0,
+    "range": "45° to 60°",
+    "method": "direction-probe rows between 45° and 60°",
+    "note": "No stroke in this batch falls in the sub-threshold band."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 663,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4206,
+      "remaining": 1772,
+      "percent": 70.4,
+      "totalStrokes": 74558,
+      "appliedStrokes": 50250
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 817,
+      "remaining": 333,
+      "percent": 71,
+      "totalStrokes": 15002,
+      "appliedStrokes": 10536
+    }
+  },
+  "candidateCorpora": {
+    "MM": 0,
+    "Ja": 0,
+    "Ko": 0,
+    "Hant": 0,
+    "Hans": 12
+  },
+  "corpusAddition": {
+    "files": [
+      "graphicsZhHant.txt",
+      "graphicsZhHans.txt"
+    ],
+    "revision": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+    "note": "Same AnimCJK revision and Arphic Public License as the Korean and Japanese files already pinned; earlier rounds simply never read these two. Intake and review conditions are unchanged."
+  }
+}
