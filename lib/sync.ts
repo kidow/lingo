@@ -297,11 +297,24 @@ export async function sendCode(email: string): Promise<string | null> {
   return error ? error.message : null
 }
 
+/**
+ * 6자리를 확인한다.
+ *
+ * **두 종류를 다 받는다.** 메일로 온 코드는 `email`이지만, 발송이 막혔을 때
+ * Admin API(`/auth/v1/admin/generate_link`)로 뽑은 것은 `magiclink`다 —
+ * 무료 티어의 기본 SMTP는 팀 멤버 주소로만 보내서 그 길이 실제로 쓰인다.
+ * 사람이 보기에 둘 다 그냥 여섯 자리라, 어느 쪽인지 묻지 않고 차례로 대 본다.
+ */
 export async function verifyCode(email: string, token: string): Promise<string | null> {
   const supabase = db()
   if (!supabase) return '동기화가 꺼져 있습니다'
-  const { error } = await supabase.auth.verifyOtp({ email, token, type: 'email' })
-  return error ? error.message : null
+
+  const first = await supabase.auth.verifyOtp({ email, token, type: 'email' })
+  if (!first.error) return null
+
+  const second = await supabase.auth.verifyOtp({ email, token, type: 'magiclink' })
+  // 둘 다 틀렸으면 첫 번째 말을 전한다. 그쪽이 사람이 쓴 경로다
+  return second.error ? first.error.message : null
 }
 
 /** 로그인한 주소. 안 했으면 null */
