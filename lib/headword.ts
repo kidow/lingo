@@ -261,6 +261,21 @@ const DE_FINITE = new Set(
    lässt lassen ließ ließen bleibt bleiben blieb blieben`.split(/\s+/u),
 )
 
+/**
+ * 부정사와 꼴이 같지 않은 **정형뿐인** 동사. 표제어가 이것으로 끝나면 그
+ * 동사구는 오른쪽 괄호가 아니라 **왼쪽 괄호**다 — 둘째 자리에 서고 뒤에
+ * 말이 오는 것이 맞다 (`es ist seines`). `haben`·`werden`·`sein`처럼 부정사와
+ * 같은 꼴은 여기 넣지 않는다. 넣으면 `nicht haben`·`verwendet werden`이
+ * 빠진다.
+ */
+const DE_TENSED = new Set(
+  `ist sind war waren sei seien bin bist seid hast habt hat hatte hatten gilt
+   wird wurde wurden würde würden kann konnte konnten könnte könnten
+   muss musste mussten müsste müssten soll sollte sollten
+   will wollte wollten darf durfte durften mag mochte möchte möchten
+   lässt ließ ließen bleibt blieb blieben`.split(/\s+/u),
+)
+
 /** 앞에 오면 동사구가 아니라 **명사**인 자리 — `beim Bomben abwerfen` */
 const DE_NOMINAL = new Set(['beim', 'zum', 'am', 'im', 'vom', 'ans', 'aufs', 'das', 'des', 'dem'])
 
@@ -275,6 +290,7 @@ const DE_NOMINAL = new Set(['beim', 'zum', 'am', 'im', 'vom', 'ans', 'aufs', 'da
  */
 export function whyLateVerb(text: string, answer: string, lang: Language, pos: string): string {
   if (lang !== 'de' || pos !== '동사' || !answer.includes(' ')) return ''
+  if (DE_TENSED.has((answer.split(SPACE).at(-1) ?? '').toLowerCase())) return ''
   const at = text.indexOf(answer)
   if (at < 0) return ''
   const tail = text.slice(at + answer.length).trim()

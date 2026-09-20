@@ -61,10 +61,29 @@
 `Dem Verlust wollen sie sich stellen.`
 
 `whyLateVerb`(`lib/headword.ts`)가 이것만 본다: **표제어 뒤에 말이 남았는가.**
-남아도 되는 자리 셋을 뺀다 — 쉼표로 절이 이어짐 · 종속절의 정형 동사
-(`… austragen muss`) · 명사로 쓴 자리(`beim Bomben abwerfen`). `pnpm ex`가
-돌리고 `check`는 안 돌린다. `content/` 전체에 248이 남아 있어서다
-([examples-pending.md](examples-pending.md)).
+남아도 되는 자리 넷을 뺀다 — 쉼표로 절이 이어짐 · 종속절의 정형 동사
+(`… austragen muss`) · 명사로 쓴 자리(`beim Bomben abwerfen`) · **표제어가
+정형 동사로 끝나는 자리**(`es ist seines` — 그건 왼쪽 괄호라 뒤에 말이 오는
+것이 맞다). `pnpm ex`가 돌리고 `check`는 안 돌린다. `content/` 전체에 171이
+남아 있어서다 ([examples-pending.md](examples-pending.md)).
+
+### 표제형이 전치사로 끝나면 문장에 못 선다
+
+`sich stützen auf`·`dienen als`·`zurückblicken auf`처럼 **전치사로 끝나는
+표제형**은 고칠 길이 아예 없다. 독일어는 전치사구를 동사 앞에 두므로
+(`sich auf den Brunnen stützen`) 표제형이 글자 그대로 이어지는 자리가
+**문법적으로 존재하지 않는다.** 예문을 고쳐 될 일이 아니다.
+
+`link`→`linke`와 같은 자리다 — **표제형을 바꾼다.** 전치사를 떼고, 예문에서는
+전치사구를 앞머리(Vorfeld)로 올린다.
+
+    sich stützen auf → sich stützen    Auf den Brunnen muss das Dorf sich stützen.
+    dienen als       → dienen          Als Stufe kann ein flacher Stein dienen.
+    verwendet werden für → verwendet werden   Diese Pfanne kann für Salz verwendet werden.
+
+**떼고 난 표기에 임자가 있으면 다른 낱말로 간다.** `zurückblicken`은
+`look-back`이, `festhalten`은 `keep-hold`가 쥐고 있어 `zurückdenken`·
+`bewahren`으로 갔다. `pnpm claim`을 먼저 돌린다.
 
 ## 프랑스어 — 축약
 

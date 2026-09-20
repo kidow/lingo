@@ -157,3 +157,13 @@ test('독일어 동사구가 아니면 아예 안 본다', () => {
   assert.equal(whyLateVerb('Sie instand halten die Pumpe monatlich.', 'instand halten', 'de', '명사'), '')
   assert.equal(whyLateVerb('Sie wollen aufrunden bei jedem Preis.', 'aufrunden', 'de', '동사'), '')
 })
+
+test('표제어가 정형 동사로 끝나면 안 본다 — 왼쪽 괄호다', () => {
+  assert.equal(whyLateVerb('Ich glaube, es ist seines.', 'es ist', 'de', '동사'), '')
+  /* 부정사와 꼴이 같은 haben·werden은 빼지 않는다 */
+  assert.match(whyLateVerb('Sie nicht haben genug Salz.', 'nicht haben', 'de', '동사'), /둘째 자리/)
+  assert.match(
+    whyLateVerb('Diese Pfanne kann verwendet werden für Salz.', 'verwendet werden', 'de', '동사'),
+    /둘째 자리/,
+  )
+})

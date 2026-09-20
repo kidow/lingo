@@ -174,11 +174,47 @@ famille`), 하나가 남는다.
 `check`에는 넣지 않았다. 경고 스물넷이 이백일흔이 되어 나머지를 덮는다.
 `pnpm props`·`pnpm twins`·`pnpm also-audit`과 같은 자리다 — **목록만 낸다.**
 
-가장 흔한 꼴은 **전치사가 딸린 표제어**다. 목적어가 전치사 뒤로 밀리면서
-부정사가 문장 가운데 남는다.
+### `action` 일흔일곱을 치웠다 — 171 남는다 (2026-09-20)
 
-    Anwälte können sich berufen auf frühere Urteile.   ← auf가 뒤로 밀렸다
-    Anwälte können sich auf frühere Urteile berufen.   ← 부정사가 끝
+한 파일씩 끊어 돈다. 첫 파일이 `action`이었고 그 파일의 어순은 이제 **0**이다.
+
+| 남은 파일 | | | | | | | | |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| idea 25 | number 15 | quality 14 | city 14 | family 13 | time 10 | office 10 | school 9 | everyday 9 |
+| job 8 | clothes 8 | travel 7 | nature 7 | body 6 | transport 5 | home 5 | sport 4 | food 2 |
+
+**일흔일곱이 두 갈래였다.** 마흔일곱은 낱말 자리만 옮기면 됐고(조동사를 둘째
+자리에, 표제형을 끝으로), 서른은 **표제형이 전치사로 끝나** 고칠 길이 아예
+없었다. `sich stützen auf`가 예문에 글자 그대로 이어지는 자리는 독일어에
+없다 — 전치사구는 동사 앞에 선다(`sich auf den Brunnen stützen`).
+
+`link`→`linke`와 같은 자리라 **표제형을 바꿨다.** 열여섯이다.
+
+| 개념 | 전 | 후 |
+| --- | --- | --- |
+| `action/rely-on` | `sich stützen auf` | `sich stützen` |
+| `action/serve-as` | `dienen als` | `dienen` |
+| `action/be-used-for` | `verwendet werden für` | `verwendet werden` |
+| `action/look-back-on` | `zurückblicken auf` | `zurückdenken` — `zurückblicken`은 `look-back`이 쥐고 있다 |
+| `action/take-a-liking-to` | `Gefallen finden an` | `Gefallen finden` |
+| `action/have-to-do-with` | `zu tun haben mit` | `zu tun haben` |
+| `action/hold-fast` | `festhalten an` | `bewahren` — `festhalten`은 `keep-hold`가 쥐고 있다 |
+| `action/be-good-at` | `sich verstehen auf` | `sich verstehen` |
+| `action/accommodate-to` | `sich anpassen an` | `sich anpassen` |
+| `action/pass-oneself-off` | `sich ausgeben als` | `sich ausgeben` |
+| `action/go-along-with` | `sich richten nach` | `sich richten` |
+| `action/put-force-into` | `Kraft setzen auf` | `Kraft setzen` |
+| `action/follow-the-rule` | `sich halten an` | `sich halten` |
+| `action/double-as` | `zugleich dienen als` | `zugleich dienen` |
+| `action/aimed-at` | `abzielend auf` | `abzielen` |
+| `action/cause-to-be` | `bewirken dass` | `bewirken` — 독일어는 `bewirken, dass`라 쉼표가 낀다 |
+
+**떼고 난 표기에 임자가 있는지 `pnpm claim`으로 먼저 본다.** 열여섯 가운데
+둘이 걸렸다. 남은 열여덟(개념 열)도 전치사로 끝나므로 같은 길로 간다.
+
+그물도 한 자리 늘렸다. 표제형이 `es ist`처럼 **정형 동사로 끝나면** 그 동사구는
+오른쪽 괄호가 아니라 왼쪽 괄호라 뒤에 말이 오는 것이 맞다. `haben`·`werden`
+처럼 부정사와 꼴이 같은 것은 빼지 않는다 — 빼면 `nicht haben`이 빠진다.
 
 | 파일 | 개념 | 표제형 | 예문 |
 | --- | --- | --- | --- |
