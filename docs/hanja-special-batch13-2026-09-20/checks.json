@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 648,
+  "approvedCharacters": 48,
+  "approvedStrokes": 618,
+  "heldCharacters": 2,
+  "heldGlyphs": ["褊", "諞"],
+  "heldReason": {
+    "component": "戶",
+    "note": "The dictionary opens the 扁 body with a long horizontal bar — 戸, width 39 in both glyphs — where the licensed corpora draw a short dot: 戶, width 12 in 褊 and 24 in 諞. That is a different stroke, not a different direction or order, so both glyphs fail closed and stay out of the runtime and out of later queues. Same component and same treatment as 扆 and 牖 in batch 9."
+  },
+  "initiallyMatched": 40,
+  "correctedCharacters": 8,
+  "reorderedCharacters": 5,
+  "locallyCorrectedPaths": 10,
+  "corpusOverrides": {
+    "count": 0,
+    "glyphs": [],
+    "note": "First special grade batch with no corpus override. Every flagged glyph was measured against each corpus carrying the same stroke count and no alternative changed the flagged-stroke count, so the queue's starting corpus was kept everywhere. 褊 and 嘏 each had an alternative that shaved a few degrees off the maximum; under the rule that only a change in the flagged-stroke count is acted on, both were left alone."
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 10,
+    "flaggedStrokes": 26,
+    "resolvedByCorpusChange": 0,
+    "correctedFromFlags": 10,
+    "heldFromFlags": 2,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "苹, 觱, 嘏, 醢 and 莧 were resolved by reordering and 苹, 瀌, 翯 and 徯 by an authored path. 褊 6 and 諞 8 turned out to be the 戶 form difference and were held. The endpoint assignment check found no order difference the angle probe had missed. Recomputed against the published order and paths, no stroke is over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 6,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 6 rows between 45° and 60°, none corrected",
+    "note": "Short opening dots and marks the dictionary draws vertically or steeper than the licensed corpora (旆 1 at 58°, 麃 1 at 58°, 襃 1 at 59°, 鑣 9 at 54°, 頏 1 at 58°, 覈 12 at 46°). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "Ja": 25,
+    "MM": 19,
+    "Hans": 3,
+    "Hant": 1,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": ["苹"],
+    "note": "One dictionary group carries a horizontal offset, translate(12, -830). serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y), and the published paths come from the licensed corpus, so the offset only affects what the review sheet draws."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 745,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4871,
+      "remaining": 1107,
+      "percent": 81.5,
+      "totalStrokes": 74558,
+      "appliedStrokes": 58962
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 645,
+      "remaining": 683,
+      "percent": 48.6,
+      "totalStrokes": 18270,
+      "appliedStrokes": 8427
+    }
+  }
+}
