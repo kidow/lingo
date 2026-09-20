@@ -425,6 +425,41 @@ function axes() {
 
   say(`\n품사 파일 — 주제와 분모가 다르다\n${line(46)}`)
   draw(parts, parts[parts.length - 1][1])
+
+  thinCells(topics.map(([name]) => name))
+}
+
+/**
+ * **축만 보면 어디가 빈지 못 찾는다.** 2026-09-20에 얇은 축 둘(clothes ·
+ * transport)을 각도를 바꿔 가며 세 번 채웠는데, 회차마다 후보의 4분의 3이
+ * 이미 있는 것이었다. 얇은 축이 아니라 **얇은 칸**을 봐야 했다.
+ *
+ * 축 × 갈래로 갈라 보면 한눈에 보인다 — 주제 축의 형용사가 city 20% ·
+ * travel 18%인데 sport 3% · transport 4% · everyday 5%다. 명사만 쳐다보다
+ * 그 줄이 비었다.
+ *
+ * **다만 그 칸이 비었다고 늘 채울 수 있는 것은 아니다.** 일반 형용사는
+ * `quality`(994개)가 쥐고 있어 「빠른」·「단단한」은 거기서 걸린다. 주제 축에
+ * 들어가는 것은 **그 판에서만 쓰는 말**뿐이다 — 「발이 빠른」·「수비가
+ * 단단한」처럼. sport 형용사 후보 스물일곱 가운데 아홉만 남은 까닭이다.
+ */
+function thinCells(topics: string[]) {
+  const cells = topics.map((name) => {
+    const rows = conceptsOf(`${name}.json`)
+    const adjective = rows.filter((c) => c.category === 'adjective').length
+    const verb = rows.filter((c) => c.category === 'verb').length
+    return { name, all: rows.length, adjective, verb }
+  })
+  const thin = (key: 'adjective' | 'verb') =>
+    [...cells]
+      .sort((a, b) => a[key] / a.all - b[key] / b.all)
+      .slice(0, 5)
+      .map((c) => `${c.name} ${c[key]}(${pct(c[key], c.all).trim()})`)
+      .join(' · ')
+  say(`\n주제 축에서 얇은 칸 — 갈래별로 다섯\n${line(46)}`)
+  say(`  형용사  ${thin('adjective')}`)
+  say(`  동사    ${thin('verb')}`)
+  say('  일반 형용사·동사는 quality·action이 쥐고 있다 — 그 판에서만 쓰는 말만 들어간다')
 }
 
 function shape() {
