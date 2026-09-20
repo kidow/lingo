@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 3,
+  "reviewedCharacters": 3,
+  "reviewedStrokes": 42,
+  "approvedCharacters": 3,
+  "approvedStrokes": 42,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 3,
+  "correctedCharacters": 0,
+  "reorderedCharacters": 0,
+  "locallyCorrectedPaths": 0,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 0,
+    "flaggedStrokes": 0,
+    "correctedFromFlags": 0,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "Nothing was flagged and the endpoint assignment check found no order difference in any of the three glyphs."
+  },
+  "subThresholdSlants": {
+    "count": 0,
+    "range": "45° to 60°",
+    "method": "direction-probe rows between 45° and 60°",
+    "note": "No stroke in this batch falls in the sub-threshold band."
+  },
+  "candidateCorpora": {
+    "MM": 3,
+    "Ja": 0,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 659,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4194,
+      "remaining": 1784,
+      "percent": 70.2,
+      "totalStrokes": 74558,
+      "appliedStrokes": 50110
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 1038,
+      "remaining": 107,
+      "percent": 90.7,
+      "totalStrokes": 14898,
+      "appliedStrokes": 13375
+    }
+  }
+}
