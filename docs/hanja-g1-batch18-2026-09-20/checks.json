@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 672,
+  "approvedCharacters": 50,
+  "approvedStrokes": 672,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 32,
+  "correctedCharacters": 18,
+  "reorderedCharacters": 11,
+  "locallyCorrectedPaths": 17,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 19,
+    "flaggedStrokes": 47,
+    "correctedFromFlags": 18,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [
+      "贅6"
+    ],
+    "correctedBelowThreshold": [],
+    "note": "贅 6 was inspected and kept: both sides write the 寸 hook in the same slot and the finished forms agree, the dictionary stopping at the corner where the licensed original sweeps back to the left, so no derivable correction applies."
+  },
+  "subThresholdSlants": {
+    "count": 14,
+    "range": "45° to 60°",
+    "method": "direction-probe.mjs rows with an angle of 45° to 60°: 14 rows, none corrected",
+    "note": "All fourteen are short dots the dictionary draws vertically while the licensed corpora slant them (寵 1, 寵 4, 贅 4, 悴 4, 幟 4, 痔 1, 癡 1, 陀 4, 舵 7, 綻 5, 綻 7, 宕 1) or the short 魚·馬 strokes of 鰍 17 and 駝 11. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "MM": 42,
+    "Ja": 8,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "蕩"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 643,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4041,
+      "remaining": 1937,
+      "percent": 67.6,
+      "totalStrokes": 74558,
+      "appliedStrokes": 48253
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 885,
+      "remaining": 260,
+      "percent": 77.3,
+      "totalStrokes": 14898,
+      "appliedStrokes": 11518
+    }
+  }
+}
