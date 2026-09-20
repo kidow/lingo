@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 664,
+  "approvedCharacters": 50,
+  "approvedStrokes": 664,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 41,
+  "correctedCharacters": 9,
+  "reorderedCharacters": 9,
+  "locallyCorrectedPaths": 0,
+  "corpusOverrides": {
+    "count": 2,
+    "glyphs": ["畀", "歃"],
+    "note": "Both started from Ja and both came out clean. 畀 dropped from two flagged strokes (max 98°) to none over 18° because the simplified file writes the two bars of 田 in the dictionary order. 歃 dropped from five flagged strokes (max 99°, a five-stroke permutation) to none over 22° because MM writes the 臼 halves in the dictionary order. selection.json records both starting corpora and reasons.",
+    "startingCorpora": { "畀": "Ja", "歃": "Ja" }
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharactersBeforeOverrides": 6,
+    "flaggedStrokesBeforeOverrides": 19,
+    "flaggedCharacters": 4,
+    "flaggedStrokes": 12,
+    "resolvedByCorpusChange": 2,
+    "correctedFromFlags": 4,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "畀 and 歃 disappeared when the corpus changed. The remaining four (茀, 鬢, 豳, 蘋) were all resolved by reordering. The endpoint assignment check added 紕, 轡, 繽, 紓 and 紲, whose 糸 strokes run in the same direction and differ only in order. Recomputed against the published order and paths, no stroke is over 60°.",
+    "firstBatchWithNoAuthoredPaths": true
+  },
+  "subThresholdSlants": {
+    "count": 9,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 9 rows between 45° and 60°, none corrected",
+    "note": "Short opening dots and left dots the dictionary draws vertically or steeper than the licensed corpora (庳 1 at 56°, 紕 5 at 47°, 轡 18 at 53°, 痹 1 at 57°, 繽 7 at 54°, 擯 4 at 50°, 鬢 16 at 53°, 裼 1 at 53°, 愃 4 at 55°). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "Ja": 24,
+    "MM": 22,
+    "Hans": 3,
+    "Hant": 1,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": ["茀", "蘋"],
+    "note": "Two dictionary groups carry a horizontal offset, translate(12, -830), after 厲 in batch 4 and three glyphs in batch 5. serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y), and the published paths come from the licensed corpus, so the offset only affects what the review sheet draws."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 705,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4526,
+      "remaining": 1452,
+      "percent": 75.7,
+      "totalStrokes": 74558,
+      "appliedStrokes": 54413
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 300,
+      "remaining": 1028,
+      "percent": 22.6,
+      "totalStrokes": 18270,
+      "appliedStrokes": 3878
+    }
+  }
+}
