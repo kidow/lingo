@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 639,
+  "approvedCharacters": 50,
+  "approvedStrokes": 639,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 39,
+  "correctedCharacters": 11,
+  "reorderedCharacters": 7,
+  "locallyCorrectedPaths": 9,
+  "corpusOverrides": {
+    "count": 4,
+    "glyphs": ["疐", "冢", "摧", "褫"],
+    "note": "All four started from the Japanese file. 疐 → MM, 冢 → MM and 褫 → Hans came out clean, because Ja writes the inner vertical of 叀 before the bar, reorders the legs of 豕, and writes the long left sweep of 虍 before the bar above it. 摧 → MM dropped three flagged strokes to one; the stroke left over is the top-right tick of 隹 and was redrawn.",
+    "startingCorpora": { "疐": "Ja", "冢": "Ja", "摧": "Ja", "褫": "Ja" }
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharactersBeforeOverrides": 11,
+    "flaggedStrokesBeforeOverrides": 25,
+    "flaggedCharacters": 8,
+    "flaggedStrokes": 17,
+    "resolvedByCorpusChange": 3,
+    "correctedFromFlags": 9,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "疐, 冢 and 褫 disappeared when the corpus changed, and 摧 shrank from three to one. 嚔, 嘬, 騅 and 疃 were resolved by reordering and 譙, 摧, 鶖, 騅 and 瘳 by an authored path. The endpoint assignment check added 惙, 啜 and 掇, whose 叕 strokes run in the same directions and differ only in order. Recomputed against the published order and paths, no stroke is over 60°.",
+    "endpointOnlyFindings": {
+      "glyphs": ["惙", "啜", "掇"],
+      "gains": [292.5, 329.5, 286.3],
+      "note": "叕 is four 又 in a two by two grid. The dictionary writes the left column top to bottom and then the right column; all five corpora write the top row and then the bottom row. Every stroke runs the same way, so the angle probe reads nothing; the assignment check separates them by hundreds. The same difference appeared in all three glyphs that carry 叕."
+    }
+  },
+  "subThresholdSlants": {
+    "count": 12,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 12 rows between 45° and 60°, none corrected",
+    "note": "Short opening dots and marks the dictionary draws vertically or steeper than the licensed corpora (彘 2 at 47°, 甃 6 at 60°, 蹜 8 at 54°, 瘁 1 at 56° and 6 at 46°, 廁 1 at 49°, 褫 1 at 46°, 庤 1 at 56°, 佗 3 at 49°, 沱 4 at 55°, 它 1 at 53°, 疃 6 at 56°). Kept as licensed geometry, as in the earlier batches. 甃 6 at exactly 60° is the closest a kept stroke has come to the threshold."
+  },
+  "candidateCorpora": {
+    "Ja": 25,
+    "MM": 21,
+    "Hans": 4,
+    "Hant": 0,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "No dictionary group in this batch carries a horizontal offset; every transform is translate(0, -y). The first batch since batch 4 with none."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 739,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4823,
+      "remaining": 1155,
+      "percent": 80.7,
+      "totalStrokes": 74558,
+      "appliedStrokes": 58344
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 597,
+      "remaining": 731,
+      "percent": 45.0,
+      "totalStrokes": 18270,
+      "appliedStrokes": 7809
+    }
+  }
+}

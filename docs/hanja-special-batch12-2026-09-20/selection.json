@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-20",
+  "basis": "The queue's starting corpus is kept unless another corpus that carries the same stroke count follows the dictionary's per-stroke directions more closely, as established in the grade 1 batch 24 re-review and used in the earlier special grade batches. Only differences that change the flagged-stroke count are acted on; a few degrees is noise. A corpus that writes a different glyph form is never selected, even when it carries fewer flagged strokes, as in batch 11's 倩.",
+  "overrides": {
+    "疐": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the inner vertical of the 叀 body before the bar across it (two strokes over 60°, max 97°); MM follows the dictionary with no stroke over 20°."
+    },
+    "冢": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the legs of the 豕 body in a different order (two strokes over 60°, max 112°); MM follows the dictionary with no stroke over 28°."
+    },
+    "摧": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the long vertical of the 隹 body before its two bars (three strokes over 60°, max 100°); MM writes the bars first and leaves one, the top-right tick."
+    },
+    "褫": {
+      "corpus": "Hans",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the long left sweep of the 虍 body before the bar above it (two strokes over 60°, max 91°); the simplified file follows the dictionary with no stroke over 46°."
+    }
+  }
+}
