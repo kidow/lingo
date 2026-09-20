@@ -199,19 +199,19 @@ a little»이다. `等一下`로 바꿨다(«to wait a moment», 빈자리였다
 **이 열넷은 따로 목록을 두지 않는다.** `pnpm check`가 파일과 개념을 찍으므로
 그 출력이 곧 목록이다. 파일이 열리면 그때 뺀다.
 
-| 파일 | 개념 | 표기 ← 곁말 |
-| --- | --- | --- |
-| food | `chocolate` · `culinary` · `vegetables` | `шоколад`←`шоколадный` · `кулинарный`←`кулинария` · `овощи`←`овощной` |
-| home | `silk` | `шёлк`←`шёлковый` |
-| idea | `success` · `political-party` | `успех`←`успешный` · `партия`←`партийный` |
-| nature | `mineral` · `west` | `минерал`←`минеральный` · `запад`←`западный` |
-| quality | `satisfied` · `healthy` | `довольный`←`доволен` · `здоровый`←`здоров` (단어미) |
-| school | `philosophy` · `university` · `medicine-science` | `философия`←`философский` 외 둘 |
-| time | `yesterday` | `вчера`←`вчерашний` |
+**열넷을 다 뺐다 (2026-09-20).** 먼저 일곱을 뺐고(`everyday`의 셋 ·
+`family`의 둘 · `number`의 둘), 나머지 일곱은 그 파일이 만져지는 중이라
+넘겼다가 파일이 비었을 때 뺐다.
 
-**열린 파일에서 일곱을 뺐다** — `everyday`의 셋(`glove`·`matches`·`flower`),
-`family`의 둘(`twin`·`young-people`), `number`의 둘(`total`·`square`)이다.
-나머지는 그 파일이 만져지는 중이라 넘긴다.
+| 파일 | 개념 | 뺀 곁말 |
+| --- | --- | --- |
+| ~~food~~ | `chocolate` · `culinary` · `vegetables` | `шоколадный` · `кулинария` · `овощной` |
+| ~~home~~ | `silk` | `шёлковый` |
+| ~~idea~~ | `success` · `political-party` | `успешный` · `партийный` |
+| ~~nature~~ | `mineral` · `west` | `минеральный` · `западный` |
+| ~~quality~~ | `satisfied` · `healthy` | `доволен` · `здоров` (단어미) |
+| ~~school~~ | `philosophy` · `university` · `medicine-science` | `философский` · `университетский` · `медицинский` |
+| ~~time~~ | `yesterday` | `вчерашний` |
 
 **표기 변이와 상 쌍 넷도 남긴다 (2026-09-10 판정).** 굴절처럼 보이지만 다르다.
 영·미 철자는 **문법 꼴이 아니라 두 표준**이라 같은 자리에 그대로 서고 학습자가

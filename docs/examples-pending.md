@@ -126,18 +126,19 @@ famille`), 하나가 남는다.
 경고는 여덟 줄인데 낱말로는 여섯이다 — `cut-with-scissors`의 두 줄은 위
 「카드가 아예 안 나오는 일곱」에 든다.
 
-| 파일 | 낱말 | 표제형 | 예문이 쓰는 꼴 |
-| --- | --- | --- | --- |
-| action | `set-off-fireworks` en | `set off fireworks` | `setting off fireworks` |
-| action | `avoid` es | `evitar` | `evitan` |
-| action | `avoid` fr | `éviter` | `évitent` |
-| action | `excavate` en | `excavate` | `excavating` |
-| ~~food `choke-on` de~~ | — | — | **끝냈다** — `Beim Lachen kann man sich verschlucken.` |
-| ~~food `pick-fruit` en~~ | — | — | **끝냈다** — `When it rains they cannot pick fruit.` |
+| 낱말 | 전 | 후 |
+| --- | --- | --- |
+| ~~action `set-off-fireworks` en~~ | `setting off fireworks` | **끝냈다** — `Rain stopped them before they could set off fireworks.` |
+| ~~action `avoid` es~~ | `evitan` | **끝냈다** — `Los carros deben evitar la esquina mojada.` |
+| ~~action `avoid` fr~~ | `évitent` | **끝냈다** — `Les charrettes doivent éviter le coin mouillé.` |
+| ~~action `excavate` en~~ | `excavating` | **끝냈다** — `Frost stops them before they excavate.` |
+| ~~food `choke-on` de~~ | — | **끝냈다** — `Beim Lachen kann man sich verschlucken.` |
+| ~~food `pick-fruit` en~~ | — | **끝냈다** — `When it rains they cannot pick fruit.` |
 
-영어 셋은 모두 **분사로 바꿔 쓴 자리**다(`Rain stops them picking fruit.`).
-표제형을 그대로 세우려면 문장을 `They pick fruit before the rain.`처럼
-정형으로 고친다.
+영어 셋은 모두 **분사로 바꿔 쓴 자리**였다(`Rain stops them picking fruit.`).
+표제형을 그대로 세우려면 **종속절을 하나 세운다** — `stops them before they
+excavate`. 로망스어 둘은 정형이라 화법동사를 앞세웠다(`deben evitar` ·
+`doivent éviter`).
 
 ## 독일어 어순이 깨진 자리 (2026-09-10)
 
@@ -309,7 +310,7 @@ eine Gebühr.`는 목적어가 뒤에 남는데, 주어절을 Nachfeld로 보내
 
 | 파일 | 개념 | 예문 | 바른 꼴 |
 | --- | --- | --- | --- |
-| city | `united-nations`(국제 연합) | `Die Vereinte Nationen schickten Hilfe.` | `Vereinten` |
+| ~~city `united-nations`~~ | — | **끝냈다** — 표제형을 굴절형으로 박았다: `Vereinte Nationen` → `Vereinten Nationen` (2026-09-20) |
 | ~~time `small-hours`~~ | — | **끝냈다** — 관사를 빼면 강변화 어미가 맞다: `Am kältesten sind frühe Morgenstunden.` |
 
 ### 일곱은 예문만 고쳐 끝냈다 (2026-09-10)
