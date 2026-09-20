@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 631,
+  "approvedCharacters": 50,
+  "approvedStrokes": 631,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 35,
+  "correctedCharacters": 15,
+  "reorderedCharacters": 11,
+  "locallyCorrectedPaths": 6,
+  "corpusOverrides": {
+    "count": 8,
+    "glyphs": ["髡", "霍", "盥", "誑", "韭", "媾", "鬈", "虢"],
+    "note": "Batch 1 changed one corpus (珈); here the same rule resolved eight glyphs. 盥 is the clearest: the Japanese file writes the two 臼 halves in the opposite order (three strokes over 60°, max 148°, and an eight-stroke permutation), while Make Me a Hanzi follows the dictionary with no stroke over 31°. selection.json records every starting corpus and reason."
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharactersBeforeOverrides": 18,
+    "flaggedStrokesBeforeOverrides": 49,
+    "flaggedCharacters": 12,
+    "flaggedStrokes": 31,
+    "resolvedByCorpusChange": 6,
+    "correctedFromFlags": 12,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "Six flagged characters (髡, 盥, 誑, 韭, 媾, 虢) disappeared when the corpus changed; 霍 and 鬈 kept one flagged component each and took an authored path. The rest were resolved by reordering (蕢, 瑰, 觥, 遘, 璆, 搆, 覯, 綰) or by an authored path (窶, 棬). The endpoint assignment check added 緄, 綣 and 丱, whose strokes run in the same direction and differ only in order. Recomputed against the published order and paths, no stroke is over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 6,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 6 rows between 45° and 60°, none corrected",
+    "note": "Four are short dots the dictionary draws vertically while the licensed corpora slant them (裹 1 at 48°, 疚 1 at 57°, 佼 3 at 55°, 姣 4 at 59°), one is the 虍 opening of 虢 2 at 60°, and one is the right dot of 糸 in 綰 7 at 45°. Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "Ja": 27,
+    "MM": 18,
+    "Hans": 5,
+    "Hant": 0,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 685,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4326,
+      "remaining": 1652,
+      "percent": 72.4,
+      "totalStrokes": 74558,
+      "appliedStrokes": 51784
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 100,
+      "remaining": 1228,
+      "percent": 7.5,
+      "totalStrokes": 18270,
+      "appliedStrokes": 1249
+    }
+  }
+}
