@@ -1,0 +1,167 @@
+{
+  "date": "2026-09-20",
+  "status": "complete",
+  "reviewer": "Claude root visual comparison of the pinned dictionary reveals against licensed centerlines; not examination-body certification.",
+  "method": "Each glyph: every stroke stage viewed on the local review sheet (9 stages per page) in dictionary playback order, with a numeric start/end direction probe (direction-probe.mjs) flagging angles over 60° and an endpoint assignment check comparing every dictionary stroke with its licensed counterpart. These three enter the queue because the AnimCJK graphicsZhHant and graphicsZhHans files of the already pinned revision are now among the candidate corpora: the Taiwan standard draws 艹 in the four strokes the catalog counts. The 艹 swaps, the reversed 耒 opening of 藉 and the 隹 tick of 蕉 were confirmed against the endpoint coordinates, and no pair exceeds 60° afterwards.",
+  "scope": "Grade 1 batch 23: 3 characters, 43 strokes. Order, direction, pen-lift boundaries and finished form compared. Not exam-body certification.",
+  "characters": 3,
+  "strokes": 43,
+  "proprietaryAssetsSaved": 0,
+  "entries": [
+    {
+      "glyph": "洑",
+      "decision": "matched",
+      "directions": [
+        "DR",
+        "DR",
+        "DR-U",
+        "DR-DL",
+        "D",
+        "R",
+        "DR-D",
+        "DR",
+        "DR"
+      ],
+      "notes": "氵 three then 伏 six: matches",
+      "initialDecision": "matched",
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      }
+    },
+    {
+      "glyph": "藉",
+      "decision": "matched",
+      "directions": [
+        "R",
+        "DR-D",
+        "R",
+        "DR-DL",
+        "L",
+        "R",
+        "R",
+        "DR-D",
+        "DL",
+        "DR",
+        "R",
+        "D",
+        "DR-D",
+        "R",
+        "D",
+        "R-D",
+        "R",
+        "R"
+      ],
+      "notes": "艹의 왼쪽 十을 사전은 가로 다음 세로로 쓰는데 ZhHant 원본은 세로를 먼저 쓴다(1·2획 교환). 오른쪽 十은 양쪽 모두 가로 다음 세로다. 耒의 첫 삐침(5획)은 사전이 오른쪽 위에서 왼쪽 아래로 긋고 원본은 반대 방향으로 그어 역방향으로 맞췄다. 나머지 耒·昔은 순서·방향이 일치한다",
+      "initialDecision": "correction-required",
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "issues": [
+        1,
+        2,
+        5
+      ],
+      "permutation": [
+        2,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "correctedReview": {
+        "completed": true,
+        "reviewedStrokes": 18,
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "Rechecked all 18 stages after reordering strokes 1, 2 and authoring stroke 5."
+      }
+    },
+    {
+      "glyph": "蕉",
+      "decision": "matched",
+      "directions": [
+        "R",
+        "DR-D",
+        "R",
+        "DR-DL",
+        "DR-DL",
+        "D",
+        "DL",
+        "R",
+        "R",
+        "R",
+        "DR-D",
+        "R",
+        "DL",
+        "DR",
+        "DR",
+        "DR"
+      ],
+      "notes": "艹의 왼쪽 十을 사전 순서인 가로 다음 세로로 교환했다(1·2획). 隹의 오른쪽 위 짧은 획(7획)은 사전이 왼쪽 아래로 떨어뜨려 반전했다. 灬 넷을 포함한 나머지 획은 일치한다",
+      "initialDecision": "correction-required",
+      "checks": {
+        "order": "match",
+        "direction": "match",
+        "boundaries": "match",
+        "glyphForm": "match"
+      },
+      "issues": [
+        1,
+        2,
+        7
+      ],
+      "permutation": [
+        2,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "correctedReview": {
+        "completed": true,
+        "reviewedStrokes": 16,
+        "checks": {
+          "order": "match",
+          "direction": "match",
+          "boundaries": "match",
+          "glyphForm": "match"
+        },
+        "notes": "Rechecked all 16 stages after reordering strokes 1, 2 and authoring stroke 7."
+      }
+    }
+  ]
+}

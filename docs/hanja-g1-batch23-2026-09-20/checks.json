@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 3,
+  "reviewedCharacters": 3,
+  "reviewedStrokes": 43,
+  "approvedCharacters": 3,
+  "approvedStrokes": 43,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 1,
+  "correctedCharacters": 2,
+  "reorderedCharacters": 2,
+  "locallyCorrectedPaths": 2,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 2,
+    "flaggedStrokes": 6,
+    "correctedFromFlags": 2,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "藉 1·2 and 蕉 1·2 are the 艹 pair the dictionary writes bar-then-vertical; 藉 5 is the opening 丿 of 耒 drawn the other way round and 蕉 7 is the 隹 tick. Nothing is left over 60° afterwards and no row falls in the 45-60 band."
+  },
+  "subThresholdSlants": {
+    "count": 0,
+    "range": "45° to 60°",
+    "method": "direction-probe rows between 45° and 60° after the corrections",
+    "note": "No stroke in this batch falls in the sub-threshold band."
+  },
+  "candidateCorpora": {
+    "MM": 0,
+    "Ja": 0,
+    "Ko": 0,
+    "Hant": 2,
+    "Hans": 1
+  },
+  "corpusAddition": {
+    "files": [
+      "graphicsZhHant.txt",
+      "graphicsZhHans.txt"
+    ],
+    "revision": "ec5e17cca76c87587790bcbce5ea0b4d4fb753d6",
+    "note": "Added in the special grade II batch 18 round: same AnimCJK revision and Arphic Public License as the Korean and Japanese files. 藉 and 蕉 qualify because the Taiwan standard draws 艹 in the four strokes the catalog counts."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [
+      "藉",
+      "蕉"
+    ],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); the offset does not change stroke directions."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 667,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4209,
+      "remaining": 1769,
+      "percent": 70.4,
+      "totalStrokes": 74558,
+      "appliedStrokes": 50293
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 1041,
+      "remaining": 104,
+      "percent": 90.9,
+      "totalStrokes": 14898,
+      "appliedStrokes": 13418
+    }
+  }
+}
