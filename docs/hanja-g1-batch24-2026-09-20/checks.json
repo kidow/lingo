@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "reviewKind": "held-glyph re-review",
+  "selectedCharacters": 16,
+  "reviewedCharacters": 16,
+  "reviewedStrokes": 222,
+  "approvedCharacters": 11,
+  "approvedStrokes": 142,
+  "heldCharacters": 5,
+  "heldGlyphs": [
+    "瀆",
+    "諭",
+    "愉",
+    "朕",
+    "讒"
+  ],
+  "initiallyMatched": 8,
+  "correctedCharacters": 3,
+  "reorderedCharacters": 3,
+  "locallyCorrectedPaths": 0,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 6,
+    "flaggedStrokes": 13,
+    "correctedFromFlags": 3,
+    "heldFromFlags": 3,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "猜 5·6, 睛 7·8 and 凸 1·2 are order differences resolved by a swap. The remaining flags sit on 瀆 9·10, 朕 3-6 and 讒 18, which keep their hold."
+  },
+  "subThresholdSlants": {
+    "count": 8,
+    "range": "45° to 60°",
+    "method": "direction-probe rows between 45° and 60° for the eleven approved glyphs",
+    "note": "疼 1, 癒 1·11·12, 諭 13·14, 愉 9·10 and 瘠 1 are the usual short dots and marks; kept as licensed geometry."
+  },
+  "candidateCorpora": {
+    "MM": 3,
+    "Ja": 13,
+    "Ko": 0,
+    "Hant": 0,
+    "Hans": 0
+  },
+  "candidateSelection": {
+    "rule": "per glyph, the corpus whose stroke directions sit closest to the dictionary",
+    "note": "Earlier rounds picked one candidate per glyph in the fixed Ko → MM → Ja order, so a matching form in a later corpus was never compared. Eleven of the sixteen holds were an artefact of that rule."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 675,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4220,
+      "remaining": 1758,
+      "percent": 70.6,
+      "totalStrokes": 74558,
+      "appliedStrokes": 50435
+    },
+    "g1": {
+      "grade": "1급",
+      "total": 1145,
+      "applied": 1052,
+      "remaining": 93,
+      "percent": 91.9,
+      "totalStrokes": 14898,
+      "appliedStrokes": 13560
+    }
+  }
+}

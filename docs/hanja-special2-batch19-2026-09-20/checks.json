@@ -1,0 +1,86 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "reviewKind": "held-glyph re-review",
+  "selectedCharacters": 6,
+  "reviewedCharacters": 6,
+  "reviewedStrokes": 100,
+  "approvedCharacters": 6,
+  "approvedStrokes": 100,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 4,
+  "correctedCharacters": 2,
+  "reorderedCharacters": 2,
+  "locallyCorrectedPaths": 0,
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharacters": 2,
+    "flaggedStrokes": 6,
+    "correctedFromFlags": 2,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "瑜 2·3 and 鯖 5·6, 13·14 are order differences resolved by swaps; nothing is left over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 1,
+    "range": "45° to 60°",
+    "method": "direction-probe rows between 45° and 60°",
+    "note": "竇 1, the opening dot of 穴, at 60°. Kept as licensed geometry."
+  },
+  "candidateCorpora": {
+    "MM": 0,
+    "Ja": 6,
+    "Ko": 0,
+    "Hant": 0,
+    "Hans": 0
+  },
+  "candidateSelection": {
+    "rule": "per glyph, the corpus whose stroke directions sit closest to the dictionary",
+    "note": "Earlier rounds picked one candidate per glyph in the fixed Ko → MM → Ja order, so a matching form in a later corpus was never compared. Eleven of the sixteen holds were an artefact of that rule."
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y); no glyph in this batch carries a horizontal offset."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 675,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4226,
+      "remaining": 1752,
+      "percent": 70.7,
+      "totalStrokes": 74558,
+      "appliedStrokes": 50535
+    },
+    "special2": {
+      "grade": "특급II",
+      "total": 1150,
+      "applied": 823,
+      "remaining": 327,
+      "percent": 71.6,
+      "totalStrokes": 15002,
+      "appliedStrokes": 10636
+    }
+  }
+}

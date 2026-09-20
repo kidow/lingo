@@ -54,7 +54,10 @@ test('a component form the licensed corpus does not share stays out of the runti
     const original = originals.find(e => e.glyph === record.glyph)!
     assert.ok(!HANJA_DICTIONARY_SPECIAL2_BATCH3_STROKES.some(e => e.glyph === record.glyph))
     // Nothing else in the runtime may quietly supply the held glyph either.
-    assert.equal(hanjaStrokeData(original), null)
+    // A later batch may publish the glyph from a corpus that does share the dictionary form;
+    // what must never reach the runtime is the original this batch held.
+    const runtimeEntry = hanjaStrokeData(original)
+    assert.ok(runtimeEntry === null || JSON.stringify(runtimeEntry.paths) !== JSON.stringify(original.paths))
   }
 })
 

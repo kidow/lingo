@@ -34,7 +34,11 @@ test('forty-eight approved grade 1 reviews reproduce 612 playable strokes with a
   for (const record of held) {
     assert.equal(record.checks.glyphForm, 'mismatch')
     assert.ok(!HANJA_DICTIONARY_G1_BATCH16_STROKES.some(e => e.glyph === record.glyph))
-    assert.equal(hanjaStrokeData(originals.find(e => e.glyph === record.glyph)!), null)
+    // A later batch may publish the glyph from a corpus that does share the dictionary form;
+    // what must never reach the runtime is the original this batch held.
+    const heldOriginal = originals.find(e => e.glyph === record.glyph)!
+    const runtimeEntry = hanjaStrokeData(heldOriginal)
+    assert.ok(runtimeEntry === null || JSON.stringify(runtimeEntry.paths) !== JSON.stringify(heldOriginal.paths))
   }
   for (const original of approved) {
     const entry = published(original.glyph)
