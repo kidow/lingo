@@ -171,18 +171,24 @@ famille`), 하나가 남는다.
 
     node scripts/ex.ts content/*.json | grep 어순
 
-`check`에는 넣지 않았다. 경고 스물넷이 이백일흔이 되어 나머지를 덮는다.
-`pnpm props`·`pnpm twins`·`pnpm also-audit`과 같은 자리다 — **목록만 낸다.**
+처음에는 `check`에 넣지 않았다. 경고 스물넷이 이백일흔이 되어 나머지를
+덮기 때문이다. 넷째 회차에 0이 된 뒤 `check`로 옮겼다 — **빚이 0이 되어야
+그물을 기준선에 걸 수 있다.**
 
-### 여덟 파일을 치웠다 — 69 남는다 (2026-09-20)
+### 248을 0으로 만들었다 — 끝냈다 (2026-09-20)
 
-한 파일씩 끊어 돈다. `action`·`idea`·`number`·`quality`·`city`·`family`·
-`time`·`office`의 어순은 이제 **0**이다(248 → 69).
+한 파일씩 끊어 네 회차를 돌았다. `content/` 전체의 어순이 **0**이다.
 
-| 남은 파일 | | | | | | |
-| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| school 9 | everyday 9 | job 8 | travel 7 | nature 7 | clothes 7 | body 6 |
-| transport 5 | home 5 | sport 4 | food 2 | | | |
+| 회차 | 파일 | 고친 예문 | 남은 것 |
+| ---: | --- | ---: | ---: |
+| 1 | action | 77 | 171 |
+| 2 | idea · number · quality | 54 | 117 |
+| 3 | city · family · time · office | 46 | 69 |
+| 4 | 남은 열한 파일 | 69 | **0** |
+
+**이제 `pnpm check`가 막는다.** 남은 것이 0이 됐으므로 `whyLateVerb`를 `check`
+안으로 옮겼다 — `pnpm ex`를 건너뛰어도 새 예문은 들어오지 못한다. 경고
+스물둘 기준선은 그대로다.
 
 **일흔일곱이 두 갈래였다.** 마흔일곱은 낱말 자리만 옮기면 됐고(조동사를 둘째
 자리에, 표제형을 끝으로), 서른은 **표제형이 전치사로 끝나** 고칠 길이 아예
@@ -239,6 +245,21 @@ famille`), 하나가 남는다.
 `sich nicht fügen`처럼 표제형을 가른다. 길이 셋이다 — 부정을 `niemand`·`nie`로
 옮기거나(`Den Staub wird niemand beachten.` · `Nie soll man sich einmischen.`),
 부정을 표제형에 넣거나(`nicht übereinstimmen`), 예문을 긍정으로 쓴다.
+
+#### 남은 열한 파일 예순아홉 (2026-09-20)
+
+표제형은 둘만 바꿨다 — `home/clear-out-and-go`의 `ausziehen aus`는 `ausziehen`
+(`undress`)도 `räumen`(`evict`)도 임자가 있어 `fortziehen`으로 갔고,
+`school/concentrate-on`의 `sich vertiefen in`은 `sich vertiefen`이 됐다.
+
+**꼴이 셋으로 모였다.**
+
+    lässt sich X schwer      → kann man schwer X      여섯 자리
+    부정사구가 주어           → Wer X will, …          다섯 자리
+    쉼표 없는 관계절          → Künste, die …, kehren  셋
+
+`lässt sich`는 재귀 수동인데 목적어를 4격으로 두어 두 번 틀렸다
+(`lässt sich den Ball heben schwer`). 화법조동사로 바꾸면 한 번에 풀린다.
 
 #### `city`·`family`·`time`·`office` 마흔여섯 (2026-09-20)
 

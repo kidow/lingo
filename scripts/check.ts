@@ -16,7 +16,7 @@ import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
 import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { LANG } from '../lib/lang.ts'
-import { judgeExample } from '../lib/headword.ts'
+import { judgeExample, whyLateVerb } from '../lib/headword.ts'
 import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import { fingerprint } from './levels-stamp.ts'
 import type { Concept, Language, Trivia } from '../lib/types.ts'
@@ -510,6 +510,17 @@ for (const file of files) {
               `${slug}|${lang}`,
               `${where} — ${lang}의 예문에서 "${answer}"를 뚫을 자리가 없습니다${hint(snag.said)}`,
             )
+        }
+        /*
+         * **독일어 동사 괄호.** 2026-09-20까지는 `pnpm ex`만 봤다 — `content/`에
+         * 248이 남아 있어서 여기 넣으면 경고 스물둘이 이백일흔이 됐다. 다섯
+         * 회차에 걸쳐 0으로 만들었으므로 이제 여기서 막는다. `ex`를 건너뛰어도
+         * 새 예문은 들어오지 못한다.
+         */
+        if (typeof example.text === 'string' && typeof answer === 'string') {
+          const pos = typeof word.part_of_speech === 'string' ? word.part_of_speech : ''
+          const late = whyLateVerb(example.text, answer, lang as Language, pos)
+          if (late) warn(`${where} — ${lang}.${at}의 어순. ${late}`)
         }
         if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
           fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)

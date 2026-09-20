@@ -64,8 +64,8 @@
 남아도 되는 자리 넷을 뺀다 — 쉼표로 절이 이어짐 · 종속절의 정형 동사
 (`… austragen muss`) · 명사로 쓴 자리(`beim Bomben abwerfen`) · **표제어가
 정형 동사로 끝나는 자리**(`es ist seines` — 그건 왼쪽 괄호라 뒤에 말이 오는
-것이 맞다). `pnpm ex`가 돌리고 `check`는 안 돌린다. `content/` 전체에 69가
-남아 있어서다 ([examples-pending.md](examples-pending.md)).
+것이 맞다). `pnpm ex`와 `pnpm check`가 함께 돌린다. `content/` 전체를 0으로 만든
+2026-09-20에 `check`로 옮겼다 ([examples-pending.md](examples-pending.md)).
 
 ### 표제형이 전치사로 끝나면 문장에 못 선다
 
@@ -89,6 +89,14 @@
 둘째 자리에 서는 왼쪽 괄호라, 뒤에 목적어까지 달리면 글자 그대로 이어질
 자리가 없다. 부정사로 바꾸면 오른쪽 괄호에 통째로 들어간다 —
 `nicht übereinstimmen`.
+
+**`lässt sich`는 거의 언제나 틀린다.** 재귀 수동은 목적어를 1격으로 두는데
+`lässt sich den Ball heben schwer`처럼 4격으로 쓰고 부사까지 뒤로 민다.
+화법조동사로 바꾸면 한 번에 풀린다 — `Bei Wind kann man schwer den Ball heben.`
+
+**부정사구를 주어로 쓰면 `zu`가 표제형을 가른다.** `Zweimal die Lektion
+vorbereiten hilft.`는 `vorzubereiten`이 맞는데 그러면 표제형이 깨진다.
+관계절로 돌린다 — `Wer zweimal die Lektion vorbereiten will, lernt mehr.`
 
 **부정은 따로 생각한다.** `nicht`는 부정사 바로 앞에 서므로 `sich nicht fügen`
 처럼 표제형을 가른다. 부정을 `niemand`·`nie`로 옮기거나(`Den Staub wird
