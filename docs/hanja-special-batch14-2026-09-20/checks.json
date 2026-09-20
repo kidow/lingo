@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 30,
+  "reviewedCharacters": 30,
+  "reviewedStrokes": 389,
+  "approvedCharacters": 30,
+  "approvedStrokes": 389,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 23,
+  "correctedCharacters": 7,
+  "reorderedCharacters": 3,
+  "locallyCorrectedPaths": 7,
+  "queueEmptied": {
+    "note": "This batch empties the special grade whole-stroke review queue. Every special grade character that has a pinned dictionary title, consistent source metadata and at least one licensed corpus carrying the catalog stroke count has now been reviewed stroke by stroke. Five glyphs are held for glyph-form differences (靚, 褊, 諞, 牖, 扆) and 653 have no licensed source at all, so they remain out of reach without a new corpus.",
+    "heldOutOfQueue": ["靚", "褊", "諞", "牖", "扆"],
+    "eligibleUnreviewedCharacters": 0
+  },
+  "corpusOverrides": {
+    "count": 2,
+    "glyphs": ["矍", "攜"],
+    "note": "Both started from the Japanese file and both are 隹. Ja writes the bars of the 隹 body in a different order (three strokes over 60°, max 94° and 99°); MM writes the bars first and leaves one stroke each, the top-right tick, which was redrawn. 睢 was considered for an MM → Hans override but both corpora leave exactly one stroke over the threshold — 74° against 73° — so the starting corpus was kept and the tick was redrawn there too.",
+    "startingCorpora": { "矍": "Ja", "攜": "Ja" }
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharactersBeforeOverrides": 7,
+    "flaggedStrokesBeforeOverrides": 21,
+    "flaggedCharacters": 7,
+    "flaggedStrokes": 17,
+    "resolvedByCorpusChange": 0,
+    "correctedFromFlags": 7,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "矍 and 攜 shrank from three flagged strokes to one when the corpus changed; no glyph lost its last flag that way. 薈, 殽 and 豨 were resolved by reordering and 矍, 詡, 睢 and 攜 by an authored path. The endpoint assignment check found no order difference the angle probe had missed. Recomputed against the published order and paths, no stroke is over 60°."
+  },
+  "subThresholdSlants": {
+    "count": 2,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 2 rows between 45° and 60°, none corrected",
+    "note": "Two short opening dots the dictionary draws steeper than the licensed corpora (効 1 at 51°, 襭 1 at 52°). Kept as licensed geometry, as in the earlier batches. The smallest sub-threshold count of any special grade batch."
+  },
+  "candidateCorpora": {
+    "Ja": 14,
+    "MM": 14,
+    "Hans": 2,
+    "Hant": 0,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": [],
+    "note": "No dictionary group in this batch carries a horizontal offset; every transform is translate(0, -y)."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 751,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4901,
+      "remaining": 1077,
+      "percent": 82.0,
+      "totalStrokes": 74558,
+      "appliedStrokes": 59351
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 675,
+      "remaining": 653,
+      "percent": 50.8,
+      "totalStrokes": 18270,
+      "appliedStrokes": 8816
+    }
+  }
+}

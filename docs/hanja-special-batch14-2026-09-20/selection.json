@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-20",
+  "basis": "The queue's starting corpus is kept unless another corpus that carries the same stroke count follows the dictionary's per-stroke directions more closely, as established in the grade 1 batch 24 re-review and used in the earlier special grade batches. Only differences that change the flagged-stroke count are acted on; a few degrees is noise. A corpus that writes a different glyph form is never selected, even when it carries fewer flagged strokes, as in batch 11's 倩.",
+  "overrides": {
+    "矍": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the bars of the two 隹 bodies in a different order (three strokes over 60°, max 94°); MM writes the bars first and leaves one, the top-right tick."
+    },
+    "攜": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the bars of the 隹 body in a different order (three strokes over 60°, max 99°); MM writes the bars first and leaves one, the top-right tick."
+    }
+  },
+  "note": "睢 was considered for an MM → Hans override, but both corpora leave exactly one stroke over the threshold — the top-right tick of 隹 at 74° against 73°. Only a change in the flagged-stroke count is acted on, so the starting corpus was kept and the tick was redrawn."
+}
