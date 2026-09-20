@@ -100,6 +100,7 @@ import { specialBatch7DictionaryGeometry, validateSpecialBatch7DictionaryReview,
 import { specialBatch8DictionaryGeometry, validateSpecialBatch8DictionaryReview, validateSpecialBatch8DictionaryBundle } from './hanja-stroke-dictionary-special-batch8.ts'
 import { specialBatch9DictionaryGeometry, validateSpecialBatch9DictionaryReview, validateSpecialBatch9DictionaryBundle } from './hanja-stroke-dictionary-special-batch9.ts'
 import { specialBatch10DictionaryGeometry, validateSpecialBatch10DictionaryReview, validateSpecialBatch10DictionaryBundle } from './hanja-stroke-dictionary-special-batch10.ts'
+import { specialBatch11DictionaryGeometry, validateSpecialBatch11DictionaryReview, validateSpecialBatch11DictionaryBundle } from './hanja-stroke-dictionary-special-batch11.ts'
 import { g2Batch2DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch2.ts'
 import { g2Batch3DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch3.ts'
 import { g2Batch4DictionaryReference } from '../lib/hanja-stroke-dictionary-g2-batch4.ts'
@@ -191,6 +192,7 @@ import { specialBatch7DictionaryReference } from '../lib/hanja-stroke-dictionary
 import { specialBatch8DictionaryReference } from '../lib/hanja-stroke-dictionary-special-batch8.ts'
 import { specialBatch9DictionaryReference } from '../lib/hanja-stroke-dictionary-special-batch9.ts'
 import { specialBatch10DictionaryReference } from '../lib/hanja-stroke-dictionary-special-batch10.ts'
+import { specialBatch11DictionaryReference } from '../lib/hanja-stroke-dictionary-special-batch11.ts'
 import {
   HANJA_DICTIONARY_SOURCE, HANJA_DICTIONARY_GEOMETRY_SOURCE, HANJA_DICTIONARY_STROKES,
   DICTIONARY_REFERENCES, dictionarySourceReference, dictionaryStrokeIndices,
@@ -433,6 +435,7 @@ export function dictionaryGeometry(glyph: string, medians: Medians) {
   if (specialBatch8DictionaryReference(glyph)) return specialBatch8DictionaryGeometry(glyph, medians)
   if (specialBatch9DictionaryReference(glyph)) return specialBatch9DictionaryGeometry(glyph, medians)
   if (specialBatch10DictionaryReference(glyph)) return specialBatch10DictionaryGeometry(glyph, medians)
+  if (specialBatch11DictionaryReference(glyph)) return specialBatch11DictionaryGeometry(glyph, medians)
   if (['響', '姉', '隷', '隣'].includes(glyph)) return jaDictionaryGeometry(glyph, medians)
   const ref = Object.hasOwn(DICTIONARY_REFERENCES, glyph) ? DICTIONARY_REFERENCES[glyph] : undefined
   if (!ref || hash(medians) !== ref.originalMediansSha256) throw new Error('Dictionary original medians mismatch: ' + glyph)
@@ -586,6 +589,7 @@ export function validateDictionaryReview(review: HanjaDictionaryStrokeData, expe
   if (specialBatch8DictionaryReference(review.glyph)) return validateSpecialBatch8DictionaryReview(review, expectedStrokes)
   if (specialBatch9DictionaryReference(review.glyph)) return validateSpecialBatch9DictionaryReview(review, expectedStrokes)
   if (specialBatch10DictionaryReference(review.glyph)) return validateSpecialBatch10DictionaryReview(review, expectedStrokes)
+  if (specialBatch11DictionaryReference(review.glyph)) return validateSpecialBatch11DictionaryReview(review, expectedStrokes)
   if (['響', '姉', '隷', '隣'].includes(review.glyph)) return validateJaDictionaryReview(review, expectedStrokes)
   const expected = buildDictionaryBundle().characters.find(e => e.glyph === review.glyph)
   if (!expected || expected.paths.length !== expectedStrokes
@@ -686,6 +690,7 @@ export function validateDictionaryBundle(entries: readonly HanjaDictionaryStroke
   validateSpecialBatch8DictionaryBundle()
   validateSpecialBatch9DictionaryBundle()
   validateSpecialBatch10DictionaryBundle()
+  validateSpecialBatch11DictionaryBundle()
   const expected = buildDictionaryBundle().characters.map(e => ({ ...e, verificationSource: HANJA_DICTIONARY_SOURCE.id }))
   if (!isDeepStrictEqual(entries, expected)) throw new Error('Dictionary published bundle mismatch')
 }

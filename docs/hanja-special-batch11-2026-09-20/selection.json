@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-20",
+  "basis": "The queue's starting corpus is kept unless another corpus that carries the same stroke count follows the dictionary's per-stroke directions more closely, as established in the grade 1 batch 24 re-review and used in the earlier special grade batches. Only differences that change the flagged-stroke count are acted on; a few degrees is noise.",
+  "overrides": {
+    "蜩": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the inner bars of the 周 body in a different order (two strokes over 60°, max 97°); MM follows the dictionary with no stroke over 27°."
+    },
+    "搶": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja slants the opening dot of the 倉 body away from the dictionary (one stroke at 72°); MM follows the dictionary with no stroke over 18°."
+    },
+    "鬻": {
+      "corpus": "MM",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the 弓 halves of the 鬲 frame in a different order (three strokes over 60°, max 146°); MM leaves two."
+    },
+    "隼": {
+      "corpus": "Hans",
+      "startingCorpus": "Ja",
+      "reason": "Ja writes the bars of 隹 in a different order (three strokes over 60°, max 97°); the simplified file leaves one, the top-right tick."
+    }
+  },
+  "note": "倩 was considered for a Ja → Hans override on the flagged-stroke count (two against one), but the simplified and MM files write 青 with the two bars of 月 where the dictionary and Ja write 靑, closed by a single vertical. Form comes before the count, so the starting corpus was kept and the two flagged strokes were resolved by reordering instead."
+}

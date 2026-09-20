@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-20",
+  "verification": "passed",
+  "selectedCharacters": 50,
+  "reviewedCharacters": 50,
+  "reviewedStrokes": 716,
+  "approvedCharacters": 50,
+  "approvedStrokes": 716,
+  "heldCharacters": 0,
+  "heldGlyphs": [],
+  "initiallyMatched": 38,
+  "correctedCharacters": 12,
+  "reorderedCharacters": 8,
+  "locallyCorrectedPaths": 5,
+  "corpusOverrides": {
+    "count": 4,
+    "glyphs": ["蜩", "搶", "鬻", "隼"],
+    "note": "All four started from the Japanese file. 蜩 → MM and 搶 → MM came out clean, because Ja reorders the inner bars of 周 and slants the opening dot of 倉. 鬻 → MM dropped three flagged strokes to two and 隼 → Hans three to one; the strokes left over were resolved by an authored path. 倩 was considered for a Ja → Hans override on the flagged-stroke count, two against one, but the simplified and MM files write 青 where the dictionary and Ja write 靑. Form comes before the count, so the starting corpus was kept and the two flags were reordered instead.",
+    "startingCorpora": { "蜩": "Ja", "搶": "Ja", "鬻": "Ja", "隼": "Ja" }
+  },
+  "directionProbe": {
+    "tool": "direction-probe.mjs",
+    "threshold": "angle over 60° between dictionary and candidate start-to-end vectors",
+    "flaggedCharactersBeforeOverrides": 14,
+    "flaggedStrokesBeforeOverrides": 29,
+    "flaggedCharacters": 11,
+    "flaggedStrokes": 23,
+    "resolvedByCorpusChange": 2,
+    "correctedFromFlags": 5,
+    "heldFromFlags": 0,
+    "retainedAfterInspection": [],
+    "correctedBelowThreshold": [],
+    "note": "蜩 and 搶 disappeared when the corpus changed, and 鬻 and 隼 shrank. 鱒, 鬒, 瑱, 瑳, 簀, 慼 and 倩 were resolved by reordering and 竈, 窗, 隼 and 鬻 by an authored path. The endpoint assignment check added 鬯, whose interior dots run in the same directions and differ only in order, with a gain of 139.5. Recomputed against the published order and paths, no stroke is over 60°.",
+    "form.beats.count": "倩 kept its starting corpus although another corpus carried fewer flagged strokes, because that corpus writes a different form. This is the first time the corpus rule and the form rule pulled in opposite directions; the form rule wins, as in the holds for 靚, 睛, 猜 and 鯖."
+  },
+  "subThresholdSlants": {
+    "count": 6,
+    "range": "45° to 60°",
+    "method": "direction-probe rows recomputed against the published order and paths: 6 rows between 45° and 60°, none corrected",
+    "note": "Short opening dots and marks the dictionary draws vertically or steeper than the licensed corpora (幬 9 at 51°, 躕 8 at 55°, 崒 4 at 53°, 蹌 10 at 49°, 瘵 1 at 55°, 蹢 8 at 59°). Kept as licensed geometry, as in the earlier batches."
+  },
+  "candidateCorpora": {
+    "Ja": 28,
+    "MM": 19,
+    "Hans": 3,
+    "Hant": 0,
+    "Ko": 0
+  },
+  "sourceTransform": {
+    "horizontalOffset": ["螽", "譖"],
+    "note": "Two dictionary groups carry a horizontal offset, translate(12, -830), as in each batch since 厲 in batch 4. serve.py, source-checks.mjs and direction-probe.mjs accept translate(x, -y), and the published paths come from the licensed corpus, so the offset only affects what the review sheet draws."
+  },
+  "compilerMatchesArtifacts": true,
+  "proofPinsValid": true,
+  "uniqueRuntimeGlyphs": true,
+  "browserReviewComplete": true,
+  "proprietaryAssetsSaved": 0,
+  "runtimeChanged": true,
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 733,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0
+  },
+  "progress": {
+    "overall": {
+      "total": 5978,
+      "applied": 4773,
+      "remaining": 1205,
+      "percent": 79.8,
+      "totalStrokes": 74558,
+      "appliedStrokes": 57705
+    },
+    "special": {
+      "grade": "특급",
+      "total": 1328,
+      "applied": 547,
+      "remaining": 781,
+      "percent": 41.2,
+      "totalStrokes": 18270,
+      "appliedStrokes": 7170
+    }
+  }
+}
