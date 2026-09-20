@@ -1,0 +1,1478 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-20",
+  "purpose": "Why each one-stroke gap exists: a pen-lift split the licensed corpus does not make (split), a stroke the corpus does not draw at all (missing), or the reverse on the candidate side (merge, surplus).",
+  "method": "Both sides are framed to their own bounding box per axis. Two hypotheses are scored by optimal assignment cost: leave one dictionary stroke out, or merge two dictionary strokes into one and assign. The cheaper wins; a merge also has to pass the shape rules (the union must approximate the covering candidate stroke, and two bars or two verticals must be collinear and laid end to end).",
+  "inputs": [
+    "originals.json",
+    "the pinned dictionary SVGs, in RAM only"
+  ],
+  "proprietaryAssetsSaved": 0,
+  "summary": {
+    "characters": 90,
+    "classes": {
+      "split": 81,
+      "missing": 7,
+      "merge": 2
+    },
+    "byRadical": {
+      "艸": {
+        "split": 62
+      },
+      "示": {
+        "split": 1
+      },
+      "木": {
+        "missing": 1
+      },
+      "手": {
+        "split": 2
+      },
+      "玉": {
+        "split": 1,
+        "missing": 1
+      },
+      "缶": {
+        "split": 1
+      },
+      "辵": {
+        "split": 1,
+        "missing": 2
+      },
+      "食": {
+        "split": 3
+      },
+      "人": {
+        "missing": 1,
+        "split": 1,
+        "merge": 1
+      },
+      "邑": {
+        "split": 2
+      },
+      "月": {
+        "split": 1
+      },
+      "阜": {
+        "split": 2
+      },
+      "欠": {
+        "split": 1
+      },
+      "犬": {
+        "split": 1
+      },
+      "金": {
+        "missing": 1
+      },
+      "隹": {
+        "split": 1
+      },
+      "言": {
+        "split": 1
+      },
+      "水": {
+        "missing": 1
+      },
+      "广": {
+        "merge": 1
+      }
+    },
+    "grassSplitParts": {
+      "1+3": 62
+    }
+  },
+  "entries": [
+    {
+      "glyph": "茄",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "祛",
+      "radical": "示",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        2,
+        4
+      ],
+      "partShapes": [
+        "bar",
+        "vertical"
+      ],
+      "coveringCandidateStroke": 2
+    },
+    {
+      "glyph": "楗",
+      "radical": "木",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "missing",
+      "extraDictionaryStroke": 11,
+      "extraShape": "vertical"
+    },
+    {
+      "glyph": "擎",
+      "radical": "手",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "菰",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "藁",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "瓘",
+      "radical": "玉",
+      "corpus": "Hans",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        5,
+        7
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 5
+    },
+    {
+      "glyph": "菅",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "罐",
+      "radical": "缶",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        7,
+        9
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 7
+    },
+    {
+      "glyph": "适",
+      "radical": "辵",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        8,
+        9
+      ],
+      "partShapes": [
+        "slant",
+        "slant"
+      ],
+      "coveringCandidateStroke": 8
+    },
+    {
+      "glyph": "芎",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蕨",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "饋",
+      "radical": "食",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        7,
+        8
+      ],
+      "partShapes": [
+        "vertical",
+        "bar"
+      ],
+      "coveringCandidateStroke": 7
+    },
+    {
+      "glyph": "芹",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "菫",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "芩",
+      "radical": "艸",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "伋",
+      "radical": "人",
+      "corpus": "Hans",
+      "side": "dictionary has one more",
+      "cls": "missing",
+      "extraDictionaryStroke": 4,
+      "extraShape": "slant"
+    },
+    {
+      "glyph": "饑",
+      "radical": "食",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        5,
+        7
+      ],
+      "partShapes": [
+        "bar",
+        "vertical"
+      ],
+      "coveringCandidateStroke": 7
+    },
+    {
+      "glyph": "蕁",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "荳",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "藜",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "莉",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "邈",
+      "radical": "辵",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "missing",
+      "extraDictionaryStroke": 16,
+      "extraShape": "slant"
+    },
+    {
+      "glyph": "茉",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "邙",
+      "radical": "邑",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        4,
+        5
+      ],
+      "partShapes": [
+        "slant",
+        "vertical"
+      ],
+      "coveringCandidateStroke": 4
+    },
+    {
+      "glyph": "茗",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "芼",
+      "radical": "艸",
+      "corpus": "Hans",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "摹",
+      "radical": "手",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "朦",
+      "radical": "月",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        5,
+        7
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 5
+    },
+    {
+      "glyph": "蒡",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蘗",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "茯",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "莩",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "菲",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "莎",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蒜",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "芟",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蓆",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蓚",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "茱",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蕣",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "陞",
+      "radical": "阜",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        2
+      ],
+      "partShapes": [
+        "slant",
+        "vertical"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蓍",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "莘",
+      "radical": "艸",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "芯",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "莪",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "菴",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蘖",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "歟",
+      "radical": "欠",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        6,
+        8
+      ],
+      "partShapes": [
+        "vertical",
+        "vertical"
+      ],
+      "coveringCandidateStroke": 2
+    },
+    {
+      "glyph": "茹",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "苒",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蘂",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "獒",
+      "radical": "犬",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        2,
+        4
+      ],
+      "partShapes": [
+        "vertical",
+        "dot"
+      ],
+      "coveringCandidateStroke": 3
+    },
+    {
+      "glyph": "藕",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "芋",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "薏",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "苡",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "荑",
+      "radical": "艸",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "茵",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "荏",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "茨",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "藷",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "菹",
+      "radical": "艸",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "荻",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "迪",
+      "radical": "辵",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "missing",
+      "extraDictionaryStroke": 7,
+      "extraShape": "slant"
+    },
+    {
+      "glyph": "鋌",
+      "radical": "金",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "missing",
+      "extraDictionaryStroke": 13,
+      "extraShape": "slant"
+    },
+    {
+      "glyph": "儁",
+      "radical": "人",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        12,
+        13
+      ],
+      "partShapes": [
+        "slant",
+        "bar"
+      ],
+      "coveringCandidateStroke": 12
+    },
+    {
+      "glyph": "雋",
+      "radical": "隹",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        10,
+        11
+      ],
+      "partShapes": [
+        "slant",
+        "bar"
+      ],
+      "coveringCandidateStroke": 10
+    },
+    {
+      "glyph": "茁",
+      "radical": "艸",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "芷",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "菁",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "苕",
+      "radical": "艸",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "萩",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "邰",
+      "radical": "邑",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        6,
+        7
+      ],
+      "partShapes": [
+        "slant",
+        "slant"
+      ],
+      "coveringCandidateStroke": 6
+    },
+    {
+      "glyph": "苞",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "陂",
+      "radical": "阜",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        2
+      ],
+      "partShapes": [
+        "slant",
+        "vertical"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "荇",
+      "radical": "艸",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "餉",
+      "radical": "食",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        5,
+        7
+      ],
+      "partShapes": [
+        "bar",
+        "vertical"
+      ],
+      "coveringCandidateStroke": 7
+    },
+    {
+      "glyph": "蕙",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "蒿",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "葫",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "芦",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "譁",
+      "radical": "言",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        8,
+        10
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 8
+    },
+    {
+      "glyph": "潢",
+      "radical": "水",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "missing",
+      "extraDictionaryStroke": 7,
+      "extraShape": "bar"
+    },
+    {
+      "glyph": "璜",
+      "radical": "玉",
+      "corpus": "MM",
+      "side": "dictionary has one more",
+      "cls": "missing",
+      "extraDictionaryStroke": 8,
+      "extraShape": "bar"
+    },
+    {
+      "glyph": "茴",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "薨",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "萱",
+      "radical": "艸",
+      "corpus": "Ja",
+      "side": "dictionary has one more",
+      "cls": "split",
+      "dictionaryParts": [
+        1,
+        3
+      ],
+      "partShapes": [
+        "bar",
+        "bar"
+      ],
+      "coveringCandidateStroke": 1
+    },
+    {
+      "glyph": "廐",
+      "radical": "广",
+      "corpus": "Ja",
+      "side": "candidate has one more",
+      "cls": "merge",
+      "candidateParts": [
+        12,
+        13
+      ],
+      "partShapes": [
+        "vertical",
+        "bar"
+      ],
+      "coveringDictionaryStroke": 12
+    },
+    {
+      "glyph": "僊",
+      "radical": "人",
+      "corpus": "Ja",
+      "side": "candidate has one more",
+      "cls": "merge",
+      "candidateParts": [
+        12,
+        13
+      ],
+      "partShapes": [
+        "slant",
+        "bar"
+      ],
+      "coveringDictionaryStroke": 12
+    }
+  ]
+}

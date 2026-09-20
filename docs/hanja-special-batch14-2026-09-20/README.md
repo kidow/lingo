@@ -87,7 +87,7 @@ pnpm build
 
 1. **특급 653자** — 다섯 말뭉치에 같은 획수의 원본이 없다
 2. **보류 5자** — 사전 자형(靑·戸)을 가진 원본이 없다
-3. **특급II 345자·2급 4자** — [특급II 큐](../hanja-special2-queue-2026-09-20/README.md)와 [2급 잔여](../hanja-g2-remaining-2026-09-20/README.md)에 분류해 뒀다
+3. **특급II 327자·2급 4자** — [특급II 큐](../hanja-special2-queue-2026-09-20/README.md)와 [2급 잔여](../hanja-g2-remaining-2026-09-20/README.md)에 분류해 뒀다
 
 ## 검토 시트 띄우기
 
