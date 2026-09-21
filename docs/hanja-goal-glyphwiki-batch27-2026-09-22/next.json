@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-22",
+  "nextGlyph": "茸",
+  "catalogStrokes": 10,
+  "status": "source-discovered; neither domestic review nor runtime approval complete",
+  "candidate": {
+    "glyph": "茸",
+    "root": "u8338-k",
+    "records": {
+      "u8338-k": {
+        "name": "u8338-k",
+        "version": 7,
+        "related": "U+8338",
+        "data": "99:0:0:0:2:200:180:ufa5e-03$99:0:0:0:42:200:195:u8033-j"
+      },
+      "ufa5e-03": {
+        "name": "ufa5e-03",
+        "version": 8,
+        "related": "U+8279",
+        "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39"
+      },
+      "u8033-j": {
+        "name": "u8033-j",
+        "version": 2,
+        "related": "U+8033",
+        "data": "1:0:0:20:35:180:35$1:32:32:57:35:57:151$1:2:2:57:72:139:72$1:2:2:57:108:139:108$2:0:7:21:156:76:150:185:136$1:32:0:139:35:139:186"
+      }
+    },
+    "status": "candidate-not-reviewed"
+  },
+  "nextActions": [
+    "Reconfirm that 茸 is still missing and re-fetch the exact pinned component versions.",
+    "Read the original KAGE line head/tail 2 and 32 semantics. The existing converter correctly rejects these unreviewed forms.",
+    "Compare all 10 domestic strokes, directions, cumulative states and final form before any approval.",
+    "Preserve the separate unresolved 苛 tail-4 hook work in hook-research.json."
+  ],
+  "avoid": "Do not remove head/tail fields to force the record through the current converter."
+}

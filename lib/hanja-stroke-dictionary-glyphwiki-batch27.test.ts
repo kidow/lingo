@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict'
+import { test } from 'node:test'
+import { createHash } from 'node:crypto'
+import { execFileSync } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
+import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch27.json' with { type: 'json' }
+import { HANJA_STROKES, hanjaStrokeData } from './hanja-strokes.ts'
+import { loadGlyphWikiBatch27Strokes } from './hanja-stroke-dictionary-glyphwiki-batch27.ts'
+
+test('芙의 8획과 국내 草 순서를 원본 3개에서 재현한다', () => {
+  const script = fileURLToPath(new URL('../docs/hanja-goal-glyphwiki-batch27-2026-09-22/build.mjs', import.meta.url))
+  assert.deepEqual(JSON.parse(execFileSync(process.execPath, [script], { encoding: 'utf8' })), reviewed)
+  const data = hanjaStrokeData({ glyph: '芙', strokes: 8 })!
+  assert.ok(data)
+  assert.equal(HANJA_STROKES.filter(e => e.glyph === '芙').length, 1)
+  assert.equal(data.verificationSource, 'ehanja-crosschecked')
+  assert.equal(data.strokeWidth, 4)
+  assert.deepEqual(data.sourceStrokeIndices, [1,2,4,3,5,6,7,8])
+  assert.equal(createHash('sha256').update(JSON.stringify(data.paths)).digest('hex'), reviewed[0].pathsSha256)
+  assert.equal(hanjaStrokeData({ glyph: '芙', strokes: 7 }), null)
+})
+test('芙의 경로·순열·선폭·라이선스·국내 근거 교체를 거부한다', () => {
+  for (const modify of [
+    (e: typeof reviewed[number]) => { e.paths[0] = 'M 0 0 L 99 99' },
+    (e: typeof reviewed[number]) => { e.sourceStrokeIndices.reverse() },
+    (e: typeof reviewed[number]) => { e.strokeWidth = 5 },
+    (e: typeof reviewed[number]) => { e.geometryLicense.spdx = 'CC0-1.0' },
+    (e: typeof reviewed[number]) => { e.sourceReference.dictionarySvgSha256 = '0'.repeat(64) },
+  ]) {
+    const changed = structuredClone(reviewed); modify(changed[0])
+    assert.throws(() => loadGlyphWikiBatch27Strokes(changed))
+  }
+  assert.throws(() => loadGlyphWikiBatch27Strokes([...reviewed, ...reviewed]))
+})

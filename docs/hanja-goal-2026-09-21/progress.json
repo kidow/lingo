@@ -1,45 +1,43 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "536fe169dd03c0a212d113f9b2285fbada84da29",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch26-2026-09-22/validation.json",
+  "lastCompletedCommit": "159bc0abbe9a01e0c29d6e8813d20ea6a1b65a1f",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch27-2026-09-22/validation.json",
   "currentBatch": {
     "glyphs": [
-      "芥"
+      "芙"
     ],
     "strokes": 8,
-    "heldGlyphs": [
-      "庾"
-    ],
-    "heldStrokes": 12,
-    "domesticStrokes": 20,
-    "status": "GlyphWiki exact-glyph review; 芥 registered, 庾 held after full comparison",
+    "heldGlyphs": [],
+    "heldStrokes": 0,
+    "domesticStrokes": 8,
+    "status": "GlyphWiki 芙 registered after complete domestic comparison; 苛 engine research and 茸 next source inventory recorded",
     "checks": {
       "researchVerifierPassed": true,
-      "domesticVisualSteps": 20,
-      "normalizedCumulativeStates": 20,
-      "hanjaTests": 838,
+      "domesticVisualSteps": 8,
+      "normalizedCumulativeStates": 8,
+      "hanjaTests": 840,
       "typeCheckPassed": true,
       "productionBuildPassed": true,
       "uiPassed": true,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-glyphwiki-batch26-2026-09-22/validation.json"
+      "record": "docs/hanja-goal-glyphwiki-batch27-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4965,
-      "remaining": 1013,
+      "applied": 4966,
+      "remaining": 1012,
       "percent": 83.1
     },
     "grades": [
       {
         "grade": "1급",
         "total": 1145,
-        "applied": 1064,
-        "remaining": 81,
-        "percent": 92.9
+        "applied": 1065,
+        "remaining": 80,
+        "percent": 93
       },
       {
         "grade": "2급",
@@ -49,13 +47,6 @@
         "percent": 99.8
       },
       {
-        "grade": "3급",
-        "total": 317,
-        "applied": 317,
-        "remaining": 0,
-        "percent": 100
-      },
-      {
         "grade": "3급II",
         "total": 500,
         "applied": 500,
@@ -63,9 +54,9 @@
         "percent": 100
       },
       {
-        "grade": "4급",
-        "total": 250,
-        "applied": 250,
+        "grade": "3급",
+        "total": 317,
+        "applied": 317,
         "remaining": 0,
         "percent": 100
       },
@@ -77,9 +68,9 @@
         "percent": 100
       },
       {
-        "grade": "5급",
-        "total": 100,
-        "applied": 100,
+        "grade": "4급",
+        "total": 250,
+        "applied": 250,
         "remaining": 0,
         "percent": 100
       },
@@ -91,9 +82,9 @@
         "percent": 100
       },
       {
-        "grade": "6급",
-        "total": 75,
-        "applied": 75,
+        "grade": "5급",
+        "total": 100,
+        "applied": 100,
         "remaining": 0,
         "percent": 100
       },
@@ -105,14 +96,21 @@
         "percent": 100
       },
       {
-        "grade": "7급",
+        "grade": "6급",
+        "total": 75,
+        "applied": 75,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "7급II",
         "total": 50,
         "applied": 50,
         "remaining": 0,
         "percent": 100
       },
       {
-        "grade": "7급II",
+        "grade": "7급",
         "total": 50,
         "applied": 50,
         "remaining": 0,
@@ -126,25 +124,26 @@
         "percent": 100
       },
       {
-        "grade": "특급",
-        "total": 1328,
-        "applied": 690,
-        "remaining": 638,
-        "percent": 52
-      },
-      {
         "grade": "특급II",
         "total": 1150,
         "applied": 857,
         "remaining": 293,
         "percent": 74.5
+      },
+      {
+        "grade": "특급",
+        "total": 1328,
+        "applied": 690,
+        "remaining": 638,
+        "percent": 52
       }
     ]
   },
   "nextActions": [
-    "Select currently missing exact-glyph GlyphWiki candidates and pin all component dependencies.",
-    "For 苛, verify original KAGE hook geometry and licensing before expanding converter support; current tail 4 is rejected.",
-    "For every candidate, compare all actual handwriting strokes and cumulative states with domestic evidence before runtime approval."
+    "Reconfirm that 茸 is still missing and re-fetch the exact pinned component versions.",
+    "Read the original KAGE line head/tail 2 and 32 semantics. The existing converter correctly rejects these unreviewed forms.",
+    "Compare all 10 domestic strokes, directions, cumulative states and final form before any approval.",
+    "Preserve the separate unresolved 苛 tail-4 hook work in hook-research.json."
   ],
   "held": [
     "莽",
@@ -198,31 +197,28 @@
     }
   ],
   "resources": {
-    "tabs": "batch26 tabs closed; viewport reset",
-    "ramServers": "51860, 51861, 51862, 51863, 51864 stopped",
-    "isolatedWorktree": "/tmp/lingo-hanja-gw26-verify removed",
+    "tabs": "batch27 tabs closed; viewport reset",
+    "ramServers": "51865, 51866 stopped",
+    "isolatedWorktree": "/tmp/lingo-hanja-gw27-verify removed",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "public/hanja-strokes/glyphwiki/82a5.json",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/yu-candidate.json",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/source-leads.json",
-    "public/hanja-strokes/glyphwiki/NOTICE.md",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch26.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch26.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch26.test.ts",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/convert.test.mjs",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/convert.mjs",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/build.mjs",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/hook-research.json",
+    "public/hanja-strokes/glyphwiki/8299.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-8299.md",
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/build.mjs",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch27.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch27.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch27.test.ts",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/next.json",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/validation.json"
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/next.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch26-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch27-2026-09-22/next.json"
 }

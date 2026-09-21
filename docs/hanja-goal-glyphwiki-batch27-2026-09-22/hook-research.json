@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-22",
+  "glyph": "苛",
+  "status": "source-semantics-established-not-rendered-or-approved",
+  "engine": {
+    "url": "https://github.com/kamichikoichi/kage-engine",
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "license": "GPL-3.0 as repository COPYING",
+    "files": [
+      {
+        "path": "COPYING",
+        "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      },
+      {
+        "path": "kagedf.js",
+        "sha256": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+        "lines": "97-130"
+      },
+      {
+        "path": "kage.js",
+        "sha256": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+        "lines": "381-421"
+      },
+      {
+        "path": "kagecd.js",
+        "lines": "588-598"
+      }
+    ]
+  },
+  "facts": [
+    "The Mincho type 1 tail 4 branch shortens the line and adds a quadratic turn, passing terminal type 14 to the curve renderer.",
+    "Terminal type 14 adds a separate leftward polygon; recording only the line and quadratic centerline would omit part of the actual hook.",
+    "Hook dimensions depend on engine style size and adjusted stroke width, not just the raw endpoint coordinates."
+  ],
+  "next": "A complete source-derived hook outline/trajectory and full domestic comparison are required before 苛 approval. Do not copy GPL engine code into the app without resolving the intended distribution design and preserving its license.",
+  "scope": "Source code read as research only; no engine source copied into runtime or repository. Other directly supported exact-glyph candidates remain actionable."
+}
