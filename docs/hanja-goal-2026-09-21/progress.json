@@ -1,53 +1,55 @@
 {
   "status": "active",
   "date": "2026-09-21",
-  "lastCompletedCommit": "f182c23c81dd1ea02da550e2cb25bb4bd812bd87",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special2-kanjivg-batch2.json",
+  "lastCompletedCommit": "c568a0a927d08ad7018e87807ac3c3e412ed42c4",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special2-kanjivg-batch3.json",
   "currentBatch": {
     "glyphs": [
-      "饑",
-      "鏤",
-      "陞",
-      "鮟"
+      "鏃",
+      "驃",
+      "陂",
+      "鰕"
     ],
-    "strokes": 67,
+    "strokes": 68,
     "heldGlyphs": [],
     "heldStrokes": 0,
     "status": "verified; resolve commit with currentBatchCommitLookup",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
-        "passed": 780,
+        "passed": 782,
         "failed": 0,
         "typeCheckPassed": true
       },
       "productionBuild": {
         "passed": true,
-        "isolatedCheckout": "/tmp/lingo-hanja-goal-special2-kvg2-check",
+        "isolatedCheckout": "/tmp/lingo-hanja-goal-special2-kvg3-check",
         "temporaryHarnessBuildPassed": true,
         "checkoutRemoved": true,
-        "productionFilesByteIdentical": true
+        "productionFilesByteIdentical": true,
+        "initialHarnessError": "Map accessed as object; fixed temporary page to CHARACTER_INDEX.get(glyph). Product files unchanged."
       },
       "visualReview": {
-        "primaryStrokesReviewed": 67,
+        "primaryAndAlternativeStrokesReviewed": 87,
         "normalizedCumulativeStates": {
-          "饑": 21,
-          "鏤": 19,
-          "陞": 10,
-          "鮟": 17
+          "鏃": 19,
+          "驃": 21,
+          "陂": 8,
+          "鰕": 20
         },
         "completeForm": true,
         "alternativeMetadataOnly": [
-          "09951-Kaisho",
-          "09b9f-Kaisho"
+          "09a43-Vt6",
+          "09c15-KaishoVtFst",
+          "09c15"
         ]
       },
       "ui": {
         "glyphs": [
-          "饑",
-          "鏤",
-          "陞",
-          "鮟"
+          "鏃",
+          "驃",
+          "陂",
+          "鰕"
         ],
         "introAutoplayStarted": true,
         "introAutoplayCompleted": true,
@@ -63,19 +65,19 @@
         "touchAction": "none",
         "consoleErrors": 0,
         "browser": "Desktop Chrome; no physical mobile test",
-        "record": "docs/hanja-goal-special2-kanjivg-batch2-2026-09-21/README.md"
+        "record": "docs/hanja-goal-special2-kanjivg-batch3-2026-09-21/README.md"
       }
     }
   },
   "workingTreeCoverage": {
     "pass": true,
     "addedCharacters": 4,
-    "addedStrokes": 67,
+    "addedStrokes": 68,
     "reproduction": true,
     "runtime": {
-      "applied": 4942,
+      "applied": 4946,
       "total": 5978,
-      "remaining": 1036,
+      "remaining": 1032,
       "percent": 82.7
     },
     "grades": [
@@ -172,10 +174,10 @@
       },
       {
         "grade": "특급II",
-        "applied": 852,
+        "applied": 856,
         "total": 1150,
-        "remaining": 298,
-        "percent": 74.1
+        "remaining": 294,
+        "percent": 74.4
       },
       {
         "grade": "특급",
@@ -187,10 +189,9 @@
     ]
   },
   "nextActions": [
-    "Resolve currentBatchCommitLookup; commit this verified batch if not already present. Do not rerun successful unchanged checks.",
-    "Next independent batch: 特급II 鏃·驃·陂·鰕 4 characters / 68 strokes. Candidate pins are in docs/hanja-goal-g1-batch5-2026-09-21/next-special2-candidates.json. Inspect runtime before selecting; count compatibility is not approval.",
-    "陂 has an earlier held ear-component split mismatch; review a licensed whole-character alternative against the domestic source, without arbitrary splits or merges.",
-    "All remaining 1,036 characters remain in scope; skip unchanged holds without new evidence."
+    "Resolve currentBatchCommitLookup and finish this batch only if not already committed.",
+    "Next: 餉 15 strokes; two count-compatible licensed candidates 09909-Kaisho and 09909 in docs/hanja-goal-g1-batch5-2026-09-21/next-special2-candidates.json. URLs and hashes fetched again successfully; full visual review is still required.",
+    "After 餉, refresh the entire 1,032-character missing inventory for further evidence. A candidate count match is not stroke approval. Skip unchanged holds."
   ],
   "held": [
     "莽",
@@ -212,22 +213,21 @@
     "productionStaticServer": "Stopped owned port 51836 server after UI checks.",
     "sourceReviewServer": "Stopped owned ports 51837/51838 after visual review.",
     "temporaryHarness": "Removed owned isolated checkout and temporary HanjaCard page.",
-    "browserTabsCleanupPending": "None for current batch; all four current Chrome verification tabs closed. Historical unavailable tabs unchanged."
+    "browserTabsCleanupPending": "None for current batch; source tab and four Chrome product tabs closed. Historical unavailable tabs unchanged."
   },
   "batchPaths": [
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-stroke-dictionary-special2-kanjivg-batch2.ts",
-    "lib/hanja-stroke-dictionary-special2-kanjivg-batch2.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-special2-kanjivg-batch2.json",
-    "docs/hanja-goal-special2-kanjivg-batch2-2026-09-21/candidates.json",
-    "docs/hanja-goal-special2-kanjivg-batch2-2026-09-21/normalized.json",
-    "docs/hanja-goal-special2-kanjivg-batch2-2026-09-21/findings.json",
-    "docs/hanja-goal-special2-kanjivg-batch2-2026-09-21/build.mjs",
-    "docs/hanja-goal-special2-kanjivg-batch2-2026-09-21/serve.py",
-    "docs/hanja-goal-special2-kanjivg-batch2-2026-09-21/README.md",
+    "lib/hanja-stroke-dictionary-special2-kanjivg-batch3.ts",
+    "lib/hanja-stroke-dictionary-special2-kanjivg-batch3.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-special2-kanjivg-batch3.json",
+    "docs/hanja-goal-special2-kanjivg-batch3-2026-09-21/candidates.json",
+    "docs/hanja-goal-special2-kanjivg-batch3-2026-09-21/normalized.json",
+    "docs/hanja-goal-special2-kanjivg-batch3-2026-09-21/findings.json",
+    "docs/hanja-goal-special2-kanjivg-batch3-2026-09-21/build.mjs",
+    "docs/hanja-goal-special2-kanjivg-batch3-2026-09-21/serve.py",
+    "docs/hanja-goal-special2-kanjivg-batch3-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/README.md",
-    "docs/hanja-goal-2026-09-21/progress.json",
-    "docs/hanja-continuous-goal-prompt.md"
+    "docs/hanja-goal-2026-09-21/progress.json"
   ]
 }
