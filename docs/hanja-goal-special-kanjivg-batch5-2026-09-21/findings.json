@@ -1,0 +1,114 @@
+{
+  "date": "2026-09-21",
+  "verificationSource": "ehanja-crosschecked",
+  "officialExamBodyApproval": false,
+  "entries": [
+    {
+      "glyph": "闍",
+      "candidate": "095cd",
+      "strokesReviewed": 17,
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "decision": "approved",
+      "rendering": {
+        "sourceViewBox": "0 0 109 109",
+        "sourceStrokeWidth": 3,
+        "normalizedStrokeWidth": 2.7522935779816513,
+        "sourceSha256": "2c44b29732a40e58d4ca40de8f0e165def7baef169dc87af7d0a5d6d1fd7ef0a"
+      },
+      "normalizedReview": "All 17 cumulative states reviewed at width 5 and again at the approved original normalized width 300/109; complete forms compared.",
+      "observations": [
+        "門 1–8, 者 9–13 and 日 14–17 agree in order, start/end directions, bends and hooks. Source order is unchanged.",
+        "The default player width 5 makes the top of stroke 12 contact 門 stroke 8 and makes dot 13 contact adjacent strokes. This width is not approved.",
+        "The pinned original source style is fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round. At normalized width 300/109, gaps around 12/13 remain visible in the complete form.",
+        "No endpoints/control points, order, direction, splits or merges were changed. The style is independently pinned to the same licensed source."
+      ]
+    },
+    {
+      "glyph": "闥",
+      "candidate": "095e5",
+      "strokesReviewed": 21,
+      "decision": "held",
+      "observations": [
+        "All 21 original strokes and complete form reviewed.",
+        "Stroke 20 in 辶 takes an extra down-left/right/down-left zigzag; domestic stroke 20 is a horizontal-right then vertical-down bend. Stroke 21 also starts with a different rising contour.",
+        "Kaisho changes only 3 and 7. Problem paths 20/21 are byte-identical, so it cannot resolve this hold."
+      ],
+      "reopenCondition": "A reusable whole-character candidate with the domestic 辶 bend and final sweep, or an independently evidenced licensed correction."
+    },
+    {
+      "glyph": "餤",
+      "candidate": "09924",
+      "strokesReviewed": 17,
+      "decision": "held",
+      "observations": [
+        "All 17 source strokes and complete form reviewed; 食 would require source order 1,2,3,5,6,7,4,8,9.",
+        "炎 left dots 10 and 14 descend right in the candidate but descend left in the domestic source; reorder alone cannot fix their path directions.",
+        "Kaisho changes only stroke 6; problem paths 10/14 are byte-identical. No path was mirrored, reversed, or authored."
+      ],
+      "reopenCondition": "A reusable whole-character candidate with both domestic left-dot directions, or an independently evidenced licensed correction."
+    }
+  ],
+  "alternatives": [
+    {
+      "glyph": "闥",
+      "candidate": "095e5-Kaisho",
+      "sha256": "054cf886cbb29ba6d12e9103eedb23ec90ce78f8103698fc68f19c542b9c0f94",
+      "changedStrokeIndices": [
+        3,
+        7
+      ],
+      "fullVisualReview": false,
+      "decision": "not-selected",
+      "reason": "Problem paths unchanged from the reviewed default."
+    },
+    {
+      "glyph": "餤",
+      "candidate": "09924-Kaisho",
+      "sha256": "797e129962e4ff1a4a29be1b9db51a2609375dfac4c7f20d553f3251eeba8869",
+      "changedStrokeIndices": [
+        6
+      ],
+      "fullVisualReview": false,
+      "decision": "not-selected",
+      "reason": "Problem paths unchanged from the reviewed default."
+    },
+    {
+      "glyph": "闍",
+      "candidate": "095cd-Kaisho",
+      "sha256": "1066feac3c2940f2ec22d92b73ffdc63667ac8f0faf8e92fe9aa8b3c312d5915",
+      "changedStrokeIndices": [
+        3,
+        7,
+        16
+      ],
+      "fullVisualReview": false,
+      "decision": "not-selected",
+      "reason": "Default source suffices at its original width; alternative was not needed."
+    }
+  ],
+  "visualReview": {
+    "primaryStrokes": 55,
+    "normalizedAtDefaultWidth": 17,
+    "normalizedAtApprovedSourceWidth": 17,
+    "approvedCompleteForms": 1,
+    "privateGraphicsSaved": false
+  }
+}
