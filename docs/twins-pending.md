@@ -710,3 +710,24 @@ cushion · wreath · dial · gauge · keyhole · basket · awning이 이미 남�
 **하나는 뽑기 전에 고쳤다.** `going-without-a-ticket`(무임승차)이 개념
 `turnstile`(개찰구)과 같은 물건을 같은 눈높이로 봤다. 몸통을 개찰구에서
 **표 넣는 홈**으로 옮기고 위에서 내려다보게 하니 구조 126이 나왔다.
+
+#### 다섯 무리를 더 골라냈다 — 탈것의 거울상은 모두 스물넷이다 (2026-09-21)
+
+열다섯을 더 뽑으려고 남은 일흔넷을 다시 훑었다. 앞의 여섯 무리에 다섯이 더
+붙는다.
+
+| 무리 | 개념 | 그림 |
+| --- | --- | --- |
+| 깜빡이 | `hazard-lights`(비상 깜빡이) · `put-the-indicator-on`(깜빡이를 켜다) | 둘 다 차 모서리에 켜진 주황 등이다 |
+| 떠나는 차 | `miss-the-stop`(정류장을 지나치다) · `refusing-a-fare`(승차 거부) | 둘 다 「떠나 버리는 차」다 |
+| 길바닥 표시 | `hard-shoulder`(갓길) · `centre-line`(중앙선) · `one-way-street`(일방통행) · `tow-away-zone`(견인 지역) · `icy-stretch`(결빙 구간) | 다섯 다 「선이 그어진 길바닥」이다 |
+| 역 시계 | `it-comes-in-behind-time`(연착하다) · `last-service-time`(막차 시간) | 둘 다 승강장의 시계다 |
+| 길 위의 지도 | `ask-which-way-to-go`(길을 묻다) · `reroute`(경로를 바꾸다) · `take-a-wrong-turn`(길을 잘못 들다) | 셋 다 「갈림길과 지도」다 |
+
+**한 쌍은 파일 밖과 붙는다.** `waiting-queue`(대기 줄)가 개념 `queue`(줄을
+서다)와 같은 「한 줄로 선 사람들」이다. 이번 회차에서 빼고 `refusing-a-fare`로
+바꿨다.
+
+**뽑아서 재 보니 가장 가까운 것이 89다.** `hoist-the-sail`(돛을 올리다)이
+개념 `sail`(항해하다)과 구조 89 · 색 0.738인데, 둘 다 돛 올린 배다. 문턱
+밖이지만 이 무리에서 제일 가깝다 — 임자가 갈라야 한다면 여기다.
