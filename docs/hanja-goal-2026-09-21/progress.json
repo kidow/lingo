@@ -1,25 +1,23 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "7360a39ea60b642fa0c8fa2b3436c0b34e6cf029",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch39-2026-09-22/validation.json",
+  "lastCompletedCommit": "463e653a0ebd8336d841a3ced21499e801a5fe67",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch40-2026-09-22/validation.json",
   "currentBatch": {
     "glyphs": [
-      "蔓"
+      "薪"
     ],
-    "strokes": 15,
-    "status": "runtime applied; source, full visual, build and product checks passed",
+    "strokes": 17,
+    "status": "held after full visual comparison; no runtime addition",
     "checks": {
-      "sourceVersions": 8,
-      "originalVisualSteps": 15,
-      "cumulativeStates": 15,
-      "hanjaTests": 864,
-      "typeCheck": true,
-      "productionBuild": true,
-      "productUi": true,
-      "jevTests": 4,
+      "sourceVersions": 5,
+      "visualSteps": 17,
+      "cumulativeStates": 17,
+      "finalFormCompared": true,
+      "approved": false,
+      "researchVerifier": true,
       "jevLiveRequests": 1,
-      "record": "docs/hanja-goal-glyphwiki-batch39-2026-09-22/validation.json"
+      "record": "docs/hanja-goal-glyphwiki-batch40-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
@@ -138,10 +136,9 @@
     ]
   },
   "nextActions": [
-    "Check actual runtime absence and shared-tree ownership again.",
-    "Review type7 line/quadratic and all cap/direction semantics against the primary KAGE source.",
-    "Compare all17 strokes, cumulative and final forms at candidate width1.25. Do not assume source matching or Jev confidence establishes correctness.",
-    "If every check passes implement, validate and commit; otherwise record specific discrepancies and move to an independent candidate."
+    "Recheck current runtime absence, shared-tree ownership and prior holds for 蓉14획.",
+    "Acquire exact domestic dictionary metadata and licensed whole-glyph source; pin every dependency.",
+    "Use Jev to route written observations only; directly review every stroke and cumulative/final form before runtime approval."
   ],
   "held": [
     "莽",
@@ -216,39 +213,32 @@
       "reason": "Primary lower horizontal is too short; whole-glyph alternative fixes it but both share a second fire dot that moves downward-right where the domestic reference moves downward-left.",
       "record": "docs/hanja-goal-glyphwiki-batch38-2026-09-22/findings.json",
       "releaseCondition": "A reusable whole 蔗 source resolving the second fire-dot direction while preserving long lower horizontal and four grass strokes; then review all15 directions/cumulative states. Do not mirror or redraw the current dot."
+    },
+    {
+      "glyph": "薪",
+      "reason": "12: Domestic stroke12 starts below horizontal10 with a gap. Source u4eb2-01@3 row8 starts at53,112 on the row6 horizontal14,112 to100,112; it creates an attached branch. Changing stroke width cannot fix a centerline attachment. 15: Source line/quadratic bows farther left near the bottom than the domestic falling stroke. This shape difference also requires reassessment in any replacement source.",
+      "record": "docs/hanja-goal-glyphwiki-batch40-2026-09-22/findings.json",
+      "releaseCondition": "Find a reusable exact-glyph source with a separated stroke12 and compatible right falling stroke, then repeat all17 direction/cumulative/final-form checks. Do not trim the branch or invent a bridge/point."
     }
   ],
   "resources": {
-    "tabs": "batch39 tabs closed; viewport reset",
-    "ramServers": "batch39 ports51891–51892 stopped; batch40 RAM comparison51893 PID34755 active",
+    "tabs": "batch40 comparison tab closed",
+    "ramServers": "batch39 and40 RAM servers stopped",
     "isolatedWorktree": "none",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/convert.mjs",
-    "public/hanja-strokes/glyphwiki/8513.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-8513.md",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/reference.json",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/geometry-semantics.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch39.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch39.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch39.test.ts",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/convert.test.mjs",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/build.mjs",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/validation.json",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/next.json",
-    "docs/hanja-goal-glyphwiki-batch39-2026-09-22/README.md",
-    "docs/hanja-jev-2026-09-22/README.md",
-    "scripts/hanja-jev-review.mjs",
-    "scripts/hanja-jev-review.test.mjs",
-    "docs/hanja-jev-2026-09-22/input.json",
-    "docs/hanja-jev-2026-09-22/result.json"
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/jev-result.json",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/jev-input.json",
+    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/validation.json",
+    "docs/hanja-jev-2026-09-22/README.md"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch39-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch40-2026-09-22/validation.json"
 }
