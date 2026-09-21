@@ -1,71 +1,80 @@
 {
   "status": "active",
   "date": "2026-09-21",
-  "lastCompletedCommit": "04972fd642ca5aa54b72b7de463e3bfb98a3ed62",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch2.json",
+  "lastCompletedCommit": "a21062a63a67c439b189312077d51fe5716ea2cd",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch3.json",
   "currentBatch": {
     "glyphs": [
-      "餠",
-      "鰒"
+      "餞"
     ],
-    "strokes": 37,
+    "strokes": 17,
     "status": "verified; resolve commit with currentBatchCommitLookup",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
-        "passed": 770,
+        "passed": 772,
         "failed": 0,
         "typeCheckPassed": true
       },
       "productionBuild": {
         "passed": true,
-        "isolatedCheckout": "/tmp/lingo-hanja-goal-g1-batch2-check",
+        "isolatedCheckout": "/tmp/lingo-hanja-goal-g1-batch3-check",
         "temporaryHarnessBuildPassed": true,
         "checkoutRemoved": true
       },
       "visualReview": {
-        "allSourceStrokesReviewed": 77,
+        "allSourceStrokesReviewed": 45,
+        "alternativeConflictStrokes": 11,
         "normalizedReorderedCumulativeStates": {
-          "餠": 17,
-          "鰒": 20
+          "餞": 17
         },
         "completeForm": true
       },
       "ui": {
         "glyphs": [
-          "餠",
-          "鰒"
+          "餞"
         ],
         "introAutoplayStarted": true,
         "introAutoplayCompleted": true,
         "writingAutoplay": true,
-        "replayCompleted": true,
-        "staticOverlayNotDuplicated": true,
+        "writingAutoplayCompleted": true,
+        "replayStarted": true,
         "canvasDrag": true,
         "canvasDragPreservesSheetPosition": true,
+        "touchAction": "none",
+        "staticOverlayNotDuplicated": true,
+        "sheetBounds": {
+          "x": 117,
+          "y": 120.90625,
+          "width": 480,
+          "height": 685.09375,
+          "bottom": 806
+        },
         "consoleErrors": 0,
-        "record": "docs/hanja-goal-g1-batch2-2026-09-21/README.md"
+        "record": "docs/hanja-goal-g1-batch3-2026-09-21/README.md",
+        "introReplayCompleted": true,
+        "writingReplayCompleted": true
       }
     }
   },
   "workingTreeCoverage": {
     "pass": true,
-    "addedCharacters": 2,
-    "addedStrokes": 37,
+    "addedCharacters": 1,
+    "addedStrokes": 17,
     "reproduction": true,
     "runtime": {
-      "applied": 4931,
+      "applied": 4932,
       "total": 5978,
-      "remaining": 1047,
+      "remaining": 1046,
       "percent": 82.5
     },
     "grades": [
       {
         "grade": "1급",
-        "applied": 1057,
+        "applied": 1058,
         "total": 1145,
-        "remaining": 88,
-        "percent": 92.3
+        "remaining": 87,
+        "percent": 92.4
       },
       {
         "grade": "2급",
@@ -168,9 +177,9 @@
     ]
   },
   "nextActions": [
-    "Commit verified 餠 and 鰒 batch if currentBatchCommitLookup is not yet present. Do not repeat successful tests or UI checks.",
-    "Select fresh unapplied candidates, excluding recorded holds unless new evidence exists. 髓 alternatives retain the same mismatching strokes 22 and 23; 鍮 lacks the domestic stroke 10 horizontal entry.",
-    "Keep all remaining 1,047 characters in scope; count matches are not approvals."
+    "Commit the verified 餞 batch if currentBatchCommitLookup is not yet present; do not repeat passing tests or UI checks.",
+    "Next count-compatible candidates: 朕 (10), 饌 (21), 讒 (24), 鍼 (17). Pin every source and review all strokes before application. 諭/愉 Kaisho and default sources are held for domestic shape differences; do not repeat without new evidence.",
+    "Keep all remaining 1,046 characters in scope; count agreement is not approval."
   ],
   "held": [
     "莽",
@@ -181,27 +190,29 @@
     "鼈",
     "瞥",
     "髓",
-    "鍮"
+    "鍮",
+    "諭",
+    "愉"
   ],
   "resources": {
     "productionStaticServer": "Stopped owned port 51836 server after UI checks.",
     "sourceReviewServer": "Stopped owned port 51837 server after visual review.",
     "temporaryHarness": "Owned isolated checkout and temporary HanjaCard harness removed after successful verification.",
     "browserViewportResetPending": "Old IAB provider unavailable after browser provider changed; no Chrome override set.",
-    "browserTabsCleanupPending": "All current-turn Chrome verification/source/error tabs closed; old IAB tabs unavailable."
+    "browserTabsCleanupPending": "All current-batch Chrome review/UI tabs closed. Historical old IAB tabs remain unavailable."
   },
   "batchPaths": [
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-stroke-dictionary-g1-kanjivg-batch2.ts",
-    "lib/hanja-stroke-dictionary-g1-kanjivg-batch2.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch2.json",
-    "docs/hanja-goal-g1-batch2-2026-09-21/candidates.json",
-    "docs/hanja-goal-g1-batch2-2026-09-21/findings.json",
-    "docs/hanja-goal-g1-batch2-2026-09-21/build.mjs",
-    "docs/hanja-goal-g1-batch2-2026-09-21/serve.py",
-    "docs/hanja-goal-g1-batch2-2026-09-21/README.md",
-    "docs/hanja-goal-2026-09-21/coverage.mjs",
+    "lib/hanja-stroke-dictionary-g1-kanjivg-batch3.ts",
+    "lib/hanja-stroke-dictionary-g1-kanjivg-batch3.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch3.json",
+    "docs/hanja-goal-g1-batch3-2026-09-21/candidates.json",
+    "docs/hanja-goal-g1-batch3-2026-09-21/alternatives.json",
+    "docs/hanja-goal-g1-batch3-2026-09-21/findings.json",
+    "docs/hanja-goal-g1-batch3-2026-09-21/build.mjs",
+    "docs/hanja-goal-g1-batch3-2026-09-21/serve.py",
+    "docs/hanja-goal-g1-batch3-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ]
