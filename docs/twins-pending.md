@@ -1022,3 +1022,49 @@ ones」는 이미 그렇게 적혀 있다 — 이 자리도 그래야 했다.
     having-the-knack(능숙함)        물레 위의 손   ↔ 개념 potter(도예가)
     the-art-of-painting(그림 그리는 일) 이젤과 팔레트  ↔ 개념 easel(이젤) · artist(화가)
     the-gist-drawn-together(간추린 말) 깔때기       ↔ 개념 funnel(깔때기) · aim-before-you-loose
+
+## 생각(idea) 백열다섯의 몸통을 세었다 — 배지는 글자 수가 같으면 붙는다 (2026-09-21)
+
+`idea`의 그림 빚 115에서 열다섯을 뽑았다. 여섯은 **한글을 그림에 넣는 집안**
+이라 몰아 뽑아 끝냈다 — 띠에 「공산주의의」 · 「사회주의의」 · 「민족주의의」,
+배지에 「민족주의」 · 「인종주의」 · 「애국심」이다.
+
+    pnpm twins --file idea   761장 — 0쌍
+
+### 글자 수가 같으면 구조가 문턱 안으로 들어온다
+
+배지 여섯을 서로 맞대 재니 **글자 수로 갈린다.**
+
+    nation-first-belief(민족주의)    ↔ race-above-race-belief(인종주의)  구조 45 · 색 0.688
+    nation-first-belief(민족주의)    ↔ the-faith-of-rome(가톨릭교)       구조 57 · 색 1.350
+    race-above-race-belief(인종주의) ↔ the-faith-of-the-east(정교)       구조 63 · 색 0.875
+    race-above-race-belief(인종주의) ↔ love-of-ones-land(애국심)         구조 75 · 색 1.015
+    nation-first-belief(민족주의)    ↔ love-of-ones-land(애국심)         구조 82 · 색 1.263
+
+넉 자끼리는 **45 · 57 · 63**이고, 석 자가 끼면 **75 · 82**로 벌어진다.
+「민족주의」와 「인종주의」는 넉 자에 끝 두 자까지 같아 **구조 45 — 문턱
+안이다.** 색 0.688이 혼자 막고 있다.
+
+**한글 무리에서 색을 벌리는 것은 멋이 아니라 그물이다.** 기 열여섯과 달력
+열둘에서는 구조가 60~100이라 여유가 있었는데, 배지는 글자가 화면을 크게
+차지해 구조가 그만큼 붙는다. 이 무리에 새 개념을 넣을 때는 **넉 자 이름에
+비슷한 빛깔을 주지 않는다.**
+
+### 거울상 여덟 무리 (스물넷)
+
+| 무리 | 수 | 개념 |
+| --- | ---: | --- |
+| 매듭·밧줄 | 6 | `a-question-asked`(물음) ↔ `the-taking-in-of-it`(알아들음)은 **묶은 매듭과 푼 매듭**이다 · `the-end-of-it`(끝나는 데) · `and-also-that`(그리고) · `look-like-it`(~처럼 보이다) · `one-way-or-another`(어떻게든) |
+| 열쇠·자물쇠 | 4 | `it-cannot-be`(될 수 없이) · `sounds-like-it-could-be`(그럴듯한) · `hold-a-doubt`(미심쩍어하다) · **`quality/in-no-way`(도무지)** |
+| 퍼즐 · 빈 것 | 각 3 | `think-the-thing-up` · `quick-and-witty` · `the-wit-one-has` / `not-a-thing` · `anything-whatever` · `nothing-to-be-done` |
+| 갈림길 · 천 덮인 형체 · 아치 쐐기돌 · 저울 | 각 2 | `the-chance-of-it-being` ↔ `better-to-do-it` / `something-or-other` ↔ `take-it-to-be-so` / `it-would-be-so` ↔ `you-cannot-leave-it-out` / `to-my-mind` ↔ `a-showing-it-to-be-false` |
+
+**파일을 건너뛰는 쌍이 있다.** `idea/it-cannot-be`(될 수 없이)는 「열쇠 곁에
+구멍 꼴이 다른 자물쇠」이고 `quality/in-no-way`(도무지)는 「구멍 꼴이 확실히
+다른 열쇠 구멍 곁의 열쇠」다 — **글이 거의 같다.** 한 파일만 훑어서는 안
+걸린다.
+
+**파일 밖과 겹쳐 이번 회차에서 뺀 둘.**
+
+    form-it-up-whole(이루어 놓다)     벌집        ↔ 개념 honeycomb(벌집 모양의)
+    gaze-and-lose-oneself(넋 놓고 보다) 우물의 두레박  ↔ 개념 well(우물) · lower-down(내리다)
