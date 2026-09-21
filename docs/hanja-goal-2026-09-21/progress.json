@@ -1,34 +1,28 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "0f76065f774d6d15baedcb1c5b15227cd2c63e2e",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-tomoe-batch18-2026-09-22/findings.json",
+  "lastCompletedCommit": "afcd783613a582884bd71e28a6dbb155e7ba9a7a",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-tomoe-batch19-2026-09-22/findings.json",
   "currentBatch": {
     "glyphs": [],
     "strokes": 0,
     "heldGlyphs": [
-      "莠",
-      "儁",
-      "雋",
-      "漑",
-      "斃",
-      "鐫"
+      "塚",
+      "褐",
+      "迸"
     ],
-    "heldStrokes": 91,
-    "domesticStrokes": 91,
-    "status": "Tomoe full paths reviewed and source hashes verified; no runtime addition",
+    "heldStrokes": 35,
+    "domesticStrokes": 35,
+    "status": "Tomoe full paths reviewed; prior hold conditions unresolved; no runtime addition",
     "checks": {
       "researchVerifierPassed": true,
-      "tomoeFilesAudited": 173,
-      "domesticCountMatches": 26,
-      "domesticVisualSteps": 91,
-      "candidateVisualSteps": 91,
-      "normalizedPathHashes": 6,
-      "remainingTomoeCountMatches": 20,
+      "domesticVisualSteps": 35,
+      "candidateVisualSteps": 35,
+      "normalizedPathHashes": 3,
+      "remainingTomoeCountMatches": 17,
       "runtimeUnchanged": true,
       "privateGraphicsSaved": false,
-      "standaloneRAMRendererVerified": true,
-      "record": "docs/hanja-goal-tomoe-batch18-2026-09-22/README.md",
+      "record": "docs/hanja-goal-tomoe-batch19-2026-09-22/README.md",
       "previousRuntimeVerification": {
         "commit": "6ab98191273500b4bd5b13fd9adf09c152a3e1c8",
         "hanjaTests": 829,
@@ -154,7 +148,7 @@
     ]
   },
   "nextActions": [
-    "Review Tomoe candidates 塚12, 褐13 and 迸10 (35 total strokes) against the exact prior KanjiVG hold conditions. All 20 remaining count-matched glyphs are listed in next.json.",
+    "Review Tomoe candidates 鍮17, 諭16 and 愉12 (45 strokes) against prior hold conditions before full approval. All 17 remaining count-matched candidates are in next.json.",
     "Use pinned l4u/tomoe 9d054a1f490368e0d45e0aff6430ce3598ab92c5/data/handwriting-ja.xml and its LGPL-2.1 notice. Identical Tegaki and iacore copies are not independent evidence.",
     "Keep domestic graphics RAM-only, preserve every source point/boundary, and apply any fully passing candidate to runtime with source/licence files, tests/build/UI checks and an isolated commit."
   ],
@@ -205,19 +199,17 @@
     "鐫"
   ],
   "resources": {
-    "tabs": "closed",
-    "ramServers": "51844/51845/51846/51847/51848 stopped",
+    "tabs": "closed (verified browser list empty)",
+    "ramServers": "51849/51850 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-tomoe-batch18-2026-09-22/metadata.json",
-    "docs/hanja-goal-tomoe-batch18-2026-09-22/findings.json",
-    "docs/hanja-goal-tomoe-batch18-2026-09-22/sources.json",
-    "docs/hanja-goal-tomoe-batch18-2026-09-22/next.json",
-    "docs/hanja-goal-tomoe-batch18-2026-09-22/serve.py",
-    "docs/hanja-goal-tomoe-batch18-2026-09-22/verify.mjs",
-    "docs/hanja-goal-tomoe-batch18-2026-09-22/README.md",
-    "docs/hanja-goal-tomoe-batch18-2026-09-22/audit.py"
+    "docs/hanja-goal-tomoe-batch19-2026-09-22/metadata.json",
+    "docs/hanja-goal-tomoe-batch19-2026-09-22/findings.json",
+    "docs/hanja-goal-tomoe-batch19-2026-09-22/next.json",
+    "docs/hanja-goal-tomoe-batch19-2026-09-22/serve.py",
+    "docs/hanja-goal-tomoe-batch19-2026-09-22/verify.mjs",
+    "docs/hanja-goal-tomoe-batch19-2026-09-22/README.md"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-tomoe-batch18-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-tomoe-batch19-2026-09-22/next.json"
 }
