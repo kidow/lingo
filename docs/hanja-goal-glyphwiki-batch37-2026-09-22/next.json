@@ -1,0 +1,64 @@
+{
+  "glyph": "蔗",
+  "strokes": 15,
+  "status": "source acquired; full visual review not started",
+  "source": {
+    "glyph": "蔗",
+    "root": "u8517-k",
+    "records": {
+      "u8517-k": {
+        "name": "u8517-k",
+        "version": 6,
+        "related": "U+8517",
+        "data": "99:0:0:0:0:200:200:koseki-359410"
+      },
+      "koseki-359410": {
+        "name": "koseki-359410",
+        "version": 6,
+        "related": "U+8517",
+        "data": "99:0:0:0:0:199:159:ufa5e-03$99:0:0:0:32:200:196:u5eb6@5"
+      },
+      "ufa5e-03": {
+        "name": "ufa5e-03",
+        "version": 8,
+        "related": "U+8279",
+        "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39"
+      },
+      "u5eb6@5": {
+        "name": "u5eb6",
+        "version": 5,
+        "related": "U+5EB6",
+        "data": "99:0:0:0:0:200:200:u5e7f@2$1:0:0:46:84:175:84$1:0:13:83:58:83:124$1:2:2:83:124:131:124$1:0:23:131:58:131:124$99:0:0:27:34:191:198:u706c-04"
+      },
+      "u5e7f@2": {
+        "name": "u5e7f",
+        "version": 2,
+        "related": "U+5E7F",
+        "data": "1:0:32:102:14:102:45$1:2:0:37:45:184:45$7:12:7:37:45:37:102:37:160:10:189"
+      },
+      "u706c-04": {
+        "name": "u706c-04",
+        "version": 5,
+        "related": "U+706C",
+        "data": "2:7:8:43:140:42:171:22:182$2:7:8:69:142:83:159:81:180$2:7:8:107:142:126:159:128:180$2:7:8:147:141:171:160:177:182"
+      }
+    },
+    "status": "candidate-not-reviewed"
+  },
+  "metadata": {
+    "glyph": "蔗",
+    "grade": "1급",
+    "catalogStrokes": 15,
+    "dictionaryStrokes": 15,
+    "dictionary": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/8517.svg",
+      "bytes": 8014,
+      "sha256": "e47233a60378fbc1ad14ea202169639f62e382144c2bda6e8bb7d228645ca378"
+    }
+  },
+  "nextSteps": [
+    "Reconfirm 蔗 is absent from current runtime and six exact source records match.",
+    "Compare full source geometry to the domestic15 steps in RAM. Source uses line2/0, vertical0/13 and0/23, and vertical-sweep7:12:7; independently confirm cap meanings before supporting them.",
+    "If all paths, directions and cumulative forms match, implement narrowly gated source-derived geometry and complete runtime/tests/build/UI/commit. Do not reuse components as proof of this glyph."
+  ]
+}
