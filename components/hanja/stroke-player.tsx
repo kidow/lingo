@@ -155,7 +155,7 @@ function VerifiedPlayback({ data, active, autoPlay, guide, children }: {
   const Icon = manual ? StepForward : phase === 'playing' ? Pause : Play
   const diagram = (
     <svg viewBox="0 0 100 100" className="h-full w-full" role="img" aria-label={data.glyph}
-      fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
+      fill="none" stroke="currentColor" strokeWidth={data.verificationSource === 'ehanja-crosschecked' ? data.strokeWidth ?? 5 : 5} strokeLinecap="round" strokeLinejoin="round">
       {guide && started && <g opacity="0.12" aria-hidden>{data.paths.map((d, i) => <path key={i} d={d} />)}</g>}
       {data.paths.map((d, i) => <path key={i} ref={(node) => { paths.current[i] = node }} d={d}
         visibility={started && i >= count ? 'hidden' : undefined}

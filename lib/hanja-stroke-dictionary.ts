@@ -499,6 +499,8 @@ export function dictionarySourceReference(glyph: string) {
 
 export type HanjaDictionaryStrokeData = {
   glyph: string
+  /** Optional source-derived width in the normalized 100-unit viewBox; pinned by its batch loader. */
+  strokeWidth?: number
   verificationSource: 'ehanja-crosschecked'
   verifiedAt: string
   geometrySource: string
