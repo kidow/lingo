@@ -1,30 +1,27 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "cbe1e5e8b3d90f3f20e4243f58c6336101903d7c",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-alternative-corpora-batch16-2026-09-22/findings.json",
+  "lastCompletedCommit": "21aae54ba5f4936c5f597ff110dfab6fe681a56b",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-fallback-diff-batch17-2026-09-22/findings.json",
   "currentBatch": {
     "glyphs": [],
     "strokes": 0,
     "heldGlyphs": [
-      "兕",
-      "牖",
-      "瘦"
+      "麑"
     ],
-    "heldStrokes": 37,
-    "domesticStrokes": 37,
-    "status": "research verified; resolve commit with currentBatchCommitLookup",
+    "heldStrokes": 19,
+    "domesticStrokes": 0,
+    "status": "public geometry differences verified; prior domestic hold retained",
     "checks": {
       "researchVerifierPassed": true,
-      "domesticSteps": 37,
-      "candidateStrokes": 37,
-      "newHanziVGFilesWithDifferentCounts": 5,
-      "fallbackFilesAudited": 287,
-      "fallbackMatchingFiles": 45,
-      "fallbackMatchingGlyphs": 25,
+      "comparedFiles": 45,
+      "identicalFiles": 42,
+      "reorderedExistingPathFiles": 3,
+      "newDomesticVisualSteps": 0,
+      "newSourceFilenameCandidates": 173,
       "runtimeUnchanged": true,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/README.md",
+      "record": "docs/hanja-goal-fallback-diff-batch17-2026-09-22/README.md",
       "previousRuntimeVerification": {
         "commit": "6ab98191273500b4bd5b13fd9adf09c152a3e1c8",
         "hanjaTests": 829,
@@ -150,9 +147,9 @@
     ]
   },
   "nextActions": [
-    "Compare the 45 HanziVG fallback files listed in sources.json with pinned KanjiVG path geometry. Ignore formatting-only differences and identical inherited paths.",
-    "If any whole-glyph geometry differs, check the exact earlier hold condition before full domestic visual review. A fork does not constitute independent domestic evidence.",
-    "Apply only a passing complete candidate, then run its runtime validations and commit; otherwise record the changed evidence and continue independent sources."
+    "Read corpus-specific provenance/license for Tegaki's tomoe-ja-kanji compressed XML data at pinned revision 7a74e442c4130cccc226a7e7c2b683ac94c0cccb. Do not infer corpus licensing from code/model notices.",
+    "Run the next-source inventory including .xml.gz, parse the 173 currently missing glyph files in RAM, validate glyph and stroke/point structure, and compare domestic stroke counts.",
+    "Select eligible complete candidates for whole-glyph domestic visual review. Apply passing licensed paths to runtime and perform tests/build/UI checks before committing."
   ],
   "held": [
     "莽",
@@ -200,14 +197,13 @@
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/originals.json",
-    "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/candidates.json",
-    "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/sources.json",
-    "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/findings.json",
-    "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/coverage.json",
-    "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/serve.py",
-    "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/verify.mjs",
-    "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/README.md"
+    "docs/hanja-goal-fallback-diff-batch17-2026-09-22/audit.py",
+    "docs/hanja-goal-fallback-diff-batch17-2026-09-22/mapping.py",
+    "docs/hanja-goal-fallback-diff-batch17-2026-09-22/findings.json",
+    "docs/hanja-goal-fallback-diff-batch17-2026-09-22/next-source.json",
+    "docs/hanja-goal-fallback-diff-batch17-2026-09-22/inventory.py",
+    "docs/hanja-goal-fallback-diff-batch17-2026-09-22/verify.mjs",
+    "docs/hanja-goal-fallback-diff-batch17-2026-09-22/README.md"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-alternative-corpora-batch16-2026-09-22/sources.json"
+  "nextCandidateInventory": "docs/hanja-goal-fallback-diff-batch17-2026-09-22/next-source.json"
 }
