@@ -1,0 +1,13 @@
+{
+  "sourceFormat": "https://glyphwiki.org/wiki/GlyphWiki:KAGEデータ仕様@2",
+  "engineCommit": "49232bac0348fe815f4200d4116ab7917e0db47f",
+  "engine": "https://github.com/kamichikoichi/kage-engine",
+  "observations": [
+    "Type2 is a quadratic using the three declared points; head22 joins the preceding horizontal at the upper-right corner.",
+    "Head7/tail8 describe start/stop cap treatment, not an extra hook. Head32 joins an interior point. Tail7 allows a sweeping end.",
+    "kagedf.js type2 normal-curve branch preserves the declared centerline; hook tails4/5 are not supported.",
+    "kagecd.js head22/32 uses zero initial point delta. Outline cap shaping is not claimed to be the exact SVG font outline.",
+    "Explicit group [5,6] is permitted only with source adjacency, matching coordinates and 0:2 line -> 22:7 curve. No guessed bridging.",
+    "Final stroke is copied from alternate whole 葵 source u8475-var-003@2; not inferred from another glyph or manually adjusted."
+  ]
+}

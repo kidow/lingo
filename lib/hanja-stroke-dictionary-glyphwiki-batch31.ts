@@ -1,0 +1,73 @@
+/** GlyphWiki geometry crosschecked with the domestic dictionary, not exam-body approval. */
+import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch31.json' with { type: 'json' }
+import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
+
+const PIN = {
+  "glyph": "葵",
+  "verificationSource": "ehanja-crosschecked",
+  "verifiedAt": "2026-09-22",
+  "geometrySource": "17044d76c707fad8e396971b94de1a72f3cc34642a9813e60c8bc76b39f10d17",
+  "geometryCorrection": "glyphwiki-exact-glyph-composite-reviewed-order-v1",
+  "sourceStrokeIndices": [
+    1,
+    2,
+    4,
+    3,
+    5,
+    9,
+    6,
+    8,
+    7,
+    13,
+    10,
+    11,
+    12
+  ],
+  "strokeWidth": 4.5,
+  "pathsSha256": "f5c04ef26af55fa709f07bab0d74da7c5b14767b49ccb4221492312b5a110507",
+  "sourceReference": {
+    "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8400/8475.svg",
+    "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8400/8475.svg",
+    "dictionarySvgSha256": "91fab332a587490ab2ce706762757013cd14c739382323b571cc04b804e60ca4",
+    "dictionaryDirectionStrokes": "1,2,3,4,5,6,7,8,9,10,11,12,13",
+    "orderReviewSha256": "a383b70c0ed3369deb7bd658f6c7726fd12775afef63306bfeb27d80f9c1b0a4",
+    "geometryReviewSha256": "a383b70c0ed3369deb7bd658f6c7726fd12775afef63306bfeb27d80f9c1b0a4",
+    "directionReviewSha256": "a383b70c0ed3369deb7bd658f6c7726fd12775afef63306bfeb27d80f9c1b0a4"
+  },
+  "geometryLicense": {
+    "spdx": "LicenseRef-GlyphWiki",
+    "attribution": "GlyphWiki contributors",
+    "url": "https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18",
+    "sourceUrl": "https://glyphwiki.org/wiki/u8475-var-001@1",
+    "revision": "u8475-var-001@1; ufa5e-03@8; u7676-03-var-003@1; u5929-g14@1; u8475-var-003@2; u7678-var-001@2",
+    "editableSource": "/hanja-strokes/glyphwiki/8475.json",
+    "modifications": "Source-declared affine placement; 200-to-100 scaling; explicit corner group5+6; reviewed group order; final stroke from alternate whole 葵 primitive14; width4.5. No invented points or path reversal. See editable source and pinned review recipe."
+  }
+} as const
+const PATHS = [
+  "M 6.5 16.8075 L 47.5 16.8075",
+  "M 32 6.6025 L 32 26.62",
+  "M 52.5 16.8075 L 93.5 16.8075",
+  "M 68 6.6025 L 68 26.62",
+  "M 19 31.86 L 50 31.86 Q 35 52.53 6 64.62",
+  "M 15.5 35.76 Q 25.5 40.83 29.5 46.68",
+  "M 75.5 31.86 Q 69.5 36.15 60 42.39",
+  "M 85.5 39.66 Q 79 43.95 70 49.02",
+  "M 50 31.86 Q 64 50.19 90.5 60.33",
+  "M 31.435 56.6625 L 70.795 56.6625",
+  "M 16.675 69.3225 L 85.555 69.3225",
+  "M 51.115 56.6625 Q 53.575 87.785 11.755 93.06",
+  "M 53 68.9 Q 67 84.9 86 90.1"
+] as const
+
+export function loadGlyphWikiBatch31Strokes(bundle: typeof reviewed): readonly HanjaDictionaryStrokeData[] {
+  if (!Array.isArray(bundle) || bundle.length !== 1) throw new Error('GlyphWiki batch31 count mismatch')
+  return bundle.map(entry => {
+    const { paths, ...metadata } = entry
+    if (JSON.stringify(metadata) !== JSON.stringify(PIN) || JSON.stringify(paths) !== JSON.stringify(PATHS)) {
+      throw new Error('GlyphWiki batch31 reviewed data mismatch')
+    }
+    return { ...entry, verificationSource: 'ehanja-crosschecked' as const }
+  })
+}
+export const HANJA_DICTIONARY_GLYPHWIKI_BATCH31_STROKES = loadGlyphWikiBatch31Strokes(reviewed)

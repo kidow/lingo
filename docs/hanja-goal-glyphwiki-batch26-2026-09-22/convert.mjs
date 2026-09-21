@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 
 // Only the line, quadratic and vertical-sweep forms actually used by this
 // reviewed subset are supported. KAGE primitives are not generally pen strokes.
-export function expandKage(source, { allowConnectionLines = false, allowBentStrokes = false } = {}) {
+export function expandKage(source, { allowConnectionLines = false, allowBentStrokes = false, allowReviewedCurves = false } = {}) {
   const primitives = []
   function visit(name, transform = [1, 1, 0, 0], ancestry = []) {
     assert(!ancestry.includes(name), 'Cyclic KAGE reference')
@@ -44,8 +44,16 @@ export function expandKage(source, { allowConnectionLines = false, allowBentStro
       const downRightBend = allowBentStrokes && type === 3 && head === 32 && tail === 0
         && values[3] === values[5] && values[6] === values[8]
         && values[4] < values[6] && values[5] < values[7]
-      assert(type === 1 ? (head === 0 && tail === 0) || connectedLine
-        : type === 2 ? (head === 0 && tail === 7) || (head === 7 && tail === 0)
+      // Curve caps/connection codes reviewed for 葵; no hook codes admitted.
+      // An upper-corner fragment is not a standalone pen stroke. The reviewed
+      // grouping helper must validate its exact predecessor and shared point.
+      const cornerLine = allowReviewedCurves && type === 1 && head === 0 && tail === 2
+        && values[4] === values[6] && values[3] < values[5]
+      const reviewedCurve = allowReviewedCurves && type === 2 && (
+        (head === 7 && tail === 8) || ((head === 22 || head === 32) && tail === 7)
+      )
+      assert(type === 1 ? (head === 0 && tail === 0) || connectedLine || cornerLine
+        : type === 2 ? (head === 0 && tail === 7) || (head === 7 && tail === 0) || reviewedCurve
           : type === 3 ? downRightBend : head === 0 && tail === 7,
       'Unsupported head/tail shape: do not omit hooks or other source features')
       const points = []
@@ -55,7 +63,8 @@ export function expandKage(source, { allowConnectionLines = false, allowBentStro
           (values[i + 1] * transform[1] + transform[3]) / 2,
         ])
       }
-      primitives.push({ type, points, source: name, sourceRow: index + 1 })
+      primitives.push({ type, points, source: name, sourceRow: index + 1,
+        ...(allowReviewedCurves ? { head, tail } : {}) })
     }
   }
   visit(source.root)
@@ -64,6 +73,8 @@ export function expandKage(source, { allowConnectionLines = false, allowBentStro
 
 export function kagePaths(source, order, options) {
   const primitives = expandKage(source, options)
+  assert(!primitives.some(p => p.head === 22 || (p.head === 0 && p.tail === 2)),
+    'KAGE upper corner requires explicit reviewed grouping')
   assert.deepEqual([...order].sort((a, b) => a - b),
     Array.from({ length: primitives.length }, (_, i) => i + 1),
     'Reviewed order must use each primitive exactly once')

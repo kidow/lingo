@@ -1,0 +1,101 @@
+{
+  "reviewedAt": "2026-09-22",
+  "status": "geometry-review-complete-runtime-validation-pending",
+  "entries": [
+    {
+      "glyph": "葵",
+      "decision": "approved",
+      "originalVisualSteps": 13,
+      "normalizedCumulativeStates": 13,
+      "finalFormReviewed": true,
+      "strokeWidth": 4.5,
+      "groups": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ],
+        [
+          12
+        ],
+        [
+          13
+        ],
+        [
+          14
+        ]
+      ],
+      "sourceStrokeIndices": [
+        1,
+        2,
+        4,
+        3,
+        5,
+        9,
+        6,
+        8,
+        7,
+        13,
+        10,
+        11,
+        12
+      ],
+      "replacement": {
+        "stroke": 13,
+        "root": "u8475-var-003",
+        "primitive": 14
+      },
+      "indexMeaning": "sourceStrokeIndices index the 13 explicit groups of the primary 14 primitives; final output13 is replaced by alternate raw primitive14",
+      "observations": [
+        "1 left grass horizontal left-to-right;2 left vertical top-to-bottom;3 right horizontal left-to-right;4 right vertical top-to-bottom.",
+        "5 starts rightward then folds down-left along the source-declared connected quadratic;6 left dot descends rightward and meets that fold.",
+        "7 and8 right short sweeps descend leftward in upper-to-lower order;9 begins at fold corner and sweeps down-right.",
+        "10 short then11 long lower horizontals travel left-to-right;12 starts at the short horizontal and falls down-left through the long horizontal.",
+        "13 alternate source begins near the long horizontal and curves down-right with the domestic starting tangent and final direction.",
+        "At uniform width4.5, primary grass/fold centerline gap5.24 stays open while the dot-to-fold distance4.1642 stays in contact.",
+        "All13 cumulative panels and the completed composite reviewed; modest font proportion differences remain, no structural/directional mismatch observed."
+      ],
+      "rejectedAlternatives": [
+        {
+          "root": "u8475-k@14",
+          "reason": "middle long sweep starts above and disconnected from the fold corner"
+        },
+        {
+          "root": "u8475-var-003@2",
+          "reason": "whole-source uniform width either closes grass gap or detaches internal dot; used only its reviewed final path"
+        },
+        {
+          "root": "u8475-var-001@1",
+          "reason": "unmodified final path starts too shallow; replaced by exact alternate whole-glyph path"
+        }
+      ]
+    }
+  ],
+  "privateGraphicsSaved": false
+}
