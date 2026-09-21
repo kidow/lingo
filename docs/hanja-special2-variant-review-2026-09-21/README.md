@@ -1,5 +1,9 @@
 # 특급II 16자·207획 전체 시각 검토
 
+> 후속 적용: 검토한 **15자·190획**을 런타임에 연결했다. 최신 적용 수치와 화면 검증은
+> [integration.md](integration.md), 재현 결과는 [integration-checks.json](integration-checks.json)을 본다.
+> 아래 본문과 `review.json`은 적용 전 시각 검토 기록으로 보존한다.
+
 2026-09-21 · **15자·190획 경로 검토 완료, 篠 1자·17획 보류. 런타임 추가 0자.**
 
 [35자 선별 결과](../hanja-special2-variants-2026-09-21/README.md)에서 우선 검토 대상으로 잡은 16자를 전부 대조했다.

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "verified": true,
+  "recordedAt": "2026-09-21 02:57:37 UTC",
+  "sourceVerification": {
+    "command": "node docs/hanja-special2-variant-review-2026-09-21/verify.mjs",
+    "verifiedAt": "2026-09-21T02:47:22.166Z",
+    "remoteLicensedCorpora": [
+      "Ja",
+      "Hans"
+    ],
+    "characters": 16,
+    "uniqueStrokes": 207,
+    "candidateStrokesInspected": 228,
+    "pathReviewed": {
+      "characters": 15,
+      "strokes": 190
+    },
+    "held": {
+      "glyphs": [
+        "篠"
+      ],
+      "strokes": 17
+    },
+    "historicalReviewApprovals": 0,
+    "runtimeApprovalsAdded": 15,
+    "reviewSha256": "4986561bf06c6f53df8a6e5365d1a9760cbb9c3328b57e76b0ca875838e86c3a"
+  },
+  "runtime": {
+    "total": 5978,
+    "applied": 4919,
+    "remaining": 1059,
+    "special2": {
+      "total": 1150,
+      "applied": 838,
+      "remaining": 312
+    }
+  },
+  "tests": {
+    "command": "node --test lib/hanja*.test.ts",
+    "passed": 756,
+    "failed": 0
+  },
+  "productionBuild": {
+    "command": "pnpm build",
+    "passed": true,
+    "typecheckPassed": true,
+    "temporaryRouteRemoved": true,
+    "temporaryExportRemoved": true,
+    "initialAttempt": "The first invocation exceeded a 55-second harness timeout during TypeScript checking; the retry and final build passed."
+  },
+  "browser": {
+    "mode": "Production static export with actual HanjaCard and WritingPractice components; temporary fixture removed afterward",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "intro": {
+      "glyphs": [
+        "夔",
+        "犁",
+        "蓼",
+        "鵡",
+        "筬",
+        "亐",
+        "臾",
+        "贇",
+        "卄",
+        "渚",
+        "猪",
+        "簒",
+        "砦",
+        "穉",
+        "啣"
+      ],
+      "autoPlayVerified": true,
+      "staticAndAnimatedPathsIdentical": true,
+      "staticHiddenDuringPlayback": true,
+      "catalogAndPlaybackCountsShown": true,
+      "horizontalOverflow": false
+    },
+    "writing": {
+      "glyphs": [
+        "夔",
+        "臾",
+        "渚",
+        "猪"
+      ],
+      "autoPlayVerified": true,
+      "overlaidStaticGlyphs": 0,
+      "horizontalOverflow": false,
+      "replayAndCanvasGlyph": "夔",
+      "replayVerified": true,
+      "inkStrokesAfterDrag": 1,
+      "sheetStayedOpen": true,
+      "canvasTouchAction": "none",
+      "canvasNoDrag": true
+    },
+    "held": {
+      "glyph": "篠",
+      "catalogStrokes": 16,
+      "introAndWritingPlaybackControlsAbsent": true
+    },
+    "consoleErrors": 0,
+    "notes": "The dev fixture did not hydrate; interaction checks were completed against the production build. No learning progress or track preferences were changed."
+  },
+  "proprietaryAssetsSaved": 0,
+  "nextReview": {
+    "glyphs": [
+      "纛",
+      "蘿",
+      "藺",
+      "鱉",
+      "宬",
+      "嘯",
+      "瀟",
+      "嘴"
+    ],
+    "characters": 8,
+    "strokes": 148
+  }
+}

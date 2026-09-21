@@ -62,7 +62,7 @@ for (const entry of review.entries) {
   assert.deepEqual(entry.dictionary, originalEntry.dictionary)
   assert.equal(entry.staticSvg.sha256, originalEntry.staticSvg.sha256)
   assert.equal(entry.runtimeApproved, false)
-  assert.equal(hanjaStrokeData(catalog.get(entry.glyph)), null, 'This review must not silently promote ' + entry.glyph)
+  const runtime = hanjaStrokeData(catalog.get(entry.glyph))
   assert.ok(entry.observations.length >= 2 && entry.remainingGate)
   for (const reviewed of entry.reviewedCandidates) {
     const snapshot = reviewed.corpus === 'Ja' ? originalEntry : alternate.entries.find(e => e.glyph === entry.glyph)
@@ -71,6 +71,7 @@ for (const entry of review.entries) {
     inspectedStrokes += reviewed.sourceStrokeIndices.length
   }
   if (entry.decision === 'held-path-shape-mismatch') {
+    assert.equal(runtime, null, 'A held path must remain unavailable')
     assert.equal(entry.glyph, '篠')
     assert.equal(entry.selectedCorpus, null)
     assert.equal(entry.selectedCandidateSha256, null)
@@ -82,6 +83,16 @@ for (const entry of review.entries) {
     assert.ok(selected)
     assert.equal(entry.selectedCandidateSha256, selected.candidateSha256)
     assert.deepEqual(selected.issueStrokes, [])
+    const snapshot = entry.selectedCorpus === 'Hans' ? alternate : original
+    const candidate = snapshot.entries.find(e => e.glyph === entry.glyph)
+    assert.ok(runtime, 'The separately integrated variant must be available: ' + entry.glyph)
+    assert.deepEqual(runtime.paths, candidate.paths)
+    assert.equal(runtime.candidateSha256, entry.selectedCandidateSha256)
+    assert.equal(runtime.pathsSha256, hash(JSON.stringify(candidate.paths)))
+    assert.equal(runtime.geometrySource, snapshot.sources[entry.selectedCorpus].sha256)
+    assert.deepEqual(runtime.sourceStrokeIndices, selected.sourceStrokeIndices)
+    assert.deepEqual(runtime.variant, { catalogStrokes: entry.catalogStrokes, playbackStrokes: entry.playbackStrokes, form: '사전' })
+    assert.equal(runtime.sourceReference.orderReviewSha256, hash(readFileSync(new URL('review.json', import.meta.url))))
     reviewedStrokes += entry.playbackStrokes
   }
 }
@@ -103,6 +114,6 @@ const characters = readdirSync(new URL('content/hanja/characters/', root)).filte
 const applied = characters.filter(c => hanjaStrokeData(c)).length
 console.log(JSON.stringify({ verified: true, date: new Date().toISOString(), characters: 16, uniqueStrokes: 207,
   candidateStrokesInspected: inspectedStrokes, pathReviewed: { characters: 15, strokes: reviewedStrokes },
-  held: { glyphs: ['篠'], strokes: heldStrokes }, runtimeApprovalsAdded: 0, proprietaryAssetsSaved: 0,
+  held: { glyphs: ['篠'], strokes: heldStrokes }, historicalReviewApprovals: 0, runtimeApprovalsAdded: 15, proprietaryAssetsSaved: 0,
   runtime: { total: characters.length, applied, remaining: characters.length - applied,
     special2: { total: catalog.size, applied: [...catalog.values()].filter(c => hanjaStrokeData(c)).length } } }, null, 2))
