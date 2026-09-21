@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "researchedOn": "2026-09-21",
+  "repos": [
+    {
+      "repo": "Connum/hanzivg",
+      "revision": "55ecef6a881d5120cd261587d668e1b6af843ec2",
+      "truncated": false,
+      "matches": []
+    },
+    {
+      "repo": "g0v/zh-stroke-data",
+      "revision": "26f12d65063cc97d2773b7777232277bfca5f563",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "json/9c49.json",
+          "blobSha1": "c922f3396375780d97a12f72ba4f8c744a163528",
+          "bytes": 69786
+        },
+        {
+          "path": "utf8/9c49.xml",
+          "blobSha1": "dc6b440147ce8c89debd3704f92c7e7173707d8c",
+          "bytes": 37184
+        }
+      ]
+    },
+    {
+      "repo": "chanind/hanzi-writer-data",
+      "revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "data/鱉.json",
+          "blobSha1": "d343772615f62860394a4e15025e7ee1577b97e1",
+          "bytes": 5717
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://api.github.com/repos/Connum/hanzivg/git/trees/55ecef6a881d5120cd261587d668e1b6af843ec2?recursive=1",
+      "status": 200,
+      "bytes": 2640922,
+      "sha256": "300b4175cb4d64f72e1d63cc08bd37fa0f0f5ef529b4d19bfa83cf04f84bea9e"
+    },
+    {
+      "url": "https://api.github.com/repos/g0v/zh-stroke-data/git/trees/26f12d65063cc97d2773b7777232277bfca5f563?recursive=1",
+      "status": 200,
+      "bytes": 3271905,
+      "sha256": "79c87b0f7b4c076ccae59037ed881703ba4edd5c7cc2cd178b0858eb63854692"
+    },
+    {
+      "url": "https://api.github.com/repos/chanind/hanzi-writer-data/git/trees/68d10a4b21150cae5e1ebbd223eed289cf32d90c?recursive=1",
+      "status": 200,
+      "bytes": 2207440,
+      "sha256": "b71b4b0ff74fbbdb4ee568b6b1294abdaeda1120d3261c41b6ed60d93e4948cd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/g0v/zh-stroke-data/26f12d65063cc97d2773b7777232277bfca5f563/README.md",
+      "status": 200,
+      "bytes": 4287,
+      "sha256": "238bb28208c9661976edd4b77ff84c3d7e30718b7f7c94fb358ce0a08077c22e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/g0v/zh-stroke-data/26f12d65063cc97d2773b7777232277bfca5f563/json/9c49.json",
+      "status": 200,
+      "bytes": 69786,
+      "sha256": "3e908d57592f23c7af7f2ef48b439a99adcf8191bace128e929cd3d551d4830a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E9%B1%89.json",
+      "status": 200,
+      "bytes": 5717,
+      "sha256": "24ab6de7a1fbc331d5fab9e9be83b9b955ea4b519e01139a27d237c0159f189d"
+    },
+    {
+      "url": "https://stroke-order.learningweb.moe.edu.tw/page.jsp?ID=28",
+      "status": 200,
+      "bytes": 17595,
+      "sha256": "8df85263349bcb89803db829c1fc0e14ca334fc21b409555986223a00180866e"
+    },
+    {
+      "url": "https://www.cns11643.gov.tw/wordView.jsp?ID=142954",
+      "status": 200,
+      "bytes": 14226,
+      "sha256": "a729bc0d835f91b81cf96e2b46e1b9aef739d0753298d54eb4c120d4371176b0"
+    }
+  ],
+  "findings": {
+    "g0v": {
+      "glyph": "鱉",
+      "strokes": 22,
+      "trackCounts": [
+        2,
+        2,
+        2,
+        7,
+        3,
+        2,
+        2,
+        3,
+        2,
+        3,
+        4,
+        2,
+        4,
+        2,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "dataExplicitlyExcludedFromBlanketCC0": true,
+      "publisherNoncommercialNoDerivatives": true,
+      "runtimeEligible": false
+    },
+    "hanziWriter": {
+      "glyph": "鱉",
+      "strokes": 22,
+      "sameMediansAsHeldCandidate": true
+    },
+    "cns": {
+      "glyph": "宬",
+      "strokes": 10,
+      "strokeTypes": "丶丶㇕一丿一㇕㇕丶丿"
+    }
+  },
+  "proprietaryAssetsSaved": 0,
+  "runtimeApprovalsAdded": 0
+}

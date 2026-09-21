@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict'
+import {readFileSync, readdirSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {hanjaStrokeData} from '../../lib/hanja-strokes.ts'
+const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url)))
+const sources = read('sources.json'), official = read('official-seong.json')
+assert.equal(sources.proprietaryAssetsSaved, 0)
+assert.equal(sources.runtimeApprovalsAdded, 0)
+assert.ok(sources.repos.every(r => r.truncated === false))
+assert.ok(sources.repos.every(r => !r.matches.some(f => /5bac|23468|宬/i.test(f.path))))
+assert.equal(sources.findings.g0v.strokes, 22)
+assert.equal(sources.findings.g0v.dataExplicitlyExcludedFromBlanketCC0, true)
+assert.equal(sources.findings.g0v.publisherNoncommercialNoDerivatives, true)
+assert.equal(sources.findings.g0v.runtimeEligible, false)
+assert.equal(sources.findings.hanziWriter.sameMediansAsHeldCandidate, true)
+assert.equal(sources.findings.cns.strokes, 10)
+assert.equal(sources.findings.cns.strokeTypes, '丶丶㇕一丿一㇕㇕丶丿')
+assert.equal([...sources.findings.cns.strokeTypes].length, 10)
+assert.equal(official.strokes, 9)
+assert.equal(official.strokeCategorySequence, '445135534')
+assert.equal(official.pdfPageIndex, 172)
+assert.equal(official.printedPage, 167)
+assert.equal(official.tableEntry, 6900)
+assert.equal(official.visuallyInspected, true)
+assert.equal(official.reusableSvgPathsAcquired, 0)
+const held = read('../hanja-special2-direction-review-2026-09-21/originals.json').entries.find(e => e.glyph === '鱉')
+const writerSource = sources.sources.find(s => s.url.includes('hanzi-writer-data') && s.url.endsWith('.json'))
+const response = await fetch(writerSource.url)
+assert.equal(response.status, 200)
+const bytes = Buffer.from(await response.arrayBuffer())
+assert.equal(bytes.length, writerSource.bytes)
+assert.equal(createHash('sha256').update(bytes).digest('hex'), writerSource.sha256)
+assert.deepEqual(JSON.parse(bytes).medians, held.medians)
+const all = readdirSync(new URL('../../content/hanja/characters/', import.meta.url))
+  .filter(f => f.endsWith('.json')).flatMap(f => read('../../content/hanja/characters/' + f).characters)
+for (const glyph of [...'鱉宬莽萸兎']) assert.equal(hanjaStrokeData(all.find(c => c.glyph === glyph)), null)
+const applied = all.filter(c => hanjaStrokeData(c)).length
+assert.equal(applied, 4925)
+assert.equal(all.length, 5978)
+console.log(JSON.stringify({pass:true,researchedCharacters:2,runtimeApprovalsAdded:0,
+  newReusableCompletePaths:0,officialSeongPrintedPage:167,writerDuplicateConfirmed:true,
+  proprietaryAssetsSaved:0,runtime:{applied,total:all.length,remaining:all.length-applied}},null,2))
