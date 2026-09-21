@@ -1,25 +1,24 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "eab21b8ec685dd9a897db389d30b3e3f21784701",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch37-2026-09-22/validation.json",
+  "lastCompletedCommit": "a38570411e0aa613fa581c28d19d26be3e0b83b3",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch38-2026-09-22/validation.json",
   "currentBatch": {
     "glyphs": [
-      "薯"
+      "蔗"
     ],
-    "strokes": 18,
-    "status": "held after pinned-engine reproduction and four domestic stroke comparisons; no runtime addition",
+    "strokes": 15,
+    "status": "held after primary and alternative whole-glyph comparisons; no runtime addition",
     "checks": {
       "researchVerifierPassed": true,
-      "sourceVersions": 9,
+      "sourceVersions": 20,
       "domesticVisualSteps": 4,
-      "normalizedCumulativeStates": 4,
-      "fullGlyphCompared": true,
-      "full18StrokeApproval": false,
+      "alternativeVisualSteps": 2,
+      "full15StrokeApproval": false,
       "runtimeChanged": false,
       "privateGraphicsSaved": false,
-      "engineReproduction": true,
-      "record": "docs/hanja-goal-glyphwiki-batch37-2026-09-22/validation.json"
+      "replayHelper": true,
+      "record": "docs/hanja-goal-glyphwiki-batch38-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
@@ -138,9 +137,10 @@
     ]
   },
   "nextActions": [
-    "Reconfirm 蔗 is absent from current runtime and six exact source records match.",
-    "Compare full source geometry to the domestic15 steps in RAM. Source uses line2/0, vertical0/13 and0/23, and vertical-sweep7:12:7; independently confirm cap meanings before supporting them.",
-    "If all paths, directions and cumulative forms match, implement narrowly gated source-derived geometry and complete runtime/tests/build/UI/commit. Do not reuse components as proof of this glyph."
+    "Reconfirm runtime absence and all8 pinned source records.",
+    "The grass reference encodes identity pivots sx200/sy-60 and source0/-60. Reproduce with the pinned engine; do not simply bypass the stretch guard.",
+    "Review all15 domestic directions and cumulative/final form. Source contains two box corners and a horizontal-to-quadratic 又 corner; never merge without exact source adjacency plus domestic confirmation.",
+    "Only if accepted add narrowly scoped geometry handling, runtime registration, tests/types/build/product UI and commit."
   ],
   "held": [
     "莽",
@@ -209,24 +209,30 @@
       "reason": "11: Domestic downward stroke starts at the bottom of net; source start lies below the net with a gap. 13: Source long falling stroke descends farther and intersects the 日 left vertical below its start. 14: Domestic dot ends steeply downward and touches subsequent 日 top; source dot ends down-right and remains separated at reviewed width. 15: Domestic vertical begins at the long falling stroke; source vertical begins above its intersection.",
       "record": "docs/hanja-goal-glyphwiki-batch37-2026-09-22/findings.json",
       "releaseCondition": "A genuinely different licensed whole-glyph source resolving these connections and directions, or source-authoritative point corrections followed by all18 direction/cumulative checks. Do not change points to imitate the dictionary."
+    },
+    {
+      "glyph": "蔗",
+      "reason": "Primary lower horizontal is too short; whole-glyph alternative fixes it but both share a second fire dot that moves downward-right where the domestic reference moves downward-left.",
+      "record": "docs/hanja-goal-glyphwiki-batch38-2026-09-22/findings.json",
+      "releaseCondition": "A reusable whole 蔗 source resolving the second fire-dot direction while preserving long lower horizontal and four grass strokes; then review all15 directions/cumulative states. Do not mirror or redraw the current dot."
     }
   ],
   "resources": {
-    "tabs": "batch37 comparison tab closed",
-    "ramServers": "batch37 port51888 stopped; no current RAM review servers",
+    "tabs": "batch38 comparison and source tabs closed",
+    "ramServers": "batch38 ports51889–51890 stopped; no active RAM review server",
     "isolatedWorktree": "none",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/sources.json",
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/reference.json",
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/validation.json",
-    "docs/hanja-goal-glyphwiki-batch37-2026-09-22/next.json"
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch38-2026-09-22/next.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch37-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch38-2026-09-22/next.json"
 }

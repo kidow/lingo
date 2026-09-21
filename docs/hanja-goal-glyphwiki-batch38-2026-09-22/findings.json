@@ -1,0 +1,50 @@
+{
+  "glyph": "蔗",
+  "strokes": 15,
+  "decision": "held",
+  "date": "2026-09-22",
+  "primary": {
+    "root": "u8517-k",
+    "reviewedSteps": [
+      11,
+      12,
+      13,
+      14
+    ],
+    "fullFormCompared": true,
+    "issues": [
+      {
+        "stroke": 11,
+        "reason": "Domestic lower horizontal extends beyond both inner verticals; source u5eb6@5 row3 joins only83 to131."
+      },
+      {
+        "stroke": 13,
+        "reason": "Domestic second fire dot runs downward-left; source u706c-04@5 second curve begins x69 and ends x81, moving downward-right."
+      }
+    ]
+  },
+  "alternative": {
+    "root": "gaijin_krcourt-08517",
+    "reviewedSteps": [
+      11,
+      13
+    ],
+    "observations": [
+      "Whole-glyph alternative supplies a long lower horizontal and four-stroke grass, resolving the first discrepancy.",
+      "It retains the exact same u706c-04@5 second fire dot; domestic13 direction mismatch remains."
+    ]
+  },
+  "otherSources": [
+    {
+      "root": "u8517-ue0101",
+      "finding": "Same lower-body reference as gaijin alternative but three-stroke grass. Not an independent correction for stroke13."
+    },
+    {
+      "root": "toki-01080170",
+      "finding": "Alias to U+2C788 source with 从 below, not the domestic four separated fire dots. Code-level exclusion only; not a full direction review."
+    }
+  ],
+  "full15StrokeApproval": false,
+  "releaseCondition": "Find a reusable whole 蔗 source whose second fire dot travels downward-left while preserving the long inner lower horizontal and correct four grass strokes; then review all15 paths/directions/cumulative forms. Do not reverse or redraw the current dot.",
+  "privateGraphicsSaved": false
+}
