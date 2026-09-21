@@ -1,27 +1,26 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "d12135e6ac393c0914ac15bbe87426d2ace94752",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch31-2026-09-22/validation.json",
+  "lastCompletedCommit": "d4b5adf93226cf0c78910b9629d9bf177d3faebf",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch32-2026-09-22/validation.json",
   "currentBatch": {
-    "glyphs": [
-      "葵"
+    "glyphs": [],
+    "strokes": 0,
+    "heldGlyphs": [
+      "苔"
     ],
-    "strokes": 13,
-    "status": "runtime, full geometry, isolated tests/types/build and actual product UI verified; commit resolved by currentBatchCommitLookup",
+    "heldStrokes": 9,
+    "domesticStrokes": 2,
+    "status": "苔 stroke5 boundary held; three pinned whole-glyph sources lack an exact continuous source path",
     "checks": {
       "researchVerifierPassed": true,
-      "sourceVersions": 6,
-      "domesticVisualSteps": 13,
-      "normalizedCumulativeStates": 13,
-      "fullGlyphReviewed": true,
-      "runtimeChanged": true,
+      "sourceVersions": 13,
+      "domesticVisualSteps": 2,
+      "normalizedCumulativeStates": 0,
+      "fullGlyphReviewed": false,
+      "runtimeChanged": false,
       "privateGraphicsSaved": false,
-      "hanjaTests": 849,
-      "typeCheck": true,
-      "build": true,
-      "ui": true,
-      "record": "docs/hanja-goal-glyphwiki-batch31-2026-09-22/validation.json"
+      "record": "docs/hanja-goal-glyphwiki-batch32-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
@@ -140,9 +139,9 @@
     ]
   },
   "nextActions": [
-    "Reconfirm 苔 is missing and recheck pinned sources.",
-    "Compare its split 厶 source geometry against domestic strokes; do not invent a connecting segment.",
-    "If a legitimate complete path can be reconstructed, verify all9 strokes and cumulative/final forms before applying. Otherwise record exact hold and select another candidate."
+    "Reconfirm 菖12획 remains absent and recheck the six pinned source records.",
+    "Verify 日 type1 cap/connection12,13,22,23 semantics in primary KAGE specification before grouping.",
+    "Review all12 directions, intermediate and final forms; if passed, apply and validate actual runtime UI."
   ],
   "held": [
     "莽",
@@ -199,34 +198,28 @@
       "reason": "Domestic stroke7 shows a stopped lower body and an upward-right sweep in one revealed stroke. Source primitive7 travels down/right into the lower body, while primitive8 begins inside that body and sweeps up/right. Concatenation causes a discontinuous jump; a bridging segment or trimming the first path would invent unverified geometry.",
       "record": "docs/hanja-goal-glyphwiki-batch30-2026-09-22/findings.json",
       "releaseCondition": "A reusable exact-glyph source with a continuous third water stroke, or independently sourced explicit pen trajectory/boundaries covering this composite. Never add a guessed bridge, delete a source segment or reverse a path to force agreement."
+    },
+    {
+      "glyph": "苔",
+      "reason": "Domestic stroke5 descends left then continues right in one revealed stroke. The primary source has two separate quadratic centerlines with distinct endpoints/startpoints and different corner extent. Neither inspected alternative declares an exact continuous connection. Joining, trimming or redrawing the corner would invent unverified geometry.",
+      "releaseCondition": "Find a licensed whole 苔 path with a documented continuous stroke5, or source-authoritative reconstruction for the actual pen trajectory; then review all9 strokes, directions, cumulative and final forms.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch32-2026-09-22/findings.json"
     }
   ],
   "resources": {
-    "tabs": "batch31 tabs closed; viewport reset",
-    "ramServers": "51873–51877 stopped",
-    "isolatedWorktree": "/tmp/lingo-hanja-gw31-verify removed",
+    "tabs": "batch32 tabs closed; viewport unchanged",
+    "ramServers": "51878 stopped",
+    "isolatedWorktree": "none for source-only batch32",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "public/hanja-strokes/glyphwiki/8475.json",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/convert.mjs",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/curve-semantics.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-8475.md",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/findings.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch31.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch31.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch31.test.ts",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/convert.test.mjs",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/build.mjs",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/convert.mjs",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/validation.json",
-    "docs/hanja-goal-glyphwiki-batch31-2026-09-22/next.json"
+    "docs/hanja-goal-glyphwiki-batch32-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch32-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch32-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch32-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch32-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch32-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch32-2026-09-22/next.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch31-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch32-2026-09-22/next.json"
 }
