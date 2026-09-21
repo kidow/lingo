@@ -138,6 +138,7 @@ import { HANJA_DICTIONARY_SPECIAL_BATCH12_STROKES } from './hanja-stroke-diction
 import { HANJA_DICTIONARY_SPECIAL_BATCH13_STROKES } from './hanja-stroke-dictionary-special-batch13.ts'
 import { HANJA_DICTIONARY_SPECIAL_BATCH14_STROKES } from './hanja-stroke-dictionary-special-batch14.ts'
 import { HANJA_DICTIONARY_TOMOE_BATCH23_STROKES } from './hanja-stroke-dictionary-tomoe-batch23.ts'
+import { HANJA_DICTIONARY_GLYPHWIKI_BATCH26_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch26.ts'
 
 export const HANJA_STROKE_SOURCE = {
   title: '필순 정정 및 500자 필순',
@@ -401,6 +402,7 @@ export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...HANJA_DICTIONARY_SPECIAL_BATCH13_STROKES,
   ...HANJA_DICTIONARY_SPECIAL_BATCH14_STROKES,
   ...HANJA_DICTIONARY_TOMOE_BATCH23_STROKES,
+  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH26_STROKES,
   ...HANJA_VARIANT_STROKES,
 ]
 

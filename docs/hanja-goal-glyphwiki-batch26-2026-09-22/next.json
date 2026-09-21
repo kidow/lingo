@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-22",
+  "priority": "Review further exact-glyph GlyphWiki records for currently missing characters.",
+  "leads": [
+    {
+      "glyph": "苛",
+      "root": "u82db-k@16",
+      "status": "blocked-at-format",
+      "reason": "u53ef-j@4 -> u4e01-15@5 -> cdp-8974@5 includes type 1 head 32 tail 4. Current centerline converter must not omit its hook.",
+      "next": "Read the original KAGE engine hook rendering and license, or use another licensed exact-glyph path with the entire hook preserved."
+    },
+    {
+      "glyph": "庾",
+      "root": "koseki-106330@6",
+      "status": "held-after-full-review",
+      "reason": "Stroke 11 roof contact and stroke 12 starting position/tangent differ from the domestic form.",
+      "next": "Require a genuinely different exact-glyph source resolving both differences; equivalent aliases are already inventoried."
+    }
+  ],
+  "inventory": "source-leads.json",
+  "rules": [
+    "Recalculate current missing characters before selecting another glyph.",
+    "A KAGE primitive is not automatically one handwriting stroke.",
+    "Do not approximate unsupported stroke forms, infer missing geometry, or promote a candidate without full domestic visual review."
+  ]
+}

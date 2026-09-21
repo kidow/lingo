@@ -1,50 +1,45 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "1173fa4519ee371aabe5f3316d83ac35faf65cf4",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-tomoe-batch25-2026-09-22/findings.json",
+  "lastCompletedCommit": "536fe169dd03c0a212d113f9b2285fbada84da29",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch26-2026-09-22/validation.json",
   "currentBatch": {
-    "glyphs": [],
-    "strokes": 0,
-    "heldGlyphs": [
-      "敝",
-      "鐶"
+    "glyphs": [
+      "芥"
     ],
-    "heldStrokes": 32,
-    "domesticStrokes": 32,
-    "status": "Tomoe complete glyph comparison; incompatible contact/separation widths; no runtime addition",
+    "strokes": 8,
+    "heldGlyphs": [
+      "庾"
+    ],
+    "heldStrokes": 12,
+    "domesticStrokes": 20,
+    "status": "GlyphWiki exact-glyph review; 芥 registered, 庾 held after full comparison",
     "checks": {
       "researchVerifierPassed": true,
-      "domesticVisualSteps": 32,
-      "candidateVisualSteps": 32,
-      "normalizedPathHashes": 2,
-      "remainingTomoeCountMatches": 0,
-      "runtimeUnchanged": true,
+      "domesticVisualSteps": 20,
+      "normalizedCumulativeStates": 20,
+      "hanjaTests": 838,
+      "typeCheckPassed": true,
+      "productionBuildPassed": true,
+      "uiPassed": true,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-tomoe-batch25-2026-09-22/README.md",
-      "previousRuntimeVerification": {
-        "commit": "4439f6ebebf1fc450326a38b97f5ba3f5ecb7dc8",
-        "hanjaTests": 833,
-        "typeCheckPassed": true,
-        "productionBuildPassed": true,
-        "uiPassed": true
-      }
+      "record": "docs/hanja-goal-glyphwiki-batch26-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4964,
-      "remaining": 1014,
-      "percent": 83
+      "applied": 4965,
+      "remaining": 1013,
+      "percent": 83.1
     },
     "grades": [
       {
         "grade": "1급",
         "total": 1145,
-        "applied": 1063,
-        "remaining": 82,
-        "percent": 92.8
+        "applied": 1064,
+        "remaining": 81,
+        "percent": 92.9
       },
       {
         "grade": "2급",
@@ -147,9 +142,9 @@
     ]
   },
   "nextActions": [
-    "Read official KAGE geometry/component format and stroke boundary semantics.",
-    "Retrieve revision-pinned exact-glyph records and dependencies for currently missing characters.",
-    "Compare each actual pen-down path and cumulative glyph against domestic stroke evidence before runtime approval."
+    "Select currently missing exact-glyph GlyphWiki candidates and pin all component dependencies.",
+    "For 苛, verify original KAGE hook geometry and licensing before expanding converter support; current tail 4 is rejected.",
+    "For every candidate, compare all actual handwriting strokes and cumulative states with domestic evidence before runtime approval."
   ],
   "held": [
     "莽",
@@ -194,21 +189,40 @@
     "雋",
     "漑",
     "斃",
-    "鐫"
+    "鐫",
+    {
+      "glyph": "庾",
+      "reason": "GlyphWiki koseki-106330@6 resolves earlier dot/bottom-line issues but its central stroke contacts 广 and final stroke starts too high with a different tangent.",
+      "record": "docs/hanja-goal-glyphwiki-batch26-2026-09-22/findings.json",
+      "releaseCondition": "A genuinely different licensed exact-glyph source resolving both domestic shape/direction differences; aliases in source-leads.json are duplicates."
+    }
   ],
   "resources": {
-    "tabs": "batch25 review tabs closed; GlyphWiki source research active",
-    "ramServers": "51859 stopped",
+    "tabs": "batch26 tabs closed; viewport reset",
+    "ramServers": "51860, 51861, 51862, 51863, 51864 stopped",
+    "isolatedWorktree": "/tmp/lingo-hanja-gw26-verify removed",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-tomoe-batch25-2026-09-22/metadata.json",
-    "docs/hanja-goal-tomoe-batch25-2026-09-22/findings.json",
-    "docs/hanja-goal-tomoe-batch25-2026-09-22/next.json",
-    "docs/hanja-goal-tomoe-batch25-2026-09-22/serve.py",
-    "docs/hanja-goal-tomoe-batch25-2026-09-22/verify.mjs",
-    "docs/hanja-goal-tomoe-batch25-2026-09-22/probe.py",
-    "docs/hanja-goal-tomoe-batch25-2026-09-22/README.md"
+    "public/hanja-strokes/glyphwiki/82a5.json",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/yu-candidate.json",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/source-leads.json",
+    "public/hanja-strokes/glyphwiki/NOTICE.md",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch26.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch26.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch26.test.ts",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/convert.test.mjs",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/convert.mjs",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/build.mjs",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/verify.mjs",
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/next.json",
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/validation.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-tomoe-batch25-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch26-2026-09-22/next.json"
 }

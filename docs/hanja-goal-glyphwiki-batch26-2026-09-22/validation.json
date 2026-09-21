@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-22",
+  "baseCommit": "536fe169dd03c0a212d113f9b2285fbada84da29",
+  "runtimeAdded": {
+    "glyph": "芥",
+    "strokes": 8
+  },
+  "checks": {
+    "sourceRevisions": {
+      "passed": true,
+      "count": 5,
+      "command": "node docs/hanja-goal-glyphwiki-batch26-2026-09-22/verify.mjs --sources"
+    },
+    "hanjaTests": {
+      "files": 164,
+      "tests": 838,
+      "passed": 838,
+      "failed": 0
+    },
+    "afterTypeFix": {
+      "tests": 5,
+      "passed": 5,
+      "nestedConverterTests": 4
+    },
+    "productionBuild": {
+      "passed": true,
+      "typeCheckPassed": true,
+      "location": "isolated detached worktree at baseCommit plus the 16 batch source files",
+      "sourceFilesByteEqual": true,
+      "publishedOriginalAndNoticeByteEqual": true
+    }
+  },
+  "ui": {
+    "browser": "Chrome",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "fixture": "Fresh local-only origin; all other Hanja abilities have stored progress. During initial boot, fixture randomness is below the new-card threshold for five seconds, then restored. Production modules and animation code are unchanged.",
+    "intro": {
+      "automaticCompletion": "8 / 8 without clicking play",
+      "replay": [
+        "1 / 8",
+        "8 / 8"
+      ]
+    },
+    "writing": {
+      "automatic": [
+        "1 / 8",
+        "8 / 8"
+      ],
+      "replay": [
+        "1 / 8",
+        "2 / 8",
+        "8 / 8"
+      ],
+      "overlaidSvgCount": 1,
+      "strokeWidth": 4,
+      "touchAction": "none",
+      "noDragAttribute": true,
+      "inputCounts": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "stableDrag": {
+        "before": {
+          "canvasY": 162.8046875,
+          "dialogY": 139.8046875,
+          "dialogScrollTop": 126
+        },
+        "after": {
+          "canvasY": 162.8046875,
+          "dialogY": 139.8046875,
+          "dialogScrollTop": 126
+        }
+      },
+      "limitation": "Locator replay click had scrolled the overflow-hidden dialog before the isolated drag comparison; the subsequent native drag preserved both canvas and dialog positions. This is desktop Chrome pointer verification, not a real iPhone touch test."
+    },
+    "consoleErrors": 0,
+    "consoleWarnings": 0
+  },
+  "cleanup": {
+    "tabsClosed": true,
+    "viewportReset": true,
+    "serversStopped": [
+      51860,
+      51861,
+      51862,
+      51863,
+      51864
+    ],
+    "isolatedWorktreeRemoved": true,
+    "privateMediaSaved": false
+  }
+}
