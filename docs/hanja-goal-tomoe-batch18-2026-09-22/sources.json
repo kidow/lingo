@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-22",
+  "missing": 1015,
+  "sources": [
+    {
+      "owner": "l4u",
+      "revision": "9d054a1f490368e0d45e0aff6430ce3598ab92c5",
+      "license": "LGPL-2.1",
+      "charactersWithPaths": 6420,
+      "materials": {
+        "README": {
+          "url": "https://raw.githubusercontent.com/l4u/tomoe/9d054a1f490368e0d45e0aff6430ce3598ab92c5/README",
+          "bytes": 818,
+          "sha256": "4a3d40b2626c9ef96e8635e25be6ce45d4362dfd7aad3417608f8e66e813d44f"
+        },
+        "COPYING": {
+          "url": "https://raw.githubusercontent.com/l4u/tomoe/9d054a1f490368e0d45e0aff6430ce3598ab92c5/COPYING",
+          "bytes": 26430,
+          "sha256": "a190dc9c8043755d90f8b0a75fa66b9e42d4af4c980bf5ddc633f0124db3cee7"
+        },
+        "data/handwriting-ja.xml": {
+          "url": "https://raw.githubusercontent.com/l4u/tomoe/9d054a1f490368e0d45e0aff6430ce3598ab92c5/data/handwriting-ja.xml",
+          "bytes": 9155641,
+          "sha256": "6f30a4f42f24dc611f1a3e4d7a220c5009bb0323f237f01f50e3be3dfefb11f8"
+        }
+      }
+    },
+    {
+      "owner": "iacore",
+      "revision": "d605755d162b2f35cbf9b95fa8b41f59ae7adaf0",
+      "license": "LGPL-2.1",
+      "charactersWithPaths": 6420,
+      "materials": {
+        "README": {
+          "url": "https://raw.githubusercontent.com/iacore/tomoe/d605755d162b2f35cbf9b95fa8b41f59ae7adaf0/README",
+          "bytes": 818,
+          "sha256": "4a3d40b2626c9ef96e8635e25be6ce45d4362dfd7aad3417608f8e66e813d44f"
+        },
+        "COPYING": {
+          "url": "https://raw.githubusercontent.com/iacore/tomoe/d605755d162b2f35cbf9b95fa8b41f59ae7adaf0/COPYING",
+          "bytes": 26430,
+          "sha256": "a190dc9c8043755d90f8b0a75fa66b9e42d4af4c980bf5ddc633f0124db3cee7"
+        },
+        "data/handwriting-ja.xml": {
+          "url": "https://raw.githubusercontent.com/iacore/tomoe/d605755d162b2f35cbf9b95fa8b41f59ae7adaf0/data/handwriting-ja.xml",
+          "bytes": 8919277,
+          "sha256": "995063158e04dcd735b71674bd7c906f2a2cbb9b89c3db1b5255fab3a09b4eff"
+        }
+      }
+    }
+  ],
+  "counts": {
+    "l4u": {
+      "missingMatches": 173,
+      "domesticCountMatches": 26,
+      "outsideRecentHolds": 6
+    },
+    "iacore": {
+      "missingMatches": 173,
+      "domesticCountMatches": 26,
+      "outsideRecentHolds": 6
+    }
+  },
+  "tegakiAudit": {
+    "revision": "7a74e442c4130cccc226a7e7c2b683ac94c0cccb",
+    "head": "0f76065f774d6d15baedcb1c5b15227cd2c63e2e",
+    "missing": 1015,
+    "files": 173,
+    "errors": [],
+    "matchingCount": 26,
+    "outsideRecentHoldsMatchingCount": 6,
+    "treeUrl": "https://api.github.com/repos/tegaki/tegaki/git/trees/7a74e442c4130cccc226a7e7c2b683ac94c0cccb?recursive=1",
+    "treeSha256": "a1757efdb41f73845e3bed785adf4c5a940838566e602c1722128e8f852db7b8",
+    "license": "pending-corpus-provenance"
+  },
+  "provenance": "Tegaki's Tomoe corpus is an inherited copy. Selected samples in l4u and iacore archived Tomoe repositories and Tegaki are identical point data; not independent domestic evidence.",
+  "licenseEvidence": "Both archived Tomoe READMEs state LGPL except data/kanjidic2-original.xml. COPYING contains LGPL version 2.1. This batch examines data/handwriting-ja.xml, not KANJIDIC2. No dictionary stroke artwork or Tomoe point/path arrays are saved in this research batch.",
+  "selectedCorrespondence": [
+    {
+      "glyph": "莠",
+      "mirrorsIdentical": true,
+      "tegakiIdentical": true
+    },
+    {
+      "glyph": "儁",
+      "mirrorsIdentical": true,
+      "tegakiIdentical": true
+    },
+    {
+      "glyph": "雋",
+      "mirrorsIdentical": true,
+      "tegakiIdentical": true
+    }
+  ]
+}

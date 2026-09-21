@@ -1,0 +1,268 @@
+{
+  "date": "2026-09-22",
+  "head": "0f76065f774d6d15baedcb1c5b15227cd2c63e2e",
+  "status": "six-held-no-runtime-change",
+  "domesticVisualSteps": 91,
+  "publicCandidateSteps": 91,
+  "normalization": "Preserve every point/boundary. Negate Tomoe downward-positive Y for the input of existing normalizeMedians, which inverts it back, fits an 80-unit extent, and rounds to 0.1 units.",
+  "renderWidths": {
+    "cumulative": 5,
+    "completed": 4
+  },
+  "entries": [
+    {
+      "glyph": "莠",
+      "catalogStrokes": 11,
+      "dictionaryStrokes": 11,
+      "decision": "hold",
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "cumulativeStates": 11,
+      "finalFormReviewed": true,
+      "blockers": [
+        {
+          "strokes": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "note": "Domestic 艹 has two separate horizontal strokes and two verticals (4 strokes); Tomoe uses one continuous horizontal plus two verticals (3 strokes). Equal total count conceals this boundary mismatch."
+        },
+        {
+          "strokes": [
+            10,
+            11
+          ],
+          "note": "Domestic lower 乃 uses a separate left-falling stroke followed by a continuous multi-bend right stroke. Tomoe splits the right bend across candidate 9/10 and puts the left stroke at 11. A permutation cannot restore the boundaries."
+        }
+      ],
+      "release": "Complete licensed 11-stroke geometry with domestic four-stroke 艹 and two-stroke 乃; no arbitrary split or merge."
+    },
+    {
+      "glyph": "儁",
+      "catalogStrokes": 15,
+      "dictionaryStrokes": 15,
+      "decision": "hold",
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cumulativeStates": 15,
+      "finalFormReviewed": true,
+      "blockers": [
+        {
+          "strokes": [
+            12,
+            13
+          ],
+          "note": "Domestic 12 is right-then-down and domestic 13 is a separate rightward bar. Tomoe 12 is only the top bar and Tomoe 13 is down-then-right; the same two strokes have different boundaries."
+        },
+        {
+          "strokes": [
+            14
+          ],
+          "note": "The lower inner vertical terminates at the horizontal corner, while the domestic vertical projects below the crossbar."
+        }
+      ],
+      "release": "Full 15-stroke paths with matching lower-gate boundaries and projecting inner verticals.",
+      "prior": "docs/hanja-special2-gap-2026-09-20/review.json"
+    },
+    {
+      "glyph": "雋",
+      "catalogStrokes": 13,
+      "dictionaryStrokes": 13,
+      "decision": "hold",
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "cumulativeStates": 13,
+      "finalFormReviewed": true,
+      "blockers": [
+        {
+          "strokes": [
+            10,
+            11,
+            12
+          ],
+          "note": "The domestic lower inner verticals extend below the joining horizontal. Tomoe forms rounded corners terminating on the horizontal, producing a different lower-gate contour even though the stroke counts/order agree."
+        }
+      ],
+      "release": "Full 13-stroke paths whose lower gate preserves the domestic inner-vertical projections and junctions.",
+      "prior": "docs/hanja-special2-gap-2026-09-20/review.json"
+    },
+    {
+      "glyph": "漑",
+      "catalogStrokes": 14,
+      "dictionaryStrokes": 14,
+      "decision": "hold",
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "cumulativeStates": 14,
+      "finalFormReviewed": true,
+      "blockers": [
+        {
+          "strokes": [
+            3
+          ],
+          "note": "The domestic water stroke starts with a downward movement before rising; Tomoe's point sequence rises immediately and lacks that descending segment."
+        },
+        {
+          "strokes": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "note": "Tomoe writes the long left vertical before the inner bend/bars, whereas the domestic reference writes that long vertical last in this group. This order difference alone is permutable, but does not fix stroke 3."
+        }
+      ],
+      "release": "Licensed whole-glyph geometry supporting the domestic water stroke's initial downward segment; then verify the candidate order correction and all 14 cumulative states."
+    },
+    {
+      "glyph": "斃",
+      "catalogStrokes": 18,
+      "dictionaryStrokes": 17,
+      "decision": "hold",
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "cumulativeStates": 17,
+      "finalFormReviewed": true,
+      "blockers": [
+        {
+          "strokes": [
+            2,
+            4
+          ],
+          "note": "The domestic upper-right dot meets the enclosure's top/right area, but Tomoe's dot is detached above it."
+        },
+        {
+          "strokes": [
+            12,
+            17
+          ],
+          "note": "At the reviewed normalized widths the Tomoe final stroke joins the long horizontal above, while the domestic final stroke starts below it with separation. Whole-form review confirms this unwanted junction."
+        }
+      ],
+      "release": "Complete 17-stroke geometry with the domestic upper-dot junction and lower-right separation; retain catalog 18 versus playback 17 if later approved."
+    },
+    {
+      "glyph": "鐫",
+      "catalogStrokes": 21,
+      "dictionaryStrokes": 21,
+      "decision": "hold",
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "cumulativeStates": 21,
+      "finalFormReviewed": true,
+      "blockers": [
+        {
+          "strokes": [
+            2,
+            9
+          ],
+          "note": "Tomoe's 金 right roof and the next component's first left-falling stroke meet, while the domestic 金/隹 components are separated."
+        },
+        {
+          "strokes": [
+            18,
+            19,
+            20
+          ],
+          "note": "As in 雋, the lower inner verticals terminate at the crossbar corners rather than extending below them as in the domestic reference."
+        }
+      ],
+      "release": "Complete 21-stroke geometry preserving 金/隹 separation and domestic lower-gate junctions."
+    }
+  ],
+  "privateGraphicsSaved": false,
+  "runtimeChanged": false
+}
