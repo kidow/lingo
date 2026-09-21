@@ -425,3 +425,47 @@ md5가 다르며 `twins --pair session-count gap-disparity`는 구조 133 · 색
 slug마다 임시 디렉터리를 나눠 두는데도 이 사고는 난다고 그 파일 주석이
 이미 적어 두었다(scripts/genimg.sh). 이번은 **프로세스가 아니라 세션이**
 둘이었다.
+
+## 저울이 스물둘이다 — 열다섯은 저울이 아니어야 한다 (2026-09-21)
+
+새 그림 스물넷을 넣고 전체를 훑었다. 기본 문턱(구조 50 · 색 0.20)에서 잡힌
+것은 **한 쌍뿐**이고(`calendar-august`↔`calendar-september`) 새 그림은 하나도
+안 걸렸다. 문턱을 62 · 0.26으로 늦추니 서른여덟 쌍이 나왔는데 **거기서도 새
+그림은 없었다.**
+
+대신 **허브가 하나 새로 떴다.** `supply-and-demand`가 셋과 붙는다.
+
+    supply-and-demand(수급) ↔ saying-it-as-it-is(있는 그대로 말하다) ·
+                              worth-it(~할 만한) · whether(~인지)
+
+넷을 붙여 보니 **넷 다 저울**이다. 짐만 다르다(낟알 · 사과 · 동전 · 꾸러미).
+80×80에서는 그 차이가 사라진다.
+
+`pnpm props balance`를 돌리니 **스물둘**이 나왔다. 그물은 있었고 아무도 이
+낱말로 돌리지 않았을 뿐이다.
+
+**일곱은 저울이 맞다.** 저울이 곧 그 물건이다.
+
+    number/kitchen-scale · number/postal-scale · number/catty ·
+    number/vernier-scale · travel/baggage-allowance · scene/weight-check ·
+    food/calorie-content
+
+**열다섯은 저울일 이유가 없다.** 뜻이 추상이라 프롬프트가 저울로 도망친 자리다.
+
+| 파일 | 개념 | 뜻 |
+| --- | --- | --- |
+| idea | `supply-and-demand` · `value-worth` · `justice` · `worth-it` · `work-out-what-they-mean` · `as-the-money-goes` | 수급 · 가치 · 정의 · ~할 만한 · 미루어 헤아리다 · 돈 쪽으로 |
+| quality | `whether` · `fair-and-just` · `fit-to-receive-it` · `dear-to-pay-for` | ~인지 · 공정한 · 받을 만한 · 값이 많이 드는 |
+| office | `saying-it-as-it-is` · `weighty-enough-to-tip-the-scale` | 있는 그대로 말하다 · 한쪽으로 판가름하다 |
+| city | `the-market-worth-of-it` · `a-wrong-that-was-done` | 저자에서 매겨진 값 · 부당함 |
+| job | `lawyer` | 변호사 |
+
+내 파일이 아니라 넘긴다. 고칠 때는 [IMAGE_STYLE](../IMAGE_STYLE.md)의 「장면을
+찾는 다섯 수」를 쓴다 — 저울은 「견주다」의 그림이지 「수급」의 그림이 아니다.
+
+**달력 무리는 흠이 아니다 (판정).** `calendar-*` 열둘이 같은 판에 머리띠 색만
+다르다. 늦춘 문턱에서 `4월`↔`5월`(58 · 0.08) · `2월`↔`3월`(59 · 0.24)도 나온다.
+**갈래는 머리띠의 한글이 낸다** — 학습자는 「8월」과 「9월」을 글자로 읽는다.
+다시 훑을 때 이 쌍들은 건너뛴다. 다만 8·9·10월이 다 붉은 계열이라 색을 벌리면
+더 낫다.
+
