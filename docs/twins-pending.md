@@ -551,15 +551,18 @@ slug마다 임시 디렉터리를 나눠 두는데도 이 사고는 난다고 �
     number/vernier-scale · travel/baggage-allowance · scene/weight-check ·
     food/calorie-content
 
-**열다섯은 저울일 이유가 없다.** 뜻이 추상이라 프롬프트가 저울로 도망친 자리다.
+**열다섯은 저울일 이유가 없었다. 열셋을 옮겼고 둘은 저울이 맞다** (2026-09-21 끝).
 
 | 파일 | 개념 | 뜻 |
 | --- | --- | --- |
-| idea | `supply-and-demand` · `value-worth` · `justice` · `worth-it` · `work-out-what-they-mean` · `as-the-money-goes` | 수급 · 가치 · 정의 · ~할 만한 · 미루어 헤아리다 · 돈 쪽으로 |
-| quality | `whether` · `fair-and-just` · `fit-to-receive-it` · `dear-to-pay-for` | ~인지 · 공정한 · 받을 만한 · 값이 많이 드는 |
-| office | `saying-it-as-it-is` · `weighty-enough-to-tip-the-scale` | 있는 그대로 말하다 · 한쪽으로 판가름하다 |
-| city | `the-market-worth-of-it` · `a-wrong-that-was-done` | 저자에서 매겨진 값 · 부당함 |
-| job | `lawyer` | 변호사 |
+| idea | ~~`supply-and-demand`~~ · ~~`value-worth`~~ · ~~`worth-it`~~ · ~~`work-out-what-they-mean`~~ · ~~`as-the-money-goes`~~ · **`justice`는 그대로 둔다** | 수급 · 가치 · ~할 만한 · 미루어 헤아리다 · 돈 쪽으로 · 정의 |
+| quality | ~~`whether`~~ · ~~`fair-and-just`~~ · ~~`fit-to-receive-it`~~ · ~~`dear-to-pay-for`~~ | ~인지 · 공정한 · 받을 만한 · 값이 많이 드는 |
+| office | ~~`saying-it-as-it-is`~~ · **`weighty-enough-to-tip-the-scale`는 그대로 둔다** | 있는 그대로 말하다 · 한쪽으로 판가름하다 |
+| city | ~~`the-market-worth-of-it`~~ · ~~`a-wrong-that-was-done`~~ | 저자에서 매겨진 값 · 부당함 |
+| job | ~~`lawyer`~~ | 변호사 |
+
+`justice`(정의)와 `weighty-enough-to-tip-the-scale`(한쪽으로 판가름하다)은
+저울이 곧 그 개념이라 옮기지 않는다. `pnpm props balance`는 22 → 10이다.
 
 #### 여섯을 옮겼다 — 22 → 16 (2026-09-21)
 
@@ -594,13 +597,13 @@ cushion · wreath · dial · gauge · keyhole · basket · awning이 이미 남�
 
 | 개념 | 뜻 | 옮긴 그림 |
 | --- | --- | --- |
-| `quality/whether` | ~인지 | 빈 상 위에서 아직 도는 팽이 |
-| `quality/fit-to-receive-it` | 받을 만한 | 곁에 선 항아리 밑동 꼴로 파인 빈 주춧돌 |
-| `quality/dear-to-pay-for` | 값이 많이 드는 | 놋 물꼭지에서 동전이 쏟아져 넘치는 들통 |
-| `idea/as-the-money-goes` | 돈 쪽으로 | 화살이 동전 무더기 쪽으로 돌아간 바람개비 |
-| `office/saying-it-as-it-is` | 있는 그대로 말하다 | 벽에 곧게 드리운 다림줄 |
-| `city/the-market-worth-of-it` | 저자에서 매겨진 값 | 저자 광주리에 기댄 빈 석판과 동전 |
-| `job/lawyer` | 변호사 | 걸개에 걸린 검은 법복과 끈으로 묶인 서류 뭉치 |
+| ~~`quality/whether`~~ | ~인지 | 빈 상 위에서 아직 도는 팽이 |
+| ~~`quality/fit-to-receive-it`~~ | 받을 만한 | 곁에 선 항아리 밑동 꼴로 파인 빈 주춧돌 |
+| ~~`quality/dear-to-pay-for`~~ | 값이 많이 드는 | 놋 물꼭지에서 동전이 쏟아져 넘치는 들통 |
+| ~~`idea/as-the-money-goes`~~ | 돈 쪽으로 | 화살이 동전 무더기 쪽으로 돌아간 바람개비 |
+| ~~`office/saying-it-as-it-is`~~ | 있는 그대로 말하다 | 벽에 곧게 드리운 다림줄 |
+| ~~`city/the-market-worth-of-it`~~ | 저자에서 매겨진 값 | 저자 광주리에 기댄 빈 석판과 동전 |
+| ~~`job/lawyer`~~ | 변호사 | 걸개에 걸린 검은 법복과 끈으로 묶인 서류 뭉치 |
 
     pnpm props balance   그림에 나온 것 22 → 10
 

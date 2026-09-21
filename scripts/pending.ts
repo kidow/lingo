@@ -90,17 +90,33 @@ const order = [...byFile.keys()].sort((a, b) => {
 
 let free = 0
 let held = 0
+/**
+ * **목록이 길면 파일마다 다섯만 찍는다.** 이 단계는 회차 맨 앞에서 0.3초에
+ * 훑으라고 있는 자리인데, 2026-09-21에 여섯 축을 넘기고 나니 목록이 208줄이
+ * 됐다 — 한 화면을 넘기면 아무도 안 본다. 파일별 수는 그대로 보이고, 다
+ * 보려면 `--list`를 붙인다.
+ */
+const showAll = process.argv.includes('--list')
+const CAP = 5
+let hidden = 0
 for (const file of order) {
   const slugs = byFile.get(file)!.sort()
   const busy = dirty.has(file)
   if (busy) held += slugs.length
   else free += slugs.length
   if (onlyFree && busy) continue
-  console.log(`\n${file}${busyMark(file, dirty)}  ${'─'.repeat(Math.max(2, 34 - file.length))}`)
-  for (const slug of slugs)
+  const shown = showAll ? slugs : slugs.slice(0, CAP)
+  hidden += slugs.length - shown.length
+  console.log(
+    `\n${file}${busyMark(file, dirty)}  ${'─'.repeat(Math.max(2, 34 - file.length))}` +
+      (slugs.length > shown.length ? `  ${slugs.length}개` : ''),
+  )
+  for (const slug of shown)
     console.log(
       `  ${slug.padEnd(22)}${(meaningOf.get(slug) ?? '').padEnd(18)}${[...seen.get(slug)!].sort().join('  ')}`,
     )
+  if (slugs.length > shown.length)
+    console.log(`  … ${slugs.length - shown.length}개 더 — --list`)
 }
 
 console.log(
