@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-22",
+  "formatUrl": "https://glyphwiki.org/wiki/GlyphWiki:KAGEデータ仕様@2",
+  "formatScope": "Contributor interpretation, not a Korean official stroke standard.",
+  "documentedForms": {
+    "type3": "Three declared points define a bent stroke; type3 head32 is a connected start and tail0 an open end. Tail5 is a distinct upward hook and is rejected.",
+    "line0_32": "Vertical line, open start and connected end."
+  },
+  "engine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "turnUrl": "https://github.com/kamichikoichi/kage-engine/blob/49232bac0348fe815f4200d4116ab7917e0db47f/kagedf.js#L202",
+    "defaultUrl": "https://github.com/kamichikoichi/kage-engine/blob/49232bac0348fe815f4200d4116ab7917e0db47f/kage.js#L410",
+    "finding": "The non-hook branch shortens each leg at the declared corner by kMage=10 in expanded 200-unit coordinates, joins with a quadratic using the original corner, and continues to the unchanged endpoint.",
+    "normalizedRadius": 5,
+    "engineCodeCopied": false
+  },
+  "scope": "New allowBentStrokes opt-in permits only type3 head32/tail0, down then right, and legs longer than the default radius. Default behavior, unsupported hooks/corners/stretch rejection retained.",
+  "comparison": "The initial raw polyline had a sharper corner than the domestic source. The published path uses the documented engine-default rounded connection, not a manually invented correction."
+}

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 
 // Only the line, quadratic and vertical-sweep forms actually used by this
 // reviewed subset are supported. KAGE primitives are not generally pen strokes.
-export function expandKage(source, { allowConnectionLines = false } = {}) {
+export function expandKage(source, { allowConnectionLines = false, allowBentStrokes = false } = {}) {
   const primitives = []
   function visit(name, transform = [1, 1, 0, 0], ancestry = []) {
     assert(!ancestry.includes(name), 'Cyclic KAGE reference')
@@ -29,9 +29,9 @@ export function expandKage(source, { allowConnectionLines = false } = {}) {
         ], [...ancestry, name])
         continue
       }
-      assert([1, 2, 7].includes(type), 'Unsupported KAGE primitive')
+      assert([1, 2, 7].includes(type) || (allowBentStrokes && type === 3), 'Unsupported KAGE primitive')
       assert(values.every(Number.isFinite), 'Invalid KAGE coordinates')
-      assert.equal(fields.length, type === 1 ? 7 : type === 2 ? 9 : 11)
+      assert.equal(fields.length, type === 1 ? 7 : [2, 3].includes(type) ? 9 : 11)
       const [, head, tail] = values
       // KAGE line head/tail 2 means horizontal connection; 32 means vertical
       // connection (format revision 2). Only these reviewed axis-aligned forms
@@ -39,10 +39,14 @@ export function expandKage(source, { allowConnectionLines = false } = {}) {
       const connectedLine = allowConnectionLines && type === 1 && (
         (head === 2 && tail === 2 && values[4] === values[6])
         || (head === 32 && (tail === 0 || tail === 32) && values[3] === values[5])
+        || (head === 0 && tail === 32 && values[3] === values[5])
       )
+      const downRightBend = allowBentStrokes && type === 3 && head === 32 && tail === 0
+        && values[3] === values[5] && values[6] === values[8]
+        && values[4] < values[6] && values[5] < values[7]
       assert(type === 1 ? (head === 0 && tail === 0) || connectedLine
         : type === 2 ? (head === 0 && tail === 7) || (head === 7 && tail === 0)
-          : head === 0 && tail === 7,
+          : type === 3 ? downRightBend : head === 0 && tail === 7,
       'Unsupported head/tail shape: do not omit hooks or other source features')
       const points = []
       for (let i = 3; i < values.length; i += 2) {
@@ -69,6 +73,18 @@ export function kagePaths(source, order, options) {
     const start = 'M ' + point(points[0])
     if (type === 1) return start + ' L ' + point(points[1])
     if (type === 2) return start + ' Q ' + points.slice(1).map(point).join(' ')
+    if (type === 3) {
+      // KAGE 49232bac kagedf.js:202-237 uses a quadratic turn around the
+      // declared corner. Its default kMage=10 (kage.js:410) becomes 5 here.
+      // Only the reviewed down-right, non-hook form is accepted above.
+      const [a, corner, end] = points
+      const radius = 5
+      assert(corner[1] - a[1] > radius && end[0] - corner[0] > radius,
+        'KAGE bend legs are too short for the verified default corner')
+      return start + ' L ' + point([corner[0], corner[1] - radius])
+        + ' Q ' + point(corner) + ' ' + point([corner[0] + radius, corner[1]])
+        + ' L ' + point(end)
+    }
     return start + ' L ' + point(points[1]) + ' Q ' + points.slice(2).map(point).join(' ')
   })
 }
