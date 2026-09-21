@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-22",
+  "formatUrl": "https://glyphwiki.org/wiki/GlyphWiki:KAGEデータ仕様@2",
+  "scope": "Site contributor's documented interpretation, crosschecked with primary implementation; not an official Korean stroke standard.",
+  "observedDefinitions": {
+    "line2": "Horizontal line endpoint connects to another stroke.",
+    "line32": "Vertical line endpoint connects to the interior of another stroke."
+  },
+  "engine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "url": "https://github.com/kamichikoichi/kage-engine/blob/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js#L710",
+    "lines": "747-750 and 780-783",
+    "finding": "Type32 adjusts the terminal cap polygon around the same straight centerline. Unlike tail4/14, these connection cases add no new directional stroke or hook."
+  },
+  "allowedPairs": [
+    {
+      "head": 2,
+      "tail": 2,
+      "axis": "horizontal"
+    },
+    {
+      "head": 32,
+      "tail": 32,
+      "axis": "vertical"
+    },
+    {
+      "head": 32,
+      "tail": 0,
+      "axis": "vertical"
+    }
+  ],
+  "implementation": "Opt-in allowConnectionLines only; defaults unchanged. Raw fields are retained. Reject non-axis-aligned connection forms, hooks, corners, other heads/tails and component stretch. Entire glyph still needs separate domestic visual approval.",
+  "engineCodeCopied": false
+}

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 
 // Only the line, quadratic and vertical-sweep forms actually used by this
 // reviewed subset are supported. KAGE primitives are not generally pen strokes.
-export function expandKage(source) {
+export function expandKage(source, { allowConnectionLines = false } = {}) {
   const primitives = []
   function visit(name, transform = [1, 1, 0, 0], ancestry = []) {
     assert(!ancestry.includes(name), 'Cyclic KAGE reference')
@@ -33,7 +33,14 @@ export function expandKage(source) {
       assert(values.every(Number.isFinite), 'Invalid KAGE coordinates')
       assert.equal(fields.length, type === 1 ? 7 : type === 2 ? 9 : 11)
       const [, head, tail] = values
-      assert(type === 1 ? head === 0 && tail === 0
+      // KAGE line head/tail 2 means horizontal connection; 32 means vertical
+      // connection (format revision 2). Only these reviewed axis-aligned forms
+      // are opt-in. Hooks and corner forms remain unsupported.
+      const connectedLine = allowConnectionLines && type === 1 && (
+        (head === 2 && tail === 2 && values[4] === values[6])
+        || (head === 32 && (tail === 0 || tail === 32) && values[3] === values[5])
+      )
+      assert(type === 1 ? (head === 0 && tail === 0) || connectedLine
         : type === 2 ? (head === 0 && tail === 7) || (head === 7 && tail === 0)
           : head === 0 && tail === 7,
       'Unsupported head/tail shape: do not omit hooks or other source features')
@@ -51,8 +58,8 @@ export function expandKage(source) {
   return primitives
 }
 
-export function kagePaths(source, order) {
-  const primitives = expandKage(source)
+export function kagePaths(source, order, options) {
+  const primitives = expandKage(source, options)
   assert.deepEqual([...order].sort((a, b) => a - b),
     Array.from({ length: primitives.length }, (_, i) => i + 1),
     'Reviewed order must use each primitive exactly once')

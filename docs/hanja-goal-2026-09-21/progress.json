@@ -1,43 +1,43 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "159bc0abbe9a01e0c29d6e8813d20ea6a1b65a1f",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch27-2026-09-22/validation.json",
+  "lastCompletedCommit": "8dba11855bab8a8d4832de7a4e3faf7bbd9baaf3",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch28-2026-09-22/validation.json",
   "currentBatch": {
     "glyphs": [
-      "芙"
+      "茸"
     ],
-    "strokes": 8,
+    "strokes": 10,
     "heldGlyphs": [],
     "heldStrokes": 0,
-    "domesticStrokes": 8,
-    "status": "GlyphWiki 芙 registered after complete domestic comparison; 苛 engine research and 茸 next source inventory recorded",
+    "domesticStrokes": 10,
+    "status": "GlyphWiki 茸 registered after complete domestic comparison; optional non-hook connection-line semantics verified",
     "checks": {
       "researchVerifierPassed": true,
-      "domesticVisualSteps": 8,
-      "normalizedCumulativeStates": 8,
-      "hanjaTests": 840,
+      "domesticVisualSteps": 10,
+      "normalizedCumulativeStates": 10,
+      "hanjaTests": 843,
       "typeCheckPassed": true,
       "productionBuildPassed": true,
       "uiPassed": true,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-glyphwiki-batch27-2026-09-22/validation.json"
+      "record": "docs/hanja-goal-glyphwiki-batch28-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4966,
-      "remaining": 1012,
+      "applied": 4967,
+      "remaining": 1011,
       "percent": 83.1
     },
     "grades": [
       {
         "grade": "1급",
         "total": 1145,
-        "applied": 1065,
-        "remaining": 80,
-        "percent": 93
+        "applied": 1066,
+        "remaining": 79,
+        "percent": 93.1
       },
       {
         "grade": "2급",
@@ -140,10 +140,9 @@
     ]
   },
   "nextActions": [
-    "Reconfirm that 茸 is still missing and re-fetch the exact pinned component versions.",
-    "Read the original KAGE line head/tail 2 and 32 semantics. The existing converter correctly rejects these unreviewed forms.",
-    "Compare all 10 domestic strokes, directions, cumulative states and final form before any approval.",
-    "Preserve the separate unresolved 苛 tail-4 hook work in hook-research.json."
+    "Re-fetch and match the three exact revisions; reconfirm still missing in runtime.",
+    "Verify the source-declared type 3 non-hook polyline and type 1 head0/tail32 semantics before opt-in converter support.",
+    "Compare every domestic stroke, direction, corrected cumulative state and final form; no approval yet."
   ],
   "held": [
     "莽",
@@ -197,28 +196,30 @@
     }
   ],
   "resources": {
-    "tabs": "batch27 tabs closed; viewport reset",
-    "ramServers": "51865, 51866 stopped",
-    "isolatedWorktree": "/tmp/lingo-hanja-gw27-verify removed",
+    "tabs": "batch28 tabs closed; viewport reset",
+    "ramServers": "51867, 51868 stopped",
+    "isolatedWorktree": "/tmp/lingo-hanja-gw28-verify removed",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/hook-research.json",
-    "public/hanja-strokes/glyphwiki/8299.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-8299.md",
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/build.mjs",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch27.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch27.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch27.test.ts",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/connection-semantics.json",
+    "public/hanja-strokes/glyphwiki/8338.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-8338.md",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/build.mjs",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch28.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch28.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch28.test.ts",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/convert.test.mjs",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/validation.json",
-    "docs/hanja-goal-glyphwiki-batch27-2026-09-22/next.json"
+    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/convert.mjs",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch28-2026-09-22/next.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch27-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch28-2026-09-22/next.json"
 }
