@@ -16,6 +16,7 @@ import reviewedSupplement from '../public/hanja-strokes/supplement-reviewed.json
 import reviewedDots from '../public/hanja-strokes/dots-reviewed.json' with { type: 'json' }
 import reviewedSplits from '../public/hanja-strokes/splits-reviewed.json' with { type: 'json' }
 import { HANJA_TEXTBOOK_STROKES } from './hanja-stroke-textbook.ts'
+import { HANJA_TEXTBOOK_KANJIVG_STROKES } from './hanja-stroke-textbook-kanjivg.ts'
 import { HANJA_DOCUMENT_STROKES, type HanjaDocumentStrokeData } from './hanja-stroke-documents.ts'
 import { HANJA_NUMBERED_STROKES, type HanjaNumberedStrokeData } from './hanja-stroke-numbered.ts'
 import { HANJA_DICTIONARY_STROKES, type HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
@@ -272,6 +273,7 @@ export const HANJA_EOMUNHOE_STROKES: readonly HanjaEomunhoeStrokeData[] = [
 export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...HANJA_EOMUNHOE_STROKES,
   ...HANJA_TEXTBOOK_STROKES,
+  ...HANJA_TEXTBOOK_KANJIVG_STROKES,
   ...HANJA_DOCUMENT_STROKES,
   ...HANJA_NUMBERED_STROKES,
   ...HANJA_DICTIONARY_STROKES,
