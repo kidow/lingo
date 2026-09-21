@@ -1,80 +1,75 @@
 {
   "status": "active",
   "date": "2026-09-21",
-  "lastCompletedCommit": "a21062a63a67c439b189312077d51fe5716ea2cd",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch3.json",
+  "lastCompletedCommit": "e7d25221ccdab2d9acad6a723d399222e7ce0a35",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch4.json",
   "currentBatch": {
     "glyphs": [
-      "餞"
+      "饌",
+      "鍼"
     ],
-    "strokes": 17,
+    "strokes": 38,
     "status": "verified; resolve commit with currentBatchCommitLookup",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
-        "passed": 772,
+        "passed": 774,
         "failed": 0,
         "typeCheckPassed": true
       },
       "productionBuild": {
         "passed": true,
-        "isolatedCheckout": "/tmp/lingo-hanja-goal-g1-batch3-check",
+        "isolatedCheckout": "/tmp/lingo-hanja-goal-g1-batch4-check",
         "temporaryHarnessBuildPassed": true,
         "checkoutRemoved": true
       },
       "visualReview": {
-        "allSourceStrokesReviewed": 45,
-        "alternativeConflictStrokes": 11,
+        "allSourceStrokesReviewed": 72,
+        "alternativeConflictStrokes": 6,
         "normalizedReorderedCumulativeStates": {
-          "餞": 17
+          "饌": 21,
+          "鍼": 17
         },
         "completeForm": true
       },
       "ui": {
         "glyphs": [
-          "餞"
+          "饌",
+          "鍼"
         ],
         "introAutoplayStarted": true,
         "introAutoplayCompleted": true,
         "writingAutoplay": true,
         "writingAutoplayCompleted": true,
-        "replayStarted": true,
+        "introReplayCompleted": true,
+        "writingReplayCompleted": true,
         "canvasDrag": true,
         "canvasDragPreservesSheetPosition": true,
-        "touchAction": "none",
         "staticOverlayNotDuplicated": true,
-        "sheetBounds": {
-          "x": 117,
-          "y": 120.90625,
-          "width": 480,
-          "height": 685.09375,
-          "bottom": 806
-        },
+        "touchAction": "none",
         "consoleErrors": 0,
-        "record": "docs/hanja-goal-g1-batch3-2026-09-21/README.md",
-        "introReplayCompleted": true,
-        "writingReplayCompleted": true
+        "record": "docs/hanja-goal-g1-batch4-2026-09-21/README.md"
       }
     }
   },
   "workingTreeCoverage": {
     "pass": true,
-    "addedCharacters": 1,
-    "addedStrokes": 17,
+    "addedCharacters": 2,
+    "addedStrokes": 38,
     "reproduction": true,
     "runtime": {
-      "applied": 4932,
+      "applied": 4934,
       "total": 5978,
-      "remaining": 1046,
+      "remaining": 1044,
       "percent": 82.5
     },
     "grades": [
       {
         "grade": "1급",
-        "applied": 1058,
+        "applied": 1060,
         "total": 1145,
-        "remaining": 87,
-        "percent": 92.4
+        "remaining": 85,
+        "percent": 92.6
       },
       {
         "grade": "2급",
@@ -177,9 +172,9 @@
     ]
   },
   "nextActions": [
-    "Commit the verified 餞 batch if currentBatchCommitLookup is not yet present; do not repeat passing tests or UI checks.",
-    "Next count-compatible candidates: 朕 (10), 饌 (21), 讒 (24), 鍼 (17). Pin every source and review all strokes before application. 諭/愉 Kaisho and default sources are held for domestic shape differences; do not repeat without new evidence.",
-    "Keep all remaining 1,046 characters in scope; count agreement is not approval."
+    "Commit the verified 饌/鍼 batch if currentBatchCommitLookup is not yet present; do not repeat successful tests/UI checks.",
+    "Next candidate 眈: public detail retry now HTTP 200, displayed 9 strokes. Pin at docs/hanja-goal-g1-batch4-2026-09-21/next-tan-source.json; dictionary URL discovered from public iframe, not guessed. Parse outline/animated groups, review all 9 strokes against 07708-Kaisho/default KanjiVG candidates and apply if valid.",
+    "Then continue all remaining 1,044 characters, including special grades. 朕 default still conflicts at 3–6; 讒 default fixes stroke 15 direction but stroke 1 remains a dot, not domestic horizontal. Do not repeat held investigations without new evidence."
   ],
   "held": [
     "莽",
@@ -192,7 +187,9 @@
     "髓",
     "鍮",
     "諭",
-    "愉"
+    "愉",
+    "朕",
+    "讒"
   ],
   "resources": {
     "productionStaticServer": "Stopped owned port 51836 server after UI checks.",
@@ -204,15 +201,17 @@
   "batchPaths": [
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-stroke-dictionary-g1-kanjivg-batch3.ts",
-    "lib/hanja-stroke-dictionary-g1-kanjivg-batch3.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch3.json",
-    "docs/hanja-goal-g1-batch3-2026-09-21/candidates.json",
-    "docs/hanja-goal-g1-batch3-2026-09-21/alternatives.json",
-    "docs/hanja-goal-g1-batch3-2026-09-21/findings.json",
-    "docs/hanja-goal-g1-batch3-2026-09-21/build.mjs",
-    "docs/hanja-goal-g1-batch3-2026-09-21/serve.py",
-    "docs/hanja-goal-g1-batch3-2026-09-21/README.md",
+    "lib/hanja-stroke-dictionary-g1-kanjivg-batch4.ts",
+    "lib/hanja-stroke-dictionary-g1-kanjivg-batch4.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch4.json",
+    "docs/hanja-goal-g1-batch4-2026-09-21/candidates.json",
+    "docs/hanja-goal-g1-batch4-2026-09-21/alternatives.json",
+    "docs/hanja-goal-g1-batch4-2026-09-21/normalized.json",
+    "docs/hanja-goal-g1-batch4-2026-09-21/next-tan-source.json",
+    "docs/hanja-goal-g1-batch4-2026-09-21/findings.json",
+    "docs/hanja-goal-g1-batch4-2026-09-21/build.mjs",
+    "docs/hanja-goal-g1-batch4-2026-09-21/serve.py",
+    "docs/hanja-goal-g1-batch4-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ]
