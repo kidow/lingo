@@ -1,0 +1,44 @@
+"""Pinned KanjiVG candidates and proprietary dictionary graphics: RAM only."""
+import sys
+sys.dont_write_bytecode = True
+import hashlib
+import importlib.util
+import json
+import re
+import subprocess
+import urllib.request
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+spec = importlib.util.spec_from_file_location('review', HERE.parent / 'hanja-special2-alternatives-2026-09-21/serve.py')
+review = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(review)
+manifest = json.loads((HERE / 'g1-next-review.json').read_text())
+review.ENTRIES = []
+for entry in manifest['entries']:
+    glyph = entry['glyph']
+    review.base.renderer.ENTRIES[glyph] = {'strokes': entry['dictionaryStrokes'], 'dictionary': entry['dictionary']}
+    review.base.renderer.source(glyph)
+    for pin in entry['candidates']:
+        with urllib.request.urlopen(pin['url'], timeout=30) as response:
+            raw = response.read()
+        assert len(raw) == pin['bytes']
+        assert hashlib.sha256(raw).hexdigest() == pin['sha256']
+        root = ET.fromstring(raw)
+        paths = [node.attrib['d'] for node in root.iter()
+                 if node.tag.endswith('path') and re.search(r'-s\d+$', node.get('id', ''))]
+        assert len(paths) == pin['strokes']
+        review.ENTRIES.append({'id': pin['id'], 'glyph': glyph,
+                              'dictionaryStrokes': entry['dictionaryStrokes'],
+                              'viewBox': root.attrib['viewBox'],
+                              'strokes': [{'path': path} for path in paths]})
+
+for entry in json.loads(subprocess.check_output(['node', str(HERE / 'build-g1.mjs')])):
+    review.ENTRIES.append({'id': entry['glyph'] + '-normalized', 'glyph': entry['glyph'],
+                          'dictionaryStrokes': len(entry['paths']), 'viewBox': '0 0 100 100',
+                          'strokes': [{'path': path} for path in entry['paths']]})
+
+if __name__ == '__main__':
+    print(json.dumps({'ready': True, 'candidates': len(review.ENTRIES), 'port': 51837}), flush=True)
+    review.ThreadingHTTPServer(('127.0.0.1', 51837), review.Handler).serve_forever()

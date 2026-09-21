@@ -1,19 +1,21 @@
 {
   "status": "active",
   "date": "2026-09-21",
-  "lastCompletedCommit": "44b22f8c26fff32a1c25012b15cad172cb852799",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special2-rabbit-variant.json",
+  "lastCompletedCommit": "97d6f2d0f8a0117540d460fc26adb2828286c60d",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-g1-kanjivg.json",
   "currentBatch": {
     "glyphs": [
-      "兎"
+      "饉", "睹", "燐"
     ],
-    "strokes": 8,
+    "strokes": 50,
     "status": "verified-ready-to-commit",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
-        "passed": 766,
-        "failed": 0
+        "initialRun": {"total": 768, "passed": 767, "failed": 1},
+        "fix": "Include the new 3-character registry in textbook aggregate test.",
+        "targetedRerun": {"passed": 9, "failed": 0},
+        "typeCheckPassed": true
       },
       "productionBuild": {
         "passed": true,
@@ -21,49 +23,41 @@
         "temporaryHarnessBuildPassed": true
       },
       "visualReview": {
-        "normalizedCumulativeStrokes": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
+        "allSourceStrokesReviewed": 68,
+        "normalizedReorderedCumulativeStates": {"饉": 20},
         "completeForm": true
       },
       "ui": {
-        "searchShowsVariant": true,
+        "representativeGlyph": "饉",
         "introAutoplayStarted": true,
         "introAutoplayCompleted": true,
         "writingAutoplay": true,
         "replay": true,
         "staticOverlayNotDuplicated": true,
-        "canvasDrag": true,
-        "canvasDragPreservesSheetPosition": true,
+        "canvasDrag": "Passed earlier this turn on 兎; UI code unchanged.",
+        "canvasDragPreservesSheetPosition": "Passed earlier this turn on 兎; UI code unchanged.",
         "consoleErrors": 0,
-        "record": "docs/hanja-mang-yu-rabbit-2026-09-21/integration.md"
+        "record": "docs/hanja-goal-2026-09-21/README.md"
       }
     }
   },
   "workingTreeCoverage": {
     "pass": true,
-    "addedCharacters": 1,
-    "addedStrokes": 8,
+    "addedCharacters": 3,
+    "addedStrokes": 50,
     "reproduction": true,
     "runtime": {
-      "applied": 4926,
+      "applied": 4929,
       "total": 5978,
-      "remaining": 1052
+      "remaining": 1049
     },
     "grades": [
       {
         "grade": "1급",
-        "applied": 1052,
+        "applied": 1055,
         "total": 1145,
-        "remaining": 93,
-        "percent": 91.9
+        "remaining": 90,
+        "percent": 92.1
       },
       {
         "grade": "2급",
@@ -166,35 +160,36 @@
     ]
   },
   "uncommittedOwnedPaths": [
-    "lib/hanja-stroke-variants.ts",
-    "lib/hanja-stroke-variants.test.ts",
-    "lib/hanja-stroke-special2-variants.test.ts",
-    "lib/hanja-stroke-rabbit.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-special2-rabbit-variant.json",
-    "docs/hanja-mang-yu-rabbit-2026-09-21/build.mjs",
-    "docs/hanja-mang-yu-rabbit-2026-09-21/serve.py",
-    "docs/hanja-mang-yu-rabbit-2026-09-21/verify-integration.mjs"
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "lib/hanja-stroke-dictionary-g1-kanjivg.ts",
+    "lib/hanja-stroke-dictionary-g1-kanjivg.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-g1-kanjivg.json",
+    "docs/hanja-goal-2026-09-21/g1-next-review.json",
+    "docs/hanja-goal-2026-09-21/g1-reviewed-candidates.json",
+    "docs/hanja-goal-2026-09-21/g1-findings.json",
+    "docs/hanja-goal-2026-09-21/build-g1.mjs",
+    "docs/hanja-goal-2026-09-21/serve-g1.py",
+    "docs/hanja-goal-2026-09-21/README.md",
+    "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextActions": [
-    "Commit verified rabbit integration using the private index; include integration.md and goal checkpoint, exclude other sessions' changes.",
-    "Continue domestic source comparison of 饉·睹·瀆·燐, 4 characters and 68 dictionary strokes, using g1-next-review.json; do not approve on counts alone.",
-    "Keep all remaining 1,052 characters in scope; 65 count-matching KanjiVG candidates are not approved."
+    "Commit the verified 3-character/50-stroke batch with its evidence and tests using the private index.",
+    "Crosscheck remaining KanjiVG candidates against domestic counts. 鼈 and 瞥 in next-candidates.json have catalog/dictionary conflicts 25/24 and 17/16; inspect alternate source files before approval.",
+    "Keep all remaining 1,049 characters in scope; candidate count matches are not approvals."
   ],
   "held": [
     "莽",
     "萸",
     "鱉",
-    "宬"
+    "宬",
+    "瀆"
   ],
   "resources": {
-    "productionStaticServer": {
-      "pid": 95032,
-      "status": "stopped-after-ui-verification",
-      "port": 51836,
-      "root": "/tmp/lingo-hanja-goal-rabbit-check/out"
-    },
-    "temporaryHarness": "/tmp/lingo-hanja-goal-rabbit-check/app/rabbit-review/page.tsx",
+    "productionStaticServer": "Stopped owned port 51836 server after UI checks.",
+    "sourceReviewServer": "Stopped owned port 51837 server after visual review.",
+    "temporaryHarness": "Owned isolated checkout and temporary HanjaCard harness removed after successful verification.",
     "browserViewportResetPending": "Old IAB provider unavailable after browser provider changed; no Chrome override set.",
-    "browserTabsCleanupPending": "Verified Chrome tab closed; old IAB tabs unavailable."
+    "browserTabsCleanupPending": "All current-turn Chrome verification/source/error tabs closed; old IAB tabs unavailable."
   }
 }
