@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-22",
+  "verificationSource": "ehanja-crosschecked",
+  "officialExamBodyApproval": false,
+  "entries": [
+    {
+      "glyph": "魴",
+      "candidate": "09b74",
+      "strokesReviewed": 15,
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "decision": "approved",
+      "rendering": {
+        "sourceViewBox": "0 0 109 109",
+        "sourceStrokeWidth": 3,
+        "normalizedStrokeWidth": 2.7522935779816513,
+        "sourceSha256": "a8d4e571b17b7c64dde6d6220aaf4ab829165bf9ff438e027593810e1481716e"
+      },
+      "normalizedReview": "All 15 cumulative states compared at width 5 and source-derived width 300/109; full form compared at both widths.",
+      "observations": [
+        "魚 strokes 5/6 require order [6,5]: the domestic source writes the interior horizontal before the vertical. Remaining stroke order agrees.",
+        "魚 opening sweep, top bend, enclosure, horizontal/vertical crossings and 灬 four dots agree in contour and start/end directions after reordering.",
+        "方 12 dot, 13 horizontal, 14 right/down-left bend and up-left hook, and 15 left-falling sweep agree.",
+        "At width 5 the last 灬 dot touches the enclosure and the 方 sweep. Source-native stroke-width 3, uniformly scaled to 300/109, preserves distinct dots.",
+        "Source SVG style and full-byte hash were verified. Only uniform scaling, source-derived width and the reviewed 5/6 permutation are used. No curve points, reversals, splits or merges."
+      ]
+    },
+    {
+      "glyph": "隴",
+      "candidate": "096b4",
+      "strokesReviewed": 19,
+      "decision": "held",
+      "observations": [
+        "All 19 primary strokes, normalized cumulative states and complete form reviewed. The primary order/directions agree, but whole-character connections differ.",
+        "The lower end of 阜 stroke 2 stays detached from vertical stroke 3, while the domestic reference joins them. At width 5 the 立 lower horizontal 8 also contacts 阜.",
+        "The Kaisho alternative keeps both 阜 paths 2 and 3 byte-identical, so it does not fix the structural gap. Alternative strokes 2/3/4/8 were compared; its diagonal stroke 4 also differs from the domestic vertical dot.",
+        "No new connecting segment, mirrored path or inferred component replacement was authored."
+      ],
+      "reopenCondition": "A licensed exact-character geometry with the domestic 阜 closure and component separation, or independently evidenced correction of the full path."
+    }
+  ],
+  "alternatives": [
+    {
+      "glyph": "隴",
+      "candidate": "096b4-Kaisho",
+      "sha256": "e4f1e2defd733c899bbdec9bf32d425cd5fc010b124541dd629167fa7115edbb",
+      "changedStrokeIndices": [
+        4,
+        7,
+        11,
+        12
+      ],
+      "visuallyReviewedStrokeIndices": [
+        2,
+        3,
+        4,
+        8
+      ],
+      "fullVisualReview": false,
+      "decision": "not-selected",
+      "reason": "The problematic 阜 2/3 geometry is unchanged; stroke 4 direction also differs."
+    }
+  ],
+  "visualReview": {
+    "primaryStrokes": 34,
+    "alternativeStrokes": 4,
+    "normalizedAtDefaultWidth": 34,
+    "normalizedAtApprovedSourceWidth": 15,
+    "approvedCompleteForms": 1,
+    "privateGraphicsSaved": false
+  }
+}
