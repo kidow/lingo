@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-22",
+  "status": "candidate-not-approved",
+  "lead": {
+    "glyph": "菩",
+    "root": "u83e9-k",
+    "records": {
+      "u83e9-k": {
+        "name": "u83e9-k",
+        "version": 9,
+        "related": "U+83E9",
+        "data": "99:0:0:0:0:200:200:u83e9-ue0102"
+      },
+      "u83e9-ue0102": {
+        "name": "u83e9-ue0102",
+        "version": 10,
+        "related": "U+83E9",
+        "data": "99:0:0:0:1:199:174:ufa5e-03$99:0:0:0:40:200:200:u5485-j"
+      },
+      "ufa5e-03": {
+        "name": "ufa5e-03",
+        "version": 8,
+        "related": "U+8279",
+        "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39"
+      },
+      "u5485-j": {
+        "name": "u5485-j",
+        "version": 2,
+        "related": "U+5485",
+        "data": "99:0:0:0:-1:200:235:u7acb-03$1:12:13:54:121:54:170$1:2:2:54:121:146:121$1:22:23:146:121:146:170$1:2:2:54:170:146:170"
+      },
+      "u7acb-03": {
+        "name": "u7acb-03",
+        "version": 6,
+        "related": "U+7ACB",
+        "data": "1:0:32:100:13:100:37$1:0:0:26:37:174:37$2:7:8:54:42:70:55:76:75$2:0:7:140:44:133:59:116:83$1:0:0:15:83:185:83"
+      }
+    },
+    "status": "candidate-not-reviewed"
+  },
+  "metadata": {
+    "glyph": "菩",
+    "grade": "1급",
+    "catalogStrokes": 12,
+    "dictionaryStrokes": 12,
+    "dictionary": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/83e9.svg",
+      "bytes": 6233,
+      "sha256": "230313f9da7f97e6d83e297fef89b9ca9c798ca582ef339a69757defc7ab2baa"
+    }
+  },
+  "review": {
+    "glyph": "菩",
+    "sourceRoot": "u83e9-k",
+    "originalVisualSteps": 12,
+    "groupedCumulativeStates": 12,
+    "finalFormReviewed": true,
+    "approved": false,
+    "width": 4,
+    "issue": "Domestic strokes7 and8 start separated below horizontal6; width4 candidate caps touch horizontal6. Domestic left dot7 is also separated above horizontal9. Source points unchanged; assess width2 without editing points.",
+    "next": "Render same source/grouping at width2 and re-review all cumulative states and final form. Source versions still need exact pin recheck."
+  },
+  "runtimeApplied": false,
+  "temporaryReview": {
+    "width4": {
+      "port": 51881,
+      "pid": 88638
+    },
+    "width2": {
+      "port": 51882,
+      "pid": 90639
+    },
+    "privateGraphics": "RAM only"
+  },
+  "nextActions": [
+    "Reconfirm 菩 missing and recheck5 exact source revisions.",
+    "Compare identical source points at width2 against all12 domestic strokes, cumulative and final forms; do not alter geometry by guesswork.",
+    "If accepted, support only the reviewed mixed curve/box grouping and perform runtime/types/build/UI checks before commit."
+  ]
+}

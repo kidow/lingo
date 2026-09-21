@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 
 // Only the line, quadratic and vertical-sweep forms actually used by this
 // reviewed subset are supported. KAGE primitives are not generally pen strokes.
-export function expandKage(source, { allowConnectionLines = false, allowBentStrokes = false, allowReviewedCurves = false } = {}) {
+export function expandKage(source, { allowConnectionLines = false, allowBentStrokes = false, allowReviewedCurves = false, allowBoxLines = false } = {}) {
   const primitives = []
   function visit(name, transform = [1, 1, 0, 0], ancestry = []) {
     assert(!ancestry.includes(name), 'Cyclic KAGE reference')
@@ -52,7 +52,9 @@ export function expandKage(source, { allowConnectionLines = false, allowBentStro
       const reviewedCurve = allowReviewedCurves && type === 2 && (
         (head === 7 && tail === 8) || ((head === 22 || head === 32) && tail === 7)
       )
-      assert(type === 1 ? (head === 0 && tail === 0) || connectedLine || cornerLine
+      const boxLine = allowBoxLines && type === 1 && values[3] === values[5] && values[4] < values[6]
+        && ((head === 12 && tail === 13) || (head === 22 && tail === 23))
+      assert(type === 1 ? (head === 0 && tail === 0) || connectedLine || cornerLine || boxLine
         : type === 2 ? (head === 0 && tail === 7) || (head === 7 && tail === 0) || reviewedCurve
           : type === 3 ? downRightBend : head === 0 && tail === 7,
       'Unsupported head/tail shape: do not omit hooks or other source features')
@@ -64,7 +66,7 @@ export function expandKage(source, { allowConnectionLines = false, allowBentStro
         ])
       }
       primitives.push({ type, points, source: name, sourceRow: index + 1,
-        ...(allowReviewedCurves ? { head, tail } : {}) })
+        ...(allowReviewedCurves || allowBoxLines ? { head, tail } : {}) })
     }
   }
   visit(source.root)
