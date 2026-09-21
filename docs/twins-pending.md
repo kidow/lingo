@@ -731,3 +731,43 @@ cushion · wreath · dial · gauge · keyhole · basket · awning이 이미 남�
 **뽑아서 재 보니 가장 가까운 것이 89다.** `hoist-the-sail`(돛을 올리다)이
 개념 `sail`(항해하다)과 구조 89 · 색 0.738인데, 둘 다 돛 올린 배다. 문턱
 밖이지만 이 무리에서 제일 가깝다 — 임자가 갈라야 한다면 여기다.
+
+## 고장(city) 여든하나의 몸통을 세었다 — 거울상 열아홉 (2026-09-21)
+
+`city`의 그림 빚 81에서 열다섯을 뽑으려고 몸통을 셌다. **아직 그림이 없어
+`twins`로는 못 잰다** — 프롬프트를 나란히 놓고 읽어서만 보인다. 내가 만든
+개념이 아니라 고치지 않고 넘긴다.
+
+**파일 안에서 겹치는 무리 다섯.**
+
+| 무리 | 개념 | 그림 |
+| --- | --- | --- |
+| 말뚝·경계석 | `be-at-feud-with-them`(원수로 지내다) · `lay-claim-to-it`(제 몫이라 내세우다) · `standing-on-its-own-right`(주권의) · `a-position-held`(버티는 자리) · `a-push-forward`(밀고 나감) · `the-best-mark-so-far`(최고 기록) · `holding-to-the-rule`(원칙을 지키는) · `of-that-place`(그 고장의) | **여덟이 다 「땅에 박힌 기둥」이다.** 이 파일에서 가장 큰 무리 |
+| 열쇠 | `rule-over-the-place`(다스리다) · `the-one-that-holds-power`(다스리는) · `how-full-it-is`(들어차 있음) | 앞의 둘은 **뜻까지 거의 같다** — 하나는 열쇠 꾸러미, 하나는 큰 열쇠 한 개다 |
+| 집 없는 | `one-with-no-roof-at-all`(노숙인) · `with-no-roof-of-ones-own`(집 없는) · `in-hard-straits`(어려운 형편의) | 앞의 둘이 「누운 자리와 개 놓은 담요」로 같다 |
+| 손 줄 | `going-round-among-people`(돌아다님) · `send-it-round`(돌아다니게 하다) | 벌린 손이 줄지어 있고 넘어가는 것만 동전이냐 쪽지냐다 |
+| 투표함 | `to-do-with-choosing`(뽑는) · `put-their-name-forward`(후보로 내세우다) | 둘 다 나무 상자에 난 좁은 틈이다 |
+
+**파일 밖과 겹쳐 이번 회차에서 뺀 넷.**
+
+    set-on-being-free(자유를 좋아하는)   열린 새장     ↔ 개념 cage(새장)      둘 다 처마에 걸린 새장
+    from-up-top(위쪽에서)              지붕과 홈통   ↔ 개념 gutter(빗물받이)  둘 다 지붕 끝의 홈통
+    drop-bombs-on-it(폭탄을 떨구다)     들판의 구덩이  ↔ 개념 crater(분화구)   둘 다 둥근 구덩이
+    put-them-low-before-all(업신여겨…)  바닥의 방석   ↔ 개념 cushion(방석)    둘 다 바닥에 놓인 네모 방석
+
+`set-on-keeping-the-peace`(평화를 좋아하는)도 모루를 몸통으로 쓰는데, 모루는
+`idea/worth-it`(~할 만한)이 오늘 가져갔다. `the-cloakroom-counter`(옷 맡는 곳)는
+옷걸이 봉이라 옷 파일의 포화 무리에 붙는다.
+
+### 일곱 갈래 촛대는 메노라다 — 정교가 아니다 (2026-09-21)
+
+`of-the-eastern-church`(정교의)를 「a tall candle stand with a row of thin
+tapers」로 뽑았더니 **일곱 갈래 촛대**가 나왔다. 유대교의 메노라다. 게다가
+개념 `menorah`(하누카 촛대)가 따로 있다.
+
+프롬프트에 **꼴을 박아** 다시 뽑았다 — 「a low sand tray … many thin tapers
+pushed upright into the sand … no branched candlestick」. 정교의 초꽂이가
+나왔고 `menorah`와 117이다.
+
+**믿음을 가리키는 낱말은 꼴을 지정한다.** 「촛대」라고만 하면 모델은 가장
+흔한 촛대를 그리는데, 그것이 다른 종교의 것일 수 있다.
