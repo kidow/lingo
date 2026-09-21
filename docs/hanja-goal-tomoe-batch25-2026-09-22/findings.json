@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-22",
+  "head": "1173fa4519ee371aabe5f3316d83ac35faf65cf4",
+  "verificationSource": "ehanja-crosschecked",
+  "officialExamBodyApproval": false,
+  "domesticVisualSteps": 32,
+  "candidateVisualSteps": 32,
+  "runtimeChanged": false,
+  "privateGraphicsSaved": false,
+  "entries": [
+    {
+      "glyph": "敝",
+      "catalogStrokes": 12,
+      "domesticStrokes": 11,
+      "candidateStrokes": 11,
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "cumulativeStatesReviewed": true,
+      "finalFormReviewed": true,
+      "decision": "hold",
+      "priorReview": "docs/hanja-goal-special-kanjivg-batch11-2026-09-22/findings.json",
+      "widthProbe": {
+        "requiredStart11To9": 4.24550829481222,
+        "requiredStart11To8": 1.949259506032319,
+        "forbiddenEnd7To4": 3.7108833545193036,
+        "forbiddenStart7To5": 4.923326855507992,
+        "forbiddenStart6To5": 4.424744914014767
+      },
+      "blockers": [
+        "Domestic final11 begins at horizontal9; Tomoe11 begins lower. Connecting11 to9 requires width >=4.2455, while keeping inner7 separate from boundary4 requires width <3.7109. No uniform round-cap width satisfies both."
+      ],
+      "observations": [
+        "All11 individual reveals, cumulative states and final form compared. Unlike the previous 12-path KanjiVG source, Tomoe central5 is one continuous downward stroke, resolving that source's split-center count issue.",
+        "Directions: 1 down-left;2 down-right;3 down;4 right/down/left hook;5 down;6 down-left;7 down-right;8 down-left;9 right;10 down then down-left;11 down-right.",
+        "Catalog12 remains unchanged; domestic11/Tomoe11 would require an explicit playback variant only if the complete geometry passed. At final width4,11 reaches8 but not9, while7 reaches4. No new endpoints or merges were made."
+      ],
+      "release": "Obtain a licensed complete11-path source preserving central5 while correcting inner7 separation and final11 start, or domestic evidence for an exact12-stroke variant; review the entire glyph again."
+    },
+    {
+      "glyph": "鐶",
+      "catalogStrokes": 21,
+      "domesticStrokes": 21,
+      "candidateStrokes": 21,
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "cumulativeStatesReviewed": true,
+      "finalFormReviewed": true,
+      "decision": "hold",
+      "priorReview": "docs/hanja-goal-special-kanjivg-batch11-2026-09-22/findings.json",
+      "widthProbe": {
+        "requiredEnd7To5": 6.544736170204841,
+        "forbiddenEnd6To5": 2.123923546248182,
+        "forbiddenStart3To1": 1.1208027323034637,
+        "requiredStart21To17": 3.623855097800423,
+        "forbiddenStart21To18": 3.8418420879939816
+      },
+      "blockers": [
+        "Domestic 金6 is detached from stem5 and7 reaches stem5. Tomoe end7-to5 needs width >=6.5447, whereas end6-to5 separation needs width <2.1239. No uniform round-cap width satisfies both."
+      ],
+      "observations": [
+        "All21 original individual reveals, cumulative states and final form compared, including lower21. At final width4, 金6 joins5 while7 does not directly reach5; its connection through8 does not reproduce the domestic direct stem contact.",
+        "Tomoe3 also reaches left sweep1 at the reviewed widths; point-to-line threshold1.1208. Lower21 starts below17 and reaches it at width4. Distances alone do not certify a new corrected glyph.",
+        "No endpoint relocation, synthesis, split or merge was made."
+      ],
+      "release": "Obtain licensed complete geometry with the domestic 金 dot/stem connections and separations, then review every stroke and lower component against the domestic source."
+    }
+  ]
+}

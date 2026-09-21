@@ -1,28 +1,27 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "4439f6ebebf1fc450326a38b97f5ba3f5ecb7dc8",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-tomoe-batch24-2026-09-22/findings.json",
+  "lastCompletedCommit": "1173fa4519ee371aabe5f3316d83ac35faf65cf4",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-tomoe-batch25-2026-09-22/findings.json",
   "currentBatch": {
     "glyphs": [],
     "strokes": 0,
     "heldGlyphs": [
-      "駸",
-      "褊",
-      "諞"
+      "敝",
+      "鐶"
     ],
-    "heldStrokes": 47,
-    "domesticStrokes": 47,
-    "status": "Tomoe complete glyph comparison; unresolved directions and roof connections; no runtime addition",
+    "heldStrokes": 32,
+    "domesticStrokes": 32,
+    "status": "Tomoe complete glyph comparison; incompatible contact/separation widths; no runtime addition",
     "checks": {
       "researchVerifierPassed": true,
-      "domesticVisualSteps": 47,
-      "candidateVisualSteps": 47,
-      "normalizedPathHashes": 3,
-      "remainingTomoeCountMatches": 2,
+      "domesticVisualSteps": 32,
+      "candidateVisualSteps": 32,
+      "normalizedPathHashes": 2,
+      "remainingTomoeCountMatches": 0,
       "runtimeUnchanged": true,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-tomoe-batch24-2026-09-22/README.md",
+      "record": "docs/hanja-goal-tomoe-batch25-2026-09-22/README.md",
       "previousRuntimeVerification": {
         "commit": "4439f6ebebf1fc450326a38b97f5ba3f5ecb7dc8",
         "hanjaTests": 833,
@@ -148,9 +147,9 @@
     ]
   },
   "nextActions": [
-    "Review Tomoe 敝11 and 鐶21 (32 strokes), the two remaining count-matched candidates.",
-    "Treat prior holds as questions for the new exact-glyph source, not automatic rejections. Do not synthesize missing paths.",
-    "After this pool is exhausted, inventory other missing exact-glyph sources and count-mismatch variants; avoid identical corpus rechecks."
+    "Read official KAGE geometry/component format and stroke boundary semantics.",
+    "Retrieve revision-pinned exact-glyph records and dependencies for currently missing characters.",
+    "Compare each actual pen-down path and cumulative glyph against domestic stroke evidence before runtime approval."
   ],
   "held": [
     "莽",
@@ -198,18 +197,18 @@
     "鐫"
   ],
   "resources": {
-    "tabs": "closed",
-    "ramServers": "51858 stopped",
+    "tabs": "batch25 review tabs closed; GlyphWiki source research active",
+    "ramServers": "51859 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-tomoe-batch24-2026-09-22/metadata.json",
-    "docs/hanja-goal-tomoe-batch24-2026-09-22/findings.json",
-    "docs/hanja-goal-tomoe-batch24-2026-09-22/next.json",
-    "docs/hanja-goal-tomoe-batch24-2026-09-22/serve.py",
-    "docs/hanja-goal-tomoe-batch24-2026-09-22/verify.mjs",
-    "docs/hanja-goal-tomoe-batch24-2026-09-22/README.md",
-    "docs/hanja-goal-tomoe-batch24-2026-09-22/probe.py"
+    "docs/hanja-goal-tomoe-batch25-2026-09-22/metadata.json",
+    "docs/hanja-goal-tomoe-batch25-2026-09-22/findings.json",
+    "docs/hanja-goal-tomoe-batch25-2026-09-22/next.json",
+    "docs/hanja-goal-tomoe-batch25-2026-09-22/serve.py",
+    "docs/hanja-goal-tomoe-batch25-2026-09-22/verify.mjs",
+    "docs/hanja-goal-tomoe-batch25-2026-09-22/probe.py",
+    "docs/hanja-goal-tomoe-batch25-2026-09-22/README.md"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-tomoe-batch24-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-tomoe-batch25-2026-09-22/next.json"
 }
