@@ -1,0 +1,121 @@
+{
+  "date": "2026-09-22",
+  "status": "held-no-runtime-change",
+  "reviewedGlyphs": 3,
+  "reviewedDomesticStrokes": 37,
+  "reviewedCandidateStrokes": 37,
+  "normalization": "normalizeMedians: preserve every point and boundary; uniform 80-unit extent, inverted Y, 0.1-unit rounding",
+  "reviewDisplay": {
+    "cumulativeWidth": 5,
+    "finalWidth": 4,
+    "licenseLabelCaveat": "Initial comparison reused the KanjiVG page label; candidates actually came from the pinned AnimCJK Hans/Hant corpora. The saved renderer fixes the label. No KanjiVG provenance is claimed for these paths."
+  },
+  "entries": [
+    {
+      "glyph": "兕",
+      "corpus": "Hans",
+      "catalogStrokes": 8,
+      "dictionaryStrokes": 7,
+      "reviewedStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewedCumulativeStates": 7,
+      "finalFormReviewed": true,
+      "decision": "hold",
+      "blockers": [
+        {
+          "stroke": 6,
+          "observation": "Domestic stroke 6 starts on the lower horizontal (stroke 5), descends and bends left. The normalized candidate starts below that bar, with an initial down-right jog and a visible gap. Full-form rendering confirms the detached branch."
+        }
+      ],
+      "otherObservations": "Stroke boundaries and general 1–5/7 order were inspected. Width differences in the comparison must not be used to infer that the detached 6th stroke is repaired.",
+      "releaseCondition": "Obtain a licensed complete 7-stroke path set with the source-supported 5/6 junction and whole-glyph shape; re-review all cumulative states."
+    },
+    {
+      "glyph": "牖",
+      "corpus": "Hans",
+      "catalogStrokes": 15,
+      "dictionaryStrokes": 15,
+      "reviewedStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "reviewedCumulativeStates": 15,
+      "finalFormReviewed": true,
+      "decision": "hold",
+      "priorReview": "docs/hanja-special-batch9-2026-09-20/review.json",
+      "blockers": [
+        {
+          "stroke": 5,
+          "observation": "Domestic stroke 5 is a long right-to-left top bar. Hans stroke 5 is a short down-right dot; it does not resolve the previously held 戶/戸 form difference."
+        },
+        {
+          "stroke": 12,
+          "observation": "The candidate's inner horizontal ends short of both enclosing verticals in the full form, unlike the domestic source."
+        },
+        {
+          "stroke": 13,
+          "observation": "The candidate's lower inner horizontal also ends short of both enclosing verticals."
+        }
+      ],
+      "releaseCondition": "A complete licensed candidate matching the domestic long top bar, its direction, and inner horizontal junctions; no arbitrary dot-to-bar replacement."
+    },
+    {
+      "glyph": "瘦",
+      "corpus": "Hant",
+      "catalogStrokes": 14,
+      "dictionaryStrokes": 15,
+      "reviewedStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "reviewedCumulativeStates": 15,
+      "finalFormReviewed": true,
+      "decision": "hold",
+      "blockers": [
+        {
+          "stroke": 1,
+          "observation": "Domestic stroke 1 descends vertically and meets stroke 2. Hant stroke 1 is a slanted down-right dot, detached from stroke 2."
+        },
+        {
+          "stroke": 15,
+          "observation": "Domestic final stroke begins on the left half of stroke 14's top bar; the normalized candidate starts below that bar, detached in the completed form."
+        }
+      ],
+      "releaseCondition": "A complete licensed 15-stroke candidate supporting the domestic initial vertical junction and final branch junction; preserve catalog 14 separately if later approved."
+    }
+  ],
+  "verificationScope": "All 37 colored stroke reveals, their cumulative backgrounds and three completed forms were visually reviewed through CUA. No runtime addition, build or application UI test is claimed."
+}
