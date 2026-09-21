@@ -163,7 +163,7 @@
 
 | 쌍 | 거리 | 무엇이 문제인가 | 옮길 쪽과 갈래 |
 | --- | ---: | --- | --- |
-| `school/paperclip`(클립)<br>`school/exam-paper`(시험지) | 54 · 0.19 | 클립 그림이 **종이 두 장을 물고 있어** 화면을 종이가 차지한다. `exam-paper`가 줄 쳐진 종이의 임자다 | **`paperclip`을 옮긴다** — 종이를 빼고 클립 하나만. 금속의 굽이가 보이게 비스듬히 |
+| ~~`school/paperclip`(클립)<br>`school/exam-paper`(시험지)~~ | 54 → **122** | 클립 그림이 **종이 두 장을 물고 있어** 화면을 종이가 차지했다 | **끝냈다 (2026-09-21)** — 종이를 빼고 클립 하나만 비스듬히 두니 54가 122가 됐다 |
 | ~~`body/cornea`<br>`body/retina`~~ | 57 → **115** | 둘 다 **안구 단면**이고 강조한 층만 다르다. 80×80에서는 강조가 안 보인다 | **끝냈다** — 눈 전체가 아니라 **앞쪽만 크게 잘라** 돔이 화면을 채운다. 배율을 바꾸니 구도부터 갈렸다 |
 | ~~`sport/cycling`(사이클)<br>`sport/cyclist`(사이클 선수)~~ | 50 → **136** | 둘 다 경주 자전거에 탄 인물 하나를 옆에서 봤다 | **끝냈다** — `cycling`을 여섯이 정면으로 줄지어 오는 무리로. `bicycle` 113 · `marathon` 109 |
 
@@ -483,12 +483,35 @@ cake · crate · hanger). 저울 무리를 만든 것과 똑같은 실수를 되
 `weighty-enough-to-tip-the-scale`(한쪽으로 판가름하다)은 저울이 곧 그
 관용구다. `fair-and-just`는 `justice`와 「수평인 저울」로 겹쳐서 옮겼다.
 
-**남은 일곱은 자리를 못 찾았다** — `whether` · `fit-to-receive-it` ·
-`dear-to-pay-for` · `as-the-money-goes` · `saying-it-as-it-is` ·
-`the-market-worth-of-it` · `lawyer`이다. 그릴 몸통 후보가 죄다 남의 것이라
-빈 낱말을 더 뒤져야 한다. **먼저 `pnpm props`로 후보를 거르고 쓸 것.**
+#### 남은 일곱도 옮겼다 — 저울 22 → 10 (2026-09-21)
 
-옮긴 여섯 가운데 다섯은 이미 그려져 있어 다시 뽑아야 한다.
+「자리를 못 찾았다」고 넘겨 둔 일곱을 `pnpm pending --free`가 열려 있다고
+알려 줘 그 자리에서 끝냈다. **빈 낱말을 먼저 열둘 거르고 골랐다** — 후보
+가운데 dice · receipt · lectern · auction · trophy · hourglass · funnel ·
+cushion · wreath · dial · gauge · keyhole · basket · awning이 이미 남의
+몸통이었고, 남은 것으로 갔다.
+
+| 개념 | 뜻 | 옮긴 그림 |
+| --- | --- | --- |
+| `quality/whether` | ~인지 | 빈 상 위에서 아직 도는 팽이 |
+| `quality/fit-to-receive-it` | 받을 만한 | 곁에 선 항아리 밑동 꼴로 파인 빈 주춧돌 |
+| `quality/dear-to-pay-for` | 값이 많이 드는 | 놋 물꼭지에서 동전이 쏟아져 넘치는 들통 |
+| `idea/as-the-money-goes` | 돈 쪽으로 | 화살이 동전 무더기 쪽으로 돌아간 바람개비 |
+| `office/saying-it-as-it-is` | 있는 그대로 말하다 | 벽에 곧게 드리운 다림줄 |
+| `city/the-market-worth-of-it` | 저자에서 매겨진 값 | 저자 광주리에 기댄 빈 석판과 동전 |
+| `job/lawyer` | 변호사 | 걸개에 걸린 검은 법복과 끈으로 묶인 서류 뭉치 |
+
+    pnpm props balance   그림에 나온 것 22 → 10
+
+남은 열은 저울이 맞는 일곱에 `justice` · `sense-of-proportion` ·
+`weighty-enough-to-tip-the-scale`가 더해진 것이다. 셋 다 저울이 곧 그
+개념이라 그대로 둔다.
+
+저울 허브와 맞대 재니 다 멀다 — `whether`↔`supply-and-demand` 133 ·
+`lawyer`↔`justice` 113 · `as-the-money-goes`↔`justice` 125다.
+
+**옮긴 여섯은 임자가 이미 다시 뽑아 두었다.** 곳간과 빈 수레 · 확대경과 돌 ·
+모루와 편자 · 눈 위 발자국 · 수평인 시소 · 쐐기로 기운 상이 다 들어 있다.
 
 내 파일이 아니라 넘긴다. 고칠 때는 [IMAGE_STYLE](../IMAGE_STYLE.md)의 「장면을
 찾는 다섯 수」를 쓴다 — 저울은 「견주다」의 그림이지 「수급」의 그림이 아니다.
