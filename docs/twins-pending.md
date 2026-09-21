@@ -865,3 +865,40 @@ with three extra turns added and pulled tight」였다. **교수형 올가미**�
 
 **「고리」·「매듭」처럼 줄로만 된 것을 시킬 때는 무엇에 묶이는지를 같이
 적는다.** 묶일 것을 안 주면 모델은 올가미를 그린다.
+
+## 사무(office) 아흔아홉의 몸통을 세었다 — 도장 여덟 · 장부 여섯 (2026-09-21)
+
+`office`의 그림 빚 99에서 열다섯을 뽑으려고 몸통을 셌다. **물건 무리가
+스물여덟이다.**
+
+| 무리 | 수 | 개념 |
+| --- | ---: | --- |
+| 도장·봉인 | **8** | `belonging-to-the-state`(나라의) · `of-the-union-of-states`(연방의) · `the-first-letters-of-a-name`(이름 첫 글자) · `a-seal-that-stamps`(도장) · `saying-it-is-so`(증명해 줌) · `bind-them-to-do-it`(하도록 묶다) · `the-firms-own`(회사 상표의) · `the-makers-mark`(상표 그림) |
+| 장부 | **6** | `bring-it-in-and-enter-it`(들여놓다) · `a-checking-over`(살펴 봄) · `to-do-with-running-it`(경영 쪽의) · `hold-it-in-charge`(맡아 다스리다) · `to-do-with-state-money`(나라 살림의) · `what-the-trade-brings-in`(매출액) |
+| 알림판 | 4 | `a-notice-put-in`(알림 글) · `to-do-with-notices`(알림의) · `pressing-just-now`(지금 긴한) · `so-the-word-goes`(그렇다는데) |
+| 바퀴 | 4 | `make-it-over-anew`(뜯어고치다) · `do-its-proper-work`(제구실하다) · `up-and-running`(돌아가고 있는) · `turning-with-little-to-show`(헛돌아가는) |
+| 연단 | 2 | `a-report-given`(알림 발표) ↔ `one-sent-to-speak`(내세운 사람) — **둘 다 빈 의자 앞의 연단이다** |
+| 모래시계 | 2 | `with-no-term-set`(기한 없는) ↔ `before-the-term-is-up`(기한 전의) |
+| 문틈의 종이 | 2 | `word-sent-on`(알리는 글) ↔ `bring-it-on-oneself`(떠안게 되다) |
+
+도장 여덟과 장부 여섯은 **뜻이 저마다 다른데 그림이 하나다.** 「증명해 줌」과
+「하도록 묶다」와 「연방의」를 80×80에서 도장으로만 가릴 수 없다.
+
+**파일 밖과 겹쳐 이번 회차에서 뺀 셋.**
+
+    all-told-together(통틀어)     주판알 한쪽으로  ↔ calculate(셈하다)   같은 주판
+    pin-it-down-exactly(잡아 정하다) 도면 위 컴퍼스  ↔ dividers(제도 컴퍼스) 같은 컴퍼스
+    by-wire-and-current(전자로)    꽂힌 플러그    ↔ plug-in(꽂다) · unplug(뽑다)
+
+### 「덧대었다」는 색을 갈라야 보인다 (2026-09-21)
+
+`make-it-more-and-more`(늘리다)를 「a ladder with extra rungs lashed on above
+its original top」으로 뽑았더니 **그냥 사다리**가 나왔다. 덧댄 자리가 같은
+나무빛이라 안 보인다. `ladder`(사다리)와 115로 멀긴 해도 뜻이 안 선다.
+
+「짙은 사다리 위에 **훨씬 밝은** 새 단을 끈으로 묶어 이은 자리가 보이게」로
+고쳐 다시 뽑으니 섰다(102).
+
+**덧대고 잇고 갈아 끼운 것을 그릴 때는 빛깔 차이를 프롬프트에 박는다.**
+`make-it-over-anew`(뜯어고치다)의 「half its spokes replaced by paler new
+ones」는 이미 그렇게 적혀 있다 — 이 자리도 그래야 했다.
