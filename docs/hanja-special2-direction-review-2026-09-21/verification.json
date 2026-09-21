@@ -1,0 +1,46 @@
+{
+  "pass": true,
+  "originalCoverage": 148,
+  "correctedCoverage": 52,
+  "summary": {
+    "reviewedCharacters": 8,
+    "reviewedStrokes": 148,
+    "pathsReviewedCharacters": 3,
+    "pathsReviewedStrokes": 52,
+    "heldCharacters": 5,
+    "heldStrokes": 96
+  },
+  "runtime": {
+    "applied": 4919,
+    "total": 5978,
+    "remaining": 1059,
+    "special2Applied": 838,
+    "special2Total": 1150
+  },
+  "runtimeApprovalsAdded": 0,
+  "authoredGeometryPoints": 0,
+  "proprietaryAssetsSaved": 0,
+  "remoteReproduction": {
+    "pass": true,
+    "remoteCorpora": [
+      "Ja",
+      "MM",
+      "Hans"
+    ],
+    "candidateHashes": 8,
+    "medianPointsUnchanged": true,
+    "reproducedStrokes": 148
+  },
+  "regression": {
+    "command": "node --test lib/hanja-stroke-special2-variants.test.ts lib/hanja-stroke-variants.test.ts",
+    "exitCode": 0
+  },
+  "visualReview": {
+    "originalCharacters": 8,
+    "originalStrokes": 148,
+    "correctedCharacters": 3,
+    "correctedStrokes": 52,
+    "completedFormsCompared": 8,
+    "sourceGraphicsSaved": false
+  }
+}
