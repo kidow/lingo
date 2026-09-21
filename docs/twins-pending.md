@@ -809,3 +809,59 @@ pushed upright into the sand … no branched candlestick」. 정교의 초꽂이
 셋 다 「결 따라 윤나는 접힌 천」이다. `silk`는 이미 그려져 있으니 나머지 둘이
 갈 자리를 찾아야 한다 — 이를테면 하나는 짜는 자리(베틀에 걸린 날실), 하나는
 파는 자리(가게 선반의 두루마리)로 옮긴다. 이번 회차에서 셋 다 뺐다.
+
+## 됨됨이(quality) 백스물하나의 몸통을 세었다 — 두 도식에 서른둘이 몰렸다 (2026-09-21)
+
+`quality`의 그림 빚 121에서 열다섯을 뽑으려고 몸통을 셌다. 다른 축과 달리
+**물건이 아니라 도식이 겹친다.**
+
+| 도식 | 수 | 보기 |
+| --- | ---: | --- |
+| 줄 세우고 하나만 다르다 | **11** | `with-nothing-to-fault`(나무랄 데 없이) · `same-as-always`(여느 때의) · `last-in-the-row`(맨 끝의) · `of-that-kind`(그런) · `as-a-rule-then`(여느 때는) · `even-that-one`(~조차) · `a-certain-few`(어떤 몇몇) · `in-the-midst-of-them`(~ 가운데) · `whichever-one-it-is`(어느 것이나) · `far-above-the-rest`(유난히 뛰어난) · `of-what-kind`(어떤) |
+| 둘을 견주어 크기 | **6** | `than-that-one`(~보다) · `more-of-it`(더) · `less-than-that`(덜) · `the-most-of-all`(가장) · `the-least-of-all`(가장 덜) · `by-a-wide-margin`(확 크게) |
+| 열쇠 | 4 | `the-very-one`(바로 그) · `solely-and-only`(오로지) · `that-tells-them-apart`(가려내는) · `in-no-way`(도무지) |
+| 저울 | 3 | `ought-by-rights`(해야 마땅하다) · `without-any-decency`(막된) · `looking-kindly-on-it`(좋게 보아 주는) |
+| 한글 띠·배지 | 3 | `the-dark-outlook`(비관) · `of-a-dark-outlook`(비관하는) · `of-a-bright-outlook`(낙관하는) |
+| 상자 안팎 | 2 | `on-the-outer-side`(바깥쪽의) ↔ `on-the-inner-side`(안쪽의) — 같은 상자의 겉과 속이다 |
+| 책과 안락의자 | 2 | `of-cultivated-manners`(교양 있는) ↔ `knowing-a-great-deal`(아는 게 많은) |
+
+**앞의 둘이 서른하나 가운데 열일곱이다.** 「줄 세우고 하나만 다르다」는
+`props.ts`가 이름 붙여 둔 도식 그대로이고, 그것만 열하나다. 물건을 바꿔도
+80×80에서는 같은 그림으로 보인다 — 항아리 줄이냐 빵 줄이냐 그루터기 줄이냐다.
+
+**갈래를 물건이 아니라 짜임으로 내야 한다.** 이를테면 「맨 끝의」는 줄을
+끊어 끝만 크게, 「~ 가운데」는 위에서 내려다본 고리꼴, 「어느 것이나」는
+손이 아무거나 집는 찰나로 옮긴다.
+
+### 다림줄은 이미 아홉이었다 — 내가 열을 만들었다 (2026-09-21)
+
+지난 회차에 `office/saying-it-as-it-is`(있는 그대로 말하다)를 다림줄로
+옮겼는데, 다림줄은 이미 아홉이 쓰고 있었다 — `conviction-belief`(신념) ·
+`the-voice-inside-that-judges`(양심) ·
+`right-on-your-side-and-nothing-to-hide`(이치가 바르니…) ·
+`right-and-wrong-of-it`(옳고 그름) · `holding-to-the-rule`(원칙을 지키는) ·
+`quality/in-the-right-of-it`(옳다) 따위다.
+
+**`props`는 알려 줬다. 내가 요약 줄만 봤다.** 「다른 개념이 제 몸통으로 쓰는
+낱말」 줄은 **개념**이 그 낱말을 몸통으로 삼을 때만 찍힌다. 다림줄은 아홉이
+다 **그림**으로만 쓰고 있어서 그 줄이 안 나왔고, 나는 「빈 낱말」로 읽었다.
+목록의 `그림` 줄을 봐야 했다.
+
+**재 보니 붙지는 않았다** — 94~120으로 다 문턱 밖이다. 그래도 옮겼다.
+다림줄 하나를 다섯 개념이 나눠 쓰면 **학습자가 카드를 못 가른다.** 「장면을
+찾는 다섯 수」의 마지막 줄이 그 자리다.
+
+옮긴 그림은 **평미레**다 — 되에 수북한 곡식을 밀어 깎아 꼭 그만큼만 남긴다.
+보태지도 덜지도 않는 것이 「있는 그대로 말하다」다. 다림줄 셋과 106~135이다.
+
+### 매듭을 시키면 올가미가 나온다 (2026-09-21)
+
+`make-it-harder-than-it-was`(더 까다롭게 하다)의 프롬프트가 「one simple loop
+with three extra turns added and pulled tight」였다. **교수형 올가미**가
+나왔다. 뜻과 아무 상관이 없고 읽히는 뜻이 나쁘다.
+
+소포로 바꿨더니 이번엔 개념 `parcel`(소포)로 읽혔다(구조 99). 돌멩이에
+필요 없이 몇 겹 더 감은 것으로 세 번째에 섰다.
+
+**「고리」·「매듭」처럼 줄로만 된 것을 시킬 때는 무엇에 묶이는지를 같이
+적는다.** 묶일 것을 안 주면 모델은 올가미를 그린다.
