@@ -66,7 +66,7 @@ test('각 글자의 검토된 굵기만 허용한다', () => {
   }
 })
 
-test('饐의 하단 연결 문제를 보류하고 짧은 Kaisho 내부 획을 사용하지 않는다', () => {
+test('饐의 KanjiVG 후보는 보류하고 별도로 검토한 Tomoe 경로를 사용한다', () => {
   const source = JSON.parse(readFileSync(new URL('../docs/hanja-goal-special-kanjivg-batch8-2026-09-22/candidates.json', import.meta.url), 'utf8'))
   const entries = source.entries as { glyph: string; candidate: { id: string }; paths: string[] }[]
   for (const id of ['096b0', '09950']) {
@@ -75,5 +75,6 @@ test('饐의 하단 연결 문제를 보류하고 짧은 Kaisho 내부 획을 �
     assert.deepEqual(primary.paths.flatMap((path, i) => path === alternate.paths[i] ? [] : [i + 1]), [6])
   }
   assert.equal(reviewed.some(e => e.glyph === '饐'), false)
-  assert.equal(hanjaStrokeData(catalog.find(e => e.glyph === '饐')!), null)
+  assert.equal(hanjaStrokeData(catalog.find(e => e.glyph === '饐')!)?.geometrySource,
+    '6f30a4f42f24dc611f1a3e4d7a220c5009bb0323f237f01f50e3be3dfefb11f8')
 })

@@ -1,42 +1,38 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "a90dc003683cce2f0ef739d1d0d9087c53e7b929",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-tomoe-batch22-2026-09-22/findings.json",
+  "lastCompletedCommit": "bbb2b7d9be6623770cf741b5712336790c74ffb9",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-tomoe-batch23-2026-09-22/findings.json",
   "currentBatch": {
-    "glyphs": [],
-    "strokes": 0,
-    "heldGlyphs": [
-      "曁",
-      "闥",
-      "餤"
+    "glyphs": [
+      "饐"
     ],
-    "heldStrokes": 54,
-    "domesticStrokes": 54,
-    "status": "Tomoe full paths reviewed; prior hold conditions unresolved; no runtime addition",
+    "strokes": 21,
+    "heldGlyphs": [
+      "隴",
+      "鏘"
+    ],
+    "heldStrokes": 38,
+    "domesticStrokes": 59,
+    "status": "runtime and UI verified; resolve commit with currentBatchCommitLookup",
     "checks": {
       "researchVerifierPassed": true,
-      "domesticVisualSteps": 54,
-      "candidateVisualSteps": 54,
-      "normalizedPathHashes": 3,
-      "remainingTomoeCountMatches": 8,
-      "runtimeUnchanged": true,
+      "hanjaTests": 833,
+      "typeCheckPassed": true,
+      "productionBuildPassed": true,
+      "uiPassed": true,
+      "domesticVisualSteps": 59,
+      "candidateVisualSteps": 59,
+      "normalizedCumulativeStates": 21,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-tomoe-batch22-2026-09-22/README.md",
-      "previousRuntimeVerification": {
-        "commit": "6ab98191273500b4bd5b13fd9adf09c152a3e1c8",
-        "hanjaTests": 829,
-        "typeCheckPassed": true,
-        "productionBuildPassed": true,
-        "uiPassed": true
-      }
+      "record": "docs/hanja-goal-tomoe-batch23-2026-09-22/README.md"
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4963,
-      "remaining": 1015,
+      "applied": 4964,
+      "remaining": 1014,
       "percent": 83
     },
     "grades": [
@@ -134,9 +130,9 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 689,
-        "remaining": 639,
-        "percent": 51.9
+        "applied": 690,
+        "remaining": 638,
+        "percent": 52
       },
       {
         "grade": "특급II",
@@ -148,9 +144,9 @@
     ]
   },
   "nextActions": [
-    "Review Tomoe candidates 隴19, 饐21 and 鏘19 (59 strokes) against prior hold conditions. All 8 remaining count-matched candidates are special grade and listed in next.json.",
-    "Use pinned l4u/tomoe 9d054a1f490368e0d45e0aff6430ce3598ab92c5/data/handwriting-ja.xml and its LGPL-2.1 notice. Identical Tegaki and iacore copies are not independent evidence.",
-    "Keep domestic graphics RAM-only, preserve every source point/boundary, and apply any fully passing candidate to runtime with source/licence files, tests/build/UI checks and an isolated commit."
+    "Review Tomoe 駸17, 褊14 and 諞16 (47 strokes); five count-matched candidates remain in next.json.",
+    "Keep domestic graphics RAM-only and verify new whole paths independently from past corpus holds.",
+    "Apply passing candidates with original editable data, license notices, complete visual review, tests/build/UI checks and isolated commits."
   ],
   "held": [
     "莽",
@@ -173,7 +169,6 @@
     "隴",
     "麑",
     "麌",
-    "饐",
     "鏘",
     "爨",
     "駸",
@@ -200,16 +195,31 @@
   ],
   "resources": {
     "tabs": "closed",
-    "ramServers": "51853 stopped",
+    "ramServers": "51854, 51855, 51856, 51857 stopped",
+    "temporaryWorktree": "/tmp/lingo-hanja-spb23-verify removed",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-tomoe-batch22-2026-09-22/metadata.json",
-    "docs/hanja-goal-tomoe-batch22-2026-09-22/findings.json",
-    "docs/hanja-goal-tomoe-batch22-2026-09-22/next.json",
-    "docs/hanja-goal-tomoe-batch22-2026-09-22/serve.py",
-    "docs/hanja-goal-tomoe-batch22-2026-09-22/verify.mjs",
-    "docs/hanja-goal-tomoe-batch22-2026-09-22/README.md"
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/metadata.json",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/findings.json",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/next.json",
+    "public/hanja-strokes/tomoe/README.original",
+    "public/hanja-strokes/tomoe/COPYING.original",
+    "public/hanja-strokes/tomoe/9950.xml",
+    "public/hanja-strokes/tomoe/NOTICE.md",
+    "public/hanja-strokes/dictionary-reviewed-tomoe-batch23.json",
+    "lib/hanja-stroke-dictionary-tomoe-batch23.ts",
+    "lib/hanja-stroke-dictionary-tomoe-batch23.test.ts",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/build.mjs",
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-dictionary-special-kanjivg-batch8.test.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/serve.py",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/verify.mjs",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/width-probe.py",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/width-probe.json",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/README.md",
+    "docs/hanja-goal-tomoe-batch23-2026-09-22/coverage.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-tomoe-batch22-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-tomoe-batch23-2026-09-22/next.json"
 }
