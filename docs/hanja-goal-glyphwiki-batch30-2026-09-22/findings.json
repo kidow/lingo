@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-22",
+  "glyph": "萍",
+  "grade": "1급",
+  "catalogStrokes": 12,
+  "decision": "held-at-source-boundary",
+  "domesticStrokesReviewed": [
+    5,
+    6,
+    7
+  ],
+  "fullGlyphReviewed": false,
+  "privateGraphicsSaved": false,
+  "sourcePrimitives": 13,
+  "connection": {
+    "part1": {
+      "record": "u6c35-01@10",
+      "row": 3,
+      "shape": "2:7:8",
+      "end": [
+        50,
+        184
+      ]
+    },
+    "part2": {
+      "record": "u6c35-01@10",
+      "row": 4,
+      "shape": "2:32:7",
+      "start": [
+        44,
+        150
+      ]
+    },
+    "observation": "The open stopped endpoint and the next connected-interior start are different source positions, not one explicitly shared endpoint."
+  },
+  "visualObservation": "Domestic stroke7 shows a stopped lower body and an upward-right sweep in one revealed stroke. Source primitive7 travels down/right into the lower body, while primitive8 begins inside that body and sweeps up/right. Concatenation causes a discontinuous jump; a bridging segment or trimming the first path would invent unverified geometry.",
+  "alternative": {
+    "root": "u840d-var-001@1",
+    "water": "u6c35-01@8",
+    "primitiveCount": 13,
+    "part1End": [
+      45,
+      184
+    ],
+    "part2Start": [
+      40,
+      150
+    ],
+    "outcome": "Same boundary problem, different coordinates. No second complete visual review claimed."
+  },
+  "formatEvidence": {
+    "url": "https://glyphwiki.org/wiki/GlyphWiki:KAGEデータ仕様@2",
+    "scope": "Contributor interpretation of format, not Korean official stroke-order approval.",
+    "curveHead32": "Joins the middle of another primitive; not an assertion of a shared endpoint or continuous pen trajectory.",
+    "curveTail8": "Stopped end, not connected to another primitive.",
+    "specialExamples": "The specification describes 氵 lower parts as multiple primitives constructing a Ming-style design; primitive count is not handwriting stroke count."
+  },
+  "releaseCondition": "A reusable exact-glyph source with a continuous third water stroke, or independently sourced explicit pen trajectory/boundaries covering this composite. Never add a guessed bridge, delete a source segment or reverse a path to force agreement.",
+  "runtimeAdded": 0,
+  "next": "葵 line tail2 and curve head22 share an explicit endpoint; independently verify format, primary behavior and all 13 domestic strokes before applying."
+}

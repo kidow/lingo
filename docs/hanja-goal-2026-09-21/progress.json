@@ -1,27 +1,26 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "34bd97ee17201c808ec64b9111383310e3a8ec64",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch29-2026-09-22/validation.json",
+  "lastCompletedCommit": "d5e093cb8722db8a05d2435b6a8cfb0c516e2b97",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch30-2026-09-22/validation.json",
   "currentBatch": {
-    "glyphs": [
-      "芒"
+    "glyphs": [],
+    "strokes": 0,
+    "heldGlyphs": [
+      "萍"
     ],
-    "strokes": 7,
-    "heldGlyphs": [],
-    "heldStrokes": 0,
-    "domesticStrokes": 7,
-    "status": "GlyphWiki 芒 registered after full domestic comparison and primary-source rounded bend verification",
+    "heldStrokes": 12,
+    "domesticStrokes": 3,
+    "status": "萍 source boundary held after domestic strokes5-7 comparison; two licensed alternatives have disjoint handwriting centerlines",
     "checks": {
       "researchVerifierPassed": true,
-      "domesticVisualSteps": 7,
-      "normalizedCumulativeStates": 7,
-      "hanjaTests": 846,
-      "typeCheckPassed": true,
-      "productionBuildPassed": true,
-      "uiPassed": true,
+      "sourceVersions": 10,
+      "domesticVisualSteps": 3,
+      "normalizedCumulativeStates": 0,
+      "fullGlyphReviewed": false,
+      "runtimeChanged": false,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-glyphwiki-batch29-2026-09-22/validation.json"
+      "record": "docs/hanja-goal-glyphwiki-batch30-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
@@ -140,10 +139,10 @@
     ]
   },
   "nextActions": [
-    "Recalculate missing characters and re-fetch exact source revisions before continuing.",
-    "Read primary KAGE type2 head/tail8,32 and connected-corner22 semantics; determine whether the source explicitly represents one handwriting stroke across primitives.",
-    "Compare all domestic strokes, directions, intermediate and complete forms; apply only if the whole glyph is verified.",
-    "Keep 苛 hook and 庾 shape holds separate; use another independent candidate if these source connections cannot be established."
+    "Reconfirm 葵 is still missing and re-fetch the four pinned records.",
+    "Verify line0/2 endpoint (94,24) equals curve22/7 start (94,24) in u7676-03@4; confirm primary semantics before treating them as one handwriting stroke.",
+    "Validate curve7/8 stop and curve32/7 connected start against primary implementation without omitting hooks.",
+    "Compare every domestic stroke, exact order, direction, all corrected cumulative states and final form before runtime approval."
   ],
   "held": [
     "莽",
@@ -194,33 +193,28 @@
       "reason": "GlyphWiki koseki-106330@6 resolves earlier dot/bottom-line issues but its central stroke contacts 广 and final stroke starts too high with a different tangent.",
       "record": "docs/hanja-goal-glyphwiki-batch26-2026-09-22/findings.json",
       "releaseCondition": "A genuinely different licensed exact-glyph source resolving both domestic shape/direction differences; aliases in source-leads.json are duplicates."
+    },
+    {
+      "glyph": "萍",
+      "reason": "Domestic stroke7 shows a stopped lower body and an upward-right sweep in one revealed stroke. Source primitive7 travels down/right into the lower body, while primitive8 begins inside that body and sweeps up/right. Concatenation causes a discontinuous jump; a bridging segment or trimming the first path would invent unverified geometry.",
+      "record": "docs/hanja-goal-glyphwiki-batch30-2026-09-22/findings.json",
+      "releaseCondition": "A reusable exact-glyph source with a continuous third water stroke, or independently sourced explicit pen trajectory/boundaries covering this composite. Never add a guessed bridge, delete a source segment or reverse a path to force agreement."
     }
   ],
   "resources": {
-    "tabs": "batch29 tabs closed; viewport reset",
-    "ramServers": "51869, 51870, 51871 stopped",
-    "isolatedWorktree": "/tmp/lingo-hanja-gw29-verify removed",
+    "tabs": "batch30 tabs closed; viewport unchanged",
+    "ramServers": "51872 stopped",
+    "isolatedWorktree": "none created for research-only batch30",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/bend-semantics.json",
-    "public/hanja-strokes/glyphwiki/8292.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-8292.md",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/build.mjs",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch29.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch29.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch29.test.ts",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/convert.test.mjs",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch26-2026-09-22/convert.mjs",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/validation.json",
-    "docs/hanja-goal-glyphwiki-batch29-2026-09-22/next.json"
+    "docs/hanja-goal-glyphwiki-batch30-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch30-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch30-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch30-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch30-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch30-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch30-2026-09-22/next.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch29-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch30-2026-09-22/next.json"
 }
