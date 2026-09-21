@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-21",
+  "verificationSource": "ehanja-crosschecked",
+  "officialExamBodyApproval": false,
+  "entries": [
+    {
+      "glyph": "餒",
+      "candidate": "09912",
+      "strokesReviewed": 16,
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        4,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "decision": "approved",
+      "normalizedReview": "All 16 normalized cumulative states and full form visually crosschecked.",
+      "observations": [
+        "食 source 4–7 reordered to 5,6,7,4; roof horizontal and lower bars agree with domestic form.",
+        "爫 source 10 right-to-left sweep, 11 down-left stroke and 12–13 right-falling dots agree.",
+        "女 source 14 left-fall/right-fold, 15 crossing leftward sweep, and final horizontal agree.",
+        "All paths preserved apart from uniform scaling and proven order changes; no new points, reversal, splitting or merging."
+      ]
+    },
+    {
+      "glyph": "麕",
+      "candidate": "09e95",
+      "strokesReviewed": 19,
+      "decision": "held",
+      "normalizedReview": "All 19 normalized cumulative states reviewed; complete-form check exposed inner-stem contact with lower enclosure.",
+      "observations": [
+        "Individual directions and source order agree in the default variant.",
+        "The complete rendering makes 禾 stroke 16 contact the lower enclosure; the domestic form leaves clearance. This visual fit is not approved.",
+        "Kaisho changes strokes 1,10,11,16. Reviewed these four: stroke 10 reverses the domestic sweep, 11 lacks the same upward hook, and 16 adds a left hook instead of a plain downward termination."
+      ],
+      "reopenCondition": "A reusable whole-character path variant preserving domestic directions, hooks and enclosure clearance, or independently evidenced licensed geometry correction."
+    },
+    {
+      "glyph": "曁",
+      "candidate": "066c1",
+      "strokesReviewed": 16,
+      "decision": "held",
+      "observations": [
+        "Unlike the older 17-stroke Ja candidate, the new KanjiVG candidate has 16 strokes matching the catalog and domestic source.",
+        "All 16 source strokes and the full form were reviewed. The start of 旡 stroke 9 is separated below stroke 8 in the candidate, while the domestic form connects it; no unsupported point edit made.",
+        "Kaisho changes only paths 4 and 14, leaving path 9 byte-identical. Visual spot-checks of 4,9,14 confirm the unresolved gap; 4 and 14 also end before the right edge."
+      ],
+      "reopenCondition": "A reusable 16-stroke source with the domestic 8/9 connection, or independently evidenced licensed geometry correction."
+    }
+  ],
+  "alternatives": [
+    {
+      "glyph": "麕",
+      "candidate": "09e95-Kaisho",
+      "reviewedStrokeIndices": [
+        1,
+        10,
+        11,
+        16
+      ],
+      "decision": "not-selected",
+      "fullReview": false
+    },
+    {
+      "glyph": "曁",
+      "candidate": "066c1-Kaisho",
+      "reviewedStrokeIndices": [
+        4,
+        9,
+        14
+      ],
+      "decision": "not-selected",
+      "fullReview": false
+    }
+  ],
+  "visualReview": {
+    "primaryStrokes": 51,
+    "alternativeSpotChecks": 7,
+    "normalizedStrokes": 35,
+    "approvedNormalizedStrokes": 16,
+    "privateGraphicsSaved": false
+  }
+}
