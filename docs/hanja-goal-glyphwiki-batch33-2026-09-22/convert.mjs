@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { expandKage } from '../hanja-goal-glyphwiki-batch26-2026-09-22/convert.mjs'
 const point=p=>p.map(v=>Math.round(v*1e6)/1e6).join(' ')
-export function boxPaths(source,groups,order,{allowCurves=false}={}){
+export function boxPaths(source,groups,order,{allowCurves=false,allowConnectedVerticals=false}={}){
   const raw=expandKage(source,{allowConnectionLines:true,allowBoxLines:true,allowReviewedCurves:allowCurves})
   assert(raw.every(p=>p.type===1||(allowCurves&&p.type===2)),
     'Only reviewed straight box lines and opted-in quadratics are admitted')
@@ -29,10 +29,11 @@ export function boxPaths(source,groups,order,{allowCurves=false}={}){
     }else{
       assert(a.head!==22,'Unpaired right-upper corner')
       assert((a.head===0&&a.tail===0)||(a.head===12&&a.tail===13)
-        ||(a.head===2&&a.tail===2)||(allowCurves&&a.head===0&&a.tail===32),
+        ||(a.head===2&&a.tail===2)||(allowCurves&&a.head===0&&a.tail===32)
+        ||(allowConnectedVerticals&&a.head===32&&(a.tail===0||a.tail===32)),
         'Unreviewed standalone box line')
       if(a.head===2)assert(a.points[0][0]<a.points[1][0],'Horizontal direction must be rightward')
-      if(a.tail===32)assert(a.points[0][1]<a.points[1][1],'Connected vertical must be downward')
+      if(a.head===32||a.tail===32)assert(a.points[0][1]<a.points[1][1],'Connected vertical must be downward')
     }
     return path
   })

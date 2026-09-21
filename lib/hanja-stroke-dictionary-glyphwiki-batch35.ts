@@ -1,0 +1,73 @@
+/** GlyphWiki geometry crosschecked with the domestic dictionary, not exam-body approval. */
+import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch35.json' with { type: 'json' }
+import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
+
+const PIN = {
+  "glyph": "葺",
+  "verificationSource": "ehanja-crosschecked",
+  "verifiedAt": "2026-09-22",
+  "geometrySource": "f54f57044335fb49ec3709bf64955cc96f822902fc4fdbb7e82ba71857420f75",
+  "geometryCorrection": "glyphwiki-connected-verticals-box-reviewed-v1",
+  "sourceStrokeIndices": [
+    1,
+    2,
+    4,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "strokeWidth": 1.5,
+  "pathsSha256": "2644b95e35d52e827d2b8735fcad6e46275b93a403a7629c3ff09d9dc263500e",
+  "sourceReference": {
+    "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8400/847a.svg",
+    "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8400/847a.svg",
+    "dictionarySvgSha256": "1dd776347ed1a5daaf85d8eb3af0ce46f4bd8c11406620775c270fa55f494a21",
+    "dictionaryDirectionStrokes": "1,2,3,4,5,6,7,8,9,10,11,12,13",
+    "orderReviewSha256": "264177bdfa0cbc4a84e1f637c968ac214fc4e6bfe2b4b6b8bc125f35387691e9",
+    "geometryReviewSha256": "264177bdfa0cbc4a84e1f637c968ac214fc4e6bfe2b4b6b8bc125f35387691e9",
+    "directionReviewSha256": "264177bdfa0cbc4a84e1f637c968ac214fc4e6bfe2b4b6b8bc125f35387691e9"
+  },
+  "geometryLicense": {
+    "spdx": "LicenseRef-GlyphWiki",
+    "attribution": "GlyphWiki contributors",
+    "url": "https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18",
+    "sourceUrl": "https://glyphwiki.org/wiki/u847a-k@11",
+    "revision": "u847a-k@11; u8279-k03@9; u54a0-j@2; u53e3-j@20; u8033-j@2",
+    "editableSource": "/hanja-strokes/glyphwiki/847a.json",
+    "modifications": "Source-declared affine placement; 200-to-100 scaling; exact source-adjacent corner group6+7; reviewed group order; width1.5 preserves grass gap; connected downward ear verticals. No invented coordinates, trimming, reversal or glyph substitution."
+  }
+} as const
+const PATHS = [
+  "M 6.5 16.405 L 54 16.405",
+  "M 32 6.135 L 32 26.28",
+  "M 56 16.405 L 93.5 16.405",
+  "M 68 6.135 L 68 26.28",
+  "M 27.065 29.12 L 27.065 42.08",
+  "M 27.065 29.12 L 71.435 29.12 L 71.435 42.08",
+  "M 27.065 42.08 L 71.435 42.08",
+  "M 11.1 50.22 L 87.9 50.22",
+  "M 28.86 50.22 L 28.86 84.092",
+  "M 28.86 61.024 L 68.22 61.024",
+  "M 28.86 71.536 L 68.22 71.536",
+  "M 11.58 85.552 Q 37.98 83.8 90.3 79.712",
+  "M 68.22 50.22 L 68.22 94.312"
+] as const
+
+export function loadGlyphWikiBatch35Strokes(bundle: typeof reviewed): readonly HanjaDictionaryStrokeData[] {
+  if (!Array.isArray(bundle) || bundle.length !== 1) throw new Error('GlyphWiki batch35 count mismatch')
+  return bundle.map(entry => {
+    const { paths, ...metadata } = entry
+    if (JSON.stringify(metadata) !== JSON.stringify(PIN) || JSON.stringify(paths) !== JSON.stringify(PATHS)) {
+      throw new Error('GlyphWiki batch35 reviewed data mismatch')
+    }
+    return { ...entry, verificationSource: 'ehanja-crosschecked' as const }
+  })
+}
+export const HANJA_DICTIONARY_GLYPHWIKI_BATCH35_STROKES = loadGlyphWikiBatch35Strokes(reviewed)
