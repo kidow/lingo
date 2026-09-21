@@ -394,7 +394,9 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 2. **정도를 말로 적지 않았는가.** «가까이», «넓은 여백», «조금 기운»은
    흘러간다. 잘린다고·비는 쪽을 주어로·작은 쪽을 작다고 적는다.
 3. **흔한 물건 이름이 다른 뜻으로 먼저 읽히지 않는가.** lens·oil·globe·
-   stamp·heart·bill·seal이 그렇다.
+   stamp·heart·bill·seal이 그렇다. **집 안 물건 이름은 특히 그렇다** —
+   table은 밥상, seat은 의자, measure는 계량컵을 먼저 부른다. 순위표·
+   탈것 자리·되를 말하려면 그 낱말을 쓰지 말고 물건을 못 박는다.
 4. **견줌이 뜻 자체인가.** 그렇다면 둘을 한 몸으로 매야 한다(도르래의 두 추).
    뜻을 돕기만 하면 버린다.
 5. **그릴 것이 눈에 안 보이는 것인가.** 숨김·어긋남·같음·없음·닳음·움직임·
@@ -478,6 +480,7 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 | `the last three rows of a table shaded darker` | **밥상**을 위에서 본 그림 | `one open trapdoor … with a short ladder going down` |
 | `two ruled table rows with a tile at the end of each` | 화분 올린 **탁자** 둘 | `two wooden pegs pushed to the same depth in a slotted board` |
 | `a cup of water standing level on a seat` | **밥상 의자**에 물컵 | `one cup of water standing level on a bus seat beside a window` |
+| `one empty measure set down hard on a counter` | 투명 플라스틱 **계량컵** | `one empty wooden grain measure set down hard on a plank counter` |
 | `one paper window with a small tear` | 봉투 | `one single blossom fallen off at a touch` |
 | `three seals of three sizes` | **바다표범 세 마리** | `three brass tallies of three sizes hanging on one hook` |
 
@@ -798,6 +801,21 @@ numbers`였다 — **숫자를 그리라고 시켰으니 그린 것이고, 그 �
 
 색이 뜻을 나르는 자리는 **색을 못 박는다** — 「카드를 든다」가 아니라
 「노란 카드를 든다」다.
+
+### 같은 빛깔끼리 겹치면 그 물건은 없는 것이 된다
+
+`give-ones-own-name`(제 이름을 대다)에 «one blank card lying face up in the
+middle of an empty tray»라고 썼더니 **쟁반만 나왔다.** 카드는 그려졌는데
+미색 위의 미색이라 테두리가 안 보인다. 80×80에서는 말할 것도 없다.
+
+바탕이 미색 한 가지이므로 **흰 것·미색 것·연한 것을 겹쳐 놓으면 사라진다.**
+받치는 쪽을 어둡게 못 박는다.
+
+    one blank card lying face up in the middle of an empty tray
+    → one pale card lying face up in the middle of a dark stained wooden tray
+
+`pnpm twins`도 `md5`도 이걸 못 본다 — 그림은 멀쩡히 다르다. 시트에서 눈으로
+볼 때만 「어? 카드가 없네」가 된다.
 
 ### 몸통을 먼저 세면 되돌리지 않는다
 
