@@ -173,3 +173,16 @@ All 7 forms were corrected and fully reinspected: 29 locally edited centerlines,
 This is a private dictionary crosscheck, not exam-body certification.
 Dictionary artwork is not distributed. Evidence and reproducible recipes:
 `docs/hanja-g2-batch10-2026-09-16/README.md`.
+
+`dictionary-reviewed-special2-kanjivg-variants.json` contains 纛·蘿·藺 (65 strokes)
+derived from KanjiVG, Copyright Ulrich Apel, at revision
+`422b5538595676da918c288a4230cb5e22a1ee7e`.
+These three entries use [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/),
+separately from the Arphic-licensed datasets above. Each entry includes the exact
+upstream SVG URL, revision, attribution, and modification notice in geometryLicense.
+Modified for Lingo on 2026-09-21: uniformly scaled coordinates by 100/109 and
+reordered existing strokes after a full Korean private-dictionary crosscheck.
+Cubic curves are preserved; no strokes are split, merged, or redrawn.
+The downloadable JSON supplies the complete modified geometry under CC BY-SA 3.0.
+This is not exam-body certification. Dictionary artwork is not distributed.
+Evidence and reproducible conversion: `docs/hanja-special2-kanjivg-review-2026-09-21/`.
