@@ -19,6 +19,90 @@
 **표시가 붙은 개념은 건드리지 않는다.** 같은 날 그걸 모르고 여섯을 고쳤다가
 임자의 미커밋 프롬프트를 잃었다([concurrent-sessions](concurrent-sessions.md)).
 
+---
+
+## 2026-09-21에 넘긴 백쉰일곱 — 고치는 법으로 갈랐다
+
+여섯 축(`clothes` · `transport` · `city` · `quality` · `office` · `school`)에
+그림을 백서른여섯 장 넣으면서, **뽑기 전에** 몸통을 세어 걸러 낸 것들이다.
+**백쉰다섯이 아직 안 그려졌다** — 지금이 고치기 가장 싼 때다. 아래 문단들에
+낱낱이 적혀 있고, 여기서는 **무엇을 해야 하는지로만** 묶는다.
+
+### ① 몸통을 뺏겼다 — 옮겨야 산다 (열일곱)
+
+다른 개념이 **이미 그 물건의 임자**다. 그대로 뽑으면 카드 둘이 같은 그림이 된다.
+
+| 개념 | 뺏긴 몸통 | 임자 |
+| --- | --- | --- |
+| `clothes/put-thread-through-it`(실을 꿰다) | 실 꿴 바늘 | 개념 `needle`(바늘) |
+| `clothes/lose-a-button`(단추가 떨어지다) | 낱개 단추 | 개념 `button`(단추) · `it-is`(이다) |
+| `clothes/take-it-off-again`(벗어 내리다) · `on-the-peg-by-the-door`(옷을 걸다) | 걸이의 외투 | 이미 열여덟 장 |
+| `transport/waiting-queue`(대기 줄) | 한 줄로 선 사람 | 개념 `queue`(줄을 서다) |
+| `city/set-on-being-free`(자유를 좋아하는) | 처마에 걸린 새장 | 개념 `cage`(새장) |
+| `city/from-up-top`(위쪽에서) | 지붕 끝 홈통 | 개념 `gutter`(빗물받이) |
+| `city/drop-bombs-on-it`(폭탄을 떨구다) | 둥근 구덩이 | 개념 `crater`(분화구) |
+| `city/put-them-low-before-all`(업신여겨 낮추다) | 바닥의 방석 | 개념 `cushion`(방석) |
+| `city/made-of-silk-cloth`(비단의) · `clothes/silk-cloth`(명주) | 윤나는 접힌 천 | 개념 `silk`(비단) |
+| `office/all-told-together`(통틀어) | 한쪽으로 민 주판알 | `calculate`(셈하다) |
+| `office/pin-it-down-exactly`(잡아 정하다) | 도면 위 컴퍼스 | 개념 `dividers`(제도 컴퍼스) |
+| `office/by-wire-and-current`(전자로) | 꽂힌 플러그 | `plug-in`(꽂다) · `unplug`(뽑다) |
+| `school/having-the-knack`(능숙함) | 물레 위의 손 | 개념 `potter`(도예가) |
+| `school/the-art-of-painting`(그림 그리는 일) | 이젤과 팔레트 | 개념 `easel`(이젤) · `artist`(화가) |
+| `school/the-gist-drawn-together`(간추린 말) | 깔때기 | 개념 `funnel`(깔때기) |
+
+**먼저 `pnpm props <낱말>`로 빈 몸통을 찾는다.** 목록의 `그림` 줄까지 봐야
+한다 — 「다른 개념이 제 몸통으로 쓰는 낱말」 요약 줄만 보면 놓친다
+([다림줄 자리](#다림줄은-이미-아홉이었다--내가-열을-만들었다-2026-09-21)).
+
+### ② 같은 물건 집안 — 장치를 하나씩 달리 주면 된다 (쉰넷)
+
+물건은 같아도 **장치를 하나씩 달리 주면 갈린다.** `school`의 사전 여섯이
+본보기다 — 갈피끈 둘 · 색인 탭 · 갈라진 책등 · 반쯤 벗겨진 갑 · 쇠걸쇠 ·
+닳아 둥근 모서리.
+
+| 무리 | 수 | 어디 |
+| --- | ---: | --- |
+| 도장·봉인 | 8 | `office` |
+| 땅에 박힌 기둥 | 8 | `city` |
+| 장부 | 6 | `office` |
+| 길바닥 표시 | 5 | `transport` |
+| 알림판 · 바퀴 | 각 4 | `office` |
+| 열쇠 | 4 | `quality` (`city`에 셋 더) |
+| 돌기둥 · 활자 · 노선 판 · 저울 | 각 3 | `school` · `school` · `transport` · `quality` |
+| 안경 · 렌즈 · 계기판 화면 · 연료계 · 좌석 패 · 깜빡이 · 상자 안팎 | 각 2 | `school` · `transport` · `quality` |
+
+### ③ 짜임이 같다 — 구도를 바꿔야 한다 (마흔여섯)
+
+물건을 바꿔도 80×80에서는 같은 그림이다. **화면에 무엇을 채우는지**를 바꾼다.
+
+| 도식 | 수 | 어디 |
+| --- | ---: | --- |
+| 줄 세우고 하나만 다르다 | **11** | `quality` |
+| 둘을 견주어 크기 | 6 | `quality` |
+| 줄 선 차 · 수레 · 두 장 나란히 | 각 4 | `transport` · `transport` · `school` |
+| 집 없는 · 길 위의 지도 | 각 3 | `city` · `transport` |
+| 손 줄 · 투표함 · 연단 · 모래시계 · 문틈의 종이 · 떠나는 차 · 역 시계 | 각 2 | `city` · `office` · `transport` |
+| 옷의 일곱 쌍(줄자 · 폼 · 바짓단 …) | 7 | `clothes` |
+
+### ④ 그림이 아니라 개념을 봐야 하는 셋
+
+뜻까지 거의 같다. 그림을 갈라도 카드 둘이 남는다.
+
+    clothes/worn-down-to-the-weave(옷이 해지다) ↔ threadbare(해진)
+    school/touched-with-genius(천재적인)      ↔ a-mind-of-rare-gift(천재)
+    city/rule-over-the-place(다스리다)        ↔ the-one-that-holds-power(다스리는)
+
+### 잘 갈린 본보기 둘
+
+**한글을 그림에 넣는 무리 쉰**(기 16 · 달력 12 · 이름패 12 · 두루마리 6 ·
+띠 2 · 배지 2)은 전부 그려졌고 **문턱 안 쌍이 하나도 없다.** 빛깔을 벌리고
+꼴을 달리한 것이 실제로 듣는다. 다시 셀 일이 없다.
+
+**사전 여섯**은 같은 책에 장치만 달리 주어 갈렸다. ②의 무리들이 갈 길이다.
+
+---
+
+
 ## 넷은 임자가 이미 고쳤다 (2026-09-09 저녁 재측정)
 
 아래 표의 네 쌍은 그 뒤 임자 세션이 그림을 다시 그려 **문턱 밖으로 벌어졌다.**
