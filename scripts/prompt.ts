@@ -82,6 +82,20 @@ const GLYPH_WORD =
 const GLYPH_GUARD = /no (?:other )?letters|no readable letters|no text|no writing|no numbers/i
 
 /**
+ * **막아 놓고 값을 시킨 프롬프트.** «no letters»를 붙여 놓고 같은 문장에서
+ * `with digits on it`처럼 **값을 그리라고 시키는** 자리다. 막이가 있으니
+ * `GLYPH_GUARD`가 걸러 내 위의 목록에는 안 나오는데, 모델은 시키는 쪽을
+ * 따른다 — 2026-09-21에 `estimate-mark`가 「no readable letters」를 달고도
+ * 붉은 «1»을 크게 그렸다.
+ *
+ * 값을 지우면 뜻이 사라지는 자리도 있다. 같은 날 `date-wheel`(날짜 회전판)은
+ * 숫자 창을 잃고 **그냥 시계**가 됐다. 그런 자리는 막이를 떼는 것이 아니라
+ * 개념을 다른 장면으로 옮겨야 한다.
+ */
+const GLYPH_VALUE =
+  /\b(digits?|numeral|numbered|fraction|scoreboard|score|a (?:low|high|single) number|the same number|one raised number)\b/i
+
+/**
  * **글자가 곧 개념인 자리는 뺀다.** `digit`(숫자 하나)·`barcode`(바코드)·
  * `dollar`(달러)를 「글자 없이」 그리라는 것은 그리지 말라는 말이다. 이
  * 목록은 2026-09-21에 108장을 여섯 시트로 붙여 눈으로 보고 골랐다 — 그리는
@@ -104,6 +118,19 @@ if (args.includes('--glyphs')) {
   for (const row of rows) console.log(`  ${row.slug.padEnd(30)} ${row.imagePrompt}`)
   const where = all ? '' : ' (아직 안 그린 것만 — 다 보려면 --all)'
   console.log(`\n글자·숫자를 부르는 프롬프트 ${rows.length}개${where} — «no letters»로 막거나 다른 것을 그리게 하세요`)
+
+  const contra = readTargets().filter(
+    (t) =>
+      !GLYPH_IS_THE_POINT.has(t.slug) &&
+      GLYPH_GUARD.test(t.imagePrompt) &&
+      GLYPH_VALUE.test(t.imagePrompt) &&
+      (all || !existsSync(join(OUT_DIR, `${t.slug}.webp`))),
+  )
+  if (contra.length > 0) {
+    console.log('\n막아 놓고 값을 시킨 프롬프트 — 모델은 시키는 쪽을 따릅니다')
+    for (const row of contra) console.log(`  ${row.slug.padEnd(30)} ${row.imagePrompt}`)
+    console.log(`  ${contra.length}개${where} — 값을 빼거나, 값이 있어야 뜻이 서면 장면을 옮기세요`)
+  }
   process.exit(0)
 }
 

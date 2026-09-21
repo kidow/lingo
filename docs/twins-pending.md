@@ -690,3 +690,23 @@ cushion · wreath · dial · gauge · keyhole · basket · awning이 이미 남�
 | 바지 | 5 | 단·무릎·밑위가 다 같은 판이다 |
 
 이 넷에 새 그림을 얹으려면 몸통을 옮기고 시작한다.
+
+### 탈것에서 거울상 여섯 무리를 골라냈다 (2026-09-21)
+
+`transport`의 그림 빚 89에서 열다섯을 뽑으려고 몸통을 셌다. **아직 그림이
+없어 `twins`로는 못 잰다** — 프롬프트를 나란히 놓고 읽어서만 보인다.
+내가 만든 개념이 아니라 고치지 않고 넘긴다.
+
+| 무리 | 개념 | 그림 |
+| --- | --- | --- |
+| 줄 선 차 | `the-road-is-choked`(길이 막히다) · `congested`(막히는) · `nose-to-tail`(차가 밀리는) · `crawl-along`(서행하다) | 넷 다 「줄지어 선 차」다. 둘은 위에서 본 것까지 같다 |
+| 연료계 | `run-out-of-fuel`(기름이 떨어지다) · `economical-on-fuel`(연비가 좋은) | 바늘이 빈 눈금이냐 가득이냐만 다르다 |
+| 계기판 화면 | `turn-on-the-sat-nav`(내비게이션을 켜다) · `route-guidance`(경로 안내) | 둘 다 계기판의 작은 화면에 길 선 하나다 |
+| 좌석 패 | `seat-number`(좌석 번호) · `seat-reservation`(좌석 예약) | 둘 다 기차 좌석 위의 작은 패다 |
+| 주차 칸 | `pull-in-and-park`(차를 대다) · `reverse-into-a-space`(후진 주차하다) | 둘 다 그은 두 줄 사이의 차다 |
+| 노선 판 | `through-service`(직행) · `stopping-service`(완행의) · `service-interval`(배차 간격) | 셋 다 점과 선이 그려진 판이다 |
+| 수레 | `let-them-out-here` · `bring-it-to-the-kerb` · `the-seat-behind` · `shift-the-cart-aside` | 넷 다 수레를 옆에서 봤다 |
+
+**하나는 뽑기 전에 고쳤다.** `going-without-a-ticket`(무임승차)이 개념
+`turnstile`(개찰구)과 같은 물건을 같은 눈높이로 봤다. 몸통을 개찰구에서
+**표 넣는 홈**으로 옮기고 위에서 내려다보게 하니 구조 126이 나왔다.
