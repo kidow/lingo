@@ -97,10 +97,13 @@ if (args.includes('--glyphs')) {
     (t) =>
       !GLYPH_IS_THE_POINT.has(t.slug) &&
       !GLYPH_GUARD.test(t.imagePrompt) &&
-      GLYPH_WORD.test(t.imagePrompt),
+      GLYPH_WORD.test(t.imagePrompt) &&
+      // 이미 그린 것은 시트에서 눈으로 본다 — `--all`로 다시 볼 수 있다
+      (all || !existsSync(join(OUT_DIR, `${t.slug}.webp`))),
   )
   for (const row of rows) console.log(`  ${row.slug.padEnd(30)} ${row.imagePrompt}`)
-  console.log(`\n글자·숫자를 부르는 프롬프트 ${rows.length}개 — «no letters»로 막거나 다른 것을 그리게 하세요`)
+  const where = all ? '' : ' (아직 안 그린 것만 — 다 보려면 --all)'
+  console.log(`\n글자·숫자를 부르는 프롬프트 ${rows.length}개${where} — «no letters»로 막거나 다른 것을 그리게 하세요`)
   process.exit(0)
 }
 

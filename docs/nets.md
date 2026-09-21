@@ -545,3 +545,41 @@ transport 일곱(예문 98)을 쓰기 전에 `ex`로 재서 걸린 자리가 없
 17초가 걸리고 보는 것이 콘텐츠가 아니라 **막이 코드**라 회차마다 재도 결과가
 같다. `split`을 `batch`에 넣은 근거(1초 · 이미 있는 의존)가 여기엔 둘 다 없다.
 `dup`을 뺀 것과 같은 자리다 — 도는 때가 다른 것을 묶으면 하나는 늘 헛돈다.
+
+### 글자를 부르는 프롬프트 아흔셋을 눈으로 다 봤다 — 틀린 글자는 0장 (2026-09-21)
+
+`pnpm prompt --glyphs`가 짚던 아흔셋을 여덟 시트로 붙여 훑고, 수치가 박힐
+만한 여섯(`odometer` · `invoice` · `department` · `outpatient-clinic` ·
+`customer-service` · `blank-space`)은 세 배로 키워 다시 봤다.
+
+**한 장도 틀리지 않았다.** 계기판 숫자 드럼은 비어 있고, 청구서는 줄만 그은
+띠이고, 문패·번호표 뽑는 기계·전화기 자판에 숫자가 없다.
+
+옛 스물여섯과 지금 아흔셋은 **다른 무리**다. 고쳤던 스물여섯은 프롬프트가
+**값을 시켰다** — `a scoreboard showing two to nil` · `a printed grid of
+numbers` · `a small numeral written above a column of two added numbers`.
+지금 아흔셋은 **글자가 실릴 수 있는 물건**을 부를 뿐이다 — `a printed sheet` ·
+`a price tag` · `one blank name tag`. 모델은 시키지 않은 글자는 안 그린다.
+
+    낱말        옛 26   지금 93
+    numeral        1        0
+    numbered       6        5
+    fraction       1        0
+    printed        5       34
+    price          1       11
+    date           1        7
+
+`printed` 하나가 아흔셋 가운데 서른넷이다. 낱말을 빼면 진짜도 셋이 같이
+빠져 눈금으로는 못 가른다.
+
+**그래서 눈금이 아니라 범위를 고쳤다.** 이 그물은 **뽑기 전에** 고치라는
+그물인데 이미 그린 것까지 짚고 있었다. 아직 안 그린 것만 보게 바꿨다.
+
+    pnpm prompt --glyphs         0개   ← 새로 쓴 프롬프트만
+    pnpm prompt --glyphs --all  93개   ← 눈으로 다 본 것까지
+
+이제 이 그물이 울면 **반드시 새 프롬프트**다. 아흔셋에 묻혀 있던 신호가
+드러난다.
+
+**다시 뽑을 때는 여전히 시트가 유일한 그물이다.** 아흔셋은 한 번 봤을 뿐이고,
+같은 프롬프트로 다시 뽑으면 이번에는 글자가 박힐 수 있다.
