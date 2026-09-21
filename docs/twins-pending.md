@@ -460,6 +460,36 @@ slug마다 임시 디렉터리를 나눠 두는데도 이 사고는 난다고 �
 | city | `the-market-worth-of-it` · `a-wrong-that-was-done` | 저자에서 매겨진 값 · 부당함 |
 | job | `lawyer` | 변호사 |
 
+#### 여섯을 옮겼다 — 22 → 16 (2026-09-21)
+
+파일이 다 열려 있어 그 자리에서 여섯을 줍었다.
+
+| 개념 | 옮긴 그림 |
+| --- | --- |
+| ~~`idea/supply-and-demand`~~ | 문 연 곳간과 빈 수레 |
+| ~~`idea/value-worth`~~ | 검은 천 위의 확대경과 돌 하나 |
+| ~~`idea/worth-it`~~ | 모루 위의 망치와 다 된 편자 |
+| ~~`idea/work-out-what-they-mean`~~ | 눈 위의 발자국이 닫힌 문으로 |
+| ~~`quality/fair-and-just`~~ | 꼭 수평인 시소 |
+| ~~`city/a-wrong-that-was-done`~~ | 상다리 하나에 박힌 쐐기 |
+
+**몸통은 `pnpm props`로 고르고 썼다.** 처음 고른 열두 낱말 가운데 **아홉이
+이미 남의 몸통**이었다(bowl · purse · envelope · medal · fish · signpost ·
+cake · crate · hanger). 저울 무리를 만든 것과 똑같은 실수를 되풀이할 뻔했다 —
+빈 낱말을 다시 찾아 granary · loupe · anvil · footprints · seesaw · wedge로
+갔다.
+
+**둘은 저울을 그대로 둔다.** `justice`(정의)는 저울이 그 개념의 표상이고,
+`weighty-enough-to-tip-the-scale`(한쪽으로 판가름하다)은 저울이 곧 그
+관용구다. `fair-and-just`는 `justice`와 「수평인 저울」로 겹쳐서 옮겼다.
+
+**남은 일곱은 자리를 못 찾았다** — `whether` · `fit-to-receive-it` ·
+`dear-to-pay-for` · `as-the-money-goes` · `saying-it-as-it-is` ·
+`the-market-worth-of-it` · `lawyer`이다. 그릴 몸통 후보가 죄다 남의 것이라
+빈 낱말을 더 뒤져야 한다. **먼저 `pnpm props`로 후보를 거르고 쓸 것.**
+
+옮긴 여섯 가운데 다섯은 이미 그려져 있어 다시 뽑아야 한다.
+
 내 파일이 아니라 넘긴다. 고칠 때는 [IMAGE_STYLE](../IMAGE_STYLE.md)의 「장면을
 찾는 다섯 수」를 쓴다 — 저울은 「견주다」의 그림이지 「수급」의 그림이 아니다.
 
