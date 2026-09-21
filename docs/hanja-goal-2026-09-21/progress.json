@@ -1,39 +1,39 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "349883e0aa98ce261d77ef64155f36294d8a629d",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch7.json",
+  "lastCompletedCommit": "90192c0ed39102dac21c1f71ba1cdc5de75fc434",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch8.json",
   "currentBatch": {
     "glyphs": [
-      "飫"
+      "隰",
+      "阨"
     ],
-    "strokes": 13,
+    "strokes": 24,
     "heldGlyphs": [
-      "麑",
-      "麌"
+      "饐"
     ],
-    "heldStrokes": 37,
+    "heldStrokes": 21,
     "status": "verified; resolve commit with currentBatchCommitLookup",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
-        "passed": 809,
+        "passed": 813,
         "failed": 0,
         "typeCheckPassed": true
       },
       "productionBuild": {
         "passed": true,
-        "isolatedCheckout": "/tmp/lingo-hanja-goal-special-kvg7-check",
+        "isolatedCheckout": "/tmp/lingo-hanja-goal-special-kvg8-check",
         "temporaryHarnessBuildPassed": true,
-        "productionFilesByteIdentical": true,
+        "productionFilesByteIdentical": 9,
         "checkoutRemoved": true
       },
       "visualReview": {
-        "primaryStrokes": 50,
-        "normalizedAtDefaultWidth": 50,
-        "approvedCompleteForms": 1,
-        "heldCompleteForms": 2,
-        "heldSourceWidthForms": 2,
+        "primaryStrokes": 45,
+        "normalizedAtDefaultWidth": 45,
+        "normalizedAtSourceWidth": 17,
+        "approvedCompleteForms": 2,
+        "heldCompleteForms": 1,
         "privateGraphicsSaved": false
       },
       "ui": {
@@ -42,32 +42,35 @@
         "writingAutoplay": true,
         "writingReplay": true,
         "playbackCompleteState": true,
-        "canvasInputs": 1,
+        "canvasInputsPerGlyph": 1,
         "canvasDragPreservesSheetAndScroll": true,
         "staticOverlayNotDuplicated": true,
-        "strokeWidth": 5,
+        "strokeWidths": {
+          "隰": 2.7522935779816513,
+          "阨": 5
+        },
         "touchAction": "none",
         "appConsoleErrors": 0,
-        "unrelatedExtensionErrors": 0,
+        "unrelatedExtensionErrors": 4,
         "browser": "Desktop Chrome; no physical mobile test",
-        "record": "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/README.md"
+        "record": "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/README.md"
       }
     }
   },
   "workingTreeCoverage": {
     "runtime": {
-      "applied": 4957,
       "total": 5978,
-      "remaining": 1021,
-      "percent": 82.9
+      "applied": 4959,
+      "remaining": 1019,
+      "percent": 83
     },
     "grades": [
       {
-        "grade": "1급",
-        "total": 1145,
-        "applied": 1061,
-        "remaining": 84,
-        "percent": 92.7
+        "grade": "7급II",
+        "total": 50,
+        "applied": 50,
+        "remaining": 0,
+        "percent": 100
       },
       {
         "grade": "2급",
@@ -77,30 +80,9 @@
         "percent": 99.8
       },
       {
-        "grade": "3급II",
-        "total": 500,
-        "applied": 500,
-        "remaining": 0,
-        "percent": 100
-      },
-      {
         "grade": "3급",
         "total": 317,
         "applied": 317,
-        "remaining": 0,
-        "percent": 100
-      },
-      {
-        "grade": "4급II",
-        "total": 250,
-        "applied": 250,
-        "remaining": 0,
-        "percent": 100
-      },
-      {
-        "grade": "4급",
-        "total": 250,
-        "applied": 250,
         "remaining": 0,
         "percent": 100
       },
@@ -112,16 +94,37 @@
         "percent": 100
       },
       {
-        "grade": "5급",
-        "total": 100,
-        "applied": 100,
+        "grade": "4급",
+        "total": 250,
+        "applied": 250,
         "remaining": 0,
         "percent": 100
       },
       {
-        "grade": "6급II",
-        "total": 75,
-        "applied": 75,
+        "grade": "8급",
+        "total": 50,
+        "applied": 50,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "3급II",
+        "total": 500,
+        "applied": 500,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "특급",
+        "total": 1328,
+        "applied": 687,
+        "remaining": 641,
+        "percent": 51.7
+      },
+      {
+        "grade": "5급",
+        "total": 100,
+        "applied": 100,
         "remaining": 0,
         "percent": 100
       },
@@ -133,21 +136,21 @@
         "percent": 100
       },
       {
-        "grade": "7급II",
-        "total": 50,
-        "applied": 50,
+        "grade": "6급II",
+        "total": 75,
+        "applied": 75,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "4급II",
+        "total": 250,
+        "applied": 250,
         "remaining": 0,
         "percent": 100
       },
       {
         "grade": "7급",
-        "total": 50,
-        "applied": 50,
-        "remaining": 0,
-        "percent": 100
-      },
-      {
-        "grade": "8급",
         "total": 50,
         "applied": 50,
         "remaining": 0,
@@ -161,18 +164,18 @@
         "percent": 74.5
       },
       {
-        "grade": "특급",
-        "total": 1328,
-        "applied": 685,
-        "remaining": 643,
-        "percent": 51.6
+        "grade": "1급",
+        "total": 1145,
+        "applied": 1061,
+        "remaining": 84,
+        "percent": 92.7
       }
     ]
   },
   "nextActions": [
-    "Review 隰 17, 阨 7, 饐 21 strokes from next-candidates.json after checking latest runtime and other-session changes.",
-    "Keep 麑 and 麌 held until licensed exact geometry or independently evidenced corrections resolve enclosure connections.",
-    "Continue remaining missing candidates without repeating old held-source comparisons absent new evidence."
+    "Review 鏘 19 and 髢 13 strokes after checking latest runtime and concurrent changes.",
+    "Investigate 爨 catalog 29 versus domestic animation 30 strokes as an explicit variant; do not change catalog or force the count.",
+    "Keep 饐 held until licensed exact geometry or independently evidenced corrections resolve 豆 upper separation and lower attachment."
   ],
   "held": [
     "莽",
@@ -194,30 +197,31 @@
     "餤",
     "隴",
     "麑",
-    "麌"
+    "麌",
+    "饐"
   ],
   "resources": {
     "servers": "Stopped own ports 51836,51837,51838,51839 after verifying PIDs; private graphics stayed in RAM.",
-    "temporaryHarness": "Removed owned /tmp/lingo-hanja-goal-special-kvg7-check.",
+    "temporaryHarness": "Removed owned /tmp/lingo-hanja-goal-special-kvg8-check.",
     "browserTabsCleanupPending": "None; own review/product tab closed."
   },
   "batchPaths": [
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/candidates.json",
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/normalized.json",
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/findings.json",
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/build.mjs",
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/serve.py",
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/serve-source-width.py",
-    "lib/hanja-stroke-dictionary-special-kanjivg-batch7.ts",
-    "lib/hanja-stroke-dictionary-special-kanjivg-batch7.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch7.json",
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/README.md",
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/coverage.json",
-    "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/next-candidates.json",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/candidates.json",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/normalized.json",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/findings.json",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/build.mjs",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/serve.py",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/serve-source-width.py",
+    "lib/hanja-stroke-dictionary-special-kanjivg-batch8.ts",
+    "lib/hanja-stroke-dictionary-special-kanjivg-batch8.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch8.json",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/README.md",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/coverage.json",
+    "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/next-candidates.json",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
     "docs/hanja-goal-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-special-kanjivg-batch7-2026-09-22/next-candidates.json"
+  "nextCandidateInventory": "docs/hanja-goal-special-kanjivg-batch8-2026-09-22/next-candidates.json"
 }
