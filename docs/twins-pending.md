@@ -771,3 +771,41 @@ pushed upright into the sand … no branched candlestick」. 정교의 초꽂이
 
 **믿음을 가리키는 낱말은 꼴을 지정한다.** 「촛대」라고만 하면 모델은 가장
 흔한 촛대를 그리는데, 그것이 다른 종교의 것일 수 있다.
+
+### 한글 집안 셋을 다 그렸다 — 이름패 열둘 · 띠 둘 · 배지 둘 (2026-09-21)
+
+「한글로 가르는 무리 셋」에서 이름패 열둘 가운데 넷만 그려져 있었다. 남은
+다섯(`a-follower-of-buddha` · `a-follower-of-christ` · `a-follower-of-islam` ·
+`a-follower-of-rome` · `one-for-rule-by-the-people`)과 띠 둘 · 배지 둘을
+한 회차에 몰아 뽑아 **세 집안을 다 채웠다.**
+
+    pnpm twins --file city   682장 — 0쌍
+
+**기 때와 같은 결과다.** 색과 꼴이 가른다.
+
+    the-faith-of-rome  ↔ the-faith-of-the-east        구조 79 · 색 0.983   같은 배지, 다른 빛깔
+    of-the-burgher-class ↔ of-the-free-minded-creed   구조 86 · 색 1.445   같은 띠
+    a-follower-of-christ ↔ a-follower-of-rome         구조 91 · 색 0.998   같은 이름패
+    a-follower-of-rome ↔ the-faith-of-rome            구조 129 · 색 1.382  같은 빛깔, 다른 꼴
+
+마지막 줄이 요점이다 — `a-follower-of-rome`(가톨릭 신자)과
+`the-faith-of-rome`(가톨릭교)은 **둘 다 진홍**인데, 하나는 선 나무패이고
+하나는 누운 둥근 배지라 129다. `a-follower-of-christ`(그리스도인)과
+`the-faith-of-the-east`(정교)도 둘 다 자주인데 131이다.
+
+**이제 이 셋은 다시 셀 일이 없다.** 한글로 가르는 무리는 기 열여섯 · 달력
+열둘 · 이름패 열둘 · 띠 둘 · 배지 둘로 모두 마흔넷이고, 전부 그려졌으며
+문턱 안에 드는 쌍은 하나도 없다.
+
+### 비단이 셋이다 (2026-09-21)
+
+    city/made-of-silk-cloth(비단의)  one length of cloth with a bright sheen running
+                                    along the line of its fold
+    clothes/silk-cloth(명주)         a folded length of smooth cloth with a soft sheen
+                                    along the fold
+    silk(비단) ← 이미 그렸다          one length of shiny cream silk fabric falling in
+                                    soft folds
+
+셋 다 「결 따라 윤나는 접힌 천」이다. `silk`는 이미 그려져 있으니 나머지 둘이
+갈 자리를 찾아야 한다 — 이를테면 하나는 짜는 자리(베틀에 걸린 날실), 하나는
+파는 자리(가게 선반의 두루마리)로 옮긴다. 이번 회차에서 셋 다 뺐다.
