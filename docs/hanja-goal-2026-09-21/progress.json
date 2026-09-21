@@ -1,30 +1,38 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "2767170812aa74c63b98257191c7edafb5103cd6",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/findings.json",
+  "lastCompletedCommit": "6ab98191273500b4bd5b13fd9adf09c152a3e1c8",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/findings.json",
   "currentBatch": {
-    "glyphs": [
-      "祉"
-    ],
-    "strokes": 8,
+    "glyphs": [],
+    "strokes": 0,
     "heldGlyphs": [
-      "塚",
-      "迸"
+      "叟",
+      "篠"
     ],
-    "heldStrokes": 22,
-    "domesticStrokes": 30,
-    "status": "runtime and UI verified; resolve commit with currentBatchCommitLookup",
+    "heldStrokes": 27,
+    "domesticStrokes": 27,
+    "status": "research verified; resolve commit with currentBatchCommitLookup",
     "checks": {
-      "hanjaTests": 829,
-      "typeCheckPassed": true,
-      "productionBuildPassed": true,
-      "uiPassed": true,
-      "primaryCandidateStrokes": 30,
-      "alternateCandidateStrokes": 8,
-      "normalizedCumulativeStates": 8,
+      "researchVerifierPassed": true,
+      "primaryCandidateStrokes": 27,
+      "alternateCandidateStrokes": 36,
+      "domesticSteps": 27,
+      "newDomesticMetadata": {
+        "glyph": "搭",
+        "steps": 13
+      },
+      "outsideHoldsDifferentCount": 142,
+      "runtimeUnchanged": true,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/README.md"
+      "record": "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/README.md",
+      "previousRuntimeVerification": {
+        "commit": "6ab98191273500b4bd5b13fd9adf09c152a3e1c8",
+        "hanjaTests": 829,
+        "typeCheckPassed": true,
+        "productionBuildPassed": true,
+        "uiPassed": true
+      }
     }
   },
   "workingTreeCoverage": {
@@ -143,8 +151,9 @@
     ]
   },
   "nextActions": [
-    "Review 叟10 / 篠17 whole paths and cumulative forms against RAM-only domestic references; preserve catalog 9/16.",
-    "Read previous 篠 stroke15 hook hold and compare the pinned KanjiVG alternatives; then refresh remaining inventory outside recorded holds."
+    "Audit Connum/hanzivg hanzi directory and AnimHanzi-derived geometry against all current missing glyphs. Do not count its fallback kanji directory or duplicate path geometry as independent evidence.",
+    "Use 搭13, 苛9 and 芥8 domestic steps as probes for whole-glyph candidates with the missing stroke boundary. Do not split existing paths to force counts.",
+    "Confirm pinned revision and per-file license before copying any geometry; compare complete domestic order, directions and final forms if an eligible candidate exists."
   ],
   "held": [
     "莽",
@@ -179,30 +188,26 @@
     "褐",
     "菱",
     "塚",
-    "迸"
+    "迸",
+    "叟",
+    "篠"
   ],
   "resources": {
     "tabs": "closed",
-    "ramServers": "51836/51837/51838 stopped",
-    "verificationWorktree": "removed",
+    "ramServers": "51837/51839 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "lib/hanja-stroke-dictionary-variant-kanjivg-batch14.ts",
-    "lib/hanja-stroke-dictionary-variant-kanjivg-batch14.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-variant-kanjivg-batch14.json",
-    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/candidates.json",
-    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/normalized.json",
-    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/findings.json",
-    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/build.mjs",
-    "lib/hanja-stroke-variants.ts",
-    "lib/hanja-stroke-variants.test.ts",
-    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/serve.py",
-    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/README.md",
-    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/coverage.json",
-    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/next-candidates.json",
+    "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/candidates.json",
+    "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/findings.json",
+    "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/tap-metadata.json",
+    "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/next-candidates.json",
+    "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/coverage.json",
+    "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/serve.py",
+    "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/verify.mjs",
+    "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/README.md",
     "docs/hanja-goal-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/next-candidates.json"
+  "nextCandidateInventory": "docs/hanja-goal-variant-kanjivg-batch15-2026-09-22/next-candidates.json"
 }

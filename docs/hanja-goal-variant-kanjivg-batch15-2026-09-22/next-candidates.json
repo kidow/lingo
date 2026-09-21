@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-22",
+  "head": "6ab98191273500b4bd5b13fd9adf09c152a3e1c8",
+  "currentMissing": 1015,
+  "pinnedKanjiVGInventory": "docs/hanja-goal-special-kanjivg-batch12-2026-09-22/next-inventory.json",
+  "outsideCurrentHolds": {
+    "glyphs": 142,
+    "matchingDomesticCount": 0,
+    "differentDomesticCount": 142,
+    "missingDomesticMetadata": 0
+  },
+  "newDomesticMetadata": "tap-metadata.json",
+  "metadataObservation": "搭 was an old timeout, not absent source. Live detail response revealed 13 valid animation steps; pinned KanjiVG has12. Availability is not visual approval.",
+  "nextActions": [
+    "Audit Connum/hanzivg hanzi directory and AnimHanzi-derived geometry against all current missing glyphs. Do not count its fallback kanji directory or duplicate path geometry as independent evidence.",
+    "Use 搭13, 苛9 and 芥8 domestic steps as probes for whole-glyph candidates with the missing stroke boundary. Do not split existing paths to force counts.",
+    "Confirm pinned revision and per-file license before copying any geometry; compare complete domestic order, directions and final forms if an eligible candidate exists."
+  ],
+  "sourceLeads": [
+    {
+      "repo": "Connum/hanzivg",
+      "revision": "55ecef6a881d5120cd261587d668e1b6af843ec2",
+      "readmeUrl": "https://raw.githubusercontent.com/Connum/hanzivg/55ecef6a881d5120cd261587d668e1b6af843ec2/README.md",
+      "treeUrl": "https://api.github.com/repos/Connum/hanzivg/git/trees/55ecef6a881d5120cd261587d668e1b6af843ec2?recursive=1",
+      "license": "CC-BY-SA-3.0",
+      "observed": "README distinguishes new/reviewed hanzi files from old KanjiVG fallback kanji files and names AnimHanzi as another source. No new candidate or independent Korean proof claimed."
+    }
+  ],
+  "excludedLead": {
+    "repo": "g0v/zh-stroke-data",
+    "reason": "Previously checked README excludes data from blanket CC0; publisher noncommercial/no-derivatives restriction. Not runtime-eligible under existing policy.",
+    "record": "docs/hanja-byeol-seong-sources-2026-09-21/sources.json"
+  }
+}
