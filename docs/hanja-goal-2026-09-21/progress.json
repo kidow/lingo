@@ -1,14 +1,15 @@
 {
   "status": "active",
   "date": "2026-09-21",
-  "lastCompletedCommit": "97d6f2d0f8a0117540d460fc26adb2828286c60d",
+  "lastCompletedCommit": "c2dfd8774cda999656cb0b6cf77283cb77f13a96",
   "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-g1-kanjivg.json",
   "currentBatch": {
     "glyphs": [
       "饉", "睹", "燐"
     ],
     "strokes": 50,
-    "status": "verified-ready-to-commit",
+    "status": "committed",
+    "commit": "c2dfd8774cda999656cb0b6cf77283cb77f13a96",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
@@ -160,22 +161,12 @@
     ]
   },
   "uncommittedOwnedPaths": [
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-stroke-dictionary-g1-kanjivg.ts",
-    "lib/hanja-stroke-dictionary-g1-kanjivg.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-g1-kanjivg.json",
-    "docs/hanja-goal-2026-09-21/g1-next-review.json",
-    "docs/hanja-goal-2026-09-21/g1-reviewed-candidates.json",
-    "docs/hanja-goal-2026-09-21/g1-findings.json",
-    "docs/hanja-goal-2026-09-21/build-g1.mjs",
-    "docs/hanja-goal-2026-09-21/serve-g1.py",
-    "docs/hanja-goal-2026-09-21/README.md",
+    "docs/hanja-goal-2026-09-21/g1-next-conflicts.json",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextActions": [
-    "Commit the verified 3-character/50-stroke batch with its evidence and tests using the private index.",
-    "Crosscheck remaining KanjiVG candidates against domestic counts. 鼈 and 瞥 in next-candidates.json have catalog/dictionary conflicts 25/24 and 17/16; inspect alternate source files before approval.",
+    "The 3-character/50-stroke batch is committed. Do not repeat implementation or verification.",
+    "g1-next-conflicts.json pins all five KanjiVG files for 鼈 and 瞥. None matches domestic 24/16 strokes. Keep held without merging/deleting strokes; investigate independent sources or select other candidates.",
     "Keep all remaining 1,049 characters in scope; candidate count matches are not approvals."
   ],
   "held": [
@@ -183,7 +174,9 @@
     "萸",
     "鱉",
     "宬",
-    "瀆"
+    "瀆",
+    "鼈",
+    "瞥"
   ],
   "resources": {
     "productionStaticServer": "Stopped owned port 51836 server after UI checks.",
