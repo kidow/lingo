@@ -4,6 +4,7 @@
  * Never infer unlisted characters from radicals or a foreign stroke-order corpus.
  */
 import reviewedGrade8 from '../public/hanja-strokes/g8-reviewed.json' with { type: 'json' }
+import { HANJA_VARIANT_STROKES, hanjaPlaybackVariant } from './hanja-stroke-variants.ts'
 import reviewedGrade7II from '../public/hanja-strokes/g7-2-reviewed.json' with { type: 'json' }
 import reviewedGrade7 from '../public/hanja-strokes/g7-reviewed.json' with { type: 'json' }
 import reviewedGrade6II from '../public/hanja-strokes/g6-2-reviewed.json' with { type: 'json' }
@@ -358,13 +359,15 @@ export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...HANJA_DICTIONARY_SPECIAL_BATCH12_STROKES,
   ...HANJA_DICTIONARY_SPECIAL_BATCH13_STROKES,
   ...HANJA_DICTIONARY_SPECIAL_BATCH14_STROKES,
+  ...HANJA_VARIANT_STROKES,
 ]
 
 const byGlyph = new Map(HANJA_STROKES.map((data) => [data.glyph, data]))
 
-/** A glyph/count mismatch fails closed rather than animating an unverified form. */
+/** Only explicitly reviewed variants may differ from their unchanged catalog count. */
 export function hanjaStrokeData(character: { glyph: string; strokes: number }): HanjaStrokeData | null {
   const data = byGlyph.get(character.glyph)
+  if (data && 'variant' in data) return hanjaPlaybackVariant(character)
   return data?.paths.length === character.strokes ? data : null
 }
 

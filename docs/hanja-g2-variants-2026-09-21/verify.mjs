@@ -37,7 +37,6 @@ for (const entry of entries) {
   const { glyph } = entry
   const character = catalog.find(character => character.glyph === glyph)
   assert.equal(character.strokes, entry.catalogStrokes)
-  assert.equal(hanjaStrokeData(character), null, 'Review must not enable runtime playback')
   const candidate = corpora[entry.corpus].get(glyph)
   assert.ok(candidate)
   assert.deepEqual(candidate.medians, entry.medians)
@@ -66,6 +65,8 @@ for (const entry of entries) {
   assert.equal(metadata.clipCoverageValid, true)
   const sourceStrokeIndices = entry.paths.map((_, index) => index + 1)
   if (glyph === '祐') [sourceStrokeIndices[4], sourceStrokeIndices[5]] = [6, 5]
+  assert.deepEqual(hanjaStrokeData(character)?.paths, sourceStrokeIndices.map(index => entry.paths[index - 1]),
+    'Runtime must contain exactly the reviewed playback variant')
   checks.push({ glyph, catalogStrokes: character.strokes, playbackStrokes: displayedStrokes,
     corpus: entry.corpus, sourceStrokeIndices,
     candidateMediansSha256: entry.originalMediansSha256,
@@ -109,9 +110,9 @@ for (const entry of review.entries) {
   assert.equal(hash(readFileSync(new URL(entry.staticSvg.path, root))), entry.staticSvg.sha256)
 }
 console.log(JSON.stringify({ schemaVersion: 1, checkedAt: new Date().toISOString(),
-  purpose: 'Three complete dictionary variants revalidated; runtime and catalog unchanged.',
+  purpose: 'Three complete dictionary variants revalidated against the integrated runtime; catalog counts preserved.',
   characters: checks.length, reviewedStrokes: checks.reduce((sum, check) => sum + check.playbackStrokes, 0),
-  proprietaryAssetsSaved: 0, runtimeApprovalsAdded: 0,
+  proprietaryAssetsSaved: 0, runtimeVariantCharacters: checks.length,
   sourcePins: selectedSources, checks,
   progress: { total: characters.length, applied, remaining: characters.length - applied,
     grade2: { total: catalog.length, applied: catalog.filter(character => hanjaStrokeData(character)).length } },

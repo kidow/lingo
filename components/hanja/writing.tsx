@@ -4,7 +4,7 @@ import { Trash2, Undo2, X } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react'
 import { Drawer } from 'vaul'
 import { gradeLabel, hunEum, type HanjaCharacter } from '@/lib/hanja'
-import { HanjaGlyph } from './glyph'
+import { HanjaStudyGlyph, HanjaStudyStrokeCount } from './study-glyph'
 import { StrokePlayback } from './stroke-player'
 
 type Point = { x: number; y: number }
@@ -75,11 +75,12 @@ export function WritingPractice({ character }: { character: HanjaCharacter }) {
       <Drawer.Description className="sr-only">{hunEum(character)}의 필순을 보고 캔버스에 따라 씁니다.</Drawer.Description>
       <h2 className="text-3xl font-semibold">{hunEum(character)}</h2>
       <p className="text-sm text-sub">{gradeLabel(character.readingGrade)}</p>
+      <p className="empty:hidden text-sm text-sub"><HanjaStudyStrokeCount character={character} variantOnly /></p>
       <div className="relative mx-auto mt-2 aspect-square w-full max-w-[340px] shrink-0 overflow-hidden rounded-card border border-line bg-img-bg">
         <div className="pointer-events-none absolute inset-y-0 left-1/2 border-l border-dashed border-line" />
         <div className="pointer-events-none absolute inset-x-0 top-1/2 border-t border-dashed border-line" />
         {reference && !started && <div className="pointer-events-none absolute inset-4 text-accent/20" aria-hidden>
-          <HanjaGlyph glyph={character.glyph} className="h-full w-full" decorative />
+          <HanjaStudyGlyph character={character} className="h-full w-full" decorative />
         </div>}
         {diagram && <div className={`pointer-events-none absolute inset-4 text-accent/60 ${started ? '' : 'invisible'}`}>{diagram}</div>}
         <canvas

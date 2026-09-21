@@ -9,6 +9,7 @@ import { CardImage, CardSheet, FeedCard, SwipeHint } from '../feed'
 import { WritingPractice } from './writing'
 import { StrokePlayback } from './stroke-player'
 import { HanjaGlyph, HanjaGlyphs } from './glyph'
+import { HanjaStudyGlyph, HanjaStudyStrokeCount } from './study-glyph'
 
 const GAVE_UP = '__hanja_gave_up__'
 
@@ -16,7 +17,7 @@ export function HanjaIllustration({ character, active = true, autoPlay = false, 
   return <StrokePlayback character={character} active={active} autoPlay={autoPlay}>{({ diagram, controls, started }) => (
     <div className="flex h-full flex-col items-center justify-center gap-2 pb-10" lang="ko">
       <div className={`relative shrink-0 ${large ? 'size-[clamp(168px,60vw,264px)]' : 'size-[clamp(112px,40vw,176px)]'}`}>
-        <HanjaGlyph glyph={character.glyph} className={`h-full w-full ${started ? 'invisible' : ''}`} />
+        <HanjaStudyGlyph character={character} className={`h-full w-full ${started ? 'invisible' : ''}`} />
         {diagram && <div className={`absolute inset-0 ${started ? '' : 'invisible'}`}>{diagram}</div>}
       </div>
       {controls}
@@ -65,7 +66,7 @@ export function HanjaDetails({ character }: { character: HanjaCharacter }) {
       )}
       <div className="flex items-center gap-3 text-sm text-sub">
         <span className="rounded-pill border border-line px-2 py-0.5">{gradeLabel(character.readingGrade)}</span>
-        <span>{character.strokes}획</span>
+        <HanjaStudyStrokeCount character={character} />
       </div>
       <div className="mt-3 border-t border-line pt-4"><HanjaRadicalBlock character={character} /></div>
       {character.example && <div className="mt-3 border-t border-line pt-4"><HanjaExampleBlock example={character.example} /></div>}
