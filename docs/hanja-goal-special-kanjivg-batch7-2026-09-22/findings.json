@@ -1,0 +1,229 @@
+{
+  "date": "2026-09-22",
+  "method": "Direct visual comparison with exact domestic dictionary SVG in RAM. Reviewed direction coloring, complete paths, every normalized cumulative state and final forms. Not exam-body certification.",
+  "entries": [
+    {
+      "glyph": "飫",
+      "candidate": "098eb",
+      "decision": "approved",
+      "strokes": 13,
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        4,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "normalizedCumulativeStates": 13,
+      "rendering": {
+        "normalizedStrokeWidth": 5,
+        "mode": "existing-player-default",
+        "sourceStrokeWidth": 3,
+        "sourceSha256": "7f92e9d58061e6df90f65a5cead94b2f054fb6e5c58d7c28a3694a7449ec25db"
+      },
+      "notes": [
+        "Domestic 食 sequence: roof strokes 1–3; top-right bend 4, interior horizontals 5–6, left descending stem 7, lower horizontals 8–9. Candidate indices 1,2,3,5,6,7,4,8,9 reproduce it.",
+        "夭 strokes 10–13: upper right-to-left slant, left-to-right bar, descending then lower-left sweep, lower-right sweep. Full directions and contours agree; default width 5 joins stroke 12 to upper stroke 10 and retains separation from 食.",
+        "098eb-Kaisho changes only source stroke 6. Its shortened inner horizontal leaves a gap at the right enclosure unlike the domestic image. Use base 098eb.",
+        "No points moved, curves flattened, direction reversed, stroke split/merge or radical synthesis. Uniform coordinate scaling 100/109 and reviewed permutation only."
+      ],
+      "alternativeReview": {
+        "id": "098eb-Kaisho",
+        "differentPathIndices": [
+          6
+        ],
+        "visuallyComparedSourceIndices": [
+          6,
+          10,
+          11,
+          12,
+          13
+        ]
+      }
+    },
+    {
+      "glyph": "麑",
+      "candidate": "09e91",
+      "decision": "held",
+      "strokes": 19,
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "normalizedCumulativeStates": 19,
+      "notes": [
+        "Primary order and main directions agree for all 19 strokes, including right-to-left strokes 10 and 12, hooks 11 and 19, and 臼 interior sequence 14 before bend 15.",
+        "At normalized width 5 the 鹿 lower-left turn (9) crowds/touches 臼 top stroke 12; the 鹿 inner horizontals 4 and 7 do not meet outer descending stroke 3 as in the domestic reference.",
+        "Source-native width 3 scaled to 300/109 separates lower components but leaves the inner horizontals and short verticals disconnected from the enclosing 廣. Width change alone is insufficient.",
+        "Kaisho changes source 1,10,11; KaishoHzLst also exchanges paths 14/15. Their shared enclosure geometry does not repair the gaps. Kaisho stroke 10 travels left-to-right instead of domestic right-to-left and stroke 11 lacks the final upward hook."
+      ],
+      "alternativeReview": [
+        {
+          "id": "09e91-Kaisho",
+          "differentPathIndices": [
+            1,
+            10,
+            11
+          ],
+          "visuallyComparedSourceIndices": [
+            1,
+            5,
+            6,
+            10,
+            11
+          ]
+        },
+        {
+          "id": "09e91-KaishoHzLst",
+          "differentPathIndices": [
+            1,
+            10,
+            11,
+            14,
+            15
+          ],
+          "visuallyComparedSourceIndices": [
+            1,
+            10,
+            11,
+            14,
+            15
+          ]
+        }
+      ],
+      "reopenWhen": "Obtain licensed exact-glyph paths whose 鹿 enclosure connections and 鹿/臼 separation agree with domestic evidence; alternatively obtain independently evidenced endpoint corrections. Do not invent connecting segments."
+    },
+    {
+      "glyph": "麌",
+      "candidate": "09e8c",
+      "decision": "held",
+      "strokes": 18,
+      "sourceStrokeIndices": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "normalizedCumulativeStates": 18,
+      "notes": [
+        "Domestic 4–6 are two descending short verticals followed by top-right bend: candidate 5,6,4. This differs from 麑 despite the shared 鹿 component.",
+        "Other directions agree: 比 right-to-left stroke 10, hooked turn 11, 口 12–14, descending-right-descending compound stroke 15, bar 16, left sweep 17 and right sweep 18.",
+        "Default width 5 crowds 鹿 hook 11 against 口 top 13; the 鹿 inner horizontals (candidate 4,7) remain disconnected from outer descending stroke 3. At normalized source-native width 300/109 these enclosure gaps persist.",
+        "Kaisho changes source 1,10,11 only, leaving the deficient enclosure paths unchanged; stroke 10 reverses the domestic direction and 11 loses the upward hook."
+      ],
+      "alternativeReview": {
+        "id": "09e8c-Kaisho",
+        "differentPathIndices": [
+          1,
+          10,
+          11
+        ],
+        "visuallyComparedSourceIndices": [
+          1,
+          5,
+          6,
+          4,
+          10,
+          11
+        ]
+      },
+      "reopenWhen": "Obtain licensed exact-glyph paths or independently evidenced corrections for enclosure connection and 鹿/口 separation; do not copy another 鹿 form or invent points."
+    }
+  ],
+  "privateMediaSaved": false
+}
