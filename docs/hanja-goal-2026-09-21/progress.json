@@ -1,40 +1,46 @@
 {
   "status": "active",
   "date": "2026-09-21",
-  "lastCompletedCommit": "9422e117b105e0cd8648507d5a1cba34b38bd86a",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch1.json",
+  "lastCompletedCommit": "dc8f5ed0c34ec752595c9b126a9af6b402c4bea1",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch2.json",
   "currentBatch": {
     "glyphs": [
-      "鵙"
+      "鴃",
+      "鯀",
+      "餽"
     ],
-    "strokes": 18,
+    "strokes": 52,
     "heldGlyphs": [],
     "heldStrokes": 0,
     "status": "verified; resolve commit with currentBatchCommitLookup",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
-        "passed": 786,
+        "passed": 788,
         "failed": 0,
         "typeCheckPassed": true
       },
       "productionBuild": {
         "passed": true,
-        "isolatedCheckout": "/tmp/lingo-hanja-goal-special-kvg1-check",
+        "isolatedCheckout": "/tmp/lingo-hanja-goal-special-kvg2-check",
         "temporaryHarnessBuildPassed": true,
         "checkoutRemoved": true,
         "productionFilesByteIdentical": true
       },
       "visualReview": {
-        "primaryAndAlternativeStrokes": 36,
+        "primaryStrokes": 52,
         "normalizedCumulativeStates": {
-          "鵙": 18
+          "鴃": 15,
+          "鯀": 18,
+          "餽": 19
         },
-        "completeForm": true
+        "completeForms": true
       },
       "ui": {
         "glyphs": [
-          "鵙"
+          "鴃",
+          "鯀",
+          "餽"
         ],
         "introAutoplayStarted": true,
         "introAutoplayCompleted": true,
@@ -49,21 +55,21 @@
         "staticOverlayNotDuplicated": true,
         "touchAction": "none",
         "appConsoleErrors": 0,
-        "unrelatedExtensionErrors": 4,
+        "unrelatedExtensionErrors": 20,
         "browser": "Desktop Chrome; no physical mobile test",
-        "record": "docs/hanja-goal-special-kanjivg-batch1-2026-09-21/README.md"
+        "record": "docs/hanja-goal-special-kanjivg-batch2-2026-09-21/README.md"
       }
     }
   },
   "workingTreeCoverage": {
     "pass": true,
-    "addedCharacters": 1,
-    "addedStrokes": 18,
+    "addedCharacters": 3,
+    "addedStrokes": 52,
     "reproduction": true,
     "runtime": {
-      "applied": 4948,
+      "applied": 4951,
       "total": 5978,
-      "remaining": 1030,
+      "remaining": 1027,
       "percent": 82.8
     },
     "grades": [
@@ -168,17 +174,17 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 676,
-        "remaining": 652,
-        "percent": 50.9
+        "applied": 679,
+        "remaining": 649,
+        "percent": 51.1
       }
     ]
   },
   "nextActions": [
     "Resolve currentBatchCommitLookup; commit this verified batch if not already present.",
-    "Next: 特급 鴃 15 strokes, then 鯀 18 and 餽 19. Check live runtime and historical holds, refresh pinned domestic source, review every candidate stroke/cumulative state and complete form before registration.",
-    "next-inventory.json preserves all 30 count-compatible special-grade candidate groups before 鵙 was added; candidates are not approvals.",
-    "All 1,030 unapplied characters stay in scope; revisit holds only with new evidence or state changes."
+    "Next: 特급 麕 19 strokes, 曁 16 and 餒 16. Domestic counts match the catalog. Check fresh runtime and prior holds, fetch pinned candidate paths, then review all strokes and normalized cumulative states.",
+    "曁 previously had a 17-stroke Ja candidate; keep it distinct from the newly discovered 16-stroke KanjiVG candidate. The new candidate is not yet visually approved.",
+    "All 1,027 unapplied characters stay in scope. The complete 30-group pre-鵙 special inventory is preserved in nextCandidateInventory; skip newly applied glyphs."
   ],
   "held": [
     "莽",
@@ -198,23 +204,22 @@
   ],
   "resources": {
     "productionStaticServer": "Stopped owned port 51836 after UI checks.",
-    "sourceReviewServer": "Stopped owned ports 51837/51838/51839 after visual review.",
+    "sourceReviewServer": "Stopped owned ports 51837/51838 after visual review.",
     "temporaryHarness": "Removed owned isolated checkout and temporary HanjaCard page.",
     "browserTabsCleanupPending": "None for current batch; own review/product tab closed."
   },
   "batchPaths": [
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-stroke-dictionary-special-kanjivg-batch1.ts",
-    "lib/hanja-stroke-dictionary-special-kanjivg-batch1.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch1.json",
-    "docs/hanja-goal-special-kanjivg-batch1-2026-09-21/candidates.json",
-    "docs/hanja-goal-special-kanjivg-batch1-2026-09-21/normalized.json",
-    "docs/hanja-goal-special-kanjivg-batch1-2026-09-21/findings.json",
-    "docs/hanja-goal-special-kanjivg-batch1-2026-09-21/build.mjs",
-    "docs/hanja-goal-special-kanjivg-batch1-2026-09-21/serve.py",
-    "docs/hanja-goal-special-kanjivg-batch1-2026-09-21/README.md",
-    "docs/hanja-goal-special-kanjivg-batch1-2026-09-21/next-inventory.json",
+    "lib/hanja-stroke-dictionary-special-kanjivg-batch2.ts",
+    "lib/hanja-stroke-dictionary-special-kanjivg-batch2.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch2.json",
+    "docs/hanja-goal-special-kanjivg-batch2-2026-09-21/candidates.json",
+    "docs/hanja-goal-special-kanjivg-batch2-2026-09-21/normalized.json",
+    "docs/hanja-goal-special-kanjivg-batch2-2026-09-21/findings.json",
+    "docs/hanja-goal-special-kanjivg-batch2-2026-09-21/build.mjs",
+    "docs/hanja-goal-special-kanjivg-batch2-2026-09-21/serve.py",
+    "docs/hanja-goal-special-kanjivg-batch2-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
