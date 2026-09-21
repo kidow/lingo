@@ -49,7 +49,7 @@ test('배정 획수가 바뀌거나 미검증 자형이면 예외를 허용하�
   assert.equal(hanjaStrokeData({ glyph: '山', strokes: 4 }), null)
 })
 
-test('전체 카탈로그에서 획수가 다른 재생은 검토한 25자뿐이다', () => {
+test('전체 카탈로그에서 획수가 다른 재생은 검토한 26자뿐이다', () => {
   const dir = new URL('../content/hanja/characters/', import.meta.url)
   const characters: HanjaCharacter[] = readdirSync(dir).filter(path => path.endsWith('.json'))
     .flatMap(path => JSON.parse(readFileSync(new URL(path, dir), 'utf8')).characters)
@@ -57,7 +57,7 @@ test('전체 카탈로그에서 획수가 다른 재생은 검토한 25자뿐이
     const data = hanjaStrokeData(character)
     return data && data.paths.length !== character.strokes
   })
-  assert.deepEqual(different.map(character => character.glyph).sort(), [...'飼祐禎夔犁蓼鵡筬亐臾贇卄渚猪簒砦穉啣嘯瀟嘴纛蘿藺兎'].sort())
+  assert.deepEqual(different.map(character => character.glyph).sort(), [...'飼祐禎夔犁蓼鵡筬亐臾贇卄渚猪簒砦穉啣嘯瀟嘴纛蘿藺兎禦'].sort())
   assert.equal(new Set(HANJA_STROKES.map(data => data.glyph)).size, HANJA_STROKES.length)
   assert.deepEqual(catalog.filter(character => '飼祐禎'.includes(character.glyph)).map(character => character.strokes).sort(), [10, 14, 14])
 })
