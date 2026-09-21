@@ -81,9 +81,23 @@ const GLYPH_WORD =
   /\b(numeral|digit|digits|number|numbered|printed|written|writing|label|labelled|labeled|letters|word|words|text|price|date|score|fraction)\b/i
 const GLYPH_GUARD = /no (?:other )?letters|no readable letters|no text|no writing|no numbers/i
 
+/**
+ * **글자가 곧 개념인 자리는 뺀다.** `digit`(숫자 하나)·`barcode`(바코드)·
+ * `dollar`(달러)를 「글자 없이」 그리라는 것은 그리지 말라는 말이다. 이
+ * 목록은 2026-09-21에 108장을 여섯 시트로 붙여 눈으로 보고 골랐다 — 그리는
+ * 것이 글자 자체인 여덟이다.
+ */
+const GLYPH_IS_THE_POINT = new Set([
+  'six-hundred', 'digit', 'number-card', 'dollar', 'barcode',
+  'multiplication-sign', 'infinity-symbol', 'carry-digit',
+])
+
 if (args.includes('--glyphs')) {
   const rows = readTargets().filter(
-    (t) => !GLYPH_GUARD.test(t.imagePrompt) && GLYPH_WORD.test(t.imagePrompt),
+    (t) =>
+      !GLYPH_IS_THE_POINT.has(t.slug) &&
+      !GLYPH_GUARD.test(t.imagePrompt) &&
+      GLYPH_WORD.test(t.imagePrompt),
   )
   for (const row of rows) console.log(`  ${row.slug.padEnd(30)} ${row.imagePrompt}`)
   console.log(`\n글자·숫자를 부르는 프롬프트 ${rows.length}개 — «no letters»로 막거나 다른 것을 그리게 하세요`)
