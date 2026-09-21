@@ -22,7 +22,7 @@
  * `public/concepts/<slug>.webp`인데, 둘 중 있는 것을 쓴다. 그래야
  * `pnpm genimg`이 끝나자마자 — `pnpm image`를 돌리기 전에 — 시트를 만들 수 있다.
  */
-import { existsSync, mkdirSync } from 'node:fs'
+import { existsSync, mkdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import sharp from 'sharp'
 
@@ -49,12 +49,26 @@ if (slugs.length === 0) {
   process.exit(1)
 }
 
-/** 변환 결과가 있으면 그것을, 없으면 원본 PNG를 쓴다 */
+/**
+ * 둘 중 **새것**을 쓴다.
+ *
+ * 예전에는 변환 결과(`webp`)를 먼저 봤다. 그래서 **다시 뽑을 때 시트가
+ * 거짓말을 했다** — 2026-09-21에 숫자가 박힌 일곱 장을 고쳐 다시 뽑고 시트를
+ * 열었는데 예전 그림이 그대로 나왔다. `.images/*.png`는 새것인데 `webp`가
+ * 아직 옛것이었기 때문이다.
+ *
+ * 그림을 눈으로 보는 자리가 **고칠 때 하필 안 보인다**는 뜻이라 뒤집었다.
+ * 시각을 견주어 새것을 쓴다.
+ */
 function source(slug: string): string {
   const webp = join('public', 'concepts', `${slug}.webp`)
-  if (existsSync(webp)) return webp
   const png = join('.images', `${slug}.png`)
-  if (existsSync(png)) return png
+  const hasWebp = existsSync(webp)
+  const hasPng = existsSync(png)
+  if (hasWebp && hasPng)
+    return statSync(png).mtimeMs > statSync(webp).mtimeMs ? png : webp
+  if (hasWebp) return webp
+  if (hasPng) return png
   console.error(`그림이 없습니다: ${slug} (${webp} · ${png})`)
   process.exit(1)
 }
