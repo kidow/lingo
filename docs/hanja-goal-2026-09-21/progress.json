@@ -1,14 +1,14 @@
 {
   "status": "active",
   "date": "2026-09-21",
-  "lastCompletedCommit": "75c355af9ecfeeab3378890d1cf08716ef97b835",
+  "lastCompletedCommit": "44b22f8c26fff32a1c25012b15cad172cb852799",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special2-rabbit-variant.json",
   "currentBatch": {
     "glyphs": [
       "兎"
     ],
     "strokes": 8,
-    "status": "runtime-integrated-ui-verification-pending",
-    "committed": false,
+    "status": "verified-ready-to-commit",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
@@ -37,10 +37,13 @@
         "searchShowsVariant": true,
         "introAutoplayStarted": true,
         "introAutoplayCompleted": true,
-        "writingAutoplay": "unverified",
-        "replay": "unverified",
-        "canvasDrag": "unverified",
-        "blocker": "Browser click commands exceeded CDP dispatch deadlines; fresh tab creation timed out and reset the tool kernel."
+        "writingAutoplay": true,
+        "replay": true,
+        "staticOverlayNotDuplicated": true,
+        "canvasDrag": true,
+        "canvasDragPreservesSheetPosition": true,
+        "consoleErrors": 0,
+        "record": "docs/hanja-mang-yu-rabbit-2026-09-21/integration.md"
       }
     }
   },
@@ -173,9 +176,8 @@
     "docs/hanja-mang-yu-rabbit-2026-09-21/verify-integration.mjs"
   ],
   "nextActions": [
-    "Retry browser access to http://127.0.0.1:51836/rabbit-review.html; validate writing autoplay/replay/overlay/canvas drag before committing rabbit integration.",
-    "If browser remains unavailable, continue independent domestic source comparison of 饉·睹·瀆·燐 using next-candidates.json; do not approve on counts alone.",
-    "After rabbit validation, commit only listed rabbit paths plus integration record; update authoritative runtime coverage.",
+    "Commit verified rabbit integration using the private index; include integration.md and goal checkpoint, exclude other sessions' changes.",
+    "Continue domestic source comparison of 饉·睹·瀆·燐, 4 characters and 68 dictionary strokes, using g1-next-review.json; do not approve on counts alone.",
     "Keep all remaining 1,052 characters in scope; 65 count-matching KanjiVG candidates are not approved."
   ],
   "held": [
@@ -187,11 +189,12 @@
   "resources": {
     "productionStaticServer": {
       "pid": 95032,
+      "status": "stopped-after-ui-verification",
       "port": 51836,
       "root": "/tmp/lingo-hanja-goal-rabbit-check/out"
     },
     "temporaryHarness": "/tmp/lingo-hanja-goal-rabbit-check/app/rabbit-review/page.tsx",
-    "browserViewportResetPending": true,
-    "browserTabsCleanupPending": true
+    "browserViewportResetPending": "Old IAB provider unavailable after browser provider changed; no Chrome override set.",
+    "browserTabsCleanupPending": "Verified Chrome tab closed; old IAB tabs unavailable."
   }
 }
