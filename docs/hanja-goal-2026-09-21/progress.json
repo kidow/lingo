@@ -1,56 +1,35 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "902aa3d272cd0dd5247512a3b875de8c67a5e153",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch9.json",
+  "lastCompletedCommit": "a13a32936b90afcd93c575deb603293253befdac",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-special-kanjivg-batch10-2026-09-22/findings.json",
   "currentBatch": {
-    "glyphs": [
-      "髢"
-    ],
-    "strokes": 13,
+    "glyphs": [],
+    "strokes": 0,
     "heldGlyphs": [
-      "鏘",
-      "爨"
+      "駸",
+      "褊",
+      "諞"
     ],
-    "heldCandidateStrokes": 48,
-    "heldDictionarySteps": 49,
-    "status": "verified; resolve commit with currentBatchCommitLookup",
+    "heldStrokes": 47,
+    "status": "research verified; resolve commit with currentBatchCommitLookup",
     "checks": {
-      "reproduction": true,
-      "hanjaTests": {
-        "passed": 817,
-        "failed": 0,
-        "typeCheckPassed": true
-      },
-      "productionBuild": {
-        "passed": true,
-        "isolatedCheckout": "/tmp/lingo-hanja-goal-special-kvg9-check",
-        "temporaryHarnessBuildPassed": true,
-        "productionFilesByteIdentical": 9,
-        "checkoutRemoved": true
-      },
-      "visualReview": {
-        "primaryCandidateStrokes": 61,
-        "domesticSteps": 62,
-        "normalizedCumulativeStates": 13,
-        "approvedCompleteForms": 1,
-        "privateGraphicsSaved": false
-      },
-      "ui": {
-        "learningAutoplay": true,
-        "learningReplay": true,
-        "writingAutoplay": true,
-        "writingReplay": true,
-        "playbackCompleteState": true,
-        "canvasInputs": 1,
-        "canvasDragPreservesSheetAndScroll": true,
-        "staticOverlayNotDuplicated": true,
-        "strokeWidth": 5,
-        "touchAction": "none",
-        "appConsoleErrors": 0,
-        "unrelatedExtensionErrors": 22,
-        "browser": "Desktop Chrome; no physical mobile test",
-        "record": "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/README.md"
+      "researchVerifierPassed": true,
+      "primaryCandidateStrokes": 47,
+      "domesticSteps": 47,
+      "normalizedCompleteFormWidths": [
+        5,
+        2.7522935779816513
+      ],
+      "runtimeUnchanged": true,
+      "privateGraphicsSaved": false,
+      "record": "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/README.md",
+      "previousRuntimeVerification": {
+        "commit": "a13a32936b90afcd93c575deb603293253befdac",
+        "hanjaTests": 817,
+        "typeCheckPassed": true,
+        "productionBuildPassed": true,
+        "uiPassed": true
       }
     }
   },
@@ -170,9 +149,9 @@
     ]
   },
   "nextActions": [
-    "Review 駸 17, 褊 14 and 諞 16 strokes after checking runtime and concurrent changes.",
-    "Keep 鏘 held until licensed or independently evidenced geometry resolves internal dot attachment and separation.",
-    "Keep 爨 held: candidate 29 versus domestic 30, absent inner 口 vertical and wrong-direction left 火 dot. Do not split paths or change catalog."
+    "Review 餔 16 and 鐶 21 strokes after refreshing runtime and concurrent changes.",
+    "Investigate 敝 catalog 12 versus domestic 11 strokes as a variant; do not force count by merging or splitting paths.",
+    "Continue 釁 25, then refresh remaining candidate inventory; do not repeat held-source comparisons without new evidence."
   ],
   "held": [
     "莽",
@@ -197,30 +176,28 @@
     "麌",
     "饐",
     "鏘",
-    "爨"
+    "爨",
+    "駸",
+    "褊",
+    "諞"
   ],
   "resources": {
-    "servers": "Stopped own ports 51836,51837,51838,51839 after verifying PIDs; private graphics stayed in RAM.",
-    "temporaryHarness": "Removed owned /tmp/lingo-hanja-goal-special-kvg9-check.",
-    "browserTabsCleanupPending": "None; own review/product tab closed."
+    "servers": "Stopped own RAM ports 51837,51838,51839 after verifying PIDs.",
+    "temporaryHarness": "None for research-only batch.",
+    "browserTabsCleanupPending": "None; own review tab closed."
   },
   "batchPaths": [
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/candidates.json",
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/normalized.json",
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/findings.json",
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/build.mjs",
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/serve.py",
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/serve-source-width.py",
-    "lib/hanja-stroke-dictionary-special-kanjivg-batch9.ts",
-    "lib/hanja-stroke-dictionary-special-kanjivg-batch9.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-special-kanjivg-batch9.json",
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/README.md",
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/coverage.json",
-    "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/next-candidates.json",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/candidates.json",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/normalized.json",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/findings.json",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/verify.mjs",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/serve.py",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/serve-source-width.py",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/README.md",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/coverage.json",
+    "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/next-candidates.json",
     "docs/hanja-goal-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-special-kanjivg-batch9-2026-09-22/next-candidates.json"
+  "nextCandidateInventory": "docs/hanja-goal-special-kanjivg-batch10-2026-09-22/next-candidates.json"
 }

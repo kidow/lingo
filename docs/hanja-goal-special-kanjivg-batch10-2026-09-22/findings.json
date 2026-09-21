@@ -1,0 +1,171 @@
+{
+  "date": "2026-09-22",
+  "method": "Exact domestic dictionary SVG compared in RAM against whole KanjiVG source paths and directions. No exam-body certification or runtime approvals.",
+  "entries": [
+    {
+      "glyph": "駸",
+      "candidate": "099f8",
+      "decision": "held",
+      "strokes": 17,
+      "sourceStrokeIndices": [
+        1,
+        2,
+        4,
+        5,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "normalizedCumulativeStates": 0,
+      "notes": [
+        "All 17 primary paths compared. Domestic 馬 order is base 1,2,4,5,3,6,7,8,9,10; then unchanged 11–17. Vt6 instead moves the interior vertical after the outer bend, so neither raw sequence should be used unchanged.",
+        "Original cubic paths normalized uniformly by 100/109 with the reviewed permutation for a complete-form comparison at widths 5 and 300/109.",
+        "Domestic stroke 17 begins on the upper horizontal of 又 (16). Candidate 17 begins below and to the left of that horizontal, leaving a gap. At width 5 it also crowds the adjacent left dot 14; at source-native width the gap to 16 remains.",
+        "No full normalized cumulative sequence approved because complete-form geometry already fails. Do not move the start point or synthesize a connecting segment."
+      ],
+      "alternativeReview": {
+        "id": "099f8-Vt6",
+        "pathIdentityMappingToBase": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          3,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "unchangedProblemPaths": [
+          14,
+          16,
+          17
+        ]
+      },
+      "reopenWhen": "Find licensed exact-glyph geometry or independently evidenced corrections joining 又 stroke 17 to 16 while separating it from dot 14."
+    },
+    {
+      "glyph": "褊",
+      "candidate": "0890a",
+      "decision": "held",
+      "strokes": 14,
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "normalizedCumulativeStates": 0,
+      "notes": [
+        "All 14 paths compared. Domestic 衤 starts with a nearly vertical descending dot; candidate 1 descends diagonally right.",
+        "Domestic 戶 stroke 6 travels right-to-left; candidate 6 is a separate left-to-right horizontal. Domestic descending stroke 9 begins at that top stroke; candidate 9 begins at the lower bend 7, leaving the top horizontal detached.",
+        "Kaisho changes only path 12 (inside 冊 horizontal). Problem paths 1,6,9 are identical, so swapping the alternate or reversing the top horizontal alone cannot repair the whole form.",
+        "No path points, direction or catalog data changed."
+      ],
+      "alternativeReview": {
+        "id": "0890a-Kaisho",
+        "differentPathIndices": [
+          12
+        ],
+        "unchangedProblemPaths": [
+          1,
+          6,
+          9
+        ]
+      },
+      "reopenWhen": "Obtain licensed exact-glyph paths matching the domestic 衤 first stroke and connected right-to-left 戶 roof."
+    },
+    {
+      "glyph": "諞",
+      "candidate": "08ade",
+      "decision": "held",
+      "strokes": 16,
+      "reviewedStrokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "normalizedCumulativeStates": 0,
+      "notes": [
+        "All 16 paths compared. Domestic 言 stroke 1 is a left-to-right horizontal; candidate 1 is a down-right dot.",
+        "Domestic 戶 stroke 8 travels right-to-left and descending stroke 11 starts on that top stroke. Candidate 8 is a detached left-to-right horizontal and candidate 11 starts at the lower bend 9.",
+        "Kaisho changes only path 14 (inside 冊 horizontal). Paths 1,8,11 remain identical; alternate geometry cannot repair the domestic 言/戶 form.",
+        "No runtime geometry generated from the shared 扁 component."
+      ],
+      "alternativeReview": {
+        "id": "08ade-Kaisho",
+        "differentPathIndices": [
+          14
+        ],
+        "unchangedProblemPaths": [
+          1,
+          8,
+          11
+        ]
+      },
+      "reopenWhen": "Obtain licensed exact-glyph geometry for the horizontal 言 first stroke and connected domestic 戶 roof, then review every cumulative state."
+    }
+  ],
+  "privateMediaSaved": false,
+  "runtimeAdded": 0
+}
