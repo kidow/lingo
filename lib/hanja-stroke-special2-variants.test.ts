@@ -53,9 +53,9 @@ test('특급II 15자 190획은 검토한 전체 후보의 순서와 경로를 �
   }
 })
 
-test('篠와 아직 대조를 마치지 않은 특급II 획수 충돌 20자는 재생하지 않는다', () => {
-  const held = [...'篠纛蘿藺鱉宬嘯瀟嘴莽萸兎菉珷珹奫晸逈凞囍']
-  assert.equal(held.length, 20)
+test('자형 대조 보류 또는 후보 미확보 특급II 획수 충돌 17자는 재생하지 않는다', () => {
+  const held = [...'篠纛蘿藺鱉宬莽萸兎菉珷珹奫晸逈凞囍']
+  assert.equal(held.length, 17)
   for (const glyph of held) {
     const character = catalog.find(entry => entry.glyph === glyph)!
     assert.ok(character)

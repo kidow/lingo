@@ -1,5 +1,6 @@
 import reviewed from '../public/hanja-strokes/dictionary-reviewed-g2-variants.json' with { type: 'json' }
 import special2Reviewed from '../public/hanja-strokes/dictionary-reviewed-special2-variants.json' with { type: 'json' }
+import special2DirectionReviewed from '../public/hanja-strokes/dictionary-reviewed-special2-direction-variants.json' with { type: 'json' }
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
 export type HanjaVariantStrokeData = HanjaDictionaryStrokeData & {
@@ -33,9 +34,12 @@ const allowed: readonly VariantPin[] = [
   {glyph: '砦',catalogStrokes: 10,playbackStrokes: 11,form: '사전',candidateSha256: '392f9d39017e1a0f7f6978301414686bf3e9e9424ce955fb35b372a7fb045f24',pathsSha256: 'e3833f05b1d171f5a39660cd8b7ed07b24421b3b9f572be5f0f14c8811494e6d'},
   {glyph: '穉',catalogStrokes: 16,playbackStrokes: 17,form: '사전',candidateSha256: 'da39d995cb8247e836e693da40ea7f47fa48f7d5a60714c105e690bbd57c1d7f',pathsSha256: '26da05d910b0c81fb8027b20fd3e49a2939d385e0d5e4c8942d50ec63f571834'},
   {glyph: '啣',catalogStrokes: 11,playbackStrokes: 12,form: '사전',candidateSha256: '53ce95465b3530f6edba020d8eb69eb3cd22d98bac1797cca8af6c2ff5041032',pathsSha256: 'edc52842b3355af723de7bd304d5bf34d6c18aac9301e41581cd59f8c4760495'},
+  {"glyph":"嘯","catalogStrokes":15,"playbackStrokes":16,"form":"사전","candidateSha256":"12afa65eacb1c0b548dda7c116956d6b273f750a0fe5a4508e2debdceed37df5","pathsSha256":"6850fa4591a7bdcad84f5346506f4184e36173aba9dc8b0a60d4179d4a7a8a8b"},
+  {"glyph":"瀟","catalogStrokes":19,"playbackStrokes":20,"form":"사전","candidateSha256":"914c7adda2170930d91efc4f461cf5fa394048fee8e13981c570008ead65b6fa","pathsSha256":"f183ed5f2f85174bc88a4d9791a4b4c0add3bc0c87c322d4806d391ef71f3cfc"},
+  {"glyph":"嘴","catalogStrokes":15,"playbackStrokes":16,"form":"사전","candidateSha256":"1dfc68e93744366c805f6f6358ea60d391cb7596590d2113580b3d8dcf9c64eb","pathsSha256":"3dcaa20b63b36927335c3f3309acc82e3eeba35b90f4f4e0613ad06980e65b65"},
 ]
 
-export const HANJA_VARIANT_STROKES: readonly HanjaVariantStrokeData[] = [...reviewed, ...special2Reviewed].map((entry, i) => {
+export const HANJA_VARIANT_STROKES: readonly HanjaVariantStrokeData[] = [...reviewed, ...special2Reviewed, ...special2DirectionReviewed].map((entry, i) => {
   const pin = allowed[i]
   const candidateSha256 = 'candidateSha256' in entry ? entry.candidateSha256 : undefined
   if (!pin || entry.glyph !== pin.glyph || entry.variant.catalogStrokes !== pin.catalogStrokes

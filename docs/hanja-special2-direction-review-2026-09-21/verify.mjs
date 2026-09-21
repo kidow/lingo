@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto'
 import { readFileSync, readdirSync } from 'node:fs'
 import { normalizeMedians } from '../../lib/hanja-stroke-geometry.ts'
 import { hanjaStrokeData } from '../../lib/hanja-strokes.ts'
+import { hanjaPlaybackVariant } from '../../lib/hanja-stroke-variants.ts'
 
 const read = name => JSON.parse(readFileSync(new URL(name, import.meta.url)))
 const sha = value => createHash('sha256').update(value).digest('hex')
@@ -49,7 +50,7 @@ for (const original of originals.entries) {
   }
   assert.equal(sha(readFileSync(new URL('../../' + original.staticSvg.path, import.meta.url))), original.staticSvg.sha256)
   assert.deepEqual(entry.reviewedOriginalStrokes, sequence)
-  assert.equal(hanjaStrokeData(catalog.get(original.glyph)), null, original.glyph + ' must remain outside runtime in this review batch')
+  const playback = hanjaStrokeData(catalog.get(original.glyph))
 
   const source = checks.sources.find(e => e.glyph === original.glyph)
   assert.equal(source.strokes, original.strokes)
@@ -75,10 +76,14 @@ for (const original of originals.entries) {
     assert.deepEqual([...entry.permutation].sort((a, b) => a - b), sequence)
     const paths = entry.permutation.map(index => original.paths[index - 1])
     assert.equal(jsonSha(paths), entry.reviewedPathsSha256)
+    assert.ok(playback)
+    assert.deepEqual(playback.paths, paths)
+    assert.equal(hanjaPlaybackVariant(catalog.get(original.glyph)), playback)
     assert.deepEqual(entry.reviewedCorrectedStrokes, sequence)
     assert.deepEqual([...coverage(true)].sort((a, b) => a - b), sequence)
     correctedCoverage += sequence.length
   } else {
+    assert.equal(playback, null, original.glyph + ' remains held')
     assert.match(entry.status, /^held-/)
     assert.equal(entry.permutation, null)
     assert.equal(entry.reviewedPathsSha256, null)
@@ -96,7 +101,10 @@ const applied = characters.filter(c => hanjaStrokeData(c)).length
 const special2 = read('../../content/hanja/characters/special-2.json').characters
 const runtime = { applied, total: characters.length, remaining: characters.length - applied,
   special2Applied: special2.filter(c => hanjaStrokeData(c)).length, special2Total: special2.length }
-assert.deepEqual(runtime, review.runtimeSnapshot)
+assert.deepEqual(runtime, { ...review.runtimeSnapshot,
+  applied: review.runtimeSnapshot.applied + approved.length,
+  remaining: review.runtimeSnapshot.remaining - approved.length,
+  special2Applied: review.runtimeSnapshot.special2Applied + approved.length })
 console.log(JSON.stringify({ pass: true, originalCoverage, correctedCoverage,
-  summary: review.summary, runtime, runtimeApprovalsAdded: 0, authoredGeometryPoints: 0,
+  summary: review.summary, runtime, runtimeApprovalsAdded: approved.length, authoredGeometryPoints: 0,
   proprietaryAssetsSaved: 0 }, null, 2))

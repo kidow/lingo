@@ -1,0 +1,115 @@
+{
+  "date": "2026-09-21",
+  "pass": true,
+  "originalCoverage": 148,
+  "correctedCoverage": 52,
+  "summary": {
+    "reviewedCharacters": 8,
+    "reviewedStrokes": 148,
+    "pathsReviewedCharacters": 3,
+    "pathsReviewedStrokes": 52,
+    "heldCharacters": 5,
+    "heldStrokes": 96
+  },
+  "runtime": {
+    "applied": 4922,
+    "total": 5978,
+    "remaining": 1056,
+    "special2Applied": 841,
+    "special2Total": 1150
+  },
+  "runtimeApprovalsAdded": 3,
+  "authoredGeometryPoints": 0,
+  "proprietaryAssetsSaved": 0,
+  "tests": {
+    "command": "node --test --test-reporter=tap 'lib/hanja*.test.ts'",
+    "exitCode": 0,
+    "summary": [
+      "# tests 760",
+      "# pass 760",
+      "# fail 0"
+    ]
+  },
+  "build": {
+    "command": "pnpm build",
+    "exitCode": 0,
+    "typecheckPassed": true,
+    "temporaryRouteAbsent": true
+  },
+  "browser": {
+    "mode": "Production export with temporary route rendering actual HanjaCard",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "characters": [
+      {
+        "glyph": "嘯",
+        "introAutoPlay": true,
+        "writingAutoPlay": true,
+        "observedInitialCount": 1,
+        "total": 16,
+        "catalogStrokes": 15,
+        "staticAndAnimatedPathsEqual": true,
+        "writingSvgCount": 1,
+        "horizontalOverflow": false
+      },
+      {
+        "glyph": "瀟",
+        "introAutoPlay": true,
+        "writingAutoPlay": true,
+        "observedInitialCount": 1,
+        "total": 20,
+        "catalogStrokes": 19,
+        "staticAndAnimatedPathsEqual": true,
+        "writingSvgCount": 1,
+        "horizontalOverflow": false
+      },
+      {
+        "glyph": "嘴",
+        "introAutoPlay": true,
+        "writingAutoPlay": true,
+        "observedInitialCount": 1,
+        "total": 16,
+        "catalogStrokes": 15,
+        "staticAndAnimatedPathsEqual": true,
+        "writingSvgCount": 1,
+        "horizontalOverflow": false
+      }
+    ],
+    "replay": {
+      "glyph": "嘯",
+      "from": 16,
+      "to": 1
+    },
+    "canvasDrag": {
+      "glyph": "嘯",
+      "inputStrokes": 1,
+      "dialogTopBefore": 126.6015625,
+      "dialogTopAfter": 126.6015625,
+      "canvasTopBefore": 307.6015625,
+      "canvasTopAfter": 307.6015625,
+      "touchAction": "none"
+    },
+    "heldControl": {
+      "glyph": "纛",
+      "playbackControlsVisible": false
+    },
+    "errorLogs": [],
+    "warningLogs": [],
+    "temporaryRouteRemoved": true,
+    "serverStopped": true,
+    "viewportReset": true
+  },
+  "nextTask": {
+    "glyphs": [
+      "纛",
+      "蘿",
+      "藺",
+      "鱉",
+      "宬"
+    ],
+    "strokes": 96,
+    "purpose": "Alternative complete candidates and evidence for unresolved glyph, hook and direction differences"
+  }
+}
