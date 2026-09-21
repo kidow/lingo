@@ -1,45 +1,45 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "0d368b6eb54d723b10551b836e803df0fefb68aa",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/findings.json",
+  "lastCompletedCommit": "2767170812aa74c63b98257191c7edafb5103cd6",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/findings.json",
   "currentBatch": {
     "glyphs": [
-      "禦"
+      "祉"
     ],
-    "strokes": 17,
+    "strokes": 8,
     "heldGlyphs": [
-      "褐",
-      "菱"
+      "塚",
+      "迸"
     ],
-    "heldStrokes": 24,
-    "domesticStrokes": 41,
+    "heldStrokes": 22,
+    "domesticStrokes": 30,
     "status": "runtime and UI verified; resolve commit with currentBatchCommitLookup",
     "checks": {
-      "hanjaTests": 825,
+      "hanjaTests": 829,
       "typeCheckPassed": true,
       "productionBuildPassed": true,
       "uiPassed": true,
-      "primaryCandidateStrokes": 41,
-      "alternateCandidateStrokes": 13,
-      "normalizedCumulativeStates": 17,
+      "primaryCandidateStrokes": 30,
+      "alternateCandidateStrokes": 8,
+      "normalizedCumulativeStates": 8,
       "privateGraphicsSaved": false,
-      "record": "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/README.md"
+      "record": "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/README.md"
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4962,
-      "remaining": 1016,
+      "applied": 4963,
+      "remaining": 1015,
       "percent": 83
     },
     "grades": [
       {
         "grade": "1급",
         "total": 1145,
-        "applied": 1062,
-        "remaining": 83,
+        "applied": 1063,
+        "remaining": 82,
         "percent": 92.8
       },
       {
@@ -143,8 +143,8 @@
     ]
   },
   "nextActions": [
-    "Review 祉·塚·迸 domestic 8+12+10=30 strokes against exact RAM-only domestic graphics and licensed candidates; preserve catalog 9/13/12.",
-    "Then review 叟·篠; read the existing 篠 stroke-15 hook hold before examining KanjiVG alternatives."
+    "Review 叟10 / 篠17 whole paths and cumulative forms against RAM-only domestic references; preserve catalog 9/16.",
+    "Read previous 篠 stroke15 hook hold and compare the pinned KanjiVG alternatives; then refresh remaining inventory outside recorded holds."
   ],
   "held": [
     "莽",
@@ -177,31 +177,32 @@
     "敝",
     "釁",
     "褐",
-    "菱"
+    "菱",
+    "塚",
+    "迸"
   ],
   "resources": {
     "tabs": "closed",
-    "ramServers": "51836/51837/51838/51839 stopped",
+    "ramServers": "51836/51837/51838 stopped",
     "verificationWorktree": "removed",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "lib/hanja-stroke-dictionary-variant-kanjivg-batch13.ts",
-    "lib/hanja-stroke-dictionary-variant-kanjivg-batch13.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-variant-kanjivg-batch13.json",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/candidates.json",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/normalized.json",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/findings.json",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/build.mjs",
+    "lib/hanja-stroke-dictionary-variant-kanjivg-batch14.ts",
+    "lib/hanja-stroke-dictionary-variant-kanjivg-batch14.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-variant-kanjivg-batch14.json",
+    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/candidates.json",
+    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/normalized.json",
+    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/findings.json",
+    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/build.mjs",
     "lib/hanja-stroke-variants.ts",
     "lib/hanja-stroke-variants.test.ts",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/serve.py",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/serve-source-width.py",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/README.md",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/coverage.json",
-    "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/next-candidates.json",
+    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/serve.py",
+    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/README.md",
+    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/coverage.json",
+    "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/next-candidates.json",
     "docs/hanja-goal-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-variant-kanjivg-batch13-2026-09-22/next-candidates.json"
+  "nextCandidateInventory": "docs/hanja-goal-variant-kanjivg-batch14-2026-09-22/next-candidates.json"
 }
