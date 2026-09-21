@@ -405,6 +405,13 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 7. **이 소품을 다른 개념이 쓰고 있지 않은가.** `pnpm props --in`을 그림을
    고르기 **전에** 돌린다. 9,300장을 넘긴 뒤로는 몸통보다 **꾸미는 말**이
    먼저 부딪는다.
+8. **몸통 낱말을 `pnpm props <낱말>`로 한 번 세었는가.** 배치 안이 아니라
+   `content/` 전체를 본다. 아래 「몸통을 먼저 세면 되돌리지 않는다」를 볼 것.
+
+**7번과 8번은 여기 적혀 있는데도 2026-09-21에 두 회차를 그냥 뽑았다.** 이
+문서의 머리말이 말하는 병이 그것이다 — 읽어 두고도 쓸 때 안 떠오른다.
+되돌린 장으로 열다섯 회차에 다섯·셋을 치렀고, 세고 뽑기 시작한 뒤 네 회차는
+0·0·1·0이다.
 
 ## 그리지 못하는 지시문 — 배경으로 적은 것은 사라진다
 
@@ -468,6 +475,9 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 | `one paper bill with a red stamp mark` | **지폐** | `one printed notice sheet with a red band across its top edge` |
 | `one earth bank with a wet line running out of it` | **지구본** | `one cracked water jar with a wet trail leading away` |
 | `one small round lump lifted out whole` | 호박 | `one glass phial holding one small pale round object` |
+| `the last three rows of a table shaded darker` | **밥상**을 위에서 본 그림 | `one open trapdoor … with a short ladder going down` |
+| `two ruled table rows with a tile at the end of each` | 화분 올린 **탁자** 둘 | `two wooden pegs pushed to the same depth in a slotted board` |
+| `a cup of water standing level on a seat` | **밥상 의자**에 물컵 | `one cup of water standing level on a bus seat beside a window` |
 | `one paper window with a small tear` | 봉투 | `one single blossom fallen off at a touch` |
 | `three seals of three sizes` | **바다표범 세 마리** | `three brass tallies of three sizes hanging on one hook` |
 
@@ -788,6 +798,35 @@ numbers`였다 — **숫자를 그리라고 시켰으니 그린 것이고, 그 �
 
 색이 뜻을 나르는 자리는 **색을 못 박는다** — 「카드를 든다」가 아니라
 「노란 카드를 든다」다.
+
+### 몸통을 먼저 세면 되돌리지 않는다
+
+2026-09-21에 109장을 일곱 회차로 뽑으며 되돌린 장을 셌다.
+
+| 회차 | 되돌림 | 무엇이 걸렸나 |
+| ---: | ---: | --- |
+| 1 | 5 | 프롬프트가 글자·숫자를 불렀다 (점수판 · `7 + 24 = 36` · 빨간 카드) |
+| 2 | 3 | `table`을 밥상으로 · 시계 둘이 겹침 · **내가 만든 쌍** |
+| 3 | 0 | 뽑기 전에 몸통을 세고 넷을 갈랐다 |
+| 4 | 0 | 빨래표와 시계를 미리 갈랐다 |
+| 5 | 1 | `seat`을 밥상 의자로 그렸다 |
+| 6 | 0 | 마지막 열아홉 |
+
+**세는 법.** 그리려는 몸통 낱말을 대여섯 개 골라 `pnpm props <낱말…>`로
+한 번에 돌린다. 끝줄의 「다른 개념이 제 몸통으로 쓰는 낱말」에 든 것은
+비킨다. 열두 낱말을 골랐더니 아홉이 이미 남의 몸통이었던 회차가 있다 —
+**빈 낱말을 먼저 스무 개쯤 뽑아 놓고 거기서 고르는 편이 빠르다.**
+
+**거울상은 재 볼 것도 없이 고치고, 짜임만 닮은 것은 뽑아서 잰다.**
+`right-turn`을 `left-turn`의 거울상으로 두면 dHash가 거의 확실히 붙으므로
+미리 갈랐다(고친 뒤 112). 반면 눈으로 겁냈던 쌍들은 뽑고 재니 다 멀었다.
+
+    the-stands ↔ well-attended    둘 다 붉은 좌석 더미인데  112
+    match-fitness ↔ go-via        둘 다 선으로 그린 도표인데 101
+    unpaved ↔ training-ground     둘 다 초록 벌판인데       104
+
+**눈이 겁내는 자리와 기계가 걸리는 자리가 다르다.** 미리 고치면 멀쩡한
+그림을 망치므로, 확실한 것만 고치고 나머지는 `pnpm twins --pair`로 잰다.
 
 ## 스타일을 바꿀 때
 
