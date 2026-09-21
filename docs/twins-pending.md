@@ -28,27 +28,48 @@
 **백쉰다섯이 아직 안 그려졌다** — 지금이 고치기 가장 싼 때다. 아래 문단들에
 낱낱이 적혀 있고, 여기서는 **무엇을 해야 하는지로만** 묶는다.
 
-### ① 몸통을 뺏겼다 — 옮겨야 산다 (열일곱)
+### ① 몸통을 뺏겼다 — 옮겨야 산다 (열일곱 가운데 여덟을 끝냈다)
+
+**2026-09-21에 여덟을 옮겼다.** 아래 표에서 취소선이 그것이다. 새 몸통은
+`pnpm props`로 빈 낱말을 찾아 골랐고, 뺏겼던 임자와 다시 재서 확인했다.
+
+    lose-a-button(단추가 떨어지다)   실밥만 남은 앞섶   ↔ button   구조 100
+    set-on-being-free(자유를 좋아하는) 끊긴 고삐 말뚝    ↔ cage     구조 104
+    drop-bombs-on-it(폭탄을 떨구다)   떨어지는 통 셋    ↔ crater   구조 119
+    made-of-silk-cloth(비단의)      채반의 고치와 실   ↔ silk     구조 121
+    all-told-together(통틀어)       세 곡식을 한 자루에 ↔ calculate 구조 117
+    waiting-queue(대기 줄)          늘어선 빈 접의자   ↔ queue    구조 137
+    put-them-low-before-all(업신여겨…) 바닥에 놓인 사발  ↔ cushion  구조 121
+    the-gist-drawn-together(간추린 말) 검불 날린 키      ↔ funnel   구조 120
+
+**한 번은 그물이 막았다.** `having-the-knack`(능숙함)을 「끊기지 않은 대팻밥」
+으로 옮기려 했는데, `a-rare-skill-of-ones-own`(뛰어난 재주)이 **똑같이** 그
+그림이었다. 뜻까지 이웃이라 옮기나 마나였다. `silk-cloth`(명주)도 두루마리로
+가려다 `fabric-roll`(원단)이 이미 그 그림이라 그만두었다.
+
+**남은 아홉은 아직 자리를 못 찾았다** — 빈 몸통 후보가 죄다 남의 것이다.
+
+
 
 다른 개념이 **이미 그 물건의 임자**다. 그대로 뽑으면 카드 둘이 같은 그림이 된다.
 
 | 개념 | 뺏긴 몸통 | 임자 |
 | --- | --- | --- |
 | `clothes/put-thread-through-it`(실을 꿰다) | 실 꿴 바늘 | 개념 `needle`(바늘) |
-| `clothes/lose-a-button`(단추가 떨어지다) | 낱개 단추 | 개념 `button`(단추) · `it-is`(이다) |
+| ~~`clothes/lose-a-button`(단추가 떨어지다)~~ | 낱개 단추 | **끝냈다** — 실밥만 남은 앞섶 |
 | `clothes/take-it-off-again`(벗어 내리다) · `on-the-peg-by-the-door`(옷을 걸다) | 걸이의 외투 | 이미 열여덟 장 |
-| `transport/waiting-queue`(대기 줄) | 한 줄로 선 사람 | 개념 `queue`(줄을 서다) |
-| `city/set-on-being-free`(자유를 좋아하는) | 처마에 걸린 새장 | 개념 `cage`(새장) |
+| ~~`transport/waiting-queue`(대기 줄)~~ | 한 줄로 선 사람 | **끝냈다** — 늘어선 빈 접의자 |
+| ~~`city/set-on-being-free`(자유를 좋아하는)~~ | 처마에 걸린 새장 | **끝냈다** — 끊긴 고삐 말뚝 |
 | `city/from-up-top`(위쪽에서) | 지붕 끝 홈통 | 개념 `gutter`(빗물받이) |
-| `city/drop-bombs-on-it`(폭탄을 떨구다) | 둥근 구덩이 | 개념 `crater`(분화구) |
-| `city/put-them-low-before-all`(업신여겨 낮추다) | 바닥의 방석 | 개념 `cushion`(방석) |
-| `city/made-of-silk-cloth`(비단의) · `clothes/silk-cloth`(명주) | 윤나는 접힌 천 | 개념 `silk`(비단) |
-| `office/all-told-together`(통틀어) | 한쪽으로 민 주판알 | `calculate`(셈하다) |
+| ~~`city/drop-bombs-on-it`(폭탄을 떨구다)~~ | 둥근 구덩이 | **끝냈다** — 떨어지는 통 셋 |
+| ~~`city/put-them-low-before-all`(업신여겨 낮추다)~~ | 바닥의 방석 | **끝냈다** — 바닥에 놓인 사발 |
+| ~~`city/made-of-silk-cloth`(비단의)~~ · `clothes/silk-cloth`(명주) | 윤나는 접힌 천 | 앞엣것 **끝냈다** — 채반의 고치와 실. 명주는 `fabric-roll`(원단)과 겹쳐 아직 |
+| ~~`office/all-told-together`(통틀어)~~ | 한쪽으로 민 주판알 | **끝냈다** — 세 곡식을 한 자루에 |
 | `office/pin-it-down-exactly`(잡아 정하다) | 도면 위 컴퍼스 | 개념 `dividers`(제도 컴퍼스) |
 | `office/by-wire-and-current`(전자로) | 꽂힌 플러그 | `plug-in`(꽂다) · `unplug`(뽑다) |
 | `school/having-the-knack`(능숙함) | 물레 위의 손 | 개념 `potter`(도예가) |
 | `school/the-art-of-painting`(그림 그리는 일) | 이젤과 팔레트 | 개념 `easel`(이젤) · `artist`(화가) |
-| `school/the-gist-drawn-together`(간추린 말) | 깔때기 | 개념 `funnel`(깔때기) |
+| ~~`school/the-gist-drawn-together`(간추린 말)~~ | 깔때기 | **끝냈다** — 검불 날린 키 |
 
 **먼저 `pnpm props <낱말>`로 빈 몸통을 찾는다.** 목록의 `그림` 줄까지 봐야
 한다 — 「다른 개념이 제 몸통으로 쓰는 낱말」 요약 줄만 보면 놓친다
