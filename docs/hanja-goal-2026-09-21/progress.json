@@ -1,0 +1,197 @@
+{
+  "status": "active",
+  "date": "2026-09-21",
+  "lastCompletedCommit": "75c355af9ecfeeab3378890d1cf08716ef97b835",
+  "currentBatch": {
+    "glyphs": [
+      "兎"
+    ],
+    "strokes": 8,
+    "status": "runtime-integrated-ui-verification-pending",
+    "committed": false,
+    "checks": {
+      "reproduction": true,
+      "hanjaTests": {
+        "passed": 766,
+        "failed": 0
+      },
+      "productionBuild": {
+        "passed": true,
+        "isolatedCheckout": "/tmp/lingo-hanja-goal-rabbit-check",
+        "temporaryHarnessBuildPassed": true
+      },
+      "visualReview": {
+        "normalizedCumulativeStrokes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "completeForm": true
+      },
+      "ui": {
+        "searchShowsVariant": true,
+        "introAutoplayStarted": true,
+        "introAutoplayCompleted": true,
+        "writingAutoplay": "unverified",
+        "replay": "unverified",
+        "canvasDrag": "unverified",
+        "blocker": "Browser click commands exceeded CDP dispatch deadlines; fresh tab creation timed out and reset the tool kernel."
+      }
+    }
+  },
+  "workingTreeCoverage": {
+    "pass": true,
+    "addedCharacters": 1,
+    "addedStrokes": 8,
+    "reproduction": true,
+    "runtime": {
+      "applied": 4926,
+      "total": 5978,
+      "remaining": 1052
+    },
+    "grades": [
+      {
+        "grade": "1급",
+        "applied": 1052,
+        "total": 1145,
+        "remaining": 93,
+        "percent": 91.9
+      },
+      {
+        "grade": "2급",
+        "applied": 537,
+        "total": 538,
+        "remaining": 1,
+        "percent": 99.8
+      },
+      {
+        "grade": "3급II",
+        "applied": 500,
+        "total": 500,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "3급",
+        "applied": 317,
+        "total": 317,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "4급II",
+        "applied": 250,
+        "total": 250,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "4급",
+        "applied": 250,
+        "total": 250,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "5급II",
+        "applied": 100,
+        "total": 100,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "5급",
+        "applied": 100,
+        "total": 100,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "6급II",
+        "applied": 75,
+        "total": 75,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "6급",
+        "applied": 75,
+        "total": 75,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "7급II",
+        "applied": 50,
+        "total": 50,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "7급",
+        "applied": 50,
+        "total": 50,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "8급",
+        "applied": 50,
+        "total": 50,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "특급II",
+        "applied": 845,
+        "total": 1150,
+        "remaining": 305,
+        "percent": 73.5
+      },
+      {
+        "grade": "특급",
+        "applied": 675,
+        "total": 1328,
+        "remaining": 653,
+        "percent": 50.8
+      }
+    ]
+  },
+  "uncommittedOwnedPaths": [
+    "lib/hanja-stroke-variants.ts",
+    "lib/hanja-stroke-variants.test.ts",
+    "lib/hanja-stroke-special2-variants.test.ts",
+    "lib/hanja-stroke-rabbit.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-special2-rabbit-variant.json",
+    "docs/hanja-mang-yu-rabbit-2026-09-21/build.mjs",
+    "docs/hanja-mang-yu-rabbit-2026-09-21/serve.py",
+    "docs/hanja-mang-yu-rabbit-2026-09-21/verify-integration.mjs"
+  ],
+  "nextActions": [
+    "Retry browser access to http://127.0.0.1:51836/rabbit-review.html; validate writing autoplay/replay/overlay/canvas drag before committing rabbit integration.",
+    "If browser remains unavailable, continue independent domestic source comparison of 饉·睹·瀆·燐 using next-candidates.json; do not approve on counts alone.",
+    "After rabbit validation, commit only listed rabbit paths plus integration record; update authoritative runtime coverage.",
+    "Keep all remaining 1,052 characters in scope; 65 count-matching KanjiVG candidates are not approved."
+  ],
+  "held": [
+    "莽",
+    "萸",
+    "鱉",
+    "宬"
+  ],
+  "resources": {
+    "productionStaticServer": {
+      "pid": 95032,
+      "port": 51836,
+      "root": "/tmp/lingo-hanja-goal-rabbit-check/out"
+    },
+    "temporaryHarness": "/tmp/lingo-hanja-goal-rabbit-check/app/rabbit-review/page.tsx",
+    "browserViewportResetPending": true,
+    "browserTabsCleanupPending": true
+  }
+}
