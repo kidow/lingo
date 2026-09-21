@@ -83,7 +83,7 @@
 
 | 무리 | 수 | 어디 |
 | --- | ---: | --- |
-| 도장·봉인 | 8 | `office` |
+| ~~도장·봉인~~ | 8 | `office` — **끝냈다 (2026-09-21)** · 아래에 장치 여덟을 적었다 |
 | 땅에 박힌 기둥 | 8 | `city` |
 | 장부 | 6 | `office` |
 | 길바닥 표시 | 5 | `transport` |
@@ -1109,3 +1109,35 @@ ones」는 이미 그렇게 적혀 있다 — 이 자리도 그래야 했다.
 
     form-it-up-whole(이루어 놓다)     벌집        ↔ 개념 honeycomb(벌집 모양의)
     gaze-and-lose-oneself(넋 놓고 보다) 우물의 두레박  ↔ 개념 well(우물) · lower-down(내리다)
+
+### 도장 여덟에 장치를 하나씩 주었다 (2026-09-21)
+
+②의 첫 무리를 끝냈다. `school`의 사전 여섯이 본보기다 — **물건은 같아도
+장치를 하나씩 달리 주면 갈린다.** 여덟이 다 아직 안 그려져 있어 뽑기 전에
+고칠 수 있었다.
+
+| 개념 | 뜻 | 장치 |
+| --- | --- | --- |
+| `belonging-to-the-state` | 나라의 | 봉랍 찍힌 자루 하나와 안 찍힌 자루 둘 |
+| `of-the-union-of-states` | 연방의 | **한 장에 나란히 찍힌 서로 다른 도장 다섯** |
+| `the-first-letters-of-a-name` | 이름 첫 글자 | 반지를 빼고 **밀랍에 남은 자국**만, 두 꼴이 얽힌 |
+| `a-seal-that-stamps` | 도장 | 인주 위에 선 나무 손잡이 도장 |
+| `saying-it-is-so` | 증명해 줌 | 찍힌 자국과 **뒤집힌 도장 면을 나란히** |
+| `bind-them-to-do-it` | 하도록 묶다 | 세 번 감은 끈의 매듭을 **납봉인 집게**로 물린 것 |
+| `the-firms-own` | 회사 상표의 | **낙인**과 이미 지져진 나무 상자 |
+| `the-makers-mark` | 상표 그림 | **엎어 놓은 사발 굽에 찍힌** 작은 표 |
+
+    pnpm twins --file office                              620장 — 0쌍
+    the-makers-mark ↔ the-first-letters-of-a-name         구조  91 · 색 0.618
+    the-first-letters-of-a-name ↔ saying-it-is-so         구조  97 · 색 2.535
+    of-the-union-of-states ↔ saying-it-is-so              구조 111 · 색 1.001
+    saying-it-is-so ↔ guarantee(보증하다)                  구조 114 · 색 1.064
+
+**파일 밖도 봤다.** `guarantee`(보증하다)가 「손이 빈 카드에 둥근 도장을
+누르는 것」이라 `saying-it-is-so`(증명해 줌)가 그리로 갈 뻔했다 — 손을 빼고
+**뒤집힌 도장 면**을 놓아 갈랐다. `nobleman`(귀족)과 `a-hired-go-between`
+(대리 맡은 이)이 이미 인장 반지를 쓰고 있어 `the-first-letters-of-a-name`도
+반지를 버렸다.
+
+**②의 남은 마흔여섯도 같은 식으로 푼다.** 장부 여섯 · 알림판 넷 · 바퀴 넷 ·
+땅에 박힌 기둥 여덟이 남았다.
