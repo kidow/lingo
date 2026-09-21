@@ -902,3 +902,39 @@ its original top」으로 뽑았더니 **그냥 사다리**가 나왔다. 덧댄
 **덧대고 잇고 갈아 끼운 것을 그릴 때는 빛깔 차이를 프롬프트에 박는다.**
 `make-it-over-anew`(뜯어고치다)의 「half its spokes replaced by paler new
 ones」는 이미 그렇게 적혀 있다 — 이 자리도 그래야 했다.
+
+## 배움(school) 아흔의 몸통을 세었다 — 두루마리 여섯을 끝냈다 (2026-09-21)
+
+`school`의 그림 빚 90에서 열다섯을 뽑았다. 여섯은 **한글을 그림에 넣는
+집안**이라 한 회차에 몰아 뽑아 끝냈다 — 장대 사이에 편 두루마리에 「러시아
+말」 · 「에스파냐 말」 · 「독일 말」 · 「중국 말」 · 「영국 말」 · 「프랑스 말」이다.
+
+    pnpm twins --file school                       519장 — 0쌍
+    in-the-english-tongue ↔ in-the-german-tongue   구조 68 · 색 1.913
+    in-the-russian-tongue ↔ in-the-chinese-tongue  구조 81 · 색 1.173
+
+**한글로 가르는 무리는 이제 쉰이다** — 기 16 · 달력 12 · 이름패 12 · 두루마리 6 ·
+띠 2 · 배지 2. 전부 그려졌고 문턱 안 쌍이 없다.
+
+**거울상 여섯 무리.**
+
+| 무리 | 개념 | 그림 |
+| --- | --- | --- |
+| 안경 | `the-reading-of-books`(읽기) ↔ `a-person-of-learning`(배운 사람) | **둘 다 책 위에 접어 둔 안경이다** |
+| 렌즈 | `gather-ones-mind-in`(마음을 모으다) ↔ `the-power-of-mind`(지력) | 둘 다 빛을 한 점에 모으는 렌즈다 |
+| 한 획 그림 | `touched-with-genius`(천재적인) ↔ `a-mind-of-rare-gift`(천재) | 둘 다 한 획으로 그린 그림이고 **뜻도 같은 낱말의 그림씨와 이름씨다** |
+| 돌기둥 | `in-the-old-manner`(옛 격식의) · `of-ancient-days-long-past`(고대의) · `of-the-latin-tongue`(라틴의) | 셋 다 다듬은 돌이다 |
+| 활자 | `a-single-word`(낱말) · `set-it-in-good-order`(체계를 잡다) · `print-it-again-anew`(다시 펴내다) | 셋 다 납활자다 |
+| 두 장 나란히 | `write-it-again`(고쳐 쓰다) · `going-over-it-again`(고쳐 다듬기) · `say-it-another-way`(쉬운 말로 바꿔 말하다) · `putting-it-in-other-words`(다시 말함) | 넷 다 「같은 것을 두 장 놓고 견준다」 도식이다 |
+
+**사전 여섯은 잘 갈려 있다.** `english-to-russian`(영러)은 서로 다른 빛깔의
+갈피끈 둘, `russian-to-english`(러영)은 두께가 다른 색인 탭, `spanish-to-russian`
+(서러)은 갈라진 책등, `chinese-to-russian`(중러)은 반쯤 벗겨진 갑, `german-to-russian`
+(독러)은 쇠걸쇠, `french-to-russian`(불러)은 닳아 둥근 모서리다. **같은 책이라도
+장치를 하나씩 달리 주면 갈린다** — 도장 여덟과 장부 여섯이 갈 길이 여기 있다.
+
+**파일 밖과 겹쳐 이번 회차에서 뺀 셋.**
+
+    having-the-knack(능숙함)        물레 위의 손   ↔ 개념 potter(도예가)
+    the-art-of-painting(그림 그리는 일) 이젤과 팔레트  ↔ 개념 easel(이젤) · artist(화가)
+    the-gist-drawn-together(간추린 말) 깔때기       ↔ 개념 funnel(깔때기) · aim-before-you-loose
