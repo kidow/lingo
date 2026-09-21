@@ -273,6 +273,28 @@ const frames: Record<string, Map<string, Set<string>>> = {}
  * 이나 합성어 하이픈(`___-Brot`). 뚫으면 그 부호가 정답의 첫 소리나 나머지
  * 반쪽을 알려줘 문장을 읽지 않고도 풀린다 (lib/quiz.ts의 `GLUED`).
  */
+/**
+ * **다시 뽑아 놓고 굽지 않은 그림.**
+ *
+ * 화면은 `public/concepts/<slug>.webp`만 본다. 원본을 다시 뽑아도 `pnpm image`
+ * 를 안 돌리면 **앱에는 옛 그림이 그대로 나간다** — 고쳤다고 생각한 채로.
+ * 2026-09-21에 `.images/`를 훑어 `fake`와 `pay-by-card`가 그 자리였다. 각각
+ * 09-06과 09-09에 다시 뽑혔는데 구워진 것은 09-06 15:57과 09-01이다.
+ *
+ * 아무 그물도 이걸 안 봤다. `sheet`는 (고치기 전까지) webp를 먼저 봐서 옛
+ * 그림을 보여 줬고, `twins`도 webp만 보므로 다시 뽑은 장을 옛 장으로 잰다.
+ * 조용한 자리라 여기서 짚는다.
+ *
+ * `.images/`는 레포에 안 들어간다. 없으면 아무 말도 하지 않는다.
+ */
+const RAW_DIR = '.images'
+const stale = (slug: string, webpPath: string) => {
+  const raw = join(RAW_DIR, `${slug}.png`)
+  if (!existsSync(raw)) return
+  if (statSync(raw).mtimeMs <= statSync(webpPath).mtimeMs + 1000) return
+  warn(`${slug} — 다시 뽑은 그림을 아직 안 구웠습니다. 앱에는 옛 그림이 나갑니다 — pnpm image --force ${slug}`)
+}
+
 const clozable = new Set<string>()
 const stuck = new Map<string, string>()
 
@@ -552,8 +574,9 @@ for (const file of files) {
     }
 
     // 결과물 유무는 실패가 아니다. 이미지가 없으면 플레이스홀더로 나간다
-    if (!existsSync(join(PUBLIC_DIR, 'concepts', `${slug}.webp`)))
-      notes.push(`${slug} — 이미지 없음 (플레이스홀더로 출제됩니다)`)
+    const webpPath = join(PUBLIC_DIR, 'concepts', `${slug}.webp`)
+    if (!existsSync(webpPath)) notes.push(`${slug} — 이미지 없음 (플레이스홀더로 출제됩니다)`)
+    else stale(slug, webpPath)
     for (const lang of Object.keys(words ?? {})) {
       if (!existsSync(join(PUBLIC_DIR, 'audio', lang, `${slug}.mp3`)))
         notes.push(`${slug} — ${lang} 발음 없음 (버튼이 비활성입니다)`)
