@@ -1,41 +1,37 @@
 {
   "status": "active",
   "date": "2026-09-21",
-  "lastCompletedCommit": "e7d25221ccdab2d9acad6a723d399222e7ce0a35",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch4.json",
+  "lastCompletedCommit": "cf77cf6dc5ca91cd2eb7021e819dfa75bd50f4e1",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch5.json",
   "currentBatch": {
     "glyphs": [
-      "饌",
-      "鍼"
+      "眈"
     ],
-    "strokes": 38,
+    "strokes": 9,
     "status": "verified; resolve commit with currentBatchCommitLookup",
     "checks": {
       "reproduction": true,
       "hanjaTests": {
-        "passed": 774,
+        "passed": 776,
         "failed": 0,
         "typeCheckPassed": true
       },
       "productionBuild": {
         "passed": true,
-        "isolatedCheckout": "/tmp/lingo-hanja-goal-g1-batch4-check",
+        "isolatedCheckout": "/tmp/lingo-hanja-goal-g1-batch5-check",
         "temporaryHarnessBuildPassed": true,
         "checkoutRemoved": true
       },
       "visualReview": {
-        "allSourceStrokesReviewed": 72,
-        "alternativeConflictStrokes": 6,
-        "normalizedReorderedCumulativeStates": {
-          "饌": 21,
-          "鍼": 17
+        "primaryAndAlternativeStrokesReviewed": 18,
+        "normalizedCumulativeStates": {
+          "眈": 9
         },
         "completeForm": true
       },
       "ui": {
         "glyphs": [
-          "饌",
-          "鍼"
+          "眈"
         ],
         "introAutoplayStarted": true,
         "introAutoplayCompleted": true,
@@ -48,28 +44,28 @@
         "staticOverlayNotDuplicated": true,
         "touchAction": "none",
         "consoleErrors": 0,
-        "record": "docs/hanja-goal-g1-batch4-2026-09-21/README.md"
+        "record": "docs/hanja-goal-g1-batch5-2026-09-21/README.md"
       }
     }
   },
   "workingTreeCoverage": {
     "pass": true,
-    "addedCharacters": 2,
-    "addedStrokes": 38,
+    "addedCharacters": 1,
+    "addedStrokes": 9,
     "reproduction": true,
     "runtime": {
-      "applied": 4934,
+      "applied": 4935,
       "total": 5978,
-      "remaining": 1044,
-      "percent": 82.5
+      "remaining": 1043,
+      "percent": 82.6
     },
     "grades": [
       {
         "grade": "1급",
-        "applied": 1060,
+        "applied": 1061,
         "total": 1145,
-        "remaining": 85,
-        "percent": 92.6
+        "remaining": 84,
+        "percent": 92.7
       },
       {
         "grade": "2급",
@@ -172,9 +168,9 @@
     ]
   },
   "nextActions": [
-    "Commit the verified 饌/鍼 batch if currentBatchCommitLookup is not yet present; do not repeat successful tests/UI checks.",
-    "Next candidate 眈: public detail retry now HTTP 200, displayed 9 strokes. Pin at docs/hanja-goal-g1-batch4-2026-09-21/next-tan-source.json; dictionary URL discovered from public iframe, not guessed. Parse outline/animated groups, review all 9 strokes against 07708-Kaisho/default KanjiVG candidates and apply if valid.",
-    "Then continue all remaining 1,044 characters, including special grades. 朕 default still conflicts at 3–6; 讒 default fixes stroke 15 direction but stroke 1 remains a dot, not domestic horizontal. Do not repeat held investigations without new evidence."
+    "Commit the verified 眈 batch if currentBatchCommitLookup is not yet present; do not repeat successful tests/UI checks.",
+    "Next independent batch: 特급II 鱇·菰·廐·饋 4 characters / 69 strokes. Source URLs/hash/bytes in docs/hanja-goal-g1-batch5-2026-09-21/next-special2-candidates.json. Domestic pins in docs/hanja-special2-inventory-2026-09-18/dictionary-inventory.json. Review whole licensed KanjiVG candidates; do not split/merge the previously held Ja/MM paths for 廐/饋.",
+    "All remaining 1,043 characters stay in scope. Count-compatible metadata is not approval. Skip recorded holds without new evidence."
   ],
   "held": [
     "莽",
@@ -201,17 +197,16 @@
   "batchPaths": [
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-stroke-dictionary-g1-kanjivg-batch4.ts",
-    "lib/hanja-stroke-dictionary-g1-kanjivg-batch4.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch4.json",
-    "docs/hanja-goal-g1-batch4-2026-09-21/candidates.json",
-    "docs/hanja-goal-g1-batch4-2026-09-21/alternatives.json",
-    "docs/hanja-goal-g1-batch4-2026-09-21/normalized.json",
-    "docs/hanja-goal-g1-batch4-2026-09-21/next-tan-source.json",
-    "docs/hanja-goal-g1-batch4-2026-09-21/findings.json",
-    "docs/hanja-goal-g1-batch4-2026-09-21/build.mjs",
-    "docs/hanja-goal-g1-batch4-2026-09-21/serve.py",
-    "docs/hanja-goal-g1-batch4-2026-09-21/README.md",
+    "lib/hanja-stroke-dictionary-g1-kanjivg-batch5.ts",
+    "lib/hanja-stroke-dictionary-g1-kanjivg-batch5.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-g1-kanjivg-batch5.json",
+    "docs/hanja-goal-g1-batch5-2026-09-21/candidates.json",
+    "docs/hanja-goal-g1-batch5-2026-09-21/normalized.json",
+    "docs/hanja-goal-g1-batch5-2026-09-21/findings.json",
+    "docs/hanja-goal-g1-batch5-2026-09-21/build.mjs",
+    "docs/hanja-goal-g1-batch5-2026-09-21/serve.py",
+    "docs/hanja-goal-g1-batch5-2026-09-21/README.md",
+    "docs/hanja-goal-g1-batch5-2026-09-21/next-special2-candidates.json",
     "docs/hanja-goal-2026-09-21/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ]
