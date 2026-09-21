@@ -111,6 +111,7 @@ import { HANJA_DICTIONARY_G1_KANJIVG_BATCH5_STROKES } from './hanja-stroke-dicti
 import { HANJA_DICTIONARY_SPECIAL2_KANJIVG_BATCH1_STROKES } from './hanja-stroke-dictionary-special2-kanjivg-batch1.ts'
 import { HANJA_DICTIONARY_SPECIAL2_KANJIVG_BATCH2_STROKES } from './hanja-stroke-dictionary-special2-kanjivg-batch2.ts'
 import { HANJA_DICTIONARY_SPECIAL2_KANJIVG_BATCH3_STROKES } from './hanja-stroke-dictionary-special2-kanjivg-batch3.ts'
+import { HANJA_DICTIONARY_SPECIAL2_KANJIVG_BATCH4_STROKES } from './hanja-stroke-dictionary-special2-kanjivg-batch4.ts'
 import { HANJA_DICTIONARY_SPECIAL_BATCH1_STROKES } from './hanja-stroke-dictionary-special-batch1.ts'
 import { HANJA_DICTIONARY_SPECIAL_BATCH2_STROKES } from './hanja-stroke-dictionary-special-batch2.ts'
 import { HANJA_DICTIONARY_SPECIAL_BATCH3_STROKES } from './hanja-stroke-dictionary-special-batch3.ts'
@@ -361,6 +362,7 @@ export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...HANJA_DICTIONARY_SPECIAL2_KANJIVG_BATCH1_STROKES,
   ...HANJA_DICTIONARY_SPECIAL2_KANJIVG_BATCH2_STROKES,
   ...HANJA_DICTIONARY_SPECIAL2_KANJIVG_BATCH3_STROKES,
+  ...HANJA_DICTIONARY_SPECIAL2_KANJIVG_BATCH4_STROKES,
   ...HANJA_DICTIONARY_SPECIAL_BATCH1_STROKES,
   ...HANJA_DICTIONARY_SPECIAL_BATCH2_STROKES,
   ...HANJA_DICTIONARY_SPECIAL_BATCH3_STROKES,
