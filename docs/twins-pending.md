@@ -609,3 +609,61 @@ cake · crate · hanger). 저울 무리를 만든 것과 똑같은 실수를 되
 `coat-check` · `try-on` · `mind-about` · `holding-oneself-in-regard` 따위다.
 2026-09-21의 `390ba387`이 바로 이 자리에서 한 번 겹쳐 옮긴 그림이다.
 이 둘은 걸이를 몸통에서 빼야 한다.
+
+### 옷에서 거울상을 일곱 더 골라냈다 (2026-09-21)
+
+열다섯을 더 뽑으려고 남은 일흔다섯을 훑었다. **아직 그림이 없어 `twins`로는
+못 잰다** — 프롬프트를 나란히 놓고 읽어서만 보인다. 앞의 다섯과 같은 까닭으로
+고치지 않고 넘긴다.
+
+    take-the-measurements  사이즈를 재다  a soft tape measure looped around the
+                                        waist of a dress form
+    chest-measurement      가슴둘레      a tape looped around the chest of a
+                                        dress form
+
+허리냐 가슴이냐만 다르다. 줄자를 두른 자리를 눈으로 가릴 수 있게 하거나,
+하나는 줄자에 적힌 눈금을 몸통으로 삼아야 한다.
+
+    fit-it-to-the-body  몸에 맞추다  a jacket on a dress form with pins along the
+                                   side seam taking it in
+    take-it-in          품을 줄이다  a shirt on a form with both side seams pinned
+                                   inward
+
+윗도리냐 셔츠냐만 다르고 둘 다 폼에 시침핀을 옆선에 꽂았다.
+
+    how-it-sits-on-you  옷맵시     a jacket on a dress form with its shoulders and
+                                 hem falling in a clean line
+    smart-looking       맵시 있는   a jacket on a form with clean shoulder lines and
+                                 a folded pocket square
+
+주머니 수건 하나가 다르다.
+
+    stretch-out-of-shape  옷이 늘어나다  a knitted jumper on a wire hanger with a
+                                      sagging wide neckline
+    stretched-at-the-neck 목이 늘어난   a t-shirt on a hanger with a wide slack collar
+
+    put-clothes-on-them  입혀 주다   one small coat spread open over the back of a chair
+    bedraggled           후줄근한    a rumpled damp overcoat draped over the back of
+                                   a wooden chair
+
+    fold-the-bottom-edge  단을 접다   a trouser leg with its lower edge turned up
+                                    twice and pinned
+    let-down-the-hem      단을 내리다  a trouser hem unpicked and folded open with a
+                                    faint old crease line
+
+접는 것과 내리는 것은 반대 움직임인데 그림은 같은 바짓단이다.
+
+    pass-them-to-the-next-child  옷을 물려주다  three coats of the same cut in three
+                                             sizes hanging in a row
+    off-the-peg                  기성복       a rail of identical jackets in graded sizes
+
+**옷에서 몸통이 포화된 자리 넷.** 다음 사람이 다시 셀 일이 없게 적어 둔다.
+
+| 몸통 | 그린 것 | 비고 |
+| --- | ---: | --- |
+| 외투 + 걸이 고리 | 18 | 옷걸이·봉까지 세면 22 |
+| 드레스폼 | 8 | 그 가운데 다섯이 윗도리다 |
+| 줄자 | 5 | 넷이 폼과 같이 나온다 |
+| 바지 | 5 | 단·무릎·밑위가 다 같은 판이다 |
+
+이 넷에 새 그림을 얹으려면 몸통을 옮기고 시작한다.
