@@ -558,3 +558,54 @@ cake · crate · hanger). 저울 무리를 만든 것과 똑같은 실수를 되
 다시 뽑으면 구조도 같이 흔들린다 — 8월과 다른 열하나의 구조가 27~66에서
 59~104로 죄다 올랐다. 판이 같아도 새로 뽑은 그림은 스프링과 칸 선이 달라진다.
 **색만 바꿀 셈이어도 구조는 덤으로 바뀐다고 보아야 한다.**
+
+## 옷 아흔 장에서 뽑기 전에 걸러낸 다섯 (2026-09-21)
+
+`clothes`의 그림 빚 90에서 열다섯을 뽑으려고 몸통을 먼저 셌다. **그림이 아직
+없으니 `twins`로는 못 잰다** — 프롬프트를 나란히 놓고 읽어서만 보인다. 뽑고
+나서 재면 이미 늦다(「몸통을 먼저 세면 되돌리지 않는다」, IMAGE_STYLE).
+
+**내가 만든 개념이 아니라 고치지 않고 넘긴다.**
+
+### 판이 아예 같은 둘
+
+    worn-down-to-the-weave  옷이 해지다  an elbow patch of cloth gone thin enough
+                                        to show the weave beneath, seen from above
+    threadbare              해진        an elbow patch of cloth worn so thin the
+                                        weave shows through
+
+같은 팔꿈치, 같은 「올이 비쳐 보이는 천」, 같은 눈높이다. 낱말만 다르다.
+하나는 움직씨(해지다)이고 하나는 그림씨(해진)라 개념은 둘일 만하지만 그림은
+갈라야 한다 — 이를테면 하나는 해지는 중을, 하나는 다 해진 뒤를 보인다.
+
+    bleach          표백제    a capped plastic bottle standing beside a white folded towel
+    fabric-softener 섬유유연제  a squat bottle beside a folded towel with steam lines above
+
+병 하나에 갠 수건 하나로 같다. 김 선 말고는 다른 것이 없다.
+
+### 남이 이미 쓰는 몸통 셋
+
+    put-thread-through-it  실을 꿰다  a needle held upright with a thread end just
+                                     entering its eye
+    needle(바늘) ← 이미 그렸다      one sewing needle standing upright with a short
+                                     thread through its eye
+
+바늘을 세우고 실이 귀에 걸린 그림이다. 「꿰는 중」과 「꿴 뒤」인데 판이 같다.
+
+    lose-a-button  단추가 떨어지다  a single button lying on the floor beside a
+                                  loose thread end
+
+몸통 `button`은 개념 `button`(단추)과 `it-is`(이다)가 이미 쓴다. `it-is`는
+「단추 하나가 제 구멍을 뚫고 나온 것」이라 낱개 단추로 맞선다.
+
+    take-it-off-again       벗어 내리다  one coat taken down from a hook with the
+                                       hook left bare
+    on-the-peg-by-the-door  옷을 걸다   a coat settling onto a wooden peg by a door
+                                       with an empty peg beside it
+
+서로 거울상인 데다, **외투가 걸이 고리에 걸린 그림은 이미 열여덟이고,
+옷걸이·봉까지 세면 스물둘이다** —
+`hang` · `hang-suspended` · `someone-or-other` · `while-still-alive` ·
+`coat-check` · `try-on` · `mind-about` · `holding-oneself-in-regard` 따위다.
+2026-09-21의 `390ba387`이 바로 이 자리에서 한 번 겹쳐 옮긴 그림이다.
+이 둘은 걸이를 몸통에서 빼야 한다.
