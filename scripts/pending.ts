@@ -127,5 +127,6 @@ console.log('  줄 번호가 붙은 자리를 여세요 — 왜 넘겼는지 그
 console.log('  끝난 자리는 제목과 줄의 말로만 가릅니다. 더러 섞여 나오니 문단을 보고 정하세요')
 console.log(
   '\n중국어 곁말은 여기 안 나옵니다 — 목록이 아니라 회차마다 도는 일입니다.' +
-    '\n  자기가 넣은 파일에 pnpm also-audit --list <파일> 을 돌리세요 (docs/also-recheck.md)',
+    '\n  자기가 넣은 파일에 pnpm also-audit --tight --home --list <파일> 을 돌리세요' +
+    '\n  고치는 순서가 docs/also-recheck.md 맨 앞에 있습니다 — 건너뛰면 없는 일을 만듭니다',
 )

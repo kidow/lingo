@@ -1615,7 +1615,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 | `pnpm split` | 콘텐츠를 언어별로 갈라 `public/content/`에 굽는다. 원본 해시를 `source.json`에 함께 적어 `check`가 낡음을 시각이 아니라 내용으로 본다 |
 | `pnpm twins [구조] [색]` | 서로 닮은 **그림**을 찾는다. 기본 50·0.20은 실측값이다. `--file <이름>`으로 한 파일만, `--pair <a> <b>`로 두 장만 재고, `--sheets`로 쌍을 붙여 본다. 짝 목록 아래에 **남의 몸통을 빌린 쌍**과 **세 쌍 이상에 나오는 바탕 그림**을 따로 낸다 |
 | `pnpm pending [--free]` | 넘겨 둔 일감을 파일별로 묶어 `docs/…md:47` 꼴로 낸다. `--free`면 지금 열린 파일 것만. 판단은 `lib/pending.ts`에 있고 `pnpm test`가 지킨다 |
-| `pnpm also-audit [--list] [파일]` | 중국어 곁말이 정말 그 개념을 가리키는지 CC-CEDICT로 훑는다. 고치지 않고 목록만 낸다 ([docs/also-recheck.md](docs/also-recheck.md)) |
+| `pnpm also-audit [--tight] [--home] [--list] [파일]` | 중국어 곁말이 정말 그 개념을 가리키는지 CC-CEDICT로 훑는다. 고치지 않고 목록만 낸다. `--tight`는 표제어 뜻까지 맞대 후보를 1,821 → 1,006으로 줄이되 진짜도 여섯에 하나쯤 가리고, `--home`은 **옮길 자리**를 찍는다(실제로 옮긴 아홉이 다 1위였다). **후보는 100% HSK 표제어라 지우면 목록 덮개가 빠진다** — 옮기거나 개념을 세운다. 고치는 순서가 [docs/also-recheck.md](docs/also-recheck.md) 맨 앞에 있다 |
 
 동시 세션 막이 셋(`dup`·`props`·`genimg`)과 `pending`·`trailers`는 `pnpm guards`가
 확인한다 — **지금 깨끗한 콘텐츠 파일을 하나 골라** 그 개념 하나에 공백을
