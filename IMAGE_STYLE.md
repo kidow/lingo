@@ -483,6 +483,7 @@ authorize → one hand pressing a round rubber stamp onto a sheet of paper
 | `one empty measure set down hard on a counter` | 투명 플라스틱 **계량컵** | `one empty wooden grain measure set down hard on a plank counter` |
 | `one paper window with a small tear` | 봉투 | `one single blossom fallen off at a touch` |
 | `three seals of three sizes` | **바다표범 세 마리** | `three brass tallies of three sizes hanging on one hook` |
+| `one cart drawn up against a kerb` | **쇼핑 카트** (두 번) | `one wooden horse drawn carriage …` + «no shopping trolley» — 개념 `cart`가 쇼핑 카트다 |
 
 뒤의 셋은 두 글자 17회차에서 한 회차에 같이 나왔다. `earth`는 흙이 아니라
 지구로 읽히고, `lump`는 멍울이 아니라 둥근 열매로 읽히고, `paper window`는
