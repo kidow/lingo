@@ -13,5 +13,7 @@ No engine implementation is included in the app or this asset.
 Changes: scale200 to100; exchange grass3/4 and small side9/10 order; group the
 original shared-point 又 upper bar/curve. Original source quadratic curves and
 the separate left hook polygon are preserved; no new centerline is authored.
+Stroke9 segment1 reverses negative polygon traversal to preserve the original
+filled union; every vertex and the first vertex are unchanged.
 
 Domestic e-hanja crosscheck, not exam-body approval. Private graphics are not distributed.

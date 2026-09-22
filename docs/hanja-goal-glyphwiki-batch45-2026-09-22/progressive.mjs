@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { normalizedPolygonPath } from '../hanja-goal-outline-winding-2026-09-22/normalize.mjs'
 export { renderProgressive } from '../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs'
 
 // Original outer enclosure primitives remain one dictionary stroke.
@@ -32,6 +33,8 @@ export function compileProgressive(trace, proof) {
         if(hook)assert.deepEqual(call.polygons[1].map(p=>[p.x,p.y]),[[134.8,182],[134.8,176],[114.8,176],[114.8,179]])
         const curve={...segment(hook?call.polygons.slice(0,1):call.polygons,'curve',Math.hypot(a[4]-a[0],a[5]-a[1])/2),
           revealPath:`M${a[0]/2} ${a[1]/2} Q${a[2]/2} ${a[3]/2} ${a[4]/2} ${a[5]/2}`,revealWidth:14}
+        // Preserve the filled union where the source start decoration overlaps the curve.
+        if(index===4)curve.outline=normalizedPolygonPath(call.polygons)
         return hook?[curve,segment(call.polygons.slice(1),'left',10)]:[curve]
       }
       assert.equal(call.kind,'cdDrawLine')

@@ -6,7 +6,7 @@ const EXPECTED = [
     "glyph": "菽",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-09-22",
-    "geometrySource": "89fb44f0a638789ee53a4f3dac7294176313069257db75be400573c2d407760e",
+    "geometrySource": "8b35d6166d9bc7d10723b6ef6c88183daa8fbbcfbd0ca4a50bead4c6fb03ed5e",
     "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
     "sourceStrokeIndices": [
       1,
@@ -22,14 +22,14 @@ const EXPECTED = [
       11,
       13
     ],
-    "pathsSha256": "d0d9c069f107267f9c17596e935f3b32e7062914b153207e6754e924d446dd2c",
+    "pathsSha256": "4f014ed8d2151cb2b65e954413d4c3d842e0b514c870f8b2612b5e9de13e9225",
     "sourceReference": {
       "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/83FD.svg",
       "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/83FD.svg",
       "dictionarySvgSha256": "7ab51b7cc5a2e9eb57d651feaf05b11c217fe183fec6a0231e02b6c17d555011",
       "dictionaryDirectionStrokes": "1,2,3,4,5,6,7,8,9,10,11,12",
       "orderReviewSha256": "78bfc510a85edc7becfa03fe3fd4a7753263cdd41506f6743e0f9b5cb107b87f",
-      "geometryReviewSha256": "78bfc510a85edc7becfa03fe3fd4a7753263cdd41506f6743e0f9b5cb107b87f",
+      "geometryReviewSha256": "c7a416e978a69c16f951d3b8a231d80ffc0566bb8062e228cc0ecbaeecc5574b",
       "directionReviewSha256": "78bfc510a85edc7becfa03fe3fd4a7753263cdd41506f6743e0f9b5cb107b87f"
     },
     "geometryLicense": {
@@ -39,7 +39,7 @@ const EXPECTED = [
       "sourceUrl": "https://glyphwiki.org/wiki/u83fd-k@7",
       "revision": "u83fd-k@7; koseki-351370@10; ufa5e-03@8; u53d4-j@4; u5c17-01@2; u53c8-02@2",
       "editableSource": "/hanja-strokes/glyphwiki/83fd.json",
-      "modifications": "Original polygons scaled200 to100; grass3/4 and small side9/10 order exchanged; exact shared-point 又 bar/curve grouped; original quadratic reveals and separate left hook retained. No authored centerline."
+      "modifications": "Original polygons scaled200 to100; grass3/4 and small side9/10 order exchanged; exact shared-point 又 bar/curve grouped; original quadratic reveals and separate left hook retained. No authored centerline. Stroke9 segment1 polygon winding normalized to preserve the original filled union; vertices and first vertex unchanged."
     },
     "paths": [
       "M6.45 15.35 L47.25 15.35 L47.25 17.35 L6.45 17.35 Z M47.25 15.35 L35.25 16.35 L41.25 10.35 Z",
@@ -50,7 +50,7 @@ const EXPECTED = [
       "M29.5 43.55 L51 43.55 L51 45.55 L29.5 45.55 Z M51 43.55 L41 44.55 L46 39.05 Z",
       "M7.5 55.8 L55 55.8 L55 57.8 L7.5 57.8 Z M55 55.8 L43 56.8 L49 50.8 Z",
       "M32.5 58 L32.5 85.65 L26.5 85.65 L26.5 57 Z M32.5 58 L34 59 L31.5 60.5 Z M26.5 85.65 L27.7 87.45 L29.5 88.65 L31.3 87.45 L32.5 85.65 Z M32.5 85.65 L32.4 86.9 L32.2 88.15 L31.8 89.35 L31.15 90.5 L30.35 91.5 L29.35 92.35 L28.2 92.95 L27 93.35 L25.75 93.55 L24.5 93.65 L24.5 87.65 L25.1 87.6 L25.55 87.5 L25.85 87.45 L26 87.35 L26.1 87.25 L26.2 87.15 L26.25 87 L26.35 86.7 L26.45 86.25 L26.5 85.65 Z M24.5 90.65 L24.5 87.65 L16.5 87.65 L16.5 89.15 Z",
-      "M21.1 68.75 L20.05 71.05 L18.9 73.25 L17.7 75.35 L16.45 77.4 L15.1 79.35 L13.7 81.25 L12.25 83 L10.7 84.7 L9.05 86.25 L7.3 87.7 L6.65 87.1 L7.65 85.15 L8.65 83.2 L9.65 81.25 L10.6 79.3 L11.5 77.3 L12.4 75.25 L13.25 73.2 L14.05 71.05 L14.8 68.85 L15.5 66.65 Z M15.3 67.1 L21.1 68.75 L15.75 65.95 Z M21.1 68.75 L22.15 70.25 L19.3 70.75 Z",
+      "M21.1 68.75 L20.05 71.05 L18.9 73.25 L17.7 75.35 L16.45 77.4 L15.1 79.35 L13.7 81.25 L12.25 83 L10.7 84.7 L9.05 86.25 L7.3 87.7 L6.65 87.1 L7.65 85.15 L8.65 83.2 L9.65 81.25 L10.6 79.3 L11.5 77.3 L12.4 75.25 L13.25 73.2 L14.05 71.05 L14.8 68.85 L15.5 66.65 Z M15.3 67.1 L15.75 65.95 L21.1 68.75 Z M21.1 68.75 L22.15 70.25 L19.3 70.75 Z",
       "M37.15 66.75 L39 67.6 L40.85 68.45 L42.6 69.55 L44.2 70.8 L45.75 72.15 L47.2 73.7 L48.5 75.35 L49.7 77.1 L50.8 79 L51.8 81 L46.15 83.05 L45.65 81.25 L45.05 79.5 L44.35 77.85 L43.55 76.25 L42.65 74.7 L41.7 73.15 L40.6 71.7 L39.4 70.25 L38.15 68.85 L36.65 67.5 Z M51.8 81 L51.65 83.3 L50 84.85 L47.7 84.7 L46.15 83.05 Z",
       "M49.15 36.7 L87.85 36.7 L87.85 38.7 L49.15 38.7 Z M90.8 38.25 L88.7 46.8 L85.9 54.75 L82.4 62.05 L78.2 68.7 L73.35 74.65 L67.75 79.95 L61.5 84.55 L54.6 88.45 L47.1 91.55 L38.9 93.95 L38.65 93.1 L46.35 89.8 L53.35 86.05 L59.65 81.85 L65.25 77.1 L70.15 71.85 L74.4 66.05 L77.95 59.7 L80.9 52.8 L83.2 45.3 L84.85 37.2 Z M84.85 36.7 L87.85 34.2 L93.35 38.7 L90.85 40.2 L84.85 42.7 Z",
       "M58.2 38.15 L60 45.65 L62.1 52.55 L64.55 58.85 L67.4 64.6 L70.65 69.8 L74.35 74.4 L78.4 78.45 L82.9 82.05 L87.85 85.05 L93.2 87.6 L90.55 93.65 L84.7 90.5 L79.4 86.75 L74.6 82.45 L70.4 77.65 L66.75 72.3 L63.7 66.5 L61.2 60.15 L59.25 53.35 L57.95 46.05 L57.3 38.25 Z M90.55 93.65 L93.2 87.6 L96.25 88.95 Z"
@@ -186,7 +186,7 @@ const EXPECTED = [
       ],
       [
         {
-          "outline": "M21.1 68.75 L20.05 71.05 L18.9 73.25 L17.7 75.35 L16.45 77.4 L15.1 79.35 L13.7 81.25 L12.25 83 L10.7 84.7 L9.05 86.25 L7.3 87.7 L6.65 87.1 L7.65 85.15 L8.65 83.2 L9.65 81.25 L10.6 79.3 L11.5 77.3 L12.4 75.25 L13.25 73.2 L14.05 71.05 L14.8 68.85 L15.5 66.65 Z M15.3 67.1 L21.1 68.75 L15.75 65.95 Z M21.1 68.75 L22.15 70.25 L19.3 70.75 Z",
+          "outline": "M21.1 68.75 L20.05 71.05 L18.9 73.25 L17.7 75.35 L16.45 77.4 L15.1 79.35 L13.7 81.25 L12.25 83 L10.7 84.7 L9.05 86.25 L7.3 87.7 L6.65 87.1 L7.65 85.15 L8.65 83.2 L9.65 81.25 L10.6 79.3 L11.5 77.3 L12.4 75.25 L13.25 73.2 L14.05 71.05 L14.8 68.85 L15.5 66.65 Z M15.3 67.1 L15.75 65.95 L21.1 68.75 Z M21.1 68.75 L22.15 70.25 L19.3 70.75 Z",
           "bounds": [
             6.65,
             65.95,

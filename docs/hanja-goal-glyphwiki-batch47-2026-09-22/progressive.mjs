@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { normalizedPolygonPath } from '../hanja-goal-outline-winding-2026-09-22/normalize.mjs'
 export { renderProgressive } from '../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs'
 export const sourceGroups = [[0],[1],[3],[2],[4],[5],[6],[7],[9],[8],[10,11],[12]]
 const CURVES = {
@@ -69,6 +70,8 @@ export function compileProgressive(trace, proof) {
         const hook=index===7
         if(hook){assert.equal(call.polygons.length,2);assert.deepEqual(call.polygons[1].map(p=>[p.x,p.y]),[[49,181.3],[49,175.3],[33,175.3],[33,178.3]])}
         const curve={...segment(hook?call.polygons.slice(0,1):call.polygons,'curve',Math.hypot(a[4]-a[0],a[5]-a[1])/2),revealPath:`M${a[0]/2} ${a[1]/2} Q${a[2]/2} ${a[3]/2} ${a[4]/2} ${a[5]/2}`,revealWidth:14}
+        // Preserve the filled union where the source start decoration overlaps the curve.
+        if(index===9)curve.outline=normalizedPolygonPath(call.polygons)
         return hook?[curve,segment(call.polygons.slice(1),'left',8)]:[curve]
       }
       assert.equal(call.kind,'cdDrawLine')

@@ -13,6 +13,8 @@ No engine implementation is included in the app or this asset.
 Changes: scale200 to100; exchange grass groups3/4; keep the original enclosure
 groups6/7 as one stroke. Reveal the original quadratic curves and separate left
 terminal polygon without inventing a centerline. Inner horizontal is retained.
+Stroke5 segment1 reverses negative polygon traversal to preserve the original
+filled union; every vertex and the first vertex are unchanged.
 
 Crosschecked with the domestic e-hanja dictionary; not exam-body approval.
 Private dictionary graphics are not distributed.

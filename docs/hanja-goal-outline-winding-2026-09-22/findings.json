@@ -1,0 +1,118 @@
+{
+  "date": "2026-09-22",
+  "baselineCommit": "8ae844aeba6b3afcf3a17c4234e7a4cdf199ba29",
+  "reason": "Joining independently filled KAGE polygons with opposite winding can cancel an overlapping area under the SVG nonzero fill rule.",
+  "scope": [
+    {
+      "glyph": "芭",
+      "batch": 43,
+      "decision": "unchanged",
+      "reason": "Mixed winding cap meets the body without a visible missing interior; single hook traversal does not cancel another polygon."
+    },
+    {
+      "glyph": "苛",
+      "batch": 44,
+      "decision": "unchanged",
+      "reason": "Cap/body boundary touches; independent source, combined path and normalized candidate show the same filled area."
+    },
+    {
+      "glyph": "芍",
+      "batch": 45,
+      "decision": "corrected",
+      "stroke": 5,
+      "segment": 1,
+      "rawGroupZeroBased": 4,
+      "reason": "Start decoration overlapped the falling curve with opposite winding, leaving a white sliver."
+    },
+    {
+      "glyph": "菽",
+      "batch": 47,
+      "decision": "corrected",
+      "stroke": 9,
+      "segment": 1,
+      "rawGroupZeroBased": 9,
+      "reason": "Start decoration overlapped the falling curve with opposite winding, leaving a white sliver."
+    },
+    {
+      "glyph": "萌",
+      "batch": 50,
+      "decision": "unchanged",
+      "reason": "Mixed cap/body polygons touch without cancellation; separate hook has no overlapping opposite polygon."
+    },
+    {
+      "glyph": "慌",
+      "batch": 57,
+      "decision": "unchanged",
+      "reason": "Mixed cap/body polygons touch without cancellation; upward hook traversal does not produce an interior hole."
+    }
+  ],
+  "visualReview": {
+    "initialComparison": "All six full glyphs and magnified mixed-winding segments: independent original polygons / previous combined path / normalized path.",
+    "correctedProgressive": {
+      "glyphs": [
+        "芍",
+        "菽"
+      ],
+      "strokes": [
+        5,
+        9
+      ],
+      "samples": [
+        0,
+        0.125,
+        0.25,
+        0.375,
+        0.5,
+        0.625,
+        0.75,
+        0.875,
+        1
+      ],
+      "totalSnapshots": 18,
+      "findings": "Both falling curves remain continuous from the original start to the original tip; the white start sliver is removed. Domestic direction-colored stroke comparison remains consistent."
+    },
+    "privateGraphicsSaved": false
+  },
+  "modification": "Only reverse negative polygon traversal on the two affected segments, keeping each first vertex and every vertex coordinate. No vertex added or removed, no new geometry, no sequence/direction/reveal-path/grouping change.",
+  "geometryComparison": {
+    "runtimeChanges": [
+      {
+        "glyph": "芍",
+        "stroke": 5,
+        "segment": 1,
+        "field": "outline"
+      },
+      {
+        "glyph": "菽",
+        "stroke": 9,
+        "segment": 1,
+        "field": "outline"
+      }
+    ],
+    "otherFourRuntimeBundlesUnchanged": true
+  },
+  "mathematicalRegression": {
+    "samplesPerGlyph": 25600,
+    "missingBefore": {
+      "芍": 37,
+      "菽": 110
+    },
+    "missingAfter": {
+      "芍": 0,
+      "菽": 0
+    },
+    "scope": "Sampled nonzero winding matches the union of independently filled source polygons; this is geometric fill verification, not independent stroke-order evidence."
+  },
+  "sourceReplay": {
+    "batch45": {
+      "sourceVersions": 6,
+      "engineChecked": true
+    },
+    "batch47": {
+      "sourceVersions": 6,
+      "engineChecked": true
+    }
+  },
+  "appliedCountDelta": 0,
+  "verification": "Existing domestic-dictionary crosscheck; not new exam-body approval."
+}
