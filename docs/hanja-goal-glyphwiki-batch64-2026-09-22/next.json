@@ -1,0 +1,51 @@
+{
+  "glyph": "乏",
+  "grade": "1급",
+  "strokes": 5,
+  "status": "candidate-only; full visual review pending",
+  "source": {
+    "glyph": "乏",
+    "root": "u4e4f-k",
+    "records": {
+      "u4e4f-k": {
+        "name": "u4e4f-k",
+        "version": 4,
+        "related": "U+4E4F",
+        "data": "2:0:7:161:22:102:40:30:47$99:0:0:0:39:200:196:u4e4b-j:0:0:0"
+      },
+      "u4e4b-j": {
+        "name": "u4e4b-j",
+        "version": 2,
+        "related": "U+4E4B",
+        "data": "1:0:32:100:16:100:57$1:0:2:23:57:162:57$2:22:7:162:57:127:114:61:152$2:0:7:17:174:34:155:49:122$6:7:0:48:122:56:159:75:176:177:171"
+      }
+    },
+    "status": "candidate-only; full review pending"
+  },
+  "sourceMetadata": {
+    "glyph": "乏",
+    "catalogStrokes": 5,
+    "detailHttpStatus": 200,
+    "detailBytes": 47723,
+    "detailSha256": "0560dafc3564953bebbe9c29e6a669cc390f9c94bc1b17f53378125badc5145d",
+    "displayedStrokes": 5,
+    "svgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4E00/4E4F.svg",
+    "svgHttpStatus": 200,
+    "svgBytes": 2935,
+    "svgSha256": "6a8e2b9a20f8f75e06979467ae9eeb6ccc72e8238464d75cb2c3c9f4ff1f6a5b",
+    "svgTitle": "乏",
+    "outlineCount": 5,
+    "animatedCount": 5,
+    "stepImageCount": 5,
+    "timingSequenceValid": true,
+    "clipCoverageValid": true,
+    "svgRootId": "U4E4Fani",
+    "error": null
+  },
+  "actions": [
+    "Recheck actual runtime and shared worktree before editing.",
+    "Review all5 domestic strokes, source curves, cumulative and final form. Source has6 primitive groups; determine whether an explicitly continuous source corner maps to the domestic stroke without guessing.",
+    "Preserve source-authoritative cubic/quadratic trajectories and verify all progressive snapshots. Never bridge, trim or substitute components.",
+    "If every check passes, register runtime, run source/engine replay, tests/build/mobile UI and commit only own Hanja paths."
+  ]
+}
