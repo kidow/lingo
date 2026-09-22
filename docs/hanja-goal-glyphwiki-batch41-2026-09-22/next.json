@@ -1,0 +1,66 @@
+{
+  "glyph": "萎",
+  "strokes": 12,
+  "status": "candidate-only",
+  "source": {
+    "glyph": "萎",
+    "root": "u840e-k",
+    "records": {
+      "u840e-k": {
+        "related": "U+840E",
+        "version": 7,
+        "data": "99:0:0:0:0:200:200:koseki-351650",
+        "name": "u840e-k"
+      },
+      "koseki-351650": {
+        "name": "koseki-351650",
+        "related": "U+840E",
+        "version": 12,
+        "data": "99:0:0:0:3:200:150:ufa5e-03$99:0:0:1:38:196:196:u59d4-j"
+      },
+      "ufa5e-03": {
+        "related": "U+8279",
+        "version": 8,
+        "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39",
+        "name": "ufa5e-03"
+      },
+      "u59d4-j": {
+        "data": "99:0:0:0:1:200:203:u79be-03:0:0:0$99:0:0:0:1:200:200:u5973-04:0:0:0",
+        "related": "U+59D4",
+        "name": "u59d4-j",
+        "version": 3
+      },
+      "u79be-03": {
+        "version": 6,
+        "name": "u79be-03",
+        "data": "2:0:7:147:18:105:28:34:34$1:0:0:21:53:181:53$1:32:0:100:28:100:101$2:32:7:93:53:65:84:17:101$2:7:0:105:53:143:85:176:93",
+        "related": "U+79BE"
+      },
+      "u5973-04": {
+        "name": "u5973-04",
+        "version": 7,
+        "related": "U+5973",
+        "data": "2:0:0:88:96:71:130:48:156$2:7:8:56:146:120:158:170:181$2:32:7:136:120:118:180:21:186$1:0:0:15:120:185:120"
+      }
+    },
+    "status": "candidate-not-reviewed"
+  },
+  "metadata": {
+    "glyph": "萎",
+    "grade": "1급",
+    "catalogStrokes": 12,
+    "dictionaryStrokes": 12,
+    "dictionary": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8400/840E.svg",
+      "bytes": 7058,
+      "sha256": "a2436c954357ab93d3363666b38b327a96f2fdf92d1163d1a84067604a427b3a"
+    }
+  },
+  "preflight": "The 女 source has two curves with different end/start points:48,156 and56,146. Determine source-declared pen trajectory before combining; never invent a connecting line or trim the source by eye.",
+  "nextActions": [
+    "Confirm current runtime absence and exact source versions.",
+    "Inspect the domestic 女 first stroke and source curve boundaries. If no licensed continuous path is established, hold this source and look for an independent whole-glyph source or another candidate.",
+    "Only implement after full path/direction/cumulative/final approval."
+  ],
+  "privateGraphicsSaved": false
+}

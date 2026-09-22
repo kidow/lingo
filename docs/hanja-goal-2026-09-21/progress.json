@@ -1,23 +1,20 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "463e653a0ebd8336d841a3ced21499e801a5fe67",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch40-2026-09-22/validation.json",
+  "lastCompletedCommit": "30d2a89bb999f37a6a09f3abc94f8ac75adda3b2",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch41-2026-09-22/validation.json",
   "currentBatch": {
     "glyphs": [
-      "薪"
+      "蓉"
     ],
-    "strokes": 17,
-    "status": "held after full visual comparison; no runtime addition",
+    "strokes": 14,
+    "status": "held after full domestic visual comparison and5 alternative source inspections",
     "checks": {
-      "sourceVersions": 5,
-      "visualSteps": 17,
-      "cumulativeStates": 17,
-      "finalFormCompared": true,
+      "sourceVersions": 23,
+      "visualSteps": 14,
       "approved": false,
       "researchVerifier": true,
-      "jevLiveRequests": 1,
-      "record": "docs/hanja-goal-glyphwiki-batch40-2026-09-22/validation.json"
+      "record": "docs/hanja-goal-glyphwiki-batch41-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
@@ -136,9 +133,9 @@
     ]
   },
   "nextActions": [
-    "Recheck current runtime absence, shared-tree ownership and prior holds for 蓉14획.",
-    "Acquire exact domestic dictionary metadata and licensed whole-glyph source; pin every dependency.",
-    "Use Jev to route written observations only; directly review every stroke and cumulative/final form before runtime approval."
+    "Confirm current runtime absence and exact source versions.",
+    "Inspect the domestic 女 first stroke and source curve boundaries. If no licensed continuous path is established, hold this source and look for an independent whole-glyph source or another candidate.",
+    "Only implement after full path/direction/cumulative/final approval."
   ],
   "held": [
     "莽",
@@ -219,26 +216,31 @@
       "reason": "12: Domestic stroke12 starts below horizontal10 with a gap. Source u4eb2-01@3 row8 starts at53,112 on the row6 horizontal14,112 to100,112; it creates an attached branch. Changing stroke width cannot fix a centerline attachment. 15: Source line/quadratic bows farther left near the bottom than the domestic falling stroke. This shape difference also requires reassessment in any replacement source.",
       "record": "docs/hanja-goal-glyphwiki-batch40-2026-09-22/findings.json",
       "releaseCondition": "Find a reusable exact-glyph source with a separated stroke12 and compatible right falling stroke, then repeat all17 direction/cumulative/final-form checks. Do not trim the branch or invent a bridge/point."
+    },
+    {
+      "glyph": "蓉",
+      "reason": "Domestic mouth top corners touch the preceding slanted 人 strokes. The source mouth starts at y139 with corners x63 and139, visibly below both slopes. The gap persists in the completed constant-width candidate.",
+      "record": "docs/hanja-goal-glyphwiki-batch41-2026-09-22/findings.json",
+      "releaseCondition": "Find a licensed exact-glyph whole source or source-authoritative coordinate correction where mouth top corners contact both preceding slopes; then review all14 paths/directions/cumulative and final forms. Do not lift or enlarge the mouth by eye."
     }
   ],
   "resources": {
-    "tabs": "batch40 comparison tab closed",
-    "ramServers": "batch39 and40 RAM servers stopped",
+    "tabs": "batch41 tabs closed",
+    "ramServers": "batch41 port51894 stopped",
     "isolatedWorktree": "none",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/sources.json",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/jev-result.json",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/jev-input.json",
-    "docs/hanja-goal-glyphwiki-batch40-2026-09-22/validation.json",
-    "docs/hanja-jev-2026-09-22/README.md"
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/alternatives.json",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/next.json",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch41-2026-09-22/validation.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch40-2026-09-22/validation.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch41-2026-09-22/next.json"
 }
