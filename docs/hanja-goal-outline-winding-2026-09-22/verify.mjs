@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { normalizedPolygonPath, normalizedOutline } from './normalize.mjs'
 
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'))
@@ -25,6 +26,9 @@ for(const [batch,glyph,stroke,raw] of [[45,'芍',5,4],[47,'菽',9,9]]) {
   const trace=read(base+'draw-trace.json')
   const runtime=read('../../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch'+batch+'.json')[0]
   const segment=runtime.outlines[stroke-1][0]
+  const reviewHash=createHash('sha256').update(readFileSync(new URL(base+'progressive-review.json',import.meta.url))).digest('hex')
+  for(const key of ['orderReviewSha256','geometryReviewSha256','directionReviewSha256'])
+    assert.equal(runtime.sourceReference[key],reviewHash)
   const source=trace[raw][0]
   assert.equal(source.kind,'cdDrawCurve')
   assert.equal(segment.outline,normalizedPolygonPath(source.polygons))

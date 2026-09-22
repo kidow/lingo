@@ -1,32 +1,27 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "8ae844aeba6b3afcf3a17c4234e7a4cdf199ba29",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-outline-winding-2026-09-22/README.md",
+  "lastCompletedCommit": "e269ca65cb0a265c105ff8c9da9a25605a7aa238",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch62-2026-09-22/README.md",
   "currentBatch": {
     "glyphs": [
-      "芍",
-      "菽"
+      "坰"
     ],
-    "status": "outline-fill-corrected",
-    "correctedStrokes": [
-      5,
-      9
-    ],
-    "newApplications": 0,
-    "unchangedAuditGlyphs": [
-      "芭",
-      "苛",
-      "萌",
-      "慌"
-    ],
+    "strokes": 8,
+    "status": "applied",
     "checks": {
+      "sourceAndEngineReplay": {
+        "exitCode": 0,
+        "sourceVersions": 6,
+        "engineFiles": 8,
+        "traceExact": true
+      },
+      "domesticStrokeCount": 8,
+      "progressiveSnapshots": 72,
       "tests": {
-        "runner": "node --test",
-        "files": 182,
-        "passed": 892,
-        "failed": 0,
-        "initialRunnerIssue": "The first attempt inherited the context tool Bun executable and rejected node:test; rerun explicitly with node succeeded."
+        "files": 183,
+        "passed": 895,
+        "failed": 0
       },
       "build": {
         "exitCode": 0,
@@ -35,88 +30,58 @@
         "isolated": true
       },
       "artifactParity": {
-        "ownFiles": 13,
-        "publicExports": 4,
-        "mismatches": 0
-      },
-      "sourceAndEngineReplay": {
-        "batch45": {
-          "sourceVersions": 6,
-          "engineFiles": 8,
-          "traceExact": true
-        },
-        "batch47": {
-          "sourceVersions": 6,
-          "engineFiles": 8,
-          "traceExact": true
-        }
-      },
-      "geometry": {
-        "changedSegments": 2,
-        "newVertices": 0,
-        "sequenceChanges": 0,
-        "revealPathChanges": 0,
-        "sampledFillPoints": 51200,
-        "missingBefore": 147,
-        "missingAfter": 0,
-        "progressiveSnapshots": 18
+        "ownFiles": 22,
+        "publicExports": 5
       },
       "ui": {
         "viewport": [
           430,
           932
         ],
-        "芍": {
-          "introAutoplay": true,
-          "introComplete": "7 / 7",
-          "introReplay": "1 / 7",
-          "writingAutoplay": "1 / 7",
-          "writingComplete": "7 / 7",
-          "writingReplay": "1 / 7",
-          "inputCounts": [
-            0,
-            1,
-            0
-          ],
-          "canvasY": [
-            162.8046875,
-            162.8046875
-          ],
-          "dialogY": [
-            139.8046875,
-            139.8046875
-          ],
-          "scroll": [
-            126,
-            126
-          ],
-          "touchAction": "none",
-          "vaulNoDrag": true,
-          "staticImages": 0,
-          "outlineGroups": 1,
-          "consoleWarningsErrors": 0
-        },
-        "菽": {
-          "introAutoplay": true,
-          "introComplete": "12 / 12",
-          "introReplay": "1 / 12",
-          "writingAutoplay": "1 / 12",
-          "writingComplete": "12 / 12",
-          "writingReplay": "1 / 12",
-          "staticImages": 0,
-          "outlineGroups": 1,
-          "consoleWarningsErrors": 0
-        }
+        "introAutoplay": true,
+        "introReplay": true,
+        "introComplete": "8 / 8",
+        "writingAutoplay": true,
+        "writingReplay": true,
+        "writingComplete": "8 / 8",
+        "canvasInputCounts": [
+          0,
+          1,
+          0
+        ],
+        "canvasYBeforeAfter": [
+          162.8046875,
+          162.8046875
+        ],
+        "dialogYBeforeAfter": [
+          139.8046875,
+          139.8046875
+        ],
+        "scrollBeforeAfter": [
+          126,
+          126
+        ],
+        "touchAction": "none",
+        "vaulNoDrag": true,
+        "outlineGroups": 1,
+        "staticImages": 0,
+        "consoleWarningsErrors": 0
       },
-      "privateMediaSaved": false
+      "privateMediaSaved": false,
+      "enginePreset": {
+        "constructorSize": "default",
+        "style": "mincho",
+        "customParameterEdits": false
+      },
+      "metadataFollowup": "芍/菽 order and direction review hashes now point to the same updated review artifact as the geometry hash; regression verifies all three. Geometry is unchanged from e269ca65."
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4982,
-      "remaining": 996,
-      "percent": 83.3
+      "applied": 4983,
+      "remaining": 995,
+      "percent": 83.4
     },
     "grades": [
       {
@@ -213,9 +178,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 858,
-        "remaining": 292,
-        "percent": 74.6
+        "applied": 859,
+        "remaining": 291,
+        "percent": 74.7
       },
       {
         "grade": "특급",
@@ -227,9 +192,10 @@
     ]
   },
   "nextActions": [
-    "Recheck current runtime and shared worktree before continuing 坰.",
-    "Review domestic8-stroke directions/cumulative/final form and original 冂 hook, then progressive playback.",
-    "If full review passes, register 坰 runtime, test/build/mobile UI and commit only own Hanja files."
+    "Recheck actual runtime and shared worktree before editing.",
+    "Review all7 domestic strokes and cumulative/final form; verify 王 horizontal-horizontal-vertical-rising order and the 川 first line-to-curve continuity.",
+    "Review progressive snapshots, then register only if every source trajectory, boundary and connection passes.",
+    "Run source/engine replay, relevant tests/build and actual mobile intro/writing behavior; commit only own Hanja paths."
   ],
   "held": [
     "莽",
@@ -392,31 +358,38 @@
   ],
   "resources": {
     "tabs": "closed",
-    "ramServers": "51904,51908,51934–51936 stopped",
+    "ramServers": "51937–51939 stopped",
     "isolatedWorktree": "removed",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch45-2026-09-22/progressive-review.json",
-    "public/hanja-strokes/glyphwiki/828d.json",
     "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch45.json",
     "lib/hanja-stroke-dictionary-glyphwiki-batch45.ts",
-    "docs/hanja-goal-glyphwiki-batch47-2026-09-22/progressive-review.json",
-    "public/hanja-strokes/glyphwiki/83fd.json",
     "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch47.json",
     "lib/hanja-stroke-dictionary-glyphwiki-batch47.ts",
-    "docs/hanja-goal-glyphwiki-batch45-2026-09-22/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch47-2026-09-22/progressive.mjs",
-    "docs/hanja-goal-outline-winding-2026-09-22/normalize.mjs",
     "docs/hanja-goal-outline-winding-2026-09-22/verify.mjs",
-    "lib/hanja-stroke-outline-winding.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-828d.md",
-    "public/hanja-strokes/glyphwiki/NOTICE-83fd.md",
-    "docs/hanja-goal-outline-winding-2026-09-22/serve.py",
-    "docs/hanja-goal-outline-winding-2026-09-22/findings.json",
-    "docs/hanja-goal-outline-winding-2026-09-22/validation.json",
-    "docs/hanja-goal-outline-winding-2026-09-22/README.md",
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch62.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch62.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch62.json",
+    "public/hanja-strokes/glyphwiki/5770.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-5770.md",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/next.json",
+    "docs/hanja-goal-glyphwiki-batch62-2026-09-22/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch61-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch62-2026-09-22/next.json"
 }
