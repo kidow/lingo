@@ -78,6 +78,22 @@ function bag(text: string) {
 
 const argv = process.argv.slice(2)
 const list = argv.includes('--list')
+/**
+ * **`--tight`는 표제어의 사전 뜻까지 맞대 본다.** 곁말의 뜻이 영어 표제어와
+ * 안 겹쳐도 **중국어 표제어의 뜻과 겹치면** 지운다 — `图案`(design; pattern)과
+ * `花纹`(decorative design)은 «design»으로 이어진다.
+ *
+ * **눈금은 실측했다** (2026-09-23, 손으로 가른 스물넷 기준).
+ *
+ *     후보      1827 → 1009   (45%가 빠진다)
+ *     거짓 양성  7 가운데 5를 지운다
+ *     진짜      17 가운데 3을 함께 지운다 — 时髦(품사가 다름) · 执照(뜻이 넓음) ·
+ *               克制(control 한 낱말만 겹친다)
+ *
+ * 그래서 **기본값은 그대로 둔다.** 다 훑을 때는 붙이지 않고, 한 회차에 빨리
+ * 좁힐 때만 붙인다.
+ */
+const tight = argv.includes('--tight')
 const only = argv.find((a) => !a.startsWith('--'))
 
 const dict = loadDict()
@@ -105,6 +121,12 @@ for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) 
       const pool = new Set<string>()
       for (const gloss of glosses) for (const word of bag(gloss)) pool.add(word)
       if (want.some((word) => pool.has(word))) continue
+      if (tight) {
+        const termWords = new Set<string>()
+        for (const gloss of dict.get(zh.term) ?? [])
+          for (const word of bag(gloss)) termWords.add(word)
+        if ([...termWords].some((word) => pool.has(word))) continue
+      }
       suspect.push({
         file: file.replace('.json', ''),
         slug: concept.slug,
@@ -121,7 +143,11 @@ for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) 
 console.log(
   `\n중국어 곁말 ${total} — 사전 뜻에 영어 표기가 안 보이는 것 ${suspect.length} · 사전에 없는 표기 ${missing}`,
 )
-console.log('표본으로 잰 정밀도는 절반쯤이다 — 후보이지 판정이 아니다\n')
+console.log(
+  tight
+    ? '--tight — 표제어 뜻까지 맞댔습니다. 거짓 양성이 줄지만 진짜도 여섯에 하나쯤 빠집니다\n'
+    : '표본으로 잰 정밀도는 절반쯤이다 — 후보이지 판정이 아니다 (--tight로 좁힙니다)\n',
+)
 
 if (!list) {
   const byFile = new Map<string, number>()
