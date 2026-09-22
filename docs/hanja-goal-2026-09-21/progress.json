@@ -1,39 +1,88 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "e96cb53738092d8cda4145257955648c75650cd5",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch49-2026-09-22/README.md",
+  "lastCompletedCommit": "15f2b815e03459b16199a579b42e35c1a3ca7abe",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch50-2026-09-22/README.md",
   "currentBatch": {
     "glyphs": [
-      "蕃"
+      "萌"
     ],
-    "strokes": 16,
-    "status": "held",
+    "strokes": 12,
+    "status": "runtime-applied",
     "checks": {
       "sourceAndEngineReplay": {
         "exitCode": 0,
-        "sourceRequests": 10,
+        "sourceVersions": 6,
         "engineFiles": 8,
         "traceExact": true
       },
-      "domesticCumulativeStatesViewed": 16,
-      "fullStrokeApproval": false,
-      "runtimeRegistered": 0
+      "domesticStrokeCount": 12,
+      "progressiveSnapshots": 108,
+      "tests": {
+        "files": 178,
+        "passed": 882,
+        "failed": 0
+      },
+      "build": {
+        "exitCode": 0,
+        "typeScript": true,
+        "staticPages": 7,
+        "isolated": true
+      },
+      "artifactParity": {
+        "ownFiles": 16,
+        "publicExports": 3
+      },
+      "ui": {
+        "viewport": [
+          430,
+          932
+        ],
+        "introAutoplay": true,
+        "introReplay": true,
+        "introComplete": "12 / 12",
+        "writingAutoplay": true,
+        "writingReplay": true,
+        "writingComplete": "12 / 12",
+        "canvasInputCounts": [
+          0,
+          1,
+          0
+        ],
+        "canvasYBeforeAfter": [
+          162.8046875,
+          162.8046875
+        ],
+        "dialogYBeforeAfter": [
+          139.8046875,
+          139.8046875
+        ],
+        "scrollBeforeAfter": [
+          126,
+          126
+        ],
+        "touchAction": "none",
+        "vaulNoDrag": true,
+        "outlineGroups": 1,
+        "staticImages": 0,
+        "consoleWarningsErrors": 0
+      },
+      "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4978,
-      "remaining": 1000,
+      "applied": 4979,
+      "remaining": 999,
       "percent": 83.3
     },
     "grades": [
       {
         "grade": "1급",
         "total": 1145,
-        "applied": 1077,
-        "remaining": 68,
+        "applied": 1078,
+        "remaining": 67,
         "percent": 94.1
       },
       {
@@ -138,9 +187,9 @@
   },
   "nextActions": [
     "Recheck current runtime and other sessions before editing.",
-    "Re-fetch exact6 source versions and domestic12-stroke metadata; keep private graphics in RAM.",
-    "Reproduce full polygons and draw calls; review 日 corners and 月 continuous falling stroke/left hook against all12 domestic directions and cumulative forms.",
-    "Connect runtime in the same workflow if full review passes, then tests/build, actual intro/writing playback and own-files-only commit."
+    "Pin all five source versions, preserving version-qualified dependency keys.",
+    "Compare the whole 蒲 source against the domestic fourteen-stroke reference, including water rising turn, 甫 corners, hook and dot.",
+    "Only apply after all directions, cumulative forms and progressive paths pass; run tests/build/UI and commit own paths."
   ],
   "held": [
     "莽",
@@ -255,25 +304,34 @@
   ],
   "resources": {
     "tabs": "closed",
-    "ramServers": "51911 stopped",
-    "isolatedWorktree": "none",
+    "ramServers": "51912,51913,51914 stopped",
+    "isolatedWorktree": "removed /tmp/lingo-hanja-gw50-verify",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/sources.json",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/alternatives.json",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/next.json",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/validation.json",
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch50.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch50.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch50.json",
+    "public/hanja-strokes/glyphwiki/840c.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-840c.md",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/next.json",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch50-2026-09-22/README.md",
     "docs/hanja-goal-2026-09-21/progress.json",
     "docs/hanja-goal-2026-09-21/README.md"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch49-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch50-2026-09-22/next.json"
 }
