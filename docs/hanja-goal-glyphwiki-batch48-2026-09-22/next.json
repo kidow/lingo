@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-22",
+  "status": "candidate-only-not-approved",
+  "glyph": "蕃",
+  "catalogStrokes": 16,
+  "source": {
+    "glyph": "蕃",
+    "root": "u8543-k",
+    "records": {
+      "u8543-k": {
+        "name": "u8543-k",
+        "version": 7,
+        "related": "U+8543",
+        "data": "99:0:0:0:0:200:200:aj1-13990"
+      },
+      "aj1-13990": {
+        "name": "aj1-13990",
+        "version": 12,
+        "related": "U+8543",
+        "data": "99:0:0:0:2:200:169:u8279-03-var-009:0:0:0$99:0:0:0:37:200:194:u756a-j:0:0:0"
+      },
+      "u8279-03-var-009": {
+        "name": "u8279-03-var-009",
+        "version": 2,
+        "related": "U+8279",
+        "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:54$1:0:0:105:39:187:39"
+      },
+      "u756a-j": {
+        "name": "u756a-j",
+        "version": 3,
+        "related": "U+756A",
+        "data": "2:0:7:154:21:100:32:26:36$2:7:8:46:38:62:46:68:65$2:0:7:148:37:139:52:125:70$1:0:0:15:70:185:70$1:32:0:100:32:100:106$2:32:7:94:70:68:105:13:128$2:7:0:106:70:135:104:180:119$99:0:0:25:100:175:189:u7530-j"
+      },
+      "u7530-j": {
+        "name": "u7530-j",
+        "version": 2,
+        "related": "U+7530",
+        "data": "1:12:13:33:37:33:167$1:2:2:33:37:167:37$1:22:23:167:37:167:167$1:32:32:100:37:100:167$1:2:2:33:101:167:101$1:2:2:33:167:167:167"
+      }
+    },
+    "status": "source-candidate-only; full domestic and geometry review pending"
+  },
+  "nextActions": [
+    "Recheck actual runtime; skip 蕃 if another session applied it.",
+    "Re-fetch exact5 pinned source records and fetch domestic16-stroke evidence into RAM.",
+    "Reproduce whole-glyph polygons/drawing calls; compare top falling stroke, 米 order and crossing, lower 田 boundaries and cumulative form.",
+    "Do not infer missing links or alter source points. Connect runtime only after full16-stroke review, tests/build and actual intro/writing UI checks."
+  ]
+}
