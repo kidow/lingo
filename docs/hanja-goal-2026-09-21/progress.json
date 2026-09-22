@@ -1,13 +1,13 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "8e059192dbd00197c493e33bc6af2d55056eada8",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch43-2026-09-22/validation.json",
+  "lastCompletedCommit": "913c4b8dfe2a3848c1762dda5be72e986a72283a",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch44-2026-09-22/validation.json",
   "currentBatch": {
     "glyphs": [
-      "芭"
+      "苛"
     ],
-    "strokes": 8,
+    "strokes": 9,
     "status": "applied-and-verified",
     "checks": {
       "sourceAndEngineReplay": {
@@ -15,32 +15,33 @@
         "traceExact": true
       },
       "hanjaTests": {
-        "files": 174,
-        "tests": 869,
-        "passed": 869,
+        "files": 175,
+        "tests": 873,
+        "passed": 873,
         "failed": 0
-      },
-      "targetedTests": {
-        "tests": 12,
-        "passed": 12
       },
       "build": {
         "exitCode": 0,
         "typeScript": true,
         "staticPages": 7
       },
+      "timingNormalization": {
+        "decimalPlaces": 6,
+        "geometryChanged": false,
+        "strictPinsRetained": true,
+        "reason": "JSON and JavaScript compilation represented a floating-point timing tail differently; weights are normalized before pinning."
+      },
       "isolatedSnapshot": {
-        "identicalFiles": 16,
+        "identicalFiles": 15,
         "exportAssetsIdentical": 3
       },
       "ui": {
         "viewport": "430x932",
-        "introAutoplay": "8/8 before any playback click",
-        "introReplay": "1/8 then8/8",
-        "pauseResume": "clip width30.957092307692335 unchanged while paused; resumed at2/8",
-        "writingAutoplay": "1/8 to8/8",
-        "writingReplay": "1/8 to8/8",
-        "canvas": "0 to1 to0 stroke; position and scroll unchanged",
+        "introAutoplay": "9/9 before any playback click",
+        "introReplay": "1/9 to9/9",
+        "writingAutoplay": "1/9 to9/9",
+        "writingReplay": "1/9 to9/9",
+        "canvas": "0 to1 to0; unchanged position and scroll",
         "canvasY": 162.8046875,
         "dialogY": 139.8046875,
         "dialogScroll": 126,
@@ -48,7 +49,6 @@
         "noDrag": true,
         "animatedSvg": 1,
         "staticImages": 0,
-        "reducedMotion": "test fixture; no autoplay, manual1 to8 and restart1",
         "consoleWarningsAndErrors": 0
       }
     }
@@ -56,17 +56,17 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4975,
-      "remaining": 1003,
+      "applied": 4976,
+      "remaining": 1002,
       "percent": 83.2
     },
     "grades": [
       {
         "grade": "1급",
         "total": 1145,
-        "applied": 1074,
-        "remaining": 71,
-        "percent": 93.8
+        "applied": 1075,
+        "remaining": 70,
+        "percent": 93.9
       },
       {
         "grade": "2급",
@@ -169,8 +169,10 @@
     ]
   },
   "nextActions": [
-    "Revisit 苛9 using batch27 hook research and the now-verified filled-outline player. Recheck current runtime and pins before reviewing all strokes.",
-    "Do not assume the upward 芭 hook rule covers 苛; reproduce its separate left-hook source polygon and full domestic direction evidence."
+    "Recheck current runtime; skip if another session applied 芍.",
+    "Fetch exact pinned records, retaining explicit @version component references as dictionary keys when loading KAGE.",
+    "Compare the internal horizontal/point shape and the curved enclosing hook against all domestic7 strokes. Do not assume the glyph variant matches.",
+    "Reproduce complete polygons and original drawing calls before constructing any progressive reveal; apply only after full review, build and UI checks."
   ],
   "held": [
     "莽",
@@ -267,30 +269,32 @@
   ],
   "resources": {
     "tabs": "closed",
-    "ramServers": "51897,51898,51899 stopped",
+    "ramServers": "51901 and51902 stopped",
     "isolatedWorktree": "removed",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "components/hanja/stroke-player.tsx",
-    "components/hanja/stroke-outlines.tsx",
-    "lib/hanja-stroke-dictionary.ts",
     "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-outline.ts",
-    "lib/hanja-stroke-outline.test.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch43.ts",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch43.json",
-    "public/hanja-strokes/glyphwiki/82ad.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-82ad.md",
-    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/serve-progressive.py",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/validation.json",
-    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/README.md"
+    "lib/hanja-stroke-dictionary-glyphwiki-batch44.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch44.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch44.json",
+    "public/hanja-strokes/glyphwiki/82db.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-82db.md",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/next.json",
+    "docs/hanja-goal-glyphwiki-batch44-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/NOTICE.md"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch43-2026-09-22/validation.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch44-2026-09-22/next.json"
 }
