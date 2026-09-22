@@ -4,6 +4,7 @@ import { Pause, Play, RotateCcw, StepForward } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { hanjaStrokeData, STROKE_DURATION, STROKE_GAP, strokeDuration, strokeNumberAt, type HanjaStrokeData } from '@/lib/hanja-strokes'
 import type { HanjaCharacter } from '@/lib/hanja'
+import { StrokeOutlines } from './stroke-outlines'
 
 type PlaybackView = { diagram: ReactNode; controls: ReactNode; started: boolean; reset: () => void }
 type Props = { character: HanjaCharacter; active?: boolean; autoPlay?: boolean; guide?: boolean; children: (view: PlaybackView) => ReactNode }
@@ -24,6 +25,8 @@ function VerifiedPlayback({ data, active, autoPlay, guide, children }: {
   children: (view: PlaybackView) => ReactNode
 }) {
   const paths = useRef<(SVGPathElement | null)[]>([])
+  const svg = useRef<SVGSVGElement | null>(null)
+  const outlines = data.verificationSource === 'ehanja-crosschecked' ? data.outlines : undefined
   const animations = useRef<Animation[]>([])
   const frame = useRef<number | null>(null)
   const autoStarted = useRef(false)
@@ -31,6 +34,7 @@ function VerifiedPlayback({ data, active, autoPlay, guide, children }: {
   // Wait for the accessibility/API check before starting any automatic movement.
   const [manual, setManual] = useState<boolean | null>(null)
   const [count, setCount] = useState(0)
+  const [playbackId, setPlaybackId] = useState(0)
   const total = data.paths.length
   const started = phase !== 'idle'
 
@@ -94,12 +98,15 @@ function VerifiedPlayback({ data, active, autoPlay, guide, children }: {
     if (!active || document.hidden || manual === null) return
     cancel()
     setCount(1)
+    setPlaybackId(value => value + 1)
     if (manual) {
       setPhase(total === 1 ? 'done' : 'paused')
       return
     }
     const duration = strokeDuration(total)
-    animations.current = paths.current.map((path, i) => {
+    animations.current = outlines
+      ? [svg.current!.animate([{ opacity: 1 }, { opacity: 1 }], { duration, fill: 'both' })]
+      : paths.current.map((path, i) => {
       const begin = i * (STROKE_DURATION + STROKE_GAP) / duration
       const end = (i * (STROKE_DURATION + STROKE_GAP) + STROKE_DURATION) / duration
       return path!.animate([
@@ -119,7 +126,7 @@ function VerifiedPlayback({ data, active, autoPlay, guide, children }: {
     }
     setPhase('playing')
     watch()
-  }, [active, cancel, manual, stopFrame, total, watch])
+  }, [active, cancel, manual, outlines, stopFrame, total, watch])
 
   useEffect(() => {
     if (!autoPlay || !active || manual !== false) return
@@ -154,10 +161,11 @@ function VerifiedPlayback({ data, active, autoPlay, guide, children }: {
     : phase === 'playing' ? '필순 일시정지' : phase === 'paused' ? '필순 이어 재생' : '필순 재생'
   const Icon = manual ? StepForward : phase === 'playing' ? Pause : Play
   const diagram = (
-    <svg viewBox="0 0 100 100" className="h-full w-full" role="img" aria-label={data.glyph}
+    <svg ref={svg} viewBox="0 0 100 100" className="h-full w-full" role="img" aria-label={data.glyph}
       fill="none" stroke="currentColor" strokeWidth={data.verificationSource === 'ehanja-crosschecked' ? data.strokeWidth ?? 5 : 5} strokeLinecap="round" strokeLinejoin="round">
-      {guide && started && <g opacity="0.12" aria-hidden>{data.paths.map((d, i) => <path key={i} d={d} />)}</g>}
-      {data.paths.map((d, i) => <path key={i} ref={(node) => { paths.current[i] = node }} d={d}
+      {guide && started && <g opacity="0.12" aria-hidden fill={outlines ? 'currentColor' : 'none'} stroke={outlines ? 'none' : 'currentColor'}>{data.paths.map((d, i) => <path key={i} d={d} />)}</g>}
+      {outlines ? <StrokeOutlines key={playbackId} strokes={outlines} clock={animations} phase={phase} count={count} manual={manual} />
+        : data.paths.map((d, i) => <path key={i} ref={(node) => { paths.current[i] = node }} d={d}
         visibility={started && i >= count ? 'hidden' : undefined}
         pathLength="1" strokeDasharray="1" strokeDashoffset={manual && started && i >= count ? 1 : 0} />)}
     </svg>

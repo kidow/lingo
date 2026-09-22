@@ -499,6 +499,8 @@ export function dictionarySourceReference(glyph: string) {
 
 export type HanjaDictionaryStrokeData = {
   glyph: string
+  /** When present, paths are filled outlines, not centerlines. */
+  outlines?: import('./hanja-stroke-outline.ts').HanjaOutlineStrokes
   /** Optional source-derived width in the normalized 100-unit viewBox; pinned by its batch loader. */
   strokeWidth?: number
   verificationSource: 'ehanja-crosschecked'

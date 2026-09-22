@@ -1,11 +1,11 @@
 {
   "date": "2026-09-22",
-  "baseCommit": "140b32b191cdfac27bb516ec7ea58ef43bc94402",
+  "baseCommit": "8e059192dbd00197c493e33bc6af2d55056eada8",
   "glyphs": [
     "芭"
   ],
   "strokes": 8,
-  "status": "outline evidence captured; progressive animation work pending",
+  "status": "applied-and-verified",
   "sourceVersionsRechecked": 4,
   "engineFilesHashChecked": 8,
   "engineOutputReproduced": true,
@@ -13,27 +13,65 @@
   "sourceStrokeGroups": 8,
   "lastStrokePolygons": 7,
   "cumulativeOutlineStatesCompared": 8,
-  "progressiveCandidateAnimationApproved": false,
-  "runtimeAdded": 0,
+  "progressiveCandidateAnimationApproved": true,
+  "runtimeAdded": 1,
   "checks": {
-    "engineVerifier": true,
-    "pythonAst": true,
-    "polygonOnlyRendererSupported": true
+    "sourceAndEngineReplay": {
+      "exitCode": 0,
+      "traceExact": true
+    },
+    "hanjaTests": {
+      "files": 174,
+      "tests": 869,
+      "passed": 869,
+      "failed": 0
+    },
+    "targetedTests": {
+      "tests": 12,
+      "passed": 12
+    },
+    "build": {
+      "exitCode": 0,
+      "typeScript": true,
+      "staticPages": 7
+    },
+    "isolatedSnapshot": {
+      "identicalFiles": 16,
+      "exportAssetsIdentical": 3
+    },
+    "ui": {
+      "viewport": "430x932",
+      "introAutoplay": "8/8 before any playback click",
+      "introReplay": "1/8 then8/8",
+      "pauseResume": "clip width30.957092307692335 unchanged while paused; resumed at2/8",
+      "writingAutoplay": "1/8 to8/8",
+      "writingReplay": "1/8 to8/8",
+      "canvas": "0 to1 to0 stroke; position and scroll unchanged",
+      "canvasY": 162.8046875,
+      "dialogY": 139.8046875,
+      "dialogScroll": 126,
+      "touchAction": "none",
+      "noDrag": true,
+      "animatedSvg": 1,
+      "staticImages": 0,
+      "reducedMotion": "test fixture; no autoplay, manual1 to8 and restart1",
+      "consoleWarningsAndErrors": 0
+    }
   },
   "coverage": {
     "runtime": {
       "total": 5978,
-      "applied": 4974,
-      "remaining": 1004,
+      "applied": 4975,
+      "remaining": 1003,
       "percent": 83.2
     },
     "grades": [
       {
         "grade": "1급",
         "total": 1145,
-        "applied": 1073,
-        "remaining": 72,
-        "percent": 93.7
+        "applied": 1074,
+        "remaining": 71,
+        "percent": 93.8
       },
       {
         "grade": "2급",
@@ -135,15 +173,15 @@
       }
     ]
   },
-  "runtimeChanged": false,
+  "runtimeChanged": true,
   "resources": {
-    "tabClosed": true,
-    "ramServerStopped": 51896,
+    "tabs": "closed",
+    "ramServers": "51897,51898,51899 stopped",
+    "isolatedWorktree": "removed",
     "privateMediaSaved": false
   },
   "nextActions": [
-    "Design and verify a source-derived filled-outline reveal retaining the terminal polygon; do not infer a new centerline or fade the entire stroke as a substitute for drawing.",
-    "Trace source line/quadratic rendering calls and separate body/corner/cap/hook roles; prove reveal direction and stage continuity against the original commands and domestic animation.",
-    "If that succeeds, integrate the reviewed representation narrowly into the existing player, inspect all8 progressive paths and cumulative/final forms, then tests/typecheck/build/product UI and runtime commit."
+    "Revisit 苛9 using batch27 hook research and the now-verified filled-outline player. Recheck current runtime and pins before reviewing all strokes.",
+    "Do not assume the upward 芭 hook rule covers 苛; reproduce its separate left-hook source polygon and full domestic direction evidence."
   ]
 }

@@ -2,9 +2,9 @@
   "glyph": "芭",
   "strokes": 8,
   "date": "2026-09-22",
-  "status": "outline-evidence-ready; animation representation work remains",
-  "runtimeAdded": 0,
-  "approved": false,
+  "status": "applied: all eight progressive filled-outline strokes reviewed and product playback verified",
+  "runtimeAdded": 1,
+  "approved": true,
   "domesticStepsCompared": [
     1,
     2,
@@ -15,7 +15,7 @@
     7,
     8
   ],
-  "sourceComparison": "Complete filled outlines at each cumulative state; not yet progressive candidate trajectory verification.",
+  "sourceComparison": "All eight domestic directions and 72 progressive candidate samples, cumulative and final forms reviewed. Product autoplay, replay, pause/resume, reduced motion and canvas input verified.",
   "lastStroke": {
     "rawCode": "3:12:5:42:94:42:178:176:178",
     "sourcePrimitive": 9,
@@ -69,11 +69,8 @@
       8
     ]
   ],
-  "remaining": [
-    "Design and verify a source-derived filled-outline reveal retaining the terminal polygon; do not infer a new centerline or fade the entire stroke as a substitute for drawing.",
-    "Trace source line/quadratic rendering calls and separate body/corner/cap/hook roles; prove reveal direction and stage continuity against the original commands and domestic animation.",
-    "If that succeeds, integrate the reviewed representation narrowly into the existing player, inspect all8 progressive paths and cumulative/final forms, then tests/typecheck/build/product UI and runtime commit."
-  ],
+  "remaining": [],
   "engineLicense": "GPL-3.0 repository COPYING; engine is fetched at pinned hashes for isolated RAM research only, not embedded or distributed in the app.",
-  "privateGraphicsSaved": false
+  "privateGraphicsSaved": false,
+  "progressiveReview": "progressive-review.json"
 }
