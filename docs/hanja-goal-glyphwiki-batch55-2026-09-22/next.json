@@ -1,0 +1,55 @@
+{
+  "glyph": "薇",
+  "grade": "1급",
+  "strokes": 17,
+  "status": "candidate-only; not approved",
+  "source": {
+    "glyph": "薇",
+    "root": "u8587-k",
+    "records": {
+      "u8587-k": {
+        "name": "u8587-k",
+        "version": 12,
+        "related": "U+8587",
+        "data": "99:0:0:0:0:200:200:u8587-var-002"
+      },
+      "u8587-var-002": {
+        "name": "u8587-var-002",
+        "version": 10,
+        "related": "U+8587",
+        "data": "99:0:0:0:3:200:150:ufa5e-03$99:0:0:0:36:200:196:u5fae-k"
+      },
+      "ufa5e-03": {
+        "name": "ufa5e-03",
+        "version": 8,
+        "related": "U+8279",
+        "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39"
+      },
+      "u5fae-k": {
+        "name": "u5fae-k",
+        "version": 7,
+        "related": "U+5FAE",
+        "data": "99:0:0:3:0:123:200:u5f73-01$99:0:0:0:0:200:200:u22f38-02"
+      },
+      "u5f73-01": {
+        "name": "u5f73-01",
+        "version": 4,
+        "related": "U+5F73",
+        "data": "2:0:7:83:17:55:51:17:74$2:0:7:93:55:62:94:14:122$1:0:0:61:96:61:185"
+      },
+      "u22f38-02": {
+        "name": "u22f38-02",
+        "version": 4,
+        "related": "U+22F38",
+        "data": "1:0:32:97:17:97:70$1:0:13:72:34:72:70$1:2:2:72:70:122:70$1:0:23:122:34:122:70$1:0:0:60:95:130:95$7:12:7:80:114:80:136:80:168:56:187$1:2:2:80:114:111:114$1:22:32:111:114:111:160$2:0:7:102:167:121:154:142:135$2:0:7:151:17:144:80:126:112$1:0:0:144:62:188:62$2:32:7:173:62:164:160:106:188$2:7:0:142:74:150:158:182:182"
+      }
+    },
+    "status": "source-candidate-only; full domestic and geometry review pending"
+  },
+  "actions": [
+    "Recheck current runtime and shared worktree.",
+    "Re-fetch the six pinned whole-glyph records, replay the engine and verify domestic17-stroke metadata.",
+    "Review all17 strokes, 彳/山/攵 order, center turns and hook, cumulative and final form.",
+    "If full review passes, apply runtime, test/build/UI and commit only own files."
+  ]
+}
