@@ -1,0 +1,49 @@
+{
+  "glyph": "竪",
+  "grade": "1급",
+  "strokes": 13,
+  "status": "candidate-only; full review pending",
+  "source": {
+    "glyph": "竪",
+    "root": "u7aea-k",
+    "records": {
+      "u7aea-k": {
+        "name": "u7aea-k",
+        "version": 8,
+        "related": "U+3013",
+        "data": "99:0:0:0:0:200:200:u7aea-j"
+      },
+      "u7aea-j": {
+        "name": "u7aea-j",
+        "version": 1,
+        "related": "U+7AEA",
+        "data": "99:0:0:0:0:200:212:u81e4-03-var-001$99:0:0:0:25:200:198:u7acb-04"
+      },
+      "u81e4-03-var-001": {
+        "name": "u81e4-03-var-001",
+        "version": 5,
+        "related": "U+81E4",
+        "data": "99:0:0:12:13:108:113:u81e3-j$1:0:2:104:27:168:27$2:22:7:168:27:152:74:106:100$2:7:0:114:27:132:82:178:104"
+      },
+      "u81e3-j": {
+        "name": "u81e3-j",
+        "version": 3,
+        "related": "U+81E3",
+        "data": "1:12:13:32:29:32:168$1:2:0:32:29:179:29$1:32:32:99:29:99:72$1:2:2:32:72:156:72$1:22:23:156:72:156:121$1:2:2:32:121:156:121$1:32:32:99:121:99:168$1:2:0:32:168:184:168"
+      },
+      "u7acb-04": {
+        "name": "u7acb-04",
+        "version": 4,
+        "related": "U+7ACB",
+        "data": "1:0:32:100:100:100:123$1:0:0:27:123:173:123$2:7:8:54:129:73:145:79:168$2:0:7:140:129:130:153:113:177$1:0:0:17:177:183:177"
+      }
+    },
+    "status": "source candidate; full review pending"
+  },
+  "actions": [
+    "Recheck current runtime and shared worktree.",
+    "Re-fetch the five whole-glyph records and reproduce fixed engine geometry.",
+    "Verify domestic13-stroke metadata and inspect every 臣/又/立 boundary, curve, direction, cumulative and final shape.",
+    "If all checks pass, register runtime, run tests/build/UI and commit only own files."
+  ]
+}
