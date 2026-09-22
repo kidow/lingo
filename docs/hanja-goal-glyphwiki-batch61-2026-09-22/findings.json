@@ -1,0 +1,45 @@
+{
+  "glyph": "玘",
+  "grade": "특급II",
+  "catalogStrokes": 7,
+  "dictionaryStrokes": 7,
+  "status": "applied",
+  "examBodyApproval": false,
+  "sourceGroupsZeroBased": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ]
+  ],
+  "fullStrokeApproval": true,
+  "runtimeRegistered": 1,
+  "pathsSha256": "2a47eef5da190bfe0eda34f7c1fe90b1a4c10850b321f8ad7117920bdba26a48",
+  "reviewSha256": "6269623f729487e19115dce643de667df515539beab3abd001f6851c43a9edd7",
+  "shapeChanges": "None: all source polygon vertices are preserved after scaling. Only negative winding traversal is reversed to preserve independent polygon union when using joined SVG subpaths.",
+  "findings": [
+    "All7 individual/cumulative strokes, final form and63 progressive states were reviewed against the domestic dictionary in RAM.",
+    "The domestic order is horizontal-horizontal-vertical-rising for 王; source order is retained. The 己 corner primitives meet at the same source endpoints.",
+    "Curve4 and corner7 preserve original KAGE quadratics. Hook7 is the original separate polygon from kagecd.js line887 a2==5 branch. No invented trajectory or source coordinate edits.",
+    "Opposite source polygon winding caused cancellation after joining subpaths. Reverse only vertex traversal of negative-area polygons, keeping the initial vertex, to preserve the union of original separately filled polygons. Coordinates and shapes remain unchanged.",
+    "The final normalized version changes only strokes4 and7; their18 snapshots were reviewed again. Other45 snapshots retain identical path text."
+  ],
+  "privateMediaSaved": false
+}
