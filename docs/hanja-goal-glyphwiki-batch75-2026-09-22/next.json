@@ -1,0 +1,65 @@
+{
+  "glyph": "扤",
+  "grade": "특급",
+  "strokes": 6,
+  "status": "complete whole-source snapshot and pinned engine replay acquired; visual review pending",
+  "source": {
+    "glyph": "扤",
+    "root": "u6264",
+    "records": {
+      "u6264": {
+        "name": "u6264",
+        "related": "u6264",
+        "data": "99:0:0:2:0:157:200:u624c-01$99:0:0:-38:0:205:200:u5140-02"
+      },
+      "u624c-01": {
+        "name": "u624c-01",
+        "related": "u624c",
+        "data": "1:0:0:17:55:104:55$1:0:4:60:15:60:181$2:0:7:18:122:63:107:104:91"
+      },
+      "u5140-02": {
+        "name": "u5140-02",
+        "related": "u5140",
+        "data": "1:0:0:91:34:187:34$7:32:7:122:34:122:95:122:160:81:188$3:32:5:153:34:153:179:182:179"
+      }
+    },
+    "missing": [],
+    "snapshot": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+      "snapshotCommitDate": "2016-05-02T21:53:32Z",
+      "bytes": 63801771,
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "entries": 438756
+    }
+  },
+  "metadata": {
+    "glyph": "扤",
+    "grade": "특급",
+    "catalogStrokes": 6,
+    "dictionary": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6200/6264.svg",
+      "bytes": 3432,
+      "sha256": "a630166aa94c770e68d085195455ea0e392b1399116e32936495ea1f8ec5f420"
+    }
+  },
+  "engine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "hashes": {
+      "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+      "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+      "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+      "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+      "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+      "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+      "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+    },
+    "rawGroups": 6
+  },
+  "actions": [
+    "Recheck shared HEAD and actual runtime; use the original whole u6264 source, whose three-record dependency closure is complete.",
+    "Review all six domestic strokes, left hook, rising hand stroke, right falling curve, final curved turn and upward hook; inspect connections and progressive playback.",
+    "If every requirement passes, connect runtime and run tests/build/mobile UI; commit only this Hanja batch."
+  ]
+}
