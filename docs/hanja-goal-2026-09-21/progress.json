@@ -1,79 +1,18 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "fdddbb6c03296da96d1453e44384ff2ff51ae4c8",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch70-2026-09-22/README.md",
+  "lastCompletedCommit": "699a997c4c02df091a217080c19dec87ed364ce6",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch71-2026-09-22/README.md",
   "currentBatch": {
     "glyphs": [
-      "杕"
+      "芃",
+      "芎",
+      "艽",
+      "伻"
     ],
-    "strokes": 7,
-    "status": "applied",
-    "checks": {
-      "sourceAndEngineReplay": {
-        "sourceVersions": 4,
-        "engineFiles": 8,
-        "traceExact": true,
-        "stage": "Successful pinned-source and engine replay before generating artifacts; offline artifact/runtime verifier also passed."
-      },
-      "domesticStrokeCount": 7,
-      "progressiveSnapshots": 63,
-      "tests": {
-        "files": 189,
-        "passed": 913,
-        "failed": 0
-      },
-      "build": {
-        "exitCode": 0,
-        "typeScript": true,
-        "staticPages": 7,
-        "isolated": true
-      },
-      "artifactParity": {
-        "ownFiles": 17,
-        "publicExports": 3
-      },
-      "ui": {
-        "viewport": [
-          430,
-          932
-        ],
-        "introAutoplay": true,
-        "introReplay": true,
-        "introComplete": "7 / 7",
-        "writingAutoplay": true,
-        "writingReplay": true,
-        "writingComplete": "7 / 7",
-        "canvasInputCounts": [
-          0,
-          1,
-          0
-        ],
-        "canvasYBeforeAfter": [
-          162.8046875,
-          162.8046875
-        ],
-        "dialogYBeforeAfter": [
-          139.8046875,
-          139.8046875
-        ],
-        "scrollBeforeAfter": [
-          126,
-          126
-        ],
-        "touchAction": "none",
-        "vaulNoDrag": true,
-        "outlineGroups": 1,
-        "staticImages": 0,
-        "consoleWarningsErrors": 0
-      },
-      "privateMediaSaved": false,
-      "enginePreset": {
-        "constructorSize": "default",
-        "style": "mincho",
-        "customParameterEdits": false
-      }
-    }
+    "strokes": 27,
+    "status": "source-acquisition-incomplete",
+    "runtimeApprovalsAdded": 0
   },
   "workingTreeCoverage": {
     "runtime": {
@@ -191,8 +130,9 @@
     ]
   },
   "nextActions": [
-    "Do not repeat unchanged timed-out dependency requests. Seek a source page or pinned independent route for the exact dependency, or proceed to another unapplied candidate.",
-    "Recheck shared HEAD and runtime before editing. Complete source replay, all-stroke domestic and progressive review before runtime registration."
+    "Seek independent licensed whole-glyph sources or inspect an accessible pinned source endpoint for the missing GlyphWiki records; do not repeat unchanged timed-out requests.",
+    "Current candidate dependencies: 芃 u51e1-j; 芎 u5f13-j; 艽 u827d-k; 伻 u4f3b-k. No geometry approved.",
+    "Recheck actual runtime and shared HEAD; review every stroke before any registration. Existing KanjiVG metadata shortlist has no unreviewed count-matching unapplied entries; examine genuinely different sources or documented hold release conditions."
   ],
   "held": [
     "莽",
@@ -367,33 +307,14 @@
   ],
   "resources": {
     "tabs": "closed",
-    "ramServers": "51957–51959 stopped",
-    "isolatedWorktree": "removed",
+    "ramServers": "none",
+    "isolatedWorktree": "none",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch70.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch70.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch70.json",
-    "public/hanja-strokes/glyphwiki/6755.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-6755.md",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/sources.json",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/next.json",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/validation.json",
-    "docs/hanja-goal-glyphwiki-batch70-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch71-2026-09-22/acquisition.json",
+    "docs/hanja-goal-glyphwiki-batch71-2026-09-22/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch70-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch71-2026-09-22/acquisition.json"
 }

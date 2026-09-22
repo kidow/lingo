@@ -1,0 +1,116 @@
+{
+  "date": "2026-09-22",
+  "status": "source-acquisition-incomplete",
+  "runtimeApprovalsAdded": 0,
+  "scope": "Exact whole-glyph source acquisition only; no stroke geometry or direction approval.",
+  "attempts": [
+    {
+      "glyph": "芃",
+      "root": "u8283-k",
+      "records": {
+        "u8283-k": {
+          "name": "u8283-k",
+          "version": 4,
+          "related": "U+8283",
+          "data": "99:0:0:0:0:199:199:ufa5e-03$99:0:0:0:60:200:198:u51e1-j"
+        }
+      },
+      "status": "acquisition-incomplete",
+      "error": "TimeoutError: The operation timed out.",
+      "missingDependencies": [
+        "ufa5e-03",
+        "u51e1-j"
+      ],
+      "unresolvedAfterIndependentFetch": [
+        "u51e1-j"
+      ]
+    },
+    {
+      "glyph": "芎",
+      "root": "u828e-k",
+      "records": {
+        "u828e-k": {
+          "data": "99:0:0:0:0:200:200:u828e-ue0102",
+          "related": "U+828E",
+          "name": "u828e-k",
+          "version": 12
+        },
+        "u828e-ue0102": {
+          "name": "u828e-ue0102",
+          "related": "U+828E",
+          "version": 10,
+          "data": "99:0:0:0:3:200:172:ufa5e-03:0:0:0$99:0:0:0:43:200:194:u5f13-j:0:0:0"
+        },
+        "ufa5e-03": {
+          "name": "ufa5e-03",
+          "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39",
+          "version": 8,
+          "related": "U+8279"
+        }
+      },
+      "status": "acquisition-incomplete",
+      "error": "TimeoutError: The operation timed out.",
+      "missingDependencies": [
+        "u5f13-j"
+      ],
+      "unresolvedAfterIndependentFetch": [
+        "u5f13-j"
+      ]
+    },
+    {
+      "glyph": "艽",
+      "root": "u827d-k",
+      "records": {},
+      "status": "acquisition-incomplete",
+      "error": "TimeoutError: The operation timed out.",
+      "missingDependencies": [],
+      "unresolvedAfterIndependentFetch": [
+        "u827d-k"
+      ]
+    },
+    {
+      "glyph": "伻",
+      "root": "u4f3b-k",
+      "records": {},
+      "status": "acquisition-incomplete",
+      "error": "TimeoutError: The operation timed out.",
+      "missingDependencies": [],
+      "unresolvedAfterIndependentFetch": [
+        "u4f3b-k"
+      ]
+    }
+  ],
+  "independentDependencyFetch": {
+    "name": "ufa5e-03",
+    "version": 8,
+    "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39",
+    "related": "U+8279"
+  },
+  "pageResponses": [
+    {
+      "url": "https://glyphwiki.org/wiki/u51e1-j",
+      "status": 403
+    },
+    {
+      "url": "https://glyphwiki.org/wiki/u5f13-j",
+      "status": 403
+    }
+  ],
+  "knownSourceRecheck": {
+    "glyph": "迅",
+    "repositoryRevision": "422b5538595676da918c288a4230cb5e22a1ee7e",
+    "path": "kanji/08fc5.svg",
+    "sourceStrokes": 6,
+    "domesticStrokes": 7,
+    "sourceSha256": "1126bf2c09c27c8c48176b55c79cf5018adf893c68865311b0f7356b6edb4360",
+    "domesticSha256": "ecb5989b82458463a8079b12e457c29d9c0b75965a60fdcd1b996fa9c0b60d77"
+  },
+  "inventoryAudit": {
+    "inventory": "docs/hanja-goal-special-kanjivg-batch12-2026-09-22/next-inventory.json",
+    "countMatchingUnappliedWithNoExistingReadmeOrFindings": 0,
+    "limitation": "This only filters the existing inventory and report files. It does not prove that all possible alternative sources have been exhausted."
+  },
+  "retryCondition": "A changed source response, an accessible pinned source endpoint, or genuinely independent licensed complete glyph data. Do not repeat unchanged timed-out requests or work around access restrictions.",
+  "privateMediaSaved": false,
+  "acquiredRecordNotice": "Public GlyphWiki contributor records, as returned by API; source revisions are recorded. https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18. Incomplete dependency graphs must not be rendered as approved glyphs."
+}
