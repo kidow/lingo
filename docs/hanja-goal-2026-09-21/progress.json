@@ -1,20 +1,21 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "44c3139213ea9ad27cd6804fc27efde4b863488f",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch42-2026-09-22/validation.json",
+  "lastCompletedCommit": "140b32b191cdfac27bb516ec7ea58ef43bc94402",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch43-2026-09-22/validation.json",
   "currentBatch": {
     "glyphs": [
-      "萎"
+      "芭"
     ],
-    "strokes": 12,
-    "status": "held after domestic10–12 and source curve-boundary review; full12 not approved",
+    "strokes": 8,
+    "status": "in-progress: exact complete outline evidence reproduced; source-derived progressive reveal pending",
     "checks": {
-      "sourceVersions": 6,
-      "visualSteps": 3,
-      "fullApproval": false,
-      "researchVerifier": true,
-      "record": "docs/hanja-goal-glyphwiki-batch42-2026-09-22/validation.json"
+      "sourceVersions": 4,
+      "engineFiles": 8,
+      "engineOutputReproduced": true,
+      "cumulativeOutlines": 8,
+      "progressiveAnimationApproved": false,
+      "record": "docs/hanja-goal-glyphwiki-batch43-2026-09-22/validation.json"
     }
   },
   "workingTreeCoverage": {
@@ -133,9 +134,9 @@
     ]
   },
   "nextActions": [
-    "Reconfirm actual runtime absence and exact source revisions; retrieve domestic8-stroke metadata.",
-    "Review source type3:12:5 final stroke using pinned primary KAGE semantics; its terminal upward hook must not be omitted or guessed.",
-    "If a source-authoritative path is available, inspect all8 directions/cumulative/final forms and register only after passing. Otherwise preserve the unresolved hook and move to an independent candidate."
+    "Design and verify a source-derived filled-outline reveal retaining the terminal polygon; do not infer a new centerline or fade the entire stroke as a substitute for drawing.",
+    "Trace source line/quadratic rendering calls and separate body/corner/cap/hook roles; prove reveal direction and stage continuity against the original commands and domestic animation.",
+    "If that succeeds, integrate the reviewed representation narrowly into the existing player, inspect all8 progressive paths and cumulative/final forms, then tests/typecheck/build/product UI and runtime commit."
   ],
   "held": [
     "莽",
@@ -231,21 +232,21 @@
     }
   ],
   "resources": {
-    "tabs": "batch42 tab closed",
-    "ramServers": "batch42 port51895 stopped",
+    "tabs": "batch43 tab closed",
+    "ramServers": "batch43 port51896 stopped",
     "isolatedWorktree": "none",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/sources.json",
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/next.json",
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch42-2026-09-22/validation.json"
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/validation.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch42-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch43-2026-09-22/validation.json"
 }

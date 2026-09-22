@@ -1,0 +1,79 @@
+{
+  "glyph": "芭",
+  "strokes": 8,
+  "date": "2026-09-22",
+  "status": "outline-evidence-ready; animation representation work remains",
+  "runtimeAdded": 0,
+  "approved": false,
+  "domesticStepsCompared": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "sourceComparison": "Complete filled outlines at each cumulative state; not yet progressive candidate trajectory verification.",
+  "lastStroke": {
+    "rawCode": "3:12:5:42:94:42:178:176:178",
+    "sourcePrimitive": 9,
+    "polygons": 7,
+    "hookPolygonIndex": 6,
+    "hookDirection": "upward",
+    "polygon": [
+      [
+        176,
+        172.8
+      ],
+      [
+        178,
+        147.8
+      ],
+      [
+        176,
+        147.8
+      ],
+      [
+        170,
+        172.8
+      ]
+    ],
+    "finding": "Pinned KAGE type3/tail5 renders the final horizontal body with a separate upward hook polygon. Omitting the polygon would drop visible source geometry. Domestic8 descends, turns right and finishes upward."
+  },
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      3
+    ],
+    [
+      2
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ]
+  ],
+  "remaining": [
+    "Design and verify a source-derived filled-outline reveal retaining the terminal polygon; do not infer a new centerline or fade the entire stroke as a substitute for drawing.",
+    "Trace source line/quadratic rendering calls and separate body/corner/cap/hook roles; prove reveal direction and stage continuity against the original commands and domestic animation.",
+    "If that succeeds, integrate the reviewed representation narrowly into the existing player, inspect all8 progressive paths and cumulative/final forms, then tests/typecheck/build/product UI and runtime commit."
+  ],
+  "engineLicense": "GPL-3.0 repository COPYING; engine is fetched at pinned hashes for isolated RAM research only, not embedded or distributed in the app.",
+  "privateGraphicsSaved": false
+}
