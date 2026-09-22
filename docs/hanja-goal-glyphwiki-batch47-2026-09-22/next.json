@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-22",
+  "status": "candidate-only-not-approved",
+  "glyph": "蔭",
+  "catalogStrokes": 15,
+  "source": {
+    "glyph": "蔭",
+    "root": "u852d-k",
+    "records": {
+      "u852d-k": {
+        "name": "u852d-k",
+        "version": 7,
+        "related": "U+852D",
+        "data": "99:0:0:0:0:200:200:koseki-359870"
+      },
+      "koseki-359870": {
+        "name": "koseki-359870",
+        "version": 9,
+        "related": "U+852D",
+        "data": "99:0:0:0:2:199:149:ufa5e-03$99:0:0:0:44:200:196:aj1-01220"
+      },
+      "ufa5e-03": {
+        "name": "ufa5e-03",
+        "version": 8,
+        "related": "U+8279",
+        "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39"
+      },
+      "aj1-01220": {
+        "name": "aj1-01220",
+        "version": 10,
+        "related": "U+3013",
+        "data": "99:0:0:0:0:200:200:u9670-ue0100"
+      },
+      "u9670-ue0100": {
+        "name": "u9670-ue0100",
+        "version": 10,
+        "related": "U+9670",
+        "data": "99:0:0:0:0:200:200:u961d-01:0:0:0$99:0:0:59:0:196:200:u4f8c-j:0:0:0"
+      },
+      "u961d-01": {
+        "name": "u961d-01",
+        "version": 11,
+        "related": "U+961D",
+        "data": "1:2:2:29:28:72:28$2:22:7:72:28:65:49:47:76$2:7:4:47:75:73:100:65:135$1:12:0:29:28:29:186"
+      },
+      "u4f8c-j": {
+        "name": "u4f8c-j",
+        "version": 1,
+        "related": "U+4F8C",
+        "data": "2:0:7:97:14:70:49:14:74$2:7:0:94:17:129:51:178:64$1:0:0:59:61:137:61$1:0:2:41:81:138:81$1:22:0:138:81:122:110$1:0:0:34:117:166:117$1:0:0:16:138:184:138$2:32:7:89:138:76:156:56:175$2:0:7:29:177:88:174:153:166$2:7:8:127:148:153:162:168:183"
+      }
+    },
+    "status": "source-candidate-only; full domestic and geometry review pending"
+  },
+  "nextActions": [
+    "Recheck actual runtime and source ownership; skip if already applied.",
+    "Re-fetch exact7 source versions and domestic dictionary evidence into RAM.",
+    "Reproduce all polygons and drawing calls; compare 阝 boundaries, inner roof/折 shape and 云 lower bend against the domestic15 strokes.",
+    "Do not concatenate disconnected primitives or substitute radical geometry. Apply only after full15-stroke review, runtime verification and actual UI checks."
+  ]
+}
