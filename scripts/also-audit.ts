@@ -111,10 +111,22 @@ const tight = argv.includes('--tight')
  * 먼저 §7의 세 잣대로 «진짜 위반»을 가린 다음, 그 줄에만 이 값을 쓴다.
  */
 const home = argv.includes('--home')
+/**
+ * **`--alone`은 곁말이 하나뿐인 앵커만 남긴다.** 무리가 크면 잘못 보이던 곁말도
+ * 그 안에서 제자리를 찾는다 — `威力`는 `力量`·`劲头` 곁이고 `痕迹`는 `足迹`·
+ * `踪迹` 곁이다. **하나뿐이면 기댈 무리가 없다.**
+ *
+ * 2026-09-23에 `nature`를 닫을 때 남은 진짜 둘이 **둘 다 이 자리**였고, 둘 다
+ * 개념을 새로 세워야 했다(`阵雨`→소나기 · `环保`→환경보호).
+ *
+ * **예보가 아니라 가늠자다.** 옳게 옮겨 놓아서 하나가 된 자리도 걸린다 —
+ * 같은 날 `激活`을 `turn-on`(켜다)으로 옮겼더니 그 앵커가 곁말 하나짜리가 됐다.
+ */
+const alone = argv.includes('--alone')
 const only = argv.find((a) => !a.startsWith('--'))
 
 const dict = loadDict()
-type Row = { file: string; slug: string; meaning: string; en: string; term: string; also: string; gloss: string }
+type Row = { file: string; slug: string; meaning: string; en: string; term: string; also: string; gloss: string; alone: boolean }
 const suspect: Row[] = []
 let total = 0
 let missing = 0
@@ -184,6 +196,7 @@ for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) 
         term: zh.term,
         also,
         gloss: glosses.slice(0, 3).join('; '),
+        alone: zh.also.length === 1,
       })
     }
   }
@@ -192,10 +205,15 @@ for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) 
 console.log(
   `\n중국어 곁말 ${total} — 사전 뜻에 영어 표기가 안 보이는 것 ${suspect.length} · 사전에 없는 표기 ${missing}`,
 )
+const aloneCount = suspect.filter((row) => row.alone).length
 console.log(
   tight
     ? '--tight — 표제어 뜻까지 맞댔습니다. 거짓 양성이 줄지만 진짜도 여섯에 하나쯤 빠집니다\n'
     : '표본으로 잰 정밀도는 절반쯤이다 — 후보이지 판정이 아니다 (--tight로 좁힙니다)\n',
+)
+console.log(
+  `  그 가운데 «홀» ${aloneCount}개 — 앵커의 곁말이 그 하나뿐이라 기댈 무리가 없습니다` +
+    `${alone ? '' : ' (--alone 으로 그것만 봅니다)'}\n`,
 )
 
 if (!list) {
@@ -206,8 +224,9 @@ if (!list) {
   console.log('\n  --list 를 붙이면 하나씩 찍습니다\n')
 } else {
   for (const row of suspect) {
+    if (alone && !row.alone) continue
     console.log(
-      `  ${row.slug.padEnd(20)} ${row.meaning.padEnd(10)} ${row.en.padEnd(16)} ${row.term} / ${row.also} — ${row.gloss.slice(0, 60)}`,
+      `  ${row.alone ? '홀' : '  '} ${row.slug.padEnd(20)} ${row.meaning.padEnd(10)} ${row.en.padEnd(16)} ${row.term} / ${row.also} — ${row.gloss.slice(0, 56)}`,
     )
     if (!home) continue
     const found = bestHome(row.also, row.slug)
