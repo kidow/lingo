@@ -1,22 +1,22 @@
 {
   "status": "active",
   "date": "2026-09-22",
-  "lastCompletedCommit": "f8316025e1b90085547cd5e0047129d29511ef9c",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch48-2026-09-22/README.md",
+  "lastCompletedCommit": "e96cb53738092d8cda4145257955648c75650cd5",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch49-2026-09-22/README.md",
   "currentBatch": {
     "glyphs": [
-      "蔭"
+      "蕃"
     ],
-    "strokes": 15,
+    "strokes": 16,
     "status": "held",
     "checks": {
       "sourceAndEngineReplay": {
         "exitCode": 0,
-        "sourceRequests": 13,
+        "sourceRequests": 10,
         "engineFiles": 8,
         "traceExact": true
       },
-      "domesticCumulativeStatesViewed": 15,
+      "domesticCumulativeStatesViewed": 16,
       "fullStrokeApproval": false,
       "runtimeRegistered": 0
     }
@@ -137,10 +137,10 @@
     ]
   },
   "nextActions": [
-    "Recheck actual runtime; skip 蕃 if another session applied it.",
-    "Re-fetch exact5 pinned source records and fetch domestic16-stroke evidence into RAM.",
-    "Reproduce whole-glyph polygons/drawing calls; compare top falling stroke, 米 order and crossing, lower 田 boundaries and cumulative form.",
-    "Do not infer missing links or alter source points. Connect runtime only after full16-stroke review, tests/build and actual intro/writing UI checks."
+    "Recheck current runtime and other sessions before editing.",
+    "Re-fetch exact6 source versions and domestic12-stroke metadata; keep private graphics in RAM.",
+    "Reproduce full polygons and draw calls; review 日 corners and 月 continuous falling stroke/left hook against all12 domestic directions and cumulative forms.",
+    "Connect runtime in the same workflow if full review passes, then tests/build, actual intro/writing playback and own-files-only commit."
   ],
   "held": [
     "莽",
@@ -245,29 +245,35 @@
       "reason": "Fold/bar gap, lower 云 discontinuous primitive boundary and left hook/bar clearance differ from domestic15-stroke reference. Base alias has three grass strokes and retains the lower discontinuity.",
       "evidence": "docs/hanja-goal-glyphwiki-batch48-2026-09-22/findings.json",
       "releaseCondition": "Licensed whole source resolving all connections and providing a continuous 云 turn, then full15-stroke review; no inferred bridges or component substitution."
+    },
+    {
+      "glyph": "蕃",
+      "reason": "Source central vertical ends at y120.21, below-field top is y128.425025; domestic vertical touches the field. Base alias has the same body. Domestic middle田 horizontal/vertical order also differs.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch49-2026-09-22/findings.json",
+      "releaseCondition": "Licensed whole glyph with the reviewed central-to-field connection and full16-stroke agreement; no guessed vertical extension or field translation."
     }
   ],
   "resources": {
     "tabs": "closed",
-    "ramServers": "51910 stopped",
+    "ramServers": "51911 stopped",
     "isolatedWorktree": "none",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/sources.json",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/serve.py",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/alternatives.json",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/findings.json",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/next.json",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/README.md",
-    "docs/hanja-goal-glyphwiki-batch48-2026-09-22/validation.json",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/sources.json",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/serve.py",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/alternatives.json",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/findings.json",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/next.json",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/README.md",
+    "docs/hanja-goal-glyphwiki-batch49-2026-09-22/validation.json",
     "docs/hanja-goal-2026-09-21/progress.json",
     "docs/hanja-goal-2026-09-21/README.md"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch48-2026-09-22/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch49-2026-09-22/next.json"
 }
