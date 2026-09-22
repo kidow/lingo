@@ -94,6 +94,23 @@ const list = argv.includes('--list')
  * 좁힐 때만 붙인다.
  */
 const tight = argv.includes('--tight')
+/**
+ * **`--home`은 받을 자리를 찍어 준다.** 잘못 붙은 곁말은 대개 지울 것이 아니라
+ * **옮길 것**이다 — 후보 1,822개가 100% HSK 표제어라, 지우면 목록 덮개가
+ * 빠진다([docs/also-recheck.md](../docs/also-recheck.md)).
+ *
+ * 곁말의 사전 뜻을 **다른 개념의 중국어 표제어·곁말의 사전 뜻**과 맞대고,
+ * 흔한 낱말은 값을 낮춰(idf) 가장 높은 하나를 찍는다.
+ *
+ * **눈금은 실제로 옮긴 아홉으로 쟀다** (2026-09-23) — `承载`→`prop-up`,
+ * `走弯路`→`go-around`, `执照`→`permission`, `退让`→`back-away`,
+ * `激活`→`turn-on`, `时髦`→`popular-trend`, `持`→`grip`, `款`→`list-item`,
+ * `风尚`→`custom-usage`. **아홉 다 1위로 나온다.**
+ *
+ * **점수가 높다고 맞는 것은 아니다.** 흔한 낱말(`土`)은 아무 데나 높게 붙는다.
+ * 먼저 §7의 세 잣대로 «진짜 위반»을 가린 다음, 그 줄에만 이 값을 쓴다.
+ */
+const home = argv.includes('--home')
 const only = argv.find((a) => !a.startsWith('--'))
 
 const dict = loadDict()
@@ -101,6 +118,38 @@ type Row = { file: string; slug: string; meaning: string; en: string; term: stri
 const suspect: Row[] = []
 let total = 0
 let missing = 0
+
+/** 모든 개념의 중국어 표제어·곁말을 뜻 낱말로 펼친다 — `--home`이 쓴다 */
+type Home = { slug: string; meaning: string; words: Set<string> }
+const homes: Home[] = []
+if (home) {
+  for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) {
+    const json = JSON.parse(readFileSync(join(CONTENT_DIR, file), 'utf8')) as { concepts?: Concept[] }
+    for (const concept of json.concepts ?? []) {
+      const zh = concept.words.zh
+      if (!zh) continue
+      const words = new Set<string>()
+      for (const one of [zh.term, ...(zh.also ?? [])])
+        for (const gloss of dict.get(one) ?? []) for (const word of bag(gloss)) words.add(word)
+      if (words.size > 0) homes.push({ slug: concept.slug, meaning: concept.meaning_ko, words })
+    }
+  }
+}
+const df = new Map<string, number>()
+for (const one of homes) for (const word of one.words) df.set(word, (df.get(word) ?? 0) + 1)
+const idf = (word: string) => Math.log(homes.length / (1 + (df.get(word) ?? 0)))
+function bestHome(also: string, self: string) {
+  const pool = new Set<string>()
+  for (const gloss of dict.get(also) ?? []) for (const word of bag(gloss)) pool.add(word)
+  let top: { slug: string; meaning: string; score: number } | null = null
+  for (const one of homes) {
+    if (one.slug === self) continue
+    let score = 0
+    for (const word of pool) if (one.words.has(word) && (df.get(word) ?? 0) <= 40) score += idf(word)
+    if (score > 0 && (!top || score > top.score)) top = { slug: one.slug, meaning: one.meaning, score }
+  }
+  return top
+}
 
 for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) {
   if (only && !file.startsWith(only)) continue
@@ -156,9 +205,17 @@ if (!list) {
     console.log(`  ${file.padEnd(12)} ${String(count).padStart(4)}`)
   console.log('\n  --list 를 붙이면 하나씩 찍습니다\n')
 } else {
-  for (const row of suspect)
+  for (const row of suspect) {
     console.log(
       `  ${row.slug.padEnd(20)} ${row.meaning.padEnd(10)} ${row.en.padEnd(16)} ${row.term} / ${row.also} — ${row.gloss.slice(0, 60)}`,
     )
+    if (!home) continue
+    const found = bestHome(row.also, row.slug)
+    console.log(
+      found
+        ? `      ↳ ${found.slug}(${found.meaning})  ${found.score.toFixed(1)}`
+        : '      ↳ 받을 자리가 안 보입니다 — 개념을 세워야 합니다',
+    )
+  }
   console.log('')
 }
