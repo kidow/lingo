@@ -20,6 +20,11 @@
  * **같은 축을 한 회차에 모은다.** 한 회차가 한 파일 안에서 끝나야 시트를 볼 때
  * 소품이 겹치는지 바로 보인다 — `pnpm props`가 잡는 것과 같은 자리다.
  *
+ * **회차마다 글 겹침을 함께 찍는다.** `pnpm echoes`를 따로 돌리는 일은
+ * 2026-09-23에 두 번 다 값을 했다 — 서른여섯 장에서 넷, 일흔둘에서 셋이 **이미
+ * 그린 그림의 복사본**이었다. 뽑고 나면 `pnpm twins`가 잡지만 그때는 이미 장을
+ * 버린 뒤다. 사람이 기억해야 하는 단계는 도구가 대신 찍는다.
+ *
  * **남이 만지는 파일은 건너뛴다.** 커밋 안 된 수정이 있는 파일의 개념을 뽑으면
  * `pnpm genimg`이 아예 멈춘다 (docs/concurrent-sessions.md).
  */
@@ -27,6 +32,7 @@ import { spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { dirtyFiles } from '../lib/busy.ts'
+import { type EchoRow, echoPairs } from '../lib/echo.ts'
 import type { Concept } from '../lib/types.ts'
 
 const CONTENT_DIR = 'content'
@@ -62,21 +68,32 @@ const dirty = dirtyFiles(
   spawnSync('git', ['diff', '--name-only', 'HEAD', '--', CONTENT_DIR], { encoding: 'utf8' }).stdout ?? '',
 )
 
-type Row = { file: string; slug: string; meaning: string; level: number }
+type Row = EchoRow & { level: number }
 const rows: Row[] = []
+/** 글 겹침은 **그린 것까지** 봐야 한다 — 맞은편이 이미 그려져 있는 자리가 잦다 */
+const every: EchoRow[] = []
 let busy = 0
 for (const name of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json')).sort()) {
   const file = name.replace('.json', '')
-  if (ONLY && file !== ONLY) continue
   const json = JSON.parse(readFileSync(join(CONTENT_DIR, name), 'utf8')) as { concepts?: Concept[] }
   for (const concept of json.concepts ?? []) {
     if (!concept.image_prompt) continue
-    if (existsSync(join(OUT_DIR, `${concept.slug}.webp`))) continue
+    const drawn = existsSync(join(OUT_DIR, `${concept.slug}.webp`))
+    every.push({ file, slug: concept.slug, meaning: concept.meaning_ko, prompt: concept.image_prompt, drawn })
+    if (drawn) continue
     if (dirty.has(file)) {
       busy += 1
       continue
     }
-    rows.push({ file, slug: concept.slug, meaning: concept.meaning_ko, level: level(concept) })
+    if (ONLY && file !== ONLY) continue
+    rows.push({
+      file,
+      slug: concept.slug,
+      meaning: concept.meaning_ko,
+      prompt: concept.image_prompt,
+      drawn: false,
+      level: level(concept),
+    })
   }
 }
 
@@ -94,6 +111,9 @@ console.log(
 )
 if (COUNT) process.exit(0)
 
+/** 문턱은 `pnpm echoes`와 같은 0.33 */
+const pairs = echoPairs(every, 0.33)
+
 for (let round = 0; round < ROUNDS; round += 1) {
   const slice = rows.slice(round * SIZE, (round + 1) * SIZE)
   if (slice.length === 0) break
@@ -102,6 +122,19 @@ for (let round = 0; round < ROUNDS; round += 1) {
   const files = [...new Set(slice.map((r) => r.file))].join('·')
   console.log(`\n──── ${round + 1}회차  ${files}  ${span}`)
   console.log(`  ${slice.map((r) => `${r.slug}(${r.meaning})`).join(' · ')}`)
+  const inRound = new Set(slice.map((r) => r.slug))
+  const echoes = pairs.filter(({ a, b }) => inRound.has(a.slug) || inRound.has(b.slug))
+  if (echoes.length > 0) {
+    console.log('\n  글이 겹칩니다 — 뽑기 전에 한쪽을 다른 장면으로 옮기세요')
+    for (const { j, a, b } of echoes) {
+      const mine = inRound.has(a.slug) ? a : b
+      const other = mine === a ? b : a
+      console.log(
+        `    ${j.toFixed(2)} ${mine.slug}(${mine.meaning}) ↔ ${other.slug}(${other.meaning})` +
+          `${other.drawn ? ' ·이미 그림' : ''}`,
+      )
+    }
+  }
   console.log(`\n  pnpm genimg ${slice.map((r) => r.slug).join(' ')}`)
 }
 console.log('\n시트를 눈으로 본 뒤 pnpm image <slug…>로 WebP를 만듭니다')

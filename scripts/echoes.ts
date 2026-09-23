@@ -26,8 +26,9 @@
  * 좁힌다. 흔한 낱말로만 된 쌍은 안 걸린다 — 위의 `key`·`keyhole` 쌍이 그렇다.
  * 이 그물이 0쌍이라고 해서 겹치는 개념이 없다는 뜻은 아니다.
  */
-import { readdirSync, readFileSync, existsSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
+import { type EchoRow, echoPairs } from '../lib/echo.ts'
 
 const CONTENT_DIR = 'content'
 const OUT_DIR = join('public', 'concepts')
@@ -37,20 +38,7 @@ const all = args.includes('--all')
 const minAt = args.indexOf('--min')
 const MIN = minAt >= 0 ? Number(args[minAt + 1]) : 0.33
 
-/** 어느 그림에나 나오는 말은 겹쳐도 뜻이 없다. */
-const STOP = new Set(
-  ('one a an the of on in at to with and or its it is are from side front above below seen no ' +
-    'letters people facial features person figure plain small large long short round flat set ' +
-    'lying standing left right two three four five same other each')
-    .split(' '),
-)
-
-/** 이보다 흔한 낱말은 후보를 고를 때 안 쓴다 — 벽·쟁반은 아무 데나 나온다. */
-const COMMON = 60
-/** 드문 낱말을 이만큼 같이 써야 후보가 된다. */
-const SHARED = 3
-
-type Row = { slug: string; meaning: string; file: string; prompt: string; drawn: boolean; t: Set<string> }
+type Row = EchoRow
 
 const rows: Row[] = []
 for (const name of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json')).sort()) {
@@ -59,54 +47,17 @@ for (const name of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json')).s
   for (const c of data.concepts ?? []) {
     const prompt: string = c.image_prompt ?? ''
     if (!prompt) continue
-    const t = new Set(
-      (prompt.toLowerCase().match(/[a-z]+/g) ?? []).filter((w) => w.length > 2 && !STOP.has(w)),
-    )
     rows.push({
       slug: c.slug,
       meaning: c.meaning_ko ?? '',
       file,
       prompt,
       drawn: existsSync(join(OUT_DIR, `${c.slug}.webp`)),
-      t,
     })
   }
 }
 
-const df = new Map<string, number>()
-for (const r of rows) for (const w of r.t) df.set(w, (df.get(w) ?? 0) + 1)
-
-const idx = new Map<string, number[]>()
-rows.forEach((r, i) => {
-  for (const w of r.t) {
-    if ((df.get(w) ?? 0) > COMMON) continue
-    const lst = idx.get(w)
-    if (lst) lst.push(i)
-    else idx.set(w, [i])
-  }
-})
-
-const shared = new Map<string, number>()
-for (const lst of idx.values()) {
-  if (lst.length < 2 || lst.length > COMMON) continue
-  for (let x = 0; x < lst.length; x += 1)
-    for (let y = x + 1; y < lst.length; y += 1)
-      shared.set(`${lst[x]}:${lst[y]}`, (shared.get(`${lst[x]}:${lst[y]}`) ?? 0) + 1)
-}
-
-const hits: { j: number; a: Row; b: Row }[] = []
-for (const [key, n] of shared) {
-  if (n < SHARED) continue
-  const [x, y] = key.split(':').map(Number)
-  const a = rows[x]
-  const b = rows[y]
-  if (!all && a.drawn && b.drawn) continue
-  let inter = 0
-  for (const w of a.t) if (b.t.has(w)) inter += 1
-  const j = inter / (a.t.size + b.t.size - inter)
-  if (j >= MIN) hits.push({ j, a, b })
-}
-hits.sort((p, q) => q.j - p.j)
+const hits = echoPairs(rows, MIN).filter(({ a, b }) => all || !a.drawn || !b.drawn)
 
 const label = (r: Row) => `${r.slug}(${r.meaning})${r.drawn ? '' : ' ·안그림'}`
 for (const { j, a, b } of hits)

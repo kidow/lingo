@@ -1589,7 +1589,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 |---|---|
 | `pnpm check` | `content/*.json` 전체 검증. CI에서도 돈다 |
 | `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
-| `pnpm queue` | 안 그린 개념을 **뽑을 순서대로 회차로 잘라** `pnpm genimg` 한 줄로 낸다. 시험 등급이 이른 것부터, 한 회차는 한 축 안에서. `--size`·`--rounds`·`--file`·`--count`. 남이 만지는 파일은 뺀다 |
+| `pnpm queue` | 안 그린 개념을 **뽑을 순서대로 회차로 잘라** `pnpm genimg` 한 줄로 낸다. 시험 등급이 이른 것부터, 한 회차는 한 축 안에서. **회차마다 `echoes`와 같은 그물로 글 겹침을 함께 찍는다** — 맞은편이 이미 그려져 있으면 «이미 그림». `--size`·`--rounds`·`--file`·`--count`. 남이 만지는 파일은 뺀다 |
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
 | `pnpm genimg <slug...>` | 개념 그림을 배치로 만들어 `.images/`에 둔다. 빠진 장·같은 장을 검사하고 걸리면 0이 아닌 값으로 끝난다. 안 나온 장은 한 번 더 돌린다. **이미 있는 그림을 다시 그리는데 그 개념의 파일을 남이 만지고 있으면 멈춘다**(`FORCE=1`로 덮는다) |
 | `pnpm sheet <slug...>` | 그림 여러 장을 `.images/sheet.png` 한 장으로 붙인다. `--out <경로>`로 자리를 바꾼다. 변환 전이면 `.images/<slug>.png`를 그대로 쓰므로 `pnpm image` 앞에서도 돈다. `pnpm genimg`이 끝에 자동으로 부른다 |
