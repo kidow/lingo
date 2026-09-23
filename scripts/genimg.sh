@@ -92,7 +92,10 @@ run_one() {
     mv "$ws/$slug.png" "$REPO/.images/$slug.png"
     print -r -- "  OK   $slug"
   else
-    print -r -- "  FAIL $slug — $(grep -o 'ERROR\[[^]]*\]=.\{0,120\}' "$ws/log" | head -1)"
+    # 오류 첫머리만 자르면 까닭이 잘린다 — 2026-09-24에 「failed with exit code 1」까지만
+    # 보여서 사흘치 사용 한도에 걸린 줄 몰랐다. 스킬이 남긴 "message"가 있으면 그걸 먼저 낸다
+    local why=$(grep -o '"message":"[^"]*"' "$ws/log" | head -1 | cut -d'"' -f4)
+    print -r -- "  FAIL $slug — ${why:-$(grep -o 'ERROR\[[^]]*\]=.\{0,120\}' "$ws/log" | head -1)}"
   fi
 }
 
