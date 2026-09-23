@@ -1647,3 +1647,44 @@ Codex 한도가 풀리면 바로 돌 수 있게 대기열을 만들었다. 「�
 
     pnpm queue --rounds 30      회차 · 글 겹침 · 소품 겹침이 한 번에 나온다
     (고친 뒤 커밋하고 다시 돌린다 — 커밋 안 된 파일은 회차에서 빠진다)
+
+## 영어 빈칸 틀 222개를 0으로 — 그리고 셈을 두 벌 짜면 어긋난다 (2026-09-23)
+
+`check`가 드러낸 3,378개 가운데 **영어 222개를 다 고쳤다.** 한쪽 예문을 고쳐
+쓰는 식이다 — 뜻은 그대로 두고 장면만 옮긴다.
+
+    The cart began to jolt.        → On the cobbles the cart began to jolt.
+    The dog is obedient.           → The dog is obedient to one voice only.
+    The plate is clean/dirty/cracked → 셋 가운데 둘을 다른 장면으로
+
+**두 번 걸렸다.** 표제어가 문장 첫머리에 오면 대문자라 `clozeAt`이 못 뚫는다
+(`Vinegar cuts the fat` → `A little vinegar cuts the fat`). 표현 카드는
+표제어가 문장 토막이라 **뒤를 갈아야** 한다(`Where is the restroom, please?`).
+
+**셈을 손으로 다시 짰다가 어긋났다.** `check`는 222라는데 내 셈은 **139**였다.
+`words.en`에 `examples`(복수)가 아니라 **`example`(단수)**로 든 옛 꼴 카드를
+빠뜨렸기 때문이다. 단수까지 세니 85가 더 나왔다.
+
+그래서 `pnpm check --frames [언어]`를 붙였다 — 파일·슬러그·틀을 그대로 찍는다.
+**세는 쪽과 고치는 쪽이 같은 셈을 쓰면 이 어긋남이 없다.**
+
+    ──── de 겹치는 빈칸 틀 340개
+      action     run · exercise · jog
+        «Ich will jeden Morgen ___.»
+
+남은 것: ja 762 · ru 570 · es 510 · fr 500 · zh 474 · de 340.
+
+## 31~40회차 120장 — 복사본 넷, 소품 여섯 (2026-09-23)
+
+| 안 그린 것 | 이미 그린 것 | 겹침 |
+|---|---|---:|
+| `an-even-result`(비김) | `to-an-even-draw`(비겨서) | **0.71** |
+| `clan`(문중) | `take-off-shoes`(신발을 벗어야 하나요) | 0.36 |
+| `in-the-night-hours`(밤에) | `charming-alluring`(매혹적인) | 0.33 |
+| `of-the-railway-line`(기찻길의) | `railway`(선로) | 0.33 |
+
+0.71은 오늘 가장 높은 값이다 — 「같은 높이로 선 산가지 두 무더기」가 글자 몇
+개만 달랐다. 발자국과 분필선으로 갈았다.
+
+**고칠 자리를 고르는 데 또 소품이 걸렸다.** 별·발자국·상인방은 비어 있었고
+신호기·문장(紋章)·저울·촛대는 임자가 있었다. 오늘만 **props를 열한 번** 돌렸다.
