@@ -229,6 +229,8 @@ const notes: string[] = []
  * `fall`은 `fall`(넘어지다)과 철자만 같다. 뜻이 같은 것만 사람이 뺀다.
  */
 const polysemy: string[] = []
+/** 주제나 category가 달라 한 풀에서 만나지 않는 쌍. 평소에는 접고 --also로 편다 */
+const polysemyFar: string[] = []
 /**
  * **아직 없는 결과물**은 갈래마다 따로 센다. 한 더미에 넣으면 열 줄만 찍히고
  * 접히는데, 그 안에 그림·발음이 사만 건이라 **다른 갈래는 영영 안 뜬다** —
@@ -270,6 +272,8 @@ const byFile = new Map<string, Concept[]>()
 /** 예문 둘의 한국어가 같은 자리. 아래에서 한 줄로 모아 낸다 */
 const sameKo: string[] = []
 const fileOf = new Map<string, string>()
+/** slug의 category. 곁말이 실제로 한 오답 풀에서 만나는지 볼 때 쓴다 */
+const categoryOf = new Map<string, string>()
 let total = 0
 
 /**
@@ -345,6 +349,7 @@ for (const file of files) {
     total += 1
     all.push(raw as Concept)
     if (slug) fileOf.set(slug, path)
+    if (slug && typeof c.category === 'string') categoryOf.set(slug, c.category)
 
     if (!slug) return fail(where, 'slug 누락')
     if (!SLUG_RE.test(slug)) fail(where, `slug가 ^[a-z0-9-]+$ 위반: "${slug}"`)
@@ -704,6 +709,13 @@ for (const [category, count] of Object.entries(perCategory)) {
  * 이 쌍들은 주제가 다르다 — `necktie`는 clothes의 명사, `tie`는 action의 동사다.
  *
  * 그래서 경고가 아니라 **참고**로 적는다. 지어낸 짝이 섞이면 여기서 보인다.
+ *
+ * **주제나 품사가 다르면 이름을 안 부른다.** 2026-09-23까지 아홉 줄이
+ * 회차마다 그대로 나왔다 — `sink`·`nail`·`park`·`tie`·`present`·`flat`·`palm`·
+ * `bank`·`fall`, 전부 영어 다의어라 손댈 것이 없는데도 매번 읽어야 했다.
+ * 늘 같은 아홉이면 열째가 새로 끼어도 눈에 안 띈다. `nearPool`이 오답을
+ * 뽑는 잣대(같은 주제 파일 · 같은 category)를 그대로 써서, **한 풀에서 만나는
+ * 쌍만** 줄로 적고 나머지는 숫자로 줄인다.
  */
 for (const [lang, table] of alsoTable) {
   const answers = new Map<string, string>()
@@ -714,8 +726,12 @@ for (const [lang, table] of alsoTable) {
   }
   for (const [form, slug] of table) {
     const owner = answers.get(form)
-    if (owner && owner !== slug)
+    if (!owner || owner === slug) continue
+    const samePool =
+      fileOf.get(slug) === fileOf.get(owner) && categoryOf.get(slug) === categoryOf.get(owner)
+    if (samePool)
       polysemy.push(`${slug} — ${lang}.also의 "${form}"은 ${owner}의 정답이기도 하다`)
+    else polysemyFar.push(`${slug} — ${lang}.also의 "${form}"은 ${owner}의 정답이기도 하다`)
   }
 }
 
@@ -807,6 +823,8 @@ for (const [lang, table] of alsoTable) {
  */
 const FRAMES = process.argv.includes('--frames')
 const FRAMES_LANG = FRAMES ? process.argv[process.argv.indexOf('--frames') + 1] : undefined
+/** `pnpm check --also`는 접어 둔 곁말까지 편다 */
+const ALSO = process.argv.includes('--also')
 const line = (n: number) => '─'.repeat(n)
 
 /**
@@ -890,10 +908,18 @@ console.log(
 )
 
 if (polysemy.length) {
-  console.log(`\n${line(4)} 곁말이 남의 정답인 자리 ${polysemy.length}건`)
+  console.log(`\n${line(4)} 곁말이 남의 정답인 자리 ${polysemy.length}건 — 한 오답 풀에서 만납니다`)
   for (const n of polysemy.slice(0, 20)) console.log(`  · ${n}`)
   if (polysemy.length > 20) console.log(`  … 외 ${polysemy.length - 20}건`)
   console.log('  뜻이 같으면 뺍니다. 표기만 같은 다의어는 그대로 둡니다')
+}
+if (polysemyFar.length && !ALSO)
+  console.log(
+    `\n곁말이 남의 정답인 자리 ${polysemyFar.length}건은 주제나 품사가 달라 접었습니다 — 보려면 pnpm check --also`,
+  )
+if (polysemyFar.length && ALSO) {
+  console.log(`\n${line(4)} 접어 둔 곁말 ${polysemyFar.length}건 — 한 오답 풀에서 만나지 않습니다`)
+  for (const n of polysemyFar) console.log(`  · ${n}`)
 }
 if (imageless.length || audioless.length) {
   console.log(`\n${line(4)} 아직 없는 결과물`)
