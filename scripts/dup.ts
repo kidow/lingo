@@ -30,6 +30,14 @@
  * 그래서 **content/ 전체**를 보고 **slug와 뜻을 함께** 본다. 셋 다 이 둘 중
  * 하나로 걸렸을 자리다.
  *
+ * **중국어 표기는 사전 뜻으로도 판다.** 표기가 안 겹치면 오래 «빈자리»라고만
+ * 했는데, 그 말은 「개념을 세워라」로 읽힌다. 2026-09-23에 곁말 넷을 개념으로
+ * 세우려다 **셋이 이미 서 있는 것**을 알았다 — `艺人`은 `performer`(무대 배우),
+ * `住房`은 `house`(집), `凶手`는 `a-hired-killer`(살수)였다. 셋 다 내가 적은
+ * 한국어(연예인·주택·살인자)로는 안 걸린다. 그래서 중국어 인자에는 **CC-CEDICT
+ * 뜻풀이를 다른 개념의 중국어 표제어·곁말 뜻풀이와 맞대** 가까운 셋을 찍는다.
+ * `pnpm also-audit --home`과 같은 눈금이고, 여기서는 **인자 하나**를 판다.
+ *
  * 인자는 섞어 적는다. `^[a-z0-9-]+$`이면 slug로 정확히 맞춰 보고, 아니면 뜻의
  * 조각으로 훑는다 — 뜻은 «산후 요가 있나요?»처럼 문장이라 부분으로 찾는 편이
  * 쓸모 있다.
@@ -38,6 +46,7 @@ import { spawnSync } from 'node:child_process'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { busyMark, busyNote, dirtyFiles } from '../lib/busy.ts'
+import { bag, loadDict } from '../lib/cedict.ts'
 import type { Concept } from '../lib/types.ts'
 
 const CONTENT_DIR = 'content'
@@ -59,6 +68,8 @@ type Row = { file: string; slug: string; meaning: string }
 type Spell = Row & { lang: string; also: boolean }
 
 const rows: Row[] = []
+/** `rows`와 자리를 맞춘 개념 원본 — 사전 뜻을 팔 때 중국어 표기가 필요하다 */
+const conceptOf: Concept[] = []
 const spells = new Map<string, Spell[]>()
 
 for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) {
@@ -66,6 +77,7 @@ for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) 
   for (const concept of json.concepts ?? []) {
     const row = { file: file.replace('.json', ''), slug: concept.slug, meaning: concept.meaning_ko }
     rows.push(row)
+    conceptOf.push(concept)
     for (const [lang, word] of Object.entries(concept.words ?? {})) {
       if (!word) continue
       for (const [term, also] of [[word.term, false], ...(word.also ?? []).map((a) => [a, true])] as [string, boolean][]) {
@@ -150,6 +162,66 @@ if (spelt.length) {
 if (near.length) {
   console.log('\n비슷한 것 — 같은 개념인지 보고 정합니다')
   for (const line of near) console.log(`  ${line}`)
+}
+/**
+ * **뜻이 닿는 개념.** 중국어 인자만 본다 — 사전이 중국어 표기로만 서 있다.
+ * 표기가 겹치지 않아도 같은 무리가 이미 서 있을 수 있다. 점수는 흔한 낱말을
+ * 깎은(idf) 뜻풀이 겹침이고, **판정이 아니라 후보**다.
+ */
+const CJK = /[\u4e00-\u9fff]/
+const cjk = argv.filter((a) => CJK.test(a))
+if (cjk.length > 0) {
+  let dict: Map<string, string[]> | null = null
+  try {
+    dict = loadDict()
+  } catch {
+    console.log('\n사전이 없습니다 — .cache/cedict.txt를 받아 두면 뜻으로도 팝니다')
+  }
+  if (dict) {
+    const homes = rows.map((r, i) => {
+      const words = new Set<string>()
+      const concept = conceptOf[i]
+      const spelt = new Set<string>()
+      for (const term of [concept.words?.zh?.term, ...(concept.words?.zh?.also ?? [])]) {
+        if (!term) continue
+        spelt.add(term)
+        for (const gloss of dict.get(term) ?? []) for (const word of bag(gloss)) words.add(word)
+      }
+      return { ...r, words, spelt }
+    })
+    const df = new Map<string, number>()
+    for (const one of homes) for (const word of one.words) df.set(word, (df.get(word) ?? 0) + 1)
+    const idf = (word: string) => Math.log(homes.length / (1 + (df.get(word) ?? 0)))
+    const lines: string[] = []
+    for (const arg of cjk) {
+      const pool = new Set<string>()
+      for (const gloss of dict.get(arg) ?? []) for (const word of bag(gloss)) pool.add(word)
+      if (pool.size === 0) {
+        lines.push(`${arg.padEnd(22)} 사전에 없는 표기입니다`)
+        continue
+      }
+      /**
+       * **그 낱말을 이미 쥔 개념은 뺀다.** 안 빼면 지금 얹혀 있는 앵커가
+       * 제 곁말의 뜻으로 1위에 올라 자리를 가린다 — `不服`이 그 앵커
+       * `dissatisfaction`(불만)을 63.8로 덮었다. 그 자리는 위의 «표기 겹침»이
+       * 이미 찍는다.
+       */
+      const scored = homes
+        .filter((one) => !one.spelt.has(arg))
+        .map((one) => {
+          let score = 0
+          for (const word of pool) if (one.words.has(word) && (df.get(word) ?? 0) <= 40) score += idf(word)
+          return { one, score }
+        })
+        .filter((x) => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3)
+      if (scored.length === 0) lines.push(`${arg.padEnd(22)} 닿는 개념이 없습니다`)
+      else lines.push(`${arg.padEnd(22)} ${scored.map((x) => `${show(x.one)} ${x.score.toFixed(1)}`).join(' · ')}`)
+    }
+    console.log('\n사전 뜻이 닿는 개념 — 표기가 안 겹쳐도 같은 무리일 수 있습니다')
+    for (const line of lines) console.log(`  ${line}`)
+  }
 }
 if (free.length) console.log(`\n빈자리\n  ${free.join(' ')}`)
 if (dirty.size > 0) console.log(busyNote(dirty))

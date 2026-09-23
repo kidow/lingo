@@ -36,46 +36,10 @@
  */
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
+import { bag, loadDict } from '../lib/cedict.ts'
 import type { Concept } from '../lib/types.ts'
 
 const CONTENT_DIR = 'content'
-const CEDICT = '.cache/cedict.txt'
-
-/** 간체 표제어 → 영어 뜻풀이들. 같은 표제어가 여러 줄이면 다 합친다 */
-function loadDict() {
-  const dict = new Map<string, string[]>()
-  for (const line of readFileSync(CEDICT, 'utf8').split('\n')) {
-    if (line.startsWith('#') || !line.trim()) continue
-    const space = line.indexOf(' ')
-    const bracket = line.indexOf(' [')
-    const slash = line.indexOf('] /')
-    if (space < 0 || bracket < 0 || slash < 0) continue
-    const simplified = line.slice(space + 1, bracket)
-    const glosses = line
-      .slice(slash + 3)
-      .replace(/\/$/, '')
-      .split('/')
-      .filter(Boolean)
-    const seen = dict.get(simplified)
-    if (seen) seen.push(...glosses)
-    else dict.set(simplified, glosses)
-  }
-  return dict
-}
-
-/** 뜻풀이를 낱말 집합으로. 괄호 주석과 to-부정사는 버린다 */
-const stem = (word: string) => word.replace(/(ing|ed|es|s)$/, '')
-function bag(text: string) {
-  const out = new Set<string>()
-  for (const word of text
-    .toLowerCase()
-    .replace(/\(.*?\)/g, ' ')
-    .replace(/[^a-z ]/g, ' ')
-    .split(/\s+/))
-    if (word.length > 2) out.add(stem(word))
-  return out
-}
-
 const argv = process.argv.slice(2)
 const list = argv.includes('--list')
 /**
