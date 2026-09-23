@@ -1486,3 +1486,50 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 
 **clothes · office · school · city 네 파일 다 0쌍.** 찾아보기의 ①~④가 모두
 닫혔다.
+
+---
+
+## 2026-09-23 — 글이 겹친 열아홉, 프롬프트만 고쳤다 (그림이 남았다)
+
+`pnpm echoes --all`로 **이미 그린 것까지** 훑었다. 488쌍이 걸렸는데 대부분은
+「한 벌」이다 — 숫자·달·요일·색·방위·나라 이름은 소품을 일부러 같이 쓴다
+([IMAGE_STYLE.md](../IMAGE_STYLE.md)). 그것을 걷어 내고 남은 **진짜 복사본**이
+아래 열아홉이다. 한쪽 프롬프트를 다른 장면으로 옮겼다.
+
+`pnpm twins`는 이 가운데 하나만 봤다 — `difference` ↔ `that-tells-them-apart`
+(구조 37 · 색 0.16). 나머지 열여덟은 **픽셀로는 멀고 뜻으로 겹친다.** 카드 둘이
+같은 말을 하는 자리라 twins가 영영 못 잡는 쪽이다.
+
+| 고친 개념 | 겹친 짝 | 겹침 | 새 장면 |
+| --- | --- | ---: | --- |
+| `difference`(차이) | `that-tells-them-apart`(가려내는) | 1.00 | 한쪽 모서리만 잘린 카드 둘 (열쇠 무리는 quality 쪽 한 벌이라 그대로 뒀다) |
+| `yoga`(요가) | `meditate`(명상하다) | 1.00 | 세워 둔 매트와 블록 둘·스트랩 |
+| `christmas`(성탄절) | `christmas-tree`(크리스마스트리) | 1.00 | 문에 건 화환과 그 아래 꾸러미 둘 |
+| `gardener`(정원사) | `water-plants`(물을 주다) | 0.88 | 연장 실은 외바퀴 수레와 장갑 |
+| `musician`(음악가) | `violinist`(바이올리니스트) | 0.83 | 펼친 악보대와 의자에 놓인 클라리넷 |
+| `withdrawal`(인출) | `withdraw-money`(인출하다) | 0.83 | 출금구 접시에 놓인 지폐 뭉치 |
+| `withdraw-cash`(현금을 뽑고 싶습니다) | `withdrawal`(인출) | 1.00 | 밤거리의 불 켜진 현금인출기 |
+| `vitality-spark`(생기) | `hope`(희망) | 0.75 | 비 맞고 잎을 드는 풀 |
+| `goal-net`(골네트) | `goal-post`(골대) | 0.75 | 그물 뒤에서 본 매듭과 기댄 공 |
+| `rocket`(로켓) | `rocket-launch`(발사) | 0.71 | 발사대에 선 로켓과 정비탑 |
+| `mouthfeel`(식감) | `crispy`(바삭한) | 0.71 | 베어 문 자리가 드러난 사과 |
+| `steamed`(찐) | `steaming-hot`(김이 모락모락) | 0.70 | 갈라 놓은 찐빵의 속살 |
+| `lecture-hall`(강의실) | `auditorium`(강당) | 0.70 | 긴 책상과 화이트보드·천장 빔 |
+| `desktop`(데스크톱) | `computer`(컴퓨터) | 0.67 | 책상 밑 본체와 뒤로 오른 케이블 |
+| `passing-years`(세월) | `tree-rings`(나이테) | 0.67 | 가운데가 패도록 닳은 돌 문턱 |
+| `wealth`(부) | `treasure`(보물) | 0.63 | 쌓은 금화와 불룩한 돈주머니 |
+| `telegraphy`(전신) | `telegraph`(전신기) | 0.60 | 지평선까지 이어진 전신주 줄 |
+| `basketball`(농구) | `backboard`(농구 백보드) | 0.60 | 3점 선 위에 놓인 공, 바로 위에서 |
+| `disinfectant`(소독약) | `iodine`(요오드팅크) | 0.60 | 분무기와 접어 둔 천 |
+
+**그림은 못 뽑았다.** `pnpm genimg`이 열한 장 연속으로 같은 자리에서 멈춘다.
+
+    FAIL difference — Codex subscription image generation failed with exit code 1
+
+그래서 지금 **프롬프트와 그림이 어긋나 있다** — 화면에는 옛 그림이 그대로
+나간다. 다음 회차에 이 열아홉을 다시 뽑고 구우면 된다.
+
+    pnpm genimg difference yoga christmas gardener musician withdrawal withdraw-cash vitality-spark goal-net rocket mouthfeel steamed lecture-hall desktop passing-years wealth telegraphy basketball disinfectant
+    pnpm image  difference yoga christmas gardener musician withdrawal withdraw-cash vitality-spark goal-net rocket mouthfeel steamed lecture-hall desktop passing-years wealth telegraphy basketball disinfectant
+
+시트를 눈으로 보는 일은 건너뛰지 않는다 — 뒤바뀐 장은 md5도 twins도 못 잡는다.
