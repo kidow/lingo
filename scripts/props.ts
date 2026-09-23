@@ -40,6 +40,7 @@ import { spawnSync } from 'node:child_process'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { busyMark, dirtyFiles } from '../lib/busy.ts'
+import { COMMON, propWords as words } from '../lib/prop-words.ts'
 import type { Concept } from '../lib/types.ts'
 
 const dirty = dirtyFiles(
@@ -59,29 +60,6 @@ const concepts: Concept[] = readdirSync('content')
 
 /** 그 개념이 든 파일이 지금 만져지고 있으면 표시를 붙인다 */
 const busy = (slug: string) => busyMark(fileOf.get(slug), dirty)
-
-/** 프롬프트를 낱말로 끊는다. 소품이 아닌 것은 여기서 떨어진다 */
-const STOP = new Set(
-  `a an the one two three four five and or of on in at to from with without into onto over under
-   above below beside behind between across along around near next by for its their his her
-   seen from front side above below back top bottom left right angle slight three-quarter
-   plain blank empty small large tall short long wide narrow round square flat thick thin
-   dark light pale soft hard bright muted no not facial features background surface simple
-   single lying standing sitting hanging resting holding placed set laid propped tucked
-   figure figures person people hand hands foot feet head body arm arms leg legs
-   this that these those it is are was were be been being as if then than so such
-   view close closed open opened upright downward upward forward back mid same other another
-   each every all both few many some more most less least own`
-    .split(/\s+/)
-    .filter(Boolean),
-)
-
-const words = (text: string) =>
-  text
-    .toLowerCase()
-    .replace(/[^a-z\s-]/g, ' ')
-    .split(/\s+/)
-    .filter((w) => w.length > 2 && !STOP.has(w))
 
 const args = process.argv.slice(2)
 const IN = args[0] === '--in'
@@ -150,7 +128,6 @@ const mine = new Set(sources.map((r) => r.slug))
  * `envelope`·`hook`·`slot`이 매번 걸렸다 — 회차마다 서넛씩 짚였는데 실제로
  * 그림을 고친 것은 하나둘이었다. 0.6%로 올려 틈 한가운데에 둔다.
  */
-const COMMON = 0.006
 
 /**
  * **짜임** — 소품이 아니라 «무엇이 무엇과 어떤 사이인가»다.
