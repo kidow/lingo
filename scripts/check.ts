@@ -726,13 +726,19 @@ for (const [lang, table] of alsoTable) {
  * 동음이의어는 뜻(meaning_ko)이 다르니 여기 안 걸린다.
  */
 {
+  /**
+   * **띄어쓰기는 지우고 맞춘다.** 「세배」(설 인사)와 「세 배」(삼 배)가 그
+   * 사이로 빠져나가 있었다 — 카드에 나란히 서면 띄어쓰기 하나로는 못 가른다.
+   * 「입맞추다」와 「입 맞추다」도 같은 자리였다.
+   */
   const sameMeaning = new Map<string, Concept[]>()
   for (const concept of all) {
-    const list = sameMeaning.get(concept.meaning_ko) ?? []
+    const key = concept.meaning_ko.replace(/\s+/g, '')
+    const list = sameMeaning.get(key) ?? []
     list.push(concept)
-    sameMeaning.set(concept.meaning_ko, list)
+    sameMeaning.set(key, list)
   }
-  for (const [meaning, group] of sameMeaning) {
+  for (const group of sameMeaning.values()) {
     if (group.length < 2) continue
     for (let i = 0; i < group.length; i += 1)
       for (let j = i + 1; j < group.length; j += 1) {
@@ -742,7 +748,7 @@ for (const [lang, table] of alsoTable) {
         )
         if (shared.length > 0) {
           warn(
-            `${group[i]!.slug} 와 ${group[j]!.slug} — 뜻이 둘 다 "${meaning}"인데 ${shared.join('·')} 표기까지 같습니다. 개념이 둘일 이유가 있는지 보세요 (§4)`,
+            `${group[i]!.slug} 와 ${group[j]!.slug} — 뜻이 둘 다 "${group[i]!.meaning_ko}"인데 ${shared.join('·')} 표기까지 같습니다. 개념이 둘일 이유가 있는지 보세요 (§4)`,
           )
           continue
         }
@@ -775,7 +781,7 @@ for (const [lang, table] of alsoTable) {
             group[i]!.category === group[j]!.category &&
             fileOf.get(group[i]!.slug) === fileOf.get(group[j]!.slug)
           warn(
-            `${group[i]!.slug} 와 ${group[j]!.slug} — 뜻줄이 둘 다 "${meaning}"입니다. 카드에 같은 한국어가 두 번 뜹니다 — 뜻줄을 갈라 적을지 보세요` +
+            `${group[i]!.slug} 와 ${group[j]!.slug} — 뜻줄이 "${group[i]!.meaning_ko}"와 "${group[j]!.meaning_ko}"입니다. 카드에 같은 한국어가 두 번 뜹니다 — 뜻줄을 갈라 적을지 보세요` +
               (near ? ' (같은 파일·같은 갈래라 오답으로 나란히 설 수 있습니다)' : ''),
           )
         }
