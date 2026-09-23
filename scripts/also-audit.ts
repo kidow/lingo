@@ -96,7 +96,7 @@ let total = 0
 let missing = 0
 
 /** 모든 개념의 중국어 표제어·곁말을 뜻 낱말로 펼친다 — `--home`이 쓴다 */
-type Home = { slug: string; meaning: string; words: Set<string> }
+type Home = { slug: string; meaning: string; words: Set<string>; term: string }
 const homes: Home[] = []
 if (home) {
   for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) {
@@ -107,24 +107,38 @@ if (home) {
       const words = new Set<string>()
       for (const one of [zh.term, ...(zh.also ?? [])])
         for (const gloss of dict.get(one) ?? []) for (const word of bag(gloss)) words.add(word)
-      if (words.size > 0) homes.push({ slug: concept.slug, meaning: concept.meaning_ko, words })
+      if (words.size > 0)
+        homes.push({ slug: concept.slug, meaning: concept.meaning_ko, words, term: zh.term })
     }
   }
 }
 const df = new Map<string, number>()
 for (const one of homes) for (const word of one.words) df.set(word, (df.get(word) ?? 0) + 1)
 const idf = (word: string) => Math.log(homes.length / (1 + (df.get(word) ?? 0)))
-function bestHome(also: string, self: string) {
+/**
+ * **위 셋을 찍는다.** 2026-09-23에 그날 옮긴 마흔셋으로 재 보니 맞는 집이
+ * 1위로 나온 것은 **열여덟(42%)**뿐이었고, **셋 안에 들면 스물셋(53%)**이었다.
+ * `得力`→`capable`(유능한)은 2위, `资质`→`temperament`(기질)는 3위였는데
+ * 1위만 찍던 때에는 둘 다 «틀린 도구»로 보였다.
+ *
+ * 나머지 열셋은 사전 뜻이 아예 안 겹친다 — `纱`(cotton yarn)와 `thread`(线,
+ * thread; string), `住房`(housing)과 `house`(房子, house; building)가 그렇다.
+ * 영어 표제어를 뜻에 섞어 보고 어간을 더 깎아 봐도 **숫자가 안 움직였다**
+ * (1위 18→17, 못 찍음 13→12). 그물을 더 조이는 대신 셋을 찍는다.
+ */
+function topHomes(also: string, self: string) {
   const pool = new Set<string>()
   for (const gloss of dict.get(also) ?? []) for (const word of bag(gloss)) pool.add(word)
-  let top: { slug: string; meaning: string; score: number } | null = null
-  for (const one of homes) {
-    if (one.slug === self) continue
-    let score = 0
-    for (const word of pool) if (one.words.has(word) && (df.get(word) ?? 0) <= 40) score += idf(word)
-    if (score > 0 && (!top || score > top.score)) top = { slug: one.slug, meaning: one.meaning, score }
-  }
-  return top
+  return homes
+    .filter((one) => one.slug !== self)
+    .map((one) => {
+      let score = 0
+      for (const word of pool) if (one.words.has(word) && (df.get(word) ?? 0) <= 40) score += idf(word)
+      return { slug: one.slug, meaning: one.meaning, score, own: one.term === also }
+    })
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
 }
 
 for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) {
@@ -202,10 +216,13 @@ if (!list) {
     // `foundation-body`(재단)의 ru «фонд»가 그랬다. 그래서 목록이 직접 찍는다.
     if (row.seven) console.log(`      ${row.seven}`)
     if (!home) continue
-    const found = bestHome(row.also, row.slug)
+    const found = topHomes(row.also, row.slug)
+    // **그 낱말이 남의 표제어면 옮길 자리가 아니다 — 빼야 한다.** `移民`이
+    // `emigration`(이민)에 붙어 있었는데 `one-come-to-live-here`(들어와 사는 이)의
+    // 표제어였다. 점수가 31.0으로 1위였던 이유가 「같은 낱말이라서」였다.
     console.log(
-      found
-        ? `      ↳ ${found.slug}(${found.meaning})  ${found.score.toFixed(1)}`
+      found.length > 0
+        ? `      ↳ ${found.map((x) => `${x.slug}(${x.meaning})${x.own ? ' «표제어»' : ''} ${x.score.toFixed(1)}`).join(' · ')}`
         : '      ↳ 받을 자리가 안 보입니다 — 개념을 세워야 합니다',
     )
   }
