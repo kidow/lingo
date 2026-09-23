@@ -834,10 +834,37 @@ for (const [lang, seen] of Object.entries(frames)) {
   )
   if (!FRAMES || (FRAMES_LANG && FRAMES_LANG !== lang)) continue
   console.log(`\n──── ${lang} 겹치는 빈칸 틀 ${clashes.length}개`)
+  const hit = new Set<string>()
   for (const [key, slugs] of clashes) {
-    const [file, , frame] = key.split('|')
+    const [file, category, frame] = key.split('|')
+    hit.add(`${file}|${category}`)
     console.log(`  ${file.replace('.json', '').padEnd(10)} ${[...slugs].join(' · ')}`)
     console.log(`    «${frame}»`)
+  }
+  /**
+   * **이미 쓰인 틀을 같이 찍는다.** 고칠 때 새 주어를 고르는데, 그 주어를 쓰던
+   * 다른 카드와 또 겹친다 — 2026-09-23에 독일어 340개가 **네 바퀴**(340→57→27→
+   * 8→0) 걸린 이유가 그것이다. `quality` 축의 형용사가 `Die Tasse ist ___` ·
+   * `Die Jacke ist ___`처럼 주어 열 남짓을 돌려 쓴다. 겹친 자리가 있는
+   * 파일·갈래의 틀을 다 찍어 두면 **피할 것을 한 번에 보고 고른다.**
+   */
+  for (const at of hit) {
+    const [file, category] = at.split('|')
+    /** 틀을 다 찍으면 천 줄이 넘는다. **빈칸 앞 토막(주어)**만 세어 찍는다 */
+    const head = new Map<string, number>()
+    for (const key of seen.keys()) {
+      if (!key.startsWith(`${file}|${category}|`)) continue
+      const front = key.split('|')[2].split('___')[0].trim()
+      if (front.length < 2) continue
+      head.set(front, (head.get(front) ?? 0) + 1)
+    }
+    const busy = [...head.entries()].filter(([, n]) => n > 1).sort((a, b) => b[1] - a[1])
+    if (busy.length === 0) continue
+    console.log(
+      `\n  ${file.replace('.json', '')}·${category} 에서 이미 돌려 쓰는 주어 ${busy.length}개 — 고칠 때 이 밖에서 고릅니다`,
+    )
+    for (const [front, n] of busy.slice(0, 20)) console.log(`    ${String(n).padStart(2)}번  «${front} ___»`)
+    if (busy.length > 20) console.log(`    … 외 ${busy.length - 20}개`)
   }
 }
 
