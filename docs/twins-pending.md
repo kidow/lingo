@@ -1526,8 +1526,14 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 
     FAIL difference — Codex subscription image generation failed with exit code 1
 
+원인은 **Codex 구독의 사용 한도**다(2026-09-24에 스킬을 직접 돌려 확인).
+`genimg.sh`는 오류를 한 줄로 자르는데, 그 뒤에 이렇게 적혀 있었다.
+
+    You've hit your usage limit. … try again at Sep 27th
+
 그래서 지금 **프롬프트와 그림이 어긋나 있다** — 화면에는 옛 그림이 그대로
-나간다. 다음 회차에 이 열아홉을 다시 뽑고 구우면 된다.
+나간다. **9월 27일 이후에** 이 열아홉을 다시 뽑고 구우면 된다. 안 그린
+1067장도 같은 한도에 걸려 있다.
 
     pnpm genimg difference yoga christmas gardener musician withdrawal withdraw-cash vitality-spark goal-net rocket mouthfeel steamed lecture-hall desktop passing-years wealth telegraphy basketball disinfectant
     pnpm image  difference yoga christmas gardener musician withdrawal withdraw-cash vitality-spark goal-net rocket mouthfeel steamed lecture-hall desktop passing-years wealth telegraphy basketball disinfectant
