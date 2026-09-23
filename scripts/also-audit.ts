@@ -126,7 +126,7 @@ const alone = argv.includes('--alone')
 const only = argv.find((a) => !a.startsWith('--'))
 
 const dict = loadDict()
-type Row = { file: string; slug: string; meaning: string; en: string; term: string; also: string; gloss: string; alone: boolean }
+type Row = { file: string; slug: string; meaning: string; en: string; term: string; also: string; gloss: string; alone: boolean; seven: string }
 const suspect: Row[] = []
 let total = 0
 let missing = 0
@@ -197,6 +197,10 @@ for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) 
         also,
         gloss: glosses.slice(0, 3).join('; '),
         alone: zh.also.length === 1,
+        seven: (['ja', 'es', 'fr', 'de', 'ru'] as const)
+          .map((lang) => concept.words[lang]?.term)
+          .filter(Boolean)
+          .join(' · '),
       })
     }
   }
@@ -228,6 +232,11 @@ if (!list) {
     console.log(
       `  ${row.alone ? '홀' : '  '} ${row.slug.padEnd(20)} ${row.meaning.padEnd(10)} ${row.en.padEnd(16)} ${row.term} / ${row.also} — ${row.gloss.slice(0, 56)}`,
     )
+    // **앵커가 무엇을 가르치는지는 일곱 칸을 다 봐야 안다.** 2026-09-23에 같은
+    // 자리에서 두 번 틀렸다 — `入口`(입구)는 `admission`(입장)의 es «entrada» ·
+    // fr «entrée» · ru «вход»가 이미 가르치고 있었고, `基金`(기금)은
+    // `foundation-body`(재단)의 ru «фонд»가 그랬다. 그래서 목록이 직접 찍는다.
+    if (row.seven) console.log(`      ${row.seven}`)
     if (!home) continue
     const found = bestHome(row.also, row.slug)
     console.log(
