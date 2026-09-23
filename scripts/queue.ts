@@ -1,0 +1,107 @@
+/**
+ * 그림 빚을 **뽑을 순서대로** 잘라 준다. (IMAGE_STYLE.md, spec.md §7)
+ *
+ *   pnpm queue              다음 회차 셋을 낸다 (한 회차 12장)
+ *   pnpm queue --size 20    회차 크기를 바꾼다
+ *   pnpm queue --rounds 8   더 많이 낸다
+ *   pnpm queue --file idea  한 축만
+ *   pnpm queue --count      남은 것만 센다
+ *
+ * **왜 목록이 아니라 회차인가.** 안 그린 것이 천 장을 넘는다. 「안 그린 것」을
+ * 다 찍으면 어디서 끊을지 매번 사람이 정해야 하고, 그 판단이 회차마다 다르면
+ * 시트를 눈으로 볼 때 무엇과 무엇을 견줘야 하는지도 흐려진다. 그래서 **바로
+ * 붙여 넣을 수 있는 `pnpm genimg` 한 줄**로 낸다.
+ *
+ * **순서는 등급이 정한다.** 시험 등급이 낮은 개념을 먼저 그린다 — 배우는
+ * 사람이 먼저 만나는 카드다. 일곱 언어 가운데 **가장 이른 등급**을 쓴다
+ * (HSK 1~7 · JLPT N5~N1 · CEFR A1~C2를 1~7로 편다). 등급이 하나도 없으면
+ * 맨 뒤로 보낸다.
+ *
+ * **같은 축을 한 회차에 모은다.** 한 회차가 한 파일 안에서 끝나야 시트를 볼 때
+ * 소품이 겹치는지 바로 보인다 — `pnpm props`가 잡는 것과 같은 자리다.
+ *
+ * **남이 만지는 파일은 건너뛴다.** 커밋 안 된 수정이 있는 파일의 개념을 뽑으면
+ * `pnpm genimg`이 아예 멈춘다 (docs/concurrent-sessions.md).
+ */
+import { spawnSync } from 'node:child_process'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
+import { join } from 'node:path'
+import { dirtyFiles } from '../lib/busy.ts'
+import type { Concept } from '../lib/types.ts'
+
+const CONTENT_DIR = 'content'
+const OUT_DIR = join('public', 'concepts')
+
+const argv = process.argv.slice(2)
+const num = (flag: string, fallback: number) => {
+  const at = argv.indexOf(flag)
+  return at >= 0 ? Number(argv[at + 1]) : fallback
+}
+const SIZE = num('--size', 12)
+const ROUNDS = num('--rounds', 3)
+const onlyAt = argv.indexOf('--file')
+const ONLY = onlyAt >= 0 ? argv[onlyAt + 1] : null
+const COUNT = argv.includes('--count')
+
+/** 시험 등급을 1~7 한 줄로 편다. 낮을수록 먼저 만나는 낱말 */
+const JLPT: Record<string, number> = { N5: 1, N4: 2, N3: 3, N2: 4, N1: 5 }
+const CEFR: Record<string, number> = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6 }
+function level(concept: Concept): number {
+  const seen: number[] = []
+  for (const word of Object.values(concept.words ?? {})) {
+    const attrs = (word as { attributes?: Record<string, string | number> }).attributes
+    if (!attrs) continue
+    if (typeof attrs.hsk === 'number') seen.push(attrs.hsk)
+    if (typeof attrs.jlpt === 'string' && JLPT[attrs.jlpt]) seen.push(JLPT[attrs.jlpt])
+    if (typeof attrs.cefr === 'string' && CEFR[attrs.cefr]) seen.push(CEFR[attrs.cefr])
+  }
+  return seen.length > 0 ? Math.min(...seen) : 9
+}
+
+const dirty = dirtyFiles(
+  spawnSync('git', ['diff', '--name-only', 'HEAD', '--', CONTENT_DIR], { encoding: 'utf8' }).stdout ?? '',
+)
+
+type Row = { file: string; slug: string; meaning: string; level: number }
+const rows: Row[] = []
+let busy = 0
+for (const name of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json')).sort()) {
+  const file = name.replace('.json', '')
+  if (ONLY && file !== ONLY) continue
+  const json = JSON.parse(readFileSync(join(CONTENT_DIR, name), 'utf8')) as { concepts?: Concept[] }
+  for (const concept of json.concepts ?? []) {
+    if (!concept.image_prompt) continue
+    if (existsSync(join(OUT_DIR, `${concept.slug}.webp`))) continue
+    if (dirty.has(file)) {
+      busy += 1
+      continue
+    }
+    rows.push({ file, slug: concept.slug, meaning: concept.meaning_ko, level: level(concept) })
+  }
+}
+
+/** 등급이 먼저, 그 다음 축 — 한 회차가 한 파일 안에서 끝나도록 */
+rows.sort((a, b) => a.level - b.level || a.file.localeCompare(b.file) || a.slug.localeCompare(b.slug))
+
+const byFile = new Map<string, number>()
+for (const row of rows) byFile.set(row.file, (byFile.get(row.file) ?? 0) + 1)
+
+console.log(
+  `\n안 그린 개념 ${rows.length}장${busy > 0 ? ` · 남이 만지는 파일이라 뺀 것 ${busy}장` : ''}`,
+)
+console.log(
+  `  ${[...byFile.entries()].sort((a, b) => b[1] - a[1]).map(([f, n]) => `${f} ${n}`).join(' · ')}`,
+)
+if (COUNT) process.exit(0)
+
+for (let round = 0; round < ROUNDS; round += 1) {
+  const slice = rows.slice(round * SIZE, (round + 1) * SIZE)
+  if (slice.length === 0) break
+  const levels = slice.map((r) => r.level)
+  const span = `등급 ${Math.min(...levels)}${Math.max(...levels) === Math.min(...levels) ? '' : `~${Math.max(...levels)}`}`
+  const files = [...new Set(slice.map((r) => r.file))].join('·')
+  console.log(`\n──── ${round + 1}회차  ${files}  ${span}`)
+  console.log(`  ${slice.map((r) => `${r.slug}(${r.meaning})`).join(' · ')}`)
+  console.log(`\n  pnpm genimg ${slice.map((r) => r.slug).join(' ')}`)
+}
+console.log('\n시트를 눈으로 본 뒤 pnpm image <slug…>로 WebP를 만듭니다')
