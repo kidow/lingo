@@ -290,6 +290,8 @@ const sameKo: string[] = []
 const exampleless = new Map<string, string[]>()
 /** 한 낱말의 예문 둘이 글자까지 같은 자리. `slug 언어` */
 const sameText: string[] = []
+/** 예문 한 줄이 활용형이라 빈칸을 못 뚫는 자리. 프랑스어 축약은 뺀다 */
+const inflected: string[] = []
 const fileOf = new Map<string, string>()
 /** slug의 category. 곁말이 실제로 한 오답 풀에서 만나는지 볼 때 쓴다 */
 const categoryOf = new Map<string, string>()
@@ -595,11 +597,23 @@ for (const file of files) {
                 : `${where} — ${lang}.${at}에 "${answer}"가 없습니다. 예문이 그 단어를 보여주지 않습니다${hint(snag.said)}`,
             )
           else if (!snag) clozable.add(`${slug}|${lang}`)
-          else
+          else {
             stuck.set(
               `${slug}|${lang}`,
               `${where} — ${lang}의 예문에서 "${answer}"를 뚫을 자리가 없습니다${hint(snag.said)}`,
             )
+            /*
+             * **축약 말고 못 뚫는 줄은 하나씩 센다.** 위 `stuck`은 예문이 **전부**
+             * 막혔을 때만 말한다 — 한 줄만 막히면 그 낱말은 문맥 카드가 서니까.
+             * 그런데 2026-09-24에 그 「한 줄만 막힌」 자리가 191이었다(독일어
+             * 125 · 프랑스어 44 · 러시아어 12 · 스페인어 10). `ein gelähmtes Bein`·
+             * `с тихой решимостью`처럼 둘째 줄이 활용형이라 그 차례에는 매번 같은
+             * 첫 줄이 나왔다. 프랑스어 축약(`l'eau`)은 spec이 한 줄 허용하므로 뺀다.
+             */
+            const at = example.text.indexOf(answer)
+            const elided = lang === 'fr' && at > 0 && /['\u2019]/.test(example.text[at - 1] ?? '')
+            if (!elided) inflected.push(`${slug} ${lang}.examples[${i}]`)
+          }
         }
         /*
          * **독일어 동사 괄호.** 2026-09-20까지는 `pnpm ex`만 봤다 — `content/`에
@@ -1408,6 +1422,10 @@ const TRIVIA_SUSPECT_BASELINE: Record<Language, number> = {
  * 셈은 각 줄에 언어가 적히므로 `grep`이 대신한다.
  */
 for (const [key, message] of stuck) if (!clozable.has(key)) warn(message)
+if (inflected.length)
+  warn(
+    `예문 한 줄이 사전형이 아니라 빈칸을 못 뚫는 자리 ${inflected.length}개 (${inflected.slice(0, 5).join(' · ')}${inflected.length > 5 ? ' …' : ''}) — 그 차례에는 다른 예문만 나옵니다`,
+  )
 
 /**
  * 가나 카드. (docs/kana-tab-design.md §7)
