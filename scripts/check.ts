@@ -803,13 +803,29 @@ if (sameKo.length > 0)
   )
 
 // 겹치는 빈칸 틀. 같은 주제·같은 품사에서 두 낱말이 같은 문장을 쓰면 답이 둘이다
+/**
+ * **`pnpm check --frames [언어]`는 겹치는 틀을 다 찍는다.**
+ *
+ * 세는 것만으로는 일감이 안 된다 — 2026-09-23에 영어 222개를 고치려고 같은
+ * 셈을 손으로 다시 짰고, 그 손 셈이 옛 꼴(`example` 단수)을 빠뜨려 **139개만**
+ * 나왔다. check가 이미 맞게 세고 있었는데 목록을 안 내주니 다시 짠 것이다.
+ * 목록을 내주면 고치는 쪽이 세는 쪽과 어긋날 일이 없다.
+ */
+const FRAMES = process.argv.includes('--frames')
+const FRAMES_LANG = FRAMES ? process.argv[process.argv.indexOf('--frames') + 1] : undefined
 for (const [lang, seen] of Object.entries(frames)) {
-  const clashes = [...seen.values()].filter((slugs) => slugs.size > 1)
+  const clashes = [...seen.entries()].filter(([, slugs]) => slugs.size > 1)
   if (clashes.length === 0) continue
-  const sample = [...seen.entries()].find(([, slugs]) => slugs.size > 1)
   notes.push(
-    `${lang} — 겹치는 빈칸 틀 ${clashes.length}개 (예: ${[...(sample?.[1] ?? [])].join(', ')})`,
+    `${lang} — 겹치는 빈칸 틀 ${clashes.length}개 (예: ${[...(clashes[0]?.[1] ?? [])].join(', ')})`,
   )
+  if (!FRAMES || (FRAMES_LANG && FRAMES_LANG !== lang)) continue
+  console.log(`\n──── ${lang} 겹치는 빈칸 틀 ${clashes.length}개`)
+  for (const [key, slugs] of clashes) {
+    const [file, , frame] = key.split('|')
+    console.log(`  ${file.replace('.json', '').padEnd(10)} ${[...slugs].join(' · ')}`)
+    console.log(`    «${frame}»`)
+  }
 }
 
 const line = (n: number) => '─'.repeat(n)
