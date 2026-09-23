@@ -25,6 +25,21 @@ import type { Concept, Language, Trivia } from '../lib/types.ts'
 const CURLY_APOSTROPHE = '\u2019'
 
 /**
+ * **아포스트로피가 빠진 프랑스어 축약.** `l eau`·`c est`·`qu il`·`n y a`.
+ *
+ * 2026-09-24에 표제어 503 · 예문 1692자리가 이 꼴이었다 — `c est`가 표제어라
+ * 퀴즈가 틀린 철자를 정답으로 냈고, 표제어가 멀쩡한 낱말도 예문만 깨진 자리가
+ * 661이었다. 굽은 아포스트로피와 달리 **글자가 아예 없어서** 눈에 안 띄었다.
+ * 붙어 버린 `Cest`·`dentre`도 있었다.
+ *
+ * 모음 앞에 한 글자 관사·대명사가 **띄어서** 서는 일은 프랑스어에 없다.
+ */
+const FR_BARE_ELISION =
+  /(^|[\s«("\u00a0])(?:[ldjnmstc]|qu|jusqu|lorsqu|puisqu|presqu|quoiqu|quelqu) (?=[aeiouyéèêëàâäîïôöûüœæh])|\baujourd hui\b|\b[Cc]est\b|\b[Dd]entre\b/i
+const bareElision = (lang: string, text: unknown) =>
+  lang === 'fr' && typeof text === 'string' && FR_BARE_ELISION.test(text)
+
+/**
  * 언어마다 **들어와서는 안 되는 글자**. 표제어를 손으로 적다 보면 다른 글자가
  * 섞여 든다 — 러시아어 표제어 하나에 한자 `管`이 붙어 나간 적이 있다
  * (`Можно обратиться в管 управляющую контору`).
@@ -398,6 +413,8 @@ for (const file of files) {
       // 다른 글자를 쓰게 되어 문맥 카드가 낱말을 못 찾는다 (`aujourd'hui`)
       if (typeof word.term === 'string' && word.term.includes(CURLY_APOSTROPHE))
         fail(where, `${lang}.term에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
+      if (bareElision(lang, word.term))
+        fail(where, `fr.term "${word.term}"에 축약의 아포스트로피가 빠졌습니다 — l eau가 아니라 l'eau`)
       // 다른 문자 체계가 섞여 들었는지 본다. 예문 대조보다 먼저 원인을 말해 준다
       if (typeof word.term === 'string')
         for (const stray of strayScripts(lang, word.term))
@@ -597,6 +614,8 @@ for (const file of files) {
         }
         if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
           fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
+        if (bareElision(lang, example.text))
+          fail(where, `fr.${at}에 축약의 아포스트로피가 빠졌습니다 — "${example.text}"`)
         if (typeof example.text === 'string')
           for (const stray of strayScripts(lang, example.text))
             fail(where, `${lang}.${at}에 ${stray}${subject(stray)} 섞여 있습니다 — "${example.text}"`)
