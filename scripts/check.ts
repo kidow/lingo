@@ -273,6 +273,8 @@ const byFile = new Map<string, Concept[]>()
 const sameKo: string[] = []
 /** 예문이 한 줄도 없는 낱말. slug → 언어들. 아래에서 개념마다 한 줄로 낸다 */
 const exampleless = new Map<string, string[]>()
+/** 한 낱말의 예문 둘이 글자까지 같은 자리. `slug 언어` */
+const sameText: string[] = []
 const fileOf = new Map<string, string>()
 /** slug의 category. 곁말이 실제로 한 오답 풀에서 만나는지 볼 때 쓴다 */
 const categoryOf = new Map<string, string>()
@@ -504,6 +506,18 @@ for (const file of files) {
        */
       if (many?.length === 2 && many[0]?.ko === many[1]?.ko && many[0]?.text !== many[1]?.text)
         sameKo.push(`${slug} ${lang}`)
+      /*
+       * **예문 둘이 글자까지 같은 자리.** 위 검사는 문장이 **다를 때만** 본다.
+       * 빈칸 틀 검사도 못 본다 — 같은 개념의 같은 틀은 키가 같아 하나로 접힌다.
+       *
+       * 2026-09-23에 289자리였다. 232는 그 전부터 있었고(러시아어 204),
+       * 76은 같은 날 빈칸 틀을 고치면서 생겼다 — 겹치는 예문 하나를 갈면서 그
+       * 개념의 **다른 예문과 똑같은 문장**을 적었다. 일본어에서는 한 회차에
+       * 107자리가 났다. 문맥 카드가 두 예문을 번갈아 쓰는데 둘째 차례에도 같은
+       * 문장이 나오고, 소개 카드의 예문 줄도 같은 말을 두 번 한다.
+       */
+      if (many && new Set(many.map((example) => example?.text)).size < many.length)
+        sameText.push(`${slug} ${lang}`)
       if (single && many?.length) warn(`${where} — ${lang}에 example과 examples가 함께 있습니다. examples만 씁니다`)
       const sentences = many?.length ? many : single ? [single] : []
       /*
@@ -855,6 +869,16 @@ for (const [slug, langs] of exampleless)
   warn(
     `${fileOf.get(slug) ?? ''} [${slug}] — 예문이 한 줄도 없습니다 (${langs.join(' · ')}). 소개 카드에 예문이 안 뜨고 문맥 카드가 안 만들어집니다`,
   )
+
+if (sameText.length > 0) {
+  warn(
+    `예문 둘이 글자까지 같은 자리 ${sameText.length}개 (${sameText.slice(0, 5).join(' · ')}${sameText.length > 5 ? ' …' : ''}) — 겹치는 예문을 고치면서 다른 예문과 같은 문장을 적었는지 보세요`,
+  )
+  if (FRAMES) {
+    console.log(`\n${line(4)} 글자까지 같은 예문 ${sameText.length}개`)
+    for (const one of sameText) console.log(`  · ${one}`)
+  }
+}
 
 if (sameKo.length > 0) {
   warn(
