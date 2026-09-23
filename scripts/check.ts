@@ -229,6 +229,14 @@ const notes: string[] = []
  * `fall`은 `fall`(넘어지다)과 철자만 같다. 뜻이 같은 것만 사람이 뺀다.
  */
 const polysemy: string[] = []
+/**
+ * **아직 없는 결과물**은 갈래마다 따로 센다. 한 더미에 넣으면 열 줄만 찍히고
+ * 접히는데, 그 안에 그림·발음이 사만 건이라 **다른 갈래는 영영 안 뜬다** —
+ * 「곁말이 남의 정답」이 그렇게 묻혀 있었다(2026-09-23). 그림과 발음은 세기만
+ * 하고, 그 밖의 메모는 다 찍는다.
+ */
+const imageless: string[] = []
+const audioless: string[] = []
 
 const fail = (where: string, message: string) => errors.push(`${where} — ${message}`)
 const warn = (message: string) => warnings.push(message)
@@ -585,11 +593,11 @@ for (const file of files) {
 
     // 결과물 유무는 실패가 아니다. 이미지가 없으면 플레이스홀더로 나간다
     const webpPath = join(PUBLIC_DIR, 'concepts', `${slug}.webp`)
-    if (!existsSync(webpPath)) notes.push(`${slug} — 이미지 없음 (플레이스홀더로 출제됩니다)`)
+    if (!existsSync(webpPath)) imageless.push(slug)
     else stale(slug, webpPath)
     for (const lang of Object.keys(words ?? {})) {
       if (!existsSync(join(PUBLIC_DIR, 'audio', lang, `${slug}.mp3`)))
-        notes.push(`${slug} — ${lang} 발음 없음 (버튼이 비활성입니다)`)
+        audioless.push(`${slug} ${lang}`)
     }
   })
 }
@@ -832,10 +840,17 @@ if (polysemy.length) {
   if (polysemy.length > 20) console.log(`  … 외 ${polysemy.length - 20}건`)
   console.log('  뜻이 같으면 뺍니다. 표기만 같은 다의어는 그대로 둡니다')
 }
+if (imageless.length || audioless.length) {
+  console.log(`\n${line(4)} 아직 없는 결과물`)
+  if (imageless.length)
+    console.log(`  그림 ${imageless.length}장 — 뽑을 차례는 pnpm queue가 냅니다 (플레이스홀더로 출제됩니다)`)
+  if (audioless.length)
+    console.log(`  발음 ${audioless.length}건 — AUDIO.md (버튼이 비활성입니다)`)
+}
 if (notes.length) {
-  console.log(`\n${line(4)} 아직 없는 결과물 ${notes.length}건`)
-  for (const n of notes.slice(0, 10)) console.log(`  · ${n}`)
-  if (notes.length > 10) console.log(`  … 외 ${notes.length - 10}건. 전체는 pnpm dev → /debug`)
+  console.log(`\n${line(4)} 그 밖의 메모 ${notes.length}건`)
+  for (const n of notes.slice(0, 20)) console.log(`  · ${n}`)
+  if (notes.length > 20) console.log(`  … 외 ${notes.length - 20}건. 전체는 pnpm dev → /debug`)
 }
 /**
  * 듣기 카드는 발음이 없는 자리를 `lib/audio-have.ts`에서 읽는다. 정적
