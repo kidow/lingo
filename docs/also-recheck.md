@@ -1688,3 +1688,42 @@ Codex 한도가 풀리면 바로 돌 수 있게 대기열을 만들었다. 「�
 
 **고칠 자리를 고르는 데 또 소품이 걸렸다.** 별·발자국·상인방은 비어 있었고
 신호기·문장(紋章)·저울·촛대는 임자가 있었다. 오늘만 **props를 열한 번** 돌렸다.
+
+## 독일어 340을 0으로 — 네 번 돌았다 (2026-09-23)
+
+영어 222는 한 번에 0이 됐는데 독일어는 **340 → 57 → 27 → 8 → 0**으로 네 번
+걸렸다. 이유가 분명하다. `quality` 축의 형용사 카드가 **주어를 열 남짓으로
+돌려 쓴다** — `Die Tasse ist ___` · `Die Jacke ist ___` · `Der Stoff ist ___` ·
+`Der Teller ist ___`. 한 자리를 고쳐 다른 주어로 옮기면 **그 주어를 쓰던 다른
+형용사와 새로 겹친다.**
+
+    1차: Der Bleistift ist spitz  →  Der Pfahl ist spitz
+    2차: Der Pfahl ist spitz      →  Die Nadel ist spitz   (pointed·short가 또 겹침)
+
+**그래서 주어를 고르는 일이 일감의 절반이었다.** 이미 쓰인 주어를 피하려고
+`--frames de`를 네 번 돌렸다. 세는 도구가 있으니 가능한 일이다 — 손으로 셌으면
+첫 회차에서 멈췄을 것이다.
+
+**한국어 줄이 같이 어긋난다.** 독일어만 갈고 한국어를 그대로 둔 줄이 넷 생겼다
+(`ankle`·`computer`·`chained`·`a-drag-on-them`). `check`는 세고 있었지만 다섯
+개만 찍고 접었다 — `--frames`에서 전부 찍게 했다.
+
+**독일어에서 한 가지를 더 배웠다.** 표제어가 **이어져 있어야** 한다.
+`ihnen zur Last fallen`을 자연스러운 어순(`ihnen nicht länger zur Last fallen`)
+으로 쓰면 낱말이 갈라져 `clozeAt`이 못 뚫는다. `Er fürchtete, ihnen zur Last
+fallen zu müssen.`처럼 **덩어리를 끝에 두는** 꼴로 적어야 한다.
+
+## 41~50회차 120장 — 복사본 셋, 한 벌은 그대로 (2026-09-23)
+
+| 안 그린 것 | 맞은편 | 겹침 |
+|---|---|---:|
+| `not-enough-of-it`(모자라는) | `liter`(리터) | 0.63 |
+| `piling-up-as-it-goes`(쌓여 가는) | `bit-by-bit`(조금씩) | 0.56 |
+| `tied-to-the-season`(철을 타는) | `farm-produce`(농산물) | 0.33 |
+
+계량컵·동전 더미·좌판 상자를 각각 **달걀 구멍 · 눈더미 · 좌판 자국**으로 갈았다.
+
+**`denominator`(분모)와 `numerator`(분자)는 소품이 겹치지만 둔다.** 가로줄과
+점은 둘이 **한 벌로 나눠 쓰는 틀**이고, 위아래 점의 수로 갈린다 —
+[IMAGE_STYLE.md](../IMAGE_STYLE.md)가 「한 벌은 소품을 나눠 쓴다」고 적어 둔
+자리다.
