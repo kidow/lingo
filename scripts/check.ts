@@ -271,6 +271,8 @@ const byFile = new Map<string, Concept[]>()
 /** slug가 어느 파일에 있는지. 같은 파일 안의 뜻줄 중복을 볼 때 쓴다 */
 /** 예문 둘의 한국어가 같은 자리. 아래에서 한 줄로 모아 낸다 */
 const sameKo: string[] = []
+/** 예문이 한 줄도 없는 낱말. slug → 언어들. 아래에서 개념마다 한 줄로 낸다 */
+const exampleless = new Map<string, string[]>()
 const fileOf = new Map<string, string>()
 /** slug의 category. 곁말이 실제로 한 오답 풀에서 만나는지 볼 때 쓴다 */
 const categoryOf = new Map<string, string>()
@@ -504,6 +506,18 @@ for (const file of files) {
         sameKo.push(`${slug} ${lang}`)
       if (single && many?.length) warn(`${where} — ${lang}에 example과 examples가 함께 있습니다. examples만 씁니다`)
       const sentences = many?.length ? many : single ? [single] : []
+      /*
+       * **예문이 아예 없는 낱말.** 아래 검사는 전부 **있는 예문**만 본다 —
+       * 없으면 `sentences`가 빈 배열이라 한 줄도 안 돌고 조용히 지나간다.
+       * 앱도 조용하다: 소개 카드는 예문 줄을 지우고, 빈칸 차례는 `canCloze`가
+       * false라 다른 카드로 대신 나간다.
+       *
+       * 2026-09-17에 수 스물하나(13~19 · 30~90 · 200~900)가 일곱 언어 모두
+       * 예문 없이 들어와 엿새를 갔다. 「이웃 twenty에 examples 키가 없다」를
+       * 따라 한 것인데, twenty는 영어만 옛 꼴 `example`(단수)이었다. 찾은 것은
+       * /debug의 예문 칸(70664/70790)이었다 — 여기서 짚었으면 그날 걸렸다.
+       */
+      if (sentences.length === 0) exampleless.set(slug, [...(exampleless.get(slug) ?? []), lang])
       sentences.forEach((example, i) => {
         const at = sentences.length > 1 ? `examples[${i}]` : 'example'
         if (!example.text || !example.ko) fail(where, `${lang}.${at}은 text와 ko가 모두 필요합니다`)
@@ -833,6 +847,15 @@ const line = (n: number) => '─'.repeat(n)
  * 한국어를 그대로 둔 줄이 넷 생겼고, 그 넷은 `pnpm batch`를 그 슬러그에 돌린
  * 자리에서만 보였다.
  */
+/**
+ * 예문 없는 낱말은 **개념마다 한 줄**로 낸다. 언어마다 한 줄씩이면 한 개념이
+ * 일곱 줄을 먹어, 스물하나가 들어온 날처럼 백마흔일곱 줄이 쏟아진다.
+ */
+for (const [slug, langs] of exampleless)
+  warn(
+    `${fileOf.get(slug) ?? ''} [${slug}] — 예문이 한 줄도 없습니다 (${langs.join(' · ')}). 소개 카드에 예문이 안 뜨고 문맥 카드가 안 만들어집니다`,
+  )
+
 if (sameKo.length > 0) {
   warn(
     `예문 둘이 문장은 다른데 한국어 줄이 같은 자리 ${sameKo.length}개 (${sameKo.slice(0, 5).join(' · ')}${sameKo.length > 5 ? ' …' : ''}) — 둘째 줄을 쓰면서 첫 줄의 한국어를 그대로 뒀는지 보세요`,
