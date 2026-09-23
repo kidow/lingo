@@ -797,12 +797,6 @@ for (const [lang, table] of alsoTable) {
   }
 }
 
-if (sameKo.length > 0)
-  warn(
-    `예문 둘이 문장은 다른데 한국어 줄이 같은 자리 ${sameKo.length}개 (${sameKo.slice(0, 5).join(' · ')}${sameKo.length > 5 ? ' …' : ''}) — 둘째 줄을 쓰면서 첫 줄의 한국어를 그대로 뒀는지 보세요`,
-  )
-
-// 겹치는 빈칸 틀. 같은 주제·같은 품사에서 두 낱말이 같은 문장을 쓰면 답이 둘이다
 /**
  * **`pnpm check --frames [언어]`는 겹치는 틀을 다 찍는다.**
  *
@@ -813,6 +807,25 @@ if (sameKo.length > 0)
  */
 const FRAMES = process.argv.includes('--frames')
 const FRAMES_LANG = FRAMES ? process.argv[process.argv.indexOf('--frames') + 1] : undefined
+const line = (n: number) => '─'.repeat(n)
+
+/**
+ * **`--frames`를 주면 이 자리도 다 찍는다.** 빈칸 틀을 고치러 예문을 손볼 때
+ * 같이 걸리는 자리라서다 — 2026-09-23에 독일어 340개를 고치면서 영어를 갈고
+ * 한국어를 그대로 둔 줄이 넷 생겼고, 그 넷은 `pnpm batch`를 그 슬러그에 돌린
+ * 자리에서만 보였다.
+ */
+if (sameKo.length > 0) {
+  warn(
+    `예문 둘이 문장은 다른데 한국어 줄이 같은 자리 ${sameKo.length}개 (${sameKo.slice(0, 5).join(' · ')}${sameKo.length > 5 ? ' …' : ''}) — 둘째 줄을 쓰면서 첫 줄의 한국어를 그대로 뒀는지 보세요`,
+  )
+  if (FRAMES) {
+    console.log(`\n${line(4)} 한국어 줄이 같은 예문 ${sameKo.length}개`)
+    for (const one of sameKo) console.log(`  · ${one}`)
+  }
+}
+
+// 겹치는 빈칸 틀. 같은 주제·같은 품사에서 두 낱말이 같은 문장을 쓰면 답이 둘이다
 for (const [lang, seen] of Object.entries(frames)) {
   const clashes = [...seen.entries()].filter(([, slugs]) => slugs.size > 1)
   if (clashes.length === 0) continue
@@ -828,7 +841,6 @@ for (const [lang, seen] of Object.entries(frames)) {
   }
 }
 
-const line = (n: number) => '─'.repeat(n)
 
 
 console.log(`\n개념 ${total}개 · 파일 ${files.length}개`)

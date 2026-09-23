@@ -1587,7 +1587,7 @@ TOEIC Service List(아래 표)가 그 역할을 한다 — 목록을 베껴 콘�
 
 | 명령 | 하는 일 |
 |---|---|
-| `pnpm check` | `content/*.json` 전체 검증. CI에서도 돈다. `--frames [언어]`로 **겹치는 빈칸 틀**을 다 찍는다 — 정답만 뚫으면 문장이 같아지는 자리라 문맥 카드에서 답이 둘이 된다 |
+| `pnpm check` | `content/*.json` 전체 검증. CI에서도 돈다. `--frames [언어]`로 **겹치는 빈칸 틀**을 다 찍는다 — 정답만 뚫으면 문장이 같아지는 자리라 문맥 카드에서 답이 둘이 된다. **한국어 줄이 같은 예문**도 같이 찍는다(예문을 고칠 때 한 쌍으로 걸리는 자리) |
 | `pnpm prompt <slug>` | `STYLE_PROMPT + image_prompt` 최종 문구를 출력 |
 | `pnpm queue` | 안 그린 개념을 **뽑을 순서대로 회차로 잘라** `pnpm genimg` 한 줄로 낸다. 시험 등급이 이른 것부터, 한 회차는 한 축 안에서. **회차마다 `echoes`와 같은 그물로 글 겹침을 함께 찍는다** — 맞은편이 이미 그려져 있으면 «이미 그림». `--size`·`--rounds`·`--file`·`--count`. 남이 만지는 파일은 뺀다 |
 | `pnpm image <slug>` | `.images/{slug}.png` → 512×512 WebP q80 → `public/concepts/{slug}.webp` |
