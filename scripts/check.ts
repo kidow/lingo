@@ -219,6 +219,16 @@ const NO_PORTRAIT_RE = /(no portrait|blank|closed|silhouette|shaped gap|no reada
 const errors: string[] = []
 const warnings: string[] = []
 const notes: string[] = []
+/**
+ * **곁말이 남의 정답인 자리.** 아래 `notes`와 갈라 둔다 — 그 더미는 발음·그림이
+ * 아직 없다는 줄이 사만을 넘어서, 섞어 두면 열 줄만 찍히는 자리에 영영 안 뜬다.
+ * 2026-09-23에 중국어 예순일곱과 러시아어 열둘이 그렇게 묻혀 있었고, 따로 센
+ * 뒤에야 드러났다.
+ *
+ * **막지는 않는다.** 표기가 같아도 뜻이 다르면 맞는 곁말이다 — `autumn`의
+ * `fall`은 `fall`(넘어지다)과 철자만 같다. 뜻이 같은 것만 사람이 뺀다.
+ */
+const polysemy: string[] = []
 
 const fail = (where: string, message: string) => errors.push(`${where} — ${message}`)
 const warn = (message: string) => warnings.push(message)
@@ -697,7 +707,7 @@ for (const [lang, table] of alsoTable) {
   for (const [form, slug] of table) {
     const owner = answers.get(form)
     if (owner && owner !== slug)
-      notes.push(`${slug} — ${lang}.also의 "${form}"은 ${owner}의 정답이기도 하다 (다의어)`)
+      polysemy.push(`${slug} — ${lang}.also의 "${form}"은 ${owner}의 정답이기도 하다`)
   }
 }
 
@@ -810,6 +820,12 @@ console.log(
     }).join(''),
 )
 
+if (polysemy.length) {
+  console.log(`\n${line(4)} 곁말이 남의 정답인 자리 ${polysemy.length}건`)
+  for (const n of polysemy.slice(0, 20)) console.log(`  · ${n}`)
+  if (polysemy.length > 20) console.log(`  … 외 ${polysemy.length - 20}건`)
+  console.log('  뜻이 같으면 뺍니다. 표기만 같은 다의어는 그대로 둡니다')
+}
 if (notes.length) {
   console.log(`\n${line(4)} 아직 없는 결과물 ${notes.length}건`)
   for (const n of notes.slice(0, 10)) console.log(`  · ${n}`)
