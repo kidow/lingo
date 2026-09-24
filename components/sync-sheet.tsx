@@ -144,7 +144,7 @@ function SignIn() {
     <>
       <Dialog.Description className="mt-2 text-sm text-sub">
         {sent
-          ? '메일로 보낸 6자리를 넣으세요. 10분 뒤 만료됩니다.'
+          ? '받은 6자리를 넣으세요.'
           : '로그인하면 기기 사이에 진도가 이어집니다. 안 해도 학습은 그대로입니다.'}
       </Dialog.Description>
 
@@ -191,6 +191,25 @@ function SignIn() {
         )}
 
         <div className="mt-1 flex justify-end gap-2">
+          {/*
+            메일을 안 거치고 코드 칸으로 바로 간다. 기본 SMTP는 팀 멤버
+            주소로만 보내서, 그 바깥 주소는 Admin API로 코드를 직접 뽑아
+            여기에 넣는다 (lib/sync.ts의 `verifyCode`). 앞서 온 메일의
+            코드를 아직 쓸 수 있을 때도 이쪽이다
+          */}
+          {!sent && (
+            <button
+              type="button"
+              disabled={!email.trim()}
+              onClick={() => {
+                setError(null)
+                setSent(true)
+              }}
+              className="mr-auto rounded-ctrl py-2 text-[13px] text-sub underline underline-offset-2 disabled:opacity-50"
+            >
+              코드가 이미 있어요
+            </button>
+          )}
           <Dialog.Close className="rounded-ctrl px-3 py-2 text-sm text-sub">닫기</Dialog.Close>
           <button
             type="submit"
