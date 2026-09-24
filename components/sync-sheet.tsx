@@ -2,7 +2,7 @@
 
 import { Dialog } from '@base-ui/react/dialog'
 import { Cloud, CloudOff } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { currentEmail, pendingCount, sendCode, signOut, verifyCode, SYNC_ON } from '@/lib/sync'
 
 /**
@@ -111,12 +111,22 @@ function SignIn() {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  async function submit() {
+  /**
+   * 확인이 나가 있는가. **상태가 아니라 ref다** — 여섯 자리가 차서 저절로
+   * 나간 확인과 사람이 누른 Enter가 같은 틱에 겹치면 `busy`는 아직 false로
+   * 읽혀 두 번 나간다. 두 번째가 이미 쓴 코드로 가서 오류를 띄운다
+   */
+  const inFlight = useRef(false)
+
+  async function submit(token = code) {
+    if (inFlight.current) return
+    inFlight.current = true
     setBusy(true)
     setError(null)
 
     if (!sent) {
       const failed = await sendCode(email.trim())
+      inFlight.current = false
       setBusy(false)
       // 목록에 없는 주소는 여기서 끝난다. 서버에도 같은 규칙이 한 겹 더 있다
       if (failed) setError(failed)
@@ -124,7 +134,8 @@ function SignIn() {
       return
     }
 
-    const failed = await verifyCode(email.trim(), code.trim())
+    const failed = await verifyCode(email.trim(), token)
+    inFlight.current = false
     setBusy(false)
     if (failed) {
       setError(failed)
@@ -182,10 +193,18 @@ function SignIn() {
             inputMode="numeric"
             autoComplete="one-time-code"
             pattern="[0-9]{6}"
-            maxLength={6}
             autoFocus
             value={code}
-            onChange={(event) => setCode(event.target.value)}
+            onChange={(event) => {
+              // 숫자만 남긴다. 붙여넣기나 자동 입력이 "123 456"처럼 띄어 올 수
+              // 있다 — 그래서 maxLength를 걸지 않는다. 걸면 브라우저가 공백째
+              // 여섯 글자에서 잘라 "123 45"가 된다
+              const next = event.target.value.replace(/\D/g, '').slice(0, 6)
+              setCode(next)
+              // 여섯 자리가 차면 바로 확인한다. 자동 입력이면 제안을 누르는 것으로
+              // 로그인이 끝난다. 틀렸으면 오류가 뜨고, 고쳐서 다시 여섯이 되면 또 간다
+              if (next.length === 6) void submit(next)
+            }}
             placeholder="6자리"
             className="rounded-ctrl border border-line bg-bg px-3 py-2 text-base tracking-[0.3em]"
           />
