@@ -300,10 +300,11 @@ export async function sendCode(email: string): Promise<string | null> {
 /**
  * 6자리를 확인한다.
  *
- * **두 종류를 다 받는다.** 메일로 온 코드는 `email`이지만, 발송이 막혔을 때
- * Admin API(`/auth/v1/admin/generate_link`)로 뽑은 것은 `magiclink`다 —
- * 무료 티어의 기본 SMTP는 팀 멤버 주소로만 보내서 그 길이 실제로 쓰인다.
- * 사람이 보기에 둘 다 그냥 여섯 자리라, 어느 쪽인지 묻지 않고 차례로 대 본다.
+ * **두 종류를 다 받는다.** 메일로 온 코드는 `email`로 통하는 것이 정상이고,
+ * Admin API(`/auth/v1/admin/generate_link`)로 직접 뽑은 것은 `magiclink`다 —
+ * 메일 발송이 막혔던 날 그 길로 첫 로그인을 했다. 상용에서 어느 쪽으로
+ * 통과하는지는 확인하지 않았으므로 한쪽을 지우지 않는다. 사람이 보기에 둘 다
+ * 그냥 여섯 자리라, 어느 쪽인지 묻지 않고 차례로 대 본다.
  */
 export async function verifyCode(email: string, token: string): Promise<string | null> {
   const supabase = db()

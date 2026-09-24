@@ -144,7 +144,7 @@ function SignIn() {
     <>
       <Dialog.Description className="mt-2 text-sm text-sub">
         {sent
-          ? '받은 6자리를 넣으세요.'
+          ? '메일로 온 6자리를 넣으세요.'
           : '로그인하면 기기 사이에 진도가 이어집니다. 안 해도 학습은 그대로입니다.'}
       </Dialog.Description>
 
@@ -164,14 +164,21 @@ function SignIn() {
           readOnly={sent}
           onChange={(event) => setEmail(event.target.value)}
           placeholder="이메일"
-          className="rounded-ctrl border border-line bg-bg px-3 py-2 text-sm read-only:text-sub"
+          // iOS Safari는 16px보다 작은 입력 칸에 포커스가 가면 화면을 확대한다.
+          // 확대 자체는 막지 않으므로(app/layout.tsx) 글자를 16px에 둔다 —
+          // 찾기 칸과 같은 규칙이다 (components/search-sheet.tsx)
+          className="rounded-ctrl border border-line bg-bg px-3 py-2 text-base read-only:text-sub"
         />
 
         {sent && (
           <input
             required
-            // 숫자만 오는 칸이다. 폰에서 숫자판이 뜨고, 문자 메시지·메일의
-            // 자동 완성이 이 이름을 안다
+            // 숫자만 오는 칸이다. 폰에서 숫자판이 뜬다.
+            //
+            // `one-time-code`가 자동 입력의 열쇠다. iOS 17 이상의 Safari는 기본
+            // Mail 앱에 도착한 코드를 키보드 위에 띄워 준다 — 받는 계정이 그 앱에
+            // 등록돼 있어야 하고, Gmail 앱으로만 받으면 안 뜬다. Android 웹에는
+            // 메일 코드를 채우는 길이 없다(WebOTP는 문자 전용)
             inputMode="numeric"
             autoComplete="one-time-code"
             pattern="[0-9]{6}"
@@ -180,7 +187,7 @@ function SignIn() {
             value={code}
             onChange={(event) => setCode(event.target.value)}
             placeholder="6자리"
-            className="rounded-ctrl border border-line bg-bg px-3 py-2 text-sm tracking-[0.3em]"
+            className="rounded-ctrl border border-line bg-bg px-3 py-2 text-base tracking-[0.3em]"
           />
         )}
 
@@ -191,25 +198,6 @@ function SignIn() {
         )}
 
         <div className="mt-1 flex justify-end gap-2">
-          {/*
-            메일을 안 거치고 코드 칸으로 바로 간다. 기본 SMTP는 팀 멤버
-            주소로만 보내서, 그 바깥 주소는 Admin API로 코드를 직접 뽑아
-            여기에 넣는다 (lib/sync.ts의 `verifyCode`). 앞서 온 메일의
-            코드를 아직 쓸 수 있을 때도 이쪽이다
-          */}
-          {!sent && (
-            <button
-              type="button"
-              disabled={!email.trim()}
-              onClick={() => {
-                setError(null)
-                setSent(true)
-              }}
-              className="mr-auto rounded-ctrl py-2 text-[13px] text-sub underline underline-offset-2 disabled:opacity-50"
-            >
-              코드가 이미 있어요
-            </button>
-          )}
           <Dialog.Close className="rounded-ctrl px-3 py-2 text-sm text-sub">닫기</Dialog.Close>
           <button
             type="submit"
