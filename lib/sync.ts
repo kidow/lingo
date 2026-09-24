@@ -32,8 +32,11 @@ let client: SupabaseClient | null = null
  *
  * **모듈 바깥에서 만들지 않는다.** 세션을 localStorage에 두는데 정적
  * 내보내기의 프리렌더에는 그것이 없다 (next.config.ts).
+ *
+ * 알림 구독도 같은 클라이언트를 쓴다 (lib/push.ts). 둘이 따로 만들면 세션을
+ * 두 벌 들고 서로의 갱신을 모른다.
  */
-function db(): SupabaseClient | null {
+export function db(): SupabaseClient | null {
   if (!URL || !KEY || typeof localStorage === 'undefined') return null
   client ??= createClient(URL, KEY, {
     auth: {

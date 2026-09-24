@@ -84,3 +84,61 @@ R2를 가리키는 지금 방식과 같게 환경변수로 넣는다 (`.env.exam
 
 서버에 닿지 못하면 트랙 목록은 이 기기 기준으로 그리고 그렇다고 적는다.
 꾸준함은 서버 없이는 못 세서 "연결되면 보입니다"로 둔다.
+
+## 매일 알림
+
+「내 진도」 모달의 「매일 알림」에서 켠다 (lib/push.ts). **조르지 않는 알림이다**
+— 기본은 꺼져 있고, 켜도 그날 이미 공부했으면 오지 않는다. spec.md §2가 스트릭을
+뺀 이유를 지킨다.
+
+iOS는 16.4 이상에서 **홈 화면에 추가한 앱으로 열었을 때만** 된다. Safari 탭에서는
+권한을 묻는 길 자체가 없어 모달이 홈 화면에 추가하라고만 적는다.
+
+| 자리 | 하는 일 |
+|---|---|
+| `public/sw.js` | 알림을 받아 띄우고, 누르면 앱을 연다. fetch는 안 건드린다 |
+| `push_subscriptions` | 기기마다 한 줄 — 알림 주소, 받을 시각, 시간대, 마지막으로 보낸 날 |
+| `due_reminders()` | 지금 보낼 차례인 구독. 그 시간대로 고른 시각이고, 오늘 안 보냈고, 오늘 한 장도 안 넘긴 것 |
+| `supabase/functions/daily-reminder` | 위 목록에 보내고 보낸 날을 적는다. 죽은 주소(404·410)는 지운다 |
+| Supabase Cron | 한 시간마다 위 함수를 부른다 |
+
+### 손으로 해야 하는 것
+
+1. **키 한 쌍** — 내 터미널에서 `npx web-push generate-vapid-keys`. Public Key는
+   `.env`와 Vercel의 `NEXT_PUBLIC_VAPID_PUBLIC_KEY`에, Private Key는 아래 3번에만.
+2. **SQL** — `supabase/migrations/…_reminders.sql`을 SQL Editor에서 돌린다.
+3. **함수** — Edge Functions → Deploy a new function → Via Editor, 이름
+   `daily-reminder`, `supabase/functions/daily-reminder/index.ts`를 붙여 배포한다.
+   Secrets에 `VAPID_PUBLIC_KEY` · `VAPID_PRIVATE_KEY` · `VAPID_SUBJECT`
+   (`mailto:…`) · `CRON_SECRET`(`openssl rand -hex 32`)을 넣는다.
+4. **확장** — Integrations에서 Cron(pg_cron)을, Database → Extensions에서
+   pg_net을 켠다.
+5. **예약** — 아래를 SQL Editor에서 돌린다. 비밀값은 Vault에 두어 저장소에도
+   예약 목록에도 글자로 남지 않게 한다.
+
+```sql
+select vault.create_secret('https://<프로젝트 ref>.supabase.co', 'project_url');
+select vault.create_secret('<anon 키>', 'anon_key');
+select vault.create_secret('<CRON_SECRET과 같은 값>', 'cron_secret');
+
+select cron.schedule(
+  'daily-reminder',
+  '0 * * * *',
+  $$
+  select net.http_post(
+    url := (select decrypted_secret from vault.decrypted_secrets where name = 'project_url')
+      || '/functions/v1/daily-reminder',
+    headers := jsonb_build_object(
+      'Content-Type', 'application/json',
+      'Authorization', 'Bearer ' || (select decrypted_secret from vault.decrypted_secrets where name = 'anon_key'),
+      'x-cron-secret', (select decrypted_secret from vault.decrypted_secrets where name = 'cron_secret')
+    ),
+    body := '{}'::jsonb
+  );
+  $$
+);
+```
+
+**시험 발송** — 오늘 이미 공부했으면 정식 경로로는 안 온다. 함수 주소에
+`?test=1`을 붙여 부르면 조건을 건너뛰고 모든 구독에 지금 보낸다(보낸 날로
+적지 않으니 그날 정식 알림은 그대로다). `x-cron-secret`이 있어야 부를 수 있다.

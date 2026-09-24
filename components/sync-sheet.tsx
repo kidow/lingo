@@ -7,6 +7,16 @@ import { loadTally } from '@/lib/corpus'
 import { DECKS } from '@/lib/deck'
 import { loadProgress } from '@/lib/progress'
 import {
+  availability,
+  blocked,
+  BLOCKED_MESSAGE,
+  currentHour,
+  DEFAULT_HOUR,
+  disableReminder,
+  enableReminder,
+  setReminderHour,
+} from '@/lib/push'
+import {
   currentEmail,
   flush,
   pendingCount,
@@ -231,6 +241,8 @@ function MyProgress({ email, track, onOut }: { email: string; track: TrackId; on
         </>
       )}
 
+      <Reminder />
+
       {/*
         계정은 한 번 이으면 볼 일이 거의 없다. 로그아웃 곁에 둔다.
         못 올린 복습은 겁줄 자리가 아니다 — 다음 기회에 같이 올라간다.
@@ -406,6 +418,119 @@ function Stat({ value, label }: { value: string; label: string }) {
       <b className="block text-lg font-bold tabular-nums">{value}</b>
       <span className="text-[11px] text-sub">{label}</span>
     </div>
+  )
+}
+
+/* ── 매일 알림 ───────────────────────────────────────────────────── */
+
+const hourLabel = (hour: number) =>
+  hour === 0 ? '오전 12시' : hour < 12 ? `오전 ${hour}시` : hour === 12 ? '오후 12시' : `오후 ${hour - 12}시`
+
+/**
+ * 매일 알림을 켜고 끄는 자리 (lib/push.ts).
+ *
+ * **조르지 않는다.** 기본은 꺼져 있고, 켜도 오늘 이미 공부했으면 오지 않는다
+ * (supabase/migrations/…_reminders.sql의 `due_reminders`). 그 말을 켜는 자리
+ * 바로 아래에 적어 둔다 — 알림이 안 온 날 고장인지 공부해서인지 헷갈리지 않게.
+ *
+ * iOS Safari 탭에서는 켤 방법이 없어 홈 화면에 추가하라고만 적는다. 켤 수
+ * 없는 기기(데스크톱 일부)에서는 자리째 뺀다.
+ */
+function Reminder() {
+  const [where] = useState(availability)
+  /** 켜져 있으면 받는 시각, 꺼져 있으면 null. undefined는 아직 모름 */
+  const [hour, setHour] = useState<number | null | undefined>(undefined)
+  const [pick, setPick] = useState(DEFAULT_HOUR)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (where !== 'ready') return
+    void currentHour().then((current) => {
+      setHour(current)
+      if (current !== null) setPick(current)
+    })
+  }, [where])
+
+  if (where === 'unsupported') return null
+
+  async function toggle() {
+    setBusy(true)
+    setError(null)
+    // 켤 때는 권한을 묻는 것이 **맨 먼저**여야 한다 — 누른 순간이 지나면 iOS가
+    // 묻지 않고 거절한다. enableReminder가 첫 줄에서 묻는다
+    const failed = hour === null ? await enableReminder(pick) : await disableReminder()
+    setBusy(false)
+    if (failed) setError(failed)
+    else setHour(hour === null ? pick : null)
+  }
+
+  async function change(next: number) {
+    setPick(next)
+    if (hour === null) return
+    setBusy(true)
+    setError(null)
+    const failed = await setReminderHour(next)
+    setBusy(false)
+    if (failed) setError(failed)
+    else setHour(next)
+  }
+
+  return (
+    <section className="mt-5" aria-labelledby="remind-heading">
+      <h3 id="remind-heading" className="text-[13px] font-semibold text-sub">
+        매일 알림
+      </h3>
+      {where === 'install' ? (
+        <p className="mt-2 text-sm text-sub">
+          홈 화면에 추가한 앱에서 켤 수 있습니다. Safari의 공유 버튼 → 홈 화면에 추가.
+        </p>
+      ) : hour === undefined ? (
+        <div aria-busy="true" className="mt-2 h-10 animate-pulse rounded-ctrl bg-line" />
+      ) : hour === null && blocked() ? (
+        <p className="mt-2 text-sm text-sub">{BLOCKED_MESSAGE}</p>
+      ) : (
+        <>
+          <div className="mt-2 flex items-center gap-2">
+            <select
+              aria-label="알림 시각"
+              value={pick}
+              disabled={busy}
+              onChange={(event) => void change(Number(event.target.value))}
+              // iOS는 16px보다 작은 입력 칸에 포커스가 가면 화면을 확대한다 (로그인 칸과 같은 규칙)
+              className="min-w-0 flex-1 rounded-ctrl border border-line bg-bg px-3 py-2 text-base"
+            >
+              {Array.from({ length: 24 }, (_, value) => (
+                <option key={value} value={value}>
+                  {hourLabel(value)}
+                </option>
+              ))}
+            </select>
+            <button
+              type="button"
+              aria-pressed={hour !== null}
+              disabled={busy}
+              onClick={() => void toggle()}
+              className={`shrink-0 rounded-ctrl px-4 py-2 text-sm disabled:opacity-50 ${
+                hour === null ? 'bg-ink text-surface' : 'border border-line'
+              }`}
+            >
+              {busy ? '…' : hour === null ? '켜기' : '끄기'}
+            </button>
+          </div>
+          <p className="mt-1.5 text-[12px] text-sub">
+            {hour === null
+              ? '오늘 이미 공부한 날에는 보내지 않습니다.'
+              : `매일 ${hourLabel(hour)}에 알립니다. 그날 이미 공부했으면 보내지 않습니다.`}
+          </p>
+          {error && (
+            <p role="alert" className="mt-1 text-[13px] text-err">
+              {error}
+            </p>
+          )}
+        </>
+      )}
+    </section>
   )
 }
 
