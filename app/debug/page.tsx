@@ -9,7 +9,7 @@ import { DebugTabs } from '@/components/debug-tabs'
 import { DebugSuspects } from '@/components/debug-suspects'
 import { DebugTrivia, type TriviaNote } from '@/components/debug-trivia'
 import { audioFile, audioPath, entriesFor, imagePath, triviaFor } from '@/lib/content'
-import { examplesOf } from '@/lib/entries'
+import { exampleAudioKey, exampleAudioPath, examplesOf } from '@/lib/entries'
 import { gradeLabel, HANJA_GRADES } from '@/lib/hanja'
 import { HANJA_CHARACTERS, HANJA_RADICALS } from '@/lib/hanja-corpus'
 import { hanjaStrokeData } from '@/lib/hanja-strokes'
@@ -44,6 +44,12 @@ export default function DebugPage() {
 
       // 파일 유무는 저장소 안을 본다. 주소는 CDN을 가리킬 수 있어 fs로 못 연다
       const audio = fileInfo(audioFile(concept.slug, language))
+      // 예문 소리는 첫 예문만 있다 — 소개 카드가 그것만 들려준다. 열쇠는 기본
+      // 표기로 짓는다: TOCFL도 HSK와 같은 소리를 쓴다 (components/cards.tsx)
+      const spoken = examplesOf(word)[0]?.text
+      const exampleAudio = spoken
+        ? fileInfo(join('public', 'audio', language, 'ex', `${exampleAudioKey(concept.slug, 0, spoken)}.mp3`))
+        : null
       return [
         {
           slug: concept.slug,
@@ -62,6 +68,8 @@ export default function DebugPage() {
           hasImage: fileInfo(join('public', imagePath(concept.slug))) !== null,
           audioSize: audio?.size ?? null,
           audioPath: audioPath(concept.slug, language),
+          hasExampleAudio: exampleAudio !== null,
+          exampleAudioPath: spoken ? exampleAudioPath(language, concept.slug, 0, spoken) : undefined,
         },
       ]
     }),

@@ -40,6 +40,9 @@ export type DebugRow = {
   hasImage: boolean
   audioSize: number | null
   audioPath: string
+  /** 첫 예문의 소리가 있는가. 예문이 없으면 늘 false다 */
+  hasExampleAudio: boolean
+  exampleAudioPath?: string
 }
 
 const ALL = 'all' as const
@@ -90,6 +93,9 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
   // 상황 표현도 이제 예문을 갖는다 (spec.md §5) — 예전에는 정답이 문장이라
   // 예문을 두지 않았고 그래서 분모에서 뺐다. 지금은 뺄 이유가 없다
   const missingExample = shown.filter((row) => !row.example).length
+  // 예문 소리의 분모는 예문이 있는 줄이다 — 예문이 없으면 만들 소리도 없다
+  const withExample = shown.length - missingExample
+  const missingExampleAudio = shown.filter((row) => row.example && !row.hasExampleAudio).length
 
   /**
    * 트랙마다 얼마나 찼는가.
@@ -102,7 +108,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
    */
   const perTrack = useMemo(() => {
     const tally = new Map(
-      tracks.map((track) => [track, { total: 0, image: 0, audio: 0, example: 0 }]),
+      tracks.map((track) => [track, { total: 0, image: 0, audio: 0, example: 0, exampleAudio: 0 }]),
     )
     for (const row of rows) {
       const mine = tally.get(row.track)
@@ -111,6 +117,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
       if (row.hasImage) mine.image += 1
       if (row.audioSize !== null) mine.audio += 1
       if (row.example) mine.example += 1
+      if (row.hasExampleAudio) mine.exampleAudio += 1
     }
     return tracks.map((track) => ({ track, ...tally.get(track)! }))
   }, [rows, tracks])
@@ -149,6 +156,11 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
           value={`${shown.length - missingExample}/${shown.length}`}
           bad={missingExample > 0}
         />
+        <Stat
+          label="예문 발음"
+          value={`${withExample - missingExampleAudio}/${withExample}`}
+          bad={missingExampleAudio > 0}
+        />
       </dl>
 
       {/*
@@ -166,7 +178,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
                 <th scope="col" className="px-3 py-1.5 text-left font-medium">
                   트랙
                 </th>
-                {['단어', '이미지', '발음', '예문'].map((label) => (
+                {['단어', '이미지', '발음', '예문', '예문 발음'].map((label) => (
                   <th key={label} scope="col" className="px-3 py-1.5 text-right font-medium">
                     {label}
                   </th>
@@ -189,6 +201,7 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
                   <Fill done={row.image} total={row.total} />
                   <Fill done={row.audio} total={row.total} />
                   <Fill done={row.example} total={row.total} />
+                  <Fill done={row.exampleAudio} total={row.example} />
                 </tr>
               ))}
             </tbody>
@@ -204,9 +217,9 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
       >
         {/* 칸 너비를 고정한다. 보이는 줄만 그리므로 자동 너비면 스크롤할 때마다
             그 순간 그려진 줄에 맞춰 칸이 들썩인다 */}
-        <table className="w-full min-w-[1078px] table-fixed bg-surface text-left text-[13px]">
+        <table className="w-full min-w-[1114px] table-fixed bg-surface text-left text-[13px]">
           <colgroup>
-            {[56, 150, 124, 190, 130, 56, 232, 92, 48].map((width, i) => (
+            {[56, 150, 124, 190, 130, 56, 268, 92, 48].map((width, i) => (
               <col key={i} style={{ width }} />
             ))}
           </colgroup>
@@ -267,7 +280,18 @@ export function DebugTable({ rows, tracks }: { rows: DebugRow[]; tracks: TrackId
                 <Td>{row.partOfSpeech ?? <span className="text-sub">—</span>}</Td>
                 <Td>
                   {row.example ? (
-                    <Copy text={row.example} className="font-jp text-xs" />
+                    <span className="flex items-center gap-1.5">
+                      {/* 예문 소리가 있으면 예문 앞에서 바로 듣는다. 없으면 자리만 비워
+                          예문 글자가 줄마다 같은 칸에서 시작하게 한다 */}
+                      {row.hasExampleAudio && row.exampleAudioPath ? (
+                        <span className="shrink-0">
+                          <DebugPlay src={row.exampleAudioPath} />
+                        </span>
+                      ) : (
+                        <span className="block size-7 shrink-0" />
+                      )}
+                      <Copy text={row.example} className="min-w-0 font-jp text-xs" />
+                    </span>
                   ) : (
                     <Missing>없음</Missing>
                   )}
