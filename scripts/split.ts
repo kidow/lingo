@@ -1,8 +1,11 @@
 import { createHash } from 'node:crypto'
-import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { entriesForTrack, imagePath } from '../lib/entries.ts'
 import { LANGUAGES } from '../lib/lang.ts'
-import type { KanaExamples } from '../lib/kana.ts'
+import { kanaEntries, KANA_SKILLS, type KanaExamples } from '../lib/kana.ts'
+import type { Tally } from '../lib/tally.ts'
+import { LANGUAGE_TRACK_IDS, trackOf } from '../lib/track.ts'
 import { triviaEntries } from '../lib/trivia.ts'
 import { validateNumberedBundle } from './hanja-stroke-numbered.ts'
 import { validateDictionaryBundle } from './hanja-stroke-dictionary.ts'
@@ -141,6 +144,47 @@ const search = compact({
 })
 writeFileSync(join(OUT, 'search.json'), search)
 sizes.push(['search.json', search.length])
+
+/**
+ * 트랙마다 몇 개인가 — 「내 진도」 모달의 분모다 (lib/tally.ts).
+ *
+ * 헤더의 %와 **같은 함수로** 센다. 단어·표현은 `entriesForTrack`에서 그림이
+ * 없는 개념을 뺀 것(app/page.tsx의 `undrawn`, components/shell.tsx), 상식은
+ * 그 언어의 문항 전부, 가나는 카드 수를 능력 수로 나눈 글자 수다. 어긋나면
+ * 모달과 헤더가 같은 트랙에 다른 %를 적는다.
+ *
+ * 한능검은 글자 파일을 직접 센다. 글자 목록 모듈(lib/hanja-corpus.ts)이
+ * 이 폴더의 파일을 그대로 이어 붙이는데, 경로 별칭(`@/`)을 써서 여기서는
+ * 못 부른다.
+ *
+ * 그림이 늘면 분모도 는다. 그런데 `source.json`은 그림을 안 본다 — 그림만
+ * 새로 넣고 안 구우면 이 파일이 조금 낡는다. 다음 빌드(`prebuild`)가 새로 굽는다.
+ */
+const drawn = (slug: string) => existsSync(join(ROOT, 'public', imagePath(slug)))
+const phrases = new Set<string>()
+const totals: Tally['totals'] = {}
+for (const track of LANGUAGE_TRACK_IDS) {
+  const lang = trackOf(track).language
+  const entries = entriesForTrack(track, concepts).filter((entry) => drawn(entry.concept.slug))
+  const phrase = entries.filter((entry) => entry.concept.category === 'scene')
+  for (const entry of phrase) phrases.add(entry.concept.slug)
+  const trivia = triviaOf(lang).length
+  totals[track] = {
+    word: entries.length - phrase.length,
+    ...(phrase.length > 0 ? { phrase: phrase.length } : {}),
+    ...(trivia > 0 ? { trivia } : {}),
+    ...(lang === 'ja' ? { kana: kanaEntries(kanaOf()).length / KANA_SKILLS.length } : {}),
+  }
+}
+const HANJA = join(CONTENT, 'hanja/characters')
+totals.hanja = {
+  hanja: readdirSync(HANJA)
+    .filter((name) => name.endsWith('.json'))
+    .reduce((sum, name) => sum + JSON.parse(readFileSync(join(HANJA, name), 'utf8')).characters.length, 0),
+}
+const tally = JSON.stringify({ totals, phrases: [...phrases].sort() } satisfies Tally)
+writeFileSync(join(OUT, 'tally.json'), tally)
+sizes.push(['tally.json', tally.length])
 
 /**
  * **무엇에서 구웠는지 적어 둔다.**
