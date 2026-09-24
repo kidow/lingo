@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { initialState, recordAnswer, recordIntro, type EngineState } from './engine.ts'
-import { RATING_AGAIN, RATING_GOOD, RATING_INTRO, replay, type Logged } from './sync.ts'
+import { applyPulled, RATING_AGAIN, RATING_GOOD, RATING_INTRO, replay, type Logged } from './sync.ts'
 import { WORD_LADDER, type Rung } from './progress.ts'
 
 /**
@@ -109,4 +109,29 @@ test('두 기기가 갈라져도 합치면 하나로 모인다', () => {
 
   assert.deepEqual(replay(merged), replay(log))
   assert.equal(merged.length, log.length, '섞는 동안 잃은 줄이 없다')
+})
+
+test('받는 사이 여기서 건드린 카드는 덮지 않는다', () => {
+  // 앱을 열자마자 넘긴 경우다. 받기 시작할 때의 진도(before)와 받아 온 것이
+  // 도착했을 때의 진도(now) 사이에 cat을 여기서 풀었다. 받아 온 cat에는 그
+  // 복습이 없다 — 덮으면 방금 푼 것이 사라진다
+  const start = run(['intro']).state
+  const before = start.progress.cards
+  const now = recordAnswer(start, SLUG, true, START + DAY, WORD_LADDER).progress
+  const remote = replay(run(['intro', false]).log)
+  const other = replay(run(['intro']).log)
+
+  const { progress, clean } = applyPulled(now, { cards: { [SLUG]: remote, dog: other }, cursor: 'x' }, before)
+
+  assert.equal(progress.cards[SLUG], now.cards[SLUG], '여기서 푼 카드는 그대로')
+  assert.equal(progress.cards.dog, other, '안 건드린 카드는 받아 온 것으로')
+  assert.equal(clean, false, '커서를 옮기지 말라고 알린다 — 다음에 다시 받는다')
+})
+
+test('받는 사이 아무것도 안 건드렸으면 다 얹고 커서를 옮겨도 된다', () => {
+  const start = run(['intro']).state
+  const remote = replay(run(['intro', true]).log)
+  const { progress, clean } = applyPulled(start.progress, { cards: { [SLUG]: remote }, cursor: 'x' }, start.progress.cards)
+  assert.equal(progress.cards[SLUG], remote)
+  assert.equal(clean, true)
 })

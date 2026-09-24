@@ -199,16 +199,25 @@ export function replay(rows: Logged[]): CardState {
   return { rung: rows[rows.length - 1].rung, streak, fsrs: storeCard(card) }
 }
 
+/** 받아 온 것. 재생한 카드와, 받아들이면 옮길 커서 */
+export type Pulled = { cards: Record<string, CardState>; cursor: string }
+
 /**
- * 남이 올린 것을 받아 진도에 얹는다. 바뀐 게 없으면 null.
+ * 남이 올린 것을 받아 재생한다. 바뀐 게 없으면 null.
  *
  * **내 기기가 올린 줄은 건너뛴다.** 그건 이미 로컬에 있고, 다시 받아 재생해도
  * 같은 값이 나올 뿐이다. 그래서 커서가 가리키는 것은 «내가 모르는 것»이다.
  *
  * 순서가 중요하다 — **먼저 밀어넣고 나서 당긴다.** 거꾸로 하면 아직 못 올린
  * 내 복습이 서버 로그에 없는 채로 재생돼 덮인다.
+ *
+ * **저장도 커서 이동도 하지 않는다.** 예전에는 여기서 커서를 옮기고 합친
+ * 진도를 돌려줬는데, 받는 사이 피드가 카드를 넘기면 피드가 받기 전 진도로
+ * 그것을 덮었다. 커서는 이미 지나가 있어서 덮인 카드를 다시는 안 받았다 —
+ * 다른 기기의 복습이 이 기기에서만 조용히 빠졌다. 그래서 얹는 일은
+ * `applyPulled`가, 커서를 옮길지는 부르는 쪽이 정한다.
  */
-export async function pull(track: TrackId, local: Progress): Promise<Progress | null> {
+export async function pull(track: TrackId): Promise<Pulled | null> {
   const supabase = db()
   if (!supabase) return null
 
@@ -259,23 +268,54 @@ export async function pull(track: TrackId, local: Progress): Promise<Progress | 
     }
   }
 
-  const cards = { ...local.cards }
+  const cards: Record<string, CardState> = {}
   for (const [slug, rows] of history) if (rows.length > 0) cards[slug] = replay(rows)
+  return { cards, cursor }
+}
 
+/**
+ * 받아 온 카드를 진도에 얹는다.
+ *
+ * `before`는 받기 시작할 때의 카드 묶음이다. **그 사이 여기서 바뀐 카드는
+ * 덮지 않는다** — 재생한 값에는 그 사이의 복습이 없다(아직 못 올렸다). 대신
+ * `clean`이 false가 되고, 부르는 쪽은 커서를 옮기지 않는다. 다음에 같은 줄을
+ * 다시 받는데, 그때는 그 복습도 올라가 있어 재생이 둘을 다 품는다.
+ *
+ * 바뀌었는지는 **참조로** 가린다. 엔진은 카드를 고칠 때마다 새 객체를 만들고
+ * 안 고친 카드는 그대로 둔다 (lib/engine.ts).
+ */
+export function applyPulled(
+  progress: Progress,
+  pulled: Pulled,
+  before: Record<string, CardState>,
+): { progress: Progress; clean: boolean } {
+  const cards = { ...progress.cards }
+  let clean = true
+  for (const [slug, card] of Object.entries(pulled.cards)) {
+    if (progress.cards[slug] !== before[slug]) {
+      clean = false
+      continue
+    }
+    cards[slug] = card
+  }
+  return { progress: { ...progress, cards }, clean }
+}
+
+/** 받아 온 줄을 다 얹었을 때만 부른다. 다음에는 그 뒤부터 받는다 */
+export function acceptCursor(track: TrackId, cursor: string): void {
   localStorage.setItem(cursorKey(track), cursor)
-  return { ...local, cards }
 }
 
 /**
  * 밀어넣고 당긴다. 한 번에 부르는 자리다.
  *
- * **마운트와 트랙 전환 때만 부른다.** 세션 중간에 진도가 바뀌면 보고 있던
- * 카드 뭉치가 어긋난다 — 피드는 진도를 보고 한 칸 앞까지만 카드를 만든다
- * (components/feed.tsx의 `extendOne`).
+ * **피드는 마운트와 트랙 전환 때만 부른다.** 세션 중간에 진도가 바뀌면 보고
+ * 있던 카드 뭉치가 어긋난다 — 피드는 진도를 보고 한 칸 앞까지만 카드를
+ * 만든다 (components/feed.tsx의 `extendOne`).
  */
-export async function syncNow(track: TrackId, local: Progress): Promise<Progress | null> {
+export async function syncNow(track: TrackId): Promise<Pulled | null> {
   await flush()
-  return pull(track, local)
+  return pull(track)
 }
 
 /* ── 로그인 ──────────────────────────────────────────────────────── */

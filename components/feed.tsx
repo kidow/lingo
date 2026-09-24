@@ -12,7 +12,15 @@ import {
   type EngineState,
 } from '@/lib/engine'
 import { loadProgress, saveProgress, WORD_LADDER, type Ladder, type Progress } from '@/lib/progress'
-import { logReview, syncNow, RATING_AGAIN, RATING_GOOD, RATING_INTRO } from '@/lib/sync'
+import {
+  acceptCursor,
+  applyPulled,
+  logReview,
+  syncNow,
+  RATING_AGAIN,
+  RATING_GOOD,
+  RATING_INTRO,
+} from '@/lib/sync'
 import { questionKey, type Question } from '@/lib/quiz'
 import { HANJA_SKILLS, hanjaKey } from '@/lib/hanja'
 import { HanjaCard } from './hanja/card'
@@ -167,19 +175,30 @@ export function Feed({
    * 서버와 맞춘다. **마운트와 트랙 전환 때만** 부른다 — 세션 중간에 진도가
    * 바뀌면 보고 있던 카드 뭉치가 어긋난다 (lib/sync.ts).
    *
-   * 첫 화면을 기다리게 하지 않는다. 피드는 로컬 진도로 이미 돌고 있고, 맞춘
-   * 결과는 늦게 도착해서 **저장부터** 된다. 살아 있는 엔진까지 갈아 끼우는
-   * 것은 아직 한 장도 안 답했을 때뿐이다 — 답하는 중이었다면 저장만 해 두고
-   * 다음 트랙 전환이나 새로고침이 그것을 집어 든다.
+   * 첫 화면을 기다리게 하지 않는다. 피드는 로컬 진도로 이미 돌고 있고, 받아
+   * 온 카드는 늦게 도착해 **지금 돌고 있는 엔진의 진도 위에** 얹힌다.
+   *
+   * 예전에는 받기 전에 읽어 둔 진도에 합쳐 저장했다. 받는 사이 소개 카드를
+   * 넘기거나 답하면 피드가 그 뒤에 자기 진도를 저장하면서 합친 것을 덮었고,
+   * 커서는 이미 지나가 있어 덮인 카드를 다시는 안 받았다. 이제는 받는 사이
+   * 여기서 건드린 카드는 덮지 않고, 그런 카드가 있으면 커서를 옮기지 않아
+   * 다음에 다시 받는다 (lib/sync.ts의 `applyPulled`).
+   *
+   * 아직 한 장도 안 넘겼으면 피드를 새로 깐다. 다른 기기에서 이미 소개를
+   * 지난 낱말이 첫 카드로 다시 소개되지 않게 한다.
    */
   useEffect(() => {
     let alive = true
-    void syncNow(track, loadProgress(track)).then((merged) => {
-      if (!alive || !merged) return
-      saveProgress(track, merged)
-      onProgress?.(merged)
-      if (picksRef.current.size > 0) return
-      engine.current = initialState(merged)
+    const before = engine.current.progress.cards
+    void syncNow(track).then((pulled) => {
+      if (!alive || !pulled) return
+      const { progress, clean } = applyPulled(engine.current.progress, pulled, before)
+      engine.current = { ...engine.current, progress }
+      saveProgress(track, progress)
+      if (clean) acceptCursor(track, pulled.cursor)
+      onProgress?.(progress)
+      if (picksRef.current.size > 0 || recorded.current.size > 0) return
+      engine.current = initialState(progress)
       extendedFrom.current = -1
       setQuestions([])
       setCurrent(0)
