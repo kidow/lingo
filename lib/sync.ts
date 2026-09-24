@@ -1,6 +1,7 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 import { createEmptyCard, fsrs, Rating } from 'ts-fsrs'
-import { storeCard, type CardState, type Progress, type Rung } from './progress.ts'
+import { loadProgress, saveProgress, storeCard, type CardState, type Progress, type Rung } from './progress.ts'
+import type { Day } from './tally.ts'
 import type { TrackId } from './track.ts'
 
 /**
@@ -318,6 +319,51 @@ export async function syncNow(track: TrackId): Promise<Pulled | null> {
   return pull(track)
 }
 
+/* ── 내 진도 ─────────────────────────────────────────────────────── */
+
+/** 서버가 합쳐 준 것. 기록이 있는 트랙과 날짜별 합계 */
+export type Summary = { tracks: TrackId[]; days: Day[] }
+
+/**
+ * 「내 진도」 모달의 재료를 받는다. 못 받으면 null — 오프라인이거나 서버
+ * 함수가 아직 없다 (supabase/migrations/…_my_summary.sql).
+ *
+ * 날짜는 **이 기기의 시간대**로 끊는다. 서버 시계(UTC)로 끊으면 서울에서
+ * 오전 9시 전에 푼 것이 어제로 간다.
+ */
+export async function summary(): Promise<Summary | null> {
+  const supabase = db()
+  if (!supabase) return null
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'
+  const { data, error } = await supabase.rpc('my_summary', { tz })
+  return error || !data ? null : (data as Summary)
+}
+
+/**
+ * 다른 트랙들을 받아 이 기기 진도에 얹는다. 모달을 열 때 부른다.
+ *
+ * **피드가 돌고 있는 트랙은 건너뛴다.** 피드는 자기 진도를 엔진에 들고 있다가
+ * 카드를 넘길 때마다 통째로 저장한다 — 여기서 그 트랙에 얹어 저장해도 다음
+ * 한 장에 덮인다. 그 트랙은 앱을 열 때 피드가 이미 받았다(components/feed.tsx).
+ *
+ * 나머지 트랙은 아무도 쥐고 있지 않아서 받는 사이 바뀔 일이 없다. 그래서
+ * 얹은 것을 그대로 저장하고 커서를 옮긴다 — 저장에 실패하면(한도 초과) 커서를
+ * 두어 다음에 다시 받는다.
+ */
+export async function pullOthers(tracks: TrackId[], current: TrackId): Promise<void> {
+  await Promise.all(
+    tracks
+      .filter((track) => track !== current)
+      .map(async (track) => {
+        const pulled = await pull(track)
+        if (!pulled) return
+        const local = loadProgress(track)
+        const { progress } = applyPulled(local, pulled, local.cards)
+        if (saveProgress(track, progress)) acceptCursor(track, pulled.cursor)
+      }),
+  )
+}
+
 /* ── 로그인 ──────────────────────────────────────────────────────── */
 
 /**
@@ -334,7 +380,12 @@ export async function sendCode(email: string): Promise<string | null> {
     email,
     options: { shouldCreateUser: false },
   })
-  return error ? error.message : null
+  if (!error) return null
+  // 목록에 없는 주소가 받는 말이다. 서버는 영어 원문(`Signups not allowed for
+  // otp`)을 돌려주는데, 그대로 두면 가입을 안 받는 이유를 모르는 채로 막힌다
+  if (error.code === 'otp_disabled' || error.code === 'signup_disabled')
+    return '이 주소로는 로그인할 수 없습니다'
+  return error.message
 }
 
 /**

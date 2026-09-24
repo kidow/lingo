@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { freshCard, MASTERED_STABILITY, type CardState, type Progress, type Rung } from './progress.ts'
-import { countProgress, shelfOf } from './tally.ts'
+import { countProgress, shelfOf, shiftDay, steady, type Day } from './tally.ts'
 
 const phrases = new Set(['nice-to-meet-you'])
 
@@ -64,4 +64,42 @@ test('가나와 한능검은 글자를 센다 — 두 능력을 다 떼야 외�
 
 test('빈 진도는 아무 칸도 안 만든다', () => {
   assert.deepEqual(countProgress(progressOf({}), phrases), {})
+})
+
+const day = (d: string, total: number, good = 0, again = 0): Day => ({ day: d, total, good, again })
+
+test('공부한 날은 최근 7일 안에서만 센다', () => {
+  const days = [day('2026-09-10', 99), day('2026-09-18', 5), day('2026-09-20', 3), day('2026-09-22', 2)]
+  assert.equal(steady(days, '2026-09-22').active, 3, '09-10은 7일 밖이다')
+})
+
+test('하루 빠져도 무너지지 않는다 — 연속일이 아니다', () => {
+  // 스트릭이었다면 19일이 비어 1로 떨어졌을 자리다 (spec.md §2)
+  const days = [day('2026-09-17', 1), day('2026-09-18', 1), day('2026-09-20', 1), day('2026-09-21', 1)]
+  assert.equal(steady(days, '2026-09-21').active, 4)
+  assert.equal(steady(days, '2026-09-21').today, 1)
+  assert.equal(steady(days, '2026-09-22').today, 0, '오늘 아직 안 했다')
+})
+
+test('막대는 오늘을 끝으로 7칸이고 빈 날은 0이다', () => {
+  const { week } = steady([day('2026-09-22', 4), day('2026-09-18', 9), day('2026-09-10', 99)], '2026-09-22')
+  assert.deepEqual(week.map((w) => w.day), [
+    '2026-09-16', '2026-09-17', '2026-09-18', '2026-09-19', '2026-09-20', '2026-09-21', '2026-09-22',
+  ])
+  assert.deepEqual(week.map((w) => w.total), [0, 0, 9, 0, 0, 0, 4], '7일 밖(09-10)은 안 든다')
+})
+
+test('정답률은 최근 7일의 퀴즈만 센다', () => {
+  const days = [
+    day('2026-09-22', 10, 6, 2), // 소개 2장은 분모에 안 든다
+    day('2026-09-20', 4, 2, 2),
+    day('2026-09-01', 50, 0, 50), // 7일 밖
+  ]
+  assert.equal(steady(days, '2026-09-22').accuracy, 8 / 12)
+  assert.equal(steady([day('2026-09-22', 5)], '2026-09-22').accuracy, null, '소개만 넘긴 날은 정답률이 없다')
+})
+
+test('날짜 더하기는 달과 해를 넘는다', () => {
+  assert.equal(shiftDay('2026-03-01', -1), '2026-02-28')
+  assert.equal(shiftDay('2026-12-31', 1), '2027-01-01')
 })

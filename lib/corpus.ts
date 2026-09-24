@@ -1,4 +1,5 @@
 import type { KanaExamples } from './kana.ts'
+import type { Tally } from './tally.ts'
 import type { TriviaEntry } from './trivia.ts'
 import type { Article, Concept, Language } from './types.ts'
 
@@ -74,4 +75,24 @@ export function loadCorpus(lang: Language): Promise<Corpus | null> {
  */
 export function loadSearchCorpus(): Promise<Corpus | null> {
   return get('search')
+}
+
+let tally: Promise<Tally | null> | null = null
+
+/**
+ * 트랙별 개수. 「내 진도」 모달의 분모다 (lib/tally.ts).
+ *
+ * **모달을 열 때 받는다.** 14KB라 번들에 구워도 되지만, 그 모달을 한 번도 안
+ * 여는 사람(로그인하지 않은 모든 방문자)까지 같이 문다. 못 받으면 다음에 다시
+ * 받게 비워 둔다 — 코퍼스와 같은 규칙이다.
+ */
+export function loadTally(): Promise<Tally | null> {
+  tally ??= fetch('/content/tally.json')
+    .then((res) => (res.ok ? (res.json() as Promise<Tally>) : null))
+    .catch(() => null)
+    .then((value) => {
+      if (!value) tally = null
+      return value
+    })
+  return tally
 }

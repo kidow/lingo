@@ -48,9 +48,9 @@ export function shelfOf(key: string, phrases: ReadonlySet<string>): Shelf {
  * (lib/kana.ts의 `masteredKanaCount`, lib/hanja.ts의 `masteredHanjaCount`).
  * 카드로 세면 절반만 뗀 글자가 50%로 잡힌다.
  */
-const PER_GLYPH: Partial<Record<Shelf, { skills: number; ladder: Ladder }>> = {
-  kana: { skills: KANA_SKILLS.length, ladder: KANA_LADDER },
-  hanja: { skills: HANJA_SKILLS.length, ladder: HANJA_LADDER },
+const PER_GLYPH: Partial<Record<Shelf, number>> = {
+  kana: KANA_SKILLS.length,
+  hanja: HANJA_SKILLS.length,
 }
 
 const LADDER: Record<Shelf, Ladder> = {
@@ -96,8 +96,68 @@ export function countProgress(progress: Progress, phrases: ReadonlySet<string>):
   for (const { shelf, done } of glyphs.values()) {
     const count = (out[shelf] ??= { seen: 0, mastered: 0 })
     count.seen += 1
-    if (done === PER_GLYPH[shelf]!.skills) count.mastered += 1
+    if (done === PER_GLYPH[shelf]) count.mastered += 1
   }
 
   return out
+}
+
+/* ── 꾸준함 ──────────────────────────────────────────────────────── */
+
+/**
+ * 하루치. 서버가 기기 시간대로 끊어 합친다
+ * (supabase/migrations/…_my_summary.sql). `day`는 `YYYY-MM-DD`다.
+ */
+export type Day = { day: string; total: number; good: number; again: number }
+
+export type Steady = {
+  /**
+   * 최근 7일 가운데 공부한 날. **연속일이 아니다** — 스트릭은 spec.md §2가
+   * 뺐다. 목표가 없는 피드에 "오늘 안 하면 0이 된다"는 숫자를 붙이면 조르는
+   * 물건이 된다. 이 값은 하루 빠져도 무너지지 않고 7일 창을 따라 흘러갈 뿐이다
+   */
+  active: number
+  /** 오늘 넘긴 장 수. 소개 카드도 센다 */
+  today: number
+  /** 최근 7일 정답률(0~1). 퀴즈를 하나도 안 풀었으면 null */
+  accuracy: number | null
+  /** 오늘을 끝으로 한 7일. 빈 날도 0으로 자리를 채운다 */
+  week: Array<{ day: string; total: number }>
+}
+
+const MS_DAY = 24 * 60 * 60 * 1000
+
+/** `YYYY-MM-DD`에 날을 더한다. 날짜 문자열끼리만 셈해 시간대가 끼어들지 않는다 */
+export function shiftDay(day: string, by: number): string {
+  return new Date(Date.parse(`${day}T00:00:00Z`) + by * MS_DAY).toISOString().slice(0, 10)
+}
+
+/**
+ * 날짜별 합계에서 꾸준함을 낸다.
+ *
+ * **정답률은 퀴즈만 센다.** 소개 카드는 맞고 틀림이 없다. 기간은 막대와 같은
+ * 최근 7일이다 — 월~일로 끊으면 월요일 아침마다 한두 문제로 정해진다.
+ */
+export function steady(days: Day[], today: string): Steady {
+  const byDay = new Map(days.map((day) => [day.day, day]))
+  const week = Array.from({ length: 7 }, (_, i) => {
+    const day = shiftDay(today, i - 6)
+    return { day, total: byDay.get(day)?.total ?? 0 }
+  })
+
+  let good = 0
+  let answered = 0
+  for (const { day } of week) {
+    const found = byDay.get(day)
+    if (!found) continue
+    good += found.good
+    answered += found.good + found.again
+  }
+
+  return {
+    active: week.filter((day) => day.total > 0).length,
+    today: byDay.get(today)?.total ?? 0,
+    accuracy: answered > 0 ? good / answered : null,
+    week,
+  }
 }

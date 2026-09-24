@@ -182,7 +182,7 @@ export function Header({
           (components/sync-sheet.tsx)
         */}
         <span className="ml-3 flex items-center">
-          <SyncSheet />
+          <SyncSheet track={track} />
         </span>
       </div>
     </header>
