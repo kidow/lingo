@@ -346,6 +346,10 @@ for (const file of files) {
   if (loaderSource && !loaderSource.includes(`${CONTENT_DIR}/${file}`)) {
     warn(`${path} 가 lib/content.ts에 등록되지 않았습니다 — 앱에 로드되지 않습니다`)
   }
+  // 없으면 TS가 JSON 전체를 리터럴 타입으로 추론한다. 2026-09-24에 예문이 두 배가
+  // 되자 관계 캐시(Map 1,600만 칸)가 넘쳐 빌드가 TS2859로 깨졌다
+  const declaration = path.replace(/\.json$/, '.d.json.ts')
+  if (!existsSync(declaration)) fail(declaration, '타입 선언이 없습니다 — 옆 파일을 복사해 만든다')
 
   let parsed: unknown
   try {
