@@ -206,31 +206,33 @@ function MyProgress({ email, track, onOut }: { email: string; track: TrackId; on
         <Loading />
       ) : (
         <>
+          {/*
+            구획 제목은 눈에서 뺀다 — 무엇의 목록인지는 줄과 숫자가 이미 말한다.
+            화면 읽기 프로그램에는 남겨 구획을 짚을 자리를 둔다
+          */}
           <section className="mt-4" aria-labelledby="far-heading">
-            <div className="flex items-baseline justify-between gap-2">
-              <h3 id="far-heading" className="text-[13px] font-semibold text-sub">
-                얼마나 멀리 왔나
-              </h3>
-              {/* 이 기준을 모르면 시작하고 몇 주간 "외움 0"만 보여 고장처럼 읽힌다 */}
-              <span className="text-[11px] text-sub">외움 = 끝 단계에서 21일 넘게 기억</span>
-            </div>
+            <h3 id="far-heading" className="sr-only">
+              트랙별 진도
+            </h3>
             {!view.steady && (
-              <p className="mt-1 text-[12px] text-sub">서버에 닿지 못해 이 기기 기준입니다.</p>
+              <p className="mb-2 text-[12px] text-sub">서버에 닿지 못해 이 기기 기준입니다.</p>
             )}
             {view.lines.length === 0 ? (
-              <p className="mt-2 text-sm text-sub">아직 시작한 트랙이 없습니다.</p>
+              <p className="text-sm text-sub">아직 시작한 트랙이 없습니다.</p>
             ) : (
-              <ul className="mt-2">
+              <ul>
                 {view.lines.map((line) => (
                   <TrackRow key={line.track} line={line} />
                 ))}
               </ul>
             )}
+            {/* 이 기준을 모르면 시작하고 몇 주간 "외움 0"만 보여 고장처럼 읽힌다 */}
+            <p className="mt-1 text-[11px] text-sub">외움 = 끝 단계에서 21일 넘게 기억</p>
           </section>
 
           <section className="mt-5" aria-labelledby="steady-heading">
-            <h3 id="steady-heading" className="text-[13px] font-semibold text-sub">
-              꾸준함
+            <h3 id="steady-heading" className="sr-only">
+              최근 7일
             </h3>
             {view.steady ? (
               <SteadyView steady={view.steady} />
@@ -478,12 +480,12 @@ function Reminder() {
 
   return (
     <section className="mt-5" aria-labelledby="remind-heading">
-      <h3 id="remind-heading" className="text-[13px] font-semibold text-sub">
+      <h3 id="remind-heading" className="sr-only">
         매일 알림
       </h3>
       {where === 'install' ? (
         <p className="mt-2 text-sm text-sub">
-          홈 화면에 추가한 앱에서 켤 수 있습니다. Safari의 공유 버튼 → 홈 화면에 추가.
+          매일 알림은 홈 화면에 추가한 앱에서 켤 수 있습니다. Safari의 공유 버튼 → 홈 화면에 추가.
         </p>
       ) : hour === undefined ? (
         <div aria-busy="true" className="mt-2 h-10 animate-pulse rounded-ctrl bg-line" />
@@ -515,12 +517,12 @@ function Reminder() {
                 hour === null ? 'bg-ink text-surface' : 'border border-line'
               }`}
             >
-              {busy ? '…' : hour === null ? '켜기' : '끄기'}
+              {busy ? '…' : hour === null ? '알림 켜기' : '알림 끄기'}
             </button>
           </div>
           <p className="mt-1.5 text-[12px] text-sub">
             {hour === null
-              ? '오늘 이미 공부한 날에는 보내지 않습니다.'
+              ? '매일 이 시각에 알립니다. 그날 이미 공부했으면 보내지 않습니다.'
               : `매일 ${hourLabel(hour)}에 알립니다. 그날 이미 공부했으면 보내지 않습니다.`}
           </p>
           {error && (
