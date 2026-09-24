@@ -95,6 +95,19 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
             : <span className="text-4xl font-semibold">{question.prompt}</span>}
         </div>}
         {!intro && answered && <span className="absolute right-5 bottom-7 text-sm text-sub">{gradeLabel(character.readingGrade)} · {character.strokes}획</span>}
+        {/*
+          써보기는 글자 곁에 둔다. 시트 끝에 있을 때는 설명을 다 내려야 닿았는데,
+          쓰는 대상은 위의 글자다. 오른쪽 아래 급수 표시와 같은 높이로 맞춘다 —
+          누르는 자리를 44px로 넓히면서 글자 가운데가 바닥에서 38px에 오게
+          `bottom-4`를 쓴다. 시트가 아래 18px을 덮으니(`-mt-lg`) 누르는 자리의
+          끝 2px이 가려지지만 글자는 다 드러난다.
+
+          답하기 전 퀴즈에는 세우지 않는다. 쓰는 화면에 훈음과 글자가 다 나오는데
+          (components/hanja/writing.tsx) 그 둘이 곧 두 퀴즈의 정답이다
+        */}
+        {(intro || answered) && (
+          <Drawer.Trigger className="absolute bottom-4 left-2 min-h-11 rounded-ctrl px-3 text-sm text-sub underline underline-offset-4">써보기</Drawer.Trigger>
+        )}
       </CardImage>
       <CardSheet>
         {intro ? <HanjaDetails character={character} /> : (
@@ -129,7 +142,6 @@ export function HanjaCard({ question, active, pick, onAnswer }: {
         )}
         {(intro || answered) && (
           <div className="mt-auto pt-3">
-            <Drawer.Trigger className="mx-auto block min-h-11 rounded-ctrl px-5 text-sm text-sub underline underline-offset-4">써보기</Drawer.Trigger>
             <SwipeHint />
           </div>
         )}
