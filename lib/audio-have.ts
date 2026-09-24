@@ -23,15 +23,26 @@ export function hasAudio(slug: string, lang: string): boolean {
 }
 
 /**
- * 예문 소리가 **있는** 자리. 낱말과 반대로 적는다.
+ * 예문 소리는 **언어 단위로 켠다.** 켜진 언어 안에서는 없는 것만 적는다.
  *
- * 낱말은 20,671자리가 거의 다 차 있어 **없는 것**을 적는 편이 짧다. 예문은
- * 42,000자리가 거의 다 비어 있어 **있는 것**을 적는 편이 짧다. 같은 이유로
- * 방향만 뒤집었다 — 목록이 번들에 실리므로 짧은 쪽을 고른다.
+ * 소리를 내는 것은 소개 카드의 첫 예문(index 0)뿐이라 자리가 언어마다 1만 개를
+ * 넘는다. 있는 것을 적으면 다 채웠을 때 3MB가 번들에 실리고, 없는 것만 적으면
+ * 만드는 도중에 그만큼 실린다. 그래서 한 언어를 거의 다 채우면
+ * (`EXAMPLE_AUDIO_ON` 이상) 그 언어를 켜고, 남은 빈자리만 적는다 — 예문을 고친
+ * 뒤 아직 다시 만들지 않은 몇 줄이다.
  *
- * 열쇠는 `{lang}/{slug}-{index}-{해시}`다. 해시가 문장에서 나오므로(lib/entries.ts)
- * 예문을 고치면 열쇠가 달라지고, 이 목록에 없으니 버튼이 조용히 안 뜬다.
+ * 열쇠는 `{lang}/{slug}-0-{해시}`다. 해시가 문장에서 나오므로(lib/entries.ts)
+ * 예문을 고치면 열쇠가 달라지고, 다시 만들 때까지 여기에 빈자리로 오른다.
  *
  *   node scripts/audio.ts manifest    다시 만든다
  */
-export const EXAMPLE_AUDIO: ReadonlySet<string> = new Set([])
+export const EXAMPLE_AUDIO_ON = 0.99
+
+export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([])
+
+export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([])
+
+/** 그 언어의 그 예문(열쇠는 `exampleAudioKey`)에 소리가 있는가 */
+export function hasExampleAudio(lang: string, key: string): boolean {
+  return EXAMPLE_AUDIO_LANGS.has(lang) && !EXAMPLE_MISSING.has(`${lang}/${key}`)
+}

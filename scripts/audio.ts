@@ -6,6 +6,7 @@
  *   node scripts/audio.ts place ja cat ~/Downloads/speech.mp3
  *   node scripts/audio.ts make ja 10        API로 10개를 만들어 바로 넣는다
  *   node scripts/audio.ts make ja only shrink,flawless   그 낱말만 만든다
+ *   node scripts/audio.ts ex zh 500         예문 소리 500개를 로컬 Qwen3-TTS로 만든다
  *   node scripts/audio.ts sync              만든 것을 R2로 올린다
  *   node scripts/audio.ts peaks [ja]        듣기 카드에 깔 파형을 미리 뽑는다
  *
@@ -32,6 +33,7 @@ import {
 } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { exampleAudioKey } from '../lib/entries.ts'
+import { EXAMPLE_AUDIO_ON } from '../lib/audio-have.ts'
 import { answerOf, LANG } from '../lib/lang.ts'
 import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import type { Concept, Language } from '../lib/types.ts'
@@ -69,26 +71,34 @@ const line = (n: number) => '─'.repeat(n)
  * 소리 없는 문제를 내지 않으려면 **빌드 때 알고 있어야** 한다. 없는 것만 적는
  * 이유는 있는 것을 다 적으면 20,671줄이 번들에 실리기 때문이다.
  */
+/** 소리를 내는 첫 예문(index 0)마다 열쇠와 경로. 소개 카드만 예문 소리를 낸다 (components/cards.tsx) */
+function firstExamples(lang: Language) {
+  return concepts.flatMap((concept) => {
+    const word = concept.words[lang]
+    const example = word && (word.examples?.[0] ?? word.example)
+    if (!example?.text) return []
+    const key = exampleAudioKey(concept.slug, 0, example.text)
+    return [{ slug: concept.slug, text: example.text, key, path: join('public', 'audio', lang, 'ex', `${key}.mp3`) }]
+  })
+}
+
 /**
- * 예문 소리 중 **있는** 것. 낱말과 방향이 반대다 (lib/audio-have.ts).
+ * 예문 소리를 켤 언어와, 켜진 언어 안의 빈자리 (lib/audio-have.ts).
  *
  * 이름이 문장 해시라 예문을 고치면 열쇠가 바뀐다. 낡은 파일은 여기에 안 잡히고
  * `pnpm check`가 고아로 잡는다.
  */
-function examplesPresent(): string[] {
-  const keys: string[] = []
-  for (const { language } of TRACKS)
-    for (const concept of concepts) {
-      const word = concept.words[language]
-      if (!word) continue
-      const list = word.examples ?? (word.example ? [word.example] : [])
-      list.forEach((example, index) => {
-        const key = exampleAudioKey(concept.slug, index, example.text)
-        if (existsSync(join('public', 'audio', language, 'ex', `${key}.mp3`)))
-          keys.push(`${language}/${key}`)
-      })
-    }
-  return keys.sort()
+function exampleManifest() {
+  const langs: string[] = []
+  const gone: string[] = []
+  for (const lang of new Set(TRACKS.map(({ language }) => language))) {
+    const rows = firstExamples(lang)
+    const missing = rows.filter((row) => !existsSync(row.path))
+    if (rows.length === 0 || 1 - missing.length / rows.length < EXAMPLE_AUDIO_ON) continue
+    langs.push(lang)
+    gone.push(...missing.map((row) => `${lang}/${row.key}`))
+  }
+  return { langs: langs.sort(), gone: gone.sort() }
 }
 
 /* ── 파형 ────────────────────────────────────────────────────────── */
@@ -203,7 +213,7 @@ function manifest() {
   const gone = [
     ...new Set(TRACKS.flatMap(({ language }) => missing(language).map(({ slug }) => `${language}/${slug}`))),
   ].sort()
-  const here = examplesPresent()
+  const examples = exampleManifest()
 
   const path = join('lib', 'audio-have.ts')
   const source = readFileSync(path, 'utf8')
@@ -215,11 +225,17 @@ function manifest() {
       `export const AUDIO_MISSING: ReadonlySet<string> = new Set(${list(gone)})\n`,
     )
     .replace(
-      /export const EXAMPLE_AUDIO: ReadonlySet<string> = new Set\([\s\S]*?\)\n/,
-      `export const EXAMPLE_AUDIO: ReadonlySet<string> = new Set(${list(here)})\n`,
+      /export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set\([\s\S]*?\)\n/,
+      `export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set(${list(examples.langs)})\n`,
+    )
+    .replace(
+      /export const EXAMPLE_MISSING: ReadonlySet<string> = new Set\([\s\S]*?\)\n/,
+      `export const EXAMPLE_MISSING: ReadonlySet<string> = new Set(${list(examples.gone)})\n`,
     )
   writeFileSync(path, next)
-  console.log(`\n발음 없는 자리 ${gone.length}건 · 예문 소리 ${here.length}건을 ${path}에 적었습니다\n`)
+  console.log(
+    `\n발음 없는 자리 ${gone.length}건 · 예문 소리 켠 언어 ${examples.langs.join(' ') || '없음'} (빈자리 ${examples.gone.length})을 ${path}에 적었습니다\n`,
+  )
 }
 
 function summary() {
@@ -396,6 +412,44 @@ async function make(lang: Language, limit: number, concurrency = 8, only?: strin
   console.log(`\n${done}개 완료 · ${lang} 남은 것 ${missing(lang).length}개`)
 }
 
+/**
+ * 예문 소리를 로컬 Qwen3-TTS로 만든다 (scripts/audio-examples.py, AUDIO.md).
+ *
+ * 크레딧이 안 나가는 대신 느리다 — M5에서 문장당 3초 남짓이라 한 언어가
+ * 아홉 시간이다. 개수를 받아 끊어 돌린다. 이미 있는 것은 건너뛰므로 멈췄다가
+ * 같은 명령을 다시 치면 이어서 간다.
+ *
+ * 파이썬은 레포 밖 가상환경을 쓴다(QWEN_PYTHON). 모델 무게가 3.5GB라 레포에
+ * 둘 것이 아니다.
+ */
+function makeExamples(lang: Language, limit: number) {
+  if (existsSync('.env')) process.loadEnvFile('.env')
+  if (!LANG[lang]) fail(`알 수 없는 언어: ${lang}`)
+  const python = process.env.QWEN_PYTHON ?? join('..', 'lingo-tts-bench', '.venv-qwen', 'bin', 'python')
+  if (!existsSync(python))
+    fail(
+      `Qwen3-TTS 파이썬이 없습니다: ${python}\n` +
+        '  uv venv -p 3.12 <경로> && VIRTUAL_ENV=<경로> uv pip install qwen-tts soundfile\n' +
+        '  다른 곳에 두었으면 .env 에 QWEN_PYTHON=<경로>/bin/python',
+    )
+
+  const rows = firstExamples(lang).filter((row) => !existsSync(row.path)).slice(0, limit)
+  if (rows.length === 0) return console.log(`\n${lang} 예문 소리는 다 만들어져 있습니다.`)
+
+  const todo = join('.audio-tmp', `ex-${lang}.json`)
+  mkdirSync(dirname(todo), { recursive: true })
+  writeFileSync(todo, JSON.stringify(rows))
+  console.log(`\n${lang} 예문 ${rows.length}개를 만듭니다 — 로컬 Qwen3-TTS\n${line(52)}`)
+  execFileSync(python, [join('scripts', 'audio-examples.py'), lang, todo], {
+    stdio: 'inherit',
+    // MPS에 없는 연산은 CPU로 넘긴다. 없으면 모델이 올라가다 멈춘다
+    env: { ...process.env, PYTORCH_ENABLE_MPS_FALLBACK: '1' },
+  })
+  rmSync(todo, { force: true })
+  const left = firstExamples(lang).filter((row) => !existsSync(row.path)).length
+  console.log(`${lang} 예문 소리 남은 것 ${left}개`)
+}
+
 function place(lang: Language, slug: string, source: string) {
   if (!LANG[lang]) fail(`알 수 없는 언어: ${lang}`)
   const concept = concepts.find((c) => c.slug === slug)
@@ -478,7 +532,7 @@ function sync() {
 
   // 예문. 이름에 해시가 있어 영구 캐시가 안전하다.
   // --delete-excluded 를 안 쓰므로 위에서 올린 낱말은 지워지지 않는다
-  if (existsSync(join(local, 'ja', 'ex'))) {
+  if (readdirSync(local).some((lang) => existsSync(join(local, lang, 'ex')))) {
     console.log('\n예문')
     execFileSync(
       'rclone',
@@ -531,6 +585,10 @@ else if (command === 'make') {
   const count =
     rawCount === 'all' ? Number.MAX_SAFE_INTEGER : Number(rawCount ?? (only ? only.length : 5))
   await make((positional[0] ?? 'ja') as Language, count, Number(positional[2] ?? 8), only)
+}
+else if (command === 'ex') {
+  const [lang, count] = rest
+  makeExamples((lang ?? 'ja') as Language, count === 'all' ? Number.MAX_SAFE_INTEGER : Number(count ?? 20))
 }
 else if (command === 'sync') sync()
 else if (command === 'manifest') manifest()

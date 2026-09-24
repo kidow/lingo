@@ -7,7 +7,7 @@ import { ConceptImage } from './concept-image'
 import { SayButton } from './say-button'
 import { answerSize, blankRow, optionBox, optionColumns, optionSize } from '@/lib/fit'
 import { examplesOf, exampleAudioKey, exampleAudioPath, type Entry } from '@/lib/entries'
-import { EXAMPLE_AUDIO } from '@/lib/audio-have'
+import { hasExampleAudio } from '@/lib/audio-have'
 import { asideOf, bcp47 } from '@/lib/lang'
 import { levelOf } from '@/lib/level'
 import { barsOf, loadPeaks } from '@/lib/peaks'
@@ -101,6 +101,13 @@ function IntroCard({ question, lang, track, first }: { question: IntroQuestion }
   const baseTag = bcp47(lang)
   const level = levelOf(word, track)
   const [example] = examplesOf(word, lang, track)
+  /*
+   * 예문 소리의 열쇠는 **기본 표기**로 짓는다. 소리는 트랙이 아니라 언어의
+   * 것이라(spec.md §1) TOCFL이 번체로 보여 줘도 같은 문장의 같은 소리다 —
+   * 번체로 해시를 내면 HSK와 다른 이름이 되어 파일을 못 찾는다
+   */
+  const [spoken] = examplesOf(word)
+  const exampleKey = spoken && exampleAudioKey(concept.slug, 0, spoken.text)
 
   return (
     <FeedCard>
@@ -166,12 +173,12 @@ function IntroCard({ question, lang, track, first }: { question: IntroQuestion }
                 빈 버튼이 자리를 지켜야 글자가 안 밀리지만, 예문 소리는 아직
                 한 자리도 없어서 3,031장에 회색 버튼만 늘어놓게 된다 (§5)
               */}
-              {EXAMPLE_AUDIO.has(`${lang}/${exampleAudioKey(concept.slug, 0, example.text)}`) && (
+              {exampleKey && hasExampleAudio(lang, exampleKey) && (
                 <SayButton
                   slug={concept.slug}
                   lang={lang}
                   label={example.text}
-                  src={exampleAudioPath(lang, concept.slug, 0, example.text)}
+                  src={exampleAudioPath(lang, concept.slug, 0, spoken.text)}
                 />
               )}
             </div>

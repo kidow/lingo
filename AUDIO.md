@@ -255,6 +255,43 @@ spec.md §4가 잡은 신호(`.git` 500MB 초과)를 한참 넘긴 값이다.
 > 참고로 발음만 33,000개라 **Cloudflare Pages의 20,000개 한도는 애초에 넘겼다.**
 > Vercel에 남는 이유가 이것이다.
 
+### 예문 소리 — 로컬 Qwen3-TTS로 ara를 복제한다
+
+```bash
+node scripts/audio.ts ex zh 2000   # 2,000문장. 멈췄다 다시 치면 이어서 간다
+node scripts/audio.ts manifest     # 한 언어를 99% 채우면 그 언어가 켜진다
+node scripts/audio.ts sync
+```
+
+**소리를 내는 것은 소개 카드의 첫 예문(index 0)뿐이다** — 둘째 예문은 빈칸
+카드가 쓰는데, 문장을 들려주면 정답이 들린다. 그래서 언어마다 11,113개,
+모두 77,791개다.
+
+**xAI가 아니라 로컬 모델로 만든다.** API로는 $35인데, 2026-09-24에 Qwen3-TTS
+1.7B · 0.6B · Chatterbox V3를 xAI와 나란히 들어 보니 1.7B가 읽기 정확도
+(Whisper 오독률)는 xAI와 같고 목소리도 귀로 구별이 안 됐다. 0.6B는 문장을
+열 배로 늘려 지어내는 일이 있었고, Chatterbox는 다른 사람 목소리로 들렸다.
+
+| 항목 | 값 |
+|---|---|
+| 모델 | `Qwen/Qwen3-TTS-12Hz-1.7B-Base` · MPS · bf16 |
+| 참고 음성 | `scripts/tts-ref/{lang}.mp3` — xAI ara로 만든 문장 하나(3~4초). 글은 `ref.json` |
+| 규격 | 낱말과 같다 (22050 Hz · 96 kbps · 모노) + **-22 LUFS로 음량을 맞춘다** |
+| 속도 | M5에서 문장당 3초 남짓 — 언어 하나에 아홉 시간 |
+| 파이썬 | 레포 밖 가상환경. 기본 `../lingo-tts-bench/.venv-qwen`, 다르면 `.env`의 `QWEN_PYTHON` |
+
+**음량을 맞추는 이유** — xAI 낱말은 -22 LUFS 언저리인데 Qwen은 문장마다
+-24~-20으로 흔들린다. 낱말 버튼 다음에 예문 버튼을 누르면 크기가 튄다.
+
+**길이로 지어낸 소리를 거른다.** 글자 수로 예상 길이를 내고(언어별 말 빠르기는
+`scripts/audio-examples.py`의 `RATE`) 크게 벗어나면 세 번까지 다시 뽑는다.
+Whisper 채점으로는 안 잡히던 실패라 길이만 믿는다.
+
+**언어 단위로 켠다** (`lib/audio-have.ts`). 있는 것을 적으면 다 채웠을 때 3MB가
+번들에 실린다. 한 언어를 99% 채우면 그 언어를 켜고, 남은 빈자리만 적는다.
+TOCFL이 번체로 보여 줘도 소리의 열쇠는 간체 원문으로 짓는다 — 소리는 언어의
+것이다 (components/cards.tsx).
+
 ### 지금 상태
 
 | 무엇 | 값 |
@@ -262,7 +299,7 @@ spec.md §4가 잡은 신호(`.git` 500MB 초과)를 한참 넘긴 값이다.
 | 버킷 | `lingo-audio` (`R2_REMOTE=r2:lingo-audio`) |
 | 공개 주소 | `https://pub-…r2.dev` — **Public Development URL** |
 | 낱말 | 33,155개 · 476MB |
-| 예문 | 아직 0개 (`<lang>/ex/`) |
+| 예문 | 만드는 중 (`<lang>/ex/`) — 첫 예문만 77,791개 |
 
 **용량 걱정은 없다.** R2 무료 티어는 저장 10 GB-month · 쓰기 100만/월 ·
 읽기 1,000만/월 · **egress 무료**다. 예문(95,796개 ≈ 4.3GB)까지 다 넣어도

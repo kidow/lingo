@@ -9,7 +9,7 @@
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { EXAMPLES_PER_CARD, KANA_OPEN, KANA_SCRIPTS, KANA_TABLE, exampleQuota, glyphOf, type KanaExamples } from '../lib/kana.ts'
-import { AUDIO_MISSING } from '../lib/audio-have.ts'
+import { AUDIO_MISSING, EXAMPLE_AUDIO_LANGS, EXAMPLE_AUDIO_ON, EXAMPLE_MISSING } from '../lib/audio-have.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import { auditTrivia } from '../lib/trivia-audit.ts'
 import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
@@ -1069,6 +1069,33 @@ if (notes.length) {
         `  · lib/audio-have.ts와 ${differing.length}건 어긋나지만 전부 아직 커밋되지 않은 콘텐츠입니다 — 그 콘텐츠를 커밋할 때 함께 굽습니다`,
       )
   }
+}
+
+/**
+ * 예문 소리 목록도 실물과 대조한다 (lib/audio-have.ts). 언어 단위로 켜므로
+ * 켜야 할 언어를 안 켰거나, 켜진 언어의 빈자리가 실물과 다르면 운다 —
+ * 예문을 고치면 해시가 바뀌어 그 줄이 빈자리가 된다.
+ */
+{
+  const langs: string[] = []
+  const gone = new Set<string>()
+  for (const language of new Set(TRACKS.map(({ language }) => language))) {
+    const keys = all.flatMap((concept) => {
+      const word = concept.words[language]
+      const example = word && (word.examples?.[0] ?? word.example)
+      return example?.text ? [exampleAudioKey(concept.slug, 0, example.text)] : []
+    })
+    const missing = keys.filter((key) => !existsSync(join(PUBLIC_DIR, 'audio', language, 'ex', `${key}.mp3`)))
+    if (keys.length === 0 || 1 - missing.length / keys.length < EXAMPLE_AUDIO_ON) continue
+    langs.push(language)
+    for (const key of missing) gone.add(`${language}/${key}`)
+  }
+  const langDiff = langs.length !== EXAMPLE_AUDIO_LANGS.size || langs.some((l) => !EXAMPLE_AUDIO_LANGS.has(l))
+  const keyDiff = [...gone].filter((k) => !EXAMPLE_MISSING.has(k)).length + [...EXAMPLE_MISSING].filter((k) => !gone.has(k)).length
+  if (langDiff || keyDiff > 0)
+    warn(
+      `lib/audio-have.ts의 예문 소리가 낡았습니다 — 켤 언어 ${langs.join(' ') || '없음'}${keyDiff ? ` · 빈자리 ${keyDiff}건 어긋남` : ''}. node scripts/audio.ts manifest 를 돌리세요`,
+    )
 }
 
 /**
