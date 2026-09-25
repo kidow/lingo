@@ -906,13 +906,26 @@ function traditionalSentence(
  * 구자형 글꼴을 내면 그대로 들어갔다(路綫·記録·閑聊). 대만 교육부 표준은 오른쪽이다.
  * OpenCC의 TWVariants(문맥 없이 글자만 바꾸는 표)와 같은 성격의 것만 둔다.
  *
- * 뜻으로 갈리는 글자(周/週 · 只/隻 · 布/佈 · 游/遊)는 여기에 넣지 않는다 —
- * 周圍는 周고 每週는 週다. 그런 자리는 MANUAL과 SEGMENT에서 낱말로 정한다.
+ * 뜻으로 갈리는 글자는 이 표에 넣지 않는다 — 周圍는 周고 每週는 週다. 규칙이
+ * 한 줄로 떨어지는 周·只만 아래에서 문맥으로 가르고, 布/佈 · 游/遊 · 占/佔처럼
+ * 낱말마다 다른 것은 MANUAL과 SEGMENT에서 정한다.
  */
 const TW_GLYPH: Record<string, string> = {
   綫: '線', 録: '錄', 閑: '閒', 污: '汙', 檐: '簷', 泄: '洩', 卧: '臥', 涌: '湧', 凈: '淨', 棱: '稜',
 }
-const twGlyph = (text: string) => text.replace(/[綫録閑污檐泄卧涌凈棱]/g, (ch) => TW_GLYPH[ch])
+/*
+ * 뜻으로 갈리는 둘은 문맥 규칙으로 가른다. 둘 다 규칙이 한 줄로 떨어진다
+ * (2026-09-25에 콘텐츠의 쓰임 225곳을 전부 훑어 확인했다).
+ *
+ *   只 → 隻  수사·지시사 뒤의 양사다(一隻貓 · 這隻碗 · 單隻手套). 只好·只有는 그대로
+ *   周 → 週  「주」다(每週五 · 週末 · 週期 · 週年 · 週歲). 둘레를 뜻하는 周圍 · 四周 ·
+ *           周到 · 周全 · 周旋 · 周長과 眾所周知는 그대로. 周轉은 八千詞表가 周로 싣는다
+ */
+const twGlyph = (text: string) =>
+  text
+    .replace(/[綫録閑污檐泄卧涌凈棱]/g, (ch) => TW_GLYPH[ch])
+    .replace(/(?<=[一兩三四五六七八九十幾這那每哪單半])只/g, '隻')
+    .replace(/(?<![四所圓])周(?![圍到全旋長邊密遊轉])/g, '週')
 
 const examplesOfWord = (word: { example?: Example; examples?: Example[] }): Example[] =>
   word.examples?.length ? word.examples : word.example ? [word.example] : []
