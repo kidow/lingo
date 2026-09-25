@@ -594,6 +594,78 @@ const MANUAL: Record<string, string> = {
   'body.json:get-a-haircut': '剪頭髮',
   'job.json:sociologist': '社會學家',
   'quality.json:scratched': '有劃痕的',
+
+  /*
+   * 2026-09-25 · 八千詞表과 간체로 맞는데 TOCFL 트랙에 못 들던 자리.
+   *
+   * **갈려서 빈 곳** — 八千詞表가 대만 표준 표기를 직접 보여 준다.
+   *   了(완료)·才(비로소)·挽(걷어 올리다)는 瞭·纔·輓이 아니다. 盡(다하다)은
+   *   儘(될 수 있는 대로)이 아니다. 上臺·注定·編制는 두 표기가 다 실렸고 교육부
+   *   표준 쪽을 쓴다. 劃(선을 긋다)은 등급이 안 붙는다 — 목록의 划는 노를 젓는 쪽이다
+   */
+  'action.json:draw-a-line': '劃',
+  'action.json:dont-do-that': '別',
+  'action.json:done-already': '了',
+  'action.json:use-up-fully': '盡',
+  'clothes.json:roll-up-sleeves': '挽',
+  'idea.json:take-the-stage': '上臺',
+  'idea.json:at-the-time-when': '當',
+  'idea.json:be-bound-to-happen': '注定',
+  'quality.json:only-then': '才',
+  'school.json:staffing-plan': '編制',
+  /*
+   * **인사말 scene** — scene은 문장이라 건너뛰는데(아래 본문), 여기 적은 것만은
+   * 한 낱말짜리 인사라 八千詞表에 그대로 있다. 표에 있으면 건너뛰지 않는다
+   */
+  'scene.json:excuse-me': '不好意思',
+  'scene.json:thank-you': '謝謝',
+  'scene.json:sorry': '對不起',
+  'scene.json:check-please': '買單',
+  'scene.json:no-problem': '沒關係',
+  'scene.json:cheers': '乾杯',
+  'scene.json:congratulations': '恭喜',
+  'scene.json:stay-well': '保重',
+  'scene.json:youre-welcome': '不客氣',
+  'scene.json:goodbye': '再見',
+  /*
+   * **다른 표기가 들어가 있던 곳.** 둘로 나뉜다.
+   *   이체자 — Unihan이 홍콩 쪽 글꼴을 골랐다: 綫→線 · 録→錄 · 凈→淨 · 閑→閒 ·
+   *     贊→讚 · 迹/跡→蹟 · 游→遊 · 卧→臥 · 羡→羨 · 泄→洩 · 污→汙 · 煉→鍊 · 涌→湧
+   *   兩岸表가 낱말을 잘못 갈아 끼웠다 — 手機→大哥大(1990년대 말), 花生→土豆,
+   *     冰淇淋→霜淇淋(소프트아이스크림), 電子郵件→電郵·轎車→房車(홍콩), 自行車→單車,
+   *     冰箱→電冰箱. 대만 시험 목록이 手機·花生·冰淇淋을 싣는다
+   * 뜻이 다른 것은 두었다: 摺(접다)·繫(매다)은 위에서 이미 정했고, 自製(손수 만든)
+   * 옆의 自制는 「자제」, 睏(졸리다) 옆의 困은 「곤란하다」다
+   */
+  'action.json:exercise': '鍛鍊',
+  'action.json:purify': '淨化',
+  'action.json:gush': '湧',
+  'city.json:parade': '遊行',
+  'clothes.json:thread': '線',
+  'everyday.json:bicycle': '自行車',
+  'everyday.json:cellphone': '手機',
+  'everyday.json:record-tape': '錄',
+  'food.json:ice-cream': '冰淇淋',
+  'food.json:peanut': '花生',
+  'home.json:refrigerator': '冰箱',
+  'home.json:bedroom': '臥室',
+  'idea.json:miracle': '奇蹟',
+  'idea.json:compliment': '讚美',
+  'nature.json:pollute': '汙染',
+  'nature.json:ray': '光線',
+  'number.json:straight-line': '直線',
+  'office.json:email': '電子郵件',
+  'office.json:written-record': '記錄',
+  'quality.json:casual': '休閒',
+  'quality.json:deflate-lose-heart': '洩氣',
+  'quality.json:envy-what-they-have': '羨慕',
+  'school.json:the-list-of-what-is-inside': '目錄',
+  'sport.json:game': '遊戲',
+  'travel.json:tour-guide': '導遊',
+  'travel.json:admire': '讚嘆',
+  'travel.json:tourist': '遊客',
+  'travel.json:sedan': '轎車',
+  'travel.json:historic-site': '古蹟',
 }
 
 /* ── 예문 번체 ─────────────────────────────────────────────────────── */
@@ -792,7 +864,20 @@ function traditionalSentence(
   maxLen: number,
   sources: Parameters<typeof resolve>[1],
   stuck: Map<string, number>,
+  pin?: { term: string; traditional: string },
 ): string | null {
+  /*
+   * **표제어 자리는 낱말이 고른 번체로 박는다.** 조각을 따로 옮기면 MANUAL로
+   * 바로잡은 표기가 예문에서는 도로 이체자(鍛煉·綫)나 兩岸表 낱말로 나와 정답과
+   * 어긋나고, 문맥 카드가 안 선다. 박지 않아도 이미 맞으면 그대로 둔다 —
+   * 자르는 자리가 바뀌면 이웃 조각의 번체까지 흔들린다
+   */
+  if (pin && text.includes(pin.term)) {
+    const plain = traditionalSentence(text, dict, maxLen, sources, new Map())
+    if (plain?.includes(pin.traditional)) return plain
+    const parts = text.split(pin.term).map((part) => (part ? traditionalSentence(part, dict, maxLen, sources, stuck) : ''))
+    return parts.some((part) => part === null) ? null : parts.join(pin.traditional)
+  }
   let out = ''
   let ok = true
   for (const piece of segments(text, dict, maxLen)) {
@@ -876,7 +961,8 @@ for (const file of files) {
     // scene(표현 덱, 문장)은 건너뛴다 — TOCFL 등급은 낱말 시험이라 문장 전체에는
     // 안 붙고, 글자마다 후보를 곱하면 문장 길이만큼 부풀어 진짜 갈리는 자리를
     // 파묻는다(了 하나가 문장마다 了/瞭 "미확정"을 찍어낸다)
-    if (concept.category === 'scene') continue
+    // 인사말처럼 한 낱말짜리 scene은 MANUAL에 적어 두었다. 거기 있으면 다룬다
+    if (concept.category === 'scene' && !MANUAL[`${file}:${concept.slug}`]) continue
     const word = concept.words.zh
     if (!word) continue
     words += 1
@@ -907,7 +993,8 @@ for (const file of files) {
     resolved += 1
     how[pickedHow] = (how[pickedHow] ?? 0) + 1
 
-    const level = tocfl.levelOf.get(picked)
+    // 兩岸表가 `公共汽車／公車`처럼 두 표기를 묶어 낸다. 어느 하나라도 목록에 있으면 붙인다
+    const level = picked.split('／').map((form) => tocfl.levelOf.get(form)).find(Boolean)
     const attributes = (word.attributes ?? {}) as Record<string, unknown>
     if (level) {
       attributes.tocfl = level
@@ -929,6 +1016,8 @@ for (const file of files) {
         CEDICT_MAX,
         { variants, official, revised, hanSet, crossStrait },
         stuckSegments,
+        // `公共汽車／公車`처럼 둘을 묶은 자리는 앞의 것을 쓴다
+        { term: word.term, traditional: picked.split('／')[0] },
       )
       if (line) {
         example.traditional = line
