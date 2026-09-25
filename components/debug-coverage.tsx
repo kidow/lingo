@@ -16,6 +16,7 @@ export type CoverageData = {
   tsl: { covered: number; total: number; sideOnly: number }
   hsk: Graded
   torfl: Graded
+  goethe: Graded
   tagged: Array<{ label: string; has: number; all: number; spread: string }>
 }
 
@@ -59,11 +60,13 @@ export function DebugCoverage({ data }: { data: CoverageData | null }) {
           <Row label="TSL (TOEIC)" covered={data.tsl.covered} total={data.tsl.total} />
           <Group name="HSK (2026 대강)" graded={data.hsk} />
           <Group name="TORFL (ТРКИ)" graded={data.torfl} />
+          <Group name="Goethe (TELC)" graded={data.goethe} />
         </Table>
         <p className="mt-2 text-[12px] text-sub">
           그 가운데 곁말(<code className="font-mono">also</code>)로만 실린 것 — TSL{' '}
-          {data.tsl.sideOnly} · HSK {data.hsk.sideOnly} · TORFL {data.torfl.sideOnly}. 카드에
-          보이지만 퀴즈에는 안 나온다. TORFL의 C1·C2는 목록에 없다 — 사이트가 B2까지만 싣는다.
+          {data.tsl.sideOnly} · HSK {data.hsk.sideOnly} · TORFL {data.torfl.sideOnly} · Goethe{' '}
+          {data.goethe.sideOnly}. 카드에
+          보이지만 퀴즈에는 안 나온다. TORFL의 C1·C2는 목록에 없다 — 사이트가 B2까지만 싣는다. Goethe는 B1까지다.
         </p>
       </section>
 

@@ -1237,7 +1237,7 @@ content/verbs.json
 ```bash
 pnpm pending --free            # 넘겨 둔 것 중 지금 열린 파일이 있는지 (회차 앞)
 pnpm coverage                  # 숫자만
-pnpm coverage --missing tsl    # 빠진 낱말을 실제로 찍는다 (tsl · hsk · torfl)
+pnpm coverage --missing tsl    # 빠진 낱말을 실제로 찍는다 (tsl · hsk · torfl · goethe)
 pnpm dup <slug|뜻조각> …        # 후보가 이미 있는지 배치 앞에서 본다
 pnpm ex <배치.json>            # 예문이 표제어를 보여주는지, content/에 넣기 전에
 pnpm batch <slug…>             # 넣은 뒤에 늘 함께 도는 아홉을 한 번에

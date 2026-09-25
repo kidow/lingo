@@ -24,6 +24,7 @@
  */
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { goetheHeadwords } from './goethe.ts'
 import { bare, torflEntries } from './torfl.ts'
 import type { Concept } from '../lib/types.ts'
 
@@ -46,7 +47,7 @@ const concepts: Concept[] = readdirSync('content')
   .flatMap(conceptsOf)
 
 /**
- * 빠진 낱말을 실제로 찍는다 — `pnpm coverage --missing [tsl|hsk|torfl]`.
+ * 빠진 낱말을 실제로 찍는다 — `pnpm coverage --missing [tsl|hsk|torfl|goethe]`.
  *
  * 숫자만으로는 다음에 뭘 채울지 정할 수 없다. "656개 남음"은 일감이 아니라
  * 성적표다. 목록을 찍으면 그대로 배치 후보가 된다. 인자가 없으면 셋 다 찍는다.
@@ -130,7 +131,7 @@ const pct = (a: number, b: number) => (b === 0 ? '—' : `${((100 * a) / b).toFi
  * 얹힌 강세 부호를 떼야 만난다 (scripts/torfl.ts). 중국어는 그대로 쓴다.
  */
 /** 우리 표기와 예문을 한 덩어리로. `sieve`가 여기서 찾는다 */
-function haystacks(lang: 'en' | 'zh' | 'ru') {
+function haystacks(lang: 'en' | 'zh' | 'ru' | 'de') {
   const termList: string[] = []
   const textList: string[] = []
   for (const concept of concepts) {
@@ -144,7 +145,7 @@ function haystacks(lang: 'en' | 'zh' | 'ru') {
   return { terms: termList.join(' | '), texts: textList.join(' | '), spaced: lang !== 'zh' }
 }
 
-const fold = (lang: 'en' | 'zh' | 'ru', t: string) =>
+const fold = (lang: 'en' | 'zh' | 'ru' | 'de', t: string) =>
   lang === 'en' ? t.toLowerCase() : lang === 'ru' ? bare(t) : t
 
 /**
@@ -158,7 +159,7 @@ const fold = (lang: 'en' | 'zh' | 'ru', t: string) =>
  * 훈련은 못 하므로 `term`과 같은 무게로 읽으면 안 된다 — 그래서 세되
  * **몇 개가 곁말뿐인지 따로 적는다** (`alsoOnly`).
  */
-function terms(lang: 'en' | 'zh' | 'ru'): Set<string> {
+function terms(lang: 'en' | 'zh' | 'ru' | 'de'): Set<string> {
   const set = new Set<string>()
   for (const concept of concepts) {
     const word = concept.words[lang]
@@ -170,7 +171,7 @@ function terms(lang: 'en' | 'zh' | 'ru'): Set<string> {
 }
 
 /** 표제 표기로는 없고 `also`에만 있는 것. 위의 주석을 보라 */
-function alsoOnly(lang: 'en' | 'zh' | 'ru'): Set<string> {
+function alsoOnly(lang: 'en' | 'zh' | 'ru' | 'de'): Set<string> {
   const heads = new Set<string>()
   const extra = new Set<string>()
   for (const concept of concepts) {
@@ -506,6 +507,44 @@ function sceneLine(scene: number, all: number) {
 
 shape()
 axes()
-const result = { tsl: await tsl(), hsk: hsk(), torfl: await torfl(), tagged: tagged() }
+/**
+ * Goethe-Zertifikat Wortliste — 독일어(TELC 트랙)의 등급별 목록 (scripts/goethe.ts).
+ *
+ * TELC 공식 단어표는 공개되지 않아 Goethe 목록을 채택했다(spec.md §7). 예전에는
+ * PDF의 글자를 전부 긁어 등급만 붙였고, 표제어와 예문이 섞여 **목록의 크기를
+ * 셀 수 없었다.** 표제어 칸만 떼어 내 이제 목록 대비로 센다.
+ *
+ * 등급은 누적이 아니다. 각 낱말이 **처음 나오는** 등급 하나에만 센다.
+ */
+async function goethe() {
+  const levels = await goetheHeadwords()
+  const mine = terms('de')
+  const side = alsoOnly('de')
+  let sideHits = 0
+  const rows = [...levels].map(([grade, words]) => {
+    const missing = [...words].filter((w) => !mine.has(w))
+    for (const w of words) if (side.has(w)) sideHits += 1
+    return { grade, covered: words.size - missing.length, total: words.size, missing }
+  })
+  const sumCovered = rows.reduce((s, r) => s + r.covered, 0)
+  const sumTotal = rows.reduce((s, r) => s + r.total, 0)
+
+  say(`\nGoethe Wortliste (TELC) — 등급별\n${line(46)}`)
+  for (const r of rows) say(`  ${r.grade.padEnd(6)} ${String(r.covered).padStart(5)}/${String(r.total).padStart(5)}  ${pct(r.covered, r.total)}`)
+  say(`  ${'합계'.padEnd(5)} ${String(sumCovered).padStart(5)}/${String(sumTotal).padStart(5)}  ${pct(sumCovered, sumTotal)}`)
+  say(`\n  그 가운데 ${sideHits}개는 곁말(also)로만 실려 있다`)
+  say(`  B2 이상은 목록에 없다 — Goethe가 B1까지만 낸다. PDF에서 뽑은 것이라 몇십 개는 잡음이다(scripts/goethe.ts)`)
+  if (wants('goethe'))
+    for (const r of rows) showSieved(`Goethe ${r.grade} 빠진 낱말`, r.missing, haystacks('de'))
+
+  return {
+    levels: rows.map((r) => ({ label: r.grade, covered: r.covered, total: r.total })),
+    covered: sumCovered,
+    total: sumTotal,
+    sideOnly: sideHits,
+  }
+}
+
+const result = { tsl: await tsl(), hsk: hsk(), torfl: await torfl(), goethe: await goethe(), tagged: tagged() }
 if (JSON_OUT) console.log(JSON.stringify(result))
 else console.log('')
