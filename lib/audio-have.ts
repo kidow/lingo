@@ -39,6 +39,7 @@ export function hasAudio(slug: string, lang: string): boolean {
 export const EXAMPLE_AUDIO_ON = 0.99
 
 export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([
+  'ja',
   'zh',
 ])
 
