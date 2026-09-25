@@ -517,7 +517,7 @@ axes()
  * 등급은 누적이 아니다. 각 낱말이 **처음 나오는** 등급 하나에만 센다.
  */
 async function goethe() {
-  const levels = await goetheHeadwords()
+  const levels = goetheHeadwords()
   const mine = terms('de')
   const side = alsoOnly('de')
   let sideHits = 0

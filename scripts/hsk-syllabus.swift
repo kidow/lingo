@@ -1,7 +1,7 @@
 // 공식 HSK 대강 PDF에서 글자를 뽑는다. scripts/hsk-syllabus.ts가 부른다.
 //
 // PDF가 암호로 잠겨 있어(`/Encrypt`) zlib으로 스트림을 푸는 우리 방식
-// (scripts/levels.ts의 `pdfWords`)으로는 못 읽는다. 도구를 설치하는 대신
+// (예전 scripts/levels.ts의 `pdfWords`)으로는 못 읽는다. 도구를 설치하는 대신
 // macOS가 이미 가진 PDFKit을 쓴다 — 잠긴 PDF도 그대로 연다.
 //
 //   swift scripts/hsk-syllabus.swift <파일> > 글자

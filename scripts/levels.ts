@@ -27,10 +27,10 @@
  * 다른 뜻의 등급을 물려받는다 — Bank(벤치/은행), Karte(지도/카드)가 그랬다.
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { inflateSync } from 'node:zlib'
 import { cachedBytes } from './cache.ts'
 import { hskOf, jlptOf } from './define.ts'
 import { fingerprint, stampSource } from './levels-stamp.ts'
+import { goetheHeadwords } from './goethe.ts'
 import { bare, torflLevels } from './torfl.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import type { Concept } from '../lib/types.ts'
@@ -65,59 +65,17 @@ async function tslRanks(): Promise<Map<string, number>> {
   return ranks
 }
 
-const GOETHE: Array<[string, string]> = [
-  ['B1', 'https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Wortliste.pdf'],
-  ['A2', 'https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A2_Wortliste.pdf'],
-  ['A1', 'https://www.goethe.de/pro/relaunch/prf/de/A1_SD1_Wortliste_02.pdf'],
-]
-
 /**
- * PDF에서 낱말을 긁는다.
+ * 독일어 CEFR — Goethe Wortliste의 **표제어**로 붙인다 (scripts/goethe.ts).
  *
- * PDF 도구를 설치하지 않는다. FlateDecode 스트림을 zlib으로 풀되 **BT/Tj 연산자가
- * 있는 콘텐츠 스트림만** 쓴다 — 글꼴 프로그램에는 그 연산자가 없어서 이 한 줄로
- * 바이너리가 걸러진다.
+ * 예전에는 PDF의 글자를 전부 긁어 붙였다. 그러면 A1 목록의 **예문**에 나온
+ * 낱말까지 A1이 됐다 — 표제어가 아닌데 예문 한 줄에 스쳤다는 이유로 등급이
+ * 실제보다 낮게 붙었다. 이제 표제어 칸에 있는 낱말만 센다. 등급은 처음
+ * 나오는 것 하나다.
  */
-async function pdfWords(url: string, cacheName: string): Promise<string[]> {
-  const buf = await cachedBytes(cacheName, async () =>
-    Buffer.from(await (await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } })).arrayBuffer()),
-  )
-  let text = ''
-  let i = 0
-  while (true) {
-    const s = buf.indexOf('stream', i)
-    if (s < 0) break
-    const e = buf.indexOf('endstream', s)
-    if (e < 0) break
-    let a = s + 6
-    while (buf[a] === 0x0d || buf[a] === 0x0a) a += 1
-    try {
-      const chunk = inflateSync(buf.subarray(a, e)).toString('latin1')
-      if (/\bBT\b/.test(chunk) && /\bT[jJ]\b/.test(chunk)) {
-        for (const m of chunk.matchAll(/\((?:\\.|[^()\\])*\)/g)) {
-          text += m[0]
-            .slice(1, -1)
-            .replace(/\\([()\\])/g, '$1')
-            .replace(/\\(\d{1,3})/g, (_, o) => String.fromCharCode(parseInt(o, 8)))
-        }
-      }
-    } catch {
-      // 풀리지 않는 스트림은 콘텐츠가 아니다
-    }
-    i = e + 9
-  }
-  // **소문자도 긁는다.** 대문자로 시작하는 것만 받으면 명사만 남는다 —
-  // 독일어 동사·형용사는 목록에도 소문자로 실려서 `essen`·`groß`가 통째로
-  // 빠졌다. 등급이 붙은 낱말 670개가 전부 명사였던 이유가 이것이다
-  return text.match(/[A-Za-zÄÖÜäöüß]{2,}/g) ?? []
-}
-
 async function germanLevels(): Promise<Map<string, string>> {
   const levels = new Map<string, string>()
-  // 높은 등급부터 넣어 낮은 등급이 덮어쓰게 한다
-  for (const [level, url] of GOETHE) {
-    for (const word of await pdfWords(url, `goethe-${level}.pdf`)) levels.set(word, level)
-  }
+  for (const [level, words] of goetheHeadwords()) for (const word of words) levels.set(word, level)
   return levels
 }
 
