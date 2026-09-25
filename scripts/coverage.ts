@@ -286,9 +286,17 @@ function hsk() {
  * 등급은 누적이 아니다. 각 낱말이 **처음 나오는** 등급 하나에만 센다. HSK와
  * 같은 모양으로 읽히도록 아래에 누적도 한 줄 붙인다.
  */
+/**
+ * 목록이 **짧은 꼴**로 따로 싣는 형용사. 술어로만 쓰는 꼴이라 한 줄을 차지하지만
+ * 같은 낱말이다. 굴절은 곁말이 아니라서(spec.md) 곁말 칸에 넣지 않고, 여기서
+ * 긴 꼴 표제어로 센다 — 안 그러면 이미 있는 낱말이 영영 «빠진 것»으로 남는다.
+ */
+const TORFL_SHORT_FORM: Record<string, string> = { здоров: 'здоровый', доволен: 'довольный' }
+
 async function torfl() {
   const entries = await torflEntries()
-  const mine = terms('ru')
+  const terms_ = terms('ru')
+  const mine = { has: (form: string) => terms_.has(form) || terms_.has(TORFL_SHORT_FORM[form] ?? '') }
   const side = alsoOnly('ru')
   let sideHits = 0
 
