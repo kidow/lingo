@@ -901,6 +901,19 @@ function traditionalSentence(
   return ok ? out : null
 }
 
+/**
+ * **대만 글꼴로 맞춘다.** 뜻은 같고 모양만 다른 이체자다 — Unihan이 후보로 홍콩·
+ * 구자형 글꼴을 내면 그대로 들어갔다(路綫·記録·閑聊). 대만 교육부 표준은 오른쪽이다.
+ * OpenCC의 TWVariants(문맥 없이 글자만 바꾸는 표)와 같은 성격의 것만 둔다.
+ *
+ * 뜻으로 갈리는 글자(周/週 · 只/隻 · 布/佈 · 游/遊)는 여기에 넣지 않는다 —
+ * 周圍는 周고 每週는 週다. 그런 자리는 MANUAL과 SEGMENT에서 낱말로 정한다.
+ */
+const TW_GLYPH: Record<string, string> = {
+  綫: '線', 録: '錄', 閑: '閒', 污: '汙', 檐: '簷', 泄: '洩', 卧: '臥', 涌: '湧', 凈: '淨', 棱: '稜',
+}
+const twGlyph = (text: string) => text.replace(/[綫録閑污檐泄卧涌凈棱]/g, (ch) => TW_GLYPH[ch])
+
 const examplesOfWord = (word: { example?: Example; examples?: Example[] }): Example[] =>
   word.examples?.length ? word.examples : word.example ? [word.example] : []
 
@@ -962,7 +975,11 @@ for (const file of files) {
     // 안 붙고, 글자마다 후보를 곱하면 문장 길이만큼 부풀어 진짜 갈리는 자리를
     // 파묻는다(了 하나가 문장마다 了/瞭 "미확정"을 찍어낸다)
     // 인사말처럼 한 낱말짜리 scene은 MANUAL에 적어 두었다. 거기 있으면 다룬다
-    if (concept.category === 'scene' && !MANUAL[`${file}:${concept.slug}`]) continue
+    if (concept.category === 'scene' && !MANUAL[`${file}:${concept.slug}`]) {
+      // 건너뛰어도 예전에 들어간 번체는 남아 있다. 글꼴만은 맞춘다
+      if (concept.words.zh?.traditional) concept.words.zh.traditional = twGlyph(concept.words.zh.traditional)
+      continue
+    }
     const word = concept.words.zh
     if (!word) continue
     words += 1
@@ -989,6 +1006,7 @@ for (const file of files) {
       pickedHow = result.how
     }
 
+    picked = twGlyph(picked)
     word.traditional = picked
     resolved += 1
     how[pickedHow] = (how[pickedHow] ?? 0) + 1
@@ -1020,7 +1038,7 @@ for (const file of files) {
         { term: word.term, traditional: picked.split('／')[0] },
       )
       if (line) {
-        example.traditional = line
+        example.traditional = twGlyph(line)
         converted += 1
       } else delete example.traditional
     }
