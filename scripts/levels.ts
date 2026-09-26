@@ -30,7 +30,7 @@ import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { cachedBytes } from './cache.ts'
 import { hskOf, jlptOf } from './define.ts'
 import { fingerprint, stampSource } from './levels-stamp.ts'
-import { goetheHeadwords } from './goethe.ts'
+import { goetheHeadwords, goetheKey, goetheReflexive } from './goethe.ts'
 import { bare, torflLevels } from './torfl.ts'
 import { LEVELS_STAMP } from '../lib/levels-stamp.ts'
 import type { Concept } from '../lib/types.ts'
@@ -135,6 +135,7 @@ const GERMAN_HOMONYMS = new Set(['Bank', 'Karte'])
 const FRENCH_HOMONYMS = new Set(['vol', 'livre', 'poêle'])
 
 const german = await germanLevels()
+const reflexive = goetheReflexive()
 const french = await frenchLevels()
 const tsl = await tslRanks()
 const torfl = await torflLevels()
@@ -181,7 +182,8 @@ for (const file of files) {
     apply('ja', 'jlpt', concept.words.ja && (await jlptOf(concept.words.ja.term)))
     apply('zh', 'hsk', concept.words.zh && (await hskOf(concept.words.zh.term)))
     const de = concept.words.de?.term
-    apply('de', 'cefr', de && !GERMAN_HOMONYMS.has(de) ? german.get(de) : undefined)
+    // 목록이 재귀형으로 실은 낱말만 `sich `를 떼고 찾는다 (scripts/goethe.ts의 goetheKey)
+    apply('de', 'cefr', de && !GERMAN_HOMONYMS.has(de) ? german.get(goetheKey(de, reflexive)) : undefined)
     const fr = concept.words.fr?.term
     apply('fr', 'cefr', fr && !FRENCH_HOMONYMS.has(fr) ? french.get(fr) : undefined)
     // 표기가 정확히 같을 때만 붙인다. TSL은 표제어 목록이라 `shoes`는 없고

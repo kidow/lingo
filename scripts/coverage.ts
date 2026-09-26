@@ -24,7 +24,7 @@
  */
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { goetheHeadwords } from './goethe.ts'
+import { goetheHeadwords, goetheKey, goetheReflexive } from './goethe.ts'
 import { bare, torflEntries } from './torfl.ts'
 import type { Concept } from '../lib/types.ts'
 
@@ -145,8 +145,14 @@ function haystacks(lang: 'en' | 'zh' | 'ru' | 'de') {
   return { terms: termList.join(' | '), texts: textList.join(' | '), spaced: lang !== 'zh' }
 }
 
+/**
+ * 대조용으로 접는다. 독일어는 목록이 재귀형으로 실은 낱말만 `sich `를 뗀다 —
+ * Goethe 목록은 `(sich) beeilen`을 `beeilen`으로 싣는데 우리 표제어는
+ * `sich beeilen`이라 이미 있는 낱말이 빠진 것으로 세어졌다 (scripts/goethe.ts)
+ */
+const REFLEXIVE = goetheReflexive()
 const fold = (lang: 'en' | 'zh' | 'ru' | 'de', t: string) =>
-  lang === 'en' ? t.toLowerCase() : lang === 'ru' ? bare(t) : t
+  lang === 'en' ? t.toLowerCase() : lang === 'ru' ? bare(t) : lang === 'de' ? goetheKey(t, REFLEXIVE) : t
 
 /**
  * 우리가 실은 표기.

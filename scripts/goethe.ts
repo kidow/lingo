@@ -123,6 +123,24 @@ export function goetheHeadwords(): Map<GoetheLevel, Set<string>> {
   return new Map(LEVELS.map((level) => [level, new Set(table[level])]))
 }
 
+/**
+ * 목록이 **재귀동사로** 싣는 표제어(`(sich) beeilen` → `beeilen`).
+ *
+ * 우리 표제어는 `sich beeilen`이라 재귀대명사를 떼야 목록과 만난다. 그런데 아무
+ * 동사에서나 떼면 `sich stellen`(나서다)이 `stellen`(세우다)의 등급을 받는다 —
+ * 목록도 재귀형으로 실었을 때만 뗀다.
+ */
+export function goetheReflexive(): Set<string> {
+  const table = JSON.parse(readFileSync(OUT, 'utf8')) as { reflexive?: string[] }
+  return new Set(table.reflexive ?? [])
+}
+
+/** 우리 독일어 표기 → 목록에서 찾을 꼴. 목록도 재귀형일 때만 `sich `를 뗀다 */
+export function goetheKey(term: string, reflexive: Set<string>): string {
+  const bare = term.replace(/^sich /, '')
+  return bare !== term && reflexive.has(bare) ? bare : term
+}
+
 if (import.meta.main) {
   const [level, flag] = process.argv.slice(2)
   if (flag === '--lines') {
@@ -130,14 +148,20 @@ if (import.meta.main) {
   } else {
     const table: Record<string, string[]> = {}
     const seen = new Set<string>()
+    const reflexive = new Set<string>()
     for (const lv of LEVELS) {
       const words = new Set<string>()
       for (const line of await goetheLines(lv))
-        for (const word of headwordsOf(line)) if (!seen.has(word)) words.add(word)
+        for (const word of headwordsOf(line)) {
+          if (/^(?:(?:der|die|das) )?\(?sich\)? /.test(line)) reflexive.add(word)
+          if (!seen.has(word)) words.add(word)
+        }
       for (const word of words) seen.add(word)
       table[lv] = [...words].sort((a, b) => a.localeCompare(b, 'de'))
       console.log(`${lv} ${words.size}개`)
     }
+    table.reflexive = [...reflexive].sort((a, b) => a.localeCompare(b, 'de'))
+    console.log(`재귀형 ${reflexive.size}개`)
     writeFileSync(OUT, `${JSON.stringify(table, null, 1)}\n`)
     console.log(`→ ${OUT}`)
   }
