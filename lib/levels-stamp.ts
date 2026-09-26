@@ -8,16 +8,16 @@
  * 무엇을 재는지는 scripts/levels-stamp.ts에 적었다.
  */
 export const LEVELS_STAMP: Readonly<Record<string, string>> = {
-  'action.json': '9a50aa28b952',
+  'action.json': 'cdbd7526a1c4',
   'articles.json': 'da39a3ee5e6b',
   'body.json': '45a987771a37',
   'city.json': 'bff556bb944d',
   'clothes.json': '94179b8bc211',
   'everyday.json': 'a0556a60e0fb',
-  'family.json': 'fcb997257cd3',
+  'family.json': 'e9bf1535fb29',
   'food.json': 'c1dc25ab9eae',
   'home.json': '47a32ef8eeca',
-  'idea.json': '50dfd77c0210',
+  'idea.json': 'b3b43999fa5a',
   'job.json': '905c9241b938',
   'kana.json': 'da39a3ee5e6b',
   'nature.json': '181fa9ed92f5',
