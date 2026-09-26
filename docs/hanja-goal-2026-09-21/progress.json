@@ -1,14 +1,14 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "df6fcc1ddef0092846253e847ba32af88610c4d5",
+  "lastCompletedCommit": "013bed2530eeddda9be410290b0d02568b0fc690",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 乫 stroke animation",
-    "parentAtStart": "df6fcc1ddef0092846253e847ba32af88610c4d5"
+    "message": "feat(hanja): add reviewed 伋 stroke animation",
+    "parentAtStart": "013bed2530eeddda9be410290b0d02568b0fc690"
   },
   "currentBatch": {
     "glyphs": [
-      "乫"
+      "伋"
     ],
     "strokes": 6,
     "status": "applied",
@@ -25,8 +25,8 @@
       "domesticStrokeCount": 6,
       "progressiveSnapshots": 54,
       "tests": {
-        "files": 207,
-        "passed": 967,
+        "files": 208,
+        "passed": 970,
         "failed": 0
       },
       "build": {
@@ -34,7 +34,7 @@
         "typeScript": true,
         "staticPages": 7,
         "isolated": true,
-        "baseCommit": "df6fcc1ddef0092846253e847ba32af88610c4d5"
+        "baseCommit": "013bed2530eeddda9be410290b0d02568b0fc690"
       },
       "artifactParity": {
         "ownFiles": 20,
@@ -80,8 +80,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5007,
-      "remaining": 971,
+      "applied": 5008,
+      "remaining": 970,
       "percent": 83.8
     },
     "grades": [
@@ -179,9 +179,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 868,
-        "remaining": 282,
-        "percent": 75.5
+        "applied": 869,
+        "remaining": 281,
+        "percent": 75.6
       },
       {
         "grade": "특급",
@@ -194,8 +194,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Reproduce whole u4f0b; inspect 亻 and 及 domestic6-stroke mapping, all directions/cumulative/final forms and continuous folded trajectories.",
-    "Do not infer new points, bridges, trimming or radical substitution. Only after progressive review register/test/build/mobile and own-only commit; otherwise hold precisely and move to 汙."
+    "Reproduce whole u6c59; inspect all6 domestic directions/cumulative/final forms, especially third water stroke original endpoint/startpoint continuity and final hook.",
+    "No invented connector, trim, point edit or radical substitution. Approve only after full progressive review then test/build/mobile and commit; otherwise hold exact evidence and move to 邙."
   ],
   "held": [
     "莽",
@@ -414,44 +414,44 @@
     }
   ],
   "resources": {
-    "tabs": "batch96 review and mobile tabs closed; viewport reset",
-    "ramServers": "52027–52030 stopped; public archive RAM reader51989 PID44735 retained",
+    "tabs": "batch97 review and mobile tabs closed; viewport reset",
+    "ramServers": "52031–52034 stopped; public archive RAM reader51989 PID44735 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch96-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch96-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch96-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch96-2026-09-27/verify.mjs"
+    "docs/hanja-goal-glyphwiki-batch97-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch97-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch97-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch97-2026-09-27/verify.mjs"
   ],
   "nextCandidateInventory": {
-    "glyph": "伋",
-    "grade": "특급II",
+    "glyph": "汙",
+    "grade": "특급",
     "strokes": 6,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4F00/4F0B.svg",
-      "bytes": 3633,
-      "sha256": "dbe813302344f284ab72cb091bea75ec50ed863fa8fc0b4b922cbaf603fa08e5"
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6C59.svg",
+      "bytes": 3299,
+      "sha256": "aed5d42266505ba211ae7aae56844c3f3a69470e4d1570e6fc39448285c000ce"
     },
     "source": {
-      "glyph": "伋",
-      "root": "u4f0b",
+      "glyph": "汙",
+      "root": "u6c59",
       "records": {
-        "u4f0b": {
-          "name": "u4f0b",
-          "related": "u4f0b",
-          "data": "99:0:0:3:0:168:200:u4ebb-01$99:0:0:-5:0:200:200:u53ca-k02"
+        "u6c59": {
+          "name": "u6c59",
+          "related": "u6c59",
+          "data": "99:0:0:3:0:170:200:u6c35-01$99:0:0:58:0:200:200:u4e8e"
         },
-        "u4ebb-01": {
-          "name": "u4ebb-01",
-          "related": "u4ebb",
-          "data": "2:0:7:79:15:52:72:12:117$1:0:0:52:73:52:186"
+        "u6c35-01": {
+          "name": "u6c35-01",
+          "related": "u6c35",
+          "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
         },
-        "u53ca-k02": {
-          "name": "u53ca-k02",
-          "related": "u53ca",
-          "data": "2:32:7:108:29:106:147:61:188$1:0:2:81:29:161:29$1:22:32:161:29:150:88$1:2:2:104:88:172:88$2:22:7:172:88:152:167:80:186$2:7:0:110:88:132:161:181:177"
+        "u4e8e": {
+          "name": "u4e8e",
+          "related": "u4e8e",
+          "data": "1:0:0:33:32:164:32$1:0:0:20:92:181:92$1:32:4:99:32:99:182"
         }
       },
       "missing": [],
@@ -464,11 +464,11 @@
         "entries": 438759
       }
     },
-    "status": "complete whole source acquired; all6 domestic directions/order/continuity unreviewed",
+    "status": "complete whole source acquired; domestic6-stroke review and water trajectory continuity unreviewed",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Reproduce whole u4f0b; inspect 亻 and 及 domestic6-stroke mapping, all directions/cumulative/final forms and continuous folded trajectories.",
-      "Do not infer new points, bridges, trimming or radical substitution. Only after progressive review register/test/build/mobile and own-only commit; otherwise hold precisely and move to 汙."
+      "Reproduce whole u6c59; inspect all6 domestic directions/cumulative/final forms, especially third water stroke original endpoint/startpoint continuity and final hook.",
+      "No invented connector, trim, point edit or radical substitution. Approve only after full progressive review then test/build/mobile and commit; otherwise hold exact evidence and move to 邙."
     ]
   }
 }
