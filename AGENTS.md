@@ -15,6 +15,7 @@ pnpm pending --free     # 0. 남에게 넘겨 둔 것 중 지금 열린 파일�
 pnpm dup <slug|뜻…>     # 1. 이미 있는 개념인지 본다 (content/ 전체)
 #  개념 블록을 쓴다
 pnpm ex <배치.json>     # 2. content/에 넣기 전에 예문이 표제어를 보여주는지 (0.3초)
+pnpm dup <배치.json>    #    같은 배치로 정답(일본어는 읽기)이 남의 정답·곁말과 겹치는지
 #  content/*.json에 넣는다
 pnpm batch <slug…>      # 3. 소품 겹침·로마자·발음기호·번체·등급·발음 목록·굽기·검증을 한 번에
 pnpm echoes             # 4. 뽑기 전 그물 ①  글이 닮은 개념 (안 그린 것만 짚는다)

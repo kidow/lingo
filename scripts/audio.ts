@@ -171,6 +171,14 @@ function peaksOf(file: string): string {
  * 이미 적힌 것은 다시 안 잰다. mp3 하나에 50ms이라 3만 개를 다시 재면 25분이
  * 걸리는데, 발음을 몇 개 넣고 다시 돌리는 일이 훨씬 잦다. `--force`로 전부
  * 다시 잰다.
+ *
+ * **소리를 다시 만들었으면 다시 잰다.** 잰 때의 mp3 수정 시각을
+ * `.cache/peaks-mtime/<lang>.json`에 적어 두고, 달라진 것만 다시 잰다. 이게
+ * 없을 때는 표기를 고쳐 소리를 새로 만들어도 옛 파형이 남았다 — 2026-09-26에
+ * Goethe 회차에서 넷을 그렇게 새로 만들고 줄을 손으로 지운 뒤에야 맞았다.
+ * 시각은 파형표(`public/peaks/`)가 아니라 캐시에 둔다. 소리는 이 기계에만
+ * 있고, 커밋한 표에 기계마다 다른 시각이 섞이면 diff만 시끄럽다. 캐시가 없는
+ * 기계에서는 적힌 파형을 믿고 지금 시각을 처음으로 적는다.
  */
 function peaks(only?: Language) {
   const langs = only ? [only] : [...new Set(TRACKS.map(({ language }) => language))]
@@ -182,15 +190,24 @@ function peaks(only?: Language) {
     const before: Record<string, string> =
       !force && existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : {}
 
+    const stampPath = join('.cache', 'peaks-mtime', `${lang}.json`)
+    const stampedBefore: Record<string, number> = existsSync(stampPath)
+      ? JSON.parse(readFileSync(stampPath, 'utf8'))
+      : {}
+    const stamps: Record<string, number> = {}
+
     const rows: Record<string, string> = {}
     let made = 0
     for (const concept of concepts) {
       const file = audioPath(lang, concept.slug)
       if (!existsSync(file)) continue
+      const mtime = Math.floor(statSync(file).mtimeMs)
+      stamps[concept.slug] = mtime
       // 소리가 사라진 개념은 따라서 빠진다. 낡은 줄이 남으면 없는 소리의
       // 파형을 그리게 된다
       const kept = before[concept.slug]
-      if (kept) {
+      const stamped = stampedBefore[concept.slug]
+      if (kept && (stamped === undefined || stamped === mtime)) {
         rows[concept.slug] = kept
         continue
       }
@@ -202,6 +219,8 @@ function peaks(only?: Language) {
     // 키를 정렬해 적는다. 콘텐츠가 늘 때 줄이 끼어들 뿐이라 diff가 읽힌다
     const sorted = Object.fromEntries(Object.keys(rows).sort().map((slug) => [slug, rows[slug]]))
     writeFileSync(path, `${JSON.stringify(sorted, null, 0)}\n`)
+    mkdirSync(dirname(stampPath), { recursive: true })
+    writeFileSync(stampPath, `${JSON.stringify(stamps)}\n`)
     const size = Math.round(statSync(path).size / 1024)
     console.log(`\r  ${lang} ${Object.keys(sorted).length}개 (새로 ${made}) · ${size}KB → ${path}`)
   }

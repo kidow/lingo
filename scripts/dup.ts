@@ -41,6 +41,19 @@
  * 인자는 섞어 적는다. `^[a-z0-9-]+$`이면 slug로 정확히 맞춰 보고, 아니면 뜻의
  * 조각으로 훑는다 — 뜻은 «산후 요가 있나요?»처럼 문장이라 부분으로 찾는 편이
  * 쓸모 있다.
+ *
+ * **일본어는 읽기로도 맞춘다.** 일본어의 정답 필드는 `reading`이다(lib/lang.ts).
+ * 표기만 대 보면 `降りる`와 `下りる`가 달라 보여도 정답 `おりる`는 같다.
+ * 2026-09-26에 Goethe 회차에서 `get-off-the-bus`의 `おりる`를 넘겨 `descend`와
+ * 정답이 같은 개념을 세웠다 — 인자로 `おりる`를 줬는데도 빈자리라고 했다.
+ *
+ * **배치 파일을 통째로 받는다.** `.json` 인자는 `pnpm ex`와 같은 꼴로 읽어,
+ * 개념마다 일곱 언어의 표제어·읽기·곁말을 전부 대 본다. 같은 날 넷이 걸렸는데
+ * 셋은 낱말을 인자로 옮겨 적다 빠뜨린 자리였다(`a solas`·`захватывающий`).
+ * 배치 안에서 둘이 같은 정답을 쥔 것도 찍는다. 이미 `content/`에 넣은 뒤에
+ * 돌려도 되도록 제 slug는 임자로 치지 않는다.
+ *
+ *   node scripts/dup.ts batch.json
  */
 import { spawnSync } from 'node:child_process'
 import { readdirSync, readFileSync } from 'node:fs'
@@ -65,7 +78,18 @@ const spellKey = (s: string) => s.replace(/́/g, '').trim().toLowerCase()
 const LIGHT = new Set(['하다', '되다', '있다', '없다', '같다', '지다', '싶다', '보다', '주다', '받다', '나다', '내다', '이다'])
 
 type Row = { file: string; slug: string; meaning: string }
-type Spell = Row & { lang: string; also: boolean }
+type Loose = { term?: string; reading?: string; also?: string[] }
+
+/** 한 낱말에서 정답이 될 수 있는 표기 — 표제어, 읽기(일본어), 곁말. 읽기가 표제어와 같으면 한 번만 */
+function answersOf(word: Loose): [string, Spell['how']][] {
+  const out: [string, Spell['how']][] = []
+  if (word.term) out.push([word.term, undefined])
+  if (word.reading && word.reading !== word.term) out.push([word.reading, '읽기'])
+  for (const also of word.also ?? []) if (also) out.push([also, '곁말'])
+  return out
+}
+/** `how`는 그 표기가 표제어가 아닐 때 어디서 왔는지다 */
+type Spell = Row & { lang: string; how?: '곁말' | '읽기' }
 
 const rows: Row[] = []
 /** `rows`와 자리를 맞춘 개념 원본 — 사전 뜻을 팔 때 중국어 표기가 필요하다 */
@@ -80,11 +104,10 @@ for (const file of readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.json'))) 
     conceptOf.push(concept)
     for (const [lang, word] of Object.entries(concept.words ?? {})) {
       if (!word) continue
-      for (const [term, also] of [[word.term, false], ...(word.also ?? []).map((a) => [a, true])] as [string, boolean][]) {
-        if (!term) continue
+      for (const [term, how] of answersOf(word)) {
         const key = spellKey(term)
         const list = spells.get(key) ?? []
-        list.push({ ...row, lang, also })
+        list.push({ ...row, lang, how })
         spells.set(key, list)
       }
     }
@@ -100,19 +123,30 @@ if (argv.length === 0) {
 
 const bySlug = new Map(rows.map((r) => [r.slug, r]))
 
+/** `{concepts:[…]}`·배열·개념 하나를 다 받는다 (scripts/ex.ts와 같은 꼴) */
+function batchOf(path: string): Concept[] {
+  const raw = JSON.parse(readFileSync(path, 'utf8'))
+  if (Array.isArray(raw)) return raw
+  if (Array.isArray(raw?.concepts)) return raw.concepts
+  return raw?.words ? [raw] : []
+}
+
+const batches = argv.filter((a) => a.endsWith('.json'))
+const loose = argv.filter((a) => !a.endsWith('.json'))
+
 const dirty = dirtyFiles(
   spawnSync('git', ['diff', '--name-only', 'HEAD', '--', CONTENT_DIR], { encoding: 'utf8' }).stdout ?? '',
 )
 
 const show = (r: Row) => `${r.slug}(${r.meaning})@${r.file}${busyMark(r.file, dirty)}`
-const showSpell = (s: Spell) => `${s.lang} ${show(s)}${s.also ? ' (곁말)' : ''}`
+const showSpell = (s: Spell) => `${s.lang} ${show(s)}${s.how ? ` (${s.how})` : ''}`
 
 const taken: string[] = []
 const spelt: string[] = []
 const near: string[] = []
 const free: string[] = []
 
-for (const arg of argv) {
+for (const arg of loose) {
   /** 표기는 인자를 가리지 않고 본다 — 한국어 뜻은 어차피 표기로 안 쓴다 */
   const owners = spells.get(spellKey(arg)) ?? []
   if (owners.length > 0) spelt.push(`${arg.padEnd(22)} 표기 — ${owners.slice(0, 4).map(showSpell).join(' · ')}`)
@@ -140,8 +174,42 @@ for (const arg of argv) {
   else near.push(`${arg.padEnd(22)} 뜻 조각 — ${hits.slice(0, 4).map(show).join(' · ')}`)
 }
 
-console.log(
-  `\n후보 ${argv.length} — 임자 있음 ${taken.length} · 표기 겹침 ${spelt.length} · 비슷한 것 ${near.length} · 빈자리 ${free.length}`,
+/**
+ * 배치의 정답을 전부 대 본다. 같은 언어 안에서만 겹침이다 — 스페인어
+ * `cola`와 독일어 `Cola`는 서로의 정답을 가리지 않는다.
+ */
+const clashes: string[] = []
+let batchSize = 0
+for (const path of batches) {
+  const mine = new Map<string, { slug: string; term: string }>()
+  for (const concept of batchOf(path)) {
+    batchSize += 1
+    if (!concept.slug) continue
+    const holder = bySlug.get(concept.slug)
+    const own = holder && holder.meaning === concept.meaning_ko
+    if (holder && !own) clashes.push(`${concept.slug.padEnd(22)} slug — ${show(holder)}`)
+    for (const [lang, word] of Object.entries(concept.words ?? {})) {
+      if (!word) continue
+      for (const [term, how] of answersOf(word)) {
+        const key = spellKey(term)
+        const label = `${concept.slug} ${lang} ${term}${how ? ` (${how})` : ''}`
+        const owners = (spells.get(key) ?? []).filter((s) => s.lang === lang && s.slug !== concept.slug)
+        if (owners.length > 0) clashes.push(`${label.padEnd(36)} = ${owners.slice(0, 3).map(showSpell).join(' · ')}`)
+        const twin = mine.get(`${lang} ${key}`)
+        if (twin && twin.slug !== concept.slug) clashes.push(`${label.padEnd(36)} = 배치 안 ${twin.slug}`)
+        else mine.set(`${lang} ${key}`, { slug: concept.slug, term })
+      }
+    }
+  }
+}
+if (batches.length) {
+  console.log(`\n배치 ${batches.join(' ')} — 개념 ${batchSize} · 정답 겹침 ${clashes.length}`)
+  for (const line of clashes) console.log(`  ${line}`)
+  if (clashes.length === 0) console.log('  겹치는 정답이 없습니다')
+}
+
+if (loose.length) console.log(
+  `\n후보 ${loose.length} — 임자 있음 ${taken.length} · 표기 겹침 ${spelt.length} · 비슷한 것 ${near.length} · 빈자리 ${free.length}`,
 )
 if (taken.length) {
   console.log('')
@@ -169,7 +237,7 @@ if (near.length) {
  * 깎은(idf) 뜻풀이 겹침이고, **판정이 아니라 후보**다.
  */
 const CJK = /[\u4e00-\u9fff]/
-const cjk = argv.filter((a) => CJK.test(a))
+const cjk = loose.filter((a) => CJK.test(a))
 if (cjk.length > 0) {
   let dict: Map<string, string[]> | null = null
   try {
