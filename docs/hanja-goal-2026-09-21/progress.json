@@ -1,40 +1,87 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "0816cab3e8d35a0e21224dd18798733586df558f",
+  "lastCompletedCommit": "6d15c0e070d3faaeaaf30a871905e69df5b5a343",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 沕 pending a continuous water stroke",
-    "parentAtStart": "0816cab3e8d35a0e21224dd18798733586df558f"
+    "message": "feat(hanja): animate reviewed 芋 with Korean grass stroke order",
+    "parentAtStart": "6d15c0e070d3faaeaaf30a871905e69df5b5a343"
   },
   "currentBatch": {
     "glyphs": [
-      "沕"
+      "芋"
     ],
     "strokes": 7,
-    "status": "held",
+    "status": "applied",
     "checks": {
       "reviewedAt": "2026-09-27",
+      "validatedAt": "2026-09-27",
       "sourceAndEngineReplay": {
-        "snapshotRecords": 4,
+        "snapshotRecords": 5,
         "engineFiles": 8,
         "traceExact": true,
         "checkedAt": "2026-09-27",
         "snapshotSha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62"
       },
       "domesticStrokeCount": 7,
-      "progressiveSnapshots": 0,
-      "runtimeAdded": 0,
-      "sourceVerifierPassed": true,
-      "runtimeNullChecked": true,
-      "build": "Not repeated: research-only change with no runtime or TypeScript changes. Last batch88 final production build and952 Hanja tests passed.",
+      "progressiveSnapshots": 63,
+      "tests": {
+        "files": 203,
+        "passed": 955,
+        "failed": 0
+      },
+      "build": {
+        "exitCode": 0,
+        "typeScript": true,
+        "staticPages": 7,
+        "isolated": true,
+        "baseCommit": "6d15c0e070d3faaeaaf30a871905e69df5b5a343"
+      },
+      "artifactParity": {
+        "ownFiles": 18,
+        "publicExports": 3
+      },
+      "ui": {
+        "viewport": [
+          430,
+          932
+        ],
+        "introAutoplay": true,
+        "introReplay": true,
+        "introComplete": "7 / 7",
+        "writingAutoplay": true,
+        "writingReplay": true,
+        "writingComplete": "7 / 7",
+        "canvasInputCounts": [
+          0,
+          1,
+          0
+        ],
+        "canvasYBeforeAfter": [
+          162.8046875,
+          162.8046875
+        ],
+        "dialogYBeforeAfter": [
+          139.8046875,
+          139.8046875
+        ],
+        "scrollBeforeAfter": [
+          126,
+          126
+        ],
+        "touchAction": "none",
+        "vaulNoDrag": true,
+        "outlineGroups": 1,
+        "staticImages": 0,
+        "consoleWarningsErrors": 0
+      },
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5002,
-      "remaining": 976,
+      "applied": 5003,
+      "remaining": 975,
       "percent": 83.7
     },
     "grades": [
@@ -132,9 +179,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 865,
-        "remaining": 285,
-        "percent": 75.2
+        "applied": 866,
+        "remaining": 284,
+        "percent": 75.3
       },
       {
         "grade": "특급",
@@ -146,10 +193,10 @@
     ]
   },
   "nextActions": [
-    "Recheck shared HEAD, dirty files, pending --free and current runtime.",
-    "Reproduce complete original u828b source and review all7 domestic stroke directions, cumulative/final forms.",
-    "Check the domestic grass radical order and 于 continuous hook against source, without inferring geometry.",
-    "If passed, review every progressive frame, register runtime, test/build/mobile validation and commit own files; otherwise record an evidence-based hold and select the next whole-source candidate."
+    "Recheck shared HEAD, dirty files, pending --free and runtime registration.",
+    "Review all8 domestic directions, cumulative/final forms against complete whole u4f7a. Engine reproduced but not approved.",
+    "Inspect the person radical, upper meeting strokes and 王 crossings; preserve original trajectories.",
+    "After complete visual and progressive review, apply runtime and validate tests/build/mobile then own-only commit. If held, record exact reason and continue with 侁."
   ],
   "held": [
     "莽",
@@ -354,44 +401,52 @@
     }
   ],
   "resources": {
-    "tabs": "batch89 review tab closed",
-    "ramServers": "52009 stopped; public archive RAM reader51989 PID44735 retained",
+    "tabs": "batch90 review and mobile tabs closed; viewport reset",
+    "ramServers": "52010–52012 stopped; public archive RAM reader51989 PID44735 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo clean and available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch89-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch89-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch89-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch89-2026-09-27/verify.mjs"
+    "docs/hanja-goal-glyphwiki-batch90-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch90-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch90-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch90-2026-09-27/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch90.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch90.json",
+    "public/hanja-strokes/glyphwiki/828b.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "芋",
+    "glyph": "佺",
     "grade": "특급II",
-    "strokes": 7,
+    "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/828B.svg",
-      "bytes": 4145,
-      "sha256": "26a45bc8dc2621841012d1a933a64122b07bf8c97bd55922020ea3345d4b5547"
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4F00/4F7A.svg",
+      "bytes": 4175,
+      "sha256": "f03975d9494ac94283ae786298ec8cafc9f8bd516d982d8b57d57f8fd8cc4dca"
     },
     "source": {
-      "glyph": "芋",
-      "root": "u828b",
+      "glyph": "佺",
+      "root": "u4f7a",
       "records": {
-        "u828b": {
-          "name": "u828b",
-          "related": "u828b",
-          "data": "99:0:0:0:0:200:203:u8279-03:0:0:0$99:0:5:-8:58:208:195:u4e8e:0:0:0"
+        "u4f7a": {
+          "name": "u4f7a",
+          "related": "u4f7a",
+          "data": "99:0:0:2:0:177:200:u4ebb-01$99:0:0:52:0:195:200:aj1-13890"
         },
-        "u8279-03": {
-          "name": "u8279-03",
-          "related": "u8279",
-          "data": "1:0:0:13:39:187:39$1:0:0:72:13:72:64$1:0:0:128:13:128:64"
+        "u4ebb-01": {
+          "name": "u4ebb-01",
+          "related": "u4ebb",
+          "data": "2:0:7:79:15:52:72:12:117$1:0:0:52:73:52:186"
         },
-        "u4e8e": {
-          "name": "u4e8e",
-          "related": "u4e8e",
-          "data": "1:0:0:33:32:164:32$1:0:0:20:92:181:92$1:32:4:99:32:99:182"
+        "aj1-13890": {
+          "name": "aj1-13890",
+          "related": "u5168",
+          "data": "99:0:0:0:0:200:200:u5168-ue0101"
+        },
+        "u5168-ue0101": {
+          "name": "u5168-ue0101",
+          "related": "u5168",
+          "data": "2:32:7:102:25:74:72:12:106$1:0:0:61:25:116:25$2:7:0:106:25:139:74:182:93$1:0:0:56:91:146:91$1:0:0:46:133:156:133$1:0:0:23:177:178:177$1:32:32:100:93:100:177"
         }
       },
       "missing": [],
@@ -404,12 +459,16 @@
         "entries": 438759
       }
     },
-    "status": "complete whole source acquired; engine and visual review pending",
+    "status": "complete whole source and engine reproduction acquired; visual and progressive review pending",
+    "engine": {
+      "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+      "rawGroups": 9
+    },
     "actions": [
-      "Recheck shared HEAD, dirty files, pending --free and current runtime.",
-      "Reproduce complete original u828b source and review all7 domestic stroke directions, cumulative/final forms.",
-      "Check the domestic grass radical order and 于 continuous hook against source, without inferring geometry.",
-      "If passed, review every progressive frame, register runtime, test/build/mobile validation and commit own files; otherwise record an evidence-based hold and select the next whole-source candidate."
+      "Recheck shared HEAD, dirty files, pending --free and runtime registration.",
+      "Review all8 domestic directions, cumulative/final forms against complete whole u4f7a. Engine reproduced but not approved.",
+      "Inspect the person radical, upper meeting strokes and 王 crossings; preserve original trajectories.",
+      "After complete visual and progressive review, apply runtime and validate tests/build/mobile then own-only commit. If held, record exact reason and continue with 侁."
     ]
   }
 }
