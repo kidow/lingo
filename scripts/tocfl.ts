@@ -661,6 +661,8 @@ const MANUAL: Record<string, string> = {
   'food.json:peanut': '花生',
   'home.json:refrigerator': '冰箱',
   'home.json:bedroom': '臥室',
+  // 대만은 倒楣로 쓴다(八千詞表 L4). 倒霉는 대륙 표기다
+  'home.json:down-on-ones-luck': '倒楣',
   'idea.json:miracle': '奇蹟',
   'idea.json:compliment': '讚美',
   'nature.json:pollute': '汙染',
