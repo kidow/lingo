@@ -1,0 +1,190 @@
+/** Whole-glyph backup geometry crosschecked with a domestic dictionary; not exam-body approval. */
+import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch88.json' with { type: 'json' }
+import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
+const EXPECTED = [
+  {
+    "glyph": "昑",
+    "verificationSource": "ehanja-crosschecked",
+    "verifiedAt": "2026-09-27",
+    "geometrySource": "d7afa809ae3875772827fd80fd6d28ac5d8dd32bd1723c0ba3146957b7f0e447",
+    "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "pathsSha256": "91e11b42c8d814bd97f4f01c15b62488488b5591da1a8018ddbc6f243fa42716",
+    "sourceReference": {
+      "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6600/6611.svg",
+      "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6600/6611.svg",
+      "dictionarySvgSha256": "43c14da0ad70053c1d9ff1ed9e39127e61eabc1fc696adcbc1d96ca445e7178d",
+      "dictionaryDirectionStrokes": "1,2,3,4,5,6,7,8",
+      "orderReviewSha256": "8dbee4cd2cfd7c83c61d1cab73f444463a994ff7423d5f74f7616f941da8c8e2",
+      "geometryReviewSha256": "8dbee4cd2cfd7c83c61d1cab73f444463a994ff7423d5f74f7616f941da8c8e2",
+      "directionReviewSha256": "8dbee4cd2cfd7c83c61d1cab73f444463a994ff7423d5f74f7616f941da8c8e2"
+    },
+    "geometryLicense": {
+      "spdx": "LicenseRef-GlyphWiki",
+      "attribution": "GlyphWiki contributors; public backup by tomcumming",
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt",
+      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "revision": "repository a7dd7f3d911936770fa742e8c37d16bee7e2173c; dump SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "editableSource": "/hanja-strokes/glyphwiki/6611.json",
+      "modifications": "Whole 昑 u6611 source from the pinned 2016 GlyphWiki backup rendered with original engine built-in small mincho preset new Kage(1), scaled200 to100. Empty control group5 omitted; original groups1+2 and9+10 form domestic folded strokes2 and8. All original polygon vertices, two quadratic trajectories and final oblique line retained with normalized winding. No custom widths, coordinate edits, new point, bridge, trim or component replacement."
+    },
+    "paths": [
+      "M14.75 18.15 L14.75 79.2 L11.15 81 L11.15 16.35 Z",
+      "M12.95 18.15 L31.65 18.15 L31.65 19.35 L12.95 19.35 Z M33.45 18.75 L33.45 77.2 L29.85 79 L29.85 18.75 Z M29.85 18.15 L31.65 16.65 L34.95 19.35 L33.45 20.55 L29.85 18.75 Z",
+      "M12.95 45.55 L31.65 45.55 L31.65 46.75 L12.95 46.75 Z",
+      "M12.95 74.6 L31.65 74.6 L31.65 75.8 L12.95 75.8 Z",
+      "M64.8 8.85 L62.8 14.25 L60.55 19.45 L58.1 24.45 L55.45 29.3 L52.55 33.95 L49.5 38.4 L46.25 42.7 L42.75 46.75 L39.05 50.6 L35.1 54.15 L34.7 53.8 L38.2 49.8 L41.5 45.7 L44.65 41.5 L47.65 37.15 L50.4 32.65 L53 27.95 L55.4 23.15 L57.6 18.15 L59.6 13 L61.4 7.7 Z M61.25 8.15 L61.55 7.25 L64.8 8.85 Z M64.8 8.85 L65.5 9.7 L63.35 10.15 Z",
+      "M62.4 11.15 L65.2 15.95 L67.95 20.45 L70.75 24.65 L73.65 28.5 L76.6 32 L79.6 35.2 L82.7 38.1 L85.9 40.65 L89.15 42.85 L92.45 44.75 L90.55 48.2 L87.05 46 L83.7 43.4 L80.45 40.55 L77.4 37.35 L74.45 33.8 L71.6 29.95 L68.95 25.8 L66.4 21.35 L64.05 16.5 L61.95 11.35 Z M90.55 48.2 L92.45 44.75 L93.9 45.55 Z",
+      "M49.9 43.9 L77.05 43.9 L77.05 45.1 L49.9 45.1 Z",
+      "M43.55 58.9 L81.7 58.9 L81.7 60.1 L43.55 60.1 Z M83.05 60 L72.3 90.95 L68.3 91.45 L79.75 59.5 Z M79.9 58.9 L81.7 57.4 L85 60.1 L83.5 60.8 L79.9 63.3 Z"
+    ],
+    "outlines": [
+      [
+        {
+          "outline": "M14.75 18.15 L14.75 79.2 L11.15 81 L11.15 16.35 Z",
+          "bounds": [
+            11.15,
+            16.35,
+            14.75,
+            81
+          ],
+          "direction": "down",
+          "weight": 56.44
+        }
+      ],
+      [
+        {
+          "outline": "M12.95 18.15 L31.65 18.15 L31.65 19.35 L12.95 19.35 Z",
+          "bounds": [
+            12.95,
+            18.15,
+            31.65,
+            19.35
+          ],
+          "direction": "right",
+          "weight": 18.711
+        },
+        {
+          "outline": "M33.45 18.75 L33.45 77.2 L29.85 79 L29.85 18.75 Z M29.85 18.15 L31.65 16.65 L34.95 19.35 L33.45 20.55 L29.85 18.75 Z",
+          "bounds": [
+            29.85,
+            16.65,
+            34.95,
+            79
+          ],
+          "direction": "down",
+          "weight": 56.44
+        }
+      ],
+      [
+        {
+          "outline": "M12.95 45.55 L31.65 45.55 L31.65 46.75 L12.95 46.75 Z",
+          "bounds": [
+            12.95,
+            45.55,
+            31.65,
+            46.75
+          ],
+          "direction": "right",
+          "weight": 18.711
+        }
+      ],
+      [
+        {
+          "outline": "M12.95 74.6 L31.65 74.6 L31.65 75.8 L12.95 75.8 Z",
+          "bounds": [
+            12.95,
+            74.6,
+            31.65,
+            75.8
+          ],
+          "direction": "right",
+          "weight": 18.711
+        }
+      ],
+      [
+        {
+          "outline": "M64.8 8.85 L62.8 14.25 L60.55 19.45 L58.1 24.45 L55.45 29.3 L52.55 33.95 L49.5 38.4 L46.25 42.7 L42.75 46.75 L39.05 50.6 L35.1 54.15 L34.7 53.8 L38.2 49.8 L41.5 45.7 L44.65 41.5 L47.65 37.15 L50.4 32.65 L53 27.95 L55.4 23.15 L57.6 18.15 L59.6 13 L61.4 7.7 Z M61.25 8.15 L61.55 7.25 L64.8 8.85 Z M64.8 8.85 L65.5 9.7 L63.35 10.15 Z",
+          "bounds": [
+            34.7,
+            7.25,
+            65.5,
+            54.15
+          ],
+          "direction": "curve",
+          "weight": 54.00693,
+          "revealPath": "M63.230000000000004 8 Q53.989999999999995 35.5 34.9325 54",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M62.4 11.15 L65.2 15.95 L67.95 20.45 L70.75 24.65 L73.65 28.5 L76.6 32 L79.6 35.2 L82.7 38.1 L85.9 40.65 L89.15 42.85 L92.45 44.75 L90.55 48.2 L87.05 46 L83.7 43.4 L80.45 40.55 L77.4 37.35 L74.45 33.8 L71.6 29.95 L68.95 25.8 L66.4 21.35 L64.05 16.5 L61.95 11.35 Z M90.55 48.2 L92.45 44.75 L93.9 45.55 Z",
+          "bounds": [
+            61.95,
+            11.15,
+            93.9,
+            48.2
+          ],
+          "direction": "curve",
+          "weight": 46.126996,
+          "revealPath": "M62.075 11 Q74.2025 37 91.5275 46.5",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M49.9 43.9 L77.05 43.9 L77.05 45.1 L49.9 45.1 Z",
+          "bounds": [
+            49.9,
+            43.9,
+            77.05,
+            45.1
+          ],
+          "direction": "right",
+          "weight": 27.1425
+        }
+      ],
+      [
+        {
+          "outline": "M43.55 58.9 L81.7 58.9 L81.7 60.1 L43.55 60.1 Z",
+          "bounds": [
+            43.55,
+            58.9,
+            81.7,
+            60.1
+          ],
+          "direction": "right",
+          "weight": 38.115
+        },
+        {
+          "outline": "M83.05 60 L72.3 90.95 L68.3 91.45 L79.75 59.5 Z M79.9 58.9 L81.7 57.4 L85 60.1 L83.5 60.8 L79.9 63.3 Z",
+          "bounds": [
+            68.3,
+            57.4,
+            85,
+            91.45
+          ],
+          "direction": "curve",
+          "weight": 30.806753,
+          "revealPath": "M81.71 59.5 L71.315 88.5",
+          "revealWidth": 14
+        }
+      ]
+    ]
+  }
+] as const
+export function loadGlyphWikiBatch88Strokes(bundle: unknown): readonly HanjaDictionaryStrokeData[] {
+  if (JSON.stringify(bundle) !== JSON.stringify(EXPECTED)) throw new Error('GlyphWiki batch88 reviewed data mismatch')
+  return EXPECTED
+}
+export const HANJA_DICTIONARY_GLYPHWIKI_BATCH88_STROKES = loadGlyphWikiBatch88Strokes(reviewed)

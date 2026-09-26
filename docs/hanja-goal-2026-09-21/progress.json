@@ -1,14 +1,14 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "5ebbfd479070b381e928c3a9ddfd021cc0a1eaa7",
+  "lastCompletedCommit": "58b3668f8871bf9cf09471c64f4155ec9ae643ea",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): animate reviewed 秊 with original quadratic strokes",
-    "parentAtStart": "5ebbfd479070b381e928c3a9ddfd021cc0a1eaa7"
+    "message": "feat(hanja): animate reviewed 昑 with original small mincho geometry",
+    "parentAtStart": "58b3668f8871bf9cf09471c64f4155ec9ae643ea"
   },
   "currentBatch": {
     "glyphs": [
-      "秊"
+      "昑"
     ],
     "strokes": 8,
     "status": "applied",
@@ -16,7 +16,7 @@
       "reviewedAt": "2026-09-27",
       "validatedAt": "2026-09-27",
       "sourceAndEngineReplay": {
-        "snapshotRecords": 3,
+        "snapshotRecords": 4,
         "engineFiles": 8,
         "traceExact": true,
         "checkedAt": "2026-09-27",
@@ -25,19 +25,21 @@
       "domesticStrokeCount": 8,
       "progressiveSnapshots": 72,
       "tests": {
-        "files": 201,
-        "passed": 949,
-        "failed": 0
+        "files": 202,
+        "passed": 952,
+        "failed": 0,
+        "targetedRerunAfterTypeFix": 3
       },
       "build": {
         "exitCode": 0,
         "typeScript": true,
         "staticPages": 7,
         "isolated": true,
-        "baseCommit": "5ebbfd479070b381e928c3a9ddfd021cc0a1eaa7"
+        "baseCommit": "58b3668f8871bf9cf09471c64f4155ec9ae643ea",
+        "initialFailure": "Test accessed geometryLicense through narrowed HanjaDictionaryStrokeData. Fixed assertion to use typed reviewed JSON; targeted tests and final build passed."
       },
       "artifactParity": {
-        "ownFiles": 17,
+        "ownFiles": 20,
         "publicExports": 3
       },
       "ui": {
@@ -74,14 +76,19 @@
         "staticImages": 0,
         "consoleWarningsErrors": 0
       },
-      "privateMediaSaved": false
+      "privateMediaSaved": false,
+      "enginePreset": {
+        "size": 1,
+        "style": "mincho",
+        "presetsReproduced": 4
+      }
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5001,
-      "remaining": 977,
+      "applied": 5002,
+      "remaining": 976,
       "percent": 83.7
     },
     "grades": [
@@ -179,9 +186,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 864,
-        "remaining": 286,
-        "percent": 75.1
+        "applied": 865,
+        "remaining": 285,
+        "percent": 75.2
       },
       {
         "grade": "특급",
@@ -194,9 +201,9 @@
   },
   "nextActions": [
     "Recheck current runtime, shared HEAD and pending --free.",
-    "Reproduce the pinned whole u6611 source and inspect domestic eight stroke directions, cumulative/final forms.",
-    "Resolve any 今 dot/bar discrepancy from original source evidence; no inferred geometry.",
-    "If fully matched, review all progressive frames and register runtime with tests/build/mobile validation; otherwise document a precise hold and select another candidate."
+    "Review all7 domestic directions/cumulative/final forms against complete original u6c95; engine reproduction acquired, not approved.",
+    "Inspect water radical rising stroke, 勿 corners and curves with original continuity; no invented geometry.",
+    "After full approval: progressive review, runtime, tests/build/mobile validation and own-only commit; otherwise document exact hold and select another candidate."
   ],
   "held": [
     "莽",
@@ -394,66 +401,65 @@
     }
   ],
   "resources": {
-    "tabs": "batch87 mobile tab closed; review tabs lost debugger attachment during cleanup and are left to automatic cleanup; viewport reset attempted",
-    "ramServers": "52003–52005 stopped; public archive RAM reader51989 PID44735 retained",
+    "tabs": "batch88 review and mobile tabs closed; viewport reset",
+    "ramServers": "52006–52008 stopped; public archive RAM reader51989 PID44735 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo clean and available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch87.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch87.test.ts",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch87.json",
-    "public/hanja-strokes/glyphwiki/79ca.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-79ca.md",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/serve.py",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/next.json",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch87-2026-09-27/README.md",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch88.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch88.test.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch88.json",
+    "public/hanja-strokes/glyphwiki/6611.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-6611.md",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/serve.py",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/next.json",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch88-2026-09-27/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "昑",
+    "glyph": "沕",
     "grade": "특급II",
-    "strokes": 8,
+    "strokes": 7,
+    "dictionary": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6C95.svg",
+      "bytes": 3942,
+      "sha256": "69568ed8fc9ca0ef5660c34b4327154ded0a1cd3102818304765c52da9cc135a"
+    },
     "source": {
-      "glyph": "昑",
-      "root": "u6611",
+      "glyph": "沕",
+      "root": "u6c95",
       "records": {
-        "u6611": {
-          "name": "u6611",
-          "related": "u6611",
-          "data": "99:0:0:1:0:181:200:u65e5-01$0:0:0:0$99:0:0:-26:0:205:200:u4eca-02"
+        "u6c95": {
+          "name": "u6c95",
+          "related": "u6c95",
+          "data": "99:0:0:5:0:155:200:u6c35-01$99:0:0:-40:0:200:200:u52ff-02"
         },
-        "u65e5-01": {
-          "name": "u65e5-01",
-          "related": "u65e5",
-          "data": "99:0:0:10:11:87:177:u65e5"
+        "u6c35-01": {
+          "name": "u6c35-01",
+          "related": "u6c35",
+          "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
         },
-        "u65e5": {
-          "name": "u65e5",
-          "related": "u65e5",
-          "data": "1:12:13:46:32:46:168$1:2:2:46:32:154:32$1:22:23:154:32:154:168$1:2:2:46:98:154:98$1:2:2:46:168:154:168"
-        },
-        "u4eca-02": {
-          "name": "u4eca-02",
-          "related": "u4eca",
-          "data": "2:0:7:132:16:116:71:83:108$2:7:0:130:22:151:74:181:93$1:0:0:109:89:156:89$1:0:2:98:119:164:119$1:22:23:164:119:146:177"
+        "u52ff-02": {
+          "name": "u52ff-02",
+          "related": "u52ff",
+          "data": "2:0:7:115:17:111:67:89:99$1:0:2:109:58:178:58$2:22:4:178:58:176:157:162:182$2:32:7:130:58:124:113:91:150$2:32:7:157:58:149:146:101:182"
         }
       },
       "missing": [],
-      "prior": [],
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -463,12 +469,16 @@
         "entries": 438759
       }
     },
-    "status": "complete whole source acquired; engine and domestic visual review pending",
+    "status": "complete whole source acquired; visual and progressive review pending",
+    "engine": {
+      "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+      "rawGroups": 9
+    },
     "actions": [
       "Recheck current runtime, shared HEAD and pending --free.",
-      "Reproduce the pinned whole u6611 source and inspect domestic eight stroke directions, cumulative/final forms.",
-      "Resolve any 今 dot/bar discrepancy from original source evidence; no inferred geometry.",
-      "If fully matched, review all progressive frames and register runtime with tests/build/mobile validation; otherwise document a precise hold and select another candidate."
+      "Review all7 domestic directions/cumulative/final forms against complete original u6c95; engine reproduction acquired, not approved.",
+      "Inspect water radical rising stroke, 勿 corners and curves with original continuity; no invented geometry.",
+      "After full approval: progressive review, runtime, tests/build/mobile validation and own-only commit; otherwise document exact hold and select another candidate."
     ]
   }
 }
