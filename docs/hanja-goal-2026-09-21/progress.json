@@ -1,14 +1,14 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "f30deb7a3cba20670c096bf56d6376d53b0cde8b",
+  "lastCompletedCommit": "99bfd5bb6a0f8103ed8a6df8acdbb161fd09ea18",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): animate reviewed 侐 strokes",
-    "parentAtStart": "f30deb7a3cba20670c096bf56d6376d53b0cde8b"
+    "message": "feat(hanja): animate reviewed 侜 strokes",
+    "parentAtStart": "99bfd5bb6a0f8103ed8a6df8acdbb161fd09ea18"
   },
   "currentBatch": {
     "glyphs": [
-      "侐"
+      "侜"
     ],
     "strokes": 8,
     "status": "validated; ready for own-only commit",
@@ -23,8 +23,8 @@
       "domesticStrokeCount": 8,
       "progressiveSnapshots": 72,
       "tests": {
-        "files": 216,
-        "passed": 994,
+        "files": 217,
+        "passed": 997,
         "failed": 0
       },
       "build": {
@@ -32,8 +32,8 @@
         "typeScript": true,
         "staticPages": 7,
         "isolated": true,
-        "baseCommit": "f30deb7a3cba20670c096bf56d6376d53b0cde8b",
-        "snapshot": "74e842cfa0004380ffd222edddcc6ddbfa1149fb"
+        "baseCommit": "99bfd5bb6a0f8103ed8a6df8acdbb161fd09ea18",
+        "snapshot": "f7fcbd65ebb4ee9118f92ecd9592034c05840af7"
       },
       "artifactParity": {
         "ownFiles": 19,
@@ -79,8 +79,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5016,
-      "remaining": 962,
+      "applied": 5017,
+      "remaining": 961,
       "percent": 83.9
     },
     "grades": [
@@ -185,16 +185,16 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 712,
-        "remaining": 616,
-        "percent": 53.6
+        "applied": 713,
+        "remaining": 615,
+        "percent": 53.7
       }
     ]
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-    "Reproduce whole u4f9c and compare all8 domestic directions,cumulative/final forms and progressive frames.",
-    "No inferred points, bridges, trims or component substitution; require test/build/mobile before own-only runtime commit."
+    "Reproduce whole u51be and compare all8 domestic directions/cumulative/final forms. Check continuity of the second water stroke before animation approval.",
+    "No inferred points, bridges, trims or component substitution."
   ],
   "held": [
     "莽",
@@ -448,46 +448,46 @@
     }
   ],
   "resources": {
-    "tabs": "batch103 review and mobile tabs closed",
-    "ramServers": "52047–52049 stopped; public archive RAM reader51989 PID44735 retained",
+    "tabs": "batch111 review and mobile tabs closed",
+    "ramServers": "52065–52067 to be stopped after commit; public archive RAM reader51989 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch110-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch110-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch110-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch110-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch110-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "侜",
-    "root": "u4f9c",
+    "glyph": "冾",
+    "root": "u51be",
     "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4F00/4F9C.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5100/51BE.svg",
       "status": 200,
-      "bytes": 4480,
-      "sha256": "730b71534eaf8edc81d3736124ef1fda8c5df23900ea3ca47a7ee8966a041900"
+      "bytes": 4143,
+      "sha256": "f021e1c37210b64ef9c9c9bb5221edc6e0b34b401edffd09525394c58dd8a8b6"
     },
     "source": {
-      "root": "u4f9c",
+      "root": "u51be",
       "records": {
-        "u4f9c": {
-          "name": "u4f9c",
-          "related": "u4f9c",
-          "data": "99:0:0:3:0:173:200:u4ebb-01$99:0:0:48:0:198:200:u821f"
+        "u51be": {
+          "name": "u51be",
+          "related": "u51be",
+          "data": "99:0:0:0:0:210:200:u51ab-01$99:0:0:56:0:194:200:u5408-07"
         },
-        "u4ebb-01": {
-          "name": "u4ebb-01",
-          "related": "u4ebb",
-          "data": "2:0:7:79:15:52:72:12:117$1:0:0:52:73:52:186"
+        "u51ab-01": {
+          "name": "u51ab-01",
+          "related": "u51ab",
+          "data": "2:7:8:21:32:41:41:50:58$2:7:8:13:120:39:144:35:177$2:2:7:28:139:45:116:72:56"
         },
-        "u821f": {
-          "name": "u821f",
-          "related": "u821f",
-          "data": "2:0:7:93:15:86:35:75:48$7:12:7:57:49:57:107:58:168:20:187$1:0:2:57:49:141:49$1:22:4:141:49:141:182$1:0:0:16:106:186:106$2:7:8:83:61:100:76:103:92$1:0:0:97:118:97:167"
+        "u5408-07": {
+          "name": "u5408-07",
+          "related": "u5408",
+          "data": "2:0:7:108:14:76:60:13:93$2:7:0:101:22:136:55:181:75$1:0:0:56:84:150:84$1:12:13:51:111:51:168$1:2:2:51:111:153:111$1:22:23:153:111:153:168$1:2:2:51:168:153:168"
         }
       },
       "missing": [],
@@ -500,11 +500,11 @@
         "entries": 438759
       }
     },
-    "status": "Complete3record source and correct domestic8stroke SVG acquired; direct review pending",
+    "status": "Complete whole-glyph source and domestic SVG acquired; direct review pending. Water second-stroke source has multiple primitives; continuity must be checked before approval.",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-      "Reproduce whole u4f9c and compare all8 domestic directions,cumulative/final forms and progressive frames.",
-      "No inferred points, bridges, trims or component substitution; require test/build/mobile before own-only runtime commit."
+      "Reproduce whole u51be and compare all8 domestic directions/cumulative/final forms. Check continuity of the second water stroke before animation approval.",
+      "No inferred points, bridges, trims or component substitution."
     ]
   }
 }
