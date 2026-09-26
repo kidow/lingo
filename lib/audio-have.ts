@@ -40,6 +40,7 @@ export const EXAMPLE_AUDIO_ON = 0.99
 
 export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([
   'en',
+  'es',
   'ja',
   'zh',
 ])
