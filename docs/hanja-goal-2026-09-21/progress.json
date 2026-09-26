@@ -1,14 +1,14 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "3e6dc45fbca377f13fe33e48c8154c9190cddd42",
+  "lastCompletedCommit": "5450fc095e9993c825f3b79c9565f8de14b1c884",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): animate reviewed 佌 strokes",
-    "parentAtStart": "3e6dc45fbca377f13fe33e48c8154c9190cddd42"
+    "message": "feat(hanja): animate reviewed 佸 strokes",
+    "parentAtStart": "5450fc095e9993c825f3b79c9565f8de14b1c884"
   },
   "currentBatch": {
     "glyphs": [
-      "佌"
+      "佸"
     ],
     "strokes": 8,
     "status": "validated; ready for own-only commit",
@@ -23,8 +23,8 @@
       "domesticStrokeCount": 8,
       "progressiveSnapshots": 72,
       "tests": {
-        "files": 214,
-        "passed": 988,
+        "files": 215,
+        "passed": 991,
         "failed": 0
       },
       "build": {
@@ -32,8 +32,8 @@
         "typeScript": true,
         "staticPages": 7,
         "isolated": true,
-        "baseCommit": "3e6dc45fbca377f13fe33e48c8154c9190cddd42",
-        "snapshot": "22f14a0009e8b530c2f98f17bb6f830633e48f91"
+        "baseCommit": "fca1ea5d8aa21646c916b2b56818dbc06cb4c794",
+        "snapshot": "48edeabf5afc59b67dca482438561826e73e7127"
       },
       "artifactParity": {
         "ownFiles": 19,
@@ -79,8 +79,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5014,
-      "remaining": 964,
+      "applied": 5015,
+      "remaining": 963,
       "percent": 83.9
     },
     "grades": [
@@ -185,15 +185,15 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 710,
-        "remaining": 618,
+        "applied": 711,
+        "remaining": 617,
         "percent": 53.5
       }
     ]
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-    "Reproduce whole u4f78 and compare all8 domestic directions,cumulative/final forms and progressive frames.",
+    "Reproduce whole u4f90 and compare all8 domestic directions,cumulative/final forms and progressive frames.",
     "No inferred points, bridges, trims or component substitution; require test/build/mobile before own-only runtime commit."
   ],
   "held": [
@@ -454,40 +454,40 @@
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch108-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch108-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch108-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch108-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch108-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch109-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch109-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch109-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch109-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch109-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "佸",
-    "root": "u4f78",
+    "glyph": "侐",
+    "root": "u4f90",
     "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4F00/4F78.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4F00/4F90.svg",
       "status": 200,
-      "bytes": 4007,
-      "sha256": "19b980a328c2d620afd6be8d72297a9c3d1b52c0348e0e3587c07b16689c6f12"
+      "bytes": 3962,
+      "sha256": "57bd9e048ee6430132a528901a834115d5aff6a3d17695a7339c788a57b3c069"
     },
     "source": {
-      "root": "u4f78",
+      "root": "u4f90",
       "records": {
-        "u4f78": {
-          "name": "u4f78",
-          "related": "u4f78",
-          "data": "99:0:0:2:0:182:200:u4ebb-01$99:0:0:0:0:200:200:u820c-02"
+        "u4f90": {
+          "name": "u4f90",
+          "related": "u4f90",
+          "data": "99:0:0:2:2:164:200:u4ebb-01$99:0:0:8:0:200:200:u8840-02"
         },
         "u4ebb-01": {
           "name": "u4ebb-01",
           "related": "u4ebb",
           "data": "2:0:7:79:15:52:72:12:117$1:0:0:52:73:52:186"
         },
-        "u820c-02": {
-          "name": "u820c-02",
-          "related": "u820c",
-          "data": "2:0:7:169:22:127:39:70:46$1:0:0:68:78:188:78$1:32:32:128:36:128:119$1:12:13:90:119:90:169$1:2:2:90:119:166:119$1:22:23:166:119:166:169$1:2:2:90:169:166:169"
+        "u8840-02": {
+          "name": "u8840-02",
+          "related": "u8840",
+          "data": "2:0:7:125:22:116:40:104:55$1:12:32:80:55:80:180$1:2:2:80:55:160:55$1:22:32:160:55:160:180$1:32:32:107:55:107:180$1:32:32:134:55:134:180$1:0:0:57:180:186:180"
         }
       },
       "missing": [],
@@ -500,10 +500,10 @@
         "entries": 438759
       }
     },
-    "status": "Complete3record source and domestic8stroke SVG acquired; direct review pending",
+    "status": "Complete3record source and correct domestic8stroke SVG acquired; direct review pending",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-      "Reproduce whole u4f78 and compare all8 domestic directions,cumulative/final forms and progressive frames.",
+      "Reproduce whole u4f90 and compare all8 domestic directions,cumulative/final forms and progressive frames.",
       "No inferred points, bridges, trims or component substitution; require test/build/mobile before own-only runtime commit."
     ]
   }
