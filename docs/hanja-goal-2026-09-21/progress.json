@@ -1,16 +1,16 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "963ab5a2dcc66ecb3a7655612a2ac98f30f625fd",
+  "lastCompletedCommit": "b74d94ec7cf58c5f69fe47a9f992f2eef3a5b45d",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 邠 discontinuous second-stroke source",
-    "parentAtStart": "963ab5a2dcc66ecb3a7655612a2ac98f30f625fd"
+    "message": "docs(hanja): review 怓 and refresh domestic source candidates",
+    "parentAtStart": "b74d94ec7cf58c5f69fe47a9f992f2eef3a5b45d"
   },
   "currentBatch": {
     "glyphs": [
-      "邠"
+      "怓"
     ],
-    "strokes": 7,
+    "strokes": 8,
     "status": "reviewed and held; runtime unchanged",
     "checks": {
       "reviewedAt": "2026-09-27",
@@ -19,7 +19,7 @@
         "engineFiles": 8,
         "traceExact": true
       },
-      "domesticStrokeCount": 7,
+      "domesticStrokeCount": 8,
       "progressiveSnapshots": 0,
       "runtimeAdded": 0,
       "sourceVerifierPassed": true,
@@ -144,9 +144,9 @@
     ]
   },
   "nextActions": [
-    "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Acquire the domestic whole-glyph8stroke source and reproduce u4e77. Review all directions, cumulative and final forms before considering progressive review.",
-    "Do not bridge or trim discontinuous source paths; hold if exact source geometry cannot satisfy review."
+    "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
+    "Reproduce whole u602d and compare all8 domestic directions, cumulative forms and final glyph; verify 必 order rather than borrowing another glyph review.",
+    "If all exact-source paths pass progressive review, register and test/build/mobile before own-only commit; otherwise record precise hold and move to 怰,怲,炘."
   ],
   "held": [
     "莽",
@@ -383,6 +383,13 @@
       "reason": "Second-stroke line ends83.625,30 but original curve starts79.005,30; exact primitives do not join. Whole u90a0-k absent.",
       "releaseCondition": "Obtain a licensed complete whole-glyph source with a continuous second-stroke trace, then repeat all-stroke directional, cumulative, progressive and final review. No inferred bridge, endpoint shift, trimming or radical substitution.",
       "path": "docs/hanja-goal-glyphwiki-batch104-2026-09-27"
+    },
+    {
+      "glyph": "怓",
+      "strokes": 8,
+      "reason": "Fourth-stroke diagonal ends75.8,138; curve starts77.96,119, restarting19 source units higher.",
+      "releaseCondition": "Find a licensed whole 怓 source with continuous fourth-stroke trace and correct turning attachment, then repeat all8-stroke and progressive checks. No inferred connector, trimming, point edits or radical substitution.",
+      "path": "docs/hanja-goal-glyphwiki-batch105-2026-09-27"
     }
   ],
   "resources": {
@@ -392,43 +399,47 @@
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch104-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch104-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch104-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch104-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch104-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch105-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch105-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch105-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch105-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch105-2026-09-27/next.json",
+    "docs/hanja-goal-glyphwiki-batch105-2026-09-27/availability.json",
+    "docs/hanja-goal-glyphwiki-batch105-2026-09-27/next-sources.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "乷",
-    "grade": "특급II",
+    "glyph": "怭",
+    "root": "u602d",
+    "grade": "특급",
     "strokes": 8,
+    "dictionary": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6000/602D.svg",
+      "status": 200,
+      "bytes": 4199,
+      "sha256": "045b9b6e9a804cfd67ef3fa9cd86301865c8096538d1b16e74abe5a0197d7657"
+    },
     "source": {
-      "root": "u4e77",
+      "root": "u602d",
       "records": {
-        "u4e77": {
-          "name": "u4e77",
-          "related": "u4e77",
-          "data": "99:0:0:0:-37:200:163:u6c99-09$99:0:0:0:107:200:195:u4e59"
+        "u602d": {
+          "name": "u602d",
+          "related": "u602d",
+          "data": "99:0:0:6:0:148:201:u5fc4-01$99:0:0:-40:0:204:200:u5fc5-02"
         },
-        "u6c99-09": {
-          "name": "u6c99-09",
-          "related": "u6c99",
-          "data": "99:0:0:0:0:206:200:u6c35-01-var-001$99:0:0:58:41:198:157:u5c11"
+        "u5fc4-01": {
+          "name": "u5fc4-01",
+          "related": "u5fc4",
+          "data": "99:0:0:-48:0:152:200:u5fc4"
         },
-        "u6c35-01-var-001": {
-          "name": "u6c35-01-var-001",
-          "related": "u6c35",
-          "data": "2:7:8:31:53:50:61:55:71$2:7:8:13:76:32:84:37:95$2:7:8:16:120:46:123:43:151$2:32:7:39:128:44:120:82:60"
+        "u5fc4": {
+          "name": "u5fc4",
+          "related": "u5fc4",
+          "data": "1:0:0:100:15:100:186$2:7:8:80:56:76:86:64:99$2:7:8:113:53:131:68:137:85"
         },
-        "u5c11": {
-          "name": "u5c11",
-          "related": "u5c11",
-          "data": "1:0:4:100:17:100:126$2:0:7:61:50:50:91:15:124$2:7:8:126:46:160:67:179:99$2:0:7:153:102:110:172:21:190"
-        },
-        "u4e59": {
-          "name": "u4e59",
-          "related": "u4e59",
-          "data": "1:0:2:40:37:143:37$4:22:5:143:37:12:169:170:169:175:171"
+        "u5fc5-02": {
+          "name": "u5fc5-02",
+          "related": "u5fc5",
+          "data": "2:7:8:101:80:104:118:94:142$3:0:5:122:52:122:177:170:177$2:7:8:114:18:139:31:149:50$2:7:8:164:81:180:105:182:135$2:0:7:173:26:148:126:84:188"
         }
       },
       "missing": [],
@@ -441,11 +452,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole source acquired; domestic8stroke comparison not yet performed",
+    "status": "Domestic SVG and complete4record source acquired; all8stroke visual review pending",
     "actions": [
-      "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Acquire the domestic whole-glyph8stroke source and reproduce u4e77. Review all directions, cumulative and final forms before considering progressive review.",
-      "Do not bridge or trim discontinuous source paths; hold if exact source geometry cannot satisfy review."
+      "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
+      "Reproduce whole u602d and compare all8 domestic directions, cumulative forms and final glyph; verify 必 order rather than borrowing another glyph review.",
+      "If all exact-source paths pass progressive review, register and test/build/mobile before own-only commit; otherwise record precise hold and move to 怰,怲,炘."
     ]
   }
 }
