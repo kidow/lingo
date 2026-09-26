@@ -970,6 +970,22 @@ const [variants, tocfl, naer, concised, revised, crossStrait, cedict] = await Pr
   cedictSimplified(),
 ])
 /**
+ * 兩岸表의 臺灣語詞도 `公共汽車／公車`처럼 둘을 묶어 낸다. **하나만 적는다** —
+ * 묶음을 그대로 두면 정답이 `公共汽車／公車`가 되고, 문맥 카드가 그 묶음을
+ * 예문에서 찾아야 해서 예문 번체까지 `我坐公共汽車／公車。`가 됐다. 八千詞表에
+ * 있는 꼴 가운데 등급이 가장 낮은 것을, 없으면 앞의 것을 쓴다
+ */
+const LEVEL_ORDER: TocflLevel[] = ['準備1', '準備2', 'L1', 'L2', 'L3', 'L4', 'L5']
+const rank = (form: string) => {
+  const level = tocfl.levelOf.get(form)
+  return level ? LEVEL_ORDER.indexOf(level) : LEVEL_ORDER.length
+}
+for (const [cn, tw] of crossStrait) {
+  if (!tw.includes('／')) continue
+  const forms = tw.split('／').filter(Boolean)
+  crossStrait.set(cn, forms.reduce((best, form) => (rank(form) < rank(best) ? form : best)))
+}
+/**
  * 최장일치의 상한. CC-CEDICT에는 스무 자가 넘는 성어·고유명사도 있는데 예문은
  * 짧아서 걸릴 일이 없고, 상한이 길수록 조각마다 헛도는 회차만 는다.
  */
@@ -1051,8 +1067,7 @@ for (const file of files) {
     resolved += 1
     how[pickedHow] = (how[pickedHow] ?? 0) + 1
 
-    // 兩岸表가 `公共汽車／公車`처럼 두 표기를 묶어 낸다. 어느 하나라도 목록에 있으면 붙인다
-    const level = picked.split('／').map((form) => tocfl.levelOf.get(form)).find(Boolean)
+    const level = tocfl.levelOf.get(picked)
     const attributes = (word.attributes ?? {}) as Record<string, unknown>
     if (level) {
       attributes.tocfl = level
@@ -1074,8 +1089,7 @@ for (const file of files) {
         CEDICT_MAX,
         { variants, official, revised, hanSet, crossStrait },
         stuckSegments,
-        // `公共汽車／公車`처럼 둘을 묶은 자리는 앞의 것을 쓴다
-        { term: word.term, traditional: picked.split('／')[0] },
+        { term: word.term, traditional: picked },
       )
       if (line) {
         example.traditional = twGlyph(line)
