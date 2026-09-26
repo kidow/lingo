@@ -1,0 +1,57 @@
+{
+  "glyph": "芐",
+  "grade": "특급",
+  "strokes": 7,
+  "source": {
+    "glyph": "芐",
+    "root": "u8290-k",
+    "records": {
+      "u8290-k": {
+        "name": "u8290-k",
+        "related": "u8290",
+        "data": "99:0:0:0:0:200:200:u8290-var-001"
+      },
+      "u8290-var-001": {
+        "name": "u8290-var-001",
+        "related": "u8290",
+        "data": "99:0:0:0:0:199:199:ufa5e-03$99:0:0:0:58:200:197:u4e0b"
+      },
+      "ufa5e-03": {
+        "name": "ufa5e-03",
+        "related": "u3013",
+        "data": "99:0:0:0:0:200:200:u8279-k03"
+      },
+      "u8279-k03": {
+        "name": "u8279-k03",
+        "related": "u8279",
+        "data": "1:0:0:13:39:94:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:106:39:187:39"
+      },
+      "u4e0b": {
+        "name": "u4e0b",
+        "related": "u4e0b",
+        "data": "1:0:0:16:33:184:33$1:32:0:96:33:96:184$2:7:8:96:74:137:90:159:115"
+      }
+    },
+    "missing": [],
+    "snapshot": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+      "snapshotCommitDate": "2016-05-02T21:53:32Z",
+      "bytes": 63801771,
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "entries": 438759
+    }
+  },
+  "dictionary": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/8290.svg",
+    "bytes": 3719,
+    "sha256": "018467964d366ecf87d36a8ba0a8e8ec4169491335767b045b1eded775dc27f8"
+  },
+  "status": "complete licensed whole-source graph with four-stroke grass head acquired; no visual approval yet",
+  "actions": [
+    "Recheck shared HEAD, actual runtime and pending --free before batch81.",
+    "Use the complete pinned u8290-k source; base u8290 has a three-stroke grass head and is not the target seven-stroke source.",
+    "Replay all exact source dependencies and compare all domestic strokes, especially grass order and 下 connections, then all progressive/cumulative/final forms.",
+    "If every requirement passes, connect runtime, test/build/mobile UI and commit own work only."
+  ]
+}
