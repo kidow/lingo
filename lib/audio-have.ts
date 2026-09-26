@@ -45,7 +45,24 @@ export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([
   'zh',
 ])
 
-export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([])
+export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([
+  'en/english-language-0-46b423e0acef',
+  'en/front-gate-0-fa6b59e4cad3',
+  'en/hot-dog-0-879550aec152',
+  'en/oolong-tea-0-95aba77109b3',
+  'es/english-language-0-ead1f6959f45',
+  'es/front-gate-0-9f92552983aa',
+  'es/hot-dog-0-e8b3cb09a1b2',
+  'es/oolong-tea-0-a134634e5e77',
+  'ja/english-language-0-ca912ce711e9',
+  'ja/front-gate-0-2f46cc7f2bc2',
+  'ja/hot-dog-0-9b51eddb6ba8',
+  'ja/oolong-tea-0-bdbf4d776835',
+  'zh/english-language-0-6447c843aa94',
+  'zh/front-gate-0-84abfe49f7bb',
+  'zh/hot-dog-0-b765d5d21ea9',
+  'zh/oolong-tea-0-218cb9603c91',
+])
 
 /** 그 언어의 그 예문(열쇠는 `exampleAudioKey`)에 소리가 있는가 */
 export function hasExampleAudio(lang: string, key: string): boolean {
