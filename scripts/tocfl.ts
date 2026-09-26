@@ -195,12 +195,18 @@ async function tocflWordList(): Promise<{ levelOf: Map<string, TocflLevel>; head
     for (const row of xlsxSheet(inner, `xl/worksheets/sheet${sheet}.xml`, ss).slice(1)) {
       const cell = (row[column] ?? '').trim()
       if (!cell) continue
-      // `剎(ㄕㄚ)車/煞車`처럼 주음이 괄호로 섞인 자리가 있다. 갈래마다 지운다
+      // `剎(ㄕㄚ)車/煞車`처럼 주음이 괄호로 섞인 자리가 있다. 갈래마다 지운다.
+      // 괄호 안이 한자면 **덜어도 되는 글자**다 — `桌(子)` · `襪(子)` · `電視(機)`.
+      // 2026-09-26까지 이것도 주음처럼 지워 `桌`만 남겼고, 桌子 · 襪子 · 鼻子 같은
+      // 개념 마흔 남짓이 등급을 못 받았다. 뺀 꼴과 넣은 꼴을 둘 다 싣는다
       for (const term of cell.split('/')) {
-        const word = term.replace(/\(.*?\)/g, '').trim()
-        if (!word) continue
-        headwords.add(word)
-        levelOf.set(word, level)
+        const short = term.replace(/\(.*?\)/g, '').trim()
+        const long = term.replace(/\((.*?)\)/g, (_, inside: string) => (/\p{Script=Han}/u.test(inside) ? inside : '')).trim()
+        for (const word of new Set([short, long])) {
+          if (!word) continue
+          headwords.add(word)
+          levelOf.set(word, level)
+        }
       }
     }
   }
