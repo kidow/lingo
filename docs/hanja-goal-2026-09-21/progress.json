@@ -1,80 +1,32 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "4a5d21da55d5e7b0b5ed411633c9052ac6ee9df0",
+  "lastCompletedCommit": "378574b6020e124433f35dc9d15f9a0e12675afc",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): animate 佖 in reviewed domestic stroke order",
-    "parentAtStart": "4a5d21da55d5e7b0b5ed411633c9052ac6ee9df0"
+    "message": "docs(hanja): hold 扱 for two domestic shape mismatches",
+    "parentAtStart": "378574b6020e124433f35dc9d15f9a0e12675afc"
   },
   "currentBatch": {
     "glyphs": [
-      "佖"
+      "扱"
     ],
     "strokes": 7,
-    "status": "validated; ready for own-only commit",
+    "status": "held",
     "checks": {
       "reviewedAt": "2026-09-27",
-      "validatedAt": "2026-09-27",
       "sourceAndEngineReplay": {
-        "snapshotRecords": 3,
+        "snapshotRecords": 4,
         "engineFiles": 8,
         "traceExact": true,
         "checkedAt": "2026-09-27",
         "snapshotSha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62"
       },
       "domesticStrokeCount": 7,
-      "progressiveSnapshots": 63,
-      "tests": {
-        "files": 211,
-        "passed": 979,
-        "failed": 0
-      },
-      "build": {
-        "exitCode": 0,
-        "typeScript": true,
-        "staticPages": 7,
-        "isolated": true,
-        "baseCommit": "4a5d21da55d5e7b0b5ed411633c9052ac6ee9df0",
-        "snapshot": "938aaee4fe16a84783f3c35c1005e388760f217a"
-      },
-      "artifactParity": {
-        "ownFiles": 19,
-        "publicExports": 3
-      },
-      "ui": {
-        "viewport": [
-          430,
-          932
-        ],
-        "introAutoplay": true,
-        "introReplay": true,
-        "introComplete": "7 / 7",
-        "writingAutoplay": true,
-        "writingReplay": true,
-        "writingComplete": "7 / 7",
-        "canvasInputCounts": [
-          0,
-          1,
-          0
-        ],
-        "canvasYBeforeAfter": [
-          162.8046875,
-          162.8046875
-        ],
-        "dialogYBeforeAfter": [
-          139.8046875,
-          139.8046875
-        ],
-        "scrollBeforeAfter": [
-          126,
-          126
-        ],
-        "touchAction": "none",
-        "vaulNoDrag": true,
-        "outlineGroups": 1,
-        "staticImages": 0,
-        "consoleWarningsErrors": 0
-      },
+      "progressiveSnapshots": 0,
+      "runtimeAdded": 0,
+      "sourceVerifierPassed": true,
+      "runtimeNullChecked": true,
+      "build": "Not repeated: research-only changes. Last batch101 production build and979 Hanja tests passed.",
       "privateMediaSaved": false
     }
   },
@@ -195,8 +147,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Reproduce whole u6271; compare all7 domestic directions/cumulative/final forms and 扌 hook/及 folds.",
-    "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 芄 u8284-k, complete6record whole alternative acquired in batch101."
+    "Reproduce whole u8284-k; compare all7 domestic directions/cumulative/final forms and 丸 hook continuity.",
+    "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and select another complete unregistered source."
   ],
   "held": [
     "莽",
@@ -419,51 +371,72 @@
       "reason": "Original group2 quadratic ends40.575,184; group3 rising quadratic starts36.4,150, restarting34 source units higher. A continuous original trajectory is not documented.",
       "releaseCondition": "Obtain a licensed whole 汙 source with a documented continuous third water trajectory or source-authoritative turning-boundary reconstruction. No invented connector, trimming, point edit or radical substitution.",
       "path": "docs/hanja-goal-glyphwiki-batch98-2026-09-27"
+    },
+    {
+      "glyph": "扱",
+      "strokes": 7,
+      "reason": "Original sixth horizontal begins at139.1,76 away from the long falling curve; final falling stroke starts107.6,58 above that horizontal. Whole Korean alias is identical.",
+      "releaseCondition": "Find a licensed whole 扱 source whose sixth horizontal begins at the long falling stroke and whose final falling stroke begins at that sixth horizontal, then review all7 directions/cumulative/progressive/final forms. No inferred bar extension, startpoint shift or radical substitution.",
+      "path": "docs/hanja-goal-glyphwiki-batch102-2026-09-27"
     }
   ],
   "resources": {
-    "tabs": "batch101 review and mobile tabs closed",
-    "ramServers": "52043–52045 stopped; public archive RAM reader51989 PID44735 retained",
+    "tabs": "batch102 review tab closed",
+    "ramServers": "52046 stopped; public archive RAM reader51989 PID44735 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch101-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch101-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch101-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch101-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch101-2026-09-27/additional-source-inventory.json"
+    "docs/hanja-goal-glyphwiki-batch102-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch102-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch102-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch102-2026-09-27/verify.mjs"
   ],
   "nextCandidateInventory": {
-    "glyph": "扱",
-    "grade": "1급",
+    "glyph": "芄",
+    "grade": "특급",
     "strokes": 7,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6200/6271.svg",
-      "bytes": 4479,
-      "sha256": "39a44bbe95e85d2c7e4b12fc6141d47f9fb30e3db61506ff951767683ceb4987"
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/8284.svg",
+      "bytes": 4204,
+      "sha256": "a6956242424dfc0e6d93638d184ebfb006aef85148381e3f20488512ce8c624b"
     },
     "source": {
-      "root": "u6271",
+      "root": "u8284-k",
       "records": {
-        "u6271": {
-          "name": "u6271",
-          "related": "u6271",
-          "data": "99:0:0:2:0:157:200:u624c-01$99:0:0:-10:0:200:200:u53ca-02"
+        "u8284-k": {
+          "name": "u8284-k",
+          "related": "u8284",
+          "data": "99:0:0:0:0:200:200:koseki-342380"
         },
-        "u624c-01": {
-          "name": "u624c-01",
-          "related": "u624c",
-          "data": "1:0:0:17:55:104:55$1:0:4:60:15:60:181$2:0:7:18:122:63:107:104:91"
+        "koseki-342380": {
+          "name": "koseki-342380",
+          "related": "u8284",
+          "data": "99:0:0:0:0:199:199:ufa5e-03$99:0:0:15:52:194:198:u4e38"
         },
-        "u53ca-02": {
-          "name": "u53ca-02",
-          "related": "u53ca",
-          "data": "2:32:7:111:30:107:162:66:187$1:0:2:82:30:156:30$1:22:13:156:30:142:76$1:2:2:142:76:174:76$2:22:7:174:76:154:161:83:188$2:7:0:112:58:117:140:182:177"
+        "ufa5e-03": {
+          "name": "ufa5e-03",
+          "related": "u3013",
+          "data": "99:0:0:0:0:200:200:u8279-k03"
+        },
+        "u8279-k03": {
+          "name": "u8279-k03",
+          "related": "u8279",
+          "data": "1:0:0:13:39:94:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:106:39:187:39"
+        },
+        "u4e38": {
+          "name": "u4e38",
+          "related": "u4e38",
+          "data": "99:0:0:0:0:200:200:u4e5d:0:0:0$2:7:8:29:91:75:113:98:147"
+        },
+        "u4e5d": {
+          "name": "u4e5d",
+          "related": "u4e5d",
+          "data": "7:0:7:80:16:80:61:80:154:12:184$1:0:2:25:66:132:66$3:22:5:132:66:132:172:180:172"
         }
       },
       "missing": [],
-      "glyph": "扱",
+      "glyph": "芄",
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -473,11 +446,11 @@
         "entries": 438759
       }
     },
-    "status": "complete3record whole source acquired; all7 domestic directions/cumulative/final states unreviewed",
+    "status": "complete6record whole Korean source acquired; all7 domestic directions/cumulative/final states unreviewed",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Reproduce whole u6271; compare all7 domestic directions/cumulative/final forms and 扌 hook/及 folds.",
-      "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 芄 u8284-k, complete6record whole alternative acquired in batch101."
+      "Reproduce whole u8284-k; compare all7 domestic directions/cumulative/final forms and 丸 hook continuity.",
+      "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and select another complete unregistered source."
     ]
   }
 }
