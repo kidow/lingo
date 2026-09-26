@@ -1,21 +1,27 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "4053217aee2b285148cd5ca936cbdeaf868c92f5",
-  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch84-2026-09-27/README.md",
+  "lastCompletedCommit": "f5b9ba166017d5e2dd3122f073ea5e980d6f23c9",
+  "currentBatchCommitLookup": "git log -1 --format=%H -- docs/hanja-goal-glyphwiki-batch85-2026-09-27/README.md",
   "currentBatch": {
     "glyphs": [
-      "侊"
+      "炚"
     ],
     "strokes": 8,
     "status": "held",
     "checks": {
       "date": "2026-09-27",
-      "sourceRecords": 3,
-      "aliasRecords": 4,
+      "sourceRecords": 4,
+      "aliasRecords": 5,
       "engineFiles": 8,
-      "wholeGlyphPresets": 4,
       "allDomesticStrokesReviewed": 8,
+      "progressiveReview": {
+        "strokes": [
+          8
+        ],
+        "frames": 9,
+        "allStrokeApproval": false
+      },
       "runtimeAdded": 0,
       "engineReplayPassed": true,
       "privateMediaSaved": false
@@ -137,10 +143,10 @@
     ]
   },
   "nextActions": [
-    "Recheck runtime, shared HEAD and pending --free.",
-    "Replay original whole 炚 u709a and compare all8 domestic directions, cumulative/final forms and progressive states.",
-    "Only apply if source evidence and all curves/joins/hook paths agree; no guessed connections or component substitution.",
-    "Tests/build/mobile verification, own-only private-index commit, then continue."
+    "Recheck actual runtime, HEAD and pending --free.",
+    "Reproduce complete whole 枏 u678f source and review all8 domestic strokes/directions/cumulative/final forms.",
+    "Check upper enclosure and internal horizontal order; no inferred component assembly or trajectory bridges.",
+    "Only after full progressive approval, implement runtime and verify tests/build/mobile; commit own work and continue."
   ],
   "held": [
     "莽",
@@ -329,29 +335,37 @@
       "reason": "Domestic stroke7 starts attached to horizontal6. The original falling curve starts at y104 while horizontal6 lies at y98. All four built-in size/style combinations leave disjoint filled outlines.",
       "evidence": "docs/hanja-goal-glyphwiki-batch84-2026-09-27/findings.json",
       "releaseCondition": "Find a licensed whole 侊 source with the seventh stroke attached to the sixth horizontal, or source-authoritative coordinate correction. Then review all8 directions, cumulative/final/progressive states. Do not extend or translate the current curve, invent a connector or replace a component."
+    },
+    {
+      "glyph": "炚",
+      "reason": "The domestic final falling stroke begins visibly above the top of the first fire dot. The source begins at y59, below the first fire dot start at y51. Its progressive reveal joins the main falling stroke lower than the domestic reference.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch85-2026-09-27/findings.json",
+      "releaseCondition": "Find a licensed whole 炚 source whose final stroke begins at the domestic relative height with compatible direction/attachment, or source-authoritative correction. Then review all eight strokes and progressive states. No invented extension, new points or component replacement."
     }
   ],
   "resources": {
-    "tabs": "batch84 review tab closed; no new viewport override",
-    "ramServers": "batch84 gallery51997 stopped; public archive RAM reader51989 PID44735 retained",
+    "tabs": "batch85 review and progressive tabs closed",
+    "ramServers": "batch85 galleries51998/51999 stopped; public archive RAM reader51989 PID44735 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo clean and available for the next validation batch",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/serve.py",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/presets.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/alternative-sources.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/next.json",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch84-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/serve.py",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/alternative-sources.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/next.json",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch85-2026-09-27/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
-  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch84-2026-09-27/next.json"
+  "nextCandidateInventory": "docs/hanja-goal-glyphwiki-batch85-2026-09-27/next.json"
 }
