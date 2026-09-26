@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-26T19:41:04.545Z",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "requestSha256": "742e19fbf84760deb16c89da2c87ed8850afb9e71ce4704daa529e28755060be",
+  "latencyMs": 390,
+  "advisoryOnly": true,
+  "runtimeApproval": false,
+  "model": "jev-1.13.0",
+  "answers": {
+    "jung_hold": {
+      "type": "choice",
+      "choice": "source_research",
+      "confidence": 0.98,
+      "probabilities": {
+        "source_research": 0.98,
+        "visual_review": 0.01,
+        "runtime_validation": 0,
+        "insufficient_evidence": 0.01
+      }
+    },
+    "yong_validation": {
+      "type": "choice",
+      "choice": "runtime_validation",
+      "confidence": 0.91,
+      "probabilities": {
+        "source_research": 0.02,
+        "visual_review": 0.01,
+        "runtime_validation": 0.9299999999999999,
+        "insufficient_evidence": 0.04
+      }
+    },
+    "aek_candidate": {
+      "type": "choice",
+      "choice": "visual_review",
+      "confidence": 0.51,
+      "probabilities": {
+        "source_research": 0.29,
+        "visual_review": 0.64,
+        "runtime_validation": 0,
+        "insufficient_evidence": 0.07
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 1560,
+    "output_tokens": 172
+  }
+}
