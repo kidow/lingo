@@ -1,40 +1,89 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "16c08b3fc9ee4779e036158417f30acfab47d152",
+  "lastCompletedCommit": "ea3218c99a893f5072c96d539dda0449bb520081",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 汙 pending a continuous water stroke",
-    "parentAtStart": "16c08b3fc9ee4779e036158417f30acfab47d152"
+    "message": "feat(hanja): animate reviewed Korean-form 邙 strokes",
+    "parentAtStart": "ea3218c99a893f5072c96d539dda0449bb520081"
   },
   "currentBatch": {
     "glyphs": [
-      "汙"
+      "邙"
     ],
     "strokes": 6,
-    "status": "held",
+    "status": "validated; ready for own-only commit",
     "checks": {
       "reviewedAt": "2026-09-27",
+      "validatedAt": "2026-09-27",
       "sourceAndEngineReplay": {
-        "snapshotRecords": 3,
+        "snapshotRecords": 6,
         "engineFiles": 8,
         "traceExact": true,
         "checkedAt": "2026-09-27",
         "snapshotSha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62"
       },
       "domesticStrokeCount": 6,
-      "progressiveSnapshots": 0,
-      "runtimeAdded": 0,
-      "sourceVerifierPassed": true,
-      "runtimeNullChecked": true,
-      "build": "Not repeated: research-only changes. Last batch97 production build and970 Hanja tests passed.",
+      "progressiveSnapshots": 54,
+      "tests": {
+        "files": 209,
+        "passed": 973,
+        "failed": 0
+      },
+      "build": {
+        "exitCode": 0,
+        "typeScript": true,
+        "staticPages": 7,
+        "isolated": true,
+        "baseCommit": "f4e404f78bc1a81e8ea15a97e001ffb303330e05",
+        "snapshot": "dfcbffd238eac684cb1213aaeaf56c3afb8dfd9a",
+        "note": "Source-only verifier and rejected-gallery corrections after build verified separately; runtime/build inputs unchanged."
+      },
+      "artifactParity": {
+        "ownFiles": 23,
+        "publicExports": 3
+      },
+      "ui": {
+        "viewport": [
+          430,
+          932
+        ],
+        "introAutoplay": true,
+        "introReplay": true,
+        "introComplete": "6 / 6",
+        "writingAutoplay": true,
+        "writingReplay": true,
+        "writingComplete": "6 / 6",
+        "canvasInputCounts": [
+          0,
+          1,
+          0
+        ],
+        "canvasYBeforeAfter": [
+          162.8046875,
+          162.8046875
+        ],
+        "dialogYBeforeAfter": [
+          139.8046875,
+          139.8046875
+        ],
+        "scrollBeforeAfter": [
+          126,
+          126
+        ],
+        "touchAction": "none",
+        "vaulNoDrag": true,
+        "outlineGroups": 1,
+        "staticImages": 0,
+        "consoleWarningsErrors": 0
+      },
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5008,
-      "remaining": 970,
+      "applied": 5009,
+      "remaining": 969,
       "percent": 83.8
     },
     "grades": [
@@ -132,9 +181,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 869,
-        "remaining": 281,
-        "percent": 75.6
+        "applied": 870,
+        "remaining": 280,
+        "percent": 75.7
       },
       {
         "grade": "특급",
@@ -147,8 +196,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Reproduce whole u9099; compare all6 domestic directions/cumulative/final forms and continuous 亡/阝 folds.",
-    "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 邛."
+    "Reproduce whole u909b; compare all6 domestic directions/cumulative/final forms and 阝 fold/hook continuity.",
+    "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 佖."
   ],
   "held": [
     "莽",
@@ -374,44 +423,38 @@
     }
   ],
   "resources": {
-    "tabs": "batch98 review tab closed",
-    "ramServers": "52035 stopped; public archive RAM reader51989 PID44735 retained",
+    "tabs": "batch99 review and mobile tabs closed",
+    "ramServers": "52036–52039 stopped; public archive RAM reader51989 PID44735 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch98-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch98-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch98-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch98-2026-09-27/verify.mjs"
+    "docs/hanja-goal-glyphwiki-batch99-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch99-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch99-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch99-2026-09-27/verify.mjs"
   ],
   "nextCandidateInventory": {
-    "glyph": "邙",
-    "grade": "특급II",
+    "glyph": "邛",
+    "grade": "특급",
     "strokes": 6,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/9099.svg",
-      "bytes": 3425,
-      "sha256": "acd5bde471d7a908944d785d6ecc1eb20262d899afda69776427291269227035"
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/909B.svg",
+      "bytes": 3179,
+      "sha256": "fd3e99d816263644149582ea15a0d967e5707ebf7af78d3b72eb86bea492bb4d"
     },
     "source": {
-      "glyph": "邙",
-      "root": "u9099",
+      "root": "u909b",
       "records": {
-        "u9099": {
-          "name": "u9099",
-          "related": "u9099",
-          "data": "99:0:0:3:3:118:173:dkw-00287$99:0:0:0:0:200:200:u961d-02"
+        "u909b": {
+          "name": "u909b",
+          "related": "u909b",
+          "data": "99:0:0:-4:-12:240:204:u5de5-01$99:0:0:-32:0:200:200:u961d-02"
         },
-        "dkw-00287": {
-          "name": "dkw-00287",
-          "related": "u4ea1",
-          "data": "99:0:0:0:0:200:200:aj1-14031"
-        },
-        "aj1-14031": {
-          "name": "aj1-14031",
-          "related": "u4ea1",
-          "data": "1:0:32:102:18:102:56$1:2:0:38:56:180:56$3:12:0:38:56:38:174:173:174"
+        "u5de5-01": {
+          "name": "u5de5-01",
+          "related": "u5de5",
+          "data": "1:0:0:17:47:79:47$1:32:32:45:47:45:134$2:0:7:16:146:44:137:85:123"
         },
         "u961d-02": {
           "name": "u961d-02",
@@ -420,6 +463,7 @@
         }
       },
       "missing": [],
+      "glyph": "邛",
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -429,11 +473,11 @@
         "entries": 438759
       }
     },
-    "status": "complete4record whole source acquired; all6 directions and 阝fold/hook continuity unreviewed",
+    "status": "complete3record whole source acquired; all6 domestic paths/directions/cumulative/final states unreviewed",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Reproduce whole u9099; compare all6 domestic directions/cumulative/final forms and continuous 亡/阝 folds.",
-      "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 邛."
+      "Reproduce whole u909b; compare all6 domestic directions/cumulative/final forms and 阝 fold/hook continuity.",
+      "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 佖."
     ]
   }
 }
