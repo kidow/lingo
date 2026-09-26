@@ -1,14 +1,14 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "ea3218c99a893f5072c96d539dda0449bb520081",
+  "lastCompletedCommit": "2ddb5ceaebe4915ff59bffb5bca525410de4ec64",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): animate reviewed Korean-form 邙 strokes",
-    "parentAtStart": "ea3218c99a893f5072c96d539dda0449bb520081"
+    "message": "feat(hanja): animate reviewed 邛 strokes",
+    "parentAtStart": "2ddb5ceaebe4915ff59bffb5bca525410de4ec64"
   },
   "currentBatch": {
     "glyphs": [
-      "邙"
+      "邛"
     ],
     "strokes": 6,
     "status": "validated; ready for own-only commit",
@@ -16,7 +16,7 @@
       "reviewedAt": "2026-09-27",
       "validatedAt": "2026-09-27",
       "sourceAndEngineReplay": {
-        "snapshotRecords": 6,
+        "snapshotRecords": 3,
         "engineFiles": 8,
         "traceExact": true,
         "checkedAt": "2026-09-27",
@@ -25,8 +25,8 @@
       "domesticStrokeCount": 6,
       "progressiveSnapshots": 54,
       "tests": {
-        "files": 209,
-        "passed": 973,
+        "files": 210,
+        "passed": 976,
         "failed": 0
       },
       "build": {
@@ -34,12 +34,11 @@
         "typeScript": true,
         "staticPages": 7,
         "isolated": true,
-        "baseCommit": "f4e404f78bc1a81e8ea15a97e001ffb303330e05",
-        "snapshot": "dfcbffd238eac684cb1213aaeaf56c3afb8dfd9a",
-        "note": "Source-only verifier and rejected-gallery corrections after build verified separately; runtime/build inputs unchanged."
+        "baseCommit": "2ddb5ceaebe4915ff59bffb5bca525410de4ec64",
+        "snapshot": "d9e0a41b346fd0418f5ce7fe6fc4ad7a0a09ebb4"
       },
       "artifactParity": {
-        "ownFiles": 23,
+        "ownFiles": 19,
         "publicExports": 3
       },
       "ui": {
@@ -76,14 +75,20 @@
         "staticImages": 0,
         "consoleWarningsErrors": 0
       },
-      "privateMediaSaved": false
+      "privateMediaSaved": false,
+      "jev": {
+        "model": "jev-1.13.0",
+        "latencyMs": 399,
+        "advisoryOnly": true,
+        "geometryApproval": false
+      }
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5009,
-      "remaining": 969,
+      "applied": 5010,
+      "remaining": 968,
       "percent": 83.8
     },
     "grades": [
@@ -188,16 +193,16 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 705,
-        "remaining": 623,
-        "percent": 53.1
+        "applied": 706,
+        "remaining": 622,
+        "percent": 53.2
       }
     ]
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Reproduce whole u909b; compare all6 domestic directions/cumulative/final forms and 阝 fold/hook continuity.",
-    "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 佖."
+    "Reproduce whole u4f56; compare all7 domestic directions/cumulative/final forms and 必 order/hook continuity.",
+    "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 扱."
   ],
   "held": [
     "莽",
@@ -423,47 +428,47 @@
     }
   ],
   "resources": {
-    "tabs": "batch99 review and mobile tabs closed",
-    "ramServers": "52036–52039 stopped; public archive RAM reader51989 PID44735 retained",
+    "tabs": "batch100 review and mobile tabs closed",
+    "ramServers": "52040–52042 stopped; public archive RAM reader51989 PID44735 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch99-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch99-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch99-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch99-2026-09-27/verify.mjs"
+    "docs/hanja-goal-glyphwiki-batch100-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch100-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch100-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch100-2026-09-27/verify.mjs"
   ],
   "nextCandidateInventory": {
-    "glyph": "邛",
+    "glyph": "佖",
     "grade": "특급",
-    "strokes": 6,
+    "strokes": 7,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/909B.svg",
-      "bytes": 3179,
-      "sha256": "fd3e99d816263644149582ea15a0d967e5707ebf7af78d3b72eb86bea492bb4d"
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4F00/4F56.svg",
+      "bytes": 3881,
+      "sha256": "d6ccde41c1fd8895cd98a3f2b918ca2f7c173b9aa273dc3d67681cfb3a115116"
     },
     "source": {
-      "root": "u909b",
+      "root": "u4f56",
       "records": {
-        "u909b": {
-          "name": "u909b",
-          "related": "u909b",
-          "data": "99:0:0:-4:-12:240:204:u5de5-01$99:0:0:-32:0:200:200:u961d-02"
+        "u4f56": {
+          "name": "u4f56",
+          "related": "u4f56",
+          "data": "99:0:0:3:2:158:199:u4ebb-01$99:0:0:-54:-1:206:199:u5fc5-02"
         },
-        "u5de5-01": {
-          "name": "u5de5-01",
-          "related": "u5de5",
-          "data": "1:0:0:17:47:79:47$1:32:32:45:47:45:134$2:0:7:16:146:44:137:85:123"
+        "u4ebb-01": {
+          "name": "u4ebb-01",
+          "related": "u4ebb",
+          "data": "2:0:7:79:15:52:72:12:117$1:0:0:52:73:52:186"
         },
-        "u961d-02": {
-          "name": "u961d-02",
-          "related": "u961d",
-          "data": "1:2:2:124:28:176:28$2:22:7:176:28:166:53:145:84$6:7:4:145:83:183:99:182:133:172:156$1:12:0:124:28:124:186"
+        "u5fc5-02": {
+          "name": "u5fc5-02",
+          "related": "u5fc5",
+          "data": "2:7:8:101:80:104:118:94:142$3:0:5:122:52:122:177:170:177$2:7:8:114:18:139:31:149:50$2:7:8:164:81:180:105:182:135$2:0:7:173:26:148:126:84:188"
         }
       },
       "missing": [],
-      "glyph": "邛",
+      "glyph": "佖",
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -473,11 +478,11 @@
         "entries": 438759
       }
     },
-    "status": "complete3record whole source acquired; all6 domestic paths/directions/cumulative/final states unreviewed",
+    "status": "complete3record whole source acquired; all7 domestic directions/cumulative/final states unreviewed",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Reproduce whole u909b; compare all6 domestic directions/cumulative/final forms and 阝 fold/hook continuity.",
-      "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 佖."
+      "Reproduce whole u4f56; compare all7 domestic directions/cumulative/final forms and 必 order/hook continuity.",
+      "No inferred connector, trim, point edit or radical substitution. Approve only after full progressive review and test/build/mobile, then own-only commit; otherwise hold and move to 扱."
     ]
   }
 }
