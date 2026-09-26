@@ -200,8 +200,9 @@ async function tocflWordList(): Promise<{ levelOf: Map<string, TocflLevel>; head
       // 2026-09-26까지 이것도 주음처럼 지워 `桌`만 남겼고, 桌子 · 襪子 · 鼻子 같은
       // 개념 마흔 남짓이 등급을 못 받았다. 뺀 꼴과 넣은 꼴을 둘 다 싣는다
       for (const term of cell.split('/')) {
-        const short = term.replace(/\(.*?\)/g, '').trim()
-        const long = term.replace(/\((.*?)\)/g, (_, inside: string) => (/\p{Script=Han}/u.test(inside) ? inside : '')).trim()
+        // 괄호는 전각으로 적힌 칸도 있다(`姑娘（˙ㄋㄧㄤ）`)
+        const short = term.replace(/[(（].*?[)）]/g, '').trim()
+        const long = term.replace(/[(（](.*?)[)）]/g, (_, inside: string) => (/\p{Script=Han}/u.test(inside) ? inside : '')).trim()
         for (const word of new Set([short, long])) {
           if (!word) continue
           headwords.add(word)
@@ -419,8 +420,12 @@ const MANUAL: Record<string, string> = {
   'job.json:vise': '檯鉗',
   'nature.json:cloud': '雲',
   'nature.json:hurricane': '颱風',
-  'number.json:centimeter': '厘米',
-  'number.json:gram': '克',
+  // 兩岸表은 貓熊을 내지만 八千詞表(L3)는 熊貓로 싣는다. 대만에서 둘 다 쓴다 —
+  // 「／」로 둘을 묶으면 예문 번체에도 그 묶음이 통째로 들어가야 해서 하나만 적는다
+  'nature.json:panda': '熊貓',
+  // 대만은 公分·公克이라 쓴다(八千詞表 L3). 厘米·克은 대륙 표기다
+  'number.json:centimeter': '公分',
+  'number.json:gram': '公克',
   'number.json:thousand': '一千',
   'number.json:odometer': '里程表',
   'number.json:micrometer': '千分尺',
