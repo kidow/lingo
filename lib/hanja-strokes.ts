@@ -188,6 +188,7 @@ import { HANJA_DICTIONARY_GLYPHWIKI_BATCH103_STROKES } from './hanja-stroke-dict
 import { HANJA_DICTIONARY_GLYPHWIKI_BATCH106_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch106.ts'
 import { HANJA_DICTIONARY_GLYPHWIKI_BATCH108_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch108.ts'
 import { HANJA_DICTIONARY_GLYPHWIKI_BATCH109_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch109.ts'
+import { HANJA_DICTIONARY_GLYPHWIKI_BATCH110_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch110.ts'
 import { HANJA_DICTIONARY_GLYPHWIKI_BATCH28_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch28.ts'
 
 export const HANJA_STROKE_SOURCE = {
@@ -502,6 +503,7 @@ export const HANJA_STROKES: readonly HanjaStrokeData[] = [
   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH106_STROKES,
   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH108_STROKES,
   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH109_STROKES,
+  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH110_STROKES,
   ...HANJA_DICTIONARY_GLYPHWIKI_BATCH28_STROKES,
   ...HANJA_VARIANT_STROKES,
 ]
