@@ -1,78 +1,30 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "14823d4c283038967f3df9cd121442ec6db1d5f8",
+  "lastCompletedCommit": "71ab96279ff725d72f8ac2bf3a1dea6e1224a229",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): animate reviewed 怭 strokes and correct source lookup",
-    "parentAtStart": "14823d4c283038967f3df9cd121442ec6db1d5f8"
+    "message": "docs(hanja): hold 乷 trajectory and hook discrepancies",
+    "parentAtStart": "71ab96279ff725d72f8ac2bf3a1dea6e1224a229"
   },
   "currentBatch": {
     "glyphs": [
-      "怭"
+      "乷"
     ],
     "strokes": 8,
-    "status": "validated; ready for own-only commit",
+    "status": "reviewed and held; runtime unchanged",
     "checks": {
       "reviewedAt": "2026-09-27",
-      "validatedAt": "2026-09-27",
       "sourceAndEngineReplay": {
-        "snapshotRecords": 4,
+        "snapshotRecords": 6,
         "engineFiles": 8,
         "traceExact": true
       },
       "domesticStrokeCount": 8,
-      "progressiveSnapshots": 72,
-      "tests": {
-        "files": 213,
-        "passed": 985,
-        "failed": 0
-      },
-      "build": {
-        "exitCode": 0,
-        "typeScript": true,
-        "staticPages": 7,
-        "isolated": true,
-        "baseCommit": "14823d4c283038967f3df9cd121442ec6db1d5f8",
-        "snapshot": "e579ee0917d980ace558fbb392927d94423e3bf1"
-      },
-      "artifactParity": {
-        "ownFiles": 19,
-        "publicExports": 3
-      },
-      "ui": {
-        "viewport": [
-          430,
-          932
-        ],
-        "introAutoplay": true,
-        "introReplay": true,
-        "introComplete": "8 / 8",
-        "writingAutoplay": true,
-        "writingReplay": true,
-        "writingComplete": "8 / 8",
-        "canvasInputCounts": [
-          0,
-          1,
-          0
-        ],
-        "canvasYBeforeAfter": [
-          288.8046875,
-          288.8046875
-        ],
-        "dialogYBeforeAfter": [
-          139.8046875,
-          139.8046875
-        ],
-        "scrollBeforeAfter": [
-          0,
-          0
-        ],
-        "touchAction": "none",
-        "vaulNoDrag": true,
-        "outlineGroups": 1,
-        "staticImages": 0,
-        "consoleWarningsErrors": 0
-      },
+      "progressiveSnapshots": 0,
+      "runtimeAdded": 0,
+      "sourceVerifierPassed": true,
+      "runtimeNullChecked": true,
+      "build": "Not repeated: research-only changes. Batch106 production build and985 Hanja tests passed.",
       "privateMediaSaved": false
     }
   },
@@ -193,8 +145,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Reproduce whole u4e77 and compare all8 domestic directions,cumulative,final and progressive forms.",
-    "No inferred connector or component substitution. Register only after full review; then test/build/mobile and own-only commit."
+    "Reproduce whole u4f4c; compare all8 domestic directions,cumulative and final forms, then progressive frames.",
+    "No inferred connector, trimming, point edit or component substitution; validate test/build/mobile before runtime commit."
   ],
   "held": [
     "莽",
@@ -438,6 +390,13 @@
       "reason": "Fourth-stroke diagonal ends75.8,138; curve starts77.96,119, restarting19 source units higher.",
       "releaseCondition": "Find a licensed whole 怓 source with continuous fourth-stroke trace and correct turning attachment, then repeat all8-stroke and progressive checks. No inferred connector, trimming, point edits or radical substitution.",
       "path": "docs/hanja-goal-glyphwiki-batch105-2026-09-27"
+    },
+    {
+      "glyph": "乷",
+      "strokes": 8,
+      "reason": "Third stroke restarts23 source units above prior endpoint; fourth vertical adds a left hook absent from the domestic source. Korean variant is identical.",
+      "releaseCondition": "Find licensed whole 乷 geometry with a continuous third water stroke and fourth vertical without a left hook. Repeat all8stroke/progressive review. No bridge, trim, hook removal or radical replacement.",
+      "path": "docs/hanja-goal-glyphwiki-batch107-2026-09-27"
     }
   ],
   "resources": {
@@ -447,51 +406,40 @@
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch106-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch106-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch106-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch106-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch106-2026-09-27/dictionary-url-correction.json",
-    "docs/hanja-goal-glyphwiki-batch106-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch107-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch107-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch107-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch107-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch107-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "乷",
-    "root": "u4e77",
-    "grade": "특급II",
+    "glyph": "佌",
+    "root": "u4f4c",
+    "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4E00/4E77.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/4F00/4F4C.svg",
       "status": 200,
-      "bytes": 4333,
-      "sha256": "63a19dfb923279906c93c33a8565fc74d9f5ec04eed21e4fb8901c4fa7ad0cca"
+      "bytes": 4254,
+      "sha256": "1f6c2593c55d511c4df9a8f096d235ef3474c319e57b3a8c893f2826dfa774c0"
     },
     "source": {
-      "root": "u4e77",
+      "root": "u4f4c",
       "records": {
-        "u4e77": {
-          "name": "u4e77",
-          "related": "u4e77",
-          "data": "99:0:0:0:-37:200:163:u6c99-09$99:0:0:0:107:200:195:u4e59"
+        "u4f4c": {
+          "name": "u4f4c",
+          "related": "u4f4c",
+          "data": "99:0:0:1:0:155:200:u4ebb-01$99:0:0:-28:0:203:200:u6b64-02"
         },
-        "u6c99-09": {
-          "name": "u6c99-09",
-          "related": "u6c99",
-          "data": "99:0:0:0:0:206:200:u6c35-01-var-001$99:0:0:58:41:198:157:u5c11"
+        "u4ebb-01": {
+          "name": "u4ebb-01",
+          "related": "u4ebb",
+          "data": "2:0:7:79:15:52:72:12:117$1:0:0:52:73:52:186"
         },
-        "u6c35-01-var-001": {
-          "name": "u6c35-01-var-001",
-          "related": "u6c35",
-          "data": "2:7:8:31:53:50:61:55:71$2:7:8:13:76:32:84:37:95$2:7:8:16:120:46:123:43:151$2:32:7:39:128:44:120:82:60"
-        },
-        "u5c11": {
-          "name": "u5c11",
-          "related": "u5c11",
-          "data": "1:0:4:100:17:100:126$2:0:7:61:50:50:91:15:124$2:7:8:126:46:160:67:179:99$2:0:7:153:102:110:172:21:190"
-        },
-        "u4e59": {
-          "name": "u4e59",
-          "related": "u4e59",
-          "data": "1:0:2:40:37:143:37$4:22:5:143:37:12:169:170:169:175:171"
+        "u6b64-02": {
+          "name": "u6b64-02",
+          "related": "u6b64",
+          "data": "1:0:32:114:20:114:162$1:2:0:114:86:140:86$1:0:32:87:57:87:173$2:0:7:71:183:105:169:139:153$2:0:7:179:63:168:80:147:100$3:0:5:147:19:147:178:182:178"
         }
       },
       "missing": [],
@@ -504,11 +452,11 @@
         "entries": 438759
       }
     },
-    "status": "Correct4E00 domestic endpoint confirmed; full8stroke visual review pending",
+    "status": "Correct domestic endpoint and complete3record source acquired;8stroke direct review pending",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Reproduce whole u4e77 and compare all8 domestic directions,cumulative,final and progressive forms.",
-      "No inferred connector or component substitution. Register only after full review; then test/build/mobile and own-only commit."
+      "Reproduce whole u4f4c; compare all8 domestic directions,cumulative and final forms, then progressive frames.",
+      "No inferred connector, trimming, point edit or component substitution; validate test/build/mobile before runtime commit."
     ]
   }
 }
