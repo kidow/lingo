@@ -1,79 +1,26 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "99bfd5bb6a0f8103ed8a6df8acdbb161fd09ea18",
+  "lastCompletedCommit": "47c2d31c3cce3ea6c0c00e5ccae86508a1e4d508",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): animate reviewed 侜 strokes",
-    "parentAtStart": "99bfd5bb6a0f8103ed8a6df8acdbb161fd09ea18"
+    "message": "docs(hanja): hold 冾 trajectory and attachment discrepancies",
+    "parentAtStart": "47c2d31c3cce3ea6c0c00e5ccae86508a1e4d508"
   },
   "currentBatch": {
     "glyphs": [
-      "侜"
+      "冾"
     ],
     "strokes": 8,
-    "status": "validated; ready for own-only commit",
+    "status": "held; source replay and runtime exclusion verified",
+    "runtimeAdded": 0,
     "checks": {
-      "reviewedAt": "2026-09-27",
-      "validatedAt": "2026-09-27",
-      "sourceAndEngineReplay": {
-        "snapshotRecords": 3,
-        "engineFiles": 8,
-        "traceExact": true
-      },
-      "domesticStrokeCount": 8,
-      "progressiveSnapshots": 72,
-      "tests": {
-        "files": 217,
-        "passed": 997,
-        "failed": 0
-      },
-      "build": {
-        "exitCode": 0,
-        "typeScript": true,
-        "staticPages": 7,
-        "isolated": true,
-        "baseCommit": "99bfd5bb6a0f8103ed8a6df8acdbb161fd09ea18",
-        "snapshot": "f7fcbd65ebb4ee9118f92ecd9592034c05840af7"
-      },
-      "artifactParity": {
-        "ownFiles": 19,
-        "publicExports": 3
-      },
-      "ui": {
-        "viewport": [
-          430,
-          932
-        ],
-        "introAutoplay": true,
-        "introReplay": true,
-        "introComplete": "8 / 8",
-        "writingAutoplay": true,
-        "writingReplay": true,
-        "writingComplete": "8 / 8",
-        "canvasInputCounts": [
-          0,
-          1,
-          0
-        ],
-        "canvasYBeforeAfter": [
-          288.8046875,
-          288.8046875
-        ],
-        "dialogYBeforeAfter": [
-          139.8046875,
-          139.8046875
-        ],
-        "scrollBeforeAfter": [
-          0,
-          0
-        ],
-        "touchAction": "none",
-        "vaulNoDrag": true,
-        "outlineGroups": 1,
-        "staticImages": 0,
-        "consoleWarningsErrors": 0
-      },
-      "privateMediaSaved": false
+      "sourceRecords": 3,
+      "engineFiles": 8,
+      "traceExact": true,
+      "domesticStrokesDirectlyReviewed": 8,
+      "cumulativeAndFinalReviewed": true,
+      "progressiveReviewed": false,
+      "build": "not rerun: documentation only; latest batch111 build and997tests passed"
     }
   },
   "workingTreeCoverage": {
@@ -193,8 +140,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-    "Reproduce whole u51be and compare all8 domestic directions/cumulative/final forms. Check continuity of the second water stroke before animation approval.",
-    "No inferred points, bridges, trims or component substitution."
+    "Reproduce whole u5232 and compare all8 domestic directions/cumulative/final forms and progressive frames.",
+    "Keep exact source geometry; no inferred points, bridges, trims or component substitution."
   ],
   "held": [
     "莽",
@@ -445,49 +392,56 @@
       "reason": "Third stroke restarts23 source units above prior endpoint; fourth vertical adds a left hook absent from the domestic source. Korean variant is identical.",
       "releaseCondition": "Find licensed whole 乷 geometry with a continuous third water stroke and fourth vertical without a left hook. Repeat all8stroke/progressive review. No bridge, trim, hook removal or radical replacement.",
       "path": "docs/hanja-goal-glyphwiki-batch107-2026-09-27"
+    },
+    {
+      "glyph": "冾",
+      "strokes": 8,
+      "reason": "Second-stroke curves restart38source units above the previous endpoint; 人 falling stroke touches water sweep unlike domestic reference.",
+      "releaseCondition": "Find licensed whole 冾 geometry with a documented continuous second stroke and domestic-separated 人 falling stroke, then repeat all8stroke and progressive checks. No connector, trimming, point edit or radical substitution.",
+      "path": "docs/hanja-goal-glyphwiki-batch112-2026-09-27"
     }
   ],
   "resources": {
-    "tabs": "batch111 review and mobile tabs closed",
-    "ramServers": "52065–52067 to be stopped after commit; public archive RAM reader51989 retained",
+    "tabs": "batch112 review tab closed",
+    "ramServers": "batch111 servers stopped; batch11252068 stopping; public archive reader51989 retained",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch111-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch112-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch112-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch112-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch112-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch112-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "冾",
-    "root": "u51be",
+    "glyph": "刲",
+    "root": "u5232",
     "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5100/51BE.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5200/5232.svg",
       "status": 200,
-      "bytes": 4143,
-      "sha256": "f021e1c37210b64ef9c9c9bb5221edc6e0b34b401edffd09525394c58dd8a8b6"
+      "bytes": 4075,
+      "sha256": "7354c736a1c5ba0c52af4e7f8b585dd3cf2f7acf72363fecdc16328b20ceda93"
     },
     "source": {
-      "root": "u51be",
+      "root": "u5232",
       "records": {
-        "u51be": {
-          "name": "u51be",
-          "related": "u51be",
-          "data": "99:0:0:0:0:210:200:u51ab-01$99:0:0:56:0:194:200:u5408-07"
+        "u5232": {
+          "name": "u5232",
+          "related": "u5232",
+          "data": "99:0:0:0:0:192:202:u572d-01$99:0:0:24:0:199:200:u5202-02"
         },
-        "u51ab-01": {
-          "name": "u51ab-01",
-          "related": "u51ab",
-          "data": "2:7:8:21:32:41:41:50:58$2:7:8:13:120:39:144:35:177$2:2:7:28:139:45:116:72:56"
+        "u572d-01": {
+          "name": "u572d-01",
+          "related": "u572d",
+          "data": "1:0:0:21:46:109:46$1:0:32:64:14:64:84$1:0:0:14:84:114:84$1:0:0:21:122:109:122$1:0:32:64:92:64:163$2:0:7:15:173:59:165:115:152"
         },
-        "u5408-07": {
-          "name": "u5408-07",
-          "related": "u5408",
-          "data": "2:0:7:108:14:76:60:13:93$2:7:0:101:22:136:55:181:75$1:0:0:56:84:150:84$1:12:13:51:111:51:168$1:2:2:51:111:153:111$1:22:23:153:111:153:168$1:2:2:51:168:153:168"
+        "u5202-02": {
+          "name": "u5202-02",
+          "related": "u5202",
+          "data": "1:0:0:120:30:120:152$1:0:4:167:15:167:182"
         }
       },
       "missing": [],
@@ -500,11 +454,11 @@
         "entries": 438759
       }
     },
-    "status": "Complete whole-glyph source and domestic SVG acquired; direct review pending. Water second-stroke source has multiple primitives; continuity must be checked before approval.",
+    "status": "Source acquired; direct all-stroke comparison pending",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-      "Reproduce whole u51be and compare all8 domestic directions/cumulative/final forms. Check continuity of the second water stroke before animation approval.",
-      "No inferred points, bridges, trims or component substitution."
+      "Reproduce whole u5232 and compare all8 domestic directions/cumulative/final forms and progressive frames.",
+      "Keep exact source geometry; no inferred points, bridges, trims or component substitution."
     ]
   }
 }
