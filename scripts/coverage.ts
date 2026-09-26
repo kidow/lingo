@@ -151,8 +151,20 @@ function haystacks(lang: 'en' | 'zh' | 'ru' | 'de') {
  * `sich beeilen`이라 이미 있는 낱말이 빠진 것으로 세어졌다 (scripts/goethe.ts)
  */
 const REFLEXIVE = goetheReflexive()
+/*
+ * 관사를 표제어 안에 적은 독일어가 485개 있다(`die Zeit` · `der Sport`) — 관사는
+ * `attributes.article`에 두는 것이 규칙인데 한 묶음이 그렇게 들어왔다. 목록은
+ * 관사를 떼고 싣으므로 여기서도 뗀다. 등급(levels.ts)에는 쓰지 않는다 — `der
+ * Ausgang`(결말)이 `Ausgang`(출구)의 A1을 받는다
+ */
 const fold = (lang: 'en' | 'zh' | 'ru' | 'de', t: string) =>
-  lang === 'en' ? t.toLowerCase() : lang === 'ru' ? bare(t) : lang === 'de' ? goetheKey(t, REFLEXIVE) : t
+  lang === 'en'
+    ? t.toLowerCase()
+    : lang === 'ru'
+      ? bare(t)
+      : lang === 'de'
+        ? goetheKey(t.replace(/^(der|die|das) (?=\p{Lu})/u, ''), REFLEXIVE)
+        : t
 
 /**
  * 우리가 실은 표기.
