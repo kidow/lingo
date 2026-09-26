@@ -1542,3 +1542,17 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
     pnpm image  difference yoga christmas gardener musician withdrawal withdraw-cash vitality-spark goal-net rocket mouthfeel steamed lecture-hall desktop passing-years wealth telegraphy basketball disinfectant
 
 시트를 눈으로 보는 일은 건너뛰지 않는다 — 뒤바뀐 장은 md5도 twins도 못 잡는다.
+
+## 2026-09-27 — 번호를 매기라는데 트럼프 카드가 나온다
+
+그림 대기열을 뽑다가 걸렸다. 내 개념이 아니라 프롬프트를 고치지 않고 넘긴다.
+
+| 개념 | 프롬프트 | 나온 그림 |
+| --- | --- | --- |
+| `number-them`(번호를 매기다) | a stack of blank cards with a small figure written in the corner of each, no letters | 모퉁이에 ♥ · ♣ · ◆ · ★가 찍힌 카드 부채 — 두 번 뽑아 두 번 다 |
+
+**「no letters」와 「small figure」가 부딪친다.** 모델은 글자를 피하느라 숫자
+대신 무늬를 넣고, 무늬 박힌 카드는 트럼프로 읽힌다. 숫자를 그리게 하려면
+「small handwritten numbers 1, 2, 3 in the corners」처럼 **숫자를 허용**하거나,
+숫자 없이 번호를 읽히는 장면(번호표를 뽑는 발권기, 차례로 붙인 색 스티커)으로
+옮겨야 한다. **그림은 굽지 않았다** — 트럼프가 나가느니 자리표시가 낫다.
