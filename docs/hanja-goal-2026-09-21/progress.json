@@ -1,79 +1,25 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "b0b097cd5c0e0d2dd9e5111044cd096ad5f97550",
+  "lastCompletedCommit": "35efcffd9f1802dc381895a2259e8de5727f3fef",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): animate reviewed 刲 strokes",
-    "parentAtStart": "06753b2d6c35bfed2457cac34620030a40d029af"
+    "message": "docs(hanja): hold 刵 fifth-stroke extent discrepancy",
+    "parentAtStart": "d9a5d01cb72a90f85cd3177c29c93171a35021c9"
   },
   "currentBatch": {
     "glyphs": [
-      "刲"
+      "刵"
     ],
     "strokes": 8,
-    "status": "validated; ready for own-only commit",
+    "status": "held; source replay and runtime exclusion verified",
+    "runtimeAdded": 0,
     "checks": {
-      "reviewedAt": "2026-09-27",
-      "validatedAt": "2026-09-27",
-      "sourceAndEngineReplay": {
-        "snapshotRecords": 3,
-        "engineFiles": 8,
-        "traceExact": true
-      },
-      "domesticStrokeCount": 8,
-      "progressiveSnapshots": 72,
-      "tests": {
-        "files": 218,
-        "passed": 1000,
-        "failed": 0
-      },
-      "build": {
-        "exitCode": 0,
-        "typeScript": true,
-        "staticPages": 7,
-        "isolated": true,
-        "baseCommit": "06753b2d6c35bfed2457cac34620030a40d029af",
-        "snapshot": "879396b88850474092ada7e57f9b7bb60ee3a44a"
-      },
-      "artifactParity": {
-        "ownFiles": 19,
-        "publicExports": 3
-      },
-      "ui": {
-        "viewport": [
-          430,
-          932
-        ],
-        "introAutoplay": true,
-        "introReplay": true,
-        "introComplete": "8 / 8",
-        "writingAutoplay": true,
-        "writingReplay": true,
-        "writingComplete": "8 / 8",
-        "canvasInputCounts": [
-          0,
-          1,
-          0
-        ],
-        "canvasYBeforeAfter": [
-          288.8046875,
-          288.8046875
-        ],
-        "dialogYBeforeAfter": [
-          139.8046875,
-          139.8046875
-        ],
-        "scrollBeforeAfter": [
-          0,
-          0
-        ],
-        "touchAction": "none",
-        "vaulNoDrag": true,
-        "outlineGroups": 1,
-        "staticImages": 0,
-        "consoleWarningsErrors": 0
-      },
-      "privateMediaSaved": false
+      "domesticStrokesDirectlyReviewed": 8,
+      "sourceRecords": 3,
+      "engineFiles": 8,
+      "emptyNonStrokeGroup": 6,
+      "progressiveReviewed": false,
+      "build": "not rerun: research only; batch113 build and1000tests passed"
     }
   },
   "workingTreeCoverage": {
@@ -192,11 +138,18 @@
     ]
   },
   "nextActions": [
-    "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-    "Reproduce whole u5235 and compare all8 domestic directions/cumulative/final forms and progressive frames.",
-    "Preserve exact source geometry; no inferred points, bridges, trims or component substitution."
+    "Recheck shared HEAD, dirty files, pending --free and runtime.",
+    "Compare all8 domestic strokes of 咈 with whole u5488, including the bent middle strokes and final vertical.",
+    "No inferred points, bridges, trims or component substitution."
   ],
   "held": [
+    {
+      "glyph": "刵",
+      "strokes": 8,
+      "reason": "Original fifth stroke ends at right vertical instead of extending beyond it.",
+      "releaseCondition": "Find licensed whole 刵 geometry where the rising fifth stroke extends beyond the right vertical as in the domestic reference; then review all8directions, cumulative/final and progressive states. No inferred extension, coordinate edits or component substitution.",
+      "path": "docs/hanja-goal-glyphwiki-batch114-2026-09-27"
+    },
     "莽",
     "萸",
     "鱉",
@@ -455,46 +408,51 @@
     }
   ],
   "resources": {
-    "tabs": "batch113 review and mobile tabs closed",
-    "ramServers": "batch11352069–52071 stopping after commit; public archive RAM reader51989 retained",
+    "tabs": "batch114 review tab closing",
+    "ramServers": "batch11452072 closing; old public archive51989 no longer running",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch113-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch113-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch113-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch113-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch113-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "刵",
-    "root": "u5235",
+    "glyph": "咈",
+    "root": "u5488",
     "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5200/5235.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5400/5488.svg",
       "status": 200,
-      "bytes": 3957,
-      "sha256": "af4fdadb9e5ed555221afda4631446a97ea6c7fe5f74f2687b63ac678a2f163f"
+      "bytes": 4689,
+      "sha256": "72e298ffec2a889cb9351233e1cf552a959b47cdd18dc3a3a9c05c14b16ed069"
     },
     "source": {
-      "root": "u5235",
+      "root": "u5488",
       "records": {
-        "u5235": {
-          "name": "u5235",
-          "related": "u5235",
-          "data": "99:0:0:0:0:200:200:u8033-01$0:0:0:0$99:0:0:10:0:197:200:u5202-02"
+        "u5488": {
+          "name": "u5488",
+          "related": "u5488",
+          "data": "99:0:0:2:0:183:200:u53e3-01$99:0:0:0:0:198:200:u5f17-02"
         },
-        "u8033-01": {
-          "name": "u8033-01",
-          "related": "u8033",
-          "data": "1:0:0:13:28:113:28$1:32:32:35:28:35:151$1:2:2:35:66:84:66$1:2:2:35:104:84:104$2:0:7:14:156:45:149:84:136$1:32:0:84:28:84:186"
+        "u53e3-01": {
+          "name": "u53e3-01",
+          "related": "u53e3",
+          "data": "99:0:0:10:6:77:170:u53e3"
         },
-        "u5202-02": {
-          "name": "u5202-02",
-          "related": "u5202",
-          "data": "1:0:0:120:30:120:152$1:0:4:167:15:167:182"
+        "u53e3": {
+          "name": "u53e3",
+          "related": "u53e3",
+          "data": "1:12:13:42:46:42:154$1:2:2:42:46:158:46$1:22:23:158:46:158:154$1:2:2:42:154:158:154"
+        },
+        "u5f17-02": {
+          "name": "u5f17-02",
+          "related": "u5f17",
+          "data": "1:0:2:78:46:170:46$1:22:23:170:46:170:80$1:2:2:90:80:170:80$1:12:13:90:80:86:116$1:2:2:86:116:178:116$2:22:4:178:116:179:148:172:164$7:0:7:116:14:116:108:116:166:74:188$1:0:0:144:14:144:186"
         }
       },
       "missing": [],
@@ -507,11 +465,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole-glyph source acquired; direct all-stroke comparison pending",
+    "status": "Complete whole-glyph source; direct review pending",
     "actions": [
-      "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-      "Reproduce whole u5235 and compare all8 domestic directions/cumulative/final forms and progressive frames.",
-      "Preserve exact source geometry; no inferred points, bridges, trims or component substitution."
+      "Recheck shared HEAD, dirty files, pending --free and runtime.",
+      "Compare all8 domestic strokes of 咈 with whole u5488, including the bent middle strokes and final vertical.",
+      "No inferred points, bridges, trims or component substitution."
     ]
   }
 }
