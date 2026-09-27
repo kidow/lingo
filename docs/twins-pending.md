@@ -1601,3 +1601,16 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 「축의 끝점」은 팽이가 아니어도 된다 — 지구의의 북극 꼭지, 문짝 경첩 핀의 끝처럼
 **축이 끝나는 자리**가 보이는 물건으로 옮기면 팽이 무리에서 빠진다.
 **그림은 굽지 않았다.**
+
+## 2026-09-27 — 「column」을 기둥으로 읽었다
+
+`write-it-in-between`(사이에 끼워 쓰다)를 뽑았더니 **이오니아식 돌기둥**이 나왔다.
+프롬프트의 `one ruled column`을 모델이 건축 기둥으로 읽었다 — IMAGE_STYLE의
+「낱말이 제 뜻으로 안 읽히는 자리」와 같은 일이다.
+
+| 개념 | 프롬프트 |
+| --- | --- |
+| `write-it-in-between`(사이에 끼워 쓰다) | one ruled column with a single extra line squeezed between two rows |
+
+`column` 대신 `one ruled notebook page`처럼 **종이임을 먼저 말하면** 갈린다.
+**그림은 굽지 않았다.**
