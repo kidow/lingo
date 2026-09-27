@@ -1,26 +1,24 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "a598c7160796c39bca421139408bfde0ef017062",
+  "lastCompletedCommit": "022594ecdf0006d31295b8baa8de9be51588c05b",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 炘 eight-stroke animation",
-    "parentAtStart": "a598c7160796c39bca421139408bfde0ef017062"
+    "message": "docs(hanja): record 玧 fifth-stroke continuity hold",
+    "parentAtStart": "022594ecdf0006d31295b8baa8de9be51588c05b"
   },
   "currentBatch": {
     "glyphs": [
-      "炘"
+      "玧"
     ],
     "strokes": 8,
-    "status": "runtime applied from exact whole archived source",
+    "status": "held; archive and current whole source share fifth-stroke discontinuity",
     "checks": {
       "sourceRecords": 3,
+      "currentSourceRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
-      "progressiveFrames": 72,
-      "tests": 1030,
-      "build": true,
-      "mobile": true,
-      "runtimeAdded": 1,
+      "blockedStroke": 5,
+      "runtimeAdded": 0,
       "privateMediaSaved": false
     }
   },
@@ -141,10 +139,17 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Review all eight strokes of 玧 and provider compound bends/hooks against domestic directions.",
-    "Keep exact whole provider geometry; no point edits or component substitution."
+    "Compare all eight strokes of 玭, especially 比 compound turns and lower hook.",
+    "Apply only exact licensed whole geometry after full visual/runtime verification."
   ],
   "held": [
+    {
+      "glyph": "玧",
+      "strokes": 8,
+      "reason": "Whole archive and current provider source have disconnected fifth-stroke curve endpoints.",
+      "releaseCondition": "A complete licensed whole-provider glyph with a supported continuous fifth-stroke bend, then full domestic and progressive verification.",
+      "path": "docs/hanja-goal-glyphwiki-batch139-2026-09-27"
+    },
     {
       "glyph": "泂",
       "strokes": 8,
@@ -494,47 +499,48 @@
     }
   ],
   "resources": {
-    "tabs": "batch138 review and UI tabs closing after commit; public source tab reused",
-    "ramServers": "batch138 ports52116,52117,52118 stopping after commit",
-    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
+    "tabs": "batch139 comparison closing after commit; source tab reused",
+    "ramServers": "batch139 port52119 stopping after commit",
+    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/current-source-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "玧",
-    "root": "u73a7",
+    "glyph": "玭",
+    "root": "u73ad",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7300/73A7.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7300/73AD.svg",
       "status": 200,
-      "bytes": 4326,
-      "sha256": "d74fbcb5d78f5b4cc3f8a451e56a547111b9f7746e1951127f1b3bda1118a58a"
+      "bytes": 4193,
+      "sha256": "a9196470cc17667e168208e784a6798dffc985550d392c96bde8f261b2517849"
     },
     "source": {
-      "root": "u73a7",
+      "root": "u73ad",
       "records": {
-        "u73a7": {
-          "name": "u73a7",
-          "related": "u73a7",
-          "data": "99:0:0:0:0:200:200:u738b-01$99:0:0:-15:0:200:200:u5141-02"
+        "u73ad": {
+          "name": "u73ad",
+          "related": "u73ad",
+          "data": "99:0:0:0:0:195:200:u738b-01$99:0:0:-10:0:200:200:u6bd4-02"
         },
         "u738b-01": {
           "name": "u738b-01",
           "related": "u738b",
           "data": "1:0:0:14:42:75:42$1:32:32:41:42:41:149$1:0:0:17:93:72:93$2:0:7:14:160:43:150:78:135"
         },
-        "u5141-02": {
-          "name": "u5141-02",
-          "related": "u5141",
-          "data": "2:0:7:128:17:118:50:102:79$2:0:7:84:80:125:77:170:70$2:7:8:144:36:169:59:181:90$7:0:7:112:91:112:123:112:173:70:188$3:0:5:144:91:144:174:181:174"
+        "u6bd4-02": {
+          "name": "u6bd4-02",
+          "related": "u6bd4",
+          "data": "1:2:0:94:80:129:80$1:0:32:94:17:94:167$2:0:7:71:178:97:168:133:152$2:0:7:184:63:168:78:143:96$3:0:5:143:17:143:173:183:173"
         }
       },
       "missing": [],
@@ -547,11 +553,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archive source available; full visual review pending.",
+    "status": "Whole archive source captured; direct full review pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Review all eight strokes of 玧 and provider compound bends/hooks against domestic directions.",
-      "Keep exact whole provider geometry; no point edits or component substitution."
+      "Compare all eight strokes of 玭, especially 比 compound turns and lower hook.",
+      "Apply only exact licensed whole geometry after full visual/runtime verification."
     ]
   }
 }
