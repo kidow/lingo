@@ -1,20 +1,20 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "9ff8db5d52849276b6d60c7136a94a00d0298254",
+  "lastCompletedCommit": "bf31e6191b59e602c933e4f779de230ec548f9d3",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): verify 沬 third-stroke source hold",
-    "parentAtStart": "9ff8db5d52849276b6d60c7136a94a00d0298254"
+    "message": "docs(hanja): document 泂 whole-source trajectory hold",
+    "parentAtStart": "bf31e6191b59e602c933e4f779de230ec548f9d3"
   },
   "currentBatch": {
     "glyphs": [
-      "沬"
+      "泂"
     ],
     "strokes": 8,
-    "status": "held; archived and current whole sources have discontinuous third-stroke trajectories",
+    "status": "held; whole archive and current J/G source retain third-stroke discontinuity",
     "checks": {
-      "sourceRecords": 3,
-      "currentSourceRecords": 3,
+      "sourceRecords": 5,
+      "currentSourceRecords": 5,
       "engineFiles": 8,
       "domesticReviewed": 8,
       "blockedStroke": 3,
@@ -139,10 +139,17 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Inspect 泂 whole provider source and its third stroke without inventing continuity.",
-    "If exact whole candidate cannot match domestic trajectory, record hold and inspect a directly documented whole alternative."
+    "Review 炘 eight strokes, full 火 and 斤 directions, cumulative states and final form.",
+    "Prioritize an independent whole source without the unresolved water-radical trajectory; do not infer results for 泛 or 泲."
   ],
   "held": [
+    {
+      "glyph": "泂",
+      "strokes": 8,
+      "reason": "Archive and current J/G whole-provider source third-stroke paths have disconnected original endpoints.",
+      "releaseCondition": "A licensed complete provider glyph with a traceable continuous third stroke matching domestic directions, or explicit source-authorized corrected trajectory, followed by full visual/progressive/runtime review.",
+      "path": "docs/hanja-goal-glyphwiki-batch137-2026-09-27"
+    },
     {
       "glyph": "沬",
       "strokes": 8,
@@ -485,58 +492,48 @@
     }
   ],
   "resources": {
-    "tabs": "batch136 comparison closing after commit; source tab reused",
-    "ramServers": "batch136 port52114 stopping after commit",
+    "tabs": "batch137 comparison closing after commit; source tab reused",
+    "ramServers": "batch137 port52115 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/current-source-alternative.json",
-    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/current-source-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "泂",
-    "root": "u6cc2",
+    "glyph": "炘",
+    "root": "u7098",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6CC2.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7000/7098.svg",
       "status": 200,
-      "bytes": 4145,
-      "sha256": "5a5644e6b02ef532d56ff88371ef2ca6cca495f1d6bcd370d7f91923ea610459"
+      "bytes": 4147,
+      "sha256": "1a63168dfc47ca7439bd34c9dc6dccf107e4de7a20d098237e695dcd8b81c025"
     },
     "source": {
-      "root": "u6cc2",
+      "root": "u7098",
       "records": {
-        "u6cc2": {
-          "name": "u6cc2",
-          "related": "u6cc2",
-          "data": "99:0:0:2:0:166:200:u6c35-01$99:0:0:13:0:243:200:u518b-08"
+        "u7098": {
+          "name": "u7098",
+          "related": "u7098",
+          "data": "99:0:0:1:0:180:200:u706b-01$0:0:0:0$99:0:0:-20:0:202:200:u65a4-02"
         },
-        "u6c35-01": {
-          "name": "u6c35-01",
-          "related": "u6c35",
-          "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
+        "u706b-01": {
+          "name": "u706b-01",
+          "related": "u706b",
+          "data": "2:7:8:26:53:32:87:18:106$2:0:7:87:51:74:64:52:83$7:0:7:52:18:52:95:52:158:12:185$2:7:8:51:121:75:141:82:161"
         },
-        "u518b-08": {
-          "name": "u518b-08",
-          "related": "u518b",
-          "data": "99:0:0:40:0:160:200:u5182:0:0:0$99:0:0:75:46:125:149:u53e3:0:0:0"
-        },
-        "u5182": {
-          "name": "u5182",
-          "related": "u5182",
-          "data": "1:12:0:32:28:32:184$1:2:2:32:28:168:28$1:22:4:168:28:168:180"
-        },
-        "u53e3": {
-          "name": "u53e3",
-          "related": "u53e3",
-          "data": "1:12:13:42:46:42:154$1:2:2:42:46:158:46$1:22:23:158:46:158:154$1:2:2:42:154:158:154"
+        "u65a4-02": {
+          "name": "u65a4-02",
+          "related": "u65a4",
+          "data": "2:0:7:172:24:151:33:108:42$7:12:7:108:41:108:107:108:166:75:188$1:0:0:108:84:188:84$1:32:0:152:84:152:185"
         }
       },
       "missing": [],
@@ -549,11 +546,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole source available; evaluate compound water stroke before full review.",
+    "status": "Whole archived source available; direct full review pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Inspect 泂 whole provider source and its third stroke without inventing continuity.",
-      "If exact whole candidate cannot match domestic trajectory, record hold and inspect a directly documented whole alternative."
+      "Review 炘 eight strokes, full 火 and 斤 directions, cumulative states and final form.",
+      "Prioritize an independent whole source without the unresolved water-radical trajectory; do not infer results for 泛 or 泲."
     ]
   }
 }
