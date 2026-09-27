@@ -1,24 +1,24 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "a6db8605ab73b58dc981e64e2109f714c539d7a7",
+  "lastCompletedCommit": "039572b6063b0ad9b22b2994f484753478027d24",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 芾 eight-stroke animation",
-    "parentAtStart": "a6db8605ab73b58dc981e64e2109f714c539d7a7"
+    "message": "feat(hanja): add reviewed 芿 eight-stroke animation",
+    "parentAtStart": "039572b6063b0ad9b22b2994f484753478027d24"
   },
   "currentBatch": {
     "glyphs": [
-      "芾"
+      "芿"
     ],
     "strokes": 8,
-    "status": "applied; complete Korean provider alias glyph crosschecked with domestic dictionary",
+    "status": "applied; complete Korean provider glyph crosschecked with domestic dictionary",
     "checks": {
-      "providerRecords": 3,
+      "providerRecords": 5,
       "engineFiles": 8,
       "domesticReviewed": 8,
       "progressiveFrames": 72,
-      "tests": 1057,
-      "testFiles": 237,
+      "tests": 1060,
+      "testFiles": 238,
       "build": true,
       "mobile": true,
       "runtimeAdded": 1,
@@ -28,8 +28,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5037,
-      "remaining": 941,
+      "applied": 5038,
+      "remaining": 940,
       "percent": 84.3
     },
     "grades": [
@@ -127,9 +127,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 883,
-        "remaining": 267,
-        "percent": 76.8
+        "applied": 884,
+        "remaining": 266,
+        "percent": 76.9
       },
       {
         "grade": "특급",
@@ -142,8 +142,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Find complete declared provider source for 芿; archive lacks u4ecd@5 and must not be used as complete geometry.",
-    "Review all8domestic directions and complete geometry before progressive/runtime validation."
+    "Review 芯 eight domestic strokes and declared complete Korean source.",
+    "Preserve original geometry and apply only after progressive/runtime validation."
   ],
   "held": [
     {
@@ -523,48 +523,51 @@
     }
   ],
   "resources": {
-    "tabs": "batch151 UI closed and viewport reset; progressive close reported detached debugger; gallery cleanup pending",
-    "ramServers": "batch151 ports52147–52149 stopped",
+    "tabs": "batch152 UI, progressive and gallery closed; viewport reset",
+    "ramServers": "batch152 ports52150–52152 cleanup requested",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch151-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch151-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch151-2026-09-27/archive-source.json",
-    "docs/hanja-goal-glyphwiki-batch151-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch151-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch151-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch151-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch152-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch152-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch152-2026-09-27/archive-source.json",
+    "docs/hanja-goal-glyphwiki-batch152-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch152-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch152-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch152-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "芿",
-    "root": "u82bf",
+    "glyph": "芯",
+    "root": "u82af",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/82BF.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/82AF.svg",
       "status": 200,
-      "bytes": 4971,
-      "sha256": "366c51524fdc94844db9620788c608091bb1345f6cc4f5bc2aa60f6589e162c6"
+      "bytes": 4927,
+      "sha256": "6653086a1b8d8bdd10a50719bf5c568a8767f6c90e137a2621dcd8a1aa2aef6d"
     },
     "source": {
-      "root": "u82bf",
+      "root": "u82af",
       "records": {
-        "u82bf": {
-          "name": "u82bf",
-          "related": "u82bf",
-          "data": "99:0:0:3:5:201:172:u8279-03$99:0:0:3:50:192:195:u4ecd@5"
+        "u82af": {
+          "name": "u82af",
+          "related": "u82af",
+          "data": "99:0:0:0:2:200:202:u8279-03$99:0:0:0:-36:200:205:u5fc3-04-var-001"
         },
         "u8279-03": {
           "name": "u8279-03",
           "related": "u8279",
           "data": "1:0:0:13:39:187:39$1:0:0:72:13:72:64$1:0:0:128:13:128:64"
+        },
+        "u5fc3-04-var-001": {
+          "name": "u5fc3-04-var-001",
+          "related": "u5fc3",
+          "data": "2:7:8:36:112:39:150:17:165$3:0:5:67:109:67:176:147:176$2:7:8:83:94:106:104:119:125$2:7:8:148:114:173:132:180:159"
         }
       },
-      "missing": [
-        "u4ecd@5"
-      ],
+      "missing": [],
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -574,11 +577,11 @@
         "entries": 438759
       }
     },
-    "status": "Archive incomplete: declared u4ecd@5 missing. Domestic availability captured; current complete source investigation required.",
+    "status": "Whole archive and domestic availability captured; full review pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Find complete declared provider source for 芿; archive lacks u4ecd@5 and must not be used as complete geometry.",
-      "Review all8domestic directions and complete geometry before progressive/runtime validation."
+      "Review 芯 eight domestic strokes and declared complete Korean source.",
+      "Preserve original geometry and apply only after progressive/runtime validation."
     ]
   }
 }
