@@ -1624,3 +1624,15 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 | `set-the-order`(차례를 정하다) | a row of **numbered** pegs being moved into a line on a board | 말뚝마다 **1 2 3 4 5**가 찍혔다 | 2026-09-23에 숫자 일곱을 걷어 낸 자리와 같다 — `numbered`를 빼고 크기 순으로 늘어선 말뚝처럼 **꼴로** 차례를 보인다 |
 | `always-in-that-way`(늘 그런 식으로) | one hinge groove worn evenly the whole way round | 뚜껑 달린 **둥근 통**, 두 번 다 | 「hinge groove」만으로는 경첩이 안 그려진다 — 문짝과 경첩을 먼저 말하고 닳은 자리를 붙인다 |
 | `the-time-of-it`(때) | one sand glass standing upright with its upper bulb half run out | 반쯤 흘러내린 모래시계 | 이미 그린 `now`(지금)와 **같은 그림**이다. 「때」는 해시계 그림자나 알람이 울리는 자명종처럼 **정해진 순간**으로 옮긴다 |
+
+**뽑기 전에 셋을 더 뺐다.** 안 그린 개념 가운데 프롬프트에 `numbered`가 남은
+것이 셋이다. `set-the-order`처럼 숫자가 박혀 나올 것이라 뽑지 않았다.
+
+| 개념 | 프롬프트 |
+| --- | --- |
+| `whose-turn-has-come`(차례가 온) | one row of **numbered** pegs with the next peg alone standing upright |
+| `send-it-for-mending`(수선을 맡기다) | a folded garment on a shop counter with a **numbered** paper slip on top |
+| `go-through-the-formalities`(수속을 밟다) | a counter with a form, a pen on a chain and a **numbered** queue rail |
+
+`numbered`를 빼면 된다 — 번호표는 `a small blank paper slip`, 줄 서는 난간은
+`a queue rail` 그대로 두면 뜻이 선다.
