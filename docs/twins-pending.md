@@ -1700,3 +1700,31 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 `seat-number`는 값이 곧 뜻이라 숫자를 지우면 빈 판이 된다 — `date-wheel`과 같은
 자리다(IMAGE_STYLE). 좌석 등받이에 같은 꼴의 판이 줄지어 붙은 기차 칸처럼 **판이 자리마다
 다르다는 것**을 보이는 쪽으로 옮긴다.
+
+## ~~2026-09-27에 넘긴 스물둘~~ 같은 날 끝냈다
+
+위에 오늘 날짜로 적은 절 여덟(번호 · 문턱 · 팽이 · 기둥 · 말뚝과 통과 모래시계 ·
+사람과 팔각형 · 서류철과 저울과 식탁 · 트랙 · 시각)의 스물둘을 **프롬프트를 고쳐
+다시 뽑고 구웠다.** 숫자를 부르는 말을 모두 걷었고(`pnpm prompt --glyphs` 0), 새 장면이
+다른 그림과 소품을 나눠 쓰는지 `props`로 대 보고 넷을 한 번 더 옮겼다 — 동갑은 생일 케이크와
+요람을 피해 크기 같은 신발 두 켤레, 부등식은 시소 셋을 피해 입 벌린 큰 물고기와 작은 물고기,
+일정 짜기는 `be-located`의 지도 핀을 피해 그림을 화살표로 이은 수첩, 극은 지구의 셋을
+피해 극지방과 축 핀만 가까이.
+
+| 개념 | 새 장면 |
+| --- | --- |
+| `number-them` | 상자마다 색 스티커를 붙이는 손 |
+| `at-all-times` | 문 옆 늘 거는 열쇠 고리 |
+| `the-far-point-of-the-axis` | 지구의 꼭대기와 축 핀 |
+| `write-it-in-between` | 공책 두 줄 사이에 한 줄을 끼워 넣는 연필 |
+| `set-the-order` · `whose-turn-has-come` | 키 순서로 세우는 말뚝 · 하나만 선 말뚝 줄 |
+| `always-in-that-way` | 문짝이 늘 쓸고 지나간 마룻바닥의 호 |
+| `the-time-of-it` | 바구니로 떨어지는 익은 사과 |
+| `line-up-the-digits` · `four-cornered` · `inequality` | 오른쪽 끝을 맞춘 타일 두 줄 · 네 귀가 반듯한 판석 · 큰 물고기와 작은 물고기 |
+| `two-firms-made-one` · `cut-it-down-to-size` · `looking-kindly-on-it` | 유리 다리로 이은 두 건물 · 한쪽을 잘라 낸 탁자 · 별 스티커 붙은 아이 그림 |
+| `go-round-the-course` | 반환점 콘을 도는 자전거 |
+| `plan-the-itinerary` | 기차 → 침대 → 산을 이은 여행 수첩 |
+| `household-accounts` · `one-of-the-same-age` · `round-down` · `seat-number` | 색 막대 가계부 · 같은 크기 신발 두 켤레 · 작은 블록 하나를 덜어 낸 더미 · 좌석마다 색이 다른 판 |
+| `send-it-for-mending` · `go-through-the-formalities` | 재봉틀 쪽으로 미는 찢어진 재킷 · 서류와 도장과 줄 선 난간 |
+
+시트를 눈으로 봤고 스물둘 다 뜻이 선다. md5 중복도 없다.
