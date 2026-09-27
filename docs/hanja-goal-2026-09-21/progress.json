@@ -1,24 +1,23 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "ad8b343fff1d329f8aa23c97006dbc50d754f758",
+  "lastCompletedCommit": "3e40adfea8169db54b4e856ef1091a8636307d65",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 幷 upper-bar contact mismatch",
-    "parentAtStart": "ad8b343fff1d329f8aa23c97006dbc50d754f758"
+    "message": "docs(hanja): hold 怓 fourth-stroke discontinuity",
+    "parentAtStart": "3e40adfea8169db54b4e856ef1091a8636307d65"
   },
   "currentBatch": {
     "glyphs": [
-      "幷"
+      "怓"
     ],
     "strokes": 8,
     "status": "held; source and engine replay verified",
     "checks": {
-      "snapshotRecords": 1,
+      "snapshotRecords": 4,
       "engineFiles": 8,
       "reviewedDomesticStrokes": 8,
-      "builtInPresets": 4,
-      "upperBarGap": 6,
-      "latestKoreanSourceRowsEqual": true,
+      "fourthStrokeDiscontinuous": true,
+      "currentDependencyRowsEqual": true,
       "runtimeAdded": 0,
       "privateMediaSaved": false
     }
@@ -140,10 +139,17 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Review 怓8strokes including 忄 order and 女 continuous turns.",
-    "Do not bridge disconnected primitives or substitute components."
+    "Review 怰8strokes, especially both 玄 turns and compound endpoints.",
+    "No invented bridging, coordinate edits or component substitution."
   ],
   "held": [
+    {
+      "glyph": "怓",
+      "strokes": 8,
+      "reason": "Fourth 女 line and curve do not document continuous traversal; current whole source retains identical dependency.",
+      "releaseCondition": "Licensed whole source with documented continuous turn; no guessed retracing or trimming.",
+      "path": "docs/hanja-goal-glyphwiki-batch125-2026-09-27"
+    },
     {
       "glyph": "幷",
       "strokes": 8,
@@ -458,36 +464,36 @@
     }
   ],
   "resources": {
-    "tabs": "batch124 review tab closing after commit; public source tab reused",
-    "ramServers": "batch12452089 stopping after commit",
+    "tabs": "batch125 review tab closing after commit; public source tab reused",
+    "ramServers": "batch12552090 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch125-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch125-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch125-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch125-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch125-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "怓",
-    "root": "u6013",
+    "glyph": "怰",
+    "root": "u6030",
     "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6000/6013.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6000/6030.svg",
       "status": 200,
-      "bytes": 4601,
-      "sha256": "23511ff3dacb865144dd7ed47a5d56bb583de247fb71b77acd209133935adc73"
+      "bytes": 4270,
+      "sha256": "598274aff021b8a5d49185e5a46fe4181f58c8fa2f93ae487366c911fb4893c4"
     },
     "source": {
-      "root": "u6013",
+      "root": "u6030",
       "records": {
-        "u6013": {
-          "name": "u6013",
-          "related": "u6013",
-          "data": "99:0:0:7:0:141:200:u5fc4-01:0:0:0$99:0:0:-16:0:200:200:u5974-02:0:0:0"
+        "u6030": {
+          "name": "u6030",
+          "related": "u6030",
+          "data": "99:0:0:4:0:168:200:u5fc4-01:0:0:0$99:0:0:-11:0:201:200:u7384-02:0:0:0"
         },
         "u5fc4-01": {
           "name": "u5fc4-01",
@@ -499,10 +505,10 @@
           "related": "u5fc4",
           "data": "1:0:0:100:15:100:186$2:7:8:80:56:76:86:64:99$2:7:8:113:53:131:68:137:85"
         },
-        "u5974-02": {
-          "name": "u5974-02",
-          "related": "u5974",
-          "data": "1:0:2:77:62:123:62$2:22:7:123:62:118:153:76:188$1:0:0:103:17:85:138$2:7:8:87:119:114:129:129:159$1:0:2:125:37:176:37$2:22:7:176:37:165:161:112:188$2:7:0:138:37:145:145:183:178"
+        "u7384-02": {
+          "name": "u7384-02",
+          "related": "u7384",
+          "data": "1:0:32:131:16:131:50$1:0:0:83:50:186:50$2:0:7:136:54:126:74:111:97$2:7:8:92:82:117:103:123:122$2:0:7:168:79:142:122:97:174$2:0:7:79:177:129:169:175:160$2:7:8:152:135:177:155:182:181"
         }
       },
       "missing": [],
@@ -515,11 +521,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole source and domestic graphic available; review pending.",
+    "status": "Complete whole source available; direct review pending.",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Review 怓8strokes including 忄 order and 女 continuous turns.",
-      "Do not bridge disconnected primitives or substitute components."
+      "Review 怰8strokes, especially both 玄 turns and compound endpoints.",
+      "No invented bridging, coordinate edits or component substitution."
     ]
   }
 }
