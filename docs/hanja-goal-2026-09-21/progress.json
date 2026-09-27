@@ -1,24 +1,24 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "29632258e76ab3d355e33a6197b47f0c05650dd4",
+  "lastCompletedCommit": "1d1e7a117d755116d4ef464cd9ffdcf8461d0e4b",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 芣 eight-stroke animation",
-    "parentAtStart": "29632258e76ab3d355e33a6197b47f0c05650dd4"
+    "message": "feat(hanja): add reviewed 芦 eight-stroke animation",
+    "parentAtStart": "1d1e7a117d755116d4ef464cd9ffdcf8461d0e4b"
   },
   "currentBatch": {
     "glyphs": [
-      "芣"
+      "芦"
     ],
     "strokes": 8,
-    "status": "applied; provider Korean alias whole glyph crosschecked with domestic dictionary",
+    "status": "applied; complete provider glyph crosschecked with domestic dictionary",
     "checks": {
       "providerRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
       "progressiveFrames": 72,
-      "tests": 1039,
-      "testFiles": 231,
+      "tests": 1042,
+      "testFiles": 232,
       "build": true,
       "mobile": true,
       "runtimeAdded": 1,
@@ -28,8 +28,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5031,
-      "remaining": 947,
+      "applied": 5032,
+      "remaining": 946,
       "percent": 84.2
     },
     "grades": [
@@ -127,9 +127,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 878,
-        "remaining": 272,
-        "percent": 76.3
+        "applied": 879,
+        "remaining": 271,
+        "percent": 76.4
       },
       {
         "grade": "특급",
@@ -142,8 +142,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Review 芦 domestic eight strokes and provider-declared whole Korean form, including 戶 initial stroke.",
-    "Preserve complete provider geometry; verify full progressive and app behavior before registration."
+    "Review 泛 eight domestic strokes against complete provider geometry; inspect water rising stroke and final bend continuity.",
+    "Do not transfer hold decisions from other water-radical glyphs; investigate exact whole source and declared dependencies."
   ],
   "held": [
     {
@@ -509,48 +509,53 @@
     }
   ],
   "resources": {
-    "tabs": "batch143 review/progressive/UI closing after commit; stale142 tabs may require fresh binding for cleanup",
-    "ramServers": "batch143 ports52127–52129 stopping after commit; no older RAM servers remain",
+    "tabs": "batch144 review/progressive/UI closed; source tab remains for next candidate",
+    "ramServers": "batch144 ports52130–52132 stopped",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch143-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch143-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch143-2026-09-27/archive-source.json",
-    "docs/hanja-goal-glyphwiki-batch143-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch143-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch143-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch143-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/archive-source.json",
+    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "芦",
-    "root": "u82a6",
-    "grade": "특급II",
+    "glyph": "泛",
+    "root": "u6cdb",
+    "grade": "1급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/82A6.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6CDB.svg",
       "status": 200,
-      "bytes": 4540,
-      "sha256": "54292964d4c27ad8f7feef384abbe119b0e5316a65bfda0764ef163254c2abd7"
+      "bytes": 4419,
+      "sha256": "5b124a2cab65e72eb5e028ecd35f549a6666ca9665f19e4a046d3eccb835daa1"
     },
     "source": {
-      "root": "u82a6",
+      "root": "u6cdb",
       "records": {
-        "u82a6": {
-          "name": "u82a6",
-          "related": "u82a6",
-          "data": "99:0:0:0:2:200:180:u8279-03$99:0:0:0:48:205:196:u6236"
+        "u6cdb": {
+          "name": "u6cdb",
+          "related": "u6cdb",
+          "data": "99:0:0:5:5:160:199:u6c35-01$99:0:0:-29:0:200:200:u4e4f-02"
         },
-        "u8279-03": {
-          "name": "u8279-03",
-          "related": "u8279",
-          "data": "1:0:0:13:39:187:39$1:0:0:72:13:72:64$1:0:0:128:13:128:64"
+        "u6c35-01": {
+          "name": "u6c35-01",
+          "related": "u6c35",
+          "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
         },
-        "u6236": {
-          "name": "u6236",
-          "related": "u6236",
-          "data": "2:0:7:156:20:108:40:50:44$7:12:7:50:44:50:108:50:164:16:188$1:2:2:50:66:160:66$1:22:23:160:66:160:108$1:2:2:54:108:160:108"
+        "u4e4f-02": {
+          "name": "u4e4f-02",
+          "related": "u4e4f",
+          "data": "2:0:7:177:22:139:40:88:47$99:0:0:0:33:200:196:u4e4b-02:0:0:0"
+        },
+        "u4e4b-02": {
+          "name": "u4e4b-02",
+          "related": "u4e4b",
+          "data": "1:0:32:137:15:137:58$1:0:2:87:58:174:58$2:22:7:174:58:151:109:113:149$2:0:7:85:176:95:161:106:120$6:7:0:105:120:109:159:121:176:179:171"
         }
       },
       "missing": [],
@@ -563,11 +568,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archive captured; domestic review and regional whole-source selection pending.",
+    "status": "Whole archive captured; domestic directions and full geometry not reviewed yet.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Review 芦 domestic eight strokes and provider-declared whole Korean form, including 戶 initial stroke.",
-      "Preserve complete provider geometry; verify full progressive and app behavior before registration."
+      "Review 泛 eight domestic strokes against complete provider geometry; inspect water rising stroke and final bend continuity.",
+      "Do not transfer hold decisions from other water-radical glyphs; investigate exact whole source and declared dependencies."
     ]
   }
 }
