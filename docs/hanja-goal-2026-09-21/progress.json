@@ -1,26 +1,24 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "e337b5731dcdb6b92d2cb956a553e9035339dba3",
+  "lastCompletedCommit": "9ff8db5d52849276b6d60c7136a94a00d0298254",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 杶 eight-stroke animation",
-    "parentAtStart": "e337b5731dcdb6b92d2cb956a553e9035339dba3"
+    "message": "docs(hanja): verify 沬 third-stroke source hold",
+    "parentAtStart": "9ff8db5d52849276b6d60c7136a94a00d0298254"
   },
   "currentBatch": {
     "glyphs": [
-      "杶"
+      "沬"
     ],
     "strokes": 8,
-    "status": "runtime applied from exact whole archived source",
+    "status": "held; archived and current whole sources have discontinuous third-stroke trajectories",
     "checks": {
       "sourceRecords": 3,
+      "currentSourceRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
-      "progressiveFrames": 72,
-      "tests": 1027,
-      "build": true,
-      "mobile": true,
-      "runtimeAdded": 1,
+      "blockedStroke": 3,
+      "runtimeAdded": 0,
       "privateMediaSaved": false
     }
   },
@@ -140,11 +138,18 @@
     ]
   },
   "nextActions": [
-    "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Use corrected 6C00 dictionary directory from batch106; review all eight strokes and cumulative/final geometry.",
-    "Compare full original water radical rising stroke and 未 bars without inventing geometry."
+    "Recheck shared HEAD, pending --free and runtime.",
+    "Inspect 泂 whole provider source and its third stroke without inventing continuity.",
+    "If exact whole candidate cannot match domestic trajectory, record hold and inspect a directly documented whole alternative."
   ],
   "held": [
+    {
+      "glyph": "沬",
+      "strokes": 8,
+      "reason": "Archived and current whole-provider third-stroke curves have different pen endpoints despite overlapping filled silhouettes.",
+      "releaseCondition": "A licensed complete provider glyph with a traceable continuous third stroke matching domestic directions, or explicit source-authorized corrected trajectory, followed by full visual/progressive/runtime review.",
+      "path": "docs/hanja-goal-glyphwiki-batch136-2026-09-27"
+    },
     {
       "glyph": "怲",
       "strokes": 8,
@@ -480,47 +485,58 @@
     }
   ],
   "resources": {
-    "tabs": "batch135 review and UI tabs closing after commit; public source tab reused",
-    "ramServers": "batch135 ports52111,52112,52113 stopping after commit",
-    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
+    "tabs": "batch136 comparison closing after commit; source tab reused",
+    "ramServers": "batch136 port52114 stopping after commit",
+    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/current-source-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch136-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "沬",
-    "root": "u6cac",
-    "grade": "특급",
+    "glyph": "泂",
+    "root": "u6cc2",
+    "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6CAC.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6CC2.svg",
       "status": 200,
-      "bytes": 4266,
-      "sha256": "70e370eba780f5cd7785d4c1ea504bfa1b031c608beb2ceeadf9743e7d48e058"
+      "bytes": 4145,
+      "sha256": "5a5644e6b02ef532d56ff88371ef2ca6cca495f1d6bcd370d7f91923ea610459"
     },
     "source": {
-      "root": "u6cac",
+      "root": "u6cc2",
       "records": {
-        "u6cac": {
-          "name": "u6cac",
-          "related": "u6cac",
-          "data": "99:0:0:4:0:160:200:u6c35-01$99:0:0:-20:0:200:200:u672a-02"
+        "u6cc2": {
+          "name": "u6cc2",
+          "related": "u6cc2",
+          "data": "99:0:0:2:0:166:200:u6c35-01$99:0:0:13:0:243:200:u518b-08"
         },
         "u6c35-01": {
           "name": "u6c35-01",
           "related": "u6c35",
           "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
         },
-        "u672a-02": {
-          "name": "u672a-02",
-          "related": "u672a",
-          "data": "1:0:0:87:53:180:53$1:0:0:83:96:187:96$1:0:0:132:16:132:187$2:32:7:125:96:106:147:68:179$2:7:0:138:96:159:148:182:166"
+        "u518b-08": {
+          "name": "u518b-08",
+          "related": "u518b",
+          "data": "99:0:0:40:0:160:200:u5182:0:0:0$99:0:0:75:46:125:149:u53e3:0:0:0"
+        },
+        "u5182": {
+          "name": "u5182",
+          "related": "u5182",
+          "data": "1:12:0:32:28:32:184$1:2:2:32:28:168:28$1:22:4:168:28:168:180"
+        },
+        "u53e3": {
+          "name": "u53e3",
+          "related": "u53e3",
+          "data": "1:12:13:42:46:42:154$1:2:2:42:46:158:46$1:22:23:158:46:158:154$1:2:2:42:154:158:154"
         }
       },
       "missing": [],
@@ -533,11 +549,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archived source available; full visual review pending.",
+    "status": "Whole source available; evaluate compound water stroke before full review.",
     "actions": [
-      "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Use corrected 6C00 dictionary directory from batch106; review all eight strokes and cumulative/final geometry.",
-      "Compare full original water radical rising stroke and 未 bars without inventing geometry."
+      "Recheck shared HEAD, pending --free and runtime.",
+      "Inspect 泂 whole provider source and its third stroke without inventing continuity.",
+      "If exact whole candidate cannot match domestic trajectory, record hold and inspect a directly documented whole alternative."
     ]
   }
 }
