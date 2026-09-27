@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { HANJA_CHARACTERS as characters } from '@/lib/hanja-corpus'
+import { examSourcesFor, localDay } from '@/lib/exam-sources'
 import { HANJA_LADDER, hanjaEntries, masteredHanjaCount } from '@/lib/hanja'
 import { loadProgress, masteryLabel } from '@/lib/progress'
 import type { TrackId } from '@/lib/track'
@@ -14,6 +15,8 @@ const entries = hanjaEntries(characters)
 
 export function HanjaShell({ onChange }: { onChange: (track: TrackId) => void }) {
   const [progress, setProgress] = useState(() => loadProgress('hanja'))
+  // 한국어문회 기출이 찾기 시트의 급수 목록 위에 선다 (lib/exam-sources.ts)
+  const examSources = useMemo(() => examSourcesFor('hanja', localDay()), [])
   return (
     <div className="feed-root flex h-dvh flex-col" lang="ko">
       <Header
@@ -22,7 +25,7 @@ export function HanjaShell({ onChange }: { onChange: (track: TrackId) => void })
         mastery={masteryLabel(masteredHanjaCount(progress, characters), characters.length)}
       />
       <Feed entries={entries} track="hanja" ladder={HANJA_LADDER} ordered onProgress={setProgress} />
-      <HanjaSearch characters={characters} />
+      <HanjaSearch characters={characters} examSources={examSources} />
     </div>
   )
 }

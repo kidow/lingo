@@ -2,10 +2,12 @@
 
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import { useMemo, useState } from 'react'
+import { ExamSourceDetail, ExamSourceSection } from '../exam-sources'
 import { PeekDrawer } from '../peek-drawer'
 import { gradeLabel, hunEum, searchHanja, HANJA_GRADES, type HanjaCharacter, type HanjaGrade } from '@/lib/hanja'
 import { HanjaDetails, HanjaIllustration } from './card'
 import { HanjaGlyph } from './glyph'
+import type { ExamSource } from '@/lib/exam-sources'
 
 /** 한 번에 그리는 글자 수. 특급만 1,328자라 전량을 한 번에 세울 수 없다 */
 const PAGE = 60
@@ -31,8 +33,16 @@ const PAGE = 60
  * 닫힘이 접힘으로 바뀌면서 그 자리를 뺐다 — 뒤 카드를 흘긋 보려고 내린 사람이
  * 돌아왔을 때 친 것이 없으면 다시 올라올 이유가 없다.
  */
-export function HanjaSearch({ characters }: { characters: HanjaCharacter[] }) {
+export function HanjaSearch({
+  characters,
+  examSources = [],
+}: {
+  characters: HanjaCharacter[]
+  /** 급수 목록 위에 세울 기출·모의고사 (lib/exam-sources.ts) */
+  examSources?: ExamSource[]
+}) {
   const [query, setQuery] = useState('')
+  const [source, setSource] = useState<ExamSource | null>(null)
   const [grade, setGrade] = useState<HanjaGrade | null>(null)
   const [limit, setLimit] = useState(PAGE)
   const [selected, setSelected] = useState<HanjaCharacter | null>(null)
@@ -69,6 +79,8 @@ export function HanjaSearch({ characters }: { characters: HanjaCharacter[] }) {
           <div className="h-64 shrink-0"><HanjaIllustration key={selected.id} character={selected} /></div>
           <HanjaDetails character={selected} />
         </div>
+      ) : source ? (
+        <ExamSourceDetail source={source} back="급수" onBack={() => setSource(null)} />
       ) : (
         <>
           {/* 손잡이 바로 밑이다 — 「한자 찾기」 제목 줄은 sr-only로 내려갔다 (components/peek-drawer.tsx) */}
@@ -80,17 +92,26 @@ export function HanjaSearch({ characters }: { characters: HanjaCharacter[] }) {
           )}
 
           {!query && !grade ? (
-            <ul className="min-h-0 flex-1 overflow-y-auto px-5 pb-8">
-              {HANJA_GRADES.map((value) => (
-                <li key={value}>
-                  <button type="button" onClick={() => go(() => setGrade(value))} className="flex min-h-14 w-full items-center gap-3 border-b border-line text-left">
-                    <span className="text-base font-semibold">{gradeLabel(value)}</span>
-                    <span className="ml-auto text-sm text-sub">{counts.get(value) ?? 0}자</span>
-                    <ChevronRight className="size-4 shrink-0 text-sub" aria-hidden />
-                  </button>
-                </li>
-              ))}
-            </ul>
+            // 기출·모의고사가 급수 목록 위에 서고 둘이 한 번에 구른다 (components/exam-sources.tsx)
+            <div className="min-h-0 flex-1 overflow-y-auto px-5 pb-8">
+              {examSources.length > 0 && (
+                <>
+                  <ExamSourceSection sources={examSources} onOpen={setSource} />
+                  <h3 className="mt-6 px-1 text-[13px] font-semibold text-sub">급수</h3>
+                </>
+              )}
+              <ul>
+                {HANJA_GRADES.map((value) => (
+                  <li key={value}>
+                    <button type="button" onClick={() => go(() => setGrade(value))} className="flex min-h-14 w-full items-center gap-3 border-b border-line text-left">
+                      <span className="text-base font-semibold">{gradeLabel(value)}</span>
+                      <span className="ml-auto text-sm text-sub">{counts.get(value) ?? 0}자</span>
+                      <ChevronRight className="size-4 shrink-0 text-sub" aria-hidden />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : (
             <div className="min-h-0 flex-1 overflow-y-auto px-5 pb-8">
               <div className="grid grid-cols-3 gap-x-3 gap-y-1">

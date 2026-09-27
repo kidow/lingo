@@ -4,12 +4,14 @@ import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { ArticleBody } from './article-body'
 import { ConceptImage } from './concept-image'
+import { ExamSourceDetail, ExamSourceSection } from './exam-sources'
 import { SayButton } from './say-button'
 import { loadSearchCorpus } from '@/lib/corpus'
 import { usePeekOpened } from './peek-drawer'
 import { bcp47, LANG_LABEL } from '@/lib/lang'
 import { buildIndex, search, type Hit, type SearchIndex } from '@/lib/search'
 import { SCRIPT_LABEL, glyphOf, type KanaUnit } from '@/lib/kana'
+import type { ExamSource } from '@/lib/exam-sources'
 import type { TriviaEntry } from '@/lib/trivia'
 import type { Article, Concept, Language } from '@/lib/types'
 
@@ -81,6 +83,7 @@ function useIndex(enabled: boolean): SearchIndex | null {
 export function SearchSheet({
   trackArticles,
   kanaUnits = [],
+  examSources = [],
 }: {
   /** 빈 칸일 때 세울 것 — 지금 트랙의 글만 */
   trackArticles: Article[]
@@ -89,9 +92,12 @@ export function SearchSheet({
    * `ka`를 쳐서 열 수 없는 카드가 나오면 안 된다 (lib/search.ts)
    */
   kanaUnits?: KanaUnit[]
+  /** 빈 칸에서 참고 글 위에 세울 기출·모의고사 — 지금 트랙의 것만 (lib/exam-sources.ts) */
+  examSources?: ExamSource[]
 }) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState<Hit | null>(null)
+  const [source, setSource] = useState<ExamSource | null>(null)
 
   const index = useIndex(usePeekOpened())
   const hits = useMemo(
@@ -102,6 +108,8 @@ export function SearchSheet({
   // 돌아가는 자리 이름이 갈린다 — 친 게 있으면 결과 목록이고, 비었으면 참고 글이다
   if (open)
     return <Preview hit={open} back={query ? '결과' : '목록'} onBack={() => setOpen(null)} />
+  // 기출·모의고사는 빈 칸에만 서므로 돌아가는 자리는 늘 목록이다
+  if (source) return <ExamSourceDetail source={source} back="목록" onBack={() => setSource(null)} />
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -156,17 +164,25 @@ export function SearchSheet({
       {/* 시트가 화면 바닥에 붙으므로 카드 시트와 같은 안전영역이 필요하다 (components/feed.tsx) */}
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-lg pb-[calc(var(--spacing-lg)+env(safe-area-inset-bottom))]">
         {/*
-          빈 칸에는 지금 트랙의 참고 글을 세운다. 낱말 목록을 미리 깔지 않는
-          이유는 3,756개가 스크롤로 쏟아지기 때문이고, 참고 글은 많아야 두어
-          편이라 그대로 목록이 된다.
+          빈 칸에는 지금 트랙의 기출·모의고사와 참고 글을 세운다. 낱말 목록을
+          미리 깔지 않는 이유는 3,756개가 스크롤로 쏟아지기 때문이고, 참고 글은
+          많아야 두어 편이라 그대로 목록이 된다.
 
-          글이 없는 트랙(TOEIC)에서는 안내 한 줄만 남는다 — 자리를 비우면
-          검색창만 덩그러니 뜬다
+          **기출·모의고사가 먼저다.** 시험을 준비하는 사람이 이 시트를 여는 가장
+          흔한 이유가 문제를 찾는 것이다 (components/exam-sources.tsx).
+
+          글이 없는 트랙(TOEIC)에서는 안내 한 줄이 참고 글 자리를 대신한다 —
+          검색이 무엇을 찾는지는 여전히 알려야 한다
         */}
+        {!query && <ExamSourceSection sources={examSources} onOpen={setSource} />}
         {!query &&
           (trackArticles.length > 0 ? (
             <>
-              <h3 className="px-1 pb-2 text-[13px] font-semibold text-sub">참고 글</h3>
+              <h3
+                className={`px-1 pb-2 text-[13px] font-semibold text-sub ${examSources.length > 0 ? 'mt-6' : ''}`}
+              >
+                참고 글
+              </h3>
               <ul className="flex flex-col gap-2">
                 {trackArticles.map((article) => (
                   <li key={article.id}>

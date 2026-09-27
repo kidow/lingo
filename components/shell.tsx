@@ -19,6 +19,7 @@ import {
 } from '@/lib/progress'
 import { loadDeck, loadTrack, saveDeck, saveTrack } from '@/lib/settings'
 import { DEFAULT_DECK, entriesForDeck, type DeckId } from '@/lib/deck'
+import { examSourcesFor, localDay } from '@/lib/exam-sources'
 import { KANA_LADDER, kanaEntries, masteredKanaCount } from '@/lib/kana'
 import { DEFAULT_TRACK, trackOf, type TrackId } from '@/lib/track'
 
@@ -130,6 +131,13 @@ export function Shell({
    */
   const trivia = corpus?.trivia ?? []
   const articles = corpus?.articles ?? []
+
+  /**
+   * 기출·모의고사는 코퍼스가 아니라 **트랙**의 것이다 — HSK와 TOCFL은 같은
+   * 중국어지만 시험이 달라 문제도 다르다 (lib/exam-sources.ts). 링크 몇십 줄이라
+   * 번들에 그대로 싣는다
+   */
+  const examSources = useMemo(() => examSourcesFor(track, localDay()), [track])
 
   /**
    * 가나 카드. **JLPT에만 있다** — 데이터가 `ja` 코퍼스에만 실리므로
@@ -274,7 +282,7 @@ export function Shell({
             못 받았을 때는 세우지 않는다. 찾을 콘텐츠가 없는데 손잡이만 떠 있으면
             당겨서 빈 목록을 보게 된다 — 다시 시도가 할 일의 전부인 화면이다
           */}
-          <SearchDrawer trackArticles={articles} kanaUnits={kanaShown} />
+          <SearchDrawer trackArticles={articles} kanaUnits={kanaShown} examSources={examSources} />
         </>
       )}
     </div>

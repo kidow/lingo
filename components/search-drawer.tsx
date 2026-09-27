@@ -2,6 +2,7 @@
 
 import { PeekDrawer } from './peek-drawer'
 import { SearchSheet } from './search-sheet'
+import type { ExamSource } from '@/lib/exam-sources'
 import type { KanaUnit } from '@/lib/kana'
 import type { Article } from '@/lib/types'
 
@@ -19,17 +20,20 @@ import type { Article } from '@/lib/types'
 export function SearchDrawer({
   trackArticles,
   kanaUnits,
+  examSources,
 }: {
   trackArticles: Article[]
   /** 지금 트랙에서 공개된 가나 마디 (lib/search.ts) */
   kanaUnits?: KanaUnit[]
+  /** 지금 트랙의 기출·모의고사 (lib/exam-sources.ts) */
+  examSources?: ExamSource[]
 }) {
   return (
     <PeekDrawer
       title="찾기"
-      description="비워 두면 지금 트랙의 참고 글을, 치면 트랙을 가리지 않고 단어·상식·참고 글을 찾습니다."
+      description="비워 두면 지금 트랙의 기출·모의고사와 참고 글을, 치면 트랙을 가리지 않고 단어·상식·참고 글을 찾습니다."
     >
-      <SearchSheet trackArticles={trackArticles} kanaUnits={kanaUnits} />
+      <SearchSheet trackArticles={trackArticles} kanaUnits={kanaUnits} examSources={examSources} />
     </PeekDrawer>
   )
 }
