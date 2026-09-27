@@ -48,9 +48,7 @@ export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([
   'zh',
 ])
 
-export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([
-  'en/come-along-0-35eda442fe62',
-])
+export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([])
 
 /** 그 언어의 그 예문(열쇠는 `exampleAudioKey`)에 소리가 있는가 */
 export function hasExampleAudio(lang: string, key: string): boolean {
