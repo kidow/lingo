@@ -1647,3 +1647,13 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 그림은 갈려(바퀴 전체 · 브레이크 확대) 구웠지만 같은 물건이다. 「속도를 늦추다」는
 비탈을 내려가며 발로 땅을 끄는 수레, 줄어드는 물레방아처럼 **브레이크 없이**
 옮기면 갈린다.
+
+## 2026-09-27 — 「figures」는 사람, 「corners cut」은 팔각형
+
+같은 회차에서 셋이 뜻을 비껴 나왔다. 셋 다 내 개념이 아니라 **굽지 않고** 넘긴다.
+
+| 개념 | 프롬프트 | 나온 그림 | 고칠 곳 |
+| --- | --- | --- | --- |
+| `line-up-the-digits`(자릿수를 맞추다) | two **figures** written one above the other with their right edges flush | 한 사람이 다른 사람 어깨에 올라탄 **목말** | `figures`는 사람으로 읽힌다 — `two columns of tally strokes`처럼 숫자 없이 오른쪽 끝을 맞춘 꼴로 |
+| `four-cornered`(네모난) | one paving slab with all four corners **cut** equally sharp | 모서리를 쳐낸 **팔각형** 판석 | `cut`이 모서리를 잘라 냈다 — `one perfectly square paving slab with four sharp right-angled corners` |
+| `inequality`(부등) | two rows of marks of different length with an open wedge between them | 길이가 다른 막대가 **햇살처럼** 둘러선 무늬 | 뜻이 안 읽힌다 — 한쪽으로 기운 저울처럼 **크고 작음이 한눈에** 보이는 장면으로 |
