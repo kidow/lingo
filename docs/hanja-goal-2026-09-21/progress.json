@@ -1,21 +1,21 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "7b88424aaaf634ab979125ff847f7f22fdd8a504",
+  "lastCompletedCommit": "a4093e8557c8d6c0389d00914108be78eea856f8",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 斨 eight-stroke animation",
-    "parentAtStart": "7b88424aaaf634ab979125ff847f7f22fdd8a504"
+    "message": "feat(hanja): add reviewed 旽 eight-stroke animation",
+    "parentAtStart": "a4093e8557c8d6c0389d00914108be78eea856f8"
   },
   "currentBatch": {
     "glyphs": [
-      "斨"
+      "旽"
     ],
     "strokes": 8,
     "status": "applied; source, engine, full tests, build and mobile verified",
     "checks": {
       "reviewedAt": "2026-09-27",
       "sourceAndEngineReplay": {
-        "snapshotRecords": 3,
+        "snapshotRecords": 4,
         "historicalRecords": 0,
         "engineFiles": 8,
         "traceExact": true
@@ -23,8 +23,8 @@
       "domesticStrokeCount": 8,
       "progressiveSnapshots": 72,
       "tests": {
-        "files": 222,
-        "passed": 1012,
+        "files": 223,
+        "passed": 1015,
         "failed": 0
       },
       "build": {
@@ -32,8 +32,8 @@
         "typeScript": true,
         "staticPages": 7,
         "isolated": true,
-        "baseCommit": "7b88424aaaf634ab979125ff847f7f22fdd8a504",
-        "snapshot": "1b9bcf3839d3339aa309349c827241655e77a82c"
+        "baseCommit": "a4093e8557c8d6c0389d00914108be78eea856f8",
+        "snapshot": "cdd613118465176a0513b4bb3b2d10f16791b591"
       },
       "artifactParity": {
         "ownFiles": 17,
@@ -79,8 +79,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5022,
-      "remaining": 956,
+      "applied": 5023,
+      "remaining": 955,
       "percent": 84
     },
     "grades": [
@@ -178,9 +178,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 872,
-        "remaining": 278,
-        "percent": 75.8
+        "applied": 873,
+        "remaining": 277,
+        "percent": 75.9
       },
       {
         "grade": "특급",
@@ -193,7 +193,7 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Review 旽8strokes, including 屯 first direction, lower turns and final hook.",
+    "Review 旿8strokes including 午 direction, intersections and final vertical.",
     "Use unchanged licensed whole source and documented corrections only."
   ],
   "held": [
@@ -532,36 +532,36 @@
     }
   ],
   "resources": {
-    "tabs": "batch128 review tabs closing after commit; public source tab reused",
-    "ramServers": "batch12852094–52096 stopping after commit",
+    "tabs": "batch129 review tabs closing after commit; public source tab reused",
+    "ramServers": "batch12952097–52099 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch128-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch128-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch128-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch128-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch128-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch129-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch129-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch129-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch129-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch129-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "旽",
-    "root": "u65fd",
+    "glyph": "旿",
+    "root": "u65ff",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6500/65FD.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6500/65FF.svg",
       "status": 200,
-      "bytes": 4523,
-      "sha256": "bd26cf8e99a805915f5298e0acd46ca4c8cfd59aec473755207168c9caebb3e7"
+      "bytes": 3950,
+      "sha256": "76b5d2f1052978fcadc4d73eae0cabc7bd6e8f350f13e1dc08022a7b95398b10"
     },
     "source": {
-      "root": "u65fd",
+      "root": "u65ff",
       "records": {
-        "u65fd": {
-          "name": "u65fd",
-          "related": "u65fd",
-          "data": "99:0:0:0:0:180:200:u65e5-01$99:0:0:60:0:198:200:u5c6f"
+        "u65ff": {
+          "name": "u65ff",
+          "related": "u65ff",
+          "data": "99:0:0:0:0:180:200:u65e5-01$99:0:0:-23:0:200:200:u5348-02"
         },
         "u65e5-01": {
           "name": "u65e5-01",
@@ -573,10 +573,10 @@
           "related": "u65e5",
           "data": "1:12:13:46:32:46:168$1:2:2:46:32:154:32$1:22:23:154:32:154:168$1:2:2:46:98:154:98$1:2:2:46:168:154:168"
         },
-        "u5c6f": {
-          "name": "u5c6f",
-          "related": "u5c6f",
-          "data": "2:0:7:167:39:99:51:20:65$1:0:13:44:72:44:126$1:2:2:44:126:154:126$1:0:23:154:72:154:126$3:0:5:98:22:98:176:178:176"
+        "u5348-02": {
+          "name": "u5348-02",
+          "related": "u5348",
+          "data": "2:0:7:118:18:109:62:86:93$1:0:0:86:109:188:109$1:32:0:135:56:135:186$1:0:0:104:56:178:56"
         }
       },
       "missing": [],
@@ -592,7 +592,7 @@
     "status": "Whole source available; direct review pending.",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Review 旽8strokes, including 屯 first direction, lower turns and final hook.",
+      "Review 旿8strokes including 午 direction, intersections and final vertical.",
       "Use unchanged licensed whole source and documented corrections only."
     ]
   }
