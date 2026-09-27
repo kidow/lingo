@@ -1,23 +1,23 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "0c44edcfcb4e1ee55527c6d10af40f211b5c127d",
+  "lastCompletedCommit": "395a2c13a51cb3466f0b17f16a3c43264e062747",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): recover 坮 source history and hold discontinuous turn",
-    "parentAtStart": "0c44edcfcb4e1ee55527c6d10af40f211b5c127d"
+    "message": "docs(hanja): review 妵 historical and Korean source turns",
+    "parentAtStart": "395a2c13a51cb3466f0b17f16a3c43264e062747"
   },
   "currentBatch": {
     "glyphs": [
-      "坮"
+      "妵"
     ],
     "strokes": 8,
-    "status": "held; exact historical dependencies recovered and engine replay passed",
+    "status": "held; source and engine replay verified",
     "checks": {
       "snapshotRecords": 2,
-      "historicalRecords": 3,
+      "historicalRecords": 1,
       "engineFiles": 8,
       "reviewedDomesticStrokes": 8,
-      "fourthStrokeDiscontinuous": true,
+      "firstStrokeDiscontinuous": true,
       "runtimeAdded": 0,
       "privateMediaSaved": false
     }
@@ -139,10 +139,17 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Read exact u4e3b@7 source from its history; do not substitute current version.",
-    "Compare all8domestic strokes, including first 女 trajectory; no inferred connectors or component substitutions."
+    "Review all8domestic strokes against complete whole u59c8; inspect first 女 continuity and 令 form.",
+    "If blocked, find a genuinely different licensed whole-glyph alternative; no component substitution."
   ],
   "held": [
+    {
+      "glyph": "妵",
+      "strokes": 8,
+      "reason": "First 女 line and following curve have different endpoints in both historical and current Korean whole sources.",
+      "releaseCondition": "Find licensed whole geometry with a documented continuous first turn and domestic attachments; no inferred bridges or trimming.",
+      "path": "docs/hanja-goal-glyphwiki-batch118-2026-09-27"
+    },
     {
       "glyph": "坮",
       "strokes": 8,
@@ -422,47 +429,50 @@
     }
   ],
   "resources": {
-    "tabs": "batch117 review tabs closing after commit",
-    "ramServers": "batch11752077 stopping after commit",
+    "tabs": "batch118 review tab closing after commit; public source tab reused",
+    "ramServers": "batch11852078 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/historical-source-proof.json",
-    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch118-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch118-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch118-2026-09-27/historical-source-proof.json",
+    "docs/hanja-goal-glyphwiki-batch118-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch118-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch118-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "妵",
-    "root": "u59b5",
+    "glyph": "姈",
+    "root": "u59c8",
     "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5900/59B5.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5900/59C8.svg",
       "status": 200,
-      "bytes": 4248,
-      "sha256": "01b4697993283f62e544f23938181f7867b2f0420e7e1ee217e1baca2289f5a3"
+      "bytes": 4579,
+      "sha256": "006a484202fbda3bc91508ba9fc0ba43b5f8ba966e6476dbb1fc1b652d33689c"
     },
     "source": {
-      "root": "u59b5",
+      "root": "u59c8",
       "records": {
-        "u59b5": {
-          "name": "u59b5",
-          "related": "u59b5",
-          "data": "99:0:0:2:3:198:201:u5973-01$99:0:0:68:-1:201:200:u4e3b@7"
+        "u59c8": {
+          "name": "u59c8",
+          "related": "u59c8",
+          "data": "99:0:0:3:0:172:200:u5973-01$0:0:0:0$99:0:0:-10:0:198:200:u4ee4-02"
         },
         "u5973-01": {
           "name": "u5973-01",
           "related": "u5973",
           "data": "1:0:0:52:16:26:135$2:7:8:28:118:66:129:85:156$2:22:7:79:61:67:153:9:188$1:0:2:15:61:79:61"
+        },
+        "u4ee4-02": {
+          "name": "u4ee4-02",
+          "related": "u4ee4",
+          "data": "2:0:7:132:15:112:64:80:92$2:7:0:130:22:152:60:181:80$1:0:0:102:82:162:82$1:0:2:92:110:166:110$1:22:4:166:110:166:164$1:32:0:126:110:126:186"
         }
       },
-      "missing": [
-        "u4e3b@7"
-      ],
+      "missing": [],
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -472,11 +482,11 @@
         "entries": 438759
       }
     },
-    "status": "Obtain exact u4e3b@7 before rendering; first 女 turn needs direct review.",
+    "status": "Complete source available; first 女 turn and domestic 令 form require direct review.",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Read exact u4e3b@7 source from its history; do not substitute current version.",
-      "Compare all8domestic strokes, including first 女 trajectory; no inferred connectors or component substitutions."
+      "Review all8domestic strokes against complete whole u59c8; inspect first 女 continuity and 令 form.",
+      "If blocked, find a genuinely different licensed whole-glyph alternative; no component substitution."
     ]
   }
 }
