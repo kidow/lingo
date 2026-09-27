@@ -1,23 +1,23 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "b5ea270043f715461603f12ae8a31162a7620233",
+  "lastCompletedCommit": "e337b5731dcdb6b92d2cb956a553e9035339dba3",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 昐 whole-glyph animation",
-    "parentAtStart": "b5ea270043f715461603f12ae8a31162a7620233"
+    "message": "feat(hanja): add reviewed 杶 eight-stroke animation",
+    "parentAtStart": "e337b5731dcdb6b92d2cb956a553e9035339dba3"
   },
   "currentBatch": {
     "glyphs": [
-      "昐"
+      "杶"
     ],
     "strokes": 8,
-    "status": "runtime applied; archive hold resolved by complete provider source",
+    "status": "runtime applied from exact whole archived source",
     "checks": {
       "sourceRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
       "progressiveFrames": 72,
-      "tests": 1024,
+      "tests": 1027,
       "build": true,
       "mobile": true,
       "runtimeAdded": 1,
@@ -27,8 +27,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5026,
-      "remaining": 952,
+      "applied": 5027,
+      "remaining": 951,
       "percent": 84.1
     },
     "grades": [
@@ -133,16 +133,16 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 717,
-        "remaining": 611,
-        "percent": 54
+        "applied": 718,
+        "remaining": 610,
+        "percent": 54.1
       }
     ]
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Review 杶 eight strokes, 木 directions and 屯 folded stroke/hook using whole archived provider geometry.",
-    "Use licensed whole source unchanged; never substitute components or invent paths."
+    "Use corrected 6C00 dictionary directory from batch106; review all eight strokes and cumulative/final geometry.",
+    "Compare full original water radical rising stroke and 未 bars without inventing geometry."
   ],
   "held": [
     {
@@ -480,47 +480,47 @@
     }
   ],
   "resources": {
-    "tabs": "batch134 review and UI tabs closing after commit; public source tab reused",
-    "ramServers": "batch134 ports52108,52109,52110 stopping after commit",
+    "tabs": "batch135 review and UI tabs closing after commit; public source tab reused",
+    "ramServers": "batch135 ports52111,52112,52113 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch134-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch134-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch134-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch134-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch134-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch134-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch135-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "杶",
-    "root": "u6776",
+    "glyph": "沬",
+    "root": "u6cac",
     "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6700/6776.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6CAC.svg",
       "status": 200,
-      "bytes": 4599,
-      "sha256": "67c455dab466d8ce951fb493acad5897023ead5f365c490c78bcc4afa9b89783"
+      "bytes": 4266,
+      "sha256": "70e370eba780f5cd7785d4c1ea504bfa1b031c608beb2ceeadf9743e7d48e058"
     },
     "source": {
-      "root": "u6776",
+      "root": "u6cac",
       "records": {
-        "u6776": {
-          "name": "u6776",
-          "related": "u6776",
-          "data": "99:0:0:2:1:175:199:u6728-01$0:0:0:0$99:0:0:3:0:204:199:u5c6f-02"
+        "u6cac": {
+          "name": "u6cac",
+          "related": "u6cac",
+          "data": "99:0:0:4:0:160:200:u6c35-01$99:0:0:-20:0:200:200:u672a-02"
         },
-        "u6728-01": {
-          "name": "u6728-01",
-          "related": "u6728",
-          "data": "1:0:0:13:61:90:61$1:0:0:53:15:53:186$2:32:7:50:61:40:110:13:148$2:7:8:55:86:74:94:85:109"
+        "u6c35-01": {
+          "name": "u6c35-01",
+          "related": "u6c35",
+          "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
         },
-        "u5c6f-02": {
-          "name": "u5c6f-02",
-          "related": "u5c6f",
-          "data": "2:0:7:176:40:135:53:74:60$1:0:13:94:77:94:123$1:2:2:94:123:167:123$1:0:23:167:77:167:123$3:0:5:130:17:130:179:181:179"
+        "u672a-02": {
+          "name": "u672a-02",
+          "related": "u672a",
+          "data": "1:0:0:87:53:180:53$1:0:0:83:96:187:96$1:0:0:132:16:132:187$2:32:7:125:96:106:147:68:179$2:7:0:138:96:159:148:182:166"
         }
       },
       "missing": [],
@@ -533,11 +533,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archived source available; direct full review pending.",
+    "status": "Whole archived source available; full visual review pending.",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Review 杶 eight strokes, 木 directions and 屯 folded stroke/hook using whole archived provider geometry.",
-      "Use licensed whole source unchanged; never substitute components or invent paths."
+      "Use corrected 6C00 dictionary directory from batch106; review all eight strokes and cumulative/final geometry.",
+      "Compare full original water radical rising stroke and 未 bars without inventing geometry."
     ]
   }
 }
