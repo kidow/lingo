@@ -1,78 +1,25 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "1312f90e23358a067904f8306b91ac291353d7e3",
+  "lastCompletedCommit": "ad8b343fff1d329f8aa23c97006dbc50d754f758",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 峀 eight-stroke animation",
-    "parentAtStart": "1312f90e23358a067904f8306b91ac291353d7e3"
+    "message": "docs(hanja): hold 幷 upper-bar contact mismatch",
+    "parentAtStart": "ad8b343fff1d329f8aa23c97006dbc50d754f758"
   },
   "currentBatch": {
     "glyphs": [
-      "峀"
+      "幷"
     ],
     "strokes": 8,
-    "status": "applied; source, engine, tests, build and mobile verified",
+    "status": "held; source and engine replay verified",
     "checks": {
-      "reviewedAt": "2026-09-27",
-      "sourceAndEngineReplay": {
-        "snapshotRecords": 4,
-        "historicalRecords": 1,
-        "engineFiles": 8,
-        "traceExact": true
-      },
-      "domesticStrokeCount": 8,
-      "progressiveSnapshots": 72,
-      "tests": {
-        "files": 221,
-        "passed": 1009,
-        "failed": 0
-      },
-      "build": {
-        "exitCode": 0,
-        "typeScript": true,
-        "staticPages": 7,
-        "isolated": true,
-        "baseCommit": "1312f90e23358a067904f8306b91ac291353d7e3",
-        "snapshot": "b06d7e35576d497c73070f33064591fbc529eb5d"
-      },
-      "artifactParity": {
-        "ownFiles": 18,
-        "publicExports": 3
-      },
-      "ui": {
-        "viewport": [
-          430,
-          932
-        ],
-        "introAutoplay": true,
-        "introReplay": true,
-        "introComplete": "8 / 8",
-        "writingAutoplay": true,
-        "writingReplay": true,
-        "writingComplete": "8 / 8",
-        "canvasInputCounts": [
-          0,
-          1,
-          0
-        ],
-        "canvasYBeforeAfter": [
-          162.8046875,
-          162.8046875
-        ],
-        "dialogYBeforeAfter": [
-          139.8046875,
-          139.8046875
-        ],
-        "scrollBeforeAfter": [
-          126,
-          126
-        ],
-        "touchAction": "none",
-        "vaulNoDrag": true,
-        "staticImages": 0,
-        "consoleWarningsErrors": 0,
-        "glyphSVG": 1
-      },
+      "snapshotRecords": 1,
+      "engineFiles": 8,
+      "reviewedDomesticStrokes": 8,
+      "builtInPresets": 4,
+      "upperBarGap": 6,
+      "latestKoreanSourceRowsEqual": true,
+      "runtimeAdded": 0,
       "privateMediaSaved": false
     }
   },
@@ -193,10 +140,17 @@
   },
   "nextActions": [
     "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Render complete 幷8stroke source; inspect left/right ordering and bends against dictionary.",
-    "Retain source coordinates; no invented geometry or undocumented joining."
+    "Review 怓8strokes including 忄 order and 女 continuous turns.",
+    "Do not bridge disconnected primitives or substitute components."
   ],
   "held": [
+    {
+      "glyph": "幷",
+      "strokes": 8,
+      "reason": "Upper bars contact in domestic source; all4presets and latest Korean whole source retain6unit gap.",
+      "releaseCondition": "Licensed whole geometry with documented contact; no guessed extensions or bridges.",
+      "path": "docs/hanja-goal-glyphwiki-batch124-2026-09-27"
+    },
     {
       "glyph": "岯",
       "strokes": 8,
@@ -504,36 +458,51 @@
     }
   ],
   "resources": {
-    "tabs": "batch123 review and test tabs closing after commit",
-    "ramServers": "batch123 52086–52088 stopping after commit",
+    "tabs": "batch124 review tab closing after commit; public source tab reused",
+    "ramServers": "batch12452089 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch123-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch123-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch123-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch123-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch123-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch124-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "幷",
-    "root": "u5e77",
-    "grade": "특급II",
+    "glyph": "怓",
+    "root": "u6013",
+    "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5E00/5E77.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6000/6013.svg",
       "status": 200,
-      "bytes": 4143,
-      "sha256": "b47babc95f8c0cb53135f991ad888d8df9a98dabf0c484db864ecbe397b9b79d"
+      "bytes": 4601,
+      "sha256": "23511ff3dacb865144dd7ed47a5d56bb583de247fb71b77acd209133935adc73"
     },
     "source": {
-      "root": "u5e77",
+      "root": "u6013",
       "records": {
-        "u5e77": {
-          "name": "u5e77",
-          "related": "u5e77",
-          "data": "2:0:7:79:15:65:32:39:53$1:0:0:20:53:97:53$2:0:7:15:123:63:111:105:94$7:32:7:66:53:66:99:66:157:22:187$2:0:7:157:16:143:33:122:53$1:0:0:103:53:180:53$1:0:0:96:110:187:110$1:32:0:135:53:135:185"
+        "u6013": {
+          "name": "u6013",
+          "related": "u6013",
+          "data": "99:0:0:7:0:141:200:u5fc4-01:0:0:0$99:0:0:-16:0:200:200:u5974-02:0:0:0"
+        },
+        "u5fc4-01": {
+          "name": "u5fc4-01",
+          "related": "u5fc4",
+          "data": "99:0:0:-48:0:152:200:u5fc4"
+        },
+        "u5fc4": {
+          "name": "u5fc4",
+          "related": "u5fc4",
+          "data": "1:0:0:100:15:100:186$2:7:8:80:56:76:86:64:99$2:7:8:113:53:131:68:137:85"
+        },
+        "u5974-02": {
+          "name": "u5974-02",
+          "related": "u5974",
+          "data": "1:0:2:77:62:123:62$2:22:7:123:62:118:153:76:188$1:0:0:103:17:85:138$2:7:8:87:119:114:129:129:159$1:0:2:125:37:176:37$2:22:7:176:37:165:161:112:188$2:7:0:138:37:145:145:183:178"
         }
       },
       "missing": [],
@@ -546,11 +515,11 @@
         "entries": 438759
       }
     },
-    "status": "Complete exact whole source available; domestic directions and forms not yet reviewed.",
+    "status": "Whole source and domestic graphic available; review pending.",
     "actions": [
       "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Render complete 幷8stroke source; inspect left/right ordering and bends against dictionary.",
-      "Retain source coordinates; no invented geometry or undocumented joining."
+      "Review 怓8strokes including 忄 order and 女 continuous turns.",
+      "Do not bridge disconnected primitives or substitute components."
     ]
   }
 }
