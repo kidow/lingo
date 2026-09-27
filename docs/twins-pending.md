@@ -1657,3 +1657,13 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 | `line-up-the-digits`(자릿수를 맞추다) | two **figures** written one above the other with their right edges flush | 한 사람이 다른 사람 어깨에 올라탄 **목말** | `figures`는 사람으로 읽힌다 — `two columns of tally strokes`처럼 숫자 없이 오른쪽 끝을 맞춘 꼴로 |
 | `four-cornered`(네모난) | one paving slab with all four corners **cut** equally sharp | 모서리를 쳐낸 **팔각형** 판석 | `cut`이 모서리를 잘라 냈다 — `one perfectly square paving slab with four sharp right-angled corners` |
 | `inequality`(부등) | two rows of marks of different length with an open wedge between them | 길이가 다른 막대가 **햇살처럼** 둘러선 무늬 | 뜻이 안 읽힌다 — 한쪽으로 기운 저울처럼 **크고 작음이 한눈에** 보이는 장면으로 |
+
+## 2026-09-27 — 합쳐지지 않은 서류철, 쏠린 저울, 줄어든 식탁
+
+같은 회차에서 셋이 뜻을 못 세웠다. 셋 다 내 개념이 아니라 **굽지 않고** 넘긴다.
+
+| 개념 | 프롬프트 | 나온 그림 | 고칠 곳 |
+| --- | --- | --- | --- |
+| `two-firms-made-one`(두 회사가 하나로) | two paper folders overlapping into a single thicker folder | 평범한 **서류철 하나** — 겹친 흔적이 없다 | 합치기 **전과 후**가 한 장에 보여야 한다 — 두 줄기 개울이 한 물길로 모이는 꼴은 이미 `a-joining-into-one-body`가 썼으니, 두 밧줄을 꼬아 한 가닥으로 만드는 매듭 쪽으로 |
+| `looking-kindly-on-it`(곱게 보다) | a pair of scales with the pan on one side dipping gently under a single feather | 깃털 쪽으로 기운 저울 | 저울은 이미 **스물두** 개념이 쓴다(2026-09-22의 「저울 열다섯」) — 저울을 버린다 |
+| `cut-it-down-to-size`(줄이다) | a long table with four chairs where six chair marks remain on the floor | 네 의자 식탁, **바닥 자국이 거의 안 보인다** | 줄어든 흔적이 뜻의 전부인데 흐리다 — 반으로 접힌 식탁보나 잘라 낸 판자 조각처럼 **잘린 쪽**이 보이는 장면으로 |
