@@ -1,32 +1,34 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "bf31e6191b59e602c933e4f779de230ec548f9d3",
+  "lastCompletedCommit": "a598c7160796c39bca421139408bfde0ef017062",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): document 泂 whole-source trajectory hold",
-    "parentAtStart": "bf31e6191b59e602c933e4f779de230ec548f9d3"
+    "message": "feat(hanja): add reviewed 炘 eight-stroke animation",
+    "parentAtStart": "a598c7160796c39bca421139408bfde0ef017062"
   },
   "currentBatch": {
     "glyphs": [
-      "泂"
+      "炘"
     ],
     "strokes": 8,
-    "status": "held; whole archive and current J/G source retain third-stroke discontinuity",
+    "status": "runtime applied from exact whole archived source",
     "checks": {
-      "sourceRecords": 5,
-      "currentSourceRecords": 5,
+      "sourceRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
-      "blockedStroke": 3,
-      "runtimeAdded": 0,
+      "progressiveFrames": 72,
+      "tests": 1030,
+      "build": true,
+      "mobile": true,
+      "runtimeAdded": 1,
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5027,
-      "remaining": 951,
+      "applied": 5028,
+      "remaining": 950,
       "percent": 84.1
     },
     "grades": [
@@ -124,9 +126,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 875,
-        "remaining": 275,
-        "percent": 76.1
+        "applied": 876,
+        "remaining": 274,
+        "percent": 76.2
       },
       {
         "grade": "특급",
@@ -139,8 +141,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Review 炘 eight strokes, full 火 and 斤 directions, cumulative states and final form.",
-    "Prioritize an independent whole source without the unresolved water-radical trajectory; do not infer results for 泛 or 泲."
+    "Review all eight strokes of 玧 and provider compound bends/hooks against domestic directions.",
+    "Keep exact whole provider geometry; no point edits or component substitution."
   ],
   "held": [
     {
@@ -492,48 +494,47 @@
     }
   ],
   "resources": {
-    "tabs": "batch137 comparison closing after commit; source tab reused",
-    "ramServers": "batch137 port52115 stopping after commit",
-    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
+    "tabs": "batch138 review and UI tabs closing after commit; public source tab reused",
+    "ramServers": "batch138 ports52116,52117,52118 stopping after commit",
+    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/current-source-alternative.json",
-    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch138-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "炘",
-    "root": "u7098",
+    "glyph": "玧",
+    "root": "u73a7",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7000/7098.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7300/73A7.svg",
       "status": 200,
-      "bytes": 4147,
-      "sha256": "1a63168dfc47ca7439bd34c9dc6dccf107e4de7a20d098237e695dcd8b81c025"
+      "bytes": 4326,
+      "sha256": "d74fbcb5d78f5b4cc3f8a451e56a547111b9f7746e1951127f1b3bda1118a58a"
     },
     "source": {
-      "root": "u7098",
+      "root": "u73a7",
       "records": {
-        "u7098": {
-          "name": "u7098",
-          "related": "u7098",
-          "data": "99:0:0:1:0:180:200:u706b-01$0:0:0:0$99:0:0:-20:0:202:200:u65a4-02"
+        "u73a7": {
+          "name": "u73a7",
+          "related": "u73a7",
+          "data": "99:0:0:0:0:200:200:u738b-01$99:0:0:-15:0:200:200:u5141-02"
         },
-        "u706b-01": {
-          "name": "u706b-01",
-          "related": "u706b",
-          "data": "2:7:8:26:53:32:87:18:106$2:0:7:87:51:74:64:52:83$7:0:7:52:18:52:95:52:158:12:185$2:7:8:51:121:75:141:82:161"
+        "u738b-01": {
+          "name": "u738b-01",
+          "related": "u738b",
+          "data": "1:0:0:14:42:75:42$1:32:32:41:42:41:149$1:0:0:17:93:72:93$2:0:7:14:160:43:150:78:135"
         },
-        "u65a4-02": {
-          "name": "u65a4-02",
-          "related": "u65a4",
-          "data": "2:0:7:172:24:151:33:108:42$7:12:7:108:41:108:107:108:166:75:188$1:0:0:108:84:188:84$1:32:0:152:84:152:185"
+        "u5141-02": {
+          "name": "u5141-02",
+          "related": "u5141",
+          "data": "2:0:7:128:17:118:50:102:79$2:0:7:84:80:125:77:170:70$2:7:8:144:36:169:59:181:90$7:0:7:112:91:112:123:112:173:70:188$3:0:5:144:91:144:174:181:174"
         }
       },
       "missing": [],
@@ -546,11 +547,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archived source available; direct full review pending.",
+    "status": "Whole archive source available; full visual review pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Review 炘 eight strokes, full 火 and 斤 directions, cumulative states and final form.",
-      "Prioritize an independent whole source without the unresolved water-radical trajectory; do not infer results for 泛 or 泲."
+      "Review all eight strokes of 玧 and provider compound bends/hooks against domestic directions.",
+      "Keep exact whole provider geometry; no point edits or component substitution."
     ]
   }
 }
