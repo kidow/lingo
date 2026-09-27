@@ -1,23 +1,28 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "94ed9d60d8b25c0e2b1d619c823a734cd94058ac",
+  "lastCompletedCommit": "cc5bf37d3ac748dfb2fe835e200ee4e220b5eca7",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): recover 宖 history and hold seventh-stroke gap",
-    "parentAtStart": "94ed9d60d8b25c0e2b1d619c823a734cd94058ac"
+    "message": "docs(hanja): hold 岯 second-stroke direction mismatch",
+    "parentAtStart": "cc5bf37d3ac748dfb2fe835e200ee4e220b5eca7"
   },
   "currentBatch": {
     "glyphs": [
-      "宖"
+      "岯"
     ],
     "strokes": 8,
-    "status": "held; historical dependencies and engine replay verified",
+    "status": "held; source and engine replay verified",
     "checks": {
-      "snapshotRecords": 4,
-      "historicalRecords": 2,
+      "snapshotRecords": 3,
       "engineFiles": 8,
       "reviewedDomesticStrokes": 8,
-      "seventhStrokeDiscontinuous": true,
+      "progressiveStrokes": [
+        1,
+        2,
+        8
+      ],
+      "progressiveFrames": 27,
+      "secondStrokeDirectionMismatch": true,
       "runtimeAdded": 0,
       "privateMediaSaved": false
     }
@@ -138,11 +143,18 @@
     ]
   },
   "nextActions": [
-    "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Compare complete whole u5caf with all8domestic strokes, particularly lower vertical/bar connection.",
-    "No invented coordinates, connectors or radical substitutions."
+    "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
+    "Review whole 岺 source and all8domestic strokes, including 山 direction and 令 form.",
+    "No guessed coordinates, joins or component substitutions."
   ],
   "held": [
+    {
+      "glyph": "岯",
+      "strokes": 8,
+      "reason": "Second stroke rises rightward in the domestic reference but the source segment is horizontal; current source is unchanged.",
+      "releaseCondition": "Licensed whole source with documented rising second segment and domestic connections; no inferred tilting or redraw.",
+      "path": "docs/hanja-goal-glyphwiki-batch121-2026-09-27"
+    },
     {
       "glyph": "宖",
       "strokes": 8,
@@ -443,50 +455,42 @@
     }
   ],
   "resources": {
-    "tabs": "batch120 review tab closing after commit; public source tab reused",
-    "ramServers": "batch12052080 stopping after commit",
+    "tabs": "batch121 review tabs closing after commit; public source tab reused",
+    "ramServers": "batch12152081–52082 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch120-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch120-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch120-2026-09-27/historical-source-proof.json",
-    "docs/hanja-goal-glyphwiki-batch120-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch120-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch120-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "岯",
-    "root": "u5caf",
-    "grade": "특급",
+    "glyph": "岺",
+    "root": "u5cba",
+    "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5C00/5CAF.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5C00/5CBA.svg",
       "status": 200,
-      "bytes": 4049,
-      "sha256": "47484a6b58f2a5f76aa57cd760ef5279b72230cb0e641b904bbfbb244b207c8d"
+      "bytes": 4289,
+      "sha256": "4aedbfe5ab290cf983a1bddb0b628db483d3d24cdbf60bdfeaec3a987521ac06"
     },
     "source": {
-      "root": "u5caf",
+      "root": "u5cba",
       "records": {
-        "u5caf": {
-          "name": "u5caf",
-          "related": "u5caf",
-          "data": "99:0:0:2:0:175:200:u5c71-01$99:0:0:0:0:200:200:u4e15-02"
-        },
-        "u5c71-01": {
-          "name": "u5c71-01",
-          "related": "u5c71",
-          "data": "1:0:32:50:21:50:147$1:0:13:22:51:22:147$1:2:2:22:147:80:147$1:0:23:80:51:80:147"
-        },
-        "u4e15-02": {
-          "name": "u4e15-02",
-          "related": "u4e15",
-          "data": "1:0:0:82:31:188:31$2:0:7:146:34:121:94:80:136$1:0:0:134:68:134:168$2:7:8:145:86:171:96:181:120$1:0:0:83:178:186:178"
+        "u5cba": {
+          "name": "u5cba",
+          "related": "u5cba",
+          "data": "99:0:0:0:2:200:183:u5c71-03@2$99:0:0:0:56:200:196:u4ee4@5"
         }
       },
-      "missing": [],
+      "missing": [
+        "u5c71-03@2",
+        "u4ee4@5"
+      ],
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -496,11 +500,11 @@
         "entries": 438759
       }
     },
-    "status": "Complete source available; review all8strokes and bottom vertical/bar separation.",
+    "status": "Source inventory ready; recover missing dependencies if any, then direct whole-stroke review.",
     "actions": [
-      "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Compare complete whole u5caf with all8domestic strokes, particularly lower vertical/bar connection.",
-      "No invented coordinates, connectors or radical substitutions."
+      "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
+      "Review whole 岺 source and all8domestic strokes, including 山 direction and 令 form.",
+      "No guessed coordinates, joins or component substitutions."
     ]
   }
 }
