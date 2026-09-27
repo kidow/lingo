@@ -1636,3 +1636,14 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 
 `numbered`를 빼면 된다 — 번호표는 `a small blank paper slip`, 줄 서는 난간은
 `a queue rail` 그대로 두면 뜻이 선다.
+
+## 2026-09-27 — 브레이크 둘 (구웠다, 한쪽을 옮길 후보)
+
+| 개념 | 프롬프트 | 나온 그림 |
+| --- | --- | --- |
+| `the-brakes-slip`(브레이크가 밀리다) | a wheel with a wet rim and a brake pad touching it | 물방울 맺힌 자전거 바퀴 전체와 브레이크 |
+| `slow-the-thing-down`(속도를 늦추다) | one brake block pressed hard against a turning wheel rim | 자전거 브레이크를 바짝 당겨 본 부분 |
+
+그림은 갈려(바퀴 전체 · 브레이크 확대) 구웠지만 같은 물건이다. 「속도를 늦추다」는
+비탈을 내려가며 발로 땅을 끄는 수레, 줄어드는 물레방아처럼 **브레이크 없이**
+옮기면 갈린다.
