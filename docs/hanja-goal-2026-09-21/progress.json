@@ -1,37 +1,86 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "cc5bf37d3ac748dfb2fe835e200ee4e220b5eca7",
+  "lastCompletedCommit": "364c2a610fa3ca48d3a8f2fd170e94a711e354ea",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 岯 second-stroke direction mismatch",
-    "parentAtStart": "cc5bf37d3ac748dfb2fe835e200ee4e220b5eca7"
+    "message": "feat(hanja): add reviewed 岺 eight-stroke animation",
+    "parentAtStart": "364c2a610fa3ca48d3a8f2fd170e94a711e354ea"
   },
   "currentBatch": {
     "glyphs": [
-      "岯"
+      "岺"
     ],
     "strokes": 8,
-    "status": "held; source and engine replay verified",
+    "status": "applied; source, engine, tests, build and mobile verified",
     "checks": {
-      "snapshotRecords": 3,
-      "engineFiles": 8,
-      "reviewedDomesticStrokes": 8,
-      "progressiveStrokes": [
-        1,
-        2,
-        8
-      ],
-      "progressiveFrames": 27,
-      "secondStrokeDirectionMismatch": true,
-      "runtimeAdded": 0,
+      "reviewedAt": "2026-09-27",
+      "sourceAndEngineReplay": {
+        "snapshotRecords": 3,
+        "historicalRecords": 5,
+        "engineFiles": 8,
+        "traceExact": true
+      },
+      "domesticStrokeCount": 8,
+      "progressiveSnapshots": 72,
+      "tests": {
+        "files": 220,
+        "passed": 1006,
+        "failed": 0
+      },
+      "build": {
+        "exitCode": 0,
+        "typeScript": true,
+        "staticPages": 7,
+        "isolated": true,
+        "baseCommit": "b762fbe811e65e81106eea61e3a26576cb38765a",
+        "snapshot": "3842069e3d5730218260d3739605527609be954c"
+      },
+      "artifactParity": {
+        "ownFiles": 20,
+        "publicExports": 3
+      },
+      "ui": {
+        "viewport": [
+          430,
+          932
+        ],
+        "introAutoplay": true,
+        "introReplay": true,
+        "introComplete": "8 / 8",
+        "writingAutoplay": true,
+        "writingReplay": true,
+        "writingComplete": "8 / 8",
+        "canvasInputCounts": [
+          0,
+          1,
+          0
+        ],
+        "canvasYBeforeAfter": [
+          162.8046875,
+          162.8046875
+        ],
+        "dialogYBeforeAfter": [
+          139.8046875,
+          139.8046875
+        ],
+        "scrollBeforeAfter": [
+          126,
+          126
+        ],
+        "touchAction": "none",
+        "vaulNoDrag": true,
+        "staticImages": 0,
+        "consoleWarningsErrors": 0,
+        "connectionRecovery": "CUA REPL stalled twice; session reset recovered existing tab; writing checks subsequently completed."
+      },
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5019,
-      "remaining": 959,
+      "applied": 5020,
+      "remaining": 958,
       "percent": 84
     },
     "grades": [
@@ -129,8 +178,8 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 870,
-        "remaining": 280,
+        "applied": 871,
+        "remaining": 279,
         "percent": 75.7
       },
       {
@@ -143,9 +192,9 @@
     ]
   },
   "nextActions": [
-    "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-    "Review whole 岺 source and all8domestic strokes, including 山 direction and 令 form.",
-    "No guessed coordinates, joins or component substitutions."
+    "Recheck shared HEAD, dirty files, pending --free and runtime.",
+    "Restore exact u5c71-03@2 and pinned u5c71; reproduce full 峀 source.",
+    "Review all8directions/cumulative/final and progressive frames before registration."
   ],
   "held": [
     {
@@ -455,41 +504,49 @@
     }
   ],
   "resources": {
-    "tabs": "batch121 review tabs closing after commit; public source tab reused",
-    "ramServers": "batch12152081–52082 stopping after commit",
+    "tabs": "batch122 review and test tabs closing after commit",
+    "ramServers": "batch122 52083–52085 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch121-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch122-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch122-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch122-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch122-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch122-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "岺",
-    "root": "u5cba",
+    "glyph": "峀",
+    "root": "u5cc0",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5C00/5CBA.svg",
-      "status": 200,
-      "bytes": 4289,
-      "sha256": "4aedbfe5ab290cf983a1bddb0b628db483d3d24cdbf60bdfeaec3a987521ac06"
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5C00/5CC0.svg",
+      "bytes": 4126,
+      "sha256": "9d31157cbe6124a7fcea3cc5f74f9124a8319937f2a9173fde83d0463c226e2c"
     },
     "source": {
-      "root": "u5cba",
+      "root": "u5cc0",
       "records": {
-        "u5cba": {
-          "name": "u5cba",
-          "related": "u5cba",
-          "data": "99:0:0:0:2:200:183:u5c71-03@2$99:0:0:0:56:200:196:u4ee4@5"
+        "u5cc0": {
+          "name": "u5cc0",
+          "related": "u5cc0",
+          "data": "99:0:0:0:0:200:200:u5cc0-k"
+        },
+        "u5cc0-k": {
+          "name": "u5cc0-k",
+          "related": "u5cc0",
+          "data": "99:0:0:0:0:200:175:u5c71-03@2$99:0:0:15:55:185:197:u7531-07"
+        },
+        "u7531-07": {
+          "name": "u7531-07",
+          "related": "u7531",
+          "data": "1:12:13:27:62:27:169$1:2:2:27:62:173:62$1:22:23:173:62:173:169$1:2:2:27:113:173:113$1:0:32:100:15:100:169$1:2:2:27:169:173:169"
         }
       },
       "missing": [
-        "u5c71-03@2",
-        "u4ee4@5"
+        "u5c71-03@2"
       ],
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
@@ -500,11 +557,11 @@
         "entries": 438759
       }
     },
-    "status": "Source inventory ready; recover missing dependencies if any, then direct whole-stroke review.",
+    "status": "Exact mountain dependency recovered in batch122; reuse evidence then direct whole8stroke review.",
     "actions": [
-      "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
-      "Review whole 岺 source and all8domestic strokes, including 山 direction and 令 form.",
-      "No guessed coordinates, joins or component substitutions."
+      "Recheck shared HEAD, dirty files, pending --free and runtime.",
+      "Restore exact u5c71-03@2 and pinned u5c71; reproduce full 峀 source.",
+      "Review all8directions/cumulative/final and progressive frames before registration."
     ]
   }
 }
