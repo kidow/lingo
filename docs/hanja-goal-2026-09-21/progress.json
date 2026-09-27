@@ -1,32 +1,35 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "a4b89f4da54f0405269bb44af2f039425b211aef",
+  "lastCompletedCommit": "5cb121b976d8428963abaf6fc2d121ae4d645f81",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 玭 sixth-stroke continuity hold",
-    "parentAtStart": "a4b89f4da54f0405269bb44af2f039425b211aef"
+    "message": "feat(hanja): add reviewed 芚 eight-stroke animation",
+    "parentAtStart": "5cb121b976d8428963abaf6fc2d121ae4d645f81"
   },
   "currentBatch": {
     "glyphs": [
-      "玭"
+      "芚"
     ],
     "strokes": 8,
-    "status": "held; archive and current whole source share sixth-stroke discontinuity",
+    "status": "applied; provider Korean whole glyph crosschecked with domestic dictionary",
     "checks": {
-      "sourceRecords": 3,
-      "currentSourceRecords": 3,
+      "providerRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
-      "blockedStroke": 6,
-      "runtimeAdded": 0,
+      "progressiveFrames": 72,
+      "tests": 1033,
+      "testFiles": 229,
+      "build": true,
+      "mobile": true,
+      "runtimeAdded": 1,
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5028,
-      "remaining": 950,
+      "applied": 5029,
+      "remaining": 949,
       "percent": 84.1
     },
     "grades": [
@@ -124,9 +127,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 876,
-        "remaining": 274,
-        "percent": 76.2
+        "applied": 877,
+        "remaining": 273,
+        "percent": 76.3
       },
       {
         "grade": "특급",
@@ -139,8 +142,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Compare all eight domestic strokes of 芚, including 艹 order and 屯 bends.",
-    "Apply only exact licensed whole geometry after complete progressive/runtime verification."
+    "Review 芟 domestic eight strokes and provider-declared Korean whole glyph; archive default grass head may differ.",
+    "Preserve complete provider geometry; verify full progressive and app behavior before registration."
   ],
   "held": [
     {
@@ -506,48 +509,48 @@
     }
   ],
   "resources": {
-    "tabs": "batch140 review closing after commit; source tab reused",
-    "ramServers": "batch140 port52120 stopping after commit",
+    "tabs": "batch141 review/progressive/UI closing after commit; public source tab reused",
+    "ramServers": "batch141 ports52121–52123 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/current-source-alternative.json",
-    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch141-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch141-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch141-2026-09-27/archive-source.json",
+    "docs/hanja-goal-glyphwiki-batch141-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch141-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch141-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch141-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "芚",
-    "root": "u829a",
+    "glyph": "芟",
+    "root": "u829f",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/829A.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/829F.svg",
       "status": 200,
-      "bytes": 4687,
-      "sha256": "ae85d8619ef2d52e0bed42f00e16a996c56d4131d4c28040ff380699cb64f193"
+      "bytes": 5200,
+      "sha256": "525d3f84f4e2d1ff314a12563d43200a2581670a273ab980672ffac3ece5821f"
     },
     "source": {
-      "root": "u829a",
+      "root": "u829f",
       "records": {
-        "u829a": {
-          "name": "u829a",
-          "related": "u829a",
-          "data": "99:0:0:0:0:200:180:u8279-03$99:0:0:0:32:200:198:u5c6f"
+        "u829f": {
+          "name": "u829f",
+          "related": "u829f",
+          "data": "99:0:0:0:2:200:180:u8279-03$99:0:0:0:50:200:198:u6bb3"
         },
         "u8279-03": {
           "name": "u8279-03",
           "related": "u8279",
           "data": "1:0:0:13:39:187:39$1:0:0:72:13:72:64$1:0:0:128:13:128:64"
         },
-        "u5c6f": {
-          "name": "u5c6f",
-          "related": "u5c6f",
-          "data": "2:0:7:167:39:99:51:20:65$1:0:13:44:72:44:126$1:2:2:44:126:154:126$1:0:23:154:72:154:126$3:0:5:98:22:98:176:178:176"
+        "u6bb3": {
+          "name": "u6bb3",
+          "related": "u6bb3",
+          "data": "7:12:7:64:27:64:47:63:85:14:103$1:2:2:64:27:132:27$3:22:5:132:27:132:85:178:85$1:0:2:33:105:143:105$2:22:7:143:105:112:169:16:186$2:7:0:56:105:87:167:174:178"
         }
       },
       "missing": [],
@@ -560,11 +563,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archive captured; domestic and complete stroke review pending.",
+    "status": "Whole archive captured; domestic review and regional whole-source selection pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Compare all eight domestic strokes of 芚, including 艹 order and 屯 bends.",
-      "Apply only exact licensed whole geometry after complete progressive/runtime verification."
+      "Review 芟 domestic eight strokes and provider-declared Korean whole glyph; archive default grass head may differ.",
+      "Preserve complete provider geometry; verify full progressive and app behavior before registration."
     ]
   }
 }
