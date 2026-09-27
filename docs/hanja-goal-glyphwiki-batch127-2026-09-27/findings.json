@@ -1,0 +1,83 @@
+{
+  "glyph": "怲",
+  "strokes": 8,
+  "status": "held",
+  "reviewedDomesticStrokes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "cumulativeAndFinalReviewed": true,
+  "progressiveReviewed": false,
+  "sourceGroupsZeroBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      0
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ]
+  ],
+  "excludedEmptyGroup": 3,
+  "blockers": [
+    {
+      "strokes": [
+        5,
+        7
+      ],
+      "kind": "unexpected-outline-crossing",
+      "domestic": "Seventh falling curve ends to the right of the left vertical with a visible gap.",
+      "source": "Seventh curve crosses left vertical in all4built-in presets; each has2intersecting polygon edges."
+    }
+  ],
+  "presets": [
+    {
+      "size": "default",
+      "style": "mincho",
+      "crossingEdges": 2
+    },
+    {
+      "size": 1,
+      "style": "mincho",
+      "crossingEdges": 2
+    },
+    {
+      "size": "default",
+      "style": "gothic",
+      "crossingEdges": 2
+    },
+    {
+      "size": 1,
+      "style": "gothic",
+      "crossingEdges": 2
+    }
+  ],
+  "smallMinchoFailure": "new Kage(1) generates nonfinite hook endpoint (JSON null), visibly omitting leftward hook; excluded.",
+  "alternative": "Latest u6032@11 alias u6032-j@2 uses u4e19-02@1 with curve endpoint exactly on left vertical.",
+  "releaseCondition": "Find licensed whole 怲 geometry retaining domestic gap and valid hook; review all8directions/cumulative/final/progressive. No trimming, coordinate edits or component substitution.",
+  "runtimeAdded": 0,
+  "privateGraphicsSaved": false
+}
