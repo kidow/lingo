@@ -1687,3 +1687,16 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 `numbered`와 같은 자리다 — 「times」를 말하면 모델은 시각을 적는다. 시각 대신
 **지도 위에 이어 그은 점선과 핀 셋**, 혹은 길이가 다른 칸이 줄지어 선 빈 시간표 판처럼
 숫자 없이 차례가 보이는 장면으로 옮긴다. **그림은 굽지 않았다.**
+
+**`pnpm prompt --glyphs`가 넷을 더 짚었다** (위의 두 낱말을 잡도록 넓힌 뒤). 뽑지 않고 넘긴다.
+
+| 개념 | 프롬프트 |
+| --- | --- |
+| `household-accounts`(가계부) | a ruled notebook with two **columns of figures** and a small calculator beside it |
+| `one-of-the-same-age`(동갑) | two tree stumps cut side by side showing **the same number** of rings |
+| `round-down`(내림하다) | a figure with its last **digit** struck through leaving a smaller whole figure |
+| `seat-number`(좌석 번호) | a small plate fixed above a train seat with **digits** on it |
+
+`seat-number`는 값이 곧 뜻이라 숫자를 지우면 빈 판이 된다 — `date-wheel`과 같은
+자리다(IMAGE_STYLE). 좌석 등받이에 같은 꼴의 판이 줄지어 붙은 기차 칸처럼 **판이 자리마다
+다르다는 것**을 보이는 쪽으로 옮긴다.

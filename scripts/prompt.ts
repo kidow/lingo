@@ -91,9 +91,14 @@ const GLYPH_GUARD = /no (?:other )?letters|no readable letters|no text|no writin
  * 값을 지우면 뜻이 사라지는 자리도 있다. 같은 날 `date-wheel`(날짜 회전판)은
  * 숫자 창을 잃고 **그냥 시계**가 됐다. 그런 자리는 막이를 떼는 것이 아니라
  * 개념을 다른 장면으로 옮겨야 한다.
+ *
+ * 2026-09-27에 둘을 더 넣었다. `column of times`는 공책 줄마다 「8:00 … 18:00」을
+ * 적었고(`plan-the-itinerary`), `columns of figures`·`two figures written`은 숫자를
+ * 적거나 **figures를 사람으로 읽어** 목말 탄 두 사람을 그렸다(`line-up-the-digits`).
+ * 둘 다 «no letters»를 달고 있었다.
  */
 const GLYPH_VALUE =
-  /\b(digits?|numeral|numbered|fraction|scoreboard|score|a (?:low|high|single) number|the same number|one raised number)\b/i
+  /\b(digits?|numeral|numbered|fraction|scoreboard|score|a (?:low|high|single) number|the same number|one raised number|(?:column|columns|row|rows) of (?:times|figures|sums)|figures written|with (?:a )?(?:time|times|price|prices) on)\b/i
 
 /**
  * **글자가 곧 개념인 자리는 뺀다.** `digit`(숫자 하나)·`barcode`(바코드)·
