@@ -237,7 +237,8 @@ export function Feed({
   }, [])
 
   /**
-   * 위아래 방향키로 한 장씩 넘긴다.
+   * 위아래 방향키로 한 장씩 넘긴다. **↑가 다음, ↓가 이전이다** — 손가락으로
+   * 카드를 위로 밀어 올리면 다음 장이 오는 것과 같은 방향이다.
    *
    * 스냅이 키보드를 공짜로 준다는 말(위)은 스크롤러에 포커스가 있을 때만
    * 맞다. 페이지는 스크롤하지 않고(globals.css) 스크롤러는 포커스를 받지
@@ -281,7 +282,7 @@ export function Feed({
         return
 
       const from = heading ?? currentRef.current
-      const to = from + (event.key === 'ArrowDown' ? 1 : -1)
+      const to = from + (event.key === 'ArrowUp' ? 1 : -1)
       const slot = root.querySelector<HTMLElement>(`:scope > [data-index="${to}"]`)
       event.preventDefault()
       if (!slot) return
