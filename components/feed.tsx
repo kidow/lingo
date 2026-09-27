@@ -237,6 +237,72 @@ export function Feed({
   }, [])
 
   /**
+   * 위아래 방향키로 한 장씩 넘긴다.
+   *
+   * 스냅이 키보드를 공짜로 준다는 말(위)은 스크롤러에 포커스가 있을 때만
+   * 맞다. 페이지는 스크롤하지 않고(globals.css) 스크롤러는 포커스를 받지
+   * 않아서, 창에서 방향키를 누르면 아무 일도 없었다. 그래서 창에서 받아
+   * 다음·이전 **자리**로 옮긴다. 40px씩 밀고 스냅에 맡기면 한 번에 한 장이
+   * 넘어간다는 보장이 없다.
+   *
+   * 잠금은 그대로다. 미응답 퀴즈 아래에는 자리가 없으니 옮길 곳도 없다.
+   *
+   * 남이 먼저 쓴 키는 건드리지 않는다 — 입력 칸, 열린 메뉴·시트, 트랙
+   * 고르개(Radix가 ArrowDown으로 메뉴를 열며 `preventDefault`를 부른다).
+   * 피드가 숨은 넓은 창(globals.css의 480px 경계)에서도 아무것도 안 한다.
+   */
+  const currentRef = useRef(current)
+  currentRef.current = current
+  useEffect(() => {
+    /**
+     * 부드럽게 넘기는 동안에는 `current`가 아직 앞 카드다. 연달아 누르면 같은
+     * 자리로 두 번 가므로, 가는 중인 자리를 따로 들고 스크롤이 멈추면 놓는다.
+     */
+    let heading: number | null = null
+    let release = 0
+    const root = scroller.current
+    const settle = () => {
+      heading = null
+    }
+    root?.addEventListener('scrollend', settle)
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return
+      if (event.defaultPrevented || event.isComposing) return
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return
+      if (!root || root.offsetParent === null) return
+
+      const target = event.target as HTMLElement | null
+      if (
+        target?.closest(
+          'input, textarea, select, [contenteditable=""], [contenteditable="true"], [role="dialog"], [role="menu"], [role="listbox"]',
+        )
+      )
+        return
+
+      const from = heading ?? currentRef.current
+      const to = from + (event.key === 'ArrowDown' ? 1 : -1)
+      const slot = root.querySelector<HTMLElement>(`:scope > [data-index="${to}"]`)
+      event.preventDefault()
+      if (!slot) return
+
+      heading = to
+      // scrollend를 모르는 브라우저에서도 놓는다. 부드러운 한 칸은 이보다 짧다
+      window.clearTimeout(release)
+      release = window.setTimeout(settle, 1000)
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      slot.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' })
+    }
+
+    window.addEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      window.clearTimeout(release)
+      root?.removeEventListener('scrollend', settle)
+    }
+  }, [])
+
+  /**
    * 새로 붙은 자리만 관찰에 넣는다. 이미 보고 있는 자리는 그대로 둔다.
    *
    * 자리 수와 카드 수가 1:1이라 인덱스로 어디까지 넣었는지만 세면 된다.
