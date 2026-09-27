@@ -1,23 +1,23 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "022594ecdf0006d31295b8baa8de9be51588c05b",
+  "lastCompletedCommit": "a4b89f4da54f0405269bb44af2f039425b211aef",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 玧 fifth-stroke continuity hold",
-    "parentAtStart": "022594ecdf0006d31295b8baa8de9be51588c05b"
+    "message": "docs(hanja): record 玭 sixth-stroke continuity hold",
+    "parentAtStart": "a4b89f4da54f0405269bb44af2f039425b211aef"
   },
   "currentBatch": {
     "glyphs": [
-      "玧"
+      "玭"
     ],
     "strokes": 8,
-    "status": "held; archive and current whole source share fifth-stroke discontinuity",
+    "status": "held; archive and current whole source share sixth-stroke discontinuity",
     "checks": {
       "sourceRecords": 3,
       "currentSourceRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
-      "blockedStroke": 5,
+      "blockedStroke": 6,
       "runtimeAdded": 0,
       "privateMediaSaved": false
     }
@@ -139,10 +139,17 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Compare all eight strokes of 玭, especially 比 compound turns and lower hook.",
-    "Apply only exact licensed whole geometry after full visual/runtime verification."
+    "Compare all eight domestic strokes of 芚, including 艹 order and 屯 bends.",
+    "Apply only exact licensed whole geometry after complete progressive/runtime verification."
   ],
   "held": [
+    {
+      "glyph": "玭",
+      "strokes": 8,
+      "reason": "Whole archive and current provider source have disconnected sixth-stroke line/curve endpoints.",
+      "releaseCondition": "A complete licensed whole-provider glyph with a supported continuous sixth-stroke bend, followed by full domestic and progressive verification.",
+      "path": "docs/hanja-goal-glyphwiki-batch140-2026-09-27"
+    },
     {
       "glyph": "玧",
       "strokes": 8,
@@ -499,48 +506,48 @@
     }
   ],
   "resources": {
-    "tabs": "batch139 comparison closing after commit; source tab reused",
-    "ramServers": "batch139 port52119 stopping after commit",
+    "tabs": "batch140 review closing after commit; source tab reused",
+    "ramServers": "batch140 port52120 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/current-source-alternative.json",
-    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch139-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/current-source-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch140-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "玭",
-    "root": "u73ad",
+    "glyph": "芚",
+    "root": "u829a",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7300/73AD.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/829A.svg",
       "status": 200,
-      "bytes": 4193,
-      "sha256": "a9196470cc17667e168208e784a6798dffc985550d392c96bde8f261b2517849"
+      "bytes": 4687,
+      "sha256": "ae85d8619ef2d52e0bed42f00e16a996c56d4131d4c28040ff380699cb64f193"
     },
     "source": {
-      "root": "u73ad",
+      "root": "u829a",
       "records": {
-        "u73ad": {
-          "name": "u73ad",
-          "related": "u73ad",
-          "data": "99:0:0:0:0:195:200:u738b-01$99:0:0:-10:0:200:200:u6bd4-02"
+        "u829a": {
+          "name": "u829a",
+          "related": "u829a",
+          "data": "99:0:0:0:0:200:180:u8279-03$99:0:0:0:32:200:198:u5c6f"
         },
-        "u738b-01": {
-          "name": "u738b-01",
-          "related": "u738b",
-          "data": "1:0:0:14:42:75:42$1:32:32:41:42:41:149$1:0:0:17:93:72:93$2:0:7:14:160:43:150:78:135"
+        "u8279-03": {
+          "name": "u8279-03",
+          "related": "u8279",
+          "data": "1:0:0:13:39:187:39$1:0:0:72:13:72:64$1:0:0:128:13:128:64"
         },
-        "u6bd4-02": {
-          "name": "u6bd4-02",
-          "related": "u6bd4",
-          "data": "1:2:0:94:80:129:80$1:0:32:94:17:94:167$2:0:7:71:178:97:168:133:152$2:0:7:184:63:168:78:143:96$3:0:5:143:17:143:173:183:173"
+        "u5c6f": {
+          "name": "u5c6f",
+          "related": "u5c6f",
+          "data": "2:0:7:167:39:99:51:20:65$1:0:13:44:72:44:126$1:2:2:44:126:154:126$1:0:23:154:72:154:126$3:0:5:98:22:98:176:178:176"
         }
       },
       "missing": [],
@@ -553,11 +560,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archive source captured; direct full review pending.",
+    "status": "Whole archive captured; domestic and complete stroke review pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Compare all eight strokes of 玭, especially 比 compound turns and lower hook.",
-      "Apply only exact licensed whole geometry after full visual/runtime verification."
+      "Compare all eight domestic strokes of 芚, including 艹 order and 屯 bends.",
+      "Apply only exact licensed whole geometry after complete progressive/runtime verification."
     ]
   }
 }
