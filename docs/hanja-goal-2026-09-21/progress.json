@@ -1,33 +1,86 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "35efcffd9f1802dc381895a2259e8de5727f3fef",
+  "lastCompletedCommit": "ae4e0575698076d96bb5b5692b9ccd07b5a00b2c",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 刵 fifth-stroke extent discrepancy",
-    "parentAtStart": "d9a5d01cb72a90f85cd3177c29c93171a35021c9"
+    "message": "feat(hanja): animate reviewed 咈 strokes",
+    "parentAtStart": "ae4e0575698076d96bb5b5692b9ccd07b5a00b2c"
   },
   "currentBatch": {
     "glyphs": [
-      "刵"
+      "咈"
     ],
     "strokes": 8,
-    "status": "held; source replay and runtime exclusion verified",
-    "runtimeAdded": 0,
+    "status": "validated; ready for own-only commit",
     "checks": {
-      "domesticStrokesDirectlyReviewed": 8,
-      "sourceRecords": 3,
-      "engineFiles": 8,
-      "emptyNonStrokeGroup": 6,
-      "progressiveReviewed": false,
-      "build": "not rerun: research only; batch113 build and1000tests passed"
+      "reviewedAt": "2026-09-27",
+      "sourceAndEngineReplay": {
+        "snapshotRecords": 4,
+        "engineFiles": 8,
+        "traceExact": true
+      },
+      "domesticStrokeCount": 8,
+      "progressiveSnapshots": 72,
+      "tests": {
+        "files": 219,
+        "passed": 1003,
+        "failed": 0
+      },
+      "build": {
+        "exitCode": 0,
+        "typeScript": true,
+        "staticPages": 7,
+        "isolated": true,
+        "baseCommit": "ae4e0575698076d96bb5b5692b9ccd07b5a00b2c",
+        "snapshot": "64900e7a5bb9c2b96e69d12e893ec240ff0e11a6"
+      },
+      "artifactParity": {
+        "ownFiles": 19,
+        "publicExports": 3
+      },
+      "ui": {
+        "viewport": [
+          430,
+          932
+        ],
+        "introAutoplay": true,
+        "introReplay": true,
+        "introComplete": "8 / 8",
+        "writingAutoplay": true,
+        "writingReplay": true,
+        "writingComplete": "8 / 8",
+        "canvasInputCounts": [
+          0,
+          1,
+          0
+        ],
+        "canvasYBeforeAfter": [
+          288.8046875,
+          288.8046875
+        ],
+        "dialogYBeforeAfter": [
+          139.8046875,
+          139.8046875
+        ],
+        "scrollBeforeAfter": [
+          0,
+          0
+        ],
+        "touchAction": "none",
+        "vaulNoDrag": true,
+        "outlineGroups": 1,
+        "staticImages": 0,
+        "consoleWarningsErrors": 0
+      },
+      "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5018,
-      "remaining": 960,
-      "percent": 83.9
+      "applied": 5019,
+      "remaining": 959,
+      "percent": 84
     },
     "grades": [
       {
@@ -131,15 +184,15 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 714,
-        "remaining": 614,
+        "applied": 715,
+        "remaining": 613,
         "percent": 53.8
       }
     ]
   },
   "nextActions": [
-    "Recheck shared HEAD, dirty files, pending --free and runtime.",
-    "Compare all8 domestic strokes of 咈 with whole u5488, including the bent middle strokes and final vertical.",
+    "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
+    "Compare all8domestic strokes and progressive states of whole u5767. Check 石 falling-stroke/mouth connections.",
     "No inferred points, bridges, trims or component substitution."
   ],
   "held": [
@@ -408,51 +461,46 @@
     }
   ],
   "resources": {
-    "tabs": "batch114 review tab closing",
-    "ramServers": "batch11452072 closing; old public archive51989 no longer running",
+    "tabs": "batch115 review and mobile tabs closed",
+    "ramServers": "batch11552073–52075 stopping after commit; no public archive server",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch114-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch115-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch115-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch115-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch115-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch115-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "咈",
-    "root": "u5488",
+    "glyph": "坧",
+    "root": "u5767",
     "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5400/5488.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5700/5767.svg",
       "status": 200,
-      "bytes": 4689,
-      "sha256": "72e298ffec2a889cb9351233e1cf552a959b47cdd18dc3a3a9c05c14b16ed069"
+      "bytes": 4009,
+      "sha256": "9b8b2c477e5234e07cc972c63a2bcaab7d0686e7b8cd5346f3d35a0bd6c2f325"
     },
     "source": {
-      "root": "u5488",
+      "root": "u5767",
       "records": {
-        "u5488": {
-          "name": "u5488",
-          "related": "u5488",
-          "data": "99:0:0:2:0:183:200:u53e3-01$99:0:0:0:0:198:200:u5f17-02"
+        "u5767": {
+          "name": "u5767",
+          "related": "u5767",
+          "data": "99:0:0:2:5:180:195:u571f-01$0:0:0:0$99:0:0:0:0:200:200:u77f3-02"
         },
-        "u53e3-01": {
-          "name": "u53e3-01",
-          "related": "u53e3",
-          "data": "99:0:0:10:6:77:170:u53e3"
+        "u571f-01": {
+          "name": "u571f-01",
+          "related": "u571f",
+          "data": "1:0:0:15:70:87:70$1:0:32:50:18:50:141$2:0:7:15:157:44:148:88:129"
         },
-        "u53e3": {
-          "name": "u53e3",
-          "related": "u53e3",
-          "data": "1:12:13:42:46:42:154$1:2:2:42:46:158:46$1:22:23:158:46:158:154$1:2:2:42:154:158:154"
-        },
-        "u5f17-02": {
-          "name": "u5f17-02",
-          "related": "u5f17",
-          "data": "1:0:2:78:46:170:46$1:22:23:170:46:170:80$1:2:2:90:80:170:80$1:12:13:90:80:86:116$1:2:2:86:116:178:116$2:22:4:178:116:179:148:172:164$7:0:7:116:14:116:108:116:166:74:188$1:0:0:144:14:144:186"
+        "u77f3-02": {
+          "name": "u77f3-02",
+          "related": "u77f3",
+          "data": "1:0:0:78:36:188:36$2:32:7:124:36:109:110:65:145$1:12:13:107:99:107:167$1:2:2:107:99:171:99$1:22:23:171:99:171:167$1:2:2:107:167:171:167"
         }
       },
       "missing": [],
@@ -465,10 +513,10 @@
         "entries": 438759
       }
     },
-    "status": "Complete whole-glyph source; direct review pending",
+    "status": "Complete whole source; all-stroke direct review pending",
     "actions": [
-      "Recheck shared HEAD, dirty files, pending --free and runtime.",
-      "Compare all8 domestic strokes of 咈 with whole u5488, including the bent middle strokes and final vertical.",
+      "Recheck shared HEAD, dirty files, pending --free and actual runtime.",
+      "Compare all8domestic strokes and progressive states of whole u5767. Check 石 falling-stroke/mouth connections.",
       "No inferred points, bridges, trims or component substitution."
     ]
   }
