@@ -133,6 +133,50 @@
   }
 }
 
+/*
+ * iOS 26/27의 윗가장자리 흐림을 끈다.
+ *
+ * iOS는 스크롤되는 웹 내용의 윗가장자리에 제 나름의 흐림(scroll edge effect,
+ * WebKit 안에서는 `scroll pocket`)을 깐다. 헤더가 그 밑에 깔려 시계 줄부터
+ * 트랙 이름까지 뿌옇게 보였다. 데스크톱 Safari에는 이 효과가 없다.
+ *
+ * 끄는 스위치는 따로 없다. WebKit은 **맨 위에 fixed·sticky 요소가 서 있을 때만**
+ * 흐림을 거두고 상태 줄을 그 요소의 `background-color`로 칠한다. 우리 헤더는
+ * flex 줄 안에 흐르는 보통 요소라 후보가 못 된다. 그래서 색만 선언하고 아무것도
+ * 칠하지 않는 띠를 하나 세운다.
+ *
+ * - 뽑는 자리는 윗변 가운데 4px 안쪽 한 점이다. 그래서 z-index를 끝까지 올린다
+ * - 두께가 10px 이하이면 색을 안 읽는다. 그래서 11px이다
+ * - 색은 칠한 픽셀이 아니라 계산된 스타일에서 읽는다. 빈 요소에 `background-clip:
+ *   text`를 주면 색은 있고 칠은 없다 — 화면에는 띠가 안 보인다
+ * - `theme-color`는 이 자리에 쓰이지 않는다 (app/layout.tsx)
+ * - 상태 줄을 `black-translucent`로 바꾸면 이 장치가 통째로 꺼진다 — 내용이
+ *   상태 줄 밑까지 올라가면 WebKit이 가려진 윗자리가 없다고 보고 띠를 안 본다
+ *
+ * 공개된 API가 아니라 지금 WebKit이 그렇게 돈다는 기록이다. 출처:
+ * https://zenn.dev/uakihir0/articles/260920-ios27-pwa-blur
+ * `-webkit-touch-callout`은 iOS WebKit만 알아서 데스크톱에는 띠가 아예 없다.
+ */
+.ios-status-strip {
+  display: none;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .ios-status-strip {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 11px;
+    z-index: 2147483647;
+    pointer-events: none;
+    background-color: var(--color-bg);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

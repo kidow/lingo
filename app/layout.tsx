@@ -40,6 +40,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
+        {/* iOS가 윗가장자리에 까는 흐림을 거두는 띠. 칠하는 것은 없다 (globals.css) */}
+        <div className="ios-status-strip" aria-hidden />
         {children}
         {/* 복사했는지 알려 준다. 카드가 화면을 꽉 채우므로 위 가운데에 띄운다 */}
         <Toaster position="top-center" />
