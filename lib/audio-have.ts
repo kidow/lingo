@@ -44,6 +44,7 @@ export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([
   'es',
   'fr',
   'ja',
+  'ru',
   'zh',
 ])
 
