@@ -527,6 +527,9 @@ function ListenBrief({
   const tag = bcp47(lang, track)
   const baseTag = bcp47(lang)
   const [example] = examplesOf(word, lang, track)
+  // 소리 열쇠는 기본 표기로 짓는다 — 소개 카드와 같은 이유다 (`IntroCard`)
+  const [spoken] = examplesOf(word)
+  const exampleKey = spoken && exampleAudioKey(concept.slug, 0, spoken.text)
 
   return (
     // 그림 자리와 같은 크기라 넘칠 수 있다. 자르지 않고 굴린다 (CardSheet와 같은 이유).
@@ -544,9 +547,23 @@ function ListenBrief({
       <p className="text-lg font-semibold">{concept.meaning_ko}</p>
       {example && (
         <div className="mt-1 border-t border-line pt-2">
-          <p lang={baseTag} className="font-jp text-[15px] leading-relaxed">
-            {example.text}
-          </p>
+          <div className="flex items-center justify-center gap-sm">
+            <p lang={baseTag} className="font-jp text-[15px] leading-relaxed">
+              {example.text}
+            </p>
+            {/*
+              듣기 카드는 소리로 시작한 카드라 예문도 들을 수 있어야 한다.
+              소개 카드처럼 **파일이 있을 때만** 자리를 잡는다
+            */}
+            {exampleKey && hasExampleAudio(lang, exampleKey) && (
+              <SayButton
+                slug={concept.slug}
+                lang={lang}
+                label={example.text}
+                src={exampleAudioPath(lang, concept.slug, 0, spoken.text)}
+              />
+            )}
+          </div>
           <p className="mt-1 text-sm text-sub">{example.ko}</p>
         </div>
       )}
