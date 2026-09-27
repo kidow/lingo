@@ -15,7 +15,36 @@
  * 낡으면 `pnpm check`가 경고한다. 콘텐츠를 넣고 발음을 아직 안 만들었는데 이
  * 목록이 옛날 그대로면 듣기 카드가 빈 소리를 내기 때문이다.
  */
-export const AUDIO_MISSING: ReadonlySet<string> = new Set([])
+export const AUDIO_MISSING: ReadonlySet<string> = new Set([
+  'de/arrival',
+  'de/entrance',
+  'de/love-dearly',
+  'de/rain-down',
+  'en/arrival',
+  'en/entrance',
+  'en/love-dearly',
+  'en/rain-down',
+  'es/arrival',
+  'es/entrance',
+  'es/love-dearly',
+  'es/rain-down',
+  'fr/arrival',
+  'fr/entrance',
+  'fr/love-dearly',
+  'fr/rain-down',
+  'ja/arrival',
+  'ja/entrance',
+  'ja/love-dearly',
+  'ja/rain-down',
+  'ru/arrival',
+  'ru/entrance',
+  'ru/love-dearly',
+  'ru/rain-down',
+  'zh/arrival',
+  'zh/entrance',
+  'zh/love-dearly',
+  'zh/rain-down',
+])
 
 /** 그 언어에 그 개념의 발음이 있는가 */
 export function hasAudio(slug: string, lang: string): boolean {
@@ -48,7 +77,36 @@ export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([
   'zh',
 ])
 
-export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([])
+export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([
+  'de/arrival-0-edbbd25a45c7',
+  'de/entrance-0-8f935241a305',
+  'de/love-dearly-0-080d2f87fb67',
+  'de/rain-down-0-daf28d7c1bf4',
+  'en/arrival-0-651b15aaf220',
+  'en/entrance-0-d03cb94ad4df',
+  'en/love-dearly-0-ebd5d4169171',
+  'en/rain-down-0-17a19ad41399',
+  'es/arrival-0-5129d629370b',
+  'es/entrance-0-525d47e32d62',
+  'es/love-dearly-0-999ed590cd94',
+  'es/rain-down-0-8c5b6f6128bf',
+  'fr/arrival-0-1098356f61c8',
+  'fr/entrance-0-4f4b9921f33b',
+  'fr/love-dearly-0-6029ca9d4b7c',
+  'fr/rain-down-0-8eded76aaa9e',
+  'ja/arrival-0-f923f244bb36',
+  'ja/entrance-0-d51e8c3d1c7d',
+  'ja/love-dearly-0-8e3d06f37566',
+  'ja/rain-down-0-4af99a078020',
+  'ru/arrival-0-158ae77a2c86',
+  'ru/entrance-0-8b9caf7d3551',
+  'ru/love-dearly-0-50d931445355',
+  'ru/rain-down-0-f3ee4f783b34',
+  'zh/arrival-0-528842a3a444',
+  'zh/entrance-0-de0bf52abb37',
+  'zh/love-dearly-0-4a5edc2b6d54',
+  'zh/rain-down-0-a829867b4e52',
+])
 
 /** 그 언어의 그 예문(열쇠는 `exampleAudioKey`)에 소리가 있는가 */
 export function hasExampleAudio(lang: string, key: string): boolean {
