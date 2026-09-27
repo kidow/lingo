@@ -1667,3 +1667,13 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 | `two-firms-made-one`(두 회사가 하나로) | two paper folders overlapping into a single thicker folder | 평범한 **서류철 하나** — 겹친 흔적이 없다 | 합치기 **전과 후**가 한 장에 보여야 한다 — 두 줄기 개울이 한 물길로 모이는 꼴은 이미 `a-joining-into-one-body`가 썼으니, 두 밧줄을 꼬아 한 가닥으로 만드는 매듭 쪽으로 |
 | `looking-kindly-on-it`(곱게 보다) | a pair of scales with the pan on one side dipping gently under a single feather | 깃털 쪽으로 기운 저울 | 저울은 이미 **스물두** 개념이 쓴다(2026-09-22의 「저울 열다섯」) — 저울을 버린다 |
 | `cut-it-down-to-size`(줄이다) | a long table with four chairs where six chair marks remain on the floor | 네 의자 식탁, **바닥 자국이 거의 안 보인다** | 줄어든 흔적이 뜻의 전부인데 흐리다 — 반으로 접힌 식탁보나 잘라 낸 판자 조각처럼 **잘린 쪽**이 보이는 장면으로 |
+
+## 2026-09-27 — 운동장과 같은 트랙
+
+| 개념 | 프롬프트 | 겹친 짝 |
+| --- | --- | --- |
+| `go-round-the-course`(코스를 돌다) | an oval track seen from above with one lane marked by a dotted line | `sports-field`(운동장) — 같은 날 축구장 부감이 `a-match-played`와 겹쳐 **풀밭을 두른 타원 트랙**으로 옮겼다 |
+
+두 장이 80×80에서 같은 붉은 타원이다. 「운동장」은 트랙과 관람석이 맞는 그림이니,
+「코스를 돌다」는 **도는 동작**이 보이게 — 트랙 한 굽이를 도는 주자의 발, 혹은
+반환점 깃발을 돌아 나오는 자전거로 옮긴다. **그림은 굽지 않았다.**
