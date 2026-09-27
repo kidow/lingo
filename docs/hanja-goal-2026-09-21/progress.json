@@ -1,23 +1,23 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "182a86e40ca2db10860cea61affb4344f5b4a216",
+  "lastCompletedCommit": "0c44edcfcb4e1ee55527c6d10af40f211b5c127d",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 坧 crossing stroke geometry",
-    "parentAtStart": "182a86e40ca2db10860cea61affb4344f5b4a216"
+    "message": "docs(hanja): recover 坮 source history and hold discontinuous turn",
+    "parentAtStart": "0c44edcfcb4e1ee55527c6d10af40f211b5c127d"
   },
   "currentBatch": {
     "glyphs": [
-      "坧"
+      "坮"
     ],
     "strokes": 8,
-    "status": "held; source and engine verification passed",
+    "status": "held; exact historical dependencies recovered and engine replay passed",
     "checks": {
-      "sourceRecords": 3,
+      "snapshotRecords": 2,
+      "historicalRecords": 3,
       "engineFiles": 8,
       "reviewedDomesticStrokes": 8,
-      "builtInPresets": 4,
-      "unexpectedCrossing": true,
+      "fourthStrokeDiscontinuous": true,
       "runtimeAdded": 0,
       "privateMediaSaved": false
     }
@@ -138,11 +138,18 @@
     ]
   },
   "nextActions": [
-    "Recheck HEAD, dirty files, pending --free and actual runtime.",
-    "Retrieve original u53f0-02@4 through source history; do not substitute the newest unversioned component.",
-    "If complete source is obtained, inspect all8domestic directions, cumulative/final forms and progressive states."
+    "Recheck shared HEAD, dirty files, pending --free and runtime.",
+    "Read exact u4e3b@7 source from its history; do not substitute current version.",
+    "Compare all8domestic strokes, including first 女 trajectory; no inferred connectors or component substitutions."
   ],
   "held": [
+    {
+      "glyph": "坮",
+      "strokes": 8,
+      "reason": "Fourth-stroke original curves have different endpoints; current Korean whole alternative retains those primitives.",
+      "releaseCondition": "Find a licensed whole source with a documented continuous fourth turn; no inferred connectors or trimming.",
+      "path": "docs/hanja-goal-glyphwiki-batch117-2026-09-27"
+    },
     {
       "glyph": "坧",
       "strokes": 8,
@@ -415,45 +422,46 @@
     }
   ],
   "resources": {
-    "tabs": "batch116 review tab closing after commit",
-    "ramServers": "batch11652076 stopping after commit",
+    "tabs": "batch117 review tabs closing after commit",
+    "ramServers": "batch11752077 stopping after commit",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available for next validation",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch116-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch116-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch116-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch116-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch116-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/historical-source-proof.json",
+    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch117-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "坮",
-    "root": "u576e",
-    "grade": "특급II",
+    "glyph": "妵",
+    "root": "u59b5",
+    "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5700/576E.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5900/59B5.svg",
       "status": 200,
-      "bytes": 4030,
-      "sha256": "f7902ea0b24921cc6e6a77554b0182c5aaef3d959623129ab5eefefe8825d86a"
+      "bytes": 4248,
+      "sha256": "01b4697993283f62e544f23938181f7867b2f0420e7e1ee217e1baca2289f5a3"
     },
     "source": {
-      "root": "u576e",
+      "root": "u59b5",
       "records": {
-        "u576e": {
-          "name": "u576e",
-          "related": "u576e",
-          "data": "99:0:0:2:5:180:195:u571f-01$0:0:0:0$99:0:0:-12:0:204:200:u53f0-02@4"
+        "u59b5": {
+          "name": "u59b5",
+          "related": "u59b5",
+          "data": "99:0:0:2:3:198:201:u5973-01$99:0:0:68:-1:201:200:u4e3b@7"
         },
-        "u571f-01": {
-          "name": "u571f-01",
-          "related": "u571f",
-          "data": "1:0:0:15:70:87:70$1:0:32:50:18:50:141$2:0:7:15:157:44:148:88:129"
+        "u5973-01": {
+          "name": "u5973-01",
+          "related": "u5973",
+          "data": "1:0:0:52:16:26:135$2:7:8:28:118:66:129:85:156$2:22:7:79:61:67:153:9:188$1:0:2:15:61:79:61"
         }
       },
       "missing": [
-        "u53f0-02@4"
+        "u4e3b@7"
       ],
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
@@ -464,11 +472,11 @@
         "entries": 438759
       }
     },
-    "status": "Exact versioned dependency u53f0-02@4 absent from pinned newest-only archive; obtain original version before rendering.",
+    "status": "Obtain exact u4e3b@7 before rendering; first 女 turn needs direct review.",
     "actions": [
-      "Recheck HEAD, dirty files, pending --free and actual runtime.",
-      "Retrieve original u53f0-02@4 through source history; do not substitute the newest unversioned component.",
-      "If complete source is obtained, inspect all8domestic directions, cumulative/final forms and progressive states."
+      "Recheck shared HEAD, dirty files, pending --free and runtime.",
+      "Read exact u4e3b@7 source from its history; do not substitute current version.",
+      "Compare all8domestic strokes, including first 女 trajectory; no inferred connectors or component substitutions."
     ]
   }
 }
