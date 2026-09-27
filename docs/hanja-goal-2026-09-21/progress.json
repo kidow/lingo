@@ -1,20 +1,20 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "2519c18f535526eb0294347999fd0a1a5ef30b58",
+  "lastCompletedCommit": "364a5acf1a2c41ea717dd6286fde04163340911a",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 泛 third and eighth stroke continuity holds",
-    "parentAtStart": "2519c18f535526eb0294347999fd0a1a5ef30b58"
+    "message": "docs(hanja): record 泲 third-stroke continuity hold",
+    "parentAtStart": "dd5f5fe66a40031e2c113d3f225ade99e977209c"
   },
   "currentBatch": {
     "glyphs": [
-      "泛"
+      "泲"
     ],
     "strokes": 8,
-    "status": "held; original third/eighth trajectories disconnected in archive and current whole source",
+    "status": "held; original third-stroke trajectories disconnected in archive and current whole source",
     "checks": {
-      "archiveRecords": 4,
-      "currentRecords": 4,
+      "archiveRecords": 3,
+      "currentRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
       "runtimeAdded": 0,
@@ -138,10 +138,17 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Review 泲 domestic eight strokes and complete whole-provider source; do not infer rejection from other water-radical glyphs.",
-    "If continuity fails, record exact source evidence and move to an independent candidate."
+    "Review 芷 eight domestic strokes and complete whole-provider Korean glyph if declared.",
+    "Preserve original geometry and only apply after progressive/runtime validation."
   ],
   "held": [
+    {
+      "glyph": "泲",
+      "strokes": 8,
+      "reason": "Whole archive and current provider sources have disconnected third-stroke curves.",
+      "releaseCondition": "A licensed complete whole-provider glyph with supported continuous third stroke, then full domestic/progressive and runtime verification.",
+      "path": "docs/hanja-goal-glyphwiki-batch146-2026-09-27"
+    },
     {
       "glyph": "泛",
       "strokes": 8,
@@ -512,50 +519,47 @@
     }
   ],
   "resources": {
-    "tabs": "batch145 review closed; source tab remains for next candidate",
-    "ramServers": "batch145 port52133 stopped",
+    "tabs": "batch146 review closed; source tab remains for next candidate",
+    "ramServers": "batch146 port52134 stopped",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/current-source-alternative.json",
-    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/current-source-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "泲",
-    "root": "u6cf2",
-    "grade": "특급",
+    "glyph": "芷",
+    "root": "u82b7",
+    "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6CF2.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/82B7.svg",
       "status": 200,
-      "bytes": 4481,
-      "sha256": "ef1e9ce582ae89689ef6ceb3357ce545f37f5a926e6ffcb0ebb5016468312df8"
+      "bytes": 4270,
+      "sha256": "d863689b03e15308d28cf51dc779a87148b395bbabfc74eb2edd247b1b923c4d"
     },
     "source": {
-      "root": "u6cf2",
+      "root": "u82b7",
       "records": {
-        "u6cf2": {
-          "name": "u6cf2",
-          "related": "u6cf2",
-          "data": "99:0:0:3:0:160:200:u6c35-01$99:0:0:52:0:197:200:u20094-jv"
+        "u82b7": {
+          "name": "u82b7",
+          "related": "u82b7",
+          "data": "99:0:0:0:0:200:200:u8279-03:0:0:0$99:0:0:0:55:200:200:u6b62@1:0:0:0"
         },
-        "u6c35-01": {
-          "name": "u6c35-01",
-          "related": "u6c35",
-          "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
-        },
-        "u20094-jv": {
-          "name": "u20094-jv",
-          "related": "u20094",
-          "data": "2:0:7:169:32:132:51:49:60$1:12:13:49:60:39:99$1:2:2:39:99:174:99$2:22:4:174:99:174:139:162:160$1:0:0:100:17:100:186$2:32:7:97:99:69:152:16:172"
+        "u8279-03": {
+          "name": "u8279-03",
+          "related": "u8279",
+          "data": "1:0:0:13:39:187:39$1:0:0:72:13:72:64$1:0:0:128:13:128:64"
         }
       },
-      "missing": [],
+      "missing": [
+        "u6b62@1"
+      ],
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -565,11 +569,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archive captured; domestic and whole-source review pending.",
+    "status": "Whole archive and domestic availability captured; full review pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Review 泲 domestic eight strokes and complete whole-provider source; do not infer rejection from other water-radical glyphs.",
-      "If continuity fails, record exact source evidence and move to an independent candidate."
+      "Review 芷 eight domestic strokes and complete whole-provider Korean glyph if declared.",
+      "Preserve original geometry and only apply after progressive/runtime validation."
     ]
   }
 }
