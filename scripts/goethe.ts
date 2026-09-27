@@ -105,7 +105,18 @@ export function headwordsOf(line: string): string[] {
   return (
     head
       .split('/')
-      .map((form) => form.trim())
+      // 관사는 줄 머리에서만 뗐으므로 빗금 뒤 형태에 남는다(`die Hausfrau/der Hausmann`).
+      // 칸 사각형이 관사 첫 글자를 자른 줄(`er Kindergarten` · `ie Spielgruppe`)과
+      // 목적어 표시(`jdn. erschrecken`)도 형태마다 뗀다
+      .map((form) =>
+        form
+          .trim()
+          .replace(ARTICLE, '')
+          .replace(/^(?:er|ie|as) (?=\p{Lu})/u, '')
+          .replace(/^(?:jdn|jdm|jds|etw)\. /, ''),
+      )
+      // 활용 앞 쉼표가 빠진 줄(`festnehmen nimmt fest`) — 끝 낱말이 앞 동사의 분리 전철이다
+      .map((form) => form.replace(/^(\p{Ll}+) \p{Ll}+ (\p{Ll}+)$/u, (all, verb, prefix) => (verb.startsWith(prefix) ? verb : all)))
       .filter((form) => /^[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß. '-]*$/.test(form) && form.length > 1)
       // 네 낱말이 넘으면 표제어가 아니라 머리말·판권의 문장이다. 표제어는 길어도
       // `jedes Mal` · `weg sein` · `Bescheid sagen` 셋 안쪽이다
