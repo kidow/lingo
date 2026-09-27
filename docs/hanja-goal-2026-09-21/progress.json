@@ -1,27 +1,23 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "1d1e7a117d755116d4ef464cd9ffdcf8461d0e4b",
+  "lastCompletedCommit": "2519c18f535526eb0294347999fd0a1a5ef30b58",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 芦 eight-stroke animation",
-    "parentAtStart": "1d1e7a117d755116d4ef464cd9ffdcf8461d0e4b"
+    "message": "docs(hanja): record 泛 third and eighth stroke continuity holds",
+    "parentAtStart": "2519c18f535526eb0294347999fd0a1a5ef30b58"
   },
   "currentBatch": {
     "glyphs": [
-      "芦"
+      "泛"
     ],
     "strokes": 8,
-    "status": "applied; complete provider glyph crosschecked with domestic dictionary",
+    "status": "held; original third/eighth trajectories disconnected in archive and current whole source",
     "checks": {
-      "providerRecords": 3,
+      "archiveRecords": 4,
+      "currentRecords": 4,
       "engineFiles": 8,
       "domesticReviewed": 8,
-      "progressiveFrames": 72,
-      "tests": 1042,
-      "testFiles": 232,
-      "build": true,
-      "mobile": true,
-      "runtimeAdded": 1,
+      "runtimeAdded": 0,
       "privateMediaSaved": false
     }
   },
@@ -142,10 +138,17 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Review 泛 eight domestic strokes against complete provider geometry; inspect water rising stroke and final bend continuity.",
-    "Do not transfer hold decisions from other water-radical glyphs; investigate exact whole source and declared dependencies."
+    "Review 泲 domestic eight strokes and complete whole-provider source; do not infer rejection from other water-radical glyphs.",
+    "If continuity fails, record exact source evidence and move to an independent candidate."
   ],
   "held": [
+    {
+      "glyph": "泛",
+      "strokes": 8,
+      "reason": "Whole archive and current provider sources have disconnected third and eighth stroke trajectories.",
+      "releaseCondition": "A licensed complete whole-provider glyph with supported continuous third and eighth strokes, followed by full domestic and progressive review.",
+      "path": "docs/hanja-goal-glyphwiki-batch145-2026-09-27"
+    },
     {
       "glyph": "玭",
       "strokes": 8,
@@ -509,53 +512,47 @@
     }
   ],
   "resources": {
-    "tabs": "batch144 review/progressive/UI closed; source tab remains for next candidate",
-    "ramServers": "batch144 ports52130–52132 stopped",
+    "tabs": "batch145 review closed; source tab remains for next candidate",
+    "ramServers": "batch145 port52133 stopped",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/archive-source.json",
-    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch144-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/current-source-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/findings.json",
+    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch145-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "泛",
-    "root": "u6cdb",
-    "grade": "1급",
+    "glyph": "泲",
+    "root": "u6cf2",
+    "grade": "특급",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6CDB.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/6C00/6CF2.svg",
       "status": 200,
-      "bytes": 4419,
-      "sha256": "5b124a2cab65e72eb5e028ecd35f549a6666ca9665f19e4a046d3eccb835daa1"
+      "bytes": 4481,
+      "sha256": "ef1e9ce582ae89689ef6ceb3357ce545f37f5a926e6ffcb0ebb5016468312df8"
     },
     "source": {
-      "root": "u6cdb",
+      "root": "u6cf2",
       "records": {
-        "u6cdb": {
-          "name": "u6cdb",
-          "related": "u6cdb",
-          "data": "99:0:0:5:5:160:199:u6c35-01$99:0:0:-29:0:200:200:u4e4f-02"
+        "u6cf2": {
+          "name": "u6cf2",
+          "related": "u6cf2",
+          "data": "99:0:0:3:0:160:200:u6c35-01$99:0:0:52:0:197:200:u20094-jv"
         },
         "u6c35-01": {
           "name": "u6c35-01",
           "related": "u6c35",
           "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
         },
-        "u4e4f-02": {
-          "name": "u4e4f-02",
-          "related": "u4e4f",
-          "data": "2:0:7:177:22:139:40:88:47$99:0:0:0:33:200:196:u4e4b-02:0:0:0"
-        },
-        "u4e4b-02": {
-          "name": "u4e4b-02",
-          "related": "u4e4b",
-          "data": "1:0:32:137:15:137:58$1:0:2:87:58:174:58$2:22:7:174:58:151:109:113:149$2:0:7:85:176:95:161:106:120$6:7:0:105:120:109:159:121:176:179:171"
+        "u20094-jv": {
+          "name": "u20094-jv",
+          "related": "u20094",
+          "data": "2:0:7:169:32:132:51:49:60$1:12:13:49:60:39:99$1:2:2:39:99:174:99$2:22:4:174:99:174:139:162:160$1:0:0:100:17:100:186$2:32:7:97:99:69:152:16:172"
         }
       },
       "missing": [],
@@ -568,11 +565,11 @@
         "entries": 438759
       }
     },
-    "status": "Whole archive captured; domestic directions and full geometry not reviewed yet.",
+    "status": "Whole archive captured; domestic and whole-source review pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Review 泛 eight domestic strokes against complete provider geometry; inspect water rising stroke and final bend continuity.",
-      "Do not transfer hold decisions from other water-radical glyphs; investigate exact whole source and declared dependencies."
+      "Review 泲 domestic eight strokes and complete whole-provider source; do not infer rejection from other water-radical glyphs.",
+      "If continuity fails, record exact source evidence and move to an independent candidate."
     ]
   }
 }

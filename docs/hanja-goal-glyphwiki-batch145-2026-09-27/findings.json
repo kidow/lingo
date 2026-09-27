@@ -1,0 +1,103 @@
+{
+  "glyph": "泛",
+  "date": "2026-09-27",
+  "status": "held: original trajectories are disconnected within domestic strokes3 and8",
+  "domesticStrokesReviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8,
+      9
+    ]
+  ],
+  "domesticOrderCorrection": "Domestic stroke6 is horizontal and stroke7 is independently falling; do not merge them merely because their source endpoints meet.",
+  "blockers": [
+    {
+      "stroke": 3,
+      "domestic": "Continuous lower entry rising up-right; all8direction and cumulative states visually inspected.",
+      "archive": {
+        "curveEnd": [
+          39.875,
+          183.48
+        ],
+        "nextCurveStart": [
+          36,
+          150.5
+        ]
+      },
+      "current": {
+        "root": "u6cdb-j@7",
+        "component": "u6c35-01@21",
+        "curveEnd": [
+          42.75,
+          184
+        ],
+        "nextCurveStart": [
+          39.49,
+          145
+        ]
+      },
+      "reason": "Source curve pieces overlap as an outline but do not share a sequential pen endpoint. Reversing either full curve does not create the domestic continuous stroke."
+    },
+    {
+      "stroke": 8,
+      "domestic": "Up-right entry turns into down-right and right sweep.",
+      "archive": {
+        "curveEnd": [
+          92.37,
+          130.8
+        ],
+        "nextBezierStart": [
+          91.225,
+          130.8
+        ]
+      },
+      "current": {
+        "root": "u6cdb-j@7",
+        "component": "u4e4b-02@3",
+        "curveEnd": [
+          93.49,
+          130.8
+        ],
+        "nextBezierStart": [
+          92.325,
+          130.8
+        ]
+      },
+      "reason": "Even the small final join is not exact. No bridge or trimming inferred."
+    }
+  ],
+  "runtimeAdded": 0,
+  "privateMediaSaved": false,
+  "releaseCondition": "A licensed complete whole-provider glyph with supported continuous third and eighth strokes, followed by full domestic and progressive review."
+}
