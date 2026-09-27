@@ -1,31 +1,35 @@
 {
   "status": "active",
   "date": "2026-09-27",
-  "lastCompletedCommit": "364a5acf1a2c41ea717dd6286fde04163340911a",
+  "lastCompletedCommit": "462b0075763de3f4a68aa30ea4a0ec69eead559e",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 泲 third-stroke continuity hold",
-    "parentAtStart": "dd5f5fe66a40031e2c113d3f225ade99e977209c"
+    "message": "feat(hanja): add reviewed 芷 eight-stroke animation",
+    "parentAtStart": "462b0075763de3f4a68aa30ea4a0ec69eead559e"
   },
   "currentBatch": {
     "glyphs": [
-      "泲"
+      "芷"
     ],
     "strokes": 8,
-    "status": "held; original third-stroke trajectories disconnected in archive and current whole source",
+    "status": "applied; complete provider Korean alias glyph crosschecked with domestic dictionary",
     "checks": {
-      "archiveRecords": 3,
-      "currentRecords": 3,
+      "providerRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 8,
-      "runtimeAdded": 0,
+      "progressiveFrames": 72,
+      "tests": 1045,
+      "testFiles": 233,
+      "build": true,
+      "mobile": true,
+      "runtimeAdded": 1,
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5032,
-      "remaining": 946,
+      "applied": 5033,
+      "remaining": 945,
       "percent": 84.2
     },
     "grades": [
@@ -123,9 +127,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 879,
-        "remaining": 271,
-        "percent": 76.4
+        "applied": 880,
+        "remaining": 270,
+        "percent": 76.5
       },
       {
         "grade": "특급",
@@ -138,8 +142,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD, pending --free and runtime.",
-    "Review 芷 eight domestic strokes and complete whole-provider Korean glyph if declared.",
-    "Preserve original geometry and only apply after progressive/runtime validation."
+    "Review 芩 eight domestic strokes and provider-declared complete Korean form.",
+    "Retain whole original geometry and apply only after full progressive/runtime verification."
   ],
   "held": [
     {
@@ -519,47 +523,61 @@
     }
   ],
   "resources": {
-    "tabs": "batch146 review closed; source tab remains for next candidate",
-    "ramServers": "batch146 port52134 stopped",
+    "tabs": "batch147 UI closed; review tab detached during cleanup; source tab remains for next candidate",
+    "ramServers": "batch147 ports52135–52137 stopped",
     "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/current-source-alternative.json",
-    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/findings.json",
-    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch146-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch147-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch147-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch147-2026-09-27/archive-source.json",
+    "docs/hanja-goal-glyphwiki-batch147-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch147-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch147-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch147-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "芷",
-    "root": "u82b7",
+    "glyph": "芩",
+    "root": "u82a9",
     "grade": "특급II",
     "strokes": 8,
     "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/82B7.svg",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8200/82A9.svg",
       "status": 200,
-      "bytes": 4270,
-      "sha256": "d863689b03e15308d28cf51dc779a87148b395bbabfc74eb2edd247b1b923c4d"
+      "bytes": 4678,
+      "sha256": "aa63354d8cb51e8578c5184d7970fee7b49e5c0ccc07f55367267a006557723c"
     },
     "source": {
-      "root": "u82b7",
+      "root": "u82a9",
       "records": {
-        "u82b7": {
-          "name": "u82b7",
-          "related": "u82b7",
-          "data": "99:0:0:0:0:200:200:u8279-03:0:0:0$99:0:0:0:55:200:200:u6b62@1:0:0:0"
+        "u82a9": {
+          "name": "u82a9",
+          "related": "u82a9",
+          "data": "99:0:0:0:0:200:190:u8279-03$99:0:0:0:37:200:200:u4eca"
         },
         "u8279-03": {
           "name": "u8279-03",
           "related": "u8279",
           "data": "1:0:0:13:39:187:39$1:0:0:72:13:72:64$1:0:0:128:13:128:64"
+        },
+        "u4eca": {
+          "name": "u4eca",
+          "related": "u4eca",
+          "data": "99:0:0:0:-1:200:215:u4eba-03:0:0:0$99:0:0:29:68:174:194:u2a70a-var-003:0:0:0"
+        },
+        "u4eba-03": {
+          "name": "u4eba-03",
+          "related": "u4eba",
+          "data": "2:0:7:102:16:68:71:11:97$2:7:0:98:19:133:66:179:85"
+        },
+        "u2a70a-var-003": {
+          "name": "u2a70a-var-003",
+          "related": "u2a70a",
+          "data": "1:0:0:42:32:149:32$1:0:2:19:81:168:81$1:22:0:168:81:121:181"
         }
       },
-      "missing": [
-        "u6b62@1"
-      ],
+      "missing": [],
       "snapshot": {
         "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
         "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
@@ -572,8 +590,8 @@
     "status": "Whole archive and domestic availability captured; full review pending.",
     "actions": [
       "Recheck shared HEAD, pending --free and runtime.",
-      "Review 芷 eight domestic strokes and complete whole-provider Korean glyph if declared.",
-      "Preserve original geometry and only apply after progressive/runtime validation."
+      "Review 芩 eight domestic strokes and provider-declared complete Korean form.",
+      "Retain whole original geometry and apply only after full progressive/runtime verification."
     ]
   }
 }
