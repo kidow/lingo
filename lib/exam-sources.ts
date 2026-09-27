@@ -87,6 +87,19 @@ export const EXAM_SOURCES: ExamSource[] = [
     format: '영상',
   },
   {
+    // 영상에는 음원·정답이 따로 없다. 같은 회차의 것이 YBM 자료실에 붙는다 — 반기마다 새 글이다
+    id: 'toeic-ybm-answer-audio',
+    track: 'toeic',
+    kind: 'past',
+    name: 'YBM 실제기출 18차 정답 · 음원',
+    url: 'https://www.ybmbooks.com/reader/reader_read.asp?kind_sub=&step_1=&step_2=&category_1=366&id=2584&search=&searchvalue=&page=1&seq=3006',
+    operator: 'YBM(ETS 라이선스)',
+    cost: '무료',
+    scope: '2026 상반기 정기시험 200문항의 정답 · LC 스크립트 · 번역 · MP3',
+    format: 'PDF · MP3',
+    note: 'MP3는 ETS 라이선스상 국내에서만 받을 수 있습니다. 새 회차가 나오면 자료실에 새 글이 붙습니다.',
+  },
+  {
     id: 'toeic-kr-sample',
     track: 'toeic',
     kind: 'mock',
@@ -655,17 +668,6 @@ export const EXAM_SOURCES: ExamSource[] = [
     cost: '무료',
     scope: 'ТЭУ–ТРКИ-IV 표준 시험 6개',
     format: 'PDF',
-  },
-  {
-    id: 'torfl-tsu-demo',
-    track: 'torfl',
-    kind: 'mock',
-    name: '톰스크국립대 웹 데모',
-    url: 'https://test.tsu.ru/ru/profile/test/quiz/28',
-    operator: '톰스크국립대 РКИ 시험센터',
-    cost: '무료',
-    scope: 'A1 어휘 · 문법 70문항(50분), 듣기 데모',
-    format: '웹 풀이',
   },
   {
     id: 'torfl-spbu-webinars',

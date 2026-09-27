@@ -24,7 +24,7 @@
 | DELE | ✅ 세계 공통 실제 시행 시험(레벨별 1회) | Modelo 0 | ProfeDeELE, OpenExamPrep(AI) | Difusión, Edinumen |
 | DELF·DALF | ❌ | FEI 예시 A1–C2 | RFI, Hachette, Klett, delfdalf.ch, Partajon | CLE abc DELF |
 | TELC | ❌ | telc Übungstest 1(레벨별) | LevelKraft, Telc Trainer(첫 1회) | Klett, BO Vorbereitung, telc Shop |
-| TORFL | ❌ | SPbU 17개, 푸시킨 대학 6개, TSU 웹 데모 | OpenExamPrep | 뿌쉬낀하우스 |
+| TORFL | ❌ | SPbU 17개, 푸시킨 대학 6개 | OpenExamPrep | 뿌쉬낀하우스 |
 | 한능검 | ✅ 한국어문회 113·114회 | — | hanjatest.me, EBS 재게시 | 와포 앱 |
 
 **모든 출처가 링크로만 쓸 수 있다.** 재사용을 허락하는 곳은 하나도 없었다. 눈에 띄는
@@ -169,7 +169,7 @@ Goethe 자료임을 따로 밝혀야 한다.
 | [SPbU TORFL](https://testingcenter.spbu.ru/en/exams/russian/torfl.html) | 상트페테르부르크국립대 | 공식 | 무료 | A1–C2 표준 6 + 데모 11 = PDF 17개 | PDF | 공식 | 재사용 조항 미확인 |
 | [SPbU 응시자 웨비나](https://testingcenter.spbu.ru/en/webinars/for-the-torfl-exam-candidates.html) | SPbU | 공식 | 무료 | A1–C2 6회 | 영상 + PDF | 공식 | — |
 | [푸시킨 대학 ТРКИ](https://www.pushkin.institute/certificates/trki/) | 푸시킨 러시아어대학 | 공식 | 무료 | 표준 시험 6개 | PDF | 공식 | — |
-| [TSU 웹 데모](https://test.tsu.ru/ru/profile/test/quiz/28) | 톰스크국립대 | 공식 | 무료 | A1 어휘·문법 70문항, 듣기 데모 | 웹 풀이 | 공식 데모 | — |
+| [TSU 웹 데모](https://test.tsu.ru/ru/profile/test/quiz/28) | 톰스크국립대 | 공식 | 무료 | A1 어휘·문법 70문항, 듣기 데모 | 웹 풀이 | 공식 데모 | **2026-09-28 목록에서 뺐다** — 해외 수집기로는 열리는데 한국 회선에서는 연결이 끊긴다(`pnpm sources`) |
 | [OpenExamPrep TORFL](https://open-exam-prep.com/exams/language/torfl) | OpenExamPrep | 비공식 | 무료 | A1–C2 약 600문항 | 웹 풀이 | 자체(방식 미확인) | 정답 검증 필요 |
 | [뿌쉬낀하우스](https://lecture.pushkinhouse.co.kr/gnu/bbs/board.php?bo_table=lt_offline_notice&wr_id=253) | ㈜뿌쉬낀하우스 | 비공식 | 문제집 유료, 듣기 MP3 무료 | 기초–2단계 | 책 + MP3 | 러시아 원서 한국판 | — |
 
@@ -208,6 +208,13 @@ Goethe 자료임을 따로 밝혀야 한다.
 
 위 표에서 고른 것이 `lib/exam-sources.ts`에 들어갔다. 찾기 시트 빈 화면 맨 위에 선다
 (spec.md §3). 빼 둔 것과 이유는 그 파일 머리 주석에 있다.
+
+### 링크 점검 — `pnpm sources`
+
+목록의 주소를 전부 열어 **살아 있음 · 막힘(401·403·429) · 죽음**으로 가른다. 막힘은
+봇 차단일 때가 많아 브라우저로 한 번 열어 본다. 죽은 것이 있으면 1로 끝난다. 마감이
+지난 행사도 짚는다. 2026-09-28 첫 점검: 54곳 가운데 살아 있음 49 · 막힘 4(Japanesetest4you,
+delf-dalf.co.kr, Goethe 둘 — 모두 전날 수집기로는 열렸다) · 죽음 1(톰스크 → 뺐다).
 
 ## 기출 탭에 넣을 때 필요한 칸
 
