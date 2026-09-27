@@ -1614,3 +1614,13 @@ carriage」로 꼴을 박고 «no shopping trolley»를 붙여 다시 뽑았다.
 
 `column` 대신 `one ruled notebook page`처럼 **종이임을 먼저 말하면** 갈린다.
 **그림은 굽지 않았다.**
+
+## 2026-09-27 — 숫자가 박힌 말뚝, 경첩 대신 둥근 통, 「지금」과 같은 모래시계
+
+같은 회차에서 셋이 걸렸다. 셋 다 내 개념이 아니라 **굽지 않고** 넘긴다.
+
+| 개념 | 프롬프트 | 나온 그림 | 옮길 곳 |
+| --- | --- | --- | --- |
+| `set-the-order`(차례를 정하다) | a row of **numbered** pegs being moved into a line on a board | 말뚝마다 **1 2 3 4 5**가 찍혔다 | 2026-09-23에 숫자 일곱을 걷어 낸 자리와 같다 — `numbered`를 빼고 크기 순으로 늘어선 말뚝처럼 **꼴로** 차례를 보인다 |
+| `always-in-that-way`(늘 그런 식으로) | one hinge groove worn evenly the whole way round | 뚜껑 달린 **둥근 통**, 두 번 다 | 「hinge groove」만으로는 경첩이 안 그려진다 — 문짝과 경첩을 먼저 말하고 닳은 자리를 붙인다 |
+| `the-time-of-it`(때) | one sand glass standing upright with its upper bulb half run out | 반쯤 흘러내린 모래시계 | 이미 그린 `now`(지금)와 **같은 그림**이다. 「때」는 해시계 그림자나 알람이 울리는 자명종처럼 **정해진 순간**으로 옮긴다 |
