@@ -184,6 +184,11 @@ function terms(lang: 'en' | 'zh' | 'ru' | 'de'): Set<string> {
     if (!word) continue
     set.add(fold(lang, word.term))
     for (const other of word.also ?? []) set.add(fold(lang, other))
+    // 인사 장면은 한 마디가 문장이라 대문자로 적었다(`Danke` · `Hallo`) — 목록은
+    // 소문자다(`danke` · `hallo`). 대소문자 짝을 다 접으면 `essen`/`Essen`이
+    // 섞이므로 장면에서만 접는다
+    if (lang === 'de' && concept.category === 'scene')
+      set.add(word.term.charAt(0).toLowerCase() + word.term.slice(1))
   }
   return set
 }
