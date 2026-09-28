@@ -635,6 +635,17 @@ for (const file of files) {
           fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)
         if (bareElision(lang, example.text))
           fail(where, `fr.${at}에 축약의 아포스트로피가 빠졌습니다 — "${example.text}"`)
+        /*
+         * **스페인어 의문 · 감탄은 여는 부호로 시작한다.** 2026-09-28까지 의문문
+         * 1127개 중 370개에만 ¿가 있었다 — 상황 표현을 쓸 때마다 «다수를 따른다»가
+         * 빠진 쪽을 굳혔다. 그날 745개를 한 번에 채웠으므로 이제 막는다. 표제어는
+         * 문장부호 없이 두므로 문맥 카드의 빈칸은 그대로다.
+         */
+        if (lang === 'es' && typeof example.text === 'string')
+          for (const sentence of example.text.match(/[^.!?]*[.!?]+/g) ?? [])
+            if ((sentence.trimEnd().endsWith('?') && !sentence.includes('¿')) ||
+                (sentence.trimEnd().endsWith('!') && !sentence.includes('¡')))
+              fail(where, `es.${at}의 의문 · 감탄문에 여는 부호(¿ ¡)가 없습니다 — "${sentence.trim()}"`)
         if (typeof example.text === 'string')
           for (const stray of strayScripts(lang, example.text))
             fail(where, `${lang}.${at}에 ${stray}${subject(stray)} 섞여 있습니다 — "${example.text}"`)
