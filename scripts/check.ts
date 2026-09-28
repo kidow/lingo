@@ -16,6 +16,7 @@ import { entriesForTrack, exampleAudioKey } from '../lib/entries.ts'
 import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { LANG } from '../lib/lang.ts'
+import { categoryByPos } from '../lib/category-pos.ts'
 import { judgeExample, whyLateVerb } from '../lib/headword.ts'
 import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import { fingerprint } from './levels-stamp.ts'
@@ -761,6 +762,34 @@ for (const [category, count] of Object.entries(perCategory)) {
   if (count > 0 && count < MIN_PER_CATEGORY)
     warn(`category "${category}" 개념이 ${count}개뿐입니다 — 오답 보기를 전체 풀에서 뽑게 됩니다`)
 }
+
+/**
+ * **category가 일곱 언어의 품사와 어긋난 자리** (lib/category-pos.ts).
+ *
+ * 2026-09-28에 이미 314개가 있었다. 전부 경고하면 그 더미에 새 것이 묻히므로
+ * 넘김 문서(docs/category-pending.md)에 적힌 것은 숫자로만 센다. **문서에 없는
+ * 것만 이름을 부른다** — 새로 넣은 개념에서 같은 실수가 쌓이지 않게 하려는
+ * 자리다. 고친 것은 문서에서 그 줄을 지우면 되고, 지우지 않아도 조용하다.
+ */
+const CATEGORY_PENDING = join('docs', 'category-pending.md')
+const handedOver = new Set(
+  existsSync(CATEGORY_PENDING)
+    ? [...readFileSync(CATEGORY_PENDING, 'utf8').matchAll(/`[a-z]+\/([a-z0-9-]+)`/g)].map((m) => m[1])
+    : [],
+)
+let handedOverLeft = 0
+for (const concept of all) {
+  if (concept.category === 'scene') continue
+  const byPos = categoryByPos(concept.words)
+  if (!byPos || byPos === concept.category) continue
+  if (handedOver.has(concept.slug)) handedOverLeft += 1
+  else
+    warn(
+      `${concept.slug} — category가 "${concept.category}"인데 일곱 언어 중 다섯 이상이 ${byPos}입니다. 오답 보기가 다른 품사로 채워집니다`,
+    )
+}
+if (handedOverLeft > 0)
+  notes.push(`category가 품사와 어긋난 ${handedOverLeft}개는 임자에게 넘겼습니다 — ${CATEGORY_PENDING}`)
 
 /**
  * `also`가 다른 개념의 정답과 겹치는 자리.
