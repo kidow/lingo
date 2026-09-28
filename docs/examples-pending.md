@@ -447,6 +447,42 @@ ru가 0.40이다). 전체에서 몇 자리뿐이라 다 짚고 눈으로 가른�
 **둘째 줄을 쓰면서 첫 줄의 한국어를 그대로 둔 자리들이다.** 짧은 쪽이 남고 긴
 쪽이 새로 생겼다 — 한국어가 두 문장에 다 걸리는 것처럼 보여 눈에 안 띈다.
 
+## 국적 삼각기 · 현수막 묶음 — 표제어를 박느라 문법이 깨진 자리 (2026-09-28)
+
+`독일의`·`독일 사람`처럼 한국어 글씨가 든 삼각기 · 현수막으로 그린 묶음이다.
+예문이 표제어를 **글자 그대로** 품어야 한다는 규칙(`pnpm check`)을 지키려고
+형용사를 명사 앞에 무변화로 박고(`ein russisch Lied` · `la cerveza alemán`),
+사람 명사를 목적격 자리에 주격 그대로 넣었다(`nahm ein Deutscher` ·
+`послали немец`). 검사는 통과하지만 **틀린 문장을 가르친다.**
+
+고치는 길은 하나다 — **표제어가 주격 · 서술형으로 서는 문장**을 쓴다.
+형용사는 `Die Uhr ist deutsch.` · `El reloj es alemán.` · `Это немецкий сыр.`,
+사람 명사는 `Unser Nachbar ist ein Deutscher.` · `Наш сосед — немец.` 꼴이다.
+같은 날 넣은 `of-austria` · `an-austrian` 등 아홉이 그렇게 서 있다.
+
+| 낱말 | 깨진 언어 | 보기 |
+| --- | --- | --- |
+| `travel/of-germany` | es fr de ru | `La cerveza alemán` · `La bière allemand` · `Bier deutsch Art` · `Пиво немецкий` |
+| `travel/of-england` | es fr de ru | `La lana inglés` · `à la façon anglais` · `Wolle englisch Art` · `Шерсть английский` |
+| `travel/of-spain` | fr de ru | `L'huile espagnol` · `ein spanisch Tuch` · `испанский шаль` |
+| `travel/of-france` | fr de | `à la façon français` · `auf französisch Art` |
+| `travel/of-russia` | es de | `una canción ruso` · `ein russisch Lied` |
+| `travel/of-china` | de ru | `eine chinesisch Schale` · `китайский чашу` |
+| `travel/of-america` | de ru | `Ein amerikanisch Schiff` · `американский пшеница` |
+| `travel/of-siberia` | de ru | `Der sibirisch Frost` · `сибирский меха` |
+| `travel/of-the-slavs` | de ru | `eine slawisch Sprache` · `на славянский речи` |
+| `travel/of-africa-the-land` | en de ru | `an of africa grain` · `afrikanisch Korn` · `африканский зерно` |
+| `city/of-the-soviets` | en de | `A of the Soviets mark` · `Ein sowjetisch Zeichen` |
+| `family/a-german-man` | de ru | `Die Mühle nahm ein Deutscher` · `мельница взяла немец` |
+| `family/an-englishman` | de ru | `beherbergten ein Engländer` · `приютили англичанин` |
+| `family/a-spaniard` | de ru | `hielt ein Spanier` · `На лодки взяли испанец` |
+| `family/a-chinese-man` | de ru | `fragte ein Chinese` · `спросили китаец` |
+| `family/a-frenchman` | de ru | `von ein Franzose` · `купили у француз` |
+| `family/a-muscovite` | de ru | `von ein Moskauer` · `продали москвич` |
+
+`city/of-moscow`와 `school/english-language`는 멀쩡하다 — `Moskauer`는 어미가
+안 붙는 꼴이고, 언어 명사는 목적어 자리에서도 모양이 안 바뀐다.
+
 ## 이 목록은 어떻게 다시 만드나
 
 `pnpm check`가 세 갈래를 각각 다른 문구로 낸다.
