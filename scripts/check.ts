@@ -646,6 +646,19 @@ for (const file of files) {
             if ((sentence.trimEnd().endsWith('?') && !sentence.includes('¿')) ||
                 (sentence.trimEnd().endsWith('!') && !sentence.includes('¡')))
               fail(where, `es.${at}의 의문 · 감탄문에 여는 부호(¿ ¡)가 없습니다 — "${sentence.trim()}"`)
+        /*
+         * **문장부호는 언어마다 한 벌.** 같은 날 세어 보니 프랑스어 `?` 1167개 중
+         * 넷이 붙여 썼고, 중국어는 반각 `,` `?`가 여섯, 일본어는 반각 `.`로 끝난
+         * 예문이 서른셋이었다 — 다 한 묶음에서 새어 든 것이다. 고쳤으니 막는다
+         */
+        if (typeof example.text === 'string') {
+          if (lang === 'fr' && /\S[?!;]/.test(example.text))
+            fail(where, `fr.${at}의 ? ! ; 앞에 띄어쓰기가 없습니다 — "${example.text}"`)
+          if (lang === 'zh' && /[,?!;]/.test(example.text))
+            fail(where, `zh.${at}에 반각 문장부호가 있습니다. ，？！；를 쓰세요 — "${example.text}"`)
+          if (lang === 'ja' && /[?!]|\.(\s|$)/.test(example.text))
+            fail(where, `ja.${at}에 반각 문장부호가 있습니다. 。？！를 쓰세요 — "${example.text}"`)
+        }
         if (typeof example.text === 'string')
           for (const stray of strayScripts(lang, example.text))
             fail(where, `${lang}.${at}에 ${stray}${subject(stray)} 섞여 있습니다 — "${example.text}"`)
