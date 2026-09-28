@@ -1096,7 +1096,10 @@ for (const file of files) {
       if (line) {
         example.traditional = twGlyph(line)
         converted += 1
-      } else delete example.traditional
+      } else if (example.traditional?.length !== example.text.length) delete example.traditional
+      // 변환기가 막힌 문장(卷/捲처럼 뜻이 갈리는 글자)에 손으로 채운 번체는 남긴다.
+      // 간체와 번체는 글자가 1:1이라 길이가 같으면 지금 문장의 것이다 — 문장이
+      // 바뀌어 길이가 어긋난 낡은 값만 지운다 (2026-09-28, 세 문장이 두 번 지워졌다)
     }
   }
 

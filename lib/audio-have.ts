@@ -15,7 +15,35 @@
  * 낡으면 `pnpm check`가 경고한다. 콘텐츠를 넣고 발음을 아직 안 만들었는데 이
  * 목록이 옛날 그대로면 듣기 카드가 빈 소리를 내기 때문이다.
  */
-export const AUDIO_MISSING: ReadonlySet<string> = new Set([])
+export const AUDIO_MISSING: ReadonlySet<string> = new Set([
+  'zh/bald',
+  'zh/boast',
+  'zh/car-race',
+  'zh/card-game',
+  'zh/concise',
+  'zh/deaf',
+  'zh/debt',
+  'zh/draw-them-in',
+  'zh/elite-group',
+  'zh/ferment-it',
+  'zh/gazebo',
+  'zh/hooligan',
+  'zh/inflation',
+  'zh/interchange',
+  'zh/leave-it-out',
+  'zh/limp',
+  'zh/loud-sound',
+  'zh/lunar-calendar',
+  'zh/pale-white',
+  'zh/put-their-name-forward',
+  'zh/reach-for',
+  'zh/something-does-not-add-up',
+  'zh/submarine',
+  'zh/substitute-player',
+  'zh/successor',
+  'zh/the-way-one-carries-oneself',
+  'zh/unplug',
+])
 
 /** 그 언어에 그 개념의 발음이 있는가 */
 export function hasAudio(slug: string, lang: string): boolean {
@@ -48,7 +76,35 @@ export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([
   'zh',
 ])
 
-export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([])
+export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([
+  'zh/bald-0-1bfd26da1eab',
+  'zh/boast-0-b1e8bb89b9f2',
+  'zh/car-race-0-728cd0873b79',
+  'zh/card-game-0-9da2a8fd8060',
+  'zh/concise-0-18e166614f92',
+  'zh/deaf-0-1ff76604c880',
+  'zh/debt-0-7077540c429a',
+  'zh/draw-them-in-0-c06964ac8ac0',
+  'zh/elite-group-0-d01c2aaf6b6f',
+  'zh/ferment-it-0-7b14fd0a6855',
+  'zh/gazebo-0-ffb9afea5396',
+  'zh/hooligan-0-8984f93245e6',
+  'zh/inflation-0-40fb88179833',
+  'zh/interchange-0-df1fefad22b8',
+  'zh/leave-it-out-0-cfac24951c58',
+  'zh/limp-0-b518af732ec1',
+  'zh/loud-sound-0-b450c9c691b2',
+  'zh/lunar-calendar-0-9835059330ad',
+  'zh/pale-white-0-5fb23dc24fdb',
+  'zh/put-their-name-forward-0-d3af8d4b78ee',
+  'zh/reach-for-0-90f22a3e08bb',
+  'zh/something-does-not-add-up-0-bcb9c5b66539',
+  'zh/submarine-0-46c4db2c2723',
+  'zh/substitute-player-0-f5508bcf2b73',
+  'zh/successor-0-f17675357348',
+  'zh/the-way-one-carries-oneself-0-f7c6f1dcf4ae',
+  'zh/unplug-0-020f56fbd32f',
+])
 
 /** 그 언어의 그 예문(열쇠는 `exampleAudioKey`)에 소리가 있는가 */
 export function hasExampleAudio(lang: string, key: string): boolean {
