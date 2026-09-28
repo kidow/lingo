@@ -15,22 +15,7 @@
  * 낡으면 `pnpm check`가 경고한다. 콘텐츠를 넣고 발음을 아직 안 만들었는데 이
  * 목록이 옛날 그대로면 듣기 카드가 빈 소리를 내기 때문이다.
  */
-export const AUDIO_MISSING: ReadonlySet<string> = new Set([
-  'de/late-morning',
-  'de/married',
-  'en/late-morning',
-  'en/married',
-  'es/late-morning',
-  'es/married',
-  'fr/late-morning',
-  'fr/married',
-  'ja/late-morning',
-  'ja/married',
-  'ru/late-morning',
-  'ru/married',
-  'zh/late-morning',
-  'zh/married',
-])
+export const AUDIO_MISSING: ReadonlySet<string> = new Set([])
 
 /** 그 언어에 그 개념의 발음이 있는가 */
 export function hasAudio(slug: string, lang: string): boolean {
@@ -63,22 +48,7 @@ export const EXAMPLE_AUDIO_LANGS: ReadonlySet<string> = new Set([
   'zh',
 ])
 
-export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([
-  'de/late-morning-0-ce524b9b44a9',
-  'de/married-0-d7ec4bdc85a2',
-  'en/late-morning-0-6bea578dc44a',
-  'en/married-0-b786bd8f479f',
-  'es/late-morning-0-d58dcd03dbb9',
-  'es/married-0-cfbab4051c89',
-  'fr/late-morning-0-26ba8ad6823b',
-  'fr/married-0-581035899d70',
-  'ja/late-morning-0-d65e36f94f7f',
-  'ja/married-0-a75b7ff5b49c',
-  'ru/late-morning-0-3f34da046afa',
-  'ru/married-0-3774beaea489',
-  'zh/late-morning-0-582990ea2cc5',
-  'zh/married-0-725b7d4ecea0',
-])
+export const EXAMPLE_MISSING: ReadonlySet<string> = new Set([])
 
 /** 그 언어의 그 예문(열쇠는 `exampleAudioKey`)에 소리가 있는가 */
 export function hasExampleAudio(lang: string, key: string): boolean {
