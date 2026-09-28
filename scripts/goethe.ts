@@ -128,10 +128,20 @@ export function headwordsOf(line: string): string[] {
   )
 }
 
-/** 등급 → 표제어. 낮은 등급에 이미 있으면 높은 등급에서는 뺀다(처음 나오는 등급 하나) */
+/**
+ * 등급 → 표제어. 낮은 등급에 이미 있으면 높은 등급에서는 뺀다(처음 나오는 등급 하나)
+ *
+ * **표제어가 아닌 줄은 뺀다** (`noise`). 칸 사각형이 글자를 자른 조각
+ * (`nnerstag` · `hule`), 쪽 제목(`Alphabetischer Wortschatz`), 목록이 따로
+ * 원형을 싣는 동사의 활용형(`kaufte` · `gesungen`)이다. 2026-09-28에 손으로
+ * 가려 112개를 적었다 — 분모에 남아 있으면 «빠진 낱말»이 영영 줄지 않는다.
+ * 기능어(`zwar` · `etwa`)와 접두어 꼴(`dies-`)은 목록이 실제로 싣는 표제어라
+ * 남긴다. 목록을 PDF에서 다시 뽑아도 이 표는 그대로 옮겨 쓴다(아래 main)
+ */
 export function goetheHeadwords(): Map<GoetheLevel, Set<string>> {
-  const table = JSON.parse(readFileSync(OUT, 'utf8')) as Record<GoetheLevel, string[]>
-  return new Map(LEVELS.map((level) => [level, new Set(table[level])]))
+  const table = JSON.parse(readFileSync(OUT, 'utf8')) as Record<GoetheLevel, string[]> & { noise?: string[] }
+  const noise = new Set(table.noise ?? [])
+  return new Map(LEVELS.map((level) => [level, new Set(table[level].filter((w) => !noise.has(w)))]))
 }
 
 /**
@@ -172,6 +182,9 @@ if (import.meta.main) {
       console.log(`${lv} ${words.size}개`)
     }
     table.reflexive = [...reflexive].sort((a, b) => a.localeCompare(b, 'de'))
+    // 손으로 가린 표는 PDF에서 안 나온다 — 있던 것을 그대로 옮긴다
+    const before = JSON.parse(readFileSync(OUT, 'utf8')) as { noise?: string[] }
+    if (before.noise) table.noise = before.noise
     console.log(`재귀형 ${reflexive.size}개`)
     writeFileSync(OUT, `${JSON.stringify(table, null, 1)}\n`)
     console.log(`→ ${OUT}`)
