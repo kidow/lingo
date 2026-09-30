@@ -1,27 +1,22 @@
 {
   "status": "active",
   "date": "2026-09-30",
-  "lastCompletedCommit": "6d42de919f34726e596848f19915af88c378154e",
+  "lastCompletedCommit": "0a35efec53a2ab71021c9f9afeea38c48a7720ef",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 坵 eight-stroke animation",
-    "parentAtStart": "0db2b4ad23103021e888486874f1eda9cc2053e4"
+    "message": "docs(hanja): hold 迋 source with disconnected final stroke",
+    "parentAtStart": "0a35efec53a2ab71021c9f9afeea38c48a7720ef"
   },
   "currentBatch": {
     "glyphs": [
-      "坵"
+      "迋"
     ],
     "strokes": 8,
-    "status": "applied; domestic dictionary crosscheck, not exam-body approval",
+    "status": "held; final-stroke source discontinuity",
     "checks": {
       "providerRecords": 3,
       "engineFiles": 8,
-      "domesticReviewed": 8,
-      "progressiveFrames": 72,
-      "tests": 1069,
-      "testFiles": 241,
-      "build": true,
-      "mobile": true,
-      "runtimeAdded": 1,
+      "rawGroups": 10,
+      "runtimeAdded": 0,
       "privateMediaSaved": false
     }
   },
@@ -141,11 +136,18 @@
     ]
   },
   "nextActions": [
-    "Recheck HEAD, pending --free and live runtime.",
-    "Obtain complete licensed whole-glyph geometry and domestic stroke evidence for 迋.",
-    "Review all eight strokes before runtime approval."
+    "Recheck HEAD, pending --free and runtime.",
+    "Obtain whole 邰 and domestic eight-stroke evidence.",
+    "Review continuity before runtime integration."
   ],
   "held": [
+    {
+      "glyph": "迋",
+      "strokes": 8,
+      "reason": "Original quadratic ends55,154; following cubic starts53,152. The domestic eighth outline is continuous.",
+      "releaseCondition": "Licensed whole glyph with a documented continuous eighth stroke, followed by full eight-stroke/progressive review; no bridge, trimming, point edits or substituted radical.",
+      "path": "docs/hanja-goal-glyphwiki-batch156-2026-09-30"
+    },
     {
       "glyph": "泲",
       "strokes": 8,
@@ -523,29 +525,29 @@
     }
   ],
   "resources": {
-    "tabs": "batch155 mobile tab closed; viewport reset",
-    "ramServers": "batch155 own RAM-only verification servers on 52161 and 52162 stopped",
-    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo",
+    "tabs": "batch156 research tabs closed",
+    "ramServers": "batch156 own ports52163/52164 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/sources.json",
+    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/engine-trace.json",
+    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/findings.json",
+    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/next.json",
+    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "迋",
-    "id": "u8fcb",
-    "grade": "특급",
+    "glyph": "邰",
+    "id": "u90b0",
+    "grade": "특급II",
     "strokes": 8,
-    "status": "Unapplied; source and full-stroke review pending",
+    "status": "unapplied; source review pending",
     "actions": [
-      "Recheck HEAD, pending --free and live runtime.",
-      "Obtain complete licensed whole-glyph geometry and domestic stroke evidence for 迋.",
-      "Review all eight strokes before runtime approval."
+      "Recheck HEAD, pending --free and runtime.",
+      "Obtain whole 邰 and domestic eight-stroke evidence.",
+      "Review continuity before runtime integration."
     ]
   }
 }
