@@ -1,24 +1,24 @@
 {
   "status": "active",
   "date": "2026-09-30",
-  "lastCompletedCommit": "616f6810aad0bbd42aba4c28c67c8e54abf47013",
+  "lastCompletedCommit": "97df66a07cb30614862c5b803a3cc0c4510f4da9",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 芎 seven-stroke animation",
-    "parentAtStart": "616f6810aad0bbd42aba4c28c67c8e54abf47013"
+    "message": "feat(hanja): add reviewed 杋 seven-stroke animation",
+    "parentAtStart": "97df66a07cb30614862c5b803a3cc0c4510f4da9"
   },
   "currentBatch": {
     "glyphs": [
-      "芎"
+      "杋"
     ],
     "strokes": 7,
     "status": "applied; domestic dictionary crosscheck, not exam-body approval",
     "checks": {
-      "providerRecords": 3,
+      "providerRecords": 4,
       "engineFiles": 8,
       "domesticReviewed": 7,
       "progressiveFrames": 63,
-      "tests": 1075,
-      "testFiles": 243,
+      "tests": 1078,
+      "testFiles": 244,
       "build": true,
       "mobile": true,
       "browser": "Codex in-app panel",
@@ -29,8 +29,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5043,
-      "remaining": 935,
+      "applied": 5044,
+      "remaining": 934,
       "percent": 84.4
     },
     "grades": [
@@ -135,16 +135,16 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 722,
-        "remaining": 606,
+        "applied": 723,
+        "remaining": 605,
         "percent": 54.4
       }
     ]
   },
   "nextActions": [
     "Use Codex in-app browser panel.",
-    "Recheck current runtime, HEAD and pending --free.",
-    "Acquire the complete current whole glyph and declared dependencies, then review all domestic strokes and progressive states."
+    "Recheck runtime, HEAD, pending --free and prior holds.",
+    "Inspect the exact whole 迓 source and declared dependencies, especially continuity of the final walking stroke. Do not infer rejection or approval from another glyph."
   ],
   "held": [
     {
@@ -538,32 +538,28 @@
     }
   ],
   "resources": {
-    "tabs": "batch159 in-app research and mobile tabs closed; viewport reset",
-    "ramServers": "batch159 own ports52169–52171 stopped",
+    "tabs": "batch160 in-app research and mobile tabs closed; viewport reset",
+    "ramServers": "batch160 own ports52172–52174 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/README.md",
-    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/sources.json",
-    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/validation.json",
-    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/next.json"
+    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/README.md",
+    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/sources.json",
+    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/validation.json",
+    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "杋",
-    "id": "u674b",
+    "glyph": "迓",
+    "id": "u8fd3",
     "grade": "특급",
-    "strokes": 7,
-    "status": "source acquisition; no runtime approval",
-    "observations": [
-      "In-app browser: u674b@14 aliases u674b-j; Korean u674b-k@2 currently exists and aliases u674b-g.",
-      "Follow the Korean alias to current whole u674b-g and its declared dependencies. Do not replace archived missing u51e1-02@3 with a newer component."
-    ],
+    "strokes": 8,
+    "status": "unapplied candidate; acquire exact whole source before judgement",
     "actions": [
       "Use Codex in-app browser panel.",
-      "Recheck current runtime, HEAD and pending --free.",
-      "Acquire the complete current whole glyph and declared dependencies, then review all domestic strokes and progressive states."
+      "Recheck runtime, HEAD, pending --free and prior holds.",
+      "Inspect the exact whole 迓 source and declared dependencies, especially continuity of the final walking stroke. Do not infer rejection or approval from another glyph."
     ]
   }
 }
