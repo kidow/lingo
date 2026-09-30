@@ -1,22 +1,23 @@
 {
   "status": "active",
   "date": "2026-09-30",
-  "lastCompletedCommit": "0a35efec53a2ab71021c9f9afeea38c48a7720ef",
+  "lastCompletedCommit": "346c427ac40d7765ad41e0787b9e351152393c82",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 迋 source with disconnected final stroke",
-    "parentAtStart": "0a35efec53a2ab71021c9f9afeea38c48a7720ef"
+    "message": "docs(hanja): hold 邰 source with disconnected first stroke",
+    "parentAtStart": "346c427ac40d7765ad41e0787b9e351152393c82"
   },
   "currentBatch": {
     "glyphs": [
-      "迋"
+      "邰"
     ],
     "strokes": 8,
-    "status": "held; final-stroke source discontinuity",
+    "status": "held; original first-stroke discontinuity",
     "checks": {
-      "providerRecords": 3,
+      "providerRecords": 4,
       "engineFiles": 8,
-      "rawGroups": 10,
+      "rawGroups": 11,
       "runtimeAdded": 0,
+      "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
   },
@@ -136,11 +137,18 @@
     ]
   },
   "nextActions": [
+    "Use Codex in-app browser panel for stroke verification.",
     "Recheck HEAD, pending --free and runtime.",
-    "Obtain whole 邰 and domestic eight-stroke evidence.",
-    "Review continuity before runtime integration."
+    "Obtain whole 阼 source and domestic eight-stroke evidence."
   ],
   "held": [
+    {
+      "glyph": "邰",
+      "strokes": 8,
+      "reason": "First quadratic ends29.349999999999994,86; following quadratic starts13.75,88. Whole Korean alias retains this disconnected first stroke.",
+      "releaseCondition": "Licensed whole 邰 source with a documented continuous first stroke; also reassess right-ear turn, whose original quadratic ends147.75,84 and cubic starts147.75,83. Then full eight-stroke progressive review, without point edits or component substitution.",
+      "path": "docs/hanja-goal-glyphwiki-batch157-2026-09-30"
+    },
     {
       "glyph": "迋",
       "strokes": 8,
@@ -525,29 +533,29 @@
     }
   ],
   "resources": {
-    "tabs": "batch156 research tabs closed",
-    "ramServers": "batch156 own ports52163/52164 stopped",
+    "tabs": "batch157 in-app review closed",
+    "ramServers": "batch157 own RAM-only port52165 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/sources.json",
-    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/engine-trace.json",
-    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/findings.json",
-    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/next.json",
-    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch156-2026-09-30/README.md"
+    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/sources.json",
+    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/engine-trace.json",
+    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/findings.json",
+    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/next.json",
+    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "邰",
-    "id": "u90b0",
-    "grade": "특급II",
+    "glyph": "阼",
+    "id": "u963c",
+    "grade": "특급",
     "strokes": 8,
     "status": "unapplied; source review pending",
     "actions": [
+      "Use Codex in-app browser panel for stroke verification.",
       "Recheck HEAD, pending --free and runtime.",
-      "Obtain whole 邰 and domestic eight-stroke evidence.",
-      "Review continuity before runtime integration."
+      "Obtain whole 阼 source and domestic eight-stroke evidence."
     ]
   }
 }
