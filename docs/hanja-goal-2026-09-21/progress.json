@@ -1,24 +1,24 @@
 {
   "status": "active",
   "date": "2026-09-30",
-  "lastCompletedCommit": "1f8781a4ec63afa23c510425803d8a7783b0d05e",
+  "lastCompletedCommit": "616f6810aad0bbd42aba4c28c67c8e54abf47013",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 阼 eight-stroke animation",
-    "parentAtStart": "1f8781a4ec63afa23c510425803d8a7783b0d05e"
+    "message": "feat(hanja): add reviewed 芎 seven-stroke animation",
+    "parentAtStart": "616f6810aad0bbd42aba4c28c67c8e54abf47013"
   },
   "currentBatch": {
     "glyphs": [
-      "阼"
+      "芎"
     ],
-    "strokes": 8,
+    "strokes": 7,
     "status": "applied; domestic dictionary crosscheck, not exam-body approval",
     "checks": {
       "providerRecords": 3,
       "engineFiles": 8,
-      "domesticReviewed": 8,
-      "progressiveFrames": 72,
-      "tests": 1072,
-      "testFiles": 242,
+      "domesticReviewed": 7,
+      "progressiveFrames": 63,
+      "tests": 1075,
+      "testFiles": 243,
       "build": true,
       "mobile": true,
       "browser": "Codex in-app panel",
@@ -29,9 +29,9 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5042,
-      "remaining": 936,
-      "percent": 84.3
+      "applied": 5043,
+      "remaining": 935,
+      "percent": 84.4
     },
     "grades": [
       {
@@ -128,9 +128,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 886,
-        "remaining": 264,
-        "percent": 77
+        "applied": 887,
+        "remaining": 263,
+        "percent": 77.1
       },
       {
         "grade": "특급",
@@ -144,7 +144,7 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck current runtime, HEAD and pending --free.",
-    "Resume exact whole 芎 dependency acquisition; never replace a missing pinned dependency with latest."
+    "Acquire the complete current whole glyph and declared dependencies, then review all domestic strokes and progressive states."
   ],
   "held": [
     {
@@ -538,28 +538,32 @@
     }
   ],
   "resources": {
-    "tabs": "batch158 in-app research and mobile tabs closed; viewport reset",
-    "ramServers": "batch158 own ports52166–52168 stopped",
+    "tabs": "batch159 in-app research and mobile tabs closed; viewport reset",
+    "ramServers": "batch159 own ports52169–52171 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/README.md",
-    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/sources.json",
-    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/validation.json",
-    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/next.json"
+    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/README.md",
+    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/sources.json",
+    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/validation.json",
+    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch159-2026-09-30/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "芎",
-    "id": "u828e",
-    "grade": "특급II",
+    "glyph": "杋",
+    "id": "u674b",
+    "grade": "특급",
     "strokes": 7,
-    "status": "source acquisition retry now provider pages are reachable; no runtime approval",
+    "status": "source acquisition; no runtime approval",
+    "observations": [
+      "In-app browser: u674b@14 aliases u674b-j; Korean u674b-k@2 currently exists and aliases u674b-g.",
+      "Follow the Korean alias to current whole u674b-g and its declared dependencies. Do not replace archived missing u51e1-02@3 with a newer component."
+    ],
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck current runtime, HEAD and pending --free.",
-      "Resume exact whole 芎 dependency acquisition; never replace a missing pinned dependency with latest."
+      "Acquire the complete current whole glyph and declared dependencies, then review all domestic strokes and progressive states."
     ]
   }
 }
