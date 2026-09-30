@@ -1,31 +1,36 @@
 {
   "status": "active",
   "date": "2026-09-30",
-  "lastCompletedCommit": "346c427ac40d7765ad41e0787b9e351152393c82",
+  "lastCompletedCommit": "1f8781a4ec63afa23c510425803d8a7783b0d05e",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 邰 source with disconnected first stroke",
-    "parentAtStart": "346c427ac40d7765ad41e0787b9e351152393c82"
+    "message": "feat(hanja): add reviewed 阼 eight-stroke animation",
+    "parentAtStart": "1f8781a4ec63afa23c510425803d8a7783b0d05e"
   },
   "currentBatch": {
     "glyphs": [
-      "邰"
+      "阼"
     ],
     "strokes": 8,
-    "status": "held; original first-stroke discontinuity",
+    "status": "applied; domestic dictionary crosscheck, not exam-body approval",
     "checks": {
-      "providerRecords": 4,
+      "providerRecords": 3,
       "engineFiles": 8,
-      "rawGroups": 11,
-      "runtimeAdded": 0,
+      "domesticReviewed": 8,
+      "progressiveFrames": 72,
+      "tests": 1072,
+      "testFiles": 242,
+      "build": true,
+      "mobile": true,
       "browser": "Codex in-app panel",
+      "runtimeAdded": 1,
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5041,
-      "remaining": 937,
+      "applied": 5042,
+      "remaining": 936,
       "percent": 84.3
     },
     "grades": [
@@ -130,16 +135,16 @@
       {
         "grade": "특급",
         "total": 1328,
-        "applied": 721,
-        "remaining": 607,
-        "percent": 54.3
+        "applied": 722,
+        "remaining": 606,
+        "percent": 54.4
       }
     ]
   },
   "nextActions": [
-    "Use Codex in-app browser panel for stroke verification.",
-    "Recheck HEAD, pending --free and runtime.",
-    "Obtain whole 阼 source and domestic eight-stroke evidence."
+    "Use Codex in-app browser panel.",
+    "Recheck current runtime, HEAD and pending --free.",
+    "Resume exact whole 芎 dependency acquisition; never replace a missing pinned dependency with latest."
   ],
   "held": [
     {
@@ -533,29 +538,28 @@
     }
   ],
   "resources": {
-    "tabs": "batch157 in-app review closed",
-    "ramServers": "batch157 own RAM-only port52165 stopped",
+    "tabs": "batch158 in-app research and mobile tabs closed; viewport reset",
+    "ramServers": "batch158 own ports52166–52168 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/sources.json",
-    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/engine-trace.json",
-    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/findings.json",
-    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/next.json",
-    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch157-2026-09-30/README.md"
+    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/README.md",
+    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/sources.json",
+    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/validation.json",
+    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch158-2026-09-30/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "阼",
-    "id": "u963c",
-    "grade": "특급",
-    "strokes": 8,
-    "status": "unapplied; source review pending",
+    "glyph": "芎",
+    "id": "u828e",
+    "grade": "특급II",
+    "strokes": 7,
+    "status": "source acquisition retry now provider pages are reachable; no runtime approval",
     "actions": [
-      "Use Codex in-app browser panel for stroke verification.",
-      "Recheck HEAD, pending --free and runtime.",
-      "Obtain whole 阼 source and domestic eight-stroke evidence."
+      "Use Codex in-app browser panel.",
+      "Recheck current runtime, HEAD and pending --free.",
+      "Resume exact whole 芎 dependency acquisition; never replace a missing pinned dependency with latest."
     ]
   }
 }
