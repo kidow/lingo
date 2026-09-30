@@ -1,25 +1,24 @@
 {
   "status": "active",
-  "date": "2026-09-27",
-  "lastCompletedCommit": "8a4c0f5ee6b749844278d4bc8788fc185f99c1b0",
+  "date": "2026-09-30",
+  "lastCompletedCommit": "6d42de919f34726e596848f19915af88c378154e",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 兕 seven-stroke playback variant",
-    "parentAtStart": "8a4c0f5ee6b749844278d4bc8788fc185f99c1b0"
+    "message": "feat(hanja): add reviewed 坵 eight-stroke animation",
+    "parentAtStart": "0db2b4ad23103021e888486874f1eda9cc2053e4"
   },
   "currentBatch": {
     "glyphs": [
-      "兕"
+      "坵"
     ],
-    "strokes": 7,
-    "catalogStrokes": 8,
-    "status": "applied; dictionary seven-stroke playback variant; catalog eight strokes unchanged",
+    "strokes": 8,
+    "status": "applied; domestic dictionary crosscheck, not exam-body approval",
     "checks": {
-      "providerRecords": 2,
+      "providerRecords": 3,
       "engineFiles": 8,
-      "domesticReviewed": 7,
-      "progressiveFrames": 63,
-      "tests": 1066,
-      "testFiles": 240,
+      "domesticReviewed": 8,
+      "progressiveFrames": 72,
+      "tests": 1069,
+      "testFiles": 241,
       "build": true,
       "mobile": true,
       "runtimeAdded": 1,
@@ -29,8 +28,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5040,
-      "remaining": 938,
+      "applied": 5041,
+      "remaining": 937,
       "percent": 84.3
     },
     "grades": [
@@ -128,8 +127,8 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 885,
-        "remaining": 265,
+        "applied": 886,
+        "remaining": 264,
         "percent": 77
       },
       {
@@ -142,9 +141,9 @@
     ]
   },
   "nextActions": [
-    "Recheck shared HEAD, pending --free and runtime.",
-    "Review 坵 eight domestic strokes against captured whole current u5775-j@3 via Korean alias u5775-k@7.",
-    "Preserve original geometry and apply only after progressive/runtime validation."
+    "Recheck HEAD, pending --free and live runtime.",
+    "Obtain complete licensed whole-glyph geometry and domestic stroke evidence for 迋.",
+    "Review all eight strokes before runtime approval."
   ],
   "held": [
     {
@@ -524,116 +523,29 @@
     }
   ],
   "resources": {
-    "tabs": "batch154 UI closed and viewport reset; progressive/gallery were no longer attached to session during cleanup",
-    "ramServers": "batch154 own ports52156–52158 stopped",
-    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo available",
+    "tabs": "batch155 mobile tab closed; viewport reset",
+    "ramServers": "batch155 own RAM-only verification servers on 52161 and 52162 stopped",
+    "isolatedWorktree": "/Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch154-2026-09-27/README.md",
-    "docs/hanja-goal-glyphwiki-batch154-2026-09-27/sources.json",
-    "docs/hanja-goal-glyphwiki-batch154-2026-09-27/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch154-2026-09-27/validation.json",
-    "docs/hanja-goal-glyphwiki-batch154-2026-09-27/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch154-2026-09-27/next.json"
+    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/README.md",
+    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/sources.json",
+    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/validation.json",
+    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch155-2026-09-27/next.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "坵",
-    "root": "u5775",
-    "grade": "특급II",
+    "glyph": "迋",
+    "id": "u8fcb",
+    "grade": "특급",
     "strokes": 8,
-    "dictionary": {
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5700/5775.svg",
-      "status": 200,
-      "bytes": 3949,
-      "sha256": "140d87a7e661bc19f8fc54b71a2bb76f9e8c812fd04987240e372284cc31adc7"
-    },
-    "source": {
-      "root": "u5775",
-      "records": {
-        "u5775": {
-          "name": "u5775",
-          "related": "u5775",
-          "data": "99:0:0:2:5:180:195:u571f-01$99:0:0:0:0:200:200:u4e18-02@2"
-        },
-        "u571f-01": {
-          "name": "u571f-01",
-          "related": "u571f",
-          "data": "1:0:0:15:70:87:70$1:0:32:50:18:50:141$2:0:7:15:157:44:148:88:129"
-        }
-      },
-      "missing": [
-        "u4e18-02@2"
-      ],
-      "snapshot": {
-        "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
-        "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
-        "snapshotCommitDate": "2016-05-02T21:53:32Z",
-        "bytes": 63801771,
-        "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
-        "entries": 438759
-      }
-    },
-    "currentSource": {
-      "root": "u5775-j",
-      "glyph": "坵",
-      "records": {
-        "u5775-j": {
-          "name": "u5775-j",
-          "related": "u5775",
-          "data": "99:0:0:2:0:180:200:u571f-01$99:0:0:0:0:200:200:u4e18-02"
-        },
-        "u571f-01": {
-          "name": "u571f-01",
-          "related": "u571f",
-          "data": "1:0:0:15:70:87:70$1:0:32:50:18:50:141$2:0:7:15:157:44:148:88:129"
-        },
-        "u4e18-02": {
-          "name": "u4e18-02",
-          "related": "u4e18",
-          "data": "2:0:7:163:26:129:38:93:48$1:12:32:93:48:93:177$1:2:0:93:89:182:89$1:32:32:143:89:143:177$1:0:0:60:177:187:177"
-        }
-      },
-      "missing": [],
-      "aliases": [
-        {
-          "name": "u5775-k",
-          "version": 7,
-          "target": "u5775-j",
-          "url": "https://glyphwiki.org/wiki/u5775-k@7"
-        }
-      ],
-      "retrievedAt": "2026-09-27",
-      "provenance": "Read-only GlyphWiki provider editors; whole Korean alias and only declared dependencies.",
-      "providerVersions": [
-        {
-          "name": "u5775-j",
-          "version": 3,
-          "data": "99:0:0:2:0:180:200:u571f-01$99:0:0:0:0:200:200:u4e18-02",
-          "url": "https://glyphwiki.org/wiki/u5775-j@3",
-          "observedEditor": "https://glyphwiki.org/wiki/u5775-j?action=edit"
-        },
-        {
-          "name": "u571f-01",
-          "version": 12,
-          "data": "1:0:0:15:70:87:70$1:0:32:50:18:50:141$2:0:7:15:157:44:148:88:129",
-          "url": "https://glyphwiki.org/wiki/u571f-01@12",
-          "observedEditor": "https://glyphwiki.org/wiki/u571f-01?action=edit"
-        },
-        {
-          "name": "u4e18-02",
-          "version": 3,
-          "data": "2:0:7:163:26:129:38:93:48$1:12:32:93:48:93:177$1:2:0:93:89:182:89$1:32:32:143:89:143:177$1:0:0:60:177:187:177",
-          "url": "https://glyphwiki.org/wiki/u4e18-02@3",
-          "observedEditor": "https://glyphwiki.org/wiki/u4e18-02?action=edit"
-        }
-      ]
-    },
-    "status": "Archive missing u4e18-02@2; current complete Korean alias captured, full review pending.",
+    "status": "Unapplied; source and full-stroke review pending",
     "actions": [
-      "Recheck shared HEAD, pending --free and runtime.",
-      "Review 坵 eight domestic strokes against captured whole current u5775-j@3 via Korean alias u5775-k@7.",
-      "Preserve original geometry and apply only after progressive/runtime validation."
+      "Recheck HEAD, pending --free and live runtime.",
+      "Obtain complete licensed whole-glyph geometry and domestic stroke evidence for 迋.",
+      "Review all eight strokes before runtime approval."
     ]
   }
 }
