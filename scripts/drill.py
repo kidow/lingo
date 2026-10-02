@@ -3,23 +3,25 @@
 
   ../lingo-tts-bench/.venv-qwen/bin/python scripts/drill.py drill/ja-discourse.json 1
 
-트랙 하나가 mp3 하나다. 두 바퀴로 짠다.
+트랙 하나가 mp3 하나다. 안내는 한 꼴뿐이다 — **«{한국어}는 일본어로» 뒤에 일본어.**
+주제어(«반응·맞장구»)나 기능 이름은 읽지 않는다. 사용자가 시제품을 듣고 그렇게
+정했다(2026-10-03) — 설명이 끼면 귀가 한국어에 머문다.
 
   1. 처음 듣기 — 표현마다
-       [ko] 기능 · 뜻          [B] 표현 ×2
-       [A] 말 → [B] 표현이 든 대답     [ko] 대화 뜻     [A] → [B] 한 번 더
-       반말·존댓말 꼴이 다르면(reg pair) 존댓말 대화를 잇는다
+       응은 일본어로                  [B] うん … うん
+       내일 와? 응, 갈게, 일본어로는    [A] 明日、来る?  [B] うん、行くよ。  (한 번 더)
+       반말·존댓말 꼴이 다르면(reg pair) 존댓말 표현과 대화를 같은 꼴로 잇는다
   2. 떠올리기 — 순서를 섞어
-       [ko] 기능   [A] 말   … 3초 …   [B] 대답
+       내일 와? 응, 갈게, 일본어로는   … 3초 …   [A] → [B]
 
-**목소리를 셋으로 가른다.** 골전도 이어폰은 물소리에 묻혀 또렷하지 않다 —
-누가 말하는지가 목소리로 바로 갈려야 한다. B(외울 표현)는 앱의 예문 소리와 같은
-ara 복제(scripts/tts-ref/ja.mp3), A(말 거는 쪽)는 macOS Reed를 참고로 한 복제,
-한국어 안내는 macOS Yuna다. Reed 참고 음성은 `say`로 그 자리에서 만든다 —
-바이너리를 커밋하지 않아도 다시 만들어진다.
+**목소리 셋이 모두 Qwen3-TTS 복제다.** 골전도 이어폰은 물소리에 묻혀 또렷하지
+않으므로 누가 말하는지가 목소리로 바로 갈려야 한다. 참고 음성은 xAI로 만든 문장
+하나씩이다 — B(외울 표현)는 앱 예문과 같은 ara(tts-ref/ja.mp3), A(말 거는 쪽)는
+rex(tts-ref/drill-ja-a.mp3), 한국어 안내는 eve(tts-ref/drill-ko.mp3). 처음에는
+A와 한국어를 macOS `say`(Reed · Yuna)로 했다가 «기계 소리»라는 말을 들었다.
 
-소리 조각은 .drill/cache에 문장 해시로 남긴다. 대화 한 줄을 고쳐도 그 줄만 다시
-만든다. 결과 mp3는 .drill/<lang>/에 쓰고 커밋하지 않는다.
+소리 조각은 .drill/cache에 목소리·문장 해시로 남긴다. 대화 한 줄을 고쳐도 그 줄만
+다시 만든다. 결과 mp3는 .drill/<lang>/에 쓰고 커밋하지 않는다.
 """
 
 import hashlib
@@ -36,10 +38,17 @@ import soundfile as sf
 
 SR = 24000
 CACHE = os.path.join('.drill', 'cache')
-REF_A_TEXT = 'きのうは えきまえの みせで ともだちと ばんごはんを たべました。'
+REF = os.path.join('scripts', 'tts-ref')
+
+# 목소리 → (참고 음성, 그 음성의 글, 읽을 언어)
+VOICES = {
+    'B': ('ja.mp3', None, 'Japanese'),  # 글은 ref.json의 ja
+    'A': ('drill-ja-a.mp3', 'きのうは えきまえの みせで ともだちと ばんごはんを たべました。', 'Japanese'),
+    'ko': ('drill-ko.mp3', '오늘은 날씨가 맑아서 공원에 산책하러 나갔어요. 바람도 시원했어요.', 'Korean'),
+}
 
 # 쉼 (초)
-AFTER_NARRATION = 0.6
+AFTER_NARRATION = 0.5
 BETWEEN_REPEAT = 0.9
 BETWEEN_LINES = 0.5
 AFTER_ITEM = 1.6
@@ -48,7 +57,7 @@ LOUDNESS = -16  # 물속에서는 작은 소리가 묻힌다 — 앱(-22)보다 
 
 
 def key(voice: str, text: str) -> str:
-    return os.path.join(CACHE, hashlib.sha1(f'{voice}\n{text}'.encode()).hexdigest()[:16] + '.wav')
+    return os.path.join(CACHE, hashlib.sha1(f'qwen\n{voice}\n{text}'.encode()).hexdigest()[:16] + '.wav')
 
 
 def to_wav(src: str, dst: str) -> None:
@@ -64,15 +73,16 @@ def trim(wav: np.ndarray) -> np.ndarray:
     return wav[max(0, loud[0] - pad): loud[-1] + pad]
 
 
-def say_korean(text: str, dst: str) -> None:
-    with tempfile.NamedTemporaryFile(suffix='.aiff') as tmp:
-        subprocess.run(['say', '-v', 'Yuna', '-r', '170', '-o', tmp.name, text], check=True)
-        to_wav(tmp.name, dst)
-
-
 def plausible(seconds: float, text: str) -> bool:
     # 한자가 섞여 글자 수로 길이를 못 잰다 — 지어낸 소리(몇 배로 늘어난 것)만 거른다
     return 0.2 <= seconds <= len(text) * 0.45 + 2.0
+
+
+def topic(word: str) -> str:
+    """«응은» · «아니는» — 마지막 한글의 받침으로 은/는을 고른다"""
+    word = word.rstrip('?!.… ')
+    last = next((c for c in reversed(word) if '가' <= c <= '힣'), None)
+    return word + ('은' if last and (ord(last) - 0xAC00) % 28 else '는')
 
 
 def load_model():
@@ -81,43 +91,51 @@ def load_model():
 
     model = Qwen3TTSModel.from_pretrained(
         'Qwen/Qwen3-TTS-12Hz-1.7B-Base', device_map='mps', dtype=torch.bfloat16, attn_implementation='sdpa')
-    refs = json.load(open(os.path.join('scripts', 'tts-ref', 'ref.json')))
+    refs = json.load(open(os.path.join(REF, 'ref.json')))
     prompts = {}
     with tempfile.TemporaryDirectory() as tmp:
-        b = os.path.join(tmp, 'b.wav')
-        to_wav(os.path.join('scripts', 'tts-ref', 'ja.mp3'), b)
-        prompts['B'] = model.create_voice_clone_prompt(ref_audio=b, ref_text=refs['ja'], x_vector_only_mode=False)
-        aiff, a = os.path.join(tmp, 'a.aiff'), os.path.join(tmp, 'a.wav')
-        subprocess.run(['say', '-v', 'Reed (일본어(일본))', '-o', aiff, REF_A_TEXT], check=True)
-        to_wav(aiff, a)
-        prompts['A'] = model.create_voice_clone_prompt(ref_audio=a, ref_text=REF_A_TEXT, x_vector_only_mode=False)
+        for voice, (audio, text, _) in VOICES.items():
+            wav = os.path.join(tmp, f'{voice}.wav')
+            to_wav(os.path.join(REF, audio), wav)
+            prompts[voice] = model.create_voice_clone_prompt(
+                ref_audio=wav, ref_text=text or refs['ja'], x_vector_only_mode=False)
     return model, prompts
+
+
+def alone(expr: str) -> str:
+    """표현만 따로 읽힐 때는 마침표를 붙인다. 두 글자짜리(いえ · さあ)를 맨몸으로 주면
+    모델이 いいえ로 늘이거나 엉뚱한 소리를 냈다 — Whisper로 대조해 잡았다"""
+    return expr if expr[-1] in '?!。…' else expr + '。'
+
+
+def dialog_lines(d: dict) -> list:
+    return [('A', d['a']), ('gap', BETWEEN_LINES), ('B', d['b'])]
+
+
+def dialog_cue(d: dict) -> str:
+    return f'{d["a_ko"]} {d["b_ko"].rstrip(".")}, 일본어로는'
 
 
 def plan(track: dict) -> list:
     """(목소리, 글) 또는 ('gap', 초)의 줄. 목소리는 ko · A · B"""
-    out = [('ko', f'{track["title"]}. 처음 듣기.'), ('gap', 1.2)]
+    out = []
     items = track['items']
     for item in items:
-        meaning = ', '.join(re.sub(r'\s*\(.*?\)', '', k) for k in item['ko'][:2])
         d = item['dialog']
-        out += [('ko', f'{item["fn"]}. {meaning}.'), ('gap', AFTER_NARRATION),
-                ('B', item['ja']), ('gap', BETWEEN_REPEAT), ('B', item['ja']), ('gap', AFTER_NARRATION),
-                ('A', d['a']), ('gap', BETWEEN_LINES), ('B', d['b']), ('gap', AFTER_NARRATION),
-                ('ko', f'{d["a_ko"]} {d["b_ko"]}'), ('gap', AFTER_NARRATION),
-                ('A', d['a']), ('gap', BETWEEN_LINES), ('B', d['b'])]
-        if p := item.get('dialog_polite'):
-            out += [('gap', AFTER_NARRATION), ('ko', '존댓말로.'), ('gap', AFTER_NARRATION),
-                    ('B', item['polite']), ('gap', AFTER_NARRATION),
-                    ('A', p['a']), ('gap', BETWEEN_LINES), ('B', p['b'])]
-        out.append(('gap', AFTER_ITEM))
-    out += [('gap', 1.0), ('ko', '이번에는 떠올리기. 말을 듣고, 뭐라고 대답할지 먼저 떠올려 보세요.'), ('gap', 1.5)]
+        out += [('ko', f'{topic(item["ko"][0])} 일본어로'), ('gap', AFTER_NARRATION),
+                ('B', alone(item['ja'])), ('gap', BETWEEN_REPEAT), ('B', alone(item['ja'])), ('gap', AFTER_ITEM),
+                ('ko', dialog_cue(d)), ('gap', AFTER_NARRATION),
+                *dialog_lines(d), ('gap', BETWEEN_REPEAT), *dialog_lines(d), ('gap', AFTER_ITEM)]
+        if (p := item.get('dialog_polite')) and item.get('ko_polite'):
+            out += [('ko', f'{topic(item["ko_polite"])} 일본어로'), ('gap', AFTER_NARRATION),
+                    ('B', alone(item['polite'])), ('gap', BETWEEN_REPEAT), ('B', alone(item['polite'])), ('gap', AFTER_ITEM),
+                    ('ko', dialog_cue(p)), ('gap', AFTER_NARRATION), *dialog_lines(p), ('gap', AFTER_ITEM)]
+        out.append(('gap', 0.6))
+    out += [('gap', 1.0), ('ko', '이제 한국어를 듣고, 일본어를 먼저 떠올려 보세요.'), ('gap', 1.5)]
     # 같은 트랙은 늘 같은 순서로 섞는다 — 들을 때마다 바뀌면 몇 번째인지 못 짚는다
     for item in random.Random(track['id']).sample(items, len(items)):
         d = item['dialog']
-        out += [('ko', item['fn'] + '.'), ('gap', AFTER_NARRATION),
-                ('A', d['a']), ('gap', THINK), ('B', d['b']), ('gap', AFTER_ITEM)]
-    out += [('ko', f'{track["title"]}, 끝.')]
+        out += [('ko', dialog_cue(d)), ('gap', THINK), *dialog_lines(d), ('gap', AFTER_ITEM)]
     return out
 
 
@@ -128,16 +146,13 @@ def main() -> None:
     lines = plan(track)
     os.makedirs(CACHE, exist_ok=True)
 
-    todo = sorted({(v, t) for v, t in lines if v in ('A', 'B') and not os.path.exists(key(v, t))})
-    for v, t in {(v, t) for v, t in lines if v == 'ko'}:
-        if not os.path.exists(key(v, t)):
-            say_korean(t, key(v, t))
+    todo = sorted({(v, t) for v, t in lines if v != 'gap' and not os.path.exists(key(v, t))})
     if todo:
         model, prompts = load_model()
-        print(f'일본어 조각 {len(todo)}개를 만듭니다', flush=True)
+        print(f'조각 {len(todo)}개를 만듭니다', flush=True)
         for n, (v, t) in enumerate(todo, 1):
             for _ in range(3):
-                wavs, sr = model.generate_voice_clone(text=t, language='Japanese', voice_clone_prompt=prompts[v])
+                wavs, sr = model.generate_voice_clone(text=t, language=VOICES[v][2], voice_clone_prompt=prompts[v])
                 if plausible(len(wavs[0]) / sr, t):
                     break
             else:
@@ -145,7 +160,7 @@ def main() -> None:
             with tempfile.NamedTemporaryFile(suffix='.wav') as tmp:
                 sf.write(tmp.name, wavs[0], sr)
                 to_wav(tmp.name, key(v, t))
-            if n % 20 == 0:
+            if n % 25 == 0:
                 print(f'  {n}/{len(todo)}', flush=True)
 
     parts = []
@@ -159,7 +174,7 @@ def main() -> None:
         wav, sr = sf.read(key(v, t), dtype='float32')
         assert sr == SR
         wav = trim(wav)
-        # 목소리마다 크기가 달라(say는 크고 Qwen은 작다) 조각마다 먼저 맞춘다. 끝의 loudnorm은 전체만 본다
+        # 조각마다 크기를 먼저 맞춘다. 끝의 loudnorm은 전체만 본다
         wav = np.clip(wav * (0.08 / max(np.sqrt(np.mean(wav ** 2)), 1e-4)), -0.98, 0.98)
         script.append(f'{int(clock // 60):02d}:{clock % 60:04.1f}  {v:2}  {t}')
         parts.append(wav)
