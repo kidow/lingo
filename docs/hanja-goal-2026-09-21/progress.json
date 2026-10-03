@@ -1,28 +1,24 @@
 {
   "status": "active",
-  "date": "2026-09-30",
-  "lastCompletedCommit": "97df66a07cb30614862c5b803a3cc0c4510f4da9",
+  "date": "2026-10-03",
+  "lastCompletedCommit": "3c96c93cbb8bdd5a414d478938bc2bc1c9bfe3ca",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 杋 seven-stroke animation",
-    "parentAtStart": "97df66a07cb30614862c5b803a3cc0c4510f4da9"
+    "message": "docs(hanja): hold 迓 source with disconnected final stroke",
+    "parentAtStart": "3c96c93cbb8bdd5a414d478938bc2bc1c9bfe3ca"
   },
   "currentBatch": {
     "glyphs": [
-      "杋"
+      "迓"
     ],
-    "strokes": 7,
-    "status": "applied; domestic dictionary crosscheck, not exam-body approval",
+    "strokes": 8,
+    "status": "held; complete source acquired, final trajectory disconnected",
     "checks": {
       "providerRecords": 4,
       "engineFiles": 8,
-      "domesticReviewed": 7,
-      "progressiveFrames": 63,
-      "tests": 1078,
-      "testFiles": 244,
-      "build": true,
-      "mobile": true,
+      "domesticReviewed": 1,
+      "fullStrokeReviewCompleted": false,
+      "runtimeAdded": 0,
       "browser": "Codex in-app panel",
-      "runtimeAdded": 1,
       "privateMediaSaved": false
     }
   },
@@ -143,10 +139,17 @@
   },
   "nextActions": [
     "Use Codex in-app browser panel.",
-    "Recheck runtime, HEAD, pending --free and prior holds.",
-    "Inspect the exact whole 迓 source and declared dependencies, especially continuity of the final walking stroke. Do not infer rejection or approval from another glyph."
+    "Recheck runtime, HEAD, pending --free and prior held records.",
+    "Inspect exact complete 迭 source and declared dependencies; judge its own final trajectory, then domestic review if feasible."
   ],
   "held": [
+    {
+      "glyph": "迓",
+      "strokes": 8,
+      "reason": "Whole declared u8fb6-j trajectory is disconnected in domestic stroke8: quadratic ends(55,154), cubic starts(53,152). Domestic source renders one continuous stroke.",
+      "releaseCondition": "Find a licensed complete 迓 source with documented continuous final pen trajectory and repeat all eight strokes and progressive checks. Do not bridge, trim, edit coordinates or substitute a radical.",
+      "path": "docs/hanja-goal-glyphwiki-batch161-2026-10-03"
+    },
     {
       "glyph": "邰",
       "strokes": 8,
@@ -538,28 +541,29 @@
     }
   ],
   "resources": {
-    "tabs": "batch160 in-app research and mobile tabs closed; viewport reset",
-    "ramServers": "batch160 own ports52172–52174 stopped",
+    "tabs": "batch161 in-app tab closed; viewport reset",
+    "ramServers": "batch161 own port52175 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/README.md",
-    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/sources.json",
-    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/validation.json",
-    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch160-2026-09-30/next.json"
+    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/engine-trace.json",
+    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/findings.json",
+    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/README.md",
+    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/NOTICE.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "迓",
-    "id": "u8fd3",
-    "grade": "특급",
-    "strokes": 8,
-    "status": "unapplied candidate; acquire exact whole source before judgement",
+    "glyph": "迭",
+    "id": "u8fed",
+    "grade": "1급",
+    "strokes": 9,
+    "status": "unapplied; exact whole-source acquisition next",
     "actions": [
       "Use Codex in-app browser panel.",
-      "Recheck runtime, HEAD, pending --free and prior holds.",
-      "Inspect the exact whole 迓 source and declared dependencies, especially continuity of the final walking stroke. Do not infer rejection or approval from another glyph."
+      "Recheck runtime, HEAD, pending --free and prior held records.",
+      "Inspect exact complete 迭 source and declared dependencies; judge its own final trajectory, then domestic review if feasible."
     ]
   }
 }
