@@ -1,26 +1,27 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "7aaeff541b4951c32c0c774c931d231e4ccd7ae8",
+  "lastCompletedCommit": "265c772bfc5f5ca9256fc08a7adaab96b9eefc6d",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 茵 ten-stroke animation",
-    "parentAtStart": "7aaeff541b4951c32c0c774c931d231e4ccd7ae8"
+    "message": "docs(hanja): record 茹 fifth-stroke path discontinuity",
+    "parentAtStart": "265c772bfc5f5ca9256fc08a7adaab96b9eefc6d"
   },
   "currentBatch": {
     "glyphs": [
-      "茵"
+      "茹"
     ],
     "strokes": 10,
-    "status": "applied; whole historical source and all domestic directions/progressive states reviewed",
+    "status": "held; domestic5 trajectory gap; no runtime addition",
     "checks": {
-      "providerRecords": 6,
+      "providerRecords": 5,
       "engineFiles": 8,
       "domesticReviewed": 10,
-      "progressiveFrames": 90,
-      "runtimeAdded": 1,
-      "regressionPass": 1376,
-      "build": true,
-      "mobile": true,
+      "progressiveFramesApproved": 0,
+      "runtimeAdded": 0,
+      "discontinuousGap": 19.192730394605142,
+      "historicalAlternatives": 3,
+      "liveSourceRootsRead": 4,
+      "nextExactDependencyRevisions": 2,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -143,8 +144,8 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Use exact whole u8339-k -> koseki-346680 and only declared ufa5e-03/u8279-k03/u5982-04. No radical transplant or inferred closure.",
-    "Review all10 domestic directions/cumulative/form and90 progressive frames. Check all original pen-trajectory joins, bends, quadratic paths; if discontinuous, seek a complete independently declared variant without inventing bridges.",
+    "Use exact whole u8347-k -> koseki-346870 and declared ufa5e-03/u8279-k03/u884c@8/u5f73-01@2. Never substitute latest revisions.",
+    "Reproduce all original primitives and review all10 domestic directions/cumulative/form and90 progressive frames before runtime.",
     "Preserve coordinates/defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
   ],
   "held": [
@@ -618,41 +619,49 @@
       "reason": "Domestic3 is continuous, but original quadratic centers38,184 to34,150 are disconnected by34.23448553724738. Exact whole u6d8d-ue0100 alternative shares the same original u6d8d source; no synthetic bridge, trimming, point movement or component transplant.",
       "releaseCondition": "New reusable exact whole-character source with a continuous original domestic3 center turn and matching complete form; then all10 directions, progressive states and runtime/UI verification.",
       "evidence": "docs/hanja-goal-glyphwiki-batch192-2026-10-04/findings.json"
+    },
+    {
+      "glyph": "茹",
+      "strokes": 10,
+      "grade": "특급II",
+      "reason": "Domestic5 is continuous, but original line center end35,160.58 and next quadratic start40,142.05 are disconnected by19.192730394605142. Historical alternatives share u5982-04; latest original records unchanged. Separate T root also directly declares a sqrt2 gap and its grass closure is not captured. No synthetic bridge, trimming, point movement or component transplant.",
+      "releaseCondition": "A new reusable exact whole-character source with a continuous original domestic5 female turn and matching four-stroke grass form; then all10 directions,90 progressive states, runtime/UI/full verification.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch199-2026-10-04/findings.json"
     }
   ],
   "resources": {
-    "tabs": "batch198 own in-app tab42 closed; viewport reset",
-    "ramServers": "batch198 own ports52276/52277/52278/52279 stopped",
+    "tabs": "batch199 own in-app tabs43/44 closed; viewport unchanged",
+    "ramServers": "batch199 own ports52280/52283 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch198-2026-10-04/README.md"
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/additional-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/live-source-reads.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/findings.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "茹",
-    "id": "u8339",
+    "glyph": "荇",
+    "id": "u8347",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; exact whole u8339-k and five declared records acquired and engine reproduced; full browser review next",
+    "status": "unapplied; exact whole source and literal u884c@8/u5f73-01@2 acquired; full browser review next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Use exact whole u8339-k -> koseki-346680 and only declared ufa5e-03/u8279-k03/u5982-04. No radical transplant or inferred closure.",
-      "Review all10 domestic directions/cumulative/form and90 progressive frames. Check all original pen-trajectory joins, bends, quadratic paths; if discontinuous, seek a complete independently declared variant without inventing bridges.",
+      "Use exact whole u8347-k -> koseki-346870 and declared ufa5e-03/u8279-k03/u884c@8/u5f73-01@2. Never substitute latest revisions.",
+      "Reproduce all original primitives and review all10 domestic directions/cumulative/form and90 progressive frames before runtime.",
       "Preserve coordinates/defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
     ]
   }
