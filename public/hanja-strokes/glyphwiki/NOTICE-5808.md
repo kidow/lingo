@@ -1,0 +1,10 @@
+# 堈 (U+5808) — licensed whole-glyph animation
+
+Geometry: GlyphWiki Project and contributors. [License](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt) permits copying, reuse, modification and commercial use.
+
+2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u5808-k/u5808/u571f-01/u5ca1-08/u5182; individual glyph revisions unavailable; source SHA256 61ac80ffa8f13b6211d5ea9d4bbfcbcad51959e4ce08f3ae8c138b1e1584e2f6
+
+All11 domestic directional/cumulative states, complete form and99 progressive frames reviewed in Codex in-app browser. Exact whole u5808-k -> u5808 and only declared u571f-01/u5ca1-08/u5182. Five historical archive records; individual glyph revisions unavailable. No radical transplant. Domestic5 original horizontal-to-vertical join177.5084,27.42 and vertical-to-hook join177.5084,171.7 are continuous. Domestic10 original down-to-right join105.97,144 is continuous. Raw groups0;1;2;3;4,5;6;7;8;9;10,11;12. All13 original source groups,14 draw primitives,four quadratic paths, polygons and engine defaults retained. Normalize200to100 and winding; no invented points, bridges, trimming, primitive splitting or width changes. Continuous structural primitives follow the observed domestic pen trajectory without added geometry. Licensed geometry is separate from domestic dictionary evidence and exam-body official approval. Private graphics stay RAM-only.
+
+All five whole-glyph records are retained in the editable JSON and sources.json. KAGE engine revision 49232bac0348fe815f4200d4116ab7917e0db47f, eight source hashes and defaults are preserved in the proof. Geometry approval binds source, editable asset, review and runtime hashes. Domestic evidence: http://img.e-hanja.kr/hanjaSvg/aniSVG/5800/5808.svg (SHA256 81247b3f2b965b56637628532d21c7ab03e8551fe094a5369125e7bed8fada07). This is a domestic dictionary crosscheck, not exam-body official approval. Private graphics were displayed RAM-only in the Codex browser and are not redistributed.
+
