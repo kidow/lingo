@@ -1,26 +1,25 @@
 {
   "status": "active",
   "date": "2026-10-03",
-  "lastCompletedCommit": "b4eeffad505be39ae7984a40eddc1cfaf678ffea",
+  "lastCompletedCommit": "33ad109260b1931aae291de1f4134eda75a62cb5",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 昰 nine-stroke animation",
-    "parentAtStart": "b4eeffad505be39ae7984a40eddc1cfaf678ffea"
+    "message": "docs(hanja): record held 玹 stroke-path discontinuities",
+    "parentAtStart": "33ad109260b1931aae291de1f4134eda75a62cb5"
   },
   "currentBatch": {
     "glyphs": [
-      "昰"
+      "玹"
     ],
     "strokes": 9,
-    "status": "applied; whole source and all domestic directions/progressive states reviewed",
+    "status": "held; domestic7/8 source centers discontinuous; alternative domestic5 mismatch",
     "checks": {
       "providerRecords": 4,
       "engineFiles": 8,
       "domesticReviewed": 9,
-      "progressiveFrames": 81,
-      "runtimeAdded": 1,
-      "regressionPass": 1129,
-      "build": true,
-      "mobile": true,
+      "progressiveFrames": 0,
+      "runtimeAdded": 0,
+      "build": "not rerun; runtime unchanged",
+      "mobile": "not rerun; candidate not applied",
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -143,7 +142,9 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Acquire exact complete 玹 source and declared dependencies, then all9 domestic strokes and progressive review."
+    "Acquire exact complete 倧 source and declared dependencies; crosscheck all domestic strokes.",
+    "Skip 玹 until a complete source has continuous domestic7/8 and vertical domestic5; do not bridge source gaps.",
+    "逈 has prior candidate-missing and dictionary10/catalog9 findings; require new whole-source evidence before repeating."
   ],
   "held": [
     {
@@ -576,39 +577,47 @@
       "reason": "Final sweep quadratic ends55,154; cubic starts53,152. Alternative whole source has one-dot 辶 instead of domestic two-dot form.",
       "releaseCondition": "Acquire a licensed complete 迪 source matching domestic two-dot 辶 with an explicitly continuous final sweep. Recheck every domestic stroke and progressive frame. Do not invent a bridge, edit points, trim or substitute a radical.",
       "path": "docs/hanja-goal-glyphwiki-batch176-2026-10-03"
+    },
+    {
+      "glyph": "玹",
+      "strokes": 9,
+      "grade": "특급II",
+      "reason": "Domestic7 and8 are each a continuous folded stroke. Source6/7 and8/9 use disconnected centers and overlapping outlines. Existing outlines cannot establish an uninterrupted drawing trajectory; no bridging, trimming, moving source coordinates or stroke-count coercion.",
+      "releaseCondition": "New reusable exact whole-character source with a continuous center trajectory for domestic7/8 and matching vertical5, followed by all9 domestic/progressive states and runtime/UI checks.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch184-2026-10-03/findings.json"
     }
   ],
   "resources": {
-    "tabs": "batch183 own in-app tab closed; viewport reset",
-    "ramServers": "batch183 own ports52229/52230/52231 stopped",
+    "tabs": "batch184 own in-app tab closed; viewport unchanged",
+    "ramServers": "batch184 own port52232 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/serve.py",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/validation.json",
-    "docs/hanja-goal-glyphwiki-batch183-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/serve.py",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/findings.json",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/alternatives.json",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "玹",
-    "id": "u73b9",
-    "strokes": 9,
+    "glyph": "倧",
+    "id": "u5027",
+    "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; no prior held review; exact whole source acquisition next",
+    "status": "unapplied; exact whole source acquisition next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Acquire exact complete 玹 source and declared dependencies, then all9 domestic strokes and progressive review."
+      "Acquire exact complete 倧 source and declared dependencies; crosscheck all domestic strokes.",
+      "Skip 玹 until a complete source has continuous domestic7/8 and vertical domestic5; do not bridge source gaps.",
+      "逈 has prior candidate-missing and dictionary10/catalog9 findings; require new whole-source evidence before repeating."
     ]
   }
 }
