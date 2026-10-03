@@ -1,0 +1,135 @@
+{
+  "glyph": "珷",
+  "date": "2026-10-04",
+  "catalogStrokes": 11,
+  "playbackStrokes": 12,
+  "form": "사전",
+  "runtimeAdded": 1,
+  "reviewedDomesticStrokes": 12,
+  "progressiveFramesApproved": 108,
+  "sourceRecords": 5,
+  "engineFiles": 8,
+  "rawGroups": 13,
+  "drawPrimitives": 12,
+  "quadraticPrimitives": 3,
+  "cubicPrimitives": 1,
+  "exactWholeSourceClosure": true,
+  "originalZeroOutputGroupRetained": 4,
+  "foreignIndexAndFilesPreserved": true,
+  "heldUnchanged": {
+    "length": 112,
+    "sha256": "706534220e4d84e154678f061fba21535acde960f2f1953bcb5301f543467a86"
+  },
+  "focused": {
+    "exitCode": 0,
+    "tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "durationMs": 576.242375,
+    "scope": [
+      "batch215 runtime",
+      "catalog-wide reviewed variant guard"
+    ],
+    "updatedVariantInventoryCount": 29
+  },
+  "regression": {
+    "exitCode": 0,
+    "files": 298,
+    "stdout": "하루 빠져도 무너지지 않는다 — 연속일이 아니다 (0.079375ms)\n✔ 막대는 오늘을 끝으로 7칸이고 빈 날은 0이다 (0.073167ms)\n✔ 정답률은 최근 7일의 퀴즈만 센다 (0.069667ms)\n✔ 날짜 더하기는 달과 해를 넘는다 (0.079416ms)\n✔ 멀쩡한 문항은 아무것도 안 걸린다 (1.158959ms)\n✔ 정답만 유독 길면 길이로 걸린다 (0.098583ms)\n✔ 짧은 보기끼리는 한두 글자 차이로 안 걸린다 (0.054459ms)\n✔ 소거되는 오답이 둘이면 걸린다 (0.088875ms)\n✔ 소거되는 오답이 하나면 안 걸린다 (0.057333ms)\n✔ 소거 문구가 정답 쪽이면 세지 않는다 (0.041958ms)\n✔ 정답에만 괄호 주석이 붙으면 걸린다 (0.050833ms)\n✔ 넷 다 괄호가 있으면 안 걸린다 (0.04175ms)\n✔ 같은 물음이 두 번이면 뒤엣것이 걸린다 (0.080542ms)\n✔ 띄어쓰기·물음표만 다른 물음도 같은 것으로 본다 (0.103667ms)\n✔ 언어가 다르면 같은 물음이어도 중복이 아니다 (0.056542ms)\nℹ tests 1412\nℹ suites 0\nℹ pass 1412\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 61686.867042\n",
+    "testSummary": [
+      "ℹ tests 1412",
+      "ℹ pass 1412",
+      "ℹ fail 0"
+    ],
+    "stderr": ""
+  },
+  "productionBuild": {
+    "exitCode": 0,
+    "all19FilesPresentAndHashed": true,
+    "staticExports": [
+      "hanja-strokes/dictionary-reviewed-glyphwiki-batch215.json",
+      "hanja-strokes/glyphwiki/73f7.json",
+      "hanja-strokes/glyphwiki/NOTICE-73f7.md"
+    ],
+    "stdout": "\n> lingo@0.1.0 prebuild /Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo\n> node scripts/split.ts\n\n  en.json        3908 KB\n  ja.json        4788 KB\n  zh.json        4758 KB\n  es.json        3552 KB\n  fr.json        4056 KB\n  de.json        3663 KB\n  ru.json        5110 KB\n  search.json    6721 KB\n  tally.json       19 KB\n\n개념 11637개 · 참고 글 7편 → public/content/\n\n> lingo@0.1.0 build /Users/kidow/.codex/worktrees/hanja-stroke-verification/lingo\n> next build\n\n▲ Next.js 16.3.3 (Turbopack)\n✓ Running next.config.ts took 11ms\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 1508ms\n  Running TypeScript ...\n  Finished TypeScript in 1670ms ...\n  Collecting page data using 8 workers ...\n  Generating static pages using 8 workers (0/7) ...\n  Generating static pages using 8 workers (1/7) \n  Generating static pages using 8 workers (3/7) \n  Generating static pages using 8 workers (5/7) \n✓ Generating static pages using 8 workers (7/7) in 1178ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ○ /apple-icon.png\n├ ○ /debug\n├ ○ /icon.svg\n└ ○ /manifest.webmanifest\n\n\n○  (Static)  prerendered as static content\n\n",
+    "stderr": "",
+    "snapshot": "14e5071ddff7c9fd289cad84a0479ce145fcfb07",
+    "tree": "9ed5be40688a90407e1dbebe2f5330935640ce2a"
+  },
+  "engine": {
+    "exitCode": 0,
+    "stdout": "{\"passed\":true,\"providerRecords\":5,\"sourceCaptureHashVerified\":true,\"engineChecked\":true,\"rawGroups\":13,\"strokeGroups\":12,\"quadraticPrimitives\":3,\"cubicPrimitives\":1,\"runtimeRegistered\":1,\"privateMediaSaved\":false}\n",
+    "stderr": ""
+  },
+  "repairHistory": [
+    "Initial regression caught missing 珷 in catalog-wide reviewed variants enum; updated reviewed count 28 to29.",
+    "Initial retry hash-map substitution failed before build started; corrected exact file hashes before path substitution.",
+    "Remaining legacy count-conflict hold assertion still contained 珷; removed only reviewed 珷, retained other12 including 珹.",
+    "Final 298 test files /1412 tests passed and all19 build inputs hashed. Original geometry and pinned engine evidence unchanged."
+  ],
+  "mobileUi": {
+    "passed": true,
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "introAutoStart": "1 / 12",
+    "introAutoEnd": "12 / 12",
+    "introReplayStart": "1 / 12",
+    "introReplayEnd": "12 / 12",
+    "writingAutoStart": "1 / 12",
+    "writingAutoEnd": "12 / 12",
+    "writingReplayStart": "1 / 12",
+    "writingReplayEnd": "12 / 12",
+    "variantLabel": "사전 자형 · 재생 12획 (배정 11획)",
+    "staticOverlayImages": 0,
+    "animatedSvg": 1,
+    "canvas": {
+      "x": 46,
+      "y": 320.8046875,
+      "width": 338,
+      "height": 338,
+      "touchAction": "none",
+      "vaulNoDrag": true
+    },
+    "sheetBefore": {
+      "top": 139.8046875,
+      "height": 792.1953125,
+      "scroll": 0
+    },
+    "sheetAfterDrawing": {
+      "top": 139.8046875,
+      "height": 792.1953125,
+      "scroll": 0
+    },
+    "drawingInputBefore": 0,
+    "drawingInputAfter": 1,
+    "drawingInputAfterUndo": 0,
+    "consoleErrors": 0,
+    "playerLogicChanged": false
+  },
+  "resources": {
+    "tabs": "batch215 own in-app tab60 closed; viewport reset",
+    "ramServers": "batch215 own canonical52341/progressive52342/mobile52343/archive52344 servers stopped after exact PID and command checks",
+    "privateMediaSaved": false
+  },
+  "nextCandidate": {
+    "glyph": "珹",
+    "id": "u73f9",
+    "strokes": 11,
+    "grade": "특급II",
+    "unapplied": true,
+    "held": false,
+    "previousCountConflictGuard": true,
+    "records": 4,
+    "recordNames": [
+      "u73f9-k",
+      "u73f9-ue0102",
+      "u738b-01",
+      "u6210-02"
+    ],
+    "sourceSha256": "319265dcdaa6ff11ad9537fd867dc4c406970a3759f9d1a3de5fb3237cbf2578",
+    "exactClosure": true,
+    "status": "unapplied; exact whole archive closure acquired; domestic stroke-count and full browser review pending"
+  }
+}
