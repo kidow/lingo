@@ -1,26 +1,27 @@
 {
   "status": "active",
   "date": "2026-10-03",
-  "lastCompletedCommit": "1a8bd0c402d8c674d5fdd6aea22c14812ec21e7b",
+  "lastCompletedCommit": "22cb7e21dfbd524ebd47b5e0795d95960bd47f97",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 苡 nine-stroke animation",
-    "parentAtStart": "1a8bd0c402d8c674d5fdd6aea22c14812ec21e7b"
+    "message": "docs(hanja): record 迪 final-sweep source mismatch",
+    "parentAtStart": "22cb7e21dfbd524ebd47b5e0795d95960bd47f97"
   },
   "currentBatch": {
     "glyphs": [
-      "苡"
+      "迪"
     ],
     "strokes": 9,
-    "status": "applied; whole source and all domestic directions/progressive states reviewed",
+    "status": "held; Korean final-sweep trajectory discontinuity and alternate form mismatch",
     "checks": {
-      "providerRecords": 5,
+      "providerRecords": 3,
+      "alternativeProviderRecords": 3,
       "engineFiles": 8,
       "domesticReviewed": 9,
-      "progressiveFrames": 81,
-      "runtimeAdded": 1,
-      "regressionPass": 1108,
-      "build": true,
-      "mobile": true,
+      "progressiveFrames": 0,
+      "runtimeAdded": 0,
+      "engineReproduction": true,
+      "build": "not applicable: no application or runtime change",
+      "mobile": "not applicable: no runtime registration",
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -143,7 +144,7 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Acquire exact complete 迪 Korean source with two-dot 辶 and declared dependencies, then all9 domestic strokes and progressive review."
+    "Acquire exact complete 炡 source and declared dependencies, then all9 domestic strokes and progressive review."
   ],
   "held": [
     {
@@ -569,39 +570,45 @@
       "reason": "Second-stroke curves restart38source units above the previous endpoint; 人 falling stroke touches water sweep unlike domestic reference.",
       "releaseCondition": "Find licensed whole 冾 geometry with a documented continuous second stroke and domestic-separated 人 falling stroke, then repeat all8stroke and progressive checks. No connector, trimming, point edit or radical substitution.",
       "path": "docs/hanja-goal-glyphwiki-batch112-2026-09-27"
+    },
+    {
+      "glyph": "迪",
+      "strokes": 9,
+      "reason": "Final sweep quadratic ends55,154; cubic starts53,152. Alternative whole source has one-dot 辶 instead of domestic two-dot form.",
+      "releaseCondition": "Acquire a licensed complete 迪 source matching domestic two-dot 辶 with an explicitly continuous final sweep. Recheck every domestic stroke and progressive frame. Do not invent a bridge, edit points, trim or substitute a radical.",
+      "path": "docs/hanja-goal-glyphwiki-batch176-2026-10-03"
     }
   ],
   "resources": {
-    "tabs": "batch175 in-app tab closed; viewport reset",
-    "ramServers": "batch175 own ports52207/52208/52209 stopped",
+    "tabs": "batch176 own in-app tab closed; viewport reset",
+    "ramServers": "batch176 own port52210 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/serve.py",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/validation.json",
-    "docs/hanja-goal-glyphwiki-batch175-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/serve.py",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/alternative-sources.json",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/findings.json",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/README.md",
+    "docs/hanja-goal-glyphwiki-batch176-2026-10-03/validation.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "迪",
-    "id": "u8fea",
+    "glyph": "炡",
+    "id": "u70a1",
     "grade": "특급II",
     "strokes": 9,
-    "status": "unapplied; prior inventory notes two-dot 辶 mismatch in foreign corpus; acquire exact whole Korean source",
+    "status": "unapplied; no held record; acquire exact whole source",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Acquire exact complete 迪 Korean source with two-dot 辶 and declared dependencies, then all9 domestic strokes and progressive review."
+      "Acquire exact complete 炡 source and declared dependencies, then all9 domestic strokes and progressive review."
     ]
   }
 }
