@@ -1,26 +1,27 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "dcf485a4495f37b61fab44fdcdb17ccc6165e585",
+  "lastCompletedCommit": "e9fe2c6b85dee111f759820a0b662302e0f596f8",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 祛 ninth-stroke path discontinuity",
-    "parentAtStart": "dcf485a4495f37b61fab44fdcdb17ccc6165e585"
+    "message": "docs(hanja): record 涍 third-stroke path discontinuity",
+    "parentAtStart": "e9fe2c6b85dee111f759820a0b662302e0f596f8"
   },
   "currentBatch": {
     "glyphs": [
-      "祛"
+      "涍"
     ],
     "strokes": 10,
-    "status": "held: discontinuous ninth center path; new full 示 source and all domestic states reviewed",
+    "status": "held: discontinuous third center; all domestic states and identical whole alternative reviewed",
     "checks": {
       "providerRecords": 4,
       "engineFiles": 8,
-      "rawGroups": 11,
-      "quadraticPrimitives": 4,
+      "rawGroups": 12,
+      "quadraticPrimitives": 7,
       "domesticReviewed": 10,
       "progressiveFrames": 0,
       "runtimeAdded": 0,
       "verifier": true,
+      "alternativeSameWholeSource": true,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -143,9 +144,9 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Review exact whole u6d8d-k -> u6d8d, only declared u6c35-01 and u5b5d.",
-    "Reproduce original engine primitives and inspect all10 domestic strokes, directions, cumulative/form and progressive states before runtime.",
-    "Preserve original coordinates; historical licensed geometry is not independent domestic evidence or exam-body official approval."
+    "Use exact complete u8317-k -> u8317-ue0102 and declared ufa5e-03, u8279-k03 and u540d; no radical transplant.",
+    "Reproduce original primitives and review all10 domestic strokes, directions, cumulative/form and progressive frames, including the four-stroke 艹 form.",
+    "Preserve source coordinates and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
   ],
   "held": [
     {
@@ -610,40 +611,49 @@
       "reason": "New exact full 示 whole source resolves prior 礻 form mismatch, but domestic9 is continuous while original quadratic centers102.665,170 to86.6,173 are disconnected by16.342711678298688. No synthetic bridge, trimming, point movement or component transplant.",
       "releaseCondition": "New reusable exact whole-character source with a continuous original domestic9 fold and matching full 示 form; then all10 directions, progressive states and runtime/UI verification.",
       "evidence": "docs/hanja-goal-glyphwiki-batch191-2026-10-04/findings.json"
+    },
+    {
+      "glyph": "涍",
+      "strokes": 10,
+      "grade": "특급II",
+      "reason": "Domestic3 is continuous, but original quadratic centers38,184 to34,150 are disconnected by34.23448553724738. Exact whole u6d8d-ue0100 alternative shares the same original u6d8d source; no synthetic bridge, trimming, point movement or component transplant.",
+      "releaseCondition": "New reusable exact whole-character source with a continuous original domestic3 center turn and matching complete form; then all10 directions, progressive states and runtime/UI verification.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch192-2026-10-04/findings.json"
     }
   ],
   "resources": {
-    "tabs": "batch191 own in-app tab closed; viewport unchanged/reset from prior batch",
-    "ramServers": "batch191 own ports52253/52254 stopped",
+    "tabs": "batch192 own in-app tab closed; viewport unchanged/reset",
+    "ramServers": "batch192 own ports52255/52256 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/findings.json",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/README.md",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/next-source-inventory.json"
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/findings.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/alternative-u6d8d-ue0100.json",
+    "docs/hanja-goal-glyphwiki-batch192-2026-10-04/next-source-inventory.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "涍",
-    "id": "u6d8d",
+    "glyph": "茗",
+    "id": "u8317",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; complete historical whole source and declared closure acquired; full review next",
+    "status": "unapplied; exact historical whole K source and all declared records acquired; full review next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Review exact whole u6d8d-k -> u6d8d, only declared u6c35-01 and u5b5d.",
-      "Reproduce original engine primitives and inspect all10 domestic strokes, directions, cumulative/form and progressive states before runtime.",
-      "Preserve original coordinates; historical licensed geometry is not independent domestic evidence or exam-body official approval."
+      "Use exact complete u8317-k -> u8317-ue0102 and declared ufa5e-03, u8279-k03 and u540d; no radical transplant.",
+      "Reproduce original primitives and review all10 domestic strokes, directions, cumulative/form and progressive frames, including the four-stroke 艹 form.",
+      "Preserve source coordinates and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
     ]
   }
 }
