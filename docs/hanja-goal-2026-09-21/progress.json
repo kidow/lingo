@@ -1,20 +1,21 @@
 {
   "status": "active",
   "date": "2026-10-03",
-  "lastCompletedCommit": "577ce51fdae4ec698c19ea618b08d6b3822b175a",
+  "lastCompletedCommit": "4d43c701842548d149bf37d600cef80b16d04ccc",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 栯 whole-path source availability",
-    "parentAtStart": "577ce51fdae4ec698c19ea618b08d6b3822b175a"
+    "message": "docs(hanja): record 浿 third-stroke path discontinuity",
+    "parentAtStart": "4d43c701842548d149bf37d600cef80b16d04ccc"
   },
   "currentBatch": {
     "glyphs": [
-      "栯"
+      "浿"
     ],
     "strokes": 10,
-    "status": "held-source-unavailable; domestic graphic available but reusable whole paths not acquired",
+    "status": "held-discontinuous-third-stroke; whole source and all domestic states reviewed, runtime withheld",
     "checks": {
-      "sourceAttempts": 2,
-      "domesticReviewed": 0,
+      "providerRecords": 4,
+      "engineFiles": 8,
+      "domesticReviewed": 10,
       "progressiveFrames": 0,
       "runtimeAdded": 0,
       "browser": "Codex in-app panel",
@@ -139,7 +140,8 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Acquire exact complete 浿 source and declared dependencies, then all10 domestic strokes and progressive review."
+    "Use next-source-inventory.json exact whole u73dd-k with declared closure; reproduce original engine then all10 domestic/progressive states.",
+    "2016 snapshot has no individual glyph revisions; do not claim current revision or Korean official approval."
   ],
   "held": [
     {
@@ -588,32 +590,47 @@
       "reason": "Domestic graphic is available, but no reusable exact whole-character paths were acquired. Source acquisition failure does not prove the glyph has no public or official source.",
       "releaseCondition": "GlyphWiki security check clears through its normal flow, or a newly evidenced reusable exact whole-character source is obtained. Then review all10 domestic directions, cumulative forms and progressive frames before runtime and UI approval.",
       "evidence": "docs/hanja-goal-glyphwiki-batch187-2026-10-03/findings.json"
+    },
+    {
+      "glyph": "浿",
+      "strokes": 10,
+      "grade": "특급II",
+      "reason": "Domestic3 is continuous, but original whole-source quadratic centers42.95,184 to38.4,150 are disconnected by34.30309752777437. No synthetic bridge, trimming, moving points or component transplant allowed.",
+      "releaseCondition": "New reusable exact whole-character source with a continuous original domestic3 center trajectory and matching complete form; then all10 directions/progressive states and runtime/UI verification.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch188-2026-10-03/findings.json"
     }
   ],
   "resources": {
-    "tabs": "batch187 own in-app tab closed; no viewport override",
-    "ramServers": "none created",
+    "tabs": "batch188 own in-app tab closed; no viewport override",
+    "ramServers": "batch188 own ports52244/52245 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch187-2026-10-03/findings.json",
-    "docs/hanja-goal-glyphwiki-batch187-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch187-2026-10-03/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch187-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch187-2026-10-03/validation.json",
-    "docs/hanja-goal-glyphwiki-batch187-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch187-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/serve.py",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/findings.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/validation.json",
+    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "浿",
-    "id": "u6d7f",
+    "glyph": "珝",
+    "id": "u73dd",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; no prior held review; exact whole source acquisition next",
+    "status": "unapplied; exact whole public historical source and declared closure acquired; domestic review next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Acquire exact complete 浿 source and declared dependencies, then all10 domestic strokes and progressive review."
+      "Use next-source-inventory.json exact whole u73dd-k with declared closure; reproduce original engine then all10 domestic/progressive states.",
+      "2016 snapshot has no individual glyph revisions; do not claim current revision or Korean official approval."
     ]
   }
 }
