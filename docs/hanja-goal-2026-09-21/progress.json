@@ -1,24 +1,25 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "ca6ced911af0a97267a457f1285589e7f8d95075",
+  "lastCompletedCommit": "7ff4c339e7ad74f57a37cd0d27eb3a255291c154",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 茗 ten-stroke animation",
-    "parentAtStart": "ca6ced911af0a97267a457f1285589e7f8d95075"
+    "message": "feat(hanja): add reviewed 茨 ten-stroke animation",
+    "parentAtStart": "7ff4c339e7ad74f57a37cd0d27eb3a255291c154"
   },
   "currentBatch": {
     "glyphs": [
-      "茗"
+      "茨"
     ],
     "strokes": 10,
-    "status": "applied; whole historical source and all domestic directions/progressive states reviewed",
+    "status": "applied; exact pinned dependency revisions and all domestic directions/progressive states reviewed",
     "checks": {
-      "providerRecords": 5,
+      "providerRecords": 6,
+      "pinnedDependencyRevisions": 2,
       "engineFiles": 8,
       "domesticReviewed": 10,
       "progressiveFrames": 90,
       "runtimeAdded": 1,
-      "regressionPass": 1144,
+      "regressionPass": 1364,
       "build": true,
       "mobile": true,
       "browser": "Codex in-app panel",
@@ -28,9 +29,9 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5066,
-      "remaining": 912,
-      "percent": 84.7
+      "applied": 5067,
+      "remaining": 911,
+      "percent": 84.8
     },
     "grades": [
       {
@@ -127,9 +128,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 909,
-        "remaining": 241,
-        "percent": 79
+        "applied": 910,
+        "remaining": 240,
+        "percent": 79.1
       },
       {
         "grade": "특급",
@@ -143,9 +144,9 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Use exact whole u8328-k -> u8328-ue0104 and declared closure, including literal u6b21-var-002@3 and u6b20-02-var-002@2.",
-    "Review all10 domestic directions/cumulative/form and all progressive frames, preserving four-stroke 艹 and original primitive coordinates.",
-    "Do not substitute latest revisions, transplant radicals, bridge gaps or claim exam-body official approval."
+    "Use exact complete u832f-k -> u832f-ue0102 and declared ufa5e-03/u8279-k03/u4f0f/u4ebb-01/u72ac-02; no radical transplant.",
+    "Review all10 domestic directions/cumulative/form and all progressive frames, including four-stroke 艹 and original type7 primitive.",
+    "Preserve source coordinates, engine defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
   ],
   "held": [
     {
@@ -621,40 +622,39 @@
     }
   ],
   "resources": {
-    "tabs": "batch193 own in-app tabs closed; viewport reset",
-    "ramServers": "batch193 own ports52257/52258/52259/52260 stopped",
+    "tabs": "batch194 own in-app tab closed; viewport reset",
+    "ramServers": "batch194 own ports52261/52262/52263 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/additional-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch193-2026-10-04/README.md"
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch194-2026-10-04/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "茨",
-    "id": "u8328",
+    "glyph": "茯",
+    "id": "u832f",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; whole K source and exact pinned dependencies acquired; full browser review next",
+    "status": "unapplied; exact historical whole K source and all7 declared records acquired; full browser review next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Use exact whole u8328-k -> u8328-ue0104 and declared closure, including literal u6b21-var-002@3 and u6b20-02-var-002@2.",
-      "Review all10 domestic directions/cumulative/form and all progressive frames, preserving four-stroke 艹 and original primitive coordinates.",
-      "Do not substitute latest revisions, transplant radicals, bridge gaps or claim exam-body official approval."
+      "Use exact complete u832f-k -> u832f-ue0102 and declared ufa5e-03/u8279-k03/u4f0f/u4ebb-01/u72ac-02; no radical transplant.",
+      "Review all10 domestic directions/cumulative/form and all progressive frames, including four-stroke 艹 and original type7 primitive.",
+      "Preserve source coordinates, engine defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
     ]
   }
 }
