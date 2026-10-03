@@ -1,14 +1,14 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "90cb7ed0bb2d34704d6044b2b44ba9b64cbbde9a",
+  "lastCompletedCommit": "f1581f68681388a2dff36f5e6f9a767f59d2df15",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 珝 ten-stroke animation",
-    "parentAtStart": "90cb7ed0bb2d34704d6044b2b44ba9b64cbbde9a"
+    "message": "feat(hanja): add reviewed 珦 ten-stroke animation",
+    "parentAtStart": "f1581f68681388a2dff36f5e6f9a767f59d2df15"
   },
   "currentBatch": {
     "glyphs": [
-      "珝"
+      "珦"
     ],
     "strokes": 10,
     "status": "applied; whole historical source and all domestic directions/progressive states reviewed",
@@ -18,7 +18,7 @@
       "domesticReviewed": 10,
       "progressiveFrames": 90,
       "runtimeAdded": 1,
-      "regressionPass": 1138,
+      "regressionPass": 1141,
       "build": true,
       "mobile": true,
       "browser": "Codex in-app panel",
@@ -28,8 +28,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5064,
-      "remaining": 914,
+      "applied": 5065,
+      "remaining": 913,
       "percent": 84.7
     },
     "grades": [
@@ -127,9 +127,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 907,
-        "remaining": 243,
-        "percent": 78.9
+        "applied": 908,
+        "remaining": 242,
+        "percent": 79
       },
       {
         "grade": "특급",
@@ -143,8 +143,9 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Acquire exact complete 珦 source and declared dependencies, then all10 domestic strokes and progressive review.",
-    "Public historical snapshot can be reused as geometry; it is not independent domestic evidence or current individual revision."
+    "New exact whole u795b-k -> u795b with declared u793a-01 and u53bb-02 uses full 示, unlike previously held 礻 geometry.",
+    "Trace the original type7 primitive and all whole-glyph paths; review all10 domestic strokes, directions, cumulative/form and progressive frames before runtime.",
+    "Historical geometry is not independent domestic evidence or exam-body official approval; do not bridge gaps or invent coordinates."
   ],
   "held": [
     {
@@ -604,37 +605,43 @@
     }
   ],
   "resources": {
-    "tabs": "batch189 own in-app tab closed; viewport reset",
-    "ramServers": "batch189 own ports52246/52247/52248 stopped",
+    "tabs": "batch190 own in-app tab closed; viewport reset",
+    "ramServers": "batch190 own ports52249/52250/52251/52252 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/serve.py",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/validation.json",
-    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/next-source-inventory.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "珦",
-    "id": "u73e6",
+    "glyph": "祛",
+    "id": "u795b",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; no prior held review; exact whole source acquisition next",
+    "status": "unapplied; prior 示/礻 mismatch; newly acquired whole 示 source requires complete review",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Acquire exact complete 珦 source and declared dependencies, then all10 domestic strokes and progressive review.",
-      "Public historical snapshot can be reused as geometry; it is not independent domestic evidence or current individual revision."
+      "New exact whole u795b-k -> u795b with declared u793a-01 and u53bb-02 uses full 示, unlike previously held 礻 geometry.",
+      "Trace the original type7 primitive and all whole-glyph paths; review all10 domestic strokes, directions, cumulative/form and progressive frames before runtime.",
+      "Historical geometry is not independent domestic evidence or exam-body official approval; do not bridge gaps or invent coordinates."
+    ],
+    "priorFindings": [
+      "docs/hanja-special2-queue-2026-09-20/README.md",
+      "docs/hanja-special2-gap-2026-09-20/README.md"
     ]
   }
 }
