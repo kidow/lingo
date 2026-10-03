@@ -1,26 +1,26 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "f1581f68681388a2dff36f5e6f9a767f59d2df15",
+  "lastCompletedCommit": "dcf485a4495f37b61fab44fdcdb17ccc6165e585",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 珦 ten-stroke animation",
-    "parentAtStart": "f1581f68681388a2dff36f5e6f9a767f59d2df15"
+    "message": "docs(hanja): record 祛 ninth-stroke path discontinuity",
+    "parentAtStart": "dcf485a4495f37b61fab44fdcdb17ccc6165e585"
   },
   "currentBatch": {
     "glyphs": [
-      "珦"
+      "祛"
     ],
     "strokes": 10,
-    "status": "applied; whole historical source and all domestic directions/progressive states reviewed",
+    "status": "held: discontinuous ninth center path; new full 示 source and all domestic states reviewed",
     "checks": {
       "providerRecords": 4,
       "engineFiles": 8,
+      "rawGroups": 11,
+      "quadraticPrimitives": 4,
       "domesticReviewed": 10,
-      "progressiveFrames": 90,
-      "runtimeAdded": 1,
-      "regressionPass": 1141,
-      "build": true,
-      "mobile": true,
+      "progressiveFrames": 0,
+      "runtimeAdded": 0,
+      "verifier": true,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -143,9 +143,9 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "New exact whole u795b-k -> u795b with declared u793a-01 and u53bb-02 uses full 示, unlike previously held 礻 geometry.",
-    "Trace the original type7 primitive and all whole-glyph paths; review all10 domestic strokes, directions, cumulative/form and progressive frames before runtime.",
-    "Historical geometry is not independent domestic evidence or exam-body official approval; do not bridge gaps or invent coordinates."
+    "Review exact whole u6d8d-k -> u6d8d, only declared u6c35-01 and u5b5d.",
+    "Reproduce original engine primitives and inspect all10 domestic strokes, directions, cumulative/form and progressive states before runtime.",
+    "Preserve original coordinates; historical licensed geometry is not independent domestic evidence or exam-body official approval."
   ],
   "held": [
     {
@@ -602,46 +602,48 @@
       "reason": "Domestic3 is continuous, but original whole-source quadratic centers42.95,184 to38.4,150 are disconnected by34.30309752777437. No synthetic bridge, trimming, moving points or component transplant allowed.",
       "releaseCondition": "New reusable exact whole-character source with a continuous original domestic3 center trajectory and matching complete form; then all10 directions/progressive states and runtime/UI verification.",
       "evidence": "docs/hanja-goal-glyphwiki-batch188-2026-10-03/findings.json"
+    },
+    {
+      "glyph": "祛",
+      "strokes": 10,
+      "grade": "특급II",
+      "reason": "New exact full 示 whole source resolves prior 礻 form mismatch, but domestic9 is continuous while original quadratic centers102.665,170 to86.6,173 are disconnected by16.342711678298688. No synthetic bridge, trimming, point movement or component transplant.",
+      "releaseCondition": "New reusable exact whole-character source with a continuous original domestic9 fold and matching full 示 form; then all10 directions, progressive states and runtime/UI verification.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch191-2026-10-04/findings.json"
     }
   ],
   "resources": {
-    "tabs": "batch190 own in-app tab closed; viewport reset",
-    "ramServers": "batch190 own ports52249/52250/52251/52252 stopped",
+    "tabs": "batch191 own in-app tab closed; viewport unchanged/reset from prior batch",
+    "ramServers": "batch191 own ports52253/52254 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/README.md",
-    "docs/hanja-goal-glyphwiki-batch190-2026-10-04/next-source-inventory.json"
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/findings.json",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch191-2026-10-04/next-source-inventory.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "祛",
-    "id": "u795b",
+    "glyph": "涍",
+    "id": "u6d8d",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; prior 示/礻 mismatch; newly acquired whole 示 source requires complete review",
+    "status": "unapplied; complete historical whole source and declared closure acquired; full review next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "New exact whole u795b-k -> u795b with declared u793a-01 and u53bb-02 uses full 示, unlike previously held 礻 geometry.",
-      "Trace the original type7 primitive and all whole-glyph paths; review all10 domestic strokes, directions, cumulative/form and progressive frames before runtime.",
-      "Historical geometry is not independent domestic evidence or exam-body official approval; do not bridge gaps or invent coordinates."
-    ],
-    "priorFindings": [
-      "docs/hanja-special2-queue-2026-09-20/README.md",
-      "docs/hanja-special2-gap-2026-09-20/README.md"
+      "Review exact whole u6d8d-k -> u6d8d, only declared u6c35-01 and u5b5d.",
+      "Reproduce original engine primitives and inspect all10 domestic strokes, directions, cumulative/form and progressive states before runtime.",
+      "Preserve original coordinates; historical licensed geometry is not independent domestic evidence or exam-body official approval."
     ]
   }
 }
