@@ -1,23 +1,26 @@
 {
   "status": "active",
-  "date": "2026-10-03",
-  "lastCompletedCommit": "4d43c701842548d149bf37d600cef80b16d04ccc",
+  "date": "2026-10-04",
+  "lastCompletedCommit": "90cb7ed0bb2d34704d6044b2b44ba9b64cbbde9a",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 浿 third-stroke path discontinuity",
-    "parentAtStart": "4d43c701842548d149bf37d600cef80b16d04ccc"
+    "message": "feat(hanja): add reviewed 珝 ten-stroke animation",
+    "parentAtStart": "90cb7ed0bb2d34704d6044b2b44ba9b64cbbde9a"
   },
   "currentBatch": {
     "glyphs": [
-      "浿"
+      "珝"
     ],
     "strokes": 10,
-    "status": "held-discontinuous-third-stroke; whole source and all domestic states reviewed, runtime withheld",
+    "status": "applied; whole historical source and all domestic directions/progressive states reviewed",
     "checks": {
       "providerRecords": 4,
       "engineFiles": 8,
       "domesticReviewed": 10,
-      "progressiveFrames": 0,
-      "runtimeAdded": 0,
+      "progressiveFrames": 90,
+      "runtimeAdded": 1,
+      "regressionPass": 1138,
+      "build": true,
+      "mobile": true,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -25,8 +28,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5063,
-      "remaining": 915,
+      "applied": 5064,
+      "remaining": 914,
       "percent": 84.7
     },
     "grades": [
@@ -124,9 +127,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 906,
-        "remaining": 244,
-        "percent": 78.8
+        "applied": 907,
+        "remaining": 243,
+        "percent": 78.9
       },
       {
         "grade": "특급",
@@ -140,8 +143,8 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Use next-source-inventory.json exact whole u73dd-k with declared closure; reproduce original engine then all10 domestic/progressive states.",
-    "2016 snapshot has no individual glyph revisions; do not claim current revision or Korean official approval."
+    "Acquire exact complete 珦 source and declared dependencies, then all10 domestic strokes and progressive review.",
+    "Public historical snapshot can be reused as geometry; it is not independent domestic evidence or current individual revision."
   ],
   "held": [
     {
@@ -601,36 +604,37 @@
     }
   ],
   "resources": {
-    "tabs": "batch188 own in-app tab closed; no viewport override",
-    "ramServers": "batch188 own ports52244/52245 stopped",
+    "tabs": "batch189 own in-app tab closed; viewport reset",
+    "ramServers": "batch189 own ports52246/52247/52248 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/serve.py",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/findings.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/validation.json",
-    "docs/hanja-goal-glyphwiki-batch188-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/serve.py",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/validation.json",
+    "docs/hanja-goal-glyphwiki-batch189-2026-10-03/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "珝",
-    "id": "u73dd",
+    "glyph": "珦",
+    "id": "u73e6",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; exact whole public historical source and declared closure acquired; domestic review next",
+    "status": "unapplied; no prior held review; exact whole source acquisition next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Use next-source-inventory.json exact whole u73dd-k with declared closure; reproduce original engine then all10 domestic/progressive states.",
-      "2016 snapshot has no individual glyph revisions; do not claim current revision or Korean official approval."
+      "Acquire exact complete 珦 source and declared dependencies, then all10 domestic strokes and progressive review.",
+      "Public historical snapshot can be reused as geometry; it is not independent domestic evidence or current individual revision."
     ]
   }
 }
