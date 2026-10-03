@@ -1,0 +1,209 @@
+/** Whole historical geometry crosschecked with a domestic dictionary; not exam-body approval. */
+import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch200.json' with { type: 'json' }
+import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
+const EXPECTED = [
+  {
+    "glyph": "荇",
+    "verificationSource": "ehanja-crosschecked",
+    "verifiedAt": "2026-10-04",
+    "geometrySource": "49f40741d5cafeb0147d11c0e9d920690c167d5798b7cb17d8934daf740e7437",
+    "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
+    "sourceStrokeIndices": [
+      1,
+      2,
+      4,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "pathsSha256": "7a413a27b5fea7603dc889460f4283abfb8363be7d76b21a7037b49ea95b8af3",
+    "sourceReference": {
+      "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/8347.svg",
+      "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/8347.svg",
+      "dictionarySvgSha256": "3202ceea49d768a91a584cc233b968ffe0e9bb79a637dcf43f0099674b8e6da8",
+      "dictionaryDirectionStrokes": "1,2,3,4,5,6,7,8,9,10",
+      "orderReviewSha256": "f348082b8e2bd25b67a31085667061a1b5807c2a043ae85bbbdf4702db28992d",
+      "geometryReviewSha256": "f348082b8e2bd25b67a31085667061a1b5807c2a043ae85bbbdf4702db28992d",
+      "directionReviewSha256": "f348082b8e2bd25b67a31085667061a1b5807c2a043ae85bbbdf4702db28992d"
+    },
+    "geometryLicense": {
+      "spdx": "LicenseRef-GlyphWiki",
+      "attribution": "GlyphWiki Project and contributors",
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt",
+      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "revision": "2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u8347-k/koseki-346870/ufa5e-03/u8279-k03/u884c@8/u5f73-01@2; four archive records lack individual revisions; exact u884c@8 (nkay, 2012-06-18 14:18) and u5f73-01@2 (spinda-kkmr, 2011-01-20 19:25) read-only original captures; source SHA256 27e3f430db02280e83945d1abb6d0003d0e1b0e479456335f846765dff48dacc",
+      "editableSource": "/hanja-strokes/glyphwiki/8347.json",
+      "modifications": "All10 domestic directional/cumulative states, complete form and90 progressive frames reviewed in Codex in-app browser. Exact whole u8347-k -> koseki-346870 and only declared ufa5e-03/u8279-k03/u884c@8/u5f73-01@2. Four historical archive records and two literal revision records captured read-only from original pages. No radical transplant or latest revision substitution. Domestic3/4 reorder original right horizontal before right vertical. Raw groups0;1;3;2;4;5;6;7;8;9. Domestic10 original line-to-quadratic hook join142.62,171.86 is continuous. All10 original source groups,11 draw primitives,three quadratic paths, polygons and engine defaults retained. Normalize200to100 and winding; no invented points, bridges, trimming, primitive splitting or width changes. Licensed geometry is separate from domestic dictionary evidence and exam-body official approval. Private graphics stay RAM-only."
+    },
+    "paths": [
+      "M6.4 15.65 L46.5 15.65 L46.5 17.65 L6.4 17.65 Z M46.5 15.65 L36.5 16.65 L41.5 11.15 Z",
+      "M34.65 6.05 L34.65 25.85 L28.65 28.85 L28.65 5.05 Z M34.65 6.05 L36.15 7.05 L33.65 8.55 Z",
+      "M52.45 15.65 L92.55 15.65 L92.55 17.65 L52.45 17.65 Z M92.55 15.65 L80.55 16.65 L86.55 10.65 Z",
+      "M70.3 6.05 L70.3 25.85 L64.3 28.85 L64.3 5.05 Z M70.3 6.05 L71.8 7.05 L69.3 8.55 Z",
+      "M38.1 32.95 L35.85 34.5 L33.45 36.05 L31 37.55 L28.4 39.05 L25.65 40.5 L22.8 41.95 L19.85 43.35 L16.75 44.7 L13.5 46 L10.05 47.15 L9.65 46.35 L12.6 44.3 L15.45 42.35 L18.25 40.5 L20.9 38.65 L23.45 36.9 L25.85 35.15 L28.15 33.4 L30.35 31.65 L32.4 29.95 L34.35 28.3 Z M33.95 28.6 L34.4 28.25 L38.1 32.95 Z M38.1 32.95 L38.25 34.75 L35.5 33.75 Z",
+      "M40.6 44.3 L37.95 47.05 L35.15 49.75 L32.2 52.35 L29.05 54.85 L25.8 57.35 L22.35 59.75 L18.75 62.05 L15 64.25 L11 66.35 L6.85 68.3 L6.4 67.5 L10 64.75 L13.5 62.05 L16.85 59.35 L20.1 56.7 L23.15 54.05 L26.05 51.35 L28.75 48.65 L31.35 45.95 L33.75 43.2 L36 40.45 Z M35.7 40.8 L36.2 40.2 L40.6 44.3 Z M40.6 44.3 L41.05 46.05 L38.2 45.6 Z",
+      "M29.45 56.75 L29.45 90.5 L23.45 93.5 L23.45 55.75 Z M29.45 56.75 L30.95 57.75 L28.45 59.25 Z",
+      "M44.6 32.95 L86.3 32.95 L86.3 34.95 L44.6 34.95 Z M86.3 32.95 L74.3 33.95 L80.3 27.95 Z",
+      "M39.75 52.7 L91.65 52.7 L91.65 54.7 L39.75 54.7 Z M91.65 52.7 L79.65 53.7 L85.65 47.7 Z",
+      "M74.3 52.7 L74.3 85.9 L68.3 85.9 L68.3 52.7 Z M68.3 85.9 L74.3 85.9 L73.1 87.7 L71.3 88.9 L69.5 87.7 Z M74.3 85.9 L74.2 87.2 L74 88.45 L73.6 89.65 L73 90.75 L72.15 91.8 L71.15 92.6 L70 93.2 L68.8 93.6 L67.55 93.85 L66.3 93.9 L66.3 87.9 L66.9 87.85 L67.35 87.8 L67.65 87.7 L67.8 87.6 L67.9 87.55 L68 87.45 L68.1 87.25 L68.15 87 L68.25 86.5 L68.3 85.9 Z M66.3 90.9 L58.3 89.4 L58.3 87.9 L66.3 87.9 Z"
+    ],
+    "outlines": [
+      [
+        {
+          "outline": "M6.4 15.65 L46.5 15.65 L46.5 17.65 L6.4 17.65 Z M46.5 15.65 L36.5 16.65 L41.5 11.15 Z",
+          "bounds": [
+            6.4,
+            11.15,
+            46.5,
+            17.65
+          ],
+          "direction": "right",
+          "weight": 40.095
+        }
+      ],
+      [
+        {
+          "outline": "M34.65 6.05 L34.65 25.85 L28.65 28.85 L28.65 5.05 Z M34.65 6.05 L36.15 7.05 L33.65 8.55 Z",
+          "bounds": [
+            28.65,
+            5.05,
+            36.15,
+            28.85
+          ],
+          "direction": "down",
+          "weight": 21.8025
+        }
+      ],
+      [
+        {
+          "outline": "M52.45 15.65 L92.55 15.65 L92.55 17.65 L52.45 17.65 Z M92.55 15.65 L80.55 16.65 L86.55 10.65 Z",
+          "bounds": [
+            52.45,
+            10.65,
+            92.55,
+            17.65
+          ],
+          "direction": "right",
+          "weight": 40.095
+        }
+      ],
+      [
+        {
+          "outline": "M70.3 6.05 L70.3 25.85 L64.3 28.85 L64.3 5.05 Z M70.3 6.05 L71.8 7.05 L69.3 8.55 Z",
+          "bounds": [
+            64.3,
+            5.05,
+            71.8,
+            28.85
+          ],
+          "direction": "down",
+          "weight": 21.8025
+        }
+      ],
+      [
+        {
+          "outline": "M38.1 32.95 L35.85 34.5 L33.45 36.05 L31 37.55 L28.4 39.05 L25.65 40.5 L22.8 41.95 L19.85 43.35 L16.75 44.7 L13.5 46 L10.05 47.15 L9.65 46.35 L12.6 44.3 L15.45 42.35 L18.25 40.5 L20.9 38.65 L23.45 36.9 L25.85 35.15 L28.15 33.4 L30.35 31.65 L32.4 29.95 L34.35 28.3 Z M33.95 28.6 L34.4 28.25 L38.1 32.95 Z M38.1 32.95 L38.25 34.75 L35.5 33.75 Z",
+          "bounds": [
+            9.65,
+            28.25,
+            38.25,
+            47.15
+          ],
+          "direction": "curve",
+          "weight": 31.371728,
+          "revealPath": "M36.622800000000005 30.34 Q26.093450000000004 38.735 9.89445 46.765",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M40.6 44.3 L37.95 47.05 L35.15 49.75 L32.2 52.35 L29.05 54.85 L25.8 57.35 L22.35 59.75 L18.75 62.05 L15 64.25 L11 66.35 L6.85 68.3 L6.4 67.5 L10 64.75 L13.5 62.05 L16.85 59.35 L20.1 56.7 L23.15 54.05 L26.05 51.35 L28.75 48.65 L31.35 45.95 L33.75 43.2 L36 40.45 Z M35.7 40.8 L36.2 40.2 L40.6 44.3 Z M40.6 44.3 L41.05 46.05 L38.2 45.6 Z",
+          "bounds": [
+            6.4,
+            40.2,
+            41.05,
+            68.3
+          ],
+          "direction": "curve",
+          "weight": 41.172089,
+          "revealPath": "M38.647675 42.02 Q26.498424999999997 56.255 6.65465 67.935",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M29.45 56.75 L29.45 90.5 L23.45 93.5 L23.45 55.75 Z M29.45 56.75 L30.95 57.75 L28.45 59.25 Z",
+          "bounds": [
+            23.45,
+            55.75,
+            30.95,
+            93.5
+          ],
+          "direction": "down",
+          "weight": 35.77
+        }
+      ],
+      [
+        {
+          "outline": "M44.6 32.95 L86.3 32.95 L86.3 34.95 L44.6 34.95 Z M86.3 32.95 L74.3 33.95 L80.3 27.95 Z",
+          "bounds": [
+            44.6,
+            27.95,
+            86.3,
+            34.95
+          ],
+          "direction": "right",
+          "weight": 41.71
+        }
+      ],
+      [
+        {
+          "outline": "M39.75 52.7 L91.65 52.7 L91.65 54.7 L39.75 54.7 Z M91.65 52.7 L79.65 53.7 L85.65 47.7 Z",
+          "bounds": [
+            39.75,
+            47.7,
+            91.65,
+            54.7
+          ],
+          "direction": "right",
+          "weight": 51.895
+        }
+      ],
+      [
+        {
+          "outline": "M74.3 52.7 L74.3 85.9 L68.3 85.9 L68.3 52.7 Z M68.3 85.9 L74.3 85.9 L73.1 87.7 L71.3 88.9 L69.5 87.7 Z",
+          "bounds": [
+            68.3,
+            52.7,
+            74.3,
+            88.9
+          ],
+          "direction": "down",
+          "weight": 32.23
+        },
+        {
+          "outline": "M74.3 85.9 L74.2 87.2 L74 88.45 L73.6 89.65 L73 90.75 L72.15 91.8 L71.15 92.6 L70 93.2 L68.8 93.6 L67.55 93.85 L66.3 93.9 L66.3 87.9 L66.9 87.85 L67.35 87.8 L67.65 87.7 L67.8 87.6 L67.9 87.55 L68 87.45 L68.1 87.25 L68.15 87 L68.25 86.5 L68.3 85.9 Z M66.3 90.9 L58.3 89.4 L58.3 87.9 L66.3 87.9 Z",
+          "bounds": [
+            58.3,
+            85.9,
+            74.3,
+            93.9
+          ],
+          "direction": "curve",
+          "weight": 7.071068,
+          "revealPath": "M71.31 85.93 Q71.31 90.93 66.31 90.93",
+          "revealWidth": 14
+        }
+      ]
+    ]
+  }
+] as const
+export function loadGlyphWikiBatch200Strokes(bundle: unknown): readonly HanjaDictionaryStrokeData[] {
+  if (JSON.stringify(bundle) !== JSON.stringify(EXPECTED)) throw new Error('GlyphWiki batch200 reviewed data mismatch')
+  return EXPECTED
+}
+export const HANJA_DICTIONARY_GLYPHWIKI_BATCH200_STROKES = loadGlyphWikiBatch200Strokes(reviewed)

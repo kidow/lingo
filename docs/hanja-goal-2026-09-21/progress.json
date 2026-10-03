@@ -1,27 +1,28 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "265c772bfc5f5ca9256fc08a7adaab96b9eefc6d",
+  "lastCompletedCommit": "d70f9f38f0226fa8d9e345b2e88981ad19ef5426",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 茹 fifth-stroke path discontinuity",
-    "parentAtStart": "265c772bfc5f5ca9256fc08a7adaab96b9eefc6d"
+    "message": "feat(hanja): add reviewed 荇 ten-stroke animation",
+    "parentAtStart": "d70f9f38f0226fa8d9e345b2e88981ad19ef5426"
   },
   "currentBatch": {
     "glyphs": [
-      "茹"
+      "荇"
     ],
     "strokes": 10,
-    "status": "held; domestic5 trajectory gap; no runtime addition",
+    "status": "applied after full browser review, tests, build and mobile verification",
     "checks": {
-      "providerRecords": 5,
+      "providerRecords": 6,
       "engineFiles": 8,
+      "literalRevisionRecords": 2,
       "domesticReviewed": 10,
-      "progressiveFramesApproved": 0,
-      "runtimeAdded": 0,
-      "discontinuousGap": 19.192730394605142,
-      "historicalAlternatives": 3,
-      "liveSourceRootsRead": 4,
-      "nextExactDependencyRevisions": 2,
+      "progressiveFramesApproved": 90,
+      "runtimeAdded": 1,
+      "regressionFiles": 287,
+      "regressionTests": 1379,
+      "buildPassed": true,
+      "mobilePassed": true,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -29,8 +30,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5071,
-      "remaining": 907,
+      "applied": 5072,
+      "remaining": 906,
       "percent": 84.8
     },
     "grades": [
@@ -128,9 +129,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 914,
-        "remaining": 236,
-        "percent": 79.5
+        "applied": 915,
+        "remaining": 235,
+        "percent": 79.6
       },
       {
         "grade": "특급",
@@ -144,7 +145,7 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Use exact whole u8347-k -> koseki-346870 and declared ufa5e-03/u8279-k03/u884c@8/u5f73-01@2. Never substitute latest revisions.",
+    "Use exact whole u834f-k and only declared koseki-346950/ufa5e-03/u8279-k03/u4efb/u4ebb-01/u58ec. No radical transplant.",
     "Reproduce all original primitives and review all10 domestic directions/cumulative/form and90 progressive frames before runtime.",
     "Preserve coordinates/defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
   ],
@@ -630,37 +631,37 @@
     }
   ],
   "resources": {
-    "tabs": "batch199 own in-app tabs43/44 closed; viewport unchanged",
-    "ramServers": "batch199 own ports52280/52283 stopped",
+    "tabs": "batch200 own in-app tab45 closed; viewport reset",
+    "ramServers": "batch200 own ports52284/52285/52286/52287 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/additional-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/live-source-reads.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/findings.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch199-2026-10-04/README.md"
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch200-2026-10-04/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "荇",
-    "id": "u8347",
+    "glyph": "荏",
+    "id": "u834f",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; exact whole source and literal u884c@8/u5f73-01@2 acquired; full browser review next",
+    "status": "unapplied; exact whole source closure acquired; full browser review pending",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Use exact whole u8347-k -> koseki-346870 and declared ufa5e-03/u8279-k03/u884c@8/u5f73-01@2. Never substitute latest revisions.",
+      "Use exact whole u834f-k and only declared koseki-346950/ufa5e-03/u8279-k03/u4efb/u4ebb-01/u58ec. No radical transplant.",
       "Reproduce all original primitives and review all10 domestic directions/cumulative/form and90 progressive frames before runtime.",
       "Preserve coordinates/defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
     ]
