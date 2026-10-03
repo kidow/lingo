@@ -1,25 +1,26 @@
 {
   "status": "active",
   "date": "2026-10-03",
-  "lastCompletedCommit": "33ad109260b1931aae291de1f4134eda75a62cb5",
+  "lastCompletedCommit": "1d223cb763932ed1fcd5bf5e9faa08d97cb15584",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record held 玹 stroke-path discontinuities",
-    "parentAtStart": "33ad109260b1931aae291de1f4134eda75a62cb5"
+    "message": "feat(hanja): add reviewed 倧 ten-stroke animation",
+    "parentAtStart": "1d223cb763932ed1fcd5bf5e9faa08d97cb15584"
   },
   "currentBatch": {
     "glyphs": [
-      "玹"
+      "倧"
     ],
-    "strokes": 9,
-    "status": "held; domestic7/8 source centers discontinuous; alternative domestic5 mismatch",
+    "strokes": 10,
+    "status": "applied; whole source and all domestic directions/progressive states reviewed",
     "checks": {
       "providerRecords": 4,
       "engineFiles": 8,
-      "domesticReviewed": 9,
-      "progressiveFrames": 0,
-      "runtimeAdded": 0,
-      "build": "not rerun; runtime unchanged",
-      "mobile": "not rerun; candidate not applied",
+      "domesticReviewed": 10,
+      "progressiveFrames": 90,
+      "runtimeAdded": 1,
+      "regressionPass": 1132,
+      "build": true,
+      "mobile": true,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -27,8 +28,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5061,
-      "remaining": 917,
+      "applied": 5062,
+      "remaining": 916,
       "percent": 84.7
     },
     "grades": [
@@ -126,9 +127,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 904,
-        "remaining": 246,
-        "percent": 78.6
+        "applied": 905,
+        "remaining": 245,
+        "percent": 78.7
       },
       {
         "grade": "특급",
@@ -142,9 +143,7 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Acquire exact complete 倧 source and declared dependencies; crosscheck all domestic strokes.",
-    "Skip 玹 until a complete source has continuous domestic7/8 and vertical domestic5; do not bridge source gaps.",
-    "逈 has prior candidate-missing and dictionary10/catalog9 findings; require new whole-source evidence before repeating."
+    "Acquire exact complete 挻 source and declared dependencies, then all10 domestic strokes and progressive review."
   ],
   "held": [
     {
@@ -588,36 +587,36 @@
     }
   ],
   "resources": {
-    "tabs": "batch184 own in-app tab closed; viewport unchanged",
-    "ramServers": "batch184 own port52232 stopped",
+    "tabs": "batch185 own in-app tab closed; viewport reset",
+    "ramServers": "batch185 own ports52235/52236/52237 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/serve.py",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/findings.json",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/alternatives.json",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch184-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/serve.py",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/validation.json",
+    "docs/hanja-goal-glyphwiki-batch185-2026-10-03/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "倧",
-    "id": "u5027",
+    "glyph": "挻",
+    "id": "u633b",
     "strokes": 10,
     "grade": "특급II",
-    "status": "unapplied; exact whole source acquisition next",
+    "status": "unapplied; no prior held review; exact whole source acquisition next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Acquire exact complete 倧 source and declared dependencies; crosscheck all domestic strokes.",
-      "Skip 玹 until a complete source has continuous domestic7/8 and vertical domestic5; do not bridge source gaps.",
-      "逈 has prior candidate-missing and dictionary10/catalog9 findings; require new whole-source evidence before repeating."
+      "Acquire exact complete 挻 source and declared dependencies, then all10 domestic strokes and progressive review."
     ]
   }
 }
