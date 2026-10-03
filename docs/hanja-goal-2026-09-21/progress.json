@@ -1,28 +1,30 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "6f836e327b04a654543b1c58d004e70f8edb7901",
+  "lastCompletedCommit": "047eb1bb31a27fb8d22b25e1db733fcf39ba7558",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 梡 eleven-stroke animation",
-    "parentAtStart": "6f836e327b04a654543b1c58d004e70f8edb7901"
+    "message": "docs(hanja): record 淃 third-stroke path discontinuity",
+    "parentAtStart": "047eb1bb31a27fb8d22b25e1db733fcf39ba7558"
   },
   "currentBatch": {
     "glyphs": [
-      "梡"
+      "淃"
     ],
     "strokes": 11,
-    "status": "applied after full browser review, tests, build and mobile verification",
+    "status": "held after historical/latest full browser review: domestic3 source trajectory discontinuous",
     "checks": {
       "providerRecords": 6,
+      "latestProviderRecords": 6,
+      "historicalLiteralRevisionRecords": 3,
+      "latestRevisions": 6,
       "engineFiles": 8,
-      "literalRevisionRecords": 0,
+      "engineCapturesReproduced": 2,
       "domesticReviewed": 11,
-      "progressiveFramesApproved": 99,
-      "runtimeAdded": 1,
-      "regressionFiles": 296,
-      "regressionTests": 1406,
-      "buildPassed": true,
-      "mobilePassed": true,
+      "progressiveFramesApproved": 0,
+      "runtimeAdded": 0,
+      "regressionExecuted": false,
+      "buildExecuted": false,
+      "mobileExecuted": false,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -145,9 +147,9 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Use exact whole u6dc3-k and only declared u6dc3-jv/u6c35-01/u5377@9/u20509-03@1/u353e-14@1. Preserve three literal revisions and provider hashes; no latest substitution or radical transplant.",
-    "Reproduce all original primitives and review all11 domestic directions/cumulative/form and99 progressive frames before runtime.",
-    "Preserve coordinates/defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
+    "Reproduce exact whole u7104-k and only declared u7104/u541b/u5f50-ue0101/u53e3/u706c-04. No unrelated radical substitution or invented geometry.",
+    "Review all11 domestic directions/cumulative/form and99 progressive frames before runtime.",
+    "Preserve source coordinates/defaults; distinguish licensed geometry and domestic dictionary crosscheck from exam-body official approval."
   ],
   "held": [
     {
@@ -652,42 +654,67 @@
       "reason": "Domestic9 is one continuous down-to-up-right pen trajectory. Both historical and latest original vertical ends116.45500000000001,170 and next quadratic starts91.5,182 (gap27.690287557192335). Joining requires invented geometry, trimming or point movement; no runtime approval.",
       "releaseCondition": "Acquire a licensed exact whole 桭 source whose original domestic9 trajectory is continuous and whose full11-stroke form matches the domestic dictionary; then review all11 directions/cumulative/form and99 progressive frames, runtime regression, build and mobile behavior.",
       "evidence": "docs/hanja-goal-glyphwiki-batch211-2026-10-04/findings.json"
+    },
+    {
+      "glyph": "淃",
+      "strokes": 11,
+      "grade": "특급II",
+      "reason": "Domestic3 is a continuous up-right stroke. Historical and latest complete whole original sources both have a downward lower curve followed by a disconnected upward curve. Joining or changing direction requires invented geometry, trimming or coordinate changes; no runtime approval.",
+      "releaseCondition": "Acquire a licensed exact whole 淃 source whose original domestic3 up-right trajectory is continuous and matches domestic full11-stroke form, then review all11 directions/cumulative/form and99 progressive frames, runtime regression, build and mobile behavior.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch213-2026-10-04/findings.json"
     }
   ],
   "resources": {
-    "tabs": "batch212 own in-app tab57 closed; viewport reset",
-    "ramServers": "batch212 own canonical52329/progressive52330/mobile52331/archive52328 stopped; initial archive process90393 verified terminal",
+    "tabs": "own in-app tab58 closed; no viewport override used",
+    "ramServers": "own canonical52333/latest52334/archive52336 servers stopped after exact PID and command checks",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch212-2026-10-04/README.md"
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/latest/sources.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/latest/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/latest/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/latest/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/latest/serve.py",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/findings.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch213-2026-10-04/NOTICE.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "淃",
-    "id": "u6dc3",
+    "glyph": "焄",
+    "id": "u7104",
     "strokes": 11,
     "grade": "특급II",
-    "status": "unapplied; exact whole source closure acquired including three literal revisions; full browser review pending",
+    "unapplied": true,
+    "held": false,
+    "records": 6,
+    "missing": [],
+    "recordNames": [
+      "u7104-k",
+      "u7104",
+      "u541b",
+      "u5f50-ue0101",
+      "u53e3",
+      "u706c-04"
+    ],
+    "sourceSha256": "caf88ea778ab3bba9e40e5b09a64ab959694678fc625e5143cf3d3e608b85290",
+    "exactClosure": true,
+    "status": "exact whole source and all six declared records acquired; full browser review pending",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Use exact whole u6dc3-k and only declared u6dc3-jv/u6c35-01/u5377@9/u20509-03@1/u353e-14@1. Preserve three literal revisions and provider hashes; no latest substitution or radical transplant.",
-      "Reproduce all original primitives and review all11 domestic directions/cumulative/form and99 progressive frames before runtime.",
-      "Preserve coordinates/defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
+      "Reproduce exact whole u7104-k and only declared u7104/u541b/u5f50-ue0101/u53e3/u706c-04. No unrelated radical substitution or invented geometry.",
+      "Review all11 domestic directions/cumulative/form and99 progressive frames before runtime.",
+      "Preserve source coordinates/defaults; distinguish licensed geometry and domestic dictionary crosscheck from exam-body official approval."
     ]
   }
 }
