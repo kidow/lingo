@@ -1,0 +1,10 @@
+# 崍 (U+5D0D) — licensed whole-glyph animation
+
+Geometry: GlyphWiki Project and contributors. [License](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt) permits copying, reuse, modification and commercial use.
+
+2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u5d0d-k/u5d0d/u5c71-01/u4f86-02; individual glyph revisions unavailable; source SHA256 0a7637087671aff487112eee02982331e602936d2c93091047ca4285e1b75b45
+
+All11 domestic directional/cumulative states, complete form and99 progressive frames reviewed in Codex in-app browser. Exact whole u5d0d-k -> u5d0d and only declared u5c71-01/u4f86-02. Four historical archive records; individual glyph revisions unavailable. No radical transplant. Domestic2 original down-to-right join19.47,147 is continuous. Original raw8/9/10/11 small-person strokes precede raw5 center vertical and raw6/7 final curves in the observed domestic order. Raw groups0;1,2;3;4;8;9;10;11;5;6;7. All12 original source groups,12 draw primitives,six quadratic paths, polygons and engine defaults retained. Normalize200to100 and winding; no invented points, bridges, trimming, primitive splitting or width changes. Continuous structural primitives follow the observed domestic pen trajectory without added geometry. Licensed geometry is separate from domestic dictionary evidence and exam-body official approval. Private graphics stay RAM-only.
+
+All four whole-glyph records are retained in the editable JSON and sources.json. KAGE engine revision 49232bac0348fe815f4200d4116ab7917e0db47f, eight source hashes and defaults are preserved in the proof. Geometry approval binds source, editable asset, review and runtime hashes. Domestic evidence: http://img.e-hanja.kr/hanjaSvg/aniSVG/5d00/5d0d.svg (SHA256 c61592414fcfe0143634ee875dc33426adeaf80dcedb532fc6bc424cf5469afd). This is a domestic dictionary crosscheck, not exam-body official approval. Private graphics were displayed RAM-only in the Codex browser and are not redistributed.
+
