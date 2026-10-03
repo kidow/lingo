@@ -1,21 +1,22 @@
 {
   "status": "active",
   "date": "2026-10-03",
-  "lastCompletedCommit": "9495ecef838de200621ba7dcec8380eb6da4a925",
+  "lastCompletedCommit": "3c99026320562ef2bc4eee1d5a6a7193caab2725",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 俓 source with three disconnected folds",
-    "parentAtStart": "9495ecef838de200621ba7dcec8380eb6da4a925"
+    "message": "docs(hanja): hold 苽 source with incompatible rising stroke",
+    "parentAtStart": "3c99026320562ef2bc4eee1d5a6a7193caab2725"
   },
   "currentBatch": {
     "glyphs": [
-      "俓"
+      "苽"
     ],
     "strokes": 9,
-    "status": "held; exact Korean alias target acquired, three fold trajectories disconnected",
+    "status": "held; exact Korean source acquired, rising trajectory and complete form incompatible",
     "checks": {
       "providerRecords": 3,
       "engineFiles": 8,
-      "domesticReviewed": 3,
+      "domesticReviewed": 1,
+      "alternativeWholeGlyphsReviewed": 1,
       "fullStrokeReviewCompleted": false,
       "runtimeAdded": 0,
       "browser": "Codex in-app panel",
@@ -140,9 +141,16 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held records.",
-    "Acquire exact complete 苽 source and declared dependencies, then all9 domestic strokes and progressive review."
+    "Acquire exact complete 珖 source and declared dependencies, then all10 domestic strokes and progressive review."
   ],
   "held": [
+    {
+      "glyph": "苽",
+      "strokes": 9,
+      "reason": "Domestic stroke7 is a continuous vertical then rising stroke. Whole Korean source raw6 ends(100,169.55) but raw8 starts(51,179), and its rising outline extends left of the stem, unlike the domestic whole form.",
+      "releaseCondition": "Find a licensed complete 苽 source with documented continuous stem-to-rising trajectory and matching whole form, then repeat all9 strokes and progressive checks. No bridge, trimming, coordinate edit or radical substitution.",
+      "path": "docs/hanja-goal-glyphwiki-batch166-2026-10-03"
+    },
     {
       "glyph": "俓",
       "strokes": 9,
@@ -562,29 +570,29 @@
     }
   ],
   "resources": {
-    "tabs": "batch165 in-app tab closed; viewport reset",
-    "ramServers": "batch165 own port52181 stopped",
+    "tabs": "batch166 in-app tab closed; viewport reset",
+    "ramServers": "batch166 own port52182 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch165-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch165-2026-10-03/engine-trace.json",
-    "docs/hanja-goal-glyphwiki-batch165-2026-10-03/findings.json",
-    "docs/hanja-goal-glyphwiki-batch165-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch165-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch165-2026-10-03/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch165-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/engine-trace.json",
+    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/findings.json",
+    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "苽",
-    "id": "u82fd",
+    "glyph": "珖",
+    "id": "u73d6",
     "grade": "특급II",
-    "strokes": 9,
+    "strokes": 10,
     "status": "unapplied; exact whole source acquisition next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held records.",
-      "Acquire exact complete 苽 source and declared dependencies, then all9 domestic strokes and progressive review."
+      "Acquire exact complete 珖 source and declared dependencies, then all10 domestic strokes and progressive review."
     ]
   }
 }
