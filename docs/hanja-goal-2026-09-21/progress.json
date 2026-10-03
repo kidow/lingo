@@ -1,24 +1,26 @@
 {
   "status": "active",
   "date": "2026-10-03",
-  "lastCompletedCommit": "3c99026320562ef2bc4eee1d5a6a7193caab2725",
+  "lastCompletedCommit": "f5a8893011c08144c8bf27b75695eb98df5c5671",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 苽 source with incompatible rising stroke",
-    "parentAtStart": "3c99026320562ef2bc4eee1d5a6a7193caab2725"
+    "message": "feat(hanja): add reviewed 珖 ten-stroke animation",
+    "parentAtStart": "f5a8893011c08144c8bf27b75695eb98df5c5671"
   },
   "currentBatch": {
     "glyphs": [
-      "苽"
+      "珖"
     ],
-    "strokes": 9,
-    "status": "held; exact Korean source acquired, rising trajectory and complete form incompatible",
+    "strokes": 10,
+    "status": "applied; whole source and all domestic directions/progressive states reviewed",
     "checks": {
-      "providerRecords": 3,
+      "providerRecords": 5,
       "engineFiles": 8,
-      "domesticReviewed": 1,
-      "alternativeWholeGlyphsReviewed": 1,
-      "fullStrokeReviewCompleted": false,
-      "runtimeAdded": 0,
+      "domesticReviewed": 10,
+      "progressiveFrames": 90,
+      "runtimeAdded": 1,
+      "regressionPass": 1084,
+      "build": true,
+      "mobile": true,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -26,8 +28,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5045,
-      "remaining": 933,
+      "applied": 5046,
+      "remaining": 932,
       "percent": 84.4
     },
     "grades": [
@@ -125,9 +127,9 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 888,
-        "remaining": 262,
-        "percent": 77.2
+        "applied": 889,
+        "remaining": 261,
+        "percent": 77.3
       },
       {
         "grade": "특급",
@@ -141,7 +143,7 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held records.",
-    "Acquire exact complete 珖 source and declared dependencies, then all10 domestic strokes and progressive review."
+    "Acquire exact complete 畇 source and declared dependencies, then all9 domestic strokes and progressive review."
   ],
   "held": [
     {
@@ -570,29 +572,36 @@
     }
   ],
   "resources": {
-    "tabs": "batch166 in-app tab closed; viewport reset",
-    "ramServers": "batch166 own port52182 stopped",
+    "tabs": "batch167 in-app tab closed; viewport reset",
+    "ramServers": "batch167 own ports52183/52184/52185 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/engine-trace.json",
-    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/findings.json",
-    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch166-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/serve.py",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/validation.json",
+    "docs/hanja-goal-glyphwiki-batch167-2026-10-03/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "珖",
-    "id": "u73d6",
+    "glyph": "畇",
+    "id": "u7547",
     "grade": "특급II",
-    "strokes": 10,
-    "status": "unapplied; exact whole source acquisition next",
+    "strokes": 9,
+    "status": "unapplied; no prior held review; exact whole source acquisition next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held records.",
-      "Acquire exact complete 珖 source and declared dependencies, then all10 domestic strokes and progressive review."
+      "Acquire exact complete 畇 source and declared dependencies, then all9 domestic strokes and progressive review."
     ]
   }
 }
