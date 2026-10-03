@@ -1,31 +1,24 @@
 {
   "status": "active",
   "date": "2026-10-03",
-  "lastCompletedCommit": "cab5af011afb2197c5b276c525d00c17111756fb",
+  "lastCompletedCommit": "a8737abb7c7682d05202ee74d2eb0754d42d8482",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 茄 nine-stroke animation",
-    "parentAtStart": "cab5af011afb2197c5b276c525d00c17111756fb"
+    "message": "docs(hanja): hold 迲 source with two disconnected strokes",
+    "parentAtStart": "a8737abb7c7682d05202ee74d2eb0754d42d8482"
   },
   "currentBatch": {
     "glyphs": [
-      "茄"
+      "迲"
     ],
     "strokes": 9,
-    "status": "applied; domestic dictionary full-stroke crosscheck, not exam-body approval",
+    "status": "held; complete Korean source acquired, two trajectories disconnected",
     "checks": {
-      "providerRecords": 4,
+      "providerRecords": 3,
       "engineFiles": 8,
-      "rawPrimitives": 11,
-      "domesticStrokes": 9,
-      "progressiveFrames": 81,
-      "fullTests": 1081,
-      "build": true,
-      "typecheck": true,
-      "mobileAutoplay": true,
-      "mobileReplay": true,
-      "canvasInput": true,
+      "domesticReviewed": 2,
+      "fullStrokeReviewCompleted": false,
+      "runtimeAdded": 0,
       "browser": "Codex in-app panel",
-      "runtimeAdded": 1,
       "privateMediaSaved": false
     }
   },
@@ -147,9 +140,16 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held records.",
-    "Acquire exact complete 迲 source and declared dependencies. Review all9 domestic strokes and progressive frames if trajectories are continuous. Do not infer rejection from another walking glyph."
+    "Acquire exact complete 俓 source and declared dependencies, then all9 domestic strokes and progressive review."
   ],
   "held": [
+    {
+      "glyph": "迲",
+      "strokes": 9,
+      "reason": "Exact whole Korean source has discontinuous trajectories in domestic strokes4 and9. Stroke4: raw9 ends(96.33,144.95), raw10 starts(74.94,147.455); stroke9: raw4 ends(55,154), raw5 starts(53,152). Domestic strokes are continuous.",
+      "releaseCondition": "Find a licensed complete 迲 source with documented continuous trajectories in strokes4 and9, then repeat all9 strokes and progressive checks. No bridge, trimming, coordinate edit or radical substitution.",
+      "path": "docs/hanja-goal-glyphwiki-batch164-2026-10-03"
+    },
     {
       "glyph": "迭",
       "strokes": 9,
@@ -555,40 +555,29 @@
     }
   ],
   "resources": {
-    "tabsClosed": true,
-    "viewportReset": true,
-    "ownServersStopped": [
-      52177,
-      52178,
-      52179
-    ]
+    "tabs": "batch164 in-app tab closed; viewport reset",
+    "ramServers": "batch164 own port52180 stopped",
+    "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/serve.py",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/validation.json",
-    "docs/hanja-goal-glyphwiki-batch163-2026-10-03/README.md"
+    "docs/hanja-goal-glyphwiki-batch164-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch164-2026-10-03/engine-trace.json",
+    "docs/hanja-goal-glyphwiki-batch164-2026-10-03/findings.json",
+    "docs/hanja-goal-glyphwiki-batch164-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch164-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch164-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch164-2026-10-03/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "迲",
-    "id": "u8ff2",
+    "glyph": "俓",
+    "id": "u4fd3",
     "grade": "특급II",
     "strokes": 9,
     "status": "unapplied; exact whole source acquisition next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held records.",
-      "Acquire exact complete 迲 source and declared dependencies. Review all9 domestic strokes and progressive frames if trajectories are continuous. Do not infer rejection from another walking glyph."
+      "Acquire exact complete 俓 source and declared dependencies, then all9 domestic strokes and progressive review."
     ]
   }
 }
