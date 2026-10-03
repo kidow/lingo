@@ -1,28 +1,30 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "5607969bea8c99f174ccb24c2ac2c02b693b68ae",
+  "lastCompletedCommit": "4462d94004dd82ddda6ec5a9befcb75ad19194f7",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 晥 eleven-stroke animation",
-    "parentAtStart": "5607969bea8c99f174ccb24c2ac2c02b693b68ae"
+    "message": "docs(hanja): record 桭 ninth-stroke path discontinuity",
+    "parentAtStart": "4462d94004dd82ddda6ec5a9befcb75ad19194f7"
   },
   "currentBatch": {
     "glyphs": [
-      "晥"
+      "桭"
     ],
     "strokes": 11,
-    "status": "applied after full browser review, tests, build and mobile verification",
+    "status": "held after full historical/latest browser review and engine reproduction",
     "checks": {
-      "providerRecords": 7,
+      "historicalProviderRecords": 4,
+      "latestProviderRecords": 3,
       "engineFiles": 8,
-      "literalRevisionRecords": 0,
+      "historicalAlternatives": 1,
       "domesticReviewed": 11,
-      "progressiveFramesApproved": 99,
-      "runtimeAdded": 1,
-      "regressionFiles": 295,
-      "regressionTests": 1403,
-      "buildPassed": true,
-      "mobilePassed": true,
+      "latestDomesticReviewed": 11,
+      "progressiveFramesApproved": 0,
+      "runtimeAdded": 0,
+      "standaloneVerifierPassed": true,
+      "regressionExecuted": false,
+      "buildExecuted": false,
+      "mobileExecuted": false,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -145,7 +147,7 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Use exact whole u686d-k and only declared u686d/u6728-01/u8fb0-02. No radical transplant.",
+    "Use exact whole u68a1-k and only declared u68a1/u6728-01/u5b8c-02/u5b80-08-var-001/u5196-08-var-001. No radical transplant.",
     "Reproduce all original primitives and review all11 domestic directions/cumulative/form and99 progressive frames before runtime.",
     "Preserve coordinates/defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
   ],
@@ -644,40 +646,54 @@
       "reason": "Domestic9 is one continuous down-left-to-down-right pen trajectory. Historical original line ends95.07,156 and next quadratic starts100.71,148 (gap9.788237839366186). Latest original quadratic ends81,161 and next starts86.5,153 (gap9.7082439194738). Joining requires invented geometry, trimming or point movement; no runtime approval.",
       "releaseCondition": "Acquire a licensed exact whole 捿 source whose original domestic9 trajectory is continuous and whose full11-stroke form matches the domestic dictionary; then review all11 directions/cumulative/form and99 progressive frames, runtime regression, build and mobile behavior.",
       "evidence": "docs/hanja-goal-glyphwiki-batch208-2026-10-04/findings.json"
+    },
+    {
+      "glyph": "桭",
+      "strokes": 11,
+      "grade": "특급II",
+      "reason": "Domestic9 is one continuous down-to-up-right pen trajectory. Both historical and latest original vertical ends116.45500000000001,170 and next quadratic starts91.5,182 (gap27.690287557192335). Joining requires invented geometry, trimming or point movement; no runtime approval.",
+      "releaseCondition": "Acquire a licensed exact whole 桭 source whose original domestic9 trajectory is continuous and whose full11-stroke form matches the domestic dictionary; then review all11 directions/cumulative/form and99 progressive frames, runtime regression, build and mobile behavior.",
+      "evidence": "docs/hanja-goal-glyphwiki-batch211-2026-10-04/findings.json"
     }
   ],
   "resources": {
-    "tabs": "batch210 own in-app tab55 closed; viewport reset",
-    "ramServers": "batch210 own ports52322/52323/52324/52325 stopped",
+    "tabs": "batch211 own in-app tab56 closed; no viewport override",
+    "ramServers": "batch211 own ports52326/52327/52328 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch210-2026-10-04/README.md"
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/latest/sources.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/latest/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/latest/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/latest/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/latest/serve.py",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/alternatives.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/findings.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/alternative-engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/alternative-draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch211-2026-10-04/NOTICE.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "桭",
-    "id": "u686d",
+    "glyph": "梡",
+    "id": "u68a1",
     "strokes": 11,
     "grade": "특급II",
     "status": "unapplied; exact whole source closure acquired; full browser review pending",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Use exact whole u686d-k and only declared u686d/u6728-01/u8fb0-02. No radical transplant.",
+      "Use exact whole u68a1-k and only declared u68a1/u6728-01/u5b8c-02/u5b80-08-var-001/u5196-08-var-001. No radical transplant.",
       "Reproduce all original primitives and review all11 domestic directions/cumulative/form and99 progressive frames before runtime.",
       "Preserve coordinates/defaults and distinguish licensed geometry from domestic dictionary crosscheck and exam-body official approval."
     ]
