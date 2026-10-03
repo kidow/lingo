@@ -1,19 +1,19 @@
 {
   "status": "active",
   "date": "2026-10-03",
-  "lastCompletedCommit": "3c96c93cbb8bdd5a414d478938bc2bc1c9bfe3ca",
+  "lastCompletedCommit": "21b82d3609fec8b7977759a7a01064c09add6ee3",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): hold 迓 source with disconnected final stroke",
-    "parentAtStart": "3c96c93cbb8bdd5a414d478938bc2bc1c9bfe3ca"
+    "message": "docs(hanja): hold 迭 source with disconnected final stroke",
+    "parentAtStart": "21b82d3609fec8b7977759a7a01064c09add6ee3"
   },
   "currentBatch": {
     "glyphs": [
-      "迓"
+      "迭"
     ],
-    "strokes": 8,
-    "status": "held; complete source acquired, final trajectory disconnected",
+    "strokes": 9,
+    "status": "held; complete Korean source acquired, final trajectory disconnected",
     "checks": {
-      "providerRecords": 4,
+      "providerRecords": 2,
       "engineFiles": 8,
       "domesticReviewed": 1,
       "fullStrokeReviewCompleted": false,
@@ -140,9 +140,16 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held records.",
-    "Inspect exact complete 迭 source and declared dependencies; judge its own final trajectory, then domestic review if feasible."
+    "Acquire exact complete 茄 source and declared dependencies, then all9 domestic strokes and progressive review."
   ],
   "held": [
+    {
+      "glyph": "迭",
+      "strokes": 9,
+      "reason": "Whole Korean source declares u8fb6-j; domestic stroke9 trajectory is disconnected: quadratic ends(55,154), cubic starts(53,152). Domestic source renders one continuous stroke.",
+      "releaseCondition": "Find a licensed complete 迭 source with documented continuous final pen trajectory, then repeat all9 strokes and progressive checks. No bridge, trimming, coordinate edit or radical substitution.",
+      "path": "docs/hanja-goal-glyphwiki-batch162-2026-10-03"
+    },
     {
       "glyph": "迓",
       "strokes": 8,
@@ -541,29 +548,29 @@
     }
   ],
   "resources": {
-    "tabs": "batch161 in-app tab closed; viewport reset",
-    "ramServers": "batch161 own port52175 stopped",
+    "tabs": "batch162 in-app tab closed; viewport reset",
+    "ramServers": "batch162 own port52176 stopped",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/sources.json",
-    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/engine-trace.json",
-    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/findings.json",
-    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/next.json",
-    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/README.md",
-    "docs/hanja-goal-glyphwiki-batch161-2026-10-03/NOTICE.md"
+    "docs/hanja-goal-glyphwiki-batch162-2026-10-03/sources.json",
+    "docs/hanja-goal-glyphwiki-batch162-2026-10-03/engine-trace.json",
+    "docs/hanja-goal-glyphwiki-batch162-2026-10-03/findings.json",
+    "docs/hanja-goal-glyphwiki-batch162-2026-10-03/next.json",
+    "docs/hanja-goal-glyphwiki-batch162-2026-10-03/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch162-2026-10-03/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch162-2026-10-03/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "迭",
-    "id": "u8fed",
-    "grade": "1급",
+    "glyph": "茄",
+    "id": "u8304",
+    "grade": "특급II",
     "strokes": 9,
-    "status": "unapplied; exact whole-source acquisition next",
+    "status": "unapplied; whole Korean source acquisition next",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held records.",
-      "Inspect exact complete 迭 source and declared dependencies; judge its own final trajectory, then domestic review if feasible."
+      "Acquire exact complete 茄 source and declared dependencies, then all9 domestic strokes and progressive review."
     ]
   }
 }
