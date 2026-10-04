@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-04",
+  "pinnedEngine": {
+    "gate": "original engine",
+    "exit": 0,
+    "output": "{\"passed\":true,\"providerRecords\":4,\"sourceCaptureHashVerified\":true,\"engineChecked\":true,\"rawGroups\":14,\"strokeGroups\":12,\"quadraticPrimitives\":8,\"cubicPrimitives\":0,\"runtimeRegistered\":1,\"privateMediaSaved\":false}\n"
+  },
+  "regression": {
+    "gate": "full regression",
+    "files": 329,
+    "exit": 0,
+    "summary": [
+      "ℹ tests 1505",
+      "ℹ pass 1505",
+      "ℹ fail 0",
+      "ℹ duration_ms 73011.955209"
+    ]
+  },
+  "productionBuild": {
+    "gate": "production build",
+    "exit": 0,
+    "summary": [
+      "▲ Next.js 16.3.3 (Turbopack)",
+      "✓ Compiled successfully in 14.0s",
+      "  Running TypeScript ...",
+      "  Finished TypeScript in 5.0s ...",
+      "  Generating static pages using 8 workers (0/7) ...",
+      "  Generating static pages using 8 workers (1/7) \r",
+      "  Generating static pages using 8 workers (3/7) \r",
+      "  Generating static pages using 8 workers (5/7) \r",
+      "✓ Generating static pages using 8 workers (7/7) in 1091ms"
+    ],
+    "evidence": {
+      "snapshotPathsMatched": 17,
+      "exportsByteIdentical": 3
+    },
+    "snapshot": "8c7f4ffcb897b3ea7c399c2d150f78e88b397bb3"
+  },
+  "browserPanel": {
+    "domesticStrokeReview": 12,
+    "progressiveFramesReviewed": 108,
+    "allDirectionsCumulativeAndFullForm": true,
+    "actualNativeBrowser": true,
+    "mobile": {
+      "configuredViewport": [
+        430,
+        932
+      ],
+      "effectiveSheetWidth": 430,
+      "intro": {
+        "automatic": {
+          "start": 1,
+          "complete": 12
+        },
+        "replay": {
+          "start": 1,
+          "complete": 12
+        }
+      },
+      "writing": {
+        "automatic": {
+          "start": 1,
+          "complete": 12
+        },
+        "replay": {
+          "start": 1,
+          "complete": 12
+        },
+        "staticImages": 0,
+        "animatedSvg": 1,
+        "canvas": {
+          "x": 46,
+          "y": 288.8046875,
+          "width": 338,
+          "height": 338
+        },
+        "sheet": {
+          "x": 0,
+          "y": 139.8046875,
+          "width": 430,
+          "height": 792.1953125
+        },
+        "scrollBefore": 0,
+        "inputBefore": 0,
+        "touchAction": "none",
+        "noDrag": true,
+        "scrollAfter": 0,
+        "inputAfter": 1,
+        "inputAfterUndo": 0,
+        "nativeDrawingBoundsAndScrollUnchanged": true
+      },
+      "privateMediaSaved": false,
+      "consoleErrors": [],
+      "nativeTabsClosed": [
+        "19",
+        "21"
+      ],
+      "viewportReset": true
+    }
+  },
+  "resources": {
+    "tabsClosed": [
+      "19",
+      "21"
+    ],
+    "unavailableErrorTabs": [
+      "1",
+      "20"
+    ],
+    "viewportReset": true,
+    "ownServersStopped": [
+      {
+        "port": 52472,
+        "pid": 46229
+      },
+      {
+        "port": 52473,
+        "pid": 46495
+      },
+      {
+        "port": 52471,
+        "pid": 48682
+      },
+      {
+        "port": 52474,
+        "pid": 48981
+      }
+    ],
+    "privateMediaSaved": false
+  },
+  "isolatedSnapshot": "8c7f4ffcb897b3ea7c399c2d150f78e88b397bb3",
+  "sharedRuntimeApplied": 5114,
+  "sharedRuntimeRemaining": 864,
+  "unrelatedFilesPreserved": {
+    "lib/levels-stamp.ts": "311e45134f9eea35a7d39509a95ea3a19624ed56424a7c6e8b78392e1a0a41d9",
+    "docs/exam-materials-feasibility-2026-09-27.md": "44eae6e3d44487a7479f07a91aafacad40324b95a9c535a3bdcc193bae4ea8ed"
+  },
+  "fixtureRepair": {
+    "reason": "The template substituted only the first port occurrence; listener remained on52471, causing a refused52474 connection.",
+    "resolution": "Stopped only the own fixture, changed both port occurrences, reopened a normal localhost tab and completed native verification. Unavailable error tab20 was left untouched because data-URL policy prevents binding."
+  }
+}
