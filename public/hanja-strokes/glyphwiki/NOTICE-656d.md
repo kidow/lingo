@@ -1,0 +1,7 @@
+# 敭 thirteen-stroke geometry
+
+GlyphWiki Project and contributors. [License](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt) permits attribution-preserving reuse. Exact whole u656d-k/u656d/u661c/u65e5/u6535-02 from pinned snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. Source SHA256 600f47ab56642a3d317ebf353701fe7b4222ff67f6de8731f7ec5e879513c14e; individual glyph revisions unavailable.
+
+All13 domestic directions/cumulative/full form and117 progressive frames reviewed in Codex in-app browser. Exact whole u656d-k/u656d/u661c/u65e5/u6535-02 from pinned archive. Original15 raw groups16 drawing primitives,Q8/C0 and original coordinates/polygons/default mincho preserved. Domestic2 follows continuous raw1/2 at85.3677,25.3098. Domestic7 follows raw7 line to raw8 two curves at92.205,117.23 and87.43303588018591,169.66147253061425. Original source order preserved. All original curve controls and source terminal decorations preserved. Normalize200to100/winding only; no inferred geometry, reversal, width changes, radical transplant or latest substitution.
+
+KAGE engine 49232bac0348fe815f4200d4116ab7917e0db47f, original default mincho. Its eight source files are fetched and hashed for verification, not redistributed. Domestic dictionary graphics stay in RAM and are not included. Crosscheck is not exam-body official approval.
