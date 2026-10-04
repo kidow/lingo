@@ -1,0 +1,85 @@
+{
+  "glyph": "稶",
+  "rawGroup": 11,
+  "drawCall": 0,
+  "originalCall": "cdDrawBezier",
+  "sourceEndFlag": 15,
+  "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+  "engineFile": "kagecd.js",
+  "engineFileSha256": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+  "engineSourceUrl": "https://github.com/kamichikoichi/kage-engine/blob/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+  "sourceBranch": "if(a2 == 15), jump up, y1<y2: standalone polygon emitted after body and terminal filled-circle polygons",
+  "originalPolygonIndex": 4,
+  "originalTerminalPolygon": [
+    {
+      "x": 180.7,
+      "y": 175,
+      "off": 0
+    },
+    {
+      "x": 182.7,
+      "y": 149,
+      "off": 0
+    },
+    {
+      "x": 180.7,
+      "y": 149,
+      "off": 0
+    },
+    {
+      "x": 174.7,
+      "y": 175,
+      "off": 0
+    }
+  ],
+  "sourceFormula": "(x2,y2-kMinWidthT+1),(x2+2,y2-kMinWidthT-kWidth*5),(x2,y2-kMinWidthT-kWidth*5),(x2-kMinWidthT,y2-kMinWidthT+1); engine polygon quantization preserved.",
+  "defaults": {
+    "kMage": 10,
+    "kWidth": 5,
+    "kMinWidthT": 6,
+    "kAdjustMageStep": 5
+  },
+  "revealDirection": "up",
+  "bodyPolygonIndices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "terminalPolygonIndices": [
+    4
+  ],
+  "allOriginalPolygonsRetained": true,
+  "noNewGuideLine": true,
+  "noCoordinatesChanged": true,
+  "noPolygonSubdivision": true,
+  "initialNativeObservation": {
+    "tab": "178",
+    "stroke": 11,
+    "progress": 0.99,
+    "terminalHookIncompleteUntilFullReveal": true
+  },
+  "correctedNativeReviewPending": false,
+  "privateMediaSaved": false,
+  "nativeReview": {
+    "tab": "178",
+    "stroke": 11,
+    "progressSamples": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "additionalProgress": [
+      0.95,
+      0.99
+    ],
+    "upwardGrowthVerified": true,
+    "actualReplay": "24%AX/32%screenshot→100%AX/screenshot"
+  }
+}
