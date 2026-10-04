@@ -1,0 +1,7 @@
+# 僊 thirteen-stroke geometry
+
+GlyphWiki Project and contributors. [License](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt) permits attribution-preserving reuse. Exact whole u50ca-k/aj1-07982/u4ebb-01 from pinned snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. Source SHA256 c28824b6fc7649ec58b55f3ad9e7b0e7c9680c48a80495db2c9c49a497f76ca0; individual glyph revisions unavailable.
+
+All13 domestic directions/cumulative/full form and117 progressive frames reviewed in Codex in-app browser. Exact whole u50ca-k/aj1-07982/u4ebb-01 from pinned archive. Original15 raw groups18 drawing primitives,Q6/C0 and original coordinates/polygons/default mincho preserved. Domestic5 follows continuous raw4/5 at166,48. Domestic12 follows continuous raw12/13 at150,127 and raw13 original two-curve hook. Domestic13 preserves original raw14 line/curve/line at91,170 and101,180. Domestic6/7 inner verticals precede domestic8 closing horizontal: raw7,8,6. Normalize200to100/winding only; no inferred geometry, reversal, width changes, radical transplant or latest substitution.
+
+KAGE engine 49232bac0348fe815f4200d4116ab7917e0db47f, original default mincho. Its eight source files are fetched and hashed for verification, not redistributed. Domestic dictionary graphics stay in RAM and are not included. Crosscheck is not exam-body official approval.
