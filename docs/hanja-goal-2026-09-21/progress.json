@@ -1,37 +1,34 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "b143f268732cefb0412ccbd7f376121780386134",
+  "lastCompletedCommit": "0f25bda289fbbcb56ed2934d53def7c747333c2b",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 凞 historical source and trajectory blockers",
-    "parent": "b143f268732cefb0412ccbd7f376121780386134"
+    "message": "feat(hanja): add reviewed 嶠 stroke animation",
+    "parent": "0f25bda289fbbcb56ed2934d53def7c747333c2b"
   },
   "currentBatch": {
-    "batch": 295,
-    "directory": "docs/hanja-goal-glyphwiki-batch295-2026-10-05",
+    "batch": 296,
+    "directory": "docs/hanja-goal-glyphwiki-batch296-2026-10-05",
     "glyphs": [
-      "凞"
+      "嶠"
     ],
     "strokes": 15,
-    "status": "held-whole-source-trajectory-and-count-divergence",
+    "status": "applied-and-verified",
     "checks": {
-      "wholeSourcesReproduced": 2,
-      "archiveAlternatives": 15,
-      "providerVersions": 3,
+      "providerRecords": 7,
       "pinnedEngineFiles": 8,
-      "domesticReviewed": 16,
-      "assignedStrokes": 15,
-      "progressiveFramesApproved": 0,
-      "runtimeRegistered": 0,
+      "domesticReviewed": 15,
+      "progressiveFramesApproved": 135,
+      "runtimeRegistered": 1,
+      "tests": 1607,
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5147,
-      "remaining": 831,
-      "percentage": 86.1,
+      "applied": 5148,
+      "remaining": 830,
       "percent": 86.1
     },
     "grades": [
@@ -40,7 +37,6 @@
         "total": 1145,
         "applied": 1080,
         "remaining": 65,
-        "percentage": 94.3,
         "percent": 94.3
       },
       {
@@ -48,7 +44,6 @@
         "total": 538,
         "applied": 537,
         "remaining": 1,
-        "percentage": 99.8,
         "percent": 99.8
       },
       {
@@ -56,7 +51,6 @@
         "total": 317,
         "applied": 317,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -64,7 +58,6 @@
         "total": 500,
         "applied": 500,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -72,7 +65,6 @@
         "total": 250,
         "applied": 250,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -80,7 +72,6 @@
         "total": 250,
         "applied": 250,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -88,7 +79,6 @@
         "total": 100,
         "applied": 100,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -96,7 +86,6 @@
         "total": 100,
         "applied": 100,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -104,7 +93,6 @@
         "total": 75,
         "applied": 75,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -112,7 +100,6 @@
         "total": 75,
         "applied": 75,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -120,7 +107,6 @@
         "total": 50,
         "applied": 50,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -128,7 +114,6 @@
         "total": 50,
         "applied": 50,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -136,7 +121,6 @@
         "total": 50,
         "applied": 50,
         "remaining": 0,
-        "percentage": 100,
         "percent": 100
       },
       {
@@ -144,23 +128,21 @@
         "total": 1328,
         "applied": 723,
         "remaining": 605,
-        "percentage": 54.4,
         "percent": 54.4
       },
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 990,
-        "remaining": 160,
-        "percentage": 86.1,
-        "percent": 86.1
+        "applied": 991,
+        "remaining": 159,
+        "percent": 86.2
       }
     ]
   },
   "nextActions": [
-    "Recheck runtime/shared state/pending --free.",
-    "Review exact whole 嶠15 native browser directions/cumulative/full form and135progressive samples.",
-    "If all pass runtime/fixed engine/build/regression/mobile and own-only commit."
+    "Recheck runtime/shared HEAD/index and pending --free.",
+    "Review exact whole 慤15 including verified literal u58f3-g01@1 in native browser all directions/cumulative/full form and135samples.",
+    "If all original trajectories pass runtime/fixed engine/build/regression/mobile and own-only commit."
   ],
   "held": [
     {
@@ -676,75 +658,92 @@
     }
   ],
   "resources": {
-    "tabs": "Own native tabs124–127 closed; viewport reset. User tabs untouched.",
-    "ramServers": "Own52592/PID93749 and52593/PID95293 stopped after exact loopback and command checks. No progressive/mobile server started.",
+    "tabs": "Own128/129/131/132 comparison/progressive/mobile and130 exact-history tab closed; viewport reset. User tabs untouched.",
+    "ramServers": "Own52594/PID97450,52595/PID97673,52596/PID3195 stopped after exact command/loopback checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/historical-sources.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/historical-engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/historical-draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/historical-metadata.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/historical-serve.py",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/alternative-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/review.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch295-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/5da0.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch296.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch296.ts",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch296.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-5da0.md",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/NOTICE.md",
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch296-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u5da0",
-      "glyph": "嶠",
-      "hun": "산길",
-      "eum": "교",
+      "id": "u6164",
+      "glyph": "慤",
+      "hun": "정성/삼갈",
+      "eum": "각",
       "readingGrade": "특급II",
-      "radical": "山",
+      "radical": "心",
       "strokes": 15,
-      "sourceRow": 587,
-      "sourceHunEum": "산길 교",
+      "sourceRow": 46,
+      "sourceHunEum": "정성/삼갈 각",
       "example": {
-        "word": "嶠南",
-        "reading": "교남",
+        "word": "慤士",
+        "reading": "각사",
         "source": {
           "dictionary": "표준국어대사전",
-          "targetCode": 34835,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=34835&searchKeywordTo=3",
+          "targetCode": 3920,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=3920&searchKeywordTo=3",
           "verifiedAt": "2026-09-17"
         }
       }
     },
     "registered": false,
     "held": false,
-    "root": "u5da0-k",
+    "root": "u6164-k",
     "records": [
-      "u5da0-k",
-      "u5da0",
-      "u5c71-01",
-      "u55ac-k",
-      "u5451-k03",
-      "u53e3",
-      "u518b-04"
+      "u6164-k",
+      "u6164",
+      "j83-334c",
+      "u6bbb-ue0101",
+      "u5fc3-04",
+      "u5fc3-09",
+      "u58f3-g01@1"
     ],
     "missing": [],
-    "sourceSha256": "644d77bc89bbb3025824c76d92d555c53afb1d5594582b05c116156218fcc790",
+    "sourceSha256": "c0a3701485a35b3a008a8457a659397f5ae2599b0dc765e0bdadb5ab7d206211",
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
-    "rawGroups": 19,
-    "drawingPrimitives": 20,
-    "quadraticPrimitives": 4,
+    "rawGroups": 20,
+    "drawingPrimitives": 25,
+    "quadraticPrimitives": 12,
     "cubicPrimitives": 0,
+    "providerVersions": [
+      "u58f3-g01@1"
+    ],
     "literalRevisionRecoveryPending": false,
     "domesticReviewPending": true,
-    "progressiveReviewPending": true
+    "progressiveReviewPending": true,
+    "historicalDependency": {
+      "name": "u58f3-g01@1",
+      "url": "https://glyphwiki.org/wiki/u58f3-g01@1",
+      "revision": 1,
+      "author": "johotogoshinentai",
+      "date": "2011-11-18 12:52",
+      "data": "1:0:0:17:39:102:39$1:0:32:58:15:58:66$1:0:0:24:66:97:66$2:7:8:22:75:28:98:18:119$1:0:2:24:87:94:87$2:22:7:94:87:91:99:85:115$2:12:7:44:112:45:169:17:188$1:2:2:44:112:77:112$1:22:32:77:112:77:158$2:0:7:62:168:87:154:114:136",
+      "sha256": "cb6133bfd05bc68fdd2285d7a3a7b1ee24316e691cc38dc8d78f5823c83a1645",
+      "readOnly": true,
+      "submitted": false
+    }
   }
 }
