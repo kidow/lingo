@@ -1,28 +1,28 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "e094cad11cbc7bac24d260e8ea4b13252cbc3915",
+  "lastCompletedCommit": "ad723bdbae1e8916ee0e6fb6862038ac99325f81",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 靷 stroke animation",
-    "parent": "e094cad11cbc7bac24d260e8ea4b13252cbc3915"
+    "message": "feat(hanja): add reviewed 塼 stroke animation",
+    "parent": "ad723bdbae1e8916ee0e6fb6862038ac99325f81"
   },
   "currentBatch": {
-    "batch": 272,
-    "directory": "docs/hanja-goal-glyphwiki-batch272-2026-10-04",
+    "batch": 273,
+    "directory": "docs/hanja-goal-glyphwiki-batch273-2026-10-04",
     "glyphs": [
-      "靷"
+      "塼"
     ],
-    "strokes": 13,
+    "strokes": 14,
     "status": "runtime-applied-and-verified",
     "checks": {
       "providerRecords": 6,
       "pinnedEngineFiles": 8,
-      "literalRevisionRecords": 3,
-      "domesticReviewed": 13,
-      "progressiveFramesApproved": 117,
+      "literalRevisionRecords": 0,
+      "domesticReviewed": 14,
+      "progressiveFramesApproved": 126,
       "runtimeRegistered": 1,
-      "regressionFiles": 345,
-      "regressionTests": 1553,
+      "regressionFiles": 346,
+      "regressionTests": 1556,
       "regressionPassed": true,
       "productionBuildPassed": true,
       "mobileAutoReplayPassed": true,
@@ -32,8 +32,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5130,
-      "remaining": 848,
+      "applied": 5131,
+      "remaining": 847,
       "percent": 85.8
     },
     "grades": [
@@ -138,16 +138,16 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 973,
-        "remaining": 177,
-        "percent": 84.6
+        "applied": 974,
+        "remaining": 176,
+        "percent": 84.7
       }
     ]
   },
   "nextActions": [
     "Recheck runtime, HEAD/index and pending --free.",
     "Use native Codex browser panel for all14 domestic directions/cumulative/full form and all126 progressive frames.",
-    "Use exact whole u587c-k and6 declared pinned records only."
+    "Use exact whole u596b-k and7 declared pinned records only."
   ],
   "held": [
     {
@@ -663,72 +663,63 @@
     }
   ],
   "resources": {
-    "tabs": "Own historical59, comparison60 and mobile61 closed, viewport reset. Unavailable tabs1/20/36 unchanged.",
-    "ramServers": "Own52531/52532/52533 RAM servers stopped after exact PID owner checks.",
+    "tabs": "Own comparison62 and mobile63 closed, viewport reset. Unavailable tabs1/20/36 unchanged.",
+    "ramServers": "Own52534/52535/52536 RAM servers stopped after exact PID owner checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/9777.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch272.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch272.ts",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch272.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-9777.md",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/587c.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch273.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch273.ts",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch273.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-587c.md",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/NOTICE.md",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch272-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u587c",
-      "glyph": "塼",
-      "hun": "벽돌",
-      "eum": "전",
+      "id": "u596b",
+      "glyph": "奫",
+      "hun": "물깊고넓을",
+      "eum": "윤",
       "readingGrade": "특급II",
-      "radical": "土",
+      "radical": "大",
       "strokes": 14,
-      "sourceRow": 4167,
-      "sourceHunEum": "벽돌[甎] 전",
-      "example": {
-        "word": "塼槨",
-        "reading": "전곽",
-        "source": {
-          "dictionary": "표준국어대사전",
-          "targetCode": 280232,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=280232&searchKeywordTo=3",
-          "verifiedAt": "2026-09-17"
-        }
-      }
+      "sourceRow": 3770,
+      "sourceHunEum": "물깊고넓을 윤"
     },
-    "root": "u587c-k",
+    "root": "u596b-k",
     "records": [
-      "u587c-k",
-      "u587c",
-      "u571f-01",
-      "u5c08",
-      "cdp-8bd0",
-      "u5bf8-04"
+      "u596b-k",
+      "u596b",
+      "u5927-03",
+      "u6df5",
+      "u6c35-01",
+      "u23d92-jv",
+      "cdp-89cd"
     ],
     "missing": [],
-    "sourceSha256": "4642f493a2a35ece93970a1006bdca1e62795f0ee8d6ac66e9786f7cce608147",
+    "sourceSha256": "9e7ea7fab35b9341580c39a765c15551db46e0aa9476b3f11fb72e229388eeed",
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
-    "rawGroups": 15,
-    "drawingPrimitives": 16,
-    "quadraticPrimitives": 5,
+    "rawGroups": 18,
+    "drawingPrimitives": 19,
+    "quadraticPrimitives": 7,
     "cubicPrimitives": 0,
     "runtimeRegistered": false,
     "domesticReviewPending": true,
