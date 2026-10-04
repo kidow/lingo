@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-04",
+  "pinnedEngine": {
+    "gate": "original engine",
+    "exit": 0,
+    "output": "{\"passed\":true,\"providerRecords\":5,\"sourceCaptureHashVerified\":true,\"engineChecked\":true,\"rawGroups\":13,\"strokeGroups\":12,\"quadraticPrimitives\":0,\"cubicPrimitives\":0,\"runtimeRegistered\":1,\"privateMediaSaved\":false}\n"
+  },
+  "regression": {
+    "gate": "regression",
+    "files": 325,
+    "exit": 0,
+    "summary": [
+      "ℹ tests 1493",
+      "ℹ pass 1493",
+      "ℹ fail 0",
+      "ℹ duration_ms 68404.1485"
+    ],
+    "stderr": ""
+  },
+  "productionBuild": {
+    "gate": "production build",
+    "exit": 0,
+    "summary": [
+      "▲ Next.js 16.3.3 (Turbopack)",
+      "✓ Compiled successfully in 11.0s",
+      "  Running TypeScript ...",
+      "  Finished TypeScript in 4.2s ...",
+      "  Generating static pages using 8 workers (0/7) ...",
+      "  Generating static pages using 8 workers (1/7) \r",
+      "  Generating static pages using 8 workers (3/7) \r",
+      "  Generating static pages using 8 workers (5/7) \r",
+      "✓ Generating static pages using 8 workers (7/7) in 1111ms"
+    ],
+    "evidence": {
+      "snapshotPathsMatched": 17,
+      "exportsByteIdentical": 3
+    },
+    "snapshot": "07a5e7fe7c92b3ee901b29ed6952a81705234d1c"
+  },
+  "browserPanel": {
+    "domesticStrokeReview": 12,
+    "progressiveFramesReviewed": 108,
+    "allDirectionsCumulativeAndFullForm": true,
+    "actualNativeBrowser": true,
+    "mobile": {
+      "configuredViewport": [
+        430,
+        932
+      ],
+      "effectiveSheetWidth": 390.9090881347656,
+      "intro": {
+        "automatic": {
+          "start": 1,
+          "complete": 12
+        },
+        "replay": {
+          "start": 1,
+          "complete": 12
+        }
+      },
+      "writing": {
+        "automatic": {
+          "start": 1,
+          "complete": 12
+        },
+        "replay": {
+          "start": 1,
+          "complete": 12
+        },
+        "staticImages": 0,
+        "animatedSvg": 1,
+        "canvas": {
+          "x": 26.363636016845703,
+          "y": 275.9659118652344,
+          "width": 338.1817932128906,
+          "height": 338.1817932128906
+        },
+        "sheet": {
+          "x": 0,
+          "y": 127.0951690673828,
+          "width": 390.9090881347656,
+          "height": 720.1775512695312
+        },
+        "scrollBefore": 0,
+        "scrollAfter": 0,
+        "inputBefore": 0,
+        "inputAfter": 1,
+        "inputAfterUndo": 0,
+        "touchAction": "none",
+        "noDrag": true,
+        "nativeDrawingBoundsAndScrollUnchanged": true
+      },
+      "consoleErrors": [],
+      "nativeTabsClosed": [
+        "10",
+        "11"
+      ],
+      "viewportReset": true,
+      "privateMediaSaved": false
+    }
+  },
+  "resources": {
+    "tabsClosed": [
+      "10",
+      "11"
+    ],
+    "viewportReset": true,
+    "ownServersStopped": [
+      {
+        "port": 52459,
+        "pid": 19597
+      },
+      {
+        "port": 52460,
+        "pid": 19671
+      },
+      {
+        "port": 52461,
+        "pid": 21996
+      }
+    ],
+    "priorOwnCanonicalServerReplaced": {
+      "pid": 19091,
+      "reason": "Apply only observed domestic lower horizontal/central vertical order correction"
+    },
+    "privateMediaSaved": false
+  },
+  "isolatedSnapshot": "07a5e7fe7c92b3ee901b29ed6952a81705234d1c",
+  "sharedRuntimeApplied": 5110,
+  "sharedRuntimeRemaining": 868,
+  "unrelatedFilesPreserved": {
+    "lib/levels-stamp.ts": "311e45134f9eea35a7d39509a95ea3a19624ed56424a7c6e8b78392e1a0a41d9",
+    "docs/exam-materials-feasibility-2026-09-27.md": "44eae6e3d44487a7479f07a91aafacad40324b95a9c535a3bdcc193bae4ea8ed"
+  },
+  "initialGateFailure": {
+    "reason": "Template batch number substitution accidentally changed dictionary hash inside exact loader constant",
+    "resolution": "Insert exact reviewed bundle after code identifier substitution; dictionary hash restored to actually acquired SHA. Targeted10 and full1493 tests then passed."
+  }
+}
