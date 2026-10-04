@@ -1,32 +1,35 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "cb2fb2187cc2aeb8e185b7a87ffc177f9def6799",
+  "lastCompletedCommit": "5264752867e6aba9441e6cbe405bd91c14175c35",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 暳 whole-source trajectory mismatches",
-    "parent": "cb2fb2187cc2aeb8e185b7a87ffc177f9def6799"
+    "message": "feat(hanja): add reviewed 熢 stroke animation",
+    "parent": "5264752867e6aba9441e6cbe405bd91c14175c35"
   },
   "currentBatch": {
-    "batch": 301,
-    "directory": "docs/hanja-goal-glyphwiki-batch301-2026-10-05",
+    "batch": 302,
+    "directory": "docs/hanja-goal-glyphwiki-batch302-2026-10-05",
     "glyphs": [
-      "暳"
+      "熢"
     ],
     "strokes": 15,
-    "status": "deferred-no-runtime-approval",
+    "status": "applied-and-verified",
     "checks": {
+      "providerRecords": 5,
       "exactWholesReproduced": 2,
       "pinnedEngineFiles": 8,
-      "progressiveFramesApproved": 0,
-      "runtimeRegistered": 0,
+      "domesticReviewed": 15,
+      "progressiveFramesApproved": 135,
+      "runtimeRegistered": 1,
+      "tests": 1623,
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5152,
-      "remaining": 826,
+      "applied": 5153,
+      "remaining": 825,
       "percentage": 86.2,
       "percent": 86.2
     },
@@ -146,16 +149,16 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 995,
-        "remaining": 155,
-        "percentage": 86.5,
-        "percent": 86.5
+        "applied": 996,
+        "remaining": 154,
+        "percentage": 86.6,
+        "percent": 86.6
       }
     ]
   },
   "nextActions": [
     "Recheck runtime/shared HEAD/index and pending --free.",
-    "Review 熢15 exact whole trajectory joins and domestic all-stroke form; recover declared historical whole alternative if primary cannot satisfy continuity.",
+    "Review 獒15 exact whole u7352-k all domestic directions/cumulative/full form and135 progressive samples.",
     "If source trajectories pass runtime/fixed engine/build/regression/mobile and own-only commit.",
     "暳 deferred: resume only when a complete whole matches both7th rising pen and14th overhang; see batch301 findings.json."
   ],
@@ -673,88 +676,99 @@
     }
   ],
   "resources": {
-    "tabs": "Own native153 primary,154 alternative and155 current whole tabs closed; viewport reset. User tabs untouched. Previous temporary failed error tab143 remains inaccessible under browser URL safety policy and native app restriction, unmarked.",
-    "ramServers": "Own52613/PID40197,52614/PID40141,52615/PID40699,52616/PID40740 terminated after exact command/uid/loopback checks.",
+    "tabs": "Own native156 historical,157 comparison,158 progressive and159 mobile tabs closed; viewport reset. User tabs untouched. Previous temporary failed error tab143 remains inaccessible under browser URL safety policy and native app restriction, unmarked.",
+    "ramServers": "Own52617/PID43972,52618/PID43929,52619/PID46670 terminated after exact command/uid/loopback checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/primary-sources.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/primary-engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/primary-draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/primary-metadata.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/primary-serve.py",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/alternative-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/current-native-partial.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/findings.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch301-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/71a2.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch302.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch302.ts",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch302.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-71a2.md",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/NOTICE.md",
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/primary-sources.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/primary-engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/primary-draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/alternative-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/original-overlap.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch302-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u71a2",
-      "glyph": "熢",
-      "hun": "내자옥할",
-      "eum": "봉",
+      "id": "u7352",
+      "glyph": "獒",
+      "hun": "사나운개",
+      "eum": "오",
       "readingGrade": "특급II",
-      "radical": "火",
+      "radical": "犬",
       "strokes": 15,
-      "sourceRow": 2138,
-      "sourceHunEum": "내자옥할 봉"
+      "sourceRow": 3383,
+      "sourceHunEum": "사나운개 오"
     },
     "registered": false,
     "held": false,
-    "root": "u71a2",
+    "root": "u7352-k",
     "records": [
-      "u71a2",
-      "u706b-01",
-      "u8fb6"
+      "u7352-k",
+      "u7352",
+      "u6556-03",
+      "u72ac-04"
     ],
     "missing": [],
     "aliases": [],
     "providerVersions": [],
-    "sourceSha256": "888d4f1678385364ce87c02e2cce1a4dc3475b63a5548f6d8c4c73dd15426cfd",
+    "sourceSha256": "806a03e2fdd756ae386c978777d3f3a628c42cb9a01add14d7ff1304310102ee",
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
     "engineProofPending": true,
     "domestic": {
-      "glyph": "熢",
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7100/71A2.svg",
+      "glyph": "獒",
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7300/7352.svg",
       "status": 200,
-      "bytes": 8030,
-      "sha256": "85d8aed760f1cf03de14f7796ac7610b7c4a70887fd9ebfd5f7ea6e886ec0709"
+      "bytes": 7449,
+      "sha256": "62971e1eef069e17801fe1a6b4660cca66e4d1bbff38708917a4b7349ce2a9d8"
     },
     "domesticReviewPending": true,
     "progressiveReviewPending": true,
     "publicCapture": {
-      "root": "u71a2",
-      "glyph": "熢",
+      "root": "u7352-k",
+      "glyph": "獒",
       "records": {
-        "u71a2": {
-          "name": "u71a2",
-          "related": "u71a2",
-          "data": "99:0:0:3:0:155:200:u706b-01$99:0:0:60:0:194:200:u8fb6$2:0:7:134:17:126:50:105:69$1:0:2:126:33:167:33$2:22:7:167:33:145:79:100:90$2:7:8:125:46:157:53:183:81$1:0:0:111:102:181:102$1:0:0:115:124:176:124$1:0:0:106:146:188:146$1:0:0:146:79:146:167"
+        "u7352-k": {
+          "name": "u7352-k",
+          "related": "u7352",
+          "data": "99:0:0:0:0:200:200:u7352"
         },
-        "u706b-01": {
-          "name": "u706b-01",
-          "related": "u706b",
-          "data": "2:7:8:26:53:32:87:18:106$2:0:7:87:51:74:64:52:83$7:0:7:52:18:52:95:52:158:12:185$2:7:8:51:121:75:141:82:161"
+        "u7352": {
+          "name": "u7352",
+          "related": "u7352",
+          "data": "99:0:0:0:-2:200:223:u6556-03$99:0:0:0:16:200:199:u72ac-04"
         },
-        "u8fb6": {
-          "name": "u8fb6",
-          "related": "u8fb6",
-          "data": "2:7:8:27:21:46:30:58:46$2:7:8:16:57:35:65:49:81$1:0:2:14:107:50:107$1:22:0:50:107:50:158$2:0:7:16:179:35:168:55:154$6:7:0:53:152:68:172:84:181:179:177"
+        "u6556-03": {
+          "name": "u6556-03",
+          "related": "u6556",
+          "data": "1:0:0:23:31:100:31$1:0:32:59:14:59:46$1:0:0:14:46:110:46$1:0:32:59:48:59:63$1:0:0:16:63:104:63$1:0:2:49:77:88:77$2:22:4:88:77:88:92:77:101$2:32:7:54:63:45:94:13:112$2:0:7:131:15:126:48:108:71$1:0:0:126:39:187:39$2:2:7:165:40:157:89:96:106$2:7:0:125:43:139:90:179:100"
+        },
+        "u72ac-04": {
+          "name": "u72ac-04",
+          "related": "u72ac",
+          "data": "1:0:0:18:136:185:136$2:0:7:101:109:102:176:20:187$2:7:0:101:136:127:173:177:181$2:7:8:122:110:139:116:146:126"
         }
       },
       "missing": [],
@@ -769,14 +783,34 @@
         "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
         "entries": 438756
       },
-      "provenance": "Exact whole u71a2 from pinned2016 archive and declared dependency closure; no inferred fragments or latest substitution."
+      "provenance": "Exact whole from declared2016 archive. Native domestic order/direction/full form and progressive review pending; no runtime approval."
     },
-    "alternative": {
-      "root": "u71a2-k",
-      "missing": [
-        "u9022@7"
-      ],
-      "domesticHistoricalSourceRecoveryPending": true
-    }
+    "alternatives": [
+      {
+        "root": "u7352",
+        "records": 3,
+        "missing": []
+      },
+      {
+        "root": "u7352-k",
+        "records": 4,
+        "missing": []
+      },
+      {
+        "root": "u7352-ue0100",
+        "records": 4,
+        "missing": []
+      },
+      {
+        "root": "u7352-ue0101",
+        "records": 4,
+        "missing": []
+      },
+      {
+        "root": "u7352-ue0102",
+        "records": 4,
+        "missing": []
+      }
+    ]
   }
 }
