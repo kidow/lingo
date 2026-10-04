@@ -1,26 +1,26 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "f5e34a323508ef48f9b044233f779b286a1aa22f",
+  "lastCompletedCommit": "2458522e8595774d7a14528b4c4ac383ae1e89d9",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 耈 eleven-stroke animation",
-    "parentAtStart": "f5e34a323508ef48f9b044233f779b286a1aa22f"
+    "message": "feat(hanja): add reviewed 荳 eleven-stroke animation",
+    "parentAtStart": "2458522e8595774d7a14528b4c4ac383ae1e89d9"
   },
   "currentBatch": {
     "glyphs": [
-      "耈"
+      "荳"
     ],
     "strokes": 11,
     "status": "applied after full browser review, tests, build and mobile verification",
     "checks": {
-      "providerRecords": 5,
+      "providerRecords": 6,
       "engineFiles": 8,
       "literalRevisionRecords": 0,
       "domesticReviewed": 11,
       "progressiveFramesApproved": 99,
       "runtimeAdded": 1,
-      "regressionFiles": 304,
-      "regressionTests": 1430,
+      "regressionFiles": 305,
+      "regressionTests": 1433,
       "buildPassed": true,
       "mobilePassed": true,
       "browser": "Codex in-app panel",
@@ -30,8 +30,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5089,
-      "remaining": 889,
+      "applied": 5090,
+      "remaining": 888,
       "percent": 85.1
     },
     "grades": [
@@ -50,13 +50,6 @@
         "percent": 99.8
       },
       {
-        "grade": "3급II",
-        "total": 500,
-        "applied": 500,
-        "remaining": 0,
-        "percent": 100
-      },
-      {
         "grade": "3급",
         "total": 317,
         "applied": 317,
@@ -64,9 +57,9 @@
         "percent": 100
       },
       {
-        "grade": "4급II",
-        "total": 250,
-        "applied": 250,
+        "grade": "3급II",
+        "total": 500,
+        "applied": 500,
         "remaining": 0,
         "percent": 100
       },
@@ -78,9 +71,9 @@
         "percent": 100
       },
       {
-        "grade": "5급II",
-        "total": 100,
-        "applied": 100,
+        "grade": "4급II",
+        "total": 250,
+        "applied": 250,
         "remaining": 0,
         "percent": 100
       },
@@ -92,9 +85,9 @@
         "percent": 100
       },
       {
-        "grade": "6급II",
-        "total": 75,
-        "applied": 75,
+        "grade": "5급II",
+        "total": 100,
+        "applied": 100,
         "remaining": 0,
         "percent": 100
       },
@@ -106,14 +99,21 @@
         "percent": 100
       },
       {
-        "grade": "7급II",
+        "grade": "6급II",
+        "total": 75,
+        "applied": 75,
+        "remaining": 0,
+        "percent": 100
+      },
+      {
+        "grade": "7급",
         "total": 50,
         "applied": 50,
         "remaining": 0,
         "percent": 100
       },
       {
-        "grade": "7급",
+        "grade": "7급II",
         "total": 50,
         "applied": 50,
         "remaining": 0,
@@ -127,25 +127,25 @@
         "percent": 100
       },
       {
-        "grade": "특급II",
-        "total": 1150,
-        "applied": 932,
-        "remaining": 218,
-        "percent": 81
-      },
-      {
         "grade": "특급",
         "total": 1328,
         "applied": 723,
         "remaining": 605,
         "percent": 54.4
+      },
+      {
+        "grade": "특급II",
+        "total": 1150,
+        "applied": 933,
+        "remaining": 217,
+        "percent": 81.1
       }
     ]
   },
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Use actual available exact whole u8373-k and its six declared archive records only; no radical transplant or reliance on prior shorter Japanese corpus.",
+    "Use actual available exact whole u837b-k and its six declared archive records only; no radical transplant or reliance on prior shorter corpora.",
     "Review all11 domestic directions/cumulative/full form and all progressive frames before runtime approval.",
     "Preserve original geometry/defaults and distinguish licensed geometry, dictionary crosscheck and exam-body official approval."
   ],
@@ -663,52 +663,52 @@
     }
   ],
   "resources": {
-    "tabs": "batch221 own in-app tab67 closed; viewport reset.",
-    "ramServers": "batch221 own canonical52365 PID44954/progressive52366 PID45339/mobile52367 PID47670 stopped after exact PID and command checks. Next pinned-archive capture ran in foreground without persistent server.",
+    "tabs": "batch222 own in-app tab68 closed; viewport reset.",
+    "ramServers": "batch222 own canonical52369 PID50124/progressive52370 PID51320/mobile52371 PID53613 stopped after exact PID and command checks. Next pinned-archive capture ran in foreground without persistent server.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch221-2026-10-04/README.md"
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch222-2026-10-04/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "荳",
-    "id": "u8373",
+    "glyph": "荻",
+    "id": "u837b",
     "strokes": 11,
     "grade": "특급II",
     "unapplied": true,
     "held": false,
     "records": 6,
     "recordNames": [
-      "u8373-k",
-      "u8373-ue0102",
-      "ufa5e-03",
+      "u837b-k",
+      "u837b-var-001",
       "u8279-k03",
-      "u8c46",
-      "u53e3"
+      "u72c4",
+      "u72ad-01",
+      "u706b-02"
     ],
-    "sourceSha256": "3a6abc10c9eec1dd02d6fde6bbab55f0cad42a56fb2e3cf69d13398094ae8026",
+    "sourceSha256": "15e7f21d5590378c8d23838f53e864f787169b0eca92f4d72f355760a9471ae7",
     "exactClosure": true,
     "missing": [],
     "status": "unapplied; exact whole archive closure acquired; full domestic and progressive browser review pending",
-    "priorInventory": "Prior catalog/domestic strokes11, Japanese corpus10, shortestGap1 and allShorter:true. Actual available exact whole u8373-k and six declared records captured from pinned archive; new full source is distinct from the prior shorter corpus. No radical transplant or prior path approval assumed.",
+    "priorInventory": "Prior catalog/domestic strokes11, Japanese/MM/Hans corpora10, shortestGap1 and allShorter:true. Actual available exact whole u837b-k and six declared records captured from pinned archive; new full source is distinct from prior shorter corpora. No radical transplant or prior path approval assumed.",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Use actual available exact whole u8373-k and its six declared archive records only; no radical transplant or reliance on prior shorter Japanese corpus.",
+      "Use actual available exact whole u837b-k and its six declared archive records only; no radical transplant or reliance on prior shorter corpora.",
       "Review all11 domestic directions/cumulative/full form and all progressive frames before runtime approval.",
       "Preserve original geometry/defaults and distinguish licensed geometry, dictionary crosscheck and exam-body official approval."
     ]
