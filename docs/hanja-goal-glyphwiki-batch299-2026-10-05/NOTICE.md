@@ -1,0 +1,9 @@
+# 摹 stroke geometry
+
+GlyphWiki Project and contributors; LicenseRef-GlyphWiki. Public source archive: https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt (7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62). License: https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt; GlyphWiki license@18.
+
+Exact whole u6479-ue0102: u6479-ue0102 → koseki-142300 → u624b-14 → u83ab-03-var-001@1 → ufa5e-03@3. Historical records explicitly declared by that whole were recovered from [u83ab-03-var-001@1](https://glyphwiki.org/wiki/u83ab-03-var-001@1) and [ufa5e-03@3](https://glyphwiki.org/wiki/ufa5e-03@3). Data hashes are recorded in sources.json and the editable asset. No latest substitution or component transplant.
+
+All15 domestic directions/cumulative/full form and135 progressive samples reviewed in native Codex browser panels145/146. Primary u6479-k rejected in panel144: 3-part grass versus domestic4-part grass. Exact whole u6479-ue0102 and5 declared records, including literal u83ab-03-var-001@1 and ufa5e-03@3 recovered from native historical panel141; missing[],aliases[]. Original16 raw groups17 drawing primitives,Q4/C0. Original continuous joins: 日 raw5→6 at150,49.68; final 手 vertical→hook at100,172.53. Original coordinates/polygons/default mincho retained; normalize200to100 and polygon winding only. No inferred connector, reversal, width change, radical transplant, subdivision or latest substitution.
+
+Domestic dictionary SVG SHA256 2f5f1b398251c0afd4f0580b7f0a233fdf010f6cca33c2e4e283546a03d77877; RAM-only comparison. This is dictionary crosschecking, not exam-body official approval. Domestic SVG/HTML/screenshots are not redistributed.
