@@ -1,33 +1,28 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "ad723bdbae1e8916ee0e6fb6862038ac99325f81",
+  "lastCompletedCommit": "fdbfb8a8cca751b89e60eedc41361f10bb277665",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 塼 stroke animation",
-    "parent": "ad723bdbae1e8916ee0e6fb6862038ac99325f81"
+    "message": "docs(hanja): record 奫 water trajectory hold",
+    "parent": "fdbfb8a8cca751b89e60eedc41361f10bb277665"
   },
   "currentBatch": {
-    "batch": 273,
-    "directory": "docs/hanja-goal-glyphwiki-batch273-2026-10-04",
+    "batch": 274,
+    "directory": "docs/hanja-goal-glyphwiki-batch274-2026-10-04",
     "glyphs": [
-      "塼"
+      "奫"
     ],
     "strokes": 14,
-    "status": "runtime-applied-and-verified",
+    "status": "held-source-water-pen-discontinuity",
     "checks": {
-      "providerRecords": 6,
+      "providerRecords": 7,
       "pinnedEngineFiles": 8,
-      "literalRevisionRecords": 0,
-      "domesticReviewed": 14,
-      "progressiveFramesApproved": 126,
-      "runtimeRegistered": 1,
-      "regressionFiles": 346,
-      "regressionTests": 1556,
-      "regressionPassed": true,
-      "productionBuildPassed": true,
-      "mobileAutoReplayPassed": true,
+      "domesticReviewed": 15,
+      "progressiveFramesApproved": 0,
+      "runtimeRegistered": 0,
       "privateMediaSaved": false
-    }
+    },
+    "holdReason": "Count14vs15 can use an explicitly reviewed playback variant, but whole source third water pen is not a continuous trajectory. No inferred connector or arbitrary split/merge. Need licensed whole geometry with verified continuous third water pen, then native15 directions/cumulative and135 progressive frames and variant-specific runtime/build/mobile verification."
   },
   "workingTreeCoverage": {
     "runtime": {
@@ -146,8 +141,8 @@
   },
   "nextActions": [
     "Recheck runtime, HEAD/index and pending --free.",
-    "Use native Codex browser panel for all14 domestic directions/cumulative/full form and all126 progressive frames.",
-    "Use exact whole u596b-k and7 declared pinned records only."
+    "Review 慽 all14 domestic directions/cumulative/full form and126 progressive frames in native browser.",
+    "Use exact whole u617d-k and5 pinned declared records; no invented connections."
   ],
   "held": [
     {
@@ -663,63 +658,61 @@
     }
   ],
   "resources": {
-    "tabs": "Own comparison62 and mobile63 closed, viewport reset. Unavailable tabs1/20/36 unchanged.",
-    "ramServers": "Own52534/52535/52536 RAM servers stopped after exact PID owner checks.",
+    "tabs": "Own comparison64 closed; unavailable tabs1/20/36 unchanged.",
+    "ramServers": "Own52537 RAM server stopped after exact PID owner check.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/587c.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch273.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch273.ts",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch273.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-587c.md",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/NOTICE.md",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch273-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/review.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch274-2026-10-04/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u596b",
-      "glyph": "奫",
-      "hun": "물깊고넓을",
-      "eum": "윤",
+      "id": "u617d",
+      "glyph": "慽",
+      "hun": "근심할",
+      "eum": "척",
       "readingGrade": "특급II",
-      "radical": "大",
+      "radical": "心",
       "strokes": 14,
-      "sourceRow": 3770,
-      "sourceHunEum": "물깊고넓을 윤"
+      "sourceRow": 4780,
+      "sourceHunEum": "근심할 척",
+      "example": {
+        "word": "悲慽",
+        "reading": "비척",
+        "source": {
+          "dictionary": "표준국어대사전",
+          "targetCode": 159128,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=159128&searchKeywordTo=3",
+          "verifiedAt": "2026-09-17"
+        }
+      }
     },
-    "root": "u596b-k",
+    "root": "u617d-k",
     "records": [
-      "u596b-k",
-      "u596b",
-      "u5927-03",
-      "u6df5",
-      "u6c35-01",
-      "u23d92-jv",
-      "cdp-89cd"
+      "u617d-k",
+      "u617d",
+      "u5fc4-01",
+      "u5fc4",
+      "u621a-02"
     ],
     "missing": [],
-    "sourceSha256": "9e7ea7fab35b9341580c39a765c15551db46e0aa9476b3f11fb72e229388eeed",
+    "sourceSha256": "bd6d6477fb2556c95b3e96d0a947eb2b0c5855d58d0a6f396da6a15457821524",
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
-    "rawGroups": 18,
-    "drawingPrimitives": 19,
-    "quadraticPrimitives": 7,
+    "rawGroups": 14,
+    "drawingPrimitives": 16,
+    "quadraticPrimitives": 9,
     "cubicPrimitives": 0,
     "runtimeRegistered": false,
     "domesticReviewPending": true,
