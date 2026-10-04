@@ -1,26 +1,28 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "0147fadc68f894f7da37c30c81cc278cc1f1580d",
+  "lastCompletedCommit": "6deff769c6476edcf614b624ab63adf9f0c259f0",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 莎 stroke-source continuity blocker",
-    "parentAtStart": "0147fadc68f894f7da37c30c81cc278cc1f1580d"
+    "message": "feat(hanja): add reviewed 莘 eleven-stroke animation",
+    "parentAtStart": "6deff769c6476edcf614b624ab63adf9f0c259f0"
   },
   "currentBatch": {
     "glyphs": [
-      "莎"
+      "莘"
     ],
     "strokes": 11,
-    "status": "withheld after full domestic browser comparison: source domestic7 trajectory discontinuity",
+    "status": "applied after full browser review, tests, build and mobile verification",
     "checks": {
-      "providerRecords": 7,
+      "providerRecords": 5,
       "engineFiles": 8,
       "literalRevisionRecords": 0,
       "domesticReviewed": 11,
-      "progressiveFramesApproved": 0,
-      "runtimeAdded": 0,
-      "verificationPassed": true,
-      "productionCodeChanged": false,
+      "progressiveFramesApproved": 99,
+      "runtimeAdded": 1,
+      "regressionFiles": 308,
+      "regressionTests": 1442,
+      "buildPassed": true,
+      "mobilePassed": true,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -28,8 +30,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5092,
-      "remaining": 886,
+      "applied": 5093,
+      "remaining": 885,
       "percent": 85.2
     },
     "grades": [
@@ -134,16 +136,16 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 935,
-        "remaining": 215,
-        "percent": 81.3
+        "applied": 936,
+        "remaining": 214,
+        "percent": 81.4
       }
     ]
   },
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-    "Use actual available exact whole u8398-k and its five declared archive records only.",
+    "Use actual available exact whole u83a9-k and its five declared archive records only.",
     "Review all11 domestic directions/cumulative/full form and every progressive frame before runtime approval.",
     "Preserve original geometry/defaults and distinguish licensed geometry, dictionary crosscheck and official exam-body approval."
   ],
@@ -661,50 +663,51 @@
     }
   ],
   "resources": {
-    "tabs": "batch225 own in-app tab71 closed; viewport reset.",
-    "ramServers": "batch225 own canonical52381 PID71831 stopped after exact PID and command check. No progressive/mobile server because source trajectory did not pass. Next archive lookup ran in foreground.",
+    "tabs": "batch226 own in-app tabs72 and73 closed; viewport reset.",
+    "ramServers": "batch226 own canonical52385 PID74838/progressive52386 PID75310/mobile52387 PID80173 stopped after exact PID and command checks. Next archive lookup ran in foreground.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/findings.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/alternatives.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch225-2026-10-04/README.md"
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch226-2026-10-04/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "莘",
-    "id": "u8398",
+    "glyph": "莩",
+    "id": "u83a9",
     "strokes": 11,
     "grade": "특급II",
     "unapplied": true,
     "held": false,
     "records": 5,
     "recordNames": [
-      "u8398-k",
-      "koseki-348740",
+      "u83a9-k",
+      "u83a9-ue0102",
       "ufa5e-03",
       "u8279-k03",
-      "u8f9b"
+      "u5b5a"
     ],
-    "sourceSha256": "29cec508e3c968d9b15a53e2706a4516a1e796bb8aafa6d33b00aca31cf4dbfb",
+    "sourceSha256": "643c2dff9bf99ffdacde3b5bf9d010def9531da300697c2ed66ee5606f40172b",
     "exactClosure": true,
     "missing": [],
     "status": "unapplied; exact whole archive closure acquired; full domestic and progressive browser review pending",
-    "priorInventory": "Prior catalog/domestic11, MM/Hans10, shortestGap1 and allShorter:true. Exact whole u8398-k and five declared records separately acquired; no radical transplant or prior approval assumed.",
+    "priorInventory": "Prior catalog/domestic11, Ja/MM/Hans10, shortestGap1 and allShorter:true. Actual whole u83a9-k and five declared archive records separately acquired; no radical transplant or prior approval assumed.",
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior held/source findings.",
-      "Use actual available exact whole u8398-k and its five declared archive records only.",
+      "Use actual available exact whole u83a9-k and its five declared archive records only.",
       "Review all11 domestic directions/cumulative/full form and every progressive frame before runtime approval.",
       "Preserve original geometry/defaults and distinguish licensed geometry, dictionary crosscheck and official exam-body approval."
     ]
