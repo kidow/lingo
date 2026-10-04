@@ -11,3 +11,5 @@ Whole u6690-k의 raw14 끝 (95.235,161)과 raw15 시작 (67.75,161)은 27.485 so
 다음 楗 13획의 whole u6957-k에는 u5ef4@6 자료가 없어 경로가 불완전하다. 다음 배치에서 전체 원본 변형을 먼저 확인하며 누락 버전을 현재 부수로 대체하지 않는다.
 
 커밋 메시지: docs(hanja): hold 暐 pending continuous fold source
+
+batch261에서 대체 비교 패널이 기본 engine-proof.json을 읽던 문제를 수정했다. 실제 alternative-engine-proof.json으로 국내5·6·11·12·13획과 완성 자형을 브라우저 탭35에서 다시 확인했다. 원본의21.510000000000005 경로 간격과 보류 판단은 동일하다.
