@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-04",
+  "pinnedEngine": {
+    "gate": "original engine",
+    "exit": 0,
+    "output": "{\"passed\":true,\"providerRecords\":4,\"sourceCaptureHashVerified\":true,\"engineChecked\":true,\"rawGroups\":13,\"strokeGroups\":12,\"quadraticPrimitives\":7,\"cubicPrimitives\":0,\"runtimeRegistered\":1,\"privateMediaSaved\":false}\n"
+  },
+  "regression": {
+    "gate": "full regression",
+    "files": 328,
+    "exit": 0,
+    "summary": [
+      "ℹ tests 1502",
+      "ℹ pass 1502",
+      "ℹ fail 0",
+      "ℹ duration_ms 68368.83025"
+    ]
+  },
+  "productionBuild": {
+    "gate": "production build",
+    "exit": 0,
+    "summary": [
+      "▲ Next.js 16.3.3 (Turbopack)",
+      "✓ Compiled successfully in 11.8s",
+      "  Running TypeScript ...",
+      "  Finished TypeScript in 5.2s ...",
+      "  Generating static pages using 8 workers (0/7) ...",
+      "  Generating static pages using 8 workers (1/7) \r",
+      "  Generating static pages using 8 workers (3/7) \r",
+      "  Generating static pages using 8 workers (5/7) \r",
+      "✓ Generating static pages using 8 workers (7/7) in 1102ms"
+    ],
+    "evidence": {
+      "snapshotPathsMatched": 17,
+      "exportsByteIdentical": 3
+    },
+    "snapshot": "9f9d221c805e618d773de30b44f7588140a442ae"
+  },
+  "browserPanel": {
+    "domesticStrokeReview": 12,
+    "progressiveFramesReviewed": 108,
+    "allDirectionsCumulativeAndFullForm": true,
+    "actualNativeBrowser": true,
+    "mobile": {
+      "configuredViewport": [
+        430,
+        932
+      ],
+      "effectiveSheetWidth": 430,
+      "intro": {
+        "automatic": {
+          "start": 1,
+          "complete": 12
+        },
+        "replay": {
+          "start": 1,
+          "complete": 12
+        }
+      },
+      "writing": {
+        "automatic": {
+          "start": 1,
+          "complete": 12
+        },
+        "replay": {
+          "start": 1,
+          "complete": 12
+        },
+        "staticImages": 0,
+        "animatedSvg": 1,
+        "canvas": {
+          "x": 46,
+          "y": 288.8046875,
+          "width": 338,
+          "height": 338
+        },
+        "sheet": {
+          "x": 0,
+          "y": 139.8046875,
+          "width": 430,
+          "height": 792.1953125
+        },
+        "scrollBefore": 0,
+        "inputBefore": 0,
+        "touchAction": "none",
+        "noDrag": true,
+        "scrollAfter": 0,
+        "inputAfter": 1,
+        "inputAfterUndo": 0,
+        "nativeDrawingBoundsAndScrollUnchanged": true
+      },
+      "privateMediaSaved": false,
+      "consoleErrors": [],
+      "nativeTabsClosed": [
+        "17",
+        "18"
+      ],
+      "viewportReset": true
+    }
+  },
+  "resources": {
+    "tabsClosed": [
+      "17",
+      "18"
+    ],
+    "viewportReset": true,
+    "ownServersStopped": [
+      {
+        "port": 52469,
+        "pid": 37178
+      },
+      {
+        "port": 52470,
+        "pid": 38420
+      },
+      {
+        "port": 52471,
+        "pid": 42566
+      }
+    ],
+    "privateMediaSaved": false
+  },
+  "isolatedSnapshot": "9f9d221c805e618d773de30b44f7588140a442ae",
+  "sharedRuntimeApplied": 5113,
+  "sharedRuntimeRemaining": 865,
+  "unrelatedFilesPreserved": {
+    "lib/levels-stamp.ts": "311e45134f9eea35a7d39509a95ea3a19624ed56424a7c6e8b78392e1a0a41d9",
+    "docs/exam-materials-feasibility-2026-09-27.md": "44eae6e3d44487a7479f07a91aafacad40324b95a9c535a3bdcc193bae4ea8ed"
+  },
+  "initialTestRepair": {
+    "reason": "Template tamper case wrote the existing source order and therefore made no mutation.",
+    "resolution": "Change the test to swap two entries; targeted3 and full1502 then passed. No runtime geometry was changed."
+  }
+}
