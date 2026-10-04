@@ -1,16 +1,16 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "f240fab071c38483bc81bd1b9088f53497cf7074",
+  "lastCompletedCommit": "cf168508f7d4bd7660d29ba40706ff2a7f1292d7",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 詵 stroke animation",
-    "parent": "f240fab071c38483bc81bd1b9088f53497cf7074"
+    "message": "feat(hanja): add reviewed 鉥 stroke animation",
+    "parent": "cf168508f7d4bd7660d29ba40706ff2a7f1292d7"
   },
   "currentBatch": {
-    "batch": 270,
-    "directory": "docs/hanja-goal-glyphwiki-batch270-2026-10-04",
+    "batch": 271,
+    "directory": "docs/hanja-goal-glyphwiki-batch271-2026-10-04",
     "glyphs": [
-      "詵"
+      "鉥"
     ],
     "strokes": 13,
     "status": "runtime-applied-and-verified",
@@ -21,8 +21,8 @@
       "domesticReviewed": 13,
       "progressiveFramesApproved": 117,
       "runtimeRegistered": 1,
-      "regressionFiles": 343,
-      "regressionTests": 1547,
+      "regressionFiles": 344,
+      "regressionTests": 1550,
       "regressionPassed": true,
       "productionBuildPassed": true,
       "mobileAutoReplayPassed": true,
@@ -32,8 +32,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5128,
-      "remaining": 850,
+      "applied": 5129,
+      "remaining": 849,
       "percent": 85.8
     },
     "grades": [
@@ -138,16 +138,16 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 971,
-        "remaining": 179,
-        "percent": 84.4
+        "applied": 972,
+        "remaining": 178,
+        "percent": 84.5
       }
     ]
   },
   "nextActions": [
     "Recheck runtime, HEAD/index and pending --free.",
-    "Use native Codex browser panel for all13 domestic directions/cumulative/full form and all117 progressive frames.",
-    "Use exact whole u9265-k and declared pinned records only."
+    "Recover exact declared u9769-01@2 in native Codex browser panel; never substitute latest u9769-01.",
+    "Recompute whole u9777-k literal closure before all13 domestic directions/cumulative/full form and all117 progressive frames; current7raw/8drawing counts are partial, not approved."
   ],
   "held": [
     {
@@ -663,63 +663,81 @@
     }
   ],
   "resources": {
-    "tabs": "Own comparison55 and mobile56 closed, viewport reset. Unavailable tabs1/20/36 unchanged.",
-    "ramServers": "Own52525/52526/52527 RAM servers stopped after exact PID owner checks.",
+    "tabs": "Own comparison57 and mobile58 closed, viewport reset. Unavailable tabs1/20/36 unchanged.",
+    "ramServers": "Own52528/52529/52530 RAM servers stopped after exact PID owner checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/8a75.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch270.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch270.ts",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch270.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-8a75.md",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/9265.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch271.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch271.ts",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch271.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-9265.md",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/NOTICE.md",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch270-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch271-2026-10-04/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u9265",
-      "glyph": "鉥",
-      "hun": "돗바늘",
-      "eum": "술",
+      "id": "u9777",
+      "glyph": "靷",
+      "hun": "가슴걸이",
+      "eum": "인",
       "readingGrade": "특급II",
-      "radical": "金",
+      "radical": "革",
       "strokes": 13,
-      "sourceRow": 2870,
-      "sourceHunEum": "돗바늘 술"
+      "sourceRow": 3892,
+      "sourceHunEum": "가슴걸이 인",
+      "example": {
+        "word": "發靷",
+        "reading": "발인",
+        "source": {
+          "dictionary": "표준국어대사전",
+          "targetCode": 427732,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=427732&searchKeywordTo=3",
+          "verifiedAt": "2026-09-17"
+        }
+      }
     },
-    "root": "u9265-k",
+    "root": "u9777-k",
     "records": [
-      "u9265-k",
-      "u9265",
-      "u91d2-01",
-      "u672e-02"
+      "u9777-k",
+      "u9777",
+      "u5f15-02"
     ],
-    "missing": [],
-    "sourceSha256": "42d3c86f8a3afaedfa1958fd18ea032881199af9341af6e4230c2f2f8e4e8f45",
+    "missing": [
+      "u9769-01@2"
+    ],
+    "sourceSha256": "5af5325448a2d47323ec90bebe3f09dba3eb5a2b59b8af76d8499f570a9bce84",
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
-    "rawGroups": 13,
-    "drawingPrimitives": 16,
-    "quadraticPrimitives": 8,
+    "rawGroups": 7,
+    "drawingPrimitives": 8,
+    "quadraticPrimitives": 2,
     "cubicPrimitives": 0,
     "runtimeRegistered": false,
     "domesticReviewPending": true,
-    "progressiveReviewPending": true
+    "progressiveReviewPending": true,
+    "incompleteSource": true,
+    "literalRevisionRecordsMissing": [
+      "u9769-01@2"
+    ],
+    "engineInventoryOnly": true,
+    "engineCountsIncomplete": true,
+    "approvalBlockedBy": "Exact declared historical u9769-01@2 is absent from latest-only snapshot; recover that exact public record before rendering or domestic/progressive review. Never substitute current u9769-01."
   }
 }
