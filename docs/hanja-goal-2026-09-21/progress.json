@@ -1,28 +1,28 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "26333846b0b2b037dfd1e6bb00e3ce0404c9f7af",
+  "lastCompletedCommit": "6ee5025de2470b331d42efb59130a43f28517496",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 蒜 stroke animation",
-    "parent": "26333846b0b2b037dfd1e6bb00e3ce0404c9f7af"
+    "message": "feat(hanja): add reviewed 蒡 stroke animation",
+    "parent": "6ee5025de2470b331d42efb59130a43f28517496"
   },
   "currentBatch": {
-    "batch": 283,
-    "directory": "docs/hanja-goal-glyphwiki-batch283-2026-10-05",
+    "batch": 284,
+    "directory": "docs/hanja-goal-glyphwiki-batch284-2026-10-05",
     "glyphs": [
-      "蒜"
+      "蒡"
     ],
     "strokes": 14,
     "status": "runtime-applied-and-verified",
     "checks": {
-      "providerRecords": 6,
+      "providerRecords": 5,
       "pinnedEngineFiles": 8,
       "literalRevisionRecords": 0,
       "domesticReviewed": 14,
       "progressiveFramesApproved": 126,
       "runtimeRegistered": 1,
-      "regressionFiles": 354,
-      "regressionTests": 1580,
+      "regressionFiles": 355,
+      "regressionTests": 1583,
       "regressionPassed": true,
       "productionBuildPassed": true,
       "mobileAutoReplayPassed": true,
@@ -32,8 +32,8 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5139,
-      "remaining": 839,
+      "applied": 5140,
+      "remaining": 838,
       "percent": 86
     },
     "grades": [
@@ -138,15 +138,15 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 982,
-        "remaining": 168,
-        "percent": 85.4
+        "applied": 983,
+        "remaining": 167,
+        "percent": 85.5
       }
     ]
   },
   "nextActions": [
     "Recheck runtime, HEAD/index and pending --free.",
-    "Verify exact whole u84a1-k and5 declared records using pinned engine.",
+    "Verify exact whole u84bf-k and6 declared records using pinned engine.",
     "Review all14 domestic directions/cumulative/full form and126 progressive frames in native browser panel."
   ],
   "held": [
@@ -663,71 +663,82 @@
     }
   ],
   "resources": {
-    "tabs": "Own comparison90, progressive91 and mobile92 closed; viewport reset. Prior user/unavailable tabs1/20/36/71/72 untouched.",
-    "ramServers": "Own52560/52561/52562 RAM servers stopped after exact PID owner checks.",
+    "tabs": "Own comparison93, progressive94, initial mobile95 and recovered mobile96 closed; viewport reset. Prior user/unavailable tabs1/20/36/71/72 untouched.",
+    "ramServers": "Own52563/52564/52565 RAM servers stopped after exact PID owner checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/849c.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch283.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch283.ts",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch283.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-849c.md",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/84a1.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch284.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch284.ts",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch284.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-84a1.md",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/NOTICE.md",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch283-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch284-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u84a1",
-      "glyph": "蒡",
-      "hun": "우엉",
-      "eum": "방",
+      "id": "u84bf",
+      "glyph": "蒿",
+      "hun": "다북쑥",
+      "eum": "호",
       "readingGrade": "특급II",
       "radical": "艸",
       "strokes": 14,
-      "sourceRow": 1968,
-      "sourceHunEum": "우엉 방",
+      "readings": [
+        {
+          "hun": "다북쑥",
+          "eum": "호"
+        },
+        {
+          "hun": "다북쑥",
+          "eum": "고"
+        }
+      ],
+      "sourceRow": 5682,
+      "sourceHunEum": "다북쑥 호 | 다북쑥 고",
       "example": {
-        "word": "牛蒡",
-        "reading": "우방",
+        "word": "蔞蒿",
+        "reading": "누호",
         "source": {
           "dictionary": "표준국어대사전",
-          "targetCode": 249352,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=249352&searchKeywordTo=3",
+          "targetCode": 70794,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=70794&searchKeywordTo=3",
           "verifiedAt": "2026-09-17"
         }
       }
     },
-    "root": "u84a1-k",
+    "root": "u84bf-k",
     "records": [
-      "u84a1-k",
-      "u84a1-ue0103",
+      "u84bf-k",
       "ufa5e-03",
       "u8279-k03",
-      "u5196-03"
+      "u9ad8",
+      "u2ff1-cdp-8baa-u5182",
+      "u53e3"
     ],
     "missing": [],
-    "sourceSha256": "de53a54f62135fda398a9d9fb76d2912990c12ddfb91f9ab619c25ee8b512776",
+    "sourceSha256": "dad6950bce6102936cb2e742ab14353927a7f210f3d1e35ef402ec54cadb398b",
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
-    "rawGroups": 16,
-    "drawingPrimitives": 17,
-    "quadraticPrimitives": 7,
+    "rawGroups": 17,
+    "drawingPrimitives": 18,
+    "quadraticPrimitives": 1,
     "cubicPrimitives": 0,
     "runtimeRegistered": false,
     "literalRevisionRecoveryPending": false,
