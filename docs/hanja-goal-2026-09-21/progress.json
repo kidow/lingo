@@ -1,33 +1,33 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "8e5677553a001bf03d6fb20d02c4c7e5bdf792bf",
+  "lastCompletedCommit": "45e5f74bbddbcbb20ab1de954ef5b27025123fa9",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 敭 stroke animation",
-    "parent": "8e5677553a001bf03d6fb20d02c4c7e5bdf792bf"
+    "message": "docs(hanja): hold 暐 pending continuous fold source",
+    "parent": "45e5f74bbddbcbb20ab1de954ef5b27025123fa9"
   },
   "currentBatch": {
-    "batch": 259,
-    "directory": "docs/hanja-goal-glyphwiki-batch259-2026-10-04",
+    "batch": 260,
+    "directory": "docs/hanja-goal-glyphwiki-batch260-2026-10-04",
     "glyphs": [
-      "敭"
+      "暐"
     ],
     "strokes": 13,
-    "status": "runtime-applied-and-verified",
+    "status": "held-source-discontinuous",
     "checks": {
-      "providerRecords": 5,
-      "pinnedEngineFiles": 8,
-      "literalRevisionRecords": 0,
+      "providerRecords": 4,
+      "wholePrefixCandidates": 5,
+      "completeCandidates": 4,
+      "incompleteCandidates": 1,
       "domesticReviewed": 13,
-      "progressiveFramesApproved": 117,
-      "runtimeRegistered": 1,
-      "regressionFiles": 334,
-      "regressionTests": 1520,
-      "regressionPassed": true,
-      "productionBuildPassed": true,
-      "mobileAutoReplayPassed": true,
+      "pinnedEngineFiles": 8,
+      "alternativeWholeEngineChecked": true,
+      "alternativeWholeFormBrowserReviewed": true,
+      "progressiveFramesApproved": 0,
+      "runtimeRegistered": 0,
       "privateMediaSaved": false
-    }
+    },
+    "holdReason": "Domestic12 continuous fold corresponds to original gap27.485. Alternate whole u6690 retains gap21.510000000000005; whole u6690-ue0102 requires missing u97cb-g08@2. No invented connection."
   },
   "workingTreeCoverage": {
     "runtime": {
@@ -145,9 +145,9 @@
     ]
   },
   "nextActions": [
-    "暐 13획을 새 배치로 시작한다. 실제 미적용 상태·HEAD·개인 인덱스·pending --free를 재확인한다.",
-    "Exact whole u6690-k와 선언된 4개 archive record만 사용하고 국내 전 획·누적 자형·전체 진행 프레임을 Codex 브라우저 패널에서 검토한다.",
-    "搢·嫄·菹·絪은 새 연속 whole-source 확보 시만 재검토한다. 통과 후보는 런타임·격리 빌드·모바일 검증 후 한자 작업만 커밋한다."
+    "楗 13획의 whole-prefix 후보부터 조사한다. exact u6957-k closure에는 u5ef4@6이 누락되어 부분 trace는 승인하지 않는다.",
+    "최신 런타임·HEAD·개인 인덱스·pending --free를 확인하고 완전한 다른 전체 원본을 확보한 경우만 브라우저 패널에서 국내 전 획 검토를 진행한다.",
+    "暐·搢·嫄·菹·絪은 새로운 연속 전체 경로나 누락된 정확한 버전 근거 확보 시만 재검토한다."
   ],
   "held": [
     {
@@ -663,59 +663,58 @@
     }
   ],
   "resources": {
-    "tabs": "Own comparison tab32 and mobile tab33 closed; viewport reset. Prior connection-error tabs1/20 remain unavailable through browser data URL policy.",
-    "ramServers": "Own52492 PID92162 and52493 PID92658 stopped after exact owner checks; mobile52494 stopped through context-runner termination and listener absence verified.",
+    "tabs": "Own comparison tab34 closed; viewport reset. Prior unavailable connection-error tabs1/20 unchanged.",
+    "ramServers": "Own52495 PID3544 and52496 PID4142 stopped after exact ownership checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/656d.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch259.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch259.ts",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch259.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-656d.md",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/NOTICE.md",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch259-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/alternative-whole-source.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/alternative-engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/serve-alternative.py",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/hold-review.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/alternative-sources.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "暐",
-    "id": "u6690",
+    "glyph": "楗",
+    "id": "u6957",
     "strokes": 13,
     "grade": "특급II",
     "unapplied": true,
     "held": false,
-    "records": 4,
+    "records": 5,
     "recordNames": [
-      "u6690-k",
-      "u65e5-01",
-      "u65e5",
-      "u97cb-08-var-001"
+      "u6957-k",
+      "u6957",
+      "u6728-01",
+      "j83-377a",
+      "u807f"
     ],
-    "sourceSha256": "2144f1c71998064cf8f2772fd53d11da494e21aef38252365baa880fba74df8b",
-    "exactClosure": true,
-    "missing": [],
+    "sourceSha256": "bd1528a9b856185ecef5ff91140559cacce9950ecf96496b7ef16dd971430886",
+    "exactClosure": false,
+    "missing": [
+      "u5ef4@6"
+    ],
     "literalRevisionRecords": 0,
-    "status": "unapplied; exact whole closure and original engine trace acquired; domestic and progressive review pending",
+    "status": "unapplied; version-qualified dependency u5ef4@6 missing; trace is incomplete and cannot support approval",
+    "partialEngineOnly": true,
     "actions": [
-      "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior findings.",
-      "Use exact whole u6690-k and four declared archive records only.",
-      "Review all domestic directions, cumulative/full form and all progressive frames before runtime approval."
+      "Inventory exact whole-prefix variants before browser comparison.",
+      "Do not substitute u5ef4@6 with unversioned u5ef4 or transplant a radical.",
+      "Use native Codex browser panel for complete licensed candidate and domestic stroke verification."
     ]
   }
 }
