@@ -1,34 +1,33 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "984bce1d3b3de7f0a8f8d2818dc83d74672fcb24",
+  "lastCompletedCommit": "2168416acdae44e87083a82655f417cc9dacbf0a",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): record 蓀 stroke continuity hold",
-    "parent": "984bce1d3b3de7f0a8f8d2818dc83d74672fcb24"
+    "message": "feat(hanja): add reviewed 蓆 stroke animation",
+    "parent": "2168416acdae44e87083a82655f417cc9dacbf0a"
   },
   "currentBatch": {
-    "batch": 286,
-    "directory": "docs/hanja-goal-glyphwiki-batch286-2026-10-05",
+    "batch": 287,
+    "directory": "docs/hanja-goal-glyphwiki-batch287-2026-10-05",
     "glyphs": [
-      "蓀"
+      "蓆"
     ],
     "strokes": 14,
-    "status": "held-source-si-pen-discontinuity",
+    "status": "applied-reviewed-native-browser",
     "checks": {
       "providerRecords": 8,
       "pinnedEngineFiles": 8,
       "domesticReviewed": 14,
-      "progressiveFramesApproved": 0,
-      "runtimeRegistered": 0,
+      "progressiveFramesApproved": 126,
+      "runtimeRegistered": 1,
       "privateMediaSaved": false
-    },
-    "holdReason": "Domestic9/10 系 bent strokes must be continuous. Pinned whole source raw9/10 centerlines are disconnected:109.956,95.273→93.492,89.135; raw11/12 disconnected:118.18799999999999,129.79925000000003→84.67200000000001,133.63549999999998. Static filled shape/order matches, but continuous pen trajectory requires an invented connector. Need licensed whole source with continuous9/10 paths, then native all14 directions/cumulative/full form and126 progressive samples."
+    }
   },
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5141,
-      "remaining": 837,
+      "applied": 5142,
+      "remaining": 836,
       "percent": 86
     },
     "grades": [
@@ -133,16 +132,16 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 984,
-        "remaining": 166,
-        "percent": 85.6
+        "applied": 985,
+        "remaining": 165,
+        "percent": 85.7
       }
     ]
   },
   "nextActions": [
     "Recheck runtime, HEAD/index and pending --free.",
-    "Recover exact declared u5dfe-04@6 in native read-only browser; no latest substitution.",
-    "Resolve all dependencies then fixed engine and all14 native domestic directions/cumulative/full form plus126 progressive frames."
+    "Review exact whole 蓍14 in native browser against domestic all directions/cumulative/full form and126 progressive samples.",
+    "If all original continuous trajectories pass, connect runtime, fixed engine/build/regression/mobile and own-only commit."
   ],
   "held": [
     {
@@ -658,64 +657,78 @@
     }
   ],
   "resources": {
-    "tabs": "Own comparison100 closed; viewport reset. Prior user/unavailable tabs1/20/36/71/72 untouched.",
-    "ramServers": "Own52569 RAM server stopped after exact PID43786 owner check.",
+    "tabs": "Own historical101, comparison102, progressive103 and mobile104 closed; viewport reset. Prior user/unavailable tabs1/20/36/71/72 untouched.",
+    "ramServers": "Own52570/52571/52572 RAM servers stopped after exact PID52288/52589/55308 owner checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/review.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch286-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/84c6.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch287.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch287.ts",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch287.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-84c6.md",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/NOTICE.md",
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch287-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u84c6",
-      "glyph": "蓆",
-      "hun": "클",
-      "eum": "석",
+      "id": "u84cd",
+      "glyph": "蓍",
+      "hun": "시초",
+      "eum": "시",
       "readingGrade": "특급II",
       "radical": "艸",
       "strokes": 14,
-      "sourceRow": 2551,
-      "sourceHunEum": "클 석",
+      "sourceRow": 2919,
+      "sourceHunEum": "시초 시",
       "example": {
-        "word": "藤蓆",
-        "reading": "등석",
+        "word": "短蓍",
+        "reading": "단시",
         "source": {
           "dictionary": "표준국어대사전",
-          "targetCode": 417985,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=417985&searchKeywordTo=3",
+          "targetCode": 74786,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=74786&searchKeywordTo=3",
           "verifiedAt": "2026-09-17"
         }
       }
     },
-    "root": "u84c6-k",
+    "root": "u84cd-k",
     "records": [
-      "u84c6-k",
-      "koseki-357240",
+      "u84cd-k",
+      "koseki-357330",
       "ufa5e-03",
       "u8279-k03",
-      "u5e2d",
-      "u5e7f-05",
-      "u5eff"
+      "u8006",
+      "u8001-03",
+      "u65e5-04",
+      "u65e5-09",
+      "u65e5"
     ],
-    "missing": [
-      "u5dfe-04@6"
-    ],
-    "sourceSha256": "224fc02de1c2f033f0c687b980ecc8301397951627ef7edc6f1aa6fe50c51459",
+    "missing": [],
+    "sourceSha256": "313661d148156afc8671c724fc4b1621dc14a300604be822d3ee393a1fb6020f",
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "rawGroups": 15,
+    "drawingPrimitives": 17,
+    "quadraticPrimitives": 3,
+    "cubicPrimitives": 0,
     "runtimeRegistered": false,
-    "literalRevisionRecoveryPending": true,
+    "literalRevisionRecoveryPending": false,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }
