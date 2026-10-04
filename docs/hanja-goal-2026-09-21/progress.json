@@ -1,25 +1,27 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "d8a35939a403d112b1ba66dcfa06720c1b0f4be0",
+  "lastCompletedCommit": "aed5d5045a6cba8c9cefc81014f681ed7e1cfe31",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 蓚 stroke animation",
-    "parent": "d8a35939a403d112b1ba66dcfa06720c1b0f4be0"
+    "message": "docs(hanja): record 褘 whole-source trajectory blockers",
+    "parent": "aed5d5045a6cba8c9cefc81014f681ed7e1cfe31"
   },
   "currentBatch": {
-    "batch": 289,
-    "directory": "docs/hanja-goal-glyphwiki-batch289-2026-10-05",
+    "batch": 290,
+    "directory": "docs/hanja-goal-glyphwiki-batch290-2026-10-05",
     "glyphs": [
-      "蓚"
+      "褘"
     ],
     "strokes": 14,
-    "status": "applied-reviewed-native-browser",
+    "status": "held-original-direction-and-alternative-pen-gap",
     "checks": {
-      "providerRecords": 7,
+      "wholeSources": 2,
+      "providerRecordsEach": 3,
+      "historicalRecords": 1,
       "pinnedEngineFiles": 8,
       "domesticReviewed": 14,
-      "progressiveFramesApproved": 126,
-      "runtimeRegistered": 1,
+      "progressiveFramesApproved": 0,
+      "runtimeRegistered": 0,
       "privateMediaSaved": false
     }
   },
@@ -140,8 +142,8 @@
   },
   "nextActions": [
     "Recheck runtime, HEAD/index and pending --free.",
-    "Recover exact literal u97cb-g08@2 in native browser before whole 褘14 engine expansion; no latest substitution.",
-    "Review domestic all directions/cumulative/full form and126 samples; connect passing runtime and all gates, own-only commit."
+    "Review exact whole 馝14 in native browser against domestic all directions/cumulative/full form and126 progressive samples.",
+    "If all original continuous trajectories pass, connect runtime, fixed engine/build/regression/mobile and own-only commit."
   ],
   "held": [
     {
@@ -657,58 +659,60 @@
     }
   ],
   "resources": {
-    "tabs": "Own comparison109, progressive110 and mobile111 closed; viewport reset. Prior user/unavailable tabs1/20/36/71/72 untouched.",
-    "ramServers": "Own52576/52577/52578 RAM servers stopped after exact PID64109/64509/67280 owner checks.",
+    "tabs": "Own provider112 and comparison113 closed; viewport unchanged/reset. Prior user/unavailable tabs1/20/36/71/72 untouched.",
+    "ramServers": "Own52579 RAM server stopped after exact PID69918 owner check. No progressive/mobile server started.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/84da.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch289.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch289.ts",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch289.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-84da.md",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/NOTICE.md",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch289-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/sources-k.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/engine-proof-k.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/draw-trace-k.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/rejected-k-review.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/sources-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/engine-proof-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/draw-trace-alternative.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/whole-source-alternatives.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/review.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch290-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u8918",
-      "glyph": "褘",
-      "hun": "휘장",
-      "eum": "위",
+      "id": "u999d",
+      "glyph": "馝",
+      "hun": "향기로울",
+      "eum": "필",
       "readingGrade": "특급II",
-      "radical": "衣",
+      "radical": "香",
       "strokes": 14,
-      "sourceRow": 3683,
-      "sourceHunEum": "휘장 위"
+      "sourceRow": 5408,
+      "sourceHunEum": "향기로울 필"
     },
-    "root": "u8918-k",
+    "root": "u999d-k",
     "records": [
-      "u8918-k",
-      "u8864-01"
+      "u999d-k",
+      "u999d",
+      "u9999-01",
+      "u65e5",
+      "u5fc5-02"
     ],
-    "missing": [
-      "u97cb-g08@2"
-    ],
-    "sourceSha256": "e3f8bcda2ed7c40db00f0fea573041b85ae6a21236fad00f2c81f5e8f7ba1ca0",
+    "missing": [],
+    "sourceSha256": "8334a13b9dd6fc59865398ed75318561df1273d518e3dd42e483fe169143ee30",
     "runtimeRegistered": false,
-    "literalRevisionRecoveryPending": true,
+    "literalRevisionRecoveryPending": false,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }
