@@ -1,28 +1,28 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "92045bda81f5e1ec35cb2133040f6dcc058887ee",
+  "lastCompletedCommit": "9bc53e5f5e9dca495174b595582abb8c5d1c8f1c",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 楗 stroke animation",
-    "parent": "92045bda81f5e1ec35cb2133040f6dcc058887ee"
+    "message": "feat(hanja): add reviewed 煇 stroke animation",
+    "parent": "9bc53e5f5e9dca495174b595582abb8c5d1c8f1c"
   },
   "currentBatch": {
-    "batch": 261,
-    "directory": "docs/hanja-goal-glyphwiki-batch261-2026-10-04",
+    "batch": 262,
+    "directory": "docs/hanja-goal-glyphwiki-batch262-2026-10-04",
     "glyphs": [
-      "楗"
+      "煇"
     ],
     "strokes": 13,
     "status": "runtime-applied-and-verified",
     "checks": {
-      "providerRecords": 6,
+      "providerRecords": 4,
       "pinnedEngineFiles": 8,
-      "literalRevisionRecords": 1,
+      "literalRevisionRecords": 0,
       "domesticReviewed": 13,
       "progressiveFramesApproved": 117,
       "runtimeRegistered": 1,
-      "regressionFiles": 335,
-      "regressionTests": 1523,
+      "regressionFiles": 336,
+      "regressionTests": 1526,
       "regressionPassed": true,
       "productionBuildPassed": true,
       "mobileAutoReplayPassed": true,
@@ -32,9 +32,9 @@
   "workingTreeCoverage": {
     "runtime": {
       "total": 5978,
-      "applied": 5120,
-      "remaining": 858,
-      "percent": 85.6
+      "applied": 5121,
+      "remaining": 857,
+      "percent": 85.7
     },
     "grades": [
       {
@@ -138,16 +138,16 @@
       {
         "grade": "특급II",
         "total": 1150,
-        "applied": 963,
-        "remaining": 187,
-        "percent": 83.7
+        "applied": 964,
+        "remaining": 186,
+        "percent": 83.8
       }
     ]
   },
   "nextActions": [
-    "Recheck actual runtime, HEAD, shared index and pending --free.",
-    "Use visible native Codex browser panel for all13 domestic directions/cumulative/full form and all progressive frames.",
-    "Use exact whole u7147-k and declared pinned dependencies only; do not infer source corrections."
+    "Recheck runtime, HEAD/index and pending --free.",
+    "Use native Codex browser panel for all13 domestic directions/cumulative/full form and all117progressive frames.",
+    "Use exact whole u7150-k and declared pinned records only."
   ],
   "held": [
     {
@@ -663,72 +663,59 @@
     }
   ],
   "resources": {
-    "tabs": "Own historical35/progressive37/mobile38 closed, viewport reset. Unavailable error tabs1/20/36 unchanged.",
-    "ramServers": "Own52496PID8615,52497PID7544,52498PID8616,52499PID9519,52500PID14106 stopped after exact listener-owner checks.",
+    "tabs": "Own comparison39 and mobile40 closed, viewport reset. Unavailable tabs1/20/36 unchanged.",
+    "ramServers": "Own52501/52502/52503 RAM servers stopped after exact PID owner checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/6957.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch261.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch261.ts",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch261.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-6957.md",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/7147.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch262.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch262.ts",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch262.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-7147.md",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/NOTICE.md",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/initial-incomplete-source.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/whole-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/version-record.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/initial-complete-source.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/initial-complete-engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/initial-complete-draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/alternative-whole-source.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/alternative-engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/serve-alternative.py",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/alternative-version-record.json",
-    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/serve-alternative.py",
-    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch260-2026-10-04/README.md",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch261-2026-10-04/README.md",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch262-2026-10-04/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
-    "glyph": "煇",
-    "id": "u7147",
+    "glyph": "煐",
+    "id": "u7150",
     "strokes": 13,
     "grade": "특급II",
     "unapplied": true,
     "held": false,
-    "root": "u7147-k",
+    "root": "u7150-k",
     "records": 4,
     "recordNames": [
-      "u7147-k",
-      "u7147",
+      "u7150-k",
+      "u7150",
       "u706b-01",
-      "u8ecd-02"
+      "u82f1-02"
     ],
-    "sourceSha256": "43674fdc26abf202721669509d103e8a71b4a8ebc11065c6e60c528bafb344f6",
+    "sourceSha256": "c7801786fd13fabdefcf7f4aba611191c8ad21cf1bf03c0df1d41ec3d42547be",
     "exactClosure": true,
     "missing": [],
     "literalRevisionRecords": 0,
     "engineInventory": {
       "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
       "engineFiles": 8,
-      "rawGroups": 15,
-      "drawingPrimitives": 16,
+      "rawGroups": 13,
+      "drawingPrimitives": 15,
       "quadratic": 6,
       "cubic": 0,
       "defaults": {
@@ -738,11 +725,11 @@
         "kAdjustMageStep": 5
       }
     },
-    "status": "unapplied; complete exact whole closure and original engine trace acquired; domestic and progressive native browser review pending",
+    "status": "unapplied; exact whole closure and original engine trace acquired; all domestic/progressive browser review pending",
     "actions": [
-      "Recheck actual runtime, HEAD, shared index and pending --free.",
-      "Use visible native Codex browser panel for all13 domestic directions/cumulative/full form and all progressive frames.",
-      "Use exact whole u7147-k and declared pinned dependencies only; do not infer source corrections."
+      "Recheck runtime, HEAD/index and pending --free.",
+      "Use native Codex browser panel for all13 domestic directions/cumulative/full form and all117progressive frames.",
+      "Use exact whole u7150-k and declared pinned records only."
     ]
   }
 }
