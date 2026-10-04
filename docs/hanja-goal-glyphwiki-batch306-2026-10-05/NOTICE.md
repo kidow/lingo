@@ -1,0 +1,9 @@
+# 碻 stroke geometry
+
+GlyphWiki Project and contributors; LicenseRef-GlyphWiki. Public archive: https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt (7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62). License: https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt; GlyphWiki license@18.
+
+Exact whole source records: u78bb-k, u78bb, u9ad8-08, u53e3, u77f3-01-var-001@1. Four records are pinned to the declared2016 archive; the literal historical u77f3-01-var-001@1 was captured read-only at https://glyphwiki.org/wiki/u77f3-01-var-001@1 in native panel171, revision1 (2011-12-29), SHA25665df90fc6f95722ab9f91578a1edb6383827ad84fe876344836bec4e89b05760. No aliases, latest substitution or component transplant. Unmodified source coordinates retained.
+
+All15 domestic directions/cumulative/full form and135 progressive samples reviewed in native Codex browser panels172/173. Exact whole u78bb-k with4 declared records from pinned2016 archive and literal historical u77f3-01-var-001@1 captured read-only in native panel171, SHA25665df90fc6f95722ab9f91578a1edb6383827ad84fe876344836bec4e89b05760. Original19 raw groups20 drawing primitives,Q2/C0. Four original folds and the original terminal quadratic hook have exact endpoint continuity. Original order, coordinates/polygons/default mincho retained; normalize200to100 and polygon winding only. No inferred connector, width change, reversal, radical transplant, subdivision or latest substitution.
+
+Domestic dictionary SVG SHA256 6180bcc68bd9c82e06b3e5b750e38776179540d763195153ce1c3608417824e9; RAM-only comparison. Dictionary crosscheck, not exam-body official approval. Domestic SVG/HTML/screenshots not redistributed. Rejected whole alternative u78bb-ue0102 preserved separately with native170 form mismatch evidence.

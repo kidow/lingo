@@ -1,27 +1,27 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "6dcb111be4a6b1163827b1cf684cbcacea354853",
+  "lastCompletedCommit": "8a5c5349e307c248170f6b02ae5b81d9f9ec5120",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 璉 stroke animation",
-    "parent": "6dcb111be4a6b1163827b1cf684cbcacea354853"
+    "message": "feat(hanja): add reviewed 碻 stroke animation",
+    "parent": "8a5c5349e307c248170f6b02ae5b81d9f9ec5120"
   },
   "currentBatch": {
-    "batch": 305,
-    "directory": "docs/hanja-goal-glyphwiki-batch305-2026-10-05",
+    "batch": 306,
+    "directory": "docs/hanja-goal-glyphwiki-batch306-2026-10-05",
     "glyphs": [
-      "璉"
+      "碻"
     ],
     "strokes": 15,
     "status": "applied-and-verified",
     "checks": {
-      "providerRecords": 7,
+      "providerRecords": 5,
       "exactWholesReproduced": 1,
       "pinnedEngineFiles": 8,
       "domesticReviewed": 15,
       "progressiveFramesApproved": 135,
       "runtimeRegistered": 1,
-      "tests": 1632,
+      "tests": 1635,
       "privateMediaSaved": false
     }
   },
@@ -29,9 +29,9 @@
     "date": "2026-10-05",
     "runtime": {
       "total": 5978,
-      "applied": 5156,
-      "remaining": 822,
-      "percentage": 86.2
+      "applied": 5157,
+      "remaining": 821,
+      "percentage": 86.3
     },
     "grades": {
       "1급": {
@@ -120,9 +120,9 @@
       },
       "특급II": {
         "total": 1150,
-        "applied": 999,
-        "remaining": 151,
-        "percentage": 86.9
+        "applied": 1000,
+        "remaining": 150,
+        "percentage": 87
       }
     },
     "heldUnchanged": {
@@ -132,8 +132,8 @@
   },
   "nextActions": [
     "Recheck runtime/shared HEAD/index and pending --free.",
-    "Review 碻15 exact whole u78bb-ue0102 all domestic directions/cumulative/full form and135 progressive samples. Korean/archive alternatives need literal u77f3-01-var-001@1; do not substitute latest.",
-    "If complete whole native trajectories pass runtime/fixed engine/build/regression/mobile and own-only commit.",
+    "Review 磎15 exact whole u78ce-k with4 complete declared records: native domestic directions/cumulative/full form and135 progressive samples.",
+    "If complete whole native trajectories pass runtime/fixed engine/build/regression/mobile and own-only local commit.",
     "暳 deferred: resume only when a complete whole matches both7th rising pen and14th overhang; see batch301 findings.json."
   ],
   "held": [
@@ -650,175 +650,128 @@
     }
   ],
   "resources": {
-    "tabs": "Own native166 comparison,167 progressive and168 mobile tabs closed; viewport reset. User tabs untouched. Previous temporary failed error tab143 remains inaccessible under browser URL safety policy and native app restriction, unmarked.",
-    "ramServers": "Own52626/PID57114,52627/PID57689,52628/PID59066 terminated after exact command/uid/loopback checks.",
+    "tabs": "Own native172 comparison,173 progressive and174 mobile tabs closed; viewport reset. Own169/170/171 source/alternative tabs closed earlier. User tabs untouched. Previous failed inaccessible tab143 remains unmarked.",
+    "ramServers": "Own52629/PID62287,52630/PID62550,52631/PID64949 terminated after exact command/uid/loopback checks. Earlier rejected alternative PID61572 terminated separately.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/alternative-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/original-overlap.json",
-    "public/hanja-strokes/glyphwiki/7489.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch305.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch305.ts",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch305.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-7489.md",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/alternative-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/alternative-u78bb-ue0102.json",
+    "public/hanja-strokes/glyphwiki/78bb.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch306.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch306.ts",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch306.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-78bb.md",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/NOTICE.md",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch305-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch306-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u78bb",
-      "glyph": "碻",
-      "hun": "굳을",
-      "eum": "확",
+      "id": "u78ce",
+      "glyph": "磎",
+      "hun": "시내",
+      "eum": "계",
       "readingGrade": "특급II",
       "radical": "石",
       "strokes": 15,
-      "sourceRow": 5745,
-      "sourceHunEum": "굳을 확"
+      "sourceRow": 364,
+      "sourceHunEum": "시내 계"
     },
     "registered": false,
     "held": false,
-    "root": "u78bb-ue0102",
-    "records": [
-      "u78bb-ue0102",
-      "toki-01064060",
-      "u77f3-01",
-      "u9ad9-08"
-    ],
-    "missing": [],
-    "aliases": [],
-    "providerVersions": [],
-    "sourceSha256": "6d61dd39ef0379cb6f7cebd5fedf7882f05806f3179039b34baef58e569d35d2",
-    "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
-    "engineProofPending": false,
-    "domestic": {
-      "glyph": "碻",
-      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7800/78bb.svg",
-      "status": 200,
-      "bytes": 7164,
-      "sha256": "6180bcc68bd9c82e06b3e5b750e38776179540d763195153ce1c3608417824e9",
-      "privateMediaSaved": false
-    },
-    "domesticReviewPending": true,
-    "progressiveReviewPending": true,
-    "publicCapture": {
-      "root": "u78bb-ue0102",
-      "glyph": "碻",
-      "records": {
-        "u78bb-ue0102": {
-          "name": "u78bb-ue0102",
-          "related": "u3013",
-          "data": "99:0:0:0:0:200:200:toki-01064060"
-        },
-        "toki-01064060": {
-          "name": "toki-01064060",
-          "related": "u78bb",
-          "data": "99:0:0:-1:0:169:200:u77f3-01$99:0:0:30:2:228:202:u9ad9-08"
-        },
-        "u77f3-01": {
-          "name": "u77f3-01",
-          "related": "u77f3",
-          "data": "1:0:0:19:38:92:38$2:32:7:57:38:45:88:14:131$1:32:13:41:90:41:155$1:2:2:41:87:76:87$1:22:23:76:87:76:155$1:2:2:41:155:76:155"
-        },
-        "u9ad9-08": {
-          "name": "u9ad9-08",
-          "related": "u9ad9",
-          "data": "1:0:32:100:14:100:39$1:0:0:46:39:154:39$1:32:32:75:39:75:107$1:32:32:123:39:123:107$1:2:2:75:61:123:61$1:2:2:75:84:123:84$1:12:0:55:107:55:185$1:2:2:55:107:145:107$1:22:4:145:107:145:180$1:12:13:79:129:79:157$1:2:2:79:129:121:129$1:22:23:121:129:121:157$1:2:2:79:157:121:157"
-        }
-      },
-      "missing": [],
-      "aliases": [],
-      "providerVersions": [],
-      "retrievedAt": "2026-10-05",
-      "archive": {
-        "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
-        "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
-        "snapshotCommitDate": "2016-05-02T21:53:32Z",
-        "bytes": 63801771,
-        "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
-        "entries": 438756
-      },
-      "provenance": "Exact whole from declared2016 archive. Native domestic order/direction/full form and progressive review pending; no runtime approval."
-    },
     "alternatives": [
       {
-        "root": "u78bb",
-        "records": [
-          "u78bb",
-          "u9ad8-08",
-          "u53e3"
-        ],
-        "missing": [
-          "u77f3-01-var-001@1"
-        ]
+        "root": "u78ce",
+        "records": {
+          "u78ce": {
+            "name": "u78ce",
+            "related": "u78ce",
+            "data": "99:0:0:-3:0:176:200:u77f3-01$99:0:0:12:0:197:200:u595a-02"
+          },
+          "u77f3-01": {
+            "name": "u77f3-01",
+            "related": "u77f3",
+            "data": "1:0:0:19:38:92:38$2:32:7:57:38:45:88:14:131$1:32:13:41:90:41:155$1:2:2:41:87:76:87$1:22:23:76:87:76:155$1:2:2:41:155:76:155"
+          },
+          "u595a-02": {
+            "name": "u595a-02",
+            "related": "u595a",
+            "data": "2:0:7:172:18:136:28:95:34$2:0:7:98:28:90:54:76:76$2:7:8:122:36:132:46:136:60$2:7:8:158:32:174:44:182:62$2:0:7:126:60:116:72:104:88$2:7:8:88:80:104:86:114:100$2:0:7:156:70:136:92:114:114$2:0:7:80:120:132:116:174:110$2:7:8:154:96:172:106:182:122$1:0:0:75:144:188:144$2:0:7:130:124:124:176:68:188$2:7:0:132:144:146:172:178:181"
+          }
+        },
+        "missing": []
       },
       {
-        "root": "u78bb-k",
-        "records": [
-          "u78bb-k",
-          "u78bb",
-          "u9ad8-08",
-          "u53e3"
-        ],
-        "missing": [
-          "u77f3-01-var-001@1"
-        ]
+        "root": "u78ce-k",
+        "records": {
+          "u78ce-k": {
+            "name": "u78ce-k",
+            "related": "u78ce",
+            "data": "99:0:0:0:0:200:200:u78ce"
+          },
+          "u78ce": {
+            "name": "u78ce",
+            "related": "u78ce",
+            "data": "99:0:0:-3:0:176:200:u77f3-01$99:0:0:12:0:197:200:u595a-02"
+          },
+          "u77f3-01": {
+            "name": "u77f3-01",
+            "related": "u77f3",
+            "data": "1:0:0:19:38:92:38$2:32:7:57:38:45:88:14:131$1:32:13:41:90:41:155$1:2:2:41:87:76:87$1:22:23:76:87:76:155$1:2:2:41:155:76:155"
+          },
+          "u595a-02": {
+            "name": "u595a-02",
+            "related": "u595a",
+            "data": "2:0:7:172:18:136:28:95:34$2:0:7:98:28:90:54:76:76$2:7:8:122:36:132:46:136:60$2:7:8:158:32:174:44:182:62$2:0:7:126:60:116:72:104:88$2:7:8:88:80:104:86:114:100$2:0:7:156:70:136:92:114:114$2:0:7:80:120:132:116:174:110$2:7:8:154:96:172:106:182:122$1:0:0:75:144:188:144$2:0:7:130:124:124:176:68:188$2:7:0:132:144:146:172:178:181"
+          }
+        },
+        "missing": []
       },
       {
-        "root": "u78bb-ue0100",
-        "records": [
-          "u78bb-ue0100",
-          "u78bb",
-          "u9ad8-08",
-          "u53e3"
-        ],
-        "missing": [
-          "u77f3-01-var-001@1"
-        ]
-      },
-      {
-        "root": "u78bb-ue0101",
-        "records": [
-          "u78bb-ue0101",
-          "u78bb",
-          "u9ad8-08",
-          "u53e3"
-        ],
-        "missing": [
-          "u77f3-01-var-001@1"
-        ]
-      },
-      {
-        "root": "u78bb-ue0102",
-        "records": [
-          "u78bb-ue0102",
-          "toki-01064060",
-          "u77f3-01",
-          "u9ad9-08"
-        ],
+        "root": "u78ce-ue0100",
+        "records": {
+          "u78ce-ue0100": {
+            "name": "u78ce-ue0100",
+            "related": "u3013",
+            "data": "99:0:0:0:0:200:200:u78ce"
+          },
+          "u78ce": {
+            "name": "u78ce",
+            "related": "u78ce",
+            "data": "99:0:0:-3:0:176:200:u77f3-01$99:0:0:12:0:197:200:u595a-02"
+          },
+          "u77f3-01": {
+            "name": "u77f3-01",
+            "related": "u77f3",
+            "data": "1:0:0:19:38:92:38$2:32:7:57:38:45:88:14:131$1:32:13:41:90:41:155$1:2:2:41:87:76:87$1:22:23:76:87:76:155$1:2:2:41:155:76:155"
+          },
+          "u595a-02": {
+            "name": "u595a-02",
+            "related": "u595a",
+            "data": "2:0:7:172:18:136:28:95:34$2:0:7:98:28:90:54:76:76$2:7:8:122:36:132:46:136:60$2:7:8:158:32:174:44:182:62$2:0:7:126:60:116:72:104:88$2:7:8:88:80:104:86:114:100$2:0:7:156:70:136:92:114:114$2:0:7:80:120:132:116:174:110$2:7:8:154:96:172:106:182:122$1:0:0:75:144:188:144$2:0:7:130:124:124:176:68:188$2:7:0:132:144:146:172:178:181"
+          }
+        },
         "missing": []
       }
     ],
-    "rawGroups": 19,
-    "drawingPrimitives": 20,
-    "quadraticPrimitives": 2,
-    "cubicPrimitives": 0
+    "archiveSha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+    "domesticReviewPending": true,
+    "progressiveReviewPending": true
   }
 }
