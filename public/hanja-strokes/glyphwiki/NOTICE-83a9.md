@@ -1,0 +1,9 @@
+# 莩 eleven-stroke geometry
+
+GlyphWiki Project and contributors. [License](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt) permits copying, reuse, modification and commercial use.
+
+2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u83a9-k/u83a9-ue0102/ufa5e-03/u8279-k03/u5b5a; individual glyph revisions unavailable; source SHA256 643c2dff9bf99ffdacde3b5bf9d010def9531da300697c2ed66ee5606f40172b.
+
+All11 domestic direction/cumulative/full states and99 progressive frames reviewed in Codex in-app browser. Exact whole u83a9-k and only declared u83a9-ue0102/ufa5e-03/u8279-k03/u5b5a. Original13 raw groups include one type0 non-drawing separator at8; it is retained in source/proof and explicitly verified empty, not counted as a stroke. Preserve all12 nonempty source groups13 primitives,Q6/C0, original coordinates/polygons/defaults. Reorder grass raw3/raw2 for domestic3/4; domestic9 original connected raw9 line/raw10 Q at133,108.75; domestic10 original raw12 line/Q hook at101,172.25; domestic11 raw11 horizontal. Normalize200to100/winding only; no invented geometry, bridges, splitting, trimming, reversal, width changes or radical transplant. Licensed geometry is separate from domestic dictionary evidence and exam-body approval. Private graphics RAM-only.
+
+Domestic dictionary http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/83a9.svg SHA256 24db9431325732ebfcb91926f83dc63ca87328c3a201feaab603e0bbfe1aaacc: all11 directions, cumulative/full form and99 progressive frames reviewed in Codex in-app panel. Dictionary crosscheck, not exam-body official approval. Private media RAM-only and not redistributed. Editable source: /hanja-strokes/glyphwiki/83a9.json.
