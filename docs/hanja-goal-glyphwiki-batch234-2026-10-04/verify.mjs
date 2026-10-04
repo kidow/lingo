@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+const read=n=>JSON.parse(readFileSync(new URL(n,import.meta.url)))
+const h=x=>createHash('sha256').update(x).digest('hex')
+const source=read('sources.json'),engine=read('engine-proof.json'),trace=read('draw-trace.json'),findings=read('findings.json'),alternatives=read('alternatives.json'),metadata=read('metadata.json')
+assert.equal(h(readFileSync(new URL('sources.json',import.meta.url))),'d6465b5ec5f421bea7718932c8fa02da77730e2801505fbeca6fc9f0b34f19b3')
+assert.equal(source.root,'u6678-k')
+assert.equal(Object.keys(source.records).length,8)
+for(const s of [source,...alternatives]){assert.deepEqual(s.missing,[]);for(const r of Object.values(s.records))for(const row of r.data.split('$'))if(row.startsWith('99:'))assert(s.records[row.split(':')[7]])}
+assert.deepEqual(source.providerVersions.map(v=>v.name),['u65e5-03@3','u65e5-09@2','u653f@7','u6535-02@9'])
+for(const v of source.providerVersions){assert.equal(h(v.data),v.sha256);assert.equal(h(v.textarea),v.textareaSha256);assert.equal(v.data,source.records[v.name].data);assert.equal(v.data,v.textarea.replaceAll('\n','$'));assert.equal(v.saved,false)}
+assert.equal(engine.engineRevision,'49232bac0348fe815f4200d4116ab7917e0db47f')
+assert.equal(Object.keys(engine.engineHashes).length,8)
+assert.equal(engine.groups.length,14);assert.equal(trace.length,14);assert.equal(trace.flat().length,14)
+assert.equal(trace.flat().filter(c=>c.kind==='cdDrawCurve').length,4)
+assert.equal(trace.flat().filter(c=>c.kind==='cdDrawBezier').length,0)
+for(let i=0;i<14;i++)assert.deepEqual(trace[i].flatMap(c=>c.polygons),engine.groups[i].polygons)
+assert.deepEqual(findings.domesticReview.groups,[[0],[1,2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13]])
+assert.deepEqual(findings.domesticReview.groups.flat(),Array.from({length:14},(_,i)=>i))
+assert.deepEqual(trace[1][0].args.slice(2,4),trace[2][0].args.slice(0,2))
+assert.equal(findings.domesticReview.groups.length,13)
+assert.equal(findings.catalogStrokes,12);assert.equal(metadata.catalogStrokes,12)
+assert.equal(findings.dictionaryStrokes,13);assert.equal(metadata.dictionary.strokeCount,13)
+assert.equal(findings.licensedSourceStrokes,13)
+assert.equal(alternatives.length,3)
+for(const s of alternatives)for(const[n,r]of Object.entries(source.records))if(n!==source.root)assert.equal(s.records[n].data,r.data)
+for(const s of alternatives)if(s.root!=='u6678')assert.equal(s.records[s.root].data,'99:0:0:0:0:200:200:u6678')
+assert.equal(metadata.dictionary.sha256,'f3879cc23be2e2c43547ac3243e79bab42bcf961d8479bb91460ce15b67110f0')
+assert.equal(findings.runtimeAdded,0);assert.equal(findings.domesticReview.fullAnimationApproved,false)
+console.log(JSON.stringify({passed:true,runtimeAdded:0,exactSourceClosure:true,literalRevisions:4,alternativeWholeRoots:3,catalogStrokes:12,dictionaryStrokes:13,licensedSourceStrokes:13,privateMediaSaved:false}))
