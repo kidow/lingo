@@ -1,0 +1,9 @@
+# 琠 twelve-stroke geometry
+
+GlyphWiki Project and contributors. [License](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt) permits copying, reuse, modification and commercial use.
+
+2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u7420-k/u7420/u738b-01/u516b-04/u76bf-itaiji-001/u20003-var-001/u5178@3/cdp-89e0@2; unversioned individual glyph revisions unavailable; literal u5178@3 2012-06-14 12:56 and cdp-89e0@2 2012-06-14 12:54 by kamiyo read in visible browser; source SHA256 31181917f14d365cb98d4da2d5685ca0e5b8d75248b1078e656c967b7a870009.
+
+All12 domestic directions/cumulative/full form and108 progressive frames reviewed in Codex in-app browser. Exact whole u7420-k/u7420 and eight declared source records, including exact u5178@3/cdp-89e0@2 revisions read in visible Codex browser. Original14 raw groups13 drawing primitives,Q3/C0 preserved. Raw4 is an empty type0 command with no polygons. Domestic order swaps raw1/2 and places raw11 before raw9/10; order only, no reversal or geometry changes. Domestic6 fold raw6/7 shares167.1633,52.08500000000001. Normalize200to100/winding only; no inferred geometry, width changes or radical transplant. Licensed geometry is separate from domestic dictionary evidence and exam-body approval. Private graphics RAM-only.
+
+Domestic dictionary http://img.e-hanja.kr/hanjaSvg/aniSVG/7400/7420.svg SHA256 19ff479ed7e1aaeb10e291077ddf4b339307b7e955ef2ed1172fd6d42db1bbb9: all12 directions/cumulative/full form and108 progressive frames reviewed in Codex in-app panel. Dictionary crosscheck, not exam-body approval. Private media RAM-only, not redistributed. Editable source: /hanja-strokes/glyphwiki/7420.json
