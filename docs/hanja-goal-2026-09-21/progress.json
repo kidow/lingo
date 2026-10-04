@@ -1,28 +1,29 @@
 {
   "status": "active",
   "date": "2026-10-04",
-  "lastCompletedCommit": "a40cbc4872fc60a8e287ee60bf3b850e088b1cce",
+  "lastCompletedCommit": "f17dee15b7dbe5a4e584977da6d1508d4eeea7b9",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 椧 twelve-stroke animation",
-    "parentAtStart": "a40cbc4872fc60a8e287ee60bf3b850e088b1cce"
+    "message": "docs(hanja): record 渶 whole-glyph stroke continuity review",
+    "parentAtStart": "f17dee15b7dbe5a4e584977da6d1508d4eeea7b9"
   },
   "currentBatch": {
     "glyphs": [
-      "椧"
+      "渶"
     ],
     "strokes": 12,
-    "status": "applied after full browser review, tests, build and mobile verification",
+    "status": "withheld after whole-source and domestic browser review; final water source trajectory discontinuous",
     "checks": {
-      "providerRecords": 6,
+      "baseProviderRecords": 4,
+      "alternateProviderRecords": 5,
       "engineFiles": 8,
-      "literalRevisionRecords": 0,
+      "literalRevisionRecords": 2,
       "domesticReviewed": 12,
-      "progressiveFramesApproved": 108,
-      "runtimeAdded": 1,
-      "regressionFiles": 316,
-      "regressionTests": 1466,
-      "buildPassed": true,
-      "mobilePassed": true,
+      "wholeFormsReviewed": 2,
+      "progressiveFramesApproved": 0,
+      "runtimeAdded": 0,
+      "meaningfulVerificationPassed": true,
+      "previousBuildInputsUnchanged": 17,
+      "productionCodeChanged": false,
       "browser": "Codex in-app panel",
       "privateMediaSaved": false
     }
@@ -145,9 +146,9 @@
   "nextActions": [
     "Use Codex in-app browser panel.",
     "Recheck runtime, HEAD, pending --free and prior findings.",
-    "Use exact whole u6e36-k and four declared archive records only.",
+    "Use exact whole u711e-k and six declared archive records only.",
     "Review all12 domestic directions, cumulative/full form and every progressive frame before runtime approval.",
-    "Preserve source geometry/defaults; distinguish dictionary crosscheck, licensed geometry and official exam approval."
+    "Do not repeat u6c35-01 water trajectory review without a new exact whole source or reproducible reveal evidence."
   ],
   "held": [
     {
@@ -663,42 +664,48 @@
     }
   ],
   "resources": {
-    "tabs": "batch236 own in-app tab86 closed; viewport reset.",
-    "ramServers": "Own canonical52425 PID44408, progressive52426 PID44296 and mobile52427 PID46863 stopped after exact PID/command checks. Replaced provisional canonical PID42924 and progressive PID42970 were already stopped. Archive lookups ran in foreground.",
+    "tabs": "batch237 own in-app tabs87 and88 closed; viewport reset.",
+    "ramServers": "Own canonical52429 PID49237 and alternate52430 PID50006 stopped after exact PID/command checks. Initial canonical PID48890 stopped before corrected view. Archive lookups foreground.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/sources.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/serve.py",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/next.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/validation.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch236-2026-10-04/README.md"
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/sources.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/serve.py",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/alternate-sources.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/alternate-engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/alternate-draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/serve-alternate.py",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/findings.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/alternatives.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/next.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/validation.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/water-preflight.json",
+    "docs/hanja-goal-glyphwiki-batch237-2026-10-04/README.md"
   ],
   "nextCandidateInventory": {
-    "glyph": "渶",
-    "id": "u6e36",
+    "glyph": "焞",
+    "id": "u711e",
     "strokes": 12,
     "grade": "특급II",
     "unapplied": true,
     "held": false,
-    "records": 4,
+    "records": 6,
     "recordNames": [
-      "u6e36-k",
-      "u6e36",
-      "u6c35-01",
-      "u82f1-02"
+      "u711e-k",
+      "u711e",
+      "u706b-01",
+      "u4eab-02",
+      "u53e3",
+      "u5b50"
     ],
-    "sourceSha256": "2c09cb8980633080c07369f3390d4f6ef74411876ca2a65e41d556b0f2e7c06f",
+    "sourceSha256": "3997afa9640def461cb6de639741ca360ad25e1de477a76866e52caaf389be7b",
     "exactClosure": true,
     "missing": [],
     "literalRevisionRecords": 0,
@@ -706,9 +713,9 @@
     "actions": [
       "Use Codex in-app browser panel.",
       "Recheck runtime, HEAD, pending --free and prior findings.",
-      "Use exact whole u6e36-k and four declared archive records only.",
+      "Use exact whole u711e-k and six declared archive records only.",
       "Review all12 domestic directions, cumulative/full form and every progressive frame before runtime approval.",
-      "Preserve source geometry/defaults; distinguish dictionary crosscheck, licensed geometry and official exam approval."
+      "Do not repeat u6c35-01 water trajectory review without a new exact whole source or reproducible reveal evidence."
     ]
   }
 }
