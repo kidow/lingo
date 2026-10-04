@@ -1,0 +1,9 @@
+# 憘 stroke geometry
+
+Public geometry: exact whole u6198-k and declared records u6198-k, u6198, u5fc4-01, u5fc4, u559c, u58f4-03, u53e3 from the pinned GlyphWiki archive (https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt). Archive SHA256: 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. Source capture SHA256: 3e234a3c547e5b41f112fbfe1581c9e661d46f9ac6bcdb89f47e2e940abbdb0c.
+
+GlyphWiki Project and contributors; LicenseRef-GlyphWiki. License: https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt (GlyphWiki license@18). Editable source: /hanja-strokes/glyphwiki/6198.json. Engine revision: 49232bac0348fe815f4200d4116ab7917e0db47f, default mincho.
+
+All15 domestic directions/cumulative/full form and135 progressive samples reviewed in native Codex browser panels139/140. Exact whole u6198-k and7 declared records; missing[],aliases[],providerVersions[]. Original17 raw groups17 drawing primitives,Q4/C0. Domestic 忄 order raw1,2,0 and 丷 order raw11,10 verified and reordered without coordinate changes. Original continuous joins: first 口 raw7→8 at155.90460000000002,73.81; second 口 raw14→15 at160.72150000000002,143.65. Original coordinates/polygons/default mincho retained; normalize200to100 and polygon winding only. No inferred connector, reversal, width change, radical transplant, subdivision or latest substitution.
+
+Domestic order/direction crosscheck: http://img.e-hanja.kr/hanjaSvg/aniSVG/6100/6198.svg; SHA256 0648857259a76fce5e0dc50928eeae11db0cfc2e55f27ddd02ec648625cbdfde. This is a domestic dictionary crosscheck, not examination-body official approval. Domestic graphics are never stored, exported or distributed. Browser comparison servers fetch them into RAM only.
