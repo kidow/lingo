@@ -1,0 +1,9 @@
+# 璡 stroke animation attribution
+
+GlyphWiki Project and contributors. LicenseRef-GlyphWiki ([license@18](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt)).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u74a1-k/u74a1/u738b-01/aj1-13855/u8fb6/u96b9-07; no historical dependencies, aliases or latest substitution; GlyphWiki license@18; source SHA256 fddbe7d0474b3d89fcd247f5981978861e86965f728cbf0e68c6312de325e0c4
+
+Native Codex browser panel230: all16 domestic directions, order, cumulative and complete forms crosschecked. Panel231: all144 progressive samples inspected at1280x1100. Exact whole u74a1-k with6 declared records from pinned2016 archive; missing[],aliases[],providerVersions[]. Original18 raw groups18 drawing primitives,Q6/C1 retained as16 domestic pens. Domestic 王2/3 reorder raw2/1; 隹9/10 horizontals precede11vertical. Contiguous L/L pen15 uses one whole original centerline mask. Pen16 retains original separate Q/C masks and filled overlap at[90,154]; original centerline gap retained, no connector. Native15 enlarged99% terminal and50% bend passed;16 enlarged27/33/35% overlap and99/100% terminal passed; actual16 replay26→100% passed. Coordinates, polygons, widths and default mincho preserved; normalize200to100 and polygon winding only. No inferred connector, radical transplant, source coordinate adjustment or latest substitution.
+
+Domestic dictionary URL: http://img.e-hanja.kr/hanjaSvg/aniSVG/7400/74a1.svg; SHA256 0c2a2cc2a2a7da53a525d1ce91c1f3450517e7be25f5955ca571ca40828bb3cb. Dictionary media are RAM-only and are not included. This is a domestic dictionary crosscheck, not exam-body official approval.
