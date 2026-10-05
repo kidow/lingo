@@ -1,0 +1,9 @@
+# 璵 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Exact whole `u74b5-k`;3 declared records: `u74b5-k`, `u738b-01`, `u8207@4`. Exactly referenced `u8207@4` captured without latest substitution. Archive revision `a7dd7f3d911936770fa742e8c37d16bee7e2173c`, SHA256 `7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62`; source SHA256 `50f9ff19cf1c518ca8144ec62f446648e6ab4af07cc9ad91d9fc61cd863448d5`. Fixed engine `49232bac0348fe815f4200d4116ab7917e0db47f`,8 hashes in engine-proof.json. Engine JS not redistributed.
+
+Native Codex browser panels299/301/302: all18 domestic directions/order/cumulative/full form and162 progressive samples crosschecked at1280x1100. Exact whole u74b5-k and4 declared records, including exact literal u8207@4, retained without latest substitution. Original21 raw groups21 drawing primitives(Q7/C0),18 pens18 masks retained. Domestic7 L/L,9 L/slantedL and16 L/Q follow exact continuous original centerlines. Native2/6/8 confirm downward slanted original lines; dominant-axis directional rectangles preserve original polygons and coordinates. Short horizontal10/11 native rendered median paths confirm rightward direction. Expanded7/9/16/17/18 at99/100, actual7 25to100,9 24to100,16 25to100 passed. No new trajectory, connector, coordinates, contours, pen, split or radical transplant. Normalize200to100/polygon winding only. Dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source `/hanja-strokes/glyphwiki/74b5.json`.

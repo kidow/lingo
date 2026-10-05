@@ -1,0 +1,7 @@
+# Batch350 · 璵18
+
+Native Codex browser panels304/305/306: all18 domestic directions/order/cumulative/full form and162 progressive samples crosschecked at1280x1100. Exact whole u74b5-k and3 declared records, including exact literal u8207@4, retained without latest substitution. Original20 raw groups20 drawing primitives(Q4/C0),18 pens18 masks retained. Domestic11 L/L and13 L/slantedL follow exact continuous original centerlines. Native6/10/12 confirm downward slanted original lines; dominant-axis directional rectangles preserve original polygons and coordinates. Short horizontal14/15 native rendered median paths confirm rightward direction. Expanded11/13/17/18 at99/100, actual11 24to100 and13 23to100 passed. No new trajectory, connector, coordinates, contours, pen, split or radical transplant. Normalize200to100/polygon winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed8-file engine reproduced and3 own tests passed. Isolated production build passed from `345cfd4978377255ce648ef1db61bedafd9171c6`;18 frozen own inputs and3 exported runtime assets matched. All401 lib test files /1722 tests passed. Mobile307 intro and writing auto/replay1→18, drawing0→1→0, fixed canvas/sheet and scrollTop0 verified. Private graphics remain RAM-only.
+
+Coverage:5,186/5,978 (86.8%),792 remaining. 特級II1,029/1,150 (89.5%),121 remaining. Next:璹18, exact whole `u74b9-k`,7 declared records, no historical versions/aliases/missing; domestic/native/progressive review pending. Held112 unchanged; no push/deploy. Other session's2 files untouched.
