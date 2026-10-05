@@ -1,0 +1,11 @@
+# Batch343 · 薏17
+
+Applied after native panels277/278/279 compared all17 domestic order/directions, full/cumulative form and153 progressive samples. Pen11 L/L and15 L/Q/L retain continuous original trajectories. Initial15 centerline mask missed the upward hook at99%, popped at100%; final mask uses the exact independently emitted original terminal polygon with existing up rectangle, preserving one domestic pen. No new centerline, coordinate, contour, connector or radical substitution.
+
+Native Codex browser panels277/278: all17 domestic directions/order/cumulative/full form and153 progressive samples crosschecked at1280x1100. Exact whole u858f-k and7 declared pinned archive records; no history/latest substitution or radical transplant. Original18 raw groups20 drawing primitives(Q6/C0),17 pens18 masks retained. Continuous originals form pen11 L/L and pen15 L/Q/L. Initial pen15 whole-centerline mask lost the original upward hook at99% and popped at100%. Original last cdDrawLine already emits that terminal as a separate polygon: existing up rectangular clip reveals exactly that polygon after unchanged body, keeping one domestic pen. No new centerline, connector, coordinates or contours. Final15 nine samples, enlarged88/95/99/100 and actual25→100 replay passed; pen11 enlarged99/100 passed. Normalize200to100/polygon winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed engine8 files and3 mutation tests passed. Isolated snapshot `03934cd10e0ddce0766682897f9cfeea55eacb1c` production build passed. All395 lib files/1704 tests passed. Mobile panel280: intro auto14→17, replay2→17; writing entry auto2→17, replay2→17. Actual draw/undo0→1→0; canvas x46/y288.8046875/338square, sheet y139.8046875. Drawing retained scrollTop0 and unchanged canvas/sheet bounds; touchActionnone,no-dragtrue,imgs0/svg1,console errors[].
+
+Applied5,180/5,978;798 remain. 特級II1,023/1,150(89.0%),127 remain; held112 unchanged. Next 薨17: exact whole u85a8-k with7 declared records captured; native/source geometry review pending.
+
+Own-only local commit; no push/deploy. Own277 comparison,278 progressive,279 domestic source,280 mobile closed; viewport reset. User tabs untouched. Own52732/PID49047,52733/PID49827,52734/PID51633 terminated by exact script/uid/loopback checks. Initial progressive PID49152 stopped before updated original upward clip fixture.
