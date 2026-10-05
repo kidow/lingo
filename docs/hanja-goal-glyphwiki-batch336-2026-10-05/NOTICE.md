@@ -1,0 +1,7 @@
+# 錤 reviewed geometry
+
+GlyphWiki Project and contributors; LicenseRef-GlyphWiki. Source archive https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt; revision a7dd7f3d911936770fa742e8c37d16bee7e2173c; SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. License https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt, GlyphWiki license@18. Exact whole declared records: u9324-k, u9324, u91d2-01, u5176-02.
+
+Native Codex browser panel255: all16 domestic directions, order, cumulative and complete forms crosschecked. Panel256: all144 progressive samples inspected at1280x1100. Exact whole u9324-k with4 declared records from pinned2016 archive; missing[],aliases[],providerVersions[]. Original16 raw groups16 drawing primitives,Q7/C0 retained as16 domestic pens in identity order. Every pen uses its own original primitive mask. Pen16 enlarged99/100% terminal and actual24→100% replay passed. Coordinates, polygons, widths and default mincho preserved; normalize200to100 and polygon winding only. No inferred connector, radical transplant, source coordinate adjustment or latest substitution.
+
+Domestic crosscheck http://img.e-hanja.kr/hanjaSvg/aniSVG/9300/9324.svg; SHA256 a19ce8cb55e3c263320d60c80db8170b15be4ce9abdf94383bf238eb3207c08c. Dictionary crosscheck, not exam-body official approval. Source graphics, HTML and screenshots remained RAM-only and are not redistributed.
