@@ -1,0 +1,7 @@
+# Batch353 · 藁18
+
+Native Codex browser panels313/314/315: all18 domestic directions/order/cumulative/full form and162 progressive samples crosschecked at1280x1100. Exact whole u85c1-k and9 declared records retained; no historical versions or aliases. Original21 raw groups22 drawing primitives(Q3/C0),18 pens19 masks retained. Domestic8 L/L,11 L/L/Q and13 L/L follow exact continuous original centerlines. Pen11 left terminal is the independently emitted original raw12 call1 polygon with unchanged coordinates and weight7 normalized; original continuous main centerline retained. Expanded8/13 at99/100 and11 at88/95/99/100 passed. Actual8 24to100,11 25to100 and13 31to100 passed. No new trajectory, connector, coordinates, contours, pen, split or radical transplant. Normalize200to100/polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Fixed8-file engine reproduced;3 own tests passed. Isolated production build passed from `abe32cc4`;19 frozen own inputs and3 exported runtime assets matched. All403 lib test files /1728 tests passed. Mobile316 introduction auto1→18/replay2→18, writing auto2→18/replay1→18, drawing0→1→0, fixed canvas/sheet and scrollTop0 verified. Private graphics remain RAM-only.
+
+Coverage:5,188/5,978 (86.8%),790 remaining. 特級II1,031/1,150 (89.7%),119 remaining. Next:藎18, exact whole `u85ce-k`,10 declared records, no historical versions/aliases/missing; domestic/native/progressive review pending. Held112 unchanged; no push/deploy. Other session's2 files untouched.

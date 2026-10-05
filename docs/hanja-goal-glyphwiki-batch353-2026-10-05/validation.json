@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-05",
+  "sourceAndFixedEngine": {
+    "passed": true,
+    "files": 8,
+    "providerRecords": 9,
+    "historicalVersions": 0,
+    "sourceSha256": "99db11d5120d8d006c8adb86d9fb75c476138fb4942a60133336341ff08ac89a",
+    "rawGroups": 21,
+    "drawingPrimitives": 22,
+    "Q": 3,
+    "C": 0
+  },
+  "native": {
+    "staticPanel": 313,
+    "progressivePanel": 314,
+    "domesticPanel": 315,
+    "domesticAll18Reviewed": true,
+    "progressiveFramesApproved": 162,
+    "expandedCompounds": [
+      8,
+      11,
+      13
+    ],
+    "expandedProgress": {
+      "8": [
+        0.99,
+        1
+      ],
+      "11": [
+        0.88,
+        0.95,
+        0.99,
+        1
+      ],
+      "13": [
+        0.99,
+        1
+      ]
+    },
+    "actualCompoundReplays": [
+      {
+        "pen": 8,
+        "progress": [
+          0.24,
+          1
+        ]
+      },
+      {
+        "pen": 11,
+        "progress": [
+          0.25,
+          1
+        ]
+      },
+      {
+        "pen": 13,
+        "progress": [
+          0.31,
+          1
+        ]
+      }
+    ],
+    "originalTrajectoriesPreserved": true,
+    "originalTerminalPolygon": [
+      {
+        "x": 156.7,
+        "y": 135.4,
+        "off": 0
+      },
+      {
+        "x": 156.7,
+        "y": 129.4,
+        "off": 0
+      },
+      {
+        "x": 142.7,
+        "y": 129.4,
+        "off": 0
+      },
+      {
+        "x": 142.7,
+        "y": 132.4,
+        "off": 0
+      }
+    ]
+  },
+  "ownTests": {
+    "files": 1,
+    "tests": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "build": {
+    "exit": 0,
+    "elapsedMs": 47375,
+    "validatedInputs": 19,
+    "exportedAssets": 3,
+    "log": "✓ Compiled successfully in 30.6s\n  Running TypeScript ...\n  Finished TypeScript in 6.8s ...\n  Generating static pages using 8 workers (0/7) ...\n  Generating static pages using 8 workers (1/7) \r\n  Generating static pages using 8 workers (3/7) \r\n  Generating static pages using 8 workers (5/7) \r\n✓ Generating static pages using 8 workers (7/7) in 1337ms",
+    "stderr": ""
+  },
+  "isolatedSnapshot": "abe32cc4",
+  "regression": {
+    "exit": 0,
+    "elapsedMs": 98125,
+    "files": 403,
+    "summary": " 바로 답한 카드 (0.098875ms)\n✔ 연속 정답은 로그 꼬리에서 세어진다 (0.141041ms)\n✔ 칸은 마지막 줄의 것을 쓴다 (0.05875ms)\n✔ 두 기기가 갈라져도 합치면 하나로 모인다 (6.608542ms)\n✔ 받는 사이 여기서 건드린 카드는 덮지 않는다 (0.945166ms)\n✔ 받는 사이 아무것도 안 건드렸으면 다 얹고 커서를 옮겨도 된다 (0.172667ms)\n✔ 카드 이름으로 칸을 가른다 (1.47475ms)\n✔ 단어·표현·상식은 카드 하나가 하나다 (2.180167ms)\n✔ 단어는 사다리 끝까지 가야 외움이다 — 21일을 넘겨도 문맥 칸이면 아니다 (0.161542ms)\n✔ 가나와 한능검은 글자를 센다 — 두 능력을 다 떼야 외움이다 (0.261541ms)\n✔ 빈 진도는 아무 칸도 안 만든다 (0.068833ms)\n✔ 공부한 날은 최근 7일 안에서만 센다 (0.264792ms)\n✔ 하루 빠져도 무너지지 않는다 — 연속일이 아니다 (0.116916ms)\n✔ 막대는 오늘을 끝으로 7칸이고 빈 날은 0이다 (0.1335ms)\n✔ 정답률은 최근 7일의 퀴즈만 센다 (0.12275ms)\n✔ 날짜 더하기는 달과 해를 넘는다 (0.102917ms)\n✔ 멀쩡한 문항은 아무것도 안 걸린다 (1.304125ms)\n✔ 정답만 유독 길면 길이로 걸린다 (0.113667ms)\n✔ 짧은 보기끼리는 한두 글자 차이로 안 걸린다 (0.05725ms)\n✔ 소거되는 오답이 둘이면 걸린다 (0.059542ms)\n✔ 소거되는 오답이 하나면 안 걸린다 (0.511583ms)\n✔ 소거 문구가 정답 쪽이면 세지 않는다 (0.078208ms)\n✔ 정답에만 괄호 주석이 붙으면 걸린다 (0.062584ms)\n✔ 넷 다 괄호가 있으면 안 걸린다 (0.041875ms)\n✔ 같은 물음이 두 번이면 뒤엣것이 걸린다 (0.0845ms)\n✔ 띄어쓰기·물음표만 다른 물음도 같은 것으로 본다 (0.130542ms)\n✔ 언어가 다르면 같은 물음이어도 중복이 아니다 (0.055167ms)\nℹ tests 1728\nℹ suites 0\nℹ pass 1728\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 98049.442\n",
+    "stderr": ""
+  },
+  "mobile": {
+    "passed": true,
+    "browserTab": "316",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "intro": {
+      "autoObserved": "1/18 ->18/18",
+      "replayObserved": "2/18 ->18/18"
+    },
+    "writing": {
+      "autoObserved": "2/18 ->18/18",
+      "replayObserved": "1/18 ->2/18 ->18/18"
+    },
+    "drawing": {
+      "counts": [
+        0,
+        1,
+        0
+      ],
+      "canvas": {
+        "x": 46,
+        "y": 288.8046875,
+        "width": 338,
+        "height": 338
+      },
+      "sheet": {
+        "x": 0,
+        "y": 139.8046875,
+        "width": 430,
+        "height": 792.1953125
+      },
+      "scrollTopBefore": 0,
+      "scrollTopAfter": 0,
+      "boundsUnchanged": true,
+      "touchAction": "none",
+      "noDrag": true,
+      "parentImages": 0,
+      "parentSvg": 1
+    },
+    "errors": [],
+    "privateMediaSaved": false
+  },
+  "resources": {
+    "tabs": "Own313 static,314 progressive,315 domestic,316 mobile closed; viewport reset. User tabs untouched.",
+    "ramServers": "Own52758/PID15430,52759/PID15841,52760/PID17845 terminated by exact script/uid/loopback checks. Initial raw static PID15038 terminated before remapping.",
+    "privateMediaSaved": false
+  },
+  "privateMediaSaved": false
+}
