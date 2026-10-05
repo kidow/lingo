@@ -1,36 +1,69 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "5d6ea634de0b02992aff1effe4b1f08aa464b493",
+  "lastCompletedCommit": "441cfb52d2fe5d4c6d3fcee32b73a608d9501cec",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 藎 animation from pinned whole source",
-    "parent": "5d6ea634de0b02992aff1effe4b1f08aa464b493"
+    "message": "docs(hanja): defer 譁 replay with whole source pen mismatch evidence",
+    "parent": "441cfb52d2fe5d4c6d3fcee32b73a608d9501cec"
   },
   "currentBatch": {
-    "batch": 354,
-    "directory": "docs/hanja-goal-glyphwiki-batch354-2026-10-05",
+    "batch": 355,
+    "directory": "docs/hanja-goal-glyphwiki-batch355-2026-10-05",
     "glyphs": [
-      "藎"
+      "譁"
     ],
     "strokes": 18,
-    "status": "runtime-connected-original-contours-native-and-production-verified",
+    "status": "source-only-native-reviewed-original-pen-construction-deferred",
     "checks": {
-      "providerRecords": 10,
-      "historicalVersions": 0,
+      "providerRecords": 6,
+      "wholeVariants": 7,
+      "historicalVersions": 2,
       "pinnedEngineFiles": 8,
-      "domesticReviewed": 18,
-      "progressiveFramesApproved": 162,
-      "drawingPrimitives": 20,
-      "masks": 18,
-      "terminalPolygonPens": [],
-      "runtimeRegistered": 1,
-      "ownTestsPassed": 3,
-      "buildPassed": true,
-      "regressionFiles": 404,
-      "regressionTestsPassed": 1731,
-      "mobilePassed": true,
+      "domesticStaticReviewed": 18,
+      "progressiveFramesApproved": 0,
+      "runtimeRegistered": 0,
+      "sourceVerificationPassed": true,
+      "runtimeUnchanged": true,
       "privateMediaSaved": false
-    }
+    },
+    "blockers": [
+      {
+        "roots": [
+          "u8b41",
+          "u8b41-k",
+          "u8b41-ue0100",
+          "u8b41-ue0101",
+          "u8b41-ue0102",
+          "u8b41-ue0104"
+        ],
+        "domesticStrokes": [
+          8,
+          10
+        ],
+        "rawGroups": [
+          8
+        ],
+        "reason": "One original horizontal crosses both 艹 verticals; domestic8 and10 are separate left/right horizontals. Arbitrary split forbidden."
+      },
+      {
+        "root": "u8b41-ue0103",
+        "domesticStroke": 13,
+        "rawGroups": [
+          15,
+          19
+        ],
+        "end": [
+          119.36,
+          99
+        ],
+        "start": [
+          136.64,
+          99
+        ],
+        "gap": 17.28,
+        "reason": "The domestic13 continuous horizontal is two original disjoint paths. Connector or deleting gap forbidden."
+      }
+    ]
   },
   "workingTreeCoverage": {
     "date": "2026-10-05",
@@ -139,8 +172,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD/index, runtime and pending --free before next batch.",
-    "Review 譁18 using captured exact whole u8b41-k and all6 declared records; preserve exact literal alias and require full domestic18/162 native progressive samples.",
-    "Never infer trajectory or substitute radicals/latest records. Preserve original contours and one domestic pen. 耭 deferred for original compound gaps.",
+    "Review 邈18 using exact captured whole u9088-k and6 declared records including2 historical versions; full domestic18 and162 native progressive samples required.",
+    "譁 deferred: six whole variants require forbidden 艹 split; the other has domestic13 trajectory gap17.28. No arbitrary connector or transplant.",
     "After native pass: runtime/fixed engine/build/regression/mobile and own local commit; continue. Held112 unchanged; no push/deploy."
   ],
   "held": [
@@ -657,54 +690,46 @@
     }
   ],
   "resources": {
-    "tabs": "Own317 static,318 progressive,319 domestic,320 mobile closed; viewport reset. User tabs untouched.",
-    "ramServers": "Own52761/PID20906,52762/PID21007,52763/PID23189 terminated by exact script/uid/loopback checks. Initial raw static PID20512 terminated before remapping.",
+    "tabs": "Own321 static/variant comparison closed; viewport reset. User tabs untouched.",
+    "ramServers": "Own52764/PID26097 and52765/PID29230 terminated after exact script/uid/loopback checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/primitive-reveal.mjs",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/85ce.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch354.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch354.ts",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch354.test.ts",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/NOTICE.md",
-    "public/hanja-strokes/glyphwiki/NOTICE-85ce.md",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch354-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/whole-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/whole-engine-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/serve-variants.py",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/deferred-review.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u8b41",
-      "glyph": "譁",
-      "hun": "지껄일",
-      "eum": "화",
+      "id": "u9088",
+      "glyph": "邈",
+      "hun": "멀",
+      "eum": "막",
       "readingGrade": "특급II",
-      "radical": "言",
+      "radical": "辵",
       "strokes": 18,
-      "sourceRow": 5740,
-      "sourceHunEum": "지껄일 화",
+      "sourceRow": 1601,
+      "sourceHunEum": "멀 막",
       "example": {
-        "word": "譁然",
-        "reading": "화연",
+        "word": "邈遠",
+        "reading": "막원",
         "source": {
           "dictionary": "표준국어대사전",
-          "targetCode": 373557,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=373557&searchKeywordTo=3",
+          "targetCode": 108020,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=108020&searchKeywordTo=3",
           "verifiedAt": "2026-09-17"
         }
       }
@@ -712,12 +737,11 @@
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u8b41-k",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch354-2026-10-05/next-source-inventory.json",
-    "sourceSha256": "14ff701d9c7a872877673d7a190a64ecc7d90c04401eac7ff40d6fa96d9f5c8c",
+    "selectedRoot": "u9088-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch355-2026-10-05/next-source-inventory.json",
+    "sourceSha256": "6b7a384e4dfe15f182f75e3755114c07e4ba05bbe494be8eab5f81204b66e07c",
     "providerRecords": 6,
-    "historicalVersions": 0,
-    "literalAliases": 0,
+    "historicalVersions": 2,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }

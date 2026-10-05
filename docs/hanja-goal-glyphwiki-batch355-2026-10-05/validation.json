@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-05",
+  "fixedEngine": {
+    "passed": true,
+    "files": 8,
+    "wholeSources": 7,
+    "historicalVersions": 2
+  },
+  "native": {
+    "panel": 321,
+    "domesticStaticReviewed": 18,
+    "wholeVariantsInspected": 7,
+    "progressiveFramesApproved": 0,
+    "fullFormOrderPassed": false
+  },
+  "blockers": [
+    {
+      "roots": [
+        "u8b41",
+        "u8b41-k",
+        "u8b41-ue0100",
+        "u8b41-ue0101",
+        "u8b41-ue0102",
+        "u8b41-ue0104"
+      ],
+      "domesticStrokes": [
+        8,
+        10
+      ],
+      "rawGroups": [
+        8
+      ],
+      "reason": "One original horizontal crosses both 艹 verticals; domestic8 and10 are separate left/right horizontals. Arbitrary split forbidden."
+    },
+    {
+      "root": "u8b41-ue0103",
+      "domesticStroke": 13,
+      "rawGroups": [
+        15,
+        19
+      ],
+      "end": [
+        119.36,
+        99
+      ],
+      "start": [
+        136.64,
+        99
+      ],
+      "gap": 17.28,
+      "reason": "The domestic13 continuous horizontal is two original disjoint paths. Connector or deleting gap forbidden."
+    }
+  ],
+  "runtime": {
+    "registered": 0,
+    "unchanged": true,
+    "hashes": {
+      "lib/hanja-strokes.ts": "09d668b01d217fb090d84e32ee43e735b0d53870b0ce7136721207afee3efccb",
+      "lib/hanja-stroke-textbook.test.ts": "8bb2d22490a4f30343e95ac08119b935678ec36464312bb24e52a63b9b1b59b2",
+      "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch354.json": "588b27291fea571568c5ee8f894d0d5f71b04779ccbf8c90a50c087d295da5aa",
+      "public/hanja-strokes/glyphwiki/85ce.json": "1f46f98afd9c7e3cc4e38b2ddf16cb402c58312088b8d79ea9cfec0cc72ee898"
+    }
+  },
+  "runtimeBuild": "Source-only batch: runtime unchanged. Batch354 isolated production build and404files/1731tests remain the most recent application validation. Seven source variants reproduced with eight pinned engine files.",
+  "resources": {
+    "tabs": "Own321 static/variant comparison closed; viewport reset. User tabs untouched.",
+    "ramServers": "Own52764/PID26097 and52765/PID29230 terminated after exact script/uid/loopback checks.",
+    "privateMediaSaved": false
+  },
+  "privateMediaSaved": false
+}
+
