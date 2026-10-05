@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-05",
+  "glyph": "戱",
+  "status": "deferred-terminal-hook-reveal",
+  "runtimeRegistered": 0,
+  "domesticStrokes": 16,
+  "sourceRawGroups": 18,
+  "sourceDrawingPrimitives": 21,
+  "wholeDependencyRecords": 4,
+  "staticDirectionsOrderCumulativeAndFullFormPassed": true,
+  "progressiveFramesExamined": 144,
+  "progressiveApprovalIssued": false,
+  "failedStrokes": [
+    6,
+    14
+  ],
+  "nativePanels": {
+    "comparison": "209",
+    "progressive": "210"
+  },
+  "sourcePreservingWholeMasks": [
+    3,
+    4,
+    6,
+    8
+  ],
+  "failures": [
+    {
+      "stroke": 6,
+      "sourceRawIndex": 5,
+      "originalCommands": [
+        "L",
+        "Q",
+        "L"
+      ],
+      "originalEnd": [
+        97.24,
+        99
+      ],
+      "originalEndStyle": 5,
+      "observed": "Native210 enlarged99% shows a short upward stub;100% exposes full tall upward hook abruptly.",
+      "actualReplayObserved": "24→100%",
+      "approved": false
+    },
+    {
+      "stroke": 14,
+      "sourceRawIndex": 16,
+      "originalCommands": [
+        "C"
+      ],
+      "originalEnd": [
+        181.35,
+        180
+      ],
+      "originalEndStyle": 5,
+      "observed": "Native210 enlarged99% shows a short upward stub;100% exposes full tall upward hook abruptly.",
+      "approved": false
+    }
+  ],
+  "alternatives": {
+    "roots": [
+      "u6231",
+      "u6231-k",
+      "u6231-ue0100"
+    ],
+    "allDependenciesAvailable": true,
+    "sameWholeSource": "k and ue0100 wrappers declare exact u6231, hence no independent terminal trajectory"
+  },
+  "sourceCoordinatesAndPolygonsPreserved": true,
+  "noConnectorCreated": true,
+  "noSourceWidthChange": true,
+  "unblockCondition": "Find licensed whole-character trajectories that explicitly include both upward terminal hooks, or a source-backed renderer rule covering original terminal geometry progressively without inventing coordinates or stroke order.",
+  "retryPolicy": "Do not retry the same masks or whole wrappers without new source-backed hook evidence.",
+  "privateMediaSaved": false
+}
