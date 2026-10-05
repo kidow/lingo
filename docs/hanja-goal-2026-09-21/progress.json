@@ -1,37 +1,47 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "46aaf61e4c413b110a1cbbb132ec8de6b7bfd60a",
+  "lastCompletedCommit": "04b0f415bf7465678a7ccb60725ad99a7c2f6070",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 擥 animation with original terminal hook",
-    "parent": "46aaf61e4c413b110a1cbbb132ec8de6b7bfd60a"
+    "message": "docs(hanja): defer 朦 on original pen13 trajectory gap",
+    "parent": "04b0f415bf7465678a7ccb60725ad99a7c2f6070"
   },
   "currentBatch": {
-    "batch": 347,
-    "directory": "docs/hanja-goal-glyphwiki-batch347-2026-10-05",
+    "batch": 348,
+    "directory": "docs/hanja-goal-glyphwiki-batch348-2026-10-05",
     "glyphs": [
-      "擥"
+      "朦"
     ],
     "strokes": 18,
-    "status": "runtime-connected-original-contours-native-and-production-verified",
+    "status": "source-only-native-static-reviewed-original-trajectory-gap-deferred",
     "checks": {
-      "providerRecords": 8,
-      "historicalVersions": 5,
+      "providerRecords": 10,
+      "historicalVersions": 7,
       "pinnedEngineFiles": 8,
-      "domesticReviewed": 18,
-      "progressiveFramesApproved": 162,
-      "drawingPrimitives": 22,
-      "masks": 19,
-      "terminalPolygonPens": [
-        18
-      ],
-      "runtimeRegistered": 1,
-      "ownTestsPassed": 3,
-      "buildPassed": true,
-      "regressionFiles": 399,
-      "regressionTestsPassed": 1716,
-      "mobilePassed": true,
+      "domesticStaticReviewed": 18,
+      "progressiveFramesApproved": 0,
+      "drawingPrimitives": 24,
+      "runtimeRegistered": 0,
+      "sourceVerificationPassed": true,
+      "runtimeUnchanged": true,
       "privateMediaSaved": false
+    },
+    "blocker": {
+      "pen": 13,
+      "sourceGroupsZeroBased": [
+        14,
+        15
+      ],
+      "originalEnd": [
+        134.98000000000002,
+        100.262619
+      ],
+      "originalStart": [
+        128.815,
+        100.262619
+      ],
+      "gapSourceUnits": 6.1650000000000205,
+      "reason": "Original cap line and following quadratic centerline are discontinuous. A shared continuous replay would require a new connector. No contour deletion, arbitrary split or invented connection approved."
     }
   },
   "workingTreeCoverage": {
@@ -141,8 +151,9 @@
   },
   "nextActions": [
     "Recheck shared HEAD/index, runtime and pending --free before next batch.",
-    "Review 朦18 using captured exact whole u6726-k and all9 declared records; full domestic18 and162 native progressive samples required.",
-    "Never infer trajectory or substitute radicals/latest records. Keep original contours and one domestic pen, only separately clip exact existing polygons after native directional evidence.",
+    "Review 歟18 using captured exact whole u6b5f-k and all4 declared records/1 exact history reference; full domestic18 and162 native progressive samples required.",
+    "朦18 remains unregistered: original pen13 centerlines differ6.165 source units; preserve report until another complete source or reviewed original replay method resolves it. Do not infer a connector.",
+    "Never infer trajectory or substitute radicals/latest records. Keep original contours and one domestic pen.",
     "After native pass: runtime/fixed engine/build/regression/mobile and own local commit; continue. Held112 unchanged; no push/deploy."
   ],
   "held": [
@@ -659,67 +670,49 @@
     }
   ],
   "resources": {
-    "tabs": "Own294 comparison,295 progressive,296 domestic source,297 mobile closed; viewport reset. User tabs untouched.",
-    "ramServers": "Own52744/PID78626,52745/PID79919,52746/PID81899 terminated by exact script/uid/loopback checks. Initial progressive PID78989 stopped before terminal review.",
+    "tabs": "Own298 domestic/default/selected static comparison closed; viewport reset. User tabs untouched.",
+    "ramServers": "Own52747/PID86649 terminated by exact script/uid/loopback checks. Default source PID84823 stopped before selected review.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/primitive-reveal.mjs",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/64e5.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch347.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch347.ts",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch347.test.ts",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/NOTICE.md",
-    "public/hanja-strokes/glyphwiki/NOTICE-64e5.md",
-    "lib/hanja-strokes.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/terminal-method.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch347-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/whole-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/original-sources.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/original-engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/original-draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/variant-sources.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u6726",
-      "glyph": "朦",
-      "hun": "몽롱할",
-      "eum": "몽",
+      "id": "u6b5f",
+      "glyph": "歟",
+      "hun": "어조사",
+      "eum": "여",
       "readingGrade": "특급II",
-      "radical": "月",
+      "radical": "欠",
       "strokes": 18,
-      "sourceRow": 1764,
-      "sourceHunEum": "몽롱할 몽",
-      "example": {
-        "word": "朦朧",
-        "reading": "몽롱",
-        "source": {
-          "dictionary": "표준국어대사전",
-          "targetCode": 119884,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119884&searchKeywordTo=3",
-          "verifiedAt": "2026-09-17"
-        }
-      }
+      "sourceRow": 3211,
+      "sourceHunEum": "어조사 여"
     },
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u6726-k",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch347-2026-10-05/next-source-inventory.json",
-    "sourceSha256": "3d6b9efc21a1f265c0920a028177eec50e4d5914759adae01675b0e74a4c0e49",
-    "providerRecords": 9,
-    "historicalVersions": 0,
+    "selectedRoot": "u6b5f-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch348-2026-10-05/next-source-inventory.json",
+    "sourceSha256": "5d1186eb6690480e7ff77eeeba78348995ef287ad040b429842dc93f5057a891",
+    "providerRecords": 4,
+    "historicalVersions": 1,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }
