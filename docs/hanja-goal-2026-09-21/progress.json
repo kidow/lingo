@@ -1,34 +1,39 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "2ded27f8433eab67a004f42d5d840366a584f9fa",
+  "lastCompletedCommit": "7fafb42335b2c55a412fb74b54ad53952151cc39",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 鋌 stroke animation",
-    "parent": "2ded27f8433eab67a004f42d5d840366a584f9fa"
+    "message": "feat(hanja): add reviewed 彛 stroke animation",
+    "parent": "7fafb42335b2c55a412fb74b54ad53952151cc39"
   },
   "currentBatch": {
-    "batch": 317,
-    "directory": "docs/hanja-goal-glyphwiki-batch317-2026-10-05",
+    "batch": 318,
+    "directory": "docs/hanja-goal-glyphwiki-batch318-2026-10-05",
     "glyphs": [
-      "鋌"
+      "彛"
     ],
-    "strokes": 15,
+    "strokes": 16,
     "status": "runtime-applied-verified",
     "checks": {
-      "providerRecords": 6,
+      "providerRecords": 9,
       "pinnedEngineFiles": 8,
-      "domesticReviewed": 15,
-      "progressiveFramesApproved": 135,
-      "originalDrawingPrimitives": 17,
-      "runtimeMasks": 15,
+      "domesticReviewed": 16,
+      "progressiveFramesApproved": 144,
+      "progressiveFramesExamined": 153,
+      "originalDrawingPrimitives": 21,
+      "runtimeMasks": 17,
       "sourcePreservingCompoundMasks": [
-        13,
-        14
+        1,
+        12,
+        15
       ],
-      "previousBatch315FailureResolved": true,
+      "sourcePreservingSequentialMasks": [
+        11
+      ],
+      "multipleMPrototypeRejected": true,
       "runtimeRegistered": 1,
       "productionBuildPassed": true,
-      "regressionTests": 1659,
+      "regressionTests": 1662,
       "mobilePassed": true,
       "privateMediaSaved": false
     }
@@ -37,8 +42,8 @@
     "date": "2026-10-05",
     "runtime": {
       "total": 5978,
-      "applied": 5165,
-      "remaining": 813,
+      "applied": 5166,
+      "remaining": 812,
       "percentage": 86.4
     },
     "grades": {
@@ -128,8 +133,8 @@
       },
       "특급II": {
         "total": 1150,
-        "applied": 1008,
-        "remaining": 142,
+        "applied": 1009,
+        "remaining": 141,
         "percentage": 87.7
       }
     },
@@ -140,9 +145,9 @@
   },
   "nextActions": [
     "Recheck shared runtime/HEAD/index and pending --free.",
-    "Review 彛16 exact whole source variants with complete pinned archive dependencies; domestic all16 directions/cumulative/form and144 native samples.",
+    "Review 戱16 exact whole source variants with complete pinned archive dependencies; domestic all16 directions/cumulative/form and144 native samples.",
     "Only after visible review pass: runtime/fixed engine/build/regression/mobile and own local commit.",
-    "Preserve batch315 original failed mask evidence and held112; no push/deploy."
+    "Preserve batch318 rejected multiple-M evidence and held112; no push/deploy."
   ],
   "held": [
     {
@@ -658,196 +663,123 @@
     }
   ],
   "resources": {
-    "tabs": "Own203 comparison,204 progressive,205 mobile tabs closed; viewport reset. User tabs untouched.",
-    "ramServers": "Own52661/PID9627,52662/PID9663,52663/PID12237 terminated after exact command/uid/loopback checks.",
+    "tabs": "Own206 comparison,207 progressive,208 mobile tabs closed; viewport reset. User tabs untouched.",
+    "ramServers": "Own52664/PID14957,52665/PID15716,52666/PID18817 terminated after exact command/uid/loopback checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/alternative-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/primitive-reveal.mjs",
-    "public/hanja-strokes/glyphwiki/92cc.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch317.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch317.ts",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch317.test.ts",
-    "public/hanja-strokes/glyphwiki/NOTICE-92cc.md",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/primitive-reveal.mjs",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/multiple-m-rejected.mjs",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/multiple-m-rejected.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/alternative-inventory.json",
+    "public/hanja-strokes/glyphwiki/5f5b.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch318.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch318.ts",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch318.test.ts",
+    "public/hanja-strokes/glyphwiki/NOTICE-5f5b.md",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/NOTICE.md",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch317-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch318-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u5f5b",
-      "glyph": "彛",
-      "hun": "떳떳할",
-      "eum": "이",
+      "id": "u6231",
+      "glyph": "戱",
+      "hun": "놀이",
+      "eum": "희",
       "readingGrade": "특급II",
-      "radical": "彐",
+      "radical": "戈",
       "strokes": 16,
-      "sourceRow": 3851,
-      "sourceHunEum": "떳떳할[彝] 이"
+      "sourceRow": 5968,
+      "sourceHunEum": "놀이[戲] 희"
     },
     "registered": false,
     "held": false,
     "alternatives": [
       {
-        "root": "u5f5b",
+        "root": "u6231",
         "records": {
-          "u5f5b": {
-            "name": "u5f5b",
-            "related": "u5f5b",
-            "data": "99:0:0:0:8:200:63:aj1-15391$99:0:0:11:56:98:146:u7c73-06-var-001$99:0:0:85:54:190:145:j83-4a2c$99:0:0:0:85:200:195:u5efe-04"
+          "u6231": {
+            "name": "u6231",
+            "related": "u6231",
+            "data": "99:0:0:0:0:187:200:u865b-01$99:0:0:13:0:198:200:u6208-02"
           },
-          "aj1-15391": {
-            "name": "aj1-15391",
-            "related": "u5f50",
-            "data": "99:0:0:0:0:200:200:u5f50-ue0101"
+          "u865b-01": {
+            "name": "u865b-01",
+            "related": "u865b",
+            "data": "1:0:32:65:14:65:50$1:2:0:65:33:110:33$1:2:2:29:50:107:50$2:22:7:107:50:103:61:95:74$7:12:7:29:50:29:130:28:169:12:189$3:0:5:60:56:60:99:104:99$1:0:0:35:80:94:74$1:0:32:65:110:65:170$1:0:32:85:110:85:166$2:0:7:33:179:75:173:120:164$1:0:13:45:117:45:148$1:2:2:45:148:65:148$1:0:23:105:118:105:148$1:2:2:85:148:105:148"
           },
-          "u5f50-ue0101": {
-            "name": "u5f50-ue0101",
-            "related": "u5f50",
-            "data": "1:0:2:37:41:155:41:0:0:0:0$1:22:23:155:41:155:169:0:0:0:0$1:0:0:15:103:189:103:189:121:0:0$1:0:2:35:169:155:169:0:0:0:0"
-          },
-          "u7c73-06-var-001": {
-            "name": "u7c73-06-var-001",
-            "related": "u7c73",
-            "data": "2:7:8:33:23:57:39:67:66$2:0:7:156:23:144:45:125:68$1:0:0:19:81:184:81$1:0:0:100:16:100:184$2:32:7:88:81:69:135:16:176$2:7:8:100:93:146:114:169:146"
-          },
-          "j83-4a2c": {
-            "name": "j83-4a2c",
-            "related": "u5206",
-            "data": "99:0:0:0:0:200:200:u516b-03$99:0:0:0:0:200:200:u5200-14"
-          },
-          "u516b-03": {
-            "name": "u516b-03",
-            "related": "u516b",
-            "data": "2:0:7:68:37:54:77:12:105$1:0:0:74:28:136:28$2:7:0:128:28:141:73:181:95"
-          },
-          "u5200-14": {
-            "name": "u5200-14",
-            "related": "u5200",
-            "data": "1:2:2:44:97:144:97$2:22:4:144:97:145:148:132:179$6:32:7:86:97:85:144:60:174:14:186"
-          },
-          "u5efe-04": {
-            "name": "u5efe-04",
-            "related": "u5efe",
-            "data": "7:0:7:73:94:73:122:69:175:31:188$1:0:0:130:94:130:185$1:0:0:16:133:185:133"
+          "u6208-02": {
+            "name": "u6208-02",
+            "related": "u6208",
+            "data": "1:0:0:102:75:188:69$2:7:8:144:21:163:31:172:48$6:0:5:127:14:127:169:173:180:182:180$2:0:7:171:95:142:169:79:188"
           }
         },
         "missing": []
       },
       {
-        "root": "u5f5b-k",
+        "root": "u6231-k",
         "records": {
-          "u5f5b-k": {
-            "name": "u5f5b-k",
-            "related": "u5f5b",
-            "data": "99:0:0:0:0:200:200:u5f5b"
+          "u6231-k": {
+            "name": "u6231-k",
+            "related": "u6231",
+            "data": "99:0:0:0:0:200:200:u6231"
           },
-          "u5f5b": {
-            "name": "u5f5b",
-            "related": "u5f5b",
-            "data": "99:0:0:0:8:200:63:aj1-15391$99:0:0:11:56:98:146:u7c73-06-var-001$99:0:0:85:54:190:145:j83-4a2c$99:0:0:0:85:200:195:u5efe-04"
+          "u6231": {
+            "name": "u6231",
+            "related": "u6231",
+            "data": "99:0:0:0:0:187:200:u865b-01$99:0:0:13:0:198:200:u6208-02"
           },
-          "aj1-15391": {
-            "name": "aj1-15391",
-            "related": "u5f50",
-            "data": "99:0:0:0:0:200:200:u5f50-ue0101"
+          "u865b-01": {
+            "name": "u865b-01",
+            "related": "u865b",
+            "data": "1:0:32:65:14:65:50$1:2:0:65:33:110:33$1:2:2:29:50:107:50$2:22:7:107:50:103:61:95:74$7:12:7:29:50:29:130:28:169:12:189$3:0:5:60:56:60:99:104:99$1:0:0:35:80:94:74$1:0:32:65:110:65:170$1:0:32:85:110:85:166$2:0:7:33:179:75:173:120:164$1:0:13:45:117:45:148$1:2:2:45:148:65:148$1:0:23:105:118:105:148$1:2:2:85:148:105:148"
           },
-          "u5f50-ue0101": {
-            "name": "u5f50-ue0101",
-            "related": "u5f50",
-            "data": "1:0:2:37:41:155:41:0:0:0:0$1:22:23:155:41:155:169:0:0:0:0$1:0:0:15:103:189:103:189:121:0:0$1:0:2:35:169:155:169:0:0:0:0"
-          },
-          "u7c73-06-var-001": {
-            "name": "u7c73-06-var-001",
-            "related": "u7c73",
-            "data": "2:7:8:33:23:57:39:67:66$2:0:7:156:23:144:45:125:68$1:0:0:19:81:184:81$1:0:0:100:16:100:184$2:32:7:88:81:69:135:16:176$2:7:8:100:93:146:114:169:146"
-          },
-          "j83-4a2c": {
-            "name": "j83-4a2c",
-            "related": "u5206",
-            "data": "99:0:0:0:0:200:200:u516b-03$99:0:0:0:0:200:200:u5200-14"
-          },
-          "u516b-03": {
-            "name": "u516b-03",
-            "related": "u516b",
-            "data": "2:0:7:68:37:54:77:12:105$1:0:0:74:28:136:28$2:7:0:128:28:141:73:181:95"
-          },
-          "u5200-14": {
-            "name": "u5200-14",
-            "related": "u5200",
-            "data": "1:2:2:44:97:144:97$2:22:4:144:97:145:148:132:179$6:32:7:86:97:85:144:60:174:14:186"
-          },
-          "u5efe-04": {
-            "name": "u5efe-04",
-            "related": "u5efe",
-            "data": "7:0:7:73:94:73:122:69:175:31:188$1:0:0:130:94:130:185$1:0:0:16:133:185:133"
+          "u6208-02": {
+            "name": "u6208-02",
+            "related": "u6208",
+            "data": "1:0:0:102:75:188:69$2:7:8:144:21:163:31:172:48$6:0:5:127:14:127:169:173:180:182:180$2:0:7:171:95:142:169:79:188"
           }
         },
         "missing": []
       },
       {
-        "root": "u5f5b-ue0100",
+        "root": "u6231-ue0100",
         "records": {
-          "u5f5b-ue0100": {
-            "name": "u5f5b-ue0100",
+          "u6231-ue0100": {
+            "name": "u6231-ue0100",
             "related": "u3013",
-            "data": "99:0:0:0:0:200:200:u5f5b"
+            "data": "99:0:0:0:0:200:200:u6231"
           },
-          "u5f5b": {
-            "name": "u5f5b",
-            "related": "u5f5b",
-            "data": "99:0:0:0:8:200:63:aj1-15391$99:0:0:11:56:98:146:u7c73-06-var-001$99:0:0:85:54:190:145:j83-4a2c$99:0:0:0:85:200:195:u5efe-04"
+          "u6231": {
+            "name": "u6231",
+            "related": "u6231",
+            "data": "99:0:0:0:0:187:200:u865b-01$99:0:0:13:0:198:200:u6208-02"
           },
-          "aj1-15391": {
-            "name": "aj1-15391",
-            "related": "u5f50",
-            "data": "99:0:0:0:0:200:200:u5f50-ue0101"
+          "u865b-01": {
+            "name": "u865b-01",
+            "related": "u865b",
+            "data": "1:0:32:65:14:65:50$1:2:0:65:33:110:33$1:2:2:29:50:107:50$2:22:7:107:50:103:61:95:74$7:12:7:29:50:29:130:28:169:12:189$3:0:5:60:56:60:99:104:99$1:0:0:35:80:94:74$1:0:32:65:110:65:170$1:0:32:85:110:85:166$2:0:7:33:179:75:173:120:164$1:0:13:45:117:45:148$1:2:2:45:148:65:148$1:0:23:105:118:105:148$1:2:2:85:148:105:148"
           },
-          "u5f50-ue0101": {
-            "name": "u5f50-ue0101",
-            "related": "u5f50",
-            "data": "1:0:2:37:41:155:41:0:0:0:0$1:22:23:155:41:155:169:0:0:0:0$1:0:0:15:103:189:103:189:121:0:0$1:0:2:35:169:155:169:0:0:0:0"
-          },
-          "u7c73-06-var-001": {
-            "name": "u7c73-06-var-001",
-            "related": "u7c73",
-            "data": "2:7:8:33:23:57:39:67:66$2:0:7:156:23:144:45:125:68$1:0:0:19:81:184:81$1:0:0:100:16:100:184$2:32:7:88:81:69:135:16:176$2:7:8:100:93:146:114:169:146"
-          },
-          "j83-4a2c": {
-            "name": "j83-4a2c",
-            "related": "u5206",
-            "data": "99:0:0:0:0:200:200:u516b-03$99:0:0:0:0:200:200:u5200-14"
-          },
-          "u516b-03": {
-            "name": "u516b-03",
-            "related": "u516b",
-            "data": "2:0:7:68:37:54:77:12:105$1:0:0:74:28:136:28$2:7:0:128:28:141:73:181:95"
-          },
-          "u5200-14": {
-            "name": "u5200-14",
-            "related": "u5200",
-            "data": "1:2:2:44:97:144:97$2:22:4:144:97:145:148:132:179$6:32:7:86:97:85:144:60:174:14:186"
-          },
-          "u5efe-04": {
-            "name": "u5efe-04",
-            "related": "u5efe",
-            "data": "7:0:7:73:94:73:122:69:175:31:188$1:0:0:130:94:130:185$1:0:0:16:133:185:133"
+          "u6208-02": {
+            "name": "u6208-02",
+            "related": "u6208",
+            "data": "1:0:0:102:75:188:69$2:7:8:144:21:163:31:172:48$6:0:5:127:14:127:169:173:180:182:180$2:0:7:171:95:142:169:79:188"
           }
         },
         "missing": []
