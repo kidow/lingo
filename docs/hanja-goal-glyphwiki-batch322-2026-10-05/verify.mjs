@@ -8,29 +8,30 @@ import {compileProgressive as compilePrimitive} from './primitive-reveal.mjs'
 const read=n=>JSON.parse(readFileSync(new URL(n,import.meta.url),'utf8'))
 const sha=b=>createHash('sha256').update(b).digest('hex')
 const source=read('./sources.json'),proof=read('./engine-proof.json'),trace=read('./draw-trace.json'),findings=read('./findings.json')
-assert.equal(sha(readFileSync(new URL('./sources.json',import.meta.url))),"7c0328784eb967be311c8a05069950b06ce2a6153717f23e6f245b47e9ab8542")
-assert.equal(source.root,'u66bb-k')
-assert.deepEqual(source.aliases,[]);assert.deepEqual(source.providerVersions,[]);assert.deepEqual(source.missing,[])
+assert.equal(sha(readFileSync(new URL('./sources.json',import.meta.url))),"e56763217b59bef274ca942ea1b05a483d35c8c640d3b650bec8cedc49a73c68")
+assert.equal(source.root,'u6a52-k')
+assert.deepEqual(source.aliases,[]);assert.deepEqual(source.providerVersions.map(v=>v.name),['u96f2@9','u96e8-03@6','u4e91-04@1']);for(const v of source.providerVersions){assert.equal(sha(v.data),v.sha256);assert.equal(v.data,source.records[v.name].data);assert(v.apiUrl.includes(encodeURIComponent(v.name)))};assert.deepEqual(source.missing,[])
 assert.equal(Object.keys(source.records).length,6)
 for(const r of Object.values(source.records))for(const row of r.data.split('$'))if(row.startsWith('99:'))assert(source.records[row.split(':')[7]])
 assert.equal(source.archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62')
-assert.equal(proof.groups.length,19);assert.equal(trace.flat().length,20)
-assert.equal(trace.flat().filter(c=>c.kind==='cdDrawCurve').length,3)
+assert.equal(proof.groups.length,18);assert.equal(trace.flat().length,18)
+assert.equal(trace.flat().filter(c=>c.kind==='cdDrawCurve').length,7)
 assert.equal(trace.flat().filter(c=>c.kind==='cdDrawBezier').length,0)
-assert.deepEqual(sourceGroups,[[0],[1,2],[3],[4],[5],[6,7],[8],[9],[10],[11],[12],[13,14],[15],[16],[17],[18]])
-assert.deepEqual(sourceGroups.flat().sort((a,b)=>a-b),Array.from({length:19},(_,i)=>i))
+assert.deepEqual(sourceGroups,[[0],[1],[2],[3],[4],[5],[6,7],[8],[9],[10],[11],[12],[16],[17],[13,14],[15]])
+assert.deepEqual(sourceGroups.flat().sort((a,b)=>a-b),Array.from({length:18},(_,i)=>i))
 const primitive=compilePrimitive(trace,proof),compiled=compileProgressive(trace,proof)
-assert.equal(compiled.length,16);assert.equal(compiled.flat().length,16);assert.equal(primitive.flat().length,20)
+assert.equal(compiled.length,16);assert.equal(compiled.flat().length,17);assert.equal(primitive.flat().length,18)
 for(let i=0;i<16;i++){
  assert.equal(compiled[i].map(p=>p.outline).join(' '),primitive[i].map(p=>p.outline).join(' '))
- if(![1,5,11,13].includes(i))assert.deepEqual(compiled[i],primitive[i])
+ if(![6].includes(i))assert.deepEqual(compiled[i],primitive[i])
  for(const p of compiled[i])if(p.revealPath)assert.equal((p.revealPath.match(/M/g)||[]).length,1)
 }
-assert.equal(hanjaStrokeData({glyph:'暻',strokes:16}),null)
+assert.equal(hanjaStrokeData({glyph:'橒',strokes:16}),null)
 assert.equal(findings.runtimeRegistered,0);assert.equal(findings.progressiveApprovalIssued,false)
-assert.deepEqual(findings.failedStrokes,[14]);assert.equal(findings.progressiveFramesExamined,144)
-assert.deepEqual(trace[16][1].args.slice(4,6),[116.55000000000001,182])
-assert(trace[16][1].polygons.some(p=>p.some(v=>v.x===96.5&&v.y===176)))
+assert.deepEqual(findings.failedStrokes,[15]);assert.equal(findings.progressiveFramesExamined,9)
+assert.deepEqual(trace[13][0].args.slice(4,6),[98.46825000000001,174.4873])
+assert.deepEqual(trace[14][0].args.slice(0,2),[79.321,176.2952])
+assert.notDeepEqual(trace[13][0].args.slice(4,6),trace[14][0].args.slice(0,2))
 let engineChecked=false
 if(process.argv.includes('--engine')){
  const codes={}
@@ -47,4 +48,4 @@ if(process.argv.includes('--engine')){
  }
  engineChecked=true
 }
-console.log(JSON.stringify({passed:true,deferred:true,engineChecked,rawGroups:19,drawingPrimitives:20,domesticPens:16,examinedFrames:144,failedTerminalHooks:[14],runtimeRegistered:0,privateMediaSaved:false}))
+console.log(JSON.stringify({passed:true,deferred:true,engineChecked,rawGroups:18,drawingPrimitives:18,domesticPens:16,examinedFrames:9,failedCompoundGap:[15],runtimeRegistered:0,privateMediaSaved:false}))
