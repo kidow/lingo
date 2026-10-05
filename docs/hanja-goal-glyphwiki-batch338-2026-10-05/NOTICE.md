@@ -1,0 +1,9 @@
+# 檉 reviewed geometry
+
+GlyphWiki Project and contributors; LicenseRef-GlyphWiki. Source archive https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt; revision a7dd7f3d911936770fa742e8c37d16bee7e2173c; SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. License https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt, GlyphWiki license@18. Exact whole declared records: u6a89-k, u6a89, u6728-01, u8056-k@14, u8056-ue0103@6, u8033-01@5, u53e3-02@4, u53e3@12, u53e3-j@2, u2123c.
+
+Native Codex browser panel261: all17 domestic directions, order, cumulative and complete forms crosschecked; provisional ear order rejected and corrected to exact source identity order after native comparison. Panel262: all153 progressive samples inspected at1280x1100. Exact whole u6a89-k with10 declared records from pinned2016 archive and6 literal named historical dependencies; missing[],aliases[]. Original18 raw groups18 drawing primitives,Q4/C0 retained as17 domestic pens; pen12 combines raw11/12 along the exact continuous L/L original junction using one mask. Pen12 enlarged50/99/100% and actual24→100% replay passed; pen14 enlarged99/100% terminal passed. Coordinates, polygons, widths and default mincho preserved; normalize200to100 and polygon winding only. No inferred connector, radical transplant, source coordinate adjustment or latest substitution.
+
+Domestic crosscheck http://img.e-hanja.kr/hanjaSvg/aniSVG/6a00/6a89.svg; SHA256 7d4c4b0cada3a211e2a7d0b9fc45399521617cff700aff48a622ee4b907a9068. Dictionary crosscheck, not exam-body official approval. Source graphics, HTML and screenshots remained RAM-only and are not redistributed.
+
+Exact historical dependencies: `u8056-k@14`, `u8056-ue0103@6`, `u8033-01@5`, `u53e3-02@4`, `u53e3@12`, `u53e3-j@2`. No latest substitution.
