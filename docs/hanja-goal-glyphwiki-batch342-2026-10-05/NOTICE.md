@@ -1,0 +1,9 @@
+# 璥 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Exact whole `u74a5-ue0102`; all8 records: `u74a5-ue0102`, `koseki-238380`, `u738b-01`, `u656c-var-002@1`, `u535d-03`, `u53e3@12`, `u53e3-j@2`, `u6535-02@9`. Four literal historical dependencies captured exactly; response/data hashes preserved in sources.json. Archive revision `a7dd7f3d911936770fa742e8c37d16bee7e2173c`, SHA256 `7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62`; source SHA256 `1e2677bddd5b6eaa04003746fc75b7f55643a31667ceb28faf98ce5ebab80c26`. Fixed engine `49232bac0348fe815f4200d4116ab7917e0db47f`,8 hashes in engine-proof.json. Engine JavaScript not redistributed.
+
+Native Codex browser panels273/274: all17 domestic directions, order, cumulative/full form and153 progressive samples crosschecked at1280x1100. Exact whole u74a5-ue0102 with eight complete records and four literal historical dependencies retained without latest substitution. Original19 raw groups20 drawing primitives(Q7/C0),17 pens18 masks retained. Continuous original groups form pens10/12. Pen10 original Q terminal is already a separate filled polygon: reuse exact polygon with existing left rectangular clip after original L/Q/Q body. No new centerline, connector, source point or pen. Enlarged pen10 at90/95/99/100% and actual24→100% replay passed; pen12 enlarged99/100% passed. Coordinates, contours and default mincho preserved; normalize200to100 and polygon winding only. New exact terminal-polygon evidence resolves batch339 reveal failure; domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only; never saved or redistributed. Editable source `/hanja-strokes/glyphwiki/74a5.json`.

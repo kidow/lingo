@@ -1,35 +1,35 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "9ce73f6c8b6c32e54bd30ff8bae74f6f2b74265e",
+  "lastCompletedCommit": "d4bd78cc52e8224275efe02fbbb77daf9bff60fe",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 磵 animation with original hook polygon",
-    "parent": "9ce73f6c8b6c32e54bd30ff8bae74f6f2b74265e"
+    "message": "feat(hanja): add reviewed 璥 animation with original hook polygon",
+    "parent": "d4bd78cc52e8224275efe02fbbb77daf9bff60fe"
   },
   "currentBatch": {
-    "batch": 341,
-    "directory": "docs/hanja-goal-glyphwiki-batch341-2026-10-05",
+    "batch": 342,
+    "directory": "docs/hanja-goal-glyphwiki-batch342-2026-10-05",
     "glyphs": [
-      "磵"
+      "璥"
     ],
     "strokes": 17,
     "status": "runtime-connected-source-terminal-polygon-native-and-production-verified",
     "checks": {
-      "providerRecords": 4,
-      "historicalVersions": 1,
+      "providerRecords": 8,
+      "historicalVersions": 4,
       "pinnedEngineFiles": 8,
       "domesticReviewed": 17,
       "progressiveFramesApproved": 153,
-      "drawingPrimitives": 22,
+      "drawingPrimitives": 20,
       "masks": 18,
       "terminalPolygonPens": [
-        11
+        10
       ],
       "runtimeRegistered": 1,
       "ownTestsPassed": 3,
       "buildPassed": true,
-      "regressionFiles": 393,
-      "regressionTestsPassed": 1698,
+      "regressionFiles": 394,
+      "regressionTestsPassed": 1701,
       "mobilePassed": true,
       "privateMediaSaved": false
     }
@@ -38,8 +38,8 @@
     "date": "2026-10-05",
     "runtime": {
       "total": 5978,
-      "applied": 5178,
-      "remaining": 800,
+      "applied": 5179,
+      "remaining": 799,
       "percentage": 86.6
     },
     "grades": {
@@ -129,9 +129,9 @@
       },
       "특급II": {
         "total": 1150,
-        "applied": 1021,
-        "remaining": 129,
-        "percentage": 88.8
+        "applied": 1022,
+        "remaining": 128,
+        "percentage": 88.9
       }
     },
     "heldUnchanged": {
@@ -141,8 +141,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD/index, runtime and pending --free before next batch.",
-    "Revisit 璥17 using exact historical whole u74a5-ue0102 captured in batch339 and new batch341 original-terminal-polygon clipping evidence; all domestic17 and153 native samples required.",
-    "Never infer new hook centerline or substitute radicals/latest records. Only separate already-emitted original polygons with native directional evidence; preserve one domestic pen.",
+    "Review 薏17 using captured exact whole u858f-k and all7 declared records; full domestic17 and153 native progressive samples required.",
+    "Never infer trajectory or substitute radicals/latest records. Keep original contours and one domestic pen, only separately clip exact existing polygons after native directional evidence.",
     "After native pass: runtime/fixed engine/build/regression/mobile and own local commit; continue. Held112 unchanged; no push/deploy."
   ],
   "held": [
@@ -659,55 +659,65 @@
     }
   ],
   "resources": {
-    "tabs": "Own269 domestic,270 comparison,271 progressive and272 mobile closed; viewport reset. User tabs untouched.",
-    "ramServers": "Own52726/PID28034,52727/PID29394,52728/PID38788 terminated by exact script/uid/loopback checks. Initial27446/28309 before source order/terminal correction and initial mobile33514/36507 after transport/seed changes stopped separately.",
+    "tabs": "Own273 comparison,274 progressive,275 domestic source,276 mobile closed; viewport reset. User tabs untouched.",
+    "ramServers": "Own52729/PID42801,52730/PID42836,52731/PID45939 terminated by exact script/uid/loopback checks.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/primitive-reveal.mjs",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/serve-progressive.py",
-    "public/hanja-strokes/glyphwiki/78f5.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/progressive-review.json",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch341.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch341.ts",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/verify.mjs",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch341.test.ts",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/NOTICE.md",
-    "public/hanja-strokes/glyphwiki/NOTICE-78f5.md",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/terminal-method.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/primitive-reveal.mjs",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/74a5.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch342.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch342.ts",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch342.test.ts",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/NOTICE.md",
+    "public/hanja-strokes/glyphwiki/NOTICE-74a5.md",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/terminal-method.json",
     "lib/hanja-strokes.ts",
     "lib/hanja-stroke-textbook.test.ts",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch341-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch342-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u74a5",
-      "glyph": "璥",
-      "hun": "옥이름",
-      "eum": "경",
+      "id": "u858f",
+      "glyph": "薏",
+      "hun": "율무",
+      "eum": "의",
       "readingGrade": "특급II",
-      "radical": "玉",
+      "radical": "艸",
       "strokes": 17,
-      "sourceRow": 330,
-      "sourceHunEum": "옥이름 경",
+      "readings": [
+        {
+          "hun": "율무",
+          "eum": "의"
+        },
+        {
+          "hun": "연밥속",
+          "eum": "억"
+        }
+      ],
+      "sourceRow": 3824,
+      "sourceHunEum": "율무 의 | 연밥속 억",
       "example": {
-        "word": "柳璥",
-        "reading": "유경",
+        "word": "蓮薏",
+        "reading": "연의",
         "source": {
           "dictionary": "표준국어대사전",
-          "targetCode": 469242,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=469242&searchKeywordTo=3",
+          "targetCode": 232566,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232566&searchKeywordTo=3",
           "verifiedAt": "2026-09-17"
         }
       }
@@ -715,12 +725,11 @@
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u74a5-ue0102",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch339-2026-10-05/historical-sources.json",
-    "sourceSha256": "1e2677bddd5b6eaa04003746fc75b7f55643a31667ceb28faf98ce5ebab80c26",
-    "providerRecords": 8,
-    "historicalVersions": 4,
-    "newEvidence": "Batch341 exact original terminal polygon left clip with native review; no inferred centerline.",
+    "selectedRoot": "u858f-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch342-2026-10-05/next-source-inventory.json",
+    "sourceSha256": "391258a517ef029e0ff8ed8c0750180900fe8442897bb6129f0a45a9de7b2779",
+    "providerRecords": 7,
+    "historicalVersions": 0,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }

@@ -1,0 +1,11 @@
+# Batch342 · 璥17
+
+Applied after fresh native browser panels273/274/275 verified all17 domestic order/directions, full/cumulative form and153 progressive samples. Revisit of batch339 is justified by new exact original terminal-polygon evidence: pen10 retains original L/Q/Q body and separately emitted terminal polygon, using an existing left rectangular clip. No new centerline, source coordinate, pen or radical substitution.
+
+Native Codex browser panels273/274: all17 domestic directions, order, cumulative/full form and153 progressive samples crosschecked at1280x1100. Exact whole u74a5-ue0102 with eight complete records and four literal historical dependencies retained without latest substitution. Original19 raw groups20 drawing primitives(Q7/C0),17 pens18 masks retained. Continuous original groups form pens10/12. Pen10 original Q terminal is already a separate filled polygon: reuse exact polygon with existing left rectangular clip after original L/Q/Q body. No new centerline, connector, source point or pen. Enlarged pen10 at90/95/99/100% and actual24→100% replay passed; pen12 enlarged99/100% passed. Coordinates, contours and default mincho preserved; normalize200to100 and polygon winding only. New exact terminal-polygon evidence resolves batch339 reveal failure; domestic dictionary crosscheck, not exam-body approval.
+
+Fixed engine8-file reconstruction and3 mutation tests passed. Isolated production snapshot `2568595893c62fb20fb1467a05b6f59281c70ede`: build passed; all394 lib files/1701 tests passed. Native mobile panel276: intro auto11→17, replay2→17; writing entry auto2→17 and replay2→17. Canvas draw/undo0→1→0, sheet/scroll unchanged during drawing; imgs0/svg1 and no console errors. Native automation focus scrolled dialog to126 before drawing; drawing itself retained126 and the same sheet/canvas bounds.
+
+Applied5,179/5,978;799 remaining. 特級II1,022/1,150(88.9%),128 remaining. Held112 unchanged. Next 薏17特級II: exact whole u858f-k and7 declared records captured from pinned archive; all source/full geometry/native review remain pending.
+
+Own-only local commit; no push/deploy. Own273 comparison,274 progressive,275 domestic source,276 mobile closed; viewport reset. User tabs untouched. Own52729/PID42801,52730/PID42836,52731/PID45939 terminated by exact script/uid/loopback checks.
