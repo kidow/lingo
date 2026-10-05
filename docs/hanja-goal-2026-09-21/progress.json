@@ -1,55 +1,43 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "04b0f415bf7465678a7ccb60725ad99a7c2f6070",
+  "lastCompletedCommit": "ca47b77535406bd07ca57eadf5647225c905e7f2",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): defer 朦 on original pen13 trajectory gap",
-    "parent": "04b0f415bf7465678a7ccb60725ad99a7c2f6070"
+    "message": "feat(hanja): add reviewed 歟 animation from pinned whole source",
+    "parent": "ca47b77535406bd07ca57eadf5647225c905e7f2"
   },
   "currentBatch": {
-    "batch": 348,
-    "directory": "docs/hanja-goal-glyphwiki-batch348-2026-10-05",
+    "batch": 349,
+    "directory": "docs/hanja-goal-glyphwiki-batch349-2026-10-05",
     "glyphs": [
-      "朦"
+      "歟"
     ],
     "strokes": 18,
-    "status": "source-only-native-static-reviewed-original-trajectory-gap-deferred",
+    "status": "runtime-connected-original-contours-native-and-production-verified",
     "checks": {
-      "providerRecords": 10,
-      "historicalVersions": 7,
+      "providerRecords": 4,
+      "historicalVersions": 1,
       "pinnedEngineFiles": 8,
-      "domesticStaticReviewed": 18,
-      "progressiveFramesApproved": 0,
-      "drawingPrimitives": 24,
-      "runtimeRegistered": 0,
-      "sourceVerificationPassed": true,
-      "runtimeUnchanged": true,
+      "domesticReviewed": 18,
+      "progressiveFramesApproved": 162,
+      "drawingPrimitives": 21,
+      "masks": 18,
+      "terminalPolygonPens": [],
+      "runtimeRegistered": 1,
+      "ownTestsPassed": 3,
+      "buildPassed": true,
+      "regressionFiles": 400,
+      "regressionTestsPassed": 1719,
+      "mobilePassed": true,
       "privateMediaSaved": false
-    },
-    "blocker": {
-      "pen": 13,
-      "sourceGroupsZeroBased": [
-        14,
-        15
-      ],
-      "originalEnd": [
-        134.98000000000002,
-        100.262619
-      ],
-      "originalStart": [
-        128.815,
-        100.262619
-      ],
-      "gapSourceUnits": 6.1650000000000205,
-      "reason": "Original cap line and following quadratic centerline are discontinuous. A shared continuous replay would require a new connector. No contour deletion, arbitrary split or invented connection approved."
     }
   },
   "workingTreeCoverage": {
     "date": "2026-10-05",
     "runtime": {
       "total": 5978,
-      "applied": 5184,
-      "remaining": 794,
+      "applied": 5185,
+      "remaining": 793,
       "percentage": 86.7
     },
     "grades": {
@@ -139,9 +127,9 @@
       },
       "특급II": {
         "total": 1150,
-        "applied": 1027,
-        "remaining": 123,
-        "percentage": 89.3
+        "applied": 1028,
+        "remaining": 122,
+        "percentage": 89.4
       }
     },
     "heldUnchanged": {
@@ -151,9 +139,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD/index, runtime and pending --free before next batch.",
-    "Review 歟18 using captured exact whole u6b5f-k and all4 declared records/1 exact history reference; full domestic18 and162 native progressive samples required.",
-    "朦18 remains unregistered: original pen13 centerlines differ6.165 source units; preserve report until another complete source or reviewed original replay method resolves it. Do not infer a connector.",
-    "Never infer trajectory or substitute radicals/latest records. Keep original contours and one domestic pen.",
+    "Review 璵18 using captured exact whole u74b5-k and all3 declared records; full domestic18 and162 native progressive samples required.",
+    "Never infer trajectory or substitute radicals/latest records. Preserve original contours and one domestic pen.",
     "After native pass: runtime/fixed engine/build/regression/mobile and own local commit; continue. Held112 unchanged; no push/deploy."
   ],
   "held": [
@@ -670,48 +657,55 @@
     }
   ],
   "resources": {
-    "tabs": "Own298 domestic/default/selected static comparison closed; viewport reset. User tabs untouched.",
-    "ramServers": "Own52747/PID86649 terminated by exact script/uid/loopback checks. Default source PID84823 stopped before selected review.",
+    "tabs": "Own299 static,301 progressive,302 domestic,303 mobile closed; viewport reset. Initial failed own300 cannot be closed through current browser policy for its generated data error page; left unchanged. User tabs untouched.",
+    "ramServers": "Own52748/PID89558,52749/PID91571,52750/PID93637 terminated by exact script/uid/loopback checks. Initial timeout PID91211 gone; denied sandbox launch PID91508 exited.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/whole-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/original-sources.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/original-engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/original-draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/variant-sources.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch348-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/primitive-reveal.mjs",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/serve-progressive.py",
+    "public/hanja-strokes/glyphwiki/6b5f.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/progressive-review.json",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch349.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch349.ts",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/verify.mjs",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch349.test.ts",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/NOTICE.md",
+    "public/hanja-strokes/glyphwiki/NOTICE-6b5f.md",
+    "lib/hanja-strokes.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch349-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u6b5f",
-      "glyph": "歟",
-      "hun": "어조사",
+      "id": "u74b5",
+      "glyph": "璵",
+      "hun": "옥",
       "eum": "여",
       "readingGrade": "특급II",
-      "radical": "欠",
+      "radical": "玉",
       "strokes": 18,
-      "sourceRow": 3211,
-      "sourceHunEum": "어조사 여"
+      "sourceRow": 3208,
+      "sourceHunEum": "옥 여"
     },
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u6b5f-k",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch348-2026-10-05/next-source-inventory.json",
-    "sourceSha256": "5d1186eb6690480e7ff77eeeba78348995ef287ad040b429842dc93f5057a891",
-    "providerRecords": 4,
+    "selectedRoot": "u74b5-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch349-2026-10-05/next-source-inventory.json",
+    "sourceSha256": "50f9ff19cf1c518ca8144ec62f446648e6ab4af07cc9ad91d9fc61cd863448d5",
+    "providerRecords": 3,
     "historicalVersions": 1,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
