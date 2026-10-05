@@ -1,0 +1,9 @@
+# Batch344 · 薨17
+
+Native Codex browser panels282/283/284: all17 domestic directions/order/cumulative/full form and153 progressive samples crosschecked at1280x1100. Default u85a8-k rejected for joined grass; pinned exact whole u85a8-ue0102 with7 declared records matches domestic four grass pens. Original20 raw groups22 drawing primitives(Q7/C0),17 pens18 masks retained. Exact continuous original commands form pens6 L/L,11 L/Q,14 L/Q and17 L/Q/L. Initial17 whole-centerline mask lost its original upward hook at99% and popped at100%; the last cdDrawLine already emits that terminal separately. Existing up rectangular clip reveals exactly that original polygon after unchanged body; one domestic pen17 preserved. No new centerline, connector, coordinates or contours. Final17 nine samples, enlarged88/95/99/100 and actual25 to100 replay passed;6/11/14 enlarged99/100 and14 actual27 to100 passed. Normalize200to100/polygon winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed engine8 files and3 mutation tests passed. Isolated snapshot `632e6961fc5bf3fc9a19b917bba5dad8497b350e` production build passed with24 frozen inputs and3 exported assets. All396 lib files/1707 tests passed. Mobile285: intro automatic1 to17 and replay2 to17; writing entry automatic1 to17 and replay2 to17. Actual draw/undo0 to1 to0, scrollTop0 and unchanged canvas/sheet bounds; touchActionnone,no-dragtrue,imgs0/svg1,errors[].
+
+Applied5,181/5,978;797 remain. 特級II1,024/1,150(89.0%),126 remain; held112 unchanged. Next 鍈17: exact whole u9348-k with4 declared records captured; native/source geometry review pending.
+
+Own-only local commit; no push/deploy. Own282 comparison,283 progressive,284 domestic source,285 mobile closed; viewport reset. User tabs untouched. Own52735/PID57877,52736/PID58887,52737/PID61100 terminated by exact script/uid/loopback checks. Stale static54730 and initial progressive57926 stopped before selected/final fixtures.

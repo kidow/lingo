@@ -1,0 +1,9 @@
+# 薨 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Exact whole `u85a8-ue0102`;7 declared records: `u85a8-ue0102`, `u85a8-var-001`, `cdp-8d60-var-011`, `u535d-03`, `u7f52`, `u5196-03`, `u6b7b-14`. Archive revision `a7dd7f3d911936770fa742e8c37d16bee7e2173c`, SHA256 `7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62`; source SHA256 `86937dbe483bfaec19c2509941aa3689b54ad61958f90bb131e17ab13f60a3c0`. Fixed engine `49232bac0348fe815f4200d4116ab7917e0db47f`,8 hashes in engine-proof.json. Engine JS not redistributed.
+
+Native Codex browser panels282/283/284: all17 domestic directions/order/cumulative/full form and153 progressive samples crosschecked at1280x1100. Default u85a8-k rejected for joined grass; pinned exact whole u85a8-ue0102 with7 declared records matches domestic four grass pens. Original20 raw groups22 drawing primitives(Q7/C0),17 pens18 masks retained. Exact continuous original commands form pens6 L/L,11 L/Q,14 L/Q and17 L/Q/L. Initial17 whole-centerline mask lost its original upward hook at99% and popped at100%; the last cdDrawLine already emits that terminal separately. Existing up rectangular clip reveals exactly that original polygon after unchanged body; one domestic pen17 preserved. No new centerline, connector, coordinates or contours. Final17 nine samples, enlarged88/95/99/100 and actual25 to100 replay passed;6/11/14 enlarged99/100 and14 actual27 to100 passed. Normalize200to100/polygon winding only. Dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source `/hanja-strokes/glyphwiki/85a8.json`.
