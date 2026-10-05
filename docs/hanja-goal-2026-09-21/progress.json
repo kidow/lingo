@@ -1,23 +1,23 @@
 {
   "status": "active",
   "date": "2026-10-05",
-  "lastCompletedCommit": "441cfb52d2fe5d4c6d3fcee32b73a608d9501cec",
+  "lastCompletedCommit": "3320b5473e00fa6e64a499d1a4bda77b7f6519fc",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): defer 譁 replay with whole source pen mismatch evidence",
-    "parent": "441cfb52d2fe5d4c6d3fcee32b73a608d9501cec"
+    "message": "docs(hanja): defer 邈 replay with original final stroke gap evidence",
+    "parent": "3320b5473e00fa6e64a499d1a4bda77b7f6519fc"
   },
   "currentBatch": {
-    "batch": 355,
-    "directory": "docs/hanja-goal-glyphwiki-batch355-2026-10-05",
+    "batch": 356,
+    "directory": "docs/hanja-goal-glyphwiki-batch356-2026-10-05",
     "glyphs": [
-      "譁"
+      "邈"
     ],
     "strokes": 18,
-    "status": "source-only-native-reviewed-original-pen-construction-deferred",
+    "status": "source-only-native-reviewed-original-final-stroke-gap-deferred",
     "checks": {
       "providerRecords": 6,
-      "wholeVariants": 7,
-      "historicalVersions": 2,
+      "wholeVariants": 5,
+      "uniqueHistoricalVersions": 2,
       "pinnedEngineFiles": 8,
       "domesticStaticReviewed": 18,
       "progressiveFramesApproved": 0,
@@ -28,40 +28,89 @@
     },
     "blockers": [
       {
-        "roots": [
-          "u8b41",
-          "u8b41-k",
-          "u8b41-ue0100",
-          "u8b41-ue0101",
-          "u8b41-ue0102",
-          "u8b41-ue0104"
-        ],
-        "domesticStrokes": [
-          8,
-          10
-        ],
+        "root": "u9088-k",
+        "domesticStroke": 18,
         "rawGroups": [
-          8
-        ],
-        "reason": "One original horizontal crosses both 艹 verticals; domestic8 and10 are separate left/right horizontals. Arbitrary split forbidden."
-      },
-      {
-        "root": "u8b41-ue0103",
-        "domesticStroke": 13,
-        "rawGroups": [
-          15,
-          19
+          4,
+          5
         ],
         "end": [
-          119.36,
-          99
+          46,
+          153
         ],
         "start": [
-          136.64,
-          99
+          46,
+          148
         ],
-        "gap": 17.28,
-        "reason": "The domestic13 continuous horizontal is two original disjoint paths. Connector or deleting gap forbidden."
+        "gap": 5
+      },
+      {
+        "root": "u9088",
+        "domesticStroke": 18,
+        "rawGroups": [
+          4,
+          5
+        ],
+        "end": [
+          46,
+          153
+        ],
+        "start": [
+          46,
+          148
+        ],
+        "gap": 5
+      },
+      {
+        "root": "u9088-ue0100",
+        "domesticStroke": 18,
+        "rawGroups": [
+          4,
+          5
+        ],
+        "end": [
+          46,
+          153
+        ],
+        "start": [
+          46,
+          148
+        ],
+        "gap": 5
+      },
+      {
+        "root": "u9088-ue0101",
+        "domesticStroke": 18,
+        "rawGroups": [
+          4,
+          5
+        ],
+        "end": [
+          46,
+          153
+        ],
+        "start": [
+          46,
+          148
+        ],
+        "gap": 5
+      },
+      {
+        "root": "u9088-ue0102",
+        "domesticStroke": 18,
+        "rawGroups": [
+          3,
+          4
+        ],
+        "end": [
+          46,
+          152
+        ],
+        "start": [
+          46,
+          147
+        ],
+        "gap": 5
       }
     ]
   },
@@ -172,8 +221,8 @@
   },
   "nextActions": [
     "Recheck shared HEAD/index, runtime and pending --free before next batch.",
-    "Review 邈18 using exact captured whole u9088-k and6 declared records including2 historical versions; full domestic18 and162 native progressive samples required.",
-    "譁 deferred: six whole variants require forbidden 艹 split; the other has domestic13 trajectory gap17.28. No arbitrary connector or transplant.",
+    "Review 騈18 using exact captured whole u9a08-k and4 declared records; full domestic18 and162 native progressive samples required.",
+    "邈 deferred: all five whole sources have domestic18 original trajectory gap5. Never invent connectors or transplant radicals.",
     "After native pass: runtime/fixed engine/build/regression/mobile and own local commit; continue. Held112 unchanged; no push/deploy."
   ],
   "held": [
@@ -690,46 +739,56 @@
     }
   ],
   "resources": {
-    "tabs": "Own321 static/variant comparison closed; viewport reset. User tabs untouched.",
-    "ramServers": "Own52764/PID26097 and52765/PID29230 terminated after exact script/uid/loopback checks.",
+    "tabs": "Own323 variant panel closed; viewport reset. Own322 static review completed, then navigation error became browser-generated data error page; further inspection is URL-policy-blocked. User tabs untouched.",
+    "ramServers": "Own52766/PID31437 and52767/PID32655 terminated by exact script/uid/loopback checks; initial variant PID32353 terminated after correcting its previous52765 binding.",
     "privateMediaSaved": false
   },
   "batchPaths": [
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/sources.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/serve.py",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/whole-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/whole-engine-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/serve-variants.py",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/deferred-review.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/next.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/validation.json",
-    "docs/hanja-goal-glyphwiki-batch355-2026-10-05/README.md",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/sources.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/serve.py",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/whole-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/whole-engine-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/serve-variants.py",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/deferred-review.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/next.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/validation.json",
+    "docs/hanja-goal-glyphwiki-batch356-2026-10-05/README.md",
     "docs/hanja-goal-2026-09-21/progress.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u9088",
-      "glyph": "邈",
-      "hun": "멀",
-      "eum": "막",
+      "id": "u9a08",
+      "glyph": "騈",
+      "hun": "쌍말",
+      "eum": "변",
       "readingGrade": "특급II",
-      "radical": "辵",
+      "radical": "馬",
       "strokes": 18,
-      "sourceRow": 1601,
-      "sourceHunEum": "멀 막",
+      "readings": [
+        {
+          "hun": "쌍말",
+          "eum": "변"
+        },
+        {
+          "hun": "나란히할",
+          "eum": "병"
+        }
+      ],
+      "sourceRow": 2054,
+      "sourceHunEum": "쌍말 변 | 나란히할 병",
       "example": {
-        "word": "邈遠",
-        "reading": "막원",
+        "word": "騈列",
+        "reading": "변열",
         "source": {
           "dictionary": "표준국어대사전",
-          "targetCode": 108020,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=108020&searchKeywordTo=3",
+          "targetCode": 145664,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=145664&searchKeywordTo=3",
           "verifiedAt": "2026-09-17"
         }
       }
@@ -737,11 +796,11 @@
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u9088-k",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch355-2026-10-05/next-source-inventory.json",
-    "sourceSha256": "6b7a384e4dfe15f182f75e3755114c07e4ba05bbe494be8eab5f81204b66e07c",
-    "providerRecords": 6,
-    "historicalVersions": 2,
+    "selectedRoot": "u9a08-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch356-2026-10-05/next-source-inventory.json",
+    "sourceSha256": "45f56208eb248c3630eac96f88fd6c0642c0cbe0abc4710fbf7c32fa3c87a934",
+    "providerRecords": 4,
+    "historicalVersions": 0,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }
