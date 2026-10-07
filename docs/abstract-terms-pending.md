@@ -1,4 +1,4 @@
-# 추상어 파일의 틀린 표제어 — 예문으로는 못 고친다 (2026-10-08)
+# 예문을 다시 쓰다 나온 틀린 표제어 — 예문으로는 못 고친다 (2026-10-08)
 
 `quality` · `idea` · `number`의 독일어 · 스페인어 · 프랑스어 · 러시아어 예문
 15,192줄을 전수로 다시 쓰던 에이전트 여덟이 짚은 표제어 449개다. 예문은 표제어를
@@ -490,3 +490,91 @@
 | `quality/unmoved-either-way` | безучастный ко всему этому | Ad-hoc phrase, not a lexical unit; both rows ungrammatical (осталась безучастный) and ko is meaningless. | безучастный |
 | `quality/virtual` | мнимый | Means 'imaginary, sham', not 'virtual'. | виртуальный |
 
+## 러시아어 — 나머지 파일의 둘째 예문에서 (2026-10-08, 81)
+
+추상어 세 파일 밖의 러시아어 둘째 예문 7,564줄을 다시 쓰며 나왔다. 마흔은 상황 표현의
+«пожалуйста» 앞뒤 쉼표가 빠진 것이다(«Счёт пожалуйста» → «Счёт, пожалуйста»).
+
+| 낱말 | 지금 표제어 | 문제 | 제안 |
+| --- | --- | --- | --- |
+| `action/and-with` | и вместе с | not a lexical unit; «и» + «вместе с» only co-occur by accident, sentences built around it are broken | вместе с / а также |
+| `action/face-up-to` | встречать лицом | not an idiom on its own; the expression is «встречать лицом к лицу» (or «смотреть в лицо»), so no natural sentence keeps the bare term | встречать лицом к лицу / смотреть в лицо |
+| `action/it-is` | это есть | «это есть» is not used as a copula in modern Russian (present copula is zero); no natural sentence contains it | это / является |
+| `action/it-is-said` | говорят что | standard spelling needs a comma «говорят, что»; the comma-less term can only appear in an ungrammatical sentence | говорят, что / говорят |
+| `action/look-back-critically` | держать ответ перед собой | not an idiom; «держать ответ» is answering to someone else, «перед собой» makes it a calque for 반성하다 | оглядываться назад / подводить итоги / анализировать свои ошибки |
+| `action/on-the-spot` | на месте же | not idiomatic; Russian says «тут же», «на месте» or «сразу на месте» | на месте / тут же |
+| `action/out-of-joint` | разойтись со звеном | not a Russian expression (nonsense calque); cannot carry «out of joint» | выйти из строя / пойти не так / не клеиться |
+| `body/shin` | голень спереди | «голень спереди» is not a term; the shin is «голень» (or «передняя часть голени»); the extra word also forces gender errors («принял голень») | голень |
+| `body/the-immune-disease` | иммунная болезнь | not a standard term; the ko gloss means AIDS, which is «СПИД» / «иммунодефицит»; «иммунная болезнь» also forces wrong-case sentences | иммунодефицит / СПИД / аутоиммунная болезнь |
+| `city/hard-to-face` | неловко подступиться | not an idiom; both examples are ungrammatical around it | неловко / стыдно (показаться на глаза) |
+| `city/point-against-point` | сходиться остриём к острию | calque of 針鋒相對, not used in Russian | находить коса на камень / стоять друг против друга |
+| `city/the-ruling-power` | власть в руках | not a lexical unit; «власть» plus a dangling «в руках» (in whose hands?) only fits in broken sentences | власть / правящая власть |
+| `city/there-that-place` | там на том месте | redundant calque («там» + «на том месте»), not a lexical unit; sentences built on it read unnaturally | там / на том месте |
+| `clothes/toe-cap` | носок ботинка усиленный | postposed adjective makes it a non-term; Russian says «усиленный носок ботинка» (or «подносок»); the bare form only fits broken sentences | усиленный носок / подносок |
+| `job/commuter` | пассажир-ежедневник | «ежедневник» is a diary/planner; «пассажир-ежедневник» is not a Russian word for a commuter | ежедневный пассажир (or пригородный пассажир) |
+| `nature/a-land-measure` | мера земли | расплывчато, не термин | мера площади / десятина |
+| `nature/field-path` | межа между полями | плеоназм «межа между полями» | межа |
+| `nature/residue-left` | остаточный след | плеоназм «остаточный след», неестественно | остаток / осадок |
+| `nature/rice-plant` | рисовое растение | калька, по-русски так не говорят | рис |
+| `nature/vitality-spark` | жизненная искра | неустойчивое сочетание | искра жизни |
+| `nature/waning-and-worn` | убывать и щербиться | искусственная пара глаголов, не выражение | убывать (о луне) / стираться |
+| `nature/well-worth-seeing` | весьма достойный взгляда | неестественно | достойный внимания / стоит посмотреть |
+| `office/herewith-this` | настоящим сим | «настоящим сим» — бессмыслица | настоящим |
+| `office/reserves` | запасы залежи | «запасы залежи» — не сочетание | запасы (полезных ископаемых) |
+| `office/trade-surplus` | превышение вывоза | не термин | профицит торгового баланса |
+| `scene/anaesthetic-please` | Сделайте обезболивание пожалуйста | нет запятой при «пожалуйста» | Сделайте обезболивание, пожалуйста |
+| `scene/apologize-please` | Извинитесь пожалуйста | нет запятой при «пожалуйста» | Извинитесь, пожалуйста |
+| `scene/by-airmail` | Авиапочтой пожалуйста | нет запятой при «пожалуйста» | Авиапочтой, пожалуйста |
+| `scene/call-tow` | Пришлите эвакуатор пожалуйста | нет запятой при «пожалуйста» | Пришлите эвакуатор, пожалуйста |
+| `scene/change-into-coins` | Разменяйте пожалуйста на монеты | нет запятой при «пожалуйста» | Разменяйте, пожалуйста, на монеты |
+| `scene/check-please` | Счёт пожалуйста | нет запятой при «пожалуйста» | Счёт, пожалуйста |
+| `scene/color-sample` | Покажите пожалуйста оттенки | нет запятой при «пожалуйста» | Покажите, пожалуйста, оттенки |
+| `scene/fluoride` | Нанесите фтор пожалуйста | нет запятой при «пожалуйста» | Нанесите фтор, пожалуйста |
+| `scene/get-home-safe` | Доберитесь спокойно | не устойчивое выражение | Доберитесь благополучно / Счастливо добраться |
+| `scene/grind-please` | Смелите пожалуйста | нет запятой при «пожалуйста» | Смелите, пожалуйста |
+| `scene/help-me` | Помогите пожалуйста | нет запятой при «пожалуйста» | Помогите, пожалуйста |
+| `scene/leave-in-locker` | Оставьте в ячейке пожалуйста | нет запятой при «пожалуйста» | Оставьте в ячейке, пожалуйста |
+| `scene/less-sweet` | Пожалуйста, менее сладкий | неестественно | Не так сладко, пожалуйста / Поменьше сахара, пожалуйста |
+| `scene/meat-by-gram` | Триста граммов пожалуйста | нет запятой при «пожалуйста» | Триста граммов, пожалуйста |
+| `scene/menu-please` | Меню пожалуйста | нет запятой при «пожалуйста» | Меню, пожалуйста |
+| `scene/more-photos` | Пришлите пожалуйста ещё фото | нет запятой при «пожалуйста» | Пришлите, пожалуйста, ещё фото |
+| `scene/no-ice` | Без льда пожалуйста | нет запятой при «пожалуйста» | Без льда, пожалуйста |
+| `scene/no-thanks` | Спасибо не нужно | нет запятой | Спасибо, не нужно |
+| `scene/not-spicy` | Не острое пожалуйста | нет запятой при «пожалуйста» | Не острое, пожалуйста |
+| `scene/oil-change` | Замените моторное масло пожалуйста | нет запятой при «пожалуйста» | Замените моторное масло, пожалуйста |
+| `scene/one-more` | Ещё один пожалуйста | нет запятой при «пожалуйста» | Ещё один, пожалуйста |
+| `scene/pay-utility-bill` | Где оплатить коммунальные | обрывок, «коммунальные» без существительного | Где оплатить коммунальные услуги |
+| `scene/please-eat-first` | Ешьте первым | неестественно; «первым» не согласовано | Начинайте без меня |
+| `scene/please-repeat` | Повторите пожалуйста | нет запятой при «пожалуйста» | Повторите, пожалуйста |
+| `scene/receipt-please` | Чек пожалуйста | нет запятой при «пожалуйста» | Чек, пожалуйста |
+| `scene/remove-bone` | Уберите кость пожалуйста | нет запятой при «пожалуйста» | Уберите кость, пожалуйста |
+| `scene/replace-router` | Замените роутер пожалуйста | нет запятой при «пожалуйста» | Замените роутер, пожалуйста |
+| `scene/replace-zipper` | Замените молнию пожалуйста | нет запятой при «пожалуйста» | Замените молнию, пожалуйста |
+| `scene/resident-certificate` | Одну справку о регистрации пожалуйста | нет запятой при «пожалуйста» | Одну справку о регистрации, пожалуйста |
+| `scene/seat-with-socket` | Место рядом с розеткой пожалуйста | нет запятой при «пожалуйста» | Место рядом с розеткой, пожалуйста |
+| `scene/slice-thin` | Нарежьте тонко пожалуйста | нет запятой при «пожалуйста» | Нарежьте тонко, пожалуйста |
+| `scene/take-photo` | Сфотографируйте нас пожалуйста | нет запятой при «пожалуйста» | Сфотографируйте нас, пожалуйста |
+| `scene/text-when-done` | Пришлёте сообщение когда будет готово | нет запятой перед «когда» | Пришлёте сообщение, когда будет готово |
+| `scene/this-please` | Вот это пожалуйста | нет запятой при «пожалуйста» | Вот это, пожалуйста |
+| `scene/ticket-please` | Один билет пожалуйста | нет запятой при «пожалуйста» | Один билет, пожалуйста |
+| `scene/tighten-screw` | Подтяните пожалуйста винт | нет запятой при «пожалуйста» | Подтяните, пожалуйста, винт |
+| `scene/to-the-airport` | В аэропорт пожалуйста | нет запятой при «пожалуйста» | В аэропорт, пожалуйста |
+| `scene/top-up-card` | Пополните эту карту пожалуйста | нет запятой при «пожалуйста» | Пополните эту карту, пожалуйста |
+| `scene/update-passbook` | Обновите мне сберкнижку пожалуйста | нет запятой при «пожалуйста» | Обновите мне сберкнижку, пожалуйста |
+| `scene/washer-fluid` | Долейте пожалуйста омывайку | нет запятой при «пожалуйста» | Долейте, пожалуйста, омывайку |
+| `scene/water-please` | Воды пожалуйста | нет запятой при «пожалуйста» | Воды, пожалуйста |
+| `scene/weigh-parcel` | Взвесьте пожалуйста | нет запятой при «пожалуйста» | Взвесьте, пожалуйста |
+| `scene/wrap-please` | Заверните пожалуйста | нет запятой при «пожалуйста» | Заверните, пожалуйста |
+| `scene/write-it-down` | Напишите пожалуйста | нет запятой при «пожалуйста» | Напишите, пожалуйста |
+| `school/apply-for-exam` | подать на экзамен | not idiomatic (needs «заявление»); sentence cannot hold it naturally | записаться на экзамен |
+| `school/compulsory-course` | непременный | means 'indispensable', not 'compulsory (course)'; current sentence is ungrammatical («стали непременный порядок») | обязательный |
+| `school/course-credit` | учебный кредит | in Russian means a student loan, not a course credit | зачётная единица |
+| `school/grade-level` | класс обучения | not a natural Russian expression; «класс» alone means grade/year | класс |
+| `time/afterwards` | после того | incomplete without «как»; standalone 'afterwards' is «после этого» | после этого |
+| `time/at-the-juncture` | в пору когда | needs a comma before «когда» («в пору, когда»), so cannot appear verbatim in a correct sentence | в пору, когда |
+| `time/christmas` | рождество | the holiday is capitalized in Russian; lowercase form does not match correct spelling | Рождество |
+| `time/solar-term` | солнечный сезон | not an existing Russian term for the 24 solar terms | сезон солнечного календаря |
+| `time/time-lapse` | замедленная съёмка | means slow motion, the opposite of time-lapse | интервальная съёмка |
+| `time/year-after-next` | послеследующий год | not a real Russian expression | через два года |
+| `transport/congested` | заторный | not a standard Russian adjective; current sentence («Слишком заторный мост») sounds unnatural | загруженный / перегруженный |
+| `transport/timing-belt` | ремень грм | «ГРМ» is an abbreviation and must be capitalized; current sentence is also inverted («Зубья внутри имеет ремень грм») | ремень ГРМ |
