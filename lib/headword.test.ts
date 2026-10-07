@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { judgeExample, judgeWord, whyBareAdjective, whyCapital, whyLateVerb, whyMissing, whyStuck } from './headword.ts'
+import { judgeExample, judgeWord, whyArticlePhrase, whyBareAdjective, whyCapital, whyLateVerb, whyMissing, whyStuck } from './headword.ts'
 
 /*
  * 아래 예문은 전부 **실제로 경고가 났던 줄**이다. 2026-09-18부터 열두 회차를
@@ -181,4 +181,13 @@ test('서술형 · 어미 붙는 꼴 · 어미 없는 색이름은 안 걸린다
   assert.equal(whyBareAdjective('Das ist mein letzter Versuch.', 'letzter', 'de', '형용사'), '')
   assert.equal(whyBareAdjective('Das Brot ist frisch, Kinder.', 'frisch', 'de', '형용사'), '')
   assert.equal(whyBareAdjective('Sie trug einen gebraucht Tisch.', 'gebraucht', 'fr', '형용사'), '')
+})
+
+test('관사 뒤에 선 영어 구절 표제어 — en', () => {
+  assert.match(
+    whyArticlePhrase('Along the of the railway line bank grew thistles.', 'of the railway line', 'en'),
+    /관사 뒤/,
+  )
+  assert.equal(whyArticlePhrase('The shoot came up of its own accord.', 'of its own accord', 'en'), '')
+  assert.equal(whyArticlePhrase('Along the railway bank grew thistles.', 'railway', 'en'), '')
 })

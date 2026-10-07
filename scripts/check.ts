@@ -17,7 +17,7 @@ import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { LANG } from '../lib/lang.ts'
 import { categoryByPos } from '../lib/category-pos.ts'
-import { judgeExample, whyBareAdjective, whyLateVerb } from '../lib/headword.ts'
+import { judgeExample, whyArticlePhrase, whyBareAdjective, whyLateVerb } from '../lib/headword.ts'
 import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import { fingerprint } from './levels-stamp.ts'
 import type { Concept, Language, Trivia } from '../lib/types.ts'
@@ -638,6 +638,8 @@ for (const file of files) {
            */
           const bare = whyBareAdjective(example.text, answer, lang as Language, pos)
           if (bare) fail(where, `${lang}.${at}: ${bare}`)
+          const phrase = whyArticlePhrase(example.text, answer, lang as Language)
+          if (phrase) fail(where, `${lang}.${at}: ${phrase}`)
         }
         if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
           fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)

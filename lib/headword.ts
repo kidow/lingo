@@ -337,3 +337,18 @@ export function whyBareAdjective(text: string, answer: string, lang: Language, p
   }
   return ''
 }
+
+/**
+ * 영어 구절 표제어(`of the railway line` · `to do with crime`)를 **관사 뒤에** 세운
+ * 자리. 없으면 빈 문자열이다.
+ *
+ * 한국어 «~의» 형용사를 영어로 옮기며 형용사 대신 구절을 표제어로 두고, 예문은
+ * 형용사 자리에 그대로 넣었다 — `Along the of the railway line bank grew thistles.`
+ * 2026-10-08에 쉰한 줄이었다. 영어 형용사(railway)로 바꾸면 사라진다.
+ */
+export function whyArticlePhrase(text: string, answer: string, lang: Language): string {
+  if (lang !== 'en' || !/^(?:of|to do with|belonging to|relating to) /u.test(answer)) return ''
+  const escaped = answer.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&')
+  const hit = new RegExp(`\\b(the|a|an|this|that|these|those|their|his|her|its|our|my|your) ${escaped}\\b`, 'iu').exec(text)
+  return hit ? `"${hit[0]}" — 관사 뒤에 구절 표제어가 섰습니다. 영어 형용사를 표제어로 쓰세요` : ''
+}
