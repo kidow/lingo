@@ -21,7 +21,30 @@
 각 줄의 «제안»은 에이전트의 것이다. 바꾸기 전에 `pnpm define`과 `pnpm dup`으로
 다시 본다.
 
-## 독일어 (129)
+
+## 처리 (2026-10-08) — 고쳤다
+
+530개를 모두 처리했다.
+
+| 갈래 | 수 | 한 일 |
+| --- | --- | --- |
+| 글자만 고침 | 49 | «Счёт, пожалуйста» · «видно, что» · «Рождество» — 예문 속 표제어도 같이 |
+| 셈말 직역 | 77 | `*-count` 스물하나에서 그 언어 단어를 뺐다(영어 «flower count» 류 21도 함께) |
+| 다른 낱말로 | 368 | 에이전트 여덟이 사전 표제어를 고르고 예문 둘을 새로 썼다 |
+| 맞는 말이었다 | 15 | 리뷰어가 영어 뜻풀이(anxious · half past)를 보고 짚은 자리 — 예문만 다섯 고쳤다 |
+| 그 언어에 없는 말 | 21 | 한국어 조사 · 접사(`held-by-them` ~에게는 · `plural-mark` ~들 · `ordinal-marker` 제~) 아홉, 바꾼 말이 다른 개념과 뜻까지 같은 열둘(тоже · обязательный · vorläufig · ondulé …) |
+
+**뜻이 다른 동음이의어는 그대로 두었다** — `bas`(낮은 / 스타킹) · `scharf`(매운 / 날카로운) ·
+`рис`(벼 / 밥). 오답 보기는 정답과 같은 글자를 거르므로(`distractorPool`) 퀴즈가 깨지지
+않는다. 이런 쌍은 이 일 전에도 88이었다.
+
+**개념 쪽이 어긋난 자리** — 고치지 않고 적어 둔다:
+- `held-by-them` — 뜻은 ~에게는(조사), 영어는 by it, 그림은 외투 주머니. 개념이 하나로 안 선다.
+- `stale` — 뜻은 눅눅한, 영어와 그림은 굳은 빵.
+- `anxious` — 뜻과 그림은 조급한(impatient). 영어 뜻풀이가 틀렸다.
+- `half-past` — 뜻은 삼십 분(동안). 영어 뜻풀이가 틀렸다.
+
+## 독일어 (129) — 고쳤다
 
 | 낱말 | 지금 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- |
@@ -155,7 +178,7 @@
 | `quality/virtual` | gedacht | gedacht는 '생각된·상상의'이고 '가상(virtual)'이 아니다. 'eine gedachte Linie'처럼 수식어로만 써서 맨 형태가 남지 않고, 두 예문(gedacht entworfenes Modell / gedacht gezogene Linie)은 틀림 | virtuell |
 | `quality/wooden` | hölzern | 문자 그대로의 '나무로 된'은 거의 수식어로만 쓰고, 서술적 hölzern은 '어색한·뻣뻣한'으로 읽힘 | aus Holz |
 
-## 스페인어 (106)
+## 스페인어 (106) — 고쳤다
 
 | 낱말 | 지금 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- |
@@ -266,7 +289,7 @@
 | `quality/voluntary` | espontáneo | espontáneo = spontaneous/unplanned, not 'voluntary'; both sentences use it as 'volunteer', which is wrong | voluntario |
 | `quality/whether` | si acaso | 'si acaso' = 'in case / if by any chance'; 'whether' in indirect questions is plain 'si' | si |
 
-## 프랑스어 (109)
+## 프랑스어 (109) — 고쳤다
 
 | 낱말 | 지금 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- |
@@ -380,7 +403,7 @@
 | `quality/useful` | profitable | 'profitable' means beneficial/lucrative, not useful; 'un outil profitable' is not French. | utile |
 | `quality/virtual` | fictif | 'fictif' = fictitious; virtual is 'virtuel'. | virtuel |
 
-## 러시아어 (105)
+## 러시아어 (105) — 고쳤다
 
 | 낱말 | 지금 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- |
@@ -490,7 +513,7 @@
 | `quality/unmoved-either-way` | безучастный ко всему этому | Ad-hoc phrase, not a lexical unit; both rows ungrammatical (осталась безучастный) and ko is meaningless. | безучастный |
 | `quality/virtual` | мнимый | Means 'imaginary, sham', not 'virtual'. | виртуальный |
 
-## 러시아어 — 나머지 파일의 둘째 예문에서 (2026-10-08, 81)
+## 러시아어 — 나머지 파일의 둘째 예문에서 (2026-10-08, 81) — 고쳤다
 
 추상어 세 파일 밖의 러시아어 둘째 예문 7,564줄을 다시 쓰며 나왔다. 마흔은 상황 표현의
 «пожалуйста» 앞뒤 쉼표가 빠진 것이다(«Счёт пожалуйста» → «Счёт, пожалуйста»).
