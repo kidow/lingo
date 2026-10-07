@@ -303,3 +303,37 @@ export function whyLateVerb(text: string, answer: string, lang: Language, pos: s
   if (DE_NOMINAL.has(prev.toLowerCase())) return ''
   return `동사구 뒤에 "${next}"가 남았습니다 — 조동사를 둘째 자리에 세우고 표제형을 문장 끝으로 보내세요`
 }
+
+/** 관사 · 소유사 · 지시사 · 수사 — 뒤에 오는 형용사에 어미를 붙이게 하는 말 */
+const DE_DETERMINER =
+  /^(?:der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines|k?eine[mnrs]?|kein|(?:mein|dein|sein|ihr|unser|euer|eur|dies|jed|jen|welch|manch|solch)(?:e[mnrs]?)?|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|viele|einige|mehrere|wenige|alle)$/iu
+
+/** 어미가 안 붙는 형용사 — 색이름 몇과 입말 */
+const DE_INDECLINABLE = new Set(['lila', 'rosa', 'prima', 'beige', 'orange', 'oliv', 'pink', 'klasse', 'super', 'extra', 'spitze'])
+
+/**
+ * 독일어 형용사 표제어를 **어미 없이 명사 앞에** 세운 자리. 없으면 빈 문자열이다.
+ *
+ * 표제형을 예문에 글자 그대로 넣으라는 규칙(`pnpm check`)을 맞추느라 생긴
+ * 꼴이다 — `Sie kauften einen gebraucht Tisch.` · `Er nahm den falsch Bus.`
+ * 2026-09-29 표본 점검에서 원인 넷 가운데 하나로 나왔고, 세어 보니 쉰한
+ * 자리였다. 서술형(`Der Tisch ist gebraucht.`)으로 쓰면 어미가 안 붙는다.
+ *
+ * `-e`로 끝나는 표제어는 안 본다 — `die müde Frau`는 맞는 꼴이다.
+ */
+export function whyBareAdjective(text: string, answer: string, lang: Language, pos: string): string {
+  if (lang !== 'de' || pos !== '형용사' || answer.includes(' ')) return ''
+  if (!/^\p{Ll}/u.test(answer) || answer.endsWith('e') || DE_INDECLINABLE.has(answer)) return ''
+  const words = text.split(/[\s,;:.!?…„“"»«()]+/u)
+  for (let i = 1; i < words.length - 1; i++) {
+    if (words[i] !== answer || !/^\p{Lu}/u.test(words[i + 1] ?? '')) continue
+    // 관사와 형용사 사이에 부사 · 형용사 하나(`ein sehr gebraucht Tisch`)까지 본다
+    const before = [words[i - 1], /^\p{Ll}/u.test(words[i - 1] ?? '') ? words[i - 2] : undefined]
+    const det = before.find((word) => word && DE_DETERMINER.test(word))
+    // 표제어가 이미 굴절형인 자리(`mein letzter Versuch`) — 어미 없는 ein류 뒤의 -er은 맞는 꼴이다
+    if (det && answer.endsWith('er') && /^(?:k?ein|mein|dein|sein|ihr|unser|euer)$/iu.test(det)) continue
+    if (det)
+      return `"${words[i - 1]} ${answer} ${words[i + 1]}" — 명사 앞 형용사에 어미가 없습니다. 서술형(… ist ${answer}.)으로 쓰세요`
+  }
+  return ''
+}

@@ -17,7 +17,7 @@ import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { LANG } from '../lib/lang.ts'
 import { categoryByPos } from '../lib/category-pos.ts'
-import { judgeExample, whyLateVerb } from '../lib/headword.ts'
+import { judgeExample, whyBareAdjective, whyLateVerb } from '../lib/headword.ts'
 import { LANGUAGE_TRACKS as TRACKS } from '../lib/track.ts'
 import { fingerprint } from './levels-stamp.ts'
 import type { Concept, Language, Trivia } from '../lib/types.ts'
@@ -630,6 +630,14 @@ for (const file of files) {
           const pos = typeof word.part_of_speech === 'string' ? word.part_of_speech : ''
           const late = whyLateVerb(example.text, answer, lang as Language, pos)
           if (late) warn(`${where} — ${lang}.${at}의 어순. ${late}`)
+          /*
+           * **명사 앞 형용사의 어미.** 표제형을 글자 그대로 넣으려다 `einen gebraucht
+           * Tisch`가 된 자리다. 2026-10-08에 117을 세었고 같은 날 0으로 만들었다 —
+           * 이제 막는다. 서술형으로 쓰거나, 명사 앞에서만 쓰는 말(`dortig`)은
+           * 표제어를 `dortige`로 박는다.
+           */
+          const bare = whyBareAdjective(example.text, answer, lang as Language, pos)
+          if (bare) fail(where, `${lang}.${at}: ${bare}`)
         }
         if (typeof example.text === 'string' && example.text.includes(CURLY_APOSTROPHE))
           fail(where, `${lang}.${at}에 굽은 아포스트로피(’)가 있습니다. 곧은 '를 쓰세요`)

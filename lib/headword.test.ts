@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { judgeExample, judgeWord, whyCapital, whyLateVerb, whyMissing, whyStuck } from './headword.ts'
+import { judgeExample, judgeWord, whyBareAdjective, whyCapital, whyLateVerb, whyMissing, whyStuck } from './headword.ts'
 
 /*
  * 아래 예문은 전부 **실제로 경고가 났던 줄**이다. 2026-09-18부터 열두 회차를
@@ -166,4 +166,19 @@ test('표제어가 정형 동사로 끝나면 안 본다 — 왼쪽 괄호다', 
     whyLateVerb('Diese Pfanne kann verwendet werden für Salz.', 'verwendet werden', 'de', '동사'),
     /둘째 자리/,
   )
+})
+
+test('어미 없이 명사 앞에 선 형용사 — de', () => {
+  assert.match(whyBareAdjective('Sie kauften einen gebraucht Tisch.', 'gebraucht', 'de', '형용사'), /어미가 없습니다/)
+  assert.match(whyBareAdjective('Er nahm den falsch Bus.', 'falsch', 'de', '형용사'), /"den falsch Bus"/)
+  assert.match(whyBareAdjective('Auf der nördlich Seite reift nichts.', 'nördlich', 'de', '형용사'), /어미/)
+})
+
+test('서술형 · 어미 붙는 꼴 · 어미 없는 색이름은 안 걸린다', () => {
+  assert.equal(whyBareAdjective('Der Tisch ist gebraucht.', 'gebraucht', 'de', '형용사'), '')
+  assert.equal(whyBareAdjective('Sie trug einen lila Schal.', 'lila', 'de', '형용사'), '')
+  assert.equal(whyBareAdjective('Sie wählte die beste Lösung.', 'beste', 'de', '형용사'), '')
+  assert.equal(whyBareAdjective('Das ist mein letzter Versuch.', 'letzter', 'de', '형용사'), '')
+  assert.equal(whyBareAdjective('Das Brot ist frisch, Kinder.', 'frisch', 'de', '형용사'), '')
+  assert.equal(whyBareAdjective('Sie trug einen gebraucht Tisch.', 'gebraucht', 'fr', '형용사'), '')
 })
