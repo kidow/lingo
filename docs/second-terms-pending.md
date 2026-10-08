@@ -287,3 +287,62 @@
 | `travel/off-somewhere-to` | vers quelque part | «vers quelque part» is not idiomatic; French says «quelque part» | quelque part |
 | `travel/running-across-borders` | qui franchit les frontières | «qui franchit les frontières» is a relative clause, not a lexical unit; both examples («une telle maison est qui franchit…») are ungrammatical | transfrontalier / international |
 
+
+## 첫째 예문을 다시 쓰다 더 나온 것 (2026-10-09, 51)
+
+같은 세 언어의 첫째 예문 22,692줄을 다시 쓰며 짚였고, 위 표에 없는 것만 적는다. 첫째 예문은
+이 개념들만 손대지 않았다.
+
+| 낱말 | 언어 | 지금 표제어 | 문제 | 제안 |
+| --- | --- | --- | --- | --- |
+| `food/pungent-tingle` | de | prickelnd | "prickelnd" means fizzy/tingling (carbonation), not the pungent bite of raw garlic or ginger | scharf / beißend |
+| `nature/frigid-zone` | de | Kaltzone | "Kaltzone" is not standard German for the frigid zone | kalte Zone / Polarzone |
+| `nature/regrowth` | de | Nachwuchs | "Nachwuchs" means offspring / the next generation, not plant regrowth; «Neuer Nachwuchs deckte den verbrannten Hang» is wrong sense | Neuaustrieb / Wiederbewuchs |
+| `nature/source-spring` | de | Quellursprung | "Quellursprung" is a tautological compound, not standard German | Quelle / Ursprung (eines Flusses) |
+| `office/smart-device` | de | Smartgerät | "Smartgerät" is not an established German word | smartes Gerät / Smart-Home-Gerät |
+| `school/language-arts` | de | Muttersprachunterricht | 이민자 자녀의 모국어 보충 수업을 가리킨다. 학교 과목 '국어'가 아니다 | Deutschunterricht |
+| `school/major-in` | de | als Hauptfach betreiben | 'als Hauptfach betreiben'은 쓰지 않는 결합. 보통 'als Hauptfach studieren' | als Hauptfach studieren |
+| `school/stopclock` | de | Laborzeitschaltuhr | 실제 독일어 낱말이 아니다(조어). 실험용 타이머는 보통 Stoppuhr / Labortimer | Stoppuhr (stopwatch와 겹치면 Labortimer) |
+| `school/student-recruitment` | de | Studentenwerbung | 독일어에서 쓰지 않는 조어. '학생 광고'로 읽힌다 | Studierendengewinnung (또는 Zulassung) |
+| `time/ten-day-period` | de | Dekade | 독일어 Dekade는 보통 '10년'으로 읽힌다. 열흘 뜻은 거의 쓰지 않아 첫 예문이 '10년 내내 비'로 읽힌다 | zehn Tage |
+| `transport/the-earliest-run` | de | erster Bus | 관사와 쓰면 der erste Bus라 첫 예문이 Der erster Bus 오류. 강변화 꼴 표제어는 문장에 넣기 어렵다 | der erste Bus |
+| `action/stand-upright` | es | levantar en pie | not idiomatic; Spanish says «poner en pie» / «levantar» / «enderezar» for standing a post upright | poner en pie / enderezar |
+| `city/public-order` | es | orden en la calle | not a set term; «El callejón alumbrado es orden en la calle» is meaningless; Spanish says «orden público» / «seguridad ciudadana» | seguridad ciudadana |
+| `food/hotpot` | es | olla caliente | calque; not a dish name in Spanish (reads as "a hot pot/saucepan") | hot pot / fondue china |
+| `home/a-washing-house` | es | la casa de lavado | calque; Spanish word for an outdoor washing place is "lavadero" | el lavadero |
+| `home/mend-ones-ways` | es | enmendar el camino | not idiomatic in Spanish | enmendarse / enderezar el camino |
+| `home/what-is-hers` | es | lo suyo de ella | redundant, non-standard (double possessive) | lo de ella |
+| `home/what-is-his` | es | lo suyo de él | redundant, non-standard (double possessive) | lo de él |
+| `nature/a-land-measure` | es | medida de tierra | generic phrase, not a land unit; no natural sentence can count with it | fanega |
+| `nature/sharp-with-frost` | es | de escarcha recia | not idiomatic as a predicate/adjective ("el aire estaba de escarcha recia") | helado / gélido |
+| `office/a-checking-over` | es | el control que se hace | not a lexical item (relative-clause fragment); cannot stand naturally in a sentence | el control / la revisión |
+| `time/as-it-happens` | es | al instante mismo | «al instante mismo» is a rare literary variant of 'at once' and does not mean '그때그때 / as it happens'; the natural expressions are «sobre la marcha» or «en el acto». | sobre la marcha |
+| `time/party-popper` | es | matasuegras | «matasuegras» is a party blower (blown, it unrolls); a party popper/cracker that you pull is «lanzaconfeti». The sentence «Tiró del matasuegras» cannot be made right with this term. | lanzaconfeti |
+| `action/demonstrate` | fr | exposer | «exposer» means to display/exhibit or to explain, not to demonstrate how a device works («exposer la pompe») | faire une démonstration |
+| `action/fall-off` | fr | tomber de haut | «tomber de haut» is mainly the idiom 'to be bitterly disappointed'; literal use («les poires vont tomber de haut») is odd | tomber |
+| `action/glare-hard-at` | fr | fixer d'un œil dur | «fixer d'un œil dur» is not idiomatic | fusiller du regard |
+| `action/harden-the-heart` | fr | durcir le cœur | «durcir le cœur» is not idiomatic | s'endurcir |
+| `action/turn-into-other` | fr | se transformer en autre | «se transformer en autre» is ungrammatical without «chose» | se transformer |
+| `action/use-up-fully` | fr | épuiser tout | «épuiser tout» is not a set expression; the verb alone already means use up | épuiser |
+| `body/back-view` | fr | vue de dos | «vue de dos» is a drawing/photo view term; «reconnaître à la vue de dos» is not idiomatic for someone's back | de dos |
+| `city/a-position-held` | fr | la position tenue | «la position tenue» is not a set noun phrase | la position |
+| `city/of-the-soviets` | fr | des soviets | «des soviets» is not a lexical item and is tagged as an adverb | soviétique |
+| `everyday/food-and-shelter` | fr | vivre et couvert | the expression is «le vivre et le couvert»; «le vivre et couvert» is malformed | le vivre et le couvert |
+| `everyday/take-turns` | fr | faire à tour de rôle | «faire à tour de rôle» needs an object and the sentence «faire à tour de rôle au puits» is not French | à tour de rôle / se relayer |
+| `family/keep-close-company` | fr | se fréquenter de près | «se fréquenter de près» is not an idiomatic French expression | se fréquenter beaucoup |
+| `food/dumpling` | fr | raviole | «raviole» (singular) is rare and regional; Korean mandu = «raviolis» / «raviolis chinois», used in the plural | raviolis |
+| `food/noodle` | fr | nouille | «nouille» as food is used in the plural («des nouilles», «soupe de nouilles»); singular sentences sound wrong | nouilles |
+| `food/spinach` | fr | épinard | «épinard» is almost always plural as food («les épinards»); the singular blocks natural sentences («Je fais cuire l'épinard» is wrong and elides) | épinards |
+| `home/downstairs` | fr | étage du dessous | «étage du dessous» is always used with the article «l'» («à l'étage du dessous»), so the term is glued to the elision in any natural sentence | en bas |
+| `home/upstairs` | fr | étage du dessus | «étage du dessus» is always used with «l'» («à l'étage du dessus»), so the term is glued to the elision in any natural sentence | en haut |
+| `job/crossing-guard` | fr | agent de traversée | «agent de traversée» is not an established French job title for a school crossing guard | brigadier scolaire |
+| `nature/sharp-with-frost` | fr | de gelée mordante | «de gelée mordante» is not an idiomatic French adjective phrase | glacial |
+| `office/bottleneck` | fr | goulot | «goulot» alone means the neck of a bottle; the figurative bottleneck is «goulot d'étranglement» | goulot d'étranglement |
+| `office/case-file` | fr | cas d'espèce | «cas d'espèce» means a particular case (legal reasoning), not a case file / casebook | dossier |
+| `scene/how-self-serve` | fr | Comment marche le libre service | «libre service» is standardly hyphenated | Comment marche le libre-service |
+| `scene/seal-certificate` | fr | J'ai besoin d'un certificat de signature | «certificat de signature» is not an established French document name (Korean 인감증명 calque) | J'ai besoin d'une légalisation de signature |
+| `school/reading-matter` | fr | matière à lire | «matière à lire» is not idiomatic; French says «de quoi lire» / «lecture» | lecture (Il emporte de la lecture pour le train.) |
+| `school/vocabulary-set` | fr | ensemble de mots | «ensemble de mots» is not how French names a vocabulary set | vocabulaire |
+| `time/middle-period` | fr | période médiane | «période médiane» is not idiomatic for 중기 | mi-parcours / milieu |
+| `time/snow-day` | fr | journée de neige sans école | «journée de neige sans école» is a description, not a French term | jour de fermeture pour neige / école fermée pour cause de neige |
+| `transport/platform-gap` | fr | espace du quai | «espace du quai» is not the French expression for the platform gap | intervalle entre le train et le quai (Attention à la marche en descendant du train.) |
