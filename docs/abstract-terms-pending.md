@@ -602,7 +602,10 @@
 | `transport/congested` | заторный | not a standard Russian adjective; current sentence («Слишком заторный мост») sounds unnatural | загруженный / перегруженный |
 | `transport/timing-belt` | ремень грм | «ГРМ» is an abbreviation and must be capitalized; current sentence is also inverted («Зубья внутри имеет ремень грм») | ремень ГРМ |
 
-## 러시아어 — 첫째 예문을 다시 쓰다 나온 것 (2026-10-08, 21)
+## 러시아어 — 첫째 예문을 다시 쓰다 나온 것 (2026-10-08, 21) — 고쳤다
+
+2026-10-09에 고쳤다 — 열일곱을 바꾸고(«физиотерапевт» · «кешбэк» · «люверс» · «опечатка»), «спиртовка»는
+뜻이 알코올램프라 두고, scene-setting · freight · janitor는 같은 뜻의 낱말이 이미 다른 개념에 있어 뺐다.
 
 추상어 세 파일 밖의 러시아어 첫째 예문 7,563줄을 다시 쓰며 나왔다. 예문은 손대지 않았다 —
 표제어를 바꾼 뒤 새로 쓴다. «терапевт»(일반의 ✗ 치료사) · «фрахт»(용선료 ✗ 화물) ·
