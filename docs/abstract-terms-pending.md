@@ -601,3 +601,33 @@
 | `time/year-after-next` | послеследующий год | not a real Russian expression | через два года |
 | `transport/congested` | заторный | not a standard Russian adjective; current sentence («Слишком заторный мост») sounds unnatural | загруженный / перегруженный |
 | `transport/timing-belt` | ремень грм | «ГРМ» is an abbreviation and must be capitalized; current sentence is also inverted («Зубья внутри имеет ремень грм») | ремень ГРМ |
+
+## 러시아어 — 첫째 예문을 다시 쓰다 나온 것 (2026-10-08, 21)
+
+추상어 세 파일 밖의 러시아어 첫째 예문 7,563줄을 다시 쓰며 나왔다. 예문은 손대지 않았다 —
+표제어를 바꾼 뒤 새로 쓴다. «терапевт»(일반의 ✗ 치료사) · «фрахт»(용선료 ✗ 화물) ·
+«завхоз»(관리 책임자 ✗ 경비원) · «спиртовка»(알코올램프 ✗ 분젠버너)처럼 뜻이 틀린 것이 많다.
+
+| 낱말 | 지금 표제어 | 문제 | 제안 |
+| --- | --- | --- | --- |
+| `action/act-for-another` | действовать за | not an idiomatic Russian expression for 'act on someone's behalf'; current sentence is nonsense | действовать от имени / заменять |
+| `action/cause-a-mishap` | устроить происшествие | unnatural collocation (an object cannot 'устроить происшествие'); not a set expression | привести к аварии / стать причиной несчастного случая |
+| `action/finish-off` | кончать | valid but colloquial with a vulgar slang sense; risky for learners (sentence was rewritten anyway) | заканчивать |
+| `action/remain-over` | оставаться в остатке | "в остатке" is arithmetic jargon (remainder); not a natural everyday expression for 'be left over', no natural A2 sentence | оставаться |
+| `body/beauty-care` | уход за красотой | calque; Russian says «уход за собой» or «косметический уход»; current sentence «Ею изучается уход за красотой.» is also broken | уход за собой |
+| `city/scene-setting` | выстроенная сцена | not a set expression for 'scene-setting'; only a literal 'built stage scene' | мизансцена / обстановка |
+| `clothes/grommet` | металлическая люверса | the noun is masculine «люверс» (cf. shoe-eyelet «люверс на ботинке»); «люверса» is a non-standard feminine form; sentence «Разрыв остановила…» is also odd | металлический люверс |
+| `clothes/snag-the-zip` | заедать молнию | «заедать» is intransitive with zip as subject («молнию заело», «молния заедает»); transitive «заедать молнию» is not idiomatic | заедать (о молнии) / молния заедает |
+| `home/burglar-proof` | противоугонный | «противоугонный» means anti-theft for vehicles (угон = car theft); it does not describe a burglar-proof shed, door or lock | противовзломный |
+| `job/therapist` | терапевт | in Russian «терапевт» is a general practitioner (internist), not a therapist who shows exercises; the second example («Давление измерил терапевт») also uses the GP sense, so the term does not match 치료사 | физиотерапевт (physio) / психотерапевт (talk therapy) |
+| `nature/grass-clump` | куст травы | Not an established expression; «куст» is a shrub, a clump of grass is «пучок травы» or «кочка» (sentence «Зайца укрыл куст травы.» is also inverted/odd). | пучок травы / кочка |
+| `nature/new-energy` | новая энергетика | Calque of Chinese 新能源; not a standard Russian term (sentence «Посёлок питает новая энергетика.» is also unnatural). | возобновляемая энергетика / альтернативная энергетика |
+| `office/money-handed-back` | возврат части | Not an idiomatic term for a rebate/cashback; sentence «Мельница даёт возврат части за объём.» is also unnatural. | кешбэк / скидка за объём / частичный возврат |
+| `school/a-level-reached` | достигнутая высота | unnatural for "level reached" (skill); sentence nonsense | достигнутый уровень |
+| `school/a-wrong-character` | описка в знаке | unnatural calque | описка / неверно написанный иероглиф |
+| `school/an-unknown-quantity` | оставшаяся неизвестность | not a natural expression; sentence nonsense | неизвестная величина / тёмная лошадка |
+| `school/brain-score` | коэффициент ума | not an established expression | коэффициент интеллекта (IQ) |
+| `school/bunsen-burner` | спиртовка | спиртовка is an alcohol lamp, not a Bunsen burner | газовая горелка (горелка Бунзена) |
+| `school/janitor` | завхоз | завхоз = supply manager, not janitor | уборщик / сторож |
+| `time/right-after` | сразу за тем | incomplete fragment, cannot stand alone | сразу после этого / сразу за ним |
+| `transport/freight` | фрахт | фрахт = charter/freight fee, not cargo itself | груз |
