@@ -9,7 +9,27 @@
 글자 그대로 문장에 설 수 없는 꼴(«um zu» · «anglais russe» 붙임표 · «X russisch» 어미). 프랑스어 `equator` ·
 `antarctica`는 늘 `l'`이 붙어 표제어 앞 축약을 피할 수 없다 — 표제어에 관사를 넣을지 정한다.
 
-## 독일어 (111)
+
+## 처리 (2026-10-09) — 고쳤다
+
+314개를 모두 처리했다 — 290 바꿈 · 6 그대로 · 18 뺌. 에이전트 여섯이 사전 표제어를 고르고
+예문 둘과 한국어 줄을 새로 썼다(«Spieluhr»는 농구 공식 용어라 두고, «Ahnentafel»은 위패의
+독일어 용어라 두었다). 바꾼 프랑스어 표제어의 발음기호는 비우고 다시 채웠다.
+
+- **뺀 것:** 한국어 조각(take-and-do · and-with), 맞는 말이 같은 뜻의 다른 개념에 이미 있는 것
+  (compulsory-course ↔ mandatory · driver-rest-stop ↔ rest-area · wallet-billfold ↔ wallet),
+  명사 앞에서만 쓰는 독일어 형용사(häuslich), 독일어 · 프랑스어에 말이 없는 것(belonging-to-anyone ·
+  snow-day …).
+- **함께 옮긴 것:** 스페인어 interpret-between-two(통역하다)를 traducir → interpretar로 옮기고
+  render-into(번역하다)가 traducir를 쓴다. 프랑스어 take-it-out은 dégager → sortir, redeem-back(되찾다)이
+  dégager를 쓴다.
+- **빈칸을 못 뚫는 하나:** 프랑스어 `equator`(équateur)는 늘 `l'équateur`라 자연스러운 문장에서
+  축약을 피할 수 없다. 표제어는 두고 빈칸 카드에서만 빠진다(`pnpm check`가 경고로 남긴다).
+- **동음이의어 스물아홉은 그대로 둔다** — «Rahmen»(신발 웰트 / 액자) · «suite»(계속 / 스위트룸) ·
+  «belle-mère»(계모 / 시어머니). 오답 보기가 같은 글자를 거른다.
+- **개념 쪽이 어긋난 자리:** `breadth-of-heart`는 뜻이 «가슴속»인데 다른 언어와 그림은 «도량»이다.
+
+## 독일어 (111) — 고쳤다
 
 | 낱말 | 지금 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- |
@@ -125,7 +145,7 @@
 | `travel/change-seats` | umsteigen | means changing trains/buses, not changing seats | den Platz wechseln |
 | `travel/off-somewhere-to` | irgendwohin fort | not an idiomatic combination | irgendwohin weg |
 
-## 스페인어 (63)
+## 스페인어 (63) — 고쳤다
 
 | 낱말 | 지금 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- |
@@ -193,7 +213,7 @@
 | `transport/last-service-time` | hora del último | truncated; needs the noun | hora del último tren / hora del último autobús |
 | `transport/signal` | seña | "seña" is a gesture/sign made by a person, not a (traffic) signal; «La seña cambió a verde» is wrong | señal / semáforo |
 
-## 프랑스어 (89)
+## 프랑스어 (89) — 고쳤다
 
 | 낱말 | 지금 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- |
@@ -288,7 +308,7 @@
 | `travel/running-across-borders` | qui franchit les frontières | «qui franchit les frontières» is a relative clause, not a lexical unit; both examples («une telle maison est qui franchit…») are ungrammatical | transfrontalier / international |
 
 
-## 첫째 예문을 다시 쓰다 더 나온 것 (2026-10-09, 51)
+## 첫째 예문을 다시 쓰다 더 나온 것 (2026-10-09, 51) — 고쳤다
 
 같은 세 언어의 첫째 예문 22,692줄을 다시 쓰며 짚였고, 위 표에 없는 것만 적는다. 첫째 예문은
 이 개념들만 손대지 않았다.
