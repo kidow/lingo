@@ -1,0 +1,7 @@
+# Batch402 · 秔9
+
+Native browser2 panels97/98 on2026-10-10: all9 domestic pens and81 progressive samples crosschecked with whole order, direction, cumulative and completed forms. Exact whole u79d4;3 declared records including exact u4ea2-02@2. Both2 whole variants inventoried. Domestic 亠 order requires raw7 before raw6; raw5 is a non-drawing separator. Final raw9/raw10 remain one original continuous horizontal-vertical-curved-bottom fold, preserving all original polygons and path continuity. Enlarged strokes8/9 at50/75/99/100%; stroke9 actual playback24→100%. No invented connector, trimming, reversal, splitting or transplant. 200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed8 engine, pinned archive,3 exact records and historical u4ea2-02@2 reproduced. Three mutation regression tests passed. Frozen production build and433 lib files/1821 tests passed on snapshot8af3b06c8b5cae3d87c39cd6a823eaebca87d8f9 with21 files and3 bit-identical exports. Native mobile430×932 panel99: intro auto/replay, writing auto/replay/reentry completed9; draw/undo/clear, fixed canvas/sheet, scroll0→0. No static overlay overlap;0 console errors. Private media RAM-only; own97/98/99 tabs and own servers cleaned.
+
+Applied5218/5978(87.3%),760 remain;特級725/1328(54.6%),603 remain;特II1059/1150(92.1%),91 remain. Held112 unchanged. Next葭13 exact whole u846d 3records0history. No push/deploy.
