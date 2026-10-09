@@ -1,0 +1,9 @@
+# 囍 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u56cd/u559c/u58f4-03/u53e3; declared records captured without latest substitution; exact historical u8207-03@2 retained; no literal aliases; GlyphWiki license@18; canonical source SHA256 af0f18a9a4f8a0ee05793b3448fe03a92eec2a6e3bf2470807c9cee1f760233b. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex in-app browser2 panels56/57 on2026-10-09: all24 domestic order/direction/cumulative/full form and216 progressive samples crosschecked. Three complete archived variants compared; selected complete u56cd with4 declared records,0 histories/aliases/missing. Rejected u56cd-k renders 丷 as verticals; selected whole u56cd preserves all original dot/falling pairs. Original28 raw/drawing primitives(Q4/C0) form24 pens24 masks8 curved masks. Reorder domestic7/8 and19/20 dot/falling pairs. Domestic5/11/17/23 retain exact continuous original L/L folds. Enlarged5/7/8/11/17/19/20/23 at50/75/99/100; actual pen23 24to100 passed. Catalog22 remains unchanged; explicitly reviewed dictionary playback24 variant. No direction reversal, terminal adaptation, new trajectory, connector, coordinate, contour, arbitrary split, radical transplant or crossvariant assembly. Normalize200to100 and polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/56cd.json.

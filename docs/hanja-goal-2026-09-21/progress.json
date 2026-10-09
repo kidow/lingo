@@ -1,41 +1,44 @@
 {
   "status": "active",
   "date": "2026-10-09",
-  "lastCompletedCommit": "49cbb735becf062b4bcc42bf65f70f6f159f2d6a",
+  "lastCompletedCommit": "c0ca37ce7e009e2d02f140b278c210c5ed648852",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): defer 欌 domestic grass stroke mismatch",
-    "parent": "49cbb735becf062b4bcc42bf65f70f6f159f2d6a"
+    "message": "feat(hanja): add reviewed 囍 24-stroke replay variant",
+    "parent": "c0ca37ce7e009e2d02f140b278c210c5ed648852"
   },
   "currentBatch": {
-    "batch": 380,
-    "directory": "docs/hanja-goal-glyphwiki-batch380-2026-10-09",
+    "batch": 381,
+    "directory": "docs/hanja-goal-glyphwiki-batch381-2026-10-09",
     "glyphs": [
-      "欌"
+      "囍"
     ],
-    "strokes": 22,
-    "status": "source-only-deferred-three-stroke-grass-vs-domestic-four",
+    "strokes": 24,
+    "catalogStrokes": 22,
+    "playbackStrokes": 24,
+    "status": "completed-native-source-build-regression-mobile-verified",
     "checks": {
-      "passed": true,
       "engineFiles": 8,
       "archiveVerified": true,
-      "providerRecords": 7,
+      "providerRecords": 4,
       "historicalVersions": 0,
-      "rawGroups": 24,
-      "drawingPrimitives": 25,
-      "quadratics": 7,
-      "wholeVariants": 2,
-      "domesticPensReviewed": 22,
-      "progressiveFramesApproved": 0,
-      "runtimeRegistered": 0,
-      "runtimeUnchanged": true,
+      "pens": 24,
+      "rawGroups": 28,
+      "drawingPrimitives": 28,
+      "masks": 24,
+      "curvedMasks": 8,
+      "progressiveNativeFrames": 216,
+      "isolatedBuildPassed": true,
+      "libTests": 1794,
+      "nativeMobilePassed": true,
+      "runtimeRegistered": 1,
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "date": "2026-10-09",
     "total": 5978,
-    "applied": 5208,
-    "remaining": 770,
+    "applied": 5209,
+    "remaining": 769,
     "percentage": 87.1,
     "grades": {
       "1급": {
@@ -118,9 +121,9 @@
       },
       "특급II": {
         "total": 1150,
-        "applied": 1051,
-        "remaining": 99,
-        "percentage": 91.4
+        "applied": 1052,
+        "remaining": 98,
+        "percentage": 91.5
       },
       "특급": {
         "total": 1328,
@@ -135,11 +138,11 @@
     }
   },
   "nextActions": [
-    "Recheck shared HEAD/index/runtime and pending --free before batch381.",
-    "Review 囍22 using exact whole u56cd-k and1 declared record; all domestic pens and progressive frames required.",
-    "Exclude source-only deferrals without new whole sources: 孼, 邈, 瀯, 瀷, 灐, 欌.",
-    "Never split, transplant, invent coordinates or substitute latest versions.",
-    "After native pass: engine/runtime guards, isolated build, regression/mobile, own commit and next candidate. Held112 unchanged; no push/deploy."
+    "Recheck shared HEAD/index/runtime and pending --free before batch382.",
+    "Review 頀23 using exact whole u9800-k and7 declared records;2 historical versions; all domestic pens and progressive frames required.",
+    "Never invent connectors or coordinates, transplant components, split arbitrarily or substitute latest versions.",
+    "After native pass: fixed engine/runtime guards, isolated production build, regression/mobile and own local commit; continue next candidate. Held112 unchanged; no push/deploy.",
+    "Excluded source-only deferrals with no new whole source: 孼, 邈, 瀯, 瀷, 灐, 欌."
   ],
   "held": [
     {
@@ -657,54 +660,86 @@
   "resources": {
     "nativeOwnTabsClosed": {
       "browser2": [
-        55
+        56,
+        57,
+        58
       ]
     },
     "viewportReset": true,
     "ownRamServersStopped": [
       {
-        "pid": 28850,
-        "port": 52830
+        "pid": 32328,
+        "port": 52831
+      },
+      {
+        "pid": 33075,
+        "port": 52831
+      },
+      {
+        "pid": 35453,
+        "port": 52831
+      },
+      {
+        "pid": 36012,
+        "port": 52832
+      },
+      {
+        "pid": 42861,
+        "port": 52833
       }
     ],
     "privateMediaSaved": false
   },
   "batchPaths": [
     "docs/hanja-goal-2026-09-21/progress.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/README.md",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/next.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/review.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/serve.py",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/sources.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/validation.json",
-    "docs/hanja-goal-glyphwiki-batch380-2026-10-09/verify.mjs"
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/README.md",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/next.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/primitive-reveal.mjs",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/review.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/serve.py",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/sources.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/terminal-method.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/validation.json",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch381-2026-10-09/whole-variant-inventory.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch381.test.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch381.ts",
+    "lib/hanja-stroke-special2-variants.test.ts",
+    "lib/hanja-stroke-variants.test.ts",
+    "lib/hanja-stroke-variants.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch381.json",
+    "public/hanja-strokes/glyphwiki/56cd.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-56cd.md"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u56cd",
-      "glyph": "囍",
-      "hun": "쌍희",
-      "eum": "희",
+      "id": "u9800",
+      "glyph": "頀",
+      "hun": "구할",
+      "eum": "호",
       "readingGrade": "특급II",
-      "radical": "口",
-      "strokes": 22,
-      "sourceRow": 5966,
-      "sourceHunEum": "쌍희(雙喜) 희"
+      "radical": "音",
+      "strokes": 23,
+      "sourceRow": 5687,
+      "sourceHunEum": "구할 호"
     },
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u56cd-k",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch380-2026-10-09/next-source-inventory.json",
-    "sourceSha256": "5f493ff0fa0288349c1f4f6b1b4ac07412a42b9abe45bed431121cdc70661c0b",
-    "providerRecords": 1,
-    "historicalVersions": 0,
+    "selectedRoot": "u9800-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch381-2026-10-09/next-source-inventory.json",
+    "sourceSha256": "3dd5ee99f531edd6e845688eb8e05bb3820f5838e138138e24fd9f156506b2f0",
+    "providerRecords": 7,
+    "historicalVersions": 2,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }
