@@ -1,0 +1,9 @@
+# 槩 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u69e9-ue0102/u65e3-jv/u7680/u65e1/u6728-04; declared records captured without latest substitution; 0 exact historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 29fb8c64eabe1d65ddc84e089bfd124b915e7a907e5d70e9064c81f1ad72f2b6. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native browser2 panels112/113 on2026-10-10: all15 domestic pens and135 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u69e9-ue0102 with5 declared records and0 historical versions; all5 complete variants inventoried. Default/ue0100/ue0101 and ue0103 fail domestic left6/7 curved/folded form; selected whole ue0102 retains the correct left and right original trajectories without transplant. Original domestic order matches. Continuous raw2/3 and9/10 retained as original single pens3/9 with all whole polygons; raw7 and12 preserve original quadratic folding/hooks. Enlarged folds3/7/9/11 at50/75/99/100%; actual strokes7/11 playback observed. No connector, coordinate change, trimming, reversal, split or radical transplant. 200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/69e9.json.
