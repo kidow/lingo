@@ -1,0 +1,9 @@
+# 蘗 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u8617-k/koseki-369260/ufa5e-03/u8279-k03/u6a97@1; declared records captured without latest substitution; exact historical u6a97@1 retained; no literal aliases; GlyphWiki license@18; canonical source SHA256 ad25416d926028ea448dd4e8d6b02ec11fe554df1dfc210152508ade2120c20a. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex in-app browser2 panels41/42 on2026-10-09: all21 domestic order/direction/cumulative/full form and189 progressive samples crosschecked. Exact whole u8617-k and5 declared records retained, including exact historical u6a97@1;0 aliases and no latest substitution. Original26 raw commands include3 non-drawing source records(8/13/21 zero-based);24 drawing primitives(Q5/C0) form21 pens21 masks7 curved masks. Domestic3/4,5-7,11/12,16/17 use reviewed source ordering. Domestic5/9 continuous original L/L folds and domestic7 continuous original L/Q retained. Enlarged5/9 at50/75/99/100; actual pen9 24to100 passed. No terminal adaptation, new trajectory, connector, coordinate, contour, arbitrary split, radical transplant or crossvariant assembly. Normalize200to100 and polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/8617.json.

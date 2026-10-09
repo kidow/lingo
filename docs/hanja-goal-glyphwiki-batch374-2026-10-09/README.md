@@ -4,4 +4,4 @@ Native Codex in-app browser2 panels38/39 on2026-10-09: all21 domestic order/dire
 
 Fixed8 engine and pinned archive reproduced.3 runtime/mutation guards passed. Production build and419 lib files/1,779 tests passed on the same frozen snapshot a30fbe0f645c541d066f0336ea866005ec2a3368;21 frozen files and3 exports matched. Mobile430×932 on the same snapshot: intro auto17→21/replay1→21, writing auto/replay/reentry1→21, draw/undo/clear, fixed canvas/sheet and scroll0→0;0 errors,0 static overlays,1 animated SVG. Private media RAM-only;38/39/40 panels and3 servers cleaned.
 
-Applied5,204/5,978(87.0%),774 remaining.特II1,047/1,150(91.0%),103 remaining. Held112 unchanged. Next:蘗21, exact whole u8617-k,5 declared records;1 exact historical version; native domestic/progressive review pending. No push/deploy.
+Applied5,204/5,978(87.1%),774 remaining.特II1,047/1,150(91.0%),103 remaining. Held112 unchanged. Next:蘗21, exact whole u8617-k,5 declared records;1 exact historical version; native domestic/progressive review pending. No push/deploy.
