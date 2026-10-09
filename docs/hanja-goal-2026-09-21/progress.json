@@ -1,29 +1,29 @@
 {
   "status": "active",
   "date": "2026-10-09",
-  "lastCompletedCommit": "e3ae5aace385d5ad193773d338b88e39c7331fdd",
+  "lastCompletedCommit": "b6bd4eb4065c138e7943ee3d8533342f2f95d618",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): defer 濩 discontinuous water stroke",
-    "parent": "e3ae5aace385d5ad193773d338b88e39c7331fdd"
+    "message": "docs(hanja): defer 譁 disconnected body horizontal",
+    "parent": "b6bd4eb4065c138e7943ee3d8533342f2f95d618"
   },
   "currentBatch": {
-    "batch": 384,
-    "directory": "docs/hanja-goal-glyphwiki-batch384-2026-10-09",
+    "batch": 385,
+    "directory": "docs/hanja-goal-glyphwiki-batch385-2026-10-09",
     "glyphs": [
-      "濩"
+      "譁"
     ],
-    "strokes": 17,
-    "status": "source-only-deferred-discontinuous-water-third-stroke",
+    "strokes": 18,
+    "status": "source-only-deferred-discontinuous-body-horizontal",
     "checks": {
       "passed": true,
       "engineFiles": 8,
       "archiveVerified": true,
-      "providerRecords": 7,
+      "providerRecords": 5,
       "historicalVersions": 2,
-      "rawGroups": 19,
-      "drawingPrimitives": 19,
-      "quadratics": 8,
-      "wholeVariants": 5,
+      "rawGroups": 20,
+      "drawingPrimitives": 20,
+      "quadratics": 0,
+      "wholeVariants": 7,
       "domesticPensReviewed": 22,
       "progressiveFramesApproved": 0,
       "runtimeRegistered": 0,
@@ -135,9 +135,9 @@
     }
   },
   "nextActions": [
-    "Recheck shared HEAD/index/runtime and pending --free before batch385.",
-    "Review 譁18 using exact whole u8b41-k and6 declared records with0 historical versions; all domestic pens and progressive frames required.",
-    "Exclude source-only deferrals without new whole sources: 孼, 邈, 瀯, 瀷, 灐, 欌, 灝, 濩.",
+    "Recheck shared HEAD/index/runtime and pending --free before batch386.",
+    "Review 潢15 using exact whole u6f62-k and4 declared records with0 historical versions; all domestic pens and progressive frames required.",
+    "Exclude source-only deferrals without new whole sources: 孼, 邈, 瀯, 瀷, 灐, 欌, 灝, 濩, 譁.",
     "Never split, transplant, invent coordinates or substitute latest versions.",
     "After native pass: engine/runtime guards, isolated build, regression/mobile, own commit and next candidate. Held112 unchanged; no push/deploy."
   ],
@@ -657,52 +657,56 @@
   "resources": {
     "nativeOwnTabsClosed": {
       "browser2": [
-        63
+        64
       ]
     },
     "viewportReset": true,
     "ownRamServersStopped": [
       {
-        "pid": 62337,
-        "port": 52838
+        "pid": 65733,
+        "port": 52839
+      },
+      {
+        "pid": 66280,
+        "port": 52839
       }
     ],
     "privateMediaSaved": false
   },
   "batchPaths": [
     "docs/hanja-goal-2026-09-21/progress.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/README.md",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/next.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/review.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/serve.py",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/sources.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/validation.json",
-    "docs/hanja-goal-glyphwiki-batch384-2026-10-09/verify.mjs"
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/README.md",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/next.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/review.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/serve.py",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/sources.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/validation.json",
+    "docs/hanja-goal-glyphwiki-batch385-2026-10-09/verify.mjs"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u8b41",
-      "glyph": "譁",
-      "hun": "지껄일",
-      "eum": "화",
+      "id": "u6f62",
+      "glyph": "潢",
+      "hun": "웅덩이",
+      "eum": "황",
       "readingGrade": "특급II",
-      "radical": "言",
-      "strokes": 18,
-      "sourceRow": 5740,
-      "sourceHunEum": "지껄일 화",
+      "radical": "水",
+      "strokes": 15,
+      "sourceRow": 5796,
+      "sourceHunEum": "웅덩이 황",
       "example": {
-        "word": "譁然",
-        "reading": "화연",
+        "word": "銀潢",
+        "reading": "은황",
         "source": {
           "dictionary": "표준국어대사전",
-          "targetCode": 373557,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=373557&searchKeywordTo=3",
+          "targetCode": 260217,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=260217&searchKeywordTo=3",
           "verifiedAt": "2026-09-17"
         }
       }
@@ -710,10 +714,10 @@
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u8b41-k",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch384-2026-10-09/next-source-inventory.json",
-    "sourceSha256": "a3d91f6efbf07303848a43e0f1d453790afeecbf77d6db3848f221ede2e90635",
-    "providerRecords": 6,
+    "selectedRoot": "u6f62-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch385-2026-10-09/next-source-inventory.json",
+    "sourceSha256": "c2a41e06db756041fbc92043fc135db1ee842500f728ba55f91e646a81a03e1b",
+    "providerRecords": 4,
     "historicalVersions": 0,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
