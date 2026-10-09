@@ -1,0 +1,9 @@
+# 蘂 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u8602-k/koseki-368330/ufa5e-03/u8279-k03/u6a64/u60e2/u5fc3-07/u6728-04; declared records captured without latest substitution; no historical versions or literal aliases; GlyphWiki license@18; canonical source SHA256 a11c88ae4238fba29c27109ec22d51ebd9253fea5fdf8955ee972938a8b088fb. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex in-app browser2 panels13/14 on2026-10-09: all20 domestic order/direction/cumulative/full form and180 progressive samples crosschecked. Exact whole u8602-k and8 declared records retained;0 histories/aliases and no latest substitution. Original20 raw commands and26 drawing primitives(Q14/C0) form20 pens23 masks14 curved masks. Domestic3/4 use original groups3/2. Domestic6/10/14 share exact continuous original L/Q/L centerlines; their independently emitted original upward terminal polygons use existing upward rectangular clips. Enlarged6/10/14 at75/88/99/100 and actual22/24/24to100 replay passed. No new trajectory, connector, coordinate, contour, arbitrary split, radical transplant or crossvariant assembly. Normalize200to100 and polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/8602.json.
