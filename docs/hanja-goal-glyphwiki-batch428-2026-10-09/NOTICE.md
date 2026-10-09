@@ -1,0 +1,9 @@
+# 蒹 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u84b9-ue0102/koseki-357000/ufa5e-03/u8279-k03/koseki-017380/u517c-ue0105; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 987a3128e6c590d1a01aa8d0e26f36714ccb8c25176c5c04136ae29c8774c565. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native browser2 panels158/161 on2026-10-10: all14 domestic pens at390px and126 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Select exact complete u84b9-ue0102 with6 declared records and0 historical versions; all five complete wholes inventoried. Default/0100/0101/0103 three-part 艹 differs from domestic four-part 艹; selected complete0102 contains four original 艹 lines. Exchange whole source pens3/4 and move original right upper-left-falling raw14 immediately after raw4 to match domestic 兼. Original horizontal/down fold raw6/7 is exactly continuous. Enlarged pens8/13 at50/75/99/100%; actual pens8/13 observed25/25to100. No connector, coordinate change, trimming, reversal, split or radical transplant.200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/84b9.json.

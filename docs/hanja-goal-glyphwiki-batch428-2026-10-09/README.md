@@ -1,0 +1,7 @@
+# Batch428 · 蒹14
+
+Native browser2 panels158/161 on2026-10-10: all14 domestic pens at390px and126 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Select exact complete u84b9-ue0102 with6 declared records and0 historical versions; all five complete wholes inventoried. Default/0100/0101/0103 three-part 艹 differs from domestic four-part 艹; selected complete0102 contains four original 艹 lines. Exchange whole source pens3/4 and move original right upper-left-falling raw14 immediately after raw4 to match domestic 兼. Original horizontal/down fold raw6/7 is exactly continuous. Enlarged pens8/13 at50/75/99/100%; actual pens8/13 observed25/25to100. No connector, coordinate change, trimming, reversal, split or radical transplant.200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Frozen production build 7aff98c90150be808f811bd3422e7108f5c08a0d and451 lib files/1875 tests PASS. Native mobile panel163430×932 intro/writing auto/replay/reentry1→14; draw/undo/clear; fixed canvas and sheet bounds/scroll0 during drag; touch:none/noDrag and no static overlay; errors0. Own three working tabs/four RAM servers cleaned; prior connection-error tab160 could not be closed due URL policy and was left untouched.
+
+Coverage5236/5978(87.6%),742remaining; 特級743/1328(55.9%),585remaining. Held112 unchanged. Next 牼11: both complete wholes have discontinuous 巛 bends; all domestic pens and conservative source-only deferral review pending. No push/deploy.
