@@ -1,0 +1,7 @@
+# Batch409 · 鏗19
+
+Native browser2 panels118/119 on2026-10-10: all19 domestic pens and171 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u93d7 with7 declared records and2 exact historical versions u81e4-03-var-001@1/u81e3@3; all2 complete variants inventoried. Original domestic 金/臣/又/土 order matches after whole raw permutation; original 臣 raw9/10/11+12/13/14/8+15 and 又 raw16+17/18 preserve continuous folds. All original whole polygons and trajectories retained. Enlarged folds11/14/15 at50/75/99/100%; actual strokes15/16 playback observed25/23to100. No connector, coordinate change, trimming, reversal, split or radical transplant. 200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed8 engine, pinned archive and7 exact records/2 historical versions reproduced. Three mutation regression tests passed. Frozen production build and440 lib files/1842 tests passed on snapshote72e5eb373f558d4e601de76065b66d198fa8ece with21 files and3 bit-identical exports. Native mobile430×932 panel120: intro auto/replay, writing auto/replay/reentry completed19; draw/undo/clear, fixed canvas/sheet, scroll0→0. No static overlay overlap;0 console errors. Private media RAM-only; own118/119/120 tabs and own servers cleaned.
+
+Applied5225/5978(87.4%),753 remain;特級732/1328(55.1%),596 remain;特II1059/1150(92.1%),91 remain. Held112 unchanged. Next賡15 exact whole u8ce1 3records0history. No push/deploy.
