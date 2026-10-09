@@ -1,0 +1,9 @@
+# 轝 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u8f5d-k/u8f5d/u8207-03@2/cdp-8ba8-var-008/cdp-8ba8-05-var-002/u8eca-14-var-001/u65e5; declared records captured without latest substitution; exact historical u8207-03@2 retained; no literal aliases; GlyphWiki license@18; canonical source SHA256 1044faabcbe365b6e0c01adbfe3df34a5ba8bfe254389faf5a89b2740adc7ea3. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex in-app browser2 panels47/49 on2026-10-09: all21 domestic order/direction/cumulative/full form and189 progressive samples crosschecked. Exact complete archived u8f5d-k with7 declared records and exact historical u8207-03@2 retained;0 aliases and no latest substitution. Original24 raw commands and24 drawing primitives(Q3/C0) form21 pens21 masks6 curved masks. Domestic5-14 use reviewed source ordering for the upper 與 component. Domestic7/9/17 retain exact continuous original L/L folds. Enlarged6/7/9/17/21 at50/75/99/100; actual pen17 25to100 passed. No direction reversal, terminal adaptation, new trajectory, connector, coordinate, contour, arbitrary split, radical transplant or crossvariant assembly. Normalize200to100 and polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/8f5d.json.
