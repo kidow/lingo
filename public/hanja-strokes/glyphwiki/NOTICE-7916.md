@@ -1,0 +1,9 @@
+# 礖 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u7916-k/u7916/u77f3-01/u8207@4; declared records captured from the pinned archive without latest substitution; exact historical u8207@4 retained; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 99ed5ae45562df48d9ab16419955804be886db17d1afea735900d1c0f722e6f8. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser panels8/9 on2026-10-09: all19 domestic order/direction/cumulative/full form and171 progressive samples crosschecked. Exact whole u7916-k and4 declared records retained, including exact historical u8207@4; no latest substitution or aliases. Original23 raw groups including non-drawing group6 retained; all22 drawing primitives(Q4/C0) form19 pens19 masks7 curved masks. Domestic4/12/14 L/L use exact continuous original centerlines; enlarged4/11/12/14/15/16 at99/100 and actual23to100 replay passed. Domestic10/11 and12/13 source groups reordered; domestic15/16 original horizontal outlines reveal right-to-left as observed. Non-drawing original0:0:0:0 emits no polygons and is excluded only from playback mapping. No new trajectory, connector, coordinates, contour, arbitrary split, radical transplant or crossvariant assembly. Normalize200to100/polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/7916.json.
