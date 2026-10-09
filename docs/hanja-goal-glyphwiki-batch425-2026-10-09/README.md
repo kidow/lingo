@@ -1,0 +1,7 @@
+# Batch425 · 袺11
+
+Native browser2 panels150/151 on2026-10-10: all11 domestic pens at390px and99 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u88ba with5 declared records and0 historical versions; both whole variants inventoried. Original whole 衤/吉 order matches domestic pens without permutation. Original horizontal-to-curved-left raw1/2 and horizontal-to-down raw10/11 remain continuous pens2/10; raw4/5 retain original left-falling and right-point curves in pens4/5. Enlarged pens2/5/10 at50/75/99/100%; actual pens2/10 playback observed25/26to100. No connector, coordinate change, trimming, reversal, split or radical transplant.200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed8 engine, pinned archive5records0history, raw13/draw13,11pens/masks and4curves, negative mutation probes and own3tests passed. Frozen21-file snapshot 660eb6dd8d745ddd1b60ba4f7471858764f8c838 built successfully; all448 lib files /1866 tests passed. Native browser2 panel152430×932 confirmed intro and writing auto/replay/reentry1→11, drawundo0→1→0, clear0→1→2→0; fresh canvas drag preserved sheet bounds and scroll0. No overlapping static image or console errors. Private media RAM-only. Own150/151/152 and four RAM servers cleaned. No push/deploy.
+
+Applied5233/5978(87.5%),745remain;特級740/1328(55.7%),588remain. Held112 unchanged. Next闋17 exact wholeu95cb3records0history.
