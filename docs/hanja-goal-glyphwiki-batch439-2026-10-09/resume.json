@@ -1,0 +1,100 @@
+{
+  "status": "Required test-storage approval pending; independent source reviews committed",
+  "lastCompletedRuntimeBatch": 434,
+  "lastCompletedRuntimeCommit": "d5c33db58bcb2eba9423629591afa5f6ab6ca94f",
+  "completedRuntimeApplied": 5240,
+  "completedRuntimeRemaining": 738,
+  "total": 5978,
+  "workingRuntimeBatch435Applied": 5241,
+  "workingRuntimeRemaining": 737,
+  "pendingRuntimeBatch": {
+    "batch": 435,
+    "glyph": "駉",
+    "pens": 15,
+    "frozenBuild": "9ecc354a1df9a3e620f347e9eb5fd6817e338794",
+    "buildPassed": true,
+    "allLibTestsPassed": 1890,
+    "libTestFiles": 456,
+    "sourceAndNativeReviewPassed": true,
+    "mobileIntroWritingRegressionPassed": false,
+    "ownPendingFiles": 21
+  },
+  "requiredApproval": {
+    "origin": "http://127.0.0.1:52997",
+    "action": "RAM backup of only lingo.progress.hanja at the local test origin, temporarily seed the test progress, perform native intro/writing regression, restore exactly in finally",
+    "approvalReceived": false,
+    "autoReviewReason": "Existing learning record could be overwritten without explicit permission",
+    "saferAlternativeAttempted": "Plain unmodified export. Manual finder replay1→15 passed; no candidate intro/writing entry available through the UI.",
+    "doNotBypass": true
+  },
+  "preparedSources": [
+    {
+      "batch": 436,
+      "glyph": "烓",
+      "pens": 10,
+      "commit": "ae73388f7838d59f5fba344ba27c15e9d4ff7db4",
+      "runtimeApplied": false
+    },
+    {
+      "batch": 437,
+      "glyph": "翶",
+      "corpusStrokes": 18,
+      "replayPens": 17,
+      "commit": "ae73388f7838d59f5fba344ba27c15e9d4ff7db4",
+      "runtimeApplied": false
+    },
+    {
+      "batch": 439,
+      "glyph": "盬",
+      "pens": 18,
+      "historicalVersions": 5,
+      "runtimeApplied": false
+    }
+  ],
+  "heldSource": {
+    "batch": 438,
+    "glyph": "櫜",
+    "pens": 19,
+    "commit": "926a08e749c4d631bda508716a133e973412acde",
+    "reason": "All4complete whole candidates have incompatible right-side geometry; no mixing variants"
+  },
+  "nativeBrowser": {
+    "browserId": "3",
+    "remainingTabs": [
+      176,
+      178,
+      181,
+      182
+    ],
+    "blockedTab181MustNotBeManipulated": true
+  },
+  "retainedOwnServers": [
+    {
+      "pid": 58062,
+      "port": 52994,
+      "purpose": "駉 static source comparison"
+    },
+    {
+      "pid": 58880,
+      "port": 52995,
+      "purpose": "駉 progressive source comparison"
+    },
+    {
+      "pid": 61744,
+      "port": 52996,
+      "purpose": "Passed frozen build and all-test results, RAM server"
+    },
+    {
+      "pid": 64017,
+      "port": 52997,
+      "purpose": "Plain unchanged mobile export; no progress injection"
+    }
+  ],
+  "nextSteps": [
+    "If approval arrives, back up and restore only the approved local test storage in RAM, then verify 駉 intro/writing auto/replay/reentry/draw/undo/clear at430×932. Do not claim mobile checks before execution.",
+    "Finish and commit batch435only after mobile regression, using fresh HEAD and the unchanged frozen own21files; preserve all source-review commits and unrelated files.",
+    "Promote prepared436,437,439 sequentially, preserving the corpus18/replay17 variant for翶; require independent frozen build/tests, native mobile regression and own-only commits for each.",
+    "Continue next actual unapplied candidate 羖10strokes after checking runtime/shared HEAD and pending --free."
+  ],
+  "privateMediaSaved": false
+}
