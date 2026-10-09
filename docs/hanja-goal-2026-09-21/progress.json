@@ -1,32 +1,32 @@
 {
   "status": "active",
   "date": "2026-10-10",
-  "lastCompletedCommit": "20c44cb47c258aae596d0413787d5146d1008833",
+  "lastCompletedCommit": "c9ca0aaa8eb0d68ffbb35539fb79e7e3cbc54eeb",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 雋 stroke replay",
-    "parent": "20c44cb47c258aae596d0413787d5146d1008833"
+    "message": "feat(hanja): add reviewed 鐫 stroke replay",
+    "parent": "c9ca0aaa8eb0d68ffbb35539fb79e7e3cbc54eeb"
   },
   "currentBatch": {
-    "batch": 397,
-    "directory": "docs/hanja-goal-glyphwiki-batch397-2026-10-09",
+    "batch": 398,
+    "directory": "docs/hanja-goal-glyphwiki-batch398-2026-10-09",
     "glyphs": [
-      "雋"
+      "鐫"
     ],
-    "strokes": 13,
+    "strokes": 21,
     "status": "completed-native-source-build-regression-mobile-verified",
     "checks": {
       "engineFiles": 8,
       "archiveVerified": true,
-      "providerRecords": 4,
+      "providerRecords": 6,
       "historicalVersions": 1,
-      "pens": 13,
-      "rawGroups": 15,
-      "drawingPrimitives": 16,
-      "masks": 13,
-      "curvedMasks": 4,
-      "progressiveNativeFrames": 117,
+      "pens": 21,
+      "rawGroups": 23,
+      "drawingPrimitives": 24,
+      "masks": 21,
+      "curvedMasks": 9,
+      "progressiveNativeFrames": 189,
       "isolatedBuildPassed": true,
-      "libTests": 1812,
+      "libTests": 1815,
       "nativeMobilePassed": true,
       "runtimeRegistered": 1,
       "privateMediaSaved": false
@@ -35,9 +35,9 @@
   "workingTreeCoverage": {
     "date": "2026-10-10",
     "total": 5978,
-    "applied": 5215,
-    "remaining": 763,
-    "percentage": 87.2,
+    "applied": 5216,
+    "remaining": 762,
+    "percentage": 87.3,
     "grades": {
       "1급": {
         "total": 1145,
@@ -119,9 +119,9 @@
       },
       "특급II": {
         "total": 1150,
-        "applied": 1058,
-        "remaining": 92,
-        "percentage": 92.0
+        "applied": 1059,
+        "remaining": 91,
+        "percentage": 92.1
       },
       "특급": {
         "total": 1328,
@@ -136,8 +136,9 @@
     }
   },
   "nextActions": [
-    "Recheck shared HEAD/index/runtime and pending --free before batch398.",
-    "Review 鐫21 exact whole u942b-k6 records and1 exact historical version, all domestic pens and progressive frames.",
+    "Recheck shared HEAD/index/runtime and pending --free before batch399.",
+    "Correct the single 栯 provenance range from24 to10; preserve original geometry, seal and negative guard; include in the next frozen verification.",
+    "Review 縯17 exact whole u7e2f-k6 records with no historical version, all domestic pens and progressive frames.",
     "No invented connector, coordinate change, split, transplant or latest version substitution.",
     "After native pass: fixed engine/runtime guards, frozen build/tests/mobile, own local commit and immediately next candidate.",
     "Exclude previously deferred complete wholes without new source; held112 unchanged; no push/deploy."
@@ -657,88 +658,89 @@
   ],
   "resources": {
     "nativeTabsClosed": [
-      85,
-      86,
-      87
+      89,
+      90,
+      91
     ],
     "viewportReset": true,
     "ownServersStopped": [
       {
-        "pid": 39343,
-        "port": 52867
+        "pid": 46423,
+        "port": 52871
       },
       {
-        "pid": 39711,
-        "port": 52868
+        "pid": 46842,
+        "port": 52872
       },
       {
-        "pid": 43215,
-        "port": 52869
+        "pid": 52862,
+        "port": 52873
       },
       {
-        "pid": 44228,
-        "port": 52870
+        "pid": 53210,
+        "port": 52874
       }
     ],
-    "otherTabsServersUntouched": true
+    "otherTabsServersUntouched": true,
+    "failedOwnTab88": "Policy-blocked error page left untouched; subsequent source verification in89."
   },
   "batchPaths": [
     "docs/hanja-goal-2026-09-21/progress.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/README.md",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/next.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/serve.py",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/sources.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/terminal-method.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/validation.json",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch397-2026-10-09/whole-variant-inventory.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch397.test.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch397.ts",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/README.md",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/next.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/serve.py",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/sources.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/terminal-method.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/validation.json",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch398-2026-10-09/whole-variant-inventory.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch398.test.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch398.ts",
     "lib/hanja-stroke-textbook.test.ts",
     "lib/hanja-strokes.ts",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch397.json",
-    "public/hanja-strokes/glyphwiki/96cb.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-96cb.md"
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch398.json",
+    "public/hanja-strokes/glyphwiki/942b.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-942b.md"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u942b",
-      "glyph": "鐫",
-      "hun": "새길",
-      "eum": "전",
+      "id": "u7e2f",
+      "glyph": "縯",
+      "hun": "길",
+      "eum": "연",
       "readingGrade": "특급II",
-      "radical": "金",
-      "strokes": 21,
-      "sourceRow": 4170,
-      "sourceHunEum": "새길 전",
-      "example": {
-        "word": "彫鐫",
-        "reading": "조전",
-        "source": {
-          "dictionary": "표준국어대사전",
-          "targetCode": 291851,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=291851&searchKeywordTo=3",
-          "verifiedAt": "2026-09-17"
+      "radical": "糸",
+      "strokes": 17,
+      "readings": [
+        {
+          "hun": "길",
+          "eum": "연"
+        },
+        {
+          "hun": "당길",
+          "eum": "인"
         }
-      }
+      ],
+      "sourceRow": 3259,
+      "sourceHunEum": "길 연 | 당길 인"
     },
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u942b-k",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch397-2026-10-09/next-source-inventory.json",
-    "sourceSha256": "bce2477876ed2af0a3cf9dbdec1c5bea8b6608eaedf57fb39efe1e5964c5ff1e",
+    "selectedRoot": "u7e2f-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch398-2026-10-09/next-source-inventory.json",
+    "sourceSha256": "ce68653cc184b1d230fc002e667d441cb5aa4224fe575a7d701438e27cbcd663",
     "providerRecords": 6,
-    "historicalVersions": 1,
+    "historicalVersions": 0,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }
