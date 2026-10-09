@@ -1,0 +1,7 @@
+# Batch404 · 檟17
+
+Native browser2 panels103/104 on2026-10-10: all17 domestic pens and153 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u6a9f with5 declared records including exact u8cc8@7/u8980-03@2; both2 complete variants inventoried. Domestic original order matches, including 覀 and 貝. Continuous horizontal/vertical original raw6/7 and12/13 remain single pens7/12, all original whole polygons retained. Enlarged folds7/12 at50/75/99/100%; final17 actual playback24→100%. No connector, coordinate change, trimming, reversal, split or radical transplant. 200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed8 engine, pinned archive,5 exact records and exact u8cc8@7/u8980-03@2 reproduced. Three mutation regression tests passed. Frozen production build and435 lib files/1827 tests passed on snapshotc7757dcdcb0fe90ef0924e837d2d327b0467ffb6 with21 files and3 bit-identical exports. Native mobile430×932 panel105: intro auto/replay, writing auto/replay/reentry completed17; draw/undo/clear, fixed canvas/sheet, scroll0→0. No static overlay overlap;0 console errors. Private media RAM-only; own103/104/105 tabs and own servers cleaned. Corrected aggregate count test to reference401/402 once each instead of extra398 references; runtime coverage unchanged by this test-only repair.
+
+Applied5220/5978(87.3%),758 remain;特級727/1328(54.7%),601 remain;特II1059/1150(92.1%),91 remain. Held112 unchanged. Next瞯17 exact whole u77af 6records2history. No push/deploy.
