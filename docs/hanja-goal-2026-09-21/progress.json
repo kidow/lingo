@@ -1,41 +1,42 @@
 {
   "status": "active",
   "date": "2026-10-09",
-  "lastCompletedCommit": "53ad16418ff2ab31dd6f1ac50b80fd5cb583852f",
+  "lastCompletedCommit": "16b7536f6f5d10d3b5ac37a0522e5582f4973438",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): defer 灐 original water trajectory gap",
-    "parent": "53ad16418ff2ab31dd6f1ac50b80fd5cb583852f"
+    "message": "feat(hanja): add reviewed 瓘 stroke replay",
+    "parent": "16b7536f6f5d10d3b5ac37a0522e5582f4973438"
   },
   "currentBatch": {
-    "batch": 378,
-    "directory": "docs/hanja-goal-glyphwiki-batch378-2026-10-09",
+    "batch": 379,
+    "directory": "docs/hanja-goal-glyphwiki-batch379-2026-10-09",
     "glyphs": [
-      "灐"
+      "瓘"
     ],
-    "strokes": 21,
-    "status": "source-only-deferred-original-water-trajectory-gap",
+    "strokes": 22,
+    "status": "completed-native-source-build-regression-mobile-verified",
     "checks": {
-      "passed": true,
       "engineFiles": 8,
       "archiveVerified": true,
       "providerRecords": 8,
-      "historicalVersions": 4,
+      "historicalVersions": 1,
+      "pens": 22,
       "rawGroups": 24,
-      "drawingPrimitives": 23,
-      "quadratics": 18,
-      "wholeVariants": 2,
-      "domesticPensReviewed": 3,
-      "progressiveFramesApproved": 0,
-      "runtimeRegistered": 0,
-      "runtimeUnchanged": true,
+      "drawingPrimitives": 24,
+      "masks": 22,
+      "curvedMasks": 5,
+      "progressiveNativeFrames": 198,
+      "isolatedBuildPassed": true,
+      "libTests": 1791,
+      "nativeMobilePassed": true,
+      "runtimeRegistered": 1,
       "privateMediaSaved": false
     }
   },
   "workingTreeCoverage": {
     "date": "2026-10-09",
     "total": 5978,
-    "applied": 5207,
-    "remaining": 771,
+    "applied": 5208,
+    "remaining": 770,
     "percentage": 87.1,
     "grades": {
       "1급": {
@@ -118,9 +119,9 @@
       },
       "특급II": {
         "total": 1150,
-        "applied": 1050,
-        "remaining": 100,
-        "percentage": 91.3
+        "applied": 1051,
+        "remaining": 99,
+        "percentage": 91.4
       },
       "특급": {
         "total": 1328,
@@ -135,11 +136,11 @@
     }
   },
   "nextActions": [
-    "Recheck shared HEAD/index/runtime and pending --free before batch379.",
-    "Review 瓘22 using captured exact whole u74d8-k and8 records; native domestic and198 progressive samples required.",
-    "灐 deferred: both pinned whole names share a lower-water original centerline gap greater than34. Only new whole licensed evidence can unlock; no invented bridge or transplant.",
-    "Keep source-only deferrals 孼/邈/瀯/瀷/灐 excluded without new evidence; held112 unchanged.",
-    "After native pass: fixed engine/runtime guards, isolated production build/regression/mobile and own-only local commit; continue. No push/deploy."
+    "Recheck shared HEAD/index/runtime and pending --free before batch380.",
+    "Review 欌22 using exact whole u6b0c-k and7 declared records;0 historical versions; all domestic pens and progressive frames required.",
+    "Never invent connectors or coordinates, transplant components, split arbitrarily or substitute latest versions.",
+    "After native pass: fixed engine/runtime guards, isolated production build, regression/mobile and own local commit; continue next candidate. Held112 unchanged; no push/deploy.",
+    "Excluded source-only deferrals with no new whole source: 孼, 邈, 瀯, 瀷, 灐."
   ],
   "held": [
     {
@@ -657,52 +658,86 @@
   "resources": {
     "nativeOwnTabsClosed": {
       "browser2": [
-        51
+        52,
+        53,
+        54
       ]
     },
     "viewportReset": true,
     "ownRamServersStopped": [
       {
-        "pid": 9974,
-        "port": 52826
+        "pid": 12140,
+        "port": 52827
+      },
+      {
+        "pid": 14151,
+        "port": 52827
+      },
+      {
+        "pid": 14196,
+        "port": 52828
+      },
+      {
+        "pid": 14895,
+        "port": 52827
+      },
+      {
+        "pid": 14984,
+        "port": 52828
+      },
+      {
+        "pid": 23351,
+        "port": 52829
       }
     ],
     "privateMediaSaved": false
   },
   "batchPaths": [
     "docs/hanja-goal-2026-09-21/progress.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/README.md",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/next.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/review.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/serve.py",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/sources.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/validation.json",
-    "docs/hanja-goal-glyphwiki-batch378-2026-10-09/verify.mjs"
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/README.md",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/next.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/primitive-reveal.mjs",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/progressive-review.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/serve.py",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/sources.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/terminal-method.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/validation.json",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch379-2026-10-09/whole-variant-inventory.json",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch379.test.ts",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch379.ts",
+    "lib/hanja-stroke-textbook.test.ts",
+    "lib/hanja-strokes.ts",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch379.json",
+    "public/hanja-strokes/glyphwiki/74d8.json",
+    "public/hanja-strokes/glyphwiki/NOTICE-74d8.md"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u74d8",
-      "glyph": "瓘",
-      "hun": "옥",
-      "eum": "관",
+      "id": "u6b0c",
+      "glyph": "欌",
+      "hun": "장롱",
+      "eum": "장",
       "readingGrade": "특급II",
-      "radical": "玉",
+      "radical": "木",
       "strokes": 22,
-      "sourceRow": 510,
-      "sourceHunEum": "옥 관",
+      "sourceRow": 4031,
+      "sourceHunEum": "장롱 장:",
       "example": {
-        "word": "尹瓘",
-        "reading": "윤관",
+        "word": "冊欌",
+        "reading": "책장",
         "source": {
           "dictionary": "표준국어대사전",
-          "targetCode": 468536,
-          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=468536&searchKeywordTo=3",
+          "targetCode": 325816,
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=325816&searchKeywordTo=3",
           "verifiedAt": "2026-09-17"
         }
       }
@@ -710,11 +745,11 @@
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u74d8-k",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch378-2026-10-09/next-source-inventory.json",
-    "sourceSha256": "95362b7d26486a9f6600efb2ed42efead59af9d5a8c8bcfb2c375f639d70135a",
-    "providerRecords": 8,
-    "historicalVersions": 1,
+    "selectedRoot": "u6b0c-k",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch379-2026-10-09/next-source-inventory.json",
+    "sourceSha256": "9797555f2bd1dae8466d57646c21f0f36bab931663675c85799997e7a3bc35d7",
+    "providerRecords": 7,
+    "historicalVersions": 0,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
   }
