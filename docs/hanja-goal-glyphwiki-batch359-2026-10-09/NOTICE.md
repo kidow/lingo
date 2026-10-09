@@ -1,0 +1,9 @@
+# 瓆 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u74c6-k/u74c6/u738b-01/u8cea/u8c9d-04; declared records captured from the pinned archive without latest substitution; no historical versions or literal aliases; GlyphWiki license@18; canonical source SHA256 d363a8451e16608d31c138cd4354fc9e5ca8b7cf484b2d2b87171e9f25f0a1f7. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser panels5/6 on2026-10-09: all19 domestic order/direction/cumulative/full form and171 progressive samples crosschecked. Exact whole u74c6-k and5 declared records retained, no historical versions or literal aliases. Original21 raw groups including non-drawing group4 (zero-based) retained; all22 drawing primitives(Q7/C0) form19 pens19 masks8 curved masks. Domestic6/10 L/Q and14 L/L use exact continuous original centerlines; enlarged99/100 and actual24to100 replay passed. Wang domesticorder raw0/2/1/3 confirmed. Non-drawing original0:0:0:0 emits no polygons and is excluded only from playback mapping. No new trajectory, connector, coordinates, contour, arbitrary split, radical transplant or crossvariant assembly. Normalize200to100/polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/74c6.json.

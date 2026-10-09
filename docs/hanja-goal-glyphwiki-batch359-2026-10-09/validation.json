@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-09",
+  "sourceVerification": {
+    "engineFiles": 8,
+    "archiveVerified": true,
+    "providerRecords": 5,
+    "historicalVersions": 0,
+    "pens": 19,
+    "rawGroups": 21,
+    "nonDrawingRawGroups": [
+      4
+    ],
+    "drawingPrimitives": 22,
+    "masks": 19,
+    "curvedMasks": 8,
+    "progressiveNativeFrames": 171
+  },
+  "ownTests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "build": {
+    "passed": true,
+    "snapshot": "f4248ab550500c5ca32e971cee54b9b2d0f16af6",
+    "frozenFiles": 20,
+    "exportsMatched": [
+      "hanja-strokes/glyphwiki/74c6.json",
+      "hanja-strokes/dictionary-reviewed-glyphwiki-batch359.json",
+      "hanja-strokes/glyphwiki/NOTICE-74c6.md"
+    ],
+    "testTypeNarrowingCorrected": true
+  },
+  "regression": {
+    "passed": true,
+    "testFiles": 406,
+    "tests": 1740,
+    "failed": 0,
+    "note": "Full suite passed before test-only TypeScript narrowing; corrected three batch359 guards rerun and final production TypeScript/build passed."
+  },
+  "mobile": {
+    "browser": "Native Codex in-app browser4 panel7",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "introduction": {
+      "autoObserved": "13→19",
+      "replay": "1→19"
+    },
+    "writing": {
+      "auto": "1→19",
+      "replay": "1→19",
+      "reentry": "1→19",
+      "drawUndo": "0→1→0",
+      "drawClear": "0→1→2→0",
+      "stableDrawCanvasBounds": [
+        46,
+        288.8046875,
+        338,
+        338
+      ],
+      "stableDrawSheetBounds": [
+        0,
+        139.8046875,
+        430,
+        792.1953125
+      ],
+      "scrollTopBefore": 0,
+      "scrollTopAfter": 0,
+      "touchAction": "none",
+      "noDrag": true,
+      "staticImgs": 0,
+      "animatedSvg": 1
+    },
+    "consoleErrors": []
+  },
+  "privateMediaSaved": false,
+  "push": false,
+  "deploy": false,
+  "cleanup": {
+    "nativeOwnTabsClosed": [
+      5,
+      6,
+      7
+    ],
+    "viewportReset": true,
+    "ownRamServersStopped": [
+      {
+        "pid": 2429,
+        "port": 52773
+      },
+      {
+        "pid": 3195,
+        "port": 52774
+      },
+      {
+        "pid": 13082,
+        "port": 52775
+      }
+    ]
+  }
+}
