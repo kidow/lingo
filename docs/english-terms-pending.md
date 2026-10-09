@@ -48,23 +48,15 @@ the real thing · spread)의 한쪽이다. 당면은 vermicelli → glass noodle
 바꿨다가 다시 뺀 46이 들어 있다.) 뜻이 다른 동음이의어(iron · fair · goal ·
 park · German ↔ 독일의 …)는 둔다. 오답 보기가 같은 글자를 거른다.
 
-## 그림을 다시 볼 것 (13) — 그냥 둔다
+## 그림을 다시 볼 것 (13) — 고쳤다
 
-표제어를 뜻에 맞추니 그림이 어긋난 자리다. 표제어는 맞으므로 그림을 다시 그릴 때 본다.
+2026-10-09에 일곱 언어와 함께 다시 봤다. 어긋난 쪽이 그림이 아니라 뜻일 때가 많았다.
 
-| 낱말 | 표제어 | 그림 |
-| --- | --- | --- |
-| firework-salute | gun salute | 불꽃놀이 |
-| the-printing-house | publishing house | 인쇄소 |
-| case-file | casebook | 사건 파일철 하나 |
-| dozen-eggs | carton of eggs (달걀 한 판 30개) | 12개 상자 |
-| balance-beam-scale | steelyard (대저울) | 양팔저울 |
-| bunsen-burner | alcohol lamp | 금속 버너 |
-| new-moon | waning crescent (그믐달) | 어두운 보름달 |
-| ranking-board | leaderboard | 시상대 |
-| league-tournament | league | 토너먼트 대진표 |
-| right-up-to | until (시간) | 장소 |
-| soaked-in-without-noticing | rub off on (비유) | 실제로 물드는 천 |
-| hijack | hijack (배) | 납치하다가 사람이면 kidnap |
-| pull-up | pull up (차를 대다) | 주차된 차 |
-
+- **그림을 다시 그렸다(여섯):** case-file(탭 꽂은 두꺼운 책) · the-printing-house(출판사 앞) ·
+  ranking-board(줄 막대 표) · league-tournament(서로 다 이은 여섯 깃발 — 칸 표와 겹치지 않게) ·
+  bunsen-burner(심지 달린 유리 알코올램프) · firework-salute(예포 연기를 뿜는 군함 — 불꽃놀이 · 대포와
+  겹치지 않게).
+- **뜻을 고쳤다(넷):** new-moon 그믐달 → 신월(new moon) · dozen-eggs 달걀 한 판 → 달걀 열두 개 ·
+  balance-beam-scale 대저울 → 저울대(scale beam) · right-up-to의 영어 until → as far as.
+- **그대로 둔다(셋):** soaked-in-without-noticing(물드는 천은 비유의 그림으로 맞다) ·
+  seize-and-carry-off(hijack, 그림이 배) · pull-in-and-park(pull up).
