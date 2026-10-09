@@ -1,0 +1,9 @@
+# 矙 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u77d9/u76ee-01/u76ee/u95de-var-001/u9580-10/cdp-8c5b@5/u8033-01@5/u6535-01; declared records captured without latest substitution; 2 exact historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 5be270c0aaf70d41713975c5f7fdb67e5146aa0fdb5bb60391ca7a66b8ef2f32. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native browser2 panels109/110 on2026-10-10: all25 domestic pens and225 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u77d9 with8 declared records including exact cdp-8c5b@5/u8033-01@5; both2 complete variants inventoried. Original domestic 目/門/敢 order matches. Continuous raw1/2,7/8 and12/13 retained as original single pens2/7/11 with all whole polygons; original 門 quadratic hook and original 敢 curved trajectories preserved without inventing a connection. Enlarged folds2/7/11 at50/75/99/100%; actual strokes11/25 playback observed 25/24→100%. No connector, coordinate change, trimming, reversal, split or radical transplant. 200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/77d9.json.

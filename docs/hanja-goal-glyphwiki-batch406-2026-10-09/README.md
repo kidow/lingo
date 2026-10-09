@@ -1,0 +1,7 @@
+# Batch406 · 矙25
+
+Native browser2 panels109/110 on2026-10-10: all25 domestic pens and225 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u77d9 with8 declared records including exact cdp-8c5b@5/u8033-01@5; both2 complete variants inventoried. Original domestic 目/門/敢 order matches. Continuous raw1/2,7/8 and12/13 retained as original single pens2/7/11 with all whole polygons; original 門 quadratic hook and original 敢 curved trajectories preserved without inventing a connection. Enlarged folds2/7/11 at50/75/99/100%; actual strokes11/25 playback observed 25/24→100%. No connector, coordinate change, trimming, reversal, split or radical transplant. 200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed8 engine, pinned archive,8 exact records and exact cdp-8c5b@5/u8033-01@5 reproduced. Three mutation regression tests passed. Frozen production build and437 lib files/1833 tests passed on snapshotf43673b59f7deb5d9a98855f1ff93b7dcd97857c with21 files and3 bit-identical exports. Native mobile430×932 panel111: intro auto/replay, writing auto/replay/reentry completed25; draw/undo/clear, fixed canvas/sheet, scroll0→0. No static overlay overlap;0 console errors. Private media RAM-only; own109/110/111 tabs and own servers cleaned.
+
+Applied5222/5978(87.4%),756 remain;特級729/1328(54.9%),599 remain;特II1059/1150(92.1%),91 remain. Held112 unchanged. Next槩15 exact whole u69e9 5records0history. No push/deploy.
