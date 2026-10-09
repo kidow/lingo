@@ -1,0 +1,9 @@
+# 頀 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u9800-ue0101/koseki-490910/u97f3-01/koseki-356620/u84a6-ue0103/u535d-03/u96b9/u53c8-04; declared records captured without latest substitution; no historical versions or literal aliases; GlyphWiki license@18; canonical source SHA256 14bb58826118a55c8f7f592ac24c21f5a80256054982f0d20c0c6014bceccefc. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex in-app browser2 panels59/60 on2026-10-09: all23 domestic order/direction/cumulative/full form and207 progressive samples crosschecked. Six complete archived variants compared; selected complete u9800-ue0101 (koseki-490910) with8 declared records,0 historical versions/aliases/missing. Three-stroke grass whole variants rejected; all-four-stroke grass retained from the selected complete whole, no arbitrary split or component transplant. Original25 raw/drawing primitives(Q6/C0) form23 pens23 masks7 curved masks. Domestic12/13 and20/21 reorder original grass and 隹 groups. Original continuous 日 stroke7 L/L and 又 stroke22 L/Q kept. Enlarged3/4/7/14/16/20/22/23 at50/75/99/100 and actual stroke23 playback24→100 passed. No new coordinates, trajectory, contour, connector, direction reversal or terminal adaptation. Normalize200to100 and polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/9800.json.
