@@ -1,0 +1,7 @@
+# Batch403 · 葭13
+
+Native browser2 panels100/101 on2026-10-10: all13 domestic pens and117 progressive samples crosschecked for full order, direction, cumulative and completed form. Exact complete whole u846d-ue0102 with5 pinned archive records and0 historical dependencies. All4 complete whole variants inventoried; default/ue0100/ue0101 have3-pen grass and cannot match domestic4-pen 艹; selected whole ue0102 already has4-pen 艹. Domestic raw2/raw3 reordered to right horizontal before right vertical. Original continuous folds raw5/6,10/11,13/14 retained as single domestic pens6,10,12 with all original polygons. Enlarged folds6/10/12 at50/75/99/100%; actual final playback observed. No grass transplant, invented connector, coordinate change, trimming, reversal or splitting. 200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Fixed8 engine, pinned archive,5 exact records and0 historical dependencies reproduced. Three mutation regression tests passed. Frozen production build and434 lib files/1824 tests passed on snapshot667c03fe0f22354a09ce8fb13d8ceded23a3fd4c with21 files and3 bit-identical exports. Native mobile430×932 panel102: intro auto/replay, writing auto/replay/reentry completed13; draw/undo/clear, fixed canvas/sheet, scroll0→0. No static overlay overlap;0 console errors. Private media RAM-only; own100/101/102 tabs and own servers cleaned.
+
+Applied5219/5978(87.3%),759 remain;特級726/1328(54.7%),602 remain;特II1059/1150(92.1%),91 remain. Held112 unchanged. Next檟17 exact whole u6a9f 5records2history. No push/deploy.
