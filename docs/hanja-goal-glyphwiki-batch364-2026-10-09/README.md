@@ -1,0 +1,7 @@
+# Batch364 · 鐥20
+
+Native Codex in-app browser2 on2026-10-09: all20 domestic order/direction/cumulative/full form and180 progressive samples crosschecked. Exact whole u9425-k and4 declared records retained;0 histories/aliases and no latest substitution. Original21 raw commands and21 drawing primitives(Q9/C0) form20 pens20 masks10 curved masks. Domestic19 horizontal/down fold shares exact continuous original L/L centerline. Enlarged19 at50/75/99/100 and actual25to100 replay passed. Source order already matches domestic. No new trajectory, connector, coordinates, contour, arbitrary split, radical transplant or crossvariant assembly. Normalize200to100 and polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Fixed8 engine and pinned archive reproduced.3 runtime/mutation guards passed. Production build and411 lib files/1,755 tests passed on the same frozen snapshot 6e16dacec396a24e2ddbb979f29076befe18f42a;21 frozen files and3 exports matched. Mobile430×932 on the same snapshot: intro auto/replay1→20, writing auto/replay/reentry1→20, draw/undo/clear, fixed canvas/sheet and scroll0→0;0 errors,0 static overlays,1 animated SVG. Private media RAM-only;9/10/11 panels and3 servers cleaned.
+
+Applied5,196/5,978(86.9%),782 remaining.特II1,039/1,150(90.3%),111 remaining. Held112 unchanged. Next:瀯20, exact whole u702f-k,8 declared records including4 exact histories; native domestic/progressive review pending. No push/deploy.
