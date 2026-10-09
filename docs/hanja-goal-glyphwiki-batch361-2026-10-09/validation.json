@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-09",
+  "sourceVerification": {
+    "engineFiles": 8,
+    "archiveVerified": true,
+    "providerRecords": 5,
+    "historicalVersions": 0,
+    "pens": 19,
+    "rawGroups": 21,
+    "drawingPrimitives": 22,
+    "masks": 20,
+    "curvedMasks": 7,
+    "terminalDirection": "left",
+    "progressiveNativeFrames": 171
+  },
+  "ownTests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "build": {
+    "passed": true,
+    "snapshot": "2a87e9d38f3e541f4e42024e3dd6e95772fffb98",
+    "frozenFiles": 25,
+    "exportsMatched": [
+      "hanja-strokes/glyphwiki/85d5.json",
+      "hanja-strokes/dictionary-reviewed-glyphwiki-batch361.json",
+      "hanja-strokes/glyphwiki/NOTICE-85d5.md"
+    ],
+    "parent": "16bafcccb9bf31acf55bbabc51ba447fdd7a8e87"
+  },
+  "regression": {
+    "passed": true,
+    "testFiles": 408,
+    "tests": 1746,
+    "failed": 0,
+    "snapshot": "2a87e9d38f3e541f4e42024e3dd6e95772fffb98",
+    "note": "All408 files/1746 tests and production build passed on the same final snapshot against the latest shared parent. Native mobile verified identical runtime inputs."
+  },
+  "mobile": {
+    "browser": "Native Codex in-app browser2 panel1",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "introduction": {
+      "auto": "1→19",
+      "replay": "1→19"
+    },
+    "writing": {
+      "auto": "1→19",
+      "replay": "1→19",
+      "reentry": "1→19",
+      "drawUndo": "0→1→0",
+      "drawClear": "0→1→2→0",
+      "stableDrawCanvasBounds": [
+        46,
+        288.8046875,
+        338,
+        338
+      ],
+      "stableDrawSheetBounds": [
+        0,
+        139.8046875,
+        430,
+        792.1953125
+      ],
+      "scrollTopBefore": 0,
+      "scrollTopAfter": 0,
+      "touchAction": "none",
+      "noDrag": true,
+      "staticImgs": 0,
+      "animatedSvg": 1
+    },
+    "consoleErrors": []
+  },
+  "privateMediaSaved": false,
+  "push": false,
+  "deploy": false,
+  "cleanup": {
+    "nativeOwnTabsClosed": {
+      "sourceBrowser4": [
+        11,
+        12
+      ],
+      "mobileBrowser2": [
+        "1"
+      ]
+    },
+    "viewportReset": true,
+    "ownRamServersStopped": [
+      {
+        "pid": 43990,
+        "port": 52779,
+        "alreadyAbsentOnResume": true
+      },
+      {
+        "pid": 44035,
+        "port": 52780,
+        "alreadyAbsentOnResume": true
+      },
+      {
+        "pid": 55256,
+        "port": 52781
+      }
+    ]
+  }
+}
