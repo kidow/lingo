@@ -1,0 +1,7 @@
+# Batch357 · 騈18
+
+Native Codex browser panel324 whole form/order/direction and panel1 (resumed2026-10-09) all18 pens,162 progressive samples crosschecked. Exact whole u9a08-k and4 declared records retained; no historical versions or literal aliases. Original19 raw groups21 drawing primitives(Q10/C0),18 pens19 masks retained. Domestic6 L/Q/Q and14 L/Q follow exact continuous original centerlines. Pen6 left terminal is the independently emitted original raw6 call1 polygon with unchanged coordinates and weight8 normalized. Expanded6 at88/95/99/100 and14 at99/100 passed; actual6 and14 replay23to100 passed. No new trajectory, connector, coordinates, contour, pen, arbitrary split or radical transplant. Normalize200to100/polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Fixed8-file engine and pinned archive reproduced;3 own tests passed. Isolated production build62912ec7 passed with20 frozen own files after shared parent refresh;3 exported assets matched. All405 lib test files/1737 tests passed; regression code inputs remained identical after the concurrent public audio-peak commit. Native mobile panel2 intro/writing auto/replay/end, reentry, drawing/undo/clear and stable canvas/sheet scrollTop0 verified. Private graphics remain RAM-only.
+
+Coverage:5,190/5,978(86.8%),788 remaining. 特級II1,033/1,150(89.8%),117 remaining. Next:孼19, exact whole u5b7c-k and7 declared records including exact historical u5c71-03@2; no missing/aliases. Native review pending. Held112 unchanged. Other session3 files preserved; no push/deploy.
