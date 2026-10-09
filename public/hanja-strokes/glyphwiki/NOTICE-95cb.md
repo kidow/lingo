@@ -1,0 +1,9 @@
+# 闋 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u95cb/u9580-05/u7676-03; declared records captured without latest substitution; 0 exact historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 38db8d839bf1ad02dbcf0a82bd51bb544409f577cc64722a93f821c6d5e8eb83. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native browser2 panels153/154 on2026-10-10: all17 domestic pens at390px and153 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u95cb with3 declared records and0 historical versions; both whole variants inventoried. Domestic 癶 order places right-lower short left-falling raw15 before right-falling raw14; exchange complete source pens12/13 only. Original horizontal/down folds raw1/2 and6/7, quadratic hook within raw7, horizontal/curved-left raw10/11, and continuous line/curve raw18 remain unchanged. Enlarged pens6/9/12/13/16 at50/75/99/100%; actual pens6/16 playback observed25/25to100. No connector, coordinate change, trimming, reversal, split or radical transplant.200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/95cb.json.
