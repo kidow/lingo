@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-09",
+  "sourceVerification": {
+    "engineFiles": 8,
+    "archiveVerified": true,
+    "providerRecords": 8,
+    "historicalVersions": 1,
+    "pens": 24,
+    "rawGroups": 27,
+    "drawingPrimitives": 27,
+    "masks": 24,
+    "curvedMasks": 6,
+    "progressiveNativeFrames": 216
+  },
+  "ownTests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "build": {
+    "passed": true,
+    "snapshot": "1cd62b2a12dfbbbac28a7bc7029b9b6adaca1c7e",
+    "frozenFiles": 21,
+    "exportsMatched": [
+      "hanja-strokes/glyphwiki/7f50.json",
+      "hanja-strokes/dictionary-reviewed-glyphwiki-batch390.json",
+      "hanja-strokes/glyphwiki/NOTICE-7f50.md"
+    ]
+  },
+  "regression": {
+    "passed": true,
+    "testFiles": 427,
+    "tests": 1803,
+    "failed": 0,
+    "snapshot": "1cd62b2a12dfbbbac28a7bc7029b9b6adaca1c7e",
+    "note": "All427 files/1803 tests and production build passed on identical frozen inputs. Earlier attempt exposed a missing cumulative test-count term, corrected before this snapshot."
+  },
+  "mobile": {
+    "browser": "Native Codex in-app browser2 panel74",
+    "snapshot": "1cd62b2a12dfbbbac28a7bc7029b9b6adaca1c7e",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "introduction": {
+      "auto": "1→24",
+      "replay": "1→24"
+    },
+    "writing": {
+      "auto": "2→24",
+      "replay": "1→24",
+      "reentry": "1→24",
+      "drawUndo": "0→1→0",
+      "drawClear": "0→1→2→0",
+      "stableDrawCanvasBounds": [
+        46,
+        288.8046875,
+        338,
+        338
+      ],
+      "stableDrawSheetBounds": [
+        0,
+        139.8046875,
+        430,
+        792.1953125
+      ],
+      "scrollTopBefore": 0,
+      "scrollTopAfter": 0,
+      "buttonFocusScroll": 126,
+      "buttonFocusScrollNote": "Replay focuses a button and scrolls content; no focus change during fixed canvas-drag measurement.",
+      "touchAction": "none",
+      "noDrag": true,
+      "staticImgs": 0,
+      "animatedSvg": 1
+    },
+    "consoleErrors": []
+  },
+  "privateMediaSaved": false,
+  "push": false,
+  "deploy": false,
+  "cleanup": {
+    "nativeOwnTabsClosed": {
+      "browser2": [
+        72,
+        73,
+        74
+      ]
+    },
+    "viewportReset": true,
+    "ownRamServersStopped": [
+      {
+        "pid": 98152,
+        "port": 52846
+      },
+      {
+        "pid": 98649,
+        "port": 52849
+      },
+      {
+        "pid": 99017,
+        "port": 52847
+      },
+      {
+        "pid": 5354,
+        "port": 52850
+      },
+      {
+        "pid": 5467,
+        "port": 52848
+      }
+    ],
+    "privateMediaSaved": false
+  }
+}
