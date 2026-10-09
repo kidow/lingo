@@ -1,0 +1,9 @@
+# 愒 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u6112/u5fc4-01/u5fc4/u66f7-02/u65e5/u200ca@4; declared records captured without latest substitution; 1 exact historical version u200ca@4; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 76f9f99edb6a10744d91d0d2b8f6b2c3d9c09ec2cfaa4d5756099e4278ad0f52. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native browser2 panels138/139 on2026-10-10: all12 domestic pens at390px and108 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u6112 with6 declared records and1 exact historical version u200ca@4; all4 whole variants inventoried. Whole-source original 忄 raw1/2/0 reordered to domestic left point/right point/vertical; all remaining raw groups retained. Original folds raw4/5 and13/14 remain continuous pens5/12; raw9/10 retains continuous horizontal/quadratic bend/hook as pen9. Enlarged pens5/9/12 at50/75/99/100%; actual pens9/12 playback observed25/25to100. No connector, coordinate change, trimming, reversal, split or radical transplant.200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/6112.json.
