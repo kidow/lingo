@@ -1,34 +1,77 @@
 {
   "status": "active",
   "date": "2026-10-10",
-  "lastCompletedCommit": "e47932aebb798389064c1998403e02b2e62ae215",
+  "lastCompletedCommit": "4fa2979aec6a0fd233ed316bc6c8945fc5040312",
   "currentBatchCommitLookup": {
-    "message": "feat(hanja): add reviewed 虡 stroke replay",
-    "parent": "e47932aebb798389064c1998403e02b2e62ae215"
+    "message": "docs(hanja): defer 籧 discontinuous final curve",
+    "parent": "4fa2979aec6a0fd233ed316bc6c8945fc5040312"
   },
   "currentBatch": {
-    "batch": 413,
-    "directory": "docs/hanja-goal-glyphwiki-batch413-2026-10-09",
+    "batch": 414,
+    "directory": "docs/hanja-goal-glyphwiki-batch414-2026-10-09",
     "glyphs": [
-      "虡"
+      "籧"
     ],
-    "strokes": 14,
-    "status": "completed-native-source-build-regression-mobile-verified",
+    "strokes": 23,
+    "status": "source-only-deferred-discontinuous-final-curve",
     "checks": {
+      "passed": true,
       "engineFiles": 8,
       "archiveVerified": true,
-      "providerRecords": 3,
+      "providerRecords": 4,
       "historicalVersions": 0,
-      "pens": 14,
-      "rawGroups": 16,
-      "drawingPrimitives": 19,
-      "masks": 14,
-      "curvedMasks": 6,
-      "progressiveNativeFrames": 126,
-      "isolatedBuildPassed": true,
-      "libTests": 1848,
-      "nativeMobilePassed": true,
-      "runtimeRegistered": 1,
+      "rawGroups": 26,
+      "drawingPrimitives": 30,
+      "quadratics": 17,
+      "cubics": 1,
+      "wholeVariants": 5,
+      "originalCurveJoins": [
+        {
+          "root": "u7c67",
+          "rawPair": [
+            10,
+            11
+          ],
+          "firstGap": 2.592778432492838
+        },
+        {
+          "root": "u7c67-ue0100",
+          "rawPair": [
+            10,
+            11
+          ],
+          "firstGap": 2.592778432492838
+        },
+        {
+          "root": "u7c67-ue0101",
+          "rawPair": [
+            10,
+            11
+          ],
+          "firstGap": 2.592778432492838
+        },
+        {
+          "root": "u7c67-ue0102",
+          "rawPair": [
+            9,
+            10
+          ],
+          "firstGap": 2.6086394921491207
+        },
+        {
+          "root": "u7c67-ue0103",
+          "rawPair": [
+            10,
+            11
+          ],
+          "firstGap": 2.580096897405209
+        }
+      ],
+      "continuousCompilerRejected": true,
+      "domesticPensReviewed": 23,
+      "progressiveFramesApproved": 0,
+      "runtimeRegistered": 0,
+      "runtimeUnchanged": true,
       "privateMediaSaved": false
     }
   },
@@ -136,11 +179,11 @@
     }
   },
   "nextActions": [
-    "Recheck shared HEAD/index/runtime and pending --free before batch414.",
-    "Review 籧23 complete original wholes and all domestic pens/progressive frames, all domestic pens and progressive frames.",
-    "No invented connector, coordinate change, split, transplant or latest version substitution.",
-    "After native pass: fixed engine/runtime guards, frozen build/tests/mobile, own local commit and immediately next candidate.",
-    "Exclude previously deferred complete wholes without new source; held112 unchanged; no push/deploy."
+    "Recheck shared HEAD/index/runtime and pending --free before batch415.",
+    "Review 蘧21 exact whole u8627 4 records with0 history, all domestic pens and progressive frames.",
+    "Do not repeat 籧 or prior unchanged whole deferrals without new source.",
+    "No invented connector, coordinates, split, transplant or latest substitution.",
+    "After pass: guards, frozen build/tests/mobile, own local commit and immediately next. Held112 unchanged; no push/deploy."
   ],
   "held": [
     {
@@ -656,80 +699,56 @@
     }
   ],
   "resources": {
-    "closedTabs": [
-      "126",
-      "127",
-      "128"
-    ],
-    "stoppedServers": [
+    "nativeOwnTabsClosed": {
+      "browser2": [
+        129
+      ]
+    },
+    "ownRamServersStopped": [
       {
-        "pid": 39601,
-        "port": 52922
-      },
-      {
-        "pid": 43201,
-        "port": 52923
-      },
-      {
-        "pid": 43920,
-        "port": 52924
-      },
-      {
-        "pid": 44503,
-        "port": 52924
-      },
-      {
-        "pid": 46139,
-        "port": 52925
+        "pid": 47685,
+        "port": 52926
       }
     ],
-    "otherSessionsUntouched": true
+    "privateMediaSaved": false
   },
   "batchPaths": [
     "docs/hanja-goal-2026-09-21/progress.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/README.md",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/next.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/progressive-review.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/serve.py",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/sources.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/terminal-method.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/validation.json",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch413-2026-10-09/whole-variant-inventory.json",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch413.test.ts",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch413.ts",
-    "lib/hanja-stroke-textbook.test.ts",
-    "lib/hanja-strokes.ts",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch413.json",
-    "public/hanja-strokes/glyphwiki/8661.json",
-    "public/hanja-strokes/glyphwiki/NOTICE-8661.md"
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/README.md",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/next.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/review.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/serve.py",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/sources.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/validation.json",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/whole-variant-inventory.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u7c67",
-      "glyph": "籧",
-      "hun": "대자리",
+      "id": "u8627",
+      "glyph": "蘧",
+      "hun": "패랭이꽃",
       "eum": "거",
       "readingGrade": "특급",
-      "radical": "竹",
-      "strokes": 23,
-      "sourceRow": 199,
-      "sourceHunEum": "대자리 거"
+      "radical": "艸",
+      "strokes": 21,
+      "sourceRow": 201,
+      "sourceHunEum": "패랭이꽃 거"
     },
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u7c67",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch413-2026-10-09/next-source-inventory.json",
-    "sourceSha256": "637f5c2f6467aeed655aa5187b3dfbbf25709b37690b95c37e2ed7e44b318693",
+    "selectedRoot": "u8627",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch414-2026-10-09/next-source-inventory.json",
+    "sourceSha256": "89594be478038dacc423e5ee39e0947a70b49fb589bae95856ceefd6f922c744",
     "providerRecords": 4,
     "historicalVersions": 0,
     "domesticReviewPending": true,
