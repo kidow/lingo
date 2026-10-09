@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-09",
+  "sourceVerification": {
+    "engineFiles": 8,
+    "archiveVerified": true,
+    "providerRecords": 4,
+    "historicalVersions": 0,
+    "pens": 16,
+    "rawGroups": 18,
+    "drawingPrimitives": 21,
+    "masks": 18,
+    "curvedMasks": 8,
+    "progressiveNativeFrames": 144
+  },
+  "ownTests": {
+    "passed": 3,
+    "failed": 0
+  },
+  "build": {
+    "passed": true,
+    "snapshot": "8f421c34853abc6aa34ccec1cf3935b97acb5f0b",
+    "frozenFiles": 21,
+    "exportsMatched": [
+      "hanja-strokes/glyphwiki/6231.json",
+      "hanja-strokes/dictionary-reviewed-glyphwiki-batch389.json",
+      "hanja-strokes/glyphwiki/NOTICE-6231.md"
+    ]
+  },
+  "regression": {
+    "passed": true,
+    "testFiles": 426,
+    "tests": 1800,
+    "failed": 0,
+    "snapshot": "8f421c34853abc6aa34ccec1cf3935b97acb5f0b",
+    "note": "All426 files/1800 tests and production build passed on the same frozen inputs."
+  },
+  "mobile": {
+    "browser": "Native Codex in-app browser2 panel71",
+    "snapshot": "8f421c34853abc6aa34ccec1cf3935b97acb5f0b",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "introduction": {
+      "auto": "1→16",
+      "replay": "1→16"
+    },
+    "writing": {
+      "auto": "1→16",
+      "replay": "1→16",
+      "reentry": "1→16",
+      "drawUndo": "0→1→0",
+      "drawClear": "0→1→2→0",
+      "stableDrawCanvasBounds": [
+        46,
+        288.8046875,
+        338,
+        338
+      ],
+      "stableDrawSheetBounds": [
+        0,
+        139.8046875,
+        430,
+        792.1953125
+      ],
+      "scrollTopBefore": 0,
+      "scrollTopAfter": 0,
+      "buttonFocusScroll": 126,
+      "buttonFocusScrollNote": "Replay focuses a button and scrolls content; canvas drags keep sheet bounds fixed and retain their current scroll position.",
+      "touchAction": "none",
+      "noDrag": true,
+      "staticImgs": 0,
+      "animatedSvg": 1
+    },
+    "consoleErrors": []
+  },
+  "privateMediaSaved": false,
+  "push": false,
+  "deploy": false,
+  "cleanup": {
+    "nativeOwnTabsClosed": {
+      "browser2": [
+        68,
+        69,
+        71
+      ]
+    },
+    "blockedOwnErrorPage": {
+      "browser2": [
+        70
+      ],
+      "reason": "Initial connection refused produced a data error page blocked by URL policy; left untouched."
+    },
+    "viewportReset": true,
+    "ownRamServersStopped": [
+      {
+        "pid": 83441,
+        "port": 52843
+      },
+      {
+        "pid": 84183,
+        "port": 52843
+      },
+      {
+        "pid": 85130,
+        "port": 52844
+      },
+      {
+        "pid": 86551,
+        "port": 52844
+      },
+      {
+        "pid": 92662,
+        "port": 52836
+      },
+      {
+        "pid": 92857,
+        "port": 52845
+      }
+    ],
+    "privateMediaSaved": false
+  }
+}
