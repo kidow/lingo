@@ -1,0 +1,9 @@
+# 癤 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u7664-k/u7592/ufa56/u7af9-03/u5369-02; declared records captured without latest substitution; no historical versions or literal aliases; GlyphWiki license@18; canonical source SHA256 6988e4d3875da35bd843aa924d0b4ce03b0903eaea11207a14121d77d4326af3. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex in-app browser2 panels19/20 on2026-10-09: all20 domestic order/direction/cumulative/full form and180 progressive samples crosschecked. Exact whole u7664-k and5 declared records retained;0 histories/aliases and no latest substitution. Original22 raw commands and24 drawing primitives(Q9/C0) form20 pens21 masks10 curved masks. Domestic12-18 reorder original left-dot, white folds/horizontals and late left-vertical exactly as dictionary; domestic19 original11/12 continuous L/L/Q with independently emitted original terminal polygon revealed left,weight5. Domestic3 original L/Q and13 original L/L retained. Enlarged3 at75/99/100,13 at50/75/99/100 and19 at85/95/99/100 passed; actual13 23to100 and19 playback passed. No new trajectory, connector, coordinate, contour, arbitrary split, radical transplant or crossvariant assembly. Normalize200to100 and polygon winding only. Domestic dictionary crosscheck, not exam-body approval.
+
+Private dictionary graphics, HTML and screenshots RAM-only, never saved. Editable source /hanja-strokes/glyphwiki/7664.json.
