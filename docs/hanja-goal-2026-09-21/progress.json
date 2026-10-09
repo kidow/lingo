@@ -1,138 +1,100 @@
 {
   "status": "active",
   "date": "2026-10-10",
-  "lastCompletedCommit": "63e493c5f6d02c2b7af09270d6a3c6fbee44c6a0",
+  "lastCompletedCommit": "4946d500926125af10a9b251c2c78a49fce2f186",
   "currentBatchCommitLookup": {
-    "message": "docs(hanja): defer 牼 discontinuous 巛 folds",
-    "parent": "63e493c5f6d02c2b7af09270d6a3c6fbee44c6a0"
+    "message": "docs(hanja): defer 褧 discontinuous 衣 fold",
+    "parent": "4946d500926125af10a9b251c2c78a49fce2f186"
   },
   "currentBatch": {
-    "batch": 429,
-    "directory": "docs/hanja-goal-glyphwiki-batch429-2026-10-09",
+    "batch": 430,
+    "directory": "docs/hanja-goal-glyphwiki-batch430-2026-10-09",
     "glyphs": [
-      "牼"
+      "褧"
     ],
-    "strokes": 11,
-    "status": "source-only-deferred-discontinuous-zigzag-folds",
+    "strokes": 16,
+    "status": "source-only-deferred-discontinuous-rising-fold",
     "checks": {
+      "passed": true,
       "engineFiles": 8,
       "archiveVerified": true,
       "providerRecords": 3,
       "historicalVersions": 0,
-      "rawGroups": 15,
-      "drawingPrimitives": 14,
-      "quadratics": 8,
+      "rawGroups": 17,
+      "drawingPrimitives": 17,
+      "quadratics": 9,
       "cubics": 0,
-      "allWholeVariants": 2,
-      "zeroDrawingRawGroup": 4,
-      "domesticPens": 11,
-      "nativeBrowser": "browser2 panel162",
-      "continuousCompilerRejected": true,
-      "originalGaps": [
+      "wholeVariants": 4,
+      "originalCurveJoins": [
         {
-          "root": "u727c",
-          "gaps": [
-            {
-              "rawIndices": [
-                6,
-                7
-              ],
-              "from": [
-                81.8,
-                78
-              ],
-              "to": [
-                80.815,
-                76
-              ],
-              "gap": 2.2294001435363726
-            },
-            {
-              "rawIndices": [
-                8,
-                9
-              ],
-              "from": [
-                115.29,
-                78
-              ],
-              "to": [
-                114.305,
-                76
-              ],
-              "gap": 2.2294001435363726
-            },
-            {
-              "rawIndices": [
-                10,
-                11
-              ],
-              "from": [
-                147.795,
-                78
-              ],
-              "to": [
-                146.81,
-                76
-              ],
-              "gap": 2.2294001435363664
-            }
-          ]
+          "root": "u8927",
+          "rawIndices": [
+            13,
+            14
+          ],
+          "from": [
+            68.32,
+            175.08
+          ],
+          "to": [
+            38.62,
+            182.44
+          ],
+          "gap": 30.59835943314608
         },
         {
-          "root": "u727c-ue0100",
-          "gaps": [
-            {
-              "rawIndices": [
-                6,
-                7
-              ],
-              "from": [
-                81.8,
-                78
-              ],
-              "to": [
-                80.815,
-                76
-              ],
-              "gap": 2.2294001435363726
-            },
-            {
-              "rawIndices": [
-                8,
-                9
-              ],
-              "from": [
-                115.29,
-                78
-              ],
-              "to": [
-                114.305,
-                76
-              ],
-              "gap": 2.2294001435363726
-            },
-            {
-              "rawIndices": [
-                10,
-                11
-              ],
-              "from": [
-                147.795,
-                78
-              ],
-              "to": [
-                146.81,
-                76
-              ],
-              "gap": 2.2294001435363664
-            }
-          ]
+          "root": "u8927-ue0100",
+          "rawIndices": [
+            13,
+            14
+          ],
+          "from": [
+            68.32,
+            175.08
+          ],
+          "to": [
+            38.62,
+            182.44
+          ],
+          "gap": 30.59835943314608
+        },
+        {
+          "root": "u8927-ue0101",
+          "rawIndices": [
+            13,
+            14
+          ],
+          "from": [
+            68.32,
+            175.08
+          ],
+          "to": [
+            38.62,
+            182.44
+          ],
+          "gap": 30.59835943314608
+        },
+        {
+          "root": "u8927-ue0102",
+          "rawIndices": [
+            13,
+            14
+          ],
+          "from": [
+            68,
+            173.6
+          ],
+          "to": [
+            38,
+            180.8
+          ],
+          "gap": 30.851904317237867
         }
       ],
-      "runtimeRegistered": 0,
-      "domesticPensReviewed": 11,
+      "continuousCompilerRejected": true,
+      "domesticPensReviewed": 16,
       "progressiveFramesApproved": 0,
+      "runtimeRegistered": 0,
       "runtimeUnchanged": true,
       "privateMediaSaved": false
     }
@@ -241,9 +203,9 @@
     }
   },
   "nextActions": [
-    "Recheck shared HEAD/index/runtime and pending --free before batch430.",
-    "Review 褧16 exact whole u8927 with3records0history; all domestic pens and progressive frames.",
-    "Do not repeat 牼 or prior unchanged deferrals without new source.",
+    "Recheck shared HEAD/index/runtime and pending --free before batch431.",
+    "Review 熲15 exact whole u71b2 with5records0history; all domestic pens and progressive frames.",
+    "Do not repeat 褧 or prior unchanged deferrals without new source.",
     "No invented connector, coordinates, split, transplant or latest substitution.",
     "After pass: guards, frozen build/tests/mobile, own local commit and immediately next. Held112 unchanged; no push/deploy."
   ],
@@ -763,59 +725,55 @@
   "resources": {
     "nativeOwnTabsClosed": {
       "browser2": [
-        162
+        164
       ]
     },
     "ownRamServersStopped": [
       {
-        "pid": 28234,
-        "port": 52974
+        "pid": 31376,
+        "port": 52976
       }
     ],
-    "restartedOwnServer": {
-      "pid": 27416,
-      "port": 52974
-    },
     "privateMediaSaved": false
   },
   "batchPaths": [
     "docs/hanja-goal-2026-09-21/progress.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/NOTICE.md",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/README.md",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/coverage.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/draw-trace.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/engine-proof.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/metadata.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/next-source-inventory.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/next.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/progressive.mjs",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/review.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/serve-progressive.py",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/serve.py",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/sources.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/validation.json",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/verify.mjs",
-    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/whole-variant-inventory.json"
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/NOTICE.md",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/README.md",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/coverage.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/draw-trace.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/engine-proof.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/metadata.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/next-source-inventory.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/next.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/progressive.mjs",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/review.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/serve-progressive.py",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/serve.py",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/sources.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/validation.json",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/verify.mjs",
+    "docs/hanja-goal-glyphwiki-batch430-2026-10-09/whole-variant-inventory.json"
   ],
   "nextCandidateInventory": {
     "candidate": {
-      "id": "u8927",
-      "glyph": "褧",
-      "hun": "홑옷",
+      "id": "u71b2",
+      "glyph": "熲",
+      "hun": "빛날",
       "eum": "경",
       "readingGrade": "특급",
-      "radical": "衣",
-      "strokes": 16,
-      "sourceRow": 337,
-      "sourceHunEum": "홑옷 경"
+      "radical": "火",
+      "strokes": 15,
+      "sourceRow": 338,
+      "sourceHunEum": "빛날 경"
     },
     "registered": false,
     "held": false,
     "sourceInventoryComplete": true,
-    "selectedRoot": "u8927",
-    "sourceFile": "docs/hanja-goal-glyphwiki-batch429-2026-10-09/next-source-inventory.json",
-    "sourceSha256": "2fb66d14b76096022759bf424c2fbc1774649aa198e3eca9191b6e262264dec9",
-    "providerRecords": 3,
+    "selectedRoot": "u71b2",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch430-2026-10-09/next-source-inventory.json",
+    "sourceSha256": "eccf73d7a9c01304845c129020fd32945dbe600790d3d421a0db69371c5b88f5",
+    "providerRecords": 5,
     "historicalVersions": 0,
     "domesticReviewPending": true,
     "progressiveReviewPending": true
