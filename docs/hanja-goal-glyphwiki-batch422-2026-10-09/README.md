@@ -1,0 +1,7 @@
+# Batch422 · 睊12
+
+Native browser2 panels145/146 on2026-10-10: all12 domestic pens at390px and108 progressive samples crosschecked for whole order, start/end direction, cumulative and completed form. Exact complete whole u774a with6 declared records and0 historical versions; all4 whole variants inventoried. Original whole 目/口/月 order matches domestic pens without permutation. Original horizontal-to-down folds raw1/2 and7/8 stay continuous pens2/7; original raw11/12 retains continuous horizontal/down/quadratic hook in pen10. Enlarged pens2/7/10 at50/75/99/100%; actual pens2/10 playback observed25/25to100. No connector, coordinate change, trimming, reversal, split or radical transplant.200to100 normalization and winding only. Dictionary crosscheck, not exam-body approval.
+
+Frozen snapshot `3a60c373b73ee11e2073a939193978847f444865`:21 files; independent production build passed;447 lib files/1863 tests passed;3 exports bit-identical. Native mobile panel147 at430×932: introduction and writing auto/replay/reentry1→12; draw/undo0→1→0, draw/clear0→1→2→0; canvas and sheet fixed during fresh drawing, scroll0→0; touch-action none/no-drag;0 static images/1 animated SVG; no console errors. Button focus scroll182 is separate from fixed drawing. Own resources cleaned; no private media saved.
+
+Actual runtime5232/5978(87.5%),746 remaining;特級739/1328(55.6%),589 remaining. Held112 unchanged. Next 獧16 whole u7367,3 records/0 histories; source-only inventory does not approve runtime. Own local commit only; no push/deploy.
