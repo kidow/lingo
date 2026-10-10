@@ -1,0 +1,7 @@
+# Batch541 · 簵19 APPLIED
+
+Native Codex browser panels481/482 compared pinned whole u7c35 with domestic19pen source. Complete whole agrees. All19pens171progressive frames reviewed for order,direction,individual and cumulative shape. Enlarged520px99.99/100 comparisons of pens1/3/4/6/9/14/15/16/18 agree;actual pen19 replay25→100 observed. Complete5record/one-root pinned2016 family;two exact historical dependencies u8f05@5/u5404-02@6;zero missing dependencies or aliases. Preserve22raw commands,22original drawing calls,7quadratic curves and original flags. Source groups [[0],[1],[2],[3],[4],[5],[6],[7],[8,9],[10],[11],[12],[13],[14],[15,16],[17],[18],[19,20],[21]] merge only exact-continuous8+9 H/V,15+16 H/Q and19+20 H/V; normalization200to100 and winding only.19pens19masks9curve-direction strokes. Curve mask stroke-width14 means radius7. No connector,extension,radical transplant,arbitrary split,reverse,coordinate/control/endpoint-flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot 2fb3799477c9c2679aa5cff9f2160b580918d904 PASS;516 library files/2070 tests PASS. Native mobile484 intro autoplay1→19,replay1→19;writing autoplay,replay and reentry1→19;input0→1→0→2→0;fixed sheet and zero static-overlay overlap;errors[];exact original record restored. Introduction replay completion was observed before opening writing.
+
+Actual runtime5301/5978,677 remaining:特級521,特級II91,1級64,2級1. All45 new holds inherited. Next542 壚19. Own tabs and servers cleaned.
