@@ -1,0 +1,5 @@
+# Batch530 · 臝21 HOLD
+
+Native Codex browser panel451 compared all four pinned u81dd whole variants with the domestic21-pen source. All four draw a horizontal stroke inside the right-lower 凡-like component where the domestic source shows a slanting point. Default/ue0100/ue0101 also use a different terminal hook shape;ue0102 improves that hook but retains the horizontal inner stroke. No selected matching whole root;zero individual pens or progressive frames approved. Complete8-record/four-root pinned2016 family;zero missing,historical or alias dependencies. Preserve original25raw commands and all30(default)/32(ue0102)drawing calls. No stroke removal/replacement,radical transplant,connector,coordinate change or latest substitution. Do not register runtime. Domestic graphics remain RAM-only.
+
+Runtime unchanged5296/5978,682remaining. All39 new holds preserved. Source verifier checks original8records/four roots and runtime nonapproval. No app build/mobile test required because no runtime change. Next531 瓓21. Own panel451/server21842 closed after verification.
