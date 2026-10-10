@@ -1,0 +1,9 @@
+# 旂 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u65c2/u3ac3-05/u65b9-01/u20089/u65a4-02/u65c2-ue0100; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 ba1684902b4a24907cf12d91220d0978493d00ed72dc29f532212ab5e5630d0f. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels319/320/321: domestic full glyph, original default whole, all10 individual directions and90 progressive frames approved; enlarged pen3 at50/75/99/100 and actual replay26→100. Complete default u65c2 and all6 captured family/dependency records from pinned2016 archive;0 histories. Preserve all11 original raw commands,14 drawing calls and6 original quadratic control sets. Only continuous original raw2/3 horizontal and two original quadratic calls merged as the domestically confirmed folded hook; raw4 and raw8 retain their own continuous original line/quadratic sequences. Original native order unchanged. No invented connector, transplanted radical, split, reversal, coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;10 pens10 masks5 curve masks. ue0100 wraps default unchanged. Domestic dictionary crosscheck, not exam-body approval; private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/65c2.json.
