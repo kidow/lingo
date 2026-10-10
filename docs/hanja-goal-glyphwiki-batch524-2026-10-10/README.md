@@ -1,0 +1,7 @@
+# Batch524 · 匵17 APPLIED
+
+Native Codex browser panels425/426 directly compared all five pinned u5335 whole variants. Default/ue0100/ue0101 agree with domestic17-pen 𧶠 form;ue0102/var001 contain different 罒 form and are unselected. All17 pens153 progressive frames reviewed for order,direction,individual and cumulative geometry. Enlarged520px curve pens6/7/8/11/15/16/17 at99.99/100 agree;actual outer-fold17 replay21→100 observed. Complete13-record/five-root pinned2016 family;zero historical,missing or alias records. Preserve20 raw commands,22 original drawing calls,4 quadratic curves and endpoint flags. Source groups [[0],[3],[4],[5],[6],[7,8],[9],[10],[11],[12],[13,14],[15],[16],[17],[18],[19],[1,2]] merge exactly continuous original7+8 H/V,13+14 H/V and1+2 V/H;outerfold moved last only according to directly observed domestic source. Normalize200to100 and winding only;17 pens17 masks7 curves. No connector,extension,radical transplant,arbitrary split,reverse,coordinate/control/endpoint-flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot b91a5e68dd389f53bb2c4d2a7a2ef4dc3329d7d6 PASS;507 library files/2043 tests PASS. Native mobile429 intro autoplay14→17 observed;intro replay,writing autoplay,replay and reentry1→17;input0→1→0→1→2→0;fixed sheet and zero static-overlay overlap;exact original record restored.
+
+Actual runtime5292/5978(88.5%),686 remaining:特級530,特級II91,1級64,2級1. All37 new holds inherited. Next525 櫝19. Own tabs and servers cleaned.
