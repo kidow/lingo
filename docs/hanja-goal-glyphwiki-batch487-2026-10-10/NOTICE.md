@@ -1,0 +1,5 @@
+# 墍 source geometry notice
+
+GlyphWiki Project and contributors. Geometry: GlyphWiki license@18 and pinned archive LICENSE.txt. Exact source archive and engine hashes are in sources.json and engine-proof.json. Engine JS not redistributed.
+
+Native Codex browser3 panels324/325 reviewed domestic 墍14 and all three exact original whole forms. Default u588d (ue0100/ue0101 wrappers) matches the full connection structure; ue0102 changes the right upper stem connection and ue0103 also changes the lower-left bowl. Focused native domestic pens8/9 versus original cumulative groups9/10/11 confirms pen9 is a continuous downward-to-right fold. Default raw9 ends at (113.825,70.93), but raw10 starts at (93.77,70.93): a20.055-unit gap. No invented connector, line extension, reversal, transplanted radical or source substitution. Default16raw/21draw/5Q and complete16-record/5-root family with3 independent engine proofs retained. No full14-pen/126frame approval, runtime registration, app build or mobile regression for 墍. Dictionary media RAM-only.

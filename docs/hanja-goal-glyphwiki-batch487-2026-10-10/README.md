@@ -1,0 +1,7 @@
+# Batch487 · 墍 whole-form hold
+
+Native Codex browser3 panels324/325 reviewed domestic 墍14 and all three exact original whole forms. Default u588d (ue0100/ue0101 wrappers) matches the full connection structure; ue0102 changes the right upper stem connection and ue0103 also changes the lower-left bowl. Focused native domestic pens8/9 versus original cumulative groups9/10/11 confirms pen9 is a continuous downward-to-right fold. Default raw9 ends at (113.825,70.93), but raw10 starts at (93.77,70.93): a20.055-unit gap. No invented connector, line extension, reversal, transplanted radical or source substitution. Default16raw/21draw/5Q and complete16-record/5-root family with3 independent engine proofs retained. No full14-pen/126frame approval, runtime registration, app build or mobile regression for 墍. Dictionary media RAM-only.
+
+Exact source verifier passed. No full trajectory approval, runtime registration, production build or mobile regression for 墍. Reopen only with a complete domestic-like body and an original continuous ninth down-to-right fold.
+
+Committed runtime5277/5978(88.3%),remaining701. Pending485旂10 is registered only in working tree with source/full-build/2001tests passed; actual mobile approval is pending. Working runtime5278; do not count it as committed until regression and own commit complete. Next independent軝11, then頎13/僛14. Prior13 holds preserved plus this source hold.
