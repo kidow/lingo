@@ -1,11 +1,7 @@
-# 鸛 29획 — 출처 검토 완료, 적용 준비
+# Batch451 · 鸛29
 
-브라우저 패널 3의 탭 208·209에서 국내 사전 29획을 각각 390px로 대조하고, 29획 × 9단계 = 261개 진행 화면을 확인했습니다. 6·9·21·25·29획은 50·75·99·100% 확대 검사를 마쳤고 실제 재생이 모두 100%에 도달했습니다. 브라우저 오류는 없었습니다.
+Native browser3 panels208/209: domestic all29 pens,261 progressive frames and enlarged strokes6/9/21/25/29 approved. Exact whole u9e1b-ue0102 selected among four complete variants;9 declared records including exact historical u96b9-04@1;29 masks11 curves. Original grass order0,1,3,2 and central vertical after three horizontals retained; only continuous original raw5/6,9/10,22/23,27/28 folds grouped. Exact coordinates, controls, flags and polygons retained. No synthesized connector, split, transplant, reversal or latest substitution. Domestic dictionary crosscheck, not exam-body approval. Private dictionary media RAM-only.
 
-전체 자형 네 가지를 조사했습니다. 기본·0100·0101의 윗부분은 3획이어서 국내 사전의 4획 구성과 다릅니다. 전체 자형 u9e1b-ue0102를 선택해 원래 좌표와 윤곽을 보존하고, 사전에서 확인한 순서만 적용했습니다. 선택 자형의 9개 원본 레코드에는 정확한 역사 버전 u96b9-04@1이 포함됩니다. 33개 원본 그룹·34회 그리기·9개 이차곡선에서 29획·29마스크·11개 곡선 획을 구성했습니다. 꺾임은 원본에서 연속된 경로만 결합했습니다.
+Runtime applied. Frozen snapshot06609c35: production build and TypeScript passed;467 library files/1923 tests passed. Native panel265 at430×932: intro automatic/replay1→29/29; writing entry/replay/reentry1→29/29; draw0→1,undo0,draw1→2,clear0; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; app errors0. Approved52997 lingo.progress.hanja backed up only in RAM, restored with exact equality, then backup server discarded. See validation.json for final checks.
 
-새 경로, 연결선, 부수 이식, 획 분할이나 반전은 없습니다. 국내 사전 대조는 시험 주관 기관의 공식 승인과 구분합니다. 사전 SVG·HTML·스크린샷은 RAM에만 머물렀습니다.
-
-실제 앱 등록·빌드·쓰기 화면 검증은 남았습니다. 앞선 駉 모바일 검증은 테스트 출처의 학습 기록 백업·임시 입력·정확한 원복에 대한 사용자 답변을 기다립니다. 제한을 우회하지 않았으며 이 준비 자료는 적용 완료 수에 포함하지 않습니다.
-
-검증: node docs/hanja-goal-glyphwiki-batch451-2026-10-09/verify-source.mjs
+Applied5252/5978(87.9%),remaining726. Prepared19chars278pens,not counted as applied. Next 錧16.
