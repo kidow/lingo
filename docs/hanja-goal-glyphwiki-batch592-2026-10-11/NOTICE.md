@@ -1,0 +1,9 @@
+# 桮 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u686e/u6728-01/u5426/u4e0d-03/u53e3-04/u53e3/u686e-ue0100; declared records captured without latest substitution; zero historical dependencies; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 ddba59cbdee3188af75b6473b5ac1cda91aa3770c3da5acf16d4720d14b7e743. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser panels598/599 reviewed both pinned whole variants and all11 domestic directions. Exact u686e/default andVS0 whole shapes match;default selected. All11pens99 normal progressive frames reviewed for order,direction,individual,cumulative and completed shapes. Enlarged520px99.99%→100% checks of curve pens3/4/6/8/10 pass;actual pen11 replay25%→100% observed. Complete7record/two-root pinned2016 family;zero historical dependencies,missing or aliases. Preserve12raw groups/12original drawing calls/4quadratic curves/0cubic curves/allflags. Original group order preserved;one endpoint-exact H/V merge raw9+10. Normalize200to100 and winding only;11pens11masks5curve-direction strokes. Mask stroke-width14 means radius7. No split/reverse,connector,extension,radical transplant,coordinate/control/endpoint/flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/686e.json.
