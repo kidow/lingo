@@ -1,0 +1,5 @@
+# Batch594 · 籩25 source HOLD
+
+Native Codex browser panel603 inspected official u76ee-j history after transient site security check. Both@1 and@2 were created2018-05-17 20:35JST,after fixed2016 archive. Exact u76ee-j@1 points to u76ee@5,while captured u76ee@5 points back to unresolved unversioned u76ee-j;oldest lineage cycles. Current@2 contains paths but was not injected. Source family has24captured records/six roots/14 exact historical dependencies,with unresolved unversioned u76ee-j. No complete original engine whole or progressive candidate saved;no domestic trajectory visual approval. All25pens unreviewed;zero progressive frames approved. Dictionary25pen metadata verified only,not exam-body approval. No latest substitution,component derivation,radical transplant,connector,extension,split/reverse,coordinate/control/flag edit,mask widening or geometry deletion. Private graphics RAM-only. Release requires independently pinned complete lineage and native whole/all25pen review.
+
+Runtime5315/5978(88.9%),663 remaining;84 new holds inherited. Next595 荓12. No runtime/UI changes or candidate app build. Goal remains active.
