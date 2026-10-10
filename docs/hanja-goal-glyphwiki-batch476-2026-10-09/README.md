@@ -1,11 +1,7 @@
-# 騤 19획 — 출처 검토 완료, 적용 준비
+# Batch476 · 騤19
 
-브라우저 패널 3의 탭 253·254에서 국내 사전 19획과 171개 진행 화면을 대조했습니다. 6·11·15·18·19획을 50·75·99·100%로 확대하고 실제 재생 100% 완료 및 오류 없음을 확인했습니다.
+Native browser3 panels253/254: all19 domestic pens,171 progressive frames and enlarged strokes6/11/15/18/19 at50/75/99/100 and actual100 approved. Exact selected complete u9a24-k among three whole variants;4 archive records and no histories. Catalog ID remains u9a24. Other complete variants are not approved by this review. Domestic order moves 馬 raw2 after raw3/4 and right raw15 after raw16. Original continuous raw5/6 Line-Q-Q final hook, raw11/12 Line-Q and raw19 Line-Q, all13 Q control sets and endpoint flags retained. Coordinates and polygons retained;19 masks12 curves. No connector, split, transplant or reversal. Domestic dictionary crosscheck is not exam-body approval; private media RAM-only.
 
-고정 한국 자형 전체 원본 u9a24-k와 세 종속을 사용합니다. 세 전체 자형을 조사했으며 기본형 u9a24와 그 변형은 선택한 한국 자형과 좌표가 달라 이 검토에서 승인하지 않습니다. 원본 21그룹·23회 그리기·13개 이차곡선을 19획·19마스크·12개 곡선 방향 획으로 구성합니다. 국내 필순에 따라 馬 raw2를 raw3/4 뒤로, 오른쪽 raw15를 raw16 뒤로 옮깁니다. 연속 꺾임 raw5/6 직선→곡선→곡선 갈고리, raw11/12 직선→곡선, raw19 직선→곡선과 모든 제어점·끝점 표식을 보존합니다. 연결선·부수 이식·분할·반전·좌표·제어점·윤곽 변경은 없습니다.
+Runtime applied. Frozen snapshotccca6731: production build and TypeScript passed;486 library files/1980 tests passed. Native panel285 at430×932: intro automatic/replay1→19/19; writing entry/replay/reentry1→19/19; drawing,undo,clear passed; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; errors0. Approved52997 lingo.progress.hanja RAM backup restored exactly, server discarded. See validation.json.
 
-국내 사전 대조는 시험 주관 기관의 공식 승인과 구분합니다. 비공개 SVG·HTML·스크린샷은 RAM에만 머물렀습니다. 앱 등록·빌드·모바일 쓰기 검증은 남았으며 준비 자료는 적용 완료 수에 포함하지 않습니다. 駉는 허용한 기록 한 항목의 RAM 백업·임시 검증·정확한 원복과 앱 검증을 완료하고 52de1c1에 커밋했습니다.
-
-실제 적용 5,241자(87.7%), 미적용 737자입니다. 추가 준비는 30자·465획이며 다음은 기존 준비 자료 烓 10획의 실제 앱 연결입니다.
-
-검증: node docs/hanja-goal-glyphwiki-batch476-2026-10-09/verify-source.mjs
+Applied5271/5978(88.2%),remaining707. Prepared0chars0pens. Next unapplied 頄11 requires source acquisition and native browser source review. The attempted Jev request containing repository paths/status was rejected by automatic approval review; no request sent and no retry. Explicit permission for a reduced text-only summary is pending.
