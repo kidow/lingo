@@ -1,0 +1,9 @@
+# 峱 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u5cf1/u72ad-01/u4e11/u5c71-04/u5c71/u5cf1-ue0100; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 26888efadae65c1f56ce9f0d99cceb991c4d79bcb59c8166d800243f79215f95. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels350/351: domestic whole and both exact original u5cf1/u5cf1-ue0100 complete forms approved; all10 individual directions and90 progressive frames reviewed. True enlarged520px pens2/4/9 at50/75/99/100 and actual pen2 replay19→100 (AX18). Complete6-record/2-root pinned2016 family;0 histories and0 missing. Preserve all12 original raw commands,13 drawing calls,3 original quadratic sets and1 original cubic Bezier. Exact-continuous original cubic-to-quadratic dog return preserved with its unchanged original controls/end flags. Domestic 丑 pen order is original raw4/5 fold before raw3 vertical; raw4/5 and raw9/10 are merged only at exact coincident endpoints. No terminal jump observed99→100. No invented connector, extension, radical transplant, split, reversal, coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;10 pens10 masks6 curve masks. Domestic dictionary crosscheck, not exam-body approval; private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/5cf1.json.
