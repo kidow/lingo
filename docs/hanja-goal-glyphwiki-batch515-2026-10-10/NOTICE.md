@@ -1,0 +1,9 @@
+# 譈 source geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; source SHA256 8476bbc15f84e9abd3151f8f44c968b30436fe5db596da41d06415208a6f0c19; exact records u8b48,u8a01-01,u8b48-ue0100,u6566@8,u4eab-01,u6535-02@9;two exact historical records; no latest substitution. Fixed engine49232bac0348fe815f4200d4116ab7917e0db47f,8 file hashes;engine JS not redistributed.
+
+Native Codex browser3 panels401/402: both complete original roots u8b48/ue0100 observed against domestic19pen source. Six-record/two-root pinned2016 family with exact u6566@8 and u6535-02@9;zero missing dependencies. Selected original preserves22raw23draw6Q0B. Exactly continuous H/V merges raw5/6 and raw11/12,plus H/Q raw13/15;proposed19pen grouping only,not full-order approval. Domestic pen14 vertical-left hook directly observed;its nine progressive frames reviewed. Remaining18pens not fully reviewed after decisive failure. Enlarged520px pen14 at50/75/99.99/100 shows left terminal-hook tip truncated until completion. Last original Q args[98.29650000000001,172,98.29650000000001,182,88.29650000000001,182,1,14];tip(68.2,176) lies20.09650000000001original units left of endpoint versus original mask radius14. No invented hook trajectory,mask widening,endpoint extension,flag change or coordinate change. Runtime not registered;zero approved progressive frames. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+No runtime asset; public original source and reproducibility proofs only.
