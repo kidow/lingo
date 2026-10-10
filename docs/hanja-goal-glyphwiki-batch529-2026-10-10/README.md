@@ -1,0 +1,7 @@
+# Batch529 · 斁17 APPLIED
+
+Native Codex browser panels447/448 directly compared all four pinned u6581 whole variants with domestic17-pen source. Default/ue0100/ue0101 match;ue0102 changes right component and is unselected. All17pens153progressive frames reviewed for order,direction,individual and cumulative geometry. Enlarged520px curve pens2/9/10/14/16/17 at99.99/100 agree;actual fold2 replay15→100 observed. Complete11record/four-root pinned2016 family;zero historical,missing or alias records. Preserve18raw commands,18original drawing calls,5quadratic curves and endpoint flags. Source groups [[0],[1,2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17]] merge only exactly continuous original1+2 H/V;original order confirmed by domestic source.200to100 normalization and winding only;17pens17masks6curves. No connector,extension,radical transplant,arbitrary split,reverse,coordinate/control/endpoint-flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot a61eb93cc9496f93460fb15f8e2d57b0816cf0e5 PASS;511 library files/2055 tests PASS. Native mobile450 intro autoplay1→17,replay1→17;writing autoplay,replay and reentry1→17;input0→1→0→1→2→0;fixed sheet and zero static-overlay overlap;errors[];exact original record restored. Introduction replay completion was observed before opening writing.
+
+Actual runtime5296/5978,682 remaining:特級526,特級II91,1級64,2級1. All38 new holds inherited. Next530 臝21. Own tabs and servers cleaned.
