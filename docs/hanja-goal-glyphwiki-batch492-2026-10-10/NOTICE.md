@@ -1,0 +1,9 @@
+# 陧 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u9667/u961d-01/u573c/u571f-04/u571f/u65e5/u65e5-03@3/u65e5-09@2; declared records captured without latest substitution; 2 exact declared historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 8ee4f82e024e7999dbb3bb78ed6ff08aa4ee7f655890cb37d25ce057e1c3c5cf. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels345/346: domestic whole and exact default original u9667 complete form approved; all10 individual directions and90 progressive frames reviewed. True enlarged520px pens1/2/5 at50/75/99/100 and actual pen2 replay27→100 (AX initially20). Complete8-record/1-root pinned2016 family plus exact declared u65e5-03@3 and u65e5-09@2 historical records;0 missing. Preserve all12 original raw commands,13 drawing calls and3 original quadratic control sets. Only exact-continuous original raw0/1 horizontal-to-down-left fold and raw5/6 horizontal-to-downward 日 fold merged. Original raw2 Q/Q left-return is unchanged; end flag514 unchanged; no terminal jump observed99→100. Native order unchanged. No invented connector, extension, radical transplant, split, reversal, coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;10 pens10 masks3 curve masks. Domestic dictionary crosscheck, not exam-body approval; private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/9667.json.
