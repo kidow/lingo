@@ -1,0 +1,9 @@
+# 僛 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u50db/u4ebb-01/u6b3a/u5176-01/u6b20-02/u50db-ue0100/u6b3a-ue0100/koseki-182770/u6b20-02-var-002/u50db-ue0101/juki-ada0/u6b20-07-var-001; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 ae4971333400269c45c24d59d5bbec56e0027ddde2c2f15251de8a3b406fb3f5. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels337/338/339: domestic whole and exact default original u50db complete form approved; all14 individual directions and126 progressive frames reviewed. True enlarged520px pens12/14 at50/75/99/100 and actual pen12 replay24→100 (AX initially20). Complete12-record/3-root pinned2016 family; two independent alternatives rejected for lower-right stem joining upper horizontal unlike domestic/default. Preserve all16 original raw commands including raw10 no-op comment with zero calls/polygons,15 drawing calls and7 original quadratic control sets. Only exact-continuous raw12/13 horizontal-to-down-left fold merged; raw10 emits no pen. Native order unchanged. No invented connector, extension, radical transplant, split, reversal, coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;14 pens14 masks7 curve masks. Domestic dictionary crosscheck, not exam-body approval; private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/50db.json.
