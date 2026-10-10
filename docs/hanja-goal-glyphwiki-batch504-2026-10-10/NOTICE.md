@@ -1,0 +1,9 @@
+# 惔 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u60d4/u5fc4-01/u5fc4/u708e-02/u706b-06/u60d4-g/u5fc4-g01/u60d4-ue0100; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 a8fcbd55d0e3ba999b80bb43db9bb0c6af0e69a8c27c7bbd842958dc31356ab1. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels371/372: all3 complete original roots observed against domestic11-pen source. Selected default u60d4 matches the isolated right dot of 忄; g/ue0100 attach it nearer the vertical. All11 domestic directions and99 progressive frames approved; enlarged520px pen11 at50/75/99/100 and actual replay7→100 observed with no endpoint jump. Complete8-record/3-root pinned2016 family;zero histories,aliases or missing dependencies. Preserve all11 original raw commands,11 drawing calls and10 original quadratic control triples/flags. Domestic order raw1,raw2,raw0,raw3..10;one original command per pen,no merges. No connector,extension,radical transplant,split,reversal,coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;11pens11masks10curve masks. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/60d4.json.
