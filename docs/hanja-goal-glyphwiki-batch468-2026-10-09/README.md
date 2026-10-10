@@ -1,9 +1,7 @@
-# 觩 14획 — 출처 검토 완료, 적용 준비
+# Batch468 · 觩14
 
-브라우저 패널 3의 탭 236·237에서 국내 사전 14획과 126개 진행 화면을 확인했습니다. 2·3·4·9·11획을 50·75·99·100%로 확대하여 실제 재생 100% 완료 및 오류 없음을 확인했습니다.
+Native browser3 panels236/237: all14 domestic pens,126 progressive frames and enlarged strokes2/3/4/9/11 at50/75/99/100 and actual100 approved. Exact default u89e9 whole among two variants;3 declared archive records, no historical substitution. Original raw1/2,4/5 continuous folds and raw3/5/9 line-to-curve paths retained. Domestic order: raw14 horizontal before raw9 vertical hook; left raw7 vertical then8 horizontal confirmed. Coordinates, controls, flags and polygons retained;14 masks10 curves. No connector, split, transplant or reversal. Domestic dictionary crosscheck is not exam-body approval; private media RAM-only.
 
-고정 전체 원본 u89e9와 두 종속, 두 전체 자형을 확인했습니다. 원본 16그룹·19회 그리기·10개 이차곡선에서 14획·14마스크·10개 곡선 방향 획을 구성합니다. 원래 연속인 두 꺾임과 raw3·5·9의 직선→곡선을 보존합니다. 국내 자료에 따라 raw14 가로획을 raw9 세로갈고리보다 먼저 그리고 왼쪽 raw7 세로→raw8 가로의 원본 순서를 확인했습니다. 좌표·제어점·윤곽 변경, 연결선·부수 이식·분할·반전은 없습니다.
+Runtime applied. Frozen snapshot2be0f0f5: production build and TypeScript passed;478 library files/1956 tests passed. Native panel277 at430×932: intro automatic/replay1→14/14; writing entry/replay/reentry1→14/14; drawing,undo,clear passed; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; errors0. Approved52997 lingo.progress.hanja RAM backup restored exactly, server discarded. See validation.json.
 
-국내 사전 대조는 시험 주관 기관의 공식 승인과 구분합니다. 비공개 SVG·HTML·스크린샷은 RAM에만 머물렀습니다. 앱 등록·빌드·모바일 쓰기 검증은 남았으며 준비 자료는 적용 완료 수에 포함하지 않습니다. 駉 테스트 기록 변경은 사용자 답변 대기 중이며 차단을 우회하지 않았습니다.
-
-검증: node docs/hanja-goal-glyphwiki-batch468-2026-10-09/verify-source.mjs
+Applied5263/5978(88.0%),remaining715. Prepared8chars108pens, not applied. Next 捄10.
