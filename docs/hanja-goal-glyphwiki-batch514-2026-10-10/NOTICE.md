@@ -1,0 +1,9 @@
+# 祋 source geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; source SHA256 a5d52e12a23f41fb150618aa568d5745f8d9e4cbb550a7d87a227d0715c383cf; exact records u794b,u793a-01,u6bb3-02,u794b-g,u793b-g,u6bb3-g02,u794b-ue0100,u794b-ue0101,u794b-ue0102,u793b-01;zero historical records; no latest substitution. Fixed engine49232bac0348fe815f4200d4116ab7917e0db47f,8 file hashes;engine JS not redistributed.
+
+Native Codex browser3 panels399/400: all5 complete roots u794b/g/ue0100/ue0101/ue0102 observed against domestic9pen source. Default/ue0100/ue0101 use matching 示 radical;g/ue0102 use different 礻 radical,not approved. Ten-record/five-root pinned2016 family,zero historical or missing records. Selected original preserves12raw15draw5Q0B. Exactly continuous H/V/Q/H merge raw7/8 and H/Q merge raw9/10;proposed9pen grouping only,not full-order approval. Domestic pen7 directly observed;its nine progressive frames reviewed. Remaining8pens not fully reviewed after decisive failure. Enlarged520px pen7 at50/75/99.99/100 shows terminal-hook tip truncated until completion. Last original line args[164.43,83,184.19,83,2006,5],tip(186.1,61):22original units above horizontal versus original mask radius14. Three matching-radical roots share the same incomplete terminal trajectory. No invented hook trajectory,mask widening,endpoint extension,flag change or coordinate change. Runtime not registered;zero approved progressive frames. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+No runtime asset; public original source and reproducibility proofs only.
