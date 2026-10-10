@@ -1,9 +1,7 @@
-# 悾11strokes — source review prepared
+# Batch445 · 悾11
 
-Native Codex browser3 panels198/199 compared all11domestic pens at390px and99progressive frames. The two original left dots raw1/2 precede original vertical raw0; the original continuous roof fold raw5/6 is one pen. Original raw8 already contains a connected vertical/quadratic/horizontal sequence and terminal flag5. No new path, hook or connector is added. The fixed compiler retains the original terminal flag5 ornament at completed pen8; enlarged99/100% samples were explicitly compared. Pens6/7/8 were enlarged at50/75/99/100%; actual playback reached100% for all three.
+Native browser3 panels198/199: domestic all11 pens,99 progressive frames and enlarged strokes6/7/8 approved including original terminal flag5 ornament at pen8 completion. Exact original u60be whole;6 records0 historical versions;11 masks6 curves. Original left dots raw1/2 precede vertical raw0; continuous roof fold raw5/6 and connected multi-call raw8 retained. Exact coordinates, controls, flags and polygons retained. No synthesized connector, split, transplant, reversal or latest substitution. Domestic dictionary crosscheck, not exam-body approval. Private dictionary media RAM-only.
 
-Four complete archived variants were inventoried. Exact u60be and five declared dependencies contain no historical substitution. All12raw groups,14draw calls,6quadratic calls and original polygons remain unchanged under200-to-100 normalization, yielding11pens/masks and6curved pens. No split, reversal, component transplant or latest fallback. Domestic dictionary cross-check is not exam-body approval. Private SVG/HTML/screenshots remained in RAM.
+Runtime applied. Frozen snapshotf0d2ec35: production build and TypeScript passed;463 library files/1911 tests passed. Native panel261 at430×932: intro automatic/replay1→11/11; writing entry/replay/reentry1→11/11; draw0→1,undo0,draw1→2,clear0; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; app errors0. Approved52997 lingo.progress.hanja backed up only in RAM, restored with exact equality, then backup server discarded. See validation.json for final checks.
 
-Runtime registration, app build/tests and mobile regression remain outstanding. Prior batch435mobile testing awaits explicit permission to back up, temporarily seed and restore the local test origin learning record. No restriction was bypassed; this prepared source does not increase completed runtime coverage.
-
-Validation: node docs/hanja-goal-glyphwiki-batch445-2026-10-09/verify-source.mjs.
+Applied5248/5978(87.8%),remaining730. Prepared23chars362pens,not counted as applied. Next 躩27.
