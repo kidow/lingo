@@ -1,0 +1,7 @@
+# Batch506 · 餤17 APPLIED
+
+Native Codex browser3 panels379/380: all4 complete original roots observed against domestic17-pen source. Selected default u9924 and ue0100/ue0101 match the domestic whole; ue0102 changes the 食 top horizontal and lower two horizontals. All17 domestic directions and153 progressive frames approved after direct 食 order review; enlarged520px pens4/17 at50/75/99/100 and actual replay10→100 for both observed without endpoint jumps. Complete9-record/4-root pinned2016 family;zero histories,aliases or missing dependencies. Preserve all18 original raw commands,18 drawing calls and10 original quadratic control triples/flags. Domestic order raw0,1,2,[4,5],6,7,3,8,9,10,11,12,13,14,15,16,17; merge only exactly continuous H/V commands for pen4. No connector,extension,radical transplant,split,reversal,coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;17pens17masks11curve masks. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+Frozen production build 18b6e185fced7c9f360d5895801250ddbba37869 PASS;502 library files/2028 tests PASS. Native mobile382 intro/writing/reentry autoplay and replay1→17;input0→1→0→1→2→0;fixed sheet and no static-overlay overlap;exact record restored.
+
+Actual runtime5287/5978(88.4%),691remaining: special535,specialII91,grade1 64,grade2 1. All24 new holds inherited. Next507 驔22. Own tabs and servers cleaned.

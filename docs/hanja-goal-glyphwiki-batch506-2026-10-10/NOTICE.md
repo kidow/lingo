@@ -1,0 +1,9 @@
+# 餤 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u9924/u2967f-01/u708e-02/u706b-06/u9924-ue0100/u9924-ue0101/u9924-ue0102/koseki-500650/u98e0-01; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 373c158cb2f6a08c1f7bd1972dcec6c524b5b6667654f2f36c5924a45a721971. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels379/380: all4 complete original roots observed against domestic17-pen source. Selected default u9924 and ue0100/ue0101 match the domestic whole; ue0102 changes the 食 top horizontal and lower two horizontals. All17 domestic directions and153 progressive frames approved after direct 食 order review; enlarged520px pens4/17 at50/75/99/100 and actual replay10→100 for both observed without endpoint jumps. Complete9-record/4-root pinned2016 family;zero histories,aliases or missing dependencies. Preserve all18 original raw commands,18 drawing calls and10 original quadratic control triples/flags. Domestic order raw0,1,2,[4,5],6,7,3,8,9,10,11,12,13,14,15,16,17; merge only exactly continuous H/V commands for pen4. No connector,extension,radical transplant,split,reversal,coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;17pens17masks11curve masks. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/9924.json.
