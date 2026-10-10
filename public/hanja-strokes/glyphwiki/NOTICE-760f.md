@@ -1,0 +1,9 @@
+# 瘏 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u760f/u7592/ufa5b-07/u760f-ue0100; declared records captured without latest substitution; zero historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 037bd176cb3d378317a4bef01d6223ac8a07f57a592d05823d8ac4c32154940c. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels421/422 compared both pinned u760f/ue0100 whole forms with domestic14-pen source. All14 pens and126 progressive frames directly reviewed for source order,direction,individual and cumulative geometry. Enlarged520px curve pens3/4/5/9/10 and fold12 at99.99/100 agree at completion;actual fold12 replay21→100 observed. Four-record/two-root complete pinned2016 family,zero historical/missing/alias records. Preserve15 raw commands,16 original drawing calls,5 quadratic triples and endpoint flags. Source groups [[0],[1],[2],[3],[4],[5],[6],[7],[8],[14],[9],[10,11],[12],[13]]: move original14 dot before 日 only per observed domestic direction source;merge original10+11 exactly continuous H/V.200to100 normalization and winding only;14 pens14 masks6 curve masks. No connector,extension,radical transplant,arbitrary split/merge,reversal,coordinate/control/endpoint-flag change or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/760f.json.
