@@ -1,0 +1,5 @@
+# Batch502 · 闥21 HOLD
+
+Native Codex browser3 panel368: all8 original whole roots observed against domestic21-pen source. Default/ue0100/ue0101 match the two-dot 辶 inside 門. The last domestic pen21 is leftward quadratic followed by rightward cubic; default raw14 Q ends(68.675,153.86),raw15 B starts(67.305,152.68),gap(-1.37,-1.18). Domestic20 H/V fold is continuous and is not the hold. Focused domestic20/21 versus original cumulative13..16 observed. Alternative itaiji001 has 大 and one-dot 辶;itaiji002 puts 辶 outside 門; t and var002/ue0102 use one-dot 辶. Complete23-record/8-root family with four exact histories u9054-t@2,u26352@2,u8fb6-t@4,u26352-jv@2;no missing/latest substitution. Default25raw26draw6Q1B. Original cubic preserved; joining last Q/B would require an invented connector. No full21-pen189-frame approval or runtime change. No connector, extension, endpoint/control/flag change, radical transplant, reversal or split. Domestic dictionary crosscheck is not exam-body approval;private media RAM-only.
+
+All8-whole/23-record/four-history/eight-engine reproduction PASS. Runtime unchanged:5284/5978(88.4%),694remaining. All23 new holds preserved. Next503 蕁16.
