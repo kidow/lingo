@@ -1,0 +1,9 @@
+# 烔 source geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62;source SHA256 d3e8aafe35dbaf5b2f07770be445fa0354c3f0231ae99dc551129d384676cf98;exact records u70d4,u706b-01,u540c-02,u540c-08,u5182,u53e3,u70d4-ue0100;zero historical records;no latest substitution. Fixed engine49232bac0348fe815f4200d4116ab7917e0db47f,8 file hashes;engine JS not redistributed.
+
+Native Codex browser436/437 compared both pinned u70d4/ue0100 wholes against domestic10-pen source;whole forms match. Raw source4 is an original non-drawing type0 separator with empty trace/polygons;it remains captured and validated,not a pen. Candidate groups [[0],[1],[2],[3],[5],[6,7],[8],[9],[10,11],[12]] preserve exact original continuity including H/V/Q fold6 and H/V fold9. Native pen6 nine progressive frames and enlarged520px99.99/100 reveal terminal hook clipping:original Q endpoint(161.72899999999998,180),original flag214 hook tip(145.7,174);left extent16.028999999999996 exceeds original mask radius14. Tip appears only at completion. Both roots share same geometry;no independent faithful alternative. HOLD,zero approved frames,runtime absent;remaining nine pens not fully visually reviewed. Preserve13 raw commands including separator,14 drawing calls,5 quadratic curves and endpoint flags. No connector,extension,mask widening,coordinate/control/endpoint-flag change,radical transplant or latest substitution. Private domestic graphics RAM-only;dictionary crosscheck is not exam-body approval.
+
+No runtime asset;public original source and reproducibility proofs only.
