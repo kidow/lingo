@@ -1,0 +1,7 @@
+# Batch533 · 倈10 APPLIED
+
+Native Codex browser panels461/462 compared all three pinned u5008/u5008-ue0100/u5008-ue0101 whole variants with domestic10-pen source. Selected u5008 default;ue0100 matches default,ue0101 adds two horizontal heads and is unselected. All10pens90progressive frames reviewed for order,direction,individual and cumulative geometry. Enlarged520px curve pens1/4/5/6/7/9/10 at99.99/100 agree;actual sweep10 replay20→100 observed. Complete7record/three-root pinned2016 family;zero historical,missing or alias records. Preserve10raw commands,10original drawing calls,7quadratic curves and original endpoint flags. Source groups [[0],[1],[2],[6],[7],[8],[9],[3],[4],[5]] preserve domestic small left/right strokes before central vertical. No merged commands.200to100 normalization and winding only;10pens10masks7curve-direction strokes. No connector,extension,radical transplant,arbitrary split,reverse,coordinate/control/endpoint-flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot dec63affbe64d0339471ffb13ddeacb218bddede PASS;514 library files/2064 tests PASS. Native mobile464 intro autoplay1→10,replay1→10;writing autoplay,replay and reentry1→10;input0→1→0→1→2→0;fixed sheet and zero static-overlay overlap;errors[];exact original record restored. Introduction replay completion was observed before opening writing.
+
+Actual runtime5299/5978,679 remaining:特級523,特級II91,1級64,2級1. All39 new holds inherited. Next534 騋18. Own tabs and servers cleaned.
