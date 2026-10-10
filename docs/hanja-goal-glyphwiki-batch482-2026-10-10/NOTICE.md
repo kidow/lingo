@@ -1,0 +1,9 @@
+# 墐 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u5890/u571f-01/u5807/u5890-ue0100/u5890-ue0101/u5890-ue0102; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 ff4b9c75b6a42093aecf48c3d06716f729df859b06ad182f7a7c4a7530e4d85e. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels307/308/309: domestic full glyph, all14 individual directions and126 progressive frames approved; enlarged pens3/9 at50/75/99/100 and actual replay15/16→100. Complete default u5890 and all6 captured family/dependency records from pinned2016 archive;0 histories. Preserve all15 original raw commands,15 drawing calls and1 original quadratic control set. Initial pens12/13 order rejected: domestic pen12 is original raw13 horizontal and pen13 original raw12 central vertical. Only verified permutation and continuous original raw8/9 horizontal/vertical fold adopted. No invented connector, transplanted radical, split, reversal, coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;14 pens14 masks2 curve masks. ue0100/ue0101 wrap default unchanged; independent ue0102 remains unselected. Domestic dictionary crosscheck, not exam-body approval; private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/5890.json.
