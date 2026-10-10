@@ -1,0 +1,7 @@
+# Batch505 · 萏12 APPLIED
+
+Native Codex browser3 panels375/376: all5 complete original roots observed against domestic12-pen source. Selected independent u840f-ue0103 has four grass pens and matches the domestic whole; default/ue0100/ue0101/ue0102 have three grass pens, with ue0101 also a knife variant. All12 domestic directions and108 progressive frames approved; enlarged520px pens6/10 at50/75/99/100 and actual replays7→100 and14→100 observed without endpoint jumps. Complete15-record/5-root pinned2016 family;zero histories,aliases or missing dependencies. Preserve all14 original raw commands,15 drawing calls and4 original quadratic control triples/flags. Domestic order raw0,1,3,2,4,[5,6],7,8,9,[10,11],12,13; merge only exactly continuous H/Q/Q and H/V commands for pens6/10. No connector,extension,radical transplant,split,reversal,coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;12pens12masks4curve masks. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+Frozen production build 6bc47a5a2705af44a976ea509c93a568bb68b8c3 PASS;501 library files/2025 tests PASS. Native mobile378 intro/writing/reentry autoplay and replay1→12;input0→1→0→1→2→0;fixed sheet and no static-overlay overlap;exact record restored.
+
+Actual runtime5286/5978(88.4%),692remaining: special536,specialII91,grade1 64,grade2 1. All24 new holds inherited. Next506 餤17. Own tabs and servers cleaned.
