@@ -10,7 +10,9 @@
     "pens": 13,
     "masks": 13,
     "curves": 7,
-    "nativeFrames": 117
+    "nativeFrames": 117,
+    "runtimeApplied": true,
+    "privateMediaSaved": false
   },
   "nativeReview": {
     "browserId": "3",
@@ -37,9 +39,110 @@
     "errors": [],
     "privateScreenshotsSaved": false
   },
-  "runtimeApplied": false,
-  "productionBuild": "Not run: no app change in this batch",
-  "mobileRegression": "Pending explicit permission for existing hanja progress backup/test/restore",
+  "runtimeApplied": true,
+  "productionBuild": {
+    "passed": true,
+    "status": 0,
+    "summary": [
+      "✓ Compiled successfully in 73s",
+      "  Running TypeScript ...",
+      "  Finished TypeScript in 14.8s ...",
+      "  Generating static pages using 8 workers (0/7) ...",
+      "  Generating static pages using 8 workers (1/7) \r",
+      "  Generating static pages using 8 workers (3/7) \r",
+      "  Generating static pages using 8 workers (5/7) \r",
+      "✓ Generating static pages using 8 workers (7/7) in 3.1s"
+    ]
+  },
+  "mobileRegression": "PASS; actual observations in mobile",
   "temporaryTabsClosed": true,
-  "temporaryServersStopped": true
+  "temporaryServersStopped": true,
+  "status": "Runtime applied and production/mobile regression complete",
+  "appBuildPerformedForThisCandidate": true,
+  "appBuildAndTestsPerformed": true,
+  "mobileRegressionPerformed": true,
+  "priorBatchStorageApprovalPending": false,
+  "libraryTests": {
+    "passed": true,
+    "status": 0,
+    "files": 481,
+    "summary": [
+      "ℹ tests 1965",
+      "ℹ suites 0",
+      "ℹ pass 1965",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 106396.380833"
+    ]
+  },
+  "mobile": {
+    "passed": true,
+    "browser": "Native Codex browser panel3",
+    "tab": 280,
+    "origin": "http://127.0.0.1:52997",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "intro": {
+      "autoplayObserved": "1/13",
+      "completed": "13/13",
+      "replayObserved": "1/13",
+      "replayCompleted": "13/13"
+    },
+    "writing": {
+      "entryAutoplay": "1/13",
+      "entryCompleted": "13/13",
+      "replayObserved": "1/13",
+      "replayCompleted": "13/13",
+      "reentryAutoplay": "1/13",
+      "reentryCompleted": "13/13",
+      "strokeInputs": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        0
+      ],
+      "undoPassed": true,
+      "clearPassed": true,
+      "sheetYBeforeAndAfter": 139.8046875,
+      "canvas": {
+        "x": 46,
+        "y": 288.8046875,
+        "width": 338,
+        "height": 338,
+        "touchAction": "none",
+        "noDragAncestor": true
+      },
+      "scrollTopBeforeAndAfter": 0,
+      "staticImgCount": 0,
+      "hanjaAnimationSvgCount": 1
+    },
+    "errors": [],
+    "storage": {
+      "key": "lingo.progress.hanja",
+      "humanAuthorized": true,
+      "backup": "RAM only",
+      "restoredExact": true,
+      "otherKeysChangedByHarness": false,
+      "privateValuesLoggedOrSaved": false,
+      "backupDiscarded": true
+    },
+    "privateMediaSaved": false
+  },
+  "productionSnapshot": "55bacb103dd3e34f8c26c681bc213099962dc216",
+  "frozenFunctionalInputsUnchangedDuringRegression": true,
+  "cleanup": {
+    "closedTabs": [],
+    "stoppedServers": [],
+    "unrelatedResourcesPreserved": true,
+    "mobileTab": 280,
+    "mobileServer": 72387,
+    "checkServer": 70820,
+    "approvedRecordRestoredBeforeCleanup": true
+  }
 }
