@@ -1,9 +1,7 @@
-# 垝 9획 — 출처 검토 완료, 적용 준비
+# Batch472 · 垝9
 
-브라우저 패널 3의 탭 244·245에서 국내 사전 9획과 81개 진행 화면을 대조했습니다. 5·7·8·9획을 50·75·99·100%로 확대해 실제 재생 100% 완료 및 오류 없음을 확인했습니다.
+Native browser3 panels244/245: all9 domestic pens,81 progressive frames and enlarged strokes5/7/8/9 at50/75/99/100 and actual100 approved. Exact default u579d whole among four variants;3 archive records and no histories. Non-drawing raw3 preserved. Domestic order: raw8 horizontal before raw7 descending Q. Original continuous folds raw5/6, line-Q raw7, line-line-Q raw9/10 and line-Q-line raw11 final-hook flag retained. Coordinates, controls, flags and polygons retained;9 masks6 curves. No connector, split, transplant or reversal. Domestic dictionary crosscheck is not exam-body approval; private media RAM-only.
 
-고정 원본 u579d와 두 종속 및 네 전체 자형을 확인했습니다. 원본 12그룹 중 raw3은 비그리기 그룹이며 실제 그리기 15개·이차곡선 6개를 9획·9마스크·6개 곡선 방향 획으로 구성합니다. 국내 자료에 따라 raw8 가로획을 raw7 내려가는 곡선보다 먼저 씁니다. 원본 raw5/6 꺾임, raw7 직선→곡선, raw9/10의 가로→세로→곡선 갈고리와 raw11 직선→곡선→직선 및 끝 갈고리 표식을 보존합니다. 연결선·부수 이식·분할·반전·좌표·제어점·윤곽 변경은 없습니다. 다른 전체 이체자는 목록에 기록했으며 선택한 전체 원본만 국내 필순 자료와 대조했습니다.
+Runtime applied. Frozen snapshotf252ce8e: production build and TypeScript passed;482 library files/1968 tests passed. Native panel281 at430×932: intro automatic2→9/9,replay1→9/9; writing entry/replay/reentry1→9/9; drawing,undo,clear passed; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; errors0. Approved52997 lingo.progress.hanja RAM backup restored exactly, server discarded. See validation.json.
 
-국내 사전 대조는 시험 주관 기관의 공식 승인과 구분합니다. 비공개 SVG·HTML·스크린샷은 RAM에만 머물렀습니다. 앱 등록·빌드·모바일 쓰기 검증은 남았으며 준비 자료는 적용 완료 수에 포함하지 않습니다. 駉 테스트 기록 변경은 사용자 답변 대기 중이며 차단을 우회하지 않았습니다.
-
-검증: node docs/hanja-goal-glyphwiki-batch472-2026-10-09/verify-source.mjs
+Applied5267/5978(88.1%),remaining711. Prepared4chars64pens, not applied. Next 闚19.
