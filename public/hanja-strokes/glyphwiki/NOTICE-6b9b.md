@@ -1,0 +1,9 @@
+# 殛 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u6b9b/u6b79-01/u4e9f-08/u6b9b-ue0100; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 653faf99b8641a4450a86dab53a9403a02b3bb77067f5357f976656549f836c9. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels290/291/292: domestic full glyph and all13 pens/117progressive frames approved; enlarged pens6/7/11 at50/75/99/100 and actual replay. Exact complete u6b9b and identical declared ue0100 wrapper from pinned2016 archive;4 records,0 histories. Preserve all17 original raw commands,18 drawing calls and7 quadratic control sets. Domestic pen6 is original short down-left raw6 only; pen7 is original horizontal raw7 followed by two continuous raw8 quadratics forming the terminal left hook. Earlier candidate boundary grouping raw6/7 was rejected by native domestic review; no raw trajectory changed. Preserve original folds raw2/3, raw7/8,raw10/11 andraw13/14; preserve diagonal raw6 centerline as its exact original line. No invented connector, transplant, split, reversal, coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;13 pens13 masks8 curve masks. Domestic dictionary crosscheck, not exam-body approval; private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/6b9b.json.
