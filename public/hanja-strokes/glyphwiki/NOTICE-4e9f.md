@@ -1,0 +1,9 @@
+# 亟 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u4e9f/u2ffb-u4e02-u53f9/u4e00-04; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 fef6b88fbf8ba454eb242b92f45bfff44b765df3f1f59799cb2915fba42cdb34. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels294/295/296: domestic full glyph, all9 individual directions and81 progressive frames approved; enlarged pens2/3/7 at50/75/99/100 and actual replay15→100. Exact complete default u4e9f and all3 declared records from pinned2016 archive;0 histories. Preserve all12 original raw commands,13 drawing calls and4 original quadratic control sets. Domestic pen2 remains the original short down-left raw1 alone; pen3 is original raw2 horizontal followed by two continuous raw3 quadratics forming the terminal left hook. Original raw5/6 form fifth horizontal/vertical fold; raw8/9 form seventh horizontal/down-left curve. No invented connector, transplant, split, reversal, coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;9 pens9 masks5 curve masks. Unselected family alternate missing u5c71-g04@1 remains unselected; selected3recordclosure complete. Domestic dictionary crosscheck, not exam-body approval; private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/4e9f.json.
