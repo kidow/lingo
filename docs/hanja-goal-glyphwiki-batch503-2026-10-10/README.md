@@ -1,0 +1,5 @@
+# Batch503 · 蕁16 HOLD
+
+Native Codex browser3 panel370: all five reproducible roots observed against domestic16-pen source. Default/ue0100/ue0101 have three-stroke continuous 艹; k/ue0102 have four-stroke 艹 matching domestic whole. Full eight-root family is not reproducible: g/ue0103/var001 depend on declared u5c0b@4 -> u53e3@12 -> u53e3-j@2 -> unversioned u2b739-jv, absent from pinned2016 archive. Four exact named histories captured;total20 records. API u2b739-jv@1 points to u2b739, while current version5 points to u2b739-jr;neither establishes the unversioned dependency at pinned cutoff and neither is substituted. Default17raw18draw3Q0B. No full16-pen144-frame approval or runtime change. No invented connector, extension, endpoint/control/flag change, radical transplant, reversal, split or latest substitution. Domestic crosscheck not exam-body approval;private media RAM-only.
+
+Partial-source verification PASS;five original wholes reproduced,three remain unresolved. Runtime5284/5978(88.4%),694remaining. All24 new holds preserved. Next504 惔11. Error tab369 could not be closed due generated-data-URL policy;review tab370 closed and own servers stopped.
