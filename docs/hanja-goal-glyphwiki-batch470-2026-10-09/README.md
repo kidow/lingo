@@ -1,9 +1,7 @@
-# 詘 12획 — 출처 검토 완료, 적용 준비
+# Batch470 · 詘12
 
-브라우저 패널 3의 탭 240·241에서 국내 사전 12획과 108개 진행 화면을 확인했습니다. 6·9·11획을 50·75·99·100%로 확대해 실제 재생 100% 완료 및 오류 없음을 확인했습니다.
+Native browser3 panels240/241: all12 domestic pens,108 progressive frames and enlarged strokes6/9/11 at50/75/99/100 and actual100 approved. Exact default u8a58 whole among two variants;3 declared archive records, no historical substitution. Original non-drawing raw8 retained; original continuous folds raw5/6,raw10/11,raw13/14 preserved. Domestic center vertical raw9 first confirmed. Coordinates, controls, flags and polygons retained;12 masks3 curves. No connector, split, transplant or reversal. Domestic dictionary crosscheck is not exam-body approval; private media RAM-only.
 
-고정 원본 u8a58와 두 종속 및 두 전체 자형을 확인했습니다. 16그룹 중 raw8은 비그리기 그룹으로, 실제 그리기 15개로 12획·12마스크·3개 꺾임 방향 획을 구성합니다. 원본의 raw5/6·raw10/11·raw13/14 연속 꺾임과 국내 자료의 중앙 세로 raw9 먼저 쓰는 순서를 보존했습니다. 새 연결선, 부수 이식, 분할·반전, 좌표·윤곽 변경은 없습니다.
+Runtime applied. Frozen snapshot19883cf8: production build and TypeScript passed;480 library files/1962 tests passed. Native panel279 at430×932: intro automatic/replay1→12/12; writing entry/replay/reentry1→12/12; drawing,undo,clear passed; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; errors0. Approved52997 lingo.progress.hanja RAM backup restored exactly, server discarded. See validation.json.
 
-국내 사전 대조는 시험 주관 기관의 공식 승인과 구분합니다. 비공개 SVG·HTML·스크린샷은 RAM에만 머물렀습니다. 앱 등록·빌드·모바일 쓰기 검증은 남았으며 준비 자료는 적용 완료 수에 포함하지 않습니다. 駉 테스트 기록 변경은 사용자 답변 대기 중이며 차단을 우회하지 않았습니다.
-
-검증: node docs/hanja-goal-glyphwiki-batch470-2026-10-09/verify-source.mjs
+Applied5265/5978(88.1%),remaining713. Prepared6chars86pens, not applied. Next 睠13.
