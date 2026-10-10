@@ -1,9 +1,7 @@
-# 茭 10획 — 출처 검토 완료, 적용 준비
+# Batch461 · 茭10
 
-브라우저 패널 3의 탭 223·224에서 국내 사전 10획을 390px로 대조하고, 최종 선택 u832d-k의 10획 × 9단계 = 90개 중간 단계를 확인했습니다. 7·8·9·10획을 50·75·99·100%로 확대하고 실제 재생 완료를 확인했습니다. 마지막 획은 위로 올린 뒤 오른쪽 아래로 내려오는 원래 연속 Q/Q 곡선입니다. 처음 대조한 ue0102는 이 상승 시작을 생략해 제외했고 그 후보의 처음 세 획 중간 화면은 최종 승인 수에 포함하지 않습니다. 최종 선택 후 전체 국내 획과 90개 화면을 재검토했습니다.
+Native browser3 panels223/224: all10 domestic pens,90 progressive frames and enlarged strokes7/8/9/10 approved. Exact complete u832d-k among five whole variants;5 declared archive records, no historical substitution. Four grass pens ordered0/1/3/2; original raw9/10 upward-to-downward Q/Q final pen retained. Rejected ue0102 omits the domestic initial upward segment; its partial three-pen review is excluded. Coordinates, controls, flags and polygons retained;10 masks4 curves. No connector, split, transplant or reversal. Domestic dictionary crosscheck is not exam-body approval; private media RAM-only.
 
-다섯 전체 원본을 고정 아카이브에서 확인했습니다. 선택 u832d-k와 네 선언 종속 원본, 11그룹·11회 그리기·5개 이차곡선에서 10획·10마스크·4개 곡선 방향 획을 구성했습니다. 초두 네 획 순서는 국내 자료에 따라 0/1/3/2이며 원래 두 곡선만 연속 재생합니다. 좌표·제어점·플래그·윤곽은 그대로이고 새 연결선·부수 이식·임의 분할·반전은 없습니다.
+Runtime applied. Frozen snapshot234056fe: build and TypeScript passed;472 library files/1938 tests passed. Native panel271 at430×932: intro automatic2→10/10 and replay2→10/10; writing entry/replay1→10/10 and reentry2→10/10; drawing,undo,clear passed; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; errors0. Approved52997 lingo.progress.hanja RAM backup restored exactly, server discarded. See validation.json.
 
-국내 사전 대조는 시험 주관 기관의 공식 승인과 구분합니다. 비공개 SVG·HTML·스크린샷은 RAM에만 머물렀습니다. 실제 앱 등록·빌드·모바일 쓰기 검증은 남았으며 준비 자료는 적용 완료 수에 포함하지 않습니다. 앞선 駉 테스트의 학습 기록 백업·임시 입력·정확한 원복은 사용자 답변 대기 중이며 차단을 우회하지 않았습니다.
-
-검증: node docs/hanja-goal-glyphwiki-batch461-2026-10-09/verify-source.mjs
+Applied5257/5978(87.9%),remaining721. Prepared14chars208pens, not applied. Next 蹻19.
