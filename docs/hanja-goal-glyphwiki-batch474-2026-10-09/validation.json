@@ -10,10 +10,133 @@
   "masks": 13,
   "curves": 10,
   "nativeFrames": 117,
-  "nativeEnlargedStrokes": [1, 5, 8, 11, 12],
+  "nativeEnlargedStrokes": [
+    1,
+    5,
+    8,
+    11,
+    12
+  ],
   "nativePlaybackCompletedPercent": 100,
   "nativeErrors": [],
-  "runtimeApplied": false,
-  "appRegression": "Outstanding; source preparation is not runtime completion",
-  "privateMediaSaved": false
+  "runtimeApplied": true,
+  "appRegression": "PASS; actual observations in mobile",
+  "privateMediaSaved": false,
+  "status": "Runtime applied and production/mobile regression complete",
+  "appBuildPerformedForThisCandidate": true,
+  "appBuildAndTestsPerformed": true,
+  "mobileRegressionPerformed": true,
+  "priorBatchStorageApprovalPending": false,
+  "productionBuild": {
+    "passed": true,
+    "status": 0,
+    "summary": [
+      "✓ Compiled successfully in 74s",
+      "  Running TypeScript ...",
+      "  Finished TypeScript in 13.8s ...",
+      "  Generating static pages using 8 workers (0/7) ...",
+      "  Generating static pages using 8 workers (1/7) \r",
+      "  Generating static pages using 8 workers (3/7) \r",
+      "  Generating static pages using 8 workers (5/7) \r",
+      "✓ Generating static pages using 8 workers (7/7) in 2.5s"
+    ]
+  },
+  "libraryTests": {
+    "passed": true,
+    "status": 0,
+    "files": 484,
+    "summary": [
+      "ℹ tests 1974",
+      "ℹ suites 0",
+      "ℹ pass 1974",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 106646.234958"
+    ]
+  },
+  "mobile": {
+    "passed": true,
+    "browser": "Native Codex browser panel3",
+    "tab": 283,
+    "origin": "http://127.0.0.1:52997",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "intro": {
+      "autoplayObserved": "1/13",
+      "completed": "13/13",
+      "replayObserved": "1/13",
+      "replayCompleted": "13/13"
+    },
+    "writing": {
+      "entryAutoplay": "1/13",
+      "entryCompleted": "13/13",
+      "replayObserved": "1/13",
+      "replayCompleted": "13/13",
+      "reentryAutoplay": "1/13",
+      "reentryCompleted": "13/13",
+      "strokeInputs": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        0
+      ],
+      "undoPassed": true,
+      "clearPassed": true,
+      "sheetYBeforeAndAfter": 139.8046875,
+      "canvas": {
+        "x": 46,
+        "y": 288.8046875,
+        "width": 338,
+        "height": 338,
+        "touchAction": "none",
+        "noDragAncestor": true
+      },
+      "scrollTopBeforeAndAfter": 0,
+      "staticImgCount": 0,
+      "hanjaAnimationSvgCount": 1
+    },
+    "errors": [],
+    "storage": {
+      "key": "lingo.progress.hanja",
+      "humanAuthorized": true,
+      "backup": "RAM only",
+      "restoredExact": true,
+      "otherKeysChangedByHarness": false,
+      "privateValuesLoggedOrSaved": false,
+      "backupDiscarded": true
+    },
+    "privateMediaSaved": false
+  },
+  "productionSnapshot": "7da02e4c2397797320600c5a01cc361359e598fc",
+  "frozenFunctionalInputsUnchangedDuringRegression": true,
+  "mobileRegression": "PASS; actual observations in mobile",
+  "sourceVerifier": {
+    "passed": true,
+    "engineFiles": 8,
+    "records": 3,
+    "histories": 0,
+    "raw": 14,
+    "draw": 15,
+    "pens": 13,
+    "masks": 13,
+    "curves": 10,
+    "nativeFrames": 117,
+    "runtimeApplied": true,
+    "privateMediaSaved": false
+  },
+  "cleanup": {
+    "closedTabs": [],
+    "stoppedServers": [],
+    "unrelatedResourcesPreserved": true,
+    "mobileTab": 283,
+    "mobileServer": 84299,
+    "checkServer": 82595,
+    "approvedRecordRestoredBeforeCleanup": true
+  }
 }
