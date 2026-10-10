@@ -1,0 +1,9 @@
+# 鞉 source geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; source SHA256 899f826bfaa38ed1dcf4c01456aa4854f9c92460a2caea17a9cdaf251362e023; exact records u9789,u5146-02,u9789-ue0100,u9769-01@2,u53e3@12,u53e3-j@2;three exact historical records; no latest substitution. Fixed engine49232bac0348fe815f4200d4116ab7917e0db47f,8 file hashes;engine JS not redistributed.
+
+Native Codex browser3 panels419/420 compared both complete pinned original roots u9789/ue0100 with the domestic15-pen source. Six original records,three exact historical dependencies,zero aliases or missing dependencies. Preserve16 raw commands,19 drawing calls,6 original quadratic triples and endpoint flags. Proposed15-pen groups merge only exactly continuous original6+7 H/V;all other calls preserved. Domestic pen13 downward-right-up hook and its nine progressive frames directly observed. Enlarged520px pen13 at50/75/99.99/100 shows terminal upward-hook tip truncated until completion. Last original line args[158.235,172,182.745,172,6,5];tip(184.7,141) lies31 original units above endpoint versus original curve-mask radius14. Remaining14 pens not fully reviewed after this decisive failure. No invented hook trajectory,mask widening,connector,endpoint extension,flag/control/coordinate change or latest substitution. Runtime not registered;zero approved progressive frames. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+No runtime asset; public original source and reproducibility proofs only.
