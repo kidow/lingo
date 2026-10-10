@@ -1,0 +1,7 @@
+# Batch589 · 軷12 APPLIED
+
+Native Codex browser panels591/592 reviewed both pinned whole variants and all12 domestic directions. Exact u8ef7/default andVS0 whole shapes match;default selected. All12pens108 normal progressive frames reviewed for order,direction,individual,cumulative and completed shapes. Enlarged520px99.99%→100% checks of curve pens3/9/10/11/12 pass;actual pen12 replay27%→100% observed. Complete4record/two-root pinned2016 family;zero historical dependencies,missing or aliases. Preserve14raw groups/14original drawing calls/4quadratic curves/0cubic curves/allflags. Original group order preserved;one endpoint-exact H/V merge raw2+3. Raw8 is an exactly empty separator,with zero calls and polygons,retained alongside raw9. Normalize200to100 and winding only;12pens12masks5curve-direction strokes. Mask stroke-width14 means radius7. No split/reverse,connector,extension,radical transplant,coordinate/control/endpoint/flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot 797fbcd7c567adf19406cb43056b1e86192ff3f1 PASS;529 library files/2109 tests PASS. Native mobile594 intro autoplay1→12,replay1→12;writing autoplay,replay and reentry1→12;input0→1→0→2→0;fixed sheet and zero static-overlay overlap;errors[];exact original record restored. App closed before restoration.
+
+Actual runtime5314/5978(88.9%),664 remaining:特級508,特級II91,1級64,2級1. All80 new holds inherited. Next590 雱12. Own tabs and servers cleaned. Goal remains active.

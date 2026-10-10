@@ -1,0 +1,9 @@
+# 軷 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u8ef7/u8eca-01/u72ae-02/u8ef7-ue0100; declared records captured without latest substitution; zero historical dependencies; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 8649362d3104a904476bbab56d0346a74c9eac8963faba1865d5dc3566b795c3. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser panels591/592 reviewed both pinned whole variants and all12 domestic directions. Exact u8ef7/default andVS0 whole shapes match;default selected. All12pens108 normal progressive frames reviewed for order,direction,individual,cumulative and completed shapes. Enlarged520px99.99%→100% checks of curve pens3/9/10/11/12 pass;actual pen12 replay27%→100% observed. Complete4record/two-root pinned2016 family;zero historical dependencies,missing or aliases. Preserve14raw groups/14original drawing calls/4quadratic curves/0cubic curves/allflags. Original group order preserved;one endpoint-exact H/V merge raw2+3. Raw8 is an exactly empty separator,with zero calls and polygons,retained alongside raw9. Normalize200to100 and winding only;12pens12masks5curve-direction strokes. Mask stroke-width14 means radius7. No split/reverse,connector,extension,radical transplant,coordinate/control/endpoint/flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/8ef7.json.
