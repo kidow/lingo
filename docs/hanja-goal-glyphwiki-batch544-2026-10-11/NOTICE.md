@@ -1,0 +1,9 @@
+# 敹 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u6579/u5196-03/u91c6-01/u6535-02; declared records captured without latest substitution; zero historical dependencies; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 116e7043052b3faee1b81897c46c7550f05f7aa7143b7d25ded1147dc8143f04. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser panels491/492 compared pinned u6579 whole with domestic15pen source;complete whole matches. All15pens135normal-progressive frames visually reviewed for order,direction,individual and cumulative shape. Enlarged520px99.99/100 comparisons of pens3/4/5/6/7/10/11/12/14/15 agree;actual pen15 replay27→100 observed. Complete4record/one-root pinned2016 family;zero historical dependencies,missing dependencies or aliases. Preserve16raw commands,16original drawing calls,10quadratic curves and original flags. Source groups [[0],[1],[2],[3,4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15]] merge only exact-continuous3+4 H/Q;normalization200to100 and winding only.15pens15masks10curve-direction strokes. Curve mask stroke-width14 means radius7. No connector,extension,radical transplant,arbitrary split,reverse,coordinate/control/endpoint-flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/6579.json.
