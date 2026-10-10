@@ -1,9 +1,7 @@
-# 痯13strokes — source review prepared
+# Batch450 · 痯13
 
-Native Codex browser3 panels206/207 compared all13domestic pens at390px and117progressive frames. Original continuous raw7/8 roof fold, raw10/11 and raw13/14 internal horizontal/vertical folds are complete pens. Whole-source order matches domestic13pens. Pens3/8/10/12 were enlarged at50/75/99/100%; actual playback reached100% for all four. All start/end directions and cumulative forms were reviewed. No new geometry was introduced.
+Native browser3 panels206/207: domestic all13 pens,117 progressive frames and enlarged strokes3/8/10/12 approved. Exact u75ef whole;6 archived declared records0 historical versions;13 masks7 curves. Original continuous raw7/8 roof fold and raw10/11,13/14 inner folds retained; whole source order matches domestic13pens. Exact coordinates, controls, flags and polygons retained. No synthesized connector, split, transplant, reversal or latest substitution. Domestic dictionary crosscheck, not exam-body approval. Private dictionary media RAM-only.
 
-Two complete archived whole variants default/0100 share the same geometry. Selected exact root u75ef has six declared archived records without historical substitution. All16raw groups,17draw calls and5quadratic calls preserve original polygons under200-to-100 normalization, yielding13pens/masks and7curved pens. No connector, split, reversal or radical transplant. Domestic dictionary cross-check is not exam-body approval. Private SVG/HTML/screenshots remained in RAM.
+Runtime applied. Frozen snapshot7f1c7278: production build and TypeScript passed;466 library files/1920 tests passed. Native panel264 at430×932: intro automatic/replay1→13/13; writing entry/replay/reentry1→13/13; draw0→1,undo0,draw1→2,clear0; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; app errors0. Approved52997 lingo.progress.hanja backed up only in RAM, restored with exact equality, then backup server discarded. See validation.json for final checks.
 
-Runtime registration, app build/tests and mobile regression remain outstanding. Prior batch435mobile testing awaits explicit permission to back up, temporarily seed and restore the local test origin learning record. No restriction was bypassed; this prepared source does not increase completed runtime coverage.
-
-Validation: node docs/hanja-goal-glyphwiki-batch450-2026-10-09/verify-source.mjs.
+Applied5251/5978(87.8%),remaining727. Prepared20chars307pens,not counted as applied. Next 鸛29 with exact whole u9e1b-ue0102.
