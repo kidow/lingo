@@ -12,6 +12,7 @@ import { HANJA_DICTIONARY_GLYPHWIKI_BATCH216_STROKES } from './hanja-stroke-dict
 import { HANJA_DICTIONARY_GLYPHWIKI_BATCH246_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch246.ts'
 import { HANJA_DICTIONARY_GLYPHWIKI_BATCH381_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch381.ts'
 import { HANJA_DICTIONARY_GLYPHWIKI_BATCH437_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch437.ts'
+import { HANJA_DICTIONARY_GLYPHWIKI_BATCH449_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch449.ts'
 
 export type HanjaVariantStrokeData = HanjaDictionaryStrokeData & {
   variant: { catalogStrokes: number; playbackStrokes: number; form: string }
@@ -59,9 +60,10 @@ const allowed: readonly VariantPin[] = [
  {"glyph":"菉","catalogStrokes":12,"playbackStrokes":11,"form":"사전","candidateSha256":"6aea1e8bc2cc251f3687444463ac596259de6238c2b484b9a0da09c7d7a50b93","pathsSha256":"a5319bd1af4d11f6da80a07501762b913d8ef9a32b3b752620e00c816b207519"},
  {"glyph":"囍","catalogStrokes":22,"playbackStrokes":24,"form":"사전","candidateSha256":"7ac7169b2a3dec66862033e3a51c1cb69548ae436b68cffb9636d322044cc85b","pathsSha256":"f84d203b376b1d2a6c7aedc25df71bf6da297a8ed23f5c08a2d68ae0b7eeedaa"},
  {"glyph":"翶","catalogStrokes":18,"playbackStrokes":17,"form":"사전","candidateSha256":"99bdf8adb51791fbb8a55d352771a45aab3b024a6b82187c5832ecd1a70f8b44","pathsSha256":"cea893c9cf0a672ae3b43e5e52e7158f6cacd1e49fb8e3ae6985220785ae4cb5"},
+ {"glyph":"瘝","catalogStrokes":14,"playbackStrokes":15,"form":"사전","candidateSha256":"4f94ff46da9e4ff7d7b6550a502b1638575d8053e1f0edd0a34ee6443def8cda","pathsSha256":"689a7ff047d00906596b118e8d16442495b085dabf8602a8b8ca819332669bf7"},
 ]
 
-export const HANJA_VARIANT_STROKES: readonly HanjaVariantStrokeData[] = [...reviewed, ...special2Reviewed, ...special2DirectionReviewed, ...special2KanjiVGReviewed, ...special2RabbitReviewed, ...HANJA_DICTIONARY_VARIANT_KANJIVG_BATCH13_STROKES, ...HANJA_DICTIONARY_VARIANT_KANJIVG_BATCH14_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH154_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH215_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH216_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH246_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH381_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH437_STROKES].map((entry, i) => {
+export const HANJA_VARIANT_STROKES: readonly HanjaVariantStrokeData[] = [...reviewed, ...special2Reviewed, ...special2DirectionReviewed, ...special2KanjiVGReviewed, ...special2RabbitReviewed, ...HANJA_DICTIONARY_VARIANT_KANJIVG_BATCH13_STROKES, ...HANJA_DICTIONARY_VARIANT_KANJIVG_BATCH14_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH154_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH215_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH216_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH246_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH381_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH437_STROKES, ...HANJA_DICTIONARY_GLYPHWIKI_BATCH449_STROKES].map((entry, i) => {
   const pin = allowed[i]
   const candidateSha256 = 'candidateSha256' in entry ? entry.candidateSha256 : undefined
   if (!pin || entry.glyph !== pin.glyph || entry.variant.catalogStrokes !== pin.catalogStrokes
