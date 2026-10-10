@@ -1,0 +1,7 @@
+# Batch556 · 苙9 APPLIED
+
+Native Codex browser panels528/529 compared all five pinned whole variants with domestic9pen source. Exactu82d9-k split grass matches and is selected;VS2 also matches,default/VS0/VS1 joined grass mismatches and is ineligible. Domestic right grass H precedes V,confirmed directly in pens3/4;only intact raw3/raw2 groups permuted. All9pens81normal-progressive frames visually reviewed for order,direction,individual,cumulative and completed shape. Enlarged520px99.99%→100% checks of curve pens7/8 agree;actual pen9 replay29%(image30%)→100% observed. Complete10record/five-root pinned2016 family;zero histories,missing or aliases. Preserve9raw groups/9original drawing calls/2quadratic curves/allflags. Normalize200to100 and winding only;9pens9masks2curve-direction strokes. Mask stroke-width14 means radius7. No merge/split/reverse,connector,extension,radical transplant,coordinate/control/endpoint/flag change,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot e8de7e2c159098e16815afd2565486185ef8e804 PASS;523 library files/2091 tests PASS. Native mobile531 intro autoplay1→9,replay1→9;writing autoplay,replay and reentry1→9;input0→1→0→2→0;fixed sheet and zero static-overlay overlap;errors[];exact original record restored. Introduction replay completion was observed before opening writing.
+
+Actual runtime5308/5978,670 remaining:特級514,特級II91,1級64,2級1. All53 new holds inherited. Next557 禡15. Own tabs and servers cleaned.
