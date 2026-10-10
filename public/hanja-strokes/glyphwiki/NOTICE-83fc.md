@@ -1,0 +1,9 @@
+# 菼 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u83fc/u8279-03/u708e/u706b-06/u706b/u83fc-ue0100/u83fc-ue0101/u83fc-ue0102/ufa5e-03/u8279-k03; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 c2bfc2355fdd7cd2543fce9634bb2d22c57d8b575ac31dd2559a3c81ba07549f. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels389/390: all4 complete original roots compared against the domestic12-pen source. Selected whole u83fc-ue0102 has four grass strokes and two complete fires; default/ue0100/ue0101 have three grass strokes and11 total, so are not used. All12 directions and108 progressive frames approved, including grass order H-left,V-left,H-right,V-right. Enlarged520px pens8/12 observed at50/75/99.99/100 with no terminal jump; actual replays20→100 and19→100 observed. Complete10-record/4-root pinned2016 family;zero histories,aliases or missing dependencies. Preserve all12 original raw commands,12 drawing calls and8 original quadratic control triples/flags. Domestic order raw0,1,3,2,4,5,6,7,8,9,10,11.200to100 normalization and winding only;12pens12masks8curve masks. No connector,extension,radical transplant,split,merge,reversal,coordinate/control/endpoint-flag change or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/83fc.json.

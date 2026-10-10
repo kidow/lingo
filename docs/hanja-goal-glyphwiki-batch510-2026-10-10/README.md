@@ -1,0 +1,7 @@
+# Batch510 · 菼12 APPLIED
+
+Native Codex browser3 panels389/390: all4 complete original roots compared against the domestic12-pen source. Selected whole u83fc-ue0102 has four grass strokes and two complete fires; default/ue0100/ue0101 have three grass strokes and11 total, so are not used. All12 directions and108 progressive frames approved, including grass order H-left,V-left,H-right,V-right. Enlarged520px pens8/12 observed at50/75/99.99/100 with no terminal jump; actual replays20→100 and19→100 observed. Complete10-record/4-root pinned2016 family;zero histories,aliases or missing dependencies. Preserve all12 original raw commands,12 drawing calls and8 original quadratic control triples/flags. Domestic order raw0,1,3,2,4,5,6,7,8,9,10,11.200to100 normalization and winding only;12pens12masks8curve masks. No connector,extension,radical transplant,split,merge,reversal,coordinate/control/endpoint-flag change or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+Frozen production build ba7f3cab12c23173488f17ca219a712fd10e9570 PASS;503 library files/2031 tests PASS. Native mobile392 intro/writing/reentry autoplay and replay1→12;input0→1→0→1→2→0;fixed sheet and no static-overlay overlap;exact record restored.
+
+Actual runtime5288/5978(88.5%),690remaining: special534,specialII91,grade1 64,grade2 1. All27 new holds inherited. Next511 窞13. Own tabs and servers cleaned.
