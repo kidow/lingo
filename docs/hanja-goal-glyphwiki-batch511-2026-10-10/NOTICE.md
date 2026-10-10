@@ -1,0 +1,9 @@
+# 窞 source geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; source SHA256 34220f42d4b9117834df797b80c993ff8c099218b67e72a2fd08ff3f9435fb4a; exact records u7a9e,u7a74-03,u5196-03,u81fd-j,u4eba-03-itaiji-001,cdp-8b6c-03,u81fc-var-003,u7a9e-g,u7a9e-ue0100,u7a74-g03@4,u81fd-g@1,u5b80-g03@4,u516b-09@1,u2008a-03,u81fc@1,u5196-03@4;6 exact historical records; no latest substitution. Fixed engine49232bac0348fe815f4200d4116ab7917e0db47f,8 file hashes;engine JS not redistributed.
+
+Native Codex browser3 panels393/394: all3 complete original roots reviewed against domestic13pen source. Default u7a9e and ue0100 whole match;g differs at top 穴 dot/last stroke and middle hook. Complete16record/3root pinned2016 family with6 exact historical dependencies,zero missing. Selected default preserves16raw19draw8Q0B;exactly continuous merges raw2/3,7/8,12/13 and original V/Q/H raw5. Proposed13pen grouping only,not full-order approval. Diagnostic domestic3/5/7/10 and pen5 nine progressive frames reviewed;remaining12pens not fully reviewed after decisive failure. Enlarged520px pen5 at50/75/99.99/100 shows terminal-hook tip is truncated until completion. Original last line args[129.8,68.8,177.22,68.8,3006,5],tip(179.2,51.3):distance17.5 above the horizontal versus original mask radius14. No invented hook trajectory or mask widening. Runtime not registered;zero approved progressive frames. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+No runtime asset; public original source and reproducibility proofs only.
