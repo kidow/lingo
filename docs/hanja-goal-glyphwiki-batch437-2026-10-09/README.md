@@ -1,11 +1,7 @@
-# 翶 — source review prepared
+# Batch437 · 翶17 replay/18 catalog
 
-翶 was compared against the exact pinned domestic dictionary media in the native Codex browser panel, including all 17 strokes and 153 progressive frames. Bent/hooked strokes 3, 12, 15 were enlarged at 50/75/99/100%; actual playback was observed through completion. Private media stayed in RAM.
+Native browser3 panels183/184: all17 domestic pens,153 progressive frames and enlarged3/12/15 actual replay approved. Complete u7ff6 whole and5 records0 histories, original controls and polygons retained. No connector, split, transplant, reversal or latest substitution. Domestic dictionary crosscheck, not exam-body approval. Private domestic graphics remain RAM-only.
 
-The pinned complete GlyphWiki whole and declared dependencies were used without new geometry. All original polygons, control points, and stroke flags remain intact. Domestic dictionary cross-check does not mean official exam-body approval.
+Registered exact 18/17 verified variant; catalog unchanged, all other count mismatches rejected. Frozen production5fa4fbb8: build and TypeScript passed;458 library files/1896 tests passed. Native mobile panel256 at430×932: intro1→17/17,replay1→17/17;writing entry1→17/17,replay1→17/17,reentry1→17/17;draw0→1,undo0,draw1→2,clear0;canvasY320.8046875,sheetY139.8046875,scroll0 unchanged;touch-action none,no-drag;staticImg0/animationSVG1;app errors0. Approved52997 lingo.progress.hanja RAM backup restored with exact equality, then discarded.
 
-The corpus lists 18 strokes; the domestic dictionary animation and checked complete whole use 17 pens. Keep the corpus unchanged and register a separately documented 17-stroke replay variant only after the application checks pass.
-
-Runtime registration, isolated app build/tests, and intro/writing auto/replay/reentry/drawing regression remain outstanding. Batch 435’s mobile test is awaiting explicit permission to back up, temporarily seed, and restore the local test origin’s learning record. No storage permission was bypassed. These prepared source reviews do not increase the completed application count.
-
-Validation: `node docs/hanja-goal-glyphwiki-batch437-2026-10-09/verify-source.mjs`.
+Applied5243/5978(87.7%),remaining735. Prepared28chars438pens,not counted as applied. Next 盬18.

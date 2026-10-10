@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import vm from 'node:vm'
+import {HANJA_STROKES,hanjaStrokeData} from '../../lib/hanja-strokes.ts'
 import {compileProgressive,renderProgressive,sourceGroups} from './progressive.mjs'
 const read=n=>readFileSync(new URL(n,import.meta.url)),obj=n=>JSON.parse(read(n)),sha=b=>createHash('sha256').update(b).digest('hex')
 const source=obj('sources.json'),proof=obj('engine-proof.json'),trace=obj('draw-trace.json'),review=obj('progressive-review.json')
@@ -29,5 +30,6 @@ const actual=JSON.parse(vm.runInContext(`const resolve=(name,seen=[])=>{if(seen.
 assert.deepEqual(actual.groups,proof.groups);assert.deepEqual(actual.trace,trace);assert.deepEqual(actual.defaults,proof.defaults)
 assert.equal(trace.length,20);assert.equal(trace.flat().length,22);assert.equal(trace.flat().filter(c=>c.kind==='cdDrawCurve').length,7)
 const compiled=compileProgressive(trace,proof);assert.equal(compiled.length,17);assert.equal(compiled.flat().length,17);assert.equal(compiled.flat().filter(s=>s.direction==='curve').length,8);assert.equal(trace.flat().filter(c=>c.kind==='cdDrawBezier').length,0);for(const [i,indices] of sourceGroups.entries()){const original=indices.flatMap(n=>proof.groups[n].polygons);const points=p=>JSON.stringify(p.map(v=>[v.x/2,v.y/2]).sort((a,b)=>a[0]-b[0]||a[1]-b[1]));const got=compiled[i].flatMap(s=>s.outline.split(' Z').filter(Boolean).map(poly=>Array.from(poly.matchAll(/[ML]([^ ]+) ([^ ]+)/g)).map(m=>[Number(m[1]),Number(m[2])]).sort((a,b)=>a[0]-b[0]||a[1]-b[1])));assert.deepEqual(got.map(x=>JSON.stringify(x)).sort(),original.map(points).sort());}for(let n=1;n<=17;n++)for(const p of [0,.125,.25,.375,.5,.625,.75,.875,1])assert(renderProgressive(compiled,n,p).includes('<svg'));for(const [i,j,k] of [[0,0,0],[13,1,2],[19,0,4]]){const broken=structuredClone(trace);broken[i][j].args[k]+=1;assert.throws(()=>compileProgressive(broken,proof));}
-assert.deepEqual(review.sourceGroupsZeroBased,sourceGroups);assert.equal(review.progressiveFramesApproved,153);assert.equal(review.runtimeApplied,false);
-console.log(JSON.stringify({passed:true,glyph:"翶",engineFiles:8,records:5,histories:0,raw:20,draw:22,pens:17,masks:17,curves:8,nativeFrames:153,runtimeApplied:false,privateMediaSaved:false}))
+assert.deepEqual(review.sourceGroupsZeroBased,sourceGroups);assert.equal(review.progressiveFramesApproved,153);assert.equal(review.runtimeApplied,true);
+const runtime=hanjaStrokeData({glyph:'翶',strokes:18});assert(runtime);assert.equal(HANJA_STROKES.filter(s=>s.glyph==='翶').length,1);assert.deepEqual(runtime.outlines,compiled);assert.deepEqual(runtime.paths,compiled.map(s=>s.map(p=>p.outline).join(' ')));assert.equal(runtime.geometrySource,sha(read('../../public/hanja-strokes/glyphwiki/7ff6.json')));assert.deepEqual(runtime.variant,{catalogStrokes:18,playbackStrokes:17,form:'사전'});assert.equal(runtime.candidateSha256,sha(read('runtime-candidate.json')));assert.equal(hanjaStrokeData({glyph:'翶',strokes:17}),null);
+console.log(JSON.stringify({passed:true,glyph:"翶",engineFiles:8,records:5,histories:0,raw:20,draw:22,pens:17,masks:17,curves:8,nativeFrames:153,runtimeApplied:true,privateMediaSaved:false}))
