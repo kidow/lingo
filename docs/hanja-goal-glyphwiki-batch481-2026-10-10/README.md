@@ -1,0 +1,7 @@
+# Batch481 · 漌14 · HOLD
+
+Native browser3 panels303/304/305/306. Complete domestic glyph and default/ue0102 whole-source outlines observed. Default third water pen original raw2 ends(37.875,184); raw3 starts(34,150), discontinuous. Native third-pen nine samples, enlarged50/75/99/100 and actual replay16→100 reviewed as diagnostic only; no full14pen/126frame approval. ue0100/ue0101 wrap default unchanged. ue0102/toki uses same u6c35-01, endpoint(38.325,184)→(34.4,150) also discontinuous, and its right component u5807-var-003 lacks the intermediate horizontal found in domestic glyph. No connector, transplanted radical, split/reversal/control change, latest substitution or runtime registration. Release requires an exact complete reusable whole source with continuous domestic-matching third-pen trajectory and full14pen native review. Private dictionary media RAM-only; domestic crosscheck is not exam-body approval.
+
+Source verifier passed: pinned archive8records/4roots, eight engine hashes, both exact original default16raw and ue0102/toki15raw, private dictionary6713bytes/14clips/hash. Third trajectory endpoint gaps retained exactly. No runtime addition or full14pen approval, so candidate production/mobile checks were not run. Source preview has16independent masks/14diagnostic pens, not an approved runtime recipe. Alternate right component has one fewer horizontal.
+
+Total unchanged:5275/5978(88.2%)applied,703remaining. Next墐14. No Jev transmission. Owned native tabs303–306 and servers stopped; unrelated resources preserved.
