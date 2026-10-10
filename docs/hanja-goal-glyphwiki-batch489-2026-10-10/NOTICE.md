@@ -1,0 +1,9 @@
+# 頎 stroke geometry notice
+
+GlyphWiki Project and contributors. Geometry: [GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and [pinned archive LICENSE.txt](https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt).
+
+Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c; archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62; exact whole u980e/u65a4-01/u9801-02/u980e-ue0100; declared records captured without latest substitution; 0 historical versions; no latest substitution or literal aliases; GlyphWiki license@18; canonical source SHA256 b1749bf5b183ad5c53ee491cf38c2a31ee55702085b59862f7d7dcc309fab1ed. Fixed engine 49232bac0348fe815f4200d4116ab7917e0db47f,8 hashes in engine-proof.json; engine JS not redistributed.
+
+Native Codex browser3 panels328/329/330: domestic whole and exact default original u980e complete form approved; all13 individual directions and117 progressive frames reviewed. True enlarged520px pens2/8 at50/75/99/100 and actual pen8 replay26→100 (AX initially20). Complete4-record/2-root pinned2016 family; ue0100 wraps default unchanged,0 missing/history. Preserve all14 original raw commands,15 drawing calls and5 original quadratic control sets. Only continuous original raw7/8 horizontal-to-downward fold merged; raw1 retains its original continuous line/quadratic downward-left sweep. Native order unchanged. No invented connector, extension, radical transplant, split, reversal, coordinate/control/endpoint-flag change or latest substitution.200to100 normalization and winding only;13 pens13 masks6 curve masks. Domestic dictionary crosscheck, not exam-body approval; private media RAM-only.
+
+Editable source /hanja-strokes/glyphwiki/980e.json.
