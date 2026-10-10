@@ -1,0 +1,5 @@
+# Batch508 · 髧14 HOLD
+
+Native Codex browser3 panels385/386: both complete original roots u9ae7/ue0100 observed against domestic14pen whole. Focused domestic6,7,14 versus original cumulative6,7,16 confirms domestic6 bends from down-left to upward-right. Original raw5 Q ends(34,103.275);raw6 Q starts(21,106.5),gap(-13,3.225). Both roots share the disconnected paths. Final domestic14 also has an upward terminal hook absent from the original last line trajectory;not separately approved. Complete4record/2root pinned2016 family plus exact history u5198@3;zero missing. Preserve16raw19draw10Q0B;no connector,extension,radical transplant,split,reversal,coordinate/control/endpoint-flag change or latest substitution. No full14pen126frame review,compiler or runtime approval. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+4-record/2-root/one-history/eight-engine reproduction and original Q/Q gap/runtime nonregistration PASS. No full14pen126frame approval. No app rebuild or mobile regression for this source-only hold; runtime unchanged:5287/5978(88.4%),691remaining. All26 new holds preserved. Next509 耼10.
