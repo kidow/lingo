@@ -1,6 +1,6 @@
 {
   "glyph": "棞",
-  "status": "Source review prepared; runtime registration and mobile regression outstanding",
+  "status": "Runtime applied and production/mobile regression complete",
   "sourceVerifier": {
     "passed": true,
     "archiveHashVerified": true,
@@ -21,18 +21,126 @@
     "browserId": "3",
     "allDomesticPens": 12,
     "progressiveFrames": 108,
-    "enlarged50_75_99_100": [6, 7, 10, 11],
-    "actualPlaybackCompleted": [6, 7, 10, 11],
+    "enlarged50_75_99_100": [
+      6,
+      7,
+      10,
+      11
+    ],
+    "actualPlaybackCompleted": [
+      6,
+      7,
+      10,
+      11
+    ],
     "progressiveBrowserErrors": [],
     "privateMediaSaved": false
   },
-  "runtimeApplied": false,
-  "appBuildPerformedForThisCandidate": false,
-  "mobileRegressionPerformed": false,
-  "priorBatchStorageApprovalPending": true,
+  "runtimeApplied": true,
+  "appBuildPerformedForThisCandidate": true,
+  "mobileRegressionPerformed": true,
+  "priorBatchStorageApprovalPending": false,
   "cleanup": {
-    "tabs": [196, 197],
-    "servers": [88026, 88368],
-    "unrelatedResourcesPreserved": true
-  }
+    "tabs": [
+      196,
+      197
+    ],
+    "servers": [
+      88026,
+      88368
+    ],
+    "unrelatedResourcesPreserved": true,
+    "mobileTab": 260,
+    "mobileServer": 19906,
+    "checkServer": 19810,
+    "approvedRecordRestoredBeforeCleanup": true
+  },
+  "productionBuild": {
+    "passed": true,
+    "status": 0,
+    "summary": [
+      "✓ Compiled successfully in 82s",
+      "  Running TypeScript ...",
+      "  Finished TypeScript in 20.8s ...",
+      "  Generating static pages using 8 workers (0/7) ...",
+      "  Generating static pages using 8 workers (1/7) \r",
+      "  Generating static pages using 8 workers (3/7) \r",
+      "  Generating static pages using 8 workers (5/7) \r",
+      "✓ Generating static pages using 8 workers (7/7) in 2.6s"
+    ]
+  },
+  "libraryTests": {
+    "passed": true,
+    "status": 0,
+    "files": 462,
+    "summary": [
+      "ℹ tests 1908",
+      "ℹ suites 0",
+      "ℹ pass 1908",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 125657.930208"
+    ]
+  },
+  "mobile": {
+    "passed": true,
+    "browser": "Native Codex browser panel3",
+    "tab": 260,
+    "origin": "http://127.0.0.1:52997",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "intro": {
+      "autoplayObserved": "1/12",
+      "completed": "12/12",
+      "replayObserved": "1/12",
+      "replayCompleted": "12/12"
+    },
+    "writing": {
+      "entryAutoplay": "1/12",
+      "entryCompleted": "12/12",
+      "replayObserved": "1/12",
+      "replayCompleted": "12/12",
+      "reentryAutoplay": "1/12",
+      "reentryCompleted": "12/12",
+      "strokeInputs": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        0
+      ],
+      "undoPassed": true,
+      "clearPassed": true,
+      "sheetYBeforeAndAfter": 139.8046875,
+      "canvas": {
+        "x": 46,
+        "y": 288.8046875,
+        "width": 338,
+        "height": 338,
+        "touchAction": "none",
+        "noDragAncestor": true
+      },
+      "scrollTopBeforeAndAfter": 0,
+      "staticImgCount": 0,
+      "hanjaAnimationSvgCount": 1
+    },
+    "errors": [],
+    "storage": {
+      "key": "lingo.progress.hanja",
+      "humanAuthorized": true,
+      "backup": "RAM only",
+      "restoredExact": true,
+      "otherKeysChangedByHarness": false,
+      "privateValuesLoggedOrSaved": false,
+      "backupDiscarded": true
+    },
+    "privateMediaSaved": false
+  },
+  "productionSnapshot": "4d66e85a1d3139f241bcb160102db076c85726ed",
+  "frozenFunctionalInputsUnchangedDuringRegression": true
 }
