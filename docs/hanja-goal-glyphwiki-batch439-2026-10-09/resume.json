@@ -1,100 +1,88 @@
 {
-  "status": "Required test-storage approval pending; independent source reviews committed",
-  "lastCompletedRuntimeBatch": 434,
-  "lastCompletedRuntimeCommit": "d5c33db58bcb2eba9423629591afa5f6ab6ca94f",
-  "completedRuntimeApplied": 5240,
-  "completedRuntimeRemaining": 738,
+  "completedRuntime": 5244,
   "total": 5978,
-  "workingRuntimeBatch435Applied": 5241,
-  "workingRuntimeRemaining": 737,
-  "pendingRuntimeBatch": {
-    "batch": 435,
-    "glyph": "駉",
-    "pens": 15,
-    "frozenBuild": "9ecc354a1df9a3e620f347e9eb5fd6817e338794",
-    "buildPassed": true,
-    "allLibTestsPassed": 1890,
-    "libTestFiles": 456,
-    "sourceAndNativeReviewPassed": true,
-    "mobileIntroWritingRegressionPassed": false,
-    "ownPendingFiles": 21
-  },
-  "requiredApproval": {
+  "remainingCommittedRuntime": 734,
+  "pendingRuntime": null,
+  "preparedSources": [
+    "batch441 鼛21",
+    "batch443 熇14",
+    "batch444 棞12",
+    "batch445 悾11",
+    "batch447 躩27",
+    "batch449 瘝15 replay /14corpus",
+    "batch450 痯13",
+    "batch451 鸛29",
+    "batch452 錧16",
+    "batch453 祼13",
+    "batch458 儌15",
+    "batch459 敽16",
+    "batch461 茭10",
+    "batch462 蹻19",
+    "batch463 嘐14",
+    "batch464 鷮23",
+    "batch465 曒17",
+    "batch467 雊13",
+    "batch468 觩14",
+    "batch469 捄10",
+    "batch470 詘12",
+    "batch471 睠13",
+    "batch472 垝9",
+    "batch473 闚19",
+    "batch474 戣13",
+    "batch475 頍13",
+    "batch476 騤19"
+  ],
+  "newHolds": [
+    "batch438 櫜19 whole-form mismatch",
+    "batch440 羖10 fifth-stroke direction mismatch",
+    "batch442 罛10 disconnected center-fold",
+    "batch446 薖17 disconnected final Q/B path",
+    "batch448 鞹20 seventeenth-stroke direction mismatch",
+    "batch455 纊21 disconnected original first/second folds",
+    "batch456 迋8 disconnected final Q/B sweep",
+    "batch457 鞃14 disconnected original pen13 Q/Q fold",
+    "batch460 荍10 disconnected original fifth fold",
+    "batch466 姤9 disconnected first original fold"
+  ],
+  "storageApproval": {
+    "status": "Explicit human permission received; exact approved-key RAM backup/test/restoration completed and discarded",
     "origin": "http://127.0.0.1:52997",
-    "action": "RAM backup of only lingo.progress.hanja at the local test origin, temporarily seed the test progress, perform native intro/writing regression, restore exactly in finally",
-    "approvalReceived": false,
-    "autoReviewReason": "Existing learning record could be overwritten without explicit permission",
-    "saferAlternativeAttempted": "Plain unmodified export. Manual finder replay1→15 passed; no candidate intro/writing entry available through the UI.",
+    "key": "lingo.progress.hanja",
+    "requestedScope": "RAM backup, temporary local testing seed, exact restoration including absent key",
+    "reason": "Automatic browser approval review rejected overwriting existing learning data without explicit permission",
     "doNotBypass": true
   },
-  "preparedSources": [
-    {
-      "batch": 436,
-      "glyph": "烓",
-      "pens": 10,
-      "commit": "ae73388f7838d59f5fba344ba27c15e9d4ff7db4",
-      "runtimeApplied": false
-    },
-    {
-      "batch": 437,
-      "glyph": "翶",
-      "corpusStrokes": 18,
-      "replayPens": 17,
-      "commit": "ae73388f7838d59f5fba344ba27c15e9d4ff7db4",
-      "runtimeApplied": false
-    },
-    {
-      "batch": 439,
-      "glyph": "盬",
-      "pens": 18,
-      "historicalVersions": 5,
-      "runtimeApplied": false
-    }
-  ],
-  "heldSource": {
-    "batch": 438,
-    "glyph": "櫜",
-    "pens": 19,
-    "commit": "926a08e749c4d631bda508716a133e973412acde",
-    "reason": "All4complete whole candidates have incompatible right-side geometry; no mixing variants"
+  "nextIndependentCandidate": {
+    "glyph": "鼛",
+    "id": "u9f1b",
+    "strokes": 21,
+    "grade": "특급",
+    "sourceRow": 421
   },
-  "nativeBrowser": {
-    "browserId": "3",
-    "remainingTabs": [
-      176,
-      178,
-      181,
-      182
-    ],
-    "blockedTab181MustNotBeManipulated": true
+  "nextAfterApproval": "Promote prepared 鼛21 exact reviewed whole, then remaining prepared exact sources; explicit same-origin approved-key RAM backup/restore scope persists",
+  "privateMediaSaved": false,
+  "preparedSourcePens": 420,
+  "existingRuntimeAlternativeReview": {
+    "glyph": "丱",
+    "status": "already applied from dictionary-special-batch2-4e31-v1; original existing paths preserved; new GlyphWiki alternative rejected",
+    "pathsSha256": "7a56acee07ced5d6a0cd855fddccb80ab89b1daffd1446a99476992fcaac8764"
   },
-  "retainedOwnServers": [
-    {
-      "pid": 58062,
-      "port": 52994,
-      "purpose": "駉 static source comparison"
-    },
-    {
-      "pid": 58880,
-      "port": 52995,
-      "purpose": "駉 progressive source comparison"
-    },
-    {
-      "pid": 61744,
-      "port": 52996,
-      "purpose": "Passed frozen build and all-test results, RAM server"
-    },
-    {
-      "pid": 64017,
-      "port": 52997,
-      "purpose": "Plain unchanged mobile export; no progress injection"
-    }
+  "skippedAlreadyApplied": [
+    "丱",
+    "綰"
   ],
-  "nextSteps": [
-    "If approval arrives, back up and restore only the approved local test storage in RAM, then verify 駉 intro/writing auto/replay/reentry/draw/undo/clear at430×932. Do not claim mobile checks before execution.",
-    "Finish and commit batch435only after mobile regression, using fresh HEAD and the unchanged frozen own21files; preserve all source-review commits and unrelated files.",
-    "Promote prepared436,437,439 sequentially, preserving the corpus18/replay17 variant for翶; require independent frozen build/tests, native mobile regression and own-only commits for each.",
-    "Continue next actual unapplied candidate 羖10strokes after checking runtime/shared HEAD and pending --free."
-  ],
-  "privateMediaSaved": false
+  "runtimeCompletion": {
+    "glyph": "盬",
+    "pens": 18,
+    "productionBuildPassed": true,
+    "libraryTestsPassed": 1899,
+    "mobilePassed": true,
+    "storageRestoredExact": true
+  },
+  "gradeRemaining": {
+    "특급": 577,
+    "특급II": 91,
+    "1급": 65,
+    "2급": 1
+  }
 }
