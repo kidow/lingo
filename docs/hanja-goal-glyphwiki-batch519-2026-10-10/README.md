@@ -1,0 +1,7 @@
+# Batch519 · 慆13 APPLIED
+
+Native Codex browser3 panels409/410 compared all4 pinned whole variants with the domestic13-pen source. Selected u6146 and ue0100 match the 爫+臼 form; g has a different upper stroke form and itaiji-001 has a different lower component, so neither is selected. All13 pens and117 progressive frames reviewed for order, direction, individual and cumulative geometry. Enlarged520px pen11 at50/75/99.99/100 and pen8 at99.99/100 agree at completion; actual native replays observed. Complete14-record family including four exact historical dependencies, with no aliases or missing dependencies. Preserve14 raw commands,14 drawing calls and7 quadratic triples/flags. Domestic source groups [[1],[2],[0],[3],[4],[5],[6],[7],[8],[9],[10,11],[12],[13]]; raw10+11 are an exactly continuous horizontal-to-vertical fold.200to100 normalization and winding only;13 pens13 masks8 curve masks. No connector,extension,radical transplant,arbitrary split/merge,reversal,coordinate/control/endpoint-flag change or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics remain RAM-only.
+
+Frozen production snapshot 1bfdd91de717aa585ddd7737aa18158c6d73526f PASS;504 library files/2034 tests PASS. Native mobile412 intro/writing/reentry autoplay and replay1→13;input0→1→0→1→2→0;fixed sheet and no static-overlay overlap;exact original record restored.
+
+Actual runtime5289/5978(88.5%),689remaining: special533,specialII91,grade1 64,grade2 1. All35 new holds inherited. Next520 荼11. Own tabs and servers cleaned.
