@@ -1,0 +1,5 @@
+# Batch509 · 耼10 HOLD
+
+Native Codex browser3 panels387/388: both complete original roots u803c/ue0100 match domestic10pen whole. All10 domestic directions and90 progressive frames reviewed; Ear order raw0,1,2,3,4,5 confirmed directly. Exactly continuous H/V/Q raw7/8 merge for domestic8 only;preserve11raw12draw2Q0B. Enlarged520px domestic8 at50/75/99.99/100 confirms terminal-hook tip appears only on completion;original endflag314,end(157.4912,180). No invented terminal extension or widening to conceal the missing path. No runtime approval. Complete6record/2root pinned2016 family;zero histories,aliases or missing. No connector,radical transplant,split,reversal,coordinate/control/endpoint-flag change or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private media RAM-only.
+
+6-record/2-root/zero-history/eight-engine reproduction and untouched coordinates/tamper rejection/runtime nonregistration PASS. All90 native progressive frames reviewed, but pen8 terminal hook is not approved. No app rebuild or mobile regression for this source-only hold; runtime unchanged:5287/5978(88.4%),691remaining. All27 new holds preserved. Next510 菼12.
