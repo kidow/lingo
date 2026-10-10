@@ -1,9 +1,7 @@
-# 捄 10획 — 출처 검토 완료, 적용 준비
+# Batch469 · 捄10
 
-브라우저 패널 3의 탭 238·239에서 국내 사전 10획과 90개 진행 화면을 대조했습니다. 2·3·5·7·9획의 50·75·99·100% 확대, 실제 재생 100% 완료 및 오류 없음도 확인했습니다.
+Native browser3 panels238/239: all10 domestic pens,90 progressive frames and enlarged strokes2/3/5/7/9 at50/75/99/100 and actual100 approved. Exact default u6344 whole among four variants;3 declared archive records, no historical substitution. Domestic order: raw8 horizontal before raw3 vertical hook; original line-to-curve paths raw1/3 retained. Whole u6344-ue0102 rejected for missing final upper dot. Coordinates, controls, flags and polygons retained;10 masks8 curves. No connector, split, transplant or reversal. Domestic dictionary crosscheck is not exam-body approval; private media RAM-only.
 
-고정 전체 원본 u6344와 두 종속, 네 전체 자형을 확인했습니다. 원본 10그룹·12회 그리기·8개 이차곡선에서 10획·10마스크·8개 곡선 방향 획을 구성합니다. 국내 자료에 맞춰 raw8 가로를 raw3 세로갈고리보다 먼저 그리고 원본 raw1·3의 직선→갈고리곡선을 보존합니다. u6344-ue0102는 오른쪽 위 마지막 점이 빠져 제외합니다. 좌표·제어점·윤곽 변경, 연결선·부수 이식·분할·반전은 없습니다.
+Runtime applied. Frozen snapshotcb6ffd75: production build and TypeScript passed;479 library files/1959 tests passed. Native panel278 at430×932: intro automatic/replay1→10/10; writing entry/replay/reentry1→10/10; drawing,undo,clear passed; sheetY139.8046875 and scroll0 unchanged; touch-action none/no-drag, static image0 and animationSVG1; errors0. Approved52997 lingo.progress.hanja RAM backup restored exactly, server discarded. See validation.json.
 
-국내 사전 대조는 시험 주관 기관의 공식 승인과 구분합니다. 비공개 SVG·HTML·스크린샷은 RAM에만 머물렀습니다. 앱 등록·빌드·모바일 쓰기 검증은 남았으며 준비 자료는 적용 완료 수에 포함하지 않습니다. 駉 테스트 기록 변경은 사용자 답변 대기 중이며 차단을 우회하지 않았습니다.
-
-검증: node docs/hanja-goal-glyphwiki-batch469-2026-10-09/verify-source.mjs
+Applied5264/5978(88.1%),remaining714. Prepared7chars98pens, not applied. Next 詘12.
