@@ -1,0 +1,5 @@
+# Batch535 · 酈22 HOLD
+
+Native panels467/468 compared both pinned u9148/u9148-ue0100 complete whole variants with the domestic22pen source. Complete4record2root family;zero history,missing or alias records. Native domestic pen17 is one continuous down-then-rising fold. Exact original raw19 vertical ends[46.84,176] but raw20 rising quadratic starts[29.715,181],delta[-17.125,5];merging them would require an invented connector or endpoint edit. Both whole variants share this trace. Candidate23 separate trajectories preserve all27raw31draw6Q1B calls using only four exactly continuous merges;candidate count23 is not dictionary22 approval. Only pen17 nine native progressive frames inspected;zero approved,remaining21pens unreviewed. Whole matches do not approve trajectories. Runtime absent. No radical transplant,coordinate/control/endpoint edit,mask widening or latest substitution. Private domestic graphics RAM-only;dictionary crosscheck is not exam-body approval.
+
+Source verifier PASS;no runtime/UI changes or candidate app build. Both native panels closed and servers stopped. Runtime5299/5978,679remaining;41 new holds preserved.Next536 栵10.
