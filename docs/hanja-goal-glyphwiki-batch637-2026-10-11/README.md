@@ -1,0 +1,7 @@
+# Batch637 · 鱮25 APPLIED
+
+Native browser723/724/725 reviewed both pinned whole variants and all25 domestic directions. Basic/VS0 compatible. Exact u8207@4 retained without latest substitution. Original endpoint-contiguous pairs raw1+2,4+5,24+25,19+18 form domestic pens2/4/18/20. All remaining nonempty source groups reordered intact to domestic directions;original empty type0 raw13 retained in trace/proof. All25 pens225 progressive frames approved;520px99.99 to100 fine checks of15 curve pens PASS;actual pen25 replay26 to100. Complete4records2roots1declared exact historical dependency;no missing dependencies. Original30raw29draw9Q0B controls,flags,polygons,endpoints retained;200to100 normalization and winding only. No connector, arbitrary split/reverse, mask widening, deletion, radical transplant or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot 23e750b13065429359e4e70eda97753e8a05f512 PASS;552 library files/2178 tests PASS. Native mobile727 intro autoplay/replay1 to25;writing autoplay/replay/reentry1 to25;input0 to1 to0 to2 to0;338 square canvas at46,288.8046875 and sheet139.8046875 stay fixed through drag and toolbar interaction;zero static overlay,one animationSVG,documentScroll0,errors[];exact original record restored after app closed.
+
+Actual runtime5337/5978(89.3%),641 remaining:特級485,特級II91,1級64,2級1. All104 new holds inherited. Next638 湑12. Own tabs and servers cleaned. Goal remains active.
