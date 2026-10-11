@@ -1,0 +1,7 @@
+# Batch653 · 瑆13 APPLIED
+
+Native browser767/768/769 reviewed both pinned whole variants,all13 domestic static directions and all117 progressive frames. Original6records2roots0history0missing,14raw14draw2Q0B retained. Domestic permutation [[0],[2],[1],[3],[4],[5,6],[7],[8],[9],[10],[13],[11],[12]] corrects 王 and 生 horizontal-before-vertical ordering;only existing contiguous H/V raw5/6 are combined. All13 pens and117frames PASS. Whole-centerline masks pens4/6/9,all three520px99.99→100 fine checks PASS with no missing turn/hook. Actual pen9 replay23→100 observed. No connector,endpoint/control-point adjustment,mask widening or outline synthesis. Domestic source graphics RAM-only. Source is domestic dictionary cross-review,not nationwide official approval.
+
+Frozen production snapshot ed54d2b3d3399bb6c33c525c02f7818508dd2260 PASS;555 library files/2187 tests PASS. Native mobile771 intro autoplay/replay1→13;writing autoplay/replay/reentry1→13;input0→1→0→2→0. Native coordinate retest:338 square canvas at46,288.8046875 and sheet139.8046875 stay fixed through drawing and toolbar;zero static overlay,one animationSVG,documentScroll0,errors[]. Locator automatic scroll excluded by native-coordinate retest. Exact original record restored after app closed.
+
+Actual runtime5340/5978(89.3%),638 remaining:特級482,特級II91,1級64,2級1. All117 new holds inherited. Next654 騂17. Own tabs and servers cleaned. Goal remains active.
