@@ -1,0 +1,5 @@
+# 頟 reviewed whole geometry
+
+GlyphWiki Project and contributors. GlyphWiki License@18 and pinned archive LICENSE.txt apply. Pinned2010latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c;archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62;exact whole u981f;all3 family records;1 root;0 historical dependencies;GlyphWiki license@18;canonical source SHA256 500dcb1bf465a247170920ec7e84c7ff8aa65eb9ce42389d8b8ff77de4a97ea4
+
+Native browser panels18/19 compared exact whole u981f,all15 domestic static directions and135 progressive frames. Three records,one root,0 historical0 missing;18 raw18 draw6 Q0 B. Three source-contiguous pairs form domestic pens2,5,10. Pens5 and10 retain original right/down polygons as two masks in one pen;pen2 uses the original connected line/quadratic centerline. All6 curve fine checks plus pens5/10 at520px99.99→100 PASS;pen15 replay42→100. All original polygons retained,no synthesized outline,connector,mask widening or point edits. Private domestic graphics RAM-only;dictionary cross-review,not exam-body approval.
