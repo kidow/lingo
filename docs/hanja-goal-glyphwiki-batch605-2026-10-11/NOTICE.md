@@ -1,0 +1,5 @@
+# 祔 original geometry source review
+
+GlyphWiki Project and contributors;GlyphWiki License@18 and pinned archive LICENSE.txt apply. Engine code not embedded.
+
+Native panels629/630 inspected all4 exact pinned wholes and10 domestic directions. Basicu7954/VS0/VS1 native compatible 示;VS2礻 mismatches. Source order unchanged. Original10raw12draw4Q0B;10pens10masks4curve pens4/6/9/10. Internal line→Q joins continuous. All10pens90normalframes observed,zero approved;520px99.99%→100% fine4PASS6PASS9FAIL10PASS. Pen9 Qendpoint[153.76,182],original hook vertex[139.7,176],normalized radius7.643356592492596 exceeds fixed7;left tip visibly clipped until completion. Both compatible alternatives' entire pen9 groups/traces are identical;no alternative fine playback claimed. Actual pen10 replay50→100 observed,butwhole sequence unapproved. No connector,extension,control/endpoint/flag edit,split/reverse,radical transplant,mask widening,nonempty deletion or latest substitution. No runtime/appbuild/mobile registration. Domestic crosscheck,not exam-body approval;private graphics RAM-only.
