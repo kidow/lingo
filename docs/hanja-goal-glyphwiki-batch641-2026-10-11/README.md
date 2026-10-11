@@ -1,0 +1,7 @@
+# Batch641 · 癙18 HOLD
+
+Native browser733 reviewed both complete pinned whole variants and all18 domestic static directions. Basic/VS0 whole shapes compatible. Complete5records2roots0historical dependencies,zero missing. All21raw22draw11Q0B controls,flags,polygons preserved. Domestic pen12 requires raw12 vertical ending[73.97,169.27] then raw13 rising trajectory starting[56.59,178.99],9.956691217467776 normalized units apart. Domestic pen15 likewise raw14 end[119,171.7] to raw15 start[99.25,179.8],10.673243415194843 apart. Both exact wholes share these gaps;strict original-trajectory compiler rejects proposed18pen groups. Raw10 horizontal to raw9 vertical contiguous domestic9 retained;domestic10/11 and lower dot order identified intact. Last18 hook requires later progressive/fine review,not approved. No progressive frames,fine checks,replay,runtime/build/mobile performed. No inferred connector,reversal,control/flag edit,nonempty deletion,mask widening or radical transplant. Release requires complete reusable original with continuous domestic pens12/15,then full18pen progressive/fine/replay/build/mobile review including last upward hook. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Strict pinned archive,all2whole VM reproductions,domestic metadata and original trajectory continuity rejection PASS. No runtime/build/mobile performed. Own tab733 and server62091 stopped.
+
+Runtime5337/5978(89.3%),641 remaining;108 new holds. Next 藇18 (u85c7,row2538). Goal remains active.
