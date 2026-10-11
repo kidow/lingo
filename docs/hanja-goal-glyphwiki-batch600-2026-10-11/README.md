@@ -1,0 +1,5 @@
+# Batch600 · 楅13 HOLD
+
+Native panels613/614 inspected both exact pinned whole variants and all13 domestic static directions. Both whole geometries/traces identical and match. Native dictionary 田 pens11horizontal then12vertical observed,so intact raw14 then13 permutation. Empty raw4 []/zero polygons retained with raw5. Mouth raw7H/raw8V and 田raw11H/raw12V exact continuous merges. Original16raw15draw2Q0B preserved. All13pens117normalframes observed,zero approved.520px fine3PASS4PASS7FAIL10PASS:pen7 raw8 endpoint[163.77550000000002,84.2],original corner[157.7,98.2],normalized endpoint radius7.630722446957437 exceeds fixed width14/radius7. Native completion visibly fills corner late. Identical VS0 has same geometry;alternate fine not separately replayed. Actual last pen13 replay25→100 observed,butwhole sequence not approved. No connector,extension,control/endpoint/flag edit,split/reverse,radical transplant,mask widening,nonempty deletion or latest substitution. No runtime/appbuild/mobile registration. Domestic crosscheck,not exam-body approval;private graphics RAM-only.
+
+Runtime5316/5978(88.9%),662 remaining;88 new holds. Next601 葍13. Goal remains active.
