@@ -1,0 +1,7 @@
+# Batch636 · 塽14 APPLIED
+
+Native browser719/720 reviewed all3 pinned complete whole variants and all14 domestic directions. Basic/VS0 are compatible;VS1 replaces four crossed 乂 components with 人 forms and is excluded. Basic selected. All14pens126progressive frames approved;520px99.99 to100 fine checks of all11 curves3,5–14 PASS;actual pen14 replay23 to100. Entire7records3roots0historical dependencies and zero missing retained. Original14raw15draw11Q0B controls,flags,polygons and endpoints unchanged. Domestic14pen permutation [1,2,3,4,7,8,9,10,11,12,13,14,5,6];last two 大 sweeps follow all four crossed components. Original continuous V/Q path inside raw4 remains one pen13. Only whole-path reorder,200to100 normalization and winding. No connector,arbitrary split/reverse,mask widening,deletion,radical transplant or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot 75d9d2ede66a9966f0c3c47494b502feb38ccf78 PASS;551 library files/2175 tests PASS. Native mobile722 intro autoplay/replay1 to14;writing autoplay/replay/reentry1 to14;input0 to1 to0 to2 to0;338 square canvas at46,288.8046875 and sheet139.8046875 stay fixed through drag and toolbar interaction;zero static overlay,one animationSVG,documentScroll0,errors[];exact original record restored after app closed.
+
+Actual runtime5336/5978(89.3%),642 remaining:特級486,特級II91,1級64,2級1. All104 new holds inherited. Next637 鱮25. Own tabs and servers cleaned. Goal remains active.
