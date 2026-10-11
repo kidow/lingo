@@ -1,0 +1,7 @@
+# Batch628 · 璸18 APPLIED
+
+Native browser694/695 inspected the single pinned whole and all18 domestic directions. Basic whole compatible. 玉 order observed H,H,V,rising stroke;raw1 vertical moves intact after raw2 horizontal. All18 pens162 progressive frames approved;520px99.99 to100 fine checks of curves4/6/7/10/11/13/17/18 PASS;actual pen18 replay23 to100. Complete3record1root pinned2016family;0historical/missing dependencies. Original20raw20draw7Q0B preserved. Exact raw6+7 H/Q join composes pen7;raw13+14 H/V join composes pen13. All original controls,flags,polygons and endpoints retained;200to100 normalization and winding only. No arbitrary connector,endpoint/control/flag edit,split/reverse,mask widening,nonempty deletion,radical transplant or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot d1e692e8fbf6869c0744a8c67ae5f130131c9bf8 PASS;546 library files/2160 tests PASS. Native mobile697 intro autoplay/replay1 to18;writing autoplay/replay/reentry1 to18;input0 to1 to0 to2 to0;338 square canvas at46,288.8046875 and sheet139.8046875 remain fixed through drag and toolbar interaction;zero static overlay,one animationSVG,documentScroll0,errors[];exact original record restored after app closed.
+
+Actual runtime5331/5978(89.2%),647 remaining:特級491,特級II91,1級64,2級1. All101 new holds inherited. Next629 儐16. Own tabs and servers cleaned. Goal remains active.
