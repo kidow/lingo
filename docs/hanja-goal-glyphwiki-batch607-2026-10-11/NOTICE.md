@@ -1,0 +1,5 @@
+# 紑 original whole geometry
+
+GlyphWiki Project and contributors. GlyphWiki License@18 and pinned archive LICENSE.txt apply. Pinned2016 snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c;archive SHA2567ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. Exact familyu7d11/u7cf8-01/u4e0d-02/u7d11-ue0100;no latest substitution. Engine implementation stays RAM-only,not redistributed.
+
+Native browser panel637 inspected both exact pinned whole variants and all10 domestic static directions. Basicu7d11 andVS0 compatible;all groups and traces exactly identical. Domestic pens1/2 are continuous turn strokes,but intact raw0 Q ends[28,56] while raw1 Q starts[11.2,45],gap[-16.8,-11];raw2 Q ends[27.2,110] while raw3 Q starts[12.8,113],gap[-14.4,3]. Complete4record/2root fixed2016 family;zero missing,aliases or historical dependencies. Original12raw12draw9Q0B preserved. No compiler,progressive,fine,replay or runtime approval. No connector,endpoint/control/flag edit,extension,split/reverse,mask widening,radical transplant or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
