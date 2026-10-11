@@ -1,0 +1,5 @@
+# Public source rights
+
+Pinned GlyphWiki licence@18 and archive LICENSE.txt apply. Engine implementation fetched in RAM and not redistributed. Private dictionary graphics stay RAM-only.
+
+Native browser675 inspected both pinned whole variants and all18 domestic directions. Both wholes compatible. 馬 order observed V,H,H,H,V,fold-hook;raw2 vertical is moved intact after raw3/4 horizontals. Complete4record2root pinned2016 family;0history/missing. Original19raw21draw8Q0B preserved. Source groups compose pen6 from raw5+6 with exact joins;18pens7curves compile. Native browser676 inspected pen6 only9 normal frames,0approved.520px99.99 to100 reveals missing left terminal tip. Original raw6 second Q ends[55.97,183],flag214 polygon includes[39.9,177];normalized extent8.576784070967392 exceeds radius7. No original centerline covering tip. Other17 progressive pens,other6 fine curves and actual replay deferred. No runtime/build/mobile performed. No arbitrary connector,control/endpoint/flag edit,mask widening or radical transplant. Domestic dictionary crosscheck;no exam-body approval;private graphics RAM-only.
