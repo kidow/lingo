@@ -1,0 +1,149 @@
+{
+  "batch": 711,
+  "glyph": "茹",
+  "id": "u8339",
+  "status": "applied",
+  "snapshot": "e80701a93d4cd114eaa4661add6a3a4a3aefd1e9",
+  "sourceVerification": {
+    "passed": true,
+    "records": 14,
+    "roots": 6,
+    "historicalDependencies": 0,
+    "engineFiles": 8,
+    "domesticHashVerified": true
+  },
+  "nativeReview": {
+    "browser": "Codex in-app panel",
+    "wholeTab": "64",
+    "progressiveTab": "65",
+    "wholeVariants": 6,
+    "selectedRoot": "u8339-k",
+    "staticDirections": 10,
+    "progressiveFrames": 90,
+    "finePens": [
+      5,
+      6,
+      9
+    ],
+    "fineFrames": 6,
+    "joint50Percent": true,
+    "replay": {
+      "pen5": [
+        24,
+        100
+      ],
+      "pen10": [
+        30,
+        100
+      ]
+    },
+    "animationApproved": true
+  },
+  "runtime": {
+    "applied": 5363,
+    "total": 5978,
+    "remaining": 615,
+    "held": 148,
+    "appliedThisBatch": 1
+  },
+  "checks": {
+    "tests": {
+      "passed": true,
+      "status": 0,
+      "files": 578,
+      "summary": [
+        "ℹ tests 2256",
+        "ℹ suites 0",
+        "ℹ pass 2256",
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 110508.591125"
+      ]
+    },
+    "build": {
+      "passed": true,
+      "status": 0,
+      "summary": [
+        "✓ Compiled successfully in 4.6s",
+        "  Running TypeScript ...",
+        "  Finished TypeScript in 4.5s ...",
+        "  Generating static pages using 8 workers (0/7) ...",
+        "  Generating static pages using 8 workers (1/7) \r",
+        "  Generating static pages using 8 workers (3/7) \r",
+        "  Generating static pages using 8 workers (5/7) \r",
+        "✓ Generating static pages using 8 workers (7/7) in 2.5s"
+      ]
+    }
+  },
+  "mobile": {
+    "passed": true,
+    "origin": "http://127.0.0.1:52997",
+    "controlTab": "66",
+    "appTab": "67",
+    "introAutoplayInitialObserved": 3,
+    "introReplay": [
+      2,
+      10
+    ],
+    "writingAutoplay": [
+      1,
+      3,
+      10
+    ],
+    "writingReplay": [
+      2,
+      10
+    ],
+    "writingReentry": [
+      2,
+      10
+    ],
+    "inputCounts": [
+      0,
+      1,
+      0,
+      1,
+      2,
+      0
+    ],
+    "canvas": {
+      "x": 46,
+      "y": 288.8046875,
+      "width": 338,
+      "height": 338
+    },
+    "sheet": {
+      "y": 139.8046875,
+      "height": 792.1953125
+    },
+    "documentScroll": 0,
+    "dialogScroll": 0,
+    "touchAction": "none",
+    "vaulNoDrag": true,
+    "animationSvgs": 1,
+    "staticOverlay": 0,
+    "geometryPreserved": true,
+    "automationNote": "Semantic undo/clear locator auto-scrolled sheet182px;reopened and verified pointer draw/undo/clear with unchanged canvas and scroll0. No product geometry modified.",
+    "consoleErrors": [],
+    "storageStatus": {
+      "backed": true,
+      "prepared": true,
+      "closed": true,
+      "unchanged": true,
+      "exact": true
+    },
+    "actualLearningKeyWritten": false
+  },
+  "repairs": [
+    "Test accessed geometryLicense through narrower runtime type;changed assertion to reviewed JSON. Final existing full2256tests and build passed before user instruction to stop per-batch builds."
+  ],
+  "verificationPolicy": {
+    "effective": "2026-10-12 user instruction",
+    "productionBuildPerBatch": false,
+    "fullSuitePerBatch": false,
+    "scope": "Source/order/path checks and focused checks for changed code;browser review required. No production builds unless user requests."
+  },
+  "privateMediaSaved": false
+}
