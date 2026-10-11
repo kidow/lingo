@@ -1,0 +1,5 @@
+# 禴 reviewed whole geometry
+
+Pinned2010latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c;archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62;exact whole u79b4;all13 family records;4 roots;0 historical dependencies;GlyphWiki license@18;canonical source SHA256 8c0cc5549a95799facfcdabfbedebab0746906e4cfdeb472374920cf7845ec62
+
+Native browser panels28/29 compared four exact whole roots;three compatible and VS2 incompatible 示/礻. All22domestic directions198progressive frames and seven520px99.99→100 fine checks PASS;pen19replay27→100. Thirteen records,four roots,zero historical/missing/aliases;26raw28draw4Q0B. Original contiguous box folds preserved;domestic20 horizontal precedes21/22 verticals. Pen19 terminal214 uses pinned terminal14 formula lines588-596,opt1=0,opt2=2,width6,jump16;original hook polygon reveals left in same pen,weight8. No synthesized outline,connector,mask widening or point edits. Private domestic graphics RAM-only;dictionary cross-review,not exam-body approval.
