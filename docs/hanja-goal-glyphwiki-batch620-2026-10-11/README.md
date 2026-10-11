@@ -1,0 +1,7 @@
+# Batch620 · 棐12 APPLIED
+
+Native browser671/672 inspected all6 pinned whole variants and all12 domestic directions. Whole u68d0 selected; VS0/VS1 compatible. G left vertical is straight; VS2 left upper horizontals differ; var001 third horizontal extends beyond vertical, so these are ineligible. All12 pens108 progressive frames and520px99.99% to100% fine checks of curves1/4/11/12 approved. Actual pen12 replay22 to100. Complete10record6root pinned2016family with0history or missing. Original12raw13draw4Q0B preserved. Identity source groups; original raw0 V and Q merge at exact same endpoint within one raw stroke. All original controls and outlines retained;200to100 normalization and winding only. No connector,endpoint/control/flag edit,split/reverse,mask widening,nonempty deletion,radical transplant or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot 809054300e82f253279b1bdc4a2e0b4a6abc9fb0 PASS;542 library files/2148 tests PASS. Native mobile674 intro autoplay/replay1 to12;writing autoplay/replay/reentry1 to12;input0 to1 to0 to2 to0;fixed338 square canvas at46,288.8046875;sheet139.8046875;zero static overlay;errors[];exact original record restored after app closed. Test control and app title both 棐 confirmed.
+
+Actual runtime5327/5978(89.1%),651 remaining:特級495,特級II91,1級64,2級1. All97 new holds inherited. Next621 騑18. Own tabs and servers cleaned. Goal remains active.
