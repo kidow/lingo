@@ -1,0 +1,7 @@
+# Batch645 · 僎14 HOLD
+
+Native browser743 reviewed both complete pinned wholes and all14 domestic static directions;basic/VS0 compatible. Complete4records2roots0historical dependencies,zero missing. Original16raw20draw5Q0B preserved. Exact raw2+3 joins domestic3,raw6+7 joins domestic6;within raw5/raw9 continuous V/Q/H retained as domestic5/8. All14pens126normal progressive frames reviewed;12pens108normal frames approved,not a claim that all fine checks passed. Four520px99.99→100 fine checks:1/3 PASS,5/8 FAIL. Flag5 adds upward hook polygons while both final Line calls remain horizontal. Tips[122.3,55]/[182.9,55] exceed faithful radius7 from endpoints[120.3,86]/[180.98,86],and appear only after completion removes mask. Panel later became0width;fine6/13/14 and actual replay unreviewed. No runtime/build/mobile. No inferred upward extension,control/flag edit,mask widening,nonempty deletion,radical transplant. Release requires original complete explicit upward hook trajectories then all progressive/fine/replay/build/mobile checks. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Strict pinned archive,all2whole VM reproductions,domestic metadata,14pen compiler,exact outline retention,trace tamper rejection and numeric hook checks PASS. Native review fails pens5/8 fine completion;fine6/13/14 remain unreviewed after browser panel became0width. No runtime/build/mobile performed. Own tabs743/744/745 and servers62771/62883 stopped.
+
+Runtime5338/5978(89.3%),640 remaining;111 new holds. Next 墠15(u58a0,row2595). Goal remains active.
