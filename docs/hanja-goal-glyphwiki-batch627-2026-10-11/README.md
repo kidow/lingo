@@ -1,0 +1,5 @@
+# Batch627 · 邠7 HOLD
+
+Native browser693 inspected both pinned whole variants and all7 domestic directions. Both wholes compatible. Complete5record2root pinned2016family;0history/missing. Original11raw12draw6Q2B retained. Original raw6 type0 has no calls or polygons and is retained in source but not an animated pen. Proposed7 source groups preserve all nonempty paths. Pen2 raw1 horizontal ends[83.625,30] but raw2 Q begins[79.005,30];normalized2.31 mismatch. Original flag200 extends horizontal beyond Q start. Faithful compiler rejects this discontinuous H/Q join;no progressive frames,fine checks or replay approved. Pen3 raw3+4 and pen5 raw7+8 joins exact. No runtime/build/mobile performed. No inferred connector,endpoint/control/flag edit,mask widening,nonempty deletion or radical transplant. Requires continuous reusable exact whole/pen2 centerline and remaining full progressive review. Domestic dictionary crosscheck;not exam-body approval;private graphics RAM-only.
+
+Runtime5330/5978(89.1%),648 remaining;101 new holds. Next 璸18. Strict original source verification PASS;own tab693 and server59241 cleaned. No runtime/build/mobile claims;goal remains active.
