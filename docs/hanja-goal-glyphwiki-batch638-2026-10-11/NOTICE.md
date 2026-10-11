@@ -1,0 +1,5 @@
+# Public source rights
+
+Pinned GlyphWiki license@18 and archive LICENSE.txt apply. Engine implementation fetched in RAM and not redistributed. Private dictionary graphics stay RAM-only.
+
+Native browser728 reviewed both complete pinned whole variants and all12 domestic static directions. Basic/VS0 whole shapes compatible. Complete6records2roots0historical dependencies,zero missing. All15raw16draw8Q0B controls,flags,polygons preserved. Domestic third water-radical pen requires raw2 and raw3;raw2 quadratic ends[38.325,184] but raw3 starts[34.4,150],17.112901748388552 normalized units apart. Both exact wholes share the discontinuity;strict original-trajectory compiler rejects the proposed12pen grouping. No completed progressive frames,fine checks,replay,runtime/build/mobile. No inferred connector,reversal,control/flag edits,nonempty deletion,mask widening or radical transplant. Release requires a complete reusable whole with an explicit continuous domestic third-pen rising trajectory,then full12pen progressive/fine/replay/build/mobile review. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
