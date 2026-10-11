@@ -1,0 +1,5 @@
+# Batch609 · 裒13 HOLD
+
+Native browser panel642 inspected all5 exact pinned whole variants and all13 domestic static directions. Basicu88d2/VS0/VS1 match the vertical top mark and divided 臼 floor;their entire groups and traces are identical. G has curved top mark and connected 臼 floor;VS2 connected floor,ineligible. Domestic pen11 is one vertical-turn-right stroke,but raw3 L ends[65,176.16] and raw4 Q starts[37,181.62],gap[-28,5.46]. Pen7 raw11H/raw12V has exactly continuous originals,but cannot remedy pen11. Complete13record5root fixed2016 family;zero missing,aliases or historical dependencies. Original15raw15draw5Q0B retained. No compiler,progressive,fine,replay or runtime approval. No connector,endpoint/control/flag edit,extension,split/reverse,mask widening,radical transplant or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Runtime5321/5978(89.0%),657remaining;92newholds. Next610罦12. Source verifier PASS;own tab642 closed/server7663 stopped. No build/mobile for this hold. Goal active.
