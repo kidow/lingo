@@ -1,0 +1,5 @@
+# Public source rights
+
+Pinned GlyphWiki licence@18 and archive LICENSE.txt apply. Engine implementation remains RAM-only and is not redistributed. Private dictionary graphics remain RAM-only.
+
+Native browser681 inspected selected pinned whole u5caf and all8 domestic directions. Whole compatible. Native browser682 inspected all8 pens72 normal frames,0 approved for runtime due pen2 fine failure.520px99.99 to100 reveals downward terminal foot only at completion;DOM confirms99.99 maskoffset0.0001,UI rounds100. Original raw1 vertical ends[21.03,147],flag13 foot vertex[15,167];normalized distance exceeds radius7. Continuous raw1+2 joins exactly but carries no explicit foot centerline. Complete3record1root pinned2016family,0history/missing;9raw9draw2Q0B;8pens3curves. Remaining2finecurves/replay deferred. No runtime/build/mobile for this candidate. No connector,endpoint/control/flag edits,mask widening,radical transplant or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
