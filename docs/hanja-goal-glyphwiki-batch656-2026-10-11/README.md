@@ -1,0 +1,5 @@
+# Batch656 · 帨10 HOLD
+
+Native browser776 reviewed all5 pinned whole variants and all10 domestic static directions. Basic/VS0/VS1 compatible top-form;VS2/VS16 modern opposing dots differ from the domestic roof-like top and are excluded. Complete8records5roots0history0missing. Original selected13raw16draw5Q0B retained. Domestic permutation [[1],[2,3],[0],[4],[5,6],[7],[8,9],[10],[11],[12]] corrects the 巾 sequence. Fifth bent pen raw5 horizontal ends[161,25],raw6 quadratic starts[149,25],normalized gap6. All3 compatible whole roots reproduce identical disjoint original path;exact original compiler actually rejects each with continuity assertion. No invented connector,endpoint adjustment,transplant,mask widening,stroke deletion or runtime approval. No progressive/replay/build/mobile validation. Domestic source graphics RAM-only.
+
+Exact source archive,all VM roots,domestic10pen metadata,and pen5 continuity guards PASS. No runtime/build/mobile performed for held candidate. Own tab and server cleaned. Actual runtime5340/5978(89.3%),638 remaining:特482,特II91,1級64,2級1. All120 new holds inherited. Next657 玿9;goal remains active.
