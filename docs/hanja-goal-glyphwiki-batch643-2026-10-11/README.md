@@ -1,0 +1,7 @@
+# Batch643 · 舃12 HOLD
+
+Native browser735 reviewed all4 intact pinned whole variants and all12 domestic static directions. Only u8203-g matches the detached slanted lower-left foot;basic/VS0 use vertical foot and var001 connects the upper stem. Complete7records4roots0historical dependencies,zero missing. Original15raw16draw7Q0B controls,flags,polygons retained. Exact raw3+4 joins domestic4,raw8+9+10 joins domestic8;remaining originals intact. All12pens108 progressive frames reviewed;11pens99 approved. Seven520px99.99→100 fine checks:1/4/9/10/11/12 PASS,8 FAIL. Original pen8 final quadratic ends[145,182.79000000000002],flag14 hook tip[125,176.7] lies10.45332602572024 normalized units away,greater than radius7. Left tip appears only when completion removes mask. No actual replay,runtime/build/mobile. No arbitrary connector,control/flag edit,mask widening,nonempty deletion,radical transplant. Release requires explicit complete original left-hook centerline,then full progressive/fine/replay/build/mobile. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only.
+
+Strict pinned archive,all4whole VM reproductions,domestic metadata,12pen compiler,exact outline retention,trace tamper rejection and numeric hook checks PASS. Actual native review fails pen8 fine completion. No runtime/build/mobile performed. Own tabs735/736/737 and servers62317/62429 stopped.
+
+Runtime5337/5978(89.3%),641 remaining;110 new holds. Next 墡15(u58a1,row2592). Goal remains active.
