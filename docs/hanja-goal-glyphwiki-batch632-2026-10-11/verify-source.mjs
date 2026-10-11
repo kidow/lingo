@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import vm from 'node:vm'
+import {compileProgressive,renderProgressive,sourceGroups} from './progressive.mjs'
+import {HANJA_STROKES,hanjaStrokeData} from '../../lib/hanja-strokes.ts'
+const read=n=>readFileSync(new URL(n,import.meta.url)),obj=n=>JSON.parse(read(n)),sha=b=>createHash('sha256').update(b).digest('hex')
+const source=obj('sources.json'),proof=obj('engine-proof.json'),trace=obj('draw-trace.json'),review=obj('progressive-review.json')
+assert.equal(source.glyph,'葸');assert.equal(source.root,'u8478-var-001')
+assert.deepEqual(source.missing,[]);assert.deepEqual(source.aliases,[])
+assert.equal(Object.keys(source.records).length,14);assert.equal(source.providerVersions.length,3)
+const archiveResponse=await fetch(source.archive.url);assert(archiveResponse.ok)
+const archive=await archiveResponse.text();assert.equal(sha(archive),source.archive.sha256)
+const map=new Map(archive.split('\n').map(l=>l.split('|').map(s=>s.trim())).filter(a=>a.length>=3).map(a=>[a[0],{name:a[0],related:a[1],data:a[2]}]))
+for(const [name,record] of Object.entries(source.records)){
+ if(/@\d+$/.test(name)){
+  const version=source.providerVersions.find(v=>v.name===name);assert(version)
+  const response=await fetch(version.apiUrl);assert(response.ok);const actual=await response.json()
+  assert.equal(actual.name,name.split('@')[0]);assert.equal(Number(actual.version),Number(version.version))
+  assert.equal(actual.related,record.related);assert.equal(actual.data,record.data);assert.equal(sha(actual.data),version.sha256)
+ }else assert.deepEqual(map.get(name),record)
+}
+const inventory=obj('whole-variant-inventory.json');assert.equal(inventory.archiveVerified,true);assert.equal(inventory.engineFiles,8);assert.deepEqual(inventory.wholeVariants.map(v=>v.root).sort(),source.wholeNames.slice().sort());for(const v of inventory.wholeVariants)assert.equal(map.get(v.root).data,v.rootData);for(const v of review.wholeVariants){assert.equal(map.get(v.name).related,v.related);assert.equal(map.get(v.name).data,v.data);}const meta=obj('metadata.json'),dictionary=await fetch(meta.dictionary.url);assert(dictionary.ok);const bytes=Buffer.from(await dictionary.arrayBuffer());assert.equal(bytes.length,meta.dictionary.bytes);assert.equal(sha(bytes),meta.dictionary.sha256);assert.equal((bytes.toString().match(/clip-path="url\(#/g)||[]).length,meta.dictionaryStrokes);assert(bytes.toString().includes('<title>'+meta.glyph+'</title>'));
+const ctx=vm.createContext({records:source.records,root:source.root})
+for(const [file,hash] of Object.entries(proof.engineHashes)){
+ const response=await fetch('https://raw.githubusercontent.com/kamichikoichi/kage-engine/'+proof.engineRevision+'/'+file);assert(response.ok)
+ const code=await response.text();assert.equal(sha(code),hash);vm.runInContext(code,ctx,{timeout:1000})
+}
+const actual=JSON.parse(vm.runInContext(`const resolve=(name,seen=[])=>{if(seen.includes(name))throw Error('alias cycle');const r=records[name];if(!r)throw Error('missing dependency');const match=r.data.match(/^\\[\\[([^\\]]+)\\]\\]$/);return match?resolve(match[1],[...seen,name]):r.data};const k=new Kage();for(const n of Object.keys(records))k.kBuhin.push(n,resolve(n));const groups=[],trace=[];let calls=[];for(const name of ['cdDrawLine','cdDrawCurve','cdDrawBezier']){const orig=globalThis[name];globalThis[name]=function(...args){const start=args[1].array.length;orig(...args);calls.push({kind:name,args:args.slice(2),polygons:args[1].array.slice(start).map(p=>p.array)});}}const orig=dfDrawFont;dfDrawFont=function(...args){calls=[];const start=args[1].array.length;orig(...args);trace.push(calls);groups.push({raw:args.slice(2),polygons:args[1].array.slice(start).map(p=>p.array)});};const p=new Polygons();k.makeGlyph(p,root);JSON.stringify({groups,trace,defaults:{kMage:k.kMage,kWidth:k.kWidth,kMinWidthT:k.kMinWidthT,kAdjustMageStep:k.kAdjustMageStep}})`,ctx,{timeout:2000}))
+assert.deepEqual(actual.groups,proof.groups);assert.deepEqual(actual.trace,trace);assert.deepEqual(actual.defaults,proof.defaults)
+assert.equal(trace.length,14);assert.equal(trace.flat().length,16);assert.equal(trace.flat().filter(c=>c.kind==='cdDrawCurve').length,4);assert.equal(trace.flat().filter(c=>c.kind==='cdDrawBezier').length,0);
+const roots=["u8478","u8478-g","u8478-ue0100","u8478-ue0101","u8478-ue0102","u8478-var-001"];
+const codes={};
+for(const [file,hash] of Object.entries(proof.engineHashes)){const r=await fetch('https://raw.githubusercontent.com/kamichikoichi/kage-engine/'+proof.engineRevision+'/'+file);assert(r.ok);codes[file]=await r.text();assert.equal(sha(codes[file]),hash);}
+for(const root of roots){const ctx=vm.createContext({records:source.records,root});for(const code of Object.values(codes))vm.runInContext(code,ctx,{timeout:1000});const actual=JSON.parse(vm.runInContext("const resolve=(n)=>{const r=records[n];const m=r.data.match(/^\\[\\[([^\\]]+)\\]\\]$/);return m?resolve(m[1]):r.data;};const k=new Kage();for(const n of Object.keys(records))k.kBuhin.push(n,resolve(n));const groups=[],trace=[];let calls=[];for(const name of ['cdDrawLine','cdDrawCurve','cdDrawBezier']){const orig=globalThis[name];globalThis[name]=function(...args){const start=args[1].array.length;orig(...args);calls.push({kind:name,args:args.slice(2),polygons:args[1].array.slice(start).map(p=>p.array)});}}const orig=dfDrawFont;dfDrawFont=function(...args){calls=[];const start=args[1].array.length;orig(...args);trace.push(calls);groups.push({raw:args.slice(2),polygons:args[1].array.slice(start).map(p=>p.array)});};const p=new Polygons();k.makeGlyph(p,root);JSON.stringify({groups,trace,defaults:{kMage:k.kMage,kWidth:k.kWidth,kMinWidthT:k.kMinWidthT,kAdjustMageStep:k.kAdjustMageStep}})",ctx,{timeout:2000}));const original=obj('engine-whole-'+root+'.json');assert.deepEqual(actual.groups,original.groups);assert.deepEqual(actual.trace,original.trace);assert.deepEqual(actual.defaults,original.defaults);}
+
+assert.deepEqual(sourceGroups,[[0],[1],[3],[2],[4],[5,6],[8],[7],[9],[10],[11],[12],[13]]);assert.deepEqual(sourceGroups.flat().sort((a,b)=>a-b),Array.from({length:14},(_,i)=>i));const compiled=compileProgressive(trace,proof);assert.equal(compiled.length,13);assert.equal(compiled.flat().length,13);assert.equal(compiled.flat().filter(s=>s.direction==='curve').length,5);for(let n=1;n<=13;n++)for(const p of [0,.125,.25,.375,.5,.625,.75,.875,1])assert(renderProgressive(compiled,n,p).includes('<svg'));
+const calls=trace[11];assert.deepEqual(calls.map(c=>c.kind),['cdDrawLine','cdDrawCurve','cdDrawLine']);const last=calls.at(-1);assert.deepEqual(last.args,[76,179.276,147,179.276,6,5]);const tip=last.polygons.flat().find(p=>p.x===147&&p.y===148.2);assert(tip);const end=last.args.slice(2,4),distance=Math.hypot(tip.x-end[0],tip.y-end[1])/2;assert(Math.abs(distance-15.538)<1e-12);assert(distance>compiled[10][0].revealWidth/2);assert.equal(compiled[10][0].revealWidth,14);assert.equal(compiled[10][0].revealPath.match(/M/g).length,1);assert.equal(compiled[10][0].revealPath.match(/Q/g).length,1);
+for(const [i,j,k] of [[0,0,2],[11,0,2],[13,0,2]]){const b=structuredClone(trace);b[i][j].args[k]+=1;assert.throws(()=>compileProgressive(b,proof));}
+assert.deepEqual(review.sourceGroupsZeroBased,sourceGroups);assert.deepEqual(review.holdPens,[11]);assert.equal(review.staticDirectionsReviewed,13);assert.deepEqual(review.compatibleWholeRoots,['u8478-ue0102','u8478-var-001']);assert.equal(review.progressiveFramesReviewed,9);assert.equal(review.progressiveFramesApproved,0);assert.equal(review.compiledPens,13);assert.equal(review.curveFineChecks[0].passed,false);assert.equal(review.runtimeApplied,false);assert.equal(hanjaStrokeData({glyph:'葸',strokes:13}),null);assert.equal(HANJA_STROKES.filter(s=>s.glyph==='葸').length,0);assert.equal(meta.candidate.strokes,13);assert.equal(meta.dictionaryStrokes,13);assert.deepEqual(review.dictionaryDirectionStrokes,Array.from({length:13},(_,i)=>i+1));
+console.log(JSON.stringify({passed:true,glyph:'葸',records:14,roots:6,histories:3,raw:14,draw:16,Q:4,B:0,compiledPens:13,masks:13,curves:5,nativeStaticDirectionsReviewed:13,nativeFramesReviewed:9,nativeFramesApproved:0,holdPens:[11],terminalHookDistance:distance,runtimeApplied:false,privateMediaSaved:false}));
