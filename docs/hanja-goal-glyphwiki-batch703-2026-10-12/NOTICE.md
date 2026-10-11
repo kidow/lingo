@@ -1,0 +1,7 @@
+# 鍚 source provenance
+
+GlyphWiki Project and contributors. GlyphWiki License@18 and pinned archive LICENSE.txt apply. Pinned2010latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c;archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62;exact whole u935a;all5 family records;2 roots;1 historical dependencies;GlyphWiki license@18;canonical source SHA256 65213bfe351a4f08d3c453179fcde7f97fc9a25510c1b062afb46f32c1ad4906
+
+Native browser panels41/42 compared two exact whole roots and all17domestic static directions;153progressive frames,ten520px99.99→100 fine checks and pen15replay27→100 PASS. Five records,two roots,one pinned historical dependency u661c-02@5,zero missing/aliases;19raw20draw10Q0B. Two source-contiguous corners preserved. Pen15 terminal14 formula lines588-596 and original hook polygon reveal left in same pen weight10. Original polygons unchanged;no synthesized outline,connector,mask widening or point edits. Historical API identity stored with canonical field order. Private domestic graphics RAM-only;dictionary cross-review,not exam-body approval.
+
+Domestic dictionary graphics remain in RAM. Source metadata identifies dictionary cross-review; it does not claim exam-body approval. Historical provider identity uses canonical field order; exact data and revision are checked afresh.
