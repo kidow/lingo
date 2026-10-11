@@ -1,0 +1,5 @@
+# 僾 reviewed whole geometry
+
+GlyphWiki Project and contributors. GlyphWiki License@18 and pinned archive LICENSE.txt apply. Pinned2010latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c;archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62;exact whole u50fe;all9 family records;2 roots;0 historical dependencies;GlyphWiki license@18;canonical source SHA256 9d1f077fe8fed40fe4a4004940000c2fd346fc32fde92a1066cd124466e538ee
+
+Native browser panels24/25 compared both exact whole roots,all15 domestic static directions and135 progressive frames;all14curve fine checks at520px99.99→100 PASS;pen15 replay48→100. Nine records,two roots,0 historical0 missing;17 raw19 draw14 Q0 B. Source-contiguous pairs form pens8 and14. Pen10 terminal5 hook uses pinned original horizontal formula lines887-906,ta1=2006 opt1=2,width5,height17;exact original polygon moves upward as segment2 within the same pen,weight8.5. All original polygons retained,no synthesized outline,connector,mask widening or point edits. Private domestic graphics RAM-only;dictionary cross-review,not exam-body approval.
