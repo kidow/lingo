@@ -1,0 +1,5 @@
+# 葑 original geometry source review
+
+GlyphWiki Project and contributors;GlyphWiki License@18 and pinned archive LICENSE.txt apply. Engine code not embedded.
+
+Native panels627/628 inspected all4 pinned wholes and13 domestic directions. Onlyu8451-ue0102 four-stroke grass matches. Intact grass permutation[0,1,3,2] retained;remaining raw order unchanged. Original13raw14draw3Q0B;13pens13masks3curve pens10/12/13. Original pen12 internal line→Q continuous. All13pens117normalframes observed,zero approved;520px99.99%→100% fine10PASS12FAIL13PASS. Pen12 hook Qendpoint[147,181.95] but original vertex[127,175.9] normalized radius10.447517647747715 exceeds fixed7;left hook visibly clipped until completion. Other3wholes connected3stroke grass mismatch;no transplant. Actual pen13 replay26→100 observed,but whole sequence unapproved. No connector,extension,control/endpoint/flag edit,split/reverse,mask widening,nonempty deletion or latest substitution. No runtime/appbuild/mobile registration. Domestic crosscheck,not exam-body approval;private graphics RAM-only.
