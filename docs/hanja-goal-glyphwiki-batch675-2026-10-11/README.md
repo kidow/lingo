@@ -1,0 +1,9 @@
+# Batch675 · 叟 catalog9 / playback10 APPLIED
+
+Batch675 reopens count-only hold668 under the goal's verified playback-variant rule. Native batch668 reviewed all20 pinned whole forms and all10 domestic static directions;selected basic u53df and VS3 compatible. Native progressive panel reviewed all90 frames and all four520px99.99→100 mask fine checks pens1/5/9/10 PASS. Actual pen10 replay24→100 observed. Original27records20roots0history0missing,12raw12draw3Q0B retained. Source groups [[0],[1],[2],[3],[4,5],[6],[7],[8],[9,10],[11]] combine only existing contiguous H/V pen5 and H/Q pen9. Catalog9 unchanged;domestic dictionary playback10 explicitly separate. No bridges,endpoint/control adjustment,invented trajectories,mask widening,outline synthesis or automatic catalog correction. Domestic source graphics RAM-only. Dictionary cross-review is not exam-body official approval.
+
+Production build snapshot 94f56587ea3b774dfcf9f83d83e0fedb77b0099c PASS. Initial full tests found the explicit old36-glyph playback-variant allowlist;only lib/hanja-stroke-variants.test.ts was updated to37. Exact Git diff confirmed all production inputs unchanged. Final snapshot 67abf64ef68b25462b91a8e061c45df3f41d040a reran557 files/all2193 tests PASS.
+
+Native mobile806 intro autoplay6→10/replay1→10;writing autoplay/replay/reentry1→10. UI explicitly shows dictionary playback10(catalog9). Input0→1→0→2→0;338 square canvas46,320.8046875 and sheet139.8046875 stayed fixed;zero static overlay,one animationSVG,documentScroll0,errors[]. App iframe removed before exact RAM-backed original record restore. Own tabs/servers cleaned.
+
+Actual runtime5342/5978(89.4%),636 remaining:特級480,特級II91,1級64,2級1. Hold668 resolved through verified separate variant;136 active new holds preserved with historical hold668 retained in resolvedHolds. Next676 reopens廋 catalog12/dictionary13;then 瞍14/15. Goal remains active.
