@@ -1,0 +1,5 @@
+# 瞍 reviewed dictionary playback variant
+
+GlyphWiki Project and contributors;GlyphWiki License@18 and pinned archive LICENSE.txt apply. Pinned2016 latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c;archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62;exact all3whole family u778d/u76ee-01/u76ee/u53df-g02/u778d-ue0100/u778d-ue0101/u53df-02;0 declared exact historical dependencies;no latest substitution or literal aliases;GlyphWiki license@18;canonical source SHA256 566ff75ba8bebf859fc3e45338d2d28b596faef3717d28bc07056fdbdab074f5
+
+Batch677 reopens hold671 as verified catalog14/playback15 variant. Batch671 reviewed all3 pinned whole forms and all15 domestic static directions;only VS1 u778d-ue0101 compatible. Selected VS1 original7records3roots0history18raw18draw3Q0B retained. All135 native frames,five520px99.99-to100 mask checks pens2/6/10/14/15 and finalpen replay23-to100 PASS. Groups combine only original contiguous H/V pens2/10 and H/Q pen14. No geometry edits,bridges,mask widening,invented trajectories or automatic catalog correction. Private graphics RAM-only. Dictionary cross-review is not exam-body official approval.
