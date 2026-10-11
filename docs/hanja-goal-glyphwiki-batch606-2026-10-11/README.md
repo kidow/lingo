@@ -1,0 +1,7 @@
+# Batch606 · 痡12 APPLIED
+
+Native browser panels631/632 inspected both exact pinned whole variants and all12 domestic directions. Basicu75e1 selected;VS0 native compatible. All12pens108progressiveframes and520px99.99%→100% curve3/4/5/8/12 checks approved;actual pen12 replay27→100. Exact pinned family4records2roots0declared historical versions verified;zero missing. Original13raw15draw5Q0B retained;source groups[[0],[1],[2],[3],[4],[5],[7],[8,9],[10],[11],[6],[12]],exact continuous H/V/Q merge only. Middle vertical intact reordered after inner horizontals as native observed.200to100 normalization and winding only. Hook endpoint[157,182.6],vertex[145,176.6],normalized radius6.708203932499369 within fixed7;fine native PASS. No connector,endpoint/control/flag edit,split/reverse,mask widening,nonempty deletion,transplant or latest substitution. Domestic crosscheck,not exam-body approval;private graphics RAM-only.
+
+Frozen production snapshot dd8deca71741d7779f0fba1efbc2d8eda5b3128e PASS;535 library files/2127 tests PASS. Native mobile634 intro autoplay1→12,replay1→12;writing autoplay,replay and reentry1→12;input0→1→0→2 observed;final clear reobserved0→1→0;fixed sheet and zero static-overlay overlap;errors[];exact original record restored. App closed before restoration.
+
+Actual runtime5320/5978(89.0%),658 remaining:特級502,特級II91,1級64,2級1. All90 new holds inherited. Next607 紑10. Own source/control/app tabs and servers cleaned;own failed tab635 close blocked by browser data-URL policy,record restored. Goal remains active.
