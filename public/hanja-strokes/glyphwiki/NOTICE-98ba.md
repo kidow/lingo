@@ -1,0 +1,5 @@
+# 颺 reviewed whole geometry
+
+GlyphWiki Project and contributors. GlyphWiki License@18 and pinned archive LICENSE.txt apply. Pinned2010latest-only snapshot a7dd7f3d911936770fa742e8c37d16bee7e2173c;archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62;exact whole u98ba;all6 family records;2 roots;0 historical dependencies;GlyphWiki license@18;canonical source SHA256 f69478f30bce0767d40376dbf7880ef43545f9b398522690bea41cb41dbaf497
+
+Native browser panels33/36 compared two exact whole roots and all18domestic static directions;162progressive frames,eleven520px99.99→100 fine checks and pen2replay27→100/pen16replay26→100 PASS. Six records,two roots,zero historical/missing/aliases;22raw24draw9Q1B. Four source-contiguous folds preserved. Pen2 terminal15 upward formula lines571-585 and original hook polygon reveal up in same pen weight13;pen16 terminal14 formula lines588-596 reveals left in same pen weight10. Original polygons unchanged;no synthesized outline,connector,mask widening or point edits. Private domestic graphics RAM-only;dictionary cross-review,not exam-body approval.
