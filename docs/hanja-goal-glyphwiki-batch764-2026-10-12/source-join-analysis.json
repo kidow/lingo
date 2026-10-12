@@ -1,0 +1,117 @@
+{
+  "glyph": "澐",
+  "batch": 764,
+  "expectedPens": 15,
+  "analysisDate": "2026-10-13",
+  "scope": "Read-only coordinate analysis of the seven captured source records and three saved whole roots; no browser or domestic visual approval",
+  "approved": false,
+  "runtimeApplied": false,
+  "privateMediaAccessed": false,
+  "largeArchiveDownloaded": false,
+  "archive": {
+    "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+    "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62"
+  },
+  "capturedRecords": [
+    "u6f90",
+    "u6c35-01",
+    "u96f2@9",
+    "u96e8-03@6",
+    "u4e91-04@1",
+    "u6f90-k",
+    "u6f90-ue0100"
+  ],
+  "wholeRoots": [
+    {
+      "root": "u6f90",
+      "file": "engine-whole-u6f90.json",
+      "sha256": "65c01867cafb76551cd70df791835bebd69dda10e6b4aa59234776e622746245",
+      "rawGroups": 18,
+      "drawCalls": 18,
+      "lineCalls": 9,
+      "quadraticCalls": 9,
+      "bezierCalls": 0,
+      "allDirectedExactEndpointEdges": [[6, 7]],
+      "waterPair": [2, 3],
+      "siPair": [13, 14]
+    },
+    {
+      "root": "u6f90-k",
+      "file": "engine-whole-u6f90-k.json",
+      "sha256": "d0c78bb2a1164c47cea94d2b4b409caba3df2ab7296b4088dcd52c1670c2620a",
+      "wholeAliasTarget": "u6f90",
+      "siCurveControlXOverrides": {"raw13": 97.68450000000001, "raw14": 116.92199999999998},
+      "rawGroups": 18,
+      "drawCalls": 18,
+      "lineCalls": 9,
+      "quadraticCalls": 9,
+      "bezierCalls": 0,
+      "allDirectedExactEndpointEdges": [[6, 7]],
+      "waterPair": [2, 3],
+      "siPair": [13, 14]
+    },
+    {
+      "root": "u6f90-ue0100",
+      "file": "engine-whole-u6f90-ue0100.json",
+      "sha256": "d0c78bb2a1164c47cea94d2b4b409caba3df2ab7296b4088dcd52c1670c2620a",
+      "wholeAliasTarget": "u6f90",
+      "siCurveControlXOverrides": {"raw13": 97.68450000000001, "raw14": 116.92199999999998},
+      "rawGroups": 18,
+      "drawCalls": 18,
+      "lineCalls": 9,
+      "quadraticCalls": 9,
+      "bezierCalls": 0,
+      "allDirectedExactEndpointEdges": [[6, 7]],
+      "waterPair": [2, 3],
+      "siPair": [13, 14]
+    }
+  ],
+  "coordinateEvidenceSharedByAllRoots": {
+    "callArgumentRoot": "u6f90",
+    "aliasCallArgumentNote": "Endpoint coordinates are identical in all roots; alias raw13/raw14 control X differs at floating-point precision as recorded in each whole root override",
+    "water": {
+      "rawGroups": [2, 3],
+      "firstCall": {"kind": "cdDrawCurve", "args": [9.75, 133, 31.625, 142, 29.125, 184, 7, 8]},
+      "secondCall": {"kind": "cdDrawCurve", "args": [26, 150, 28.5, 138, 54.75, 67, 32, 7]},
+      "firstEnd": [29.125, 184],
+      "secondStart": [26, 150],
+      "delta": [-3.125, -34],
+      "distance": 34.14331010608081,
+      "exactJoin": false
+    },
+    "si": {
+      "rawGroups": [13, 14],
+      "firstCall": {"kind": "cdDrawCurve", "args": [104.61, 134.9865, 97.6845, 154.4796, 83.8335, 173.9727, 132, 7]},
+      "secondCall": {"kind": "cdDrawCurve", "args": [61.518, 175.7448, 116.922, 169.54245, 163.86149999999998, 163.3401, 0, 7]},
+      "firstEnd": [83.8335, 173.9727],
+      "secondStart": [61.518, 175.7448],
+      "delta": [-22.3155, 1.7720999999999947],
+      "distance": 22.385751688518305,
+      "exactJoin": false
+    },
+    "rainFold": {
+      "rawGroups": [6, 7],
+      "firstEnd": [179.59574999999998, 46.75769999999999],
+      "secondStart": [179.59574999999998, 46.75769999999999],
+      "delta": [0, 0],
+      "exactJoin": true
+    }
+  },
+  "geometricGroupingCandidateOnly": [[0], [1], [2, 3], [4], [5], [6, 7], [8], [9], [10], [11], [12], [16], [17], [13, 14], [15]],
+  "candidateGroupingCoversAllRawGroupsOnce": true,
+  "candidateGroupingIsDomesticStrokeOrderApproved": false,
+  "exhaustiveEndpointCheck": {
+    "comparisonTolerance": 1e-8,
+    "testedDistinctDirectedRawPairsPerRoot": 306,
+    "permittedOperation": "Concatenate complete original directed centerlines only when the previous end equals the next start",
+    "onlyExactEdge": [6, 7],
+    "minimumPensWithoutInventedJoins": 17,
+    "exact15PenAlternativeInCapturedRecords": false
+  },
+  "unresolved": [
+    "Domestic whole glyph and stroke directions have not been approved by this analysis",
+    "No independent alternative whole geometry exists in the seven captured records; -k and -ue0100 are aliases",
+    "Other naming candidates or historical revisions outside the captured records were not searched or reviewed",
+    "Trimming, reversing, extending or bridging source curves, or transplanting components, is outside this exact-source analysis"
+  ]
+}
