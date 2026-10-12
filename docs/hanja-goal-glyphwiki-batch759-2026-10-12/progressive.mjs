@@ -12,20 +12,22 @@ export function compileProgressive(trace, proof) {
     const normalized=polygons.map(p=>{const area=p.reduce((n,v,i)=>{const q=p[(i+1)%p.length];return n+v.x*q.y-q.x*v.y},0);assert(area!==0);return area<0?[p[0],...p.slice(1).reverse()]:p})
     return {outline:normalized.map(p=>p.map((v,i)=>`${i?'L':'M'}${v.x/2} ${v.y/2}`).join(' ')+' Z').join(' '),bounds:[Math.min(...xs),Math.min(...ys),Math.max(...xs),Math.max(...ys)],direction,weight:Math.round(weight*1e6)/1e6}
   }
-  const terminalHook=(indices)=>{
+  const terminalUpTail=(indices)=>{
     const terminal=trace[indices.at(-1)].at(-1)
-    assert.equal(terminal.kind,'cdDrawCurve')
-    const [x1,y1,cx,cy,x2,y2,ta1,ta2]=terminal.args
-    assert.equal(ta2%100,14)
-    const opt1=Math.floor((ta1%10000)/1000),opt2=Math.floor((ta2%1000)/100)
+    assert.equal(terminal.kind,'cdDrawLine')
+    const [x1,y1,x2,y2,ta1,ta2]=terminal.args
+    assert.equal(y1,y2);assert(x1<x2)
+    assert.equal(ta1%1000,6);assert.equal(ta2%100,5)
+    assert.deepEqual(proof.defaults,{kMage:10,kWidth:5,kMinWidthT:6,kAdjustMageStep:5})
+    const opt1=Math.floor(ta1/1000)
     const width=proof.defaults.kMinWidthT-opt1/2
-    const jump=proof.defaults.kWidth*4*Math.min(1-opt2/10,Math.pow(width/proof.defaults.kMinWidthT,3))*(width>6?6/width:1)
+    const jump=proof.defaults.kWidth*(4*(1-opt1/proof.defaults.kAdjustMageStep)+1)
     const point=(x,y)=>({x:Math.floor(x*10)/10,y:Math.floor(y*10)/10,off:0})
-    const hook=[point(x2,y2),point(x2,y2-width),point(x2-jump,y2-width),point(x2-jump,y2-width*.5)]
-    assert.deepEqual(terminal.polygons.at(-1),hook,'Pinned original terminal14 left-hook polygon identity')
+    const hook=[point(x2,y2-width),point(x2+2,y2-width-jump),point(x2,y2-width-jump),point(x2-width,y2-width)]
+    assert.deepEqual(terminal.polygons.at(-1),hook,'Pinned original cdDrawLine terminal5 upward-tail polygon identity')
     return {hook,jump}
   }
-  const hooks=new Map([])
+  const hooks=new Map([[JSON.stringify([10]),terminalUpTail([10])]])
   const compile=(indices,hook=null)=>{
     const calls=indices.flatMap(i=>trace[i]).map(c=>({...c,polygons:c.polygons.slice()}))
     if(hook)assert.deepEqual(calls.at(-1).polygons.pop(),hook)
@@ -36,5 +38,5 @@ export function compileProgressive(trace, proof) {
     const a=calls[0].args
     return {outline:pieces.map(p=>p.outline).join(' '),bounds:[Math.min(...pieces.map(p=>p.bounds[0])),Math.min(...pieces.map(p=>p.bounds[1])),Math.max(...pieces.map(p=>p.bounds[2])),Math.max(...pieces.map(p=>p.bounds[3]))],direction:'curve',weight:Math.round(pieces.reduce((n,p)=>n+p.weight,0)*1e6)/1e6,revealPath:`M${a[0]/2} ${a[1]/2} ${calls.map(c=>{const v=c.args;return c.kind==='cdDrawLine'?`L${v[2]/2} ${v[3]/2}`:c.kind==='cdDrawBezier'?`C${v[2]/2} ${v[3]/2} ${v[4]/2} ${v[5]/2} ${v[6]/2} ${v[7]/2}`:`Q${v[2]/2} ${v[3]/2} ${v[4]/2} ${v[5]/2}`}).join(' ')}`,revealWidth:14}
   }
-  return sourceGroups.map(indices=>{const h=hooks.get(JSON.stringify(indices));return h?[compile(indices,h.hook),segment([h.hook],'left',h.jump/2)]:[compile(indices)]})
+  return sourceGroups.map(indices=>{const h=hooks.get(JSON.stringify(indices));return h?[compile(indices,h.hook),segment([h.hook],'up',h.jump/2)]:[compile(indices)]})
 }

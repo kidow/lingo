@@ -1,8 +1,8 @@
 {
   "glyph": "噳",
   "batch": 759,
-  "status": "hold:9th original terminal3005 upward tail tip appears abruptly at100",
-  "runtimeApplied": false,
+  "status": "approved:native domestic16 directions,144 frames,11 fine checks; original terminal5 polygon separately revealed upward",
+  "runtimeApplied": true,
   "wholeVariantsReviewed": 3,
   "wholeVariants": [
     {
@@ -99,27 +99,10 @@
     ]
   ],
   "compiledPens": 16,
-  "masks": 16,
-  "progressiveFramesReviewed": 0,
-  "progressiveFramesApproved": 0,
-  "progressivePensReviewed": [],
-  "curveFineChecks": [
-    {
-      "pen": 9,
-      "size": 520,
-      "from": 99.99,
-      "to": 100,
-      "passed": false,
-      "reason": "Original upward tail tip clips at99.99 and appears at100;source tail extends1.75 normalized units beyond width14 mask"
-    }
-  ],
-  "blockedPens": [
-    9
-  ],
-  "allStrokesReviewed": false,
-  "replayApproved": false,
-  "replayStatus": "not run after9th fine failure",
-  "unreviewedProgressivePens": [
+  "masks": 17,
+  "progressiveFramesReviewed": 144,
+  "progressiveFramesApproved": 144,
+  "progressivePensReviewed": [
     1,
     2,
     3,
@@ -137,26 +120,103 @@
     15,
     16
   ],
+  "curveFineChecks": [
+    {
+      "pen": 1,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 2,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 6,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 7,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 8,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 9,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 10,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 11,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 13,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 15,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 16,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    }
+  ],
+  "blockedPens": [],
+  "allStrokesReviewed": true,
+  "replayApproved": true,
+  "replayStatus": "actual native replay9 and16 completed",
+  "unreviewedProgressivePens": [],
   "privateMediaSaved": false,
   "browserTabs": {
     "whole": 133,
     "progressive": 135
   },
-  "releaseCondition": "Verify pinned terminal5 reveal semantics and rerun progressive frames,fine checks and actual replay;do not widen masks or invent a tail trajectory",
+  "releaseCondition": "Native review completed; no further release condition",
   "unreviewedDictionaryDirectionStrokes": [],
-  "replayPens": [],
-  "selectedWholeRoot": "u5673",
-  "unreviewedFinePens": [
-    1,
-    2,
-    6,
-    7,
-    10,
-    11,
-    13,
-    15,
+  "replayPens": [
+    9,
     16
   ],
+  "selectedWholeRoot": "u5673",
+  "unreviewedFinePens": [],
   "domesticOrderPermutation": {
     "sourceGroups": [
       [
@@ -213,7 +273,41 @@
         20
       ]
     ],
-    "cumulativeProgressiveApproved": false,
-    "note": "All16 domestic directions observed;exact joins verified but progressive frames and replay remain pending after9th early failure."
+    "cumulativeProgressiveApproved": true,
+    "note": "All16 directions,144 cumulative frames and actual replay reviewed on original source groups."
+  },
+  "initialTerminal5Failure": {
+    "status": "hold:9th original terminal3005 upward tail tip appears abruptly at100",
+    "failedFineCheck": {
+      "pen": 9,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": false,
+      "reason": "Original upward tail tip clips at99.99 and appears at100;source tail extends1.75 normalized units beyond width14 mask"
+    },
+    "correctedUsing": "terminal5-source-review.json"
+  },
+  "actualReplayProgress": [
+    {
+      "pen": 9,
+      "intermediateAX": 18,
+      "completedAX": 100
+    },
+    {
+      "pen": 16,
+      "intermediateAX": 24,
+      "completedAX": 100
+    }
+  ],
+  "terminal5Reveal": {
+    "pen": 9,
+    "sourceFile": "terminal5-source-review.json",
+    "originalPolygonsPreserved": 42,
+    "additionalCenterline": false,
+    "additionalPen": false,
+    "interpretation": "Same original pen polygon is revealed upward using its exact bounds and height; no separately documented centerline is claimed",
+    "direction": "up",
+    "weight": 6.5
   }
 }

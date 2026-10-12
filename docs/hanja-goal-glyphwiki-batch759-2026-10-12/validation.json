@@ -2,22 +2,12 @@
   "batch": 759,
   "glyph": "噳",
   "id": "u5673",
-  "status": "hold:9th original terminal3005 upward tail tip appears abruptly at100",
+  "status": "approved:native domestic16 directions,144 frames,11 fine checks; original terminal5 polygon separately revealed upward",
   "sourceVerification": {
-    "passed": true,
-    "records": 14,
-    "roots": 3,
-    "historical": 3,
-    "raw": 21,
-    "draw": 24,
-    "Q": 5,
-    "B": 0,
-    "compiledPens": 16,
-    "masks": 16,
-    "frames": 0,
-    "fineChecked": 1,
-    "finePassed": false,
-    "replay": false
+    "source": true,
+    "terminal5PinnedEngine": true,
+    "focusedTests": 10,
+    "buildRun": false
   },
   "nativeReview": {
     "wholeVariants": 3,
@@ -26,25 +16,37 @@
       "u5673-jv"
     ],
     "staticDirections": 16,
-    "progressiveFrames": 0,
-    "approvedFrames": 0,
+    "progressiveFrames": 144,
+    "approvedFrames": 144,
     "finePens": [
-      9
+      1,
+      2,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16
     ],
-    "finePassed": false,
-    "allStrokesReviewed": false,
-    "replayApproved": false,
-    "blockedPens": [
-      9
-    ]
+    "finePassed": true,
+    "allStrokesReviewed": true,
+    "replayApproved": true,
+    "replayPens": [
+      9,
+      16
+    ],
+    "blockedPens": []
   },
   "runtime": {
-    "applied": 5386,
+    "applied": 5387,
     "total": 5978,
-    "remaining": 592,
-    "held": 173,
-    "appliedThisBatch": 0,
-    "unique": 5386,
+    "remaining": 591,
+    "held": 174,
+    "appliedThisBatch": 1,
+    "unique": 5387,
     "coverage": {
       "1급": {
         "total": 1145,
@@ -118,14 +120,14 @@
       },
       "특급": {
         "total": 1328,
-        "applied": 885,
-        "remaining": 443
+        "applied": 886,
+        "remaining": 442
       }
     }
   },
   "checks": {
     "sourceVerifierPassed": true,
-    "focusedTestsPassed": 0,
+    "focusedTestsPassed": 10,
     "productionBuild": "not run:user requested no builds",
     "fullSuite": "not run:data-only batch",
     "mobile": "not run:data-only batch"
