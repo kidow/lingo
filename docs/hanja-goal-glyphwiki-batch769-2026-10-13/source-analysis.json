@@ -1,0 +1,132 @@
+{
+  "analysisDate": "2026-10-13",
+  "scope": "Public live API metadata and component-local raw data only",
+  "domesticVisualReviewed": false,
+  "engineTraceGenerated": false,
+  "approved": false,
+  "runtimeApplied": false,
+  "privateMediaAccessed": false,
+  "archiveDownloaded": false,
+  "fixedArchiveMatched": false,
+  "versionPolicy": "Latest API responses captured; explicit root versions listed, but unversioned dependencies were resolved live and are not proven identical to the existing fixed archive",
+  "stateAtCheck": "Not applied in HANJA_STROKES; absent from batch764 newHolds; assigned batch folders and modules absent; exclusive parent assignment",
+  "unknowns": [
+    "Whole glyph compatibility with domestic Korean reference",
+    "Domestic order and direction",
+    "Pinned KAGE trace and emitted polygons",
+    "Progressive frames, terminal checks and actual replay",
+    "Other whole variants and historical versions outside the listed responses"
+  ],
+  "batch": 769,
+  "glyph": "軏",
+  "catalogId": "u8ecf",
+  "readingGrade": "특급",
+  "expectedPens": 10,
+  "sourceRow": 3658,
+  "records": {
+    "u8ecf": {
+      "version": 6,
+      "data": "99:0:0:0:0:200:200:u8ecf-j",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u8ecf",
+      "versionUrl": "https://glyphwiki.org/wiki/u8ecf@6"
+    },
+    "u8ecf-j": {
+      "version": 3,
+      "data": "99:0:0:1:0:185:200:u8eca-01$99:0:0:10:0:200:200:u5140-02",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u8ecf-j",
+      "versionUrl": "https://glyphwiki.org/wiki/u8ecf-j@3"
+    },
+    "u8eca-01": {
+      "version": 8,
+      "data": "1:0:0:16:42:104:42$1:12:13:31:65:31:121$1:2:2:31:65:89:65$1:22:23:89:65:89:121$1:2:2:31:92:89:92$1:2:2:31:121:89:121$1:0:0:14:148:106:148$1:0:0:60:14:60:186",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u8eca-01",
+      "versionUrl": "https://glyphwiki.org/wiki/u8eca-01@8"
+    },
+    "u5140-02": {
+      "version": 1,
+      "data": "1:0:0:91:34:187:34$7:32:7:122:34:122:95:122:160:81:188$3:32:5:153:34:153:179:182:179",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u5140-02",
+      "versionUrl": "https://glyphwiki.org/wiki/u5140-02@1"
+    }
+  },
+  "wholeRoots": {
+    "default": "u8ecf@6",
+    "independent": "u8ecf-j@3",
+    "k": {
+      "data": null,
+      "version": null,
+      "related": null,
+      "queried": true,
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u8ecf-k"
+    }
+  },
+  "componentRawCounts": {
+    "u8eca-01": 8,
+    "u5140-02": 3
+  },
+  "groupingCandidate": {
+    "count": 10,
+    "groups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ]
+    ],
+    "domesticOrderApproved": false
+  },
+  "joins": [
+    {
+      "component": "u8eca-01",
+      "raw": [
+        2,
+        3
+      ],
+      "previousEnd": [
+        89,
+        65
+      ],
+      "nextStart": [
+        89,
+        65
+      ],
+      "delta": [
+        0,
+        0
+      ],
+      "exactRawCoordinateJoin": true
+    }
+  ],
+  "risks": [
+    "車 raw1 terminal13 serif need enlarged endpoint check",
+    "兀 raw1 type7 and raw2 type3 internal segments require pinned engine expansion",
+    "兀 raw2 terminal5 upward hook must not appear abruptly at 100 percent"
+  ],
+  "conclusion": "10 geometric groups are possible in the live component raw data using one exact joining coordinate; domestic order and engine output remain unreviewed"
+}
