@@ -1,0 +1,188 @@
+{
+  "batch": 772,
+  "glyph": "褘",
+  "root": "u8918",
+  "strokes": 14,
+  "grade": "특급II",
+  "row": 3683,
+  "date": "2026-10-13",
+  "queryScope": "Current public API root and its declared dependencies only; archive was not downloaded; all version numbers refer to these API captures.",
+  "records": [
+    {
+      "requested": "u8918",
+      "url": "https://glyphwiki.org/api/glyph?name=u8918",
+      "status": 200,
+      "name": "u8918",
+      "version": 14,
+      "related": "U+8918",
+      "dataSha256": "b0b72b0a1fcc53e0910ad7dbeb59208a86459a199621f52403b7361ec3a59ff1",
+      "declarationRows": 1,
+      "directPrimitiveRows": 0,
+      "dependencies": [
+        "u8918-jn"
+      ],
+      "explicitHistorical": []
+    },
+    {
+      "requested": "u8918-jn",
+      "url": "https://glyphwiki.org/api/glyph?name=u8918-jn",
+      "status": 200,
+      "name": "u8918-jn",
+      "version": 1,
+      "related": "U+8918",
+      "dataSha256": "f30fbfa03b111ad90d8b58c2d378ad1344011813a101449bab67daace86cb14d",
+      "declarationRows": 2,
+      "directPrimitiveRows": 0,
+      "dependencies": [
+        "u8864-01",
+        "u97cb-08"
+      ],
+      "explicitHistorical": []
+    },
+    {
+      "requested": "u8864-01",
+      "url": "https://glyphwiki.org/api/glyph?name=u8864-01",
+      "status": 200,
+      "name": "u8864-01",
+      "version": 4,
+      "related": "U+8864",
+      "dataSha256": "bd52edebc8ec3a39cdaa86d1975ab8fc0a97d4d0ce5bb74db18adb7b248ce9e3",
+      "declarationRows": 6,
+      "directPrimitiveRows": 6,
+      "dependencies": [],
+      "explicitHistorical": []
+    },
+    {
+      "requested": "u97cb-08",
+      "url": "https://glyphwiki.org/api/glyph?name=u97cb-08",
+      "status": 200,
+      "name": "u97cb-08",
+      "version": 7,
+      "related": "U+97CB",
+      "dataSha256": "2a2a3179125e1fdacba2377593ce1ef9415796dd1f31c80c98eb1df0b554a626",
+      "declarationRows": 12,
+      "directPrimitiveRows": 12,
+      "dependencies": [],
+      "explicitHistorical": []
+    }
+  ],
+  "archiveDownloaded": false,
+  "wholeVariantEnumerationComplete": false,
+  "wholeRootAliasesDiscovered": [
+    "u8918-jn"
+  ],
+  "status": {
+    "runtimeApplied": false,
+    "exactJoinApproved": false,
+    "domesticReviewed": false,
+    "browserReviewed": false,
+    "geometryModified": false
+  },
+  "unreviewed": [
+    "all related whole variants",
+    "pinned archive equivalence",
+    "engine-expanded geometry and exact joins",
+    "domestic glyph/order/direction",
+    "progressive masks and replay"
+  ],
+  "previousHold": {
+    "batch": 290,
+    "date": "2026-10-05",
+    "runtimeApproved": false,
+    "primaryRoot": "u8918-k",
+    "primaryProblem": "Domestic13 expects down then right; primary raw15 is diagonal down-left.",
+    "alternativeRoot": "u8918",
+    "alternativeVEnd": [
+      92.86,
+      161
+    ],
+    "alternativeHStart": [
+      72.25,
+      161
+    ],
+    "gap": 20.61,
+    "recheckStatus": "New public API latest root is alias to u8918-jn; pinned archive and browser compatibility remain unverified."
+  },
+  "initialLocalStatus": {
+    "applied": false,
+    "candidateFilesChangedByOtherSession": false,
+    "previousReviewBatches": [
+      290
+    ],
+    "checkScope": "Runtime master lookup, candidate-related shared status and existing glyph review records; other-agent live intention is not inferred."
+  },
+  "requiredPublicCapture": [
+    {
+      "name": "u8918",
+      "version": 14,
+      "pinnedRequest": "u8918@14",
+      "dataSha256": "b0b72b0a1fcc53e0910ad7dbeb59208a86459a199621f52403b7361ec3a59ff1"
+    },
+    {
+      "name": "u8918-jn",
+      "version": 1,
+      "pinnedRequest": "u8918-jn@1",
+      "dataSha256": "f30fbfa03b111ad90d8b58c2d378ad1344011813a101449bab67daace86cb14d"
+    },
+    {
+      "name": "u8864-01",
+      "version": 4,
+      "pinnedRequest": "u8864-01@4",
+      "dataSha256": "bd52edebc8ec3a39cdaa86d1975ab8fc0a97d4d0ce5bb74db18adb7b248ce9e3"
+    },
+    {
+      "name": "u97cb-08",
+      "version": 7,
+      "pinnedRequest": "u97cb-08@7",
+      "dataSha256": "2a2a3179125e1fdacba2377593ce1ef9415796dd1f31c80c98eb1df0b554a626"
+    }
+  ],
+  "wholeVariantDiscoveryLimit": "API root aliases are confirmed. All whole variants have not been enumerated. Official API wiki documentation and its edit-source route returned HTTP403; this is not a block on successful glyph API record reads.",
+  "currentPublicExactJoinWarning": {
+    "component": "u97cb-08",
+    "componentRawIndices": [
+      9,
+      10
+    ],
+    "componentRaw9": "1:12:32:68:134:68:161",
+    "componentRaw10": "1:0:0:50:161:150:161",
+    "leafVerticalEnd": [
+      68,
+      161
+    ],
+    "leafHorizontalStart": [
+      50,
+      161
+    ],
+    "leafDelta": [
+      -18,
+      0
+    ],
+    "declaredWholeComponentX": [
+      15,
+      244
+    ],
+    "affineVerticalEnd": [
+      92.86,
+      161
+    ],
+    "affineHorizontalStart": [
+      72.25,
+      161
+    ],
+    "affineDelta": [
+      -20.61,
+      0
+    ],
+    "affineGap": 20.61,
+    "method": "Direct declared component affine transform x=x0+sourceX*(x1-x0)/200; y unchanged. No engine geometry, trimming or invented connector used.",
+    "limitation": "This proves discontinuity if these two declared leaf rows must form one pen; domestic order/pen grouping and current whole compatibility are unreviewed.",
+    "newApprovedJoin": false
+  },
+  "jevRoutingPriorHoldDiscovery": {
+    "earlierBatch290FoundAfterRouting": true,
+    "existingJevInputAndResultUnchanged": true,
+    "newApproval": false
+  },
+  "conclusion": "Previously held candidate: latest declared source retains the same 20.61 affine discontinuity. Add public evidence to the existing hold; no new approval."
+}
