@@ -11,7 +11,24 @@
 
 표의 «제안»은 점검한 에이전트의 의견이다. 바꾸기 전에 사전(现代汉语词典 · HSK 목록)으로 다시 본다. 같은 뜻의 개념이 이미 그 낱말을 가졌으면 중국어 낱말을 뺀다.
 
-## city — 86
+## 처리 (2026-10-12) — 고쳤다
+
+같은 날 에이전트 여섯이 676개를 나눠 판정했다 — **바꿈 395 · 뺌 256 · 그대로 25.**
+그대로 둔 25개도 예문은 새로 썼다(예문 점검에서 손대지 않았으므로).
+
+- **뺀 256개**는 대부분 «X의» 형용사 개념이다. 맨 명사(政治 · 音乐 · 东边)가 이미 같은 뜻 개념의
+  표제어라서다. 품사만 다르고 같은 낱말을 쓰는 쌍(安全 안전/안전한 · 警告 경고/경고하다 ·
+  画 그림/그리다)도 중국어 쪽 하나를 뺐다. 한국어에만 있는 말(종가 · 촌수 · 공강 시간)과
+  사동 틀(使习惯)도 뺐다.
+- **맨 명사가 비어 있으면** 그것을 형용사 자리에 썼다(莫斯科 · 俄罗斯 · 全国 · 海上).
+  `英国的` · `德国的` 같은 나라 이름 형용사는 이번 목록에 없어 아직 的꼴이다.
+- **곁말 14개를 뗐다** — 다른 개념의 표제어가 된 말(善良 · 吊 · 舞蹈 · 消息 · 智力 …)과
+  뜻이 틀린 곁말(解体 부스러지다 · 剥削 짜다 · 经济 경제학 · 充斥).
+- **뜻이 다른 동음이의어는 둔다** — 月(달/월) · 问题(문제/질문) · 声音(소리/목소리) · 捏 ·
+  怪 · 目录.
+- 변환기가 막힌 번체 넷은 손으로 채웠다.
+
+## city — 86 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -102,7 +119,7 @@
 | `send-it-round` | 돌아다니게 하다 | 使流通 | 使流通 is not a word; 돌아다니게 하다 is 流通 / 发行. 把通知手手使流通 / 会使流通新硬币 are ungrammatical. | 流通 |
 | `in-hard-straits` | 어려운 형편의 | 贫困的 | 贫困的 is a phrase (贫困 + 的); use 贫困. Sentences use 会馆 / 讨粮 (archaic). | 贫困 |
 
-## school — 83
+## school — 83 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -190,7 +207,7 @@
 | `to-do-with-philosophy` | 철학의 | 哲学的 | noun + 的, not a lexical item | 哲学 |
 | `to-do-with-the-university` | 대학의 | 大学的 | noun + 的, not a lexical item | 大学 |
 
-## office — 76
+## office — 76 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -271,7 +288,7 @@
 | `bring-them-into-line` | 맞추어 놓다 | 使配合 | 使 needs an object; 来使配合车队 is ungrammatical. Use 协调. | 协调 |
 | `still-owing` | 안 낸 | 未付的 | Phrase + 的; use 未付 / 欠款. | 未付 |
 
-## quality — 65
+## quality — 65 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -341,7 +358,7 @@
 | `the-look-of-a-thing` | 보이는 모습 | 外貌样子 | 外貌样子 is not a word (two synonyms glued). | 外表 / 样子 |
 | `of-physical-substance` | 물질의 | 实体的 | 实体的 is technical (实体经济, 实体店); «石头是实体的东西» is unnatural. | 实物的 / 有形的 |
 
-## idea — 39
+## idea — 39 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -385,7 +402,7 @@
 | `the-means-to-hand` | 수단 | 应手的法子 | ad-hoc phrase; natives say 办法 / 手段 | 办法 |
 | `better-to-do-it` | 하는 게 좋은 | 明智之举的 | 明智之举 is a noun; adding 的 makes «是明智之举的» ungrammatical | 明智之举 |
 
-## nature — 39
+## nature — 39 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -429,7 +446,7 @@
 | `of-the-hot-belt` | 열대의 | 热带的 | a phrase (noun + 的); duplicates the concept 热带 | 热带 |
 | `a-spouting-stream` | 뿜어 나오는 줄기 | 喷流 | technical term ('jet stream'); not used for a jet of water from a pipe | 水柱 (or 喷出的水流) |
 
-## action — 37
+## action — 37 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -471,7 +488,7 @@
 | `rub-them-the-wrong-way` | 거슬리게 하다 | 使恼火 | not a word; «大钟声使恼火马匹» is ungrammatical (word order). 거슬리게 하다 = 惹恼 (already another concep | 让…不舒服 |
 | `leave-them-wanting` | 마음에 안 차게 하다 | 使不满 | not a word; «稀汤会使不满饿着的人» is ungrammatical. 마음에 안 차게 하다 = 让…不满意. Both examples left unfixed | 让…不满意 |
 
-## job — 35
+## job — 35 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -511,7 +528,7 @@
 | `the-one-looking-for-it` | 찾는 이 | 寻求者 | not used on its own; both sentences unnatural | 求助者 / 求职者 (depending on sense) |
 | `there-to-give-counsel` | 일러 주는 | 咨询的 | noun + 的, not a lexical item | 咨询 / 顾问 |
 
-## travel — 28
+## travel — 28 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -544,7 +561,7 @@
 | `everything-counted-in` | 다 넣은 | 包含在内的 | 包含在内的 is a phrase, not a word; «车钱是包含在内的伙食» is ungrammatical | 包含在内 / 全包 |
 | `cross-the-border` | 국경을 넘다 | 越境 | 越境 usually means crossing a border illegally; a bus crossing legally is 过境 / 出境 | 过境 / 出境 |
 
-## body — 27
+## body — 27 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -576,7 +593,7 @@
 | `gone-off-to-sleep` | 잠든 | 睡着的 | Verb + 的, not a word; 孩子傍晚就睡着的了 is ungrammatical. The word is 睡着. | 睡着 |
 | `to-do-with-medicine` | 의학의 | 医学的 | Noun + 的; natives say 医学书 / 医学进步, not 医学的书. | 医学 |
 
-## number — 25
+## number — 25 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -606,7 +623,7 @@
 | `guess-the-number` | 개수를 맞히다 | 猜个数 | not a set phrase («客人猜个数罐里的豆子» is ungrammatical); 'guess how many' = 猜有多少个 / 猜数量. Both exa | 猜数量 |
 | `square-a-number` | 제곱하다 | 自乘 | 自乘 is old-fashioned; school math says 平方 / 求平方 | 平方 |
 
-## family — 24
+## family — 24 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -635,7 +652,7 @@
 | `paternal-family` | 친가 | 本家 | 本家 means relatives of the same surname/clan, not 친가 (father's parents' home); «过年在本家» is u | 奶奶家 / 爷爷家 |
 | `help-with-the-housework` | 집안일을 거들다 | 帮家务 | 帮家务 is not a natural collocation; one says 帮忙做家务 / 做家务 | 帮忙做家务 |
 
-## home — 23
+## home — 23 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -663,7 +680,7 @@
 | `a-washing-house` | 빨래터 | 洗衣房 | 洗衣房 is a modern laundry room, not 빨래터 (outdoor washing place by a stream); the old example | Keep 洗衣房 but change meaning_ko to 세탁실, or use 洗衣的地方 for 빨래터. |
 | `turn-on-the-boiler` | 보일러를 켜다 | 开锅炉 | 锅炉 is an industrial/building boiler; turning on home heating (Korean 보일러) is 开暖气 (or 开热水器  | 开暖气 |
 
-## time — 22
+## time — 22 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -690,7 +707,7 @@
 | `of-this-very-day` | 오늘의 | 今天的 | 今天的 is a phrase (noun + 的), not a word | 今天 |
 | `the-working-days` | 일하는 나날 | 日常工作日 | 日常工作日 is not a natural word; both sentences are unnatural | 工作日 / 平日 |
 
-## sport — 17
+## sport — 17 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -712,7 +729,7 @@
 | `rehabilitation` | 재활 | 复健 | 复健 is Taiwan usage; Mainland standard is 康复 / 康复训练. | 康复训练 |
 | `commit-a-foul` | 반칙을 범하다 | 犯下规则 | 犯下规则 is not Chinese; a foul is 犯规 (verb-object). Both examples are ungrammatical. | 犯规 |
 
-## food — 16
+## food — 16 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -733,7 +750,7 @@
 | `fish-out-the-solids` | 건더기를 건지다 | 捞出料 | not a natural phrase; Chinese says 捞出来 / 把料捞出来 | 捞出来 |
 | `drain-in-a-sieve` | 체에 밭치다 | 用筛子沥 | not a set phrase; Chinese drains noodles with 漏勺/沥水篮: 沥干, 控水 | 沥干 (or 沥水) |
 
-## transport — 12
+## transport — 12 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -750,7 +767,7 @@
 | `economical-on-fuel` | 연비가 좋은 | 省油的 | 的-form is a phrase; dictionary item is 省油 (example 小排量是省油的 is clumsy) | 省油 |
 | `switch-off-the-engine` | 시동을 끄다 | 熄火关车 | redundant coinage (熄火 already = switch off engine); also duplicates concept stall-engine 熄 | 关火 / 熄火 (or 关掉发动机) |
 
-## everyday — 11
+## everyday — 11 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -766,7 +783,7 @@
 | `with-hands-free` | 손이 빈 | 腾出手的 | 腾出手的 is a phrase (腾出手 + 的); "hands free" is 空着手 / 腾出手来. 背在背上就是腾出手的 is ungrammatical. | 腾出手 |
 | `residents-meeting` | 반상회 | 居民会 | 居民会 is not the usual term; a residents' meeting (반상회) is 居民会议 / 业主大会. | 居民会议 |
 
-## clothes — 9
+## clothes — 9 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
@@ -780,7 +797,7 @@
 | `put-clothes-on-them` | 입혀 주다 | 给穿上 | not a contiguous word; Chinese needs an object in the middle (给孩子穿上), so both sentences dr | 给…穿上 → use 穿上 or 帮…穿衣服 |
 | `fit-it-to-the-body` | 몸에 맞추다 | 按身量改 | ad-hoc phrase, not a dictionary word | 改合身 (or 量体裁衣 for tailoring) |
 
-## scene — 2
+## scene — 2 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 문제 | 제안 |
 | --- | --- | --- | --- | --- |
