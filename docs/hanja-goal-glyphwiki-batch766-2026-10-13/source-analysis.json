@@ -1,0 +1,154 @@
+{
+  "candidate": {
+    "batch": 766,
+    "glyph": "菀",
+    "id": "u83c0",
+    "readingGrade": "특급",
+    "strokes": 12,
+    "sourceRow": 3621
+  },
+  "checkedDate": "2026-10-13",
+  "precheck": {
+    "runtimeApplied": false,
+    "listedInLatestNewHolds": false,
+    "assignedEvidenceFileExisted": false,
+    "otherSessionCandidateWorkObserved": false
+  },
+  "status": "Public root and complete referenced dependency metadata retrieved; no visual approval",
+  "root": {
+    "related": "U+83C0",
+    "name": "u83c0",
+    "version": 13,
+    "data": "99:0:0:0:3:200:169:u8279-03:0:0:0$99:0:0:0:37:200:197:u5b9b-j@2:0:0:0"
+  },
+  "wholeNameInventory": {
+    "knownRetrievedWholeNames": [
+      "u83c0"
+    ],
+    "complete": false,
+    "related": "U+83C0",
+    "reason": "Glyph API related field provides a U+ identifier; complete related whole-name list has not been retrieved"
+  },
+  "records": [
+    {
+      "requestedName": "u83c0",
+      "name": "u83c0",
+      "version": 13,
+      "related": "U+83C0",
+      "data": "99:0:0:0:3:200:169:u8279-03:0:0:0$99:0:0:0:37:200:197:u5b9b-j@2:0:0:0",
+      "dataSHA256": "fe9720526c7a31e9549436a5819eeddec0d4b0b6cb926cfd0f1a596542bb4219",
+      "url": "https://glyphwiki.org/api/glyph?name=u83c0",
+      "freezeURL": "https://glyphwiki.org/api/glyph?name=u83c0%4013"
+    },
+    {
+      "requestedName": "u8279-03",
+      "name": "u8279-03",
+      "version": 11,
+      "related": "U+8279",
+      "data": "1:0:0:13:39:187:39$1:0:0:72:13:72:64$1:0:0:128:13:128:64",
+      "dataSHA256": "417523184e827015f581c0f004027eac6e11f21a1301ad744b556e1bd9acea41",
+      "url": "https://glyphwiki.org/api/glyph?name=u8279-03",
+      "freezeURL": "https://glyphwiki.org/api/glyph?name=u8279-03%4011"
+    },
+    {
+      "requestedName": "u5b9b-j@2",
+      "name": "u5b9b-j",
+      "version": "2",
+      "related": "U+5B9B",
+      "data": "99:0:0:0:1:200:186:u5b80-03@8$2:0:7:56:62:45:105:13:135$1:2:2:48:85:93:85$2:22:7:93:85:79:158:13:189$2:7:8:35:109:52:117:62:134$1:2:2:116:81:162:81$1:22:4:162:81:162:139$3:12:5:116:81:116:175:181:175",
+      "dataSHA256": "17c982a13507f2e100e9fe4e5479acc762f01905c84af39ad5829830d4ac0c3a",
+      "url": "https://glyphwiki.org/api/glyph?name=u5b9b-j%402",
+      "freezeURL": "https://glyphwiki.org/api/glyph?name=u5b9b-j%402"
+    },
+    {
+      "requestedName": "u5b80-03@8",
+      "name": "u5b80-03",
+      "version": "8",
+      "related": "U+5B80",
+      "data": "1:0:32:100:14:100:45$99:0:0:0:18:200:198:u5196-03@4",
+      "dataSHA256": "9536aed1d2c6b38e468023c22c1bd8b5487539fd3ee10896467f8e670db197b7",
+      "url": "https://glyphwiki.org/api/glyph?name=u5b80-03%408",
+      "freezeURL": "https://glyphwiki.org/api/glyph?name=u5b80-03%408"
+    },
+    {
+      "requestedName": "u5196-03@4",
+      "name": "u5196-03",
+      "version": "4",
+      "related": "U+5196",
+      "data": "2:7:8:31:16:32:53:16:65$1:0:2:32:31:176:31$2:22:7:176:31:170:43:156:63",
+      "dataSHA256": "4d9da60829a7679ee280b01dfdd7532e90b6c9b8d2be61782bf48b986616d275",
+      "url": "https://glyphwiki.org/api/glyph?name=u5196-03%404",
+      "freezeURL": "https://glyphwiki.org/api/glyph?name=u5196-03%404"
+    }
+  ],
+  "references": [
+    {
+      "parent": "u83c0",
+      "reference": "u8279-03",
+      "explicitVersion": false
+    },
+    {
+      "parent": "u83c0",
+      "reference": "u5b9b-j@2",
+      "explicitVersion": true
+    },
+    {
+      "parent": "u5b9b-j@2",
+      "reference": "u5b80-03@8",
+      "explicitVersion": true
+    },
+    {
+      "parent": "u5b80-03@8",
+      "reference": "u5196-03@4",
+      "explicitVersion": true
+    }
+  ],
+  "explicitHistoricalReferenceCount": 3,
+  "rawDefinitionStatistics": {
+    "expandedRawDefinitions": 14,
+    "types": {
+      "1": 8,
+      "2": 5,
+      "3": 1
+    },
+    "domesticStrokeCountExpected": 12,
+    "note": "Counts literal source definitions, not compiled pens or engine draw calls; no count approval"
+  },
+  "hazards": [
+    {
+      "component": "u8279-03",
+      "kind": "whole-shape and count review required",
+      "rawDefinitionCount": 3,
+      "detail": "Retrieved default root uses connected grass with one horizontal and two vertical raw definitions; whether the domestic 12-stroke form needs a four-stroke grass is unreviewed"
+    },
+    {
+      "component": "u5b9b-j@2",
+      "kind": "terminal risk",
+      "rawIndex": 7,
+      "literalType": [
+        3,
+        12,
+        5
+      ],
+      "detail": "Final type3 down-to-right fold has terminal5; actual pinned-engine output and fine-mask inspection pending"
+    }
+  ],
+  "engineRevisionForFutureReview": "49232bac0348fe815f4200d4116ab7917e0db47f",
+  "scope": {
+    "publicAPIOnly": true,
+    "archiveDownloaded": false,
+    "engineTraceGenerated": false,
+    "wholeVariantsVisuallyReviewed": false,
+    "domesticOrderReviewed": false,
+    "progressiveFramesReviewed": false,
+    "runtimeApplied": false,
+    "privateMediaUsed": false,
+    "externalPrivateDataSent": false
+  },
+  "nextReview": [
+    "Retrieve complete related whole names",
+    "Select whole glyph against domestic reference in browser panel",
+    "Capture pinned exact engine trace and all historical dependencies",
+    "Resolve exact joins and inspect every stroke/fine mask before approval"
+  ]
+}
