@@ -1,0 +1,183 @@
+{
+  "analysisDate": "2026-10-13",
+  "scope": "Public live API metadata and component-local raw data only",
+  "domesticVisualReviewed": false,
+  "engineTraceGenerated": false,
+  "approved": false,
+  "runtimeApplied": false,
+  "privateMediaAccessed": false,
+  "archiveDownloaded": false,
+  "fixedArchiveMatched": false,
+  "versionPolicy": "Latest API responses captured; explicit root versions listed, but unversioned dependencies were resolved live and are not proven identical to the existing fixed archive",
+  "stateAtCheck": "Not applied in HANJA_STROKES; absent from batch764 newHolds; assigned batch folders and modules absent; exclusive parent assignment",
+  "unknowns": [
+    "Whole glyph compatibility with domestic Korean reference",
+    "Domestic order and direction",
+    "Pinned KAGE trace and emitted polygons",
+    "Progressive frames, terminal checks and actual replay",
+    "Other whole variants and historical versions outside the listed responses"
+  ],
+  "batch": 768,
+  "glyph": "騵",
+  "catalogId": "u9a35",
+  "readingGrade": "특급",
+  "expectedPens": 20,
+  "sourceRow": 3653,
+  "records": {
+    "u9a35": {
+      "version": 11,
+      "data": "99:0:0:0:0:200:200:u9a35-j",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u9a35",
+      "versionUrl": "https://glyphwiki.org/wiki/u9a35@11"
+    },
+    "u9a35-j": {
+      "version": 4,
+      "data": "99:0:0:1:0:173:200:u99ac-01$99:0:0:4:0:199:199:u539f-02",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u9a35-j",
+      "versionUrl": "https://glyphwiki.org/wiki/u9a35-j@4"
+    },
+    "u99ac-01": {
+      "version": 10,
+      "data": "1:12:13:28:28:28:110$1:2:0:28:28:96:28$1:32:32:60:28:60:110$1:2:0:28:56:95:56$1:2:0:28:83:95:83$1:2:2:28:110:88:110$2:22:4:88:110:90:156:73:183$2:7:8:27:124:30:160:17:172$2:7:8:37:127:45:147:42:164$2:7:8:47:124:58:138:59:155$2:7:8:56:118:69:127:73:142",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u99ac-01",
+      "versionUrl": "https://glyphwiki.org/wiki/u99ac-01@10"
+    },
+    "u539f-02": {
+      "version": 1,
+      "data": "1:2:0:99:30:188:30$7:12:7:99:30:99:92:99:157:80:185$2:32:7:147:30:143:45:137:59$1:12:13:120:59:120:117$1:2:2:120:59:174:59$1:22:23:174:59:174:117$1:2:2:120:87:174:87$1:2:2:120:117:174:117$1:32:4:146:117:146:183$2:0:7:122:136:116:161:99:183$2:7:8:161:133:178:154:183:176",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u539f-02",
+      "versionUrl": "https://glyphwiki.org/wiki/u539f-02@1"
+    }
+  },
+  "wholeRoots": {
+    "default": "u9a35@11",
+    "independent": "u9a35-j@4",
+    "k": {
+      "data": null,
+      "version": null,
+      "related": null,
+      "queried": true,
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u9a35-k"
+    }
+  },
+  "componentRawCounts": {
+    "u99ac-01": 11,
+    "u539f-02": 11
+  },
+  "groupingCandidate": {
+    "count": 20,
+    "groups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15,
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ],
+      [
+        21
+      ]
+    ],
+    "domesticOrderApproved": false
+  },
+  "joins": [
+    {
+      "component": "u99ac-01",
+      "raw": [
+        5,
+        6
+      ],
+      "previousEnd": [
+        88,
+        110
+      ],
+      "nextStart": [
+        88,
+        110
+      ],
+      "delta": [
+        0,
+        0
+      ],
+      "exactRawCoordinateJoin": true
+    },
+    {
+      "component": "u539f-02",
+      "raw": [
+        4,
+        5
+      ],
+      "previousEnd": [
+        174,
+        59
+      ],
+      "nextStart": [
+        174,
+        59
+      ],
+      "delta": [
+        0,
+        0
+      ],
+      "exactRawCoordinateJoin": true
+    }
+  ],
+  "risks": [
+    "馬 raw0 and 原 raw3 terminal13 serif need exact engine and enlarged reveal checks",
+    "馬 raw6 quadratic terminal4 and 原 raw8 terminal4 hook need original engine reveal treatment",
+    "Composite type7 原 raw1 must be inspected after pinned engine expansion"
+  ],
+  "conclusion": "20 geometric groups are possible in the live component raw data without inventing the two required joining coordinates; engine output and domestic order remain unreviewed"
+}
