@@ -1,0 +1,147 @@
+{
+  "glyph": "稢",
+  "batch": 762,
+  "status": "Evidence candidate only; native browser approval pending",
+  "sourceRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+  "sourceURL": "https://github.com/kamichikoichi/kage-engine/blob/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+  "sourceLines": {
+    "lineTerminals": [
+      768,
+      775
+    ],
+    "bezierWrapper": [
+      702,
+      704
+    ],
+    "bezierTail": [
+      571,
+      585
+    ]
+  },
+  "engineHashes": {
+    "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+    "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+    "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+    "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+    "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+    "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+    "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+    "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+  },
+  "traceSHA256": "0aae76a514b3d90e8da236b0507bbaa1d47be04b44027fa1570f84e789ee6210",
+  "groupsSHA256": "4b8fab5694da654bd52e6494b9872699c23d297faf28956b55175996d70cdc22",
+  "pen7": {
+    "raw": 6,
+    "kind": "cdDrawLine",
+    "terminal": 13,
+    "opt2": 0,
+    "adjustmentL": 14,
+    "endpointY": 122,
+    "originalBottomYs": [
+      136,
+      142
+    ],
+    "normalizedBounds": [
+      42.05,
+      36.5,
+      48.05,
+      71
+    ],
+    "maskDirection": "down",
+    "finalSliverAt9999Percent": 0.0034500000000000004,
+    "analysis": "Original terminal is already inside directional bounds; native rendering still requires browser review"
+  },
+  "pen8": {
+    "raw": 8,
+    "kind": "cdDrawLine",
+    "terminal": 323,
+    "opt2": 3,
+    "adjustmentR": 2,
+    "originalBottomYs": [
+      124,
+      130
+    ],
+    "maxNormalizedVertexDistanceToHLPath": 5.460000000000008,
+    "maskRadius": 7,
+    "analysis": "Original vertices are inside full stroke width14 H-to-V mask; this numerical evidence is not browser approval"
+  },
+  "pen11": {
+    "raw": 11,
+    "kind": "cdDrawBezier",
+    "terminal": 15,
+    "sourceBranch": "cdDrawCurveU a2==15 with y1<y2, not cdDrawLine terminal5",
+    "width": 6,
+    "jump": 25,
+    "tailHeight": 26,
+    "formula": [
+      "(x2,y2-width+1)",
+      "(x2+2,y2-width-kWidth*5)",
+      "(x2,y2-width-kWidth*5)",
+      "(x2-width,y2-width+1)"
+    ],
+    "originalTailPolygon": [
+      {
+        "x": 181.3,
+        "y": 175,
+        "off": 0
+      },
+      {
+        "x": 183.3,
+        "y": 149,
+        "off": 0
+      },
+      {
+        "x": 181.3,
+        "y": 149,
+        "off": 0
+      },
+      {
+        "x": 175.3,
+        "y": 175,
+        "off": 0
+      }
+    ],
+    "normalizedBounds": [
+      87.65,
+      74.5,
+      91.65,
+      87.5
+    ],
+    "candidateDirection": "up",
+    "candidateWeight": 13,
+    "originalCenterlineUnchanged": true,
+    "revealWidthUnchanged": 14,
+    "normalizedTipDistances": [
+      12.981159027633252,
+      12.097093216930928
+    ],
+    "normalizedBodyMaxVertexDistance": 4.472698523878252,
+    "maskRadius": 7,
+    "analysis": "Baseline full cubic stroke-width14 mask leaves tip outside; separate exact original tail polygon candidate is available"
+  },
+  "distanceMethod": "8192 samples and 80 ternary refinements; numerical evidence, not formal global-distance proof or browser observation",
+  "verification": {
+    "status": "PASS",
+    "fixedEngineFilesFetchedAndSHAValidated": 8,
+    "actualEngineCallsExact": [
+      6,
+      8,
+      11
+    ],
+    "baselinePens": 13,
+    "baselineMasks": 13,
+    "candidatePens": 13,
+    "candidateMasks": 14,
+    "originalPolygons": 29,
+    "preservedPolygons": 29,
+    "otherPensUnchanged": 12,
+    "mutationRejects": 4
+  },
+  "evidenceFiles": {
+    "candidate": "terminal15-candidate-evidence.mjs",
+    "verifier": "verify-terminal-end-evidence.mjs"
+  },
+  "nativeBrowserApproved": false,
+  "privateMediaUsed": false,
+  "runtimeApplied": false
+}
