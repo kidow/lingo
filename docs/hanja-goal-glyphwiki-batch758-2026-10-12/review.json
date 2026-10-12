@@ -1,0 +1,166 @@
+{
+  "glyph": "訏",
+  "batch": 758,
+  "status": "passed:all10 native directions,90frames,3fine checks and two replays;source terminal14 hook preserved",
+  "runtimeApplied": true,
+  "wholeVariantsReviewed": 2,
+  "wholeVariants": [
+    {
+      "name": "u8a0f",
+      "related": "u8a0f",
+      "data": "99:0:0:-1:0:197:200:u8a01-01:0:0:0$99:0:0:64:0:200:200:u4e8e:0:0:0"
+    },
+    {
+      "name": "u8a0f-ue0100",
+      "related": "u3013",
+      "data": "99:0:0:0:0:200:200:u8a0f"
+    }
+  ],
+  "compatibleWholeRoots": [
+    "u8a0f",
+    "u8a0f-ue0100"
+  ],
+  "dictionaryDirectionStrokes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "sourceGroupsZeroBased": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ]
+  ],
+  "compiledPens": 10,
+  "masks": 11,
+  "progressiveFramesReviewed": 90,
+  "progressiveFramesApproved": 90,
+  "progressivePensReviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "curveFineChecks": [
+    {
+      "pen": 5,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 6,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 10,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    }
+  ],
+  "blockedPens": [],
+  "allStrokesReviewed": true,
+  "replayApproved": true,
+  "replayStatus": "pen10 AX23/image52→100;pen6 AX25/image52→100;both native",
+  "unreviewedProgressivePens": [],
+  "privateMediaSaved": false,
+  "browserTabs": {
+    "whole": 133,
+    "progressive": 135
+  },
+  "releaseCondition": "all native checks passed",
+  "unreviewedDictionaryDirectionStrokes": [],
+  "replayPens": [
+    10,
+    6
+  ],
+  "selectedWholeRoot": "u8a0f",
+  "unreviewedFinePens": [],
+  "sourceHooks": [
+    {
+      "pen": 10,
+      "raw": 11,
+      "ta2": 14,
+      "a2": 14,
+      "opt2": 0,
+      "width": 6,
+      "jumpOriginalUnits": 20,
+      "weightNormalized": 10,
+      "direction": "left",
+      "polygon": [
+        {
+          "x": 121.3,
+          "y": 182,
+          "off": 0
+        },
+        {
+          "x": 121.3,
+          "y": 176,
+          "off": 0
+        },
+        {
+          "x": 101.3,
+          "y": 176,
+          "off": 0
+        },
+        {
+          "x": 101.3,
+          "y": 179,
+          "off": 0
+        }
+      ],
+      "sourceUrl": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+      "sourceSha256": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "formula": "a2=ta2%100;opt2=floor(ta2%1000/100);jump=kWidth*4*min(1-opt2/10,(width/kMinWidthT)^3)*(width>6?6/width:1)",
+      "inventedTrajectory": false,
+      "maskWidened": false,
+      "originalPolygonPreserved": true
+    }
+  ]
+}
