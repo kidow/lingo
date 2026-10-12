@@ -1,0 +1,258 @@
+{
+  "glyph": "楀",
+  "batch": 757,
+  "status": "passed:all13 native directions,117frames,8fine checks and two replays;source terminal114 hook preserved",
+  "runtimeApplied": true,
+  "wholeVariantsReviewed": 1,
+  "wholeVariants": [
+    {
+      "name": "u6940",
+      "related": "u6940",
+      "data": "99:0:0:1:0:180:200:u6728-01$99:0:0:65:0:198:200:u79b9"
+    }
+  ],
+  "compatibleWholeRoots": [
+    "u6940"
+  ],
+  "dictionaryDirectionStrokes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "sourceGroupsZeroBased": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      12
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ]
+  ],
+  "compiledPens": 13,
+  "masks": 14,
+  "progressiveFramesReviewed": 117,
+  "progressiveFramesApproved": 117,
+  "progressivePensReviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "curveFineChecks": [
+    {
+      "pen": 3,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 4,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 5,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 6,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 7,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 10,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 12,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    },
+    {
+      "pen": 13,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true
+    }
+  ],
+  "blockedPens": [],
+  "allStrokesReviewed": true,
+  "replayApproved": true,
+  "replayStatus": "pen10 AX26/image48→100;pen13 AX28/image51→100;both native",
+  "unreviewedProgressivePens": [],
+  "privateMediaSaved": false,
+  "browserTabs": {
+    "whole": 133,
+    "progressive": 135
+  },
+  "releaseCondition": "all native checks passed",
+  "unreviewedDictionaryDirectionStrokes": [],
+  "replayPens": [
+    10,
+    13
+  ],
+  "selectedWholeRoot": "u6940",
+  "domesticOrderPermutation": {
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        12
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ]
+    ],
+    "cumulativeProgressiveApproved": true,
+    "note": "Lower left vertical and hooked enclosure precede central vertical;all joins exact original."
+  },
+  "unreviewedFinePens": [],
+  "sourceHooks": [
+    {
+      "pen": 10,
+      "raw": 15,
+      "ta2": 114,
+      "a2": 14,
+      "opt2": 1,
+      "width": 6,
+      "jumpOriginalUnits": 18,
+      "weightNormalized": 9,
+      "direction": "left",
+      "polygon": [
+        {
+          "x": 167.3,
+          "y": 182,
+          "off": 0
+        },
+        {
+          "x": 167.3,
+          "y": 176,
+          "off": 0
+        },
+        {
+          "x": 149.3,
+          "y": 176,
+          "off": 0
+        },
+        {
+          "x": 149.3,
+          "y": 179,
+          "off": 0
+        }
+      ],
+      "sourceUrl": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+      "sourceSha256": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "formula": "a2=ta2%100;opt2=floor(ta2%1000/100);jump=kWidth*4*min(1-opt2/10,(width/kMinWidthT)^3)*(width>6?6/width:1)",
+      "inventedTrajectory": false,
+      "maskWidened": false,
+      "originalPolygonPreserved": true
+    }
+  ]
+}
