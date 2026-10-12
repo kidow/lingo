@@ -1,0 +1,8 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch749.json' with {type:'json'}
+import {loadGlyphWikiBatch749Strokes} from './hanja-stroke-dictionary-glyphwiki-batch749.ts'
+import {HANJA_STROKES,hanjaStrokeData} from './hanja-strokes.ts'
+test('騧19pens uniquely registered at unchanged catalog boundary',()=>{const e=hanjaStrokeData({glyph:'騧',strokes:19});assert(e);assert.deepEqual(e,reviewed[0]);assert.equal(e.paths.length,19);assert.equal(HANJA_STROKES.filter(s=>s.glyph==='騧').length,1);for(const strokes of [18,20])assert.equal(hanjaStrokeData({glyph:'騧',strokes}),null)})
+test('騧 domestic order and both source hooks preserved',()=>{const e=loadGlyphWikiBatch749Strokes(reviewed)[0];assert.deepEqual(e.sourceStrokeIndices,[1,2,4,5,3,6,8,9,10,11,12,13,16,15,17,18,20,21,23]);assert.equal(e.outlines!.flat().length,21);assert.equal(e.outlines!.flat().filter(s=>s.direction==='curve').length,8);for(const p of [5,15]){assert.equal(e.outlines![p][1].direction,'left');assert.equal(e.outlines![p][1].weight,8)};assert.equal(e.sourceReference.dictionaryDirectionStrokes,'1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19')})
+test('騧 foreign order,hook and source replacement rejected',()=>{for(const mutate of [(e:typeof reviewed[number])=>{e.sourceStrokeIndices[2]=3},(e:typeof reviewed[number])=>{e.outlines[5][1].direction='right'},(e:typeof reviewed[number])=>{e.outlines[15][1].weight=7},(e:typeof reviewed[number])=>{e.geometrySource='0'.repeat(64)},(e:typeof reviewed[number])=>{e.sourceReference.dictionarySvgSha256='0'.repeat(64)}]){const b=structuredClone(reviewed);mutate(b[0]);assert.throws(()=>loadGlyphWikiBatch749Strokes(b))}})
