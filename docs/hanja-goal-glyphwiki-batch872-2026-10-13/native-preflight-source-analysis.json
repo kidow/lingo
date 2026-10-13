@@ -1,0 +1,205 @@
+{
+  "batch": 872,
+  "glyph": "蔦",
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only numerical compiler integrity audit; no native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "source": {
+    "root": "u8526-ue0102",
+    "sourceProofFile": "engine-whole-u8526-ue0102.json",
+    "sourceProofFileSHA256": "14f15da2024329dca8c39662b8577e894ea21ad612efb6b4523f385825b3ffcd",
+    "compilerFileSHA256": "ce08afad3bebe29eb9ecaf056410d0041da19fae418ccfbb474244696bb6b799",
+    "selectedBodyContainsEngineHeader": true,
+    "engineHeaderWrapperRequired": false,
+    "compilerContract": "Two arguments. Exact selected body digest/trace/groups and all8 engine hashes/preset checked. No explicit third fileIdentity argument; source file byteSHA checked independently.",
+    "engineHashChecks": 8,
+    "recordCount": 11,
+    "completeWholeVariantsExactlyReplayed": 5,
+    "historyCount": 0,
+    "missingDependencies": [],
+    "archiveRedownloaded": false,
+    "latestSubstitution": false
+  },
+  "validation": {
+    "actualExit": 0,
+    "raw": 17,
+    "calls": 18,
+    "L": 11,
+    "Q": 7,
+    "B": 0,
+    "pens": 15,
+    "masks": 16,
+    "originalPolygons": 32,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ]
+    ],
+    "sourceGroupsSHA256": "58dc23788f96db9cd5e87984f9cd9283083669c65ee9aa04bc81c9bc93dcc6ad",
+    "compiledOutlinesSHA256": "7dc66fdecf32dfb1ebc86c174c364b8c792b691ac6cb32ad7eee97b79d60ed57",
+    "originalPolygonsExactlyOnce": true,
+    "allRawExactlyOnce": true,
+    "inputProofUnchanged": true,
+    "emptyRawGroups": [],
+    "mutationRejects": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ]
+  },
+  "boundaryAnalysis": {
+    "catalogAndCapturedDomesticCount": 15,
+    "allGroupedRawAndInternalCallsJoinExactly": true,
+    "exactFolds": [
+      {
+        "pen": 7,
+        "raw": [
+          6,
+          7
+        ],
+        "point": [
+          145,
+          69.64
+        ]
+      },
+      {
+        "pen": 11,
+        "raw": [
+          11,
+          12
+        ],
+        "point": [
+          169,
+          135.16
+        ]
+      }
+    ],
+    "unusedNonConsecutiveContacts": [
+      [
+        5,
+        11
+      ]
+    ],
+    "nonConsecutiveMergeUsed": false,
+    "nativePenBoundariesUnknown": true,
+    "numericCountEqualityNotApproval": true,
+    "coordinateOrControlMutation": false,
+    "connectorAuthored": false,
+    "wholeMixing": false,
+    "note": "Basic/VS0/VS1 have16raw and contiguous14pens; selectedVS2/var001 have17raw and15pens. These count differences do not approve whole shape. Selected contiguous6→7 and11→12 used; separated5→11 remains distinct. Do not mix basic andVS2 geometry."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      5,
+      7,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "pureLineOriginalVertexBounds": [
+      {
+        "pen": 7,
+        "raw": [
+          6,
+          7
+        ],
+        "terminal": 323,
+        "vertexCount": 13,
+        "maxOriginalVertexDistanceKage": 11,
+        "width": 14
+      }
+    ],
+    "originalStopStyles": [
+      {
+        "raw": 5,
+        "terminal": 313,
+        "startStyle": 12
+      },
+      {
+        "raw": 7,
+        "terminal": 323,
+        "startStyle": 22
+      }
+    ],
+    "originalSamePenMaskTransitions": [
+      {
+        "pen": 11,
+        "mask": 2,
+        "start": 0.8959801724894227,
+        "direction": "left",
+        "weight": 10,
+        "bounds": [
+          63.5,
+          88.35,
+          73.5,
+          91.35
+        ],
+        "terminal": 14
+      }
+    ],
+    "widthChanged": false,
+    "QBCurveWidthInferenceApplied": false,
+    "nativeFineAndReplayPending": true
+  }
+}
