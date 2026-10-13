@@ -1,0 +1,231 @@
+{
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only compiler/source integrity audit; no native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "archiveRedownloaded": false,
+  "latestSubstitution": false,
+  "batch": 887,
+  "glyph": "騭",
+  "source": {
+    "root": "u9a2d-ue0102",
+    "sourceProofFile": "engine-whole-u9a2d-ue0102.json",
+    "sourceProofFileSHA256": "661103c9e9a4e4f1a15eaa982b9e8ba9ae5b647c467c14fe71678cf59a21f8f9",
+    "compilerFileSHA256": "d795b18e27781027643b61a704f7d4e9f89ab86734351874024681d497f3e64b",
+    "wholeHeaderPresent": false,
+    "engineHeaderWrappedOnlyInRAM": true,
+    "compilerContract": "Two arguments; selected full-body digest, trace/groups, all8 engine hashes and preset pinned. FilebyteSHA checked independently.",
+    "engineHashChecks": 8,
+    "recordCount": 11,
+    "completeWholeVariantsExactlyEngineReplayed": 4,
+    "missingReferences": [],
+    "historyCount": 0
+  },
+  "validation": {
+    "actualExit": 0,
+    "raw": 23,
+    "calls": 26,
+    "L": 13,
+    "Q": 13,
+    "B": 0,
+    "pens": 20,
+    "masks": 23,
+    "originalPolygons": 50,
+    "sourceGroups": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12,
+        17,
+        18
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ],
+      [
+        21
+      ],
+      [
+        22
+      ]
+    ],
+    "sourceGroupsSHA256": "0f1803b469e771b736ef0583ce00d1f11ea84a91582e9d76db26d253169bf825",
+    "compiledOutlinesSHA256": "8032840314f3cdb85339af9a5c68f8e53135cc371cdc2bad93bc7f8aeef9cd74",
+    "allOriginalPolygonsExactlyOnce": true,
+    "allVisibleRawExactlyOnce": true,
+    "originalEmptyRawGroups": [],
+    "inputProofUnchanged": true,
+    "mutationRejects": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ],
+    "extraEmptyMetadataTamperRejected": false
+  },
+  "boundaryAnalysis": {
+    "catalogAndDomesticCount": 20,
+    "allGroupedRawAndInternalCallsExact": true,
+    "exactFolds": [
+      {
+        "pen": 1,
+        "raw": [
+          0,
+          1
+        ],
+        "point": [
+          68.4,
+          19.86
+        ]
+      },
+      {
+        "pen": 12,
+        "raw": [
+          12,
+          17,
+          18
+        ],
+        "firstJoinPoint": [
+          47,
+          149.6
+        ]
+      }
+    ],
+    "nonConsecutiveMergesUsed": [
+      [
+        12,
+        17
+      ]
+    ],
+    "unusedNonConsecutiveContacts": [],
+    "domesticBoundariesUnknown": true,
+    "numericCountIsNotApproval": true,
+    "note": "Candidate20 uses nonconsecutive12→17 plus contiguous17→18. Contiguous-only grouping yields21. Basic/VS0/VS1 have22raw and unrestricted19; selectedVS2 has23raw and unrestricted20. Whole attribution and domestic boundary of this nonconsecutive join remain unapproved."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      1,
+      2,
+      8,
+      9,
+      10,
+      11,
+      12,
+      17,
+      18,
+      19,
+      20
+    ],
+    "pureLineOriginalVertexBounds": [],
+    "originalStopStyles": [
+      {
+        "raw": 12,
+        "terminal": 313
+      }
+    ],
+    "samePenOriginalMaskTransitions": [
+      {
+        "pen": 2,
+        "mask": 2,
+        "start": 0.822076866138783,
+        "direction": "left",
+        "weight": 5,
+        "bounds": [
+          20.85,
+          33.4,
+          25.85,
+          36.4
+        ]
+      },
+      {
+        "pen": 8,
+        "mask": 2,
+        "start": 0.6385137304052753,
+        "direction": "left",
+        "weight": 10,
+        "bounds": [
+          50.2,
+          35.1,
+          60.2,
+          38.1
+        ]
+      },
+      {
+        "pen": 12,
+        "mask": 2,
+        "start": 0.911931234075736,
+        "direction": "left",
+        "weight": 10,
+        "bounds": [
+          68,
+          88.4,
+          78,
+          91.4
+        ]
+      }
+    ],
+    "widthChanged": false,
+    "automaticQBWidthOrTailCorrection": false,
+    "nativeFineAndReplayPending": true
+  }
+}
