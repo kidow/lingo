@@ -1,0 +1,113 @@
+{
+  "batch": 865,
+  "glyph": "蠐",
+  "id": "u8810",
+  "status": "held:domesticOrderAnd14/15BoundaryMismatch",
+  "sourceVerification": {
+    "sourcePassed": true,
+    "sourceEvidencePassed": true,
+    "sourceEvidenceBasis": "Actual pinned archive and8engine verifier PASS reused unchanged; source-only boundary feasibility audit does not imply native approval",
+    "holdGuardPassed": true,
+    "domesticMetadataVerified": true
+  },
+  "nativeReview": {
+    "glyph": "蠐",
+    "batch": 865,
+    "status": "held:domesticOrderAnd14/15BoundaryMismatch",
+    "runtimeApplied": false,
+    "nativeApproval": false,
+    "verifiedAt": "2026-10-14",
+    "wholeVariantsReviewed": 2,
+    "compatibleWholeRoots": [
+      "u8810",
+      "u8810-ue0100"
+    ],
+    "dictionaryDirectionStrokes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "directionBoundaryMismatches": [
+      {
+        "pen": 14,
+        "reason": "domestic upperQ only; candidate prematurely includes next V"
+      },
+      {
+        "pen": 15,
+        "reason": "domestic V+rise; candidate rise only"
+      }
+    ],
+    "orderMismatches": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      18,
+      19,
+      20
+    ],
+    "curveFineChecks": [],
+    "maskBoundaryObservations": [],
+    "progressiveFramesReviewed": 0,
+    "allStrokesReviewed": false,
+    "replayApproved": false,
+    "privateMediaSaved": false,
+    "progressiveFramesApproved": 0,
+    "blockedPens": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      18,
+      19,
+      20
+    ],
+    "replayPens": [],
+    "reason": "Bothcomplete whole variants match. All20native direction comparisons show rightcomponent order and lower18/19/20 permutation differences. Numeric14 includes upperQ and followingV, crossing domestic14Q-only/15V+rise boundary; numeric15 onlyrise. Original source numerical20 does not approve Korean pen segmentation. No coarse frames/fine/replay approved and no source paths widened/spliced.",
+    "releaseCondition": "Original source preserving domestic14/15 pen grouping plus full corrected native order/progressive boundary/fine/replay review."
+  },
+  "runtime": {
+    "applied": 5437,
+    "total": 5978,
+    "remaining": 541,
+    "held": 228,
+    "appliedThisBatch": 0,
+    "excluded": true
+  },
+  "checks": {
+    "sourceVerifierPassed": true,
+    "runtimeExclusionPassed": true,
+    "productionBuild": "not run:user requested no builds",
+    "fullSuite": "not run:no runtime code change",
+    "mobile": "not run:held candidate",
+    "sourceEvidencePassed": true,
+    "holdGuardPassed": true
+  },
+  "privateMediaSaved": false,
+  "jev": {
+    "status": "not run: automatic approval review blocked new30summary transmission; permission pending",
+    "advisoryOnly": true,
+    "runtimeApproval": false
+  }
+}
