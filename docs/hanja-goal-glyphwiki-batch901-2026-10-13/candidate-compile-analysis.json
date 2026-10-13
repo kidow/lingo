@@ -1,0 +1,176 @@
+{
+  "glyph": "挃",
+  "batch": 901,
+  "catalogStrokes": 9,
+  "domesticClipCount": 9,
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "nativeDirectionStrokesReviewed": [],
+  "progressiveFramesReviewed": 0,
+  "progressiveFramesApproved": 0,
+  "replayApproved": false,
+  "runtimeRegistered": 0,
+  "privateMediaSaved": false,
+  "sourceFileSHA256": "6867c993f63ac8f225d345b825b9fd9bf9a9dfbb5569246437fbf804131078cb",
+  "sourceJoinAnalysisSHA256": "dccca185b184543e0ed8cf12db0bfa8f544528debd4a439b5f4db8776adfbfd2",
+  "compilerIsNotStrokeOrderApproval": true,
+  "coordinateMutation": false,
+  "inventedConnectors": false,
+  "compilerPrepared": false,
+  "status": "blocked-numeric-minimum",
+  "reason": "Every completeoriginalwhole minimum exact directedpathcover exceeds domestic/catalog count; no connector or source split is permitted.",
+  "wholeMinimums": [
+    {
+      "root": "u6303",
+      "minimumDirectedPathCover": 10,
+      "fileSHA256": "37bcba1d9a61def4d1628bae9474605484d73cc3e336965a2d604e2d9c91065f"
+    },
+    {
+      "root": "u6303-ue0100",
+      "minimumDirectedPathCover": 10,
+      "fileSHA256": "37bcba1d9a61def4d1628bae9474605484d73cc3e336965a2d604e2d9c91065f"
+    }
+  ],
+  "missingOriginalReferences": [],
+  "partialGeometryPreserved": true,
+  "latestSubstitution": false,
+  "mixedSourceCandidate": false,
+  "selectedWhole": null,
+  "affectedWholeRoots": [],
+  "actualBlockedSourceChecks": {
+    "passed": true,
+    "compilerAbsent": true,
+    "wholeInputsPreserved": [
+      {
+        "root": "u6303",
+        "minimumDirectedPathCover": 10,
+        "sha256": "37bcba1d9a61def4d1628bae9474605484d73cc3e336965a2d604e2d9c91065f"
+      },
+      {
+        "root": "u6303-ue0100",
+        "minimumDirectedPathCover": 10,
+        "sha256": "37bcba1d9a61def4d1628bae9474605484d73cc3e336965a2d604e2d9c91065f"
+      }
+    ],
+    "missingOriginalReferences": [],
+    "affectedWholeRoots": [],
+    "sourceSHA256": "6867c993f63ac8f225d345b825b9fd9bf9a9dfbb5569246437fbf804131078cb",
+    "nativeApproval": false,
+    "framesReviewed": 0,
+    "runtimeRegistered": 0,
+    "buildExecuted": false,
+    "networkRequested": false
+  },
+  "sourceCompilerAudit": {
+    "batch": 901,
+    "glyph": "挃",
+    "passed": true,
+    "compilerAbsent": true,
+    "selectedWhole": null,
+    "candidatePens": null,
+    "candidateMasks": null,
+    "emittedPolygonExactOnce": null,
+    "sourceComplete": true,
+    "missingOriginalReferences": [],
+    "facts": [
+      {
+        "root": "u6303",
+        "file": "engine-whole-u6303.json",
+        "fileSHA256": "37bcba1d9a61def4d1628bae9474605484d73cc3e336965a2d604e2d9c91065f",
+        "raw": 10,
+        "rawEmpty": [],
+        "draw": 11,
+        "originalPolygons": 24,
+        "maximumEndpointMatching": 0,
+        "minimumPens": 10,
+        "exactJoins": [],
+        "nearSequentialNonexactGaps": [
+          {
+            "from": 4,
+            "to": 5,
+            "fromEnd": [
+              95.5,
+              90
+            ],
+            "toStart": [
+              81.525,
+              93
+            ],
+            "gap": [
+              -13.974999999999994,
+              3
+            ],
+            "distance": 14.293376962775445,
+            "exactJoin": false,
+            "conditional": "Proximity does not identify a domestic fold; browser boundary comparison required."
+          }
+        ],
+        "rawGeometryCoordinateSHA256": "ed8deb5653745dc800d21e0b64a6b266b786eace7d6f620a40f31cdfe3e89cfc",
+        "candidatePens": null,
+        "candidateMasks": null
+      },
+      {
+        "root": "u6303-ue0100",
+        "file": "engine-whole-u6303-ue0100.json",
+        "fileSHA256": "37bcba1d9a61def4d1628bae9474605484d73cc3e336965a2d604e2d9c91065f",
+        "raw": 10,
+        "rawEmpty": [],
+        "draw": 11,
+        "originalPolygons": 24,
+        "maximumEndpointMatching": 0,
+        "minimumPens": 10,
+        "exactJoins": [],
+        "nearSequentialNonexactGaps": [
+          {
+            "from": 4,
+            "to": 5,
+            "fromEnd": [
+              95.5,
+              90
+            ],
+            "toStart": [
+              81.525,
+              93
+            ],
+            "gap": [
+              -13.974999999999994,
+              3
+            ],
+            "distance": 14.293376962775445,
+            "exactJoin": false,
+            "conditional": "Proximity does not identify a domestic fold; browser boundary comparison required."
+          }
+        ],
+        "rawGeometryCoordinateSHA256": "ed8deb5653745dc800d21e0b64a6b266b786eace7d6f620a40f31cdfe3e89cfc",
+        "candidatePens": null,
+        "candidateMasks": null
+      }
+    ],
+    "guardsRejected": 20,
+    "mutationClasses": [
+      "trajectory",
+      "polygon",
+      "preset",
+      "engineRevision",
+      "engineHash",
+      "wholeHeader"
+    ],
+    "originalBodyHeaderPresetEngineCoordinatesImmutable": true,
+    "contractScope": "RAM-only frozen source guard audit. No compiler or numeric candidate is created.",
+    "domesticClips": 9,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "wholeRootsVerified": 2,
+    "engineFilesVerified": 8,
+    "historyRecords": 0,
+    "domesticClipsVerified": 9,
+    "noLatestSubstitution": true,
+    "remainingBoundaryRisks": [
+      "완전한 고정 whole 두종 모두 min10>국내9, compiler·candidate없음",
+      "raw4→5 gap[-13.975,3]은 보존. 비접합 pen을 연결해9로 만들지 않음",
+      "좌표가 있는 원본 proof 보존 감사만 수행. masks polygon exactonce는 후보가 없어 null",
+      "국내 whole·순서·방향·frame·replay 미검토"
+    ]
+  }
+}
