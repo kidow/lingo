@@ -1,0 +1,45 @@
+{
+  "batch": 906,
+  "glyph": "爨",
+  "port": 64786,
+  "catalog": 29,
+  "domestic": 30,
+  "pins": {
+    "sources.json": "cc3ebe631c0e0e12d95abd9c22131aa2800f8179e88b9125a3781fd062370b59",
+    "metadata.json": "2cc259fb3f92f327015a1d8bbe3d398f5d995ff878643e6d82c33598369902d5",
+    "engine-proof.json": "fc90be0b59c5a628f50f4a104af12d96ee0b70e05257448a26ac067f4e12c7d9",
+    "progressive.mjs": "b7eba9dbd4b97618e6cae9f2a42af81db10c6e40822f1b1cca14b84d34decf7d",
+    "engine-whole-u7228-itaiji-001.json": "d7a9d738a8233855a33a37f3cac9ccf7055a5f3d863b5ed5c55a2478f723e41b",
+    "engine-whole-u7228-t.json": "40db49fb242c033bf16db1c9415f2eae94d67b074711d6c23ac890b5ce91fcd4",
+    "engine-whole-u7228-ue0100.json": "549ca8a55811c992150da6ff4aa09e1b6e287e6c0e921ac373b3688bad3d7194",
+    "engine-whole-u7228-ue0101.json": "f4a437c351edd4368b6023c05ad8c84e907ee80be008f0b06f75a57e5f15da18",
+    "engine-whole-u7228-ue0102.json": "f4a437c351edd4368b6023c05ad8c84e907ee80be008f0b06f75a57e5f15da18",
+    "engine-whole-u7228-ue0103.json": "e6f19da3b51728738b3747700ae003cd4ad6dcb7162946057a83acd4c9f2eb18",
+    "engine-whole-u7228-ue0104.json": "549ca8a55811c992150da6ff4aa09e1b6e287e6c0e921ac373b3688bad3d7194",
+    "engine-whole-u7228-ue0105.json": "d1eec6f13224cf08089c3e160713e51a22f25d27099140e6f637329bb03db124",
+    "engine-whole-u7228-ufe00.json": "549ca8a55811c992150da6ff4aa09e1b6e287e6c0e921ac373b3688bad3d7194",
+    "engine-whole-u7228-var-001.json": "52ace237bbec63a0d6a7c6ebf6634add30c3b07cfebbb0232cee9725dc9e306b",
+    "engine-whole-u7228.json": "f4a437c351edd4368b6023c05ad8c84e907ee80be008f0b06f75a57e5f15da18"
+  },
+  "wholeNames": [
+    "u7228-itaiji-001",
+    "u7228-t",
+    "u7228-ue0100",
+    "u7228-ue0101",
+    "u7228-ue0102",
+    "u7228-ue0103",
+    "u7228-ue0104",
+    "u7228-ue0105",
+    "u7228-ufe00",
+    "u7228-var-001",
+    "u7228"
+  ],
+  "identity": {
+    "sourceRoot": "u7228",
+    "sourceProofFile": "./engine-whole-u7228.json",
+    "sourceProofFileSha256": "f4a437c351edd4368b6023c05ad8c84e907ee80be008f0b06f75a57e5f15da18",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "fc90be0b59c5a628f50f4a104af12d96ee0b70e05257448a26ac067f4e12c7d9"
+  },
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';\nconst d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch906-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=b=>createHash('sha256').update(b).digest('hex');\nfor(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p,'Input SHA pin '+f);\nconst m=await import(d+\"/progressive.mjs\"),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);\nconst bytes=fs.readFileSync(d+'/'+id.sourceProofFile);assert.equal(sha(bytes),id.sourceProofFileSHA256??id.sourceProofFileSha256);\nconst selected=JSON.parse(bytes),header=JSON.parse(fs.readFileSync(d+'/'+(id.sourceHeaderFile??'engine-proof.json'))),proof={engineRevision:header.engineRevision,engineHashes:header.engineHashes,...selected},before=JSON.stringify(proof);\nassert.equal(sha(JSON.stringify(proof)),\"621c9bee80adf3e48137a422982a0adb0f2f966cabc528aa46d519ee91ac62c7\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nlet expected=false;try{m.compileProgressive(proof.trace,proof,id)}catch(e){assert.equal(e.message,m.blockedReason);expected=true}assert(expected);assert.equal(JSON.stringify(proof),before);console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,reason:m.blockedReason,compiledPens:0,compiledMasks:0,progressiveFrames:0,replay:0,blocked:true,nativeApproval:false}));"
+}
