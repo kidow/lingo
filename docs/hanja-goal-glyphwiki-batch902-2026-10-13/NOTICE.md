@@ -1,0 +1,5 @@
+# 潗 source-only review
+
+Pinned original source files are preserved. No runtime registration or exam-body approval. Domestic graphics remain RAM-only.
+
+Native review disposition: held:domestic water3 split and nonconsecutive candidate6 closure mismatch. 브라우저 패널에서 전체 원본3종과 국내15획 방향을 대조했다. 국내3획 물수변은 이어 올리는 한 획인데 후보3·4는 분리된 곡선과 올림이다. 국내6획은 위쪽 삐침인데 후보6은 원본raw5 세로와 raw11 바닥 가로를 합친 비연속[5,11]폐합으로, 사이 raw6~10은 실제 그리는 획이다. 숫자15만 맞추는 폐합을 승인하지 않고 원본 경로 간격34.2117도 임의로 연결하지 않았다. 진행 프레임·확대·재생은 검토하지 않았다. No runtime or exam-body approval. Private domestic SVG remains RAM-only.
