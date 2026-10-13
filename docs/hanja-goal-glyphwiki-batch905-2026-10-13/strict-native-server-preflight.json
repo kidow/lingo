@@ -1,0 +1,225 @@
+{
+  "batch": 905,
+  "glyph": "纘",
+  "status": "source-only strict blocked native diagnostic ready",
+  "frozenRuntimeAudit": {
+    "utc": "2026-10-13T19:32:32.634Z",
+    "registered": 5437,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 7,
+    "wholeVariants": 3,
+    "domesticClips": 25,
+    "domesticMetadataVerified": true,
+    "engineFilesVerified": 8,
+    "archiveRedownloaded": false,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false
+  },
+  "selectedIdentityForRawPreview": {
+    "sourceRoot": "u7e98",
+    "sourceProofFile": "./engine-whole-u7e98.json",
+    "sourceProofFileSha256": "c222e61617c15dd26ff60ccce95459a26a4e1048f1c2fcb07e40874555dc3709",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "46f0c5e27313a6d3f1b8caec8eb33f7542ab6033be8db86d6edbee5fb55b3556"
+  },
+  "identityIsNotWholeEligibilityApproval": true,
+  "sourceInputSHA256": {
+    "sources.json": "f29e8b6e954ae7c08eda00c6f94f024fd656c5909f49c7a8fa3735210ab1893f",
+    "metadata.json": "05c756fe368ca595b3d8a2d9910839c7f3a1f225b6aba4e5462ea486922d716e",
+    "engine-proof.json": "46f0c5e27313a6d3f1b8caec8eb33f7542ab6033be8db86d6edbee5fb55b3556",
+    "progressive.mjs": "0f837f0bdad7f72a2572a5a5712887044d32ed7dab44541bd3be72e73fee9035",
+    "engine-whole-u7e98-k.json": "7dce89914421617985db3ced96c3b031075dc61d733b0af64ec10724ebd3e326",
+    "engine-whole-u7e98-ue0100.json": "7dce89914421617985db3ced96c3b031075dc61d733b0af64ec10724ebd3e326",
+    "engine-whole-u7e98.json": "c222e61617c15dd26ff60ccce95459a26a4e1048f1c2fcb07e40874555dc3709"
+  },
+  "fullSelectedProofSHA256": "a0e4b12d263681be4f0fb58ea272c6bfac68a92720a43ad26ac7732aba928d9b",
+  "allWholeOriginalFacts": [
+    {
+      "root": "u7e98-k",
+      "sourceSHA": "7dce89914421617985db3ced96c3b031075dc61d733b0af64ec10724ebd3e326",
+      "originalRaw": 29,
+      "nonDrawingRaw": [],
+      "originalPolygons": 62,
+      "exactDirectedEndpoints": [
+        [
+          21,
+          26
+        ],
+        [
+          22,
+          23
+        ]
+      ],
+      "maximumEndpointMatching": 2,
+      "minimumPensLowerBound": 27,
+      "engineBodyKeys": [
+        "groups",
+        "trace",
+        "defaults"
+      ]
+    },
+    {
+      "root": "u7e98-ue0100",
+      "sourceSHA": "7dce89914421617985db3ced96c3b031075dc61d733b0af64ec10724ebd3e326",
+      "originalRaw": 29,
+      "nonDrawingRaw": [],
+      "originalPolygons": 62,
+      "exactDirectedEndpoints": [
+        [
+          21,
+          26
+        ],
+        [
+          22,
+          23
+        ]
+      ],
+      "maximumEndpointMatching": 2,
+      "minimumPensLowerBound": 27,
+      "engineBodyKeys": [
+        "groups",
+        "trace",
+        "defaults"
+      ]
+    },
+    {
+      "root": "u7e98",
+      "sourceSHA": "c222e61617c15dd26ff60ccce95459a26a4e1048f1c2fcb07e40874555dc3709",
+      "originalRaw": 29,
+      "nonDrawingRaw": [],
+      "originalPolygons": 62,
+      "exactDirectedEndpoints": [
+        [
+          21,
+          26
+        ],
+        [
+          22,
+          23
+        ]
+      ],
+      "maximumEndpointMatching": 2,
+      "minimumPensLowerBound": 27,
+      "engineBodyKeys": [
+        "groups",
+        "trace",
+        "defaults"
+      ]
+    }
+  ],
+  "originalCandidateGroupsPreserved": [],
+  "nonconsecutiveGroups": [],
+  "blockedReason": "minimum-original-pens-27-exceeds-catalog-25",
+  "localActualVerification": {
+    "originalCompilerExists": true,
+    "originalCompilerExecuted": true,
+    "guardModule": "progressive.mjs",
+    "expectedBlock": true,
+    "mutationsRejected": 6,
+    "identityMutationsRejected": 5,
+    "inputUnchanged": true,
+    "baselineExpectedBlock": true,
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "originalOutlinesEmitted": 0,
+    "frames": 0,
+    "replay": 0
+  },
+  "server": {
+    "url": "http://127.0.0.1:64789",
+    "pid": 29553,
+    "sessionID": 49466,
+    "whole": "/whole",
+    "rawDirectionPair": "/pairs?domestic=1&raw=1",
+    "progressive": "/progressive - expected blocked status only",
+    "sourcePinsEachRequest": true,
+    "HTTPResults": [
+      {
+        "batch": 905,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 626,
+        "checks": {
+          "sourceRoot": "u7e98",
+          "identity": {
+            "sourceRoot": "u7e98",
+            "sourceProofFile": "./engine-whole-u7e98.json",
+            "sourceProofFileSha256": "c222e61617c15dd26ff60ccce95459a26a4e1048f1c2fcb07e40874555dc3709",
+            "sourceHeaderFile": "./engine-proof.json",
+            "sourceHeaderFileSha256": "46f0c5e27313a6d3f1b8caec8eb33f7542ab6033be8db86d6edbee5fb55b3556"
+          },
+          "reason": "minimum-original-pens-27-exceeds-catalog-25",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "blocked": true,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u7e98-k",
+            "u7e98-ue0100",
+            "u7e98"
+          ],
+          "sourceInputPinsVerified": 7,
+          "catalog": 25,
+          "domestic": 25
+        }
+      },
+      {
+        "batch": 905,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 23302,
+        "privateTextLogged": false,
+        "has520": true,
+        "hasReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 905,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 2284,
+        "privateTextLogged": false,
+        "has520": true,
+        "hasReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 905,
+        "route": "/progressive",
+        "status": 200,
+        "bytes": 1137,
+        "privateTextLogged": false,
+        "has520": false,
+        "hasReplay": false,
+        "blockedPage": true
+      }
+    ],
+    "privateDictionaryByteHashTitleClipCheck": "RAM-only renderer; actual /whole and /pairs response PASS"
+  },
+  "nativeObservation": {
+    "whole": 0,
+    "directions": 0,
+    "coarseFrames": 0,
+    "fineFrames": 0,
+    "replay": 0,
+    "approval": false
+  },
+  "geometryModified": false,
+  "originalCompilerModified": false,
+  "sourceFilesModified": false,
+  "privateMediaSaved": false,
+  "sharedRegistryEdited": false,
+  "runtimeRegistered": 0,
+  "buildRun": false,
+  "commitCreated": false
+}
