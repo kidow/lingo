@@ -1,0 +1,161 @@
+{
+  "batch": 909,
+  "glyph": "憯",
+  "status": "source-only blocked native diagnostic ready",
+  "freshRuntimeSnapshot": {
+    "utc": "2026-10-13T19:27:53.822Z",
+    "registered": 5437,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 23,
+    "wholeVariants": 5,
+    "engineFilesVerified": 8,
+    "domesticClips": 15,
+    "domesticMetadataVerified": true,
+    "noNewArchiveDownload": true,
+    "privateMediaSaved": false,
+    "nativeApprovalGranted": false
+  },
+  "inputIdentity": {
+    "sourceRoot": "u61af-ue0100",
+    "sourceProofFile": "./engine-whole-u61af-ue0100.json",
+    "sourceProofFileSha256": "54436372d0c809bc1fd74a045f1f95eb4a9069bf9cfbbc57ee50199a875bc92c",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "fa30b113b26460510343b9defbc840b55052ea7bc7010cab565034f7e76c15d4"
+  },
+  "sourceInputFileSHA256": {
+    "sources.json": "7a9cd3b8c75c00f71d1f14742e906e006ca4d349b6e5bba94227161dff080671",
+    "metadata.json": "3b20eef63473e3a8c0835942547406ac62acc59386f745ddd06ead6763c4ba89",
+    "engine-proof.json": "fa30b113b26460510343b9defbc840b55052ea7bc7010cab565034f7e76c15d4",
+    "progressive.mjs": "57628765332120bfe1244ba7d561e70ed87d4740f1a19581e2fad075a9ba7166",
+    "engine-whole-u61af-g.json": "7b8a5f06605549b65f4e1c89fd30ed23446f1fadd4b768dff4a00267d52743ab",
+    "engine-whole-u61af-ue0100.json": "54436372d0c809bc1fd74a045f1f95eb4a9069bf9cfbbc57ee50199a875bc92c",
+    "engine-whole-u61af-ue0101.json": "c7a106adfa9d81738cf8ea83244fe3838646d74e7aafd1ccae539ffb15c42e58",
+    "engine-whole-u61af-ufe00.json": "beebd6b11542ce28fd1a1b1e499ca142c6044a468b2b764e11f98cd994e943e2",
+    "engine-whole-u61af.json": "60313eb6e3c2a2a7344a803535ea87439311ae9e9171bae6f6a1ad2acae6f11c",
+    "blocked-source-contract.mjs": "f17bef3a60a965c3caa8797e329716cb4019a0c593876138775f6bc3355a72d6"
+  },
+  "fullSelectedProofSHA256": "e571a8b200046386acfcc5f9b7cb58f785a4552545805ee93a24969da0fddb04",
+  "actualLocalVerification": {
+    "strictWorkflowBlockedContract": "blocked-source-contract.mjs",
+    "originalCompilerExecuted": false,
+    "baselineExpectedBlock": true,
+    "mutationsRejected": 6,
+    "identitiesRejected": 6,
+    "inputUnchanged": true,
+    "compiledPens": 0,
+    "compiledMasks": 0
+  },
+  "risks": {
+    "catalog": 15,
+    "domestic": 15,
+    "blockedReason": "nonconsecutive-original-enclosure-raw14-18",
+    "nonconsecutiveOriginalGroups": [
+      [
+        14,
+        18
+      ]
+    ],
+    "baselineNumericCandidatePreservedNotApproved": true,
+    "noNonconsecutiveEnclosureAccepted": true
+  },
+  "server": {
+    "url": "http://127.0.0.1:64787",
+    "pid": 24596,
+    "sessionID": 87776,
+    "whole": "/whole",
+    "pairs": "/pairs?domestic=1&raw=1",
+    "progressive": "blocked status only",
+    "inputGuardsEachRequest": true,
+    "actualHTTPResults": [
+      {
+        "batch": 909,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 678,
+        "checks": {
+          "sourceRoot": "u61af-ue0100",
+          "identity": {
+            "sourceRoot": "u61af-ue0100",
+            "sourceProofFile": "./engine-whole-u61af-ue0100.json",
+            "sourceProofFileSha256": "54436372d0c809bc1fd74a045f1f95eb4a9069bf9cfbbc57ee50199a875bc92c",
+            "sourceHeaderFile": "./engine-proof.json",
+            "sourceHeaderFileSha256": "fa30b113b26460510343b9defbc840b55052ea7bc7010cab565034f7e76c15d4"
+          },
+          "reason": "nonconsecutive-original-enclosure-raw14-18",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "blocked": true,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u61af-g",
+            "u61af-ue0100",
+            "u61af-ue0101",
+            "u61af-ufe00",
+            "u61af"
+          ],
+          "sourceInputPinsVerified": 10,
+          "catalog": 15,
+          "domestic": 15
+        }
+      },
+      {
+        "batch": 909,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 19924,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "hasBlocked": false
+      },
+      {
+        "batch": 909,
+        "route": "/pairs",
+        "status": 200,
+        "bytes": 1822,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "hasBlocked": false
+      },
+      {
+        "batch": 909,
+        "route": "/progressive?stroke=6&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1157,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "hasBlocked": true
+      }
+    ],
+    "privateDictionaryMetadataHashAndClipVerifiedByRAMRenderer": true
+  },
+  "nativeObservation": {
+    "wholeVariantsObserved": 0,
+    "directionsObserved": 0,
+    "coarseFramesObserved": 0,
+    "fineFramesObserved": 0,
+    "replayObserved": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "compilerGeometryModified": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}

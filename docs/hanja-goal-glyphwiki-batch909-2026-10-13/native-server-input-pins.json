@@ -1,0 +1,34 @@
+{
+  "batch": 909,
+  "glyph": "憯",
+  "port": 64787,
+  "catalog": 15,
+  "domestic": 15,
+  "pins": {
+    "sources.json": "7a9cd3b8c75c00f71d1f14742e906e006ca4d349b6e5bba94227161dff080671",
+    "metadata.json": "3b20eef63473e3a8c0835942547406ac62acc59386f745ddd06ead6763c4ba89",
+    "engine-proof.json": "fa30b113b26460510343b9defbc840b55052ea7bc7010cab565034f7e76c15d4",
+    "progressive.mjs": "57628765332120bfe1244ba7d561e70ed87d4740f1a19581e2fad075a9ba7166",
+    "engine-whole-u61af-g.json": "7b8a5f06605549b65f4e1c89fd30ed23446f1fadd4b768dff4a00267d52743ab",
+    "engine-whole-u61af-ue0100.json": "54436372d0c809bc1fd74a045f1f95eb4a9069bf9cfbbc57ee50199a875bc92c",
+    "engine-whole-u61af-ue0101.json": "c7a106adfa9d81738cf8ea83244fe3838646d74e7aafd1ccae539ffb15c42e58",
+    "engine-whole-u61af-ufe00.json": "beebd6b11542ce28fd1a1b1e499ca142c6044a468b2b764e11f98cd994e943e2",
+    "engine-whole-u61af.json": "60313eb6e3c2a2a7344a803535ea87439311ae9e9171bae6f6a1ad2acae6f11c",
+    "blocked-source-contract.mjs": "f17bef3a60a965c3caa8797e329716cb4019a0c593876138775f6bc3355a72d6"
+  },
+  "wholeNames": [
+    "u61af-g",
+    "u61af-ue0100",
+    "u61af-ue0101",
+    "u61af-ufe00",
+    "u61af"
+  ],
+  "identity": {
+    "sourceRoot": "u61af-ue0100",
+    "sourceProofFile": "./engine-whole-u61af-ue0100.json",
+    "sourceProofFileSha256": "54436372d0c809bc1fd74a045f1f95eb4a9069bf9cfbbc57ee50199a875bc92c",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "fa30b113b26460510343b9defbc840b55052ea7bc7010cab565034f7e76c15d4"
+  },
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';\nconst d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch909-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=b=>createHash('sha256').update(b).digest('hex');\nfor(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p,'Input SHA pin '+f);\nconst m=await import(d+\"/blocked-source-contract.mjs\"),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);\nconst bytes=fs.readFileSync(d+'/'+id.sourceProofFile);assert.equal(sha(bytes),id.sourceProofFileSHA256??id.sourceProofFileSha256);\nconst selected=JSON.parse(bytes),header=JSON.parse(fs.readFileSync(d+'/'+(id.sourceHeaderFile??'engine-proof.json'))),proof={engineRevision:header.engineRevision,engineHashes:header.engineHashes,...selected},before=JSON.stringify(proof);\nassert.equal(sha(JSON.stringify(proof)),\"e571a8b200046386acfcc5f9b7cb58f785a4552545805ee93a24969da0fddb04\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nlet expected=false;try{m.validateBlockedCandidate(proof.trace,proof,id)}catch(e){assert.equal(e.message,m.blockedReason);expected=true}assert(expected);assert.equal(JSON.stringify(proof),before);console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,reason:m.blockedReason,compiledPens:0,compiledMasks:0,progressiveFrames:0,replay:0,blocked:true,nativeApproval:false}));"
+}
