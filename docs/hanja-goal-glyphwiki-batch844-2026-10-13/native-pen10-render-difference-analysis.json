@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "glyph": "闐",
+  "batch": 844,
+  "sourceRoot": "u95d0-ue0103",
+  "analysisKind": "source-only actual local public-candidate SVG comparison",
+  "observedByChild": {
+    "nativeDirections": 0,
+    "nativeFrames": 0,
+    "nativeReplays": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "parentObservation": {
+    "status": "reported-native-failure",
+    "description": "Parent reobserved a finite lower-right tip shape change twice at 520px pen10 99.99 percent versus100 percent. Child does not override that native failure with numeric checks."
+  },
+  "requestURL": "http://127.0.0.1:64659/?root=u95d0-ue0103&stroke=10&enlarged=1",
+  "httpStatus": 200,
+  "compilerSHA256": "b875252056cd8c62102ea66089ed93dc88c1a4f465454aa0cc8bc579610a503c",
+  "renderSHA256": "a65564e30d91bf22ad750b0561fe65ced461416885ef2c33f383f8b9f0c111cf",
+  "strokesJSONSHA256": "249caace8966007643594f967f3211ad6d4fd6125cd91bb2330a6f284ed5b170",
+  "actualComparison": {
+    "pen": 10,
+    "progressValues": [
+      0.9999,
+      1
+    ],
+    "pathCounts": [
+      12,
+      12
+    ],
+    "firstBodyPathExactlyEqual": true,
+    "tailPathDExactlyEqual": true,
+    "entireSVGExactlyEqualAfterRemovingOnlyTailDefsAndClipAttribute": true,
+    "bodyClipOrMaskAtBothProgressValues": false,
+    "fillRules": {
+      "a": [],
+      "b": []
+    },
+    "svgAttributes": {
+      "a": "<svg viewBox=\"0 0 100 100\">",
+      "b": "<svg viewBox=\"0 0 100 100\">"
+    },
+    "gAttributes": {
+      "a": "<g fill=\"#222\">",
+      "b": "<g fill=\"#222\">"
+    },
+    "tailClipDefinitionsAt9999": [
+      "<defs><clipPath id=\"live-10-1\"><rect x=\"71.45\" y=\"43.9554336068\" width=\"3\" height=\"4.494566393200003\"/></clipPath></defs>"
+    ],
+    "tailClipDefinitionsAt100": null,
+    "windingChange": false,
+    "windingEvidence": "The same compound body path and same tail path d occur in the same order under identical fill and default nonzero fill rule. No path combination or reversal occurs at completion."
+  },
+  "compiledPen10Masks": [
+    {
+      "outline": "M35.55 39.05 L35.55 45.45 L29.55 45.45 L29.55 38.05 Z M35.55 39.05 L37.05 40.05 L34.55 41.55 Z M29.55 45.45 L35.55 45.45 L34.35 47.25 L32.55 48.45 L30.75 47.25 Z M35.55 45.45 L35.5 46.05 L35.45 46.55 L35.5 46.95 L35.5 47.2 L35.55 47.45 L35.7 47.65 L35.9 47.9 L36.3 48.1 L36.85 48.3 L37.55 48.45 L37.55 52.45 L36.35 52.5 L35.2 52.4 L34.1 52.1 L33 51.65 L32.05 50.95 L31.2 50.1 L30.5 49.05 L30.05 47.9 L29.7 46.7 L29.55 45.45 Z M37.55 48.45 L38.95 49.05 L39.55 50.45 L38.95 51.85 L37.55 52.45 Z M37.55 48.45 L73.45 48.45 L73.45 52.45 L37.55 52.45 Z M73.45 48.45 L74.65 49.25 L75.45 50.45 L74.65 51.65 L73.45 52.45 Z",
+      "bounds": [
+        29.55,
+        38.05,
+        75.45,
+        52.5
+      ],
+      "direction": "curve",
+      "weight": 49.836068,
+      "revealPath": "M32.58 38.575 L32.58 45.47 Q32.58 50.47 37.58 50.47 L73.45 50.47",
+      "revealWidth": 14
+    },
+    {
+      "outline": "M73.45 48.45 L71.45 48.45 L73.45 43.95 L74.45 43.95 Z",
+      "bounds": [
+        71.45,
+        43.95,
+        74.45,
+        48.45
+      ],
+      "direction": "up",
+      "weight": 4.5
+    }
+  ],
+  "conclusion": {
+    "bodyGeometryOrFillModeCompletionTransition": false,
+    "onlyDocumentLevelDifference": "Tail tight-bounds cardinal clipPath removal; body is already unmasked before the comparison.",
+    "browserRasterDifferenceFromClipRemoval": "unresolved; possible raster behavior is not proven and is not a native approval",
+    "nativeFailurePreserved": true,
+    "sourceCoordinatesChanged": false,
+    "revealWidthChanged": false,
+    "revealPathChanged": false,
+    "compilerOrProfileChanged": false
+  },
+  "privateGraphicsStored": false
+}
