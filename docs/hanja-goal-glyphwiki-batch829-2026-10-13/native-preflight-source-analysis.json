@@ -1,0 +1,397 @@
+{
+  "batch": 829,
+  "glyph": "欌",
+  "stage": "Source-only preflight before root browser whole, order and pen-boundary review",
+  "status": "numeric candidate prepared; nonadjacent closure and whole-form eligibility unapproved",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "nativeFramesReviewed": 0,
+  "nativeReplayReviewed": false,
+  "runtimeApplied": false,
+  "runtimeAlreadyRegisteredAtAudit": false,
+  "selectedSource": {
+    "root": "u6b0c-var-001",
+    "file": "engine-whole-u6b0c-var-001.json",
+    "fileSha256": "4d8f95a1a7a1de8e452ef8cbcd9f24a6ea962b5f62e5980ed2e4a9df18e57abd",
+    "proofInput": "{engineRevision:engineProof.engineRevision,engineHashes:engineProof.engineHashes,...selectedWhole}",
+    "thirdIdentityArgumentRequired": false,
+    "baseProofRejected": true,
+    "compilerSha256": "3cd2bc1ea3919ef635e4dc4a606c219447dcfee0aa8be7ba6995ca6620c7bfdf",
+    "compilerChanged": false
+  },
+  "priorReview": {
+    "batch": 380,
+    "file": "docs/hanja-goal-glyphwiki-batch380-2026-10-09/review.json",
+    "status": "source-only-deferred-three-stroke-grass-vs-domestic-four",
+    "rootReportedDomesticStrokesReviewed": 22,
+    "previousWholeRoots": [
+      "u6b0c",
+      "u6b0c-k"
+    ],
+    "previousGrassOriginalRaw": [
+      4,
+      5,
+      6
+    ],
+    "previousGrassPens": 3,
+    "previousDomesticGrassPens": 4,
+    "previousFailure": "One continuous original grass horizontal in base/k cannot be split into two domestic horizontals without inventing a split.",
+    "newCaptureAddsDifferentWhole": true,
+    "previousNativeHoldAutomaticallyResolved": false
+  },
+  "wholeSourceDifference": {
+    "baseAndK": {
+      "grassSource": "u8279-03",
+      "grassOriginalRaw": [
+        4,
+        5,
+        6
+      ],
+      "grassCalls": [
+        "horizontal",
+        "vertical",
+        "vertical"
+      ],
+      "rawGroups": 24,
+      "originalPolygons": 44,
+      "strictEndpointMinimum": 21,
+      "contiguousFoldsOnlyCount": 22,
+      "wholeFormNativeApproved": false
+    },
+    "var001": {
+      "dependencies": [
+        "u6b0c-var-001",
+        "u6728-01",
+        "koseki-366070@7",
+        "ufa5e-03@3",
+        "u81e7-04@2",
+        "u2456b-05"
+      ],
+      "grassSource": "ufa5e-03@3",
+      "grassOriginalRaw": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "grassCalls": [
+        "left horizontal",
+        "left vertical",
+        "right horizontal",
+        "right vertical"
+      ],
+      "sourceGrassPens": 4,
+      "rawGroups": 25,
+      "originalPolygons": 46,
+      "strictEndpointMinimum": 22,
+      "contiguousFoldsOnlyCount": 23,
+      "wholeFormNativeApproved": false
+    },
+    "interpretation": "The four original grass paths make a separate complete var001 candidate available. This is not proof that its entire form, directions, order, or pen boundaries match the domestic dictionary."
+  },
+  "fixedSourceValidation": {
+    "localPinnedFileHashChecks": 6,
+    "localRecordHashChecks": 11,
+    "archive": {
+      "revision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "redownloaded": false,
+      "scope": "Already captured fixed archive records retained and locally hash checked; no new full archive replay asserted."
+    },
+    "explicitHistoryHttpVerified": [
+      {
+        "name": "koseki-366070@7",
+        "url": "https://glyphwiki.org/api/glyph?name=koseki-366070%407",
+        "version": 7,
+        "dataSha256": "9783e7c454ccdbae26041907cd4b70da289521d00fb8ee5556370338b48f166c"
+      },
+      {
+        "name": "u81e7-04@2",
+        "url": "https://glyphwiki.org/api/glyph?name=u81e7-04%402",
+        "version": 2,
+        "dataSha256": "4523cca6322376934a46323010e2fda0f442d04af197385457370cafa61f9b09"
+      },
+      {
+        "name": "ufa5e-03@3",
+        "url": "https://glyphwiki.org/api/glyph?name=ufa5e-03%403",
+        "version": 3,
+        "dataSha256": "7f8d5abd28310ccf1ef0ff81baf1a7f22b29d09f7cb5bcca34ee608df46d3b23"
+      }
+    ],
+    "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "engineHttpFilesHashVerified": 8,
+    "engineSourceUrlPattern": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/<engineFile>",
+    "engineWholeReproduction": [
+      {
+        "root": "u6b0c-k",
+        "raw": 24,
+        "polygons": 44,
+        "wholePolygonsSha256": "5a01b09b923a5e84682a80e33a863ea7a205109abe2f9657fdded0ccbe274a6e",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u6b0c",
+        "raw": 24,
+        "polygons": 44,
+        "wholePolygonsSha256": "5a01b09b923a5e84682a80e33a863ea7a205109abe2f9657fdded0ccbe274a6e",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u6b0c-var-001",
+        "raw": 25,
+        "polygons": 46,
+        "wholePolygonsSha256": "62f536527d48d8e766aa41bd8c0c36808380b36274158590b12690182e320178",
+        "engineWholeExactlyReplayed": true
+      }
+    ],
+    "historyAndBareReferencesComplete": true,
+    "missingFixedDependencies": [],
+    "latestSubstitution": false,
+    "privateGraphicsRequested": false
+  },
+  "numericCompilerValidation": {
+    "passed": true,
+    "sourceRoot": "u6b0c-var-001",
+    "sourceProofFile": "engine-whole-u6b0c-var-001.json",
+    "sourceWholeFileSha256": "4d8f95a1a7a1de8e452ef8cbcd9f24a6ea962b5f62e5980ed2e4a9df18e57abd",
+    "compilerSha256": "3cd2bc1ea3919ef635e4dc4a606c219447dcfee0aa8be7ba6995ca6620c7bfdf",
+    "compiledOutlinesSha256": "fc3ead999a268282d43545412b36b7ded00a0f93d9c6087ec71b72e5b6f6af1b",
+    "sourceGroupsSha256": "15365c0defef10c5b06fb5716b6de02c0e0102932fe31aa8cb00cf6e42f5b280",
+    "sourceGroupsZeroBased": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14,
+        21
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ],
+      [
+        22
+      ],
+      [
+        23
+      ],
+      [
+        24
+      ]
+    ],
+    "rawGroups": 25,
+    "drawingCalls": 26,
+    "emptyRawGroups": [],
+    "pens": 22,
+    "masks": 22,
+    "polygons": 46,
+    "sourceCurveCalls": 7,
+    "sourceBezierCalls": 0,
+    "curvePens": [
+      3,
+      4,
+      9,
+      11,
+      12,
+      14,
+      17,
+      20,
+      21,
+      22
+    ],
+    "incidentalClosure": {
+      "raw": [
+        14,
+        21
+      ],
+      "from": [
+        105.53999999999999,
+        164.85
+      ],
+      "to": [
+        105.53999999999999,
+        164.85
+      ],
+      "distance": 0,
+      "nonAdjacent": true,
+      "pen14BoundaryNativeApproved": false
+    },
+    "countWithoutClosure": 23,
+    "baseProofRejected": true,
+    "fileHashChecks": 6,
+    "recordHashChecks": 11,
+    "mutationRejects": 6,
+    "mutations": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ],
+    "originalPolygonIdentityExactlyOnce": true,
+    "inputProofUnchanged": true,
+    "nativeApproval": false,
+    "nativeFramesReviewed": 0,
+    "runtimeAlreadyRegistered": false,
+    "buildRun": false
+  },
+  "releaseBlockers": {
+    "nonadjacentClosure": {
+      "raw": [
+        14,
+        21
+      ],
+      "from": [
+        105.53999999999999,
+        164.85
+      ],
+      "to": [
+        105.53999999999999,
+        164.85
+      ],
+      "distance": 0,
+      "nonAdjacent": true,
+      "pen14BoundaryNativeApproved": false,
+      "sourceKinds": [
+        "cdDrawLine",
+        "cdDrawLine"
+      ],
+      "sourceDirections": [
+        "down",
+        "right"
+      ],
+      "sourceRaw14Args": [
+        105.53999999999999,
+        89.8,
+        105.53999999999999,
+        164.85,
+        4012,
+        13
+      ],
+      "sourceRaw21Args": [
+        105.53999999999999,
+        164.85,
+        148.14,
+        164.85,
+        2,
+        200
+      ],
+      "candidatePen": 14,
+      "interveningRawGroups": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "numericEffect": "Merge removes one numeric pen: 23 -> 22.",
+      "approval": false,
+      "policy": "Do not infer one domestic pen from the endpoint coincidence or catalog count. Preserve both original boundaries unless root observes direct domestic evidence."
+    },
+    "terminal15": {
+      "raw": 22,
+      "kind": "cdDrawCurve",
+      "args": [
+        152.4,
+        55.6,
+        152.4,
+        177.2,
+        182.93,
+        182.9,
+        0,
+        15
+      ],
+      "candidatePen": 20,
+      "sourceMeaning": "Original engine upward hook; mask completion must be checked natively.",
+      "fineReviewed": false,
+      "automaticWidthIncrease": false,
+      "tailMaskAutomaticallyAdded": false
+    },
+    "wholeFormNativeUnconfirmed": true,
+    "domesticOrderNativeUnconfirmed": true
+  },
+  "plannedNativeChecks": {
+    "wholeRoots": [
+      "u6b0c",
+      "u6b0c-k",
+      "u6b0c-var-001"
+    ],
+    "domesticDirections": 22,
+    "progressiveFrames": 198,
+    "curveFinePens": [
+      3,
+      4,
+      9,
+      11,
+      12,
+      14,
+      17,
+      20,
+      21,
+      22
+    ],
+    "firstPriority": "Complete var001 whole eligibility and domestic grass pens5~8, then whether raw14 and21 are actually one domestic pen.",
+    "nativeObservedByThisAgent": 0
+  },
+  "coordinateMutation": false,
+  "originalPathsReversed": false,
+  "connectorsAuthored": false,
+  "polygonsRegenerated": false,
+  "originalMetadataEmptyRowsDiscarded": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
