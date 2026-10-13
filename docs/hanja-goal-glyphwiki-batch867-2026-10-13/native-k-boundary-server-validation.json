@@ -1,0 +1,169 @@
+{
+  "batch": 867,
+  "glyph": "遭",
+  "status": "source/compiler/HTTP preflight PASS; root native pen15 mask2 onset FAIL; candidate frozen",
+  "server": {
+    "port": 59681,
+    "pid": 24980,
+    "session": 29159,
+    "wholeURL": "http://127.0.0.1:59681/whole",
+    "pairsURL": "http://127.0.0.1:59681/pairs",
+    "progressiveURL": "http://127.0.0.1:59681/progressive?stroke=15&enlarged=1&samples=1"
+  },
+  "numeric": {
+    "sourceRoot": "u906d-k",
+    "pens": 15,
+    "masks": 16,
+    "originalPolygons": 30,
+    "polygonExactOnce": true,
+    "originalCoordinatesUnchanged": true,
+    "exactJoins": [
+      {
+        "pen": 3,
+        "end": [
+          170.83,
+          53.296875
+        ]
+      },
+      {
+        "pen": 9,
+        "end": [
+          159.47395387,
+          109.5641
+        ]
+      },
+      {
+        "pen": 14,
+        "end": [
+          50,
+          107
+        ]
+      }
+    ],
+    "rejections": 14,
+    "finePens": [
+      3,
+      9,
+      12,
+      13,
+      14,
+      15
+    ],
+    "maskTransitions": [
+      {
+        "pen": 15,
+        "mask": 2,
+        "start": 0.26504538893145446,
+        "weights": [
+          23.16247,
+          64.228109
+        ],
+        "nativeReviewed": false
+      }
+    ]
+  },
+  "checks": {
+    "batch": 867,
+    "http": [
+      {
+        "path": "/whole",
+        "status": 200,
+        "bytes": 17095
+      },
+      {
+        "path": "/pairs",
+        "status": 200,
+        "bytes": 46043
+      },
+      {
+        "path": "/progressive?stroke=15&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 12337
+      },
+      {
+        "path": "/checks",
+        "status": 200,
+        "bytes": 457
+      }
+    ],
+    "unsupportedRootStatus": 409,
+    "existingBaseServer": {
+      "port": 50739,
+      "status": 200,
+      "sourceRoot": "u906d",
+      "pens": 15,
+      "masks": 15,
+      "originalInputsUnchanged": true
+    },
+    "sourceOnlyRenderedFrames": 156,
+    "coarseSourceOnlyFrames": 135,
+    "fineSourceOnlyFrames": 18,
+    "boundarySourceOnlyFrames": 3,
+    "additionalInnerIdentityRejections": 5,
+    "inputSHA256": {
+      "progressive-native-k-boundary-compiler.mjs": "7df5a8ef743e4bc17b8c175c70e1e98285a8c5560a64855868c0d43a2c561ac5",
+      "native-k-boundary-server-audit.json": "a23d8e784a96e1ca859f3ec5b18e1a1fa36cded3726030b22618a8349b7af762",
+      "native-k-boundary-server-compile.mjs": "d1eacd1952bd77445e515d50e249e294ada147c01205058422c1385e9c1cb582",
+      "serve-native-k-boundary.py": "deff0dd67b027eb546cec4b041cabb8be1faf3d75218f6740f6c2e7a61cedf9c"
+    },
+    "orderedPenMaskSHA256": [
+      "c5a96bc0d74b935a80a486f167bcb9bbb13ac54c5d6b391e4473eb9096f3d379",
+      "6b6bd5099a7e3bb11bd25483b91210d18dfc218a2bf4920d8d05e76886e25070",
+      "b7a740660d50bd2a8b461a9751eb74cdf5f315a48cd6744b192066aac233eda1",
+      "706b9f35ec7184bc8fcb9b27aecb4134ec7552fd449047a6f8b23e3adffcecff",
+      "16249a7392384a466449a88eca43fdb3243a90a71e54224a990d39eb71ebb383",
+      "63b7b9f19b3245cadbb2acb94807f0658bd5bd8061bb68bd1483b3b9546bbbbc",
+      "5d4048e1cb4cb089453f8d103c45ac4bece5be38e95fdf41b873115426078656",
+      "246cb16cc6d720df63a93931cf0bac34b9dfbb1da9b0915f1805120b31477170",
+      "a671131838125ff88405d245f2b4302b0bd361373883e9e3b308e73a75564fc0",
+      "fd7ce01f71f80e03aaa3f0e10e63cba03afbeccba09f0af5fa4c3ad41ba6c5af",
+      "e72cd007f1c2e523623158edb7407919c238b5a7354fb93568633b542d11ce60",
+      "ca208ff3ca20e4f106a467708c2b1bab2af5b930af0e88fd0b7d891e1db6987f",
+      "75224bf77fdc36d34774d0d13bc49bcbbc8aab33fa397f6b34075115d06f08cc",
+      "4ff604dd52a7a39663443575962b3e3143f422a47d338f7a2881ac2dccca6c1e",
+      "f2e4debc3a59fda4e83d7e4ed32b50ed5bad4ce1b8f79a0a8e684b98fa582877"
+    ],
+    "pen15OriginalMaskSHA256": [
+      "2091b81d6549aa323c494cd7442c61027de2ea2e4b3a9021b0a0d166bd0985c1",
+      "5c147702d6394d955c6e1044fd620f44a79f0f619f222177b17ef5277fed90fe"
+    ],
+    "nativeReviewed": false
+  },
+  "sourceVerification": {
+    "originalVerifierRun": true,
+    "exitCode": 0,
+    "sourcePassed": true,
+    "sourceEvidencePassed": true,
+    "matchedOriginalProofRoot": "u906d",
+    "selectedKWholeAlsoReproduced": true,
+    "allWholeRoots": [
+      "u906d",
+      "u906d-itaiji-001",
+      "u906d-itaiji-002",
+      "u906d-k",
+      "u906d-ue0100",
+      "u906d-ue0101",
+      "u906d-ue0102",
+      "u906d-ue0103"
+    ],
+    "archiveOnlyReplay": true,
+    "latestSubstitution": false,
+    "supplementalUsedForWholeReplay": false,
+    "privateMediaSaved": false
+  },
+  "remainingNativeChecks": [
+    "Both points and full K/VS1/VS3 versus domestic whole.",
+    "All15 domestic directions in 曹-first order.",
+    "Pen15 independent mask2 before/at/after 26.504538893145446%, raw4 up-right then raw5 down-right sweep; filled overlap alone is not approval.",
+    "All135 actual coarse frames; 520px fine3/9/12/13/14/15 and 99.99→100.",
+    "Actual pen14 fold and pen15 sweep replay."
+  ],
+  "rootNativeDisposition": {"status":"held-native-boundary","observer":"parent root actual native browser panel","reportedCheck":"520px pen15 mask2 immediately before/at/after the original boundary","boundaryFraction":0.26504538893145446,"result":"FAIL","reason":"Immediately after mask2 onset, a small original start nib at the lower right appears in full at once.","approvalGranted":false,"geometryCorrection":false,"sourceOnlyCandidateFrozen":true,"existingProductionUnchanged":true,"otherNativeChecksNotInferredComplete":true},
+  "nativeApproval": false,
+  "nativeReviewed": false,
+  "runtimeRegistered": false,
+  "privateMediaSaved": false,
+  "sourceGeometryEdited": false,
+  "buildRun": false,
+  "commitCreated": false
+}
