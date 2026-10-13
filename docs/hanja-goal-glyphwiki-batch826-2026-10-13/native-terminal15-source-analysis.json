@@ -1,0 +1,268 @@
+{
+  "batch": 826,
+  "glyph": "胾",
+  "status": "source-only terminal15 original polygon mask correction; native rereview pending",
+  "nativeApproval": false,
+  "nativeFramesReviewed": 0,
+  "nativeReplayReviewed": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "parentReportedNativeObservationBeforeCorrection": {
+    "wholeCompatibleRoots": [
+      "u80fe",
+      "u80fe-ue0100"
+    ],
+    "dictionaryDirectionsReviewed": 12,
+    "coarseFramesReviewed": 108,
+    "failedFine": {
+      "pen": 10,
+      "raw": 3,
+      "from": 0.9999,
+      "to": 1,
+      "reason": "Final original terminal15 upward-tail polygon appears too late under the cubic centerline mask"
+    },
+    "observationSource": "Root browser review reported to this source-analysis subagent; no child screenshots observed"
+  },
+  "fixedEngineEvidence": {
+    "repository": "https://github.com/kamichikoichi/kage-engine",
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "actualHttpFilesHashVerified": 8,
+    "engineHashes": {
+      "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+      "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+      "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+      "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+      "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+      "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+      "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+    },
+    "keyFile": {
+      "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+      "sha256": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "lines": {
+        "curveWrapper": [
+          702,
+          703
+        ],
+        "styleNormalization": [
+          15,
+          23
+        ],
+        "terminal15SeparatePolygon": [
+          571,
+          586
+        ]
+      }
+    },
+    "interpretation": "cdDrawBezier forwards its original cubic endpoints to cdDrawCurveU. Terminal15 creates and pushes a final independent polygon after the unchanged body. For the fixed raw3 start/end orientation y1<y2, the terminal branch directs this polygon upward.",
+    "formula": {
+      "opt1": "floor((ta1 % 10000) / 1000)",
+      "width": "kMinWidthT - opt1 / 2",
+      "jump": "kWidth * 5",
+      "polygon": [
+        "[x2,y2-width+1]",
+        "[x2+2,y2-width-jump]",
+        "[x2,y2-width-jump]",
+        "[x2-width,y2-width+1]"
+      ],
+      "coordinateScale": "SVG coordinates equal original engine coordinates / 2"
+    }
+  },
+  "selectedOriginal": {
+    "sourceRoot": "u80fe",
+    "sourceProofFile": "engine-whole-u80fe.json",
+    "sourceWholeFileSha256": "f945569f68e6ee283bdca44646234ddbef27059fc33e2da5dc2ddfad164bd19c",
+    "sourceGroupsZeroBased": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        6
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "pen": 10,
+    "raw": 3,
+    "call": 0,
+    "kind": "cdDrawBezier",
+    "args": [
+      130,
+      13,
+      130,
+      142,
+      167,
+      180,
+      181,
+      180,
+      0,
+      15
+    ],
+    "width": 6,
+    "jump": 25,
+    "lastOriginalPolygonIndex": 4,
+    "lastOriginalPolygon": [
+      {
+        "x": 181,
+        "y": 175,
+        "off": 0
+      },
+      {
+        "x": 183,
+        "y": 149,
+        "off": 0
+      },
+      {
+        "x": 181,
+        "y": 149,
+        "off": 0
+      },
+      {
+        "x": 175,
+        "y": 175,
+        "off": 0
+      }
+    ],
+    "bodyOriginalPolygons": 4,
+    "tailOriginalPolygons": 1
+  },
+  "correction": {
+    "scope": "Only exact raw3 terminal15 branch; no general Q/B reveal-width increase",
+    "maskDirection": "up",
+    "tailBounds": [
+      87.5,
+      74.5,
+      91.5,
+      87.5
+    ],
+    "bodyBounds": [
+      62,
+      5.8,
+      93.5,
+      93
+    ],
+    "bodyRevealPath": "M65 6.5 C65 71 83.5 90 90.5 90",
+    "bodyRevealWidth": 14,
+    "existingBodyWeight": 87.30693,
+    "addedTailWeight": 12.5,
+    "weightFormula": "Original engine jump25 / 2 = 12.5",
+    "totalPenWeightBefore": 87.30693,
+    "totalPenWeightAfter": 99.80693,
+    "totalPenWeightDelta": 12.5,
+    "weightPolicy": "Root clarified: preserve existing body weight and every other pen weight, while adding the original terminal mask weight to the same pen.",
+    "tailBoundary": 0.8747581956483382,
+    "newPenCreated": false,
+    "newGeometryAuthored": false,
+    "originalBodyCoordinatesChanged": false,
+    "originalCubicPathChanged": false,
+    "wholeBoundsChanged": false,
+    "otherElevenPensChanged": false,
+    "sourceGroupsChanged": false
+  },
+  "actualValidation": {
+    "passed": true,
+    "pens": 12,
+    "masks": 14,
+    "polygons": 33,
+    "pathsSha256": "1e3f32ddc414a7b9e24f35b938223766f8ea069208e76b775d4a0e550942de8e",
+    "wholeFileSha256": "f945569f68e6ee283bdca44646234ddbef27059fc33e2da5dc2ddfad164bd19c",
+    "bodyWeight": 87.30693,
+    "tailWeight": 12.5,
+    "totalPenWeightBefore": 87.30693,
+    "totalPenWeightAfter": 99.80693,
+    "bodyBounds": [
+      62,
+      5.8,
+      93.5,
+      93
+    ],
+    "tailBounds": [
+      87.5,
+      74.5,
+      91.5,
+      87.5
+    ],
+    "bodyPath": "M65 6.5 C65 71 83.5 90 90.5 90",
+    "bodyRevealWidth": 14,
+    "tailOutline": "M90.5 87.5 L87.5 87.5 L90.5 74.5 L91.5 74.5 Z",
+    "tailBoundary": 0.8747581956483382,
+    "compiledOutlinesSha256": "c023d5ea0d00efdb12db61113538a48ebac7d4a9616497d4727740c56a443f09",
+    "compilerSha256": "967f818515fda44c4977f68d2b01666cb85d8f2ecb51c129b6f99289010dfd01",
+    "mutationRejects": 6,
+    "rejects": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ],
+    "inputProofUnchanged": true,
+    "sourceGroupsUnchanged": true,
+    "otherElevenPensUnchanged": true,
+    "originalPathsShaUnchanged": true,
+    "allOriginalPolygonsOnce": true,
+    "bodyWeightBoundsPathWidthUnchanged": true,
+    "nativeApproved": false,
+    "nativeFramesReviewed": 0,
+    "replayReviewed": false,
+    "buildRun": false,
+    "compilerBeforeSha256": "3efd7464c9813a511f6f78950723a9d682ccb8f69f391158c544928e9c419d0b"
+  },
+  "pendingNativeRereview": {
+    "required": true,
+    "pen": 10,
+    "coarseFractions": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "fineFractions": [
+      0.9999,
+      1
+    ],
+    "boundaryFraction": 0.8747581956483382,
+    "boundaryEpsilon": 1e-10,
+    "actualReplayRequired": true,
+    "serverRestartedByChild": false
+  },
+  "scope": "Public fixed engine source read and hash verified in RAM. Private domestic graphics not saved or sent externally. Source reproduction and compiler invariants are not native approval."
+}
