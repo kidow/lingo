@@ -1,0 +1,125 @@
+{
+  "batch": 896,
+  "glyph": "迭",
+  "id": "u8fed",
+  "status": "held:original continuous boundary retains minus2/minus2 trajectory gap",
+  "sourceVerification": {
+    "sourcePassed": true,
+    "sourceEvidencePassed": true,
+    "sourceExecution": "Prior original verifier once PASS reused unchanged:82039;7whole/8engine/domestic9",
+    "holdGuardPassed": true,
+    "wholeFilePinsVerified": 7,
+    "expectedBlock": true,
+    "mutationsRejected": 5,
+    "inputImmutable": true,
+    "originalBoundaryGap": [
+      -2,
+      -2
+    ],
+    "runtimeExcluded": true
+  },
+  "nativeReview": {
+    "glyph": "迭",
+    "batch": 896,
+    "verifiedAt": "2026-10-14",
+    "catalogStrokes": 9,
+    "wholeVariantsReviewed": 7,
+    "wholeVariants": [
+      {
+        "name": "u8fed",
+        "compatible": false,
+        "reason": "One 辶 dot differs from domestic two dots"
+      },
+      {
+        "name": "u8fed-k",
+        "compatible": true
+      },
+      {
+        "name": "u8fed-ue0100",
+        "compatible": false,
+        "reason": "One 辶 dot differs from domestic two dots"
+      },
+      {
+        "name": "u8fed-ue0101",
+        "compatible": true
+      },
+      {
+        "name": "u8fed-ue0102",
+        "compatible": false,
+        "reason": "One 辶 dot differs from domestic two dots"
+      },
+      {
+        "name": "u8fed-ue0103",
+        "compatible": true
+      },
+      {
+        "name": "u8fed-v",
+        "compatible": true
+      }
+    ],
+    "compatibleWholeRoots": [
+      "u8fed-k",
+      "u8fed-ue0101",
+      "u8fed-ue0103",
+      "u8fed-v"
+    ],
+    "dictionaryDirectionStrokes": [],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "curveFineChecks": [],
+    "maskBoundaryObservations": [],
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "replayApproved": false,
+    "privateMediaSaved": false,
+    "status": "held:original continuous boundary retains minus2/minus2 trajectory gap",
+    "reason": "브라우저 패널에서 고정 원본7종의 전체 자형을 대조했다. base·VS0·VS2는 辶의 점이 국내2점과 다른1점이며 K·VS1·VS3·V는2점을 유지한다. 기존 국내9획의 연속 경계 보류는 원본raw3→4 끝[55,151]·시작[53,149]의[-2,-2] 간격 때문에 유지했다. 수맞춤 연결이나 자형 간 혼합 없이 원본과 차단 계약을 보존했다. 이번 방향·진행 프레임·확대·재생 검토는0이다.",
+    "blockedPens": [],
+    "unreviewedProgressivePens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "unreviewedFinePens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "releaseCondition": "Obtain source-backed continuous domestic pen boundary and complete root browser order/fine/replay checks."
+  },
+  "runtime": {
+    "applied": 5456,
+    "total": 5978,
+    "remaining": 522,
+    "held": 240,
+    "appliedThisBatch": 0,
+    "excluded": true
+  },
+  "checks": {
+    "sourceVerifierPassed": true,
+    "runtimeExclusionPassed": true,
+    "productionBuild": "not run:user requested no builds",
+    "fullSuite": "not run:no runtime code change",
+    "mobile": "not run:held candidate",
+    "sourceEvidencePassed": true,
+    "holdGuardPassed": true
+  },
+  "privateMediaSaved": false,
+  "jev": {
+    "status": "not run: automatic approval review blocked new30summary transmission; permission pending",
+    "advisoryOnly": true,
+    "runtimeApproval": false
+  }
+}
