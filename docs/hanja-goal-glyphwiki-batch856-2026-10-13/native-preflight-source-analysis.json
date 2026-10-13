@@ -1,0 +1,151 @@
+{
+  "batch": 856,
+  "glyph": "珵",
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only numerical compiler integrity audit; no native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "source": {
+    "root": "u73f5",
+    "sourceProofFile": "engine-whole-u73f5.json",
+    "sourceProofFileSHA256": "6ed37d65dbfa7422b12c8a7f296a02ba439a5282c1d0f670ba240e4fbb10e557",
+    "compilerFileSHA256": "8b8fa26b3b163d33ca8fc13de79bfd933a8dadec0fddb65d66f6f8ff50aa488c",
+    "selectedBodyContainsEngineHeader": false,
+    "engineProofHeaderWrappedOnlyInRAM": true,
+    "compilerContract": "Two arguments. Exact selected body digest/trace/groups and all8 engine hashes/preset checked. No explicit third fileIdentity argument; source file byteSHA checked independently.",
+    "engineHashChecks": 8,
+    "recordCount": 10,
+    "completeWholeVariantsExactlyReplayed": 4,
+    "historyCount": 0,
+    "missingDependencies": [],
+    "archiveRedownloaded": false,
+    "latestSubstitution": false
+  },
+  "validation": {
+    "actualExit": 0,
+    "raw": 12,
+    "calls": 12,
+    "L": 10,
+    "Q": 2,
+    "B": 0,
+    "pens": 11,
+    "masks": 11,
+    "originalPolygons": 21,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ]
+    ],
+    "sourceGroupsSHA256": "58f50e21c8c2db29019d0532759893c2cdd1d56a201fa70ccb3afd09f0af8a1f",
+    "compiledOutlinesSHA256": "2638786162d1431e3ecf2a98fe1ec301149a9c5b4655ac2e9c4d6f1110a526ad",
+    "originalPolygonsExactlyOnce": true,
+    "allRawExactlyOnce": true,
+    "inputProofUnchanged": true,
+    "emptyRawGroups": [],
+    "mutationRejects": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ]
+  },
+  "boundaryAnalysis": {
+    "catalogAndCapturedDomesticCount": 11,
+    "allGroupedRawAndInternalCallsJoinExactly": true,
+    "exactFolds": [
+      {
+        "pen": 6,
+        "raw": [
+          5,
+          6
+        ],
+        "point": [
+          163.538,
+          26.31
+        ],
+        "nonConsecutive": false,
+        "nativeBoundaryApproved": false
+      }
+    ],
+    "unusedNonConsecutiveContacts": [
+      [
+        4,
+        7
+      ]
+    ],
+    "nativePenBoundariesUnknown": true,
+    "numericCountEqualityNotApproval": true,
+    "coordinateOrControlMutation": false,
+    "connectorAuthored": false,
+    "wholeMixing": false,
+    "note": "Contiguous fold5→6 supplies numeric11; separated closing contact4→7 remains separate. Terminal13 raw4 and terminal323 folded pen6 need native end-geometry inspection."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      4,
+      6,
+      8
+    ],
+    "pureLineOriginalVertexBounds": [
+      {
+        "pen": 6,
+        "raw": [
+          5,
+          6
+        ],
+        "terminal": 323,
+        "vertexCount": 13,
+        "maxOriginalVertexDistanceKage": 10.961999999999989,
+        "width": 14
+      }
+    ],
+    "originalSamePenMaskTransitions": [],
+    "widthChanged": false,
+    "QBCurveWidthInferenceApplied": false,
+    "nativeFineAndReplayPending": true
+  }
+}
