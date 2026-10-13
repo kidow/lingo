@@ -1,0 +1,211 @@
+{
+  "batch": 910,
+  "glyph": "瑲",
+  "status": "source-only strict blocked native diagnostic ready",
+  "frozenRuntimeAudit": {
+    "utc": "2026-10-13T19:32:32.634Z",
+    "registered": 5437,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 4,
+    "wholeVariants": 2,
+    "domesticClips": 14,
+    "domesticMetadataVerified": true,
+    "engineFilesVerified": 8,
+    "archiveRedownloaded": false,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false
+  },
+  "selectedIdentityForRawPreview": {
+    "sourceRoot": "u7472",
+    "sourceProofFile": "./engine-whole-u7472.json",
+    "sourceProofFileSha256": "6c7bf5b26c93fae335cde031027c9bf94b44b61db18291490cb1ba220e44dd1b",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "af8725be5086be13abba604572e76bad4ed1abf342557f3287556e9d81462e6e"
+  },
+  "identityIsNotWholeEligibilityApproval": true,
+  "sourceInputSHA256": {
+    "sources.json": "e1662ef91f14f97b24c0b77337a8f806b94c6cc89ccc66dc97e720cfec7e8a12",
+    "metadata.json": "2d3b3a23942b53269f77a4a9cdc43e8d933650fc5a445bb444634508f9e555e3",
+    "engine-proof.json": "af8725be5086be13abba604572e76bad4ed1abf342557f3287556e9d81462e6e",
+    "progressive.mjs": "5ba81fa44ae58ba1898dc1b61e633b47676b9f4fbd65bc43d5b9b67b0835219f",
+    "engine-whole-u7472-ue0100.json": "6c7bf5b26c93fae335cde031027c9bf94b44b61db18291490cb1ba220e44dd1b",
+    "engine-whole-u7472.json": "6c7bf5b26c93fae335cde031027c9bf94b44b61db18291490cb1ba220e44dd1b"
+  },
+  "fullSelectedProofSHA256": "2928c6335be9fd62637643a862ed07d72027493839791993be75c78de6cec569",
+  "allWholeOriginalFacts": [
+    {
+      "root": "u7472-ue0100",
+      "sourceSHA": "6c7bf5b26c93fae335cde031027c9bf94b44b61db18291490cb1ba220e44dd1b",
+      "originalRaw": 17,
+      "nonDrawingRaw": [
+        4
+      ],
+      "originalPolygons": 28,
+      "exactDirectedEndpoints": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "maximumEndpointMatching": 3,
+      "minimumPensLowerBound": 13,
+      "engineBodyKeys": [
+        "groups",
+        "trace",
+        "defaults"
+      ]
+    },
+    {
+      "root": "u7472",
+      "sourceSHA": "6c7bf5b26c93fae335cde031027c9bf94b44b61db18291490cb1ba220e44dd1b",
+      "originalRaw": 17,
+      "nonDrawingRaw": [
+        4
+      ],
+      "originalPolygons": 28,
+      "exactDirectedEndpoints": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "maximumEndpointMatching": 3,
+      "minimumPensLowerBound": 13,
+      "engineBodyKeys": [
+        "groups",
+        "trace",
+        "defaults"
+      ]
+    }
+  ],
+  "originalCandidateGroupsPreserved": [],
+  "nonconsecutiveGroups": [],
+  "blockedReason": "native-boundary-evidence-required-raw4-empty-min13-below14",
+  "localActualVerification": {
+    "originalCompilerExists": true,
+    "originalCompilerExecuted": true,
+    "guardModule": "progressive.mjs",
+    "expectedBlock": true,
+    "mutationsRejected": 6,
+    "identityMutationsRejected": 5,
+    "inputUnchanged": true,
+    "baselineExpectedBlock": true,
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "originalOutlinesEmitted": 0,
+    "frames": 0,
+    "replay": 0
+  },
+  "server": {
+    "url": "http://127.0.0.1:64792",
+    "pid": 29563,
+    "sessionID": 24401,
+    "whole": "/whole",
+    "rawDirectionPair": "/pairs?domestic=1&raw=1",
+    "progressive": "/progressive - expected blocked status only",
+    "sourcePinsEachRequest": true,
+    "HTTPResults": [
+      {
+        "batch": 910,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 630,
+        "checks": {
+          "sourceRoot": "u7472",
+          "identity": {
+            "sourceRoot": "u7472",
+            "sourceProofFile": "./engine-whole-u7472.json",
+            "sourceProofFileSha256": "6c7bf5b26c93fae335cde031027c9bf94b44b61db18291490cb1ba220e44dd1b",
+            "sourceHeaderFile": "./engine-proof.json",
+            "sourceHeaderFileSha256": "af8725be5086be13abba604572e76bad4ed1abf342557f3287556e9d81462e6e"
+          },
+          "reason": "native-boundary-evidence-required-raw4-empty-min13-below14",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "blocked": true,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u7472-ue0100",
+            "u7472"
+          ],
+          "sourceInputPinsVerified": 6,
+          "catalog": 14,
+          "domestic": 14
+        }
+      },
+      {
+        "batch": 910,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 6964,
+        "privateTextLogged": false,
+        "has520": false,
+        "hasReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 910,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 1700,
+        "privateTextLogged": false,
+        "has520": true,
+        "hasReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 910,
+        "route": "/progressive",
+        "status": 200,
+        "bytes": 1152,
+        "privateTextLogged": false,
+        "has520": false,
+        "hasReplay": false,
+        "blockedPage": true
+      }
+    ],
+    "privateDictionaryByteHashTitleClipCheck": "RAM-only renderer; actual /whole and /pairs response PASS"
+  },
+  "nativeObservation": {
+    "whole": 0,
+    "directions": 0,
+    "coarseFrames": 0,
+    "fineFrames": 0,
+    "replay": 0,
+    "approval": false
+  },
+  "geometryModified": false,
+  "originalCompilerModified": false,
+  "sourceFilesModified": false,
+  "privateMediaSaved": false,
+  "sharedRegistryEdited": false,
+  "runtimeRegistered": 0,
+  "buildRun": false,
+  "commitCreated": false
+}
