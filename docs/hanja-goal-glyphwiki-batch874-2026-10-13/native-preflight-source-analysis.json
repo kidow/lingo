@@ -1,0 +1,182 @@
+{
+  "batch": 874,
+  "glyph": "尰",
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only numerical compiler integrity audit; no native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "source": {
+    "root": "u5c30",
+    "sourceProofFile": "engine-whole-u5c30.json",
+    "sourceProofFileSHA256": "60f8f8ac3406ed8b8dcab5dd7437f6f75a16937feae4129665379bf1ad61eb88",
+    "compilerFileSHA256": "ac2533ed88801d11c2479b3382ddfca2633247c300bffb0c25f6e8ecfb817282",
+    "selectedBodyContainsEngineHeader": true,
+    "engineHeaderWrapperRequired": false,
+    "compilerContract": "Two arguments. Exact selected body digest/trace/groups and all8 engine hashes/preset checked. No explicit third fileIdentity argument; source file byteSHA checked independently.",
+    "engineHashChecks": 8,
+    "recordCount": 4,
+    "completeWholeVariantsExactlyReplayed": 2,
+    "historyCount": 0,
+    "missingDependencies": [],
+    "archiveRedownloaded": false,
+    "latestSubstitution": false
+  },
+  "validation": {
+    "actualExit": 0,
+    "raw": 13,
+    "calls": 16,
+    "L": 13,
+    "Q": 3,
+    "B": 0,
+    "pens": 12,
+    "masks": 13,
+    "originalPolygons": 30,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ]
+    ],
+    "sourceGroupsSHA256": "c4e3ccadf026afef093faa2fee02e55dd1ff760a9a32f48ac3ca962c73a1682e",
+    "compiledOutlinesSHA256": "306d061f12e43547a6f539e8a542ab7ccae082992ba3341f1cbe89bc379b8384",
+    "originalPolygonsExactlyOnce": true,
+    "allRawExactlyOnce": true,
+    "inputProofUnchanged": true,
+    "emptyRawGroups": [],
+    "mutationRejects": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ]
+  },
+  "boundaryAnalysis": {
+    "catalogAndCapturedDomesticCount": 12,
+    "allGroupedRawAndInternalCallsJoinExactly": true,
+    "exactFolds": [
+      {
+        "pen": 7,
+        "raw": [
+          6,
+          7
+        ],
+        "point": [
+          168.225,
+          68.4
+        ]
+      }
+    ],
+    "unusedNonConsecutiveContacts": [
+      [
+        5,
+        9
+      ]
+    ],
+    "nonConsecutiveMergeUsed": false,
+    "nativePenBoundariesUnknown": true,
+    "numericCountEqualityNotApproval": true,
+    "coordinateOrControlMutation": false,
+    "connectorAuthored": false,
+    "wholeMixing": false,
+    "note": "Only contiguous6→7 is folded; separated closing5→9 remains distinct. Original terminal5 option-bearing raw2 up-tail weight8.5 and terminal113/123 stop outlines preserved. Native whole12 boundaries and fine/replay pending."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      2,
+      3,
+      4,
+      7
+    ],
+    "pureLineOriginalVertexBounds": [
+      {
+        "pen": 7,
+        "raw": [
+          6,
+          7
+        ],
+        "terminal": 123,
+        "vertexCount": 13,
+        "maxOriginalVertexDistanceKage": 13.427606823257822,
+        "width": 14
+      }
+    ],
+    "originalStopStyles": [
+      {
+        "raw": 5,
+        "terminal": 113,
+        "startStyle": 12
+      },
+      {
+        "raw": 7,
+        "terminal": 123,
+        "startStyle": 22
+      }
+    ],
+    "originalSamePenMaskTransitions": [
+      {
+        "pen": 3,
+        "mask": 2,
+        "start": 0.9283130350145787,
+        "direction": "up",
+        "weight": 8.5,
+        "bounds": [
+          89,
+          79,
+          92.5,
+          87.5
+        ],
+        "terminal": 5,
+        "startStyle": 2006
+      }
+    ],
+    "widthChanged": false,
+    "QBCurveWidthInferenceApplied": false,
+    "nativeFineAndReplayPending": true
+  }
+}

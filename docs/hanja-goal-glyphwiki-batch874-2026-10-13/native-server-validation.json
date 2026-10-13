@@ -1,0 +1,136 @@
+{
+  "batch": 874,
+  "glyph": "尰",
+  "status": "source-only-native-comparison-server-ready",
+  "nativeApproved": false,
+  "nativeDirectionsReviewed": 0,
+  "nativeFramesApproved": false,
+  "replayApproved": false,
+  "runtimeRegistered": false,
+  "privateMediaSaved": false,
+  "originalInputsUnchanged": true,
+  "originalCompilerUnchanged": true,
+  "actualSourceVerificationPassed": true,
+  "sharedRAMSourceVerificationRequests": 18,
+  "actualNumericalCompile": {
+    "sourceRoot": "u5c30",
+    "pens": 12,
+    "masks": 13,
+    "originalPolygons": 30,
+    "polygonExactOnce": true,
+    "originalCoordinatesUnchanged": true,
+    "exactJoins": [
+      {
+        "pen": 2,
+        "end": [
+          49,
+          72
+        ]
+      },
+      {
+        "pen": 3,
+        "end": [
+          58,
+          170
+        ]
+      },
+      {
+        "pen": 3,
+        "end": [
+          68,
+          180
+        ]
+      },
+      {
+        "pen": 7,
+        "end": [
+          168.225,
+          68.4
+        ]
+      }
+    ],
+    "rejections": 14,
+    "finePens": [
+      2,
+      3,
+      4,
+      7
+    ],
+    "maskTransitions": [
+      {
+        "pen": 3,
+        "mask": 2,
+        "start": 0.9283130350145787,
+        "weights": [
+          110.071068,
+          8.5
+        ],
+        "nativeReviewed": false
+      }
+    ]
+  },
+  "sourceRendererFrames": 111,
+  "sourceRendererFramesAreNotNativeApproval": true,
+  "server": {
+    "port": 59004,
+    "pid": 15325,
+    "wholeURL": "http://127.0.0.1:59004/whole",
+    "directionPairsURL": "http://127.0.0.1:59004/pairs",
+    "progressiveURL": "http://127.0.0.1:59004/progressive?stroke=1&enlarged=1&samples=1",
+    "HTTPWholePairsProgressivePassed": true,
+    "unsupportedWholeRejectedStatus": 409,
+    "coarseSamplesQuerySupported": true,
+    "coarseSamplesFractions": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "fine520px": true,
+    "originalMaskBoundaryBeforeAtAfterControls": true,
+    "replayButton": true
+  },
+  "filesSHA256": {
+    "native-server-source-audit.json": "32528d6988f9134c31d3a3094886b597ca86897c1a04ff2643d825ab3092d181",
+    "native-server-compile.mjs": "497b5130b710aab8f822611d8eb0b508331190d76027a487b782f03ebfb5aacc",
+    "serve-native.py": "4c97299986d36ea225fab049215e09ea7c3f15e8a01db9bfb26503affbbdb333"
+  },
+  "risks": {
+    "finePens": [
+      2,
+      3,
+      4,
+      7
+    ],
+    "originalMaskTransitions": [
+      {
+        "pen": 3,
+        "mask": 2,
+        "start": 0.9283130350145787,
+        "weights": [
+          110.071068,
+          8.5
+        ],
+        "nativeReviewed": false
+      }
+    ],
+    "nativeBoundaryRisks": {
+      "nonContiguousRawGroups": [],
+      "numericRisks": [
+        "Original Q/B and terminal13/23 outlines must be inspected at520px, every original-mask transition and99.99→100.",
+        "Exact endpoint joins and count equality do not establish domestic whole, pen boundaries, order or direction."
+      ]
+    },
+    "numericJoinsAreNotApproval": true,
+    "domesticWholeOrderDirectionBoundaryPending": true
+  },
+  "freshRuntimeObservationSeparate": {
+    "observedAt": "2026-10-13T19:01:07.642Z",
+    "hanjaStrokeDataPresent": false
+  }
+}
