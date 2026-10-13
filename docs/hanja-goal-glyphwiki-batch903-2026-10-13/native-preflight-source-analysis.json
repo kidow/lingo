@@ -1,0 +1,236 @@
+{
+  "batch": 903,
+  "glyph": "斮",
+  "status": "source-only native preflight ready",
+  "freshRuntimeSnapshot": {
+    "utc": "2026-10-13T19:27:53.822Z",
+    "registered": 5437,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "sourceEvidencePassed": true,
+    "wholeVariants": 2,
+    "engineFilesVerified": 8,
+    "domesticClips": 12,
+    "noNewArchiveDownload": true,
+    "privateMediaSaved": false,
+    "nativeApprovalGranted": false
+  },
+  "inputIdentity": {
+    "sourceRoot": "u65ae",
+    "sourceProofFile": "engine-whole-u65ae.json",
+    "sourceProofFileSHA256": "08d855e706670a20e6f3daa60b0f723f02b6640e7d68805a2d036b07ea65f6ec"
+  },
+  "sourceInputFileSHA256": {
+    "sources.json": "8ddb7dd9f60fc188cb450de7a6c95b6409a67f5baaa114294da8e69d37120f35",
+    "metadata.json": "bd5e94dc99558033cca78c0f27fa85ba9657521086d6194ec11adb1b7682a3a9",
+    "engine-proof.json": "08d855e706670a20e6f3daa60b0f723f02b6640e7d68805a2d036b07ea65f6ec",
+    "progressive.mjs": "83a8e8f28ddf173e2e25feaf99f61f9e5670443d579d2d4290aca8d7a0a6c3ee",
+    "engine-whole-u65ae-ue0100.json": "08d855e706670a20e6f3daa60b0f723f02b6640e7d68805a2d036b07ea65f6ec",
+    "engine-whole-u65ae.json": "08d855e706670a20e6f3daa60b0f723f02b6640e7d68805a2d036b07ea65f6ec"
+  },
+  "fullSelectedProofSHA256": "98130b177ce87a1acd0c73d826a3378163b983e6d7d857c1f75ff2bfe36d209b",
+  "actualLocalVerification": {
+    "actualCompilerExecuted": true,
+    "mutationsRejected": 6,
+    "identitiesRejected": 4,
+    "inputUnchanged": true,
+    "compiledPens": 12,
+    "compiledMasks": 12,
+    "originalPolygons": 23,
+    "originalPolygonExactOnce": true,
+    "compiledSHA256": "2b38d39f9a560dc3bf55c27a64eccc6c50f106a353ad40dd6ccd80f03845dd81",
+    "expectedBlock": null
+  },
+  "risks": {
+    "finePens": [
+      6,
+      9,
+      10
+    ],
+    "terminals": [
+      {
+        "raw": 4,
+        "kind": "cdDrawLine",
+        "args": [
+          29.54,
+          106,
+          29.54,
+          169,
+          12,
+          13
+        ],
+        "pen": 5
+      },
+      {
+        "raw": 6,
+        "kind": "cdDrawLine",
+        "args": [
+          82.46,
+          106,
+          82.46,
+          169,
+          22,
+          323
+        ],
+        "pen": 6
+      }
+    ],
+    "maskTransitions": [],
+    "pureLFoldTipBound": {
+      "pen": 6,
+      "raw": [
+        5,
+        6
+      ],
+      "polyline": [
+        [
+          29.54,
+          106
+        ],
+        [
+          82.46,
+          106
+        ],
+        [
+          82.46,
+          169
+        ]
+      ],
+      "maxOriginalVertexDistanceKage": 10.940000000000012,
+      "maskWidth": 14,
+      "withinCurrentWidth": true,
+      "notCurveWidthInference": true
+    },
+    "wholeCompatibilityAndDomesticOrderUnreviewed": true
+  },
+  "server": {
+    "url": "http://127.0.0.1:64785",
+    "pid": 24600,
+    "sessionID": 49341,
+    "whole": "/whole",
+    "pairs": "/pairs",
+    "progressive": "/progressive?stroke=6&enlarged=1&samples=1",
+    "inputGuardsEachRequest": true,
+    "actualHTTPResults": [
+      {
+        "batch": 903,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 469,
+        "checks": {
+          "sourceRoot": "u65ae",
+          "identity": {
+            "sourceRoot": "u65ae",
+            "sourceProofFile": "engine-whole-u65ae.json",
+            "sourceProofFileSHA256": "08d855e706670a20e6f3daa60b0f723f02b6640e7d68805a2d036b07ea65f6ec"
+          },
+          "sourceGroups": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ],
+            [
+              12
+            ]
+          ],
+          "compiledPens": 12,
+          "compiledMasks": 12,
+          "blocked": false,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u65ae-ue0100",
+            "u65ae"
+          ],
+          "sourceInputPinsVerified": 6,
+          "catalog": 12,
+          "domestic": 12
+        }
+      },
+      {
+        "batch": 903,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 5454,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "hasBlocked": false
+      },
+      {
+        "batch": 903,
+        "route": "/pairs",
+        "status": 200,
+        "bytes": 28746,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "hasBlocked": false
+      },
+      {
+        "batch": 903,
+        "route": "/progressive?stroke=6&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 8435,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": true,
+        "has8secReplay": true,
+        "hasBlocked": false
+      }
+    ],
+    "privateDictionaryMetadataHashAndClipVerifiedByRAMRenderer": true
+  },
+  "nativeObservation": {
+    "wholeVariantsObserved": 0,
+    "directionsObserved": 0,
+    "coarseFramesObserved": 0,
+    "fineFramesObserved": 0,
+    "replayObserved": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "compilerGeometryModified": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
