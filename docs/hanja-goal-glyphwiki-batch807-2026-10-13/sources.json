@@ -1,0 +1,158 @@
+{
+  "archive": {
+    "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+    "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+    "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+  },
+  "root": "u6a32",
+  "glyph": "樲",
+  "wholeNames": [
+    "u6a32",
+    "u6a32-ue0100"
+  ],
+  "renderableWholeNames": [],
+  "records": {
+    "u6a32": {
+      "name": "u6a32",
+      "related": "u6a32",
+      "data": "99:0:0:3:0:158:200:u6728-01$99:0:0:61:0:200:200:u8cb3@5"
+    },
+    "u6728-01": {
+      "name": "u6728-01",
+      "related": "u6728",
+      "data": "1:0:0:13:61:90:61$1:0:0:53:15:53:186$2:32:7:50:61:40:110:13:148$2:7:8:55:86:74:94:85:109"
+    },
+    "u8cb3@5": {
+      "name": "u8cb3@5",
+      "related": "U+8CB3",
+      "data": "99:0:0:0:0:200:200:u5f0b-05$1:0:0:35:68:95:68$1:0:0:22:84:110:84$99:0:0:5:85:125:192:u8c9d@2"
+    },
+    "u5f0b-05": {
+      "name": "u5f0b-05",
+      "related": "u5f0b",
+      "data": "1:0:0:16:52:181:52$6:0:5:119:16:114:150:160:178:175:180$2:7:8:133:22:150:29:159:40"
+    },
+    "u8c9d@2": {
+      "name": "u8c9d@2",
+      "related": "U+8C9D",
+      "data": "99:0:0:6:8:194:160:u76ee@5$2:0:7:82:150:61:171:18:188$2:7:8:110:149:151:163:172:184"
+    },
+    "u76ee@5": {
+      "name": "u76ee@5",
+      "related": "U+3013",
+      "data": "99:0:0:0:0:200:200:u76ee-j"
+    },
+    "u6a32-ue0100": {
+      "name": "u6a32-ue0100",
+      "related": "u3013",
+      "data": "99:0:0:0:0:200:200:u6a32"
+    }
+  },
+  "missing": [
+    "u76ee-j"
+  ],
+  "aliases": [],
+  "providerVersions": [
+    {
+      "name": "u8cb3@5",
+      "version": "5",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u8cb3%405",
+      "requestedProviderName": "u8cb3@5",
+      "responseIdentity": {
+        "name": "u8cb3",
+        "version": "5",
+        "related": "U+8CB3"
+      },
+      "sha256": "30a5b74b2617d3257fabe1eed7d7b65ff15733e90f06d8495d30af2bb0ad7ab3",
+      "supplemental": false,
+      "reason": "Explicit version dependency in fixed original record"
+    },
+    {
+      "name": "u8c9d@2",
+      "version": "2",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u8c9d%402",
+      "requestedProviderName": "u8c9d@2",
+      "responseIdentity": {
+        "name": "u8c9d",
+        "version": "2",
+        "related": "U+8C9D"
+      },
+      "sha256": "9ca8de16ab36afe98e7ecdb553dfa758faa115a96a01d05fc18dc8ccda8579f8",
+      "supplemental": false,
+      "reason": "Explicit version dependency in fixed original record"
+    },
+    {
+      "name": "u76ee@5",
+      "version": "5",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u76ee%405",
+      "requestedProviderName": "u76ee@5",
+      "responseIdentity": {
+        "name": "u76ee",
+        "version": "5",
+        "related": "U+3013"
+      },
+      "sha256": "35b1df0c355bd3abaf937cd27e4a54ddee81c11f6f8b05486a71ce3cf3219abb",
+      "supplemental": false,
+      "reason": "Explicit version dependency in fixed original record"
+    }
+  ],
+  "supplementalSources": {
+    "u76ee-j": {
+      "record": {
+        "name": "u76ee-j",
+        "related": "U+76EE",
+        "data": "1:12:13:46:30:46:168$1:2:2:46:30:154:30$1:22:23:154:30:154:168$1:2:2:46:75:154:75$1:2:2:46:120:154:120$1:2:2:46:168:154:168"
+      },
+      "version": {
+        "name": "u76ee-j",
+        "version": "2",
+        "apiUrl": "https://glyphwiki.org/api/glyph?name=u76ee-j%402",
+        "requestedProviderName": "u76ee-j@2",
+        "responseIdentity": {
+          "name": "u76ee-j",
+          "version": "2",
+          "related": "U+76EE"
+        },
+        "sha256": "8124f5a0be438e7c000006ec3a5e66bac0a35628d45c798177053bfad7463c5e",
+        "supplemental": true,
+        "reason": "Bare dependency absent from pinned archive; separate official API version snapshot, not historical archive evidence"
+      },
+      "mixedSourceCandidate": true,
+      "approvalBlocked": true,
+      "originalArchiveIdentityProven": false,
+      "usedInWholeCompilation": false
+    }
+  },
+  "affectedWholeRoots": [
+    {
+      "root": "u6a32",
+      "error": "Missing fixed-archive dependency u76ee-j; supplemental API must not replace it",
+      "originalRecord": {
+        "name": "u6a32",
+        "related": "u6a32",
+        "data": "99:0:0:3:0:158:200:u6728-01$99:0:0:61:0:200:200:u8cb3@5"
+      },
+      "approvalBlocked": true
+    },
+    {
+      "root": "u6a32-ue0100",
+      "error": "Missing fixed-archive dependency u76ee-j; supplemental API must not replace it",
+      "originalRecord": {
+        "name": "u6a32-ue0100",
+        "related": "u3013",
+        "data": "99:0:0:0:0:200:200:u6a32"
+      },
+      "approvalBlocked": true
+    }
+  ],
+  "archiveMissingReferences": [
+    "u76ee-j"
+  ],
+  "archiveOnlyReplay": false,
+  "sourceMissingHold": true,
+  "mixedSourceCandidate": true,
+  "approvalBlocked": true,
+  "latestSubstitution": false,
+  "supplementalUsedForWholeReplay": false
+}
+
