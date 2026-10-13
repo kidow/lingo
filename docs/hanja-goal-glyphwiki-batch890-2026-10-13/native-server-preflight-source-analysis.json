@@ -1,0 +1,153 @@
+{
+  "batch": 890,
+  "glyph": "蚳",
+  "scope": "Source-only native server preflight",
+  "nativeApproval": false,
+  "nativeDirectionsReviewed": 0,
+  "nativeFramesReviewed": 0,
+  "nativeReplaysReviewed": 0,
+  "runtimeApplied": false,
+  "compilerModified": false,
+  "originalGeometryModified": false,
+  "privateGraphicsSaved": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "sourceVerifierExecuted": true,
+  "sourceVerifierExecution": {
+    "operator": "hanja_batch760_761_analysis",
+    "process": "82039 original verify-source shared RAM archive worker",
+    "originalVerifierExecutions": 1,
+    "sourcePassed": true,
+    "records": 4,
+    "wholeNames": 2,
+    "completeWholeRoots": 2,
+    "blockedWholeRoots": 0,
+    "domesticClips": 11,
+    "engineFiles": 8,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false,
+    "publicCacheURLs": 14,
+    "archiveFetches": 1,
+    "sourceEvidencePassedFieldAbsent": true
+  },
+  "selectedRoot": "u86b3",
+  "selectedProofFile": "engine-whole-u86b3.json",
+  "selectedProofFileSHA256": "67d19876a451ded3d1b1257e57b16fab1551097a14fc6848e488af274270eb16",
+  "headerProofSHA256": "480f607c5d5a30836e0b6fc7f1dd09050a85e7f1dd52975cf6c528d7a7412c69",
+  "allWholeFilePins": {
+    "u86b3": "67d19876a451ded3d1b1257e57b16fab1551097a14fc6848e488af274270eb16",
+    "u86b3-ue0100": "67d19876a451ded3d1b1257e57b16fab1551097a14fc6848e488af274270eb16"
+  },
+  "compilerContract": "Two arguments; server exact root/file/SHA/header/archive guards with original engine header only overlaid in RAM",
+  "localCompileVerification": {
+    "passed": true,
+    "pens": 11,
+    "masks": 11,
+    "polygons": 26,
+    "allOriginalPolygonsOnce": true,
+    "inputImmutable": true,
+    "mutationsRejected": 6,
+    "completeWholeChecks": 2,
+    "blockedSiblingNullChecks": 0
+  },
+  "wholeRiskFacts": [
+    {
+      "root": "u86b3-ue0100",
+      "sourceComplete": true,
+      "raw": 13,
+      "curveRaw": [
+        5,
+        6,
+        7,
+        9,
+        11
+      ],
+      "terminals": [
+        {
+          "raw": 0,
+          "kind": "cdDrawLine",
+          "terminal": 13
+        },
+        {
+          "raw": 2,
+          "kind": "cdDrawLine",
+          "terminal": 323
+        },
+        {
+          "raw": 11,
+          "kind": "cdDrawCurve",
+          "terminal": 15
+        }
+      ]
+    },
+    {
+      "root": "u86b3",
+      "sourceComplete": true,
+      "raw": 13,
+      "curveRaw": [
+        5,
+        6,
+        7,
+        9,
+        11
+      ],
+      "terminals": [
+        {
+          "raw": 0,
+          "kind": "cdDrawLine",
+          "terminal": 13
+        },
+        {
+          "raw": 2,
+          "kind": "cdDrawLine",
+          "terminal": 323
+        },
+        {
+          "raw": 11,
+          "kind": "cdDrawCurve",
+          "terminal": 15
+        }
+      ]
+    }
+  ],
+  "foldMaskVertexBounds": [
+    {
+      "pen": 2,
+      "raw": [
+        1,
+        2
+      ],
+      "maxOriginalVertexDistanceKAGE": 10.974999999999994,
+      "currentRevealWidth": 14,
+      "boundExceedsCurrent": false
+    }
+  ],
+  "maskBoundaries": [],
+  "servers": {
+    "wholePort": 64778,
+    "wholePid": 4534,
+    "progressivePort": 64779,
+    "progressivePid": 6208,
+    "HTTPChecksPassed": true,
+    "pairs": 11,
+    "coarseSamples": 9,
+    "enlargedPixels": 520,
+    "replayDurationMs": 8000,
+    "nativeObserved": false
+  },
+  "fineRiskPens": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    10
+  ],
+  "missingSiblingPolicy": null,
+  "unreviewed": [
+    "Whole identity and all domestic order/direction/boundaries pending root browser",
+    "All curves and tips need actual fine/replay review"
+  ],
+  "autoWidthCorrection": false
+}
