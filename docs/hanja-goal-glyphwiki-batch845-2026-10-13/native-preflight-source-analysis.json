@@ -1,0 +1,191 @@
+{
+  "batch": 845,
+  "glyph": "戩",
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only block integrity audit; no compiled candidate or native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "compilerChanged": false,
+  "source": {
+    "root": "u6229",
+    "sourceProofFile": "./engine-whole-u6229.json",
+    "sourceProofFileSHA256": "561d47bcd2e5da61e87b0600cc3e9616252109afdbb08e4e9fa12317bcac1ec4",
+    "compilerFileSHA256": "59620a2f40239ea22bc466479b635f218f92476464b5eca636a1bd8b99c19e67",
+    "fullHeaderRequired": true,
+    "selectedIdentityOptionalDefaultButPinned": true,
+    "explicitIdentityFields": [
+      "sourceRoot",
+      "sourceProofFile",
+      "sourceProofFileSha256"
+    ],
+    "recordCount": 9,
+    "engineFileHashesChecked": 8,
+    "explicitHistories": 0,
+    "missingBareDependencies": [],
+    "archiveRedownloaded": false,
+    "latestSubstitution": false,
+    "wholeReplays": [
+      {
+        "root": "u6229",
+        "raw": 17,
+        "calls": 17,
+        "polygons": 38,
+        "polygonSHA256": "0527bf22f96e71ed19c64a61553abcc5305b0c1ae606994e84dd0570c5763733"
+      },
+      {
+        "root": "u6229-itaiji-001",
+        "raw": 16,
+        "calls": 16,
+        "polygons": 36,
+        "polygonSHA256": "4f6e1e08539e72057f1d571cc046302873924235a18362a53d8accd3f59113f1"
+      },
+      {
+        "root": "u6229-ue0100",
+        "raw": 17,
+        "calls": 17,
+        "polygons": 38,
+        "polygonSHA256": "0527bf22f96e71ed19c64a61553abcc5305b0c1ae606994e84dd0570c5763733"
+      },
+      {
+        "root": "u6229-var-001",
+        "raw": 17,
+        "calls": 17,
+        "polygons": 38,
+        "polygonSHA256": "65d75754655a30488b18a337fea338cdd7b1062b1c6931492a45af63f45f2e96"
+      }
+    ],
+    "allWholePolygonsExactlyEngineReplayed": true
+  },
+  "validation": {
+    "actualExit": 0,
+    "originalIdentityGuardPassedThenDeliberatelyBlocked": true,
+    "blockedReason": "original-yao-endpoint-gaps",
+    "compiledPens": 0,
+    "compiledPolygons": 0,
+    "originalSelectedRaw": 17,
+    "originalSelectedCalls": 17,
+    "originalSelectedPolygons": 38,
+    "emptyRawGroups": [],
+    "sourceGroups": [],
+    "inputProofUnchanged": true,
+    "mutationRejects": 6,
+    "mutationsRejectedByIdentityGuardBeforeDeliberateBlock": true,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ],
+    "polygonCompilationExactlyOnce": "not applicable; compiler intentionally emits no geometry"
+  },
+  "selectedOriginalGaps": [
+    {
+      "raw": [
+        1,
+        2
+      ],
+      "end": [
+        29.779,
+        77.16
+      ],
+      "start": [
+        20.446,
+        78.44
+      ],
+      "distanceKage": 9.420365651077455
+    },
+    {
+      "raw": [
+        4,
+        5
+      ],
+      "end": [
+        74.37,
+        77.16
+      ],
+      "start": [
+        66.5925,
+        78.44
+      ],
+      "distanceKage": 7.882125744366178
+    }
+  ],
+  "wholeNumericRisks": {
+    "unrestrictedMinimumPens": [
+      {
+        "root": "u6229",
+        "pens": 15
+      },
+      {
+        "root": "u6229-itaiji-001",
+        "pens": 14
+      },
+      {
+        "root": "u6229-ue0100",
+        "pens": 15
+      },
+      {
+        "root": "u6229-var-001",
+        "pens": 15
+      }
+    ],
+    "allExactInterRawContacts": [
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "nonAdjacentClosingContact": [
+      8,
+      12
+    ],
+    "contiguousOnlyMinimumPens": [
+      {
+        "root": "u6229",
+        "pens": 16
+      },
+      {
+        "root": "u6229-itaiji-001",
+        "pens": 15
+      },
+      {
+        "root": "u6229-ue0100",
+        "pens": 16
+      },
+      {
+        "root": "u6229-var-001",
+        "pens": 16
+      }
+    ],
+    "itaiji14DependsOnUnapprovedNonAdjacentClosingContact": true,
+    "rawPair12And45InOtherWholesAreNotAutomaticallyYaoCorrespondences": true,
+    "allWholeEligibilityUnobserved": true,
+    "catalogAndCapturedDomesticCount": 14,
+    "numericMinimum14NotApproval": true
+  },
+  "sourceChanged": false,
+  "connectorAuthored": false,
+  "coordinateOrControlMutation": false,
+  "wholesCombined": false,
+  "newPensOrMaskWidthsAuthored": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "parentNativeChecks": [
+    "Whole variant attribution must precede assigning matching raw boundaries: itaiji001's unrestricted14 depends on separated box-closing contact raw8→12; it is not an approved14-pen candidate.",
+    "Basic/VS0 original two 幺 folds have nonzero gaps and remain separate; do not insert bridges or combine another whole's geometry.",
+    "Original terminal15 is uncompiled and unreviewed; no same-pen mask correction is approved by this source-only block audit."
+  ]
+}
