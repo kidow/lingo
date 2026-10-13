@@ -1,0 +1,59 @@
+{
+  "batch": 869,
+  "glyph": "蓧",
+  "attemptedAt": "2026-10-13T19:03:40.621Z",
+  "status": "notStarted:childProviderDoesNotExposeInAppBrowser",
+  "sourceRoot": "u84e7-ue0102",
+  "sourceProofFile": "engine-whole-u84e7-ue0102.json",
+  "sourceProofFileSHA256": "8e2221342ea6ab717b56ca3a8e9ea17ff2428d2b87560366ffb3a96464fece29",
+  "compilerFileSHA256": "6557401b1c3db85709a755cbd8796d3597cea495425386f90ec2b6c050150f6a",
+  "attempts": [
+    {
+      "api": "cua.getBrowser({id:'3'})",
+      "result": "Browser is not available: 3"
+    },
+    {
+      "api": "cua.getState()",
+      "result": "Only Chrome extension browser IDs1/2 exposed; no in-app browser. Native apps provider reports Mac locked/automatic unlock paused."
+    },
+    {
+      "api": "cua.createBrowserTab('iab',wholeURL,{visible:true})",
+      "result": "Browser is not available: iab"
+    }
+  ],
+  "wholeURL": "http://127.0.0.1:64762/?id=u84e7-ue0102",
+  "progressiveURL": "http://127.0.0.1:64763/",
+  "plannedWholeVariants": 4,
+  "wholeVariantsObserved": 0,
+  "plannedDomesticDirections": 15,
+  "domesticDirectionsObserved": 0,
+  "plannedCoarseFrames": 135,
+  "coarseFramesObserved": 0,
+  "finePensObserved": [],
+  "originalBoundaryChecksObserved": [],
+  "actualReplaysObserved": [],
+  "replayCompletionAXObserved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceFilesModified": false,
+  "compilerModified": false,
+  "ownedTabsCreated": [],
+  "rootTabsAccessed": [],
+  "rootTabsClosed": [],
+  "browserwideViewportChanged": false,
+  "ChromeFallbackUsed": false,
+  "unlockAttempted": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "handoff": {
+    "to": "root native browser operator",
+    "childHasPendingBrowserWork": false,
+    "rootMayContinueExistingReviewServers": true
+  },
+  "unreviewed": [
+    "All4 whole variants and selected VS2 domestic grass boundary",
+    "All15 Korean directions and135 intermediate frames",
+    "520px99.99→100 and representative8second actual replay"
+  ]
+}
