@@ -1,0 +1,179 @@
+{
+  "batch": 912,
+  "glyph": "瘥",
+  "checkedDate": "2026-10-14",
+  "stage": "Source-only compiler integrity audit; native whole and boundaries pending",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "archiveRedownloaded": false,
+  "latestSubstitution": false,
+  "source": {
+    "compilerFileSHA256": "8bd0162b5b10ed868127df4d8f33091532143c4342bcb9ded10340d1247889b9",
+    "contract": "Optional third selected identity defaults to primary; all5 sourceRoot/proofFile/proofSHA/headerFile/headerSHA fields and entire wrapped proof/header/preset/8engine pins enforced.",
+    "wholeHeaderPresent": false,
+    "engineHeaderWrappedOnlyInRAM": true,
+    "recordCount": 8,
+    "engineHashChecks": 8,
+    "historicalDataHashesChecked": 2,
+    "missingReferences": [],
+    "completeWholeVariantsExactlyEngineReplayed": 3,
+    "candidateIdentities": [
+      {
+        "sourceRoot": "u7625",
+        "sourceProofFile": "./engine-whole-u7625.json",
+        "sourceProofFileSha256": "543f788d195fc71bba2f621ac11150017642220d801b7794afcad319deba8fec",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "6ea7e636d8a835e3ba88bf404ccbf670dd2d5b2757d743db7863fc1c3f89e434"
+      },
+      {
+        "sourceRoot": "u7625-ue0100",
+        "sourceProofFile": "./engine-whole-u7625-ue0100.json",
+        "sourceProofFileSha256": "fcc19259610d24e0fa20a61a0f4668a44edaf9020bd4ab5e750569358a8b6448",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "6ea7e636d8a835e3ba88bf404ccbf670dd2d5b2757d743db7863fc1c3f89e434"
+      }
+    ],
+    "primarySourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ]
+    ]
+  },
+  "validation": {
+    "actualExit": 0,
+    "deliberatelyBlocked": false,
+    "blockedReason": null,
+    "identityValidatedBeforeDeliberateBlock": false,
+    "compiledPens": 15,
+    "compiledMasks": 15,
+    "compiledOriginalPolygons": 32,
+    "allOriginalPolygonsExactlyOnce": true,
+    "mutationRejectsPerSelectedCase": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ],
+    "identityTamperRejectedPerCase": true,
+    "mutationsRejectedByGuardBeforeDeliberateBlock": false,
+    "inputProofUnchanged": true,
+    "compiledOutlinesSHA256ByRoot": {
+      "u7625": "3100a5ddefe8d5fb527f268245d8d91bfb99369170ac01c00bbb80bf566afdec",
+      "u7625-ue0100": "f2edc85589831b4396d021996e7debe2b3753f8d509e365c3d4d268b411f670b"
+    }
+  },
+  "boundaryAnalysis": {
+    "catalogAndDomesticCount": 15,
+    "independentOriginalEndpointAndMaximumMatchingChecked": true,
+    "wholeNumericFacts": [
+      {
+        "root": "u7625",
+        "raw": 16,
+        "visibleRaw": 15,
+        "minUnrestricted": 15,
+        "consecutiveOnly": 15
+      },
+      {
+        "root": "u7625-g",
+        "raw": 14,
+        "visibleRaw": 14,
+        "minUnrestricted": 14,
+        "consecutiveOnly": 14
+      },
+      {
+        "root": "u7625-ue0100",
+        "raw": 16,
+        "visibleRaw": 15,
+        "minUnrestricted": 15,
+        "consecutiveOnly": 15
+      }
+    ],
+    "nonConsecutiveMergesUsed": [],
+    "emptyMetadata": {
+      "raw": 11,
+      "group": [
+        10,
+        11
+      ],
+      "drawingRaw": [
+        10
+      ],
+      "originalZeroDrawingRowPreserved": true,
+      "newGeometryOrPen": false,
+      "extraEmptyMetadataTamperRejected": true
+    },
+    "numericCountIsNotApproval": true,
+    "nativeWholeAndPenBoundariesUnknown": true,
+    "note": "Empty original raw11 is retained as metadata alongside raw10; it contributes zero drawing calls or polygons. The audit initially assumed groups exclude empty metadata; this audit assumption was corrected without touching compiler/source. Whole g has14 raws and is not substituted for the15 source."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      12
+    ],
+    "originalPureLineVertexBounds": [],
+    "widthChanged": false,
+    "QBCurveWidthInferenceApplied": false,
+    "nativeFineAndReplayPending": true
+  }
+}
