@@ -1,0 +1,172 @@
+{
+  "batch": 870,
+  "glyph": "旐",
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only numerical compiler integrity audit; no native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "source": {
+    "root": "u65d0",
+    "sourceProofFile": "engine-whole-u65d0.json",
+    "sourceProofFileSHA256": "2af8107dfc8e4011b17082d66854164d9c99c459eb148dd98682ed7a5458e5f5",
+    "compilerFileSHA256": "78fd57197c45eb8fbdf79b8bf856dd445b9844a101846d024f61a3251a0ca007",
+    "selectedBodyContainsEngineHeader": true,
+    "engineHeaderWrapperRequired": false,
+    "compilerContract": "Two arguments. Exact selected body digest/trace/groups and all8 engine hashes/preset checked. No explicit third fileIdentity argument; source file byteSHA checked independently.",
+    "engineHashChecks": 8,
+    "recordCount": 6,
+    "completeWholeVariantsExactlyReplayed": 2,
+    "historyCount": 0,
+    "missingDependencies": [],
+    "archiveRedownloaded": false,
+    "latestSubstitution": false
+  },
+  "validation": {
+    "actualExit": 0,
+    "raw": 13,
+    "calls": 18,
+    "L": 8,
+    "Q": 10,
+    "B": 0,
+    "pens": 12,
+    "masks": 14,
+    "originalPolygons": 40,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ]
+    ],
+    "sourceGroupsSHA256": "a5b4278678ffca55a905eecba1bcc1a5ff4873a898e196ea5c5857123db856fd",
+    "compiledOutlinesSHA256": "0d13f3b0e3d2b114dcd90e6f4533877ec6b8f57bdfe445c545ff85d63ea90094",
+    "originalPolygonsExactlyOnce": true,
+    "allRawExactlyOnce": true,
+    "inputProofUnchanged": true,
+    "emptyRawGroups": [],
+    "mutationRejects": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ]
+  },
+  "boundaryAnalysis": {
+    "catalogAndCapturedDomesticCount": 12,
+    "allGroupedRawAndInternalCallsJoinExactly": true,
+    "exactFolds": [
+      {
+        "pen": 3,
+        "raw": [
+          2,
+          3
+        ],
+        "point": [
+          71,
+          86
+        ]
+      }
+    ],
+    "unusedNonConsecutiveContacts": [],
+    "nonConsecutiveMergeUsed": false,
+    "nativePenBoundariesUnknown": true,
+    "numericCountEqualityNotApproval": true,
+    "coordinateOrControlMutation": false,
+    "connectorAuthored": false,
+    "wholeMixing": false,
+    "note": "Numeric12 uses only exact contiguous2→3. Original terminal214 and5 final polygons are same-pen masks; domestic whole/boundaries and transitions remain unobserved."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "pureLineOriginalVertexBounds": [],
+    "originalStopStyles": [],
+    "originalSamePenMaskTransitions": [
+      {
+        "pen": 3,
+        "mask": 2,
+        "start": 0.890499834038811,
+        "direction": "left",
+        "weight": 8,
+        "bounds": [
+          18,
+          87,
+          26,
+          90
+        ],
+        "terminal": 214
+      },
+      {
+        "pen": 10,
+        "mask": 2,
+        "start": 0.8531503387621969,
+        "direction": "up",
+        "weight": 12.5,
+        "bounds": [
+          88.25,
+          73,
+          92.25,
+          85.5
+        ],
+        "terminal": 5
+      }
+    ],
+    "widthChanged": false,
+    "QBCurveWidthInferenceApplied": false,
+    "nativeFineAndReplayPending": true
+  }
+}
