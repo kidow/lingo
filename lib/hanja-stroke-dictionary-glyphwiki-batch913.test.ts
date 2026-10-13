@@ -1,0 +1,8 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch913.json' with {type:'json'}
+import {loadGlyphWikiBatch913Strokes} from './hanja-stroke-dictionary-glyphwiki-batch913.ts'
+import {HANJA_STROKES,hanjaStrokeData} from './hanja-strokes.ts'
+test('蠆 uniquely registered at unchanged catalog boundary',()=>{const e=hanjaStrokeData({glyph:'蠆',strokes:19});assert(e);assert.deepEqual(e,reviewed[0]);assert.equal(e.paths.length,19);assert.equal(HANJA_STROKES.filter(s=>s.glyph==='蠆').length,1);for(const strokes of [18,20])assert.equal(hanjaStrokeData({glyph:'蠆',strokes}),null)})
+test('蠆 reviewed domestic order and exact whole source preserved',()=>{const e=loadGlyphWikiBatch913Strokes(reviewed)[0];assert.deepEqual(e.sourceStrokeIndices,[19,20,22,21,8,9,11,12,13,14,16,17,18,1,2,4,5,6,7]);assert.equal(e.outlines!.flat().length,20);assert.equal(e.outlines!.flat().filter(s=>s.direction==='curve').length,7);assert(reviewed[0].geometryLicense.revision.includes('exact whole u8806-ue0102'));assert.equal(e.sourceReference.dictionaryDirectionStrokes,'1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19')})
+test('蠆 foreign order,trajectory and source replacement rejected',()=>{for(const mutate of [(e:typeof reviewed[number])=>{e.sourceStrokeIndices[0]=999},(e:typeof reviewed[number])=>{e.outlines[0][0].direction='left'},(e:typeof reviewed[number])=>{e.outlines[0][0].weight+=1},(e:typeof reviewed[number])=>{e.geometrySource='0'.repeat(64)},(e:typeof reviewed[number])=>{e.sourceReference.dictionarySvgSha256='0'.repeat(64)}]){const b=structuredClone(reviewed);mutate(b[0]);assert.throws(()=>loadGlyphWikiBatch913Strokes(b))}})

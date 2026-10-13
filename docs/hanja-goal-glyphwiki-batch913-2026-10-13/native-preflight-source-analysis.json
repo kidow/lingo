@@ -1,0 +1,117 @@
+{
+  "batch": 913,
+  "glyph": "蠆",
+  "checkedDate": "2026-10-14",
+  "stage": "Source-only compiler integrity audit; native whole and boundaries pending",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "archiveRedownloaded": false,
+  "latestSubstitution": false,
+  "source": {
+    "compilerFileSHA256": "088f58ae0b6a9c40a3533fd7336aca744035e09a2b822ac79e6a940e2cc5fe60",
+    "contract": "Optional third selected identity defaults to primary; all5 sourceRoot/proofFile/proofSHA/headerFile/headerSHA fields and entire wrapped proof/header/preset/8engine pins enforced.",
+    "wholeHeaderPresent": false,
+    "engineHeaderWrappedOnlyInRAM": true,
+    "recordCount": 12,
+    "engineHashChecks": 8,
+    "historicalDataHashesChecked": 0,
+    "missingReferences": [],
+    "completeWholeVariantsExactlyEngineReplayed": 5,
+    "candidateIdentities": [
+      {
+        "sourceRoot": "u8806",
+        "sourceProofFile": "./engine-whole-u8806.json",
+        "sourceProofFileSha256": "3013bede49f2da0142397e9a1972cb608ca7f4343fb740c9e6c85b3be9775f81",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "1fba65e62cc23e067d4afe88c9bfe987c3f65dec3306f83db13a23e7aaff0933"
+      }
+    ],
+    "primarySourceGroups": []
+  },
+  "validation": {
+    "actualExit": 0,
+    "deliberatelyBlocked": true,
+    "blockedReason": "native-boundary-evidence-required-min16or17-below19",
+    "identityValidatedBeforeDeliberateBlock": true,
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "compiledOriginalPolygons": 0,
+    "allOriginalPolygonsExactlyOnce": "not applicable: no output",
+    "mutationRejectsPerSelectedCase": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ],
+    "identityTamperRejectedPerCase": true,
+    "mutationsRejectedByGuardBeforeDeliberateBlock": true,
+    "inputProofUnchanged": true,
+    "compiledOutlinesSHA256ByRoot": {}
+  },
+  "boundaryAnalysis": {
+    "catalogAndDomesticCount": 19,
+    "independentOriginalEndpointAndMaximumMatchingChecked": true,
+    "wholeNumericFacts": [
+      {
+        "root": "u8806",
+        "raw": 21,
+        "visibleRaw": 21,
+        "minUnrestricted": 16,
+        "consecutiveOnly": 18
+      },
+      {
+        "root": "u8806-ue0100",
+        "raw": 21,
+        "visibleRaw": 21,
+        "minUnrestricted": 16,
+        "consecutiveOnly": 18
+      },
+      {
+        "root": "u8806-ue0101",
+        "raw": 21,
+        "visibleRaw": 21,
+        "minUnrestricted": 16,
+        "consecutiveOnly": 18
+      },
+      {
+        "root": "u8806-ue0102",
+        "raw": 22,
+        "visibleRaw": 22,
+        "minUnrestricted": 17,
+        "consecutiveOnly": 19
+      },
+      {
+        "root": "u8806-var-001",
+        "raw": 22,
+        "visibleRaw": 22,
+        "minUnrestricted": 17,
+        "consecutiveOnly": 19
+      }
+    ],
+    "nonConsecutiveMergesUsed": [],
+    "emptyMetadata": null,
+    "numericCountIsNotApproval": true,
+    "nativeWholeAndPenBoundariesUnknown": true,
+    "note": "Unrestricted16/17 includes nonconsecutive0→3 and7→11 closures. Consecutive-only basic grouping gives18; VS2 andvar001 can numerically give19 using consecutive1→2,8→9,13→14. The native whole/pen-boundary hold does not prove19 is impossible. No compiler candidate output is emitted."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [],
+    "originalPureLineVertexBounds": [],
+    "widthChanged": false,
+    "QBCurveWidthInferenceApplied": false,
+    "nativeFineAndReplayPending": true
+  }
+}
