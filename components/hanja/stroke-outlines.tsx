@@ -41,7 +41,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
           ? <g key={index}>
             <defs><mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
               <path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth}
-                strokeLinecap="round" pathLength="1" strokeDasharray="1" strokeDashoffset={1 - p} />
+                strokeLinecap="round" pathLength="1" strokeDasharray={`${p} 2`} strokeDashoffset={0} />
             </mask></defs>
             <path d={segment.outline} mask={`url(#${clipId})`} />
           </g>

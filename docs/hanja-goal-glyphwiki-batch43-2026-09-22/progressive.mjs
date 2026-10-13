@@ -56,7 +56,7 @@ export function renderProgressive(strokes, stroke, progress, prefix = 'reveal') 
     if (p === 1) return `<path d="${s.outline}"/>`
     const id = `${prefix}-${stroke}-${i}`
     const [x,y,right,bottom] = s.bounds, width=right-x,height=bottom-y
-    if (s.direction === 'curve') return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d="${s.revealPath}" fill="none" stroke="white" stroke-width="${s.revealWidth}" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${1-p}"/></mask></defs><path d="${s.outline}" mask="url(#${id})"/>`
+    if (s.direction === 'curve') return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d="${s.revealPath}" fill="none" stroke="white" stroke-width="${s.revealWidth}" stroke-linecap="round" pathLength="1" stroke-dasharray="${p} 2" stroke-dashoffset="0"/></mask></defs><path d="${s.outline}" mask="url(#${id})"/>`
     const horizontal = s.direction === 'right' || s.direction === 'left'
     const rx = s.direction === 'left' ? right-width*p : x
     const ry = s.direction === 'up' ? bottom-height*p : y
