@@ -1,0 +1,153 @@
+{
+  "batch": 855,
+  "glyph": "棖",
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only numerical compiler integrity audit; no native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "source": {
+    "root": "u68d6",
+    "sourceProofFile": "engine-whole-u68d6.json",
+    "sourceProofFileSHA256": "6e10a8f3fb3a667c223b0baabe6ef838e01e17935dc003b50d54a223b64e7da3",
+    "compilerFileSHA256": "8e65f26897a7d9805356e703ba47965d5b385027243b6f96f8ec998b0bcd34e2",
+    "selectedBodyContainsEngineHeader": false,
+    "engineProofHeaderWrappedOnlyInRAM": true,
+    "compilerContract": "Two arguments. Exact selected body digest/trace/groups and all8 engine hashes/preset checked. No explicit third fileIdentity argument; source file byteSHA checked independently.",
+    "engineHashChecks": 8,
+    "recordCount": 4,
+    "completeWholeVariantsExactlyReplayed": 2,
+    "historyCount": 0,
+    "missingDependencies": [],
+    "archiveRedownloaded": false,
+    "latestSubstitution": false
+  },
+  "validation": {
+    "actualExit": 0,
+    "raw": 13,
+    "calls": 13,
+    "L": 8,
+    "Q": 5,
+    "B": 0,
+    "pens": 12,
+    "masks": 12,
+    "originalPolygons": 25,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ]
+    ],
+    "sourceGroupsSHA256": "ba8088e496d677cc151b0b8523bc72181070fbc25348c43c2b0ee2f2840f9b16",
+    "compiledOutlinesSHA256": "abce4f5720317890a2b1fccf341966efd8c16101db780a2acc8459f3bd2b0ed4",
+    "originalPolygonsExactlyOnce": true,
+    "allRawExactlyOnce": true,
+    "inputProofUnchanged": true,
+    "emptyRawGroups": [],
+    "mutationRejects": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ]
+  },
+  "boundaryAnalysis": {
+    "catalogAndCapturedDomesticCount": 12,
+    "allGroupedRawAndInternalCallsJoinExactly": true,
+    "exactFolds": [
+      {
+        "pen": 5,
+        "raw": [
+          4,
+          9
+        ],
+        "point": [
+          102.63,
+          105
+        ],
+        "nonConsecutive": true,
+        "kind": "Original collinear downward segments; no invented connector",
+        "nativeBoundaryApproved": false
+      }
+    ],
+    "unusedNonConsecutiveContacts": [],
+    "nativePenBoundariesUnknown": true,
+    "numericCountEqualityNotApproval": true,
+    "coordinateOrControlMutation": false,
+    "connectorAuthored": false,
+    "wholeMixing": false,
+    "note": "Candidate12 uses nonconsecutive raw4→9 original vertical continuation; contiguous-only original grouping has13 pens. Domestic order/boundary must establish whether these form one pen; count alone cannot approve."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      3,
+      4,
+      5,
+      10,
+      11,
+      12
+    ],
+    "pureLineOriginalVertexBounds": [
+      {
+        "pen": 5,
+        "raw": [
+          4,
+          9
+        ],
+        "terminal": 32,
+        "vertexCount": 8,
+        "maxOriginalVertexDistanceKage": 10.018028748211897,
+        "width": 14
+      }
+    ],
+    "originalSamePenMaskTransitions": [],
+    "widthChanged": false,
+    "QBCurveWidthInferenceApplied": false,
+    "nativeFineAndReplayPending": true
+  }
+}
