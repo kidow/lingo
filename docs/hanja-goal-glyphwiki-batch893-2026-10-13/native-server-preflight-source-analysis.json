@@ -1,0 +1,168 @@
+{
+  "batch": 893,
+  "glyph": "禛",
+  "scope": "Source-only native server preflight",
+  "nativeApproval": false,
+  "nativeDirectionsReviewed": 0,
+  "nativeFramesReviewed": 0,
+  "nativeReplaysReviewed": 0,
+  "runtimeApplied": false,
+  "compilerModified": false,
+  "originalGeometryModified": false,
+  "privateGraphicsSaved": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "sourceVerifierExecuted": true,
+  "sourceVerifierExecution": {
+    "operator": "hanja_batch760_761_analysis",
+    "process": "82039 original verify-source shared RAM archive worker",
+    "originalVerifierExecutions": 1,
+    "sourcePassed": true,
+    "records": 13,
+    "wholeNames": 6,
+    "completeWholeRoots": 2,
+    "blockedWholeRoots": 4,
+    "domesticClips": 15,
+    "engineFiles": 8,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false,
+    "publicCacheURLs": 14,
+    "archiveFetches": 1,
+    "sourceEvidencePassedFieldAbsent": true
+  },
+  "selectedRoot": "u799b-g",
+  "selectedProofFile": "engine-whole-u799b-g.json",
+  "selectedProofFileSHA256": "7add4bee1d201f76040ab7c00b733d55dfd97283d1d67408d96caa5847e97f58",
+  "headerProofSHA256": "301862448cc18378787df5a016e63509e62d141c0de5835bfce2c9b2b6040849",
+  "allWholeFilePins": {
+    "u799b": "53c4994bda1cd33d01ce316181ef12833f5016342ace4db1b0b52aadbd6e2165",
+    "u799b-g": "7add4bee1d201f76040ab7c00b733d55dfd97283d1d67408d96caa5847e97f58",
+    "u799b-ue0100": "08f798d3efe9bee96933ec40d60b11cbae798eaf929b126b817f3d85a5b02f22",
+    "u799b-ue0101": "57bc28fe14636632ed86079032a6069c8fdbb000be4aceef123b05f611af99b7",
+    "u799b-ue0102": "7fdd497381111c8985e1b97a05dbb3e635e540fd3b8c51cfeb29d346fb11f563",
+    "u799b-ue0103": "64422b80d9b8544cd4902ac66b0770f36956b814a7ad4b55034eb7968cab9217"
+  },
+  "compilerContract": "Two arguments; server exact root/file/SHA/header/archive guards with original engine header only overlaid in RAM",
+  "localCompileVerification": {
+    "passed": true,
+    "pens": 15,
+    "masks": 15,
+    "polygons": 26,
+    "allOriginalPolygonsOnce": true,
+    "inputImmutable": true,
+    "mutationsRejected": 6,
+    "completeWholeChecks": 2,
+    "blockedSiblingNullChecks": 4
+  },
+  "wholeRiskFacts": [
+    {
+      "root": "u799b-g",
+      "sourceComplete": true,
+      "raw": 16,
+      "curveRaw": [
+        0,
+        2,
+        4,
+        14,
+        15
+      ],
+      "terminals": []
+    },
+    {
+      "root": "u799b-ue0100",
+      "sourceComplete": false,
+      "missing": [
+        "u76ee-j"
+      ],
+      "geometry": null
+    },
+    {
+      "root": "u799b-ue0101",
+      "sourceComplete": false,
+      "missing": [
+        "u76ee-j"
+      ],
+      "geometry": null
+    },
+    {
+      "root": "u799b-ue0102",
+      "sourceComplete": true,
+      "raw": 16,
+      "curveRaw": [
+        2,
+        4,
+        14,
+        15
+      ],
+      "terminals": [
+        {
+          "raw": 7,
+          "kind": "cdDrawLine",
+          "terminal": 213
+        },
+        {
+          "raw": 9,
+          "kind": "cdDrawLine",
+          "terminal": 223
+        }
+      ]
+    },
+    {
+      "root": "u799b-ue0103",
+      "sourceComplete": false,
+      "missing": [
+        "u76ee-j"
+      ],
+      "geometry": null
+    },
+    {
+      "root": "u799b",
+      "sourceComplete": false,
+      "missing": [
+        "u76ee-j"
+      ],
+      "geometry": null
+    }
+  ],
+  "foldMaskVertexBounds": [],
+  "maskBoundaries": [],
+  "servers": {
+    "wholePort": 64780,
+    "wholePid": 4517,
+    "progressivePort": 64781,
+    "progressivePid": 6219,
+    "HTTPChecksPassed": true,
+    "pairs": 15,
+    "coarseSamples": 9,
+    "enlargedPixels": 520,
+    "replayDurationMs": 8000,
+    "nativeObserved": false
+  },
+  "fineRiskPens": [
+    1,
+    2,
+    4,
+    6,
+    14,
+    15
+  ],
+  "missingSiblingPolicy": {
+    "missing": [
+      "u76ee-j"
+    ],
+    "roots": [
+      "u799b",
+      "u799b-ue0100",
+      "u799b-ue0101",
+      "u799b-ue0103"
+    ],
+    "geometry": null,
+    "HTMLContainsSVG": false,
+    "completeGAndVS2CannotSubstituteForMissingOriginal": true
+  },
+  "unreviewed": [
+    "Whole identity and all domestic order/direction/boundaries pending root browser",
+    "All curves and tips need actual fine/replay review"
+  ],
+  "autoWidthCorrection": false
+}
