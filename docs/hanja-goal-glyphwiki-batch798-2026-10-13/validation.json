@@ -1,0 +1,149 @@
+{
+  "batch": 798,
+  "glyph": "鴥",
+  "id": "u9d25",
+  "status": "held: 穴 final horizontal-to-right curve is disconnected; numeric16 relies on incidental 鳥 closing merge",
+  "sourceVerification": {
+    "sourcePassed": true,
+    "records": 7,
+    "wholeRoots": 1,
+    "engineFiles": 8,
+    "catalogStrokes": 16,
+    "domesticClips": 16,
+    "nativeApprovalAsserted": false
+  },
+  "nativeReview": {
+    "wholeVariants": 1,
+    "compatibleWholeRoots": [
+      "u9d25"
+    ],
+    "staticDirections": 5,
+    "progressiveFrames": 0,
+    "approvedFrames": 0,
+    "finePens": [],
+    "finePassed": false,
+    "allStrokesReviewed": false,
+    "replayApproved": false,
+    "blockedPens": [
+      {
+        "raw": [
+          17,
+          18
+        ],
+        "reason": "Domestic pen16 starts horizontal then downward/right curve; original horizontal end158.44,83.275 vs curve start151.42,83.275,delta[-7.02,0]. No inferred connector."
+      },
+      {
+        "raw": [
+          1,
+          7,
+          8
+        ],
+        "reason": "Numeric16 grouping would merge distinct 鳥 left stem with bottom fold; native whole and domestic pen boundaries cannot authorize incidental closing."
+      }
+    ]
+  },
+  "runtime": {
+    "applied": 5400,
+    "total": 5978,
+    "remaining": 578,
+    "held": 198,
+    "appliedThisBatch": 0,
+    "unique": 5400,
+    "coverage": {
+      "1급": {
+        "total": 1145,
+        "applied": 1082,
+        "remaining": 63
+      },
+      "2급": {
+        "total": 538,
+        "applied": 537,
+        "remaining": 1
+      },
+      "3급II": {
+        "total": 500,
+        "applied": 500,
+        "remaining": 0
+      },
+      "3급": {
+        "total": 317,
+        "applied": 317,
+        "remaining": 0
+      },
+      "4급II": {
+        "total": 250,
+        "applied": 250,
+        "remaining": 0
+      },
+      "4급": {
+        "total": 250,
+        "applied": 250,
+        "remaining": 0
+      },
+      "5급II": {
+        "total": 100,
+        "applied": 100,
+        "remaining": 0
+      },
+      "5급": {
+        "total": 100,
+        "applied": 100,
+        "remaining": 0
+      },
+      "6급II": {
+        "total": 75,
+        "applied": 75,
+        "remaining": 0
+      },
+      "6급": {
+        "total": 75,
+        "applied": 75,
+        "remaining": 0
+      },
+      "7급II": {
+        "total": 50,
+        "applied": 50,
+        "remaining": 0
+      },
+      "7급": {
+        "total": 50,
+        "applied": 50,
+        "remaining": 0
+      },
+      "8급": {
+        "total": 50,
+        "applied": 50,
+        "remaining": 0
+      },
+      "특급II": {
+        "total": 1150,
+        "applied": 1065,
+        "remaining": 85
+      },
+      "특급": {
+        "total": 1328,
+        "applied": 899,
+        "remaining": 429
+      }
+    }
+  },
+  "checks": {
+    "sourceVerifierPassed": true,
+    "focusedTestsPassed": 0,
+    "productionBuild": "not run:user requested no builds",
+    "fullSuite": "not run:data-only batch",
+    "mobile": "not run:data-only batch"
+  },
+  "verificationPolicy": {
+    "effective": "2026-10-12 user instruction",
+    "productionBuildPerBatch": false,
+    "fullSuitePerBatch": false,
+    "scope": "Source/order/path checks and focused changed-code checks; no production build."
+  },
+  "privateMediaSaved": false,
+  "jev": {
+    "status": "not run: automatic approval review blocked new30summary transmission; permission pending",
+    "advisoryOnly": true,
+    "runtimeApproval": false
+  }
+}
