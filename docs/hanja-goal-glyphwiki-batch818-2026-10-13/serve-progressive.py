@@ -1,0 +1,10 @@
+import sys
+sys.dont_write_bytecode=True
+from pathlib import Path
+source=(Path(__file__).resolve().parent.parent/'hanja-goal-glyphwiki-batch43-2026-09-22/serve-progressive.py').read_text()
+source=source.replace("['node','--input-type=module'","['/opt/homebrew/bin/node','--input-type=module'").replace('芭','陾').replace('51897','64517').replace("'strokes': 8","'strokes': 12").replace("['8']","['12']").replace('<= 8','<= 12').replace('range(1,9)','range(1,13)').replace("+'/8","+'/12")
+source=source.replace("body = ('<!doctype", "large = parse_qs(urlparse(self.path).query).get('enlarged',['0'])[0]=='1'\n            body = ('<!doctype")
+source=source.replace("+ '<button id=\"play\">재생</button>", "+ ('<style>body{width:1200px}svg{width:520px;height:520px}.samples{display:none}</style>' if large else '') + '<button onclick=\"show(.5)\">50%</button><button onclick=\"show(.75)\">75%</button><button onclick=\"show(.99)\">99%</button><button onclick=\"show(.9999)\">99.99%</button><button onclick=\"show(1)\">100%</button><button id=\"play\">재생</button>")
+source=source.replace('<button id=\"play\">재생</button>', "<button onclick=\"show(0.8739771130851621)\">2 경계 직전</button><button onclick=\"show(0.8739771131851621)\">2 경계</button><button onclick=\"show(0.8739771132851621)\">2 경계 직후</button><button onclick=\"show(0.9192404520452502)\">7 경계 직전</button><button onclick=\"show(0.9192404521452502)\">7 경계</button><button onclick=\"show(0.9192404522452502)\">7 경계 직후</button><button id=\"play\">재생</button>")
+source=source.replace('(t-start)/1600','(t-start)/8000')
+exec(compile(source,str(Path(__file__).resolve()),'exec'))
