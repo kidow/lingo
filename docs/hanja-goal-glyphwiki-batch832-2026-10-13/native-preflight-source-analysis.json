@@ -1,0 +1,328 @@
+{
+  "batch": 832,
+  "glyph": "萇",
+  "stage": "Source-only preflight before root native review",
+  "status": "Three-grass numerical12 candidate only; whole form and lower-fold boundary unapproved",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "nativeFramesReviewed": 0,
+  "nativeReplayReviewed": false,
+  "runtimeApplied": false,
+  "runtimeAlreadyRegisteredAtAudit": false,
+  "selectedSource": {
+    "root": "u8407",
+    "file": "engine-whole-u8407.json",
+    "fileSha256": "9d75cb2107b46a390dd89188177f975b35a892c735332a965856111b00a382c8",
+    "input": "{engineRevision:engineProof.engineRevision,engineHashes:engineProof.engineHashes,...selectedWhole}",
+    "thirdIdentityArgumentRequired": false,
+    "compilerSha256": "9925187bbce47cfedebde12c55627bc7c25d4badb9921a83e7bf8edc46b174d7",
+    "compilerChanged": false,
+    "incompatibleFourGrassProofRejected": true
+  },
+  "wholeSourceDifference": {
+    "baseVs0Vs1": {
+      "roots": [
+        "u8407",
+        "u8407-ue0100",
+        "u8407-ue0101"
+      ],
+      "sourceGrass": "u8279-03",
+      "grassRaw": [
+        0,
+        1,
+        2
+      ],
+      "grassPens": 3,
+      "grassDirections": [
+        "horizontal",
+        "vertical",
+        "vertical"
+      ],
+      "longBodySource": "u9577-04",
+      "bodyRawCount": 9,
+      "totalRawCount": 12,
+      "exactDirectedJoins": [],
+      "strictMinimumOriginalPens": 12,
+      "wholeFormNativeApproved": false
+    },
+    "vs2": {
+      "root": "u8407-ue0102",
+      "wholeDependency": "koseki-351520",
+      "grassSource": "ufa5e-03 -> u8279-k03",
+      "grassRaw": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "grassPens": 4,
+      "sourceGrassOrder": [
+        "left horizontal",
+        "left vertical",
+        "right vertical",
+        "right horizontal"
+      ],
+      "longBodySource": "u9577-04",
+      "bodyRawCount": 9,
+      "totalRawCount": 13,
+      "exactDirectedJoins": [],
+      "strictMinimumOriginalPens": 13,
+      "wholeFormNativeApproved": false
+    },
+    "interpretation": "12 as a catalog total cannot decide grass3 versus grass4 eligibility. The four-grass whole has13 original paths with no exact join; original count cannot be reduced by inventing a fold connector."
+  },
+  "fixedSourceValidation": {
+    "localPinnedFileHashChecks": 6,
+    "localRecordHashChecks": 9,
+    "explicitHistoricalProviderVersions": 0,
+    "missingFixedDependencies": [],
+    "archive": {
+      "revision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "redownloaded": false,
+      "scope": "Already captured fixed bare and alias records retained and locally hash checked. No fresh full archive replay is asserted."
+    },
+    "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "engineSourceUrlPattern": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/<engineFile>",
+    "engineHttpFilesHashVerified": 8,
+    "preset": {
+      "kMage": 10,
+      "kWidth": 5,
+      "kMinWidthT": 6,
+      "kAdjustMageStep": 5
+    },
+    "engineWholeReproduction": [
+      {
+        "root": "u8407-ue0101",
+        "raw": 12,
+        "drawingCalls": 12,
+        "polygons": 24,
+        "wholePolygonsSha256": "8e4458780eb6bd81918e8d2977662c4bcddca85f531c33939dc0123ef57e92ef",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u8407-ue0100",
+        "raw": 12,
+        "drawingCalls": 12,
+        "polygons": 24,
+        "wholePolygonsSha256": "8e4458780eb6bd81918e8d2977662c4bcddca85f531c33939dc0123ef57e92ef",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u8407",
+        "raw": 12,
+        "drawingCalls": 12,
+        "polygons": 24,
+        "wholePolygonsSha256": "8e4458780eb6bd81918e8d2977662c4bcddca85f531c33939dc0123ef57e92ef",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u8407-ue0102",
+        "raw": 13,
+        "drawingCalls": 13,
+        "polygons": 26,
+        "wholePolygonsSha256": "affa34e377741702d3f33d4184f48a9f7de263145bc0c06c77ec7770c03bba5c",
+        "engineWholeExactlyReplayed": true
+      }
+    ],
+    "allRawMetadataRetained": true,
+    "latestSubstitution": false,
+    "privateGraphicsRequested": false
+  },
+  "numericCompilerValidation": {
+    "passed": true,
+    "sourceRoot": "u8407",
+    "sourceProofFile": "engine-whole-u8407.json",
+    "sourceWholeFileSha256": "9d75cb2107b46a390dd89188177f975b35a892c735332a965856111b00a382c8",
+    "compilerSha256": "9925187bbce47cfedebde12c55627bc7c25d4badb9921a83e7bf8edc46b174d7",
+    "compiledOutlinesSha256": "50a0dd89a2964059b26bc0bba3e51d8a118d6d327e45dfe2e71209536dd1391e",
+    "sourceGroupsSha256": "b1b1b71c576d6cf9dd6c00333ed58a96e6359163069911f70081afb1e925bd5a",
+    "sourceGroupsZeroBased": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ]
+    ],
+    "rawGroups": 12,
+    "drawingCalls": 12,
+    "emptyRawGroups": [],
+    "pens": 12,
+    "masks": 12,
+    "polygons": 24,
+    "curveCalls": 3,
+    "bezierCalls": 0,
+    "curveFinePens": [
+      5,
+      6,
+      7
+    ],
+    "curveWidths": [
+      14,
+      14,
+      14
+    ],
+    "tailMasks": 0,
+    "originalMaskTransitions": [],
+    "terminal5or14or15Calls": [],
+    "nonexactLowerFold": {
+      "fromRaw": 3,
+      "toRaw": 4,
+      "from": [
+        50,
+        169.795
+      ],
+      "to": [
+        23,
+        179.7
+      ],
+      "delta": [
+        -27,
+        9.905000000000001
+      ],
+      "distance": 28.759503211981947
+    },
+    "incompatibleFourGrassProofRejected": true,
+    "fileHashChecks": 6,
+    "recordHashChecks": 9,
+    "mutationRejects": 6,
+    "mutations": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ],
+    "originalPolygonIdentityExactlyOnce": true,
+    "inputProofUnchanged": true,
+    "sourceGroupingUnchanged": true,
+    "nativeApproval": false,
+    "nativeFramesReviewed": 0,
+    "runtimeAlreadyRegistered": false,
+    "buildRun": false
+  },
+  "curveAndTailAssessment": {
+    "sourceCurveCalls": 3,
+    "sourceBezierCalls": 0,
+    "compiledCurveFinePens": [
+      5,
+      6,
+      7
+    ],
+    "unchangedCurveRevealWidths": [
+      14,
+      14,
+      14
+    ],
+    "originalTerminal5or14or15Calls": [],
+    "tailMasks": 0,
+    "originalMaskTransitions": [],
+    "tailGeometryInvented": false,
+    "automaticCurveWidthExpansion": false,
+    "tailMaskSplitNeededFromCurrentNumericSource": false,
+    "caveat": "No terminal-tail split is inferred. Root must observe the actual source masks at fine completion before approving."
+  },
+  "releaseBlockers": {
+    "grassEligibilityNativeUnconfirmed": true,
+    "fourGrassWholeNumericMinimumExceedsCatalog": {
+      "root": "u8407-ue0102",
+      "originalPens": 13,
+      "catalog": 12,
+      "approved": false
+    },
+    "lowerFoldSourceGap": {
+      "fromRaw": 3,
+      "toRaw": 4,
+      "from": [
+        50,
+        169.795
+      ],
+      "to": [
+        23,
+        179.7
+      ],
+      "delta": [
+        -27,
+        9.905000000000001
+      ],
+      "distance": 28.759503211981947,
+      "vs2Raw": [
+        4,
+        5
+      ],
+      "sourceKinds": [
+        "cdDrawLine",
+        "cdDrawCurve"
+      ],
+      "exactJoin": false,
+      "domesticOnePenBoundaryObserved": false,
+      "connectorAllowed": false,
+      "meaning": "The original vertical and rising quadratic begin/end at different coordinates. Do not merge by drawing a connector or by moving/reversing an authored path."
+    },
+    "domesticOrderUnconfirmed": true
+  },
+  "plannedNativeChecks": {
+    "wholeRoots": [
+      "u8407",
+      "u8407-ue0100",
+      "u8407-ue0101",
+      "u8407-ue0102"
+    ],
+    "firstPriority": "Domestic grass pen count and full whole eligibility, then the 長 lower vertical/rising stroke boundary.",
+    "ifWholeEligible": {
+      "directions": 12,
+      "coarseFrames": 108,
+      "curveFinePens": [
+        5,
+        6,
+        7
+      ],
+      "fineFractions": [
+        0.9999,
+        1
+      ],
+      "replayRequired": true
+    },
+    "nativeObservedByThisAgent": 0
+  },
+  "coordinateMutation": false,
+  "pathsReversedOrMoved": false,
+  "connectorsAuthored": false,
+  "polygonsRegenerated": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
