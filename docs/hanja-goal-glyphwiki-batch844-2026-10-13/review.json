@@ -1,0 +1,190 @@
+{
+  "glyph": "闐",
+  "batch": 844,
+  "status": "held:VS3pen10NativeFineDiscontinuityUnresolved",
+  "reason": "Native520px pen10 99.99→100 twice shows a finite lower-right terminal shape change. Source numeric model does not explain this; renderer diagnosis pending. VS3 pen16 original independent masks pass native boundary, but this is not whole-character approval. No coordinate,path,width or whole-splice repair allowed.",
+  "runtimeApplied": false,
+  "wholeVariantsReviewed": 4,
+  "wholeVariants": [
+    {
+      "name": "u95d0-g"
+    },
+    {
+      "name": "u95d0-ue0102"
+    },
+    {
+      "name": "u95d0-ue0103"
+    },
+    {
+      "name": "u95d0-itaiji-001"
+    }
+  ],
+  "compatibleWholeRoots": [
+    "u95d0-ue0103"
+  ],
+  "dictionaryDirectionStrokes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "sourceGroupsZeroBased": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18,
+      19
+    ],
+    [
+      20
+    ],
+    [
+      21
+    ]
+  ],
+  "compiledPens": 18,
+  "masks": 21,
+  "progressiveFramesReviewed": 0,
+  "progressiveFramesApproved": 0,
+  "curveFineChecks": [
+    {
+      "pen": 2,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "observations": 1
+    },
+    {
+      "pen": 6,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "observations": 1
+    },
+    {
+      "pen": 9,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "observations": 1
+    },
+    {
+      "pen": 10,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": false,
+      "observations": 2
+    },
+    {
+      "pen": 16,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "observations": 1
+    }
+  ],
+  "maskBoundaryObservations": [
+    {
+      "pen": 6,
+      "mask": 2,
+      "boundary": 0.9145817991512643,
+      "before": true,
+      "at": true,
+      "after": true,
+      "passed": true,
+      "size": 520
+    },
+    {
+      "pen": 16,
+      "mask": 2,
+      "boundary": 0.37695885829897063,
+      "before": true,
+      "at": true,
+      "after": true,
+      "passed": true,
+      "size": 520
+    }
+  ],
+  "blockedPens": [
+    10
+  ],
+  "unreviewedFinePens": [
+    12,
+    17,
+    18
+  ],
+  "unreviewedMaskBoundaryPens": [
+    10
+  ],
+  "allStrokesReviewed": false,
+  "replayApproved": false,
+  "replayPens": [],
+  "privateMediaSaved": false,
+  "verifiedAt": "2026-10-14",
+  "releaseCondition": "Resolve actual native fine10 discrepancy without source geometry mutation,then all remaining fine/boundary/frame/replay review."
+}
