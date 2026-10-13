@@ -1,0 +1,32 @@
+{
+  "batch": 911,
+  "glyph": "韔",
+  "port": 64793,
+  "catalog": 17,
+  "domestic": 17,
+  "pins": {
+    "sources.json": "d9c87555d7e9a898f9a5243dd49d1a9ebf711d9829a1113a99e54842c57cb024",
+    "metadata.json": "901a453224a69c2a052e1d45bb79553dd6d1feba235efb598d70fbba1036bcfe",
+    "engine-proof.json": "e8a2b01d26c9cd76964af97ae98e2c458039f659a95ef1e7a30ba1bfb5a8ece4",
+    "progressive.mjs": "72c70a0409a2c4364285e5b1490b6fc7a45e77abf26530c3e832aae3ed918f8b",
+    "engine-whole-u97d4-ue0100.json": "bdf34b3271766ea67689b1defad2e0cf19159cf2d20fd31545b160787fd29171",
+    "engine-whole-u97d4-ue0101.json": "bdf34b3271766ea67689b1defad2e0cf19159cf2d20fd31545b160787fd29171",
+    "engine-whole-u97d4-ue0102.json": "8299aea9704ca655a3f9931d67470920b01a607aec928baec1dd893a6fb71abb",
+    "engine-whole-u97d4.json": "bdf34b3271766ea67689b1defad2e0cf19159cf2d20fd31545b160787fd29171",
+    "blocked-source-contract.mjs": "05b6be10e70f87db4a11dd3ced0c4c967df42942dda6c3f1dc1509c3a6017164"
+  },
+  "wholeNames": [
+    "u97d4-ue0100",
+    "u97d4-ue0101",
+    "u97d4-ue0102",
+    "u97d4"
+  ],
+  "identity": {
+    "sourceRoot": "u97d4",
+    "sourceProofFile": "./engine-whole-u97d4.json",
+    "sourceProofFileSha256": "bdf34b3271766ea67689b1defad2e0cf19159cf2d20fd31545b160787fd29171",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "e8a2b01d26c9cd76964af97ae98e2c458039f659a95ef1e7a30ba1bfb5a8ece4"
+  },
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';\nconst d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch911-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=b=>createHash('sha256').update(b).digest('hex');\nfor(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p,'Pinned input '+f);\nconst m=await import(d+\"/blocked-source-contract.mjs\"),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);\nconst bytes=fs.readFileSync(d+'/'+id.sourceProofFile),headerBytes=fs.readFileSync(d+'/'+id.sourceHeaderFile);assert.equal(sha(bytes),id.sourceProofFileSha256);assert.equal(sha(headerBytes),id.sourceHeaderFileSha256);\nconst s=JSON.parse(bytes),h=JSON.parse(headerBytes),proof={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(proof);assert.equal(sha(JSON.stringify(proof)),\"7a94408d12337698d02178aca56825b6bebb56e80b5d1760477ee0118bda3b34\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nlet expected=false;try{m.validateBlockedCandidate(proof.trace,proof,id)}catch(e){assert.equal(e.message,m.blockedReason);expected=true}assert(expected);assert.equal(JSON.stringify(proof),before);\nconsole.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,reason:m.blockedReason,compiledPens:0,compiledMasks:0,progressiveFrames:0,replay:0,blocked:true,nativeApproval:false}));"
+}
