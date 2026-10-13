@@ -1,0 +1,246 @@
+{
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only compiler/source integrity audit; no native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "archiveRedownloaded": false,
+  "latestSubstitution": false,
+  "batch": 888,
+  "glyph": "濈",
+  "source": {
+    "root": "u6fc8",
+    "sourceProofFile": "engine-whole-u6fc8.json",
+    "sourceProofFileSHA256": "26241702ea2ecf023a5e4e1d106467f80a435e16e12c23eddb0929c5edc7fd64",
+    "compilerFileSHA256": "e889cb7edce580f2d1f85cd6ee663082ab5dd989cc7826ae2f930a398a0dfc9b",
+    "wholeHeaderPresent": false,
+    "engineHeaderWrappedOnlyInRAM": true,
+    "compilerContract": "Two arguments; selected full-body digest, trace/groups, all8 engine hashes and preset pinned. FilebyteSHA checked independently.",
+    "engineHashChecks": 8,
+    "recordCount": 16,
+    "completeWholeVariantsExactlyEngineReplayed": 4,
+    "missingReferences": [],
+    "historyCount": 0
+  },
+  "validation": {
+    "actualExit": 0,
+    "raw": 18,
+    "calls": 18,
+    "L": 10,
+    "Q": 7,
+    "B": 1,
+    "pens": 16,
+    "masks": 16,
+    "originalPolygons": 33,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ]
+    ],
+    "sourceGroupsSHA256": "ec132a3a832fa7f6fb0b1ad13161a157bc2fbd2a2f748beec208a94da1bc042c",
+    "compiledOutlinesSHA256": "0b2a5cc775f9a19c5d7022d21ba58bd763afad479bc46b2997e6c3c169d86cf8",
+    "allOriginalPolygonsExactlyOnce": true,
+    "allVisibleRawExactlyOnce": true,
+    "originalEmptyRawGroups": [],
+    "inputProofUnchanged": true,
+    "mutationRejects": 6,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineFileHash",
+      "wholeTraceCoordinate",
+      "numericRawGrouping"
+    ],
+    "extraEmptyMetadataTamperRejected": false
+  },
+  "boundaryAnalysis": {
+    "catalogAndDomesticCount": 16,
+    "allGroupedRawAndInternalCallsExact": true,
+    "exactFolds": [
+      {
+        "pen": 5,
+        "raw": [
+          4,
+          7
+        ],
+        "point": [
+          72.31203400000001,
+          55.2
+        ]
+      },
+      {
+        "pen": 6,
+        "raw": [
+          5,
+          6
+        ],
+        "point": [
+          109.74256600000001,
+          22.8
+        ]
+      }
+    ],
+    "nonConsecutiveMergesUsed": [
+      [
+        4,
+        7
+      ]
+    ],
+    "unusedNonConsecutiveContacts": [],
+    "domesticBoundariesUnknown": true,
+    "numericCountIsNotApproval": true,
+    "note": "Candidate16 depends on nonconsecutive box-closing4→7; contiguous-only yields17. Four whole variants differ, including same-count VS0 polygon differences and17raw VS2. Numeric count does not approve shape/boundary. Original raw16 cubic terminal15 remains in one curve mask; final engine-produced upward hook must be inspected at99.99→100 and replay, with no automatic widening or tail separation."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      13,
+      14,
+      15,
+      16
+    ],
+    "pureLineOriginalVertexBounds": [
+      {
+        "pen": 5,
+        "raw": [
+          4,
+          7
+        ],
+        "terminal": 2,
+        "vertices": 8,
+        "maxOriginalVertexDistanceKage": 10.007225030804301,
+        "width": 14
+      },
+      {
+        "pen": 6,
+        "raw": [
+          5,
+          6
+        ],
+        "terminal": 223,
+        "vertices": 13,
+        "maxOriginalVertexDistanceKage": 11.683860828696826,
+        "width": 14
+      }
+    ],
+    "originalStopStyles": [
+      {
+        "raw": 4,
+        "terminal": 313
+      },
+      {
+        "raw": 6,
+        "terminal": 223
+      }
+    ],
+    "samePenOriginalMaskTransitions": [],
+    "widthChanged": false,
+    "automaticQBWidthOrTailCorrection": false,
+    "nativeFineAndReplayPending": true,
+    "unreviewedCubicTerminal15": {
+      "pen": 15,
+      "raw": 16,
+      "args": [
+        143.67090000000002,
+        14,
+        143.67090000000002,
+        169,
+        176.1791,
+        180,
+        182.5394,
+        180,
+        0,
+        15
+      ],
+      "polygonCount": 5,
+      "finalOriginalPolygon": [
+        {
+          "x": 182.5,
+          "y": 175,
+          "off": 0
+        },
+        {
+          "x": 184.5,
+          "y": 149,
+          "off": 0
+        },
+        {
+          "x": 182.5,
+          "y": 149,
+          "off": 0
+        },
+        {
+          "x": 176.5,
+          "y": 175,
+          "off": 0
+        }
+      ],
+      "currentMaskCount": 1,
+      "lateRevealRiskRequiresNativeObservation": true,
+      "actualVisualFailureNotClaimed": true
+    }
+  }
+}
