@@ -1,0 +1,209 @@
+{
+  "glyph": "隮",
+  "batch": 857,
+  "status": "held:domesticBoundaryCandidateMask12StartNibPop",
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "wholeVariantsReviewed": 2,
+  "wholeVariants": [
+    {
+      "name": "u96ae"
+    },
+    {
+      "name": "u96ae-ue0100"
+    }
+  ],
+  "compatibleWholeRoots": [
+    "u96ae",
+    "u96ae-ue0100"
+  ],
+  "dictionaryDirectionStrokes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "sourceOrderCorrectionRequested": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    9,
+    10,
+    6,
+    7,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    15
+  ],
+  "correctedDirectionsReobserved": true,
+  "progressiveFramesReviewed": 0,
+  "progressiveFramesApproved": 0,
+  "curveFineChecks": [
+    {
+      "pen": 2,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "observedBeforePermutationAs": 2
+    },
+    {
+      "pen": 9,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "observedBeforePermutationAs": 6
+    },
+    {
+      "pen": 1,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "sourceSegmentation": "Existing numeric candidate,11/12 domestic boundary unapproved"
+    },
+    {
+      "pen": 6,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "sourceSegmentation": "Existing numeric candidate,11/12 domestic boundary unapproved"
+    },
+    {
+      "pen": 7,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "sourceSegmentation": "Existing numeric candidate,11/12 domestic boundary unapproved"
+    },
+    {
+      "pen": 10,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "sourceSegmentation": "Existing numeric candidate,11/12 domestic boundary unapproved"
+    },
+    {
+      "pen": 11,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "sourceSegmentation": "Existing numeric candidate,11/12 domestic boundary unapproved"
+    },
+    {
+      "pen": 12,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "sourceSegmentation": "Existing numeric candidate,11/12 domestic boundary unapproved"
+    },
+    {
+      "pen": 13,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "sourceSegmentation": "Existing numeric candidate,11/12 domestic boundary unapproved"
+    },
+    {
+      "pen": 14,
+      "size": 520,
+      "from": 99.99,
+      "to": 100,
+      "passed": true,
+      "sourceSegmentation": "Existing numeric candidate,11/12 domestic boundary unapproved"
+    }
+  ],
+  "maskBoundaryObservations": [
+    {
+      "pen": 2,
+      "mask": 2,
+      "reportedBoundary": 0.873272,
+      "at": true,
+      "before": true,
+      "after": true,
+      "passed": true,
+      "size": 520
+    },
+    {
+      "pen": 9,
+      "mask": 2,
+      "reportedBoundary": 0.840234,
+      "at": true,
+      "before": true,
+      "after": true,
+      "passed": true,
+      "size": 520,
+      "observedBeforePermutationAs": 6
+    },
+    {
+      "pen": 12,
+      "mask": 2,
+      "boundary": 0.47233769673240533,
+      "size": 520,
+      "beforeAtAfterObserved": true,
+      "passed": false,
+      "reason": "Entire original Q-start nib pops into view immediately after activation",
+      "compiler": "progressive-native-boundary-compiler.mjs"
+    }
+  ],
+  "allStrokesReviewed": false,
+  "replayApproved": false,
+  "replayPens": [],
+  "privateMediaSaved": false,
+  "verifiedAt": "2026-10-14",
+  "directionBoundaryMismatches": [
+    {
+      "pen": 11,
+      "observed": "candidate raw12 Q plus raw13 V includes domestic12 V early"
+    },
+    {
+      "pen": 12,
+      "observed": "candidate raw14 rising Q omits domestic same-pen V; raw13/14 source delta[-12.07,5.55]"
+    }
+  ],
+  "blockedPens": [
+    11,
+    12
+  ],
+  "reason": "Original numeric pen11 Q+V crosses domestic11/12 boundary; separate preserved-source candidate11 Q-only and12 independent V/Q masks has positive original filled overlap, but native520px immediately after mask2 activation abruptly reveals entire left-facing start nib. Source-only proof passes; native playback fails; no fabricated connector/width/coordinate changes.",
+  "releaseCondition": "Source-preserved domestic11/12 segmentation with smooth native mask activation.",
+  "boundaryCandidate": {
+    "pens": 17,
+    "masks": 20,
+    "polygons": 42,
+    "originalCenterlineGap": [
+      -12.07,
+      5.55
+    ],
+    "originalFilledOverlap": 60.15105169,
+    "sourcePreserved": true,
+    "nativeApproved": false
+  }
+}

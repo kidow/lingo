@@ -1,0 +1,144 @@
+{
+  "batch": 857,
+  "glyph": "隮",
+  "status": "source-only-comparison-server-ready",
+  "nativeApproved": false,
+  "nativeDirectionStrokesReviewed": 0,
+  "progressiveFramesApproved": false,
+  "replayApproved": false,
+  "runtimeRegistered": false,
+  "privateMediaSaved": false,
+  "originalInputsUnchanged": false,
+  "originalCompilerUnchanged": false,
+  "originalSourceGeometryInputsUnchanged": true,
+  "compilerOriginalMasksPreserved": true,
+  "actualSourceVerificationPassed": true,
+  "numericCompile": {
+    "pens": 17,
+    "masks": 19,
+    "originalPolygons": 42,
+    "polygonExactOnce": true,
+    "coordinatesUnchanged": true,
+    "exactContinuousJoinPens": [
+      1,
+      2,
+      9,
+      11,
+      14
+    ],
+    "tamperRejections": 14,
+    "standaloneRendererFramesChecked": 159,
+    "framesAreNotNativeReview": true
+  },
+  "server": {
+    "port": 49773,
+    "pid": 67162,
+    "wholeURL": "http://127.0.0.1:49773/whole",
+    "progressiveURL": "http://127.0.0.1:49773/progressive?stroke=1&enlarged=1",
+    "directionPairsURL": "http://127.0.0.1:49773/pairs",
+    "HTTPWholePairsProgressivePassed": true,
+    "unsupportedWholeRejectedStatus": 409,
+    "perRequestAuditOriginalInputsServerCompilerWrapperSHA": true,
+    "coarseSamplesQuerySupported": true,
+    "coarseSamplesFractions": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "coarseSamplesURL": "http://127.0.0.1:49773/progressive?stroke=2&enlarged=1&samples=1"
+  },
+  "standaloneFilesSHA256": {
+    "native-server-compile.mjs": "ff41669b54dbec461a85fd501bd5de6db8c7eef1645bb158348fc3827fbfb0dc",
+    "serve-native.py": "0f5ec5a94832ae979b01f58f079f97e15e349e31210fb909bdcd6d05bd34b388",
+    "native-server-source-audit.json": "0e52cf1b634a94a6ee2f972cf6d2fe9b2fabcb1c048bca1ad6279da703cb5896",
+    "native-order-correction-source-analysis.json": "8d4cd166bbc52ba6d12d87b54e3cdb4d53eefafcafa25d2805b34eb4da1e2d4f"
+  },
+  "freshRuntimeObservationSeparate": {
+    "observedAt": "2026-10-13T18:11:32.628Z",
+    "argument": {
+      "glyph": "隮",
+      "strokes": 17
+    },
+    "hanjaStrokeDataPresent": false,
+    "registrySHA256": "2a2aaec2475def1941c5e3945008d7fc297791cb2db9d895454e5bc2e205d0f9"
+  },
+  "risks": {
+    "finePens": [
+      1,
+      2,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "originalTailMaskTransitions": [
+      {
+        "pen": 2,
+        "mask": 2,
+        "start": 0.8732715089234473,
+        "totalWeights": [
+          34.454427,
+          5
+        ],
+        "nativeReviewed": false
+      },
+      {
+        "pen": 9,
+        "mask": 2,
+        "start": 0.8402337731384684,
+        "totalWeights": [
+          42.073161,
+          8
+        ],
+        "nativeReviewed": false
+      }
+    ],
+    "domesticWholeOrderBoundaryPending": true
+  },
+  "orderCorrectionAudit": {
+    "file": "native-order-correction-source-analysis.json",
+    "SHA256": "8d4cd166bbc52ba6d12d87b54e3cdb4d53eefafcafa25d2805b34eb4da1e2d4f",
+    "originalCompilerSHA256": "f27bff6cc246ba324385d724a45e8065ddb9c5b3ceb1291ecf7aaa0054c4dcbb",
+    "currentCompilerSHA256": "a3f0c900377a2ccb4a10a099eaf6198db78c003a7d6aae7dc67b0859d7864434",
+    "sourceGroupsContractSHA256": "6b2d693af5c21e56f3e21c564ee29471bab7902a3546338b38ff1f08f223588b",
+    "all17MasksExactPermutation": true,
+    "rootObservedBeforeCorrection": {
+      "wholeVariants": 2,
+      "directions": 17,
+      "oldFineAndBoundaryPens": [
+        2,
+        6
+      ],
+      "finalNativeApproval": false
+    },
+    "rootFineEvidenceCarryover": [
+      {
+        "oldPen": 2,
+        "newPen": 2,
+        "completeMaskSHA256": "15479ed10787d118c5ae86603d6bbebaffd256e51f5f0d2108d71ffa9c8aee81",
+        "rootReportedPASS": true,
+        "childNewNativeReview": false
+      },
+      {
+        "oldPen": 6,
+        "newPen": 9,
+        "completeMaskSHA256": "efb1190a765736c707fee2b49a8b2ea92d6d88e95b0bc154215d9950e7077bc4",
+        "rootReportedPASS": true,
+        "childNewNativeReview": false
+      }
+    ],
+    "postCorrectionDirectionApproval": false,
+    "nativeCoarse153FramesApproved": false,
+    "replayApproved": false
+  }
+}

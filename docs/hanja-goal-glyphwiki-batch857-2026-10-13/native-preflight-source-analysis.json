@@ -1,0 +1,214 @@
+{
+  "batch": 857,
+  "glyph": "隮",
+  "checkedDate": "2026-10-13",
+  "stage": "Source-only numerical compiler integrity audit; no native approval",
+  "nativeApproval": false,
+  "nativeWholeApproved": false,
+  "nativeOrderApproved": false,
+  "dirs": 0,
+  "frames": 0,
+  "replay": 0,
+  "runtimeApplied": false,
+  "compilerChanged": true,
+  "serverPrepared": false,
+  "buildRun": false,
+  "privateGraphicsRequested": false,
+  "privateMediaSaved": false,
+  "source": {
+    "root": "u96ae",
+    "sourceProofFile": "engine-whole-u96ae.json",
+    "sourceProofFileSHA256": "c49ee4370d95566be8b47836222759cec168b52db0455ff30a257c86eb60cd00",
+    "compilerFileSHA256": "a3f0c900377a2ccb4a10a099eaf6198db78c003a7d6aae7dc67b0859d7864434",
+    "selectedBodyContainsEngineHeader": false,
+    "engineProofHeaderWrappedOnlyInRAM": true,
+    "compilerContract": "Two arguments. Exact selected body digest/trace/groups and all8 engine hashes/preset checked. No explicit third fileIdentity argument; source file byteSHA checked independently.",
+    "engineHashChecks": 8,
+    "recordCount": 7,
+    "completeWholeVariantsExactlyReplayed": 2,
+    "historyCount": 0,
+    "missingDependencies": [],
+    "archiveRedownloaded": false,
+    "latestSubstitution": false
+  },
+  "validation": {
+    "actualExit": 0,
+    "raw": 20,
+    "calls": 23,
+    "L": 11,
+    "Q": 12,
+    "B": 0,
+    "pens": 17,
+    "masks": 19,
+    "originalPolygons": 42,
+    "sourceGroups": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        17
+      ]
+    ],
+    "sourceGroupsSHA256": "6b2d693af5c21e56f3e21c564ee29471bab7902a3546338b38ff1f08f223588b",
+    "compiledOutlinesSHA256": "e2f57f50e6947d8cf1d8e84358cb2f634651c7a85f1155879bdd5c98b48a03f8",
+    "originalPolygonsExactlyOnce": true,
+    "allRawExactlyOnce": true,
+    "inputProofUnchanged": true,
+    "emptyRawGroups": [],
+    "mutationRejects": 7,
+    "mutationClasses": [
+      "argumentTraceCoordinate",
+      "originalPolygonPoint",
+      "engineDefault",
+      "engineRevision",
+      "engineFileHash",
+      "originalRawMetadata",
+      "numericRawGrouping"
+    ]
+  },
+  "boundaryAnalysis": {
+    "catalogAndCapturedDomesticCount": 17,
+    "allGroupedRawAndInternalCallsJoinExactly": true,
+    "exactFolds": [
+      {
+        "pen": 1,
+        "raw": [
+          0,
+          1
+        ],
+        "point": [
+          64.8,
+          28
+        ],
+        "nonConsecutive": false
+      },
+      {
+        "pen": 6,
+        "raw": [
+          6,
+          7
+        ],
+        "point": [
+          106.41,
+          57.5
+        ],
+        "nonConsecutive": false
+      },
+      {
+        "pen": 11,
+        "raw": [
+          12,
+          13
+        ],
+        "point": [
+          149.01,
+          61.2
+        ],
+        "nonConsecutive": false
+      }
+    ],
+    "unusedNonConsecutiveContacts": [],
+    "nativePenBoundariesUnknown": true,
+    "numericCountEqualityNotApproval": true,
+    "coordinateOrControlMutation": false,
+    "connectorAuthored": false,
+    "wholeMixing": false,
+    "note": "Three exact contiguous folds provide numeric17; terminal514/214 original final polygons are same-pen left masks. Native directions, curve fine frames, transitions and replay remain unobserved."
+  },
+  "maskAnalysis": {
+    "curveFinePens": [
+      1,
+      2,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "pureLineOriginalVertexBounds": [],
+    "originalSamePenMaskTransitions": [
+      {
+        "pen": 2,
+        "mask": 2,
+        "start": 0.8732715089234473,
+        "direction": "left",
+        "weight": 5,
+        "bounds": [
+          19.25,
+          64.5,
+          24.25,
+          67.5
+        ],
+        "originalTerminal": 514
+      },
+      {
+        "pen": 9,
+        "mask": 2,
+        "start": 0.8402337731384684,
+        "direction": "left",
+        "weight": 8,
+        "bounds": [
+          37.7,
+          47,
+          45.7,
+          50
+        ],
+        "originalTerminal": 214
+      }
+    ],
+    "widthChanged": false,
+    "QBCurveWidthInferenceApplied": false,
+    "nativeFineAndReplayPending": true
+  }
+}
