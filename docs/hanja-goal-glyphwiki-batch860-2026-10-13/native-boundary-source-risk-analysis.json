@@ -1,0 +1,251 @@
+{
+  "batch": 860,
+  "glyph": "懠",
+  "stage": "source-only sibling boundary risk; no separate compiler is prepared",
+  "sourceRoot": "u61e0",
+  "sourceFileSHA256": "b90ab924c36931f6e27dee800c890d4ec49b7a2d569031f3aba9b4052c4b2983",
+  "originalCompilerSHA256": "243a6d0f24bdbe34ee74667879c1c77cfc96ca7bbed81e924989160f1964fb26",
+  "parentNativeObservation": {
+    "observer": "root",
+    "sourceBatch857FailedBoundary": {
+      "pen": 12,
+      "mask": 2,
+      "progress": 0.47233769673240533,
+      "description": "Root observed complete left-facing start nib appearing abruptly immediately after the mask2 boundary outside the completed original V. No native or runtime approval."
+    },
+    "batch860SameBoundaryObserved": false
+  },
+  "originalRaw13And14": {
+    "calls": [
+      {
+        "raw": 13,
+        "trace": [
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              146.01,
+              61.2,
+              146.01,
+              92.65,
+              1012,
+              32
+            ]
+          }
+        ],
+        "polygons": 1
+      },
+      {
+        "raw": 14,
+        "trace": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              133.94,
+              98.2,
+              150.26999999999998,
+              92.65,
+              166.6,
+              85.25,
+              0,
+              7
+            ]
+          }
+        ],
+        "polygons": 3
+      }
+    ],
+    "authoredCenterlineGap": [
+      -12.069999999999993,
+      5.549999999999997
+    ],
+    "overlap": {
+      "sourceFileSHA256": "b90ab924c36931f6e27dee800c890d4ec49b7a2d569031f3aba9b4052c4b2983",
+      "method": "Exact Fraction arithmetic on original JSON decimal vertices; validated ear triangulation; triangle clipping; no geometry modification",
+      "sourcePolygons": [
+        {
+          "raw": 13,
+          "polygon": 0,
+          "areaExact": "8393/20",
+          "triangles": 2
+        },
+        {
+          "raw": 14,
+          "polygon": 0,
+          "areaExact": "50271/200",
+          "triangles": 18
+        },
+        {
+          "raw": 14,
+          "polygon": 1,
+          "areaExact": "2439/200",
+          "triangles": 1
+        },
+        {
+          "raw": 14,
+          "polygon": 2,
+          "areaExact": "1189/100",
+          "triangles": 1
+        }
+      ],
+      "pairIntersections": [
+        {
+          "a": [
+            13,
+            0
+          ],
+          "b": [
+            14,
+            0
+          ],
+          "areaExact": "1687237/28050",
+          "areaKage200": 60.15105169340463,
+          "contact": true,
+          "positiveArea": true
+        },
+        {
+          "a": [
+            13,
+            0
+          ],
+          "b": [
+            14,
+            1
+          ],
+          "areaExact": "0",
+          "areaKage200": 0,
+          "contact": false,
+          "positiveArea": false
+        },
+        {
+          "a": [
+            13,
+            0
+          ],
+          "b": [
+            14,
+            2
+          ],
+          "areaExact": "0",
+          "areaKage200": 0,
+          "contact": false,
+          "positiveArea": false
+        },
+        {
+          "a": [
+            14,
+            0
+          ],
+          "b": [
+            14,
+            1
+          ],
+          "areaExact": "0",
+          "areaKage200": 0,
+          "contact": true,
+          "positiveArea": false
+        },
+        {
+          "a": [
+            14,
+            0
+          ],
+          "b": [
+            14,
+            2
+          ],
+          "areaExact": "61183/12100",
+          "areaKage200": 5.056446280991736,
+          "contact": true,
+          "positiveArea": true
+        },
+        {
+          "a": [
+            14,
+            1
+          ],
+          "b": [
+            14,
+            2
+          ],
+          "areaExact": "0",
+          "areaKage200": 0,
+          "contact": true,
+          "positiveArea": false
+        }
+      ],
+      "crossRawPairwiseIntersectionSumExact": "1687237/28050",
+      "crossRawIntersectionAreaKage200": 60.15105169340463,
+      "positiveCrossRawArea": true,
+      "unionConnectedByOriginalAreaOrBoundaryContact": true,
+      "originalPolygonContactComponents": [
+        [
+          [
+            13,
+            0
+          ],
+          [
+            14,
+            0
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            14,
+            1
+          ]
+        ]
+      ],
+      "coordinatesChanged": false,
+      "nativeApproval": false
+    },
+    "shapeComparisonWith857": {
+      "comparisons": [
+        {
+          "raw": 13,
+          "polygons": 1,
+          "vertices": 4,
+          "vertexDeltas": [
+            [
+              "-3",
+              "0"
+            ]
+          ],
+          "exactTranslationMinus3X": true
+        },
+        {
+          "raw": 14,
+          "polygons": 3,
+          "vertices": 28,
+          "vertexDeltas": [
+            [
+              "-3",
+              "0"
+            ]
+          ],
+          "exactTranslationMinus3X": true
+        }
+      ],
+      "domestic860BoundaryObserved": false,
+      "sourceOnly": true
+    }
+  },
+  "candidateStrategy": {
+    "positiveFilledOverlapAloneInsufficient": true,
+    "sharedPathOrConnectorForbidden": true,
+    "coordinateChange": false,
+    "widthChange": false,
+    "pathChange": false,
+    "separateCompilerPrepared": false,
+    "reason": "The original sibling polygons are exactly translated by[-3,0] at every vertex and share the failed start-nib activation structure. Root instructed postponing additional candidate compilation until this boundary strategy is resolved."
+  },
+  "nativeApproval": false,
+  "childDirectionsReviewed": 0,
+  "childFramesReviewed": 0,
+  "childReplaysReviewed": 0,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
