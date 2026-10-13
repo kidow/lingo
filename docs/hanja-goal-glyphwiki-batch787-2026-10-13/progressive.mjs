@@ -70,6 +70,18 @@ export function compileProgressive(trace, proof) {
   const tails = new Map()
   for (const indices of UP_TAIL_GROUPS) tails.set(JSON.stringify(indices), terminalUpTail(indices))
   for (const indices of LEFT_TAIL_GROUPS) tails.set(JSON.stringify(indices), terminalLeftTail(indices))
+  // Bound this original line fold by its own emitted polygon vertices only.
+  const originalLineTipWidth = (calls) => {
+    assert(calls.every(call=>call.kind==='cdDrawLine'));
+    const distance = (point,call) => {
+      const [x1,y1,x2,y2]=call.args;
+      const dx=x2-x1,dy=y2-y1;
+      const t=Math.max(0,Math.min(1,((point.x-x1)*dx+(point.y-y1)*dy)/(dx*dx+dy*dy)));
+      return Math.hypot(point.x-(x1+t*dx),point.y-(y1+t*dy));
+    };
+    const maximum=Math.max(...calls.flatMap(call=>call.polygons.flat()).map(point=>Math.min(...calls.map(call=>distance(point,call)))));
+    return Math.max(14,Math.ceil(maximum*1e6)/1e6+0.001);
+  };
   const compile = (indices, tail) => {
     const calls = indices.flatMap(index => trace[index]).map(call => ({ ...call, polygons: [...call.polygons] }))
     if (tail) assert.deepEqual(calls.at(-1).polygons.pop(), tail.polygon)
@@ -99,7 +111,7 @@ export function compileProgressive(trace, proof) {
       direction: 'curve',
       weight: Math.round(pieces.reduce((sum, piece) => sum + piece.weight, 0) * 1e6) / 1e6,
       revealPath: `M${first[0] / 2} ${first[1] / 2} ${calls.map(call => { const args = call.args; return call.kind === 'cdDrawLine' ? `L${args[2] / 2} ${args[3] / 2}` : call.kind === 'cdDrawBezier' ? `C${args[2] / 2} ${args[3] / 2} ${args[4] / 2} ${args[5] / 2} ${args[6] / 2} ${args[7] / 2}` : `Q${args[2] / 2} ${args[3] / 2} ${args[4] / 2} ${args[5] / 2}` }).join(' ')}`,
-      revealWidth: 14,
+      revealWidth: JSON.stringify(indices) === "[1,2]" ? originalLineTipWidth(calls) : 14,
     }
   }
   const outlines = sourceGroups.map(indices => {
