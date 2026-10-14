@@ -294,5 +294,18 @@
     "status": "not run in this review",
     "advisoryOnly": true,
     "runtimeApproval": false
-  }
+  },
+  "runtimeVerifierAttempts": [
+    {
+      "attempt": 1,
+      "exitCode": 1,
+      "reason": "Application finalizer changed immutable metadata bytes pinned by the isolated adapter"
+    },
+    {
+      "attempt": 2,
+      "exitCode": 0,
+      "repair": "Restored original metadata bytes; current approval remains in review/validation/resume"
+    }
+  ],
+  "immutableMetadataPreserved": true
 }
