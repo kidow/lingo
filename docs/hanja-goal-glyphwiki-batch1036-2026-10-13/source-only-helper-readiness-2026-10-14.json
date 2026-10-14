@@ -1,0 +1,190 @@
+{
+  "batch": 1036,
+  "glyph": "睆",
+  "status": "source-only-helper-contract-valid-native-pending",
+  "auditCallerCorrection": "Initial audit omitted mandatory sourceRoot/file/SHA bridge; existing exact caller was already valid. Correct bridge verified without source/compiler changes.",
+  "catalog": 12,
+  "domesticClips": 12,
+  "sourceVerification": {
+    "priorRecordFile": "native-server-source-audit.json",
+    "priorSourcePassed": true,
+    "priorSourceEvidencePassed": null,
+    "priorRecord": {
+      "batch": 1036,
+      "glyph": "睆",
+      "sourcePassed": true,
+      "wholeRoots": 2,
+      "records": 7,
+      "historicalDependencies": 0,
+      "engineFiles": 8,
+      "catalogStrokes": 12,
+      "domesticClips": 12,
+      "nativeApprovalAsserted": false,
+      "privateMediaSaved": false
+    },
+    "runsThisPreparation": 0,
+    "onlineRequested": false
+  },
+  "originalBytePins": {
+    "candidate-compile-analysis.json": "eab8eeb1c4f25bb0e1943a25c88bb96edcf8bbea11c9cc5fdf1e7a92c6efc25a",
+    "engine-proof.json": "321d0e0d7db4b10c7c1dcdd75490b6274c4c142fda61846c02465509c5adf1c8",
+    "engine-whole-u7746-ue0100.json": "321d0e0d7db4b10c7c1dcdd75490b6274c4c142fda61846c02465509c5adf1c8",
+    "engine-whole-u7746.json": "321d0e0d7db4b10c7c1dcdd75490b6274c4c142fda61846c02465509c5adf1c8",
+    "metadata.json": "b26f36f66f3f8405395c4613bdcbb57461b4b8b9fd715e0b81d8b5479aa12ce5",
+    "progressive.mjs": "0041224f40715ca1705d27aba3741fe34d35d2a1dc6b416e9c5264f6b3104953",
+    "source-analysis.json": "f1f93af2f6b2d472cbf0be505bbe827238a6e68df7e7ec3e6d96b2aa189133dd",
+    "source-join-analysis.json": "0c998aa1294cfddeee10956a935df33181884f0fcde4ae20d3e30ed66fec2cf3",
+    "sources.json": "12b7c6f75c4f7820710d1de00fb29558c9184bbc9f77535502c789f419264232",
+    "verify-source.mjs": "e4c019b59446eaf5ce2a0c6bb039c1a256023ad00289920ef0afc087a0a1f143",
+    "native-server-compile.mjs": "05a510ef62854e7cfc9a460021f04fe3202ac4d00725975de6b4fa522c90cc2a",
+    "serve-native.py": "6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b"
+  },
+  "selectedRoot": "u7746",
+  "selectedFile": "engine-whole-u7746.json",
+  "selectedIdentity": {
+    "root": "u7746",
+    "file": "engine-whole-u7746.json",
+    "fileSHA256": "321d0e0d7db4b10c7c1dcdd75490b6274c4c142fda61846c02465509c5adf1c8"
+  },
+  "wholeVariants": [
+    {
+      "file": "engine-whole-u7746-ue0100.json",
+      "fileSHA256": "321d0e0d7db4b10c7c1dcdd75490b6274c4c142fda61846c02465509c5adf1c8",
+      "raw": 14,
+      "draw": 16,
+      "Q": 4,
+      "B": 0,
+      "polygons": 26
+    },
+    {
+      "file": "engine-whole-u7746.json",
+      "fileSHA256": "321d0e0d7db4b10c7c1dcdd75490b6274c4c142fda61846c02465509c5adf1c8",
+      "raw": 14,
+      "draw": 16,
+      "Q": 4,
+      "B": 0,
+      "polygons": 26
+    }
+  ],
+  "compiler": {
+    "originalInputImmutable": true,
+    "originalPolygonsExactlyOnce": true,
+    "pens": 12,
+    "masks": 13,
+    "sourceMutationRejected": 6,
+    "identityMutationRejected": 4,
+    "existingBlockedReason": null,
+    "actualFailure": null,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ]
+    ],
+    "nonConsecutiveGroups": [],
+    "emptyRawMetadata": [],
+    "finePens": [
+      2,
+      7,
+      8,
+      11,
+      12
+    ],
+    "maskTransitions": [
+      {
+        "pen": 12,
+        "mask": 2,
+        "start": 0.8101777179984385,
+        "weights": [
+          53.351068,
+          12.5
+        ]
+      }
+    ],
+    "originalSpecialTerminals": [
+      {
+        "raw": 0,
+        "pen": 1,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 13,
+        "polygons": 1
+      },
+      {
+        "raw": 2,
+        "pen": 2,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 23,
+        "polygons": 2
+      },
+      {
+        "raw": 13,
+        "pen": 12,
+        "call": 2,
+        "kind": "cdDrawLine",
+        "terminal": 5,
+        "polygons": 3
+      }
+    ]
+  },
+  "caller": {
+    "actualExecuted": true,
+    "actualPassed": true,
+    "contract": "Existing native caller explicit whole/header/source/compiler identity",
+    "failure": null,
+    "unsupportedRejected": true
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1036-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "portBinding": "Existing helper; no live readiness assumption"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
+
