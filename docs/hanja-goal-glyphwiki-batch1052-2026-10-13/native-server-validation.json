@@ -1,0 +1,215 @@
+{
+  "batch": 1052,
+  "glyph": "翬",
+  "status": "native-review-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceEvidencePassed": true,
+  "expectedMissingWholeProofs": [],
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u7fec",
+      "pens": 15,
+      "masks": 15,
+      "polygons": 35,
+      "canonicalPolygonsSHA256": "c983c5e561aa3cd4971f55dae038b89a5069c0ef0ae7caceea7ee9948a61c835",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 11,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u7fec-ue0100",
+      "pens": 15,
+      "masks": 15,
+      "polygons": 35,
+      "canonicalPolygonsSHA256": "c983c5e561aa3cd4971f55dae038b89a5069c0ef0ae7caceea7ee9948a61c835",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 11,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "sources.json": "c7bb493b942eb5cd2ff9abe34a22f65577c7a81e37b3179a407e2864d394c10d",
+    "engine-whole-u7fec.json": "610e4fe9ecd96555428014d82c8ea0994c168060149a9d059e795eda4c24e032",
+    "engine-proof.json": "610e4fe9ecd96555428014d82c8ea0994c168060149a9d059e795eda4c24e032",
+    "metadata.json": "67044d67decbc6ae68527d63d3f57fabf08a7994481a71c51a5c6487096e2324",
+    "engine-whole-u7fec-ue0100.json": "610e4fe9ecd96555428014d82c8ea0994c168060149a9d059e795eda4c24e032"
+  },
+  "compilerSHA256": "ab770cc938e1ae77d886cbed5fc50c0413a61853be534ae0ece144fff419f3a8",
+  "risks": [
+    {
+      "root": "u7fec",
+      "originalZeroAreaPolygons": [],
+      "terminalSourceRisk": [
+        {
+          "raw": 12,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            313
+          ],
+          "pens": [
+            10
+          ]
+        },
+        {
+          "raw": 14,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            323
+          ],
+          "pens": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "root": "u7fec-ue0100",
+      "originalZeroAreaPolygons": [],
+      "terminalSourceRisk": [
+        {
+          "raw": 12,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            313
+          ],
+          "pens": [
+            10
+          ]
+        },
+        {
+          "raw": 14,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            323
+          ],
+          "pens": [
+            11
+          ]
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1052,
+      "kind": "serve-whole.py",
+      "session": 39560,
+      "port": 52977,
+      "pid": 79280,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 15,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1052,
+      "kind": "serve-progressive.py",
+      "session": 29863,
+      "port": 52997,
+      "pid": 79308,
+      "strokes": 15,
+      "masks": 15,
+      "sourceRoot": "u7fec",
+      "sourceProofFile": "engine-whole-u7fec.json",
+      "sourceProofFileSHA256": "610e4fe9ecd96555428014d82c8ea0994c168060149a9d059e795eda4c24e032"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1052,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52977/?id=u7fec",
+      "status": 200,
+      "bytes": 6620,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1052,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52977/?id=u7fec-ue0100",
+      "status": 200,
+      "bytes": 6627,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1052,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:52977/?id=u7fec&pairs=1:1,15:15&view=checks",
+      "status": 200,
+      "bytes": 366,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1052,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52997/?root=u7fec&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 9980,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1052,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52997/?root=u7fec&stroke=11&enlarged=1",
+      "status": 200,
+      "bytes": 11661,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1052,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:52977/?id=u7fec-ue0100&pairs=1:1,15:15&view=checks",
+      "status": 200,
+      "bytes": 380,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1052,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52997/?root=u7fec-ue0100&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 10092,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1052,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52997/?root=u7fec-ue0100&stroke=11&enlarged=1",
+      "status": 200,
+      "bytes": 11773,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
