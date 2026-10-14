@@ -10,9 +10,24 @@
 
 표의 «제안»은 점검한 에이전트의 의견이다. 사전(大辞林 · JLPT 목록)으로 다시 보고, 같은 뜻의 개념이 이미 그 낱말을 가졌으면 일본어 낱말을 뺀다.
 
+## 처리 (2026-10-14) — 고쳤다
+
+에이전트 열이 1,534개를 나눠 판정했다 — **바꿈 1,219 · 뺌 294 · 그대로 21.** 바꾸거나 둔 개념은
+예문 둘을 모두 새로 썼다(띄어쓰기 없던 옛 예문이 그대로 남아 있었으므로).
+
+- **히라가나 외래어 149개**는 읽기를 가타카나로 고쳤다(よーろっぱ → ヨーロッパ · かわせれーと →
+  かわせレート). **한자 없는 표제어 138개**는 한자 표기가 표준인 것만 한자로 바꾸고 읽기는 뒀다.
+- **뺀 294개**는 «X의» 형용사 개념(맨 명사가 이미 같은 뜻 개념의 표제어), 한국 · 중국 관용구 직역,
+  문법 조각, 차별어 きちがい다. 묶음 열이 같은 뜻 개념에 같은 낱말을 고른 스물셋(暮らし · 間 ·
+  上側 · 要約 · 語学 …)은 한쪽을 뺐고, 같은 낱말이 이미 다른 개념에 있던 넷(飛び去る · 車止め ·
+  花屋 · 期待 — 期待는 뜻 «기다림»과도 어긋난다)도 뺐다.
+- **뜻이 다른 동음이의어는 둔다** — 王冠(병뚜껑/왕관) · 山(더미/산) · 巣(둥지/벌집) · 欠ける ·
+  農家 · 千/線.
+- 가나 카드 예시 셋이 읽기가 바뀌어 빠졌다 — き ← 切手 · な ← 名前 · ちゃ ← 茶碗으로 갈았다.
+
 ## 표제어가 틀린 것 — 1247
 
-### city — 169
+### city — 169 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -186,7 +201,7 @@
 | `what-the-town-supplies` | 공공 설비 | 公益設備 | こうえきせつび | こうえきせつび is not a Japanese word (calque) | こうきょうしせつ (公共施設) / ライフライン |
 | `night-view` | 야경 | 夜の景色 | よるのけしき | よるのけしき is a phrase; the word for 야경 is やけい | やけい (夜景) |
 
-### school — 153
+### school — 153 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -344,7 +359,7 @@
 | `to-do-with-the-university` | 대학의 | だいがくの | だいがくの | だいがくの is noun+の; sentences built on it are unnatural | だいがく(大学) |
 | `the-science-stream` | 이과 | りか | りか | 理科 is the school subject; the stream (이과) is 理系; duplicates science/りか; sentence | りけい(理系) |
 
-### office — 121
+### office — 121 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -470,7 +485,7 @@
 | `the-top-of-the-sheet` | 편지지 머리 | 便箋の頭 | びんせんのあたま | not a Japanese word; letterhead is レターヘッド | レターヘッド |
 | `check-it-is-good` | 맞는지 확인해 주다 | 有効と認める | ゆうこうとみとめる | free phrase; examples archaic (しょき / しるし) | にんしょうする / かくにんする |
 
-### idea — 116
+### idea — 116 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -591,7 +606,7 @@
 | `one-who-chases-the-dream` | 낭만 좇는 이 | ゆめをおうひと | ゆめをおうひと | 夢を追う人 is a phrase; the words are ロマンチスト / 夢追い人. | ロマンチスト |
 | `one-who-doubts-it-all` | 의심 많은 이 | うたがいぶかいひと | うたがいぶかいひと | 疑い深い人 is a phrase; the word is 疑い深い (うたがいぶかい). | 疑い深い (うたがいぶかい) |
 
-### quality — 104
+### quality — 104 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -700,7 +715,7 @@
 | `of-physical-substance` | 물질의 | 実体的 | じったいてき | じったいてき (実体的) is philosophical jargon; いしは じったいてきな ものです / じったいてきな しょうこ are unnatu | ぶっしつてきな (物質的な) / ぶってきな (物的な) |
 | `by-a-wide-margin` | 확 크게 | 思い切って | おもいきって | おもいきって = boldly (a person's decision), not 확 크게 (by a wide margin); ねだんは おもいきって  | おおはばに (大幅に) |
 
-### job — 101
+### job — 101 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -806,7 +821,7 @@
 | `the-one-looking-for-it` | 찾는 이 | 求める人 | もとめるひと | もとめるひと is a phrase: phrase/calque, not a dictionary headword; sentences built on | きゅうしょくしゃ(求職者) |
 | `there-to-give-counsel` | 일러 주는 | 助言の | じょげんの | じょげんの is noun+の: phrase/calque, not a dictionary headword; sentences built on it | じょげん(助言) |
 
-### nature — 85
+### nature — 85 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -896,7 +911,7 @@
 | `a-plot-for-greens` | 남새밭 | なばたけ | なばたけ | なばたけは菜の花畑の意が強い; 남새밭(野菜を作る畑)は「やさいばたけ」 | やさいばたけ / かていさいえん |
 | `a-spouting-stream` | 뿜어 나오는 줄기 | 噴流 | ふんりゅう | 噴流は専門語(ジェット)で、学習者向けの뿜어 나오는 줄기には「ふきだす みず」が自然 | ふんすい / ふきだす みず |
 
-### family — 65
+### family — 65 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -966,7 +981,7 @@
 | `staying-true-to-it` | 한결같음 | かわらぬまごころ | かわらぬまごころ | literary phrase, not a vocabulary item | まごころ(真心) / いちず |
 | `generation-rank` | 항렬 | 世代の順 | せだいのじゅん | calque of Korean 항렬; Japan has no such naming system, so no natural sentence exi | drop the concept for ja, or はいこう(輩行) with a note |
 
-### body — 57
+### body — 57 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1028,7 +1043,7 @@
 | `to-do-with-making-medicine` | 약 만드는 | 製薬の | せいやくの | noun+の; i=1 せいやくの しおは たかいです is nonsense (salt) | せいやく (製薬); e.g. せいやくがいしゃで はたらく。 |
 | `sent-on-to-another` | 딴 데로 보내 줌 | 紹介状 | しょうかいじょう | term is fine but meaning_ko 딴 데로 보내 줌 is not Korean usage; ko for both rows fixe | meaning_ko 소개장 / 진료의뢰서 |
 
-### action — 54
+### action — 54 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1087,7 +1102,7 @@
 | `leave-them-wanting` | 마음에 안 차게 하다 | 不満にさせる | ふまんにさせる | 不満にさせる is not idiomatic; Japanese says ふまんを いだかせる / ものたりなく させる; sentences are En | ものたりない(物足りない), e.g. うすい スープは ものたりない。 — sentences l |
 | `rub-them-the-wrong-way` | 거슬리게 하다 | 気に障る | きにさわる | 気に障る is intransitive (X が きにさわる); meaning_ko 거슬리게 하다 suggests a transitive verb; | change meaning_ko to 거슬리다 |
 
-### travel — 47
+### travel — 47 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1139,7 +1154,7 @@
 | `the-way-one-goes` | 길 | ゆくみち | ゆくみち | literary phrase; plain word is みち | みち / ゆくて(行く手) |
 | `up-on-the-boat` | 타고서 | 乗って | のって | te-form, not a headword; sentences like はこが のって いきました are wrong | のる(乗る) |
 
-### time — 36
+### time — 36 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1180,7 +1195,7 @@
 | `whose-turn-has-come` | 차례에 온 | じゅんばんのきた | じゅんばんのきた | relative-clause fragment, not a headword | じゅんばん(順番) |
 | `already-in-motion` | 진행 중인 | 進行中で | しんこうちゅうで | headword includes the particle で; sentences end up with stiff であります | しんこうちゅう(進行中) |
 
-### home — 32
+### home — 32 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1217,7 +1232,7 @@
 | `a-set-of-parts-together` | 꾸러미 연장 | 一式道具 | いっしきどうぐ | word order wrong — Japanese says どうぐいっしき | どうぐいっしき |
 | `let-out-a-room` | 세를 놓다 | 間を貸す | まをかす | archaic; rows 832/833 rural (しゅうかく, いち) | へやを かす |
 
-### number — 31
+### number — 31 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1253,7 +1268,7 @@
 | `round-up` | 반올림하다 | 切り上げる | きりあげる | 切り上げる is 올림 (always round up); 반올림 is ししゃごにゅうする(四捨五入する) | change meaning_ko to 올림하다, or answer ししゃごにゅうする |
 | `halve-in-number` | 배로 줄다 | 半減する | はんげんする | meaning_ko 배로 줄다 is not a natural Korean gloss for 半減 (반감하다 / 반으로 줄다); ko of bot | meaning_ko → 반으로 줄다 |
 
-### clothes — 20
+### clothes — 20 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1278,7 +1293,7 @@
 | `put-clothes-on-them` | 입혀 주다 | きせてやる | きせてやる | 着せてやる is a verb phrase (着せる + やる), not a headword; sentences are old-fashioned a | 着せる (きせる) |
 | `pass-them-to-the-next-child` | 옷을 물려주다 | おさがりにする | おさがりにする | お下がりにする is marginal; natives say お下がりをあげる / お下がりを着る. Both sentences are odd (よい  | お下がり (おさがり) |
 
-### food — 20
+### food — 20 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1303,7 +1318,7 @@
 | `of-the-sweet-shop` | 과자의 | かしの | かしの | 「菓子の」は助詞付きの句で、かし(歌詞/貸し)と紛らわしい | おかしの / かしや(菓子屋) |
 | `the-art-of-the-kitchen` | 요리 솜씨 | りょうりのわざ | りょうりのわざ | 「料理の技」より「料理の腕」が自然 | りょうりのうで |
 
-### everyday — 13
+### everyday — 13 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1321,7 +1336,7 @@
 | `small-errands` | 잔심부름 | 使い走り | つかいばしり | つかいばしり (使い走り) means a gofer and is pejorative; 잔심부름 is おつかい | おつかい |
 | `with-hands-free` | 손이 빈 | 手が空いた | てがあいた | てがあいた means "not busy now", not "hands free"; sentences use the wrong sense | てぶら / りょうてが あく |
 
-### transport — 12
+### transport — 12 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1338,7 +1353,7 @@
 | `jaywalking` | 무단횡단 | 横断違反 | おうだんいはん | 横断違反 is not an everyday word (무단횡단 calque); natives describe it as しんごうむし or おうだ | しんごうむし (or おうだんほどうの ない ところを わたる) |
 | `blind-spot` | 사각지대 | ブラインドスポット | ブラインドスポット | natives say しかく (死角) for a driver's blind spot | しかく |
 
-### sport — 9
+### sport — 9 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1352,7 +1367,7 @@
 | `strong-and-well-made` | 몸이 다부지고 곱다 | たくましくうつくしい | たくましくうつくしい | coined phrase (two adjectives glued); rows 1424/1425 unspaced, rural | たくましい |
 | `level-on-points` | 승점이 같은 | 勝点が同じ | しょうてんがおなじ | wrong reading: league points are かちてん (勝ち点); しょうてん reads as 焦点 "focus" (cf. leag | かちてんがおなじ |
 
-### scene — 2
+### scene — 2 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1361,7 +1376,7 @@
 
 ## 히라가나로 적은 외래어 — 149
 
-### scene — 87
+### scene — 87 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1453,7 +1468,7 @@
 | `frame-adjust` | 안경테 좀 조여 주세요 | フレームを締めてもらえますか | ふれーむを しめて もらえますか | loanword in hiragana | フレームを しめて もらえますか |
 | `shuttle-available` | 셔틀버스 있나요? | 送迎バスはありますか | そうげいばすは ありますか | loanword バス in hiragana | そうげいバスは ありますか |
 
-### office — 20
+### office — 20 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1478,7 +1493,7 @@
 | `keyboard-key` | 자판 키 | キー | きー | answer loanword in hiragana; i=1 is a calque (ほこりが きーを つまらせる) | キー; e.g. キーが ひとつ とれた。 / エンターキーを おす。 |
 | `smart-device` | 스마트 기기 | スマート | すまーと | answer in hiragana and スマート alone is an adjective (smart/slim), not "smart devic | スマートデバイス or スマホ |
 
-### travel — 11
+### travel — 11 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1494,7 +1509,7 @@
 | `of-siberia` | 시베리아의 | しべりあの | しべりあの | loanword written in hiragana | シベリアの |
 | `of-the-slavs` | 슬라브의 | すらぶの | すらぶの | loanword written in hiragana | スラブの |
 
-### job — 8
+### job — 8 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1507,7 +1522,7 @@
 | `amateur` | 아마추어 | アマチュア | あまちゅあ | answer written in hiragana; loanword must be katakana | アマチュア |
 | `production-line` | 생산 라인 | 生産ライン | せいさんらいん | answer written in hiragana; ライン must be katakana | せいさんライン(生産ライン) |
 
-### city — 7
+### city — 7 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1519,7 +1534,7 @@
 | `square-metre` | 제곱미터 | 平方メートル | へいほうめーとる | answer へいほうめーとる is written in hiragana; the loanword is katakana へいほうメートル | へいほうメートル |
 | `of-the-soviets` | 소비에트의 | そびえとの | そびえとの | そびえとの is a fragment and Soviet is written in katakana | ソビエト |
 
-### sport — 4
+### sport — 4 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1528,7 +1543,7 @@
 | `bronze-medal` | 동메달 | 銅メダル | どうめだる | hiragana loanword; must be どうメダル (cf. ぎんメダル in silver-medal) | どうメダル |
 | `gold-medal` | 금메달 | 金メダル | きんめだる | hiragana loanword; must be きんメダル (row 1333 also has しーずん for シーズン) | きんメダル |
 
-### action — 3
+### action — 3 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1536,45 +1551,45 @@
 | `brainstorm` | 브레인스토밍하다 | ブレインストーミングする | ぶれいんすとーみんぐする | answer is written in hiragana; must be katakana ブレインストーミングする | answer → ブレインストーミングする and replace in both sentence |
 | `upload` | 올리다 | アップロードする | あっぷろーどする | answer is written in hiragana; must be katakana アップロードする | answer → アップロードする and replace in both sentences (r |
 
-### quality — 2
+### quality — 2 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
 | `romantic` | 낭만적인 | ロマンチック | ろまんちっく | answer ろまんちっく is a loanword written in hiragana; must be katakana | ロマンチック (both rows need ロマンチック in the sentence) |
 | `miniature` | 소형의 | ミニ | みに | answer みに is a loanword written in hiragana, and ミニ is a prefix (ミニカー), not a な- | こがたの (小型の) |
 
-### school — 2
+### school — 2 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
 | `space-station` | 우주 정거장 | 宇宙ステーション | うちゅうすてーしょん | answer written in hiragana; ステーション must be katakana | うちゅうステーション(宇宙ステーション) |
 | `in-the-french-tongue` | 프랑스 말로 | ふらんすごで | ふらんすごで | ふらんすごで is noun+で and フランス must be katakana; sentences built on it are unnatural | フランスご(フランス語) |
 
-### number — 1
+### number — 1 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
 | `cubic-metre` | 세제곱미터 | 立方メートル | りっぽうめーとる | answer writes the loanword メートル in hiragana | answer → りっぽうメートル and replace in both sentences |
 
-### transport — 1
+### transport — 1 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
 | `electric-scooter` | 전동 스쿠터 | 電動バイク | でんどうばいく | loanword in hiragana; 電動バイク is an e-motorbike, the stand-up 전동 스쿠터 is 電動キックボード | でんどうキックボード |
 
-### everyday — 1
+### everyday — 1 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
 | `mouse-click` | 클릭 | クリック | くりっく | answer くりっく is written in hiragana; the loanword is katakana クリック | クリック |
 
-### body — 1
+### body — 1 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
 | `vaccine` | 백신 | ワクチン | わくちん | answer is written in hiragana; the loanword is ワクチン (katakana), and both texts c | answer ワクチン; texts e.g. かんごしが ワクチンを ひやして おいた。 / うで |
 
-### home — 1
+### home — 1 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1582,7 +1597,7 @@
 
 ## 한자가 없는 표제어 — 138
 
-### school — 70
+### school — 70 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
@@ -1657,7 +1672,7 @@
 | `the-power-of-mind` | 지력 | ちりょく | ちりょく | term field is kana only; kanji headword missing | 知力 |
 | `a-song-slipped-into-it` | 삽입곡 | そうにゅうきょく | そうにゅうきょく | term field is kana only; kanji headword missing | 挿入曲 |
 
-### job — 68
+### job — 68 · 고쳤다
 
 | 개념 | 뜻 | 표제어 | 읽기 | 문제 | 제안 |
 | --- | --- | --- | --- | --- | --- |
