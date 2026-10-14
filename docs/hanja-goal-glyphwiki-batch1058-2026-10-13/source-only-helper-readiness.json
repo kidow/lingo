@@ -1,0 +1,123 @@
+{
+  "batch": 1058,
+  "glyph": "潝",
+  "date": "2026-10-14",
+  "catalogStrokes": 15,
+  "domesticClips": 15,
+  "status": "blocked/N-A source-only",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "evidenceFile": "strict-native-server-preflight.json",
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false
+  },
+  "selectedRoot": "u6f5d",
+  "selectedFile": "engine-whole-u6f5d.json",
+  "selectedIdentity": {
+    "sourceRoot": "u6f5d",
+    "sourceProofFile": "engine-whole-u6f5d.json",
+    "sourceProofFileSha256": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6"
+  },
+  "originalBytePins": {
+    "sources.json": "f65b10f7cdf904aee1e7a58817a92fe5a64cf253597ede621d8e8bb19cea8026",
+    "metadata.json": "848ac238646878f0cd29911942fd383c36164ab24ce9b2f48e4f1a961fe2738a",
+    "engine-proof.json": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6",
+    "engine-whole-u6f5d.json": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6",
+    "strict-native-server-preflight.json": "65f5e073a1dd9b74280331971d744f74f62f59b72e6d3e3eafd3c6236efdf30a",
+    "strict-native-adapter.mjs": "b8ee694605554e6700fd234e4bd6ff6896b4dd9a0547c339d4bd25682860f184"
+  },
+  "wholeFamily": {
+    "names": [
+      "u6f5d",
+      "u6f5d-ue0100"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "callerContract": "selected proof/header identity + full five-key original proof",
+  "guards": {
+    "exit": 0,
+    "sourceRejected": 6,
+    "identityRejected": 5,
+    "totalRejected": 12,
+    "pinsPassed": true,
+    "inputUnchanged": true,
+    "omission": "omitted identity rejected",
+    "actualExecutionExit": 0
+  },
+  "compiler": {
+    "pens": 0,
+    "masks": 0,
+    "originalPolygonCount": 35,
+    "originalPolygonsExactlyOnce": null,
+    "compiledGeometrySHA256": null,
+    "blockedReason": "Original adjacent grouping16 differs from domestic15. raw7->10 is a nonadjacent enclosing contact; water raw2->3 endpoints have delta[-3.8999999999999986,-34], distance34.222945519051976. No connector or count-driven closure merge.",
+    "nonConsecutiveGroups": [],
+    "finePens": [],
+    "maskTransitions": [],
+    "originalSpecialTerminals": [
+      [
+        7,
+        0,
+        "cdDrawLine",
+        213
+      ],
+      [
+        9,
+        0,
+        "cdDrawLine",
+        223
+      ],
+      [
+        12,
+        1,
+        "cdDrawCurve",
+        14
+      ],
+      [
+        16,
+        1,
+        "cdDrawCurve",
+        314
+      ]
+    ],
+    "staticRawCurveIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18
+    ],
+    "originalProofKeys": 5,
+    "completeProofKeys": 5
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1058-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "Existing local-only helper; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}

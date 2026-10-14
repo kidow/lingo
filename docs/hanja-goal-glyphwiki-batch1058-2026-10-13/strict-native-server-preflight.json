@@ -1,0 +1,175 @@
+{
+  "batch": 1058,
+  "glyph": "潝",
+  "status": "blocked-source-only",
+  "frozenRuntimeSnapshot": {
+    "at": "2026-10-13T20:39:08.512Z",
+    "registered": 5444,
+    "registeredInThisTask": 0
+  },
+  "sourceVerification": {
+    "executor": "hanja_batch760_761_analysis",
+    "sharedRamWorker": 82039,
+    "originalVerifierActualRuns": 1,
+    "sourcePassed": true,
+    "sourceEvidencePassed": true,
+    "records": 4,
+    "capturedRoots": 2,
+    "domesticClips": 15,
+    "catalog": 15,
+    "catalogDomesticCountMatch": true,
+    "engineFiles": 8,
+    "archiveFetchesCumulative": 1,
+    "reverificationByThisAgent": 0,
+    "privateMediaSaved": false,
+    "missingSemantics": "Actual PASS reproduces original source state; catalog/domestic mismatch, shape eligibility and original boundary holds remain unchanged."
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u6f5d",
+    "sourceProofFile": "engine-whole-u6f5d.json",
+    "sourceProofFileSha256": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6"
+  },
+  "inputSHA256": {
+    "sources.json": "f65b10f7cdf904aee1e7a58817a92fe5a64cf253597ede621d8e8bb19cea8026",
+    "metadata.json": "848ac238646878f0cd29911942fd383c36164ab24ce9b2f48e4f1a961fe2738a",
+    "engine-proof.json": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6",
+    "engine-whole-u6f5d-ue0100.json": "3ef6157803a54232daac3518a254d1da5ecef110097ffeba116faeec9ecdaf3d",
+    "engine-whole-u6f5d.json": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6",
+    "strict-native-adapter.mjs": "b8ee694605554e6700fd234e4bd6ff6896b4dd9a0547c339d4bd25682860f184"
+  },
+  "fullSelectedOriginalProofSHA256": "6d18e5d876da1295952c483e12c2684c48a8e175e07c8efc77cc5d26c2bbb609",
+  "originalProofFileKeys": [
+    "engineRevision",
+    "engineHashes",
+    "groups",
+    "trace",
+    "defaults"
+  ],
+  "selectedHeaderSuppliedToOriginalCompiler": null,
+  "capturedRootGeometryEvidence": [
+    {
+      "root": "u6f5d-ue0100",
+      "file": "engine-whole-u6f5d-ue0100.json",
+      "sourceSHA256": "3ef6157803a54232daac3518a254d1da5ecef110097ffeba116faeec9ecdaf3d",
+      "geometryNull": false,
+      "missing": null,
+      "raw": 19,
+      "polygons": 35,
+      "geometryReplayComplete": true,
+      "fullCharacterEligibilityApproved": false
+    },
+    {
+      "root": "u6f5d",
+      "file": "engine-whole-u6f5d.json",
+      "sourceSHA256": "0ecb779f68ace811f50d446d854d95765735a55e851f5e8f94235dd7816b33a6",
+      "geometryNull": false,
+      "missing": null,
+      "raw": 19,
+      "polygons": 35,
+      "geometryReplayComplete": true,
+      "fullCharacterEligibilityApproved": false
+    }
+  ],
+  "originalCompilerExists": false,
+  "originalCompilerProofMetadataUnchanged": true,
+  "sourceGroups": [],
+  "nonconsecutiveGroups": [],
+  "blockedReason": "Original adjacent grouping16 differs from domestic15. raw7->10 is a nonadjacent enclosing contact; water raw2->3 endpoints have delta[-3.8999999999999986,-34], distance34.222945519051976. No connector or count-driven closure merge.",
+  "localActualVerification": {
+    "batch": 1058,
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "expectedBlock": true,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "b8ee694605554e6700fd234e4bd6ff6896b4dd9a0547c339d4bd25682860f184",
+    "nativeApproval": false,
+    "originalPolygonCount": 35,
+    "exactPolygonConservation": null,
+    "completeCompiledSHA256": null
+  },
+  "fineRisk": {
+    "pens": [],
+    "originalTransitions": [],
+    "originalTerminalCalls": [],
+    "mergedOriginalEndpointContinuity": [],
+    "sourceGeometryAudit": [
+      {
+        "batch": 1058,
+        "originalEmptySourceRows": []
+      }
+    ],
+    "riskIsNumericNotNativeFailure": true,
+    "noGeometryWidthDirectionWeightAdjustment": true,
+    "emptyType0MetadataPreserved": true
+  },
+  "server": {
+    "baseURL": "http://127.0.0.1:53460",
+    "pid": 81481,
+    "session": 73778,
+    "routes": {
+      "whole": "/whole",
+      "pairs": "/pairs?domestic=1&raw=1",
+      "progressive": "/progressive?stroke=1&enlarged=1&samples=1"
+    },
+    "positiveHTTPChecks": [
+      {
+        "batch": 1058,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 833,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1058,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 12089,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1058,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 2144,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1058,
+        "route": "/progressive?stroke=1&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1373,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      }
+    ],
+    "strictInputPinsEachRequest": true,
+    "privateDictionaryRAMOnly": true,
+    "nineGridSamplesAvailable": false,
+    "eightSecondReplayAvailable": false
+  },
+  "nativeObserved": {
+    "wholeVariants": 0,
+    "domesticDirections": 0,
+    "coarseFrames": 0,
+    "fineFrames": 0,
+    "maskBoundaries": 0,
+    "actualReplay": 0,
+    "approvalGranted": false
+  },
+  "plannedNativeCoarseFrames": 0,
+  "productionRuntimeChanged": false,
+  "sharedRegistryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false
+}
