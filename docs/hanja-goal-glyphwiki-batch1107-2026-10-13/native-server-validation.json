@@ -1,0 +1,136 @@
+{
+  "batch": 1107,
+  "glyph": "蔭",
+  "status": "re-review-original-source-pending",
+  "legacyNativeHoldOrPartialPreserved": true,
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceEvidencePassed": true,
+  "sourceEvidenceSummaryFieldAvailable": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "toki-01096170",
+      "pens": 15,
+      "masks": 16,
+      "polygons": 32,
+      "canonicalPolygonsSHA256": "9e08c4073c25671d06f52ffc3b849ed8d2c853bdb8cc2e665b3d988b600fec3c",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 11,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": [],
+      "previewSupported": true
+    }
+  ],
+  "countMismatchProfiles": [],
+  "countMismatchCallerActuallyRejected": false,
+  "sourceSHA256": {
+    "sources.json": "b6d2dc65b9cd9c1f4cda935ef77f143584c3c8bb80f2679ad9dea42c66836584",
+    "engine-proof.json": "11a09871f48cd8223c6d57597aca600377fa2bb3c1d033ee744967bc837d340b",
+    "metadata.json": "d6ebe0710d9221e036af47f0a418423f98044e2bbacdac9d0310369db79e2a07",
+    "engine-whole-toki-01096170.json": "11a09871f48cd8223c6d57597aca600377fa2bb3c1d033ee744967bc837d340b"
+  },
+  "compilerSHA256": "a614182b999162926f0525eae96ea61cb1b311142fb147f13d957175f5f8a63b",
+  "risks": [
+    {
+      "root": "toki-01096170",
+      "terminalSourceRisk": [
+        {
+          "raw": 2,
+          "call": 1,
+          "kind": "cdDrawCurve",
+          "terminals": [
+            2,
+            514
+          ],
+          "pens": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1107,
+      "kind": "serve-whole.py",
+      "session": 97108,
+      "port": 56405,
+      "pid": 98858,
+      "wholeVariants": 1,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 15,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1107,
+      "kind": "serve-progressive.py",
+      "session": 21835,
+      "port": 56416,
+      "pid": 98879,
+      "strokes": 15,
+      "masks": 16,
+      "sourceRoot": "toki-01096170",
+      "sourceProofFile": "engine-whole-toki-01096170.json",
+      "sourceProofFileSHA256": "11a09871f48cd8223c6d57597aca600377fa2bb3c1d033ee744967bc837d340b"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1107,
+      "kind": "whole",
+      "url": "http://127.0.0.1:56405/?id=toki-01096170",
+      "status": 200,
+      "bytes": 7982,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1107,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:56405/?id=toki-01096170&pairs=1:1,15:15&view=checks",
+      "status": 200,
+      "bytes": 382,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1107,
+      "kind": "fine",
+      "url": "http://127.0.0.1:56416/?root=toki-01096170&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 10763,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1107,
+      "kind": "fine",
+      "url": "http://127.0.0.1:56416/?root=toki-01096170&stroke=15&enlarged=1",
+      "status": 200,
+      "bytes": 14060,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1107,
+      "kind": "fine",
+      "url": "http://127.0.0.1:56416/?root=toki-01096170&stroke=2&enlarged=1",
+      "status": 200,
+      "bytes": 11036,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
