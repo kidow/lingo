@@ -1,0 +1,192 @@
+{
+  "batch": 987,
+  "glyph": "滮",
+  "status": "source-only strict blocked native diagnostic",
+  "frozenRuntimeSnapshot": {
+    "utc": "2026-10-13T20:06:37.846Z",
+    "registered": 5441,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 5,
+    "namedWholeVariants": 2,
+    "completeWholeVariants": 2,
+    "domesticClips": 14,
+    "engineFilesVerified": 8,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false,
+    "archiveRedownloaded": false
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u6eee",
+    "sourceProofFile": "engine-whole-u6eee.json",
+    "sourceProofFileSha256": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725"
+  },
+  "inputFileSHA256": {
+    "sources.json": "694b518cf660b62e7bc1b212084b23ec7a55dbcbf50fcc776110dbed93a49a3f",
+    "metadata.json": "bffc26c2b1ee08243e7c7119ee1cc4be5de5fc284462ccb55e926858597d3a0a",
+    "engine-proof.json": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725",
+    "engine-whole-u6eee-ue0100.json": "72cde57385291364a8bddb28bf8a611263223dca65904bc2b980110b9e4c6312",
+    "engine-whole-u6eee.json": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725",
+    "strict-native-adapter.mjs": "a18e95f388cc99c02de7a423458733504bc02cbcf3d53c7c1879c8e21e87259b"
+  },
+  "fullSelectedProofSHA256": "1b6bbf8738e1ea8f3ac60885dda23a5b2a90029e00eb52a8cc28710a3b8d3d23",
+  "wholeEvidence": [
+    {
+      "root": "u6eee-ue0100",
+      "file": "engine-whole-u6eee-ue0100.json",
+      "sourceSHA256": "72cde57385291364a8bddb28bf8a611263223dca65904bc2b980110b9e4c6312",
+      "complete": true,
+      "missing": null,
+      "raw": 16,
+      "polygons": 47,
+      "geometryUnavailable": false
+    },
+    {
+      "root": "u6eee",
+      "file": "engine-whole-u6eee.json",
+      "sourceSHA256": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725",
+      "complete": true,
+      "missing": null,
+      "raw": 16,
+      "polygons": 47,
+      "geometryUnavailable": false
+    }
+  ],
+  "originalCompilerProofMetadataUnchanged": true,
+  "originalSourceGroups": [],
+  "nonconsecutiveGroups": [],
+  "blockedReason": "Both fixed roots have16 raw groups and only noncontiguous6/8 endpoint coincidence, giving raw endpoint lower bound15 greater than catalog/domestic14. Current exact-join workflow cannot produce14 without further original boundary evidence; no invented connector.",
+  "localActualVerification": {
+    "batch": 987,
+    "expectedBlock": true,
+    "reason": "Both fixed roots have16 raw groups and only noncontiguous6/8 endpoint coincidence, giving raw endpoint lower bound15 greater than catalog/domestic14. Current exact-join workflow cannot produce14 without further original boundary evidence; no invented connector.",
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "a18e95f388cc99c02de7a423458733504bc02cbcf3d53c7c1879c8e21e87259b",
+    "compiledSHA256": null,
+    "nativeApproval": false,
+    "originalPolygonCount": 47,
+    "allOriginalPolygonsOnce": null,
+    "noCoordsWidthsPathsWeightsBoundsDirectionsModified": true
+  },
+  "risks": {
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "frames": 0,
+    "replay": 0,
+    "reason": "Both fixed roots have16 raw groups and only noncontiguous6/8 endpoint coincidence, giving raw endpoint lower bound15 greater than catalog/domestic14. Current exact-join workflow cannot produce14 without further original boundary evidence; no invented connector.",
+    "missingFixedDependencies": [],
+    "missingWholeNeverPromotedToComplete": false
+  },
+  "server": {
+    "binding": "127.0.0.1:0; actual OS-selected port",
+    "url": "http://127.0.0.1:49325",
+    "pid": 58389,
+    "sessionID": 3979,
+    "whole": "/whole",
+    "pairs": "/pairs?domestic=1&raw=1",
+    "progressive": "expected blocked status only",
+    "guardsEachRequest": true,
+    "actualHTTPResults": [
+      {
+        "batch": 987,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 1342,
+        "checks": {
+          "sourceRoot": "u6eee",
+          "identity": {
+            "sourceRoot": "u6eee",
+            "sourceProofFile": "engine-whole-u6eee.json",
+            "sourceProofFileSha256": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725",
+            "sourceHeaderFile": "engine-proof.json",
+            "sourceHeaderFileSha256": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725"
+          },
+          "sourceVerificationPassed": true,
+          "blocked": true,
+          "reason": "Both fixed roots have16 raw groups and only noncontiguous6/8 endpoint coincidence, giving raw endpoint lower bound15 greater than catalog/domestic14. Current exact-join workflow cannot produce14 without further original boundary evidence; no invented connector.",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u6eee-ue0100",
+            "u6eee"
+          ],
+          "sourceInputPinsVerified": 6,
+          "catalog": 14,
+          "domestic": 14
+        },
+        "completeWholeCount": 2,
+        "blockedWholeCount": 0
+      },
+      {
+        "batch": 987,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 13066,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false,
+        "svgTags": 3,
+        "missingWholePlaceholder": false
+      },
+      {
+        "batch": 987,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 2163,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false,
+        "svgTags": 2,
+        "missingWholePlaceholder": false
+      },
+      {
+        "batch": 987,
+        "route": "/progressive?stroke=1&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1397,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": true,
+        "svgTags": 0,
+        "missingWholePlaceholder": false
+      }
+    ],
+    "privateDictionaryMedia": "RAM-only; actual rendering requests verified byte SHA/title/clips"
+  },
+  "nativeObserved": {
+    "whole": 0,
+    "directions": 0,
+    "frames": 0,
+    "fine": 0,
+    "boundaries": 0,
+    "replay": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}

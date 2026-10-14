@@ -1,0 +1,202 @@
+{
+  "batch": 987,
+  "glyph": "滮",
+  "date": "2026-10-14",
+  "status": "source-block-preserved-no-compiler",
+  "compilerPresent": false,
+  "compilerFileSHA256": null,
+  "compilerUnchanged": true,
+  "sourceManifestSHA256": "694b518cf660b62e7bc1b212084b23ec7a55dbcbf50fcc776110dbed93a49a3f",
+  "metadataFileSHA256": "bffc26c2b1ee08243e7c7119ee1cc4be5de5fc284462ccb55e926858597d3a0a",
+  "engineProofFileSHA256": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725",
+  "fixedEngineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+  "fixedEightEngineHashes": {
+    "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+    "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+    "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+    "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+    "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+    "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+    "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+    "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+  },
+  "pinnedPreset": {
+    "kMage": 10,
+    "kWidth": 5,
+    "kMinWidthT": 6,
+    "kAdjustMageStep": 5
+  },
+  "recordCount": 5,
+  "missing": [],
+  "latestSubstitution": false,
+  "variants": [
+    {
+      "root": "u6eee",
+      "file": "engine-whole-u6eee.json",
+      "fileSHA256": "3685c250740f4f1af5c048704b45de7b9dfd336b4be838a79eda5d01a99a7725",
+      "raw": 16,
+      "draw": 21,
+      "Q": 12,
+      "B": 0,
+      "polygons": 47,
+      "emptyRows": [],
+      "graph": {
+        "exactDirectedJoins": [
+          [
+            6,
+            8
+          ]
+        ],
+        "maximumMatching": 1,
+        "minimumPathCoverIfAcyclic": 15,
+        "cycle": false
+      }
+    },
+    {
+      "root": "u6eee-ue0100",
+      "file": "engine-whole-u6eee-ue0100.json",
+      "fileSHA256": "72cde57385291364a8bddb28bf8a611263223dca65904bc2b980110b9e4c6312",
+      "raw": 16,
+      "draw": 21,
+      "Q": 12,
+      "B": 0,
+      "polygons": 47,
+      "emptyRows": [],
+      "graph": {
+        "exactDirectedJoins": [
+          [
+            6,
+            8
+          ]
+        ],
+        "maximumMatching": 1,
+        "minimumPathCoverIfAcyclic": 15,
+        "cycle": false
+      }
+    }
+  ],
+  "profiles": [],
+  "compilerGuardCasesExecuted": 0,
+  "compilerGuardUnavailableReason": "No compiler exists; no compile mutation rejection claimed.",
+  "reason": "Both fixed roots have16 raw groups and only noncontiguous6/8 endpoint coincidence, giving raw endpoint lower bound15 greater than catalog/domestic14. Current exact-join workflow cannot produce14 without further original boundary evidence; no invented connector.",
+  "sourceHoldReason": "minimum_exact_raw_paths_exceeds_catalog",
+  "disconnectedEndpointEvidence": [
+    {
+      "root": "u6eee",
+      "gaps": [
+        {
+          "raw": [
+            6,
+            7
+          ],
+          "end": [
+            128.4,
+            56
+          ],
+          "start": [
+            68.46000000000001,
+            56
+          ],
+          "delta": [
+            -59.94,
+            0
+          ],
+          "distance": 59.94
+        },
+        {
+          "raw": [
+            7,
+            8
+          ],
+          "end": [
+            56.62,
+            187
+          ],
+          "start": [
+            128.4,
+            56
+          ],
+          "delta": [
+            71.78,
+            -131
+          ],
+          "distance": 149.37659923830105
+        }
+      ],
+      "minimumCount": 15,
+      "catalogCount": 14
+    },
+    {
+      "root": "u6eee-ue0100",
+      "gaps": [
+        {
+          "raw": [
+            6,
+            7
+          ],
+          "end": [
+            128.4,
+            56
+          ],
+          "start": [
+            68.46000000000001,
+            56
+          ],
+          "delta": [
+            -59.94,
+            0
+          ],
+          "distance": 59.94
+        },
+        {
+          "raw": [
+            7,
+            8
+          ],
+          "end": [
+            56.62,
+            187
+          ],
+          "start": [
+            128.4,
+            56
+          ],
+          "delta": [
+            71.78,
+            -131
+          ],
+          "distance": 149.37659923830105
+        }
+      ],
+      "minimumCount": 15,
+      "catalogCount": 14
+    }
+  ],
+  "incidentalClosingBoundary": null,
+  "namedWholeSelectionCaveat": null,
+  "catalogStrokes": 14,
+  "domesticClips": 14,
+  "domesticCountMatchesCatalog": true,
+  "disconnectedRequiredJoin": null,
+  "rejectedCountOnlyMerge": null,
+  "legitimateExactFold": null,
+  "pensAfterLegitimateFold": null,
+  "boundaryCaveats": [],
+  "sourceAnalysisSHA256": "55953b0aaff5348447051026a0e2c6a266fe13d52008fd13462d85bb5d290e35",
+  "sourceJoinAnalysisSHA256": "c8ee3e7cb259a70a457f6ade777cb7d8c7285db984f85b29a60be57c24329bd6",
+  "candidateAnalysisSHA256": "6056863cdf08e46be3bf79991ddb4c852d70564be9c8e916a3467bd8dc90f6ce",
+  "zeroAreaOriginalPolygonsRetained": [],
+  "nonDrawingMetadata": [],
+  "requiredOriginalJoins": [],
+  "nativeBoundaryAndOrderPending": [],
+  "numericCountIsNotDomesticBoundaryApproval": true,
+  "nativeApproval": false,
+  "nativeFramesReviewed": 0,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "coordinatesChanged": false,
+  "newJoinsToForceCount": false,
+  "networkRequested": false,
+  "serverAdded": false,
+  "buildExecuted": false
+}
