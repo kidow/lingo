@@ -1,0 +1,127 @@
+{
+  "batch": 983,
+  "glyph": "斃",
+  "catalogStrokes": 18,
+  "domesticClips": 17,
+  "status": "blocked-source-only-helper-contract-valid",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false,
+    "evidenceFile": "native-server-preflight-hold.json"
+  },
+  "selectedRoot": "u6583",
+  "selectedFile": "engine-whole-u6583.json",
+  "selectedIdentity": {
+    "sourceRoot": "u6583",
+    "sourceProofFile": "./engine-whole-u6583.json",
+    "sourceProofFileSha256": "d14c80336eabbc950ea68b677cf90737bc19c47876b5d3b96947d33714caabfd",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "04fd8cff71681b2c3f776a97ba2d7cdf6a77cf5ba1319acee29985b698ccacf5"
+  },
+  "originalBytePins": {
+    "sources.json": "13d188aa50ea4dc5374a34a5ab667be1b592c4eb5b9a4b551a045583f7f52ddb",
+    "metadata.json": "013e2ad0c7500823f2e703b1143ad94d657adc31a77212ab297b8781e63d5bc0",
+    "engine-proof.json": "04fd8cff71681b2c3f776a97ba2d7cdf6a77cf5ba1319acee29985b698ccacf5",
+    "engine-whole-u6583.json": "d14c80336eabbc950ea68b677cf90737bc19c47876b5d3b96947d33714caabfd",
+    "native-server-preflight-hold.json": "d732a4be5d4aa1cb2559ff5a8c533686f75f3c15b50463e65c6f79f71e2eaa2f",
+    "progressive.mjs": "ec13ea2f330a7184272774b41abf30584fe74ded31fea4bc8541f8b48120c174"
+  },
+  "wholeFamily": {
+    "names": [
+      "u6583",
+      "u6583-g",
+      "u6583-k",
+      "u6583-ue0100",
+      "u6583-ue0101",
+      "u6583-ue0102",
+      "u6583-ue0103",
+      "u6583-ue0104"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "selectedWhole": {
+    "raw": 20,
+    "draw": 23,
+    "Q": 13,
+    "B": 0,
+    "polygons": 47
+  },
+  "callerContract": "five-field selected proof/header identity; default identity allowed; expected count block",
+  "guards": {
+    "actualExecutionExit": 0,
+    "totalRejected": null,
+    "sourceRejected": 6,
+    "identityRejected": 5,
+    "defaultIdentity": "accepted then expected count block",
+    "callerPinsPassed": true,
+    "originalInputImmutable": true,
+    "sourceAndEngineHeaderKeys": 8,
+    "expectedPinnedInputsVerified": 17,
+    "actualTestModule": "progressive.mjs selected proof contract"
+  },
+  "compiler": {
+    "pens": 0,
+    "masks": 0,
+    "originalPolygonCount": 47,
+    "originalPolygonsExactlyOnce": null,
+    "blockedReason": "catalog-18-domestic-17-mismatch",
+    "nonConsecutiveGroups": [],
+    "finePens": [],
+    "maskTransitions": [],
+    "originalSpecialTerminals": [
+      {
+        "raw": 5,
+        "call": 1,
+        "kind": "cdDrawCurve",
+        "terminal": 514
+      },
+      {
+        "raw": 18,
+        "call": 2,
+        "kind": "cdDrawLine",
+        "terminal": 5
+      }
+    ],
+    "staticRawCurveIndices": [
+      1,
+      2,
+      5,
+      7,
+      8,
+      9,
+      11,
+      12,
+      14,
+      16,
+      17,
+      18,
+      19
+    ],
+    "quantitativeMaskCoverageRisks": [],
+    "compiledGeometrySHA256": null,
+    "compiledGeometrySHA256Reason": "Blocked before mask compilation; no compiled geometry SHA or emitted-polygon conservation claim.",
+    "reason": "Catalog18 vs domestic17 conflict remains; no candidate active."
+  },
+  "helper": {
+    "exists": false,
+    "restartCommands": [],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": false,
+    "portBinding": "N/A: helper absent; no server created"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false,
+  "date": "2026-10-14"
+}
