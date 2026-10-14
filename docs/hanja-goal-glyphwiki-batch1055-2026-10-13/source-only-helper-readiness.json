@@ -1,0 +1,106 @@
+{
+  "batch": 1055,
+  "glyph": "訩",
+  "date": "2026-10-14",
+  "catalogStrokes": 11,
+  "domesticClips": 11,
+  "status": "blocked/N-A source-only",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "evidenceFile": "native-server-preparation-source-analysis.json",
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false
+  },
+  "selectedRoot": "u8a29",
+  "selectedFile": "engine-whole-u8a29.json",
+  "selectedIdentity": null,
+  "originalBytePins": {
+    "sources.json": "df0f33ef60ec805f5508c8fc2d51b49e368307bc4341181974d3b41d1b887293",
+    "metadata.json": "f8b95555ea8c624884ef8b613447118192d0b1169599d0c2396a7f65f60eb20d",
+    "engine-proof.json": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1",
+    "engine-whole-u8a29.json": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1",
+    "native-server-preparation-source-analysis.json": "76a9cb4e0e590ef3307f87193ab0743c8270598d14a010819a215f9b6e841c2e"
+  },
+  "wholeFamily": {
+    "names": [
+      "u8a29"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "callerContract": "N/A compiler absent; pinned static source only",
+  "guards": {
+    "exit": null,
+    "sourceRejected": 0,
+    "identityRejected": 0,
+    "totalRejected": 0,
+    "pinsPassed": true,
+    "inputUnchanged": null,
+    "omission": null,
+    "status": "N/A: selected geometry/module unavailable; no compiler approval",
+    "actualExecutionExit": null
+  },
+  "compiler": {
+    "pens": 0,
+    "masks": 0,
+    "originalPolygonCount": 23,
+    "originalPolygonsExactlyOnce": null,
+    "compiledGeometrySHA256": null,
+    "blockedReason": "Original adjacent grouping yields12 rather than catalog/domestic11. Exact nonadjacent raw10->12 contact and raw4->7 enclosing contact are not evidence for a count-driven merged pen.",
+    "nonConsecutiveGroups": [],
+    "finePens": [],
+    "maskTransitions": [],
+    "originalSpecialTerminals": [
+      [
+        4,
+        0,
+        "cdDrawLine",
+        113
+      ],
+      [
+        6,
+        0,
+        "cdDrawLine",
+        123
+      ],
+      [
+        10,
+        0,
+        "cdDrawLine",
+        13
+      ],
+      [
+        11,
+        0,
+        "cdDrawLine",
+        23
+      ]
+    ],
+    "staticRawCurveIndices": [
+      8,
+      9
+    ],
+    "originalProofKeys": 5,
+    "completeProofKeys": null
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1055-2026-10-13/serve-whole.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "Existing local-only helper; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}

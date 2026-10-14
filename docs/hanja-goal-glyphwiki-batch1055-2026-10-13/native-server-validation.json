@@ -1,0 +1,75 @@
+{
+  "batch": 1055,
+  "glyph": "訩",
+  "status": "blocked-original-source",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceEvidencePassed": true,
+  "expectedMissingWholeProofs": [],
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": {
+    "compilerAbsent": true,
+    "candidateGeometryAbsent": true,
+    "reason": "Original adjacent grouping yields12 rather than catalog/domestic11. Exact nonadjacent raw10->12 contact and raw4->7 enclosing contact are not evidence for a count-driven merged pen.",
+    "wholeFacts": [
+      {
+        "root": "u8a29",
+        "raw": 13,
+        "originalDrawingCalls": 13,
+        "polygons": 23,
+        "sourceGeometryPreserved": true
+      }
+    ],
+    "noNewCompilerGuardClaim": true
+  },
+  "sourceSHA256": {
+    "sources.json": "df0f33ef60ec805f5508c8fc2d51b49e368307bc4341181974d3b41d1b887293",
+    "engine-proof.json": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1",
+    "metadata.json": "f8b95555ea8c624884ef8b613447118192d0b1169599d0c2396a7f65f60eb20d",
+    "engine-whole-u8a29.json": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1"
+  },
+  "compilerSHA256": null,
+  "risks": [],
+  "servers": [
+    {
+      "batch": 1055,
+      "kind": "serve-whole.py",
+      "session": 47048,
+      "port": 52988,
+      "pid": 79290,
+      "wholeVariants": 1,
+      "blocked": true,
+      "nativeApproval": false
+    }
+  ],
+  "http": [
+    {
+      "batch": 1055,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52988/?id=u8a29",
+      "status": 200,
+      "bytes": 3900,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1055,
+      "kind": "checks",
+      "url": "http://127.0.0.1:52988/?view=checks",
+      "status": 200,
+      "bytes": 443,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
