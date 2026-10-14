@@ -1,0 +1,99 @@
+{
+  "batch": 1027,
+  "glyph": "薅",
+  "port": 0,
+  "catalog": 17,
+  "domestic": 17,
+  "wholeNames": [
+    "u8585-g",
+    "u8585-ue0100",
+    "u8585-ue0101",
+    "u8585-ue0102",
+    "u8585-var-001",
+    "u8585"
+  ],
+  "wholeEvidence": [
+    {
+      "root": "u8585-g",
+      "file": "engine-whole-u8585-g.json",
+      "sourceSHA256": "2e964a86915d325d16c6aa9ba72f61e24864ab4becfaead636c438ac541a0dca",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 18,
+      "polygons": 40
+    },
+    {
+      "root": "u8585-ue0100",
+      "file": "engine-whole-u8585-ue0100.json",
+      "sourceSHA256": "e08339278a7a8aa8c79e209a8fd0ddf854316e429e2671da51c010ee944f09c5",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 18,
+      "polygons": 40
+    },
+    {
+      "root": "u8585-ue0101",
+      "file": "engine-whole-u8585-ue0101.json",
+      "sourceSHA256": "e08339278a7a8aa8c79e209a8fd0ddf854316e429e2671da51c010ee944f09c5",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 18,
+      "polygons": 40
+    },
+    {
+      "root": "u8585-ue0102",
+      "file": "engine-whole-u8585-ue0102.json",
+      "sourceSHA256": "0e3c057ae9641b610c89ec602558fe1ac7510278306b3dcb6f55f0ff6279ccd5",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 19,
+      "polygons": 42
+    },
+    {
+      "root": "u8585-var-001",
+      "file": "engine-whole-u8585-var-001.json",
+      "sourceSHA256": "6f65d2e9cdea0f9892cecf6987aa93f9eefa775cfbeda00d8e4ccf170deee722",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 18,
+      "polygons": 41
+    },
+    {
+      "root": "u8585",
+      "file": "engine-whole-u8585.json",
+      "sourceSHA256": "bd2560796015ef1a748818c32ffe7f93eb14e2fe3cde975c99aaa805fc26a04e",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 18,
+      "polygons": 40
+    }
+  ],
+  "pins": {
+    "sources.json": "880f96f454180b248b26ceb65d694c603ff02f613e390ccae27a558cca212ea4",
+    "metadata.json": "44be9c4d31794fd5d515611a17a5da5ecce0a4f05c486759ed0c1b5f92133964",
+    "engine-proof.json": "bd2560796015ef1a748818c32ffe7f93eb14e2fe3cde975c99aaa805fc26a04e",
+    "progressive.mjs": "d19ef6368251e507bdde02828f1c396e7d6e2f27224ed8263492b388bb9b9706",
+    "engine-whole-u8585-g.json": "2e964a86915d325d16c6aa9ba72f61e24864ab4becfaead636c438ac541a0dca",
+    "engine-whole-u8585-ue0100.json": "e08339278a7a8aa8c79e209a8fd0ddf854316e429e2671da51c010ee944f09c5",
+    "engine-whole-u8585-ue0101.json": "e08339278a7a8aa8c79e209a8fd0ddf854316e429e2671da51c010ee944f09c5",
+    "engine-whole-u8585-ue0102.json": "0e3c057ae9641b610c89ec602558fe1ac7510278306b3dcb6f55f0ff6279ccd5",
+    "engine-whole-u8585-var-001.json": "6f65d2e9cdea0f9892cecf6987aa93f9eefa775cfbeda00d8e4ccf170deee722",
+    "engine-whole-u8585.json": "bd2560796015ef1a748818c32ffe7f93eb14e2fe3cde975c99aaa805fc26a04e",
+    "strict-native-adapter.mjs": "d4776f525452b0ab5db0ae380304f16fc662bfc725f40d3d838088ac964a9005"
+  },
+  "identity": {
+    "sourceRoot": "u8585",
+    "sourceProofFile": "engine-whole-u8585.json",
+    "sourceProofFileSha256": "bd2560796015ef1a748818c32ffe7f93eb14e2fe3cde975c99aaa805fc26a04e",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "bd2560796015ef1a748818c32ffe7f93eb14e2fe3cde975c99aaa805fc26a04e"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';const d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1027-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');for(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);const s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"0fc8a2878b7ff76541ee89938ce5593c2c1f598568a2b2a21aa81beaee6dabb7\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(p.trace,p,id);assert.equal(JSON.stringify(p),before);assert.equal(strokes.length,17);assert.equal(strokes.flat().length,18);assert.equal(sha(JSON.stringify(strokes)),\"650546d7b7de7b0c8672ac39a8025cca0e7df781fd420e2f09b2ec0d21ef3b48\");console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:true,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:strokes.length,compiledMasks:strokes.flat().length,blocked:false,nativeApproval:false}));"
+}
