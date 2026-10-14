@@ -1,0 +1,51 @@
+{
+  "batch": 1100,
+  "glyph": "翿",
+  "port": 0,
+  "catalog": 20,
+  "domestic": 20,
+  "wholeNames": [
+    "u7fff-ue0100",
+    "u7fff"
+  ],
+  "wholeEvidence": [
+    {
+      "root": "u7fff-ue0100",
+      "file": "engine-whole-u7fff-ue0100.json",
+      "sourceSHA256": "250c9322db054914d532dc908237919b0aa043f6747f065665582c9bc8c4ab56",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 24,
+      "polygons": 54
+    },
+    {
+      "root": "u7fff",
+      "file": "engine-whole-u7fff.json",
+      "sourceSHA256": "250c9322db054914d532dc908237919b0aa043f6747f065665582c9bc8c4ab56",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 24,
+      "polygons": 54
+    }
+  ],
+  "pins": {
+    "sources.json": "aa6995e90cf59010c1ff3142b93dfcc8c3e3b971830e6624fcf0f3705590a41f",
+    "metadata.json": "19f8783b6ccc98798b7cc5424e88c8051283128ff73d93306e68dd7663c97a5c",
+    "engine-proof.json": "250c9322db054914d532dc908237919b0aa043f6747f065665582c9bc8c4ab56",
+    "progressive.mjs": "21f72e5ee002f5a0c514f60145450384c1c5d8927cc8902f137fab0f345c12ae",
+    "engine-whole-u7fff-ue0100.json": "250c9322db054914d532dc908237919b0aa043f6747f065665582c9bc8c4ab56",
+    "engine-whole-u7fff.json": "250c9322db054914d532dc908237919b0aa043f6747f065665582c9bc8c4ab56",
+    "strict-native-adapter.mjs": "0b55a99101c564d0a4849c8efc5d0534ed617ff7e0498eecd5490ecc9da6adac"
+  },
+  "identity": {
+    "sourceRoot": "u7fff",
+    "sourceProofFile": "engine-whole-u7fff.json",
+    "sourceProofFileSha256": "250c9322db054914d532dc908237919b0aa043f6747f065665582c9bc8c4ab56",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "250c9322db054914d532dc908237919b0aa043f6747f065665582c9bc8c4ab56"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';const d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1100-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');for(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);const s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"f35b305da9c2d0870ea6c9014cbfe1ce2920927edf277e129bff84c3c5772e25\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(p.trace,p,id);assert.equal(JSON.stringify(p),before);assert.equal(strokes.length,20);assert.equal(strokes.flat().length,23);assert.equal(sha(JSON.stringify(strokes)),\"3faa91a7ebd67dc74685097ad162d9a5fa7f7e1a51febb9c0c1f9795f260eea2\");console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:cfg.sourceVerificationPassed,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:strokes.length,compiledMasks:strokes.flat().length,blocked:false,nativeApproval:false}));"
+}
