@@ -1,0 +1,257 @@
+{
+  "batch": 1090,
+  "glyph": "嶼",
+  "status": "candidate-shape-attribution-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceEvidencePassed": null,
+  "sourceEvidenceSummaryFieldAvailable": false,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u5dbc-k",
+      "pens": 17,
+      "masks": 17,
+      "polygons": 36,
+      "canonicalPolygonsSHA256": "aca909b8446de38561d4a7717ac2767ceef2db47ad7c90b12229ffc02652c3dc",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u5dbc-ue0100",
+      "pens": 17,
+      "masks": 17,
+      "polygons": 36,
+      "canonicalPolygonsSHA256": "965b525b564b7bce5d6d897de982d8f1ab0e975fe0650e1179ec9da113962380",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "sources.json": "848a2ef0d13b28e583da92456c95c870ea64261d5863eab8c5a9a2c9e02eea6d",
+    "engine-whole-u5dbc.json": "b8b58bcd2b5fedb9a029dc93c8d2506e065ccd0adfdda55e95eadde9dcbb4fa4",
+    "engine-proof.json": "b4b34a7a5f11371ea18c2d132c8989b58f0230c3da31fb6c2cc9de81a1123255",
+    "engine-whole-u5dbc-ue0100.json": "34a76c745651a160c653d186459950cca59526cb783233e2c02427550bc1dd14",
+    "engine-whole-u5dbc-j.json": "b8b58bcd2b5fedb9a029dc93c8d2506e065ccd0adfdda55e95eadde9dcbb4fa4",
+    "metadata.json": "78201d1bed73f23e806837504e1181bf04d5d8e1f29ae61d38fba83f7ea574c0",
+    "engine-whole-u5dbc-k.json": "5fed1f353746571c424168b5b65d6c0770be78aee8b43e3b6eeaf43433689365"
+  },
+  "compilerSHA256": "88da2c6776df93d7d2946fe3d31da92d7ab15fe985fb0722fbb95224987c3d92",
+  "risks": [
+    {
+      "root": "u5dbc-k",
+      "terminalSourceRisk": [
+        {
+          "raw": 1,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            1000,
+            13
+          ],
+          "pens": [
+            2
+          ]
+        },
+        {
+          "raw": 3,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            2000,
+            23
+          ],
+          "pens": [
+            3
+          ]
+        },
+        {
+          "raw": 13,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            0,
+            313
+          ],
+          "pens": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "root": "u5dbc-ue0100",
+      "terminalSourceRisk": [
+        {
+          "raw": 1,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            1000,
+            13
+          ],
+          "pens": [
+            2
+          ]
+        },
+        {
+          "raw": 3,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            1000,
+            23
+          ],
+          "pens": [
+            3
+          ]
+        },
+        {
+          "raw": 13,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            0,
+            313
+          ],
+          "pens": [
+            11
+          ]
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1090,
+      "kind": "serve-whole.py",
+      "session": 80234,
+      "port": 55613,
+      "pid": 94937,
+      "wholeVariants": 4,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 17,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "serve-progressive.py",
+      "session": 49255,
+      "port": 55599,
+      "pid": 94873,
+      "strokes": 17,
+      "masks": 17,
+      "sourceRoot": "u5dbc-k",
+      "sourceProofFile": "./engine-whole-u5dbc-k.json",
+      "sourceProofFileSHA256": "5fed1f353746571c424168b5b65d6c0770be78aee8b43e3b6eeaf43433689365"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1090,
+      "kind": "whole",
+      "url": "http://127.0.0.1:55613/?id=u5dbc",
+      "status": 200,
+      "bytes": 6066,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "whole",
+      "url": "http://127.0.0.1:55613/?id=u5dbc-j",
+      "status": 200,
+      "bytes": 6068,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "whole",
+      "url": "http://127.0.0.1:55613/?id=u5dbc-k",
+      "status": 200,
+      "bytes": 6125,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "whole",
+      "url": "http://127.0.0.1:55613/?id=u5dbc-ue0100",
+      "status": 200,
+      "bytes": 6199,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:55613/?id=u5dbc-k&pairs=1:1,17:17&view=checks",
+      "status": 200,
+      "bytes": 369,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "fine",
+      "url": "http://127.0.0.1:55599/?root=u5dbc-k&stroke=2&enlarged=1",
+      "status": 200,
+      "bytes": 9223,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "fine",
+      "url": "http://127.0.0.1:55599/?root=u5dbc-k&stroke=17&enlarged=1",
+      "status": 200,
+      "bytes": 11352,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:55613/?id=u5dbc-ue0100&pairs=1:1,17:17&view=checks",
+      "status": 200,
+      "bytes": 379,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "fine",
+      "url": "http://127.0.0.1:55599/?root=u5dbc-ue0100&stroke=2&enlarged=1",
+      "status": 200,
+      "bytes": 9423,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1090,
+      "kind": "fine",
+      "url": "http://127.0.0.1:55599/?root=u5dbc-ue0100&stroke=17&enlarged=1",
+      "status": 200,
+      "bytes": 11552,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
