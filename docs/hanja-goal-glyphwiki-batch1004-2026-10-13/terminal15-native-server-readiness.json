@@ -1,0 +1,127 @@
+{
+  "batch": 1004,
+  "glyph": "諴",
+  "status": "separate-terminal15-native-helper-ready-unapproved",
+  "server": {
+    "port": 50810,
+    "pid": 91855,
+    "session": 49182,
+    "wholeURL": "http://127.0.0.1:50810/whole",
+    "pairsURL": "http://127.0.0.1:50810/pairs",
+    "progressiveURL": "http://127.0.0.1:50810/progressive?stroke=14&enlarged=1&samples=1"
+  },
+  "newFiles": [
+    "serve-terminal15-native.py",
+    "terminal15-native-server-input-pins.json",
+    "terminal15-native-server-readiness.json"
+  ],
+  "newHelperSHA256": "90e7e263f80d73bd5c3951f47bffc8d2988269137161c044853f684edcf807d7",
+  "newConfigSHA256": "36017b4b9a9c5b4b40ed4609b065a69a31e1737343ff394d66f3b546cccf2891",
+  "originalBytePins": {
+    "sources.json": "9e16ca8eace61ecb4a83e520a98c10bb42b1542f3ab3b3d5823a7d37e18bc6ca",
+    "metadata.json": "a2c9f8b3933ae1e1523565cb4010623b818b025fccb3cf88267f07edd3b36e83",
+    "engine-proof.json": "652dcf83aa2688692b2c6a741009f2417552343f858844d59c64d792a5a7e30a",
+    "progressive.mjs": "88b18f373615c4b46454c4d42702eba28f01ae8b1a8391b940a459d61e03d0aa",
+    "engine-whole-u8af4-ue0100.json": "c783ad2bdeb60ba047c15c67ca2c7645faa86534655dbcc1dc8aa0d428ebdf0e",
+    "engine-whole-u8af4.json": "c783ad2bdeb60ba047c15c67ca2c7645faa86534655dbcc1dc8aa0d428ebdf0e",
+    "strict-native-adapter.mjs": "9017bd6a9ce8337ae3f5fb352eddb1e226a921a309fe481b46033a11915c17fc",
+    "progressive-terminal15-candidate.mjs": "85b024f2793949db175f4dac1b9b343b9ae1203b9c9593995e0f750433d82288",
+    "terminal15-candidate-adapter.mjs": "7e24a558213c960e723a4534cc53737ccbb15756df224fdcf51c0faae93d7439",
+    "terminal15-candidate-validation.json": "addbc5b3d5866e5491e2ff68ff3edced86e4359e6a706d95afef6cf71846f03c",
+    "serve-native.py": "e433265b99ce73ec2a416ac03d09f803e44f1538e15a49d8492e5f752d7c641c"
+  },
+  "originalValidationBytePinsChecked": 10,
+  "originalBytePinsUnchanged": true,
+  "selectedIdentity": {
+    "sourceRoot": "u8af4",
+    "sourceProofFile": "./engine-whole-u8af4.json",
+    "sourceProofFileSHA256": "c783ad2bdeb60ba047c15c67ca2c7645faa86534655dbcc1dc8aa0d428ebdf0e",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSHA256": "652dcf83aa2688692b2c6a741009f2417552343f858844d59c64d792a5a7e30a"
+  },
+  "wholeVariants": [
+    "u8af4-ue0100",
+    "u8af4"
+  ],
+  "selectedProofKeys": [
+    "defaults",
+    "groups",
+    "trace"
+  ],
+  "completeProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "fullProofSHA256": "cabe98b2b5cfc8e57af093315d33664febf668941878522100622f0b098da882",
+  "compiledSHA256": "278f3fae8aaf65fec4a6ecdfc119c43abe779c14a17018ee9eb1e8c706befbf6",
+  "pens": 16,
+  "masks": 17,
+  "originalPolygons": 35,
+  "originalGeometryPreservedExactlyOnce": "Prior terminal15-candidate-validation.json certificate; current startup verifies complete compiled mask SHA.",
+  "finePens": [
+    6,
+    8,
+    12,
+    14,
+    15,
+    16
+  ],
+  "terminal15": {
+    "pen": 14,
+    "raw": 15,
+    "sourceGroup": [
+      15
+    ],
+    "bodyPolygons": 4,
+    "tailPolygons": 1,
+    "bodyWeight": 85.145602,
+    "tailWeight": 12.5,
+    "tailBounds": [
+      87.25,
+      74.5,
+      91.25,
+      87.5
+    ],
+    "maskBoundary": 0.8719860419315147,
+    "bodyPathWidthWeightBoundsUnchanged": true,
+    "tailOriginalContourVerbatim": true
+  },
+  "callerContract": "Candidate adapter explicitly accepts its five uppercase-SHA identity fields. Candidate internally passes originalIdentity seven lowercase-Sha fields plus metadata to the untouched original compiler. Old caller/config unchanged.",
+  "checks": {
+    "startupInitialAttempt": "Rejected unchanged old seven-field identity against candidate five-field contract; only new config corrected.",
+    "startupFinal": "PASS pins11,16pens17masks.",
+    "localPublicHttpChecks": 1,
+    "httpStatus": 200,
+    "httpPath": "/progressive?stroke=14&enlarged=1&samples=1&view=checks",
+    "oldStrictGuardRunsThisTask": 0,
+    "newOnlineSourceRuns": 0
+  },
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorSourceEvidencePassed": null,
+    "priorVerifierRuns": 1,
+    "executor": "hanja_batch760_761_analysis",
+    "sharedRamWorker": 82039,
+    "runsThisTask": 0
+  },
+  "priorNativeEvidence": {
+    "nativeFramesReviewed": 0,
+    "nativeReplays": 0,
+    "nativeReplayReviewed": false
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplayObserved": 0,
+  "runtimeApplied": false,
+  "oldFilesEdited": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false,
+  "rootRequiredReview": "All whole eligibility and domestic16directions;16*9=144 intermediate frames. Fine originalcurve pens6/8/12/14/15/16, terminal15pen14 exact mask2 before/at/after,99.99-to100 and early tail activation; operational8second actual replay. None observed by child."
+}
+
