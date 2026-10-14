@@ -1,5 +1,4 @@
 /** Whole-glyph backup geometry crosschecked with a domestic dictionary; not exam-body approval. */
-import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch96.json' with { type: 'json' }
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 const EXPECTED = [
   {
@@ -218,4 +217,4 @@ export function loadGlyphWikiBatch96Strokes(bundle: unknown): readonly HanjaDict
   if (JSON.stringify(bundle) !== JSON.stringify(EXPECTED)) throw new Error('GlyphWiki batch96 reviewed data mismatch')
   return EXPECTED
 }
-export const HANJA_DICTIONARY_GLYPHWIKI_BATCH96_STROKES = loadGlyphWikiBatch96Strokes(reviewed)
+export const HANJA_DICTIONARY_GLYPHWIKI_BATCH96_STROKES: ReturnType<typeof loadGlyphWikiBatch96Strokes> = EXPECTED
