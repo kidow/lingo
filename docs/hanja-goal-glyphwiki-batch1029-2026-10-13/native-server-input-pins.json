@@ -1,0 +1,75 @@
+{
+  "batch": 1029,
+  "glyph": "皜",
+  "port": 0,
+  "catalog": 15,
+  "domestic": 15,
+  "wholeNames": [
+    "u769c-ue0100",
+    "u769c-ue0101",
+    "u769c-ue0102",
+    "u769c"
+  ],
+  "wholeEvidence": [
+    {
+      "root": "u769c-ue0100",
+      "file": "engine-whole-u769c-ue0100.json",
+      "sourceSHA256": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 20,
+      "polygons": 30
+    },
+    {
+      "root": "u769c-ue0101",
+      "file": "engine-whole-u769c-ue0101.json",
+      "sourceSHA256": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 20,
+      "polygons": 30
+    },
+    {
+      "root": "u769c-ue0102",
+      "file": "engine-whole-u769c-ue0102.json",
+      "sourceSHA256": "82c404da0e4937fff8dd4f82b70cb36b59c15ff5184ade0ce4154c29be0552c9",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 19,
+      "polygons": 29
+    },
+    {
+      "root": "u769c",
+      "file": "engine-whole-u769c.json",
+      "sourceSHA256": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 20,
+      "polygons": 30
+    }
+  ],
+  "pins": {
+    "sources.json": "b727c8eb82541f5be226bac1bad39ec6196b91bc75ce0ab7e918fe9f77fa13ed",
+    "metadata.json": "493df016882779e673b22d51986fb9e63a2c2e8c32a0fa4f85537fd5468c69b7",
+    "engine-proof.json": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae",
+    "progressive.mjs": "4a053210888996e8986d4f596cb4462e4a77e396111858992f18efca62c71726",
+    "engine-whole-u769c-ue0100.json": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae",
+    "engine-whole-u769c-ue0101.json": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae",
+    "engine-whole-u769c-ue0102.json": "82c404da0e4937fff8dd4f82b70cb36b59c15ff5184ade0ce4154c29be0552c9",
+    "engine-whole-u769c.json": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae",
+    "strict-native-adapter.mjs": "da1fdbd3b70e5c7ce9a4b7074c3f7605aa754ab8bbacf24e221cc49fdee8214b"
+  },
+  "identity": {
+    "sourceRoot": "u769c",
+    "sourceProofFile": "engine-whole-u769c.json",
+    "sourceProofFileSha256": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "3d11ed820a45507e236839e021a28ddd9d4ec43955a0ec1812befb6af93de2ae"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';const d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1029-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');for(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);const s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"f1b4965691a35c26165e1bda3f313a00be78dd351291991c0cda1dd678aeca2e\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(p.trace,p,id);assert.equal(JSON.stringify(p),before);assert.equal(strokes.length,15);assert.equal(strokes.flat().length,16);assert.equal(sha(JSON.stringify(strokes)),\"08652b4f12edd0df259bdb5eac1b263e6eb2fa94064c0a934f8d5f524e6a66e0\");console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:true,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:strokes.length,compiledMasks:strokes.flat().length,blocked:false,nativeApproval:false}));"
+}
