@@ -1,0 +1,101 @@
+{
+  "batch": 1081,
+  "glyph": "猫",
+  "port": 0,
+  "catalog": 12,
+  "domestic": 12,
+  "wholeNames": [
+    "u732b-k",
+    "u732b-ue0100",
+    "u732b-ue0101",
+    "u732b-ue0102",
+    "u732b-var-001",
+    "u732b"
+  ],
+  "wholeEvidence": [
+    {
+      "root": "u732b-k",
+      "file": "engine-whole-u732b-k.json",
+      "sourceSHA256": "be26a3d32f55751626532bca1b8af80f1f88cb0c06e60676bdc54bae3d99d326",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 12,
+      "polygons": 21
+    },
+    {
+      "root": "u732b-ue0100",
+      "file": "engine-whole-u732b-ue0100.json",
+      "sourceSHA256": "be26a3d32f55751626532bca1b8af80f1f88cb0c06e60676bdc54bae3d99d326",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 12,
+      "polygons": 21
+    },
+    {
+      "root": "u732b-ue0101",
+      "file": "engine-whole-u732b-ue0101.json",
+      "sourceSHA256": "be26a3d32f55751626532bca1b8af80f1f88cb0c06e60676bdc54bae3d99d326",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 12,
+      "polygons": 21
+    },
+    {
+      "root": "u732b-ue0102",
+      "file": "engine-whole-u732b-ue0102.json",
+      "sourceSHA256": "1ba6779e0dd97785790809f09ac1edbec3dd8cf5e67dd898c11fe0ddba0d6eeb",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 13,
+      "polygons": 23
+    },
+    {
+      "root": "u732b-var-001",
+      "file": "engine-whole-u732b-var-001.json",
+      "sourceSHA256": "1ba6779e0dd97785790809f09ac1edbec3dd8cf5e67dd898c11fe0ddba0d6eeb",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 13,
+      "polygons": 23
+    },
+    {
+      "root": "u732b",
+      "file": "engine-whole-u732b.json",
+      "sourceSHA256": "be26a3d32f55751626532bca1b8af80f1f88cb0c06e60676bdc54bae3d99d326",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 12,
+      "polygons": 21
+    }
+  ],
+  "pins": {
+    "sources.json": "894caf585b92f97697e8948c0fd43dc4b063569b5cd51823391077e74abd634e",
+    "metadata.json": "3584d42dbb65128a41b67fc7984cb2c9b6710ccb666518f8e9fe8538d2751fe5",
+    "engine-proof.json": "4707b1b07efb2cbe312ac0d2912840435a47b2da5cdcb82821ff06fa5f0f2298",
+    "progressive.mjs": "251d758ab2d9bab8a7879786c54e4648815764db42cb9f5d7e3480874a0a4264",
+    "engine-whole-u732b-k.json": "be26a3d32f55751626532bca1b8af80f1f88cb0c06e60676bdc54bae3d99d326",
+    "engine-whole-u732b-ue0100.json": "be26a3d32f55751626532bca1b8af80f1f88cb0c06e60676bdc54bae3d99d326",
+    "engine-whole-u732b-ue0101.json": "be26a3d32f55751626532bca1b8af80f1f88cb0c06e60676bdc54bae3d99d326",
+    "engine-whole-u732b-ue0102.json": "1ba6779e0dd97785790809f09ac1edbec3dd8cf5e67dd898c11fe0ddba0d6eeb",
+    "engine-whole-u732b-var-001.json": "1ba6779e0dd97785790809f09ac1edbec3dd8cf5e67dd898c11fe0ddba0d6eeb",
+    "engine-whole-u732b.json": "be26a3d32f55751626532bca1b8af80f1f88cb0c06e60676bdc54bae3d99d326",
+    "strict-native-adapter.mjs": "66223336e40496139bdea1b0a2d8f918f5604d4c52679644509f9f8d7bda9169"
+  },
+  "identity": {
+    "sourceRoot": "u732b-ue0102",
+    "sourceProofFile": "./engine-whole-u732b-ue0102.json",
+    "sourceProofFileSha256": "1ba6779e0dd97785790809f09ac1edbec3dd8cf5e67dd898c11fe0ddba0d6eeb",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "4707b1b07efb2cbe312ac0d2912840435a47b2da5cdcb82821ff06fa5f0f2298",
+    "sourceMetadataFile": "./sources.json",
+    "sourceMetadataFileSha256": "894caf585b92f97697e8948c0fd43dc4b063569b5cd51823391077e74abd634e"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';const d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1081-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');for(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);const s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"4a8b33ecc1b11964eb967e7d9d0c7e61468a0d6bd54974ef9b8a9b427c53d57d\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(p.trace,p,id);assert.equal(JSON.stringify(p),before);assert.equal(strokes.length,12);assert.equal(strokes.flat().length,13);assert.equal(sha(JSON.stringify(strokes)),\"09aa070bea8bfb5f83a3f7a461de7e20363fed9bfbb22806565b3eae1d4bb46f\");console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:cfg.sourceVerificationPassed,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:strokes.length,compiledMasks:strokes.flat().length,blocked:false,nativeApproval:false}));"
+}
