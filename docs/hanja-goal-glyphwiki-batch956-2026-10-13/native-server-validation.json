@@ -1,0 +1,211 @@
+{
+  "batch": 956,
+  "glyph": "嶞",
+  "scope": "Strict original source-only native-review preparation",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "engineFiles": 8,
+  "domesticClips": 15,
+  "profiles": [
+    {
+      "root": "u5d9e",
+      "identity": {
+        "root": "u5d9e",
+        "file": "engine-whole-u5d9e.json",
+        "fileSHA256": "892f6f89e783fc23c9b4da3b6242a59bc9b77ec0d331652dc7c1e59280cec62d"
+      },
+      "fullProofSHA256": "a552a7ff7a9652c7f3a9e7ca4f7cb3ff76fde7db1efb932e5a52421a90c14d97",
+      "sourceGroups": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          12
+        ],
+        [
+          13
+        ],
+        [
+          14
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          17
+        ]
+      ],
+      "pens": 15,
+      "masks": 17,
+      "polygons": 34,
+      "canonicalPolygonsSHA256": "54024ec3c1982ef68812b2b58f4417fbb7f1b4b0679fe40fe0b19514f2a78066",
+      "compilerGuardsRejected": 12,
+      "callerHeaderGuardsRejected": 4,
+      "emptyRawMetadata": [],
+      "emptyMetadataGuardsRejected": 0,
+      "curvePens": [
+        1,
+        2,
+        5,
+        10,
+        14
+      ],
+      "multiMasks": [
+        {
+          "pen": 2,
+          "weights": [
+            26.958547,
+            5
+          ],
+          "directions": [
+            "curve",
+            "left"
+          ],
+          "boundaries": [
+            0.8435473302337556
+          ]
+        },
+        {
+          "pen": 10,
+          "weights": [
+            62.459318,
+            7
+          ],
+          "directions": [
+            "curve",
+            "left"
+          ],
+          "boundaries": [
+            0.899221584640379
+          ]
+        }
+      ],
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "allGroupedSourcePathsExactContinuous": true,
+      "wholeEligibility": "unreviewed",
+      "legacyOptionalProofAttributionClosedByCaller": true
+    }
+  ],
+  "expectedSourceBlock": null,
+  "servers": [
+    {
+      "batch": 956,
+      "kind": "serve-whole.py",
+      "session": 61618,
+      "port": 64176,
+      "pid": 49324,
+      "wholeVariants": 1,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 15,
+      "nativeApproved": false
+    },
+    {
+      "batch": 956,
+      "kind": "serve-progressive.py",
+      "session": 56884,
+      "port": 64190,
+      "pid": 49356,
+      "strokes": 15,
+      "masks": 17,
+      "sourceRoot": "u5d9e",
+      "sourceProofFile": "engine-whole-u5d9e.json",
+      "sourceProofFileSHA256": "892f6f89e783fc23c9b4da3b6242a59bc9b77ec0d331652dc7c1e59280cec62d"
+    }
+  ],
+  "http": [
+    {
+      "batch": 956,
+      "url": "http://127.0.0.1:64176/?id=u5d9e",
+      "status": 200,
+      "bytes": 6272
+    },
+    {
+      "batch": 956,
+      "url": "http://127.0.0.1:64176/?id=u5d9e&pairs=1:1,15:15&view=checks",
+      "status": 200,
+      "bytes": 366,
+      "checks": {
+        "mapping": "exact-compiled-candidate-pens",
+        "root": "u5d9e",
+        "candidatePens": 15,
+        "masks": 17,
+        "pairs": [
+          {
+            "domestic": 1,
+            "candidate": 1,
+            "raw": [
+              0,
+              1
+            ]
+          },
+          {
+            "domestic": 15,
+            "candidate": 15,
+            "raw": [
+              17
+            ]
+          }
+        ],
+        "sourceProofFile": "engine-whole-u5d9e.json",
+        "sourceProofFileSHA256": "892f6f89e783fc23c9b4da3b6242a59bc9b77ec0d331652dc7c1e59280cec62d",
+        "nativeApproval": false
+      }
+    },
+    {
+      "batch": 956,
+      "url": "http://127.0.0.1:64190/?root=u5d9e&stroke=2&enlarged=1&samples=1",
+      "status": 200,
+      "bytes": 10031
+    },
+    {
+      "batch": 956,
+      "url": "http://127.0.0.1:64190/?root=u5d9e&stroke=10&enlarged=1&samples=1",
+      "status": 200,
+      "bytes": 11619
+    }
+  ],
+  "allHttpPassed": true,
+  "legacyOptionalHeaderAttribution": "Compiler unchanged; mandatory exact complete header/file identity and file-byte checks enforced by new caller",
+  "sourceChanged": false,
+  "compilerChanged": false,
+  "originalGeometryChanged": false,
+  "nonconsecutiveJoining": false,
+  "sourcePathDirectionChanged": false,
+  "nativeObserved": 0,
+  "nativeApproval": false,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "buildExecuted": false,
+  "privateMediaSaved": false
+}
