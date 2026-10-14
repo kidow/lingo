@@ -1,0 +1,161 @@
+{
+  "batch": 965,
+  "glyph": "簜",
+  "status": "held source-only static helper ready; nonconsecutive numeric grouping prohibited",
+  "selectedWhole": "u7c1c",
+  "catalogStrokes": 18,
+  "domesticClips": 18,
+  "server": {
+    "reused": true,
+    "restarted": false,
+    "port": 56614,
+    "pid": 21882,
+    "wholeURL": "http://127.0.0.1:56614/whole?id=u7c1c",
+    "pairsURL": "http://127.0.0.1:56614/pairs?id=u7c1c&domestic=11&raw=11",
+    "singleRawURL": "http://127.0.0.1:56614/pairs?id=u7c1c&domestic=11&raw=11&single=1",
+    "restartCommand": "rtk proxy python3 -B docs/hanja-goal-glyphwiki-batch965-2026-10-13/serve-static-native.py"
+  },
+  "contract": {
+    "compilerPresentButNotActivated": true,
+    "primitive": "compileProgressive(trace, proof)",
+    "selectedProof": "engine-whole-u7c1c.json",
+    "selectedProofKeys": [
+      "groups",
+      "trace",
+      "defaults"
+    ],
+    "fullHeaderProofKeys": [
+      "engineRevision",
+      "engineHashes",
+      "groups",
+      "trace",
+      "defaults"
+    ],
+    "sourceWholeFileSHA256": "ce024be69d2544cabadde7968d0a12963735bb29775066ed54b962ed6c5cbeec",
+    "staticInputPins": 10,
+    "staticConfigLiteralSHA256": "cc3da13a10e427f6157d42d1f3db8c5218f385d92c82478e02b562c37436e41e",
+    "staticGuards": [
+      "config bytes",
+      "10 original input pins",
+      "whole family names",
+      "metadata glyph and domestic count"
+    ],
+    "helperPreservesOriginalPolygons": true
+  },
+  "numeric": {
+    "rawRows": 21,
+    "drawCalls": 22,
+    "originalPolygons": 37,
+    "legitimateConsecutiveExactJoins": [
+      [
+        11,
+        12
+      ],
+      [
+        17,
+        18
+      ]
+    ],
+    "minimumConsecutivePens": 19,
+    "domesticCount": 18,
+    "blockedNonConsecutiveGrouping": [
+      10,
+      14
+    ],
+    "gap10to14": [
+      0,
+      0
+    ],
+    "interveningDrawnRows": [
+      {
+        "raw": 11,
+        "calls": 1,
+        "polygons": 1
+      },
+      {
+        "raw": 12,
+        "calls": 1,
+        "polygons": 2
+      },
+      {
+        "raw": 13,
+        "calls": 1,
+        "polygons": 1
+      }
+    ],
+    "reason": "Coincident endpoint raw10 to raw14 does not justify skipping three drawn rows. Legacy numeric18 candidate is not activated.",
+    "compiledPens": 0,
+    "compiledMasks": 0
+  },
+  "fineInventory": {
+    "activeFinePens": [],
+    "activeBoundaries": [],
+    "rawTerminalRisks": [
+      {
+        "raw": 10,
+        "kind": "cdDrawLine",
+        "terminal": 313
+      },
+      {
+        "raw": 12,
+        "kind": "cdDrawLine",
+        "terminal": 323
+      }
+    ],
+    "nativeNeeded": "Whole and individual raw/domestic pen boundaries can be compared statically. No progressive candidate activation, coarse frames or replay."
+  },
+  "sourceEvidence": {
+    "reused": true,
+    "sourcePassed": true,
+    "newSourceExecution": false,
+    "reference": "native-server-preflight-hold.json/sourceVerified.results[glyph=簜]",
+    "records": 6,
+    "wholeRoots": 1,
+    "engineFiles": 8,
+    "catalogStrokes": 18,
+    "domesticClips": 18,
+    "domesticMetadataVerified": true,
+    "meaning": "Prior fixed-source reproduction; original approvalBlocked=false field does not clear later nonconsecutive native preflight hold"
+  },
+  "httpCheck": {
+    "executedOnce": true,
+    "url": "http://127.0.0.1:56614/?view=checks",
+    "status": 200,
+    "inputPinsVerified": 10,
+    "compilerActivated": false,
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "nativeApproval": false
+  },
+  "date": "2026-10-14",
+  "originalInputByteSHA256": {
+    "native-server-preflight-hold.json": "7d6fbb1f34e4649185aa484633bad2bd2bb6262a7f8f7e5acff78a56ee825135",
+    "sources.json": "0addebdceb61df423294a766186288584817d816adee44db5cca50b309502728",
+    "candidate-compile-analysis.json": "00bf825366ebcf7ffc244b675a2a2e66bbbcaa6ab3b8342e2fb03733eb459852",
+    "engine-proof.json": "9d3fc6a34716614537223cbd2f8e8345bbd43f4eddebe9d05ffa9adb5da3082b",
+    "engine-whole-u7c1c.json": "ce024be69d2544cabadde7968d0a12963735bb29775066ed54b962ed6c5cbeec",
+    "metadata.json": "795ca72fa2498d93acca21430ac917921ec7594349bd71832e7e2911bbcac685",
+    "serve-static-native.py": "6ef8d50909637997006297c044a1ff0e4573bede457821a56b33d78ada2abf84",
+    "verify-source.mjs": "66427479ba50757a8bdcd0dce3b3a4b4b8f21762765efdcb363f7f3deb2605ee",
+    "source-analysis.json": "21d4631c0883c52cac6c4159393bd93feff55ef9947c8112ae7373f4a1e8a2f8",
+    "progressive.mjs": "abd82103da04bc7c48b7724362a67c60aa1b51ca3e87d86b10e6844234efc2a9",
+    "native-static-input-pins.json": "cc3da13a10e427f6157d42d1f3db8c5218f385d92c82478e02b562c37436e41e",
+    "source-preservation-audit.json": "6670fb3648c302d1879bc190e802a15afe96b993a56c719e8e3aae4a535719fc",
+    "source-join-analysis.json": "322d494e3fe4db4eeaa15b6b98a905b23cb5c25171ccb85b4256c85222b50c2a",
+    "NOTICE.md": "08b1272b08ff4a0ee4c8de6eb2cf30dbbbd40201b01125a4ec792ca79f711e07"
+  },
+  "performedScope": {
+    "originalFilesEdited": false,
+    "geometryEdited": false,
+    "helperEdited": false,
+    "sourceEngineReruns": 0,
+    "negativeGuardSuiteReruns": 0,
+    "childNativeDirections": 0,
+    "childNativeFrames": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "builds": 0,
+    "commits": 0,
+    "privateMediaSaved": false
+  }
+}
