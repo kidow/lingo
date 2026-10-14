@@ -1,0 +1,236 @@
+{
+  "batch": 1016,
+  "glyph": "駽",
+  "status": "native-review-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u99fd",
+      "pens": 17,
+      "masks": 19,
+      "polygons": 35,
+      "canonicalPolygonsSHA256": "6d2c7c4fa3d579d6ec117ead5043f3221371f453fcdf84c58033da1fc1819b95",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u99fd-ue0100",
+      "pens": 17,
+      "masks": 19,
+      "polygons": 35,
+      "canonicalPolygonsSHA256": "6d2c7c4fa3d579d6ec117ead5043f3221371f453fcdf84c58033da1fc1819b95",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "sources.json": "5e40bbd47401ba3dda43af151b82e889131b7c4fd4fec3face096443b1f9a94f",
+    "engine-whole-u99fd.json": "2bc15fa3ff20aaf206a01cd8063a610c43a251c6603c19128c97ae1152377ee8",
+    "engine-proof.json": "c46af98e9a2a6d8e89d002a87290e074c1e6ad3fb348784fb5e9da3a5678ea4b",
+    "metadata.json": "c7a83fe235b82c316caea17a381dc1c07ccec7eb44df05bc21ab74c6733fd685",
+    "engine-whole-u99fd-ue0100.json": "2bc15fa3ff20aaf206a01cd8063a610c43a251c6603c19128c97ae1152377ee8"
+  },
+  "compilerSHA256": "924716145002ac4a6bf95f44225329a5418e12e3b13dbc7f52d23de91d01b065",
+  "risks": [
+    {
+      "root": "u99fd",
+      "terminals": [
+        {
+          "raw": 0,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            313
+          ],
+          "pens": [
+            1
+          ]
+        },
+        {
+          "raw": 11,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            113
+          ],
+          "pens": [
+            11
+          ]
+        },
+        {
+          "raw": 13,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            123
+          ],
+          "pens": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "root": "u99fd-ue0100",
+      "terminals": [
+        {
+          "raw": 0,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            313
+          ],
+          "pens": [
+            1
+          ]
+        },
+        {
+          "raw": 11,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            113
+          ],
+          "pens": [
+            11
+          ]
+        },
+        {
+          "raw": 13,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            123
+          ],
+          "pens": [
+            12
+          ]
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1016,
+      "kind": "serve-whole.py",
+      "session": 27878,
+      "port": 51147,
+      "pid": 69727,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 17,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1016,
+      "kind": "serve-progressive.py",
+      "session": 59153,
+      "port": 51233,
+      "pid": 69963,
+      "strokes": 17,
+      "masks": 19,
+      "sourceRoot": "u99fd",
+      "sourceProofFile": "./engine-whole-u99fd.json",
+      "sourceProofFileSHA256": "2bc15fa3ff20aaf206a01cd8063a610c43a251c6603c19128c97ae1152377ee8"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1016,
+      "kind": "whole",
+      "url": "http://127.0.0.1:51147/?id=u99fd",
+      "status": 200,
+      "bytes": 7158,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1016,
+      "kind": "whole",
+      "url": "http://127.0.0.1:51147/?id=u99fd-ue0100",
+      "status": 200,
+      "bytes": 7165,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1016,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:51147/?id=u99fd&pairs=1:1,17:17&view=checks",
+      "status": 200,
+      "bytes": 365,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1016,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51233/?root=u99fd&stroke=6&enlarged=1",
+      "status": 200,
+      "bytes": 11869,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1016,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51233/?root=u99fd&stroke=15&enlarged=1",
+      "status": 200,
+      "bytes": 13314,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1016,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:51147/?id=u99fd-ue0100&pairs=1:1,17:17&view=checks",
+      "status": 200,
+      "bytes": 379,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1016,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51233/?root=u99fd-ue0100&stroke=6&enlarged=1",
+      "status": 200,
+      "bytes": 11995,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1016,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51233/?root=u99fd-ue0100&stroke=15&enlarged=1",
+      "status": 200,
+      "bytes": 13440,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "fullHeaderCallerChecksumPinned": true,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
