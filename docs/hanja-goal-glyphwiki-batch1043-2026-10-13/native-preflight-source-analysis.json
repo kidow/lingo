@@ -1,0 +1,203 @@
+{
+  "checkedDate": "2026-10-14",
+  "scope": "Fixed public-source and compiler preflight only. No native whole/order/direction/frame/replay approval or runtime registration.",
+  "batch": 1043,
+  "glyph": "嘵",
+  "pens": 15,
+  "masks": 16,
+  "originalPolygons": 36,
+  "allOriginalPolygonsExactlyOnce": true,
+  "inputImmutable": true,
+  "mutationRejects": 6,
+  "identityGuardRejects": 4,
+  "identityMandatory": true,
+  "supportedWholeRoots": [
+    "u5635",
+    "u5635-ue0100"
+  ],
+  "pinnedInputFiles": 3,
+  "compilerSHA256": "ca04b26cf31f4c3221d202dc8b1f3b32d332ea60fb8af964542ea6fc3f711d2c",
+  "compiledSHA256": "4ce4b39b239f4cc1e656becc07e8dac73f9ef52c07d5a8320b85c48b5d57af1f",
+  "proofFile": "engine-whole-u5635.json",
+  "proofFileSHA256": "3f0f397fbae8b5f00882e21ef20baa134e493ccfb6d72654d97fb13b5911a4d0",
+  "wholeFacts": [
+    {
+      "root": "u5635",
+      "raw": 17,
+      "calls": 18,
+      "polygons": 36,
+      "minUnrestricted": 14,
+      "consecutiveOnly": 15
+    },
+    {
+      "root": "u5635-itaiji-001",
+      "raw": 12,
+      "calls": 14,
+      "polygons": 27,
+      "minUnrestricted": 10,
+      "consecutiveOnly": 11
+    },
+    {
+      "root": "u5635-ue0100",
+      "raw": 17,
+      "calls": 18,
+      "polygons": 36,
+      "minUnrestricted": 14,
+      "consecutiveOnly": 15
+    }
+  ],
+  "folds": [
+    {
+      "pen": 2,
+      "raw": [
+        1,
+        2
+      ],
+      "internalExact": true,
+      "consecutive": true,
+      "maxOriginalVertexDistanceKage": 15.20531708087668,
+      "revealWidth": 14,
+      "boundExceedsMask": true
+    },
+    {
+      "pen": 3,
+      "raw": [
+        3,
+        4
+      ],
+      "internalExact": true,
+      "consecutive": true
+    }
+  ],
+  "transitions": [
+    {
+      "pen": 15,
+      "mask": 2,
+      "boundary": 0.7738091558724174,
+      "direction": "up",
+      "weight": 12.5
+    }
+  ],
+  "curveFinePens": [
+    2,
+    9,
+    14,
+    15
+  ],
+  "terminal15": [],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineReexecuted": true,
+  "engineReplay": {
+    "batch": 1043,
+    "engineHashChecks": 8,
+    "records": 8,
+    "historicalDataHashesChecked": 2,
+    "missingBareDependencies": [],
+    "rows": [
+      {
+        "root": "u5635",
+        "raw": 17,
+        "calls": 18,
+        "polygons": 36,
+        "polygonsSHA256": "275e94ace8707add7e507bf69e5abb7902da43669a1533471537e3c1c63efe93",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u5635-itaiji-001",
+        "raw": 12,
+        "calls": 14,
+        "polygons": 27,
+        "polygonsSHA256": "b30e8c35118f77f2483eae0241e6f1effeb401ea1aad649b0125198df88d77cf",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u5635-ue0100",
+        "raw": 17,
+        "calls": 18,
+        "polygons": 36,
+        "polygonsSHA256": "275e94ace8707add7e507bf69e5abb7902da43669a1533471537e3c1c63efe93",
+        "engineWholeExactlyReplayed": true
+      }
+    ],
+    "privateGraphicsRequested": false,
+    "archiveRedownloaded": false,
+    "nativeApproved": false
+  },
+  "allSupportedProfilesActualCompile": [
+    {
+      "root": "u5635",
+      "identity": {
+        "root": "u5635",
+        "file": "engine-whole-u5635.json",
+        "fileSHA256": "3f0f397fbae8b5f00882e21ef20baa134e493ccfb6d72654d97fb13b5911a4d0"
+      },
+      "fullHeaderPresent": true,
+      "penCount": 15,
+      "maskCount": 16,
+      "originalPolygons": 36,
+      "compiledSHA256": "4ce4b39b239f4cc1e656becc07e8dac73f9ef52c07d5a8320b85c48b5d57af1f",
+      "allPolygonsExactlyOnce": true,
+      "mutationRejects": 6,
+      "identityGuardRejects": 2,
+      "inputImmutable": true
+    },
+    {
+      "root": "u5635-ue0100",
+      "identity": {
+        "root": "u5635-ue0100",
+        "file": "engine-whole-u5635-ue0100.json",
+        "fileSHA256": "3f0f397fbae8b5f00882e21ef20baa134e493ccfb6d72654d97fb13b5911a4d0"
+      },
+      "fullHeaderPresent": true,
+      "penCount": 15,
+      "maskCount": 16,
+      "originalPolygons": 36,
+      "compiledSHA256": "4ce4b39b239f4cc1e656becc07e8dac73f9ef52c07d5a8320b85c48b5d57af1f",
+      "allPolygonsExactlyOnce": true,
+      "mutationRejects": 6,
+      "identityGuardRejects": 2,
+      "inputImmutable": true
+    }
+  ],
+  "identityContract": {
+    "mandatoryThirdArgument": true,
+    "shape": [
+      "root",
+      "file",
+      "fileSHA256"
+    ],
+    "mandatoryProofHeaderFields": [
+      "sourceRoot",
+      "sourceProofFile",
+      "sourceProofFileSHA256"
+    ],
+    "proofHeaderTamperRejects": 6,
+    "proofHeadersSuppliedOnlyInRam": true,
+    "selectedProofHasFullEngineHeader": true,
+    "bodyTraceGroupsPresetAndEightEngineImmutable": true,
+    "missingOrWrongIdentityRejected": true,
+    "attributionTamperRejected": true,
+    "allProfilesExplicitlySelected": true
+  },
+  "risks": [
+    "Selectedbase/VS0 have15consecutive pens. Itaiji001 has11consecutive paths and is not implicitly substituted for catalogue15.",
+    "Pen2 raw1/2 pure-L original vertex bound15.20531708087668 exceeds mask14. Potential final-frame pop-in needs native520px fine/replay; original width14 unchanged.",
+    "Pen15 original up-tail boundary77.38091558724174%,weight12.5; body/tail direction and replay pending."
+  ],
+  "sourceMissing": false,
+  "latestSubstitution": false,
+  "coordinateMutation": false,
+  "connectorAuthored": false,
+  "widthMutation": false,
+  "nativeWholeApproval": false,
+  "nativeOrderApproval": false,
+  "nativeDirectionsReviewed": 0,
+  "nativeFramesReviewed": 0,
+  "nativeReplaysReviewed": 0,
+  "runtimeRegistered": 0,
+  "privateMediaSaved": false,
+  "archiveRedownloaded": false,
+  "buildExecuted": false,
+  "actualValidationExit": 0
+}

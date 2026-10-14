@@ -1,0 +1,249 @@
+{
+  "batch": 1043,
+  "glyph": "嘵",
+  "status": "native-review-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u5635",
+      "pens": 15,
+      "masks": 16,
+      "polygons": 36,
+      "canonicalPolygonsSHA256": "a557c013094d981830746a377be0d4f05ea7f4ec2158153687ec603da4435330",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 12,
+      "emptyRawMetadata": [
+        4
+      ],
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u5635-ue0100",
+      "pens": 15,
+      "masks": 16,
+      "polygons": 36,
+      "canonicalPolygonsSHA256": "a557c013094d981830746a377be0d4f05ea7f4ec2158153687ec603da4435330",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 12,
+      "emptyRawMetadata": [
+        4
+      ],
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "sources.json": "b9fafec976fbd22bba6da4374926bb6bb2239f5cfa11127285d97eac0314dc42",
+    "engine-proof.json": "3f0f397fbae8b5f00882e21ef20baa134e493ccfb6d72654d97fb13b5911a4d0",
+    "metadata.json": "8c0f495eab4a9accc509cd8fadc2121c2986af1235c9e2449bd34379c7bf5f52",
+    "engine-whole-u5635-ue0100.json": "3f0f397fbae8b5f00882e21ef20baa134e493ccfb6d72654d97fb13b5911a4d0",
+    "engine-whole-u5635-itaiji-001.json": "787d302a92e004008d4cba190b17deefdba569bfcdfe6d5abc58a627c63260dd",
+    "engine-whole-u5635.json": "3f0f397fbae8b5f00882e21ef20baa134e493ccfb6d72654d97fb13b5911a4d0"
+  },
+  "compilerSHA256": "ca04b26cf31f4c3221d202dc8b1f3b32d332ea60fb8af964542ea6fc3f711d2c",
+  "risks": [
+    {
+      "root": "u5635",
+      "terminalSourceRisk": [
+        {
+          "raw": 0,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            13
+          ],
+          "pens": [
+            1
+          ]
+        },
+        {
+          "raw": 2,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            23
+          ],
+          "pens": [
+            2
+          ]
+        },
+        {
+          "raw": 16,
+          "call": 2,
+          "kind": "cdDrawLine",
+          "terminals": [
+            6,
+            5
+          ],
+          "pens": [
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "root": "u5635-ue0100",
+      "terminalSourceRisk": [
+        {
+          "raw": 0,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            13
+          ],
+          "pens": [
+            1
+          ]
+        },
+        {
+          "raw": 2,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            23
+          ],
+          "pens": [
+            2
+          ]
+        },
+        {
+          "raw": 16,
+          "call": 2,
+          "kind": "cdDrawLine",
+          "terminals": [
+            6,
+            5
+          ],
+          "pens": [
+            15
+          ]
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1043,
+      "kind": "serve-whole.py",
+      "session": 71511,
+      "port": 52386,
+      "pid": 76582,
+      "wholeVariants": 3,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 15,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "serve-progressive.py",
+      "session": 4936,
+      "port": 52372,
+      "pid": 76551,
+      "strokes": 15,
+      "masks": 16,
+      "sourceRoot": "u5635",
+      "sourceProofFile": "engine-whole-u5635.json",
+      "sourceProofFileSHA256": "3f0f397fbae8b5f00882e21ef20baa134e493ccfb6d72654d97fb13b5911a4d0"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1043,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52386/?id=u5635",
+      "status": 200,
+      "bytes": 5944,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52386/?id=u5635-itaiji-001",
+      "status": 200,
+      "bytes": 5411,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52386/?id=u5635-ue0100",
+      "status": 200,
+      "bytes": 5951,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:52386/?id=u5635&pairs=1:1,15:15&view=checks",
+      "status": 200,
+      "bytes": 363,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52372/?root=u5635&stroke=2&enlarged=1",
+      "status": 200,
+      "bytes": 8974,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52372/?root=u5635&stroke=15&enlarged=1",
+      "status": 200,
+      "bytes": 11370,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:52386/?id=u5635-ue0100&pairs=1:1,15:15&view=checks",
+      "status": 200,
+      "bytes": 377,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52372/?root=u5635-ue0100&stroke=2&enlarged=1",
+      "status": 200,
+      "bytes": 9086,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1043,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52372/?root=u5635-ue0100&stroke=15&enlarged=1",
+      "status": 200,
+      "bytes": 11482,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
