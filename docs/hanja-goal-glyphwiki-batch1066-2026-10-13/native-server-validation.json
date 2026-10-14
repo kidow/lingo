@@ -1,0 +1,150 @@
+{
+  "batch": 1066,
+  "glyph": "迲",
+  "status": "candidate-shape-attribution-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceEvidencePassed": null,
+  "sourceEvidenceSummaryFieldAvailable": false,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u8ff2-g",
+      "pens": 9,
+      "masks": 9,
+      "polygons": 24,
+      "canonicalPolygonsSHA256": "b71f8673607fa5c4cb9fa6f7d89a82fa4b917ce35c43965d6e9334fe28df5f04",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "engine-whole-u8ff2-var-002.json": "37b41da07bfbc4d2908381c97f1919f88e7697c315289895e09cc26cc59bb4cc",
+    "sources.json": "2e6b3de668110819c3d1313946a2eb40826cf904d04ae862aa6407d38d6ff1ac",
+    "engine-proof.json": "ce77b96838dd5884e1c262e826d77bf52dc3df84895bc67816c74b2361fb6f92",
+    "metadata.json": "57df7196e7f985ed5be4f84bb4efa8777e0604ea2a608dce6e432f0dcd8cf7e9",
+    "engine-whole-u8ff2.json": "8e81f667e40206a0fc510f120cda4c7621ff393b2c4c5edf51163e3decfa6a14",
+    "engine-whole-u8ff2-k.json": "7acd1526db0fbaefa35b31092a6dca35eafd58f90d5bb738261171633d1c7a0c",
+    "engine-whole-u8ff2-g.json": "56f6d2c08ce2cd9a958a659e6f9c4cb0fc3a2a5565afe0904d87a09743a94f7e",
+    "engine-whole-u8ff2-var-001.json": "01784eaf0491eb8a750b27120a14a181f58d11b3f0655c0f2673e90e121c1bd9"
+  },
+  "compilerSHA256": "987a0d6c07b733ca862ee0d4f3dbbb58f116a50e8a97b84b7ea6f527846f25d5",
+  "risks": [
+    {
+      "root": "u8ff2-g",
+      "terminalSourceRisk": []
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1066,
+      "kind": "serve-whole.py",
+      "session": 95485,
+      "port": 54580,
+      "pid": 89192,
+      "wholeVariants": 5,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 9,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1066,
+      "kind": "serve-progressive.py",
+      "session": 95965,
+      "port": 54582,
+      "pid": 89198,
+      "strokes": 9,
+      "masks": 9,
+      "sourceRoot": "u8ff2-g",
+      "sourceProofFile": "./engine-whole-u8ff2-g.json",
+      "sourceProofFileSHA256": "56f6d2c08ce2cd9a958a659e6f9c4cb0fc3a2a5565afe0904d87a09743a94f7e"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1066,
+      "kind": "whole",
+      "url": "http://127.0.0.1:54580/?id=u8ff2",
+      "status": 200,
+      "bytes": 5667,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1066,
+      "kind": "whole",
+      "url": "http://127.0.0.1:54580/?id=u8ff2-g",
+      "status": 200,
+      "bytes": 5356,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1066,
+      "kind": "whole",
+      "url": "http://127.0.0.1:54580/?id=u8ff2-k",
+      "status": 200,
+      "bytes": 5669,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1066,
+      "kind": "partial",
+      "url": "http://127.0.0.1:54580/?id=u8ff2-var-001",
+      "status": 200,
+      "bytes": 147,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1066,
+      "kind": "whole",
+      "url": "http://127.0.0.1:54580/?id=u8ff2-var-002",
+      "status": 200,
+      "bytes": 5623,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1066,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:54580/?id=u8ff2-g&pairs=1:1,9:9&view=checks",
+      "status": 200,
+      "bytes": 368,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1066,
+      "kind": "fine",
+      "url": "http://127.0.0.1:54582/?root=u8ff2-g&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 8238,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1066,
+      "kind": "fine",
+      "url": "http://127.0.0.1:54582/?root=u8ff2-g&stroke=9&enlarged=1",
+      "status": 200,
+      "bytes": 9916,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
