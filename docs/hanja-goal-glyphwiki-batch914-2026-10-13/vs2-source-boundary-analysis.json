@@ -1,0 +1,171 @@
+{
+  "batch": 914,
+  "glyph": "萋",
+  "date": "2026-10-14",
+  "stage": "source-only VS2 exact filled overlap and conditional boundary analysis",
+  "sourceRoot": "u840b-ue0102",
+  "sourceProofFile": "engine-whole-u840b-ue0102.json",
+  "sourceProofFileSHA256": "1e1d15ea22f21eba0c2d1f7c718f547604e4be5551d4233780fc82e9f3764461",
+  "sourceHeaderFileSHA256": "4328685e7e570bd8abad0396cdabbfad176662f611915bbbf824d18ec607ca59",
+  "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+  "engineHashCount": 8,
+  "originalRawRows": 14,
+  "originalDrawCalls": 14,
+  "originalPolygons": 25,
+  "originalExactDirectedJoins": [
+    [
+      5,
+      6
+    ]
+  ],
+  "minimumExactPens": 13,
+  "catalogCount": 12,
+  "domesticCount": 12,
+  "conditionalGroups12ZeroBased": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      3
+    ],
+    [
+      2
+    ],
+    [
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ]
+  ],
+  "conditionalOrderApproval": false,
+  "conditionalGroupNote": "The grass3/4 permutation and all domestic pen numbers are hypotheses pending parent native directions. Parent has actually observed VS2 whole compatibility only. Group10 would combine original nonexact L/Q; this analysis does not compile or approve it.",
+  "raw10OriginalCall": {
+    "kind": "cdDrawLine",
+    "args": [
+      89,
+      125.497675,
+      57,
+      167.09605000000002,
+      0,
+      300
+    ]
+  },
+  "raw11OriginalCall": {
+    "kind": "cdDrawCurve",
+    "args": [
+      67,
+      158.776375,
+      128,
+      164.53615,
+      165,
+      184.375375,
+      7,
+      8
+    ]
+  },
+  "originalCenterlineGap": {
+    "delta": [
+      10,
+      -8.319675000000018
+    ],
+    "length": 13.008343172965008,
+    "joined": false
+  },
+  "filledOverlap": {
+    "method": "Exact rational arithmetic. Original decimal0.1-grid points are scaled to BigInt integers; exact ear decomposition preserves signed original area. Triangle clipping and inclusion-exclusion remove within-row polygon overlaps. Analytic intermediates are never emitted or saved as glyph geometry.",
+    "raw10PolygonCount": 2,
+    "raw11PolygonCount": 2,
+    "allOffZero": true,
+    "pairIntersectionKAGE2": [
+      [
+        "4070939239/747556740",
+        "0/1"
+      ],
+      [
+        "0/1",
+        "0/1"
+      ]
+    ],
+    "raw10InternalIntersectionKAGE2": "58339/29350",
+    "raw11InternalIntersectionKAGE2": "0/1",
+    "filledUnionIntersectionKAGE2": "4070939239/747556740",
+    "filledUnionIntersectionKAGE2Decimal": 5.445659200397284,
+    "filledUnionIntersectionSVG2": "4070939239/2990226960",
+    "filledUnionIntersectionSVG2Decimal": 1.361414800099321,
+    "positive": true,
+    "sourceInputUnchanged": true
+  },
+  "interpretation": "Positive original filled overlap supports investigation of two independent original masks within one native pen. It does not close the authored centerline gap, establish domestic grouping, or prove smooth activation. No connector/path reversal/coordinate/width alteration is proposed.",
+  "fineRisks": [
+    {
+      "raw": 6,
+      "terminal": 323,
+      "conditionalPen": 6,
+      "role": "original H/V exact fold; endpoint fine required"
+    },
+    {
+      "raw": 10,
+      "terminal": 300,
+      "conditionalPen": 10,
+      "role": "diagonal L original beginning/end geometry; no curve width generalization"
+    },
+    {
+      "raw": 11,
+      "terminal": 8,
+      "conditionalPen": 10,
+      "role": "original Q start nib and proposed separate-mask activation need520px boundary observation"
+    },
+    {
+      "raw": 12,
+      "terminal": 7,
+      "conditionalPen": 11,
+      "role": "original left-falling Q endpoint fine"
+    }
+  ],
+  "independentMasksConstructed": false,
+  "maskBoundary": null,
+  "replay": null,
+  "compiledPens": 0,
+  "compiledMasks": 0,
+  "nativeApproval": false,
+  "nativeWholeReviewedByChild": 0,
+  "nativeDirectionsReviewedByChild": 0,
+  "nativeFramesReviewedByChild": 0,
+  "nativeReplaysReviewedByChild": 0,
+  "originalCompilerChanged": false,
+  "originalHelpersChanged": false,
+  "originalSourceChanged": false,
+  "originalPolygonsChanged": false,
+  "newConnector": false,
+  "widthChanged": false,
+  "coordinatesChanged": false,
+  "runtimeApplied": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "JevUsed": false,
+  "privateMediaSaved": false
+}

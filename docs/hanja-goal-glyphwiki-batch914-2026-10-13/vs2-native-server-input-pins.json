@@ -1,0 +1,45 @@
+{
+  "batch": 914,
+  "glyph": "萋",
+  "port": 0,
+  "catalog": 12,
+  "domestic": 12,
+  "pins": {
+    "candidate-compile-analysis.json": "2a4a74274dd37951254f0e26e0e7e06b9492469fa5a457d753a057f3ab6ded9c",
+    "engine-proof.json": "4328685e7e570bd8abad0396cdabbfad176662f611915bbbf824d18ec607ca59",
+    "engine-whole-u840b-ue0100.json": "783567f606605b7c700d7e76df56a93af788b140ce32f39a3fe456552c38673c",
+    "engine-whole-u840b-ue0101.json": "783567f606605b7c700d7e76df56a93af788b140ce32f39a3fe456552c38673c",
+    "engine-whole-u840b-ue0102.json": "1e1d15ea22f21eba0c2d1f7c718f547604e4be5551d4233780fc82e9f3764461",
+    "engine-whole-u840b-ue0103.json": "28ad9ac024266f87f8d04d605b788d8b1243cf5a4a66a7053b744523e621809c",
+    "engine-whole-u840b.json": "05f416edfba55eb547b9b16c5f3f77be97048bd7f2aafe341e74fe210b0bd85e",
+    "metadata.json": "e72078c26148f5f33d4b8193f48da08a7885b67ab5ee6781f99f2d1f39f6ab15",
+    "native-preflight-source-analysis.json": "ba5e4f7dc2918f4bf5fa1b21110756a715f39761bec003321160a27974a83411",
+    "progressive.mjs": "8f76c126208fbeabc4449f229169b1ca891fde30e37a7b24bd2f5bc3dea76d08",
+    "source-analysis.json": "77c0b3fb037290cd40181b6959d838ceb9f69935af1bdecc83790c36da7c547d",
+    "source-join-analysis.json": "c80a9d383a589e4aa6d93b90a6bc12eaebb29869801f99ced7235924daef3df0",
+    "sources.json": "784f9f9543ce809c108b8510aaf8c0206c4df568436bb13cf412df64418df45b",
+    "verify-source.mjs": "e2a88a286ed2af4d41406275b505c77e0f306be73c4b75a893e0da8cb65bf8ae",
+    "progressive-vs2.mjs": "442eef4f5a3b41c710db6f3c6f2c53aec8f5a06bb7861204ac4df1c647e9577e",
+    "strict-vs2-native-adapter.mjs": "a1b6a34c216375743780807667b3407f3c8d5f398e3d766cf49ed1d9ee3d8a38",
+    "vs2-source-boundary-analysis.json": "c1d1e4d037fcd6132871aec7be1a7809fac0133781dfb11f9bcdd88980315f62"
+  },
+  "wholeNames": [
+    "u840b",
+    "u840b-ue0100",
+    "u840b-ue0101",
+    "u840b-ue0102",
+    "u840b-ue0103"
+  ],
+  "identity": {
+    "sourceRoot": "u840b-ue0102",
+    "sourceProofFile": "./engine-whole-u840b-ue0102.json",
+    "sourceProofFileSha256": "1e1d15ea22f21eba0c2d1f7c718f547604e4be5551d4233780fc82e9f3764461",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "4328685e7e570bd8abad0396cdabbfad176662f611915bbbf824d18ec607ca59"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';\nconst d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch914-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/vs2-native-server-input-pins.json')),sha=b=>createHash('sha256').update(b).digest('hex');\nfor(const[f,pin]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),pin,'Pinned original or candidate input '+f);\nconst m=await import(d+'/strict-vs2-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);\nconst sourceBytes=fs.readFileSync(d+'/'+id.sourceProofFile),headerBytes=fs.readFileSync(d+'/'+id.sourceHeaderFile);\nassert.equal(sha(sourceBytes),id.sourceProofFileSha256);assert.equal(sha(headerBytes),id.sourceHeaderFileSha256);\nconst selected=JSON.parse(sourceBytes),header=JSON.parse(headerBytes);assert.deepEqual(Object.keys(selected).sort(),['defaults','groups','trace']);\nconst proof={engineRevision:header.engineRevision,engineHashes:header.engineHashes,...selected},before=JSON.stringify(proof);\nassert.equal(sha(before),'4845f4dc2c1e1e8269a15984af12782eed5dd1bc6933c5eb0e3f19a0c3cd8e0d');\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(proof.trace,proof,id);assert.equal(JSON.stringify(proof),before);assert.equal(strokes.length,12);assert.equal(strokes.flat().length,13);assert.equal(sha(JSON.stringify(strokes)),\"600884c93b72055db1f5f8cdd632e7832e4a03f143548adf803ffd83d06faac7\");\nconsole.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:cfg.sourceVerificationPassed,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:12,compiledMasks:13,blocked:false,nativeApproval:false}));",
+  "status": "Separate VS2 source-only candidate; parent whole compatible and partial directions3/4/10 observed; all12 pairs/108frames/fine/boundary/replay pending.",
+  "sourceOnly": true,
+  "nativeApproval": false
+}
