@@ -1,0 +1,378 @@
+{
+  "batch": 928,
+  "glyph": "潨",
+  "status": "existing-live-static-helper-ready-progressive-blocked",
+  "newFiles": [
+    "source-only-helper-readiness-2026-10-14.json"
+  ],
+  "originalBytePins": {
+    "sources.json": "daa1e7b8c197624ebef04032110471807cef52d120b73ef933df315a5d2d35ce",
+    "metadata.json": "63d7fdca2399b928e92a0e583147dcc7551bce8695d804ac7c2d85e8022aab7b",
+    "engine-proof.json": "7411f7ea88acc7ba7544d5ac54a8d9f98602569b383a2445c8f6cb5f33367e52",
+    "engine-whole-u6f68-g.json": "14178d005f7194eeaa39f22a6f975285b4bb932f9ef9c9efcedf3203a0a2d99c",
+    "engine-whole-u6f68-ue0100.json": "1ddffe0132daa0c701215385fb6488e38a8cbd49f13f04880cc8e453f5a068a5",
+    "engine-whole-u6f68.json": "491d52c05f53b89ac1acd042e45e3bec0d4a9c8ca300cbd49bbd26fb0fa81e87",
+    "strict-native-adapter.mjs": "683ebca4bf607450d026d9b2f322af50d474a962db88ac906bb0e71043ff314e",
+    "native-server-input-pins.json": "7fc18c296259370ad1f8978bf33f3ab0d363524ea42bd5ebcf08daf670a22ff6",
+    "strict-native-server-preflight.json": "72bc414da7c342f28d0b58197eff581ba012db71815769660e3a3a38ceba4122",
+    "serve-native.py": "12358b2f7e37fd098e8c8d6010998c7d505c540835a9acaa58d72b32da0b91fb",
+    "source-preservation-audit.json": "4665d4c141a9bbc63033a130a27ab8d3be7488de44bcb9c1bf0ae65cda8b2dc1",
+    "source-join-analysis.json": "58a04520b90858c5b8cf9c36e6c2eda1875c62dd058740f662d9a5ad582104c4"
+  },
+  "originalBytesUnchanged": true,
+  "server": {
+    "port": 64798,
+    "listeningPID": 63097,
+    "restarted": false,
+    "wholeURL": "http://127.0.0.1:64798/whole",
+    "rawComparisonURL": "http://127.0.0.1:64798/pairs?id=u6f68&domestic=3&raw=3",
+    "nextRawCumulativeComparisonURL": "http://127.0.0.1:64798/pairs?id=u6f68&domestic=3&raw=4",
+    "blockedProgressiveURL": "http://127.0.0.1:64798/progressive?stroke=3&enlarged=1&samples=1",
+    "rawComparisonLabel": "Original cumulative raw counts only. Domestic3 pairing is a diagnostic view, not an approved mapping."
+  },
+  "wholeFamily": [
+    {
+      "root": "u6f68",
+      "raw": 17,
+      "draw": 17,
+      "polygons": 33,
+      "joins": [
+        [
+          5,
+          6
+        ]
+      ],
+      "minimum": 16,
+      "terminalSpecial": [],
+      "initialRaw2": {
+        "raw": 2,
+        "sourceKind": 2,
+        "calls": [
+          {
+            "kind": "cdDrawCurve",
+            "start": [
+              12.59,
+              133
+            ],
+            "end": [
+              33.825,
+              184
+            ],
+            "ta1": 7,
+            "ta2": 8
+          }
+        ],
+        "start": [
+          12.59,
+          133
+        ],
+        "end": [
+          33.825,
+          184
+        ],
+        "internalGaps": []
+      },
+      "initialRaw3": {
+        "raw": 3,
+        "sourceKind": 2,
+        "calls": [
+          {
+            "kind": "cdDrawCurve",
+            "start": [
+              30.4,
+              150
+            ],
+            "end": [
+              61.91,
+              67
+            ],
+            "ta1": 32,
+            "ta2": 7
+          }
+        ],
+        "start": [
+          30.4,
+          150
+        ],
+        "end": [
+          61.91,
+          67
+        ],
+        "internalGaps": []
+      },
+      "gap2to3": {
+        "delta": [
+          -3.4250000000000043,
+          -34
+        ],
+        "distance": 34.17207375913847
+      },
+      "filledIntersectionMeasured": false
+    },
+    {
+      "root": "u6f68-g",
+      "raw": 17,
+      "draw": 17,
+      "polygons": 33,
+      "joins": [
+        [
+          5,
+          6
+        ]
+      ],
+      "minimum": 16,
+      "terminalSpecial": [],
+      "initialRaw2": {
+        "raw": 2,
+        "sourceKind": 2,
+        "calls": [
+          {
+            "kind": "cdDrawCurve",
+            "start": [
+              9.66,
+              133
+            ],
+            "end": [
+              31.05,
+              184
+            ],
+            "ta1": 7,
+            "ta2": 8
+          }
+        ],
+        "start": [
+          9.66,
+          133
+        ],
+        "end": [
+          31.05,
+          184
+        ],
+        "internalGaps": []
+      },
+      "initialRaw3": {
+        "raw": 3,
+        "sourceKind": 2,
+        "calls": [
+          {
+            "kind": "cdDrawCurve",
+            "start": [
+              27.6,
+              150
+            ],
+            "end": [
+              59.34,
+              67
+            ],
+            "ta1": 32,
+            "ta2": 7
+          }
+        ],
+        "start": [
+          27.6,
+          150
+        ],
+        "end": [
+          59.34,
+          67
+        ],
+        "internalGaps": []
+      },
+      "gap2to3": {
+        "delta": [
+          -3.4499999999999993,
+          -34
+        ],
+        "distance": 34.174588512519065
+      },
+      "filledIntersectionMeasured": false
+    },
+    {
+      "root": "u6f68-ue0100",
+      "raw": 17,
+      "draw": 17,
+      "polygons": 34,
+      "joins": [
+        [
+          5,
+          6
+        ]
+      ],
+      "minimum": 16,
+      "terminalSpecial": [],
+      "initialRaw2": {
+        "raw": 2,
+        "sourceKind": 2,
+        "calls": [
+          {
+            "kind": "cdDrawCurve",
+            "start": [
+              12.59,
+              133
+            ],
+            "end": [
+              33.825,
+              184
+            ],
+            "ta1": 7,
+            "ta2": 8
+          }
+        ],
+        "start": [
+          12.59,
+          133
+        ],
+        "end": [
+          33.825,
+          184
+        ],
+        "internalGaps": []
+      },
+      "initialRaw3": {
+        "raw": 3,
+        "sourceKind": 2,
+        "calls": [
+          {
+            "kind": "cdDrawCurve",
+            "start": [
+              30.4,
+              150
+            ],
+            "end": [
+              61.91,
+              67
+            ],
+            "ta1": 32,
+            "ta2": 7
+          }
+        ],
+        "start": [
+          30.4,
+          150
+        ],
+        "end": [
+          61.91,
+          67
+        ],
+        "internalGaps": []
+      },
+      "gap2to3": {
+        "delta": [
+          -3.4250000000000043,
+          -34
+        ],
+        "distance": 34.17207375913847
+      },
+      "filledIntersectionMeasured": false
+    }
+  ],
+  "selectedIdentity": {
+    "sourceRoot": "u6f68",
+    "sourceProofFile": "engine-whole-u6f68.json",
+    "sourceProofFileSha256": "491d52c05f53b89ac1acd042e45e3bec0d4a9c8ca300cbd49bbd26fb0fa81e87",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "7411f7ea88acc7ba7544d5ac54a8d9f98602569b383a2445c8f6cb5f33367e52"
+  },
+  "selectedProofKeys": [
+    "defaults",
+    "groups",
+    "trace"
+  ],
+  "headerKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "fullProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "fullProofSHA256": "963c4e0f5f1e263320c04450c1bd45d939325ff12232c529ecad904d9d56504a",
+  "contract": "Strict adapter verifies exact five-field lowercase Sha256 root/file/header identity, full5proof byte payload and argument trace, then throws preserved blockedReason. No geometry compiler exists.",
+  "compilerPresent": false,
+  "blockedReason": "minimum-original-pens16-exceeds-domestic15",
+  "pens": 0,
+  "masks": 0,
+  "activeFinePens": [],
+  "activeBoundaries": [],
+  "framesProduced": 0,
+  "replayProduced": false,
+  "sourceMinimumMeaning": "All3fixedwhole have17originaldrawing rows with only exactdirectedjoin[5,6], graph minimum16. This is current exact-join diagnostic only, not an authoritative claim that Korean character has16pens or is permanently ineligible.",
+  "priorityBeforeAnyFrames": [
+    {
+      "priority": 1,
+      "check": "All3whole domestic fullshape and15directions."
+    },
+    {
+      "priority": 2,
+      "rawGroups": [
+        2,
+        3
+      ],
+      "check": "Source raw2 curves downward toward y184, raw3 begins at y150 and rises toward y67. Original endpoint gap~34.17; compare actual domestic initial compound boundary before any samepen proposal. Original filled intersection not measured; do not bridge gap/move controlpoints/reverse path/expand width."
+    },
+    {
+      "priority": 3,
+      "rawGroups": [
+        5,
+        6
+      ],
+      "check": "Only exactsourcejoin; cannot close another nonconsecutive enclosure merely to force15."
+    }
+  ],
+  "specialTerminal5Or14Or15Found": false,
+  "newHttp": {
+    "requests": 1,
+    "status": 200,
+    "path": "/whole?view=checks",
+    "publicStructuralOnly": true,
+    "sourceInputPinsChecked": 7,
+    "blocked": true,
+    "pens": 0,
+    "masks": 0,
+    "privateGraphicsRequested": false
+  },
+  "priorSourceEvidence": {
+    "file": "strict-native-server-preflight.json.sourceVerification",
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "completeSourceReplayPassed": true,
+    "sourceEvidencePassed": null,
+    "records": 11,
+    "wholeVariants": 3,
+    "domesticClips": 15,
+    "engineFilesVerified": 8,
+    "newEngineReruns": 0,
+    "newSourceRequests": 0
+  },
+  "priorGuardEvidence": {
+    "file": "strict-native-server-preflight.json.actualLocalVerification",
+    "expectedBlock": true,
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "inputUnchanged": true,
+    "repeatExecuted": false
+  },
+  "nativeApproval": false,
+  "nativeWholeObserved": 0,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplaysObserved": 0,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "originalFilesChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateAssetsReadThisTask": false,
+  "privateMediaSaved": false
+}
+
