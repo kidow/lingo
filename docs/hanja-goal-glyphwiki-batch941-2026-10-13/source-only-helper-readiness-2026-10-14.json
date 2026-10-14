@@ -1,0 +1,268 @@
+{
+  "batch": 941,
+  "glyph": "賰",
+  "status": "isolated-check-cleared-frame-helper-ready-native-pending",
+  "newFiles": [
+    "serve-frame-native.py",
+    "source-only-helper-readiness-2026-10-14.json"
+  ],
+  "newHelperSHA256": "c0d1c94b52f0d41f3cc165a43098429e25ca4fcbb91977d46066c3450e61012c",
+  "originalBytePins": {
+    "candidate-compile-analysis.json": "7f7ac305d2126643aca7b2ef4b1bbfdaa6af229957633d76cadb8a17d25d23c6",
+    "engine-proof.json": "cbe7bc6eca2aaaae835e593af010121bd7f0b2e5e08456a59fb142d5380dfc4b",
+    "engine-whole-u8cf0-ue0100.json": "cbe7bc6eca2aaaae835e593af010121bd7f0b2e5e08456a59fb142d5380dfc4b",
+    "engine-whole-u8cf0.json": "cbe7bc6eca2aaaae835e593af010121bd7f0b2e5e08456a59fb142d5380dfc4b",
+    "metadata.json": "40464d56acce7950d476be988d32e3c60dd40c91cd2ea04ca9192cf61e7e2d5b",
+    "progressive.mjs": "d98d39f2b2a5954b026ad0b01f1a5344ce804192587b304aa2321c9c5a6e8b3e",
+    "source-analysis.json": "d5ef6b0f0e1c62ed87866ece09dea86c8bd9b3a9b647faadd3bf59511afd9f44",
+    "source-join-analysis.json": "81b0ac9abeadadf5462235197a2513c9f375ab5390f51f4797d63ebf2f844eaa",
+    "source-preservation-audit.json": "698d157efe8224b7228ac1d975088f87549b3a42863c8d07090f80fe091bfd63",
+    "sources.json": "e9faaf7520462e81000e77947fcafb666a07a33986b1903430ceea1707ab3b23",
+    "verify-source.mjs": "0ee60cec0854cc88c5e63940e13844ac2c19c39270ff11acce1ee74729da77a9",
+    "native-server-source-audit.json": "b1e6f2b70100d8d3029e8aeb19611b08601731fc0957ecd2ce3c381b2ccf3ac9",
+    "native-server-compile.mjs": "ddd0cb2331ccb0c1c8c8f1c9a8c6e72920c8435166a4b277a0e78f84d65a75f1",
+    "serve-native.py": "6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b",
+    "native-server-validation.json": "1a3e918f9780d0750602a51d1e985018ea36a193f596c036e6255c5fd937f8b7"
+  },
+  "originalBytesUnchanged": true,
+  "newServer": {
+    "port": 58726,
+    "pid": 64713,
+    "session": 10175,
+    "wholeURL": "http://127.0.0.1:58726/whole",
+    "pairsURL": "http://127.0.0.1:58726/pairs",
+    "fineURL": "http://127.0.0.1:58726/progressive?stroke=14&enlarged=1&samples=1"
+  },
+  "oldServer": {
+    "port": 62669,
+    "listeningPIDObserved": 74264,
+    "restartedOrKilled": false,
+    "publicChecksRejectionsObserved": 14,
+    "interpretation": "Original wrapper emits rejections14 only inCHECK=1 branch and then omitsstrokes/render. Source-only checks were not evidence of workingframes. No oldprivate-frame request made."
+  },
+  "environmentScope": "Only new preview process removesCHECK. Originalhelper/compiler/source/envfiles unchanged; no credentials accessed.",
+  "selectedRoot": "u8cf0",
+  "selectedProof": "engine-whole-u8cf0.json",
+  "selectedProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "fullProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "fullProofSHA256": "de775ce306a3cb5a1f4a26483fa020ed2dc19caf140143a1980842b8132d4397",
+  "externalCaller": {
+    "root": "u8cf0",
+    "sourceProofFile": "engine-whole-u8cf0.json",
+    "sourceProofFileSHA256": "cbe7bc6eca2aaaae835e593af010121bd7f0b2e5e08456a59fb142d5380dfc4b",
+    "engineHeaderSHA256": "cbe7bc6eca2aaaae835e593af010121bd7f0b2e5e08456a59fb142d5380dfc4b",
+    "sourceFileSHA256": "e9faaf7520462e81000e77947fcafb666a07a33986b1903430ceea1707ab3b23",
+    "compilerFileSHA256": "d98d39f2b2a5954b026ad0b01f1a5344ce804192587b304aa2321c9c5a6e8b3e"
+  },
+  "compilerContract": "Nativeadapter validates sixfield root/whole/header/source/compiler identity+full5proof and exactinputmanifest, then calls unchanged twoargumentcompileProgressive(trace,proof). No mandatorythird argument on primitivecompiler.",
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14,
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ]
+  ],
+  "pens": 16,
+  "masks": 16,
+  "originalPolygons": 29,
+  "sourceExactOnceEvidence": "Prior numeric/source-preservation certificate and unchanged source/compiledhelper. No newengine reproduction.",
+  "curveFinePens": [
+    2,
+    6,
+    7,
+    11,
+    12,
+    14
+  ],
+  "additionalTerminalFinePens": [
+    1,
+    13
+  ],
+  "maskTransitions": [],
+  "coarseNativeFramesRequired": 144,
+  "priorityChecks": [
+    {
+      "priority": 1,
+      "check": "Wholebase/VS0 eligibility anddomestic16direction/order beforeframes."
+    },
+    {
+      "priority": 2,
+      "pen": 14,
+      "raw": [
+        14,
+        15
+      ],
+      "terminal": 123,
+      "originalPureLineDistanceMaximumKage": 13.437933481380258,
+      "currentRevealWidth": 14,
+      "exactEndpoint": [
+        153.7875,
+        115.08
+      ],
+      "check": "OriginalLfold tip99.99-to100; numericboundwithin14 is not nativeapproval."
+    },
+    {
+      "priority": 3,
+      "pen": 2,
+      "raw": [
+        1,
+        2
+      ],
+      "terminal": 323,
+      "originalPureLineDistanceMaximumKage": 10.980000000000004,
+      "currentRevealWidth": 14,
+      "exactEndpoint": [
+        65.42,
+        29.637999999999998
+      ],
+      "check": "OriginalLfold endcap/tip99.99-to100 andactualreplay."
+    },
+    {
+      "priority": 4,
+      "pen": 1,
+      "raw": [
+        0
+      ],
+      "terminal": 213,
+      "check": "Originaldowncardinal terminal213 fine."
+    },
+    {
+      "priority": 5,
+      "pen": 13,
+      "raw": [
+        13
+      ],
+      "terminal": 113,
+      "check": "Originaldowncardinal terminal113 fine."
+    }
+  ],
+  "unjoinedSourceGap": {
+    "from": 5,
+    "to": 6,
+    "end": [
+      65.42,
+      134.0488
+    ],
+    "start": [
+      38.04,
+      146.62
+    ],
+    "delta": [
+      -27.380000000000003,
+      12.571200000000005
+    ],
+    "distance": 30.12805120547959,
+    "sameSelectedProofSHAConfirmed": true,
+    "joined": false,
+    "interpretation": "Across separatelypreserved sourcepens, not an invented compoundjoin."
+  },
+  "priorSourceEvidence": {
+    "file": "native-server-source-audit.json.sourceVerified",
+    "sourcePassed": true,
+    "exitCode": 0,
+    "engineFiles": 8,
+    "resultItem": {
+      "batch": 941,
+      "glyph": "賰",
+      "records": 7,
+      "wholeRoots": 2,
+      "historicalDependencies": 0,
+      "catalogStrokes": 16,
+      "domesticClips": 16,
+      "candidateCount": 16,
+      "candidateExact": true
+    },
+    "sourceEvidencePassed": null,
+    "newEngineExecutions": 0,
+    "newSourceRequests": 0
+  },
+  "newHTTP": {
+    "requests": 2,
+    "path": "/progressive?stroke=14&enlarged=1&samples=1",
+    "firstAttempt": "Localsummary parser usedrender delimiter whileHTMLhasstroke delimiter; response notlogged/saved, parsefailed. Not a compiler/source failure.",
+    "secondAttempt": {
+      "status": 200,
+      "actualStrokesArray": true,
+      "pens": 16,
+      "masks": 16,
+      "svg520": true,
+      "coarseSamplesRequested": true,
+      "fineButtonSourceVerified": true,
+      "fineSourceRepresentation": "show(0.9999), originalPythonrepr(.9999)",
+      "actualReplay8SecControl": true,
+      "privateDictionaryOnlyRAM": true,
+      "responseLoggedOrSaved": false
+    }
+  },
+  "newNegativeGuardSuiteExecuted": false,
+  "priorNativeObserved": 0,
+  "nativeApproval": false,
+  "nativeWholeObserved": 0,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplaysObserved": 0,
+  "runtimeApplied": false,
+  "originalFilesChanged": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
+
