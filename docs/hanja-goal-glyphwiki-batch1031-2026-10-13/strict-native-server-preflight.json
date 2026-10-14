@@ -1,0 +1,219 @@
+{
+  "batch": 1031,
+  "glyph": "鉷",
+  "status": "ready-for-root-native-review",
+  "frozenRuntimeSnapshot": {
+    "at": "2026-10-13T20:29:47.039Z",
+    "registered": 5443,
+    "registeredInThisTask": 0
+  },
+  "sourceVerification": {
+    "executor": "hanja_batch760_761_analysis",
+    "sharedRamWorker": 82039,
+    "originalVerifierActualRuns": 1,
+    "sourcePassed": true,
+    "records": 4,
+    "capturedRoots": 2,
+    "domesticClips": 14,
+    "catalog": 14,
+    "catalogDomesticCountMatch": true,
+    "engineFiles": 8,
+    "archiveFetchesCumulative": 1,
+    "reverificationByThisAgent": 0,
+    "privateMediaSaved": false,
+    "missingSemantics": "Actual PASS validates original expected source state; no native whole/direction approval is implied."
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u9277",
+    "sourceProofFile": "engine-whole-u9277.json",
+    "sourceProofFileSha256": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186"
+  },
+  "inputSHA256": {
+    "sources.json": "912e197d0fc46e1819655869736994b09e4f206de7b2f0d5583bc12892f49ee7",
+    "metadata.json": "095c12dd4083127bd3a8df72b94b03a0d9486adb2c8387a334ac0ba2ce1143c9",
+    "engine-proof.json": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186",
+    "progressive.mjs": "8f4f4602572aa9ae80e3b6ba6db044475f52b2437ff90c0f2bc1e324d00769d3",
+    "engine-whole-u9277-ue0100.json": "38c2f9917cafc813daf6f57ea6153da0e24e3e4bb2598f35e46d3ea2921a58d9",
+    "engine-whole-u9277.json": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186",
+    "strict-native-adapter.mjs": "178b1b21a5bd5bbf7e11b037724e8e39d870a9e7116200c71387385eb336a525"
+  },
+  "fullSelectedProofSHA256": "3de3ca711835bacc6fe3d2c1f9f133d4f0acf1396848229e8524dd75d4602bce",
+  "capturedRootGeometryEvidence": [
+    {
+      "root": "u9277-ue0100",
+      "file": "engine-whole-u9277-ue0100.json",
+      "sourceSHA256": "38c2f9917cafc813daf6f57ea6153da0e24e3e4bb2598f35e46d3ea2921a58d9",
+      "geometryNull": false,
+      "missing": null,
+      "raw": 14,
+      "polygons": 31,
+      "geometryReplayComplete": true,
+      "fullCharacterEligibilityApproved": false
+    },
+    {
+      "root": "u9277",
+      "file": "engine-whole-u9277.json",
+      "sourceSHA256": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186",
+      "geometryNull": false,
+      "missing": null,
+      "raw": 14,
+      "polygons": 31,
+      "geometryReplayComplete": true,
+      "fullCharacterEligibilityApproved": false
+    }
+  ],
+  "originalCompilerExists": true,
+  "originalCompilerProofMetadataUnchanged": true,
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ]
+  ],
+  "nonconsecutiveGroups": [],
+  "blockedReason": null,
+  "localActualVerification": {
+    "batch": 1031,
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "expectedBlock": false,
+    "inputUnchanged": true,
+    "pens": 14,
+    "masks": 14,
+    "adapterSHA256": "178b1b21a5bd5bbf7e11b037724e8e39d870a9e7116200c71387385eb336a525",
+    "nativeApproval": false,
+    "originalPolygonCount": 31,
+    "exactPolygonConservation": true,
+    "completeCompiledSHA256": "c15bd2b02e93191e957bc7d6e3561b8034aaf32230e9d9d85d1f175b58aad3f5"
+  },
+  "fineRisk": {
+    "pens": [
+      1,
+      2,
+      6,
+      7,
+      8,
+      13,
+      14
+    ],
+    "originalTransitions": [],
+    "originalTerminalCalls": [],
+    "mergedOriginalEndpointContinuity": [],
+    "sourceGeometryAudit": [
+      {
+        "batch": 1031,
+        "originalEmptySourceRows": [],
+        "allInternalAuthoredCallGaps": []
+      }
+    ],
+    "riskIsNumericNotNativeFailure": true,
+    "noGeometryWidthDirectionWeightAdjustment": true,
+    "emptyType0MetadataPreserved": true
+  },
+  "server": {
+    "baseURL": "http://127.0.0.1:52193",
+    "pid": 75605,
+    "session": 25823,
+    "routes": {
+      "whole": "/whole",
+      "pairs": "/pairs",
+      "progressive": "/progressive?stroke=1&enlarged=1&samples=1"
+    },
+    "positiveHTTPChecks": [
+      {
+        "batch": 1031,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 646,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1031,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 8621,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1031,
+        "route": "/pairs",
+        "status": 200,
+        "bytes": 36801,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1031,
+        "route": "/progressive?stroke=1&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 9797,
+        "privateBodyLogged": false,
+        "hasNineGrid": true,
+        "has8SecondReplay": true
+      }
+    ],
+    "strictInputPinsEachRequest": true,
+    "privateDictionaryRAMOnly": true,
+    "nineGridSamplesAvailable": true,
+    "eightSecondReplayAvailable": true
+  },
+  "nativeObserved": {
+    "wholeVariants": 0,
+    "domesticDirections": 0,
+    "coarseFrames": 0,
+    "fineFrames": 0,
+    "maskBoundaries": 0,
+    "actualReplay": 0,
+    "approvalGranted": false
+  },
+  "plannedNativeCoarseFrames": 126,
+  "productionRuntimeChanged": false,
+  "sharedRegistryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false
+}

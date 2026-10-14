@@ -1,0 +1,160 @@
+{
+  "batch": 1031,
+  "glyph": "鉷",
+  "status": "source-only-helper-contract-valid-native-pending",
+  "catalog": 14,
+  "domesticClips": 14,
+  "sourceVerification": {
+    "priorRecordFile": "strict-native-server-preflight.json",
+    "priorSourcePassed": true,
+    "priorSourceEvidencePassed": null,
+    "priorRecord": {
+      "executor": "hanja_batch760_761_analysis",
+      "sharedRamWorker": 82039,
+      "originalVerifierActualRuns": 1,
+      "sourcePassed": true,
+      "records": 4,
+      "capturedRoots": 2,
+      "domesticClips": 14,
+      "catalog": 14,
+      "catalogDomesticCountMatch": true,
+      "engineFiles": 8,
+      "archiveFetchesCumulative": 1,
+      "reverificationByThisAgent": 0,
+      "privateMediaSaved": false,
+      "missingSemantics": "Actual PASS validates original expected source state; no native whole/direction approval is implied."
+    },
+    "runsThisPreparation": 0,
+    "onlineRequested": false
+  },
+  "originalBytePins": {
+    "sources.json": "912e197d0fc46e1819655869736994b09e4f206de7b2f0d5583bc12892f49ee7",
+    "metadata.json": "095c12dd4083127bd3a8df72b94b03a0d9486adb2c8387a334ac0ba2ce1143c9",
+    "engine-proof.json": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186",
+    "progressive.mjs": "8f4f4602572aa9ae80e3b6ba6db044475f52b2437ff90c0f2bc1e324d00769d3",
+    "engine-whole-u9277-ue0100.json": "38c2f9917cafc813daf6f57ea6153da0e24e3e4bb2598f35e46d3ea2921a58d9",
+    "engine-whole-u9277.json": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186",
+    "strict-native-adapter.mjs": "178b1b21a5bd5bbf7e11b037724e8e39d870a9e7116200c71387385eb336a525",
+    "serve-native.py": "0e848edbe493e51c7e736ddc9aada422c82fb5a407d1d69ea96a436cb85b30a3"
+  },
+  "selectedRoot": "u9277",
+  "selectedFile": "engine-whole-u9277.json",
+  "selectedIdentity": {
+    "sourceRoot": "u9277",
+    "sourceProofFile": "engine-whole-u9277.json",
+    "sourceProofFileSha256": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186"
+  },
+  "wholeVariants": [
+    {
+      "file": "engine-whole-u9277.json",
+      "fileSHA256": "0feb012f656ee1c69cf0fa4adde2e1121e4737517cc0ead38d526eebb0ab7186",
+      "raw": 14,
+      "draw": 14,
+      "Q": 7,
+      "B": 0,
+      "polygons": 31
+    },
+    {
+      "file": "engine-whole-u9277-ue0100.json",
+      "fileSHA256": "38c2f9917cafc813daf6f57ea6153da0e24e3e4bb2598f35e46d3ea2921a58d9",
+      "raw": 14,
+      "draw": 14,
+      "Q": 7,
+      "B": 0,
+      "polygons": 31
+    }
+  ],
+  "compiler": {
+    "originalInputImmutable": true,
+    "originalPolygonsExactlyOnce": true,
+    "pens": 14,
+    "masks": 14,
+    "sourceMutationRejected": 6,
+    "identityMutationRejected": 6,
+    "existingBlockedReason": null,
+    "actualFailure": null,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ]
+    ],
+    "nonConsecutiveGroups": [],
+    "emptyRawMetadata": [],
+    "finePens": [
+      1,
+      2,
+      6,
+      7,
+      8,
+      13,
+      14
+    ],
+    "maskTransitions": [],
+    "originalSpecialTerminals": []
+  },
+  "caller": {
+    "actualExecuted": true,
+    "actualPassed": true,
+    "contract": "Existing strict adapter identity, original whole/header/body and compiler byte pins",
+    "failure": null
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1031-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "portBinding": "Existing helper; no live readiness assumption"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
+
