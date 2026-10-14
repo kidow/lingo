@@ -1,0 +1,161 @@
+{
+  "batch": 1000,
+  "glyph": "哻",
+  "status": "source-only-helper-contract-valid-native-pending",
+  "catalog": 10,
+  "domesticClips": 10,
+  "sourceVerification": {
+    "priorRecordFile": "native-server-preparation-source-analysis.json",
+    "priorSourcePassed": true,
+    "priorSourceEvidencePassed": null,
+    "priorRecord": {
+      "sourcePassed": true,
+      "executed": true
+    },
+    "runsThisPreparation": 0,
+    "onlineRequested": false
+  },
+  "originalBytePins": {
+    "progressive.mjs": "acd07a688a310d15c91fed3854f02e1b784203d131d78ca5be84093e010c03ac",
+    "engine-whole-u54fb.json": "528cba8f9ab4d9d410c4d9415e415271339938ad47c78575bcde4be8be7eeb3e",
+    "sources.json": "84018ca72962bf309fdb4b5c552fbefdfe4cacbafa59ae8cd3e1008b00d8d964",
+    "serve-whole.py": "787d9e661c0e72975dde5d06d3feb3b0f0fef4903f35275de799043023374320",
+    "engine-proof.json": "b307718caed02108a6c92ee285ceda9d5b61dfeecc47efc81c3d99b5f450b73b",
+    "serve-progressive.py": "38c923995290cba2dd3b7637c2e0dcbf909e6cf5e604905409913db05b0d9757",
+    "metadata.json": "346dbe36a2231897d5f87307aa0f3b8749113de34b118ba0eea9a18e6c6cdae7",
+    "server-compile.mjs": "d0d7607653592ae3d2b119d27ccdfb2964834b8ee0cbb03b50d9baf43acda8fd"
+  },
+  "selectedRoot": "u54fb",
+  "selectedFile": "./engine-whole-u54fb.json",
+  "selectedIdentity": {
+    "sourceRoot": "u54fb",
+    "sourceProofFile": "./engine-whole-u54fb.json",
+    "sourceProofFileSha256": "528cba8f9ab4d9d410c4d9415e415271339938ad47c78575bcde4be8be7eeb3e",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "b307718caed02108a6c92ee285ceda9d5b61dfeecc47efc81c3d99b5f450b73b",
+    "sourceMetadataFile": "./sources.json",
+    "sourceMetadataFileSha256": "84018ca72962bf309fdb4b5c552fbefdfe4cacbafa59ae8cd3e1008b00d8d964"
+  },
+  "wholeVariants": [
+    {
+      "file": "engine-whole-u54fb.json",
+      "fileSHA256": "528cba8f9ab4d9d410c4d9415e415271339938ad47c78575bcde4be8be7eeb3e",
+      "raw": 12,
+      "draw": 12,
+      "Q": 0,
+      "B": 0,
+      "polygons": 16
+    }
+  ],
+  "compiler": {
+    "originalInputImmutable": true,
+    "originalPolygonsExactlyOnce": true,
+    "pens": 10,
+    "masks": 10,
+    "sourceMutationRejected": 6,
+    "identityMutationRejected": 8,
+    "existingBlockedReason": null,
+    "actualFailure": null,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ]
+    ],
+    "nonConsecutiveGroups": [],
+    "emptyRawMetadata": [],
+    "finePens": [
+      2,
+      5
+    ],
+    "maskTransitions": [],
+    "originalSpecialTerminals": [
+      {
+        "raw": 0,
+        "pen": 1,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 13,
+        "polygons": 1
+      },
+      {
+        "raw": 2,
+        "pen": 2,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 23,
+        "polygons": 2
+      },
+      {
+        "raw": 4,
+        "pen": 4,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 113,
+        "polygons": 1
+      },
+      {
+        "raw": 6,
+        "pen": 5,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 123,
+        "polygons": 2
+      }
+    ]
+  },
+  "caller": {
+    "actualExecuted": true,
+    "actualPassed": true,
+    "contract": "Existing explicit selected whole/file/header metadata identity and byte-pinned caller",
+    "failure": null,
+    "unsupportedRejected": true
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1000-2026-10-13/serve-whole.py",
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1000-2026-10-13/serve-progressive.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "portBinding": "Existing helper; no live readiness assumption"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
+
