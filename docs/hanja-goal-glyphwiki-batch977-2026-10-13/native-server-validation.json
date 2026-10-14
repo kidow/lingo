@@ -1,0 +1,144 @@
+{
+  "batch": 977,
+  "glyph": "豝",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "originalPolygonsExactlyOnce": true,
+  "sourceInputImmutable": true,
+  "canonicalPolygonChecks": [
+    {
+      "root": "u8c5d",
+      "polygons": 26,
+      "sha256": "5ea74a4fd4b3f7531228fab22a1d0725899bcaec38667ae240973245099d8471"
+    },
+    {
+      "root": "u8c5d-ue0100",
+      "polygons": 26,
+      "sha256": "5ea74a4fd4b3f7531228fab22a1d0725899bcaec38667ae240973245099d8471"
+    }
+  ],
+  "guards": [
+    {
+      "root": "u8c5d",
+      "rejected": 15
+    },
+    {
+      "root": "u8c5d-ue0100",
+      "rejected": 15
+    }
+  ],
+  "emptyMetadataExtraCheck": null,
+  "servers": [
+    {
+      "batch": 977,
+      "kind": "serve-whole.py",
+      "session": 80437,
+      "port": 65142,
+      "pid": 54538,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 11,
+      "nativeApproved": false
+    },
+    {
+      "batch": 977,
+      "kind": "serve-progressive.py",
+      "session": 92999,
+      "port": 65151,
+      "pid": 54548,
+      "strokes": 11,
+      "masks": 13,
+      "sourceRoot": "u8c5d",
+      "sourceProofFile": "./engine-whole-u8c5d.json",
+      "sourceProofFileSHA256": "184c4621dcff5f7791fa525e7559206dc385bc1e125b9d3cb372d6b5e708bc05"
+    }
+  ],
+  "http": [
+    {
+      "batch": 977,
+      "kind": "whole",
+      "url": "http://127.0.0.1:65142/?id=u8c5d",
+      "status": 200,
+      "bytes": 6063,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 977,
+      "kind": "whole",
+      "url": "http://127.0.0.1:65142/?id=u8c5d-ue0100",
+      "status": 200,
+      "bytes": 6070,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 977,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:65142/?id=u8c5d&pairs=1:1,11:11&view=checks",
+      "status": 200,
+      "bytes": 365,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 977,
+      "kind": "fine",
+      "pen": 3,
+      "url": "http://127.0.0.1:65151/?root=u8c5d&stroke=3&enlarged=1",
+      "status": 200,
+      "bytes": 10426,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 977,
+      "kind": "fine",
+      "pen": 11,
+      "url": "http://127.0.0.1:65151/?root=u8c5d&stroke=11&enlarged=1",
+      "status": 200,
+      "bytes": 11792,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 977,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:65142/?id=u8c5d-ue0100&pairs=1:1,11:11&view=checks",
+      "status": 200,
+      "bytes": 379,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 977,
+      "kind": "fine",
+      "pen": 3,
+      "url": "http://127.0.0.1:65151/?root=u8c5d-ue0100&stroke=3&enlarged=1",
+      "status": 200,
+      "bytes": 10510,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 977,
+      "kind": "fine",
+      "pen": 11,
+      "url": "http://127.0.0.1:65151/?root=u8c5d-ue0100&stroke=11&enlarged=1",
+      "status": 200,
+      "bytes": 11876,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false
+}
