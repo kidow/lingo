@@ -1,0 +1,209 @@
+{
+  "batch": 929,
+  "glyph": "凗",
+  "status": "source-only strict blocked native diagnostic ready",
+  "frozenRuntimeSnapshot": {
+    "utc": "2026-10-13T19:43:12.864Z",
+    "registered": 5438,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 5,
+    "wholeVariants": 1,
+    "domesticClips": 13,
+    "engineFilesVerified": 8,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false,
+    "archiveRedownloaded": false,
+    "completeSourceReplayPassed": true
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u51d7",
+    "sourceProofFile": "engine-whole-u51d7.json",
+    "sourceProofFileSha256": "fab272737e32a9014e2f7e15ce7ccbfa8ad81eacad5dd3c7dddda1e5d5430a4d",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "6f1a58e9442e481f0f09d71d2d3895c4def9044179c246652682a9ca9d43ba1c"
+  },
+  "identityIsNotWholeCompatibilityApproval": true,
+  "inputFileSHA256": {
+    "sources.json": "7fc3014a3de6bac4cdec59a0cc0e3b34da71ccdd6647110fd598bf057560d13c",
+    "metadata.json": "f7b898825c2876e2f4cd740a1cf7265d7ed50e9c8657f554f31d30ae6f0f9538",
+    "engine-proof.json": "6f1a58e9442e481f0f09d71d2d3895c4def9044179c246652682a9ca9d43ba1c",
+    "progressive.mjs": "475d8337dc80ce48271136e920bab2d9f8d653acdee943c23711c3781512821a",
+    "engine-whole-u51d7.json": "fab272737e32a9014e2f7e15ce7ccbfa8ad81eacad5dd3c7dddda1e5d5430a4d",
+    "strict-native-adapter.mjs": "5a795a359876f49d2a35932f3e5bc0139e13a0e7f73e916681ebf0e95f063f70"
+  },
+  "fullSelectedProofSHA256": "14b3fb7c8e3ee6de9803c266ae8c1e7237d5ba18f21daed9a5e7dfaf24f2fea3",
+  "originalCompilerUnchanged": true,
+  "originalSourceProofsUnchanged": true,
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8,
+      14
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ]
+  ],
+  "nonconsecutiveGroups": [
+    [
+      8,
+      14
+    ]
+  ],
+  "blockedReason": "nonconsecutive-original-enclosure-raw8-14",
+  "actualLocalVerification": {
+    "batch": 929,
+    "expectedBlock": true,
+    "reason": "nonconsecutive-original-enclosure-raw8-14",
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "5a795a359876f49d2a35932f3e5bc0139e13a0e7f73e916681ebf0e95f063f70",
+    "compiledSHA256": null,
+    "nativeApproval": false,
+    "strictAdapter": "strict-native-adapter.mjs",
+    "fullOriginalPolygonsOnce": null,
+    "originalPolygonCount": 28,
+    "compiledMasksEqualOriginalCompiledSHA256": null,
+    "argumentTraceUnchanged": true,
+    "originalCoordsWidthsDirectionsWeightsAndBoundsUnchanged": true
+  },
+  "risks": {
+    "approvalBlocked": true,
+    "reason": "nonconsecutive-original-enclosure-raw8-14",
+    "sourceVerifierFailure": false,
+    "framesAndReplayNotProduced": true
+  },
+  "server": {
+    "url": "http://127.0.0.1:64799",
+    "pid": 41811,
+    "sessionID": 68141,
+    "whole": "/whole",
+    "pairs": "/pairs?domestic=1&raw=1",
+    "progressive": "expected blocked status only",
+    "sourcePinsEachRequest": true,
+    "HTTPResults": [
+      {
+        "batch": 929,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 627,
+        "checks": {
+          "sourceRoot": "u51d7",
+          "identity": {
+            "sourceRoot": "u51d7",
+            "sourceProofFile": "engine-whole-u51d7.json",
+            "sourceProofFileSha256": "fab272737e32a9014e2f7e15ce7ccbfa8ad81eacad5dd3c7dddda1e5d5430a4d",
+            "sourceHeaderFile": "engine-proof.json",
+            "sourceHeaderFileSha256": "6f1a58e9442e481f0f09d71d2d3895c4def9044179c246652682a9ca9d43ba1c"
+          },
+          "sourceVerificationPassed": true,
+          "blocked": true,
+          "reason": "nonconsecutive-original-enclosure-raw8-14",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u51d7"
+          ],
+          "sourceInputPinsVerified": 6,
+          "catalog": 13,
+          "domestic": 13
+        }
+      },
+      {
+        "batch": 929,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 5256,
+        "privateTextLogged": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false,
+        "has520": false
+      },
+      {
+        "batch": 929,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 1956,
+        "privateTextLogged": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false,
+        "has520": true
+      },
+      {
+        "batch": 929,
+        "route": "/progressive?stroke=2&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1177,
+        "privateTextLogged": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": true,
+        "has520": false
+      }
+    ],
+    "dictionaryMedia": "Only RAM; original byte SHA/title/clip checks performed by actual rendering HTTP requests"
+  },
+  "nativeObservation": {
+    "wholeVariantsObserved": 0,
+    "directionsObserved": 0,
+    "coarseFramesObserved": 0,
+    "fineFramesObserved": 0,
+    "maskBoundariesObserved": 0,
+    "replaysObserved": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
