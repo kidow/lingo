@@ -1,0 +1,139 @@
+{
+  "batch": 936,
+  "glyph": "縐",
+  "date": "2026-10-14",
+  "stage": "원본 보류 유지·전체자형 정적 비교 helper 준비",
+  "sourceVerification": {
+    "existingEvidenceFile": "native-server-preflight-hold.json",
+    "existingEvidenceFileSHA256": "425a5d101605b51e1b4d67de3ce834fd58c18ce71aa1a812e1606109b7812b96",
+    "sourceActualPassedReused": true,
+    "originalVerifierRerun": false,
+    "newPublicSourceRequested": false,
+    "engineFiles": 8
+  },
+  "originalInputFileSHA256": {
+    "candidate-compile-analysis.json": "aadb03e00f994a59ffdb1766da722d6efd24b097cd800ec255d306a1eac9afc1",
+    "engine-proof.json": "9b2aac1b87f1e5a1d0a58cc2ecde53f267ccadce42cfbfff1cd21d1778011d39",
+    "engine-whole-u7e10-ue0100.json": "9b2aac1b87f1e5a1d0a58cc2ecde53f267ccadce42cfbfff1cd21d1778011d39",
+    "engine-whole-u7e10.json": "9b2aac1b87f1e5a1d0a58cc2ecde53f267ccadce42cfbfff1cd21d1778011d39",
+    "metadata.json": "0296e10a9b5f689f365d0fd9a98b5e1f090e8e6c5a8cf2ac5418fbeb631ae836",
+    "native-server-preflight-hold.json": "425a5d101605b51e1b4d67de3ce834fd58c18ce71aa1a812e1606109b7812b96",
+    "source-analysis.json": "3c981c1ef7f656dc63b280ae97ea8cb177de1309340d306f081bec139acf8ecf",
+    "source-join-analysis.json": "3cc90737e1051f51c6b0035e9796c9ca09e58867b3d865919076afb5cab1bd6f",
+    "source-preservation-audit.json": "339a85f3585ba8d232f90c318fb8b964b61b9fe858d3b96f363c8de31e802009",
+    "sources.json": "0a6a9f3af9a3ead7cddd5cf757b6253dd66d1e0898e234e29d6a0a4aff7dc7cf",
+    "verify-source.mjs": "44c3bf9b04b68c99ff5b12dcc740e085e723dc985c30d2d1a5c34ab1c3387201"
+  },
+  "originalInputFilesUnchanged": true,
+  "wholeRoots": [
+    "u7e10",
+    "u7e10-ue0100"
+  ],
+  "wholeProofFileSHA256": "9b2aac1b87f1e5a1d0a58cc2ecde53f267ccadce42cfbfff1cd21d1778011d39",
+  "sameGeometry": true,
+  "perWhole": {
+    "raw": 22,
+    "draw": 26,
+    "polygons": 53,
+    "minimumConsecutivePens": 18,
+    "domesticClips": 16,
+    "exactConsecutiveJoins": [
+      [
+        9,
+        10
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        18,
+        19
+      ]
+    ]
+  },
+  "blockedReason": "minimum-original-pens18-exceeds-domestic16",
+  "existingDisconnectedSourceBoundaries": [
+    {
+      "raw": [
+        0,
+        1
+      ],
+      "delta": [
+        -15.54,
+        -11
+      ]
+    },
+    {
+      "raw": [
+        2,
+        3
+      ],
+      "delta": [
+        -13.32,
+        3
+      ]
+    }
+  ],
+  "selectedWhole": null,
+  "numericCandidate": null,
+  "compilerCandidate": null,
+  "compiledPens": 0,
+  "compiledMasks": 0,
+  "compilerGuardCases": null,
+  "fineCandidatePens": null,
+  "terminalCandidatePoints": null,
+  "maskTransitions": null,
+  "nativeApproval": false,
+  "nativeFramesObserved": 0,
+  "nativeReplayObserved": 0,
+  "server": {
+    "file": "serve-whole-static.py",
+    "fileSHA256": "be94536b1dc4fa6b357e9b7f10a59c0660928f05ac4fa056e8aba584844b8b1a",
+    "url": "http://127.0.0.1:49866",
+    "pid": 69491,
+    "whole": "/whole",
+    "checks": "/checks",
+    "progressive": "/progressive (보류 안내만)",
+    "rawPenMappingApproved": false,
+    "sourceInputPinsEachRequest": 11
+  },
+  "validation": {
+    "sourceByteTamperRejectedInRAM": 11,
+    "compilerAbsentNoMutationGuardClaim": true,
+    "http": [
+      {
+        "route": "/checks",
+        "status": 200
+      },
+      {
+        "route": "/whole",
+        "status": 200,
+        "originalPolygonsDisplayed": 106
+      },
+      {
+        "route": "/progressive",
+        "status": 200,
+        "blocked": true
+      }
+    ],
+    "privateDictionarySameURLSameSHAInRAM": true,
+    "privateDictionarySHA256": "3973ecbcea3d36b42ad6aceabda2f01d439221f584f10e89195c88d431e5e1a9",
+    "privateMediaSaved": false,
+    "originalPolygonsRenderedOncePerWhole": true
+  },
+  "scope": {
+    "originalSourceChanged": false,
+    "metadataChanged": false,
+    "compilerCreated": false,
+    "runtimeChanged": false,
+    "sharedRegistryChanged": false,
+    "buildRun": false,
+    "commitCreated": false
+  }
+}
+
