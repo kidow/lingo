@@ -1,0 +1,140 @@
+{
+  "batch": 954,
+  "glyph": "紽",
+  "scope": "Strict original source-only native-review preparation",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "engineFiles": 8,
+  "domesticClips": 11,
+  "profiles": null,
+  "expectedSourceBlock": {
+    "batch": 954,
+    "glyph": "紽",
+    "count": 11,
+    "variants": [
+      {
+        "root": "u7d3d-ue0100",
+        "file": "engine-whole-u7d3d-ue0100.json",
+        "fileSHA256": "e7c2484d2cca44987ed560c8c8f91766995e161b0f0ec716c674e9fb0602edba",
+        "raw": 14,
+        "draw": 16,
+        "polygons": 37,
+        "exactJoins": [
+          [
+            10,
+            11
+          ]
+        ],
+        "minimumPens": 13
+      },
+      {
+        "root": "u7d3d",
+        "file": "engine-whole-u7d3d.json",
+        "fileSHA256": "e7c2484d2cca44987ed560c8c8f91766995e161b0f0ec716c674e9fb0602edba",
+        "raw": 14,
+        "draw": 16,
+        "polygons": 37,
+        "exactJoins": [
+          [
+            10,
+            11
+          ]
+        ],
+        "minimumPens": 13
+      }
+    ],
+    "validSourceExpectedBlock": true,
+    "guardsRejected": 11,
+    "guardErrorsDistinctFromExpectedCountBlock": true,
+    "blockedStubExists": true,
+    "compilerSHA": "1bd39e0eed136b97c43456d25162b1964cf87d9a9fe8edbe04863c240ce627cf",
+    "sourceInputImmutable": true,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "servers": [
+    {
+      "batch": 954,
+      "kind": "serve-whole.py",
+      "session": 52449,
+      "port": 64150,
+      "pid": 49215,
+      "wholeVariants": 2,
+      "blocked": true,
+      "nativeApproval": false
+    }
+  ],
+  "http": [
+    {
+      "batch": 954,
+      "url": "http://127.0.0.1:64150/?id=u7d3d-ue0100",
+      "status": 200,
+      "bytes": 6910
+    },
+    {
+      "batch": 954,
+      "url": "http://127.0.0.1:64150/?id=u7d3d-ue0100&view=checks",
+      "status": 200,
+      "bytes": 223,
+      "checks": {
+        "glyph": "紽",
+        "root": "u7d3d-ue0100",
+        "raw": 14,
+        "exactJoins": [
+          [
+            10,
+            11
+          ]
+        ],
+        "minimumPens": 13,
+        "domesticCount": 11,
+        "blocked": true,
+        "blockedStubPresent": true,
+        "candidateGeometryAbsent": true,
+        "nativeApproval": false
+      }
+    },
+    {
+      "batch": 954,
+      "url": "http://127.0.0.1:64150/?id=u7d3d",
+      "status": 200,
+      "bytes": 6903
+    },
+    {
+      "batch": 954,
+      "url": "http://127.0.0.1:64150/?id=u7d3d&view=checks",
+      "status": 200,
+      "bytes": 216,
+      "checks": {
+        "glyph": "紽",
+        "root": "u7d3d",
+        "raw": 14,
+        "exactJoins": [
+          [
+            10,
+            11
+          ]
+        ],
+        "minimumPens": 13,
+        "domesticCount": 11,
+        "blocked": true,
+        "blockedStubPresent": true,
+        "candidateGeometryAbsent": true,
+        "nativeApproval": false
+      }
+    }
+  ],
+  "allHttpPassed": true,
+  "legacyOptionalHeaderAttribution": null,
+  "sourceChanged": false,
+  "compilerChanged": false,
+  "originalGeometryChanged": false,
+  "nonconsecutiveJoining": false,
+  "sourcePathDirectionChanged": false,
+  "nativeObserved": 0,
+  "nativeApproval": false,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "buildExecuted": false,
+  "privateMediaSaved": false
+}
