@@ -1,0 +1,210 @@
+{
+  "batch": 968,
+  "glyph": "迨",
+  "status": "source-only strict blocked native diagnostic",
+  "frozenRuntimeSnapshot": {
+    "utc": "2026-10-13T19:55:36.316Z",
+    "registered": 5440,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 10,
+    "wholeVariants": 5,
+    "domesticClips": 9,
+    "domesticMetadataVerified": true,
+    "engineFilesVerified": 8,
+    "archiveRedownloaded": false,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false
+  },
+  "selectedWholeIdentity": {
+    "sourceRoot": "u8fe8-ue0102",
+    "sourceProofFile": "engine-whole-u8fe8-ue0102.json",
+    "sourceProofFileSha256": "3f6386eb511ca16586c38568f05a7c6fed3f7a23641d6fbb70a4006d2d3f9950",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "b761033f1011dae76fe3d30324ddae06448954c52a583305ee2ee085f21f80b1"
+  },
+  "inputSHA256": {
+    "sources.json": "6a085ca215a5b66bcc3aa4b27d79da0a15edf95341021d62c526dfcd5b03f9a0",
+    "metadata.json": "e4a40c70c49967cb879634a0677fd1c02242d032a40eba89307353f022bf2508",
+    "engine-proof.json": "b761033f1011dae76fe3d30324ddae06448954c52a583305ee2ee085f21f80b1",
+    "progressive.mjs": "2b0cd8f9388354ea9198d0c211e076879b7dad8623d45a56515a41b445639159",
+    "engine-whole-u8fe8-ue0100.json": "e9b9cc4ce8af5bb8b0188f9eafebce36467de1df693b2655a4dda39996b357f4",
+    "engine-whole-u8fe8-ue0101.json": "e9b9cc4ce8af5bb8b0188f9eafebce36467de1df693b2655a4dda39996b357f4",
+    "engine-whole-u8fe8-ue0102.json": "3f6386eb511ca16586c38568f05a7c6fed3f7a23641d6fbb70a4006d2d3f9950",
+    "engine-whole-u8fe8-var-001.json": "3f6386eb511ca16586c38568f05a7c6fed3f7a23641d6fbb70a4006d2d3f9950",
+    "engine-whole-u8fe8.json": "a089c6803eaa2f466964c59a026621698c342354977f1478810de827627446e6",
+    "strict-native-adapter.mjs": "db5c72df0647e1267aab1da7150d7cb5f807578d5b39c3879cdaed2b8135890d"
+  },
+  "fullSelectedProofSHA256": "20551d60ce7a86c9c5975f50c81afb0f9cc9701e34836da47f1ff9295229a393",
+  "originalSourceCompilerMetadataUnchanged": true,
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8,
+      11
+    ],
+    [
+      9,
+      10
+    ]
+  ],
+  "nonconsecutiveGroups": [
+    [
+      8,
+      11
+    ]
+  ],
+  "blockedReason": "nonconsecutive-original-enclosure",
+  "localActualVerification": {
+    "batch": 968,
+    "expectedBlock": true,
+    "reason": "nonconsecutive-original-enclosure",
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "db5c72df0647e1267aab1da7150d7cb5f807578d5b39c3879cdaed2b8135890d",
+    "compiledSHA256": null,
+    "nativeApproval": false,
+    "originalPolygonCount": 23,
+    "allOriginalPolygonsOnce": null,
+    "allCompiledMasksEqualOriginalSHA256": null,
+    "noCoordsPathsWidthsBoundsWeightsDirectionsModified": true
+  },
+  "risks": {
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "frames": 0,
+    "replay": 0,
+    "reason": "nonconsecutive-original-enclosure",
+    "nonconsecutiveOriginalEnclosureGroups": [
+      [
+        8,
+        11
+      ]
+    ]
+  },
+  "server": {
+    "binding": "127.0.0.1:0 with OS-selected port",
+    "url": "http://127.0.0.1:64490",
+    "pid": 50872,
+    "sessionID": 61534,
+    "whole": "/whole",
+    "pairs": "/pairs?domestic=1&raw=1",
+    "progressive": "expected blocked status only",
+    "guardsEachRequest": true,
+    "actualHTTPResults": [
+      {
+        "batch": 968,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 704,
+        "checks": {
+          "sourceRoot": "u8fe8-ue0102",
+          "identity": {
+            "sourceRoot": "u8fe8-ue0102",
+            "sourceProofFile": "engine-whole-u8fe8-ue0102.json",
+            "sourceProofFileSha256": "3f6386eb511ca16586c38568f05a7c6fed3f7a23641d6fbb70a4006d2d3f9950",
+            "sourceHeaderFile": "engine-proof.json",
+            "sourceHeaderFileSha256": "b761033f1011dae76fe3d30324ddae06448954c52a583305ee2ee085f21f80b1"
+          },
+          "sourceVerificationPassed": true,
+          "blocked": true,
+          "reason": "nonconsecutive-original-enclosure",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u8fe8-ue0100",
+            "u8fe8-ue0101",
+            "u8fe8-ue0102",
+            "u8fe8-var-001",
+            "u8fe8"
+          ],
+          "sourceInputPinsVerified": 10,
+          "catalog": 9,
+          "domestic": 9
+        }
+      },
+      {
+        "batch": 968,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 15690,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 968,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 2369,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 968,
+        "route": "/progressive?stroke=9&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1190,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": true
+      }
+    ],
+    "privateMedia": "Dictionary byte SHA/title/clip checked on actual renderer HTTP requests; RAM only"
+  },
+  "nativeObserved": {
+    "whole": 0,
+    "directions": 0,
+    "frames": 0,
+    "fine": 0,
+    "boundaries": 0,
+    "replay": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
