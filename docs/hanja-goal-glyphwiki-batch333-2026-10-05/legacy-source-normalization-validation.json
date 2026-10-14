@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-14",
+  "batch": 333,
+  "glyph": "錞",
+  "status": "local-only legacy whole/header/trace normalization; original native hold preserved",
+  "sourceEngineReplayKnown": false,
+  "sourceVerified": null,
+  "sourceEvidencePassed": null,
+  "priorEvidenceScope": "validation.researchVerification is local verify.mjs PASS; verify.mjs performs no archive/engine HTTP replay; upstream pinnedEngine.hashesChecked statement is retained but independent actual replay evidence is unknown.",
+  "existingLocalVerify": {
+    "executedThisPreparationOnce": true,
+    "actualExit": 0,
+    "onlineReplay": false,
+    "originalValidationFile": "validation.json"
+  },
+  "originalSharedBytePins": {
+    "metadata.json": "c9d3a835e2a8398ac15e443906b0afadfc4184b2a2d81075aeda602dac9599c6",
+    "progressive.mjs": "78770ec56d326fb02fe69f3b661e293c486f56d72f31c93f13653af5538e8737",
+    "primitive-reveal.mjs": "5326ce8367c5335536664a797d445283d00ce21a7372fe34a638a2e0fa9c7efa",
+    "validation.json": "cc1ae5db6e4064b3dddd422c6869263943eeb64171005a479f1dbaa4dbf2e507",
+    "verify.mjs": "29959a467d50d5a0396f42890b15730b1cb8e5feb42e0437192c45a417fc8db5"
+  },
+  "originalProfiles": {
+    "primary": {
+      "root": "u931e-k",
+      "files": {
+        "manifest": "sources.json",
+        "whole": "engine-proof.json",
+        "header": "engine-proof.json",
+        "trace": "draw-trace.json"
+      },
+      "pins": {
+        "sources.json": "1e91ec612894ce10e4b18d48bea7501054671c69d9bb5454d3a30d7627c30a51",
+        "engine-proof.json": "5bf8029a6efea822b5404d0f65ad06fdf0b6eb54044cabdef6b5eccb418da167",
+        "draw-trace.json": "92292f7af6f2d9b92f625a6f932070422bc3814a40925cc9dbcc4256ccde09cb"
+      },
+      "fullProofSHA256": "8926dc7fa354f1ae4621d5a0dd46652da688be1750f704f3612be101c1e0b2cc",
+      "raw": 18,
+      "calls": 19,
+      "polygons": 37,
+      "emptyRaw": [],
+      "versionNames": [],
+      "diagnosticSupported": true,
+      "diagnosticPens": 16,
+      "diagnosticMasks": 16,
+      "diagnosticSHA256": "ad1a2e42d88200e0de0ed8af3a30fc43d44e028934b1c73c0c96a020ef015a09",
+      "originalPolygonsExactlyOnce": true,
+      "compilerUnsupportedReason": null,
+      "sourceProvenanceText": "Exact whole u931e-k and all declared dependencies from pinned2016 archive; no aliases, historical records or substitutions.",
+      "provenanceTextAuthority": false,
+      "finePens": [
+        1,
+        2,
+        6,
+        7,
+        8,
+        12,
+        14,
+        15
+      ],
+      "provenanceTextMatchesActualRoot": true
+    }
+  },
+  "actualStrictGuardValidation": {
+    "batch": 333,
+    "exit": 0,
+    "adapterSHA256": "4251553713ea183daf0372b188d2dbfd2909c8f2be1a2ce14c372593cfb177d8",
+    "results": [
+      {
+        "profile": "primary",
+        "sourceRoot": "u931e-k",
+        "fullProofKeys": 5,
+        "raw": 18,
+        "calls": 19,
+        "originalPolygons": 37,
+        "emptyRaw": [],
+        "sourceRejected": 7,
+        "identityRejected": 18,
+        "inputUnchanged": true,
+        "sourceEngineReplayKnown": false,
+        "sourceVerified": null,
+        "nativeApproval": false,
+        "runtimeApplied": false,
+        "diagnosticOnly": true,
+        "diagnosticSupported": true,
+        "diagnosticPens": 16,
+        "diagnosticMasks": 16,
+        "diagnosticSHA256": "ad1a2e42d88200e0de0ed8af3a30fc43d44e028934b1c73c0c96a020ef015a09",
+        "originalPolygonsExactlyOnce": true,
+        "blockedCompilerReason": null
+      }
+    ],
+    "mixedProfilesRejected": 0,
+    "sourceEngineReplayKnown": false,
+    "sourceVerified": null,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "originalFilesEdited": false,
+    "network": false,
+    "server": false,
+    "build": false,
+    "privateSaved": false
+  },
+  "normalizedFullProof": {
+    "storedLegacyKeys": 4,
+    "normalizedKeys": 5,
+    "traceAssembly": "Existing complete draw-trace.json is joined in RAM to the unchanged four-key engine-proof.json. Every raw call's original polygons exactly match its whole-proof group; no trajectory/geometry inference.",
+    "newFullBodyFilesSaved": false
+  },
+  "provenancePolicy": "Free-form sources.provenance text is authority=false; actual manifest root, declared record, header/proof/trace byte pins and immutable capture metadata are separately guarded. Copy-error prose is not edited.",
+  "sourceAuthorityLimit": "Pinned archive and engine hash declarations plus local verification are present. Independent prior archive/engine replay execution evidence is unknown, so SourceVerified PASS is not granted.",
+  "nativeHoldStatus": "deferred-original-terminal-hook-outside-reveal-mask",
+  "activePens": 0,
+  "activeMasks": 0,
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalSourcesEdited": false,
+  "originalCompilerEdited": false,
+  "geometryEdited": false,
+  "networkRequested": false,
+  "serverStarted": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
