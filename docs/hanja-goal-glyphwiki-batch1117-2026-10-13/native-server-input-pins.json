@@ -1,0 +1,52 @@
+{
+  "batch": 1117,
+  "date": "2026-10-13",
+  "glyph": "駓",
+  "port": 0,
+  "catalog": 15,
+  "domestic": 15,
+  "wholeNames": [
+    "u99d3-ue0100",
+    "u99d3"
+  ],
+  "wholeEvidence": [
+    {
+      "root": "u99d3-ue0100",
+      "file": "engine-whole-u99d3-ue0100.json",
+      "sourceSHA256": "bbed866c79a9086e8861693de7a799d23418b915141201c286676816462c80a5",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 17,
+      "polygons": 32
+    },
+    {
+      "root": "u99d3",
+      "file": "engine-whole-u99d3.json",
+      "sourceSHA256": "bbed866c79a9086e8861693de7a799d23418b915141201c286676816462c80a5",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 17,
+      "polygons": 32
+    }
+  ],
+  "pins": {
+    "sources.json": "e5b4a7a5cef510e00c0933cc1b9fae2e06dfd171a7a15e2a00267a5b4cca3999",
+    "metadata.json": "8ad4bc42b8037267c7e9dcf80c8f615f020dd020fb0506c151517b43f2a32250",
+    "engine-proof.json": "bbed866c79a9086e8861693de7a799d23418b915141201c286676816462c80a5",
+    "progressive.mjs": "2e49cabb2478adde75158bf8e52bc353e947217e73fbdb87c5f6781abf8d5c29",
+    "engine-whole-u99d3-ue0100.json": "bbed866c79a9086e8861693de7a799d23418b915141201c286676816462c80a5",
+    "engine-whole-u99d3.json": "bbed866c79a9086e8861693de7a799d23418b915141201c286676816462c80a5",
+    "strict-native-adapter.mjs": "91ba76d6d586386c5e706f5f0e244f0a41499865dc5229351b87d8cf865dd97d"
+  },
+  "identity": {
+    "sourceRoot": "u99d3",
+    "sourceProofFile": "engine-whole-u99d3.json",
+    "sourceProofFileSha256": "bbed866c79a9086e8861693de7a799d23418b915141201c286676816462c80a5",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "bbed866c79a9086e8861693de7a799d23418b915141201c286676816462c80a5"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';const d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1117-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');for(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);const s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"e33569c885042967df7c14bc647c3597753b233e82b42d4e33a2dcfa1ca9fca6\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(p.trace,p,id);assert.equal(JSON.stringify(p),before);assert.equal(strokes.length,15);assert.equal(strokes.flat().length,16);assert.equal(sha(JSON.stringify(strokes)),\"bda8a80b454b28dccfb01ff627a4dd5dfb5848ea732af8a1eff238c397a1d737\");console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:cfg.sourceVerificationPassed,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:strokes.length,compiledMasks:strokes.flat().length,blocked:false,nativeApproval:false}));"
+}
