@@ -1,0 +1,159 @@
+{
+  "batch": 986,
+  "glyph": "炰",
+  "catalogStrokes": 9,
+  "domesticClips": 9,
+  "status": "source-only-helper-contract-valid; native review pending",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false,
+    "evidenceFile": "strict-native-server-preflight.json"
+  },
+  "selectedRoot": "u70b0",
+  "selectedFile": "engine-whole-u70b0.json",
+  "selectedIdentity": {
+    "sourceRoot": "u70b0",
+    "sourceProofFile": "engine-whole-u70b0.json",
+    "sourceProofFileSha256": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8"
+  },
+  "originalBytePins": {
+    "sources.json": "df773dcb5fc448d5fe2fa88aa2eec180a0de333de8c17e22d1ac1a4d72d98ab2",
+    "metadata.json": "64011b6ce401bbc1351885610a3d70d6404ba6949cfe4566a4550c1e6d0b3bc8",
+    "engine-proof.json": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8",
+    "engine-whole-u70b0.json": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8",
+    "strict-native-server-preflight.json": "ab7d6e7bf5cc8723e7e41df67d808fb1e1b2d533e1c40a6aba4a97681eed3888",
+    "progressive.mjs": "f9e82549e16dcfd93c79489affc2c675fa93388800e91c6457fd9b6dca23d178",
+    "strict-native-adapter.mjs": "bb7259660aeca12cfa2a2cb4bdfb7d6ad9733a863fc7d3fce401e8dbab0f0379",
+    "serve-native.py": "4a814e1d7934ed0525162710044d066be1200ef2d066fa51513729e92b990dfe",
+    "native-server-input-pins.json": "092d78c890b1184c3b3f6c96d270e202f36242c842ed1aa34d8ddbbecca2b76f"
+  },
+  "wholeFamily": {
+    "names": [
+      "u70b0",
+      "u70b0-ue0100"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "selectedWhole": {
+    "raw": 11,
+    "draw": 14,
+    "Q": 8,
+    "B": 0,
+    "polygons": 27
+  },
+  "callerContract": "mandatory five-field selected proof/header identity + complete frozen body",
+  "guards": {
+    "actualExecutionExit": 0,
+    "totalRejected": null,
+    "sourceRejected": 6,
+    "identityRejected": 6,
+    "defaultIdentity": "mandatory caller identity rejected on omission",
+    "callerPinsPassed": true,
+    "originalInputImmutable": true,
+    "sourceAndEngineHeaderKeys": 8,
+    "expectedPinnedInputsVerified": 7,
+    "actualTestModule": "strict-native-adapter.mjs selected proof contract"
+  },
+  "compiler": {
+    "pens": 9,
+    "masks": 11,
+    "originalPolygonCount": 27,
+    "originalPolygonsExactlyOnce": true,
+    "blockedReason": null,
+    "nonConsecutiveGroups": [],
+    "finePens": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      3
+    ],
+    "maskTransitions": [
+      {
+        "pen": 2,
+        "boundary": 0.9036418189109868
+      },
+      {
+        "pen": 5,
+        "boundary": 0.8830803935098656
+      }
+    ],
+    "originalSpecialTerminals": [
+      {
+        "raw": 2,
+        "call": 1,
+        "kind": "cdDrawCurve",
+        "terminal": 14
+      },
+      {
+        "raw": 4,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 23
+      },
+      {
+        "raw": 6,
+        "call": 2,
+        "kind": "cdDrawLine",
+        "terminal": 5
+      }
+    ],
+    "staticRawCurveIndices": [],
+    "quantitativeMaskCoverageRisks": [
+      {
+        "pen": 3,
+        "raw": [
+          3,
+          4
+        ],
+        "maxOriginalVertexDistanceKage": 15.203976453546616,
+        "width": 14,
+        "requiredNativeCheck": "520px 99.99 to100 tip coverage/pop; not an observed native failure",
+        "automaticWidthAdjustment": false
+      }
+    ],
+    "compiledGeometrySHA256": null,
+    "compiledGeometrySHA256Reason": "Not separately retained in this preparation; immutable original masks were actually asserted by the existing compiler/adapter.",
+    "actualOriginalPureLFoldMeasurement": {
+      "pen": 3,
+      "raw": [
+        3,
+        4
+      ],
+      "originalPolygons": 3,
+      "maxOriginalVertexDistanceKage": 15.203976453546618,
+      "currentWidth": 14,
+      "nativeObservedFailure": false,
+      "automaticWidthAdjustment": false
+    }
+  },
+  "helper": {
+    "exists": true,
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch986-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "existing helper defaults to OS-selected port; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false,
+  "date": "2026-10-14"
+}
