@@ -1,0 +1,363 @@
+{
+  "batch": 1061,
+  "glyph": "爔",
+  "status": "ready-for-root-native-review",
+  "frozenRuntimeSnapshot": {
+    "at": "2026-10-13T20:39:08.512Z",
+    "registered": 5444,
+    "registeredInThisTask": 0
+  },
+  "sourceVerification": {
+    "executor": "hanja_batch760_761_analysis",
+    "sharedRamWorker": 82039,
+    "originalVerifierActualRuns": 1,
+    "sourcePassed": true,
+    "sourceEvidencePassed": true,
+    "records": 6,
+    "capturedRoots": 1,
+    "domesticClips": 20,
+    "catalog": 20,
+    "catalogDomesticCountMatch": true,
+    "engineFiles": 8,
+    "archiveFetchesCumulative": 1,
+    "reverificationByThisAgent": 0,
+    "privateMediaSaved": false,
+    "missingSemantics": "Actual PASS reproduces original source state; catalog/domestic mismatch, shape eligibility and original boundary holds remain unchanged."
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u7214",
+    "sourceProofFile": "engine-whole-u7214.json",
+    "sourceProofFileSha256": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a"
+  },
+  "inputSHA256": {
+    "sources.json": "7ca4130eecc1a9176a28f7b256ec3fcd972b2672c8c0a6a0d7e2c8ae6a2edcaa",
+    "metadata.json": "dd502e425510348470ea89ebe04aac2d77afef2d98ef1be15d6afb07aaf62474",
+    "engine-proof.json": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a",
+    "progressive.mjs": "494bc8366ecc8194be4eaa44cf4b956d02dae5564d9074d6697ed7e91e4fc049",
+    "engine-whole-u7214.json": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a",
+    "strict-native-adapter.mjs": "c592757ded7038a7642653f47f9d43276fab8fcb814748f54eaf14145994e31e"
+  },
+  "fullSelectedOriginalProofSHA256": "bad2bd3ad09411248085d0cf6c02573b70e656b20b0e2d71c960720bd3ad2365",
+  "originalProofFileKeys": [
+    "engineRevision",
+    "engineHashes",
+    "groups",
+    "trace",
+    "defaults"
+  ],
+  "selectedHeaderSuppliedToOriginalCompiler": {
+    "sourceRoot": "u7214",
+    "sourceProofFile": "engine-whole-u7214.json",
+    "sourceProofFileSHA256": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a",
+    "outerIdentityMandatory": true,
+    "sourceHeaderFieldsAddedOnlyInRAM": true,
+    "originalSourceFilesUnchanged": true
+  },
+  "capturedRootGeometryEvidence": [
+    {
+      "root": "u7214",
+      "file": "engine-whole-u7214.json",
+      "sourceSHA256": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a",
+      "geometryNull": false,
+      "missing": null,
+      "raw": 22,
+      "polygons": 50,
+      "geometryReplayComplete": true,
+      "fullCharacterEligibilityApproved": false
+    }
+  ],
+  "originalCompilerExists": true,
+  "originalCompilerProofMetadataUnchanged": true,
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ],
+    [
+      19,
+      20,
+      21
+    ]
+  ],
+  "nonconsecutiveGroups": [],
+  "blockedReason": null,
+  "localActualVerification": {
+    "batch": 1061,
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "expectedBlock": false,
+    "inputUnchanged": true,
+    "pens": 20,
+    "masks": 23,
+    "adapterSHA256": "c592757ded7038a7642653f47f9d43276fab8fcb814748f54eaf14145994e31e",
+    "nativeApproval": false,
+    "originalPolygonCount": 50,
+    "exactPolygonConservation": true,
+    "completeCompiledSHA256": "d717105d7226668a38b87661745eeb9131e89151bd1e6be658457e907efb77f1"
+  },
+  "fineRisk": {
+    "pens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20
+    ],
+    "originalTransitions": [
+      {
+        "pen": 16,
+        "boundary": 0.7638650613122197
+      },
+      {
+        "pen": 16,
+        "boundary": 0.8116715212919543
+      },
+      {
+        "pen": 20,
+        "boundary": 0.8048666263391028
+      }
+    ],
+    "originalTerminalCalls": [
+      {
+        "raw": 15,
+        "pen": 16,
+        "kind": "cdDrawBezier",
+        "args": [
+          142.885,
+          84.285,
+          144.94,
+          142.97,
+          159.325,
+          179.27,
+          183.3,
+          181.69,
+          0,
+          15
+        ]
+      },
+      {
+        "raw": 19,
+        "pen": 20,
+        "kind": "cdDrawLine",
+        "args": [
+          92.88,
+          141.155,
+          89.455,
+          156.28,
+          32,
+          313
+        ]
+      },
+      {
+        "raw": 21,
+        "pen": 20,
+        "kind": "cdDrawCurve",
+        "args": [
+          117.55554702372697,
+          173.79067171768315,
+          113.43,
+          182.9,
+          103.43,
+          182.9,
+          2,
+          14
+        ]
+      }
+    ],
+    "mergedOriginalEndpointContinuity": [
+      {
+        "pen": 20,
+        "from": 19,
+        "to": 20,
+        "delta": [
+          0,
+          0
+        ],
+        "exact": true
+      },
+      {
+        "pen": 20,
+        "from": 20,
+        "to": 21,
+        "delta": [
+          0,
+          0
+        ],
+        "exact": true
+      }
+    ],
+    "sourceGeometryAudit": [
+      {
+        "batch": 1061,
+        "originalEmptySourceRows": []
+      },
+      {
+        "batch": 1061,
+        "terminal15Fine": {
+          "pen": 16,
+          "raw": [
+            15
+          ],
+          "kind": "cdDrawBezier",
+          "args": [
+            142.885,
+            84.285,
+            144.94,
+            142.97,
+            159.325,
+            179.27,
+            183.3,
+            181.69,
+            0,
+            15
+          ],
+          "maskCount": 3,
+          "tailDirections": [
+            "curve",
+            "right",
+            "up"
+          ],
+          "originalPolygonCount": 5,
+          "noAutomaticWidthAdjustment": true,
+          "nativeObserved": false
+        }
+      },
+      {
+        "batch": 1061,
+        "allInternalAuthoredCallGaps": []
+      }
+    ],
+    "riskIsNumericNotNativeFailure": true,
+    "noGeometryWidthDirectionWeightAdjustment": true,
+    "emptyType0MetadataPreserved": true
+  },
+  "server": {
+    "baseURL": "http://127.0.0.1:53457",
+    "pid": 81477,
+    "session": 3916,
+    "routes": {
+      "whole": "/whole",
+      "pairs": "/pairs",
+      "progressive": "/progressive?stroke=1&enlarged=1&samples=1"
+    },
+    "positiveHTTPChecks": [
+      {
+        "batch": 1061,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 674,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1061,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 9484,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1061,
+        "route": "/pairs",
+        "status": 200,
+        "bytes": 66271,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1061,
+        "route": "/progressive?stroke=1&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 14007,
+        "privateBodyLogged": false,
+        "hasNineGrid": true,
+        "has8SecondReplay": true
+      }
+    ],
+    "strictInputPinsEachRequest": true,
+    "privateDictionaryRAMOnly": true,
+    "nineGridSamplesAvailable": true,
+    "eightSecondReplayAvailable": true
+  },
+  "nativeObserved": {
+    "wholeVariants": 0,
+    "domesticDirections": 0,
+    "coarseFrames": 0,
+    "fineFrames": 0,
+    "maskBoundaries": 0,
+    "actualReplay": 0,
+    "approvalGranted": false
+  },
+  "plannedNativeCoarseFrames": 180,
+  "productionRuntimeChanged": false,
+  "sharedRegistryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false
+}

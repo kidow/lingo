@@ -1,0 +1,149 @@
+{
+  "batch": 1061,
+  "glyph": "爔",
+  "date": "2026-10-14",
+  "catalogStrokes": 20,
+  "domesticClips": 20,
+  "status": "source-only exact original candidate; native pending",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "evidenceFile": "strict-native-server-preflight.json",
+    "priorSourceEvidencePassed": null,
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false,
+    "fixedDependenciesComplete": true
+  },
+  "selectedRoot": "u7214",
+  "selectedFile": "engine-whole-u7214.json",
+  "selectedIdentity": {
+    "sourceRoot": "u7214",
+    "sourceProofFile": "engine-whole-u7214.json",
+    "sourceProofFileSha256": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a"
+  },
+  "originalBytePins": {
+    "sources.json": "7ca4130eecc1a9176a28f7b256ec3fcd972b2672c8c0a6a0d7e2c8ae6a2edcaa",
+    "metadata.json": "dd502e425510348470ea89ebe04aac2d77afef2d98ef1be15d6afb07aaf62474",
+    "engine-proof.json": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a",
+    "engine-whole-u7214.json": "23a771386659ae9daf7d2ee8d2bbb6b42e60b48212e34f9f6cceb78078a93e9a",
+    "strict-native-server-preflight.json": "21e9e9a38cef81fa1c87982484985228c913c7b4bb4c9e47065c0525938d36c5",
+    "strict-native-adapter.mjs": "c592757ded7038a7642653f47f9d43276fab8fcb814748f54eaf14145994e31e"
+  },
+  "wholeFamily": {
+    "names": [
+      "u7214"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "callerContract": "selected proof/header identity + full five-key original proof",
+  "guards": {
+    "exit": 0,
+    "sourceRejected": 6,
+    "identityRejected": 5,
+    "totalRejected": 12,
+    "pinsPassed": true,
+    "inputUnchanged": true,
+    "omission": "omitted identity rejected",
+    "actualExecutionExit": 0
+  },
+  "compiler": {
+    "pens": 20,
+    "masks": 23,
+    "originalPolygonCount": 50,
+    "originalPolygonsExactlyOnce": true,
+    "compiledGeometrySHA256": "d717105d7226668a38b87661745eeb9131e89151bd1e6be658457e907efb77f1",
+    "blockedReason": null,
+    "nonConsecutiveGroups": [],
+    "finePens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20
+    ],
+    "maskTransitions": [
+      {
+        "pen": 16,
+        "mask": 2,
+        "start": 0.7638650613122197,
+        "weights": [
+          52.728328,
+          3.3,
+          13
+        ]
+      },
+      {
+        "pen": 16,
+        "mask": 3,
+        "start": 0.8116715212919543,
+        "weights": [
+          52.728328,
+          3.3,
+          13
+        ]
+      },
+      {
+        "pen": 20,
+        "mask": 2,
+        "start": 0.8048666263391028,
+        "weights": [
+          41.247,
+          10
+        ]
+      }
+    ],
+    "originalSpecialTerminals": [
+      [
+        15,
+        0,
+        "cdDrawBezier",
+        15
+      ],
+      [
+        19,
+        0,
+        "cdDrawLine",
+        313
+      ],
+      [
+        21,
+        1,
+        "cdDrawCurve",
+        14
+      ]
+    ],
+    "staticRawCurveIndices": [],
+    "originalProofKeys": 5,
+    "completeProofKeys": 5
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1061-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "Existing local-only helper; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
