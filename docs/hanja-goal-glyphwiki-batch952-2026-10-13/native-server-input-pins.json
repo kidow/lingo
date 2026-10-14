@@ -1,0 +1,33 @@
+{
+  "batch": 952,
+  "glyph": "駸",
+  "port": 0,
+  "catalog": 17,
+  "domestic": 17,
+  "wholeNames": [
+    "u99f8-ue0100",
+    "u99f8-ue0101",
+    "u99f8-ue0102",
+    "u99f8"
+  ],
+  "pins": {
+    "sources.json": "826b07cf332d574fa6282a040e899f3b588b5cacc195005cdaba879a75ce993a",
+    "metadata.json": "d9de4f66f12471cbfe3387c9d314cd0e04684548059ff2c2aeace2ee00df4391",
+    "engine-proof.json": "22d9a244112a96f9e53f4e801b42f40bc2a26a93ff6963affcb3579bd410c0b5",
+    "progressive.mjs": "e31c9c0e8444855f0bb03c1910e2463e213f9aa21328e24d8c8802b0dd858639",
+    "engine-whole-u99f8-ue0100.json": "870b4316b93c1afcd141ccbd34c538b84ba393d0d96081fa1dd9f836e89d5068",
+    "engine-whole-u99f8-ue0101.json": "870b4316b93c1afcd141ccbd34c538b84ba393d0d96081fa1dd9f836e89d5068",
+    "engine-whole-u99f8-ue0102.json": "ae8b660b8b46ac38a955ee830914a80f9047db1f1bec606e14bba502f3542e70",
+    "engine-whole-u99f8.json": "e714bb9322a85827fcdfb4f8a934d38db02132b6ba13522cd49158ed68ea51b5",
+    "strict-native-adapter.mjs": "43d43e5c4ba157f8289810ffd004792e08e1dab06ce91d7701d2e32bec7f8d5c"
+  },
+  "identity": {
+    "sourceRoot": "u99f8",
+    "sourceProofFile": "./engine-whole-u99f8.json",
+    "sourceProofFileSha256": "e714bb9322a85827fcdfb4f8a934d38db02132b6ba13522cd49158ed68ea51b5",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "22d9a244112a96f9e53f4e801b42f40bc2a26a93ff6963affcb3579bd410c0b5"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';\nconst d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch952-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');\nfor(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);\nconst s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"7b00f149de47d0626a1167bc4e8de874862bdf3d1f99fcc4a946a344952ba76d\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(p.trace,p,id);assert.equal(JSON.stringify(p),before);assert.equal(strokes.length,17);assert.equal(strokes.flat().length,18);assert.equal(sha(JSON.stringify(strokes)),\"a6ce1b6ab4d215d3d117b17bb42f75428bf79bbd4051a6c629884590ccd38033\");\nconsole.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:true,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:strokes.length,compiledMasks:strokes.flat().length,blocked:false,nativeApproval:false}));"
+}
