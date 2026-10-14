@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-14",
+  "batch": 968,
+  "glyph": "迨",
+  "status": "held; existing static comparison helper ready; nonconsecutive original enclosure not activated",
+  "originalInputByteSHA256": {
+    "sources.json": "6a085ca215a5b66bcc3aa4b27d79da0a15edf95341021d62c526dfcd5b03f9a0",
+    "serve-native.py": "ce4b121398f15992e16b2f876f7bd694e5bad84fee3f2bdc74b1ddd0d87d60b8",
+    "strict-native-server-preflight.json": "36eb2d0bd7b6325fd5f2f2c1cf9998cb71ed076af46d1fe1ea0795a900dfaafb",
+    "candidate-compile-analysis.json": "785c5e3c2e3f348816f9b83fda8958a9d0c7a2db937e899bee76d363f481f10b",
+    "engine-proof.json": "b761033f1011dae76fe3d30324ddae06448954c52a583305ee2ee085f21f80b1",
+    "engine-whole-u8fe8-ue0102.json": "3f6386eb511ca16586c38568f05a7c6fed3f7a23641d6fbb70a4006d2d3f9950",
+    "native-server-input-pins.json": "15a67e7c2c95a5257e5192d9ac63d11d2371c22d2f97dab095b637767ababefa",
+    "metadata.json": "e4a40c70c49967cb879634a0677fd1c02242d032a40eba89307353f022bf2508",
+    "verify-source.mjs": "9c0a4b8c73f2ed3ebdc027a7ae1f8f853456a4b1f4222a7b7032f63b902380da",
+    "source-analysis.json": "23211799390d0da8bb812c24540467cb04487e9b2d2793b3f9a42feb9420d6b6",
+    "engine-whole-u8fe8.json": "a089c6803eaa2f466964c59a026621698c342354977f1478810de827627446e6",
+    "progressive.mjs": "2b0cd8f9388354ea9198d0c211e076879b7dad8623d45a56515a41b445639159",
+    "engine-whole-u8fe8-ue0100.json": "e9b9cc4ce8af5bb8b0188f9eafebce36467de1df693b2655a4dda39996b357f4",
+    "engine-whole-u8fe8-ue0101.json": "e9b9cc4ce8af5bb8b0188f9eafebce36467de1df693b2655a4dda39996b357f4",
+    "engine-whole-u8fe8-var-001.json": "3f6386eb511ca16586c38568f05a7c6fed3f7a23641d6fbb70a4006d2d3f9950",
+    "strict-native-adapter.mjs": "db5c72df0647e1267aab1da7150d7cb5f807578d5b39c3879cdaed2b8135890d",
+    "source-preservation-audit.json": "d014adcbf933c38d065a1e9c734e5e21bdf30f988ae716000c4f9d1337f72a66",
+    "source-join-analysis.json": "391c71734a2cc0286dc4b5a2edb47f51ac9e8863bff90f62e8c6eb0f5adfabc2",
+    "NOTICE.md": "50e57a2836836548a1f6297dcaab1fce50fc3518a63d0efb0bbd493af343e03a"
+  },
+  "server": {
+    "reused": true,
+    "restarted": false,
+    "port": 56633,
+    "pid": 21959,
+    "recordedPriorPort": 64490,
+    "wholeURL": "http://127.0.0.1:56633/whole",
+    "wholeSelectedURL": "http://127.0.0.1:56633/whole?id=u8fe8-ue0102",
+    "pairsURL": "http://127.0.0.1:56633/pairs?domestic=1&raw=1",
+    "progressiveURL": "http://127.0.0.1:56633/progressive?stroke=9&enlarged=1&samples=1",
+    "progressiveMeaning": "Blocked status only; not an animation candidate",
+    "restartCommand": "rtk proxy python3 -B docs/hanja-goal-glyphwiki-batch968-2026-10-13/serve-native.py"
+  },
+  "contract": {
+    "primitive": "compileProgressive(trace, full5proof, identity)",
+    "mandatoryIdentity": {
+      "sourceRoot": "u8fe8-ue0102",
+      "sourceProofFile": "engine-whole-u8fe8-ue0102.json",
+      "sourceProofFileSha256": "3f6386eb511ca16586c38568f05a7c6fed3f7a23641d6fbb70a4006d2d3f9950",
+      "sourceHeaderFile": "engine-proof.json",
+      "sourceHeaderFileSha256": "b761033f1011dae76fe3d30324ddae06448954c52a583305ee2ee085f21f80b1"
+    },
+    "fullProofKeys": [
+      "engineRevision",
+      "engineHashes",
+      "groups",
+      "trace",
+      "defaults"
+    ],
+    "fullProofSHA256": "20551d60ce7a86c9c5975f50c81afb0f9cc9701e34836da47f1ff9295229a393",
+    "strictAdapterSHA256": "db5c72df0647e1267aab1da7150d7cb5f807578d5b39c3879cdaed2b8135890d",
+    "validIdentityStillThrows": "nonconsecutive-original-enclosure",
+    "helperInputPins": 10,
+    "fullWholeNames": [
+      "u8fe8-ue0100",
+      "u8fe8-ue0101",
+      "u8fe8-ue0102",
+      "u8fe8-var-001",
+      "u8fe8"
+    ]
+  },
+  "selectedOriginalFacts": {
+    "raw": 12,
+    "calls": 12,
+    "polygons": 23,
+    "legitimateConsecutiveExactJoins": [
+      [
+        1,
+        2
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "minimumConsecutivePens": 10,
+    "catalogStrokes": 9,
+    "domesticClips": 9,
+    "blockedGroup": [
+      8,
+      11
+    ],
+    "blockedEndpointEquality": {
+      "end": [
+        90.43440000000001,
+        144.11065
+      ],
+      "start": [
+        90.43440000000001,
+        144.11065
+      ],
+      "interveningRows": [
+        {
+          "raw": 9,
+          "calls": 1,
+          "polygons": 1
+        },
+        {
+          "raw": 10,
+          "calls": 1,
+          "polygons": 2
+        }
+      ]
+    },
+    "explanation": "Exact raw8-to-raw11 endpoint coincidence skips drawn raw9 and raw10 (three polygons). This cannot justify one pen or native order. No point/width/path alteration or enclosure closure by count was performed."
+  },
+  "nativeInventory": {
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "activeFinePens": [],
+    "activeMaskBoundaries": [],
+    "coarseFrames": 0,
+    "replay": 0,
+    "needed": "Compare whole family and domestic versus individual original raw rows, particularly the enclosure's raw8/9/10/11. Numeric nine-pen legacy candidate remains blocked."
+  },
+  "sourceEvidence": {
+    "reused": true,
+    "reference": "strict-native-server-preflight.json/sourceVerification",
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "priorActualRuns": 1,
+    "sourcePassed": true,
+    "records": 10,
+    "wholeVariants": 5,
+    "domesticClips": 9,
+    "domesticMetadataVerified": true,
+    "engineFilesVerified": 8,
+    "newSourceExecution": false,
+    "meaning": "Fixed original-source reproduction only; not native approval or pen grouping approval"
+  },
+  "httpCheck": {
+    "executedOnce": true,
+    "url": "http://127.0.0.1:56633/whole?view=checks",
+    "status": 200,
+    "blocked": true,
+    "reason": "nonconsecutive-original-enclosure",
+    "inputPinsVerified": 10,
+    "sourceVerificationPassed": true,
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "nativeApproval": false
+  },
+  "performedScope": {
+    "originalFilesEdited": false,
+    "geometryEdited": false,
+    "helperEdited": false,
+    "sourceEngineReruns": 0,
+    "negativeGuardSuiteReruns": 0,
+    "childNativeDirections": 0,
+    "childNativeFrames": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "builds": 0,
+    "commits": 0,
+    "privateMediaSaved": false
+  }
+}
