@@ -1,0 +1,212 @@
+{
+  "batch": 931,
+  "glyph": "萑",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "engineFiles": 8,
+  "domesticClips": 12,
+  "wholeEligibility": "native-unreviewed",
+  "profiles": [
+    {
+      "root": "u8411-ue0102",
+      "identity": {
+        "root": "u8411-ue0102",
+        "file": "engine-whole-u8411-ue0102.json",
+        "fileSHA256": "0dd2f3ec1e32d271e32f5832e91407ea9f51a8ae934bc44b178c7c5a05d087b1"
+      },
+      "fullProofSHA256": "4347b8affca113f80d7bb09927f66e67f6b1466ba3d7da25b780b2c8f3dadf61",
+      "sourceGroups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ],
+        [
+          12
+        ]
+      ],
+      "pens": 12,
+      "masks": 12,
+      "polygons": 25,
+      "canonicalPolygonsSHA256": "c235e7e8b1e3fccfc1808e387664bad0699c0eb2e19b72cadd69235b01a91d03",
+      "guardsRejected": 16,
+      "curvePens": [
+        5,
+        7
+      ],
+      "multiMasks": [],
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "allGroupedSourcePathsExactContinuous": true,
+      "wholeEligibility": "unreviewed"
+    }
+  ],
+  "blocked": false,
+  "blockedVariants": null,
+  "legacySelectedCaller": null,
+  "compilerFileSHA256": "e0a5fd78a241c9e5cabb6ac17b3764dd08a7e55056d2120bfaeb6e25d104fa44",
+  "servers": [
+    {
+      "batch": 931,
+      "kind": "serve-whole.py",
+      "session": 81025,
+      "port": 63099,
+      "pid": 43121,
+      "wholeVariants": 9,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 12,
+      "nativeApproved": false
+    },
+    {
+      "batch": 931,
+      "kind": "serve-progressive.py",
+      "session": 28560,
+      "port": 63111,
+      "pid": 43279,
+      "strokes": 12,
+      "masks": 12,
+      "sourceRoot": "u8411-ue0102",
+      "sourceProofFile": "engine-whole-u8411-ue0102.json",
+      "sourceProofFileSHA256": "0dd2f3ec1e32d271e32f5832e91407ea9f51a8ae934bc44b178c7c5a05d087b1"
+    }
+  ],
+  "http": [
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411",
+      "status": 200,
+      "bytes": 4913
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-02",
+      "status": 200,
+      "bytes": 4827
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-07-var-001",
+      "status": 200,
+      "bytes": 5411
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-07-var-002",
+      "status": 200,
+      "bytes": 5059
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-itaiji-001",
+      "status": 200,
+      "bytes": 5234
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-itaiji-002",
+      "status": 200,
+      "bytes": 5581
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-ue0100",
+      "status": 200,
+      "bytes": 4920
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-ue0101",
+      "status": 200,
+      "bytes": 4920
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-ue0102",
+      "status": 200,
+      "bytes": 5068
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63099/?id=u8411-ue0102&pairs=1:1,12:12&view=checks",
+      "status": 200,
+      "bytes": 377,
+      "checks": {
+        "mapping": "exact-compiled-candidate-pens",
+        "root": "u8411-ue0102",
+        "candidatePens": 12,
+        "masks": 12,
+        "pairs": [
+          {
+            "domestic": 1,
+            "candidate": 1,
+            "raw": [
+              0
+            ]
+          },
+          {
+            "domestic": 12,
+            "candidate": 12,
+            "raw": [
+              12
+            ]
+          }
+        ],
+        "sourceProofFile": "engine-whole-u8411-ue0102.json",
+        "sourceProofFileSHA256": "0dd2f3ec1e32d271e32f5832e91407ea9f51a8ae934bc44b178c7c5a05d087b1",
+        "nativeApproval": false
+      }
+    },
+    {
+      "batch": 931,
+      "url": "http://127.0.0.1:63111/?root=u8411-ue0102&stroke=5&enlarged=1&samples=1",
+      "status": 200,
+      "bytes": 8195
+    }
+  ],
+  "allHttpPassed": true,
+  "originalSourceAndCompilerChanged": false,
+  "nativeObserved": 0,
+  "nativeApproval": false,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "emptyOriginalRawMetadata": {
+    "raw": 4,
+    "preserved": true,
+    "countsAsVisiblePen": false,
+    "explicitMutationRejected": true
+  },
+  "geometryRewritten": false,
+  "nonconsecutiveClosingUsed": false
+}

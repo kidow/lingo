@@ -82,3 +82,13 @@ Native sole whole observed compatible. Stored source grouping [8,14] is nonconse
 ## 2026-10-14 鄹 native 완료
 
 K원본鄹(batch930) 17획·18마스크·37원본다각형 적용. 全3종/K17방향/153단계/10확대fine/2terminalfine/16경계95%/16과9실제재생PASS. 귀 耳 전체mask순서만보정,原geometry/metadata/NOTICE 유지. 누적5472/5978·미적용506·보류258. 다음萑12획보정후보검토. 빌드없음.
+
+
+## 931 萑 runtime review · 2026-10-14
+
+- Whole VS2 matches domestic form; 9 source routes / 8 distinct images, VS1 resolves to VS0 alias.
+- All 12 domestic directions and 108 progressive frames passed. Same-position 45 frames reused after exact mask SHA validation; 63 corrected frames newly observed.
+- Fine 5/7, original terminal 6 and corrected 11, and actual replay 5/11 passed.
+- Complete source masks reordered [1,2,4,3,5,6,7,9,10,11,8,12]; 12 pens / 12 masks / 25 polygons. Geometry and raw empty row unchanged.
+- Original metadata and NOTICE bytes preserved; source verifier reused without reexecution. No build.
+- Runtime: 5,473 applied / 505 remaining; next 932 緅, then 933 棸.
