@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-14",
+  "batch": 933,
+  "glyph": "棸",
+  "status": "source-only-existing-helper-recovery-native-pending",
+  "newHelper": "serve-progressive-native.py",
+  "newHelperSHA256": "a4e54a6dae26cf62320613605f922012926fa0347e314a5656b8d21230661721",
+  "originalInputSHA256": {
+    "sources.json": "da55c35dcddb6daac1eec1869b35f74b285b3a9c7e0eca3915cd38f93d00ea62",
+    "serve-whole.py": "8e097b47605e8daf4866048f23fa759ed27fdbefd683b483178e47499b5180c2",
+    "native-server-validation.json": "1cbb71ca4f1346338dcd1bb553f5c25b32f74307ca2638628d8a99601e60abf8",
+    "candidate-compile-analysis.json": "06fb4cdfc16a46737efc5c6d7abb9f1dcbcb5dc8212fcb7ad564bacd5ae46bd6",
+    "engine-proof.json": "801936866eca159104ef90452f4e6d200105f24c4f2d24959fe3723d055fe93c",
+    "serve-progressive.py": "3a1850730987003fe924b73e12446623a84bad3f81efc6f3b118e3d9c37924cf",
+    "native-server-preparation-source-analysis.json": "7c036abbd1f8261bbdb3dea544dd864defc5c9143dddfdb6d637c201b0eec601",
+    "engine-whole-u68f8-01.json": "6ae745c705159b111d85860d4dd0bc1a73903ac32db79ddc6ae8a399baf0ed73",
+    "engine-whole-u68f8.json": "81edbe3109ad910b3f28e1bcfb5e1fb93e041b81a716b1474a84fd5c6956c4a3",
+    "metadata.json": "378e7add92a6464a01692e677e4f2bb9d64dac8f2814ae701f28010455010f9a",
+    "verify-source.mjs": "456290fec81db8a7d382f81519ff577532bdd402349d24db37711e862b6c7841",
+    "engine-whole-u68f8-var-001.json": "ab432c563b96fe94b64435cc3b974ebc0f643fa866c4995e44dc565025631b94",
+    "source-analysis.json": "6bf05da9262d7ea033f0cd1b9a599007aa6852f3e3e31cf0932796e32453da15",
+    "progressive.mjs": "6ac3a4857533d3f0a7764edba6603b5deabe483cc61798d1d0e7c313f98a8724",
+    "server-compile.mjs": "4512861ff859af25bbeb4e8bc621489cc8f63db632aa021e62072ff43604356a",
+    "source-join-analysis.json": "d88088428e41692ff49bf95dad80d1181cfe524459181a153f934cbacfa6b435",
+    "NOTICE.md": "270177e63985fec9a677cd4265a23da87e20641646d24ab943aa4e8f8188d041"
+  },
+  "originalHelperUnchanged": true,
+  "originalSourceCompilerMetadataUnchanged": true,
+  "isolatedHelperChange": "Copy of existing progressive helper, changing only slider denominator120 to100. Range0..100 now maps to0..1; original file retained.",
+  "sourceCopyExactExceptSlider": true,
+  "syntaxPassed": true,
+  "servers": [
+    {
+      "file": "serve-whole.py",
+      "started": true,
+      "server": {
+        "port": 55063,
+        "pid": 29609,
+        "wholeVariants": 3,
+        "pairMapping": "compiled-candidate-pens",
+        "candidatePens": 12,
+        "nativeApproved": false
+      }
+    },
+    {
+      "file": "serve-progressive-native.py",
+      "started": true,
+      "server": {
+        "port": 55069,
+        "pid": 29662,
+        "strokes": 12,
+        "masks": 12,
+        "sourceRoot": "u68f8",
+        "sourceProofFile": "engine-whole-u68f8.json",
+        "sourceProofFileSHA256": "81edbe3109ad910b3f28e1bcfb5e1fb93e041b81a716b1474a84fd5c6956c4a3"
+      }
+    }
+  ],
+  "stableWorkingDirectory": "/Users/kidow/Documents/dev/kidow/lingo",
+  "http": [
+    {
+      "url": "http://127.0.0.1:55063/?id=u68f8",
+      "status": 200,
+      "privatePayloadSaved": false
+    },
+    {
+      "url": "http://127.0.0.1:55063/?id=u68f8&pairs=1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10,11:11,12:12&view=checks",
+      "status": 200,
+      "privatePayloadSaved": false
+    },
+    {
+      "url": "http://127.0.0.1:55069/?root=u68f8&stroke=7&enlarged=1",
+      "status": 200,
+      "privatePayloadSaved": false
+    }
+  ],
+  "sourcePriorEvidence": {
+    "file": "native-server-validation.json",
+    "recordedSourceVerifierExecutedOnce": true,
+    "recordedSourcePassed": true,
+    "recordedEngineFiles": 8,
+    "reused": true,
+    "currentSourceEngineReplayExecuted": false,
+    "currentGuardSuiteRepeated": false
+  },
+  "strictContract": {
+    "compileCall": "compileSourceWhole(root,trace,proof,{root,file,fileSHA256})",
+    "supportedWholeRoots": [
+      "u68f8",
+      "u68f8-01"
+    ],
+    "comparisonOnlyWhole": "u68f8-var-001",
+    "originalWholeBodyKeys": [
+      "defaults",
+      "groups",
+      "trace"
+    ],
+    "headerKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "explicitHeaderBridgeFields": [
+      "sourceRoot",
+      "sourceProofFile",
+      "sourceProofFileSHA256"
+    ],
+    "wrappedProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "sourceRoot",
+      "sourceProofFile",
+      "sourceProofFileSHA256",
+      "trace"
+    ],
+    "exactWholeEligibilityApproval": false
+  },
+  "inventory": [
+    {
+      "root": "u68f8",
+      "raw": 13,
+      "draw": 13,
+      "bodyKeys": [
+        "defaults",
+        "groups",
+        "trace"
+      ],
+      "emptyRaw": [],
+      "terminals": []
+    },
+    {
+      "root": "u68f8-01",
+      "raw": 13,
+      "draw": 13,
+      "bodyKeys": [
+        "defaults",
+        "groups",
+        "trace"
+      ],
+      "emptyRaw": [],
+      "terminals": []
+    }
+  ],
+  "reviewInventory": {
+    "catalogStrokes": 12,
+    "domesticClips": 12,
+    "compiledPensPerSupportedRoot": 12,
+    "compiledMasksPerSupportedRoot": 12,
+    "originalPolygonsPerSupportedRoot": 21,
+    "finePens": [
+      6,
+      7,
+      8,
+      11,
+      12
+    ],
+    "boundaryMasks": [],
+    "coarseFramesPlanned": 108,
+    "priority": "Whole3/static compatibility first; all12 domestic directions, then7 exact raw6/7 fold and6/8/11/12 curve end fine/replay.",
+    "groupedSources": "Only original consecutive raw6/7 are combined with exact endpoint continuity; no nonconsecutive enclosure merge",
+    "positionNamedWholeEligibility": "u68f8-01 remains native-unreviewed; source completeness/counts are not whole approval"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplayObserved": false,
+  "runtimeApplied": false,
+  "newGeometry": false,
+  "coordinatesOrWidthsChanged": false,
+  "sourceOrderChanged": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitCreated": false
+}
+
