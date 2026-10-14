@@ -1,0 +1,258 @@
+{
+  "batch": 1001,
+  "glyph": "熯",
+  "status": "native-review-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u71af",
+      "pens": 15,
+      "masks": 15,
+      "polygons": 32,
+      "canonicalPolygonsSHA256": "a59e53a3d6d39d3645f0505be937fb041603a77d434c0802943468947e3eecb4",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u71af-ue0100",
+      "pens": 15,
+      "masks": 15,
+      "polygons": 32,
+      "canonicalPolygonsSHA256": "a59e53a3d6d39d3645f0505be937fb041603a77d434c0802943468947e3eecb4",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "sources.json": "d421f3ccae4feeaaf5f2f99140a3019368f7603c9e1b7e3e30fb307db94a7249",
+    "engine-proof.json": "bcd286b20471c4b8593ace2d2caea6f1605d561e5b217a4f12e5d96403068764",
+    "engine-whole-u71af.json": "87e68404750ea316b52488a8d0706b8ee6feb8b5fc9e484ecf99d72ea148cad6",
+    "metadata.json": "36ab91c83a3e1a4b7f9f3950e8ae8902f81351f585ed0d39eb41b083bff7128e",
+    "engine-whole-u71af-ue0100.json": "87e68404750ea316b52488a8d0706b8ee6feb8b5fc9e484ecf99d72ea148cad6"
+  },
+  "compilerSHA256": "08e0deb48ce12a78caf570dec83e4c87d63e9d0eca16a17b301872aa3e13f040",
+  "risks": [
+    {
+      "root": "u71af",
+      "terminalSourceRisk": [
+        {
+          "raw": 5,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            0,
+            313
+          ],
+          "pens": [
+            6
+          ]
+        },
+        {
+          "raw": 6,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            0,
+            323
+          ],
+          "pens": [
+            7
+          ]
+        },
+        {
+          "raw": 8,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            213
+          ],
+          "pens": [
+            9
+          ]
+        },
+        {
+          "raw": 10,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            223
+          ],
+          "pens": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "root": "u71af-ue0100",
+      "terminalSourceRisk": [
+        {
+          "raw": 5,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            0,
+            313
+          ],
+          "pens": [
+            6
+          ]
+        },
+        {
+          "raw": 6,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            0,
+            323
+          ],
+          "pens": [
+            7
+          ]
+        },
+        {
+          "raw": 8,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            213
+          ],
+          "pens": [
+            9
+          ]
+        },
+        {
+          "raw": 10,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            223
+          ],
+          "pens": [
+            10
+          ]
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1001,
+      "kind": "serve-whole.py",
+      "session": 63145,
+      "port": 50020,
+      "pid": 63442,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 15,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1001,
+      "kind": "serve-progressive.py",
+      "session": 86431,
+      "port": 50012,
+      "pid": 63422,
+      "strokes": 15,
+      "masks": 15,
+      "sourceRoot": "u71af",
+      "sourceProofFile": "./engine-whole-u71af.json",
+      "sourceProofFileSHA256": "87e68404750ea316b52488a8d0706b8ee6feb8b5fc9e484ecf99d72ea148cad6"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1001,
+      "kind": "whole",
+      "url": "http://127.0.0.1:50020/?id=u71af",
+      "status": 200,
+      "bytes": 6567,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1001,
+      "kind": "whole",
+      "url": "http://127.0.0.1:50020/?id=u71af-ue0100",
+      "status": 200,
+      "bytes": 6574,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1001,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:50020/?id=u71af&pairs=1:1,15:15&view=checks",
+      "status": 200,
+      "bytes": 365,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1001,
+      "kind": "fine",
+      "url": "http://127.0.0.1:50012/?root=u71af&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 9235,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1001,
+      "kind": "fine",
+      "url": "http://127.0.0.1:50012/?root=u71af&stroke=15&enlarged=1",
+      "status": 200,
+      "bytes": 11876,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1001,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:50020/?id=u71af-ue0100&pairs=1:1,15:15&view=checks",
+      "status": 200,
+      "bytes": 379,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1001,
+      "kind": "fine",
+      "url": "http://127.0.0.1:50012/?root=u71af-ue0100&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 9347,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1001,
+      "kind": "fine",
+      "url": "http://127.0.0.1:50012/?root=u71af-ue0100&stroke=15&enlarged=1",
+      "status": 200,
+      "bytes": 11988,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false
+}
