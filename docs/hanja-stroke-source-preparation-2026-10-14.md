@@ -92,3 +92,21 @@ K원본鄹(batch930) 17획·18마스크·37원본다각형 적용. 全3종/K17�
 - Complete source masks reordered [1,2,4,3,5,6,7,9,10,11,8,12]; 12 pens / 12 masks / 25 polygons. Geometry and raw empty row unchanged.
 - Original metadata and NOTICE bytes preserved; source verifier reused without reexecution. No build.
 - Runtime: 5,473 applied / 505 remaining; next 932 緅, then 933 棸.
+
+
+## 932 緅 held · 2026-10-14
+
+- Both complete source profiles viewed; whole shape compatible.
+- Strict consecutive minimum 16 > domestic 14; unrestricted matching lower bound 15 is not a usable 14-pen compiler.
+- No candidate compiler, direction approval, progressive frames, fine or replay. Original 13 files byte pinned; no forced joins.
+- Existing source PASS/8 engine files reused; no build or engine rerun.
+- Runtime remains 5,473 / 505; next 933 棸.
+
+
+## 933 棸 runtime review · 2026-10-14
+
+- Three whole forms viewed: base and -01 compatible; var-001 shared top form differs. Base selected.
+- All 12 domestic directions / 108 progressive frames passed. Unchanged 8 pens / 72 frames reused only with exact complete mask SHA; corrected 3–6 newly observed 36 frames.
+- Fine 5/7/8/11/12, original terminal 6, actual replay 7/5 passed.
+- Complete masks permuted [1,2,4,5,6,3,7,8,9,10,11,12]; 12 pens / 12 masks / 21 polygons. Original metadata and NOTICE untouched.
+- Original source PASS8 reused, no engine rerun/build. Runtime 5,474 applied / 504 remaining; next 934 麤 then935 鵻.
