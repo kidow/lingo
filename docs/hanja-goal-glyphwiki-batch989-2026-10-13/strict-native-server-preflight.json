@@ -1,0 +1,192 @@
+{
+  "batch": 989,
+  "glyph": "灃",
+  "status": "source-only strict blocked native diagnostic",
+  "frozenRuntimeSnapshot": {
+    "utc": "2026-10-13T20:06:37.846Z",
+    "registered": 5441,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 6,
+    "namedWholeVariants": 2,
+    "completeWholeVariants": 2,
+    "domesticClips": 21,
+    "engineFilesVerified": 8,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false,
+    "archiveRedownloaded": false
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u7043",
+    "sourceProofFile": "engine-whole-u7043.json",
+    "sourceProofFileSha256": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd"
+  },
+  "inputFileSHA256": {
+    "sources.json": "7b9bce081f20c9bbfffe92279ee9f9e59bd0fafd54ad598def674aa525aa24ea",
+    "metadata.json": "7a26574514f09e8df816a5390119b5898aae3028fddd8660ddb127d267f99002",
+    "engine-proof.json": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd",
+    "engine-whole-u7043-ue0100.json": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd",
+    "engine-whole-u7043.json": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd",
+    "strict-native-adapter.mjs": "7b96df4902ec127e3b532f247036b4615e75768aa20e9e5ca78bdb50558857ff"
+  },
+  "fullSelectedProofSHA256": "d117f9b92b12084452edba69e582dd7ef5b97b2c9c9a2ecf6cf71ff357ad1629",
+  "wholeEvidence": [
+    {
+      "root": "u7043-ue0100",
+      "file": "engine-whole-u7043-ue0100.json",
+      "sourceSHA256": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd",
+      "complete": true,
+      "missing": null,
+      "raw": 24,
+      "polygons": 44,
+      "geometryUnavailable": false
+    },
+    {
+      "root": "u7043",
+      "file": "engine-whole-u7043.json",
+      "sourceSHA256": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd",
+      "complete": true,
+      "missing": null,
+      "raw": 24,
+      "polygons": 44,
+      "geometryUnavailable": false
+    }
+  ],
+  "originalCompilerProofMetadataUnchanged": true,
+  "originalSourceGroups": [],
+  "nonconsecutiveGroups": [],
+  "blockedReason": "Both fixed roots have24 raw groups. Adjacent13/14 and18/19 source folds give22. Lower bound21 additionally uses noncontiguous17/20 vertical-to-bottom-horizontal coincidence [87.625,145]; that rectangle closing boundary is not approved as one pen. Hold instead of matching count by that merge.",
+  "localActualVerification": {
+    "batch": 989,
+    "expectedBlock": true,
+    "reason": "Both fixed roots have24 raw groups. Adjacent13/14 and18/19 source folds give22. Lower bound21 additionally uses noncontiguous17/20 vertical-to-bottom-horizontal coincidence [87.625,145]; that rectangle closing boundary is not approved as one pen. Hold instead of matching count by that merge.",
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "7b96df4902ec127e3b532f247036b4615e75768aa20e9e5ca78bdb50558857ff",
+    "compiledSHA256": null,
+    "nativeApproval": false,
+    "originalPolygonCount": 44,
+    "allOriginalPolygonsOnce": null,
+    "noCoordsWidthsPathsWeightsBoundsDirectionsModified": true
+  },
+  "risks": {
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "frames": 0,
+    "replay": 0,
+    "reason": "Both fixed roots have24 raw groups. Adjacent13/14 and18/19 source folds give22. Lower bound21 additionally uses noncontiguous17/20 vertical-to-bottom-horizontal coincidence [87.625,145]; that rectangle closing boundary is not approved as one pen. Hold instead of matching count by that merge.",
+    "missingFixedDependencies": [],
+    "missingWholeNeverPromotedToComplete": false
+  },
+  "server": {
+    "binding": "127.0.0.1:0; actual OS-selected port",
+    "url": "http://127.0.0.1:49318",
+    "pid": 58377,
+    "sessionID": 59724,
+    "whole": "/whole",
+    "pairs": "/pairs?domestic=1&raw=1",
+    "progressive": "expected blocked status only",
+    "guardsEachRequest": true,
+    "actualHTTPResults": [
+      {
+        "batch": 989,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 1373,
+        "checks": {
+          "sourceRoot": "u7043",
+          "identity": {
+            "sourceRoot": "u7043",
+            "sourceProofFile": "engine-whole-u7043.json",
+            "sourceProofFileSha256": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd",
+            "sourceHeaderFile": "engine-proof.json",
+            "sourceHeaderFileSha256": "1322f8fb566bbfcc6d1441e4ebe27082bf19066b94382c9ee5d61d23718158bd"
+          },
+          "sourceVerificationPassed": true,
+          "blocked": true,
+          "reason": "Both fixed roots have24 raw groups. Adjacent13/14 and18/19 source folds give22. Lower bound21 additionally uses noncontiguous17/20 vertical-to-bottom-horizontal coincidence [87.625,145]; that rectangle closing boundary is not approved as one pen. Hold instead of matching count by that merge.",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u7043-ue0100",
+            "u7043"
+          ],
+          "sourceInputPinsVerified": 6,
+          "catalog": 21,
+          "domestic": 21
+        },
+        "completeWholeCount": 2,
+        "blockedWholeCount": 0
+      },
+      {
+        "batch": 989,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 10251,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false,
+        "svgTags": 3,
+        "missingWholePlaceholder": false
+      },
+      {
+        "batch": 989,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 2191,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false,
+        "svgTags": 2,
+        "missingWholePlaceholder": false
+      },
+      {
+        "batch": 989,
+        "route": "/progressive?stroke=1&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1428,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": true,
+        "svgTags": 0,
+        "missingWholePlaceholder": false
+      }
+    ],
+    "privateDictionaryMedia": "RAM-only; actual rendering requests verified byte SHA/title/clips"
+  },
+  "nativeObserved": {
+    "whole": 0,
+    "directions": 0,
+    "frames": 0,
+    "fine": 0,
+    "boundaries": 0,
+    "replay": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
