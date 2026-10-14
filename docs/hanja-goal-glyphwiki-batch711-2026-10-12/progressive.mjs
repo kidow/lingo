@@ -12,6 +12,18 @@ export function compileProgressive(trace, proof) {
     const normalized=polygons.map(p=>{const area=p.reduce((n,v,i)=>{const q=p[(i+1)%p.length];return n+v.x*q.y-q.x*v.y},0);assert(area!==0);return area<0?[p[0],...p.slice(1).reverse()]:p})
     return {outline:normalized.map(p=>p.map((v,i)=>`${i?'L':'M'}${v.x/2} ${v.y/2}`).join(' ')+' Z').join(' '),bounds:[Math.min(...xs),Math.min(...ys),Math.max(...xs),Math.max(...ys)],direction,weight:Math.round(weight*1e6)/1e6}
   }
+  // Bound only this selected original pure-line fold by its emitted vertices.
+  const originalLineTipWidth = (calls) => {
+    assert(calls.every(call=>call.kind==='cdDrawLine'));
+    const distance = (point,call) => {
+      const [x1,y1,x2,y2]=call.args;
+      const dx=x2-x1,dy=y2-y1;
+      const t=Math.max(0,Math.min(1,((point.x-x1)*dx+(point.y-y1)*dy)/(dx*dx+dy*dy)));
+      return Math.hypot(point.x-(x1+t*dx),point.y-(y1+t*dy));
+    };
+    const maximum=Math.max(...calls.flatMap(call=>call.polygons.flat()).map(point=>Math.min(...calls.map(call=>distance(point,call)))));
+    return Math.max(14,Math.ceil(maximum*1e6)/1e6+0.001);
+  };
   const compile=(indices)=>{
     const exceptions=[{indices:[4,5],end:[35,160.58],start:[40,142.05],point:[43.5,144]}]
     const calls=indices.flatMap(i=>trace[i]).map(c=>({...c,polygons:c.polygons.slice()}))
@@ -23,5 +35,10 @@ export function compileProgressive(trace, proof) {
     const a=calls[0].args
     return {outline:pieces.map(p=>p.outline).join(' '),bounds:[Math.min(...pieces.map(p=>p.bounds[0])),Math.min(...pieces.map(p=>p.bounds[1])),Math.max(...pieces.map(p=>p.bounds[2])),Math.max(...pieces.map(p=>p.bounds[3]))],direction:'curve',weight:Math.round(pieces.reduce((n,p)=>n+p.weight,0)*1e6)/1e6,revealPath:`M${a[0]/2} ${a[1]/2} ${calls.map(c=>{const v=c.args;return c.kind==='cdDrawLine'?`L${v[2]/2} ${v[3]/2}`:c.kind==='cdDrawBezier'?`C${v[2]/2} ${v[3]/2} ${v[4]/2} ${v[5]/2} ${v[6]/2} ${v[7]/2}`:`Q${v[2]/2} ${v[3]/2} ${v[4]/2} ${v[5]/2}`}).join(' ')}`,revealWidth:14}
   }
-  return sourceGroups.map(indices=>{const p=compile(indices);return Array.isArray(p)?p:[p]})
+  return sourceGroups.map(indices=>{
+    const p=compile(indices);
+    const masks=Array.isArray(p)?p:[p];
+    if(JSON.stringify(indices)==='[9,10]') masks[0].revealWidth=originalLineTipWidth(indices.flatMap(raw=>trace[raw]));
+    return masks;
+  })
 }
