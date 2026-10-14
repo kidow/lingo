@@ -129,3 +129,30 @@ K원본鄹(batch930) 17획·18마스크·37원본다각형 적용. 全3종/K17�
 - Whole-mask permutation [1–15,17,18,16,19];19pens20masks40polygons. 原7tail [64.852726,8], .8901894213265267 preserved.
 - All16 original files/metadata/NOTICE byte unchanged; full5 proof+2arg primitive and original explicit5Upper identity retained. SourcePASS8 reused, no build.
 - Runtime5,475 applied /503remaining; next936縐 then937蓫.
+
+
+## 936 縐 held · 2026-10-14
+
+- Two complete whole sources native viewed; both fit domestic structure. Strict consecutive minimum18 >domestic16.
+- No active compiler/approved directions/progressive/fine/replay. No arbitrary independent-mask merging.
+- Existing14 files pinned; sourceVerified actual sourcePassed/exit0/sharedRAM17/engine8 reused, no source/engine rerun/build.
+- Runtime remains5,475/503; next937蓫.
+
+
+## 937 蓫 held · 2026-10-14
+
+- All3 whole profiles native viewed: base joinedgrass differs; VS0 domestic form fits but minimum17>15; VS1 joinedgrass/one-dotroad differs.
+- Base15 numeric exactness does not approve domestic15 pen boundary. Existing source grass/road gaps unchanged; no connector/cross-profile mixing.
+- No active compiler/approved directions/progressive/fine/replay.
+- Existing16 files byte pinned, sourceVerified actual PASS/exit0/sharedRAM17/engine8 reused. No build/engine rerun.
+- Runtime remains5,475 applied/503remaining; next938柷.
+
+
+## 938 柷 runtime review · 2026-10-14
+
+- Whole base/VS0 compatible; all9 domestic directions and81 progressive frames native passed.
+- Fine3/4/6/8/9 99.99→100, including RAM crop check of fold6 minor edge antialias, no significant completion pop.
+- Original9 terminal15 up tail [57.071068,12.5] boundary .8203276108971045 before/at/after and90% connected reveal passed; actual replay9/6 completed.
+- Original full5proof/2arg compiler + external6identity unchanged;9pens10masks22polygons, emptyraw4metadata retained.
+- Original metadata/NOTICE preserved; source PASS exit0/RAM17/engine8 reused. No build.
+- Runtime5,476 applied/502remaining; next939顣, then940踧.
