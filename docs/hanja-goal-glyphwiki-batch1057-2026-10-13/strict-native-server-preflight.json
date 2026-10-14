@@ -1,0 +1,193 @@
+{
+  "batch": 1057,
+  "glyph": "齕",
+  "status": "blocked-source-only",
+  "frozenRuntimeSnapshot": {
+    "at": "2026-10-13T20:39:08.512Z",
+    "registered": 5444,
+    "registeredInThisTask": 0
+  },
+  "sourceVerification": {
+    "executor": "hanja_batch760_761_analysis",
+    "sharedRamWorker": 82039,
+    "originalVerifierActualRuns": 1,
+    "sourcePassed": true,
+    "sourceEvidencePassed": true,
+    "records": 5,
+    "capturedRoots": 2,
+    "domesticClips": 18,
+    "catalog": 18,
+    "catalogDomesticCountMatch": true,
+    "engineFiles": 8,
+    "archiveFetchesCumulative": 1,
+    "reverificationByThisAgent": 0,
+    "privateMediaSaved": false,
+    "missingSemantics": "Actual PASS reproduces original source state; catalog/domestic mismatch, shape eligibility and original boundary holds remain unchanged."
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u9f55",
+    "sourceProofFile": "engine-whole-u9f55.json",
+    "sourceProofFileSha256": "b410b63e3aeaadb35f3f0f061a9a8652955b4d2ad9763d55f7bcba38182b0b1c",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "b410b63e3aeaadb35f3f0f061a9a8652955b4d2ad9763d55f7bcba38182b0b1c"
+  },
+  "inputSHA256": {
+    "sources.json": "a6bd7a2bf4d0d448f34ad19a5e2ab8d8fc835fd05e25624f1f00e1293663f441",
+    "metadata.json": "1f74816b40e89c05b51a2c16b0c5c711a3a060828eb6f61644034bae214cbcfc",
+    "engine-proof.json": "b410b63e3aeaadb35f3f0f061a9a8652955b4d2ad9763d55f7bcba38182b0b1c",
+    "engine-whole-u9f55-ue0100.json": "b410b63e3aeaadb35f3f0f061a9a8652955b4d2ad9763d55f7bcba38182b0b1c",
+    "engine-whole-u9f55.json": "b410b63e3aeaadb35f3f0f061a9a8652955b4d2ad9763d55f7bcba38182b0b1c",
+    "strict-native-adapter.mjs": "9db588c8852c1e89149b89aeb1446d4fae07cb4d63805b046b6694bb878ca1b1"
+  },
+  "fullSelectedOriginalProofSHA256": "41894bf13259faea4daee61c42e856202759ee96f31cbcdc0eaf4ea4fac05059",
+  "originalProofFileKeys": [
+    "engineRevision",
+    "engineHashes",
+    "groups",
+    "trace",
+    "defaults"
+  ],
+  "selectedHeaderSuppliedToOriginalCompiler": null,
+  "capturedRootGeometryEvidence": [
+    {
+      "root": "u9f55-ue0100",
+      "file": "engine-whole-u9f55-ue0100.json",
+      "sourceSHA256": "b410b63e3aeaadb35f3f0f061a9a8652955b4d2ad9763d55f7bcba38182b0b1c",
+      "geometryNull": false,
+      "missing": null,
+      "raw": 21,
+      "polygons": 47,
+      "geometryReplayComplete": true,
+      "fullCharacterEligibilityApproved": false
+    },
+    {
+      "root": "u9f55",
+      "file": "engine-whole-u9f55.json",
+      "sourceSHA256": "b410b63e3aeaadb35f3f0f061a9a8652955b4d2ad9763d55f7bcba38182b0b1c",
+      "geometryNull": false,
+      "missing": null,
+      "raw": 21,
+      "polygons": 47,
+      "geometryReplayComplete": true,
+      "fullCharacterEligibilityApproved": false
+    }
+  ],
+  "originalCompilerExists": false,
+  "originalCompilerProofMetadataUnchanged": true,
+  "sourceGroups": [],
+  "nonconsecutiveGroups": [],
+  "blockedReason": "Original visible20 raw groups; adjacent grouping20 differs from domestic18. Exact nonadjacent raw4->15 enclosing contact and backwards raw20->19 contact are unapproved; raw16 empty metadata must remain original.",
+  "localActualVerification": {
+    "batch": 1057,
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "expectedBlock": true,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "9db588c8852c1e89149b89aeb1446d4fae07cb4d63805b046b6694bb878ca1b1",
+    "nativeApproval": false,
+    "originalPolygonCount": 47,
+    "exactPolygonConservation": null,
+    "completeCompiledSHA256": null
+  },
+  "fineRisk": {
+    "pens": [],
+    "originalTransitions": [],
+    "originalTerminalCalls": [],
+    "mergedOriginalEndpointContinuity": [],
+    "sourceGeometryAudit": [
+      {
+        "batch": 1057,
+        "originalEmptySourceRows": [
+          {
+            "raw": 16,
+            "originalRaw": [
+              0,
+              0,
+              0,
+              0,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "polygons": 0
+          }
+        ]
+      }
+    ],
+    "riskIsNumericNotNativeFailure": true,
+    "noGeometryWidthDirectionWeightAdjustment": true,
+    "emptyType0MetadataPreserved": true
+  },
+  "server": {
+    "baseURL": "http://127.0.0.1:53441",
+    "pid": 81447,
+    "session": 80776,
+    "routes": {
+      "whole": "/whole",
+      "pairs": "/pairs?domestic=1&raw=1",
+      "progressive": "/progressive?stroke=1&enlarged=1&samples=1"
+    },
+    "positiveHTTPChecks": [
+      {
+        "batch": 1057,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 813,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1057,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 12349,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1057,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 1909,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      },
+      {
+        "batch": 1057,
+        "route": "/progressive?stroke=1&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1353,
+        "privateBodyLogged": false,
+        "hasNineGrid": false,
+        "has8SecondReplay": false
+      }
+    ],
+    "strictInputPinsEachRequest": true,
+    "privateDictionaryRAMOnly": true,
+    "nineGridSamplesAvailable": false,
+    "eightSecondReplayAvailable": false
+  },
+  "nativeObserved": {
+    "wholeVariants": 0,
+    "domesticDirections": 0,
+    "coarseFrames": 0,
+    "fineFrames": 0,
+    "maskBoundaries": 0,
+    "actualReplay": 0,
+    "approvalGranted": false
+  },
+  "plannedNativeCoarseFrames": 0,
+  "productionRuntimeChanged": false,
+  "sharedRegistryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false
+}
