@@ -1,0 +1,232 @@
+{
+  "batch": 918,
+  "glyph": "俴",
+  "date": "2026-10-14",
+  "status": "source-only-terminal15-separate-original-up-polygon-supported-candidate-not-prepared",
+  "scope": "Only raw3/pen4 original terminal15 evidence; preserve committed old compiler and native hold.",
+  "nativeApproval": false,
+  "nativeFramesReviewedByThisAgent": 0,
+  "nativeReplayReviewedByThisAgent": false,
+  "runtimeApplied": false,
+  "compilerChanged": false,
+  "newProfilePrepared": false,
+  "newGeometryAuthored": false,
+  "sourceTrajectoryChanged": false,
+  "sourceOrderChanged": false,
+  "revealWidthChanged": false,
+  "privateMediaSaved": false,
+  "childOnlineRequested": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "originalPins": {
+    "sourcesJSON": "ff5b3a83320c00d0113666b1c6e9de73be835c498b571f12e77edafbf1ef21a8",
+    "selectedWholeJSON": "4b932bbe79e7bc96dde85ebdbb70f048d9e2ac5656fa2979e83bfc5b3c5628a6",
+    "oldCompiler": "c88189d5be023a84bc7d53a9325c8d61bbf340bc04d76db9d114e906641112a7",
+    "committedNativeHold": "e1f978e573bfa28eab03b1a0f017f6c5908a6a0729fc38032f2338784f92a973"
+  },
+  "selectedOriginal": {
+    "root": "u4ff4",
+    "proof": "engine-whole-u4ff4.json",
+    "pen": 4,
+    "raw": 3,
+    "call": 0,
+    "kind": "cdDrawCurve",
+    "args": [
+      105.17,
+      14,
+      110.62,
+      83,
+      178.2,
+      100,
+      0,
+      15
+    ],
+    "wholePens": 10,
+    "wholeMasksCurrently": 10,
+    "wholeOriginalPolygons": 29,
+    "lastPolygonIndex": 4,
+    "lastPolygon": [
+      {
+        "x": 178.2,
+        "y": 95,
+        "off": 0
+      },
+      {
+        "x": 180.2,
+        "y": 69,
+        "off": 0
+      },
+      {
+        "x": 178.2,
+        "y": 69,
+        "off": 0
+      },
+      {
+        "x": 172.2,
+        "y": 95,
+        "off": 0
+      }
+    ],
+    "bodyPolygons": 4,
+    "tailPolygons": 1,
+    "integralBodySplitNeeded": false,
+    "connectorNeeded": false,
+    "newTailTrajectoryNeeded": false
+  },
+  "fixedEngineEvidence": {
+    "repository": "https://github.com/kamichikoichi/kage-engine",
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "engineHashes": {
+      "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+      "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+      "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+      "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+      "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+      "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+      "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+    },
+    "keyFile": {
+      "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+      "sha256": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "lines": {
+        "curveWrapper": [
+          702,
+          703
+        ],
+        "styleNormalization": [
+          15,
+          23
+        ],
+        "terminal15SeparatePolygon": [
+          571,
+          586
+        ]
+      }
+    },
+    "priorActuallyVerifiedEvidenceFile": "docs/hanja-goal-glyphwiki-batch826-2026-10-13/native-terminal15-source-analysis.json",
+    "priorEvidenceFileSHA256": "28f2900138d21ae92221863a69bf7ff4737b605682d5d84570ae57156f6bb145",
+    "priorEightHTTPFilesHashVerified": 8,
+    "sameRevisionAndAllEightHashesMatch918": true,
+    "currentFullEngineSourceRead": false,
+    "currentEightSourceFileHashReexecution": "N/A: no retained full engine source text/RAM cache; original evidence reused, not freshly fetched",
+    "currentExactSourceExcerptAvailable": false,
+    "sourceFormulaEvidenceType": "Prior actually hash-verified fixed engine branch interpretation/formula with file SHA and line locations, not an invented formula.",
+    "normalizationFormula": {
+      "opt1": "floor((ta1 % 10000) / 1000)",
+      "width": "kMinWidthT - opt1 / 2",
+      "jump": "kWidth * 5",
+      "polygon": [
+        "[x2,y2-width+1]",
+        "[x2+2,y2-width-jump]",
+        "[x2,y2-width-jump]",
+        "[x2-width,y2-width+1]"
+      ],
+      "coordinateScale": "SVG coordinates equal original engine coordinates / 2"
+    }
+  },
+  "actualMathValidation": {
+    "passed": true,
+    "ta1": 0,
+    "ta2": 15,
+    "opt1": 0,
+    "width": 6,
+    "jump": 25,
+    "y1": 14,
+    "y2": 100,
+    "exactLastPolygon": [
+      {
+        "x": 178.2,
+        "y": 95,
+        "off": 0
+      },
+      {
+        "x": 180.2,
+        "y": 69,
+        "off": 0
+      },
+      {
+        "x": 178.2,
+        "y": 69,
+        "off": 0
+      },
+      {
+        "x": 172.2,
+        "y": 95,
+        "off": 0
+      }
+    ],
+    "separateOriginalPolygonIndex": 4,
+    "bodyPolygons": 4,
+    "tailPolygons": 1,
+    "bodyBounds": [
+      49.5,
+      6.6,
+      92,
+      52.9
+    ],
+    "tailBounds": [
+      86.1,
+      34.5,
+      90.1,
+      47.5
+    ],
+    "sourceQPath": "M52.585 7 Q55.31 41.5 89.1 50",
+    "sourceWidth": 14,
+    "bodyWeight": 56.412279,
+    "tailWeight": 12.5,
+    "totalWeight": 68.912279,
+    "conditionalBoundary": 0.8186099751540651,
+    "wholeBoundsUnchanged": true,
+    "explicitTailRevealDirection": "up",
+    "directionEvidence": "Same fixed terminal15 branch described in prior engine evidence, orientation y1<y2; not approval of domestic direction.",
+    "originalWholeBoundsUnchanged": true,
+    "sourceTracePolygonsProofIdentityPassed": true,
+    "bodyQPathAndWidthAndWeightRetained": true,
+    "tailWeightPolicyEvidence": "826 prior correction policy preserves existing body weight and adds kWidth*5/2 to the same pen.",
+    "bboxHeight26DividedBy2Weight13Rejected": true
+  },
+  "conditionalOriginalOnlyPlan": {
+    "prepared": false,
+    "scope": "A later separately authorized candidate may move only the last original polygon from current Q mask into an independent same-pen up cardinal mask.",
+    "body": "Keep original first4 polygons with exact existing Q path,width14,bounds andweight56.412279.",
+    "tail": "Use existing original last quadrilateral verbatim, full original bounds in up cardinal reveal; no invented tip path or connector.",
+    "tailWeight": 12.5,
+    "totalSamePenWeight": 68.912279,
+    "tailActivationBoundary": 0.8186099751540651,
+    "newPen": false,
+    "polygonCoverage": "4body+1tail=5 original polygons exactly once; all other original polygons/pens untouched.",
+    "implementationAndActualOneUseValidation": "N/A: no candidate compiler/profile was created under this task."
+  },
+  "diagnosticCoverageOnly": {
+    "method": "Dense Q parameter bracket plus ternary refinement; approximate numeric distances, not source-engine formula proof or native approval.",
+    "maxOriginalBodyVertexDistanceKAGE": 8.896779748077284,
+    "originalTailTopVertexDistancesKAGE": [
+      30.410716629492395,
+      29.806351266867157
+    ],
+    "currentMaskCoverageRadiusKAGE": 14,
+    "observation": "Upper original tail vertices exceed the current Q-centered reveal mask width; this agrees with the committed native clipped-hook observation without proving a replacement replay succeeds."
+  },
+  "committedNativeVerdictPreserved": {
+    "file": "native-review-root-hold.json",
+    "nativeApproval": false,
+    "wholeCompatibleRoots": [
+      "u4ff4"
+    ],
+    "dictionaryDirectionsReviewedByRoot": 10,
+    "failedPen": 4,
+    "coarseFramesReviewedByRoot": 9,
+    "coarseFramesApproved": 0,
+    "fine99_99To100Passed": false,
+    "replayApproved": false,
+    "verdictChanged": false
+  },
+  "futureNativeRequirements": [
+    "Review separately authorized source-only candidate before any runtime change.",
+    "Check pen4 coarse9frames,520px99.99→100,independent-mask boundary before/at/after and operational early-progress activation.",
+    "Observe actual same-pen up-hook direction and real replay; prior code/math verification is not native approval.",
+    "Other pens and the separate raw7 terminal15 remain outside this raw3-only approval and require their own review."
+  ]
+}
+

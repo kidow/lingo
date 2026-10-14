@@ -1,0 +1,196 @@
+{
+  "batch": 918,
+  "glyph": "俴",
+  "date": "2026-10-14",
+  "status": "isolated-original-terminal15-candidate-source-guards-pass-native-pending",
+  "candidateFile": "progressive-terminal15-candidate.mjs",
+  "adapterFile": "terminal15-candidate-adapter.mjs",
+  "existingCompilerFile": "progressive.mjs",
+  "existingCompilerAndCommittedHoldUnchanged": true,
+  "sourceEvidenceFile": "terminal15-source-analysis.json",
+  "priorVerifiedEngineEvidence": "../hanja-goal-glyphwiki-batch826-2026-10-13/native-terminal15-source-analysis.json",
+  "engineEvidencePolicy": "Reuse identical previously actual hash-verified8engine revision/formula; no current engine-byte reread or network attempt by this candidate preparation.",
+  "priorEvidenceFormula": {
+    "opt1": "floor((ta1%10000)/1000)",
+    "width": "kMinWidthT-opt1/2",
+    "jump": "kWidth*5",
+    "upPolygon": [
+      "[x2,y2-width+1]",
+      "[x2+2,y2-width-jump]",
+      "[x2,y2-width-jump]",
+      "[x2-width,y2-width+1]"
+    ]
+  },
+  "originalBytePins": {
+    "progressive.mjs": "c88189d5be023a84bc7d53a9325c8d61bbf340bc04d76db9d114e906641112a7",
+    "progressive-terminal15-candidate.mjs": "91283399dfacde6938f46d6726a3b6c858b7f8a3e6a222252bdff5ceb565635f",
+    "engine-whole-u4ff4.json": "4b932bbe79e7bc96dde85ebdbb70f048d9e2ac5656fa2979e83bfc5b3c5628a6",
+    "engine-proof.json": "4b932bbe79e7bc96dde85ebdbb70f048d9e2ac5656fa2979e83bfc5b3c5628a6",
+    "metadata.json": "0716d1d9812daed1c332cc71f1f6ff4243aeb4e351820a9f4b58c1e4e458aa2f",
+    "sources.json": "ff5b3a83320c00d0113666b1c6e9de73be835c498b571f12e77edafbf1ef21a8",
+    "native-review-root-hold.json": "e1f978e573bfa28eab03b1a0f017f6c5908a6a0729fc38032f2338784f92a973",
+    "terminal15-source-analysis.json": "da5a236e5bb077cd77a08be48c1b00e011760af5f75056cfba05593a13f9c921"
+  },
+  "actualValidation": {
+    "passed": true,
+    "pens": 10,
+    "masks": 12,
+    "polygons": 29,
+    "originalPolygonsExactlyOnce": true,
+    "sourceInputImmutable": true,
+    "sourceGroupsUnchanged": true,
+    "otherEightPensUnchanged": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      9,
+      10
+    ],
+    "bodyPathsWidthsWeightsBoundsUnchanged": true,
+    "tailPolygonVerbatim": true,
+    "sourceAndIdentityAndTailSpecificRejects": 15,
+    "oldPinsUnchanged": true,
+    "candidateSHA": "91283399dfacde6938f46d6726a3b6c858b7f8a3e6a222252bdff5ceb565635f",
+    "adapterSHA": "734a779c9778e3b89753bdd4591943947d6db5d6cca418312674aca6e2ff5056",
+    "compiledSHA": "d0ce4925ea943017f73be22ae925bb468f8295e5d2a8b28a1b1152d70ac31f23",
+    "native": false,
+    "serverStarted": false,
+    "terminalPairs": [
+      {
+        "pen": 4,
+        "raw": 3,
+        "kind": "cdDrawCurve",
+        "terminal": 15,
+        "bodyPolygons": 4,
+        "tailPolygons": 1,
+        "bodyWeight": 56.412279,
+        "tailWeight": 12.5,
+        "tailDirection": "up",
+        "tailBounds": [
+          86.1,
+          34.5,
+          90.1,
+          47.5
+        ],
+        "maskBoundary": 0.8186099751540651
+      },
+      {
+        "pen": 8,
+        "raw": 7,
+        "kind": "cdDrawCurve",
+        "terminal": 15,
+        "bodyPolygons": 4,
+        "tailPolygons": 1,
+        "bodyWeight": 54.530682,
+        "tailWeight": 12.5,
+        "tailDirection": "up",
+        "tailBounds": [
+          86.1,
+          74.5,
+          90.1,
+          87.5
+        ],
+        "maskBoundary": 0.8135182333367875
+      }
+    ]
+  },
+  "sourceSpecialCallsActuallyChecked": [
+    {
+      "pen": 4,
+      "raw": 3,
+      "kind": "cdDrawCurve",
+      "terminal": 15,
+      "bodyPolygons": 4,
+      "tailPolygons": 1,
+      "bodyWeight": 56.412279,
+      "tailWeight": 12.5,
+      "tailDirection": "up",
+      "tailBounds": [
+        86.1,
+        34.5,
+        90.1,
+        47.5
+      ],
+      "maskBoundary": 0.8186099751540651
+    },
+    {
+      "pen": 8,
+      "raw": 7,
+      "kind": "cdDrawCurve",
+      "terminal": 15,
+      "bodyPolygons": 4,
+      "tailPolygons": 1,
+      "bodyWeight": 54.530682,
+      "tailWeight": 12.5,
+      "tailDirection": "up",
+      "tailBounds": [
+        86.1,
+        74.5,
+        90.1,
+        87.5
+      ],
+      "maskBoundary": 0.8135182333367875
+    }
+  ],
+  "totalPenCountBefore": 10,
+  "totalPenCountAfter": 10,
+  "totalOriginalPolygonsBefore": 29,
+  "totalOriginalPolygonsAfter": 29,
+  "totalMasksBefore": 10,
+  "totalMasksAfter": 12,
+  "tailMaskWeightPolicy": "Existing body weight stays unchanged; original engine jump25/2 adds12.5 in the same pen, not bbox height26/2.",
+  "bboxWeight13Used": false,
+  "newGeometryAuthored": false,
+  "newTipTrajectoryAuthored": false,
+  "sourcePointsMovedOrReversed": false,
+  "sourceWidthWidened": false,
+  "sourceOrderChanged": false,
+  "sourceCountsForced": false,
+  "nativeApproval": false,
+  "nativeDirectionsObservedByThisAgent": 0,
+  "nativeFramesObservedByThisAgent": 0,
+  "nativeReplayObservedByThisAgent": false,
+  "previousNativeFailureStillPreserved": true,
+  "runtimeApplied": false,
+  "serversStarted": 0,
+  "httpExecuted": false,
+  "onlineRequested": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false,
+  "requiredFutureReview": [
+    {
+      "pen": 4,
+      "raw": 3,
+      "coarseFrames": 9,
+      "size": 520,
+      "fine": [
+        0.9999,
+        1
+      ],
+      "maskBoundary": 0.8186099751540651,
+      "boundaryEpsilon": 1e-10,
+      "earlyActivationContinuityRequired": true,
+      "replayRequired": true
+    },
+    {
+      "pen": 8,
+      "raw": 7,
+      "coarseFrames": 9,
+      "size": 520,
+      "fine": [
+        0.9999,
+        1
+      ],
+      "maskBoundary": 0.8135182333367875,
+      "boundaryEpsilon": 1e-10,
+      "earlyActivationContinuityRequired": true,
+      "replayRequired": true
+    }
+  ],
+  "notApprovalReason": "Verbatim polygon preservation, formula identity and successful guards do not prove native domestic direction, boundary continuity, progressive quality or replay."
+}
+
