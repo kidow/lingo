@@ -1,0 +1,297 @@
+{
+  "date": "2026-10-14",
+  "batch": 930,
+  "glyph": "鄹",
+  "status": "source-only-existing-helper-recovery-with-isolated-slider-normalization-native-pending",
+  "newHelper": "serve-progressive-native.py",
+  "newHelperSHA256": "fee781ae7cb5f46a8fea6a3a8f52d626cf77be3539e679f87f01f645f29b057b",
+  "originalInputSHA256": {
+    "sources.json": "188ccc0da9663893b6158086b1b879341975fb28b4722ca9d680b6c4b3af35d8",
+    "serve-whole.py": "b715b99884dcda9f425d85afe8ff519f5232f83d90797be503a8f5e5fcf51370",
+    "native-server-validation.json": "f7ee80d3cfefdf9f775b003bf28c4a0a6030f02f983186e537da96bd8ddbc005",
+    "candidate-compile-analysis.json": "2d1a5d3ab86dc679824dbf3f79a4060110003536230339836537c55a72df8e9a",
+    "engine-proof.json": "e937e387bb9b3923c81fceba944d9a78f5bf73467a93dc4bbc06875a845dff0c",
+    "serve-progressive.py": "64081e987b8ff1ab8403c7c075df69441dd06cc21645cacb1a92923afd70d187",
+    "native-server-preparation-source-analysis.json": "67572490b31f11ea77bf3ab6041de72518105d9cf45b4633aa4ff43eacb93f8d",
+    "metadata.json": "c25c398b77c2b414c9cfa3d4893b58f27df0225a4045b2f9828c02ee03a977e7",
+    "engine-whole-u9139-k.json": "40f8ca488dee7583af1c27144d72a7850d006ad0427354d389592878ff26ceb7",
+    "verify-source.mjs": "eafaf185791b543aa3982a81419f24875ff6e9e9abae0e71bd780d7b13ddefa2",
+    "source-analysis.json": "81dab61d4803fba631c85c318a714c8db72cbcd6fc36f8637720cdd3e965c495",
+    "progressive.mjs": "8cf46f3714ddb579cfeec39b312bebae130cfc223662e8338e383a1779096eb2",
+    "engine-whole-u9139-ue0100.json": "46a6035e485d29243794a4c94b423054e12bf17ecda3ec0fb8561e679e712241",
+    "server-compile.mjs": "d856aabfb9171cab78bd9ce60885f7e6b4f514c263d86fc47da740bf642306b9",
+    "source-join-analysis.json": "3e49f7f79ef36eee64fedb41ce5fd4d580a792b5c3b57d486e7b9584b62ec369",
+    "NOTICE.md": "4b499f1c0c171001a82f989e7325ca1cc7b70ad20361a7199892640af76f4c63",
+    "engine-whole-u9139.json": "46a6035e485d29243794a4c94b423054e12bf17ecda3ec0fb8561e679e712241"
+  },
+  "originalHelperUnchanged": true,
+  "originalCompilerAndSourceAndMetadataUnchanged": true,
+  "change": "Separate copy changes only progress slider denominator170 to100, matching range0..100. Original helper is retained.",
+  "geometryChanged": false,
+  "sourceOrderChanged": false,
+  "widthChanged": false,
+  "sourceCountsChanged": false,
+  "syntaxPassed": true,
+  "sourceCopyExactExceptSlider": true,
+  "servers": [
+    {
+      "file": "serve-whole.py",
+      "started": true,
+      "server": {
+        "port": 54320,
+        "pid": 21823,
+        "wholeVariants": 3,
+        "pairMapping": "compiled-candidate-pens",
+        "candidatePens": 17,
+        "nativeApproved": false
+      }
+    },
+    {
+      "file": "serve-progressive-native.py",
+      "started": true,
+      "server": {
+        "port": 54322,
+        "pid": 21825,
+        "strokes": 17,
+        "masks": 18,
+        "sourceRoot": "u9139",
+        "sourceProofFile": "engine-whole-u9139.json",
+        "sourceProofFileSHA256": "46a6035e485d29243794a4c94b423054e12bf17ecda3ec0fb8561e679e712241"
+      }
+    }
+  ],
+  "stableWorkingDirectory": "/Users/kidow/Documents/dev/kidow/lingo",
+  "http": [
+    {
+      "url": "http://127.0.0.1:54320/?id=u9139",
+      "status": 200,
+      "privatePayloadSaved": false
+    },
+    {
+      "url": "http://127.0.0.1:54320/?id=u9139&pairs=1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10,11:11,12:12,13:13,14:14,15:15,16:16,17:17&view=checks",
+      "status": 200,
+      "privatePayloadSaved": false
+    },
+    {
+      "url": "http://127.0.0.1:54322/?root=u9139&stroke=16&enlarged=1",
+      "status": 200,
+      "privatePayloadSaved": false
+    }
+  ],
+  "sourceEvidence": {
+    "originalFile": "native-server-validation.json",
+    "sourceVerifierExecutedOnceRecorded": true,
+    "sourcePassedRecorded": true,
+    "engineFilesRecorded": 8,
+    "reused": true,
+    "currentSourceVerifierExecuted": false,
+    "currentEngineReplayExecuted": false,
+    "old16GuardsPerProfileReused": true,
+    "currentGuardSuiteRepeated": false
+  },
+  "contract": {
+    "actualCompileCall": "compileSourceWhole(root,trace,proof,{root,file,fileSHA256})",
+    "explicitHeaderBridge": [
+      "sourceRoot",
+      "sourceProofFile",
+      "sourceProofFileSHA256"
+    ],
+    "headerKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "profiles": [
+      {
+        "root": "u9139",
+        "raw": 19,
+        "draw": 20,
+        "bodyKeys": [
+          "defaults",
+          "groups",
+          "trace"
+        ],
+        "wrappedProofKeys": [
+          "defaults",
+          "engineHashes",
+          "engineRevision",
+          "groups",
+          "sourceProofFile",
+          "sourceProofFileSHA256",
+          "sourceRoot",
+          "trace"
+        ],
+        "terminals": [
+          {
+            "raw": 17,
+            "call": 1,
+            "kind": "cdDrawCurve",
+            "terminal": 514,
+            "pen": 16,
+            "polygons": 2
+          }
+        ],
+        "fine": [
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "boundaries": [
+          {
+            "pen": 16,
+            "weights": [
+              43.230768,
+              5
+            ],
+            "directions": [
+              "curve",
+              "left"
+            ],
+            "boundaries": [
+              0.8963317357915594
+            ]
+          }
+        ]
+      },
+      {
+        "root": "u9139-k",
+        "raw": 19,
+        "draw": 20,
+        "bodyKeys": [
+          "defaults",
+          "groups",
+          "trace"
+        ],
+        "wrappedProofKeys": [
+          "defaults",
+          "engineHashes",
+          "engineRevision",
+          "groups",
+          "sourceProofFile",
+          "sourceProofFileSHA256",
+          "sourceRoot",
+          "trace"
+        ],
+        "terminals": [
+          {
+            "raw": 17,
+            "call": 1,
+            "kind": "cdDrawCurve",
+            "terminal": 514,
+            "pen": 16,
+            "polygons": 2
+          }
+        ],
+        "fine": [
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "boundaries": [
+          {
+            "pen": 16,
+            "weights": [
+              42.136525,
+              5
+            ],
+            "directions": [
+              "curve",
+              "left"
+            ],
+            "boundaries": [
+              0.8939251461578892
+            ]
+          }
+        ]
+      },
+      {
+        "root": "u9139-ue0100",
+        "raw": 19,
+        "draw": 20,
+        "bodyKeys": [
+          "defaults",
+          "groups",
+          "trace"
+        ],
+        "wrappedProofKeys": [
+          "defaults",
+          "engineHashes",
+          "engineRevision",
+          "groups",
+          "sourceProofFile",
+          "sourceProofFileSHA256",
+          "sourceRoot",
+          "trace"
+        ],
+        "terminals": [
+          {
+            "raw": 17,
+            "call": 1,
+            "kind": "cdDrawCurve",
+            "terminal": 514,
+            "pen": 16,
+            "polygons": 2
+          }
+        ],
+        "fine": [
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "boundaries": [
+          {
+            "pen": 16,
+            "weights": [
+              43.230768,
+              5
+            ],
+            "directions": [
+              "curve",
+              "left"
+            ],
+            "boundaries": [
+              0.8963317357915594
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "priorityRisks": [
+    "Base andVS0 pen16 original terminal514 Q body to separate left-tail weight5, boundary0.8963317357915594; K boundary0.8939251461578892. Early mask activation/fine/replay still require actual native review.",
+    "Consecutive source folds pen7 raw6/7 and pen15 raw15/16 preserve exact authored centerlines; domestic order and whole compatibility remain pending.",
+    "Curves6/7/8/9/11/12/13/14/15/16 need fine checks. No curve-width adjustment, path reversal or nonconsecutive enclosure fitting."
+  ],
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplayObserved": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitCreated": false
+}
+
