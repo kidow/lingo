@@ -1,0 +1,168 @@
+{
+  "batch": 953,
+  "glyph": "縶",
+  "status": "source-only strict blocked native diagnostic",
+  "frozenRuntimeSnapshot": {
+    "utc": "2026-10-13T19:49:55.925Z",
+    "registered": 5439,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 8,
+    "wholeVariants": 4,
+    "domesticClips": 17,
+    "domesticMetadataVerified": true,
+    "engineFilesVerified": 8,
+    "archiveRedownloaded": false,
+    "newPublicURLs": 0,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u7e36",
+    "sourceProofFile": "./engine-whole-u7e36.json",
+    "sourceProofFileSha256": "53e98d6ac0d2e78a94b17603dae501fc90f678e2afb414f6722307b1cd8d6264",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "479d193a73b2f621aee303e9a39a1fbabc11d1854510271dbb83b32e0bcc1cda"
+  },
+  "inputSHA256": {
+    "sources.json": "e309d9178a58bc932e4bc0e13e36736edce297258b3813ead256b4a27eef3c04",
+    "metadata.json": "ac8b38f307740438d43cf3a974ffdbfc62e0e1c3023111047e390a0a546f1eb3",
+    "engine-proof.json": "479d193a73b2f621aee303e9a39a1fbabc11d1854510271dbb83b32e0bcc1cda",
+    "progressive.mjs": "bfce8d31b29bb3f45e49e161c8e17893d7cdbd233183e8992cce5767bfc19630",
+    "engine-whole-u7e36-ue0100.json": "53e98d6ac0d2e78a94b17603dae501fc90f678e2afb414f6722307b1cd8d6264",
+    "engine-whole-u7e36-ue0101.json": "53e98d6ac0d2e78a94b17603dae501fc90f678e2afb414f6722307b1cd8d6264",
+    "engine-whole-u7e36-ue0102.json": "9054a1c33a78777cc28d66dad58ec9aba5715c53301cba5c324e32a4c67ff5f2",
+    "engine-whole-u7e36.json": "53e98d6ac0d2e78a94b17603dae501fc90f678e2afb414f6722307b1cd8d6264",
+    "strict-native-adapter.mjs": "891f633fd5c61814fc42995abf0c4eb02a9ca5f0c7e60c25cb15517b2b173b8b"
+  },
+  "fullSelectedProofSHA256": "1c0a09f6b95e57738d6e53793ab04fa57e0f337140b2470062a7a662bba191c0",
+  "originalCompilerProofsMetadataUnchanged": true,
+  "sourceGroups": [],
+  "nonconsecutiveGroups": [],
+  "blockedReason": "minimum-original-pens-19-exceeds-catalog-17",
+  "localActualVerification": {
+    "batch": 953,
+    "expectedBlock": true,
+    "reason": "minimum-original-pens-19-exceeds-catalog-17",
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "891f633fd5c61814fc42995abf0c4eb02a9ca5f0c7e60c25cb15517b2b173b8b",
+    "compiledSHA256": null,
+    "nativeApproval": false,
+    "strictAdapter": "strict-native-adapter.mjs",
+    "allOriginalPolygonsOnce": null,
+    "originalPolygonCount": 46,
+    "completeMaskSHAEqualsOriginal": null,
+    "noCoordinateWidthWeightDirectionOrBoundsChanges": true
+  },
+  "risks": {
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "frames": 0,
+    "replay": 0,
+    "reason": "minimum-original-pens-19-exceeds-catalog-17"
+  },
+  "server": {
+    "binding": "127.0.0.1:0 with actual OS-selected port",
+    "url": "http://127.0.0.1:63703",
+    "pid": 46781,
+    "sessionID": 74476,
+    "whole": "/whole",
+    "pairs": "/pairs?domestic=1&raw=1",
+    "progressive": "expected blocked status only",
+    "guardsEachRequest": true,
+    "actualHTTPResults": [
+      {
+        "batch": 953,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 681,
+        "checks": {
+          "sourceRoot": "u7e36",
+          "identity": {
+            "sourceRoot": "u7e36",
+            "sourceProofFile": "./engine-whole-u7e36.json",
+            "sourceProofFileSha256": "53e98d6ac0d2e78a94b17603dae501fc90f678e2afb414f6722307b1cd8d6264",
+            "sourceHeaderFile": "./engine-proof.json",
+            "sourceHeaderFileSha256": "479d193a73b2f621aee303e9a39a1fbabc11d1854510271dbb83b32e0bcc1cda"
+          },
+          "sourceVerificationPassed": true,
+          "blocked": true,
+          "reason": "minimum-original-pens-19-exceeds-catalog-17",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u7e36-ue0100",
+            "u7e36-ue0101",
+            "u7e36-ue0102",
+            "u7e36"
+          ],
+          "sourceInputPinsVerified": 9,
+          "catalog": 17,
+          "domestic": 17
+        }
+      },
+      {
+        "batch": 953,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 23529,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 953,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 1727,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 953,
+        "route": "/progressive?stroke=9&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1183,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": true
+      }
+    ],
+    "privateDictionaryMedia": "RAM-only renderer actual byte SHA/title/clip checks on HTTP whole/pair requests"
+  },
+  "nativeObserved": {
+    "whole": 0,
+    "directions": 0,
+    "frames": 0,
+    "fine": 0,
+    "boundaries": 0,
+    "replay": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
