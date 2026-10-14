@@ -1,0 +1,175 @@
+{
+  "batch": 937,
+  "glyph": "蓫",
+  "date": "2026-10-14",
+  "status": "source-only-static-whole-and-raw-comparison-ready-existing-shape-and-road-hold-preserved",
+  "sourceVerification": {
+    "priorOriginalSourcePassed": true,
+    "priorOriginalRecords": 16,
+    "sourceVerifierRerun": false,
+    "originalSourceFilePins": {
+      "candidate-compile-analysis.json": "e3d43810aad05f08d312cb428f0be16a3e28cd931b49d03ba35f114e8b4f131f",
+      "engine-proof.json": "0330b739545613235deec2eda50adb747b33ea952d6f24c48fe297be2295cf8b",
+      "engine-whole-u84eb-ue0100.json": "dfb4f007cd74373bae70ca8fee7eedb9ccb3f197c4bd6d42bb1c133c0f30bd54",
+      "engine-whole-u84eb-ue0101.json": "869d552d8828178e5107a2a42f479f4fcf2bf4f838fab01ee09585809f0a4fd9",
+      "engine-whole-u84eb.json": "0330b739545613235deec2eda50adb747b33ea952d6f24c48fe297be2295cf8b",
+      "metadata.json": "bc32783173c8aa8a503902070c2457cb84cbc726bf11d54d1dc7ca2495f3a3a2",
+      "source-analysis.json": "9a39971a875fd423c65c721b5cd2969c8a9e3eeabdc173fe9c377a0c7f25fe7a",
+      "source-join-analysis.json": "32447a756a6541b545519e5222f8ab5cc4869758a03e684a9b014336e571cbfa",
+      "source-preservation-audit.json": "4f635988fd57b722842fbcd2297fc2e4dd008414077458362bbae12e36e9f936",
+      "sources.json": "79933ba482d03271cb83130b272fbf5f4bed53fad4194c5676a3cc9aa3a36f36",
+      "verify-source.mjs": "a1d745db5771bfaf913fa06ce32446da1a4dfa22bcf2b627414a0101507f183a",
+      "native-server-preflight-hold.json": "07b6379b030435db0ccdddb4504bf4ee3514c443ad97fa3ae8eafe460ce0498b"
+    },
+    "originalPinsStillExact": true
+  },
+  "wholeFacts": [
+    {
+      "root": "u84eb",
+      "file": "engine-whole-u84eb.json",
+      "fileSHA256": "0330b739545613235deec2eda50adb747b33ea952d6f24c48fe297be2295cf8b",
+      "raw": 16,
+      "draw": 17,
+      "Q": 10,
+      "B": 1,
+      "polygons": 32,
+      "exactJoins": [
+        [
+          5,
+          6
+        ]
+      ],
+      "minimumOriginalPaths": 15,
+      "rawPolygonsMatch": true
+    },
+    {
+      "root": "u84eb-ue0100",
+      "file": "engine-whole-u84eb-ue0100.json",
+      "fileSHA256": "dfb4f007cd74373bae70ca8fee7eedb9ccb3f197c4bd6d42bb1c133c0f30bd54",
+      "raw": 18,
+      "draw": 19,
+      "Q": 10,
+      "B": 1,
+      "polygons": 35,
+      "exactJoins": [
+        [
+          6,
+          7
+        ]
+      ],
+      "minimumOriginalPaths": 17,
+      "rawPolygonsMatch": true
+    },
+    {
+      "root": "u84eb-ue0101",
+      "file": "engine-whole-u84eb-ue0101.json",
+      "fileSHA256": "869d552d8828178e5107a2a42f479f4fcf2bf4f838fab01ee09585809f0a4fd9",
+      "raw": 15,
+      "draw": 16,
+      "Q": 9,
+      "B": 1,
+      "polygons": 30,
+      "exactJoins": [
+        [
+          4,
+          5
+        ]
+      ],
+      "minimumOriginalPaths": 14,
+      "rawPolygonsMatch": true
+    }
+  ],
+  "originalCompilerAbsent": true,
+  "compiledPens": 0,
+  "compiledMasks": 0,
+  "progressiveFrames": 0,
+  "replays": 0,
+  "server": {
+    "url": "http://127.0.0.1:50729",
+    "pid": 75015,
+    "session": 60137,
+    "helperFile": "serve-whole.py",
+    "helperSHA256": "c0c4c0855c6d1567c95e386df2f020d4176e26a25f81c6180f6d1eb43c25727c",
+    "whole": "/whole?id=WHOLE_ROOT",
+    "rawPairs": "/pairs?id=WHOLE_ROOT&domestic=1&raw=1",
+    "checks": "/checks?id=WHOLE_ROOT",
+    "progressiveStatus409": true,
+    "inputPinsCheckedEachRequest": 12,
+    "selfFilePinCheckedEachRequest": true
+  },
+  "actualValidation": {
+    "syntaxPassed": true,
+    "originalThreeWholeGuardsPassed": true,
+    "http": [
+      {
+        "path": "/checks?id=u84eb",
+        "status": 200,
+        "bytes": 273,
+        "root": "u84eb",
+        "raw": 16,
+        "minimum": 15,
+        "pins": 12
+      },
+      {
+        "path": "/checks?id=u84eb-ue0100",
+        "status": 200,
+        "bytes": 280,
+        "root": "u84eb-ue0100",
+        "raw": 18,
+        "minimum": 17,
+        "pins": 12
+      },
+      {
+        "path": "/checks?id=u84eb-ue0101",
+        "status": 200,
+        "bytes": 280,
+        "root": "u84eb-ue0101",
+        "raw": 15,
+        "minimum": 14,
+        "pins": 12
+      },
+      {
+        "path": "/checks?id=u9ea4",
+        "status": 404,
+        "bytes": 30
+      },
+      {
+        "path": "/progressive",
+        "status": 409,
+        "bytes": 105
+      },
+      {
+        "path": "/whole?id=u84eb",
+        "status": 200,
+        "bytes": 7747,
+        "hasTwoOriginalSvgViews": true,
+        "privateSourceContentLogged": false
+      }
+    ],
+    "unsupportedWholeRejected404": true,
+    "animationRefused409": true,
+    "wholeResponseContainedTwoSvgViews": true,
+    "compilerMutationTests": "not applicable: no compiler; static whole guards only"
+  },
+  "dictionarySameKnownUrlAndByteShaReadInRamOnly": true,
+  "privateDictionaryTitleAnd15ClipMappingCheckedByExistingPinnedRamRenderer": true,
+  "privateSvgLogged": false,
+  "privateMediaSaved": false,
+  "newSourceSubstitution": false,
+  "originalSourceFilesEdited": false,
+  "originalPreflightHoldEdited": false,
+  "originalGeometryEdited": false,
+  "inventedConnectors": false,
+  "forceCountJoins": false,
+  "nativeWholeObservations": 0,
+  "nativeDirectionObservations": 0,
+  "nativeFrameObservations": 0,
+  "nativeReplayObservations": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sharedRegistryEdited": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "unresolved": "Existing grass form mismatch and nonexact road endpoints remain held. Static source reproduction and HTTP success do not approve domestic shape, pen boundaries or source counts.",
+  "rootVerificationRequired": true
+}
