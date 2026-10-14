@@ -1,0 +1,211 @@
+{
+  "batch": 1024,
+  "glyph": "鍰",
+  "status": "native-review-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u9370",
+      "pens": 17,
+      "masks": 17,
+      "polygons": 38,
+      "canonicalPolygonsSHA256": "60769d31fa570c1d6071ddab94379fb4110422286165f9674f5dd215ffb1b077",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u9370-g",
+      "pens": 17,
+      "masks": 17,
+      "polygons": 38,
+      "canonicalPolygonsSHA256": "660d6f480189e73883ffe900d1cbe4196956660d246f6fcf339c96bd44bf2b93",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u9370-ue0100",
+      "pens": 17,
+      "masks": 17,
+      "polygons": 38,
+      "canonicalPolygonsSHA256": "60769d31fa570c1d6071ddab94379fb4110422286165f9674f5dd215ffb1b077",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 15,
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "sources.json": "05cb068992adf92646bbed31ea3faeace727cca1d247d3870f370521dc28fca8",
+    "engine-proof.json": "8fb9716f46537f58d450b4dbd9d58d476e39adf9fe174a1814a1b7cd703721dc",
+    "engine-whole-u9370.json": "337c859dfc85bc183614eb338455d6effb12c721c47f631783cc31518c473800",
+    "metadata.json": "9b553f9f6940eb05c8a6d30281fa38ad68b8881b7051acd6e6937c7a788a0663",
+    "engine-whole-u9370-ue0100.json": "337c859dfc85bc183614eb338455d6effb12c721c47f631783cc31518c473800",
+    "engine-whole-u9370-g.json": "3ec20671065874bc084e101d64970dc09c77b044f13b0ac6cc27adddeea5ba4d"
+  },
+  "compilerSHA256": "6817b8ccadb5f4a3d96cf31d75ee246ad098d6abc4e4aaa044524d167349e58b",
+  "risks": [
+    {
+      "root": "u9370",
+      "terminalSourceRisk": []
+    },
+    {
+      "root": "u9370-g",
+      "terminalSourceRisk": []
+    },
+    {
+      "root": "u9370-ue0100",
+      "terminalSourceRisk": []
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1024,
+      "kind": "serve-whole.py",
+      "session": 11277,
+      "port": 51812,
+      "pid": 73531,
+      "wholeVariants": 3,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 17,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "serve-progressive.py",
+      "session": 51156,
+      "port": 51807,
+      "pid": 73522,
+      "strokes": 17,
+      "masks": 17,
+      "sourceRoot": "u9370",
+      "sourceProofFile": "./engine-whole-u9370.json",
+      "sourceProofFileSHA256": "337c859dfc85bc183614eb338455d6effb12c721c47f631783cc31518c473800"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1024,
+      "kind": "whole",
+      "url": "http://127.0.0.1:51812/?id=u9370",
+      "status": 200,
+      "bytes": 8298,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "whole",
+      "url": "http://127.0.0.1:51812/?id=u9370-g",
+      "status": 200,
+      "bytes": 8297,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "whole",
+      "url": "http://127.0.0.1:51812/?id=u9370-ue0100",
+      "status": 200,
+      "bytes": 8305,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:51812/?id=u9370&pairs=1:1,17:17&view=checks",
+      "status": 200,
+      "bytes": 365,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51807/?root=u9370&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 11635,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51807/?root=u9370&stroke=17&enlarged=1",
+      "status": 200,
+      "bytes": 14418,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:51812/?id=u9370-g&pairs=1:1,17:17&view=checks",
+      "status": 200,
+      "bytes": 369,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51807/?root=u9370-g&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 11668,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51807/?root=u9370-g&stroke=17&enlarged=1",
+      "status": 200,
+      "bytes": 14451,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:51812/?id=u9370-ue0100&pairs=1:1,17:17&view=checks",
+      "status": 200,
+      "bytes": 379,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51807/?root=u9370-ue0100&stroke=1&enlarged=1",
+      "status": 200,
+      "bytes": 11761,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1024,
+      "kind": "fine",
+      "url": "http://127.0.0.1:51807/?root=u9370-ue0100&stroke=17&enlarged=1",
+      "status": 200,
+      "bytes": 14544,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}

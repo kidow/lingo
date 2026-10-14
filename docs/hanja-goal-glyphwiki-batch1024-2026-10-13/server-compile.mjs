@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {compileSourceWhole,renderProgressive,candidateWholeProofs} from './progressive.mjs'
+const hash=x=>createHash('sha256').update(x).digest('hex')
+assert.equal(hash(readFileSync(new URL('./progressive.mjs',import.meta.url))),"6817b8ccadb5f4a3d96cf31d75ee246ad098d6abc4e4aaa044524d167349e58b")
+const manifest={"u9370":{"identity":{"sourceRoot":"u9370","sourceProofFile":"./engine-whole-u9370.json","sourceProofFileSha256":"337c859dfc85bc183614eb338455d6effb12c721c47f631783cc31518c473800","sourceHeaderFile":"./engine-proof.json","sourceHeaderFileSha256":"8fb9716f46537f58d450b4dbd9d58d476e39adf9fe174a1814a1b7cd703721dc","sourceMetadataFile":"./sources.json","sourceMetadataFileSha256":"05cb068992adf92646bbed31ea3faeace727cca1d247d3870f370521dc28fca8"},"fullProofSHA256":"0704eedcae7f4411904982f62f9d2421f6d29d534a1aa3de2938205a82ba40a7","pens":17,"sourceGroups":[[0],[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15,16],[17]]},"u9370-g":{"identity":{"sourceRoot":"u9370-g","sourceProofFile":"./engine-whole-u9370-g.json","sourceProofFileSha256":"3ec20671065874bc084e101d64970dc09c77b044f13b0ac6cc27adddeea5ba4d","sourceHeaderFile":"./engine-proof.json","sourceHeaderFileSha256":"8fb9716f46537f58d450b4dbd9d58d476e39adf9fe174a1814a1b7cd703721dc","sourceMetadataFile":"./sources.json","sourceMetadataFileSha256":"05cb068992adf92646bbed31ea3faeace727cca1d247d3870f370521dc28fca8"},"fullProofSHA256":"dd76a829d3a8a6d74d229718d32063d345900ded4377d50ef2bbef9d1c4cee0b","pens":17,"sourceGroups":[[0],[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15,16],[17]]},"u9370-ue0100":{"identity":{"sourceRoot":"u9370-ue0100","sourceProofFile":"./engine-whole-u9370-ue0100.json","sourceProofFileSha256":"337c859dfc85bc183614eb338455d6effb12c721c47f631783cc31518c473800","sourceHeaderFile":"./engine-proof.json","sourceHeaderFileSha256":"8fb9716f46537f58d450b4dbd9d58d476e39adf9fe174a1814a1b7cd703721dc","sourceMetadataFile":"./sources.json","sourceMetadataFileSha256":"05cb068992adf92646bbed31ea3faeace727cca1d247d3870f370521dc28fca8"},"fullProofSHA256":"0704eedcae7f4411904982f62f9d2421f6d29d534a1aa3de2938205a82ba40a7","pens":17,"sourceGroups":[[0],[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15,16],[17]]}}
+const root=process.argv[2];assert(Object.hasOwn(manifest,root),'Only an explicitly pinned complete whole case is supported')
+const pin=manifest[root],selected=candidateWholeProofs.find(c=>c.identity.sourceRoot===root)
+assert(selected);assert.deepEqual(selected.identity,pin.identity);assert.deepEqual(selected.sourceGroups,pin.sourceGroups)
+const id=selected.identity,bytes=readFileSync(new URL(id.sourceProofFile,import.meta.url)),hb=readFileSync(new URL(id.sourceHeaderFile,import.meta.url))
+assert.equal(hash(bytes),id.sourceProofFileSha256);assert.equal(hash(hb),id.sourceHeaderFileSha256)
+const h=JSON.parse(hb),raw=JSON.parse(bytes),proof={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...raw}
+assert.equal(hash(JSON.stringify(proof)),pin.fullProofSHA256)
+const before=JSON.stringify(proof),strokes=compileSourceWhole(root,proof.trace,proof,id)
+assert.equal(JSON.stringify(proof),before);assert.equal(strokes.length,pin.pens)
+console.log(JSON.stringify({strokes,render:renderProgressive.toString(),sourceRoot:root,sourceProofFile:id.sourceProofFile,sourceProofFileSHA256:id.sourceProofFileSha256,sourceGroups:selected.sourceGroups,nativeApproval:false}))
