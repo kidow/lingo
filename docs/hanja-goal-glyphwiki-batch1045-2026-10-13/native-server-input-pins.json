@@ -1,0 +1,75 @@
+{
+  "batch": 1045,
+  "glyph": "餱",
+  "port": 0,
+  "catalog": 18,
+  "domestic": 18,
+  "wholeNames": [
+    "u9931-ue0100",
+    "u9931-ue0101",
+    "u9931-ue0102",
+    "u9931"
+  ],
+  "wholeEvidence": [
+    {
+      "root": "u9931-ue0100",
+      "file": "engine-whole-u9931-ue0100.json",
+      "sourceSHA256": "2749a134a4e93349f8f4a2d840c192c2ffe778831db314b8ad97b7bc9f7cb161",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 20,
+      "polygons": 39
+    },
+    {
+      "root": "u9931-ue0101",
+      "file": "engine-whole-u9931-ue0101.json",
+      "sourceSHA256": "2749a134a4e93349f8f4a2d840c192c2ffe778831db314b8ad97b7bc9f7cb161",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 20,
+      "polygons": 39
+    },
+    {
+      "root": "u9931-ue0102",
+      "file": "engine-whole-u9931-ue0102.json",
+      "sourceSHA256": "9c688b80d5cd2419520f245d3dc9b7e2f83251902c4bc6f61b7fa243d2e747ff",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 20,
+      "polygons": 40
+    },
+    {
+      "root": "u9931",
+      "file": "engine-whole-u9931.json",
+      "sourceSHA256": "3c38234c34ca473532140ca666b27329a07983ca5e411f4d4c8d026212dcdf11",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 20,
+      "polygons": 39
+    }
+  ],
+  "pins": {
+    "sources.json": "5c99d969bd6f82188bfec804b0f975394e3600cb88a6227074d6c06649228aee",
+    "metadata.json": "89f7e1eb8706cd82a737ea04a71d51c955292dbe7392637545edf73399a4600f",
+    "engine-proof.json": "3c38234c34ca473532140ca666b27329a07983ca5e411f4d4c8d026212dcdf11",
+    "progressive.mjs": "06cc5d6c09230b3142c1026181f152c8fc546641ff620342a4aae9e9f4fc96b5",
+    "engine-whole-u9931-ue0100.json": "2749a134a4e93349f8f4a2d840c192c2ffe778831db314b8ad97b7bc9f7cb161",
+    "engine-whole-u9931-ue0101.json": "2749a134a4e93349f8f4a2d840c192c2ffe778831db314b8ad97b7bc9f7cb161",
+    "engine-whole-u9931-ue0102.json": "9c688b80d5cd2419520f245d3dc9b7e2f83251902c4bc6f61b7fa243d2e747ff",
+    "engine-whole-u9931.json": "3c38234c34ca473532140ca666b27329a07983ca5e411f4d4c8d026212dcdf11",
+    "strict-native-adapter.mjs": "1e3e6ee8162877c857572ea7d32cebdf774ccbb3cfe2f9861eb98e8b8aa73fda"
+  },
+  "identity": {
+    "sourceRoot": "u9931",
+    "sourceProofFile": "engine-whole-u9931.json",
+    "sourceProofFileSha256": "3c38234c34ca473532140ca666b27329a07983ca5e411f4d4c8d026212dcdf11",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "3c38234c34ca473532140ca666b27329a07983ca5e411f4d4c8d026212dcdf11"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';const d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1045-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');for(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);const s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"8cc630f5c5aa8a47cba0f03000528b6b8d6d6e908e095addccd0b071efe989d7\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(p.trace,p,id);assert.equal(JSON.stringify(p),before);assert.equal(strokes.length,18);assert.equal(strokes.flat().length,18);assert.equal(sha(JSON.stringify(strokes)),\"2974c235793a1f0a7901e29143620bd76ce142661e2038098ba97491a0da04da\");console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:true,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:strokes.length,compiledMasks:strokes.flat().length,blocked:false,nativeApproval:false}));"
+}
