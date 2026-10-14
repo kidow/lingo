@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "batch": 746,
+  "glyph": "顒",
+  "kind": "bounded-original-pure-line-fold-terminal23",
+  "correctionScope": "One already-applied glyph pen; original source geometry and order remain unchanged; width proposal only.",
+  "target": {
+    "pen": 2,
+    "raw": [
+      1,
+      2
+    ],
+    "mask": 1,
+    "originalTerminal": 23,
+    "originalCalls": [
+      {
+        "raw": 1,
+        "kind": "cdDrawLine",
+        "args": [
+          29,
+          26,
+          86,
+          26,
+          2,
+          2
+        ]
+      },
+      {
+        "raw": 2,
+        "kind": "cdDrawLine",
+        "args": [
+          86,
+          26,
+          86,
+          80,
+          22,
+          23
+        ]
+      }
+    ]
+  },
+  "oldWidth": 14,
+  "minimumWidth": 15.231546211727817,
+  "proposedWidth": 15.232547,
+  "formula": "max(14, ceil(max original KAGE vertex-to-whole-polyline distance * 1e6) / 1e6 + 0.001)",
+  "units": "KAGE coordinates are twice SVG viewBox coordinates; mask diameter cancels this normalization.",
+  "algorithmReference": "docs/hanja-goal-glyphwiki-batch811-2026-10-13/progressive.mjs:originalLineTipWidth",
+  "curveGeneralizationUsed": false,
+  "vertexTupleFields": [
+    "raw",
+    "call",
+    "polygon",
+    "vertex",
+    "xKage",
+    "yKage",
+    "off",
+    "distanceKage"
+  ],
+  "allVertices": [
+    [
+      1,
+      0,
+      0,
+      0,
+      29,
+      24,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      86,
+      24,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      2,
+      86,
+      28,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      3,
+      29,
+      28,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      92,
+      26,
+      0,
+      6
+    ],
+    [
+      2,
+      0,
+      0,
+      1,
+      92,
+      88,
+      0,
+      10
+    ],
+    [
+      2,
+      0,
+      0,
+      2,
+      80,
+      94,
+      0,
+      15.231546211727817
+    ],
+    [
+      2,
+      0,
+      0,
+      3,
+      80,
+      26,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      1,
+      0,
+      80,
+      24,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      1,
+      1,
+      86,
+      19,
+      0,
+      7
+    ],
+    [
+      2,
+      0,
+      1,
+      2,
+      97,
+      28,
+      0,
+      11
+    ],
+    [
+      2,
+      0,
+      1,
+      3,
+      92,
+      32,
+      0,
+      6
+    ],
+    [
+      2,
+      0,
+      1,
+      4,
+      80,
+      26,
+      0,
+      0
+    ]
+  ],
+  "vertexCount": 13,
+  "polygonCount": 3,
+  "sourceProofFile": "docs/hanja-goal-glyphwiki-batch746-2026-10-12/engine-whole-u9852.json",
+  "sourcePins": {
+    "sourceGroupsSha256": "f682ed737632976fa3074c618239a2d89fb4b978f5ba65ffb2965cf2da9d9165",
+    "proofTraceSha256": "8a390d750215ab6149cb751518f90eba202d1ed858e610f6ea5b465e5033c8fd",
+    "proofGroupsSha256": "b6b905a5a7a0b3475468d7971a8e23ad72b5a82e87ecc495364a19aae5a5f288",
+    "sourceWholeFileSha256": "a01f9f53f2fea1c558f7ab81ff4deddaddd85d9e95923dd8410a318170192261",
+    "sourceProofSha256": "b3bb4a1b9fa581a241d72be01b76db4f044139a77742ed45353269763d5a0d9c"
+  },
+  "geometryFile": "public/hanja-strokes/glyphwiki/9852.json",
+  "geometrySha256": {
+    "geometryFile": "3a13fbd41424f6ae4c05abac19a4ba43154ca9ca297e03bb6e497e1826c81bc9",
+    "runtimePaths": "0b2852547f5e9049566392889a6ee644ec115a24f0b92623e84cb357981c4fd8",
+    "outlines": "b92a25fbc1e332b0eadb70ae00fe6703470f5edf82fdb40c674275da5ba424bf",
+    "revealPaths": "37e3059d1308004296884c0ffb3c8f67c44ce666b250a616b954fa2b646d19f8"
+  },
+  "geometryBeforeAfterEqual": true,
+  "compilerBeforeSha256": "4b85e84081b3ee0d9a62ba38c059a51f0d87a2360ecf1007882fc93bbc44ba77",
+  "compilerSha256": "00b53bfb864c19f7f06b4f234cbf5ccdc0afb3c1c7fc935fde400b29126381af",
+  "actualVerification": {
+    "actualCompilerExecuted": true,
+    "compiledComparedWithExistingRuntime": true,
+    "onlyChangedField": [
+      2,
+      1,
+      "revealWidth"
+    ],
+    "inputProofUnchanged": true,
+    "sourceGroupsUnchanged": true,
+    "sourceWholeFileSha256Verified": true,
+    "geometryFileSha256Unchanged": true,
+    "pathsUnchanged": true,
+    "filledOutlinesUnchanged": true,
+    "revealPathsUnchanged": true,
+    "weightsAndBoundsUnchanged": true,
+    "allOriginalVerticesWithinWholePolylineMaskBound": true,
+    "nativeApprovalAsserted": false
+  },
+  "glyphWasAlreadyApplied": true,
+  "correctionRuntimeApplied": false,
+  "nativeApproved": false,
+  "nativeFramesReviewed": 0,
+  "nativeReplayReviewed": false,
+  "nativeReplays": 0,
+  "privateGraphicsSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
