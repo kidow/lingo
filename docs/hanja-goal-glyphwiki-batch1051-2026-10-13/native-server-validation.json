@@ -1,0 +1,263 @@
+{
+  "batch": 1051,
+  "glyph": "咺",
+  "status": "native-review-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceEvidencePassed": true,
+  "expectedMissingWholeProofs": [],
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u54ba",
+      "pens": 9,
+      "masks": 9,
+      "polygons": 15,
+      "canonicalPolygonsSHA256": "98be4be3c13f3489f2f114cbbc264a6bf6afdc2e43f98c14946995c65da5276c",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 11,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u54ba-ue0100",
+      "pens": 9,
+      "masks": 9,
+      "polygons": 15,
+      "canonicalPolygonsSHA256": "98be4be3c13f3489f2f114cbbc264a6bf6afdc2e43f98c14946995c65da5276c",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 11,
+      "emptyRawMetadata": [],
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "sources.json": "0966ec876f0decfa60e4af58106ba0d684e66c1ef4d4a4e9c5516fcd1ce560c9",
+    "engine-whole-u54ba-ue0100.json": "c090501d558674ff2c7bc38ae62fec1cddc7d3e4d1ab006d97de5726ff8edbe2",
+    "engine-proof.json": "c090501d558674ff2c7bc38ae62fec1cddc7d3e4d1ab006d97de5726ff8edbe2",
+    "metadata.json": "d8ae3c2abbf79a8b010a4e6cc5edafcbffb898fae594e06c48a900fcfb4b512d",
+    "engine-whole-u54ba.json": "c090501d558674ff2c7bc38ae62fec1cddc7d3e4d1ab006d97de5726ff8edbe2"
+  },
+  "compilerSHA256": "49f6c24e5d00e1dd917f85d2f2b5c303f2833f74cf30a8a1aa55691e6b671408",
+  "risks": [
+    {
+      "root": "u54ba",
+      "originalZeroAreaPolygons": [],
+      "terminalSourceRisk": [
+        {
+          "raw": 0,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            13
+          ],
+          "pens": [
+            1
+          ]
+        },
+        {
+          "raw": 2,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            23
+          ],
+          "pens": [
+            2
+          ]
+        },
+        {
+          "raw": 5,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            13
+          ],
+          "pens": [
+            5
+          ]
+        },
+        {
+          "raw": 7,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            23
+          ],
+          "pens": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "root": "u54ba-ue0100",
+      "originalZeroAreaPolygons": [],
+      "terminalSourceRisk": [
+        {
+          "raw": 0,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            13
+          ],
+          "pens": [
+            1
+          ]
+        },
+        {
+          "raw": 2,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            23
+          ],
+          "pens": [
+            2
+          ]
+        },
+        {
+          "raw": 5,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            13
+          ],
+          "pens": [
+            5
+          ]
+        },
+        {
+          "raw": 7,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            23
+          ],
+          "pens": [
+            6
+          ]
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1051,
+      "kind": "serve-whole.py",
+      "session": 67326,
+      "port": 52986,
+      "pid": 79289,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 9,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1051,
+      "kind": "serve-progressive.py",
+      "session": 4320,
+      "port": 52993,
+      "pid": 79302,
+      "strokes": 9,
+      "masks": 9,
+      "sourceRoot": "u54ba",
+      "sourceProofFile": "engine-whole-u54ba.json",
+      "sourceProofFileSHA256": "c090501d558674ff2c7bc38ae62fec1cddc7d3e4d1ab006d97de5726ff8edbe2"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1051,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52986/?id=u54ba",
+      "status": 200,
+      "bytes": 3080,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1051,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52986/?id=u54ba-ue0100",
+      "status": 200,
+      "bytes": 3087,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1051,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:52986/?id=u54ba&pairs=1:1,9:9&view=checks",
+      "status": 200,
+      "bytes": 359,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1051,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52993/?root=u54ba&stroke=2&enlarged=1",
+      "status": 200,
+      "bytes": 6479,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1051,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52993/?root=u54ba&stroke=6&enlarged=1",
+      "status": 200,
+      "bytes": 7077,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1051,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:52986/?id=u54ba-ue0100&pairs=1:1,9:9&view=checks",
+      "status": 200,
+      "bytes": 373,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1051,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52993/?root=u54ba-ue0100&stroke=2&enlarged=1",
+      "status": 200,
+      "bytes": 6549,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1051,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52993/?root=u54ba-ue0100&stroke=6&enlarged=1",
+      "status": 200,
+      "bytes": 7147,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
