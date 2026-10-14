@@ -1,0 +1,207 @@
+{
+  "batch": 923,
+  "glyph": "禘",
+  "status": "original-helper-source-only-ready-native-unapproved",
+  "newFiles": [
+    "source-only-helper-readiness-2026-10-14.json"
+  ],
+  "originalBytePins": {
+    "sources.json": "54a994e7a6dae0a3e320767b2472a7b5ac566c5a88ce0846867ce42e24dadd21",
+    "serve-whole.py": "86053631c4f00266845e8ae735112bc60b9eec1df47709a8a9fc4163e55c2f38",
+    "native-server-validation.json": "f47e4bb8df443e2b4dbc7571633bd5f7b9126d491072e319fe6e1fd9ee682542",
+    "engine-proof.json": "acad38dab744fb84f2c18b02cbd6368d68e805d2488b8005d14f24bc593598e3",
+    "serve-progressive.py": "8b8af4bc416ec51903e37e8ff0a9d9df780c5450cfc999727f2dd999e6583091",
+    "native-server-preparation-source-analysis.json": "705ee8445c39f473d6690f087dd66c60d37cc354ff11e76cf620c1f7b9aad2b3",
+    "engine-whole-u7998-ue0102.json": "444a231a2f6176c26f9fe8bed6d93464cd1388b7f95cfcc69305c21c28ff5e6b",
+    "metadata.json": "7d818dc0339cc294810aa8bb4c3e20cac6bf6f66644f539ee7f270d45da221ee",
+    "engine-whole-u7998-ue0103.json": "2ccb0a8ba814f808b3ea8ec6d3110b464f73836a373de999fb75071f58c8c2a5",
+    "progressive.mjs": "3412135889d86c89f3ca3d5163e9449804ae8de8735ec149a2f8ec7b3a857078",
+    "engine-whole-u7998-ue0100.json": "2df91277b3fa235c76dd63f1147e0b1176a0f8e5646ba47a1c3682be53864be6",
+    "engine-whole-u7998-ue0101.json": "2df91277b3fa235c76dd63f1147e0b1176a0f8e5646ba47a1c3682be53864be6",
+    "engine-whole-u7998.json": "acad38dab744fb84f2c18b02cbd6368d68e805d2488b8005d14f24bc593598e3"
+  },
+  "originalFilesChanged": false,
+  "servers": {
+    "whole": {
+      "port": 52262,
+      "pid": 5235,
+      "session": 61895,
+      "wholeURL": "http://127.0.0.1:52262/?id=u7998",
+      "all14PairsURL": "http://127.0.0.1:52262/?id=u7998&pairs=1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10,11:11,12:12,13:13,14:14"
+    },
+    "progressive": {
+      "port": 52255,
+      "pid": 5220,
+      "session": 82363,
+      "fineURL": "http://127.0.0.1:52255/?stroke=13&enlarged=1",
+      "coarse9FrameURL": "http://127.0.0.1:52255/?stroke=13"
+    }
+  },
+  "oldRecordedPorts": {
+    "whole": 61678,
+    "progressive": 61687,
+    "listeningAtStart": false
+  },
+  "wholeRoots": [
+    "u7998",
+    "u7998-ue0100",
+    "u7998-ue0101",
+    "u7998-ue0102",
+    "u7998-ue0103"
+  ],
+  "selectedIdentity": {
+    "sourceRoot": "u7998",
+    "sourceProofFile": "engine-whole-u7998.json",
+    "sourceProofFileSHA256": "acad38dab744fb84f2c18b02cbd6368d68e805d2488b8005d14f24bc593598e3"
+  },
+  "selectedProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "fullProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "headerSHA256": "acad38dab744fb84f2c18b02cbd6368d68e805d2488b8005d14f24bc593598e3",
+  "fullProofSHA256": "229156bf30c126cec5e377bb0950b343ba07e117d95e8dd49f54d675cff6015e",
+  "compilerAPI": "compileProgressive(trace,full5Proof): original two-argument compiler, no mandatory third identity. Original helper pins explicit selected root/file/fileSHA plus compiler/header/payload SHA before calling.",
+  "serverGuardBoundary": "Whole helper pins all5whole bytes; both helpers pin selected compiler/body/header/full proof. Source/metadata byte pins are recorded in this readiness snapshot but old helpers do not independently enforce their complete byte SHA. Original helpers unchanged.",
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      15
+    ]
+  ],
+  "compiledPens": 14,
+  "compiledMasks": 15,
+  "originalPolygons": 34,
+  "sourceExactOnceEvidence": "Existing native-server-preparation-source-analysis.json originalPolygonExactlyOnce true; original helper compile/current source byte pins preserved.",
+  "curveFinePens": [
+    4,
+    8,
+    9,
+    10,
+    11,
+    13
+  ],
+  "coarseFramesRequired": 126,
+  "maskTransitions": [
+    {
+      "pen": 13,
+      "mask": 2,
+      "boundary": 0.9237933453544759,
+      "weights": [
+        60.611068,
+        5
+      ],
+      "directions": [
+        "curve",
+        "left"
+      ]
+    }
+  ],
+  "originalTerminalRisk": {
+    "pen": 13,
+    "raw": 14,
+    "call": 1,
+    "kind": "cdDrawCurve",
+    "terminal": 514,
+    "start": [
+      166.04000000000002,
+      157
+    ],
+    "end": [
+      156.04000000000002,
+      167
+    ],
+    "polygons": 2,
+    "nativeReviewed": false
+  },
+  "http": {
+    "newRequests": 2,
+    "perServer": 1,
+    "wholePublicChecks": {
+      "status": 200,
+      "pens": 14,
+      "masks": 15,
+      "root": "u7998"
+    },
+    "progressive": {
+      "status": 200,
+      "stroke": 13,
+      "svg520": true,
+      "boundaryControl": true,
+      "replayControl8Seconds": true,
+      "privateDictionaryOnlyRAM": true,
+      "responseLoggedOrSaved": false
+    }
+  },
+  "sourceVerification": {
+    "priorFile": "native-server-validation.json",
+    "priorSourcePassed": true,
+    "sourceActualEngineRerun": false,
+    "newExternalSourceRequests": 0,
+    "guardSuiteRepeated": false
+  },
+  "priorNative": {
+    "nativeObserved": 0,
+    "replayObservation": 0
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplaysObserved": 0,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false,
+  "requiredRootReview": "All5whole eligibility; all14domestic directions;126coarseframes; curvefine4/8/9/10/11/13 and originalterminal514pen13; exactpen13mask2 before/at/after; operational8-second replay. Child prepared controls only."
+}
+
