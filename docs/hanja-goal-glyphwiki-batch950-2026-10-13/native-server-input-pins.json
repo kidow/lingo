@@ -1,0 +1,29 @@
+{
+  "batch": 950,
+  "glyph": "綅",
+  "port": 0,
+  "catalog": 13,
+  "domestic": 13,
+  "wholeNames": [
+    "u7d85-ue0100",
+    "u7d85"
+  ],
+  "pins": {
+    "sources.json": "23573938df571b36cd064c131bc01a8e32a40161822c42cae95cc7d70e8f9d18",
+    "metadata.json": "ba04bed7a0c534abaa00ccdce25dd68b51f22ca40c0a53565ec4106b7cd04b89",
+    "engine-proof.json": "e8ef74a7a640edd8e94f088bba54260334bcb436aba10326ad172b7a58a26d83",
+    "progressive.mjs": "ae48cfd0d894fe16d9dbfea1541dcb3b7eeb4f0bfcd84120926347109c763b8e",
+    "engine-whole-u7d85-ue0100.json": "47711a84753cdf7715cfff31f9eeb30f26f95cf9d94856ee93ffb61773d97e74",
+    "engine-whole-u7d85.json": "cee1fe49497bf4b741e1b06ca9b73dacadda7e975e4926420937caa3b2ea5c0c",
+    "strict-native-adapter.mjs": "c8dec30a16827f6cb3d0551b07dc703cc1bac6c1803ce3c0ef15454b48c584d4"
+  },
+  "identity": {
+    "sourceRoot": "u7d85",
+    "sourceProofFile": "./engine-whole-u7d85.json",
+    "sourceProofFileSha256": "cee1fe49497bf4b741e1b06ca9b73dacadda7e975e4926420937caa3b2ea5c0c",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "e8ef74a7a640edd8e94f088bba54260334bcb436aba10326ad172b7a58a26d83"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';\nconst d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch950-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');\nfor(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);\nconst s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"8af797e3ed009a1b8f630ea9346a45d3af79fcf964da48b788b3bfc515eae1c0\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nlet expected=false;try{m.compileProgressive(p.trace,p,id)}catch(e){assert.equal(e.message,m.blockedReason);expected=true}assert(expected);assert.equal(JSON.stringify(p),before);\nconsole.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:true,blocked:true,reason:m.blockedReason,compiledPens:0,compiledMasks:0,progressiveFrames:0,replay:0,nativeApproval:false}));"
+}
