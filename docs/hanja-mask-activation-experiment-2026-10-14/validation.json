@@ -1,0 +1,95 @@
+{
+  "scope": "Isolated original857 second independent-mask activation experiment",
+  "testsExecutedOnce": true,
+  "testCommand": "node docs/hanja-mask-activation-experiment-2026-10-14/test.mjs",
+  "actualExit": 0,
+  "originalRendererParityCases": 204,
+  "diagnosticAdapterParityCases": 408,
+  "sourceReferenceChecks": 4336,
+  "unaffectedOtherPenChecks": 192,
+  "continuousActivationChecks": 101,
+  "fadePhaseChecks": 4,
+  "completedFormChecks": 17,
+  "pens": 17,
+  "masks": 20,
+  "originalPolygons": 42,
+  "originalCompleteGeometrySHA256": "9f607f1122fe9b3ccafeffe97a62dc62a9a9d0b7acc6ea3e52613a2466d4b5cc",
+  "sourceCompilerSHA256": "b696f65afd86c3a14e3afe40a1e01a938cb7c96f437dc677e013c0d47ab8a694",
+  "pureHelperSHA256": "970124f12628702298f7c8956ddf25ec07961b8a1cdaf7dac91164b6868968a8",
+  "gate": {
+    "pen": 12,
+    "mask": 2,
+    "kind": "curve",
+    "durationMilliseconds": 40,
+    "secondMaskDurationMilliseconds": 228.653664749291,
+    "localProgressWindow": 0.1749370605708782,
+    "boundary": 0.47233769673240533,
+    "afterBoundaryPlus1eMinus10Alpha": 1.0833333059715242e-9
+  },
+  "http": {
+    "port": 64720,
+    "pid": 22544,
+    "session": 86427,
+    "checksPassed": true,
+    "statuses": [
+      {
+        "path": "/checks",
+        "status": 200
+      },
+      {
+        "path": "/fixture",
+        "status": 200
+      },
+      {
+        "path": "/?stroke=12&enlarged=1",
+        "status": 200
+      },
+      {
+        "path": "/app.mjs",
+        "status": 200
+      },
+      {
+        "path": "/reveal-descriptor.mjs",
+        "status": 200
+      },
+      {
+        "path": "/svg-dom-adapter.mjs",
+        "status": 200
+      },
+      {
+        "path": "/svg-string-adapter.mjs",
+        "status": 200
+      }
+    ]
+  },
+  "unchanged": {
+    "original857Documents": true,
+    "originalCompiler": true,
+    "sourceGeometry": true,
+    "revealPath": true,
+    "revealWidth": true,
+    "bounds": true,
+    "weight": true,
+    "sourcePenOrder": true,
+    "sourceCount": true,
+    "runtime": true,
+    "components": true,
+    "sharedBatch43Renderer": true
+  },
+  "testLimitations": [
+    "DOM structural parity uses a minimal XML node serializer, not actual browser raster or production React execution",
+    "HTTP checks do not execute browser controls",
+    "Original-renderer parity checks numerical SVG output, not direction correctness",
+    "Source pin checks do not approve domestic source order",
+    "No native replay or native observation by child"
+  ],
+  "browserExecutionVerified": false,
+  "nativeObserved": 0,
+  "nativeApproval": false,
+  "actualReplayObserved": false,
+  "productionChanged": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitCreated": false
+}

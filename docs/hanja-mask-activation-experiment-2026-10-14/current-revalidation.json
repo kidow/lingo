@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-15",
+  "scope": "Explicit isolated mask experiment registry reference revalidation; not source/native/runtime approval",
+  "reason": "Approved unrelated glyph registrations changed the lib/hanja-strokes.ts byte reference. The original registry reference pin remains preserved in contract.runtimeReferencePins.",
+  "registryRevalidation": {
+    "file": "lib/hanja-strokes.ts",
+    "originalSHA256": "96979704ab209f35e9e02b28100480fc2fd4dc849d17fbe9a821ac562eb4e7a1",
+    "currentSHA256": "083f5aa4649c205547f12e771820decfc44eb67f71eaf661617c9ac029fb5a5d",
+    "actualRuntimeAbsent": true,
+    "nativeApproval": false
+  },
+  "freshRuntimeObservation": {
+    "performed": true,
+    "newNodeProcess": true,
+    "query": "hanjaStrokeData({glyph:'隮',strokes:17})",
+    "returnedNull": true,
+    "anyRegistryGlyphEntry": false,
+    "appliedCountAtObservation": 5476
+  },
+  "pinAudit": {
+    "onlyRuntimeReferenceMismatch": "lib/hanja-strokes.ts",
+    "otherRuntimeReferencePinsUnchanged": true,
+    "source857PinsUnchanged": true,
+    "originalSourceCompilerUnchanged": true,
+    "rendererBytePinsUnchanged": true,
+    "originalRuntimeReferencePinsPreserved": true,
+    "priorValidationFile": "validation.json",
+    "priorValidationSHA256": "16c02f88fadd55796a4ff2c83d7f99553f503d2c7f3306036b95b93d26cc594c",
+    "priorValidationBytesUnchanged": true,
+    "modifiedExperimentPinFields": [
+      "contract.json",
+      "fixture.mjs"
+    ],
+    "allOtherExperimentPinFieldsUnchanged": true
+  },
+  "focusedTest": {
+    "command": "node docs/hanja-mask-activation-experiment-2026-10-14/test.mjs",
+    "executedOnceAfterFix": true,
+    "actualExit": 0,
+    "result": {
+      "passed": true,
+      "originalRendererParityCases": 204,
+      "diagnosticAdapterParityCases": 408,
+      "sourceReferenceChecks": 4336,
+      "unaffectedOtherPenChecks": 192,
+      "continuousActivationChecks": 101,
+      "fadePhaseChecks": 4,
+      "completedFormChecks": 17,
+      "originalCompleteGeometrySHA256": "9f607f1122fe9b3ccafeffe97a62dc62a9a9d0b7acc6ea3e52613a2466d4b5cc",
+      "pens": 17,
+      "masks": 20,
+      "polygons": 42,
+      "gateQ": 0.1749370605708782,
+      "gateDurationMs": 40,
+      "secondMaskDurationMs": 228.653664749291,
+      "boundary": 0.47233769673240533,
+      "afterBoundaryAlpha": 1.0833333059715242e-9,
+      "sourceInputsUnchanged": true,
+      "nativeObserved": 0,
+      "nativeApproval": false,
+      "productionChanged": false,
+      "buildExecuted": false
+    }
+  },
+  "filesChanged": [
+    "contract.json",
+    "fixture.mjs",
+    "experiment-file-pins.json",
+    "README.md",
+    "current-revalidation.json"
+  ],
+  "scopePreserved": {
+    "original857FilesEdited": false,
+    "sourcePinsEdited": false,
+    "originalRuntimeReferencePinsEdited": false,
+    "priorValidationEdited": false,
+    "geometryEdited": false,
+    "compilerEdited": false,
+    "runtimeEdited": false,
+    "appEdited": false,
+    "sourceEngineReruns": 0,
+    "onlineRequests": 0,
+    "nativeObservation": 0,
+    "nativeApproval": false,
+    "builds": 0,
+    "commits": 0,
+    "privateMediaSaved": false
+  }
+}
