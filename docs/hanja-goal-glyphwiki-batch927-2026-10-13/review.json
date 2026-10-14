@@ -1,0 +1,117 @@
+{
+  "batch": 927,
+  "glyph": "塚",
+  "verifiedAt": "2026-10-14",
+  "status": "held-source-reproduction-float-mismatch-and-catalog13-domestic12",
+  "reason": "Actual previous source reproduction failed:126.8072221933106 vs126.80722219331061; do not round or regenerate. Catalog13/domestic12. Native two complete source variants g/k observed, their extra internal dot differs; other11notfullyobserved.",
+  "wholeVariantsReviewed": 2,
+  "wholeVariantsAvailable": 13,
+  "compatibleWholeRoots": [],
+  "wholeVariants": [
+    {
+      "name": "u585a-g",
+      "compatible": false
+    },
+    {
+      "name": "u585a-k",
+      "compatible": false
+    }
+  ],
+  "dictionaryDirectionStrokes": [],
+  "staticDiagnostics": [],
+  "staticDiagnosticsAreNotNativeOrderApproval": true,
+  "progressivePensReviewed": [],
+  "progressiveFramesReviewed": 0,
+  "progressiveFramesApproved": 0,
+  "curveFineChecks": [],
+  "sourceGroupsZeroBased": [],
+  "blockedPens": [],
+  "unreviewedProgressivePens": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "unreviewedFinePens": [],
+  "replayApproved": false,
+  "replayPens": [],
+  "actualReplayProgress": [],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": false,
+    "wholeVariantsCaptured": 13,
+    "domesticClipsCaptured": 12,
+    "engineFilesVerified": null,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false,
+    "archiveRedownloaded": false,
+    "reproductionFailure": {
+      "actualVerifierFailed": true,
+      "messageReportedByExecutor": "strict deepEqual reproduction mismatch",
+      "storedValue": 126.8072221933106,
+      "reproducedValue": 126.80722219331061,
+      "storedFieldsObservedByExecutor": [
+        {
+          "whole": "u585a-k",
+          "rawZeroBased": 8,
+          "call": 0,
+          "kind": "cdDrawCurve",
+          "field": "args[4]"
+        },
+        {
+          "whole": "u585a-k",
+          "rawZeroBased": 8,
+          "call": 1,
+          "kind": "cdDrawCurve",
+          "field": "args[0]"
+        },
+        {
+          "whole": "u585a-ue0102",
+          "rawZeroBased": 8,
+          "call": 0,
+          "kind": "cdDrawCurve",
+          "field": "args[4]"
+        },
+        {
+          "whole": "u585a-ue0102",
+          "rawZeroBased": 8,
+          "call": 1,
+          "kind": "cdDrawCurve",
+          "field": "args[0]"
+        }
+      ],
+      "firstFailedWholeInferred": "u585a-k",
+      "firstWholeIsInference": true,
+      "inferenceReason": "Root was absent from original stderr; executor inferred first mismatch from verifier source.wholeNames iteration order and stored matching coordinates.",
+      "domesticPenNumberUnknown": true,
+      "coordinatesRounded": false,
+      "sourceRegenerated": false,
+      "rerunPerformed": false
+    },
+    "evidenceFile": "strict-native-server-preflight.json",
+    "reexecuted": false
+  },
+  "immutableSourceMetadataPreserved": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false,
+  "browserTabs": {
+    "native": 142
+  },
+  "buildRun": false,
+  "fullSuiteRun": false
+}
