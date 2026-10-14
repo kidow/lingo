@@ -1,0 +1,121 @@
+{
+  "batch": 985,
+  "glyph": "蒲",
+  "catalogStrokes": 14,
+  "domesticClips": 14,
+  "status": "source-only-helper-contract-valid; native review pending",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false,
+    "evidenceFile": "strict-native-server-preflight.json"
+  },
+  "selectedRoot": "u84b2",
+  "selectedFile": "engine-whole-u84b2.json",
+  "selectedIdentity": {
+    "sourceRoot": "u84b2",
+    "sourceProofFile": "engine-whole-u84b2.json",
+    "sourceProofFileSha256": "d4d8165e47d911a8515793150b4952387e87a3f24dc889d17c21593c7611d085",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "d4d8165e47d911a8515793150b4952387e87a3f24dc889d17c21593c7611d085"
+  },
+  "originalBytePins": {
+    "sources.json": "e422c6bd5adafebceef64a5d7883a026e230d38512932c22dfc2cddba19201e6",
+    "metadata.json": "870c09b1353ab34fe665f630468db232326c5ad4972d47850cd211e7716d2d02",
+    "engine-proof.json": "d4d8165e47d911a8515793150b4952387e87a3f24dc889d17c21593c7611d085",
+    "engine-whole-u84b2.json": "d4d8165e47d911a8515793150b4952387e87a3f24dc889d17c21593c7611d085",
+    "strict-native-server-preflight.json": "ef41088414c13cf01c760a2f5a0facfe8e5ec3204409317decefdea8e5b8373a",
+    "progressive.mjs": "49757adab47a669e6a87dc62a275df9d486477250d9c9f269797f3d87f0b8830",
+    "strict-native-adapter.mjs": "f0fb3d724f8d5ad53e7fbb5f3e4d9b906e5dfadfaf384448f68da4666c8bd222",
+    "serve-native.py": "e1be04efd1f732a66a09d1bd837f1a8174c8b384accb2a26913585776bf74eb4",
+    "native-server-input-pins.json": "37d1440032677af233e5dd0d7d914558f92387fa13c9d5eb15bed685d969a5c0"
+  },
+  "wholeFamily": {
+    "names": [
+      "u84b2",
+      "u84b2-k",
+      "u84b2-ue0100",
+      "u84b2-ue0101",
+      "u84b2-ue0102",
+      "u84b2-ue0103"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "selectedWhole": {
+    "raw": 15,
+    "draw": 16,
+    "Q": 6,
+    "B": 0,
+    "polygons": 28
+  },
+  "callerContract": "mandatory five-field selected proof/header identity + complete frozen body",
+  "guards": {
+    "actualExecutionExit": 0,
+    "totalRejected": null,
+    "sourceRejected": 6,
+    "identityRejected": 6,
+    "defaultIdentity": "mandatory caller identity rejected on omission",
+    "callerPinsPassed": true,
+    "originalInputImmutable": true,
+    "sourceAndEngineHeaderKeys": 8,
+    "expectedPinnedInputsVerified": 11,
+    "actualTestModule": "strict-native-adapter.mjs selected proof contract"
+  },
+  "compiler": {
+    "pens": 14,
+    "masks": 15,
+    "originalPolygonCount": 28,
+    "originalPolygonsExactlyOnce": true,
+    "blockedReason": null,
+    "nonConsecutiveGroups": [],
+    "finePens": [
+      4,
+      5,
+      6,
+      7,
+      11,
+      14
+    ],
+    "maskTransitions": [
+      {
+        "pen": 11,
+        "boundary": 0.9440972686059608
+      }
+    ],
+    "originalSpecialTerminals": [
+      {
+        "raw": 11,
+        "call": 1,
+        "kind": "cdDrawCurve",
+        "terminal": 514
+      }
+    ],
+    "staticRawCurveIndices": [],
+    "quantitativeMaskCoverageRisks": [],
+    "compiledGeometrySHA256": null,
+    "compiledGeometrySHA256Reason": "Not separately retained in this preparation; immutable original masks were actually asserted by the existing compiler/adapter."
+  },
+  "helper": {
+    "exists": true,
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch985-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "existing helper defaults to OS-selected port; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false,
+  "date": "2026-10-14"
+}
