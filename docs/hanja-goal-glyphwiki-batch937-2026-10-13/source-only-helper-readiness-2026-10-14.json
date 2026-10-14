@@ -1,0 +1,356 @@
+{
+  "batch": 937,
+  "glyph": "蓫",
+  "status": "existing-live-static-helper-ready-original-hold-preserved",
+  "newFiles": [
+    "source-only-helper-readiness-2026-10-14.json"
+  ],
+  "originalBytePins": {
+    "candidate-compile-analysis.json": "e3d43810aad05f08d312cb428f0be16a3e28cd931b49d03ba35f114e8b4f131f",
+    "engine-proof.json": "0330b739545613235deec2eda50adb747b33ea952d6f24c48fe297be2295cf8b",
+    "engine-whole-u84eb-ue0100.json": "dfb4f007cd74373bae70ca8fee7eedb9ccb3f197c4bd6d42bb1c133c0f30bd54",
+    "engine-whole-u84eb-ue0101.json": "869d552d8828178e5107a2a42f479f4fcf2bf4f838fab01ee09585809f0a4fd9",
+    "engine-whole-u84eb.json": "0330b739545613235deec2eda50adb747b33ea952d6f24c48fe297be2295cf8b",
+    "metadata.json": "bc32783173c8aa8a503902070c2457cb84cbc726bf11d54d1dc7ca2495f3a3a2",
+    "source-analysis.json": "9a39971a875fd423c65c721b5cd2969c8a9e3eeabdc173fe9c377a0c7f25fe7a",
+    "source-join-analysis.json": "32447a756a6541b545519e5222f8ab5cc4869758a03e684a9b014336e571cbfa",
+    "source-preservation-audit.json": "4f635988fd57b722842fbcd2297fc2e4dd008414077458362bbae12e36e9f936",
+    "sources.json": "79933ba482d03271cb83130b272fbf5f4bed53fad4194c5676a3cc9aa3a36f36",
+    "verify-source.mjs": "a1d745db5771bfaf913fa06ce32446da1a4dfa22bcf2b627414a0101507f183a",
+    "native-server-preflight-hold.json": "07b6379b030435db0ccdddb4504bf4ee3514c443ad97fa3ae8eafe460ce0498b",
+    "serve-whole.py": "c0c4c0855c6d1567c95e386df2f020d4176e26a25f81c6180f6d1eb43c25727c",
+    "native-static-server-preparation.json": "8f53ee493696aafd7abcb10fff8c31c64f9ca3fb122b1ab1ac406ab4810595f9"
+  },
+  "originalBytePinsUnchanged": true,
+  "server": {
+    "port": 50729,
+    "pid": 75015,
+    "pastRecordedPidAlsoMatches": true,
+    "restarted": false,
+    "wholeURL": "http://127.0.0.1:50729/whole?id=u84eb",
+    "rawPairURL": "http://127.0.0.1:50729/pairs?id=u84eb&domestic=1&raw=1",
+    "checksURL": "http://127.0.0.1:50729/checks?id=u84eb",
+    "blockedProgressiveURL": "http://127.0.0.1:50729/progressive",
+    "progressiveHTTPStatus": 409,
+    "rawPairMeaning": "Domestic1..15 and cumulative originalraw are independent diagnostic indexes, not approved pen mappings."
+  },
+  "wholeFacts": [
+    {
+      "root": "u84eb",
+      "file": "engine-whole-u84eb.json",
+      "fileSHA256": "0330b739545613235deec2eda50adb747b33ea952d6f24c48fe297be2295cf8b",
+      "raw": 16,
+      "draw": 17,
+      "Q": 10,
+      "B": 1,
+      "polygons": 32,
+      "exactJoins": [
+        [
+          5,
+          6
+        ]
+      ],
+      "minimumOriginalPaths": 15,
+      "rawPolygonsMatch": true
+    },
+    {
+      "root": "u84eb-ue0100",
+      "file": "engine-whole-u84eb-ue0100.json",
+      "fileSHA256": "dfb4f007cd74373bae70ca8fee7eedb9ccb3f197c4bd6d42bb1c133c0f30bd54",
+      "raw": 18,
+      "draw": 19,
+      "Q": 10,
+      "B": 1,
+      "polygons": 35,
+      "exactJoins": [
+        [
+          6,
+          7
+        ]
+      ],
+      "minimumOriginalPaths": 17,
+      "rawPolygonsMatch": true
+    },
+    {
+      "root": "u84eb-ue0101",
+      "file": "engine-whole-u84eb-ue0101.json",
+      "fileSHA256": "869d552d8828178e5107a2a42f479f4fcf2bf4f838fab01ee09585809f0a4fd9",
+      "raw": 15,
+      "draw": 16,
+      "Q": 9,
+      "B": 1,
+      "polygons": 30,
+      "exactJoins": [
+        [
+          4,
+          5
+        ]
+      ],
+      "minimumOriginalPaths": 14,
+      "rawPolygonsMatch": true
+    }
+  ],
+  "currentStoredProofFacts": [
+    {
+      "root": "u84eb",
+      "minimumOriginalPaths": 15,
+      "selectedProofKeys": [
+        "defaults",
+        "engineHashes",
+        "engineRevision",
+        "groups",
+        "trace"
+      ],
+      "gaps": [
+        {
+          "rawFrom": 7,
+          "rawTo": 8,
+          "fromKind": "cdDrawCurve",
+          "toKind": "cdDrawBezier",
+          "end": [
+            55.275,
+            160.51
+          ],
+          "start": [
+            53.265,
+            158.88
+          ],
+          "delta": [
+            -2.009999999999998,
+            -1.6299999999999955
+          ],
+          "distance": 2.587856255667995,
+          "originalGapsRecomputedFromStoredProof": true
+        },
+        {
+          "rawFrom": 14,
+          "rawTo": 15,
+          "fromKind": "cdDrawCurve",
+          "toKind": "cdDrawCurve",
+          "end": [
+            134.01675,
+            111.141375
+          ],
+          "start": [
+            134.01675,
+            111.89524999999999
+          ],
+          "delta": [
+            0,
+            0.7538749999999936
+          ],
+          "distance": 0.7538749999999936,
+          "originalGapsRecomputedFromStoredProof": true
+        }
+      ]
+    },
+    {
+      "root": "u84eb-ue0100",
+      "minimumOriginalPaths": 17,
+      "selectedProofKeys": [
+        "defaults",
+        "engineHashes",
+        "engineRevision",
+        "groups",
+        "trace"
+      ],
+      "gaps": [
+        {
+          "rawFrom": 8,
+          "rawTo": 9,
+          "fromKind": "cdDrawCurve",
+          "toKind": "cdDrawBezier",
+          "end": [
+            55,
+            163.2
+          ],
+          "start": [
+            53,
+            161.6
+          ],
+          "delta": [
+            -2,
+            -1.5999999999999943
+          ],
+          "distance": 2.561249694973136,
+          "originalGapsRecomputedFromStoredProof": true
+        }
+      ]
+    },
+    {
+      "root": "u84eb-ue0101",
+      "minimumOriginalPaths": 14,
+      "selectedProofKeys": [
+        "defaults",
+        "engineHashes",
+        "engineRevision",
+        "groups",
+        "trace"
+      ],
+      "gaps": [
+        {
+          "rawFrom": 6,
+          "rawTo": 7,
+          "fromKind": "cdDrawCurve",
+          "toKind": "cdDrawBezier",
+          "end": [
+            55.275,
+            158.065
+          ],
+          "start": [
+            53.265,
+            156.435
+          ],
+          "delta": [
+            -2.009999999999998,
+            -1.6299999999999955
+          ],
+          "distance": 2.587856255667995,
+          "originalGapsRecomputedFromStoredProof": true
+        },
+        {
+          "rawFrom": 13,
+          "rawTo": 14,
+          "fromKind": "cdDrawCurve",
+          "toKind": "cdDrawCurve",
+          "end": [
+            134.01675,
+            111.14137499999998
+          ],
+          "start": [
+            134.01675,
+            111.89524999999999
+          ],
+          "delta": [
+            0,
+            0.7538750000000078
+          ],
+          "distance": 0.7538750000000078,
+          "originalGapsRecomputedFromStoredProof": true
+        }
+      ]
+    }
+  ],
+  "selectedWhole": null,
+  "compilerPresent": false,
+  "compiledPens": 0,
+  "compiledMasks": 0,
+  "activeFinePens": [],
+  "activeMaskBoundaries": [],
+  "framesProduced": 0,
+  "replaysProduced": 0,
+  "callerContract": "No compile caller or candidateidentity exists. Statichelper accepts explicit fixedroot name, verifies originalwholefileSHA and12inputpins+selfbyteSHA eachrequest, reads existing groups/trace/defaults. Complete selectedroot+header compilercomposition is N/A.",
+  "fullProofKeysByRoot": {
+    "u84eb": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "u84eb-ue0100": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "u84eb-ue0101": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ]
+  },
+  "blockedReasonPreserved": "grass form unresolved and road nonexact boundary; numericcounts do not fixdomestic shape",
+  "holdReasonAuthority": "Existing hold descriptions are preserved prior risks; no new domestic/native observations were made. Base15 numerical minimum is not domesticboundary or whole approval.",
+  "priorityBeforeAnyFrames": [
+    {
+      "priority": 1,
+      "check": "All3whole against domesticfullglyph and15directions, especially unresolvedgrass shape."
+    },
+    {
+      "priority": 2,
+      "root": "u84eb",
+      "rawGroups": [
+        7,
+        8
+      ],
+      "gap": [
+        -2.009999999999998,
+        -1.6299999999999955
+      ],
+      "distance": 2.587856255667995,
+      "check": "Original nearendpoints are not exactjoin. Do not bridge/reverse/move or use overlap without source/native evidence."
+    },
+    {
+      "priority": 3,
+      "root": "u84eb",
+      "rawGroups": [
+        14,
+        15
+      ],
+      "gap": [
+        0,
+        0.7538749999999936
+      ],
+      "check": "Original road-end boundary remains nonexact. Static comparison first; no curvewidth enlargement or invented connector."
+    },
+    {
+      "priority": 4,
+      "check": "VS0 minimum17 andVS1 minimum14 are different originalwhole facts; do not mixrows withbase15 to force domestic15."
+    }
+  ],
+  "sourceFilledIntersectionsMeasured": false,
+  "sourceGapCoordinateUnits": "OriginalKAGEcoordinates; notscreenpixels.",
+  "priorSourceEvidence": {
+    "file": "native-server-preflight-hold.json.sourceVerified",
+    "sourcePassed": true,
+    "exitCode": 0,
+    "engineFiles": 8,
+    "actualResultItem": {
+      "batch": 937,
+      "glyph": "蓫",
+      "records": 16,
+      "wholeRoots": 3,
+      "historicalDependencies": 2,
+      "catalogStrokes": 15,
+      "domesticClips": 15,
+      "candidateCount": 15,
+      "candidateExact": true
+    },
+    "sourceEvidencePassed": null,
+    "newSourceEngineExecutions": 0,
+    "newExternalSourceRequests": 0
+  },
+  "priorNativeObservation": {
+    "whole": 0,
+    "directions": 0,
+    "frames": 0,
+    "replays": 0
+  },
+  "newHTTP": {
+    "requests": 1,
+    "status": 200,
+    "path": "/checks?id=u84eb",
+    "publicStructuralOnly": true,
+    "sourceInputPinsVerified": 12,
+    "blocked": true,
+    "compilerAbsent": true,
+    "privateGraphicsRequested": false
+  },
+  "nativeApproval": false,
+  "nativeWholeObserved": 0,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplaysObserved": 0,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "originalFilesChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateAssetsReadThisTask": false,
+  "privateMediaSaved": false
+}
+
