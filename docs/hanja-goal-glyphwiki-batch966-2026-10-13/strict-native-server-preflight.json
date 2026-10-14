@@ -1,0 +1,207 @@
+{
+  "batch": 966,
+  "glyph": "邰",
+  "status": "source-only strict blocked native diagnostic",
+  "frozenRuntimeSnapshot": {
+    "utc": "2026-10-13T19:55:36.316Z",
+    "registered": 5440,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 14,
+    "wholeVariants": 5,
+    "domesticClips": 8,
+    "domesticMetadataVerified": true,
+    "engineFilesVerified": 8,
+    "archiveRedownloaded": false,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false
+  },
+  "selectedWholeIdentity": {
+    "sourceRoot": "u90b0",
+    "sourceProofFile": "engine-whole-u90b0.json",
+    "sourceProofFileSha256": "b19f2a5114acb5851aaac25d09b003366d73b2f5f0e70205772716d58313b5c2",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "d137e247819ed2a62185f045fb97dc24f48632cfbb1d210f6cdb6ffe88d58e8d"
+  },
+  "inputSHA256": {
+    "sources.json": "ee22b47b40dc4fe36db71060e76c0bac0ad91631c2f30218000ec239d2018071",
+    "metadata.json": "a28874e1211ca62b9d729f76cff1f7ef36814f2b5d19ae9fcb95534cd2df106a",
+    "engine-proof.json": "d137e247819ed2a62185f045fb97dc24f48632cfbb1d210f6cdb6ffe88d58e8d",
+    "progressive.mjs": "fe1dc7c3d9c785ca691a1518df6d585f8ab64048744f87a632b178d5f54ff70d",
+    "engine-whole-u90b0-g.json": "ea48e74cdcbd9cd8f83680f5b3a21c4423bd2dd9754fce97707db6a2fa7e48d1",
+    "engine-whole-u90b0-k.json": "b19f2a5114acb5851aaac25d09b003366d73b2f5f0e70205772716d58313b5c2",
+    "engine-whole-u90b0-t.json": "431f984ea9ad05bf62cb4053073d2bd70ff7f3dfecd8cfde7f99478522112aba",
+    "engine-whole-u90b0-ue0100.json": "b19f2a5114acb5851aaac25d09b003366d73b2f5f0e70205772716d58313b5c2",
+    "engine-whole-u90b0.json": "b19f2a5114acb5851aaac25d09b003366d73b2f5f0e70205772716d58313b5c2",
+    "strict-native-adapter.mjs": "606a02da54b7271ee3ce312088a12003c7be2b50685d3e3a8fd251ddce5830f5"
+  },
+  "fullSelectedProofSHA256": "de50edca62f3307d3447546caa6a3e92f5fcac09cd8a002e94b798b09e22a7fc",
+  "originalSourceCompilerMetadataUnchanged": true,
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ]
+  ],
+  "nonconsecutiveGroups": [
+    [
+      3,
+      6
+    ]
+  ],
+  "blockedReason": "nonconsecutive-original-enclosure",
+  "localActualVerification": {
+    "batch": 966,
+    "expectedBlock": true,
+    "reason": "nonconsecutive-original-enclosure",
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "606a02da54b7271ee3ce312088a12003c7be2b50685d3e3a8fd251ddce5830f5",
+    "compiledSHA256": null,
+    "nativeApproval": false,
+    "originalPolygonCount": 21,
+    "allOriginalPolygonsOnce": null,
+    "allCompiledMasksEqualOriginalSHA256": null,
+    "noCoordsPathsWidthsBoundsWeightsDirectionsModified": true
+  },
+  "risks": {
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "frames": 0,
+    "replay": 0,
+    "reason": "nonconsecutive-original-enclosure",
+    "nonconsecutiveOriginalEnclosureGroups": [
+      [
+        3,
+        6
+      ]
+    ]
+  },
+  "server": {
+    "binding": "127.0.0.1:0 with OS-selected port",
+    "url": "http://127.0.0.1:64487",
+    "pid": 50865,
+    "sessionID": 38065,
+    "whole": "/whole",
+    "pairs": "/pairs?domestic=1&raw=1",
+    "progressive": "expected blocked status only",
+    "guardsEachRequest": true,
+    "actualHTTPResults": [
+      {
+        "batch": 966,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 667,
+        "checks": {
+          "sourceRoot": "u90b0",
+          "identity": {
+            "sourceRoot": "u90b0",
+            "sourceProofFile": "engine-whole-u90b0.json",
+            "sourceProofFileSha256": "b19f2a5114acb5851aaac25d09b003366d73b2f5f0e70205772716d58313b5c2",
+            "sourceHeaderFile": "engine-proof.json",
+            "sourceHeaderFileSha256": "d137e247819ed2a62185f045fb97dc24f48632cfbb1d210f6cdb6ffe88d58e8d"
+          },
+          "sourceVerificationPassed": true,
+          "blocked": true,
+          "reason": "nonconsecutive-original-enclosure",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u90b0-g",
+            "u90b0-k",
+            "u90b0-t",
+            "u90b0-ue0100",
+            "u90b0"
+          ],
+          "sourceInputPinsVerified": 10,
+          "catalog": 8,
+          "domestic": 8
+        }
+      },
+      {
+        "batch": 966,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 14087,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 966,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 2202,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false
+      },
+      {
+        "batch": 966,
+        "route": "/progressive?stroke=9&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1169,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": true
+      }
+    ],
+    "privateMedia": "Dictionary byte SHA/title/clip checked on actual renderer HTTP requests; RAM only"
+  },
+  "nativeObserved": {
+    "whole": 0,
+    "directions": 0,
+    "frames": 0,
+    "fine": 0,
+    "boundaries": 0,
+    "replay": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
