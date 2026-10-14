@@ -1,0 +1,2213 @@
+{
+  "schemaVersion": 1,
+  "collectedOn": "2026-10-14",
+  "collectedAtUTC": "2026-10-13 17:12:03 UTC",
+  "purpose": "靚·褊·諞의 기존 보류를 보존하며 고정 공개 원본 whole의 형상 특징을 조사합니다.",
+  "scope": {
+    "originalFilesModified": false,
+    "compilerModified": false,
+    "runtimeModified": false,
+    "sharedRegistryModified": false,
+    "nativeApproval": false,
+    "nativeDirectionsReviewed": 0,
+    "nativeFramesReviewed": 0,
+    "nativeReplaysReviewed": 0,
+    "buildRun": false,
+    "commitCreated": false,
+    "privateSVGOrImageSaved": false,
+    "externalAIUsed": false
+  },
+  "sourcePins": {
+    "archive": {
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62"
+    },
+    "engine": {
+      "repository": "https://github.com/kamichikoichi/kage-engine",
+      "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+      "sha256ByFile": {
+        "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+        "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+        "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+        "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+        "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+        "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+        "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+        "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+      }
+    },
+    "archiveSHA256Verified": true,
+    "engineFileSHA256Verified": true,
+    "engineFiles": 8
+  },
+  "sourcePinVerification": {
+    "archiveBytesSHA256Verified": true,
+    "eightEngineBytesSHA256Verified": true,
+    "actualKAGEReproduction": true,
+    "all19DependencyClosuresComplete": true,
+    "missingFixedDependencies": [],
+    "explicitVersionDependenciesEncountered": 0,
+    "historyAPILatestSubstitution": false,
+    "currentGlyphWikiPagesReadable": false,
+    "currentPageFailures": [
+      "https://glyphwiki.org/wiki/u975a",
+      "https://glyphwiki.org/wiki/u890a",
+      "https://glyphwiki.org/wiki/u8ade"
+    ]
+  },
+  "originalHoldEvidence": {
+    "filesSHA256": {
+      "docs/hanja-special-batch10-2026-09-20/README.md": "6f5a33ca111373fad27de30d6643964c4b99ad881d0dc18999e86b2ecace9375",
+      "docs/hanja-special-batch13-2026-09-20/README.md": "edc28c232a9f00d978c4fe6f7c391bb3fd18a7994927e00ae91defedce97c4a3",
+      "docs/hanja-special-batch14-2026-09-20/README.md": "d122a439674e2d7cf841fd35bbf2cf32b9673389a3df683598cd1d79c3dfa82c"
+    },
+    "characters": [
+      {
+        "glyph": "靚",
+        "catalogueId": "u975a",
+        "catalogStrokes": 15,
+        "sourceRow": 4275,
+        "source": "docs/hanja-special-batch10-2026-09-20/README.md",
+        "reason": "국내 靑과 기존 MM 青의 아래 상자 내부 획 형상이 다릅니다. 기존 보류를 유지합니다."
+      },
+      {
+        "glyph": "褊",
+        "catalogueId": "u890a",
+        "catalogStrokes": 14,
+        "sourceRow": 5304,
+        "source": "docs/hanja-special-batch13-2026-09-20/README.md",
+        "reason": "국내 戶 첫 획은 짧은 점이며 기존 MM·Ja·Hans는 긴 戸 가로획입니다. 기존 보류를 유지합니다."
+      },
+      {
+        "glyph": "諞",
+        "catalogueId": "u8ade",
+        "catalogStrokes": 16,
+        "sourceRow": 5305,
+        "source": "docs/hanja-special-batch13-2026-09-20/README.md",
+        "reason": "국내 戶 첫 획은 오른쪽으로 짧으며 기존 Ja는 긴 戸 가로획입니다. 기존 보류를 유지합니다."
+      }
+    ]
+  },
+  "method": {
+    "inventory": "고정 archive의 related Unicode가 정확히 u975a/u890a/u8ade인 실제 19개 식별자만 조회했습니다. 추측 alias는 추가하지 않았습니다.",
+    "dependencies": "archive의 원래 alias/99 의존성만 그대로 재현했습니다. whole의 부품을 새 조합하거나 변경하지 않았습니다.",
+    "numericGrouping": "원본 primitive의 exact adjacent end2/start22 또는 curve7/7 접속만 수치 산출에 사용합니다. 우연한 외곽 닫힘/비연속 접점은 승인하지 않습니다.",
+    "geometryDeduplication": "원본 groups와 trace의 SHA256을 함께 비교합니다. 왼쪽 형상이 같더라도 見 전체 geometry가 다르면 다른 원본입니다.",
+    "featureScope": "source ordinal은 원본 필기 순서상의 번호입니다. 국내 pen 대응·whole 형상·모든 방향·mask boundary·frame/replay 승인이 아닙니다.",
+    "selectedWholeProofSaved": false,
+    "privateSourceFetched": false
+  },
+  "exactRelatedInventory": {
+    "u975a": [
+      {
+        "name": "hkcs_u975a",
+        "related": "u975a",
+        "dataSHA256": "9ec353426a9117fca2d826e977bfcfa3c1412686a4c19160175bd921010dbe10",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "hkcs_u9752-01",
+          "hkcs_u898b-02"
+        ]
+      },
+      {
+        "name": "juki-beb8",
+        "related": "u975a",
+        "dataSHA256": "32e8d9f82361a511c5d242fbff549099c4673a466b25be088ebbb0d9c92b079b",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u975a-ue0102"
+        ]
+      },
+      {
+        "name": "koseki-482630",
+        "related": "u975a",
+        "dataSHA256": "32e8d9f82361a511c5d242fbff549099c4673a466b25be088ebbb0d9c92b079b",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u975a-ue0102"
+        ]
+      },
+      {
+        "name": "toki-01084520",
+        "related": "u975a",
+        "dataSHA256": "df46cfdb05f6fe94dbe177a1255f802268f15a144d8890ef0ee0c8298997d83b",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u975a-ue0103"
+        ]
+      },
+      {
+        "name": "u975a",
+        "related": "u975a",
+        "dataSHA256": "dad09210476e9c03e5e7f94630780c689e547ea00aeb741727a8711490df7b9c",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u9751-07",
+          "u898b-02"
+        ]
+      },
+      {
+        "name": "u975a-g",
+        "related": "u975a",
+        "dataSHA256": "62dfb3701db9df575215e163e4efbc06c74446fe2841d98b5d0aca59dc109b48",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u9752-08",
+          "u898b-02-var-002"
+        ]
+      },
+      {
+        "name": "u975a-ue0102",
+        "related": "u975a",
+        "dataSHA256": "0ef14d3df81bde7d62eb3bfb0419153a8cef962fe4a61a3748e5f302e4a5562e",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u9752-08",
+          "u898b-02"
+        ]
+      },
+      {
+        "name": "u975a-ue0103",
+        "related": "u975a",
+        "dataSHA256": "04e486f63a2d9d0e857efcde1be8563701ea7a287e721d649654d5fa1bb283f7",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u898b-02"
+        ]
+      },
+      {
+        "name": "u975a-var-001",
+        "related": "u975a",
+        "dataSHA256": "a518ff7454ec49218e9ca398063acdeb7e5e64195e6a00904fe8e6f2e30474e4",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u9751-07",
+          "u898b-02-var-002"
+        ]
+      },
+      {
+        "name": "umbreon126_u9962-s1",
+        "related": "u975a",
+        "dataSHA256": "61ead3887c336b4271f1e46e6d6d8e3a6069e800e23345b9ae4ef6c499e67fc7",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u2ff1-u58eb-u2053c",
+          "u89c1-02"
+        ]
+      },
+      {
+        "name": "umbreon126_u9962-s2",
+        "related": "u975a",
+        "dataSHA256": "fcf75c276c821b749aed1956ea607f62bf9c2493989daf5bc827396fd2768afa",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u2ff1-u58eb-u5915",
+          "u89c1-02"
+        ]
+      }
+    ],
+    "u890a": [
+      {
+        "name": "hkcs_u890a",
+        "related": "u890a",
+        "dataSHA256": "9df8a7876a9787dd81ae1ae3eeb30e3d571a1757f752b149e62a879f2c354f02",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "hkcs_u8864-01",
+          "hkcs_u6241-02"
+        ]
+      },
+      {
+        "name": "j78-6a6f",
+        "related": "u890a",
+        "dataSHA256": "e423c1cd8ec97ce28f1b193a1a9e73e4cb95ec2282aeae20bdcf5a9fba6dfc1f",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u890a-ue0101"
+        ]
+      },
+      {
+        "name": "koseki-391210",
+        "related": "u890a",
+        "dataSHA256": "e423c1cd8ec97ce28f1b193a1a9e73e4cb95ec2282aeae20bdcf5a9fba6dfc1f",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u890a-ue0101"
+        ]
+      },
+      {
+        "name": "u890a",
+        "related": "u890a",
+        "dataSHA256": "eda6124f4372646e252af4df35002e9fa61ebf3ec8e3b0eba608ce72693b63c8",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u8864-01",
+          "u6241-j02"
+        ]
+      },
+      {
+        "name": "u890a-ue0101",
+        "related": "u890a",
+        "dataSHA256": "234d831fdc48d00bec5106e455ceaf783f4066df710f87e3d993a1cf47d11636",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u8864-01",
+          "u6241-02"
+        ]
+      }
+    ],
+    "u8ade": [
+      {
+        "name": "j78-6b66",
+        "related": "u8ade",
+        "dataSHA256": "e7dec38be9153f8683a4115fc7ca11f33c5b2c4d13285d1c63a2ce6fe6b4a997",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u8a01-01",
+          "u6241-02"
+        ]
+      },
+      {
+        "name": "koseki-405190",
+        "related": "u8ade",
+        "dataSHA256": "cc37e767da4e867b8a160429a1dacacf97fda1ab78f87f90a58ac1634aec34a9",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "j78-6b66"
+        ]
+      },
+      {
+        "name": "u8ade",
+        "related": "u8ade",
+        "dataSHA256": "4e8b71dd047879395d5842b0e6f306004abe138e2d49f31e87e2de4c7e938b8f",
+        "componentLike": false,
+        "alias": null,
+        "declaredDependencies": [
+          "u8a01-01",
+          "u6241-j02"
+        ]
+      }
+    ]
+  },
+  "wholeResults": [
+    {
+      "root": "hkcs_u890a",
+      "relatedUnicode": "u890a",
+      "publicURL": "https://glyphwiki.org/wiki/hkcs_u890a",
+      "archiveDataSHA256": "9df8a7876a9787dd81ae1ae3eeb30e3d571a1757f752b149e62a879f2c354f02",
+      "originalPayloadSHA256": "8752d716208cbc1077c893d8ef0d402480846e517131dcb0c77694ea4565b5d7",
+      "originalGeometrySHA256": "19ae39eca4cd12e34a71df6ae2ef257541b68e9f8a35204c6593c3eadfa7da7a",
+      "originalBodiesManifestSHA256": "3773b567ab7a36ad7b63fc4e0be79b3ec959f08a6750d89b26fb6623323ab73c",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 19,
+      "originalPolygons": 30,
+      "authoredExactAdjacentJoins": [
+        [
+          1,
+          2
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "sourceAdjacentPenCount": 14,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "sourceOrdinal": 6,
+        "rawIndices": [
+          6
+        ],
+        "primitives": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              106.55,
+              13,
+              123.35,
+              21,
+              130.7,
+              36,
+              7,
+              8
+            ]
+          }
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "hkcs_u6241-02",
+          "related": "u6241",
+          "dataSHA256": "3b85d9bc1916dc9c0d1dd48ace048c5b037450cd40b0c4991e07cbecba33b789"
+        },
+        {
+          "name": "hkcs_u8864-01",
+          "related": "u3013",
+          "dataSHA256": "df26c554a597f467f885b60bdde16fecafe8cadc7a4000762851ce28b5ee0170"
+        },
+        {
+          "name": "hkcs_u890a",
+          "related": "u890a",
+          "dataSHA256": "9df8a7876a9787dd81ae1ae3eeb30e3d571a1757f752b149e62a879f2c354f02"
+        },
+        {
+          "name": "u8864-g01",
+          "related": "u8864",
+          "dataSHA256": "a5759f513fafdfb4251b0314b4d8eceb5158a4b820e26c806e320a6b1b69e4ac"
+        }
+      ],
+      "sourceOnlyPotential": true,
+      "disposition": "Original source-ordinal6 is a short right/down Q dot; domestic entire whole/order unreviewed",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "koseki-391210",
+      "relatedUnicode": "u890a",
+      "publicURL": "https://glyphwiki.org/wiki/koseki-391210",
+      "archiveDataSHA256": "e423c1cd8ec97ce28f1b193a1a9e73e4cb95ec2282aeae20bdcf5a9fba6dfc1f",
+      "originalPayloadSHA256": "db426009233c46a0726171b0cf91f24f3742fdd9e03db2bada1ad84e10f80ecb",
+      "originalGeometrySHA256": "9531e251d6330b786b0e5ac625f05faf9c2e914233624950646fcf13501f8465",
+      "originalBodiesManifestSHA256": "ddd35eb59445543df2a6a30563a86e510f896c393eb430417b7444abbfc3124d",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 19,
+      "originalPolygons": 31,
+      "authoredExactAdjacentJoins": [
+        [
+          1,
+          2
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "sourceAdjacentPenCount": 14,
+      "excludedIncidentalAdjacentContacts": [
+        {
+          "raw": [
+            6,
+            7
+          ],
+          "stop": 7,
+          "startStyle": 12
+        }
+      ],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "sourceOrdinal": 6,
+        "rawIndices": [
+          6
+        ],
+        "primitives": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              170.88,
+              25,
+              139.68,
+              32,
+              90.8,
+              37,
+              0,
+              7
+            ]
+          }
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "j78-6a6f",
+        "u890a-ue0101"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "koseki-391210",
+          "related": "u890a",
+          "dataSHA256": "e423c1cd8ec97ce28f1b193a1a9e73e4cb95ec2282aeae20bdcf5a9fba6dfc1f"
+        },
+        {
+          "name": "u6241-02",
+          "related": "u6241",
+          "dataSHA256": "80de9f9388ac29abb7653346713bb5238b79caa0f35a3295d333442431aea7ee"
+        },
+        {
+          "name": "u8864-01",
+          "related": "u8864",
+          "dataSHA256": "bd52edebc8ec3a39cdaa86d1975ab8fc0a97d4d0ce5bb74db18adb7b248ce9e3"
+        },
+        {
+          "name": "u890a-ue0101",
+          "related": "u890a",
+          "dataSHA256": "234d831fdc48d00bec5106e455ceaf783f4066df710f87e3d993a1cf47d11636"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Original source-ordinal6 remains a long horizontal or left-falling curve",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "u890a",
+      "relatedUnicode": "u890a",
+      "publicURL": "https://glyphwiki.org/wiki/u890a",
+      "archiveDataSHA256": "eda6124f4372646e252af4df35002e9fa61ebf3ec8e3b0eba608ce72693b63c8",
+      "originalPayloadSHA256": "c49d51d9b720ce990dc8c0705c759d30c014db9535238e649b54945208bc72cf",
+      "originalGeometrySHA256": "d0750a61e1259e91884813b05b779ffe562d1be742640ab898d9fb605c0afd06",
+      "originalBodiesManifestSHA256": "c4da16074531067d9098cbdb405047fd11def092f4187f1a40ddb4951e7f7fe9",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 19,
+      "originalPolygons": 30,
+      "authoredExactAdjacentJoins": [
+        [
+          1,
+          2
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "sourceAdjacentPenCount": 14,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "sourceOrdinal": 6,
+        "rawIndices": [
+          6
+        ],
+        "primitives": [
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              77.35,
+              29,
+              187.24,
+              29,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u6241-j02",
+          "related": "u6241",
+          "dataSHA256": "da1c1aad7d93672a32ace5a32d805175bfc3688157e4d5e57a4f543efcc00655"
+        },
+        {
+          "name": "u8864-01",
+          "related": "u8864",
+          "dataSHA256": "bd52edebc8ec3a39cdaa86d1975ab8fc0a97d4d0ce5bb74db18adb7b248ce9e3"
+        },
+        {
+          "name": "u890a",
+          "related": "u890a",
+          "dataSHA256": "eda6124f4372646e252af4df35002e9fa61ebf3ec8e3b0eba608ce72693b63c8"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Original source-ordinal6 remains a long horizontal or left-falling curve",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "hkcs_u975a",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/hkcs_u975a",
+      "archiveDataSHA256": "9ec353426a9117fca2d826e977bfcfa3c1412686a4c19160175bd921010dbe10",
+      "originalPayloadSHA256": "602ba33105fcab9a490651fd8b697e152e299ae0885eb3923d34f72d69aadbc3",
+      "originalGeometrySHA256": "3a066d363603acb65159e84fa7ccef21607010a145a103b451257d4566cd016c",
+      "originalBodiesManifestSHA256": "2ac2f2de0fad854855958f9cd6c0c3896932551510899dda5bc3664f2dead877",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 32,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                34.5856,
+                127.47,
+                80.18439999999998,
+                127.47,
+                2,
+                2
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                34.5856,
+                150.61,
+                80.18439999999998,
+                150.61,
+                2,
+                2
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "hkcs_u6708-04",
+          "related": "u3013",
+          "dataSHA256": "f65793f1035660cd339967b933d5d21493c92b7527bdfc3e909a7804cd58d170"
+        },
+        {
+          "name": "hkcs_u898b-02",
+          "related": "u3013",
+          "dataSHA256": "b08e1a5274a1fa77adf5cc298778806f4243f19c5ece2f4710df8aae84c4366a"
+        },
+        {
+          "name": "hkcs_u9752-01",
+          "related": "u9751",
+          "dataSHA256": "aa79f8eabdb6de0e16582ec1c5e4383638534f5ce91a9e10a2ce22855a8df74e"
+        },
+        {
+          "name": "hkcs_u975a",
+          "related": "u975a",
+          "dataSHA256": "9ec353426a9117fca2d826e977bfcfa3c1412686a4c19160175bd921010dbe10"
+        },
+        {
+          "name": "u6708-04",
+          "related": "u6708",
+          "dataSHA256": "ad7a76dc58a982d4475d4d38b542aeeccdba5c40b16074001ea4accdb9916033"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Two original inner horizontal strokes remain; does not fix 靑/青 blocker",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "u975a",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/u975a",
+      "archiveDataSHA256": "dad09210476e9c03e5e7f94630780c689e547ea00aeb741727a8711490df7b9c",
+      "originalPayloadSHA256": "a4b2a38bff8d600805d82ff20e854118ba37d7a86898939eb532af3b9c627d60",
+      "originalGeometrySHA256": "bf3c54d8e7f3325ab7c76bba970d37a86acbf01fc3861b69604ee2fb5cc2d583",
+      "originalBodiesManifestSHA256": "7de3b232397d16f1b336c6e4df2e43af12dad47a417124373018a37e50093964",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 34,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                52.53,
+                99.02,
+                52.53,
+                141.59,
+                2032,
+                32
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                29.5,
+                141.59,
+                76.03,
+                141.59,
+                2,
+                2
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u76ee",
+          "related": "u76ee",
+          "dataSHA256": "8124f5a0be438e7c000006ec3a5e66bac0a35628d45c798177053bfad7463c5e"
+        },
+        {
+          "name": "u898b-02",
+          "related": "u898b",
+          "dataSHA256": "dce8b45f1109d513d34e5c7d3574e233024f11927adc3bd085d0a3232d869e92"
+        },
+        {
+          "name": "u9751-07",
+          "related": "u9751",
+          "dataSHA256": "0c99ba56ac7fa00ffb716244d5c3f574ced441d3cc2a9a67029f7f8d9891537d"
+        },
+        {
+          "name": "u975a",
+          "related": "u975a",
+          "dataSHA256": "dad09210476e9c03e5e7f94630780c689e547ea00aeb741727a8711490df7b9c"
+        }
+      ],
+      "sourceOnlyPotential": true,
+      "disposition": "Original inner vertical reaches the original lower horizontal; domestic whole/order unreviewed",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "koseki-482630",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/koseki-482630",
+      "archiveDataSHA256": "32e8d9f82361a511c5d242fbff549099c4673a466b25be088ebbb0d9c92b079b",
+      "originalPayloadSHA256": "908cb10a19710fd804b8804ea588525afae1d7124afb240dd54b2716ffe58d4b",
+      "originalGeometrySHA256": "c8c2bf3b40f1fb4d2a1e93e78ac20b5f21e081feaea9e3a38c9ac6a936d2f0ea",
+      "originalBodiesManifestSHA256": "e900a1d4d47c7d8080c777c7b31cfa4fb6e07a8b4bcec69dcbd246489e99ece0",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 34,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                33.24,
+                125,
+                80.76,
+                125,
+                2,
+                2
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                33.24,
+                148,
+                80.76,
+                148,
+                2,
+                2
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "juki-beb8",
+        "u975a-ue0102"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "koseki-482630",
+          "related": "u975a",
+          "dataSHA256": "32e8d9f82361a511c5d242fbff549099c4673a466b25be088ebbb0d9c92b079b"
+        },
+        {
+          "name": "u76ee",
+          "related": "u76ee",
+          "dataSHA256": "8124f5a0be438e7c000006ec3a5e66bac0a35628d45c798177053bfad7463c5e"
+        },
+        {
+          "name": "u898b-02",
+          "related": "u898b",
+          "dataSHA256": "dce8b45f1109d513d34e5c7d3574e233024f11927adc3bd085d0a3232d869e92"
+        },
+        {
+          "name": "u9752-08",
+          "related": "u9752",
+          "dataSHA256": "038ed5b314dbc7fbb5eb57199da6f71d503bfa40f774dfd112d57720160025cd"
+        },
+        {
+          "name": "u975a-ue0102",
+          "related": "u975a",
+          "dataSHA256": "0ef14d3df81bde7d62eb3bfb0419153a8cef962fe4a61a3748e5f302e4a5562e"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Two original inner horizontal strokes remain; does not fix 靑/青 blocker",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "j78-6b66",
+      "relatedUnicode": "u8ade",
+      "publicURL": "https://glyphwiki.org/wiki/j78-6b66",
+      "archiveDataSHA256": "e7dec38be9153f8683a4115fc7ca11f33c5b2c4d13285d1c63a2ce6fe6b4a997",
+      "originalPayloadSHA256": "3268da5c43d3af11592ee48a34953511c0ab99c79476baf9e03a80d655625e1d",
+      "originalGeometrySHA256": "b79c923ad31bfd49f9ee56b71ffdb07d22d1024d056eba69ed0ac18c1410ff86",
+      "originalBodiesManifestSHA256": "2cbe809d0c0bf905a87b214db79f8b4f430b41fa3e7b8c24f2672841f77cbd97",
+      "raw": 19,
+      "visibleRaw": 19,
+      "rawEmpty": [],
+      "drawingCalls": 21,
+      "originalPolygons": 33,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "sourceAdjacentPenCount": 16,
+      "excludedIncidentalAdjacentContacts": [
+        {
+          "raw": [
+            8,
+            9
+          ],
+          "stop": 7,
+          "startStyle": 12
+        }
+      ],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "sourceOrdinal": 8,
+        "rawIndices": [
+          8
+        ],
+        "primitives": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              172.86,
+              25,
+              142.71,
+              32,
+              95.475,
+              37,
+              0,
+              7
+            ]
+          }
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "koseki-405190"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "j78-6b66",
+          "related": "u8ade",
+          "dataSHA256": "e7dec38be9153f8683a4115fc7ca11f33c5b2c4d13285d1c63a2ce6fe6b4a997"
+        },
+        {
+          "name": "u6241-02",
+          "related": "u6241",
+          "dataSHA256": "80de9f9388ac29abb7653346713bb5238b79caa0f35a3295d333442431aea7ee"
+        },
+        {
+          "name": "u8a01-01",
+          "related": "u8a01",
+          "dataSHA256": "38c80edb94c8e42e327fc962f0d828a66a89c3ce5938b4d1be2360c718d3acd1"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Original source-ordinal8 remains a long horizontal or left-falling curve; no viable blocker-fixing original",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "koseki-405190",
+      "relatedUnicode": "u8ade",
+      "publicURL": "https://glyphwiki.org/wiki/koseki-405190",
+      "archiveDataSHA256": "cc37e767da4e867b8a160429a1dacacf97fda1ab78f87f90a58ac1634aec34a9",
+      "originalPayloadSHA256": "3268da5c43d3af11592ee48a34953511c0ab99c79476baf9e03a80d655625e1d",
+      "originalGeometrySHA256": "b79c923ad31bfd49f9ee56b71ffdb07d22d1024d056eba69ed0ac18c1410ff86",
+      "originalBodiesManifestSHA256": "6ad3b808e1e6733ccbc92ae829c5dabea4c2520bcd7127b06a68d4a74cd7a197",
+      "raw": 19,
+      "visibleRaw": 19,
+      "rawEmpty": [],
+      "drawingCalls": 21,
+      "originalPolygons": 33,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "sourceAdjacentPenCount": 16,
+      "excludedIncidentalAdjacentContacts": [
+        {
+          "raw": [
+            8,
+            9
+          ],
+          "stop": 7,
+          "startStyle": 12
+        }
+      ],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "sourceOrdinal": 8,
+        "rawIndices": [
+          8
+        ],
+        "primitives": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              172.86,
+              25,
+              142.71,
+              32,
+              95.475,
+              37,
+              0,
+              7
+            ]
+          }
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "j78-6b66"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "j78-6b66",
+          "related": "u8ade",
+          "dataSHA256": "e7dec38be9153f8683a4115fc7ca11f33c5b2c4d13285d1c63a2ce6fe6b4a997"
+        },
+        {
+          "name": "koseki-405190",
+          "related": "u8ade",
+          "dataSHA256": "cc37e767da4e867b8a160429a1dacacf97fda1ab78f87f90a58ac1634aec34a9"
+        },
+        {
+          "name": "u6241-02",
+          "related": "u6241",
+          "dataSHA256": "80de9f9388ac29abb7653346713bb5238b79caa0f35a3295d333442431aea7ee"
+        },
+        {
+          "name": "u8a01-01",
+          "related": "u8a01",
+          "dataSHA256": "38c80edb94c8e42e327fc962f0d828a66a89c3ce5938b4d1be2360c718d3acd1"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Original source-ordinal8 remains a long horizontal or left-falling curve; no viable blocker-fixing original",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "u8ade",
+      "relatedUnicode": "u8ade",
+      "publicURL": "https://glyphwiki.org/wiki/u8ade",
+      "archiveDataSHA256": "4e8b71dd047879395d5842b0e6f306004abe138e2d49f31e87e2de4c7e938b8f",
+      "originalPayloadSHA256": "de03be73bb1140d5642a44fd046afca80e52a083b0166e668c1736418d3c55d0",
+      "originalGeometrySHA256": "76f7c17d204a1af1da42bf9b77f51e41fa9c77a5e0d0284ba7f38130d26eaaf5",
+      "originalBodiesManifestSHA256": "81ed5745d70bc1fe1126d7749f2d382e5135b62ade46cb19129715fc14cb832f",
+      "raw": 19,
+      "visibleRaw": 19,
+      "rawEmpty": [],
+      "drawingCalls": 21,
+      "originalPolygons": 32,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "sourceAdjacentPenCount": 16,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "sourceOrdinal": 8,
+        "rawIndices": [
+          8
+        ],
+        "primitives": [
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              81.375,
+              29,
+              187.8,
+              29,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u6241-j02",
+          "related": "u6241",
+          "dataSHA256": "da1c1aad7d93672a32ace5a32d805175bfc3688157e4d5e57a4f543efcc00655"
+        },
+        {
+          "name": "u8a01-01",
+          "related": "u8a01",
+          "dataSHA256": "38c80edb94c8e42e327fc962f0d828a66a89c3ce5938b4d1be2360c718d3acd1"
+        },
+        {
+          "name": "u8ade",
+          "related": "u8ade",
+          "dataSHA256": "4e8b71dd047879395d5842b0e6f306004abe138e2d49f31e87e2de4c7e938b8f"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Original source-ordinal8 remains a long horizontal or left-falling curve; no viable blocker-fixing original",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "juki-beb8",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/juki-beb8",
+      "archiveDataSHA256": "32e8d9f82361a511c5d242fbff549099c4673a466b25be088ebbb0d9c92b079b",
+      "originalPayloadSHA256": "908cb10a19710fd804b8804ea588525afae1d7124afb240dd54b2716ffe58d4b",
+      "originalGeometrySHA256": "c8c2bf3b40f1fb4d2a1e93e78ac20b5f21e081feaea9e3a38c9ac6a936d2f0ea",
+      "originalBodiesManifestSHA256": "a23016f9b3b5f4ff9d992a93e09edc7bfbba01d5bd78147d10b0e17d577e7e21",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 34,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                33.24,
+                125,
+                80.76,
+                125,
+                2,
+                2
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                33.24,
+                148,
+                80.76,
+                148,
+                2,
+                2
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "koseki-482630",
+        "u975a-ue0102"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "juki-beb8",
+          "related": "u975a",
+          "dataSHA256": "32e8d9f82361a511c5d242fbff549099c4673a466b25be088ebbb0d9c92b079b"
+        },
+        {
+          "name": "u76ee",
+          "related": "u76ee",
+          "dataSHA256": "8124f5a0be438e7c000006ec3a5e66bac0a35628d45c798177053bfad7463c5e"
+        },
+        {
+          "name": "u898b-02",
+          "related": "u898b",
+          "dataSHA256": "dce8b45f1109d513d34e5c7d3574e233024f11927adc3bd085d0a3232d869e92"
+        },
+        {
+          "name": "u9752-08",
+          "related": "u9752",
+          "dataSHA256": "038ed5b314dbc7fbb5eb57199da6f71d503bfa40f774dfd112d57720160025cd"
+        },
+        {
+          "name": "u975a-ue0102",
+          "related": "u975a",
+          "dataSHA256": "0ef14d3df81bde7d62eb3bfb0419153a8cef962fe4a61a3748e5f302e4a5562e"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Two original inner horizontal strokes remain; does not fix 靑/青 blocker",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "toki-01084520",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/toki-01084520",
+      "archiveDataSHA256": "df46cfdb05f6fe94dbe177a1255f802268f15a144d8890ef0ee0c8298997d83b",
+      "originalPayloadSHA256": "c40480b60780eb1523433ca4db3925b1262c43ec083dc3f6338a2cc22f1d1925",
+      "originalGeometrySHA256": "515b6a75378041079a37f7a3a673ee3952c7c785e00996f598457284e49a148b",
+      "originalBodiesManifestSHA256": "9ff80f3a011162203aab3cb1e1d6741053e0c2f7a659c6d9cbf36f0004628c86",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 36,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                54,
+                82,
+                54,
+                138,
+                0,
+                32
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                15,
+                138,
+                97,
+                138,
+                2,
+                300
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "u975a-ue0103"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "toki-01084520",
+          "related": "u975a",
+          "dataSHA256": "df46cfdb05f6fe94dbe177a1255f802268f15a144d8890ef0ee0c8298997d83b"
+        },
+        {
+          "name": "u76ee",
+          "related": "u76ee",
+          "dataSHA256": "8124f5a0be438e7c000006ec3a5e66bac0a35628d45c798177053bfad7463c5e"
+        },
+        {
+          "name": "u898b-02",
+          "related": "u898b",
+          "dataSHA256": "dce8b45f1109d513d34e5c7d3574e233024f11927adc3bd085d0a3232d869e92"
+        },
+        {
+          "name": "u975a-ue0103",
+          "related": "u975a",
+          "dataSHA256": "04e486f63a2d9d0e857efcde1be8563701ea7a287e721d649654d5fa1bb283f7"
+        }
+      ],
+      "sourceOnlyPotential": true,
+      "disposition": "Original inner vertical reaches the original lower horizontal; domestic whole/order unreviewed",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "u975a-g",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/u975a-g",
+      "archiveDataSHA256": "62dfb3701db9df575215e163e4efbc06c74446fe2841d98b5d0aca59dc109b48",
+      "originalPayloadSHA256": "e7768928b9ddbdc3062fa037f3626df46b2230969621d4ada1afb846d5ed47bb",
+      "originalGeometrySHA256": "56d560091104b73c0f5930954cbd289956c38b291019887ce626f976787eb6f4",
+      "originalBodiesManifestSHA256": "7678eb20f3c431102de8e9005d0c0f03fd56d4f60bb632ef9396934a0c68fa41",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 32,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                30.924999999999997,
+                125,
+                82.075,
+                125,
+                2,
+                2
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                30.924999999999997,
+                148,
+                82.075,
+                148,
+                2,
+                2
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u898b-02-var-002",
+          "related": "u898b",
+          "dataSHA256": "b08e1a5274a1fa77adf5cc298778806f4243f19c5ece2f4710df8aae84c4366a"
+        },
+        {
+          "name": "u9752-08",
+          "related": "u9752",
+          "dataSHA256": "038ed5b314dbc7fbb5eb57199da6f71d503bfa40f774dfd112d57720160025cd"
+        },
+        {
+          "name": "u975a-g",
+          "related": "u975a",
+          "dataSHA256": "62dfb3701db9df575215e163e4efbc06c74446fe2841d98b5d0aca59dc109b48"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Two original inner horizontal strokes remain; does not fix 靑/青 blocker",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "u975a-ue0102",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/u975a-ue0102",
+      "archiveDataSHA256": "0ef14d3df81bde7d62eb3bfb0419153a8cef962fe4a61a3748e5f302e4a5562e",
+      "originalPayloadSHA256": "908cb10a19710fd804b8804ea588525afae1d7124afb240dd54b2716ffe58d4b",
+      "originalGeometrySHA256": "c8c2bf3b40f1fb4d2a1e93e78ac20b5f21e081feaea9e3a38c9ac6a936d2f0ea",
+      "originalBodiesManifestSHA256": "7a8a8d13a9cd9453d5086a3772a0eca74dd92d34199cfa2fa6cc4acc0c042abd",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 34,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                33.24,
+                125,
+                80.76,
+                125,
+                2,
+                2
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                33.24,
+                148,
+                80.76,
+                148,
+                2,
+                2
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "koseki-482630",
+        "juki-beb8"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u76ee",
+          "related": "u76ee",
+          "dataSHA256": "8124f5a0be438e7c000006ec3a5e66bac0a35628d45c798177053bfad7463c5e"
+        },
+        {
+          "name": "u898b-02",
+          "related": "u898b",
+          "dataSHA256": "dce8b45f1109d513d34e5c7d3574e233024f11927adc3bd085d0a3232d869e92"
+        },
+        {
+          "name": "u9752-08",
+          "related": "u9752",
+          "dataSHA256": "038ed5b314dbc7fbb5eb57199da6f71d503bfa40f774dfd112d57720160025cd"
+        },
+        {
+          "name": "u975a-ue0102",
+          "related": "u975a",
+          "dataSHA256": "0ef14d3df81bde7d62eb3bfb0419153a8cef962fe4a61a3748e5f302e4a5562e"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Two original inner horizontal strokes remain; does not fix 靑/青 blocker",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "u975a-ue0103",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/u975a-ue0103",
+      "archiveDataSHA256": "04e486f63a2d9d0e857efcde1be8563701ea7a287e721d649654d5fa1bb283f7",
+      "originalPayloadSHA256": "c40480b60780eb1523433ca4db3925b1262c43ec083dc3f6338a2cc22f1d1925",
+      "originalGeometrySHA256": "515b6a75378041079a37f7a3a673ee3952c7c785e00996f598457284e49a148b",
+      "originalBodiesManifestSHA256": "ba69d7ac64071dfc8359df317406ad5eaad7d70b87e44f64a1808c0518e99d6c",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 36,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                54,
+                82,
+                54,
+                138,
+                0,
+                32
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                15,
+                138,
+                97,
+                138,
+                2,
+                300
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "toki-01084520"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u76ee",
+          "related": "u76ee",
+          "dataSHA256": "8124f5a0be438e7c000006ec3a5e66bac0a35628d45c798177053bfad7463c5e"
+        },
+        {
+          "name": "u898b-02",
+          "related": "u898b",
+          "dataSHA256": "dce8b45f1109d513d34e5c7d3574e233024f11927adc3bd085d0a3232d869e92"
+        },
+        {
+          "name": "u975a-ue0103",
+          "related": "u975a",
+          "dataSHA256": "04e486f63a2d9d0e857efcde1be8563701ea7a287e721d649654d5fa1bb283f7"
+        }
+      ],
+      "sourceOnlyPotential": true,
+      "disposition": "Original inner vertical reaches the original lower horizontal; domestic whole/order unreviewed",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "u975a-var-001",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/u975a-var-001",
+      "archiveDataSHA256": "a518ff7454ec49218e9ca398063acdeb7e5e64195e6a00904fe8e6f2e30474e4",
+      "originalPayloadSHA256": "90c003f94cfd25fe61d9cc9c324c9907712fdfc1f27d14754ccb7d13726c6abc",
+      "originalGeometrySHA256": "4341aa00ea564145279f35b6c7bcbea1c6471bb51d97fe72eab9eb96b9c45bba",
+      "originalBodiesManifestSHA256": "639dd3b17aa128b07810d1d036027fbb0370885e76e56463fe6ea0aed14d62f3",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 20,
+      "originalPolygons": 32,
+      "authoredExactAdjacentJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "sourceAdjacentPenCount": 15,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                52.53,
+                99.02,
+                52.53,
+                141.59,
+                2032,
+                32
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                29.5,
+                141.59,
+                76.03,
+                141.59,
+                2,
+                2
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u898b-02-var-002",
+          "related": "u898b",
+          "dataSHA256": "b08e1a5274a1fa77adf5cc298778806f4243f19c5ece2f4710df8aae84c4366a"
+        },
+        {
+          "name": "u9751-07",
+          "related": "u9751",
+          "dataSHA256": "0c99ba56ac7fa00ffb716244d5c3f574ced441d3cc2a9a67029f7f8d9891537d"
+        },
+        {
+          "name": "u975a-var-001",
+          "related": "u975a",
+          "dataSHA256": "a518ff7454ec49218e9ca398063acdeb7e5e64195e6a00904fe8e6f2e30474e4"
+        }
+      ],
+      "sourceOnlyPotential": true,
+      "disposition": "Original inner vertical reaches the original lower horizontal; domestic whole/order unreviewed",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "umbreon126_u9962-s1",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/umbreon126_u9962-s1",
+      "archiveDataSHA256": "61ead3887c336b4271f1e46e6d6d8e3a6069e800e23345b9ae4ef6c499e67fc7",
+      "originalPayloadSHA256": "f5256a2fa44c89db59106cc19d45d9975b7e968758774a86de81098bc9ab095d",
+      "originalGeometrySHA256": "d5c12af7d8a2e76b02613d8360177f8de46bac53344652330317b3296edda525",
+      "originalBodiesManifestSHA256": "1cf9a6d4fa12a1a84e953ed067249743a330e741070b616e237de1c157050515",
+      "raw": 12,
+      "visibleRaw": 12,
+      "rawEmpty": [],
+      "drawingCalls": 16,
+      "originalPolygons": 30,
+      "authoredExactAdjacentJoins": [
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "sourceAdjacentPenCount": 10,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8,
+            9
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                108.84,
+                27,
+                108.84,
+                128,
+                12,
+                0
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                108.84,
+                27,
+                167.64,
+                27,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                167.64,
+                27,
+                167.64,
+                128,
+                1022,
+                0
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u2ff1-u58eb-u2053c",
+          "related": "u21249",
+          "dataSHA256": "03751fef564b9e1e8d5aab12fbc6a843c11b7bdcc9a42d865ddfff0a2982a56e"
+        },
+        {
+          "name": "u58eb-03",
+          "related": "u58eb",
+          "dataSHA256": "3ca967e5b3095780adfd44c52475ebd4f3f8140878f772c2a67ec247ce01fae3"
+        },
+        {
+          "name": "u89c1-02",
+          "related": "u89c1",
+          "dataSHA256": "4779697edeeb0dd9ae12d192eab938ab4a2e259c69c35a3a4c9c49c35a81d288"
+        },
+        {
+          "name": "umbreon126_u9962-s1",
+          "related": "u975a",
+          "dataSHA256": "61ead3887c336b4271f1e46e6d6d8e3a6069e800e23345b9ae4ef6c499e67fc7"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Only 10 authored adjacent pens and part-like source name; not a verified domestic whole",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "umbreon126_u9962-s2",
+      "relatedUnicode": "u975a",
+      "publicURL": "https://glyphwiki.org/wiki/umbreon126_u9962-s2",
+      "archiveDataSHA256": "fcf75c276c821b749aed1956ea607f62bf9c2493989daf5bc827396fd2768afa",
+      "originalPayloadSHA256": "8f6e6857a8aae3245072b28887b12954287d5cbd5a898229da4e192623dbf6d0",
+      "originalGeometrySHA256": "cc26d5903896a49738eb7d1218d06dccfa2a4451e8d8aca2bafbfa34becceb65",
+      "originalBodiesManifestSHA256": "495bd6cb5a48e316952110d90c09ff5e642e968e6c37854872f47043793025c6",
+      "raw": 12,
+      "visibleRaw": 12,
+      "rawEmpty": [],
+      "drawingCalls": 15,
+      "originalPolygons": 30,
+      "authoredExactAdjacentJoins": [
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "sourceAdjacentPenCount": 10,
+      "excludedIncidentalAdjacentContacts": [],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "leftSourceOrdinals": [
+          7,
+          8
+        ],
+        "rawIndices": [
+          [
+            7
+          ],
+          [
+            8,
+            9
+          ]
+        ],
+        "primitives": [
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                108.76,
+                27,
+                108.76,
+                128,
+                12,
+                0
+              ]
+            }
+          ],
+          [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                108.76,
+                27,
+                166.96,
+                27,
+                2,
+                2
+              ]
+            },
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                166.96,
+                27,
+                166.96,
+                128,
+                1022,
+                0
+              ]
+            }
+          ]
+        ]
+      },
+      "geometryDuplicateRoots": [],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u2ff1-u58eb-u5915",
+          "related": "u9752",
+          "dataSHA256": "18badd769711be85c54ae1b02a25d1f8cf01d6e0e9396e8e02f490c27912b343"
+        },
+        {
+          "name": "u58eb-03",
+          "related": "u58eb",
+          "dataSHA256": "3ca967e5b3095780adfd44c52475ebd4f3f8140878f772c2a67ec247ce01fae3"
+        },
+        {
+          "name": "u5915-09",
+          "related": "u5915",
+          "dataSHA256": "a86356c8bb59565e6464299ec9bdef758f4e991208aea8555c23da8cd1b85799"
+        },
+        {
+          "name": "u89c1-02",
+          "related": "u89c1",
+          "dataSHA256": "4779697edeeb0dd9ae12d192eab938ab4a2e259c69c35a3a4c9c49c35a81d288"
+        },
+        {
+          "name": "umbreon126_u9962-s2",
+          "related": "u975a",
+          "dataSHA256": "fcf75c276c821b749aed1956ea607f62bf9c2493989daf5bc827396fd2768afa"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Only 10 authored adjacent pens and part-like source name; not a verified domestic whole",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "j78-6a6f",
+      "relatedUnicode": "u890a",
+      "publicURL": "https://glyphwiki.org/wiki/j78-6a6f",
+      "archiveDataSHA256": "e423c1cd8ec97ce28f1b193a1a9e73e4cb95ec2282aeae20bdcf5a9fba6dfc1f",
+      "originalPayloadSHA256": "db426009233c46a0726171b0cf91f24f3742fdd9e03db2bada1ad84e10f80ecb",
+      "originalGeometrySHA256": "9531e251d6330b786b0e5ac625f05faf9c2e914233624950646fcf13501f8465",
+      "originalBodiesManifestSHA256": "06320eab490098896d59d0ed9bc02d5ab17456c1e92145632708cefce5ab1991",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 19,
+      "originalPolygons": 31,
+      "authoredExactAdjacentJoins": [
+        [
+          1,
+          2
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "sourceAdjacentPenCount": 14,
+      "excludedIncidentalAdjacentContacts": [
+        {
+          "raw": [
+            6,
+            7
+          ],
+          "stop": 7,
+          "startStyle": 12
+        }
+      ],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "sourceOrdinal": 6,
+        "rawIndices": [
+          6
+        ],
+        "primitives": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              170.88,
+              25,
+              139.68,
+              32,
+              90.8,
+              37,
+              0,
+              7
+            ]
+          }
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "koseki-391210",
+        "u890a-ue0101"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "j78-6a6f",
+          "related": "u890a",
+          "dataSHA256": "e423c1cd8ec97ce28f1b193a1a9e73e4cb95ec2282aeae20bdcf5a9fba6dfc1f"
+        },
+        {
+          "name": "u6241-02",
+          "related": "u6241",
+          "dataSHA256": "80de9f9388ac29abb7653346713bb5238b79caa0f35a3295d333442431aea7ee"
+        },
+        {
+          "name": "u8864-01",
+          "related": "u8864",
+          "dataSHA256": "bd52edebc8ec3a39cdaa86d1975ab8fc0a97d4d0ce5bb74db18adb7b248ce9e3"
+        },
+        {
+          "name": "u890a-ue0101",
+          "related": "u890a",
+          "dataSHA256": "234d831fdc48d00bec5106e455ceaf783f4066df710f87e3d993a1cf47d11636"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Original source-ordinal6 remains a long horizontal or left-falling curve",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    },
+    {
+      "root": "u890a-ue0101",
+      "relatedUnicode": "u890a",
+      "publicURL": "https://glyphwiki.org/wiki/u890a-ue0101",
+      "archiveDataSHA256": "234d831fdc48d00bec5106e455ceaf783f4066df710f87e3d993a1cf47d11636",
+      "originalPayloadSHA256": "db426009233c46a0726171b0cf91f24f3742fdd9e03db2bada1ad84e10f80ecb",
+      "originalGeometrySHA256": "9531e251d6330b786b0e5ac625f05faf9c2e914233624950646fcf13501f8465",
+      "originalBodiesManifestSHA256": "19e1856e94e4dab1405abf02036a277b518f208e53281a99b740639b85e4fac5",
+      "raw": 17,
+      "visibleRaw": 17,
+      "rawEmpty": [],
+      "drawingCalls": 19,
+      "originalPolygons": 31,
+      "authoredExactAdjacentJoins": [
+        [
+          1,
+          2
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "sourceAdjacentPenCount": 14,
+      "excludedIncidentalAdjacentContacts": [
+        {
+          "raw": [
+            6,
+            7
+          ],
+          "stop": 7,
+          "startStyle": 12
+        }
+      ],
+      "internalPrimitiveGaps": [],
+      "publicSourceFeature": {
+        "sourceOrdinal": 6,
+        "rawIndices": [
+          6
+        ],
+        "primitives": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              170.88,
+              25,
+              139.68,
+              32,
+              90.8,
+              37,
+              0,
+              7
+            ]
+          }
+        ]
+      },
+      "geometryDuplicateRoots": [
+        "koseki-391210",
+        "j78-6a6f"
+      ],
+      "historyIdentities": [],
+      "declaredOriginalBodyIdentities": [
+        {
+          "name": "u6241-02",
+          "related": "u6241",
+          "dataSHA256": "80de9f9388ac29abb7653346713bb5238b79caa0f35a3295d333442431aea7ee"
+        },
+        {
+          "name": "u8864-01",
+          "related": "u8864",
+          "dataSHA256": "bd52edebc8ec3a39cdaa86d1975ab8fc0a97d4d0ce5bb74db18adb7b248ce9e3"
+        },
+        {
+          "name": "u890a-ue0101",
+          "related": "u890a",
+          "dataSHA256": "234d831fdc48d00bec5106e455ceaf783f4066df710f87e3d993a1cf47d11636"
+        }
+      ],
+      "sourceOnlyPotential": false,
+      "disposition": "Original source-ordinal6 remains a long horizontal or left-falling curve",
+      "sourceGeometryChanged": false,
+      "wholeSpliced": false,
+      "latestSubstitution": false,
+      "nativeApproved": false
+    }
+  ],
+  "recommendations": [
+    {
+      "glyph": "靚",
+      "root": "u975a",
+      "sourceAdjacentPens": 15,
+      "originalPolygons": 34,
+      "feature": "원본 source7 수직이 source8 가로에 닿는 靑 내부 형상을 갖습니다.",
+      "risks": [
+        "상부 원본1–4 순서는 H,H,H,V입니다. 국내 전체 필순/방향 미검토입니다.",
+        "見의 fold·tail 및 전체 domestic pen 대응과 mask boundary 미검토입니다."
+      ]
+    },
+    {
+      "glyph": "靚",
+      "root": "u975a-var-001",
+      "sourceAdjacentPens": 15,
+      "originalPolygons": 32,
+      "feature": "靑 왼쪽은 base와 같지만 見 원본 body/geometry는 다릅니다.",
+      "risks": [
+        "base의 duplicate whole로 취급하지 않습니다. 국내 見 형상·순서는 미검토입니다.",
+        "상부 원본1–4 순서는 H,H,H,V이며 임의 재순서는 금지합니다."
+      ]
+    },
+    {
+      "glyph": "靚",
+      "root": "toki-01084520",
+      "duplicate": "u975a-ue0103",
+      "sourceAdjacentPens": 15,
+      "originalPolygons": 36,
+      "feature": "source7 수직이 source8 가로에 닿는 별도 靑 geometry입니다.",
+      "risks": [
+        "상부 원본1–4 순서는 H,H,H,V입니다.",
+        "국내 전체 형상·필순·mask boundary는 미검토입니다."
+      ]
+    },
+    {
+      "glyph": "褊",
+      "root": "hkcs_u890a",
+      "sourceAdjacentPens": 14,
+      "originalPolygons": 30,
+      "feature": "source6은 원본 오른쪽 아래의 짧은 Q 점입니다.",
+      "originalFeature": {
+        "kind": "cdDrawCurve",
+        "args": [
+          106.55,
+          13,
+          123.35,
+          21,
+          130.7,
+          36,
+          7,
+          8
+        ]
+      },
+      "risks": [
+        "이 특징은 기존 긴 가로획과 다릅니다. 국내 전체 획 대응과 순서 승인은 없습니다.",
+        "衤와 扁의 전체 형상/방향·말단·프레임/재생 미검토입니다."
+      ]
+    }
+  ],
+  "rejectedFeatureCases": {
+    "jingHKCS": "hkcs_u975a의 의존성 related는 u9751이지만 실제 아래 상자에는 두 내부 가로획이 있으므로 靑 blocker를 해결했다고 보지 않습니다.",
+    "jingPartNames": "umbreon126_u9962-s1/s2는 source adjacent10획이며 靚15의 whole 후보로 승격하지 않습니다.",
+    "bianRemaining": "base는 긴 가로획, j78/koseki/VS1은 왼쪽으로 떨어지는 Q 첫 획입니다.",
+    "pianAll": "세 실제 related 원본에서 원하는 짧은 오른쪽 첫 획이 확인되지 않았습니다. j78/koseki는 동일 geometry이고 왼쪽 Q, base는 긴 H입니다. viable0."
+  },
+  "summary": {
+    "exactIdentifiers": 19,
+    "actualSourceReproductions": 19,
+    "domesticWholeEligibilityVerified": false,
+    "distinctOriginalGeometryFingerprints": 13,
+    "sourceOnlyPotentialGlyphs": 2,
+    "sourceOnlyPotentialDistinctWholeGeometries": 4,
+    "sourceOnlyPotentialIdentifiers": 5,
+    "pianViable": 0,
+    "newNativeApprovals": 0,
+    "newRuntimeApplications": 0,
+    "originalHoldUnchanged": true
+  }
+}
