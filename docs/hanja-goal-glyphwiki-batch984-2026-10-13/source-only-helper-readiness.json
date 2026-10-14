@@ -1,0 +1,132 @@
+{
+  "batch": 984,
+  "glyph": "敝",
+  "catalogStrokes": 12,
+  "domesticClips": 11,
+  "status": "blocked-source-only-helper-contract-valid",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false,
+    "evidenceFile": "strict-native-server-preflight.json"
+  },
+  "selectedRoot": "u655d",
+  "selectedFile": "engine-whole-u655d.json",
+  "selectedIdentity": {
+    "sourceRoot": "u655d",
+    "sourceProofFile": "./engine-whole-u655d.json",
+    "sourceProofFileSha256": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "a1e4d41afd749d9af493f30fcaf7eccb685b911aead2f38349104d6bbfb0fb87"
+  },
+  "originalBytePins": {
+    "sources.json": "9c41dc687373f9efe6866099dbc27310ccff04e7ccf37a26900aac2883eaa7e8",
+    "metadata.json": "4bdeadb13ffc9c00d1705dc0e9768de83a7de4cb08b7e863698b3d1ca25ab8f1",
+    "engine-proof.json": "a1e4d41afd749d9af493f30fcaf7eccb685b911aead2f38349104d6bbfb0fb87",
+    "engine-whole-u655d.json": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+    "strict-native-server-preflight.json": "3c667bcfcdbb763b85f546b8882c43ef9c9090c46fe1087f95efb3ca6c69b9dc",
+    "progressive.mjs": "088a4b7e5a464549fc23b7f099167116c4a881c5202ef516e5ea456421031b34",
+    "strict-native-adapter.mjs": "7815717793ccfd8c8f224a322e1ccb3120ec6a11fb1c47bb98037bd6d4d1839e",
+    "serve-native.py": "aec00a0f3b6379cb5cb13caa62f9154a6127e7e4173f029ec386ff1c6b6806e9",
+    "native-server-input-pins.json": "ca54639ca36ba094ebc96999f1954cab924b7c510ab2204feeb4a4174d7a3381"
+  },
+  "wholeFamily": {
+    "names": [
+      "u655d",
+      "u655d-03",
+      "u655d-03-var-001",
+      "u655d-03-var-002",
+      "u655d-03-var-004",
+      "u655d-07-itaiji-001",
+      "u655d-g",
+      "u655d-g03",
+      "u655d-itaiji-001",
+      "u655d-ue0100",
+      "u655d-ue0101",
+      "u655d-ue0102",
+      "u655d-ue0103",
+      "u655d-ue0104",
+      "u655d-var-001",
+      "u655d-var-002",
+      "u655d-var-003"
+    ],
+    "missingFixedDependencies": [
+      "u5182-j"
+    ],
+    "missingAlternativesNeverPromoted": true
+  },
+  "selectedWhole": {
+    "raw": 13,
+    "draw": 14,
+    "Q": 8,
+    "B": 0,
+    "polygons": 28
+  },
+  "callerContract": "mandatory five-field selected proof/header identity + complete frozen body",
+  "guards": {
+    "actualExecutionExit": 0,
+    "totalRejected": null,
+    "sourceRejected": 6,
+    "identityRejected": 6,
+    "defaultIdentity": "mandatory caller identity rejected on omission",
+    "callerPinsPassed": true,
+    "originalInputImmutable": true,
+    "sourceAndEngineHeaderKeys": 8,
+    "expectedPinnedInputsVerified": 22,
+    "actualTestModule": "strict-native-adapter.mjs selected proof contract"
+  },
+  "compiler": {
+    "pens": 0,
+    "masks": 0,
+    "originalPolygonCount": 28,
+    "originalPolygonsExactlyOnce": null,
+    "blockedReason": "catalog-12-domestic-11-mismatch",
+    "nonConsecutiveGroups": [],
+    "finePens": [],
+    "maskTransitions": [],
+    "originalSpecialTerminals": [
+      {
+        "raw": 5,
+        "call": 1,
+        "kind": "cdDrawCurve",
+        "terminal": 514
+      }
+    ],
+    "staticRawCurveIndices": [
+      1,
+      2,
+      5,
+      7,
+      8,
+      9,
+      11,
+      12
+    ],
+    "quantitativeMaskCoverageRisks": [],
+    "compiledGeometrySHA256": null,
+    "compiledGeometrySHA256Reason": "Blocked before mask compilation; no compiled geometry SHA or emitted-polygon conservation claim.",
+    "missingAlternativeHandling": "u5182-j remains missing in pinned archive; prior source PASS reproduced expected missing alternatives rather than making all17 roots complete."
+  },
+  "helper": {
+    "exists": true,
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch984-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "existing helper defaults to OS-selected port; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false,
+  "date": "2026-10-14"
+}
