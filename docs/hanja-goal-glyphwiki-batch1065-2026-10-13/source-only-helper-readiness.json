@@ -1,0 +1,134 @@
+{
+  "batch": 1065,
+  "glyph": "癎",
+  "date": "2026-10-14",
+  "catalogStrokes": 17,
+  "domesticClips": 17,
+  "status": "source-only exact original candidate; native pending",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "evidenceFile": "native-server-preparation-source-analysis.json",
+    "priorSourceEvidencePassed": null,
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false,
+    "fixedDependenciesComplete": true
+  },
+  "selectedRoot": "u764e",
+  "selectedFile": "engine-whole-u764e.json",
+  "selectedIdentity": {
+    "sourceRoot": "u764e",
+    "sourceProofFile": "./engine-whole-u764e.json",
+    "sourceProofFileSha256": "95ec99a00585902bd488689dc0a8bf8e052b34839855d18f9d90b5c18bf544d0",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "6e5a8da21732c315ae21728387f0a1647115922afb5fdf6375eb383b22e098a0",
+    "sourceMetadataFile": "./sources.json",
+    "sourceMetadataFileSha256": "2e93738e079ab6a0322836ac66e2ebfee28cfd9c30ae5357ad0fb002f500c683"
+  },
+  "originalBytePins": {
+    "sources.json": "2e93738e079ab6a0322836ac66e2ebfee28cfd9c30ae5357ad0fb002f500c683",
+    "metadata.json": "7230d467ddda09ed4700e7fc9ce1562cba746b1588c365021e9d2b8c654317a9",
+    "engine-proof.json": "6e5a8da21732c315ae21728387f0a1647115922afb5fdf6375eb383b22e098a0",
+    "engine-whole-u764e.json": "95ec99a00585902bd488689dc0a8bf8e052b34839855d18f9d90b5c18bf544d0",
+    "native-server-preparation-source-analysis.json": "bc6d44d02bd161079dfb53a4311b20714c8fb301e46ed1f823574eb028079f7c",
+    "progressive.mjs": "81f9d47b80e1f056a28b77254bba8617a7bb8262d721487bbad55dd389a66640",
+    "server-compile.mjs": "cd8c2f423e60e8e317812ae2e38f88a173489aaa3da94d3ec2fc82339807ea81"
+  },
+  "wholeFamily": {
+    "names": [
+      "u764e",
+      "u764e-k",
+      "u764e-ue0100"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "callerContract": "explicit root + trace + five-key full original proof + seven-field file/header/metadata identity",
+  "guards": {
+    "exit": 0,
+    "sourceRejected": 6,
+    "identityRejected": 7,
+    "totalRejected": 14,
+    "pinsPassed": true,
+    "inputUnchanged": true,
+    "omission": "omitted identity rejected",
+    "actualExecutionExit": 0
+  },
+  "compiler": {
+    "pens": 17,
+    "masks": 18,
+    "originalPolygonCount": 33,
+    "originalPolygonsExactlyOnce": true,
+    "compiledGeometrySHA256": "c0b260c50160d69dac6dafc7a97946c1ef0d9963e3e057ea426265257a3d9597",
+    "blockedReason": null,
+    "nonConsecutiveGroups": [],
+    "finePens": [
+      3,
+      4,
+      5,
+      7,
+      11,
+      15
+    ],
+    "maskTransitions": [
+      {
+        "pen": 11,
+        "mask": 2,
+        "start": 0.895096900461687,
+        "weights": [
+          85.326068,
+          10
+        ]
+      }
+    ],
+    "originalSpecialTerminals": [
+      [
+        7,
+        0,
+        "cdDrawLine",
+        223
+      ],
+      [
+        12,
+        1,
+        "cdDrawCurve",
+        14
+      ],
+      [
+        15,
+        0,
+        "cdDrawLine",
+        13
+      ],
+      [
+        17,
+        0,
+        "cdDrawLine",
+        23
+      ]
+    ],
+    "staticRawCurveIndices": [],
+    "originalProofKeys": 3,
+    "completeProofKeys": 5
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1065-2026-10-13/serve-progressive.py",
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1065-2026-10-13/serve-whole.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "Existing local-only helper; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
