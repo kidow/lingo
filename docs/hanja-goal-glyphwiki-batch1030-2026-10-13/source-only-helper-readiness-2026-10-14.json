@@ -1,0 +1,108 @@
+{
+  "batch": 1030,
+  "glyph": "嘑",
+  "status": "existing-source-block-or-local-contract-failure-preserved",
+  "catalog": 14,
+  "domesticClips": 14,
+  "sourceVerification": {
+    "priorRecordFile": "strict-native-server-preflight.json",
+    "priorSourcePassed": true,
+    "priorSourceEvidencePassed": null,
+    "priorRecord": {
+      "executor": "hanja_batch760_761_analysis",
+      "sharedRamWorker": 82039,
+      "originalVerifierActualRuns": 1,
+      "sourcePassed": true,
+      "records": 5,
+      "capturedRoots": 2,
+      "domesticClips": 14,
+      "catalog": 14,
+      "catalogDomesticCountMatch": true,
+      "engineFiles": 8,
+      "archiveFetchesCumulative": 1,
+      "reverificationByThisAgent": 0,
+      "privateMediaSaved": false,
+      "missingSemantics": "Actual PASS validates original expected source state; no native whole/direction approval is implied."
+    },
+    "runsThisPreparation": 0,
+    "onlineRequested": false
+  },
+  "originalBytePins": {
+    "sources.json": "117e8d82fa6bd8ffab98a5827f9e84e5acdfbb66bdd2af59a532ee8df7f9d800",
+    "metadata.json": "800e7cfe1794558bf35aee8ddd2af0951992d584408678c6f353d97de4c4e6c6",
+    "engine-proof.json": "b1e65ef6c58827ebae1a8d63919c80e8e2c3cb2c74d846b26743630212b0047a",
+    "engine-whole-u5611-ue0100.json": "9d299aee8e7ec35df54f1c2c3286b0769747075a849f1c5123a589284f58a7f1",
+    "engine-whole-u5611.json": "b1e65ef6c58827ebae1a8d63919c80e8e2c3cb2c74d846b26743630212b0047a",
+    "strict-native-adapter.mjs": "2f93521dbd5662e71d2527d39001b7c3e034600b248eed0e4012d317bb8156c1",
+    "serve-native.py": "a7e05717bc2b05d2d840ad2109ed22ce3f3be4a00d639397aa8ad1fe8002e174"
+  },
+  "selectedRoot": "u5611",
+  "selectedFile": "engine-whole-u5611.json",
+  "selectedIdentity": {
+    "sourceRoot": "u5611",
+    "sourceProofFile": "engine-whole-u5611.json",
+    "sourceProofFileSha256": "b1e65ef6c58827ebae1a8d63919c80e8e2c3cb2c74d846b26743630212b0047a",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "b1e65ef6c58827ebae1a8d63919c80e8e2c3cb2c74d846b26743630212b0047a"
+  },
+  "wholeVariants": [
+    {
+      "file": "engine-whole-u5611.json",
+      "fileSHA256": "b1e65ef6c58827ebae1a8d63919c80e8e2c3cb2c74d846b26743630212b0047a",
+      "raw": 16,
+      "draw": 20,
+      "Q": 7,
+      "B": 0,
+      "polygons": 40
+    },
+    {
+      "file": "engine-whole-u5611-ue0100.json",
+      "fileSHA256": "9d299aee8e7ec35df54f1c2c3286b0769747075a849f1c5123a589284f58a7f1",
+      "raw": 16,
+      "draw": 20,
+      "Q": 7,
+      "B": 0,
+      "polygons": 40
+    }
+  ],
+  "compiler": {
+    "originalInputImmutable": true,
+    "originalPolygonsExactlyOnce": null,
+    "pens": 0,
+    "masks": 0,
+    "sourceMutationRejected": 6,
+    "identityMutationRejected": 6,
+    "existingBlockedReason": "Both original wholes have16 raw groups and only adjacent1/2 fold gives15, above catalog14. Nonadjacent0/3 or6/8 coincidence is not permission to force14; keep original geometry and hold.",
+    "actualFailure": "Both original wholes have16 raw groups and only adjacent1/2 fold gives15, above catalog14. Nonadjacent0/3 or6/8 coincidence is not permission to force14; keep original geometry and hold.",
+    "sourceGroups": [],
+    "nonConsecutiveGroups": [],
+    "emptyRawMetadata": [],
+    "finePens": [],
+    "maskTransitions": [],
+    "originalSpecialTerminals": []
+  },
+  "caller": {
+    "actualExecuted": true,
+    "actualPassed": true,
+    "contract": "Existing strict adapter identity, original whole/header/body and compiler byte pins",
+    "failure": null
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1030-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "portBinding": "Existing helper; no live readiness assumption"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
+
