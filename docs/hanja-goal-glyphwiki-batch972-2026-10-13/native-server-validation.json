@@ -1,0 +1,102 @@
+{
+  "batch": 972,
+  "glyph": "啍",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "originalPolygonsExactlyOnce": true,
+  "sourceInputImmutable": true,
+  "canonicalPolygonChecks": [
+    {
+      "root": "u554d",
+      "polygons": 24,
+      "sha256": "0c51ff7739e721c53107add7bedb2afaba9ef40882a84a1bd9b08f13049f64ef"
+    }
+  ],
+  "guards": [
+    {
+      "root": "u554d",
+      "rejected": 8
+    }
+  ],
+  "emptyMetadataExtraCheck": {
+    "batch": 972,
+    "emptyRaw": 4,
+    "originalNonDrawingMetadataPreserved": true,
+    "emptyMetadataMutationRejected": true,
+    "sourceInputImmutable": true
+  },
+  "servers": [
+    {
+      "batch": 972,
+      "kind": "serve-whole.py",
+      "session": 51794,
+      "port": 65032,
+      "pid": 54109,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 11,
+      "nativeApproved": false
+    },
+    {
+      "batch": 972,
+      "kind": "serve-progressive.py",
+      "session": 95379,
+      "port": 65039,
+      "pid": 54119,
+      "strokes": 11,
+      "masks": 12,
+      "sourceRoot": "u554d",
+      "sourceProofFile": "engine-whole-u554d.json",
+      "sourceProofFileSHA256": "ef0db29035ecce7b1071c8c65abe5e7cbde5c344bd3bc04ef3643203b3ddeb3f"
+    }
+  ],
+  "http": [
+    {
+      "batch": 972,
+      "kind": "whole",
+      "url": "http://127.0.0.1:65032/?id=u554d",
+      "status": 200,
+      "bytes": 4732,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 972,
+      "kind": "whole",
+      "url": "http://127.0.0.1:65032/?id=u554d-ue0100",
+      "status": 200,
+      "bytes": 4740,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 972,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:65032/?id=u554d&pairs=1:1,11:11&view=checks",
+      "status": 200,
+      "bytes": 363,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 972,
+      "kind": "fine",
+      "pen": 10,
+      "url": "http://127.0.0.1:65039/?root=u554d&stroke=10&enlarged=1",
+      "status": 200,
+      "bytes": 9525,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false
+}
