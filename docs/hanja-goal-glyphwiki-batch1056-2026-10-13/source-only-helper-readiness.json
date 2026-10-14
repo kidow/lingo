@@ -1,0 +1,133 @@
+{
+  "batch": 1056,
+  "glyph": "釁",
+  "date": "2026-10-14",
+  "catalogStrokes": 25,
+  "domesticClips": 26,
+  "status": "blocked/N-A source-only",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "evidenceFile": "strict-native-server-preflight.json",
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false
+  },
+  "selectedRoot": "u91c1",
+  "selectedFile": "engine-whole-u91c1.json",
+  "selectedIdentity": {
+    "sourceRoot": "u91c1",
+    "sourceProofFile": "engine-whole-u91c1.json",
+    "sourceProofFileSha256": "0d7c59b9eb17ae2cc70a360c7d9fc308a04acc7d22b75fde75f52274d598670f",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "0d7c59b9eb17ae2cc70a360c7d9fc308a04acc7d22b75fde75f52274d598670f"
+  },
+  "originalBytePins": {
+    "sources.json": "636582f4215fa4c45225a2ec4303afcd810f12590fe76d89ef0786ffe4e51823",
+    "metadata.json": "def70587d4ebace8e57667d9a7fcda229ac30d98f3cd802053663621dd17d281",
+    "engine-proof.json": "0d7c59b9eb17ae2cc70a360c7d9fc308a04acc7d22b75fde75f52274d598670f",
+    "engine-whole-u91c1.json": "0d7c59b9eb17ae2cc70a360c7d9fc308a04acc7d22b75fde75f52274d598670f",
+    "strict-native-server-preflight.json": "0bf1f746c19c2ab475e82485ae1cc9f65d679f833500d60b6a371884e9934a65",
+    "strict-native-adapter.mjs": "5ef2b5081264dadcfd9af58e9e9bf84ce7525a524d4c61d9fc3a2727373fb891"
+  },
+  "wholeFamily": {
+    "names": [
+      "u91c1",
+      "u91c1-itaiji-001",
+      "u91c1-ue0100",
+      "u91c1-ue0101",
+      "u91c1-ue0102",
+      "u91c1-ue0103",
+      "u91c1-ue0104",
+      "u91c1-ue0105",
+      "u91c1-ue0106"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "callerContract": "selected proof/header identity + full five-key original proof",
+  "guards": {
+    "exit": 0,
+    "sourceRejected": 6,
+    "identityRejected": 5,
+    "totalRejected": 12,
+    "pinsPassed": true,
+    "inputUnchanged": true,
+    "omission": "omitted identity rejected",
+    "actualExecutionExit": 0
+  },
+  "compiler": {
+    "pens": 0,
+    "masks": 0,
+    "originalPolygonCount": 59,
+    "originalPolygonsExactlyOnce": null,
+    "compiledGeometrySHA256": null,
+    "blockedReason": "Catalog25 differs from domestic26. Whole variants have original adjacent counts17/24/25/26; selecting by numeric equality cannot validate the domestic whole/form.",
+    "nonConsecutiveGroups": [],
+    "finePens": [],
+    "maskTransitions": [],
+    "originalSpecialTerminals": [
+      [
+        5,
+        0,
+        "cdDrawLine",
+        323
+      ],
+      [
+        19,
+        0,
+        "cdDrawLine",
+        113
+      ],
+      [
+        21,
+        0,
+        "cdDrawLine",
+        323
+      ],
+      [
+        23,
+        2,
+        "cdDrawLine",
+        5
+      ],
+      [
+        30,
+        1,
+        "cdDrawCurve",
+        14
+      ]
+    ],
+    "staticRawCurveIndices": [
+      7,
+      15,
+      17,
+      22,
+      23,
+      26,
+      28,
+      30,
+      31
+    ],
+    "originalProofKeys": 5,
+    "completeProofKeys": 5
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1056-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "Existing local-only helper; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
