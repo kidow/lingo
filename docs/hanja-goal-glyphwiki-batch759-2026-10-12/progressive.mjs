@@ -28,6 +28,18 @@ export function compileProgressive(trace, proof) {
     return {hook,jump}
   }
   const hooks=new Map([[JSON.stringify([10]),terminalUpTail([10])]])
+  // Bound only this selected original pure-line fold by its emitted vertices.
+  const originalLineTipWidth = (calls) => {
+    assert(calls.every(call=>call.kind==='cdDrawLine'));
+    const distance = (point,call) => {
+      const [x1,y1,x2,y2]=call.args;
+      const dx=x2-x1,dy=y2-y1;
+      const t=Math.max(0,Math.min(1,((point.x-x1)*dx+(point.y-y1)*dy)/(dx*dx+dy*dy)));
+      return Math.hypot(point.x-(x1+t*dx),point.y-(y1+t*dy));
+    };
+    const maximum=Math.max(...calls.flatMap(call=>call.polygons.flat()).map(point=>Math.min(...calls.map(call=>distance(point,call)))));
+    return Math.max(14,Math.ceil(maximum*1e6)/1e6+0.001);
+  };
   const compile=(indices,hook=null)=>{
     const calls=indices.flatMap(i=>trace[i]).map(c=>({...c,polygons:c.polygons.slice()}))
     if(hook)assert.deepEqual(calls.at(-1).polygons.pop(),hook)
@@ -38,5 +50,10 @@ export function compileProgressive(trace, proof) {
     const a=calls[0].args
     return {outline:pieces.map(p=>p.outline).join(' '),bounds:[Math.min(...pieces.map(p=>p.bounds[0])),Math.min(...pieces.map(p=>p.bounds[1])),Math.max(...pieces.map(p=>p.bounds[2])),Math.max(...pieces.map(p=>p.bounds[3]))],direction:'curve',weight:Math.round(pieces.reduce((n,p)=>n+p.weight,0)*1e6)/1e6,revealPath:`M${a[0]/2} ${a[1]/2} ${calls.map(c=>{const v=c.args;return c.kind==='cdDrawLine'?`L${v[2]/2} ${v[3]/2}`:c.kind==='cdDrawBezier'?`C${v[2]/2} ${v[3]/2} ${v[4]/2} ${v[5]/2} ${v[6]/2} ${v[7]/2}`:`Q${v[2]/2} ${v[3]/2} ${v[4]/2} ${v[5]/2}`}).join(' ')}`,revealWidth:14}
   }
-  return sourceGroups.map(indices=>{const h=hooks.get(JSON.stringify(indices));return h?[compile(indices,h.hook),segment([h.hook],'up',h.jump/2)]:[compile(indices)]})
+  return sourceGroups.map(indices=>{
+    const h=hooks.get(JSON.stringify(indices));
+    const masks=h?[compile(indices,h.hook),segment([h.hook],'up',h.jump/2)]:[compile(indices)];
+    if(JSON.stringify(indices)==='[1,2]') masks[0].revealWidth=originalLineTipWidth(indices.flatMap(raw=>trace[raw]));
+    return masks;
+  })
 }
