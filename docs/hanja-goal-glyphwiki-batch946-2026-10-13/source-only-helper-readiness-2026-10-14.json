@@ -1,0 +1,459 @@
+{
+  "batch": 946,
+  "glyph": "懥",
+  "status": "existing-live-static-helper-ready-nonconsecutive-numeric-candidate-held",
+  "newFiles": [
+    "source-only-helper-readiness-2026-10-14.json"
+  ],
+  "originalBytePins": {
+    "candidate-compile-analysis.json": "6c25de0d0cfd040317f045aabf498103aeb720a225c7e157643090d7ee38191a",
+    "engine-proof.json": "b6f7e1f4927dd6fb9b20dd5105e834fab771ef2aa9bc3dab8866eb7be60fe398",
+    "engine-whole-u61e5-g.json": "a15ae996b5ca484a39ccf49de708de764fc7d852ca15ab39e5e387910023380f",
+    "engine-whole-u61e5-ue0100.json": "fc7be80de60e737443d288a4915f33ff39a9e1000a88130ff89bbd829dda9f9a",
+    "engine-whole-u61e5-ue0101.json": "fc7be80de60e737443d288a4915f33ff39a9e1000a88130ff89bbd829dda9f9a",
+    "engine-whole-u61e5-ue0102.json": "1d2bd304d4494e144dcc585a31547cd8e5acab348032721df9ef88660acc52d3",
+    "engine-whole-u61e5.json": "ce342bdddb3d69a500ad53452735b589d0789d04913e3ca696f486a6e3c2ff74",
+    "metadata.json": "406bdbb47559a345fe251f7ec1833eccac90ac2244e14557db356a5be3cdab92",
+    "progressive.mjs": "677de5610aa577c0c443c504dbf8027bc3176c0a27921ee9ab179a243d8dbefe",
+    "source-analysis.json": "1d308d343a3e4fc8820367554441b5133a4e43e3257bce76b28d77057efa0184",
+    "source-join-analysis.json": "58e3fd9c73f9ad7d864038d5a105484b7cbecbd34f023aa281535b1b07b852a5",
+    "sources.json": "39bee10826d927043869a46406e1a75e4719291c97f370158dbf262b4aa0d56b",
+    "verify-source.mjs": "231240964dd547c5f5c6a7a41cb13343fc677be0b120797a6ab3087a81ce5fa9",
+    "native-static-input-pins.json": "5e504e7996de765eafbf7454acc6d2e9ee111ced825a873cdf7a6a231369b9bb",
+    "serve-static-native.py": "7b3b43124ef108537d9d3e148e11b193229988401ce7cb6117b90756af88e20a",
+    "NOTICE.md": "a4c71e08af658064b11dd9f9df86534af7d7847c86446a8917b5feee97d3b880"
+  },
+  "originalBytePinsUnchanged": true,
+  "noticeUnchanged": true,
+  "server": {
+    "port": 51482,
+    "listeningPID": 80743,
+    "wrapperPID": 80742,
+    "restarted": false,
+    "wholeURL": "http://127.0.0.1:51482/whole?id=u61e5",
+    "rawPairURL": "http://127.0.0.1:51482/pairs?id=u61e5&domestic=1&raw=1",
+    "singleRaw8URL": "http://127.0.0.1:51482/pairs?id=u61e5&domestic=1&raw=9&single=1",
+    "singleRaw13URL": "http://127.0.0.1:51482/pairs?id=u61e5&domestic=1&raw=14&single=1",
+    "rawSelectionMeaning": "Queryraw is1-based count/index; single=1 selectszero-basedraw-1. Domestic1..18 independent diagnostic index; no approved mapping.",
+    "blockedProgressiveURL": "http://127.0.0.1:51482/progressive",
+    "compilerActivated": false
+  },
+  "wholeFacts": [
+    {
+      "root": "u61e5",
+      "raw": 21,
+      "calls": 21,
+      "polygons": 38,
+      "exactJoins": [
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "consecutiveOnly": 19
+    },
+    {
+      "root": "u61e5-g",
+      "raw": 20,
+      "calls": 20,
+      "polygons": 33,
+      "exactJoins": [
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "consecutiveOnly": 17
+    },
+    {
+      "root": "u61e5-ue0100",
+      "raw": 21,
+      "calls": 21,
+      "polygons": 38,
+      "exactJoins": [
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "consecutiveOnly": 19
+    },
+    {
+      "root": "u61e5-ue0101",
+      "raw": 21,
+      "calls": 21,
+      "polygons": 38,
+      "exactJoins": [
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "consecutiveOnly": 19
+    },
+    {
+      "root": "u61e5-ue0102",
+      "raw": 20,
+      "calls": 20,
+      "polygons": 33,
+      "exactJoins": [
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "consecutiveOnly": 17
+    }
+  ],
+  "selectedApprovedWhole": null,
+  "legacyDiagnosticSourceIdentity": {
+    "sourceRoot": "u61e5",
+    "sourceProofFile": "./engine-whole-u61e5.json",
+    "sourceProofFileSha256": "ce342bdddb3d69a500ad53452735b589d0789d04913e3ca696f486a6e3c2ff74",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "b6f7e1f4927dd6fb9b20dd5105e834fab771ef2aa9bc3dab8866eb7be60fe398"
+  },
+  "legacySelectedProofKeys": [
+    "defaults",
+    "groups",
+    "trace"
+  ],
+  "headerKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "legacyFullProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "legacyFullProofSHA256": "fece6bf1cdf3c464253cf087078442a698620220528f5b94c9ac14b1694ba210",
+  "legacyCaller": "compileSourceWhole(root,trace,full5Proof,exact fivefield sourceRoot/sourceProofFile/sourceProofFileSha256/sourceHeaderFile/sourceHeaderFileSha256) or compileProgressive(trace,proof,identity). Preserved diagnosticcode only, not called inthis task/staticserver.",
+  "legacyDiagnosticProfiles": [
+    {
+      "root": "u61e5",
+      "identity": {
+        "sourceRoot": "u61e5",
+        "sourceProofFile": "./engine-whole-u61e5.json",
+        "sourceProofFileSha256": "ce342bdddb3d69a500ad53452735b589d0789d04913e3ca696f486a6e3c2ff74",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "b6f7e1f4927dd6fb9b20dd5105e834fab771ef2aa9bc3dab8866eb7be60fe398"
+      },
+      "pens": 18,
+      "masks": 18,
+      "curves": [
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        17,
+        18
+      ],
+      "transitions": []
+    },
+    {
+      "root": "u61e5-ue0100",
+      "identity": {
+        "sourceRoot": "u61e5-ue0100",
+        "sourceProofFile": "./engine-whole-u61e5-ue0100.json",
+        "sourceProofFileSha256": "fc7be80de60e737443d288a4915f33ff39a9e1000a88130ff89bbd829dda9f9a",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "b6f7e1f4927dd6fb9b20dd5105e834fab771ef2aa9bc3dab8866eb7be60fe398"
+      },
+      "pens": 18,
+      "masks": 18,
+      "curves": [
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        17,
+        18
+      ],
+      "transitions": []
+    },
+    {
+      "root": "u61e5-ue0101",
+      "identity": {
+        "sourceRoot": "u61e5-ue0101",
+        "sourceProofFile": "./engine-whole-u61e5-ue0101.json",
+        "sourceProofFileSha256": "fc7be80de60e737443d288a4915f33ff39a9e1000a88130ff89bbd829dda9f9a",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "b6f7e1f4927dd6fb9b20dd5105e834fab771ef2aa9bc3dab8866eb7be60fe398"
+      },
+      "pens": 18,
+      "masks": 18,
+      "curves": [
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        12,
+        13,
+        14,
+        17,
+        18
+      ],
+      "transitions": []
+    }
+  ],
+  "legacySourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8,
+      13
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ],
+    [
+      19
+    ],
+    [
+      20
+    ]
+  ],
+  "heldNonconsecutiveRawGroup": [
+    8,
+    13
+  ],
+  "nonconsecutiveSourceEvidence": {
+    "raw8": {
+      "kind": "cdDrawLine",
+      "args": [
+        91.005,
+        66.62,
+        91.005,
+        100.42,
+        12,
+        213
+      ]
+    },
+    "raw13": {
+      "kind": "cdDrawLine",
+      "args": [
+        91.005,
+        100.42,
+        155.995,
+        100.42,
+        2,
+        2
+      ]
+    },
+    "endpointDelta": [
+      0,
+      0
+    ],
+    "interveningRaw": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "interpretation": "Exactendpoint alone does not approve mergingfirstV withlaterbottomH acrossotherdrawnrows. Numeric18/diagnosticcertificate preservespolygons butdoes not establishKoreanboundary."
+  },
+  "activePens": 0,
+  "activeMasks": 0,
+  "activeFinePens": [],
+  "activeMaskTransitions": [],
+  "framesProduced": 0,
+  "replaysProduced": 0,
+  "legacyCurveFineDiagnosticOnly": [
+    2,
+    3,
+    6,
+    7,
+    8,
+    9,
+    12,
+    13,
+    14,
+    17,
+    18
+  ],
+  "priorityBeforeFrames": [
+    {
+      "priority": 1,
+      "check": "All5fixedwhole eligibility andactual18domesticdirections."
+    },
+    {
+      "priority": 2,
+      "raw": [
+        8,
+        13
+      ],
+      "check": "Firstvertical andlatebottomH boundary withinterveningrows9–12; no nonconsecutiveclosure just tofit18."
+    },
+    {
+      "priority": 3,
+      "roots": [
+        "u61e5",
+        "u61e5-ue0100",
+        "u61e5-ue0101"
+      ],
+      "check": "Original21raw andconsecutive-only19 exceed18. Current18profile obtainsoneadditional reductionfromheld[8,13]."
+    },
+    {
+      "priority": 4,
+      "roots": [
+        "u61e5-g",
+        "u61e5-ue0102"
+      ],
+      "check": "Original20raw/consecutive minimum17 is adifferentcompletewhole. It neither proves17Koreanpens nor licensesstitchingwithbase toforce18; native shape/boundaries first."
+    }
+  ],
+  "helperGuardContract": "ConfigurationSHA5e504e7996de765eafbf7454acc6d2e9ee111ced825a873cdf7a6a231369b9bb,13original bytepins everyrequest, exactwholefamily andmissing[] anddomestic18metadata. Directoriginalpolygonstaticrender only, alloff0; no activecompilercall.",
+  "newHTTP": {
+    "requests": 1,
+    "status": 200,
+    "path": "/whole?id=u61e5&view=checks",
+    "publicStructuralOnly": true,
+    "inputPinsVerified": 13,
+    "compilerActivated": false,
+    "pens": 0,
+    "masks": 0,
+    "privateGraphicsRequested": false
+  },
+  "priorSourceEvidence": {
+    "file": "native-server-preflight-hold.json.sourceVerified",
+    "exitCode": 0,
+    "resultMatchedByGlyph": "懥",
+    "result": {
+      "glyph": "懥",
+      "sourcePassed": true,
+      "records": 16,
+      "wholeRoots": 5,
+      "engineFiles": 8,
+      "catalogStrokes": 18,
+      "domesticClips": 18,
+      "domesticMetadataVerified": true,
+      "approvalBlocked": false,
+      "nativeApprovalAsserted": false
+    },
+    "sourceEvidencePassed": null,
+    "approvalBlockedFieldMeaning": "Priorrecord approvalBlocked=false referssource-reproduction status; currentnonconsecutive-nativehold staysactive.",
+    "newEngineRuns": 0,
+    "newSourceRequests": 0
+  },
+  "nativeApproval": false,
+  "nativeWholeObserved": 0,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplaysObserved": 0,
+  "runtimeApplied": false,
+  "originalFilesChanged": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateAssetsReadThisTask": false,
+  "privateMediaSaved": false
+}
+
