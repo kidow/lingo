@@ -1,0 +1,133 @@
+{
+  "batch": 1023,
+  "glyph": "鐶",
+  "status": "blocked-original-source",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": {
+    "validOriginalProofBlocked": true,
+    "tamperedProofsAndIdentitiesRejected": 13,
+    "compilerAbsent": false,
+    "candidateGeometryAbsent": true,
+    "reason": "excluding-incidental-outer-closures-leaves22-pens-above-catalogue21",
+    "wholeFacts": [
+      {
+        "root": "u9436",
+        "raw": 24,
+        "nonEmptyRaw": 24,
+        "exactDirectedJoins": [
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            16,
+            17
+          ]
+        ],
+        "maximumMatching": 4,
+        "minimumPensLowerBound": 20,
+        "nonDrawingRaw": [],
+        "nativeBoundariesApproved": false
+      },
+      {
+        "root": "u9436-ue0100",
+        "raw": 24,
+        "nonEmptyRaw": 24,
+        "exactDirectedJoins": [
+          [
+            8,
+            13
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            15,
+            18
+          ],
+          [
+            16,
+            17
+          ]
+        ],
+        "maximumMatching": 4,
+        "minimumPensLowerBound": 20,
+        "nonDrawingRaw": [],
+        "nativeBoundariesApproved": false
+      }
+    ],
+    "priorNativeHold": null,
+    "noNewCompilerGuardClaim": false
+  },
+  "sourceSHA256": {
+    "sources.json": "61fd44c9c114c7227a361fd88202cb4bd4f6425d51feae2effefb9b5cced28b1",
+    "engine-proof.json": "0092d199029b6b8a54336de1a02bacccdea6197f55c425fd3fe0d1954381e603",
+    "metadata.json": "95a206c04e8aefa8dd116f363167ee43b9fc6d64281adfe411e5f6bdd39cef8d",
+    "engine-whole-u9436-ue0100.json": "ec19e3e858d95535af58486f5e28e1436902c78072a5d3fe57bf632e95468aea",
+    "engine-whole-u9436.json": "ec19e3e858d95535af58486f5e28e1436902c78072a5d3fe57bf632e95468aea"
+  },
+  "compilerSHA256": "11862875b2a3a7c6846b2f740e88bd42bfd25f4765513dc87dfdc08905c7495a",
+  "risks": [],
+  "servers": [
+    {
+      "batch": 1023,
+      "kind": "serve-whole.py",
+      "session": 94485,
+      "port": 51799,
+      "pid": 73494,
+      "wholeVariants": 2,
+      "blocked": true,
+      "nativeApproval": false
+    }
+  ],
+  "http": [
+    {
+      "batch": 1023,
+      "kind": "whole",
+      "url": "http://127.0.0.1:51799/?id=u9436",
+      "status": 200,
+      "bytes": 7829,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1023,
+      "kind": "whole",
+      "url": "http://127.0.0.1:51799/?id=u9436-ue0100",
+      "status": 200,
+      "bytes": 7836,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1023,
+      "kind": "checks",
+      "url": "http://127.0.0.1:51799/?view=checks",
+      "status": 200,
+      "bytes": 440,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
