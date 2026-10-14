@@ -1,0 +1,173 @@
+{
+  "batch": 1053,
+  "glyph": "觿",
+  "date": "2026-10-14",
+  "catalogStrokes": 25,
+  "domesticClips": 25,
+  "status": "source-only exact original candidate; native pending",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "evidenceFile": "native-server-preparation-source-analysis.json",
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false
+  },
+  "selectedRoot": "u89ff",
+  "selectedFile": "engine-whole-u89ff.json",
+  "selectedIdentity": {
+    "root": "u89ff",
+    "file": "engine-whole-u89ff.json",
+    "fileSHA256": "d2997421064ee5ec9aa7f69a752d79209f8b5181a729baf1db14c80aa625aae0"
+  },
+  "originalBytePins": {
+    "sources.json": "37e4e001932313cc7260790fe5c427544810b306fb00c78c743372c596b3efd1",
+    "metadata.json": "2e2fb0efddda5d928d95c3689d4bbe8dc1a02fb9a657e66d8d9eb58f8015f10a",
+    "engine-proof.json": "d2997421064ee5ec9aa7f69a752d79209f8b5181a729baf1db14c80aa625aae0",
+    "engine-whole-u89ff.json": "d2997421064ee5ec9aa7f69a752d79209f8b5181a729baf1db14c80aa625aae0",
+    "native-server-preparation-source-analysis.json": "9aa4dcbf21b636b68b1624d94bb0b135ac09fa42a93d928c18ec9e641f246489",
+    "progressive.mjs": "bd9e6f3948e855863e586ba024f65917fdf1df4f51b9a0f995d8e162085bcd89",
+    "server-compile.mjs": "3ced60290000f9ef320c1d8d73d11a44e541cc10cfa819e1f03eb4b75b9e61f8"
+  },
+  "wholeFamily": {
+    "names": [
+      "u89ff",
+      "u89ff-ue0100"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "callerContract": "explicit root + trace + eight-key full selected proof + three-field file identity",
+  "guards": {
+    "exit": 0,
+    "sourceRejected": 6,
+    "identityRejected": 3,
+    "totalRejected": 10,
+    "pinsPassed": true,
+    "inputUnchanged": true,
+    "omission": "omitted identity rejected",
+    "actualExecutionExit": 0
+  },
+  "compiler": {
+    "pens": 25,
+    "masks": 28,
+    "originalPolygonCount": 63,
+    "originalPolygonsExactlyOnce": true,
+    "compiledGeometrySHA256": "40956632847b762898faabdf31f9b4cb129ca08bf1b183e63e49f62c98b7bebd",
+    "blockedReason": null,
+    "nonConsecutiveGroups": [],
+    "finePens": [
+      1,
+      2,
+      3,
+      4,
+      9,
+      11,
+      13,
+      20,
+      21,
+      22,
+      24
+    ],
+    "maskTransitions": [
+      {
+        "pen": 4,
+        "mask": 2,
+        "start": 0.9346813708905412,
+        "weights": [
+          82.81,
+          5.787037
+        ]
+      },
+      {
+        "pen": 20,
+        "mask": 2,
+        "start": 0.9011534991265923,
+        "weights": [
+          72.933568,
+          8
+        ]
+      },
+      {
+        "pen": 22,
+        "mask": 2,
+        "start": 0.8819700687425205,
+        "weights": [
+          18.681068,
+          2.5
+        ]
+      }
+    ],
+    "originalSpecialTerminals": [
+      [
+        5,
+        1,
+        "cdDrawCurve",
+        114
+      ],
+      [
+        10,
+        0,
+        "cdDrawLine",
+        313
+      ],
+      [
+        12,
+        0,
+        "cdDrawLine",
+        323
+      ],
+      [
+        14,
+        0,
+        "cdDrawLine",
+        313
+      ],
+      [
+        23,
+        1,
+        "cdDrawCurve",
+        214
+      ],
+      [
+        25,
+        2,
+        "cdDrawLine",
+        5
+      ],
+      [
+        26,
+        0,
+        "cdDrawLine",
+        313
+      ],
+      [
+        28,
+        0,
+        "cdDrawLine",
+        323
+      ]
+    ],
+    "originalProofKeys": 5,
+    "completeProofKeys": 8
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1053-2026-10-13/serve-progressive.py",
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1053-2026-10-13/serve-whole.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "Existing local-only helper; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}

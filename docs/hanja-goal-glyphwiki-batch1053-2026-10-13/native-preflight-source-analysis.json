@@ -1,0 +1,239 @@
+{
+  "checkedDate": "2026-10-14",
+  "scope": "Fixed public-source preflight and compiler contract only. Numeric count and source exactness are not native whole/order/pen/direction/mask/replay approval.",
+  "batch": 1053,
+  "glyph": "觿",
+  "pens": 25,
+  "masks": 28,
+  "originalPolygons": 63,
+  "allOriginalPolygonsExactlyOnce": true,
+  "inputImmutable": true,
+  "mutationRejects": 6,
+  "identityGuardRejects": 4,
+  "identityMandatory": true,
+  "supportedWholeRoots": [
+    "u89ff",
+    "u89ff-ue0100"
+  ],
+  "pinnedInputFiles": 6,
+  "compilerSHA256": "bd9e6f3948e855863e586ba024f65917fdf1df4f51b9a0f995d8e162085bcd89",
+  "compiledSHA256": "40956632847b762898faabdf31f9b4cb129ca08bf1b183e63e49f62c98b7bebd",
+  "proofFile": "engine-whole-u89ff.json",
+  "proofFileSHA256": "d2997421064ee5ec9aa7f69a752d79209f8b5181a729baf1db14c80aa625aae0",
+  "wholeFacts": [
+    {
+      "root": "u89ff",
+      "raw": 30,
+      "calls": 35,
+      "polygons": 63,
+      "minUnrestricted": 23,
+      "consecutiveOnly": 25
+    },
+    {
+      "root": "u89ff-ue0100",
+      "raw": 30,
+      "calls": 35,
+      "polygons": 63,
+      "minUnrestricted": 23,
+      "consecutiveOnly": 25
+    }
+  ],
+  "folds": [
+    {
+      "pen": 2,
+      "raw": [
+        1,
+        2
+      ],
+      "internalExact": true,
+      "consecutive": true
+    },
+    {
+      "pen": 4,
+      "raw": [
+        4,
+        5
+      ],
+      "internalExact": true,
+      "consecutive": true
+    },
+    {
+      "pen": 9,
+      "raw": [
+        10,
+        11
+      ],
+      "internalExact": true,
+      "consecutive": true,
+      "maxOriginalVertexDistanceKage": 9.968053534448176,
+      "revealWidth": 14,
+      "boundExceedsMask": false
+    },
+    {
+      "pen": 20,
+      "raw": [
+        22,
+        23
+      ],
+      "internalExact": true,
+      "consecutive": true
+    },
+    {
+      "pen": 24,
+      "raw": [
+        27,
+        28
+      ],
+      "internalExact": true,
+      "consecutive": true,
+      "maxOriginalVertexDistanceKage": 10.9375,
+      "revealWidth": 14,
+      "boundExceedsMask": false
+    }
+  ],
+  "transitions": [
+    {
+      "pen": 4,
+      "mask": 2,
+      "boundary": 0.9346813708905412,
+      "direction": "left",
+      "weight": 5.787037
+    },
+    {
+      "pen": 20,
+      "mask": 2,
+      "boundary": 0.9011534991265923,
+      "direction": "left",
+      "weight": 8
+    },
+    {
+      "pen": 22,
+      "mask": 2,
+      "boundary": 0.8819700687425205,
+      "direction": "up",
+      "weight": 2.5
+    }
+  ],
+  "curveFinePens": [
+    1,
+    2,
+    3,
+    4,
+    9,
+    11,
+    13,
+    20,
+    21,
+    22,
+    24
+  ],
+  "terminal15": [],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineReexecuted": true,
+  "sourceFileSHA256": "37e4e001932313cc7260790fe5c427544810b306fb00c78c743372c596b3efd1",
+  "engineReplay": {
+    "batch": 1053,
+    "engineHashChecks": 8,
+    "records": 10,
+    "historicalDataHashesChecked": 7,
+    "missingBareDependencies": [],
+    "rows": [
+      {
+        "root": "u89ff",
+        "raw": 30,
+        "calls": 35,
+        "polygons": 63,
+        "polygonsSHA256": "7ab5034897d26eb2be7fb5dc1bd2c3bbfab8b405391c4180b635b21009b708aa",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u89ff-ue0100",
+        "raw": 30,
+        "calls": 35,
+        "polygons": 63,
+        "polygonsSHA256": "7ab5034897d26eb2be7fb5dc1bd2c3bbfab8b405391c4180b635b21009b708aa",
+        "engineWholeExactlyReplayed": true
+      }
+    ],
+    "privateGraphicsRequested": false,
+    "archiveRedownloaded": false,
+    "nativeApproved": false
+  },
+  "allSupportedProfilesActualCompile": [
+    {
+      "root": "u89ff",
+      "identity": {
+        "root": "u89ff",
+        "file": "engine-whole-u89ff.json",
+        "fileSHA256": "d2997421064ee5ec9aa7f69a752d79209f8b5181a729baf1db14c80aa625aae0"
+      },
+      "fullHeaderPresent": true,
+      "penCount": 25,
+      "maskCount": 28,
+      "originalPolygons": 63,
+      "compiledSHA256": "40956632847b762898faabdf31f9b4cb129ca08bf1b183e63e49f62c98b7bebd",
+      "allPolygonsExactlyOnce": true,
+      "mutationRejects": 6,
+      "identityGuardRejects": 2,
+      "inputImmutable": true
+    },
+    {
+      "root": "u89ff-ue0100",
+      "identity": {
+        "root": "u89ff-ue0100",
+        "file": "engine-whole-u89ff-ue0100.json",
+        "fileSHA256": "d2997421064ee5ec9aa7f69a752d79209f8b5181a729baf1db14c80aa625aae0"
+      },
+      "fullHeaderPresent": true,
+      "penCount": 25,
+      "maskCount": 28,
+      "originalPolygons": 63,
+      "compiledSHA256": "40956632847b762898faabdf31f9b4cb129ca08bf1b183e63e49f62c98b7bebd",
+      "allPolygonsExactlyOnce": true,
+      "mutationRejects": 6,
+      "identityGuardRejects": 2,
+      "inputImmutable": true
+    }
+  ],
+  "identityContract": {
+    "mandatoryThirdArgument": true,
+    "shape": [
+      "root",
+      "file",
+      "fileSHA256"
+    ],
+    "optionalProofRootAndFileHeaders": true,
+    "optionalProofRootAndFileHeadersConfirmedByActualCompile": true,
+    "proofHeadersWhenProvidedMustMatchSelectedProfile": true,
+    "selectedProofHasFullEngineHeader": true,
+    "bodyTraceGroupsPresetAndEightEngineImmutable": true,
+    "missingOrWrongIdentityRejected": true,
+    "attributionTamperRejected": true,
+    "allProfilesExplicitlySelected": true,
+    "byteEqualAliasesDoNotTransferNativeApproval": true
+  },
+  "risks": [
+    "25pens use only authored contiguous joins; incidental enclosure raw14/20 andraw26/29 contacts producing minimum23 are excluded.",
+    "Same-pen original tail transitions: pen4 left93.46813708905412%,weight5.787037; pen20 left90.11534991265923%,weight8; pen22 up88.19700687425205%,weight2.5. Native direction/transition/fine/replay pending.",
+    "Pure-L fold pen9 bound9.968053534448176 andpen24 bound10.9375 arebelow14. These do not certify Q/B masks or domestic25 pen boundaries."
+  ],
+  "sourceMissing": false,
+  "missingOriginalReferences": [],
+  "incompleteWholeGeometryPreservedNull": [],
+  "sourceMissingNotReplacedByIndependentCompleteWhole": false,
+  "latestSubstitution": false,
+  "coordinateMutation": false,
+  "connectorAuthored": false,
+  "widthMutation": false,
+  "nativeWholeApproval": false,
+  "nativeOrderApproval": false,
+  "nativeDirectionsReviewed": 0,
+  "nativeFramesReviewed": 0,
+  "nativeReplaysReviewed": 0,
+  "runtimeRegistered": 0,
+  "privateMediaSaved": false,
+  "archiveRedownloaded": false,
+  "buildExecuted": false,
+  "actualValidationExit": 0
+}
