@@ -1,0 +1,221 @@
+{
+  "batch": 959,
+  "glyph": "驒",
+  "scope": "Strict original source-only native-review preparation",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "engineFiles": 8,
+  "domesticClips": 22,
+  "profiles": [
+    {
+      "root": "u9a52",
+      "identity": {
+        "root": "u9a52",
+        "file": "engine-whole-u9a52.json",
+        "fileSHA256": "dc653e47f2e31c8e9d247512bea5e42bb00ae61dedba3549cba5fe8854cd8ec0"
+      },
+      "fullProofSHA256": "7dc6356e60e854e8e873ff6f9e1c8b4ea9c2b18913d87516926f0ba3fb1acdec",
+      "sourceGroups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          14
+        ],
+        [
+          15
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          18
+        ],
+        [
+          19
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          22
+        ],
+        [
+          23
+        ],
+        [
+          24
+        ],
+        [
+          25
+        ]
+      ],
+      "pens": 22,
+      "masks": 23,
+      "polygons": 40,
+      "canonicalPolygonsSHA256": "99adc312cd6f4eed158c8905d66cc8c51e59d8ad125a36ebb7b3d9d43dcb7c13",
+      "compilerGuardsRejected": 12,
+      "callerHeaderGuardsRejected": 4,
+      "emptyRawMetadata": [],
+      "emptyMetadataGuardsRejected": 0,
+      "curvePens": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        15,
+        18
+      ],
+      "multiMasks": [
+        {
+          "pen": 6,
+          "weights": [
+            66.089883,
+            8
+          ],
+          "directions": [
+            "curve",
+            "left"
+          ],
+          "boundaries": [
+            0.8920230444958321
+          ]
+        }
+      ],
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "allGroupedSourcePathsExactContinuous": true,
+      "wholeEligibility": "unreviewed",
+      "legacyOptionalProofAttributionClosedByCaller": true
+    }
+  ],
+  "expectedSourceBlock": null,
+  "servers": [
+    {
+      "batch": 959,
+      "kind": "serve-whole.py",
+      "session": 71328,
+      "port": 64238,
+      "pid": 49436,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 22,
+      "nativeApproved": false
+    },
+    {
+      "batch": 959,
+      "kind": "serve-progressive.py",
+      "session": 36904,
+      "port": 64246,
+      "pid": 49446,
+      "strokes": 22,
+      "masks": 23,
+      "sourceRoot": "u9a52",
+      "sourceProofFile": "engine-whole-u9a52.json",
+      "sourceProofFileSHA256": "dc653e47f2e31c8e9d247512bea5e42bb00ae61dedba3549cba5fe8854cd8ec0"
+    }
+  ],
+  "http": [
+    {
+      "batch": 959,
+      "url": "http://127.0.0.1:64238/?id=u9a52",
+      "status": 200,
+      "bytes": 7895
+    },
+    {
+      "batch": 959,
+      "url": "http://127.0.0.1:64238/?id=u9a52-ue0100",
+      "status": 200,
+      "bytes": 7903
+    },
+    {
+      "batch": 959,
+      "url": "http://127.0.0.1:64238/?id=u9a52&pairs=1:1,22:22&view=checks",
+      "status": 200,
+      "bytes": 363,
+      "checks": {
+        "mapping": "exact-compiled-candidate-pens",
+        "root": "u9a52",
+        "candidatePens": 22,
+        "masks": 23,
+        "pairs": [
+          {
+            "domestic": 1,
+            "candidate": 1,
+            "raw": [
+              0
+            ]
+          },
+          {
+            "domestic": 22,
+            "candidate": 22,
+            "raw": [
+              25
+            ]
+          }
+        ],
+        "sourceProofFile": "engine-whole-u9a52.json",
+        "sourceProofFileSHA256": "dc653e47f2e31c8e9d247512bea5e42bb00ae61dedba3549cba5fe8854cd8ec0",
+        "nativeApproval": false
+      }
+    },
+    {
+      "batch": 959,
+      "url": "http://127.0.0.1:64246/?root=u9a52&stroke=6&enlarged=1&samples=1",
+      "status": 200,
+      "bytes": 12450
+    }
+  ],
+  "allHttpPassed": true,
+  "legacyOptionalHeaderAttribution": "Compiler unchanged; mandatory exact complete header/file identity and file-byte checks enforced by new caller",
+  "sourceChanged": false,
+  "compilerChanged": false,
+  "originalGeometryChanged": false,
+  "nonconsecutiveJoining": false,
+  "sourcePathDirectionChanged": false,
+  "nativeObserved": 0,
+  "nativeApproval": false,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "buildExecuted": false,
+  "privateMediaSaved": false
+}
