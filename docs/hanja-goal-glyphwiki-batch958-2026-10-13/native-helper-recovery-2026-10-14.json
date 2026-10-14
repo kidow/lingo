@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-14",
+  "batch": 958,
+  "glyph": "蘀",
+  "status": "source-only-helper-recovery-native-pending",
+  "newHelper": "serve-progressive-native.py",
+  "newHelperSHA256": "6ee4b31285e126a3323c107375a18d0e3cf759b3320898615f5e8841e0e4e1b2",
+  "sourceIdentity": {
+    "root": "u8600-ue0102",
+    "file": "engine-whole-u8600-ue0102.json",
+    "fileSHA256": "c8d0def2940322eb47a32c2c26f38f254107f50391a9050cef0d1abf5e5459d1"
+  },
+  "fullProofSHA256": "fd46ea6e994260c722d029b72952b9118e7049b911231627e2427198c32e88b4",
+  "currentOriginalInputSHA256": {
+    "engine-whole-u8600-ue0100.json": "832b6fb9106c1f3c384cdaad21e36aef916c8b830be4d3af8db17150472ac3bf",
+    "sources.json": "54777be254343f63dee049e7dc27792051298b6e7a45297ca090006bbe9a7383",
+    "serve-whole.py": "f20ffddcbfec19618f2a52610364d944f55de88f1ed01b16f3d235c085fee9cb",
+    "native-server-validation.json": "f0ec6c1f6ea6c36cdfc9051144aebb41f3938fb67bd0f4ea53546976ff8eb7c0",
+    "candidate-compile-analysis.json": "65e06362802ecd0c5314181a405301ab116ea2ee13635fd8a4bd6b4e12f88872",
+    "engine-proof.json": "832b6fb9106c1f3c384cdaad21e36aef916c8b830be4d3af8db17150472ac3bf",
+    "engine-whole-u8600-ue0101.json": "832b6fb9106c1f3c384cdaad21e36aef916c8b830be4d3af8db17150472ac3bf",
+    "serve-progressive.py": "a2ee28dc2bfe9439f187dc40e1e081ea1d8192fba21b9ddd3036bf05d1db9548",
+    "native-server-preparation-source-analysis.json": "0b89f76903c6cf56a73c692a80b45ad74d0964b2ed29b0f6e3cc2a41e39de7d1",
+    "metadata.json": "26b28a69b99720a1ebbf391d8d913352b4b5b0bd9b499a09fa44eed36a421744",
+    "verify-source.mjs": "150da9db0d840495c3c322089b67d9a907cd1d62fe1e05a5edd3af6e9a5365c6",
+    "source-analysis.json": "0c6d1d04baefe315bd66d04e1518ec1f2758e3bfb9ecf2b6379d133a73ec72f3",
+    "progressive.mjs": "8a1c0d482e643e18cc3533682f7715930b6c7d9ba1bfbb30c67d81442ba72c85",
+    "engine-whole-u8600-ue0102.json": "c8d0def2940322eb47a32c2c26f38f254107f50391a9050cef0d1abf5e5459d1",
+    "source-preservation-audit.json": "b306e5c3e8c75668a80da8c9a39223c588f4b38e780801dfeabadefde81e1876",
+    "server-compile.mjs": "9dbe9f124a535598b22661480c9cbdc4feac15469b4a190e7fe562a3002a07f9",
+    "source-join-analysis.json": "78663667ff95c5857949af29c435c275d906a42aaaa2cadd04b9fbabe03900e0",
+    "NOTICE.md": "57cd165d10bcdb7a24142f1093e2307d72f8d9895c6e20c8757c626e03c26bf7",
+    "engine-whole-u8600.json": "832b6fb9106c1f3c384cdaad21e36aef916c8b830be4d3af8db17150472ac3bf"
+  },
+  "originalCompilerMetadataNOTICEAndHelpersEdited": false,
+  "uiOnlyCopyChanges": {
+    "sliderDenominatorBefore": 200,
+    "sliderDenominatorAfter": 100,
+    "enlargedNineSampleGridVisible": true,
+    "originalHelperPreserved": true
+  },
+  "caller": "compileSourceWhole(root, proof.trace, full8KeyProof, {root,file,fileSHA256}); body/header exact bytes + fullproof hash pinned in unchanged server-compile.mjs",
+  "priorSourceVerification": {
+    "sourceVerifierExecutedOnce": true,
+    "sourcePassed": true,
+    "engineFiles": 8,
+    "domesticClips": 20,
+    "reused": true,
+    "currentSourceVerification": false,
+    "currentEngineByteReproduction": false
+  },
+  "previousFocusedGuardResults": {
+    "compiler": 12,
+    "caller": 4,
+    "repeated": false
+  },
+  "sourceGeometryChecks": {
+    "originalPolygonsExactlyOnce": true,
+    "sourceInputImmutable": true,
+    "allGroupedSourcePathsExactContinuous": true,
+    "reusedFromUnchangedProof": true
+  },
+  "reviewInventory": {
+    "pens": 20,
+    "masks": 21,
+    "polygons": 41,
+    "finePens": [
+      6,
+      7,
+      9,
+      16,
+      17
+    ],
+    "multiMasks": [
+      {
+        "pen": 6,
+        "weights": [
+          66.396068,
+          7
+        ],
+        "directions": [
+          "curve",
+          "left"
+        ],
+        "boundaries": [
+          0.9046270435086523
+        ]
+      }
+    ],
+    "emptyRawMetadata": [],
+    "wholeEligibilityPending": true
+  },
+  "servers": [
+    {
+      "batch": 958,
+      "kind": "serve-whole.py",
+      "port": 61829,
+      "pid": 92613,
+      "wholeVariants": 4,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 20,
+      "nativeApproved": false,
+      "started": true
+    },
+    {
+      "batch": 958,
+      "kind": "serve-progressive-native.py",
+      "port": 61832,
+      "pid": 92615,
+      "strokes": 20,
+      "masks": 21,
+      "sourceRoot": "u8600-ue0102",
+      "sourceProofFile": "engine-whole-u8600-ue0102.json",
+      "sourceProofFileSHA256": "c8d0def2940322eb47a32c2c26f38f254107f50391a9050cef0d1abf5e5459d1",
+      "started": true
+    }
+  ],
+  "focusedHTTP": [
+    {
+      "path": "/?id=u8600-ue0102",
+      "port": 61829,
+      "status": 200
+    },
+    {
+      "path": "/?id=u8600-ue0102&pairs=1:1,20:20&view=checks",
+      "port": 61829,
+      "status": 200,
+      "checks": {
+        "mapping": "exact-compiled-candidate-pens",
+        "root": "u8600-ue0102",
+        "candidatePens": 20,
+        "masks": 21,
+        "pairs": [
+          {
+            "domestic": 1,
+            "candidate": 1,
+            "raw": [
+              0
+            ]
+          },
+          {
+            "domestic": 20,
+            "candidate": 20,
+            "raw": [
+              20
+            ]
+          }
+        ],
+        "sourceProofFile": "engine-whole-u8600-ue0102.json",
+        "sourceProofFileSHA256": "c8d0def2940322eb47a32c2c26f38f254107f50391a9050cef0d1abf5e5459d1",
+        "nativeApproval": false
+      }
+    },
+    {
+      "path": "/?root=u8600-ue0102&stroke=6&enlarged=1&samples=1",
+      "port": 61832,
+      "status": 200,
+      "coarse9": true,
+      "gridHidden": false,
+      "slider100": true,
+      "replay8sec": true,
+      "enlarged520": true
+    }
+  ],
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplayObserved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitCreated": false
+}
