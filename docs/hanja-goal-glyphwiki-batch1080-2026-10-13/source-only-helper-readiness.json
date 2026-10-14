@@ -1,0 +1,341 @@
+{
+  "batch": 1080,
+  "glyph": "摸",
+  "observedAt": "2026-10-14T01:08:12.204Z",
+  "stage": "원본 source-only 준비 · 국내 native 미승인",
+  "inputManifestSHA256": "189fe0732e25ffb9159bd42e97821f2fe2c9dab8fb66849790343de976718d78",
+  "inputManifestExcludedFiles": [
+    "source-only-helper-readiness.json"
+  ],
+  "inputFileSHA256": {
+    "candidate-compile-analysis.json": "fdbef177814c3e34af3cf50c771c0e1c0bc65e2738eac559ba1db6f8ddcc6113",
+    "engine-proof.json": "cdc935ec4e28b137f30bc7721cf8361809624292bb7e4d5ff663f07071f1564e",
+    "engine-whole-u6478-k.json": "c15652220d66ec270d56b2ee44088cc648539aeee01fb1ed8902203b128c6d3f",
+    "engine-whole-u6478-ue0100.json": "c15652220d66ec270d56b2ee44088cc648539aeee01fb1ed8902203b128c6d3f",
+    "engine-whole-u6478-ue0101.json": "c15652220d66ec270d56b2ee44088cc648539aeee01fb1ed8902203b128c6d3f",
+    "engine-whole-u6478-ue0102.json": "8290cf731e95d10a956ca79bcdd27cff3000d08de98fbec071cfc73ce6579261",
+    "engine-whole-u6478.json": "c15652220d66ec270d56b2ee44088cc648539aeee01fb1ed8902203b128c6d3f",
+    "metadata.json": "c24cd99ea6636daed9a4a7332940b020494c8a47e7023e793073169810f3f7f4",
+    "native-server-input-pins.json": "f2f11c8e290916ff1572ae49fdd4f214fed681bf33e004f5b23bab9d65ff8cc3",
+    "progressive.mjs": "52d6cc6c889ea869c412ebd72efa1d729ac54c549d26a2dc90d0d3ad7024e05c",
+    "serve-native.py": "2fdfef3815c32fdfe6db619601ed2b5cfefb1af7fcb22cdc3a9d562a060425f1",
+    "source-analysis.json": "07dc65f429e44d377a69b8fd66118799d6dc6d4241a898cfa4756de1585556e8",
+    "source-join-analysis.json": "ac7e12010a63cbc8cd8f4da43ac9d432a8f8e753ea36e4a16e4a0509cd197d0f",
+    "sources.json": "0f0c27ecdb05a1d82c0a5599de90ff01261f1d574722a5d3e7c8a69ad922ee06",
+    "strict-native-adapter.mjs": "4f53e5ec355f031692383ed80b73dab29cfc0d53c2b0ecc3268143e9949aeba4",
+    "strict-native-server-preflight.json": "6e4a67e45fb48ec323b0929cd4e98b231f5c5aa9af2a3a17ad6e329482d9be01",
+    "verify-source.mjs": "d93791009b731a56ce0d821775b2fdbe7d6e9acb18d824791faf63de9a6c9d76"
+  },
+  "sourceVerification": {
+    "existingEvidenceFile": "strict-native-server-preflight.json",
+    "existingEvidenceFileSHA256": "6e4a67e45fb48ec323b0929cd4e98b231f5c5aa9af2a3a17ad6e329482d9be01",
+    "previousSourcePassed": true,
+    "sourceActualPASSReused": true,
+    "sourceVerifierExecutedThisTask": false,
+    "onlineRequestsThisTask": 0,
+    "priorEvidenceMeaning": "과거 원본 재현 기록만 재사용. 신규 온라인 재현·국내 native 승인 근거가 아님."
+  },
+  "profiles": [
+    {
+      "sourceRoot": "u6478-ue0102",
+      "identity": {
+        "sourceRoot": "u6478-ue0102",
+        "sourceProofFile": "./engine-whole-u6478-ue0102.json",
+        "sourceProofFileSha256": "8290cf731e95d10a956ca79bcdd27cff3000d08de98fbec071cfc73ce6579261",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "cdc935ec4e28b137f30bc7721cf8361809624292bb7e4d5ff663f07071f1564e",
+        "sourceMetadataFile": "./sources.json",
+        "sourceMetadataFileSha256": "0f0c27ecdb05a1d82c0a5599de90ff01261f1d574722a5d3e7c8a69ad922ee06"
+      },
+      "compiler": "strict-native-adapter.mjs",
+      "selectedProofKeys": [
+        "defaults",
+        "groups",
+        "trace"
+      ],
+      "fullProofKeys": [
+        "defaults",
+        "engineHashes",
+        "engineRevision",
+        "groups",
+        "trace"
+      ],
+      "fullProofSHA256": "70a9b222a58beb59713e235e6c93aefff7400927fadd2b2c6fb399a4cf6dd2da",
+      "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+      "engineHashes": {
+        "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+        "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+        "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+        "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+        "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+        "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+        "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+        "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+      },
+      "preset": {
+        "kMage": 10,
+        "kWidth": 5,
+        "kMinWidthT": 6,
+        "kAdjustMageStep": 5
+      },
+      "sourceGroups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ],
+        [
+          12
+        ],
+        [
+          13
+        ],
+        [
+          14
+        ]
+      ],
+      "originalRaw": 15,
+      "originalDraw": 15,
+      "originalPolygons": 31,
+      "emptyRawMetadata": [],
+      "compiledPens": 14,
+      "compiledMasks": 15,
+      "completeMasksSHA256": "af6a0d2e06d8bf8a8e30dbb04fbeb385aef6fb51ce00036c64283c3447e27ca4",
+      "orderedPenMaskSHA256": [
+        "72e4b909fb49cee15acfbfc935614c21593d32e598e319086eaa3a03c6f1d49c",
+        "9407d1fdb172bf841444a6688b4defdeb85d2bed58b67ceb0cbca0a765c50d91",
+        "a779ae2188d8867287ee9176c8b9c37f8ffece1aa7dd9faa8e9f7beaa07856e1",
+        "d3bb55cd06330e7af5bd2a8695a3602528aef22de3662feb8bce8647dd3a51b2",
+        "3bc35600111f00be7cf2e9af762af7166680134962aed81d10710f951db66950",
+        "c970638b751a349a73c2b17d47c2b7a298c7a35bfe23b50a5dcbb559908d732d",
+        "8a4b2898e899acb4925149f327fa65630ee03080d97eab3351a7c20993473803",
+        "5a8e7977e97737b2d9078dc7641128eaf227136d16702e3c8bfbdc193520e65c",
+        "3a5022355c5d2355235b0e9704cb52ebfcd83cdef8fa03144426564bd37a7fb0",
+        "df5197c124d0fbc76c451f9649d563376c68794197a4b7f9cfc5d49fd668b2da",
+        "a394beda8a905c98a9a161ac88c3fa25ce788f9c740f11021d06f2750336f9fc",
+        "76359dd7a318a0d74889e4d58515602f4a4af8a878588f21fe316501748a16b3",
+        "4542bdd65723827558d9edb71237b8dfe22213b635354423b2ab08cede3bdd86",
+        "e7d5618292480fa492af13e455ebbcb3532b53a0e0bb729942dbfec3cc60e3cf"
+      ],
+      "originalPolygonExactlyOnce": true,
+      "originalCoordinatesUnchanged": true,
+      "inputImmutable": true,
+      "guardCases": [
+        {
+          "case": "trace-coordinate",
+          "rejected": true
+        },
+        {
+          "case": "trace-polygon-coordinate",
+          "rejected": true
+        },
+        {
+          "case": "group-polygon-coordinate",
+          "rejected": true
+        },
+        {
+          "case": "preset",
+          "rejected": true
+        },
+        {
+          "case": "engineRevision",
+          "rejected": true
+        },
+        {
+          "case": "engineHash",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceRoot",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceProofFile",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceProofFileSha256",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceHeaderFile",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceHeaderFileSha256",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceMetadataFile",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceMetadataFileSha256",
+          "rejected": true
+        },
+        {
+          "case": "identity:null",
+          "rejected": true
+        },
+        {
+          "case": "trace-reversed",
+          "rejected": true
+        }
+      ],
+      "blocked": false,
+      "holdReason": null,
+      "finePens": [
+        2,
+        3,
+        9,
+        13,
+        14
+      ],
+      "terminals": [
+        {
+          "raw": 1,
+          "primitive": 1,
+          "kind": "cdDrawCurve",
+          "terminal": 314,
+          "pens": [
+            2
+          ]
+        },
+        {
+          "raw": 9,
+          "primitive": 0,
+          "kind": "cdDrawLine",
+          "terminal": 123,
+          "pens": [
+            9
+          ]
+        }
+      ],
+      "boundaries": [
+        {
+          "pen": 2,
+          "mask": 2,
+          "start": 0.9239717736303439,
+          "weights": [
+            85.071068,
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "strictCaller": [
+    {
+      "file": "native-server-input-pins.json",
+      "nodeCodeSHA256": "47608b79d8c7b3b9e68ba0f1859cf31e0c52eb3ef7b3b35aae55ad8cc2036eea",
+      "executed": true,
+      "invocation": "rtk proxy node --input-type=module -e <exact cfg.nodeCode>",
+      "completeMasksSHA256": "af6a0d2e06d8bf8a8e30dbb04fbeb385aef6fb51ce00036c64283c3447e27ca4"
+    }
+  ],
+  "helper": {
+    "restartCommands": [
+      {
+        "file": "serve-native.py",
+        "portPolicy": "existing input pins port 0",
+        "command": "rtk proxy python3 \"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1080-2026-10-13/serve-native.py\"",
+        "availabilityNotChecked": true
+      }
+    ],
+    "sourceRead": true,
+    "serverStartedThisTask": false,
+    "HTTPExecutedThisTask": false,
+    "availabilityNotClaimed": true
+  },
+  "wholeInventory": [
+    {
+      "file": "engine-whole-u6478-k.json",
+      "sourceSHA256": "c15652220d66ec270d56b2ee44088cc648539aeee01fb1ed8902203b128c6d3f",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 15,
+      "polygons": 29
+    },
+    {
+      "file": "engine-whole-u6478-ue0100.json",
+      "sourceSHA256": "c15652220d66ec270d56b2ee44088cc648539aeee01fb1ed8902203b128c6d3f",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 15,
+      "polygons": 29
+    },
+    {
+      "file": "engine-whole-u6478-ue0101.json",
+      "sourceSHA256": "c15652220d66ec270d56b2ee44088cc648539aeee01fb1ed8902203b128c6d3f",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 15,
+      "polygons": 29
+    },
+    {
+      "file": "engine-whole-u6478-ue0102.json",
+      "sourceSHA256": "8290cf731e95d10a956ca79bcdd27cff3000d08de98fbec071cfc73ce6579261",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 15,
+      "polygons": 31
+    },
+    {
+      "file": "engine-whole-u6478.json",
+      "sourceSHA256": "c15652220d66ec270d56b2ee44088cc648539aeee01fb1ed8902203b128c6d3f",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 15,
+      "polygons": 29
+    }
+  ],
+  "originalFilesChanged": false,
+  "sourceGeometryChanged": false,
+  "compilerChanged": false,
+  "profileChanged": false,
+  "nativeApproval": false,
+  "runtimeChanged": false,
+  "sharedRegistryChanged": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "newSourceRequested": false,
+  "privateAssetsRead": false,
+  "privateGraphicsSaved": false,
+  "serversStarted": 0,
+  "networkRequests": 0,
+  "scope": "이 기록은 원본 수치·가드와 재시작 절차만 설명하며 국내 필순/자형/경계 hold를 해결했다고 주장하지 않습니다."
+}
