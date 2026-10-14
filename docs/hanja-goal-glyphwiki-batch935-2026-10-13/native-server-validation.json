@@ -1,0 +1,106 @@
+{
+  "batch": 935,
+  "glyph": "鵻",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "engineFiles": 8,
+  "domesticClips": 19,
+  "wholeEligibility": "native-unreviewed",
+  "profiles": null,
+  "blocked": false,
+  "blockedVariants": null,
+  "legacySelectedCaller": {
+    "sourceRoot": "u9d7b",
+    "sourceProofFile": "engine-whole-u9d7b.json",
+    "sourceProofFileSHA256": "aec3e72052ec2a28c6a4d4ed5b626b66553ca650eca9608b900055ed04455afa"
+  },
+  "compilerFileSHA256": "41bf88a6f0dc6d23f548245776c44d1e2b4e09f2e04401681d55ad3e22565ab2",
+  "servers": [
+    {
+      "batch": 935,
+      "kind": "serve-whole.py",
+      "session": 18650,
+      "port": 63179,
+      "pid": 43423,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 19,
+      "nativeApproved": false
+    },
+    {
+      "batch": 935,
+      "kind": "serve-progressive.py",
+      "session": 94499,
+      "port": 63189,
+      "pid": 43435,
+      "strokes": 19,
+      "masks": 20,
+      "sourceRoot": "u9d7b",
+      "sourceProofFile": "engine-whole-u9d7b.json",
+      "sourceProofFileSHA256": "aec3e72052ec2a28c6a4d4ed5b626b66553ca650eca9608b900055ed04455afa"
+    }
+  ],
+  "http": [
+    {
+      "batch": 935,
+      "url": "http://127.0.0.1:63179/?id=u9d7b",
+      "status": 200,
+      "bytes": 7914
+    },
+    {
+      "batch": 935,
+      "url": "http://127.0.0.1:63179/?id=u9d7b-ue0100",
+      "status": 200,
+      "bytes": 7922
+    },
+    {
+      "batch": 935,
+      "url": "http://127.0.0.1:63179/?pairs=1:1,19:19&view=checks",
+      "status": 200,
+      "bytes": 363,
+      "checks": {
+        "mapping": "exact-compiled-candidate-pens",
+        "root": "u9d7b",
+        "candidatePens": 19,
+        "masks": 20,
+        "pairs": [
+          {
+            "domestic": 1,
+            "candidate": 1,
+            "raw": [
+              0
+            ]
+          },
+          {
+            "domestic": 19,
+            "candidate": 19,
+            "raw": [
+              20
+            ]
+          }
+        ],
+        "sourceProofFile": "engine-whole-u9d7b.json",
+        "sourceProofFileSHA256": "aec3e72052ec2a28c6a4d4ed5b626b66553ca650eca9608b900055ed04455afa",
+        "nativeApproval": false
+      }
+    },
+    {
+      "batch": 935,
+      "url": "http://127.0.0.1:63189/?stroke=7&enlarged=1&samples=1",
+      "status": 200,
+      "bytes": 12203
+    }
+  ],
+  "allHttpPassed": true,
+  "originalSourceAndCompilerChanged": false,
+  "nativeObserved": 0,
+  "nativeApproval": false,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "emptyOriginalRawMetadata": null,
+  "geometryRewritten": false,
+  "nonconsecutiveClosingUsed": false
+}

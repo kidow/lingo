@@ -110,3 +110,22 @@ K원본鄹(batch930) 17획·18마스크·37원본다각형 적용. 全3종/K17�
 - Fine 5/7/8/11/12, original terminal 6, actual replay 7/5 passed.
 - Complete masks permuted [1,2,4,5,6,3,7,8,9,10,11,12]; 12 pens / 12 masks / 21 polygons. Original metadata and NOTICE untouched.
 - Original source PASS8 reused, no engine rerun/build. Runtime 5,474 applied / 504 remaining; next 934 麤 then935 鵻.
+
+
+## 934 麤 held · 2026-10-14
+
+- Native whole 3 profiles viewed; source-form eligibility not approved. var-001 upper dot/shared horizontal differs.
+- All source profiles strict consecutive minimum 36 > domestic33 (39 raw / 48 draw calls, 99/99/96 original polygons).
+- No active compiler/progressive/fine/replay. No forced grouping or same-pen assumption.
+- 16 existing files byte pinned; metadata and NOTICE unchanged. Prior source PASS/8engine reused; no build.
+- Runtime remains 5,474 applied / 504 remaining; next935 鵻.
+
+
+## 935 鵻 runtime review · 2026-10-14
+
+- Whole base/VS0 compatible; base selected. All19 directions and171 progressive frames passed.
+- Unchanged16pens/144frames reused only after exact mask SHA; corrected16–18 newly observed27frames.
+- Fine1/3/7/8/9/10/11/12/14, terminal1/13/18, native tail7 boundary before/at/after and95% connected reveal passed. Actual replay7/18 completed.
+- Whole-mask permutation [1–15,17,18,16,19];19pens20masks40polygons. 原7tail [64.852726,8], .8901894213265267 preserved.
+- All16 original files/metadata/NOTICE byte unchanged; full5 proof+2arg primitive and original explicit5Upper identity retained. SourcePASS8 reused, no build.
+- Runtime5,475 applied /503remaining; next936縐 then937蓫.
