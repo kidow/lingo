@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "batch": 955,
+  "glyph": "鮀",
+  "scope": "source-only separate helper controls; original caller/compiler/proof unchanged",
+  "helperFile": "serve-strict-native.py",
+  "helperSHA256": "a42ab5c2b265eb63e8816dd124d35ed6cab477240246b9f552beaefddb4cc785",
+  "originalInputsBytePins": {
+    "NOTICE.md": "7cf6b006773e42699b2b0384b95ebb8858a6ff46aecd5e6dd2bd852c0831c147",
+    "candidate-compile-analysis.json": "6c1e6866b24eb44e4ed8d2c6509febb6bd8b53933ceae64ff5a5bd2230b0730a",
+    "engine-proof.json": "1b437b21aa800079c7bcc358c5df3f8d01abf5ab1df51cfd6697ad8ee3ab2c28",
+    "engine-whole-u9b80-ue0100.json": "274e54de6aec8e18debcc1a22063d57e644c42993a31f8e7724aea1cc1ed72ea",
+    "engine-whole-u9b80.json": "1b437b21aa800079c7bcc358c5df3f8d01abf5ab1df51cfd6697ad8ee3ab2c28",
+    "metadata.json": "6375caeaf284dc02038c6adf7878fd17d1fc992c161dff3590d6ddac555794cc",
+    "native-server-preparation-source-analysis.json": "aa425f13c601347c7bf2d26ff70ee4bc237da597f78e954c6cc1f2965581b1aa",
+    "native-server-validation.json": "fe2378444eca99fbc17662a9ad2b8331c674bcd0307b9c9411aa8499ddfe42c3",
+    "progressive.mjs": "c49463b1c789661392e575e4dd46b86e6819178d33abfec6aa43a409307c1956",
+    "serve-progressive.py": "4c1ac1652b9eb044f7448bbb3a7afcc71caa3fed77feedbbc5acbb4a3cb6076b",
+    "serve-whole.py": "04dec9def9a3131a26efd2d8d331e58dfdf2c71b2dcbbc7bbe03eaaa8225955a",
+    "server-compile.mjs": "c4c6fbb09c7a771934adf89342e8c74c4b1f97a5cdf19cb1a7435e8f5823a6ba",
+    "source-analysis.json": "c77cf2173cba941ab4d2907f566bc9281715650b1ba983c312967a8ce426ea36",
+    "source-join-analysis.json": "a951b98917c168721975c4ca307b465d463541a6da6d0ab3ed0a0a502a88547a",
+    "source-preservation-audit.json": "0a8f44a2c52bf869f83c5164e004f0aea49f68ba0c0a39dcc733dc114430076f",
+    "sources.json": "cb9c1f38cec14051673e420259c6e361183538d54dae88ee451966b39f41efd3",
+    "verify-source.mjs": "a808691d6dc3675de580460df408f22f97e33003865952d45698685027cb3148"
+  },
+  "originalFilesUnchanged": true,
+  "caller": {
+    "file": "server-compile.mjs",
+    "module": "progressive.mjs",
+    "signature": "compileSourceWhole(root,proof.trace,fullProof,fileIdentity)",
+    "actualIdentity": {
+      "root": "u9b80",
+      "file": "engine-whole-u9b80.json",
+      "fileSHA256": "1b437b21aa800079c7bcc358c5df3f8d01abf5ab1df51cfd6697ad8ee3ab2c28"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "sourceProofFile",
+      "sourceProofFileSHA256",
+      "sourceRoot",
+      "trace"
+    ],
+    "fullProofSHA256": "23abb80728e4ed9dffb1b4b69e9dca546e48ad751ec73fea295e86707d9ed4f4",
+    "originalBodyKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "bridgeFields": [
+      "sourceRoot",
+      "sourceProofFile",
+      "sourceProofFileSHA256"
+    ],
+    "legacyOptionalAttributionProtectedByOriginalCaller": true
+  },
+  "numeric": {
+    "pens": 16,
+    "masks": 17,
+    "polygons": 39,
+    "compiledSHA256": "ce36e01616bb18b305574eccf89de4f787c5f346c780405fcaf4feb092ebd9f0",
+    "perPenFullSHA256": [
+      "fe57655b94787f20f7afa314ee0582aa073511fb7e612aece8a91cbbc850a4fd",
+      "cf286676a8cc28163cbb429a5a33028aaee43e0c8878cd09b28d83cb2e67cae8",
+      "9adf5de8210f65d8a20d1e63c3c5acb559d461e9bd3a0403a4b3ea6a93e152bc",
+      "b77a7cce2cbd2a6f763f530ce790fdd1312eaffce43ecb239dd2dbee8703ba09",
+      "f01f16b0c8109aa740fecf982ffdc23556c8a5aabd33e9306a136732ae1d1a5c",
+      "e71c3fb1c3d72e0346756ce1a824aebd6adec292b83ad87f57a7e448c10ab819",
+      "10991ca03a3648c215883d99e68124f19d481263dec9fefa58699be2dd61ccf9",
+      "1610c28c71126b8572879228c985cd4f081784c53e2cf7fc7f0d35b34e76f1c3",
+      "04243ff64f97b81c8776a2fcbb227231edb42801f453d5a6df4fc40a0417d73a",
+      "d324d3efefbd4e182133be259b2f3fb076e52c4227d271c49555809533a230cb",
+      "50e1a81ee9a093b3fc86b2c7f6ed0e8afd85270c9594c40b7bd37e2b806441ab",
+      "879c612675b750a52643ef879ae0c2f9eaf08136c612c4f241d31330c18817e4",
+      "aa22a6fe4cc01d327626a29de0527508906437a4162bf98c9fcb5cc8deefc032",
+      "8a60ef7915669f150afee73b5709cff7fb1088a6b5faa4e29840b7fa743afe29",
+      "b0522fa664e67bfc7e079629c7764f6ec8156409741fd84c1978c038f83d0581",
+      "ea5917ee01a196cfc251a1aefea3f38da107748eb456ed2356b6da6ccabc7457"
+    ],
+    "emptyOriginalRawMetadata": [
+      13
+    ],
+    "rawCount": 20,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ]
+    ],
+    "geometryMaskPathWidthWeightDirectionUnchanged": true
+  },
+  "controls": {
+    "progressSliderDivisor": 100,
+    "expandedSamplesVisible": true,
+    "samples": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "fine99_99And100": true,
+    "enlarged520": true,
+    "originalRenderProgressiveUnchanged": true,
+    "replay8000ms": true
+  },
+  "sourceEvidence": {
+    "existingFile": "native-server-validation.json",
+    "recordedSourceVerifierExecutedOnce": true,
+    "recordedSourcePassed": true,
+    "engineFiles": 8,
+    "domesticClips": 16,
+    "currentSourceOrEngineReplay": false,
+    "evidenceStrength": "existing recorded source verification reused; this preparation performs only local byte/caller/HTTP checks"
+  },
+  "verification": {
+    "httpReviewPathsPassed": 3,
+    "checksPassed": true,
+    "unsupportedCompiledVariantRejected": true,
+    "oldFilesUnchanged": 17,
+    "helperSHA256": "a42ab5c2b265eb63e8816dd124d35ed6cab477240246b9f552beaefddb4cc785",
+    "boundary": [
+      {
+        "pen": 16,
+        "mask": 2,
+        "start": 0.8742246806836317,
+        "weights": [
+          86.883568,
+          12.5
+        ]
+      }
+    ],
+    "nativeApproval": false,
+    "privateMediaSaved": false
+  },
+  "server": {
+    "port": 61106,
+    "pid": 84989,
+    "session": 1667,
+    "whole": "/whole?id=u9b80&all=1",
+    "pairs": "/pairs?id=u9b80",
+    "progressive": "/progressive?id=u9b80&stroke=16&enlarged=1&samples=1"
+  },
+  "nativePending": {
+    "wholeVariantsObserved": 0,
+    "directionsObserved": 0,
+    "framesObserved": 0,
+    "replaysObserved": 0,
+    "finePens": [
+      1,
+      2,
+      4,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16
+    ],
+    "maskTransitions": [
+      {
+        "pen": 16,
+        "weights": [
+          86.883568,
+          12.5
+        ],
+        "directions": [
+          "curve",
+          "up"
+        ],
+        "boundaries": [
+          0.8742246806836317
+        ]
+      }
+    ],
+    "priorityRisk": "Pen16 original raw19/call2 terminal5 upward-tail onset at .8742246806836317 and99.99/100; root native review remains pending."
+  },
+  "oldHelpersUnchanged": {
+    "wholePort": 60914,
+    "progressivePort": 60926,
+    "oldSliderDivisor": 160,
+    "oldExpandedSamplesHidden": true
+  },
+  "nativeApproval": false,
+  "runtimeChanged": false,
+  "sourceEngineExecuted": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
+
