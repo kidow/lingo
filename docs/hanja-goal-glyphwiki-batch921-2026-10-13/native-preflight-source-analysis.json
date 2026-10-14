@@ -1,0 +1,146 @@
+{
+  "checkedDate": "2026-10-14",
+  "scope": "Fixed public source and source-only compiler preflight. Child did not operate native browser or approve domestic whole/order/directions/mask boundaries/replay.",
+  "batch": 921,
+  "glyph": "襜",
+  "pens": 18,
+  "masks": 19,
+  "originalPolygons": 43,
+  "allOriginalPolygonsExactlyOnce": true,
+  "inputImmutable": true,
+  "mutationRejects": 6,
+  "pinnedInputFiles": 6,
+  "compilerSHA256": "a02613ea3be6f78ebc637fde7d3ffcfda7657949958097df1a41ad58d081520f",
+  "compiledSHA256": "2fcb67d3b5797cd8a18ef894786920355a72e27937e90bb7b6bbaafcc4641475",
+  "proofFile": "engine-whole-u895c.json",
+  "proofFileSHA256": "4ea104621c8474f016b83bd9869363b48ca19f2d3707991e44163c41081791ba",
+  "wholeFacts": [
+    {
+      "root": "u895c",
+      "raw": 21,
+      "calls": 24,
+      "polygons": 43,
+      "minUnrestricted": 17,
+      "consecutiveOnly": 18
+    },
+    {
+      "root": "u895c-ue0100",
+      "raw": 21,
+      "calls": 24,
+      "polygons": 43,
+      "minUnrestricted": 17,
+      "consecutiveOnly": 18
+    }
+  ],
+  "folds": [
+    {
+      "pen": 2,
+      "raw": [
+        1,
+        2
+      ],
+      "internalExact": true,
+      "consecutive": true
+    },
+    {
+      "pen": 7,
+      "raw": [
+        7,
+        8
+      ],
+      "internalExact": true,
+      "consecutive": true
+    },
+    {
+      "pen": 17,
+      "raw": [
+        18,
+        19
+      ],
+      "internalExact": true,
+      "consecutive": true,
+      "maxOriginalVertexDistanceKage": 13.450116170502032,
+      "revealWidth": 14,
+      "boundExceedsMask": false
+    }
+  ],
+  "transitions": [
+    {
+      "pen": 11,
+      "mask": 2,
+      "boundary": 0.8358926063711304,
+      "direction": "up",
+      "weight": 4.5
+    }
+  ],
+  "curveFinePens": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    17
+  ],
+  "terminal15": [],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineReexecuted": true,
+  "engineReplay": {
+    "batch": 921,
+    "engineHashChecks": 8,
+    "records": 4,
+    "historicalDataHashesChecked": 0,
+    "missingBareDependencies": [],
+    "rows": [
+      {
+        "root": "u895c",
+        "raw": 21,
+        "calls": 24,
+        "polygons": 43,
+        "polygonsSHA256": "feca0c0d094bde5982a511c311be6e6ad470cf26726ce7de9ddfa034681df6dc",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u895c-ue0100",
+        "raw": 21,
+        "calls": 24,
+        "polygons": 43,
+        "polygonsSHA256": "feca0c0d094bde5982a511c311be6e6ad470cf26726ce7de9ddfa034681df6dc",
+        "engineWholeExactlyReplayed": true
+      }
+    ],
+    "privateGraphicsRequested": false,
+    "archiveRedownloaded": false,
+    "nativeApproved": false
+  },
+  "identityContract": {
+    "compilerArguments": 2,
+    "thirdIdentityArgument": false,
+    "selectedWholeFileSHA256CheckedExternally": true,
+    "originalFullBodyTraceGroupsPresetAndEightEnginePinned": true,
+    "byteEqualAliasesAreNotImplicitNativeSelection": true
+  },
+  "risks": [
+    "18 pens use consecutive folds raw1/2,raw7/8,raw18/19; original enclosure closing contact is not used to reduce to17.",
+    "Pen11 raw12 terminal5 original tail is split in the same pen into an up mask beginning at83.58926063711304%; no new geometry or pen. Native transition and replay pending.",
+    "Pen17 pure-L original vertex bound13.450116170502032 is below14; this numerical bound does not approve curve masks or domestic directions."
+  ],
+  "sourceMissing": false,
+  "latestSubstitution": false,
+  "coordinateMutation": false,
+  "connectorAuthored": false,
+  "widthMutation": false,
+  "nativeWholeApproval": false,
+  "nativeOrderApproval": false,
+  "nativeDirectionsReviewed": 0,
+  "nativeFramesReviewed": 0,
+  "nativeReplaysReviewed": 0,
+  "runtimeRegistered": 0,
+  "privateMediaSaved": false,
+  "archiveRedownloaded": false,
+  "buildExecuted": false,
+  "actualValidationExit": 0
+}
