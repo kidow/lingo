@@ -134,7 +134,12 @@ const CONTRACT = {
       "privateMediaSaved": false
     },
     "readmeSHA256": "e53904381247c8904e53c95971fee5f6b31236e5a912cdd21f44daa7d0ec9ddf",
-    "reproductionNarrative": "Prior executable --engine output explicitly confirmed groups, trace and defaults equality."
+    "reproductionNarrative": "Stored validation.pinnedEngine.stdout declares engineChecked=true; verify.mjs contains a --engine byte-hash/reproduction branch. The original execution transcript, original engine bytes and a live reproduction cache were not available in this preparation. Treat historical execution as unknown.",
+    "evidenceStrength": "stored-verifier-output-claim-without-independent-execution-evidence",
+    "originalEngineBytesAvailable": false,
+    "originalExecutionTranscriptAvailable": false,
+    "liveReproductionCacheAvailable": false,
+    "establishesActualEngineReproductionPass": false
   },
   "oldHoldStatus": "deferred-terminal-hook-reveal",
   "oldFailedPen": 14,
@@ -149,6 +154,11 @@ export const sourceRoot = CONTRACT.root
 export const sourceGroups = CONTRACT.sourceGroups
 export const nativeApproval = false
 export const runtimeApplied = false
+export const sourcePassed = null
+export const sourceExecutionClaim = 'unknown'
+export const sourceEngineReplayKnown = false
+export const diagnosticOnly = true
+export const activePens = 0
 
 function assertOriginalBytePins() {
   for (const [file, pin] of Object.entries(CONTRACT.filePins))
