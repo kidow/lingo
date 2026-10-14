@@ -1,0 +1,406 @@
+{
+  "checkedDate": "2026-10-14",
+  "scope": "Fixed public-source preflight and compiler contract only. Numeric count and source exactness are not native whole/order/pen/direction/mask/replay approval.",
+  "batch": 1054,
+  "glyph": "遹",
+  "pens": 16,
+  "masks": 18,
+  "originalPolygons": 40,
+  "allOriginalPolygonsExactlyOnce": true,
+  "inputImmutable": true,
+  "mutationRejects": 6,
+  "identityGuardRejects": 4,
+  "identityMandatory": true,
+  "supportedWholeRoots": [
+    "u9079-g",
+    "u9079-ue0102",
+    "u9079-var-001",
+    "u9079-var-002"
+  ],
+  "pinnedInputFiles": 6,
+  "compilerSHA256": "c47ad2bdac9231db87a83895abb852483104bf6339d3d57f0c1635aa77e09a1b",
+  "compiledSHA256": "d2231a7339b328cec7274905b87794dd81c3f2702d387ca9270b985c620c3a6f",
+  "proofFile": "engine-whole-u9079-g.json",
+  "proofFileSHA256": "bd4fb6410f5e7a1bd2b169c693581d3a45a2637ae9cfb750768048a50a166f1c",
+  "wholeFacts": [
+    {
+      "root": "u9079",
+      "raw": 22,
+      "calls": 26,
+      "polygons": 45,
+      "minUnrestricted": 16,
+      "consecutiveOnly": 17
+    },
+    {
+      "root": "u9079-g",
+      "raw": 21,
+      "calls": 23,
+      "polygons": 40,
+      "minUnrestricted": 15,
+      "consecutiveOnly": 16
+    },
+    {
+      "root": "u9079-j",
+      "raw": 22,
+      "calls": 26,
+      "polygons": 45,
+      "minUnrestricted": 16,
+      "consecutiveOnly": 17
+    },
+    {
+      "root": "u9079-k",
+      "raw": 22,
+      "calls": 26,
+      "polygons": 45,
+      "minUnrestricted": 16,
+      "consecutiveOnly": 17
+    },
+    {
+      "root": "u9079-t",
+      "sourceComplete": false,
+      "wholeGeometryApproval": null,
+      "missing": [
+        "u5182-j"
+      ],
+      "compilerRejected": true
+    },
+    {
+      "root": "u9079-ue0100",
+      "raw": 22,
+      "calls": 26,
+      "polygons": 45,
+      "minUnrestricted": 16,
+      "consecutiveOnly": 17
+    },
+    {
+      "root": "u9079-ue0101",
+      "raw": 22,
+      "calls": 26,
+      "polygons": 45,
+      "minUnrestricted": 16,
+      "consecutiveOnly": 17
+    },
+    {
+      "root": "u9079-ue0102",
+      "raw": 21,
+      "calls": 25,
+      "polygons": 42,
+      "minUnrestricted": 15,
+      "consecutiveOnly": 16
+    },
+    {
+      "root": "u9079-var-001",
+      "raw": 21,
+      "calls": 25,
+      "polygons": 43,
+      "minUnrestricted": 15,
+      "consecutiveOnly": 16
+    },
+    {
+      "root": "u9079-var-002",
+      "raw": 21,
+      "calls": 25,
+      "polygons": 42,
+      "minUnrestricted": 15,
+      "consecutiveOnly": 16
+    }
+  ],
+  "folds": [
+    {
+      "pen": 2,
+      "raw": [
+        1,
+        2
+      ],
+      "internalExact": true,
+      "consecutive": true,
+      "maxOriginalVertexDistanceKage": 11,
+      "revealWidth": 14,
+      "boundExceedsMask": false
+    },
+    {
+      "pen": 5,
+      "raw": [
+        5,
+        6
+      ],
+      "internalExact": true,
+      "consecutive": true
+    },
+    {
+      "pen": 7,
+      "raw": [
+        8,
+        9
+      ],
+      "internalExact": true,
+      "consecutive": true
+    },
+    {
+      "pen": 11,
+      "raw": [
+        13,
+        14
+      ],
+      "internalExact": true,
+      "consecutive": true
+    },
+    {
+      "pen": 15,
+      "raw": [
+        18,
+        19
+      ],
+      "internalExact": true,
+      "consecutive": true,
+      "maxOriginalVertexDistanceKage": 11.639165401016712,
+      "revealWidth": 14,
+      "boundExceedsMask": false
+    }
+  ],
+  "transitions": [
+    {
+      "pen": 8,
+      "mask": 2,
+      "boundary": 0.6598184491885105,
+      "direction": "left",
+      "weight": 10
+    },
+    {
+      "pen": 11,
+      "mask": 2,
+      "boundary": 0.8998875191783533,
+      "direction": "left",
+      "weight": 9
+    }
+  ],
+  "curveFinePens": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    15
+  ],
+  "terminal15": [],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineReexecuted": true,
+  "sourceFileSHA256": "bf16b04275f5097241bfe5cf88a7248e215f06a9d877e9f04dbe68530bd59374",
+  "engineReplay": {
+    "batch": 1054,
+    "engineHashChecks": 8,
+    "records": 28,
+    "historicalDataHashesChecked": 5,
+    "missingBareDependencies": [
+      "u5182-j"
+    ],
+    "rows": [
+      {
+        "root": "u9079",
+        "raw": 22,
+        "calls": 26,
+        "polygons": 45,
+        "polygonsSHA256": "f9265d250af998445f2d5d28eb80d86c221553a6e4e4c1ea6990eab4a395d30d",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u9079-g",
+        "raw": 21,
+        "calls": 23,
+        "polygons": 40,
+        "polygonsSHA256": "9e6cbb7bd886fea2f3fb8bd676c4d8b120c5703aae034e2e72c74bb2f69dddfd",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u9079-j",
+        "raw": 22,
+        "calls": 26,
+        "polygons": 45,
+        "polygonsSHA256": "f9265d250af998445f2d5d28eb80d86c221553a6e4e4c1ea6990eab4a395d30d",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u9079-k",
+        "raw": 22,
+        "calls": 26,
+        "polygons": 45,
+        "polygonsSHA256": "f9265d250af998445f2d5d28eb80d86c221553a6e4e4c1ea6990eab4a395d30d",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u9079-t",
+        "sourceComplete": false,
+        "wholeGeometryApprovalNull": true,
+        "missingDependencies": [
+          "u5182-j"
+        ],
+        "engineReplayNotClaimed": true
+      },
+      {
+        "root": "u9079-ue0100",
+        "raw": 22,
+        "calls": 26,
+        "polygons": 45,
+        "polygonsSHA256": "f9265d250af998445f2d5d28eb80d86c221553a6e4e4c1ea6990eab4a395d30d",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u9079-ue0101",
+        "raw": 22,
+        "calls": 26,
+        "polygons": 45,
+        "polygonsSHA256": "f9265d250af998445f2d5d28eb80d86c221553a6e4e4c1ea6990eab4a395d30d",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u9079-ue0102",
+        "raw": 21,
+        "calls": 25,
+        "polygons": 42,
+        "polygonsSHA256": "9ec71170f2aeb33febed93bc50af4932ca48f1f0fde6754826b9f2122dc29b58",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u9079-var-001",
+        "raw": 21,
+        "calls": 25,
+        "polygons": 43,
+        "polygonsSHA256": "0dde7ce2b2b062306a79c42de25d480fd15324a2a1c39612f4a29c6bd320f19e",
+        "engineWholeExactlyReplayed": true
+      },
+      {
+        "root": "u9079-var-002",
+        "raw": 21,
+        "calls": 25,
+        "polygons": 42,
+        "polygonsSHA256": "9ec71170f2aeb33febed93bc50af4932ca48f1f0fde6754826b9f2122dc29b58",
+        "engineWholeExactlyReplayed": true
+      }
+    ],
+    "privateGraphicsRequested": false,
+    "archiveRedownloaded": false,
+    "nativeApproved": false
+  },
+  "allSupportedProfilesActualCompile": [
+    {
+      "root": "u9079-g",
+      "identity": {
+        "root": "u9079-g",
+        "file": "engine-whole-u9079-g.json",
+        "fileSHA256": "bd4fb6410f5e7a1bd2b169c693581d3a45a2637ae9cfb750768048a50a166f1c"
+      },
+      "fullHeaderPresent": true,
+      "penCount": 16,
+      "maskCount": 18,
+      "originalPolygons": 40,
+      "compiledSHA256": "d2231a7339b328cec7274905b87794dd81c3f2702d387ca9270b985c620c3a6f",
+      "allPolygonsExactlyOnce": true,
+      "mutationRejects": 6,
+      "identityGuardRejects": 2,
+      "inputImmutable": true
+    },
+    {
+      "root": "u9079-ue0102",
+      "identity": {
+        "root": "u9079-ue0102",
+        "file": "engine-whole-u9079-ue0102.json",
+        "fileSHA256": "0848b462b98f241fe2f1331c5cf9eec9d518f45009c18f40c09dfc24b3a0324f"
+      },
+      "fullHeaderPresent": true,
+      "penCount": 16,
+      "maskCount": 18,
+      "originalPolygons": 42,
+      "compiledSHA256": "fcb22d372e011fb0c1d4b9a2d1ef73165a609350186add0f27195ce57fcc8f1a",
+      "allPolygonsExactlyOnce": true,
+      "mutationRejects": 6,
+      "identityGuardRejects": 2,
+      "inputImmutable": true
+    },
+    {
+      "root": "u9079-var-001",
+      "identity": {
+        "root": "u9079-var-001",
+        "file": "engine-whole-u9079-var-001.json",
+        "fileSHA256": "6e5a1d93ccf33131670497cb0a2d786fee282073f3f90f77f47020afc6703779"
+      },
+      "fullHeaderPresent": true,
+      "penCount": 16,
+      "maskCount": 19,
+      "originalPolygons": 43,
+      "compiledSHA256": "cbe2b801a192b7f5d0696c7f3f5ea68cfcc364d7186a0b1360a8a1bb433659fe",
+      "allPolygonsExactlyOnce": true,
+      "mutationRejects": 6,
+      "identityGuardRejects": 2,
+      "inputImmutable": true
+    },
+    {
+      "root": "u9079-var-002",
+      "identity": {
+        "root": "u9079-var-002",
+        "file": "engine-whole-u9079-var-002.json",
+        "fileSHA256": "5b21487c8880df543f939edfc9776e0048b24144df0d4237f32f7dc55619f55a"
+      },
+      "fullHeaderPresent": true,
+      "penCount": 16,
+      "maskCount": 18,
+      "originalPolygons": 42,
+      "compiledSHA256": "eac7e3f0bff9a93db84e5d9cc27fd97748763000bcefd92e247c56ab7acc6628",
+      "allPolygonsExactlyOnce": true,
+      "mutationRejects": 6,
+      "identityGuardRejects": 2,
+      "inputImmutable": true
+    }
+  ],
+  "identityContract": {
+    "mandatoryThirdArgument": true,
+    "shape": [
+      "root",
+      "file",
+      "fileSHA256"
+    ],
+    "optionalProofRootAndFileHeaders": true,
+    "optionalProofRootAndFileHeadersConfirmedByActualCompile": true,
+    "proofHeadersWhenProvidedMustMatchSelectedProfile": true,
+    "selectedProofHasFullEngineHeader": true,
+    "bodyTraceGroupsPresetAndEightEngineImmutable": true,
+    "missingOrWrongIdentityRejected": true,
+    "attributionTamperRejected": true,
+    "allProfilesExplicitlySelected": true,
+    "byteEqualAliasesDoNotTransferNativeApproval": true
+  },
+  "risks": [
+    "Global source-missing hold remains for t root: bareu5182-j absent from fixed archive. Its proof file and whole geometry are null; compiler rejects it. No latest or sibling replacement is used.",
+    "Only independently complete g/VS2/var001/var00216pen profiles compile. Base/j/k/VS0/VS1 require17consecutive paths and are excluded; incidental closing contact cannot force16.",
+    "Selectedg original tail transitions: pen8 left65.98184491885105%,weight10; pen11 left89.98875191783533%,weight9. Whole 辶 form/order/domestic16 correspondence and replay remain native pending."
+  ],
+  "sourceMissing": true,
+  "missingOriginalReferences": [
+    "u5182-j"
+  ],
+  "incompleteWholeGeometryPreservedNull": [
+    "u9079-t"
+  ],
+  "sourceMissingNotReplacedByIndependentCompleteWhole": true,
+  "latestSubstitution": false,
+  "coordinateMutation": false,
+  "connectorAuthored": false,
+  "widthMutation": false,
+  "nativeWholeApproval": false,
+  "nativeOrderApproval": false,
+  "nativeDirectionsReviewed": 0,
+  "nativeFramesReviewed": 0,
+  "nativeReplaysReviewed": 0,
+  "runtimeRegistered": 0,
+  "privateMediaSaved": false,
+  "archiveRedownloaded": false,
+  "buildExecuted": false,
+  "actualValidationExit": 0
+}

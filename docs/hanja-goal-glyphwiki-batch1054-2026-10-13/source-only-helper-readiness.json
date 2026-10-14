@@ -1,0 +1,161 @@
+{
+  "batch": 1054,
+  "glyph": "遹",
+  "date": "2026-10-14",
+  "catalogStrokes": 16,
+  "domesticClips": 16,
+  "status": "source-only selected complete geometry; overall source-missing hold preserved",
+  "sourceVerification": {
+    "priorSourcePassed": false,
+    "priorActuallyExecuted": true,
+    "evidenceFile": "native-server-preparation-source-analysis.json",
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": true,
+    "priorSourceEvidencePassed": true,
+    "priorVerificationPassed": true,
+    "priorHoldGuardPassed": true,
+    "priorSourceMissingHold": true,
+    "expectedMissing": [
+      "u5182-j"
+    ],
+    "interpretation": "Prior sourcePassed=false denotes incomplete whole family, not hash/download FAIL; explicit source-verification.json check sourceEvidencePassed=true and holdGuardPassed=true reproduced the missing state.",
+    "additionalEvidenceFile": "source-verification.json"
+  },
+  "selectedRoot": "u9079-g",
+  "selectedFile": "engine-whole-u9079-g.json",
+  "selectedIdentity": {
+    "root": "u9079-g",
+    "file": "engine-whole-u9079-g.json",
+    "fileSHA256": "bd4fb6410f5e7a1bd2b169c693581d3a45a2637ae9cfb750768048a50a166f1c"
+  },
+  "originalBytePins": {
+    "sources.json": "bf16b04275f5097241bfe5cf88a7248e215f06a9d877e9f04dbe68530bd59374",
+    "metadata.json": "be923c8734cafb76a59c43a7dfc713bfc50c8f83528ffee77f6364ff1e80f24f",
+    "engine-proof.json": "98d07cd2de607719ba66f249e500f7898973912dd5268dcf9ad6a02307af3949",
+    "engine-whole-u9079-g.json": "bd4fb6410f5e7a1bd2b169c693581d3a45a2637ae9cfb750768048a50a166f1c",
+    "native-server-preparation-source-analysis.json": "eef5fb0e17f25351ce69840f559cf4101a5a3dd10a6f03a64b5e16d555de4605",
+    "progressive.mjs": "c47ad2bdac9231db87a83895abb852483104bf6339d3d57f0c1635aa77e09a1b",
+    "server-compile.mjs": "6aa2aa89076188ed96b2008503963ded25dd276ded2d89821fc8a3405257247e"
+  },
+  "wholeFamily": {
+    "names": [
+      "u9079",
+      "u9079-g",
+      "u9079-j",
+      "u9079-k",
+      "u9079-t",
+      "u9079-ue0100",
+      "u9079-ue0101",
+      "u9079-ue0102",
+      "u9079-var-001",
+      "u9079-var-002"
+    ],
+    "missingFixedDependencies": [
+      "u5182-j"
+    ],
+    "missingAlternativesNeverPromoted": true
+  },
+  "callerContract": "explicit root + trace + eight-key full selected proof + three-field file identity",
+  "guards": {
+    "exit": 0,
+    "sourceRejected": 6,
+    "identityRejected": 3,
+    "totalRejected": 10,
+    "pinsPassed": true,
+    "inputUnchanged": true,
+    "omission": "omitted identity rejected",
+    "actualExecutionExit": 0
+  },
+  "compiler": {
+    "pens": 16,
+    "masks": 18,
+    "originalPolygonCount": 40,
+    "originalPolygonsExactlyOnce": true,
+    "compiledGeometrySHA256": "d2231a7339b328cec7274905b87794dd81c3f2702d387ca9270b985c620c3a6f",
+    "blockedReason": null,
+    "nonConsecutiveGroups": [],
+    "finePens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      15
+    ],
+    "maskTransitions": [
+      {
+        "pen": 8,
+        "mask": 2,
+        "start": 0.6598184491885105,
+        "weights": [
+          19.396068,
+          10
+        ]
+      },
+      {
+        "pen": 11,
+        "mask": 2,
+        "start": 0.8998875191783533,
+        "weights": [
+          80.898881,
+          9
+        ]
+      }
+    ],
+    "originalSpecialTerminals": [
+      [
+        10,
+        1,
+        "cdDrawCurve",
+        14
+      ],
+      [
+        14,
+        1,
+        "cdDrawCurve",
+        114
+      ],
+      [
+        17,
+        0,
+        "cdDrawLine",
+        213
+      ],
+      [
+        19,
+        0,
+        "cdDrawLine",
+        223
+      ]
+    ],
+    "originalProofKeys": 5,
+    "completeProofKeys": 8
+  },
+  "helper": {
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1054-2026-10-13/serve-progressive.py",
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1054-2026-10-13/serve-whole.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "Existing local-only helper; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
