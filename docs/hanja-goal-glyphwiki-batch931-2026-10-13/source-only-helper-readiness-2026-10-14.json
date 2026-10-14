@@ -1,0 +1,255 @@
+{
+  "batch": 931,
+  "glyph": "萑",
+  "status": "original-profile-helper-ready-source-only-native-pending",
+  "newFiles": [
+    "source-only-helper-readiness-2026-10-14.json"
+  ],
+  "originalBytePins": {
+    "sources.json": "ff2b4b40f5aaa0fcb684680a5d342b98ffeeb15aad2c83ce1fbabb072c69159a",
+    "metadata.json": "961f5be4fd200e0f2e3fce3137b264b40532dd6ac370c26f8150bb060e66b78e",
+    "engine-proof.json": "48400abc4aa15a97c99a877777c68f1674bd5ef83ad26926f019363737167936",
+    "progressive.mjs": "e0a5fd78a241c9e5cabb6ac17b3764dd08a7e55056d2120bfaeb6e25d104fa44",
+    "server-compile.mjs": "16aabe74f3a1fa3e3155531c18ea021b53df381f5da1e9640b0403517781fff5",
+    "serve-whole.py": "0efb52df9956de1ebafa4f50b8f4d481e666dd24c1ed3b71b5485186fa1a361d",
+    "serve-progressive.py": "5e1e2c17aa2ee084d74b3a0a29293c262097459d02ed2537e6dd9e04928176b4",
+    "native-server-validation.json": "88670cda6e3d5964d6bc2a594adfc6342cede141368213d452bd51e98041a2ce",
+    "native-server-preparation-source-analysis.json": "52e3e00d25df9ce729cb4e1764d09a3c1a3790575ffd7bfadf2313f9505480e1",
+    "engine-whole-u8411.json": "76957c98c2b3a85d720f1f343eff51407fd3112cc3391106f30a675739b37257",
+    "engine-whole-u8411-02.json": "e10e3bdf8c508786144892bd2c632163827230078cc3ab164bca8b11e0ed9f18",
+    "engine-whole-u8411-07-var-001.json": "bee489b9dd6fda6522fcd990ee4f5ef28957acfcced5b47f6e164f914dd997f8",
+    "engine-whole-u8411-07-var-002.json": "b6e1fd023cd7c80551336d0efd1982cc99ff5519aba5d123e23ba14466065502",
+    "engine-whole-u8411-itaiji-001.json": "92fc28b152ff739682e5cfef13c4cf8d760e474b9b96ef10e3c4250ffdd1402c",
+    "engine-whole-u8411-itaiji-002.json": "f90c6c7fb5d1dd1790eeb5af8f99a2a809fd2e440e07b8c804ae54e52c7427ab",
+    "engine-whole-u8411-ue0100.json": "c17e3ea7fe0e95e6aaa3afcde5bc7da2960ccd28c1efd482982b48b29052406a",
+    "engine-whole-u8411-ue0101.json": "c17e3ea7fe0e95e6aaa3afcde5bc7da2960ccd28c1efd482982b48b29052406a",
+    "engine-whole-u8411-ue0102.json": "0dd2f3ec1e32d271e32f5832e91407ea9f51a8ae934bc44b178c7c5a05d087b1"
+  },
+  "originalFilesChanged": false,
+  "servers": {
+    "whole": {
+      "port": 54259,
+      "pid": 21312,
+      "session": 31506,
+      "wholeURL": "http://127.0.0.1:54259/?id=u8411-ue0102",
+      "all12PairsURL": "http://127.0.0.1:54259/?id=u8411-ue0102&pairs=1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,10:10,11:11,12:12"
+    },
+    "progressive": {
+      "port": 54253,
+      "pid": 21301,
+      "session": 76708,
+      "fineURL": "http://127.0.0.1:54253/?root=u8411-ue0102&stroke=6&enlarged=1",
+      "coarseURL": "http://127.0.0.1:54253/?root=u8411-ue0102&stroke=6"
+    }
+  },
+  "pastRecordedPorts": {
+    "whole": 63099,
+    "progressive": 63111,
+    "listeningAtStart": false
+  },
+  "selectedRoot": "u8411-ue0102",
+  "selectedIdentity": {
+    "root": "u8411-ue0102",
+    "file": "engine-whole-u8411-ue0102.json",
+    "fileSHA256": "0dd2f3ec1e32d271e32f5832e91407ea9f51a8ae934bc44b178c7c5a05d087b1"
+  },
+  "callerContract": "compileSourceWhole(root,trace,full8Proof,explicit{root,file,fileSHA256}) is mandatory. server-compile.mjs pins compiler/root/selectedbody/header/payload. Full8proof adds sourceRoot/sourceProofFile/sourceProofFileSHA256 to full5engine proof; do not strip them or change JSON key order.",
+  "selectedProofKeys": [
+    "defaults",
+    "groups",
+    "trace"
+  ],
+  "headerKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "fullProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "sourceProofFile",
+    "sourceProofFileSHA256",
+    "sourceRoot",
+    "trace"
+  ],
+  "fullProofSHA256": "4347b8affca113f80d7bb09927f66e67f6b1466ba3d7da25b780b2c8f3dadf61",
+  "compilerSHA256": "e0a5fd78a241c9e5cabb6ac17b3764dd08a7e55056d2120bfaeb6e25d104fa44",
+  "wholeRoots": [
+    "u8411",
+    "u8411-02",
+    "u8411-07-var-001",
+    "u8411-07-var-002",
+    "u8411-itaiji-001",
+    "u8411-itaiji-002",
+    "u8411-ue0100",
+    "u8411-ue0101",
+    "u8411-ue0102"
+  ],
+  "candidateSupportedRoots": [
+    "u8411-ue0102"
+  ],
+  "unsupportedRootsComparisonOnly": true,
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ]
+  ],
+  "pens": 12,
+  "masks": 12,
+  "originalPolygons": 25,
+  "originalPolygonExactOnceEvidence": "Prior profile originalPolygonsExactlyOnce=true and preserved source/compiler bytes. Not a new engine or native validation.",
+  "emptyRawMetadata": {
+    "raw": 4,
+    "traceCalls": 0,
+    "polygons": 0,
+    "preservedInGroup": [
+      3,
+      4
+    ],
+    "noNewPenInvented": true
+  },
+  "curveFinePens": [
+    5,
+    7
+  ],
+  "additionalOriginalTipChecks": [
+    {
+      "pen": 6,
+      "raw": 6,
+      "kind": "cdDrawLine",
+      "args": [
+        48,
+        83.84,
+        48,
+        176,
+        0,
+        113
+      ],
+      "terminal": 113,
+      "nativeApproved": false
+    }
+  ],
+  "maskTransitions": [],
+  "coarseFramesRequired": 108,
+  "priorityBeforeAllFrames": [
+    {
+      "priority": 1,
+      "check": "All9whole domestic shape and selectedVS2 eligibility; supported source status remains unreviewed."
+    },
+    {
+      "priority": 2,
+      "pens": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "sourceDirections": [
+        "rightH",
+        "downV",
+        "downV",
+        "rightH"
+      ],
+      "check": "Source initial4 order H/V/V/H; Korean order not observed. Any permutation requires root native evidence and separate exactmask proof."
+    },
+    {
+      "priority": 3,
+      "pens": [
+        5,
+        7,
+        6
+      ],
+      "check": "Original curves5/7 then stopstyle113 tip6 at99.99-to100. All rawgroups are singleton except group3 carrying nondrawing raw4; no drawn endpoint bridge or gap created."
+    }
+  ],
+  "sourceGapAssessment": {
+    "actualDrawnMultiRawGroups": 0,
+    "emptyRaw4IsNotTrajectoryJoin": true,
+    "allGroupedContinuityPriorCertificate": true,
+    "filledOverlapClaimed": false
+  },
+  "guardBoundary": "Whole helper pins9whole bytes; compile adapter pins selectedcompiler/body/header/fullpayload and explicit3fieldidentity. Source/metadata complete byte SHA are recorded here but old helpers do not independently enforce them. Existing helpers unchanged.",
+  "priorSourceEvidence": {
+    "file": "native-server-validation.json",
+    "sourceVerifierExecutedOnce": true,
+    "sourcePassed": true,
+    "sourceEvidencePassed": null,
+    "engineFiles": 8,
+    "domesticClips": 12,
+    "actualEngineRunsThisTask": 0,
+    "newExternalSourceRequests": 0
+  },
+  "priorGuardEvidence": {
+    "file": "native-server-preparation-source-analysis.json.profiles[0]",
+    "guardsRejected": 16,
+    "repeatExecuted": false
+  },
+  "newHTTP": {
+    "requests": 2,
+    "perServer": 1,
+    "wholePublicChecks": {
+      "status": 200,
+      "root": "u8411-ue0102",
+      "pens": 12,
+      "masks": 12
+    },
+    "progressive": {
+      "status": 200,
+      "stroke": 6,
+      "svg520": true,
+      "fine9999": true,
+      "replay8SecondControl": true,
+      "privateDictionaryOnlyRAM": true,
+      "responseSavedOrLogged": false
+    }
+  },
+  "nativeApproval": false,
+  "nativeWholeObserved": 0,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplaysObserved": 0,
+  "runtimeApplied": false,
+  "sourceGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false
+}
+
