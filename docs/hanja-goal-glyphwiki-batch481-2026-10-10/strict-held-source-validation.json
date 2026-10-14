@@ -1,0 +1,434 @@
+{
+  "batch": 481,
+  "glyph": "漌",
+  "status": "source-only strict whole proof normalized; original gap/form HOLD unchanged",
+  "nativeApproval": false,
+  "activePens": 0,
+  "compiledPens": 0,
+  "strokes": null,
+  "masks": null,
+  "sourceGroups": null,
+  "newGeometryAuthored": false,
+  "originalSourceChanged": false,
+  "originalCompilerChanged": false,
+  "originalHoldChanged": false,
+  "proofCloneFilesCreated": false,
+  "oldInputFileSHA256": {
+    "draw-trace.json": "92a559558a8773c6118d99de1db4106fa8c60439b6d3dae7c2e76c3cfb405348",
+    "engine-proof-alternative.json": "1ed3b082a63f336bb9a56f545c203abec0e5adbf2767e6a3bb68111a17f82261",
+    "engine-proof.json": "e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97",
+    "metadata.json": "21834136de8f5808e67663bc2a754d6ff24d594e93130707ff21cbf861525c71",
+    "progressive-review.json": "78539e64a8b9a10c1c11872018afd9d2153f355f5d7d337d1e31303a89393998",
+    "progressive.mjs": "f3b1210a0ac648352a2c4fdfb334fa0f52b42a8de138a933f5d9b16a2e4310c5",
+    "resume.json": "91a998fd7ad6d0289d7922fec691244446a09a5a7e30b6cc6cc3d3ff3346e148",
+    "serve-progressive.py": "9ec718549008db1b7af8da72faeec7ab1718fc255d7192651320e4f208f4ec0a",
+    "serve.py": "e24f9138a90e488ead59d23c7558e7c151b9334cef8bfb5fd922c6c4775169a4",
+    "sources.json": "75ef47abfcc2e4b6c76cd74945bb998c041116d65cc09a23245effd1402e46d6",
+    "validation.json": "a2229c9bb962d8fdd3e70b5a8cd1e18ac4d3e29fcc6b967e53c17b6ee0d69443",
+    "verify-source.mjs": "3eb93d31f918d280f8c4ae0f3a099986305bf5c1e592e5e1ed86dff21ddf7fdc",
+    "whole-variant-inventory.json": "f928e9f1748fb29cc7c78d3e05c43fdf793b3ec277ca026794f7ace56b9dc79c"
+  },
+  "newAdapter": {
+    "file": "strict-held-source-adapter.mjs",
+    "sha256": "6be86fa5292043e5a077d690c732d31b8d06a2e6f32f598ee238927d4aaa5d92",
+    "function": "validateHeldSourceWhole(root,trace,fullProof,explicitIdentity)",
+    "wholeIdentityContract": "Every explicitly listed root binds exact original proof byte SHA, source metadata, whole inventory, original compiler, engine revision and eight-header SHA. Default aliases reuse original proof bytes because the existing whole inventory explicitly records their whole reference.",
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "originalProofFiles": [
+      "engine-proof.json",
+      "engine-proof-alternative.json"
+    ],
+    "standaloneOriginalTraceFile": "draw-trace.json",
+    "standaloneOriginalTraceMatchesPrimary": true
+  },
+  "originalSourceVerification": {
+    "evidenceFile": "validation.json",
+    "evidenceFileSHA256": "a2229c9bb962d8fdd3e70b5a8cd1e18ac4d3e29fcc6b967e53c17b6ee0d69443",
+    "field": "sourceVerifier",
+    "priorSourcePassed": true,
+    "priorRoots": 4,
+    "priorRecords": 8,
+    "priorEngineFiles": 8,
+    "newOnlineSourceVerificationExecuted": false,
+    "currentVerificationMeaning": "로컬의 원본 byte pin·전체5key proof·trace·primitive polygon·8엔진 header와 엄격 identity만 검사했습니다. 과거 온라인 재현을 새 PASS로 포장하지 않습니다."
+  },
+  "preservedNativeHold": {
+    "evidenceFile": "progressive-review.json",
+    "evidenceFileSHA256": "78539e64a8b9a10c1c11872018afd9d2153f355f5d7d337d1e31303a89393998",
+    "nativeWholeFormsPreviouslyObserved": [
+      "u6f0c",
+      "u6f0c-ue0102"
+    ],
+    "diagnosticPen": 3,
+    "diagnosticFrames": 9,
+    "enlargedProgress": [
+      0.5,
+      0.75,
+      0.99,
+      1
+    ],
+    "diagnosticActualReplay": [
+      16,
+      100
+    ],
+    "full14PenApproval": false,
+    "progressiveFramesApproved": 0,
+    "defaultAliasHold": "raw2→raw3 원Q의 끝과 다음Q 시작 간격 보존",
+    "alternativeHold": "동일 물수변 간격과 국내 중간 가로획 누락 보류 보존",
+    "sourcePermutationApproved": false
+  },
+  "actualLocalValidation": {
+    "passed": true,
+    "executionsPerWhole": 1,
+    "strictGuardCasesRejectedPerWhole": 24,
+    "oldInputByteSHAUnchanged": true,
+    "allFourWholeActivePensZero": true,
+    "profiles": [
+      {
+        "sourceRoot": "u6f0c",
+        "sourceProofFile": "engine-proof.json",
+        "sourceProofFileSHA256": "e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97",
+        "wholeSourceGuardPassed": true,
+        "rawGroups": 16,
+        "drawingPrimitives": 16,
+        "originalPolygons": 26,
+        "waterGap": {
+          "rawZeroBased": [
+            2,
+            3
+          ],
+          "end": [
+            37.875,
+            184
+          ],
+          "start": [
+            34,
+            150
+          ],
+          "distance": 34.22010556675709
+        },
+        "missingIntermediateHorizontal": false,
+        "blocked": true,
+        "reason": "original-third-water-trajectory-gap",
+        "activePens": 0,
+        "compiledPens": 0,
+        "strokes": null,
+        "masks": null,
+        "sourceGroups": null,
+        "nativeApproval": false,
+        "runtimeApplied": false,
+        "identity": {
+          "sourceRoot": "u6f0c",
+          "sourceProofFile": "engine-proof.json",
+          "sourceProofFileSHA256": "e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97",
+          "sourceMetadataFile": "sources.json",
+          "sourceMetadataFileSHA256": "75ef47abfcc2e4b6c76cd74945bb998c041116d65cc09a23245effd1402e46d6",
+          "sourceInventoryFile": "whole-variant-inventory.json",
+          "sourceInventoryFileSHA256": "f928e9f1748fb29cc7c78d3e05c43fdf793b3ec277ca026794f7ace56b9dc79c",
+          "originalCompilerFile": "progressive.mjs",
+          "originalCompilerFileSHA256": "f3b1210a0ac648352a2c4fdfb334fa0f52b42a8de138a933f5d9b16a2e4310c5",
+          "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+          "engineHashesSHA256": "7104660dcf74e03b94564089b578c315cfb8d3323b8911019847950c971d2da4"
+        },
+        "fullProofSHA256": "9f6751ba89e1542869101dddd7d531a8e77566126248ae78384ba38f2505783a",
+        "inputUnchanged": true,
+        "rawAndTracePolygonEqualityPassed": true,
+        "mandatoryTracePresent": true,
+        "guardsRejected": [
+          "trace-coordinate",
+          "call-original-polygon",
+          "whole-original-polygon",
+          "raw-metadata",
+          "preset",
+          "engine-revision",
+          "engine-file-hash",
+          "missing-mandatory-trace",
+          "extra-whole-field",
+          "identity:sourceRoot",
+          "identity:sourceProofFile",
+          "identity:sourceProofFileSHA256",
+          "identity:sourceMetadataFile",
+          "identity:sourceMetadataFileSHA256",
+          "identity:sourceInventoryFile",
+          "identity:sourceInventoryFileSHA256",
+          "identity:originalCompilerFile",
+          "identity:originalCompilerFileSHA256",
+          "identity:engineRevision",
+          "identity:engineHashesSHA256",
+          "null-identity",
+          "reversed-trace",
+          "unlisted-root",
+          "blank-sourceRoot"
+        ],
+        "actualCLIContractPassed": true
+      },
+      {
+        "sourceRoot": "u6f0c-ue0100",
+        "sourceProofFile": "engine-proof.json",
+        "sourceProofFileSHA256": "e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97",
+        "wholeSourceGuardPassed": true,
+        "rawGroups": 16,
+        "drawingPrimitives": 16,
+        "originalPolygons": 26,
+        "waterGap": {
+          "rawZeroBased": [
+            2,
+            3
+          ],
+          "end": [
+            37.875,
+            184
+          ],
+          "start": [
+            34,
+            150
+          ],
+          "distance": 34.22010556675709
+        },
+        "missingIntermediateHorizontal": false,
+        "blocked": true,
+        "reason": "original-third-water-trajectory-gap",
+        "activePens": 0,
+        "compiledPens": 0,
+        "strokes": null,
+        "masks": null,
+        "sourceGroups": null,
+        "nativeApproval": false,
+        "runtimeApplied": false,
+        "identity": {
+          "sourceRoot": "u6f0c-ue0100",
+          "sourceProofFile": "engine-proof.json",
+          "sourceProofFileSHA256": "e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97",
+          "sourceMetadataFile": "sources.json",
+          "sourceMetadataFileSHA256": "75ef47abfcc2e4b6c76cd74945bb998c041116d65cc09a23245effd1402e46d6",
+          "sourceInventoryFile": "whole-variant-inventory.json",
+          "sourceInventoryFileSHA256": "f928e9f1748fb29cc7c78d3e05c43fdf793b3ec277ca026794f7ace56b9dc79c",
+          "originalCompilerFile": "progressive.mjs",
+          "originalCompilerFileSHA256": "f3b1210a0ac648352a2c4fdfb334fa0f52b42a8de138a933f5d9b16a2e4310c5",
+          "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+          "engineHashesSHA256": "7104660dcf74e03b94564089b578c315cfb8d3323b8911019847950c971d2da4"
+        },
+        "fullProofSHA256": "9f6751ba89e1542869101dddd7d531a8e77566126248ae78384ba38f2505783a",
+        "inputUnchanged": true,
+        "rawAndTracePolygonEqualityPassed": true,
+        "mandatoryTracePresent": true,
+        "guardsRejected": [
+          "trace-coordinate",
+          "call-original-polygon",
+          "whole-original-polygon",
+          "raw-metadata",
+          "preset",
+          "engine-revision",
+          "engine-file-hash",
+          "missing-mandatory-trace",
+          "extra-whole-field",
+          "identity:sourceRoot",
+          "identity:sourceProofFile",
+          "identity:sourceProofFileSHA256",
+          "identity:sourceMetadataFile",
+          "identity:sourceMetadataFileSHA256",
+          "identity:sourceInventoryFile",
+          "identity:sourceInventoryFileSHA256",
+          "identity:originalCompilerFile",
+          "identity:originalCompilerFileSHA256",
+          "identity:engineRevision",
+          "identity:engineHashesSHA256",
+          "null-identity",
+          "reversed-trace",
+          "unlisted-root",
+          "blank-sourceRoot"
+        ],
+        "actualCLIContractPassed": true
+      },
+      {
+        "sourceRoot": "u6f0c-ue0101",
+        "sourceProofFile": "engine-proof.json",
+        "sourceProofFileSHA256": "e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97",
+        "wholeSourceGuardPassed": true,
+        "rawGroups": 16,
+        "drawingPrimitives": 16,
+        "originalPolygons": 26,
+        "waterGap": {
+          "rawZeroBased": [
+            2,
+            3
+          ],
+          "end": [
+            37.875,
+            184
+          ],
+          "start": [
+            34,
+            150
+          ],
+          "distance": 34.22010556675709
+        },
+        "missingIntermediateHorizontal": false,
+        "blocked": true,
+        "reason": "original-third-water-trajectory-gap",
+        "activePens": 0,
+        "compiledPens": 0,
+        "strokes": null,
+        "masks": null,
+        "sourceGroups": null,
+        "nativeApproval": false,
+        "runtimeApplied": false,
+        "identity": {
+          "sourceRoot": "u6f0c-ue0101",
+          "sourceProofFile": "engine-proof.json",
+          "sourceProofFileSHA256": "e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97",
+          "sourceMetadataFile": "sources.json",
+          "sourceMetadataFileSHA256": "75ef47abfcc2e4b6c76cd74945bb998c041116d65cc09a23245effd1402e46d6",
+          "sourceInventoryFile": "whole-variant-inventory.json",
+          "sourceInventoryFileSHA256": "f928e9f1748fb29cc7c78d3e05c43fdf793b3ec277ca026794f7ace56b9dc79c",
+          "originalCompilerFile": "progressive.mjs",
+          "originalCompilerFileSHA256": "f3b1210a0ac648352a2c4fdfb334fa0f52b42a8de138a933f5d9b16a2e4310c5",
+          "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+          "engineHashesSHA256": "7104660dcf74e03b94564089b578c315cfb8d3323b8911019847950c971d2da4"
+        },
+        "fullProofSHA256": "9f6751ba89e1542869101dddd7d531a8e77566126248ae78384ba38f2505783a",
+        "inputUnchanged": true,
+        "rawAndTracePolygonEqualityPassed": true,
+        "mandatoryTracePresent": true,
+        "guardsRejected": [
+          "trace-coordinate",
+          "call-original-polygon",
+          "whole-original-polygon",
+          "raw-metadata",
+          "preset",
+          "engine-revision",
+          "engine-file-hash",
+          "missing-mandatory-trace",
+          "extra-whole-field",
+          "identity:sourceRoot",
+          "identity:sourceProofFile",
+          "identity:sourceProofFileSHA256",
+          "identity:sourceMetadataFile",
+          "identity:sourceMetadataFileSHA256",
+          "identity:sourceInventoryFile",
+          "identity:sourceInventoryFileSHA256",
+          "identity:originalCompilerFile",
+          "identity:originalCompilerFileSHA256",
+          "identity:engineRevision",
+          "identity:engineHashesSHA256",
+          "null-identity",
+          "reversed-trace",
+          "unlisted-root",
+          "blank-sourceRoot"
+        ],
+        "actualCLIContractPassed": true
+      },
+      {
+        "sourceRoot": "u6f0c-ue0102",
+        "sourceProofFile": "engine-proof-alternative.json",
+        "sourceProofFileSHA256": "1ed3b082a63f336bb9a56f545c203abec0e5adbf2767e6a3bb68111a17f82261",
+        "wholeSourceGuardPassed": true,
+        "rawGroups": 15,
+        "drawingPrimitives": 15,
+        "originalPolygons": 24,
+        "waterGap": {
+          "rawZeroBased": [
+            2,
+            3
+          ],
+          "end": [
+            38.325,
+            184
+          ],
+          "start": [
+            34.4,
+            150
+          ],
+          "distance": 34.225803496777104
+        },
+        "missingIntermediateHorizontal": true,
+        "blocked": true,
+        "reason": "original-water-gap-and-alternate-whole-missing-domestic-horizontal",
+        "activePens": 0,
+        "compiledPens": 0,
+        "strokes": null,
+        "masks": null,
+        "sourceGroups": null,
+        "nativeApproval": false,
+        "runtimeApplied": false,
+        "identity": {
+          "sourceRoot": "u6f0c-ue0102",
+          "sourceProofFile": "engine-proof-alternative.json",
+          "sourceProofFileSHA256": "1ed3b082a63f336bb9a56f545c203abec0e5adbf2767e6a3bb68111a17f82261",
+          "sourceMetadataFile": "sources.json",
+          "sourceMetadataFileSHA256": "75ef47abfcc2e4b6c76cd74945bb998c041116d65cc09a23245effd1402e46d6",
+          "sourceInventoryFile": "whole-variant-inventory.json",
+          "sourceInventoryFileSHA256": "f928e9f1748fb29cc7c78d3e05c43fdf793b3ec277ca026794f7ace56b9dc79c",
+          "originalCompilerFile": "progressive.mjs",
+          "originalCompilerFileSHA256": "f3b1210a0ac648352a2c4fdfb334fa0f52b42a8de138a933f5d9b16a2e4310c5",
+          "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+          "engineHashesSHA256": "7104660dcf74e03b94564089b578c315cfb8d3323b8911019847950c971d2da4"
+        },
+        "fullProofSHA256": "7f90ac8e73aaf80bb5b0d90487a24f91e3ae304cce0af647279c1f7004382a31",
+        "inputUnchanged": true,
+        "rawAndTracePolygonEqualityPassed": true,
+        "mandatoryTracePresent": true,
+        "guardsRejected": [
+          "trace-coordinate",
+          "call-original-polygon",
+          "whole-original-polygon",
+          "raw-metadata",
+          "preset",
+          "engine-revision",
+          "engine-file-hash",
+          "missing-mandatory-trace",
+          "extra-whole-field",
+          "identity:sourceRoot",
+          "identity:sourceProofFile",
+          "identity:sourceProofFileSHA256",
+          "identity:sourceMetadataFile",
+          "identity:sourceMetadataFileSHA256",
+          "identity:sourceInventoryFile",
+          "identity:sourceInventoryFileSHA256",
+          "identity:originalCompilerFile",
+          "identity:originalCompilerFileSHA256",
+          "identity:engineRevision",
+          "identity:engineHashesSHA256",
+          "null-identity",
+          "reversed-trace",
+          "unlisted-root",
+          "blank-sourceRoot"
+        ],
+        "actualCLIContractPassed": true
+      }
+    ]
+  },
+  "restartContract": {
+    "serversStarted": false,
+    "staticWholeOnlyPossibility": "원본 whole proof를 볼 수 있다는 사실을 재생 후보/필순/native 승인으로 세지 않습니다.",
+    "sourceOnlyCLICommands": [
+      "rtk proxy node \"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch481-2026-10-10/strict-held-source-adapter.mjs\" \"u6f0c\"",
+      "rtk proxy node \"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch481-2026-10-10/strict-held-source-adapter.mjs\" \"u6f0c-ue0100\"",
+      "rtk proxy node \"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch481-2026-10-10/strict-held-source-adapter.mjs\" \"u6f0c-ue0101\"",
+      "rtk proxy node \"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch481-2026-10-10/strict-held-source-adapter.mjs\" \"u6f0c-ue0102\""
+    ],
+    "noNewHelperCreated": true
+  },
+  "futureRequirements": [
+    "보류 해제에는 국내 전체자형·필순과 연속 경계를 제공하는 원본 whole의 근거가 필요합니다.",
+    "동일 원본을 재생한 수치 검증 또는 완성 윤곽 교집합만으로 보류를 해제하지 않습니다.",
+    "새 native/profile는 별도 승인 범위에서 확인해야 하며 이 어댑터는 활성 pens0/null을 유지합니다."
+  ],
+  "nativeFramesReviewedThisTask": 0,
+  "nativeReplayReviewedThisTask": false,
+  "runtimeChanged": false,
+  "sharedRegistryChanged": false,
+  "onlineRequests": 0,
+  "privateGraphicsRead": false,
+  "privateMediaSaved": false,
+  "serversStarted": 0,
+  "buildRun": false,
+  "commitCreated": false,
+  "scope": "481만 별도 어댑터와 검증 기록 추가. 기존 원자료·full proof·trace·compiler·native hold 불변."
+}
