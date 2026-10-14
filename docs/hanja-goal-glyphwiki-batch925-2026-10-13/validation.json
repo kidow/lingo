@@ -1,0 +1,277 @@
+{
+  "batch": 925,
+  "glyph": "遆",
+  "id": "u9046",
+  "status": "held-domestic-whole-mismatch-and-alternative-gap",
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 15,
+    "wholeVariants": 6,
+    "domesticClips": 13,
+    "engineFilesVerified": 8,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false,
+    "archiveRedownloaded": false,
+    "completeSourceReplayPassed": true,
+    "evidenceFile": "strict-native-server-preflight.json",
+    "reexecuted": false
+  },
+  "nativeReview": {
+    "batch": 925,
+    "glyph": "遆",
+    "verifiedAt": "2026-10-14",
+    "status": "held-domestic-whole-mismatch-and-alternative-gap",
+    "reason": "Native domestic has vertical 帝 top and two-dot 辶. Original selected g has dot 帝 top and one-dot 辶; var001 has one-dot 辶 and also 辶-before-帝 order. Neither13pen source is eligible. Base/jv whole match but exact consecutive minimum14 exceeds domestic13; raw4 Qend to raw5 Bstart[-1.99,-2] lacks native same-pen proof. No connector,forced merge or newgeometry.",
+    "wholeVariantsReviewed": 6,
+    "compatibleWholeRoots": [
+      "u9046",
+      "u9046-jv"
+    ],
+    "wholeVariants": [
+      {
+        "name": "u9046",
+        "compatible": true
+      },
+      {
+        "name": "u9046-g",
+        "compatible": false
+      },
+      {
+        "name": "u9046-jv",
+        "compatible": true
+      },
+      {
+        "name": "u9046-t",
+        "compatible": false
+      },
+      {
+        "name": "u9046-var-001",
+        "compatible": false
+      },
+      {
+        "name": "u9046-var-002",
+        "compatible": false
+      }
+    ],
+    "dictionaryDirectionStrokes": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "selectedCandidateRootsObserved": [
+      "u9046-g",
+      "u9046-var-001"
+    ],
+    "earlierWholeClaimCorrection": "Earlier preliminary var001 compatibility report was wrong; new native side-by-side confirms missing second 辶 dot. Base/jv whole compatibility retained, not animation approval.",
+    "alternativeSourceAnalysis": [
+      {
+        "root": "u9046",
+        "file": "engine-whole-u9046.json",
+        "fileSHA256": "ebcdb2010250a4e5feda8cd7564c3d16c5d72e3cc962b93e63b0df112b24a002",
+        "raw": 17,
+        "draw": 18,
+        "polygons": 35,
+        "exactAdjacentJoins": [
+          [
+            2,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            14,
+            15
+          ]
+        ],
+        "minimumExactConsecutivePens": 14,
+        "existingCompilerSupports": false,
+        "declaredRootRecord": {
+          "name": "u9046",
+          "related": "u9046",
+          "data": "99:0:0:0:0:200:200:u9046-jv"
+        }
+      },
+      {
+        "root": "u9046-jv",
+        "file": "engine-whole-u9046-jv.json",
+        "fileSHA256": "ebcdb2010250a4e5feda8cd7564c3d16c5d72e3cc962b93e63b0df112b24a002",
+        "raw": 17,
+        "draw": 18,
+        "polygons": 35,
+        "exactAdjacentJoins": [
+          [
+            2,
+            3
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            14,
+            15
+          ]
+        ],
+        "minimumExactConsecutivePens": 14,
+        "existingCompilerSupports": false,
+        "declaredRootRecord": {
+          "name": "u9046-jv",
+          "related": "u9046",
+          "data": "99:0:0:0:0:199:200:u8fb6$99:0:0:56:4:193:178:u5e1d"
+        }
+      },
+      {
+        "root": "u9046-var-001",
+        "file": "engine-whole-u9046-var-001.json",
+        "fileSHA256": "1ec1cf99c0b07bff2ce0dbfaa53e20eff3cf3a6d04d27d265324c6f33fe12168",
+        "raw": 16,
+        "draw": 17,
+        "polygons": 33,
+        "exactAdjacentJoins": [
+          [
+            1,
+            2
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            13,
+            14
+          ]
+        ],
+        "minimumExactConsecutivePens": 13,
+        "existingCompilerSupports": true,
+        "declaredRootRecord": {
+          "name": "u9046-var-001",
+          "related": "u9046",
+          "data": "99:0:0:0:0:200:200:ufa66$99:0:0:58:4:193:178:u5e1d"
+        }
+      }
+    ],
+    "baseJvPotentialMapping": {
+      "targetDomesticPens": 13,
+      "currentExactConsecutivePens": 14,
+      "unapprovedPotentialSamePenRaw": [
+        4,
+        5
+      ],
+      "originalQEnd": [
+        54.725,
+        154
+      ],
+      "originalBStart": [
+        52.735,
+        152
+      ],
+      "gapApproximateOnly": [
+        -1.99,
+        -2
+      ],
+      "sourceCoordinatesRoundedOrChanged": false,
+      "authoredConnector": false,
+      "independentMasksPrepared": false,
+      "nativeSamePenBoundaryEvidenceAvailable": false,
+      "positiveFilledContactEstablishedByThisPreparation": false,
+      "conclusion": "Do not reduce14 to13 from count or whole appearance alone. Exact original filled contact and domestic boundary/direction proof are needed before considering consecutive independent masks; no final impossibility claim."
+    },
+    "progressivePensReviewed": [],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "curveFineChecks": [],
+    "sourceGroupsZeroBased": [],
+    "blockedPens": [
+      1
+    ],
+    "unreviewedProgressivePens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "unreviewedFinePens": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      12
+    ],
+    "replayApproved": false,
+    "replayPens": [],
+    "actualReplayProgress": [],
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "sourceVerification": {
+      "executed": true,
+      "executor": "/root/hanja_batch760_761_analysis",
+      "cacheWorker": 82039,
+      "originalVerifier": "verify-source.mjs",
+      "runs": 1,
+      "sourcePassed": true,
+      "records": 15,
+      "wholeVariants": 6,
+      "domesticClips": 13,
+      "engineFilesVerified": 8,
+      "nativeApprovalGranted": false,
+      "privateMediaSaved": false,
+      "archiveRedownloaded": false,
+      "completeSourceReplayPassed": true,
+      "evidenceFile": "strict-native-server-preflight.json",
+      "reexecuted": false
+    },
+    "immutableSourceMetadataPreserved": true,
+    "immutableOriginalNoticePreserved": true,
+    "privateMediaSaved": false,
+    "browserTabs": {
+      "native": 142
+    },
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "runtime": {
+    "applied": 5471,
+    "total": 5978,
+    "remaining": 507,
+    "held": 255,
+    "appliedThisBatch": 0,
+    "excluded": true
+  },
+  "checks": {
+    "sourceVerifierPassed": true,
+    "runtimeExclusionPassed": true,
+    "productionBuild": "not run:user requested no builds",
+    "fullSuite": "not run:no runtime code change",
+    "mobile": "not run:held candidate",
+    "sourceEvidencePassed": null,
+    "holdGuardPassed": null
+  },
+  "privateMediaSaved": false,
+  "jev": {
+    "status": "not run in this review",
+    "advisoryOnly": true,
+    "runtimeApproval": false
+  },
+  "immutableOriginalNoticePreserved": true
+}
