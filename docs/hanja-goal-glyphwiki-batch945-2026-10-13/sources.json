@@ -1,0 +1,94 @@
+{
+  "archive": {
+    "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+    "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+    "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+  },
+  "root": "u5bd8",
+  "glyph": "寘",
+  "wholeNames": [
+    "u5bd8",
+    "u5bd8-itaiji-001",
+    "u5bd8-ue0100",
+    "u5bd8-ufe00"
+  ],
+  "records": {
+    "u5196-03": {
+      "name": "u5196-03",
+      "related": "u5196",
+      "data": "2:7:8:31:16:32:53:16:65$1:0:2:32:31:176:31$2:22:7:176:31:170:43:156:63"
+    },
+    "u5b80-03": {
+      "name": "u5b80-03",
+      "related": "u5b80",
+      "data": "1:0:32:100:14:100:45$99:0:0:0:18:200:198:u5196-03"
+    },
+    "u5bd8": {
+      "name": "u5bd8",
+      "related": "u5bd8",
+      "data": "99:0:0:0:3:200:158:u5b80-03$99:0:0:0:35:200:198:u771e@4"
+    },
+    "u5bd8-itaiji-001": {
+      "name": "u5bd8-itaiji-001",
+      "related": "u5bd8",
+      "data": "99:0:0:6:4:194:144:u5b80-03$99:0:0:0:32:200:197:u771f-g"
+    },
+    "u5bd8-ue0100": {
+      "name": "u5bd8-ue0100",
+      "related": "u3013",
+      "data": "99:0:0:0:0:200:200:u5bd8"
+    },
+    "u5bd8-ufe00": {
+      "name": "u5bd8-ufe00",
+      "related": "u3013",
+      "data": "99:0:0:0:0:200:200:u5bd8"
+    },
+    "u76ee@5": {
+      "name": "u76ee@5",
+      "related": "U+3013",
+      "data": "99:0:0:0:0:200:200:u76ee-j"
+    },
+    "u771e@4": {
+      "name": "u771e@4",
+      "related": "U+771E",
+      "data": "2:0:7:150:22:110:31:48:37$3:0:5:48:15:48:54:170:54$99:0:0:32:62:187:148:u76ee@5$1:0:13:34:69:34:151$1:2:0:34:151:187:151$2:0:7:90:161:61:177:20:187$2:7:8:115:161:153:167:174:183"
+    },
+    "u771f-g": {
+      "name": "u771f-g",
+      "related": "u771f",
+      "data": "1:0:0:25:38:179:38$1:0:32:105:14:99:62$1:12:32:60:62:60:150$1:2:2:60:62:144:62$1:22:32:144:62:144:151$1:2:2:60:84:144:84$1:2:2:60:106:144:106$1:2:2:60:128:144:128$1:0:0:17:151:187:151$2:0:7:88:162:60:178:21:188$2:7:8:113:162:151:168:172:184"
+    }
+  },
+  "missing": [
+    "u76ee-j"
+  ],
+  "aliases": [],
+  "providerVersions": [
+    {
+      "name": "u76ee@5",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u76ee%405",
+      "version": "5",
+      "sha256": "35b1df0c355bd3abaf937cd27e4a54ddee81c11f6f8b05486a71ce3cf3219abb"
+    },
+    {
+      "name": "u771e@4",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u771e%404",
+      "version": "4",
+      "sha256": "89f41a45e68306fd34bbc66c5b0e74bf7b50f6d658617744e3c7a4eba8a0a0c1"
+    }
+  ],
+  "approvalBlocked": true,
+  "historicalFetchFailures": [],
+  "supplementalLatest": [
+    {
+      "name": "u76ee-j",
+      "apiUrl": "https://glyphwiki.org/api/glyph?name=u76ee-j",
+      "actualName": "u76ee-j",
+      "latestVersion": 2,
+      "related": "U+76EE",
+      "dataSha256": "8124f5a0be438e7c000006ec3a5e66bac0a35628d45c798177053bfad7463c5e",
+      "usedInPinnedReproduction": false,
+      "reason": "Bare dependency absent from fixed archive; latest API is supplemental provenance only."
+    }
+  ]
+}
