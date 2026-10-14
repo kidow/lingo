@@ -1,0 +1,120 @@
+{
+  "batch": 988,
+  "glyph": "儦",
+  "catalogStrokes": 17,
+  "domesticClips": 17,
+  "status": "blocked-source-only-helper-contract-valid",
+  "sourceVerification": {
+    "priorSourcePassed": true,
+    "priorActuallyExecuted": true,
+    "runsThisPreparation": 0,
+    "onlineRequested": false,
+    "sourceEvidenceFieldClaimed": false,
+    "evidenceFile": "strict-native-server-preflight.json"
+  },
+  "selectedRoot": "u5126",
+  "selectedFile": "engine-whole-u5126.json",
+  "selectedIdentity": {
+    "sourceRoot": "u5126",
+    "sourceProofFile": "engine-whole-u5126.json",
+    "sourceProofFileSha256": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021"
+  },
+  "originalBytePins": {
+    "sources.json": "e1aa3838bb55838c79c3604482ac724f5c05ed269683889de69a8a0b953136d5",
+    "metadata.json": "f01ee41f1ca2f20e1354b2806ffe9acc47d53d84a3a479e757eeab789f36a86f",
+    "engine-proof.json": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021",
+    "engine-whole-u5126.json": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021",
+    "strict-native-server-preflight.json": "665b102e1098ef137bf5de5e232c9a0d8e5b5570ac9870739a865c516931fdf2",
+    "strict-native-adapter.mjs": "657e34bc7c151c25286398811805ba233638ea3a2e4d4abb19405dd4989414c6",
+    "serve-native.py": "da80383dd030d47b33d78a72e077c6e8d99187b52976d6f36f78757218536076",
+    "native-server-input-pins.json": "ab7e8c8085b58cc24a6e260396fe807333173952297ba319b498ca930d6e40fc"
+  },
+  "wholeFamily": {
+    "names": [
+      "u5126"
+    ],
+    "missingFixedDependencies": [],
+    "missingAlternativesNeverPromoted": true
+  },
+  "selectedWhole": {
+    "raw": 19,
+    "draw": 22,
+    "Q": 9,
+    "B": 0,
+    "polygons": 46
+  },
+  "callerContract": "mandatory five-field selected proof/header identity + complete frozen body",
+  "guards": {
+    "actualExecutionExit": 0,
+    "totalRejected": null,
+    "sourceRejected": 6,
+    "identityRejected": 6,
+    "defaultIdentity": "mandatory caller identity rejected on omission",
+    "callerPinsPassed": true,
+    "originalInputImmutable": true,
+    "sourceAndEngineHeaderKeys": 8,
+    "expectedPinnedInputsVerified": 5,
+    "actualTestModule": "strict-native-adapter.mjs selected proof contract"
+  },
+  "compiler": {
+    "pens": 0,
+    "masks": 0,
+    "originalPolygonCount": 46,
+    "originalPolygonsExactlyOnce": null,
+    "blockedReason": "The single fixed root has19 raw groups with one exact5/6 join, lower bound18 greater than catalog/domestic17. Three explicit historical dependencies are preserved; current exact-join candidate remains on hold.",
+    "nonConsecutiveGroups": [],
+    "finePens": [],
+    "maskTransitions": [],
+    "originalSpecialTerminals": [
+      {
+        "raw": 6,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 323
+      },
+      {
+        "raw": 14,
+        "call": 2,
+        "kind": "cdDrawLine",
+        "terminal": 5
+      }
+    ],
+    "staticRawCurveIndices": [
+      0,
+      4,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "quantitativeMaskCoverageRisks": [],
+    "compiledGeometrySHA256": null,
+    "compiledGeometrySHA256Reason": "Blocked before mask compilation; no compiled geometry SHA or emitted-polygon conservation claim.",
+    "consecutiveOriginalLowerBound": 18
+  },
+  "helper": {
+    "exists": true,
+    "restartCommands": [
+      "rtk proxy python3 -u /Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch988-2026-10-13/serve-native.py"
+    ],
+    "serversStartedThisPreparation": 0,
+    "httpExecutedThisPreparation": false,
+    "syntaxVerified": true,
+    "portBinding": "existing helper defaults to OS-selected port; live readiness not assumed"
+  },
+  "nativeApproval": false,
+  "nativeDirectionsObserved": 0,
+  "progressiveFramesObserved": 0,
+  "replayObserved": false,
+  "runtimeApplied": false,
+  "originalGeometryChanged": false,
+  "buildExecuted": false,
+  "commitCreated": false,
+  "privateMediaSaved": false,
+  "date": "2026-10-14"
+}

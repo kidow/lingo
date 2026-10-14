@@ -1,0 +1,180 @@
+{
+  "batch": 988,
+  "glyph": "儦",
+  "status": "source-only strict blocked native diagnostic",
+  "frozenRuntimeSnapshot": {
+    "utc": "2026-10-13T20:06:37.846Z",
+    "registered": 5441,
+    "candidateApplied": false
+  },
+  "sourceVerification": {
+    "executed": true,
+    "executor": "/root/hanja_batch760_761_analysis",
+    "cacheWorker": 82039,
+    "originalVerifier": "verify-source.mjs",
+    "runs": 1,
+    "sourcePassed": true,
+    "records": 6,
+    "namedWholeVariants": 1,
+    "completeWholeVariants": 1,
+    "domesticClips": 17,
+    "engineFilesVerified": 8,
+    "nativeApprovalGranted": false,
+    "privateMediaSaved": false,
+    "archiveRedownloaded": false
+  },
+  "selectedIdentity": {
+    "sourceRoot": "u5126",
+    "sourceProofFile": "engine-whole-u5126.json",
+    "sourceProofFileSha256": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021"
+  },
+  "inputFileSHA256": {
+    "sources.json": "e1aa3838bb55838c79c3604482ac724f5c05ed269683889de69a8a0b953136d5",
+    "metadata.json": "f01ee41f1ca2f20e1354b2806ffe9acc47d53d84a3a479e757eeab789f36a86f",
+    "engine-proof.json": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021",
+    "engine-whole-u5126.json": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021",
+    "strict-native-adapter.mjs": "657e34bc7c151c25286398811805ba233638ea3a2e4d4abb19405dd4989414c6"
+  },
+  "fullSelectedProofSHA256": "90b742c8f7c734cc1854c8304cd7645ae5e81c717cdc577eee2e208df7b976a5",
+  "wholeEvidence": [
+    {
+      "root": "u5126",
+      "file": "engine-whole-u5126.json",
+      "sourceSHA256": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021",
+      "complete": true,
+      "missing": null,
+      "raw": 19,
+      "polygons": 46,
+      "geometryUnavailable": false
+    }
+  ],
+  "originalCompilerProofMetadataUnchanged": true,
+  "originalSourceGroups": [],
+  "nonconsecutiveGroups": [],
+  "blockedReason": "The single fixed root has19 raw groups with one exact5/6 join, lower bound18 greater than catalog/domestic17. Three explicit historical dependencies are preserved; current exact-join candidate remains on hold.",
+  "localActualVerification": {
+    "batch": 988,
+    "expectedBlock": true,
+    "reason": "The single fixed root has19 raw groups with one exact5/6 join, lower bound18 greater than catalog/domestic17. Three explicit historical dependencies are preserved; current exact-join candidate remains on hold.",
+    "mutationsRejected": 6,
+    "identityCasesRejected": 6,
+    "inputUnchanged": true,
+    "pens": 0,
+    "masks": 0,
+    "adapterSHA256": "657e34bc7c151c25286398811805ba233638ea3a2e4d4abb19405dd4989414c6",
+    "compiledSHA256": null,
+    "nativeApproval": false,
+    "originalPolygonCount": 46,
+    "allOriginalPolygonsOnce": null,
+    "noCoordsWidthsPathsWeightsBoundsDirectionsModified": true
+  },
+  "risks": {
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "frames": 0,
+    "replay": 0,
+    "reason": "The single fixed root has19 raw groups with one exact5/6 join, lower bound18 greater than catalog/domestic17. Three explicit historical dependencies are preserved; current exact-join candidate remains on hold.",
+    "missingFixedDependencies": [],
+    "missingWholeNeverPromotedToComplete": false
+  },
+  "server": {
+    "binding": "127.0.0.1:0; actual OS-selected port",
+    "url": "http://127.0.0.1:49326",
+    "pid": 58393,
+    "sessionID": 72963,
+    "whole": "/whole",
+    "pairs": "/pairs?domestic=1&raw=1",
+    "progressive": "expected blocked status only",
+    "guardsEachRequest": true,
+    "actualHTTPResults": [
+      {
+        "batch": 988,
+        "route": "/whole?view=checks",
+        "status": 200,
+        "bytes": 1037,
+        "checks": {
+          "sourceRoot": "u5126",
+          "identity": {
+            "sourceRoot": "u5126",
+            "sourceProofFile": "engine-whole-u5126.json",
+            "sourceProofFileSha256": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021",
+            "sourceHeaderFile": "engine-proof.json",
+            "sourceHeaderFileSha256": "1c45e7464ff0f997ca04300342c8001cfb140c08b137986dee4f7ae0371a9021"
+          },
+          "sourceVerificationPassed": true,
+          "blocked": true,
+          "reason": "The single fixed root has19 raw groups with one exact5/6 join, lower bound18 greater than catalog/domestic17. Three explicit historical dependencies are preserved; current exact-join candidate remains on hold.",
+          "compiledPens": 0,
+          "compiledMasks": 0,
+          "progressiveFrames": 0,
+          "replay": 0,
+          "nativeApproval": false,
+          "wholeNames": [
+            "u5126"
+          ],
+          "sourceInputPinsVerified": 5,
+          "catalog": 17,
+          "domestic": 17
+        },
+        "completeWholeCount": 1,
+        "blockedWholeCount": 0
+      },
+      {
+        "batch": 988,
+        "route": "/whole",
+        "status": 200,
+        "bytes": 7761,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false,
+        "svgTags": 2,
+        "missingWholePlaceholder": false
+      },
+      {
+        "batch": 988,
+        "route": "/pairs?domestic=1&raw=1",
+        "status": 200,
+        "bytes": 2249,
+        "privateTextLogged": false,
+        "has520": true,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": false,
+        "svgTags": 2,
+        "missingWholePlaceholder": false
+      },
+      {
+        "batch": 988,
+        "route": "/progressive?stroke=1&enlarged=1&samples=1",
+        "status": 200,
+        "bytes": 1345,
+        "privateTextLogged": false,
+        "has520": false,
+        "has9Grid": false,
+        "has8secReplay": false,
+        "blockedPage": true,
+        "svgTags": 0,
+        "missingWholePlaceholder": false
+      }
+    ],
+    "privateDictionaryMedia": "RAM-only; actual rendering requests verified byte SHA/title/clips"
+  },
+  "nativeObserved": {
+    "whole": 0,
+    "directions": 0,
+    "frames": 0,
+    "fine": 0,
+    "boundaries": 0,
+    "replay": 0,
+    "approval": false
+  },
+  "runtimeRegistered": 0,
+  "sharedRegistryEdited": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "commitCreated": false
+}
