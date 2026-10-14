@@ -132,7 +132,12 @@ const CONTRACT = {
       "alternativeOriginalHookChecked": true
     },
     "readmeSHA256": "ba56da44e62f7a0d341b9131cfde961fcbddf6a3bf56be06eece1755b7413aad",
-    "reproductionNarrative": "Prior validation confirms 8 pinned engine hashes; README documents original reproduction. No current reproduction request."
+    "reproductionNarrative": "Stored validation declares 8 engine hashesChecked=true and README describes reproduction. These declarations do not establish an observed original engine-byte reproduction execution; local researchVerification output is not a network/source execution proof.",
+    "evidenceStrength": "declaration-only",
+    "originalEngineBytesAvailable": false,
+    "originalExecutionTranscriptAvailable": false,
+    "liveReproductionCacheAvailable": false,
+    "establishesActualEngineReproductionPass": false
   },
   "oldHoldStatus": "deferred-original-terminal-hook-outside-reveal-mask",
   "oldFailedPen": 16,
@@ -147,6 +152,11 @@ export const sourceRoot = CONTRACT.root
 export const sourceGroups = CONTRACT.sourceGroups
 export const nativeApproval = false
 export const runtimeApplied = false
+export const sourcePassed = null
+export const sourceExecutionClaim = 'declaration-only'
+export const sourceEngineReplayKnown = false
+export const diagnosticOnly = true
+export const activePens = 0
 
 function assertOriginalBytePins() {
   for (const [file, pin] of Object.entries(CONTRACT.filePins))
