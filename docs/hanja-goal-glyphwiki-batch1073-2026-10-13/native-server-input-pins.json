@@ -1,0 +1,85 @@
+{
+  "batch": 1073,
+  "glyph": "纆",
+  "port": 0,
+  "catalog": 21,
+  "domestic": 21,
+  "wholeNames": [
+    "u7e86-ue0100",
+    "u7e86-ue0101",
+    "u7e86-ue0102",
+    "u7e86"
+  ],
+  "wholeEvidence": [
+    {
+      "root": "u7e86-ue0100",
+      "file": "engine-whole-u7e86-ue0100.json",
+      "sourceSHA256": "c8d0a3a9c23bb14ff00a762ad6f212678d0df3e7fa338ce1ce5b7e3cda392413",
+      "complete": false,
+      "geometryNull": false,
+      "missing": [
+        "u571f-j"
+      ],
+      "raw": null,
+      "polygons": null
+    },
+    {
+      "root": "u7e86-ue0101",
+      "file": "engine-whole-u7e86-ue0101.json",
+      "sourceSHA256": "22b430607d132c9dbac9c24b0c5dcc6c0ab21e62b0dab455bc941829e3897f49",
+      "complete": false,
+      "geometryNull": false,
+      "missing": [
+        "u571f-j"
+      ],
+      "raw": null,
+      "polygons": null
+    },
+    {
+      "root": "u7e86-ue0102",
+      "file": "engine-whole-u7e86-ue0102.json",
+      "sourceSHA256": "ee7f3b7cf48cf2cf0296fbefe7f8c19c1a2dcd80a8d16718d86de2b7479434dc",
+      "complete": false,
+      "geometryNull": false,
+      "missing": [
+        "u571f-j"
+      ],
+      "raw": null,
+      "polygons": null
+    },
+    {
+      "root": "u7e86",
+      "file": "engine-whole-u7e86.json",
+      "sourceSHA256": "362b63e5990e538a4bb90c902026907903106125a23328a142b6740acd23b1a9",
+      "complete": false,
+      "geometryNull": false,
+      "missing": [
+        "u571f-j"
+      ],
+      "raw": null,
+      "polygons": null
+    }
+  ],
+  "pins": {
+    "sources.json": "60819413bdf3bc11cc39d2bba04360b5eed7de8baceabde3a573e6c5796898e0",
+    "metadata.json": "a2a7a8d8c4d17e1587852ab5197d16590980e953aec3d4484e0036a1a43cbe97",
+    "engine-proof.json": "38030b1970dff74eac82a2d5200218a94fcb82427faacfc09ff1308a642791c9",
+    "progressive.mjs": "0a3375487378d55d77f07a9c2f0ac9f1c9832b0b7c613a25141cbb5e6ea06958",
+    "engine-whole-u7e86-ue0100.json": "c8d0a3a9c23bb14ff00a762ad6f212678d0df3e7fa338ce1ce5b7e3cda392413",
+    "engine-whole-u7e86-ue0101.json": "22b430607d132c9dbac9c24b0c5dcc6c0ab21e62b0dab455bc941829e3897f49",
+    "engine-whole-u7e86-ue0102.json": "ee7f3b7cf48cf2cf0296fbefe7f8c19c1a2dcd80a8d16718d86de2b7479434dc",
+    "engine-whole-u7e86.json": "362b63e5990e538a4bb90c902026907903106125a23328a142b6740acd23b1a9",
+    "strict-native-adapter.mjs": "a33a094d2cc832b08fcba3509d3047962723914c03d41918da4bda92bd20b7d2"
+  },
+  "identity": {
+    "sourceRoot": "u7e86",
+    "sourceProofFile": "./engine-whole-u7e86.json",
+    "sourceProofFileSha256": "362b63e5990e538a4bb90c902026907903106125a23328a142b6740acd23b1a9",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "38030b1970dff74eac82a2d5200218a94fcb82427faacfc09ff1308a642791c9",
+    "sourceMetadataFile": "./sources.json",
+    "sourceMetadataFileSha256": "60819413bdf3bc11cc39d2bba04360b5eed7de8baceabde3a573e6c5796898e0"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';const d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1073-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');for(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);const s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"b4bcb988cd6b4e7ea9afd2e7b7cf029e8171b7a17b6d31c9e864308b65f6cd89\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nassert.throws(()=>m.compileProgressive(p.trace,p,id),e=>e.message===m.blockedReason);assert.equal(JSON.stringify(p),before);console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:cfg.sourceVerificationPassed,blocked:true,reason:m.blockedReason,compiledPens:0,compiledMasks:0,progressiveFrames:0,replay:0,nativeApproval:false}));"
+}
