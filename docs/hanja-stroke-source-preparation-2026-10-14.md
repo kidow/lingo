@@ -57,3 +57,28 @@
 ## 2026-10-14 揥 native 완료
 
 揥(batch926) 12획·14마스크·33원본 다각형 적용. 전체4종·12방향·108단계·7확대 fine·3terminalfine·2/11꼬리 경계 및96% 연결·11/2 실제재생PASS. 원본metadata/NOTICE 유지. 누적5471/5978, 미적용507. 遆(925) 기존g자형/순서는부적합, var001 별도후보native미승인대기. 다음927/928/929 원본대조. 빌드없음.
+
+
+## 2026-10-14 遆 보류
+
+6전체형 native비교에서g/var001의one-dot辶 불일치 확인. 초기var001compatible보고정정. Base/jv전체는맞지만exact최소14와dom13차이, raw4/5 gap[-1.99,-2]의동일획근거미확인. 미관찰frames/fine/replay 승인0, 원본유지. 누적5471/미적용507, 보류255. 다음927塚/928潨.
+
+
+## 2026-10-14 塚 보류
+
+Actual previous source reproduction failed:126.8072221933106 vs126.80722219331061; do not round or regenerate. Catalog13/domestic12. Native two complete source variants g/k observed, their extra internal dot differs; other11notfullyobserved. 원본metadata/NOTICE유지, 새geometry0/재생승인0. 누적5471/5978·미적용507·보류256. 빌드없음.
+
+
+## 2026-10-14 潨 보류
+
+Native all3whole observed;g/base overallforms compatible,VS0 bottom component differs. Native domestic3/raw3 and4 diagnostic shows same domestic pen split into disjoint original commands; consecutive exact minimum16>domestic15. No original-path connector or same-pen native reveal exists. Filled contact not measured; do not claim permanent impossibility. 원본metadata/NOTICE유지, 새geometry0/재생승인0. 누적5471/5978·미적용507·보류257. 빌드없음.
+
+
+## 2026-10-14 凗 보류
+
+Native sole whole observed compatible. Stored source grouping [8,14] is nonconsecutive; original raw8 leftV and raw14 laterbottomH cannot be joined from count alone. Raw9/domain8 diagnostic inspected without correspondence approval. No compiler runtime candidate. 원본metadata/NOTICE유지, 새geometry0/재생승인0. 누적5471/5978·미적용507·보류258. 빌드없음.
+
+
+## 2026-10-14 鄹 native 완료
+
+K원본鄹(batch930) 17획·18마스크·37원본다각형 적용. 全3종/K17방향/153단계/10확대fine/2terminalfine/16경계95%/16과9실제재생PASS. 귀 耳 전체mask순서만보정,原geometry/metadata/NOTICE 유지. 누적5472/5978·미적용506·보류258. 다음萑12획보정후보검토. 빌드없음.
