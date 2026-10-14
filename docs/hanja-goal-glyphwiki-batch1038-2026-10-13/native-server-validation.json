@@ -1,0 +1,215 @@
+{
+  "batch": 1038,
+  "glyph": "堭",
+  "status": "native-review-pending",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": [
+    {
+      "root": "u582d",
+      "pens": 12,
+      "masks": 12,
+      "polygons": 23,
+      "canonicalPolygonsSHA256": "6a28d8360a6a74349e0c67180d542a731f8c8aefa2bdeefa2a3a5ecad1d023d1",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 12,
+      "emptyRawMetadata": [
+        3
+      ],
+      "nonconsecutiveDrawingGroups": []
+    },
+    {
+      "root": "u582d-ue0100",
+      "pens": 12,
+      "masks": 12,
+      "polygons": 23,
+      "canonicalPolygonsSHA256": "6a28d8360a6a74349e0c67180d542a731f8c8aefa2bdeefa2a3a5ecad1d023d1",
+      "originalPolygonsExactlyOnce": true,
+      "sourceInputImmutable": true,
+      "guardsRejected": 12,
+      "emptyRawMetadata": [
+        3
+      ],
+      "nonconsecutiveDrawingGroups": []
+    }
+  ],
+  "sourceSHA256": {
+    "sources.json": "55df3125b508c79ec780c5df0b971659044a3099e783de2bc37142d96bd3a5a1",
+    "engine-proof.json": "31d5a4cb591e7ab86081f450bd2f3d664707ec21ca1ba5183a639921a044b00e",
+    "metadata.json": "93228a3306fb2b6db893febc58888f95d5c80cff96a7a0c9e975d0eda16da2c7",
+    "engine-whole-u582d-ue0100.json": "31d5a4cb591e7ab86081f450bd2f3d664707ec21ca1ba5183a639921a044b00e",
+    "engine-whole-u582d.json": "31d5a4cb591e7ab86081f450bd2f3d664707ec21ca1ba5183a639921a044b00e"
+  },
+  "compilerSHA256": "120ffb2ebdf67c28f7be9710acb8a12915f09245147f4f460220b8787800a766",
+  "risks": [
+    {
+      "root": "u582d",
+      "terminalSourceRisk": [
+        {
+          "raw": 5,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            213
+          ],
+          "pens": [
+            5
+          ]
+        },
+        {
+          "raw": 7,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            223
+          ],
+          "pens": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "root": "u582d-ue0100",
+      "terminalSourceRisk": [
+        {
+          "raw": 5,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            12,
+            213
+          ],
+          "pens": [
+            5
+          ]
+        },
+        {
+          "raw": 7,
+          "call": 0,
+          "kind": "cdDrawLine",
+          "terminals": [
+            22,
+            223
+          ],
+          "pens": [
+            6
+          ]
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "batch": 1038,
+      "kind": "serve-whole.py",
+      "session": 29035,
+      "port": 52392,
+      "pid": 76589,
+      "wholeVariants": 2,
+      "pairMapping": "compiled-candidate-pens",
+      "candidatePens": 12,
+      "nativeApproved": false
+    },
+    {
+      "batch": 1038,
+      "kind": "serve-progressive.py",
+      "session": 72046,
+      "port": 52384,
+      "pid": 76560,
+      "strokes": 12,
+      "masks": 12,
+      "sourceRoot": "u582d",
+      "sourceProofFile": "engine-whole-u582d.json",
+      "sourceProofFileSHA256": "31d5a4cb591e7ab86081f450bd2f3d664707ec21ca1ba5183a639921a044b00e"
+    }
+  ],
+  "http": [
+    {
+      "batch": 1038,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52392/?id=u582d",
+      "status": 200,
+      "bytes": 4333,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1038,
+      "kind": "whole",
+      "url": "http://127.0.0.1:52392/?id=u582d-ue0100",
+      "status": 200,
+      "bytes": 4340,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1038,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:52392/?id=u582d&pairs=1:1,12:12&view=checks",
+      "status": 200,
+      "bytes": 363,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1038,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52384/?root=u582d&stroke=3&enlarged=1",
+      "status": 200,
+      "bytes": 7749,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1038,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52384/?root=u582d&stroke=6&enlarged=1",
+      "status": 200,
+      "bytes": 8404,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1038,
+      "kind": "pairs",
+      "url": "http://127.0.0.1:52392/?id=u582d-ue0100&pairs=1:1,12:12&view=checks",
+      "status": 200,
+      "bytes": 377,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1038,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52384/?root=u582d-ue0100&stroke=3&enlarged=1",
+      "status": 200,
+      "bytes": 7840,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1038,
+      "kind": "fine",
+      "url": "http://127.0.0.1:52384/?root=u582d-ue0100&stroke=6&enlarged=1",
+      "status": 200,
+      "bytes": 8495,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
