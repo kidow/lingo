@@ -1,0 +1,247 @@
+{
+  "batch": 1087,
+  "glyph": "湺",
+  "observedAt": "2026-10-14T01:08:13.408Z",
+  "stage": "원본 source-only 준비 · 국내 native 미승인",
+  "inputManifestSHA256": "b3ce0af9d6ec11d4075d5c78eb729c4560703fb49d191aaf57f2411e57303bf1",
+  "inputManifestExcludedFiles": [
+    "source-only-helper-readiness.json"
+  ],
+  "inputFileSHA256": {
+    "candidate-compile-analysis.json": "b5b061a8753b4c4e4e8341d174e3391d1343c2a45dc847247a842f62c6ed6cc0",
+    "engine-proof.json": "ccf22653a5c6c89fc3f1a186e8757ee07250ae36813dce4e07c52fc6ae48f2f9",
+    "engine-whole-u6e7a-k.json": "2b1c443b0104a3ac6259fbba259f8ae4e1f83ef23c767a609ff3a2dab72d4048",
+    "engine-whole-u6e7a.json": "9885f0959ffeab9f19945f5d6e3627800f558ce6b854f9ad1f328eaa7825736c",
+    "metadata.json": "5600b9136e80e1e921420fa2dabfb5599a770b00965ca166e2ae64666bbc5fb6",
+    "native-server-preparation-source-analysis.json": "ab81d6ca89b4ab545bb4bf3a67bd909cbda9fc269f87ddbc3033011bcb970d1a",
+    "native-server-validation.json": "0440ae491a0d5f421883a1fc06a6da2ba0adc0d18b03bb1352bccb169f6cb0b2",
+    "progressive.mjs": "e303fa435547fe55c8f6b0a22a2fc53805a46428fb4bf429c2b6f9a025661802",
+    "serve-whole.py": "d0ed63529f8f93ce07fe2dcdb3232846d6275986e854c4cdcfb87ee5789746b6",
+    "source-analysis.json": "6d39b2dc034d92a2e14610525bce2ae0e86a6f1bfefafceeb89d40e88b4f7543",
+    "source-join-analysis.json": "4af62477dc9fe485fc60bae6c4880d6a8dbd4e4f7531a54fda196cba993f5827",
+    "sources.json": "729ff27e78cfbc9ed772c8d5fad69b72afdfb80043d8e4484be6a9ac0d3a5bfe",
+    "verify-source.mjs": "bf3843b0ef186b227b306c83bcd3b13734c0a5ae535bbb8ab674ceb84862b15b"
+  },
+  "sourceVerification": {
+    "existingEvidenceFile": "native-server-validation.json",
+    "existingEvidenceFileSHA256": "0440ae491a0d5f421883a1fc06a6da2ba0adc0d18b03bb1352bccb169f6cb0b2",
+    "previousSourcePassed": true,
+    "sourceActualPASSReused": true,
+    "sourceVerifierExecutedThisTask": false,
+    "onlineRequestsThisTask": 0,
+    "priorEvidenceMeaning": "과거 원본 재현 기록만 재사용. 신규 온라인 재현·국내 native 승인 근거가 아님."
+  },
+  "profiles": [
+    {
+      "sourceRoot": "u6e7a",
+      "identity": {
+        "sourceRoot": "u6e7a",
+        "sourceProofFile": "./engine-whole-u6e7a.json",
+        "sourceProofFileSha256": "9885f0959ffeab9f19945f5d6e3627800f558ce6b854f9ad1f328eaa7825736c",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "ccf22653a5c6c89fc3f1a186e8757ee07250ae36813dce4e07c52fc6ae48f2f9",
+        "sourceMetadataFile": "./sources.json",
+        "sourceMetadataFileSha256": "729ff27e78cfbc9ed772c8d5fad69b72afdfb80043d8e4484be6a9ac0d3a5bfe"
+      },
+      "compiler": "progressive.mjs",
+      "selectedProofKeys": [
+        "defaults",
+        "groups",
+        "trace"
+      ],
+      "fullProofKeys": [
+        "defaults",
+        "engineHashes",
+        "engineRevision",
+        "groups",
+        "trace"
+      ],
+      "fullProofSHA256": "ff4da0992129c85be7886b7d2831c8ea00d8e192d51fc72836cc74d4d7bd57ad",
+      "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+      "engineHashes": {
+        "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+        "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+        "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+        "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+        "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+        "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+        "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+        "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+      },
+      "preset": {
+        "kMage": 10,
+        "kWidth": 5,
+        "kMinWidthT": 6,
+        "kAdjustMageStep": 5
+      },
+      "sourceGroups": [],
+      "originalRaw": 15,
+      "originalDraw": 14,
+      "originalPolygons": 23,
+      "emptyRawMetadata": [
+        {
+          "raw": 4,
+          "metadata": {
+            "raw": [
+              0,
+              0,
+              0,
+              0,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "polygons": []
+          }
+        }
+      ],
+      "compiledPens": 0,
+      "compiledMasks": 0,
+      "completeMasksSHA256": null,
+      "orderedPenMaskSHA256": [],
+      "originalPolygonExactlyOnce": null,
+      "originalCoordinatesUnchanged": null,
+      "inputImmutable": true,
+      "guardCases": [
+        {
+          "case": "trace-coordinate",
+          "rejected": true
+        },
+        {
+          "case": "trace-polygon-coordinate",
+          "rejected": true
+        },
+        {
+          "case": "group-polygon-coordinate",
+          "rejected": true
+        },
+        {
+          "case": "preset",
+          "rejected": true
+        },
+        {
+          "case": "engineRevision",
+          "rejected": true
+        },
+        {
+          "case": "engineHash",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceRoot",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceProofFile",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceProofFileSha256",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceHeaderFile",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceHeaderFileSha256",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceMetadataFile",
+          "rejected": true
+        },
+        {
+          "case": "identity:sourceMetadataFileSha256",
+          "rejected": true
+        },
+        {
+          "case": "identity:null",
+          "rejected": true
+        },
+        {
+          "case": "trace-reversed",
+          "rejected": true
+        },
+        {
+          "case": "empty-raw-metadata",
+          "rejected": true
+        }
+      ],
+      "blocked": true,
+      "holdReason": "original-water-gap-and-excluding-incidental-mouth-closure-leaves13-pens-above12",
+      "finePens": [],
+      "terminals": [
+        {
+          "raw": 7,
+          "primitive": 0,
+          "kind": "cdDrawLine",
+          "terminal": 13,
+          "pens": []
+        },
+        {
+          "raw": 9,
+          "primitive": 0,
+          "kind": "cdDrawLine",
+          "terminal": 23,
+          "pens": []
+        }
+      ],
+      "boundaries": []
+    }
+  ],
+  "strictCaller": [],
+  "helper": {
+    "restartCommands": [
+      {
+        "file": "serve-whole.py",
+        "portPolicy": "existing helper bind port (usually ephemeral0)",
+        "command": "rtk proxy python3 \"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1087-2026-10-13/serve-whole.py\"",
+        "availabilityNotChecked": true
+      }
+    ],
+    "sourceRead": true,
+    "serverStartedThisTask": false,
+    "HTTPExecutedThisTask": false,
+    "availabilityNotClaimed": true
+  },
+  "wholeInventory": [
+    {
+      "file": "engine-whole-u6e7a-k.json",
+      "sourceSHA256": "2b1c443b0104a3ac6259fbba259f8ae4e1f83ef23c767a609ff3a2dab72d4048",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 15,
+      "polygons": 23
+    },
+    {
+      "file": "engine-whole-u6e7a.json",
+      "sourceSHA256": "9885f0959ffeab9f19945f5d6e3627800f558ce6b854f9ad1f328eaa7825736c",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 15,
+      "polygons": 23
+    }
+  ],
+  "originalFilesChanged": false,
+  "sourceGeometryChanged": false,
+  "compilerChanged": false,
+  "profileChanged": false,
+  "nativeApproval": false,
+  "runtimeChanged": false,
+  "sharedRegistryChanged": false,
+  "buildRun": false,
+  "commitCreated": false,
+  "newSourceRequested": false,
+  "privateAssetsRead": false,
+  "privateGraphicsSaved": false,
+  "serversStarted": 0,
+  "networkRequests": 0,
+  "scope": "이 기록은 원본 수치·가드와 재시작 절차만 설명하며 국내 필순/자형/경계 hold를 해결했다고 주장하지 않습니다."
+}

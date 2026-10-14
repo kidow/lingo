@@ -1,0 +1,142 @@
+{
+  "batch": 1087,
+  "glyph": "湺",
+  "status": "blocked-original-source",
+  "sourceVerifierExecutedOnce": true,
+  "sourcePassed": true,
+  "sourceEvidencePassed": null,
+  "sourceEvidenceSummaryFieldAvailable": false,
+  "sourceInputsUnchanged": true,
+  "compilerUnchanged": true,
+  "actualVerification": {
+    "validOriginalProofBlocked": true,
+    "tamperedProofsAndIdentitiesRejected": 13,
+    "candidateGeometryAbsent": true,
+    "reason": "original-water-gap-and-excluding-incidental-mouth-closure-leaves13-pens-above12",
+    "gap": {
+      "rawPair": [
+        2,
+        3
+      ],
+      "end": [
+        36.4,
+        184
+      ],
+      "start": [
+        32.8,
+        150
+      ],
+      "delta": [
+        -3.6000000000000014,
+        -34
+      ],
+      "distance": 34.19005703417296,
+      "bridgeInvented": false
+    },
+    "wholeFacts": [
+      {
+        "root": "u6e7a",
+        "raw": 15,
+        "nonEmptyRaw": 14,
+        "exactDirectedJoins": [
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            9
+          ]
+        ],
+        "maximumMatching": 2,
+        "minimumPensLowerBound": 12,
+        "nonDrawingRaw": [
+          4
+        ],
+        "nativeBoundariesApproved": false
+      },
+      {
+        "root": "u6e7a-k",
+        "raw": 15,
+        "nonEmptyRaw": 14,
+        "exactDirectedJoins": [
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            9
+          ]
+        ],
+        "maximumMatching": 2,
+        "minimumPensLowerBound": 12,
+        "nonDrawingRaw": [
+          4
+        ],
+        "nativeBoundariesApproved": false
+      }
+    ],
+    "catalogCount": 12,
+    "domesticCount": 12
+  },
+  "sourceSHA256": {
+    "sources.json": "729ff27e78cfbc9ed772c8d5fad69b72afdfb80043d8e4484be6a9ac0d3a5bfe",
+    "engine-proof.json": "ccf22653a5c6c89fc3f1a186e8757ee07250ae36813dce4e07c52fc6ae48f2f9",
+    "metadata.json": "5600b9136e80e1e921420fa2dabfb5599a770b00965ca166e2ae64666bbc5fb6",
+    "engine-whole-u6e7a-k.json": "2b1c443b0104a3ac6259fbba259f8ae4e1f83ef23c767a609ff3a2dab72d4048",
+    "engine-whole-u6e7a.json": "9885f0959ffeab9f19945f5d6e3627800f558ce6b854f9ad1f328eaa7825736c"
+  },
+  "compilerSHA256": "e303fa435547fe55c8f6b0a22a2fc53805a46428fb4bf429c2b6f9a025661802",
+  "risks": [],
+  "servers": [
+    {
+      "batch": 1087,
+      "kind": "serve-whole.py",
+      "session": 55262,
+      "port": 55597,
+      "pid": 94865,
+      "wholeVariants": 2,
+      "blocked": true,
+      "nativeApproval": false
+    }
+  ],
+  "http": [
+    {
+      "batch": 1087,
+      "kind": "whole",
+      "url": "http://127.0.0.1:55597/?id=u6e7a",
+      "status": 200,
+      "bytes": 4978,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1087,
+      "kind": "whole",
+      "url": "http://127.0.0.1:55597/?id=u6e7a-k",
+      "status": 200,
+      "bytes": 4980,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    },
+    {
+      "batch": 1087,
+      "kind": "checks",
+      "url": "http://127.0.0.1:55597/?view=checks",
+      "status": 200,
+      "bytes": 452,
+      "privateMediaSaved": false,
+      "nativeObserved": false
+    }
+  ],
+  "httpChecksPassed": true,
+  "httpChecksAreNotNativeObservation": true,
+  "nativeObserved": 0,
+  "nativeApprovalGranted": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "commitExecuted": false,
+  "previewMetadataAndFullHeaderStrictPins": true
+}
