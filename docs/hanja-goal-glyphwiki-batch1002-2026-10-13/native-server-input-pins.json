@@ -1,0 +1,65 @@
+{
+  "batch": 1002,
+  "glyph": "僩",
+  "port": 0,
+  "catalog": 14,
+  "domestic": 14,
+  "wholeNames": [
+    "u50e9-ue0100",
+    "u50e9-var-001",
+    "u50e9"
+  ],
+  "wholeEvidence": [
+    {
+      "root": "u50e9-ue0100",
+      "file": "engine-whole-u50e9-ue0100.json",
+      "sourceSHA256": "9cff50b00cf3e6b7184bf3f62cb1a29fbaf6fc2c7a68ff8923332ecb82bbdeb9",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 17,
+      "polygons": 31
+    },
+    {
+      "root": "u50e9-var-001",
+      "file": "engine-whole-u50e9-var-001.json",
+      "sourceSHA256": "449e1137e478b858f0472346b68294d876486ece93bb8f8a82a42a7bbb141b74",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 17,
+      "polygons": 33
+    },
+    {
+      "root": "u50e9",
+      "file": "engine-whole-u50e9.json",
+      "sourceSHA256": "9cff50b00cf3e6b7184bf3f62cb1a29fbaf6fc2c7a68ff8923332ecb82bbdeb9",
+      "complete": true,
+      "geometryNull": false,
+      "missing": null,
+      "raw": 17,
+      "polygons": 31
+    }
+  ],
+  "pins": {
+    "sources.json": "35e0dfdfa83f9728179814bf3471b7c0f7c3fec8c2a924e1084fcb9bdf9cd784",
+    "metadata.json": "69212d324ed31588a56d8c5584d78be13f28d79b76d908037e306c71d9cced49",
+    "engine-proof.json": "e2a2fca7d956cfc3d79561d2af1d16a1199966dee46995ca7ee32b935a02c2be",
+    "progressive.mjs": "a156a9a702ba2f9ec88708247d5488a2b3c1a96c3343928868eb8eb23502d596",
+    "engine-whole-u50e9-ue0100.json": "9cff50b00cf3e6b7184bf3f62cb1a29fbaf6fc2c7a68ff8923332ecb82bbdeb9",
+    "engine-whole-u50e9-var-001.json": "449e1137e478b858f0472346b68294d876486ece93bb8f8a82a42a7bbb141b74",
+    "engine-whole-u50e9.json": "9cff50b00cf3e6b7184bf3f62cb1a29fbaf6fc2c7a68ff8923332ecb82bbdeb9",
+    "strict-native-adapter.mjs": "7cad657942eb73954e645aaac410b06c1f6944bf02a29f41bf1d213ae32ede2f"
+  },
+  "identity": {
+    "sourceRoot": "u50e9",
+    "sourceProofFile": "./engine-whole-u50e9.json",
+    "sourceProofFileSha256": "9cff50b00cf3e6b7184bf3f62cb1a29fbaf6fc2c7a68ff8923332ecb82bbdeb9",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "e2a2fca7d956cfc3d79561d2af1d16a1199966dee46995ca7ee32b935a02c2be",
+    "sourceMetadataFile": "./sources.json",
+    "sourceMetadataFileSha256": "35e0dfdfa83f9728179814bf3471b7c0f7c3fec8c2a924e1084fcb9bdf9cd784"
+  },
+  "sourceVerificationPassed": true,
+  "nodeCode": "import fs from'node:fs';import assert from'node:assert/strict';import{createHash}from'node:crypto';const d=\"/Users/kidow/Documents/dev/kidow/lingo/docs/hanja-goal-glyphwiki-batch1002-2026-10-13\",cfg=JSON.parse(fs.readFileSync(d+'/native-server-input-pins.json')),sha=v=>createHash('sha256').update(v).digest('hex');for(const[f,p]of Object.entries(cfg.pins))assert.equal(sha(fs.readFileSync(d+'/'+f)),p);\nconst m=await import(d+'/strict-native-adapter.mjs'),id=cfg.identity;assert.deepEqual(id,m.selectedProofIdentity);const s=JSON.parse(fs.readFileSync(d+'/'+id.sourceProofFile)),h=JSON.parse(fs.readFileSync(d+'/'+id.sourceHeaderFile)),p={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...s},before=JSON.stringify(p);assert.equal(sha(JSON.stringify(p)),\"17a46e86cff47ff19fd65e63208b2b8d11d1a0e2817a5652380327db39f37a21\");\nassert.equal(JSON.parse(fs.readFileSync(d+'/sources.json')).archive.sha256,'7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62');\nconst strokes=m.compileProgressive(p.trace,p,id);assert.equal(JSON.stringify(p),before);assert.equal(strokes.length,14);assert.equal(strokes.flat().length,16);assert.equal(sha(JSON.stringify(strokes)),\"23471b6ff9b59ca68a63c3d5d2df30349465c8f532427f6f38118d4132e602a5\");console.log(JSON.stringify({sourceRoot:id.sourceRoot,identity:id,sourceVerificationPassed:true,sourceGroups:m.sourceGroups,strokes,render:m.renderProgressive.toString(),compiledPens:strokes.length,compiledMasks:strokes.flat().length,blocked:false,nativeApproval:false}));"
+}
