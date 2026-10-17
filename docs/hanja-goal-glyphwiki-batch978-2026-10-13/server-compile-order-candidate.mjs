@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {compileSourceWhole,selectedProofIdentity,sourceGroups,sourceOrderPermutation,renderProgressive} from './progressive-order-candidate.mjs'
+const sha=x=>createHash('sha256').update(x).digest('hex'),prep=JSON.parse(readFileSync(new URL('./source-order-candidate-validation.json',import.meta.url)))
+assert.deepEqual(prep.originalPins,{"candidate-compile-analysis.json":"4ba57388321fb3d9d39c5718c240c293ebbc2da5bb16a691e524f34ba13dc926","engine-proof.json":"56b85a3e1630c785812dfb31fe16cef16815d075fc227070b353e257102bf2a6","engine-whole-u7cba-ue0100.json":"a19ba8acdecb926494743b63408eac407f71b892a577c719b37994a8e4b1626e","engine-whole-u7cba.json":"a19ba8acdecb926494743b63408eac407f71b892a577c719b37994a8e4b1626e","metadata.json":"986448e3bd2e0b37f35e83bdecc64ceed0ce0521c0e5311bbe3077e7a1ebe4a8","progressive.mjs":"204c62e750f69adcf37bec4352bcfd94c5a581274cf98485575a9802b5592d39","source-analysis.json":"8dd33068fab07f33d04cc11c4dd708432d226974384853df5b0117aecd35b9c5","source-join-analysis.json":"d5e3a4c884a717fcbb92098c878bfd8c1e3c12ac6a6e11085547c1736c3c3666","sources.json":"744e14da6ee8492f8e6037076c475cbfaf25fb19df40bbb5f1be1bea1ef420ec","verify-source.mjs":"4ca5e49e49cd75c1a3a2d7787f5a33befd1532e44409838856732fd2e42936de","serve-native.py":"6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b","native-server-compile.mjs":"b31e49cff7958ee0dadb73c0e0d81ec67805d26374730272fcfbf001d4f0b543"})
+for(const[file,pin]of Object.entries({...prep.originalPins,...prep.additionalProtectedPins,...prep.newFilesSHA256}))assert.equal(sha(readFileSync(new URL(file,import.meta.url))),pin,'Protected original/helper '+file)
+assert.equal(process.argv[2],'u7cba','Only explicit selected base whole root is supported')
+assert.deepEqual(selectedProofIdentity,{"sourceRoot":"u7cba","sourceProofFile":"./engine-whole-u7cba.json","sourceProofFileSha256":"a19ba8acdecb926494743b63408eac407f71b892a577c719b37994a8e4b1626e","sourceHeaderFile":"./engine-proof.json","sourceHeaderFileSha256":"56b85a3e1630c785812dfb31fe16cef16815d075fc227070b353e257102bf2a6"})
+const identity=selectedProofIdentity,body=JSON.parse(readFileSync(new URL(identity.sourceProofFile,import.meta.url))),header=JSON.parse(readFileSync(new URL(identity.sourceHeaderFile,import.meta.url))),proof={engineRevision:header.engineRevision,engineHashes:header.engineHashes,...body}
+assert.equal(sha(JSON.stringify(proof)),prep.fullProofSHA256)
+const strokes=compileSourceWhole('u7cba',proof.trace,proof,identity)
+assert.equal(sha(JSON.stringify(strokes)),prep.candidateCompiledSHA256);assert.deepEqual(strokes.map(pen=>sha(JSON.stringify(pen))),prep.candidatePenSHA256)
+assert.equal(proof.groups.reduce((n,g)=>n+g.polygons.length,0),28)
+console.log(JSON.stringify({sourceRoot:'u7cba',identity,fullProofSHA256:sha(JSON.stringify(proof)),compiledSHA256:sha(JSON.stringify(strokes)),sourceGroups,sourceOrderPermutation,strokes,render:renderProgressive.toString(),pens:14,masks:14,polygons:28,nativeApproval:false,runtimeApplied:false}))
