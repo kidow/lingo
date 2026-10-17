@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "batch": 997,
+  "glyph": "騢",
+  "date": "2026-10-17",
+  "status": "source-only-combined-helper-source-and-syntax-PASS-native-unreviewed",
+  "originalBytePins": {
+    "NOTICE.md": "c4ea49017d999a6e2ac9947e73559ce7da69368836be9ffac3b11a126499f310",
+    "candidate-compile-analysis.json": "98bc96de33e10863a0564918f8c07657950ef149f330b9ff1932593ae72b8a51",
+    "engine-proof.json": "8b4cc3119febcb64146fb6b64471b6bea7ab6ca2134ecbd5769fed1fda7ea1d9",
+    "engine-whole-u9a22-ue0100.json": "b9ce8d33ff034039a0fe58dd8ac6b1677ebd7b91534c476efdcbb3bf934d4fe5",
+    "engine-whole-u9a22.json": "b9ce8d33ff034039a0fe58dd8ac6b1677ebd7b91534c476efdcbb3bf934d4fe5",
+    "metadata.json": "6a3bba7d0df4c0bb051d33b5f8b32e592de1506127541e24d1169b0cadfd7148",
+    "native-server-preparation-source-analysis.json": "f4c0cbfb7c4fa408364fad542d6f86a27e760f7d731d41e4f08a75b8baf945cf",
+    "native-server-validation.json": "6fd2845fef254b19434a7d8b76a33134d289310f7acf92415b4e17a67347023b",
+    "progressive.mjs": "25b9a23cdf644798a7336df3f78b72ecc3c4ad10d0fbe860b403a38911e514f6",
+    "serve-progressive.py": "edaa28ba5bcad3ea0eaf11f26c26ae891e1238d7a116028aa605deaeab2663eb",
+    "serve-whole.py": "3d8005de6fffe6ee0e2b5404ec9867469e4537fbc6383e78c91b0454325b1252",
+    "server-compile.mjs": "468f3e333b9a3a7cad61d32cb52be897e8fb9d0c3370170700b2eab96ca67eca",
+    "source-analysis.json": "d30f5a8476bd4963afc9ada74ce2df77bfd3b0e0cbe08bf3afacd984e9ac9d52",
+    "source-join-analysis.json": "6a2f0c41ef19ba3e8b16260551ba2211845e57943044b7acb91bf4a8ac2c1140",
+    "source-only-helper-readiness.json": "7e9032a2edf571ecb964bd1bbca9f0faa15361b7f7aec2fe7c63d60ce7df27ba",
+    "source-preservation-audit.json": "67370f7475bd3418af0afc74e4d2a09765fba74b1f1822b1297bed76d3c33c21",
+    "sources.json": "bd167ab27a95af086c8cb2a14d4622c92860e019eedcf4f367fe59b1d5f01056",
+    "verify-source.mjs": "6b30c1c4e3d41cdb667309422ba75be05141144dd61fe9eb1b61ae34eab723ff"
+  },
+  "additionalProtectedPins": {
+    "../hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "helper": "serve-combined-native.py",
+  "helperSHA256": "3e9bcfd9b3601dbe97235f74c9f430c3d6ed979effd373e648a639c34c97f0f4",
+  "originalHelperReuse": {
+    "whole": "serve-whole.py",
+    "progressive": "serve-progressive.py",
+    "caller": "server-compile.mjs",
+    "compiler": "progressive.mjs",
+    "execution": "Original helpers are loaded only in RAM after exact byte guards. The original whole unconditional server footer and progressive startup compile are removed only in RAM. Source, geometry, trajectories, directions and widths remain unchanged."
+  },
+  "supportedProfiles": [
+    {
+      "root": "u9a22",
+      "identity": {
+        "sourceRoot": "u9a22",
+        "sourceProofFile": "./engine-whole-u9a22.json",
+        "sourceProofFileSha256": "b9ce8d33ff034039a0fe58dd8ac6b1677ebd7b91534c476efdcbb3bf934d4fe5",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "8b4cc3119febcb64146fb6b64471b6bea7ab6ca2134ecbd5769fed1fda7ea1d9",
+        "sourceMetadataFile": "./sources.json",
+        "sourceMetadataFileSha256": "bd167ab27a95af086c8cb2a14d4622c92860e019eedcf4f367fe59b1d5f01056"
+      },
+      "fullProofSHA256": "4cdaae773d849bf8a9545b7e816cc015d366130068327197c688d4a1e31012e5",
+      "compiledMasksSHA256": "cd24df57ee3ce86b76a67cce819755d8a89f706210935b0433a0bd51acd64dfd",
+      "pens": 19,
+      "masks": 20,
+      "polygons": 39
+    },
+    {
+      "root": "u9a22-ue0100",
+      "identity": {
+        "sourceRoot": "u9a22-ue0100",
+        "sourceProofFile": "./engine-whole-u9a22-ue0100.json",
+        "sourceProofFileSha256": "b9ce8d33ff034039a0fe58dd8ac6b1677ebd7b91534c476efdcbb3bf934d4fe5",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "8b4cc3119febcb64146fb6b64471b6bea7ab6ca2134ecbd5769fed1fda7ea1d9",
+        "sourceMetadataFile": "./sources.json",
+        "sourceMetadataFileSha256": "bd167ab27a95af086c8cb2a14d4622c92860e019eedcf4f367fe59b1d5f01056"
+      },
+      "fullProofSHA256": "4cdaae773d849bf8a9545b7e816cc015d366130068327197c688d4a1e31012e5",
+      "compiledMasksSHA256": "cd24df57ee3ce86b76a67cce819755d8a89f706210935b0433a0bd51acd64dfd",
+      "pens": 19,
+      "masks": 20,
+      "polygons": 39
+    }
+  ],
+  "identityContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "identityKeys": [
+      "sourceRoot",
+      "sourceProofFile",
+      "sourceProofFileSha256",
+      "sourceHeaderFile",
+      "sourceHeaderFileSha256",
+      "sourceMetadataFile",
+      "sourceMetadataFileSha256"
+    ],
+    "mandatoryCompileProgressiveArguments": 3,
+    "mandatoryCompileSourceWholeArguments": 4,
+    "exactPrefix": "./",
+    "exactHashKeyCase": "Sha256",
+    "originalMandatoryIdentityPreserved": true,
+    "newWrapperNeeded": false,
+    "sourceCompilerChanged": false
+  },
+  "routes": {
+    "allWholeVariants": "/whole",
+    "oneWhole": "/whole?root=u9a22&all=0",
+    "allDirections": "/pairs?root=u9a22",
+    "oneDirection": "/pairs?root=u9a22&stroke=1",
+    "fine": "/progressive?root=u9a22&stroke=12&enlarged=1",
+    "coarse9": "/progressive?root=u9a22&stroke=1&coarse=1",
+    "checks": "/checks?root=u9a22"
+  },
+  "controls": {
+    "percentDenominator": 100,
+    "sliderStep": 0.0001,
+    "fineSize": 520,
+    "coarseSamples": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "maskBoundaryBeforeAtAfterPreserved": true,
+    "explicit95PercentButton": true,
+    "left": "colored domestic",
+    "right": "black candidate"
+  },
+  "nativePlan": {
+    "priorityFinePens": [
+      12,
+      16
+    ],
+    "recommendedFinePens": [
+      1,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      16,
+      18,
+      19
+    ],
+    "originalCurveFinePens": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      16,
+      18,
+      19
+    ],
+    "cardinalTerminalRisks": [
+      {
+        "pen": 1,
+        "terminal": 313
+      }
+    ],
+    "maskTransitions": [
+      {
+        "pen": 6,
+        "weights": [
+          68.07424,
+          8
+        ],
+        "directions": [
+          "curve",
+          "left"
+        ],
+        "boundaries": [
+          0.8948395672437871
+        ]
+      }
+    ],
+    "tail95ProbePens": [
+      6
+    ],
+    "plannedCoarseFrames": 171,
+    "sourceVertexCoverageRisks": [
+      {
+        "pen": 12,
+        "raw": [
+          12,
+          13
+        ],
+        "maximumOriginalVertexDistanceKage": 15.239435685090184,
+        "width": 14,
+        "witnessKage": [
+          126.9,
+          84
+        ],
+        "exceeds": true
+      },
+      {
+        "pen": 16,
+        "raw": [
+          17,
+          18
+        ],
+        "maximumOriginalVertexDistanceKage": 15.251311419022304,
+        "width": 14,
+        "witnessKage": [
+          168.7,
+          84
+        ],
+        "exceeds": true
+      }
+    ],
+    "sourceRiskMethod": "Maximum original polygon vertex distance to the unchanged original line-fold centerline segments; source-only quantitative risk, not observed native failure. Same pen2 risk applies to all999 profiles;997 proofs are byte-identical.",
+    "automaticAdjustment": false
+  },
+  "sourceCheck": {
+    "executions": 1,
+    "executed": true,
+    "exitCode": 0,
+    "selectedRoot": "u9a22",
+    "compiledMasksSHA256": "cd24df57ee3ce86b76a67cce819755d8a89f706210935b0433a0bd51acd64dfd",
+    "pens": 19,
+    "masks": 20,
+    "originalPolygons": 39,
+    "allOriginalPolygonsExactlyOnce": true,
+    "allVerticesUnchanged": true,
+    "originalFilesVerified": 18,
+    "additionalRendererPinsVerified": 2,
+    "savedHelperSHA256Verified": true,
+    "existingProfileIdentityGuardEvidenceReused": true,
+    "allOtherProfilesRecompiledThisTask": false,
+    "privateDictionaryImported": false
+  },
+  "pythonSyntaxCheck": {
+    "executions": 1,
+    "executed": true,
+    "passed": true,
+    "syntaxFiles": 3,
+    "ramTransformedOriginalSyntaxFiles": 2,
+    "wholeServerFooterRemovedOnlyInRAM": true,
+    "progressiveStartupCompileRemovedOnlyInRAM": true,
+    "sliderStepVerified": 0.0001,
+    "explicit95ButtonVerified": true,
+    "coarseSamplesVerified": 9,
+    "sourceHelpersImported": false,
+    "serverStarted": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "nativeWholeObserved": 0,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeFineObserved": 0,
+  "nativeReplaysObserved": 0,
+  "serverStarted": false,
+  "httpChecksRun": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false
+}
