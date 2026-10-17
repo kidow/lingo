@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "batch": 971,
+  "glyph": "畽",
+  "date": "2026-10-17",
+  "status": "held-native-fine-endpoint-clipping",
+  "catalogStrokes": 14,
+  "originalBytePins": {
+    "engine-whole-u757d-ue0100.json": "3af3b640106536e880d70516a9e5ae3b7e0ad6b1f91e802896d653d903918778",
+    "sources.json": "cb61236e0d55bd10f0e4a7d38be2e20d78e635d411f662bd271fcb79c3807453",
+    "serve-native.py": "57aad7afb7c61ba8a036cdeb4e79e9890a3e320fb949e28e38b28b84aa53be7b",
+    "source-only-helper-readiness-2026-10-14.json": "2dbda0c6a42abbf91ab796c80c3b67975c703b9afe66a96147fd80d97ac7f90c",
+    "strict-native-server-preflight.json": "6f326ecd6d2b6f34d284335c09f8176fc564e648d1a0b26ce17f906b60127c38",
+    "candidate-compile-analysis.json": "98dcafc388df6926ef6a3ca624cc9e6ba6d43431955ffddc336cc9aca3426b59",
+    "engine-proof.json": "6dda7004316fccca44ab4e6e1e3babf27e0a27dd7fddf90dec96f08270a26a7c",
+    "native-server-input-pins.json": "40329a238136fe83e71f325f55b786344c1325f3efc9a576dee12f7f4a6a1b19",
+    "metadata.json": "f930f8482e5688bf7c163f19f6dcad31d05d92df3568cd2d75cfdfe73316064a",
+    "verify-source.mjs": "a845975aadc15b3098df63ec86ddbb5c78c55ff1a0f1d408e25574dabc028633",
+    "source-analysis.json": "1627737a16f13014855827af0c0bc8d288e838fccdd94221107e33ef4d2640ef",
+    "engine-whole-u757d.json": "3af3b640106536e880d70516a9e5ae3b7e0ad6b1f91e802896d653d903918778",
+    "progressive.mjs": "7bce26ae84a94cd3621e8f5c0d1a51d89204c046ac37ac3321e2a395024765cb",
+    "strict-native-adapter.mjs": "363233cd933720120784052f5e83526a935df65f8a684acf23ba4d5083708308",
+    "source-preservation-audit.json": "ea31e6112828437fd3e605c73d578c771001535274b8147154f1afc9270af9e0",
+    "source-join-analysis.json": "cb7026630f17c783e049c1167ba979d3f688eaa92aa5807b7d7fd112da78e05c",
+    "NOTICE.md": "804138d3affffabda201d91a02069c0c8fa9a88356711e49c5d227d3adeea387"
+  },
+  "frozenContractFiles": 7,
+  "strictSelectedProofIdentity": {
+    "sourceRoot": "u757d",
+    "sourceProofFile": "engine-whole-u757d.json",
+    "sourceProofFileSha256": "3af3b640106536e880d70516a9e5ae3b7e0ad6b1f91e802896d653d903918778",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "6dda7004316fccca44ab4e6e1e3babf27e0a27dd7fddf90dec96f08270a26a7c"
+  },
+  "sourceContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullProofSHA256": "37b0d1b375dc0d3b28b9b883ed2895ffd86076395a76922222ea01e763c5f4f0",
+    "originalCompiledSHA256": "64a8e6c1f75c5098d55c3079605486c90f5ba0b1741f59097e6bf85423724b8a",
+    "pens": 14,
+    "masks": 14,
+    "polygons": 23,
+    "maskBoundaries": 0
+  },
+  "reason": "Root native520px fine pen2 at99.99% clips/rounds the lower-left tip of the right vertical, while100% exposes a sharp wedge. Complete-mask order correction alone cannot repair this reveal-width endpoint defect.",
+  "nativeReview": {
+    "operator": "root actual in-app browser panel",
+    "date": "2026-10-17",
+    "actualWholeViews": 2,
+    "wholeCompatibleRoots": [
+      "u757d",
+      "u757d-ue0100"
+    ],
+    "dictionaryDirectionStrokesObserved": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "orderMismatches": [
+      {
+        "domestic": 3,
+        "expected": "horizontal",
+        "source": 3,
+        "observed": "vertical"
+      },
+      {
+        "domestic": 4,
+        "expected": "vertical",
+        "source": 4,
+        "observed": "horizontal"
+      },
+      {
+        "domestic": 12,
+        "expected": "horizontal below box",
+        "source": 12,
+        "observed": "long vertical"
+      },
+      {
+        "domestic": 13,
+        "expected": "long vertical",
+        "source": 13,
+        "observed": "horizontal below box"
+      }
+    ],
+    "proposedCompleteMaskPermutation": [
+      1,
+      2,
+      4,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      12,
+      14
+    ],
+    "correctedHelperNativeApproval": false,
+    "fineChecks": [
+      {
+        "pen": 1,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": true
+      },
+      {
+        "pen": 6,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": true
+      },
+      {
+        "pen": 2,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": false,
+        "defect": "Lower-left tip of the right vertical is rounded/clipped before completion; sharp wedge appears at100%",
+        "ramCropSize": [
+          75,
+          70
+        ]
+      }
+    ],
+    "finePensNotReviewed": [
+      8,
+      9
+    ],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "maskBoundaryChecks": 0,
+    "replayChecks": 0,
+    "privateMedia": "RAM-only"
+  },
+  "newOrderHelperFilesCreated": [],
+  "newCompilerExecutionsThisInvestigation": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registryEdited": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "sourceOriginalsChanged": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "buildRun": false,
+  "canonicalAccounting": "Deferred until970 actual checkpoint is ready."
+}
