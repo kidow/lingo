@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "batch": 986,
+  "glyph": "炰",
+  "verifiedAt": "2026-10-17",
+  "status": "native-pen3-small-terminal-corner-completion-pop-held",
+  "selectedRoot": "u70b0",
+  "catalogStrokes": 9,
+  "selectedProofIdentity": {
+    "sourceRoot": "u70b0",
+    "sourceProofFile": "engine-whole-u70b0.json",
+    "sourceProofFileSha256": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8",
+    "sourceHeaderFile": "engine-proof.json",
+    "sourceHeaderFileSha256": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8"
+  },
+  "full5SelectedProofSHA256": "253bb7c9de58bf4252045b40b2e6cceddb4badbd3d6c611682506a6a7d76743c",
+  "compiledSHA256": "e008042921ebb3d819d42d647ec2095b3ca6882646cabb82cbf8823016515e8b",
+  "nativeApproval": false,
+  "allStrokesReviewed": false,
+  "reason": "At520px pen3, the small lower-left corner triangle of the vertical is rounded or flat at99.99% and becomes a sharp extended corner only at100%. This is a small terminal corner completion pop, not a large trajectory jump. Native failure aligns with the existing source coverage risk; no width, path, point or geometry change is authorized.",
+  "nativeEvidence": {
+    "observer": "/root actual in-app browser panel",
+    "workerNativeObservations": 0,
+    "port": 50969,
+    "actualWholeViews": 2,
+    "actualWholeObservations": [
+      {
+        "root": "u70b0",
+        "compatible": true,
+        "actualSeparateScreenshot": true
+      },
+      {
+        "root": "u70b0-ue0100",
+        "compatible": true,
+        "actualSeparateScreenshot": true
+      }
+    ],
+    "byteIdenticalWholeProofReuses": 0,
+    "dictionaryDirectionsObserved": [],
+    "coarseFramesReviewed": 0,
+    "progressiveFramesReviewed": 0,
+    "fineChecks": [
+      {
+        "pen": 3,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": false,
+        "noCompletionPop": false,
+        "actualPairedRAMCrop": {
+          "width": 130,
+          "height": 100,
+          "location": "lower corner of vertical"
+        },
+        "observedDifference": "Tiny lower-left terminal corner triangle appears only at100%;99.99% is rounded or flat and100% is sharp and extends lower-left."
+      }
+    ],
+    "finePensNotReviewed": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "maskBoundaryObservations": 0,
+    "actualReplaysObserved": 0,
+    "privateMediaSaved": false
+  },
+  "sourceCoverageRisk": {
+    "sourceEvidence": "strict-native-server-preflight.json#/risks/quantitativeMaskCoverageRisks",
+    "pen": 3,
+    "originalSourceGroup": [
+      3,
+      4
+    ],
+    "originalPureLFold": true,
+    "maximumOriginalVertexDistanceKage": 15.203976453546616,
+    "revealWidth": 14,
+    "exceedsCurrentWidth": true,
+    "automaticallyCorrected": false,
+    "geometryOrWidthOrPathChanged": false
+  },
+  "originalInputBytePins": {
+    "NOTICE.md": "6dc72add0a15f5100cafe8124b344fd6b6febb28a4589d3c79743f8b8354fa25",
+    "candidate-compile-analysis.json": "1f07b48189be17e84623f76393f72e94a1d46fd522b44a701b06bd201b6d6933",
+    "engine-proof.json": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8",
+    "engine-whole-u70b0-ue0100.json": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8",
+    "engine-whole-u70b0.json": "f00703bb86224068e9b1811dfcbb868e27be0152c4e0bc873b77f6179bce8ae8",
+    "metadata.json": "64011b6ce401bbc1351885610a3d70d6404ba6949cfe4566a4550c1e6d0b3bc8",
+    "native-server-input-pins.json": "092d78c890b1184c3b3f6c96d270e202f36242c842ed1aa34d8ddbbecca2b76f",
+    "progressive.mjs": "f9e82549e16dcfd93c79489affc2c675fa93388800e91c6457fd9b6dca23d178",
+    "serve-native.py": "4a814e1d7934ed0525162710044d066be1200ef2d066fa51513729e92b990dfe",
+    "source-analysis.json": "9a0b1e4d23f3b730dc951eef68ca6f551ab47e9462cc4a2153c16ffc05494d85",
+    "source-join-analysis.json": "1e01ae2120562594690ab63f164f886a0871dab2ac60149c7c212615ec2a35bc",
+    "source-only-helper-readiness.json": "8320d0ddfbe89c5413bc6b432bf6a32695b371c4c9c843191765145668c2ff8e",
+    "source-preservation-audit.json": "06f9663ac0aefe83093479b421f8906f78fe28626cb4ef00d063e9d6ab036977",
+    "sources.json": "df773dcb5fc448d5fe2fa88aa2eec180a0de333de8c17e22d1ac1a4d72d98ab2",
+    "strict-native-adapter.mjs": "bb7259660aeca12cfa2a2cb4bdfb7d6ad9733a863fc7d3fce401e8dbab0f0379",
+    "strict-native-server-preflight.json": "ab7d6e7bf5cc8723e7e41df67d808fb1e1b2d533e1c40a6aba4a97681eed3888",
+    "verify-source.mjs": "8f63d29ed2e2ad0bff373a1cee3faa23011ef9495e017b227e383abf5716017e"
+  },
+  "additionalProtectedBytePins": {
+    "../hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "candidatePreparationBytePins": {
+    "serve-review-native.py": "902cf074ca6f691e14b8244e883e18b4b5472e63001fef20fc5d11ce7681f306",
+    "strict-native-adapter.d.mts": "be7775c329821644d7bef00258b41104d5cc0a8c7cfaa9a47796682a3440fb6d",
+    "isolated-native-preparation.json": "95e51824d25198ecb264c2c2c0b383cb7194565ef931898bef784457f674fe19"
+  },
+  "originalFileCount": 17,
+  "existingPreparationFiles": 3,
+  "sourceMetadataChanged": false,
+  "sourceAuditChanged": false,
+  "originalNoticeChanged": false,
+  "originalCompilerChanged": false,
+  "originalHelperChanged": false,
+  "isolatedHelperOrTypeOrPreparationChanged": false,
+  "geometryChanged": false,
+  "sourceWidthChanged": false,
+  "sourcePathChanged": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": 0,
+  "privateMediaSaved": false,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "nextAction": "Retain as a native endpoint hold and seek independently supported source geometry/reveal evidence. Do not widen the reveal or alter original corners to hide the observed completion pop."
+}
