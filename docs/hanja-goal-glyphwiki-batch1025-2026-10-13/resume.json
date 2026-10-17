@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "previousResume": "docs/hanja-goal-glyphwiki-batch1024-2026-10-13/resume.json",
+  "previousResumeSHA256": "4c4a25bf355e5615e39486c9f4eb04570933481e19091e5ee401a9e09d88e8f5",
+  "checkpointStatus": "source-count-hold-actual-checkpoint-verified",
+  "actualCheckpointVerified": true,
+  "runtimeAbsenceVerified": true,
+  "completedRuntime": 5522,
+  "total": 5978,
+  "remainingCommittedRuntime": 456,
+  "pendingRuntime": 0,
+  "lastCompletedBatch": 1025,
+  "lastRuntimeBatch": 1024,
+  "newHoldsThisBatch": [
+    {
+      "batch": 1025,
+      "glyph": "灝",
+      "root": "u705d",
+      "selectedRoot": "u705d",
+      "catalogStrokes": 24,
+      "hold": "docs/hanja-goal-glyphwiki-batch1025-2026-10-13/source-hold.json",
+      "holdSHA256": "5f879f251533e9c117f4d7c25f04d74ce21bb523ad7c95275a92c50b87e518ac",
+      "runtimeApplied": false,
+      "nativeApproval": false
+    }
+  ],
+  "existingHoldsInherited": 302,
+  "totalHolds": 303,
+  "inheritancePolicy": "부모의 실제 canonical 보류302자를 승계합니다. 灝 중복검사 결과 신규1자만 추가하며 원본 source-hold/README/validation은 변경하지 않습니다.",
+  "inheritedFields": {
+    "existingHolds": "docs/hanja-goal-glyphwiki-batch1024-2026-10-13/resume.json#/totalHolds",
+    "canonicalHoldHistory": "docs/hanja-goal-glyphwiki-batch1024-2026-10-13/resume.json#/previousResume"
+  },
+  "lastReview": {
+    "glyph": "灝",
+    "status": "held-source-contract-consecutive-minimum-exceeds-catalog",
+    "catalogStrokes": 24,
+    "minimumCapturedCompleteWhole": 25,
+    "minimumEligibleCompleteWhole": 25,
+    "allCapturedCompleteWholesExceedCatalog": true,
+    "wholeFacts": [
+      {
+        "file": "engine-whole-u705d-k.json",
+        "fileSHA256": "53a4ef61ebb41c265e2e7ed4ff40c79bba9002d9fec93aa4c743e10ab3916f18",
+        "raw": 28,
+        "drawing": 28,
+        "calls": 29,
+        "polygons": 45,
+        "exactConsecutiveJoinsRawOneBased": [
+          [
+            6,
+            7
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            22,
+            23
+          ]
+        ],
+        "minimum": 25,
+        "nonConsecutiveContactsNotApproved": [
+          [
+            5,
+            9
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            21,
+            26
+          ]
+        ]
+      },
+      {
+        "file": "engine-whole-u705d-ue0100.json",
+        "fileSHA256": "53a4ef61ebb41c265e2e7ed4ff40c79bba9002d9fec93aa4c743e10ab3916f18",
+        "raw": 28,
+        "drawing": 28,
+        "calls": 29,
+        "polygons": 45,
+        "exactConsecutiveJoinsRawOneBased": [
+          [
+            6,
+            7
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            22,
+            23
+          ]
+        ],
+        "minimum": 25,
+        "nonConsecutiveContactsNotApproved": [
+          [
+            5,
+            9
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            21,
+            26
+          ]
+        ]
+      },
+      {
+        "file": "engine-whole-u705d.json",
+        "fileSHA256": "dd468c4035833980ccb6de7795ebb1efc663aef16384646dc4085595a6b322c6",
+        "raw": 28,
+        "drawing": 28,
+        "calls": 29,
+        "polygons": 45,
+        "exactConsecutiveJoinsRawOneBased": [
+          [
+            6,
+            7
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            22,
+            23
+          ]
+        ],
+        "minimum": 25,
+        "nonConsecutiveContactsNotApproved": [
+          [
+            5,
+            9
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            21,
+            26
+          ]
+        ]
+      }
+    ],
+    "priorNativeEvidenceBytePinsVerified": false,
+    "priorNativeApprovalTransferred": false,
+    "sourceCompilerInvocationsThisCheckpoint": 0,
+    "newNativeObservations": 0,
+    "runtimeApplied": false,
+    "nativeApproval": false,
+    "review": "docs/hanja-goal-glyphwiki-batch1025-2026-10-13/source-hold.json"
+  },
+  "nextIndependentCandidate": {
+    "batch": 1026,
+    "glyph": "濩",
+    "strokes": 17,
+    "status": "source-gap-hold-awaiting-chronological-checkpoint",
+    "directory": "docs/hanja-goal-glyphwiki-batch1026-2026-10-13"
+  },
+  "verificationPolicy": {
+    "scope": "원본23·hold7·readiness7핀,exactwhole 끝점·최소획·소스gap,939까지문자열/객체canonical전체중복 및 actual부모SHA/정확미등록검증. 비연속접점 승인·컴파일·새native관찰은 하지 않습니다.",
+    "productionBuild": false,
+    "fullSuite": false,
+    "sourceCompilerExecuted": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "privateMediaSaved": false
+}
