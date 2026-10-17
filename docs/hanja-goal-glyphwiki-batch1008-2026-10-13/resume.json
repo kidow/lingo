@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "previousResume": "docs/hanja-goal-glyphwiki-batch1007-2026-10-13/resume.json",
+  "previousResumeSHA256": "af8c1a25751fd9877d2d2c1e8017655cd3addbf5bd0a0c80944572b863845e1a",
+  "checkpointStatus": "native-partial-hold-actual-checkpoint-verified",
+  "actualCheckpointVerified": true,
+  "runtimeAbsenceVerified": true,
+  "completedRuntime": 5511,
+  "total": 5978,
+  "remainingCommittedRuntime": 467,
+  "pendingRuntime": 0,
+  "lastCompletedBatch": 1008,
+  "lastRuntimeBatch": 1005,
+  "newHoldsThisBatch": [
+    {
+      "batch": 1008,
+      "glyph": "巘",
+      "root": "u5dd8",
+      "catalogStrokes": 23,
+      "hold": "docs/hanja-goal-glyphwiki-batch1008-2026-10-13/native-hold.json",
+      "holdSHA256": "2d7d0f3507afcb331f0f14763acd5b751cc9ebc148d6279f0a09c41f196135dc",
+      "runtimeApplied": false,
+      "nativeApproval": false
+    }
+  ],
+  "existingHoldsInherited": 296,
+  "totalHolds": 297,
+  "inheritancePolicy": "Inherit296 actual canonical holds from1007; add only native-rejected 巘 once. Compact omission is not deletion.",
+  "inheritedFields": {
+    "canonicalHoldHistory": "docs/hanja-goal-glyphwiki-batch1007-2026-10-13/resume.json#/previousResume",
+    "existingHolds": "docs/hanja-goal-glyphwiki-batch1007-2026-10-13/resume.json#/totalHolds"
+  },
+  "lastReview": {
+    "glyph": "巘",
+    "runtimeApplied": false,
+    "nativeApproval": false,
+    "nativeWholeApproved": true,
+    "directionsObserved": 23,
+    "orderMismatchPens": [
+      6,
+      7
+    ],
+    "fineObservations": 7,
+    "finePassed": 6,
+    "fineFailed": 1,
+    "actual520FineFailedPens": [
+      2
+    ],
+    "progressiveCoarseFrames": 0,
+    "maskBoundariesObserved": 0,
+    "replaysObserved": 0,
+    "review": "docs/hanja-goal-glyphwiki-batch1008-2026-10-13/native-hold.json"
+  },
+  "nextIndependentCandidate": {
+    "batch": 1009,
+    "glyph": "玁",
+    "strokes": 23,
+    "status": "source-only-native-comparison-pending",
+    "directory": "docs/hanja-goal-glyphwiki-batch1009-2026-10-13"
+  },
+  "verificationPolicy": {
+    "productionBuild": false,
+    "fullSuite": false,
+    "sourceCompilerExecuted": false,
+    "scope": "Preserve original17 plus actual shared renderer3; exact pen2 raw trace/polygon equivalence only; focused parent, canonical duplicate and runtime absence check once.",
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "privateMediaSaved": false
+}

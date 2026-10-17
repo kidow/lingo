@@ -1,0 +1,147 @@
+{
+  "batch": 1008,
+  "glyph": "巘",
+  "reviewedAt": "2026-10-18",
+  "status": "native-partial-review-rejected-terminal-reveal-pop",
+  "nativeApproval": false,
+  "nativeWholeApproved": true,
+  "nativeOrderApproved": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": 0,
+  "originalBytePins": {
+    "candidate-compile-analysis.json": "e4a7c9c6f0397516b87bc0cce461e5a679d848e5d4b76b1aef1cadb5e16ce85a",
+    "engine-proof.json": "13b5f039316a76e6862894677a10033f2caccfc8b24af837f19d336bd6456abc",
+    "engine-whole-u5dd8-ue0100.json": "ac89a4dbb51a7f8c4d5bb622aaeaa67bc26e91ae9f3cfbe6825bf2717aedbf6e",
+    "engine-whole-u5dd8.json": "13b5f039316a76e6862894677a10033f2caccfc8b24af837f19d336bd6456abc",
+    "metadata.json": "cee5cb0411798dad2d43cf2f9d5485ef593d6929d51acfd0021a2728b0299394",
+    "native-server-compile.mjs": "f44d8a48e649a02bebc637bf4bc33a388dc0619fe870012f22b9b8cc001f9b72",
+    "native-server-source-audit.json": "1405aae964a8f316adc2ac951418a2f4f0cc3c14f25e8aba4126643a3b40bbd3",
+    "native-server-validation.json": "baed2ae9fdf4652c511465170defd0b723719302db0a93b6afae899cc42a3102",
+    "progressive.mjs": "ea81b0ab3cb152405147afe39ab6b5a5d4a3714e1394b1daf80cad9a6cd07c16",
+    "serve-native.py": "6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b",
+    "source-analysis.json": "a15c7660110c13d4bf6389edf76fff8add566c39c5d5bbb031c53d1229b7608c",
+    "source-join-analysis.json": "c9a704079837d4813b47774f9f7c61aceecadb39d01b0d7160e2117189e0af61",
+    "source-only-helper-readiness-2026-10-14.json": "42f915536bff24801e8ded36cf6692341e3d80dd496f4fd8a0e73b249d197506",
+    "source-preservation-audit.json": "421f06aa0c05a81ed91248495ed964906424f6c66a89c8c02ccb0718ee1ccdc6",
+    "source-verification.json": "adf287397894b9d4dca0742ba24516f81e83248797723daefba728d61f1198fd",
+    "sources.json": "6ae4e39699413702e05f8dbf905c5151b924ad2f9a821d4d95235796847266fc",
+    "verify-source.mjs": "e1cff3ef8635a9507a4a586f3424f6ffde48b1fe529d6d1f7d304fc61923e177"
+  },
+  "sharedRendererBytePins": {
+    "docs/hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "priorReadiness": "source-only-helper-readiness-2026-10-14.json",
+  "priorReadinessSHA256": "42f915536bff24801e8ded36cf6692341e3d80dd496f4fd8a0e73b249d197506",
+  "nativeEvidenceReportedBy": "root browser panel actual observation",
+  "whole": {
+    "actuallyObserved": [
+      "u5dd8",
+      "u5dd8-ue0100"
+    ],
+    "compatible": [
+      "u5dd8",
+      "u5dd8-ue0100"
+    ],
+    "selected": "u5dd8"
+  },
+  "directions": {
+    "observed": 23,
+    "compatibleWithoutCorrection": 21,
+    "mismatches": [
+      {
+        "domesticPen": 6,
+        "candidatePen": 7
+      },
+      {
+        "domesticPen": 7,
+        "candidatePen": 6
+      }
+    ],
+    "allDirectionsApproved": false,
+    "correctedHelperCreated": false
+  },
+  "fine": {
+    "actualWidth": 520,
+    "domWidthConfirmed": true,
+    "sampleProgress": [
+      99.99,
+      100
+    ],
+    "observations": 7,
+    "passedPens": [
+      3,
+      9,
+      11,
+      12,
+      15,
+      17
+    ],
+    "failedPens": [
+      2
+    ],
+    "failure": {
+      "pen": 2,
+      "shape": "山 left L",
+      "reason": "large lower-left corner triangle appears at completion; absent at99.99 percent",
+      "actualPairObserved": true,
+      "additionalRamCornerCrop": {
+        "width": 100,
+        "height": 120,
+        "observedAt": [
+          100,
+          99.99
+        ],
+        "confirmsSamePop": true
+      },
+      "privateMediaSaved": false
+    },
+    "allFineApproved": false,
+    "otherFinePensObserved": false
+  },
+  "coarseFramesObserved": 0,
+  "maskBoundariesObserved": 0,
+  "replaysObserved": 0,
+  "indexCorrection": {
+    "numbering": "one-based native helper pen selector",
+    "previousStaticPriorityClaim": "pure L pen3/11",
+    "correction": "Actual native pen2 is the 山 L and fails; pen3 and pen11 are vertical strokes and passed. Static terminal labels did not establish native shape. Do not treat the old risk labels as correct native stroke numbering.",
+    "sourceGroupPen2RawZeroBased": [
+      1,
+      2
+    ]
+  },
+  "sourceOnlyAlternativeConstraint": {
+    "kind": "grouped raw trace and original polygon byte equivalence, not a new compiler or native review",
+    "roots": [
+      "u5dd8",
+      "u5dd8-ue0100"
+    ],
+    "oneBasedPen": 2,
+    "rawIndicesZeroBased": [
+      1,
+      2
+    ],
+    "groupedRawTraceSHA256": [
+      "f3e9a19633c2ac84a32f3e8f9ba846d2562fd92c04e89c01dd784b14362cffe6",
+      "f3e9a19633c2ac84a32f3e8f9ba846d2562fd92c04e89c01dd784b14362cffe6"
+    ],
+    "originalPolygonArraySHA256": [
+      "2127e2b6d632bace4b7709056c216d23d7d106416a6309a9e1bda58d989247ff",
+      "2127e2b6d632bace4b7709056c216d23d7d106416a6309a9e1bda58d989247ff"
+    ],
+    "equal": true,
+    "conclusion": "The two captured whole profiles have the same raw pen2 call arguments and polygons. Switching between these profiles supplies no distinct captured pen2 source geometry. No alternative native result is inferred.",
+    "newGeometryAuthored": false,
+    "sourceCompilerExecuted": false
+  },
+  "privateMediaSaved": false,
+  "sourcePathsChanged": false,
+  "sourceWidthsChanged": false,
+  "sourceCoordinatesChanged": false,
+  "orderAdapterCreated": false,
+  "buildExecuted": false,
+  "serversStarted": 0,
+  "gitExecuted": false
+}
