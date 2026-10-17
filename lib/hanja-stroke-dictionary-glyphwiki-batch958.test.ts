@@ -20,7 +20,7 @@ test('蘀 direct literal preserves twenty complete VS2 pens',() => {
   assert.equal(entry.outlines!.flat().flatMap(mask => mask.outline.match(/M[^Z]+Z/g) || []).length,41)
   assert.deepEqual(entry.sourceStrokeIndices,sourceGroups.map(group => group[0] + 1))
   assert.deepEqual(sourceOrderPermutation,[1,2,4,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
-  assert(entry.geometryLicense.revision.includes('exact whole u8600-ue0102'))
+  assert(reviewed[0].geometryLicense.revision.includes('exact whole u8600-ue0102'))
 })
 
 test('蘀 exact full8 proof and mandatory file identity reproduce all original masks',() => {
