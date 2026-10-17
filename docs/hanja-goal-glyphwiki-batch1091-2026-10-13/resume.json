@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 2,
+  "previousResume": "docs/hanja-goal-glyphwiki-batch1090-2026-10-13/resume.json",
+  "previousResumeSHA256": "e9acf3fd25f0d50959f0020427fada39f4449258efa99827d9bbcb501dc52b11",
+  "checkpointStatus": "source-hold-actual-checkpoint-verified",
+  "actualCheckpointVerified": true,
+  "runtimeAbsenceVerified": true,
+  "completedRuntime": 5553,
+  "total": 5978,
+  "remainingCommittedRuntime": 425,
+  "pendingRuntime": 0,
+  "lastCompletedBatch": 1091,
+  "lastRuntimeBatch": 1086,
+  "newHoldsThisBatch": [
+    {
+      "batch": 1091,
+      "glyph": "嫂",
+      "root": "u5ac2",
+      "catalogStrokes": 12,
+      "recordedDomesticClipCount": 13,
+      "hold": "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/source-hold.json",
+      "holdSHA256": "efa19bb16b81b8667f4f414810fdea6256a8637bab43ee89a2514281030b19b3",
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ],
+  "existingHoldsInherited": 332,
+  "historicalCanonicalHoldsInherited": 333,
+  "historicalCanonicalHolds": 334,
+  "totalHolds": 333,
+  "countIncrement": 1,
+  "resolvedHolds": [
+    {
+      "glyph": "鼐",
+      "id": "u9f10",
+      "batch": 494,
+      "resolvedByBatch": 1070,
+      "runtimeApplied": true,
+      "resolutionInheritedFrom": "docs/hanja-goal-glyphwiki-batch1090-2026-10-13/resume.json#/resolvedHolds/0"
+    }
+  ],
+  "resolvedHoldsThisBatch": [],
+  "holdResolutionPolicy": "Active holds are unique historical glyphs minus the union intersection of resolvedHolds and resolvedHoldsThisBatch. Preserve original historical records.",
+  "inheritancePolicy": "Exact actual1090 canonical150refs/80strings+253objects:historical333,resolved鼐1,active332;嫂duplicate0,newhold1→historical334,active333. Compact omission is not deletion.",
+  "inheritedFields": {
+    "existingHolds": "docs/hanja-goal-glyphwiki-batch1090-2026-10-13/resume.json#/totalHolds",
+    "historicalCanonicalHolds": "docs/hanja-goal-glyphwiki-batch1090-2026-10-13/resume.json#/historicalCanonicalHolds",
+    "canonicalHoldHistory": "docs/hanja-goal-glyphwiki-batch1090-2026-10-13/resume.json#/previousResume",
+    "resolvedHolds": "docs/hanja-goal-glyphwiki-batch1090-2026-10-13/resume.json#/resolvedHolds",
+    "parentActualCheckpoint": "docs/hanja-goal-glyphwiki-batch1090-2026-10-13/resume.json#/actualCheckpointVerified",
+    "parentRuntimeAbsence": "docs/hanja-goal-glyphwiki-batch1090-2026-10-13/resume.json#/runtimeAbsenceVerified"
+  },
+  "originalFilesSHA256": {
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2-ue0104.json": "589f9a880076c11e1eb156645ce53cf83d5ec244b96df0ef09956b0c340a2acc",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/sources.json": "d344246806561064897e12549e39ca175777e1d17d51a95beb1a2e5e27e8f774",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/source-only-helper-readiness.json": "d5934e919bdfd06ed0df9130fe4a8e6425a2f2b609b822063a8eb9589058718c",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/serve-whole.py": "666f19af772a467be6319d38392153e99a76f20800160a07d07e8938da51e6f6",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/native-server-validation.json": "56375440aecc0bb21f5a5b96b2c8455228066e27d3f2e973a95cb62aa8a21c02",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2-k.json": "a367869062d12affb1f3adb456749f484c804b1247b5928a722ca8c062fe4be3",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/candidate-compile-analysis.json": "f871f9da104f839c4ed2784dc247382127fb4ac168dd4fb7c39351a0174c0fd9",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2-g.json": "0f75529f8ce0f96d4479498b42b87713c6ec4ceb6af2a148392636cd77708aa7",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-proof.json": "5923d4bf3cb3fefba109a1a8889bd4384fb6b79ff26838dc406f820c764b1294",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2-ue0102.json": "a367869062d12affb1f3adb456749f484c804b1247b5928a722ca8c062fe4be3",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/native-server-preparation-source-analysis.json": "5d77fdadce4a388c0750f840b88963f34983a77df410c6a554447ba8dc2e7267",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/metadata.json": "66d6f90264725f8c0dc58d264f2f0cd539420cc08b32f3471c7247085be9b91a",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/source-hold.json": "efa19bb16b81b8667f4f414810fdea6256a8637bab43ee89a2514281030b19b3",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2-ue0103.json": "fa64f80828c5b874b775d513a6c5fd17c521e9446c9add889ec2b1fe8088a186",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/verify-source.mjs": "18b4c408ef74dc33ef95ac98f07a45e9cb676742f3ef7d3ae02ec59bbbe4c869",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/source-analysis.json": "7f0c525161fb44be46bd602d1c19cfc9b76de5367af33e47b6201a61bd383df0",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/README.md": "6b8f20bdc8b66f172220fd9903fe2ed49753aa60c3dc21cff880f8aed5a27d76",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/progressive.mjs": "189edf55352dbaebb94cd9e22a6c64f47259e7d7ecdbd812ef4305fc4ccf79f9",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2-ue0100.json": "a367869062d12affb1f3adb456749f484c804b1247b5928a722ca8c062fe4be3",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2-ue0101.json": "fa64f80828c5b874b775d513a6c5fd17c521e9446c9add889ec2b1fe8088a186",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/validation.json": "46e40c33b8b30d8da1bbe900deaa8daa3a508d0c2490fda520d509de8ce20fa5",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2-itaiji-001.json": "711481ea2e5edab29a36e346a83ccee0129d7f8cffec49b6e6b4f702c6844de4",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/source-join-analysis.json": "d90b1237aa7c13edc37e076b4b8965d0e69a4b92e5725af37792dac94c2905b3",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/NOTICE.md": "48ea03deb5ba7fa852da0e0da5ce7175d43ce60466a6e351264d34fa259e87d6",
+    "docs/hanja-goal-glyphwiki-batch1091-2026-10-13/engine-whole-u5ac2.json": "a367869062d12affb1f3adb456749f484c804b1247b5928a722ca8c062fe4be3"
+  },
+  "sourceFacts": {
+    "inspectionOnly": true,
+    "wholeFacts": [
+      {
+        "root": "u5ac2-g",
+        "file": "engine-whole-u5ac2-g.json",
+        "sha256": "0f75529f8ce0f96d4479498b42b87713c6ec4ceb6af2a148392636cd77708aa7",
+        "sourceComplete": true,
+        "raw": 15,
+        "drawCalls": 15,
+        "polygons": 25,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              1,
+              2
+            ],
+            "point": [
+              71.495,
+              61
+            ]
+          },
+          {
+            "rows": [
+              5,
+              6
+            ],
+            "point": [
+              90.955,
+              40
+            ]
+          },
+          {
+            "rows": [
+              8,
+              9
+            ],
+            "point": [
+              172.98,
+              34
+            ]
+          },
+          {
+            "rows": [
+              13,
+              14
+            ],
+            "point": [
+              168.155,
+              125
+            ]
+          }
+        ],
+        "minimumConsecutive": 11,
+        "missing": []
+      },
+      {
+        "root": "u5ac2-itaiji-001",
+        "file": "engine-whole-u5ac2-itaiji-001.json",
+        "sha256": "711481ea2e5edab29a36e346a83ccee0129d7f8cffec49b6e6b4f702c6844de4",
+        "sourceComplete": true,
+        "raw": 13,
+        "drawCalls": 13,
+        "polygons": 20,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              1,
+              2
+            ],
+            "point": [
+              71.495,
+              61
+            ]
+          },
+          {
+            "rows": [
+              7,
+              8
+            ],
+            "point": [
+              172.98,
+              34
+            ]
+          },
+          {
+            "rows": [
+              11,
+              12
+            ],
+            "point": [
+              168.155,
+              125
+            ]
+          }
+        ],
+        "minimumConsecutive": 10,
+        "missing": []
+      },
+      {
+        "root": "u5ac2-k",
+        "file": "engine-whole-u5ac2-k.json",
+        "sha256": "a367869062d12affb1f3adb456749f484c804b1247b5928a722ca8c062fe4be3",
+        "sourceComplete": true,
+        "raw": 15,
+        "drawCalls": 15,
+        "polygons": 25,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              5,
+              6
+            ],
+            "point": [
+              89.825,
+              40
+            ]
+          },
+          {
+            "rows": [
+              8,
+              9
+            ],
+            "point": [
+              172.7,
+              34
+            ]
+          },
+          {
+            "rows": [
+              13,
+              14
+            ],
+            "point": [
+              167.825,
+              125
+            ]
+          }
+        ],
+        "minimumConsecutive": 12,
+        "missing": []
+      },
+      {
+        "root": "u5ac2-ue0100",
+        "file": "engine-whole-u5ac2-ue0100.json",
+        "sha256": "a367869062d12affb1f3adb456749f484c804b1247b5928a722ca8c062fe4be3",
+        "sourceComplete": true,
+        "raw": 15,
+        "drawCalls": 15,
+        "polygons": 25,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              5,
+              6
+            ],
+            "point": [
+              89.825,
+              40
+            ]
+          },
+          {
+            "rows": [
+              8,
+              9
+            ],
+            "point": [
+              172.7,
+              34
+            ]
+          },
+          {
+            "rows": [
+              13,
+              14
+            ],
+            "point": [
+              167.825,
+              125
+            ]
+          }
+        ],
+        "minimumConsecutive": 12,
+        "missing": []
+      },
+      {
+        "root": "u5ac2-ue0101",
+        "file": "engine-whole-u5ac2-ue0101.json",
+        "sha256": "fa64f80828c5b874b775d513a6c5fd17c521e9446c9add889ec2b1fe8088a186",
+        "sourceComplete": true,
+        "raw": 16,
+        "drawCalls": 16,
+        "polygons": 27,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              5,
+              6
+            ],
+            "point": [
+              94.04,
+              40
+            ]
+          },
+          {
+            "rows": [
+              9,
+              10
+            ],
+            "point": [
+              172.24,
+              34
+            ]
+          },
+          {
+            "rows": [
+              14,
+              15
+            ],
+            "point": [
+              167.64,
+              125
+            ]
+          }
+        ],
+        "minimumConsecutive": 13,
+        "missing": []
+      },
+      {
+        "root": "u5ac2-ue0102",
+        "file": "engine-whole-u5ac2-ue0102.json",
+        "sha256": "a367869062d12affb1f3adb456749f484c804b1247b5928a722ca8c062fe4be3",
+        "sourceComplete": true,
+        "raw": 15,
+        "drawCalls": 15,
+        "polygons": 25,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              5,
+              6
+            ],
+            "point": [
+              89.825,
+              40
+            ]
+          },
+          {
+            "rows": [
+              8,
+              9
+            ],
+            "point": [
+              172.7,
+              34
+            ]
+          },
+          {
+            "rows": [
+              13,
+              14
+            ],
+            "point": [
+              167.825,
+              125
+            ]
+          }
+        ],
+        "minimumConsecutive": 12,
+        "missing": []
+      },
+      {
+        "root": "u5ac2-ue0103",
+        "file": "engine-whole-u5ac2-ue0103.json",
+        "sha256": "fa64f80828c5b874b775d513a6c5fd17c521e9446c9add889ec2b1fe8088a186",
+        "sourceComplete": true,
+        "raw": 16,
+        "drawCalls": 16,
+        "polygons": 27,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              5,
+              6
+            ],
+            "point": [
+              94.04,
+              40
+            ]
+          },
+          {
+            "rows": [
+              9,
+              10
+            ],
+            "point": [
+              172.24,
+              34
+            ]
+          },
+          {
+            "rows": [
+              14,
+              15
+            ],
+            "point": [
+              167.64,
+              125
+            ]
+          }
+        ],
+        "minimumConsecutive": 13,
+        "missing": []
+      },
+      {
+        "root": "u5ac2-ue0104",
+        "file": "engine-whole-u5ac2-ue0104.json",
+        "sha256": "589f9a880076c11e1eb156645ce53cf83d5ec244b96df0ef09956b0c340a2acc",
+        "sourceComplete": true,
+        "raw": 13,
+        "drawCalls": 13,
+        "polygons": 20,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              6,
+              7
+            ],
+            "point": [
+              170.75,
+              37
+            ]
+          },
+          {
+            "rows": [
+              11,
+              12
+            ],
+            "point": [
+              165.125,
+              122
+            ]
+          }
+        ],
+        "minimumConsecutive": 11,
+        "missing": []
+      },
+      {
+        "root": "u5ac2",
+        "file": "engine-whole-u5ac2.json",
+        "sha256": "a367869062d12affb1f3adb456749f484c804b1247b5928a722ca8c062fe4be3",
+        "sourceComplete": true,
+        "raw": 15,
+        "drawCalls": 15,
+        "polygons": 25,
+        "exactConsecutiveJoins": [
+          {
+            "rows": [
+              5,
+              6
+            ],
+            "point": [
+              89.825,
+              40
+            ]
+          },
+          {
+            "rows": [
+              8,
+              9
+            ],
+            "point": [
+              172.7,
+              34
+            ]
+          },
+          {
+            "rows": [
+              13,
+              14
+            ],
+            "point": [
+              167.825,
+              125
+            ]
+          }
+        ],
+        "minimumConsecutive": 12,
+        "missing": []
+      }
+    ],
+    "capturedWholeRoots": 9,
+    "completeRoots": 9,
+    "incompleteRoots": 0,
+    "smallestConsecutiveMinimum": 10,
+    "catalog": 12,
+    "domestic": 13,
+    "catalogDomesticMismatch": true,
+    "allCapturedCompleteWholesExceedCatalog": false,
+    "sourceOnlyNotNativeApproval": true
+  },
+  "focusedCheckpointValidation": {
+    "batch": 1091,
+    "glyph": "嫂",
+    "passed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "parentSHA": "e9acf3fd25f0d50959f0020427fada39f4449258efa99827d9bbcb501dc52b11",
+    "parentActualCheckpointVerified": true,
+    "parentRuntimeAbsenceVerified": true,
+    "canonicalReferences": 150,
+    "canonicalStringHolds": 80,
+    "canonicalObjectHolds": 253,
+    "historicalUniqueBefore": 333,
+    "resolvedHistoricalGlyphs": [
+      "鼐"
+    ],
+    "activeUniqueBefore": 332,
+    "duplicateMatches": 0,
+    "historicalUniqueAfter": 334,
+    "activeUniqueAfter": 333,
+    "countIncrement": 1,
+    "originalPins": 25,
+    "holdOriginalPins": 20,
+    "pinMismatches": 0,
+    "catalogStrokes": 12,
+    "domesticClips": 13,
+    "sourceWholeProofs": 9,
+    "sourceComplete": 9,
+    "completeMinima": [
+      11,
+      10,
+      12,
+      12,
+      13,
+      12,
+      13,
+      11,
+      12
+    ],
+    "allCapturedCompleteWholesExceedCatalog": false,
+    "holdSHA256": "efa19bb16b81b8667f4f414810fdea6256a8637bab43ee89a2514281030b19b3",
+    "registryOccurrences": 0,
+    "exactLookup": null,
+    "resolvedNaiLookupPresent": true,
+    "registryCount": 5553,
+    "remaining": 425,
+    "nextCandidate": 1092,
+    "sourceCompilerExecutions": 0,
+    "engineRuns": 0,
+    "newNativeObservations": 0,
+    "HTTP": 0,
+    "serverStarts": 0,
+    "buildRun": false,
+    "gitRun": false,
+    "verifiedAt": "2026-10-18"
+  },
+  "nextIndependentCandidate": {
+    "batch": 1092,
+    "glyph": "潚",
+    "strokes": 16,
+    "directory": "docs/hanja-goal-glyphwiki-batch1092-2026-10-13"
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "verificationPolicy": {
+    "sourceCompilerExecutions": 0,
+    "engineRuns": 0,
+    "newNativeObservationsByThisAgent": 0,
+    "HTTP": 0,
+    "serverStarts": 0,
+    "productionBuild": false,
+    "fullSuite": false
+  }
+}
