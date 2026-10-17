@@ -1,0 +1,636 @@
+{
+  "schemaVersion": 1,
+  "batch": 984,
+  "glyph": "敝",
+  "verifiedAt": "2026-10-17",
+  "status": "held-catalog-domestic-count-mismatch",
+  "catalogStrokes": 12,
+  "recordedDomesticClipCount": 11,
+  "evidenceScope": "Read-only source/pin/arithmetic inspection; 1-based raw row numbers; strict numeric endpoint equality, no epsilon or coordinate correction; no new compiler or native run.",
+  "reason": "Recorded domestic snapshot count differs from catalog. Numeric source roots are not rejected as a whole, but this count conflict prevents native candidate activation under the existing strict contract.",
+  "originalBytePins": {
+    "sources.json": "9c41dc687373f9efe6866099dbc27310ccff04e7ccf37a26900aac2883eaa7e8",
+    "metadata.json": "4bdeadb13ffc9c00d1705dc0e9768de83a7de4cb08b7e863698b3d1ca25ab8f1",
+    "engine-proof.json": "a1e4d41afd749d9af493f30fcaf7eccb685b911aead2f38349104d6bbfb0fb87",
+    "engine-whole-u655d.json": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+    "strict-native-server-preflight.json": "3c667bcfcdbb763b85f546b8882c43ef9c9090c46fe1087f95efb3ca6c69b9dc",
+    "progressive.mjs": "088a4b7e5a464549fc23b7f099167116c4a881c5202ef516e5ea456421031b34",
+    "strict-native-adapter.mjs": "7815717793ccfd8c8f224a322e1ccb3120ec6a11fb1c47bb98037bd6d4d1839e",
+    "serve-native.py": "aec00a0f3b6379cb5cb13caa62f9154a6127e7e4173f029ec386ff1c6b6806e9",
+    "native-server-input-pins.json": "ca54639ca36ba094ebc96999f1954cab924b7c510ab2204feeb4a4174d7a3381",
+    "engine-whole-u655d-03-var-001.json": "face8514f8550c74e126012f3279ffaff8338c34d7cf4ebbfd122374e5a0adf9",
+    "engine-whole-u655d-03-var-002.json": "0dbaa7bafb6eb9247b229f07a33346a9b5958c984f16594039a4f5a04968654b",
+    "engine-whole-u655d-03-var-004.json": "3fbd31dcdff1c846cc90244f8fb51e31b025ad120119f07bb812879087ee5fd0",
+    "engine-whole-u655d-03.json": "9093a0073a2d4d9547860862c6722d9a6ccd8e0e4b2251ae473aaa5a51251d58",
+    "engine-whole-u655d-07-itaiji-001.json": "21b108873cf6dae976ada7a905f200db4533538dd8c07b7c8a046f54828a90c2",
+    "engine-whole-u655d-g.json": "8397bc9f642e35cf087661d56b2296e7874ad94ef9f6c4e8b996c38676d384af",
+    "engine-whole-u655d-g03.json": "02acf52b46d8145dbc04e3d9e0ad81f886973dd691a59bd5356411b048eacdff",
+    "engine-whole-u655d-itaiji-001.json": "72af759050036f48dd30aff06103525d8386a7bf2bc99b2dbeb4b80da2bddf8e",
+    "engine-whole-u655d-ue0100.json": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+    "engine-whole-u655d-ue0101.json": "f24790ad59a7bb1ba14f87c68efffb7419726f0e7b62b9b3ae4341259d126d49",
+    "engine-whole-u655d-ue0102.json": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+    "engine-whole-u655d-ue0103.json": "f24790ad59a7bb1ba14f87c68efffb7419726f0e7b62b9b3ae4341259d126d49",
+    "engine-whole-u655d-ue0104.json": "b51acc88ec18a684dcb6d44779a30cc63ebeb2c48200315f21ba252acb895bec",
+    "engine-whole-u655d-var-001.json": "0b214e32e383d689d27ac7afcf6d94180bb2cf0d8d04a351f75af87167010c8d",
+    "engine-whole-u655d-var-002.json": "6106b97bfa6991fb92ae902daff5e8389937f52ba3a6f46676a2cbdfa857afee",
+    "engine-whole-u655d-var-003.json": "3b52dce6e9185ee4ba36b074ff4ec687e6e1d07db3153c2f975c4e2050fff58f"
+  },
+  "frozenContract": {
+    "callerContract": "mandatory five-field selected proof/header identity + complete frozen body",
+    "selectedIdentity": {
+      "sourceRoot": "u655d",
+      "sourceProofFile": "./engine-whole-u655d.json",
+      "sourceProofFileSha256": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "a1e4d41afd749d9af493f30fcaf7eccb685b911aead2f38349104d6bbfb0fb87"
+    },
+    "selectedRoot": "u655d",
+    "selectedFile": "engine-whole-u655d.json",
+    "identityCaseAndPathPrefixesPreserved": true,
+    "existingReportedBlocker": "catalog-12-domestic-11-mismatch"
+  },
+  "wholeFacts": [
+    {
+      "root": "u655d-03",
+      "file": "engine-whole-u655d-03.json",
+      "fileSHA256": "9093a0073a2d4d9547860862c6722d9a6ccd8e0e4b2251ae473aaa5a51251d58",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 13,
+      "originalPolygons": 25,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            96,
+            46
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            1,
+            7
+          ],
+          "point": [
+            60,
+            46
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-ue0102",
+      "file": "engine-whole-u655d-ue0102.json",
+      "fileSHA256": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 14,
+      "originalPolygons": 28,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            99,
+            79
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            1,
+            7
+          ],
+          "point": [
+            63,
+            79
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-g",
+      "file": "engine-whole-u655d-g.json",
+      "fileSHA256": "8397bc9f642e35cf087661d56b2296e7874ad94ef9f6c4e8b996c38676d384af",
+      "sourceComplete": true,
+      "originalRawRows": 12,
+      "originalDrawingRows": 12,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 13,
+      "originalPolygons": 27,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            4,
+            5
+          ],
+          "point": [
+            99,
+            79
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 11,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-ue0103",
+      "file": "engine-whole-u655d-ue0103.json",
+      "fileSHA256": "f24790ad59a7bb1ba14f87c68efffb7419726f0e7b62b9b3ae4341259d126d49",
+      "sourceComplete": true,
+      "originalRawRows": 12,
+      "originalDrawingRows": 12,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 13,
+      "originalPolygons": 26,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            3,
+            4
+          ],
+          "point": [
+            99,
+            71
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 11,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-03-var-001",
+      "file": "engine-whole-u655d-03-var-001.json",
+      "fileSHA256": "face8514f8550c74e126012f3279ffaff8338c34d7cf4ebbfd122374e5a0adf9",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 13,
+      "originalPolygons": 25,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            96,
+            46
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            1,
+            7
+          ],
+          "point": [
+            60,
+            46
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-ue0104",
+      "file": "engine-whole-u655d-ue0104.json",
+      "fileSHA256": "b51acc88ec18a684dcb6d44779a30cc63ebeb2c48200315f21ba252acb895bec",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 14,
+      "originalPolygons": 29,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            97,
+            79
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            1,
+            7
+          ],
+          "point": [
+            61,
+            79
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-var-002",
+      "file": "engine-whole-u655d-var-002.json",
+      "fileSHA256": "6106b97bfa6991fb92ae902daff5e8389937f52ba3a6f46676a2cbdfa857afee",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 14,
+      "originalPolygons": 29,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            97.5526,
+            73.34599999999999
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d",
+      "file": "engine-whole-u655d.json",
+      "fileSHA256": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 14,
+      "originalPolygons": 28,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            99,
+            79
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            1,
+            7
+          ],
+          "point": [
+            63,
+            79
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-var-003",
+      "file": "engine-whole-u655d-var-003.json",
+      "fileSHA256": "3b52dce6e9185ee4ba36b074ff4ec687e6e1d07db3153c2f975c4e2050fff58f",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 14,
+      "originalPolygons": 30,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            99,
+            79
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            1,
+            7
+          ],
+          "point": [
+            63,
+            79
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-03-var-004",
+      "file": "engine-whole-u655d-03-var-004.json",
+      "fileSHA256": "3fbd31dcdff1c846cc90244f8fb51e31b025ad120119f07bb812879087ee5fd0",
+      "sourceComplete": true,
+      "originalRawRows": 12,
+      "originalDrawingRows": 12,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 13,
+      "originalPolygons": 27,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            4,
+            5
+          ],
+          "point": [
+            96.495,
+            47.29
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 11,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-07-itaiji-001",
+      "file": "engine-whole-u655d-07-itaiji-001.json",
+      "fileSHA256": "21b108873cf6dae976ada7a905f200db4533538dd8c07b7c8a046f54828a90c2",
+      "sourceComplete": false,
+      "missing": [
+        "u5182-j"
+      ],
+      "promoted": false
+    },
+    {
+      "root": "u655d-itaiji-001",
+      "file": "engine-whole-u655d-itaiji-001.json",
+      "fileSHA256": "72af759050036f48dd30aff06103525d8386a7bf2bc99b2dbeb4b80da2bddf8e",
+      "sourceComplete": true,
+      "originalRawRows": 15,
+      "originalDrawingRows": 15,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 16,
+      "originalPolygons": 32,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            98.095,
+            71.225
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 14,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-var-001",
+      "file": "engine-whole-u655d-var-001.json",
+      "fileSHA256": "0b214e32e383d689d27ac7afcf6d94180bb2cf0d8d04a351f75af87167010c8d",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 14,
+      "originalPolygons": 31,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            97.5526,
+            73.34599999999999
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-03-var-002",
+      "file": "engine-whole-u655d-03-var-002.json",
+      "fileSHA256": "0dbaa7bafb6eb9247b229f07a33346a9b5958c984f16594039a4f5a04968654b",
+      "sourceComplete": true,
+      "originalRawRows": 12,
+      "originalDrawingRows": 12,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 12,
+      "originalPolygons": 24,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            4,
+            5
+          ],
+          "point": [
+            96,
+            46
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 11,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-ue0100",
+      "file": "engine-whole-u655d-ue0100.json",
+      "fileSHA256": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+      "sourceComplete": true,
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 14,
+      "originalPolygons": 28,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            99,
+            79
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            1,
+            7
+          ],
+          "point": [
+            63,
+            79
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-ue0101",
+      "file": "engine-whole-u655d-ue0101.json",
+      "fileSHA256": "f24790ad59a7bb1ba14f87c68efffb7419726f0e7b62b9b3ae4341259d126d49",
+      "sourceComplete": true,
+      "originalRawRows": 12,
+      "originalDrawingRows": 12,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 13,
+      "originalPolygons": 26,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            3,
+            4
+          ],
+          "point": [
+            99,
+            71
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 11,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u655d-g03",
+      "file": "engine-whole-u655d-g03.json",
+      "fileSHA256": "02acf52b46d8145dbc04e3d9e0ad81f886973dd691a59bd5356411b048eacdff",
+      "sourceComplete": true,
+      "originalRawRows": 12,
+      "originalDrawingRows": 12,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 12,
+      "originalPolygons": 24,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            4,
+            5
+          ],
+          "point": [
+            96,
+            46
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 11,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    }
+  ],
+  "smallestCapturedMinimum": 11,
+  "strictCompiler": {
+    "invocationsThisInvestigation": 0,
+    "existingBlockedContractPreserved": true,
+    "newCompiledPens": 0,
+    "newCompiledMasks": 0
+  },
+  "alternativeWholeViableWithoutNewGeometry": {
+    "numericCatalogCandidatesExist": true,
+    "domesticCompatibilityUnverified": true
+  },
+  "requiredNextEvidence": "Acquire and verify domestic stroke evidence matching the catalog boundary or resolve the authoritative count conflict before native/compilation approval. Do not activate a different count merely to fit the existing snapshot.",
+  "canonicalDuplicateCheck": {
+    "baseline": "docs/hanja-goal-glyphwiki-batch959-2026-10-13/resume.json",
+    "searchedBase": "docs/hanja-goal-glyphwiki-batch939-2026-10-13/resume.json",
+    "searchedRecent": "batch940 through batch959 resume records",
+    "lookupKeys": [
+      "敝",
+      "u655d"
+    ],
+    "existingCanonicalHoldFound": false,
+    "existingPreflightIsNotCanonicalCheckpointHold": true,
+    "newHoldAccountingPending": true,
+    "resumeCreationDeferred": true
+  },
+  "nativeWholeVariantsReviewed": 0,
+  "dictionaryDirectionStrokesReviewed": 0,
+  "progressiveFramesReviewed": 0,
+  "progressiveFramesApproved": 0,
+  "fineChecks": 0,
+  "replayChecks": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "sourceFilesChanged": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "buildRun": false,
+  "gitRun": false
+}
