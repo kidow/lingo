@@ -4,12 +4,12 @@ import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import reviewed from '../public/hanja-strokes/dictionary-reviewed-glyphwiki-batch976.json' with {type:'json'}
 import {loadGlyphWikiBatch976Strokes,HANJA_DICTIONARY_GLYPHWIKI_BATCH976_STROKES} from './hanja-stroke-dictionary-glyphwiki-batch976.ts'
-import {compileProgressive,compileSourceWhole,selectedProofIdentity,candidateWholeProofs} from '../docs/hanja-goal-glyphwiki-batch976-2026-10-13/progressive.mjs'
+import {compileProgressive,compileSourceWhole,candidateWholeProofs} from '../docs/hanja-goal-glyphwiki-batch976-2026-10-13/progressive.mjs'
 import {compileDomesticOrder,DOMESTIC_ORDER} from '../docs/hanja-goal-glyphwiki-batch976-2026-10-13/domestic-order-progressive.mjs'
 const base=new URL('../docs/hanja-goal-glyphwiki-batch976-2026-10-13/',import.meta.url)
 const read=(f:string)=>readFileSync(new URL(f,base)),obj=(f:string)=>JSON.parse(read(f).toString()),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex')
-const id=selectedProofIdentity,header=obj(id.sourceHeaderFile),body=obj(id.sourceProofFile),proof={engineRevision:header.engineRevision,engineHashes:header.engineHashes,...body}
 const profile=candidateWholeProofs.find(c=>c.identity.sourceRoot==='u615d-ue0102')!,review=obj('native-review.json')
+const id=profile.identity,header=obj(id.sourceHeaderFile),body=obj(id.sourceProofFile),proof={engineRevision:header.engineRevision,engineHashes:header.engineHashes,...body}
 const order=[1,3,4,5,6,7,8,9,10,11,2,12,13,14,15]
 test('慝 direct reviewed literal preserves the approved fifteen complete pens',()=>{
   const e=loadGlyphWikiBatch976Strokes(reviewed)[0]
