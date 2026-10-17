@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import * as original from './strict-source-candidate.mjs'
+export {renderProgressive} from './strict-source-candidate.mjs'
+const sha=v=>createHash('sha256').update(v).digest('hex')
+const pins={"NOTICE.md":"ad42d0be02d1959ecc66b6a2a4f8e0e89af80653af93708e248f91d0c5cf9bd1","candidate-compile-analysis.json":"9cf871aada706a3d5dc0f15f7a7a7bd9c1b6c22af56da4fdea2974ae17686fb9","combined-native-preparation.json":"ece2c3b9a33164d58817b926f2dd089063f2ae720a17a043c079dba52a38db2d","engine-proof.json":"c46af98e9a2a6d8e89d002a87290e074c1e6ad3fb348784fb5e9da3a5678ea4b","engine-whole-u99fd-ue0100.json":"2bc15fa3ff20aaf206a01cd8063a610c43a251c6603c19128c97ae1152377ee8","engine-whole-u99fd.json":"2bc15fa3ff20aaf206a01cd8063a610c43a251c6603c19128c97ae1152377ee8","metadata.json":"c7a83fe235b82c316caea17a381dc1c07ccec7eb44df05bc21ab74c6733fd685","native-server-preparation-source-analysis.json":"ba9af9079e8ef39dbd3bc4bf1ca485044dbfd0dab611ff75a71499fbe5e1f7e0","native-server-validation.json":"44aea42b22b7c30f4656579ffb4b311f6f905360955dcf3d8f8917736f3fa54f","progressive.mjs":"924716145002ac4a6bf95f44225329a5418e12e3b13dbc7f52d23de91d01b065","serve-combined-native.py":"60be82fe6522d0210b52a35c65d7581d0f42cbb6f944b36f261df9cbfd4d154e","serve-progressive.py":"53ab6f99d07806ac1696913157fd3f2c59754afe1f7430b6e86fa1b7f863ee97","serve-whole.py":"0054a644c69ef24a4417703906a9b4981d8977cc43c9a6adbe6d7aaf07e8309e","server-compile-strict-candidate.mjs":"e274eec0d0361ed82bd4bf1bfd404582afd28718b7a1028ad2d6c764162ccd7c","server-compile.mjs":"b3868e0989787edc81709e180c692b13425c75c0522aa9801acc5350bca59dff","source-analysis.json":"335d24926d438ae6c9084ff826d23db3901cff37ca7c0941f920a8d80254ac64","source-join-analysis.json":"427e253d73f0fb38276592d0defbaa340aec9cee06780679e6f87be321a25baf","source-only-helper-readiness-2026-10-14.json":"29b9f00d3328a88871737fdfafa232b9f213940a9d966f6ce4edcaeaaefe35ec","source-preservation-audit.json":"15f984ce94a3e23ec6f9407fae4f3c93bfbf2995a5c1bbc615d3fc0ab85f5ce7","sources.json":"5e40bbd47401ba3dda43af151b82e889131b7c4fd4fec3face096443b1f9a94f","strict-source-candidate.d.mts":"1c099833bbf79092f704f9e723e4c1df027584f385153aea74c1f9d778817a03","strict-source-candidate.mjs":"0cfc552c573d93585fcc5dfa31355aeee51b3ba38e2ae14977464471cc62846c","strict-source-preparation.json":"1ec7b46fc77b28b9af460f76c970af699d11f36544826003ddfd4c34dce40ef4","verify-source.mjs":"567bd84df89867ffdced0b9f86184cea003fc40e9572795acbad6a0ed47d2958"}
+export const selectedProofIdentity=original.selectedProofIdentity
+export const sourceRoot=original.sourceRoot
+export const sourceOrderPermutation=Object.freeze([1,2,4,5,3,6,7,8,9,10,11,12,13,14,15,16,17])
+export const sourceGroups=Object.freeze(sourceOrderPermutation.map(n=>Object.freeze([...original.sourceGroups[n-1]])))
+export const nativeApproval=false
+export const runtimeApplied=false
+export function compileProgressive(trace,proof,identity){
+ assert.equal(arguments.length,3,'Exactly three explicit arguments required');assert.deepEqual(identity,selectedProofIdentity,'Exact selected identity7 ./ paths and lowercase Sha256')
+ for(const[f,s]of Object.entries(pins))assert.equal(sha(readFileSync(new URL(f,import.meta.url))),s,'Original and prepared byte pin '+f)
+ assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(sha(JSON.stringify(proof)),'3a2bde43c2ada80267c4254680e59629b71e7d0739586a77be47cfd2a4b6bf8e');assert.deepEqual(trace,proof.trace)
+ const before=JSON.stringify(proof),out=original.compileProgressive(trace,proof,identity);assert.equal(JSON.stringify(proof),before);assert.equal(out.length,17);assert.equal(out.flat().length,19);assert.equal(sha(JSON.stringify(out)),'51ef03107039005593fa17c7df2cd9155f34092fa520ab5537f1eb49e4463809')
+ assert.deepEqual([...sourceOrderPermutation].sort((a,b)=>a-b),Array.from({length:17},(_,i)=>i+1));return sourceOrderPermutation.map(n=>out[n-1])
+}
+export function compileSourceWhole(root,trace,proof,identity){assert.equal(arguments.length,4,'Exactly four explicit arguments required');assert.equal(root,sourceRoot);return compileProgressive(trace,proof,identity)}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "batch": 1016,
+  "glyph": "駽",
+  "verifiedAt": "2026-10-18",
+  "status": "actual-runtime-verified-focused-and-syntax-PASS",
+  "nativeApproval": true,
+  "runtimeApplied": true,
+  "reviewSHA256": "12ecc2eafe1a6bdb922465287dc2ab8cd3ac9de863ff9fb4f473108ce57a8d8a",
+  "compiledSHA256": "eb68148704b32eea80c84b7dcf6bc42ec590f7fb3bf42ae78f0c98e4d0280d8e",
+  "sourceGeometryUnchanged": true,
+  "parentCheckpoint": {
+    "file": "docs/hanja-goal-glyphwiki-batch1015-2026-10-13/resume.json",
+    "sha256": "bb52ab89f37ec66cb8b304f1e18839c0c82c5ec3938981242c7412d6a682e20a",
+    "actualRuntime": 5516,
+    "actualRemaining": 462,
+    "inheritedHolds": 299
+  },
+  "focusedTests": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "tests": 3,
+    "passed": 3,
+    "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1016.test.ts"
+  },
+  "verifierSyntax": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1016-2026-10-13/verify-runtime.mjs"
+  },
+  "actualRuntimeVerifier": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch1016-2026-10-13/verify-runtime.mjs",
+    "pens": 17,
+    "masks": 19,
+    "polygons": 35,
+    "frames": 153,
+    "coarseOriginal126Fresh27": true,
+    "actual520FinePens": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      15
+    ],
+    "actual520Boundaries": [
+      6,
+      15
+    ],
+    "excluded300pxBoundaryProbes": true,
+    "natural300pxReplays": [
+      6,
+      15
+    ],
+    "sourcePreserved": true,
+    "protectedPins": 33,
+    "runtimeApplied": true,
+    "currentRegisteredCount": 5517,
+    "compiledSHA256": "eb68148704b32eea80c84b7dcf6bc42ec590f7fb3bf42ae78f0c98e4d0280d8e"
+  },
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "privateMediaSaved": false
+}
