@@ -1,0 +1,59 @@
+{
+  "batch": 944,
+  "glyph": "懫",
+  "verifiedAt": "2026-10-17",
+  "status": "native-approved-runtime-verified",
+  "sourceVerification": {
+    "reference": "native-server-validation.json/sourceVerification",
+    "exitCode": 0,
+    "newEngineExecutions": 0
+  },
+  "nativeReview": {
+    "reference": "review.json",
+    "approved": true,
+    "pens": 18,
+    "masks": 18,
+    "originalPolygons": 36,
+    "framesApproved": 162,
+    "originalHelperFramesReused": 135,
+    "correctedHelperFrames": 27,
+    "finePens": [1, 2, 4, 5, 8, 9, 12, 13, 17, 18],
+    "replayPens": [13],
+    "privateMediaSaved": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "runtime": {
+    "modulePrepared": true,
+    "registryEditedByThisAgent": false,
+    "verifyRuntimeExecuted": true,
+    "registryLinkedByRoot": true,
+    "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch944-2026-10-13/verify-runtime.mjs",
+    "exitCode": 0,
+    "runtimeApplied": true,
+    "compiledSHA256": "173bc6ed8b80cd87d8ab8908776d3473863c634574d0e376b4f04b48a250dfa1"
+  },
+  "checks": {
+    "typecheck": {
+      "command": "rtk proxy node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "emittedFiles": false
+    },
+    "readonlyCallbackRegression": {
+      "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch941.test.ts lib/hanja-stroke-dictionary-glyphwiki-batch944.test.ts",
+      "exitCode": 0,
+      "passed": 6,
+      "failed": 0
+    },
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch944.test.ts",
+      "exitCode": 0,
+      "passed": 3,
+      "failed": 0
+    },
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "immutableSourceMetadataPreserved": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false
+}
