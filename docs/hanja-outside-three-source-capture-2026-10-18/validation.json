@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-18",
+  "status": "source-capture-and-offline-proof-reproduction-pass",
+  "scope": "Three public base whole closures only; alternate glyph families remain unexhausted.",
+  "sourceCheckMethod": "Imported verifySource(root, alreadySHA256VerifiedEngineCodesInRAM), exactly one call per captured root; no refetch during checks.",
+  "sourceCheckRunsPerGlyph": 1,
+  "sourceCheckResults": [
+    {
+      "ok": true,
+      "root": "u785c",
+      "definitions": 4,
+      "engineFilesVerified": 8,
+      "originalResponseHashesVerified": true,
+      "proofSHA256": "bfdb33805adb61635efdc526baa486b725e83afc2c7aafb55de8cd2f4021915d",
+      "rawGroups": 16,
+      "drawingGroups": 16,
+      "polygons": 30,
+      "emptyRawIndices": [],
+      "exactConsecutiveJoins": [
+        [
+          3,
+          4
+        ]
+      ],
+      "conservativeRawMinimum": 15,
+      "internalPrimitiveGaps": [],
+      "catalogStrokes": 12,
+      "nativeReviewCount": 0,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "ok": true,
+      "root": "u81c4",
+      "definitions": 6,
+      "engineFilesVerified": 8,
+      "originalResponseHashesVerified": true,
+      "proofSHA256": "a8c9e4f325b1547cd7c3b0ede3a9a29ec2029d89d648f180a1e17bc2e5eb320d",
+      "rawGroups": 19,
+      "drawingGroups": 19,
+      "polygons": 45,
+      "emptyRawIndices": [],
+      "exactConsecutiveJoins": [
+        [
+          1,
+          2
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "conservativeRawMinimum": 17,
+      "internalPrimitiveGaps": [],
+      "catalogStrokes": 17,
+      "nativeReviewCount": 0,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "ok": true,
+      "root": "u795b",
+      "definitions": 4,
+      "engineFilesVerified": 8,
+      "originalResponseHashesVerified": true,
+      "proofSHA256": "b7677e8752efceb70a4511811c63bf173fea6fba3101b5f5cff862fd86f410df",
+      "rawGroups": 11,
+      "drawingGroups": 11,
+      "polygons": 23,
+      "emptyRawIndices": [],
+      "exactConsecutiveJoins": [],
+      "conservativeRawMinimum": 11,
+      "internalPrimitiveGaps": [],
+      "catalogStrokes": 10,
+      "nativeReviewCount": 0,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    }
+  ],
+  "sourceGenerationPassesPerGlyph": 1,
+  "captureFailures": [
+    {
+      "kind": "node-fetch-probe",
+      "result": "fetch failed",
+      "filesWritten": 0
+    },
+    {
+      "kind": "direct-fixed-root-probe",
+      "url": "https://glyphwiki.org/api/glyph?name=u795b%4014",
+      "status": 200,
+      "bytes": 87,
+      "responseSHA256": "1f7a88ba04fe9caf07ce6594a63a1b42e0b8485fbd1f13bfc8a89ad7911504b7"
+    },
+    {
+      "kind": "first-direct-collection",
+      "result": "14 definitions and 8 engines reached; last license page HTTP403 terminated process; RAM result unavailable; not counted as successful source check."
+    }
+  ],
+  "licenseDirectHTTP": {
+    "status": 403,
+    "attempted": true,
+    "retried": false,
+    "scope": "Previous collection failed only at this public license page. Fixed @18 text is captured separately via Firecrawl."
+  },
+  "initialCheckerImport": {
+    "result": "process is not defined",
+    "sourceChecksStarted": 0,
+    "fix": "Guard optional CLI entry with typeof process !== undefined; no proof/source/geometry changed."
+  },
+  "notice": "Official @18 license markdown is a Firecrawl extraction; source provider responses are original direct HTTPS UTF-8 bytes. Engine source remained RAM-only.",
+  "inputPins": {
+    "manifest": "08e822773e08218c34954101b198e88c6603b6a456e5d70894ffd15f62fc2a95",
+    "archiveLicense": "abe789645f228e14d2e117769487cad0860f32e2a0b151c2ad8ef43843f5eec8",
+    "officialLicenseExtraction": "4191575c6b82c650bb655ca07003e85640f64a800576d5b11ccf003b929ba80d",
+    "verifier": "ce8515702c4a0f17c467f20b7351acdddc97192b33e8c087f23800033360b0d5"
+  },
+  "nativeReviewCount": 0,
+  "runtimeApplied": false,
+  "canonicalHoldCreated": false,
+  "buildRuns": 0,
+  "fullSuiteRuns": 0,
+  "gitOperations": 0,
+  "serversStarted": 0,
+  "domesticSVGRequests": 0,
+  "appUIAutoplayTest": false
+}

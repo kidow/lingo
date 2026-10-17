@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-18",
+  "roots": [
+    {
+      "root": "u785c",
+      "names": [
+        "u785c",
+        "u785c-j",
+        "u5de0-02",
+        "u77f3-01"
+      ]
+    },
+    {
+      "root": "u81c4",
+      "names": [
+        "u81c4",
+        "u8c66-j",
+        "u8c55-j",
+        "u27c28-04",
+        "u864d-10",
+        "u6708-01"
+      ]
+    },
+    {
+      "root": "u795b",
+      "names": [
+        "u795b",
+        "u795b-jn",
+        "u53bb-02",
+        "u793a-01"
+      ]
+    }
+  ],
+  "completeDefinitions": 14,
+  "engineFiles": 8,
+  "secondCollectionSuccess": true,
+  "rawResponseRetention": "Exact direct HTTPS UTF-8 responseText and SHA256 are retained for definitions; engine response SHA256 receipts retained, engine code RAM only.",
+  "priorAttempts": [
+    {
+      "kind": "node-fetch-probe",
+      "result": "fetch failed",
+      "filesWritten": 0
+    },
+    {
+      "kind": "direct-fixed-root-probe",
+      "url": "https://glyphwiki.org/api/glyph?name=u795b%4014",
+      "status": 200,
+      "bytes": 87,
+      "responseSHA256": "1f7a88ba04fe9caf07ce6594a63a1b42e0b8485fbd1f13bfc8a89ad7911504b7"
+    },
+    {
+      "kind": "first-direct-collection",
+      "result": "14 definitions and 8 engines reached; last license page HTTP403 terminated process; RAM result unavailable; not counted as successful source check."
+    }
+  ],
+  "licenseDirectHTTP": {
+    "status": 403,
+    "attempted": true,
+    "retried": false,
+    "scope": "Previous collection failed only at this public license page. Fixed @18 text is captured separately via Firecrawl."
+  },
+  "engineGenerationPassesPerGlyph": 1,
+  "sourceCheckRunsPerGlyph": 1,
+  "domesticSVGRequests": 0,
+  "nativeReviewCount": 0,
+  "runtimeApplied": false,
+  "canonicalHoldCreated": false,
+  "initialCheckerImport": {
+    "result": "process is not defined",
+    "sourceChecksStarted": 0,
+    "fix": "Guard optional CLI entry with typeof process !== undefined; no proof/source/geometry changed."
+  }
+}
