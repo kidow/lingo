@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "glyph": "嚌",
+  "batch": 861,
+  "verifiedAt": "2026-10-18",
+  "scope": "Isolated raster derived-clip experiment observation; not production stroke validation",
+  "observer": "/root",
+  "recordedBy": "/root/batch939_runtime_prep",
+  "experimental": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "existingHoldResolved": false,
+  "canonicalHoldDelta": 0,
+  "sourceGeometryChanged": false,
+  "sourceDirectionApproved": false,
+  "vectorCoverageProven": false,
+  "initialNativeTrial": {
+    "port": 56841,
+    "result": "FAILED",
+    "cause": "Qmask.bounds missing caused TypeError undefined is not iterable in pinned renderProgressive before viewer coverage update",
+    "successfulViewerFlowClaim": false,
+    "preserved": true
+  },
+  "secondNativeTrial": {
+    "port": 57458,
+    "childPID": 96292,
+    "wrapperPID": 96291,
+    "serverStoppedByRoot": true,
+    "configSHA256": "67ff43641683eb8c715b3a3e62462400bfb1b5a5b5b64903f3c2801a20964186",
+    "helperSHA256": "56e92558370613df4aba5e0acb8dbfcb3bc858222ae3ddab25da7ecfccd02c33",
+    "moduleSHA256": "d73b3ee3f1cfe4589aadc06bbbdc54d337ad840839aadecafc565875bebc14fb",
+    "viewerSHA256": "09aca6817075b19ed14245b63a573f4f2f9e3b87240ae0cb16ebcf9e17e909a7",
+    "actualSVGSize": [
+      520,
+      520
+    ],
+    "panelOuterSize": [
+      522,
+      522
+    ],
+    "grids": [
+      {
+        "size": 200,
+        "domainCells": 278,
+        "reachedCells": 278,
+        "seedCells": 48,
+        "reportedBuildMillisApprox": 11.4,
+        "observed": [
+          "boundary-after",
+          "epsilon",
+          "50%",
+          "99.99%",
+          "100%"
+        ]
+      },
+      {
+        "size": 400,
+        "domainCells": 1115,
+        "reachedCells": 1115,
+        "seedCells": 224,
+        "reportedBuildMillisApprox": 23,
+        "observed": [
+          "boundary-before",
+          "boundary-at",
+          "boundary-after",
+          "epsilon",
+          "50%",
+          "99.99%",
+          "100%"
+        ]
+      }
+    ],
+    "observedEffect": "Derived clip suppressed the wholesale activation of the starting nib seen in the existing renderer.",
+    "observedLimits": [
+      "Pixel steps were clear at200 and reduced at400.",
+      "The last sampled cell still appeared between99.99% and100%.",
+      "These observations do not establish complete vector coverage or authored/Korean direction."
+    ],
+    "naturalReplay": {
+      "grid": 400,
+      "observedStartPercent": 2.93875,
+      "observedNaturalEndPercent": 100,
+      "endVisibleCells": 1115,
+      "endDomainCells": 1115,
+      "observation": "Root sampled in-flight and naturally completed replay; no continuous-frame claim."
+    },
+    "console": {
+      "freshPortErrors": 0,
+      "historicalPort56841ErrorsRemain": true
+    },
+    "domesticReference": {
+      "displayed": false,
+      "directionObservationsSucceeded": 0,
+      "rootObservedIssue": "External domestic.svg opened as XML tree; original inline-only SVG lacked xmlns.",
+      "fixedAfterThisTrial": true,
+      "imageDisplayRetestPending": true
+    }
+  },
+  "namespaceFix": {
+    "scope": "Standalone SVG namespace only; geometry and original dictionary renderer unchanged",
+    "nativeRetestPending": true,
+    "focusedXMLValidationPending": false,
+    "focusedXMLValidation": {
+      "passed": true,
+      "exitCode": 0,
+      "testBodyExecutions": 1,
+      "commandAttempts": 2,
+      "priorPreExecutionSyntaxFailures": 1,
+      "priorFailureReason": "New test-string quoting caused a JavaScript parse error before any test executed; only those literals were corrected.",
+      "scope": "Standalone XML namespace, unchanged geometry text and idempotence with a synthetic inline SVG; original29 pins verified; no domestic HTTP or image redisplay.",
+      "nativeImageRetest": false
+    }
+  },
+  "immutableOriginalPinsCount": 29,
+  "originalMediaSaved": false,
+  "sourceCompile": 0,
+  "engine": 0,
+  "buildRun": false,
+  "gitRun": false
+}
