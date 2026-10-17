@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "batch": 987,
+  "glyph": "滮",
+  "date": "2026-10-17",
+  "status": "actual-source-consecutive-minimum-hold-focused-PASS",
+  "historicalDocuments": {
+    "source-hold.json": "17de057f1389defc1f1433666957ed33e0e990fd5dc771752c42f7f9eaf9f1ca",
+    "validation.json": "a5634e36c2fcda1aa2b6611637d27d50ce5bd60a9639ff6f8e1a9fd42af66f7a",
+    "README.md": "40ca2e4b66456eb53294fc7722234ca993d5ef40e2b66a8e7961e1f97eeea92a"
+  },
+  "focusedChecks": {
+    "executions": 1,
+    "passed": true,
+    "exitCode": 0,
+    "processAttempts": 2,
+    "successfulCompleteExecutions": 1,
+    "priorFailedAttempt": {
+      "exitCode": 1,
+      "stage": "Before canonical traversal and registry import",
+      "reason": "Audit harness assumed alternativeWholeViableWithoutNewGeometry object shape, but the preserved source-hold schema uses boolean false; corrected assertion only.",
+      "originalOrCheckpointDataChanged": false
+    },
+    "method": "One completed rtk proxy node --experimental-strip-types focused check: exact actual parent/source-hold SHA, original pins and three historical documents, existing source minimum evidence, string plus structured canonical uniqueness and exact runtime absence.",
+    "parentBatch": 986,
+    "parentSHA256": "f2aa784b12e4f37c30fbe1ad0a39d664e2637e2115b663af82daea14d5fd2231",
+    "protectedOriginalPins": 9,
+    "historicalDocumentsPreserved": 3,
+    "canonicalReferences": 48,
+    "canonicalBefore": 285,
+    "uniqueCanonicalBefore": 285,
+    "stringHolds": 80,
+    "objectHolds": 205,
+    "canonicalMatches": 0,
+    "newHoldEligible": true,
+    "countIncrement": 1,
+    "registryOccurrences": 0,
+    "exactLookup": null,
+    "actualRegisteredCount": 5501,
+    "totalHolds": 286
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "serverStarted": false,
+  "gitRun": false
+}
