@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-18",
+  "status": "helper-preparation-source-guard-pass-native-not-run",
+  "syntax": {
+    "commandSummary": "rtk proxy python3 -B -c: pathlib read plus ast.parse of serve-whole.py; no module import or bytecode write",
+    "runs": 1,
+    "exitCode": 0,
+    "bytecodeWritten": false
+  },
+  "sourceGuard": {
+    "command": "rtk proxy python3 -B docs/hanja-outside-two-whole-native-prep-2026-10-18/serve-whole.py --check",
+    "runs": 1,
+    "exitCode": 0,
+    "result": {
+      "ok": true,
+      "immutablePins": 71,
+      "familyNames": 46,
+      "fullWholeIdentities": 41,
+      "countOnlyPossibilities": 14,
+      "dictionaryMetadataPresent": [
+        "硜",
+        "祛"
+      ],
+      "domesticRequests": 0,
+      "rendererImported": false,
+      "engineExecutions": 0,
+      "serversStarted": 0,
+      "nativeApproved": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    }
+  },
+  "sourceIdentityPolicy": "Exact case-sensitive inventory domestic URL plus known bytes/SHA/glyph/count; original older URL casing is preserved, no fallback.",
+  "publicWholePolicy": "Pinned full5 proof and complete closure identity for every root, including byte-identical proof aliases kept as separate roots. Original polygons only; no new grouping/path/mask/compiler.",
+  "configSHA256": "986d56dcf4955e6475b46bd42a9359d44c7f3173a48073f360d5aa39e7d253bf",
+  "helperSHA256": "ea1b3526ea29091c0f181a754a31f4515904a8a5933329edecdd17cefe11b050",
+  "originalInputPinsPreserved": 71,
+  "publicCapsuleFilesPreserved": 53,
+  "sourcePrepFilesPreserved": 7,
+  "domesticHTTPRequestsDuringPreparation": 0,
+  "rendererImportsDuringPreparation": 0,
+  "privateSVGStored": false,
+  "screenshotsStored": false,
+  "engineExecutions": 0,
+  "engineDownloads": 0,
+  "groupingDecisions": 0,
+  "nativeReviewCount": 0,
+  "nativeApproved": false,
+  "runtimeApplied": false,
+  "canonicalHoldCreated": false,
+  "resumesCreated": 0,
+  "countersEdited": false,
+  "serversStarted": 0,
+  "buildRuns": 0,
+  "fullSuiteRuns": 0,
+  "gitOperations": 0
+}
