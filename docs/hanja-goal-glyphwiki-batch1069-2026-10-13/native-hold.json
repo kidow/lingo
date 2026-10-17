@@ -1,0 +1,1527 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "batch": 1069,
+  "glyph": "灌",
+  "catalogStrokes": 21,
+  "recordedDomesticClipCount": 21,
+  "status": "native-and-source-hold",
+  "reason": "The selected base has a shared grass horizontal instead of the domestic two horizontals/four grass pens, and its water vertical/rise boundary differs from domestic pen3. Root found compatible whole forms VS2 and var001, but both need at least22 exact consecutive original pens against target21. Joining raw2→raw3 would jump backward about34.2 source units; no invented connector, trajectory or width change is authorized.",
+  "selectedSourceRoot": "u704c",
+  "nativeReview": {
+    "observer": "/root",
+    "wholeVariantsObserved": 10,
+    "wholeVariants": [
+      {
+        "root": "u704c",
+        "compatible": false,
+        "basis": "Root actual whole comparison: shared grass horizontal incompatible; G/H/T also have dot instead of rising stroke"
+      },
+      {
+        "root": "u704c-g",
+        "compatible": false,
+        "basis": "Root actual whole comparison: shared grass horizontal incompatible; G/H/T also have dot instead of rising stroke"
+      },
+      {
+        "root": "u704c-h",
+        "compatible": false,
+        "basis": "Root actual whole comparison: shared grass horizontal incompatible; G/H/T also have dot instead of rising stroke"
+      },
+      {
+        "root": "u704c-j",
+        "compatible": false,
+        "basis": "Root actual whole comparison: shared grass horizontal incompatible; G/H/T also have dot instead of rising stroke"
+      },
+      {
+        "root": "u704c-k",
+        "compatible": false,
+        "basis": "Root actual whole comparison: shared grass horizontal incompatible; G/H/T also have dot instead of rising stroke"
+      },
+      {
+        "root": "u704c-t",
+        "compatible": false,
+        "basis": "Root actual whole comparison: shared grass horizontal incompatible; G/H/T also have dot instead of rising stroke"
+      },
+      {
+        "root": "u704c-ue0100",
+        "compatible": false,
+        "basis": "Root actual whole comparison: shared grass horizontal incompatible; G/H/T also have dot instead of rising stroke"
+      },
+      {
+        "root": "u704c-ue0101",
+        "compatible": false,
+        "basis": "Root actual whole comparison: shared grass horizontal incompatible; G/H/T also have dot instead of rising stroke"
+      },
+      {
+        "root": "u704c-ue0102",
+        "compatible": true,
+        "basis": "Root actual whole comparison: two separate grass horizontals and both rising strokes compatible"
+      },
+      {
+        "root": "u704c-var-001",
+        "compatible": true,
+        "basis": "Root actual whole comparison: two separate grass horizontals and both rising strokes compatible"
+      }
+    ],
+    "domesticDirectionsObserved": 21,
+    "directionsPassed": false,
+    "orderOrBoundariesApproved": false,
+    "selectedBaseBoundaryMismatch": {
+      "domesticPen3": "water vertical and rise as one pen",
+      "candidatePens": [
+        3,
+        4
+      ],
+      "grass": "source shared-horizontal three pens versus domestic separate-horizontals four pens"
+    },
+    "coarseFramesObserved": 0,
+    "fineChecksObserved": 0,
+    "boundaryChecksObserved": 0,
+    "replaysObserved": 0,
+    "newNativeObservationsByThisAgent": 0,
+    "privateScreenshotsSaved": false
+  },
+  "compatibleWholeSourceFindings": [
+    {
+      "root": "u704c-ue0102",
+      "file": "engine-whole-u704c-ue0102.json",
+      "fileSHA256": "74b095ae153df6d7a4b04a1e70fbdb024ac781989f727cb9ba67183dfb93f80b",
+      "originalProofKeys": [
+        "defaults",
+        "groups",
+        "trace"
+      ],
+      "rawRows": 24,
+      "drawingRows": 24,
+      "emptyRawRows": [],
+      "sourcePolygons": 41,
+      "exactConsecutiveJoinsZeroBased": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "minimumConsecutiveAuthoredPens": 22,
+      "existingCompilerProfileSupported": false,
+      "waterBoundary": {
+        "rawRowsZeroBased": [
+          2,
+          3
+        ],
+        "previousEnd": [
+          37.875,
+          184
+        ],
+        "nextStart": [
+          34,
+          150
+        ],
+        "delta": [
+          -3.875,
+          -34
+        ],
+        "gap": 34.22010556675709,
+        "exactJoin": false,
+        "joinApproved": false
+      },
+      "allOriginalRawCallEndpoints": [
+        {
+          "raw": 0,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                27.025,
+                20,
+                46.4,
+                27,
+                54.925,
+                41,
+                7,
+                8
+              ],
+              "start": [
+                27.025,
+                20
+              ],
+              "end": [
+                54.925,
+                41
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 1,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                12.3,
+                66,
+                33.225,
+                73,
+                40.975,
+                87,
+                7,
+                8
+              ],
+              "start": [
+                12.3,
+                66
+              ],
+              "end": [
+                40.975,
+                87
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 2,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                13.85,
+                133,
+                40.975,
+                142,
+                37.875,
+                184,
+                7,
+                8
+              ],
+              "start": [
+                13.85,
+                133
+              ],
+              "end": [
+                37.875,
+                184
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 3,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                34,
+                150,
+                37.1,
+                138,
+                69.65,
+                67,
+                32,
+                7
+              ],
+              "start": [
+                34,
+                150
+              ],
+              "end": [
+                69.65,
+                67
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 4,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                68.84,
+                34.437149999999995,
+                111.68,
+                34.437149999999995,
+                0,
+                2
+              ],
+              "start": [
+                68.84,
+                34.437149999999995
+              ],
+              "end": [
+                111.68,
+                34.437149999999995
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 5,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                111.68,
+                13.45905,
+                111.68,
+                54.60839999999999,
+                0,
+                300
+              ],
+              "start": [
+                111.68,
+                13.45905
+              ],
+              "end": [
+                111.68,
+                54.60839999999999
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 6,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                144.32,
+                13.45905,
+                144.32,
+                54.60839999999999,
+                0,
+                100
+              ],
+              "start": [
+                144.32,
+                13.45905
+              ],
+              "end": [
+                144.32,
+                54.60839999999999
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 7,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                144.32,
+                34.437149999999995,
+                187.16,
+                34.437149999999995,
+                2,
+                100
+              ],
+              "start": [
+                144.32,
+                34.437149999999995
+              ],
+              "end": [
+                187.16,
+                34.437149999999995
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 8,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                81.76,
+                63.69580800000001,
+                81.76,
+                86.51476349999999,
+                12,
+                213
+              ],
+              "start": [
+                81.76,
+                63.69580800000001
+              ],
+              "end": [
+                81.76,
+                86.51476349999999
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 9,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                81.76,
+                63.69580800000001,
+                117.12,
+                63.69580800000001,
+                2,
+                2
+              ],
+              "start": [
+                81.76,
+                63.69580800000001
+              ],
+              "end": [
+                117.12,
+                63.69580800000001
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 10,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                117.12,
+                63.69580800000001,
+                117.12,
+                86.51476349999999,
+                1022,
+                223
+              ],
+              "start": [
+                117.12,
+                63.69580800000001
+              ],
+              "end": [
+                117.12,
+                86.51476349999999
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 11,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                81.76,
+                86.51476349999999,
+                117.12,
+                86.51476349999999,
+                2,
+                2
+              ],
+              "start": [
+                81.76,
+                86.51476349999999
+              ],
+              "end": [
+                117.12,
+                86.51476349999999
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 12,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                138.88,
+                63.69580800000001,
+                138.88,
+                86.51476349999999,
+                1012,
+                313
+              ],
+              "start": [
+                138.88,
+                63.69580800000001
+              ],
+              "end": [
+                138.88,
+                86.51476349999999
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 13,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                138.88,
+                63.69580800000001,
+                174.24,
+                63.69580800000001,
+                2,
+                2
+              ],
+              "start": [
+                138.88,
+                63.69580800000001
+              ],
+              "end": [
+                174.24,
+                63.69580800000001
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 14,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                174.24,
+                63.69580800000001,
+                174.24,
+                86.51476349999999,
+                22,
+                223
+              ],
+              "start": [
+                174.24,
+                63.69580800000001
+              ],
+              "end": [
+                174.24,
+                86.51476349999999
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 15,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                138.88,
+                86.51476349999999,
+                174.24,
+                86.51476349999999,
+                2,
+                2
+              ],
+              "start": [
+                138.88,
+                86.51476349999999
+              ],
+              "end": [
+                174.24,
+                86.51476349999999
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 16,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                100.8,
+                96.38303400000001,
+                90.6,
+                120.10323599999998,
+                69.52,
+                142.94491200000002,
+                0,
+                7
+              ],
+              "start": [
+                100.8,
+                96.38303400000001
+              ],
+              "end": [
+                69.52,
+                142.94491200000002
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 17,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                92.64,
+                113.075028,
+                92.64,
+                176.32890000000003,
+                0,
+                213
+              ],
+              "start": [
+                92.64,
+                113.075028
+              ],
+              "end": [
+                92.64,
+                176.32890000000003
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 18,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                139.56,
+                99.01861199999999,
+                132.76,
+                109.56092400000001,
+                126.64,
+                117.46765800000001,
+                0,
+                7
+              ],
+              "start": [
+                139.56,
+                99.01861199999999
+              ],
+              "end": [
+                126.64,
+                117.46765800000001
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 19,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                131.4,
+                117.46765800000001,
+                131.4,
+                176.32890000000003,
+                32,
+                32
+              ],
+              "start": [
+                131.4,
+                117.46765800000001
+              ],
+              "end": [
+                131.4,
+                176.32890000000003
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 20,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                92.64,
+                117.46765800000001,
+                181.04000000000002,
+                117.46765800000001,
+                2,
+                100
+              ],
+              "start": [
+                92.64,
+                117.46765800000001
+              ],
+              "end": [
+                181.04000000000002,
+                117.46765800000001
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 21,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                92.64,
+                136.79523000000003,
+                172.88,
+                136.79523000000003,
+                2,
+                100
+              ],
+              "start": [
+                92.64,
+                136.79523000000003
+              ],
+              "end": [
+                172.88,
+                136.79523000000003
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 22,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                92.64,
+                157.001328,
+                172.88,
+                157.001328,
+                2,
+                100
+              ],
+              "start": [
+                92.64,
+                157.001328
+              ],
+              "end": [
+                172.88,
+                157.001328
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 23,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                92.64,
+                176.32890000000003,
+                187.84,
+                176.32890000000003,
+                2,
+                0
+              ],
+              "start": [
+                92.64,
+                176.32890000000003
+              ],
+              "end": [
+                187.84,
+                176.32890000000003
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root": "u704c-var-001",
+      "file": "engine-whole-u704c-var-001.json",
+      "fileSHA256": "842d208cf3a5fc109b893fe25ec884105aa9e17236317760268f93ed10520ccd",
+      "originalProofKeys": [
+        "defaults",
+        "groups",
+        "trace"
+      ],
+      "rawRows": 24,
+      "drawingRows": 24,
+      "emptyRawRows": [],
+      "sourcePolygons": 41,
+      "exactConsecutiveJoinsZeroBased": [
+        [
+          9,
+          10
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "minimumConsecutiveAuthoredPens": 22,
+      "existingCompilerProfileSupported": false,
+      "waterBoundary": {
+        "rawRowsZeroBased": [
+          2,
+          3
+        ],
+        "previousEnd": [
+          41.75,
+          184
+        ],
+        "nextStart": [
+          37.1,
+          150
+        ],
+        "delta": [
+          -4.649999999999999,
+          -34
+        ],
+        "gap": 34.31650477539925,
+        "exactJoin": false,
+        "joinApproved": false
+      },
+      "allOriginalRawCallEndpoints": [
+        {
+          "raw": 0,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                28.575,
+                20,
+                48.725,
+                28,
+                56.475,
+                41,
+                7,
+                8
+              ],
+              "start": [
+                28.575,
+                20
+              ],
+              "end": [
+                56.475,
+                41
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 1,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                12.3,
+                68,
+                32.45,
+                75,
+                40.975,
+                89,
+                7,
+                8
+              ],
+              "start": [
+                12.3,
+                68
+              ],
+              "end": [
+                40.975,
+                89
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 2,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                13.85,
+                133,
+                44.85,
+                142,
+                41.75,
+                184,
+                7,
+                8
+              ],
+              "start": [
+                13.85,
+                133
+              ],
+              "end": [
+                41.75,
+                184
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 3,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                37.1,
+                150,
+                40.975,
+                139,
+                69.65,
+                45,
+                32,
+                7
+              ],
+              "start": [
+                37.1,
+                150
+              ],
+              "end": [
+                69.65,
+                45
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 4,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                66.1,
+                34.785,
+                122.8,
+                34.785,
+                0,
+                300
+              ],
+              "start": [
+                66.1,
+                34.785
+              ],
+              "end": [
+                122.8,
+                34.785
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 5,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                101.8,
+                13.595,
+                101.8,
+                55.16,
+                0,
+                300
+              ],
+              "start": [
+                101.8,
+                13.595
+              ],
+              "end": [
+                101.8,
+                55.16
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 6,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                152.2,
+                13.595,
+                152.2,
+                55.16,
+                0,
+                300
+              ],
+              "start": [
+                152.2,
+                13.595
+              ],
+              "end": [
+                152.2,
+                55.16
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 7,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                131.2,
+                34.785,
+                187.9,
+                34.785,
+                0,
+                0
+              ],
+              "start": [
+                131.2,
+                34.785
+              ],
+              "end": [
+                187.9,
+                34.785
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 8,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                79.4,
+                64.3,
+                79.4,
+                87.225,
+                12,
+                213
+              ],
+              "start": [
+                79.4,
+                64.3
+              ],
+              "end": [
+                79.4,
+                87.225
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 9,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                79.4,
+                64.3,
+                115.8,
+                64.3,
+                2,
+                2
+              ],
+              "start": [
+                79.4,
+                64.3
+              ],
+              "end": [
+                115.8,
+                64.3
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 10,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                115.8,
+                64.3,
+                115.8,
+                87.225,
+                1022,
+                223
+              ],
+              "start": [
+                115.8,
+                64.3
+              ],
+              "end": [
+                115.8,
+                87.225
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 11,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                79.4,
+                87.225,
+                115.8,
+                87.225,
+                2,
+                2
+              ],
+              "start": [
+                79.4,
+                87.225
+              ],
+              "end": [
+                115.8,
+                87.225
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 12,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                138.2,
+                64.3,
+                138.2,
+                87.225,
+                1012,
+                313
+              ],
+              "start": [
+                138.2,
+                64.3
+              ],
+              "end": [
+                138.2,
+                87.225
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 13,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                138.2,
+                64.3,
+                174.6,
+                64.3,
+                2,
+                2
+              ],
+              "start": [
+                138.2,
+                64.3
+              ],
+              "end": [
+                174.6,
+                64.3
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 14,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                174.6,
+                64.3,
+                174.6,
+                87.225,
+                22,
+                223
+              ],
+              "start": [
+                174.6,
+                64.3
+              ],
+              "end": [
+                174.6,
+                87.225
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 15,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                138.2,
+                87.225,
+                174.6,
+                87.225,
+                2,
+                2
+              ],
+              "start": [
+                138.2,
+                87.225
+              ],
+              "end": [
+                174.6,
+                87.225
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 16,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                100,
+                96,
+                89,
+                121,
+                57,
+                150,
+                0,
+                7
+              ],
+              "start": [
+                100,
+                96
+              ],
+              "end": [
+                57,
+                150
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 17,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                90,
+                118,
+                90,
+                177,
+                32,
+                213
+              ],
+              "start": [
+                90,
+                118
+              ],
+              "end": [
+                90,
+                177
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 18,
+          "calls": [
+            {
+              "kind": "cdDrawCurve",
+              "args": [
+                138,
+                99,
+                131,
+                110,
+                125,
+                118,
+                0,
+                7
+              ],
+              "start": [
+                138,
+                99
+              ],
+              "end": [
+                125,
+                118
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 19,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                130,
+                118,
+                130,
+                177,
+                32,
+                32
+              ],
+              "start": [
+                130,
+                118
+              ],
+              "end": [
+                130,
+                177
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 20,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                90,
+                118,
+                181,
+                118,
+                2,
+                100
+              ],
+              "start": [
+                90,
+                118
+              ],
+              "end": [
+                181,
+                118
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 21,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                90,
+                137,
+                173,
+                137,
+                2,
+                100
+              ],
+              "start": [
+                90,
+                137
+              ],
+              "end": [
+                173,
+                137
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 22,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                90,
+                158,
+                173,
+                158,
+                2,
+                100
+              ],
+              "start": [
+                90,
+                158
+              ],
+              "end": [
+                173,
+                158
+              ]
+            }
+          ]
+        },
+        {
+          "raw": 23,
+          "calls": [
+            {
+              "kind": "cdDrawLine",
+              "args": [
+                90,
+                177,
+                188,
+                177,
+                2,
+                0
+              ],
+              "start": [
+                90,
+                177
+              ],
+              "end": [
+                188,
+                177
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "existingCompilerContract": {
+    "supportedProfiles": [
+      "u704c",
+      "u704c-g",
+      "u704c-h",
+      "u704c-j",
+      "u704c-k",
+      "u704c-t",
+      "u704c-ue0100",
+      "u704c-ue0101"
+    ],
+    "compatibleWholesSupported": false,
+    "originalWholeBody": "exact three keys defaults/groups/trace; original pinned header adds engineRevision/engineHashes in RAM for full5",
+    "externalStrictProof": "exact full5",
+    "identity": "exact seven-field sourceRoot/proof/header/metadata identity; ./ paths and lowercase Sha256 keys preserved",
+    "requiredArguments": [
+      3,
+      4
+    ],
+    "sourceCompilerRunsThisTask": 0
+  },
+  "immutableExistingFilesSHA256": {
+    "NOTICE.md": "7be0eedacc84e29b4eabd3e41dc9b293649e9f3eacaf8d668b28eec0fba3ad64",
+    "candidate-compile-analysis.json": "beb6e843549860631ff9ca3097cbb813547402c9490dd713be39d40059abcc7a",
+    "combined-native-source-pins.json": "bed8b69838a9de5bbb6905a43ee79cc5889b73e109a20405aa891697b0201bf2",
+    "engine-proof.json": "34a8082517f3b31a110ec1890e219f0480734af2f4038f8ab2dc762e916b905c",
+    "engine-whole-u704c-g.json": "6b039a5a29fcb35a14ba213998250534a3d9cb22469a3fc85988f1ae70dbb813",
+    "engine-whole-u704c-h.json": "d1984740354fe1d851be4bedba120d0485aed64f83f9f0b8ac63ad69bb10d45d",
+    "engine-whole-u704c-j.json": "fbf784401f1c68ad67e3620d4f52bbf92c32e7293d6161ff0356b35b4f3bf638",
+    "engine-whole-u704c-k.json": "fbf784401f1c68ad67e3620d4f52bbf92c32e7293d6161ff0356b35b4f3bf638",
+    "engine-whole-u704c-t.json": "d1984740354fe1d851be4bedba120d0485aed64f83f9f0b8ac63ad69bb10d45d",
+    "engine-whole-u704c-ue0100.json": "9448bfccd1137b7994ce92cdadf2290f1f6f7fce2b30a716d7a3412af1c7a9c2",
+    "engine-whole-u704c-ue0101.json": "9448bfccd1137b7994ce92cdadf2290f1f6f7fce2b30a716d7a3412af1c7a9c2",
+    "engine-whole-u704c-ue0102.json": "74b095ae153df6d7a4b04a1e70fbdb024ac781989f727cb9ba67183dfb93f80b",
+    "engine-whole-u704c-var-001.json": "842d208cf3a5fc109b893fe25ec884105aa9e17236317760268f93ed10520ccd",
+    "engine-whole-u704c.json": "075e7b46f3f90d2ac7ac53af64d11e3d9857e4ec4db7005112cb97fb75c609e7",
+    "metadata.json": "e22458479fc6fd84b1fcbcde897cc5a5bea43522a9e20c6feba483065a79b6b2",
+    "native-server-input-pins.json": "3f199efefe0fcfba9ee0bec12392694bffb1003e6f3eb27f5df930d66e8246cd",
+    "progressive.mjs": "f836d322111ac8de65d9919f0f82c43da16f5ef92247a88ef8cb8d6782599c19",
+    "serve-combined-native.py": "2f6733397ddb82fd371d3b70ca06fb79e297ab8a1cee35aaeb63638abaed2137",
+    "serve-native.py": "cd2e05d604f5f4220ff688f4959cb390c0365ffc1fb76912e35e595fe6e98a6d",
+    "server-compile-strict-candidate.mjs": "492aba6e6eaef6c84f96d1857de6beee7a2768aa78d24841560f02837aa933f1",
+    "source-analysis.json": "c396785d619a06b8d82d1147f69be05740e9badc5de445b0901d377205b358d5",
+    "source-join-analysis.json": "70eaf749815f416fb377ece9f36776fe42ac8941c73b98fc209b217b3bbab7c5",
+    "source-only-helper-readiness.json": "548c1783a23649ec1c9da411019ce71df9204e618700a6fc94514b39517a8f44",
+    "sources.json": "b941fd984114a84515f9c96746a98587ad9d0ffac9f534b906da0f677e49e628",
+    "strict-native-adapter.mjs": "41fc27891549f4213a13b366c350831e858fb94d030be33a3bcf022aa52d2174",
+    "strict-native-server-preflight.json": "079ef7421559e9691edd27194dcb89dbd9d8d4556e8d2531f5dfb8dbf00a1204",
+    "strict-source-candidate.d.mts": "a5fa9ef56c86352a7947d3e2b963ef080c16c8197fabdd6e85393e3edd216da8",
+    "strict-source-candidate.mjs": "822531a6dc25ce2cc42e6cfd9ea8e7f526e61d4c7258384d9f8a6b7ccc41387d",
+    "strict-source-preparation.json": "d1e115ebffacbef957d0eb9ea9d77ca35d902e79b4f6625312269130f5ef6ec7",
+    "verify-source.mjs": "61d1fae258f17b2c0eb4d49d08ffda788a5b9b163e2c05e8853d6783f90ffe8a"
+  },
+  "existingLayers": {
+    "originalFiles": 24,
+    "strictPreparationFiles": 6,
+    "totalPreservedFiles": 30
+  },
+  "sharedRendererBytePins": {
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "readOnlyDuplicateInspection": {
+    "baselineResume": "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/resume.json",
+    "baselineResumeSHA256": "f37020db542a326baaf7a4c46886c8736d5708c39a6a5872e9592f7811a66370",
+    "canonicalUnique": 318,
+    "glyphOrRootMatches": 0,
+    "actualParent1068NotFinalized": true
+  },
+  "focusedVerification": {
+    "executed": true,
+    "runs": 1,
+    "exitCode": 0,
+    "result": {
+      "batch": 1069,
+      "glyph": "灌",
+      "passed": true,
+      "exitCode": 0,
+      "executions": 1,
+      "verifiedAt": "2026-10-18",
+      "parentSHA": "21301e85aa4f4f97e56ab29197611e46a9cb4ce8d348db93b72dc0abb66c8c40",
+      "parentActualCheckpointVerified": true,
+      "parentRuntimeAbsenceVerified": true,
+      "canonicalReferences": 128,
+      "canonicalStringHolds": 80,
+      "canonicalObjectHolds": 239,
+      "canonicalUniqueBefore": 319,
+      "duplicateMatches": 0,
+      "canonicalUniqueAfter": 320,
+      "protectedFiles": 30,
+      "sharedPins": 3,
+      "pinMismatches": 0,
+      "sourceFacts": [
+        {
+          "root": "u704c-ue0102",
+          "raw": 24,
+          "drawing": 24,
+          "polygons": 41,
+          "exactConsecutiveJoinsZeroBased": [
+            [
+              9,
+              10
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "minimum": 22,
+          "target": 21,
+          "waterGap": 34.22010556675709
+        },
+        {
+          "root": "u704c-var-001",
+          "raw": 24,
+          "drawing": 24,
+          "polygons": 41,
+          "exactConsecutiveJoinsZeroBased": [
+            [
+              9,
+              10
+            ],
+            [
+              13,
+              14
+            ]
+          ],
+          "minimum": 22,
+          "target": 21,
+          "waterGap": 34.31650477539925
+        }
+      ],
+      "registryCount": 5547,
+      "registryOccurrences": 0,
+      "exactLookup": null,
+      "sourceCompilerExecutions": 0,
+      "engineRuns": 0,
+      "newNativeObservationsByThisAgent": 0,
+      "HTTP": 0,
+      "serverStarts": 0,
+      "buildRun": false,
+      "gitRun": false
+    },
+    "inputNativeHoldSHA256": "31e131abff7fc1af555405460ab15d1b4fe04e48545b9d3513d153e3266c96e6",
+    "scope": "Single inline Node endpoint/full original pins/canonical history and actual runtime absence validation; result annotations added afterwards without changing tested source facts.",
+    "orchestrationNote": "The child validation exited0. The first REPL result assignment raised an undeclared-variable ReferenceError after the successful child run; its saved stdout was parsed into a declared RAM variable without rerunning validation."
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "canonicalHoldCreated": true,
+  "countersEdited": false,
+  "geometryChanged": false,
+  "widthChanged": false,
+  "connectorAdded": false,
+  "sourceProofsChanged": false,
+  "sourceGroupsChanged": false,
+  "nonConsecutiveJoinApproved": false,
+  "adapterExperimentCreated": false,
+  "privateMediaSaved": false,
+  "sourceCompilerRuns": 0,
+  "engineExecutions": 0,
+  "httpRequests": 0,
+  "serversStarted": 0,
+  "buildRun": false,
+  "gitOperations": 0,
+  "resumeCreated": true
+}
