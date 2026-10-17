@@ -1,0 +1,2009 @@
+{
+  "date": "2026-10-18",
+  "scope": "Official same-glyph family-row independently rendered wholes plus same-codepoint regional/variation links from two current GlyphWiki family pages. Not a global or historical whole search.",
+  "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+  "engineHashes": {
+    "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+    "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+    "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+    "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+    "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+    "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+    "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+    "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+  },
+  "enginePolicy": "Reuse the original eight exact SHA256-verified engine codes in RAM; no engine download for this extension. Code not redistributed.",
+  "sourcePolicy": "Fixed mixed-date current closure. Already captured names retain their earlier exact responses/versions; new names are discovered and requested at exact @versions. Original transport and data SHA256 retained.",
+  "immutableInputBytePins": {
+    "../hanja-outside-three-source-capture-2026-10-18/NOTICE.md": "0d9477534e28e4a331a301ab0e8494978e7bfafea2e9511ece8da5466ddb5f8c",
+    "../hanja-outside-three-source-capture-2026-10-18/README.md": "67a06cb83632ed3a2891f7ff274e951005166abb4b196f206927848473bd462f",
+    "../hanja-outside-three-source-capture-2026-10-18/archive-LICENSE.txt": "abe789645f228e14d2e117769487cad0860f32e2a0b151c2ad8ef43843f5eec8",
+    "../hanja-outside-three-source-capture-2026-10-18/capture-receipt.json": "57ec98fadae1f3ac8f1361d9f231ffa02f457756b6e54fa0160cc2567f2981eb",
+    "../hanja-outside-three-source-capture-2026-10-18/engine-whole-u785c.json": "bfdb33805adb61635efdc526baa486b725e83afc2c7aafb55de8cd2f4021915d",
+    "../hanja-outside-three-source-capture-2026-10-18/engine-whole-u795b.json": "b7677e8752efceb70a4511811c63bf173fea6fba3101b5f5cff862fd86f410df",
+    "../hanja-outside-three-source-capture-2026-10-18/engine-whole-u81c4.json": "a8c9e4f325b1547cd7c3b0ede3a9a29ec2029d89d648f180a1e17bc2e5eb320d",
+    "../hanja-outside-three-source-capture-2026-10-18/manifest.json": "08e822773e08218c34954101b198e88c6603b6a456e5d70894ffd15f62fc2a95",
+    "../hanja-outside-three-source-capture-2026-10-18/official-license-ja-at18.firecrawl.md": "4191575c6b82c650bb655ca07003e85640f64a800576d5b11ccf003b929ba80d",
+    "../hanja-outside-three-source-capture-2026-10-18/sources-u785c.json": "4582b6ffb10184783e93581ec7724993a2afb82eac2a9bbd60378158bece3116",
+    "../hanja-outside-three-source-capture-2026-10-18/sources-u795b.json": "5234724003efc85e93bc5a480b2ad23384c7a136cda55a758a8c85d49fa3b4f8",
+    "../hanja-outside-three-source-capture-2026-10-18/sources-u81c4.json": "49aba54ccc13360075e9c35545a3c4a8db956c341a22fe765530fab5f3f7c792",
+    "../hanja-outside-three-source-capture-2026-10-18/validation.json": "8b2910ec5df27955b48bf9946d160928671ed7e3d9a4b0c94248eb57b6151842",
+    "../hanja-outside-three-source-capture-2026-10-18/verify-source.mjs": "ce8515702c4a0f17c467f20b7351acdddc97192b33e8c087f23800033360b0d5",
+    "../hanja-remaining-source-prep-u81c4-2026-10-18/progressive.mjs": "c91193cb46195d7ecb4dcf679f4cfda374ae99de81a4c648c1c61905b17b7e0b",
+    "../hanja-remaining-source-prep-u81c4-2026-10-18/candidate-source-preparation.json": "066610afcc1f7e06da7fab31dcf0e33adfa6325a2874ba1628b90530cd674e7c",
+    "../hanja-remaining-source-prep-u81c4-2026-10-18/NOTICE.md": "26e772691fe16957556a16e7144b56e2ff66e0fb53541346a1b77104b703706f",
+    "../hanja-remaining-source-prep-u81c4-2026-10-18/README.md": "72910163a1bb52db17fb0db94ab6400113f032392a0725e7f8a82a35ab356588",
+    "../hanja-remaining-source-prep-u81c4-2026-10-18/progressive.d.mts": "a1b40d7ab2418031935a4103a05ac0fcc83c9c57cc7daf53110fc15214e596f3",
+    "../hanja-remaining-source-prep-u81c4-2026-10-18/validation.json": "51066c88f262a7f8b36122e1ca4abb7080ced80243b3258c6643046148172de2",
+    "../hanja-remaining-source-prep-u81c4-2026-10-18/verify-candidate.mjs": "76f8f8a92f09638951fd0b413778749ea8910438998c8de204a18bb85214a9e0"
+  },
+  "families": [
+    {
+      "family": "u785c",
+      "glyph": "硜",
+      "catalogStrokes": 12,
+      "readingGrade": "특급",
+      "inventoryFile": "family-u785c.firecrawl.json",
+      "inventoryFileSHA256": "381b66389a049f45bd0f236cb635374a2837062422a746d4dafea3be14ada8ad",
+      "sourceFile": "sources-u785c.json",
+      "sourceFileSHA256": "d5d164e09821f3341b91d7a01c79d6cb450372c23d7b1ef07e43dcfaa833a5e3",
+      "sameCodepointRootNames": [
+        "u785c",
+        "u785c-j",
+        "u785c-g",
+        "u785c-h",
+        "u785c-kp",
+        "u785c-k",
+        "u785c-t",
+        "u785c-ue0100"
+      ],
+      "independentRenderedWholePins": [
+        "u785c-j@3",
+        "ebag_s047-010@1",
+        "hkcs_m785c@2",
+        "hkcs_u785c@1",
+        "hs_u785c@1",
+        "kaido_hkrm-06011131@1",
+        "kaido_hkrm-06011132@3",
+        "lp_lps-00017437@1",
+        "simch-kx_t083014@1"
+      ],
+      "requestedNames": [
+        "u785c",
+        "u785c-j",
+        "u785c-g",
+        "u785c-h",
+        "u785c-kp",
+        "u785c-k",
+        "u785c-t",
+        "u785c-ue0100",
+        "ebag_s047-010",
+        "hkcs_m785c",
+        "hkcs_u785c",
+        "hs_u785c",
+        "kaido_hkrm-06011131",
+        "kaido_hkrm-06011132",
+        "lp_lps-00017437",
+        "simch-kx_t083014"
+      ],
+      "completeWholes": 11,
+      "providerDefinitions": 31
+    },
+    {
+      "family": "u795b",
+      "glyph": "祛",
+      "catalogStrokes": 10,
+      "readingGrade": "특급II",
+      "inventoryFile": "family-u795b.firecrawl.json",
+      "inventoryFileSHA256": "a37a1d5e8111bf8441938cf9ad31ad35926f0cc7d7ae8b4567ea3a2290270835",
+      "sourceFile": "sources-u795b.json",
+      "sourceFileSHA256": "faa4dfa34d349417c43eb4f08406f8ec9b4937e00d6f2bc85545c713f8fe6f63",
+      "sameCodepointRootNames": [
+        "u795b",
+        "u795b-jn",
+        "u795b-g",
+        "u795b-h",
+        "u795b-j",
+        "u795b-kp",
+        "u795b-k",
+        "u795b-t",
+        "u795b-ue0101",
+        "u795b-ue0100",
+        "u795b-ue0102",
+        "u795b-var-001"
+      ],
+      "independentRenderedWholePins": [
+        "u795b-g@1",
+        "u795b-j@3",
+        "u795b-jn@1",
+        "u795b-k@10",
+        "u795b-kp@2",
+        "u795b-t@1",
+        "u795b-ue0102@7",
+        "u795b-var-001@1",
+        "akr-17061@1",
+        "jgj-005922@1",
+        "krcourt-a0215@1",
+        "u2ff0-u793a-u5340@1",
+        "u2ff0-u793b-u5340@2",
+        "u2ff0-u793b-u5340-var-001@1",
+        "zihai-089236@1",
+        "hkcs_m795b@2",
+        "hkcs_u795b@1",
+        "hs_u795b@1",
+        "hs_u795b-var-001@1",
+        "lp_lps-00017692@1",
+        "lp_lps-00106543@1",
+        "lp_lps-00123690@1",
+        "lp_lps-00129103@1",
+        "lp_lps-00132263@1",
+        "lp_lps-00151127@1",
+        "simch-kx_t084126@1"
+      ],
+      "requestedNames": [
+        "u795b",
+        "u795b-jn",
+        "u795b-g",
+        "u795b-h",
+        "u795b-j",
+        "u795b-kp",
+        "u795b-k",
+        "u795b-t",
+        "u795b-ue0101",
+        "u795b-ue0100",
+        "u795b-ue0102",
+        "u795b-var-001",
+        "akr-17061",
+        "jgj-005922",
+        "krcourt-a0215",
+        "u2ff0-u793a-u5340",
+        "u2ff0-u793b-u5340",
+        "u2ff0-u793b-u5340-var-001",
+        "zihai-089236",
+        "hkcs_m795b",
+        "hkcs_u795b",
+        "hs_u795b",
+        "hs_u795b-var-001",
+        "lp_lps-00017692",
+        "lp_lps-00106543",
+        "lp_lps-00123690",
+        "lp_lps-00129103",
+        "lp_lps-00132263",
+        "lp_lps-00151127",
+        "simch-kx_t084126"
+      ],
+      "completeWholes": 30,
+      "providerDefinitions": 70
+    }
+  ],
+  "wholeEntries": [
+    {
+      "family": "u785c",
+      "root": "u785c-j",
+      "fixedRootVersion": "u785c-j@3",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-u785c-j.json",
+      "proofFileSHA256": "57530898d8cb39665aa76b0effb7113b75f48028699ab07726dfd17e7c587854",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u785c-j",
+        "u5de0-02",
+        "u77f3-01"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "u785c-j",
+        "fixedName": "u785c-j@3",
+        "rawGroups": 16,
+        "drawingGroups": 16,
+        "polygons": 30,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ]
+        ],
+        "conservativeRawMinimum": 15,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 15,
+        "maximum": 16,
+        "target": 12,
+        "containsTarget": false,
+        "requiredJoinCount": 4,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "u785c-ue0100",
+      "fixedRootVersion": "u785c-ue0100@8",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "../hanja-outside-three-source-capture-2026-10-18/engine-whole-u785c.json",
+      "proofFileSHA256": "bfdb33805adb61635efdc526baa486b725e83afc2c7aafb55de8cd2f4021915d",
+      "proofStorage": "Exact full5 bytes reused from immutable base capsule",
+      "definitionNames": [
+        "u785c-ue0100",
+        "u785c-j",
+        "u5de0-02",
+        "u77f3-01"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "u785c-ue0100",
+        "fixedName": "u785c-ue0100@8",
+        "rawGroups": 16,
+        "drawingGroups": 16,
+        "polygons": 30,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ]
+        ],
+        "conservativeRawMinimum": 15,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 15,
+        "maximum": 16,
+        "target": 12,
+        "containsTarget": false,
+        "requiredJoinCount": 4,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-jn",
+      "fixedRootVersion": "u795b-jn@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "../hanja-outside-three-source-capture-2026-10-18/engine-whole-u795b.json",
+      "proofFileSHA256": "b7677e8752efceb70a4511811c63bf173fea6fba3101b5f5cff862fd86f410df",
+      "proofStorage": "Exact full5 bytes reused from immutable base capsule",
+      "definitionNames": [
+        "u795b-jn",
+        "u53bb-02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-jn",
+        "fixedName": "u795b-jn@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 23,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-g",
+      "fixedRootVersion": "u795b-g@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-g.json",
+      "proofFileSHA256": "1d8d5a569925186084b2fe8e8ec43b066e9d29153f4cd06853944b50552ceb49",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u795b-g",
+        "u53bb-g02",
+        "u793b-g"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-g",
+        "fixedName": "u795b-g@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 22,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-h",
+      "fixedRootVersion": "u795b-h@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-h.json",
+      "proofFileSHA256": "07b2953e1651005a676e3ec46e963c93d667b5407c77092aeaea1aceba624cf6",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u795b-h",
+        "u795b-t",
+        "u53bb-t02",
+        "u793b-g"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-h",
+        "fixedName": "u795b-h@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 20,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-j",
+      "fixedRootVersion": "u795b-j@3",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-j.json",
+      "proofFileSHA256": "1a3ed33362500a72e6a4dd99732ade46458faa76cf6a7f9be0a8a22ce9f87040",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u795b-j",
+        "u53bb-v02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-j",
+        "fixedName": "u795b-j@3",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 25,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-kp",
+      "fixedRootVersion": "u795b-kp@2",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-kp.json",
+      "proofFileSHA256": "a08d0edc20b42b649c84a627a10773ecd34d4b78abf9938c3e14ce7b5af61558",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u795b-kp",
+        "u53bb-g02",
+        "u793a-kp01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-kp",
+        "fixedName": "u795b-kp@2",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 24,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-k",
+      "fixedRootVersion": "u795b-k@10",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-k.json",
+      "proofFileSHA256": "faf0fda04c001dc24fad137c2393addaa2a391e8128bc0d963004f2409a8f213",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u795b-k",
+        "u53bb-g02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-k",
+        "fixedName": "u795b-k@10",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 25,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-t",
+      "fixedRootVersion": "u795b-t@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-h.json",
+      "proofFileSHA256": "07b2953e1651005a676e3ec46e963c93d667b5407c77092aeaea1aceba624cf6",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u795b-t",
+        "u53bb-t02",
+        "u793b-g"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-t",
+        "fixedName": "u795b-t@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 20,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-ue0101",
+      "fixedRootVersion": "u795b-ue0101@9",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "../hanja-outside-three-source-capture-2026-10-18/engine-whole-u795b.json",
+      "proofFileSHA256": "b7677e8752efceb70a4511811c63bf173fea6fba3101b5f5cff862fd86f410df",
+      "proofStorage": "Exact full5 bytes reused from immutable base capsule",
+      "definitionNames": [
+        "u795b-ue0101",
+        "u795b-jn",
+        "u53bb-02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-ue0101",
+        "fixedName": "u795b-ue0101@9",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 23,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-ue0100",
+      "fixedRootVersion": "u795b-ue0100@14",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "../hanja-outside-three-source-capture-2026-10-18/engine-whole-u795b.json",
+      "proofFileSHA256": "b7677e8752efceb70a4511811c63bf173fea6fba3101b5f5cff862fd86f410df",
+      "proofStorage": "Exact full5 bytes reused from immutable base capsule",
+      "definitionNames": [
+        "u795b-ue0100",
+        "u795b-jn",
+        "u53bb-02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-ue0100",
+        "fixedName": "u795b-ue0100@14",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 23,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-ue0102",
+      "fixedRootVersion": "u795b-ue0102@7",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-ue0102.json",
+      "proofFileSHA256": "0a745c9b883e8aaf47c2d0af557deb8dfc7e59a66d6486f6e936631ce6cf6995",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u795b-ue0102",
+        "u53bb-02",
+        "u793b-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-ue0102",
+        "fixedName": "u795b-ue0102@7",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 20,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u795b-var-001",
+      "fixedRootVersion": "u795b-var-001@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-var-001.json",
+      "proofFileSHA256": "013030f0f4184035ce181d1d601f6d2fad7e83b0839a30b3aaa65364b9be06bf",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u795b-var-001",
+        "u53bb-v02",
+        "u793b-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u795b-var-001",
+        "fixedName": "u795b-var-001@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 22,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "ebag_s047-010",
+      "fixedRootVersion": "ebag_s047-010@1",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-ebag_s047-010.json",
+      "proofFileSHA256": "3ad1b2af85e4cbd94109fcc68dda6a0bfa05c23c52354d5ffa822cf42e25e876",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "ebag_s047-010",
+        "u5de0",
+        "u5de0-j",
+        "u540e",
+        "u540e-j",
+        "u53e3-j"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "ebag_s047-010",
+        "fixedName": "ebag_s047-010@1",
+        "rawGroups": 17,
+        "drawingGroups": 17,
+        "polygons": 35,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "conservativeRawMinimum": 15,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 15,
+        "maximum": 17,
+        "target": 12,
+        "containsTarget": false,
+        "requiredJoinCount": 5,
+        "availableExactJoinCount": 2,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "hkcs_m785c",
+      "fixedRootVersion": "hkcs_m785c@2",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-hkcs_m785c.json",
+      "proofFileSHA256": "a056419a5af95e2968aa7f1faf9700d765d8387029fe79bf1a9d6e4406ef52b3",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "hkcs_m785c",
+        "hkcs_m5de0-p02-s00",
+        "hkcs_m77f3-p01-s00"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "hkcs_m785c",
+        "fixedName": "hkcs_m785c@2",
+        "rawGroups": 16,
+        "drawingGroups": 16,
+        "polygons": 30,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ]
+        ],
+        "conservativeRawMinimum": 15,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 15,
+        "maximum": 16,
+        "target": 12,
+        "containsTarget": false,
+        "requiredJoinCount": 4,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "hkcs_u785c",
+      "fixedRootVersion": "hkcs_u785c@1",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-hkcs_u785c.json",
+      "proofFileSHA256": "dc23cc54172e00e59d33aa1a513c1417a74472c962138d6eeee03ff2baf678ff",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "hkcs_u785c",
+        "hkcs_u5de0-02",
+        "hkcs_u77f3-01@1",
+        "u77f3-01@6"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "hkcs_u785c",
+        "fixedName": "hkcs_u785c@1",
+        "rawGroups": 16,
+        "drawingGroups": 16,
+        "polygons": 30,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ]
+        ],
+        "conservativeRawMinimum": 15,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 15,
+        "maximum": 16,
+        "target": 12,
+        "containsTarget": false,
+        "requiredJoinCount": 4,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "hs_u785c",
+      "fixedRootVersion": "hs_u785c@1",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-hs_u785c.json",
+      "proofFileSHA256": "c313cae4f24691ec5b3098b6399bcf9ec2c7f2457992d9f1c73c836a00e89114",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "hs_u785c",
+        "u785c@11",
+        "u785c-j@2",
+        "u5de0-02",
+        "u77f3-01@6"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "hs_u785c",
+        "fixedName": "hs_u785c@1",
+        "rawGroups": 17,
+        "drawingGroups": 16,
+        "polygons": 30,
+        "emptyRawIndices": [
+          16
+        ],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ]
+        ],
+        "conservativeRawMinimum": 15,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 15,
+        "maximum": 16,
+        "target": 12,
+        "containsTarget": false,
+        "requiredJoinCount": 4,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "kaido_hkrm-06011131",
+      "fixedRootVersion": "kaido_hkrm-06011131@1",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-kaido_hkrm-06011131.json",
+      "proofFileSHA256": "461c85e0f982d9781abb5cc8c88d51d8a61d909d49724704dd8ba11f64953eea",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "kaido_hkrm-06011131",
+        "u4e00@16",
+        "u4e00-j@15",
+        "cdp-8bc8-03",
+        "u77f3-01@6"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "kaido_hkrm-06011131",
+        "fixedName": "kaido_hkrm-06011131@1",
+        "rawGroups": 13,
+        "drawingGroups": 13,
+        "polygons": 26,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 13,
+        "target": 12,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 2,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "kaido_hkrm-06011132",
+      "fixedRootVersion": "kaido_hkrm-06011132@3",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-kaido_hkrm-06011132.json",
+      "proofFileSHA256": "bea8dabd8c0336f98bbb75e59ff7fdd48e7314efbf87a3aed4f564e40fc17449",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "kaido_hkrm-06011132",
+        "u2bda7-var-002",
+        "u4e3f-03"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "kaido_hkrm-06011132",
+        "fixedName": "kaido_hkrm-06011132@3",
+        "rawGroups": 13,
+        "drawingGroups": 13,
+        "polygons": 29,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 13,
+        "target": 12,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 2,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "lp_lps-00017437",
+      "fixedRootVersion": "lp_lps-00017437@1",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-hs_u785c.json",
+      "proofFileSHA256": "c313cae4f24691ec5b3098b6399bcf9ec2c7f2457992d9f1c73c836a00e89114",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "lp_lps-00017437",
+        "lp_lpy-00017437@1",
+        "u785c-j@2",
+        "u5de0-02",
+        "u77f3-01@6"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "lp_lps-00017437",
+        "fixedName": "lp_lps-00017437@1",
+        "rawGroups": 17,
+        "drawingGroups": 16,
+        "polygons": 30,
+        "emptyRawIndices": [
+          16
+        ],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ]
+        ],
+        "conservativeRawMinimum": 15,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 15,
+        "maximum": 16,
+        "target": 12,
+        "containsTarget": false,
+        "requiredJoinCount": 4,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u785c",
+      "root": "simch-kx_t083014",
+      "fixedRootVersion": "simch-kx_t083014@1",
+      "sourceFile": "sources-u785c.json",
+      "proofFile": "engine-whole-simch-kx_t083014.json",
+      "proofFileSHA256": "f8f3abb0d0713c1b1d8d7e7510469eecbec57926b9bf56f904c0fb6ed8b5add6",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "simch-kx_t083014",
+        "u5de0-02",
+        "u77f3-01@6"
+      ],
+      "diagnostic": {
+        "family": "u785c",
+        "root": "simch-kx_t083014",
+        "fixedName": "simch-kx_t083014@1",
+        "rawGroups": 16,
+        "drawingGroups": 16,
+        "polygons": 30,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            3,
+            4
+          ]
+        ],
+        "conservativeRawMinimum": 15,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 15,
+        "maximum": 16,
+        "target": 12,
+        "containsTarget": false,
+        "requiredJoinCount": 4,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "akr-17061",
+      "fixedRootVersion": "akr-17061@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-akr-17061.json",
+      "proofFileSHA256": "d84dd3764fb3aee4d6a86f0bbed9d4ad70c1ce955bcef429a8c08c56751e2c2d",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "akr-17061",
+        "u53bb-var-001",
+        "u53bb-jn",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "akr-17061",
+        "fixedName": "akr-17061@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 23,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "jgj-005922",
+      "fixedRootVersion": "jgj-005922@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-jgj-005922.json",
+      "proofFileSHA256": "b16b4888c6722a83878c94dc7a18b33fba2bb6aa7b829850fd63753556b67fda",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "jgj-005922",
+        "u2ff7-u531a-u20bee-02@2",
+        "u531a-05@2",
+        "u20bee-jv@3",
+        "u20bee-j",
+        "u2ba4f-jv",
+        "u53e3-j",
+        "u793b-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "jgj-005922",
+        "fixedName": "jgj-005922@1",
+        "rawGroups": 17,
+        "drawingGroups": 17,
+        "polygons": 24,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            15,
+            16
+          ]
+        ],
+        "conservativeRawMinimum": 13,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 13,
+        "maximum": 17,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 7,
+        "availableExactJoinCount": 4,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "krcourt-a0215",
+      "fixedRootVersion": "krcourt-a0215@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-krcourt-a0215.json",
+      "proofFileSHA256": "00a213ac6d45ba2898c4fcd28931d2243ca00165b3eb9fcc9fd64bf0b75671aa",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "krcourt-a0215",
+        "u793b-g"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "krcourt-a0215",
+        "fixedName": "krcourt-a0215@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 20,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ],
+          [
+            8,
+            9
+          ]
+        ],
+        "conservativeRawMinimum": 9,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 9,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 2,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u2ff0-u793a-u5340",
+      "fixedRootVersion": "u2ff0-u793a-u5340@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u2ff0-u793a-u5340.json",
+      "proofFileSHA256": "ab8af46a00cc91404093093f0b2b441d21a666476d83c22e52821036baad8775",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u2ff0-u793a-u5340",
+        "u5340-02",
+        "u54c1-08@2",
+        "u53e3-j@2",
+        "u531a-j",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u2ff0-u793a-u5340",
+        "fixedName": "u2ff0-u793a-u5340@1",
+        "rawGroups": 20,
+        "drawingGroups": 20,
+        "polygons": 31,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            9,
+            10
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "conservativeRawMinimum": 17,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 17,
+        "maximum": 20,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 10,
+        "availableExactJoinCount": 3,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u2ff0-u793b-u5340",
+      "fixedRootVersion": "u2ff0-u793b-u5340@2",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u2ff0-u793b-u5340.json",
+      "proofFileSHA256": "3936b882d710efef3762310db334d613e8960baee02104f33a39e9f995e09eff",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u2ff0-u793b-u5340",
+        "u5340-02",
+        "u54c1-08@2",
+        "u53e3-j@2",
+        "u531a-j",
+        "u793b-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u2ff0-u793b-u5340",
+        "fixedName": "u2ff0-u793b-u5340@2",
+        "rawGroups": 20,
+        "drawingGroups": 20,
+        "polygons": 28,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "conservativeRawMinimum": 16,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 16,
+        "maximum": 20,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 10,
+        "availableExactJoinCount": 4,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "u2ff0-u793b-u5340-var-001",
+      "fixedRootVersion": "u2ff0-u793b-u5340-var-001@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u2ff0-u793b-u5340-var-001.json",
+      "proofFileSHA256": "11463920cfa9be6b8dc379ca2ba988b41947c9fdcc4e58077ebd15ce46722e9f",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "u2ff0-u793b-u5340-var-001",
+        "u5340-g02",
+        "u54c1-08",
+        "u53e3-j",
+        "u531a-g",
+        "u793b-g"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "u2ff0-u793b-u5340-var-001",
+        "fixedName": "u2ff0-u793b-u5340-var-001@1",
+        "rawGroups": 20,
+        "drawingGroups": 20,
+        "polygons": 29,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "conservativeRawMinimum": 16,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 16,
+        "maximum": 20,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 10,
+        "availableExactJoinCount": 4,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "zihai-089236",
+      "fixedRootVersion": "zihai-089236@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-zihai-089236.json",
+      "proofFileSHA256": "4142ec600eb556f279a8ce645c254cc2bc8b5a9a8ae4c9d8fcae24e1c8940215",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "zihai-089236",
+        "u53bb-g02",
+        "u722a-g01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "zihai-089236",
+        "fixedName": "zihai-089236@1",
+        "rawGroups": 10,
+        "drawingGroups": 10,
+        "polygons": 23,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            0,
+            1
+          ]
+        ],
+        "conservativeRawMinimum": 9,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 9,
+        "maximum": 10,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 0,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "hkcs_m795b",
+      "fixedRootVersion": "hkcs_m795b@2",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-hkcs_m795b.json",
+      "proofFileSHA256": "d1e8af57fa8ed478ee01f91ce6ebdf6c8325d2422be2cb9dd406dcbcb2712a05",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "hkcs_m795b",
+        "hkcs_m53bb-p02-s00",
+        "hkcs_m793a-p01-s00"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "hkcs_m795b",
+        "fixedName": "hkcs_m795b@2",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 23,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "hkcs_u795b",
+      "fixedRootVersion": "hkcs_u795b@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-hkcs_u795b.json",
+      "proofFileSHA256": "a9afbd1700ec356d858ee3f4dce7289bdb9151a7a9a5749ded6f48d1ba2d182e",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "hkcs_u795b",
+        "hkcs_u53bb-02",
+        "hkcs_u793b-01-var-001"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "hkcs_u795b",
+        "fixedName": "hkcs_u795b@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 22,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "hs_u795b",
+      "fixedRootVersion": "hs_u795b@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-hs_u795b.json",
+      "proofFileSHA256": "a614ec2c9cf543c3d7e2f1aa188108f109b9da86b77062f9ebd6de35741ff349",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "hs_u795b",
+        "u795b@13",
+        "u795b-j@2",
+        "u53bb-02@8",
+        "u53bb-v02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "hs_u795b",
+        "fixedName": "hs_u795b@1",
+        "rawGroups": 12,
+        "drawingGroups": 11,
+        "polygons": 25,
+        "emptyRawIndices": [
+          11
+        ],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "hs_u795b-var-001",
+      "fixedRootVersion": "hs_u795b-var-001@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-hs_u795b-var-001.json",
+      "proofFileSHA256": "bc5dc12632cce84c68d3468a9af89888cc8344547a032d973d10c4e4683619fb",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "hs_u795b-var-001",
+        "u795b-ue0102@5",
+        "u53bb-02@8",
+        "u53bb-v02",
+        "u793b-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "hs_u795b-var-001",
+        "fixedName": "hs_u795b-var-001@1",
+        "rawGroups": 12,
+        "drawingGroups": 11,
+        "polygons": 22,
+        "emptyRawIndices": [
+          11
+        ],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "lp_lps-00017692",
+      "fixedRootVersion": "lp_lps-00017692@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-hs_u795b.json",
+      "proofFileSHA256": "a614ec2c9cf543c3d7e2f1aa188108f109b9da86b77062f9ebd6de35741ff349",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "lp_lps-00017692",
+        "lp_lpy-00017692@1",
+        "u795b-j@2",
+        "u53bb-02@8",
+        "u53bb-v02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "lp_lps-00017692",
+        "fixedName": "lp_lps-00017692@1",
+        "rawGroups": 12,
+        "drawingGroups": 11,
+        "polygons": 25,
+        "emptyRawIndices": [
+          11
+        ],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "lp_lps-00106543",
+      "fixedRootVersion": "lp_lps-00106543@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-lp_lps-00106543.json",
+      "proofFileSHA256": "65b4ebce89fce6d6b34d70bb3d334baac4f6016ead4a7fac142295fb1246f30e",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "lp_lps-00106543",
+        "lp_lpy-00106543",
+        "u795b-g",
+        "u53bb-g02",
+        "u793b-g"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "lp_lps-00106543",
+        "fixedName": "lp_lps-00106543@1",
+        "rawGroups": 12,
+        "drawingGroups": 11,
+        "polygons": 22,
+        "emptyRawIndices": [
+          11
+        ],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "lp_lps-00123690",
+      "fixedRootVersion": "lp_lps-00123690@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-lp_lps-00123690.json",
+      "proofFileSHA256": "53606e50309b1a98158f540a9a8b67f0f80667780c08e3de887573c0d95226ec",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "lp_lps-00123690",
+        "lp_lpy-00123690",
+        "u795b-t",
+        "u53bb-t02",
+        "u793b-g"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "lp_lps-00123690",
+        "fixedName": "lp_lps-00123690@1",
+        "rawGroups": 12,
+        "drawingGroups": 11,
+        "polygons": 20,
+        "emptyRawIndices": [
+          11
+        ],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "lp_lps-00129103",
+      "fixedRootVersion": "lp_lps-00129103@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-lp_lps-00129103.json",
+      "proofFileSHA256": "e2f0c9de28a3b97c6bbd52a7c25ce757934196a86eed2b9e9d9e37d32ffd47ad",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "lp_lps-00129103",
+        "lp_lpy-00129103",
+        "u795b-k",
+        "u53bb-g02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "lp_lps-00129103",
+        "fixedName": "lp_lps-00129103@1",
+        "rawGroups": 12,
+        "drawingGroups": 11,
+        "polygons": 25,
+        "emptyRawIndices": [
+          11
+        ],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "lp_lps-00132263",
+      "fixedRootVersion": "lp_lps-00132263@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-lp_lps-00132263.json",
+      "proofFileSHA256": "51fbc1443de4b97949eb43d8d98f2324c8c9d884273c299fbb1e8521e7c3fba6",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "lp_lps-00132263",
+        "lp_lpy-00132263@1",
+        "u795b-kp@1",
+        "u53bb-g02",
+        "u793a-kp01@2"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "lp_lps-00132263",
+        "fixedName": "lp_lps-00132263@1",
+        "rawGroups": 12,
+        "drawingGroups": 11,
+        "polygons": 24,
+        "emptyRawIndices": [
+          11
+        ],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "lp_lps-00151127",
+      "fixedRootVersion": "lp_lps-00151127@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-hs_u795b-var-001.json",
+      "proofFileSHA256": "bc5dc12632cce84c68d3468a9af89888cc8344547a032d973d10c4e4683619fb",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "lp_lps-00151127",
+        "lp_lpy-00151127@1",
+        "u795b-ue0102@5",
+        "u53bb-02@8",
+        "u53bb-v02",
+        "u793b-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "lp_lps-00151127",
+        "fixedName": "lp_lps-00151127@1",
+        "rawGroups": 12,
+        "drawingGroups": 11,
+        "polygons": 22,
+        "emptyRawIndices": [
+          11
+        ],
+        "exactConsecutiveJoins": [
+          [
+            1,
+            2
+          ]
+        ],
+        "conservativeRawMinimum": 10,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 10,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": true,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 1,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    },
+    {
+      "family": "u795b",
+      "root": "simch-kx_t084126",
+      "fixedRootVersion": "simch-kx_t084126@1",
+      "sourceFile": "sources-u795b.json",
+      "proofFile": "engine-whole-u795b-j.json",
+      "proofFileSHA256": "1a3ed33362500a72e6a4dd99732ade46458faa76cf6a7f9be0a8a22ce9f87040",
+      "proofStorage": "Stored once per exact full5 byte hash; aliases retain distinct explicit root entries",
+      "definitionNames": [
+        "simch-kx_t084126",
+        "u53bb-02@8",
+        "u53bb-v02",
+        "u793a-01"
+      ],
+      "diagnostic": {
+        "family": "u795b",
+        "root": "simch-kx_t084126",
+        "fixedName": "simch-kx_t084126@1",
+        "rawGroups": 11,
+        "drawingGroups": 11,
+        "polygons": 25,
+        "emptyRawIndices": [],
+        "exactConsecutiveJoins": [],
+        "conservativeRawMinimum": 11,
+        "internalPrimitiveGaps": []
+      },
+      "sourceCountOnlyTargetRange": {
+        "minimum": 11,
+        "maximum": 11,
+        "target": 10,
+        "containsTarget": false,
+        "requiredJoinCount": 1,
+        "availableExactJoinCount": 0,
+        "doesNotApproveGroupingOrNative": true
+      },
+      "nativeReviewed": false,
+      "runtimeApplied": false,
+      "canonicalHoldCreated": false
+    }
+  ],
+  "unresolvedRequestDiagnostics": [
+    {
+      "family": "u785c",
+      "root": "u785c-g",
+      "names": [],
+      "missing": [
+        "u785c-g"
+      ],
+      "sourceComplete": false,
+      "rootReused": false,
+      "lookupName": "u785c-g",
+      "url": "https://glyphwiki.org/api/glyph?name=u785c-g",
+      "error": "No valid published definition",
+      "capturedAt": "2026-10-17T17:46:01Z",
+      "transportBodyRetained": false,
+      "meaning": "Definition validation failed for this response; no claim of permanent nonexistence or exhaustive source absence."
+    },
+    {
+      "family": "u785c",
+      "root": "u785c-h",
+      "names": [],
+      "missing": [
+        "u785c-h"
+      ],
+      "sourceComplete": false,
+      "rootReused": false,
+      "lookupName": "u785c-h",
+      "url": "https://glyphwiki.org/api/glyph?name=u785c-h",
+      "error": "No valid published definition",
+      "capturedAt": "2026-10-17T17:46:02Z",
+      "transportBodyRetained": false,
+      "meaning": "Definition validation failed for this response; no claim of permanent nonexistence or exhaustive source absence."
+    },
+    {
+      "family": "u785c",
+      "root": "u785c-kp",
+      "names": [],
+      "missing": [
+        "u785c-kp"
+      ],
+      "sourceComplete": false,
+      "rootReused": false,
+      "lookupName": "u785c-kp",
+      "url": "https://glyphwiki.org/api/glyph?name=u785c-kp",
+      "error": "No valid published definition",
+      "capturedAt": "2026-10-17T17:46:02Z",
+      "transportBodyRetained": false,
+      "meaning": "Definition validation failed for this response; no claim of permanent nonexistence or exhaustive source absence."
+    },
+    {
+      "family": "u785c",
+      "root": "u785c-k",
+      "names": [],
+      "missing": [
+        "u785c-k"
+      ],
+      "sourceComplete": false,
+      "rootReused": false,
+      "lookupName": "u785c-k",
+      "url": "https://glyphwiki.org/api/glyph?name=u785c-k",
+      "error": "No valid published definition",
+      "capturedAt": "2026-10-17T17:46:03Z",
+      "transportBodyRetained": false,
+      "meaning": "Definition validation failed for this response; no claim of permanent nonexistence or exhaustive source absence."
+    },
+    {
+      "family": "u785c",
+      "root": "u785c-t",
+      "names": [],
+      "missing": [
+        "u785c-t"
+      ],
+      "sourceComplete": false,
+      "rootReused": false,
+      "lookupName": "u785c-t",
+      "url": "https://glyphwiki.org/api/glyph?name=u785c-t",
+      "error": "No valid published definition",
+      "capturedAt": "2026-10-17T17:46:03Z",
+      "transportBodyRetained": false,
+      "meaning": "Definition validation failed for this response; no claim of permanent nonexistence or exhaustive source absence."
+    }
+  ],
+  "sourceGenerationPassesPerNewWhole": 1,
+  "sourceCheckRunsPerNewWhole": 1,
+  "nativeReviewCount": 0,
+  "runtimeApplied": false,
+  "canonicalHoldCreated": false,
+  "sourceCheckStatus": "All39 additional whole identities passed one independent source check each"
+}
