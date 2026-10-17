@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "batch": 982,
+  "glyph": "貶",
+  "verifiedAt": "2026-10-17",
+  "status": "native-and-source-held-focused-check-PASS",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "holdFile": "native-hold.json",
+  "holdSHA256": "fe1d3e93b1397791a7bfcb68705751cb05b654505d6c17cf47ff9103d403f42e",
+  "nativeFacts": {
+    "actualWholeViews": 3,
+    "directionsObserved": 12,
+    "directionsMatched": 9,
+    "boundaryMismatchPens": [
+      10,
+      11,
+      12
+    ],
+    "finePensPassed": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ],
+    "coarseFramesReviewed": 0,
+    "replaysObserved": 0,
+    "workerNativeObservations": 0
+  },
+  "sourceFacts": {
+    "raw12To13ExactEndpointEquality": false,
+    "gapDeltaDecimal": [
+      -1.005,
+      0
+    ],
+    "minimumAfterDomestic10Split": 13,
+    "catalog": 12,
+    "sourceGeometryOrWidthOrPathChanged": false,
+    "alternativeProfileCreated": false
+  },
+  "canonicalDuplicateCheck": {
+    "executions": 1,
+    "parentBatch": 981,
+    "resumeReferences": 43,
+    "holdsBefore": 280,
+    "uniqueHoldsBefore": 280,
+    "stringHolds": 80,
+    "objectHolds": 200,
+    "glyphAndRootMatches": 0,
+    "comparison": "Both string and JSON-encoded object entries checked for 貶 and u8cb6"
+  },
+  "parentCheckpoint": {
+    "file": "docs/hanja-goal-glyphwiki-batch981-2026-10-13/resume.json",
+    "sha256": "32ec4fff9c12af8ecf870979783ec0d5c352f0c3b4e7a6b02161e89711b2697d",
+    "actualRuntime": 5501,
+    "actualRemaining": 477,
+    "inheritedHolds": 280
+  },
+  "focusedChecks": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "method": "One Python context execution verified24pins, actual parent and hold SHA, exact raw endpoints and minimum13; one rtk proxy node --experimental-strip-types --input-type=module lookup verified registry absence.",
+    "protectedPins": 24,
+    "originalAndStrictPreparationBytesPreserved": true,
+    "parentAndHoldSHA256Verified": true,
+    "exactSourceGapAndMinimumReproduced": true,
+    "registryOccurrences": 0,
+    "exactLookup": null,
+    "actualRegisteredCount": 5501,
+    "canonicalDuplicateCheckRerun": false
+  },
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "privateMediaSaved": false
+}

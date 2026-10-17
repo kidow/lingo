@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "batch": 982,
+  "glyph": "貶",
+  "verifiedAt": "2026-10-17",
+  "status": "native-domestic-pen-boundary-mismatch-and-exact-source-join-held",
+  "selectedRoot": "u8cb6",
+  "catalogStrokes": 12,
+  "selectedProofFile": "./engine-whole-u8cb6.json",
+  "selectedProofSHA256": "488c0f134823ad7a00cdf89d9a4f41d8cbbba770292da49d09b9fa895e16d05e",
+  "full5SelectedProofSHA256": "763098d1fd7fa9aa70fb0215d7c8101f13edc2c62afde3c379c42038d978d1bb",
+  "reason": "Domestic pen10 is a pure horizontal, pen11 is a long diagonal, and pen12 begins with the left nib followed by the right sweep. The original compiler combines raw10+11 into pen10 and splits nib raw12 from sweep raw13. Splitting raw10/11 is exact, but joining raw12/13 would require bridging a nonzero endpoint gap. Current no-connector policy permits no coordinate, reveal-path, width or geometry edits.",
+  "nativeApproval": false,
+  "allStrokesReviewed": false,
+  "nativeEvidence": {
+    "observer": "/root actual in-app browser panel",
+    "workerNativeObservations": 0,
+    "panelInterpretation": {
+      "leftColored": "domestic dictionary",
+      "rightBlack": "original candidate cumulative strokes"
+    },
+    "actualWholeViews": 3,
+    "actualWholeObservations": [
+      {
+        "root": "u8cb6",
+        "compatible": true,
+        "actualSeparateScreenshot": true,
+        "proofSHA256": "488c0f134823ad7a00cdf89d9a4f41d8cbbba770292da49d09b9fa895e16d05e"
+      },
+      {
+        "root": "u8cb6-k",
+        "compatible": true,
+        "actualSeparateScreenshot": true,
+        "proofSHA256": "488c0f134823ad7a00cdf89d9a4f41d8cbbba770292da49d09b9fa895e16d05e"
+      },
+      {
+        "root": "u8cb6-ue0100",
+        "compatible": true,
+        "actualSeparateScreenshot": true,
+        "proofSHA256": "488c0f134823ad7a00cdf89d9a4f41d8cbbba770292da49d09b9fa895e16d05e"
+      }
+    ],
+    "dictionaryDirectionsObserved": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "dictionaryDirectionMatches": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "dictionaryDirectionBoundaryMismatches": [
+      10,
+      11,
+      12
+    ],
+    "domesticLastThree": {
+      "10": "pure horizontal",
+      "11": "long diagonal from top right to bottom left",
+      "12": "left small nib then long right sweep"
+    },
+    "candidateLastThree": {
+      "10": "horizontal plus upper diagonal, raw[10,11]",
+      "11": "left small nib, raw[12]",
+      "12": "long right sweep, raw[13]"
+    },
+    "fineChecks": [
+      {
+        "pen": 1,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": true,
+        "noCompletionPop": true
+      },
+      {
+        "pen": 2,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": true,
+        "noCompletionPop": true
+      },
+      {
+        "pen": 6,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": true,
+        "noCompletionPop": true
+      },
+      {
+        "pen": 7,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": true,
+        "noCompletionPop": true
+      },
+      {
+        "pen": 8,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": true,
+        "noCompletionPop": true
+      }
+    ],
+    "finePensNotReviewed": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12
+    ],
+    "progressiveFramesReviewed": 0,
+    "coarseFramesReviewed": 0,
+    "maskBoundaryObservations": 0,
+    "actualReplaysObserved": 0
+  },
+  "sourceFeasibility": {
+    "rawIndexBase": 0,
+    "originalSourceGroups": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ]
+    ],
+    "consideredDomesticBoundaryGroups": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12,
+        13
+      ]
+    ],
+    "profileCreated": false,
+    "primitiveCalls": [
+      {
+        "raw": 10,
+        "originalCandidatePen": 10,
+        "calls": [
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              86.435,
+              80.27000000000001,
+              173.87,
+              80.27000000000001,
+              0,
+              2
+            ],
+            "start": [
+              86.435,
+              80.27000000000001
+            ],
+            "end": [
+              173.87,
+              80.27000000000001
+            ],
+            "polygons": 1
+          }
+        ]
+      },
+      {
+        "raw": 11,
+        "originalCandidatePen": 10,
+        "calls": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              173.87,
+              80.27000000000001,
+              150.755,
+              121.835,
+              112.565,
+              154.435,
+              22,
+              7
+            ],
+            "start": [
+              173.87,
+              80.27000000000001
+            ],
+            "end": [
+              112.565,
+              154.435
+            ],
+            "polygons": 2
+          }
+        ]
+      },
+      {
+        "raw": 12,
+        "originalCandidatePen": 11,
+        "calls": [
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              84.425,
+              176.44,
+              94.475,
+              164.215,
+              105.53,
+              130.8,
+              0,
+              7
+            ],
+            "start": [
+              84.425,
+              176.44
+            ],
+            "end": [
+              105.53,
+              130.8
+            ],
+            "polygons": 3
+          }
+        ]
+      },
+      {
+        "raw": 13,
+        "originalCandidatePen": 12,
+        "calls": [
+          {
+            "kind": "cdDrawBezier",
+            "args": [
+              104.525,
+              130.8,
+              108.545,
+              162.585,
+              120.605,
+              176.44,
+              178.895,
+              172.365,
+              7,
+              0
+            ],
+            "start": [
+              104.525,
+              130.8
+            ],
+            "end": [
+              178.895,
+              172.365
+            ],
+            "polygons": 2
+          }
+        ]
+      }
+    ],
+    "nibSweepJoin": {
+      "raw12End": [
+        105.53,
+        130.8
+      ],
+      "raw13Start": [
+        104.525,
+        130.8
+      ],
+      "deltaStartMinusEndDecimal": [
+        -1.005,
+        0
+      ],
+      "exactEndpointEquality": false
+    },
+    "exactConsecutiveJoinsOriginal": [
+      [
+        1,
+        2
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "nonemptyRawCount": 14,
+    "originalMinimumPens": 12,
+    "domesticPureHorizontalRequiresSplitting": [
+      10,
+      11
+    ],
+    "remainingExactConsecutiveJoins": [
+      [
+        1,
+        2
+      ]
+    ],
+    "minimumPensAfterRequiredSplit": 13,
+    "catalogStrokes": 12,
+    "wholeFamilyProofsByteIdentical": true,
+    "conclusion": "Under the existing exact-consecutive-join and no-invented-connector contract, the proposed domestic grouping cannot reach12pens. No multi-mask gap jump, epsilon join, reversed path or inferred diagonal is approved."
+  },
+  "originalInputBytePins": {
+    "candidate-compile-analysis.json": "5049f6bf9034e38b86baeac57c63367b6c22998c154579a2903cac8beeaf7c6f",
+    "engine-proof.json": "c6d079d7a0abab8e2ffccbb85fc26cf57ce9112e47fea0c6b32bcc1918fec3d1",
+    "engine-whole-u8cb6-k.json": "488c0f134823ad7a00cdf89d9a4f41d8cbbba770292da49d09b9fa895e16d05e",
+    "engine-whole-u8cb6-ue0100.json": "488c0f134823ad7a00cdf89d9a4f41d8cbbba770292da49d09b9fa895e16d05e",
+    "engine-whole-u8cb6.json": "488c0f134823ad7a00cdf89d9a4f41d8cbbba770292da49d09b9fa895e16d05e",
+    "metadata.json": "852547f8f37ff27a54ca799c465925a76d2e3f72bbe3a2b8d7f69b294efc4641",
+    "progressive.mjs": "8aa92d8cc6d3ef1cca539da68fb54d35ce9832d988ad861d93faea295d6e64cc",
+    "source-analysis.json": "8cfc56a86743c4d539e928e360d2806cb2a475ac72998169e8b6d4951b464f91",
+    "source-join-analysis.json": "7f227373c23d87552e6d3480b9906b0724258cb604fa81df3db86ed9b167d3a5",
+    "source-preservation-audit.json": "490df3d39272b11bd0dab7d725afc76f2cf42446e5a2ea26102c7b7c6ed4d29f",
+    "sources.json": "062932cc003a13dacd36a66fd7c51b920f4826f26acb4ed6734eace780d3f6bc",
+    "verify-source.mjs": "fc3d4dd0d75a9abbeaf702fd4776b1b25be1ab05861d65be22877812a09de333",
+    "NOTICE.md": "a8da1676705f94c386e5378fb473869f62ded81dfa001788d30f6d0f65b48554",
+    "native-server-compile.mjs": "b31e49cff7958ee0dadb73c0e0d81ec67805d26374730272fcfbf001d4f0b543",
+    "native-server-source-audit.json": "3f4a2a974840cff7196ee35104d80d7dd62b61edf0a2b0ba24a24c0ec8cd10ae",
+    "native-server-validation.json": "ea058b5075bbf56873bccbd090a91a6d283600ff23defe651ecd4f28c5ba380b",
+    "serve-native.py": "6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b",
+    "source-only-helper-readiness.json": "73b3f56123797034b364033269a597dccc8c85b75d214d4b50b922eff1990544"
+  },
+  "additionalProtectedBytePins": {
+    "../hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "candidatePreparationBytePins": {
+    "progressive-mandatory-candidate.mjs": "3219cfd9f74f1b03c29b717f385432d51bcea8ad56edd38fa8618b4a0b9d983b",
+    "progressive-mandatory-candidate.d.mts": "9ebd297ad68d1e5d41da6bc71a5689101e984f5cee3bc6fff8a2a82df7dc0f4a",
+    "server-compile-mandatory-candidate.mjs": "959ea9366395f43846be57f23a3560ebd77693a10bcf80bc35a4b4edfdb23464",
+    "mandatory-source-preparation.json": "8b887145a3e439304ee589e6fa1669a450894c1062097ad7cddca0a6a490942a"
+  },
+  "originalFileCount": 18,
+  "sourceMetadataChanged": false,
+  "sourceAuditChanged": false,
+  "originalNoticeChanged": false,
+  "geometryChanged": false,
+  "sourceWidthChanged": false,
+  "sourcePathChanged": false,
+  "originalOptionalCompilerChanged": false,
+  "existingStrictPreparationPreserved": true,
+  "alternativeProfileCreated": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "privateMediaSaved": false,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "nextAction": "Obtain an independently supported complete whole or source evidence with matching domestic pen boundaries and exact continuous trajectories. Preserve this evidence; do not silently bridge the raw12/13 gap."
+}
