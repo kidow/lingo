@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {buildSourceProof,compileProgressive,sourceGroups,sourceRoot,selectedProofIdentity,DOMESTIC_TO_AUTHORED_PEN} from './progressive-terminal15-native-order.mjs'
+import {HANJA_STROKES,hanjaStrokeData} from '../../lib/hanja-strokes.ts'
+const read=n=>readFileSync(new URL(n,import.meta.url)),obj=n=>JSON.parse(read(n)),sha=b=>createHash('sha256').update(b).digest('hex')
+const audit=obj('native-terminal15-order-audit.json'),review=obj('review.json'),source=obj('sources.json'),meta=obj('metadata.json')
+for(const[f,h]of Object.entries(audit.inputSHA256))assert.equal(sha(read(f)),h,'Immutable original/candidate input '+f)
+assert.deepEqual(selectedProofIdentity,audit.identity)
+assert.deepEqual(Object.keys(selectedProofIdentity).sort(),['sourceHeaderFile','sourceHeaderFileSHA256','sourceProofFile','sourceProofFileSHA256','sourceRoot'])
+const proof=buildSourceProof(selectedProofIdentity),before=JSON.stringify(proof)
+assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace'])
+assert.equal(sha(before),audit.fullProofSHA256)
+const compiled=compileProgressive(proof.trace,proof,selectedProofIdentity)
+assert.equal(JSON.stringify(proof),before);assert.equal(sha(JSON.stringify(compiled)),audit.compiledSHA256)
+assert.equal(compiled.length,20);assert.equal(compiled.flat().length,22);assert.equal(proof.groups.reduce((n,g)=>n+g.polygons.length,0),46)
+const entry=hanjaStrokeData({glyph:'顣',strokes:20});assert(entry);assert.equal(HANJA_STROKES.filter(e=>e.glyph==='顣').length,1)
+assert.equal(entry.verifiedAt,'2026-10-17');assert.deepEqual(entry.outlines,compiled);assert.deepEqual(entry.paths,compiled.map(p=>p.map(m=>m.outline).join(' ')));assert.equal(entry.pathsSha256,sha(JSON.stringify(entry.paths)));assert.deepEqual(entry.sourceStrokeIndices,sourceGroups.map(g=>g[0]+1))
+assert.deepEqual(sourceGroups,review.sourceGroupsZeroBased);assert.deepEqual(DOMESTIC_TO_AUTHORED_PEN,review.domesticToAuthoredPen)
+const bytes=read('../../public/hanja-strokes/glyphwiki/u9863.json'),geometry=JSON.parse(bytes)
+assert.equal(entry.geometrySource,sha(bytes));assert.equal(geometry.root,sourceRoot);assert.deepEqual(geometry.records,source.records);assert.deepEqual(geometry.drawTrace,proof.trace);assert.deepEqual(geometry.engineHashes,proof.engineHashes);assert.deepEqual(geometry.enginePreset,proof.defaults);assert.deepEqual(geometry.sourceGroups,sourceGroups)
+for(const k of ['orderReviewSha256','geometryReviewSha256','directionReviewSha256'])assert.equal(entry.sourceReference[k],sha(read('review.json')))
+assert.equal(entry.sourceReference.dictionarySvgSha256,meta.dictionary.sha256);assert.equal(review.progressiveFramesApproved,180);assert.equal(review.progressiveFramesReviewed,180)
+assert.deepEqual(review.progressivePensReviewed,Array.from({length:20},(_,i)=>i+1));assert.deepEqual(review.dictionaryDirectionStrokes,review.progressivePensReviewed)
+assert.equal(review.curveFineChecks.length,11);assert.deepEqual(review.curveFineChecks.map(x=>x.pen),audit.finePens);assert(review.curveFineChecks.every(x=>x.passed&&x.noCompletionPop&&x.size===520&&x.beforePercent===99.99&&x.afterPercent===100))
+assert.deepEqual(review.originalTerminalFineChecks.map(x=>x.pen),[6,9]);assert(review.originalTerminalFineChecks.every(x=>x.passed))
+assert.equal(review.maskBoundaryObservations.length,2);assert(review.maskBoundaryObservations.every(x=>x.passed&&x.nativeReviewed&&x.before&&x.at&&x.after&&x.connectedReveal&&x.additionalProbeTailProgress===0.25))
+assert.deepEqual(review.replayPens,[6,9]);assert(review.actualReplayProgress.every(x=>x.passed&&x.observedPercent>0&&x.observedPercent<100&&x.completedAX===100&&x.completedScreenshot))
+assert.equal(review.observationProvenance.priorRootObservationReused.coarseFrames+review.observationProvenance.currentRootObservation.coarseFrames,180)
+assert.equal(review.compilerFileSHA256,sha(read('progressive-terminal15-native-order.mjs')));assert.equal(review.compiledSHA256,audit.compiledSHA256);assert(review.nativeApproval&&review.runtimeApplied&&review.allStrokesReviewed);assert.equal(review.appUIAutoplayVerifiedThisBatch,false)
+assert.equal(meta.runtimeApplied,false);assert.equal(audit.runtimeApplied,false);assert.equal(audit.nativeApproval,false)
+const notice=read('../../public/hanja-strokes/glyphwiki/NOTICE-u9863.md').toString();assert(notice.includes(entry.geometryLicense.revision));assert(notice.includes(entry.geometryLicense.modifications))
+console.log(JSON.stringify({glyph:'顣',pens:20,masks:22,polygons:46,frames:180,sourcePreserved:true,runtimeApplied:true,compiledSHA256:audit.compiledSHA256,appUIAutoplayVerifiedThisBatch:false}))
