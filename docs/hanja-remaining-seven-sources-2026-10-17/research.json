@@ -1,0 +1,40 @@
+{
+  "investigatedAt": "2026-10-17",
+  "scope": "Public fixed whole-glyph source acquisition for seven currently unapplied characters; not native stroke approval",
+  "domesticCatalog": {
+    "organization": "한국어문회",
+    "url": "https://www.hanja.re.kr/kccpt/exam/levelConfirm.do",
+    "document": "배정한자 전체 대표훈음 부수 음표 명기본(xls).xls",
+    "sheet": "배정한자",
+    "sha256": "97b8db715ebe1dd6e00e8e58d338a9ba70e7420bf5ec84da38f987d60eb64b17",
+    "localCatalogVerifiedAt": "2026-09-06",
+    "currentLiveVerification": "Firecrawl returned INVALID_ARGUMENT; no current official-page response verified"
+  },
+  "glyphs": [
+    {"glyph":"瀆","grade":"1급","strokes":18,"sourceRow":1173,"publicPrimary":"https://glyphwiki.org/wiki/u7006@18","priorReview":"docs/hanja-g1-batch24-2026-09-20/review.json","domesticRequirement":"賣 middle must match domestic 四 with inner 八 rather than old MM 罒. Old raw strokes 9/10 directions also differed.","nativeApproved":false},
+    {"glyph":"朕","grade":"1급","strokes":10,"sourceRow":4641,"publicPrimary":"https://glyphwiki.org/wiki/u6715-k@5","priorReview":"docs/hanja-g1-batch24-2026-09-20/review.json","domesticRequirement":"Domestic left 月 interior is two right-descending dots rather than two horizontal marks in old Ja/MM/Hans.","nativeApproved":false},
+    {"glyph":"讒","grade":"1급","strokes":24,"sourceRow":4710,"publicPrimary":"https://glyphwiki.org/wiki/u8b92@12","priorReview":"docs/hanja-g1-batch24-2026-09-20/review.json","domesticRequirement":"Domestic stroke 18 crosses lower component with a shallow right descent; old MM/Ja geometry had a different short entry/sweep.","nativeApproved":false},
+    {"glyph":"鱉","grade":"특급II","strokes":23,"sourceRow":2060,"publicPrimary":"https://glyphwiki.org/wiki/u9c49-k@18","publicAliasTarget":"u9c49-j","priorReview":"docs/hanja-special2-alternatives-2026-09-21/findings.json","domesticRequirement":"Catalog 23 vs old MM 22; domestic upper left-falling then dot differs from Taiwan dot then left-falling, and hook/full geometry needs comparison.","secondaryPublicSource":"https://dict.variants.moe.edu.tw/dictView.jsp?ID=52400&la=1","secondarySourceStatus":"Previously indexed Taiwan evidence only; not independently refetched in this acquisition and not a Korean normative source","nativeApproved":false},
+    {"glyph":"宬","grade":"특급II","strokes":10,"sourceRow":2643,"publicPrimary":"https://glyphwiki.org/wiki/u5bac@13","priorReview":"docs/hanja-special2-alternatives-2026-09-21/findings.json","domesticRequirement":"Catalog 10 vs old Hans 9. First dot direction and whole-form grouping require domestic comparison.","secondaryPublicSource":"https://www.cns11643.gov.tw/wordView.jsp?ID=142954","secondarySourceStatus":"Earlier local record reports CNS total 10 versus Taiwan MOE 9; not independently refetched and not proof of Korean stroke order","nativeApproved":false},
+    {"glyph":"篠","grade":"특급II","strokes":16,"sourceRow":2692,"publicPrimary":"https://glyphwiki.org/wiki/u7be0@13","domesticRequirement":"Whole form, 16-stroke grouping, sequence and directions remain to be compared; no new form conclusion from this source-only work.","nativeApproved":false},
+    {"glyph":"諞","grade":"특급","strokes":16,"sourceRow":5305,"publicPrimary":"https://glyphwiki.org/wiki/u8ade@8","publicAliasTarget":"u8ade-j","domesticRequirement":"Whole form, 16-stroke grouping, sequence and directions remain to be compared; no new form conclusion from this source-only work.","nativeApproved":false}
+  ],
+  "licenseEvidence": {
+    "archiveLicenseFile": "archive-LICENSE.txt",
+    "archiveLicenseSha256": "abe789645f228e14d2e117769487cad0860f32e2a0b151c2ad8ef43843f5eec8",
+    "actualJapaneseFixedRevision": "https://glyphwiki.org/wiki/GlyphWiki:%E3%83%87%E3%83%BC%E3%82%BF%E3%83%BB%E8%A8%98%E4%BA%8B%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9@18",
+    "fixedRevisionDateShown": "2025-09-03",
+    "englishLicenseAt18": "HTTP 200 fallback to latest; nonexistent requested revision; not used as fixed evidence",
+    "reuseDoesNotImplyStrokeApproval": true
+  },
+  "notes": [
+    "Current public-page variants can be newer than the pinned archive; absence from the archive is not proof that no public glyph exists.",
+    "Glyph names ending in -k or IVS suffixes and API aliases do not independently prove domestic form or stroke compatibility.",
+    "Primitive drawing group counts are not normative handwriting stroke counts.",
+    "No Jev call was used because source existence, dependency closure, hash equality and proof reproduction are directly tool-verifiable facts.",
+    "No existing canonical holds, runtime registry, original metadata, NOTICE or source material was changed."
+  ],
+  "nativeReviewCount": 0,
+  "runtimeApplied": false,
+  "canonicalHoldCreated": false
+}
