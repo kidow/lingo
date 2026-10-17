@@ -1,0 +1,120 @@
+{
+  "batch": 969,
+  "glyph": "攄",
+  "verifiedAt": "2026-10-17",
+  "status": "approved-runtime-applied-and-verified",
+  "nativeReview": {
+    "reference": "review.json",
+    "evidenceSource": "root-native-IAB",
+    "approved": true,
+    "pens": 18,
+    "masks": 21,
+    "originalPolygons": 51,
+    "framesApproved": 162,
+    "originalHelperFrames": 126,
+    "correctedHelperFrames": 36,
+    "finePens": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18
+    ],
+    "maskBoundaryPens": [
+      2,
+      9,
+      16
+    ],
+    "tailProbePercents": [
+      96,
+      94,
+      88
+    ],
+    "replayObservations": [
+      {
+        "pen": 16,
+        "profile": "original-helper",
+        "startPercent": 3.1213,
+        "completedPercent": 100
+      },
+      {
+        "pen": 13,
+        "profile": "corrected-helper",
+        "startPercent": 2.8188,
+        "completedPercent": 100
+      }
+    ],
+    "wholeRenderingCaveat": "Original whole rendering has winding-cancellation white gaps. Root separately observed all18 final progressive masks clear. This preparation adds no winding, path, width or polygon changes.",
+    "finalAll18MaskWholeClear": true,
+    "windingChangedByThisBatch": false,
+    "privateMediaSaved": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "proofContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullProofSHA256": "87ce02d64cee7e4e29a789ba8a973ed87f701b3ebd009777ecf703e88cc07cdc",
+    "selectedProofIdentity": {
+      "sourceRoot": "u6504",
+      "sourceProofFile": "engine-whole-u6504.json",
+      "sourceProofFileSha256": "f5033f3fc29986a09b6e825d2ad575b03242c31d51559d4959ac670a7fd16b9b",
+      "sourceHeaderFile": "engine-proof.json",
+      "sourceHeaderFileSha256": "d492dcf6f1d5a4426dba870c8846fa6ff5632436ec6cba75705ccdbf51fc3c17"
+    },
+    "mandatoryCompileProgressiveArguments": 3,
+    "identityCaseAndPrefixUnchanged": true
+  },
+  "runtime": {
+    "modulePrepared": true,
+    "registryEditedByThisAgent": false,
+    "registryLinkedByRoot": true,
+    "verifyRuntimeExecuted": true,
+    "runtimeApplied": true,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch969-2026-10-13/verify-runtime.mjs",
+    "status": "PASS after root registry linkage",
+    "exitCode": 0,
+    "executions": 1,
+    "pens": 18,
+    "masks": 21,
+    "polygons": 51,
+    "frames": 162,
+    "sourcePreserved": true,
+    "compiledSHA256": "27df7e8854b325b6a92c4c5b7efd2e91a9a974035dd7cd9c9e27edffa5c580fe",
+    "fullProofSHA256": "87ce02d64cee7e4e29a789ba8a973ed87f701b3ebd009777ecf703e88cc07cdc",
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "checks": {
+    "focusedTestsExecuted": true,
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch969.test.ts",
+      "exitCode": 0,
+      "passed": 4,
+      "failed": 0,
+      "full5ProofVerified": true,
+      "identity5CaseAndPrefixVerified": true,
+      "mandatory3ArgumentsVerified": true,
+      "rawGeometryLicenseVerified": true
+    },
+    "runtimeVerifierSyntaxExitCode": 0,
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "immutableSourceMetadataPreserved": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false
+}
