@@ -1,0 +1,111 @@
+{
+  "batch": 962,
+  "glyph": "醓",
+  "verifiedAt": "2026-10-17",
+  "status": "approved-runtime-applied-and-verified",
+  "sourceVerification": {
+    "reference": "native-server-validation.json/sourceVerification/results/batch962",
+    "sourcePassed": true,
+    "newEngineExecutions": 0,
+    "originalCallerExecutedOnce": true
+  },
+  "nativeReview": {
+    "reference": "review.json",
+    "evidenceSource": "root-native-IAB",
+    "approved": true,
+    "pens": 16,
+    "masks": 18,
+    "originalPolygons": 43,
+    "framesApproved": 144,
+    "finePens": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      10,
+      11,
+      13
+    ],
+    "maskBoundaryPens": [
+      5,
+      11
+    ],
+    "additionalProbePercent": 95,
+    "replayPens": [
+      11
+    ],
+    "replayStartPercent": 3.4413,
+    "privateMediaSaved": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "proofContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullProofSHA256": "47090add1db055b3ae2888f55891147032d6f1ea22358864b6fca5d2e7e0a277",
+    "outerCallerIdentity": {
+      "root": "u9193",
+      "sourceProofFile": "engine-whole-u9193.json",
+      "sourceProofFileSHA256": "fa060cf2ab307d85b68088c24473e4a4141d45f4e9019c007a513e4798ae2409",
+      "engineHeaderSHA256": "fa060cf2ab307d85b68088c24473e4a4141d45f4e9019c007a513e4798ae2409",
+      "sourceFileSHA256": "2fc211e1affb5c6daad85fb9ead5f9103ca01bac89b162f2d262742e8ac77e9f",
+      "compilerFileSHA256": "dfdcfd5bb89ff142653087b920c5367244ff9133328b624aa367a9f33958a390"
+    },
+    "innerFileIdentity": {
+      "root": "u9193",
+      "file": "engine-whole-u9193.json",
+      "fileSHA256": "fa060cf2ab307d85b68088c24473e4a4141d45f4e9019c007a513e4798ae2409"
+    },
+    "mandatoryCompileSourceWholeArguments": 4,
+    "mandatoryCompileProgressiveArguments": 3
+  },
+  "runtime": {
+    "modulePrepared": true,
+    "registryEditedByThisAgent": false,
+    "registryLinkedByRoot": true,
+    "verifyRuntimeExecuted": true,
+    "runtimeApplied": true,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch962-2026-10-13/verify-runtime.mjs",
+    "status": "PASS after root registry linkage and exact source-state expectation correction",
+    "exitCode": 0,
+    "executions": 2,
+    "initialExecution": {
+      "exitCode": 1,
+      "reason": "New verifier expected numeric0 for original audit.runtimeRegistered; pinned source actually stores boolean false.",
+      "fix": "Changed only the new verifier expectation to exact boolean false; original source audit remained unchanged."
+    },
+    "pens": 16,
+    "masks": 18,
+    "polygons": 43,
+    "frames": 144,
+    "sourcePreserved": true,
+    "compiledSHA256": "36171947c852f79630c608215333794c830f1ccef3b7b2d37cf8ecb342c71de7",
+    "fullProofSHA256": "47090add1db055b3ae2888f55891147032d6f1ea22358864b6fca5d2e7e0a277",
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "checks": {
+    "focusedTestsExecuted": true,
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch962.test.ts",
+      "exitCode": 0,
+      "passed": 4,
+      "failed": 0,
+      "full5ProofVerified": true,
+      "outerIdentity6Verified": true,
+      "innerIdentity3Verified": true,
+      "rawGeometryLicenseVerified": true
+    },
+    "runtimeVerifierSyntaxExitCode": 0,
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "immutableSourceMetadataPreserved": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false
+}
