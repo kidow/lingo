@@ -1,0 +1,107 @@
+{
+  "batch": 942,
+  "glyph": "珫",
+  "verifiedAt": "2026-10-17",
+  "catalogStrokes": 10,
+  "status": "held-selected-whole-form-and-direction-mismatch",
+  "selectedWhole": "u73eb-g",
+  "dictionary": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7300/73EB.svg",
+    "sha256": "e59e919a4d0d66fafd2a8249acb02a6e6549016dc96e4e26dc8c5373dbeee013",
+    "clips": 10
+  },
+  "nativeObservation": {
+    "observer": "Root agent in the in-app browser",
+    "baseURL": "http://127.0.0.1:56024",
+    "pages": [
+      "/whole",
+      "/pairs"
+    ],
+    "wholeComparisonPerformed": true,
+    "selectedWholeCompatible": false,
+    "directionsCompared": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "mismatches": [
+      {
+        "pens": [
+          2,
+          3
+        ],
+        "domestic": "Jade radical pen2 is the middle horizontal; pen3 is vertical.",
+        "candidate": "Pen2 vertical; pen3 horizontal.",
+        "assessment": "Complete original pen masks would require order permutation; no permutation approved."
+      },
+      {
+        "pens": [
+          5,
+          6
+        ],
+        "domestic": "Pen5 is a short top-to-bottom vertical connected to the pen6 horizontal.",
+        "candidate": "Pen5 is an upper-left to lower-right diagonal dot separated from pen6.",
+        "assessment": "Selected whole differs in trajectory, shape and connection; order permutation alone cannot resolve it."
+      }
+    ],
+    "baseAlternative": {
+      "root": "u73eb",
+      "observation": "Whole form appears structurally compatible with the domestic top.",
+      "nativeApproval": false,
+      "sourceRecordedBlock": {
+        "rawFrom": 6,
+        "rawTo": 7,
+        "end": [
+          100.8,
+          97
+        ],
+        "start": [
+          84.3,
+          101
+        ],
+        "delta": [
+          -16.5,
+          4
+        ]
+      },
+      "sourceEvidence": "candidate-compile-analysis.json:unselectedBaseWholeRisk",
+      "releaseCondition": "Obtain a complete source with compatible domestic form and continuous original pen geometry; do not transplant components or author a connector."
+    }
+  },
+  "progressiveFramesReviewed": 0,
+  "progressiveFramesApproved": 0,
+  "fineChecksPerformed": 0,
+  "replayChecksPerformed": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": 0,
+  "appliedThisBatch": 0,
+  "privateMediaSaved": false,
+  "originalInputPins": {
+    "candidate-compile-analysis.json": "4584247d1fe961c00d199944b1d7d993e9b05d2b2e5ddc85b6b9b712d9e63b68",
+    "engine-proof.json": "80aa9ca757b39af99f49a15e33364e6c4a2affd858e0111db4bf275656d9ae8a",
+    "engine-whole-u73eb-g.json": "5e587505023c99d82b71595628e1a081f23bce2a6231ab3b680c2fd3d394b326",
+    "engine-whole-u73eb.json": "80aa9ca757b39af99f49a15e33364e6c4a2affd858e0111db4bf275656d9ae8a",
+    "metadata.json": "2b688fb38d2fc9f06172fcd65161121b4f42b589d0e5ceed8ce9d5b40121f79f",
+    "progressive.mjs": "30b4ea8bf3ca2f1174f1712789d376da3d8a3d2e5b4fb47519de04d586807113",
+    "source-analysis.json": "a67bdf10351be291444411ee840304bb1d471ad34835cb95dcbc97abf16c604d",
+    "source-join-analysis.json": "56d856607eb9d3b78c90a37ef5eaba49962731f4f0ca59c4eaf86c2f6dbb7e75",
+    "source-preservation-audit.json": "258ac4e8a226bfd6451a10d3c05bebf9f07436d1a506ce407677c0aa8bb677c9",
+    "sources.json": "15275939bc9ca1ead0faf89985ce2583ce73cfc6e257e7273dde1e62868a102a",
+    "verify-source.mjs": "b07c1ddabc54cb35c7dd9668aa7982d7971d1da503ab6cc299309691e111d487",
+    "NOTICE.md": "17563cfeea8ed6d1ed2d3dff46a64d9e65005bd66a31f2639a4cbd981925fbab",
+    "native-server-source-audit.json": "07576fb35cba6df7a9b9ee9dd5e7a88a7e1f997f9a6d20d6896f97715d123be4",
+    "native-server-validation.json": "383dc1502cfd2e0ed62b80623715437798130dee003f36502eba253fdb61cb08"
+  },
+  "sourceSourceOnlyVerificationReused": true,
+  "currentEngineByteReproductionExecuted": false,
+  "currentSourceVerifierExecuted": false,
+  "sourceGeometryEdited": false,
+  "originalMetadataEdited": false,
+  "originalNoticeEdited": false,
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "holdReason": "Selected u73eb-g pen5 form/connection and jade-radical order mismatch; base u73eb has the existing original(-16.5,4) same-pen gap."
+}
