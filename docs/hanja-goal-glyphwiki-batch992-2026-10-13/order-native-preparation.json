@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "batch": 992,
+  "glyph": "駜",
+  "date": "2026-10-17",
+  "status": "whole-mask-domestic-order-source-PASS-native-corrected-review-pending",
+  "originalBytePins": {
+    "NOTICE.md": "f9350780fb46088cab313ab0e8b21b8d68db252e48841052bcd6e7fd196b5ab3",
+    "candidate-compile-analysis.json": "f7684dc7ea11ee69038088e2de917f16121358d822f77488e34d2ea68401a303",
+    "engine-proof.json": "084343a21e36f0a0f58ecedf968db334ef41ff332c14810c21c57b30db12a764",
+    "engine-whole-u99dc-ue0100.json": "084343a21e36f0a0f58ecedf968db334ef41ff332c14810c21c57b30db12a764",
+    "engine-whole-u99dc.json": "084343a21e36f0a0f58ecedf968db334ef41ff332c14810c21c57b30db12a764",
+    "metadata.json": "7620dda98f5434315292cd6b0a0683e46e19e82744af5750ed64896d2ee0df13",
+    "native-preflight-source-analysis.json": "b9425441f9d0dd39d66ccfe8eb9046c0f0fb319d73d167d292dcf3145a9d12f0",
+    "native-server-compile.mjs": "f44d8a48e649a02bebc637bf4bc33a388dc0619fe870012f22b9b8cc001f9b72",
+    "native-server-source-audit.json": "a058544f2a235ae718f011aa058d5421600b9f65d1bcaef56e607fc542d7d11a",
+    "native-server-validation.json": "55e3cc1b1e8f5a676231262c6612665d928e4f7692d7e45382d6a0a4249c41e4",
+    "progressive.mjs": "dbe2bcce8e4c301ee34dc88b91ad50f57958d59d2ea219e3d5023841264d698f",
+    "serve-native.py": "6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b",
+    "source-analysis.json": "2eea647025c2c843fe99b02a5cb60a381de0c50c6265ae9f10c52f6c0badb52e",
+    "source-join-analysis.json": "2ee94700603fc8ff70b44d40cf97bba88b353654a3b131ebe7318a3d388d5f3b",
+    "source-only-helper-readiness.json": "be83a78f2dd3553abb63f1fe9ed70b9632b8597857bc3c4279d69ee139d6f873",
+    "sources.json": "8a9c506484aa82217cf8eabcf59205a360423253e07e2ae4d9548f72aebd26a9",
+    "verify-source.mjs": "0865658fb010e4104175f75b8a8afbdb01996973aeda53f193af404204d663c5"
+  },
+  "sourceRoot": "u99dc",
+  "sourceProof": "./engine-whole-u99dc.json",
+  "sourceProofSHA256": "084343a21e36f0a0f58ecedf968db334ef41ff332c14810c21c57b30db12a764",
+  "identity": {
+    "root": "u99dc",
+    "file": "engine-whole-u99dc.json",
+    "fileSHA256": "084343a21e36f0a0f58ecedf968db334ef41ff332c14810c21c57b30db12a764"
+  },
+  "fullProofKeys": [
+    "defaults",
+    "engineHashes",
+    "engineRevision",
+    "groups",
+    "trace"
+  ],
+  "identityContract": {
+    "compileProgressiveRequiredArguments": 3,
+    "compileSourceWholeRequiredArguments": 4,
+    "identityKeys": [
+      "root",
+      "file",
+      "fileSHA256"
+    ],
+    "exactFilePrefix": "none",
+    "extraFullProofKeysRejected": true,
+    "engineHashEightAndRevisionPinned": true,
+    "baseOnlyOrderCandidate": true,
+    "otherWholeProfilesRemainViewableButNotImplicitlyApproved": true
+  },
+  "domesticOrderPermutation": [
+    1,
+    2,
+    4,
+    5,
+    3,
+    6,
+    7,
+    8,
+    9,
+    10,
+    13,
+    15,
+    12,
+    11,
+    14
+  ],
+  "transformation": "Complete original masks/whole pens are permuted only. No path, width, direction, polygon, coordinates, tail or interpolation changed; domestic SVG remains original order.",
+  "rootPriorNativeEvidence": {
+    "source": "root-native-IAB",
+    "wholeCompatibleReported": [
+      "u99dc",
+      "u99dc-ue0100"
+    ],
+    "originalAll15DirectionsCompared": true,
+    "originalOrderMismatchReported": true,
+    "finalCorrectedOrderDirectionsReviewed": 0,
+    "originalFinePensReportedPass": [
+      6
+    ],
+    "otherOriginalFineReviewed": 0,
+    "coarseFramesReviewed": 0,
+    "replaysReviewed": 0,
+    "geometryReuseIsNotNewNativeApproval": true
+  },
+  "expected": {
+    "pens": 15,
+    "masks": 17,
+    "polygons": 38,
+    "finePens": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "maskTransitions": [
+      {
+        "pen": 6,
+        "originalPen": 6,
+        "mask": 2,
+        "start": 0.8934154403935443,
+        "weights": [
+          67.057776,
+          8
+        ]
+      },
+      {
+        "pen": 13,
+        "originalPen": 12,
+        "mask": 2,
+        "start": 0.8695621340670021,
+        "weights": [
+          83.331068,
+          12.5
+        ]
+      }
+    ]
+  },
+  "newFiles": {
+    "progressive-order-native.mjs": "fc00dcc9c73acaf46829d93b884eb88ed030b4d0c315cf6613c763bf9b2d6a95",
+    "progressive-order-native.d.mts": "d184112616c1a443f4de2970c7c3b25c45c3e197b6e2bf49336a25cc677b3816",
+    "server-compile-order-native.mjs": "07fae98f54a25565dac6be945a705617205fcb720451103617ec3e693c534579",
+    "serve-order-native.py": "85662bb031b7807c2a854954d6090f8daf784a7496280dfd06d2d3795aa5918b"
+  },
+  "helper": {
+    "file": "./serve-order-native.py",
+    "command": "rtk proxy python3 docs/hanja-goal-glyphwiki-batch992-2026-10-13/serve-order-native.py --port 0",
+    "whole": "/whole",
+    "directions": "/pairs",
+    "fine": "/progressive?stroke=6&enlarged=1",
+    "coarse": "/progressive?stroke=6&samples=1",
+    "enlargedPixels": 520,
+    "sliderStep": 0.0001,
+    "coarseSamples": 9,
+    "boundaryButtons": "Automatically generated from corrected compiled masks for new pens6 and13; before/at/after"
+  },
+  "sourceCheck": {
+    "executions": 1,
+    "passed": true,
+    "exitCode": 0,
+    "method": "One source-check process executed the corrected strict caller once and the immutable original source compiler once for individual whole-mask hash comparison; all fifteen corrected pen hashes equal the declared original permutation. Thirteen invalid argument, identity and full5/body/engine tamper cases rejected.",
+    "positiveCompiles": {
+      "correctedCaller": 1,
+      "originalBaselineForMaskHashComparison": 1
+    },
+    "originalProtectedPins": 17,
+    "newInputPins": 4,
+    "rejectedCases": 13,
+    "compiledMasksSHA256": "9d93549e8d951b672991d2b4f04b67d9cbdf1a1026c0847faa0fab95e5cc1a41",
+    "originalPenSHA256": [
+      "bc89128a8742668df157fc7704988ed31c5b662de22be02b39b73b03e8836422",
+      "aa2391aade75b792b48026520f49eb0141b3726927214fb7c28603aa877fb9eb",
+      "4b01dff1abcc87dc18b6d158edfbe9509664d7323ad3e602902722b8da5dccd7",
+      "9fcfd77232dc0327bd2b20cd501dccb7f01ce1c13689179edddd9da72a35e30d",
+      "ed390a32185511823302a2983b6614c2508c422c5bb84ad3aa4d39ef83434b2f",
+      "b9e55ec462bd19ba9fcb2e897b6f46e7090059112acb77fda327a72e4998c2d5",
+      "02aafd095c97e0d04135c9b950099b768e3806e0a9d7b99be04a9853833d40b9",
+      "07b8bceada4a8119197fd35848550b12b73406f7f9c47db4ad36bb052197d8c6",
+      "730d454bb06dc4d6f8a1ffcf3c773097817839d161f87ad95bc1189a204f3170",
+      "0c36e4fde0fac7973f1a7f9f23f5488e0d16547f527bc526f74abb9b0e53c693",
+      "a471153f064ef69121a9a498ba7163c14508bb06ca9827b454dc9bb777c62fd0",
+      "e0c6003de2432803f8dc35048b025c5479037d61a8fc12049b051c60dc4e70ea",
+      "abb52a274e264cbf271920431a629f6d04195fc4f47fc764a3d26e2ebed8b5b1",
+      "fb30e0d7b3ed5383164efcfd4af5eb8b424c61fac0884ed474c822c76b8efef6",
+      "5bfdb2daadb771c0548fc40c7a788bb7c649474b825a4555b63cb42f44ccabaa"
+    ],
+    "correctedPenSHA256": [
+      "bc89128a8742668df157fc7704988ed31c5b662de22be02b39b73b03e8836422",
+      "aa2391aade75b792b48026520f49eb0141b3726927214fb7c28603aa877fb9eb",
+      "9fcfd77232dc0327bd2b20cd501dccb7f01ce1c13689179edddd9da72a35e30d",
+      "ed390a32185511823302a2983b6614c2508c422c5bb84ad3aa4d39ef83434b2f",
+      "4b01dff1abcc87dc18b6d158edfbe9509664d7323ad3e602902722b8da5dccd7",
+      "b9e55ec462bd19ba9fcb2e897b6f46e7090059112acb77fda327a72e4998c2d5",
+      "02aafd095c97e0d04135c9b950099b768e3806e0a9d7b99be04a9853833d40b9",
+      "07b8bceada4a8119197fd35848550b12b73406f7f9c47db4ad36bb052197d8c6",
+      "730d454bb06dc4d6f8a1ffcf3c773097817839d161f87ad95bc1189a204f3170",
+      "0c36e4fde0fac7973f1a7f9f23f5488e0d16547f527bc526f74abb9b0e53c693",
+      "abb52a274e264cbf271920431a629f6d04195fc4f47fc764a3d26e2ebed8b5b1",
+      "5bfdb2daadb771c0548fc40c7a788bb7c649474b825a4555b63cb42f44ccabaa",
+      "e0c6003de2432803f8dc35048b025c5479037d61a8fc12049b051c60dc4e70ea",
+      "a471153f064ef69121a9a498ba7163c14508bb06ca9827b454dc9bb777c62fd0",
+      "fb30e0d7b3ed5383164efcfd4af5eb8b424c61fac0884ed474c822c76b8efef6"
+    ],
+    "completeMasksOnly": true,
+    "allOriginalPolygonsExactlyOnce": true,
+    "allVerticesUnchanged": true,
+    "inputsUnchanged": true
+  },
+  "syntaxCheck": {
+    "executions": 1,
+    "passed": true,
+    "exitCode": 0,
+    "transformedOriginalSyntaxChecked": true,
+    "sliderStep": 0.0001,
+    "enlargedPixels": 520,
+    "coarseSamples": 9,
+    "domesticOriginalOrderPreserved": true,
+    "serverStarted": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newGeometry": false,
+  "newDirections": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "httpChecksRun": false,
+  "buildRun": false,
+  "gitRun": false
+}
