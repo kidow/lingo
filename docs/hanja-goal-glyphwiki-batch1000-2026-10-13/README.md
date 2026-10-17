@@ -1,0 +1,9 @@
+# 哻 · batch1000 hold
+
+Root actually observed one compatible u54fb whole screenshot and confirmed the domestic and candidate fine views at520px. Prioritized pen2 fine inspection failed: at99.99% the lower-left terminal corner is rounded or flat; at100% a tiny sharp extended lower-left triangle appears. Paired90×100RAM crops confirmed the small corner difference. This is not a large trajectory jump. No domestic directions, coarse samples, other fine pens, mask boundaries or replay were reviewed. Native approval and runtime application remain false.
+
+The existing source coverage audit records pen2 original group[1,2], maximum original vertex distance15.180600138416786 greater than reveal width14. This source risk aligns with the observed endpoint failure; it does not authorize changing widths, paths, points, polygons or the original corner.
+
+The16original files,2protected renderers and2combined-helper/preparation files are pinned without changes. The mandatory identity7 contract retains exact ./ file prefixes and lowercase Sha256 fields, full5 proof, compileProgressive3arguments and compileSourceWhole4arguments. Source metadata, NOTICE, original helpers/compiler and the isolated combined helper/preparation remain unchanged.
+
+Actual999 parent resume SHAcd4f0da8e108c3ec433767c2af6a14947e9253f2df099cd9f8107b766e2b4da1 records5507/5978 applied, remaining471 and292holds. One focused execution passed:20pins and actual parent/hold hashes preserved,61canonical references yielded292unique holds (80strings/212objects) with no 哻/u54fb duplicate, and registry occurrences0/exact lookup null were confirmed against5507registered entries. This hold adds one to293; applied5507 and remaining471 are unchanged. Next1001 熯15. This worker started no server and performed no native observation, build or full suite.
