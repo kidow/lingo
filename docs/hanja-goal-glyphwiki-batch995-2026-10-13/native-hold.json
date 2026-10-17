@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "batch": 995,
+  "glyph": "乏",
+  "verifiedAt": "2026-10-18",
+  "status": "held-native-domestic-boundary-mismatch-and-compatible-source-discontinuity",
+  "reason": "The selected five-pen numeric candidate joins horizontal and diagonal source rows across domestic pen3/4. Separating that boundary leaves six nonempty source rows. All five actual shape-compatible whole variants have a nonzero nib-to-sweep gap at raw4/5, so the domestic five-pen boundaries cannot be formed from complete consecutive original paths under the existing exact-join contract. Other captured whole forms were actually shape-incompatible.",
+  "catalogStrokes": 5,
+  "recordedDomesticClipCount": 5,
+  "evidenceScope": "Root actual in-app browser whole and domestic pen-boundary comparison; worker source-only exact endpoint arithmetic, with zero coordinate/path/width/direction mutation. All raw indices below are zero-based.",
+  "nativeEvidence": {
+    "source": "root-native-IAB",
+    "wholeViewsObserved": 14,
+    "compatibleRoots": [
+      "u4e4f",
+      "u4e4f-02",
+      "u4e4f-k",
+      "u4e4f-ue0100",
+      "u4e4f-var-002"
+    ],
+    "incompatibleRoots": [
+      "u4e4f-01-itaiji-001",
+      "u4e4f-g",
+      "u4e4f-h",
+      "u4e4f-itaiji-001",
+      "u4e4f-itaiji-002",
+      "u4e4f-itaiji-003",
+      "u4e4f-itaiji-004",
+      "u4e4f-t",
+      "u4e4f-var-001"
+    ],
+    "selectedWhole": "u4e4f",
+    "dictionaryCandidatePairsObserved": 5,
+    "domesticBoundaryMismatchPens": [
+      3,
+      4,
+      5
+    ],
+    "approvedDirectionSet": false,
+    "directionsApproved": 0,
+    "progressiveFramesReviewed": 0,
+    "fineChecks": 0,
+    "replayChecks": 0,
+    "wholeViewsAreNotStrokeBoundaryApproval": true,
+    "privateMedia": "RAM-only"
+  },
+  "sourceFacts": {
+    "selectedGroups0Based": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "compatibleWholeFacts": [
+      {
+        "root": "u4e4f",
+        "file": "engine-whole-u4e4f.json",
+        "fileSHA256": "1307785533cc047870b829bf6c30f9a134db4ad63a07977eb4480768f31c3b7b",
+        "rawRows": 6,
+        "drawingRows": 6,
+        "nonDrawingRawRows": [],
+        "internalRawCallGaps": [],
+        "exactConsecutiveJoins0Based": [
+          [
+            2,
+            3
+          ]
+        ],
+        "unrestrictedNumericMinimum": 5,
+        "minimumAfterDomesticPureHorizontalSplit": 6,
+        "excludedNumericMerge": {
+          "raw": [
+            2,
+            3
+          ],
+          "reason": "This exact source H-to-diagonal join crosses the root-observed domestic3/4 pen boundary."
+        },
+        "raw3To4": {
+          "previousEnd": [
+            62,
+            155.575
+          ],
+          "nextStart": [
+            22,
+            176.2
+          ],
+          "delta": [
+            -40,
+            20.625
+          ],
+          "equal": false
+        },
+        "raw4To5": {
+          "previousEnd": [
+            50,
+            130
+          ],
+          "nextStart": [
+            48,
+            130
+          ],
+          "delta": [
+            -2,
+            0
+          ],
+          "equal": false,
+          "reason": "The root-observed domestic5 nib-plus-sweep cannot use this discontinuous source join without new geometry or a new path."
+        },
+        "nativeFinalOrderApproval": false
+      },
+      {
+        "root": "u4e4f-02",
+        "file": "engine-whole-u4e4f-02.json",
+        "fileSHA256": "6798cce8a1f4819d3ee1d912f9e55d1be805437dcf2bd0fa8604a5b068e903ee",
+        "rawRows": 6,
+        "drawingRows": 6,
+        "nonDrawingRawRows": [],
+        "internalRawCallGaps": [],
+        "exactConsecutiveJoins0Based": [
+          [
+            2,
+            3
+          ]
+        ],
+        "unrestrictedNumericMinimum": 5,
+        "minimumAfterDomesticPureHorizontalSplit": 6,
+        "excludedNumericMerge": {
+          "raw": [
+            2,
+            3
+          ],
+          "reason": "This exact source H-to-diagonal join crosses the root-observed domestic3/4 pen boundary."
+        },
+        "raw3To4": {
+          "previousEnd": [
+            113,
+            154.435
+          ],
+          "nextStart": [
+            85,
+            176.44
+          ],
+          "delta": [
+            -28,
+            22.004999999999995
+          ],
+          "equal": false
+        },
+        "raw4To5": {
+          "previousEnd": [
+            106,
+            130.8
+          ],
+          "nextStart": [
+            105,
+            130.8
+          ],
+          "delta": [
+            -1,
+            0
+          ],
+          "equal": false,
+          "reason": "The root-observed domestic5 nib-plus-sweep cannot use this discontinuous source join without new geometry or a new path."
+        },
+        "nativeFinalOrderApproval": false
+      },
+      {
+        "root": "u4e4f-k",
+        "file": "engine-whole-u4e4f-k.json",
+        "fileSHA256": "1307785533cc047870b829bf6c30f9a134db4ad63a07977eb4480768f31c3b7b",
+        "rawRows": 6,
+        "drawingRows": 6,
+        "nonDrawingRawRows": [],
+        "internalRawCallGaps": [],
+        "exactConsecutiveJoins0Based": [
+          [
+            2,
+            3
+          ]
+        ],
+        "unrestrictedNumericMinimum": 5,
+        "minimumAfterDomesticPureHorizontalSplit": 6,
+        "excludedNumericMerge": {
+          "raw": [
+            2,
+            3
+          ],
+          "reason": "This exact source H-to-diagonal join crosses the root-observed domestic3/4 pen boundary."
+        },
+        "raw3To4": {
+          "previousEnd": [
+            62,
+            155.575
+          ],
+          "nextStart": [
+            22,
+            176.2
+          ],
+          "delta": [
+            -40,
+            20.625
+          ],
+          "equal": false
+        },
+        "raw4To5": {
+          "previousEnd": [
+            50,
+            130
+          ],
+          "nextStart": [
+            48,
+            130
+          ],
+          "delta": [
+            -2,
+            0
+          ],
+          "equal": false,
+          "reason": "The root-observed domestic5 nib-plus-sweep cannot use this discontinuous source join without new geometry or a new path."
+        },
+        "nativeFinalOrderApproval": false
+      },
+      {
+        "root": "u4e4f-ue0100",
+        "file": "engine-whole-u4e4f-ue0100.json",
+        "fileSHA256": "1307785533cc047870b829bf6c30f9a134db4ad63a07977eb4480768f31c3b7b",
+        "rawRows": 6,
+        "drawingRows": 6,
+        "nonDrawingRawRows": [],
+        "internalRawCallGaps": [],
+        "exactConsecutiveJoins0Based": [
+          [
+            2,
+            3
+          ]
+        ],
+        "unrestrictedNumericMinimum": 5,
+        "minimumAfterDomesticPureHorizontalSplit": 6,
+        "excludedNumericMerge": {
+          "raw": [
+            2,
+            3
+          ],
+          "reason": "This exact source H-to-diagonal join crosses the root-observed domestic3/4 pen boundary."
+        },
+        "raw3To4": {
+          "previousEnd": [
+            62,
+            155.575
+          ],
+          "nextStart": [
+            22,
+            176.2
+          ],
+          "delta": [
+            -40,
+            20.625
+          ],
+          "equal": false
+        },
+        "raw4To5": {
+          "previousEnd": [
+            50,
+            130
+          ],
+          "nextStart": [
+            48,
+            130
+          ],
+          "delta": [
+            -2,
+            0
+          ],
+          "equal": false,
+          "reason": "The root-observed domestic5 nib-plus-sweep cannot use this discontinuous source join without new geometry or a new path."
+        },
+        "nativeFinalOrderApproval": false
+      },
+      {
+        "root": "u4e4f-var-002",
+        "file": "engine-whole-u4e4f-var-002.json",
+        "fileSHA256": "a8694975e19ca91b155188a11877051a0c65ef307a94b48e26f1639abf9a18ba",
+        "rawRows": 6,
+        "drawingRows": 6,
+        "nonDrawingRawRows": [],
+        "internalRawCallGaps": [],
+        "exactConsecutiveJoins0Based": [
+          [
+            2,
+            3
+          ]
+        ],
+        "unrestrictedNumericMinimum": 5,
+        "minimumAfterDomesticPureHorizontalSplit": 6,
+        "excludedNumericMerge": {
+          "raw": [
+            2,
+            3
+          ],
+          "reason": "This exact source H-to-diagonal join crosses the root-observed domestic3/4 pen boundary."
+        },
+        "raw3To4": {
+          "previousEnd": [
+            62,
+            155
+          ],
+          "nextStart": [
+            22,
+            176
+          ],
+          "delta": [
+            -40,
+            21
+          ],
+          "equal": false
+        },
+        "raw4To5": {
+          "previousEnd": [
+            50,
+            130
+          ],
+          "nextStart": [
+            48,
+            130
+          ],
+          "delta": [
+            -2,
+            0
+          ],
+          "equal": false,
+          "reason": "The root-observed domestic5 nib-plus-sweep cannot use this discontinuous source join without new geometry or a new path."
+        },
+        "nativeFinalOrderApproval": false
+      }
+    ],
+    "unrestrictedNumericMinimumOfCompatibleWholes": 5,
+    "unrestrictedSourceMinimumExceedsCatalog": false,
+    "minimumAfterDomesticPureHorizontalSplit": 6,
+    "forbiddenWaysToForceFive": [
+      "Joining raw4/5 across a nonzero source gap",
+      "Reversing, splitting or changing source trajectories without evidence",
+      "Moving coordinates, changing mask widths or adding a connector",
+      "Treating a shape-incompatible whole form as the approved character"
+    ]
+  },
+  "sourceContract": {
+    "selectedRoot": "u4e4f",
+    "selectedIdentity": {
+      "sourceRoot": "u4e4f",
+      "sourceProofFile": "./engine-whole-u4e4f.json",
+      "sourceProofFileSha256": "1307785533cc047870b829bf6c30f9a134db4ad63a07977eb4480768f31c3b7b",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "e11947976755a0bea772ae2fb551aa2f133afc6f2bde8a5dc9218288c51a04df",
+      "sourceMetadataFile": "./sources.json",
+      "sourceMetadataFileSha256": "84816dd957a19364dd915b519d35856577ee6c9eb1be630042ee84f9bf5642f3"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "originalManifestFiles": 27,
+    "additionalProtectedFiles": [
+      "NOTICE.md",
+      "source-only-helper-readiness.json"
+    ]
+  },
+  "originalBytePins": {
+    "NOTICE.md": "99426df5a7267d47c27108f575e798437fd0fcc25bff50d78c9d208d2a6e9461",
+    "candidate-compile-analysis.json": "3875f10be6e333b8db8759e3681295bea6ea7991e0d2520e98e8a7b188761e8c",
+    "engine-proof.json": "e11947976755a0bea772ae2fb551aa2f133afc6f2bde8a5dc9218288c51a04df",
+    "engine-whole-u4e4f-01-itaiji-001.json": "47c67f77f562ff537d8f68258f55e8f834bea8cde20136756399f9a6c7a19c29",
+    "engine-whole-u4e4f-02.json": "6798cce8a1f4819d3ee1d912f9e55d1be805437dcf2bd0fa8604a5b068e903ee",
+    "engine-whole-u4e4f-g.json": "aeec4cd329149a555cf91dfa58ffef79fec7238e491e064ba8560d95348c9e9e",
+    "engine-whole-u4e4f-h.json": "360a07bf625a628d852dfb23a32dcf16430c1b0ff08b3461d0bcf222d9a5195d",
+    "engine-whole-u4e4f-itaiji-001.json": "20348ea1055c375dcb0009cdb9176e55ae9f2eb04d39285b910204e5b73b6637",
+    "engine-whole-u4e4f-itaiji-002.json": "a3875639efdc204d7eb1952674ceeb2ec10200c6b7d86288302840bf99f1c54f",
+    "engine-whole-u4e4f-itaiji-003.json": "d90c890e66425c74d6754720afd7ecf2cbd9e6976da43f27f67b91b8a523e07b",
+    "engine-whole-u4e4f-itaiji-004.json": "1522ec54fb956ca1c6877cd735f99cf7e38ec3b4b2efa3287add46b8e6a1927f",
+    "engine-whole-u4e4f-k.json": "1307785533cc047870b829bf6c30f9a134db4ad63a07977eb4480768f31c3b7b",
+    "engine-whole-u4e4f-t.json": "360a07bf625a628d852dfb23a32dcf16430c1b0ff08b3461d0bcf222d9a5195d",
+    "engine-whole-u4e4f-ue0100.json": "1307785533cc047870b829bf6c30f9a134db4ad63a07977eb4480768f31c3b7b",
+    "engine-whole-u4e4f-var-001.json": "58f3a1412bc04141407783d8e0e3cecc8f07dd2402a4ae7ea09ac3573de46780",
+    "engine-whole-u4e4f-var-002.json": "a8694975e19ca91b155188a11877051a0c65ef307a94b48e26f1639abf9a18ba",
+    "engine-whole-u4e4f.json": "1307785533cc047870b829bf6c30f9a134db4ad63a07977eb4480768f31c3b7b",
+    "metadata.json": "a4a241d3478c60152db903c9a902d26102e31c6e434f6ea118cfd67a570eccfc",
+    "native-server-compile.mjs": "f44d8a48e649a02bebc637bf4bc33a388dc0619fe870012f22b9b8cc001f9b72",
+    "native-server-source-audit.json": "59b13676cdf98db3660a8add2b85ac4a6b02c228f37f8b3fcb08ebf453378391",
+    "native-server-validation.json": "b2d84a7ed329d48532e6a638c746a5b22e52ec56c38efc2b2a30734244be9dc6",
+    "progressive.mjs": "0cfd1b911183ef020bce46156932417576e74d0a0ae3187bd837cabc6f3cc3f3",
+    "serve-native.py": "6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b",
+    "source-analysis.json": "35f6b8a9e6f6c04d02b2e69fcd5aa83921d145b1051011f6a25e10ac998a98b0",
+    "source-join-analysis.json": "f55b5a8f8b97c44369a610d663bf0ff2cf2bc6438cf4a610fed502a9ef8840e4",
+    "source-only-helper-readiness.json": "af43c2a53863cab51194c2439e088810ccd28ecfdac760ecc385354bff5ac942",
+    "source-preservation-audit.json": "c94d96864d0c8ed5d78be2ce7361dc266a74d39c96c981105626438fce15dc0f",
+    "sources.json": "84816dd957a19364dd915b519d35856577ee6c9eb1be630042ee84f9bf5642f3",
+    "verify-source.mjs": "30508116bdbfa16fdd0afa332d3759fecb0f19aa7b4d4eeb9b538aba6703356b"
+  },
+  "canonicalDuplicateCheck": {
+    "actualParent": 994,
+    "parentResume": "docs/hanja-goal-glyphwiki-batch994-2026-10-13/resume.json",
+    "parentResumeSHA256": "77d5b485bb0033c66d1d03f1565402198b972298f37021fd23a54b0db7100765",
+    "executions": 1,
+    "resumeReferences": 56,
+    "canonicalBefore": 288,
+    "uniqueCanonicalBefore": 288,
+    "stringHolds": 80,
+    "objectHolds": 208,
+    "glyphAndRootMatches": 0,
+    "newCanonicalHoldEligible": true,
+    "countIncrement": 1,
+    "totalCanonicalHoldsAfter": 289,
+    "finalParentDuplicateCheckExecuted": true,
+    "newHoldAccountingPending": false,
+    "resumeCreationDeferred": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "sourceOriginalsChanged": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "privateMediaSaved": false,
+  "serverStartedByWorker": false,
+  "buildRun": false,
+  "gitRun": false
+}
