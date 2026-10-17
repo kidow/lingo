@@ -1,0 +1,9 @@
+# 1080 摸 runtime 검토
+
+선택VS2만국내whole과호환하며 root가5whole·방향14·coarse126(14×9)·실제520fine2/3/9/13/14·2획마스크경계0.9239717736303439의전/경계/후와95%·자연2획재생3.8350→100을모두확인했습니다. 다른4whole의공유grassH는국내자형과다릅니다. 원14p/15m/31polygon과identity순서를변경하지않았습니다.
+
+실제계약은full5/id7 ./prefix·Sha256·필수3/4인자입니다. strict-source-preparation.identity는기존readiness.profiles[0].identity와같으며 inputFileSHA256은readiness최상위map입니다. 원25파일/shared3·NOTICE·source/geometry/provider버전을보존합니다. 공개geometry는13records/5whole/4historical providers를그대로복사합니다.
+
+fixture는root허용로컬GET1회실패후strict caller1회를사용했지만새try변수의RAM수명실수로결과를잃었습니다. root가복구용1회를명시허용하여총fixturecompile2회/engine0으로원SHAaf6a0d2e06d8bf8a8e30dbb04fbeb385aef6fb51ce00036c64283c3447e27ca4를확인하고top-level RAM에보관했습니다. GET재시도/서버재시작/추정geometry대체없음.
+
+현재runtime module은directEXPECTED상수이며runtime JSONimport/satisfies가없습니다. 실제1079부모SHA ac2bab4d0b9e50079e0d8cd8f83c322c6377024554808074c2bf286eb8835c40와적용5550/5978·미적용428·historical325/active324를확인했습니다. 기존摸보류가없어보류증분0입니다. root registry연결후focused3/3·verifier구문·actual검사를각정확1회실행해모두PASS했습니다. 실제적용5551/5978·미적용427·historical325/active324를확인했습니다. focused양성sourcecompile1과fixturecompile2/actualverifiersourcecompile0은별도로기록합니다. 빌드/TSC/fullsuite/Git0이며앱자동재생UI는검증하지않았습니다. root소유child37376/wrapper37375 port63912는matching command확인후rootSIGTERM성공을기록합니다. wrapper37375는표준autoexit예상이며별도확인은없습니다.
