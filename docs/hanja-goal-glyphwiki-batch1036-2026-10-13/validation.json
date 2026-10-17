@@ -1,0 +1,121 @@
+{
+  "batch": 1036,
+  "glyph": "睆",
+  "verifiedAt": "2026-10-18",
+  "status": "actual-runtime-verified",
+  "sourceVerification": {
+    "originalSourceRecompiledForRuntimeDataGeneration": 1,
+    "engineExecutions": 0,
+    "strictPrepSHA256": "e00e4aade34dfcd81d55877f7da11d1ffbce5a24a9de671cb58b8102806f5f9d",
+    "original16Strict4Combined2Shared4Preserved": true,
+    "originalSourceHistoricalFlagsUnchanged": true,
+    "full5Identity3Mandatory3And4": true,
+    "originalFull8RAMBridgePreserved": true,
+    "sourceRecords": 7,
+    "wholeRoots": 2,
+    "providers": 0,
+    "aliasesPreserved": true
+  },
+  "nativeReview": {
+    "observer": "/root",
+    "reviewSHA256": "c10b52075f5499418110686711b87e5f6455b50777a03d2339d953c1b20d3b0a",
+    "wholeViews": 2,
+    "directions": 12,
+    "freshCoarseFrames": 108,
+    "actual520FinePens": [
+      2,
+      7,
+      8,
+      11,
+      12
+    ],
+    "optionalCardinal1NotObserved": true,
+    "maskBoundaries": [
+      {
+        "pen": 12,
+        "boundary": 0.8101777179984385,
+        "beforeAtAfterPassed": true,
+        "actualWidth": 520,
+        "tail95Passed": true
+      }
+    ],
+    "replay": {
+      "pen": 12,
+      "actualWidth": 520,
+      "startTextPercent": 2.6725,
+      "naturalCompletion": true,
+      "completedOutput": "100.0000%"
+    },
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "checks": {
+    "focused": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1036.test.ts",
+      "executions": 1,
+      "tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "syntax": {
+      "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1036-2026-10-13/verify-runtime.mjs",
+      "executions": 1,
+      "exitCode": 0
+    },
+    "actualRuntime": {
+      "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch1036-2026-10-13/verify-runtime.mjs",
+      "executions": 1,
+      "passed": true,
+      "exitCode": 0,
+      "result": {
+        "glyph": "睆",
+        "pens": 12,
+        "masks": 13,
+        "polygons": 26,
+        "freshCoarseFrames": 108,
+        "actual520FinePens": [
+          2,
+          7,
+          8,
+          11,
+          12
+        ],
+        "optionalCardinal1NotObserved": true,
+        "wholeViews": 2,
+        "identityOrderPreserved": true,
+        "boundaries": 1,
+        "natural520Replay12Passed": true,
+        "full5Identity3Mandatory3And4": true,
+        "originalFull8RAMBridgePreserved": true,
+        "original16Strict4Combined2Shared4Preserved": true,
+        "rawLicenseFixtureOnly": true,
+        "runtimeApplied": true,
+        "appUIAutoplayVerifiedThisBatch": false
+      }
+    },
+    "build": {
+      "executions": 0
+    },
+    "fullSuite": {
+      "executions": 0
+    },
+    "serverStarts": 0,
+    "nativeActionsByRuntimePreparationAgent": 0,
+    "gitOperations": 0
+  },
+  "parent": {
+    "file": "docs/hanja-goal-glyphwiki-batch1035-2026-10-13/resume.json",
+    "sha256": "211950d6119f6b3447bbd9d5f55f473bc3d5b6f7a99b7c6890135c2ac8fc9151",
+    "completedRuntime": 5527,
+    "remainingCommittedRuntime": 451,
+    "totalHolds": 308,
+    "actualVerified": true
+  },
+  "rawLicenseAssertionFixtureOnly": true,
+  "privateMediaSaved": false,
+  "actualRuntimeCounts": {
+    "completedRuntime": 5528,
+    "remainingCommittedRuntime": 450,
+    "totalHolds": 308
+  }
+}
