@@ -1,0 +1,737 @@
+{
+  "schemaVersion": 1,
+  "batch": 1003,
+  "glyph": "舝",
+  "verifiedAt": "2026-10-17",
+  "status": "held-complete-whole-minimum-exceeds-catalog",
+  "catalogStrokes": 13,
+  "recordedDomesticClipCount": 13,
+  "evidenceScope": "Source-only original byte pin and exact endpoint inspection. Raw rows are1-based. No compiler/native run, coordinate tolerance, deletion, reversal, connector or interpolation.",
+  "reason": "Six complete captured whole roots require14 or15 consecutive original pens versus catalog13. Three component-like roots are recorded separately and are not eligible full characters under the existing explicit exclusion.",
+  "existingReportedBlocker": "complete-whole-minimum-original-pens-14or15-exceeds-catalog-13",
+  "existingEligibilityEvidence": "candidate-compile-analysis.json#sourceEvidence.componentLikeRootsExcluded and strict-native-server-preflight.json#wholeEligibilityNote",
+  "originalBytePins": {
+    "sources.json": "8e3ee169e02a9be4236838928c893380b06f3eccb34321221f4f7b954b3d989b",
+    "metadata.json": "e2c7d340de2a6bdb0c820bdf374a50e061bcc07576cc0da4683974ad9747c278",
+    "engine-proof.json": "b43cd033f3b3ae14fbc37f5dd6b862b52ebd82c66656c4e5383a588386dc1e47",
+    "progressive.mjs": "700a8a8c4ff67ffab4873aaa7ed43f08d3c304d11e311b326b760152cf6217d3",
+    "engine-whole-u821d-03-itaiji-001.json": "ebdfb11af26c1bda5518fb32bd6147f139f870cc48e5dee7f4e5c1894ec168ae",
+    "engine-whole-u821d-03-itaiji-002.json": "32b5663aab2b6d92a53b2134c8dd2ae08b040dd75d291d8943d3dcd70d10a833",
+    "engine-whole-u821d-07-itaiji-001.json": "726f0c0f4fd67342d226aed3206f9101bb4dc28d2cd73bbd615fcf94944a07f5",
+    "engine-whole-u821d-itaiji-001.json": "294879bcbe1de77498069b3568b92ea3ccf200a4224eee4681ff3e378fc0dfe8",
+    "engine-whole-u821d-ue0100.json": "81d234bde361813ab014b67f4f95dea0c960b48580db2224f8eec903378c2f9d",
+    "engine-whole-u821d-ue0101.json": "81d234bde361813ab014b67f4f95dea0c960b48580db2224f8eec903378c2f9d",
+    "engine-whole-u821d-ue0102.json": "f9be3743f57938b581e712465acbbb371d1efab78e3bb7bb789699f14e9b4c01",
+    "engine-whole-u821d-var-001.json": "6166e53cec42703ea9ed861ae3caca9403be01b1359838ec8d8f0aed88d0ddfa",
+    "engine-whole-u821d.json": "2e3e2ba3838747511b5d1382c37c043364ebff042c51fb329cb25103e6fbb016",
+    "strict-native-adapter.mjs": "d1611fa41e1a5c9df810d46afe9e507bd08d891a0fd8bc976abe02a6371152f3",
+    "serve-native.py": "14f83effb7e76c769c9a85e7ed4662093a3817f4785ec5ef7f4cd5ffbf6b1e4e"
+  },
+  "frozenContract": {
+    "callerContract": "Existing strict adapter identity, original whole/header/body and compiler byte pins",
+    "selectedIdentity": {
+      "sourceRoot": "u821d",
+      "sourceProofFile": "./engine-whole-u821d.json",
+      "sourceProofFileSha256": "2e3e2ba3838747511b5d1382c37c043364ebff042c51fb329cb25103e6fbb016",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "b43cd033f3b3ae14fbc37f5dd6b862b52ebd82c66656c4e5383a588386dc1e47",
+      "sourceMetadataFile": "./sources.json",
+      "sourceMetadataFileSha256": "8e3ee169e02a9be4236838928c893380b06f3eccb34321221f4f7b954b3d989b"
+    },
+    "selectedRoot": "u821d",
+    "selectedFile": "./engine-whole-u821d.json",
+    "identityCaseAndPathPrefixesPreserved": true
+  },
+  "wholeFacts": [
+    {
+      "root": "u821d-03-itaiji-001",
+      "file": "engine-whole-u821d-03-itaiji-001.json",
+      "fileSHA256": "ebdfb11af26c1bda5518fb32bd6147f139f870cc48e5dee7f4e5c1894ec168ae",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": false,
+      "eligibilityBasis": "Existing candidate-compile-analysis.json componentLikeRootsExcluded; not a complete replacement character",
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 13,
+      "originalPolygons": 27,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            2,
+            3
+          ],
+          "point": [
+            140,
+            28
+          ]
+        },
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            37,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            84,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            131,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            176,
+            86.095
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 8,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u821d-03-itaiji-002",
+      "file": "engine-whole-u821d-03-itaiji-002.json",
+      "fileSHA256": "32b5663aab2b6d92a53b2134c8dd2ae08b040dd75d291d8943d3dcd70d10a833",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": false,
+      "eligibilityBasis": "Existing candidate-compile-analysis.json componentLikeRootsExcluded; not a complete replacement character",
+      "originalRawRows": 13,
+      "originalDrawingRows": 13,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 13,
+      "originalPolygons": 27,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            2,
+            3
+          ],
+          "point": [
+            147,
+            28.025
+          ]
+        },
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            37,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            84,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            131,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            176,
+            86.095
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 8,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u821d-07-itaiji-001",
+      "file": "engine-whole-u821d-07-itaiji-001.json",
+      "fileSHA256": "726f0c0f4fd67342d226aed3206f9101bb4dc28d2cd73bbd615fcf94944a07f5",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": false,
+      "eligibilityBasis": "Existing candidate-compile-analysis.json componentLikeRootsExcluded; not a complete replacement character",
+      "originalRawRows": 7,
+      "originalDrawingRows": 7,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 7,
+      "originalPolygons": 17,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            29.92,
+            141.485
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 6,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u821d-itaiji-001",
+      "file": "engine-whole-u821d-itaiji-001.json",
+      "fileSHA256": "294879bcbe1de77498069b3568b92ea3ccf200a4224eee4681ff3e378fc0dfe8",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": true,
+      "eligibilityBasis": "Complete captured whole under existing source contract",
+      "originalRawRows": 20,
+      "originalDrawingRows": 20,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 21,
+      "originalPolygons": 46,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            2,
+            3
+          ],
+          "point": [
+            140,
+            28
+          ]
+        },
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            37,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            84,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            131,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            171,
+            95.9
+          ]
+        },
+        {
+          "rows": [
+            18,
+            19
+          ],
+          "point": [
+            27,
+            167.215
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 14,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u821d-ue0100",
+      "file": "engine-whole-u821d-ue0100.json",
+      "fileSHA256": "81d234bde361813ab014b67f4f95dea0c960b48580db2224f8eec903378c2f9d",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": true,
+      "eligibilityBasis": "Complete captured whole under existing source contract",
+      "originalRawRows": 20,
+      "originalDrawingRows": 20,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 20,
+      "originalPolygons": 42,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            2,
+            3
+          ],
+          "point": [
+            140,
+            28
+          ]
+        },
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            37,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            84,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            131,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            176,
+            86.095
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 15,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u821d-ue0101",
+      "file": "engine-whole-u821d-ue0101.json",
+      "fileSHA256": "81d234bde361813ab014b67f4f95dea0c960b48580db2224f8eec903378c2f9d",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": true,
+      "eligibilityBasis": "Complete captured whole under existing source contract",
+      "originalRawRows": 20,
+      "originalDrawingRows": 20,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 20,
+      "originalPolygons": 42,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            2,
+            3
+          ],
+          "point": [
+            140,
+            28
+          ]
+        },
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            37,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            84,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            131,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            176,
+            86.095
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 15,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u821d-ue0102",
+      "file": "engine-whole-u821d-ue0102.json",
+      "fileSHA256": "f9be3743f57938b581e712465acbbb371d1efab78e3bb7bb789699f14e9b4c01",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": true,
+      "eligibilityBasis": "Complete captured whole under existing source contract",
+      "originalRawRows": 20,
+      "originalDrawingRows": 20,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 20,
+      "originalPolygons": 41,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            2,
+            3
+          ],
+          "point": [
+            140,
+            28
+          ]
+        },
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            37,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            84,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            131,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            176,
+            86
+          ]
+        },
+        {
+          "rows": [
+            18,
+            19
+          ],
+          "point": [
+            38,
+            163
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 14,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u821d-var-001",
+      "file": "engine-whole-u821d-var-001.json",
+      "fileSHA256": "6166e53cec42703ea9ed861ae3caca9403be01b1359838ec8d8f0aed88d0ddfa",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": true,
+      "eligibilityBasis": "Complete captured whole under existing source contract",
+      "originalRawRows": 20,
+      "originalDrawingRows": 20,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 20,
+      "originalPolygons": 41,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            2,
+            3
+          ],
+          "point": [
+            140,
+            29.12
+          ]
+        },
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            37,
+            69.05
+          ]
+        },
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            84,
+            69.05
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            131,
+            69.05
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            176,
+            89.095
+          ]
+        },
+        {
+          "rows": [
+            18,
+            19
+          ],
+          "point": [
+            34,
+            165
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 14,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    },
+    {
+      "root": "u821d",
+      "file": "engine-whole-u821d.json",
+      "fileSHA256": "2e3e2ba3838747511b5d1382c37c043364ebff042c51fb329cb25103e6fbb016",
+      "sourceComplete": true,
+      "eligibleUnderExistingWholeSelection": true,
+      "eligibilityBasis": "Complete captured whole under existing source contract",
+      "originalRawRows": 20,
+      "originalDrawingRows": 20,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 20,
+      "originalPolygons": 43,
+      "internalRawCallDiscontinuities": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            2,
+            3
+          ],
+          "point": [
+            140,
+            28
+          ]
+        },
+        {
+          "rows": [
+            5,
+            6
+          ],
+          "point": [
+            37,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            84,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            131,
+            67.07
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            176,
+            86.095
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [],
+      "minimumConsecutiveOriginalPens": 15,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false
+    }
+  ],
+  "smallestCapturedMinimum": 6,
+  "smallestEligibleCompleteWholeMinimum": 14,
+  "componentRootsExcludedOnlyByExistingContract": [
+    "u821d-03-itaiji-001",
+    "u821d-03-itaiji-002",
+    "u821d-07-itaiji-001"
+  ],
+  "waterTrajectoryGap": null,
+  "strictCompiler": {
+    "invocationsThisInvestigation": 0,
+    "existingBlockedContractPreserved": true,
+    "newCompiledPens": 0,
+    "newCompiledMasks": 0
+  },
+  "canonicalDuplicateCheck": {
+    "baseline": "docs/hanja-goal-glyphwiki-batch964-2026-10-13/resume.json",
+    "searchedBase": "docs/hanja-goal-glyphwiki-batch939-2026-10-13/resume.json",
+    "searchedRecent": [
+      939,
+      940,
+      941,
+      942,
+      943,
+      944,
+      945,
+      946,
+      947,
+      948,
+      949,
+      950,
+      951,
+      952,
+      953,
+      954,
+      955,
+      956,
+      957,
+      958,
+      959,
+      960,
+      961,
+      962,
+      963,
+      964
+    ],
+    "lookupKeys": [
+      "舝",
+      "u821d"
+    ],
+    "existingCanonicalHoldFound": false,
+    "existingPreflightIsNotCanonicalCheckpointHold": true,
+    "newHoldAccountingPending": true,
+    "resumeCreationDeferred": true
+  },
+  "requiredNextEvidence": "A complete fixed whole with legitimate authored boundaries matching13. Do not substitute the component-like roots or delete raw strokes.",
+  "nativeWholeVariantsReviewed": 0,
+  "dictionaryDirectionStrokesReviewed": 0,
+  "progressiveFramesReviewed": 0,
+  "progressiveFramesApproved": 0,
+  "fineChecks": 0,
+  "replayChecks": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "sourceFilesChanged": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "buildRun": false,
+  "gitRun": false
+}
