@@ -1,0 +1,11 @@
+# 樲16 — fixed recovered whole source candidate
+
+This independent source-only preparation uses the captured archive-recovered u6a32 whole. Its original six definitions are retained exactly and the absent dependency is supplied separately as u76ee-j@2. No numeric version for the archived whole is invented, and the recovery does not claim that this later dependency existed in the original archive. Existing canonical hold807 remains in force.
+
+Strict compileProgressive(trace, full5Proof, explicitIdentity) requires all three arguments and exact seven-field root/proof/capsule/manifest identity. The complete immutable recovery capsule manifest SHA is0c4a6414b7865608df7a44924cc01c1f0c04dc91683f784f8b9e7061de0c5002. Proof SHA e5d38d7243fcfeafd19df03894b186da4a3e899896220c57ccae4360c6c0bb77; full5 JSON SHA16caa589d607fb3829477c6ddb996c01e191513f7d9561f5ce9dd09b6f832cdf. All eight engine hashes are pinned; no engine or HTTP request was rerun.
+
+The copied existing primitive utility uses all17raw rows once, preserving16groups,16masks and32authored polygons. Only exact adjacent raw10/11 endpoints are provisionally grouped. Vertex multisets, coordinates and source order are unchanged. The existing orientation normalization reverses three negative polygon windings without adding or changing any vertex. Curve reveal width14 is inherited unchanged; no width, path, geometry or domestic direction is inferred or optimized.
+
+One source-only verification passed with exit0: one positive compilation,20meaningful guard rejections, exact polygon-once/vertex preservation and immutable inputs. Candidate fine pens are3,4,6,7,11,15,16. There are no inter-mask boundaries. Pen6/raw5 is a source cubic terminal15 upward-hook risk: its authored polygons are unsplit and still need520px99.99→100 and actual replay review. A source/compiler pass is not native endpoint or whole-form approval.
+
+No server helper was started or prepared, no private SVG was fetched or saved. The old807 metadata is only referenced for future RAM-only native comparison. Whole, domestic pen boundaries, order, directions, coarse/fine frames and replay all remain unreviewed. Native/runtimefalse; newholds/resumes/counters/server/build/Git0. Original recovery proof and source capsules remain immutable.
