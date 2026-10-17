@@ -1,0 +1,43 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {hanjaStrokeData,HANJA_STROKES} from '../../lib/hanja-strokes.ts'
+import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1061_STROKES} from '../../lib/hanja-stroke-dictionary-glyphwiki-batch1061.ts'
+const ROOT=new URL('../../',import.meta.url),DIR=new URL('./',import.meta.url),read=f=>readFileSync(new URL(f,ROOT)),obj=f=>JSON.parse(read(f)),local=f=>JSON.parse(readFileSync(new URL(f,DIR))),sha=v=>createHash('sha256').update(v).digest('hex')
+const prep=local('source-order-preparation.json'),resume=local('resume.json'),review=local('review.json'),raw=obj('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1061.json'),e=raw[0]
+for(const[f,h]of Object.entries(prep.inputSHA256))assert.equal(sha(readFileSync(new URL(f,DIR))),h,f)
+assert.equal(Object.keys(prep.inputSHA256).length,30)
+for(const key of ['strict','order'])assert.equal(sha(read(review.sourcePreparations[key].file)),review.sourcePreparations[key].sha256)
+assert.equal(sha(JSON.stringify(e.outlines)),'a83385b3defce643d32731ae22a9b4e3247cab015ad5269c153640a585608fb6')
+assert.deepEqual([e.outlines.length,e.outlines.flat().length,e.outlines.flat().reduce((n,m)=>n+(m.outline.match(/M/g)||[]).length,0)],[20,23,50])
+assert.deepEqual(HANJA_DICTIONARY_GLYPHWIKI_BATCH1061_STROKES,raw)
+assert.deepEqual(e.sourceStrokeIndices,prep.sourceGroups.map(g=>g[0]+1))
+const h=local('engine-proof.json'),b=local(prep.identity.sourceProofFile),proof={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...b}
+assert.equal(sha(JSON.stringify(proof)),prep.fullProofSHA256)
+const geometry=obj('public/hanja-strokes/glyphwiki/u7214.json'),sources=local('sources.json')
+assert.deepEqual(geometry.records,sources.records);assert.deepEqual(geometry.aliases,sources.aliases);assert.deepEqual(geometry.providerVersions,sources.providerVersions);assert.deepEqual(geometry.drawTrace,proof.trace)
+assert.deepEqual([Object.keys(geometry.records).length,sources.wholeNames.length,geometry.providerVersions.length],[6,1,0])
+assert.equal(e.geometrySource,sha(read('public/hanja-strokes/glyphwiki/u7214.json')))
+const rh=sha(readFileSync(new URL('review.json',DIR)))
+for(const k of ['orderReviewSha256','geometryReviewSha256','directionReviewSha256'])assert.equal(e.sourceReference[k],rh)
+assert.equal(e.geometryLicense.spdx,'LicenseRef-GlyphWiki');assert.equal(e.geometryLicense.editableSource,'/hanja-strokes/glyphwiki/u7214.json')
+assert.equal(resume.previousResume,'docs/hanja-goal-glyphwiki-batch1060-2026-10-13/resume.json')
+assert.equal(sha(read(resume.previousResume)),resume.previousResumeSHA256)
+const parent=obj(resume.previousResume)
+assert.equal(parent.actualRuntimeVerifier.passed,true);assert.equal(parent.completedRuntime,5544);assert.equal(parent.totalHolds,316)
+assert.equal(resume.completedRuntime,parent.completedRuntime+1);assert.equal(resume.remainingCommittedRuntime,resume.total-resume.completedRuntime);assert.equal(resume.totalHolds,parent.totalHolds);assert.deepEqual(resume.newHoldsThisBatch,[])
+const actual=hanjaStrokeData({glyph:'爔',strokes:20})
+assert(actual);assert.deepEqual(actual.paths,e.paths);assert.deepEqual(actual.outlines,e.outlines);assert.deepEqual(actual.sourceStrokeIndices,e.sourceStrokeIndices)
+assert.equal(hanjaStrokeData({glyph:'爔',strokes:19}),null);assert.equal(hanjaStrokeData({glyph:'爔',strokes:21}),null)
+const registry=read('lib/hanja-strokes.ts').toString()
+assert.equal((registry.match(/import .*HANJA_DICTIONARY_GLYPHWIKI_BATCH1061_STROKES/g)||[]).length,1)
+assert.equal((registry.match(/\.\.\.HANJA_DICTIONARY_GLYPHWIKI_BATCH1061_STROKES/g)||[]).length,1)
+assert.equal(new Set(HANJA_STROKES.map(v=>v.glyph)).size,resume.completedRuntime)
+assert.equal(review.nativeApproval,true);assert.equal(review.directions.allPassed,true)
+assert.deepEqual([review.coarse.inheritedOriginalFrames,review.coarse.freshCorrectedFrames,review.coarse.totalFrames],[117,63,180])
+assert.deepEqual(review.fine.passedPens,[1,2,3,4,5,6,11,14,15,17,18,19,20]);assert.deepEqual(review.fine.freshFinalPens,[17,18,19,20])
+assert.equal(review.maskBoundaries.length,3);assert(review.maskBoundaries.every(x=>x.freshFinalObservation&&x.beforeAtAfterPassed&&x.tail95Passed&&!x.oldOriginalObservationInherited))
+assert.equal(review.actualReplay[0].naturalCompletion,true);assert.equal(review.actualReplay[0].startTextPercent,3.7562)
+assert.equal(review.sourceChecks.runtimeFixtureCompilations,1);assert.equal(review.sourceChecks.sourceEngineExecutions,0)
+assert.equal(prep.nativeApproval,false);assert.equal(prep.runtimeApplied,false);assert.equal(review.appUIAutoplayVerifiedThisBatch,false)
+console.log(JSON.stringify({glyph:'爔',pens:20,masks:23,polygons:50,directions:20,coarseFrames:180,coarseParts:[117,63],finePens:review.fine.passedPens,freshFine:[17,18,19,20],freshMaskBoundaries:3,naturalReplay18:true,full5Identity5Mandatory3And4:true,inputPins:30,runtimeFixtureCompilations:1,sourceCompilerRunsThisVerifier:0,engineRuns:0,rawLicenseFixtureOnly:true,registryCount:resume.completedRuntime,completedRuntime:resume.completedRuntime,remaining:resume.remainingCommittedRuntime,holds:resume.totalHolds,runtimeApplied:true,appUIAutoplayVerifiedThisBatch:false}))
