@@ -1,0 +1,85 @@
+{
+  "batch": 973,
+  "glyph": "蓷",
+  "verifiedAt": "2026-10-17",
+  "status": "approved-runtime-applied-and-verified",
+  "sourceVerification": {
+    "originalContractPins": 8,
+    "immutableOriginalFiles": 19,
+    "sourcePreparationFiles": 5,
+    "sourcePreparationSHA256": "ce86527d183283cbef43101c64188918ba8d7fd082268985405fb4f24728ed08",
+    "strictWrapperArguments": 3,
+    "originalLegacyCompilerArguments": 2,
+    "fullProofKeys": 5,
+    "identityKeys": 3,
+    "identityCasing": "sourceProofFileSHA256",
+    "newEngineExecutions": 0
+  },
+  "nativeReview": {
+    "reference": "review.json",
+    "approved": true,
+    "actualWholeViews": 3,
+    "byteIdenticalWholeProofReuses": 1,
+    "originalUnchangedCoarseFrames": 90,
+    "correctedCoarseFrames": 45,
+    "totalCoarseFrames": 135,
+    "finePens": [
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      14
+    ],
+    "boundaryPen6Start": 0.905577366884051,
+    "actualTailProbeAX": 95,
+    "excludedInvalidOldProbeActualPercent": 63.3333,
+    "completedReplays": [
+      {
+        "pen": 6,
+        "start": 3.0287,
+        "end": 100,
+        "helper": "original"
+      },
+      {
+        "pen": 6,
+        "start": 3.3987,
+        "end": 100,
+        "helper": "corrected"
+      }
+    ],
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "checks": {
+    "focusedTestsExecuted": true,
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch973.test.ts",
+      "exitCode": 0,
+      "passed": 3,
+      "failed": 0,
+      "executions": 1,
+      "strictMandatory3Full5Identity3Verified": true,
+      "completeMaskPermutationSHAEachPenVerified": true,
+      "invalidNativeProbeExcluded": true
+    },
+    "runtimeVerifierSyntaxExitCode": 0,
+    "runtimeVerifierExecuted": true,
+    "runtimeVerifier": {
+      "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch973-2026-10-13/verify-runtime.mjs",
+      "exitCode": 0,
+      "executions": 1,
+      "uniqueRegistryEntryVerified": true,
+      "selectedVS2PublicGeometryVerified": true,
+      "strictMandatory3Full5Identity3Verified": true,
+      "actualAX95Verified": true,
+      "invalidOldProbeExcluded": true
+    },
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "sourcePreparationPendingFlagsPreservedAsHistorical": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false
+}
