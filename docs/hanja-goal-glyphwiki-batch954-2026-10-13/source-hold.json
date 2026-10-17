@@ -1,0 +1,122 @@
+{
+  "batch": 954,
+  "glyph": "紽",
+  "date": "2026-10-17",
+  "status": "held-original-source-minimum-pen-count",
+  "reason": "minimum-original-pens-13-exceeds-catalog-11",
+  "catalog": {
+    "id": "u7d3d",
+    "strokes": 11,
+    "readingGrade": "특급",
+    "sourceRow": 5120,
+    "domesticClips": 11
+  },
+  "canonicalDuplicateCheck": {
+    "catalogGlyphMatches": 1,
+    "catalogIDMatches": 1,
+    "runtimeGlyphMatches": 0,
+    "runtimeApplied": false,
+    "existingSourceHoldOrReviewOrResumeReferences": 0,
+    "checkedBeforeCreatingThisHold": true
+  },
+  "wholeVariantsReviewedBySourceAnalysis": [
+    {
+      "root": "u7d3d-ue0100",
+      "file": "engine-whole-u7d3d-ue0100.json",
+      "fileSHA256": "e7c2484d2cca44987ed560c8c8f91766995e161b0f0ec716c674e9fb0602edba",
+      "originalDrawingRows": 14,
+      "originalNonDrawingRows": 0,
+      "exactDirectedEndpointJoins": [
+        [
+          10,
+          11
+        ]
+      ],
+      "exactConsecutiveJoins": [
+        [
+          10,
+          11
+        ]
+      ],
+      "minimumConsecutiveOriginalPens": 13,
+      "nativeBoundariesApproved": false
+    },
+    {
+      "root": "u7d3d",
+      "file": "engine-whole-u7d3d.json",
+      "fileSHA256": "e7c2484d2cca44987ed560c8c8f91766995e161b0f0ec716c674e9fb0602edba",
+      "originalDrawingRows": 14,
+      "originalNonDrawingRows": 0,
+      "exactDirectedEndpointJoins": [
+        [
+          10,
+          11
+        ]
+      ],
+      "exactConsecutiveJoins": [
+        [
+          10,
+          11
+        ]
+      ],
+      "minimumConsecutiveOriginalPens": 13,
+      "nativeBoundariesApproved": false
+    }
+  ],
+  "minimumConsecutiveOriginalPens": 13,
+  "originalInputBytePins": {
+    "NOTICE.md": "8f666f1d4ae3bfc3e8013e798a39ccb0f8cd5d6cd6318d454fdef33aafa4953c",
+    "candidate-compile-analysis.json": "45bdb43e23a5df3aba786941ee27edbd901efcf6502c576edecafe279303799d",
+    "engine-proof.json": "43d96c6fab191814e46c97219036d6c5a3a46fc2c5a12b2ffa3312c43cee7e47",
+    "engine-whole-u7d3d-ue0100.json": "e7c2484d2cca44987ed560c8c8f91766995e161b0f0ec716c674e9fb0602edba",
+    "engine-whole-u7d3d.json": "e7c2484d2cca44987ed560c8c8f91766995e161b0f0ec716c674e9fb0602edba",
+    "metadata.json": "44dea759d4dd6af6f0d386aedcf211911637176935456f20c5c706621ad67003",
+    "native-server-preparation-source-analysis.json": "bbe11d10ef7f1775dfc1ced22fd6c2d389811d867b3924b62826de9a52825d7a",
+    "native-server-validation.json": "7be903dbea02ce27e50e8f1e00232b20103640581aa175386288ade822a3d6e5",
+    "progressive.mjs": "1bd39e0eed136b97c43456d25162b1964cf87d9a9fe8edbe04863c240ce627cf",
+    "serve-whole.py": "a533a5b1681819b9cf5c23a7c0ee93f4947b3b56016971511ead0a85e772f182",
+    "source-analysis.json": "eec9fa7769238e33e6ea09352eebf94de610776c815ec7ebe16ae02b0f8d1851",
+    "source-join-analysis.json": "87bcbdeb9d43de571c236dabf46b0b31a95c88bd840e9c8aa5d733e31d73839c",
+    "source-preservation-audit.json": "618077dabe2d71b468280fdc0b408f4c51075d799861ed2639bc8943b3c1dfaf",
+    "sources.json": "3984a643235fd885033a82a66e3ef561b1baab27e75de1aaaef4f8b6ea01dfe4",
+    "verify-source.mjs": "fa7cfd0c5410c8ae6bb3479f0b8f56fcbf7a2c3bdedcb118d231e3cbaa284a16"
+  },
+  "compilerContract": {
+    "primitive": "compileProgressive(trace, full5proof, identity=SELECTED_PROOF_IDENTITY); explicit identity supplied in this verification",
+    "selectedIdentity": {
+      "sourceRoot": "u7d3d",
+      "sourceProofFile": "./engine-whole-u7d3d.json",
+      "sourceProofFileSha256": "e7c2484d2cca44987ed560c8c8f91766995e161b0f0ec716c674e9fb0602edba",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "43d96c6fab191814e46c97219036d6c5a3a46fc2c5a12b2ffa3312c43cee7e47"
+    },
+    "sourceProofFilePrefixPreserved": true,
+    "fullProofSHA256": "f34aa1eeb878c3f40dc4ec3b41d16b287c5c7bb8bf0643160157f2cb8aa93335",
+    "proofComposition": "{engineRevision:header.engineRevision,engineHashes:header.engineHashes,...selectedWhole}"
+  },
+  "actualCompilerVerification": {
+    "invocations": 1,
+    "exitCode": 0,
+    "expectedBlockVerified": true,
+    "expectedReason": "minimum-original-pens-13-exceeds-catalog-11",
+    "compiledPens": 0,
+    "compiledMasks": 0,
+    "inputUnchanged": true
+  },
+  "requiredNextEvidence": "A different complete fixed original whole with legitimate authored continuity matching the domestic catalog boundary; source permutation alone cannot reduce disconnected authored rows.",
+  "geometryChanged": false,
+  "pathsChanged": false,
+  "widthsChanged": false,
+  "joinsInvented": false,
+  "wholeVariantsCombined": false,
+  "sourceEngineExecuted": false,
+  "nativeWholeObserved": 0,
+  "nativeDirectionObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeReplaysObserved": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "checkpointUpdated": true
+}
