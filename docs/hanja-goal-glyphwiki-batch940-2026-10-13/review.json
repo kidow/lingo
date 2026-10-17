@@ -1,0 +1,67 @@
+{
+  "glyph": "踧",
+  "batch": 940,
+  "verifiedAt": "2026-10-17",
+  "status": "approved-intact-base-whole-complete-mask-domestic-order",
+  "nativeApproval": true,
+  "runtimeApplied": true,
+  "allStrokesReviewed": true,
+  "wholeVariantsReviewed": 2,
+  "compatibleWholeRoots": ["u8e27", "u8e27-ue0100"],
+  "wholeVariantEvidence": "Prior root native whole/base and VS0 observations reused; frozen original inputs unchanged",
+  "dictionaryDirectionStrokes": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+  "domesticToOriginalPen": [1,2,3,4,5,6,7,8,9,10,11,13,12,14,15],
+  "sourceGroupsZeroBased": [[0],[1,2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[13],[12],[14,15],[16]],
+  "progressivePensReviewed": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+  "progressiveFramesReviewed": 135,
+  "progressiveFramesApproved": 135,
+  "unreviewedProgressivePens": [],
+  "blockedPens": [],
+  "curveFineChecks": [
+    {"pen":2,"beforePercent":99.99,"afterPercent":100,"size":520,"passed":true,"noCompletionPop":true,"evidence":"Prior root observation reused; exact active-mask SHA unchanged"},
+    {"pen":7,"beforePercent":99.99,"afterPercent":100,"size":520,"passed":true,"noCompletionPop":true,"evidence":"Prior root observation reused; exact active-mask SHA unchanged"},
+    {"pen":11,"beforePercent":99.99,"afterPercent":100,"size":520,"passed":true,"noCompletionPop":true,"evidence":"Prior root observation reused; exact active-mask SHA unchanged"},
+    {"pen":12,"beforePercent":99.99,"afterPercent":100,"size":520,"passed":true,"noCompletionPop":true,"evidence":"Root native observation on 2026-10-17; actual endpoints visible"},
+    {"pen":13,"beforePercent":99.99,"afterPercent":100,"size":520,"passed":true,"noCompletionPop":true,"evidence":"Root native observation on 2026-10-17; actual endpoints visible"},
+    {"pen":14,"beforePercent":99.99,"afterPercent":100,"size":520,"passed":true,"noCompletionPop":true,"evidence":"Prior root observation reused; exact active-mask SHA unchanged"},
+    {"pen":15,"beforePercent":99.99,"afterPercent":100,"size":520,"passed":true,"noCompletionPop":true,"evidence":"Root native observation on 2026-10-17; actual endpoints visible"}
+  ],
+  "maskBoundaryObservations": [
+    {"pen":11,"mask":2,"start":0.8277972087580686,"weights":[48.071068,10],"nativeReviewed":true,"before":true,"at":true,"after":true,"additionalProbePercent":90,"connectedReveal":true,"passed":true,"evidence":"Prior root native boundary and 90 percent probe observation reused; exact masks unchanged"}
+  ],
+  "replayPens": [11],
+  "actualReplayProgress": [
+    {"pen":11,"observedPercent":8.255,"completedAX":100,"passed":true,"evidence":"Prior root actual native replay observation reused; exact masks unchanged"}
+  ],
+  "observationProvenance": {
+    "priorRootObservationReused": {
+      "reference":"domestic-order-source-audit.json/rootReportedOldProfileObservation",
+      "wholeRoots":["u8e27","u8e27-ue0100"],
+      "directions":[1,2,3,4,5,6,7,8,9,10,11,14,15],
+      "coarsePens":[1,2,3,4,5,6,7,8,9,10,11,14,15],
+      "coarseFrames":117,
+      "finePens":[2,7,11,14],
+      "boundaryPens":[11],
+      "actualReplayPens":[11],
+      "exactPerMaskSHAReuse":true
+    },
+    "currentRootObservation": {
+      "date":"2026-10-17",
+      "directions":[12,13],
+      "directionDetails":[{"pen":12,"direction":"left-falling"},{"pen":13,"direction":"right-dot"}],
+      "coarsePens":[12,13],
+      "coarseFrames":18,
+      "finePens":[12,13,15],
+      "boundaryPens":[],
+      "actualReplayPens":[],
+      "newAndReusedObservationsSeparated":true
+    }
+  },
+  "compilerFile":"domestic-order-adapter.mjs",
+  "compilerFileSHA256":"c44f3124091702ae7b3c28c3c45364205b2f8e37bc2c179467b6e5b03a9401f6",
+  "compiledSHA256":"3f7be022d1e118b00ccd2fdf62f0533369f564ec333389457f4db4cd7e1b73eb",
+  "originalMetadataAndNoticeUnchanged":true,
+  "appUIAutoplayVerifiedThisBatch":false,
+  "privateMediaSaved":false,
+  "buildRun":false
+}

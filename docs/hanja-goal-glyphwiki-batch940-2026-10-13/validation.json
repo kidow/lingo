@@ -1,0 +1,28 @@
+{
+  "batch": 940,
+  "glyph": "踧",
+  "verifiedAt": "2026-10-17",
+  "runtimeApplied": true,
+  "checks": [
+    {
+      "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch940.test.ts",
+      "exitCode": 0,
+      "tests": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch940-2026-10-13/verify-runtime.mjs",
+      "exitCode": 0,
+      "pens": 15,
+      "masks": 16,
+      "polygons": 34,
+      "frames": 135,
+      "sourcePreserved": true
+    }
+  ],
+  "nativeReview": "review.json",
+  "appUIAutoplayVerifiedThisBatch": false,
+  "productionBuildRun": false,
+  "fullSuiteRun": false
+}

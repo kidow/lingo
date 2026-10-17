@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "batch": 940,
+  "glyph": "踧",
+  "status": "source-only-order-helper-prepared-native-pending",
+  "preparedAt": "2026-10-17",
+  "originalInputs": {
+    "pinFile": "domestic-order-source-audit.json",
+    "pinFileSHA256": "1cdb2c5746a4cb0784ef21e22eba94bd361f5445afe27b41c8333beb51a91481",
+    "pinField": "originalInputsBytePins",
+    "pinCount": 16,
+    "mismatches": [],
+    "originalFilesUnchanged": true,
+    "orderAdapter": "domestic-order-adapter.mjs",
+    "orderAdapterSHA256": "c44f3124091702ae7b3c28c3c45364205b2f8e37bc2c179467b6e5b03a9401f6"
+  },
+  "createdFileSHA256": {
+    "native-server-compile-order-candidate.mjs": "61b140818e0f8d37018719811b7135047b5f5842560403ed2e5ed2731695164e",
+    "serve-order-native.py": "547a7232d71dca757044f80f044e7e0d7cc18ee6873e1b230d4d0040117d6a86"
+  },
+  "helperContract": {
+    "originalHelper": "serve-native.py",
+    "originalHelperSHA256": "6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b",
+    "originalCallerAnchors": 3,
+    "replacementCaller": "native-server-compile-order-candidate.mjs",
+    "rewriteLocation": "process-memory-only",
+    "originalHelperFileModified": false,
+    "proofKeys": ["defaults", "engineHashes", "engineRevision", "groups", "trace"],
+    "identityKeys": ["root", "sourceProofFile", "sourceProofFileSHA256", "engineHeaderSHA256", "sourceFileSHA256", "compilerFileSHA256"],
+    "fullProofSHA256": "8ee10ddae584e14950f19d32342e60f8f11cb4c3ab2183e7cc6fa3692c56414a",
+    "wholeRoot": "u8e27"
+  },
+  "actualVerification": {
+    "nodeSyntaxExit": 0,
+    "pythonAstSyntaxExit": 0,
+    "compilerExecutionCount": 1,
+    "compilerExit": 0,
+    "domesticToOriginalPen": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 12, 14, 15],
+    "pens": 15,
+    "masks": 16,
+    "polygons": 34,
+    "compiledSHA256": "3f7be022d1e118b00ccd2fdf62f0533369f564ec333389457f4db4cd7e1b73eb",
+    "compiledAndPerPenAndPerMaskHashesMatched": true,
+    "inputProofUnchanged": true,
+    "everyOriginalPolygonExactlyOnce": true,
+    "originalCoordinatesUnchanged": true,
+    "exactJoinPens": [2, 11, 14],
+    "finePens": [2, 7, 11, 12, 13, 14, 15],
+    "maskTransitions": [{"pen": 11, "mask": 2, "start": 0.8277972087580686, "weights": [48.071068, 10], "nativeReviewed": false}]
+  },
+  "remainingNativeReview": {
+    "correctedDirections": [12, 13],
+    "correctedCoarsePens": [12, 13],
+    "correctedCoarseFrames": 18,
+    "finePens": [12, 13, 15],
+    "priorObservationReference": "domestic-order-source-audit.json/rootReportedOldProfileObservation",
+    "priorObservationsAreNotNewNativeApproval": true,
+    "newNativeDirections": 0,
+    "newNativeFrames": 0,
+    "newNativeReplays": 0
+  },
+  "serverStarted": false,
+  "httpVerificationRun": false,
+  "engineOrDomesticSourceReplayRun": false,
+  "privateMediaSaved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeChanged": false,
+  "buildRun": false,
+  "gitRun": false
+}
