@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "batch": 974,
+  "glyph": "魋",
+  "verifiedAt": "2026-10-17",
+  "status": "native-selected-whole-mismatch-compatible-alternatives-count-held",
+  "selectedRoot": "u9b4b-g",
+  "selectedProofFile": "engine-whole-u9b4b-g.json",
+  "selectedProofSHA256": "1c0a4aafd10860b496cb3e8b4646d0b12684fed8a09c4d678d146c4fa0cd92f4",
+  "full5SelectedProofSHA256": "c6961a4a1946b6b8801e04e2439c3ec0493622cfe13799817885280011d53f4c",
+  "reason": "Selected-g geometry is incompatible with domestic form; shape-compatible base andVS0 each require at least19 complete consecutive original pens for catalog18.",
+  "nativeEvidence": {
+    "observer": "/root",
+    "evidenceSource": "root-native-IAB",
+    "workerNativeObservations": 0,
+    "actualWholeObservations": [
+      {
+        "root": "u9b4b-g",
+        "compatible": false,
+        "reasons": [
+          "Right隹 top is a dot instead of domestic falling-left stroke.",
+          "鬼 central vertical continues into the left sweep; domestic田 central vertical stops at the box and a separate left sweep follows."
+        ]
+      },
+      {
+        "root": "u9b4b",
+        "compatible": true
+      },
+      {
+        "root": "u9b4b-ue0100",
+        "compatible": true
+      },
+      {
+        "root": "u9b4b-ue0102",
+        "compatible": false,
+        "reason": "Large鬼 sweep ends under the left radical only; domestic sweep spans both radicals."
+      }
+    ],
+    "byteIdenticalWholeProofReuse": [
+      {
+        "root": "u9b4b-ue0101",
+        "reusedFrom": "u9b4b-ue0100",
+        "proofSHA256": "f1429c4c5c774ef5e927c4a4cb5027032b8607572d657afa44c177ca6b234d64",
+        "actualSeparateScreenshot": false
+      }
+    ],
+    "dictionaryDirectionStrokesReviewed": [],
+    "progressiveFramesReviewed": 0,
+    "finePensReviewed": [],
+    "replayObserved": false,
+    "nativeApproval": false
+  },
+  "exactConsecutiveMinimums": [
+    {
+      "root": "u9b4b",
+      "file": "engine-whole-u9b4b.json",
+      "fileSHA256": "d79893d7a7b05c766cc048af97d574ec0b62a4c5fe50ea21ed2107ec1878d7e6",
+      "rawGroups": 20,
+      "nonemptyGroups": 20,
+      "emptyRawMetadata": [],
+      "internalNonexactCallGaps": 0,
+      "exactAdjacentJoins": [
+        {
+          "fromRaw": 2,
+          "toRaw": 3,
+          "end": [
+            88.78,
+            49
+          ],
+          "start": [
+            88.78,
+            49
+          ]
+        }
+      ],
+      "nonexactAdjacentBoundaries": 18,
+      "minimumConsecutivePens": 19,
+      "catalogStrokes": 18,
+      "canMatchCatalogByExactConsecutiveGrouping": false
+    },
+    {
+      "root": "u9b4b-ue0100",
+      "file": "engine-whole-u9b4b-ue0100.json",
+      "fileSHA256": "f1429c4c5c774ef5e927c4a4cb5027032b8607572d657afa44c177ca6b234d64",
+      "rawGroups": 20,
+      "nonemptyGroups": 20,
+      "emptyRawMetadata": [],
+      "internalNonexactCallGaps": 0,
+      "exactAdjacentJoins": [
+        {
+          "fromRaw": 2,
+          "toRaw": 3,
+          "end": [
+            88.78,
+            49
+          ],
+          "start": [
+            88.78,
+            49
+          ]
+        }
+      ],
+      "nonexactAdjacentBoundaries": 18,
+      "minimumConsecutivePens": 19,
+      "catalogStrokes": 18,
+      "canMatchCatalogByExactConsecutiveGrouping": false
+    }
+  ],
+  "minimumMethod": "Read-only exact authored end-to-next-start equality without epsilon. Existing whole raw rows remain intact, authored internal call joins are exact, and only adjacent raw groups may join. No gap repair, alias substitution, nonconsecutive grouping or new geometry.",
+  "originalInputBytePins": {
+    "engine-whole-u9b4b.json": "d79893d7a7b05c766cc048af97d574ec0b62a4c5fe50ea21ed2107ec1878d7e6",
+    "engine-whole-u9b4b-g.json": "1c0a4aafd10860b496cb3e8b4646d0b12684fed8a09c4d678d146c4fa0cd92f4",
+    "engine-whole-u9b4b-ue0100.json": "f1429c4c5c774ef5e927c4a4cb5027032b8607572d657afa44c177ca6b234d64",
+    "engine-whole-u9b4b-ue0101.json": "f1429c4c5c774ef5e927c4a4cb5027032b8607572d657afa44c177ca6b234d64",
+    "engine-whole-u9b4b-ue0102.json": "1c159b6e2f3569020f4937920677c6d7a0b432aa7eba228d479d685d334971ce",
+    "progressive.mjs": "56bd1452e960dab0b5c035663cbb77af7afd1752a53e32087e3053ebc887dab5",
+    "engine-proof.json": "a6709fc82c9f8a05369835a3b68de457e894902aaf8b71bf5970ba5f7e8b1b04",
+    "sources.json": "e530c5edbffc3774b8bd6a0d45175ff2612fb56e9a9928c8fe383180489c3f6d",
+    "metadata.json": "2442a2198effe1e0041a9f6097b88f2cc930a50368b3d3e9a91bf13dd5374cbf"
+  },
+  "allOriginalFileBytePins": {
+    "NOTICE.md": "af587c105ec76a54db6978464bcbb16800f8015ab5c2154c5412079fdbefaabf",
+    "candidate-compile-analysis.json": "b1e37166aca00468856d9649246c5a4b345d33be2d469f105d6b85ea769f7499",
+    "engine-proof.json": "a6709fc82c9f8a05369835a3b68de457e894902aaf8b71bf5970ba5f7e8b1b04",
+    "engine-whole-u9b4b-g.json": "1c0a4aafd10860b496cb3e8b4646d0b12684fed8a09c4d678d146c4fa0cd92f4",
+    "engine-whole-u9b4b-ue0100.json": "f1429c4c5c774ef5e927c4a4cb5027032b8607572d657afa44c177ca6b234d64",
+    "engine-whole-u9b4b-ue0101.json": "f1429c4c5c774ef5e927c4a4cb5027032b8607572d657afa44c177ca6b234d64",
+    "engine-whole-u9b4b-ue0102.json": "1c159b6e2f3569020f4937920677c6d7a0b432aa7eba228d479d685d334971ce",
+    "engine-whole-u9b4b.json": "d79893d7a7b05c766cc048af97d574ec0b62a4c5fe50ea21ed2107ec1878d7e6",
+    "metadata.json": "2442a2198effe1e0041a9f6097b88f2cc930a50368b3d3e9a91bf13dd5374cbf",
+    "native-server-preparation-source-analysis.json": "2b814ee0e83f02dbb2eb6bd6d4d436ec89e37a60b9eba399d64a2bbdb876d797",
+    "native-server-validation.json": "c90737e1161a9fc94c0106e5bd9b744107598cf58de94f5bdeed69538d318da9",
+    "progressive.mjs": "56bd1452e960dab0b5c035663cbb77af7afd1752a53e32087e3053ebc887dab5",
+    "serve-progressive.py": "48dc3f45d770b6aa408306c6abbbfda1c74adbd1fbacd23b8ff9fba8f9f468cf",
+    "serve-whole.py": "9f1a488ae65f7f7db1a67091eafd395889a8d7133029f1a5b492fb2cdbcfef8e",
+    "source-analysis.json": "1e37de485ef3f2aa9f31256b839960400ac25c8d0b7407458717b07701437782",
+    "source-join-analysis.json": "60d3ad80b0d4a273272cab509ed53759281b4e9816c70219173d8a38fb55c8f7",
+    "source-only-helper-readiness-2026-10-14.json": "f33ec9efe1925a295c8eb82b31d2dde77d5b2cb4dd1e64c73f504bcd72a2d42e",
+    "source-preservation-audit.json": "7d65cc3ab9b0302b5fe36f4682afa5f487dc34a44c18b623aa5ed7d1f6657d10",
+    "sources.json": "e530c5edbffc3774b8bd6a0d45175ff2612fb56e9a9928c8fe383180489c3f6d",
+    "verify-source.mjs": "09469a986cbc1a5c6bad0163eccba36f4c67c83d35689e1e281f7df3f14bf67c"
+  },
+  "originalFileCount": 20,
+  "sourceMetadataChanged": false,
+  "sourceAuditChanged": false,
+  "originalNoticeChanged": false,
+  "geometryChanged": false,
+  "sourceWidthChanged": false,
+  "sourcePathChanged": false,
+  "strictWrapperCreated": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": 0,
+  "privateMediaSaved": false,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "nextAction": "Preserve all originals and keep animation unapplied. Continue batch975; no automatic alias, stroke-count change or inferred geometry."
+}

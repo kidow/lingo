@@ -1,0 +1,7 @@
+# 魋 · batch974 hold
+
+Root native IAB inspected4 independent wholes. Selectedu9b4b-g is incompatible: its隹 top is a dot instead of the domestic falling-left stroke, and鬼 central vertical joins the left sweep while the domestic vertical stops in田 and the sweep is separate. Base andVS0 have compatible shape. VS2 has a large sweep under the left radical only, versus the domestic sweep across both. VS1 proof is byte-identical toVS0 and is separately recorded as reuse, without a separate screenshot claim.
+
+The compatible base andVS0 each have20nonempty raw groups, exact internal authored calls and only one exact adjacent join(raw2→3 at88.78,49). Their strict consecutive minimum is19>catalog18. No epsilon, gap repair, nonconsecutive join, automatic alias/count change or new geometry is used. Other native directions, coarse frames, fine checks and replay remain unreviewed. All20 originals and9readiness pins, metadata, audit and NOTICE remain unchanged. No private images were saved.
+
+Actual973 parent SHA b7e0e15b7429cde1670ebf22cd90ca759159a947bf57b29ef46be95d8eda8be2 records5495/5978, remaining483, holds278. This hold leaves runtime5495 and remaining483 unchanged, adds魋 once for279holds and advances to975 隤15. All20 original files,9readiness pins, exact parent/native-hold SHA and19>18 minima passed. One runtime-absence check confirmed lookup null and zero registrations. No server, build, full suite or Git operation was performed by this worker.
