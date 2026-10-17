@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "batch": 949,
+  "glyph": "絺",
+  "verifiedAt": "2026-10-17",
+  "status": "held-source-contract-minimum15-exceeds13",
+  "catalogStrokes": 13,
+  "recordedDomesticClipCount": 13,
+  "evidenceScope": "Current local exact whole proofs and frozen strict source contract only. No native visual review performed for this hold.",
+  "reason": "Every archived complete whole requires at least15 unchanged consecutive original groups, exceeding the13-stroke catalog/domestic boundary. The strict compiler refuses the exact selected original proof.",
+  "originalBytePins": {
+    "sources.json": "829c646f4bbb1ce23f9ff79fb77fce3b5403a773bbeceff6edcf5b7d083661a2",
+    "serve-native.py": "907bb5d070c4c45f41daba9d0b2e5eeb264b809f6eaaeb4489bb534ba5b3700f",
+    "strict-native-server-preflight.json": "6a87fb589a11a1d0ccb28eaacb2285c161e88fc068352f696ee21290b8b16906",
+    "candidate-compile-analysis.json": "c09b58130d092cbb1059c04e48fdf96d01c4cab623c7f9394e649c0af26b30a1",
+    "engine-proof.json": "8ca5792ecff90e6324438b4fdaa6d64cb038762bd4f0b62a79948ce95d9966a6",
+    "native-server-input-pins.json": "2a8472276762dcc0d7bc293c942cfe4e9f7670dc18b20e3962a1a7fa296fa465",
+    "metadata.json": "7b0b0d995c3e7a373da0240fc02be63f75aa16840cf7afa4e7c969bbde9fa0f7",
+    "engine-whole-u7d7a-ue0100.json": "611e55e39e0ece888384112c74ccf7575534e31a5340789b01b333bac1ef112f",
+    "engine-whole-u7d7a.json": "611e55e39e0ece888384112c74ccf7575534e31a5340789b01b333bac1ef112f",
+    "verify-source.mjs": "6e995ccbc32d092a5d060086a1716802294c917e0135c90628957514356f5f13",
+    "source-analysis.json": "184cac79d1a0455a646dcc63e8d74f7725f5b513020262ff37be11661ac7dd10",
+    "progressive.mjs": "3503b92174e6374f7638a4ccb493d87ba835b88d05e7420918a0037a13618362",
+    "strict-native-adapter.mjs": "4593ec7c32d15e6c75d09c25cdadae27c303df2dcd9717d697a61d74de074bcf",
+    "source-join-analysis.json": "56d2e1291b6feaab5f70e385607315f4da7f57b9ff11e05ee17fc62ca54a4d2f",
+    "NOTICE.md": "0d78bc245382efeb375f39c5b2f6072f940e4f81df3a61295747fb8e5380778f"
+  },
+  "frozenStrictInputPinCount": 7,
+  "frozenStrictInputPinMismatches": [],
+  "wholeFacts": [
+    {
+      "root": "u7d7a-ue0100",
+      "sourceProofFile": "engine-whole-u7d7a-ue0100.json",
+      "sourceProofFileSHA256": "611e55e39e0ece888384112c74ccf7575534e31a5340789b01b333bac1ef112f",
+      "proofBodyKeys": [
+        "defaults",
+        "groups",
+        "trace"
+      ],
+      "rawGroups": 16,
+      "drawingCalls": 17,
+      "nonemptyRawGroups": 16,
+      "emptyRawGroups": [],
+      "originalPolygons": 38,
+      "exactDirectedJoinsZeroBased": [
+        [
+          14,
+          15
+        ]
+      ],
+      "exactConsecutiveJoinsZeroBased": [
+        [
+          14,
+          15
+        ]
+      ],
+      "internalOriginalCallConnections": [
+        {
+          "raw": 15,
+          "fromCall": 0,
+          "toCall": 1,
+          "exactlyConnected": true
+        }
+      ],
+      "minimumOriginalConsecutiveGroups": 15,
+      "traceSHA256": "a7745892ebc15a776e47a15001564c3ffa37bfacda97462a94d71db69a4b8bda",
+      "groupsSHA256": "8eb78b736913df2bd4ad50b258d26847774ab6efb0d6ef208f2e99b4ab848d66",
+      "catalog13PossibleWithoutNewGeometry": false
+    },
+    {
+      "root": "u7d7a",
+      "sourceProofFile": "engine-whole-u7d7a.json",
+      "sourceProofFileSHA256": "611e55e39e0ece888384112c74ccf7575534e31a5340789b01b333bac1ef112f",
+      "proofBodyKeys": [
+        "defaults",
+        "groups",
+        "trace"
+      ],
+      "rawGroups": 16,
+      "drawingCalls": 17,
+      "nonemptyRawGroups": 16,
+      "emptyRawGroups": [],
+      "originalPolygons": 38,
+      "exactDirectedJoinsZeroBased": [
+        [
+          14,
+          15
+        ]
+      ],
+      "exactConsecutiveJoinsZeroBased": [
+        [
+          14,
+          15
+        ]
+      ],
+      "internalOriginalCallConnections": [
+        {
+          "raw": 15,
+          "fromCall": 0,
+          "toCall": 1,
+          "exactlyConnected": true
+        }
+      ],
+      "minimumOriginalConsecutiveGroups": 15,
+      "traceSHA256": "a7745892ebc15a776e47a15001564c3ffa37bfacda97462a94d71db69a4b8bda",
+      "groupsSHA256": "8eb78b736913df2bd4ad50b258d26847774ab6efb0d6ef208f2e99b4ab848d66",
+      "catalog13PossibleWithoutNewGeometry": false
+    }
+  ],
+  "strictCompiler": {
+    "file": "strict-native-adapter.mjs",
+    "selectedIdentity": {
+      "sourceRoot": "u7d7a",
+      "sourceProofFile": "./engine-whole-u7d7a.json",
+      "sourceProofFileSha256": "611e55e39e0ece888384112c74ccf7575534e31a5340789b01b333bac1ef112f",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "8ca5792ecff90e6324438b4fdaa6d64cb038762bd4f0b62a79948ce95d9966a6"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullSelectedProofSHA256": "48e1f7b44d0d008a38f38c3f1df90526298869a8f22e68108ab74b12a18fc552",
+    "actualExecutionsThisInvestigation": 1,
+    "exactOriginalProofAndIdentityAcceptedByGuards": true,
+    "rejectedAsExpected": "minimum-original-pens-15-exceeds-catalog-13",
+    "verificationProcessExit": 0,
+    "alternativeWholesCompiled": false
+  },
+  "canonicalHoldDuplicateCheck": {
+    "baselineCheckpoint": "docs/hanja-goal-glyphwiki-batch947-2026-10-13/resume.json",
+    "baselineCompletedRuntime": 5482,
+    "baselineRemaining": 496,
+    "baselineTotalHolds": 265,
+    "baseHistory": "docs/hanja-goal-glyphwiki-batch939-2026-10-13/resume.json#/newHolds",
+    "baseHoldCount": 262,
+    "recentCheckpoints": "batch940 through batch947 newHoldsThisBatch",
+    "lookupKeys": [
+      "絺",
+      "u7d7a"
+    ],
+    "existingActiveHoldFound": false,
+    "resolvedHoldFound": false,
+    "resumeCreationDeferredUntilActualBatch948Result": true,
+    "newHoldNotYetAddedToCanonicalCheckpoint": true
+  },
+  "nativeWholeVariantsReviewed": 0,
+  "dictionaryDirectionStrokesReviewed": [],
+  "progressiveFramesReviewed": 0,
+  "progressiveFramesApproved": 0,
+  "fineChecks": 0,
+  "replayChecks": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "sourceGeometryChanged": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "sourceFilesChanged": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "serverStarted": false,
+  "nextAction": "Retain source-only hold; do not weaken strict guards or invent joins. Await root checkpoint sequencing after the actual batch948 result."
+}
