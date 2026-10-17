@@ -1,0 +1,47 @@
+{
+  "batch": 941,
+  "glyph": "賰",
+  "verifiedAt": "2026-10-17",
+  "status": "native-approved-runtime-verified",
+  "sourceVerification": {
+    "reference": "native-server-validation.json/sourceVerification",
+    "sourcePassed": true,
+    "exitCode": 0,
+    "newEngineExecutions": 0
+  },
+  "nativeReview": {
+    "reference": "review.json",
+    "approved": true,
+    "pens": 16,
+    "masks": 16,
+    "originalPolygons": 29,
+    "framesApproved": 144,
+    "finePens": [1, 2, 6, 7, 11, 12, 13, 14],
+    "replayPens": [2, 14],
+    "privateMediaSaved": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "runtime": {
+    "modulePrepared": true,
+    "registryEditedByThisAgent": false,
+    "verifyRuntimeExecuted": true,
+    "registryLinkedByRoot": true,
+    "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch941-2026-10-13/verify-runtime.mjs",
+    "exitCode": 0,
+    "runtimeApplied": true,
+    "compiledSHA256": "9dad691918732240479988a283b05a6bd5121cb7abb1bb5d49405e9839321d4e"
+  },
+  "checks": {
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch941.test.ts",
+      "exitCode": 0,
+      "passed": 3,
+      "failed": 0
+    },
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "immutableSourceMetadataPreserved": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false
+}
