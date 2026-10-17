@@ -1,0 +1,7 @@
+# 啍 · batch972 hold
+
+Root native IAB actually observed compatible baseu554d. VS0 was not separately photographed: its selected proof bytes are identical to the observed base(SHAef0db29035ecce7b1071c8c65abe5e7cbde5c344bd3bc04ef3643203b3ddeb3f), so that source-proof result is separately recorded as reuse.
+
+Priority pen2 at520px99.99percent has a clipped or rounded lower-left terminal on its right vertical;100percent exposes a sharp wedge. Root compared75x70RAM crops and rejected the completion pop. The pinned audit reports15.169947264245835vertex distance against revealWidth14, consistent with the defect. No other directions, coarse frames, fine pens or replay were reviewed. No width/path change or strict wrapper was created. All17 original files and6readiness pins, metadata, audit, NOTICE and empty raw4metadata remain unchanged. No private image was saved.
+
+Actual971 parent SHA d5191e58f4523afbe0a329a1120b86e41133e3b711575123f8444d1e499e2eec records5494/5978, remaining484, holds277. Root-directed newhold accounting leaves runtime5494 and remaining484 unchanged, advances holds278 and next973 蓷15. Source metadata reReview is false and priorBatch is null; no broad historical duplicate-scan PASS is claimed. All17 original files,6readiness pins, exact parent and native-hold SHA passed. One runtime-absence check confirmed lookup null and zero registrations. No build, full suite or Git operation was performed.
