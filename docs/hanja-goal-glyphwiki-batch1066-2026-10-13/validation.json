@@ -1,0 +1,176 @@
+{
+  "batch": 1066,
+  "glyph": "迲",
+  "date": "2026-10-18",
+  "status": "held-actual-checkpoint-verified",
+  "nativeReviewFile": "native-review.json",
+  "nativeReviewSHA256": "2bfa53fcc67df06b7eab51f658ab8ff1cda5d79dac3deda6704f47f02f3d1af7",
+  "originalFilesPreserved": 26,
+  "sharedPins": 3,
+  "nativeReview": {
+    "reportedBy": "root actual browser panel",
+    "wholeActuallyObserved": [
+      "u8ff2",
+      "u8ff2-g",
+      "u8ff2-k",
+      "u8ff2-var-002"
+    ],
+    "compatible": [
+      "u8ff2",
+      "u8ff2-k"
+    ],
+    "incompatible": [
+      {
+        "root": "u8ff2-g",
+        "reason": "one-dot movement radical differs from domestic two-dot"
+      },
+      {
+        "root": "u8ff2-var-002",
+        "reason": "one-dot movement radical differs from domestic two-dot"
+      }
+    ],
+    "unavailable": [
+      {
+        "root": "u8ff2-var-001",
+        "missing": [
+          "u571f-j"
+        ],
+        "notObserved": true
+      }
+    ],
+    "selectedCompiledGWholeObservedIncompatible": true,
+    "directionsObserved": 9,
+    "directionsPassed": false,
+    "allDirectionsObservedNotApproved": true,
+    "domesticPenStructure": "去five pens first; movement-radical dot6,dot7,HV8,final9",
+    "selectedGStructure": "movement radical first and only one dot; numeric9count does not establish domestic identity or boundaries",
+    "coarseFramesObserved": 0,
+    "fineChecksObserved": 0,
+    "boundaryChecksObserved": 0,
+    "replaysObserved": 0,
+    "nativeApproval": false
+  },
+  "sourceFacts": {
+    "rowNumberConvention": "zero-based original raw rows",
+    "compatibleWholeFacts": [
+      {
+        "root": "u8ff2",
+        "file": "engine-whole-u8ff2.json",
+        "fileSHA256": "8e81f667e40206a0fc510f120cda4c7621ff393b2c4c5edf51163e3decfa6a14",
+        "raw": 12,
+        "drawing": 12,
+        "polygons": 26,
+        "exactDirectedJoinEdges": [
+          [
+            2,
+            3
+          ]
+        ],
+        "minimumExactContinuousPens": 11,
+        "selectedCompilerSupportsThisWhole": false
+      },
+      {
+        "root": "u8ff2-k",
+        "file": "engine-whole-u8ff2-k.json",
+        "fileSHA256": "7acd1526db0fbaefa35b31092a6dca35eafd58f90d5bb738261171633d1c7a0c",
+        "raw": 12,
+        "drawing": 12,
+        "polygons": 26,
+        "exactDirectedJoinEdges": [
+          [
+            2,
+            3
+          ]
+        ],
+        "minimumExactContinuousPens": 11,
+        "selectedCompilerSupportsThisWhole": false
+      }
+    ],
+    "extraRegroupRequired": [
+      {
+        "raw": [
+          4,
+          5
+        ],
+        "calls": "Q then Bezier",
+        "firstEnd": [
+          55,
+          154
+        ],
+        "secondStart": [
+          53,
+          152
+        ],
+        "endpointGapKage": 2.8284271247461903,
+        "originalPolygonOverlapWitness": [
+          54.4,
+          153.2
+        ]
+      },
+      {
+        "raw": [
+          9,
+          10
+        ],
+        "calls": "Q then Q",
+        "firstEnd": [
+          95.33,
+          139.85
+        ],
+        "secondStart": [
+          73.94,
+          142.265
+        ],
+        "endpointGapKage": 21.525898935932965,
+        "originalPolygonOverlapWitness": [
+          99.6,
+          135.3
+        ]
+      }
+    ],
+    "existingCompilerExactContinuityRequired": true,
+    "existingCompilerOnlySupportedWhole": "u8ff2-g",
+    "existingGNonconsecutiveExactGroupNotTransferableToDifferentGeometry": true,
+    "newTwoMaskRegroupExperimentCreated": false,
+    "newTwoMaskRegroupCompiled": false,
+    "overlapIsNotDomesticBoundaryOrDirectionApproval": true,
+    "authoredCoordinatesPathsWidthsConnectors": false
+  },
+  "focusedCheckpointValidation": {
+    "passed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "parentSHA": "962ec9a3a22758686d2880a1f9b54a10c15f1f18b5db4ee78902321b15006c63",
+    "parentActualRuntimeReconfirmed": true,
+    "canonicalReferences": 125,
+    "canonicalStringHolds": 80,
+    "canonicalObjectHolds": 236,
+    "canonicalUniqueBefore": 316,
+    "duplicateMatches": 0,
+    "canonicalUniqueAfter": 317,
+    "originalPins": 26,
+    "sharedPins": 3,
+    "pinMismatches": 0,
+    "nativeReviewSHA256": "2bfa53fcc67df06b7eab51f658ab8ff1cda5d79dac3deda6704f47f02f3d1af7",
+    "registryOccurrences": 0,
+    "exactLookup": null,
+    "registryCount": 5547,
+    "completedRuntime": 5547,
+    "remaining": 431,
+    "holdsAfter": 317,
+    "sourceCompilerExecutions": 0,
+    "engineExecutions": 0,
+    "newNativeObservations": 0,
+    "HTTP": 0,
+    "serverStarts": 0,
+    "buildRun": false,
+    "gitRun": false
+  },
+  "runtimeApplied": false,
+  "sourceCompilerExecutions": 0,
+  "engineExecutions": 0,
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "privateMediaSaved": false
+}
