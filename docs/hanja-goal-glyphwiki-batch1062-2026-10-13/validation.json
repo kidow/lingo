@@ -1,0 +1,161 @@
+{
+  "batch": 1062,
+  "glyph": "餼",
+  "verifiedAt": "2026-10-18",
+  "status": "native-approved-runtime-registered-verified",
+  "sourceVerification": {
+    "originalFiles": 25,
+    "baselineStrictFiles": 6,
+    "newTerminalFiles": 6,
+    "sharedGuards": 4,
+    "actualRendererDependencies": 3,
+    "frozen826EvidenceFiles": 1,
+    "inputPins": 40,
+    "fullProofKeys": 5,
+    "exactIdentityKeys": 5,
+    "identityHashKeyCasing": "uppercase SHA256",
+    "mandatoryArgs": [
+      3,
+      4
+    ],
+    "existingTerminalCandidateAPIUnchanged": true,
+    "baselineExternalFull8Identity3NotSubstituted": true,
+    "rawGeometryCoordinatesPathsWidthsAndWeightsUnchanged": true,
+    "historicalNativeRuntimeFalsePreserved": true,
+    "runtimeFixtureCompilation": 0,
+    "finalSourceRAMReused": true,
+    "sourceEngineExecutions": 0,
+    "actualManifest": {
+      "records": 10,
+      "wholeRoots": 4,
+      "providers": 0
+    }
+  },
+  "nativeReview": {
+    "reference": "review.json",
+    "approved": true,
+    "actualWholeViews": 4,
+    "compatibleWholeRoots": [
+      "u993c",
+      "u993c-ue0100",
+      "u993c-ue0101"
+    ],
+    "incompatibleWholeRoots": [
+      "u993c-ue0102"
+    ],
+    "baselineFailure": {
+      "profile": "original-baseline19-masks",
+      "pen": 13,
+      "actualWidth": 520,
+      "progress": [
+        95,
+        99.99,
+        100
+      ],
+      "failed": true,
+      "reason": "Upward tail short at95/99.99; roughly20px complete tail appears suddenly at100",
+      "failureNotErased": true,
+      "baselineCompiledSHA256": "2f10034eb7562af400b0f807f509e7f8e41ab08bd667bf7f77144508bc642fb6"
+    },
+    "directions": 19,
+    "originalDirectionMismatches": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "totalCoarseFrames": 171,
+    "allCoarseFresh": true,
+    "inheritedOriginalCoarseFrames": 0,
+    "actual520FinePens": [
+      1,
+      2,
+      4,
+      10,
+      13,
+      14,
+      15,
+      18,
+      19
+    ],
+    "allFineFresh": true,
+    "domesticAndCandidateSVGWidths": [
+      520,
+      520
+    ],
+    "endpointCropsCandidateOnly": true,
+    "maskBoundaries": [
+      {
+        "pen": 13,
+        "mask": 2,
+        "start": 0.8703125091916009,
+        "weights": [
+          83.885549,
+          12.5
+        ],
+        "actualWidth": 520,
+        "beforeAtAfterObserved": true,
+        "actualUITailProbePercent": 95,
+        "tailPassed": true,
+        "alsoObservedProgress": [
+          95,
+          99.99,
+          100
+        ],
+        "allPassed": true,
+        "freshFinalObservation": true,
+        "endpointCropCandidateOnly": true
+      }
+    ],
+    "freshReplay": {
+      "pen": 13,
+      "actualWidth": 520,
+      "startTextPercent": 3.7888,
+      "completedPercent": 100,
+      "completedOutput": "100.0000%",
+      "naturalCompletion": true,
+      "passed": true,
+      "freshFinalObservation": true,
+      "bothSidesPairCropped": true
+    },
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "nativeHelperCompilationAccounting": {
+    "cachedRunnerFile": "scripts/hanja-native-cached-server.py",
+    "cachedRunnerSHA256": "3d0542a760ad93262096689dd8f268b4b703b6f4a8d2763f9514160b7942e572",
+    "baselineRunner": {
+      "port": 58984,
+      "childPID": 30319,
+      "wrapperPID": 30318,
+      "startupCompilationsReportedByRoot": 1,
+      "requestCompilationsReportedByRoot": 0,
+      "cleanupReportedByRoot": true
+    },
+    "finalRunner": {
+      "port": 59314,
+      "childPID": 38570,
+      "wrapperPID": 38569,
+      "startupCompilationsReportedByRoot": 1,
+      "requestCompilationsReportedByRoot": 0,
+      "cleanupReportedByRoot": true
+    },
+    "runtimeFixtureCompilations": 0,
+    "serverCountsAreRootReported": true
+  },
+  "checks": {
+    "focusedTestsExecuted": true,
+    "syntaxCheckExecuted": true,
+    "runtimeVerifierExecuted": true,
+    "rawLicenseAssertionFixtureOnly": true,
+    "buildRun": false,
+    "fullSuiteRun": false,
+    "focusedTestsPassed": 3,
+    "focusedTestExecutions": 1,
+    "syntaxCheckExitCode": 0,
+    "syntaxCheckExecutions": 1,
+    "runtimeVerifierExitCode": 0,
+    "runtimeVerifierExecutions": 1,
+    "runtimeRegistryApplied": true
+  },
+  "privateMediaSaved": false
+}
