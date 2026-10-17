@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {compileProgressive,compileSourceWhole,selectedProofIdentity,wholeSourceIdentities,sourceRoot,sourceGroupsByWhole,renderProgressive} from './strict-source-candidate.mjs'
+const read=f=>readFileSync(new URL(f,import.meta.url)),obj=f=>JSON.parse(read(f)),sha=v=>createHash('sha256').update(v).digest('hex'),prep=obj('strict-source-preparation.json')
+for(const[f,h]of Object.entries({...prep.originalPins,...prep.sharedRendererBytePins,...prep.newFilesSHA256}))assert.equal(sha(read(f)),h,f)
+const root=process.env.WHOLE_ROOT??process.argv[2]??sourceRoot;assert(Object.hasOwn(prep.profiles,root),'Only exact supported original profiles are allowed');const profile=prep.profiles[root],id=profile.identity;assert.deepEqual(selectedProofIdentity,prep.profiles[sourceRoot].identity);assert.deepEqual(wholeSourceIdentities[root],id);assert.deepEqual(sourceGroupsByWhole[root],profile.sourceGroups)
+const h=obj('engine-proof.json'),b=obj(profile.proofFile),proof={engineRevision:h.engineRevision,engineHashes:h.engineHashes,...b},before=JSON.stringify(proof)
+assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(sha(before),profile.fullProofSHA256)
+const out=compileSourceWhole(root,proof.trace,proof,id);assert.equal(JSON.stringify(proof),before);assert.equal(sha(JSON.stringify(out)),profile.compiledSHA256);assert.deepEqual(out.map(pen=>sha(JSON.stringify(pen))),profile.orderedPenMaskSHA256)
+const canonical=poly=>{const options=[];for(const v of[poly,[...poly].reverse()])for(let i=0;i<v.length;i++)options.push(JSON.stringify([...v.slice(i),...v.slice(0,i)]));return options.sort()[0]}
+const originals=proof.groups.flatMap(g=>g.polygons).map(p=>canonical(p.map(q=>[q.x/2,q.y/2]))).sort(),emitted=out.flatMap(pen=>pen.flatMap(mask=>mask.outline.split(' Z').filter(s=>s.trim()).map(s=>canonical([...s.matchAll(/[ML]([-+\d.eE]+) ([-+\d.eE]+)/g)].map(m=>[Number(m[1]),Number(m[2])]))))).sort();assert.deepEqual(emitted,originals,'Every original polygon and vertex exactly once')
+let rejected=0;const reject=fn=>{assert.throws(fn);rejected++}
+if(process.env.CHECK==='1'){
+ reject(()=>Reflect.apply(compileProgressive,null,[proof.trace,proof]));reject(()=>Reflect.apply(compileProgressive,null,[proof.trace,proof,id,{}]));reject(()=>Reflect.apply(compileSourceWhole,null,[root,proof.trace,proof]));reject(()=>Reflect.apply(compileSourceWhole,null,[root,proof.trace,proof,id,{}]));reject(()=>compileSourceWhole('wrong',proof.trace,proof,id));
+ for(const key of Object.keys(id)){reject(()=>compileProgressive(proof.trace,proof,{...id,[key]:'wrong'}));const missing={...id};delete missing[key];reject(()=>compileProgressive(proof.trace,proof,missing));}
+ reject(()=>compileProgressive(proof.trace,proof,{...id,extra:true}));reject(()=>compileProgressive(proof.trace,proof,{...id,sourceProofFile:'./'+id.sourceProofFile}));
+ for(const[key,alias]of[['sourceProofFileSha256','sourceProofFileSHA256'],['sourceHeaderFileSha256','sourceHeaderFileSHA256'],['sourceMetadataFileSha256','sourceMetadataFileSHA256'],['sourceProofFileSHA256','sourceProofFileSha256'],['engineHeaderSHA256','engineHeaderSha256']])if(Object.hasOwn(id,key)){const value={...id,[alias]:id[key]};delete value[key];reject(()=>compileProgressive(proof.trace,proof,value));}
+ if(JSON.stringify(id)!==JSON.stringify(profile.originalWholeIdentity))reject(()=>compileProgressive(proof.trace,proof,profile.originalWholeIdentity));
+ for(const mutate of[p=>{p.extra=true},p=>{delete p.defaults},p=>{p.defaults.kWidth+=.1},p=>{p.engineHashes['2d.js']='wrong'},p=>{p.trace[0][0].args[0]+=.1},p=>{p.groups[0].polygons[0][0].x+=.1},p=>{p.sourceRoot=root}]){const value=structuredClone(proof);mutate(value);reject(()=>compileProgressive(value.trace,value,id));}
+ reject(()=>compileProgressive([],proof,id));
+}
+for(const[f,h]of Object.entries({...prep.originalPins,...prep.sharedRendererBytePins,...prep.newFilesSHA256}))assert.equal(sha(read(f)),h,f)
+console.log(JSON.stringify({sourceRoot:root,pens:out.length,masks:out.flat().length,polygons:originals.length,compiledSHA256:sha(JSON.stringify(out)),fullProofSHA256:sha(before),positiveCompilerRuns:1,strictRejections:rejected,sourceGroups:profile.sourceGroups,allOriginalPolygonsExactlyOnce:true,finePens:out.flatMap((p,i)=>p.some(m=>m.direction==='curve')?[i+1]:[]),maskTransitions:out.flatMap((p,i)=>p.length>1?[{pen:i+1,weights:p.map(m=>m.weight),boundaries:p.slice(0,-1).map((_,k)=>p.slice(0,k+1).reduce((n,m)=>n+m.weight,0)/p.reduce((n,m)=>n+m.weight,0))}]:[]),nativeApproval:false,runtimeApplied:false,strokes:process.env.CHECK==='1'?undefined:out,render:process.env.CHECK==='1'?undefined:renderProgressive.toString()}))
