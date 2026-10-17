@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "previousResume": "docs/hanja-goal-glyphwiki-batch1066-2026-10-13/resume.json",
+  "previousResumeSHA256": "185af4e50259f5e5861dbfb5bde7a58c564594f617b1c8f916ed7b3d83958115",
+  "checkpointStatus": "source-consecutive-minimum-hold-actual-checkpoint-verified",
+  "actualCheckpointVerified": true,
+  "runtimeAbsenceVerified": true,
+  "completedRuntime": 5547,
+  "total": 5978,
+  "remainingCommittedRuntime": 431,
+  "pendingRuntime": 0,
+  "lastCompletedBatch": 1067,
+  "lastRuntimeBatch": 1065,
+  "newHoldsThisBatch": [
+    {
+      "batch": 1067,
+      "glyph": "俓",
+      "root": "u4fd3",
+      "catalogStrokes": 9,
+      "recordedDomesticClipCount": 9,
+      "hold": "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/source-hold.json",
+      "holdSHA256": "063ad8ce640c95ab0130dda0309f46618d95b6fc372b1eb16b36d903800c4fa3",
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ],
+  "existingHoldsInherited": 317,
+  "totalHolds": 318,
+  "inheritancePolicy": "부모 실제 canonical 317자를 승계합니다. 126개 resume의 문자열80·객체237에서 俓/u4fd3 중복0을 확인하여 신규1자만 추가합니다. Compact 생략은 기존 보류 삭제가 아닙니다.",
+  "inheritedFields": {
+    "existingHolds": "docs/hanja-goal-glyphwiki-batch1066-2026-10-13/resume.json#/totalHolds",
+    "canonicalHoldHistory": "docs/hanja-goal-glyphwiki-batch1066-2026-10-13/resume.json#/previousResume"
+  },
+  "lastReview": {
+    "glyph": "俓",
+    "status": "held-source-contract-consecutive-minimum-exceeds-catalog",
+    "catalogStrokes": 9,
+    "recordedDomesticClipCount": 9,
+    "smallestCapturedMinimum": 12,
+    "reason": "All captured complete roots exceed the canonical catalog under the existing consecutive original-row grouping contract. Nonconsecutive coordinate coincidences do not grant a domestic pen or permission to force the count.",
+    "blocker": "complete-whole-minimum12-exceeds-catalogue9-no-exact-joins",
+    "sourceHold": "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/source-hold.json",
+    "sourceHoldSHA256": "063ad8ce640c95ab0130dda0309f46618d95b6fc372b1eb16b36d903800c4fa3",
+    "frozenContract": {
+      "readinessFile": "source-only-helper-readiness.json",
+      "callerContract": "selected proof/header identity + full five-key original proof",
+      "selectedIdentity": {
+        "sourceRoot": "u4fd3",
+        "sourceProofFile": "./engine-whole-u4fd3.json",
+        "sourceProofFileSha256": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "655ccee1ebef3e043e7e2b3d1fdf4f6a8fd299cd2e84fb6c0650d158b1bfb936",
+        "sourceMetadataFile": "./sources.json",
+        "sourceMetadataFileSha256": "b19ddfdd57ce69e70a8167d85db9d2e88437f3143d284b2afa28a1b9f879049a"
+      },
+      "selectedRoot": "u4fd3",
+      "selectedFile": "engine-whole-u4fd3.json",
+      "profileIdentities": [],
+      "identityCaseAndPathPrefixesPreserved": true
+    },
+    "wholeFacts": [
+      {
+        "root": "u4fd3-k",
+        "file": "engine-whole-u4fd3-k.json",
+        "fileSHA256": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+        "raw": 12,
+        "drawing": 12,
+        "emptyRowsOneBased": [],
+        "minimumConsecutiveOriginalPens": 12
+      },
+      {
+        "root": "u4fd3-ue0100",
+        "file": "engine-whole-u4fd3-ue0100.json",
+        "fileSHA256": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+        "raw": 12,
+        "drawing": 12,
+        "emptyRowsOneBased": [],
+        "minimumConsecutiveOriginalPens": 12
+      },
+      {
+        "root": "u4fd3",
+        "file": "engine-whole-u4fd3.json",
+        "fileSHA256": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+        "raw": 12,
+        "drawing": 12,
+        "emptyRowsOneBased": [],
+        "minimumConsecutiveOriginalPens": 12
+      }
+    ],
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "rowNumberConvention": "wholeFacts raw/empty/exactConsecutiveJoins: one-based original rows. Legacy blocker prose is quoted unchanged and may use zero-based numbering."
+  },
+  "originalFilesSHA256": {
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/NOTICE.md": "7d9f951a48bb8e26b248c1c015548785c0bd7b6307c09804dcf754bbd3c3fcf2",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/README.md": "eaaf0ff8b285a0ea759bb3db2c486baf395de984e787a007a226a565ea3beb39",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/candidate-compile-analysis.json": "470e2ea74c28275f0a1dee981b2e2f846793d8c85238f08542b3c151a84a7714",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/engine-proof.json": "655ccee1ebef3e043e7e2b3d1fdf4f6a8fd299cd2e84fb6c0650d158b1bfb936",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/engine-whole-u4fd3-k.json": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/engine-whole-u4fd3-ue0100.json": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/engine-whole-u4fd3.json": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/metadata.json": "bf69ba44796dd145c227e8b44e14a2156ef43eef37cb54f2ed5e4df374f081c9",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/native-server-preparation-source-analysis.json": "8c671c8ab72a36af2181569465b653ccc0f0967b1f42f90593afb24e46f0dc60",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/native-server-validation.json": "c073f9ef54730938b2f55f4815c4365ebfe44bbdbc55f235977df150efcf661d",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/progressive.mjs": "cf88c0ef1bfc0e8f78e2167c8a143c8928fb17c986e0f7274fd428b6591a5dd9",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/serve-whole.py": "57be36254fb24d1936b09c74ca85fa642366b558ddb88b384e2b68e482352265",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/source-analysis.json": "c884337013b4430d9505a7b7966396683eccf61264b17c6740cb9a4db9f437e0",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/source-hold.json": "063ad8ce640c95ab0130dda0309f46618d95b6fc372b1eb16b36d903800c4fa3",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/source-join-analysis.json": "b355fac9aeea97886ed2425691d63e7200eabc5b6e822dfaa741803bba80300e",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/source-only-helper-readiness.json": "c8d48ad05e5dc048a0a8a376852c3f3f3a6ce357e6b8af4071a82815f31d302a",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/sources.json": "b19ddfdd57ce69e70a8167d85db9d2e88437f3143d284b2afa28a1b9f879049a",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/validation.json": "9b807eb3a97b996a5c42652e7084af9f0e46ea483ac055fd84e9c41e3d076a7c",
+    "docs/hanja-goal-glyphwiki-batch1067-2026-10-13/verify-source.mjs": "34b902e5d7b7e9ed5a7e05c0afc21d02f063884e4d05b06dced99902c9b51342"
+  },
+  "originalFilesPreserved": 19,
+  "originalReadmeAndValidationUnchanged": true,
+  "focusedCheckpointValidation": {
+    "batch": 1067,
+    "glyph": "俓",
+    "passed": true,
+    "exitCode": 0,
+    "executions": 1,
+    "verifiedAt": "2026-10-18",
+    "parentSHA": "185af4e50259f5e5861dbfb5bde7a58c564594f617b1c8f916ed7b3d83958115",
+    "parentActualCheckpointVerified": true,
+    "parentRuntimeAbsenceVerified": true,
+    "canonicalReferences": 126,
+    "canonicalStringHolds": 80,
+    "canonicalObjectHolds": 237,
+    "canonicalUniqueBefore": 317,
+    "duplicateMatches": 0,
+    "canonicalUniqueAfter": 318,
+    "protectedFiles": 19,
+    "originalAuditPins": 6,
+    "pinMismatches": 0,
+    "sourceHoldSHA256": "063ad8ce640c95ab0130dda0309f46618d95b6fc372b1eb16b36d903800c4fa3",
+    "catalogStrokes": 9,
+    "recordedDomesticClipCount": 9,
+    "sourceFacts": [
+      {
+        "root": "u4fd3-k",
+        "rawRows": 12,
+        "drawingRows": 12,
+        "emptyRowsOneBased": [],
+        "exactConsecutiveJoinsOneBased": [],
+        "minimumConsecutiveOriginalPens": 12
+      },
+      {
+        "root": "u4fd3-ue0100",
+        "rawRows": 12,
+        "drawingRows": 12,
+        "emptyRowsOneBased": [],
+        "exactConsecutiveJoinsOneBased": [],
+        "minimumConsecutiveOriginalPens": 12
+      },
+      {
+        "root": "u4fd3",
+        "rawRows": 12,
+        "drawingRows": 12,
+        "emptyRowsOneBased": [],
+        "exactConsecutiveJoinsOneBased": [],
+        "minimumConsecutiveOriginalPens": 12
+      }
+    ],
+    "rowConvention": "one-based original raw rows",
+    "registryCount": 5547,
+    "registryOccurrences": 0,
+    "exactLookup": null,
+    "sourceCompilerExecutions": 0,
+    "engineRuns": 0,
+    "newNativeObservations": 0,
+    "HTTP": 0,
+    "serverStarts": 0,
+    "buildRun": false,
+    "gitRun": false
+  },
+  "nextIndependentCandidate": {
+    "batch": 1068,
+    "glyph": "苽",
+    "strokes": 9,
+    "directory": "docs/hanja-goal-glyphwiki-batch1068-2026-10-13",
+    "status": "root-native-review-pending"
+  },
+  "verificationPolicy": {
+    "productionBuild": false,
+    "fullSuite": false,
+    "sourceCompilerExecuted": false,
+    "engineRuns": 0,
+    "newNativeObservations": 0,
+    "appUIAutoplayVerifiedThisBatch": false,
+    "scope": "기존 고정 sourcehold와 전체 보호 파일, catalog/국내 획수 분리, raw/빈행/연속접점 최소 기록, 전체 canonical 문자열·객체 중복0, 실제 부모SHA와 등록5547·대상lookupnull 집중검증 정확1회. 기존 원본문서 불변."
+  },
+  "privateMediaSaved": false
+}
