@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "batch": 1009,
+  "glyph": "玁",
+  "verifiedAt": "2026-10-18",
+  "status": "actual-runtime-verified-focused-and-syntax-PASS",
+  "nativeApproval": true,
+  "runtimeApplied": true,
+  "reviewSHA256": "76d128a39e29142875d38d2d5a99da174448e96bd6fb21140e1c92e86ddc5b5c",
+  "compiledSHA256": "c43540baa8bea979680dbe7cee3abf6c2f39c76904691aaa3469a77fab8f84ea",
+  "sourceGeometryUnchanged": true,
+  "parentCheckpoint": {
+    "file": "docs/hanja-goal-glyphwiki-batch1008-2026-10-13/resume.json",
+    "sha256": "021f7f77861359a223d05a5bd3bc8d82b480ca9c081e355c30f96ffabe298e38",
+    "actualRuntime": 5511,
+    "actualRemaining": 467,
+    "inheritedHolds": 297
+  },
+  "focusedTests": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "tests": 3,
+    "passed": 3,
+    "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1009.test.ts"
+  },
+  "verifierSyntax": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1009-2026-10-13/verify-runtime.mjs"
+  },
+  "actualRuntimeVerifier": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch1009-2026-10-13/verify-runtime.mjs",
+    "pens": 23,
+    "masks": 24,
+    "polygons": 43,
+    "frames": 207,
+    "actual520FinePens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      11,
+      18,
+      20,
+      22,
+      23
+    ],
+    "actualFoldPens": [
+      5,
+      8
+    ],
+    "boundary": 2,
+    "naturalReplay": 2,
+    "sourcePreserved": true,
+    "protectedPins": 26,
+    "runtimeApplied": true,
+    "currentRegisteredCount": 5512,
+    "compiledSHA256": "c43540baa8bea979680dbe7cee3abf6c2f39c76904691aaa3469a77fab8f84ea"
+  },
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "privateMediaSaved": false
+}
