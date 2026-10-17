@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "glyph": "嚌",
+  "batch": 861,
+  "verifiedAt": "2026-10-18",
+  "status": "static-certificate-passed",
+  "scope": "Bounded derived vector display clip only; no visual or stroke-order approval",
+  "observer": "Node static computation; no browser/native observation",
+  "experimental": true,
+  "staticOnly": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "existingHoldResolved": false,
+  "canonicalHoldDelta": 0,
+  "sourceGeometryAuthored": false,
+  "originalTrajectoryApproved": false,
+  "grid": 200,
+  "sourceDomain": {
+    "rawZeroBased": 14,
+    "polygons": 3,
+    "vertices": [
+      22,
+      3,
+      3
+    ],
+    "completedVRawZeroBased": 13,
+    "completedVPolygons": 1,
+    "completedVVertices": 4
+  },
+  "geometryCertificate": {
+    "vertices": 2167,
+    "triangles": 4104,
+    "derivedPieces": 1037,
+    "positiveAreaCells": 334,
+    "sourceUnionArea": 69.74401923076923,
+    "sourceUnionAreaExact": "3626689/52000",
+    "triangleAreaExact": "3626689/52000",
+    "coverageAreaDifferenceExact": "0/1",
+    "boundaryAtomicSegments": 228,
+    "triangleIntersectionPairsChecked": 33494,
+    "positiveAreaOverlaps": 0,
+    "positiveInterfaceComponents": [
+      {
+        "triangles": 4104,
+        "seedTriangles": 450
+      }
+    ],
+    "fullCellSeedVertices": 253,
+    "fullCellSeedTriangles": 450,
+    "sourceHoles": 0,
+    "nonmanifold": false,
+    "sharedEdgesConforming": true,
+    "orientedBoundaryPreserved": true
+  },
+  "scalarCertificate": {
+    "seedPlateaus": 450,
+    "zeroPlateausContainedInCompletedV": true,
+    "nonseedPlateaus": 0,
+    "minimumPositiveTriangleSpan": 0.0012899202894831596,
+    "maximum": 8.56498453601575,
+    "normalizedMinimumSpan": 0.00015060392509280623,
+    "sharedVertexScalars": true,
+    "strictlyLowerNonseedPredecessors": true,
+    "arithmetic": "BigInt rational source/derived geometry, exact per-triangle affine clipping of stored numeric scalar values; IEEE754 mesh-edge distance approximation, not exact intrinsic geodesic."
+  },
+  "sublevelArea": [
+    {
+      "progress": 0.95,
+      "threshold": 8.136735309214963,
+      "thresholdExact": "650938824737197/80000000000000",
+      "missingAreaApprox": 0.30234017892252013,
+      "missingAreaBoundsExact": [
+        "69144720790482531/228698418577408000",
+        "138289441586998687/457396837154816000"
+      ]
+    },
+    {
+      "progress": 0.9999,
+      "threshold": 8.56412803756215,
+      "thresholdExact": "342565121502485937/40000000000000000",
+      "missingAreaApprox": 0.000004127731807638104,
+      "missingAreaBoundsExact": [
+        "1888008437937/457396837154816000",
+        "1888014508937/457396837154816000"
+      ]
+    },
+    {
+      "progress": 1,
+      "threshold": 8.56498453601575,
+      "missingAreaExact": "0/1"
+    }
+  ],
+  "areaReportPolicy": "Exact rational per-triangle clips; intermediate total bounds are outward48-bit rational enclosures. Bounds affect reporting only, never coordinates, scalar values, ties or clipping. p1 is checked exactly using the same clipping rule.",
+  "p0Policy": "Only completed-V zero plateau has positive area; no new ideal geometric ink outside V. Browser AA/compositing is unverified.",
+  "fullOutlineUnmaskFallback": false,
+  "limitations": [
+    "This proves only the supported planar decomposition and stored-scalar area statements, not browser pixel coverage or perceived continuity.",
+    "Near-flat [0.99999,1,1] counterexample still omits an entire positive-area triangle at99.99% despite no plateau.",
+    "Self-touch/nonmanifold union and holes are unsupported and rejected.",
+    "Thin V without a complete seed cell and any unseeded component are rejected.",
+    "Mesh discretization, graph-distance bias, IEEE754 weights and browser AA remain limitations.",
+    "No authored Q trajectory, Korean stroke direction, whole-glyph correspondence or native visual approval follows."
+  ],
+  "focusedValidation": {
+    "command": "rtk proxy node --test docs/hanja-vector-clip-certificate-u568c-2026-10-18/certificate.test.mjs",
+    "executions": 1,
+    "exitCode": 0,
+    "testsPassed": 8,
+    "testsFailed": 0,
+    "totalDurationMillis": 742.040917,
+    "publicCaseMillis": 644.355625,
+    "timingMeaning": "One observed Node run only, not a performance benchmark.",
+    "executedCounterexamples": [
+      "subcell thin branch retained",
+      "same global U component with two separate local pieces in one cell",
+      "subcell exterior slit remains disconnected",
+      "tiny unseeded island refusal",
+      "point-only self-touch refusal",
+      "hole refusal",
+      "thin V without full-cell seed refusal",
+      "self-intersecting source refusal",
+      "duplicate triangle positive-area overlap refusal",
+      "missing triangle boundary/coverage refusal",
+      "nonseed three-equal-distance plateau refusal",
+      "near-flat triangle absent at99.99% despite nonflat field"
+    ],
+    "immutableInputPinsVerified": 36,
+    "experimentFilePinsVerified": 3,
+    "sourceInputsUnchanged": true
+  },
+  "executionConfigSHA256": "acb7b411a1361be1327641baec1e4996236edf4bc5241b954e23dc7ca99aff51",
+  "executionFilePins": {
+    "docs/hanja-vector-clip-certificate-u568c-2026-10-18/vector-certificate.mjs": "4d0453228175d4fc333b083c8752b409ed2808a51e05eda099b617a2c0f8ec2c",
+    "docs/hanja-vector-clip-certificate-u568c-2026-10-18/certificate.test.mjs": "5243510fbb5931899f2ebad82a4b4e165f4b25b32c011930fda27c5990ca19c1",
+    "docs/hanja-vector-clip-certificate-u568c-2026-10-18/README.md": "c1522e3b1fad664462a04412a5a647ee0714f45887f2076bae0a79b78bd897bf"
+  },
+  "immutableInputPins": {
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/NOTICE.md": "92007edf68e1b79e2837fecc1d252070b76539b90e9d986c86f345dce7e23536",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/README.md": "a5157124eddd699c529db926fdf6fe18532117d0dc2580ffcb1670f0aa027dec",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/boundary-native-review.json": "90b302dd757f57e19b495969cc4c1e3b9f923e6ac0c179235074c7d18b40a025",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/boundary-source-candidate.d.mts": "8a7d138d63dbe0e3b051b5a2223b2e9f392cf2a3772139d35fd44e60ef82efaf",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/boundary-source-candidate.mjs": "df1fc1e1ab81b10a8c1f0fb4db2b60c7d87dd1c827d3367965ff190167cabd69",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/boundary-source-preparation.json": "2063f3857a918f5a6c6ae2a34b0ade6d945696c9c1d507635c162636456add70",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/boundary-validation.json": "79857bdbe23d6441bdc1bf6412bdb4efdc2c863f36c96daf716a8b6f70a684db",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/candidate-compile-analysis.json": "d8d9ecf1e9d0ed8a284b7b248eab8eccada8470748fde6f2c7e2c953350c4ce2",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/engine-proof.json": "0fb793d710713d24757c82f0ba9494beb5d025d43ceb10ede0a0dfd7ecc6535d",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/engine-whole-u568c-ue0100.json": "352b667090679f97b66564d6f89da802d325281f4240d6e2399a0a8dcb12cf6b",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/engine-whole-u568c.json": "693a1dd8860f2b88625e6bc3c93c613a6f755da63bd8a3e329181dfd2721ed3d",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/metadata.json": "a3a994698b5c2b8cc9988f768a7c05977700cd3535571febe2c5c5e3978a9fae",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/native-boundary-source-analysis.json": "1fab7f8ec4343a5f3925af6a634b0c0165bab16c5862565ece33ffda28afa4b5",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/progressive.mjs": "0a8decfa453652a0647856413753154796798c23e2884d8f6f15653e245572e5",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/resume.json": "d5761066645f29057c4f16276ddceb84ecc77c402faa9d8046fe4e58c8930cb6",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/review.json": "20666d3564f88002300015f41fa3357f0ce16823c8a8215d219f5cc1704c194c",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/serve-boundary-native.py": "6b7bf96a087537af547b103f5a9a326f4d7f1b7bcf1babfcffc415b61c9f84eb",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/serve-progressive.py": "e531a952f0ec0b6e1a9da1d05c8c71a5c236baef64cbd77502e2762a84580a09",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/serve-whole.py": "0b76bf5b12f89814e463003653e54cda513504c0e3e1ed8ca21d5f2e61310dab",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/server-compile-boundary-candidate.mjs": "afc6da523799f82921d1581936c0de8eaddf97718f99b68a2492b5ddf1f4b2d2",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/source-analysis.json": "64179f28a41ea0b8f0aa6585a3d768cade04eb94196924192aa5de9780595a51",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/source-join-analysis.json": "679eaf65f5a610a03374338e364e4f2df4715d612ce92d8304349aa9646776fb",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/sources.json": "b7a2e0ee22f427f016efc1a5af9577e645e1d0be0206ab555953e494937e7f0f",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/validation.json": "5990bed8989b79566f11df64aef67ecc485d81e646f949d06cdf4e34cf0f652a",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/verify-candidate.mjs": "7af8be5df78947add4ac0a71d07c319f354a7fd1d776f0ba525818bf4dbe102a",
+    "docs/hanja-goal-glyphwiki-batch861-2026-10-13/verify-source.mjs": "302c04eabac84f369040336029fa55ea72cac99f62dd699179055db60d107797",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "docs/hanja-g2-batch10-2026-09-16/originals.json": "5e14aff1d1c731ad58cbcd4e48fffda5197361ecacd5ff4732e529775f5eda91",
+    "docs/hanja-geodesic-clip-experiment-u568c-2026-10-18/geodesic-field.mjs": "d73b3ee3f1cfe4589aadc06bbbdc54d337ad840839aadecafc565875bebc14fb",
+    "docs/hanja-geodesic-clip-experiment-u568c-2026-10-18/viewer.js": "09aca6817075b19ed14245b63a573f4f2f9e3b87240ae0cb16ebcf9e17e909a7",
+    "docs/hanja-geodesic-clip-experiment-u568c-2026-10-18/serve.py": "0d489f58d3f81654f11a4d5ee0de66e37b828d96aed29679beea9507c0ca6f2a",
+    "docs/hanja-geodesic-clip-experiment-u568c-2026-10-18/README.md": "40fe72a226637615ae916e7482c62cfb90a1c30f819881b7ba780e18489ac418",
+    "docs/hanja-geodesic-clip-experiment-u568c-2026-10-18/geodesic-field.test.mjs": "6e1fac8558eb0c912dad713e74dbb585b227d4f9401608fc2efb955a7476a40c",
+    "docs/hanja-geodesic-clip-experiment-u568c-2026-10-18/config.json": "d19b32830205f6983e649dde4b59be3a82b978b287212339ec1404f83d0b7e51",
+    "docs/hanja-geodesic-clip-experiment-u568c-2026-10-18/native-review.json": "a2d0f352d5c8f55e545f3decf052865221fb4c777cbab6d6bd11804decd96c12"
+  },
+  "sourceCompile": 0,
+  "engine": 0,
+  "HTTP": 0,
+  "server": 0,
+  "native": 0,
+  "build": 0,
+  "git": 0
+}
