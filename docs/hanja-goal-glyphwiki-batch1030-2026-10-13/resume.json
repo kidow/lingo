@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "previousResume": "docs/hanja-goal-glyphwiki-batch1029-2026-10-13/resume.json",
+  "previousResumeSHA256": "049eb77b1baba15e5822c397f9af77ad000a1f4dffa886632b94462e71e9c26b",
+  "checkpointStatus": "source-count-hold-actual-checkpoint-verified",
+  "actualCheckpointVerified": true,
+  "runtimeAbsenceVerified": true,
+  "completedRuntime": 5524,
+  "total": 5978,
+  "remainingCommittedRuntime": 454,
+  "pendingRuntime": 0,
+  "lastCompletedBatch": 1030,
+  "lastRuntimeBatch": 1029,
+  "newHoldsThisBatch": [
+    {
+      "batch": 1030,
+      "glyph": "嘑",
+      "root": "u5611",
+      "selectedRoot": "u5611",
+      "catalogStrokes": 14,
+      "hold": "docs/hanja-goal-glyphwiki-batch1030-2026-10-13/source-hold.json",
+      "holdSHA256": "e17634ea3c8b2fb5bebd3aafa3ad52bac25085f69d2425500d1d96476a1f8e51",
+      "runtimeApplied": false,
+      "nativeApproval": false
+    }
+  ],
+  "existingHoldsInherited": 305,
+  "totalHolds": 306,
+  "inheritancePolicy": "부모의 실제 canonical 보류305자를 승계합니다. 嘑 중복검사 결과 신규1자만 추가하며 원본 source-hold/README/validation은 변경하지 않습니다.",
+  "inheritedFields": {
+    "existingHolds": "docs/hanja-goal-glyphwiki-batch1029-2026-10-13/resume.json#/totalHolds",
+    "canonicalHoldHistory": "docs/hanja-goal-glyphwiki-batch1029-2026-10-13/resume.json#/previousResume"
+  },
+  "lastReview": {
+    "glyph": "嘑",
+    "status": "held-source-contract-consecutive-minimum-exceeds-catalog",
+    "catalogStrokes": 14,
+    "minimumCapturedCompleteWhole": 15,
+    "minimumEligibleCompleteWhole": 15,
+    "allCapturedCompleteWholesExceedCatalog": true,
+    "wholeFacts": [
+      {
+        "file": "engine-whole-u5611-ue0100.json",
+        "fileSHA256": "9d299aee8e7ec35df54f1c2c3286b0769747075a849f1c5123a589284f58a7f1",
+        "raw": 16,
+        "drawing": 16,
+        "calls": 20,
+        "polygons": 40,
+        "exactConsecutiveJoinsRawOneBased": [
+          [
+            2,
+            3
+          ]
+        ],
+        "minimum": 15,
+        "nonConsecutiveContactsNotApproved": [
+          [
+            1,
+            4
+          ],
+          [
+            7,
+            9
+          ]
+        ]
+      },
+      {
+        "file": "engine-whole-u5611.json",
+        "fileSHA256": "b1e65ef6c58827ebae1a8d63919c80e8e2c3cb2c74d846b26743630212b0047a",
+        "raw": 16,
+        "drawing": 16,
+        "calls": 20,
+        "polygons": 40,
+        "exactConsecutiveJoinsRawOneBased": [
+          [
+            2,
+            3
+          ]
+        ],
+        "minimum": 15,
+        "nonConsecutiveContactsNotApproved": [
+          [
+            1,
+            4
+          ],
+          [
+            7,
+            9
+          ]
+        ]
+      }
+    ],
+    "priorNativeEvidenceBytePinsVerified": false,
+    "priorNativeApprovalTransferred": false,
+    "sourceCompilerInvocationsThisCheckpoint": 0,
+    "newNativeObservations": 0,
+    "runtimeApplied": false,
+    "nativeApproval": false,
+    "review": "docs/hanja-goal-glyphwiki-batch1030-2026-10-13/source-hold.json"
+  },
+  "nextIndependentCandidate": {
+    "batch": 1031,
+    "status": "root-native-review-in-progress",
+    "directory": "docs/hanja-goal-glyphwiki-batch1031-2026-10-13"
+  },
+  "verificationPolicy": {
+    "scope": "원본20·hold7·readiness7핀,exactwhole 끝점·최소획·소스gap,939까지문자열/객체canonical전체중복 및 actual부모SHA/정확미등록검증. 비연속접점 승인·컴파일·새native관찰은 하지 않습니다. 첫 임시 프로세스의 파싱실패는 검사 시작 전 실패로 분리하고 실제 집중검사1회 통과를 기록했습니다.",
+    "productionBuild": false,
+    "fullSuite": false,
+    "sourceCompilerExecuted": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "privateMediaSaved": false
+}
