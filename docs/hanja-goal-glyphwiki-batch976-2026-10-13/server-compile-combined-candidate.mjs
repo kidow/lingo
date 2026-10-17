@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {compileSourceWhole,renderProgressive,candidateWholeProofs} from './progressive.mjs'
+const sha=x=>createHash('sha256').update(x).digest('hex'),prep=JSON.parse(readFileSync(new URL('./combined-native-preparation.json',import.meta.url)))
+assert.deepEqual(prep.originalPins,{"engine-whole-u615d.json":"e869117f37ce06c63958a0b2c8fdbd40d3daa620a3f0a9125654e2e9d8defc45","engine-whole-u615d-g.json":"75f2ee388f24aceb7541550c90b1afd649fc06fd6d277e52588fd57b047ad43f","engine-whole-u615d-k.json":"e869117f37ce06c63958a0b2c8fdbd40d3daa620a3f0a9125654e2e9d8defc45","engine-whole-u615d-ue0100.json":"e869117f37ce06c63958a0b2c8fdbd40d3daa620a3f0a9125654e2e9d8defc45","engine-whole-u615d-ue0101.json":"e869117f37ce06c63958a0b2c8fdbd40d3daa620a3f0a9125654e2e9d8defc45","engine-whole-u615d-ue0102.json":"bbe10304713328888505f953340102dcdf33c966f486b3f16ba2562b97b2fe45","engine-whole-u615d-ue0103.json":"b0165dc42e28ea355a7bf9e6b74ac3295be1dd81b7dfda18ef21c45efd84702a","progressive.mjs":"66583dd4898d320198202434a8b2e9eec20d4418e39cc7ca681c3e5f8436c931","engine-proof.json":"fd372548df50bcc53aaea6bf74c38c3c8406ec372e7858d1f0f6e9ee17426da9","sources.json":"9f82bcf6baaa22406943bee74d2313b85f79b491992f472da15700fea8c970da","metadata.json":"bf07c8254b76184ca4189110e9888297405540f6eaf5c3d9ba56608ed00ec12f","serve-whole.py":"742786d38bd1eb06baca0cb8727edb4686871b6c0bd4045125fdbe959d28ea32","serve-progressive.py":"8373e2f0935dc3f50705cddf1cb3c5a7812233dfc79603a5d3fb8465d1d769c6","server-compile.mjs":"25f780b192187d8299f5c59792182c6fa78bd323b600cceee5810f80e08b3c3b"})
+for(const[file,pin]of Object.entries({...prep.originalPins,...prep.additionalProtectedPins,...prep.newFilesSHA256}))assert.equal(sha(readFileSync(new URL(file,import.meta.url))),pin,'Protected original/helper '+file)
+assert.equal(sha(readFileSync(new URL('./progressive.mjs',import.meta.url))),'66583dd4898d320198202434a8b2e9eec20d4418e39cc7ca681c3e5f8436c931')
+const root=process.argv[2];assert.equal(root,'u615d-ue0102','Only the explicit selected whole profile is supported')
+const identity={"sourceRoot":"u615d-ue0102","sourceProofFile":"./engine-whole-u615d-ue0102.json","sourceProofFileSha256":"bbe10304713328888505f953340102dcdf33c966f486b3f16ba2562b97b2fe45","sourceHeaderFile":"./engine-proof.json","sourceHeaderFileSha256":"fd372548df50bcc53aaea6bf74c38c3c8406ec372e7858d1f0f6e9ee17426da9"},selected=candidateWholeProofs.find(p=>p.identity.sourceRoot===root)
+assert(selected);assert.deepEqual(selected.identity,identity);assert.deepEqual(selected.sourceGroups,prep.sourceGroups)
+const bytes=readFileSync(new URL(identity.sourceProofFile,import.meta.url)),headerBytes=readFileSync(new URL(identity.sourceHeaderFile,import.meta.url))
+assert.equal(sha(bytes),identity.sourceProofFileSha256);assert.equal(sha(headerBytes),identity.sourceHeaderFileSha256)
+const body=JSON.parse(bytes),header=JSON.parse(headerBytes),proof={engineRevision:header.engineRevision,engineHashes:header.engineHashes,...body}
+assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace'])
+assert.equal(sha(JSON.stringify(proof)),'3fb49ef872184ff426053823946b397397b53e0d5141aaa2780056539a9aa31a','Complete five-field proof includes pinned original engine metadata')
+const before=JSON.stringify(proof),strokes=compileSourceWhole(root,proof.trace,proof,identity)
+assert.equal(JSON.stringify(proof),before);assert.equal(strokes.length,15);assert.equal(strokes.flat().length,16);assert.equal(sha(JSON.stringify(strokes)),'ecf7ef06d603fb3875d4b3af36aaa16bc69ff3c939bb5a7cc39a90b8a74c87c7')
+assert.equal(proof.groups.reduce((n,g)=>n+g.polygons.length,0),40)
+console.log(JSON.stringify({sourceRoot:root,identity,sourceProofFile:identity.sourceProofFile,sourceProofFileSha256:identity.sourceProofFileSha256,fullProofSHA256:sha(JSON.stringify(proof)),sourceGroups:selected.sourceGroups,strokes,render:renderProgressive.toString(),pens:15,masks:16,compiledSHA256:sha(JSON.stringify(strokes)),nativeApproval:false,runtimeApplied:false}))
