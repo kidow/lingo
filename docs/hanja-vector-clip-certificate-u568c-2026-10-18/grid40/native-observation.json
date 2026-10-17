@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "glyph": "嚌",
+  "batch": 861,
+  "date": "2026-10-18",
+  "status": "grid40-isolated-sampled-continuity-passed-direction-production-unresolved",
+  "observer": "root-native-IAB",
+  "experimental": true,
+  "grid": 40,
+  "nativeApproval": false,
+  "directionCertification": false,
+  "originalTrajectoryApproved": false,
+  "runtimeApplied": false,
+  "existingHoldResolved": false,
+  "canonicalHoldDelta": 0,
+  "sourceGeometryAuthored": false,
+  "frozenSevenFilesSHA256": {
+    "certificate.json": "f3e47eccd6de30264d8cae0c7576abf0a00e423364a5f558155ab7864b15533a",
+    "native-vector-data.mjs": "b4df515e2ba9548f263c7a15205721f6c12140ccc0f5a382998e5cf6650d3526",
+    "native-vector-viewer.mjs": "7877362f33fae8bfc677327c8288010fec59a65d5b0115744a3f9b418ae38efc",
+    "native-vector-viewer.test.mjs": "f1bcbba17d1641d5ecd12dadb5aa75bc2956837f1755bd53b5618c0d61ab856d",
+    "serve-native-vector.py": "15ce6c6311263478292085d02809934d745446d0f04591ccbff0b30595f882e5",
+    "README.md": "c3afd860c9589ec57501c87fe9a79a2a4b87f15a864e89469c3bb93d009cb1fc",
+    "native-vector-config.json": "2b1d5929854fd377d79c0ff7c2496f56a2ee77daa88e33eca7511b3d461c89bc"
+  },
+  "sourcePinsCount": 48,
+  "certificateSHA256": "f3e47eccd6de30264d8cae0c7576abf0a00e423364a5f558155ab7864b15533a",
+  "startup": {
+    "reportedBy": "root actual fresh helper startup",
+    "childPID": 16817,
+    "wrapperPID": 16816,
+    "port": 62960,
+    "meshBuilds": 1,
+    "meshCertifications": 1,
+    "fieldBuilds": 1,
+    "requestRebuilds": 0,
+    "sourceCompilerExecutions": 0,
+    "engineExecutions": 0,
+    "certificateComparisonPassed": true
+  },
+  "nativeObservations": {
+    "actualSVGPixels": [
+      [
+        520,
+        520
+      ],
+      [
+        520,
+        520
+      ],
+      [
+        520,
+        520
+      ]
+    ],
+    "localProbes": [
+      "old-boundary-before",
+      "old-boundary-at",
+      "old-boundary-after",
+      "epsilon1e-8",
+      0.5,
+      0.95,
+      0.9999,
+      1
+    ],
+    "legacyRenderer": "instant starting nib at the old second-mask boundary",
+    "experimentalAffineClip": {
+      "instantStartingNibStampObserved": false,
+      "sampledGrowthContinuous": true,
+      "terminal9999To100NoOutlinePopObserved": true,
+      "allFramesTested": false,
+      "p0EmptyNewMask": true,
+      "p1SameAffineThresholdRule": true,
+      "unmaskFallback": false
+    },
+    "naturalReplay": {
+      "durationSeconds": 8,
+      "observedStartPercent": 2.6675,
+      "observedNaturalEndPercent": 100,
+      "sampledObservationOnly": true
+    },
+    "finalFrame": {
+      "derivedTriangleFragments": 420,
+      "reportedPaintMillis": 0.8,
+      "isPerformanceBenchmark": false
+    },
+    "consolePortErrorsObserved": 0,
+    "domesticImage": {
+      "xmlnsFixed": true,
+      "actuallyDisplayed": true,
+      "rootObservedDirection": "국내 L 방향 이미지를 별도로 실제 확인했으며 새 field 방향은 승인하지 않음",
+      "mediaSaved": false
+    },
+    "unresolvedDirection": {
+      "approved": false,
+      "reason": "완료 V 전체를 seed로 삼는 wave front가 양쪽으로 성장하여 authored Q의 시작점·진행 방향과 동일하다는 근거가 없습니다. 연속성 표본 PASS는 방향 또는 production 승인과 다릅니다."
+    }
+  },
+  "cleanup": {
+    "terminationRequestedByRoot": true,
+    "childTerminationConfirmedByRoot": true,
+    "childTerminationMethod": "root verified matching grid40/serve-native-vector.py command then SIGTERM succeeded",
+    "wrapperAutoExitExpected": true,
+    "wrapperExitSeparatelyConfirmedByRoot": false,
+    "childPID": 16817,
+    "wrapperPID": 16816,
+    "port": 62960,
+    "childTerminationIndependentlyConfirmedByWorker": false,
+    "wrapperExitIndependentlyConfirmedByWorker": false,
+    "workerProcessCheckNotRepeated": true
+  },
+  "validation": {
+    "preservationReadOnlyCheck": {
+      "executions": 1,
+      "passed": true,
+      "status": "PASS source48+frozen7 SHA matched; direction and production approval remain false",
+      "pinsMatched": 55
+    },
+    "newTestsRun": 0,
+    "oldCertificateTestsRerun": 0,
+    "oldViewerTestsRerun": 0,
+    "sourceCompilerExecutionsByWorker": 0,
+    "engineExecutionsByWorker": 0,
+    "serverStartsByWorker": 0,
+    "HTTPByWorker": 0,
+    "nativeObservationsByWorker": 0,
+    "buildRun": false,
+    "gitOperations": 0
+  },
+  "limitations": [
+    "기록한 진행률과 자연8초 재생의 표본 관찰이며 모든 프레임을 검증했다는 뜻이 아닙니다.",
+    "420삼각형과 최종0.8ms는 단일 관찰 snapshot입니다. 브라우저 성능 benchmark가 아닙니다.",
+    "기존861 sourcehold·canonical·runtime은 바꾸지 않으며 grid200 또는 다른 한자에 대한 승인으로 일반화하지 않습니다."
+  ],
+  "privateMediaSaved": false
+}

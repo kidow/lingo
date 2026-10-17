@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "glyph": "嚌",
+  "batch": 861,
+  "date": "2026-10-18",
+  "status": "single-bounded-grid40-source-certificate-native-pending",
+  "experimental": true,
+  "staticOnly": true,
+  "grid": 40,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "existingHoldResolved": false,
+  "canonicalHoldDelta": 0,
+  "sourceGeometryAuthored": false,
+  "originalTrajectoryApproved": false,
+  "directionCertification": false,
+  "sourceDomain": {
+    "wholeProofFile": "docs/hanja-goal-glyphwiki-batch861-2026-10-13/engine-whole-u568c.json",
+    "wholeProofSHA256": "693a1dd8860f2b88625e6bc3c93c613a6f755da63bd8a3e329181dfd2721ed3d",
+    "domainRawZeroBased": 14,
+    "completedVRawZeroBased": 13,
+    "normalization": "original coordinates /2 only"
+  },
+  "geometryCertificate": {
+    "vertices": 254,
+    "triangles": 420,
+    "derivedPieces": 108,
+    "positiveAreaCells": 23,
+    "sourceUnionArea": 69.74401923076923,
+    "sourceUnionAreaExact": "3626689/52000",
+    "triangleAreaExact": "3626689/52000",
+    "coverageAreaDifferenceExact": "0/1",
+    "boundaryAtomicSegments": 86,
+    "positiveInterfaceComponents": [
+      {
+        "triangles": 420,
+        "seedTriangles": 12
+      }
+    ],
+    "fullCellSeedVertices": 11,
+    "fullCellSeedTriangles": 12,
+    "triangleIntersectionPairsChecked": 4821,
+    "sourceHoles": 0,
+    "nonmanifold": false,
+    "positiveAreaOverlaps": 0,
+    "sharedEdgesConforming": true,
+    "orientedBoundaryPreserved": true
+  },
+  "scalarCertificate": {
+    "seedPlateaus": 12,
+    "nonseedPlateaus": 0,
+    "minimumPositiveTriangleSpan": 0.01712181293781667,
+    "maximum": 9.94317278143074,
+    "normalizedMinimumSpan": 0.0017219667518794726,
+    "arithmetic": "Exact rational geometry and stored-scalar sublevel clipping; mesh-edge Euclidean weights/Dijkstra use IEEE754, not exact geodesic distance.",
+    "sharedVertexScalars": true,
+    "strictlyLowerNonseedPredecessors": true,
+    "zeroPlateausContainedInCompletedV": true
+  },
+  "sublevelArea": [
+    {
+      "progress": 0.95,
+      "threshold": 9.446014142359203,
+      "thresholdExact": "9446014142359203/1000000000000000",
+      "visibleArea": 69.59001745636989,
+      "visibleAreaBoundsExact": [
+        "19587848542825689/281474976710656",
+        "19587848542826033/281474976710656"
+      ],
+      "missingArea": 0.15400177439933466,
+      "missingAreaBoundsExact": [
+        "70439924526205687/457396837154816000",
+        "70439924526764687/457396837154816000"
+      ],
+      "missingAreaExact": null,
+      "areaReport": "Exact rational clipping per triangle; outward48-bit reporting bounds, no scalar/geometry perturbation."
+    },
+    {
+      "progress": 0.9999,
+      "threshold": 9.942178464152596,
+      "thresholdExact": "4971089232076298463/500000000000000000",
+      "visibleArea": 69.74401821762507,
+      "visibleAreaBoundsExact": [
+        "19631195903513411/281474976710656",
+        "4907798975878439/70368744177664"
+      ],
+      "missingArea": 0.0000010131441638448608,
+      "missingAreaBoundsExact": [
+        "115852163953/114349209288704000",
+        "463409216437/457396837154816000"
+      ],
+      "missingAreaExact": null,
+      "areaReport": "Exact rational clipping per triangle; outward48-bit reporting bounds, no scalar/geometry perturbation."
+    },
+    {
+      "progress": 1,
+      "threshold": 9.94317278143074,
+      "thresholdExact": "497158639071537/50000000000000",
+      "visibleArea": 69.74401923076923,
+      "visibleAreaBoundsExact": [
+        "4907799047172035/70368744177664",
+        "19631196188688485/281474976710656"
+      ],
+      "missingArea": 3.0806072223080824e-13,
+      "missingAreaBoundsExact": [
+        "0/1",
+        "70453/114349209288704000"
+      ],
+      "missingAreaExact": "0/1",
+      "areaReport": "Exact rational clipping per triangle; outward48-bit reporting bounds, no scalar/geometry perturbation."
+    }
+  ],
+  "focusedParameterProbe": {
+    "executions": 1,
+    "meshBuilds": 1,
+    "meshCertifications": 1,
+    "fieldBuilds": 1,
+    "sublevelSummaries": 1,
+    "sourceCompile": 0,
+    "engine": 0,
+    "oldTests": 0,
+    "UI": 0,
+    "server": 0,
+    "sourceEdits": 0,
+    "observedMillis": {
+      "mesh": 7.582250000000002,
+      "certify": 61.557874999999996,
+      "field": 3.741624999999999,
+      "sublevels": 5.361458999999996,
+      "total": 78.379167
+    },
+    "isPerformanceBenchmark": false
+  },
+  "wireBytesAtProbe": {
+    "mesh": 10912,
+    "field": 4270
+  },
+  "p0Policy": "empty new mask; completed original V is a separate layer",
+  "fullOutlineUnmaskFallback": false,
+  "limitations": [
+    "grid40 preserves the original vector outline but changes the approximate scalar field and full-cell seed set relative to grid200.",
+    "The original bounded probe RAM mesh was not retained as a file. The new root-controlled first startup reconstructs exactly this one grid and checks stored diagnostics before displaying.",
+    "Native520 growth, AA, direction and trajectory must be reviewed fresh. Source certificate and lower payload are not production approval."
+  ]
+}
