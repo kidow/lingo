@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "batch": 967,
+  "glyph": "駾",
+  "verifiedAt": "2026-10-17",
+  "status": "held-compatible-whole-exceeds-catalog-and-count-compatible-whole-shape-mismatch",
+  "catalogStrokes": 17,
+  "recordedDomesticClipCount": 17,
+  "reason": "The two native-compatible captured wholes require at least18 unchanged consecutive groups. The only17-group captured whole has native-incompatible upper丷 instead of domestic八.",
+  "originalBytePins": {
+    "sources.json": "978828706ce055649af9101f0ceee853fc34b92dc978dd411cd1419f8fd836f6",
+    "serve-native.py": "afe127a7a674777e663b38601500ce2f19edb4e3c1a6136b0125996fe93f1caa",
+    "engine-whole-u99fe-ufe00.json": "98c81d9fb17f477903d121aa74e88f14ba00289dca3770598a60e1a919107a1d",
+    "engine-whole-u99fe.json": "5c2fbfa2a0040329287905984ea8dd0a45cdb838abbd028b702fcbb9ebcaa50a",
+    "strict-native-server-preflight.json": "79f8c98868a571212724d18e0b60deed30b133acaa3bb53a45414a1e9d7c6735",
+    "candidate-compile-analysis.json": "6a60505b5ea5c5f29f71bda2a4b0ac063f15d330e831703340a3d3fec925c8bc",
+    "engine-proof.json": "545ed363b3c99a5cd017a8d23ac28f1d73de2319803d21f832da644a221e89e9",
+    "native-server-input-pins.json": "a7efe26bc4f69fd2bb2c27a46a4a9d898d78016eb614cf69a49d7fc6d790ddc0",
+    "metadata.json": "121705588986130945c2e3105bef8451f69a8ee85e3c925af3e94d2b838f9bdf",
+    "engine-whole-u99fe-ue0100.json": "5c2fbfa2a0040329287905984ea8dd0a45cdb838abbd028b702fcbb9ebcaa50a",
+    "verify-source.mjs": "bd8520bf3cbf174abe1365198341cafee976a0d1e013730d03084fe473366931",
+    "source-analysis.json": "2b2410cfa704ca67c620873c288d97144c8adc7021cfb7c6d6456deec5c8203a",
+    "progressive.mjs": "308704dcf8022e9f80a32aa3142736fb938bf8f2108e63a574b26fdec8d1e88b",
+    "strict-native-adapter.mjs": "b0bc455e71995fb059cf21d978b454fac6563598458fce2cf0ddc7c4ea037055",
+    "source-preservation-audit.json": "7e7faa22d008239af6b5ab5618d736bd18161901c1abf1b8781bcc76a60bb38a",
+    "source-join-analysis.json": "1adaf94ace45ae9180edb13684970891677a11672ca33020a520b7bfc2818670",
+    "NOTICE.md": "a1c291cbf72170a1561f978591cfe5bfd10ef338c51c029f19319f867da57692"
+  },
+  "wholeAnalyses": [
+    {
+      "root": "u99fe",
+      "raw": 20,
+      "draw": 23,
+      "polygons": 43,
+      "emptyRaw": [],
+      "exactConsecutiveJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          15,
+          16
+        ]
+      ],
+      "nonconsecutiveContacts": [
+        [
+          0,
+          5
+        ],
+        [
+          14,
+          17
+        ]
+      ],
+      "minimumOriginalConsecutiveGroups": 18,
+      "internalGaps": [],
+      "sourceProofFile": "engine-whole-u99fe.json",
+      "sourceProofSHA256": "5c2fbfa2a0040329287905984ea8dd0a45cdb838abbd028b702fcbb9ebcaa50a",
+      "wholeCompatible": true
+    },
+    {
+      "root": "u99fe-ue0100",
+      "raw": 20,
+      "draw": 23,
+      "polygons": 43,
+      "emptyRaw": [],
+      "exactConsecutiveJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          15,
+          16
+        ]
+      ],
+      "nonconsecutiveContacts": [
+        [
+          0,
+          5
+        ],
+        [
+          14,
+          17
+        ]
+      ],
+      "minimumOriginalConsecutiveGroups": 18,
+      "internalGaps": [],
+      "sourceProofFile": "engine-whole-u99fe-ue0100.json",
+      "sourceProofSHA256": "5c2fbfa2a0040329287905984ea8dd0a45cdb838abbd028b702fcbb9ebcaa50a",
+      "wholeCompatible": true
+    },
+    {
+      "root": "u99fe-ufe00",
+      "raw": 19,
+      "draw": 22,
+      "polygons": 41,
+      "emptyRaw": [],
+      "exactConsecutiveJoins": [
+        [
+          5,
+          6
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "nonconsecutiveContacts": [
+        [
+          0,
+          5
+        ],
+        [
+          13,
+          16
+        ]
+      ],
+      "minimumOriginalConsecutiveGroups": 17,
+      "internalGaps": [],
+      "sourceProofFile": "engine-whole-u99fe-ufe00.json",
+      "sourceProofSHA256": "98c81d9fb17f477903d121aa74e88f14ba00289dca3770598a60e1a919107a1d",
+      "wholeCompatible": false
+    }
+  ],
+  "nativeWholeReview": {
+    "operator": "root actual browser panel",
+    "date": "2026-10-17",
+    "actualWholeViews": 3,
+    "compatibleRoots": [
+      "u99fe",
+      "u99fe-ue0100"
+    ],
+    "incompatibleRoot": "u99fe-ufe00",
+    "incompatibleDetail": "Upper丷 has left down-right dot and right down-left slant; domestic八 has left down-left slant and right horizontal-fold-downright stroke.",
+    "directionReviewCount": 0,
+    "progressiveFramesReviewed": 0,
+    "fineChecks": 0,
+    "replayChecks": 0,
+    "page14OpenedButNotReviewed": true,
+    "privateMedia": "RAM-only"
+  },
+  "strictCompiler": {
+    "actualExecutionsThisInvestigation": 0,
+    "reason": "Original endpoints and captured proof topology establish the lower bound; no synthetic grouping or compiler mutation is required."
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "canonicalAccounting": "Deferred until966 canonical checkpoint is ready.",
+  "buildRun": false
+}
+
