@@ -19,7 +19,7 @@ test('踧 complete original masks follow reviewed domestic order', () => {
   assert.equal(entry.outlines!.flat().length, 16)
   assert.equal(entry.outlines!.flat().flatMap(mask => mask.outline.match(/M[^Z]+Z/g) || []).length, 34)
   assert.equal(entry.sourceReference.dictionaryDirectionStrokes, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15')
-  assert(entry.geometryLicense.revision.includes('exact whole u8e27'))
+  assert(reviewed[0].geometryLicense.revision.includes('exact whole u8e27'))
 })
 
 test('踧 altered order, geometry and source proof are rejected', () => {

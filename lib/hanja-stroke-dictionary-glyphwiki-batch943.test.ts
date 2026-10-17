@@ -18,7 +18,7 @@ test('膵 exact selected whole preserves original sixteen pens', () => {
   assert.equal(entry.outlines!.length, 16)
   assert.equal(entry.outlines!.flat().length, 17)
   assert.equal(entry.outlines!.flat().flatMap(mask => mask.outline.match(/M[^Z]+Z/g) || []).length, 37)
-  assert(entry.geometryLicense.revision.includes('exact whole u81b5-ue0103'))
+  assert(reviewed[0].geometryLicense.revision.includes('exact whole u81b5-ue0103'))
   assert.equal(entry.sourceReference.dictionaryDirectionStrokes, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16')
 })
 
