@@ -1,0 +1,30 @@
+{
+  "batch": 943,
+  "glyph": "膵",
+  "verifiedAt": "2026-10-17",
+  "runtimeApplied": true,
+  "checks": [
+    {
+      "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch943.test.ts",
+      "exitCode": 0,
+      "tests": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch943-2026-10-13/verify-runtime.mjs",
+      "exitCode": 0,
+      "pens": 16,
+      "masks": 17,
+      "polygons": 37,
+      "frames": 144,
+      "selectedWhole": "u81b5-ue0103",
+      "unselectedWholeVariants": 7,
+      "sourcePreserved": true
+    }
+  ],
+  "nativeReview": "review.json",
+  "appUIAutoplayVerifiedThisBatch": false,
+  "productionBuildRun": false,
+  "fullSuiteRun": false
+}
