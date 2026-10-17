@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "glyph": "嚌",
+  "batch": 861,
+  "date": "2026-10-18",
+  "status": "isolated-sampled-visual-continuity-observed-production-gate-unresolved",
+  "observer": "root-native-IAB",
+  "experimental": true,
+  "grid": 200,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "existingHoldResolved": false,
+  "canonicalHoldDelta": 0,
+  "sourceGeometryAuthored": false,
+  "originalTrajectoryApproved": false,
+  "directionCertification": false,
+  "committedCertificateBase": "310a82eae9a933439e53baa06d87bc01058020ea",
+  "committedCertificateFilesPreserved": true,
+  "immutableSource36Preserved": true,
+  "viewerSixSHA256": {
+    "native-vector-data.mjs": "74f76f982efc3c8389b69b72ff60ba9acc7f1494cd43de6d1e7168b755577212",
+    "native-vector-viewer.mjs": "289003f63e6ff18d59a00bda2aa7b85b50612ebb8faf8a284f235fecf8f9f24b",
+    "native-vector-viewer.test.mjs": "8d8b59202c6a4f07ba87ec2434a91590d289b17754803eadd2827d2fc0151998",
+    "serve-native-vector.py": "79cbd09d10c03d458b0104d7c89ba36547e9dcac7d448bbc062d6123a9ec192e",
+    "NATIVE-VIEWER.md": "7f8c7a48d2411aa386e42c4dca3cd5201c5f512aef13b67c1c30aba9c22c42c3",
+    "native-vector-config.json": "f6603f03c8e5b6249fe9f8b96818cb488be0b524bac18d29c84289df50213c51"
+  },
+  "certificateSHA256": "304908947d29f7e64ef0aaf537042c8f08a10cb8de0414bdc27036bac93e552c",
+  "startup": {
+    "reportedBy": "root actual helper startup",
+    "childPID": 89612,
+    "wrapperPID": 89611,
+    "port": 61597,
+    "meshBuilds": 1,
+    "meshCertifications": 1,
+    "fieldBuilds": 1,
+    "requestRebuilds": 0,
+    "sourceCompilerExecutions": 0,
+    "engineExecutions": 0,
+    "geometryAndScalarCertificateComparisonPassed": true
+  },
+  "nativeObservations": {
+    "actualSVGPixels": [
+      520,
+      520
+    ],
+    "fullPagePairWidth": 1090,
+    "localProbes": [
+      "old-boundary-before",
+      "old-boundary-at",
+      "old-boundary-after",
+      "epsilon1e-8",
+      0.5,
+      0.95,
+      0.9999,
+      1
+    ],
+    "legacyRenderer": "old boundary just-after instantly stamps a positive-area starting nib",
+    "experimentalAffineClip": {
+      "instantStampObserved": false,
+      "sampledGrowthContinuous": true,
+      "terminal9999To100VisuallySame": true,
+      "p0EmptyNewMask": true,
+      "p1SameAffineThresholdRule": true,
+      "unmaskFallback": false,
+      "allFramesTested": false
+    },
+    "naturalReplay": {
+      "durationSeconds": 8,
+      "observedStartPercent": 3.70875,
+      "observedNaturalEndPercent": 100,
+      "sampledObservationOnly": true
+    },
+    "finalFrame": {
+      "derivedTriangleFragments": 4104,
+      "reportedPaintMillis": 2.9,
+      "isPerformanceBenchmark": false
+    },
+    "consoleErrorsObserved": 0,
+    "domesticImage": {
+      "xmlnsFixed": true,
+      "actuallyDisplayed": true,
+      "rootObservedDirection": "국내 L 방향 이미지를 별도로 실제 확인했으며 field 방향 승인은 하지 않음",
+      "mediaSaved": false,
+      "doesNotApproveFieldDirection": true
+    },
+    "directionGate": {
+      "passed": false,
+      "reason": "완료 V 전체를 seed로 사용해 양쪽으로 성장할 수 있습니다. 국내 authored Q 시작·진행 방향과 같다는 인증이 아니며, 표본 연속성 관찰만으로 production 또는 기존861 보류를 해제하지 않습니다."
+    }
+  },
+  "evidenceLimits": {
+    "badEndpointCropExcluded": true,
+    "badCropReason": "horizontal xscroll was not included in first crop coordinates",
+    "validEndpointCrop": "fresh100 crop used corrected x+scrollX",
+    "nativeGetScreenshotReportedZeroWidth": true,
+    "DOMActualSVGSizesVerified": true,
+    "validFullPagePairScreenshots": true,
+    "noBypassUsed": true,
+    "privateMediaSaved": false,
+    "pixelAAAndPerceivedContinuityNotMathematicallyCertified": true
+  },
+  "cleanup": {
+    "terminationRequestedAndReportedByRoot": true,
+    "childTerminationConfirmedByRoot": true,
+    "childTerminationMethod": "root checked matching command and sent SIGTERM successfully",
+    "wrapperAutoExitExpected": true,
+    "wrapperExitIndependentlyConfirmed": false,
+    "independentWorkerProcessCheck": {
+      "attempts": 1,
+      "command": "rtk proxy ps -p 89612,89611 -o pid=,comm=",
+      "result": "sandbox Operation not permitted",
+      "retryOrBypass": false,
+      "processTerminationByWorker": false
+    }
+  },
+  "validation": {
+    "newFocusedTestsExecutedByWorker": 0,
+    "priorViewerFocusedTests": 3,
+    "priorViewerFocusedExecutions": 1,
+    "priorCertificateTestsRerun": 0,
+    "serverStartsByWorker": 0,
+    "HTTPByWorker": 0,
+    "sourceCompileByWorker": 0,
+    "engineByWorker": 0,
+    "buildRun": false,
+    "gitOperations": 0,
+    "preservationInlineCheck": {
+      "executions": 1,
+      "exitCode": 0,
+      "status": "PASS: original36+committed5+viewer6 hashes matched; sampled continuity and unresolved direction/production gates remain separate",
+      "pinsMatched": 47
+    }
+  },
+  "limitations": [
+    "이 기록은 root의 일부 진행률·자연 재생 표본 관찰입니다. 모든 프레임이나 모든 한자에 대한 결과가 아닙니다.",
+    "정확한 벡터 면적 인증과 브라우저 AA·눈에 보이는 연속성은 구분합니다.",
+    "새 field의 국내 방향·필순·원 authored trajectory 인증과 production 적용은 미해결입니다."
+  ]
+}
