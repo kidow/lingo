@@ -1,0 +1,115 @@
+{
+  "batch": 975,
+  "glyph": "隤",
+  "verifiedAt": "2026-10-17",
+  "status": "approved-runtime-applied-and-verified",
+  "nativeReview": {
+    "reference": "native-review.json",
+    "evidenceSource": "root-native-IAB",
+    "approved": true,
+    "actualWholeViews": 1,
+    "byteIdenticalWholeProofReuses": 1,
+    "pens": 15,
+    "masks": 16,
+    "originalPolygons": 29,
+    "framesApproved": 135,
+    "finePens": [
+      1,
+      2,
+      4,
+      5,
+      9,
+      10,
+      14,
+      15
+    ],
+    "maskBoundaryPens": [
+      2
+    ],
+    "additionalProbeObservedAX": "95.0000%",
+    "replayPens": [
+      2
+    ],
+    "replayStartPercent": 2.5913,
+    "replayCompletedAX": "100.0000%",
+    "reviewControlInputDivision": 100,
+    "reviewControlSliderStep": 0.0001,
+    "originalDivisor150UsedForValidReview": false,
+    "privateMediaSaved": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "proofContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullProofSHA256": "7b43578e702eb48d2334e2ae49b77dfeec98d663bc78afaa6f063df73fdad4bf",
+    "selectedProofIdentity": {
+      "sourceRoot": "u96a4",
+      "sourceProofFile": "./engine-whole-u96a4.json",
+      "sourceProofFileSha256": "73c81d45b46962635d95fdaaaf0a17705d204ab2d63f24f64e91d7c5514da4e1",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "719d85dc7057947d874e3938c9408fd522b401cb74d9f5d4751f69868a4c4418"
+    },
+    "supportedProofIdentities": [
+      {
+        "sourceRoot": "u96a4",
+        "sourceProofFile": "./engine-whole-u96a4.json",
+        "sourceProofFileSha256": "73c81d45b46962635d95fdaaaf0a17705d204ab2d63f24f64e91d7c5514da4e1",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "719d85dc7057947d874e3938c9408fd522b401cb74d9f5d4751f69868a4c4418"
+      },
+      {
+        "sourceRoot": "u96a4-ue0100",
+        "sourceProofFile": "./engine-whole-u96a4-ue0100.json",
+        "sourceProofFileSha256": "73c81d45b46962635d95fdaaaf0a17705d204ab2d63f24f64e91d7c5514da4e1",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "719d85dc7057947d874e3938c9408fd522b401cb74d9f5d4751f69868a4c4418"
+      }
+    ],
+    "mandatoryCompileProgressiveArguments": 3,
+    "mandatoryCompileSourceWholeArguments": 4,
+    "identityCaseAndPrefixUnchanged": true
+  },
+  "runtime": {
+    "modulePrepared": true,
+    "registryEditedByThisAgent": false,
+    "registryLinkedByRoot": true,
+    "verifyRuntimeExecuted": true,
+    "runtimeApplied": true,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch975-2026-10-13/verify-runtime.mjs",
+    "status": "PASS",
+    "exitCode": 0,
+    "executions": 1,
+    "pens": 15,
+    "masks": 16,
+    "polygons": 29,
+    "frames": 135,
+    "sourcePreserved": true,
+    "compiledSHA256": "809ba3871107d84ee2d05ce57c07dc069961a52a308a37f3e4d4bf851da0d9de",
+    "fullProofSHA256": "7b43578e702eb48d2334e2ae49b77dfeec98d663bc78afaa6f063df73fdad4bf",
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "checks": {
+    "focusedTestsExecuted": true,
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch975.test.ts",
+      "exitCode": 0,
+      "passed": 4,
+      "failed": 0,
+      "full5ProofVerified": true,
+      "identity5CaseAndPrefixesVerified": true,
+      "mandatory3And4ArgumentsVerified": true,
+      "rawGeometryLicenseVerified": true
+    },
+    "runtimeVerifierSyntaxExitCode": 0,
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "immutableSourceMetadataPreserved": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false
+}

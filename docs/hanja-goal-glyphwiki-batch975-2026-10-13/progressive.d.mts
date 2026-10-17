@@ -1,0 +1,8 @@
+import type {HanjaOutlineStrokes} from '../../lib/hanja-stroke-outline.ts'
+export type SelectedProofIdentity=Readonly<{sourceRoot:string;sourceProofFile:string;sourceProofFileSha256:string;sourceHeaderFile:string;sourceHeaderFileSha256:string}>
+export type Full5Proof=Readonly<{engineRevision:string;engineHashes:Readonly<Record<string,string>>;defaults:Readonly<Record<string,number>>;groups:readonly unknown[];trace:readonly unknown[]}>
+export declare const selectedProofIdentity:SelectedProofIdentity
+export declare const candidateWholeProofs:readonly Readonly<{identity:SelectedProofIdentity;sourceGroups:readonly (readonly number[])[]}>[]
+export declare function compileProgressive(trace:readonly unknown[],proof:Full5Proof,identity:SelectedProofIdentity):HanjaOutlineStrokes
+export declare function compileSourceWhole(root:string,trace:readonly unknown[],proof:Full5Proof,identity:SelectedProofIdentity):HanjaOutlineStrokes
+export declare function renderProgressive(strokes:HanjaOutlineStrokes,stroke:number,progress:number,prefix?:string):string
