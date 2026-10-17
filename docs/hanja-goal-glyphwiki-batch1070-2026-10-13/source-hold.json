@@ -116,6 +116,8 @@
   "smallestCapturedMinimum": null,
   "allCapturedCompleteWholesExceedCatalog": null,
   "catalogDomesticCountMismatch": false,
+  "newCanonicalHoldEligible": false,
+  "countIncrement": 0,
   "oldReadmeReused": false,
   "oldReadmeSHA256": null,
   "priorHoldEvidence": null,
@@ -168,9 +170,18 @@
       "鼐",
       "u9f10"
     ],
-    "existingCanonicalHoldFound": false,
+    "existingCanonicalHoldFound": true,
+    "matchingPolicy": "Parsed canonical string records as well as structured records; exact glyph match",
+    "existingCanonicalHold": {
+      "batch": 494,
+      "glyph": "鼐",
+      "checkpoint": "docs/hanja-goal-glyphwiki-batch939-2026-10-13/resume.json",
+      "record": "batch494 鼐15; missing unversioned u76ee-j pinned2016 dependency; explicit@1 cycles and@2 historical cutoff provenance unverified, history HTML403"
+    },
+    "newCanonicalHoldEligible": false,
+    "countIncrement": 0,
     "existingPreflightIsNotCanonicalCheckpointHold": true,
-    "newHoldAccountingPending": true,
+    "newHoldAccountingPending": false,
     "resumeCreationDeferred": true
   },
   "requiredNextEvidence": "Obtain exact versioned missing dependency provenance and reproduce a complete whole under the original contract before native review. No latest substitution or synthesized geometry here.",

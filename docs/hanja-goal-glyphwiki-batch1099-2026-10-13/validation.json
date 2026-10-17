@@ -3,9 +3,13 @@
   "batch": 1099,
   "glyph": "譈",
   "date": "2026-10-17",
-  "status": "source-only-hold-verified-awaiting-sequenced-checkpoint",
+  "status": "source-only-existing-canonical-hold-supplement",
+  "existingCanonicalHoldFound": true,
+  "existingCanonicalBatch": 515,
+  "newCanonicalHoldEligible": false,
+  "countIncrement": 0,
   "hold": "./source-hold.json",
-  "holdSHA256": "f2e88b0079ecc76df6fd3ff9a2836b7eb50f203f9bdbfd8bb50c01c5a94344c7",
+  "holdSHA256": "6728709dee6e0cef934fcf0fcabbb3bb751c1c7c3d38af87ef6b2e6a7c6cf23f",
   "originalFiles": 16,
   "originalInputPinMismatches": 0,
   "frozenContractPinMismatches": 0,
@@ -38,5 +42,5 @@
   "buildRun": false,
   "gitRun": false,
   "resumeCreated": false,
-  "checkpointAccounting": "Deferred to root chronological checkpoint; no counters changed"
+  "checkpointAccounting": "Supplement to existing canonical batch515 hold; count increment0. No duplicate hold or new counter."
 }

@@ -200,6 +200,8 @@
   "smallestCapturedMinimum": 20,
   "allCapturedCompleteWholesExceedCatalog": true,
   "catalogDomesticCountMismatch": false,
+  "newCanonicalHoldEligible": false,
+  "countIncrement": 0,
   "oldReadmeReused": false,
   "oldReadmeSHA256": null,
   "priorHoldEvidence": null,
@@ -252,9 +254,18 @@
       "譈",
       "u8b48"
     ],
-    "existingCanonicalHoldFound": false,
+    "existingCanonicalHoldFound": true,
+    "matchingPolicy": "Parsed canonical string records as well as structured records; exact glyph match",
+    "existingCanonicalHold": {
+      "batch": 515,
+      "glyph": "譈",
+      "checkpoint": "docs/hanja-goal-glyphwiki-batch939-2026-10-13/resume.json",
+      "record": "batch515 譈19;pen14 left terminal-hook tip truncated before completion;20.0965original units left of endpoint versus original radius14"
+    },
+    "newCanonicalHoldEligible": false,
+    "countIncrement": 0,
     "existingPreflightIsNotCanonicalCheckpointHold": true,
-    "newHoldAccountingPending": true,
+    "newHoldAccountingPending": false,
     "resumeCreationDeferred": true
   },
   "requiredNextEvidence": "Obtain a compatible complete fixed original source or independently verified authored boundary; preserve original nonconsecutive-contact uncertainty and do not delete rows to force count.",
