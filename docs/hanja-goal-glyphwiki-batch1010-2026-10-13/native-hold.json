@@ -1,0 +1,157 @@
+{
+  "batch": 1010,
+  "glyph": "獫",
+  "reviewedAt": "2026-10-18",
+  "status": "native-partial-review-rejected-terminal-reveal-pop",
+  "nativeApproval": false,
+  "nativeWholeApproved": true,
+  "nativeOrderApproved": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": 0,
+  "originalBytePins": {
+    "candidate-compile-analysis.json": "0bad0917290ae52ce3e0b1fdb6ae8ce77592d0f4691548bb4af38d1be679f060",
+    "engine-proof.json": "00a49d850f623222ac2993d9a94f1ca8ed7ca4a6261edbed82d4c4fe02782339",
+    "engine-whole-u736b-ue0100.json": "449f2684fcd0ebe70eb65ebb2370e7631c0350e24cf88dc75d0cd94eab503593",
+    "engine-whole-u736b.json": "00a49d850f623222ac2993d9a94f1ca8ed7ca4a6261edbed82d4c4fe02782339",
+    "metadata.json": "e425876a7a0af0d0ab0dac31f299f1f611e2bbfa2674e9ae5aad11da7611c0f9",
+    "native-preflight-source-analysis.json": "a0aa805cf566e4059c537fe5ed3c4885ff5eb545e9afbdf87c23f6733372ab69",
+    "native-server-compile.mjs": "f44d8a48e649a02bebc637bf4bc33a388dc0619fe870012f22b9b8cc001f9b72",
+    "native-server-source-audit.json": "b008d467cbe7306f05a6b837301139cc0ec01b968cecc363d5e245ccfd27a637",
+    "native-server-validation.json": "72d6e19db93c495d1ac167d339394958c1294b90bb0fb09d4a4951a3adfbb279",
+    "progressive.mjs": "169a297b3107265aa60b48f021ce5366bbea5e95da83fc229d3f53144f48a4c1",
+    "serve-native.py": "6a714d256da6c69d9d81c709a4f88797285008115e418ad3eeded066ca488b4b",
+    "source-analysis.json": "8d8d2d13871a857c17a8017ef0ebcc4acb5079f7799fbfa27be155cba879c312",
+    "source-join-analysis.json": "b62942dd654851ca2ef41accc3ccab39bee731793d2b11e75d483c99be8e9538",
+    "source-only-helper-readiness-2026-10-14.json": "2f4c94f2d05fadde36ff7eefb4ac4993cc5b4dea6f2b02eb3e54c7a23ab8864e",
+    "source-verification.json": "a545433cd71c30c286700a635565572dc06c3ceac0c164e658ee93e53e095ea2",
+    "sources.json": "d1348e3cf445a9dc5665f2744eb47df6d9f8a9e4eba128061fa8aa0a3b1a56af",
+    "verify-source.mjs": "bdde3e9bb8c49772366e91d247bd49cc9cb6a947cc9ac35624630bb2efdcb74b"
+  },
+  "sharedRendererBytePins": {
+    "docs/hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "priorReadiness": "source-only-helper-readiness-2026-10-14.json",
+  "priorReadinessSHA256": "2f4c94f2d05fadde36ff7eefb4ac4993cc5b4dea6f2b02eb3e54c7a23ab8864e",
+  "nativeEvidenceReportedBy": "root browser panel actual observations",
+  "whole": {
+    "actuallyObserved": [
+      "u736b",
+      "u736b-ue0100"
+    ],
+    "compatible": [
+      "u736b",
+      "u736b-ue0100"
+    ],
+    "selected": "u736b"
+  },
+  "directionsObserved": 0,
+  "coarseFramesObserved": 0,
+  "maskBoundariesObserved": 0,
+  "replaysObserved": 0,
+  "fine": {
+    "actualWidth": 520,
+    "domWidthConfirmed": true,
+    "sampleProgress": [
+      99.99,
+      100
+    ],
+    "observations": 1,
+    "passedPens": [],
+    "failedPens": [
+      11
+    ],
+    "selectedRootActuallyReviewed": "u736b",
+    "alternativeFineObserved": false,
+    "failure": {
+      "pen": 11,
+      "reason": "tiny lower-left triangle appears only at completion",
+      "actualPairObserved": true,
+      "additionalRamCornerCrop": {
+        "width": 110,
+        "height": 115,
+        "progressSequence": [
+          100,
+          99.99,
+          100
+        ],
+        "confirmsSamePop": true
+      },
+      "privateMediaSaved": false
+    },
+    "otherFinePensObserved": false
+  },
+  "sourceOnlyAlternativeConstraint": {
+    "kind": "read-only per-pen captured-source equivalence, not alternative native review",
+    "roots": [
+      "u736b",
+      "u736b-ue0100"
+    ],
+    "completeProofEqual": false,
+    "wholeFileSHA256": [
+      "00a49d850f623222ac2993d9a94f1ca8ed7ca4a6261edbed82d4c4fe02782339",
+      "449f2684fcd0ebe70eb65ebb2370e7631c0350e24cf88dc75d0cd94eab503593"
+    ],
+    "fullProofDifferencesPreserved": true,
+    "exampleDifference": {
+      "oneBasedPen": 13,
+      "zeroBasedRaw": 14,
+      "baseCoordinate": 106.22999999999999,
+      "vs0Coordinate": 106.22999999999998
+    },
+    "oneBasedPen": 11,
+    "rawIndicesZeroBased": [
+      11,
+      12
+    ],
+    "sourceGroupsBothExplicitProfiles": [
+      [
+        11,
+        12
+      ],
+      [
+        11,
+        12
+      ]
+    ],
+    "nonemptyOriginalSourceGroupsSHA256": [
+      "41db5473a3d08493a18c903a057afba1965d362ab03776cbff604e00d7e662e3",
+      "41db5473a3d08493a18c903a057afba1965d362ab03776cbff604e00d7e662e3"
+    ],
+    "groupedRawTraceSHA256": [
+      "a5633c6be5327fc394dcea82522b6bd27d4fc8dd92d6091230d588e833ebf800",
+      "a5633c6be5327fc394dcea82522b6bd27d4fc8dd92d6091230d588e833ebf800"
+    ],
+    "originalPolygonArraySHA256": [
+      "79afd89d270c76e3511d5fc479b654ec00c380459bd9a31e64e3459e7c19f4e4",
+      "79afd89d270c76e3511d5fc479b654ec00c380459bd9a31e64e3459e7c19f4e4"
+    ],
+    "sameCompilerPolicyKeys": [
+      "sourceGroups",
+      "RAW_COUNT",
+      "PINNED_DEFAULTS",
+      "ENGINE_REVISION",
+      "ENGINE_HASHES",
+      "UP_TAIL_GROUPS",
+      "LEFT_TAIL_GROUPS",
+      "FIFTEEN_TAIL_GROUPS",
+      "SINGLE_CARDINAL_TIP_RAW"
+    ],
+    "engineDefaultsAndTerminalPoliciesEqual": true,
+    "explicitAlternateCompilerSupport": true,
+    "compilerAPI": "compileSourceWhole(root, trace, proof, explicitFileIdentity)",
+    "alternateIdentity": "u736b-ue0100",
+    "sourceCompilerExecuted": false,
+    "nativeAlternativeFineObserved": false,
+    "conclusion": "The captured alternate has an identical pen11 raw group, calls, original polygons and unchanged terminal/compiler policy, so it supplies no distinct captured pen11 geometry. This constraint does not assert full-proof identity, alternative native failure, or alternative native approval."
+  },
+  "sourcePathsChanged": false,
+  "sourceWidthsChanged": false,
+  "sourceCoordinatesChanged": false,
+  "orderAdapterCreated": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "serversStarted": 0,
+  "gitExecuted": false
+}
