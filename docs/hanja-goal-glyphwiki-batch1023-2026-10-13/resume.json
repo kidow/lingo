@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "previousResume": "docs/hanja-goal-glyphwiki-batch1022-2026-10-13/resume.json",
+  "previousResumeSHA256": "112e70b3042bf688404d5802cbe9388f7541caf328ac1459130ddd2b9e079cbb",
+  "checkpointStatus": "source-count-hold-actual-checkpoint-verified",
+  "actualCheckpointVerified": true,
+  "runtimeAbsenceVerified": true,
+  "completedRuntime": 5521,
+  "total": 5978,
+  "remainingCommittedRuntime": 457,
+  "pendingRuntime": 0,
+  "lastCompletedBatch": 1023,
+  "lastRuntimeBatch": 1022,
+  "newHoldsThisBatch": [
+    {
+      "batch": 1023,
+      "glyph": "鐶",
+      "root": "u9436",
+      "selectedRoot": "u9436",
+      "catalogStrokes": 21,
+      "hold": "docs/hanja-goal-glyphwiki-batch1023-2026-10-13/source-hold.json",
+      "holdSHA256": "9d37044d10ec130e4df52cc2806b6e678c28a911fa7c91d7eb57d4736c53aec5",
+      "runtimeApplied": false,
+      "nativeApproval": false
+    }
+  ],
+  "existingHoldsInherited": 301,
+  "totalHolds": 302,
+  "inheritancePolicy": "1022의 실제 canonical 보류301자를 승계하고 중복 없는 鐶을1회 추가합니다. 원본 source-hold/README/validation은 변경하지 않습니다.",
+  "inheritedFields": {
+    "existingHolds": "docs/hanja-goal-glyphwiki-batch1022-2026-10-13/resume.json#/totalHolds",
+    "canonicalHoldHistory": "docs/hanja-goal-glyphwiki-batch1022-2026-10-13/resume.json#/previousResume"
+  },
+  "lastReview": {
+    "glyph": "鐶",
+    "status": "source-count-hold-minimum22-exceeds21",
+    "catalogStrokes": 21,
+    "minimumEligibleCompleteWhole": 22,
+    "wholeRawRows": 24,
+    "wholeDrawingRows": 24,
+    "originalPolygons": 44,
+    "exactConsecutiveJoinsRawOneBased": [
+      [
+        10,
+        11
+      ],
+      [
+        17,
+        18
+      ]
+    ],
+    "nonConsecutiveContactsNotNativeApproved": [
+      [
+        9,
+        14
+      ],
+      [
+        16,
+        19
+      ]
+    ],
+    "sourceCompilerInvocationsThisCheckpoint": 0,
+    "newNativeObservations": 0,
+    "runtimeApplied": false,
+    "nativeApproval": false,
+    "review": "docs/hanja-goal-glyphwiki-batch1023-2026-10-13/source-hold.json"
+  },
+  "nextIndependentCandidate": {
+    "batch": 1024,
+    "glyph": "鍰",
+    "strokes": 17,
+    "status": "strict-source-prepared-native-review-pending",
+    "directory": "docs/hanja-goal-glyphwiki-batch1024-2026-10-13"
+  },
+  "verificationPolicy": {
+    "scope": "연대순 체크포인트만 기록합니다. 원본18·hold7·readiness7핀,whole2개24raw/44polygon·연속joins2/min22>21. 비연속 접점은 승인하지 않습니다.939까지문자열·객체canonical중복·정확미등록을 대조합니다. 첫 상대경로 오류 및 교정검사 통과를 분리기록합니다.",
+    "productionBuild": false,
+    "fullSuite": false,
+    "sourceCompilerExecuted": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "privateMediaSaved": false
+}

@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "batch": 1023,
+  "glyph": "鐶",
+  "verifiedAt": "2026-10-18",
+  "status": "source-count-hold-actual-checkpoint-verified",
+  "sourceHoldFile": "source-hold.json",
+  "sourceHoldSHA256": "9d37044d10ec130e4df52cc2806b6e678c28a911fa7c91d7eb57d4736c53aec5",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "originalBytePins": {
+    "NOTICE.md": "0e6fc0d8b515b63946d9794922f5a0cf3620bec06d6c6a800aedcfd5a58c18c7",
+    "README.md": "b4ca960e1eebc7d2df9dd8c8f4afc821c905201320bd2e80a59ce4926fc33370",
+    "candidate-compile-analysis.json": "2d869b1e2b2ed142a4b248919b747657d137328080be4b78730dd7b5091fb94e",
+    "engine-proof.json": "0092d199029b6b8a54336de1a02bacccdea6197f55c425fd3fe0d1954381e603",
+    "engine-whole-u9436-ue0100.json": "ec19e3e858d95535af58486f5e28e1436902c78072a5d3fe57bf632e95468aea",
+    "engine-whole-u9436.json": "ec19e3e858d95535af58486f5e28e1436902c78072a5d3fe57bf632e95468aea",
+    "metadata.json": "95a206c04e8aefa8dd116f363167ee43b9fc6d64281adfe411e5f6bdd39cef8d",
+    "native-server-preparation-source-analysis.json": "87fbee0c4a05d13dd81f3e23b64d9ec458456a05a76ba433ffd288ee530b227b",
+    "native-server-validation.json": "d718db7648770826dc113c833433a60a85ec07ba5e7c86a983c252f01a9d5cb3",
+    "progressive.mjs": "11862875b2a3a7c6846b2f740e88bd42bfd25f4765513dc87dfdc08905c7495a",
+    "serve-whole.py": "c763be1ec25139ba0d5e8fa9f63997ed4cd541912b4d0aaf7573359489368a03",
+    "source-analysis.json": "8be4a36f4eaf41de91d90e387e588ab4f211ac77d1834efd44c8a89d0e8c59d5",
+    "source-hold.json": "9d37044d10ec130e4df52cc2806b6e678c28a911fa7c91d7eb57d4736c53aec5",
+    "source-join-analysis.json": "8b20faad5409c585cda2e8fed7de8c4f818e5e440f2506d31b92cc9c6db74156",
+    "source-only-helper-readiness-2026-10-14.json": "ba0d38647c268439312ac88eb62247a41d9f1f8f7a65c6c4fb3c36306b4c1e84",
+    "sources.json": "61fd44c9c114c7227a361fd88202cb4bd4f6425d51feae2effefb9b5cced28b1",
+    "validation.json": "e89c0f3c17764c2bd18c26285c0c1bf6fdd6c9a59e5c40084e62c3e9bd5af8c7",
+    "verify-source.mjs": "a04d48ef055f9262288588b06f72b517c9d926ca5d4178bc1bbbea46e256d8ce"
+  },
+  "originalFilesPreserved": 18,
+  "existingSourceHoldPins": 7,
+  "existingReadinessPins": 7,
+  "originalReadmeValidationAndSourceHoldChanged": false,
+  "sourceFacts": {
+    "catalogStrokes": 21,
+    "recordedDomesticClips": 21,
+    "baseAndVS0OriginalRawRows": 24,
+    "baseAndVS0DrawingRawRows": 24,
+    "originalDrawCalls": 24,
+    "originalPolygons": 44,
+    "exactConsecutiveJoinsRawOneBased": [
+      [
+        10,
+        11
+      ],
+      [
+        17,
+        18
+      ]
+    ],
+    "minimumEligibleCompleteWhole": 22,
+    "allCapturedCompleteWholesExceedCatalog": true,
+    "nonConsecutiveContactsNotNativeApproved": [
+      [
+        9,
+        14
+      ],
+      [
+        16,
+        19
+      ]
+    ],
+    "noRowsRemovedOrNewConnectorsAuthored": true
+  },
+  "parentCheckpoint": {
+    "file": "docs/hanja-goal-glyphwiki-batch1022-2026-10-13/resume.json",
+    "sha256": "112e70b3042bf688404d5802cbe9388f7541caf328ac1459130ddd2b9e079cbb",
+    "actualRuntime": 5521,
+    "actualRemaining": 457,
+    "inheritedHolds": 301
+  },
+  "focusedChecks": {
+    "executed": true,
+    "executions": 2,
+    "successfulExecutions": 1,
+    "exitCode": 0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "exitCode": 1,
+        "status": "relative-resume-path-resolution-error",
+        "failedReference": "../hanja-goal-glyphwiki-batch942-2026-10-13/resume.json",
+        "reason": "상대 previousResume를 저장소 루트 기준으로 해석해 ENOENT. 원본핀·whole 최소획 검증 뒤 canonical 순회에서 중단했습니다.",
+        "filesChanged": false
+      },
+      {
+        "attempt": 2,
+        "exitCode": 0,
+        "status": "passed-after-reference-resolution-correction",
+        "correction": "docs/ 접두사는 저장소 기준, 상대참조는 해당 resume의 폴더 기준으로 정규화했습니다."
+      }
+    ],
+    "method": "원본18·hold7·readiness7핀,두whole원본끝점/min22,canonical939까지문자열80/객체221,actual부모SHA·정확미등록을검사했습니다. compiler는import하지않았습니다.",
+    "originalFilesPreserved": 18,
+    "frozenSourceHoldPinsPreserved": 7,
+    "readinessPinsPreserved": 7,
+    "originalReadmeValidationAndSourceHoldPreserved": true,
+    "parentAndHoldSHA256Verified": true,
+    "independentWholeFacts": [
+      {
+        "file": "engine-whole-u9436.json",
+        "fileSHA256": "ec19e3e858d95535af58486f5e28e1436902c78072a5d3fe57bf632e95468aea",
+        "raw": 24,
+        "drawing": 24,
+        "calls": 24,
+        "polygons": 44,
+        "exactConsecutiveJoinsRawOneBased": [
+          [
+            10,
+            11
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "minimum": 22,
+        "nonConsecutiveContactsNotApproved": [
+          [
+            9,
+            14
+          ],
+          [
+            16,
+            19
+          ]
+        ]
+      },
+      {
+        "file": "engine-whole-u9436-ue0100.json",
+        "fileSHA256": "ec19e3e858d95535af58486f5e28e1436902c78072a5d3fe57bf632e95468aea",
+        "raw": 24,
+        "drawing": 24,
+        "calls": 24,
+        "polygons": 44,
+        "exactConsecutiveJoinsRawOneBased": [
+          [
+            10,
+            11
+          ],
+          [
+            17,
+            18
+          ]
+        ],
+        "minimum": 22,
+        "nonConsecutiveContactsNotApproved": [
+          [
+            9,
+            14
+          ],
+          [
+            16,
+            19
+          ]
+        ]
+      }
+    ],
+    "canonicalResumeReferences": 84,
+    "canonicalUniqueHoldsBefore": 301,
+    "canonicalStringHolds": 80,
+    "canonicalObjectHolds": 221,
+    "glyphAndRootDuplicateMatches": 0,
+    "holdCountIncrement": 1,
+    "holdsAfter": 302,
+    "registryOccurrences": 0,
+    "exactLookup": null,
+    "actualRegisteredCountInheritedFromVerifiedParent": 5521,
+    "sourceCompilerExecutionsThisCheckpoint": 0,
+    "newNativeObservations": 0
+  },
+  "sourceCompilerExecutedThisCheckpoint": false,
+  "nativeObservationsThisCheckpoint": 0,
+  "serverStarted": false,
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "gitRun": false,
+  "privateMediaSaved": false
+}
