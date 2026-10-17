@@ -1,0 +1,268 @@
+{
+  "batch": 948,
+  "glyph": "菑",
+  "date": "2026-10-17",
+  "status": "source-only-domestic-order-candidate-native-pending",
+  "newFiles": [
+    "progressive-order-candidate.mjs",
+    "native-server-compile-order-candidate.mjs",
+    "serve-order-native.py",
+    "source-order-candidate-validation.json"
+  ],
+  "sourceOrderBasis": {
+    "providedBy": "/root",
+    "actualPriorObservations": "Root reports all5 whole variants observed; only u83d1-ue0102 and u83d1-var-001 have compatible separated grass structure. Domestic3 horizontal/4 vertical and domestic10 horizontal/11 vertical require intact original masks3/4 and10/11 to be swapped. Other8 directions agree.",
+    "childNativeObservation": false,
+    "correctedNativeFrames": 0,
+    "correctedNativeReplays": 0
+  },
+  "permutation": [
+    1,
+    2,
+    4,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    10,
+    12
+  ],
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      3
+    ],
+    [
+      2
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      14
+    ],
+    [
+      13
+    ],
+    [
+      15
+    ]
+  ],
+  "originalInputBytePins": {
+    "NOTICE.md": "0ba22eae40da127cd3542f9f62865374be27d65f2332f0440ef343c921868e44",
+    "candidate-compile-analysis.json": "840425a5ed0930955fbadae4d68da22852326383800661f192b69c782b169b6c",
+    "engine-proof.json": "da8f00cf2c0ff9cd6424cff4bf271be437798ddce5845427330e32cc7baa8b77",
+    "engine-whole-u83d1-ue0100.json": "8234f665e4898601a4f37209cef73161cf60de1953e7e98155765ddd57f21b85",
+    "engine-whole-u83d1-ue0101.json": "8234f665e4898601a4f37209cef73161cf60de1953e7e98155765ddd57f21b85",
+    "engine-whole-u83d1-ue0102.json": "780b9148d9ccf7b3d33cd6b1acd44e31739e96b6605d86b80a7d8ac5d0f13671",
+    "engine-whole-u83d1-var-001.json": "780b9148d9ccf7b3d33cd6b1acd44e31739e96b6605d86b80a7d8ac5d0f13671",
+    "engine-whole-u83d1.json": "8234f665e4898601a4f37209cef73161cf60de1953e7e98155765ddd57f21b85",
+    "metadata.json": "589713424e16e6fadefe21bc43bd5bed5232d92f8abb30c9c510c40c2499c754",
+    "native-server-input-pins.json": "8251957d696d267000c11a53bb199ea27683c11668d0c19b36082124a62b9083",
+    "progressive.mjs": "14dd6463a99637ab4f6d0e108299605d4fb6e8b603e829b25b370870f6c18c26",
+    "serve-native.py": "f975b8b2dbc62aead3f552e0c8eaf260a9802c85f1818624f33c4f5fe4735f8e",
+    "source-analysis.json": "4df9c520494fd67ebf1f79dcba6dee82f824e2acb155b255c053aefe242bb5b2",
+    "source-join-analysis.json": "c56073a3fb923dc22d4d3db47c763c2da9a85e31c11e726e9077ae0afcfe2f00",
+    "source-only-helper-readiness-2026-10-14.json": "63d0b6c375785960c421ab0659eb5d546bb67ede3073559538c51ad088dbb9bb",
+    "sources.json": "5888c4ac5feaef0b13fdebf235be7a7beb4b8192ea1143e524f7c25efcb7125b",
+    "strict-native-adapter.mjs": "9f0f4d5b9f9ff096e204e474e745813962ca43b3583469d7af17291252fc5a24",
+    "strict-native-server-preflight.json": "e10ddc435d184fc8c0ec89817201400d11276d85bb41257cfcb5acbc062fe253",
+    "verify-source.mjs": "96cbc2121d6b2411f89bf0fdb33d18ea1e83a5ab2fbe871c3635467085ff00e3"
+  },
+  "originalHelperSHA256": "f975b8b2dbc62aead3f552e0c8eaf260a9802c85f1818624f33c4f5fe4735f8e",
+  "originalCallerManifestSHA256": "8251957d696d267000c11a53bb199ea27683c11668d0c19b36082124a62b9083",
+  "candidateCompilerSHA256": "3f197d057c016b10040a45db941bf7c80a4c5121395f9d1f1ea972ee378e8f51",
+  "candidateAdapterSHA256": "ab55ef9d30a6159089eb8d5b73e4c9380f5758597475eddd2b98cadbd95dbc32",
+  "candidateHelperSHA256": "01eecaa05a74dd142061904c91c38a38a6a37260768ff54447c3040e4d7a851f",
+  "callerContract": {
+    "primitive": "compileProgressive(trace, full5proof, identity)",
+    "argumentCount": 3,
+    "originalSelectedProofKeys": [
+      "groups",
+      "trace",
+      "defaults"
+    ],
+    "fullProofKeys": [
+      "engineRevision",
+      "engineHashes",
+      "groups",
+      "trace",
+      "defaults"
+    ],
+    "fullProofSHA256": "0e4fa7b0009b5ef8476a5604fe759cca52c3d9a863312a8e01f57c639b459803",
+    "selectedIdentity": {
+      "sourceRoot": "u83d1-ue0102",
+      "sourceProofFile": "./engine-whole-u83d1-ue0102.json",
+      "sourceProofFileSha256": "780b9148d9ccf7b3d33cd6b1acd44e31739e96b6605d86b80a7d8ac5d0f13671",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "da8f00cf2c0ff9cd6424cff4bf271be437798ddce5845427330e32cc7baa8b77"
+    },
+    "exactRelativeFilePrefixesRequired": true,
+    "identityCaseSensitive": true,
+    "originalStrictAdapterPreserved": true,
+    "originalCallerManifestPreserved": true
+  },
+  "localValidation": {
+    "exitCode": 0,
+    "pens": 12,
+    "masks": 12,
+    "compiledSHA256": "3a9b6b7102c39276c65b1ccd5db1c83b5ea44c55242fbba3e4601a359f351023",
+    "perPenPermutation": true,
+    "polygons": 30,
+    "originalPolygonExactOnce": true,
+    "originalCoordinatesUnchanged": true,
+    "oldCompiledSHA": "c5393957b42400c341d6e93c75d47bbd2172b1b22fe682f98f8e1e12505ef48c",
+    "newCompiledSHA": "3a9b6b7102c39276c65b1ccd5db1c83b5ea44c55242fbba3e4601a359f351023",
+    "oldPenSHA": [
+      "9045107205f9a7a8b6dd380271248145eac6edfe1f659e04c8ac164164eb1c82",
+      "0cfb437383fc34cfb967f8fd4f08557a9a2fbf9d6b40548491880ff1e34d3c01",
+      "abe9d5aa572c818b576c32294ca55aaf902e3d1cb9d6547a0a1535a9b91f25ca",
+      "e5270c20fc8ba5d9570eea352e9b6c45fd48a39e3ba386a0aaaa2398cb824728",
+      "11386cdc9054c41ef68d1120ef5dec3c6ec5401a6737f10c053c5bf7dbb29074",
+      "15b3b192446be34b2dd4926339113e14d483620af5484ef2a3489da1defb8e71",
+      "a314cd15c5d3554407b94a18b948ffb69193ede6996e082319d796ddd8aa1485",
+      "f3fc941264c12c72afe63526f46d91b1f09971affa70aec69d5487f38d340cdc",
+      "b6d2af28f48d38cb4629744b07500550ed9854ed0005b312e401a4ad155932c3",
+      "526c8a435c1bfc66e85c45de8bf9cfa2de5baf591558c88569cb445836c04c53",
+      "007ba7cca21c565ec97aa85a72c50d48f6b2677aa4a6f287c582fd7a954e0961",
+      "a574f754c0a11e558ebe61bf2f638c12ff0e782a4ce05b1a72ae36ec507325cd"
+    ],
+    "newPenSHA": [
+      "9045107205f9a7a8b6dd380271248145eac6edfe1f659e04c8ac164164eb1c82",
+      "0cfb437383fc34cfb967f8fd4f08557a9a2fbf9d6b40548491880ff1e34d3c01",
+      "e5270c20fc8ba5d9570eea352e9b6c45fd48a39e3ba386a0aaaa2398cb824728",
+      "abe9d5aa572c818b576c32294ca55aaf902e3d1cb9d6547a0a1535a9b91f25ca",
+      "11386cdc9054c41ef68d1120ef5dec3c6ec5401a6737f10c053c5bf7dbb29074",
+      "15b3b192446be34b2dd4926339113e14d483620af5484ef2a3489da1defb8e71",
+      "a314cd15c5d3554407b94a18b948ffb69193ede6996e082319d796ddd8aa1485",
+      "f3fc941264c12c72afe63526f46d91b1f09971affa70aec69d5487f38d340cdc",
+      "b6d2af28f48d38cb4629744b07500550ed9854ed0005b312e401a4ad155932c3",
+      "007ba7cca21c565ec97aa85a72c50d48f6b2677aa4a6f287c582fd7a954e0961",
+      "526c8a435c1bfc66e85c45de8bf9cfa2de5baf591558c88569cb445836c04c53",
+      "a574f754c0a11e558ebe61bf2f638c12ff0e782a4ce05b1a72ae36ec507325cd"
+    ],
+    "unchangedSamePositionPens": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12
+    ],
+    "inputImmutable": true,
+    "guardRejections": 14,
+    "guardExitCode": 0,
+    "helperMemorySyntaxExitCode": 0,
+    "storedCallerByteFix": {
+      "cause": "Original CFG nodeCode has no final LF; patch storage added exactly one final LF. Helper previously pinned the RAM string instead of saved caller bytes.",
+      "ramBytesWithoutFinalLF": 1866,
+      "ramSHA256": "c39d9c30f52c0bbd36f4a596cbc9fea822eecca20f06327d45bc456b9eeb8755",
+      "storedBytesWithFinalLF": 1867,
+      "storedSHA256": "ab55ef9d30a6159089eb8d5b73e4c9380f5758597475eddd2b98cadbd95dbc32",
+      "removingOnlyFinalLFReproducesRAMPin": true,
+      "guardStillRequiresExactStoredBytes": true
+    },
+    "actualHelperStartupValidation": {
+      "port": 49785,
+      "pid": 94192,
+      "wholeVariants": 5,
+      "checksHTTPStatus": 200,
+      "progressiveHTTPStatus": 200,
+      "sourceGroupsMatched": true,
+      "pens": 12,
+      "masks": 12,
+      "ownedProcessStopped": true,
+      "nativeApproval": false,
+      "firstHTTPHarnessUsedAbsentCoarseSamplesMarker": true,
+      "correctedHTTPHarnessPassedWithActualDOMMarkers": true
+    },
+    "initialGuardHarnessSyntaxError": true,
+    "correctedGuardHarnessPassed": true,
+    "nativeApproval": false
+  },
+  "fineInventory": {
+    "curveFinePens": [
+      5,
+      6,
+      7,
+      9
+    ],
+    "cardinalFinePens": [
+      8
+    ],
+    "maskTransitions": [],
+    "nativeNeeded": {
+      "changedDirectionPens": [
+        3,
+        4,
+        10,
+        11
+      ],
+      "changedCoarseFrames": 36,
+      "unchangedPens": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12
+      ],
+      "unchangedCoarseFrames": 72,
+      "finePens": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "actualReplayRequired": true
+    }
+  },
+  "start": {
+    "command": "rtk proxy python3 -B docs/hanja-goal-glyphwiki-batch948-2026-10-13/serve-order-native.py",
+    "port": 0,
+    "startedByThisAgent": false,
+    "originalHelperOnlyRedirectedInRAM": true
+  },
+  "scope": {
+    "originalFilesEdited": false,
+    "coordinatesChanged": false,
+    "pathsChanged": false,
+    "widthsChanged": false,
+    "weightsChanged": false,
+    "polygonsChanged": false,
+    "sourceEngineReruns": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "privateMediaSaved": false,
+    "builds": 0
+  }
+}
