@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "batch": 1012,
+  "glyph": "虩",
+  "verifiedAt": "2026-10-18",
+  "status": "actual-runtime-verified-focused-and-syntax-PASS",
+  "nativeApproval": true,
+  "runtimeApplied": true,
+  "reviewSHA256": "1903114a8f1aba61c7efff0293feb73323a5a9937252b3cdfa3bf63c3256f2df",
+  "compiledSHA256": "b737d3cd577632b15700ee0dae50f9aa90002b24630b7848b0e090cb9f11d6e9",
+  "sourceGeometryUnchanged": true,
+  "parentCheckpoint": {
+    "file": "docs/hanja-goal-glyphwiki-batch1011-2026-10-13/resume.json",
+    "sha256": "07721af2dca0150e45d96f9fda2327fd445ba627842e523f60ea77bbcfa6f337",
+    "actualRuntime": 5513,
+    "actualRemaining": 465,
+    "inheritedHolds": 298
+  },
+  "focusedTests": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "tests": 3,
+    "passed": 3,
+    "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch1012.test.ts"
+  },
+  "verifierSyntax": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1012-2026-10-13/verify-runtime.mjs"
+  },
+  "actualRuntimeVerifier": {
+    "executed": true,
+    "executions": 1,
+    "exitCode": 0,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch1012-2026-10-13/verify-runtime.mjs",
+    "pens": 18,
+    "masks": 21,
+    "polygons": 54,
+    "frames": 162,
+    "allFinalCoarseFresh": true,
+    "actual520FinePens": [
+      2,
+      3,
+      5,
+      8,
+      9,
+      10,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "freshFinalFinePens": [
+      13,
+      14
+    ],
+    "boundaries": [
+      8,
+      16,
+      18
+    ],
+    "naturalReplays": [
+      8,
+      16,
+      18
+    ],
+    "sourcePreserved": true,
+    "protectedPins": 31,
+    "runtimeApplied": true,
+    "currentRegisteredCount": 5514,
+    "compiledSHA256": "b737d3cd577632b15700ee0dae50f9aa90002b24630b7848b0e090cb9f11d6e9"
+  },
+  "buildRun": false,
+  "fullSuiteRun": false,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "privateMediaSaved": false
+}
