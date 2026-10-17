@@ -1,0 +1,9 @@
+# 鞙16획 — reviewed whole-mask order correction
+
+Root browser review approved the original base andVS0 whole forms and all16corrected directions. Only complete original pens5–9 are reordered: [1,2,3,4,6,7,8,9,5,10,11,12,13,14,15,16]. Original geometry, paths, reveal width, tail masks and coordinates remain byte-identical. All8source family records,3explicit version dependencies and2whole roots are retained.
+
+Coarse review covers144frames: unchanged original pens1–4/10–16 contribute99frames with identical pen and prefix sets; fresh final5–9 contribute45frames. Core fine endpoints at actual520px99.99→100 passed for fresh final6 and inherited same-pen/prefix final11/14. Original fine7 is not counted as final6 approval. Optional original fine2/3/6/10 were not additionally observed. Pen14boundary0.9246063925938145 before/at/after and actual95tail passed; corrected14replay2.7650%→natural100passed. App UI autoplay was not tested.
+
+Strict runtime source is full5 plus the original mandatory inner identity3. No outer6 exists or is invented. Order source check and Python syntax/RAM replacement check each passed once; one runtime RAM generation reproduced SHA 06c7becaf1ba2119abf87872ac2c9da31ac85ba5506c199db750cd2b53818ad6. Existing metadata/preparations retain their historical false flags.
+
+Actual1013parent SHA aa0563958f85730948bf2a6ee17b7dfed45aeadfbaa0b915a1ed548e9b14bc4f confirmed; focused3/3, verifier syntax and actual root-linked registry verification each passed once. Actual5516/5978 entries are registered,462 remain and298canonical holds are inherited without additions/removals. Registry edits belong to root. App UI autoplay remains untested. No production build or full suite was run. Original sources, shared renderers, strict/combined preparations and all five order-preparation files remain frozen. No server was started by this worker.
