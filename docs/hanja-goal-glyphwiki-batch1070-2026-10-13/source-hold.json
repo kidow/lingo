@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "batch": 1070,
+  "glyph": "鼐",
+  "verifiedAt": "2026-10-17",
+  "status": "held-fixed-snapshot-dependency-missing",
+  "catalogStrokes": 15,
+  "recordedDomesticClipCount": 15,
+  "evidenceScope": "Source-only existing capsule and exact endpoint inspection; raw rows1-based. No engine, compiler, tests or native run. Missing-source claims apply to the fixed captured snapshot only.",
+  "reason": "Every captured fixed whole is blocked by the recorded absent dependency. Geometry/progressive pens remain null or unavailable. This is a claim about the captured fixed snapshot only, not that no newer public data exists.",
+  "existingReportedBlocker": "sourceMissing-wholeGeometryNull",
+  "originalBytePins": {
+    "sources.json": "5669687895506aaf2ddc25e6692931fcfe13d3fdb054421f6fbf1bbb666970e9",
+    "metadata.json": "617fa6a3e5f3cdb6c5aafaccf340ca265a2c2e97818a5625ab17c884333bb2d6",
+    "engine-proof.json": "12388c473294fe04b13dc92e17e014cbdc4dfb86c1b6396f42f003be19e453cd",
+    "progressive.mjs": "b40fd8b681e0b9c15c1bfe2a9dda229eccff395e07acc5ef58992de6c4ac2b68",
+    "engine-whole-u9f10-ue0100.json": "cf057da2b1c74b071ad7f392356fa31d3d8a4eab9682f437646a0d40dc864e27",
+    "engine-whole-u9f10-ue0101.json": "afadc37c57119e3b90eb11d69b3917634b382587f255450b7b1025787314b93f",
+    "engine-whole-u9f10-ue0102.json": "8c85d477461c28c9b605ae1d8c9ca5e013fae6941a8e7761b3050ae7a1d88232",
+    "engine-whole-u9f10.json": "67602125fef7b271238afe7cfb1b36c2a6d981d6ed299c8f6c06ecfa86f0a730",
+    "strict-native-adapter.mjs": "2bf576d8955651486f7a17b66d0879ddfb9fc2eedd055be8359bde73906ababd",
+    "strict-native-server-preflight.json": "1685118dc17a5f6c944629cf59f50f76f836af7da5c393e3e3e33b2cf56c63a1"
+  },
+  "frozenContract": {
+    "readinessFile": "source-only-helper-readiness.json",
+    "callerContract": "selected proof/header identity + full five-key original proof",
+    "selectedIdentity": {
+      "sourceRoot": "u9f10",
+      "sourceProofFile": "./engine-whole-u9f10.json",
+      "sourceProofFileSha256": "67602125fef7b271238afe7cfb1b36c2a6d981d6ed299c8f6c06ecfa86f0a730",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "12388c473294fe04b13dc92e17e014cbdc4dfb86c1b6396f42f003be19e453cd",
+      "sourceMetadataFile": "./sources.json",
+      "sourceMetadataFileSha256": "5669687895506aaf2ddc25e6692931fcfe13d3fdb054421f6fbf1bbb666970e9"
+    },
+    "selectedRoot": "u9f10",
+    "selectedFile": "engine-whole-u9f10.json",
+    "profileIdentities": [],
+    "identityCaseAndPathPrefixesPreserved": true
+  },
+  "wholeFacts": [
+    {
+      "root": "u9f10-ue0100",
+      "file": "engine-whole-u9f10-ue0100.json",
+      "fileSHA256": "cf057da2b1c74b071ad7f392356fa31d3d8a4eab9682f437646a0d40dc864e27",
+      "sourceComplete": false,
+      "missing": [
+        "u76ee-j"
+      ],
+      "status": "blockedMissingFixedDependency",
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u9f10-ue0101",
+      "file": "engine-whole-u9f10-ue0101.json",
+      "fileSHA256": "afadc37c57119e3b90eb11d69b3917634b382587f255450b7b1025787314b93f",
+      "sourceComplete": false,
+      "missing": [
+        "u76ee-j"
+      ],
+      "status": "blockedMissingFixedDependency",
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u9f10-ue0102",
+      "file": "engine-whole-u9f10-ue0102.json",
+      "fileSHA256": "8c85d477461c28c9b605ae1d8c9ca5e013fae6941a8e7761b3050ae7a1d88232",
+      "sourceComplete": false,
+      "missing": [
+        "u76ee-j"
+      ],
+      "status": "blockedMissingFixedDependency",
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u9f10",
+      "file": "engine-whole-u9f10.json",
+      "fileSHA256": "67602125fef7b271238afe7cfb1b36c2a6d981d6ed299c8f6c06ecfa86f0a730",
+      "sourceComplete": false,
+      "missing": [
+        "u76ee-j"
+      ],
+      "status": "blockedMissingFixedDependency",
+      "sourceRowsNotEditedOrRemoved": true
+    }
+  ],
+  "sourceClosureFacts": [
+    {
+      "root": "u9f10",
+      "missing": [
+        "u76ee-j"
+      ]
+    },
+    {
+      "root": "u9f10-ue0100",
+      "missing": [
+        "u76ee-j"
+      ]
+    },
+    {
+      "root": "u9f10-ue0101",
+      "missing": [
+        "u76ee-j"
+      ]
+    },
+    {
+      "root": "u9f10-ue0102",
+      "missing": [
+        "u76ee-j"
+      ]
+    }
+  ],
+  "sourceMissingDependencies": [
+    "u76ee-j"
+  ],
+  "smallestCapturedMinimum": null,
+  "allCapturedCompleteWholesExceedCatalog": null,
+  "catalogDomesticCountMismatch": false,
+  "oldReadmeReused": false,
+  "oldReadmeSHA256": null,
+  "priorHoldEvidence": null,
+  "strictCompiler": {
+    "invocationsThisInvestigation": 0,
+    "engineInvocationsThisInvestigation": 0,
+    "existingBlockedContractPreserved": true,
+    "newCompiledPens": 0,
+    "newCompiledMasks": 0
+  },
+  "canonicalDuplicateCheck": {
+    "baseline": "docs/hanja-goal-glyphwiki-batch971-2026-10-13/resume.json",
+    "searchedBase": "docs/hanja-goal-glyphwiki-batch939-2026-10-13/resume.json",
+    "searchedRecent": [
+      "hanja-goal-glyphwiki-batch971-2026-10-13",
+      "hanja-goal-glyphwiki-batch970-2026-10-13",
+      "hanja-goal-glyphwiki-batch969-2026-10-13",
+      "hanja-goal-glyphwiki-batch968-2026-10-13",
+      "hanja-goal-glyphwiki-batch967-2026-10-13",
+      "hanja-goal-glyphwiki-batch966-2026-10-13",
+      "hanja-goal-glyphwiki-batch965-2026-10-13",
+      "hanja-goal-glyphwiki-batch964-2026-10-13",
+      "hanja-goal-glyphwiki-batch963-2026-10-13",
+      "hanja-goal-glyphwiki-batch962-2026-10-13",
+      "hanja-goal-glyphwiki-batch961-2026-10-13",
+      "hanja-goal-glyphwiki-batch960-2026-10-13",
+      "hanja-goal-glyphwiki-batch959-2026-10-13",
+      "hanja-goal-glyphwiki-batch958-2026-10-13",
+      "hanja-goal-glyphwiki-batch957-2026-10-13",
+      "hanja-goal-glyphwiki-batch956-2026-10-13",
+      "hanja-goal-glyphwiki-batch955-2026-10-13",
+      "hanja-goal-glyphwiki-batch954-2026-10-13",
+      "hanja-goal-glyphwiki-batch953-2026-10-13",
+      "hanja-goal-glyphwiki-batch952-2026-10-13",
+      "hanja-goal-glyphwiki-batch951-2026-10-13",
+      "hanja-goal-glyphwiki-batch950-2026-10-13",
+      "hanja-goal-glyphwiki-batch949-2026-10-13",
+      "hanja-goal-glyphwiki-batch948-2026-10-13",
+      "hanja-goal-glyphwiki-batch947-2026-10-13",
+      "hanja-goal-glyphwiki-batch946-2026-10-13",
+      "hanja-goal-glyphwiki-batch945-2026-10-13",
+      "hanja-goal-glyphwiki-batch944-2026-10-13",
+      "hanja-goal-glyphwiki-batch943-2026-10-13",
+      "hanja-goal-glyphwiki-batch942-2026-10-13",
+      "hanja-goal-glyphwiki-batch941-2026-10-13",
+      "hanja-goal-glyphwiki-batch940-2026-10-13",
+      "hanja-goal-glyphwiki-batch939-2026-10-13"
+    ],
+    "lookupKeys": [
+      "鼐",
+      "u9f10"
+    ],
+    "existingCanonicalHoldFound": false,
+    "existingPreflightIsNotCanonicalCheckpointHold": true,
+    "newHoldAccountingPending": true,
+    "resumeCreationDeferred": true
+  },
+  "requiredNextEvidence": "Obtain exact versioned missing dependency provenance and reproduce a complete whole under the original contract before native review. No latest substitution or synthesized geometry here.",
+  "nativeWholeVariantsReviewed": 0,
+  "dictionaryDirectionStrokesReviewed": 0,
+  "progressiveFramesReviewed": 0,
+  "fineChecks": 0,
+  "replayChecks": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "sourceFilesChanged": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "buildRun": false,
+  "gitRun": false
+}

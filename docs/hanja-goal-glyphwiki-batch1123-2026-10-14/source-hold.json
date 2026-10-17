@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 1,
+  "batch": 1123,
+  "glyph": "瘦",
+  "verifiedAt": "2026-10-17",
+  "status": "held-catalog-domestic-count-mismatch",
+  "catalogStrokes": 14,
+  "recordedDomesticClipCount": 15,
+  "evidenceScope": "Source-only existing capsule and exact endpoint inspection; raw rows1-based. No engine, compiler, tests or native run. Missing-source claims apply to the fixed captured snapshot only.",
+  "reason": "The canonical catalog count differs from the recorded domestic snapshot count. Numerical whole variants and diagnostic geometry do not resolve that authoritative boundary conflict and are not promoted.",
+  "existingReportedBlocker": "catalogue14-versus-domestic15-count-conflict-existing-whole-native-hold",
+  "originalBytePins": {
+    "candidate-compile-analysis.json": "8e4379e0a8a9994328da95fe1f787f9b3979d4fc8f6f0d2f8b6a5233cb3eb3e8",
+    "capture-sources.mjs": "b6982dfccf61335c173b91c25fe340145703c36c8f44d3f564418881470d288c",
+    "engine-proof.json": "aa583aa1cd4a02aa2ab3e23afa2a3e9ef2063b211bc3ddd5b6768dc4c800e0da",
+    "engine-whole-u7626-g.json": "cfac5ad221fc90eff5e6e62deb2931d1239270c48601a07efaacb3d647c7bcf7",
+    "engine-whole-u7626-itaiji-001.json": "eae399e579ba84928207d16145b57a3120f891533dc7bdcb7a5dc122fa056b1a",
+    "engine-whole-u7626-k.json": "56606757fb023d00a999a7875af2222eb44f5a747d4c02603dd2963cf1ae4b3c",
+    "engine-whole-u7626-ue0100.json": "bf28ce03339e32d7db58e9dfb568751c95e0ad1b960cc0546fcc0aa6d1eed3ad",
+    "engine-whole-u7626-ue0101.json": "56606757fb023d00a999a7875af2222eb44f5a747d4c02603dd2963cf1ae4b3c",
+    "engine-whole-u7626-ue0102.json": "56606757fb023d00a999a7875af2222eb44f5a747d4c02603dd2963cf1ae4b3c",
+    "engine-whole-u7626-ue0103.json": "bf28ce03339e32d7db58e9dfb568751c95e0ad1b960cc0546fcc0aa6d1eed3ad",
+    "engine-whole-u7626.json": "aa583aa1cd4a02aa2ab3e23afa2a3e9ef2063b211bc3ddd5b6768dc4c800e0da",
+    "metadata.json": "b565f6bf39ed556af2122c76595d1fc6016959f6a4d5b6e26670cde77d44d949",
+    "progressive.mjs": "b38e721c4cfa36ace00e41fb8654fc777705865c8ec0283f55acfe94503ecd78",
+    "source-analysis.json": "6dbd1670139b6fc09f48163661030db8b14ef995e61da066b29cd3248026cb87",
+    "source-join-analysis.json": "9b822c9e0efd77436cfee1df2f9f0a550f7287aaf50907612d472fc2cfc98c7b",
+    "sources.json": "343bf92744af2e74c892a7df401c26f69419375191f4095a69c2d71a22d77a9b",
+    "verify-source.mjs": "6e4a75ffff2b943ba06a6937e5d96e2be40b8c8413fd6a776f88a1b8fd1a2b6f",
+    "native-server-preflight-hold.json": "8e9a98a2b04ef4dbdb2970798a414382f33dc5ab90875aee1777ff0bb6a1c0c6",
+    "README.md": "ffbf608dd6738335e1ad64632cb68eef0b912e657b29cc274d9b1a52ebbff185"
+  },
+  "frozenContract": {
+    "readinessFile": "source-only-helper-readiness.json",
+    "callerContract": "explicit root + trace + eight-key full selected proof + three-field file identity",
+    "selectedIdentity": {
+      "root": "u7626-k",
+      "file": "engine-whole-u7626-k.json",
+      "fileSHA256": "56606757fb023d00a999a7875af2222eb44f5a747d4c02603dd2963cf1ae4b3c"
+    },
+    "selectedRoot": "u7626-k",
+    "selectedFile": "engine-whole-u7626-k.json",
+    "profileIdentities": [],
+    "identityCaseAndPathPrefixesPreserved": true
+  },
+  "wholeFacts": [
+    {
+      "root": "u7626-g",
+      "file": "engine-whole-u7626-g.json",
+      "fileSHA256": "cfac5ad221fc90eff5e6e62deb2931d1239270c48601a07efaacb3d647c7bcf7",
+      "sourceComplete": true,
+      "originalRawRows": 16,
+      "originalDrawingRows": 16,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 17,
+      "originalPolygons": 30,
+      "internalRawCallDiscontinuities": [],
+      "callsWithoutPolygons": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            6,
+            7
+          ],
+          "point": [
+            75.03,
+            69.005
+          ]
+        },
+        {
+          "rows": [
+            9,
+            10
+          ],
+          "point": [
+            167.43,
+            65.825
+          ]
+        },
+        {
+          "rows": [
+            14,
+            15
+          ],
+          "point": [
+            162.81,
+            138.17000000000002
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            7,
+            12
+          ],
+          "point": [
+            75.03,
+            118.295
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 13,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false,
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u7626-itaiji-001",
+      "file": "engine-whole-u7626-itaiji-001.json",
+      "fileSHA256": "eae399e579ba84928207d16145b57a3120f891533dc7bdcb7a5dc122fa056b1a",
+      "sourceComplete": true,
+      "originalRawRows": 14,
+      "originalDrawingRows": 14,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 15,
+      "originalPolygons": 25,
+      "internalRawCallDiscontinuities": [],
+      "callsWithoutPolygons": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            7,
+            8
+          ],
+          "point": [
+            163.01999999999998,
+            70.39
+          ]
+        },
+        {
+          "rows": [
+            12,
+            13
+          ],
+          "point": [
+            155.209125,
+            133.3688
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            6,
+            10
+          ],
+          "point": [
+            74.775,
+            115.42
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 12,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false,
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u7626-k",
+      "file": "engine-whole-u7626-k.json",
+      "fileSHA256": "56606757fb023d00a999a7875af2222eb44f5a747d4c02603dd2963cf1ae4b3c",
+      "sourceComplete": true,
+      "originalRawRows": 16,
+      "originalDrawingRows": 16,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 17,
+      "originalPolygons": 31,
+      "internalRawCallDiscontinuities": [],
+      "callsWithoutPolygons": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            14,
+            15
+          ],
+          "point": [
+            159.74,
+            135.785
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            7,
+            9
+          ],
+          "point": [
+            74.425,
+            115.91
+          ],
+          "nativeBoundaryApproved": false
+        },
+        {
+          "rows": [
+            11,
+            10
+          ],
+          "point": [
+            169.555,
+            71.39
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 15,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false,
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u7626-ue0100",
+      "file": "engine-whole-u7626-ue0100.json",
+      "fileSHA256": "bf28ce03339e32d7db58e9dfb568751c95e0ad1b960cc0546fcc0aa6d1eed3ad",
+      "sourceComplete": true,
+      "originalRawRows": 17,
+      "originalDrawingRows": 17,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 18,
+      "originalPolygons": 32,
+      "internalRawCallDiscontinuities": [],
+      "callsWithoutPolygons": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            6,
+            7
+          ],
+          "point": [
+            77.445,
+            69.005
+          ]
+        },
+        {
+          "rows": [
+            10,
+            11
+          ],
+          "point": [
+            168.045,
+            65.825
+          ]
+        },
+        {
+          "rows": [
+            15,
+            16
+          ],
+          "point": [
+            163.515,
+            138.17000000000002
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            7,
+            9
+          ],
+          "point": [
+            77.445,
+            118.295
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 14,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false,
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u7626-ue0101",
+      "file": "engine-whole-u7626-ue0101.json",
+      "fileSHA256": "56606757fb023d00a999a7875af2222eb44f5a747d4c02603dd2963cf1ae4b3c",
+      "sourceComplete": true,
+      "originalRawRows": 16,
+      "originalDrawingRows": 16,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 17,
+      "originalPolygons": 31,
+      "internalRawCallDiscontinuities": [],
+      "callsWithoutPolygons": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            14,
+            15
+          ],
+          "point": [
+            159.74,
+            135.785
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            7,
+            9
+          ],
+          "point": [
+            74.425,
+            115.91
+          ],
+          "nativeBoundaryApproved": false
+        },
+        {
+          "rows": [
+            11,
+            10
+          ],
+          "point": [
+            169.555,
+            71.39
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 15,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false,
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u7626-ue0102",
+      "file": "engine-whole-u7626-ue0102.json",
+      "fileSHA256": "56606757fb023d00a999a7875af2222eb44f5a747d4c02603dd2963cf1ae4b3c",
+      "sourceComplete": true,
+      "originalRawRows": 16,
+      "originalDrawingRows": 16,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 17,
+      "originalPolygons": 31,
+      "internalRawCallDiscontinuities": [],
+      "callsWithoutPolygons": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            14,
+            15
+          ],
+          "point": [
+            159.74,
+            135.785
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            7,
+            9
+          ],
+          "point": [
+            74.425,
+            115.91
+          ],
+          "nativeBoundaryApproved": false
+        },
+        {
+          "rows": [
+            11,
+            10
+          ],
+          "point": [
+            169.555,
+            71.39
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 15,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false,
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u7626-ue0103",
+      "file": "engine-whole-u7626-ue0103.json",
+      "fileSHA256": "bf28ce03339e32d7db58e9dfb568751c95e0ad1b960cc0546fcc0aa6d1eed3ad",
+      "sourceComplete": true,
+      "originalRawRows": 17,
+      "originalDrawingRows": 17,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 18,
+      "originalPolygons": 32,
+      "internalRawCallDiscontinuities": [],
+      "callsWithoutPolygons": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            6,
+            7
+          ],
+          "point": [
+            77.445,
+            69.005
+          ]
+        },
+        {
+          "rows": [
+            10,
+            11
+          ],
+          "point": [
+            168.045,
+            65.825
+          ]
+        },
+        {
+          "rows": [
+            15,
+            16
+          ],
+          "point": [
+            163.515,
+            138.17000000000002
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            7,
+            9
+          ],
+          "point": [
+            77.445,
+            118.295
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 14,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false,
+      "sourceRowsNotEditedOrRemoved": true
+    },
+    {
+      "root": "u7626",
+      "file": "engine-whole-u7626.json",
+      "fileSHA256": "aa583aa1cd4a02aa2ab3e23afa2a3e9ef2063b211bc3ddd5b6768dc4c800e0da",
+      "sourceComplete": true,
+      "originalRawRows": 17,
+      "originalDrawingRows": 17,
+      "originalNonDrawingRows": [],
+      "originalDrawCalls": 18,
+      "originalPolygons": 32,
+      "internalRawCallDiscontinuities": [],
+      "callsWithoutPolygons": [],
+      "exactConsecutiveJoins": [
+        {
+          "rows": [
+            6,
+            7
+          ],
+          "point": [
+            77.445,
+            69.005
+          ]
+        },
+        {
+          "rows": [
+            10,
+            11
+          ],
+          "point": [
+            168.04500000000002,
+            65.825
+          ]
+        },
+        {
+          "rows": [
+            15,
+            16
+          ],
+          "point": [
+            163.515,
+            138.17000000000002
+          ]
+        }
+      ],
+      "nonConsecutiveEndpointContacts": [
+        {
+          "rows": [
+            7,
+            9
+          ],
+          "point": [
+            77.445,
+            118.295
+          ],
+          "nativeBoundaryApproved": false
+        }
+      ],
+      "minimumConsecutiveOriginalPens": 14,
+      "tracePolygonsExactlyMatchOriginalRawGroups": true,
+      "nativeBoundaryApproved": false,
+      "sourceRowsNotEditedOrRemoved": true
+    }
+  ],
+  "sourceClosureFacts": null,
+  "sourceMissingDependencies": [],
+  "smallestCapturedMinimum": 12,
+  "allCapturedCompleteWholesExceedCatalog": false,
+  "catalogDomesticCountMismatch": true,
+  "oldReadmeReused": true,
+  "oldReadmeSHA256": "ffbf608dd6738335e1ad64632cb68eef0b912e657b29cc274d9b1a52ebbff185",
+  "priorHoldEvidence": null,
+  "strictCompiler": {
+    "invocationsThisInvestigation": 0,
+    "engineInvocationsThisInvestigation": 0,
+    "existingBlockedContractPreserved": true,
+    "newCompiledPens": 0,
+    "newCompiledMasks": 0
+  },
+  "canonicalDuplicateCheck": {
+    "baseline": "docs/hanja-goal-glyphwiki-batch971-2026-10-13/resume.json",
+    "searchedBase": "docs/hanja-goal-glyphwiki-batch939-2026-10-13/resume.json",
+    "searchedRecent": [
+      "hanja-goal-glyphwiki-batch971-2026-10-13",
+      "hanja-goal-glyphwiki-batch970-2026-10-13",
+      "hanja-goal-glyphwiki-batch969-2026-10-13",
+      "hanja-goal-glyphwiki-batch968-2026-10-13",
+      "hanja-goal-glyphwiki-batch967-2026-10-13",
+      "hanja-goal-glyphwiki-batch966-2026-10-13",
+      "hanja-goal-glyphwiki-batch965-2026-10-13",
+      "hanja-goal-glyphwiki-batch964-2026-10-13",
+      "hanja-goal-glyphwiki-batch963-2026-10-13",
+      "hanja-goal-glyphwiki-batch962-2026-10-13",
+      "hanja-goal-glyphwiki-batch961-2026-10-13",
+      "hanja-goal-glyphwiki-batch960-2026-10-13",
+      "hanja-goal-glyphwiki-batch959-2026-10-13",
+      "hanja-goal-glyphwiki-batch958-2026-10-13",
+      "hanja-goal-glyphwiki-batch957-2026-10-13",
+      "hanja-goal-glyphwiki-batch956-2026-10-13",
+      "hanja-goal-glyphwiki-batch955-2026-10-13",
+      "hanja-goal-glyphwiki-batch954-2026-10-13",
+      "hanja-goal-glyphwiki-batch953-2026-10-13",
+      "hanja-goal-glyphwiki-batch952-2026-10-13",
+      "hanja-goal-glyphwiki-batch951-2026-10-13",
+      "hanja-goal-glyphwiki-batch950-2026-10-13",
+      "hanja-goal-glyphwiki-batch949-2026-10-13",
+      "hanja-goal-glyphwiki-batch948-2026-10-13",
+      "hanja-goal-glyphwiki-batch947-2026-10-13",
+      "hanja-goal-glyphwiki-batch946-2026-10-13",
+      "hanja-goal-glyphwiki-batch945-2026-10-13",
+      "hanja-goal-glyphwiki-batch944-2026-10-13",
+      "hanja-goal-glyphwiki-batch943-2026-10-13",
+      "hanja-goal-glyphwiki-batch942-2026-10-13",
+      "hanja-goal-glyphwiki-batch941-2026-10-13",
+      "hanja-goal-glyphwiki-batch940-2026-10-13",
+      "hanja-goal-glyphwiki-batch939-2026-10-13"
+    ],
+    "lookupKeys": [
+      "瘦",
+      "u7626"
+    ],
+    "existingCanonicalHoldFound": false,
+    "existingPreflightIsNotCanonicalCheckpointHold": true,
+    "newHoldAccountingPending": true,
+    "resumeCreationDeferred": true
+  },
+  "requiredNextEvidence": "Resolve the domestic/canonical count discrepancy with the appropriate original evidence before activating a numeric candidate. Keep the catalog unchanged in this source-only work.",
+  "nativeWholeVariantsReviewed": 0,
+  "dictionaryDirectionStrokesReviewed": 0,
+  "progressiveFramesReviewed": 0,
+  "fineChecks": 0,
+  "replayChecks": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "sourceFilesChanged": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "buildRun": false,
+  "gitRun": false
+}
