@@ -1,0 +1,115 @@
+{
+  "batch": 957,
+  "glyph": "椓",
+  "verifiedAt": "2026-10-17",
+  "status": "approved-runtime-applied-and-verified",
+  "sourceVerification": {
+    "reference": "native-server-validation.json/sourcePassed",
+    "sourcePassed": true,
+    "newEngineExecutions": 0
+  },
+  "nativeReview": {
+    "reference": "review.json",
+    "evidenceSource": "root-native-IAB",
+    "approved": true,
+    "pens": 12,
+    "masks": 13,
+    "originalPolygons": 23,
+    "framesApproved": 108,
+    "originalHelperFramesReused": 81,
+    "correctedHelperFrames": 27,
+    "finePens": [
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "maskBoundaryPens": [
+      7
+    ],
+    "additionalProbePercent": 95,
+    "replayPens": [
+      7
+    ],
+    "originalReplayStartPercent": 2.94,
+    "correctedReplayStartPercent": 2.6812,
+    "privateMediaSaved": false,
+    "appUIAutoplayVerifiedThisBatch": false,
+    "excludedOriginalPen12": true,
+    "finalSourceOrderPermutation": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      10,
+      11
+    ]
+  },
+  "proofContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "sourceProofFile",
+      "sourceProofFileSHA256",
+      "sourceRoot",
+      "trace"
+    ],
+    "fullProofSHA256": "49ef345819177270739876a5319cc29e96dac1764210b0f4abfa5cd6f0e2880e",
+    "fileIdentity": {
+      "root": "u6913",
+      "file": "engine-whole-u6913.json",
+      "fileSHA256": "6163185f7b800ab14f89f4b1588f0511202206a1cf7787eaa64c0abbcf549772"
+    }
+  },
+  "runtime": {
+    "modulePrepared": true,
+    "registryEditedByThisAgent": false,
+    "registryLinkedByRoot": true,
+    "verifyRuntimeExecuted": true,
+    "runtimeApplied": true,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch957-2026-10-13/verify-runtime.mjs",
+    "status": "PASS after root registry linkage",
+    "exitCode": 0,
+    "executions": 1,
+    "pens": 12,
+    "masks": 13,
+    "polygons": 23,
+    "frames": 108,
+    "sourcePreserved": true,
+    "compiledSHA256": "b33e138a668c2712a55aac38a3af1a35bec0afdfdedbff97fc061b323f9b063f",
+    "fullProofSHA256": "49ef345819177270739876a5319cc29e96dac1764210b0f4abfa5cd6f0e2880e",
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "checks": {
+    "focusedTestsExecuted": true,
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch957.test.ts",
+      "exitCode": 0,
+      "passed": 4,
+      "failed": 0,
+      "full8ProofVerified": true,
+      "identity3Verified": true,
+      "rawGeometryLicenseVerified": true
+    },
+    "runtimeVerifierSyntaxExitCode": 0,
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "immutableSourceMetadataPreserved": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false
+}
