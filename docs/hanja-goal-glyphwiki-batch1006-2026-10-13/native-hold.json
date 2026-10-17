@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "batch": 1006,
+  "glyph": "菡",
+  "verifiedAt": "2026-10-18",
+  "status": "held-native-selected-VS2-pen11-completion-corner-pop",
+  "catalogStrokes": 12,
+  "recordedDomesticClipCount": 12,
+  "reason": "Root actual520px fine comparison of selected compatible VS2 pen11 showed a small lower-left corner triangle appearing only at100%. Other four whole profiles were actually shape-incompatible. The unchanged original pure-line corner has a quantitative vertex-coverage risk, but the native endpoint comparison is the failure evidence; no mask-width or coordinate adjustment is authorized.",
+  "nativeEvidence": {
+    "source": "root-native-IAB",
+    "actualWholeViews": 5,
+    "actualCompatibleRoots": [
+      "u83e1-ue0102"
+    ],
+    "incompatibleWholeReasons": {
+      "u83e1": "Connected grass differs from domestic split grass",
+      "u83e1-ue0100": "Connected grass differs from domestic split grass",
+      "u83e1-ue0101": "Connected grass differs from domestic split grass",
+      "u83e1-ue0103": "Four-part grass but water bend differs from the domestic form"
+    },
+    "selectedWhole": "u83e1-ue0102",
+    "fineObservations": [
+      {
+        "profile": "u83e1-ue0102",
+        "pen": 11,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": false,
+        "failure": "At100% the lower-left corner gains a small sharp triangle absent/short at99.99%.",
+        "confirmingCrop": {
+          "width": 100,
+          "height": 115,
+          "observedEndpointOrder": [
+            100,
+            99.99
+          ],
+          "RAMOnly": true
+        },
+        "domesticAndCandidate520SizesConfirmed": true
+      }
+    ],
+    "dictionaryDirectionStrokesReviewed": 0,
+    "progressiveFramesReviewed": 0,
+    "otherFineChecks": 0,
+    "maskBoundariesReviewed": 0,
+    "replayChecks": 0,
+    "approvedDirectionSet": false,
+    "privateMedia": "RAM-only"
+  },
+  "sourceRisk": {
+    "pen": 11,
+    "raw": [
+      11,
+      12
+    ],
+    "pureOriginalLineFold": true,
+    "maximumOriginalVertexDistanceKage": 16.11836219967774,
+    "width": 14,
+    "witnessKage": [
+      26.1,
+      189.4
+    ],
+    "exceeds": true,
+    "method": "Maximum original polygon vertex distance to the unchanged authored pure-line centerline segments; exact source arithmetic only, not a replacement for native observation.",
+    "sourceMathRuns": 1,
+    "compilerOrEngineRuns": 0,
+    "nativeFailureEvidenceRemainsSeparate": true
+  },
+  "sourceContract": {
+    "selectedRoot": "u83e1-ue0102",
+    "outerFiveIdentity": {
+      "sourceRoot": "u83e1-ue0102",
+      "sourceProofFile": "engine-whole-u83e1-ue0102.json",
+      "sourceProofFileSha256": "a936e5e37f4b8850eeedc2a55723bf49d099435d895da59c09c582a1e267604f",
+      "sourceHeaderFile": "engine-proof.json",
+      "sourceHeaderFileSha256": "fe049e837e88471943a88125d0f6bc6cadf716ee32af3d9cf6bbf197f927e3d8"
+    },
+    "innerThreeIdentity": {
+      "root": "u83e1-ue0102",
+      "file": "engine-whole-u83e1-ue0102.json",
+      "fileSHA256": "a936e5e37f4b8850eeedc2a55723bf49d099435d895da59c09c582a1e267604f"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullProofSHA256": "4187b5d8e1e351e2e652fbc38f9f603772870bbc0c95c0658804e64a7283045d",
+    "profileIdentityCaseAndPrefixesPreserved": true,
+    "geometryWidthsDirectionsAndPathsUnchanged": true
+  },
+  "originalBytePins": {
+    "candidate-compile-analysis.json": "c2116bd8021fbc4c70789307250591b8f0171d2c0125e6de4e9486c84ded000e",
+    "engine-proof.json": "fe049e837e88471943a88125d0f6bc6cadf716ee32af3d9cf6bbf197f927e3d8",
+    "engine-whole-u83e1-ue0100.json": "bb097c423a69ffc77481469f65b08ff6d7f23d869cfe18e86cd829eccb422bc3",
+    "engine-whole-u83e1-ue0101.json": "bb097c423a69ffc77481469f65b08ff6d7f23d869cfe18e86cd829eccb422bc3",
+    "engine-whole-u83e1-ue0102.json": "a936e5e37f4b8850eeedc2a55723bf49d099435d895da59c09c582a1e267604f",
+    "engine-whole-u83e1-ue0103.json": "432868d9895c8ee4feab8a581edc5c3d904f17e534117707342000877462b286",
+    "engine-whole-u83e1.json": "fe049e837e88471943a88125d0f6bc6cadf716ee32af3d9cf6bbf197f927e3d8",
+    "metadata.json": "649fa721d21daba6e6c155d910a0990d7acde1d7983110ab5af83177482c9d70",
+    "native-server-input-pins.json": "230e66b05d9cf2d641bdf62cb79f1241319f84e6bf2a21a39f151e2836f9cf56",
+    "progressive.mjs": "afe2596db6d19f85d5a4f5f539e9b3cd544c8e9eed4e234a963ef58fe51c88db",
+    "serve-native.py": "1fb5623f7b62064a58fdfa168fb0e58f744b164c260f86062d57ef16d8d8d3f8",
+    "source-analysis.json": "e8813a77a8fab60257917008dec6f551eb883cefc6db2b18aba553d4c08c6d6a",
+    "source-join-analysis.json": "f54087d52fd6cb0a798fd9ea2b8ee9977179a3223e7c2db811958fa5934af132",
+    "source-only-helper-readiness-2026-10-14.json": "68f21a7530e007636387153228073408bc43420fe0125dbcbc8b1478285d8533",
+    "source-preservation-audit.json": "0c79b9c6428222bd0f64beaac82ddccca51eda6346512f42356f2e83d62c589c",
+    "source-verification.json": "a7fcff16b1e0ca2498bb14c6c5808578fb7f87829a5af8ba5efaf3c726d09ffc",
+    "sources.json": "b25968cc4e94380cbdc70ed0ad8f50fbd696e2b6c1ff001916d16caf562b2b39",
+    "strict-native-adapter.mjs": "81dc9aeac62d8e19d38650f29619ae2837de0a8caf57d660719a749cde4f79f8",
+    "strict-native-server-preflight.json": "4c384ffde55396eb34b5a22ca836fc8c84fb17cf3b14554f2b671f2b452c999b",
+    "verify-source.mjs": "f635b53fd978a4c6a66f277461ea256e70cde25aff405b1fe781d8c5739ccb97"
+  },
+  "additionalProtectedPins": {
+    "../hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "originalFiles": 20,
+  "canonicalDuplicateCheck": {
+    "actualParent": 1005,
+    "parentResume": "docs/hanja-goal-glyphwiki-batch1005-2026-10-13/resume.json",
+    "parentResumeSHA256": "72236bcec2998d8c72a510b9e5004444ebe754773261cdb0bfd25315d995c798",
+    "executions": 1,
+    "resumeReferences": 67,
+    "canonicalBefore": 294,
+    "uniqueCanonicalBefore": 294,
+    "stringHolds": 80,
+    "objectHolds": 214,
+    "glyphAndRootMatches": 0,
+    "newCanonicalHoldEligible": true,
+    "countIncrement": 1,
+    "totalCanonicalHoldsAfter": 295,
+    "finalParentDuplicateCheckExecuted": true,
+    "newHoldAccountingPending": false,
+    "resumeCreationDeferred": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "sourceOriginalsChanged": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "privateMediaSaved": false,
+  "serverStartedByWorker": false,
+  "buildRun": false,
+  "gitRun": false
+}
