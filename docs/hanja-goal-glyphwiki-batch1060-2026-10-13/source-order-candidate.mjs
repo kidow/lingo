@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import * as source from './source-base-candidate.mjs'
+export {renderProgressive,selectedProofIdentity,sourceRoot} from './source-base-candidate.mjs'
+const sha=v=>createHash('sha256').update(v).digest('hex'),read=f=>readFileSync(new URL(f,import.meta.url))
+export const originalPenOrder=Object.freeze([1,2,3,5,6,7,4,8,9,10,11,12,13,14,15,17,16,18,19,20,21])
+export const originalSourceGroups=Object.freeze(source.sourceGroups.map(g=>Object.freeze([...g])))
+export const sourceGroups=Object.freeze(originalPenOrder.map(i=>originalSourceGroups[i-1]))
+const ORIGINAL_SHA='e3fd83b65b0b4282a8893a20631d434fee12c4c0456106dc42af4c92003afc4c',FINAL_SHA='51264dd75001df5156faae485cefc83c39a33ff9194f29087c66c5e3f7da80de',PEN_SHA=["7b8cb93f95a08837e921181972b0ff2b578b3b82639df55dedcde6aad5e53091","1b28af11669d14978d413d142d5349bfd451b9d55651d3a8250251cf9ee59368","3c88caee71b6304ae0dbfbd728317e9a9b2c1fd5ca6359b99615d04f1439d533","4f41fbdcd4ca845c9ad674e7925c69915f11973a410323b530f06f94f02aa136","5b4d49157142f583d324481fc52f530e66155a3493fd3a249d2bc42304e221ab","88dc0c9fadddd410168c727a60258077db1c7878405025b684c7dceca3d8eda5","cb24dcd266c72adb0954bdc54fd7baa0e85ef0a778290dc2a50fb847938921cc","2afd03614a78f1ba7cd8711c7a47d9036f299c6b0f548958fde0a051113273d4","ceb9d31d8b65c5ca25dac1b8081662e8e6194e6684b678bbe76e3cbd9af52c10","f3f02f4a2e6597f4a2b1087f2b28c1e53a780ddaa7e46a32a08e5e5fce92d9eb","0bb6be33203e480ae2cff70b9803fa494927bd5725cab8ca768de5c2aed40c30","bc99453a8d775f89904417c5daaa7dc5503d6fa59bf41ef40d79132b579fa68d","6d45bc3f9c36dd7c64f1989a31190a0c0e441a7e67b9570f1fc84711fa54570a","7d7e636e88f7e2d40b101c5a768aeb373a42e346c870bd48cc53f70a275e1573","df2386c88ceaf618918a39edf717c861ca5b42e3576809dbbb0fe00d4df64115","98d96c4a10e57a7039a28ad38dfce52b938f9e3fc3b52d4d916f57585333d1a6","aff11fbf811ae1e983b78a8635ac747ec298b3f51edffba8e6271374e59dc1eb","73b6d619920ba5bbc0d627aad3aa8e0cb644daef31b7833e218772bcb3a482ca","1cf7cd1936193d4dbac3c6b34648d0938d2bee78ea31db7a29b2785864fafa4e","bc05f56237435d45b11b3e3d964de5ba3aa67ff4946482139a96cc762522a09d","56c7c2f2b0090d2dd33b6e99ee6c931ae1104e91c490f509582b5ac0f9c0310a"]
+function pins(){const p=JSON.parse(read('source-order-preparation.json'));for(const[f,h]of Object.entries(p.inputSHA256))assert.equal(sha(read(f)),h,f);assert.deepEqual(p.originalPenOrder,originalPenOrder);assert.deepEqual(p.sourceGroups,sourceGroups)}
+function reorder(out){assert.equal(sha(JSON.stringify(out)),ORIGINAL_SHA);assert.equal(out.length,21);assert.equal(out.flat().length,21);assert.deepEqual(out.map(p=>sha(JSON.stringify(p))),PEN_SHA);const result=originalPenOrder.map(i=>out[i-1]);assert.equal(sha(JSON.stringify(result)),FINAL_SHA);return result}
+export function compileProgressive(trace,proof,identity){assert.equal(arguments.length,3);pins();return reorder(source.compileProgressive(trace,proof,identity))}
+export function compileSourceWhole(root,trace,proof,identity){assert.equal(arguments.length,4);assert.equal(root,source.sourceRoot);return compileProgressive(trace,proof,identity)}
+export const nativeApproval=false
+export const runtimeApplied=false
