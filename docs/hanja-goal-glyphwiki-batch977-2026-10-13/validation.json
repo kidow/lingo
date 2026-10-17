@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "batch": 977,
+  "glyph": "豝",
+  "verifiedAt": "2026-10-17",
+  "status": "approved-runtime-applied-and-verified",
+  "nativeApproval": true,
+  "nativeEvidence": {
+    "observer": "/root actual in-app browser panel",
+    "actualWholeViews": 2,
+    "directions": 11,
+    "coarseFrames": 99,
+    "finePens": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+    ],
+    "boundaryPens": [
+      3,
+      11
+    ],
+    "actualTailPercent": 95,
+    "actualReplay": {
+      "pen": 11,
+      "observedPercent": 3.37,
+      "completedAX": 100,
+      "completedScreenshot": true
+    },
+    "workerNativeObservations": 0
+  },
+  "runtime": {
+    "modulePrepared": true,
+    "registryEditedByThisAgent": false,
+    "registryLinkedByRoot": true,
+    "verifyRuntimeExecuted": true,
+    "runtimeApplied": true,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch977-2026-10-13/verify-runtime.mjs",
+    "status": "PASS",
+    "executions": 1,
+    "exitCode": 0,
+    "pens": 11,
+    "masks": 13,
+    "polygons": 26,
+    "frames": 99,
+    "sourcePreserved": true,
+    "compiledSHA256": "da6b85a928c222d94cad7f986d4da03c42239a8bbeb2cc570aebd6e7f6390864",
+    "fullProofSHA256": "fe8c27b63349f5fe59322610c0db51de28dc806d55cab63b6cb44c6a98d15dfe",
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "checks": {
+    "focusedTestsExecuted": true,
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch977.test.ts",
+      "executions": 1,
+      "exitCode": 0,
+      "passed": 4,
+      "failed": 0,
+      "full5ProofVerified": true,
+      "identity5CaseAndPrefixesVerified": true,
+      "mandatory3And4ArgumentsVerified": true,
+      "rawGeometryLicenseVerified": true,
+      "emptyRaw7AndOriginalGroup67Verified": true
+    },
+    "runtimeVerifierSyntaxExecuted": true,
+    "runtimeVerifierSyntaxExitCode": 0,
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "parentCheckpoint": {
+    "status": "actual batch976 parent checkpoint and batch977 registry application verified",
+    "file": "docs/hanja-goal-glyphwiki-batch976-2026-10-13/resume.json",
+    "sha256": "4fb7f7fe7af4a22c1aed763cde32bf0db07d2eb4d082db21eb1b77266d7448c1",
+    "actualParentRuntime": 5497,
+    "actualParentRemaining": 481,
+    "inheritedHolds": 279
+  },
+  "privateMediaSaved": false
+}
