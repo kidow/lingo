@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "previousResume": "docs/hanja-goal-glyphwiki-batch1054-2026-10-13/resume.json",
+  "previousResumeSHA256": "b0aa8f048dbaccf8c895f75dd7a7ec20816556e274d55a1b8a62932e4ae78047",
+  "checkpointStatus": "source-consecutive-minimum-hold-actual-checkpoint-verified",
+  "actualCheckpointVerified": true,
+  "runtimeAbsenceVerified": true,
+  "completedRuntime": 5543,
+  "total": 5978,
+  "remainingCommittedRuntime": 435,
+  "pendingRuntime": 0,
+  "lastCompletedBatch": 1055,
+  "lastRuntimeBatch": 1053,
+  "newHoldsThisBatch": [
+    {
+      "batch": 1055,
+      "glyph": "訩",
+      "root": "u8a29",
+      "catalogStrokes": 11,
+      "recordedDomesticClipCount": 11,
+      "hold": "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-hold.json",
+      "holdSHA256": "1abd78e564b1b4d79344ad63c366c5fd1e4a605cb0b6449dc115d238bd4f365c",
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ],
+  "existingHoldsInherited": 311,
+  "totalHolds": 312,
+  "inheritancePolicy": "부모 실제 canonical 311자를 승계합니다. 116개 resume의 문자열80·객체231에서 訩/u8a29 중복0을 확인하여 신규1자만 추가합니다. Compact 생략은 기존 보류 삭제가 아닙니다.",
+  "inheritedFields": {
+    "existingHolds": "docs/hanja-goal-glyphwiki-batch1054-2026-10-13/resume.json#/totalHolds",
+    "canonicalHoldHistory": "docs/hanja-goal-glyphwiki-batch1054-2026-10-13/resume.json#/previousResume"
+  },
+  "lastReview": {
+    "glyph": "訩",
+    "status": "held-source-contract-consecutive-minimum-exceeds-catalog",
+    "catalogStrokes": 11,
+    "recordedDomesticClipCount": 11,
+    "smallestCapturedMinimum": 12,
+    "reason": "All captured complete roots exceed the canonical catalog under the existing consecutive original-row grouping contract. Nonconsecutive coordinate coincidences do not grant a domestic pen or permission to force the count.",
+    "blocker": "Original adjacent grouping yields12 rather than catalog/domestic11. Exact nonadjacent raw10->12 contact and raw4->7 enclosing contact are not evidence for a count-driven merged pen.",
+    "sourceHold": "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-hold.json",
+    "sourceHoldSHA256": "1abd78e564b1b4d79344ad63c366c5fd1e4a605cb0b6449dc115d238bd4f365c",
+    "frozenContract": {
+      "readinessFile": "source-only-helper-readiness.json",
+      "callerContract": "N/A compiler absent; pinned static source only",
+      "selectedIdentity": null,
+      "selectedRoot": "u8a29",
+      "selectedFile": "engine-whole-u8a29.json",
+      "profileIdentities": [],
+      "identityCaseAndPathPrefixesPreserved": true
+    },
+    "wholeFacts": [
+      {
+        "root": "u8a29",
+        "file": "engine-whole-u8a29.json",
+        "fileSHA256": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1",
+        "raw": 13,
+        "drawing": 13,
+        "emptyRowsOneBased": [],
+        "minimumConsecutiveOriginalPens": 12
+      }
+    ],
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "rowNumberConvention": "wholeFacts raw/empty/exactConsecutiveJoins: one-based original rows. Legacy blocker prose is quoted unchanged and may use zero-based numbering."
+  },
+  "originalFilesSHA256": {
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/NOTICE.md": "953b1f3320db6baa602e61995265000727bd767f87277636b03f8d68b87955a5",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/README.md": "10b16e7012bc41105c03d332e55137d1ecaae14f094282e462ef9d63ab747c12",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/candidate-compile-analysis.json": "a007f216e1941f35cb265d46bec6547c74897588340e97153c0bd0e4a2cccf8f",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/capture-sources.mjs": "1c19e1917cf90c2a1d5574f8d78d5bf8ebed3012fab3d038535e41a8eb453c68",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/engine-proof.json": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/engine-whole-u8a29.json": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/metadata.json": "f8b95555ea8c624884ef8b613447118192d0b1169599d0c2396a7f65f60eb20d",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/native-server-preparation-source-analysis.json": "76a9cb4e0e590ef3307f87193ab0743c8270598d14a010819a215f9b6e841c2e",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/native-server-validation.json": "17d048144fb1877afe2ce36f47ada94c528550e28d384152726ddcd235a777a9",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/prepare-sources.mjs": "e0b750c7c867ec6ab9e6310302b1b8064282707b2c00b5553050093f5b025d63",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/serve-whole.py": "bc56bb283dc0ab2ffbe72c560a6f49d315680818063547049b450167173070ca",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-analysis.json": "6cb3b6032427e8f3f05d675c7a1f6a134eeea34cdbc32a0e44010719fbaebe2f",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-hold.json": "1abd78e564b1b4d79344ad63c366c5fd1e4a605cb0b6449dc115d238bd4f365c",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-join-analysis.json": "e547f51e584f8338efee7d755edf2b10a51c8d1380beefb7ff8b0012f217b6a1",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-only-helper-readiness.json": "4a41f526dfd4902dfe39917e8490c70b872f13428e432713da64f98a1c92e9ba",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-verification.json": "73bafd3a8332c9c3d1013d3f6ecda4df45ff9365a1c9c9103eae3de23124446f",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/sources.json": "df0f33ef60ec805f5508c8fc2d51b49e368307bc4341181974d3b41d1b887293",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/validation.json": "bbc65e779b6e8572ddc0c4828c3b43d0cac717ca6d3b282ff9380a873c1080fc",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/verify-candidates.mjs": "27ecc349eca2bdf3f2d8f500fdcc7737eb3eba7a645632bbde36915f65dba1c9",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/verify-source.mjs": "645afeca269489f1588b60d0b40ba4755fb8ba197658b8392a5127813db3c96e"
+  },
+  "originalFilesPreserved": 20,
+  "originalReadmeAndValidationUnchanged": true,
+  "focusedCheckpointValidation": {
+    "batch": 1055,
+    "glyph": "訩",
+    "passed": true,
+    "exitCode": 0,
+    "executions": 1,
+    "verifiedAt": "2026-10-18",
+    "parentSHA": "b0aa8f048dbaccf8c895f75dd7a7ec20816556e274d55a1b8a62932e4ae78047",
+    "parentActualCheckpointVerified": true,
+    "parentRuntimeAbsenceVerified": true,
+    "canonicalReferences": 116,
+    "canonicalStringHolds": 80,
+    "canonicalObjectHolds": 231,
+    "canonicalUniqueBefore": 311,
+    "duplicateMatches": 0,
+    "canonicalUniqueAfter": 312,
+    "protectedFiles": 20,
+    "originalAuditPins": 5,
+    "pinMismatches": 0,
+    "sourceHoldSHA256": "1abd78e564b1b4d79344ad63c366c5fd1e4a605cb0b6449dc115d238bd4f365c",
+    "catalogStrokes": 11,
+    "recordedDomesticClipCount": 11,
+    "sourceFacts": [
+      {
+        "root": "u8a29",
+        "rawRows": 13,
+        "drawingRows": 13,
+        "emptyRowsOneBased": [],
+        "exactConsecutiveJoinsOneBased": [
+          [
+            6,
+            7
+          ]
+        ],
+        "minimumConsecutiveOriginalPens": 12
+      }
+    ],
+    "rowConvention": "one-based original raw rows",
+    "registryCount": 5543,
+    "registryOccurrences": 0,
+    "exactLookup": null,
+    "sourceCompilerExecutions": 0,
+    "engineRuns": 0,
+    "newNativeObservations": 0,
+    "HTTP": 0,
+    "serverStarts": 0,
+    "buildRun": false,
+    "gitRun": false
+  },
+  "nextIndependentCandidate": {
+    "batch": 1056,
+    "glyph": "釁",
+    "strokes": 25,
+    "directory": "docs/hanja-goal-glyphwiki-batch1056-2026-10-13",
+    "status": "source-hold-checkpoint-pending"
+  },
+  "verificationPolicy": {
+    "productionBuild": false,
+    "fullSuite": false,
+    "sourceCompilerExecuted": false,
+    "engineRuns": 0,
+    "newNativeObservations": 0,
+    "appUIAutoplayVerifiedThisBatch": false,
+    "scope": "기존 고정 sourcehold와 전체 보호 파일, catalog/국내 획수 분리, raw/빈행/연속접점 최소 기록, 전체 canonical 문자열·객체 중복0, 실제 부모SHA와 등록5543·대상lookupnull 집중검증 정확1회. 기존 원본문서 불변."
+  },
+  "privateMediaSaved": false
+}
