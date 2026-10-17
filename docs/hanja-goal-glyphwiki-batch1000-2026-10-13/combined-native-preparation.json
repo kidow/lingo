@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "batch": 1000,
+  "glyph": "哻",
+  "date": "2026-10-18",
+  "status": "source-only-combined-helper-source-and-syntax-PASS-native-unreviewed",
+  "originalBytePins": {
+    "NOTICE.md": "260e6c28b79908461883ac025698575f64851173d79fb8f5d98ab791ed2708a4",
+    "candidate-compile-analysis.json": "ca594ed715e771d4f3bd26ff9abc0561e23654c29fac3dfc0f86c151805905a6",
+    "engine-proof.json": "b307718caed02108a6c92ee285ceda9d5b61dfeecc47efc81c3d99b5f450b73b",
+    "engine-whole-u54fb.json": "528cba8f9ab4d9d410c4d9415e415271339938ad47c78575bcde4be8be7eeb3e",
+    "metadata.json": "346dbe36a2231897d5f87307aa0f3b8749113de34b118ba0eea9a18e6c6cdae7",
+    "native-server-preparation-source-analysis.json": "cb6ce498371b04647e8e787b724d2c418a4250239a4f16f604acee5f772f5403",
+    "native-server-validation.json": "e194b9d225538b651ec2c7a32abc65f56145a04ba64c854d3834a39563ca916e",
+    "progressive.mjs": "acd07a688a310d15c91fed3854f02e1b784203d131d78ca5be84093e010c03ac",
+    "serve-progressive.py": "38c923995290cba2dd3b7637c2e0dcbf909e6cf5e604905409913db05b0d9757",
+    "serve-whole.py": "787d9e661c0e72975dde5d06d3feb3b0f0fef4903f35275de799043023374320",
+    "server-compile.mjs": "d0d7607653592ae3d2b119d27ccdfb2964834b8ee0cbb03b50d9baf43acda8fd",
+    "source-analysis.json": "911d011f6ee999e06209ce6f71482611d215147c5c06894ae9d222f8bf881ac4",
+    "source-join-analysis.json": "0fb6cf0e7b4d0d9611b4f9477cdc82373de78034e5083a8df21fb5a21236f5a2",
+    "source-only-helper-readiness-2026-10-14.json": "b0db25321aa5886245382d6432314918b1e7520d9417401046909b6a247475b1",
+    "sources.json": "84018ca72962bf309fdb4b5c552fbefdfe4cacbafa59ae8cd3e1008b00d8d964",
+    "verify-source.mjs": "ebc001234a2908128c9705bbdf2e805cc333a3e30e1d37ba73ea9eefcdc2000b"
+  },
+  "additionalProtectedPins": {
+    "../hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "helper": "serve-combined-native.py",
+  "helperSHA256": "93d43741efd31c6a50fc4e6eb9dc3ef52d93b3b383aadeb2576f18fb7a552563",
+  "originalHelperReuse": {
+    "whole": "serve-whole.py",
+    "progressive": "serve-progressive.py",
+    "caller": "server-compile.mjs",
+    "compiler": "progressive.mjs",
+    "execution": "Original source helpers loaded only in RAM after exact byte guards; whole server footer and progressive startup compile removed only in RAM. Original saved files, geometry, trajectories, widths and dates are unchanged."
+  },
+  "supportedProfiles": [
+    {
+      "root": "u54fb",
+      "identity": {
+        "sourceRoot": "u54fb",
+        "sourceProofFile": "./engine-whole-u54fb.json",
+        "sourceProofFileSha256": "528cba8f9ab4d9d410c4d9415e415271339938ad47c78575bcde4be8be7eeb3e",
+        "sourceHeaderFile": "./engine-proof.json",
+        "sourceHeaderFileSha256": "b307718caed02108a6c92ee285ceda9d5b61dfeecc47efc81c3d99b5f450b73b",
+        "sourceMetadataFile": "./sources.json",
+        "sourceMetadataFileSha256": "84018ca72962bf309fdb4b5c552fbefdfe4cacbafa59ae8cd3e1008b00d8d964"
+      },
+      "fullProofSHA256": "670ed4d0e2805916d7f1cf3dcc0863ff7e19cafd83beea1ddff188f41b826f8c",
+      "sourceGroups": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ]
+      ],
+      "pens": 10,
+      "masks": 10,
+      "polygons": 16
+    }
+  ],
+  "identityContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "identityKeys": [
+      "sourceRoot",
+      "sourceProofFile",
+      "sourceProofFileSha256",
+      "sourceHeaderFile",
+      "sourceHeaderFileSha256",
+      "sourceMetadataFile",
+      "sourceMetadataFileSha256"
+    ],
+    "mandatoryCompileProgressiveArguments": 3,
+    "mandatoryCompileSourceWholeArguments": 4,
+    "exactPrefix": "./",
+    "exactHashKeyCase": "Sha256",
+    "originalMandatoryIdentityPreserved": true,
+    "newWrapperNeeded": false,
+    "sourceCompilerChanged": false
+  },
+  "routes": {
+    "allWholeVariants": "/whole",
+    "oneWhole": "/whole?root=u54fb&all=0",
+    "allDirections": "/pairs?root=u54fb",
+    "fine": "/progressive?root=u54fb&stroke=2&enlarged=1",
+    "coarse9": "/progressive?root=u54fb&stroke=1&coarse=1",
+    "checks": "/checks?root=u54fb"
+  },
+  "controls": {
+    "percentDenominator": 100,
+    "sliderStep": 0.0001,
+    "fineSize": 520,
+    "coarseSamples": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "maskBoundaryBeforeAtAfterPreserved": true,
+    "explicit95PercentButton": true,
+    "left": "colored domestic",
+    "right": "black candidate"
+  },
+  "nativePlan": {
+    "priorityFinePens": [
+      2
+    ],
+    "recommendedFinePens": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "originalCurveFinePens": [
+      2,
+      5
+    ],
+    "originalSpecialTerminals": [
+      {
+        "raw": 0,
+        "pen": 1,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 13,
+        "polygons": 1
+      },
+      {
+        "raw": 2,
+        "pen": 2,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 23,
+        "polygons": 2
+      },
+      {
+        "raw": 4,
+        "pen": 4,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 113,
+        "polygons": 1
+      },
+      {
+        "raw": 6,
+        "pen": 5,
+        "call": 0,
+        "kind": "cdDrawLine",
+        "terminal": 123,
+        "polygons": 2
+      }
+    ],
+    "maskTransitions": [],
+    "plannedCoarseFrames": 90,
+    "sourceVertexCoverageRisks": [
+      {
+        "pen": 2,
+        "raw": [
+          1,
+          2
+        ],
+        "maximumOriginalVertexDistanceKage": 15.180600138416786,
+        "width": 14,
+        "witnessKage": [
+          55.3,
+          146.2
+        ],
+        "exceeds": true
+      },
+      {
+        "pen": 5,
+        "raw": [
+          5,
+          6
+        ],
+        "maximumOriginalVertexDistanceKage": 13.437171705385028,
+        "width": 14,
+        "witnessKage": [
+          160.6,
+          94.3
+        ],
+        "exceeds": false
+      }
+    ],
+    "sourceRiskMethod": "Maximum original polygon vertex distance to original line-fold centerline segments. Source-only quantitative risk; no native failure asserted and no width/path/point changes.",
+    "automaticAdjustment": false
+  },
+  "sourceCheck": {
+    "executions": 1,
+    "executed": true,
+    "exitCode": 0,
+    "selectedRoot": "u54fb",
+    "compiledMasksSHA256": "21352b102c722471446ee4be93daf586f7468e7da0ba0180929986aafc37d21a",
+    "pens": 10,
+    "masks": 10,
+    "originalPolygons": 16,
+    "allOriginalPolygonsExactlyOnce": true,
+    "allVerticesUnchanged": true,
+    "originalFilesVerified": 16,
+    "additionalRendererPinsVerified": 2,
+    "savedHelperSHA256Verified": true,
+    "existingIdentityGuardEvidenceReused": true,
+    "allOtherProfilesRecompiledThisTask": false,
+    "privateDictionaryImported": false
+  },
+  "pythonSyntaxCheck": {
+    "executions": 1,
+    "executed": true,
+    "passed": true,
+    "syntaxFiles": 3,
+    "ramTransformedOriginalSyntaxFiles": 2,
+    "wholeServerFooterRemovedOnlyInRAM": true,
+    "progressiveStartupCompileRemovedOnlyInRAM": true,
+    "sliderStepVerified": 0.0001,
+    "explicit95ButtonVerified": true,
+    "coarseSamplesVerified": 9,
+    "sourceHelpersImported": false,
+    "serverStarted": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "nativeWholeObserved": 0,
+  "nativeDirectionsObserved": 0,
+  "nativeFramesObserved": 0,
+  "nativeFineObserved": 0,
+  "nativeReplaysObserved": 0,
+  "serverStarted": false,
+  "httpChecksRun": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false
+}
