@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "batch": 999,
+  "glyph": "暵",
+  "verifiedAt": "2026-10-18",
+  "status": "held-native-pen2-completion-corner-pop",
+  "catalogStrokes": 15,
+  "recordedDomesticClipCount": 15,
+  "reason": "Root actual520px base pen2 fine comparison showed a small lower-left corner triangle appearing only at100%. All three captured whole forms were actually shape-compatible. The separately named VS0 andVS1 pen2 candidates have exactly identical original raw calls/polygons and compiled masks, so those pen2 payloads are constrained too; the whole proofs are not all identical and no separate VS0/VS1 fine observation is claimed.",
+  "nativeEvidence": {
+    "source": "root-native-IAB",
+    "actualWholeViews": 3,
+    "actualCompatibleRoots": [
+      "u66b5",
+      "u66b5-ue0100",
+      "u66b5-ue0101"
+    ],
+    "selectedWhole": "u66b5",
+    "fineObservations": [
+      {
+        "profile": "u66b5",
+        "pen": 2,
+        "size": 520,
+        "beforePercent": 99.99,
+        "afterPercent": 100,
+        "passed": false,
+        "failure": "A tiny lower-left corner triangle is gained at100%, absent or short/rounded at99.99%.",
+        "confirmingCrop": {
+          "width": 90,
+          "height": 100,
+          "RAMOnly": true
+        },
+        "domesticAndCandidate520SizesConfirmed": true
+      }
+    ],
+    "separateVS0OrVS1FineObserved": false,
+    "dictionaryDirectionStrokesReviewed": 0,
+    "progressiveFramesReviewed": 0,
+    "otherFineChecks": 0,
+    "replayChecks": 0,
+    "approvedDirectionSet": false,
+    "privateMedia": "RAM-only"
+  },
+  "equivalentPenConstraint": {
+    "roots": [
+      "u66b5",
+      "u66b5-ue0100",
+      "u66b5-ue0101"
+    ],
+    "pen": 2,
+    "sourceRawIndices0Based": [
+      1,
+      2
+    ],
+    "allPen2RawCallsAndPolygonsExactlyEqual": true,
+    "sharedPen2RawTraceSHA256": "6629c8b98bcd6ddb422213da0ba8d35f3f17ce84e7b188e04ef797dc3b31946a",
+    "allPen2CompiledMasksExactlyEqual": true,
+    "sharedPen2CompiledMaskSHA256": "a3922b4bcd9fd52e8192a76341863eacc1e730cf0c0534dc4b930412cd3bdb06",
+    "revealWidth": 14,
+    "revealPath": "M12.123125 18.78 L30.314374999999995 18.78 L30.314374999999995 75.22",
+    "wholeProofsAllEqual": false,
+    "wholeProofDifference": "Base andVS1 preserve28polygons;VS0 preserves27polygons and distinct full proof/full compiled masks. Pen2 alone is exact-equal across all three.",
+    "proofIdentityFilesRemainDistinct": true,
+    "rootSpecificIdentityMandatory": true,
+    "equalityIsNotIndependentNativeObservation": true,
+    "sourceAudit": {
+      "sourceAuditExecutions": 1,
+      "sourcePositiveCompiles": 3,
+      "pen2RawAndMaskExactlyEqualAcrossAll3": true,
+      "wholeProofsAllEqual": false,
+      "rows": [
+        {
+          "root": "u66b5",
+          "proofSHA256": "132797f40591b2219f70235ef30a038742cc0d9c008aa366ba0a9b4eb90d0790",
+          "proofRaw": 17,
+          "proofPolygons": 28,
+          "rawIndices": [
+            1,
+            2
+          ],
+          "pen2RawTraceSHA256": "6629c8b98bcd6ddb422213da0ba8d35f3f17ce84e7b188e04ef797dc3b31946a",
+          "pen2CompiledSHA256": "a3922b4bcd9fd52e8192a76341863eacc1e730cf0c0534dc4b930412cd3bdb06",
+          "pen2Masks": 1,
+          "pen2Width": 14,
+          "pen2RevealPath": "M12.123125 18.78 L30.314374999999995 18.78 L30.314374999999995 75.22",
+          "fullCompiledSHA256": "b0c0ebaaaaa72a7a2a6c856d5052456a819a458bcaecb59acb1bd5c06f5019c3",
+          "sourceCompileExecutions": 1
+        },
+        {
+          "root": "u66b5-ue0100",
+          "proofSHA256": "833ac5f6f6b825e765bca7f35df7575c0ce25be505eca11cea8b10a31ce5a26f",
+          "proofRaw": 17,
+          "proofPolygons": 27,
+          "rawIndices": [
+            1,
+            2
+          ],
+          "pen2RawTraceSHA256": "6629c8b98bcd6ddb422213da0ba8d35f3f17ce84e7b188e04ef797dc3b31946a",
+          "pen2CompiledSHA256": "a3922b4bcd9fd52e8192a76341863eacc1e730cf0c0534dc4b930412cd3bdb06",
+          "pen2Masks": 1,
+          "pen2Width": 14,
+          "pen2RevealPath": "M12.123125 18.78 L30.314374999999995 18.78 L30.314374999999995 75.22",
+          "fullCompiledSHA256": "9ba6ba414035094d2104ee6310f457a2e6050c554adbe08987862ff6a8d059af",
+          "sourceCompileExecutions": 1
+        },
+        {
+          "root": "u66b5-ue0101",
+          "proofSHA256": "132797f40591b2219f70235ef30a038742cc0d9c008aa366ba0a9b4eb90d0790",
+          "proofRaw": 17,
+          "proofPolygons": 28,
+          "rawIndices": [
+            1,
+            2
+          ],
+          "pen2RawTraceSHA256": "6629c8b98bcd6ddb422213da0ba8d35f3f17ce84e7b188e04ef797dc3b31946a",
+          "pen2CompiledSHA256": "a3922b4bcd9fd52e8192a76341863eacc1e730cf0c0534dc4b930412cd3bdb06",
+          "pen2Masks": 1,
+          "pen2Width": 14,
+          "pen2RevealPath": "M12.123125 18.78 L30.314374999999995 18.78 L30.314374999999995 75.22",
+          "fullCompiledSHA256": "b0c0ebaaaaa72a7a2a6c856d5052456a819a458bcaecb59acb1bd5c06f5019c3",
+          "sourceCompileExecutions": 1
+        }
+      ],
+      "nativeObservedByWorker": false,
+      "serverStarted": false
+    }
+  },
+  "sourceRisk": {
+    "existingEvidence": "combined-native-preparation.json#/nativePlan/sourceVertexCoverageRisks",
+    "pen2": {
+      "raw": [
+        1,
+        2
+      ],
+      "maximumOriginalVertexDistanceKage": 15.206164097578984,
+      "width": 14,
+      "witnessKage": [
+        54.6,
+        164.4
+      ],
+      "exceeds": true
+    },
+    "distanceIsRiskNotNativeFailureProof": true,
+    "geometryMaskWidthsAndPathsUnchanged": true
+  },
+  "originalBytePins": {
+    "NOTICE.md": "e1d541c199ee06b09dacac7321a2be7daf2d9c960569f7f38d2a6183378849ec",
+    "candidate-compile-analysis.json": "e0479abcfd6e6e96d1824c557460661032ee8b2ab9ed426927e5fc9b83270f7d",
+    "combined-native-preparation.json": "deaa4945ee634556bdf1117a221c828f53aa53c0bae4569c042583e20a89136a",
+    "engine-proof.json": "2dcb407d8699020640e08556adc5b494b291f457ed32cda11d1ee43f75b1f19b",
+    "engine-whole-u66b5-ue0100.json": "833ac5f6f6b825e765bca7f35df7575c0ce25be505eca11cea8b10a31ce5a26f",
+    "engine-whole-u66b5-ue0101.json": "132797f40591b2219f70235ef30a038742cc0d9c008aa366ba0a9b4eb90d0790",
+    "engine-whole-u66b5.json": "132797f40591b2219f70235ef30a038742cc0d9c008aa366ba0a9b4eb90d0790",
+    "metadata.json": "f0fb30fd7ca6cfbc51bd74b447d3fd1c8d9edf35446d9d580b7130c3bc9dddf3",
+    "native-server-preparation-source-analysis.json": "f7b6a9f870eca619576b92f948e54dec7b31521610857f127f5d645025a43dbe",
+    "native-server-validation.json": "ace823b5c997e6c80d94b5ce65da8ab0c9e242ba50c8b7ca68a6b69dc0dc8b75",
+    "progressive.mjs": "544f876035c337368cc38b9bf0b166fc5361c8c4312e6346d6a697aa0546d661",
+    "serve-combined-native.py": "8fc68c6fb70d4d3a9c791bec0db0005a8be8e8fe5241d5e0ed89dd49999999e0",
+    "serve-progressive.py": "1ebbf1796acf2ab532a1e5fd18ca09f5fced0f599c16defa49dd09afba175860",
+    "serve-whole.py": "d1f6d01731c5cd23f569333275c0423838384c5ca1bfb209dbc99c88b1c45f13",
+    "server-compile.mjs": "01fb0fb174ac339e8e8875b5bfa4d37b35e75965899d88f84e38efafaaf32104",
+    "source-analysis.json": "208b843e6b2f9e64f53327e2307445e0d966a152da99e32bdec4d4b86da19aa3",
+    "source-join-analysis.json": "6ed38958c1015e636c09bc91c10de873ab9b71f0934355984698371e44e2e96a",
+    "source-only-helper-readiness.json": "681422fe80ab591a5ff42ae875f64bb1831579475bcb7374edf22e66935f37d7",
+    "source-preservation-audit.json": "df22e5c3de6c0a921fda58e7e42404ab710d2b2a15f5ceb47d352a9f57633b9b",
+    "sources.json": "b4772db435e90ff5e14a70a7c9bfb42aa84b3205eee68f73062f60afe55c84e2",
+    "verify-source.mjs": "346e2be9aae2180d5de3d9d920fdc1e22495269844be528289098b04dc895749"
+  },
+  "additionalProtectedPins": {
+    "../hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09"
+  },
+  "originalSourceFiles": 19,
+  "existingCombinedPreparationFiles": 2,
+  "canonicalDuplicateCheck": {
+    "actualParent": 998,
+    "parentResume": "docs/hanja-goal-glyphwiki-batch998-2026-10-13/resume.json",
+    "parentResumeSHA256": "300f4173de92b159002658d0251386b83252ba11660816b950ae2abea57d9d7a",
+    "executions": 1,
+    "resumeReferences": 60,
+    "canonicalBefore": 291,
+    "uniqueCanonicalBefore": 291,
+    "stringHolds": 80,
+    "objectHolds": 211,
+    "glyphAndRootMatches": 0,
+    "newCanonicalHoldEligible": true,
+    "countIncrement": 1,
+    "totalCanonicalHoldsAfter": 292,
+    "finalParentDuplicateCheckExecuted": true,
+    "newHoldAccountingPending": false,
+    "resumeCreationDeferred": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "sourceOriginalsChanged": false,
+  "newPathsMasksWidthsOrInterpolation": false,
+  "privateMediaSaved": false,
+  "serverStartedByWorker": false,
+  "buildRun": false,
+  "gitRun": false
+}
