@@ -1,0 +1,115 @@
+{
+  "batch": 956,
+  "glyph": "嶞",
+  "verifiedAt": "2026-10-17",
+  "status": "approved-runtime-applied-and-verified",
+  "sourceVerification": {
+    "reference": "native-server-validation.json/sourcePassed",
+    "sourcePassed": true,
+    "newEngineExecutions": 0
+  },
+  "nativeReview": {
+    "reference": "review.json",
+    "evidenceSource": "root-native-IAB",
+    "approved": true,
+    "pens": 15,
+    "masks": 17,
+    "originalPolygons": 34,
+    "framesApproved": 135,
+    "finePens": [
+      1,
+      2,
+      5,
+      10,
+      14
+    ],
+    "maskBoundaryPens": [
+      2,
+      10
+    ],
+    "additionalProbeTailProgress": 0.25,
+    "replayPens": [
+      10
+    ],
+    "replayStartPercent": 3.0613,
+    "privateMediaSaved": false,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "proofContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "sourceProofFile",
+      "sourceProofFileSHA256",
+      "sourceRoot",
+      "trace"
+    ],
+    "fullProofSHA256": "a552a7ff7a9652c7f3a9e7ca4f7cb3ff76fde7db1efb932e5a52421a90c14d97",
+    "fileIdentity": {
+      "root": "u5d9e",
+      "file": "engine-whole-u5d9e.json",
+      "fileSHA256": "892f6f89e783fc23c9b4da3b6242a59bc9b77ec0d331652dc7c1e59280cec62d"
+    }
+  },
+  "wholeRendererWindingDiagnostic": {
+    "diagnosticName": "single-path-opposite-winding-cancellation",
+    "reportedBy": "/root",
+    "evidenceSource": "root-native-IAB and independent fixed-source vertex audit",
+    "rawWholeFunction": "original_svg",
+    "sourceRawPolygons": 34,
+    "runtimePolygons": 34,
+    "canonicalCyclicOrReverseVerticesExactlyOnce": true,
+    "sourceNegativeWindingPolygons": 4,
+    "runtimeNegativeWindingPolygons": 0,
+    "sourceZeroAreaPolygons": 0,
+    "runtimeZeroAreaPolygons": 0,
+    "newRuntimeVertices": 0,
+    "existingCompilerNormalization": true,
+    "sourceGeometryChanged": false,
+    "compilerChanged": false,
+    "rendererChanged": false,
+    "diagnosticOnly": true,
+    "sideEffects": "none",
+    "finding": "White V in raw single-path whole SVG is opposite-winding cancellation. Existing frozen progressive compiler normalizes polygon orientation; native full and fine10 reveal are continuous. No source or runtime geometry repair was performed."
+  },
+  "runtime": {
+    "modulePrepared": true,
+    "registryEditedByThisAgent": false,
+    "registryLinkedByRoot": true,
+    "verifyRuntimeExecuted": true,
+    "runtimeApplied": true,
+    "command": "rtk proxy node --experimental-strip-types docs/hanja-goal-glyphwiki-batch956-2026-10-13/verify-runtime.mjs",
+    "exitCode": 0,
+    "pens": 15,
+    "masks": 17,
+    "polygons": 34,
+    "frames": 135,
+    "sourcePreserved": true,
+    "compiledSHA256": "70bdea5b78534a85ba4806b594b05abde4a351bd4441a69cef188a51573e03cc",
+    "fullProofSHA256": "a552a7ff7a9652c7f3a9e7ca4f7cb3ff76fde7db1efb932e5a52421a90c14d97",
+    "windingVertexAuditPassed": true,
+    "appUIAutoplayVerifiedThisBatch": false
+  },
+  "checks": {
+    "focusedTestsExecuted": true,
+    "focusedTests": {
+      "command": "rtk proxy node --experimental-strip-types --test lib/hanja-stroke-dictionary-glyphwiki-batch956.test.ts",
+      "exitCode": 0,
+      "passed": 4,
+      "failed": 0,
+      "full8CallerProofVerified": true,
+      "identity3Verified": true,
+      "rawGeometryLicenseVerified": true,
+      "windingDiagnosticRecordedWithoutSideEffects": true
+    },
+    "runtimeVerifierSyntaxExitCode": 0,
+    "vertexParserRegexLiteralVerified": true,
+    "buildRun": false,
+    "fullSuiteRun": false
+  },
+  "immutableSourceMetadataPreserved": true,
+  "immutableOriginalNoticePreserved": true,
+  "privateMediaSaved": false
+}
