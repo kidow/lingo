@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-focused-verified-native-pending",
+  "configSHA256": "a950f5b2610c816725cefb016434f6a3ab2ea9f916763d379530703f8776a36c",
+  "newFilesSHA256": {
+    "README.md": "9e393acfe0029addb9058a8053c113ca39e2585a734516481a841334f0ca3763",
+    "config.json": "a950f5b2610c816725cefb016434f6a3ab2ea9f916763d379530703f8776a36c",
+    "reorder-candidate.mjs": "8b071b5a20d234bd37e335a7b060965048d6b9581ed3786774600dd09807190e",
+    "reorder-candidate.d.mts": "82d878a04c3a7528624ec7129717d02d896367421d7b9503e03f7517e65c52e8",
+    "serve.py": "7f27547069347949289b4b4bec7c7b33ee7c7bede72ff246995bc7d3cc3bf1b7",
+    "source-check.mjs": "a2cfbdf9a0fb200a8ecff95ccdf18bcba6a9672e464a500dd766248d2a8cd4c2",
+    "fixtures.json": "83251ac62bcd9d708196f2d6fc7e2079d472e2077860d4103f833a539f78add6"
+  },
+  "immutableInputPins": 29,
+  "baselineCapture": {
+    "originalSourcePositiveCompileRuns": 1,
+    "rootHistoricalStartupSourceCompiles": 1,
+    "rootPriorRunSeparateFromNewCapture": true,
+    "fixtureSavedBeforeFocusedChecks": true,
+    "baselineSHA256": "f5232f9a78fe22d53df2f17de4a469fb5d4bfa38fce9223a93b63feef3ed011e",
+    "engineExecutions": 0,
+    "engineDownloads": 0
+  },
+  "sourceCheck": {
+    "executions": 2,
+    "status": "passed-after-harness-repairs",
+    "attempts": [
+      {
+        "execution": 1,
+        "exitCode": 1,
+        "cachedPositiveExecutions": 0,
+        "negativeExecutions": 0,
+        "nodeSyntaxExecutions": 0,
+        "pythonASTExecutions": 0,
+        "helperGuardExecutions": 0,
+        "reason": "Unescaped LF in declaration-extraction regex caused parse failure before module execution; repaired by line split."
+      },
+      {
+        "execution": 2,
+        "exitCode": 1,
+        "cachedPositiveExecutions": 1,
+        "negativeRejections": 40,
+        "nodeSyntaxChecks": 2,
+        "helperPythonASTChecks": 1,
+        "helperStaticGuardChecks": 1,
+        "helperStaticGuardPassed": false,
+        "reason": "Helper check-only rejected non-ASCII Python source without explicit encoding; UTF-8 coding header added. No source compiler or engine runs."
+      }
+    ],
+    "passed": true,
+    "positiveCachedPermutations": 1,
+    "negativeRejections": 40,
+    "candidateSourceCompiles": 0,
+    "additionalBaselineSourceCaptures": 1,
+    "engineRuns": 0,
+    "nodeSyntaxChecks": 2,
+    "helperPythonASTChecks": 2,
+    "helperStaticGuardAttempts": 2,
+    "helperStaticGuardPasses": 1,
+    "helperOnlyRepair": {
+      "executions": 1,
+      "exitCode": 0,
+      "helperPythonASTChecks": 1,
+      "staticGuards": true,
+      "cachedPositiveExecutions": 0,
+      "negativeExecutions": 0,
+      "sourceCompiles": 0,
+      "HTTP": 0
+    },
+    "result": {
+      "passed": true,
+      "pens": 15,
+      "masks": 17,
+      "polygons": 34,
+      "baselineSHA256": "f5232f9a78fe22d53df2f17de4a469fb5d4bfa38fce9223a93b63feef3ed011e",
+      "derivedSHA256": "810fcb3a90ee6c3a737828a389d6964967d0fe5c454ba2e8c0bc5181be91aec3",
+      "originalPins": 29,
+      "newPins": 7,
+      "wholePensExactReferencePermutation": true,
+      "originalPolygonsExactlyOnce": true,
+      "other13PensUnchanged": true,
+      "old6LeftAnd15UpUnchanged": true,
+      "allBoundaries": {
+        "6": [
+          0.9172286393708515
+        ],
+        "15": [
+          0.7693027524507061
+        ]
+      },
+      "nativeApproval": false,
+      "runtimeApplied": false,
+      "appUI": false,
+      "serversStarted": 0,
+      "HTTP": 0
+    }
+  },
+  "sourceContract": {
+    "originalAPI": "compileProgressive(trace,full5,id7)",
+    "originalArguments": 3,
+    "originalSourceWholeExported": false,
+    "adapterMandatoryArguments": [
+      3,
+      4
+    ],
+    "identity": {
+      "sourceRoot": "u975a",
+      "sourceProofFile": "../hanja-related-whole-jing-bian-pian-native-source-2026-10-14/engine-whole-u975a.json",
+      "sourceProofFileSha256": "655ea27e919286a4fc8692a147a1a6025ef58513e4ceb11d7e61a6a4e2dd1b7c",
+      "sourceCapsuleFile": "../hanja-related-whole-jing-bian-pian-native-source-2026-10-14/sources.json",
+      "sourceCapsuleFileSha256": "acdb287e18a5b2dc4f83d39270c7ebe276aee479bab3c798bb23076f38ea706a",
+      "sourceChecksFile": "../hanja-related-whole-jing-bian-pian-native-source-2026-10-14/metadata.json",
+      "sourceChecksFileSha256": "921ada4a03563e123ddeddd4c64de64c9b50b45566426499ad43a2575520a9d3"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullProofSHA256": "e41ff49ebe4132f09475ecb33cd775047701a6068fb953db9234cd4b06b75834"
+  },
+  "geometry": {
+    "wholePensExactReferencePermutation": [
+      1,
+      2,
+      4,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "pens": 15,
+    "masks": 17,
+    "polygons": 34,
+    "baselineSHA256": "f5232f9a78fe22d53df2f17de4a469fb5d4bfa38fce9223a93b63feef3ed011e",
+    "derivedSHA256": "810fcb3a90ee6c3a737828a389d6964967d0fe5c454ba2e8c0bc5181be91aec3",
+    "maskPolicyChanged": false,
+    "other13PensUnchanged": true,
+    "originalPolygonsExactlyOnce": true,
+    "allGuidesWidthsWeightsUnchanged": true,
+    "newVertices": false,
+    "newConnector": false
+  },
+  "nativeFinePriority": [
+    6,
+    10,
+    14,
+    15
+  ],
+  "allMaskBoundaries": {
+    "6": [
+      0.9172286393708515
+    ],
+    "15": [
+      0.7693027524507061
+    ]
+  },
+  "oldNativeFailure": {
+    "wholeCompatibleActualViews": 1,
+    "directionsPassed": [
+      1,
+      2
+    ],
+    "directionsFailed": [
+      3,
+      4
+    ],
+    "otherDirectionsObserved": 0,
+    "fineChecks": 0,
+    "coarseFrames": 0,
+    "maskBoundaryChecks": 0,
+    "naturalReplays": 0,
+    "priorCandidatePassesInherited": 0,
+    "nativeApproval": false
+  },
+  "helperFixtureCache": {
+    "startupSourceCompiles": 0,
+    "requestSourceCompiles": 0,
+    "engineRuns": 0,
+    "SVGCount": 3,
+    "fineSVGSize": 520,
+    "sliderStep": 0.0001,
+    "sliderDivisor": 100,
+    "allMaskBoundaries": true,
+    "coarseSamples": 9,
+    "naturalReplaySeconds": 8,
+    "privateMediaRAMOnly": true
+  },
+  "sourceIdentityPolicy": "Exact captured archive whole identity and original related mapping from frozen metadata.cases/sourceIdentityByWhole. Original whole @version is unknown and is not invented; no part or generic filename alias is substituted.",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "appUI": false,
+  "canonicalHoldsChanged": false,
+  "resumeChanged": false,
+  "originalSourceAndNativeFilesChanged": false,
+  "originalNoticeBytesPreserved": true,
+  "serversStarted": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false
+}

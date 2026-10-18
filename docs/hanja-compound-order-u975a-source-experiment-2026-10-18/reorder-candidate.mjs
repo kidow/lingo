@@ -1,0 +1,13 @@
+import assert from'node:assert/strict'
+import{readFileSync}from'node:fs'
+import{createHash}from'node:crypto'
+export{renderProgressive}from'../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs'
+const read=f=>readFileSync(new URL(f,import.meta.url)),obj=f=>JSON.parse(read(f)),sha=x=>createHash('sha256').update(x).digest('hex'),config=obj('config.json'),t=config.targets.u975a,fixture=obj('fixtures.json').u975a;let calls=0
+export const nativeApproval=false,runtimeApplied=false
+export function fixedTargets(){return structuredClone(config.targets)}
+export function sourceCompileCallCount(){return 0}
+export function cachedPermutationCallCount(){return calls}
+export function guards(){const prep=obj('preparation.json');assert.equal(sha(read('config.json')),prep.configSHA256);for(const[p,h]of Object.entries(t.inputSHA256))assert.equal(sha(read(p)),h,p);for(const[p,h]of Object.entries(prep.newFilesSHA256))assert.equal(sha(read(p)),h,p);assert.equal(sha(JSON.stringify(fixture.baseline)),t.baselineSHA256);assert.equal(sha(JSON.stringify(fixture.strokes)),t.derivedSHA256)}
+export function reorderOriginalPens(baseline,order){assert.equal(arguments.length,2);assert.equal(baseline.length,15);assert.equal(order.length,15);assert.equal(new Set(order).size,15);assert(order.every(i=>Number.isInteger(i)&&i>=1&&i<=15));assert.deepEqual(order,t.originalPenOrder);assert.equal(sha(JSON.stringify(baseline)),t.baselineSHA256);return order.map(i=>baseline[i-1])}
+export function compileProgressive(...args){assert.equal(args.length,3,'Exactly3 explicit arguments');const[trace,proof,id]=args;assert.deepEqual(id,t.identity);assert.deepEqual(Object.keys(id).sort(),['sourceRoot','sourceProofFile','sourceProofFileSha256','sourceCapsuleFile','sourceCapsuleFileSha256','sourceChecksFile','sourceChecksFileSha256'].sort());assert.deepEqual(Object.keys(proof).sort(),t.proofKeys);assert.equal(sha(JSON.stringify(proof)),t.fullProofSHA256);assert.deepEqual(trace,proof.trace);assert.equal(id.sourceRoot,t.root);for(const[file,hash]of[['sourceProofFile','sourceProofFileSha256'],['sourceCapsuleFile','sourceCapsuleFileSha256'],['sourceChecksFile','sourceChecksFileSha256']])assert.equal(sha(read(id[file])),id[hash]);assert.deepEqual(proof,obj(id.sourceProofFile));guards();const before=JSON.stringify(proof),out=reorderOriginalPens(fixture.baseline,t.originalPenOrder);for(let i=0;i<15;i++)assert.equal(out[i],fixture.baseline[t.originalPenOrder[i]-1]);assert.deepEqual(out,fixture.strokes);assert.equal(JSON.stringify(proof),before);calls++;return out}
+export function compileSourceWhole(...args){assert.equal(args.length,4,'Exactly4 explicit arguments');const[root,trace,proof,id]=args;assert.equal(root,t.root);return compileProgressive(trace,proof,id)}
