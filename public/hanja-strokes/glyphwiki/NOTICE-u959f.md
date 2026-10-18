@@ -1,0 +1,11 @@
+# 閟 · reviewed GlyphWiki runtime source
+
+GlyphWiki Project and contributors; LicenseRef-GlyphWiki, not CC0.
+
+Source https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt
+Archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62
+License https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt
+
+Fixed4records/2wholes/0providers and all32originalpolygons preserved. 고정u959f whole의 원13획15mask32polygon을 보존합니다. 기존compiler의 raw6/7 terminal14 left-tail 및 raw12 terminal5 up-tail mask를 그대로 사용하며 좌표·경로·폭·방향·weight·순서를 변경하지 않습니다. 원full5/id3 mandatory3/4 계약과619보류원문을 보존합니다.
+
+Root native whole/direction/coarse/fine/boundary/natural-replay approval2026-10-18 is separate from historical source-only preparation. Domestic graphics RAM-only, not redistributed. Old619/939 history remains unchanged.
