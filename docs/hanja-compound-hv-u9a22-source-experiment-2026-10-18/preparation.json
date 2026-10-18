@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only independent same-baseline cardinal12/16 verified",
+  "configSHA256": "cb3fcb445f0fc660dc97e01007aee92e0f9c0d51ca1d67c44313836d7a0a4ea5",
+  "newFilesSHA256": {
+    "fixtures.json": "4c4a8836c7802322e22c424cd6737b333b0f1e4cb7033bfce656800d43d8bc97",
+    "cardinal-candidate.mjs": "a4e5e80ddbe01e9d0929a25ebabfdfc0d1e4d3ecf2b19f055fc14039545a313b",
+    "cardinal-candidate.d.mts": "2b58819e8b951dd0197e73ffaa015a279eeeccf02cbde9eede24419983a538eb",
+    "serve.py": "be4c949918d25b66f7fe4e13fffad9b423788f0663409d40796444f4908ab13b",
+    "README.md": "77240b9746bff8196838e3d90acede05165e12cdbd85506e3f4a7299a9990138",
+    "source-check.mjs": "6d8924930173d5880faedd696a4a9a77f4f4ed2b1e72004201f13db1493bcebc"
+  },
+  "sourcePins": 39,
+  "pinBreakdown": {
+    "originalSource": 28,
+    "lastSourceLab": 8,
+    "followingWrapperPreserved": 3
+  },
+  "newOwnPins": 7,
+  "futureRuntimePinsIncludingNew8": 47,
+  "followingWrapperExecutionDelegate": false,
+  "directHelperCachedPublicFixture": true,
+  "reusedAlgorithm": {
+    "source": "../hanja-compound-terminal23-last-source-experiment-2026-10-18/cardinal-candidate.mjs",
+    "eligibleAndDeriveBodySHA256": "d59eb13f36dc6c10fb3a74eac875205a137ed4adc953f818c53913805aeb53fe",
+    "bodyByteExact": true
+  },
+  "baselinePublicCacheSavedFirst": true,
+  "baselineSHA256": "cd24df57ee3ce86b76a67cce819755d8a89f706210935b0433a0bd51acd64dfd",
+  "independentFromSameOriginalBaseline": true,
+  "derivePens": [
+    12,
+    16
+  ],
+  "sequentialMutation": false,
+  "expectedCounts": [
+    19,
+    22,
+    39
+  ],
+  "sourceCompiles": 0,
+  "originalApiDelegations": 0,
+  "engineRuns": 0,
+  "sourceCheck": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "cachedPositiveCalls": 1,
+    "independentDerivations": 2,
+    "sameOriginalBaseline": true,
+    "negativeRejections": 34,
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "pens": 19,
+    "masks": 22,
+    "polygons": 39,
+    "baselineSHA256": "cd24df57ee3ce86b76a67cce819755d8a89f706210935b0433a0bd51acd64dfd",
+    "derivedSHA256": "18046a37d1734e735df9bb41cb16a9aa7706ad47245560772e77a66c48d87664",
+    "originalPins": 39,
+    "sourceGroupsUnchanged": true,
+    "allOriginalPolygonsExactlyOnce": true,
+    "unchangedOther17Pens": true,
+    "existing6LeftPreserved": true,
+    "existing12CandidateReproduced": true,
+    "allBoundaries": {
+      "6": [
+        0.8948395672437871
+      ],
+      "12": [
+        0.4258373205741626
+      ],
+      "16": [
+        0.40408626560726446
+      ]
+    },
+    "nodeSyntaxChecks": 2,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "serverStarts": 0,
+    "HTTP": 0
+  },
+  "displayPolicy": {
+    "combinedGuidesKeptInBaseline": true,
+    "activeGuideChangedToOriginalPerCallBoundsRightDown": true,
+    "originalCoordinatesWidthsWeightsOrderAndPolygonUnionPreserved": true
+  },
+  "allOther17PensUnchanged": true,
+  "existing6LeftPreserved": true,
+  "originalSourceFilesChanged": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "priorFreshFailure": {
+    "candidate": "last-source12cardinal only",
+    "pen": 16,
+    "positiveAreaCompletionPop": true,
+    "whole": 0,
+    "directions": 0,
+    "coarse": 0,
+    "otherFine": 0,
+    "boundaries": 0,
+    "natural": 0,
+    "inheritedEvidence": 0,
+    "serverStoppedByRoot": true
+  },
+  "rootFreshNativeRequired": true,
+  "expectedCompiledSHA256": "18046a37d1734e735df9bb41cb16a9aa7706ad47245560772e77a66c48d87664",
+  "allMultiBoundaries": {
+    "6": [
+      0.8948395672437871
+    ],
+    "12": [
+      0.4258373205741626
+    ],
+    "16": [
+      0.40408626560726446
+    ]
+  },
+  "finalPublicFixtureSHA256": "4c4a8836c7802322e22c424cd6737b333b0f1e4cb7033bfce656800d43d8bc97",
+  "fixtureFinalization": {
+    "source": "Single successful cached positive stdout public geometry; original baseline unchanged",
+    "additionalSourceCompiles": 0,
+    "additionalPositiveOrNegativeChecks": 0
+  },
+  "auditMetadataCorrection": {
+    "reason": "Copied historical12-only risk object was not scoped as historical",
+    "changedConfigFields": [
+      "unresolvedNativeRisks→priorLast12CandidateRisks",
+      "currentNativeRisks"
+    ],
+    "sourceGeometryChanged": false,
+    "original39PinsChanged": false,
+    "sourceChecksRepeated": 0,
+    "requiredStaticGuardExecutions": 1,
+    "requiredStaticGuardExitCode": 0,
+    "requiredStaticGuardResult": {
+      "staticGuards": true,
+      "targets": [
+        "997"
+      ],
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "HTTP": 0
+    }
+  }
+}
