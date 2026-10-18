@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-component-order-invariants-checked-report-schema-recovered-native-pending",
+  "configSHA256": "b9ac0489c52e969f18c0158dbcf21e102132d453292c7505be03ea91e3601833",
+  "newFilesSHA256": {
+    "README.md": "7bf9690116ef678c026091d33a3b5e4c19292740b07caa2e6197254c24157a44",
+    "config.json": "b9ac0489c52e969f18c0158dbcf21e102132d453292c7505be03ea91e3601833",
+    "reorder-candidate.mjs": "771a3e2eb15fb39773291c950495f3a8a427f339b60f781599a996c116af6fae",
+    "reorder-candidate.d.mts": "a3fdc011a9e4bae9cdda599512f30d469ffde2e5219c30c48c3932b2523f0d25",
+    "serve.py": "779689cb14f0c7de6636da8e80d44f57aa581ad402e3fed1b0919e83f5f2e458",
+    "source-check.mjs": "395bb223b18b82663cf8d869996e803a4586c286852bedb821b9c1e7979db3b8",
+    "fixtures.json": "032f5d8697bb04e15a7044f265a271da4b6c788be097f10d31b9a6064c0f1864"
+  },
+  "originalSourcePins": 31,
+  "originalRaw7HelperAlreadyWithin31": true,
+  "originalRaw7HelperPaths": [
+    "docs/hanja-goal-glyphwiki-batch1105-2026-10-13/serve-raw7-native.py",
+    "docs/hanja-goal-glyphwiki-batch1105-2026-10-13/raw7-native-config.json",
+    "docs/hanja-goal-glyphwiki-batch1105-2026-10-13/raw7-native-preparation.json"
+  ],
+  "cardinalLabPins": 8,
+  "newAllBoundaryWrapperDependency": false,
+  "uniqueInputPins": 39,
+  "originalPenOrder": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "expectedCompiledSHA256": "4949c5c1070371f16c36013f90d9c65e94f9478dbb3da42f4688186f9d9c3367",
+  "baselineCardinalSHA256": "bb7c029614b4e3712a4741ac465d59b42d4c46162c9a7d2a14851a363b733fb9",
+  "pens": 19,
+  "masks": 22,
+  "polygons": 43,
+  "allMultiMaskBoundaries": {
+    "4": [
+      0.2391773075284366
+    ],
+    "8": [
+      0.7846074189338144
+    ],
+    "15": [
+      0.874627941176784
+    ]
+  },
+  "strictProof": {
+    "keys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "sourceProofFile",
+      "sourceProofFileSHA256",
+      "sourceRoot",
+      "trace"
+    ],
+    "fullProofSHA256": "39feead2b1d8c02bee38274dac5e67b10a95f2bb02a7ed1241042b32f06c9529",
+    "identity": {
+      "root": "koseki-532530@2",
+      "file": "engine-whole-koseki-532530@2.json",
+      "fileSHA256": "60e5b88dad2c24d554a64e4a8b881745f19c84e9c9784bfdf1177b4f87db4baf"
+    },
+    "arity": [
+      3,
+      4
+    ],
+    "originalCardinalGuardsDelegated": true,
+    "originalCompilerInvoked": false,
+    "sourceProofSchemaUnchanged": true
+  },
+  "sourceCheck": {
+    "invariantExecution": {
+      "executions": 1,
+      "exitCode": 1,
+      "positiveCachedPermutations": 1,
+      "negativeRejections": 30,
+      "nodeSyntaxChecks": 2,
+      "helperPythonASTChecks": 1,
+      "helperStaticGuardChecks": 1,
+      "helperProcessExitCode": 0,
+      "invariantAssertionsReachedFinalReporter": true,
+      "sourceCompiles": 0,
+      "originalCompilerInvocations": 0,
+      "engineRuns": 0,
+      "serverStarts": 0,
+      "HTTP": 0
+    },
+    "initialFailure": {
+      "stage": "final helper stdout reporter property assertion",
+      "requestedWrongField": "passed",
+      "actualHelperField": "staticGuards",
+      "expected": true,
+      "observed": "undefined",
+      "geometryOrStrictContractFailure": false
+    },
+    "reporterSchemaRecovery": {
+      "executions": 1,
+      "exitCode": 0,
+      "passed": true,
+      "scope": "actual final reporter field and pinned helper stdout schema only",
+      "actualHelperField": "staticGuards",
+      "cachedPermutationsRepeated": 0,
+      "negativeChecksRepeated": 0,
+      "helperGuardExecutionsRepeated": 0,
+      "ASTRepeated": 0,
+      "sourceCompiles": 0
+    },
+    "derivedSHA256": "4949c5c1070371f16c36013f90d9c65e94f9478dbb3da42f4688186f9d9c3367",
+    "baselineSHA256": "bb7c029614b4e3712a4741ac465d59b42d4c46162c9a7d2a14851a363b733fb9",
+    "allBoundaries": {
+      "4": [
+        0.2391773075284366
+      ],
+      "8": [
+        0.7846074189338144
+      ],
+      "15": [
+        0.874627941176784
+      ]
+    },
+    "sourceInvariantChecksPassed": true,
+    "initialCommandFailurePreserved": true
+  },
+  "componentOrderOnlyCandidateNotDomesticApproval": true,
+  "rootMustFreshReviewAll19Directions": true,
+  "prior715And1105HoldsPreserved": true,
+  "everyOriginalPenMaskPolygonGuideWidthWeightPreserved": true,
+  "originalSourceFilesChanged": false,
+  "newCoordinatesPathsWidthsGroupsAuthored": false,
+  "sourceCompiles": 0,
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "buildRun": false,
+  "gitRun": false,
+  "helperWordingCorrection": {
+    "requestedBy": "root after independent941 read-only audit blocker0",
+    "before": "새 획순·좌표·폭·연결선 없음",
+    "after": "원획 블록 순서만 재배치하며 새 좌표·폭·연결선 없음",
+    "scope": "display wording and helper self-pin only; source algorithm, fixture and derived SHA unchanged",
+    "sourceCompiles": 0,
+    "testsRepeated": 0,
+    "ASTRepeated": 0,
+    "helperGuardRepeated": 0
+  }
+}
