@@ -1,0 +1,117 @@
+{
+  "batch": 1254,
+  "glyph": "迅",
+  "status": "actual-held-runtime-absence-verified",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeAbsenceVerified": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1253-2026-10-19/resume.json",
+  "parentResumeSHA256": "a384e54999f8543430644a531a885e48cb6d26b949d7aeb466b7467d8727a4a7",
+  "parentActualConfirmed": true,
+  "parentActualRuntimeVerifierExecutions": 1,
+  "expectedRuntime": 5670,
+  "expectedRemaining": 308,
+  "historicalCanonicalHolds": 349,
+  "resolvedHistoricalCount": 106,
+  "activeHolds": 243,
+  "canonicalTargetMatches": 0,
+  "newHoldDelta": 1,
+  "focusedExecutions": 1,
+  "verifierSyntaxExecutions": 1,
+  "actualRuntimeAbsenceExecutions": 1,
+  "originalSourceAndNativePins": 30,
+  "inputPinBreakdown": {
+    "originalAndSharedInputs": 22,
+    "original75Files": 16,
+    "sharedDependencyFiles": 6,
+    "sourceExperimentFiles": 8,
+    "total": 30
+  },
+  "reviewSHA256": "6a4db09dbb68192110277d77326e654f6eee69dda179be959c3ee578f4376e7d",
+  "compiledSHA256": "780347f088e4ec9baeba17018b1c64c7be9538ffd5da3cd424d326968cd3d8e7",
+  "sourceCompilerExecutions": 0,
+  "engineRuns": 0,
+  "rootHelperStartupSourceCompiles": 0,
+  "serverLifecycle": {
+    "reportedBy": "/root",
+    "childPID": 74342,
+    "sessionId": 56702,
+    "port": 60106,
+    "childStopConfirmedByRoot": true,
+    "stopExitCode": 143,
+    "startupSourceCompiles": 0,
+    "requestSourceCompiles": 0,
+    "engineRuns": 0,
+    "wrapperIndependentlyVerified": false,
+    "startupAttempts": [
+      {
+        "target": "u8fc5",
+        "exitCode": 2,
+        "argumentParserRejected": true,
+        "serversStarted": 0,
+        "sourceCompiles": 0,
+        "engineRuns": 0
+      },
+      {
+        "target": "u8fc5-ue0102",
+        "serversStarted": 1,
+        "sourceCompiles": 0,
+        "engineRuns": 0
+      }
+    ]
+  },
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "actualRuntimeAbsenceScript": "import assert from 'node:assert/strict';\nimport {HANJA_STROKES,hanjaStrokeData} from './lib/hanja-strokes.ts';\nconst unique=new Set(HANJA_STROKES.map(x=>x.glyph));\nassert.equal(unique.size,5670);\nconst records=HANJA_STROKES.filter(x=>x.glyph==='迅');\nassert.equal(records.length,0);\nassert.equal(hanjaStrokeData({glyph:'迅',strokes:7}),null);\nconsole.log(JSON.stringify({batch:1254,glyph:'迅',passed:true,lookupNull:true,registryGlyphRecords:records.length,registryCount:unique.size,remaining:5978-unique.size,sourceCompilations:0,engineRuns:0,build:false}));\n",
+  "focusedVerification": {
+    "passed": true,
+    "exitCode": 0,
+    "executions": 1,
+    "result": {
+      "batch": 1254,
+      "glyph": "迅",
+      "passed": true,
+      "parentActual": true,
+      "sourcePins": 30,
+      "pinMismatches": 0,
+      "canonicalReferences": 311,
+      "canonicalTargetMatches": 0,
+      "newHoldDelta": 1,
+      "historical": 349,
+      "resolved": 106,
+      "active": 243,
+      "runtime": 5670,
+      "remaining": 308,
+      "sourceCompilations": 0,
+      "engineRuns": 0,
+      "native": false,
+      "runtimeRegistered": false,
+      "actualAbsencePendingRoot": true
+    }
+  },
+  "actualRuntimeAbsenceSyntax": {
+    "passed": true,
+    "exitCode": 0,
+    "executions": 1
+  },
+  "actualRuntimeAbsence": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "reportedBy": "/root",
+    "lookupNull": true,
+    "lookupStrokes": [
+      7
+    ],
+    "registryGlyphRecords": 0,
+    "registryCount": 5670,
+    "remaining": 308,
+    "sourceCompilations": 0,
+    "engineRuns": 0,
+    "build": false
+  }
+}
