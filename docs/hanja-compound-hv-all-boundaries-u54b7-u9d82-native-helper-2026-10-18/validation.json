@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "helper-static-guards-passed-native-review-pending",
+  "allowedTargets": [
+    "1101",
+    "1105"
+  ],
+  "delegateFolder": "../hanja-compound-terminal23-source-experiment-2026-10-18",
+  "delegateFilesSHA256": {
+    "README.md": "256ce3a3d331657f883412f58205d7643a2d61b87c1685b87bd285143464d7ed",
+    "cardinal-candidate.d.mts": "c8801787a2c30384b9d858bb5c993ee026e53c733f9210354a0fcb228cbaac0d",
+    "cardinal-candidate.mjs": "af346f51062ce002cd011937d594ffc440645eda7b8c4624e818b4ecd7eca618",
+    "config.json": "9feecee8878693af603ec118b86103141e36baa22484a0e6a6c980f4c324d12f",
+    "fixtures.json": "b07feb94ea493c30d9d1fec8697c59dd37a302a741361df064c1173f1434cb14",
+    "preparation.json": "8b9d8d4d5580d20d80363c4f512ef6e34b6ae610eced0648572702f14945051e",
+    "serve.py": "d87625776c8ade7f9781df246b7de4508b7e6cbabe582495245abf8cb7f61895",
+    "source-check.mjs": "f0c2ec182fc1028538d0b45d49e2e23c9a5172c5163b200cdb22fb9d5e37d9e6"
+  },
+  "replacementPairs": [
+    {
+      "old": "choices=list(CONFIG['targets']),default='1101'",
+      "new": "choices=['1101','1105'],default='1101'"
+    },
+    {
+      "old": "original=F['baseline'];strokes=F['strokes'];n=T['pen'];masks=strokes[n-1];boundary=masks[0]['weight']/sum(m['weight']for m in masks)",
+      "new": "original=F['baseline'];strokes=F['strokes'];n=T['pen'];boundaries=_all_boundaries(strokes)"
+    },
+    {
+      "old": "pen=int(q.get('stroke',[str(n)])[0]);assert 1<=pen<=T['pens']",
+      "new": "pen=int(q.get('stroke',[str(n)])[0]);assert 1<=pen<=T['pens'];boundary=boundaries.get(pen,[])"
+    },
+    {
+      "old": "body+='<p>목표 '+str(n)+'획 mask경계 '+repr(boundary)+'</p>'",
+      "new": "body+='<p>모든 복수mask 경계 '+html.escape(repr(boundaries))+'; 현재획 '+str(pen)+'</p>'"
+    },
+    {
+      "old": "body+=''.join('<button onclick=\"show('+repr(p)+')\">'+label+'</button>'for label,p in [('boundary-before',boundary-1e-10),('boundary-at',boundary),('boundary-after',boundary+1e-10)])",
+      "new": "body+=''.join('<button onclick=\"show('+repr(p)+')\">boundary'+str(j+1)+'-'+label+'</button>'for j,b in enumerate(boundary)for label,p in [('before',b-1e-10),('at',b),('after',b+1e-10)])"
+    }
+  ],
+  "ownFilesSHA256": {
+    "serve.py": "2b0c0eab514953d09b7a8254eb2a7ddca4f392b55d9434ba38e6342a89d5ee4e",
+    "README.md": "ebbac87f22063db7dc371df78eeeb80dd709dd0b04634011f94c6393a1abbcc3"
+  },
+  "selectedProofIdentities": {
+    "1101": {
+      "sourceRoot": "u54b7",
+      "sourceProofFile": "engine-whole-u54b7.json",
+      "sourceProofFileSha256": "5838467e596ba3b35196ec52f5c7bebe2a0f7f13d847f10d2d1ea70c3cb244d9",
+      "sourceHeaderFile": "engine-proof.json",
+      "sourceHeaderFileSha256": "5838467e596ba3b35196ec52f5c7bebe2a0f7f13d847f10d2d1ea70c3cb244d9"
+    },
+    "1105": {
+      "root": "koseki-532530@2",
+      "file": "engine-whole-koseki-532530@2.json",
+      "fileSHA256": "60e5b88dad2c24d554a64e4a8b881745f19c84e9c9784bfdf1177b4f87db4baf"
+    }
+  },
+  "fullProofSHA256": {
+    "1101": "2d0092b8e4d599450fb1e15d58ba75b3bea1389bd8758fd10ee147e57436ee1c",
+    "1105": "39feead2b1d8c02bee38274dac5e67b10a95f2bb02a7ed1241042b32f06c9529"
+  },
+  "preservation": {
+    "originalCapsuleChanged": false,
+    "selectedCompileIdentitiesChanged": false,
+    "compiledFixturesChanged": false,
+    "sourceGeometryChanged": false,
+    "originalFileAnchorPreserved": true,
+    "displayBoundaryUIOnly": true,
+    "requestGuardsIncludeOwnAndOriginal": true
+  },
+  "sourceCompiles": 0,
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "checks": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "targets": [
+      "1101",
+      "1105"
+    ],
+    "allBoundaries": {
+      "1101": {
+        "2": [
+          0.28311234154159987
+        ],
+        "7": [
+          0.8839649470915434
+        ]
+      },
+      "1105": {
+        "7": [
+          0.874627941176784
+        ],
+        "15": [
+          0.2391773075284366
+        ],
+        "19": [
+          0.7846074189338144
+        ]
+      }
+    },
+    "wrapperPythonAST": 1,
+    "transformedDelegatePythonAST": 1,
+    "staticGuardExecutions": 1,
+    "inMemoryPinDriftRejections": 2,
+    "delegatePins": 8,
+    "ownPins": 2,
+    "originalFileAnchorPreserved": true,
+    "requestGuardsIncludeOwnAndOriginal": true,
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "HTTP": 0,
+    "serverStarts": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  }
+}
