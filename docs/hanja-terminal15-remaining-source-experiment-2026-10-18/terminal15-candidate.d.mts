@@ -1,0 +1,11 @@
+import type{HanjaOutlineStrokes}from'../../lib/hanja-stroke-outline.ts'
+export type SelectedProofIdentity={"root":"u66ac","file":"engine-whole-u66ac.json","fileSHA256":"1dec3c07d2435d6d2eb07f492773618888088fc23460c1621089575f5513ad0d"}|{"root":"u683b","file":"engine-whole-u683b.json","fileSHA256":"d698d16e62ee24b919ef12d9e514df600c1521eff429de1351e6e88870b05800"}|{"root":"u7f6d","file":"engine-whole-u7f6d.json","fileSHA256":"0e917612e555134f9338d419ad13985eaf649baaa220c5ed68ff187900ce1fe3"}|{"root":"u68eb","file":"engine-whole-u68eb.json","fileSHA256":"dfdba14652e6e30e03069c7422d107ff26258cedbd2a075f1e0b0733312fb352"}|{"root":"u6de2","file":"engine-whole-u6de2.json","fileSHA256":"f44db42866fd8f59f7205d3e7a1f3afc3e434837f63318b4d06e92b4ab6c5cbc"}|{"root":"u7dce","file":"engine-whole-u7dce.json","fileSHA256":"21ae8eb861ab37e03a56f067d3b958ae7fafe72a36334d92c9242163aa49ad11"}|{"sourceRoot":"u8337-k","sourceProofFile":"./engine-whole-u8337-k.json","sourceProofFileSHA256":"a4ad5aefc57b0d01147b4172db038a25a93596ff80b18cb49a07766da4f8738d","sourceHeaderFile":"./engine-proof.json","sourceHeaderFileSHA256":"076ad58e25b82730a854e0b1f6e13aabdc4617362eada69cadf118ce428724bb"}
+export interface Full5Proof{readonly engineRevision:string;readonly engineHashes:Readonly<Record<string,string>>;readonly groups:readonly unknown[];readonly trace:readonly(readonly unknown[])[];readonly defaults:Readonly<Record<string,unknown>>}
+export declare const nativeApproval:false,runtimeApplied:false
+export declare function compileProgressive(trace:readonly unknown[],proof:Full5Proof,identity:SelectedProofIdentity):HanjaOutlineStrokes
+export declare function compileSourceWhole(root:string,trace:readonly unknown[],proof:Full5Proof,identity:SelectedProofIdentity):HanjaOutlineStrokes
+export declare function sourceCompileCallCount(key:string):number
+export declare function lastCompilation(key:string):{baseline:HanjaOutlineStrokes;strokes:HanjaOutlineStrokes;tail:{polygon:readonly unknown[];jump:number}}|undefined
+export declare function fixedTargets():Readonly<Record<string,unknown>>
+export declare function guards():void
+export declare function renderProgressive(strokes:HanjaOutlineStrokes,stroke:number,progress:number,prefix?:string):string
