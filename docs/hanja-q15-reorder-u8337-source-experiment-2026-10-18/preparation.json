@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-cached-wholepen-permutation-guards-passed-native-pending",
+  "configSHA256": "bf085bacb3e50ec8e1e1a58da3f99da187b266c660b7b7d2e82578eccfd985dc",
+  "newFilesSHA256": {
+    "README.md": "266bec754fe21a31483868cd6bdd5552b78b0862127f60dfac2bf713ee315b70",
+    "config.json": "bf085bacb3e50ec8e1e1a58da3f99da187b266c660b7b7d2e82578eccfd985dc",
+    "reorder-candidate.mjs": "db9e5cf093c058caea77952605b0ac45afeceecdf412bc1bd8ea5560a271692e",
+    "reorder-candidate.d.mts": "823343f3687aa8b8a7a74d1d3c9ab90115757ad92ddc099659bada89b4de887b",
+    "source-check.mjs": "0c9233f7bf482738ea8bb4b0155364f79e68cf5c349a3238d968ff5e5abf38d6",
+    "serve.py": "4545be78a81ad2ae43594be110634176dbe79d7c7af499a22a056dcb5c68c8d7",
+    "fixtures.json": "395b56e1cbfffec305337e7f978aa2fd15510e70f2a39d3c4ff621998c5fdf61"
+  },
+  "originalSourcePins": 33,
+  "Q7LabPins": 8,
+  "uniqueInputPins": 41,
+  "allBoundaryHelperDependency": false,
+  "originalPenOrder": [
+    1,
+    2,
+    4,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "baselineSourceBeforeQ15SHA256": "e4266db3493a47cebb274319914849d031d0c0696d59b8239c40d372c03ede1a",
+  "baselineQ7CandidateSHA256": "e5d28cf49259607467dca1923daefeecfe1e3fd707cf615f58ac581fde63f2c2",
+  "expectedCompiledSHA256": "fd55c427508bff07dfa4ee72ad09439fd471dac47e1098f2c03976782aa64e04",
+  "pens": 10,
+  "masks": 11,
+  "polygons": 25,
+  "sourceCompiles": 0,
+  "originalLegacy3Delegations": 0,
+  "engineRuns": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "sourceCheck": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "positiveCachedPermutations": 1,
+    "negativeRejections": 32,
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "pens": 10,
+    "masks": 11,
+    "polygons": 25,
+    "baselineSHA256": "e5d28cf49259607467dca1923daefeecfe1e3fd707cf615f58ac581fde63f2c2",
+    "derivedSHA256": "fd55c427508bff07dfa4ee72ad09439fd471dac47e1098f2c03976782aa64e04",
+    "originalAndQ7Pins": 41,
+    "wholePensExactReferencePermutation": true,
+    "Q15Pen8Unchanged": true,
+    "allBoundaries": {
+      "8": [
+        0.8427380804869272
+      ]
+    },
+    "nodeSyntaxChecks": 2,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "serverStarts": 0,
+    "HTTP": 0
+  },
+  "allMultiMaskBoundaries": {
+    "8": [
+      0.8427380804869272
+    ]
+  },
+  "everyOriginalPenMaskPolygonGuideWidthWeightPreserved": true,
+  "originalSourceFilesChanged": false,
+  "newCoordinatesPathsWidthsGroupsAuthored": false,
+  "nativeDirectionsReviewedThisCandidate": 0,
+  "nativeCoarseReviewedThisCandidate": 0,
+  "nativeFineReviewedThisCandidate": 0,
+  "rootFreshApprovalRequired": true,
+  "strictProof": {
+    "keys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "identity": {
+      "sourceRoot": "u8337-k",
+      "sourceProofFile": "./engine-whole-u8337-k.json",
+      "sourceProofFileSHA256": "a4ad5aefc57b0d01147b4172db038a25a93596ff80b18cb49a07766da4f8738d",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSHA256": "076ad58e25b82730a854e0b1f6e13aabdc4617362eada69cadf118ce428724bb"
+    },
+    "originalLegacy3Identity": {
+      "sourceRoot": "u8337-k",
+      "sourceProofFile": "./engine-whole-u8337-k.json",
+      "sourceProofFileSha256": "a4ad5aefc57b0d01147b4172db038a25a93596ff80b18cb49a07766da4f8738d",
+      "sourceHeaderFile": "./engine-proof.json",
+      "sourceHeaderFileSha256": "076ad58e25b82730a854e0b1f6e13aabdc4617362eada69cadf118ce428724bb"
+    },
+    "fullProofSHA256": "002f27932f32230d17bcf8f9d711df57f021273d4bb62dd385e7f38196ca2b0d",
+    "arity": [
+      3,
+      4
+    ],
+    "headerBodyComparisonKeys": [
+      "engineRevision",
+      "engineHashes",
+      "defaults"
+    ],
+    "headerGroupsTraceSameAsSelected": false,
+    "legacy3Delegations": 0
+  }
+}
