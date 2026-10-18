@@ -1,0 +1,369 @@
+{
+  "batch": 1260,
+  "glyph": "泂",
+  "date": "2026-10-19",
+  "nativeApproval": true,
+  "orderVerified": true,
+  "geometryVerified": true,
+  "directionsVerified": true,
+  "selectedWhole": "u6cc2",
+  "selectedWholeNumericVersionKnown": false,
+  "whole": {
+    "observed": 1,
+    "selectedCompatible": true,
+    "otherWholeApproved": false,
+    "actualSVGs": 3,
+    "actualSVGWidth": 520
+  },
+  "directions": {
+    "observed": 8,
+    "totalPassed": 8,
+    "identityOrder": true,
+    "actualSVGs": 3,
+    "actualSVGWidth": 520
+  },
+  "fine": {
+    "passedPens": [
+      5,
+      6,
+      7,
+      3
+    ],
+    "fromPercent": 99.99,
+    "toPercent": 100,
+    "passed": true,
+    "actualSVGs": 3,
+    "actualSVGWidth": 520
+  },
+  "coarse": {
+    "pens": 8,
+    "framesPerPen": 9,
+    "candidateFrames": 72,
+    "baselineFrames": 72,
+    "eachSVGWidth": 220,
+    "passed": true,
+    "baselineIndependentNativeEvidence": false,
+    "baselineAndCandidateSameGeometry": true
+  },
+  "maskBoundaries": [
+    {
+      "pen": 3,
+      "at": 0.38462924553987965,
+      "beforeAtAfter": true,
+      "zeroPercent": true,
+      "epsilonPercent": 0.0001,
+      "at95": true,
+      "passed": true,
+      "actualSVGs": 3,
+      "actualSVGWidth": 520
+    },
+    {
+      "pen": 5,
+      "at": 0.9328313436534442,
+      "beforeAtAfter": true,
+      "zeroPercent": true,
+      "epsilonPercent": 0.0001,
+      "at95": true,
+      "passed": true,
+      "actualSVGs": 3,
+      "actualSVGWidth": 520
+    }
+  ],
+  "actualReplay": [
+    {
+      "pen": 3,
+      "startTextPercent": 3.1525,
+      "endPercent": 100,
+      "seconds": 8,
+      "passed": true,
+      "actualSVGs": 3,
+      "actualSVGWidth": 520
+    },
+    {
+      "pen": 5,
+      "startTextPercent": 2.57625,
+      "endPercent": 100,
+      "seconds": 8,
+      "passed": true,
+      "actualSVGs": 3,
+      "actualSVGWidth": 520
+    }
+  ],
+  "pens": 8,
+  "masks": 10,
+  "polygons": 19,
+  "compiledSHA256": "7029b3124fae7fd0af393dfcfcf92e9c60415ef33a019d00ee9abe2ad5ae0d18",
+  "sourceContract": {
+    "originalHeaderKeys": [
+      "defaults",
+      "engineRevision",
+      "groups",
+      "hashes"
+    ],
+    "proofKeys": [
+      "defaults",
+      "engineRevision",
+      "groups",
+      "hashes",
+      "trace"
+    ],
+    "fullProofSHA256": "3a8f54b4b64569af277d46f6cb0542251825a1176b6efa04f1fff165461068c3",
+    "identity": {
+      "root": "u6cc2",
+      "headerFile": "../hanja-goal-glyphwiki-batch137-2026-09-27/engine-proof.json",
+      "headerFileSHA256": "2f484eb154bad48659c383270d44f989d7fb3eee03e2bcc953dfee4852d4672a",
+      "traceFile": "../hanja-goal-glyphwiki-batch137-2026-09-27/draw-trace.json",
+      "traceFileSHA256": "6b45c228d0979da19c27794043cbb99e9d1a589f15d2941ba40e61e02e5b4c07",
+      "sourceFile": "../hanja-goal-glyphwiki-batch137-2026-09-27/sources.json",
+      "sourceFileSHA256": "b39d2db300b2ee2ea88751bcbd15b7c345ea88bac33ec2f1a5e84a21abfd8afc"
+    },
+    "externalMandatoryArguments": [
+      3,
+      4
+    ],
+    "newHeader4PlusSeparateTraceCapsule": true,
+    "archiveFull5WholeIdentity": false,
+    "originalHashesSpellingPreserved": true,
+    "sourceFamilyRecords": 5,
+    "missing": [],
+    "archiveOnly": true,
+    "currentAlternativeUsed": false,
+    "currentAlternativeFilesPinnedForPreservationOnly": true,
+    "newCurrentSource": false,
+    "originalSourceUnchanged": true
+  },
+  "baselineComparison": {
+    "sameLogicalGroupsAndSameSourceCache": true,
+    "baselineAndCandidateSameGeometry": true,
+    "baselineIndependentNativeEvidence": false
+  },
+  "modifications": "고정archive baseu6cc2 원11raw/12calls/19polygon·좌표·flags·outline union·원guide·폭·bodyweight·순서를보존합니다. 원factory9mask의raw2Q/raw3Q를논리물3획독립sequence로묶어pre-tail8p9mask로표시하되gap[-4.1,-34]/34.246313670233185는그대로이고connector/합성trajectory/새좌표·폭0입니다. 같은pre-tail baseline의5획raw5H/raw6LQ 마지막flags1/114 원quad하나만기존7e0649kernel/derive2802 byte동일LEFT width6/jump18/weight9로분리해8p10m19를만듭니다. bodybounds[40.5,10.5,92.95,93]·guide·폭14·weight·direction/다른7획은불변이고19polygon exact-once이며tailweight9추가에따른상대시간변화가있으므로전체weight불변은주장하지않습니다. 원6V13/7HV23은교정0이며rootfreshfine6/7PASS만기록합니다. archive5records만선택하며currentalternative와alias자료는보존핀만추적하고결합하지않습니다. 원hashes header4+별도trace를새full5/id7 ../uppercaseSHA256·필수3/4로결박하고archiveFull5WholeIdentityfalse/factory8067→8061단일engineHashes→hashes assert적응을명시합니다. 원137정적8방향·누적완성/progressive0/HOLD/source/nativefalse는불변이고원NOTICE부재를보존하며새라이선스검증은주장하지않습니다. 현재canonical0으로추가/해제0입니다. Rootfresh선택whole1/전8방향/fine[5,6,7,3]/coarse72+72/3·5모든경계/자연3·5각8초만승인합니다. 중앙은같은새logical pre-tail표시로독립과거승인baseline증거가아닙니다. source기하1→publicpre선저장/같은baselineLEFTderive1→publicfinal선저장/positive1negative39·Node2PythonAST1guard1최초PASS와runtime source/fixture/derive/engine0을분리합니다.",
+  "sourceCaptureHistory": {
+    "source": "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs",
+    "originalBodyBytes": 8067,
+    "originalBodySHA256": "4ea61b5e0ba522559dd0c5ef42a24cae29159a79ea4e38ff56a836a25d713355",
+    "bodyByteExact": false,
+    "onlyAdaptation": {
+      "from": "assert.deepEqual(proof.engineHashes, ENGINE_HASHES)",
+      "to": "assert.deepEqual(proof.hashes, ENGINE_HASHES)"
+    },
+    "adaptedBodyBytes": 8061,
+    "adaptedBodySHA256": "ac1ade0ff171c21ba0f260cde1cea7bd3e864cda98448651bbb366fa5798fc15",
+    "sourceGeometryExecutions": 1,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "factoryPens": 9,
+    "preTailPens": 8,
+    "preTailMasks": 9,
+    "independentRefRegroupInsideCapture": 1,
+    "publicBaselineSavedBeforeTailDerive": true,
+    "sourceChecks": {
+      "status": "passed",
+      "executions": 1,
+      "exitCode": 0,
+      "cachedPositive": 1,
+      "negative": 39,
+      "sourceGeometryGenerations": 0,
+      "tailDerivations": 0,
+      "engineRuns": 0,
+      "nodeSyntax": 2,
+      "pythonAST": 1,
+      "helperStaticGuard": 1,
+      "allPassedFirstAttempt": true,
+      "checksRepeated": false
+    },
+    "toolingHistory": {
+      "sourceGeometryTotal": 1,
+      "tailDerivationsTotal": 1,
+      "engineRuns": 0,
+      "publicBaselineSavedBeforeDerive": true,
+      "publicFinalSavedBeforeChecks": true,
+      "sourceGeometryRepeated": 0
+    },
+    "sourceExperimentCommit": "8f7d09a99ef1e4e881aa5e5a0a99507ddf03d950"
+  },
+  "priorNativeHistory": {
+    "all8DomesticStaticDirectionsObserved": true,
+    "cumulativeAndWholeObserved": true,
+    "progressiveReviewNotRun": true,
+    "old137HoldUnchanged": true,
+    "currentFreshApproval": false
+  },
+  "canonicalDisposition": {
+    "targetMatches": 0,
+    "targetRecordType": null,
+    "newCanonicalHolds": 0,
+    "resolutionAfterRegistrationOnly": false
+  },
+  "immutableFilesSHA256": {
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/README.md": "1e6dc9dc0061ad12bf3ff453a986801d2aed793ac58af2f47d8f9ac06c60a8bd",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/coverage.json": "517d0dc4d41e69fdf710b22dae60a83a171b31d490a60ffed599ef915de32164",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/current-draw-trace.json": "e070c57df7e2d9e18a1aeb2ca96c5068fec6637eeb5990adad0b24babd506875",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/current-engine-proof.json": "d9720858ced7dd2769a5217251eb9ca483d6276124c21dabb592894918bd3a1c",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/current-source-alternative.json": "8bce890a1d9f6fad4f07e96f6f9d24ff0d90416a5e293f531750432d16d25acc",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/draw-trace.json": "6b45c228d0979da19c27794043cbb99e9d1a589f15d2941ba40e61e02e5b4c07",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/engine-proof.json": "2f484eb154bad48659c383270d44f989d7fb3eee03e2bcc953dfee4852d4672a",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/findings.json": "b7aa8af998e2ef155f3ce1f5a003282c9c344e713d021a864e334d66755db53c",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/jev-input.json": "3ea10cdc2af8c4a6ce37ec0eb0b1a9513d19cd3b5b327d0c47607aefcba6abba",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/jev-review.json": "2819d00dffbdff69c92ada07d8d0e4fed15999285df48726d58d692428b75dbd",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/metadata.json": "f2b3917260cbd4b35568cba7ddadf650f75ff2defdcfb9932a74a974f440243e",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/next.json": "d5d64cad27f2c22acf6886f12c52d43013027f73dad811613d54e21350751f1d",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/serve.py": "4680822390f6be47914cc1ff154364254d6b6903090afc41b7f50adbefb9bab3",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/sources.json": "b39d2db300b2ee2ea88751bcbd15b7c345ea88bac33ec2f1a5e84a21abfd8afc",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/validation.json": "77ba5e0fdb87b37621b99ff48d103b7e08588accdf46c747b76fa8708d064891",
+    "docs/hanja-goal-glyphwiki-batch137-2026-09-27/verify.mjs": "adf14ff361eda60f0a701bc98ab5e1f82a7504748e752602944a48d7e6ff02c8",
+    "docs/hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/tail-candidate.mjs": "abd4e5011d011e463e52069248b9d73831df9d7f4ee79361b22194c9f9721de5",
+    "docs/hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs": "25b9a23cdf644798a7336df3f78b72ecc3c4ad10d0fbe860b403a38911e514f6",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "docs/hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "docs/hanja-source-independent-qq-left-u6cc2-source-experiment-2026-10-19/README.md": "54afa6b75c606508eaea077138056495c419379f31dc7e092129b19a1701e697",
+    "docs/hanja-source-independent-qq-left-u6cc2-source-experiment-2026-10-19/candidate.d.mts": "f80681f6b1af73d4078dc1a4d455736f00dc237c405f2df17fea1dc73ee9bda4",
+    "docs/hanja-source-independent-qq-left-u6cc2-source-experiment-2026-10-19/candidate.mjs": "a07b6d1f87b517ba2c79f43333406c2fc3eadfebf7072c37dfb1c67366460ea5",
+    "docs/hanja-source-independent-qq-left-u6cc2-source-experiment-2026-10-19/config.json": "3793a0ab281d9e479db53182aaa09147cd5ba66130ce5a5836e52a52b56b2da1",
+    "docs/hanja-source-independent-qq-left-u6cc2-source-experiment-2026-10-19/fixtures.json": "601ea19c6e755e413b1298d2a06e5c09ea438dc8e03443fc1f4c261ff5605395",
+    "docs/hanja-source-independent-qq-left-u6cc2-source-experiment-2026-10-19/preparation.json": "7011af2ad0707dd1cc35027ea9bba434123e8750cca4365d188a0feaa9df8779",
+    "docs/hanja-source-independent-qq-left-u6cc2-source-experiment-2026-10-19/serve.py": "18aded938b9c472fd767490478a67a9fd0d8063195e755e6c3df50450d95c0b4",
+    "docs/hanja-source-independent-qq-left-u6cc2-source-experiment-2026-10-19/source-check.mjs": "67e6e2f900c857051c092fa9205ab8c7c72067a4d11623471f6e6ca039d6526e"
+  },
+  "sourceRecords": 5,
+  "wholeRoots": 1,
+  "providers": 0,
+  "sourceChecks": {
+    "status": "passed",
+    "executions": 1,
+    "exitCode": 0,
+    "cachedPositive": 1,
+    "negative": 39,
+    "sourceGeometryGenerations": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "nodeSyntax": 2,
+    "pythonAST": 1,
+    "helperStaticGuard": 1,
+    "allPassedFirstAttempt": true,
+    "checksRepeated": false
+  },
+  "originalSourceFilesChanged": false,
+  "originalCaptureNOTICESHA256": null,
+  "nativeHelperCompilationAccounting": {
+    "startupSourceCompiles": 0,
+    "requestSourceCompiles": 0,
+    "engineRuns": 0
+  },
+  "serverStopped": true,
+  "rootReportedServerReference": {
+    "childPID": 7891,
+    "sessionId": 80750,
+    "port": 56591,
+    "stopped": true,
+    "exitCode": 143
+  },
+  "appUIAutoplayVerifiedThisBatch": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "wholeRootEvidence": "selected source.root only; alternative/alias not independent whole approval",
+  "providerRecordField": null,
+  "originalCaptureNOTICEExists": false,
+  "tailPolicy": {
+    "partitionRuns": 1,
+    "sourceGeometryDuringDerive": 0,
+    "newTailGeometry": false,
+    "originalQuadOnly": true
+  },
+  "snapshot": {
+    "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+    "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c",
+    "snapshotCommitDate": "2016-05-02T21:53:32Z",
+    "bytes": 63801771,
+    "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+    "entries": 438759,
+    "selectedArchiveRecords": 5,
+    "currentAlternativeUsed": false,
+    "newAPIFetches": 0,
+    "notLatestLiveClaim": true
+  },
+  "independentMaskPolicy": {
+    "pen": 3,
+    "raw": [
+      2,
+      3
+    ],
+    "end": [
+      38.9,
+      184
+    ],
+    "start": [
+      34.8,
+      150
+    ],
+    "delta": [
+      -4.100000000000001,
+      -34
+    ],
+    "gap": 34.246313670233185,
+    "trajectoryConcatenation": false,
+    "connector": false,
+    "newCoordinates": false
+  },
+  "unmodifiedTerminalRisks": [
+    {
+      "pen": 6,
+      "raw": 7,
+      "flags": [
+        12,
+        13
+      ],
+      "correctionAdded": false
+    },
+    {
+      "pen": 7,
+      "raw": 9,
+      "flags": [
+        22,
+        23
+      ],
+      "correctionAdded": false
+    }
+  ],
+  "unmodifiedTerminalNativeEvidence": {
+    "pens": [
+      6,
+      7
+    ],
+    "correctionsAdded": 0,
+    "freshFinePassed": true,
+    "positiveAreaCompletionStampObserved": false
+  },
+  "existingLeft": {
+    "source": "../hanja-terminal-tail-left-source-experiment-2026-10-18/tail-candidate.mjs",
+    "kernelBytes": 1691,
+    "kernelSHA256": "7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08",
+    "deriveBytes": 1302,
+    "deriveSHA256": "2802b789ebee4fe2f9af3903f71f26f2a9609dced9171e87ecf63aba342a8657",
+    "exactKernelAndPartitionBytes": true,
+    "raw": 6,
+    "call": 1,
+    "pen": 5,
+    "flags": [
+      1,
+      114
+    ],
+    "width": 6,
+    "jump": 18,
+    "tailWeight": 9,
+    "originalQuadExact": true,
+    "bodyBoundsUnchanged": [
+      40.5,
+      10.5,
+      92.95,
+      93
+    ],
+    "bodyGuideWidthWeightDirectionUnchanged": true,
+    "other7PensUnchanged": true,
+    "cachedDerivations": 1,
+    "sourceGeometryDuringDerive": 0,
+    "candidateSavedBeforeChecks": true
+  }
+}
