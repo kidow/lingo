@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only exact raw10H/raw11Q unmerge and helper guards verified",
+  "configSHA256": "67573f7009740b400be5637f68a504fd9bd941ddce29fbf1c6245bb494f840d8",
+  "newFilesSHA256": {
+    "README.md": "ec51f9888908e928e2fd203ec078ddf39deecd2aa70a7c09f8c90ea9ceeec2d0",
+    "config.json": "67573f7009740b400be5637f68a504fd9bd941ddce29fbf1c6245bb494f840d8",
+    "unmerge-candidate.mjs": "f3522cdcb07438bc33ad16caa7217b7af32433211e12a6511d6379aec8ad21ce",
+    "unmerge-candidate.d.mts": "942c9fca6ff9a3014c6d211c83a4bd5719c17a93eb43db8f6ffdf40b2f90ed0b",
+    "source-check.mjs": "6f6e26b3f7e42df61435fb02ca661e48cb1ebd6ad43bf1b12e24bbe385b7f204",
+    "serve.py": "24b9e526d40548df10f0ab7078de5cf6d7f08377fc04150bc9304aaca908c202",
+    "fixtures.json": "4472b99aac9036b6ba10668dc51a0928f90cc2b0adc0083b6240d19ad44b1236"
+  },
+  "inputPins": 37,
+  "expectedRuntimePinsIncludingNew8": 45,
+  "selectedWhole": "u7be0-k",
+  "identity": {
+    "sourceRoot": "u7be0-k",
+    "sourceProofFile": "../hanja-remaining-seven-sources-2026-10-17/engine-whole-u7be0-k.json",
+    "sourceProofFileSha256": "6e9a9b8751722d9bde3c6be4d9b0f3ab3bdee004629058b0dc0941ab6e47c800",
+    "sourceCapsuleFile": "../hanja-remaining-seven-sources-2026-10-17/u7be0-sources.json",
+    "sourceCapsuleFileSha256": "dab465d0ba7c5e3b34722987e035c17f04eb21a3b53474ed4e5a5c14ea2bd727",
+    "sourceChecksFile": "../hanja-remaining-seven-sources-2026-10-17/source-checks.json",
+    "sourceChecksFileSha256": "b1f8f691f84df20be4439a5c241734f9225cd2292db4c2948b840488d087fc72"
+  },
+  "fullProofSHA256": "92b213fa7b7a634841ee5ca24b55982aa775cda74446e2931a3f4048e53ff096",
+  "catalogStrokes": 16,
+  "domesticPlaybackStrokes": 17,
+  "originalGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ]
+  ],
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ]
+  ],
+  "baselineSHA256": "e964e3fb454ff863a9300944d6a6eb94e0666ea2c5e3c39267cb77801e14a987",
+  "derivedSHA256": "fe519115e57ffb9a9ee67acbde6cd10bda4a29072046cac99a6cb1b8390b74f9",
+  "pens": 17,
+  "masks": 17,
+  "polygons": 36,
+  "unmergedRawZeroBased": [
+    10,
+    11
+  ],
+  "exactSourceEndpoint": [
+    158.715,
+    70.31750000000001
+  ],
+  "gap": 0,
+  "originalRawPolygonCounts": [
+    1,
+    2
+  ],
+  "everyOriginalPolygonExactlyOnce": true,
+  "originalPolygonCoordinatesOrderPreserved": true,
+  "other15PensExactlyUnchanged": true,
+  "originalCombinedGuideStoredInBaseline": true,
+  "newDefinition": "원 H/Q 단독 pieces를 독립2획으로 복원; old16/new17의 중간prefix 차이는 의도한 분리",
+  "newAuthoredCoordinatesPathsWidthsConnectors": false,
+  "rawGuideSerializationCopiedFromOriginal": true,
+  "kernel": {
+    "scope": "const segment through before const outlines; segment/tails/compile factory exact bytes",
+    "bytes": 5376,
+    "sha256": "043a7a55e64661cdedbe44105baef9e5d152345188d9946a0e67db12441575cc",
+    "originalFile": "docs/hanja-remaining-source-prep-u7be0-2026-10-18/progressive.mjs",
+    "byteIdentical": true
+  },
+  "sourceCheck": {
+    "passed": true,
+    "executions": 1,
+    "cachedPositive": 1,
+    "negativeRejections": 29,
+    "exitCode": 0,
+    "sourceCompilations": 0,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "nodeSyntaxChecks": 2,
+    "nodeSyntaxExecutionsEach": 1,
+    "helperASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "helperStaticGuardExitCode": 0
+  },
+  "capture": {
+    "newSourceCompilations": 1,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "executions": 1,
+    "exitCode": 0,
+    "publicFixtureSavedBeforeExternalAssertions": true,
+    "preExistingOriginalBaselineSHA256": "e964e3fb454ff863a9300944d6a6eb94e0666ea2c5e3c39267cb77801e14a987",
+    "reverseRecombinedBaselineMatches": true
+  },
+  "allMultiMaskBoundaries": {},
+  "finePriority": [
+    1,
+    3,
+    4,
+    6,
+    7,
+    10,
+    12,
+    13,
+    16,
+    17
+  ],
+  "directionPriorities": {
+    "pen6": "竹 Q down-right flags7/8",
+    "pen15": "木 V flags0/0 straightdown"
+  },
+  "sourceFamily": {
+    "records": 20,
+    "wholeRoots": 7,
+    "providers": 4
+  },
+  "nativeApproval": false,
+  "nativeReviewCount": 0,
+  "runtimeApplied": false,
+  "catalogEdited": false,
+  "registryEdited": false,
+  "variantAllowlistEdited": false,
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "helperCache": {
+    "startupSourceCompiles": 0,
+    "requestSourceCompiles": 0,
+    "allMaskBoundariesDynamic": true,
+    "baselineStrokeMapping": "candidate11/12 both map baseline11; later pens minus1",
+    "helperFixtureKey": "T.root",
+    "nativeBrowserNotStarted": true
+  },
+  "declarationCorrection": {
+    "initialMissingObjectBraces": true,
+    "foundBy": "independent-read-only-audit",
+    "changedOnly": [
+      "unmerge-candidate.d.mts",
+      "preparation.json selfpin"
+    ],
+    "geometryModuleFixtureUnchanged": true,
+    "sourceChecksRepeated": 0,
+    "typeSyntaxPending": false,
+    "targetedDeclarationParseExecutions": 1,
+    "parseDiagnostics": 0,
+    "fullTypecheck": false
+  }
+}
