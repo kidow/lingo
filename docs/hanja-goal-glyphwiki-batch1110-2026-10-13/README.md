@@ -1,0 +1,9 @@
+# 栵 — batch1110 reviewed runtime
+
+Root independently approved the only captured whole u6835, all10compiled directions,90coarse frames, actual520 fine[3,4,6,7,8,10] at99.99→100, pen10 mask boundary.8944435819312239 before/at/after plus95%, and natural pen10 replay2.6450→100.0000%. Source-only flags remain historicalfalse; app autoplay UI was not tested.
+
+The existing current compiler preserves10pens11masks22originalpolygons, original raw11 terminal14 left-tail separation and raw4 metadata-only empty command. No geometry, coordinate, path, width, direction, weight, order or mask was authored. Original full5 and exact unprefixed root/file/fileSHA256 identity3 retain mandatory3/4 arguments. Manifest has5records/1whole/0providers. All27current/shared pins and old536 source/evidence are preserved.
+
+Public fixture captured by the original strict caller once(positive1/rejections17), then held in RAM; additional fixture/source compiles0 and engine/HTTP0. Two NodeRepl setup errors occurred before any child invocation(process global absent; restricted process import); neither compiled anything. Root confirmed matching child56050 SIGTERM atport58083;wrapper56049 autoexit is expected, not independently checked.
+
+Parent1109 cccd0fa453267ff0b0e22928b5bfb64cbdf883326fc46c771d8450b1e7465be2 actual5561/417 historical335/resolved9/active326. Authoritative root verifier passed once: actual1110 is5562/416 historical335/resolved10/active325, recovering old536栵 once. Canonical167references/target1; original27pins mismatch0. Both resolution arrays refer to the same recovery and must be union-deduplicated. Compact omission is not deletion. Focused3/3 and verifier syntax each passed once; no positive source compile in these checks. Root registry verification exited0 once; metadata finalized without rerunning tests or compiler. No build/fullsuite. Next1111苓9.
