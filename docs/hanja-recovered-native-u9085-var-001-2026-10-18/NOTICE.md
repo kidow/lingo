@@ -1,0 +1,19 @@
+# 邅 recovered direct whole variant — notice
+
+GlyphWiki Project and contributors. LicenseRef-GlyphWiki; not CC0.
+
+Pinned archive: https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt
+
+Archive SHA256 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62. Recovery license ../hanja-remaining-five-source-recovery-2026-10-17/archive-LICENSE.txt SHA256 abe789645f228e14d2e117769487cad0860f32e2a0b151c2ad8ef43843f5eec8.
+
+License URL: https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/LICENSE.txt
+
+Actual Japanese data-license original fixed revision: https://glyphwiki.org/wiki/GlyphWiki:%E3%83%87%E3%83%BC%E3%82%BF%E3%83%BB%E8%A8%98%E4%BA%8B%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9@18
+
+This candidate references only the immutable complete archive-recovered-u9085-var-001 closure, with the absent dependency separately supplied from public u56de-j@2. It is a fixed mixed-date source, not proof of the original archive dependency identity. No API revision number is invented for this archived direct whole, no component is relabeled as a whole, and no VS2/base/current variant is substituted.
+
+Whole proof, source capsule and manifest identities remain explicit. Existing primitive compile/render utilities serialize every original polygon vertex at the existing scale, with cyclic/reverse normalization only. All original trajectories, widths and source rows remain preserved. Source groups and progressive replay remain provisional, not Korean exam-body stroke-order approval. No private domestic graphic or credential is included.
+
+## 2026-10-18 native helper 준비
+
+원고정whole/proof/capsule/manifest·원7source·기존native3바이트는변경하지않습니다. 새helper는원renderProgressive와원RAM국내renderer만사용하며private SVG/이미지를저장하지않습니다. 이준비는native/시험기관/runtime승인이아닙니다. 엔진실행0·현재sourcecompile0·향후root startup1/GET0을구분합니다.
