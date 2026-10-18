@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-original-tail-invariants-checked-harness-and-realm-recovered-native-unreviewed",
+  "configSHA256": "188bfdb4fea4cbd7a03d7d07e6606db3b3ced8809980c0fef9c3a0a6d17c1b4f",
+  "newFilesSHA256": {
+    "README.md": "bb75db4ef746b8d06a9545c5f47c72bfd0e35809591324d1204a315402a8373f",
+    "config.json": "188bfdb4fea4cbd7a03d7d07e6606db3b3ced8809980c0fef9c3a0a6d17c1b4f",
+    "tail-candidate.mjs": "6fb5ad97e6d3bc068f6b86108f3e7e3124b6d01e4e991708f260ed78ec82ecd1",
+    "tail-candidate.d.mts": "49face71050d53905bedbffaea5b91781af531a8aff2994631cf3a47e76853f0",
+    "source-check.mjs": "3f6402969e1cdbaba76a230a0a0a99b126f43d1d9b0df90ed7c06ded7d1ecb9c",
+    "serve.py": "7f374c080c616140dce029e2ebee50746cd5f7e996b59d52b6490de7f241c7af",
+    "fixtures.json": "4f301bcf1d5ec39e77f366847a5b449c7949a309d059c08d5bc0e7be46c61d59"
+  },
+  "existingPrimitive": {
+    "source": "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs",
+    "sourceModuleSHA256": "25b9a23cdf644798a7336df3f78b72ecc3c4ad10d0fbe860b403a38911e514f6",
+    "upAndLeftFunctionBytesSHA256": "7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08",
+    "pointCode": "const point = (x, y) => ({ x: Math.floor(x * 10) / 10, y: Math.floor(y * 10) / 10, off: 0 })",
+    "functionsCopiedWithoutModification": true,
+    "newFormulaOrTrajectory": false
+  },
+  "sourceEngineReplayKnown": false,
+  "sourceVerified": null,
+  "oldStrictAdaptersPreserved": true,
+  "externalFull5Envelope": true,
+  "wholeIdentityManifestBytes": true,
+  "sourceCompiles": 9,
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "buildRun": false,
+  "gitRun": false,
+  "privateMediaSaved": false,
+  "sourceCheckHistory": {
+    "firstExecution": {
+      "executions": 1,
+      "exitCode": 1,
+      "baselineCompilations": 4,
+      "positiveCandidateChecksCompleted": 4,
+      "negativeAssertionsCompletedBeforeFailure": true,
+      "negativeRejectionsPerTargetByStaticControlFlow": 27,
+      "nodeSyntaxChecks": 2,
+      "helperPythonASTChecks": 1,
+      "helperStaticGuardChecks": 0,
+      "failureStage": "helper check-only process invocation",
+      "cause": "python3 command incorrectly received proxy as script filename",
+      "geometryOrContractFailure": false,
+      "publicFixtureRAMLostBeforeFinalReport": true,
+      "engineRuns": 0,
+      "negativeAssertionsCompleted": 108,
+      "sourceCheckOverallPassed": false
+    },
+    "recoveryAuthorizedByRoot": true,
+    "recoveryBaselineAllowance": 4,
+    "wholeSourceCheckReexecutions": 0,
+    "alreadyPassedAssertionsRepeated": 0,
+    "recoveryPartial": {
+      "cachedBaselineOutputs": 3,
+      "fixtureKeys": [
+        "321",
+        "329",
+        "332"
+      ],
+      "strictWrapperAttempts": 4,
+      "failedKey": "333",
+      "failure": "NodeRepl structuredClone realm boundary in original strict legacy diagnostic; source geometry mismatch not inferred",
+      "negativeRepetitions": 0,
+      "syntaxRepetitions": 0,
+      "engineRuns": 0
+    },
+    "recovery": {
+      "baselineRecaptureSuccessful": 4,
+      "totalBaselineSuccesses": 8,
+      "totalBaselineInvocationsConservativeUpperBound": 9,
+      "realmFailure": {
+        "key": "333",
+        "attempts": 1,
+        "stage": "existing strict legacy adapter structuredClone realm boundary",
+        "nativeOrGeometryJudgment": false
+      },
+      "normalNode333Recovery": {
+        "executions": 1,
+        "exitCode": 0,
+        "baselineCompiles": 1,
+        "engineRuns": 0
+      },
+      "unsupportedDataImport": {
+        "executionsBeforeRejection": 0,
+        "sourceCompiles": 0
+      },
+      "originalSourceCheckReexecutions": 0,
+      "passedAssertionsRepeated": 0,
+      "fixturePersistedBeforeHelperGuard": true
+    },
+    "helperStaticGuardRecovery": {
+      "executions": 1,
+      "exitCode": 0,
+      "staticGuards": true,
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "serverStarts": 0,
+      "HTTP": 0
+    },
+    "sourceInvariantAssertionsPassed": true,
+    "nodeSyntaxExecutions": 2,
+    "pythonASTExecutions": 1,
+    "sourceCheckCommandExecutions": 1,
+    "repeatedFocusedAssertions": 0
+  },
+  "successfulBaselineOutputs": 8,
+  "sourceCompileInvocationsConservativeUpperBound": 9,
+  "failedRealmInvocations": 1,
+  "derivedSuccessfulOutputs": 8,
+  "targets": [
+    {
+      "key": "321",
+      "glyph": "暻",
+      "targetPen": 14,
+      "direction": "left",
+      "baselineRecapture": 1,
+      "totalBaselineCompilationsIncludingFirstLostProcess": 2,
+      "engineRuns": 0,
+      "pens": 16,
+      "masks": 17,
+      "polygons": 29,
+      "baselineSHA256": "357eeb2ecfcf396ef81338d8773380c821f6c415359089dba29ab5dda2e9a7bc",
+      "derivedSHA256": "ad0f8d8041b8c0546c256442b66172fd6d965b6c309a341928c1f437257e4e69",
+      "tailWeight": 10,
+      "boundary": 0.7302478579791659,
+      "allBoundaries": {
+        "14": [
+          0.7302478579791659
+        ]
+      }
+    },
+    {
+      "key": "329",
+      "glyph": "蕙",
+      "targetPen": 14,
+      "direction": "up",
+      "baselineRecapture": 1,
+      "totalBaselineCompilationsIncludingFirstLostProcess": 2,
+      "engineRuns": 0,
+      "pens": 16,
+      "masks": 17,
+      "polygons": 37,
+      "baselineSHA256": "60cb9437650a897bc3bb982a4623815bad24cfd946015703953bfbceb517d7d4",
+      "derivedSHA256": "3f65f193c5ca5b3866d451a35936e2742f583199893d2b79b9d5cd60dd7be9a8",
+      "tailWeight": 12.5,
+      "boundary": 0.8117198517918922,
+      "allBoundaries": {
+        "14": [
+          0.8117198517918922
+        ]
+      }
+    },
+    {
+      "key": "332",
+      "glyph": "諪",
+      "targetPen": 16,
+      "direction": "left",
+      "baselineRecapture": 1,
+      "totalBaselineCompilationsIncludingFirstLostProcess": 2,
+      "engineRuns": 0,
+      "pens": 16,
+      "masks": 17,
+      "polygons": 33,
+      "baselineSHA256": "4696052d955dd58e568f09f5d9fa65e90e2194e165bed0153657bad7820ab2a7",
+      "derivedSHA256": "b4ba13bda174c75f6fc436c59827eb55d8283ef5ea133946c64117a22683e9d4",
+      "tailWeight": 10,
+      "boundary": 0.7460063821484345,
+      "allBoundaries": {
+        "16": [
+          0.7460063821484345
+        ]
+      }
+    },
+    {
+      "key": "333",
+      "glyph": "錞",
+      "targetPen": 15,
+      "direction": "left",
+      "baselineRecapture": 1,
+      "engineRuns": 0,
+      "pens": 16,
+      "masks": 17,
+      "polygons": 37,
+      "baselineSHA256": "ad1a2e42d88200e0de0ed8af3a30fc43d44e028934b1c73c0c96a020ef015a09",
+      "derivedSHA256": "c9825331a8df1afe0923f7b4c7500ffd26a862cb1f46c2f75da0dc70e9f5bf6e",
+      "tailWeight": 10,
+      "boundary": 0.7437281829395341,
+      "totalBaselineInvocationsConservativeIncludingRealmFailure": 3,
+      "successfulBaselineOutputs": 2,
+      "realmFailures": 1,
+      "allBoundaries": {
+        "15": [
+          0.7437281829395341
+        ]
+      }
+    }
+  ],
+  "originalSourcePins": 80,
+  "originalFourHeaderKeysPreserved": true,
+  "original11FieldAndLegacyProfileIdentitiesPreserved": true,
+  "nativeFreshObservations": 0,
+  "publicFixtureSHA256": "4f301bcf1d5ec39e77f366847a5b449c7949a309d059c08d5bc0e7be46c61d59",
+  "newCandidateSourceCompilationsBeyondBaseline": 0,
+  "helperSourceCompilationsAtStartup": 0,
+  "helperSourceCompilationsPerGET": 0,
+  "ownPinsCount": 7
+}
