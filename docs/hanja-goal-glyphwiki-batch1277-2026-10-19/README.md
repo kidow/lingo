@@ -1,0 +1,10 @@
+# 嫄1277 검토 재생
+
+Root fresh selectedbasewhole1/전13방향·fine[1,11,7,6,8,5]99.99→100 SVG520·coarse117후보+117동일logicalbaseline각220·multi1 .6635782031159854/11 .7781281774818383 각before/at/after·0/epsilon.0001%/95 모두PASS입니다. 자연1 2.73→100/11 2.6675→100 각8초PASS. PID8938/session10097/51998 root STOP exit143/startGETcompilerengine0/appUIfalse입니다.
+
+고정u5ac4 원15raw/17calls/28polygon·좌표·flags·guide·폭·bodyweight·direction을보존합니다. 원factory14mask를[[0,1],[2],[3],[4],[5],[6],[7],[8,9],[10],[11],[12],[13],[14]]의원참조로논리13획에배치하며원raw상대순서불변·새순서창작0입니다. 女raw0L끝(27.97,135)→raw1Q시작(29.66,118)의gap17.08379641648776은독립2mask의첫논리1획이며connector/합성trajectory/새좌표0입니다. LEFT11raw12의마지막Q flags1/14 원quad만기존997/7e0649 width6jump20tailweight10으로분리합니다. body activebounds[56.65,57.5,74.65,94.5]→[66.65,57.5,74.65,94.5]는표시정책변경이며원guide·폭14·bodyweight·direction·다른12획및28polygon exact-once는불변입니다. tailweight추가로총weight불변을주장하지않습니다. 원767 existingfull5engineHashes/id3 ../fileSHA256 mandatory3/4/factory8067byte동일을엄격결박하고header4재결합0입니다. family10records안provider2개는이미포함되며선택baseclosure3와다른root혼합0·wholeNames4중freshbasewhole1만승인합니다. 원767OBJECT1/첫1방향만관찰·provisionalgroups/itaiji오른성분불일치/progressive0/HOLD/NOTICE/sourcefalse는보존하고새13논리획전체fresh승인후회복1만기록합니다. source기하1→publicpre선저장/derive1/finalpublic·checker lexical중복실패1(양성0)→복구양성1후경계metadata범위실패1→남은경계/tail/negative33만복구(양성반복0),메타patch실패는기하0·파일변경0의정직이력을보존합니다. runtime source/fixture/derive/engine0을분리하며중앙오른쪽동일logicalbaseline은독립과거native증거가아닙니다.
+
+원24+source8=32핀·family10records안provider2포함/wholeNames4·selectedclosure3와fresh승인basewhole1을구분합니다. 원NOTICE byte보존. 집중3/3·verifier구문 각1회 첫실행 exit0PASS. Rootactual단회exit0PASS:실제5693/285 hist349/res118/active231 refs334·767OBJECT1회복·32핀불일치0·13p15m28. 실제등록·checkpoint확정. 원source/집중3/구문1/actual1반복0·요청된메타3파일전용확인1회 exit0PASS만추가했습니다. 부모1276actual5692/286 hist349/res117/active232 refs333, 목표5693/285 hist349/res118/active231 refs334입니다. 원767OBJECT1회복·신규hold0/원문불변입니다.
+
+루트 actual: `rtk proxy node docs/hanja-goal-glyphwiki-batch1277-2026-10-19/verify-runtime.mjs`
+커밋메시지: `feat(hanja): register reviewed 嫄 independent-mask playback`
