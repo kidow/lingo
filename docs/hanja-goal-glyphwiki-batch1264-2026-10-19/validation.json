@@ -1,0 +1,153 @@
+{
+  "batch": 1264,
+  "glyph": "菹",
+  "date": "2026-10-19",
+  "status": "actual-runtime-verified",
+  "nativeApproval": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1263-2026-10-19/resume.json",
+  "parentResumeSHA256": "25a13083df9f27a5d96cdd62af93623d4d3e5918b45f6a979f4e50bbba79b494",
+  "parentActualCheckpointVerified": true,
+  "parentActualRegistryVerified": true,
+  "parentRuntimeRegistered": true,
+  "parentActualEvidence": "actualRuntimeVerifier",
+  "completedRuntime": 5680,
+  "total": 5978,
+  "remaining": 298,
+  "historicalCanonicalHolds": 349,
+  "resolvedHistoricalCount": 107,
+  "activeCanonicalHolds": 242,
+  "pens": 12,
+  "masks": 13,
+  "polygons": 23,
+  "compiledSHA256": "0b7a626445e70bf7b894f043d107ed5195b65ac65ddadfd7828914b92c4f1588",
+  "sourcePins": 28,
+  "pinBreakdown": {
+    "originalAndShared": 20,
+    "currentExperiment": 8,
+    "total": 28
+  },
+  "sourceRecords": 7,
+  "wholeRoots": 1,
+  "providers": 0,
+  "focusedTests": {
+    "executions": 2,
+    "status": "passed-after-module-initialization-harness-recovery",
+    "passed": true,
+    "tests": 3,
+    "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch1264.test.ts",
+    "exitCode": 0,
+    "distinctTests": 3,
+    "failures": [
+      {
+        "attempt": 1,
+        "exitCode": 1,
+        "stage": "module initialization source read",
+        "reason": "SRC템플릿날짜10-09가원250의실제10-04와달라sources.json ENOENT. 검사본문0/기하실행0이며test·verifier의SRCliteral만정정.",
+        "wrongSourceDirectory": "docs/hanja-goal-glyphwiki-batch250-2026-10-09/",
+        "correctSourceDirectory": "docs/hanja-goal-glyphwiki-batch250-2026-10-04/",
+        "testBodiesExecuted": 0,
+        "sourceCompilations": 0,
+        "candidateDerivations": 0,
+        "engineRuns": 0
+      }
+    ],
+    "retry": {
+      "executions": 1,
+      "tests": 3,
+      "passed": 3,
+      "exitCode": 0
+    },
+    "passedTestBodiesRepeated": false
+  },
+  "syntax": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1264-2026-10-19/verify-runtime.mjs",
+    "exitCode": 0,
+    "beforeSourcePathLiteralCorrection": true,
+    "passedSyntaxNotRepeated": true
+  },
+  "actualRuntimeVerifier": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "exitCode": 0,
+    "executedBy": "/root",
+    "reportedBy": "/root",
+    "reportedSummaryOnly": true,
+    "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch1264-2026-10-19/verify-runtime.mjs",
+    "registryUnique": 5680,
+    "remaining": 298,
+    "historicalCanonicalHolds": 349,
+    "resolvedHistoricalCount": 107,
+    "activeCanonicalHolds": 242,
+    "canonicalReferences": 321,
+    "canonicalTargetMatchesBeforeApply": 0,
+    "canonicalRecordType": null,
+    "nonCanonicalResolvedExcluded": [
+      "叟",
+      "廋",
+      "瞍",
+      "餲"
+    ],
+    "pens": 12,
+    "masks": 13,
+    "polygons": 23,
+    "sourcePins": 28,
+    "pinMismatches": 0,
+    "sourceRecords": 7,
+    "wholeRoots": 1,
+    "providers": 0,
+    "compiledSHA256": "0b7a626445e70bf7b894f043d107ed5195b65ac65ddadfd7828914b92c4f1588",
+    "coarseCandidateFrames": 108,
+    "coarseBaselineFrames": 108,
+    "sourceCompilations": 0,
+    "runtimeFixtureCompilations": 0,
+    "additionalFixtureCompilations": 0,
+    "candidateDerivationsThisRuntime": 0,
+    "engineRuns": 0,
+    "appUI": false,
+    "buildExecuted": false,
+    "engineHashesHeader4SeparateTraceId7": true,
+    "archiveFull5Identity": false,
+    "factory8067Exact": true,
+    "selectedClosure7": true,
+    "oldGrassPermutationPreserved": true,
+    "exactHV9Preserved": true,
+    "noTailPartition": true
+  },
+  "runtimeFixtureCompilations": 0,
+  "additionalFixtureCompilations": 0,
+  "sourceCompilations": 0,
+  "candidateDerivationsThisRuntime": 0,
+  "engineRuns": 0,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildExecuted": false,
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "providerRecordField": "providerVersions",
+  "verifierRelativeImportsStaticAudit": [
+    {
+      "path": "../../lib/hanja-stroke-dictionary-glyphwiki-batch1264.ts",
+      "exists": true
+    },
+    {
+      "path": "../../lib/hanja-strokes.ts",
+      "exists": true
+    },
+    {
+      "path": "../hanja-source-independent-qq-u83f9-k-source-experiment-2026-10-19/candidate.mjs",
+      "exists": true
+    }
+  ],
+  "sourcePathLiteralStaticAudit": {
+    "sourceDirectory": "docs/hanja-goal-glyphwiki-batch250-2026-10-04/",
+    "sourceExists": true,
+    "headerExists": true,
+    "traceExists": true,
+    "noWrong10_09InTestOrVerifier": true
+  }
+}
