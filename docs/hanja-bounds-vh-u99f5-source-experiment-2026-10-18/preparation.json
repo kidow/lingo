@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only dedicated fixed V1/H1 display experiment verified",
+  "configSHA256": "25630b010fa16af782c8d0de094381b62793f8d2aaec8b81c11fa687b64cfee8",
+  "newFilesSHA256": {
+    "bounds-vh-candidate.mjs": "ce195a1245e022f66598146c54c03e9fdcedeb4b1df9e2258cde36d85ad25a8b",
+    "bounds-vh-candidate.d.mts": "37389f617659e1bf2a77d93a39a9dc729aca10d2e004e4dc23366963e3b20396",
+    "serve.py": "bee4d09e423123513b9ef0b2e5c9f39efd2f9c6b7fe77d55709f33e320f910c6",
+    "README.md": "bf8c2b07f644845d65e12274684bc3b99ba3fb61b0183d5d85c7a8a593751114",
+    "source-check.mjs": "6a3cc4e3dd7114d48714d69555782bfcde59597764b3f691034a51109402df9e",
+    "fixtures.json": "7b3998d1e1be20432063270210690215c9d79304c95082b172968ee8d3993255"
+  },
+  "sourcePins": 56,
+  "pinBreakdown": {
+    "source37": 37,
+    "additionalLab8": 8,
+    "allBoundariesWrapper3": 3,
+    "reorder8": 8
+  },
+  "newOwnPins": 7,
+  "futureRuntimePinsIncludingNew8": 64,
+  "baselinePublicCacheSavedFirst": true,
+  "baselineSHA256": "2d4770302f63c08a78d4ba2d03fb32260fcca0b6c845847e6b0d5df0572856e7",
+  "sourceCompiles": 0,
+  "originalApiDelegations": 0,
+  "engineRuns": 0,
+  "sourceCheck": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "cachedPositiveDerivations": 1,
+    "negativeRejections": 28,
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "pens": 17,
+    "masks": 20,
+    "polygons": 34,
+    "baselineSHA256": "2d4770302f63c08a78d4ba2d03fb32260fcca0b6c845847e6b0d5df0572856e7",
+    "derivedSHA256": "6efc0738e82447ff809d11314a1de48f85bf3ff1838f581f403ac1ec33e7339a",
+    "immutableSourcePins": 56,
+    "V1H1Only": true,
+    "rawPolygonsExactlyOnce": true,
+    "allOther16PensUnchanged": true,
+    "allBoundaries": {
+      "6": [
+        0.8907745136909301
+      ],
+      "14": [
+        0.6225165562913907
+      ],
+      "16": [
+        0.37748344370860926
+      ]
+    },
+    "coverage": [
+      {
+        "direction": "down",
+        "totalArea": 207,
+        "samples": [
+          {
+            "progress": 0,
+            "visibleArea": 0
+          },
+          {
+            "progress": 1e-8,
+            "visibleArea": 1.1368683772161603e-13
+          },
+          {
+            "progress": 0.5,
+            "visibleArea": 103.5
+          },
+          {
+            "progress": 0.95,
+            "visibleArea": 203.48437500000023
+          },
+          {
+            "progress": 0.9999,
+            "visibleArea": 206.9999859375
+          },
+          {
+            "progress": 1,
+            "visibleArea": 207
+          }
+        ],
+        "sourceAreaOnlyNotNativeApproval": true
+      },
+      {
+        "direction": "right",
+        "totalArea": 28.5,
+        "samples": [
+          {
+            "progress": 0,
+            "visibleArea": 0
+          },
+          {
+            "progress": 1e-8,
+            "visibleArea": 2.8500016924226657e-7
+          },
+          {
+            "progress": 0.5,
+            "visibleArea": 14.25
+          },
+          {
+            "progress": 0.95,
+            "visibleArea": 27.075000000000728
+          },
+          {
+            "progress": 0.9999,
+            "visibleArea": 28.4971500000006
+          },
+          {
+            "progress": 1,
+            "visibleArea": 28.5
+          }
+        ],
+        "sourceAreaOnlyNotNativeApproval": true
+      }
+    ],
+    "nodeSyntaxChecks": 2,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "serverStarts": 0,
+    "HTTP": 0
+  },
+  "guardScope": {
+    "dedicatedV1H1": true,
+    "reusedV2Guard": false,
+    "pen": 14,
+    "rawZeroBased": [
+      13,
+      14
+    ],
+    "flags": [
+      [
+        12,
+        13
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "polygons": [
+      1,
+      1
+    ],
+    "exactEndpointJoin": true,
+    "convexQuadsAndInsideEdgeBigInt": true,
+    "originalMaskChunksWeightsAndWholeProofPinned": true
+  },
+  "displayPolicy": {
+    "oldCombinedRevealPathKeptInBaseline": true,
+    "activeGuideChangedToOriginalBoundsDownRight": true,
+    "newCoordinatesWidthsConnectorOrAuthorPaths": false,
+    "allOther16PensMaskRefsPreserved": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "allMultiBoundaries": {
+    "6": [
+      0.8907745136909301
+    ],
+    "14": [
+      0.6225165562913907
+    ],
+    "16": [
+      0.37748344370860926
+    ]
+  },
+  "rootFreshNativeRequired": true,
+  "prior1204Fine14FAILPreserved": true,
+  "priorPassesInherited": 0,
+  "parent1203CheckpointPending": true,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "finalPublicFixtureSHA256": "7b3998d1e1be20432063270210690215c9d79304c95082b172968ee8d3993255",
+  "expectedCompiledSHA256": "6efc0738e82447ff809d11314a1de48f85bf3ff1838f581f403ac1ec33e7339a",
+  "fixtureFinalization": {
+    "source": "Single successful focused stdout public geometry; baseline unchanged",
+    "additionalSourceCompiles": 0,
+    "additionalPositiveOrNegativeChecks": 0
+  }
+}
