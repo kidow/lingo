@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "helper-static-guards-passed-native-review-pending",
+  "delegateFolder": "../hanja-terminal15-remaining-source-experiment-2026-10-18",
+  "delegateFilesSHA256": {
+    "README.md": "839f507aef376980bb2d63986e9ab1b2938c6b89b91fb93fcc86d6f8ae8a8fce",
+    "config.json": "2361e2451de34558b430d3ea437772fcf8794ff7f62e74694f23b80f8cb947fe",
+    "fixtures.json": "310b8e83b1852bacc9ab182e99950f4accab0d0bc0fbce25d483767fd37dfc7e",
+    "preparation.json": "c2feb4f88d5d8a5348737fdbd419a99e51c451b5dcaed8be7574046bda73b21c",
+    "serve.py": "da372eb15cca7986c1abc6270353c315c12e62ff296319602dbb9de71cd3347c",
+    "source-check.mjs": "2e5dda898a4d53baff7f9e30e30d496b093deedea06b092154e099f722134834",
+    "terminal15-candidate.d.mts": "852e718acf1471cef8046067776d6a6ac4bcbf7501c6d5f8116be4188c8f4d6e",
+    "terminal15-candidate.mjs": "247215ee82d046368693fccb4b35777b41c07a9f84ada7dbb9d3274d3d4feb30"
+  },
+  "replacementPairs": [
+    {
+      "old": "original=F['baseline'];strokes=F['strokes'];n=T['pen'];masks=strokes[n-1];boundary=masks[0]['weight']/sum(m['weight']for m in masks)",
+      "new": "original=F['baseline'];strokes=F['strokes'];n=T['pen'];boundaries=_all_boundaries(strokes)"
+    },
+    {
+      "old": "pen=int(q.get('stroke',[str(n)])[0]);assert 1<=pen<=T['pens']",
+      "new": "pen=int(q.get('stroke',[str(n)])[0]);assert 1<=pen<=T['pens'];boundary=boundaries.get(pen,[])"
+    },
+    {
+      "old": "body+='<p>목표 '+str(n)+'획 mask경계 '+repr(boundary)+'</p>'",
+      "new": "body+='<p>모든 복수mask 경계 '+html.escape(repr(boundaries))+'; 현재획 '+str(pen)+'</p>'"
+    },
+    {
+      "old": "body+=''.join('<button onclick=\"show('+repr(p)+')\">'+label+'</button>'for label,p in [('boundary-before',boundary-1e-10),('boundary-at',boundary),('boundary-after',boundary+1e-10)])",
+      "new": "body+=''.join('<button onclick=\"show('+repr(p)+')\">boundary'+str(j+1)+'-'+label+'</button>'for j,b in enumerate(boundary)for label,p in [('before',b-1e-10),('at',b),('after',b+1e-10)])"
+    }
+  ],
+  "ownFilesSHA256": {
+    "serve.py": "f8d6a2b47bfe4ef5b9e1d929f571d90f51fecfea9f2d22531d1c91f8ebe8cb21",
+    "README.md": "ebe7350ec78164e9aacd9e44d2b3278a762f0d400ee70f3294550e3a9000d9e9"
+  },
+  "preservation": {
+    "originalCapsuleChanged": false,
+    "selectedCompileIdentityChanged": false,
+    "compiledFixtureChanged": false,
+    "sourceGeometryChanged": false,
+    "originalFileAnchorPreserved": true,
+    "displayBoundaryUIOnly": true
+  },
+  "sourceCompiles": 0,
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "privateMediaSaved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "checks": {
+    "executions": 1,
+    "exitCode": 0,
+    "wrapperPythonAST": 1,
+    "transformedDelegatePythonAST": 1,
+    "staticGuardExecutions": 1,
+    "originalInputPinsCheckedByDelegate": 128,
+    "originalCapsulePins": 8,
+    "newOwnPins": 2,
+    "allBoundaries": {
+      "649": {
+        "10": [
+          0.8325541385289524
+        ]
+      },
+      "687": {
+        "9": [
+          0.8688094842724506
+        ]
+      },
+      "716": {
+        "11": [
+          0.8462481372039311
+        ]
+      },
+      "717": {
+        "10": [
+          0.8732609012962794
+        ]
+      },
+      "719": {
+        "3": [
+          0.38431032490312805
+        ],
+        "9": [
+          0.8732609012962794
+        ]
+      },
+      "720": {
+        "1": [
+          0.5367060031053901
+        ],
+        "2": [
+          0.5883777707055957
+        ],
+        "12": [
+          0.8725767616955878
+        ]
+      },
+      "979": {
+        "8": [
+          0.8427380804869272
+        ]
+      }
+    },
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "serverStarts": 0,
+    "HTTP": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  }
+}
