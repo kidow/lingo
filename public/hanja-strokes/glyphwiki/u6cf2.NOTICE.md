@@ -1,0 +1,8 @@
+# Source attribution
+
+GlyphWiki contributors. LicenseRef-GlyphWiki: https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス
+
+Archive backup by tomcumming, pinned in sources.json. Current provider versions in current-source-alternative.json. Default-mincho KAGE engine revision and eight file hashes are pinned in engine-proof.json. Geometry is retained for reproducible review, not runtime approval. Domestic e-hanja graphics remain RAM-only and are not distributed.
+
+
+泲1261: 고정archive baseu6cf2 원10raw/11calls/19polygon·좌표·flags·outline union·원guide·폭·bodyweight·순서를보존합니다. 원factory9mask의raw2Q/raw3Q를논리물3획독립sequence로묶고gap[-3.925,-34]/34.225803496777104는그대로이며connector/합성trajectory/새좌표·폭0입니다. 동일pre-tail baseline의6획raw6H/raw7QQ 마지막실제call2/514 원quad만기존7e0649/derive2802 byte동일LEFT width6/jump10/weight5로분리해8p10m19로표시합니다. 원raw선언22/504와고정terminalcall2/514를구분하고교정하지않습니다. bodybounds[40.1,46,94.55,83]·guide·폭14·weight·direction/다른7획/전체19polygon exact-once는불변이고tailweight5추가로상대시간분배변화가있으므로전체weight불변은주장하지않습니다. p5V13/p8Q132/7은미교정이며rootfreshfine5/8PASS사실만기록합니다. archive3records만선택하고current@14및별도currentproof/trace는보존핀만추적해사용하지않습니다. 원header4hashes+별도trace새full5/id7 ../uppercaseSHA256·필수3/4/archivefalse/factory8067→8061단일assert적응을명시합니다. 원146정적8방향·누적완성/progressive0/HOLD/NOTICE/source/nativefalse는불변이고현재canonical0으로추가/해제0입니다. Rootfreshwhole1/전8방향/fine[6,5,8,3,7]/coarse72+72/3·6모든경계/자연3·6각8초만승인합니다. 중앙은같은새logical pre-tail표시로독립과거승인baseline증거가아닙니다. sourcecapture최초import as누락SyntaxError는모듈/기하실행전0이며복구후source기하1→prepublic/같은baselineLEFTderive1→finalpublic/positive1negative39·Node2PythonAST1guard1최초PASS와runtime source/fixture/derive/engine0을분리합니다.
