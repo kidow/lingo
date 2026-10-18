@@ -1,0 +1,7 @@
+# 僎 — batch1145 두원UP terminal 표시복구
+
+root가선택baseu50ce whole1/14방향/후보coarse126/fine[3,5,6,8,13,14]99.99→100/5·8양경계.7964204792007853전중후+95/초기0epsilon standardroundcap를실제3SVG520에서PASS했습니다. baseline126은별도입니다. 자연5 6.01375000→100.00000000,자연8 6.11625000→100.00000000 모두8초actual520PASS. 비선택VS0는이번미관찰입니다.
+
+고정u50ce 원14획40polygon/sourceGroups를보존합니다. 기존terminalUpTail로원5·8획마지막terminal5 polygon을같은원baseline에서각각독립derive후해당pen만합쳐14획16mask로만듭니다. 순차변경baselinederive는없으며원body guide/width/weight/direction과타mask를보존하고bounds만남은원정점으로재계산합니다. 새정점·좌표·경로·connector·필순·group은작성하지않습니다. full5/id3 mandatory3/4→legacy2와첫baselinecapture출처,645/939object·원NOTICE를보존합니다. 원14p16m40polygon derivedSHA 9a9975c4c257988cd542167f200cf6240e0c187e54da496551f8d13eec9f8c11. publicfixture645 RAM재사용으로추가sourcecompile0/engine0입니다. 원4familyrecords/whole2/provider0·선택closure3·원21+실험8=29핀보존. baseline ed14dac6ddd7452eb923ce2373386079ce684f64ff35f1558d6c04147ff530a6는동일실험첫capture이며과거독립legacy해시가아닙니다. 원sourceexperiment native/runtimefalse 이력을그대로보존합니다.
+
+원645canonical은object(JSON SHA cca24c88bebb00305a35d65fac4949cf11e0d928be7e64ade02ce9c29e8febfe)이며재작성하지않습니다. 현재부모1144 SHA 71522a309b99546b68b6186c205d20f39cffce2731e306fcf46f06a4c10d6d81 실제5587/391·historical343/resolved34/active309. root registry/actual단1회EXIT0 PASS로현재5588/5978·남390·hist343/res35/active308로확정했습니다. 집중3/3·verifier구문각1회PASS,canonical202refs의원645object1건만해제했습니다. 앱자동재생UI와build는실행하지않았습니다. rootchild49562port58896종료예정통보이며worker는서버를조작하지않았습니다.
