@@ -1,0 +1,15 @@
+# 鋂1155 runtime 검토
+
+root가선택baseu92c2 whole1·방향15·coarse135·520px fine10·11/12경계와0/epsilon·두8초자연재생을fresh승인했습니다. baseline coarse135는candidate135와따로관찰한수치입니다. 다른whole을자동승인하지않습니다.
+
+**11획은표시정책변경입니다.** 원slantedV/H 두call의3polygon과원per-callweight합은보존하지만원combined guide를활성reveal로유지하지않습니다. 원V-down/H-right bounds clip을이두고정call에만선택했고범용diagonal지원·원guide동일성을주장하지않습니다. root가발끝을아래로채운뒤H오른쪽으로이어지는방향을국내와새로대조했습니다.12획원LEFT꼬리는같은캐시baseline에서독립분리했습니다. 전체원37polygon이정확히한번남고15획17mask이며다른13획의원guide·width·weight·순서는그대로입니다.
+
+공개labfixture를재사용해runtime준비sourcecompile/engine0입니다. 원source와기존LEFT4baseline의존성30핀+새lab8핀·원564string은변경하지않습니다. 기존source-onlylab의native/runtime false도그대로입니다. 새앱UI자동재생검증·빌드·배포는없습니다.
+
+부모1154actual SHA 6316961231d49661dd11ba5e3f5502f9244a2db01e8302ac632690c4b56cebac를확인했습니다. rootactual등록검증전목표5596/5978·잔여382·historical343/resolved44/active299입니다. 실제상태는validation/resume에기록합니다.
+
+root가정확한helper/target확인후child95194(port63909)를SIGTERM했습니다.98173은도구session ID이며wrapperPID로기록하지않습니다. wrapperPID/별도종료조회는확인되지않았습니다.
+
+## 실제 등록 결과
+
+root의actual verifier 단회PASS로5596/5978·잔여382·historical343/resolved44/active299(refs212)를확인했습니다. 원30+lab8핀불일치0이며family8/whole3/provider0입니다. 원564string은변경없이해제목록에1건추가합니다. runtime준비sourcecompile/engine0,focused3/구문/actual각1회PASS이며추가검사는하지않았습니다. frozenreview는native승인시점의기록이고실제등록상태는validation/resume에서확정합니다.
