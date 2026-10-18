@@ -1,0 +1,9 @@
+# 麑 — batch1169 partial native 보류
+
+root가선택u9e91 whole1의국내호환성을실제3SVG520에서관찰했습니다. 11·19획UP와4획fine99.99→100은PASS이며11경계.8676199874104571/19경계.778686904433181전중후+95·초기0epsilon도PASS입니다. 그러나15획H/V하단왼쪽은99.99%의둥근cutoff가100%에서2~3px내려가는뾰족한삼각영역으로바뀌는positive-area FAIL을stablepair로재확인했습니다. 다른prefix는동일했습니다.
+
+방향·나머지fine·기존9경계.31295241616181624·coarse·자연재생은미검토에서중단했습니다. whole호환성이나11·19의부분PASS를전체필순승인으로확대하지않으며현재runtime미적용입니다. 원735object1을유지하므로새보류0/해제0/적용0입니다.
+
+기존lead7공개fixture19p22m54 SHAcbb08fb4be4f61ad924151953aed9b7e5e80d1313868406df6b8ebb78e35bd4b와원19p20m baseline을보존합니다. 11·19UP는같은원baseline독립분리이며기존9획raw[9,10] 두mask와15획raw[16,17] MLL·폭14는불변입니다. 새좌표·mask·guide·폭·후보를생성하지않았습니다. 선택원입력24/전체7자고유129+lab8=137핀을보존하고sourcecompile/engine0입니다. 과거lead7총11회source실행및735원실행1회는이력이며이번재실행이아닙니다.
+
+실제부모1168 SHAa72a6656a26832720d87dd579b815f9dcd2f3cda2286b70c044b9d1051a17af5,5605/5978·잔373·hist343/res53/active290·refs225를승계합니다. 이번목표계수동일·refs226,원735object SHA59c51a40e7c59e7fe4a5ff3c9db3f8a3169263bc73cc353ba14733770a2c4525를중복확인합니다. 집중정적은총3실행입니다. 처음부모actualabsence를1회로가정해실패했고실제2회로확인했습니다. 다음은부모포함chain을225로가정해실패했으며실제226(부모보고225는자신제외직전chain)으로정정했습니다. 두번째실행에서137핀/proof/부분native기록은PASS했고다시검사하지않았습니다. 남은canonical/계수검사만복구1회PASS했습니다. 두harness실패는원본·기하실패가아니며sourcecompile/engine0입니다. root runtimeabsence1회 exit0 PASS:麑19lookupnull·registry0·unique5605/잔373입니다. 최종hist343/res53/active290·refs226,현재native/runtime승인false를유지합니다. 실제검증뒤추가검사는실행하지않았습니다. root가사용한서버35761(세션82707/52790포트)은관찰후정확종료예정통보이며worker가독립종료를확인하지않았습니다. 파일은새보류4개만작성하며빌드·TSC·앱학습기록변경없습니다.
