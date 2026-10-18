@@ -1,0 +1,173 @@
+{
+  "batch": 1108,
+  "glyph": "戁",
+  "verifiedAt": "2026-10-18",
+  "status": "actual-runtime-verified",
+  "sourceVerification": {
+    "priorSourcePreparationReused": true,
+    "sourceOrderPreparationPositiveCompiles": 1,
+    "runtimeFixtureCompilations": 0,
+    "additionalFixtureCompilations": 0,
+    "engineRuns": 0,
+    "allOriginalPolygonsExactlyOnce": true,
+    "originalAndOrderPins": 38,
+    "legacyDirectPins": 9
+  },
+  "nativeReview": {
+    "file": "docs/hanja-goal-glyphwiki-batch1108-2026-10-13/review.json",
+    "sha256": "1b6fb9e98ce99ec4e7217b463c496f841bf1a22e99d600f986bcf468ebb4a205",
+    "nativeApproval": true,
+    "coarseFrames": 207,
+    "finePens": [
+      6,
+      10,
+      11,
+      12,
+      14,
+      20,
+      21,
+      22,
+      23
+    ],
+    "boundaries": [
+      21
+    ],
+    "appUIAutoplay": false
+  },
+  "canonicalInspection": {
+    "references": 165,
+    "historical": 335,
+    "activeBefore": 327,
+    "targetMatches": 1,
+    "resolvedHistoricalGlyphsBefore": [
+      "祋",
+      "稌",
+      "窞",
+      "翿",
+      "荼",
+      "鞉",
+      "黮",
+      "鼐"
+    ],
+    "resolvedHistoricalGlyphsAfter": [
+      "戁",
+      "祋",
+      "稌",
+      "窞",
+      "翿",
+      "荼",
+      "鞉",
+      "黮",
+      "鼐"
+    ],
+    "status": "actual-runtime-verifier-second-attempt-passed-first-harness-failure-retained"
+  },
+  "checks": {
+    "focused": {
+      "status": "passed",
+      "executions": 1,
+      "exitCode": 0,
+      "tests": 3,
+      "passed": 3,
+      "sourceCompilations": 0
+    },
+    "verifierSyntax": {
+      "status": "passed",
+      "executions": 1,
+      "exitCode": 0
+    },
+    "actualRuntime": {
+      "batch": 1108,
+      "glyph": "戁",
+      "passed": true,
+      "pens": 23,
+      "masks": 24,
+      "polygons": 51,
+      "compiledSHA256": "df18bd421a03217ded1077d30e0e01700b57cc47d489c040179137dc1f7d331c",
+      "sourcePins": 38,
+      "pinMismatches": 0,
+      "sourceRecords": 13,
+      "wholeRoots": 4,
+      "providers": 0,
+      "coarseFrames": 207,
+      "finePens": [
+        6,
+        10,
+        11,
+        12,
+        14,
+        20,
+        21,
+        22,
+        23
+      ],
+      "runtimeFixtureCompilations": 0,
+      "sourceOrderPreparationPositiveCompiles": 1,
+      "additionalFixtureCompilations": 0,
+      "verifierSourceCompilations": 0,
+      "registryCount": 5561,
+      "remaining": 417,
+      "activeCanonicalHolds": 326,
+      "canonicalTargetMatchesBeforeApply": 1,
+      "historicalCanonicalHolds": 335,
+      "canonicalReferences": 165,
+      "resolvedHistoricalGlyphs": [
+        "戁",
+        "祋",
+        "稌",
+        "窞",
+        "翿",
+        "荼",
+        "鞉",
+        "黮",
+        "鼐"
+      ],
+      "parentBatch": 1107,
+      "nextBatch": 1109,
+      "appUIAutoplay": false,
+      "build": false,
+      "executions": 2,
+      "successfulExecutions": 1,
+      "exitCode": 0,
+      "executedBy": "/root",
+      "reportedResultUsedWithoutRerun": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "executedBy": "/root",
+          "exitCode": 1,
+          "passed": false,
+          "classification": "new-verifier-parent-schema-harness-error",
+          "message": "Parent1107 is actual-held-runtime-absence-verified with runtimeAbsenceVerified=true; actualRegistryVerified is absent. Runtime-only parent assertion was wrong.",
+          "sourceOrNativeFailure": false,
+          "sourceCompilations": 0,
+          "fix": "Exact parent SHA and actualCheckpointVerified retained; permit verified registered parent or exact held-absence status+true flag.",
+          "rerunByThisAgent": false
+        },
+        {
+          "attempt": 2,
+          "executedBy": "/root",
+          "exitCode": 0,
+          "passed": true,
+          "sourceCompilations": 0
+        }
+      ]
+    }
+  },
+  "privateMediaSaved": false,
+  "serverCleanupConfirmation": {
+    "original": {
+      "childPID": 36067,
+      "wrapperPID": 36066,
+      "port": 57100,
+      "cleanup": "root matching child command SIGTERM confirmed; wrapper autoexit expected not independently checked"
+    },
+    "final": {
+      "childPID": 49905,
+      "wrapperPID": 49904,
+      "port": 57838,
+      "cleanup": "root matching child49905 command SIGTERM confirmed; wrapper49904 autoexit expected not independently checked"
+    },
+    "sourceCompilePolicy": "Own eager cache one startup compilation and no request recompilation; exact measured cleanup/result reported by root"
+  }
+}
