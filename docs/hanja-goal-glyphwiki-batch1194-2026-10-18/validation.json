@@ -1,0 +1,121 @@
+{
+  "batch": 1194,
+  "glyph": "錞",
+  "date": "2026-10-18",
+  "status": "actual-runtime-verified-complete-after-harness-corrections",
+  "nativeApproval": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1193-2026-10-18/resume.json",
+  "parentResumeSHA256": "3f15ce78d615f5eb9352d8cb1b01623785666f1b573fb93d3a9b31dd881e99f9",
+  "parentActualCheckpointVerified": true,
+  "parentActualRegistryVerified": true,
+  "parentRuntimeRegistered": true,
+  "parentActualEvidence": {
+    "kind": "actualRuntimeVerifier",
+    "passed": true
+  },
+  "parentRuntimeVerifierExecutions": 1,
+  "completedRuntime": 5626,
+  "total": 5978,
+  "remaining": 352,
+  "historicalCanonicalHolds": 343,
+  "resolvedHistoricalCount": 70,
+  "activeCanonicalHolds": 273,
+  "pens": 16,
+  "masks": 17,
+  "polygons": 37,
+  "compiledSHA256": "c9825331a8df1afe0923f7b4c7500ffd26a862cb1f46c2f75da0dc70e9f5bf6e",
+  "sourcePins": 31,
+  "selectedTargetInputPins": 23,
+  "experimentPinsIncluded": 8,
+  "allBoundariesHelperPinsIncluded": 0,
+  "sourceRecords": 6,
+  "wholeRoots": 1,
+  "providers": 0,
+  "focusedTests": {
+    "passed": true,
+    "executions": 2,
+    "uniqueTests": 3,
+    "totalTestExecutions": 4,
+    "unresolvedFailures": 0,
+    "initial": {
+      "executions": 1,
+      "tests": 3,
+      "passed": 2,
+      "failed": 1,
+      "exitCode": 1,
+      "cause": "Test1 stale batch1192 loader identifiers raised ReferenceError after geometry assertions; no implementation or source failure"
+    },
+    "recovery": {
+      "executions": 1,
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "exitCode": 0,
+      "scope": "Failed test1 only after changing two loader identifier references to1194",
+      "command": "node --experimental-strip-types --test --test-name-pattern='^錞 original LEFT polygon split' lib/hanja-stroke-dictionary-glyphwiki-batch1194.test.ts"
+    },
+    "successfulTestsAndSyntaxNotRepeated": true
+  },
+  "syntax": {
+    "passed": true,
+    "executions": 1,
+    "command": "node --check docs/hanja-goal-glyphwiki-batch1194-2026-10-18/verify-runtime.mjs"
+  },
+  "actualRuntimeVerifier": {
+    "passed": true,
+    "executions": 2,
+    "rootExecuted": true,
+    "exitCode": 0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "passed": false,
+        "exitCode": 1,
+        "cause": "Verifier pen-index harness compared candidate pen15 e.outlines[14] with baseline pen14 f.baseline[13]; fixture geometry had already passed focused test",
+        "correction": "Only RHS baseline index13 changed to14; source geometry and frozen review unchanged"
+      },
+      {
+        "attempt": 2,
+        "passed": true,
+        "exitCode": 0,
+        "correctedVerifierBaselinePen": 15
+      }
+    ],
+    "pens": 16,
+    "masks": 17,
+    "polygons": 37,
+    "compiledSHA256": "c9825331a8df1afe0923f7b4c7500ffd26a862cb1f46c2f75da0dc70e9f5bf6e",
+    "sourcePins": 31,
+    "pinMismatches": 0,
+    "registryCount": 5626,
+    "remaining": 352,
+    "historicalCanonicalHolds": 343,
+    "resolvedHistoricalCount": 70,
+    "activeCanonicalHolds": 273,
+    "canonicalReferences": 251,
+    "canonicalTargetMatchesBeforeApply": 0,
+    "newFormalHoldResolutions": 0,
+    "runtimeFixtureCompilations": 0,
+    "additionalFixtureCompilations": 0,
+    "verifierSourceCompilations": 0,
+    "appUIAutoplay": false,
+    "build": false
+  },
+  "runtimeFixtureCompilations": 0,
+  "additionalFixtureCompilations": 0,
+  "engineRuns": 0,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildExecuted": false,
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "wholeRootsScope": "selected root only; source manifest has no wholeNames",
+  "canonicalTargetMatchesBeforeApply": 0,
+  "newFormalHoldResolutions": 0,
+  "sourceEngineReplayKnown": false,
+  "sourceVerified": null,
+  "runtimePreparationNotes": [
+    "Initial optional NOTICE.md read returned ENOENT; source directory and input manifest have no NOTICE. New public attribution authored explicitly; original files untouched. Source compilation and tests had not started."
+  ]
+}
