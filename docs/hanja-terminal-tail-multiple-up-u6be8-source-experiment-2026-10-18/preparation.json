@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-verified-native-runtime-unapproved",
+  "configSHA256": "83a60fdb27751c21bf9f69472ab91193bd53e60eb66f8e128d78b781ed06c44a",
+  "newFilesSHA256": {
+    "tail-candidate.mjs": "6d188ef8297882011589748545da8f99fb49d26ce57a747dc0461c148f3283a3",
+    "tail-candidate.d.mts": "079584649482c38e374b76bab0a20b99cc14f46fb0dc29cf39a981be64a4faa5",
+    "config.json": "83a60fdb27751c21bf9f69472ab91193bd53e60eb66f8e128d78b781ed06c44a",
+    "source-check.mjs": "ad906dec9f164190423f3d029e70b61eefb2514330b89347f51e98cbf65d045e",
+    "fixtures.json": "3285df3a912c84dea7c2128435534cc7a947df8dd1b5b8f699801bce1d11be47",
+    "serve.py": "3a1b09526ad659af8aaa952ef78dbb61a0c70718acf95092d7dde79d6e60d40d",
+    "README.md": "320e970c7ac608fc4121ab5a90919d3deb21cc5a3141b27f8af390a2c659033e"
+  },
+  "existingPrimitive": {
+    "origin": "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs",
+    "functions": [
+      "point",
+      "terminalUpTail",
+      "terminalLeftTail"
+    ],
+    "functionsSHA256": "7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08",
+    "bodyByteIdentical": true,
+    "calculatedPolygonOnlyComparedAgainstOriginal": true,
+    "outputUsesOriginalPolygon": true
+  },
+  "sourceCheck": {
+    "passed": true,
+    "targets": [
+      {
+        "key": "647",
+        "glyph": "毨",
+        "sourceCompiles": 1,
+        "originalBaselineCompiles": 1,
+        "independentDerivationsFromSameBaseline": 2,
+        "sequentialChangedBaselineDerivations": 0,
+        "negativeRejections": 23,
+        "engineRuns": 0,
+        "pens": 10,
+        "masks": 12,
+        "polygons": 34,
+        "baselineSHA256": "50d08a72230740f7c07842412cfb69f9821b52754dc0d5c34d0006d0939f5b1b",
+        "derivedSHA256": "95aaf648b0f4ff99841f6c9a012d691b387a0b46075634345637348deddafbd3",
+        "baselineHashProvenance": "New first-positive capture; no independent old compiled hash used",
+        "sourceGroupsUnchanged": true,
+        "originalPolygonsExactlyOnce": true,
+        "otherMasksUnchanged": true,
+        "targets": [
+          {
+            "pen": 4,
+            "rawIndices": [
+              3
+            ],
+            "boundary": 0.926609899913517,
+            "tailWeight": 10.5,
+            "tailArea": 19.6875,
+            "visibleAreaAt0": 0,
+            "visibleAreaAtEpsilon": 2.8874956115032546e-7,
+            "residualAreaAt99": 0.10591874999954598,
+            "residualAreaAt9999": 0.0010500918747311516,
+            "residualAreaAt100": 0,
+            "originalTailPolygonExactlyOnce": true,
+            "bodyGuideWidthWeightPreserved": true,
+            "derivedIndependentlyFromOriginalBaseline": true
+          },
+          {
+            "pen": 10,
+            "rawIndices": [
+              9
+            ],
+            "boundary": 0.8120673118330224,
+            "tailWeight": 10.5,
+            "tailArea": 19.6875,
+            "visibleAreaAt0": 0,
+            "visibleAreaAtEpsilon": 2.8875001589767635e-7,
+            "residualAreaAt99": 0.10591875000000073,
+            "residualAreaAt9999": 0.0010500918742764043,
+            "residualAreaAt100": 0,
+            "originalTailPolygonExactlyOnce": true,
+            "bodyGuideWidthWeightPreserved": true,
+            "derivedIndependentlyFromOriginalBaseline": true
+          }
+        ],
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    ],
+    "positiveCompilations": 1,
+    "independentDerivations": 2,
+    "engineRuns": 0,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "privateHTTP": 0,
+    "serverStarts": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "executions": 1,
+    "exitCode": 0,
+    "negativeRejectionsTotal": 23,
+    "nodeSyntaxChecks": [
+      {
+        "file": "tail-candidate.mjs",
+        "executions": 1,
+        "exitCode": 0
+      },
+      {
+        "file": "source-check.mjs",
+        "executions": 1,
+        "exitCode": 0
+      }
+    ],
+    "areaProbeScope": "Local tail-mask progress, not whole-pen progress; floating-point area/AA not a native certificate."
+  },
+  "multiTargetPolicy": {
+    "oneOriginalBaselineCompilerCall": true,
+    "deriveIndependentlyFromSameOriginalBaseline": true,
+    "sequentialDeriveOnChangedBaseline": false,
+    "changedPensOnly": [
+      4,
+      10
+    ],
+    "sourceGroupsUnchanged": true,
+    "originalPolygonsExactlyOnce": true
+  },
+  "bytePinsCapturedNow": true,
+  "baselineHashesCapturedNow": true,
+  "legacyIndependentCompiledHashUsed": false,
+  "originalNoticeAndProofBytesPreserved": true,
+  "sourceGeometryChanged": false,
+  "sourceOrderChanged": false,
+  "bodyGuideWidthWeightPreserved": true,
+  "onlyOriginalTailPolygonSeparated": true,
+  "helperFixtureCache": {
+    "startupSourceCompiles": 0,
+    "requestCompilations": 0,
+    "engineRuns": 0,
+    "publicFixtureOnly": true,
+    "privateDictionaryRAMOnly": true,
+    "boundariesDynamicBySelectedPen": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "canonicalCountersChanged": false,
+  "existingHoldsChanged": false,
+  "serverStarts": 0,
+  "privateMediaSaved": false,
+  "limitations": [
+    "국소꼬리면적은native/AA/전체bodycoverage 승인이 아닙니다.",
+    "원4/10보류와전체재생을 새로native대조해야 합니다."
+  ],
+  "firstCapturedBaselineHashes": {
+    "647": "50d08a72230740f7c07842412cfb69f9821b52754dc0d5c34d0006d0939f5b1b"
+  },
+  "experimentalTargetBoundaries": {
+    "4": 0.926609899913517,
+    "10": 0.8120673118330224
+  },
+  "existingLabBytePins": {
+    "../hanja-terminal-tail-multiple-up-source-experiment-2026-10-18/tail-candidate.mjs": "1211fd5e3870d736914348e411c3b93f49aec50b794317b40c03390f5f6e6d3a",
+    "../hanja-terminal-tail-multiple-up-source-experiment-2026-10-18/tail-candidate.d.mts": "68d71611d5e81de7352001027fbf1a66be88cee2c800d64a738878f00ba1da6d",
+    "../hanja-terminal-tail-multiple-up-source-experiment-2026-10-18/config.json": "5cf7d9878712ca12c47d3e2eb95dde92b2e94fb369e3b80e18968025bc12f1ea",
+    "../hanja-terminal-tail-multiple-up-source-experiment-2026-10-18/source-check.mjs": "516e6f5359119e215ddd830b4db351cc20d1684d0236b5ad52feff48f8443641",
+    "../hanja-terminal-tail-multiple-up-source-experiment-2026-10-18/fixtures.json": "8b9ead3ac3dcd6f2495b18731cf856fe558aa381558eccb19e3ccdad6c6b9b2f",
+    "../hanja-terminal-tail-multiple-up-source-experiment-2026-10-18/serve.py": "79b8f1eec3627be252036b6079dee841e241e91608db6ea0529160f7191225b8",
+    "../hanja-terminal-tail-multiple-up-source-experiment-2026-10-18/README.md": "5af06626888104f54e0bcd4a7381d49fe8241985a0395c37c16bbcb03be36f8f"
+  }
+}
