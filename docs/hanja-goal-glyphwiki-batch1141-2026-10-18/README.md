@@ -1,0 +1,11 @@
+# 鞶 — batch1141 terminal114 LEFT 표시 복구
+
+선택u97b6 whole1을root가실제3SVG520으로관찰했습니다. 비선택capturedVS0는이번미관찰입니다. 현재19방향·coarse171·fine[3,5,6,7,8,9,10,11,12,13]99.99→100·경계3=.8654126475144676 전/중/후+95·초기0/epsilon(standardroundcap만)·자연재생3 7.45750000→100.00000000 모두PASS입니다. baseline171은별도관찰이며후보171에중복합산하지않습니다.
+
+고정publicfixture587를RAM에서재사용하여추가compile0/engine0입니다. 19획20mask51원polygon, derivedSHA 50f5263440d34f3b1d6b41534d55caa090bc244a1bbb2eb1ea6aa7ea2247679a입니다. 기존terminalLeftTail이3획마지막원terminal114 polygon만분리합니다. body guide/width/weight/direction·타mask·필순/sourceGroups를보존하고bounds는남은원정점으로재계산합니다. maskpartition은변경되며새정점·좌표·경로·connector·group은없습니다. full5/id3 unprefixed fileSHA256 필수3/4→legacy2 계약과header4/traceclosure를보존합니다. baseline d4e4e9fdae4b3113c8efff850836b02fdcf2c29e77e82fec7cedd729fcc77a2a는실험첫capture이며과거독립baseline으로주장하지않습니다. 원7familyrecords/2capturedwhole/선택closure6/provider0와전체97핀을보존합니다. 원NOTICE와archive/license는변경하지않습니다.
+
+원canonical은object가아닌다음string이며형식·내용을변경하지않습니다: batch587 鞶19;bothwholescompatible,all19staticdirections and171normalframes observed162eligible;pen3hookflag114extent9.0375>radius7;pen8finePASS;7records0hist;remaining8finechecks pending;no runtime。JSON SHA c091b70ce463587e9c694b45e8ea6a3dd31b4e47468271c37d17ee9c1acc324c입니다. source실험false이력과과거587/939문서도바꾸지않습니다.
+
+실제부모1140 SHA 5966bb90bc8d643d47a598843ba1f69af8d9ed73d3ce190bbd821af9a3a07904는5583/5978·남395·historical343/resolved30/active313입니다. root actual registry단1회 exit0 PASS 후현재5584/5978·남394·historical343/resolved31/active312로확정했습니다. canonical198refs의원587string1만해제하고원문은그대로보존합니다. 집중3/3·verifier구문각1회PASS,추가fixturecompile0/engine0/build0입니다. 앱자동재생UI는검토하지않았습니다.
+
+root-owned검토child37244 port57061은종료요청상태로전달받았습니다. 이worker는서버를시작하거나종료하지않았으며독립exit확인을주장하지않습니다.
