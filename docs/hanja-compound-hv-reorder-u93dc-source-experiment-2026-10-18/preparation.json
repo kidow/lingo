@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only cached whole-pen17/18 swap verified",
+  "configSHA256": "ffa49fbb13fec07e6ac2ddff4d2b8c8f0082c81e7b0ed87ed2eb87205cac3977",
+  "newFilesSHA256": {
+    "fixtures.json": "9224b0d6125b9b237475a122316a3750664af7ae62561d4adaf4ee93c6ddb408",
+    "reorder-candidate.mjs": "89e2f4499fa9cb2abf3aa5a119c21f730583faf4927f21bba66c5d284c3feb31",
+    "reorder-candidate.d.mts": "3aab7a31ea7f52fce6583894403fde716a7ca06c16a0bdc5ae410f20e2ccc8a6",
+    "serve.py": "7beaa29944658597567bd4341bd78542ac20dae80a0981400c6f18423d2950f0",
+    "source-check.mjs": "6daa28d235f4553a66429603b67002359be095749e4818a973a16a577a9f51b3",
+    "README.md": "808ec0c7cec22f8c119ccd415057543608cbeee9702d86df04ece8eacd9e35c6"
+  },
+  "originalSourcePins": 32,
+  "legacyCardinalLabPins": 8,
+  "uniqueInputPins": 40,
+  "expectedRuntimeTrackedPinsIncludingNew8": 48,
+  "originalPenOrder": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18,
+    17,
+    19
+  ],
+  "sourceBaselineSHA256": "18bde289b7ac5a14701397edf616dfeb128ac8a959ad26eda868aee609e92326",
+  "baselineCardinalCandidateSHA256": "83785d4e13d4e247db0e652442e3d5d39ae4035dcbd4f6193a87657ed00370f9",
+  "expectedCompiledSHA256": "9dacf86d2982f23695f9c7b5db5c8878262c722e4682acbeb8e76ae9af37d8c1",
+  "pens": 19,
+  "masks": 20,
+  "polygons": 41,
+  "sourceCompiles": 0,
+  "originalCompilerDelegations": 0,
+  "engineRuns": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "sourceCheck": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "positiveCachedPermutations": 1,
+    "negativeRejections": 30,
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "pens": 19,
+    "masks": 20,
+    "polygons": 41,
+    "baselineSHA256": "83785d4e13d4e247db0e652442e3d5d39ae4035dcbd4f6193a87657ed00370f9",
+    "derivedSHA256": "9dacf86d2982f23695f9c7b5db5c8878262c722e4682acbeb8e76ae9af37d8c1",
+    "originalAndLabPins": 40,
+    "wholePensExactReferencePermutation": true,
+    "existingCardinal15Unchanged": true,
+    "allBoundaries": {
+      "15": [
+        0.6034284252270692
+      ]
+    },
+    "nodeSyntaxChecks": 2,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "serverStarts": 0,
+    "HTTP": 0
+  },
+  "baselinePublicCacheSavedBeforeModuleAndCheck": true,
+  "allMultiMaskBoundaries": {
+    "15": [
+      0.6034284252270692
+    ]
+  },
+  "everyOriginalPenMaskPolygonGuideWidthWeightPreserved": true,
+  "originalSourceFilesChanged": false,
+  "newCoordinatesPathsWidthsGroupsAuthored": false,
+  "priorCardinalDisplayPolicyChangePreserved": true,
+  "newDisplayPolicyChange": false,
+  "nativeDirectionsReviewedThisCandidate": 0,
+  "nativeCoarseReviewedThisCandidate": 0,
+  "nativeFineReviewedThisCandidate": 0,
+  "rootFreshApprovalRequired": true,
+  "strictProof": {
+    "full5SHA256": "f54743197d4137e52ea7f12e2a206418052efb74519af98103d33fde32e3f6c0",
+    "identity": {
+      "root": "u93dc",
+      "file": "engine-whole-u93dc.json",
+      "fileSHA256": "42ca8342b3d1d6c33771238a96c4c5e1b1b7d952be65af4a17629d6e4d28961d"
+    },
+    "arity": [
+      3,
+      4
+    ],
+    "unprefixedFiles": true,
+    "fileSHA256CaseExact": true
+  },
+  "priorOrderHold1202": {
+    "status": "held-native-order17-18",
+    "parentPending": true,
+    "whole": {
+      "root": "u93dc",
+      "views": 1,
+      "compatible": true
+    },
+    "directions": {
+      "observed": 19,
+      "passed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19
+      ],
+      "failed": [
+        17,
+        18
+      ],
+      "mapping": {
+        "17": 18,
+        "18": 17
+      }
+    },
+    "fine": 0,
+    "coarse": 0,
+    "boundaries": 0,
+    "natural": 0,
+    "runtimeApplied": false,
+    "canonicalOld513ObjectPreserved": true
+  }
+}
