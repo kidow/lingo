@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "scope": "Source-only u5caf pen2 V2/H1 display experiment",
+  "configSHA256": "4c3c6a374889b67bb3f989db1ab0ebc0ca9135fd905c699912469317ae3f969c",
+  "newFilesSHA256": {
+    "config.json": "4c3c6a374889b67bb3f989db1ab0ebc0ca9135fd905c699912469317ae3f969c",
+    "bounds-vh-candidate.mjs": "916e492a4a6416a7d4313b31eb47e3c423abec0b6a5fbc09e16602ab6b257764",
+    "bounds-vh-candidate.d.mts": "d207cc15fb1c8435644e36067644167e37b3aeb7dfec77eccba6a2f244e70c89",
+    "serve.py": "85ef059c410e1cdac6d402c22a83be652cc3f143a95174a6dec4f4c5535d07a9",
+    "source-check.mjs": "ca566870a4e876751efe16aa73b32c92ed7ff8067df93fb59af46b3db73bddc0",
+    "README.md": "f7aa670179a3a8894ce0f26cdf9473951267344a6f1173003fd8b0474de230a9",
+    "fixtures.json": "cbc9344164bbe2205f3a55d3d64854b2ddccdb1651a742f18eb057ef4587cda6"
+  },
+  "sourcePinsCount": 21,
+  "baseline": {
+    "captureCount": 1,
+    "sourceCompilerArgumentCount": 2,
+    "sourceCompilerUnmodified": true,
+    "firstCapturedNow": true,
+    "baselineSHA256": "40d5c070b36fb66662fe2948b0c56eb7031867cf0b6eff0303fe91b97525c84b",
+    "cachePersistedBeforeChecks": true,
+    "engineRuns": 0
+  },
+  "policy": {
+    "displayPolicyChanged": true,
+    "originalCallCoordinatesWidthsDirectionsPreserved": true,
+    "originalActiveGuidePreserved": false,
+    "newAuthoredCoordinates": false,
+    "newConnector": false,
+    "originalPolygonsExactlyOnce": true,
+    "wholeMaskOrderUnchanged": true
+  },
+  "existingKernel": {
+    "file": "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/bounds-vh-candidate.mjs",
+    "whole1387ByteBodyExactReuse": false,
+    "reason": "V2+H1 chunks and exact flags differ from old V1+H2. Normalization/bounds/weight formulas reused.",
+    "newBoundedFunctionSHA256": "fe87cb90faa47d69adc13a70588ae5c54ccff1469724b395d51438084206113b"
+  },
+  "validation": {
+    "passed": true,
+    "cachedPositiveInvocations": 1,
+    "candidateDerivations": 1,
+    "sourceCompilationsDuringCheck": 0,
+    "totalOriginalBaselineCompilations": 1,
+    "engineRuns": 0,
+    "negativeRejections": 31,
+    "nodeSyntaxChecks": 2,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "serverStarts": 0,
+    "HTTP": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "report": {
+      "glyph": "岯",
+      "sourceRoot": "u5caf",
+      "pens": 8,
+      "masks": 9,
+      "polygons": 18,
+      "baselineSHA256": "40d5c070b36fb66662fe2948b0c56eb7031867cf0b6eff0303fe91b97525c84b",
+      "derivedSHA256": "c3b7380c27a74282914fe11447c97a64656c8734a0dddf657cea90c4143562ab",
+      "pen2OriginalWeight": 73.085,
+      "pen2OriginalPerCallWeights": [
+        48,
+        25.085
+      ],
+      "boundary": 0.6567695149483478,
+      "VhClipSourceArithmetic": [
+        {
+          "direction": "down",
+          "polygons": 2,
+          "totalArea": 341.375,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 1.0231815394945443e-12
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 174.875
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 332.81937499999987
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 341.37496577749994
+            },
+            {
+              "progress": 1,
+              "visibleArea": 341.375
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        },
+        {
+          "direction": "right",
+          "polygons": 1,
+          "totalArea": 50.20000000000027,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 5.020000344302389e-7
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 25.100000000000136
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 47.690000000000055
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 50.194980000000214
+            },
+            {
+              "progress": 1,
+              "visibleArea": 50.20000000000027
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        }
+      ],
+      "HEpsilonInsideCompletedV": true,
+      "originalPolygonsExactlyOnce": true,
+      "sourceGroupsUnchanged": true,
+      "allOtherMasksUnchanged": true,
+      "displayPolicyChanged": true,
+      "originalActiveRevealGuideNotPreserved": true
+    },
+    "status": "source-only-single-run-passed"
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "compiled": {
+    "pens": 8,
+    "masks": 9,
+    "polygons": 18,
+    "derivedSHA256": "c3b7380c27a74282914fe11447c97a64656c8734a0dddf657cea90c4143562ab",
+    "boundary": 0.6567695149483478
+  },
+  "metadataNote": "Cached check stdout reparsed after a Node REPL conditional-binding scope error; no source/check/compiler repeated. Final fixture pin initially differed by exactly one extra trailing LF retained from the first baseline patch; JSON content was identical. Removed that single blank line after byte diff, without compiler/check rerun."
+}
