@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-exact-cardinal-mask-experiment-checked-native-pending",
+  "configSHA256": "72779c12d19ce75ba30a024a01fb4124bb3fc41b12db9742e14cd36a50ac2ced",
+  "newFilesSHA256": {
+    "config.json": "72779c12d19ce75ba30a024a01fb4124bb3fc41b12db9742e14cd36a50ac2ced",
+    "cardinal-candidate.mjs": "ec7b0ef2cfc7f4d3a6a9ddbb9501d1e0f973cc6a5695d3398f47724d5ee589a3",
+    "cardinal-candidate.d.mts": "19af526df3b70265f965328562b26147b925a7a7a6a39ad2e5514206c0183489",
+    "source-check.mjs": "9a03e47ba80b736dc907859fe57372c8970b3192a4e73963ad849be0fa255e7e",
+    "serve.py": "85fca8a6777bfafb798365ba8cb9f62e93fbada6846eaf2664db00953b7587a6",
+    "README.md": "1dd39b0117150f175c946d4d640a861b790562d1041bf1490c3bd26902ae2f95",
+    "fixtures.json": "c156255bdfde06cc7a3197dbe5be5c6c0830f1592bf0d21e4b56e22f2bf55d03"
+  },
+  "reusedAlgorithm": {
+    "originalLab": "../hanja-compound-terminal23-source-experiment-2026-10-18/cardinal-candidate.mjs",
+    "originalModuleSHA256": "af346f51062ce002cd011937d594ffc440645eda7b8c4624e818b4ecd7eca618",
+    "eligibleAndDeriveByteSHA256": "d59eb13f36dc6c10fb3a74eac875205a137ed4adc953f818c53913805aeb53fe",
+    "unchanged": true
+  },
+  "originalLabFilesSHA256": {
+    "config.json": "9feecee8878693af603ec118b86103141e36baa22484a0e6a6c980f4c324d12f",
+    "cardinal-candidate.mjs": "af346f51062ce002cd011937d594ffc440645eda7b8c4624e818b4ecd7eca618",
+    "cardinal-candidate.d.mts": "c8801787a2c30384b9d858bb5c993ee026e53c733f9210354a0fcb228cbaac0d",
+    "source-check.mjs": "f0c2ec182fc1028538d0b45d49e2e23c9a5172c5163b200cdb22fb9d5e37d9e6",
+    "serve.py": "d87625776c8ade7f9781df246b7de4508b7e6cbabe582495245abf8cb7f61895",
+    "README.md": "256ce3a3d331657f883412f58205d7643a2d61b87c1685b87bd285143464d7ed",
+    "preparation.json": "8b9d8d4d5580d20d80363c4f512ef6e34b6ae610eced0648572702f14945051e",
+    "fixtures.json": "b07feb94ea493c30d9d1fec8697c59dd37a302a741361df064c1173f1434cb14"
+  },
+  "sourceCheck": {
+    "passed": true,
+    "targets": [
+      {
+        "key": "1109",
+        "glyph": "烔",
+        "pen": 9,
+        "sourceCompiles": 1,
+        "engineRuns": 0,
+        "negativeRejections": 17,
+        "pens": 10,
+        "masks": 12,
+        "polygons": 25,
+        "baselineSHA256": "398b9504c98b46839832fa9678fcbc15b15bbe304c8c8e3da692517525ba757d",
+        "derivedSHA256": "82c2d74d113f8d3752215b6355a346d7d5b762b67b61e7376ea20e8067050e71",
+        "originalPolygonsExactlyOnce": true,
+        "unchangedOtherPens": true,
+        "verticalOriginalArea": 204.92499999999905,
+        "visibleAreaAt0": 0,
+        "visibleAreaAtEpsilon": 0,
+        "residualAreaAt99": 0.11937024999861023,
+        "residualAreaAt9999": 0.000011937025192310102,
+        "residualAreaAt100": 0,
+        "boundary": 0.4062708472314877,
+        "maskGeometryAuthoring": false,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      },
+      {
+        "key": "1112",
+        "glyph": "駵",
+        "pen": 16,
+        "sourceCompiles": 1,
+        "engineRuns": 0,
+        "negativeRejections": 17,
+        "pens": 17,
+        "masks": 19,
+        "polygons": 34,
+        "baselineSHA256": "2e7533ea48b5aff2abb39de499279b1a914bd1e5a0f4124aef2f9a8cf9d04da0",
+        "derivedSHA256": "22d4c10c6a85641258e17b395b7200189247b8b7050a342188a99fb15520b348",
+        "originalPolygonsExactlyOnce": true,
+        "unchangedOtherPens": true,
+        "verticalOriginalArea": 201.625,
+        "visibleAreaAt0": 0,
+        "visibleAreaAtEpsilon": 2.2737367544323206e-13,
+        "residualAreaAt99": 0.11560000000099535,
+        "residualAreaAt9999": 0.000011560000530153047,
+        "residualAreaAt100": 0,
+        "boundary": 0.37748344370860926,
+        "maskGeometryAuthoring": false,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    ],
+    "positiveCompilations": 2,
+    "engineRuns": 0,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "privateHTTP": 0,
+    "serverStarts": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "executions": 1,
+    "exitCode": 0,
+    "nodeSyntaxChecks": [
+      {
+        "file": "cardinal-candidate.mjs",
+        "executions": 1,
+        "exitCode": 0
+      },
+      {
+        "file": "source-check.mjs",
+        "executions": 1,
+        "exitCode": 0
+      }
+    ],
+    "areaProbeScope": "Local V-mask progress; floating-point shoelace/AA not a native certificate and not whole-pen progress."
+  },
+  "targetEvidenceSeparation": {
+    "1109": "Root observed originalmask actual520 endpoint failure; newderivedmask not observed.",
+    "1112": "Source-risk candidate only; no native observation inherited."
+  },
+  "experimentalTargetBoundaries": [
+    {
+      "batch": 1109,
+      "pen": 9,
+      "boundary": 0.4062708472314877,
+      "actualNativeRequired": [
+        "0-to-epsilon",
+        "before-at-after-new-mask-boundary",
+        "95",
+        "99.99-to100-actual520",
+        "direction",
+        "nine-coarse",
+        "natural-replay"
+      ]
+    },
+    {
+      "batch": 1112,
+      "pen": 16,
+      "boundary": 0.37748344370860926,
+      "actualNativeRequired": [
+        "0-to-epsilon",
+        "before-at-after-new-mask-boundary",
+        "95",
+        "99.99-to100-actual520",
+        "direction",
+        "nine-coarse",
+        "natural-replay"
+      ]
+    }
+  ],
+  "originalNoticeAndProofBytesPreserved": true,
+  "sourceGeometryChanged": false,
+  "sourceOrderChanged": false,
+  "onlyTargetMaskCountIncreasedByOne": true,
+  "originalPerCallCardinalBoundsAndWeightsReused": true,
+  "maxYGuideExtensionImplemented": false,
+  "helperFixtureCache": {
+    "startupSourceCompiles": 0,
+    "requestSourceCompiles": 0,
+    "engineRuns": 0,
+    "publicGeometryOnly": true,
+    "domesticMediaRAMOnly": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "canonicalCountersChanged": false,
+  "existingHoldsChanged": false,
+  "serverStarts": 0,
+  "privateMediaSaved": false,
+  "productionPromotion": false,
+  "limitations": [
+    "Two exact pinned H/V targetsignatures only; no generalized release.",
+    "Offaxis/curved/reversed/gap/changedterminal/proof/identity/polygon must reject.",
+    "Rectangle-limit area calculation does not validate native direction/inkfront/pixelAA."
+  ]
+}
