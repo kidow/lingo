@@ -1,0 +1,9 @@
+# 駪 — batch1147 LEFT6·UP16 mixed 복구
+
+선택baseu99ea whole1/현재16방향/freshcandidatecoarse144/fine[6,7,8,9,10,11,15,16]99.99→100/6경계.8938916148206728·16경계.8088862336136763전중후+95·초기0epsilon 모두root실제3SVG520PASS입니다. baseline144는별도입니다. 자연6 2.96250000→100.00000000 및16 2.65250000→100.00000000 각8초stablepair520PASS. 비선택VS0는이번미관찰입니다.
+
+고정u99ea 원16획40polygon/sourceGroups를보존합니다. 기존terminalLeftTail로6획원terminal214 polygon을LEFT8mask로,terminalUpTail로16획원terminal5 polygon을UP12.5mask로같은원baseline에서독립derive후해당pen만합쳐16획18mask로만듭니다. 순차변경baselinederive0. 원body guide/width/weight/direction과타mask를보존하고bounds만남은원정점으로재계산합니다. 새정점·좌표·경로·connector·필순·group은작성하지않습니다. full5/id3 mandatory3/4→legacy2와동일날further baseline참조,688/939object·과거single6FAIL·원NOTICE를보존합니다. 16획18mask40원polygon derivedSHA 58b3defc1e0ddf47c4d5babb3471ff9d1ebdc5ccff34723ffc03c1242ca0d434. 기존mixedpublicfixture688 RAM재사용/추가compile0/engine0. 원4familyrecords/2whole/provider0·선택closure3·원21+further8+mixed8=37핀을보존합니다. baseline 802370ff08e3da8ed53b6df5fff1e8bb272b41665cdbd0de337de1e951ffd28f은동일날further 실험첫capture참조이며과거독립legacybaseline이아닙니다.
+
+과거further단일UP16은PASS했지만6은99.99→100약7pxtip완성FAIL이었습니다. 당시coarse/replay0을이번승인으로취급하지않습니다. 현재mixed는6LEFT·16UP모두fresh native재검토PASS이며과거source/nativefalse 및실패원문은입력핀으로보존합니다. 원canonical688object JSON SHA f5757dbf4210a1b6e478a4b723066f207618117cb72af28002bdfd830c322d4d도변경하지않습니다. 최초RAM보고의family3은선택closure3과혼동한표현이며실제sources.json원family4로정정합니다.
+
+실제부모1146 SHA 4e1e1c8f573e13434bf561b8e6205b7a83a8f1c1e420cea8f100fcff4f3ec1fe actual5589/5978·남389·hist343/res36/active307. root registry/actual단1회EXIT0 PASS로현재5590/5978·남388·hist343/res37/active306으로확정했습니다. 집중3/3·verifier구문각1회PASS,canonical204refs의원688object1건만해제했습니다. 앱자동재생UI와build는실행하지않았고worker는서버를조작하지않았습니다.
