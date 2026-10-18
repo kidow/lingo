@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "batch": 1202,
+  "glyph": "鏜",
+  "catalogStrokes": 19,
+  "verifiedAt": "2026-10-18",
+  "status": "native-partial-order-hold",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "runtimeRegistered": false,
+  "evidenceSource": "root native browser observation",
+  "selectedSourceRoot": "u93dc",
+  "sourceContract": {
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullProofSHA256": "f54743197d4137e52ea7f12e2a206418052efb74519af98103d33fde32e3f6c0",
+    "identity": {
+      "root": "u93dc",
+      "file": "engine-whole-u93dc.json",
+      "fileSHA256": "42ca8342b3d1d6c33771238a96c4c5e1b1b7d952be65af4a17629d6e4d28961d"
+    },
+    "mandatoryArguments": [
+      3,
+      4
+    ],
+    "sourceBaselineSHA256": "18bde289b7ac5a14701397edf616dfeb128ac8a959ad26eda868aee609e92326"
+  },
+  "candidateGeometry": {
+    "kind": "existing cardinal15 cached candidate before17/18 reorder",
+    "pens": 19,
+    "masks": 20,
+    "polygons": 41,
+    "compiledSHA256": "83785d4e13d4e247db0e652442e3d5d39ae4035dcbd4f6193a87657ed00370f9",
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        10
+      ],
+      [
+        9
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13,
+        14,
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        19,
+        20
+      ],
+      [
+        23
+      ],
+      [
+        21
+      ],
+      [
+        22
+      ]
+    ]
+  },
+  "workerNativeObservations": {
+    "observer": "/root",
+    "whole": {
+      "actuallyObserved": [
+        "u93dc"
+      ],
+      "compatible": [
+        "u93dc"
+      ],
+      "otherVariantsApproved": false
+    },
+    "directions": {
+      "observedPens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "matchingPens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19
+      ],
+      "orderMismatchPens": [
+        17,
+        18
+      ],
+      "matchingCount": 17,
+      "mismatchCount": 2,
+      "allApproved": false
+    },
+    "finePens": [],
+    "coarseFrames": 0,
+    "maskBoundariesObserved": 0,
+    "naturalReplaysObserved": 0,
+    "stoppedAtOrderGate": true
+  },
+  "sourceFacts": {
+    "oldPen17": {
+      "raw": [
+        23
+      ],
+      "call": [
+        130.57999999999998,
+        114,
+        130.57999999999998,
+        180,
+        0,
+        32
+      ],
+      "direction": "down",
+      "weight": 33,
+      "bounds": [
+        62.25,
+        56.5,
+        69.75,
+        91
+      ]
+    },
+    "oldPen18": {
+      "raw": [
+        21
+      ],
+      "call": [
+        93.2,
+        148,
+        172.41,
+        148,
+        0,
+        0
+      ],
+      "direction": "right",
+      "weight": 39.605,
+      "bounds": [
+        46.6,
+        68,
+        86.2,
+        75
+      ]
+    },
+    "domesticRequires": {
+      "17": "right horizontal",
+      "18": "down vertical"
+    },
+    "existingCardinal15Preserved": true,
+    "unapprovedSeparateReorderExperiment": {
+      "preparation": "docs/hanja-compound-hv-reorder-u93dc-source-experiment-2026-10-18/preparation.json",
+      "observedPreparationSHA256": "3d821bdf47a648f88975eb486cede8298ba114ff447b7166bf2d96be5c0acf09",
+      "snapshotNotRuntimeApproval": true,
+      "proposedOrder": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        17,
+        19
+      ],
+      "compiledSHA256": "9dacf86d2982f23695f9c7b5db5c8878262c722e4682acbeb8e76ae9af37d8c1",
+      "nativeApproval": false,
+      "notTheCandidateObservedInThisHold": true
+    }
+  },
+  "originalAndExperimentFilesSHA256": {
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/NOTICE.md": "5df24f0ab6ee969f59a1e4042ae1bf2a7fea114f8d402d465d39e8770f6d8de2",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/candidate-compile-analysis.json": "fe12b5bd7b4b5f808f2333fd797a26afc51d1365eaab2a9250936ad3376c3cca",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/checkpoint-README.md": "374adb540dda34fa6c184a118e6edf4338ddcfd14ed7cb7b378f2d351e62ad92",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/combined-native-source-pins.json": "479f4ea04b9979fc02df953ae2141d24bdd1a19ed04dc09401028a5a8334fe4b",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/engine-proof.json": "42ca8342b3d1d6c33771238a96c4c5e1b1b7d952be65af4a17629d6e4d28961d",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/engine-whole-u93dc-ue0100.json": "42ca8342b3d1d6c33771238a96c4c5e1b1b7d952be65af4a17629d6e4d28961d",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/engine-whole-u93dc.json": "42ca8342b3d1d6c33771238a96c4c5e1b1b7d952be65af4a17629d6e4d28961d",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/legacy-provenance.json": "ec4adafab522431626168884d76ace7ef6605d93fadd3b8c373240a090dccaf2",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/metadata.json": "8ef362e483a0053683459ebd6d123b2758562809cf5485e469b23d6f4b50c88c",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/native-review.json": "738df0d40415cd51b5b0bdfcc03c28143b44b5a736c3de74dd2ee880dd167bd8",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/native-server-compile.mjs": "05a510ef62854e7cfc9a460021f04fe3202ac4d00725975de6b4fa522c90cc2a",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/native-server-source-audit.json": "8e7ea7909b3eeacdc741d30ef8fa76fe91339ce3b2ec881e6f4f9edd3349ee63",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/native-server-validation.json": "48abdedae04fc7a5df1262857bbdc1157cb1b1ceee7eaea52edb4e02fb030d3c",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/progressive.mjs": "b72f072ee37864b4bffd05a8d0ac0ca86cfddfc6c1e52595abc05279670310a4",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/resume.json": "033414d6a4507c49e40a315568dae9440eaf02ddb0e468df89368f0522374e39",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/serve-combined-native.py": "ca555dd138377d1c062712b2c6f70e70af691594decba9b0398a595918c464d7",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/serve-native.py": "2adfc5b7806a18fce50a3a3575f066c84bd2ee7e939090a5ba01ad67ecf078cb",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/server-compile-strict-candidate.mjs": "ef08ec35cf03f244ba56bfa002faab865ffceafbbcf7891cd8956da2ea301d41",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/source-analysis.json": "045ccddcaedee9a4af55fc8ffb7e52ff4a2c410b742e3cfd917223dc77f503f5",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/source-join-analysis.json": "44a47390a04f117c5f85b76c01c8c145b4495a3c0f2bbc40a3116323389a224c",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/source-only-helper-readiness.json": "8b3b6294a10013525519594583389a1f9627a315c06ade474fccddcb72ed84ac",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/source-verification.json": "64d18af0788e30d8a500b700d97af1cab2396115d7555bc98e3226fe68539d4d",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/sources.json": "271a869093690eb637040eab6dd50bbe5e700edafc3d298a4934d538bcdacb75",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/strict-source-candidate.d.mts": "e6792fbab51156b8a7318bbdbd5c6c1bfafdbd8c70737743e3d177325a6f1a77",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/strict-source-candidate.mjs": "14587c2f89b4c45a1daf7e8b848f33d16789b2aa7c9ebfdb405ba9cd007ac1b8",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/strict-source-preparation.json": "9e7d57bc930229312ed3493f6c28e15021e42e78ca6910bcf5e7b9cb40e0c9a0",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/validation.json": "460f9107d6706b7cc5eb891bf36440a0923e88aff2c0c8a4c48e6fea0c02a73c",
+    "docs/hanja-goal-glyphwiki-batch1097-2026-10-13/verify-source.mjs": "ddd4ffa10e6f97538a99475bcd2580fa8d8d8f3f720d0f7f4accd1eaaf258431",
+    "docs/hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "docs/hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "docs/hanja-compound-terminal23-legacy-source-experiment-2026-10-18/README.md": "154ca4a098c22d2ab6e5f4bfd090ce38b495e858bac81380f315877fb8c4f205",
+    "docs/hanja-compound-terminal23-legacy-source-experiment-2026-10-18/config.json": "1075912eaf5711989b22aca8815d45f7954fc1ff013cf62f040fb2e7501a837d",
+    "docs/hanja-compound-terminal23-legacy-source-experiment-2026-10-18/cardinal-candidate.mjs": "26724a738c6371aa7bb458571191423ae9c694697be3226b32324ffa89a031d5",
+    "docs/hanja-compound-terminal23-legacy-source-experiment-2026-10-18/cardinal-candidate.d.mts": "c592c23333b0bcb521d0d875be0c5623d0260afee7f79b2cdf18d268c31c4c73",
+    "docs/hanja-compound-terminal23-legacy-source-experiment-2026-10-18/serve.py": "6fe80f4c4d986f55b457feed4f59c685b755532490bf8620364e0aea396e956e",
+    "docs/hanja-compound-terminal23-legacy-source-experiment-2026-10-18/source-check.mjs": "f0c2ec182fc1028538d0b45d49e2e23c9a5172c5163b200cdb22fb9d5e37d9e6",
+    "docs/hanja-compound-terminal23-legacy-source-experiment-2026-10-18/fixtures.json": "0e62879468d39e23cfaf357197c565e87d3f89f923b1c2ad48d15c7f0c1ca052",
+    "docs/hanja-compound-terminal23-legacy-source-experiment-2026-10-18/preparation.json": "16b0c1af3216f66e280ad0e0f949ee18d659ff01b916ebfdadb242fbca6d51fc"
+  },
+  "existingCanonicalHold": {
+    "matches": 1,
+    "recordType": "string",
+    "priorBatch": 513,
+    "record": "batch513 鏜19;pen15 terminal outline outside original merged-path mask;endpoint-to-tip15.235488units versus original radius14",
+    "recordJsonSHA256": "33640380d193b5149ed51ac52a57c9b13d461d8b1dadbde7d92dff3fc79992fc",
+    "recordUtf8SHA256": "f430f8859e021d5c64843a7cc3ce9dd9ebd1feb97ff91d369e23ddf6edc04ca6",
+    "source": "docs/hanja-goal-glyphwiki-batch939-2026-10-13/resume.json",
+    "newCanonicalDelta": 0,
+    "originalBytesPreserved": true
+  },
+  "sourceCompilationAccounting": {
+    "heldCheckpointSourceCompilations": 0,
+    "heldCheckpointEngineRuns": 0,
+    "heldCheckpointSourceChanges": 0,
+    "separateCachedReorderSourceCompilations": 0
+  },
+  "parentActualConfirmed": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1201-2026-10-18/resume.json",
+  "parentResumeSHA256": "674c1a4855d5a4066da8c07c1b38c519acd65266a997c0a557083e469677e219",
+  "serverLifecycle": {
+    "reportedBy": "/root",
+    "childPID": 92570,
+    "toolSessionID": 70558,
+    "port": 54590,
+    "childStopped": true,
+    "wrapperIndependentlyConfirmed": false
+  },
+  "appUIAutoplayReviewed": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": 0
+}
