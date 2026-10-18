@@ -1,0 +1,480 @@
+{
+  "schema": "hanja-independent-masks-preparation-v1",
+  "date": "2026-10-19",
+  "glyph": "滺",
+  "root": "u6efa",
+  "configSHA256": "22b608a1660bc65ba1cffd35210b34c87544e1b099c0f1d1a490e6321ade1aee",
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/NOTICE.md": "69a0ff4533c3140cf15dd0b4240492d0c3b955dbed2224d120b8a919be7fce4e",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/README.md": "6c3bb4decd49b9be2183f37cf2bb8fce130611fc208a207d6ffce3a1b8b76fa0",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/draw-trace.json": "6f849c945074af5dc6a1b52116e48ad1dc8b222f4d435a079fe27347e6740320",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/engine-proof.json": "1a1b4ab88e1cf727ec0af1096b28b3b92d3ebb2e731264b21df9606d762b6c41",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/engine-whole-u6efa.json": "1a1b4ab88e1cf727ec0af1096b28b3b92d3ebb2e731264b21df9606d762b6c41",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/metadata.json": "c98c7faae9f0e932e2ec6a2f18b7ee4e078823698ba0e48e732ffb1221e3d1b1",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/resume.json": "373872d9ea12539af6fec33270e832b044652d8dcacd546e491aac787147331a",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/review.json": "2cb07e79d11f42b74d9f1d2d7c18bf00b78022bc249bcc6a615f38c4f5f5201d",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/serve-memory.py": "ac862ad3d1edbecb02e927f674cfadba8feac689e12240de62a6600601fd42df",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/source-analysis.json": "62de1a0b5b1d9d286684198ccdb73c8934d485633c5672df6f9f793655ab1ca8",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/source-join-analysis.json": "64ed08d66f5a490632702953c01dd991ed7fcf5d3b40377bb1bffe6d4d0d4bc0",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/sources.json": "501a584db5669b7e06f5b4195aeec705ef451c771dca4429e1108e8e2f7ac5b6",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/validation.json": "e4a823d17b7d708b2a0f2bc0ab26027ff651a09e5d2deee187eaab2a3e095a19",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/verify-source.mjs": "7c5fd152e2fbcc85f0b50712a773e88e169120ebc499ce72e0b4840d3ab4870f",
+    "../hanja-goal-glyphwiki-batch782-2026-10-13/whole-variant-inventory.json": "8ed117d94338373e97c526612558e95e17cbb1d34412aa642b950823e9247682",
+    "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-source-independent-hq-u90a0-source-experiment-2026-10-19/candidate.mjs": "b205dd723f4b3ac5931fa5b51b66ee506da9f42bd6740822295524eac9d0b977",
+    "../hanja-source-independent-hq-u90a0-source-experiment-2026-10-19/source-check.mjs": "7e766d2800467c4d98c17fd7042400b77377ad7cba716e7079f75287693bd01b"
+  },
+  "newFilesSHA256": {
+    "config.json": "22b608a1660bc65ba1cffd35210b34c87544e1b099c0f1d1a490e6321ade1aee",
+    "candidate.mjs": "03cd39ae2790fce32ffe4379ba5ea17daef148a66fe167df2cb9e174fd8a148c",
+    "fixtures.json": "854476d7ba557f32e59d98723be0dcba1703b77b06c30d2846eef08ad686103e",
+    "candidate.d.mts": "7532d9ed9991e7eb4f0db093ff2b9feba039eef9ad021329f9e30efa14c24724",
+    "serve.py": "adda416226d4b521e9aeaf081f1854725e580b52dd1249c7f85933b174ef0064",
+    "README.md": "c30f0a12553a1b5f7ab3545df0ea967bd36b65f3d046923a02e18f158bf70fcd",
+    "source-check.mjs": "81cee8610a88546568cdcc94c183da1fffcb2bb5cc27ec1b79e8ea7bc87bc1a2"
+  },
+  "baselineSHA256": "716253f2ba18ce49927d49ce2da5f5b27232e044164dbcf2162a27e84c3355c6",
+  "derivedSHA256": "716253f2ba18ce49927d49ce2da5f5b27232e044164dbcf2162a27e84c3355c6",
+  "counts": {
+    "raw": 16,
+    "drawCalls": 17,
+    "factoryPens": 15,
+    "baselinePens": 14,
+    "baselineMasks": 15,
+    "pens": 14,
+    "masks": 15,
+    "polygons": 36,
+    "nonemptyRaw": 15
+  },
+  "factorySourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ]
+  ],
+  "factoryGroupMap": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ]
+  ],
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ]
+  ],
+  "sourceContract": {
+    "identity": {
+      "root": "u6efa",
+      "file": "../hanja-goal-glyphwiki-batch782-2026-10-13/engine-proof.json",
+      "fileSHA256": "1a1b4ab88e1cf727ec0af1096b28b3b92d3ebb2e731264b21df9606d762b6c41"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "existingSelectedFull5Preserved": true,
+    "newHeaderTraceCombination": false,
+    "defaultProofMixed": false,
+    "newStrictWrapper": true,
+    "originalProgressiveCompilerExisted": false,
+    "mandatoryProgressiveArgs": 3,
+    "mandatoryWholeArgs": 4,
+    "mandatoryCaptureArgs": 3,
+    "identityExtraKeysRejected": true,
+    "opaqueFullProofDigestFixed": true
+  },
+  "sourceSnapshot": {
+    "sourceFile": "../hanja-goal-glyphwiki-batch782-2026-10-13/sources.json",
+    "records": 8,
+    "metadataRoot": "u6efa",
+    "providerVersions": 3,
+    "providerAlreadyIncludedInRecords": true,
+    "wholeNames": [
+      "u6efa"
+    ],
+    "selectedRoot": "u6efa",
+    "selectedRootClosure": [
+      "u6efa",
+      "u6c35-01",
+      "u60a0",
+      "u6538@7",
+      "u4ebb-01@4",
+      "u6535-02@9",
+      "u5fc3-04",
+      "u5fc3-09"
+    ],
+    "selectedRootClosureCount": 8,
+    "rootMixing": false,
+    "missing": [],
+    "aliases": [],
+    "archive": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+    },
+    "newAPIRequests": 0,
+    "newEngineRuns": 0
+  },
+  "geometryFactory": {
+    "source": "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs",
+    "originalBodyBytes": 8067,
+    "originalBodySHA256": "4ea61b5e0ba522559dd0c5ef42a24cae29159a79ea4e38ff56a836a25d713355",
+    "bodyByteExact": true,
+    "sourceGeometryExecutions": 2,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "publicPreTailFixtureSavedBeforeChecks": true,
+    "geometryCaptureAttempts": 2,
+    "failedCoverageGuardAttempts": 1,
+    "completedSourceGeometries": 1,
+    "initialFailureOutputBytes": 0,
+    "initialFailureGeometryProduced": false,
+    "publicFixtureSavedBeforeChecks": true
+  },
+  "independentMaskPolicies": [
+    {
+      "raw": [
+        2,
+        3
+      ],
+      "kinds": [
+        "cdDrawCurve",
+        "cdDrawCurve"
+      ],
+      "end": [
+        33.6,
+        181.24
+      ],
+      "start": [
+        30.2,
+        147.75
+      ],
+      "delta": [
+        -3.400000000000002,
+        -33.49000000000001
+      ],
+      "rawCoordinateGap": 33.66214639621188,
+      "normalizedGap": 16.83107319810594,
+      "trajectoryConcatenation": false,
+      "connector": false,
+      "newCoordinates": false
+    }
+  ],
+  "exactJoins": [],
+  "orderEvidence": {
+    "originalReviewFile": "review.json",
+    "completeArrayStoredInOriginal": false,
+    "observedDomesticPens": [
+      3
+    ],
+    "compatibleWholeRoots": [
+      "u6efa"
+    ],
+    "groupBasis": "Original explicit pen/raw anchors and remaining original raw relative order only; complete group array is provisional if not stored in original",
+    "provisionalCompleteOrder": true,
+    "newProgressiveApproval": false
+  },
+  "tailPolicy": {
+    "derivations": 0,
+    "corrections": 0
+  },
+  "allMultiMaskBoundaries": {
+    "3": [
+      0.3836164110370955
+    ]
+  },
+  "allOriginalPolygonsExactOnce": true,
+  "allMaskFieldsUnderExactReferencesPreserved": true,
+  "baselineComparison": {
+    "sameNewLogicalPenAndPrefix": true,
+    "baselineEqualsFinal": true,
+    "independentNativeEvidence": false,
+    "baselinePenMap": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "priorNativeHistory": {
+    "originalBatch": 782,
+    "compatibleWholeRoots": [
+      "u6efa"
+    ],
+    "wholeVariants": [
+      {
+        "name": "u6efa",
+        "related": "u6efa",
+        "data": "99:0:0:3:0:139:197:u6c35-01$99:0:0:46:0:198:200:u60a0"
+      }
+    ],
+    "domesticDirectionPensObserved": [
+      3
+    ],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "originalHoldPreserved": true,
+    "currentNativeEvidence": 0,
+    "currentApprovalInherited": false
+  },
+  "attribution": {
+    "originalNOTICEPreserved": true,
+    "NOTICEFile": "../hanja-goal-glyphwiki-batch782-2026-10-13/NOTICE.md"
+  },
+  "sourceChecks": {
+    "status": "PASS",
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "cachedPositive": 1,
+    "negative": 29,
+    "sourceGeometryGenerations": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "pens": 14,
+    "masks": 15,
+    "polygons": 36,
+    "allMaskFieldsPreserved": true,
+    "closure": [
+      "u6efa",
+      "u6c35-01",
+      "u60a0",
+      "u6538@7",
+      "u4ebb-01@4",
+      "u6535-02@9",
+      "u5fc3-04",
+      "u5fc3-09"
+    ],
+    "boundaries": {
+      "3": [
+        0.3836164110370955
+      ]
+    },
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "allPassedFirstAttempt": true,
+    "repeated": false
+  },
+  "syntax": {
+    "node": {
+      "executions": 2,
+      "passed": true,
+      "repeated": false
+    },
+    "declarationAST": {
+      "executions": 1,
+      "diagnostics": 0,
+      "passed": true
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "passed": true,
+      "stdout": {
+        "staticGuards": true,
+        "targets": [
+          "u6efa"
+        ],
+        "sourceCompiles": 0,
+        "engineRuns": 0,
+        "HTTP": 0
+      },
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "HTTP": 0
+    }
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registryChanged": false,
+  "catalogChanged": false,
+  "originalSourceChanged": false,
+  "originalNOTICEChanged": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "HTTPRequested": false,
+  "buildExecuted": false,
+  "toolingHistory": [
+    {
+      "stage": "initial capture",
+      "exitCode": 1,
+      "reason": "Every original raw group must occur exactly once: empty raw7 omitted from group index coverage",
+      "geometryOutputs": 0,
+      "fixtureSaved": false,
+      "focusedExecuted": false,
+      "recovery": "Reused exact empty-row guard; included empty raw7 in factory/logical group[7,8] without adding calls or paths",
+      "recoveryCaptureExecutions": 1,
+      "completedGeometries": 1,
+      "engineRuns": 0
+    }
+  ],
+  "finalPinCheck": {
+    "originalAndSharedPins": 21,
+    "newPins": 7,
+    "mismatches": 0,
+    "passed": true,
+    "sourceGeometryGenerationsTotal": 1,
+    "tailDerivationsTotal": 0,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "captureAttemptsTotal": 2,
+    "failedCoverageGuards": 1
+  },
+  "emptyRawPolicy": {
+    "raw": 7,
+    "traceEmpty": true,
+    "polygonsEmpty": true,
+    "rawType": 0,
+    "originalMetadataRowPreserved": true,
+    "noOpRawRetainedInFactoryGroupWithNextNonempty": [
+      7,
+      8
+    ],
+    "emptyMetadataNotDeleted": true,
+    "source": "docs/hanja-source-independent-hq-u90a0-source-experiment-2026-10-19/",
+    "guardSourceSHA256": "b205dd723f4b3ac5931fa5b51b66ee506da9f42bd6740822295524eac9d0b977",
+    "newPathForEmpty": false
+  }
+}
