@@ -1,0 +1,11 @@
+# batch1214 畽 네 획 순서 보류
+
+rootfresh는baseu757dwhole1호환과3/4/12/13방향만관찰했습니다. 국내3H4V12H13V와기존cardinal후보3V4H12V13H가네곳모두불일치해보류합니다. 나머지10방향/fine/coarse/경계/자연재생이번관찰0·과거PASS승계0이며전체필순승인없습니다. 관찰후보는14p15m23 SHAbdcde7147601ea86fb81ee2f0224197626b9d671b2d0e770beb5c283734b52dd입니다.
+
+원source25+furtherlab8+followingwrapper3=36핀/full5id5unprefixed lowerSha256필수3/4→strictadapter3→내부legacy2·원NOTICE/971object/2완료FAIL/nativefalse를보존합니다. 새exactref순열실험8은별도source-only이며이번관찰대상도HOLD입력핀도아닙니다. 원기하/폭/guide/가중치/source파일변경0.
+
+실제부모1213 SHAad1b4b89d47aadce3728c43a122acc2d30c02533403e1fb4e820d02338ddda83의5639/339·historical343/resolved83/active260을승계합니다. 원971canonicalobject1중복으로신규hold0·해제0이며부모포함refs271입니다. 집중정적1·absence구문1검사후root실제absence1회exit0PASS를확인했습니다. 畽14 lookupnull/registry0·실제5639/잔339로계수변경0입니다.
+
+PID55953/session70356/60344는root정확종료확인입니다. wrapper별도poll없음/privateDOM RAMonly/앱UIautoplay미검증/sourcecompile·engine·build·Git·서버시작0.
+
+집중정적assert는단1회모두PASS했습니다(36핀0불일치·canonicalobject1중복·343/83/260·refs271). 마지막report변수선언누락으로출력단계ReferenceError가난뒤기존RAM결과reporter만복구했으며assert재실행0입니다. persistentNodeREPL이므로CLIexitcode를꾸며기록하지않습니다. absence정확스크립트구문검사1회exit0PASS,root실제lookup/absence1회exit0PASS로확정했습니다.
