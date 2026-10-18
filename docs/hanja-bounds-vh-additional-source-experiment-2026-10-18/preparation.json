@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-single-focused-passed-native-unreviewed",
+  "configSHA256": "91f1ecf18657e670a9d00c508ac1ea032e00bee02f99aa3c7f6d4c03a194aa2a",
+  "newFilesSHA256": {
+    "config.json": "91f1ecf18657e670a9d00c508ac1ea032e00bee02f99aa3c7f6d4c03a194aa2a",
+    "bounds-vh-candidate.mjs": "0bf7da59d55ae1d0ed86100f17edeb20315d5c9e21c16e87a6ef12f428920b84",
+    "bounds-vh-candidate.d.mts": "b3b678189c275f960d65758acec67ef68246adb96de0066efbca0142f76c35fe",
+    "serve.py": "a427075a1eaa559ca14481a03c27247aeb3d89b149e3469a14425f28186bd6ff",
+    "source-check.mjs": "2c1da8bc2e1c0f63ddb457fee358a78b3f3f9a8636db60aa43690142e4827df0",
+    "README.md": "0293f6ae600034169b218e574a5e6cd4f2cecde4e61dbbd43fcaccacd2b69985",
+    "fixtures.json": "2b1289ae5682fdb84c2c4314e6226e8fe52d90cf5c91223308f5661ae4e65d39"
+  },
+  "originalUniquePins": 86,
+  "originalSourceFileCounts": {
+    "1006": 24,
+    "1008": 21,
+    "1090": 29
+  },
+  "sharedRendererPins": 4,
+  "originPolicyCapsulePins": 8,
+  "baselineCacheSearch": {
+    "query": "existing fixture JSON target keys1006/1008/1090",
+    "matches": 0
+  },
+  "baselineCaptures": {
+    "executions": 1,
+    "sourceCompilerCalls": 3,
+    "sourceCompilerCallsPerTarget": 1,
+    "engineRuns": 0,
+    "publicBaselinePersistedBeforeChecks": true,
+    "normalNodeRealm": true,
+    "results": [
+      {
+        "key": "1006",
+        "originalAPI": "strictNative3",
+        "identity": {
+          "sourceRoot": "u83e1-ue0102",
+          "sourceProofFile": "engine-whole-u83e1-ue0102.json",
+          "sourceProofFileSha256": "a936e5e37f4b8850eeedc2a55723bf49d099435d895da59c09c582a1e267604f",
+          "sourceHeaderFile": "engine-proof.json",
+          "sourceHeaderFileSha256": "fe049e837e88471943a88125d0f6bc6cadf716ee32af3d9cf6bbf197f927e3d8"
+        },
+        "innerIdentity": {
+          "root": "u83e1-ue0102",
+          "file": "engine-whole-u83e1-ue0102.json",
+          "fileSHA256": "a936e5e37f4b8850eeedc2a55723bf49d099435d895da59c09c582a1e267604f"
+        },
+        "sourceCompiles": 1,
+        "baselineSHA256": "e738fdb71d737b788b858d4219c47e031d5980c7eeafbc509eb15c83a4f6bffb",
+        "independentHistoricalSHA": true
+      },
+      {
+        "key": "1008",
+        "originalAPI": "strictWhole4",
+        "identity": {
+          "root": "u5dd8",
+          "sourceProofFile": "engine-whole-u5dd8.json",
+          "sourceProofFileSHA256": "13b5f039316a76e6862894677a10033f2caccfc8b24af837f19d336bd6456abc",
+          "engineHeaderSHA256": "13b5f039316a76e6862894677a10033f2caccfc8b24af837f19d336bd6456abc",
+          "sourceFileSHA256": "6ae4e39699413702e05f8dbf905c5151b924ad2f9a821d4d95235796847266fc",
+          "compilerFileSHA256": "ea81b0ab3cb152405147afe39ab6b5a5d4a3714e1394b1daf80cad9a6cd07c16"
+        },
+        "innerIdentity": {
+          "root": "u5dd8",
+          "file": "engine-whole-u5dd8.json",
+          "fileSHA256": "13b5f039316a76e6862894677a10033f2caccfc8b24af837f19d336bd6456abc"
+        },
+        "sourceCompiles": 1,
+        "baselineSHA256": "4dd3a51f1eea440202c040db880f9af3da81472e2406b66302c76b5cb54f2d13",
+        "independentHistoricalSHA": false
+      },
+      {
+        "key": "1090",
+        "originalAPI": "strictWhole4",
+        "identity": {
+          "sourceRoot": "u5dbc-k",
+          "sourceProofFile": "./engine-whole-u5dbc-k.json",
+          "sourceProofFileSha256": "5fed1f353746571c424168b5b65d6c0770be78aee8b43e3b6eeaf43433689365",
+          "sourceHeaderFile": "./engine-proof.json",
+          "sourceHeaderFileSha256": "b4b34a7a5f11371ea18c2d132c8989b58f0230c3da31fb6c2cc9de81a1123255",
+          "sourceMetadataFile": "./sources.json",
+          "sourceMetadataFileSha256": "848a2ef0d13b28e583da92456c95c870ea64261d5863eab8c5a9a2c9e02eea6d"
+        },
+        "innerIdentity": {
+          "sourceRoot": "u5dbc-k",
+          "sourceProofFile": "./engine-whole-u5dbc-k.json",
+          "sourceProofFileSha256": "5fed1f353746571c424168b5b65d6c0770be78aee8b43e3b6eeaf43433689365",
+          "sourceHeaderFile": "./engine-proof.json",
+          "sourceHeaderFileSha256": "b4b34a7a5f11371ea18c2d132c8989b58f0230c3da31fb6c2cc9de81a1123255",
+          "sourceMetadataFile": "./sources.json",
+          "sourceMetadataFileSha256": "848a2ef0d13b28e583da92456c95c870ea64261d5863eab8c5a9a2c9e02eea6d"
+        },
+        "sourceCompiles": 1,
+        "baselineSHA256": "816c113b02a7ea3973afc5447f03b10197aec226b8d32839c085a1d1ecaac318",
+        "independentHistoricalSHA": true
+      }
+    ]
+  },
+  "kernelOrigin": {
+    "file": "../hanja-bounds-vh-u5caf-source-experiment-2026-10-18/bounds-vh-candidate.mjs",
+    "fileSHA256": "916e492a4a6416a7d4313b31eb47e3c423abec0b6a5fbc09e16602ab6b257764",
+    "originBoundedFunctionSHA256": "fe87cb90faa47d69adc13a70588ae5c54ccff1469724b395d51438084206113b",
+    "newBoundedFunctionSHA256": "f433776c3f2ac5c188b014a58ad5c0e0ec726ba9b2cfffdb2b76c619a9383c25",
+    "wholeFunctionByteIdentical": false,
+    "onlyEntryGuardSubstitutions": [
+      [
+        "assert.equal(s.pen,2);assert.deepEqual(s.rawIndices,[1,2]);",
+        "assert.equal(s.pen,t.pen);assert.deepEqual(s.rawIndices,t.rawIndices);"
+      ],
+      [
+        "assert.equal(v.args[4],0);assert.equal(v.args[5],13);",
+        "assert.deepEqual(v.args.slice(4),s.expectedVFlags);"
+      ]
+    ],
+    "allOtherFunctionBytesIdentical": true,
+    "newGeometryAlgorithm": false
+  },
+  "preflightHarnessIssue": {
+    "executions": 1,
+    "stage": "RAM source-summary variable assignment",
+    "error": "bv3_specs is not defined",
+    "beforeAnySourceCompilation": true,
+    "compilerOrEngineRuns": 0,
+    "testsRepeated": 0
+  },
+  "geometryPolicy": {
+    "originalV2H1PolygonsExactlyOnce": true,
+    "otherMasksAndSourceGroupsUnchanged": true,
+    "originalCallFlagsDirectionsAndCoordinatesPreserved": true,
+    "originalActiveCombinedGuidePreserved": false,
+    "displayPolicyChanged": true,
+    "newAuthorGeometryOrWidthOrConnector": false,
+    "existing1008OrderMismatch6And7Preserved": true
+  },
+  "sourceCompiles": 3,
+  "newCandidateSourceCompiles": 0,
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "buildRun": false,
+  "gitRun": false,
+  "privateMediaSaved": false,
+  "validation": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "positiveCachedInvocations": 3,
+    "apiNegativeRejections": 84,
+    "primitiveNegativeRejections": 27,
+    "sourceCompilationsDuringCheck": 0,
+    "totalOriginalBaselineCompilations": 3,
+    "engineRuns": 0,
+    "nodeSyntaxChecks": 2,
+    "pythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "serverStarts": 0,
+    "HTTP": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "targets": [
+      {
+        "key": "1006",
+        "glyph": "菡",
+        "root": "u83e1-ue0102",
+        "pens": 12,
+        "masks": 14,
+        "polygons": 31,
+        "compiledSHA256": "0d10b6665c3a25cba864f5fb6bc21abaec00e5fb136bca3604ec0ad658ed8c23",
+        "baselineSHA256": "e738fdb71d737b788b858d4219c47e031d5980c7eeafbc509eb15c83a4f6bffb",
+        "allMultiMaskBoundaries": {
+          "6": [
+            0.8398941215251192
+          ],
+          "11": [
+            0.38627016766845934
+          ]
+        },
+        "originalPolygonsExactlyOnce": true,
+        "otherMasksUnchanged": true,
+        "sourceOrderChanged": false,
+        "existing1008OrderMismatchPreserved": false,
+        "sourceCompiles": 0,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      },
+      {
+        "key": "1008",
+        "glyph": "巘",
+        "root": "u5dd8",
+        "pens": 23,
+        "masks": 27,
+        "polygons": 62,
+        "compiledSHA256": "bf47397fccba363ced59b52969d649fc30f6beb7a0000368b4fba88effb3e369",
+        "baselineSHA256": "4dd3a51f1eea440202c040db880f9af3da81472e2406b66302c76b5cb54f2d13",
+        "allMultiMaskBoundaries": {
+          "2": [
+            0.6998104679982504
+          ],
+          "9": [
+            0.8727593918554927
+          ],
+          "15": [
+            0.9147030382010121
+          ],
+          "17": [
+            0.8187503489055784
+          ]
+        },
+        "originalPolygonsExactlyOnce": true,
+        "otherMasksUnchanged": true,
+        "sourceOrderChanged": false,
+        "existing1008OrderMismatchPreserved": true,
+        "sourceCompiles": 0,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      },
+      {
+        "key": "1090",
+        "glyph": "嶼",
+        "root": "u5dbc-k",
+        "pens": 17,
+        "masks": 18,
+        "polygons": 36,
+        "compiledSHA256": "fd9d8147b1e8993f5a7f69af10b93b2bb4aa733d4417f7704e2277d4358a85c7",
+        "baselineSHA256": "816c113b02a7ea3973afc5447f03b10197aec226b8d32839c085a1d1ecaac318",
+        "allMultiMaskBoundaries": {
+          "2": [
+            0.6924908028565245
+          ]
+        },
+        "originalPolygonsExactlyOnce": true,
+        "otherMasksUnchanged": true,
+        "sourceOrderChanged": false,
+        "existing1008OrderMismatchPreserved": false,
+        "sourceCompiles": 0,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    ]
+  },
+  "fixtureFinalization": {
+    "publicBaselinesPersistedBeforeFocused": true,
+    "derivedFixturesFromSingleSuccessfulCheckStdout": true,
+    "fixtureSHA256": "2b1289ae5682fdb84c2c4314e6226e8fe52d90cf5c91223308f5661ae4e65d39",
+    "sourceCompiles": 0,
+    "successfulChecksRepeated": 0,
+    "sourceMetadataOnlyAfterCheck": true
+  },
+  "compiled": [
+    {
+      "key": "1006",
+      "glyph": "菡",
+      "root": "u83e1-ue0102",
+      "pens": 12,
+      "masks": 14,
+      "polygons": 31,
+      "compiledSHA256": "0d10b6665c3a25cba864f5fb6bc21abaec00e5fb136bca3604ec0ad658ed8c23",
+      "baselineSHA256": "e738fdb71d737b788b858d4219c47e031d5980c7eeafbc509eb15c83a4f6bffb",
+      "allMultiMaskBoundaries": {
+        "6": [
+          0.8398941215251192
+        ],
+        "11": [
+          0.38627016766845934
+        ]
+      },
+      "originalPolygonsExactlyOnce": true,
+      "otherMasksUnchanged": true,
+      "sourceOrderChanged": false,
+      "existing1008OrderMismatchPreserved": false,
+      "sourceCompiles": 0,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "key": "1008",
+      "glyph": "巘",
+      "root": "u5dd8",
+      "pens": 23,
+      "masks": 27,
+      "polygons": 62,
+      "compiledSHA256": "bf47397fccba363ced59b52969d649fc30f6beb7a0000368b4fba88effb3e369",
+      "baselineSHA256": "4dd3a51f1eea440202c040db880f9af3da81472e2406b66302c76b5cb54f2d13",
+      "allMultiMaskBoundaries": {
+        "2": [
+          0.6998104679982504
+        ],
+        "9": [
+          0.8727593918554927
+        ],
+        "15": [
+          0.9147030382010121
+        ],
+        "17": [
+          0.8187503489055784
+        ]
+      },
+      "originalPolygonsExactlyOnce": true,
+      "otherMasksUnchanged": true,
+      "sourceOrderChanged": false,
+      "existing1008OrderMismatchPreserved": true,
+      "sourceCompiles": 0,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "key": "1090",
+      "glyph": "嶼",
+      "root": "u5dbc-k",
+      "pens": 17,
+      "masks": 18,
+      "polygons": 36,
+      "compiledSHA256": "fd9d8147b1e8993f5a7f69af10b93b2bb4aa733d4417f7704e2277d4358a85c7",
+      "baselineSHA256": "816c113b02a7ea3973afc5447f03b10197aec226b8d32839c085a1d1ecaac318",
+      "allMultiMaskBoundaries": {
+        "2": [
+          0.6924908028565245
+        ]
+      },
+      "originalPolygonsExactlyOnce": true,
+      "otherMasksUnchanged": true,
+      "sourceOrderChanged": false,
+      "existing1008OrderMismatchPreserved": false,
+      "sourceCompiles": 0,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ]
+}
