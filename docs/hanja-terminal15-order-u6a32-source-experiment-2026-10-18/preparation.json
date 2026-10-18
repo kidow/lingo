@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-cached-terminal15-and-wholepen-order-candidate-native-pending",
+  "configSHA256": "a37a0612f539bc66c45bc4561fa60e6484061f48007809837fba8b062d239ce7",
+  "newFilesSHA256": {
+    "candidate.mjs": "de9a7ca02bff0001663b04d9702cfca88ec944e0c2001ef032fbe9edc914bf88",
+    "candidate.d.mts": "2836369c481f4c54851d1d81cebce36d3d2cac1d6133d7f0c7ca9b92eac7b74e",
+    "config.json": "a37a0612f539bc66c45bc4561fa60e6484061f48007809837fba8b062d239ce7",
+    "fixtures.json": "37dae763f606bd376fae1591c9cd8ae2f02cab99fa0093a5d399a371a3c15ac5",
+    "source-check.mjs": "2b129894720a57dfde39993b796ca8f74e5e1ff92e1ee04422edf08f26acf173",
+    "serve.py": "2212419ec6dde36e6d2594fb03c4c172819032ed3b5df96410c0a8a6f2f71528",
+    "README.md": "bcb8e7a6cc25d949a9ea556308aba703e67b9c01887474a8a4fb99fdd621104b"
+  },
+  "inputPins": 25,
+  "newOwnPins": 7,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "baselinePublicCacheSavedFirst": true,
+  "sourceCompileAccounting": {
+    "rootPriorNativeStartupCompiles": 1,
+    "thisNewOriginalStrictBaselineCompiles": 1,
+    "thisCachedDerivedPositiveCompiles": 1,
+    "engineRuns": 0,
+    "GETCompiles": 0,
+    "originalCompilerDelegationsFromCandidate": 0,
+    "REPLAuthoringParseFailureBeforeFiles": 1
+  },
+  "futureRuntimePinsIncludingNew8": 33,
+  "pinBreakdown": {
+    "immutableSourceAndPreviousHelper": 24,
+    "original979Kernel": 1,
+    "newOwnExcludingPreparation": 7
+  },
+  "baselineSHA256": "efc77eaf4ed3dd853afe9cd8ba25ae2184f32427bf7aa0ba3448f4155f56c7d5",
+  "expectedCompiledSHA256": "316ebed1b916d43ed70f7a1c1625171fb54cb37eeef8496334f7c3b19ccdfdb3",
+  "pens": 16,
+  "masks": 17,
+  "polygons": 32,
+  "originalPenOrder": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    6,
+    7
+  ],
+  "originalSourceGroupsPreserved": true,
+  "finalSourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ]
+  ],
+  "existingKernel": {
+    "file": "../hanja-goal-glyphwiki-batch979-2026-10-13/progressive-terminal15-candidate.mjs",
+    "supportRange": "const contourPolygons= through immediately before export function compileProgressive",
+    "supportBytes": 628,
+    "supportSHA256": "ec776cd21fab1f2be08d00318cc5435e4d2c6226280db5f123de4b43a143cda7",
+    "partitionRange": " const result=baseline.map through immediately before const sourcePolygons=",
+    "partitionBytes": 2202,
+    "partitionSHA256": "2491d8bd1a2c023748572a82eed56ac0989411c9fb0942bb1b7000a95d8c6b29",
+    "byteExact": true
+  },
+  "sourceCheck": {
+    "fullCommand": "rtk proxy node docs/hanja-terminal15-order-u6a32-source-experiment-2026-10-18/source-check.mjs",
+    "fullExecutions": 1,
+    "firstExitCode": 1,
+    "positiveCachedDerivations": 1,
+    "negativeRejectionsCompletedBeforeHelper": 40,
+    "NodeSyntaxChecksPassed": 2,
+    "PythonASTChecksPassed": 1,
+    "firstHelperCheckOnlyExitCode": 1,
+    "firstHelperFailure": "Python parser requested explicit UTF-8 encoding despite valid UTF-8 bytes; no source geometry or guard executed at this failing helper step",
+    "partialCorrection": "Added explicit UTF-8 encoding header to serve.py only; refreshed own pins",
+    "recoveredHelperGuardExecutions": 1,
+    "recoveredHelperGuardExitCode": 0,
+    "fullSourceCheckRerun": 0,
+    "allRequiredDistinctChecksCompleted": true
+  },
+  "allMultiMaskBoundaries": {
+    "15": [
+      0.870837703668792
+    ]
+  },
+  "tail": {
+    "oldPen": 6,
+    "finalPen": 15,
+    "raw": 5,
+    "polygonsBefore": 5,
+    "bodyPolygons": 4,
+    "tailPolygons": 1,
+    "bodyBounds": [
+      68.8,
+      7.25,
+      94.25,
+      92.9
+    ],
+    "tailBounds": [
+      88.3,
+      74.5,
+      92.3,
+      87.5
+    ],
+    "originalBodyBoundsEqual": true,
+    "bodyGuideWidthAndWeightUnchanged": true,
+    "tailAddedWeight": 12.5
+  },
+  "allOriginalPolygonsExactlyOnce": true,
+  "allOther15PensUnchangedBeforeOrder": true,
+  "priorNativeEvidence": {
+    "wholeCompatible": true,
+    "directionsPassed": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "directionsFailed": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "fineFailed": [
+      6
+    ],
+    "fineFailure": "long 弋 upturned hook is activated as positive area at 100%; independent from order failure",
+    "coarse": 0,
+    "boundaries": 0,
+    "replays": 0,
+    "newCandidateNativeApproval": false
+  },
+  "rootFreshNativeRequired": true,
+  "nativeEvidenceInherited": false,
+  "newCoordinatesPathsWidthsConnectorsAuthored": false,
+  "originalFilesChanged": 0,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "baselineDisplayCorrection": {
+    "reason": "independent audit found same-index baseline instead of same original pen",
+    "baselineSameOriginalPen": true,
+    "mapping": "originalPenOrder[candidatePen-1]",
+    "candidate15MapsBaseline6": true,
+    "candidate16MapsBaseline7": true,
+    "originalPrefixDiffersAfterPermutation": true,
+    "sourceOrFixtureChanged": false,
+    "fullFocusedRerun": 0,
+    "compilerRerun": 0,
+    "staticMappingCheckPending": false,
+    "staticMappingChecks": 1,
+    "staticMappingCheckPassed": true,
+    "changedHelperPythonASTChecks": 1,
+    "changedHelperPythonASTExitCode": 0
+  }
+}
