@@ -1,0 +1,11 @@
+# Batch1248 玭 reviewed runtime
+
+Root가선택fixedcurrentu73ad-j@4 whole1/전8방향을actual3SVG520에서새로승인했습니다. fine[6,8,3,4]99.99→100,coarse72candidate+72baseline각220,6·8모든경계before/at/after+0/epsilon.0001%/95와자연6 2.67625→100/8 2.64→100각8초를통과했습니다. PID47376/session7508/port62447종료exit143입니다. 최초wrongtargetu73ad CLI거부exit2는server/geometry실행전이며correcttargetu73ad-j기동1만서버를시작했습니다. app UI는검증하지않았습니다.
+
+원140의고정current-source-alternative u73ad-j@4/u248e9-01@10/u6bd4-02@3 3records와9raw/11calls/26polygon·좌표·flags·outline union·원guide·폭·body weight·순서를보존합니다. current王 H/H/V/올림은그대로이며원archive의다른2/3순서를여기에자동승계하거나재배열하지않습니다. raw5V/raw6Q 원mask두객체를독립sequence로6획에묶어9p9mask→logical8p9mask로표시합니다. V끝(88.7,167)→Q시작(64.55,178)의gap[-24.15,11]/26.537190883738997은그대로두며connector/합성trajectory/새좌표·폭·wholepen순열0입니다. 같은pre-tail baseline의8획raw8 LQL 마지막UP5 원quad만기존7e0649/derive2802 kernel로분리합니다. 원bodybounds[67.05,8,94.05,89.5]·guide·폭14·weight96.071068와타7획은불변이고tailweight12.5를추가하므로전체weight불변은주장하지않습니다. 원26polygon은exactly once입니다. full5는원current-engine-proof header4 hashes+별도current-draw-trace의새결합이며archivefull5identityfalse/id7 ../uppercaseSHA256·필수3/4를지킵니다. 8067factory의proof.engineHashes→proof.hashes 단일assert만치환해8061이며나머지byte동일입니다. 원2026-09-27에직접읽은정확version/currentsnapshot만쓰고새API호출·최신상태추정·archive대체0입니다. 원140HOLD·source/nativefalse·NOTICE파일부재를보존하며canonical대상0이므로historical추가/해제0입니다. rootfreshwhole1/8방향/fine4/coarse72+72/6·8모든경계/두8초자연재생만승인하고baseline은같은신규logical8 pre-tail표시로독립과거승인proof가아닙니다. 최초wrongtargetu73ad CLI거부exit2는서버·기하실행전이며correctu73ad-j기동1과구분합니다. sourcefactory1→선저장/VQrefgroup1/cachedUPderive1·positive1/negative39와syntaxAST하네스한정복구1이력을이번runtime source/fixture/derive/engine0과분리합니다.
+
+원24+실험8=32고정핀. current3records/선택whole1/providerVersions3를그대로보존합니다. source/fixture/derive/engine 추가실행0입니다. 집중첫시도는하이픈u73ad-j를점표기로접근한ReferenceError하네스오류로본문전exit1했습니다. test/verifier대괄호키접근만수정한후실패집중1회재시도에서3/3본문이각1회PASS했습니다. 구문검사1회PASS는반복하지않았으며root actual단회exit0PASS입니다. 실제5665/5978·남313·hist348/res102/active246/refs305이며canonical대상0/해제추가0입니다. 원140 source·false·archive순서는불변입니다.
+
+검증: `rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch1248.test.ts`; root actual: `rtk proxy node docs/hanja-goal-glyphwiki-batch1248-2026-10-19/verify-runtime.mjs`.
+
+커밋 메시지: `feat(hanja): register reviewed 玭 fixed-current playback`
