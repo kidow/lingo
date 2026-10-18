@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-verified; native/runtime pending",
+  "configSHA256": "12c1cf7c952472d074b8d89e97f192f1b8b5aa60273bb1937b2e4f5567d303db",
+  "newFilesSHA256": {
+    "config.json": "12c1cf7c952472d074b8d89e97f192f1b8b5aa60273bb1937b2e4f5567d303db",
+    "tail-candidate.mjs": "653799fdfe9bcc03a7b38bc61f05ce353ab6fcd65c2d95c5d9c2d94aeeb80fbe",
+    "tail-candidate.d.mts": "8b60bd1c1dba78a7bc2e706fbfe5f3b616042cf594974462e6a92b890e40a516",
+    "serve.py": "b3e17a28d556189c8ba87f0bef459e35480c0d0b27c1e203f36662977bcee99a",
+    "source-check.mjs": "28ab26c5bb93f8e52a701ebcbcc31f6a5339cb406bb155e0d22bf1a3a5228fdf",
+    "fixtures.json": "bea425df7c2c2584414d47d1d6d1f43de5e6c9da8273d60f43926dacc0171740",
+    "README.md": "54df71539732da6484de022599f1fe72a98ef639a411fe936a5ecbd6db7d0167"
+  },
+  "existingPrimitive": {
+    "origin": "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs",
+    "functions": [
+      "point",
+      "terminalUpTail",
+      "terminalLeftTail"
+    ],
+    "functionsSHA256": "7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08",
+    "bodyByteIdentical": true,
+    "calculatedPolygonOnlyComparedAgainstOriginal": true,
+    "outputUsesOriginalPolygon": true
+  },
+  "sourceCheck": {
+    "passed": true,
+    "targets": [
+      {
+        "key": "632",
+        "glyph": "葸",
+        "pen": 11,
+        "direction": "up",
+        "sourceCompiles": 1,
+        "engineRuns": 0,
+        "negativeRejections": 17,
+        "pens": 13,
+        "masks": 14,
+        "polygons": 29,
+        "baselineSHA256": "e2e973c0ca7a7f38cb0651aa480553a546baaf3e578b2047f2246d97b54d8c8d",
+        "baselineHashProvenance": "New first-positive capture; no independent old compiled hash used",
+        "derivedSHA256": "9826c087651d8499ad1b23c882b45fb720bc9797d8d2e20467753e38b64cea15",
+        "originalPolygonsExactlyOnce": true,
+        "tailPolygonOriginalByteIdentity": true,
+        "bodyGuideWidthWeightUnchanged": true,
+        "unchangedOtherPens": true,
+        "tailArea": 25,
+        "visibleAreaAt0": 0,
+        "visibleAreaAtEpsilon": 3.7500012695090845e-7,
+        "residualAreaAt99": 0.12625000000025466,
+        "residualAreaAt9999": 0.0012501249998422281,
+        "residualAreaAt100": 0,
+        "boundary": 0.8266063967147433,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      },
+      {
+        "key": "635",
+        "glyph": "鱨",
+        "pen": 21,
+        "direction": "up",
+        "sourceCompiles": 1,
+        "engineRuns": 0,
+        "negativeRejections": 17,
+        "pens": 25,
+        "masks": 26,
+        "polygons": 55,
+        "baselineSHA256": "8e3cd9534f166c4282174d7ad4f0c0240d56684132d4d75c0403a8c5e26f8fff",
+        "baselineHashProvenance": "New first-positive capture; no independent old compiled hash used",
+        "derivedSHA256": "2b0516c850208c905795975176825c3ff72bece2d336edb9c6a6193e97251ce5",
+        "originalPolygonsExactlyOnce": true,
+        "tailPolygonOriginalByteIdentity": true,
+        "bodyGuideWidthWeightUnchanged": true,
+        "unchangedOtherPens": true,
+        "tailArea": 10.5625,
+        "visibleAreaAt0": 0,
+        "visibleAreaAtEpsilon": 1.4625038602389395e-7,
+        "residualAreaAt99": 0.06540625000070577,
+        "residualAreaAt9999": 0.0006500406248051149,
+        "residualAreaAt100": 0,
+        "boundary": 0.8902371296786508,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      },
+      {
+        "key": "658",
+        "glyph": "翛",
+        "pen": 8,
+        "direction": "left",
+        "sourceCompiles": 1,
+        "engineRuns": 0,
+        "negativeRejections": 17,
+        "pens": 13,
+        "masks": 14,
+        "polygons": 39,
+        "baselineSHA256": "e0ac786aa4c7e0c55757036bd33ca49b6248664bbd3a54b7581dae00fb2da949",
+        "baselineHashProvenance": "New first-positive capture; no independent old compiled hash used",
+        "derivedSHA256": "a081712cbbccb8f09b2873c05670a829f82023a6643bc277c78cd8c6299345fd",
+        "originalPolygonsExactlyOnce": true,
+        "tailPolygonOriginalByteIdentity": true,
+        "bodyGuideWidthWeightUnchanged": true,
+        "unchangedOtherPens": true,
+        "tailArea": 18,
+        "visibleAreaAt0": 0,
+        "visibleAreaAtEpsilon": 2.3999973564059474e-7,
+        "residualAreaAt99": 0.12059999999974025,
+        "residualAreaAt9999": 0.001200059999973746,
+        "residualAreaAt100": 0,
+        "boundary": 0.8881292053979672,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    ],
+    "positiveCompilations": 3,
+    "engineRuns": 0,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "privateHTTP": 0,
+    "serverStarts": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "executions": 1,
+    "exitCode": 0,
+    "negativeRejectionsTotal": 51,
+    "nodeSyntaxChecks": [
+      {
+        "file": "tail-candidate.mjs",
+        "executions": 1,
+        "exitCode": 0
+      },
+      {
+        "file": "source-check.mjs",
+        "executions": 1,
+        "exitCode": 0
+      }
+    ],
+    "areaProbeScope": "Local tail-mask progress, not whole-pen progress; floating-point area/AA not a native certificate."
+  },
+  "bytePinsCapturedNow": true,
+  "baselineHashesCapturedNow": true,
+  "legacyIndependentCompiledHashUsed": false,
+  "originalNoticeAndProofBytesPreserved": true,
+  "sourceGeometryChanged": false,
+  "sourceOrderChanged": false,
+  "bodyGuideWidthWeightPreserved": true,
+  "onlyOriginalTailPolygonSeparated": true,
+  "helperFixtureCache": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "canonicalCountersChanged": false,
+  "existingHoldsChanged": false,
+  "serverStarts": 0,
+  "privateMediaSaved": false,
+  "limitations": [
+    "Source tail local progress area does not certify whole-pen reveal or native shape/order.",
+    "All whole variants and original holds remain preserved; selected roots require fresh browser review.",
+    "僎645 multi-tail binding is intentionally excluded.",
+    "Current LEFT658 fixes pen8 only; original pen11 remains unchanged and must be natively rechecked."
+  ],
+  "firstCapturedBaselineHashes": {
+    "632": "e2e973c0ca7a7f38cb0651aa480553a546baaf3e578b2047f2246d97b54d8c8d",
+    "635": "8e3cd9534f166c4282174d7ad4f0c0240d56684132d4d75c0403a8c5e26f8fff",
+    "658": "e0ac786aa4c7e0c55757036bd33ca49b6248664bbd3a54b7581dae00fb2da949"
+  },
+  "experimentalTargetBoundaries": {
+    "632": 0.8266063967147433,
+    "635": 0.8902371296786508,
+    "658": 0.8881292053979672
+  },
+  "declarationAuditCorrection": {
+    "staleCopiedUnionFoundBy": "/root/batch939_runtime_prep",
+    "priorRoots": [
+      "u803c",
+      "u8b48",
+      "u8203-g",
+      "u99ea"
+    ],
+    "currentRoots": [
+      "u8478-var-001",
+      "u9c68",
+      "u7fdb"
+    ],
+    "fixedIdentityUnionExactlyMatchesConfig": true,
+    "typeOnlyChange": true,
+    "sourceBehaviorChanged": false,
+    "sourceCompilationsRepeated": 0,
+    "targetedStaticExecutions": 1,
+    "targetedStaticPassed": true
+  }
+}
