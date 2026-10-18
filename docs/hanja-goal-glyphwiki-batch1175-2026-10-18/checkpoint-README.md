@@ -1,0 +1,9 @@
+# 暬 — batch1175 partial native 보류
+
+root가선택baseu66ac whole1의국내호환성을실제3SVG520에서관찰했습니다. 10획Q15및4·5·8획fine99.99→100은PASS이며10경계.8325541385289524전중후+95·초기0epsilon도PASS입니다. 그러나13획H/V의오른쪽日 V끝하단왼쪽이99.99%화면y약469에서100%약472로약3px삼각영역이국소추가되는FAIL을stablepair에서추가확인했습니다. 다른prefix는그대로이고원baseline도동일합니다.
+
+9·11획fine는미관찰이고방향·coarse·자연재생은0에서중단했습니다. 부분PASS와whole호환성을전체필순승인으로확대하지않고현재runtime미적용입니다. 원649object1을유지하므로새보류0/해제0/적용0입니다. 새13HV+10Q15혼합보정은별도source실험범위이며이체크포인트는후보를만들지않습니다.
+
+기존Q7공개fixture15p16m41 SHA547c85bd8d216479a6c639b14beb8d4964365030bc7918b2bbb83f3abbbc48bb와원baseline을보존합니다. 10Q15는원polygon만분리하며13획raw[13,14] MLL·폭14는불변입니다. 원20+Q7실험8+전체경계helper3=31핀을보존하고sourcecompile/engine0입니다. 원실험의실패·baseline실행회계는고정preparation의실제값을보존하며이번재실행이아닙니다. 원8familyrecords/2whole/provider0도그대로입니다.
+
+실제부모1174 SHA5b80e8ee1a7edbb0db6b0ac6a20a0d6bae5d497e2bd891341076a403a454263b,5609/5978·잔369·hist343/res57/active286·root보고refs231을승계합니다. 현재부모포함chain목표refs232,원649object SHA5d24fd4418cfe0c6fd45a8f85a775a311f69131ea350c8cc67f30f161b088d82를중복확인합니다. 부모의실제검증1회는원필드를대조했습니다. 집중정적1회 exit0 PASS:31핀0불일치·원proof·native부분기록·canonical649object1중복·부모포함232chain·hist343/res57/active286를확인했습니다. root runtimeabsence1회 exit0 PASS:暬15lookupnull·registry0·unique5609/잔369입니다. 최종hist343/res57/active286·refs232,현재native/runtime승인false를유지합니다. 실제검증뒤추가검사는실행하지않았습니다. root가서버62958(세션71644/56180포트)의helper·target649명령확인후SIGTERM종료stoppedtrue를보고했고worker는독립종료를확인하지않았습니다. 파일은새보류4개만작성하며빌드·TSC·학습기록변경없습니다.
