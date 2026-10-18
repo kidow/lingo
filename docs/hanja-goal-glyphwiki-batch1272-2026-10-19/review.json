@@ -1,0 +1,625 @@
+{
+  "batch": 1272,
+  "glyph": "暐",
+  "date": "2026-10-19",
+  "nativeApproval": true,
+  "orderVerified": true,
+  "geometryVerified": true,
+  "directionsVerified": true,
+  "selectedWhole": "u6690",
+  "selectedWholeNumericVersionKnown": false,
+  "whole": {
+    "observed": 1,
+    "selectedCompatible": true,
+    "otherWholeApproved": false,
+    "actualSVGs": 3,
+    "actualSVGWidth": 520
+  },
+  "directions": {
+    "observed": 13,
+    "totalPassed": 13,
+    "identityOrder": false,
+    "actualSVGs": 3,
+    "actualSVGWidth": 520,
+    "wholePenPermutation": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "fine": {
+    "passedPens": [
+      12,
+      1,
+      2,
+      8,
+      9,
+      6
+    ],
+    "fromPercent": 99.99,
+    "toPercent": 100,
+    "passed": true,
+    "actualSVGs": 3,
+    "actualSVGWidth": 520
+  },
+  "coarse": {
+    "pens": 13,
+    "framesPerPen": 9,
+    "candidateFrames": 117,
+    "baselineFrames": 117,
+    "eachSVGWidth": 220,
+    "passed": true,
+    "baselineIndependentNativeEvidence": false,
+    "baselineAndCandidateSameGeometry": true,
+    "originalOrderBaseline": true,
+    "prefixDifferenceIntentional": true
+  },
+  "maskBoundaries": [
+    {
+      "pen": 12,
+      "at": 0.18430034129692832,
+      "beforeAtAfter": true,
+      "zeroPercent": true,
+      "epsilonPercent": 0.0001,
+      "at95": true,
+      "passed": true,
+      "actualSVGs": 3,
+      "actualSVGWidth": 520
+    }
+  ],
+  "actualReplay": [
+    {
+      "pen": 12,
+      "startTextPercent": 2.52875,
+      "endPercent": 100,
+      "seconds": 8,
+      "passed": true,
+      "actualSVGs": 3,
+      "actualSVGWidth": 520
+    }
+  ],
+  "pens": 13,
+  "masks": 14,
+  "polygons": 25,
+  "compiledSHA256": "7f537cee2eab81212690a41a65322849c84cbb2eb9b842b9157be2b81507434b",
+  "sourceContract": {
+    "identity": {
+      "root": "u6690",
+      "file": "../hanja-goal-glyphwiki-batch771-2026-10-13/engine-proof.json",
+      "fileSHA256": "6eb96adc90de90065d8ae6d4ca89c66856f033ec0dbe4a0d7af04c98262d2bc3"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "existingSelectedFull5Preserved": true,
+    "newHeaderTraceCombination": false,
+    "defaultProofMixed": false,
+    "newStrictWrapper": true,
+    "originalProgressiveCompilerExisted": false,
+    "mandatoryProgressiveArgs": 3,
+    "mandatoryWholeArgs": 4,
+    "mandatoryCaptureArgs": 3,
+    "identityExtraKeysRejected": true,
+    "opaqueFullProofDigestFixed": true
+  },
+  "baselineComparison": {
+    "baselineField": "originalOrderBaseline",
+    "baselinePenMap": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "prefixDifferenceIntentional": true,
+    "samePrefixAtSwappedPens": false,
+    "sameOriginalPenViaMapping": true,
+    "baselineAndCandidateSameGeometry": true,
+    "baselineIndependentNativeEvidence": false
+  },
+  "modifications": "고정u6690의직전source cache13획중wholepen5/6의전체JSON참조만[1,2,3,4,6,5,7,8,9,10,11,12,13]로교환합니다. 원좌표·path·guide·bounds·폭·weight·flags·25polygon·각획내mask순서는불변이며새기하·connector·tail0입니다. independentVH12raw14끝(89.26,161)→raw15시작(67.75,161)의gap21.51은독립2mask그대로이고exactjoins1/2·5/6·10/11만기존한mask입니다. helper중앙은originalOrderBaseline을baselinePenMap으로같은원획에대응하지만5/6중간완료prefix는의도적으로다르므로samePrefix주장0입니다. 원771existingfull5engineHashes/id3 ../fileSHA256 mandatory3/4·factory8067body는보존하되이번새source compiler/기하실행0/cachedwholepenreorder1을원source기하1과구분합니다. family11records안provideru97cb-g08@2 1개는이미포함되며선택baseclosure4에는없고다른root기하혼합0입니다. 원wholeNames5와fresh승인basewhole1을구분합니다. 원771OBJECT1/HOLD/부분방향12만/progressive0/NOTICE/sourcefalse와첫sourcefreshwholePASS·방향1~4PASS5FAIL·6미관찰/fine[12,1,2,8,9]PASS·coarse/boundary/natural0은불변입니다. 새순열candidate의rootfresh전13방향·fine[12,1,2,8,9,6]/coarse117+117/multi12/자연12만별도로승인해회복1로기록합니다. 공개cachedpermfixture선저장/positive1negative29/Node2declAST1PythonAST1guard1최초PASS와runtime source/fixture/reorder/derive/engine0을분리합니다.",
+  "sourceCaptureHistory": {
+    "source": "../hanja-source-independent-vh-u6690-source-experiment-2026-10-19/fixtures.json",
+    "originalBodyBytes": 8067,
+    "originalBodySHA256": "4ea61b5e0ba522559dd0c5ef42a24cae29159a79ea4e38ff56a836a25d713355",
+    "bodyByteExact": true,
+    "sourceGeometryExecutions": 0,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "publicPreTailFixtureSavedBeforeChecks": false,
+    "publicCachedOrderFixtureSavedBeforeChecks": true,
+    "originalBodySource": "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs",
+    "cachedWholePenReorders": 1,
+    "bodyCopiedButNotExecuted": true,
+    "syntax": {
+      "node": {
+        "executions": 2,
+        "passed": true,
+        "repeated": false
+      },
+      "declarationAST": {
+        "executions": 1,
+        "diagnostics": 0,
+        "passed": true
+      },
+      "pythonAST": {
+        "executions": 1,
+        "passed": true
+      },
+      "helperGuard": {
+        "executions": 1,
+        "passed": true,
+        "stdout": {
+          "staticGuards": true,
+          "targets": [
+            "u6690"
+          ],
+          "sourceCompiles": 0,
+          "engineRuns": 0,
+          "HTTP": 0
+        },
+        "sourceCompiles": 0,
+        "engineRuns": 0,
+        "HTTP": 0
+      }
+    },
+    "toolingHistory": [
+      {
+        "stage": "cached complete-pen reorder",
+        "sourceGeometry": 0,
+        "tailDerivations": 0,
+        "engine": 0,
+        "cachedReorder": 1,
+        "publicFixtureSavedBeforeChecks": true
+      }
+    ],
+    "originalSourceGeometryExecutions": 1,
+    "sourceExperimentCommit": "dca123e10f7f6b49c094b53fd8477abe03ff2398"
+  },
+  "priorNativeHistory": {
+    "originalBatch": 771,
+    "compatibleWholeRoots": [
+      "u6690",
+      "u6690-k",
+      "u6690-ue0100",
+      "u6690-ue0101",
+      "u6690-ue0102"
+    ],
+    "wholeVariants": [
+      {
+        "name": "u6690",
+        "related": "u6690",
+        "data": "99:0:0:0:0:177:200:u65e5-01$99:0:0:8:0:247:200:u97cb-08"
+      },
+      {
+        "name": "u6690-k",
+        "related": "u6690",
+        "data": "99:0:0:0:0:177:200:u65e5-01$99:0:0:8:0:247:200:u97cb-08-var-001"
+      },
+      {
+        "name": "u6690-ue0100",
+        "related": "u3013",
+        "data": "99:0:0:0:0:200:200:u6690"
+      },
+      {
+        "name": "u6690-ue0101",
+        "related": "u3013",
+        "data": "99:0:0:0:0:200:200:u6690"
+      },
+      {
+        "name": "u6690-ue0102",
+        "related": "u3013",
+        "data": "99:0:0:0:0:200:200:koseki-158310"
+      }
+    ],
+    "domesticDirectionPensObserved": [
+      12
+    ],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "originalHoldPreserved": true,
+    "currentNativeEvidence": 0,
+    "currentApprovalInherited": false
+  },
+  "canonicalDisposition": {
+    "targetMatches": 1,
+    "targetRecordType": "object",
+    "newCanonicalHolds": 0,
+    "resolutionAfterRegistrationOnly": true
+  },
+  "immutableFilesSHA256": {
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/NOTICE.md": "444d804cf7f50a17829ca5843e82424eeb305aa575e0733e1fa3d629a4da7322",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/README.md": "16a3d21d79474d7e1181616989652f0879a69b03b6ce2c79b071be985bb2ffaf",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/draw-trace.json": "ef92fbc88e8419eaa565bf02b986182201f9bb1bc93faf41ba11906dab0106b7",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/engine-proof.json": "6eb96adc90de90065d8ae6d4ca89c66856f033ec0dbe4a0d7af04c98262d2bc3",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690-k.json": "a748f919e2fe8fa6699fb68e0724f1bb108a80a520d182139d5db064b5bb2f74",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690-ue0100.json": "4f87540a2668e491e71bfbe3684cf29dec9f3e27a763e3c81972884f59cce23a",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690-ue0101.json": "4f87540a2668e491e71bfbe3684cf29dec9f3e27a763e3c81972884f59cce23a",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690-ue0102.json": "f748df1cb0f5dabe75ed4f9ea3173104aa9649f959d11aaba5c4511d19e2d92e",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690.json": "4f87540a2668e491e71bfbe3684cf29dec9f3e27a763e3c81972884f59cce23a",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/metadata.json": "ea32a85e8d43c2b8c16fb469e18467659036216047c9c4aa68eedc060eca867d",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/resume.json": "62dca5db4253a97e71d2f8f6bc1db9459c91fcae1f234518f334712f3ceecbb7",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/review.json": "a423ee6a1ea05f5057d2eea3ceae7f7f07526fb742936e0d0654cfdbe6293ea5",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/serve-memory.py": "1a264f49c8814a8d961b577cf5ce2d5c8c4fffa8dfa132cd752791fe66ddd40e",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/source-analysis.json": "1d2595670cdd3badfdff9419e01ffd539669e8842404cb1e0581615609e7d388",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/source-join-analysis.json": "7fa42eedaf27ee3494faa75e9485ea3bbb036c0fbb326b215f50c98989dfb713",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/sources.json": "1edb9c3319589bf08554de898e0c6b3ccba8c4825dc2956dea707fdc91c8d8ee",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/validation.json": "4de657823192072ba78e72373f9cfcf4f40b804a4ee39660aacad9042566233e",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/verify-source.mjs": "9c630ea62cec1246020627e818027057e6e5595fcac8fc671757135bad8f026c",
+    "docs/hanja-goal-glyphwiki-batch771-2026-10-13/whole-variant-inventory.json": "8672fdbe27ab4bcf11f8f6fe747b22cbc73203eb2ec36aded4e730ae893beea1",
+    "docs/hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "docs/hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "docs/hanja-source-independent-vh-u6690-source-experiment-2026-10-19/README.md": "ac5f00d89c3a76787b82f9717ca82c76d23254e44ac25f91b0bd5edce4381e6f",
+    "docs/hanja-source-independent-vh-u6690-source-experiment-2026-10-19/candidate.d.mts": "1dc1821b0e36ba17988369ba3e081232962b88ada5a7e7a3f30396ac0d2f4140",
+    "docs/hanja-source-independent-vh-u6690-source-experiment-2026-10-19/candidate.mjs": "75b05a7d85308cebeeaa8aa15c057eafad5264d7a6ec05e880f7d1872250d90a",
+    "docs/hanja-source-independent-vh-u6690-source-experiment-2026-10-19/config.json": "932afbba87864af71ff8143415671cd658e65364c1d2cbf72562fe257bc6490d",
+    "docs/hanja-source-independent-vh-u6690-source-experiment-2026-10-19/fixtures.json": "346d8d67c0557ada83b0cbc4f20b71cf693dc197079af078fc89f88486b9613e",
+    "docs/hanja-source-independent-vh-u6690-source-experiment-2026-10-19/preparation.json": "434cfbbd127e72ef150a96229f16bce6e7c8e50cea4e4bd2a900b2347e2e4055",
+    "docs/hanja-source-independent-vh-u6690-source-experiment-2026-10-19/serve.py": "9fc69b370b0df69a1b1be813e3ade3f24a1e01ccbdcfacf1fd66a7de6525ad33",
+    "docs/hanja-source-independent-vh-u6690-source-experiment-2026-10-19/source-check.mjs": "471109f55895a68cd868563738e08e8cef4273c5e395e03c8f98d4eb768ca88c",
+    "docs/hanja-source-independent-vh-order-u6690-source-experiment-2026-10-19/README.md": "f716722c8e6c41815ae38be90ecd384f390a1831edb3fc2206ed124c6eccfc44",
+    "docs/hanja-source-independent-vh-order-u6690-source-experiment-2026-10-19/candidate.d.mts": "1dc1821b0e36ba17988369ba3e081232962b88ada5a7e7a3f30396ac0d2f4140",
+    "docs/hanja-source-independent-vh-order-u6690-source-experiment-2026-10-19/candidate.mjs": "a47f2f29dacdc961f33d745439e1f1b08de4bc3493a8a25aa73003d584fc49e9",
+    "docs/hanja-source-independent-vh-order-u6690-source-experiment-2026-10-19/config.json": "22abb4779ed1275beb0ea4488a24dd2481ec8c62c2cbd79e9d5eb2ee474fada3",
+    "docs/hanja-source-independent-vh-order-u6690-source-experiment-2026-10-19/fixtures.json": "0d8b309978e230ccf0f803f12afff9a8f962746a04bad228e34ee6af41cef8fa",
+    "docs/hanja-source-independent-vh-order-u6690-source-experiment-2026-10-19/preparation.json": "60295a01d8c2b041ec887b64c6853f8cfc1f08a0650f148d58955d05a1c55361",
+    "docs/hanja-source-independent-vh-order-u6690-source-experiment-2026-10-19/serve.py": "8d30e6b6d2ab898d7f6e8746b4f7a97d3efbf1e1eb295d2bf164fc7de84f6ec9",
+    "docs/hanja-source-independent-vh-order-u6690-source-experiment-2026-10-19/source-check.mjs": "2414a6f18f74dc6eef9b27debb44d404320b72946c3ed6746d754d709bf20690"
+  },
+  "sourceRecords": 11,
+  "wholeRoots": 5,
+  "providers": 1,
+  "sourceChecks": {
+    "status": "PASS",
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "cachedPositive": 1,
+    "negative": 29,
+    "sourceGeometryGenerations": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "pens": 13,
+    "masks": 14,
+    "polygons": 25,
+    "allMaskFieldsPreserved": true,
+    "closure": [
+      "u6690",
+      "u65e5-01",
+      "u65e5",
+      "u97cb-08"
+    ],
+    "boundaries": {
+      "12": [
+        0.18430034129692832
+      ]
+    },
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "allPassedFirstAttempt": true,
+    "repeated": false
+  },
+  "originalSourceFilesChanged": false,
+  "originalCaptureNOTICESHA256": "444d804cf7f50a17829ca5843e82424eeb305aa575e0733e1fa3d629a4da7322",
+  "nativeHelperCompilationAccounting": {
+    "startupSourceCompiles": 0,
+    "requestSourceCompiles": 0,
+    "engineRuns": 0
+  },
+  "serverStopped": true,
+  "rootReportedServerReference": {
+    "childPID": 75444,
+    "sessionId": 49075,
+    "port": 55680,
+    "stopped": true,
+    "exitCode": 143
+  },
+  "appUIAutoplayVerifiedThisBatch": false,
+  "privateMediaSaved": false,
+  "buildExecuted": false,
+  "wholeRootEvidence": "source.wholeNames5; family11 includingprovider1; selectedbaseclosure4; fresh base1 only",
+  "providerRecordField": "providerVersions",
+  "originalCaptureNOTICEExists": true,
+  "tailPolicy": {
+    "partitionRuns": 0,
+    "derivations": 0,
+    "newTailCorrection": false
+  },
+  "snapshot": {
+    "sourceFile": "../hanja-goal-glyphwiki-batch771-2026-10-13/sources.json",
+    "records": 11,
+    "providerVersions": 1,
+    "providerAlreadyIncludedInRecords": true,
+    "providerName": "u97cb-g08@2",
+    "providerNotSelectedRootClosure": true,
+    "wholeNames": [
+      "u6690",
+      "u6690-k",
+      "u6690-ue0100",
+      "u6690-ue0101",
+      "u6690-ue0102"
+    ],
+    "selectedRoot": "u6690",
+    "selectedRootClosure": [
+      "u6690",
+      "u65e5-01",
+      "u65e5",
+      "u97cb-08"
+    ],
+    "selectedRootClosureCount": 4,
+    "rootMixing": false,
+    "kAndVS2NotUsed": true,
+    "metadataRoot": "u6690",
+    "missing": [],
+    "aliases": [],
+    "archive": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+    },
+    "newAPIRequests": 0,
+    "newEngineRuns": 0
+  },
+  "unmodifiedTerminalRisks": [
+    {
+      "pen": 1,
+      "raw": [
+        0
+      ],
+      "flags": [
+        12,
+        13
+      ],
+      "correctionAdded": false
+    },
+    {
+      "pen": 2,
+      "raw": [
+        1,
+        2
+      ],
+      "terminalFlags": [
+        22,
+        323
+      ],
+      "correctionAdded": false
+    },
+    {
+      "pen": 8,
+      "raw": [
+        9
+      ],
+      "flags": [
+        12,
+        113
+      ],
+      "correctionAdded": false
+    },
+    {
+      "pen": 9,
+      "raw": [
+        10,
+        11
+      ],
+      "terminalFlags": [
+        22,
+        123
+      ],
+      "correctionAdded": false
+    }
+  ],
+  "independentMaskPolicies": [
+    {
+      "pen": 12,
+      "raw": [
+        14,
+        15
+      ],
+      "kinds": [
+        "cdDrawLine",
+        "cdDrawLine"
+      ],
+      "end": [
+        89.26,
+        161
+      ],
+      "start": [
+        67.75,
+        161
+      ],
+      "delta": [
+        -21.510000000000005,
+        0
+      ],
+      "gap": 21.510000000000005,
+      "trajectoryConcatenation": false,
+      "connector": false,
+      "newCoordinates": false
+    }
+  ],
+  "sourceOrder": {
+    "wholePenPermutation": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "eachPenFieldsAndMaskOrderPreserved": true,
+    "globalRawRelativeOrderPreserved": false
+  },
+  "sourceFamily": {
+    "records": 11,
+    "providerVersions": 1,
+    "providerAlreadyIncludedInRecords": true,
+    "providerName": "u97cb-g08@2",
+    "providerNotSelectedRootClosure": true,
+    "wholeNames": [
+      "u6690",
+      "u6690-k",
+      "u6690-ue0100",
+      "u6690-ue0101",
+      "u6690-ue0102"
+    ],
+    "selectedRoot": "u6690",
+    "selectedRootClosure": [
+      "u6690",
+      "u65e5-01",
+      "u65e5",
+      "u97cb-08"
+    ],
+    "selectedRootClosureCount": 4,
+    "rootMixing": false,
+    "kAndVS2NotUsed": true,
+    "metadataRoot": "u6690"
+  },
+  "priorNativeObservation": {
+    "wholeCompatible": 1,
+    "directionsPassed": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "directionsFailed": [
+      5
+    ],
+    "direction6Observed": false,
+    "finePassed": [
+      12,
+      1,
+      2,
+      8,
+      9
+    ],
+    "coarse": 0,
+    "boundaries": 0,
+    "naturalReplay": 0,
+    "domestic5": "descending slanted V",
+    "candidate5": "horizontal then vertical",
+    "server": {
+      "pid": 67025,
+      "sessionId": 82395,
+      "port": 52452,
+      "stopped": true,
+      "signal": "SIGTERM",
+      "wrapperExitCode": 143
+    },
+    "observedBy": "root",
+    "newCandidateApproved": false
+  },
+  "originalSourceOrderEvidence": {
+    "sourceRawRelativeOrderPreserved": true,
+    "exactHVOnly": [
+      [
+        1,
+        2
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "domesticPen12ObservedRaw": [
+      14,
+      15
+    ],
+    "other12DirectionsNotYetObserved": true,
+    "newOrderInference": false,
+    "provisional13GroupsNotNativeOrderApproval": true
+  },
+  "orderEvidence": {
+    "completePenPermutation": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "newCoordinates": false,
+    "newPaths": false,
+    "newWidths": false,
+    "deepAllFieldsPreserved": true,
+    "currentNativeApproval": false,
+    "priorNativeObservation": {
+      "wholeCompatible": 1,
+      "directionsPassed": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "directionsFailed": [
+        5
+      ],
+      "direction6Observed": false,
+      "finePassed": [
+        12,
+        1,
+        2,
+        8,
+        9
+      ],
+      "coarse": 0,
+      "boundaries": 0,
+      "naturalReplay": 0,
+      "domestic5": "descending slanted V",
+      "candidate5": "horizontal then vertical",
+      "server": {
+        "pid": 67025,
+        "sessionId": 82395,
+        "port": 52452,
+        "stopped": true,
+        "signal": "SIGTERM",
+        "wrapperExitCode": 143
+      },
+      "observedBy": "root",
+      "newCandidateApproved": false
+    },
+    "unobservedDirectionsFreshRequired": true
+  }
+}
