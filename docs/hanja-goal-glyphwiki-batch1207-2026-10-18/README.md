@@ -1,0 +1,13 @@
+# batch1207 楅 reviewed H/V cardinal runtime
+
+Root fresh native approved selectedbaseu6945 whole1/all13directions/117candidate+117baseline coarse frames/actual3SVG520 fine[3,4,7,10]. All7boundary .6504515001456451 before/at/after+0/epsilon95PASS; natural7 2.55→100 actual3SVG520/8secondsPASS.
+
+선택baseu6945 원13획21polygon·좌표·outlineunion·폭·sourceGroups·원필순을보존합니다. 원7획raw[7,8]의H1/V2 polygon을기존d59cardinal kernel로right/down 두mask에정확히분리하고원mask weight총합을유지합니다. 대상7의활성합성guide는boundscardinal표시로바뀌는정책변경이며원baseline guide는공개fixture에보존합니다. 나머지12획mask·emptyraw4를포함한group[4,5]·원raw[14]→[13]순서를보존합니다. 새좌표·polygon·폭·connector·trajectory·순열은작성하지않습니다. 원600object와7completionFAIL·NOTICE·준비nativefalse는보존하고새후보fresh승인만적용합니다. source20byte핀과id3파일binding은2026-10-18캡처이며독립legacybytepin이아닙니다. 첫baselineSHA도이번source-only양성1/sourcecompile1·engine0에서새로기록됐고과거독립compiledpin은없습니다(t.baselineSHA256=null). 새full5/id3필수3/4경계안에서만원legacy2를호출합니다. 이번runtime는고정publicfixture복사만으로추가compile0이고새archive/engine재생은없습니다.
+
+28 immutable pins=original20+sourcecapsule8, fixed for this review rather than authenticated historical bytecaptures. Originalfamily6records/2whole/provider0/closure6/missing0/aliases0; onlybasefreshwholeapproved. Originalheader4 plus selectedfull5body/separatetraceclosure are retained. Exactfull5constructor is {engineRevision:header.engineRevision,engineHashes:header.engineHashes,...body}; spreadingheaderfirst would change JSON insertionorder and fullproofSHA. Newid3(root/file/fileSHA256,unprefixed)mandatory3/4 wraps only originallegacy2; the old API is not described as having identity3.
+
+First source baseline9c34755ae51b89d75418559bf7769d613017f524c72aeaea4e7c441b3c6805fc andidentityfilebytebinding are newlycaptured on2026-10-18. No independenthistoricalfilepin orcompiledpin; targetbaselineSHA256=null is preserved. Sourcecapsule targetpositive1/compiler1/engine0 is historical; runtimefixture/source/engineadditional0. Staticenginehashclosure agreement is not a fresharchive orengine replay.
+
+Rootserver16476/session22367/57284 exactstopped. Privatefiles0, appUIautoplayfalse/buildfalse. Actual parent1206 SHA 35de7bf4bbb1c6f58b7673597f0534ced3ef340af3de1c1dc2c5f73c385e88aa; runtime5633→5634/remaining345→344/historical343/resolved77→78/active266→265/references263→264. Original600object remains unchanged; Root authoritative actual verifier passed once(exit0):5634 applied/344 remaining, historical343/resolved78/active265/references264.
+
+Focused initial3:2PASS/1harnessFAIL because expectedid-key order was unsorted; corrected only expectedkey order, then targeted failedtest1PASS. Unique3/3finalPASS,totalexecutions2/testexecutions4,other2notrepeated. Verifier syntax1PASS/notrepeated. Geometry/proof/source/review unchanged. Rootactual1PASS; runtime source/engine/build0.
