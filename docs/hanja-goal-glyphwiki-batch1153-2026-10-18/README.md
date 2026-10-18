@@ -1,0 +1,7 @@
+# 膴 — batch1153 terminal214 LEFT 복구
+
+root가선택baseu81b4 whole1/16방향/freshcoarse144/fine[1,2,5,13,14,15,16]99.99→100/2경계.9239515302035813전중후+95·초기0epsilon을실제3SVG520에서PASS했습니다. baseline144는별도입니다. 자연2 2.65125000→100.00000000 8초stablepair520PASS. 비선택VS0는이번미관찰입니다.
+
+고정u81b4 원16획32polygon/sourceGroups를보존합니다. 기존terminalLeftTail로2획원terminal214 polygon만LEFT8mask로분리해16획17mask로만들고body guide/width/weight/direction·타mask를보존합니다. bounds만남은원정점으로재계산합니다. 새정점·좌표·경로·connector·필순·group은작성하지않습니다. full5/id3 mandatory3/4→legacy2·첫source baselinecapture와575/939string/원NOTICE를보존합니다. 16p17m32원polygon derivedSHA c3695e5c2a6aa962a9e6eff7b34cd3c6f16867ecbbee6a394d115e89d68303e4. more5 publicfixture575 RAM재사용/추가compile0/engine0. 원6familyrecords/whole2/provider0·선택closure5·전체97핀보존. baseline 6f48103a5ce5aebd7170011e0d3cb40e6ce494eb8fb316ee327f34810ce97252는동일source실험첫capture이며과거독립legacybaseline이아닙니다. 과거3~16미검토를이전PASS로확대하지않고현재전체방향/fine/coarse는fresh검토했습니다. canonical은object가아닌원string(JSON SHA e9ce12d8a52672619390d7e205e48d28dc6962f7bc2b57720675523b3bc11f16)이며source실험false와575/939원문도보존합니다.
+
+실제부모1152 SHA fda56bb89c8b43c21010225fe0cc4f728f98b13862501985d756f678df0daf29는actualCheckpoint/Registry/runtimeRegisteredtrue 및actualRuntimeVerifier1회PASS입니다. 부모actual5593/5978·남385·hist343/res41/active302에서root actual단1회EXIT0 PASS후현재5594/5978·남384·hist343/res42/active301로확정했습니다. 집중3/3·verifier구문각1회PASS이며canonical210refs의원575string1건만이번해제했습니다.앱자동재생UI와build는실행하지않았습니다. root child88752/wrapper88751/port62851 종료예정통보이며worker는서버를조작하거나exit확인하지않았습니다.
