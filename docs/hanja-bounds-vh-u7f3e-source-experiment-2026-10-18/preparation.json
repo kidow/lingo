@@ -4,7 +4,7 @@
   "status": "source-only-cached-positive-recovered-static-checks-passed-native-pending",
   "configSHA256": "8eac03ceeee0eed811a99fae40de74ae6caa64f3714a54ab0ade0da6776ed9d7",
   "newFilesSHA256": {
-    "README.md": "bfd62f75337ee4325e9e489ff610b003b20f2bb8047602282aedec668ae8328e",
+    "README.md": "9952a28a16a9ca47e666339b4e86ee75c96b425078626ffc66399087e4d2c954",
     "config.json": "8eac03ceeee0eed811a99fae40de74ae6caa64f3714a54ab0ade0da6776ed9d7",
     "bounds-vh-candidate.mjs": "af814832953c4acd1985eb160c8c84dc67689e1008b1e8c329c739a32cdc3a98",
     "bounds-vh-candidate.d.mts": "632265a66994550e87b85b300443614ee39a8e6fced8ff8c00d5b4fcb255065c",
@@ -171,10 +171,39 @@
     "catalogStrokes": 14,
     "domesticPlaybackStrokes": 12,
     "originalReviewSaysDifferenceNotHoldReason": true,
-    "currentRuntimeLookupRequiresPathsEqualCatalog": true,
+    "currentRuntimeLookupRequiresPathsEqualCatalog": false,
+    "generalNonVariantBranchRequiresPathsEqualCatalog": true,
+    "existingExactReviewedVariantSupport": true,
+    "variantBranch": "hanjaStrokeData variant branch delegates to hanjaPlaybackVariant(character) before general length comparison",
+    "variantExactAllowlistChecks": [
+      "glyph",
+      "catalogStrokes",
+      "playbackStrokes",
+      "form",
+      "candidateSha256",
+      "pathsSha256 when pinned",
+      "paths.length equals playbackStrokes",
+      "ehanja-crosschecked"
+    ],
+    "existingExamples": [
+      {
+        "glyph": "荓",
+        "catalogStrokes": 12,
+        "playbackStrokes": 10
+      },
+      {
+        "glyph": "囍",
+        "catalogStrokes": 22,
+        "playbackStrokes": 24
+      }
+    ],
+    "studyGlyphSeparatesPlaybackAndCatalogCounts": true,
+    "currentTargetAlreadyAllowlisted": false,
+    "newTargetExactAllowlistAndNativeApprovalPending": true,
     "catalogOrLookupChangeInThisExperiment": false,
     "runtimeUnapproved": true,
-    "catalogAuthorityUnresolved": true
+    "catalogAuthorityUnresolved": true,
+    "inheritedConfigBooleanQualification": "Unchanged config.catalogCountPolicy.currentRuntimeLookupRequiresPathsEqualCatalog describes only the general non-variant branch; it is not a claim that variant support is absent."
   },
   "originalFilesChanged": false,
   "old599HoldAndNOTICEPreserved": true,
@@ -214,5 +243,38 @@
     "fixtureSelectionChecks": 1,
     "helperGuardChecks": 1,
     "passed": true
+  },
+  "countAuthorityAnalysisCorrection": {
+    "date": "2026-10-18",
+    "reason": "Previous README/preparation discussed only the general lookup branch and omitted existing exact reviewed variant support.",
+    "evidence": [
+      {
+        "file": "lib/hanja-strokes.ts",
+        "lines": [
+          1737,
+          1741
+        ]
+      },
+      {
+        "file": "lib/hanja-stroke-variants.ts",
+        "lines": [
+          33,
+          92
+        ]
+      },
+      {
+        "file": "components/hanja/study-glyph.tsx",
+        "lines": [
+          21,
+          24
+        ]
+      }
+    ],
+    "newRuntimeOrAllowlistApproval": false,
+    "sourceGeometryOrModuleOrHelperChanged": false,
+    "sourceCompilerReruns": 0,
+    "focusedReruns": 0,
+    "syntaxReruns": 0,
+    "readOnlyPinAccountingOnly": true
   }
 }

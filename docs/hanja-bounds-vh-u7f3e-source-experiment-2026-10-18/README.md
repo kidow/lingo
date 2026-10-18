@@ -1,6 +1,6 @@
 # 缾599 V/H 원polygon bounds 표시 source 실험
 
-원599 wholebase/VS0/VS2호환·5완료FAIL·catalog14/domestic12·NOTICE/보류원문은불변입니다. 이번후보native/runtime승인0·과거PASS승계0입니다. 원review는획수차이가보류원인이아니라고기록했지만현runtime hanjaStrokeData는paths.length===character.strokes가필요하므로14catalog/12playback권위·연결정책은여전히미해결입니다. catalog/lookup/registry수정0입니다.
+원599 wholebase/VS0/VS2호환·5완료FAIL·catalog14/domestic12·NOTICE/보류원문은불변입니다. 이번후보native/runtime승인0·과거PASS승계0입니다. 원review는획수차이가보류원인이아니라고기록합니다. 실제 hanjaStrokeData는 variant가 있으면 먼저 hanjaPlaybackVariant로 분기하며, 일반 데이터에만 paths.length===character.strokes 조건을 적용합니다. 기존 exact allowlist는 glyph/catalog/playback/form/candidate·paths SHA와 playback 길이를 고정하고 荓12→10·囍22→24 등을 이미 지원합니다. study-glyph는 재생획수와 배정획수를 분리 표시합니다. 따라서 variant지원 부재가 blocker인 것은 아닙니다. 다만 새 缾14→12 exact allowlist binding·그에 필요한 fresh native 승인·권위 검토는 아직 없으며 이 실험에서 자동등록하거나 catalog/lookup을 변경하지 않습니다. catalog/lookup/registry수정0입니다.
 
 원raw4V(0/13)2polygon+raw5H(2/2)1polygon은(24.72,162) exact접점입니다. V의원quad·tiptriangle/Hquad를그대로참조하고원5획outline3chunk를down/right bounds2mask로분리합니다. H초기edge는완료Vquad의strict interior입니다. 원V최저Y182는trajectory끝Y162보다20KAGE=10SVG더내려가며원폭14/radius7로completionFAIL이났습니다. 기존岯boundedVH body를고정pen/raw guard만치환하고나머지본문은역치환byte동일하게재사용했습니다. 새좌표/outline/폭/connector/trajectory/순열0;원maskweight28+26.78=54.78보존,활성combinedguide→bounds표시정책변경을명시합니다. 새경계5=.511135450894487은freshnative필수입니다.
 
