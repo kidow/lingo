@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "batch": 1150,
+  "glyph": "藐",
+  "selectedWhole": "u85d0-ue0102",
+  "reviewedAt": "2026-10-18",
+  "status": "native-hold-pen18-original-up-tail-completion-pop",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "observer": "/root",
+  "whole": {
+    "actuallyObserved": [
+      "u85d0-ue0102"
+    ],
+    "compatible": [
+      "u85d0-ue0102"
+    ],
+    "comparisonViews": [
+      "domestic",
+      "original",
+      "left-tail-separated"
+    ],
+    "actualSVGWidth": 520,
+    "otherWholeNotApproved": true
+  },
+  "directions": {
+    "observedPens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "allMatch": true
+  },
+  "fine": {
+    "actualWidth": 520,
+    "observedPens": [
+      9,
+      14,
+      18
+    ],
+    "passedPens": [
+      9,
+      14
+    ],
+    "failedPens": [
+      18
+    ],
+    "probes": [
+      0.9999,
+      1
+    ],
+    "failure": {
+      "pen": 18,
+      "approximateAddedUPTailPixels": 44,
+      "positiveAreaCompletionPop": true,
+      "description": "Root actual520px99.99→100 observation: original pen18 UP tail adds a new positive-area rise around44px."
+    },
+    "pen14Observation": "99.99→100 passed; only approximately1px global shift, not a positive-area terminal pop.",
+    "otherFineNotObserved": true
+  },
+  "boundaries": [
+    {
+      "pen": 9,
+      "value": 0.8510167233355598,
+      "beforeAtAfterObserved": true,
+      "actual95TailPassed": true,
+      "zeroEpsilonPassed": true,
+      "actualWidth": 520
+    }
+  ],
+  "coarseFramesReviewed": 0,
+  "naturalReplaysObserved": 0,
+  "otherProgressiveGatesNotClaimed": true,
+  "sourceEvidence": {
+    "sourceExperiment": "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/preparation.json",
+    "sourceExperimentSHA256": "b31a8985221efb767a1f18f827508a2fb3b223630aeb9e569fbaefc52cbc8eb2",
+    "sourceOnlyExperimentNativeFalse": true,
+    "compiledSHA256": "ae95dd42f075c7365c3e3652f0432491e1946c77f8c7cc721ea2e91c1db0b8e1",
+    "pens": 18,
+    "masks": 19,
+    "polygons": 43,
+    "fullProofSHA256": "7c1c823f59182bf445f88845d11eb94761b81ba90754eca78a30b849c8c73602",
+    "identity": {
+      "root": "u85d0-ue0102",
+      "file": "engine-whole-u85d0-ue0102.json",
+      "fileSHA256": "fa7a60916d12f38cfb7bbf49fb1c1ba882dfb26c54cbafb9f5f86ce9dc6e7393"
+    },
+    "mandatoryArguments": [
+      3,
+      4
+    ],
+    "legacyDelegateArgumentCount": 2,
+    "target9OriginalLeftTailOnlySeparated": true,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ],
+      [
+        2
+      ],
+      [
+        4
+      ],
+      [
+        6
+      ],
+      [
+        5
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ]
+    ],
+    "pen18OriginalGuide": "M73.82 61.005 L73.82 84.3175 Q73.82 89.3175 78.82 89.3175 L91.1175 89.3175",
+    "pen18OriginalCalls": [
+      {
+        "raw": 18,
+        "kind": "cdDrawLine",
+        "args": [
+          147.64,
+          122.01,
+          147.64,
+          168.635,
+          32,
+          1
+        ]
+      },
+      {
+        "raw": 18,
+        "kind": "cdDrawCurve",
+        "args": [
+          147.64,
+          168.635,
+          147.64,
+          178.635,
+          157.64,
+          178.635,
+          1,
+          1
+        ]
+      },
+      {
+        "raw": 18,
+        "kind": "cdDrawLine",
+        "args": [
+          157.64,
+          178.635,
+          182.235,
+          178.635,
+          6,
+          5
+        ]
+      }
+    ],
+    "pen14AllOriginalMasksAndGuidePreserved": true,
+    "sourceGeometryOrderWidthAndCoordinatesChanged": false
+  },
+  "originalFilesSHA256": {
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/metadata.json": "389d28505c695ad675ba6ad46fdf0da3814719dcf168d5b84d09c6e3c2bcb17c",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/progressive.mjs": "69dc543c248c851e08c711263ef911ffddf03ebc5c8284763e7ad6cc854a1a7a",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/progressive-review.json": "e92e603dd802304143207fee9049f25b51f71cb9759aa69524624f5cb2b610b3",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/engine-proof.json": "39f31de20439fe41b61d1c80a72bb007c52996942c6d07594b6ab2a5dbc3f7f6",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/sources.json": "ed26fccbbd0c1ac3d1fce3569b2f3d720f49f0f8ff371c14d857431d8fb46428",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/engine-whole-u85d0-ue0102.json": "fa7a60916d12f38cfb7bbf49fb1c1ba882dfb26c54cbafb9f5f86ce9dc6e7393",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/NOTICE.md": "8be0fa890349affe346cf116c1722234246274f327cc58c80d54dc99afc7ac6b",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/README.md": "33ae524ea4b152a1b33659b2b0612ba250b38b0800d1ad8f5b737de1c78f4a4b",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/draw-trace.json": "4133e4674ea1d2a6bad537675d796fcdd1f66b400f309067f7094e3fc00dab8a",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/engine-whole-u85d0-ue0100.json": "5f50aa06634b879b9e38fa61926f5f7b3f8b71ae5f80623ee36e6c4527a01c96",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/engine-whole-u85d0-ue0101.json": "5f50aa06634b879b9e38fa61926f5f7b3f8b71ae5f80623ee36e6c4527a01c96",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/engine-whole-u85d0-var-001.json": "454477d0ef4f84b1b26850bd724b12b70ae29b58a3310b879ddb17410aa8da79",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/engine-whole-u85d0.json": "5f50aa06634b879b9e38fa61926f5f7b3f8b71ae5f80623ee36e6c4527a01c96",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/resume.json": "4825984f25c4aaee45aa2404ef27b15d485e4977fe61d6d24baa420791a83e30",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/serve-progressive.py": "b3fc6a1186b4a8a535ae3b7c24b2cd2fc223ebf5cc64f69f91137b8ce1e2904c",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/serve-variants.py": "c2387b7d95bd9636171169f9ffda8fe7c7bad85f01eedd36a8614d2e7f5eb5a8",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/validation.json": "b7cf84cd8fd5fba55cd8ce8f2a12efd5d5617d95aa30809fd33d87a485509a20",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/verify-source.mjs": "8d4d9901989ceb3c5c9c61b2673bf08cf933aa862909238ad11e27349a4385da",
+    "docs/hanja-goal-glyphwiki-batch558-2026-10-11/whole-variant-inventory.json": "40e3d0a16823d9315d877cdc70126811c21fd8ba84f1de504da511919791cd19",
+    "docs/hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "docs/hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "docs/hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs": "25b9a23cdf644798a7336df3f78b72ecc3c4ad10d0fbe860b403a38911e514f6"
+  },
+  "sourceExperimentFilesSHA256": {
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/README.md": "baca30fc74370859ffdf7a1257ea3f1197247f93c867beb2e23e4cef8115eb08",
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/config.json": "7446d9ab88d3b80e96e4dcd8c47908e7fbab2f40f6c541258d3043fd208b30b4",
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/fixtures.json": "2615feca21bd8c314ea534811629200f8c731f4665b77ada34f7dfac90486c42",
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/preparation.json": "b31a8985221efb767a1f18f827508a2fb3b223630aeb9e569fbaefc52cbc8eb2",
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/serve.py": "e51e16af128accc6ffc5c7e867f72f2aa7592b4c692ce8a3a439005961e91ae0",
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/source-check.mjs": "614e6896bcea1b8473ebd875678f84a4d989f305405b91c0052f8155194f8a60",
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/tail-candidate.d.mts": "f117be561bceae942776525008166a0b008692f4e05b5e9c5e9b70cb1635d0bf",
+    "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/tail-candidate.mjs": "abd4e5011d011e463e52069248b9d73831df9d7f4ee79361b22194c9f9721de5"
+  },
+  "existingCanonicalHold": {
+    "glyph": "藐",
+    "batch": 558,
+    "recordType": "string",
+    "record": "batch558 藐18;first9pens81normalframes reviewed,8pens72frames approved;pen9 terminalhook incomplete,flag214extent8.0075/8.0275>radius7 acrossall5roots;16records2histories;remainingdomestic10-18unreviewed",
+    "recordJsonSHA256": "f9867357989e051d8c6d926aa21d2c4533617b66898ba565504c25fbd4864730",
+    "recordUtf8SHA256": "d9e60d318a5126f44719873e92dca22db954e381be7c199c3be6e2cd84986365",
+    "newHoldDelta": 0,
+    "retainedActive": true,
+    "originalRecordPreserved": true
+  },
+  "sourceCompilationAccounting": {
+    "priorLeftSourceExperimentPositiveCompilesFor558": 1,
+    "newRuntimeCompiles": 0,
+    "newSourceCompiles": 0,
+    "engineRuns": 0
+  },
+  "newMixedCandidateNotNativeApproved": true,
+  "appAutoplayReviewed": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "serverLifecycle": {
+    "responsible": "/root",
+    "PIDNotReportedToThisAgent": true,
+    "startedByThisAgent": false,
+    "cleanupConfirmationNotInferred": true
+  }
+}
