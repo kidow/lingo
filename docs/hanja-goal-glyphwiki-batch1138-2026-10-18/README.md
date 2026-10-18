@@ -1,0 +1,11 @@
+# 离 — batch1138 terminal14 LEFT 표시 복구
+
+선택u79bb whole1을root가실제3SVG520으로관찰했습니다. 비선택captured17whole은이번미관찰입니다. 현재11방향·coarse99·fine[3,4,5,8,9,11]99.99→100·경계8=.9075068101810732 전/중/후+95·초기0/epsilon(standardroundcap만)·자연재생8 3.79625000→100.00000000 모두PASS입니다. baseline99는별도관찰이며후보99에중복합산하지않습니다.
+
+고정publicfixture554를RAM에서재사용하여추가compile0/engine0입니다. 11획12mask29원polygon, derivedSHA 4eced254aae2e4d8a8d2b0f594dd7eec58530e8cb36c4fcbef7fc9086498c598입니다. 원sourceGroups5의[4,6]는이번에작성한merge가아니며그대로보존하고현재그룹전체를root가국내방향과새로대조했습니다. 기존terminalLeftTail이8획마지막tailpolygon만분리합니다. body guide/width/weight/direction·타mask·필순을보존하고bounds는남은원정점으로재계산합니다. maskpartition은변경되며새정점·좌표·경로·connector·group은없습니다. full5/id3 unprefixed fileSHA256 필수3/4→legacy2 계약과header4/traceclosure를보존합니다. baseline 8ac59a01d95063b9d855aa46c4ecd24a916e985da6df4a0977bab332289e9a36는실험첫capture이며과거독립baseline으로주장하지않습니다. 원38familyrecords/18capturedwhole/선택closure4/provider6와전체97핀을보존합니다. provider6은전체family의고정자료이며선택closure가모든provider를사용한다는뜻이아닙니다. 원문·버전·URL·SHA는u79bb.json에그대로둡니다.
+
+원canonical은object가아닌다음string이며형식·내용을변경하지않습니다: batch554 离11;all11pens99normalframes reviewed,10pens90frames approved;pen8 terminalhook incomplete,flag14extent10 or214extent8>radius7 acrossall18roots;38records6histories;fine8fails,others3/4/5/9/10/11pass。JSON SHA 8e27e72659e9853017d2ca5fd9e74bfcbbb900bd7c94f852c49a2cb6ae9dd449입니다. source실험false이력과과거554/939문서도바꾸지않습니다.
+
+실제부모1137 SHA 605ff601f0ec7ad60a3efe2dda9927767302169479d627cf88f20b1ac5617712는5580/5978·남398·historical343/resolved27/active316입니다. root actual registry단1회 exit0 PASS 후현재5581/5978·남397·historical343/resolved28/active315로확정했습니다. canonical195refs의원554string1만해제하고원문은그대로보존합니다. 집중3/3·verifier구문각1회PASS,추가fixturecompile0/engine0/build0입니다. 앱자동재생UI는검토하지않았습니다.
+
+root는child16997 port55022의정확command를확인후SIGTERM종료했습니다. wrapper16996은별도종료조회하지않았으며이worker가exit를확인했다고주장하지않습니다.
