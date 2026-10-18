@@ -1,0 +1,9 @@
+# batch1193 諪 runtime 적용
+
+root가선택u8aea-k whole1·16방향·coarse144candidate와별도baseline144·fine[6,11,13,14,16]99.99→100·16LEFT경계.7460063821484345직전/경계/직후95/0epsilon을fresh승인했습니다. 자연16=3.85375→100은8초실제3SVG520 PASS입니다. PID45575/session50830/port49930은root가정확종료확인했고wrapper는별도확인하지않았습니다. 최초0%버튼명TypeError는클릭전이므로관측0이고AX이름확인후실제0버튼으로1회검토했습니다. 코드변경은없었습니다.
+
+고정u8aea-k의16획·33polygon·원순서를보존합니다. 원16획raw18의terminal14 LEFT꼬리polygon만기존7e064978primitive로분리하여16→17mask로표시합니다. 원body의guide/width/weight29.371068은그대로두고tailweight10을별도mask로둡니다(전체16획표시가중치는39.371068으로증가). 원polygon은정확히한번씩남고다른15획·좌표·outline·연결선은변경하지않습니다. 기존strict11필드identity와4키header·별도trace/legacy2를보존하며새외부full5/id3는실제sources.jsonmanifest에바인딩합니다. sourceVerified=null/sourceEngineReplayKnown=false는여전히미확인으로유지합니다. 기존outside4실험의총9상한/성공8/realm실패1·332초회와RAM회수2회이력은재검사없이보존하며이번추가sourcecompile0입니다.
+
+source25+lab8=33핀,고정6records/선택whole1/provider0입니다. 원sources에는wholeNames키나engine-whole개별파일이없으므로실제manifest root를그대로선택하고가짜파일/재현증거를만들지않았습니다. 외full5는원header4+별도trace envelope이며id3 root/file/fileSHA256은실제sources.json SHA를바인딩합니다. 안쪽은원./prefix·uppercaseSHA256의11필드identity strict3→legacy2입니다. 이번source/fixture/compiler/engine0이며원nativefalse·sourceVerified:null·sourceEngineReplayKnown:false 이력은불변입니다. 앱자동재생UI는검증하지않았습니다.
+
+실제부모1192 SHAbb0d67f63eef321bafd9a4df86b1da6b5ffc1155fd731d5bfd9e4b8e820925b0의5624/354·historical343/resolved70/active273을승계하고canonical諪대상0이므로새보류/해제0으로실제5625/353·resolved70/active273을확인했습니다. 참조250에는부모가포함됩니다. 집중3/3와verifier구문은각단1회exit0 PASS이며root actual도단1회exit0 PASS입니다. source25+lab8=33핀불일치0·canonical0을확인했고sourceVerified:null/sourceEngineReplayKnown:false를유지합니다. 빌드/Git/서버0입니다.
