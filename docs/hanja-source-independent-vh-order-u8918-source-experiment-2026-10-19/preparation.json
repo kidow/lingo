@@ -1,0 +1,584 @@
+{
+  "schema": "hanja-independent-masks-preparation-v1",
+  "date": "2026-10-19",
+  "glyph": "褘",
+  "root": "u8918",
+  "configSHA256": "dadac1ef1ed082043dfe34f28a64a20464d07b2951a024550b878c992145f10c",
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/NOTICE.md": "80831cda80c1628c3be120d599f7e26f844336b5774e5095f84efea52f97d782",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/README.md": "0528a63102ebc959de7d5898385a4ffd85f8b0a2d7ffb859489b068ffaa6a576",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/draw-trace.json": "62b3fe75bd1462c50ca49fcb94f36dab9a0ddfbf8f888e104969525c7b42d486",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/engine-proof.json": "ba9c109c3d6f562281fd01cb789625dd662763104c82a7102ec8fd37d3dc97a7",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/engine-whole-u8918-k.json": "8a8cf875840d7af10cf2918a19b4d8306be3ede39f3c1d50c0643bcd8a967e60",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/engine-whole-u8918-ue0100.json": "19bc616175470ee25d27b82c2273af16b0b39d2c5661c302d83cdd9fbec152a0",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/engine-whole-u8918-ue0101.json": "19bc616175470ee25d27b82c2273af16b0b39d2c5661c302d83cdd9fbec152a0",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/engine-whole-u8918-ue0102.json": "8a8cf875840d7af10cf2918a19b4d8306be3ede39f3c1d50c0643bcd8a967e60",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/engine-whole-u8918.json": "19bc616175470ee25d27b82c2273af16b0b39d2c5661c302d83cdd9fbec152a0",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/metadata.json": "96f2033bd6f17bb6f62ee9a398878b12f2a5698ddae49630716ea1300da938ee",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/resume.json": "6faf37f9e438a6230e47ce6de7c7c706e300d8c6f3732bf54539305e2c03c25c",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/review.json": "4071d1e41ba2bfb4efcb2b96c0c322ca4fbb8206ba085f286250c1d83afc23fe",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/serve-memory.py": "5f2fcdd50b9547183650faf527407ec0c893a2af0133b365cd1606acee5c9b41",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/source-analysis.json": "1ffa7cbec5c5dca2bdc1b3e260065b44fe4121e98e90b57a6afa400d6fefaece",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/source-join-analysis.json": "8c976466a0a62f14672ce31b4d6050b9a17733ae48c5265cc58d6915321936e5",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/sources.json": "acd020079327ff7d7e47ab248ea589f9e9b4c990c3ce616fdfb0f9512b3b7c3e",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/validation.json": "bc8cebfc277497526f2e34a7298879a50d383dc5155e36f98b847d6a2b030aae",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/verify-source.mjs": "fd6fca5e4aadfb3a297e3410d89bbf80e89c3ba2fc807a3ad706b9d7456dba1a",
+    "../hanja-goal-glyphwiki-batch772-2026-10-13/whole-variant-inventory.json": "a101d9bb2e84d40e7224e830190b3094d94bb585324abcd8f79d60e501806a1a",
+    "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/README.md": "ec3b0c9fa9170b8894b9f9380d432f8fe59b964dfc335bfb47eef35f7fa87fd0",
+    "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/candidate.d.mts": "ea73ab526e28359e07c64fb2fcb39d449f31bf4a5831e507b5209aa19da4ff4e",
+    "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/candidate.mjs": "05b47d2a5b392f2b4cbf75eff185b0c36998d6902e4c5e833c83819bcbc03884",
+    "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/config.json": "1ea5500604be2f08ca12b9d404d9374ed163260730fb18e4102bba3c9b036fe8",
+    "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/fixtures.json": "4a6dc005ffdb7b1bfa2c979c121c6da5a31b5485f66a0baf1fc64491e068905b",
+    "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/preparation.json": "9314dabe19496f749cdc1a12de84787579982a7e0f37ae1ff40d7deb915e86b0",
+    "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/serve.py": "78492f7dfec039cc55f23f973a171297ca66a7d54135552b7d26bc9a3772e18e",
+    "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/source-check.mjs": "8dd57de40b5cec3e19467407274468c2ea6f669ad4d4c46714e462e31841680c"
+  },
+  "newFilesSHA256": {
+    "fixtures.json": "f2c68c4e17df6908fb19164e10f37caf1740a8beceba7ae104810db004b5cfb2",
+    "config.json": "dadac1ef1ed082043dfe34f28a64a20464d07b2951a024550b878c992145f10c",
+    "candidate.mjs": "c0c4f90cf5bb5e84300dc8c7a85be919165638298619bbfb530fd268a2ab3825",
+    "candidate.d.mts": "ea73ab526e28359e07c64fb2fcb39d449f31bf4a5831e507b5209aa19da4ff4e",
+    "serve.py": "cd1676c3c6dde2fff4f0e4d8834eefc4a968114228b84b7ee5b5b09cdfa7cc83",
+    "README.md": "b67d85c9e8b07bfd1201ff518f1fbb5cf3d39da74bc119903b3e1d68b9db5ce3",
+    "source-check.mjs": "c82674ec069d0eb0b300852919f9b733b53c0905cbc714d81905db6599893e14"
+  },
+  "baselineSHA256": "5a5579229ec1a35a26bdfe0ed069f1f237aab9c69f44f48ea8e071ba46594b8a",
+  "derivedSHA256": "5a5579229ec1a35a26bdfe0ed069f1f237aab9c69f44f48ea8e071ba46594b8a",
+  "counts": {
+    "raw": 18,
+    "drawCalls": 18,
+    "factoryPens": 15,
+    "baselinePens": 14,
+    "baselineMasks": 15,
+    "pens": 14,
+    "masks": 15,
+    "polygons": 30
+  },
+  "factorySourceGroups": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ]
+  ],
+  "factoryGroupMap": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      6
+    ],
+    [
+      5
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      14
+    ]
+  ],
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      8
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15,
+      16
+    ],
+    [
+      17
+    ]
+  ],
+  "sourceContract": {
+    "identity": {
+      "root": "u8918",
+      "file": "../hanja-goal-glyphwiki-batch772-2026-10-13/engine-proof.json",
+      "fileSHA256": "ba9c109c3d6f562281fd01cb789625dd662763104c82a7102ec8fd37d3dc97a7"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "existingSelectedFull5Preserved": true,
+    "newHeaderTraceCombination": false,
+    "defaultProofMixed": false,
+    "newStrictWrapper": true,
+    "originalProgressiveCompilerExisted": false,
+    "mandatoryProgressiveArgs": 3,
+    "mandatoryWholeArgs": 4,
+    "mandatoryCaptureArgs": 3,
+    "identityExtraKeysRejected": true,
+    "opaqueFullProofDigestFixed": true
+  },
+  "sourceSnapshot": {
+    "sourceFile": "../hanja-goal-glyphwiki-batch772-2026-10-13/sources.json",
+    "records": 8,
+    "providerVersions": 1,
+    "providerAlreadyIncludedInRecords": true,
+    "providerName": "u97cb-g08@2",
+    "providerNotSelectedRootClosure": true,
+    "wholeNames": [
+      "u8918",
+      "u8918-k",
+      "u8918-ue0100",
+      "u8918-ue0101",
+      "u8918-ue0102"
+    ],
+    "selectedRoot": "u8918",
+    "selectedRootClosure": [
+      "u8918",
+      "u8864-01",
+      "u97cb-08"
+    ],
+    "selectedRootClosureCount": 3,
+    "rootMixing": false,
+    "kAndVS2NotUsed": true,
+    "metadataRoot": "u8918",
+    "missing": [],
+    "aliases": [],
+    "archive": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+    },
+    "newAPIRequests": 0,
+    "newEngineRuns": 0
+  },
+  "geometryFactory": {
+    "source": "../hanja-source-independent-vh-u8918-source-experiment-2026-10-19/fixtures.json",
+    "originalBodyBytes": 8067,
+    "originalBodySHA256": "4ea61b5e0ba522559dd0c5ef42a24cae29159a79ea4e38ff56a836a25d713355",
+    "bodyByteExact": true,
+    "sourceGeometryExecutions": 0,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "publicPreTailFixtureSavedBeforeChecks": false,
+    "publicCachedOrderFixtureSavedBeforeChecks": true,
+    "originalBodySource": "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs",
+    "cachedWholePenReorders": 1,
+    "bodyCopiedButNotExecuted": true
+  },
+  "independentMaskPolicies": [
+    {
+      "pen": 13,
+      "raw": [
+        15,
+        16
+      ],
+      "kinds": [
+        "cdDrawLine",
+        "cdDrawLine"
+      ],
+      "end": [
+        92.86,
+        161
+      ],
+      "start": [
+        72.25,
+        161
+      ],
+      "delta": [
+        -20.61,
+        0
+      ],
+      "gap": 20.61,
+      "trajectoryConcatenation": false,
+      "connector": false,
+      "newCoordinates": false
+    }
+  ],
+  "exactJoins": [
+    [
+      1,
+      2
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      11,
+      12
+    ]
+  ],
+  "orderEvidence": {
+    "completePenPermutation": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "newCoordinates": false,
+    "newPaths": false,
+    "newWidths": false,
+    "deepAllFieldsPreserved": true,
+    "currentNativeApproval": false,
+    "priorNativeObservation": {
+      "wholeCompatible": 1,
+      "directionsPassed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "directionsFailed": [
+        6,
+        7
+      ],
+      "fine": 0,
+      "coarse": 0,
+      "boundaries": 0,
+      "naturalReplay": 0,
+      "domestic6": "descending slanted V",
+      "candidate6": "horizontal then vertical",
+      "domestic7": "horizontal then vertical",
+      "candidate7": "descending slanted V",
+      "server": {
+        "pid": 69597,
+        "sessionId": 81035,
+        "port": 53250,
+        "stopped": true,
+        "signal": "SIGTERM",
+        "exitCode": 143
+      },
+      "observedBy": "root",
+      "newCandidateApproved": false
+    },
+    "unobservedDirectionsFreshRequired": true
+  },
+  "tailPolicy": {
+    "derivations": 0,
+    "corrections": 0
+  },
+  "allMultiMaskBoundaries": {
+    "13": [
+      0.19081272084805653
+    ]
+  },
+  "allOriginalPolygonsExactOnce": true,
+  "allMaskFieldsUnderExactReferencesPreserved": true,
+  "baselineComparison": {
+    "sameNewLogicalPenAndPrefix": false,
+    "baselineEqualsFinal": true,
+    "independentNativeEvidence": false,
+    "baselinePenMap": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "baselineIsOriginalOrderCache": true,
+    "helperBaselineField": "originalOrderBaseline",
+    "sameOriginalPenViaMapping": true,
+    "prefixDifferenceIntentional": true
+  },
+  "priorNativeHistory": {
+    "originalBatch": 772,
+    "compatibleWholeRoots": [
+      "u8918",
+      "u8918-k",
+      "u8918-ue0100",
+      "u8918-ue0101",
+      "u8918-ue0102"
+    ],
+    "wholeVariants": [
+      {
+        "name": "u8918",
+        "related": "u8918",
+        "data": "99:0:0:2:0:150:200:u8864-01$99:0:0:15:0:244:200:u97cb-08"
+      },
+      {
+        "name": "u8918-k",
+        "related": "u8918",
+        "data": "99:0:0:2:0:150:200:u8864-01$99:0:0:21:-1:236:200:u97cb-g08@2"
+      },
+      {
+        "name": "u8918-ue0100",
+        "related": "u3013",
+        "data": "99:0:0:0:0:200:200:u8918"
+      },
+      {
+        "name": "u8918-ue0101",
+        "related": "u3013",
+        "data": "99:0:0:0:0:200:200:u8918"
+      },
+      {
+        "name": "u8918-ue0102",
+        "related": "u3013",
+        "data": "99:0:0:0:0:200:200:u8918-k"
+      }
+    ],
+    "domesticDirectionPensObserved": [
+      13
+    ],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "originalHoldPreserved": true,
+    "currentNativeEvidence": 0,
+    "currentApprovalInherited": false
+  },
+  "attribution": {
+    "originalNOTICEPreserved": true,
+    "NOTICEFile": "../hanja-goal-glyphwiki-batch772-2026-10-13/NOTICE.md"
+  },
+  "sourceChecks": {
+    "status": "PASS",
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "cachedPositive": 1,
+    "negative": 29,
+    "sourceGeometryGenerations": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "pens": 14,
+    "masks": 15,
+    "polygons": 30,
+    "allMaskFieldsPreserved": true,
+    "closure": [
+      "u8918",
+      "u8864-01",
+      "u97cb-08"
+    ],
+    "boundaries": {
+      "13": [
+        0.19081272084805653
+      ]
+    },
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "allPassedFirstAttempt": true,
+    "repeated": false
+  },
+  "syntax": {
+    "node": {
+      "executions": 2,
+      "passed": true,
+      "repeated": false
+    },
+    "declarationAST": {
+      "executions": 1,
+      "diagnostics": 0,
+      "passed": true
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "passed": true,
+      "stdout": {
+        "staticGuards": true,
+        "targets": [
+          "u8918"
+        ],
+        "sourceCompiles": 0,
+        "engineRuns": 0,
+        "HTTP": 0
+      },
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "HTTP": 0
+    }
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registryChanged": false,
+  "catalogChanged": false,
+  "originalSourceChanged": false,
+  "originalNOTICEChanged": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "HTTPRequested": false,
+  "buildExecuted": false,
+  "toolingHistory": [
+    {
+      "stage": "cached complete-pen reorder",
+      "sourceGeometry": 0,
+      "tailDerivations": 0,
+      "engine": 0,
+      "cachedReorder": 1,
+      "publicFixtureSavedBeforeChecks": true
+    }
+  ],
+  "finalPinCheck": {
+    "originalAndSharedPins": 31,
+    "newPins": 7,
+    "mismatches": 0,
+    "passed": true,
+    "sourceGeometryGenerationsTotal": 0,
+    "tailDerivationsTotal": 0,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "cachedWholePenReordersTotal": 1
+  },
+  "priorNativeObservation": {
+    "wholeCompatible": 1,
+    "directionsPassed": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "directionsFailed": [
+      6,
+      7
+    ],
+    "fine": 0,
+    "coarse": 0,
+    "boundaries": 0,
+    "naturalReplay": 0,
+    "domestic6": "descending slanted V",
+    "candidate6": "horizontal then vertical",
+    "domestic7": "horizontal then vertical",
+    "candidate7": "descending slanted V",
+    "server": {
+      "pid": 69597,
+      "sessionId": 81035,
+      "port": 53250,
+      "stopped": true,
+      "signal": "SIGTERM",
+      "exitCode": 143
+    },
+    "observedBy": "root",
+    "newCandidateApproved": false
+  }
+}
