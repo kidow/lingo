@@ -1,0 +1,131 @@
+{
+  "batch": 1259,
+  "glyph": "浿",
+  "date": "2026-10-19",
+  "status": "actual-runtime-verified",
+  "nativeApproval": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1258-2026-10-19/resume.json",
+  "parentResumeSHA256": "27830ecbd03358100bc15448ffada84352348adb3751c8341cb528cba94d1225",
+  "parentActualCheckpointVerified": true,
+  "parentActualRegistryVerified": true,
+  "parentRuntimeRegistered": true,
+  "parentActualEvidence": "actualRuntimeVerifier",
+  "completedRuntime": 5675,
+  "total": 5978,
+  "remaining": 303,
+  "historicalCanonicalHolds": 349,
+  "resolvedHistoricalCount": 107,
+  "activeCanonicalHolds": 242,
+  "pens": 10,
+  "masks": 11,
+  "polygons": 19,
+  "compiledSHA256": "5edcb7a59b2f3f1eb48cf37d174b4661e7f2f874800e32af311d9a5fb9a18a72",
+  "sourcePins": 27,
+  "pinBreakdown": {
+    "originalAndShared": 19,
+    "currentExperiment": 8,
+    "total": 27
+  },
+  "sourceRecords": 4,
+  "wholeRoots": 1,
+  "providers": 0,
+  "focusedTests": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "tests": 3,
+    "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch1259.test.ts",
+    "exitCode": 0
+  },
+  "syntax": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1259-2026-10-19/verify-runtime.mjs",
+    "exitCode": 0
+  },
+  "actualRuntimeVerifier": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "exitCode": 0,
+    "executedBy": "/root",
+    "reportedBy": "/root",
+    "reportedSummaryOnly": true,
+    "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch1259-2026-10-19/verify-runtime.mjs",
+    "registryUnique": 5675,
+    "remaining": 303,
+    "historicalCanonicalHolds": 349,
+    "resolvedHistoricalCount": 107,
+    "activeCanonicalHolds": 242,
+    "canonicalReferences": 316,
+    "canonicalTargetMatchesBeforeApply": 0,
+    "canonicalRecordType": null,
+    "nonCanonicalResolvedExcluded": [
+      "叟",
+      "廋",
+      "瞍",
+      "餲"
+    ],
+    "pens": 10,
+    "masks": 11,
+    "polygons": 19,
+    "sourcePins": 27,
+    "pinMismatches": 0,
+    "sourceRecords": 4,
+    "wholeRoots": 1,
+    "providers": 0,
+    "compiledSHA256": "5edcb7a59b2f3f1eb48cf37d174b4661e7f2f874800e32af311d9a5fb9a18a72",
+    "coarseCandidateFrames": 90,
+    "coarseBaselineFrames": 90,
+    "sourceCompilations": 0,
+    "runtimeFixtureCompilations": 0,
+    "additionalFixtureCompilations": 0,
+    "candidateDerivationsThisRuntime": 0,
+    "engineRuns": 0,
+    "appUI": false,
+    "buildExecuted": false,
+    "existingFull5Id3": true,
+    "factory8067Exact": true,
+    "emptyRaw4Preserved": true,
+    "original13And223Unmodified": true,
+    "noTailPartition": true
+  },
+  "runtimeFixtureCompilations": 0,
+  "additionalFixtureCompilations": 0,
+  "sourceCompilations": 0,
+  "candidateDerivationsThisRuntime": 0,
+  "engineRuns": 0,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildExecuted": false,
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "providerRecordField": "providerVersions",
+  "verifierRelativeImportsStaticAudit": [
+    {
+      "path": "../../lib/hanja-stroke-dictionary-glyphwiki-batch1259.ts",
+      "exists": true
+    },
+    {
+      "path": "../../lib/hanja-strokes.ts",
+      "exists": true
+    },
+    {
+      "path": "../hanja-source-independent-qq-u6d7f-k-source-experiment-2026-10-19/candidate.mjs",
+      "exists": true
+    }
+  ],
+  "toolingHistory": [
+    {
+      "stage": "metadata patch transport",
+      "failure": "shared Node REPL RAM state unavailable after focused/syntax PASS; functions JSON parse stopped before apply_patch",
+      "beforeFileMutation": true,
+      "sourceCompilations": 0,
+      "sourceGeometryGenerations": 0,
+      "testsRepeated": false,
+      "recovery": "read only saved runtime metadata and apply result fields"
+    }
+  ]
+}
