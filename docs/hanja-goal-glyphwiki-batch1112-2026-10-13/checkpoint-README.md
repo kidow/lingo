@@ -1,0 +1,11 @@
+# 駵 — batch1112 partial native fine16 hold supplement
+
+Actual1111 parent a3ee701f45e8f0bf6fe51305d93cf5646c00f78f22ecbcd22ebe8a98b9d4e319 confirms5563/5978, remaining415, historical335/resolved11/active324. Focused check passed once: canonical169refs/80strings+255objects confirms existing549 string duplicate1/add0, exactrecordSHAc78f9a50…7e82a3. Current24/shared4 and legacy9 pinmismatches0, exact駵lookupnull, registry5563 and active324 unchanged. No runtime is added.
+
+Root observed base/VS0whole2 and selected compiledwholepair, compatible abstract structure. Only direction16 was reviewed and matched; other16directions remain unreviewed. ActualbothSVG520 fine16 at99.99→100 failed: a2–3px residual appears at lower-left folded-V tip. No otherfine/coarse/boundary/replay was observed. Native whole stroke-order approval remainsfalse.
+
+Selectedpen16 raw17/18 H→V retains terminal23 quad and original width14/radius7 mask. Analysis-only interior disc at(86.7,65.7),r0.1 has polygonclearance0.178885 and fullpathdistance7.269278, giving minimumdiscpathdistance7.169278>7. Prefixinkdistance8.45 and upper-corner separation prevent prior ink/miter from covering it. At520 its area is at least0.849487pixels². This mathematical source witness supports the separate native observation; it is not authored geometry.
+
+VS0 capturedpen16 polygons matchbase exactly but guide x differs2.842170943040401e-14; full calls/proofs are not byte-identical. The originalcompiler supportsbase only, and no VS0fine/compiler was run here. Applying the samewidth14 H/V policy would retain this source risk; no second native failure is claimed. Old549 failedpen6terminal214; that historical failure is neither deleted nor counted as a newpen16 observation. An existing cardinal experiment reported atcommit3af5aa0 remains native/runtimefalse and was not compiled/reviewed here.
+
+Originalcurrent24/shared4 and legacy5499 files are preserved. No newmask/path/width/coordinate/split was created. Root confirmed matching cachedrunner child79929 SIGTERM atport59159;wrapper79928 autoexit is expected, not independently checked. Sourcecompile/engine/HTTP/server/build/Git bythisagent0. Compact omission is not deletion. Next1113襮20.
