@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-regroup-single-check-passed",
+  "configSHA256": "80c4f943f6dfd686ccdc62cd312db83290c752bb60b42fdfe513e612a9283972",
+  "newFilesSHA256": {
+    "README.md": "19ebf75ebb4c1b283cfdd93303a280c3e382e783a821bf0f8dfc753eeedfabae",
+    "config.json": "80c4f943f6dfd686ccdc62cd312db83290c752bb60b42fdfe513e612a9283972",
+    "regroup-candidate.mjs": "73d27b0fda494a072c69b356bba8cdb534217112d69d6ecf9531bd58cfecfa02",
+    "regroup-candidate.d.mts": "351dc7a3ec38e004923b7e655d5b882661340f1e75492eed8d49a02b26516de1",
+    "source-check.mjs": "b4e7514c8c8acc7347870d5eb7b13a7880cdbefa274672a57bf254b35ecd518f",
+    "serve.py": "352deda2b9aa10e5ca11422aba992280e555c6f9783c405a3df2b6291f3083c3",
+    "fixtures.json": "04406b646d1ae4fd8b41e3dbcb2405592a781dbcbf092a0f0f50f28f5d669904"
+  },
+  "inputPins": {
+    "originalSource": 41,
+    "priorVH3": 8,
+    "total": 49
+  },
+  "perCallOriginBlocks": [
+    {
+      "start": "  const segment = (polygons, direction, weight) => {",
+      "end": "  // The tail",
+      "bytes": 918,
+      "SHA256": "c38ae67bf9ae2b14de37fd6a92a3350ac7a757e7f8d47d3b20fae0421de709fe"
+    },
+    {
+      "start": "    const pieces = calls.map(call => {",
+      "end": "    if (pieces.length === 1)",
+      "bytes": 1081,
+      "SHA256": "5bde1c02040aa87478633f431209a9e7c99ac4b84f3dda6bc418dda78da16911"
+    }
+  ],
+  "baselineCachedBeforeChecks": true,
+  "originalBaselineSHA256": "816c113b02a7ea3973afc5447f03b10197aec226b8d32839c085a1d1ecaac318",
+  "VHBaselineSHA256": "fd9d8147b1e8993f5a7f69af10b93b2bb4aa733d4417f7704e2277d4358a85c7",
+  "compiled": {
+    "pens": 17,
+    "masks": 19,
+    "polygons": 36,
+    "SHA256": "dc766fd57555f8bb987bcc6888651c54740c5b6cbd4631c81d4ca747436dada2",
+    "boundaries": [
+      {
+        "pen": 2,
+        "values": [
+          0.6924908028565245
+        ]
+      },
+      {
+        "pen": 10,
+        "values": [
+          0.19857976160284047
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "newSourceCandidateCompilations": 1,
+    "originalWholeCompilerCompilations": 0,
+    "engineRuns": 0,
+    "negativeRejections": 32,
+    "nodeSyntaxChecks": 2,
+    "pythonASTChecks": 1,
+    "helperGuardChecks": 1,
+    "sourcePins": 49,
+    "HTTP": 0,
+    "serverStarts": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "report": {
+      "pens": 17,
+      "masks": 19,
+      "polygons": 36,
+      "compiledSHA256": "dc766fd57555f8bb987bcc6888651c54740c5b6cbd4631c81d4ca747436dada2",
+      "sourceGroups": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          12
+        ],
+        [
+          13
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          16
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ],
+        [
+          17
+        ],
+        [
+          18
+        ],
+        [
+          19
+        ]
+      ],
+      "rawGroupsExactlyOnce": true,
+      "originalPolygonsExactlyOnce": true,
+      "splitQandVOriginalPerCallBodyReused": true,
+      "mergeOld12and13ExactMaskObjects": true,
+      "boundaries": [
+        {
+          "pen": 2,
+          "values": [
+            0.6924908028565245
+          ]
+        },
+        {
+          "pen": 10,
+          "values": [
+            0.19857976160284047
+          ]
+        }
+      ],
+      "geometryAuthored": false,
+      "QVGroupingAndDisplayPolicyChanged": true
+    },
+    "pending": false
+  },
+  "newSourceCandidateCompilations": 1,
+  "originalWholeCompilerCompilations": 0,
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceGroupPolicyChanged": true,
+  "geometryAuthored": false,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": 0
+}
