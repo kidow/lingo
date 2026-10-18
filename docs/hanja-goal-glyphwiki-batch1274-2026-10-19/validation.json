@@ -1,0 +1,142 @@
+{
+  "batch": 1274,
+  "glyph": "裒",
+  "date": "2026-10-19",
+  "status": "actual-runtime-verified",
+  "nativeApproval": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1273-2026-10-19/resume.json",
+  "parentResumeSHA256": "9869036c85709a7efa758046403455a12e5f61d57acebd1dd56266ab0a7fb132",
+  "parentActualCheckpointVerified": true,
+  "parentActualRegistryVerified": true,
+  "parentRuntimeRegistered": true,
+  "parentActualEvidence": "actualRuntimeVerifier",
+  "completedRuntime": 5690,
+  "total": 5978,
+  "remaining": 288,
+  "historicalCanonicalHolds": 349,
+  "resolvedHistoricalCount": 115,
+  "activeCanonicalHolds": 234,
+  "pens": 13,
+  "masks": 14,
+  "polygons": 29,
+  "compiledSHA256": "c032de62be96925c63de00b952492522fdc2138f7bc561a4ea754b4566dc25e7",
+  "sourcePins": 29,
+  "pinBreakdown": {
+    "originalAndShared": 21,
+    "currentExperiment": 8,
+    "total": 29
+  },
+  "sourceRecords": 13,
+  "wholeRoots": 5,
+  "providers": 0,
+  "focusedTests": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "tests": 3,
+    "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch1274.test.ts",
+    "exitCode": 0
+  },
+  "syntax": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1274-2026-10-19/verify-runtime.mjs",
+    "exitCode": 0
+  },
+  "actualRuntimeVerifier": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "exitCode": 0,
+    "executedBy": "/root",
+    "reportedBy": "/root",
+    "reportedSummaryOnly": true,
+    "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch1274-2026-10-19/verify-runtime.mjs",
+    "registryUnique": 5690,
+    "remaining": 288,
+    "historicalCanonicalHolds": 349,
+    "resolvedHistoricalCount": 115,
+    "activeCanonicalHolds": 234,
+    "canonicalReferences": 331,
+    "canonicalTargetMatchesBeforeApply": 1,
+    "canonicalRecordType": "object",
+    "resolvedTargetOriginalBatch": 609,
+    "nonCanonicalResolvedExcluded": [
+      "叟",
+      "廋",
+      "瞍",
+      "餲"
+    ],
+    "pens": 13,
+    "masks": 14,
+    "polygons": 29,
+    "sourcePins": 29,
+    "pinMismatches": 0,
+    "sourceRecords": 13,
+    "wholeRoots": 5,
+    "providers": 0,
+    "compiledSHA256": "c032de62be96925c63de00b952492522fdc2138f7bc561a4ea754b4566dc25e7",
+    "coarseCandidateFrames": 117,
+    "coarseBaselineFrames": 117,
+    "sourceCompilations": 0,
+    "runtimeFixtureCompilations": 0,
+    "additionalFixtureCompilations": 0,
+    "candidateDerivationsThisRuntime": 0,
+    "engineRuns": 0,
+    "appUI": false,
+    "buildExecuted": false,
+    "newHeaderTraceFull5Id7": true,
+    "archiveFull5Identity": false,
+    "factory8067Exact": true,
+    "noTailPartition": true,
+    "independentVQ": true,
+    "originalQ7V8Separate": true
+  },
+  "runtimeFixtureCompilations": 0,
+  "additionalFixtureCompilations": 0,
+  "sourceCompilations": 0,
+  "candidateDerivationsThisRuntime": 0,
+  "engineRuns": 0,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildExecuted": false,
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "providerRecordField": "providerVersions",
+  "verifierRelativeImportsStaticAudit": [
+    {
+      "path": "../../lib/hanja-stroke-dictionary-glyphwiki-batch1274.ts",
+      "exists": true
+    },
+    {
+      "path": "../../lib/hanja-strokes.ts",
+      "exists": true
+    },
+    {
+      "path": "../hanja-source-independent-vq-u88d2-source-experiment-2026-10-19/candidate.mjs",
+      "exists": true
+    }
+  ],
+  "sourcePathStaticAudit": {
+    "sourceDirectory": "docs/hanja-goal-glyphwiki-batch609-2026-10-11/",
+    "sourceExists": true
+  },
+  "postActualMetadataFocused": {
+    "executions": 1,
+    "passed": true,
+    "exitCode": 0,
+    "scope": [
+      "resume.json",
+      "validation.json",
+      "README.md"
+    ],
+    "check": "actual flags/counts/hash equality and original focused/syntax counts preserved",
+    "sourceCompilations": 0,
+    "originalFocusedTestsRepeated": 0,
+    "syntaxReruns": 0,
+    "actualVerifierReruns": 0,
+    "requestedBy": "/root"
+  }
+}
