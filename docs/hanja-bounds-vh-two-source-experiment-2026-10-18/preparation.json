@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-positive-and-strict-guards-passed-native-pending",
+  "configSHA256": "51651fed9b569ec0c02f7d87abc09188a4993091f47b17ce61ea582d6d836cf0",
+  "existingPrimitive": {
+    "originalPointAndUPLEFTBodySHA256": "7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08",
+    "copiedPureSupportAndDeriveSHA256": "5e35f78621b7bed8651da482ddd8f380c376b5ff59c04c69e1ebb3962daf429e",
+    "originalBoundsGeometryBodySHA256": "533de5f5cd266518afd0eade31a50782bc8d47a2a6c17fccec2dbc4b0b7f46d1",
+    "boundsBodyByteIdentical": true,
+    "existingHtoVKernelChanged": false
+  },
+  "displayPolicy": {
+    "originalCombinedGuidePreserved": false,
+    "newAuthoredCoordinatesWidthsConnectors": false,
+    "sourcePolygonUnionAndOrderPreserved": true,
+    "independentVHandLEFTFromUnchangedBaseline": true
+  },
+  "sourceAccounting": {
+    "sourceCompilationsThisLab": 0,
+    "engineRuns": 0,
+    "positiveCandidateInvocations": 2,
+    "independentDerivationsFromSameBaseline": 4,
+    "sequentialChangedBaselineDerivations": 0,
+    "negativeRejections": 60,
+    "focusedExecutions": 1,
+    "focusedExitCode": 0,
+    "NodeSyntaxChecks": [
+      {
+        "file": "bounds-vh-candidate.mjs",
+        "exit": 0
+      },
+      {
+        "file": "source-check.mjs",
+        "exit": 0
+      }
+    ],
+    "PythonASTChecks": 1,
+    "staticHelperGuardChecks": 1
+  },
+  "immutableInputsSHA256": {
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/NOTICE.md": "a85d1baedc454a95c90cb21f2ce747da98db97f800cf818522ade3f9cbe7cdba",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/README.md": "d6e96e6f4cdcb2f963e940a15dd70d0fe57928d4831e32c433f3952102d2ca13",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/draw-trace.json": "c8b7ec6e45982def966fa7915aea88625a31c2c92d2bfd478e2b27eef00c3adb",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/engine-proof.json": "79e2fcb9aea8d3aa7f9fce39204e5aea93cd63dd6545a113add61e641210a53f",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/engine-whole-u75d7-g.json": "3cc91f16e86812a833a8ab37f86832ed72bda4f8295d57375d8653b465fea441",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/engine-whole-u75d7-ue0100.json": "b175dd31abaadd7987a05fa1981e16168ce3cea2ddd240331f2c986a2dc95d76",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/engine-whole-u75d7.json": "4598ec48fc6719fe2eeb290a244518742064c2cf1893668c134f35f29ba8a944",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/metadata.json": "f6e40e7668c1c1ae0458bc8daf17347d097fed401a7c2b74433dc31cb8f4d9f1",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/progressive-review.json": "23eb791eb5727382d8b86771684c582526904fbc8c849b7ce6a1e78ce99b7c80",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/progressive.mjs": "5f9108a66a07441324065784c1e38346cd1f84fbea8dff1b2dcd615a592f205a",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/resume.json": "a84d2d234053e2dc3339d20b8858688757d8c0a88e3db2baf35bff9c0e21fe35",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/serve-progressive.py": "c1917ae95278a48005861ff4a2e79aebd89cb52433579ae956583a0c90ead8c2",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/serve-variants.py": "499ae42fd9d8cc7d60d2cbd5069ff32421d079ac658138dc7dc84f3606c7fe3e",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/sources.json": "478675e9b2dec3d2f79190e07d80327b3e97cc8bf19cac9ecef09bbf02d3dc4e",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/validation.json": "99d480fe70bf80858a9ef339a2a9e76918461242f97120e6efcd62ec0a7bfe1b",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/verify-source.mjs": "90a4c4313d052f5b1dde388e9b9772249409f6abcce9680114a0b6c4f7d682a4",
+    "../hanja-goal-glyphwiki-batch565-2026-10-11/whole-variant-inventory.json": "1248d1d8ce3c16f43741e9375871cf5eab15b433fe5f1138dbfee5e1d42fd24b",
+    "../hanja-special2-alternatives-2026-09-21/serve.py": "d5d85c7304efef4b9546bd4d8414282d97757568af89dd97c2ad7701392e6532",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs": "25b9a23cdf644798a7336df3f78b72ecc3c4ad10d0fbe860b403a38911e514f6",
+    "../hanja-terminal-tail-more-source-experiment-2026-10-18/config.json": "5b7a6260384c05e536d7b291014daaf2348875946d2d1c5fd413fd0bd413fff2",
+    "../hanja-terminal-tail-more-source-experiment-2026-10-18/tail-candidate.mjs": "e4c17352cc7a92ba4ccef806d3a40d99840ea30f2ab0199b598965dc2abbde2e",
+    "../hanja-terminal-tail-more-source-experiment-2026-10-18/tail-candidate.d.mts": "fadf0d2bcb00d06579aa943914f41bcae1fd9e4a11aa91071aaeb0e13c6dbda6",
+    "../hanja-terminal-tail-more-source-experiment-2026-10-18/source-check.mjs": "d6cf07662dd55e81f86e2efba411b22f15f1007eea7aa79fb9306abfba928937",
+    "../hanja-terminal-tail-more-source-experiment-2026-10-18/serve.py": "9760051555a6f208480565479d3d63aae3f629745fa7a7a1c06e00697164327c",
+    "../hanja-terminal-tail-more-source-experiment-2026-10-18/preparation.json": "3a9b91dcd6fc7d97dce83e6776f15a0eb975a0bf5c9803bb013708d980a7378b",
+    "../hanja-terminal-tail-more-source-experiment-2026-10-18/fixtures.json": "d92cfc61d13cd32447d3739fbb10e0ce527937a18d8cba084bc291ad367dc262",
+    "../hanja-terminal-tail-more-source-experiment-2026-10-18/README.md": "ab7eabb9a3ab354e6f85179f424fe16c3dfe190be1442343951eb0b6691064cb",
+    "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/config.json": "f32c7b9500466da4ff5907e283d26c2d8389e29e266fc8ad70a8382c07886069",
+    "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/bounds-vh-candidate.mjs": "3b7f02ae19681e82934284829a4bfb88657d85bce7d6edda39d7add0fe62a56e",
+    "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/bounds-vh-candidate.d.mts": "e6ce3b3b7bc2b41e6390c7d19fd19191da32aa662436eb03f97b72dbb77fecb9",
+    "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/source-check.mjs": "a2037418370e5ab2bbbd5cce25e2ea053dad5421f390c9c72f413f0a18c9f278",
+    "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/serve.py": "c8bbebff89bed2fb3cfe6115311dbeb73038e7c4fc5c641fa9ccb282a4d110db",
+    "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/preparation.json": "b1445e60603a126f6e670cd8f0dd02278d448465b713e22e60bf934246be8a54",
+    "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/fixtures.json": "9f3e9ea3bcca0b28bd978d8f31d0bc28edad18272336fba773bdae88b880bc31",
+    "../hanja-bounds-vh-u92c2-source-experiment-2026-10-18/README.md": "647d50e84c83d689df6af55d319e88340e449c05d21dea6a27faf25b13569732",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/NOTICE.md": "aaabe9d072d71f1f1b9ba538f1bb3a56549764bd72f1d6e26adf6bef96ffa871",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/README.md": "7a69e57bd17244590e4c16f0d55643e53226103ab03d224b8bfd2c44b9cffab4",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/draw-trace.json": "947137c83e9c24a6bbd4f6760ee007a96afedb793ae5770bed95f5378ed2c275",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/engine-proof.json": "25c636170953fcf3fb18d402c3b7d575546e298837223bd6f4f742a6cceb77d4",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/engine-whole-u82fa-k.json": "74ef19471b97d7771aeb7bf657b25ea6425e69d03ab279572a8bfa0bd1a659a7",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/engine-whole-u82fa-ue0100.json": "f7fab33344dcdb27e34e846a016ddd0271a58064619dd0d9194f2e1e35ec943a",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/engine-whole-u82fa-ue0101.json": "f7fab33344dcdb27e34e846a016ddd0271a58064619dd0d9194f2e1e35ec943a",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/engine-whole-u82fa-ue0102.json": "74ef19471b97d7771aeb7bf657b25ea6425e69d03ab279572a8bfa0bd1a659a7",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/engine-whole-u82fa-var-001.json": "74ef19471b97d7771aeb7bf657b25ea6425e69d03ab279572a8bfa0bd1a659a7",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/engine-whole-u82fa.json": "f7fab33344dcdb27e34e846a016ddd0271a58064619dd0d9194f2e1e35ec943a",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/metadata.json": "b86df4f5060cf1cf81b331f0d4fb7e781695c88d67bd12b2ac7291289fe907ab",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/progressive-review.json": "e702539acd5062e52d68bcaa481dae0f5ee09bed961daa71a9342e81c216ce51",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/progressive.mjs": "46d95a47e894d1dca16d04ba145ad96c5c6946bd842de7418b06c15f4b05553d",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/resume.json": "2f5c220a9c20d7eb139cbeb16df31faa75cf8f24f7373d7143467ee2f563914b",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/serve-progressive.py": "d40eb96a530e8015c1daa0fbb3ff0b030836e89bd1786569806b6848798c4e32",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/serve-variants.py": "303c88072e22fe388b8f8173360ae3a21134c31714e1ee1e8119877b73496344",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/sources.json": "9146baa75232684305346fc7af2ee3b4d70a2e221815fc3019f2f33792bfa5ac",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/validation.json": "9ba64196e7c14b26c87202badf52f6df700d8560783d3790e5b2abacf17fc1e8",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/verify-source.mjs": "cb111f753d08f4cb17a76ffa2f514849eadfa768cd3a4f000382c4b51c563718",
+    "../hanja-goal-glyphwiki-batch566-2026-10-11/whole-variant-inventory.json": "cb0f5111ba42c9c6fc6a169e077f7b35dc8ef5d797fcd39c680fc32de1cf9c9d"
+  },
+  "newFilesSHA256": {
+    "bounds-vh-candidate.mjs": "1a13f752ff2b94be3c72c4503d177c39a82b67d4c64d7c07c941d3bde762fcd6",
+    "bounds-vh-candidate.d.mts": "ceacd00384a293b1ce5a9a87bf3d680b275c11814da2daf29492f4bc9de28195",
+    "config.json": "51651fed9b569ec0c02f7d87abc09188a4993091f47b17ce61ea582d6d836cf0",
+    "source-check.mjs": "ccf8d0fde17b40262ead4551c389f334ea220fd2101c4a12824c387e1f9f069c",
+    "serve.py": "65f18b8bebb6fbdc1f53aa9a4b495048447b2038079e598b13ff10fb822e8c11",
+    "fixtures.json": "5e7481815d84bb3c45eda27b39f2a8b2c0dfad70654956485c38fd141198fa6c",
+    "README.md": "67c7b3e741da64b5c89aca6543785dc78ba9fb06d068e8b398770053e039934a"
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "canonicalChanged": false,
+  "sourceFilesChanged": false,
+  "privateMediaSaved": false,
+  "HTTP": 0,
+  "serverStarts": 0,
+  "buildRun": false,
+  "gitOperations": 0,
+  "currentNativeObservations": {
+    "whole": 0,
+    "directions": 0,
+    "coarse": 0,
+    "fine": 0,
+    "boundary": 0,
+    "replay": 0
+  },
+  "actualSourceReports": [
+    {
+      "key": "565",
+      "glyph": "痗",
+      "sourceRoot": "u75d7",
+      "positiveCandidateInvocations": 1,
+      "independentDerivationsFromSameCachedBaseline": 2,
+      "sequentialChangedBaselineDerivations": 0,
+      "sourceCompilations": 0,
+      "engineRuns": 0,
+      "negativeRejections": 30,
+      "pens": 12,
+      "masks": 14,
+      "polygons": 31,
+      "baselineSHA256": "1aa8bc96ca2a1ee1c43f55e075be20a36bde0fe10985f89fe6de0e447f5d232c",
+      "leftOnlySHA256": "99ec70800bc7ac514c199e3089c86a5d381d841012ebc9f18d12d1421df788bc",
+      "derivedSHA256": "91521f7fbf9c70346ace553647c5e925a410ff97bd05f8b3a0611c43c026f812",
+      "VhPen": 8,
+      "LEFTPen": 9,
+      "VhOriginalWeight": 88.470807,
+      "VhOriginalPerCallWeights": [
+        36.495807,
+        51.975
+      ],
+      "boundaries": [
+        {
+          "pen": 8,
+          "boundary": 0.4125180750301056
+        },
+        {
+          "pen": 9,
+          "boundary": 0.8978270678166707
+        }
+      ],
+      "VhClipSourceArithmetic": [
+        {
+          "direction": "down",
+          "polygons": 1,
+          "totalArea": 285.03125000000045,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 2.2737367544323206e-13
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 139.60917768771333
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 275.95829582977876
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 285.0312122336404
+            },
+            {
+              "progress": 1,
+              "visibleArea": 285.03125000000045
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        },
+        {
+          "direction": "right",
+          "polygons": 2,
+          "totalArea": 128.9000000000001,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 0.00000103899992609513
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 51.95000000000027
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 120.33149687500008
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 128.8895965059878
+            },
+            {
+              "progress": 1,
+              "visibleArea": 128.9000000000001
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        }
+      ],
+      "HEpsilonInsideCompletedV": true,
+      "originalPolygonsExactlyOnce": true,
+      "sourceGroupsUnchanged": true,
+      "allOtherMasksUnchanged": true,
+      "LEFTOriginalPrimitiveBytePreserved": true,
+      "VhDisplayPolicyChanged": true,
+      "VhOriginalRevealGuideNotPreserved": true,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    {
+      "key": "566",
+      "glyph": "苺",
+      "sourceRoot": "u82fa-k",
+      "positiveCandidateInvocations": 1,
+      "independentDerivationsFromSameCachedBaseline": 2,
+      "sequentialChangedBaselineDerivations": 0,
+      "sourceCompilations": 0,
+      "engineRuns": 0,
+      "negativeRejections": 30,
+      "pens": 9,
+      "masks": 11,
+      "polygons": 22,
+      "baselineSHA256": "d5ff5b54be840547525377b6a572216b26b610a20e677182f7b5e826fda41548",
+      "leftOnlySHA256": "b7e838211ab1ccc31be7e72112767d4b1f49414f2f139078f2b4cf4c94fbf5ee",
+      "derivedSHA256": "d205fece69882e2100489d9fcbfe6e81001c7d262fa6c079e83f20df5c517fdd",
+      "VhPen": 5,
+      "LEFTPen": 6,
+      "VhOriginalWeight": 110.570525,
+      "VhOriginalPerCallWeights": [
+        43.070525,
+        67.5
+      ],
+      "boundaries": [
+        {
+          "pen": 5,
+          "boundary": 0.389529895060189
+        },
+        {
+          "pen": 6,
+          "boundary": 0.9145494031087816
+        }
+      ],
+      "VhClipSourceArithmetic": [
+        {
+          "direction": "down",
+          "polygons": 1,
+          "totalArea": 324.0450000000001,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 2.2737367544323206e-13
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 159.1037127236582
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 312.763213667992
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 324.04494958712075
+            },
+            {
+              "progress": 1,
+              "visibleArea": 324.0450000000001
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        },
+        {
+          "direction": "right",
+          "polygons": 2,
+          "totalArea": 168,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 0.0000013500000477506546
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 67.5
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 156.029296875
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 167.98647911718763
+            },
+            {
+              "progress": 1,
+              "visibleArea": 168
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        }
+      ],
+      "HEpsilonInsideCompletedV": true,
+      "originalPolygonsExactlyOnce": true,
+      "sourceGroupsUnchanged": true,
+      "allOtherMasksUnchanged": true,
+      "LEFTOriginalPrimitiveBytePreserved": true,
+      "VhDisplayPolicyChanged": true,
+      "VhOriginalRevealGuideNotPreserved": true,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    }
+  ],
+  "expectedRootFreshNative": [
+    "각 선택 whole를 국내와 3SVG520으로 비교",
+    "각 V/H의 아래→오른쪽 방향 및 원foot가 순서대로 자라는지",
+    "각 V/H·LEFT 경계 직전/경계/직후와0epsilon95/99.99/100",
+    "모든 획 방향·coarse9·추가fine·두 변경획 자연재생"
+  ]
+}
