@@ -1,0 +1,9 @@
+# 蓺 — batch1171 partial native 보류
+
+root가선택var001 u84fa-var-001 whole1의국내호환성을실제3SVG520에서관찰했습니다. 9획UP·13·8·12·15획fine99.99→100은PASS이며9경계.7723377633369092전중후+95·초기0epsilon도PASS입니다. 그러나14획후단UP꼭지가99.99%의화면y약394에서100%에y약379의원꼭지와연결부가갑자기추가되는약15px positive-area pop으로FAIL했습니다. 원baseline도동일합니다.
+
+방향·coarse·자연재생은0에서중단했습니다. 부분PASS와whole호환성을전체필순승인으로확대하지않고현재runtime미적용입니다. 원738object1을유지하므로새보류0/해제0/적용0입니다. 새9+14보정가능성은별도source실험범위이며이체크포인트는후보를만들지않습니다.
+
+기존lead7공개fixture15p16m43 SHAd58e4c83476cef31e47e9ac569d90f1e37e7786436548a29d35d453911104685와원15p15m baseline을보존합니다. 9UP6.5는원polygon만분리하며14획raw[13,14] MLQ·폭14는불변입니다. 선택원입력22/전체7자고유129+lab8=137핀을보존하고sourcecompile/engine0입니다. 과거lead7총11회source실행및738원실행1회는이력이며이번재실행이아닙니다.
+
+실제부모1170 SHA774bbb1cf8589aa50cb723f7729e7c99264ced9fe6758d8bb5f0a322e08a0638,5606/5978·잔372·hist343/res54/active289·root보고refs227을승계합니다. 현재부모포함chain목표refs228,원738object SHA0f92f9209bbde15e122706969acbc479fc6e80e6ff4559f79e14838d74cbdf2c를중복확인합니다. 부모의실제검증실행횟수2회는그대로보존하고1회라고가정하지않습니다. 집중정적1회 exit0 PASS:137핀0불일치·원proof·native부분기록·canonical738object1중복·부모포함228chain·hist343/res54/active289를확인했습니다. root runtimeabsence1회 exit0 PASS:蓺15lookupnull·registry0·unique5606/잔372입니다. 최종hist343/res54/active289·refs228,현재native/runtime승인false를유지합니다. 실제검증뒤추가검사는실행하지않았습니다. root가서버46924(세션96433/54130포트)의helper·target738명령확인후SIGTERM종료stoppedtrue를보고했습니다. worker는독립종료를확인하지않았습니다. 파일은새보류4개만작성하며빌드·TSC·학습기록변경없습니다.
