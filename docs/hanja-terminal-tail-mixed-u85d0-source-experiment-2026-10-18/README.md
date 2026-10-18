@@ -1,0 +1,13 @@
+# 藐9LEFT+18UP cached-source-only experiment
+
+선택u85d0-ue0102의원558proof/원19raw·18pens·43polygon과LEFT실험의고정original baseline을사용합니다. 기존7e0649 UP/LEFT guard/derive본문을그대로재사용하여같은원baseline에서9LEFT·18UP를각각독립분리한뒤해당두pen만합칩니다. 원14 H→V는실제finePASS였으므로outline/guide/width/weight/전체mask를변경하지않습니다. 새좌표·guide·connector·폭·순서·polygon생성0입니다.
+
+외부compileProgressive/compileSourceWhole 이름은후보API호환을위한것이며,정확full5/id3(root,file,fileSHA256)·필수3/4인자·선택proof/header/trace/pins검증뒤고정공개cache에서original baseline을읽습니다. 원compiler는호출하지않고sourceCompileCallCount는0,별도cachedDerivationCallCount로양성candidate1/독립derive2를구분합니다. baselineSHA3bd60f28c83902a2a4da0d26ab901518039bf02529e18b89a5f20a79fbe205b7는기존LEFT실험첫양성capture이고옛독립hash주장은아닙니다.
+
+기존LEFT후보의9fine/bdyPASS·18UP44pxpopFAIL·14finePASS는새mixed승인이아닙니다. 원18p18mask에서두tail원polygon만분리하여18p20mask43poly가되며native/runtimefalse/기존hold/canonical/registry불변입니다. sourceProof/cachedbaseline/기존provider2/NOTICE와모든원문을핀고정합니다.
+
+helper는새공개fixture를캐시해startup/GETcompile0이며국내SVG는고정메타검증후RAM에만둡니다. --target558 --port0,whole/pairs/progressive·520px fine/0epsilon95/99.99/100·각9/18경계·ninecoarse·8초자연재생을지원합니다. 현재서버/browser/native0이며root가전체gate를새로확인해야합니다. 면적probe는tail내부진행률의부동소수진단이고wholepen연속성/AA/필순승인이아닙니다.
+
+
+검증: 첫실행은신규파일끝LF/hash정합문제로derive전guard실패(원compiler0). 실제저장바이트핀정정후2차실행양성cachedderive1/독립2·음성23·PythonAST1·helperguard1 PASS. Node구문2파일각1회PASS. 원compiler/engine/HTTP/서버0이며18p20m43poly SHA a71b5d38b817c7a415d29e0af874a04d613b63023d4240fdb2a327b6b487e2ef입니다. 경계9=0.8510167233355598,18=0.7734730324538119는source계산일뿐native승인이아닙니다.
+

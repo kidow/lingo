@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-cached-derivation-verified-native-unreviewed",
+  "configSHA256": "11b4a16a631e941d2a5591f6c855d8afa3b9168fef02c0912bded1e00ebfc826",
+  "newFilesSHA256": {
+    "config.json": "11b4a16a631e941d2a5591f6c855d8afa3b9168fef02c0912bded1e00ebfc826",
+    "tail-candidate.mjs": "e0f6e24e25392cb7d5677b298fcb7275a706e5a6c8be2bceb1ec8484cfdb3d97",
+    "tail-candidate.d.mts": "ede5529eaed221a6c14ea17f217f2a85beb23bd7674e3fa2f60c9fcef8b818e3",
+    "source-check.mjs": "cc68932355946a4d17b63115d79d0c04718d7acab3fd11dcaa79bd4b43335d8b",
+    "serve.py": "b0b89f49641dc146b4bfadce1e5184a0a9acd9061cb4d37edf8b756501444b83",
+    "README.md": "101c5488cbc546db9cd16a1746e4bd1ca3314b798cf364d20e605da3ca68ac65",
+    "fixtures.json": "64b6c29a6aa8ceaac849c58402b4ca26efd55c6ff5e211c5a7fece693f6989ba"
+  },
+  "existingPrimitive": {
+    "origin": "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs",
+    "functions": [
+      "point",
+      "terminalUpTail",
+      "terminalLeftTail"
+    ],
+    "functionsSHA256": "7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08",
+    "bodyByteIdentical": true,
+    "calculatedPolygonOnlyComparedAgainstOriginal": true,
+    "outputUsesOriginalPolygon": true
+  },
+  "sourceCheck": {
+    "passed": true,
+    "targets": [
+      {
+        "key": "558",
+        "glyph": "藐",
+        "sourceCompiles": 0,
+        "originalBaselineCompiles": 0,
+        "cachedBaselineDerivationCalls": 1,
+        "independentDerivationsFromSameBaseline": 2,
+        "sequentialChangedBaselineDerivations": 0,
+        "negativeRejections": 23,
+        "engineRuns": 0,
+        "pens": 18,
+        "masks": 20,
+        "polygons": 43,
+        "baselineSHA256": "3bd60f28c83902a2a4da0d26ab901518039bf02529e18b89a5f20a79fbe205b7",
+        "derivedSHA256": "a71b5d38b817c7a415d29e0af874a04d613b63023d4240fdb2a327b6b487e2ef",
+        "baselineHashProvenance": "Pinned previously captured original LEFT-lab baseline reused; no new original compile or historical independent hash claim",
+        "sourceGroupsUnchanged": true,
+        "pen14AllMasksUnchanged": true,
+        "originalPolygonsExactlyOnce": true,
+        "otherMasksUnchanged": true,
+        "targets": [
+          {
+            "pen": 9,
+            "rawIndices": [
+              8
+            ],
+            "boundary": 0.8510167233355598,
+            "tailWeight": 8,
+            "tailArea": 18.000000000000227,
+            "visibleAreaAt0": 0,
+            "visibleAreaAtEpsilon": 2.3999973564059474e-7,
+            "residualAreaAt99": 0.120600000000195,
+            "residualAreaAt9999": 0.0012000600002011197,
+            "residualAreaAt100": 0,
+            "originalTailPolygonExactlyOnce": true,
+            "bodyGuideWidthWeightPreserved": true,
+            "derivedIndependentlyFromOriginalBaseline": true
+          },
+          {
+            "pen": 18,
+            "rawIndices": [
+              18
+            ],
+            "boundary": 0.7734730324538119,
+            "tailWeight": 12.5,
+            "tailArea": 25.000000000000455,
+            "visibleAreaAt0": 0,
+            "visibleAreaAtEpsilon": 3.7500058169825934e-7,
+            "residualAreaAt99": 0.12625000000025466,
+            "residualAreaAt9999": 0.0012501250002969755,
+            "residualAreaAt100": 0,
+            "originalTailPolygonExactlyOnce": true,
+            "bodyGuideWidthWeightPreserved": true,
+            "derivedIndependentlyFromOriginalBaseline": true
+          }
+        ],
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    ],
+    "positiveCachedDerivations": 1,
+    "originalBaselineCompilations": 0,
+    "independentDerivations": 2,
+    "engineRuns": 0,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "privateHTTP": 0,
+    "serverStarts": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "executions": 2,
+    "successfulExecutions": 1,
+    "exitCode": 0,
+    "originalCompilerDelegateCalls": 0,
+    "additionalOriginalBaselineCompilations": 0,
+    "syntax": [
+      {
+        "file": "tail-candidate.mjs",
+        "exit": 0,
+        "stderr": ""
+      },
+      {
+        "file": "source-check.mjs",
+        "exit": 0,
+        "stderr": ""
+      }
+    ]
+  },
+  "baselineCache": {
+    "path": "docs/hanja-terminal-tail-left-source-experiment-2026-10-18/fixtures.json#/558/baseline",
+    "sha256": "3bd60f28c83902a2a4da0d26ab901518039bf02529e18b89a5f20a79fbe205b7",
+    "originalSourceExperimentPositiveCompiles": 1,
+    "currentExperimentOriginalBaselineCompiles": 0,
+    "originalCompilerDelegateCalls": 0
+  },
+  "multiTargetPolicy": {
+    "targetPens": [
+      9,
+      18
+    ],
+    "sourceBaselineCopies": "same frozen original baseline for each independent derivation",
+    "independentDerivations": 2,
+    "sequentialChangedBaselineDerivations": 0,
+    "pen14Unchanged": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "canonicalCountersChanged": false,
+  "existingHoldsChanged": false,
+  "sourceGeometryChanged": false,
+  "sourceOrderChanged": false,
+  "bodyGuideWidthWeightPreserved": true,
+  "onlyOriginalTailPolygonSeparated": true,
+  "helperFixtureCache": {
+    "startupSourceCompilations": 0,
+    "requestSourceCompilations": 0,
+    "privateDOMRAMOnly": true
+  },
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "privateMediaSaved": false,
+  "limitations": [
+    "Only fixedselectedVS2/proof/cache; no alias substitution.",
+    "Fullfreshnative gate remains required for bothnewmask boundaries and allpens.",
+    "No new stroke geometry; original body bounds are derived from remaining original polygons."
+  ],
+  "harnessHistory": [
+    {
+      "execution": 1,
+      "exitCode": 1,
+      "stage": "pre-derivation file guard",
+      "reason": "New file trailing LF bytes differed from planned hash",
+      "originalCompilerCalls": 0,
+      "cachedDerivations": 0,
+      "engineRuns": 0
+    },
+    {
+      "execution": 2,
+      "exitCode": 0,
+      "cachedDerivations": 1,
+      "independentDerivations": 2,
+      "negativeRejections": 23,
+      "originalCompilerCalls": 0,
+      "engineRuns": 0
+    }
+  ]
+}
+
