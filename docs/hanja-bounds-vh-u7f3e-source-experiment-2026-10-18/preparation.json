@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-cached-positive-recovered-static-checks-passed-native-pending",
+  "configSHA256": "8eac03ceeee0eed811a99fae40de74ae6caa64f3714a54ab0ade0da6776ed9d7",
+  "newFilesSHA256": {
+    "README.md": "bfd62f75337ee4325e9e489ff610b003b20f2bb8047602282aedec668ae8328e",
+    "config.json": "8eac03ceeee0eed811a99fae40de74ae6caa64f3714a54ab0ade0da6776ed9d7",
+    "bounds-vh-candidate.mjs": "af814832953c4acd1985eb160c8c84dc67689e1008b1e8c329c739a32cdc3a98",
+    "bounds-vh-candidate.d.mts": "632265a66994550e87b85b300443614ee39a8e6fced8ff8c00d5b4fcb255065c",
+    "serve.py": "c98104f34fdf1005199718d2acd056f6f47d655f9af8a2c0c26197f57080f6ad",
+    "source-check.mjs": "e22061bf62102685c634bfffd3bfcc6aa5275aa4592f142b3475f0611cfde810",
+    "fixtures.json": "df4f8dac565f3be180a7f1caa391463fcec17b1a9fbf2e290744e0c0c8115232"
+  },
+  "inputPins": 32,
+  "inputPinBreakdown": {
+    "original599Files": 21,
+    "reusedBoundedVHCapsule": 8,
+    "actualSharedRenderers": 3
+  },
+  "ownPinsExcludingPreparation": 7,
+  "futureRuntimePinsIncludingNew8": 40,
+  "baselineCachePreviouslyAbsent": true,
+  "baselineCapture": {
+    "rootApproved": true,
+    "executions": 1,
+    "originalLegacyAPI": "compileProgressive(trace,proof)",
+    "originalLegacyArguments": 2,
+    "baselineSHA256": "37c88e96f17b59c93977688051c800514b59b2d43353760ba9766699a6096370",
+    "fullProofSHA256": "269d9c1c833457d500237e9bafea34a5038559d2dc870cb9b1e2a3929430a768",
+    "traceSHA256": "0349db01791423d99b2c84d014f12320d9bfe74eeb802b2e5c8bf01e542037f4",
+    "sourceModuleSHA256": "e9c04a522b7b1473a771bcb23a5f0153a9d47e459a13e700ee3d4b3cfda83c02",
+    "publicFixtureSavedBeforeFocusedChecks": true,
+    "engineRuns": 0,
+    "newNetwork": 0,
+    "independentHistoricalCompiledPin": false,
+    "firstPublicCompiledBaselineNow": true
+  },
+  "newStrictContract": {
+    "newBindingNotOriginal": true,
+    "arguments": [
+      3,
+      4
+    ],
+    "identity": {
+      "root": "u7f3e",
+      "file": "engine-whole-u7f3e.json",
+      "fileSHA256": "79e0f80d8788c3dbd6a6d9fa97626850ee3356153c8a5c5a38344149cf4bb655"
+    },
+    "proofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "fullProofSHA256": "269d9c1c833457d500237e9bafea34a5038559d2dc870cb9b1e2a3929430a768",
+    "originalHadStrictIdentityGuard": false,
+    "candidateCompilerDelegations": 0
+  },
+  "reusedKernel": {
+    "source": "docs/hanja-bounds-vh-u5caf-source-experiment-2026-10-18/bounds-vh-candidate.mjs",
+    "originalFunctionSHA256": "fe87cb90faa47d69adc13a70588ae5c54ccff1469724b395d51438084206113b",
+    "fixedFunctionSHA256": "e3581dc801c967630d696334a57c688531e952dad2ae977f4e3659895970ada9",
+    "fixedGuardChangesOnly": {
+      "original": {
+        "pen": 2,
+        "raw": [
+          1,
+          2
+        ]
+      },
+      "current": {
+        "pen": 5,
+        "raw": [
+          4,
+          5
+        ]
+      }
+    },
+    "reverseFixedGuardByteExact": true,
+    "newGeometry": false
+  },
+  "expectedCounts": {
+    "pens": 12,
+    "masks": 13,
+    "polygons": 26
+  },
+  "sourceCheck": {
+    "initialExecutions": 1,
+    "initialFailed": true,
+    "initialFailure": {
+      "phase": "fixedTargets cross-realm deepStrictEqual after positive/geometry/negative assertions",
+      "actualError": "same structure but not reference-equal",
+      "implementationOrGeometryFailure": false,
+      "allNegativeAssertionsBeforeFailureCompleted": true,
+      "negativeRejectionCasesByStaticArithmetic": 28
+    },
+    "recoveryAuthorizedByRoot": true,
+    "pureCachedPositiveRecoveryPending": false,
+    "totalCachedPositivesPlanned": 2,
+    "negativeReruns": 0,
+    "nodeSyntaxExecutionsBeforeFailure": 0,
+    "pythonASTExecutionsBeforeFailure": 0,
+    "helperGuardExecutionsBeforeFailure": 0,
+    "originalCompilerAdditionalRuns": 0,
+    "engineRuns": 0,
+    "moduleCacheLifetime": {
+      "newCellFreshModuleInstance": true,
+      "previousModuleLocalCaptureUnavailable": true
+    },
+    "cachedPositiveRecoveryExecutions": 1,
+    "cachedPositiveRecoveryPassed": true,
+    "totalCachedPositiveExecutions": 2,
+    "unsupportedDataImportAttempt": {
+      "executions": 1,
+      "moduleEvaluation": false,
+      "candidateCalls": 0,
+      "reason": "node_repl rejects data: imports before evaluation"
+    },
+    "passed": true,
+    "sourceCheckWholeCLIExitCode": null,
+    "limitedRecoveryExecutions": 1,
+    "limitedRecoveryPassed": true,
+    "originalBaselineCaptures": 1,
+    "negativeRejectionCasesCompletedBeforeInitialFailure": 28,
+    "negativeRejectionCountSource": "Code-order completion plus deterministic 5+6+3+1+5+8 arithmetic; local reporter counter unavailable after failed module import",
+    "nodeSyntaxChecks": 2,
+    "nodeSyntaxExitCodes": [
+      0,
+      0
+    ],
+    "helperPythonASTChecks": 1,
+    "helperPythonASTExitCode": 0,
+    "helperStaticGuardChecks": 1,
+    "helperStaticGuardExitCode": 0,
+    "kernelReverseFixedGuardByteExact": true,
+    "finalResult": {
+      "passed": true,
+      "recoveryLimitedChecks": 1,
+      "cachedPositiveRecoveryCalls": 1,
+      "totalCachedPositives": 2,
+      "negativeCasesCompletedBeforeInitialFailure": 28,
+      "negativeReruns": 0,
+      "nodeSyntaxChecks": 2,
+      "helperPythonASTChecks": 1,
+      "helperStaticGuardChecks": 1,
+      "kernelReverseGuardByteExact": true,
+      "originalBaselineCaptures": 1,
+      "additionalOriginalCompilerCalls": 0,
+      "engineRuns": 0,
+      "serverStarts": 0,
+      "HTTP": 0,
+      "derivedSHA256": "936015671ca22109adb73c7ca78746d2cfadab1af6dc0e995b4d14c98811ace1"
+    },
+    "helperPythonASTChecksTotalIncludingCorrection": 2,
+    "helperStaticGuardChecksTotalIncludingCorrection": 2
+  },
+  "displayPolicy": {
+    "originalCombinedGuidePreservedInBaseline": true,
+    "activeGuideChangedToBoundsDownRight": true,
+    "originalPolygonsCoordinatesWidthsOrderAndTotalWeightsPreserved": true,
+    "newCoordinatesPathsOrConnectors": false
+  },
+  "allMultiMaskBoundaries": {
+    "5": [
+      0.511135450894487
+    ]
+  },
+  "countAuthorityAndRuntime": {
+    "catalogStrokes": 14,
+    "domesticPlaybackStrokes": 12,
+    "originalReviewSaysDifferenceNotHoldReason": true,
+    "currentRuntimeLookupRequiresPathsEqualCatalog": true,
+    "catalogOrLookupChangeInThisExperiment": false,
+    "runtimeUnapproved": true,
+    "catalogAuthorityUnresolved": true
+  },
+  "originalFilesChanged": false,
+  "old599HoldAndNOTICEPreserved": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "appUI": false,
+  "sourceCompilesThisCandidate": 0,
+  "engineRuns": 0,
+  "serversStarted": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "expectedCompiledSHA256": "936015671ca22109adb73c7ca78746d2cfadab1af6dc0e995b4d14c98811ace1",
+  "finalFixtureSHA256": "df4f8dac565f3be180a7f1caa391463fcec17b1a9fbf2e290744e0c0c8115232",
+  "finalization": {
+    "publicResultSavedImmediatelyAfterRecovery": true,
+    "additionalPositiveOrNegativeChecksAfterFinalization": 0,
+    "sourceCompilerAdditionalRuns": 0,
+    "geometryFilesChangedOutsideCapsule": false
+  },
+  "helperFixtureSelectionCorrection": {
+    "reportedBy": "/root/batch939_runtime_prep",
+    "previousSelector": "fixtures[args.target]",
+    "previousTarget": "599",
+    "actualFixtureKey": "u7f3e",
+    "correctedSelector": "fixtures[T['root']]",
+    "serverStartedBeforeCorrection": false,
+    "checkOnlyBlindSpot": "check-only returned before fixture selection",
+    "limitedASTAndGuardValidationPending": false,
+    "candidatePositiveReruns": 0,
+    "negativeReruns": 0,
+    "baselineCaptureReruns": 0,
+    "limitedValidationExecutions": 1,
+    "limitedValidationExitCode": 0,
+    "pythonASTChecks": 1,
+    "fixtureSelectionChecks": 1,
+    "helperGuardChecks": 1,
+    "passed": true
+  }
+}
