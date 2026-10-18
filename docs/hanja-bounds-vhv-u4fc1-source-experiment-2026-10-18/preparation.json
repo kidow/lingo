@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "scope": "source-only fixed 俁755 VHV display policy",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "configSHA256": "938a7b936b49621347436436d75e2d64a5a460a7ba34f7d7407a913c6f2a33b0",
+  "newFilesSHA256": {
+    "bounds-vhv-candidate.mjs": "c9d3250a4f054f44c01230a4d5a1fd603f2dcaf6f0792071a22e1fab5cc2129d",
+    "bounds-vhv-candidate.d.mts": "34b17ba8dd4bf63929d55ab8e03f177f7b590a86efcf551e15ae1bbde7f335d9",
+    "serve.py": "74ace7a56d6cb4e56396bc1c68e2723e9ce729308b953d995b7873e56aa88bcf",
+    "README.md": "9585728190516dee5772876148c24cde215c323632d85ce2b18de18d1016237f",
+    "source-check.mjs": "9032788c95118a54c202e3db6f0c0065e05d848c6c8b1fb8d118da943a8fde7e",
+    "fixtures.json": "8315849b8aafe7b435b12b162d72a563fecb82f9e2c30e0b13b386e55491e528"
+  },
+  "originalPins": 22,
+  "immutableOriginalAndSharedPins": true,
+  "sourceProvenance": {
+    "archive": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+    },
+    "records": 4,
+    "wholeNames": [
+      "u4fc1",
+      "u4fc1-ue0100"
+    ],
+    "providers": 0,
+    "newNetworkReplay": false,
+    "newEngineReplay": false,
+    "currentBytePinsCapturedNow": true
+  },
+  "baselineCapture": {
+    "executions": 1,
+    "exitCode": 0,
+    "originalLegacyArgumentCount": 2,
+    "baselineSHA256": "364386ca36564822d1f402b3be0c7035e77a2d436c19aa1c6b918257e7173e3c",
+    "firstCapturedNow": true,
+    "independentHistoricalBaselineHash": false,
+    "sourceCompilerCalls": 1,
+    "engineRuns": 0,
+    "publicFixtureSavedBeforeDerivedCheck": true
+  },
+  "adaptation": {
+    "originModule": "../hanja-bounds-vh-u5caf-source-experiment-2026-10-18/bounds-vh-candidate.mjs",
+    "originFunctionSHA256": "fe87cb90faa47d69adc13a70588ae5c54ccff1469724b395d51438084206113b",
+    "derivedFunctionSHA256": "34eb7874d85ccd38e465b606e0ef7145ae0c7d3c85bc67a0cc4023164b1803c8",
+    "wholeFunctionByteIdentical": false,
+    "narrowChange": "Pinned3call V2/H1/V2 validation and 2+1+2 outline partition; weights and per-call bounds from original polygons",
+    "authoredGeometryCreated": false,
+    "activeRevealGuideChanged": true,
+    "newSourceOrder": false
+  },
+  "sourceCheck": {
+    "status": "passed",
+    "executions": 1,
+    "exitCode": 0,
+    "cachedPositiveInvocations": 1,
+    "candidateDerivations": 1,
+    "negativeRejections": 34,
+    "nodeSyntaxChecks": 2,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "sourceCompilationsDuringCheck": 0,
+    "totalOriginalBaselineCompilations": 1,
+    "engineRuns": 0,
+    "serverStarts": 0,
+    "HTTP": 0,
+    "report": {
+      "glyph": "俁",
+      "sourceRoot": "u4fc1",
+      "pens": 9,
+      "masks": 11,
+      "polygons": 22,
+      "baselineSHA256": "364386ca36564822d1f402b3be0c7035e77a2d436c19aa1c6b918257e7173e3c",
+      "derivedSHA256": "be51b3db868f9c72e0d25ab609ac2d35e6a2678b262081a1860faf979fd6d2e2",
+      "originalWeight": 90.96,
+      "originalPerCallWeights": [
+        32.5,
+        39.96,
+        18.5
+      ],
+      "boundaries": [
+        0.3572999120492524,
+        0.7966138962181178
+      ],
+      "clipSourceArithmetic": [
+        {
+          "direction": "down",
+          "polygons": 2,
+          "totalArea": 248.375,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 5.115907697472721e-13
+            },
+            {
+              "progress": 0.000001,
+              "visibleArea": 5.547008186113089e-9
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 128.37500000000006
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 243.75250000000028
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 248.37498150999977
+            },
+            {
+              "progress": 1,
+              "visibleArea": 248.375
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        },
+        {
+          "direction": "right",
+          "polygons": 1,
+          "totalArea": 79.89999999999998,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 7.990001904545352e-7
+            },
+            {
+              "progress": 0.000001,
+              "visibleArea": 0.00007989999994606478
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 39.95000000000016
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 75.90500000000054
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 79.89200999999991
+            },
+            {
+              "progress": 1,
+              "visibleArea": 79.89999999999998
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        },
+        {
+          "direction": "down",
+          "polygons": 2,
+          "totalArea": 144.62500000000068,
+          "samples": [
+            {
+              "progress": 0,
+              "visibleArea": 0
+            },
+            {
+              "progress": 1e-8,
+              "visibleArea": 2.2737367544323206e-13
+            },
+            {
+              "progress": 0.000001,
+              "visibleArea": 6.407390173990279e-10
+            },
+            {
+              "progress": 0.5,
+              "visibleArea": 75.62499999999977
+            },
+            {
+              "progress": 0.95,
+              "visibleArea": 137.72499999999923
+            },
+            {
+              "progress": 0.9999,
+              "visibleArea": 144.61119999999914
+            },
+            {
+              "progress": 1,
+              "visibleArea": 144.62500000000068
+            }
+          ],
+          "residualAt100": 0,
+          "continuousHalfPlaneAreaOnlyNotNativeApproval": true
+        }
+      ],
+      "thirdVCapStartsAboveCompletedH": true,
+      "originalPolygonsExactlyOnce": true,
+      "sourceGroupsUnchanged": true,
+      "allOtherMasksUnchanged": true,
+      "displayPolicyChanged": true,
+      "originalActiveRevealGuideNotPreserved": true
+    }
+  },
+  "preparationErrors": [
+    {
+      "phase": "RAM pattern lookup before baseline capture/files/focused",
+      "error": "av5_module is not defined",
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0
+    }
+  ],
+  "runtime": 0,
+  "serversStarted": 0,
+  "HTTPRequests": 0,
+  "privateMediaSaved": false,
+  "fixtureFinalization": {
+    "source": "successful focused stdout public geometry; cached baseline unchanged",
+    "additionalSourceCompiles": 0,
+    "additionalPositiveChecks": 0,
+    "finalPublicFixtureSHA256": "8315849b8aafe7b435b12b162d72a563fecb82f9e2c30e0b13b386e55491e528"
+  }
+}
