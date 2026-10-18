@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "helper-static-guards-passed-native-review-pending",
+  "target": "1082",
+  "glyph": "描",
+  "delegateFolder": "../hanja-compound-terminal23-source-experiment-2026-10-18",
+  "delegateFilesSHA256": {
+    "README.md": "256ce3a3d331657f883412f58205d7643a2d61b87c1685b87bd285143464d7ed",
+    "cardinal-candidate.d.mts": "c8801787a2c30384b9d858bb5c993ee026e53c733f9210354a0fcb228cbaac0d",
+    "cardinal-candidate.mjs": "af346f51062ce002cd011937d594ffc440645eda7b8c4624e818b4ecd7eca618",
+    "config.json": "9feecee8878693af603ec118b86103141e36baa22484a0e6a6c980f4c324d12f",
+    "fixtures.json": "b07feb94ea493c30d9d1fec8697c59dd37a302a741361df064c1173f1434cb14",
+    "preparation.json": "8b9d8d4d5580d20d80363c4f512ef6e34b6ae610eced0648572702f14945051e",
+    "serve.py": "d87625776c8ade7f9781df246b7de4508b7e6cbabe582495245abf8cb7f61895",
+    "source-check.mjs": "f0c2ec182fc1028538d0b45d49e2e23c9a5172c5163b200cdb22fb9d5e37d9e6"
+  },
+  "replacementPairs": [
+    {
+      "old": "choices=list(CONFIG['targets']),default='1101'",
+      "new": "choices=['1082'],default='1082'"
+    },
+    {
+      "old": "original=F['baseline'];strokes=F['strokes'];n=T['pen'];masks=strokes[n-1];boundary=masks[0]['weight']/sum(m['weight']for m in masks)",
+      "new": "original=F['baseline'];strokes=F['strokes'];n=T['pen'];boundaries=_all_boundaries(strokes)"
+    },
+    {
+      "old": "pen=int(q.get('stroke',[str(n)])[0]);assert 1<=pen<=T['pens']",
+      "new": "pen=int(q.get('stroke',[str(n)])[0]);assert 1<=pen<=T['pens'];boundary=boundaries.get(pen,[])"
+    },
+    {
+      "old": "body+='<p>목표 '+str(n)+'획 mask경계 '+repr(boundary)+'</p>'",
+      "new": "body+='<p>모든 복수mask 경계 '+html.escape(repr(boundaries))+'; 현재획 '+str(pen)+'</p>'"
+    },
+    {
+      "old": "body+=''.join('<button onclick=\"show('+repr(p)+')\">'+label+'</button>'for label,p in [('boundary-before',boundary-1e-10),('boundary-at',boundary),('boundary-after',boundary+1e-10)])",
+      "new": "body+=''.join('<button onclick=\"show('+repr(p)+')\">boundary'+str(j+1)+'-'+label+'</button>'for j,b in enumerate(boundary)for label,p in [('before',b-1e-10),('at',b),('after',b+1e-10)])"
+    }
+  ],
+  "ownFilesSHA256": {
+    "serve.py": "c292abf57caa0592289a62e6e40b1a721e364618001072d9342e119f82b1d307",
+    "README.md": "b7c4a018b0d70790a6cad8de211bc170f91071da4519e14b9be97446a305fc97"
+  },
+  "selectedProofIdentity": {
+    "sourceRoot": "u63cf-ue0102",
+    "sourceProofFile": "./engine-whole-u63cf-ue0102.json",
+    "sourceProofFileSha256": "1c11a164470864ff936ba7dfe0c958f73fbc17cc9032bb0467fab89b82cbefc4",
+    "sourceHeaderFile": "./engine-proof.json",
+    "sourceHeaderFileSha256": "8cb0fec318dac99d606ac7b6d9c4fca92da65e6277600866f6eb0c2adf77cc90",
+    "sourceMetadataFile": "./sources.json",
+    "sourceMetadataFileSha256": "1cc82bf3fd232805a6c2a98ee518b7febfb32beb09e68662ef8f64a4c493983a"
+  },
+  "fullProofSHA256": "6c5caf78eeaaf93bdb1058160a521e2ff99b960a066186246c3d6bd7bae9591d",
+  "fixture": {
+    "baselineSHA256": "2ce3f76fb9c482e486f0730f54de16f245e603c64e250fa9ef092df31875521b",
+    "derivedSHA256": "aa72066576bc1ea7c8f35e0ace97ecc1e738525be894e7c6f41a8b29fd0884bb",
+    "pens": 12,
+    "masks": 14,
+    "polygons": 25,
+    "allBoundaries": {
+      "2": [
+        0.9239717736303439
+      ],
+      "9": [
+        0.5180275480864729
+      ]
+    }
+  },
+  "preservation": {
+    "originalCapsuleChanged": false,
+    "selectedCompileIdentityChanged": false,
+    "compiledFixtureChanged": false,
+    "sourceGeometryChanged": false,
+    "originalFileAnchorPreserved": true,
+    "displayBoundaryUIOnly": true
+  },
+  "original1082HoldPreserved": true,
+  "sourceCompiles": 0,
+  "engineRuns": 0,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "checks": {
+    "executions": 1,
+    "exitCode": 0,
+    "wrapperPythonAST": 1,
+    "transformedDelegatePythonAST": 1,
+    "staticGuardExecutions": 1,
+    "delegateFilesVerified": 8,
+    "ownFilesVerified": 2,
+    "selectedTargetInputPins": 37,
+    "allBoundaries": {
+      "2": [
+        0.9239717736303439
+      ],
+      "9": [
+        0.5180275480864729
+      ]
+    },
+    "originalFileAnchorPreserved": true,
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "HTTP": 0,
+    "serverStarts": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  }
+}
