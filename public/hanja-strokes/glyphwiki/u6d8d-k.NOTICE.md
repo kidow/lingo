@@ -1,0 +1,10 @@
+# Geometry source notice
+
+Whole u6d8d-k -> u6d8d, declared u6c35-01 and u5b5d; whole alternative u6d8d-ue0100 shares the same base, from the pinned 2016 GlyphWiki public backup described in sources.json. Individual glyph revisions unavailable. GlyphWiki Project/contributors ©2009; permission to use, copy, redistribute and modify for personal/commercial purposes is published by the mirror repository. This mirror copies GlyphWiki and is not independent Korean stroke-order evidence.
+
+KAGE engine proof uses revision49232bac0348fe815f4200d4116ab7917e0db47f and eight checked source-file hashes; engine code is not embedded. All original coordinates, primitive types, polygons and defaults are preserved. Runtime animation is withheld for a discontinuous third center path.
+
+Domestic e-hanja graphics ©2020 e-hanja were compared in RAM only. No domestic SVG, HTML, screenshot or copied graphic is included. No exam-body official approval is claimed.
+
+
+涍1262: 고정u6d8d-k 원12raw/13calls/26polygon·좌표·flags·outline union·원guide·폭·bodyweight·순서를보존합니다. 원factory11mask의raw2Q/raw3Q를논리물3획독립sequence로묶고gap[-4,-34]/34.23448553724738은그대로이며connector/합성trajectory/새좌표·폭0입니다. 동일pre-tail baseline의9획raw10 LQ 마지막실제call1/14 원quad하나만기존7e0649/derive2802 byte동일LEFT width6/jump20/weight10으로분리해10p12m26을표시합니다. 남은원polygon의activebodybounds는[50.7,58,70.2,94]→[60.7,58,70.2,94]로재계산하는표시정책변경이며bodyguide·폭14·weight·direction/다른9획은불변입니다. 원26polygon exact-once·원좌표불변을검증하고tailweight10추가로상대시간분배가변하므로전체weight불변은주장하지않습니다. 기존engine-proof full5engineHashes/trace동일원문과id3 {root,file,fileSHA256} ../필수3/4를엄격결박하고새header결합이나원proof재생성은없습니다. factory8067기하본문은byte동일이며header키치환이없습니다. 선택고정4records/provider0·원192정적10방향/누적완성/progressive0/HOLD/NOTICE/source/nativefalse는불변이고현재canonical0으로추가/해제0입니다. Rootfreshwhole1/전10방향/fine[9,3,8,5,7]/coarse90+90/3·9모든경계/자연3·9각8초만승인합니다. 중앙은동일logical pre-tail표시로독립과거baseline증거가아닙니다. source기하1→prepublic/같은baselinederive1→finalpublic/positive1negative34·Node2declAST1PythonAST1guard1최초PASS와runtime source/fixture/derive/engine0을분리합니다.
