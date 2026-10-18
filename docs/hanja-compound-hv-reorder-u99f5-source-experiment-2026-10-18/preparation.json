@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only cached whole-pen12/13/14 order experiment verified",
+  "configSHA256": "957bde469b6085f9b14497a8ef5da41bf053aec24cf15bbe13b6041483cc829f",
+  "newFilesSHA256": {
+    "reorder-candidate.mjs": "8e50b0e07375d4bed8cdd6c1f8f27a77d1a53e87de32c1f43b11e2e05a1e002e",
+    "reorder-candidate.d.mts": "ac045945fffaa5fa0064287c205952d1fcdda0df469111365f4b37b50e514694",
+    "serve.py": "90e59bb78ceba71b736562bdc45070012e80f0e7f8ca07cfb89a6dea9ae09597",
+    "README.md": "e55db6efb81abbeeada72ee7861bfa5b2bcad979592991a93529fc913a1019c3",
+    "source-check.mjs": "0a14ce6c78a9d828d5154b3260e893409796eead8a4db9092966b9ef4732255f",
+    "fixtures.json": "8c6d544cd5e699eeaf4d58287af24cc960d5a31b0edfcda535e5985e4eeba093"
+  },
+  "originalSourcePins": 37,
+  "additionalLabPins": 8,
+  "allBoundaryHelperPins": 3,
+  "uniqueInputPins": 48,
+  "expectedRuntimeTrackedPinsIncludingNew8": 56,
+  "originalPenOrder": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    14,
+    12,
+    13,
+    15,
+    16,
+    17
+  ],
+  "sourceBaselineSHA256": "2e7533ea48b5aff2abb39de499279b1a914bd1e5a0f4124aef2f9a8cf9d04da0",
+  "baselineCardinalCandidateSHA256": "22d4c10c6a85641258e17b395b7200189247b8b7050a342188a99fb15520b348",
+  "expectedCompiledSHA256": "2d4770302f63c08a78d4ba2d03fb32260fcca0b6c845847e6b0d5df0572856e7",
+  "pens": 17,
+  "masks": 19,
+  "polygons": 34,
+  "sourceCompiles": 0,
+  "originalCompilerDelegations": 0,
+  "engineRuns": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "serverStarts": 0,
+  "HTTP": 0,
+  "privateMediaSaved": false,
+  "buildRun": false,
+  "gitRun": false,
+  "sourceCheck": {
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "positiveCachedPermutations": 1,
+    "negativeRejections": 30,
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "pens": 17,
+    "masks": 19,
+    "polygons": 34,
+    "baselineSHA256": "22d4c10c6a85641258e17b395b7200189247b8b7050a342188a99fb15520b348",
+    "derivedSHA256": "2d4770302f63c08a78d4ba2d03fb32260fcca0b6c845847e6b0d5df0572856e7",
+    "originalAndLabAndWrapperPins": 48,
+    "wholePensExactReferencePermutation": true,
+    "originalPen13New14RiskPreserved": true,
+    "old6LeftAnd16HvUnchanged": true,
+    "allBoundaries": {
+      "6": [
+        0.8907745136909301
+      ],
+      "16": [
+        0.37748344370860926
+      ]
+    },
+    "nodeSyntaxChecks": 2,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "serverStarts": 0,
+    "HTTP": 0
+  },
+  "baselinePublicCacheSavedBeforeModuleAndCheck": true,
+  "allMultiMaskBoundaries": {
+    "6": [
+      0.8907745136909301
+    ],
+    "16": [
+      0.37748344370860926
+    ]
+  },
+  "everyOriginalPenMaskPolygonGuideWidthWeightPreserved": true,
+  "originalSourceFilesChanged": false,
+  "newCoordinatesPathsWidthsGroupsAuthored": false,
+  "priorCardinalDisplayPolicyChangePreserved": true,
+  "newDisplayPolicyChange": false,
+  "old13New14RiskExplicitlyUnfixed": true,
+  "knownUnfixedRisk": {
+    "oldPen": 13,
+    "newPen": 14,
+    "guide": [
+      [
+        48.480000000000004,
+        35.5
+      ],
+      [
+        48.480000000000004,
+        59
+      ],
+      [
+        62.730000000000004,
+        59
+      ]
+    ],
+    "maximumOriginalVertexDistance": 10.44896645606636,
+    "vertex": [
+      45.45,
+      69
+    ],
+    "width": 14,
+    "radius": 7,
+    "sourceArithmeticOnly": true,
+    "nativeFailureNotClaimed": true
+  },
+  "nativeDirectionsReviewedThisCandidate": 0,
+  "nativeCoarseReviewedThisCandidate": 0,
+  "nativeFineReviewedThisCandidate": 0,
+  "rootFreshApprovalRequired": true,
+  "strictProof": {
+    "full5SHA256": "9a9121141edbd1f1d16d4ded28a32811a56a39463b43ba13db7ab81eb239627d",
+    "identity": {
+      "root": "u99f5",
+      "file": "engine-whole-u99f5.json",
+      "fileSHA256": "7e8dd2e9672cfb772dc584f8dd1ca5d79823ea982b82e55084c5fa640cffd9c9"
+    },
+    "arity": [
+      3,
+      4
+    ],
+    "unprefixedFiles": true,
+    "fileSHA256CaseExact": true
+  },
+  "preparationHarnessEvents": [
+    {
+      "phase": "baseline patch dispatch before file/compiler/test",
+      "mixedSummaryAndPatchOutput": true,
+      "fileWrites": 0,
+      "sourceCompiles": 0,
+      "correction": "Single patch-array output then native apply_patch succeeded"
+    }
+  ],
+  "priorOrderHold1201": {
+    "status": "held-native-order12-14",
+    "parentPending": true,
+    "whole": {
+      "root": "u99f5",
+      "views": 1,
+      "compatible": true
+    },
+    "directions": {
+      "observed": 17,
+      "passed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        15,
+        16,
+        17
+      ],
+      "failed": [
+        12,
+        13,
+        14
+      ],
+      "mapping": {
+        "12": 14,
+        "13": 12,
+        "14": 13
+      }
+    },
+    "fine": 0,
+    "coarse": 0,
+    "boundaries": 0,
+    "natural": 0,
+    "runtimeApplied": false,
+    "canonicalOld549StringPreserved": true
+  }
+}
