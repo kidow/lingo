@@ -1,0 +1,582 @@
+{
+  "schema": "hanja-independent-VH-source-preparation-v1",
+  "date": "2026-10-19",
+  "glyph": "暐",
+  "root": "u6690",
+  "configSHA256": "932afbba87864af71ff8143415671cd658e65364c1d2cbf72562fe257bc6490d",
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/NOTICE.md": "444d804cf7f50a17829ca5843e82424eeb305aa575e0733e1fa3d629a4da7322",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/README.md": "16a3d21d79474d7e1181616989652f0879a69b03b6ce2c79b071be985bb2ffaf",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/draw-trace.json": "ef92fbc88e8419eaa565bf02b986182201f9bb1bc93faf41ba11906dab0106b7",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/engine-proof.json": "6eb96adc90de90065d8ae6d4ca89c66856f033ec0dbe4a0d7af04c98262d2bc3",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690-k.json": "a748f919e2fe8fa6699fb68e0724f1bb108a80a520d182139d5db064b5bb2f74",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690-ue0100.json": "4f87540a2668e491e71bfbe3684cf29dec9f3e27a763e3c81972884f59cce23a",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690-ue0101.json": "4f87540a2668e491e71bfbe3684cf29dec9f3e27a763e3c81972884f59cce23a",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690-ue0102.json": "f748df1cb0f5dabe75ed4f9ea3173104aa9649f959d11aaba5c4511d19e2d92e",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/engine-whole-u6690.json": "4f87540a2668e491e71bfbe3684cf29dec9f3e27a763e3c81972884f59cce23a",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/metadata.json": "ea32a85e8d43c2b8c16fb469e18467659036216047c9c4aa68eedc060eca867d",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/resume.json": "62dca5db4253a97e71d2f8f6bc1db9459c91fcae1f234518f334712f3ceecbb7",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/review.json": "a423ee6a1ea05f5057d2eea3ceae7f7f07526fb742936e0d0654cfdbe6293ea5",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/serve-memory.py": "1a264f49c8814a8d961b577cf5ce2d5c8c4fffa8dfa132cd752791fe66ddd40e",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/source-analysis.json": "1d2595670cdd3badfdff9419e01ffd539669e8842404cb1e0581615609e7d388",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/source-join-analysis.json": "7fa42eedaf27ee3494faa75e9485ea3bbb036c0fbb326b215f50c98989dfb713",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/sources.json": "1edb9c3319589bf08554de898e0c6b3ccba8c4825dc2956dea707fdc91c8d8ee",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/validation.json": "4de657823192072ba78e72373f9cfcf4f40b804a4ee39660aacad9042566233e",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/verify-source.mjs": "9c630ea62cec1246020627e818027057e6e5595fcac8fc671757135bad8f026c",
+    "../hanja-goal-glyphwiki-batch771-2026-10-13/whole-variant-inventory.json": "8672fdbe27ab4bcf11f8f6fe747b22cbc73203eb2ec36aded4e730ae893beea1",
+    "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47"
+  },
+  "newFilesSHA256": {
+    "README.md": "ac5f00d89c3a76787b82f9717ca82c76d23254e44ac25f91b0bd5edce4381e6f",
+    "config.json": "932afbba87864af71ff8143415671cd658e65364c1d2cbf72562fe257bc6490d",
+    "candidate.mjs": "75b05a7d85308cebeeaa8aa15c057eafad5264d7a6ec05e880f7d1872250d90a",
+    "candidate.d.mts": "1dc1821b0e36ba17988369ba3e081232962b88ada5a7e7a3f30396ac0d2f4140",
+    "serve.py": "9fc69b370b0df69a1b1be813e3ade3f24a1e01ccbdcfacf1fd66a7de6525ad33",
+    "fixtures.json": "346d8d67c0557ada83b0cbc4f20b71cf693dc197079af078fc89f88486b9613e",
+    "source-check.mjs": "471109f55895a68cd868563738e08e8cef4273c5e395e03c8f98d4eb768ca88c"
+  },
+  "baselineSHA256": "247d75956cf66e0fea033c382e4cf5215479f1939d98c6b9c1bfd29bfda6dfb3",
+  "derivedSHA256": "247d75956cf66e0fea033c382e4cf5215479f1939d98c6b9c1bfd29bfda6dfb3",
+  "counts": {
+    "raw": 17,
+    "drawCalls": 17,
+    "factoryPens": 14,
+    "baselinePens": 13,
+    "baselineMasks": 14,
+    "pens": 13,
+    "masks": 14,
+    "polygons": 25
+  },
+  "factorySourceGroups": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ]
+  ],
+  "factoryGroupMap": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      13
+    ]
+  ],
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14,
+      15
+    ],
+    [
+      16
+    ]
+  ],
+  "sourceContract": {
+    "identity": {
+      "root": "u6690",
+      "file": "../hanja-goal-glyphwiki-batch771-2026-10-13/engine-proof.json",
+      "fileSHA256": "6eb96adc90de90065d8ae6d4ca89c66856f033ec0dbe4a0d7af04c98262d2bc3"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "existingFull5Preserved": true,
+    "newHeaderTraceCombination": false,
+    "standaloneTraceEqual": true,
+    "mandatoryProgressiveArgs": 3,
+    "mandatoryWholeArgs": 4,
+    "captureArgs": 3,
+    "identityExtraKeysRejected": true,
+    "opaqueFullProofDigestFixed": true,
+    "newStrictWrapper": true,
+    "originalProgressiveCompilerExisted": false,
+    "originalVerifyHadEngineCheckOnly": true,
+    "originalEngineHashesSpellingUnchanged": true
+  },
+  "sourceSnapshot": {
+    "sourceFile": "../hanja-goal-glyphwiki-batch771-2026-10-13/sources.json",
+    "root": "u6690",
+    "records": [
+      "u6690",
+      "u65e5-01",
+      "u65e5",
+      "u97cb-08",
+      "u6690-k",
+      "u97cb-08-var-001",
+      "u6690-ue0100",
+      "u6690-ue0101",
+      "u6690-ue0102",
+      "koseki-158310",
+      "u97cb-g08@2"
+    ],
+    "recordCount": 11,
+    "providerVersions": [
+      {
+        "name": "u97cb-g08@2",
+        "version": "2",
+        "apiUrl": "https://glyphwiki.org/api/glyph?name=u97cb-g08%402",
+        "responseIdentity": {
+          "name": "u97cb-g08",
+          "version": "2",
+          "related": "U+97CB",
+          "data": "1:0:2:58:36:123:36$1:22:32:123:36:123:64$1:0:32:92:14:85:64$1:0:0:50:64:150:64$1:12:13:73:82:73:108$1:2:2:73:82:127:82$1:22:23:127:82:127:108$1:2:2:73:108:127:108$1:2:0:60:134:145:134$1:0:313:66:142:58:161$1:2:0:58:161:152:161$1:0:0:101:117:101:187"
+        },
+        "sha256": "9ea016ffe2f0b518c33dbe288ae716ebec83b83b1b7e5601d5accc28f4890c35"
+      }
+    ],
+    "providerVersionsCount": 1,
+    "providerAlreadyIncludedInRecords": true,
+    "recordCountNot12": true,
+    "missing": [],
+    "aliases": [],
+    "archive": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+    },
+    "wholeNames": [
+      "u6690",
+      "u6690-k",
+      "u6690-ue0100",
+      "u6690-ue0101",
+      "u6690-ue0102"
+    ],
+    "selectedWholeRoot": "u6690",
+    "selectedRootClosure": [
+      "u6690",
+      "u65e5-01",
+      "u65e5",
+      "u97cb-08"
+    ],
+    "selectedRootClosureCount": 4,
+    "providerNotInSelectedRootClosure": true,
+    "rootMixing": false,
+    "kAndVS2NotUsed": true,
+    "sourceAnalysisCurrentApiSnapshotNotUsed": true,
+    "newAPIRequests": 0,
+    "newEngineRuns": 0
+  },
+  "geometryFactory": {
+    "source": "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs",
+    "originalBodyBytes": 8067,
+    "originalBodySHA256": "4ea61b5e0ba522559dd0c5ef42a24cae29159a79ea4e38ff56a836a25d713355",
+    "bodyByteExact": true,
+    "bodyAdaptations": 0,
+    "sourceGeometryExecutions": 1,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0,
+    "factoryPens": 14,
+    "logicalPens": 13,
+    "masks": 14,
+    "sourceRefsOnlyAfterFactory": true,
+    "publicFixtureSavedBeforeChecks": true
+  },
+  "independentVHPolicy": [
+    {
+      "pen": 12,
+      "raw": [
+        14,
+        15
+      ],
+      "kinds": [
+        "cdDrawLine",
+        "cdDrawLine"
+      ],
+      "end": [
+        89.26,
+        161
+      ],
+      "start": [
+        67.75,
+        161
+      ],
+      "delta": [
+        -21.510000000000005,
+        0
+      ],
+      "gap": 21.510000000000005,
+      "trajectoryConcatenation": false,
+      "connector": false,
+      "newCoordinates": false
+    }
+  ],
+  "sourceOrder": {
+    "sourceRawRelativeOrderPreserved": true,
+    "exactHVOnly": [
+      [
+        1,
+        2
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "domesticPen12ObservedRaw": [
+      14,
+      15
+    ],
+    "other12DirectionsNotYetObserved": true,
+    "newOrderInference": false,
+    "provisional13GroupsNotNativeOrderApproval": true
+  },
+  "unmodifiedTerminalRisks": [
+    {
+      "pen": 1,
+      "raw": [
+        0
+      ],
+      "flags": [
+        12,
+        13
+      ],
+      "correctionAdded": false
+    },
+    {
+      "pen": 2,
+      "raw": [
+        1,
+        2
+      ],
+      "terminalFlags": [
+        22,
+        323
+      ],
+      "correctionAdded": false
+    },
+    {
+      "pen": 8,
+      "raw": [
+        9
+      ],
+      "flags": [
+        12,
+        113
+      ],
+      "correctionAdded": false
+    },
+    {
+      "pen": 9,
+      "raw": [
+        10,
+        11
+      ],
+      "terminalFlags": [
+        22,
+        123
+      ],
+      "correctionAdded": false
+    }
+  ],
+  "tailPolicy": {
+    "corrections": 0,
+    "derivations": 0
+  },
+  "originalMasksJSONDeepPreservedUnderExactRefGroups": true,
+  "original25PolygonsExactOnce": true,
+  "allMultiMaskBoundaries": {
+    "12": [
+      0.18430034129692832
+    ]
+  },
+  "baselineComparison": {
+    "sameLogicalPenAndPrefix": true,
+    "baselineEqualsFinal": true,
+    "samePublicCache": true,
+    "independentNativeEvidence": false,
+    "baselinePenMap": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "priorNativeHistory": {
+    "originalBatch": 771,
+    "wholeStaticCompatibleRoots": [
+      "u6690",
+      "u6690-k",
+      "u6690-ue0100",
+      "u6690-ue0101",
+      "u6690-ue0102"
+    ],
+    "domesticDirectionPensObserved": [
+      12
+    ],
+    "unreviewedDirectionPens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13
+    ],
+    "originalSourceGroupsZeroBasedEmpty": true,
+    "provisional13GroupsNotOriginalAllOrderApproval": true,
+    "progressiveFramesApproved": 0,
+    "originalVHGapHoldPreserved": true,
+    "kAlternativeGap": 27.485,
+    "vs2AlternativeEntryDiagonalMismatch": true,
+    "currentNativeEvidence": 0,
+    "currentApprovalInherited": false
+  },
+  "preparationReadOnlyInventory": {
+    "currentRegistrationStaticGlyphMatches": 0,
+    "candidateExperimentFolderPreexisting": false,
+    "lookupExecuted": false
+  },
+  "attribution": {
+    "originalNOTICEPreserved": true,
+    "originalNOTICE": "../hanja-goal-glyphwiki-batch771-2026-10-13/NOTICE.md",
+    "originalLargeResumeHashedForPreservationOnly": true
+  },
+  "sourceChecks": {
+    "status": "PASS",
+    "executions": 1,
+    "exitCode": 0,
+    "cachedPositive": 1,
+    "negative": 29,
+    "sourceGeometryDuringChecks": 0,
+    "tailDerivationsDuringChecks": 0,
+    "engineRuns": 0,
+    "original25PolygonsExactOnce": true,
+    "allOriginalMaskFieldsPreservedUnderExactRefGroups": true,
+    "baselineEqualsFinal": true,
+    "selectedRootClosure": [
+      "u6690",
+      "u65e5-01",
+      "u65e5",
+      "u97cb-08"
+    ],
+    "providerAlreadyIncluded": true,
+    "onlyOriginalDomesticDirection12Observed": true,
+    "stdout": {
+      "passed": true,
+      "cachedPositive": 1,
+      "negative": 29,
+      "sourceGeometryGenerations": 0,
+      "tailDerivations": 0,
+      "engineRuns": 0,
+      "exactOriginalPolygons": 25,
+      "allMaskFieldsPreservedUnderExactRefGroups": true,
+      "pens": 13,
+      "masks": 14,
+      "selectedRootClosure": [
+        "u6690",
+        "u65e5-01",
+        "u65e5",
+        "u97cb-08"
+      ],
+      "providerAlreadyIncluded": true,
+      "providerNotInSelectedClosure": true,
+      "onlyOriginalDomesticDirection12Observed": true,
+      "allMultiMaskBoundaries": {
+        "12": [
+          0.18430034129692832
+        ]
+      },
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    "allPassedFirstAttempt": true,
+    "repeated": false
+  },
+  "syntax": {
+    "node": {
+      "executions": 2,
+      "files": [
+        "candidate.mjs",
+        "source-check.mjs"
+      ],
+      "passed": true,
+      "repeated": false
+    },
+    "declarationAST": {
+      "executions": 1,
+      "diagnostics": 0,
+      "passed": true
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "passed": true,
+      "stdout": {
+        "staticGuards": true,
+        "targets": [
+          "u6690"
+        ],
+        "sourceCompiles": 0,
+        "engineRuns": 0,
+        "HTTP": 0
+      },
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "HTTP": 0
+    }
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registryChanged": false,
+  "catalogChanged": false,
+  "originalSourceChanged": false,
+  "originalNOTICEChanged": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "HTTPRequested": false,
+  "buildExecuted": false,
+  "toolingHistory": [],
+  "finalPinCheck": {
+    "originalAndSharedPins": 23,
+    "breakdown": {
+      "original771": 19,
+      "shared": 4
+    },
+    "newPins": 7,
+    "mismatches": 0,
+    "passed": true,
+    "sourceGeometryGenerationsTotal": 1,
+    "tailDerivationsTotal": 0,
+    "sourceCompilerExtraDuringChecks": 0,
+    "originalCompilerCalls": 0,
+    "engineRuns": 0
+  }
+}
