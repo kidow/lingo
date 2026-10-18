@@ -1,0 +1,11 @@
+# 軝 source geometry notice
+
+GlyphWiki Project and contributors. Geometry: GlyphWiki license@18 and pinned archive LICENSE.txt. Exact source archive and engine hashes are in sources.json and engine-proof.json. Engine JS not redistributed.
+
+Native Codex browser3 panels326/327 reviewed domestic 軝11 and the only complete pinned original u8edd whole. Full structure matches, but native focused domestic pen9 versus cumulative original groups10/11 shows a continuous downward-to-up-right fold. Original raw9 vertical ends at(104,171), while raw10 Q begins at(90,180), a(-14,+9) gap. Preserve all13 original raw/draw calls,2Q and1 original cubic B curve; no invented connector, extension, reversal, split, radical transplant or replacement source. Complete3-record/1-root family,0 missing/history. No full11-pen/99frame approval, runtime registration, app build or mobile regression for 軝. Private dictionary media RAM-only.
+
+## Batch1245 reviewed runtime
+
+고정baseu8edd의원13raw/13calls/26polygon·좌표·flags·outline union·원guide·폭·원body weight·순서를보존합니다. 정확접점raw2H/raw3V만합친factory12p12mask에서raw9V/raw10Q 두원mask를독립sequence로9획에묶어logical11p12mask로표시합니다. V끝(104,171)→Q시작(90,180)의gap[-14,9]/16.64331697709324는그대로이며connector/합성trajectory/새좌표·폭·wholepen순열0입니다. raw8Q/raw9V는exact접점이어도국내별획이므로합치지않습니다. 같은pre-tail baseline의11획raw12 Bezier flags0/15 마지막원quad만기존979 support628/partition2202 byte동일kernel로UP분리합니다. 원bodybounds[67,16.8,93.95,92.95]·guide·폭14·원weight와다른10획은불변이고tailweight12.5를추가하므로전체weight불변은주장하지않습니다. 전체26polygon은exactly once입니다. 원pen2 terminal113/pen3 terminal123에는교정0이며root의freshfine2/3에서실제양성면적stamp없이99.99→100PASS한사실만기록합니다. 정적coverage전면보장은하지않습니다. 원engine-proof 및선택whole은같은full5이며strictid3 {root,file:engine-proof.json,fileSHA256} unprefixed·필수3/4를지킵니다. 原488STRING/HOLD·NOTICE·source/nativefalse는불변입니다. 선택base숫자wholeversion/별칭승인은추정하지않고root의freshwhole1/11방향/fine4/coarse99+99/9·11경계/두8초자연재생만승인합니다. baseline은같은신규logical11 pre-tail표시이며독립된과거승인proof가아닙니다. sourcefactory1→선저장/VQrefgroup1/cachedUPderive1·positive1/negative31과이번runtime source/fixture/derive/engine0을구분합니다.
+
+Fresh root review: docs/hanja-goal-glyphwiki-batch1245-2026-10-19/review.json. Source-only capsule flags and original NOTICE remain unchanged. Private dictionary SVG remains RAM-only.

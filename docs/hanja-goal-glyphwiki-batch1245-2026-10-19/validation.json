@@ -1,0 +1,148 @@
+{
+  "batch": 1245,
+  "glyph": "軝",
+  "date": "2026-10-19",
+  "status": "actual-runtime-verified",
+  "nativeApproval": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1244-2026-10-19/resume.json",
+  "parentResumeSHA256": "1673bf92c9d5afb0a6ad4d35858151a998fd2ed1ad7c18bd838504888b10debd",
+  "parentActualCheckpointVerified": true,
+  "parentActualRegistryVerified": true,
+  "parentRuntimeRegistered": true,
+  "parentActualEvidence": "actualRuntimeVerifier",
+  "completedRuntime": 5662,
+  "total": 5978,
+  "remaining": 316,
+  "historicalCanonicalHolds": 348,
+  "resolvedHistoricalCount": 101,
+  "activeCanonicalHolds": 247,
+  "pens": 11,
+  "masks": 13,
+  "polygons": 26,
+  "compiledSHA256": "8bc279eddbc9b7590faf3230bf59ab4011c1f3ddafac6611ccab868c5ae31f6f",
+  "sourcePins": 26,
+  "pinBreakdown": {
+    "originalAndShared": 18,
+    "currentExperiment": 8,
+    "total": 26
+  },
+  "sourceRecords": 3,
+  "wholeRoots": 1,
+  "providers": 0,
+  "focusedTests": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "tests": 3,
+    "exitCode": 0,
+    "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch1245.test.ts"
+  },
+  "syntax": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "exitCode": 0,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1245-2026-10-19/verify-runtime.mjs"
+  },
+  "actualRuntimeVerifier": {
+    "executions": 2,
+    "status": "passed",
+    "passed": true,
+    "exitCode": 0,
+    "executedBy": "/root",
+    "reportedBy": "/root",
+    "reportedSummaryOnly": true,
+    "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch1245-2026-10-19/verify-runtime.mjs",
+    "registryUnique": 5662,
+    "remaining": 316,
+    "historicalCanonicalHolds": 348,
+    "resolvedHistoricalCount": 101,
+    "activeCanonicalHolds": 247,
+    "canonicalReferences": 302,
+    "canonicalTargetMatchesBeforeApply": 1,
+    "canonicalRecordType": "string",
+    "nonCanonicalResolvedExcluded": [
+      "叟",
+      "廋",
+      "瞍",
+      "餲"
+    ],
+    "pens": 11,
+    "masks": 13,
+    "polygons": 26,
+    "sourcePins": 26,
+    "pinMismatches": 0,
+    "sourceRecords": 3,
+    "wholeRoots": 1,
+    "providers": 0,
+    "compiledSHA256": "8bc279eddbc9b7590faf3230bf59ab4011c1f3ddafac6611ccab868c5ae31f6f",
+    "coarseCandidateFrames": 99,
+    "coarseBaselineFrames": 99,
+    "sourceCompilations": 0,
+    "runtimeFixtureCompilations": 0,
+    "additionalFixtureCompilations": 0,
+    "candidateDerivationsThisRuntime": 0,
+    "engineRuns": 0,
+    "appUI": false,
+    "buildExecuted": false,
+    "original113And123Unmodified": true,
+    "originalFull5Preserved": true,
+    "attempts": [
+      {
+        "attempt": 1,
+        "exitCode": 1,
+        "status": "failed",
+        "phase": "module-link",
+        "code": "ERR_MODULE_NOT_FOUND",
+        "cause": "verifier source import retained hq-left-u8edd template path; actual capsule is vq-terminal15-u8edd",
+        "assertionsReached": false,
+        "sourceCompilations": 0,
+        "candidateDerivations": 0,
+        "engineRuns": 0,
+        "correction": "Only source import path corrected; static path audit performed; focused3/syntax1 not repeated"
+      },
+      {
+        "attempt": 2,
+        "exitCode": 0,
+        "status": "passed",
+        "reportedBy": "/root",
+        "failedCheckOnlyRetry": true,
+        "sourceCompilations": 0,
+        "candidateDerivations": 0,
+        "engineRuns": 0
+      }
+    ],
+    "staticPathAudit": {
+      "staticOnly": true,
+      "sourceImportCorrected": true,
+      "badImportOccurrencesBefore": 1,
+      "otherCurrentCandidateTemplateLeaks": 0,
+      "inheritedPriorResolutionsPreserved": true,
+      "relativeImports": [
+        {
+          "path": "../../lib/hanja-stroke-dictionary-glyphwiki-batch1245.ts",
+          "exists": true
+        },
+        {
+          "path": "../../lib/hanja-strokes.ts",
+          "exists": true
+        },
+        {
+          "path": "../hanja-source-independent-vq-terminal15-u8edd-source-experiment-2026-10-18/candidate.mjs",
+          "exists": true
+        }
+      ]
+    }
+  },
+  "runtimeFixtureCompilations": 0,
+  "additionalFixtureCompilations": 0,
+  "sourceCompilations": 0,
+  "candidateDerivationsThisRuntime": 0,
+  "engineRuns": 0,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildExecuted": false,
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true
+}
