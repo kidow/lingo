@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "source-only-exact-cardinal-mask-experiment-checked-native-pending",
+  "configSHA256": "9feecee8878693af603ec118b86103141e36baa22484a0e6a6c980f4c324d12f",
+  "newFilesSHA256": {
+    "config.json": "9feecee8878693af603ec118b86103141e36baa22484a0e6a6c980f4c324d12f",
+    "cardinal-candidate.mjs": "af346f51062ce002cd011937d594ffc440645eda7b8c4624e818b4ecd7eca618",
+    "cardinal-candidate.d.mts": "c8801787a2c30384b9d858bb5c993ee026e53c733f9210354a0fcb228cbaac0d",
+    "source-check.mjs": "f0c2ec182fc1028538d0b45d49e2e23c9a5172c5163b200cdb22fb9d5e37d9e6",
+    "serve.py": "d87625776c8ade7f9781df246b7de4508b7e6cbabe582495245abf8cb7f61895",
+    "README.md": "256ce3a3d331657f883412f58205d7643a2d61b87c1685b87bd285143464d7ed",
+    "fixtures.json": "b07feb94ea493c30d9d1fec8697c59dd37a302a741361df064c1173f1434cb14"
+  },
+  "sourceCheck": {
+    "passed": true,
+    "targets": [
+      {
+        "key": "1082",
+        "glyph": "描",
+        "pen": 9,
+        "sourceCompiles": 1,
+        "engineRuns": 0,
+        "negativeRejections": 21,
+        "pens": 12,
+        "masks": 14,
+        "polygons": 25,
+        "baselineSHA256": "2ce3f76fb9c482e486f0730f54de16f245e603c64e250fa9ef092df31875521b",
+        "derivedSHA256": "aa72066576bc1ea7c8f35e0ace97ecc1e738525be894e7c6f41a8b29fd0884bb",
+        "originalPolygonsExactlyOnce": true,
+        "unchangedOtherPens": true,
+        "verticalOriginalArea": 300.6249999999998,
+        "visibleAreaAt0": 0,
+        "visibleAreaAtEpsilon": 2.2737367544323206e-13,
+        "residualAreaAt99": 0.2550249999985681,
+        "residualAreaAt9999": 0.00002550249882915523,
+        "residualAreaAt100": 0,
+        "boundary": 0.5180275480864729,
+        "maskGeometryAuthoring": false,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      },
+      {
+        "key": "1101",
+        "glyph": "咷",
+        "pen": 2,
+        "sourceCompiles": 1,
+        "engineRuns": 0,
+        "negativeRejections": 19,
+        "pens": 9,
+        "masks": 11,
+        "polygons": 27,
+        "baselineSHA256": "7d36dc94e5e33fcdb58a410fdac6a5ab201a986e89c25489a2aed39981a13e53",
+        "derivedSHA256": "13a2d383b49c0bc3a09a34e82a5709fae16a4d9cecda91f4792c162eb8aeff3b",
+        "originalPolygonsExactlyOnce": true,
+        "unchangedOtherPens": true,
+        "verticalOriginalArea": 326.12499999999966,
+        "visibleAreaAt0": 0,
+        "visibleAreaAtEpsilon": 3.410605131648481e-13,
+        "residualAreaAt99": 0.29975625000020045,
+        "residualAreaAt9999": 0.000029975625011502416,
+        "residualAreaAt100": 0,
+        "boundary": 0.28311234154159987,
+        "maskGeometryAuthoring": false,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      },
+      {
+        "key": "1105",
+        "glyph": "鶂",
+        "pen": 15,
+        "sourceCompiles": 1,
+        "engineRuns": 0,
+        "negativeRejections": 17,
+        "pens": 19,
+        "masks": 22,
+        "polygons": 43,
+        "baselineSHA256": "8f40877059a9ec15becda5a9b273c42d5fe487cd73cf69a7eb670b2a67405742",
+        "derivedSHA256": "bb7c029614b4e3712a4741ac465d59b42d4c46162c9a7d2a14851a363b733fb9",
+        "originalPolygonsExactlyOnce": true,
+        "unchangedOtherPens": true,
+        "verticalOriginalArea": 281.7250000000002,
+        "visibleAreaAt0": 0,
+        "visibleAreaAtEpsilon": 2.8421709430404007e-13,
+        "residualAreaAt99": 0.22420225000041683,
+        "residualAreaAt9999": 0.000022420224922825582,
+        "residualAreaAt100": 0,
+        "boundary": 0.2391773075284366,
+        "maskGeometryAuthoring": false,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    ],
+    "positiveCompilations": 3,
+    "engineRuns": 0,
+    "helperPythonASTChecks": 1,
+    "helperStaticGuardChecks": 1,
+    "privateHTTP": 0,
+    "serverStarts": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "nodeSyntaxChecks": [
+      {
+        "file": "cardinal-candidate.mjs",
+        "exitCode": 0,
+        "stderr": ""
+      },
+      {
+        "file": "source-check.mjs",
+        "exitCode": 0,
+        "stderr": ""
+      }
+    ],
+    "executions": 1,
+    "exitCode": 0,
+    "areaProbeScope": "Floating-point shoelace of original V polygons clipped by local-V-mask fraction. 99.99 is local V, not whole-pen progress; tiny epsilon results around2e-13 are cancellation noise, not native evidence."
+  },
+  "experimentalTargetBoundaries": [
+    {
+      "batch": 1082,
+      "pen": 9,
+      "boundary": 0.5180275480864729,
+      "actualNativeRequired": [
+        "0-to-epsilon",
+        "before-at-after-mask-boundary",
+        "95",
+        "99.99-to100-at520",
+        "direction",
+        "nine-coarse",
+        "natural-replay"
+      ]
+    },
+    {
+      "batch": 1101,
+      "pen": 2,
+      "boundary": 0.28311234154159987,
+      "actualNativeRequired": [
+        "0-to-epsilon",
+        "before-at-after-mask-boundary",
+        "95",
+        "99.99-to100-at520",
+        "direction",
+        "nine-coarse",
+        "natural-replay"
+      ]
+    },
+    {
+      "batch": 1105,
+      "pen": 15,
+      "boundary": 0.2391773075284366,
+      "actualNativeRequired": [
+        "0-to-epsilon",
+        "before-at-after-mask-boundary",
+        "95",
+        "99.99-to100-at520",
+        "direction",
+        "nine-coarse",
+        "natural-replay"
+      ]
+    }
+  ],
+  "originalNoticeAndProofBytesPreserved": true,
+  "sourceGeometryChanged": false,
+  "sourceOrderChanged": false,
+  "onlyTargetMaskCountIncreasedByOne": true,
+  "originalPerCallCardinalBoundsAndWeightsReused": true,
+  "maxYGuideExtensionImplemented": false,
+  "helperFixtureCache": {
+    "startupSourceCompiles": 0,
+    "requestSourceCompiles": 0,
+    "engineRuns": 0,
+    "publicGeometryOnly": true,
+    "domesticMediaRAMOnly": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "canonicalCountersChanged": false,
+  "existingHoldsChanged": false,
+  "serverStarts": 0,
+  "privateMediaSaved": false,
+  "productionPromotion": false,
+  "limitations": [
+    "Exact three pinned positive H to positive V targets only; no generic terminal23/123 promotion.",
+    "Input gaps,diagonal/curved/reversed axes,wrongterminal,changedpolygons/identity/proof are rejected.",
+    "Rectangle-limit area continuity does not certify native inkfront/order/AA; root must observe new boundary and replay."
+  ]
+}
