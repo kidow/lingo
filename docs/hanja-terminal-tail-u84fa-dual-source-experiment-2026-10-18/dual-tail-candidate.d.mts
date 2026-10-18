@@ -1,0 +1,12 @@
+export type SelectedProofIdentity={readonly root:'u84fa-var-001';readonly file:'engine-whole-u84fa-var-001.json';readonly fileSHA256:'a34bf05f3364ebc262ec088bada212282587452fd52d45da942bc1dd8572178c'};
+export type FullProof={readonly defaults:unknown;readonly engineHashes:unknown;readonly engineRevision:unknown;readonly groups:unknown;readonly trace:unknown};
+export type RevealMask={readonly outline:string;readonly bounds:readonly number[];readonly weight:number;readonly direction:string;readonly revealPath?:string;readonly revealWidth?:number};
+export function fixedTargets():Readonly<Record<string,unknown>>;
+export function guards():void;
+export function sourceCompileCallCount(key?:string):number;
+export function candidateDerivationCount(key:string):number;
+export function lastCompilation(key:string):unknown;
+export function compileProgressive(trace:unknown,proof:FullProof,identity:SelectedProofIdentity):readonly(readonly RevealMask[])[];
+export function compileSourceWhole(root:'u84fa-var-001',trace:unknown,proof:FullProof,identity:SelectedProofIdentity):readonly(readonly RevealMask[])[];
+export const nativeApproval:false;
+export const runtimeApplied:false;
