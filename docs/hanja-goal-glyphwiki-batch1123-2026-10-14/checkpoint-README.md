@@ -1,0 +1,9 @@
+# 瘦 — batch1123 source-only chronological hold
+
+Catalog14 differs from recorded domestic15. All8captured complete whole proofs have exact-consecutive minima12–15. SelectedK has16raw/1exactjoin/minimum15/31polygons. Existing full8 proof/root-file-fileSHA256 identity3 compiler produced a historical numerical K15pens15masks31polygons diagnostic SHA79f6875d365973307f42521588006ef3050aee2d7213ab0f8c4660c0e66a82c3. This is not an eligible14pen preview or native approval;the compiler is not incorrectly described as always throwing. No compiler was invoked here and its contract is not expanded.
+
+Prior complete15stroke nativehold(first vertical and final junction mismatch) remains historical evidence, not current approval. Existing source-hold.json SHA09b86bd50331da67bea5880b9b197b4fe645f041acec9e766026edb739883e55,validation.json,README and frozen19/current23files remain unchanged. New checkpoint-validation.json avoids overwriting priorvalidation. Originalfull8/id3 casing/path/sourcegroups remain unchanged;no newgeometry/masks/width/connectors/interpolation or native observations.
+
+Actual1122 parent bdbd6400638011fd0b0a07ca1b012a6894e8e276dd66b1b51f0d55551f1295b6 is5569/5978·remaining409·historical339/resolved16/active323. Single focused dedup/pin inspection passed:180refs,canonical瘦0→newhold1,all23capsule/frozen19pins preserved. Root authoritative runtimeabsence/count check exited0 once:瘦14/15lookups bothnull,registryglyphentries0,unique5569/remaining409. Final historical340/resolved16/active324;applied5569/remaining409 unchanged. Metadata finalized without repeated checks. Existing source-hold/prior references are not canonical checkpoint records. Resolvedlists inherit the same16unique resolvedglyphs;compact omission is not deletion.
+
+Source/engine/native/server/browser/build/TSC0. No private media saved. Next1124薪.
