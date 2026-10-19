@@ -1,0 +1,37 @@
+{
+  "glyph": "帨",
+  "unicode": "u5e28",
+  "reviewedAt": "2026-10-20",
+  "status": "HOLD",
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "renderer": "docs/hanja-renderer-start-gate-candidates4-experiment-2026-10-20",
+  "rendererValidationSHA256": "c9c6a7d5a9d9142ee7769db16914d1762e31a4e612077084a2b90b69a50ea23f",
+  "rendererSHA256": "cf28d748023b1187ec73f996c47067413a44603d2f77f4ef48c1bb3f480bbe5f",
+  "configSHA256": "963b8e1863002067c3d8af71569f4f432f7f645702b862e9ee8d66909e4c2298",
+  "geometry": {"pens": 10, "masks": 12, "polygons": 31},
+  "nativeReview": {
+    "surface": "Codex native in-app browser panel",
+    "comparison": "국내 자료 / 기존 렌더러 / 새 렌더러",
+    "wholeCompatible": true,
+    "domesticOrderAndDirectionsAt75Percent": [1,2,3,4,5,6,7,8,9,10],
+    "coarse": {"pens": [1,2,3,4,5,6,7,8,9,10], "framesPerPenPerRenderer": 9, "pixels": 220, "result": "PASS"},
+    "completionFine": {"pens": [10,2,6,5], "progress": [0.9999,0.99999999,1], "pixels": 520, "result": "PASS"},
+    "multimask": {"pens": [5,10], "checks": ["boundary1-before","boundary1-at","boundary1-after","0","epsilon .0001%","95%"], "result": "PASS; 경계 직후의 가는 AA 흔적과 기존의 유한 면적 시작 덩어리는 구분함"},
+    "coverage": {"targets": [[5,2],[10,1]], "residual": "P minus full round sweep", "pixels": 520, "result": "PASS; 각 오른쪽 잔여 패널에 빨간 잔여 면적 없음"},
+    "browserMetrics": [
+      {"pen": 5, "mask": 2, "length": 26.571182250976562, "tau": 0.5268866047345508},
+      {"pen": 10, "mask": 1, "length": 49.116146087646484, "tau": 0.2850386505288376}
+    ],
+    "naturalPlayback": [
+      {"pen": 5, "seconds": 8, "observedStartPercent": 2.8125, "observedEndPercent": 100, "result": "PASS"},
+      {"pen": 10, "seconds": 8, "observedStartPercent": 2.68000000, "observedEndPercent": 100, "result": "FAIL", "reason": "시작부에 흰 틈이 생기고 그 아래 세로 부분이 분리된 섬처럼 보임. 같은 프레임의 기존 렌더러 세로 부분은 연속적임. 약 20px의 틈은 육안 추정이며 계측값이 아님. 완료 상태는 일치하지만 초기 자연 재생 결함을 상쇄하지 않음."}
+    ],
+    "firstFailure": "10획 자연 재생 시작 2.68000000%의 흰 틈/분리된 세로 부분",
+    "afterFailure": "진행 중이던 동일 재생의 100% 완료 상태만 기록하고 새 게이트 검토는 중단함"
+  },
+  "server": {"pid": 80881, "port": 64336, "session": 62723, "stopped": true, "exitCode": 143},
+  "unchanged": ["source geometry", "source guide", "reveal width", "source weights", "original HOLD records", "runtime registry", "application renderer", "NOTICE"],
+  "next": "원 기하를 유지한 별도 표시 정책에서 시작 원 밖 영역의 조기 노출 여부를 수학적으로 조사하고, 새 후보를 만들 경우 전체 검토를 새로 수행한다. 다른 글자의 승인이나 실패를 추정하지 않는다.",
+  "buildRun": false
+}
