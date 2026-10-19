@@ -1,0 +1,371 @@
+{
+  "schema": "hanja-exact-global-projection-u5e28-validation-v1",
+  "date": "2026-10-20",
+  "configSHA256": "fb3c223624bc1a1704d131eea152f024b2a3949d37959dc8daf104cd247b3fca",
+  "newFilesSHA256": {
+    "config.json": "fb3c223624bc1a1704d131eea152f024b2a3949d37959dc8daf104cd247b3fca",
+    "render.mjs": "22803169636bab52aa00a40eb22ac9768471a9d23a64b7fdb1b60c06df3cbba9",
+    "check.mjs": "cceb661243242c06cd175e8230727cc2029c84d220fccf40227404d63499cffb",
+    "serve.py": "c3a7fcccea1c7b10157b86316aa78a818e65e9d86d33938e3d1a117c0ff6e73f",
+    "README.md": "df545f34c918eee65144b1d2cb714ed5d6dc5e46bc744d42ba3640cd66a0caa6"
+  },
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/README.md": "37947181c0a418679ccbb6db857023698e7636a2d963380d58c9a6d8014f0c65",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/draw-trace.json": "47a3558f49fb82ce78fee574047567d803b10ecc1cb83733f2a741365bc5cd67",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/engine-proof.json": "8b0b796d98eab065c003c34f3fabc3964cb65739db0cf24572022ab69686822d",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/engine-whole-u5e28-ue0100.json": "4e7dd11080577e5322ecc916d403a9585a04a74611084830ac49049c524133da",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/engine-whole-u5e28-ue0101.json": "4e7dd11080577e5322ecc916d403a9585a04a74611084830ac49049c524133da",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/engine-whole-u5e28-ue0102.json": "428fdfe5f78ba3ceb4fcab55725cdf68ebadacf4112427364c0b46ee4f903146",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/engine-whole-u5e28-ufe00.json": "428fdfe5f78ba3ceb4fcab55725cdf68ebadacf4112427364c0b46ee4f903146",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/engine-whole-u5e28.json": "4e7dd11080577e5322ecc916d403a9585a04a74611084830ac49049c524133da",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/metadata.json": "8b52e5a00078b930887038a5f7e202a027baef6062730b6d6663497411aafd9c",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/progressive-review.json": "d0afa63f3c6fc383fdddaed4bc00c0e878852d173742e7edd1d229384af27662",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/progressive.mjs": "384e41c4bb51472f07a721862669c47aed9f88b8cfafe8afd120160a5fb3b469",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/resume.json": "38d88a7b5687ebbcc46e053d0f21aee3ab5cfdcdf87e466f8d47c9a844c91a30",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/serve-progressive.py": "cf42a4c73467ce94c794a0d2bce22824354afbaf42fefec73ba2f54ea45acfb8",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/serve-variants.py": "24d553f0c61521890460cb0f221ad316d94d0ea835442d793a7f65488ba48315",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/sources.json": "fbd8c55f2063b7760091435c6dc283da7518a4cec079262109fe503b7c4a2e76",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/validation.json": "522326f2aa1ea18aa86cc260a15576be5b1f5e9eeb6cfb8ba3653f7b097cfcdb",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/verify-source.mjs": "77d2c86ce35767f437771d4e27aff20413802c15b76c174ecbf35f2de47c0d22",
+    "../hanja-goal-glyphwiki-batch656-2026-10-11/whole-variant-inventory.json": "991db605ae0983b37e0fa2c33ae5b2199b026e28280ce66abe23e98a8365adfc",
+    "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-source-independent-hq-u5e28-source-experiment-2026-10-19/README.md": "39aac76433cb8059f9ab7a95d382b9331b1198e54aa5c5bad0ee19adea02fdd9",
+    "../hanja-source-independent-hq-u5e28-source-experiment-2026-10-19/candidate.mjs": "3fe622b40be700c97234e2c1678dc906e9011763d394a9398f76087006b026d4",
+    "../hanja-source-independent-hq-u5e28-source-experiment-2026-10-19/candidate.d.mts": "8a013e233cc0f123e289c45176b8a74ac15f2e4a4e73b09b3225de16544f6f3c",
+    "../hanja-source-independent-hq-u5e28-source-experiment-2026-10-19/config.json": "61b6d70889ca31c3b48b7391788ac395c0b91152b2db888a8a1a9c2f471ee8b0",
+    "../hanja-source-independent-hq-u5e28-source-experiment-2026-10-19/fixtures.json": "d4aac69430514e6d1396d40d728284014f9c579d2ab4c46e2fb18497338d11c7",
+    "../hanja-source-independent-hq-u5e28-source-experiment-2026-10-19/preparation.json": "4bd26b251ca9c58af828a85424c04308f69cc5514ae03ba0c1cfa985f1369388",
+    "../hanja-source-independent-hq-u5e28-source-experiment-2026-10-19/serve.py": "9fea3bc37465fd377b04da6099725119e39395088f34c0359128a763885e2eed",
+    "../hanja-source-independent-hq-u5e28-source-experiment-2026-10-19/source-check.mjs": "9c78a4b1c8ac304b6974dfcf361c353022a13a69328a1dfa93fdac6c5a655a18",
+    "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs": "25b9a23cdf644798a7336df3f78b72ecc3c4ad10d0fbe860b403a38911e514f6",
+    "../hanja-source-independent-qq-up-u9b57-source-experiment-2026-10-19/candidate.mjs": "fb90d1c01b21f63782729f8ac592dfa98e577a9b90a8470ebe333c2561ac6e64",
+    "../hanja-source-independent-hq-up-u5e28-source-experiment-2026-10-19/README.md": "81a100a833fcc24c3f259186f5f707e269a081c5568d2c1e15f0e87e3186c8ae",
+    "../hanja-source-independent-hq-up-u5e28-source-experiment-2026-10-19/candidate.d.mts": "54e773fc96ccbbfc7349cedac4770ccc49914cb3f186ce35a9c1005cf5e5bc82",
+    "../hanja-source-independent-hq-up-u5e28-source-experiment-2026-10-19/candidate.mjs": "889cc5b92d9d011babe822769fb73e815ff1446e6d77aeaf56ee5b78f68a90cb",
+    "../hanja-source-independent-hq-up-u5e28-source-experiment-2026-10-19/config.json": "ea6db9e60cf08e09966f177a8e035458eae121e133dc2fbad0ec0ceda63fb71d",
+    "../hanja-source-independent-hq-up-u5e28-source-experiment-2026-10-19/fixtures.json": "fe832fcb6f54f651bfdf3a7e2a7adc346b7dfaf117cc18f77902be05041b4998",
+    "../hanja-source-independent-hq-up-u5e28-source-experiment-2026-10-19/preparation.json": "6378a103335e92861a9a5f22d840e69370ca1ac1668adb7e4b17cef58ca01464",
+    "../hanja-source-independent-hq-up-u5e28-source-experiment-2026-10-19/serve.py": "f91852da27442fe9e77a0c6f37c4df8d1cd81701caf50d26bf40d8bb9e3b93b9",
+    "../hanja-source-independent-hq-up-u5e28-source-experiment-2026-10-19/source-check.mjs": "4387db15ecf70435a8a2556c94c95e152753f3fe6d57860b20bd8dfe7cf053b2",
+    "../hanja-renderer-start-gate-candidates4-experiment-2026-10-20/README.md": "28dc8896b7d3b55a05a3ec046b68d83bddc20e5ede0d883cfa121fbff18de1fc",
+    "../hanja-renderer-start-gate-candidates4-experiment-2026-10-20/check.mjs": "de1ae3da01df3947346d8dc340b392287be1803719fbf2782f10124b85795278",
+    "../hanja-renderer-start-gate-candidates4-experiment-2026-10-20/config.json": "963b8e1863002067c3d8af71569f4f432f7f645702b862e9ee8d66909e4c2298",
+    "../hanja-renderer-start-gate-candidates4-experiment-2026-10-20/render.mjs": "cf28d748023b1187ec73f996c47067413a44603d2f77f4ef48c1bb3f480bbe5f",
+    "../hanja-renderer-start-gate-candidates4-experiment-2026-10-20/serve.py": "840760400bcf83114728e139aa2699672eb46cba9a80c3d71613989f2b921b3c",
+    "../hanja-renderer-start-gate-candidates4-experiment-2026-10-20/validation.json": "c9c6a7d5a9d9142ee7769db16914d1762e31a4e612077084a2b90b69a50ea23f",
+    "../hanja-source-native-hold-u5e28-start-gate-gap-2026-10-20/README.md": "463cedd9542f6fcaa4742a8604e12e8c4964fb7433b875a50c8c08ac6bfd90a8",
+    "../hanja-source-native-hold-u5e28-start-gate-gap-2026-10-20/hold.json": "216a6a9699650ad0906abb623da08f068bdb37b38c34c7ec1e04dd5191547567"
+  },
+  "counts": {
+    "pens": 10,
+    "masks": 12,
+    "polygons": 31
+  },
+  "geometrySHA256": "c1488f46315395ce3258b8bccafd0350bd2d49f281e7a187bf4f0bf5cf7fa8b3",
+  "fixtureSHA256": "fe832fcb6f54f651bfdf3a7e2a7adc346b7dfaf117cc18f77902be05041b4998",
+  "fixtureReused": true,
+  "fixtureCopied": false,
+  "sourceGeometryExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "tailDerivations": 0,
+  "engineRuns": 0,
+  "sourceGeometryFieldsChanged": false,
+  "originalFullProofPreserved": true,
+  "legacy5PolicyAndFieldsUnchanged": true,
+  "displayClipOnly": true,
+  "body10Projection": {
+    "q": [
+      73,
+      57
+    ],
+    "v": [
+      0,
+      1
+    ],
+    "a": -1,
+    "b": 36,
+    "normalMin": -21,
+    "normalMax": 3
+  },
+  "checks": {
+    "status": "PASS",
+    "passed": true,
+    "focusedExecutions": 1,
+    "positiveGlobalProjectionMath": 1,
+    "negative": 28,
+    "projection": {
+      "q": [
+        73,
+        57
+      ],
+      "v": [
+        0,
+        1
+      ],
+      "a": -1,
+      "b": 36,
+      "normalMin": -21,
+      "normalMax": 3
+    },
+    "monotonePoints": 950,
+    "zeroAreaLimitUpperBounds": [
+      0.0008879999999999999,
+      0.00000888,
+      8.88e-8,
+      8.88e-10
+    ],
+    "oldCircleORCounterexample": {
+      "globalP": 0.0268,
+      "localP": 0.0337688487054209,
+      "priorBrowserLengthReference": 49.116146087646484,
+      "d": 1.6585957062270849,
+      "blocked": [
+        73,
+        60
+      ],
+      "allowedOutside": [
+        73,
+        64.8293
+      ],
+      "newPlaneRejectsOutsideLeak": true
+    },
+    "legacy5PolicyFunctionsAndFieldsByteExact": true,
+    "allGeometryUnchanged": true,
+    "completionPrefixWholeAlwaysSwept": true,
+    "coveragePanels": 2,
+    "sourceGeometryExecutions": 0,
+    "sourceCompilerCalls": 0,
+    "engineRuns": 0,
+    "browserRasterAreaNotMeasured": true,
+    "coverageUnproved": true,
+    "longCurveGeneralization": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "focusedAttempts": 2,
+    "initialModuleParseFailure": 1,
+    "mathExecutions": 1,
+    "positiveExecutions": 1,
+    "negativeExecutions": 1,
+    "repeatedPassedChecks": 0
+  },
+  "syntax": {
+    "nodeExecutions": 2,
+    "pythonAST": 1,
+    "helperGuard": 1,
+    "passed": true,
+    "allFirstSyntaxPass": true
+  },
+  "previousNativeHold": {
+    "glyph": "帨",
+    "unicode": "u5e28",
+    "reviewedAt": "2026-10-20",
+    "status": "HOLD",
+    "runtimeApplied": false,
+    "nativeApproval": false,
+    "renderer": "docs/hanja-renderer-start-gate-candidates4-experiment-2026-10-20",
+    "rendererValidationSHA256": "c9c6a7d5a9d9142ee7769db16914d1762e31a4e612077084a2b90b69a50ea23f",
+    "rendererSHA256": "cf28d748023b1187ec73f996c47067413a44603d2f77f4ef48c1bb3f480bbe5f",
+    "configSHA256": "963b8e1863002067c3d8af71569f4f432f7f645702b862e9ee8d66909e4c2298",
+    "geometry": {
+      "pens": 10,
+      "masks": 12,
+      "polygons": 31
+    },
+    "nativeReview": {
+      "surface": "Codex native in-app browser panel",
+      "comparison": "국내 자료 / 기존 렌더러 / 새 렌더러",
+      "wholeCompatible": true,
+      "domesticOrderAndDirectionsAt75Percent": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "coarse": {
+        "pens": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "framesPerPenPerRenderer": 9,
+        "pixels": 220,
+        "result": "PASS"
+      },
+      "completionFine": {
+        "pens": [
+          10,
+          2,
+          6,
+          5
+        ],
+        "progress": [
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "pixels": 520,
+        "result": "PASS"
+      },
+      "multimask": {
+        "pens": [
+          5,
+          10
+        ],
+        "checks": [
+          "boundary1-before",
+          "boundary1-at",
+          "boundary1-after",
+          "0",
+          "epsilon .0001%",
+          "95%"
+        ],
+        "result": "PASS; 경계 직후의 가는 AA 흔적과 기존의 유한 면적 시작 덩어리는 구분함"
+      },
+      "coverage": {
+        "targets": [
+          [
+            5,
+            2
+          ],
+          [
+            10,
+            1
+          ]
+        ],
+        "residual": "P minus full round sweep",
+        "pixels": 520,
+        "result": "PASS; 각 오른쪽 잔여 패널에 빨간 잔여 면적 없음"
+      },
+      "browserMetrics": [
+        {
+          "pen": 5,
+          "mask": 2,
+          "length": 26.571182250976562,
+          "tau": 0.5268866047345508
+        },
+        {
+          "pen": 10,
+          "mask": 1,
+          "length": 49.116146087646484,
+          "tau": 0.2850386505288376
+        }
+      ],
+      "naturalPlayback": [
+        {
+          "pen": 5,
+          "seconds": 8,
+          "observedStartPercent": 2.8125,
+          "observedEndPercent": 100,
+          "result": "PASS"
+        },
+        {
+          "pen": 10,
+          "seconds": 8,
+          "observedStartPercent": 2.68,
+          "observedEndPercent": 100,
+          "result": "FAIL",
+          "reason": "시작부에 흰 틈이 생기고 그 아래 세로 부분이 분리된 섬처럼 보임. 같은 프레임의 기존 렌더러 세로 부분은 연속적임. 약 20px의 틈은 육안 추정이며 계측값이 아님. 완료 상태는 일치하지만 초기 자연 재생 결함을 상쇄하지 않음."
+        }
+      ],
+      "firstFailure": "10획 자연 재생 시작 2.68000000%의 흰 틈/분리된 세로 부분",
+      "afterFailure": "진행 중이던 동일 재생의 100% 완료 상태만 기록하고 새 게이트 검토는 중단함"
+    },
+    "server": {
+      "pid": 80881,
+      "port": 64336,
+      "session": 62723,
+      "stopped": true,
+      "exitCode": 143
+    },
+    "unchanged": [
+      "source geometry",
+      "source guide",
+      "reveal width",
+      "source weights",
+      "original HOLD records",
+      "runtime registry",
+      "application renderer",
+      "NOTICE"
+    ],
+    "next": "원 기하를 유지한 별도 표시 정책에서 시작 원 밖 영역의 조기 노출 여부를 수학적으로 조사하고, 새 후보를 만들 경우 전체 검토를 새로 수행한다. 다른 글자의 승인이나 실패를 추정하지 않는다.",
+    "buildRun": false
+  },
+  "previousNativeHoldSHA256": "216a6a9699650ad0906abb623da08f068bdb37b38c34c7ec1e04dd5191547567",
+  "requiredFreshNativeGates": {
+    "whole": true,
+    "allDirections": 10,
+    "allCoarsePens": 10,
+    "completionFine": true,
+    "allMultiPens": [
+      5,
+      10
+    ],
+    "initialZeroEpsilon": true,
+    "coverage": [
+      [
+        5,
+        2
+      ],
+      [
+        10,
+        1
+      ]
+    ],
+    "naturalPens": [
+      5,
+      10
+    ],
+    "allPending": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "coverageVerified": false,
+  "longCurveGeneralization": false,
+  "history": {
+    "focusedAttempts": 2,
+    "failures": 1,
+    "sourceGeometry": 0,
+    "engine": 0,
+    "UI": 0,
+    "server": 0,
+    "HTTP": 0,
+    "Git": 0,
+    "build": 0,
+    "firstFailure": {
+      "phase": "module parse before math/positive/negative",
+      "reason": "String.replace replacement-string dollar-quote metasyntax expanded original suffix while inserting a regex. Corrected to callback insertion; fixed original-mask guard already fully binds polygon grammar.",
+      "mathExecutions": 0,
+      "sourceGeometry": 0,
+      "engine": 0,
+      "sourceFieldsChanged": false
+    },
+    "successfulMathExecutions": 1
+  },
+  "pinCounts": {
+    "input": 48,
+    "ownExcludingValidation": 5,
+    "totalIncludingCapsule": 54
+  },
+  "finalPinCheck": {
+    "inputPins": 48,
+    "ownPins": 5,
+    "mismatch": 0,
+    "passed": true
+  }
+}
