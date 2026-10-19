@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "date": "2026-10-20",
+  "status": "source-only-existing-cache-comparison-ready",
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/sources.json": "ffb9d5fdbe20a7b79291b54f1c66db8decaa7b85d187b7154b0aaf1a3d0f9d8f",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/metadata.json": "dd7b83ebf386cb6b9d4143401c418af4423a8c0dde48b75b0f2b732b4a9be724",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/source-analysis.json": "934874a61ab099a5302e76a47e1d11dcafb18b04117f4cba68ab2679c5ecac7d",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/source-join-analysis.json": "c49af0ac2f2227a849fc63211204b6471f828df07401f79eb7c556e301ecb312",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/candidate-compile-analysis.json": "a4513aed312dee8fa5aa633c573895ffa10da38bd362ce97fd8e73e6604e5cbd",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/review.json": "4e38f9aef6e080b412603a0e2342c66df6c20af32d5693a9f9f07d9f87777371",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/engine-proof.json": "d0b4a55d6516204f56b74b66045c10b9cd5696ebb26892ec9155af52066d9e16",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/engine-whole-u9b37.json": "d0b4a55d6516204f56b74b66045c10b9cd5696ebb26892ec9155af52066d9e16",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/engine-whole-u9b37-ue0100.json": "caea13f67f1825f0e3b28e61b6bad6448359296b763b6ceacc8a84a485412654",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/progressive.mjs": "f0451f4737a63bd12a7091496e4fa0c908f7a1eb716bf02cf3d3d4ca184e3d5c",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/serve-native.py": "4c97299986d36ea225fab049215e09ea7c3f15e8a01db9bfb26503affbbdb333",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/native-server-compile.mjs": "497b5130b710aab8f822611d8eb0b508331190d76027a487b782f03ebfb5aacc",
+    "docs/hanja-goal-glyphwiki-batch877-2026-10-13/native-server-source-audit.json": "c308d1c5c030e4ab3a55f2e98f839337f3c0c5f79f689f33b07cd7101309529e",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47"
+  },
+  "newFilesSHA256": {
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/config.json": "02d6c204e4adf7169af4df1a4c60f61f8fee094238ecd89348066cf4d7100779",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/browser.mjs": "b523aa4603072ef3daec79d43aecf8d0cd4483b80107207dfdb7aa596b9be273",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/server.py": "3c1db32c7283d2ac14b45e6e2227a126e5d83a5e79988d056323de5422348f6c",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/check.mjs": "d12906466e8d54ea643a51bc953134066325b203a67028dc1032cc12250afa8b",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/README.md": "aa96928e479697523d009fbef9c9f3ad129c96141c6457ec3d0789a0780289d0"
+  },
+  "focused": {
+    "executed": true,
+    "executions": 1,
+    "passed": true,
+    "failed": 0,
+    "repeatPassed": 0,
+    "sourcePins": 14,
+    "roots": 2,
+    "closureRecords": 11,
+    "originalRawPerRoot": 23,
+    "originalPolygonsPerRoot": 53,
+    "unchangedDomesticFunctions": 2,
+    "negativeChecks": 8,
+    "command": "rtk proxy node docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/check.mjs"
+  },
+  "syntax": {
+    "executed": true,
+    "bundles": 1,
+    "nodeBrowserCheck": {
+      "passed": true,
+      "executions": 1
+    },
+    "pythonASTOnly": {
+      "passed": true,
+      "executions": 1,
+      "serverModuleImported": false
+    },
+    "failed": 0,
+    "repeatPassed": 0
+  },
+  "sourceGeometryChanged": false,
+  "newGrouping": false,
+  "newOrder": false,
+  "compilerExecutions": 0,
+  "engineExecutions": 0,
+  "HTTPRequests": 0,
+  "serverStarted": false,
+  "browserNativeReviewed": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "appUI": false,
+  "originalHoldChanged": false,
+  "originalServerImportSideEffects": {
+    "imported": false,
+    "observedFromSource": [
+      "C=compiled() invokes Node compiler",
+      "review.renderer.source(...) requests dictionary SVG"
+    ],
+    "newServerImportsOriginal": false
+  },
+  "metadataToolingHistory": {
+    "applyPatchFormattingFailures": 1,
+    "filesChangedByFailedPatch": 0,
+    "sourceOrFocusedTestFailures": 0
+  }
+}
