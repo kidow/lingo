@@ -1,0 +1,656 @@
+{
+  "schema": "hanja-independent-masks-source-preparation-v1",
+  "date": "2026-10-20",
+  "glyph": "澯",
+  "root": "u6faf",
+  "configSHA256": "7ceb0ef66f7ee3c7286aecfb3e37d0bbf6e7aefed6153ff750ad934e271d3274",
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/NOTICE.md": "4b9df5a87400b66003be3e6d83ae97945c5f753ef8834b08b76455230056349d",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/README.md": "da480a291ed779fd72b4a72c25d3c8ad2be92b44f5802bf29783336dba68125d",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/blocked-source-contract.mjs": "0704ab365dee6fc00ccfbb8ec6734affbf937e7fe15cac889a410edb6b25f204",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/candidate-compile-analysis.json": "b52ecd33ad71e8b474b5373bdb5e9a4f6575039c507b418e0f66c5c8992f1694",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/engine-proof.json": "11b5c2190fc244be637b93c04029d63a6158c1c85b89d682b5766170495e355f",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf-k.json": "028b52248ef798c67a18daa367827f7f9d203b99266def85175185f35b3cecd4",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf-ue0100.json": "028b52248ef798c67a18daa367827f7f9d203b99266def85175185f35b3cecd4",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf-ue0101.json": "028b52248ef798c67a18daa367827f7f9d203b99266def85175185f35b3cecd4",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf-ue0102.json": "09c56ee1a4695e8ed206eef891b738805dd7a546c9e4fbcc3547a6db1caf193c",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf.json": "11b5c2190fc244be637b93c04029d63a6158c1c85b89d682b5766170495e355f",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/metadata.json": "2b866f2f559ffb56e3d1243d2739f68a8f78c5803558afbc97706347c8eb06ef",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/native-server-input-pins.json": "e5bb72256b7ea98929a449f513037b680af7f7794df6ef8fcce35b9187db18c6",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/resume.json": "08e8b164fa2ea684130b280c685828cd857b235cbdaa9947a3937c86a69e443b",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/review.json": "f20f5e9bba7e956ca78959f6463b007776c9c727a2068d897264429397cecb1b",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/serve-native.py": "503a866ddb4fba33ee2ffb724ed12c4c7881eae7ac4b52dfe9527aab9e8729ba",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/source-analysis.json": "f2af74e169eb6250d19e4dfc8b26ac66879dab3f429e5650f038a5a35e55edde",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/source-join-analysis.json": "4d4caecc6693b5db6267059f1b80e3588f51ff7734c55feb78ed45108f3a7e3d",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/sources.json": "d68c59d2f9c3e8b440c5e81852854dbd51b615fbc62c17254e990bec0003048c",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/strict-native-server-preflight.json": "b568bbe087b353ec6cf07827a5f7cad04261d7de671f355b3ef7d7809e27dee0",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/validation.json": "5d36dcd5d199736c99493c1dfb9fc4bc17115a27cf5d4962c5504b227b7efa46",
+    "../hanja-goal-glyphwiki-batch904-2026-10-13/verify-source.mjs": "4ad10ad05d8ce1b95e40b0d4490c40a788341b18f0e904a43a423fc6447d0bd9",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-source-mapping-u6faf-experiment-2026-10-19/README.md": "42a9857610ab9cfeea4a792bdd393182774af118a619cef008577d594e40cf0e",
+    "../hanja-source-mapping-u6faf-experiment-2026-10-19/config.json": "c4592d7feb5d086d7d6949fd2ac0cc53843c03a2892af3f912871baa07b4c562",
+    "../hanja-source-mapping-u6faf-experiment-2026-10-19/serve.py": "91a39b35d9832285a213f9fc32b60e33ecca979c1c286fd1637009885f4ce0e1",
+    "../hanja-source-mapping-u6faf-experiment-2026-10-19/validation.json": "156b5fc17dce0794791df2e66b9e1909d6974c641dc936fddf9daaf58e2a7d23",
+    "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c"
+  },
+  "newFilesSHA256": {
+    "config.json": "7ceb0ef66f7ee3c7286aecfb3e37d0bbf6e7aefed6153ff750ad934e271d3274",
+    "candidate.mjs": "7f2c99da374163a5656dce50ce7416af4f528f9c111d5e10e2171a9181e52072",
+    "candidate.d.mts": "f39cfaebd7b7f74149ef385fad1ac98efc9058d63331ca0cf1a0ff70faace03c",
+    "fixtures.json": "1e71719f693fe3d854e2e928bd4be283a225d82db7e77884e7897fdcde566c95",
+    "source-check.mjs": "336c6ad8c9dbec30a8b109ebf7fc76c8917a0045fde7ef77d252138fd5749b65",
+    "serve.py": "c10b48dbffae5bfbd0be0e023e6110522456c6139874ed0aae5c8c1dffa313da",
+    "README.md": "ac6d03ba64ec5d94eea04ca2fa4b012ee02b56e278d1cb6e870301e33ab3a105"
+  },
+  "baselineSHA256": "734fc080df851f3f7f681eb160e339dd7c11067f4a6da9e73b1cda23dd6d58c6",
+  "derivedSHA256": "734fc080df851f3f7f681eb160e339dd7c11067f4a6da9e73b1cda23dd6d58c6",
+  "counts": {
+    "raw": 19,
+    "drawCalls": 19,
+    "factoryPens": 17,
+    "baselinePens": 16,
+    "baselineMasks": 17,
+    "pens": 16,
+    "masks": 17,
+    "polygons": 36
+  },
+  "factorySourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ]
+  ],
+  "factoryGroupMap": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ]
+  ],
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ]
+  ],
+  "sourceContract": {
+    "identity": {
+      "root": "u6faf",
+      "file": "../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf.json",
+      "fileSHA256": "11b5c2190fc244be637b93c04029d63a6158c1c85b89d682b5766170495e355f"
+    },
+    "fullProofKeys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "existingSelectedFull5Preserved": true,
+    "selectedThreeKeyBodyExactlyMatchesFull5Subset": false,
+    "newHeaderTraceCombination": false,
+    "defaultProofMixed": false,
+    "newStrictWrapper": true,
+    "originalProgressiveCompilerExisted": false,
+    "originalCompilerCalls": 0,
+    "mandatoryProgressiveArgs": 3,
+    "mandatoryWholeArgs": 4,
+    "mandatoryCaptureArgs": 3,
+    "selectedWholeActualFull5": true,
+    "archivedDefaultFull5ExactlyMatchesSelectedFull5": true
+  },
+  "sourceSnapshot": {
+    "sourceFile": "../hanja-goal-glyphwiki-batch904-2026-10-13/sources.json",
+    "sourceFamily": {
+      "records": 14,
+      "metadataRoot": "u6faf",
+      "providerVersions": 0,
+      "providerAlreadyIncludedInRecords": true,
+      "wholeNames": [
+        "u6faf",
+        "u6faf-k",
+        "u6faf-ue0100",
+        "u6faf-ue0101",
+        "u6faf-ue0102"
+      ],
+      "selectedRoot": "u6faf",
+      "selectedRootClosure": [
+        "u6faf",
+        "u6c35-01",
+        "u7cb2-var-001",
+        "u239bc-07-var-001",
+        "u6b7a-01",
+        "u53c8-07-var-003",
+        "u7c73-04"
+      ],
+      "selectedRootClosureCount": 7,
+      "selectedVersionedProviderRecordsUsed": 0,
+      "rootMixing": false
+    },
+    "missing": [],
+    "aliases": [],
+    "sourceBytesUnchanged": true
+  },
+  "geometryFactory": {
+    "originModule": "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs",
+    "functionBytes": 8067,
+    "functionSHA256": "4ea61b5e0ba522559dd0c5ef42a24cae29159a79ea4e38ff56a836a25d713355",
+    "byteExact": true,
+    "originalSourceModuleCalls": 0,
+    "copiedFactoryExecutions": 1,
+    "sourceGeometryGenerations": 1,
+    "engineRuns": 0,
+    "publicFixtureSavedBeforeChecks": true,
+    "captureAttempts": 1,
+    "successfulCaptures": 1,
+    "additionalSourceGeometryAfterCapture": 0
+  },
+  "independentMaskPolicies": [
+    {
+      "pen": 3,
+      "raw": [
+        2,
+        3
+      ],
+      "kinds": [
+        "cdDrawCurve",
+        "cdDrawCurve"
+      ],
+      "end": [
+        37.425,
+        184
+      ],
+      "start": [
+        33.6,
+        150
+      ],
+      "delta": [
+        -3.8249999999999957,
+        -34
+      ],
+      "rawCoordinateGap": 34.214479756383845,
+      "normalizedGap": 17.107239878191923,
+      "trajectoryConcatenation": false,
+      "connector": false,
+      "newCoordinates": false
+    }
+  ],
+  "exactJoins": [
+    [
+      7,
+      8
+    ],
+    [
+      10,
+      11
+    ]
+  ],
+  "orderEvidence": {
+    "completeArrayStoredInOriginal": false,
+    "rootStaticShapeMapping": {
+      "observer": "root",
+      "kind": "staticWholeAndRawShapeMapping",
+      "wholeCompatible": 1,
+      "rawShapesCompared": 19,
+      "domesticShapeMappingsPassed": 16,
+      "sourceGroups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          12
+        ],
+        [
+          13
+        ],
+        [
+          14
+        ],
+        [
+          15
+        ],
+        [
+          16
+        ],
+        [
+          17
+        ],
+        [
+          18
+        ]
+      ],
+      "notAnimationOrderApproval": true,
+      "directionsReviewed": 0,
+      "progressiveFrames": 0,
+      "fine": 0,
+      "coarse": 0,
+      "boundaries": 0,
+      "naturalReplay": 0,
+      "water3RawOrder": [
+        2,
+        3
+      ],
+      "water3ReverseUpwardSourcePieceOrderPreserved": true,
+      "freshAllNativeGatesRequired": true,
+      "server": {
+        "pid": 45000,
+        "port": 59547,
+        "sessionId": 44133,
+        "stopped": true,
+        "exitCode": 143
+      },
+      "evidenceSource": "Parent root direct observation message; separate from unchanged archived mapping helper config."
+    },
+    "observedDomesticPensOriginal": [
+      3
+    ],
+    "newStaticShapeMappingPens": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "compatibleWholeRoots": [
+      "u6faf",
+      "u6faf-k",
+      "u6faf-ue0100",
+      "u6faf-ue0101"
+    ],
+    "provisionalCompleteOrder": true,
+    "newProgressiveApproval": false,
+    "groupBasis": "New root static full16 shape mapping only. Original19 raw relative order and exact7/8,10/11 retained. water3 QQ raw2→3 source order preserved; animated direction/progress not approved."
+  },
+  "tailPolicy": {
+    "derivations": 0,
+    "corrections": 0,
+    "unmodifiedRisks": [
+      {
+        "pen": 5,
+        "raw": [
+          5
+        ],
+        "kind": "cdDrawLine",
+        "flags": [
+          2,
+          200
+        ],
+        "correctionApplied": false,
+        "freshFineRequired": true
+      }
+    ]
+  },
+  "allMultiMaskBoundaries": {
+    "3": [
+      0.38419202040013944
+    ]
+  },
+  "allOriginalPolygonsExactOnce": true,
+  "allMaskFieldsUnderExactFactoryReferencesPreserved": true,
+  "baselineComparison": {
+    "baselineEqualsFinal": true,
+    "sameNewLogicalPenAndPrefix": true,
+    "independentNativeEvidence": false
+  },
+  "priorNativeHistory": {
+    "originalBatch": 904,
+    "wholeVariantsReviewed": 5,
+    "domesticDirectionPensObserved": [
+      3
+    ],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "originalHoldPreserved": true,
+    "currentNativeEvidence": 0,
+    "currentApprovalInherited": false
+  },
+  "attribution": {
+    "originalNOTICEPreserved": true,
+    "NOTICEFile": "../hanja-goal-glyphwiki-batch904-2026-10-13/NOTICE.md",
+    "NOTICESHA256": "4b9df5a87400b66003be3e6d83ae97945c5f753ef8834b08b76455230056349d"
+  },
+  "sourceChecks": {
+    "status": "PASS",
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "cachedPositive": 1,
+    "negative": 29,
+    "sourceGeometryGenerations": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "pens": 16,
+    "masks": 17,
+    "polygons": 36,
+    "allMaskFieldsPreserved": true,
+    "closure": [
+      "u6faf",
+      "u6c35-01",
+      "u7cb2-var-001",
+      "u239bc-07-var-001",
+      "u6b7a-01",
+      "u53c8-07-var-003",
+      "u7c73-04"
+    ],
+    "boundaries": {
+      "3": [
+        0.38419202040013944
+      ]
+    },
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "allPassedFirstAttempt": true,
+    "repeated": false
+  },
+  "syntax": {
+    "node": {
+      "executions": 2,
+      "passed": true,
+      "repeated": false
+    },
+    "declarationAST": {
+      "executions": 1,
+      "diagnostics": 0,
+      "passed": true
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "passed": true,
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "HTTP": 0
+    }
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registryChanged": false,
+  "catalogChanged": false,
+  "originalSourceChanged": false,
+  "originalNOTICEChanged": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "HTTPRequested": false,
+  "buildExecuted": false,
+  "toolingHistory": [],
+  "finalPinCheck": {
+    "inputCount": 29,
+    "ownCount": 7,
+    "mismatches": 0,
+    "passed": true,
+    "sourceGeometryGenerationsTotal": 1,
+    "additionalSourceGeometryAfterCapture": 0,
+    "tailDerivationsTotal": 0,
+    "engineRuns": 0
+  },
+  "rootStaticMappingEvidence": {
+    "observer": "root",
+    "kind": "staticWholeAndRawShapeMapping",
+    "wholeCompatible": 1,
+    "rawShapesCompared": 19,
+    "domesticShapeMappingsPassed": 16,
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ]
+    ],
+    "notAnimationOrderApproval": true,
+    "directionsReviewed": 0,
+    "progressiveFrames": 0,
+    "fine": 0,
+    "coarse": 0,
+    "boundaries": 0,
+    "naturalReplay": 0,
+    "water3RawOrder": [
+      2,
+      3
+    ],
+    "water3ReverseUpwardSourcePieceOrderPreserved": true,
+    "freshAllNativeGatesRequired": true,
+    "server": {
+      "pid": 45000,
+      "port": 59547,
+      "sessionId": 44133,
+      "stopped": true,
+      "exitCode": 143
+    },
+    "evidenceSource": "Parent root direct observation message; separate from unchanged archived mapping helper config."
+  },
+  "finalMetadataReview": {
+    "replacedTemplateTailRiskListWithActualRaw5Flag200": true,
+    "helperTitleCorrectedToQQ": true,
+    "geometryModuleFixtureCheckerUnchanged": true,
+    "checksRepeated": 0
+  }
+}

@@ -1,0 +1,151 @@
+export { renderProgressive } from '../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs'
+// Provisional source-only review compiler. Domestic order and browser approval are pending.
+import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
+import { readFileSync } from 'node:fs'
+
+const digest = (value) => createHash('sha256').update(JSON.stringify(value)).digest('hex')
+const endpoint = (call) => call.args.slice(call.kind === 'cdDrawLine' ? 2 : call.kind === 'cdDrawCurve' ? 4 : 6, call.kind === 'cdDrawLine' ? 4 : call.kind === 'cdDrawCurve' ? 6 : 8)
+const point = (x, y) => ({ x: Math.floor(x * 10) / 10, y: Math.floor(y * 10) / 10, off: 0 })
+
+
+const local=n=>new URL(n,import.meta.url),json=n=>JSON.parse(readFileSync(local(n),'utf8')),sha=b=>createHash('sha256').update(b).digest('hex')
+const round=x=>Math.round(x*1e6)/1e6
+const T=json('./config.json').targets.u6faf,FIXED_PINS={"../hanja-goal-glyphwiki-batch904-2026-10-13/NOTICE.md":"4b9df5a87400b66003be3e6d83ae97945c5f753ef8834b08b76455230056349d","../hanja-goal-glyphwiki-batch904-2026-10-13/README.md":"da480a291ed779fd72b4a72c25d3c8ad2be92b44f5802bf29783336dba68125d","../hanja-goal-glyphwiki-batch904-2026-10-13/blocked-source-contract.mjs":"0704ab365dee6fc00ccfbb8ec6734affbf937e7fe15cac889a410edb6b25f204","../hanja-goal-glyphwiki-batch904-2026-10-13/candidate-compile-analysis.json":"b52ecd33ad71e8b474b5373bdb5e9a4f6575039c507b418e0f66c5c8992f1694","../hanja-goal-glyphwiki-batch904-2026-10-13/engine-proof.json":"11b5c2190fc244be637b93c04029d63a6158c1c85b89d682b5766170495e355f","../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf-k.json":"028b52248ef798c67a18daa367827f7f9d203b99266def85175185f35b3cecd4","../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf-ue0100.json":"028b52248ef798c67a18daa367827f7f9d203b99266def85175185f35b3cecd4","../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf-ue0101.json":"028b52248ef798c67a18daa367827f7f9d203b99266def85175185f35b3cecd4","../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf-ue0102.json":"09c56ee1a4695e8ed206eef891b738805dd7a546c9e4fbcc3547a6db1caf193c","../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf.json":"11b5c2190fc244be637b93c04029d63a6158c1c85b89d682b5766170495e355f","../hanja-goal-glyphwiki-batch904-2026-10-13/metadata.json":"2b866f2f559ffb56e3d1243d2739f68a8f78c5803558afbc97706347c8eb06ef","../hanja-goal-glyphwiki-batch904-2026-10-13/native-server-input-pins.json":"e5bb72256b7ea98929a449f513037b680af7f7794df6ef8fcce35b9187db18c6","../hanja-goal-glyphwiki-batch904-2026-10-13/resume.json":"08e8b164fa2ea684130b280c685828cd857b235cbdaa9947a3937c86a69e443b","../hanja-goal-glyphwiki-batch904-2026-10-13/review.json":"f20f5e9bba7e956ca78959f6463b007776c9c727a2068d897264429397cecb1b","../hanja-goal-glyphwiki-batch904-2026-10-13/serve-native.py":"503a866ddb4fba33ee2ffb724ed12c4c7881eae7ac4b52dfe9527aab9e8729ba","../hanja-goal-glyphwiki-batch904-2026-10-13/source-analysis.json":"f2af74e169eb6250d19e4dfc8b26ac66879dab3f429e5650f038a5a35e55edde","../hanja-goal-glyphwiki-batch904-2026-10-13/source-join-analysis.json":"4d4caecc6693b5db6267059f1b80e3588f51ff7734c55feb78ed45108f3a7e3d","../hanja-goal-glyphwiki-batch904-2026-10-13/sources.json":"d68c59d2f9c3e8b440c5e81852854dbd51b615fbc62c17254e990bec0003048c","../hanja-goal-glyphwiki-batch904-2026-10-13/strict-native-server-preflight.json":"b568bbe087b353ec6cf07827a5f7cad04261d7de671f355b3ef7d7809e27dee0","../hanja-goal-glyphwiki-batch904-2026-10-13/validation.json":"5d36dcd5d199736c99493c1dfb9fc4bc17115a27cf5d4962c5504b227b7efa46","../hanja-goal-glyphwiki-batch904-2026-10-13/verify-source.mjs":"4ad10ad05d8ce1b95e40b0d4490c40a788341b18f0e904a43a423fc6447d0bd9","../hanja-g2-batch10-2026-09-16/serve.py":"3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47","../hanja-source-mapping-u6faf-experiment-2026-10-19/README.md":"42a9857610ab9cfeea4a792bdd393182774af118a619cef008577d594e40cf0e","../hanja-source-mapping-u6faf-experiment-2026-10-19/config.json":"c4592d7feb5d086d7d6949fd2ac0cc53843c03a2892af3f912871baa07b4c562","../hanja-source-mapping-u6faf-experiment-2026-10-19/serve.py":"91a39b35d9832285a213f9fc32b60e33ecca979c1c286fd1637009885f4ce0e1","../hanja-source-mapping-u6faf-experiment-2026-10-19/validation.json":"156b5fc17dce0794791df2e66b9e1909d6974c641dc936fddf9daaf58e2a7d23","../hanja-current-source-u4f8a-2026-10-18/progressive.mjs":"cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f","../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs":"a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09","../hanja-special2-direction-review-2026-09-21/serve.py":"3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c"},EXPECTED_IDENTITY={"root":"u6faf","file":"../hanja-goal-glyphwiki-batch904-2026-10-13/engine-whole-u6faf.json","fileSHA256":"11b5c2190fc244be637b93c04029d63a6158c1c85b89d682b5766170495e355f"},FIXED_PROOF_SHA="95f76782a63f2b220dc92bd1d83d1a924d7ae2e11a1eda04a2726c2193b53503",FIXED_BASELINE_SHA="734fc080df851f3f7f681eb160e339dd7c11067f4a6da9e73b1cda23dd6d58c6"
+const ORIGINAL_SOURCE_GROUPS=[[0],[1],[2],[3],[4],[5],[6],[7,8],[9],[10,11],[12],[13],[14],[15],[16],[17],[18]],FACTORY_MAP=[[0],[1],[2,3],[4],[5],[6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16]],RAW_COUNT=19,ORIGINAL=[[{"kind":"cdDrawCurve","args":[26.715,20,45.84,27,54.255,41,7,8]}],[{"kind":"cdDrawCurve","args":[12.18,66,32.835,73,40.485,87,7,8]}],[{"kind":"cdDrawCurve","args":[13.71,133,40.485,142,37.425,184,7,8]}],[{"kind":"cdDrawCurve","args":[33.6,150,36.66,138,68.79,67,32,7]}],[{"kind":"cdDrawLine","args":[96.11,12.875,96.11,46.475,0,32]}],[{"kind":"cdDrawLine","args":[96.11,29.15,126.08149999999999,29.15,2,200]}],[{"kind":"cdDrawCurve","args":[79.9715,38.075,76.89750000000001,60.65,60.759,73.25,0,7]}],[{"kind":"cdDrawLine","args":[79.203,47.525,114.554,47.525,2,2]}],[{"kind":"cdDrawCurve","args":[114.554,47.525,106.10049999999998,89,60.759,104.225,22,7]}],[{"kind":"cdDrawCurve","args":[73.8235,59.075,87.6565,64.85,92.2675,74.3,7,8]}],[{"kind":"cdDrawLine","args":[122.92775,23.973500000000005,174.02937500000002,23.973500000000005,0,2]}],[{"kind":"cdDrawCurve","args":[174.02937500000002,23.973500000000005,157.455875,76.96700000000001,116.4825,94.271,22,7]}],[{"kind":"cdDrawCurve","args":[124.308875,44.522000000000006,161.138875,63.989,181.85575,102.38225,7,8]}],[{"kind":"cdDrawCurve","args":[84.075,102.125,99.3,111.125,105.1,123.5,7,8]}],[{"kind":"cdDrawCurve","args":[156.575,101,150.05,113.375,136.275,131.375,0,7]}],[{"kind":"cdDrawLine","args":[60.15,131.375,184.125,131.375,0,0]}],[{"kind":"cdDrawLine","args":[121.775,93.125,121.775,183.125,0,0]}],[{"kind":"cdDrawCurve","args":[117.425,131.375,99.3,165.125,59.425,182,132,7]}],[{"kind":"cdDrawCurve","args":[124.675,131.375,144.975,160.625,179.775,174.125,7,0]}]],TRACE_SHA256="aaa72459928f21dc040b74b81206ce27689c217d512d2578306e48a94b0ec657",GROUPS_SHA256="7c616862fbe2a9e0e873d27a08d0825e73aa2347abd484064275cd7eb1c59b59",PINNED_DEFAULTS={"kMage":10,"kWidth":5,"kMinWidthT":6,"kAdjustMageStep":5},ENGINE_REVISION="49232bac0348fe815f4200d4116ab7917e0db47f",ENGINE_HASHES={"2d.js":"dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942","buhin.js":"6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456","curve.js":"77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da","kage.js":"c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78","kagecd.js":"489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860","kagedf.js":"e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847","polygon.js":"f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2","polygons.js":"111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"},UP_TAIL_GROUPS=[],LEFT_TAIL_GROUPS=[],SINGLE_CARDINAL_TIP_RAW=[]
+export const selectedProofIdentity=structuredClone(EXPECTED_IDENTITY),sourceRoot="u6faf",sourceGroups=[[0],[1],[2,3],[4],[5],[6],[7,8],[9],[10,11],[12],[13],[14],[15],[16],[17],[18]],nativeApproval=false,runtimeApplied=false
+function validateSelectedProof(trace,proof,identity){assert(identity&&Object.getPrototypeOf(identity)===Object.prototype);assert.deepEqual(identity,EXPECTED_IDENTITY);assert.deepEqual(T.identity,EXPECTED_IDENTITY);assert.deepEqual(T.inputSHA256,FIXED_PINS);assert.deepEqual(T.factorySourceGroups,ORIGINAL_SOURCE_GROUPS);assert.deepEqual(T.factoryGroupMap,FACTORY_MAP);assert.deepEqual(T.sourceGroups,sourceGroups);assert.equal(T.baselineSHA256,FIXED_BASELINE_SHA);assert.equal(T.derivedSHA256,FIXED_BASELINE_SHA);assert(proof&&Object.getPrototypeOf(proof)===Object.prototype);assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(digest(proof),FIXED_PROOF_SHA);assert.equal(T.fullProofSHA256,FIXED_PROOF_SHA);assert.deepEqual(trace,proof.trace);for(const[f,h]of Object.entries(FIXED_PINS))assert.equal(sha(readFileSync(local(f))),h,f);assert.deepEqual(proof,json(identity.file));const s=json("../hanja-goal-glyphwiki-batch904-2026-10-13/sources.json");assert.equal(s.root,"u6faf");assert.equal(s.glyph,T.glyph);assert.deepEqual(s.missing,[]);assert.deepEqual(s.aliases,[]);assert.equal(Object.keys(s.records).length,T.sourceFamily.records);assert.equal(s.providerVersions.length,T.sourceFamily.providerVersions);for(const p of s.providerVersions)assert.equal(s.records[p.name].data,(p.responseIdentity||p).data);for(const r of Object.values(s.records))for(const row of r.data.split('$'))if(row.startsWith('99:'))assert(s.records[row.split(':')[7]])}
+function generateGeometry(trace,proof,identity){const sourceGroups=ORIGINAL_SOURCE_GROUPS
+function compileBound(trace, proof, identity) {
+  validateSelectedProof(trace, proof, identity)
+  assert.deepEqual(sourceGroups, ORIGINAL_SOURCE_GROUPS, "Pinned numeric source grouping; no native order approval")
+  assert.equal(trace.length, RAW_COUNT)
+  assert.equal(proof.groups.length, RAW_COUNT)
+  assert.deepEqual(trace.map(row => row.map(call => ({ kind: call.kind, args: call.args }))), ORIGINAL)
+  assert.equal(digest(trace), TRACE_SHA256, 'Every original trajectory and polygon must match the selected whole root')
+  assert.equal(digest(proof.groups), GROUPS_SHA256)
+  assert.deepEqual(proof.defaults, PINNED_DEFAULTS)
+  assert.equal(proof.engineRevision, ENGINE_REVISION)
+  assert.deepEqual(proof.engineHashes, ENGINE_HASHES)
+  const rawIndices = sourceGroups.flat()
+  assert.deepEqual([...rawIndices].sort((a, b) => a - b), Array.from({ length: RAW_COUNT }, (_, index) => index), 'Every original raw group must occur exactly once')
+  for (let index = 0; index < trace.length; index++) {
+    assert.deepEqual(trace[index].flatMap(call => call.polygons), proof.groups[index].polygons)
+  }
+  const segment = (polygons, direction, weight) => {
+    const points = polygons.flat()
+    assert(points.length > 0 && points.every(value => value.off === 0))
+    assert(weight > 0)
+    const xs = points.map(value => value.x / 2), ys = points.map(value => value.y / 2)
+    const normalized = polygons.map(polygon => {
+      const area = polygon.reduce((sum, value, index) => { const next = polygon[(index + 1) % polygon.length]; return sum + value.x * next.y - next.x * value.y }, 0)
+      assert(area !== 0)
+      return area < 0 ? [polygon[0], ...polygon.slice(1).reverse()] : polygon
+    })
+    return {
+      outline: normalized.map(polygon => polygon.map((value, index) => `${index ? 'L' : 'M'}${value.x / 2} ${value.y / 2}`).join(' ') + ' Z').join(' '),
+      bounds: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)],
+      direction,
+      weight: Math.round(weight * 1e6) / 1e6,
+    }
+  }
+  // The tail is an existing emitted polygon. Its extra directional mask adds no geometry or connector.
+  const terminalUpTail = (indices) => {
+    const terminal = trace[indices.at(-1)].at(-1)
+    assert.equal(terminal.kind, 'cdDrawLine')
+    const [x1, y1, x2, y2, ta1, ta2] = terminal.args
+    assert.equal(y1, y2); assert(x1 < x2)
+    assert.equal(ta1 % 1000, 6); assert.equal(ta2 % 100, 5)
+    const opt1 = Math.floor(ta1 / 1000)
+    const width = proof.defaults.kMinWidthT - opt1 / 2
+    const jump = proof.defaults.kWidth * (4 * (1 - opt1 / proof.defaults.kAdjustMageStep) + 1)
+    assert(width > 0 && jump > 0)
+    const polygon = [point(x2, y2 - width), point(x2 + 2, y2 - width - jump), point(x2, y2 - width - jump), point(x2 - width, y2 - width)]
+    assert.deepEqual(terminal.polygons.at(-1), polygon, 'Pinned original terminal5 upward-tail polygon identity')
+    return { polygon, jump, direction: 'up' }
+  }
+  const terminalLeftTail = (indices) => {
+    const terminal = trace[indices.at(-1)].at(-1)
+    assert.equal(terminal.kind, 'cdDrawCurve')
+    const [x1, y1, cx, cy, x2, y2, ta1, ta2] = terminal.args
+    assert.equal(cy, y2); assert(cx > x2)
+    assert.equal(ta2 % 100, 14)
+    const opt1 = Math.floor(ta1 / 1000), opt2 = Math.floor((ta2 % 1000) / 100)
+    const width = proof.defaults.kMinWidthT - opt1 / 2
+    const jump = proof.defaults.kWidth * 4 * Math.min(1 - opt2 / 10, (width / proof.defaults.kMinWidthT) ** 3) * (width > 6 ? 6 / width : 1)
+    assert(width > 0 && jump > 0)
+    const polygon = [point(x2, y2), point(x2, y2 - width), point(x2 - jump, y2 - width), point(x2 - jump, y2 - width * 0.5)]
+    assert.deepEqual(terminal.polygons.at(-1), polygon, 'Pinned original terminal14 left-tail polygon identity')
+    return { polygon, jump, direction: 'left' }
+  }
+  const tails = new Map()
+  for (const indices of UP_TAIL_GROUPS) tails.set(JSON.stringify(indices), terminalUpTail(indices))
+  for (const indices of LEFT_TAIL_GROUPS) tails.set(JSON.stringify(indices), terminalLeftTail(indices))
+  const compile = (indices, tail) => {
+    const calls = indices.flatMap(index => trace[index]).map(call => ({ ...call, polygons: [...call.polygons] }))
+    if (tail) assert.deepEqual(calls.at(-1).polygons.pop(), tail.polygon)
+    for (let index = 1; index < calls.length; index++) {
+      assert.deepEqual(endpoint(calls[index - 1]), calls[index].args.slice(0, 2), 'Merged original trajectories must be exactly continuous; no invented connectors')
+    }
+    const pieces = calls.map(call => {
+      const args = call.args
+      if (call.kind === 'cdDrawBezier') return {
+        ...segment(call.polygons, 'curve', Math.hypot(args[6] - args[0], args[7] - args[1]) / 2),
+        revealPath: `M${args[0] / 2} ${args[1] / 2} C${args[2] / 2} ${args[3] / 2} ${args[4] / 2} ${args[5] / 2} ${args[6] / 2} ${args[7] / 2}`,
+        revealWidth: 14,
+      }
+      if (call.kind === 'cdDrawCurve') return {
+        ...segment(call.polygons, 'curve', Math.hypot(args[4] - args[0], args[5] - args[1]) / 2),
+        revealPath: `M${args[0] / 2} ${args[1] / 2} Q${args[2] / 2} ${args[3] / 2} ${args[4] / 2} ${args[5] / 2}`,
+        revealWidth: 14,
+      }
+      const piece = segment(call.polygons, args[0] === args[2] ? (args[3] > args[1] ? 'down' : 'up') : args[1] === args[3] ? (args[2] > args[0] ? 'right' : 'left') : 'curve', Math.hypot(args[2] - args[0], args[3] - args[1]) / 2)
+      return piece.direction === 'curve' ? { ...piece, revealPath: `M${args[0] / 2} ${args[1] / 2} L${args[2] / 2} ${args[3] / 2}`, revealWidth: 14 } : piece
+    })
+    if (pieces.length === 1) return pieces[0]
+    const first = calls[0].args
+    return {
+      outline: pieces.map(piece => piece.outline).join(' '),
+      bounds: [Math.min(...pieces.map(piece => piece.bounds[0])), Math.min(...pieces.map(piece => piece.bounds[1])), Math.max(...pieces.map(piece => piece.bounds[2])), Math.max(...pieces.map(piece => piece.bounds[3]))],
+      direction: 'curve',
+      weight: Math.round(pieces.reduce((sum, piece) => sum + piece.weight, 0) * 1e6) / 1e6,
+      revealPath: `M${first[0] / 2} ${first[1] / 2} ${calls.map(call => { const args = call.args; return call.kind === 'cdDrawLine' ? `L${args[2] / 2} ${args[3] / 2}` : call.kind === 'cdDrawBezier' ? `C${args[2] / 2} ${args[3] / 2} ${args[4] / 2} ${args[5] / 2} ${args[6] / 2} ${args[7] / 2}` : `Q${args[2] / 2} ${args[3] / 2} ${args[4] / 2} ${args[5] / 2}` }).join(' ')}`,
+      revealWidth: 14,
+    }
+  }
+  const outlines = sourceGroups.map(indices => {
+    const tail = tails.get(JSON.stringify(indices))
+    return tail ? [compile(indices, tail), segment([tail.polygon], tail.direction, tail.jump / 2)] : [compile(indices)]
+  })
+  const emittedPolygonCount = outlines.flat().reduce((sum, mask) => sum + (mask.outline.match(/M/g)?.length ?? 0), 0)
+  assert.equal(emittedPolygonCount, trace.flatMap(calls => calls.flatMap(call => call.polygons)).length, 'Every original polygon must be emitted in exactly one mask')
+
+  // Terminal13 is one original emitted polygon, not a separate authored tip.
+  // Keep its full original bounds in a cardinal down mask; do not invent a curve connector or split geometry.
+  for (const raw of SINGLE_CARDINAL_TIP_RAW) {
+    const index = sourceGroups.findIndex(indices => indices.length === 1 && indices[0] === raw);
+    assert(index >= 0);
+    const call = trace[raw][0];
+    assert.equal(trace[raw].length, 1);
+    assert.equal(call.kind, 'cdDrawLine');
+    assert.equal(call.args[0], call.args[2]);
+    assert(call.args[3] > call.args[1]);
+    assert.equal(call.args.at(-1) % 100, 13);
+    assert.equal(call.polygons.length, 1);
+    assert.equal(outlines[index].length, 1);
+    assert.equal(outlines[index][0].direction, 'down');
+    assert.equal(outlines[index][0].revealPath, undefined);
+    const points = call.polygons.flat();
+    assert.deepEqual(outlines[index][0].bounds, [Math.min(...points.map(p => p.x / 2)), Math.min(...points.map(p => p.y / 2)), Math.max(...points.map(p => p.x / 2)), Math.max(...points.map(p => p.y / 2))]);
+  }
+  return outlines
+}
+
+return compileBound(trace,proof,identity)}
+let geometryRuns=0,cachedCalls=0
+export function captureGeometry(...args){assert.equal(args.length,3);const[trace,proof,identity]=args;validateSelectedProof(trace,proof,identity);assert.equal(geometryRuns,0);const rawBaseline=generateGeometry(trace,proof,identity);const baseline=FACTORY_MAP.map(indices=>indices.flatMap(i=>rawBaseline[i]));geometryRuns++;return{rawBaseline,baseline}}
+export function compileProgressive(...args){assert.equal(args.length,3);const[trace,proof,identity]=args;validateSelectedProof(trace,proof,identity);const f=json('./fixtures.json')[sourceRoot];assert.equal(digest(f.fullProof),FIXED_PROOF_SHA);assert.equal(digest(f.baseline),FIXED_BASELINE_SHA);assert.deepEqual(f.strokes,f.baseline);assert.deepEqual(f.baseline,FACTORY_MAP.map(indices=>indices.flatMap(i=>f.rawBaseline[i])));cachedCalls++;return f.strokes}
+export function compileSourceWhole(...args){assert.equal(args.length,4);const[root,trace,proof,identity]=args;assert.equal(root,sourceRoot);return compileProgressive(trace,proof,identity)}
+export function sourceCompileCallCount(){return geometryRuns}
+export function geometryDerivationCallCount(){return 0}
+export function cachedPositiveCallCount(){return cachedCalls}
