@@ -1,0 +1,56 @@
+// 荃 VS2 원10p11m20의 두 고정 Q 표시만 변경한다. source/compiler/engine0.
+const FIXED_STROKES=[[{"outline":"M6.45 15.25 L46.75 15.25 L46.75 17.25 L6.45 17.25 Z M46.75 15.25 L36.75 16.25 L41.75 10.75 Z","bounds":[6.45,10.75,46.75,17.25],"direction":"right","weight":40.2975}],[{"outline":"M34.8 5.9 L34.8 25.2 L28.8 28.2 L28.8 4.9 Z M34.8 5.9 L36.3 6.9 L33.8 8.4 Z","bounds":[28.8,4.9,36.3,28.2],"direction":"down","weight":21.2925}],[{"outline":"M52.7 15.25 L93 15.25 L93 17.25 L52.7 17.25 Z M93 15.25 L81 16.25 L87 10.25 Z","bounds":[52.7,10.25,93,17.25],"direction":"right","weight":40.2975}],[{"outline":"M70.65 5.9 L70.65 25.2 L64.65 28.2 L64.65 4.9 Z M70.65 5.9 L72.15 6.9 L69.65 8.4 Z","bounds":[64.65,4.9,72.15,28.2],"direction":"down","weight":21.2925}],[{"outline":"M55 33.5 L53.35 35.35 L50.1 38.9 L46.55 42.35 L42.7 45.65 L38.45 48.8 L33.9 51.85 L29.05 54.75 L23.85 57.5 L18.3 60.1 L12.4 62.5 L6.15 64.65 L5.8 63.85 L11.6 60.75 L17.1 57.7 L22.25 54.6 L27.05 51.5 L31.55 48.35 L35.65 45.15 L39.4 41.85 L42.85 38.5 L45.9 35.1 L47.1 33.5 Z","bounds":[5.8,33.5,55,64.65],"direction":"curve","weight":54.519798,"revealPath":"M51 33.5 Q37 51.36 6 64.28","revealWidth":14}],[{"outline":"M30.5 32.5 L58 32.5 L58 34.5 L30.5 34.5 Z M58 32.5 L46 33.5 L52 27.5 Z","bounds":[30.5,27.5,58,34.5],"direction":"right","weight":27.5},{"outline":"M53.65 33.55 L57.35 36.65 L61 39.65 L64.65 42.4 L68.35 45 L72.1 47.4 L75.95 49.6 L79.85 51.55 L83.8 53.3 L87.9 54.85 L92.05 56.2 L89.9 62.45 L85.55 60.65 L81.35 58.65 L77.25 56.45 L73.3 53.95 L69.5 51.25 L65.85 48.35 L62.3 45.2 L59 41.8 L55.85 38.1 L52.95 34.15 Z M89.9 62.45 L92.05 56.2 L95.7 57.45 Z","bounds":[52.95,33.55,95.7,62.45],"direction":"curve","weight":45.953298,"revealPath":"M53 33.5 Q69.5 52.12 91 59.34","revealWidth":14}],[{"outline":"M28 57.55 L73 57.55 L73 59.55 L28 59.55 Z M73 57.55 L61 58.55 L67 52.55 Z","bounds":[28,52.55,73,59.55],"direction":"right","weight":45}],[{"outline":"M23 73.5 L78 73.5 L78 75.5 L23 75.5 Z M78 73.5 L66 74.5 L72 68.5 Z","bounds":[23,68.5,78,75.5],"direction":"right","weight":55}],[{"outline":"M53 58.3 L53 92.25 L47 92.25 L47 58.3 Z","bounds":[47,58.3,53,92.25],"direction":"down","weight":31.92}],[{"outline":"M11.5 90.25 L89 90.25 L89 92.25 L11.5 92.25 Z M89 90.25 L77 91.25 L83 85.25 Z","bounds":[11.5,85.25,89,92.25],"direction":"right","weight":77.5}]],FIXED_TARGETS=[{"pen":5,"mask":1,"raw":4,"start":[51,33.5],"value":{"outline":"M55 33.5 L53.35 35.35 L50.1 38.9 L46.55 42.35 L42.7 45.65 L38.45 48.8 L33.9 51.85 L29.05 54.75 L23.85 57.5 L18.3 60.1 L12.4 62.5 L6.15 64.65 L5.8 63.85 L11.6 60.75 L17.1 57.7 L22.25 54.6 L27.05 51.5 L31.55 48.35 L35.65 45.15 L39.4 41.85 L42.85 38.5 L45.9 35.1 L47.1 33.5 Z","bounds":[5.8,33.5,55,64.65],"direction":"curve","weight":54.519798,"revealPath":"M51 33.5 Q37 51.36 6 64.28","revealWidth":14}},{"pen":6,"mask":2,"raw":6,"start":[53,33.5],"value":{"outline":"M53.65 33.55 L57.35 36.65 L61 39.65 L64.65 42.4 L68.35 45 L72.1 47.4 L75.95 49.6 L79.85 51.55 L83.8 53.3 L87.9 54.85 L92.05 56.2 L89.9 62.45 L85.55 60.65 L81.35 58.65 L77.25 56.45 L73.3 53.95 L69.5 51.25 L65.85 48.35 L62.3 45.2 L59 41.8 L55.85 38.1 L52.95 34.15 Z M89.9 62.45 L92.05 56.2 L95.7 57.45 Z","bounds":[52.95,33.55,95.7,62.45],"direction":"curve","weight":45.953298,"revealPath":"M53 33.5 Q69.5 52.12 91 59.34","revealWidth":14}}];
+const NS='http://www.w3.org/2000/svg',same=(a,b)=>JSON.stringify(a)===JSON.stringify(b),ensure=(x,m)=>{if(!x)throw Error(m)};
+export const nativeApproval=false,runtimeApplied=false,appUI=false;
+export function assertFixedGeometry(strokes){ensure(same(strokes,FIXED_STROKES),'exact 荃 VS2 10p11m20 only');return true}
+export function targetMask(pen){ensure(arguments.length===1,'explicit target pen');const t=FIXED_TARGETS.find(t=>t.pen===pen);ensure(t,'only original Q5 or Q6');return JSON.parse(JSON.stringify(t.value))}
+export function assertTarget(s){const t=FIXED_TARGETS.find(t=>same(t.value,s));ensure(t,'exact two original Q masks only');return JSON.parse(JSON.stringify(t))}
+export function growingState(s,p,L,point){const t=assertTarget(s);ensure(Number.isFinite(p)&&p>=0&&p<=1,'local p');ensure(Number.isFinite(L)&&L>=7,'finite original browser length');ensure(Array.isArray(point)&&point.length===2&&point.every(Number.isFinite),'finite same-frame endpoint');const d=Math.min(p*L,L);return{pen:t.pen,p,L,d,r:7,rho:Math.min(7,d),start:[...t.start],point:[...point]}}
+const guideNodes=new Map();let lastFrame=null;
+function assertConnected(g,s){ensure(g.svg.isConnected&&g.path.isConnected&&g.path.ownerSVGElement===g.svg&&g.path.parentNode===g.svg,'same connected owner SVG/path');ensure(g.path.getAttribute('d')===s.revealPath&&!g.path.hasAttribute('pathLength')&&!g.path.hasAttribute('transform')&&!g.svg.hasAttribute('transform'),'same original guide without pathLength or transform')}
+export function measureBrowserFrame(s,p){const t=assertTarget(s);ensure(Number.isFinite(p)&&p>=0&&p<=1,'finite requested p');ensure(typeof document!=='undefined'&&document.body,'connected document required');let g=guideNodes.get(t.pen);if(!g){const svg=document.createElementNS(NS,'svg'),path=document.createElementNS(NS,'path');svg.setAttribute('width','1');svg.setAttribute('height','1');svg.setAttribute('aria-hidden','true');svg.setAttribute('data-growing-measurement','offscreen-only');svg.style.cssText='position:absolute;left:-10000px;top:0;visibility:hidden;pointer-events:none';path.setAttribute('d',s.revealPath);svg.appendChild(path);document.body.appendChild(svg);g={svg,path};guideNodes.set(t.pen,g)}assertConnected(g,s);const L=g.path.getTotalLength();ensure(Number.isFinite(L)&&L>=7,'finite original length');const point=g.path.getPointAtLength(Math.min(p*L,L));assertConnected(g,s);ensure(Number.isFinite(point.x)&&Number.isFinite(point.y),'finite UA endpoint');if(p===0)ensure(Math.hypot(point.x-t.start[0],point.y-t.start[1])<1e-4,'UA p0 matches exact M within float tolerance');lastFrame=growingState(s,p,L,[point.x,point.y]);return lastFrame}
+export function browserMetrics(){return lastFrame?JSON.parse(JSON.stringify(lastFrame)):null}
+function fullRound(s,id){return '<defs><mask id="'+id+'" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d="'+s.revealPath+'" fill="none" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="miter"/></mask></defs><path d="'+s.outline+'" mask="url(#'+id+')"/>'}
+function growingTarget(s,p,id,provider){const t=assertTarget(s);if(p===0)return '';if(p===1)return fullRound(s,id);const g=provider(s,p);ensure(same(g,growingState(s,p,g.L,g.point)),'same local p/frame');return '<defs><mask id="'+id+'" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d="'+s.revealPath+'" fill="none" stroke="white" stroke-width="14" stroke-linecap="butt" stroke-linejoin="miter" pathLength="1" stroke-dasharray="'+p+' 2" stroke-dashoffset="0"/><circle cx="'+t.start[0]+'" cy="'+t.start[1]+'" r="'+g.rho+'" fill="white"/><circle cx="'+g.point[0]+'" cy="'+g.point[1]+'" r="'+g.rho+'" fill="white"/></mask></defs><path d="'+s.outline+'" mask="url(#'+id+')"/>'}
+export function renderOriginal(strokes, stroke, progress, prefix = 'reveal') {
+  const all = strokes.map(s => s.map(p => `<path d="${p.outline}"/>`).join(''))
+  const current = strokes[stroke-1]
+  const weight = current.reduce((n,s) => n+s.weight,0)
+  let elapsed = Math.max(0,Math.min(1,progress))*weight
+  const pieces = current.map((s,i) => {
+    const p = Math.max(0,Math.min(1,elapsed/s.weight)); elapsed -= s.weight
+    if (p === 0) return ''
+    if (p === 1) return `<path d="${s.outline}"/>`
+    const id = `${prefix}-${stroke}-${i}`
+    const [x,y,right,bottom] = s.bounds, width=right-x,height=bottom-y
+    if (s.direction === 'curve') return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d="${s.revealPath}" fill="none" stroke="white" stroke-width="${s.revealWidth}" stroke-linecap="round" pathLength="1" stroke-dasharray="${p} 2" stroke-dashoffset="0"/></mask></defs><path d="${s.outline}" mask="url(#${id})"/>`
+    const horizontal = s.direction === 'right' || s.direction === 'left'
+    const rx = s.direction === 'left' ? right-width*p : x
+    const ry = s.direction === 'up' ? bottom-height*p : y
+    return `<defs><clipPath id="${id}"><rect x="${rx}" y="${ry}" width="${horizontal?width*p:width}" height="${horizontal?height:height*p}"/></clipPath></defs><path d="${s.outline}" clip-path="url(#${id})"/>`
+  }).join('')
+  return `<svg viewBox="0 0 100 100"><g fill="#222">${all.slice(0,stroke-1).join('')}${pieces}</g></svg>`
+}
+export function renderGrowingCaps(strokes, stroke, progress, prefix = 'growing', frameProvider = measureBrowserFrame) {
+  assertFixedGeometry(strokes);ensure(Number.isInteger(stroke)&&stroke>=1&&stroke<=10,'pen range');ensure(Number.isFinite(progress)&&progress>=0&&progress<=1,'global p');
+  const all = strokes.map((s,si) => s.map((m,mi) => FIXED_TARGETS.some(t=>t.pen===si+1&&t.mask===mi+1)?fullRound(m,prefix+'-prefix-'+(si+1)+'-'+mi):`<path d="${m.outline}"/>`).join(''))
+  const current = strokes[stroke-1]
+  const weight = current.reduce((n,s) => n+s.weight,0)
+  let elapsed = Math.max(0,Math.min(1,progress))*weight
+  const pieces = current.map((s,i) => {
+    const p = Math.max(0,Math.min(1,elapsed/s.weight)); elapsed -= s.weight
+    if (FIXED_TARGETS.some(t=>t.pen===stroke&&t.mask===i+1))return growingTarget(s,progress===1?1:p,prefix+'-'+stroke+'-'+i,frameProvider)
+    if (p === 0) return ''
+    if (p === 1) return `<path d="${s.outline}"/>`
+    const id = `${prefix}-${stroke}-${i}`
+    const [x,y,right,bottom] = s.bounds, width=right-x,height=bottom-y
+    if (s.direction === 'curve') return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d="${s.revealPath}" fill="none" stroke="white" stroke-width="${s.revealWidth}" stroke-linecap="round" pathLength="1" stroke-dasharray="${p} 2" stroke-dashoffset="0"/></mask></defs><path d="${s.outline}" mask="url(#${id})"/>`
+    const horizontal = s.direction === 'right' || s.direction === 'left'
+    const rx = s.direction === 'left' ? right-width*p : x
+    const ry = s.direction === 'up' ? bottom-height*p : y
+    return `<defs><clipPath id="${id}"><rect x="${rx}" y="${ry}" width="${horizontal?width*p:width}" height="${horizontal?height:height*p}"/></clipPath></defs><path d="${s.outline}" clip-path="url(#${id})"/>`
+  }).join('')
+  return `<svg viewBox="0 0 100 100"><g fill="#222">${all.slice(0,stroke-1).join('')}${pieces}</g></svg>`
+}
+export function renderWhole(strokes,prefix='whole'){assertFixedGeometry(strokes);return '<svg viewBox="0 0 100 100"><g fill="#222">'+strokes.map((p,pi)=>p.map((s,mi)=>FIXED_TARGETS.some(t=>t.pen===pi+1&&t.mask===mi+1)?fullRound(s,prefix+'-'+(pi+1)+'-'+mi):'<path d="'+s.outline+'"/>').join('')).join('')+'</g></svg>'}
+export function targetCoverageResidual(s,prefix='residual'){assertTarget(s);return '<svg viewBox="0 0 100 100"><defs><mask id="'+prefix+'" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="white"/><path d="'+s.revealPath+'" fill="none" stroke="black" stroke-width="14" stroke-linecap="round" stroke-linejoin="miter"/></mask></defs><path d="'+s.outline+'" fill="#e23" mask="url(#'+prefix+')"/></svg>'}
