@@ -1,0 +1,11 @@
+# 蘩 VS2 cached QQ2 + exact LEFT114 source 실험
+
+蘩593 VS2 u8629-ue0102 plainQQ source의 root whole1호환과 FIRST fine8(99.99→100 원LEFT약11px추가)FAIL을 보존합니다. 해당검토의 다른방향/coarse/경계/자연재생은0이며 草2·3순서는 미검토/자동교환0입니다. 새후보는 logical8 raw8/9의 마지막Q114 quad만 기존997 LEFT 공식(width6/jump18/tailweight9)과 exact일치할때 분리합니다. bodyweight58.254876/bounds[19.1,30.6,50.85,61.5]/guide·폭·원좌표·원54polygon/나머지20획은 불변입니다. 21p24m54·原QQ16/17·exact6/7와8/9 유지/새sourcegeometry·원compiler·engine0·캐시분리1·새native/runtime미승인·전gatefresh필수입니다.
+
+원source8 commit9d3f8fc70680ef2bc94cf05e0ed949cd38e8d9b0/prepcb93defe4729808d19df366b63031142aa4bbb7d0a1789fa0669e9f33ae64526/compiled9581d844f7a15c53d5d0ca2c7aa23807b2c507a2f7e09d3adbdc759ab0e0868b 및 원593HOLD/NOTICE/false이력은 불변입니다. 원全21static VIEWED와 allStrokesReviewedfalse/progressive0를 구분하며 완전literal국내group배열은 없습니다. 기존raw상대순서와knownanchor만 사용한provisional배열, 草raw0H1V2V3H를 유지하고2/3자동swap을 추론하지 않습니다. 이번rootfine8FAIL은 새후보승인이 아닙니다. Root서버PID61614/port53403/session34411 STOP exit143을 그대로기록합니다.
+
+고정family22/선택closure10/provider9(원records포함)의 실제engine-whole-u8629-ue0102.json full5/id3를 그대로위임합니다. defaultengine-proof 혼합/새header결합/최신조회0·선택VS2단일closure만사용합니다. 기존캐시 strictprogressive3/whole4 및 새deriveTail4·wrongroot/proof/identity/누락·추가args거부·captureGeometry API없음입니다. 원21+oldsource8+泂LEFT114example1+997ancestor1=31input/own7/새8포함runtime39핀입니다.
+
+기존1691byte kernel SHA7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08 및1302byte partition SHA2802b789ebee4fe2f9af3903f71f26f2a9609dced9171e87ecf63aba342a8657을 byteexact재사용합니다. 원lastQ args/quadSHAf74a6bb1886356050af6fa6d7c175ea0862b88c78f73635cc55047b2126f0184/원baseline/bodybounds·weight를 guard합니다. 원outline 마지막chunk만 별tailmask로 옮겨 원54polygon exactonce/나머지20획·bodybounds·guide·폭·weight를 보존하며 새좌표·경로·connector·flags0입니다. 원baseline23mask와후보24mask는 같은logicalpen순서캐시이며 독립native증거가 아닙니다. 캐시derive1→publicfixture선저장→cached검사·추가sourcegeometry/원compiler/engine0입니다.
+
+기존QQ16경계 .4387289328474441/17 .2814581973372976은 그대로입니다. helper는3SVG520/coarse9각220/모든weight경계8·16·17 before/at/after·0/epsilon(.0001%)/50/95/99.99/100·8초재생·매GET source/own/config/prep guard입니다. 국내SVG는RAM전용이고 startup/GET compilerengine0입니다. 작성자UI/server/runtime/registry/catalog/Git/build0·새native/runtimefalse/fresh전gate필수입니다.
