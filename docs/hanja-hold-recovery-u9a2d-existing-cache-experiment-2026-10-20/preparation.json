@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "date": "2026-10-20",
+  "glyph": "騭",
+  "codepoint": "U+9A2D",
+  "status": "source-only-existing-cache-comparison-ready",
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/sources.json": "122fcaa599c8ed47abbf599efbdd18f21cdd9e32d5874d55f402aac896eb1abd",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/metadata.json": "667dc0905628676ca5f3c7ad898f90ecf8a13ae65fecf55ac2fc8557a226957c",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/source-analysis.json": "aec5150fc35d31840b68f5547b948979f22567ef07b6aba749269c74ae9a27da",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/source-join-analysis.json": "592b91cbb34ac9cacbe68a74aab79416ae1a20eccd6975e3d00522edb320ed7f",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/candidate-compile-analysis.json": "1d4bbddc19873d4479aeb5105b224954c3632d986e1be8ecdc403bc5782fd6e0",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/review.json": "8c0f6ab01684ae52e3929ed3a7d09e72bb07f3b0d089101b769099cacb19010d",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/engine-proof.json": "23b29e6c792a549d354e261f416e61668ce9dc1de86819118250c2c366ff1063",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/engine-whole-u9a2d.json": "c329408d8eb6329c36d4b5ba37ae010161e118b3e33c1235aeace5d9962a278a",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/engine-whole-u9a2d-ue0100.json": "c329408d8eb6329c36d4b5ba37ae010161e118b3e33c1235aeace5d9962a278a",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/engine-whole-u9a2d-ue0101.json": "c329408d8eb6329c36d4b5ba37ae010161e118b3e33c1235aeace5d9962a278a",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/engine-whole-u9a2d-ue0102.json": "661103c9e9a4e4f1a15eaa982b9e8ba9ae5b647c467c14fe71678cf59a21f8f9",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/progressive.mjs": "d795b18e27781027643b61a704f7d4e9f89ab86734351874024681d497f3e64b",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/serve-whole.py": "769400d6ef2523fc5b486a4941e4fe15893ac7e7cde5a60ba9ae5e2bf83a8059",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/serve-progressive.py": "07c2fc37d9d0e974f408e05589a871e988f4107f5343227947970049998b9bf2",
+    "docs/hanja-goal-glyphwiki-batch887-2026-10-13/native-server-preflight-source-analysis.json": "421fae2a15642aa274c9a4548982dd3ebf7fbb14f566f0e12f9de1e55e5751fb",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47"
+  },
+  "newFilesSHA256": {
+    "docs/hanja-hold-recovery-u9a2d-existing-cache-experiment-2026-10-20/config.json": "586ae42aabe6feb614adde27f4a0d58fc9fa9a81b7ff0625091b4b424bee7e84",
+    "docs/hanja-hold-recovery-u9a2d-existing-cache-experiment-2026-10-20/server.py": "e530b7763b8885c07fe2082d670bff10740589853734c0534ebdbfe340722daf",
+    "docs/hanja-hold-recovery-u9a2d-existing-cache-experiment-2026-10-20/browser.mjs": "ca210cc57222ea40cc6f4abbba74b2a9cc03db99bc8327cc48d54ee55a003d70",
+    "docs/hanja-hold-recovery-u9a2d-existing-cache-experiment-2026-10-20/check.mjs": "4743a2620f563929f07fc8a9cb2f79ee6dc8997cd44533b48b026092fc83cca3",
+    "docs/hanja-hold-recovery-u9a2d-existing-cache-experiment-2026-10-20/README.md": "5c1114e108a6a6f045a26efae70ed86a2c0fc84636525d050d9b369a214fec9b"
+  },
+  "legacyState": {
+    "wholeReviewed": 4,
+    "compatibleWholeRoots": [],
+    "dictionaryDirectionCount": 20,
+    "progressiveFrames": 0,
+    "replayApproved": false,
+    "reason": "선택VS2의 위쪽 少 자형이 국내 步와 다르고, 국내12획은 가로획인데 후보12획은 비연속 raw12·17·18의 U형 결합이다. 건너뛴13~16행도 실제 획이어서 끝점 일치만으로20획을 승인할 수 없다. 기본·VS0·VS1은 연속20펜 수치는 가능하지만 국내8획 세로끝과 원본 갈고리 대응은 미승인이다.",
+    "legacyWholeWrapperInherits836AndChanges11To10": true,
+    "legacyProgressiveWrapperChanges11To10": true,
+    "legacyServersImported": false,
+    "legacyServersExecuted": false
+  },
+  "sourceObjects": {
+    "full5Base": {
+      "raw": 22,
+      "polygons": 48,
+      "keys": [
+        "defaults",
+        "engineHashes",
+        "engineRevision",
+        "groups",
+        "trace"
+      ]
+    },
+    "wholeBase": {
+      "raw": 22,
+      "polygons": 48,
+      "keys": [
+        "defaults",
+        "groups",
+        "trace"
+      ]
+    },
+    "wholeVS2": {
+      "raw": 23,
+      "polygons": 50,
+      "keys": [
+        "defaults",
+        "groups",
+        "trace"
+      ]
+    },
+    "baseThreeKeysMatchOriginalFull5": true,
+    "foreignHeaderCombined": false,
+    "newProofCreated": false
+  },
+  "focused": {
+    "executed": true,
+    "executions": 1,
+    "passed": true,
+    "inputPins": 16,
+    "sourceRecords": 11,
+    "rootProofs": 2,
+    "full5Proof": 1,
+    "resourceNegatives": 13,
+    "validRoutes": 10,
+    "rejectedRoutes": 11,
+    "foreignHeaderCombinations": 0,
+    "privateSourceFunctionsExecuted": false,
+    "legacyCodeImported": false,
+    "legacyCodeExecuted": false,
+    "oldFocusedRepeated": 0,
+    "failures": 0
+  },
+  "syntax": {
+    "executed": true,
+    "browserNode": {
+      "executions": 1,
+      "passed": true
+    },
+    "checkNode": {
+      "executions": 1,
+      "passed": true
+    },
+    "PythonAST": {
+      "executions": 1,
+      "passed": true,
+      "includedInFocused": true,
+      "serverImported": false
+    },
+    "passedChecksRepeated": 0
+  },
+  "nativeWholeCompatibleApprovals": 0,
+  "browserNativeObservations": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "appUI": false,
+  "sourceGeometryChanged": false,
+  "newGrouping": false,
+  "newOrder": false,
+  "compilerExecutions": 0,
+  "engineExecutions": 0,
+  "HTTPRequests": 0,
+  "serverStarted": false,
+  "legacyServersImported": false,
+  "legacyServersExecuted": false,
+  "originalHoldChanged": false,
+  "privateMediaSaved": false,
+  "currentGlyphSource": {
+    "glyph": "騭",
+    "codepoint": "U+9A2D",
+    "dictionaryURL": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9a00/9a2d.svg",
+    "dictionarySHA256": "b0064b556a828e4018c49b101c88ce1acdecc05ae8e08a6865137da75fc7184f",
+    "dictionaryBytes": 9384,
+    "dictionaryClips": 20,
+    "rootSelectionChangesDictionary": false,
+    "originalSourceFunctionsByteIdentical": 2
+  },
+  "serverStartupVerified": false
+}
