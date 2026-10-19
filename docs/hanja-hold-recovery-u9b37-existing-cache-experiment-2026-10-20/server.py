@@ -9,7 +9,7 @@ from urllib.parse import parse_qs, urlparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
-CONFIG_SHA = '02d6c204e4adf7169af4df1a4c60f61f8fee094238ecd89348066cf4d7100779'
+CONFIG_SHA = 'e437bdaa4514bb3d151b91b8c1f8a3979db824d9a98c9cbe95206fb2db2c3922'
 CONFIG = None
 PROOFS = {}
 ENTRIES = {}
@@ -116,6 +116,12 @@ def dictionary_svg(glyph, end, colored=True, key=''):
     return '<svg viewBox="0 0 1024 1024"><g transform="' + data['transform'] + '">' + ''.join(pieces) + '</g></svg>'
 
 
+def full_domestic():
+    data=source('鬷')
+    assert len(data['strokes'])==CONFIG['dictionary']['clips']
+    paths=''.join('<path d="'+html.escape(s['outline'].get('d'))+'"/>'for s in data['strokes'])
+    return '<svg viewBox="0 0 1024 1024"><g transform="'+data['transform']+'">'+paths+'</g></svg>'
+
 def original_svg(root, raw=None):
     if root not in CONFIG['roots']:
         raise ValueError('unsupported exact root')
@@ -135,13 +141,13 @@ def page():
     return '''<!doctype html><html lang="ko"><meta charset="utf-8"><title>鬷 원 캐시 비교</title>
 <style>body{font:16px system-ui;margin:24px;background:#faf8f4;color:#222}button,select{font:inherit;padding:8px;margin:4px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}svg{display:block;width:min(100%,520px);height:auto;background:white;border:1px solid #ddd}h2{font-size:17px}.notice{max-width:1000px;line-height:1.6}output{display:block;margin:14px 0}</style>
 <h1>鬷 · 원 캐시 재대조</h1><p class="notice">필순 승인 화면이 아닙니다. 국내 SVG의 고정 순서와 원 polygon을 나란히 확인합니다. raw 번호는 0부터입니다. 기존 논리11=[12,14], 12=[13], 13=[15], 14=[16]은 보류된 대응입니다. 두 raw를 새 한 획으로 합치지 않습니다.</p>
-<div><button id="domestic-11">국내 11획</button><button id="domestic-12">국내 12획</button><button id="domestic-13">국내 13획</button><button id="domestic-14">국내 14획</button></div>
+<div><button id="domestic-11">국내 11획</button><button id="domestic-12">국내 12획</button><button id="domestic-13">국내 13획</button><button id="domestic-14">국내 14획</button><button id="domestic-15">국내 15획</button><button id="domestic-16">국내 16획</button><button id="domestic-whole">국내 전체 자형</button></div>
 <label>원본 <select id="root"><option>u9b37</option><option>u9b37-ue0100</option></select></label>
-<label>원 raw <select id="raw"><option>12</option><option>14</option><option>13</option><option>15</option><option>16</option></select></label>
-<div><button id="raw-12">raw 12만</button><button id="raw-14">raw 14만</button><button id="raw-13">raw 13만</button><button id="raw-15">raw 15만</button><button id="raw-16">raw 16만</button></div><output id="status"></output>
+<label>원 raw <select id="raw"><option>12</option><option>14</option><option>13</option><option>15</option><option>16</option><option>17</option><option>18</option></select></label>
+<div><button id="raw-12">raw 12만</button><button id="raw-14">raw 14만</button><button id="raw-13">raw 13만</button><button id="raw-15">raw 15만</button><button id="raw-16">raw 16만</button><button id="raw-17">raw 17만</button><button id="raw-18">raw 18만</button></div><output id="status"></output>
 <div class="grid"><section><h2 id="domestic-label">국내 원 SVG</h2><div id="domestic"></div></section><section><h2 id="raw-label">선택 원 raw</h2><div id="selected-raw"></div></section></div>
 <div class="grid"><section><h2>원 raw 12 · 독립 패널</h2><div id="raw12"></div></section><section><h2>원 raw 14 · 독립 패널</h2><div id="raw14"></div></section></div>
-<div class="grid"><section><h2>전체 base · 원 23 raw</h2><div id="whole-base"></div></section><section><h2>전체 VS0 · 원 23 raw</h2><div id="whole-vs0"></div></section></div>
+<div class="grid"><section><h2>국내 전체 · 원 outline 합</h2><div id="whole-domestic"></div></section><section><h2>전체 base · 원 23 raw</h2><div id="whole-base"></div></section><section><h2>전체 VS0 · 원 23 raw</h2><div id="whole-vs0"></div></section></div>
 <script type="module" src="/browser.mjs"></script></html>'''
 
 class Handler(BaseHTTPRequestHandler):
@@ -156,6 +162,8 @@ class Handler(BaseHTTPRequestHandler):
                 body, kind = page(), 'text/html; charset=utf-8'
             elif parsed.path == '/browser.mjs' and not query:
                 body, kind = (HERE / 'browser.mjs').read_text(), 'text/javascript; charset=utf-8'
+            elif parsed.path == '/api/domestic-whole' and not query:
+                body, kind = full_domestic(), 'image/svg+xml'
             elif parsed.path == '/api/whole' and set(query) == {'root'} and len(query['root']) == 1:
                 body, kind = original_svg(query['root'][0]), 'image/svg+xml'
             elif parsed.path == '/api/raw' and set(query) == {'root', 'raw'} and all(len(v) == 1 for v in query.values()):

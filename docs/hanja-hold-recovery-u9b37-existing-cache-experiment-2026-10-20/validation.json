@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-20",
-  "status": "source-only-existing-cache-comparison-ready-after-request-contract-fix",
+  "status": "source-only-existing-cache-comparison-expanded-ready",
   "inputSHA256": {
     "docs/hanja-goal-glyphwiki-batch877-2026-10-13/sources.json": "ffb9d5fdbe20a7b79291b54f1c66db8decaa7b85d187b7154b0aaf1a3d0f9d8f",
     "docs/hanja-goal-glyphwiki-batch877-2026-10-13/metadata.json": "dd7b83ebf386cb6b9d4143401c418af4423a8c0dde48b75b0f2b732b4a9be724",
@@ -19,11 +19,11 @@
     "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47"
   },
   "newFilesSHA256": {
-    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/config.json": "02d6c204e4adf7169af4df1a4c60f61f8fee094238ecd89348066cf4d7100779",
-    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/browser.mjs": "b523aa4603072ef3daec79d43aecf8d0cd4483b80107207dfdb7aa596b9be273",
-    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/server.py": "0a48dd69f335378badc0666295721a3b1ac1419606077055d3032e852d20b32a",
-    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/check.mjs": "d12906466e8d54ea643a51bc953134066325b203a67028dc1032cc12250afa8b",
-    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/README.md": "aa96928e479697523d009fbef9c9f3ad129c96141c6457ec3d0789a0780289d0"
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/config.json": "e437bdaa4514bb3d151b91b8c1f8a3979db824d9a98c9cbe95206fb2db2c3922",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/browser.mjs": "45ef83265999c4a9695854dc9140a2cbe9d80bf034f39a54a9e1756e0561f623",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/server.py": "5845b3a11051666491e1a21d27c3751e1e31f3b6402c0860375e918af183e49e",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/check.mjs": "920f74d5019352df8c255281a201bb2ae87e07c560c6071c0e4831c1a482a0b5",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/README.md": "13e084d6a1585c6dc7a095b3854304a52197621d9836041172b5255fbbe709ef"
   },
   "focused": {
     "executed": true,
@@ -104,6 +104,56 @@
       ],
       "stopped": true,
       "stopExitCode": 143
+    },
+    {
+      "attempt": 2,
+      "actor": "root",
+      "pid": 17677,
+      "port": 52644,
+      "session": 51973,
+      "rootHTTPAndLoadingPassed": true,
+      "sourceHTTPRequests": null,
+      "nativeObservations": {
+        "staticOriginalWhole": {
+          "roots": [
+            "u9b37",
+            "u9b37-ue0100"
+          ],
+          "pixels": 520,
+          "domesticWholeCompared": false,
+          "compatibleApproved": false
+        },
+        "domesticDirections": {
+          "11": "왼쪽 삐침",
+          "12": "오른쪽 비스듬한 획",
+          "13": "왼쪽 세로 뒤 아래 가로",
+          "14": "오른쪽 세로 내려쓰기"
+        },
+        "originalRaw": {
+          "12": "왼쪽 세로",
+          "13": "오른쪽 세로",
+          "14": "가로",
+          "15": "兒의 왼쪽 삐침: 국내11~14 대상 아님",
+          "16": "兒의 오른쪽 꺾임: 국내11~14 대상 아님"
+        },
+        "comparisonNotes": [
+          "raw12·raw14는 국내13획의 구성 부분으로 관찰",
+          "raw13은 국내14획과 대응하는 형태로 관찰",
+          "원raw17·18와 국내11·12는 다음 검토 필요"
+        ],
+        "newOrderApproved": false,
+        "newGroupingApproved": false,
+        "shapeApproved": false
+      },
+      "browserToolingIssue": {
+        "oldErrorTab": 5,
+        "URLPolicyErrors": 1,
+        "recoveredInSameBrowserNewTab": 6,
+        "sourceFailure": false,
+        "securityBypass": false
+      },
+      "stopped": true,
+      "stopExitCode": 143
     }
   ],
   "requestContractFix": {
@@ -136,5 +186,40 @@
     "serverStarted": false,
     "nativeObserved": false,
     "rootRetryPending": true
+  },
+  "selectionExtension": {
+    "date": "2026-10-20",
+    "addedOriginalRawIndices": [
+      17,
+      18
+    ],
+    "addedDomesticPens": [
+      15,
+      16
+    ],
+    "addedDomesticWholePanel": true,
+    "originalPathUnionOnly": true,
+    "newGeometry": false,
+    "newOrder": false,
+    "newGrouping": false,
+    "originalHoldChanged": false,
+    "wholeCompatibilityApproved": false,
+    "nativeReviewOfExtension": false,
+    "focused": {
+      "executions": 1,
+      "passed": true,
+      "newHandlerCases": 6,
+      "oldSourceFocusedRepeated": 0
+    },
+    "changedSyntax": {
+      "bundles": 1,
+      "nodeBrowserCheck": 1,
+      "pythonAST": 1,
+      "pythonASTIncludedInFocused": true,
+      "oldNodeChecksRepeated": 0
+    },
+    "HTTPRequests": 0,
+    "serverStarted": false,
+    "rootFreshReviewPending": true
   }
 }
