@@ -139,7 +139,7 @@ def original_svg(root, raw=None):
 
 def page():
     return '''<!doctype html><html lang="ko"><meta charset="utf-8"><title>鬷 원 캐시 비교</title>
-<style>body{font:16px system-ui;margin:24px;background:#faf8f4;color:#222}button,select{font:inherit;padding:8px;margin:4px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}svg{display:block;width:min(100%,520px);height:auto;background:white;border:1px solid #ddd}h2{font-size:17px}.notice{max-width:1000px;line-height:1.6}output{display:block;margin:14px 0}</style>
+<style>body{font:16px system-ui;margin:24px;width:1120px;background:#faf8f4;color:#222}button,select{font:inherit;padding:8px;margin:4px}.grid{display:grid;grid-template-columns:repeat(2,540px);gap:16px}svg{display:block;width:520px;height:520px;background:white;border:1px solid #ddd}h2{font-size:17px}.notice{max-width:1000px;line-height:1.6}output{display:block;margin:14px 0}</style>
 <h1>鬷 · 원 캐시 재대조</h1><p class="notice">필순 승인 화면이 아닙니다. 국내 SVG의 고정 순서와 원 polygon을 나란히 확인합니다. raw 번호는 0부터입니다. 기존 논리11=[12,14], 12=[13], 13=[15], 14=[16]은 보류된 대응입니다. 두 raw를 새 한 획으로 합치지 않습니다.</p>
 <div><button id="domestic-11">국내 11획</button><button id="domestic-12">국내 12획</button><button id="domestic-13">국내 13획</button><button id="domestic-14">국내 14획</button><button id="domestic-15">국내 15획</button><button id="domestic-16">국내 16획</button><button id="domestic-whole">국내 전체 자형</button></div>
 <label>원본 <select id="root"><option>u9b37</option><option>u9b37-ue0100</option></select></label>

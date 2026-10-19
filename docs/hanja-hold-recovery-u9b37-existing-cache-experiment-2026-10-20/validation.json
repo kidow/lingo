@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-20",
-  "status": "source-only-existing-cache-comparison-expanded-ready",
+  "status": "source-only-existing-cache-comparison-520-layout-ready",
   "inputSHA256": {
     "docs/hanja-goal-glyphwiki-batch877-2026-10-13/sources.json": "ffb9d5fdbe20a7b79291b54f1c66db8decaa7b85d187b7154b0aaf1a3d0f9d8f",
     "docs/hanja-goal-glyphwiki-batch877-2026-10-13/metadata.json": "dd7b83ebf386cb6b9d4143401c418af4423a8c0dde48b75b0f2b732b4a9be724",
@@ -21,9 +21,9 @@
   "newFilesSHA256": {
     "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/config.json": "e437bdaa4514bb3d151b91b8c1f8a3979db824d9a98c9cbe95206fb2db2c3922",
     "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/browser.mjs": "45ef83265999c4a9695854dc9140a2cbe9d80bf034f39a54a9e1756e0561f623",
-    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/server.py": "5845b3a11051666491e1a21d27c3751e1e31f3b6402c0860375e918af183e49e",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/server.py": "b53781742401d4da75ca4ec724809c7386e2d88da89fdfaeb5977f4c98fa47f6",
     "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/check.mjs": "920f74d5019352df8c255281a201bb2ae87e07c560c6071c0e4831c1a482a0b5",
-    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/README.md": "13e084d6a1585c6dc7a095b3854304a52197621d9836041172b5255fbbe709ef"
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/README.md": "1704c4071e96e2f57064d5e70238fc84d5785639bcd037d4e624fb6586bbf93b"
   },
   "focused": {
     "executed": true,
@@ -154,6 +154,55 @@
       },
       "stopped": true,
       "stopExitCode": 143
+    },
+    {
+      "attempt": 3,
+      "actor": "agent1283",
+      "pid": 21518,
+      "port": 53187,
+      "session": 19640,
+      "sandboxBindFailureBeforeStartup": {
+        "count": 1,
+        "error": "PermissionError EPERM",
+        "serverStarted": false
+      },
+      "authorizedEscalatedStartup": true,
+      "IABAvailable": false,
+      "browserCreateError": "Browser is not available: iab",
+      "inventoryIABCount": 0,
+      "ChromeUsed": false,
+      "rootTabsChanged": false,
+      "sourceHTTPRequests": 0,
+      "nativeObservations": 0,
+      "stopped": true,
+      "stopExitCode": 143
+    },
+    {
+      "attempt": 4,
+      "actor": "root",
+      "pid": 23190,
+      "port": 53392,
+      "session": 44436,
+      "domesticSource": {
+        "loadedInRAM": true,
+        "outlineCount": 19,
+        "privateMediaSaved": false
+      },
+      "initialDomesticPanelBlankThenLoaded": true,
+      "staticWholePanelsObserved": [
+        "domestic",
+        "u9b37",
+        "u9b37-ue0100"
+      ],
+      "qualitativeWholeAppearanceCompatible": true,
+      "displayedSVGSizeApproxPixels": 280,
+      "requestedEnlargedSizePixels": 520,
+      "whole520Approved": false,
+      "newOrderApproved": false,
+      "newGroupingApproved": false,
+      "nativeApproval": false,
+      "stopped": true,
+      "stopExitCode": 143
     }
   ],
   "requestContractFix": {
@@ -220,6 +269,39 @@
     },
     "HTTPRequests": 0,
     "serverStarted": false,
+    "rootFreshReviewPending": true
+  },
+  "layout520Correction": {
+    "actor": "root",
+    "reason": "Responsive grid rendered original SVG at about280px; this was not a520px native approval.",
+    "changedServerLines": 1,
+    "bodyWidthPixels": 1120,
+    "gridColumns": 2,
+    "gridColumnWidthPixels": 540,
+    "SVGWidthPixels": 520,
+    "SVGHeightPixels": 520,
+    "previousServerSHA256": "5845b3a11051666491e1a21d27c3751e1e31f3b6402c0860375e918af183e49e",
+    "currentServerSHA256": "b53781742401d4da75ca4ec724809c7386e2d88da89fdfaeb5977f4c98fa47f6",
+    "allNonCSSServerBytesUnchanged": true,
+    "originalSourceFunctionsChanged": false,
+    "originalGeometryChanged": false,
+    "sourceAPIChanged": false,
+    "input14PinManifestChanged": false,
+    "inputPinChecksRepeated": 0,
+    "selectionChecksRepeated": 0,
+    "NodeChecksRepeated": 0,
+    "focusedCSSContract": {
+      "executions": 1,
+      "passed": true
+    },
+    "PythonAST": {
+      "executions": 1,
+      "passed": true,
+      "serverModuleImported": false
+    },
+    "HTTPRequestsByAgentForThisCorrection": 0,
+    "serverStartedByAgentForThisCorrection": false,
+    "new520NativeReview": false,
     "rootFreshReviewPending": true
   }
 }
