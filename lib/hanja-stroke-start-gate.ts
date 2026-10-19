@@ -975,3 +975,282 @@ export function commitReviewedQuadraticCaps(policy: ReviewedQuadraticCapsPolicy,
     return{status:'visible' as const,frame,cleanup:reset}
   }catch{reset();return{status:'hidden' as const,frame:null,cleanup:reset}}
 }
+
+
+// 荃 VS2 독립 standalone PASS: 1df2c7cb…09e47. 기존 癙 정책과 임의 Q를 확장하지 않는다.
+const REVIEWED_QUAN_VS2_OUTLINES = [
+  [
+    {
+      "outline": "M6.45 15.25 L46.75 15.25 L46.75 17.25 L6.45 17.25 Z M46.75 15.25 L36.75 16.25 L41.75 10.75 Z",
+      "bounds": [
+        6.45,
+        10.75,
+        46.75,
+        17.25
+      ],
+      "direction": "right",
+      "weight": 40.2975
+    }
+  ],
+  [
+    {
+      "outline": "M34.8 5.9 L34.8 25.2 L28.8 28.2 L28.8 4.9 Z M34.8 5.9 L36.3 6.9 L33.8 8.4 Z",
+      "bounds": [
+        28.8,
+        4.9,
+        36.3,
+        28.2
+      ],
+      "direction": "down",
+      "weight": 21.2925
+    }
+  ],
+  [
+    {
+      "outline": "M52.7 15.25 L93 15.25 L93 17.25 L52.7 17.25 Z M93 15.25 L81 16.25 L87 10.25 Z",
+      "bounds": [
+        52.7,
+        10.25,
+        93,
+        17.25
+      ],
+      "direction": "right",
+      "weight": 40.2975
+    }
+  ],
+  [
+    {
+      "outline": "M70.65 5.9 L70.65 25.2 L64.65 28.2 L64.65 4.9 Z M70.65 5.9 L72.15 6.9 L69.65 8.4 Z",
+      "bounds": [
+        64.65,
+        4.9,
+        72.15,
+        28.2
+      ],
+      "direction": "down",
+      "weight": 21.2925
+    }
+  ],
+  [
+    {
+      "outline": "M55 33.5 L53.35 35.35 L50.1 38.9 L46.55 42.35 L42.7 45.65 L38.45 48.8 L33.9 51.85 L29.05 54.75 L23.85 57.5 L18.3 60.1 L12.4 62.5 L6.15 64.65 L5.8 63.85 L11.6 60.75 L17.1 57.7 L22.25 54.6 L27.05 51.5 L31.55 48.35 L35.65 45.15 L39.4 41.85 L42.85 38.5 L45.9 35.1 L47.1 33.5 Z",
+      "bounds": [
+        5.8,
+        33.5,
+        55,
+        64.65
+      ],
+      "direction": "curve",
+      "weight": 54.519798,
+      "revealPath": "M51 33.5 Q37 51.36 6 64.28",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M30.5 32.5 L58 32.5 L58 34.5 L30.5 34.5 Z M58 32.5 L46 33.5 L52 27.5 Z",
+      "bounds": [
+        30.5,
+        27.5,
+        58,
+        34.5
+      ],
+      "direction": "right",
+      "weight": 27.5
+    },
+    {
+      "outline": "M53.65 33.55 L57.35 36.65 L61 39.65 L64.65 42.4 L68.35 45 L72.1 47.4 L75.95 49.6 L79.85 51.55 L83.8 53.3 L87.9 54.85 L92.05 56.2 L89.9 62.45 L85.55 60.65 L81.35 58.65 L77.25 56.45 L73.3 53.95 L69.5 51.25 L65.85 48.35 L62.3 45.2 L59 41.8 L55.85 38.1 L52.95 34.15 Z M89.9 62.45 L92.05 56.2 L95.7 57.45 Z",
+      "bounds": [
+        52.95,
+        33.55,
+        95.7,
+        62.45
+      ],
+      "direction": "curve",
+      "weight": 45.953298,
+      "revealPath": "M53 33.5 Q69.5 52.12 91 59.34",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M28 57.55 L73 57.55 L73 59.55 L28 59.55 Z M73 57.55 L61 58.55 L67 52.55 Z",
+      "bounds": [
+        28,
+        52.55,
+        73,
+        59.55
+      ],
+      "direction": "right",
+      "weight": 45
+    }
+  ],
+  [
+    {
+      "outline": "M23 73.5 L78 73.5 L78 75.5 L23 75.5 Z M78 73.5 L66 74.5 L72 68.5 Z",
+      "bounds": [
+        23,
+        68.5,
+        78,
+        75.5
+      ],
+      "direction": "right",
+      "weight": 55
+    }
+  ],
+  [
+    {
+      "outline": "M53 58.3 L53 92.25 L47 92.25 L47 58.3 Z",
+      "bounds": [
+        47,
+        58.3,
+        53,
+        92.25
+      ],
+      "direction": "down",
+      "weight": 31.92
+    }
+  ],
+  [
+    {
+      "outline": "M11.5 90.25 L89 90.25 L89 92.25 L11.5 92.25 Z M89 90.25 L77 91.25 L83 85.25 Z",
+      "bounds": [
+        11.5,
+        85.25,
+        89,
+        92.25
+      ],
+      "direction": "right",
+      "weight": 77.5
+    }
+  ]
+] as HanjaOutlineStrokes
+freezeReviewedStrokes(REVIEWED_QUAN_VS2_OUTLINES)
+export type ReviewedQuanQuadraticCapsContext = Readonly<{ id: 'u8343-ue0102' }>
+export type ReviewedQuanQuadraticCapsPolicy = Readonly<{ id: string; kind: 'growing-quan-q-caps'; segment: HanjaOutlineSegment; certificate: ReviewedQuadraticCapsCertificate }>
+const QUAN_VS2_CONTEXT: ReviewedQuanQuadraticCapsContext = Object.freeze({ id: 'u8343-ue0102' })
+const QUAN_VS2_Q_SPECS = [
+  { stroke:4,mask:0,path:'M51 33.5 Q37 51.36 6 64.28',weight:54.519798,t:[1n,5n],norm:21n,cross:373n,K:[1n,49n] },
+  { stroke:5,mask:1,path:'M53 33.5 Q69.5 52.12 91 59.34',weight:45.953298,t:[3n,20n],norm:23n,cross:282n,K:[1n,86n] },
+] as const
+type QuanQuadraticSpec = typeof QUAN_VS2_Q_SPECS[number]
+function quanQuadraticCapsCertificate(spec: QuanQuadraticSpec, segment: HanjaOutlineSegment): ReviewedQuadraticCapsCertificate {
+  const reject=()=>{throw new Error('Exact 荃 VS2 Q initial-arc certificate required')}
+  if(segment.revealPath!==spec.path||segment.revealWidth!==14||segment.weight!==spec.weight||segment.direction!=='curve')reject()
+  if(!/^M-?\d+(?:\.\d+)? -?\d+(?:\.\d+)? Q-?\d+(?:\.\d+)? -?\d+(?:\.\d+)? -?\d+(?:\.\d+)? -?\d+(?:\.\d+)?$/.test(spec.path))reject()
+  const R=(n:bigint,d=1n)=>({n,d}),dec=(v:string)=>{const[a,b='']=v.split('.');return R(BigInt(a+b),10n**BigInt(b.length))}
+  const add=(a:ReturnType<typeof R>,b:ReturnType<typeof R>)=>R(a.n*b.d+b.n*a.d,a.d*b.d)
+  const sub=(a:ReturnType<typeof R>,b:ReturnType<typeof R>)=>add(a,R(-b.n,b.d))
+  const mul=(a:ReturnType<typeof R>,b:ReturnType<typeof R>)=>R(a.n*b.n,a.d*b.d)
+  const gt=(a:ReturnType<typeof R>,b:ReturnType<typeof R>)=>a.n*b.d>b.n*a.d
+  const abs=(a:ReturnType<typeof R>)=>R(a.n<0n?-a.n:a.n,a.d)
+  const tokens=spec.path.split(' '),n=[tokens[0].slice(1),tokens[1],tokens[2].slice(1),tokens[3],tokens[4],tokens[5]].map(dec)
+  const P0=n.slice(0,2),P1=n.slice(2,4),P2=n.slice(4),A=P1.map((v,i)=>sub(v,P0[i])),B=P0.map((v,i)=>add(sub(v,mul(R(2n),P1[i])),P2[i]))
+  const t=R(spec.t[0],spec.t[1]),lo=R(spec.norm),crossBound=R(spec.cross),K=R(spec.K[0],spec.K[1]),kr=mul(R(7n),K)
+  const delta=A.map((v,i)=>add(mul(mul(R(2n),t),v),mul(mul(t,t),B[i]))),cross=abs(sub(mul(A[0],B[1]),mul(A[1],B[0])))
+  const yMin=add(A[1],mul(t,B[1]))
+  const speed=spec.stroke===4
+    ? !gt(A[0],R(-14n))&&gt(R(0n),B[0])&&gt(yMin,R(16n))&&gt(R(452n),mul(lo,lo))
+    : !gt(R(33n,2n),A[0])&&gt(B[0],R(0n))&&!gt(R(1691n,100n),yMin)&&gt(R(5581981n,10000n),mul(lo,lo))
+  if(!speed||!gt(add(mul(delta[0],delta[0]),mul(delta[1],delta[1])),R(49n))||!gt(crossBound,cross)||gt(crossBound,mul(mul(R(2n),mul(mul(lo,lo),lo)),K))||!gt(sub(R(1n),mul(R(1n,2n),mul(kr,kr))),kr))reject()
+  return Object.freeze({parameterBound:Number(spec.t[0])/Number(spec.t[1]),initialArcMax:7,curvatureBound:Number(spec.K[0])/Number(spec.K[1]),rKBound:7*Number(spec.K[0])/Number(spec.K[1]),exactDecimalRational:true,notRasterProof:true})
+}
+const QUAN_VS2_Q_POLICIES:readonly ReviewedQuanQuadraticCapsPolicy[]=Object.freeze(QUAN_VS2_Q_SPECS.map(spec=>{
+  const segment=REVIEWED_QUAN_VS2_OUTLINES[spec.stroke][spec.mask]
+  return Object.freeze({id:'u8343-ue0102-'+(spec.stroke+1)+'-'+(spec.mask+1),kind:'growing-quan-q-caps' as const,segment,certificate:quanQuadraticCapsCertificate(spec,segment)})
+}))
+export function reviewedQuanQuadraticCapsContext(strokes:HanjaOutlineStrokes):ReviewedQuanQuadraticCapsContext|null {
+  return sameStrokes(strokes,REVIEWED_QUAN_VS2_OUTLINES)?QUAN_VS2_CONTEXT:null
+}
+export function reviewedQuanQuadraticCapsPolicy(context:ReviewedQuanQuadraticCapsContext|null,strokeIndex:number,maskIndex:number):ReviewedQuanQuadraticCapsPolicy|null {
+  if(context!==QUAN_VS2_CONTEXT)return null
+  const index=QUAN_VS2_Q_SPECS.findIndex(s=>s.stroke===strokeIndex&&s.mask===maskIndex)
+  return index<0?null:QUAN_VS2_Q_POLICIES[index]
+}
+function quanQuadraticCapsSource(policy:ReviewedQuanQuadraticCapsPolicy,segment:HanjaOutlineSegment) {
+  const index=QUAN_VS2_Q_POLICIES.indexOf(policy)
+  if(index<0||!sameSegment(segment,policy.segment))throw new Error('Only exact certified 荃 VS2 Q mask')
+  const spec=QUAN_VS2_Q_SPECS[index]
+  if(segment.revealPath!==spec.path||segment.revealWidth!==14||segment.weight!==spec.weight)throw new Error('Exact 荃 Q source fields changed')
+  const tokens=spec.path.split(' ')
+  return{q0:[Number(tokens[0].slice(1)),Number(tokens[1])] as [number,number],r:7}
+}
+export type ReviewedQuanGrowingNodes = {measurement:SVGPathElement|null;guide:SVGPathElement|null;startCap:SVGCircleElement|null;endCap:SVGCircleElement|null;ink:SVGPathElement|null}
+
+/** 荃 전용: 같은 document/owner와 최초 부모 트리를 UA 읽기 전후에 고정한다. */
+function quanCoordinateBinding(nodes:readonly SVGElement[],owner:SVGSVGElement):()=>boolean {
+  const document=owner.ownerDocument,view=document?.defaultView
+  if(!view||view.document!==document)throw new Error('Connected 荃 SVG document required')
+  const parents=new Map<Element,Element|null>()
+  for(const node of nodes){
+    let current:Element|null=node
+    const visited=new Set<Element>()
+    while(current){
+      if(visited.has(current))throw new Error('Cyclic 荃 SVG parent')
+      visited.add(current)
+      if(current.namespaceURI!=='http://www.w3.org/2000/svg'||current.ownerDocument!==document||!current.isConnected||(current!==owner&&(current as SVGElement).ownerSVGElement!==owner))throw new Error('Mismatched 荃 SVG coordinate owner')
+      const parent=current.parentElement
+      if(parent&&(!parent.isConnected||parent.ownerDocument!==document))throw new Error('Mismatched 荃 outer SVG parent')
+      parents.set(current,parent)
+      if(current===owner)break
+      current=current.parentElement
+    }
+    if(current!==owner)throw new Error('Detached 荃 SVG coordinate tree')
+  }
+  return()=>{
+    if(owner.ownerDocument!==document||document.defaultView!==view||view.document!==document)return false
+    for(const[node,parent]of parents){
+      if(!node.isConnected||node.ownerDocument!==document||node.parentElement!==parent||(node!==owner&&(node as SVGElement).ownerSVGElement!==owner)||node.getAttribute('transform')!==null)return false
+      const style=view.getComputedStyle(node)
+      if(style.transform!=='none'||['translate','rotate','scale'].some(key=>{const value=style.getPropertyValue(key);return value!==''&&value!=='none'}))return false
+    }
+    return true
+  }
+}
+/** L과 endpoint는 pathLength 없는 동일 connected 원 path에서 같은 frame에 읽는다. */
+export function measureReviewedQuanQuadraticCapsFrame(policy:ReviewedQuanQuadraticCapsPolicy,segment:HanjaOutlineSegment,progress:number,guide:SVGPathElement|null):ReviewedGrowingFrame {
+  const source=quanQuadraticCapsSource(policy,segment)
+  if(!Number.isFinite(progress)||progress<0||progress>1)throw new Error('Invalid 荃 Q progress')
+  const owner=guide?.ownerSVGElement
+  const defs=guide?.parentElement,target=defs?.parentElement
+  if(!owner||!guide||defs?.localName!=='defs'||target?.localName!=='g'||target.getAttribute('data-stroke-start-gate')!==policy.id)throw new Error('Exact 荃 measurement parent required')
+  const coordinates=quanCoordinateBinding([guide],owner)
+  const exact=()=>coordinates()&&guide.parentElement===defs&&defs.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('data-quan-measurement')==='true'&&guide.getAttribute('pathLength')===null
+  if(!exact())throw new Error('Exact connected 荃 measurement guide required')
+  const L=guide!.getTotalLength()
+  if(!Number.isFinite(L)||L<source.r||!exact())throw new Error('Invalid 荃 browser length')
+  const d=Math.min(progress*L,L),point=guide!.getPointAtLength(d)
+  if(!Number.isFinite(point.x)||!Number.isFinite(point.y)||!exact())throw new Error('Changed 荃 guide or invalid endpoint')
+  if(progress===0&&Math.hypot(point.x-source.q0[0],point.y-source.q0[1])>=1e-4)throw new Error('荃 UA start differs from exact M')
+  return Object.freeze({policyId:policy.id,guide:segment.revealPath!,progress,L,d,rho:Math.min(source.r,d),q0:Object.freeze(source.q0),point:Object.freeze({x:point.x,y:point.y})})
+}
+/** 기존 정책과 분리된 원 Q commit. 완료 잉크는 별도 key/full round mask이다. */
+export function commitReviewedQuanQuadraticCaps(policy:ReviewedQuanQuadraticCapsPolicy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedQuanGrowingNodes) {
+  const{measurement,guide,startCap,endCap,ink}=nodes
+  const reset=()=>{
+    ink?.setAttribute('visibility','hidden');guide?.setAttribute('stroke-dasharray','0 2')
+    for(const cap of[startCap,endCap]){cap?.setAttribute('r','0');cap?.setAttribute('cx','0');cap?.setAttribute('cy','0')}
+    for(const key of['data-growing-progress','data-growing-length','data-growing-distance','data-growing-radius','data-growing-end-x','data-growing-end-y'])ink?.removeAttribute(key)
+  }
+  reset()
+  try{
+    quanQuadraticCapsSource(policy,segment)
+    if(!Number.isFinite(progress)||progress<0||progress>1||!/^[A-Za-z0-9_:.-]+$/.test(clipId))throw new Error('Invalid 荃 frame/id')
+    if(progress===0||progress===1)return{status:progress===0?'empty' as const:'complete' as const,frame:null,cleanup:reset}
+    const owner=measurement?.ownerSVGElement
+    const defs=measurement?.parentElement,target=defs?.parentElement,mask=guide?.parentElement
+    if(!owner||!measurement||!guide||!startCap||!endCap||!ink||defs?.localName!=='defs'||target?.localName!=='g'||mask?.localName!=='mask')throw new Error('Missing 荃 SVG binding tree')
+    const coordinates=quanCoordinateBinding([measurement,guide,startCap,endCap,ink],owner)
+    const bound=()=>coordinates()&&measurement.parentElement===defs&&defs.parentElement===target&&guide.parentElement===mask&&mask.parentElement===defs&&startCap.parentElement===mask&&endCap.parentElement===mask&&ink.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&mask.getAttribute('id')===clipId+'-quan-growing'&&mask.getAttribute('maskUnits')==='userSpaceOnUse'&&['x','y'].every(key=>mask.getAttribute(key)==='0')&&['width','height'].every(key=>mask.getAttribute(key)==='100')&&[measurement,guide,startCap,endCap,ink].every(node=>node.getAttribute('data-growing-owner')===clipId)&&measurement.getAttribute('id')===clipId+'-quan-measure'&&guide.getAttribute('id')===clipId+'-quan-guide'&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('pathLength')==='1'&&guide.getAttribute('stroke-width')==='14'&&guide.getAttribute('stroke-linecap')==='butt'&&guide.getAttribute('stroke-linejoin')==='miter'&&ink.getAttribute('d')===segment.outline&&ink.getAttribute('mask')==='url(#'+clipId+'-quan-growing)'
+    if(!bound())throw new Error('Mismatched 荃 SVG binding')
+    const frame=measureReviewedQuanQuadraticCapsFrame(policy,segment,progress,measurement)
+    if(!bound())throw new Error('荃 binding changed during UA read')
+    guide!.setAttribute('stroke-dasharray',String(frame.progress)+' 2')
+    startCap!.setAttribute('cx',String(frame.q0[0]));startCap!.setAttribute('cy',String(frame.q0[1]));startCap!.setAttribute('r',String(frame.rho))
+    endCap!.setAttribute('cx',String(frame.point.x));endCap!.setAttribute('cy',String(frame.point.y));endCap!.setAttribute('r',String(frame.rho))
+    for(const[key,value]of Object.entries({'data-growing-progress':frame.progress,'data-growing-length':frame.L,'data-growing-distance':frame.d,'data-growing-radius':frame.rho,'data-growing-end-x':frame.point.x,'data-growing-end-y':frame.point.y}))ink!.setAttribute(key,String(value))
+    if(!bound())throw new Error('荃 binding changed before visibility commit')
+    ink!.setAttribute('visibility','visible')
+    return{status:'visible' as const,frame,cleanup:reset}
+  }catch{reset();return{status:'hidden' as const,frame:null,cleanup:reset}}
+}

@@ -355,3 +355,134 @@ test('癙 actual component SSR keeps three exact Q guides mounted, intermediate 
   const c=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),child=c.slice(c.indexOf('function QuadraticCapsOutline'))
   assert(child.includes('key="full-round-ink"'));assert(child.includes('key="growing-ink"'));assert(child.includes('return committed.cleanup'))
 })
+
+
+// 荃 전용 신규 검사. 기존 癙/다른 정책의 테스트 본문은 그대로 둔다.
+import { reviewedQuanQuadraticCapsContext, reviewedQuanQuadraticCapsPolicy, measureReviewedQuanQuadraticCapsFrame, commitReviewedQuanQuadraticCaps, type ReviewedQuanQuadraticCapsPolicy, type ReviewedQuanGrowingNodes } from './hanja-stroke-start-gate.ts'
+import { growingState as quanStandaloneState } from '../docs/hanja-renderer-growing-caps-u8343-vs2-two-q-experiment-2026-10-20/render.mjs'
+const quan=JSON.parse(readFileSync(new URL('../docs/hanja-source-independent-hq-u8343-vs2-source-experiment-2026-10-20/fixtures.json',import.meta.url),'utf8')).originalOrderBaseline as HanjaOutlineStrokes
+const quanClone=<T,>(v:T):T=>JSON.parse(JSON.stringify(v)) as T
+const quanIndices=[[4,0],[5,1]] as const
+function quanPolicy(i:number){const [pen,mask]=quanIndices[i];return reviewedQuanQuadraticCapsPolicy(reviewedQuanQuadraticCapsContext(quan),pen,mask)!}
+function fakeQuan(i:number,id='quan-'+i){
+  const policy=quanPolicy(i),segment=policy.segment,q0=i===0?[51,33.5]:[53,33.5],L=i===0?55.10026550292969:46.49167251586914,events:string[]=[]
+  const document={defaultView:null as unknown},view={document,getComputedStyle:(n:Element)=>{const x=n as unknown as {cssTransform:string;cssTranslate:string};return{transform:x.cssTransform,getPropertyValue:(key:string)=>key==='translate'?x.cssTranslate:'none'}}};document.defaultView=view
+  let owner:SVGSVGElement
+  const node=(name:string,attrs:Record<string,string>)=>({localName:name,namespaceURI:'http://www.w3.org/2000/svg',isConnected:true,ownerSVGElement:owner,ownerDocument:document,parentElement:null as unknown,cssTransform:'none',cssTranslate:'none',attrs:{...attrs},getAttribute(key:string){return this.attrs[key]??null},setAttribute(key:string,value:string){this.attrs[key]=value;events.push(name+':'+key+'='+value)},removeAttribute(key:string){delete this.attrs[key]}})
+  const svg=node('svg',{});owner=svg as unknown as SVGSVGElement
+  const group=node('g',{}),target=node('g',{'data-stroke-start-gate':policy.id}),defs=node('defs',{}),mask=node('mask',{id:id+'-quan-growing',maskUnits:'userSpaceOnUse',x:'0',y:'0',width:'100',height:'100'})
+  group.parentElement=svg;target.parentElement=group;defs.parentElement=target;mask.parentElement=defs
+  let pointHook:((d:number)=>{x:number;y:number})|null=null,lengthHook:(()=>void)|null=null,length=L
+  let reads=0,pointReads=0
+  const measurement=Object.assign(node('path',{'data-growing-owner':id,'data-quan-measurement':'true',id:id+'-quan-measure',d:segment.revealPath!}),{getTotalLength(){reads++;events.push('measure:length');lengthHook?.();return length},getPointAtLength(d:number){pointReads++;events.push('measure:point');return pointHook?pointHook(d):{x:q0[0]+d/L,y:q0[1]+d/L}}})
+  const guide=Object.assign(node('path',{'data-growing-owner':id,id:id+'-quan-guide',d:segment.revealPath!,pathLength:'1','stroke-width':'14','stroke-linecap':'butt','stroke-linejoin':'miter'}),{getTotalLength(){throw Error('dash is not measurement guide')},getPointAtLength(){throw Error('dash is not measurement guide')}})
+  const startCap=node('circle',{'data-growing-owner':id,r:'0'}),endCap=node('circle',{'data-growing-owner':id,r:'0'}),ink=node('ink',{'data-growing-owner':id,d:segment.outline,mask:'url(#'+id+'-quan-growing)',visibility:'hidden'})
+  measurement.parentElement=defs;guide.parentElement=mask;startCap.parentElement=mask;endCap.parentElement=mask;ink.parentElement=target
+  const nodes={measurement,guide,startCap,endCap,ink} as unknown as ReviewedQuanGrowingNodes
+  return{policy,segment,q0,L,id,owner,svg,document,view,group,target,defs,mask,measurement,guide,startCap,endCap,ink,nodes,events,counts:()=>({reads,pointReads}),pointHook:(fn:typeof pointHook)=>{pointHook=fn},lengthHook:(fn:typeof lengthHook)=>{lengthHook=fn},setLength:(n:number)=>{length=n}}
+}
+test('荃 exact whole and two private certificates preserve every prior policy byte',()=>{
+  assert.equal(quan.length,10);assert.equal(quan.flat().length,11)
+  const context=reviewedQuanQuadraticCapsContext(quan);assert(context);assert.equal(context.id,'u8343-ue0102')
+  assert.equal(reviewedQuanQuadraticCapsPolicy({id:'u8343-ue0102'},4,0),null)
+  for(const [i,[pen,mask]]of quanIndices.entries()){
+    const p=quanPolicy(i);assert.equal(p.segment,quanPolicy(i).segment);assert.equal(p.kind,'growing-quan-q-caps');assert.equal(p.id,'u8343-ue0102-'+(pen+1)+'-'+(mask+1))
+    assert.equal(p.certificate.parameterBound,i===0?.2:.15);assert.equal(p.certificate.curvatureBound,i===0?1/49:1/86);assert.equal(p.certificate.rKBound,i===0?1/7:7/86);assert.equal(p.certificate.initialArcMax,7);assert.equal(p.certificate.exactDecimalRational,true);assert.equal(p.certificate.notRasterProof,true)
+    assert(Object.isFrozen(p));assert(Object.isFrozen(p.segment));assert(Object.isFrozen(p.segment.bounds));assert(Object.isFrozen(p.certificate))
+    assert.throws(()=>{(p.segment.bounds as number[])[0]+=1});assert.throws(()=>{p.segment.weight+=1})
+    for(const key of Object.keys(p.segment)){
+      const changed=quanClone(quan),s=changed[pen][mask] as unknown as Record<string,unknown>
+      s[key]=key==='bounds'?[0,0,1,1]:key==='weight'?1:key==='revealWidth'?13:String(s[key])+' '
+      assert.equal(reviewedQuanQuadraticCapsContext(changed),null)
+    }
+    const extra=quanClone(quan);Object.assign(extra[pen][mask],{extra:true});assert.equal(reviewedQuanQuadraticCapsContext(extra),null)
+    const fake=fakeQuan(i);assert.throws(()=>measureReviewedQuanQuadraticCapsFrame({...p},p.segment,.1,fake.nodes.measurement))
+  }
+  for(let pen=0;pen<10;pen++)for(let mask=0;mask<quan[pen].length;mask++){
+    const changed=quanClone(quan);changed[pen][mask].weight+=.001;assert.equal(reviewedQuanQuadraticCapsContext(changed),null)
+    if(!quanIndices.some(([p,m])=>p===pen&&m===mask))assert.equal(reviewedQuanQuadraticCapsPolicy(context,pen,mask),null)
+  }
+  const source=readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url),'utf8')
+  assert.equal(createHash('sha256').update(source.slice(0,51743)).digest('hex'),'5e1eaaf4b99c72854370a499980bf97e9b3001bde8c35a1475149ec52bf40bf8')
+  const component=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),oldChild=component.slice(component.indexOf('function QuadraticCapsOutline'),component.indexOf('\n/** 荃만'))
+  assert.equal(createHash('sha256').update(oldChild).digest('hex'),'354ee362d6662ee4d9eed7d16d963703b548738e784d17f9049e2ab480216344')
+  const testSource=readFileSync(new URL('./hanja-stroke-start-gate.test.ts',import.meta.url),'utf8')
+  assert.equal(createHash('sha256').update(testSource.slice(0,39948)).digest('hex'),'b79aea6e0fbc1a259edba29f93e4391119e5c99142a4d708f43d3b972b9fa3c5')
+})
+test('荃 connected original-path frames and atomic caps fail closed without prior-test reruns',()=>{
+  for(let i=0;i<2;i++){
+    const f=fakeQuan(i),result=commitReviewedQuanQuadraticCaps(f.policy,f.segment,.03,f.id,f.nodes)
+    assert.equal(result.status,'visible');assert(result.frame);assert.deepEqual(f.counts(),{reads:1,pointReads:1});assert.equal(f.events.at(-1),'ink:visibility=visible')
+    const expected=quanStandaloneState(f.segment,.03,f.L,[result.frame.point.x,result.frame.point.y])
+    assert.equal(result.frame.L,expected.L);assert.equal(result.frame.d,expected.d);assert.equal(result.frame.rho,expected.rho);assert.deepEqual(result.frame.q0,expected.start)
+    assert.equal(f.guide.attrs['stroke-dasharray'],'.03 2'.replace('.03','0.03'));assert.equal(f.startCap.attrs.r,String(result.frame.rho));assert.equal(f.endCap.attrs.r,String(result.frame.rho))
+    result.cleanup();assert.equal(f.ink.attrs.visibility,'hidden');assert.equal(f.guide.attrs['stroke-dasharray'],'0 2');assert.equal(f.startCap.attrs.r,'0');assert.equal(f.ink.getAttribute('data-growing-length'),null)
+    const strict=commitReviewedQuanQuadraticCaps(f.policy,f.segment,.03,f.id,f.nodes);assert.equal(strict.status,'visible');strict.cleanup();strict.cleanup()
+    const zero=fakeQuan(i);assert.equal(commitReviewedQuanQuadraticCaps(zero.policy,zero.segment,0,zero.id,zero.nodes).status,'empty');assert.deepEqual(zero.counts(),{reads:0,pointReads:0})
+    const full=fakeQuan(i);assert.equal(commitReviewedQuanQuadraticCaps(full.policy,full.segment,1,full.id,full.nodes).status,'complete');assert.deepEqual(full.counts(),{reads:0,pointReads:0})
+    const exact=fakeQuan(i);const start=measureReviewedQuanQuadraticCapsFrame(exact.policy,exact.segment,0,exact.nodes.measurement);assert.deepEqual(start.q0,exact.q0);assert.deepEqual(start.point,{x:exact.q0[0],y:exact.q0[1]})
+    const mutations:Array<(x:ReturnType<typeof fakeQuan>)=>void>=[
+      x=>{x.measurement.isConnected=false},x=>{x.measurement.ownerSVGElement={}as SVGSVGElement},x=>{x.measurement.attrs.pathLength='1'},x=>{x.measurement.attrs.transform='translate(1)'},
+      x=>{x.owner.getAttribute=()=> 'scale(2)'},x=>{(x.owner as unknown as {isConnected:boolean}).isConnected=false},x=>{x.measurement.attrs.d+=' '},x=>{x.measurement.attrs.id='wrong'},x=>{x.measurement.attrs['data-quan-measurement']='false'},
+      x=>{x.guide.attrs.pathLength='2'},x=>{x.guide.attrs.d+=' '},x=>{x.guide.attrs['stroke-width']='13'},x=>{x.guide.attrs['stroke-linecap']='round'},x=>{x.guide.attrs['stroke-linejoin']='round'},x=>{x.guide.attrs.transform='scale(2)'},
+      x=>{x.startCap.attrs['data-growing-owner']='reused'},x=>{x.endCap.ownerSVGElement={}as SVGSVGElement},x=>{x.ink.attrs.mask='url(#wrong)'},x=>{x.setLength(NaN)},x=>{x.setLength(6)},
+      x=>{x.pointHook(()=>({x:NaN,y:0}))},x=>{x.pointHook(()=>{x.guide.attrs.d+=' ';return{x:0,y:0}})},x=>{x.lengthHook(()=>{x.measurement.attrs.pathLength='1'})},
+    ]
+    for(const mutate of mutations){const x=fakeQuan(i);mutate(x);assert.equal(commitReviewedQuanQuadraticCaps(x.policy,x.segment,.03,x.id,x.nodes).status,'hidden');assert.equal(x.ink.attrs.visibility,'hidden');assert.equal(x.startCap.attrs.r,'0');assert.equal(x.guide.attrs['stroke-dasharray'],'0 2')}
+    for(const p of[NaN,Infinity,-1,1.01]){const x=fakeQuan(i);assert.equal(commitReviewedQuanQuadraticCaps(x.policy,x.segment,p,x.id,x.nodes).status,'hidden');assert.deepEqual(x.counts(),{reads:0,pointReads:0})}
+    const wrongM=fakeQuan(i);wrongM.pointHook(()=>({x:wrongM.q0[0]+.001,y:wrongM.q0[1]}));assert.throws(()=>measureReviewedQuanQuadraticCapsFrame(wrongM.policy,wrongM.segment,0,wrongM.nodes.measurement))
+    const badFrame=fakeQuan(i);assert.equal(commitReviewedQuanQuadraticCaps(badFrame.policy,badFrame.segment,.03,'bad id',badFrame.nodes).status,'hidden')
+    const clone=fakeQuan(i);assert.equal(commitReviewedQuanQuadraticCaps({...clone.policy},clone.segment,.03,clone.id,clone.nodes).status,'hidden')
+    const fullInk=fakeQuan(i,'full-only').ink;fullInk.setAttribute('mask','url(#'+f.id+')');fullInk.setAttribute('visibility','visible');result.cleanup();assert.equal(fullInk.attrs.visibility,'visible');assert.equal(fullInk.attrs.mask,'url(#'+f.id+')')
+  }
+})
+async function renderQuanComponent(){
+  const source=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),timing=readFileSync(new URL('./hanja-strokes.ts',import.meta.url),'utf8'),lines=timing.split('\n')
+  const timingURL='data:text/javascript;base64,'+Buffer.from(['const STROKE_PLAYBACK_SPEED =','export const STROKE_DURATION =','export const STROKE_GAP ='].map(prefix=>lines.find(l=>l.startsWith(prefix))!).join('\n')).toString('base64')
+  let js=ts.transpileModule(source+'\nexport { QuanQuadraticCapsOutline }\n',{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText
+  for(const[from,to]of[['@/lib/hanja-strokes',timingURL],['@/lib/hanja-stroke-outline',new URL('./hanja-stroke-outline.ts',import.meta.url).href],['@/lib/hanja-stroke-start-gate',new URL('./hanja-stroke-start-gate.ts',import.meta.url).href],['react/jsx-runtime',import.meta.resolve('react/jsx-runtime')],['react',import.meta.resolve('react')]])js=js.replaceAll('"'+from+'"','"'+to+'"').replaceAll("'"+from+"'","'"+to+"'")
+  return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'))
+}
+test('荃 actual component SSR isolates measurement and full-round keys at zero mid full prefix',async()=>{
+  const{StrokeOutlines,QuanQuadraticCapsOutline}=await renderQuanComponent()
+  for(let i=0;i<2;i++){
+    const policy=quanPolicy(i),segment=policy.segment,render=(p:number)=>renderToStaticMarkup(createElement('svg',null,createElement(QuanQuadraticCapsOutline,{policy,segment,progress:p,clipId:'quan-ssr-'+i})))
+    const zero=render(0);assert(!zero.includes('d="'+segment.outline+'"'));const measurement=zero.match(/<path[^>]*data-quan-measurement="true"[^>]*>/)![0];assert(measurement.includes('d="'+segment.revealPath+'"'));assert(!measurement.includes('pathLength'));assert(!measurement.includes('pathLength'.toLowerCase()));assert(!measurement.includes('transform='))
+    const mid=render(.03);assert.equal(mid,render(.03));assert(mid.includes('visibility="hidden"'));assert(!mid.includes('data-growing-full-round'))
+    for(const p of[NaN,Infinity,-1,1.01])assert(!render(p).includes('d="'+segment.outline+'"'))
+    const full=render(1);assert(full.includes('data-growing-full-round="true"'));assert(full.includes('d="'+segment.outline+'" mask="url(#quan-ssr-'+i+')"'));assert(full.includes('stroke-linecap="round"'));assert(full.includes('stroke-linejoin="miter"'));assert(full.includes('stroke-dasharray="1 2"'))
+  }
+  const render=(phase:'idle'|'playing'|'done',manual:boolean|null,count:number)=>renderToStaticMarkup(createElement('svg',null,createElement(StrokeOutlines,{strokes:quan,clock:{current:[]},phase,manual,count})))
+  for(const phase of['idle','done']as const){const whole=render(phase,null,10);assert.equal((whole.match(/data-stroke-reveal-policy="growing-quan-q-caps"/g)||[]).length,2);assert.equal((whole.match(/data-growing-full-round="true"/g)||[]).length,2)}
+  assert.equal((render('playing',true,5).match(/data-growing-full-round="true"/g)||[]).length,1)
+  assert.equal((render('playing',true,6).match(/data-growing-full-round="true"/g)||[]).length,2)
+  const source=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),child=source.slice(source.indexOf('function QuanQuadraticCapsOutline'))
+  assert(child.includes('key="quan-full-round-ink"'));assert(child.includes('key="quan-growing-ink"'));assert(child.includes('return committed.cleanup'));assert(source.includes('Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN'))
+})
+test('荃 coordinate binding failed-tail rejects parent document and rendered transforms',()=>{
+  let rejected=0
+  for(let i=0;i<2;i++){
+    const valid=fakeQuan(i),ok=commitReviewedQuanQuadraticCaps(valid.policy,valid.segment,.03,valid.id,valid.nodes)
+    assert.equal(ok.status,'visible');assert.deepEqual(valid.counts(),{reads:1,pointReads:1});assert.equal(valid.events.at(-1),'ink:visibility=visible');ok.cleanup()
+    const mutations:Array<(x:ReturnType<typeof fakeQuan>)=>void>=[]
+    for(const name of['measurement','guide','startCap','endCap','ink','mask','defs','target','group','svg']as const){
+      mutations.push(x=>{x[name].attrs.transform='translate(10 0)'},x=>{x[name].cssTransform='matrix(1, 0, 0, 1, 10, 0)'},x=>{x[name].cssTranslate='10px'},x=>{x[name].ownerDocument={}as typeof x.document},x=>{x[name].parentElement={} })
+    }
+    mutations.push(x=>{x.startCap.parentElement=x.defs},x=>{x.endCap.parentElement=x.target},x=>{x.ink.parentElement=x.group},x=>{x.measurement.parentElement=x.mask},x=>{x.guide.parentElement=x.defs},x=>{x.mask.attrs.maskUnits='objectBoundingBox'},x=>{x.target.attrs['data-stroke-start-gate']='other'},x=>{x.ink.attrs.d+=' '},x=>{x.document.defaultView={document:{}}},x=>{x.view.document={}as typeof x.document})
+    for(const phase of['before','length','point']as const)for(const mutate of mutations){
+      const x=fakeQuan(i)
+      if(phase==='before')mutate(x)
+      if(phase==='length')x.lengthHook(()=>mutate(x))
+      if(phase==='point')x.pointHook(d=>{mutate(x);return{x:x.q0[0]+d/x.L,y:x.q0[1]+d/x.L}})
+      const result=commitReviewedQuanQuadraticCaps(x.policy,x.segment,.03,x.id,x.nodes)
+      assert.equal(result.status,'hidden',phase);assert.equal(x.ink.attrs.visibility,'hidden');assert.equal(x.startCap.attrs.r,'0');assert.equal(x.endCap.attrs.r,'0');assert.equal(x.guide.attrs['stroke-dasharray'],'0 2');assert.equal(x.ink.getAttribute('data-growing-length'),null);rejected++
+    }
+    const post=fakeQuan(i),set=post.endCap.setAttribute
+    post.endCap.setAttribute=function(key,value){set.call(this,key,value);if(key==='r'&&value!=='0')post.ink.cssTransform='translateX(10px)'}
+    assert.equal(commitReviewedQuanQuadraticCaps(post.policy,post.segment,.03,post.id,post.nodes).status,'hidden');assert.equal(post.ink.attrs.visibility,'hidden');rejected++
+    const source=readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url),'utf8')
+    assert.equal(createHash('sha256').update(source.slice(0,51743)).digest('hex'),'5e1eaaf4b99c72854370a499980bf97e9b3001bde8c35a1475149ec52bf40bf8')
+    assert.equal(createHash('sha256').update(readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url))).digest('hex'),'f729f0db65f84dee49182a104d874fe48b347f05dbaeb0283e1a0777434c1900')
+  }
+  assert.equal(rejected,362)
+})
