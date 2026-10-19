@@ -1,0 +1,12 @@
+# 麰 source review notice
+
+GlyphWiki Project and contributors;[GlyphWiki license@18](https://glyphwiki.org/wiki/GlyphWiki:License@18) and pinned archive license remain applicable. Fixed engine proof retained without redistributing engine JavaScript. No historical dependency records required. No runtime geometry approved.
+
+Native Codex browser panel554 compared all four pinned whole variants with domestic17pen source. Default/VS0/VS1 match whole form;VS2 replaces the domestic long lower sweep with a short diagonal and is ineligible. Domestic static directions12–17 directly observed. Domestic pen12 is one continuous folded 厶 stroke;compatible whole original raw12 quadratic ends[119.86,58.131125000000004],raw13 starts[101.84,61.93662499999999],gap[-18.02,3.8055] original units (normalized[-9.01,1.90275]). All three compatible wholes have identical disconnected original centerlines. Continuity failure before progressive compiler:zero progressive pens/frames reviewed or approved;all17progressivepens unreviewed. Complete11record/four-root pinned2016 family;zero historical dependencies,missing or aliases. Default19raw/19draw/12quadratic curves/1cubic;VS2 19raw19draw13Q0B. Original points/control/endpoints/flags unchanged. No connector,extension,split/reverse,merge,radical transplant,coordinate edit,mask widening or latest substitution. Domestic dictionary crosscheck,not exam-body approval;private graphics RAM-only. Runtime absent. Release requires licensed continuous exact 厶 fold centerline followed by full17pen native progressive review.
+
+
+## 1297 麰 검토 재생
+
+고정 麰 원19 raw/19 calls/42 polygon과 factory8067 원문·좌표·flags·guide·bounds·width·weight·direction을 보존합니다. QQ12 raw12/13 delta[-18.02,3.8055]는 독립2 mask이고 raw9/10만 정확한 접점 결합으로 유지합니다. 원 mapping과 cubic terminal은 불변이며 connector·합성 trajectory·새좌표·tail0입니다. 원569 header4+별도trace를 정직한 새full5/id7로 결합하며 원strict identity/기존progressive compiler/기존archive full5 동일성을 주장하지 않습니다. family11/provider0/closure5, wholeNames4와 freshwhole1을 구분합니다. 원569STRING1/HOLD/NOTICE/sourcefalse·기존정적관찰과 progressive0을 보존하고 root가새whole1·17방향 전체·fine[12,11,10,6,15,17]99.99→100·coarse153+153·multi12 전체경계·8초자연재생을 fresh 승인했습니다. input20+current8=28pins이며 source기하1과 runtime source/fixture/derive/engine0을 구분하고 앱UI 자동재생false입니다.
+Review: docs/hanja-goal-glyphwiki-batch1297-2026-10-19/review.json SHA256 10bed6831095d2c9324fc640ddbed05b2e7f8930ccacb11974d6d756c468389b
+28 immutable pins. Runtime native approval is separate from original source nativeApproval:false.
