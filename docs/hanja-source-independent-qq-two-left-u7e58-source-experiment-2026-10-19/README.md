@@ -1,0 +1,11 @@
+# 繘 cached QQ2 + exact LEFT14 source 실험
+
+繘796 원QQ2후보의 root whole1호환과 FIRSTfine10(99.99→100 원LEFT약18px추가)FAIL을 보존합니다. 다른fine(13 Q114/15 UP5006/5 포함)·방향·coarse·모든경계·자연재생은 그검토에서 미실행입니다. 기존糸QQ1raw0/1·QQ2raw2/3 독립마스크와 exact8/9·11/12·16/17·21/22 접합,incidental20→23 별획은 불변입니다. 새후보는 pen10raw13 마지막quad만 기존997 LEFT14 width6/jump20/tail10 공식과 exact일치하여 분리합니다. bodybounds는 [54.1,25.6,72.1,50.7]→[64.1,25.6,72.1,50.7]로 남은원bodypolygon activebounds를 표시하고, bodyguide·폭·weight23.176068과 원52polygon·다른17획은 불변입니다. 18p21m52·기하factory/원compiler/engine0·캐시분리1이며 새native/runtime미승인/전gatefresh필수입니다.
+
+원source8 commit은 전달받은 축약4950b3bd…5fa18만 기록하며 전체SHA를 추정하지 않습니다. 정확원prep ed93f8b217e91511afb9690c8da6845364ed03ed0572e0f8711719b63431b24c/compiled7f41fd272f223b84fe7c2956250c4e9794f5f4301e2475b1b6bc82113593a990 및 원796 HOLD/NOTICE/source를 그대로보존합니다. 실패서버 PID64244/port55814/session92024 STOP143은 root확인값입니다. 원source의 wholebase/VS0호환 및 static방향1–3 관찰·progressive0 이력은 새native승인이 아닙니다. 완전literal국내배열부재/provisional순서와 incidentalraw20→23 별획을 유지하고 모든순서fresh가 필요합니다. 원13 Q114/15 UP5006/5는 미관찰·미분리위험이며 이번후보에서 추정교정하지 않습니다.
+
+선택 engine-whole-u7e58.json actual full5/literal id3(root/file/fileSHA256)를 그대로사용하고 새header결합0·default혼합0입니다. 원캐시 strictprogressive3/whole4 위임 및 deriveTail4를 고정하고 누락/추가args/wrongroot/proof·identity변경을 거부합니다. captureGeometry API가 없습니다. 원20+이전source8의8+涍LEFT예시module1+997module1=30입력핀/own7, 향후새8포함runtime38핀입니다.
+
+기존997 kernel1691byte SHA7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08와 partition1302byte SHA2802b789ebee4fe2f9af3903f71f26f2a9609dced9171e87ecf63aba342a8657을 byteexact재사용합니다. 원quadSHAb4181ac336eb994bff233937ce3b5f6f3c0cb7e790502131a09e3a128f167d50와 args/bodybounds/weight/baselineSHA를 literal고정합니다. 원outline 마지막chunk를 같은원quad 별mask로 옮길뿐 새coords/path/connector/폭/flags가 없습니다. bodyguide폭weight는 그대로이고 남은bodypolygon bounds표시만 minX54.1→64.1로바뀝니다. tailweight10은 기존공식입니다. baseline은 원source의 동일logical순서20mask이며 독립native증거가 아닙니다. 캐시분리1→공개fixture선저장→cached검사/sourcegeometry0·engine0입니다.
+
+helper는3SVG520/coarse9각220/실제weight의 모든multi1·2·10 before/at/after·0/epsilon(.0001%)/50/95/99.99/100·8초재생을 제공합니다. 국내SVG는RAM전용, startup/매GET compilerengine0·원입력/자체/config/prep guard입니다. 작성자UI/server/runtime/registry/catalog/Git/build0/native/runtimefalse로 fresh whole·전방향·모든fine/경계/coarse/replay필수입니다.
