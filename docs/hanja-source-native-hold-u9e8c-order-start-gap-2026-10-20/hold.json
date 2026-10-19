@@ -1,0 +1,137 @@
+{
+  "schema": "hanja-independent-native-hold-v1",
+  "date": "2026-10-20",
+  "glyph": "麌",
+  "root": "u9e8c",
+  "status": "held-natural-start-white-gap-and-detached-island",
+  "rendererExperiment": "docs/hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/",
+  "rendererCommitPrefix": "895f3ef",
+  "fullRendererCommitNotProvided": true,
+  "sourceExperiment": "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/",
+  "geometrySHA256": "d697a545504cc475de264b657c28f9b5b857278e4813c4ebf3c96dba2c37464d",
+  "inputSHA256": {
+    "docs/hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/README.md": "571485f38e3c1f9ac07ef967c5a9cb1618ec404b36c97cb7549002c62ec3f52a",
+    "docs/hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/render.mjs": "4048bd721a545ef5abaf141097afdabd4a4c32dc0cc4b8cbb05f673e8599f9a0",
+    "docs/hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/config.json": "5a2902ddb3008e93230ae119a6e8365f3f1ccc5f6d3ee997e9b6c660419144ee",
+    "docs/hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/serve.py": "ebda5a3c47a3c0b35c8c4b4b01f52020e66c34315d896a35b9d2b3402b4d6b17",
+    "docs/hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/check.mjs": "ce4c0a8090101e74fa40e975d4e672e2aaff50bfdcbc81893528568faf435d53",
+    "docs/hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/validation.json": "0555b3300831d75c96172f6246a050be78ecd21460c6102453215d317fe28cb4",
+    "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/README.md": "311e8b0ef4b1939a1989b7fb09c071c16aca231eb5f25d132e404d4c47773486",
+    "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/candidate.mjs": "dce4734e08a05f36b5d2e362e676c05ff4e27b88fcc3085cad1f5780b105e282",
+    "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/candidate.d.mts": "32810ec2527ca30da7eeff4ef0285ada9ef543b562c42adad844b3fae5b2d422",
+    "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/config.json": "b35c350bfa14993065b7535e3cbb8776f6c8e0e8851ea86d5c4048606c7cd36d",
+    "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/fixtures.json": "f34c662f2d0bce348f08ae7cd7b27c3ab450f2a7136c4aa417b04b363c194955",
+    "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/preparation.json": "d78e5374cc3e5fa47bc473def83ad0c3b6eb4ca9a6ac934851cb002a308b550a",
+    "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/serve.py": "c8cc4679e6a083e07d97f26380933bc224f32ef6e8992ab2037ed2d0a74a73b7",
+    "docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/source-check.mjs": "49e4729b0142ffd7ae36a1b78785600d650abb0d57df344192d51b86f9213c06"
+  },
+  "observationSource": "root가브라우저패널에서직접관찰해전달;이작성자는UI를실행하지않음",
+  "nativeObservation": {
+    "whole": {
+      "compatible": 1
+    },
+    "directionsAt75Percent": {
+      "passedPens": [
+        4,
+        5,
+        6
+      ],
+      "eachComparedWithDomestic": true,
+      "newToOriginalCandidateMapping": [
+        {
+          "newPen": 4,
+          "oldPen": 5
+        },
+        {
+          "newPen": 5,
+          "oldPen": 6
+        },
+        {
+          "newPen": 6,
+          "oldPen": 4
+        }
+      ],
+      "previousUnconfirmed5And6Resolved": true,
+      "other15PensReviewed": 0
+    },
+    "fine": {
+      "reviewed": 0
+    },
+    "coarse": {
+      "reviewed": 0
+    },
+    "coverage": {
+      "reviewed": 0
+    },
+    "multiMaskBoundaries": {
+      "reviewed": 0
+    },
+    "FIRSTnatural": {
+      "pen": 11,
+      "configuredSeconds": 8,
+      "observedStartUIProgressPercent": 2.60375,
+      "observedStartUIProgressText": "2.60375000%",
+      "actualPixels": 520,
+      "actualRightNew": "상단흰틈과그아래세로분리섬이관찰되어FAIL",
+      "middleOld": "연속형태로관찰",
+      "startPassed": false,
+      "observedElapsedSeconds": null,
+      "completion": {
+        "status": "observed-root-complete",
+        "observed": true,
+        "passed": true,
+        "progressPercent": 100,
+        "UIProgressText": "100.00000000%",
+        "actualRightWhole11MatchesMiddle": true,
+        "initialFailureOverridden": false
+      }
+    },
+    "otherFreshGatesStopped": true
+  },
+  "cause": {
+    "established": false,
+    "description": "흰틈과분리섬을관찰했으며수식·raster·초기paint중원인을확정하지않음"
+  },
+  "server": {
+    "pid": 89385,
+    "port": 65373,
+    "sessionId": 58771,
+    "status": "stopped",
+    "stopped": true,
+    "exitCode": 143,
+    "stopPending": false
+  },
+  "preservation": {
+    "renderer6Unchanged": true,
+    "source8Unchanged": true,
+    "originalHoldsUnchanged": true,
+    "priorNativeApprovalsNotInherited": true,
+    "sourceNativeApprovalFalse": true,
+    "sourceRuntimeAppliedFalse": true,
+    "newCoordinates": false,
+    "newPaths": false,
+    "newWidth": false,
+    "newGeometry": false
+  },
+  "checks": {
+    "status": "PASS",
+    "executions": 2,
+    "initialPendingStateCheckExecutions": 1,
+    "finalChangedFieldsOnlyExecutions": 1,
+    "passed": true,
+    "initialInputPins": 14,
+    "initialPinMismatches": 0,
+    "passedSourcePinChecksRepeated": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "appChanged": false,
+  "registryChanged": false,
+  "sourceGeometryExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "engineRuns": 0,
+  "UIByAuthor": 0,
+  "serverStartedByAuthor": false,
+  "buildExecuted": false,
+  "GitChanged": false
+}
