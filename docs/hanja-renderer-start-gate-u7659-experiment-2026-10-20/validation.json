@@ -1,0 +1,172 @@
+{
+  "schema": "hanja-renderer-start-gate-validation-v1",
+  "date": "2026-10-20",
+  "configSHA256": "a863e9c4957ee45c6baee34758598bf388333ab9ebbd0c6d0c5756775e3457d7",
+  "newFilesSHA256": {
+    "config.json": "a863e9c4957ee45c6baee34758598bf388333ab9ebbd0c6d0c5756775e3457d7",
+    "render.mjs": "aa1ccddb38e5138ff740546ab88a862e5674398b2cff6f3ea705cd4f87ef2c98",
+    "serve.py": "e5785259114d17937bd0c0bbee689e4cde3ac431bc3247ebc1eb24e509082dbe",
+    "README.md": "bc5df0f1e4fd76f98776eee3590c26c7e99780aeecacd85966007d8ce9b4f116",
+    "check.mjs": "602f118e5bdaa0be02bd51d25d23d6709438d5bee498451167bfb8c8d7b0ee73"
+  },
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/NOTICE.md": "1c468b80d560fa6237300a394dde55f33a9343ee4ab84f5d1db00d8d2e6bcd76",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/README.md": "167aea8f58f3419b71bc9c35e39f9305b5376dc88901e98b95dbe21dcd29062c",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/draw-trace.json": "cb195e6b73c4f5ab725628f59e8004b0b3f00fccf3b5fe6df8ea03b1001bf277",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/engine-proof.json": "ba30839d94b7ae707efff4f7bdc68a031f4236c15146ce391fb70776d68411f9",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/engine-whole-u7659-ue0100.json": "6334519d3bf1e996353c860a3560837632ccb8242ed7beb01308205fb6642553",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/engine-whole-u7659.json": "f4649ef859238e9978e312b845d261b1c1ddd3aa741f290d5ec7f40b8c040320",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/metadata.json": "d31f5bf86206fea37755356695c6c1c9dfa5011310d6c515be0d687ee0838933",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/progressive-review.json": "f56aae83b081090f5c001de1a9de34b5437d86da53bfdeb0cc6785b42988fc0d",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/progressive.mjs": "7452407a6f7b7878ea6296e13ae82db8899793f4e4ca3e80cfae5286143bda9c",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/resume.json": "fb9c7e37df5d8b4cf90a8f8b214e90cb361960c19963c03055b5b554ab1a1f4a",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/serve-variants.py": "e36a06625dd36c4f4719d27280359912676b5cbac62bb43ee5329c1b1663a3d9",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/sources.json": "29b377fb5c1e259f0ba9abffd7b54443a1a9f412707286418a77157294f6c4ba",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/validation.json": "cfccfcb90c93bbb0f7f7c57d799f6e50899746c6174237abc169d5e29c98956c",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/verify-source.mjs": "282b398713541d284cb191bb5c24aa9c224334c2efd2562bb7b7dbafc6daf400",
+    "../hanja-goal-glyphwiki-batch641-2026-10-11/whole-variant-inventory.json": "740a10dad9807e21c0e36a2709ce033c24e4bd5e8ca6bbaecc87e5352f02f90d",
+    "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-source-independent-vq-two-u7659-source-experiment-2026-10-19/README.md": "067a17fcd3f78d72212f8d2fe7363200b94291bf43b7ff7e66d5839abfc2c31c",
+    "../hanja-source-independent-vq-two-u7659-source-experiment-2026-10-19/candidate.d.mts": "65fdbe2a27a0a056e567ab8697ff64290d2c11d102b90b8464b0adaf306c6d1c",
+    "../hanja-source-independent-vq-two-u7659-source-experiment-2026-10-19/candidate.mjs": "2c88cfa809843e57339acafb9d5c9c4b9a109f73c17603e806c93fffc1e261d5",
+    "../hanja-source-independent-vq-two-u7659-source-experiment-2026-10-19/config.json": "bb1163734518b445c59698e33eefba33c4845428d6c147f4547b5de0788d3628",
+    "../hanja-source-independent-vq-two-u7659-source-experiment-2026-10-19/fixtures.json": "20036424a20c37088cc18e17c6f4115ceb77cee06b5f9db0b27c3b687c358005",
+    "../hanja-source-independent-vq-two-u7659-source-experiment-2026-10-19/preparation.json": "fa1b0d434deee707dc9829d746bdd1bb46f9962f8ae4503fb48390b372b4e49c",
+    "../hanja-source-independent-vq-two-u7659-source-experiment-2026-10-19/serve.py": "38137859df93181ec9686e462e1345665df07bc18fa3493ddb21dd70c3ae0c34",
+    "../hanja-source-independent-vq-two-u7659-source-experiment-2026-10-19/source-check.mjs": "7276f5e6262039368e1262aae1baa4a1172e0a81580b168252f2273d2a3a32fa",
+    "../hanja-renderer-start-gate-u68d6-experiment-2026-10-19/README.md": "12befa0fe6dc4509a2801e055304d759187b398312942e77c0009393c3fe8c9f",
+    "../hanja-renderer-start-gate-u68d6-experiment-2026-10-19/check.mjs": "6f4eab8e989918f2e9c240b357aa2f820613497c781d3d61c093a32cf37fb448",
+    "../hanja-renderer-start-gate-u68d6-experiment-2026-10-19/config.json": "53c9006aee9ea424cb9cd56a13d39b877f89105e8e48ea7a3e57e2c249887273",
+    "../hanja-renderer-start-gate-u68d6-experiment-2026-10-19/render.mjs": "243c765482025af3398c35683562bf06724e6fb0a7d85aa9a3da8c2a5b7ee232",
+    "../hanja-renderer-start-gate-u68d6-experiment-2026-10-19/serve.py": "f7a19b8f85b0f4c2e3a1eadcb9f6c614dd939715be96f65a0b0102f207eabf91",
+    "../hanja-renderer-start-gate-u68d6-experiment-2026-10-19/validation.json": "9f1641629275b99ac0742b7dd3461f9de157e2b40490b0e6cf9c21f4da31b86f"
+  },
+  "counts": {
+    "raw": 21,
+    "drawCalls": 22,
+    "factoryPens": 20,
+    "baselinePens": 18,
+    "baselineMasks": 20,
+    "pens": 18,
+    "masks": 20,
+    "polygons": 46
+  },
+  "geometrySHA256": "4aa229ed78c580de567aebe46dfc24d23615b76545cc6060a1f6612c9b537c07",
+  "sourceGeometryExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "engineRuns": 0,
+  "fixtureCopied": false,
+  "fixtureReuse": true,
+  "checks": {
+    "status": "PASS",
+    "focusedExecutions": 1,
+    "positiveMathAndComposition": 1,
+    "negative": 46,
+    "targetResults": [
+      {
+        "pen": 12,
+        "mask": 2,
+        "raw": 13,
+        "nodeQuadraticLengthReference": 27.04742558327987,
+        "sourceDerivedTauReference": 0.5176093361230836,
+        "monotonePoints": 441,
+        "tinyAreaBounds": [
+          0.0003786639581715434,
+          0.00000378663957611991,
+          3.786639091174493e-8,
+          3.786677638117908e-10
+        ],
+        "fullAreaUpperBounds": [
+          0.001568274165598496,
+          0.00001568271889748009,
+          1.568271818500558e-7,
+          1.5682756729673705e-9
+        ]
+      },
+      {
+        "pen": 15,
+        "mask": 2,
+        "raw": 15,
+        "nodeQuadraticLengthReference": 29.681745280402538,
+        "sourceDerivedTauReference": 0.47167037745733714,
+        "monotonePoints": 441,
+        "tinyAreaBounds": [
+          0.00041554443392399776,
+          0.0000041554443335201086,
+          4.155443811271198e-8,
+          4.155484845114188e-10
+        ],
+        "fullAreaUpperBounds": [
+          0.00172101854254689,
+          0.000017210158018905364,
+          1.7210157222648017e-7,
+          1.7210198253750921e-9
+        ]
+      }
+    ],
+    "monotonePoints": 882,
+    "fullStrokeAndTwoMaskGuards": true,
+    "policyMathAndSweepSegmentsExact": true,
+    "sourceArraysUnchanged": true,
+    "completionAndPrefixWholeAlwaysSwept": true,
+    "coveragePanels": 2,
+    "browserLengthNotMeasured": true,
+    "actualSVGRasterAreaNotMeasured": true,
+    "actualCoverageUnproved": true,
+    "sourceGeometryGenerations": 0,
+    "sourceCompilerCalls": 0,
+    "engineRuns": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "allFirstPass": true,
+    "failures": 0,
+    "repeated": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "coverageVerified": false,
+  "appChanged": false,
+  "sharedRendererChanged": false,
+  "sourceSource8Unchanged": true,
+  "currentGlyphNativeObservations": 0,
+  "currentCandidateFailureConfirmed": false,
+  "pinCounts": {
+    "input": 33,
+    "ownExcludingValidation": 5,
+    "capsuleFiles": 6,
+    "runtimeIncludingCapsule": 39
+  },
+  "syntax": {
+    "nodeExecutions": 2,
+    "pythonAST": 1,
+    "helperGuard": {
+      "executions": 1,
+      "positive": 1,
+      "negative": 0,
+      "HTTP": 0
+    },
+    "passed": true,
+    "repeated": false
+  },
+  "history": {
+    "sourceGeometryExecutions": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "fixtureReuse": true,
+    "focusedAttempts": 1,
+    "failures": 0,
+    "UI": 0,
+    "server": 0,
+    "sharedRendererWrites": 0,
+    "appWrites": 0
+  },
+  "mathematicalScope": {
+    "fullAreaUpperBound": "2*r*(h+r)+2*pi*r*p*L+pi*(p*L)^2",
+    "outsideInitialDiscProof": "W(p) lies inside B(q,r+pL), so outside initial disc is bounded by annulus.",
+    "rasterAreaMeasured": false,
+    "coverageVerified": false
+  }
+}
