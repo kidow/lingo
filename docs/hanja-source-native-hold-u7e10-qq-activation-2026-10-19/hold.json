@@ -1,0 +1,104 @@
+{
+  "schema": "hanja-independent-native-hold-v1",
+  "date": "2026-10-19",
+  "glyph": "縐",
+  "root": "u7e10",
+  "status": "HOLD-QQ1-finite-activation-area",
+  "sourceCommit": "3abd3af66eeaf0d043c57525f54b8f17e391fee7",
+  "sourceFolder": "docs/hanja-source-independent-qq-left-two-u7e10-source-experiment-2026-10-19/",
+  "preparationSHA256": "4460e742aa5472be12374cbe4d15f6b963b83fe78c4631a25fd6ca9058cd65c6",
+  "compiledSHA256": "0c9f73d56630c7779d9fcc09f63efb6b372a7e0d9c4ede338ef57d4f35440634",
+  "immutableFilesSHA256": {
+    "docs/hanja-source-independent-qq-left-two-u7e10-source-experiment-2026-10-19/config.json": "46ac2754689ce786b73ae8a349a3814f891aaeb7c1612c5b96a14a70a010c560",
+    "docs/hanja-source-independent-qq-left-two-u7e10-source-experiment-2026-10-19/preparation.json": "4460e742aa5472be12374cbe4d15f6b963b83fe78c4631a25fd6ca9058cd65c6",
+    "docs/hanja-source-independent-qq-left-two-u7e10-source-experiment-2026-10-19/fixtures.json": "e12e652a292dd0215860f43272bf823bd79b5ee4cdf9c3cfeeb058fb446aa2c6",
+    "docs/hanja-source-independent-qq-left-two-u7e10-source-experiment-2026-10-19/candidate.mjs": "2e62ad5c2fb42991699f471a0e3da6dc8a48852f8aacd21636bbc0f1099af718"
+  },
+  "rootNativeObservation": {
+    "wholeCompatible": 1,
+    "directionsPassed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "coarse": {
+      "candidateFrames": 144,
+      "baselineFrames": 144,
+      "observedPassed": true
+    },
+    "fineCompletionPassed": [
+      8,
+      13,
+      9,
+      10,
+      14,
+      15
+    ],
+    "fineCompletionFrom": 99.99,
+    "fineCompletionTo": 100,
+    "failedActivation": {
+      "pen": 1,
+      "at": 0.535949642744483,
+      "raw": [
+        0,
+        1
+      ],
+      "beforeAtAfter": "second original Q start appears as an approximately10px detached piece after activation",
+      "epsilonProgressPercent": 0.0001,
+      "epsilonObservation": "finite initial positive area approximately30px",
+      "zero": "empty",
+      "ninetyFive": "complete",
+      "passed": false,
+      "cause": "unresolved",
+      "sourceCoordinatesChanged": false
+    },
+    "otherMultiBoundariesNotRun": [
+      2,
+      8,
+      13
+    ],
+    "naturalReplay": 0,
+    "appUI": false,
+    "server": {
+      "pid": 97981,
+      "port": 57830,
+      "sessionId": 70964,
+      "stopped": true,
+      "exitCode": 143
+    }
+  },
+  "decision": {
+    "currentDisplayPolicySuccessful": false,
+    "doNotCountCompletionPassAsActivationPass": true,
+    "notTheSameHoldAsU7a67": true,
+    "originalSourceAndHistoryPreserved": true,
+    "newCoordinates": 0,
+    "newPaths": 0,
+    "newWidths": 0,
+    "newConnectors": 0,
+    "arbitraryClips": 0,
+    "geometryGenerations": 0,
+    "compilerCalls": 0,
+    "runtimeRegistryEdits": 0,
+    "rootCauseNotInferred": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "originalSourceChanged": false,
+  "originalNOTICEChanged": false,
+  "newCanonicalHoldsRegistered": 0,
+  "buildExecuted": false
+}
