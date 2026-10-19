@@ -44,7 +44,7 @@
     "candidate.d.mts": "6394384efa2133cac393bff975334cbce7cfe54f5f89891cc595fd6918951014",
     "config.json": "2441843b638f765aa08bf1c3f008ba13a4b2727a76960bce6120e335ea7a83e8",
     "fixtures.json": "ca4cb56db91e7d8b1b17ecdeb9692a9bb1eb5c9096991fd7dc927fc65bef0617",
-    "serve.py": "3b8098d489c8730a6e79b44f8bc5d1423749d7914476782cdcdfa8a84cd0a871",
+    "serve.py": "59f629b1c2a86376e8e93035b9701a46062603397e37cea9b65b02b080828a23",
     "source-check.mjs": "76b5dccc7e90b89539e988fa2c7d2cd9aa888bbe55f04d2698f5037143980df9"
   },
   "baselineSHA256": "39c8ed2b04446ae43c66fce19e1e700140d67980ee3da60a4a59bf4d0d2e824f",
@@ -317,6 +317,40 @@
   "serverStarted": false,
   "HTTPRequested": false,
   "buildExecuted": false,
+  "captionCorrection": {
+    "date": "2026-10-20",
+    "previousCaptionIncorrect": "Unrelated 墍 UP1006/5 template text and Q/Q plus LEFT title",
+    "correctedDescription": "韘 logical14 original V13 foot/head then H[2,0], down/right cardinal partition under a new exact guard; batch831 mathematical policy reused without changing its guard",
+    "scope": [
+      "serve.py caption and title",
+      "preparation.json own pin and correction metadata"
+    ],
+    "serverStoppedBeforeEdit": {
+      "PID": 55884,
+      "port": 60610,
+      "session": 3065,
+      "exitCode": 143
+    },
+    "geometryChanged": false,
+    "configChanged": false,
+    "fixtureChanged": false,
+    "candidateModuleChanged": false,
+    "sourceChecksRepeated": false,
+    "captionPythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "captionPinCheck": {
+      "executions": 2,
+      "passed": true,
+      "firstPathResolutionFailedBeforeAnyPinAssertion": true,
+      "correctedSourceRelativePaths": true,
+      "inputPins": 32,
+      "ownPins": 7,
+      "mismatches": 0,
+      "passedAssertionsRepeated": 0
+    }
+  },
   "finalPinCheck": {
     "originalAndSharedPins": 32,
     "newPins": 7,
