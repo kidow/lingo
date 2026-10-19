@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-20",
-  "status": "source-only-existing-cache-comparison-ready",
+  "status": "source-only-existing-cache-comparison-ready-after-request-contract-fix",
   "inputSHA256": {
     "docs/hanja-goal-glyphwiki-batch877-2026-10-13/sources.json": "ffb9d5fdbe20a7b79291b54f1c66db8decaa7b85d187b7154b0aaf1a3d0f9d8f",
     "docs/hanja-goal-glyphwiki-batch877-2026-10-13/metadata.json": "dd7b83ebf386cb6b9d4143401c418af4423a8c0dde48b75b0f2b732b4a9be724",
@@ -21,7 +21,7 @@
   "newFilesSHA256": {
     "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/config.json": "02d6c204e4adf7169af4df1a4c60f61f8fee094238ecd89348066cf4d7100779",
     "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/browser.mjs": "b523aa4603072ef3daec79d43aecf8d0cd4483b80107207dfdb7aa596b9be273",
-    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/server.py": "3c1db32c7283d2ac14b45e6e2227a126e5d83a5e79988d056323de5422348f6c",
+    "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/server.py": "0a48dd69f335378badc0666295721a3b1ac1419606077055d3032e852d20b32a",
     "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/check.mjs": "d12906466e8d54ea643a51bc953134066325b203a67028dc1032cc12250afa8b",
     "docs/hanja-hold-recovery-u9b37-existing-cache-experiment-2026-10-20/README.md": "aa96928e479697523d009fbef9c9f3ad129c96141c6457ec3d0789a0780289d0"
   },
@@ -79,5 +79,62 @@
     "applyPatchFormattingFailures": 1,
     "filesChangedByFailedPatch": 0,
     "sourceOrFocusedTestFailures": 0
+  },
+  "rootExecutionHistory": [
+    {
+      "attempt": 1,
+      "actor": "root",
+      "pid": 15542,
+      "port": 52354,
+      "session": 45146,
+      "route": "/",
+      "browserResult": "ERR_EMPTY_RESPONSE",
+      "rootPageRequests": 1,
+      "sourceHTTPRequests": 0,
+      "nativeObservations": 0,
+      "failures": [
+        {
+          "stage": "empty-query-parse",
+          "detail": "Python 3.9 parse_qs('', strict_parsing=True) raises ValueError"
+        },
+        {
+          "stage": "error-response",
+          "detail": "Korean send_error reason raises Latin-1 UnicodeEncodeError"
+        }
+      ],
+      "stopped": true,
+      "stopExitCode": 143
+    }
+  ],
+  "requestContractFix": {
+    "previousServerSHA256": "3c1db32c7283d2ac14b45e6e2227a126e5d83a5e79988d056323de5422348f6c",
+    "currentServerSHA256": "0a48dd69f335378badc0666295721a3b1ac1419606077055d3032e852d20b32a",
+    "changedServerLines": 2,
+    "regression": {
+      "executions": 1,
+      "passed": true,
+      "cases": 10,
+      "covers": [
+        "empty",
+        "nonempty",
+        "repeated",
+        "unknown",
+        "malformed",
+        "blank"
+      ],
+      "isolatedOwnedHandlerOnly": true,
+      "resourceGuardsStubbed": true,
+      "sourceChecksRepeated": 0,
+      "NodeChecksRepeated": 0
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true,
+      "serverModuleImported": false
+    },
+    "HTTPRequests": 0,
+    "serverStarted": false,
+    "nativeObserved": false,
+    "rootRetryPending": true
   }
 }

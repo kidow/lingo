@@ -151,7 +151,7 @@ class Handler(BaseHTTPRequestHandler):
         try:
             guards()
             parsed = urlparse(self.path)
-            query = parse_qs(parsed.query, strict_parsing=True)
+            query = {} if not parsed.query else parse_qs(parsed.query, strict_parsing=True)
             if parsed.path == '/' and not query:
                 body, kind = page(), 'text/html; charset=utf-8'
             elif parsed.path == '/browser.mjs' and not query:
@@ -175,7 +175,7 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(data)
         except Exception:
-            self.send_error(409, '고정 자료 또는 요청 계약 불일치')
+            self.send_error(409, 'Pinned resource or request contract mismatch')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
