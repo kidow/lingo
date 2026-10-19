@@ -1,0 +1,608 @@
+{
+  "schema": "hanja-cached-exact-two-tail-preparation-v1",
+  "date": "2026-10-19",
+  "glyph": "溵",
+  "root": "u6eb5",
+  "configSHA256": "0d31a6ecaf4b1fe1c9b9a8dc84ad0dc484cc288e61fe8a79f13daf1670f6473f",
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/NOTICE.md": "83c67ea668711814f80b1c299a6a16182a4f64b71087cc0d10c701e2dbda5d8f",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/README.md": "176febcd31e57f08551e25cb7908da4c5465e63797935d9f957550e26a389777",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/draw-trace.json": "b7b8fb54c2a08c2c39591ae66b106e2e31c980adc7ee119ba78d56647138a6bc",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/engine-proof.json": "a75f3ee00d4b3c585b88464b4a9dbac12f0c492406cb40dbe8b70a6bd5e7d422",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/engine-whole-u6eb5.json": "a75f3ee00d4b3c585b88464b4a9dbac12f0c492406cb40dbe8b70a6bd5e7d422",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/metadata.json": "dc125d6e2faeb69633dc874599cb9824720073f4b2a6ef2c95f380d39969d903",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/resume.json": "e27b12429d417f011da1969a18bbf94256b96d82b55ca5d47ac00cc031b7f801",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/review.json": "69e767b8b5dc00f47275ed5497cc846ffc85f6388a7ad5625645dc42e29d5ef8",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/serve-memory.py": "e05710713daa2589d2696cce019b97ad0f47d972e182b7582956b1d9ce1de550",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/source-analysis.json": "cfa2053c3e4b58ec290931e146ba1e6c008cbec1605cc96bc5b18acc5f11b60b",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/source-join-analysis.json": "904b97aa45ab51dc5fbe285e5e2a14b72c57f8561fc59455d7994c924db336c7",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/sources.json": "5418ab245cf4380051f36b9daba2c2488dfa3547c2e51ea96824c1168d9539a8",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/validation.json": "433e66954a131a3dda5d90a63b57032a64d5dd3cdca1c9a45c5373d3376c9999",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/verify-source.mjs": "e29f452d1b07bacc8210fc7195ae7d7f51f08cc348700b21ac1e2da823134000",
+    "../hanja-goal-glyphwiki-batch801-2026-10-13/whole-variant-inventory.json": "23032aaea6451ede1c2438ab187bf49e11881d9e5507090715e184ef6293c7ea",
+    "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/README.md": "20ca6caeb5e90b1b0e6226cc5b2f2f86cff047406015155322ebc384b87f2ee9",
+    "../hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/candidate.d.mts": "3da85cbad41fb1b81e014bff07450e1248bcfc24acaa6c94dba18ae972180d01",
+    "../hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/candidate.mjs": "9bc811a00211a190335bc4ae6fdb0576b8a44dfa890dc5fa3fbcaed2a97399a6",
+    "../hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/config.json": "131cc27b04a82780d1235b5e47d9cf309abecf0f5d80bb03b24ca019b6105727",
+    "../hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/fixtures.json": "13abf7ea9055c04474b4074b3a7b6c0214ea5f48f13205a0f5034ff70161e654",
+    "../hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/preparation.json": "7350d89e66b6cf36776d584635dd10175da45a72f38ab7945d5914b7321f2e96",
+    "../hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/serve.py": "9c0b2e003a94d6aa12d54c618a81b892d3a48b919b29c3be401479825c141d7e",
+    "../hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/source-check.mjs": "8824ec1fbc1cdb07e338a468b02745e93b17231cdb1820394d25a7513e3e5b55",
+    "../hanja-source-independent-qq-up-u588d-source-experiment-2026-10-19/candidate.mjs": "3d05089828eec6a447bf75d32ede79b2ec0f8b44420e20158b7b58313621f971",
+    "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs": "25b9a23cdf644798a7336df3f78b72ecc3c4ad10d0fbe860b403a38911e514f6"
+  },
+  "newFilesSHA256": {
+    "config.json": "0d31a6ecaf4b1fe1c9b9a8dc84ad0dc484cc288e61fe8a79f13daf1670f6473f",
+    "candidate.mjs": "64f91a5bec42763ef8f580e7ef06bd8ae58593a6a89846d8718f7be79bf4605f",
+    "fixtures.json": "ef0951e77807de2e5d26a374fdd4d7ab3af5a72757806752a2337f6684489700",
+    "candidate.d.mts": "68963176df2d9387d44bf1086080a6bc7ded9e84b39fa3dcb99dae361953c589",
+    "serve.py": "47eccab1dcf5dc0c9b080047c1985b4f65bea8f063ac23056e490d7d4a2a99f6",
+    "README.md": "1559b8de2a7e3eeb8036a5474f5b3641bc46cb4746875240bc12238f3b9f43cc",
+    "source-check.mjs": "61fc86d23502b15e78bfe008f8bbcef8d3d2f8fef47ed327e30adcffd7980926"
+  },
+  "counts": {
+    "raw": 18,
+    "drawCalls": 23,
+    "factoryPens": 14,
+    "baselinePens": 13,
+    "baselineMasks": 14,
+    "pens": 13,
+    "masks": 16,
+    "polygons": 40
+  },
+  "baselineSHA256": "125dbcb592899e77fedb11c33138aa708eaae60bdea9bacb0552d9344a76a81b",
+  "derivedSHA256": "a1088fc5fcd6f679dc78002a3df12258bbe50f23dbe90638b218341fd1b6ed89",
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      15,
+      16
+    ],
+    [
+      17
+    ]
+  ],
+  "sourceContract": {
+    "identity": {
+      "root": "u6eb5",
+      "file": "../hanja-goal-glyphwiki-batch801-2026-10-13/engine-proof.json",
+      "fileSHA256": "a75f3ee00d4b3c585b88464b4a9dbac12f0c492406cb40dbe8b70a6bd5e7d422"
+    },
+    "mandatoryProgressiveArgs": 3,
+    "mandatoryWholeArgs": 4,
+    "mandatoryDerivedArgs": 4,
+    "originalStrictId3Delegated": true,
+    "existingSelectedFull5Preserved": true,
+    "newFull5Combination": false,
+    "defaultProofMixed": false,
+    "newSourceCaptureAPI": false
+  },
+  "oldSource": {
+    "folder": "docs/hanja-source-independent-qq-u6eb5-source-experiment-2026-10-19/",
+    "commitAbbreviated": "dfe532…8169",
+    "fullCommitNotSupplied": true,
+    "preparationSHA256": "7350d89e66b6cf36776d584635dd10175da45a72f38ab7945d5914b7321f2e96",
+    "unchanged": true
+  },
+  "geometryPolicy": {
+    "sourceGeometryGenerations": 0,
+    "originalCompilerCalls": 0,
+    "candidateGenerations": 1,
+    "tailDerivations": 2,
+    "sameOriginalCachedBaseline": true,
+    "sequentialDerivation": false,
+    "engineRuns": 0,
+    "publicFixtureSavedBeforeChecks": true,
+    "originalOutlinesExactPartition": true,
+    "allOriginalPolygonsExactOnce": true,
+    "allNonTargetMaskFieldsPreserved": true,
+    "bodyGuideWidthWeightUnchanged": true,
+    "activeBodyBoundsPolicy": {
+      "pen": 9,
+      "changed": true,
+      "before": [
+        35.2,
+        60.5,
+        60.7,
+        93
+      ],
+      "after": [
+        37.3,
+        60.5,
+        60.7,
+        93
+      ],
+      "pen11BoundsUnchanged": true,
+      "reason": "Only remaining original body polygon bounds are displayed after partition; guide/width/weight unchanged.",
+      "newCoordinates": false
+    },
+    "newCoordinates": 0,
+    "newConnectors": 0
+  },
+  "kernel": {
+    "exampleModule": "../hanja-source-independent-qq-up-u588d-source-experiment-2026-10-19/candidate.mjs",
+    "ancestorModule": "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs",
+    "bodyBytes": 1691,
+    "bodySHA256": "7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08",
+    "partitionBytes": 1302,
+    "partitionSHA256": "2802b789ebee4fe2f9af3903f71f26f2a9609dced9171e87ecf63aba342a8657",
+    "byteExact": true,
+    "specs": [
+      {
+        "pens": 13,
+        "masks": 14,
+        "polygons": 40,
+        "pen": 9,
+        "rawIndices": [
+          10,
+          11
+        ],
+        "sourceGroups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            12
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            17
+          ]
+        ],
+        "tailDirection": "left",
+        "exactCalls": [
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              74.61,
+              128,
+              110.43,
+              128,
+              2,
+              2
+            ]
+          },
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              110.43,
+              128,
+              108.44,
+              164,
+              104.93422057845346,
+              171.04679280712872,
+              22,
+              0
+            ]
+          },
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              104.93422057845346,
+              171.04679280712872,
+              100.48,
+              180,
+              90.48,
+              180,
+              2,
+              14
+            ]
+          }
+        ],
+        "width": 6,
+        "jump": 20,
+        "weight": 10,
+        "quadSHA256": "39c22f5acfc6bb2c515d105a56d10e2f30e6f07fd21a1aa958a34fbdf95deffa",
+        "bodyBounds": [
+          35.2,
+          60.5,
+          60.7,
+          93
+        ],
+        "derivedBodyBounds": [
+          37.3,
+          60.5,
+          60.7,
+          93
+        ],
+        "bodyWeight": 48.10934,
+        "bodyBoundsUnchanged": false
+      },
+      {
+        "pens": 13,
+        "masks": 14,
+        "polygons": 40,
+        "pen": 11,
+        "rawIndices": [
+          13,
+          14
+        ],
+        "sourceGroups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            12
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            17
+          ]
+        ],
+        "tailDirection": "up",
+        "exactCalls": [
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              135.305,
+              28,
+              161.175,
+              28,
+              2,
+              2
+            ]
+          },
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              161.175,
+              28,
+              161.175,
+              74,
+              22,
+              1
+            ]
+          },
+          {
+            "kind": "cdDrawCurve",
+            "args": [
+              161.175,
+              74,
+              161.175,
+              84,
+              171.175,
+              84,
+              1,
+              2001
+            ]
+          },
+          {
+            "kind": "cdDrawLine",
+            "args": [
+              171.175,
+              84,
+              180.08,
+              84,
+              2006,
+              5
+            ]
+          }
+        ],
+        "width": 5,
+        "jump": 17,
+        "weight": 8.5,
+        "quadSHA256": "c6c0c20adbf90349e7040cef8830439ca392a5104c35eb5aef3946f0b078b8b7",
+        "bodyBounds": [
+          67.65,
+          10.5,
+          92.5,
+          44.5
+        ],
+        "derivedBodyBounds": [
+          67.65,
+          10.5,
+          92.5,
+          44.5
+        ],
+        "bodyWeight": 47.458568,
+        "bodyBoundsUnchanged": true
+      }
+    ]
+  },
+  "previousNativeObservation": {
+    "observer": "root",
+    "wholeCompatible": 1,
+    "directionsPassed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "finePensPassed": [
+      3
+    ],
+    "finePensFailed": [
+      9,
+      11
+    ],
+    "completion": "Original fine9 at99.99→100 adds about17px LEFT tail, fine11 adds about25px UP tail positive area. Other fine gates not run.",
+    "coarse": 0,
+    "boundaries": 0,
+    "naturalReplay": 0,
+    "newApprovalInherited": false,
+    "server": {
+      "pid": 56382,
+      "port": 64949,
+      "sessionId": 43868,
+      "stopped": true,
+      "exitCode": 143
+    }
+  },
+  "originalHistoricalHold": {
+    "originalBatch": 801,
+    "compatibleWholeRoots": [
+      "u6eb5"
+    ],
+    "wholeVariants": [
+      {
+        "name": "u6eb5",
+        "related": "u6eb5",
+        "data": "99:0:0:3:0:145:200:u6c35-01$99:0:0:-3:0:196:200:u6bb7-02"
+      }
+    ],
+    "domesticDirectionPensObserved": [
+      1,
+      2,
+      3
+    ],
+    "progressiveFramesReviewed": 0,
+    "progressiveFramesApproved": 0,
+    "originalHoldPreserved": true,
+    "currentNativeEvidence": 0,
+    "currentApprovalInherited": false
+  },
+  "baselineComparison": {
+    "sameNewLogicalPenAndPrefix": true,
+    "baselineIsOldSourceCachedFixture": true,
+    "independentNativeEvidence": false
+  },
+  "allMultiMaskBoundaries": {
+    "3": [
+      0.38376555771920073
+    ],
+    "9": [
+      0.8279106250389352
+    ],
+    "11": [
+      0.8481019028221022
+    ]
+  },
+  "sourceChecks": {
+    "status": "PASS",
+    "executions": 1,
+    "exitCode": 0,
+    "passed": true,
+    "cachedPositive": 1,
+    "negative": 29,
+    "sourceGeometryGenerations": 0,
+    "tailDerivationsThisCheck": 0,
+    "engineRuns": 0,
+    "pens": 13,
+    "masks": 16,
+    "polygons": 40,
+    "allNonTargetFieldsPreserved": true,
+    "bodyGuideWidthWeightPreserved": true,
+    "activeBody9BoundsChanged": true,
+    "independentFromSameBaseline": true,
+    "allPolygonsExactOnce": true,
+    "boundaries": {
+      "3": [
+        0.38376555771920073
+      ],
+      "9": [
+        0.8279106250389352
+      ],
+      "11": [
+        0.8481019028221022
+      ]
+    },
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "allPassedFirstAttempt": true,
+    "repeated": false
+  },
+  "syntax": {
+    "node": {
+      "executions": 2,
+      "passed": true,
+      "repeated": false
+    },
+    "declarationAST": {
+      "executions": 1,
+      "diagnostics": 0,
+      "passed": true
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "passed": true,
+      "stdout": {
+        "staticGuards": true,
+        "targets": [
+          "u6eb5"
+        ],
+        "sourceCompiles": 0,
+        "engineRuns": 0,
+        "HTTP": 0
+      },
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "HTTP": 0
+    }
+  },
+  "toolingHistory": [],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registryChanged": false,
+  "catalogChanged": false,
+  "originalSourceChanged": false,
+  "originalNOTICEChanged": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "HTTPRequested": false,
+  "buildExecuted": false,
+  "finalPinCheck": {
+    "inputCount": 29,
+    "ownCount": 7,
+    "mismatches": 0,
+    "passed": true,
+    "sourceGeometryGenerationsTotal": 0,
+    "candidateGenerationsTotal": 1,
+    "tailDerivationsTotal": 2,
+    "sameOriginalCachedBaseline": true,
+    "sequentialDerivation": false,
+    "engineRuns": 0
+  },
+  "orderEvidence": {
+    "originalReviewFile": "review.json",
+    "completeArrayStoredInOriginal": false,
+    "observedDomesticPens": [
+      1,
+      2,
+      3
+    ],
+    "compatibleWholeRoots": [
+      "u6eb5"
+    ],
+    "groupBasis": "Original explicit pen/raw anchors and remaining original raw relative order only; complete group array is provisional if not stored in original",
+    "provisionalCompleteOrder": true,
+    "newProgressiveApproval": false
+  },
+  "sourceFamily": {
+    "records": 3,
+    "metadataRoot": "u6eb5",
+    "providerVersions": 0,
+    "providerAlreadyIncludedInRecords": true,
+    "wholeNames": [
+      "u6eb5"
+    ],
+    "selectedRoot": "u6eb5",
+    "selectedRootClosure": [
+      "u6eb5",
+      "u6c35-01",
+      "u6bb7-02"
+    ],
+    "selectedRootClosureCount": 3,
+    "rootMixing": false
+  }
+}
