@@ -1,0 +1,35 @@
+{
+  "glyph": "澯", "root": "u6faf", "date": "2026-10-20", "status": "HOLD",
+  "sourceExperiment": "docs/hanja-source-independent-qq-u6faf-source-experiment-2026-10-20/",
+  "geometrySHA256": "734fc080df851f3f7f681eb160e339dd7c11067f4a6da9e73b1cda23dd6d58c6",
+  "inputSHA256": {
+    "preparation.json": "2abbca5b1c07b0d01a1ac7a4cb7bffcd39fab535a0bca11c9ab659219299308c",
+    "config.json": "7ceb0ef66f7ee3c7286aecfb3e37d0bbf6e7aefed6153ff750ad934e271d3274",
+    "fixtures.json": "1e71719f693fe3d854e2e928bd4be283a225d82db7e77884e7897fdcde566c95",
+    "candidate.mjs": "7f2c99da374163a5656dce50ce7416af4f528f9c111d5e10e2171a9181e52072",
+    "serve.py": "c10b48dbffae5bfbd0be0e023e6110522456c6139874ed0aae5c8c1dffa313da"
+  },
+  "nativeObservation": {
+    "surface": "root가 직접 조작한 Codex 브라우저 패널",
+    "wholeCompatible": 1,
+    "firstCompletionFine": {"pen": 5, "progress": [0.9999,1], "pixels": 520, "result": "PASS"},
+    "firstMultiMask": {
+      "pen": 3, "boundary": 0.38419202040013944,
+      "capturedInOneBatch": ["boundary1-before","boundary1-at","boundary1-after","0","epsilon .0001%","95%"],
+      "beforeAndAt": "캡처됨; 이후 마스크가 없는 상태",
+      "after": "FAIL: 기존 첫 부분 옆에 약 20px의 유한 검정 덩어리가 즉시 나타남",
+      "zero": "대상 획 비어 있음",
+      "epsilon": "FAIL: 약 20px 검정 조각이 즉시 나타남",
+      "at95Percent": "완성에 가까운 형태는 기존 렌더러와 일치",
+      "sizeEstimate": "육안 추정이며 픽셀 계측값 아님"
+    },
+    "directionsReviewed": 0, "coarseReviewed": 0, "naturalPlaybackReviewed": 0,
+    "otherFineReviewed": 0, "additionalGatesAfterFirstFailure": 0,
+    "causeEstablished": false
+  },
+  "server": {"pid": 96901, "port": 49983, "session": 77651, "stopped": true, "exitCode": 143},
+  "nativeApproval": false, "runtimeApplied": false, "appChanged": false, "registryChanged": false,
+  "sourceGeometryChanged": false, "sourceGuideChanged": false, "sourceWeightsChanged": false,
+  "sourceCompilerRuns": 0, "engineRuns": 0, "buildRun": false,
+  "next": "原 QQ 경로·간격·순서를 유지한 별도 표시 정책을 검토한다. 다른 물수변 후보의 관찰을 이 글자의 승인으로 상속하지 않는다."
+}
