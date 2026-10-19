@@ -181,8 +181,186 @@ const REVIEWED_OUTLINES = [
     }
   ]
 ] as const
+// Exact 帨 corrected-UP source c1488f46315395ce3258b8bccafd0350bd2d49f281e7a187bf4f0bf5cf7fa8b3.
+const REVIEWED_SHUI_OUTLINES = [
+  [
+    {
+      "outline": "M15.05 25.7 L15.05 72.75 L9.05 75.75 L9.05 22.7 Z",
+      "bounds": [
+        9.05,
+        22.7,
+        15.05,
+        75.75
+      ],
+      "direction": "down",
+      "weight": 47.53
+    }
+  ],
+  [
+    {
+      "outline": "M12.05 25.7 L37.25 25.7 L37.25 27.7 L12.05 27.7 Z M40.25 26.7 L40.25 67.3 L34.25 67.3 L34.25 26.7 Z M34.25 25.7 L37.25 23.2 L42.75 27.7 L40.25 29.7 L34.25 26.7 Z M34.25 67.3 L40.25 67.3 L39.05 69.1 L37.25 70.3 L35.45 69.1 Z M40.25 67.3 L40.2 68.55 L39.95 69.8 L39.55 71 L38.95 72.15 L38.15 73.15 L37.1 74 L36 74.6 L34.8 75 L33.55 75.2 L32.25 75.3 L32.25 69.3 L32.85 69.25 L33.35 69.15 L33.6 69.1 L33.8 69 L33.9 68.9 L33.95 68.8 L34.05 68.65 L34.15 68.35 L34.2 67.9 L34.25 67.3 Z M32.25 72.3 L28.25 70.8 L28.25 69.3 L32.25 69.3 Z",
+      "bounds": [
+        12.05,
+        23.2,
+        42.75,
+        75.3
+      ],
+      "direction": "curve",
+      "weight": 72.861068,
+      "revealPath": "M12.08 26.72 L37.28 26.72 L37.28 67.31 Q37.28 72.31 32.28 72.31",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M27.65 8.75 L27.65 90.2 L21.65 93.2 L21.65 7.75 Z M27.65 8.75 L29.15 9.75 L26.65 11.25 Z",
+      "bounds": [
+        21.65,
+        7.75,
+        29.15,
+        93.2
+      ],
+      "direction": "down",
+      "weight": 83.42
+    }
+  ],
+  [
+    {
+      "outline": "M61.45 18.25 L59.95 20.8 L58.35 23.25 L56.6 25.65 L54.8 28 L52.85 30.25 L50.8 32.45 L48.65 34.6 L46.35 36.6 L43.9 38.55 L41.3 40.3 L40.65 39.65 L42.55 37.2 L44.4 34.75 L46.2 32.4 L47.9 30.05 L49.5 27.65 L51 25.3 L52.4 22.9 L53.75 20.5 L54.95 18.05 L56.05 15.6 Z M55.85 16.05 L56.35 15.05 L61.45 18.25 Z M61.45 18.25 L62.35 19.85 L59.4 20.05 Z",
+      "bounds": [
+        40.65,
+        15.05,
+        62.35,
+        40.3
+      ],
+      "direction": "curve",
+      "weight": 29.60152,
+      "revealPath": "M59 16.5 Q52.5 29.5 41 40",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M57 11.5 L80.5 11.5 L80.5 13.5 L57 13.5 Z M80.5 11.5 L70.5 12.5 L75.5 7 Z",
+      "bounds": [
+        57,
+        7,
+        80.5,
+        13.5
+      ],
+      "direction": "right",
+      "weight": 23.5
+    },
+    {
+      "outline": "M75.1 12.75 L76.75 14.7 L78.3 16.65 L79.9 18.5 L81.55 20.35 L83.3 22.05 L85.1 23.75 L87.05 25.35 L89.05 26.9 L91.15 28.35 L93.35 29.75 L89.6 35.2 L87.35 33.3 L85.2 31.4 L83.25 29.35 L81.4 27.3 L79.75 25.1 L78.25 22.85 L76.9 20.55 L75.8 18.15 L74.9 15.7 L74.25 13.1 Z M89.6 35.2 L93.35 29.75 L95.1 30.95 Z",
+      "bounds": [
+        74.25,
+        12.75,
+        95.1,
+        35.2
+      ],
+      "direction": "curve",
+      "weight": 26.248809,
+      "revealPath": "M74.5 12.5 Q80 24.5 91.5 32.5",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M56.5 35 L56.5 64 L50.5 67 L50.5 32 Z",
+      "bounds": [
+        50.5,
+        32,
+        56.5,
+        67
+      ],
+      "direction": "down",
+      "weight": 21
+    }
+  ],
+  [
+    {
+      "outline": "M53.5 35 L83.5 35 L83.5 37 L53.5 37 Z M86.5 36 L86.5 61 L80.5 64 L80.5 36 Z M80.5 35 L83.5 32.5 L89 37 L86.5 39 L80.5 36 Z",
+      "bounds": [
+        53.5,
+        32.5,
+        89,
+        64
+      ],
+      "direction": "curve",
+      "weight": 51,
+      "revealPath": "M53.5 36 L83.5 36 L83.5 57",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M53.5 56 L83.5 56 L83.5 58 L53.5 58 Z",
+      "bounds": [
+        53.5,
+        56,
+        83.5,
+        58
+      ],
+      "direction": "right",
+      "weight": 30
+    }
+  ],
+  [
+    {
+      "outline": "M65.9 61.35 L64.9 66.15 L63.55 70.65 L61.75 74.9 L59.5 78.8 L56.9 82.35 L53.9 85.6 L50.55 88.5 L46.8 91.05 L42.65 93.15 L38.15 94.9 L37.8 94.05 L41.7 91.5 L45.25 88.85 L48.4 86 L51.15 83 L53.5 79.85 L55.5 76.45 L57.15 72.85 L58.4 69 L59.35 64.95 L59.95 60.6 Z M59.85 61.1 L60.05 59.55 L65.9 61.35 Z M65.9 61.35 L67.25 62.5 L64.6 63.7 Z",
+      "bounds": [
+        37.8,
+        59.55,
+        67.25,
+        94.9
+      ],
+      "direction": "curve",
+      "weight": 42.201896,
+      "revealPath": "M63 60.5 Q60 84.5 38 94.5",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M76 56 L76 85 L70 85 L70 56 Z M70 85 L76 85 L74.8 86.8 L73 88 L71.2 86.8 Z M76 85 L76 85.6 L76.1 86.05 L76.2 86.35 L76.25 86.5 L76.35 86.6 L76.45 86.7 L76.6 86.75 L76.9 86.85 L77.35 86.95 L78 87 L78 93 L76.7 92.9 L75.45 92.7 L74.25 92.3 L73.1 91.65 L72.1 90.85 L71.3 89.85 L70.65 88.7 L70.25 87.5 L70.05 86.25 L70 85 Z M78 87 L80.1 87.9 L81 90 L80.1 92.1 L78 93 Z M78 87 L91 87 L91 93 L78 93 Z M91 87 L92.8 88.2 L94 90 L92.8 91.8 L91 93 Z",
+      "bounds": [
+        70,
+        56,
+        94,
+        93
+      ],
+      "direction": "curve",
+      "weight": 48.071068,
+      "revealPath": "M73 57 L73 85 Q73 90 78 90 L91 90",
+      "revealWidth": 14
+    },
+    {
+      "outline": "M91 87 L88 87 L91 74.5 L92 74.5 Z",
+      "bounds": [
+        88,
+        74.5,
+        92,
+        87
+      ],
+      "direction": "up",
+      "weight": 12.5
+    }
+  ]
+] as const
 const TARGET = REVIEWED_OUTLINES[9][1]
 const FIELDS = ['outline', 'bounds', 'direction', 'weight', 'revealPath', 'revealWidth'] as const
+
+// Runtime immutability is required: a policy must never expose mutable allowlist data.
+function freezeReviewedStrokes(strokes: HanjaOutlineStrokes) {
+  for (const masks of strokes) {
+    for (const segment of masks) { Object.freeze(segment.bounds); Object.freeze(segment) }
+    Object.freeze(masks)
+  }
+  Object.freeze(strokes)
+}
+freezeReviewedStrokes(REVIEWED_OUTLINES)
+freezeReviewedStrokes(REVIEWED_SHUI_OUTLINES)
 
 function sameSegment(actual: HanjaOutlineSegment, expected: HanjaOutlineSegment) {
   if (!actual || Object.getPrototypeOf(actual) !== Object.prototype) return false
@@ -242,4 +420,100 @@ export function hanjaStartGateClip(segment: HanjaOutlineSegment, progress: numbe
   const corner = (u: number, t: number) => [x + u * vx - t * vy, y + u * vy + t * vx]
   const points = [corner(-radius, -radius), corner(threshold, -radius), corner(threshold, radius), corner(-radius, radius)].map(point => point.join(',')).join(' ')
   return { center: [x, y], radius, tangent: [vx, vy], projectionMin: -radius, projectionMax: radius, threshold, tau, active: progress > 0 && progress < tau, points }
+}
+
+export type ReviewedHanjaRevealPolicy = Readonly<{
+  id: 'u68d6-10-2' | 'u5e28-5-2' | 'u5e28-10-1'
+  kind: 'circle-start' | 'global-projection'
+  segment: Readonly<HanjaOutlineSegment>
+}>
+export type ReviewedHanjaRevealContext = Readonly<{ id: 'u68d6' | 'u5e28' }>
+const CHENG_CONTEXT: ReviewedHanjaRevealContext = Object.freeze({ id: 'u68d6' })
+const SHUI_CONTEXT: ReviewedHanjaRevealContext = Object.freeze({ id: 'u5e28' })
+const CHENG_POLICY: ReviewedHanjaRevealPolicy = Object.freeze({ id: 'u68d6-10-2', kind: 'circle-start', segment: TARGET })
+const SHUI_Q_POLICY: ReviewedHanjaRevealPolicy = Object.freeze({ id: 'u5e28-5-2', kind: 'circle-start', segment: REVIEWED_SHUI_OUTLINES[4][1] })
+const SHUI_PLANE_POLICY: ReviewedHanjaRevealPolicy = Object.freeze({ id: 'u5e28-10-1', kind: 'global-projection', segment: REVIEWED_SHUI_OUTLINES[9][0] })
+const REVIEWED_POLICIES = [CHENG_POLICY, SHUI_Q_POLICY, SHUI_PLANE_POLICY] as const
+
+function sameStrokes(strokes: HanjaOutlineStrokes, expected: HanjaOutlineStrokes) {
+  return Array.isArray(strokes) && strokes.length === expected.length && strokes.every((masks, pen) =>
+    Array.isArray(masks) && masks.length === expected[pen].length && masks.every((mask, index) => sameSegment(mask, expected[pen][index])))
+}
+
+/** Exact whole-geometry context; a glyph label or a matching isolated curve is insufficient. */
+export function reviewedHanjaRevealContext(strokes: HanjaOutlineStrokes): ReviewedHanjaRevealContext | null {
+  if (hasReviewedHanjaStartGate(strokes)) return CHENG_CONTEXT
+  return sameStrokes(strokes, REVIEWED_SHUI_OUTLINES) ? SHUI_CONTEXT : null
+}
+
+/** Zero-based pen/mask indices. Only contexts returned by the exact whole matcher are accepted. */
+export function reviewedHanjaRevealPolicy(context: ReviewedHanjaRevealContext | null, strokeIndex: number, maskIndex: number): ReviewedHanjaRevealPolicy | null {
+  if (context === CHENG_CONTEXT && strokeIndex === 9 && maskIndex === 1) return CHENG_POLICY
+  if (context === SHUI_CONTEXT && strokeIndex === 4 && maskIndex === 1) return SHUI_Q_POLICY
+  if (context === SHUI_CONTEXT && strokeIndex === 9 && maskIndex === 0) return SHUI_PLANE_POLICY
+  return null
+}
+
+function exactPolicy(policy: ReviewedHanjaRevealPolicy, segment: HanjaOutlineSegment) {
+  if (!REVIEWED_POLICIES.some(known => known === policy) || !sameSegment(segment, policy.segment)) throw new Error('Unreviewed reveal policy/geometry')
+}
+
+/** Canonical explicit source M/L/Q only, after the entire mask has matched its fixed allowlist. */
+function reviewedSourceStart(policy: ReviewedHanjaRevealPolicy, segment: HanjaOutlineSegment) {
+  exactPolicy(policy, segment)
+  const guide = segment.revealPath!
+  const number = '-?(?:0|[1-9]\\d*)(?:\\.\\d+)?'
+  const grammar = new RegExp('^M' + number + ' ' + number + '(?:(?: L' + number + ' ' + number + ')|(?: Q' + number + ' ' + number + ' ' + number + ' ' + number + '))+$')
+  if (!grammar.test(guide)) throw new Error('Noncanonical reviewed guide')
+  const tokens = guide.match(/[MLQ]|-?\d+(?:\.\d+)?/g)!
+  const x = Number(tokens[1]), y = Number(tokens[2]), dx = Number(tokens[4]) - x, dy = Number(tokens[5]) - y
+  const length = Math.hypot(dx, dy)
+  if (!(length > 0) || !Number.isFinite(length) || !Number.isFinite(segment.revealWidth) || segment.revealWidth! <= 0) throw new Error('Invalid reviewed source tangent/width')
+  return { x, y, vx: dx / length, vy: dy / length, radius: segment.revealWidth! / 2 }
+}
+
+/** Only circle policies need a committed, matching SVG guide measurement. Plane never measures. */
+export function measureReviewedHanjaRevealLength(policy: ReviewedHanjaRevealPolicy, segment: HanjaOutlineSegment, guide: GuideElement | null): number | null {
+  exactPolicy(policy, segment)
+  if (policy.kind !== 'circle-start' || !guide?.isConnected || guide.getAttribute('d') !== segment.revealPath) return null
+  try {
+    const length = guide.getTotalLength()
+    return Number.isFinite(length) && length > 0 ? length : null
+  } catch { return null }
+}
+
+export type ReviewedHanjaRevealClip = (HanjaStartGateClip & { kind: 'circle-start' }) | {
+  kind: 'global-projection'
+  center: readonly [number, number]
+  tangent: readonly [number, number]
+  normal: readonly [number, number]
+  projectionMin: number
+  projectionMax: number
+  normalMin: number
+  normalMax: number
+  threshold: number
+  points: string
+}
+
+/** Display clips only; the original round sweep remains present at p=1 and completed prefixes. */
+export function reviewedHanjaRevealClip(policy: ReviewedHanjaRevealPolicy, segment: HanjaOutlineSegment, progress: number, guideLength: number | null): ReviewedHanjaRevealClip {
+  const { x, y, vx, vy, radius } = reviewedSourceStart(policy, segment)
+  if (!Number.isFinite(progress) || progress < 0 || progress > 1) throw new Error('Invalid reviewed reveal progress')
+  const corner = (u: number, w: number) => [x + u * vx - w * vy, y + u * vy + w * vx]
+  if (policy.kind === 'circle-start') {
+    if (guideLength === null || !Number.isFinite(guideLength) || guideLength <= 0) throw new Error('Invalid reviewed guide measurement')
+    const tau = Math.min(1, segment.revealWidth! / guideLength)
+    const threshold = -radius + 2 * radius * Math.min(progress / tau, 1)
+    const points = [corner(-radius, -radius), corner(threshold, -radius), corner(threshold, radius), corner(-radius, radius)].map(point => point.join(',')).join(' ')
+    return { kind: 'circle-start', center: [x, y], radius, tangent: [vx, vy], projectionMin: -radius, projectionMax: radius, threshold, tau, active: progress > 0 && progress < tau, points }
+  }
+  if (policy !== SHUI_PLANE_POLICY || x !== 73 || y !== 57 || vx !== 0 || vy !== 1) throw new Error('Invalid fixed projection target')
+  const vertices = [...segment.outline.matchAll(/(?:M|L)(-?\d+(?:\.\d+)?) (-?\d+(?:\.\d+)?)/g)].map(m => [Number(m[1]), Number(m[2])])
+  const u = vertices.map(point => (point[0] - x) * vx + (point[1] - y) * vy)
+  const w = vertices.map(point => -(point[0] - x) * vy + (point[1] - y) * vx)
+  const a = Math.min(...u), b = Math.max(...u), normalMin = Math.min(...w), normalMax = Math.max(...w)
+  if (a !== -1 || b !== 36 || normalMin !== -21 || normalMax !== 3) throw new Error('Changed source projection bounds')
+  const threshold = a + (b - a) * progress
+  const points = [corner(a, normalMin), corner(threshold, normalMin), corner(threshold, normalMax), corner(a, normalMax)].map(point => point.join(',')).join(' ')
+  return { kind: 'global-projection', center: [x, y], tangent: [vx, vy], normal: [-vy, vx], projectionMin: a, projectionMax: b, normalMin, normalMax, threshold, points }
 }

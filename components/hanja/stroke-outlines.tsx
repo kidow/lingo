@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState, type RefObject } from 'react'
 import { STROKE_DURATION, STROKE_GAP } from '@/lib/hanja-strokes'
 import { outlineClip, outlineSegmentProgress, type HanjaOutlineSegment, type HanjaOutlineStrokes } from '@/lib/hanja-stroke-outline'
-import { hasReviewedHanjaStartGate, hanjaStartGateClip, measureHanjaStartGateLength } from '@/lib/hanja-stroke-start-gate'
+import { reviewedHanjaRevealContext, reviewedHanjaRevealPolicy, reviewedHanjaRevealClip, measureReviewedHanjaRevealLength, type ReviewedHanjaRevealPolicy } from '@/lib/hanja-stroke-start-gate'
 
 /** Only this small SVG subtree updates per frame; the card and controls do not. */
 export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
@@ -15,7 +15,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
 }) {
   const id = useId()
   const [elapsed, setElapsed] = useState(0)
-  const reviewedStartGate = hasReviewedHanjaStartGate(strokes)
+  const revealContext = reviewedHanjaRevealContext(strokes)
   useEffect(() => {
     if (manual || phase !== 'playing') return
     let frame: number
@@ -36,7 +36,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
       const amounts = outlineSegmentProgress(segments, progress)
       return <g key={stroke} data-outline-stroke={stroke + 1}>{segments.map((segment, index) => {
         const p = amounts[index]
-        if (reviewedStartGate && stroke === 9 && index === 1) return <StartGateOutline key={index} segment={segment} progress={p} clipId={`${id}-${stroke}-${index}`} />
+        const policy = reviewedHanjaRevealPolicy(revealContext, stroke, index)
+        if (policy) return <StartGateOutline key={index} policy={policy} segment={segment} progress={p} clipId={`${id}-${stroke}-${index}`} />
         if (p <= 0) return null
         if (p >= 1) return <path key={index} d={segment.outline} />
         const clipId = `${id}-${stroke}-${index}`
@@ -58,26 +59,28 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
 }
 
 /** Mounted even at p=0 so the exact SVG guide can be measured before playback. */
-function StartGateOutline({ segment, progress, clipId }: { segment: HanjaOutlineSegment; progress: number; clipId: string }) {
+function StartGateOutline({ policy, segment, progress, clipId }: { policy: ReviewedHanjaRevealPolicy; segment: HanjaOutlineSegment; progress: number; clipId: string }) {
   const guide = useRef<SVGPathElement | null>(null)
-  const [measurement, setMeasurement] = useState<{ path: string; length: number } | null>(null)
+  const [measurement, setMeasurement] = useState<{ policyId: string; path: string; length: number } | null>(null)
   useEffect(() => {
-    const length = measureHanjaStartGateLength(segment, guide.current)
+    const length = measureReviewedHanjaRevealLength(policy, segment, guide.current)
     if (length === null) return
-    setMeasurement(previous => previous && previous.path === segment.revealPath && previous.length === length ? previous : { path: segment.revealPath!, length })
-  }, [segment])
-  const length = measurement && measurement.path === segment.revealPath ? measurement.length : null
-  const gate = length === null ? null : hanjaStartGateClip(segment, progress, length)
-  const activeGate = gate?.active ? gate : null
+    setMeasurement(previous => previous && previous.policyId === policy.id && previous.path === segment.revealPath && previous.length === length ? previous : { policyId: policy.id, path: segment.revealPath!, length })
+  }, [policy, segment])
+  const length = measurement && measurement.policyId === policy.id && measurement.path === segment.revealPath ? measurement.length : null
+  const gate = policy.kind === 'global-projection' || length !== null ? reviewedHanjaRevealClip(policy, segment, progress, length) : null
+  const activeGate = gate?.kind === 'circle-start' && gate.active ? gate : null
+  const plane = gate?.kind === 'global-projection' ? gate : null
   // SSR and first hydration agree. Intermediate ink waits for its committed guide measurement.
   // p=1 keeps the reviewed round sweep even before measurement; it never reveals an unmasked target.
-  const visible = progress > 0 && (progress >= 1 || length !== null)
-  return <g data-stroke-start-gate="u68d6-10-2">
+  const visible = progress > 0 && (policy.kind === 'global-projection' || progress >= 1 || length !== null)
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind}>
     <defs>
       <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
         <path ref={guide} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth}
           strokeLinecap="round" pathLength="1" strokeDasharray={`${progress} 2`} strokeDashoffset={0} />
       </mask>
+      {plane && <clipPath id={`${clipId}-plane`}><polygon points={plane.points} /></clipPath>}
       {activeGate && <>
         <clipPath id={`${clipId}-disc`}><circle cx={activeGate.center[0]} cy={activeGate.center[1]} r={activeGate.radius} /></clipPath>
         <mask id={`${clipId}-gate`} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
@@ -87,7 +90,7 @@ function StartGateOutline({ segment, progress, clipId }: { segment: HanjaOutline
         </mask>
       </>}
     </defs>
-    {visible && <g mask={activeGate ? `url(#${clipId}-gate)` : undefined}>
+    {visible && <g clipPath={plane ? `url(#${clipId}-plane)` : undefined} mask={activeGate ? `url(#${clipId}-gate)` : undefined}>
       <path d={segment.outline} mask={`url(#${clipId})`} />
     </g>}
   </g>
