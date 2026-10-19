@@ -1,0 +1,7 @@
+# 緦: native order HOLD at pen9
+
+Root observed the new twelve-target renderer (commit59dd5a22edb20223392183a5dd53441c4e525421). Whole compatibility at520px passed once. At1m2 boundary0.5346986721883968 before/at/after±1e-10, the right new candidate showed no faint detached fragment; the middle prior circleOR reproduced its old fragment. This local boundary pass does not approve full order or the new glyph.
+
+A single tool batch captured pairs75%520 forpens1..10. Model reading matched directions1..8. Pen9 should be the horizontal middle of田 but candidate raw11 is vertical; a fresh pen9 pairs75 screenshot reconfirmed the mismatch. Pen10 should be vertical but candidate raw12 is horizontal; its evidence is the earlier batch capture only, not a separate fresh reconfirmation. FIRST confirmed failure is9. Pens11..15 were not observed; all15direction review is incomplete. No further gate ran after confirmation: fine/coarse/rho/coverage/natural0 and multi2/13 unobserved.
+
+Root confirmed PID76250/port60423/session78803 STOP143. Original15p18m40 source geometry98ca27e96df5c2e6c75196ae3b7daa7e6a6e7e061bc0a610c213f9decdbd17d0, UP13tail and all fields are unchanged. Original provisional complete order, source/nativefalse, previous HOLDs and notices remain untouched. This record adds no source geometry, renderer correction, app/runtime/registry approval or approval for other glyphs. A separate cached whole-pen9/10 permutation may be prepared; source order and every animation gate require fresh review.
