@@ -1,0 +1,248 @@
+{
+  "schema": "hanja-isolated-renderer-native-review-and-app-integration-v1",
+  "date": "2026-10-20",
+  "glyph": "棖",
+  "root": "u68d6",
+  "sourceExperiment": "../hanja-renderer-start-gate-u68d6-experiment-2026-10-19",
+  "geometrySHA256": "fa3be0dbcd906119295020bea0caea8a4064925a8b85078a8cc71c0fee9f1e36",
+  "originalPreparationNativeApproval": false,
+  "originalPreparationFilesUnmodified": true,
+  "rootNativeObservation": {
+    "source": "Parent/root explicit reported fresh observations; this author did not run UI",
+    "whole": {
+      "compatible": 1,
+      "actual": "3SVG520"
+    },
+    "coverageResidual": {
+      "emptyAt520": true,
+      "redVisible": false,
+      "analyticalAreaMeasured": false
+    },
+    "directions": {
+      "observed": 12,
+      "passed": 12
+    },
+    "coarse": {
+      "candidate": 108,
+      "baseline": 108
+    },
+    "multi": {
+      "pen": 10,
+      "positions": [
+        "before",
+        "at",
+        "after",
+        "zero",
+        "epsilon",
+        "95%"
+      ],
+      "passed": true,
+      "boundary": 0.45282994944832855
+    },
+    "fine": {
+      "pens": [
+        10,
+        3,
+        4,
+        5,
+        11,
+        12
+      ],
+      "p10": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "otherPens": [
+        0.9999,
+        1
+      ],
+      "passed": true
+    },
+    "boundaryAfter": {
+      "middleOldFiniteStamp": "~15px",
+      "rightNewPositiveAreaStamp": false,
+      "tinyAASeamLine": true
+    },
+    "browserGuideLength": 38.68603515625,
+    "tau": 0.36188769263779674,
+    "natural": {
+      "pen": 10,
+      "seconds": 8,
+      "startPercent": 2.805,
+      "endPercent": 100,
+      "actual": "3SVG520",
+      "passed": true
+    },
+    "server": {
+      "pid": 48337,
+      "port": 59928,
+      "session": 66752,
+      "stopped": true,
+      "exitCode": 143
+    },
+    "allRequiredNativeGatesPassed": true
+  },
+  "integration": {
+    "scope": [
+      "lib/hanja-stroke-start-gate.ts",
+      "lib/hanja-stroke-start-gate.test.ts",
+      "components/hanja/stroke-outlines.tsx"
+    ],
+    "exactTarget": {
+      "pen": 10,
+      "mask": 2,
+      "fullOriginalGeometryCompared": true,
+      "sourceGuideAndWidthExact": true
+    },
+    "getTotalLengthInEffectOnly": true,
+    "SSRInitialMeasurement": null,
+    "targetIntermediateInkWaitsForMeasurement": true,
+    "targetCompletionUnmasked": false,
+    "otherMasksUnchanged": true,
+    "sharedRendererUnchanged": true,
+    "actualAppUI": false,
+    "runtimeRegistered": false,
+    "sourceGeometryExecutions": 0,
+    "engineRuns": 0,
+    "appBuildPerformed": false,
+    "tscPerformed": false,
+    "wholeSuitePerformed": false,
+    "appFilesSHA256": {
+      "lib/hanja-stroke-start-gate.ts": "ce2960e7be5c976b6ba29430187732ef414b75af934ae001177c858ae3b08db8",
+      "lib/hanja-stroke-start-gate.test.ts": "0b477719fdd215d93a6ebbc3fb2aa55e6fb02594d26335f69a7b60e5dc445646",
+      "components/hanja/stroke-outlines.tsx": "58b3f80a4a86093708a322315fc8137fc8b7bee18ce2c385b297c50b04075a3e"
+    },
+    "status": "root isolated actual component browser verified; actual app controller/storage/routes and runtime registration unverified",
+    "isolatedActualComponentBrowserVerified": true
+  },
+  "originalExperimentSHA256": {
+    "README.md": "12befa0fe6dc4509a2801e055304d759187b398312942e77c0009393c3fe8c9f",
+    "check.mjs": "6f4eab8e989918f2e9c240b357aa2f820613497c781d3d61c093a32cf37fb448",
+    "config.json": "53c9006aee9ea424cb9cd56a13d39b877f89105e8e48ea7a3e57e2c249887273",
+    "render.mjs": "243c765482025af3398c35683562bf06724e6fb0a7d85aa9a3da8c2a5b7ee232",
+    "serve.py": "f7a19b8f85b0f4c2e3a1eadcb9f6c614dd939715be96f65a0b0102f207eabf91",
+    "validation.json": "9f1641629275b99ac0742b7dd3461f9de157e2b40490b0e6cf9c21f4da31b86f"
+  },
+  "checks": {
+    "focusedTest": {
+      "command": "node --test lib/hanja-stroke-start-gate.test.ts",
+      "executions": 1,
+      "tests": 1,
+      "passed": 1,
+      "failures": 0,
+      "isolatedMathParity": true,
+      "sourceDataUnchanged": true,
+      "browserMeasurementMocked": true,
+      "actualBrowserUI": false,
+      "negativeCases": 19
+    },
+    "AST": {
+      "executions": 1,
+      "files": [
+        "lib/hanja-stroke-start-gate.ts",
+        "lib/hanja-stroke-start-gate.test.ts",
+        "components/hanja/stroke-outlines.tsx"
+      ],
+      "parseDiagnostics": 0,
+      "targetBeforeCompletionBranch": true,
+      "SSRMeasurementNull": true,
+      "measurementInEffect": true,
+      "noTargetUnmaskBranch": true
+    },
+    "repeated": false
+  },
+  "foreignFilesPreserved": [
+    "lib/levels-stamp.ts",
+    "scripts/__pycache__/hanja-stroke-memory-review.cpython-312.pyc",
+    "scripts/__pycache__/hanja-stroke-textbook-frames.cpython-312.pyc",
+    "docs/exam-materials-feasibility-2026-09-27.md"
+  ],
+  "documentationSHA256": {
+    "README.md": "40deda89070f33dd0834cb4da5e26bed882e5df664e628c75a79191524f1f6f2"
+  },
+  "isolatedActualComponentBrowserObservation": {
+    "source": "Root-reported actual component browser observations; author performed metadata edits only",
+    "harness": "../hanja-component-start-gate-u68d6-harness-2026-10-20",
+    "SSRHydration": {
+      "ready": true,
+      "errors": [],
+      "actualReactDOMServer": true,
+      "actualWholeTSX": true
+    },
+    "initialIdleWhole": {
+      "targetMasked": true
+    },
+    "browserGuideLength": 38.68603515625,
+    "tau": 0.36188769263779674,
+    "pen10At075": {
+      "passed": true
+    },
+    "multi10": {
+      "boundary": 0.45282994944832855,
+      "actualPixels": 520,
+      "before": {
+        "targetInkAbsent": true,
+        "targetMasked": null
+      },
+      "at": {
+        "machineEpsilonGatePresent": true,
+        "positiveAreaStamp": false
+      },
+      "after": {
+        "tinyAAArc": true,
+        "finiteFilledStamp": false
+      },
+      "passed": true
+    },
+    "fine": {
+      "positions": [
+        0,
+        0.000001,
+        0.95,
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "zeroAndEpsilonTargetInkAbsent": true,
+      "targetMaskedAt95AndFineAndFull": true,
+      "passed": true,
+      "actualPixels": 520
+    },
+    "coarse": {
+      "actualComponentCount": 9,
+      "pixelsEach": 220,
+      "all9Passed": true
+    },
+    "natural": {
+      "configuredSeconds": 8,
+      "observedElapsedAtLeastSeconds": 8,
+      "qualitativeFirstDownInkStarted": true,
+      "numericStartProgress": null,
+      "numericStartNotObserved": true,
+      "initialNumericUIStillPrevious1": true,
+      "endAXProgress": 1,
+      "completedPixels": 520,
+      "passed": true
+    },
+    "prefix": {
+      "pen11At075TargetMasked": true,
+      "wholeDone12TargetMasked": true
+    },
+    "hydrationErrorsThroughout": [],
+    "server": {
+      "pid": 68933,
+      "port": 62685,
+      "session": 36832,
+      "stopped": true,
+      "exitCode": 143
+    },
+    "isolatedActualComponentBrowserVerified": true,
+    "actualAppUI": false,
+    "appControllerVerified": false,
+    "appStorageVerified": false,
+    "appRoutesVerified": false,
+    "runtimeRegistered": false,
+    "checksRerun": 0
+  }
+}
