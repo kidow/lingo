@@ -1,0 +1,152 @@
+{
+  "batch": 1292,
+  "glyph": "澨",
+  "date": "2026-10-19",
+  "status": "actual-runtime-verified",
+  "nativeApproval": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1291-2026-10-19/resume.json",
+  "parentResumeSHA256": "ef0cf66c07e793b75a214711ad19fd7bf972a487fde05e481c9d00ff2fdb09bf",
+  "parentActualCheckpointVerified": true,
+  "parentActualRegistryVerified": true,
+  "parentRuntimeRegistered": true,
+  "parentActualEvidence": "actualRuntimeVerifier",
+  "completedRuntime": 5708,
+  "total": 5978,
+  "remaining": 270,
+  "historicalCanonicalHolds": 349,
+  "resolvedHistoricalCount": 133,
+  "activeCanonicalHolds": 216,
+  "pens": 16,
+  "masks": 17,
+  "polygons": 36,
+  "compiledSHA256": "dcad349650ff92196b8a0a72476f0ad5fb223a1c1436cd9a91e5241c22943243",
+  "sourcePins": 27,
+  "pinBreakdown": {
+    "originalAndShared": 19,
+    "currentExperiment": 8,
+    "total": 27
+  },
+  "sourceRecords": 5,
+  "wholeRoots": 2,
+  "providers": 0,
+  "focusedTests": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "tests": 3,
+    "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch1292.test.ts",
+    "exitCode": 0
+  },
+  "syntax": {
+    "executions": 2,
+    "status": "passed",
+    "passed": true,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1292-2026-10-19/verify-runtime.mjs",
+    "exitCode": 0,
+    "history": [
+      {
+        "execution": 1,
+        "exitCode": 0,
+        "passed": true,
+        "scope": "Initial syntax"
+      },
+      {
+        "execution": 2,
+        "exitCode": 0,
+        "passed": true,
+        "scope": "After correcting copied verifier source-helper import only"
+      }
+    ],
+    "focusedRepeated": 0
+  },
+  "postActualMetadataFocused": {
+    "executions": 1,
+    "passed": true,
+    "exitCode": 0,
+    "scope": [
+      "resume.json",
+      "validation.json",
+      "README.md"
+    ],
+    "check": "actual flags/counts/hash equality and original focused1/syntax2/actual2 failed-only-tail history preserved",
+    "sourceCompilations": 0,
+    "originalFocusedTestsRepeated": 0,
+    "syntaxReruns": 0,
+    "actualVerifierReruns": 0,
+    "requestedBy": "/root"
+  },
+  "actualRuntimeVerifier": {
+    "executions": 2,
+    "status": "passed-after-failed-only-tail",
+    "passed": true,
+    "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch1292-2026-10-19/verify-runtime.mjs",
+    "exitCode": 0,
+    "executedBy": "/root",
+    "reportedBy": "/root",
+    "reportedSummaryOnly": true,
+    "history": [
+      {
+        "execution": 1,
+        "exitCode": 1,
+        "passed": false,
+        "failedAssertion": "assert.deepEqual(selectedProofIdentity,id)",
+        "reason": "Actual verifier alone imported previous qq-u6f63 helper while current t.identity.root is u6fa8; full geometry/loader body1 assertions passed first.",
+        "repair": "Verifier helper import corrected to qq-u6fa8; no geometry, registry, proof or passed focused tests changed.",
+        "remainingTailNotYetExecuted": true
+      },
+      {
+        "execution": 2,
+        "exitCode": 0,
+        "passed": true,
+        "failedOnlyTail": true,
+        "remainingPrefixSkipped": true,
+        "scope": "Corrected strict proof identity failed assertion and all remaining previously unexecuted assertions",
+        "previousGeometryLoaderAssertionsRepeated": 0
+      }
+    ],
+    "passedChecksRepeated": 0,
+    "registryUnique": 5708,
+    "remaining": 270,
+    "historicalCanonicalHolds": 349,
+    "resolvedHistoricalCount": 133,
+    "activeCanonicalHolds": 216,
+    "canonicalReferences": 349,
+    "canonicalTargetMatchesBeforeApply": 1,
+    "canonicalRecordType": "object",
+    "resolvedTargetOriginalBatch": 639,
+    "nonCanonicalResolvedExcluded": [
+      "叟",
+      "廋",
+      "瞍",
+      "餲"
+    ],
+    "pens": 16,
+    "masks": 17,
+    "polygons": 36,
+    "sourcePins": 27,
+    "pinMismatches": 0,
+    "sourceRecords": 5,
+    "wholeRoots": 2,
+    "providers": 0,
+    "compiledSHA256": "dcad349650ff92196b8a0a72476f0ad5fb223a1c1436cd9a91e5241c22943243",
+    "sourceCompilations": 0,
+    "runtimeFixtureCompilations": 0,
+    "additionalFixtureCompilations": 0,
+    "candidateDerivationsThisRuntime": 0,
+    "engineRuns": 0,
+    "appUI": false,
+    "buildExecuted": false
+  },
+  "runtimeFixtureCompilations": 0,
+  "additionalFixtureCompilations": 0,
+  "sourceCompilations": 0,
+  "candidateDerivationsThisRuntime": 0,
+  "engineRuns": 0,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildExecuted": false,
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "providerRecordField": "providerVersions"
+}
