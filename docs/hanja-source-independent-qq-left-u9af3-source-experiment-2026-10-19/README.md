@@ -1,0 +1,11 @@
+# 髳 cached QQ + exact LEFT14 source 실험
+
+髳576 plain QQ source의 root whole1호환·전체15방향과 fine6/11 PASS, fine14(99.99→100 원LEFT약18px추가)FAIL을 보존합니다. 그밖의fine/coarse/모든경계/자연재생은 당시 미검토입니다. 기존QQ6 raw5/6 gap[-13,2.91] 독립2mask와 exact11/12·14/15만의 접합은 불변입니다. 새후보는 pen14raw16의 마지막quad만 기존997 LEFT14 width6/jump20/tailweight10 공식과 exact일치하여 분리합니다. bodybounds는 [38,68.1,56,94.4]→[48,68.1,56,94.4]로 남은body polygon의 activebounds를 표시합니다. 이 표시정책 변경 외 bodyguide·폭·weight24.391068/원좌표/37polygon/다른14획은 불변입니다. 15p17m37·원기하factory/원compiler/engine0·캐시tail분리1이며 새native/runtime미승인/전gatefresh필수입니다.
+
+원source8 commit5cd4a8dfb93db4b384ba3ea7431b7f09c05dff1f/prepd2b64792d2f19337f54b29b36d4811d7246e96d9bf83f7465a94a9f916e58c30/compiled45c5d249061ce0162c8ec6913ff2ff81f66f02e297a32d2c98657867edc0fa29 및 원576 HOLD/NOTICE는 불변입니다. 실패서버 PID53567/port62203/session83152 STOP143은 root 확인값입니다. 과거 정적관찰은6–15였으며 1–5미관찰 역사도 보존합니다. 최근원후보 전체15방향PASS가 새tail후보의 승인을 뜻하지 않습니다. 원전체그룹은 narrative anchor와 나머지원raw순서에 따른 provisional 배열로 새후보도 fresh全gate가 필요합니다.
+
+이전source8에서 명시한 header4(engineRevision/engineHashes/groups/defaults)+trace full5와 id7을 그대로사용합니다. archive full5원동일성 주장이 아니며 새header결합0입니다. 원cachedstrict3/4 위임·필수derive4·id/원proof/rawargs/quad/baseline SHA를 고정합니다. captureGeometry API가 없고 누락/추가args/wrongroot/변경proof·identity를 거부합니다. 원18+이전source8의8+涍예시module1+원997module1=28입력핀/자체7/향후새8포함runtime36핀입니다.
+
+기존997 kernel1691byte SHA7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08와 partition1302byte SHA2802b789ebee4fe2f9af3903f71f26f2a9609dced9171e87ecf63aba342a8657을 byteexact재사용합니다. quadSHA 277d5a95a745f1c2acda08369e0f7ec0184cfd08e56f35cfd1c53072fdae3a7e를 고정합니다. 원outline 마지막chunk를 같은원quad 별mask로 옮길뿐 좌표/path/connector/폭/flags를 생성하지 않습니다. bodyguide폭weight를 그대로두고 원polygon에 맞춘 body activebounds만 위처럼바뀝니다. tailweight10은 기존공식입니다. baseline은 원source 캐시의 동일logical순서16mask이고 독립native증거가 아닙니다. 캐시분리1→공개fixture선저장→cached검사/sourcegeometry0·engine0입니다.
+
+helper는3SVG520/coarse9각220/실제weight의 모든multi6·14 before/at/after·0/epsilon(.0001%)/50/95/99.99/100·8초재생을 제공합니다. 국내SVG는RAM전용, startup/매GET compilerengine0·원입력/자체/config/prep guard입니다. UI/server/runtime/registry/catalog/Git/build0/native/runtimefalse로 fresh whole·전방향·모든fine/경계/coarse/replay필수입니다.
