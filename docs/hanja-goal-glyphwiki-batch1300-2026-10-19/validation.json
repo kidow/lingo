@@ -1,0 +1,111 @@
+{
+  "batch": 1300,
+  "glyph": "纊",
+  "date": "2026-10-19",
+  "status": "actual-runtime-verified",
+  "nativeApproval": true,
+  "parentResume": "docs/hanja-goal-glyphwiki-batch1299-2026-10-19/resume.json",
+  "parentResumeSHA256": "70a1ad89bc79f9a47ed07e4fa65ebc6baeaca91b028f516c6b23a42ca4344def",
+  "parentActualCheckpointVerified": true,
+  "parentActualRegistryVerified": true,
+  "parentRuntimeRegistered": true,
+  "parentActualEvidence": "actualRuntimeVerifier",
+  "completedRuntime": 5716,
+  "total": 5978,
+  "remaining": 262,
+  "historicalCanonicalHolds": 349,
+  "resolvedHistoricalCount": 141,
+  "activeCanonicalHolds": 208,
+  "pens": 21,
+  "masks": 23,
+  "polygons": 47,
+  "compiledSHA256": "4d283cadffd03fe01310fb0ce7fa760ecd2ab78c663755daaf4acf90d07ad4c4",
+  "sourcePins": 26,
+  "pinBreakdown": {
+    "originalAndShared": 18,
+    "currentExperiment": 8,
+    "total": 26
+  },
+  "sourceRecords": 5,
+  "wholeRoots": 4,
+  "providers": 0,
+  "focusedTests": {
+    "executions": 3,
+    "status": "passed-after-failed-only-tail",
+    "passed": true,
+    "tests": 3,
+    "command": "rtk proxy node --test lib/hanja-stroke-dictionary-glyphwiki-batch1300.test.ts",
+    "exitCode": 0,
+    "failures": 2,
+    "passedTests": 3,
+    "previousPassedAssertionsRepeated": 0,
+    "history": [
+      {
+        "execution": 1,
+        "moduleLoadFailed": true,
+        "assertionsExecuted": 0,
+        "reason": "copied export identifier1298"
+      },
+      {
+        "execution": 2,
+        "passed": 2,
+        "failed": 1,
+        "reason": "source preparation lacks optional priorNativeHistory"
+      },
+      {
+        "execution": 3,
+        "failedAndRemainingTailOnly": true,
+        "passed": true,
+        "previousPassedAssertionsRepeated": 0
+      }
+    ]
+  },
+  "syntax": {
+    "executions": 2,
+    "status": "passed",
+    "passed": true,
+    "command": "rtk proxy node --check docs/hanja-goal-glyphwiki-batch1300-2026-10-19/verify-runtime.mjs",
+    "exitCode": 0,
+    "changedVerifierSyntaxOnly": 1
+  },
+  "actualRuntimeVerifier": {
+    "executions": 1,
+    "status": "passed",
+    "passed": true,
+    "command": "rtk proxy node docs/hanja-goal-glyphwiki-batch1300-2026-10-19/verify-runtime.mjs",
+    "exitCode": 0,
+    "registryUnique": 5716,
+    "remaining": 262,
+    "historical": 349,
+    "resolvedHistoricalCount": 141,
+    "activeCanonical": 208,
+    "canonicalReferences": 357,
+    "sourcePins": 26,
+    "pinMismatches": 0,
+    "canonicalRecordType": "string",
+    "compiledSHA256": "4d283cadffd03fe01310fb0ce7fa760ecd2ab78c663755daaf4acf90d07ad4c4",
+    "sourceCompiles": 0,
+    "engineRuns": 0,
+    "appUI": false,
+    "build": false
+  },
+  "runtimeFixtureCompilations": 0,
+  "additionalFixtureCompilations": 0,
+  "sourceCompilations": 0,
+  "candidateDerivationsThisRuntime": 0,
+  "engineRuns": 0,
+  "appUIAutoplayVerifiedThisBatch": false,
+  "buildExecuted": false,
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "providerRecordField": "providerVersions",
+  "postActualMetadataFocused": {
+    "executions": 1,
+    "passed": true,
+    "actualVerifierReruns": 0,
+    "sourceCompilations": 0,
+    "build": false
+  }
+}
