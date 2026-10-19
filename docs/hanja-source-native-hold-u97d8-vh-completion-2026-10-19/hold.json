@@ -1,0 +1,133 @@
+{
+  "schema": "hanja-independent-native-hold-v1",
+  "date": "2026-10-19",
+  "glyph": "韘",
+  "root": "u97d8",
+  "status": "HOLD-VH14-completion-positive-area",
+  "sourceFolder": "docs/hanja-source-independent-vh-u97d8-source-experiment-2026-10-19/",
+  "sourceCommitNotSupplied": true,
+  "preparationSHA256": "bd1116530545a93045a342655e9bc56b2dbedbc1ed2ec0b61d54b2f90edc29b1",
+  "compiledSHA256": "39c8ed2b04446ae43c66fce19e1e700140d67980ee3da60a4a59bf4d0d2e824f",
+  "immutableFilesSHA256": {
+    "docs/hanja-source-independent-vh-u97d8-source-experiment-2026-10-19/config.json": "722491e99f12bd98425de42fe954cf31c2d621fecb6eb4e462f1790ad2d58286",
+    "docs/hanja-source-independent-vh-u97d8-source-experiment-2026-10-19/preparation.json": "bd1116530545a93045a342655e9bc56b2dbedbc1ed2ec0b61d54b2f90edc29b1",
+    "docs/hanja-source-independent-vh-u97d8-source-experiment-2026-10-19/fixtures.json": "680581e316ba374fa8d6e2fe66d512b77275fcdc6bbb7805ff69812f8b380d67",
+    "docs/hanja-source-independent-vh-u97d8-source-experiment-2026-10-19/candidate.mjs": "b60aa26abe95986b502161d369b5d01b42d4e78983e16cbb6f527032344865ea",
+    "docs/hanja-goal-glyphwiki-batch831-2026-10-13/progressive.mjs": "356693ce1e0a650edfc2300076156e12bbc54a5339071c4c3d0e995a1ed77e01",
+    "docs/hanja-goal-glyphwiki-batch831-2026-10-13/review.json": "a01e6fd4290e7ab3abe695d7fe2bbc4002c511288217661f237eae63576deee4",
+    "docs/hanja-goal-glyphwiki-batch880-2026-10-13/progressive.mjs": "cde2aff0b8c9026afb2b4df854c053a6cd9f70ec927c0314e16a004f5181e400",
+    "docs/hanja-goal-glyphwiki-batch1036-2026-10-13/progressive.mjs": "0041224f40715ca1705d27aba3741fe34d35d2a1dc6b416e9c5264f6b3104953"
+  },
+  "rootNativeObservation": {
+    "wholeCompatible": 1,
+    "multi8": {
+      "at": 0.25961538461538464,
+      "before": true,
+      "atPassed": true,
+      "after": true,
+      "zero": true,
+      "epsilon": true,
+      "ninetyFive": true,
+      "passed": true
+    },
+    "fineCompletionPassed": [
+      4,
+      5,
+      11,
+      12,
+      8
+    ],
+    "fineCompletionFailed": [
+      14
+    ],
+    "from": 99.99,
+    "to": 100,
+    "svgSize": 520,
+    "failedObservation": "Actual right candidate pen14 adds approximately20px lower-left foot area only at completion",
+    "reportedSourceCorrelation": {
+      "logicalPen": 14,
+      "raw": [
+        13,
+        14
+      ],
+      "verticalFlags": [
+        0,
+        13
+      ],
+      "horizontalFlags": [
+        2,
+        0
+      ],
+      "suspectedTerminal13FootOrHeadTiming": true,
+      "confirmedRootCause": false
+    },
+    "directions": 0,
+    "coarse": 0,
+    "naturalReplay": 0,
+    "appUI": false,
+    "server": {
+      "pid": 29020,
+      "port": 58577,
+      "sessionId": 49847,
+      "stopped": true,
+      "exitCode": 143
+    }
+  },
+  "readOnlyResearch": {
+    "closestApprovedPrecedent": {
+      "batch": 831,
+      "runtimeApplied": true,
+      "method": "Whole original vertical13 foot+head in full-bounds downward mask followed by original horizontal mask",
+      "exactGuardApplicable": false,
+      "differences": {
+        "literalVerticalArgs": true,
+        "literalHorizontalArgs": true,
+        "horizontalFlags": {
+          "required": [
+            2,
+            2
+          ],
+          "actual": [
+            2,
+            0
+          ]
+        },
+        "horizontalPolygonCount": {
+          "required": 1,
+          "actual": 2
+        }
+      }
+    },
+    "otherApprovedPrecedents": [
+      {
+        "batch": 880,
+        "scope": "H then V exact-contact; reverse orientation from this V then H"
+      },
+      {
+        "batch": 1036,
+        "scope": "single-raw terminal13 cardinal mask guard; current compound raw13+14 does not match"
+      }
+    ],
+    "matchingAlreadyValidatedExactGuardFound": false,
+    "newGuardNotAssumedApproved": true,
+    "noBroadImpossibilityClaim": true
+  },
+  "decision": {
+    "holdOnly": true,
+    "sourceGeometryGenerations": 0,
+    "compilerCalls": 0,
+    "newCoordinates": 0,
+    "newPaths": 0,
+    "newWidths": 0,
+    "newClips": 0,
+    "newConnectors": 0,
+    "originalSourceEdits": 0,
+    "runtimeRegistryEdits": 0,
+    "originalHistoryPreserved": true,
+    "originalNOTICEPreserved": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newCanonicalHoldsRegistered": 0,
+  "buildExecuted": false
+}
