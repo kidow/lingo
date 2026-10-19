@@ -1,0 +1,142 @@
+{
+  "schema": "actual-component-local-harness-validation-v1",
+  "date": "2026-10-20",
+  "configSHA256": "6c144e2d0aae827dc90df7476666cb207ad7e0cffd3c9c70a63892dde5c5c46b",
+  "ownSHA256": {
+    "serve.mjs": "136c4fdebde94f4626537d8653e4856eb1791c8d2ab16965b7b80a98d1913d2e",
+    "browser.mjs": "f3e42aa8bbb5a993983b6aebcf1625e1b32f628541bf09af87cc374b24f5fb93",
+    "check.mjs": "ecc118e7397d70c2a5befdc6d2edfc88e515fd832dfcd7a82551a91ce0225b48",
+    "config.json": "6c144e2d0aae827dc90df7476666cb207ad7e0cffd3c9c70a63892dde5c5c46b",
+    "README.md": "5ffa0c3c302ded480b3fe531d37252e11088126ec8010efe57602685b63f61f6"
+  },
+  "inputSHA256": {
+    "components/hanja/stroke-outlines.tsx": "58b3f80a4a86093708a322315fc8137fc8b7bee18ce2c385b297c50b04075a3e",
+    "lib/hanja-stroke-outline.ts": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+    "lib/hanja-stroke-start-gate.ts": "ce2960e7be5c976b6ba29430187732ef414b75af934ae001177c858ae3b08db8",
+    "docs/hanja-source-independent-vq-u68d6-source-experiment-2026-10-19/fixtures.json": "d81990df619f6cc585d0c4332d0aa2a18fa54fe79c1332d921677454afe4f479"
+  },
+  "checks": {
+    "status": "PASS",
+    "executions": 1,
+    "resourcesAndSSRExecutions": 1,
+    "negativeConstants": 3,
+    "routes": 12,
+    "SSRActualComponent": true,
+    "registryExecuted": false,
+    "HTTP": 0,
+    "UI": 0,
+    "server": 0,
+    "hydrationBrowserExecuted": false,
+    "actualAppUI": false,
+    "sourceHashes": {
+      "component": "58b3f80a4a86093708a322315fc8137fc8b7bee18ce2c385b297c50b04075a3e",
+      "outline": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+      "gate": "ce2960e7be5c976b6ba29430187732ef414b75af934ae001177c858ae3b08db8",
+      "timing": "4693b19ebe23b4248f8002f700aa38506799b6859f54a2492ec4fe7898f5e543"
+    },
+    "syntax": {
+      "serve": 1,
+      "browser": 2,
+      "check": 1,
+      "passed": true,
+      "browserChange": "Added local React console.error capture after initial PASS; changed browser syntax only rechecked; resources/SSR check not repeated"
+    },
+    "failures": 0,
+    "repeated": false
+  },
+  "SSRActualComponent": true,
+  "hydrationBrowserExecuted": true,
+  "actualAppUI": false,
+  "sourceGeometryExecutions": 0,
+  "engineRuns": 0,
+  "registryExecuted": false,
+  "packageInstall": false,
+  "NextBuild": false,
+  "NextDev": false,
+  "TSC": false,
+  "isolatedActualComponentBrowserVerified": true,
+  "rootBrowserObservation": {
+    "source": "Root-reported actual component browser observations; author performed metadata edits only",
+    "harness": "../hanja-component-start-gate-u68d6-harness-2026-10-20",
+    "SSRHydration": {
+      "ready": true,
+      "errors": [],
+      "actualReactDOMServer": true,
+      "actualWholeTSX": true
+    },
+    "initialIdleWhole": {
+      "targetMasked": true
+    },
+    "browserGuideLength": 38.68603515625,
+    "tau": 0.36188769263779674,
+    "pen10At075": {
+      "passed": true
+    },
+    "multi10": {
+      "boundary": 0.45282994944832855,
+      "actualPixels": 520,
+      "before": {
+        "targetInkAbsent": true,
+        "targetMasked": null
+      },
+      "at": {
+        "machineEpsilonGatePresent": true,
+        "positiveAreaStamp": false
+      },
+      "after": {
+        "tinyAAArc": true,
+        "finiteFilledStamp": false
+      },
+      "passed": true
+    },
+    "fine": {
+      "positions": [
+        0,
+        0.000001,
+        0.95,
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "zeroAndEpsilonTargetInkAbsent": true,
+      "targetMaskedAt95AndFineAndFull": true,
+      "passed": true,
+      "actualPixels": 520
+    },
+    "coarse": {
+      "actualComponentCount": 9,
+      "pixelsEach": 220,
+      "all9Passed": true
+    },
+    "natural": {
+      "configuredSeconds": 8,
+      "observedElapsedAtLeastSeconds": 8,
+      "qualitativeFirstDownInkStarted": true,
+      "numericStartProgress": null,
+      "numericStartNotObserved": true,
+      "initialNumericUIStillPrevious1": true,
+      "endAXProgress": 1,
+      "completedPixels": 520,
+      "passed": true
+    },
+    "prefix": {
+      "pen11At075TargetMasked": true,
+      "wholeDone12TargetMasked": true
+    },
+    "hydrationErrorsThroughout": [],
+    "server": {
+      "pid": 68933,
+      "port": 62685,
+      "session": 36832,
+      "stopped": true,
+      "exitCode": 143
+    },
+    "isolatedActualComponentBrowserVerified": true,
+    "actualAppUI": false,
+    "appControllerVerified": false,
+    "appStorageVerified": false,
+    "appRoutesVerified": false,
+    "runtimeRegistered": false,
+    "checksRerun": 0
+  }
+}
