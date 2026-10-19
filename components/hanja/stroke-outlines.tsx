@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useId, useRef, useState, type RefObject } from 'react'
 import { STROKE_DURATION, STROKE_GAP } from '@/lib/hanja-strokes'
+import { reviewedSiContext, reviewedSiPolicy, commitReviewedSiCaps, type ReviewedSiPolicy } from '@/lib/hanja-stroke-start-gate-si'
 import { outlineClip, outlineSegmentProgress, type HanjaOutlineSegment, type HanjaOutlineStrokes } from '@/lib/hanja-stroke-outline'
 import { reviewedQuanQuadraticCapsContext, reviewedQuanQuadraticCapsPolicy, commitReviewedQuanQuadraticCaps, type ReviewedQuanQuadraticCapsPolicy, reviewedHanjaRevealContext, reviewedHanjaRevealPolicy, reviewedHanjaRevealClip, measureReviewedHanjaRevealLength, commitReviewedGrowingCaps, type ReviewedHanjaRevealPolicy, reviewedQuadraticCapsContext, reviewedQuadraticCapsPolicy, commitReviewedQuadraticCaps, type ReviewedQuadraticCapsPolicy } from '@/lib/hanja-stroke-start-gate'
 
@@ -18,6 +19,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const revealContext = reviewedHanjaRevealContext(strokes)
   const quadraticContext = reviewedQuadraticCapsContext(strokes)
   const quanContext = reviewedQuanQuadraticCapsContext(strokes)
+  const siContext = reviewedSiContext(strokes)
   useEffect(() => {
     if (manual || phase !== 'playing') return
     let frame: number
@@ -38,6 +40,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
       const amounts = outlineSegmentProgress(segments, progress)
       return <g key={stroke} data-outline-stroke={stroke + 1}>{segments.map((segment, index) => {
         const p = amounts[index]
+        const siPolicy = reviewedSiPolicy(siContext, stroke, index)
+        if (siPolicy) return <SiCapsOutline key={index} policy={siPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const quanPolicy = reviewedQuanQuadraticCapsPolicy(quanContext, stroke, index)
         if (quanPolicy) return <QuanQuadraticCapsOutline key={index} policy={quanPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const quadraticPolicy = reviewedQuadraticCapsPolicy(quadraticContext, stroke, index)
@@ -62,6 +66,30 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
           </g>
       })}</g>
     })}
+  </g>
+}
+/** 緦만 독립 원 path로 측정한다. 기존 모든 child 함수와 guide 계약은 바꾸지 않는다. */
+function SiCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedSiPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>{
+    const committed=commitReviewedSiCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current})
+    return committed.cleanup
+  },[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="growing-si-caps" data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-si-measure'} data-growing-owner={clipId} data-si-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0} />
+      </mask>
+      <mask id={clipId+'-si-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-si-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0} />
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+        <circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path key="si-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
+    {valid&&progress>0&&progress<1&&<path key="si-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-si-growing)'} visibility="hidden" />}
   </g>
 }
 
