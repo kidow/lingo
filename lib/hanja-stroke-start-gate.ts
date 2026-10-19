@@ -422,18 +422,25 @@ export function hanjaStartGateClip(segment: HanjaOutlineSegment, progress: numbe
   return { center: [x, y], radius, tangent: [vx, vy], projectionMin: -radius, projectionMax: radius, threshold, tau, active: progress > 0 && progress < tau, points }
 }
 
+// Exact standalone-reviewed 麌 source-order geometry; no source getter or registry lookup.
+const REVIEWED_YU_OUTLINES: HanjaOutlineStrokes = [[{"outline":"M55 6.95 L55 15 L49 15 L49 5.95 Z M55 6.95 L56.5 7.95 L54 9.45 Z","bounds":[49,5.95,56.5,15],"direction":"down","weight":7.56}],[{"outline":"M16 13 L92 13 L92 15 L16 15 Z M92 13 L82 14 L87 8.5 Z","bounds":[16,8.5,92,15],"direction":"right","weight":76}],[{"outline":"M19 13 L19 30.8 L13 30.8 L13 10 Z M13 30.8 L19 30.8 L17.8 32.6 L16 33.8 L14.2 32.6 Z M19 30.8 L18.7 34 L18.25 37.15 L17.6 40.1 L16.7 42.95 L15.6 45.6 L14.25 48.15 L12.75 50.5 L11 52.65 L9 54.6 L6.8 56.3 L6.15 55.7 L7.55 53.4 L8.8 51.15 L9.9 48.85 L10.85 46.5 L11.6 44.1 L12.2 41.65 L12.65 39.1 L12.95 36.4 L13.05 33.65 L13 30.8 Z","bounds":[6.15,10,19,56.3],"direction":"curve","weight":43.731209,"revealPath":"M16 14.02 L16 30.82 Q16 46.36 6.5 56.02","revealWidth":14}],[{"outline":"M43 14.9 L43 30.1 L37 30.1 L37 13.9 Z M43 14.9 L44.5 15.9 L42 17.4 Z","bounds":[37,13.9,44.5,30.1],"direction":"down","weight":14.7}],[{"outline":"M65 14.9 L65 30.1 L59 30.1 L59 13.9 Z M65 14.9 L66.5 15.9 L64 17.4 Z","bounds":[59,13.9,66.5,30.1],"direction":"down","weight":14.7}],[{"outline":"M16 20.15 L83 20.15 L83 22.15 L16 22.15 Z M86 21.15 L86 30.1 L80 33.1 L80 21.15 Z M80 20.15 L83 17.65 L88.5 22.15 L86 24.15 L80 21.15 Z","bounds":[16,17.65,88.5,33.1],"direction":"curve","weight":74.98,"revealPath":"M16 21.16 L83 21.16 L83 29.14","revealWidth":14}],[{"outline":"M16 28.1 L83 28.1 L83 30.1 L16 30.1 Z","bounds":[16,28.1,83,30.1],"direction":"right","weight":67}],[{"outline":"M31 36.5 L54 36.5 L54 38.5 L31 38.5 Z M54 36.5 L44 37.5 L49 32 Z","bounds":[31,32,54,38.5],"direction":"right","weight":23}],[{"outline":"M34 30.9 L34 46.9 L28 46.9 L28 29.9 Z M34 30.9 L35.5 31.9 L33 33.4 Z","bounds":[28,29.9,35.5,46.9],"direction":"down","weight":15.54},{"outline":"M20.65 45.4 L23.8 45.2 L27 45 L30.35 44.7 L33.75 44.45 L37.3 44.1 L40.9 43.8 L44.6 43.45 L48.4 43.1 L52.35 42.8 L56.4 42.55 L56.55 43.4 L52.7 44.65 L48.9 45.7 L45.15 46.65 L41.5 47.55 L37.9 48.3 L34.4 49.05 L31 49.7 L27.7 50.3 L24.45 50.85 L21.3 51.35 Z M21.3 51.35 L19.65 45.5 L20.65 45.4 Z M21.3 51.35 L24.1 49.55 L22.45 52.75 Z","bounds":[19.65,42.55,56.55,52.75],"direction":"curve","weight":36.411696,"revealPath":"M20.5 48.46 Q36.5 46.78 56.5 43","revealWidth":14}],[{"outline":"M84 38 L82.45 38.35 L80.75 38.65 L78.9 38.95 L76.95 39.2 L74.75 39.45 L72.45 39.7 L70 39.85 L67.35 40 L64.5 40.05 L61.55 40.05 L61.4 39.15 L64.25 38.35 L66.95 37.55 L69.45 36.8 L71.8 36.1 L73.95 35.45 L75.9 34.8 L77.7 34.15 L79.35 33.55 L80.75 32.95 L82 32.35 Z M81.5 32.5 L86.75 37 L84 38 Z M86.75 37 L86.85 38.55 L83.5 37.1 Z","bounds":[61.4,32.35,86.85,40.05],"direction":"curve","weight":22.479867,"revealPath":"M83.5 35.02 Q76.5 37.54 61.5 39.64","revealWidth":14}],[{"outline":"M64.5 30.9 L64.5 42.2 L58.5 42.2 L58.5 29.9 Z M64.5 30.9 L66 31.9 L63.5 33.4 Z M58.5 42.2 L64.5 42.2 L63.3 44 L61.5 45.2 L59.7 44 Z M64.5 42.2 L64.45 42.8 L64.45 43.3 L64.5 43.65 L64.5 43.9 L64.6 44.05 L64.7 44.25 L64.9 44.45 L65.25 44.65 L65.8 44.8 L66.5 44.95 L66.5 49.45 L65.25 49.45 L64.1 49.3 L62.95 49 L61.85 48.5 L60.85 47.8 L60.05 46.85 L59.35 45.8 L58.9 44.65 L58.6 43.45 L58.5 42.2 Z M66.5 44.95 L68.05 45.6 L68.75 47.2 L68.05 48.75 L66.5 49.45 Z M66.5 44.95 L90 44.95 L90 49.45 L66.5 49.45 Z M90 44.95 L91.35 45.85 L92.25 47.2 L91.35 48.55 L90 49.45 Z","bounds":[58.5,29.9,92.25,49.45],"direction":"curve","weight":42.371068,"revealPath":"M61.5 30.4 L61.5 42.2 Q61.5 47.2 66.5 47.2 L90 47.2","revealWidth":14},{"outline":"M90 44.95 L87.75 44.95 L90 38.45 L91 38.45 Z","bounds":[87.75,38.45,91,44.95],"direction":"up","weight":6.5}],[{"outline":"M40.35 54.5 L40.35 65.2 L34.35 68.2 L34.35 51.5 Z","bounds":[34.35,51.5,40.35,68.2],"direction":"down","weight":8.7318}],[{"outline":"M37.35 54.5 L80.05 54.5 L80.05 56.5 L37.35 56.5 Z M83.05 55.5 L83.05 65.2 L77.05 68.2 L77.05 55.5 Z M77.05 54.5 L80.05 52 L85.55 56.5 L83.05 58.5 L77.05 55.5 Z","bounds":[37.35,52,85.55,68.2],"direction":"curve","weight":51.4372,"revealPath":"M37.3623 55.509100000000004 L80.0677 55.509100000000004 L80.0677 64.2409","revealWidth":14}],[{"outline":"M37.35 63.2 L80.05 63.2 L80.05 65.2 L37.35 65.2 Z","bounds":[37.35,63.2,80.05,65.2],"direction":"right","weight":42.7054}],[{"outline":"M25.85 54.25 L25.85 72.55 L19.85 75.55 L19.85 53.25 Z M25.85 54.25 L27.35 55.25 L24.85 56.75 Z M22.85 70.55 L72.1 70.55 L72.1 72.55 L22.85 72.55 Z M75.1 71.55 L75.1 80.8 L69.1 80.8 L69.1 71.55 Z M69.1 70.55 L72.1 68.05 L77.6 72.55 L75.1 74.55 L69.1 71.55 Z","bounds":[19.85,53.25,77.6,80.8],"direction":"curve","weight":75.3225,"revealPath":"M22.895 53.769999999999996 L22.895 71.59 L72.1475 71.59 L72.1475 79.84","revealWidth":14}],[{"outline":"M11.45 78.8 L93 78.8 L93 80.8 L11.45 80.8 Z M93 78.8 L83 79.8 L88 74.3 Z","bounds":[11.45,74.3,93,80.8],"direction":"right","weight":81.59}],[{"outline":"M55.55 71.55 L55 72.65 L52.95 76.4 L50.25 79.8 L47 82.75 L43.15 85.35 L38.75 87.6 L33.8 89.45 L28.3 91 L22.25 92.2 L15.65 93 L8.5 93.45 L8.4 92.55 L15.35 91.15 L21.7 89.6 L27.4 87.85 L32.45 85.9 L36.85 83.75 L40.6 81.45 L43.75 78.9 L46.2 76.25 L48.1 73.45 L48.9 71.55 Z","bounds":[8.4,71.55,55.55,93.45],"direction":"curve","weight":48.752343,"revealPath":"M52.2475 71.59 Q45.2825 89.08 8.467500000000001 93.03999999999999","revealWidth":14}],[{"outline":"M56.85 79.8 L59.25 80.8 L61.7 81.8 L64.4 82.8 L67.35 83.75 L70.55 84.6 L74.05 85.4 L77.85 86.1 L81.9 86.75 L86.25 87.3 L90.95 87.75 L90.15 94.3 L85.35 93.5 L80.85 92.55 L76.65 91.5 L72.75 90.35 L69.15 89.05 L65.85 87.65 L62.9 86.1 L60.3 84.4 L58.05 82.55 L56.3 80.5 Z M90.15 94.3 L90.95 87.75 L96.05 88.4 Z","bounds":[56.3,79.8,96.05,94.3],"direction":"curve","weight":36.114618,"revealPath":"M56.2275 79.84 Q66.1775 88.09 90.555 91.06","revealWidth":14}]]
+freezeReviewedStrokes(REVIEWED_YU_OUTLINES)
+
 export type ReviewedHanjaRevealPolicy = Readonly<{
-  id: 'u68d6-10-2' | 'u5e28-5-2' | 'u5e28-10-1'
-  kind: 'circle-start' | 'global-projection'
+  id: 'u68d6-10-2' | 'u5e28-5-2' | 'u5e28-10-1' | 'u9e8c-9-2' | 'u9e8c-11-1'
+  kind: 'circle-start' | 'global-projection' | 'growing-caps'
   segment: Readonly<HanjaOutlineSegment>
 }>
-export type ReviewedHanjaRevealContext = Readonly<{ id: 'u68d6' | 'u5e28' }>
+export type ReviewedHanjaRevealContext = Readonly<{ id: 'u68d6' | 'u5e28' | 'u9e8c' }>
 const CHENG_CONTEXT: ReviewedHanjaRevealContext = Object.freeze({ id: 'u68d6' })
 const SHUI_CONTEXT: ReviewedHanjaRevealContext = Object.freeze({ id: 'u5e28' })
 const CHENG_POLICY: ReviewedHanjaRevealPolicy = Object.freeze({ id: 'u68d6-10-2', kind: 'circle-start', segment: TARGET })
 const SHUI_Q_POLICY: ReviewedHanjaRevealPolicy = Object.freeze({ id: 'u5e28-5-2', kind: 'circle-start', segment: REVIEWED_SHUI_OUTLINES[4][1] })
 const SHUI_PLANE_POLICY: ReviewedHanjaRevealPolicy = Object.freeze({ id: 'u5e28-10-1', kind: 'global-projection', segment: REVIEWED_SHUI_OUTLINES[9][0] })
-const REVIEWED_POLICIES = [CHENG_POLICY, SHUI_Q_POLICY, SHUI_PLANE_POLICY] as const
+const YU_CONTEXT: ReviewedHanjaRevealContext = Object.freeze({ id: 'u9e8c' })
+const YU_Q_POLICY: ReviewedHanjaRevealPolicy = Object.freeze({ id: 'u9e8c-9-2', kind: 'circle-start', segment: REVIEWED_YU_OUTLINES[8][1] })
+const YU_GROWING_POLICY: ReviewedHanjaRevealPolicy = Object.freeze({ id: 'u9e8c-11-1', kind: 'growing-caps', segment: REVIEWED_YU_OUTLINES[10][0] })
+const REVIEWED_POLICIES = [CHENG_POLICY, SHUI_Q_POLICY, SHUI_PLANE_POLICY, YU_Q_POLICY, YU_GROWING_POLICY] as const
 
 function sameStrokes(strokes: HanjaOutlineStrokes, expected: HanjaOutlineStrokes) {
   return Array.isArray(strokes) && strokes.length === expected.length && strokes.every((masks, pen) =>
@@ -443,7 +450,8 @@ function sameStrokes(strokes: HanjaOutlineStrokes, expected: HanjaOutlineStrokes
 /** Exact whole-geometry context; a glyph label or a matching isolated curve is insufficient. */
 export function reviewedHanjaRevealContext(strokes: HanjaOutlineStrokes): ReviewedHanjaRevealContext | null {
   if (hasReviewedHanjaStartGate(strokes)) return CHENG_CONTEXT
-  return sameStrokes(strokes, REVIEWED_SHUI_OUTLINES) ? SHUI_CONTEXT : null
+  if (sameStrokes(strokes, REVIEWED_SHUI_OUTLINES)) return SHUI_CONTEXT
+  return sameStrokes(strokes, REVIEWED_YU_OUTLINES) ? YU_CONTEXT : null
 }
 
 /** Zero-based pen/mask indices. Only contexts returned by the exact whole matcher are accepted. */
@@ -451,6 +459,8 @@ export function reviewedHanjaRevealPolicy(context: ReviewedHanjaRevealContext | 
   if (context === CHENG_CONTEXT && strokeIndex === 9 && maskIndex === 1) return CHENG_POLICY
   if (context === SHUI_CONTEXT && strokeIndex === 4 && maskIndex === 1) return SHUI_Q_POLICY
   if (context === SHUI_CONTEXT && strokeIndex === 9 && maskIndex === 0) return SHUI_PLANE_POLICY
+  if (context === YU_CONTEXT && strokeIndex === 8 && maskIndex === 1) return YU_Q_POLICY
+  if (context === YU_CONTEXT && strokeIndex === 10 && maskIndex === 0) return YU_GROWING_POLICY
   return null
 }
 
@@ -516,4 +526,62 @@ export function reviewedHanjaRevealClip(policy: ReviewedHanjaRevealPolicy, segme
   const threshold = a + (b - a) * progress
   const points = [corner(a, normalMin), corner(threshold, normalMin), corner(threshold, normalMax), corner(a, normalMax)].map(point => point.join(',')).join(' ')
   return { kind: 'global-projection', center: [x, y], tangent: [vx, vy], normal: [-vy, vx], projectionMin: a, projectionMax: b, normalMin, normalMax, threshold, points }
+}
+
+
+export type ReviewedGrowingGuide = Pick<SVGPathElement, 'isConnected' | 'ownerSVGElement' | 'getAttribute' | 'setAttribute' | 'removeAttribute' | 'getTotalLength' | 'getPointAtLength'>
+type GrowingAttributeNode = Pick<SVGElement, 'isConnected' | 'ownerSVGElement' | 'getAttribute' | 'setAttribute' | 'removeAttribute'>
+export type ReviewedGrowingNodes = { guide: ReviewedGrowingGuide | null; startCap: GrowingAttributeNode | null; endCap: GrowingAttributeNode | null; ink: GrowingAttributeNode | null }
+export type ReviewedGrowingFrame = Readonly<{ policyId: string; guide: string; progress: number; L: number; d: number; rho: number; q0: readonly [number, number]; point: Readonly<{ x: number; y: number }> }>
+
+function growingSource(policy: ReviewedHanjaRevealPolicy, segment: HanjaOutlineSegment) {
+  exactPolicy(policy, segment)
+  if (policy !== YU_GROWING_POLICY) throw new Error('Only exact reviewed 麌11m1 growing caps')
+  const start = reviewedSourceStart(policy, segment), tokens = segment.revealPath!.split(' ')
+  if (tokens.length !== 10 || tokens[0] !== 'M61.5' || tokens[2] !== 'L61.5' || tokens[4] !== 'Q61.5' || tokens[8] !== 'L90') throw new Error('Exact original MLQL required')
+  const q0: [number, number] = [start.x, start.y], a = [Number(tokens[2].slice(1)),Number(tokens[3])], c = [Number(tokens[4].slice(1)),Number(tokens[5])], b = [Number(tokens[6]),Number(tokens[7])], end = [Number(tokens[8].slice(1)),Number(tokens[9])]
+  const v = [a[0]-q0[0],a[1]-q0[1]], u = [c[0]-a[0],c[1]-a[1]], z = [b[0]-c[0],b[1]-c[1]], w = [end[0]-b[0],end[1]-b[1]], firstL = Math.hypot(...v)
+  const aligned = (x: number[], y: number[]) => x[0]*y[1]-x[1]*y[0] === 0 && x[0]*y[0]+x[1]*y[1] > 0
+  if (segment.revealPath !== 'M61.5 30.4 L61.5 42.2 Q61.5 47.2 66.5 47.2 L90 47.2' || firstL < start.radius || !aligned(v,u) || !aligned(z,w) || Math.hypot(...u) === 0 || Math.hypot(...z) === 0 || u[0]*z[0]+u[1]*z[1] < 0) throw new Error('Original regular G1 MLQL/first-L guard')
+  return { q0, r: start.radius, firstL }
+}
+
+/** One exact connected UA path, one length read and one endpoint read for this exact local p. */
+export function measureReviewedGrowingCapsFrame(policy: ReviewedHanjaRevealPolicy, segment: HanjaOutlineSegment, progress: number, guide: ReviewedGrowingGuide | null): ReviewedGrowingFrame {
+  const source = growingSource(policy, segment)
+  if (!Number.isFinite(progress) || progress < 0 || progress > 1) throw new Error('Invalid growing progress')
+  const exact = () => !!guide?.isConnected && guide.getAttribute('d') === segment.revealPath && guide.getAttribute('pathLength') === '1' && guide.getAttribute('stroke-width') === String(segment.revealWidth) && guide.getAttribute('stroke-linecap') === 'butt' && guide.getAttribute('stroke-linejoin') === 'miter'
+  if (!exact()) throw new Error('Exact committed growing guide required')
+  const L = guide!.getTotalLength()
+  if (!Number.isFinite(L) || L < source.r) throw new Error('Growing browser length must reach radius')
+  const d = Math.min(progress * L, L), point = guide!.getPointAtLength(d)
+  if (!Number.isFinite(point.x) || !Number.isFinite(point.y) || !exact()) throw new Error('Invalid or changed UA growing endpoint')
+  if (progress === 0 && Math.hypot(point.x-source.q0[0],point.y-source.q0[1]) >= 1e-4) throw new Error('UA start differs from original M')
+  return Object.freeze({ policyId: policy.id, guide: segment.revealPath!, progress, L, d, rho: Math.min(source.r,d), q0: Object.freeze(source.q0), point: Object.freeze({ x: point.x, y: point.y }) })
+}
+
+/** Synchronous layout commit only. Reset is also the StrictMode/unmount cleanup; no React or extra RAF. */
+export function commitReviewedGrowingCaps(policy: ReviewedHanjaRevealPolicy, segment: HanjaOutlineSegment, progress: number, clipId: string, nodes: ReviewedGrowingNodes) {
+  const { guide, startCap, endCap, ink } = nodes
+  const reset = () => {
+    ink?.setAttribute('visibility','hidden')
+    guide?.setAttribute('stroke-dasharray','0 2')
+    for (const cap of [startCap,endCap]) { cap?.setAttribute('r','0'); cap?.setAttribute('cx','0'); cap?.setAttribute('cy','0') }
+    for (const key of ['data-growing-progress','data-growing-length','data-growing-distance','data-growing-radius','data-growing-end-x','data-growing-end-y']) ink?.removeAttribute(key)
+  }
+  reset()
+  try {
+    growingSource(policy, segment)
+    if (!Number.isFinite(progress) || progress < 0 || progress > 1 || !/^[A-Za-z0-9_:.-]+$/.test(clipId)) throw new Error('Invalid growing frame/id')
+    if (progress === 0 || progress === 1) return { status: progress === 0 ? 'empty' as const : 'complete' as const, frame: null, cleanup: reset }
+    if (!guide || !startCap || !endCap || !ink || !guide.ownerSVGElement || [guide,startCap,endCap,ink].some(node => !node.isConnected || node.ownerSVGElement !== guide.ownerSVGElement || node.getAttribute('data-growing-owner') !== clipId)) throw new Error('Mismatched growing refs/id')
+    if (guide.getAttribute('id') !== clipId+'-growing-guide' || ink.getAttribute('mask') !== 'url(#'+clipId+'-growing)') throw new Error('Mismatched growing SVG binding')
+    const frame = measureReviewedGrowingCapsFrame(policy, segment, progress, guide)
+    guide.setAttribute('stroke-dasharray',String(frame.progress)+' 2')
+    startCap.setAttribute('cx',String(frame.q0[0])); startCap.setAttribute('cy',String(frame.q0[1])); startCap.setAttribute('r',String(frame.rho))
+    endCap.setAttribute('cx',String(frame.point.x)); endCap.setAttribute('cy',String(frame.point.y)); endCap.setAttribute('r',String(frame.rho))
+    for (const [key,value] of Object.entries({ 'data-growing-progress':frame.progress,'data-growing-length':frame.L,'data-growing-distance':frame.d,'data-growing-radius':frame.rho,'data-growing-end-x':frame.point.x,'data-growing-end-y':frame.point.y })) ink.setAttribute(key,String(value))
+    ink.setAttribute('visibility','visible') // last write: dash and both caps already describe the same measured p
+    return { status: 'visible' as const, frame, cleanup: reset }
+  } catch { reset(); return { status: 'hidden' as const, frame: null, cleanup: reset } }
 }

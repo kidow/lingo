@@ -7,7 +7,7 @@ import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import type { HanjaOutlineSegment, HanjaOutlineStrokes } from './hanja-stroke-outline'
 import { outlineSegmentProgress } from './hanja-stroke-outline.ts'
-import { hasReviewedHanjaStartGate, isReviewedHanjaStartGateSegment, measureHanjaStartGateLength, hanjaStartGateClip, reviewedHanjaRevealContext, reviewedHanjaRevealPolicy, reviewedHanjaRevealClip, measureReviewedHanjaRevealLength } from './hanja-stroke-start-gate.ts'
+import { hasReviewedHanjaStartGate, isReviewedHanjaStartGateSegment, measureHanjaStartGateLength, hanjaStartGateClip, reviewedHanjaRevealContext, reviewedHanjaRevealPolicy, reviewedHanjaRevealClip, measureReviewedHanjaRevealLength, measureReviewedGrowingCapsFrame, commitReviewedGrowingCaps, type ReviewedGrowingNodes } from './hanja-stroke-start-gate.ts'
 import { gateState } from '../docs/hanja-renderer-start-gate-u68d6-experiment-2026-10-19/render.mjs'
 
 const fixture = JSON.parse(readFileSync(new URL('../docs/hanja-source-independent-vq-u68d6-source-experiment-2026-10-19/fixtures.json', import.meta.url), 'utf8')).u68d6
@@ -173,4 +173,89 @@ test('immutable reviewed allowlist rejects exposed segment and bounds mutation',
     }
     assert.equal(JSON.stringify(data), before)
   }
+})
+
+
+const yu = JSON.parse(readFileSync(new URL('../docs/hanja-source-independent-vq-up-order-u9e8c-source-experiment-2026-10-20/fixtures.json', import.meta.url), 'utf8')).u9e8c.strokes as HanjaOutlineStrokes
+const yuL = 43.41614532470703
+function yuPolicies() { const context = reviewedHanjaRevealContext(yu)!; return { context, q: reviewedHanjaRevealPolicy(context,8,1)!, growing: reviewedHanjaRevealPolicy(context,10,0)! } }
+function fakeGrowing(id = 'test-yu-11') {
+  const owner = {}, writes: string[] = [], counts = { length:0, endpoint:0 }, body = yu[10][0]
+  const node = (initial: Record<string,string>) => { const attrs = new Map(Object.entries(initial));return { isConnected:true,ownerSVGElement:owner,getAttribute:(key:string)=>attrs.get(key)??null,setAttribute:(key:string,value:string)=>{attrs.set(key,value);writes.push(key+'='+value)},removeAttribute:(key:string)=>{attrs.delete(key)},attrs } }
+  const common = { 'data-growing-owner':id }, guide = Object.assign(node({ ...common,id:id+'-growing-guide',d:body.revealPath!,pathLength:'1','stroke-width':'14','stroke-linecap':'butt','stroke-linejoin':'miter' }), {
+    getTotalLength(){ counts.length++;return yuL },
+    getPointAtLength(d:number){ assert.strictEqual(this,guide);counts.endpoint++;return d <= 11.8 ? {x:61.5,y:30.4+d} : {x:90,y:47.2} },
+  })
+  const startCap = node(common), endCap = node(common), ink = node({ ...common,mask:'url(#'+id+'-growing)' })
+  return { id,guide,startCap,endCap,ink,writes,counts,nodes:{guide,startCap,endCap,ink} as unknown as ReviewedGrowingNodes }
+}
+
+test('麌 exact context, immutable masks and single-path same-frame growing parity', async () => {
+  const before=JSON.stringify(yu),{context,q,growing}=yuPolicies(),body=yu[10][0]
+  assert.equal(createHash('sha256').update(before).digest('hex'),'d697a545504cc475de264b657c28f9b5b857278e4813c4ebf3c96dba2c37464d')
+  assert.equal(context.id,'u9e8c');assert.equal(q.id,'u9e8c-9-2');assert.equal(q.kind,'circle-start');assert.equal(growing.id,'u9e8c-11-1');assert.equal(growing.kind,'growing-caps')
+  assert.equal(hasReviewedHanjaStartGate(yu),false);assert.equal(reviewedHanjaRevealPolicy({...context},10,0),null)
+  for(let p=0;p<yu.length;p++)for(let m=0;m<yu[p].length;m++)if(!(p===8&&m===1)&&!(p===10&&m===0))assert.equal(reviewedHanjaRevealPolicy(context,p,m),null)
+  for(const mutate of [(s:MutableStrokes)=>s[0][0].weight++,(s:MutableStrokes)=>s.reverse(),(s:MutableStrokes)=>s[10].reverse(),(s:MutableStrokes)=>s[10][0].revealWidth++,(s:MutableStrokes)=>s[10][0].revealPath+=' ',(s:MutableStrokes)=>s[8][1].bounds[0]++,(s:MutableStrokes)=>s[10][0].extra=true]){const changed=structuredClone(yu) as MutableStrokes;mutate(changed);assert.equal(reviewedHanjaRevealContext(changed),null)}
+  for(const policy of[q,growing]){assert(Object.isFrozen(policy));assert(Object.isFrozen(policy.segment));assert(Object.isFrozen(policy.segment.bounds));assert.throws(()=>{(policy.segment as HanjaOutlineSegment).weight++},TypeError);assert.throws(()=>{(policy.segment.bounds as number[])[0]++},TypeError)}
+  const isolated=await import(new URL('../docs/hanja-renderer-growing-caps-u9e8c-11-experiment-2026-10-20/render.mjs',import.meta.url).href)
+  for(const p of[0,1e-6,7/yuL,11.8/yuL,.95,.9999,1]){const f=fakeGrowing(),frame=measureReviewedGrowingCapsFrame(growing,body,p,f.nodes.guide),ref=isolated.growingCapsState(body,p,yuL,frame.point);assert.equal(f.counts.length,1);assert.equal(f.counts.endpoint,1);assert.equal(frame.progress,p);assert.equal(frame.d,p*yuL);assert.equal(frame.d,ref.d);assert.equal(frame.rho,ref.rho);assert.deepEqual(frame.q0,ref.q0);assert(Object.isFrozen(frame));assert(Object.isFrozen(frame.q0));assert(Object.isFrozen(frame.point));const circle=reviewedHanjaRevealClip(q,yu[8][1],p,36.421756744384766),old=isolated.gateState(yu[8][1],p,36.421756744384766);assert.equal(circle.threshold,old.h)}
+  assert.throws(()=>measureReviewedGrowingCapsFrame({...growing},body,.1,fakeGrowing().nodes.guide));assert.throws(()=>measureReviewedGrowingCapsFrame(growing,{...body,revealWidth:15},.1,fakeGrowing().nodes.guide));assert.throws(()=>reviewedHanjaRevealClip(growing,body,.1,yuL));assert.equal(JSON.stringify(yu),before)
+})
+
+test('麌 layout commit is atomic, StrictMode-cleanable and no-UA at zero/full', () => {
+  const {growing}=yuPolicies(),body=yu[10][0],f=fakeGrowing(),p=.03026250475088331
+  const committed=commitReviewedGrowingCaps(growing,body,p,f.id,f.nodes);assert.equal(committed.status,'visible');assert.equal(f.ink.getAttribute('visibility'),'visible');assert.equal(f.guide.getAttribute('stroke-dasharray'),String(p)+' 2');assert.equal(f.endCap.getAttribute('r'),String(p*yuL));assert.equal(f.startCap.getAttribute('r'),String(p*yuL));assert.equal(f.endCap.getAttribute('cy'),String(30.4+p*yuL));assert.equal(f.writes.at(-1),'visibility=visible');assert.deepEqual(f.counts,{length:1,endpoint:1})
+  committed.cleanup();committed.cleanup();assert.equal(f.ink.getAttribute('visibility'),'hidden');assert.equal(f.guide.getAttribute('stroke-dasharray'),'0 2');assert.equal(f.startCap.getAttribute('r'),'0');assert.equal(f.endCap.getAttribute('r'),'0');assert.equal(f.ink.getAttribute('data-growing-progress'),null)
+  const repeated=commitReviewedGrowingCaps(growing,body,p,f.id,f.nodes);assert.equal(repeated.status,'visible');assert.deepEqual(f.counts,{length:2,endpoint:2});repeated.cleanup()
+  const noInk={...f.nodes,ink:null};assert.equal(commitReviewedGrowingCaps(growing,body,0,f.id,noInk).status,'empty');assert.equal(commitReviewedGrowingCaps(growing,body,1,f.id,noInk).status,'complete');assert.deepEqual(f.counts,{length:2,endpoint:2})
+  const other=fakeGrowing('second-component');assert.equal(commitReviewedGrowingCaps(growing,body,p,other.id,other.nodes).status,'visible');repeated.cleanup();assert.equal(other.ink.getAttribute('visibility'),'visible');assert.equal(f.ink.getAttribute('visibility'),'hidden')
+})
+
+test('麌 completion transition isolates the full-round path from prior layout cleanup', () => {
+  const {growing}=yuPolicies(),body=yu[10][0],f=fakeGrowing()
+  const mid=commitReviewedGrowingCaps(growing,body,.03,f.id,f.nodes)
+  const fullGuide=fakeGrowing('full-round-mask').guide,fullInk=fakeGrowing('full-round-ink').ink
+  fullGuide.setAttribute('stroke-linecap','round');fullGuide.setAttribute('stroke-dasharray','1 2')
+  fullInk.setAttribute('mask','url(#'+f.id+')');fullInk.setAttribute('visibility','visible')
+  // React commits completion props before running the old intermediate cleanup.
+  mid.cleanup()
+  assert.equal(fullGuide.getAttribute('stroke-linecap'),'round');assert.equal(fullGuide.getAttribute('stroke-dasharray'),'1 2');assert.equal(fullInk.getAttribute('visibility'),'visible');assert.equal(fullInk.getAttribute('mask'),'url(#'+f.id+')')
+  const complete=commitReviewedGrowingCaps(growing,body,1,f.id,{...f.nodes,ink:null});complete.cleanup()
+  assert.equal(complete.status,'complete');assert.equal(fullGuide.getAttribute('stroke-dasharray'),'1 2');assert.equal(fullInk.getAttribute('visibility'),'visible');assert.deepEqual(f.counts,{length:1,endpoint:1})
+  const source=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8')
+  const ast=ts.createSourceFile('stroke-outlines.tsx',source,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX)
+  const keyed=new Map<string,string>();function visit(node:ts.Node){if(ts.isJsxSelfClosingElement(node)&&node.tagName.getText(ast)==='path'){const key=node.attributes.properties.find(p=>ts.isJsxAttribute(p)&&p.name.getText(ast)==='key');if(key&&ts.isJsxAttribute(key)&&key.initializer&&ts.isStringLiteral(key.initializer))keyed.set(key.initializer.text,node.getText(ast))}ts.forEachChild(node,visit)}visit(ast)
+  assert(keyed.get('full-round-ink')?.includes('mask={\'url(#\'+clipId+\')\'}'));assert(!keyed.get('full-round-ink')?.includes('ref={ink}'));assert(keyed.get('growing-ink')?.includes('ref={ink}'));assert(keyed.get('growing-ink')?.includes("clipId+'-growing)'"))
+})
+
+test('麌 invalid source, UA, frame or reused IDs fail closed without stale ink', () => {
+  const {growing,q}=yuPolicies(),body=yu[10][0]
+  const cases:((f:ReturnType<typeof fakeGrowing>)=>{p?:number;id?:string;policy?:typeof growing;segment?:HanjaOutlineSegment}|void)[]=[
+    ()=>({p:NaN}),()=>({p:Infinity}),()=>({p:-.1}),()=>({p:1.1}),()=>({id:'bad id'}),()=>({policy:q}),()=>({segment:{...body,revealWidth:15}}),
+    ...[0,-1,NaN,Infinity,6.9].map(L=>(f:ReturnType<typeof fakeGrowing>)=>{f.guide.getTotalLength=()=>L}),
+    f=>{f.guide.isConnected=false},f=>{f.guide.setAttribute('d','wrong')},f=>{f.guide.setAttribute('pathLength','2')},f=>{f.guide.setAttribute('stroke-width','15')},f=>{f.guide.setAttribute('stroke-linecap','round')},f=>{f.guide.setAttribute('stroke-linejoin','round')},
+    f=>{f.guide.setAttribute('id','foreign-guide')},f=>{f.startCap.setAttribute('data-growing-owner','foreign')},f=>{f.ink.setAttribute('mask','url(#foreign)')},f=>{f.endCap.ownerSVGElement={}},
+    f=>{f.guide.getTotalLength=()=>{throw Error('UA length')}},f=>{f.guide.getPointAtLength=()=>{throw Error('UA point')}},f=>{f.guide.getPointAtLength=()=>({x:NaN,y:1})},f=>{f.guide.getPointAtLength=()=>({x:1,y:Infinity})},f=>{f.guide.getPointAtLength=()=>{f.guide.setAttribute('d','changed during UA');return{x:61.5,y:31}}},
+  ]
+  for(const change of cases){const f=fakeGrowing();assert.equal(commitReviewedGrowingCaps(growing,body,.03,f.id,f.nodes).status,'visible');const overrides=change(f)||{};const result=commitReviewedGrowingCaps(overrides.policy??growing,overrides.segment??body,overrides.p??.04,overrides.id??f.id,f.nodes);assert.equal(result.status,'hidden');assert.equal(f.ink.getAttribute('visibility'),'hidden');assert.equal(f.guide.getAttribute('stroke-dasharray'),'0 2');assert.equal(f.startCap.getAttribute('r'),'0');assert.equal(f.endCap.getAttribute('r'),'0');assert.equal(f.ink.getAttribute('data-growing-progress'),null)}
+})
+
+async function renderYuComponent() {
+  const source=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),timing=readFileSync(new URL('./hanja-strokes.ts',import.meta.url),'utf8')
+  const lines=timing.split('\n'),timingURL='data:text/javascript;base64,'+Buffer.from(['const STROKE_PLAYBACK_SPEED =','export const STROKE_DURATION =','export const STROKE_GAP ='].map(prefix=>lines.find(l=>l.startsWith(prefix))!).join('\n')).toString('base64')
+  let js=ts.transpileModule(source+'\nexport { GrowingCapsOutline }\n',{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText
+  for(const[from,to]of[['@/lib/hanja-strokes',timingURL],['@/lib/hanja-stroke-outline',new URL('./hanja-stroke-outline.ts',import.meta.url).href],['@/lib/hanja-stroke-start-gate',new URL('./hanja-stroke-start-gate.ts',import.meta.url).href],['react/jsx-runtime',import.meta.resolve('react/jsx-runtime')],['react',import.meta.resolve('react')]])js=js.replaceAll('"'+from+'"','"'+to+'"').replaceAll("'"+from+"'","'"+to+"'")
+  return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'))
+}
+
+test('麌 actual SSR has deterministic hidden intermediate ink and original full-round completion; old policies retain their branch', async () => {
+  const {StrokeOutlines,GrowingCapsOutline}=await renderYuComponent(),{growing}=yuPolicies(),body=yu[10][0]
+  const renderChild=(p:number)=>renderToStaticMarkup(createElement('svg',null,createElement(GrowingCapsOutline,{policy:growing,segment:body,progress:p,clipId:'fixed-test'})))
+  const zero=renderChild(0);assert(zero.includes('stroke-linecap="butt"'));assert(zero.includes('stroke-linejoin="miter"'));assert(zero.includes('d="'+body.revealPath+'"'));assert(!zero.includes('d="'+body.outline+'"'))
+  const mid=renderChild(.03);assert.equal(mid,renderChild(.03));assert(mid.includes('visibility="hidden"'));assert(!mid.includes('data-growing-full-round'));assert(!renderChild(NaN).includes('d="'+body.outline+'"'));assert(!renderChild(Infinity).includes('d="'+body.outline+'"'))
+  const full=renderChild(1);assert(full.includes('data-growing-full-round="true"'));assert(full.includes('d="'+body.outline+'" mask="url(#fixed-test)"'));assert(full.includes('stroke-dasharray="1 2"'));assert(!full.includes('visibility="hidden"'))
+  const render=(data:HanjaOutlineStrokes,phase:'idle'|'playing'|'done',manual:boolean|null,count:number)=>renderToStaticMarkup(createElement('svg',null,createElement(StrokeOutlines,{strokes:data,clock:{current:[]},phase,count,manual})))
+  const whole=render(yu,'done',null,18);assert(whole.includes('data-stroke-start-gate="u9e8c-9-2"'));assert(whole.includes('data-stroke-start-gate="u9e8c-11-1"'));assert(whole.includes('data-stroke-reveal-policy="growing-caps"'));assert(whole.includes('d="'+body.outline+'" mask="url(#'));assert(!render(yu,'playing',true,10).includes('d="'+body.outline+'"'));assert(render(yu,'playing',true,11).includes('data-growing-full-round="true"'))
+  for(const[data,ids]of[[strokes,['u68d6-10-2']],[shui,['u5e28-5-2','u5e28-10-1']]] as const){const html=render(data,'idle',null,data.length);for(const id of ids)assert(html.includes('data-stroke-start-gate="'+id+'"'));assert(!html.includes('data-stroke-reveal-policy="growing-caps"'));const context=reviewedHanjaRevealContext(data)!;assert.notEqual(context.id,'u9e8c')}
 })
