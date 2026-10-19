@@ -5,9 +5,9 @@
   "newFilesSHA256": {
     "config.json": "fb3c223624bc1a1704d131eea152f024b2a3949d37959dc8daf104cd247b3fca",
     "render.mjs": "22803169636bab52aa00a40eb22ac9768471a9d23a64b7fdb1b60c06df3cbba9",
-    "check.mjs": "cceb661243242c06cd175e8230727cc2029c84d220fccf40227404d63499cffb",
+    "check.mjs": "7a7f703dfbd5268431936bc60e6fa17a984436624de7d78fe136ff736f79b448",
     "serve.py": "c3a7fcccea1c7b10157b86316aa78a818e65e9d86d33938e3d1a117c0ff6e73f",
-    "README.md": "df545f34c918eee65144b1d2cb714ed5d6dc5e46bc744d42ba3640cd66a0caa6"
+    "README.md": "5dc70bfcd3cf3c6f59af6acc13f677a354db25e28f502cdd9571afe1add9ad5c"
   },
   "inputSHA256": {
     "../hanja-goal-glyphwiki-batch656-2026-10-11/README.md": "37947181c0a418679ccbb6db857023698e7636a2d963380d58c9a6d8014f0c65",
@@ -152,11 +152,12 @@
     "repeatedPassedChecks": 0
   },
   "syntax": {
-    "nodeExecutions": 2,
+    "nodeExecutions": 3,
     "pythonAST": 1,
     "helperGuard": 1,
     "passed": true,
-    "allFirstSyntaxPass": true
+    "allFirstSyntaxPass": true,
+    "additionalNodeScope": "corrected check.mjs only"
   },
   "previousNativeHold": {
     "glyph": "帨",
@@ -355,7 +356,16 @@
       "engine": 0,
       "sourceFieldsChanged": false
     },
-    "successfulMathExecutions": 1
+    "successfulMathExecutions": 1,
+    "vacuousVertexCheckDiscovered": {
+      "previousParsedVertices": 0,
+      "previousForLoopWasVacuous": true,
+      "previousVertexClaimWasNotCoverageEvidence": true,
+      "sourceRendererParserUnaffected": true,
+      "sourceGeometryChanged": false,
+      "fullSourceFieldsChanged": false
+    },
+    "vertexCorrectionExecutions": 1
   },
   "pinCounts": {
     "input": 48,
@@ -367,5 +377,33 @@
     "ownPins": 5,
     "mismatch": 0,
     "passed": true
+  },
+  "vertexCorrection": {
+    "status": "PASS",
+    "passed": true,
+    "scope": "new corrected nonempty original-vertex assertion only",
+    "executions": 1,
+    "vertices": 45,
+    "contours": 6,
+    "perContour": [
+      4,
+      5,
+      22,
+      5,
+      4,
+      5
+    ],
+    "canonicalOutlineExact": true,
+    "allVerticesInsideFinalPlane": true,
+    "previousMathChecksRepeated": false,
+    "sourceGeometryExecutions": 0,
+    "sourceCompilerCalls": 0,
+    "engineRuns": 0,
+    "changedCheckSyntax": {
+      "executions": 1,
+      "exitCode": 0
+    },
+    "geometryRendererServeConfigChanges": 0,
+    "failedVacuousOriginalHistoryPreserved": true
   }
 }

@@ -13,3 +13,5 @@ p=0은지지선만남아면적0이고, R면적은 원투영직사각형의888p �
 이정책의초기연결성은帨의직선/convex몸통구간에한정됩니다. 길거나되돌아오는곡선에서는첫접선전역투영과길이진행이다르며지연/분리fragment가가능합니다. 일반곡선연결성보장이아니며다른글자나mask로자동확장하지않습니다. 원본P자체가분리되어있다면연결성과전체coverage를동시에자동보장할수없습니다.
 
 helper는국내→같은기하의shared43→새renderer 세SVG520, coarse9개220, 0/epsilon.0001%/2.68%/95/99.99/100, 모든multi경계직전/경계/직후, 8초재생, 5m2와10m1 P-minus-fullsweep를제공합니다. startup/매GET핀가드·cachedfixture/geometrycompile0이며root가서버를시작할때만국내자료를RAM에불러옵니다. 저자는UI/server/HTTP/Git/build를실행하지않습니다.
+
+검사정정이력: 최초 checker의정점정규식에서 역슬래시가누락되어 vertices=[]였고 p1정점포함반복문은빈배열로통과했습니다. 이부분은coverage증거가아니며원수식/단조성검사통과와구분합니다. 정규식·nonempty·정확45정점/6폐합polygon [4,5,22,5,4,5]·전체M/L/Z canonical재구성가드를추가했습니다. `node check.mjs --vertices-only` 새정점검사1회와변경check문법1회만실행하며기존수학성공검사는반복하지않습니다. 실제root freshnative검토결과는독립native-review에기록하며이정점검사로대체하지않습니다.
