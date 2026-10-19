@@ -1,0 +1,155 @@
+{
+  "schema": "hanja-cached-whole-pen-order-preparation-v1",
+  "date": "2026-10-20",
+  "glyph": "懰",
+  "root": "u61f0",
+  "sourceCapsule": "docs/hanja-source-independent-qq-two-left-u61f0-source-experiment-2026-10-19/",
+  "sourcePreparationSHA256": "c24b08e5e22bdfc8778cfa78a47007644433ca25c90d5c0ba59b944387c06e17",
+  "geometrySHA256": "53b43d75907e625b4645860ca93491fb1d6400c009e2d0cb41b334cb0211f015",
+  "originalGeometrySHA256": "cd7c1bc0d5134f19de881ba9145754d2f4d695ced74171f83fe91caabb6c787a",
+  "counts": {
+    "pens": 18,
+    "masks": 21,
+    "polygons": 46
+  },
+  "configSHA256": "7cafb865239eed21ce2f96a69ea86b33d12117e3cdf1a927cee9aa2187f4988d",
+  "newFilesSHA256": {
+    "config.json": "7cafb865239eed21ce2f96a69ea86b33d12117e3cdf1a927cee9aa2187f4988d",
+    "fixtures.json": "7062861f079b180285526189f8f4114d6d9e83a8ae460540a2fadd6eff982e9a",
+    "candidate.mjs": "cea2d5addfd02536af98e70055b36d7346da612cff8a5de7951044748ec24b11",
+    "candidate.d.mts": "8b3d5c7f4c18bbe62e9a8763eb057baa6dbfbdb3278f0478474866f683971309",
+    "serve.py": "e79a7250eacc9b277b7307a42910d1f0fcd580e01a32adc3e96c18e1a4c73d02",
+    "source-check.mjs": "f0dc64ce250064e3f6f921b1d84b618591802481530e8786a14deec78df27d1b",
+    "README.md": "55f4edb84180cacc7caa391e52299a0c6dedbd4296e4867c04f111478d52f1d8"
+  },
+  "priorNativeObservation": {
+    "observer": "root",
+    "whole": {
+      "compatible": 1,
+      "pixels": 520
+    },
+    "directionBatch": {
+      "capturedPens": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "progress": 0.75,
+      "pixels": 520,
+      "firstConfirmedFailure": 1,
+      "firstPenFreshReconfirmed": true,
+      "pen1": {
+        "domestic": "left downward dot",
+        "candidate": "central long downward vertical",
+        "result": "FAIL"
+      },
+      "diagnosticOnly": [
+        {
+          "pen": 2,
+          "domestic": "right downward-right dot",
+          "candidate": "left downward dot",
+          "result": "mismatch in initial batch; no separate fresh reconfirmation"
+        },
+        {
+          "pen": 3,
+          "domestic": "central downward vertical",
+          "candidate": "right downward-right dot",
+          "result": "mismatch in initial batch; no separate fresh reconfirmation"
+        }
+      ],
+      "pens4And5CapturedButNoOverallOrderPass": true,
+      "unobservedPens": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "stoppedAfterFirstConfirmedFailure": true,
+    "fine": 0,
+    "coarse": 0,
+    "rho": 0,
+    "multi": 0,
+    "coverage": 0,
+    "natural": 0,
+    "server": {
+      "pid": 555,
+      "port": 63902,
+      "sessionId": 92132,
+      "stopped": true,
+      "exitCode": 143
+    },
+    "approvalInherited": false
+  },
+  "originalHeader4TraceIdentity7Preserved": true,
+  "archiveActualWholeFull5Claim": false,
+  "author": {
+    "sourceGeometryGenerations": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "cachedWholePenReorders": 1,
+    "fixtureSavedBeforeChecks": true
+  },
+  "checks": {
+    "status": "passed-after-own-pin-correction",
+    "focusedExecutions": 2,
+    "initialFailure": {
+      "exitCode": 1,
+      "kind": "RAM own-file pins differed from stored files by one final LF introduced in Add File patch",
+      "phase": "newFilesSHA256 config self-pin; before positive/negative or HOLD checksum",
+      "sourceGeometryGenerations": 0,
+      "sourceCompilerCalls": 0,
+      "cachedPositive": 0
+    },
+    "recovery": {
+      "exitCode": 0,
+      "executions": 1,
+      "cachedPositive": 1,
+      "negative": 32,
+      "previouslyPassedGeometryOrPositiveTestsRepeated": 0,
+      "originalPinPrefixReadAgain": true
+    },
+    "sourceGeometryGenerations": 0,
+    "sourceCompilerCalls": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "holdJSONAndInputChecksumExecutions": 1,
+    "syntax": {
+      "node": 2,
+      "declarationAST": 1,
+      "pythonAST": 1,
+      "helperGuard": 1,
+      "diagnostics": 0,
+      "allFirstPass": true
+    },
+    "HTTP": 0,
+    "server": 0,
+    "UI": 0,
+    "build": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "serverStarted": false,
+  "gitExecuted": false,
+  "buildExecuted": false,
+  "sourcePinCheck": {
+    "inputPins": 48,
+    "newSelfPins": 7,
+    "mismatches": 0,
+    "passed": true,
+    "verifiedInFocusedRecovery": true
+  },
+  "finalPinPolicy": "Self hashes were refreshed from actual saved bytes before recovery; preparation itself is not recursively self-pinned. No passed source geometry, cached positive, negatives or syntax were repeated."
+}
