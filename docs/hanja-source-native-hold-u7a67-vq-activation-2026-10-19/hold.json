@@ -1,0 +1,113 @@
+{
+  "schema": "hanja-independent-native-hold-v1",
+  "date": "2026-10-19",
+  "glyph": "穧",
+  "root": "u7a67",
+  "status": "HOLD-VQ-second-mask-positive-area-activation",
+  "sourceCommit": "e3cd9ad047dfee5e4056b54772c8138afea4c6b4",
+  "sourceFolder": "docs/hanja-source-independent-qv-vq-order-u7a67-source-experiment-2026-10-19/",
+  "preparationSHA256": "ab4cd61afded8c0d7c5e669933b24e1cb160916a417b1ab7c2087e0da2a1ed20",
+  "compiledSHA256": "cfef22e97d45a5a641b1a39ddb05e4d494a6d4178bef11be23da4ef7c0770abb",
+  "immutableFilesSHA256": {
+    "docs/hanja-source-independent-qv-vq-order-u7a67-source-experiment-2026-10-19/config.json": "6b9392a377fe779d15c343acfbfd7635ce64daf2882c64964755983061102aed",
+    "docs/hanja-source-independent-qv-vq-order-u7a67-source-experiment-2026-10-19/preparation.json": "ab4cd61afded8c0d7c5e669933b24e1cb160916a417b1ab7c2087e0da2a1ed20",
+    "docs/hanja-source-independent-qv-vq-order-u7a67-source-experiment-2026-10-19/fixtures.json": "93e640469941e9beb8e8940786cb5f042721cd593f122c681a37427b5fb198a0",
+    "docs/hanja-source-independent-qv-vq-order-u7a67-source-experiment-2026-10-19/candidate.mjs": "84063bc05bb84f0b055954c2e8362e11afc16b270aa7385d0b68e29bc3d63f36",
+    "docs/hanja-goal-glyphwiki-batch859-2026-10-13/native-boundary-source-analysis.json": "7bf6376a199d74f339ee58fc472e88b10d96d7a1c2ad78b3694adcc62b8f51af",
+    "docs/hanja-goal-glyphwiki-batch859-2026-10-13/native-preflight-source-analysis.json": "7d82968dc20f9e160ecc13f899d41361ecbbc49df5f091cb0fa715943787c0aa",
+    "docs/hanja-goal-glyphwiki-batch1115-2026-10-13/progressive.mjs": "fc135d7f1851c6a680436985181aba5c4225639803aa4c2c4a204cf5e7bdba41",
+    "docs/hanja-goal-glyphwiki-batch1061-2026-10-13/progressive.mjs": "494bc8366ecc8194be4eaa44cf4b956d02dae5564d9074d6697ed7e91e4fc049",
+    "docs/hanja-goal-glyphwiki-batch831-2026-10-13/progressive.mjs": "356693ce1e0a650edfc2300076156e12bbc54a5339071c4c3d0e995a1ed77e01"
+  },
+  "rootNativeObservation": {
+    "wholeCompatible": 1,
+    "fineCompletionPassed": [
+      11,
+      14
+    ],
+    "fineCompletionFrom": 99.99,
+    "fineCompletionTo": 100,
+    "svgSize": 520,
+    "failedBoundary": {
+      "pen": 14,
+      "at": 0.476925321744134,
+      "sourceRawIndices": [
+        14,
+        15
+      ],
+      "firstMask": {
+        "kind": "cdDrawLine",
+        "flags": [
+          1012,
+          32
+        ]
+      },
+      "secondMask": {
+        "kind": "cdDrawCurve",
+        "flags": [
+          0,
+          7
+        ]
+      },
+      "positionsCaptured": 6,
+      "observations": {
+        "before": "captured",
+        "at": "captured",
+        "after": "foot nib positive area appears abruptly, more than about10px",
+        "zero": "empty",
+        "epsilon": "empty",
+        "ninetyFive": "complete"
+      },
+      "passed": false
+    },
+    "directions": 0,
+    "coarse": 0,
+    "naturalReplay": 0,
+    "appUI": false,
+    "server": {
+      "pid": 89077,
+      "port": 56934,
+      "sessionId": 33731,
+      "stopped": true,
+      "exitCode": 143
+    }
+  },
+  "readOnlyResearch": {
+    "sourceIndependentMetadataFilesMatched": 15,
+    "progressiveOrCandidateMatchedLines": 290,
+    "distinctNibCodeLines": 6,
+    "matchingExactStartShapeGuardFound": false,
+    "terminalFifteenNibGuard": {
+      "files": [
+        "batch1115",
+        "batch1061"
+      ],
+      "scope": "Bezier terminal15 end nib/up tail only; not Q-start Curve[0,7]"
+    },
+    "batch831FootAndNibGuard": {
+      "scope": "literal raw10 vertical[0,13] plus raw11 horizontal[2,2], preserving both original polygons together in full-bounds down mask",
+      "applicableToThisVQ": false
+    },
+    "positiveFilledOverlapIsNotSmoothRevealApproval": true,
+    "noBroadNonexistenceClaim": true
+  },
+  "unapprovedActionsNotTaken": {
+    "newCoordinates": 0,
+    "newPaths": 0,
+    "newWidths": 0,
+    "newConnectors": 0,
+    "arbitraryInitialClip": 0,
+    "geometryGenerations": 0,
+    "compilerCalls": 0,
+    "sourceEdits": 0,
+    "runtimeRegistryEdits": 0
+  },
+  "releaseCondition": "Find a pre-existing exact formula and strict identity guard for this original Q-start shape, then independently inspect all required gates; otherwise remain HOLD. Do not erase official start decorations or infer approval from filled overlap.",
+  "sourceNativeApproval": false,
+  "runtimeApplied": false,
+  "originalSourceChanged": false,
+  "originalNOTICEChanged": false,
+  "originalHistoryPreserved": true,
+  "newCanonicalHoldsRegistered": 0,
+  "buildExecuted": false
+}
