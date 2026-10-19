@@ -1,0 +1,11 @@
+# 魗 cached QQ + exact UP6/5 source 실험
+
+魗667 plain QQ source의 root whole1호환·전체24방향과 fine23 및 batched13 PASS, fine22(99.99→100 원UP약65px추가)FAIL을 보존합니다. 다른fine4/10/17과 전체coarse/모든경계/자연재생은 그검토에서 미실행입니다. 기존QQ23 raw25/26 gap4.747883739098931 독립2mask와 exact3/4·10/11·18/19 접합 및 원dom18H→19V(raw21→20) 순서는 불변입니다. 새후보는 pen22raw24 마지막quad만 기존997 UP6/5 width6/jump25/tailweight12.5 공식과 exact일치하여 분리합니다. bodyweight49.511068/bounds[71.2,53.5,95.1,91.5]/guide·폭·원좌표·모든59polygon/나머지23획은 불변입니다. 24p26m59·기하factory/원compiler/engine0·캐시tail분리1이며 새native/runtime미승인/전gatefresh필수입니다.
+
+원source8 commit147fe2996929d0522eea9578d7358c1eac548b05/prep9ff4923a3229cb779931399555448f9192347cfad925aa17df6fdbb9b53fc88a/compiledf7cfce70346867be85dffb100d369acaa98179aa16abebd9268a1893d9a8d27c 및 원667 HOLD/source/NOTICE상태를 변경하지 않습니다. 원NOTICE 경로는 attribution에 있으나 실제 파일은 없으므로 새로 존재한다고 주장하거나 내용을 생성하지 않습니다. 실패서버 PID52902/port61513/session56219 STOP143은 root 확인값입니다. 원whole2 및 정적방향24 관찰은 progressive승인0으로 보존하고 최근원후보 전체방향PASS도 새tail후보의 승인으로 승계하지 않습니다. 원 review의 literal sourceGroups와 raw21→20 순서를 그대로사용합니다. 다른미교정 V113/HV123/Q14/V13/V323 위험은 config에 남겼으며 이 branch에서 수정하지 않습니다.
+
+이전source8에서 명시한 header4(engineRevision/engineHashes/groups/defaults)+trace full5/id7을 그대로사용합니다. archive full5원동일성 주장이 아니며 새header결합0입니다. 원cachedstrict3/4 위임·필수derive4·identity/원proof/rawargs/quad/baseline SHA를 고정합니다. 원667 progressive가 존재하지만 호출하지 않습니다. captureGeometry API가 없고 누락/추가args/wrongroot/변경proof·identity를 거부합니다. 원18+이전source8의8+墍UP예시module1+원997module1=28입력핀/자체7/향후새8포함runtime36핀입니다.
+
+기존997 kernel1691byte SHA7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08와 partition1302byte SHA2802b789ebee4fe2f9af3903f71f26f2a9609dced9171e87ecf63aba342a8657을 byteexact재사용합니다. quadSHA b0e562e16753c0e25500adbdcb06390e232d9dfbc13a256eb9e8826b18ade6cd를 고정합니다. 원outline 마지막chunk를 같은원quad 별mask로 옮길뿐 새좌표/path/connector/폭/flags가 없습니다. bodyguide폭weight/bounds는 그대로이고 tailweight12.5만 기존공식으로 분리합니다. baseline은 원source 캐시의 동일logical순서25mask이며 독립native증거가 아닙니다. 캐시분리1→공개fixture선저장→cached검사/sourcegeometry0·engine0입니다.
+
+helper는3SVG520/coarse9각220/실제weight의 모든multi22·23 before/at/after·0/epsilon(.0001%)/50/95/99.99/100·8초재생을 제공합니다. 국내SVG는RAM전용, startup/매GET compilerengine0·원입력/자체/config/prep guard입니다. 작성자UI/server/runtime/registry/catalog/Git/build0/native/runtimefalse로 fresh whole·전방향·모든fine/경계/coarse/replay필수입니다.
