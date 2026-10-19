@@ -1,0 +1,503 @@
+{
+  "schema": "hanja-isolated-fixed-multitarget-start-renderer-validation-v1",
+  "date": "2026-10-20",
+  "configSHA256": "1881645269646db41e337744d1b4eedd81a6dad279c6118fb48e49641b95e574",
+  "newFilesSHA256": {
+    "config.json": "1881645269646db41e337744d1b4eedd81a6dad279c6118fb48e49641b95e574",
+    "render.mjs": "bc1442bd7cf637f2a0fde3cdc5dc73ce72bd66ad4a4e2f10670ff0481e172fd8",
+    "serve.py": "5e8b5889a8f2b99fa320bb33a39e8fa6652ff846cdb24fd61a67ee6487826619",
+    "README.md": "b39ae4ccc7fea841cf027baed7de4b65d4efce0038fd4e470382b55aa1c2680c",
+    "check.mjs": "943ba63ed4e6a6061de1e8fcb6a5086fc1aebfc6a1224a72e93f5614b27beaef"
+  },
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/NOTICE.md": "58f708ebd3dd0f44e61c426837c0e5462db7a03a223a6a739b148972512a4dcf",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/README.md": "1b98a0ac6aaf32ea8d351165a0deba293645a68c47f8b3141446ef8faa4c1a3f",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/draw-trace.json": "4bd875bac2a6caff486cd578f44035ecf458215a1b7621b792cc746f1cbc2034",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/engine-proof.json": "37a779ba90999f724259fd7ae924a06d14694912dca28e4d64add9f86203ede5",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/engine-whole-u7de6-ue0100.json": "f9616484968add98b8d712f0018228f0a353364417962dc23a68668e8f52c1f5",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/engine-whole-u7de6.json": "f9616484968add98b8d712f0018228f0a353364417962dc23a68668e8f52c1f5",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/metadata.json": "810aee195d9e45d1542cf19ba2ec783adf3ec8896730c3d4645e1209bd4362c4",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/progressive-review.json": "0b54332e7cef2bed0b97c9232fc8a8233b2b7bbd6049cf7662f0b976088d865d",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/resume.json": "3476d6f7df318a5cc23102ea6d08f06173f7e555ccda08bafbf2a5541470ad22",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/serve-variants.py": "2024801b1728ba5bdd1fd07e7fff543e1efb1991c8a5b3318c5e85d03097cc06",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/sources.json": "9683a5ff20f3d840ec3cc96b6b59a5bd259f3b3db7a1551addaa8b3176dbab02",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/validation.json": "97564df01f8b76c5375260f2377d4b6aa8c99fd31029fd658ab499bb5272f43c",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/verify-source.mjs": "e18fe168c5d0c9298f470afabc6993811fd582c8e5b4a4bb34b7a1117fac33ba",
+    "../hanja-goal-glyphwiki-batch686-2026-10-11/whole-variant-inventory.json": "8c3a46eca4b34fb8429a01b6783e3db97d47ac28f8b2b0f80e3f2251157f6b94",
+    "../hanja-current-source-u4f8a-2026-10-18/progressive.mjs": "cc77d4853fc1e7f72e6931e14e441bee323886a0cc7f998986b6e1b1f35aec8f",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-special2-direction-review-2026-09-21/serve.py": "3370373c8bebfebadc6cf789b144e852407787357c42b424dde33ecff169976c",
+    "../hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "../hanja-source-independent-qq-two-u7de6-source-experiment-2026-10-19/README.md": "22f297e9695b0b1f83e9dd0ecdef88e7eb260dde5cf64e8e97087e2af5b1865b",
+    "../hanja-source-independent-qq-two-u7de6-source-experiment-2026-10-19/candidate.d.mts": "7461b4a9cce67f0a6aee4908569151f3a5480430fc8bcaa6afff3fbb143ea71c",
+    "../hanja-source-independent-qq-two-u7de6-source-experiment-2026-10-19/candidate.mjs": "aed6ac0a8ead7b414843a5b7a0157dfc077b83ba8ee0945945c9b1cb5b627166",
+    "../hanja-source-independent-qq-two-u7de6-source-experiment-2026-10-19/config.json": "b0c0348a6145943d97f5f2b54da9162ef62484cb701fa5228f12c10475a91b0b",
+    "../hanja-source-independent-qq-two-u7de6-source-experiment-2026-10-19/fixtures.json": "7cdfe1d5e92c10ec8800ea1d0ffc7049e3a1f42767e4ef3f9a86b07d39539f1c",
+    "../hanja-source-independent-qq-two-u7de6-source-experiment-2026-10-19/preparation.json": "46ea64d2f7b8928a505bc659e80452065a4e579793d6b35abe529813151a4c9f",
+    "../hanja-source-independent-qq-two-u7de6-source-experiment-2026-10-19/serve.py": "fe78d62158d8ba2e2c6c2c2ed9889a8ac24b6e369601a39917e10d8f958db1de",
+    "../hanja-source-independent-qq-two-u7de6-source-experiment-2026-10-19/source-check.mjs": "c14d24aa433481c880db7521a5d13be6eb6559fe4831551cd90811a00d097edb",
+    "../hanja-source-independent-qq-up-u6efa-source-experiment-2026-10-19/candidate.mjs": "62b7c91d1ec8efe52944793cfec89664ad25886bf9a97bf1518cb7beb323a9c5",
+    "../hanja-goal-glyphwiki-batch997-2026-10-13/progressive.mjs": "25b9a23cdf644798a7336df3f78b72ecc3c4ad10d0fbe860b403a38911e514f6",
+    "../hanja-source-independent-qq-two-up-u7de6-source-experiment-2026-10-19/config.json": "44480e425cb0bc808cb815acef7d8e6ccafe2a76c4a6e03c4e287113f45568c8",
+    "../hanja-source-independent-qq-two-up-u7de6-source-experiment-2026-10-19/fixtures.json": "cc0be82b124a36e40b9d67e3d739aa368f559009e8d051ff5819b03efaf339c2",
+    "../hanja-source-independent-qq-two-up-u7de6-source-experiment-2026-10-19/preparation.json": "aa5f742264b39b151f7f83d5601152429203c415407a503495591c4374726bf7",
+    "../hanja-source-independent-qq-two-up-u7de6-source-experiment-2026-10-19/README.md": "f9d68dc50b5884f0bebed1e5dc8c2e3c681eefaf38a69e7c5dd93d05c3fa12bd",
+    "../hanja-source-independent-qq-two-up-u7de6-source-experiment-2026-10-19/candidate.mjs": "53d8891e9e4da99a553b2d14a33a7f2ab0e7cc1f794ad02c1f291eaf64da592e",
+    "../hanja-source-independent-qq-two-up-u7de6-source-experiment-2026-10-19/candidate.d.mts": "b6754bb47a1be9bad9264e7ccb195ed1f56a1889ec2b06d89ac4abd3beba29e6",
+    "../hanja-source-independent-qq-two-up-u7de6-source-experiment-2026-10-19/serve.py": "561da4b6935760e691ad61c99419dc0137054281b9eaf32204c018ed84967397",
+    "../hanja-source-independent-qq-two-up-u7de6-source-experiment-2026-10-19/source-check.mjs": "fa42353ba4192c23d743f8b262ee240ea08d58244e02ab05dae698347f4f1b87",
+    "../hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/render.mjs": "4048bd721a545ef5abaf141097afdabd4a4c32dc0cc4b8cbb05f673e8599f9a0",
+    "../hanja-renderer-start-gate-order-u9e8c-experiment-2026-10-20/serve.py": "ebda5a3c47a3c0b35c8c4b4b01f52020e66c34315d896a35b9d2b3402b4d6b17",
+    "../hanja-curve-start-rendering-policy-2026-10-19.md": "4e0e68ae63fedca791d0ff712c0111208f342a9f1f5dd5f97bbd5f5bd83d6ca4"
+  },
+  "geometrySHA256": "98ca27e96df5c2e6c75196ae3b7daa7e6a6e7e061bc0a610c213f9decdbd17d0",
+  "counts": {
+    "pens": 15,
+    "masks": 18,
+    "polygons": 40
+  },
+  "allowedTargets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 1,
+      "mask": 2,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 2,
+      "mask": 2,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "syntax": "M L L"
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 13,
+      "mask": 1,
+      "syntax": "M L Q L"
+    },
+    {
+      "pen": 14,
+      "mask": 1,
+      "syntax": "M Q"
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "syntax": "M Q"
+    }
+  ],
+  "sourceGeometryExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "engineRuns": 0,
+  "tailDerivations": 0,
+  "fixtureCopied": false,
+  "fixtureReuse": true,
+  "oldRendererChanged": false,
+  "appChanged": false,
+  "checks": {
+    "status": "passed",
+    "focusedAttempts": 3,
+    "focusedParseFailures": 2,
+    "focusedSuccessfulBodies": 1,
+    "focusedResult": {
+      "passed": true,
+      "focusedExecutions": 1,
+      "negative": 192,
+      "monotonePoints": 5292,
+      "references": [
+        {
+          "pen": 1,
+          "syntax": "M Q",
+          "start": [
+            26.245,
+            8
+          ],
+          "firstTangentDelta": [
+            -5.355,
+            10.5
+          ],
+          "normalizedTangent": [
+            -0.45432608279601244,
+            0.8908354564627694
+          ],
+          "nodeLengthReference": 23.266869362929413,
+          "tauReference": 0.6017139556517169,
+          "fullAreaUpperBounds": [
+            0.0013490682338469985,
+            0.00001349066549564649,
+            1.3490665824657855e-7,
+            1.3490644684327779e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 1,
+          "syntax": "M Q",
+          "start": [
+            6.355,
+            22.5
+          ],
+          "firstTangentDelta": [
+            9.18,
+            5.5
+          ],
+          "normalizedTangent": [
+            0.8578225544383963,
+            0.5139459748813922
+          ],
+          "nodeLengthReference": 20.629227120467867,
+          "tauReference": 0.6786487888394765,
+          "fullAreaUpperBounds": [
+            0.0011961313138289093,
+            0.00001196129990333556,
+            1.1961299161686926e-7,
+            1.1961244448572688e-9
+          ],
+          "mask": 2
+        },
+        {
+          "pen": 2,
+          "syntax": "M Q",
+          "start": [
+            37.3375,
+            19.5
+          ],
+          "firstTangentDelta": [
+            -10.709999999999997,
+            18.5
+          ],
+          "normalizedTangent": [
+            -0.5010178300306715,
+            0.865436961304148
+          ],
+          "nodeLengthReference": 42.50424252895906,
+          "tauReference": 0.32937888471866067,
+          "fullAreaUpperBounds": [
+            0.0024644992960982355,
+            0.000024644936771701524,
+            2.4644935874082247e-7,
+            2.4644995554053174e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 2,
+          "syntax": "M Q",
+          "start": [
+            7.12,
+            56.5
+          ],
+          "firstTangentDelta": [
+            16.064999999999998,
+            -2
+          ],
+          "normalizedTangent": [
+            0.9923395239438019,
+            -0.12354055698024302
+          ],
+          "nodeLengthReference": 30.836914064281647,
+          "tauReference": 0.45400133005579113,
+          "fullAreaUpperBounds": [
+            0.0017879981018569544,
+            0.000017879951446905812,
+            1.7879951312802828e-7,
+            1.7879916493251261e-9
+          ],
+          "mask": 2
+        },
+        {
+          "pen": 3,
+          "syntax": "M Q",
+          "start": [
+            29.305,
+            39
+          ],
+          "firstTangentDelta": [
+            7.267499999999998,
+            6.5
+          ],
+          "normalizedTangent": [
+            0.7453687133749233,
+            0.6666524440229793
+          ],
+          "nodeLengthReference": 21.05293738299469,
+          "tauReference": 0.6649903405549654,
+          "fullAreaUpperBounds": [
+            0.0012206990636591932,
+            0.000012206976846749558,
+            1.220697668402939e-7,
+            1.2207038855140255e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 5,
+          "syntax": "M Q",
+          "start": [
+            15.535,
+            63.5
+          ],
+          "firstTangentDelta": [
+            -1.5299999999999994,
+            14
+          ],
+          "normalizedTangent": [
+            -0.10863888284660425,
+            0.9940812809493205
+          ],
+          "nodeLengthReference": 28.277255921221137,
+          "tauReference": 0.4950975454974564,
+          "fullAreaUpperBounds": [
+            0.0016395827674398394,
+            0.00001639580280445527,
+            1.6395802580633537e-7,
+            1.6395757813954275e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 6,
+          "syntax": "M Q",
+          "start": [
+            29.6875,
+            61
+          ],
+          "firstTangentDelta": [
+            6.884999999999998,
+            7
+          ],
+          "normalizedTangent": [
+            0.701226246693856,
+            0.7129388129058815
+          ],
+          "nodeLengthReference": 22.013202638333485,
+          "tauReference": 0.635981970911429,
+          "fullAreaUpperBounds": [
+            0.0012763775789634635,
+            0.000012763760718306337,
+            1.2763760219427114e-7,
+            1.2763802495212758e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 8,
+          "syntax": "M L L",
+          "start": [
+            49.625,
+            15
+          ],
+          "firstTangentDelta": [
+            36.5625,
+            0
+          ],
+          "normalizedTangent": [
+            1,
+            0
+          ],
+          "nodeLengthReference": 70.5625,
+          "tauReference": 0.19840566873339238,
+          "fullAreaUpperBounds": [
+            0.00409139148486865,
+            0.00004091375999378184,
+            4.091375817164525e-7,
+            4.091371960921605e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 12,
+          "syntax": "M Q",
+          "start": [
+            47.9375,
+            64.5
+          ],
+          "firstTangentDelta": [
+            1.6875,
+            16
+          ],
+          "normalizedTangent": [
+            0.10488699980664355,
+            0.9944841463148426
+          ],
+          "nodeLengthReference": 24.747594537606997,
+          "tauReference": 0.565711547387981,
+          "fullAreaUpperBounds": [
+            0.0014349243042755524,
+            0.000014349223996671847,
+            1.434922325907321e-7,
+            1.4349184710224987e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 13,
+          "syntax": "M L Q L",
+          "start": [
+            58.625,
+            62.5
+          ],
+          "firstTangentDelta": [
+            0,
+            23
+          ],
+          "normalizedTangent": [
+            0,
+            1
+          ],
+          "nodeLengthReference": 49.74112620070116,
+          "tauReference": 0.281457238091297,
+          "fullAreaUpperBounds": [
+            0.002884112532826828,
+            0.00002884104838238024,
+            2.8841047687473644e-7,
+            2.884110612191852e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 14,
+          "syntax": "M Q",
+          "start": [
+            60.3125,
+            54.5
+          ],
+          "firstTangentDelta": [
+            10.6875,
+            5.5
+          ],
+          "normalizedTangent": [
+            0.8891669236056514,
+            0.4575829782298089
+          ],
+          "nodeLengthReference": 20.62797050565642,
+          "tauReference": 0.6786901307698227,
+          "fullAreaUpperBounds": [
+            0.0011960584522588413,
+            0.000011960571291982922,
+            1.1960571147206308e-7,
+            1.1960567415533524e-9
+          ],
+          "mask": 1
+        },
+        {
+          "pen": 15,
+          "syntax": "M Q",
+          "start": [
+            80.5625,
+            60.5
+          ],
+          "firstTangentDelta": [
+            9,
+            9.5
+          ],
+          "normalizedTangent": [
+            0.6877446479107832,
+            0.7259526839058266
+          ],
+          "nodeLengthReference": 24.61145037985163,
+          "tauReference": 0.5688409168872558,
+          "fullAreaUpperBounds": [
+            0.0014270303321606166,
+            0.000014270284483778605,
+            1.427028433269139e-7,
+            1.4270280600458118e-9
+          ],
+          "mask": 1
+        }
+      ],
+      "originalAllCanonicalGuideArgsExact": true,
+      "fullStrokeGuard": true,
+      "gateMathBodyByteExact": true,
+      "sourceGeometryGenerations": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "sourceArraysUnchanged": true,
+      "completionUnmasked": false,
+      "actualCoverageUnproved": true,
+      "browserLengthNotMeasured": true,
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    "failureHistory": [
+      {
+        "attempt": 1,
+        "stage": "renderer module parse",
+        "reason": "M L L insertion used replacement-string dollar suffix semantics, producing broken regex and duplicate source suffix",
+        "geometryExecutions": 0
+      },
+      {
+        "attempt": 2,
+        "stage": "renderer module parse",
+        "reason": "First parser-only correction left duplicate suffix from the same insertion; removed duplicate suffix only",
+        "geometryExecutions": 0
+      }
+    ],
+    "nodeSyntax": {
+      "renderAttempts": 3,
+      "renderFailures": 2,
+      "renderPasses": 1,
+      "checkExecutions": 1,
+      "checkPassed": true
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "positive": 1,
+      "negative": 1,
+      "passed": true,
+      "HTTP": 0,
+      "server": 0
+    },
+    "metadataFinalization": {
+      "comparisonBaselineActualMasks": 18,
+      "parentPreTailMasks": 17,
+      "geometryAndPassedChecksRepeated": false
+    }
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "coverageVerified": false,
+  "actualAppUI": false,
+  "pinCounts": {
+    "input": 39,
+    "ownExcludingValidation": 5,
+    "capsuleFiles": 6,
+    "runtimeIncludingCapsule": 45
+  }
+}
