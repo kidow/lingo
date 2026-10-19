@@ -585,3 +585,393 @@ export function commitReviewedGrowingCaps(policy: ReviewedHanjaRevealPolicy, seg
     return { status: 'visible' as const, frame, cleanup: reset }
   } catch { reset(); return { status: 'hidden' as const, frame: null, cleanup: reset } }
 }
+
+
+// Exact 癙 source 18p21m46, SHA70ca22b0b1bcf57f63141c5b4460262054ab51847b1bd4e880aa2657347eee74.
+// Independent Q certificates: no extension of the reviewed 棖/帨/麌 policy API.
+const REVIEWED_SHU_OUTLINES = [
+  [
+    {
+      "outline": "M58 7 L58 20.5 L52 20.5 L52 6 Z M58 7 L59.5 8 L57 9.5 Z",
+      "bounds": [
+        52,
+        6,
+        59.5,
+        20.5
+      ],
+      "direction": "down",
+      "weight": 13
+    }
+  ],
+  [
+    {
+      "outline": "M24 18.5 L93 18.5 L93 20.5 L24 20.5 Z M93 18.5 L81 19.5 L87 13.5 Z",
+      "bounds": [
+        24,
+        13.5,
+        93,
+        20.5
+      ],
+      "direction": "right",
+      "weight": 69
+    }
+  ],
+  [
+    {
+      "outline": "M26.75 18.5 L26.75 49 L21.25 49 L21.25 15.75 Z M21.25 49 L26.75 49 L25.65 50.65 L24 51.75 L22.35 50.65 Z M26.75 49 L26.4 55.25 L25.75 61.1 L24.75 66.65 L23.4 71.8 L21.65 76.55 L19.6 80.85 L17.15 84.8 L14.4 88.3 L11.2 91.3 L7.75 93.8 L7.2 93.15 L10 90.1 L12.45 86.75 L14.6 83.2 L16.45 79.35 L18.05 75.15 L19.3 70.65 L20.25 65.8 L20.85 60.55 L21.2 54.95 L21.25 49 Z",
+      "bounds": [
+        7.2,
+        15.75,
+        26.75,
+        93.8
+      ],
+      "direction": "curve",
+      "weight": 76.96051,
+      "revealPath": "M24 19.5 L24 49 Q24 80.5 7.5 93.5",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M7.65 26.9 L9 27.75 L10.4 28.6 L11.75 29.6 L13 30.75 L14.15 32.05 L15.2 33.5 L16.15 35.05 L17.05 36.7 L17.85 38.45 L18.55 40.3 L12.7 41.7 L12.45 40.05 L12.15 38.45 L11.8 36.95 L11.35 35.45 L10.85 34.05 L10.25 32.7 L9.6 31.35 L8.9 30.05 L8.1 28.75 L7.1 27.65 Z M18.55 40.3 L18.15 42.55 L16.3 43.95 L14.05 43.55 L12.7 41.7 Z",
+      "bounds": [
+        7.1,
+        26.9,
+        18.55,
+        43.95
+      ],
+      "direction": "curve",
+      "weight": 17.923448,
+      "revealPath": "M7 27 Q13.5 32 16 42.5",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M6.35 61 L7.7 60.6 L9.15 60.15 L10.7 59.6 L12.3 58.95 L13.95 58.25 L15.65 57.45 L17.45 56.6 L19.3 55.7 L21.25 54.75 L23.2 53.6 L23.75 54.35 L22.15 55.95 L20.6 57.55 L19.05 59 L17.55 60.35 L16 61.6 L14.5 62.8 L13 63.85 L11.5 64.85 L10 65.75 L8.55 66.55 Z M8.55 66.55 L5.4 61.4 L6.35 61 Z M8.55 66.55 L10.8 64.05 L10.05 67.6 Z",
+      "bounds": [
+        5.4,
+        53.6,
+        23.75,
+        67.6
+      ],
+      "direction": "curve",
+      "weight": 19.293781,
+      "revealPath": "M7 64 Q14.5 61 23.5 54",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M59.1 27.6 L56.9 28.4 L54.7 29.15 L52.45 29.85 L50.2 30.45 L47.9 31.05 L45.55 31.55 L43.2 32 L40.8 32.4 L38.35 32.65 L35.9 32.8 L35.65 31.95 L37.9 30.9 L40.1 29.9 L42.3 29 L44.45 28.05 L46.55 27.1 L48.65 26.15 L50.65 25.2 L52.7 24.2 L54.65 23.2 L56.6 22.15 Z M56.15 22.35 L60.95 26.75 L59.1 27.6 Z M60.95 26.75 L61 28.35 L57.9 27.05 Z",
+      "bounds": [
+        35.65,
+        22.15,
+        61,
+        32.8
+      ],
+      "direction": "curve",
+      "weight": 23.79366,
+      "revealPath": "M58.315 24.695 Q47.65 29.555 35.8 32.39",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M38.55 31.35 L38.55 52.4 L33.05 55.15 L33.05 28.6 Z",
+      "bounds": [
+        33.05,
+        28.6,
+        38.55,
+        55.15
+      ],
+      "direction": "down",
+      "weight": 19.035
+    }
+  ],
+  [
+    {
+      "outline": "M35.8 40.3 L57.1 40.3 L57.1 42.3 L35.8 42.3 Z M57.1 40.3 L47.1 41.3 L52.1 35.8 Z",
+      "bounds": [
+        35.8,
+        35.8,
+        57.1,
+        42.3
+      ],
+      "direction": "right",
+      "weight": 21.33
+    }
+  ],
+  [
+    {
+      "outline": "M62.65 30.95 L83.2 30.95 L83.2 32.95 L62.65 32.95 Z M86.2 31.95 L86.2 52.4 L80.2 55.4 L80.2 31.95 Z M80.2 30.95 L83.2 28.45 L88.7 32.95 L86.2 34.95 L80.2 31.95 Z",
+      "bounds": [
+        62.65,
+        28.45,
+        88.7,
+        55.4
+      ],
+      "direction": "curve",
+      "weight": 39.98,
+      "revealPath": "M62.66 31.985 L83.2 31.985 L83.2 51.425",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M64.2 40.3 L83.2 40.3 L83.2 42.3 L64.2 42.3 Z",
+      "bounds": [
+        64.2,
+        40.3,
+        83.2,
+        42.3
+      ],
+      "direction": "right",
+      "weight": 18.96
+    }
+  ],
+  [
+    {
+      "outline": "M35.8 50.4 L83.2 50.4 L83.2 52.4 L35.8 52.4 Z",
+      "bounds": [
+        35.8,
+        50.4,
+        83.2,
+        52.4
+      ],
+      "direction": "right",
+      "weight": 47.4
+    }
+  ],
+  [
+    {
+      "outline": "M39.95 55.95 L39.95 85.6 L33.95 85.6 L33.95 54.95 Z M39.95 55.95 L41.45 56.95 L38.95 58.45 Z",
+      "bounds": [
+        33.95,
+        54.95,
+        41.45,
+        85.6
+      ],
+      "direction": "down",
+      "weight": 29.16
+    },
+    {
+      "outline": "M27.85 86.45 L30.3 85.8 L32.8 85.2 L35.35 84.55 L37.9 83.9 L40.45 83.25 L43.05 82.65 L45.7 82.05 L48.35 81.45 L51.05 80.95 L53.8 80.55 L54.1 81.4 L51.65 82.75 L49.2 84 L46.75 85.15 L44.25 86.25 L41.8 87.3 L39.35 88.3 L36.9 89.3 L34.5 90.3 L32.05 91.25 L29.65 92.15 Z M29.65 92.15 L26.9 86.75 L27.85 86.45 Z M29.65 92.15 L32.05 89.85 L31.05 93.3 Z",
+      "bounds": [
+        26.9,
+        80.55,
+        54.1,
+        93.3
+      ],
+      "direction": "curve",
+      "weight": 27.047008,
+      "revealPath": "M28.295 89.495 Q40.935 85.445 53.97 80.99000000000001",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M43.15 56.15 L44.3 56.75 L45.55 57.1 L46.7 57.55 L47.8 58.05 L48.9 58.6 L49.9 59.15 L50.9 59.75 L51.8 60.4 L52.7 61.05 L53.5 61.8 L48.65 65.35 L48.35 64.6 L48 63.8 L47.6 63 L47.1 62.2 L46.55 61.35 L45.9 60.45 L45.2 59.6 L44.45 58.65 L43.7 57.65 L42.7 56.9 Z M53.5 61.8 L54 64 L52.85 66 L50.65 66.5 L48.65 65.35 Z",
+      "bounds": [
+        42.7,
+        56.15,
+        54,
+        66.5
+      ],
+      "direction": "curve",
+      "weight": 12.735989,
+      "revealPath": "M42.515 56.285 Q48.44 59.93 51.995000000000005 64.78999999999999",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M42.75 65.9 L43.85 66.45 L45.1 66.9 L46.25 67.45 L47.4 68.1 L48.5 68.8 L49.6 69.55 L50.65 70.35 L51.7 71.25 L52.65 72.2 L53.65 73.2 L48.65 76.55 L48.15 75.45 L47.65 74.45 L47.1 73.4 L46.55 72.4 L45.9 71.4 L45.3 70.4 L44.6 69.4 L43.9 68.45 L43.15 67.45 L42.25 66.65 Z M53.65 73.2 L54.05 75.45 L52.8 77.35 L50.55 77.75 L48.65 76.55 Z",
+      "bounds": [
+        42.25,
+        65.9,
+        54.05,
+        77.75
+      ],
+      "direction": "curve",
+      "weight": 14.14324,
+      "revealPath": "M42.120000000000005 66.005 Q47.65 69.65 51.995000000000005 76.13",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M62.5 55.55 L62.5 86.85 L56.5 86.85 L56.5 54.55 Z M62.5 55.55 L64 56.55 L61.5 58.05 Z",
+      "bounds": [
+        56.5,
+        54.55,
+        64,
+        86.85
+      ],
+      "direction": "down",
+      "weight": 30.78
+    },
+    {
+      "outline": "M49.1 86.9 L51.8 86.1 L54.55 85.3 L57.35 84.5 L60.15 83.75 L62.95 82.95 L65.8 82.2 L68.65 81.5 L71.55 80.8 L74.5 80.25 L77.5 79.75 L77.8 80.6 L75.1 82 L72.45 83.35 L69.75 84.6 L67.05 85.8 L64.35 87 L61.65 88.1 L59 89.25 L56.35 90.35 L53.7 91.45 L51.05 92.55 Z M51.05 92.55 L48.15 87.2 L49.1 86.9 Z M51.05 92.55 L53.4 90.15 L52.5 93.6 Z",
+      "bounds": [
+        48.15,
+        79.75,
+        77.8,
+        93.6
+      ],
+      "direction": "curve",
+      "weight": 29.681651,
+      "revealPath": "M49.625 89.9 Q63.45 85.04 77.67 80.18",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M64.85 56.1 L66.1 56.7 L67.4 57.1 L68.6 57.55 L69.8 58.05 L70.9 58.55 L71.95 59.15 L72.95 59.75 L73.9 60.4 L74.8 61.05 L75.65 61.8 L70.8 65.35 L70.5 64.6 L70.15 63.85 L69.7 63.05 L69.15 62.2 L68.6 61.35 L67.9 60.5 L67.15 59.6 L66.35 58.65 L65.5 57.7 L64.4 56.9 Z M75.65 61.8 L76.15 64 L75 66 L72.75 66.5 L70.8 65.35 Z",
+      "bounds": [
+        64.4,
+        56.1,
+        76.15,
+        66.5
+      ],
+      "direction": "curve",
+      "weight": 13.032676,
+      "revealPath": "M64.24000000000001 56.285 Q70.56 59.93 74.11500000000001 64.78999999999999",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M64.5 65.9 L65.6 66.45 L66.8 66.9 L68 67.45 L69.15 68.1 L70.25 68.8 L71.35 69.55 L72.4 70.35 L73.4 71.25 L74.4 72.2 L75.35 73.2 L70.35 76.55 L69.9 75.45 L69.4 74.45 L68.85 73.4 L68.25 72.4 L67.65 71.4 L67 70.4 L66.35 69.4 L65.6 68.45 L64.9 67.45 L64 66.65 Z M75.35 73.2 L75.75 75.45 L74.55 77.35 L72.3 77.75 L70.35 76.55 Z",
+      "bounds": [
+        64,
+        65.9,
+        75.75,
+        77.75
+      ],
+      "direction": "curve",
+      "weight": 14.14324,
+      "revealPath": "M63.845 66.005 Q69.375 69.65 73.72 76.13",
+      "revealWidth": 14
+    }
+  ],
+  [
+    {
+      "outline": "M83.8 55.6 L83.75 61.95 L83.95 67.6 L84.4 72.6 L85.05 76.85 L85.95 80.4 L87 83.25 L88.15 85.3 L89.35 86.6 L90.5 87.35 L91.8 87.7 L91.15 93.65 L88.1 92.85 L85.4 91.15 L83.25 88.75 L81.55 85.75 L80.2 82.15 L79.2 78.05 L78.45 73.3 L78 68 L77.75 62.05 L77.8 55.5 Z M77.8 56 L77.8 54.3 L83.8 55.6 Z M83.8 55.6 L85.25 56.65 L82.75 58.1 Z M91.8 87.7 L93.8 88.8 L94.45 91 L93.35 93 L91.15 93.65 Z",
+      "bounds": [
+        77.75,
+        54.3,
+        94.45,
+        93.65
+      ],
+      "direction": "curve",
+      "weight": 37.201503,
+      "revealPath": "M80.83 55.07 Q80.03999999999999 89.495 91.495 90.71",
+      "revealWidth": 14
+    },
+    {
+      "outline": "M91.45 88.2 L88.45 88.2 L91.45 75.2 L92.45 75.2 Z",
+      "bounds": [
+        88.45,
+        75.2,
+        92.45,
+        88.2
+      ],
+      "direction": "up",
+      "weight": 12.5
+    }
+  ]
+] as const satisfies HanjaOutlineStrokes
+freezeReviewedStrokes(REVIEWED_SHU_OUTLINES)
+export type ReviewedQuadraticCapsContext = Readonly<{ id: 'u7659' }>
+export type ReviewedQuadraticCapsCertificate = Readonly<{ parameterBound: number; initialArcMax: 7; curvatureBound: number; rKBound: number; exactDecimalRational: true; notRasterProof: true }>
+export type ReviewedQuadraticCapsPolicy = Readonly<{ id: string; kind: 'growing-q-caps'; segment: HanjaOutlineSegment; certificate: ReviewedQuadraticCapsCertificate }>
+const SHU_CONTEXT: ReviewedQuadraticCapsContext = Object.freeze({ id: 'u7659' })
+const SHU_Q_SPECS = [
+  { stroke: 11, mask: 1, path: 'M28.295 89.495 Q40.935 85.445 53.97 80.99000000000001', weight: 27.047008, t: [3n,10n], norm: [63n,5n], cross: [4n,1n], K: [1n,1000n] },
+  { stroke: 14, mask: 1, path: 'M49.625 89.9 Q63.45 85.04 77.67 80.18', weight: 29.681651, t: [1n,4n], norm: [69n,5n], cross: [2n,1n], K: [1n,2500n] },
+  { stroke: 17, mask: 0, path: 'M80.83 55.07 Q80.03999999999999 89.495 91.495 90.71', weight: 37.201503, t: [1n,8n], norm: [30n,1n], cross: [396n,1n], K: [11n,1500n] },
+] as const
+type QuadraticSpec = typeof SHU_Q_SPECS[number]
+function quadraticCapsCertificate(spec: QuadraticSpec, segment: HanjaOutlineSegment): ReviewedQuadraticCapsCertificate {
+  const reject = () => { throw new Error('Exact 癙 Q initial-arc certificate required') }
+  if (segment.revealPath !== spec.path || segment.revealWidth !== 14 || segment.weight !== spec.weight || segment.direction !== 'curve') reject()
+  // Canonical M/Q only, exactly six source decimal coordinates. No inferred control or connector.
+  if (!/^M-?\d+(?:\.\d+)? -?\d+(?:\.\d+)? Q-?\d+(?:\.\d+)? -?\d+(?:\.\d+)? -?\d+(?:\.\d+)? -?\d+(?:\.\d+)?$/.test(spec.path)) reject()
+  const R = (n: bigint, d = 1n) => ({ n, d })
+  const dec = (v: string) => { const [a,b=''] = v.split('.'); return R(BigInt(a+b),10n**BigInt(b.length)) }
+  const add = (a: ReturnType<typeof R>, b: ReturnType<typeof R>) => R(a.n*b.d+b.n*a.d,a.d*b.d)
+  const sub = (a: ReturnType<typeof R>, b: ReturnType<typeof R>) => add(a,R(-b.n,b.d))
+  const mul = (a: ReturnType<typeof R>, b: ReturnType<typeof R>) => R(a.n*b.n,a.d*b.d)
+  const gt = (a: ReturnType<typeof R>, b: ReturnType<typeof R>) => a.n*b.d>b.n*a.d
+  const abs = (a: ReturnType<typeof R>) => R(a.n<0n?-a.n:a.n,a.d)
+  const tokens = spec.path.split(' '), n = [tokens[0].slice(1),tokens[1],tokens[2].slice(1),tokens[3],tokens[4],tokens[5]].map(dec)
+  const P0=n.slice(0,2),P1=n.slice(2,4),P2=n.slice(4), A=P1.map((v,i)=>sub(v,P0[i])), B=P0.map((v,i)=>add(sub(v,mul(R(2n),P1[i])),P2[i]))
+  const t=R(spec.t[0],spec.t[1]),lo=R(spec.norm[0],spec.norm[1]),crossBound=R(spec.cross[0],spec.cross[1]),K=R(spec.K[0],spec.K[1]),kr=mul(R(7n),K)
+  const delta=A.map((v,i)=>add(mul(mul(R(2n),t),v),mul(mul(t,t),B[i]))),cross=abs(sub(mul(A[0],B[1]),mul(A[1],B[0])))
+  const velocity = spec.stroke === 17 ? gt(add(A[1],mul(t,B[1])),lo)&&gt(R(0n),B[1]) : gt(A[0],lo)&&gt(B[0],R(0n))
+  const distance = spec.stroke === 17 ? gt(delta[1],R(7n)) : gt(add(mul(delta[0],delta[0]),mul(delta[1],delta[1])),R(49n))
+  // K bound uses strict crossBound > |A×B|, so equality in the bounding denominator is safe.
+  if (!velocity || !distance || !gt(crossBound,cross) || gt(crossBound,mul(mul(R(2n),mul(mul(lo,lo),lo)),K)) || !gt(sub(R(1n),mul(R(1n,2n),mul(kr,kr))),kr)) reject()
+  return Object.freeze({ parameterBound:Number(spec.t[0])/Number(spec.t[1]),initialArcMax:7,curvatureBound:Number(spec.K[0])/Number(spec.K[1]),rKBound:7*Number(spec.K[0])/Number(spec.K[1]),exactDecimalRational:true,notRasterProof:true })
+}
+const SHU_Q_POLICIES: readonly ReviewedQuadraticCapsPolicy[] = Object.freeze(SHU_Q_SPECS.map(spec => {
+  const segment=REVIEWED_SHU_OUTLINES[spec.stroke][spec.mask]
+  return Object.freeze({ id:'u7659-'+(spec.stroke+1)+'-'+(spec.mask+1),kind:'growing-q-caps' as const,segment,certificate:quadraticCapsCertificate(spec,segment) })
+}))
+export function reviewedQuadraticCapsContext(strokes: HanjaOutlineStrokes): ReviewedQuadraticCapsContext | null {
+  return sameStrokes(strokes,REVIEWED_SHU_OUTLINES) ? SHU_CONTEXT : null
+}
+export function reviewedQuadraticCapsPolicy(context: ReviewedQuadraticCapsContext | null, strokeIndex: number, maskIndex: number): ReviewedQuadraticCapsPolicy | null {
+  if (context !== SHU_CONTEXT) return null
+  const index=SHU_Q_SPECS.findIndex(spec=>spec.stroke===strokeIndex&&spec.mask===maskIndex)
+  return index<0 ? null : SHU_Q_POLICIES[index]
+}
+function quadraticCapsSource(policy: ReviewedQuadraticCapsPolicy, segment: HanjaOutlineSegment) {
+  const index=SHU_Q_POLICIES.indexOf(policy)
+  if (index<0 || !sameSegment(segment,policy.segment)) throw new Error('Only exact certified 癙 Q mask')
+  const spec=SHU_Q_SPECS[index]
+  if (segment.revealPath!==spec.path || segment.revealWidth!==14 || segment.weight!==spec.weight) throw new Error('Exact Q source fields changed')
+  const tokens=spec.path.split(' ')
+  return { q0:[Number(tokens[0].slice(1)),Number(tokens[1])] as [number,number],r:7 }
+}
+/** Same original UA path/length/endpoint for one local p. Certificate is not a raster proof. */
+export function measureReviewedQuadraticCapsFrame(policy: ReviewedQuadraticCapsPolicy, segment: HanjaOutlineSegment, progress: number, guide: ReviewedGrowingGuide | null): ReviewedGrowingFrame {
+  const source=quadraticCapsSource(policy,segment)
+  if (!Number.isFinite(progress)||progress<0||progress>1) throw new Error('Invalid Q progress')
+  const owner=guide?.ownerSVGElement
+  const exact=()=>!!owner&&!!guide?.isConnected&&guide.ownerSVGElement===owner&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('pathLength')==='1'&&guide.getAttribute('stroke-width')==='14'&&guide.getAttribute('stroke-linecap')==='butt'&&guide.getAttribute('stroke-linejoin')==='miter'
+  if (!exact()) throw new Error('Exact committed Q guide required')
+  const L=guide!.getTotalLength()
+  if (!Number.isFinite(L)||L<source.r||!exact()) throw new Error('Invalid Q browser length')
+  const d=Math.min(progress*L,L),point=guide!.getPointAtLength(d)
+  if (!Number.isFinite(point.x)||!Number.isFinite(point.y)||!exact()) throw new Error('Invalid or changed Q endpoint')
+  if (progress===0&&Math.hypot(point.x-source.q0[0],point.y-source.q0[1])>=1e-4) throw new Error('Q UA start differs from exact M')
+  return Object.freeze({policyId:policy.id,guide:segment.revealPath!,progress,L,d,rho:Math.min(source.r,d),q0:Object.freeze(source.q0),point:Object.freeze({x:point.x,y:point.y})})
+}
+/** Independent Q commit: hidden reset, single measurement, then visibility last; full p uses a separate round mask. */
+export function commitReviewedQuadraticCaps(policy: ReviewedQuadraticCapsPolicy, segment: HanjaOutlineSegment, progress: number, clipId: string, nodes: ReviewedGrowingNodes) {
+  const {guide,startCap,endCap,ink}=nodes
+  const reset=()=>{
+    ink?.setAttribute('visibility','hidden')
+    guide?.setAttribute('stroke-dasharray','0 2')
+    for(const cap of[startCap,endCap]){cap?.setAttribute('r','0');cap?.setAttribute('cx','0');cap?.setAttribute('cy','0')}
+    for(const key of['data-growing-progress','data-growing-length','data-growing-distance','data-growing-radius','data-growing-end-x','data-growing-end-y'])ink?.removeAttribute(key)
+  }
+  reset()
+  try{
+    quadraticCapsSource(policy,segment)
+    if(!Number.isFinite(progress)||progress<0||progress>1||!/^[A-Za-z0-9_:.-]+$/.test(clipId))throw new Error('Invalid Q frame/id')
+    if(progress===0||progress===1)return{status:progress===0?'empty' as const:'complete' as const,frame:null,cleanup:reset}
+    const bound=()=>!!guide&&!!startCap&&!!endCap&&!!ink&&!!guide.ownerSVGElement&&[guide,startCap,endCap,ink].every(node=>node.isConnected&&node.ownerSVGElement===guide.ownerSVGElement&&node.getAttribute('data-growing-owner')===clipId)&&guide.getAttribute('id')===clipId+'-growing-guide'&&ink.getAttribute('mask')==='url(#'+clipId+'-growing)'
+    if(!bound())throw new Error('Mismatched Q SVG binding')
+    const frame=measureReviewedQuadraticCapsFrame(policy,segment,progress,guide)
+    if(!bound())throw new Error('Q binding changed during UA read')
+    guide!.setAttribute('stroke-dasharray',String(frame.progress)+' 2')
+    startCap!.setAttribute('cx',String(frame.q0[0]));startCap!.setAttribute('cy',String(frame.q0[1]));startCap!.setAttribute('r',String(frame.rho))
+    endCap!.setAttribute('cx',String(frame.point.x));endCap!.setAttribute('cy',String(frame.point.y));endCap!.setAttribute('r',String(frame.rho))
+    for(const[key,value]of Object.entries({'data-growing-progress':frame.progress,'data-growing-length':frame.L,'data-growing-distance':frame.d,'data-growing-radius':frame.rho,'data-growing-end-x':frame.point.x,'data-growing-end-y':frame.point.y}))ink!.setAttribute(key,String(value))
+    ink!.setAttribute('visibility','visible')
+    return{status:'visible' as const,frame,cleanup:reset}
+  }catch{reset();return{status:'hidden' as const,frame:null,cleanup:reset}}
+}

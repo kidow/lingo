@@ -259,3 +259,99 @@ test('麌 actual SSR has deterministic hidden intermediate ink and original full
   const whole=render(yu,'done',null,18);assert(whole.includes('data-stroke-start-gate="u9e8c-9-2"'));assert(whole.includes('data-stroke-start-gate="u9e8c-11-1"'));assert(whole.includes('data-stroke-reveal-policy="growing-caps"'));assert(whole.includes('d="'+body.outline+'" mask="url(#'));assert(!render(yu,'playing',true,10).includes('d="'+body.outline+'"'));assert(render(yu,'playing',true,11).includes('data-growing-full-round="true"'))
   for(const[data,ids]of[[strokes,['u68d6-10-2']],[shui,['u5e28-5-2','u5e28-10-1']]] as const){const html=render(data,'idle',null,data.length);for(const id of ids)assert(html.includes('data-stroke-start-gate="'+id+'"'));assert(!html.includes('data-stroke-reveal-policy="growing-caps"'));const context=reviewedHanjaRevealContext(data)!;assert.notEqual(context.id,'u9e8c')}
 })
+
+
+import { reviewedQuadraticCapsContext, reviewedQuadraticCapsPolicy, measureReviewedQuadraticCapsFrame, commitReviewedQuadraticCaps, type ReviewedQuadraticCapsPolicy } from './hanja-stroke-start-gate.ts'
+const shuFixture=JSON.parse(readFileSync(new URL('../docs/hanja-source-independent-vq-two-q15-up-u7659-source-experiment-2026-10-20/fixtures.json',import.meta.url),'utf8')).u7659
+const shu=shuFixture.strokes as HanjaOutlineStrokes
+const shuTargets=[[11,1],[14,1],[17,0]] as const
+function shuPolicy(i:number) { const [p,m]=shuTargets[i];return reviewedQuadraticCapsPolicy(reviewedQuadraticCapsContext(shu),p,m)! }
+function fakeQuadratic(i:number,id='test-shu-'+i) {
+  const body=shuPolicy(i).segment,owner={},writes:string[]=[],counts={length:0,endpoint:0},L=40
+  const tokens=body.revealPath!.split(' '),n=[tokens[0].slice(1),tokens[1],tokens[2].slice(1),tokens[3],tokens[4],tokens[5]].map(Number)
+  const node=(initial:Record<string,string>)=>{const attrs=new Map(Object.entries(initial));return{isConnected:true,ownerSVGElement:owner,getAttribute:(key:string)=>attrs.get(key)??null,setAttribute:(key:string,value:string)=>{attrs.set(key,value);writes.push(key+'='+value)},removeAttribute:(key:string)=>{attrs.delete(key)},attrs}}
+  const common={'data-growing-owner':id},guide=Object.assign(node({...common,id:id+'-growing-guide',d:body.revealPath!,pathLength:'1','stroke-width':'14','stroke-linecap':'butt','stroke-linejoin':'miter'}),{
+    getTotalLength(){counts.length++;return L},
+    getPointAtLength(d:number){assert.strictEqual(this,guide);counts.endpoint++;const t=d/L;return{x:(1-t)**2*n[0]+2*(1-t)*t*n[2]+t*t*n[4],y:(1-t)**2*n[1]+2*(1-t)*t*n[3]+t*t*n[5]}},
+  })
+  const startCap=node(common),endCap=node(common),ink=node({...common,mask:'url(#'+id+'-growing)'})
+  return{id,guide,startCap,endCap,ink,writes,counts,L,nodes:{guide,startCap,endCap,ink} as unknown as ReviewedGrowingNodes}
+}
+test('癙 independent exact Q certificates and immutable whole allowlist preserve old bytes',()=>{
+  assert.equal(createHash('sha256').update(JSON.stringify(shu)).digest('hex'),'70ca22b0b1bcf57f63141c5b4460262054ab51847b1bd4e880aa2657347eee74')
+  const context=reviewedQuadraticCapsContext(shu)!;assert.equal(context.id,'u7659');assert.equal(reviewedHanjaRevealContext(shu),null)
+  const certs=[[.3,1/1000],[.25,1/2500],[.125,11/1500]]
+  for(let p=0;p<shu.length;p++)for(let m=0;m<shu[p].length;m++){const found=reviewedQuadraticCapsPolicy(context,p,m);assert.equal(!!found,shuTargets.some(([a,b])=>a===p&&b===m))}
+  for(let i=0;i<3;i++){
+    const policy=shuPolicy(i);assert.equal(policy.id,'u7659-'+(shuTargets[i][0]+1)+'-'+(shuTargets[i][1]+1));assert.equal(policy.kind,'growing-q-caps')
+    assert.equal(policy.certificate.parameterBound,certs[i][0]);assert.equal(policy.certificate.curvatureBound,certs[i][1]);assert.equal(policy.certificate.exactDecimalRational,true);assert.equal(policy.certificate.notRasterProof,true)
+    assert(Object.isFrozen(policy));assert(Object.isFrozen(policy.certificate));assert(Object.isFrozen(policy.segment));assert(Object.isFrozen(policy.segment.bounds))
+    assert.throws(()=>{policy.segment.weight++},TypeError);assert.throws(()=>{(policy.segment.bounds as number[])[0]++},TypeError)
+    assert.throws(()=>measureReviewedGrowingCapsFrame(policy as unknown as Parameters<typeof measureReviewedGrowingCapsFrame>[0],policy.segment,.1,fakeQuadratic(i).nodes.guide))
+    assert.throws(()=>measureReviewedQuadraticCapsFrame({...policy},policy.segment,.1,fakeQuadratic(i).nodes.guide))
+    assert.equal(reviewedQuadraticCapsPolicy({...context},...shuTargets[i]),null)
+  }
+  for(const mutate of[(s:MutableStrokes)=>s[0][0].weight++,(s:MutableStrokes)=>s.reverse(),(s:MutableStrokes)=>s[11].reverse(),(s:MutableStrokes)=>s[14][1].revealPath+=' ',(s:MutableStrokes)=>s[17][0].revealWidth++,(s:MutableStrokes)=>s[11][1].bounds[0]++,(s:MutableStrokes)=>s[1][0].extra=true]){const changed=structuredClone(shu) as MutableStrokes;mutate(changed);assert.equal(reviewedQuadraticCapsContext(changed),null)}
+  for(const other of[strokes,shui,yu])assert.equal(reviewedQuadraticCapsContext(other),null)
+  const lib=readFileSync(new URL('./hanja-stroke-start-gate.ts',import.meta.url),'utf8')
+  assert.equal(createHash('sha256').update(lib.slice(0,33354)).digest('hex'),'7e16cc13ab1326e7c89294e03c838f3504f94a28bed17f22a74df279d0316792')
+  const component=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8')
+  const oldChildren=component.slice(component.indexOf('/** Mounted even'),component.indexOf('\n/** All UA reads',component.indexOf('function GrowingCapsOutline'))+0)
+  // The original two complete child functions are a fixed contiguous substring, before the new Q child.
+  assert.equal(createHash('sha256').update(oldChildren).digest('hex'),'f5d886fd79de55dfe29711e4d72a7c484da0e667ca34a5565b91c2a1618fc2f4')
+})
+test('癙 Q same-frame caps parity and atomic fail-closed layout commits',async()=>{
+  const isolated=await import(new URL('../docs/hanja-renderer-growing-caps-u7659-three-q-experiment-2026-10-20/render.mjs',import.meta.url).href)
+  for(let i=0;i<3;i++){
+    const policy=shuPolicy(i),body=policy.segment
+    for(const p of[0,1e-10,.01,7/40,.625,.95,.9999,.99999999,1]){
+      const f=fakeQuadratic(i),frame=measureReviewedQuadraticCapsFrame(policy,body,p,f.nodes.guide)
+      const ref=i===2?isolated.growingCapsState(body,p,f.L,frame.point):isolated.addedQState(body,p,f.L,frame.point)
+      assert.deepEqual(f.counts,{length:1,endpoint:1});assert.equal(frame.progress,p);assert.equal(frame.d,ref.d);assert.equal(frame.rho,ref.rho);assert.deepEqual(frame.q0,ref.q0)
+      assert(Object.isFrozen(frame));assert(Object.isFrozen(frame.point));assert(Object.isFrozen(frame.q0))
+    }
+    const f=fakeQuadratic(i),committed=commitReviewedQuadraticCaps(policy,body,.01,f.id,f.nodes)
+    assert.equal(committed.status,'visible');assert.equal(f.writes.at(-1),'visibility=visible');assert.deepEqual(f.counts,{length:1,endpoint:1})
+    assert.equal(f.guide.getAttribute('stroke-dasharray'),'.01 2'.replace('.01','0.01'));assert.equal(f.startCap.getAttribute('r'),'0.4');assert.equal(f.endCap.getAttribute('r'),'0.4');assert.equal(f.ink.getAttribute('data-growing-progress'),'0.01')
+    committed.cleanup();committed.cleanup();assert.equal(f.ink.getAttribute('visibility'),'hidden');assert.equal(f.startCap.getAttribute('r'),'0');assert.equal(f.ink.getAttribute('data-growing-progress'),null)
+    for(const p of[0,1]){const blank={...f.nodes,ink:null};assert.equal(commitReviewedQuadraticCaps(policy,body,p,f.id,blank).status,p===0?'empty':'complete')}
+    assert.deepEqual(f.counts,{length:1,endpoint:1})
+    const changes:((f:ReturnType<typeof fakeQuadratic>)=>{p?:number;id?:string;policy?:ReviewedQuadraticCapsPolicy;segment?:HanjaOutlineSegment}|void)[]=[
+      ()=>({p:NaN}),()=>({p:-.01}),()=>({p:1.01}),()=>({p:Infinity}),()=>({id:'bad id'}),()=>({policy:{...policy}}),()=>({policy:shuPolicy((i+1)%3)}),()=>({segment:{...body,revealWidth:15}}),()=>({segment:{...body,revealPath:body.revealPath+' '}}),
+      ...[NaN,Infinity,0,6.9].map(L=>(v:ReturnType<typeof fakeQuadratic>)=>{v.guide.getTotalLength=()=>L}),
+      v=>{v.guide.isConnected=false},v=>{v.guide.setAttribute('d','M0 0 Q1 1 2 2')},v=>{v.guide.setAttribute('pathLength','2')},v=>{v.guide.setAttribute('stroke-width','15')},v=>{v.guide.setAttribute('stroke-linecap','round')},v=>{v.guide.setAttribute('stroke-linejoin','round')},
+      v=>{v.guide.setAttribute('id','other')},v=>{v.ink.setAttribute('mask','url(#other)')},v=>{v.startCap.setAttribute('data-growing-owner','other')},v=>{v.endCap.ownerSVGElement={}},
+      v=>{v.guide.getTotalLength=()=>{throw Error('UA length')}},v=>{v.guide.getPointAtLength=()=>{throw Error('UA endpoint')}},v=>{v.guide.getPointAtLength=()=>({x:NaN,y:0})},
+      v=>{v.guide.getPointAtLength=()=>{v.guide.setAttribute('d','changed');return{x:1,y:2}}},
+      v=>{v.guide.getPointAtLength=()=>{v.ink.setAttribute('data-growing-owner','changed');return{x:1,y:2}}},
+    ]
+    for(const change of changes){const v=fakeQuadratic(i);assert.equal(commitReviewedQuadraticCaps(policy,body,.01,v.id,v.nodes).status,'visible');const override=change(v)||{};assert.equal(commitReviewedQuadraticCaps(override.policy??policy,override.segment??body,override.p??.02,override.id??v.id,v.nodes).status,'hidden');assert.equal(v.ink.getAttribute('visibility'),'hidden');assert.equal(v.guide.getAttribute('stroke-dasharray'),'0 2');assert.equal(v.startCap.getAttribute('r'),'0');assert.equal(v.endCap.getAttribute('r'),'0');assert.equal(v.ink.getAttribute('data-growing-progress'),null)}
+    const original=fakeQuadratic(i),other=fakeQuadratic(i,'other-instance-'+i),a=commitReviewedQuadraticCaps(policy,body,.1,original.id,original.nodes);assert.equal(commitReviewedQuadraticCaps(policy,body,.1,other.id,other.nodes).status,'visible');a.cleanup();assert.equal(other.ink.getAttribute('visibility'),'visible')
+  }
+})
+async function renderShuComponent() {
+  const source=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),timing=readFileSync(new URL('./hanja-strokes.ts',import.meta.url),'utf8')
+  const lines=timing.split('\n'),timingURL='data:text/javascript;base64,'+Buffer.from(['const STROKE_PLAYBACK_SPEED =','export const STROKE_DURATION =','export const STROKE_GAP ='].map(prefix=>lines.find(l=>l.startsWith(prefix))!).join('\n')).toString('base64')
+  let js=ts.transpileModule(source+'\nexport { QuadraticCapsOutline }\n',{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText
+  for(const[from,to]of[['@/lib/hanja-strokes',timingURL],['@/lib/hanja-stroke-outline',new URL('./hanja-stroke-outline.ts',import.meta.url).href],['@/lib/hanja-stroke-start-gate',new URL('./hanja-stroke-start-gate.ts',import.meta.url).href],['react/jsx-runtime',import.meta.resolve('react/jsx-runtime')],['react',import.meta.resolve('react')]])js=js.replaceAll('"'+from+'"','"'+to+'"').replaceAll("'"+from+"'","'"+to+"'")
+  return import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'))
+}
+
+
+test('癙 actual component SSR keeps three exact Q guides mounted, intermediate ink hidden and full-round completion masked',async()=>{
+  const{StrokeOutlines,QuadraticCapsOutline}=await renderShuComponent()
+  for(let i=0;i<3;i++){
+    const policy=shuPolicy(i),body=policy.segment,render=(p:number)=>renderToStaticMarkup(createElement('svg',null,createElement(QuadraticCapsOutline,{policy,segment:body,progress:p,clipId:'shu-'+i})))
+    const zero=render(0);assert(zero.includes('stroke-linecap="butt"'));assert(!zero.includes('d="'+body.outline+'"'))
+    const mid=render(.03);assert.equal(mid,render(.03));assert(mid.includes('visibility="hidden"'));assert(!mid.includes('data-growing-full-round'))
+    for(const p of[NaN,Infinity,-1,1.01])assert(!render(p).includes('d="'+body.outline+'"'))
+    const full=render(1);assert(full.includes('data-growing-full-round="true"'));assert(full.includes('d="'+body.outline+'" mask="url(#shu-'+i+')"'));assert(full.includes('stroke-linecap="round"'));assert(full.includes('stroke-dasharray="1 2"'));assert(!full.includes('visibility="hidden"'))
+    const f=fakeQuadratic(i),committed=commitReviewedQuadraticCaps(policy,body,.03,f.id,f.nodes),fullInk=fakeQuadratic(i,'full-'+i).ink
+    fullInk.setAttribute('mask','url(#'+f.id+')');fullInk.setAttribute('visibility','visible');committed.cleanup();assert.equal(commitReviewedQuadraticCaps(policy,body,1,f.id,{...f.nodes,ink:null}).status,'complete');assert.equal(fullInk.getAttribute('visibility'),'visible');assert.equal(fullInk.getAttribute('mask'),'url(#'+f.id+')')
+  }
+  const render=(phase:'idle'|'playing'|'done',manual:boolean|null,count:number)=>renderToStaticMarkup(createElement('svg',null,createElement(StrokeOutlines,{strokes:shu,clock:{current:[]},phase,count,manual})))
+  for(const phase of['idle','done'] as const){const html=render(phase,null,18);assert.equal((html.match(/data-growing-full-round="true"/g)||[]).length,3);for(let i=0;i<3;i++)assert(html.includes('data-stroke-start-gate="'+shuPolicy(i).id+'"'));assert.equal((html.match(/data-stroke-reveal-policy="growing-q-caps"/g)||[]).length,3)}
+  const prefix=render('playing',true,16);assert.equal((prefix.match(/data-growing-full-round="true"/g)||[]).length,2);assert(!prefix.includes('d="'+shuPolicy(2).segment.outline+'"'))
+  const c=readFileSync(new URL('../components/hanja/stroke-outlines.tsx',import.meta.url),'utf8'),child=c.slice(c.indexOf('function QuadraticCapsOutline'))
+  assert(child.includes('key="full-round-ink"'));assert(child.includes('key="growing-ink"'));assert(child.includes('return committed.cleanup'))
+})
