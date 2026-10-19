@@ -1,0 +1,19 @@
+# 緦: order9 full-geometry rebind of twelve growing targets
+
+This independent renderer changes exactly one literal in the previous twelve-target renderer: FIXED_STROKES now binds the cached whole-pen9/10 permutation 3be1dfd27da843c9e8f7220440bd779a643d97b7b2df66bf5e2599b384e86d79 (15p18m40). Replacing this new literal back with the original array reconstructs the previous renderer bytes exactly. Every policy function, twelve target mask records, ten Q certificates, first-L8/13 certificates, connected original path/owner/transform/endpoint guards and exported APIs are byte-identical. No arbitrary Q/MLQL guard admission or new mathematical policy. The old renderer/source/HOLD/false records are unchanged.
+
+New source is the strict actualfull5/id3 cached order9 capsule, fullsourcefile f9616484968add98b8d712f0018228f0a353364417962dc23a68668e8f52c1f5. It preserves every original mask field,40polygons and13UPtail: only[1,2,3,4,5,6,7,8,10,9,11,12,13,14,15] whole-pen order changes. No header recombination, source geometry, compiler, engine or terminal derivation. Sourcefixture is referenced, not copied or generated.
+
+## Order evidence and pending approval
+
+Root prior whole1compatible and1m2newboundary partialPASS remain historical. FIRSTconfirmed9 was domestic田centerH vs old9/raw11V; fresh9screenshot reconfirmed it. Domestic10centerV vs old10/raw12H came from the prior1..10batch only. New9=old10/raw12H and new10=old9/raw11V follow only these anchors. Prior1..8direction observations are not new approval;11..15 remain unobserved and complete order is provisional. Fine/coarse/rho/coverage/natural0 after prior failure; multi2/13 unobserved. PID76250/60423/session78803 STOP143. The newindependentHOLD2 and originalhistory are pinned. All newnative/app/runtimegates pendingfalse.
+
+## Helper comparison
+
+The middle is shared43 on originalOrderBaseline. baselinePenMap maps new9→old10 and new10→old9 so current shape compares the same original pen. Around the swapped prefix, cumulative pieces intentionally differ; same-prefix parity is not claimed. Whole compareswhole. The obsolete oldgate mode is not offered. The right is the exact new-order twelve-target renderer. Fixed520 comparisons,220coarse9each,allmulti1/2/13 ±1e-10 and0/epsilon1e-6/95/fine99.99/99.999999/100, twelve rho controls, firstL8/13,coverage12 and8sec playback are preserved. Status and same-frame UA measurements retain original code. Every GET validates inputs/selfpins and runs no sourcecompiler/engine. Root alone owns native UI/server start/stop.
+
+## Bounded author checks
+
+This new check tests oldgeometry rejection,newfullpayload acceptance,one cachedfixture read,all15pen/mask positions and twelve unchanged targetfields, literal-only renderer diff, unchanged certificate/config rows, and shared43 non-target current-mask parity. It uses synthetic provider frames solely for source-rebind control flow; it does not measure or validate UA endpoints. The former243 math cases,100 connection cases and prior UA/line parity suites are not rerun. Unchanged function bytes are compared instead. p0empty/p1prefixwholealwaysfullround and exact global1local1/noepsilonclipping policies are unchanged. Native all15directions/whole/fine/coarse/multi/rho/coverage/natural must be reviewed fresh.
+
+Focused execution1 passed on the first attempt: oldfullgeometry rejection1/newfullpayload acceptance, one parsed cachedgeometry payload, twelve unchanged exacttargets, everypen/maskindex, entire renderer normalized-byte identity, and30 shared43 non-targetcurrent-mask parity frames. Both moduleNode syntax checks, embeddedbrowserNode syntax, PythonAST and helperstaticguard each passed once. No former243/100/UA suite was rerun. The acceptance/parity path executes existing unchanged guard functions as normal renderer control flow, not new math or endpoint-validation claims. All native/app/runtime flags remainfalse.
