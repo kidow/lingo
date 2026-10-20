@@ -1,0 +1,114 @@
+import type { HanjaOutlineSegment, HanjaOutlineStrokes } from './hanja-stroke-outline'
+
+/** 酈 고정20p23m51·두 Q와 세 source-specific 초기직선만 허용한다. */
+const FIXED_STROKES=[[{"outline":"M8 11.5 L34.7 11.5 L34.7 13.5 L8 13.5 Z M34.7 11.5 L22.7 12.5 L28.7 6.5 Z","bounds":[8,6.5,34.7,13.5],"direction":"right","weight":26.715}],[{"outline":"M15.3 18 L15.3 35.25 L10.3 37.75 L10.3 15.5 Z","bounds":[10.3,15.5,15.3,37.75],"direction":"down","weight":17.5}],[{"outline":"M12.8 18 L29.2 18 L29.2 20 L12.8 20 Z M31.2 19 L31.2 35 L27.2 37 L27.2 19 Z M27.2 18 L29.2 15.5 L33.7 20 L31.2 21 L27.2 19 Z","bounds":[12.8,15.5,33.7,37],"direction":"curve","weight":33.44,"revealPath":"M12.8025 19 L29.2425 19 L29.2425 36","revealWidth":14}],[{"outline":"M23.35 23 L23.35 34.5 L19.35 36.5 L19.35 22 Z M23.35 23 L24.35 24 L22.35 25.5 Z","bounds":[19.35,22,24.35,36.5],"direction":"down","weight":13}],[{"outline":"M38.1 11.5 L65.5 11.5 L65.5 13.5 L38.1 13.5 Z M65.5 11.5 L53.5 12.5 L59.5 6.5 Z","bounds":[38.1,6.5,65.5,13.5],"direction":"right","weight":27.4}],[{"outline":"M44.9 18 L44.9 35 L40.9 37 L40.9 16 Z","bounds":[40.9,16,44.9,37],"direction":"down","weight":17}],[{"outline":"M42.9 18 L59.35 18 L59.35 20 L42.9 20 Z M61.85 19 L61.85 34.25 L56.85 36.75 L56.85 19 Z M56.85 18 L59.35 15.5 L64.35 20 L61.85 21.5 L56.85 19 Z","bounds":[42.9,15.5,64.35,36.75],"direction":"curve","weight":32.94,"revealPath":"M42.9425 19 L59.3825 19 L59.3825 35.5","revealWidth":14}],[{"outline":"M52.8 22 L52.8 34 L48.8 36 L48.8 21 Z M52.8 22 L53.8 23 L51.8 24.5 Z","bounds":[48.8,21,53.8,36],"direction":"down","weight":13.5}],[{"outline":"M38.05 32.5 L38.05 43.5 L34.05 43.5 L34.05 31.5 Z M38.05 32.5 L39.05 33.5 L37.05 35 Z","bounds":[34.05,31.5,39.05,43.5],"direction":"down","weight":10.5}],[{"outline":"M13.8 41.5 L63.15 41.5 L63.15 43.5 L13.8 43.5 Z M63.15 41.5 L51.15 42.5 L57.15 36.5 Z","bounds":[13.8,36.5,63.15,43.5],"direction":"right","weight":49.32}],[{"outline":"M16.8 41.5 L16.8 64.5 L10.8 64.5 L10.8 38.5 Z M10.8 64.5 L16.8 64.5 L15.6 66.3 L13.8 67.5 L12 66.3 Z M16.8 64.5 L16.6 68.05 L16.2 71.5 L15.65 74.85 L14.95 78.1 L14.05 81.2 L13.05 84.2 L11.85 87.1 L10.45 89.8 L8.85 92.35 L7 94.7 L6.2 94.25 L7.15 91.5 L7.95 88.75 L8.75 85.95 L9.4 83.15 L9.95 80.25 L10.35 77.25 L10.65 74.2 L10.85 71.05 L10.9 67.8 L10.8 64.5 Z","bounds":[6.2,38.5,16.8,94.7],"direction":"curve","weight":52.850155,"revealPath":"M13.83 42.5 L13.83 64.5 Q13.83 82 6.6375 94.5","revealWidth":14}],[{"outline":"M13.8 51 L59 51 L59 53 L13.8 53 Z M62 52 L62 62.5 L56 65.5 L56 52 Z M56 51 L59 48.5 L64.5 53 L62 55 L56 52 Z","bounds":[13.8,48.5,64.5,65.5],"direction":"curve","weight":54.71,"revealPath":"M13.83 52 L59.04 52 L59.04 61.5","revealWidth":14}],[{"outline":"M32.55 44.5 L32.55 62.5 L26.55 62.5 L26.55 43.5 Z M32.55 44.5 L34.05 45.5 L31.55 47 Z","bounds":[26.55,43.5,34.05,62.5],"direction":"down","weight":17.5}],[{"outline":"M47.3 44.5 L47.3 62.5 L41.3 62.5 L41.3 43.5 Z M47.3 44.5 L48.8 45.5 L46.3 47 Z","bounds":[41.3,43.5,48.8,62.5],"direction":"down","weight":17.5}],[{"outline":"M13.8 60.5 L59 60.5 L59 62.5 L13.8 62.5 Z","bounds":[13.8,60.5,59,62.5],"direction":"right","weight":45.21}],[{"outline":"M23.4 74.5 L38.8 74.5 L38.8 76.5 L23.4 76.5 Z M38.8 74.5 L30.8 75.5 L34.8 71 Z","bounds":[23.4,71,38.8,76.5],"direction":"right","weight":15.4125}],[{"outline":"M26.4 65.5 L26.4 89 L20.4 89 L20.4 64.5 Z M26.4 65.5 L27.9 66.5 L25.4 68 Z","bounds":[20.4,64.5,27.9,89],"direction":"down","weight":23},{"outline":"M14.7 87.45 L16.6 87.2 L18.65 86.9 L20.85 86.55 L23.15 86.2 L25.65 85.75 L28.3 85.3 L31.05 84.85 L34 84.4 L37.1 83.95 L40.4 83.55 L40.65 84.4 L37.6 85.75 L34.7 86.95 L31.9 88.05 L29.25 89 L26.7 89.9 L24.3 90.7 L22 91.45 L19.85 92.1 L17.8 92.75 L15.95 93.3 Z M15.95 93.3 L13.75 87.65 L14.7 87.45 Z M15.95 93.3 L18.55 91.25 L17.2 94.55 Z","bounds":[13.75,83.55,40.65,94.55],"direction":"curve","weight":26.497125,"revealPath":"M14.8575 90.5 Q24.4475 88.5 40.545 84","revealWidth":14}],[{"outline":"M61.05 72.7 L59.7 73.4 L58.25 74.1 L56.8 74.75 L55.25 75.35 L53.7 75.9 L52.1 76.4 L50.4 76.85 L48.7 77.2 L46.9 77.5 L45.1 77.9 L44.8 77.05 L46.4 76.2 L47.9 75.25 L49.3 74.3 L50.65 73.4 L51.95 72.45 L53.2 71.55 L54.4 70.6 L55.5 69.7 L56.55 68.8 L57.55 67.85 Z M57.1 68.15 L57.55 67.85 L61.05 72.7 Z M61.05 72.7 L61.15 74.5 L58.45 73.35 Z","bounds":[44.8,67.85,61.15,77.9],"direction":"curve","weight":16.527228,"revealPath":"M59.725 70 Q53.56 74.5 44.9975 77.5","revealWidth":14}],[{"outline":"M46.25 66 L46.25 84.5 L40.25 84.5 L40.25 65 Z M46.25 66 L47.75 67 L45.25 68.5 Z M40.25 84.5 L46.25 84.5 L45.05 86.3 L43.25 87.5 L41.45 86.3 Z M46.25 84.5 L46.3 85.1 L46.35 85.55 L46.45 85.85 L46.55 86 L46.65 86.1 L46.7 86.2 L46.9 86.25 L47.2 86.35 L47.65 86.45 L48.25 86.5 L48.25 92.5 L47 92.4 L45.75 92.2 L44.55 91.8 L43.4 91.15 L42.4 90.35 L41.55 89.35 L40.95 88.2 L40.55 87 L40.35 85.75 L40.25 84.5 Z M48.25 86.5 L50.35 87.4 L51.25 89.5 L50.35 91.6 L48.25 92.5 Z M48.25 86.5 L62.1 86.5 L62.1 92.5 L48.25 92.5 Z M62.1 86.5 L63.9 87.7 L65.1 89.5 L63.9 91.3 L62.1 92.5 Z","bounds":[40.25,65,65.1,92.5],"direction":"curve","weight":39.908568,"revealPath":"M43.285 65.5 L43.285 84.5 Q43.285 89.5 48.285 89.5 L62.1225 89.5","revealWidth":14},{"outline":"M62.1 86.5 L59.1 86.5 L62.1 74 L63.1 74 Z","bounds":[59.1,74,63.1,86.5],"direction":"up","weight":12.5}],[{"outline":"M71.45 13 L89.25 13 L89.25 15 L71.45 15 Z M92.15 14.75 L91.25 17.3 L90.3 19.9 L89.25 22.55 L88.1 25.25 L86.85 28 L85.55 30.75 L84.15 33.6 L82.6 36.45 L80.9 39.3 L79.05 42.15 L78.25 41.8 L79.15 38.5 L80.15 35.35 L81.1 32.3 L82.05 29.35 L82.9 26.45 L83.75 23.65 L84.5 20.95 L85.2 18.3 L85.8 15.7 L86.35 13.2 Z M86.25 13 L89.25 10.5 L94.75 15 L92.25 16.5 L86.25 19 Z","bounds":[71.45,10.5,94.75,42.15],"direction":"curve","weight":47.755472,"revealPath":"M71.47 14 L89.28 14 Q85.85499999999999 26.5 78.6625 42","revealWidth":14}],[{"outline":"M79.3 41.35 L83.4 43.35 L86.55 46.3 L88.95 49.8 L90.75 53.5 L91.95 57.35 L92.7 61.2 L93 64.9 L93 68.3 L92.7 71.4 L92.2 74.05 L86.45 72.35 L87 70.35 L87.45 67.85 L87.7 64.9 L87.7 61.7 L87.35 58.3 L86.6 54.9 L85.45 51.55 L83.8 48.35 L81.55 45.3 L78.85 42.1 Z M92.2 74.05 L90.75 75.8 L88.45 76.05 L86.7 74.6 L86.45 72.35 Z M92.2 74.05 L91.75 75.25 L91.2 76.35 L90.55 77.4 L89.75 78.35 L88.8 79.2 L87.75 79.85 L86.6 80.35 L85.4 80.7 L84.15 80.9 L82.9 81 L82.9 75 L83.55 74.95 L84.1 74.85 L84.55 74.75 L84.9 74.55 L85.2 74.35 L85.45 74.15 L85.75 73.85 L86 73.45 L86.2 72.95 L86.45 72.35 Z","bounds":[78.85,41.35,93,81],"direction":"curve","weight":41.473609,"revealPath":"M78.6625 41.5 C91.67750000000001 49.5 91.33500000000001 66.5 89.33717934906275 73.20801094475281 Q87.91 78 82.91 78","revealWidth":14},{"outline":"M82.9 78 L77.9 76.5 L77.9 75 L82.9 75 Z","bounds":[77.9,75,82.9,78],"direction":"left","weight":5}],[{"outline":"M74.45 13 L74.45 91.5 L68.45 94.5 L68.45 10 Z","bounds":[68.45,10,74.45,94.5],"direction":"down","weight":79}]] as HanjaOutlineStrokes
+function freezeFixed(){for(const masks of FIXED_STROKES){for(const s of masks){Object.freeze(s.bounds);Object.freeze(s)}Object.freeze(masks)}Object.freeze(FIXED_STROKES)}
+freezeFixed()
+function ensure(value:unknown,message:string):asserts value {if(!value)throw new Error(message)}
+function sameSegment(a:HanjaOutlineSegment,b:HanjaOutlineSegment){const keys=Object.keys(b);return !!a&&Object.keys(a).length===keys.length&&keys.every(k=>Object.prototype.propertyIsEnumerable.call(a,k)&&(k==='bounds'?Array.isArray(a.bounds)&&a.bounds.length===4&&b.bounds.every((v,i)=>Object.hasOwn(a.bounds,i)&&Object.is(a.bounds[i],v)):Object.is((a as unknown as Record<string,unknown>)[k],(b as unknown as Record<string,unknown>)[k])))}
+function sameWhole(strokes:HanjaOutlineStrokes){return Array.isArray(strokes)&&strokes.length===FIXED_STROKES.length&&FIXED_STROKES.every((fixed,p)=>Object.hasOwn(strokes,p)&&Array.isArray(strokes[p])&&strokes[p].length===fixed.length&&fixed.every((segment,i)=>Object.hasOwn(strokes[p],i)&&sameSegment(strokes[p][i],segment)))}
+export type ReviewedU9148Context=Readonly<{id:'u9148-two-bodies'}>
+export type ReviewedU9148Certificate=Readonly<{syntax:'MLQL'|'MCQ';initialArcMax:7;parameterBound:number;curvatureBound:number;firstL?:number;exactDecimalRational:true;notRasterProof:true;notPolygonConnectivityProof:true;notFullSweepProof:true;bounds:Readonly<Record<string,string>>}>
+export type ReviewedU9148Policy=Readonly<{id:string;kind:'growing-u9148-caps';segment:HanjaOutlineSegment;certificate:ReviewedU9148Certificate}>
+const CONTEXT:ReviewedU9148Context=Object.freeze({id:'u9148-two-bodies'})
+type Rat=readonly [bigint,bigint]
+type Point=readonly [Rat,Rat]
+type U9148Spec=Readonly<{pen:number;mask:number;path:string;kind:'MLQL'|'MCQ';K?:string;firstNumerator?:string;firstDenominator?:string}>
+const TARGETS:readonly U9148Spec[]=Object.freeze([{"pen":19,"mask":1,"path":"M43.285 65.5 L43.285 84.5 Q43.285 89.5 48.285 89.5 L62.1225 89.5","kind":"MLQL"},{"pen":21,"mask":1,"path":"M78.6625 41.5 C91.67750000000001 49.5 91.33500000000001 66.5 89.33717934906275 73.20801094475281 Q87.91 78 82.91 78","kind":"MCQ"}].map(t=>Object.freeze(t)) as U9148Spec[])
+const gcd=(a:bigint,b:bigint):bigint=>b?gcd(b,a%b):a<0n?-a:a
+const R=(n:bigint|number,d:bigint|number=1n):Rat=>{let a=BigInt(n),b=BigInt(d);ensure(b!==0n,'nonzero rational denominator');if(b<0n){a=-a;b=-b}const g=gcd(a,b);return[a/g,b/g]}
+const D=(v:string):Rat=>{ensure(/^-?\d+(?:\.\d+)?$/.test(v),'canonical source decimal');const[a,b='']=v.split('.');return R(BigInt(a+b),10n**BigInt(b.length))}
+const plus=(a:Rat,b:Rat):Rat=>R(a[0]*b[1]+b[0]*a[1],a[1]*b[1]),minus=(a:Rat,b:Rat):Rat=>plus(a,[-b[0],b[1]]),times=(a:Rat,b:Rat):Rat=>R(a[0]*b[0],a[1]*b[1]),square=(a:Rat):Rat=>times(a,a),greater=(a:Rat,b:Rat)=>a[0]*b[1]>b[0]*a[1],absR=(a:Rat):Rat=>R(a[0]<0n?-a[0]:a[0],a[1]),rString=(a:Rat)=>a[0]+'/'+a[1],dotR=(a:Point,b:Point):Rat=>plus(times(a[0],b[0]),times(a[1],b[1]))
+const vector=(a:Point,b:Point):Point=>[minus(a[0],b[0]),minus(a[1],b[1])]
+function sourceNumbers(spec:U9148Spec):Rat[]{
+ const tokens=spec.path.split(' '),commands:string[]=[],values:Rat[]=[];for(let i=0;i<tokens.length;){const first=tokens[i++],op=first[0],arity=op==='C'?6:op==='Q'?4:op==='M'||op==='L'?2:0;ensure(arity>0&&first.length>1,'own fixed MLQL/MCQ grammar');const raw=[first.slice(1),...tokens.slice(i,i+arity-1)];i+=arity-1;ensure(raw.length===arity&&raw.every(v=>Number.isFinite(Number(v))&&String(Number(v))===v),'own exact decimal spelling');commands.push(op);values.push(...raw.map(D))}ensure(commands.join('')===spec.kind,'own full source grammar');ensure(values.length===(spec.kind==='MLQL'?10:12),'own exact source arity');return values
+}
+const map2=(f:(i:0|1)=>Rat):Point=>[f(0),f(1)]
+function certificate(spec:U9148Spec,s:HanjaOutlineSegment):ReviewedU9148Certificate{
+ ensure(s.revealPath===spec.path&&s.revealWidth===14&&s.direction==='curve','own exact guide/width/direction');const n=sourceNumbers(spec),P:Point[]=Array.from({length:n.length/2},(_,i)=>[n[2*i],n[2*i+1]] as const),[P0,P1,P2,P3]=P;
+ if(spec.kind==='MLQL'){ensure(spec.pen===19&&spec.mask===1,'own MLQL19 only');const v=vector(P1,P0);ensure(rString(v[0])==='0/1'&&rString(v[1])==='19/1'&&greater(dotR(v,v),R(49)),'own initial L19 > r7');return Object.freeze({syntax:'MLQL',initialArcMax:7,parameterBound:7/19,curvatureBound:0,firstL:19,exactDecimalRational:true,notRasterProof:true,notPolygonConnectivityProof:true,notFullSweepProof:true,bounds:Object.freeze({firstL:'19/1',curvatureUpper:'0/1',initialArc:'7/1',scope:'initial straight arc only; later Q/last L not certified'})})}
+ ensure(spec.pen===21&&spec.mask===1&&spec.kind==='MCQ','own C21-in-MCQ only');const v0=vector(P1,P0),v1=vector(P2,P1),v2=vector(P3,P2),a=vector(v1,v0),b=vector(v2,v1),T=R(1,4),u=minus(R(1),T);ensure(greater(v0[0],v1[0])&&greater(v1[0],v2[0]),'own decreasing X derivative Bernstein controls');const xmin=times(R(3),plus(plus(times(square(u),v0[0]),times(times(times(R(2),u),T),v1[0])),times(square(T),v2[0])));ensure(greater(xmin,R(0)),'own positive X derivative throughout quarter');ensure(greater(a[1],R(0))&&greater(plus(times(u,a[1]),times(T,b[1])),R(0)),'own increasing Y derivative throughout quarter');const ymin=times(R(3),v0[1]);ensure(greater(ymin,R(0)),'own Y derivative positive');const speed2=plus(square(xmin),square(ymin)),aa=dotR(a,a),bb=dotR(b,b),M2=times(R(36),greater(aa,bb)?aa:bb),chord=map2(i=>minus(plus(plus(times(times(square(u),u),P0[i]),times(times(times(R(3),square(u)),T),P1[i])),plus(times(times(times(R(3),u),square(T)),P2[i]),times(times(square(T),T),P3[i]))),P0[i])),chord2=dotR(chord,chord),K=R(1,10),kr=R(7,10),cosLower=minus(R(1),times(R(1,2),square(kr)));ensure(rString(xmin)==='33924653804718849/1600000000000000'&&rString(ymin)==='24/1','own exact derivative bounds');ensure(rString(speed2)==='2625442135770025077341219935884801/2560000000000000000000000000000'&&rString(M2)==='23348052562500024043500000000009/2500000000000000000000000000','own C21 norm bounds');ensure(rString(chord2)==='2250773579115164709370262533828841/20480000000000000000000000000000','own C21 chord');ensure(greater(chord2,R(49))&&greater(times(square(K),square(speed2)),M2)&&greater(cosLower,kr),'own arc7/K<1/10/initial normal-strip condition');return Object.freeze({syntax:'MCQ',initialArcMax:7,parameterBound:1/4,curvatureBound:1/10,exactDecimalRational:true,notRasterProof:true,notPolygonConnectivityProof:true,notFullSweepProof:true,bounds:Object.freeze({tUpper:'1/4',derivativeXLower:rString(xmin),derivativeYLower:rString(ymin),speedSquaredLower:rString(speed2),secondDerivativeNormSquaredUpper:rString(M2),chordSquared:rString(chord2),curvatureUpper:'1/10',rKUpper:'7/10',cosLower:'151/200',scope:'initial C arc7 only; later C/Q join not certified'})})
+}
+const POLICIES=TARGETS.map(t=>{const segment=FIXED_STROKES[t.pen-1][t.mask-1];return Object.freeze({id:'u9148-'+t.pen+'-'+t.mask,kind:'growing-u9148-caps' as const,segment,certificate:certificate(t,segment)})})
+export function reviewedU9148Context(strokes:HanjaOutlineStrokes):ReviewedU9148Context|null{return sameWhole(strokes)?CONTEXT:null}
+export function reviewedU9148Policy(context:ReviewedU9148Context|null,pen:number,mask:number):ReviewedU9148Policy|null{if(context!==CONTEXT)return null;const i=TARGETS.findIndex(t=>t.pen===pen+1&&t.mask===mask+1);return i<0?null:POLICIES[i]}
+function source(policy:ReviewedU9148Policy,segment:HanjaOutlineSegment){ensure(POLICIES.includes(policy as typeof POLICIES[number])&&sameSegment(segment,policy.segment),'private fixed 酈 policy/segment required');const spec=TARGETS.find(t=>t.path===segment.revealPath);ensure(spec,'fixed two body guides required');const start=/^M(-?\d+(?:\.\d+)?) (-?\d+(?:\.\d+)?) (?:L|C)/.exec(spec.path);ensure(start,'fixed original M decimal spelling');return{q0:[Number(start[1]),Number(start[2])],r:7,minimumLength:policy.certificate.firstL??7}}
+export type ReviewedU9148Frame=Readonly<{policyId:string;guide:string;progress:number;L:number;d:number;rho:number;q0:readonly number[];point:Readonly<{x:number;y:number}>}>
+export type ReviewedU9148Nodes={measurement:SVGPathElement|null;guide:SVGPathElement|null;startCap:SVGCircleElement|null;endCap:SVGCircleElement|null;ink:SVGPathElement|null}
+
+function canCoordinateBinding(nodes:readonly SVGElement[],owner:SVGSVGElement):()=>boolean {
+  const document=owner.ownerDocument,view=document?.defaultView
+  if(!view||view.document!==document)throw new Error('Connected 酈 SVG document required')
+  const parents=new Map<Element,Element|null>()
+  for(const node of nodes){
+    let current:Element|null=node
+    const visited=new Set<Element>()
+    while(current){
+      if(visited.has(current))throw new Error('Cyclic 酈 SVG parent')
+      visited.add(current)
+      if(current.namespaceURI!=='http://www.w3.org/2000/svg'||current.ownerDocument!==document||!current.isConnected||(current!==owner&&(current as SVGElement).ownerSVGElement!==owner))throw new Error('Mismatched 酈 SVG coordinate owner')
+      const parent=current.parentElement
+      if(parent&&(!parent.isConnected||parent.ownerDocument!==document))throw new Error('Mismatched 酈 outer SVG parent')
+      parents.set(current,parent)
+      if(current===owner)break
+      current=current.parentElement
+    }
+    if(current!==owner)throw new Error('Detached 酈 SVG coordinate tree')
+  }
+  return()=>{
+    if(owner.ownerDocument!==document||document.defaultView!==view||view.document!==document)return false
+    for(const[node,parent]of parents){
+      if(!node.isConnected||node.ownerDocument!==document||node.parentElement!==parent||(node!==owner&&(node as SVGElement).ownerSVGElement!==owner)||node.getAttribute('transform')!==null)return false
+      const style=view.getComputedStyle(node)
+      if(style.transform!=='none'||['translate','rotate','scale'].some(key=>{const value=style.getPropertyValue(key);return value!==''&&value!=='none'}))return false
+    }
+    return true
+  }
+}
+/** L과 endpoint는 pathLength 없는 동일 connected 원 path에서 같은 frame에 읽는다. */
+export function measureReviewedU9148CapsFrame(policy:ReviewedU9148Policy,segment:HanjaOutlineSegment,progress:number,guide:SVGPathElement|null):ReviewedU9148Frame {
+  const fixed=source(policy,segment)
+  if(!Number.isFinite(progress)||progress<0||progress>1)throw new Error('Invalid 酈 source progress')
+  const owner=guide?.ownerSVGElement
+  const defs=guide?.parentElement,target=defs?.parentElement
+  if(!owner||!guide||defs?.localName!=='defs'||target?.localName!=='g'||target.getAttribute('data-stroke-start-gate')!==policy.id)throw new Error('Exact 酈 measurement parent required')
+  const coordinates=canCoordinateBinding([guide],owner)
+  const exact=()=>coordinates()&&guide.parentElement===defs&&defs.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('data-u9148-measurement')==='true'&&guide.getAttribute('pathLength')===null
+  if(!exact())throw new Error('Exact connected 酈 measurement guide required')
+  const L=guide!.getTotalLength()
+  if(!Number.isFinite(L)||L<=fixed.minimumLength||!exact())throw new Error('Invalid 酈 browser length')
+  const d=Math.min(progress*L,L),point=guide!.getPointAtLength(d)
+  if(!Number.isFinite(point.x)||!Number.isFinite(point.y)||!exact())throw new Error('Changed 酈 guide or invalid endpoint')
+  if(progress===0&&Math.hypot(point.x-fixed.q0[0],point.y-fixed.q0[1])>=1e-4)throw new Error('酈 UA start differs from exact M')
+  return Object.freeze({policyId:policy.id,guide:segment.revealPath!,progress,L,d,rho:Math.min(fixed.r,d),q0:Object.freeze(fixed.q0),point:Object.freeze({x:point.x,y:point.y})})
+}
+/** 기존 정책과 분리된 원 MLQ/Q commit. 완료 잉크는 별도 key/full round mask이다. */
+export function commitReviewedU9148Caps(policy:ReviewedU9148Policy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedU9148Nodes) {
+  const{measurement,guide,startCap,endCap,ink}=nodes
+  const reset=()=>{
+    ink?.setAttribute('visibility','hidden');guide?.setAttribute('stroke-dasharray','0 2')
+    for(const cap of[startCap,endCap]){cap?.setAttribute('r','0');cap?.setAttribute('cx','0');cap?.setAttribute('cy','0')}
+    for(const key of['data-growing-progress','data-growing-length','data-growing-distance','data-growing-radius','data-growing-end-x','data-growing-end-y'])ink?.removeAttribute(key)
+  }
+  reset()
+  try{
+    source(policy,segment)
+    if(!Number.isFinite(progress)||progress<0||progress>1||!/^[A-Za-z0-9_:.-]+$/.test(clipId))throw new Error('Invalid 酈 frame/id')
+    if(progress===0||progress===1)return{status:progress===0?'empty' as const:'complete' as const,frame:null,cleanup:reset}
+    const owner=measurement?.ownerSVGElement
+    const defs=measurement?.parentElement,target=defs?.parentElement,mask=guide?.parentElement
+    if(!owner||!measurement||!guide||!startCap||!endCap||!ink||defs?.localName!=='defs'||target?.localName!=='g'||mask?.localName!=='mask')throw new Error('Missing 酈 SVG binding tree')
+    const coordinates=canCoordinateBinding([measurement,guide,startCap,endCap,ink],owner)
+    const bound=()=>coordinates()&&measurement.parentElement===defs&&defs.parentElement===target&&guide.parentElement===mask&&mask.parentElement===defs&&startCap.parentElement===mask&&endCap.parentElement===mask&&ink.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&mask.getAttribute('id')===clipId+'-u9148-growing'&&mask.getAttribute('maskUnits')==='userSpaceOnUse'&&['x','y'].every(key=>mask.getAttribute(key)==='0')&&['width','height'].every(key=>mask.getAttribute(key)==='100')&&[measurement,guide,startCap,endCap,ink].every(node=>node.getAttribute('data-growing-owner')===clipId)&&measurement.getAttribute('id')===clipId+'-u9148-measure'&&guide.getAttribute('id')===clipId+'-u9148-guide'&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('pathLength')==='1'&&guide.getAttribute('stroke-width')==='14'&&guide.getAttribute('stroke-linecap')==='butt'&&guide.getAttribute('stroke-linejoin')==='miter'&&ink.getAttribute('d')===segment.outline&&ink.getAttribute('mask')==='url(#'+clipId+'-u9148-growing)'
+    if(!bound())throw new Error('Mismatched 酈 SVG binding')
+    const frame=measureReviewedU9148CapsFrame(policy,segment,progress,measurement)
+    if(!bound())throw new Error('酈 binding changed during UA read')
+    guide!.setAttribute('stroke-dasharray',String(frame.progress)+' 2')
+    startCap!.setAttribute('cx',String(frame.q0[0]));startCap!.setAttribute('cy',String(frame.q0[1]));startCap!.setAttribute('r',String(frame.rho))
+    endCap!.setAttribute('cx',String(frame.point.x));endCap!.setAttribute('cy',String(frame.point.y));endCap!.setAttribute('r',String(frame.rho))
+    for(const[key,value]of Object.entries({'data-growing-progress':frame.progress,'data-growing-length':frame.L,'data-growing-distance':frame.d,'data-growing-radius':frame.rho,'data-growing-end-x':frame.point.x,'data-growing-end-y':frame.point.y}))ink!.setAttribute(key,String(value))
+    if(!bound())throw new Error('酈 binding changed before visibility commit')
+    ink!.setAttribute('visibility','visible')
+    return{status:'visible' as const,frame,cleanup:reset}
+  }catch{reset();return{status:'hidden' as const,frame:null,cleanup:reset}}
+}
