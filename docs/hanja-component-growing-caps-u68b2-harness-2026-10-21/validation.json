@@ -1,0 +1,120 @@
+{
+  "schema": "u68b2-frozen-component-harness-preparation-v1",
+  "date": "2026-10-21",
+  "configSHA256": "2c1f68c6ee917577de6f639f0d770db776ebc6918a0df623771e3e8746d81e9e",
+  "ownSHA256": {
+    "config.json": "2c1f68c6ee917577de6f639f0d770db776ebc6918a0df623771e3e8746d81e9e",
+    "check.mjs": "98d5a9f7525f5c5b55c987fb8c21cad0c7405b5a27bcdc4bf24a4b8e9bc3b3d9",
+    "browser.js": "da542852b4ae25ee6796047dc086f08a96b96182d1723873ab242e6bb5e2c4df",
+    "serve.py": "dc155383f6f217d09aabe2195397ab1d70ad43a77ac0f240138c722a2bb59f8b",
+    "README.md": "bb225f2c37ea212c096dde47bb926c5e68db775aedf50be563d92719edb819f0"
+  },
+  "inputPins": 154,
+  "ownPins": 5,
+  "snapshot": {
+    "files": 7,
+    "bindings": 3,
+    "focused": 1,
+    "status": "PASS",
+    "immutableHistoricalFalse": true
+  },
+  "focused": {
+    "first": {
+      "status": "FAIL",
+      "reason": "copied15/16/30 and two-target count literals at first unexecuted shape assertion",
+      "resourcesGenerated": 1,
+      "SSR": 2,
+      "passedFocusedAssertions": 2
+    },
+    "failedOnlyTail": {
+      "status": "FAIL at ordinaryTails count after all source/full5/SSR/UP-field assertions PASS",
+      "executions": 1,
+      "mode": "--resume-after-count-assertion",
+      "previousAssertionsRepeated": 0,
+      "resourcesRegeneratedAsPrerequisite": 1,
+      "parentAuthorized": true
+    },
+    "resourcesExecutionsTotal": 4,
+    "SSRRenderCountPerResource": 2,
+    "sourceTranspilesPerResource": {
+      "commonJS": 17,
+      "ESM": 17
+    },
+    "extractedMockHelper": 1,
+    "targetParity": 9,
+    "ordinarySamples": 90,
+    "oldChecksRepeated": 0,
+    "snapshotChecksRepeated": 0,
+    "standaloneGuardRepeated": 0,
+    "failedOnlyRemainder": {
+      "status": "FAIL at copied mock end-marker; controls and distance reporter passed",
+      "executions": 1,
+      "mode": "--resume-after-ordinary-tail-count",
+      "passedAssertionsRepeated": 0,
+      "resourcesPrerequisiteAdditional": 1
+    },
+    "mockTailRecovery": {
+      "executions": 1,
+      "status": "PASS",
+      "mode": "--resume-after-mock-boundary",
+      "controlsReporterRepeated": 0,
+      "mockPriorExecuted": 0,
+      "resourcesPrerequisiteAdditional": 1
+    },
+    "status": "cumulative PASS; completed assertions not repeated",
+    "negative": 24,
+    "SSRGeneratedCumulative": 8,
+    "sourceTranspilesCumulative": {
+      "commonJS": 68,
+      "ESM": 68,
+      "extractedMockHelper": 1
+    }
+  },
+  "syntax": {
+    "Node": 7,
+    "declarationAST": 1,
+    "PythonAST": 1,
+    "helperGuard": 1,
+    "status": "PASS"
+  },
+  "metadata": {
+    "executions": 1,
+    "status": "PASS"
+  },
+  "appAuthorHistory": {
+    "orchestrationSyntaxFailures": 2,
+    "firstTests": {
+      "pass": 6,
+      "fail": 3
+    },
+    "failedOnlyRecovery1": {
+      "pass": 1,
+      "fail": 2
+    },
+    "failedOnlyRecovery2": {
+      "pass": 2,
+      "fail": 0
+    },
+    "passedTestsRepeated": 0,
+    "ASTFiles": [
+      3,
+      2,
+      1
+    ],
+    "readOnlyAnalysisNamespaceErrors": 2,
+    "copyBoundaryGuardRejection": 1
+  },
+  "sourceCompilerCalls": 0,
+  "sourceProjection": 0,
+  "sourceFactoryCalls": 0,
+  "engineRuns": 0,
+  "geometry": 0,
+  "actualAppUI": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "nativeApproval": false,
+  "runtimeRegistered": false,
+  "UI": 0,
+  "server": 0,
+  "Git": 0,
+  "build": 0
+}
