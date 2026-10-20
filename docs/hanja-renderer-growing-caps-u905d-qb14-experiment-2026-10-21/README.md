@@ -25,3 +25,7 @@ C는 T1/4,K1/12입니다. 원 x′ control7.5/8/47.5는양수증가, y′control
 ## 최초 입력경로 준비 오류와 제한 복구
 
 첫 새focused는 첫 입력핀 읽기에서ENOENT로 중단되어 검사양성prefix0이었습니다. 원source8의48핀은 source-directory 기준 ../ 경로인데 repo-root에그대로붙인 준비오류였습니다. source8의원상대경로48개는originalSourceInputSHA256에그대로보존하고 새renderer용키만정확docs/로매핑했습니다. SHA·원identity/파일·기하는불변입니다. purestartupguard도같은입력경로에서실패했으며그전에통과한render/fixture비교는반복하지않고 변경configSHA와미실행input-loop만확인합니다. 새검사구문/변경helperAST만추가1회이며 unchangedrender/embeddedJS·기존체크는반복0입니다.
+
+## ROOT 첫 HTML 표시 잔여 보정
+
+ROOT의 첫 /progressive?stroke=14 페이지에서 실제u905d14 source pre는맞지만 shell/controls/caption에 이전貶12p13m25·K1/18/K1/15·12target·1..12링크가남아 검토를보류했습니다. 이표시준비오류는원source/render/수학·기하FAIL이아닙니다. HTML을14p15m31/QK1/100·CK1/12/QB경계와14links에맞추고 whole의script표시pen도14로맞췄습니다. 기존renderer검사는반복하지않고 새순수HTMLcaption·links·wholearg계약1만확인합니다.
