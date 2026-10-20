@@ -1,0 +1,244 @@
+{
+  "schema": "hanja-cached-qq-left-source-preparation-v1",
+  "date": "2026-10-20",
+  "root": "u6303",
+  "status": "source-only-ready-native-pending",
+  "configSHA256": "eba8b9e540fa7cc5ca6effb2651beddb191def51b9ef0d014e4e6f56050f0911",
+  "newFilesSHA256": {
+    "README.md": "1e85aa9d52bda65b8e2f78051d84cd5cb2969c735d273a4baa0fdce5004ffab1",
+    "config.json": "eba8b9e540fa7cc5ca6effb2651beddb191def51b9ef0d014e4e6f56050f0911",
+    "candidate.mjs": "c3897cfbe440716b35fd3e710125ebd6bf5f6879547d986c01ff55ff90ce903d",
+    "candidate.d.mts": "b4defd1e02b61f79595f85ab15db58c887a5280c3633674f619ec00ad4367442",
+    "fixtures.json": "06ff51f491e3dfa9d61a281984a7eedc61ef7d66fd0bd46e2682749af05d94f4",
+    "source-check.mjs": "7b30549922b2702d76f5f2fb6609555e17671440771a5794ed5206e0f53e3cbb",
+    "serve.py": "5f901f74a3e2db0c3110a6e49dac695574d16f03dfee7f0d3a2a62a08f830965"
+  },
+  "inputPins": 65,
+  "sourceIdentity": {
+    "root": "u6303",
+    "file": "../hanja-goal-glyphwiki-batch901-2026-10-13/engine-whole-u6303.json",
+    "fileSHA256": "37bcba1d9a61def4d1628bae9474605484d73cc3e336965a2d604e2d9c91065f"
+  },
+  "fullProofSHA256": "f358eea0c2aa82ddda26b3cbc31bad276958782c5d9a5a519f5092fea6b34ebf",
+  "baselineSHA256": "d5d64efcd4de35b20b8097a5dcf9635d60b04e6500ab76bf1f8bafbc62a122de",
+  "compiledSHA256": "49d827b2f18f74efc30c2b9d4fa4682362aabcb84d8fde8f189d733943d1e85c",
+  "counts": {
+    "pens": 9,
+    "masks": 11,
+    "polygons": 24
+  },
+  "kernelBodyBytes": 1691,
+  "kernelBodySHA256": "7e064978de6840034305713cc03037611a3205152c91d1c70db6c1761fdece08",
+  "deriveBodyBytes": 1302,
+  "deriveBodySHA256": "2802b789ebee4fe2f9af3903f71f26f2a9609dced9171e87ecf63aba342a8657",
+  "allMultiMaskBoundaries": {
+    "2": [
+      0.9239717736303439
+    ],
+    "5": [
+      0.4291527244537579
+    ]
+  },
+  "sourceGeometryGenerations": 0,
+  "sourceCompilerCalls": 0,
+  "engineRuns": 0,
+  "tailDerivations": 1,
+  "fixtureSavedBeforeFocused": true,
+  "weightPolicy": {
+    "pen": 2,
+    "terminalRaw": 1,
+    "terminalFlags": [
+      1,
+      314
+    ],
+    "width": 6,
+    "jump": 14,
+    "tailWeight": 7,
+    "bodyGuideWidthWeightPreserved": true,
+    "bodyBounds": [
+      10.75,
+      7,
+      27.25,
+      93.5
+    ],
+    "remainingBounds": [
+      17.75,
+      7,
+      27.25,
+      93.5
+    ],
+    "activeBoundsChanged": true,
+    "sourceSubsetBoundsOnly": true,
+    "logicalPenWeightBefore": 85.071068,
+    "logicalPenWeightAfter": 92.071068,
+    "logicalPenWeightIncrease": 7,
+    "other8PensPreserved": true,
+    "actualReplayDurationChangeApproved": false
+  },
+  "priorNativeCoverageHold": {
+    "gate": "P-minus-full-round coverage",
+    "pen": 2,
+    "mask": 1,
+    "observedFrames": 1,
+    "actualSVGSize": 520,
+    "passed": false,
+    "observation": "원 획에서 full-round guide sweep를 뺀 화면의 왼쪽 hook 끝에 검은 작은 삼각 잔여가 보임.",
+    "screenApproximation": {
+      "x": 75,
+      "y": 580,
+      "sourceCoordinate": false,
+      "pixelMeasurement": false,
+      "rootVisualDescriptionOnly": true
+    },
+    "wholePInsideFullRoundSweep": false,
+    "sourceGuide": "M22.75 7.5 L22.75 85.5 Q22.75 90.5 17.75 90.5",
+    "sourceWidth": 14,
+    "followingQ314Unchanged": true,
+    "newTailPartition": 0,
+    "causeProven": false,
+    "server": {
+      "pid": 22355,
+      "port": 59812,
+      "wrapperSession": 17540,
+      "stopSignal": "SIGINT",
+      "exitCode": 130,
+      "ownedPIDAbsentConfirmedByROOT": true,
+      "running": false
+    },
+    "whole": {
+      "observedSVGs": 3,
+      "panels": [
+        "domestic",
+        "shared43-logical-baseline",
+        "five-curves-candidate"
+      ],
+      "compatible": true,
+      "fullCoverageApproval": false
+    },
+    "epsilonRecovery": {
+      "pen": 2,
+      "mask": 1,
+      "requestedLocal": 0.000001,
+      "actualLocal": 0.000001,
+      "actualSample": "sample-new",
+      "actualSVGSize": 520,
+      "passed": true,
+      "observation": "이전의 큰 시작 nib가 사라짐. 이번 판정은 시작부 한 프레임에 한정.",
+      "canonicalDistance": 0.00008611614227294921,
+      "canonicalRadius": 0.00008611614227294921,
+      "otherTargets": {
+        "count": 4,
+        "local": 0,
+        "approvalFromThisObservation": false
+      }
+    },
+    "otherGates": {
+      "freshDirections": 0,
+      "remainingLocalFrames": 0,
+      "fineCompletion": 0,
+      "rho": 0,
+      "firstLEndBoundary": 0,
+      "multiMaskBoundary": 0,
+      "coarse": 0,
+      "naturalPlayback": 0
+    }
+  },
+  "checks": {
+    "status": "passed",
+    "executions": 1,
+    "firstAttempt": true,
+    "failures": 0,
+    "cachedPositive": 1,
+    "negative": 29,
+    "sourceGeometryGenerations": 0,
+    "sourceCompilerCalls": 0,
+    "tailDerivationsThisCheck": 0,
+    "all24PolygonsExactOnce": true,
+    "allOther8PensDeepBytesPreserved": true,
+    "bodyGuideWidthWeightPreserved": true,
+    "bodyBoundsChanged": true,
+    "logicalPenWeightIncrease": 7,
+    "actualAppDurationChanged": false,
+    "successfulChecksRepeated": 0
+  },
+  "syntax": {
+    "nodeModuleChecks": {
+      "executions": 2,
+      "files": [
+        "candidate.mjs",
+        "source-check.mjs"
+      ],
+      "passed": true
+    },
+    "declarationAST": {
+      "executions": 1,
+      "diagnostics": 0,
+      "passed": true,
+      "TSC": false
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "embeddedBrowserNode": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "passed": true,
+      "HTTP": 0,
+      "server": 0
+    },
+    "successfulChecksRepeated": 0
+  },
+  "history": [
+    {
+      "stage": "cached-tail-partition",
+      "executions": 1,
+      "passed": true,
+      "sourceGeometryGenerations": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "tailDerivations": 1,
+      "fixtureSavedBeforeFocused": true
+    },
+    {
+      "stage": "cached-positive-and-negatives",
+      "executions": 1,
+      "firstAttempt": true,
+      "passed": true,
+      "cachedPositive": 1,
+      "negative": 29,
+      "derivations": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0
+    },
+    {
+      "stage": "new-syntax-and-static-helper-guard",
+      "nodeModules": 2,
+      "declarationAST": 1,
+      "pythonAST": 1,
+      "embeddedBrowserNode": 1,
+      "helperGuard": 1,
+      "passed": true,
+      "HTTP": 0,
+      "server": 0,
+      "oldSuccessfulChecksRepeated": 0
+    }
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "authorUI": false,
+  "authorServer": false,
+  "registryChanged": false,
+  "build": false,
+  "finalPinCheck": {
+    "executions": 1,
+    "scope": "own7 SHA and preparation JSON only; no source-pin loop/focused/syntax/guard repeated",
+    "input": 65,
+    "own": 7,
+    "mismatch": 0
+  }
+}
