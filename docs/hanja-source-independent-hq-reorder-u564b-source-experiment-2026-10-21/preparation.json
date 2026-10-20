@@ -1,0 +1,102 @@
+{
+  "schema": "source-only-HQ-reorder-preparation-v1",
+  "date": "2026-10-21",
+  "glyph": "噋",
+  "configSHA256": "875c79774405970ab4f56320c5235c47fb756ce8f48e3b4be57aac74ab974178",
+  "newFilesSHA256": {
+    "config.json": "875c79774405970ab4f56320c5235c47fb756ce8f48e3b4be57aac74ab974178",
+    "candidate.mjs": "ebd6c61f0581a24fcc954ceaaa01de77f19270b96b8268077065de76a7f4267e",
+    "candidate.d.mts": "7689a0958ba810fda16e85bc5308a517859da0225c3379ba06b53e5411296ee3",
+    "fixtures.json": "fdf4009ff6621a775b3bebf341aee8ab7d2c88901ed90b23c2c536c18554799a",
+    "source-check.mjs": "8ef22f5e23d8178235fcf3f7b6eb6e39385d218e9790285c05249709c0a1fdc6",
+    "serve.py": "a5e82edb4755cd79cc65c3e99149cf9ea205d928b73964ba8cf641d1692a72a3",
+    "README.md": "d92de7703eb04b4d6d02333983fa616fdf022245157833dc773e8dbd0cf50322"
+  },
+  "inputPins": 29,
+  "sourceProjection": {
+    "status": "one success after pre-outline missing-constant failure",
+    "captureAttempts": 2,
+    "failedBeforeOutlineMap": 1,
+    "successfulGeometryProjection": 1,
+    "internalRawProjectorEntrances": 2,
+    "successfulInternalRawProjectorExecutions": 1,
+    "originalSourceCompiler": 0,
+    "existingFactory": 0,
+    "engine": 0,
+    "publicFixtureSavedBeforeFocused": true,
+    "publicFixtureBytes": 91382,
+    "actual": {
+      "raw": 18,
+      "drawCalls": 19,
+      "pens": 15,
+      "masks": 16,
+      "polygons": 33,
+      "geometrySHA256": "519ad7f16c10a35732478a09a21f70e5636adac18c6df92df0f38c14ca818620",
+      "rawSHA256": "89d02cf8759d17014616cfa8479703a12dee2461120faa1a51b427e282c279e2",
+      "payloadSHA256": "3c13d01b0b145755614cf68588806eeaad307813ad14d907d3b85de11ce4107c"
+    }
+  },
+  "focused": {
+    "status": "PASS",
+    "executions": 1,
+    "cachedPositive": 1,
+    "negative": 27,
+    "allRawPolygonsExactOnce": true,
+    "HQ9IndependentEvenAtZeroGap": true,
+    "exactHVJoins": 2,
+    "pen10ActualLQLEFT14Unmodified": true,
+    "projectionThisCheck": 0,
+    "originalCompiler": 0,
+    "existingFactory": 0,
+    "engine": 0
+  },
+  "syntax": {
+    "status": "PASS",
+    "candidateNode": 1,
+    "sourceCheckNode": 1,
+    "declarationAST": 1,
+    "helperPythonAST": 1,
+    "helperGuard": 1,
+    "captionContract": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "originalCompilerExecutions": 0,
+  "existingFactoryCalls": 0,
+  "engineRuns": 0,
+  "oldChecksRepeated": 0,
+  "UI": 0,
+  "server": 0,
+  "Git": 0,
+  "build": 0,
+  "history": [
+    {
+      "phase": "first capture",
+      "status": "ReferenceError before any outlines map",
+      "missing": "UP_TAIL_GROUPS external empty constant",
+      "outputGeometry": 0,
+      "fixtureSaved": 0,
+      "focused": 0
+    },
+    {
+      "phase": "failed-only external dependency recovery",
+      "status": "success",
+      "changed": "defined empty UP/LEFT tail lists outside exact8067body",
+      "bodyBytesChanged": false,
+      "projectionSuccess": 1,
+      "publicFixtureSavedImmediately": true
+    },
+    {
+      "phase": "preparation orchestration",
+      "syntaxErrorsBeforeToolEvaluation": 2,
+      "sourceGeometryEffect": 0
+    }
+  ],
+  "metadata": {
+    "executions": 1,
+    "status": "PASS expected by following single final exact-pin/JSON check",
+    "inputPins": 29,
+    "ownPins": 7
+  }
+}
