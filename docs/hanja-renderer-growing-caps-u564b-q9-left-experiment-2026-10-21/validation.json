@@ -1,0 +1,60 @@
+{
+  "schema": "isolated-Q9-growing-caps-validation-v1",
+  "date": "2026-10-21",
+  "configSHA256": "c8e8e289accbe2fe65dd4f5b2fcbdd639b0dbc49fa6a5ad524a0904ff78a67cd",
+  "newFilesSHA256": {
+    "README.md": "551474e163518519b09fa41d6de34fd29a2a205c58533108b489b28c1cff1526",
+    "check.mjs": "29741242d34bfe86b7b090c1ba583b5351a78ae528e272220b85d413f690d680",
+    "config.json": "c8e8e289accbe2fe65dd4f5b2fcbdd639b0dbc49fa6a5ad524a0904ff78a67cd",
+    "render.mjs": "45a1bfad47389a1c85f3fdc9b8cd15674fad3b84d34c2b3920deea269759f612",
+    "serve.py": "43ea3e9f993a6f9c55906db53a46583aba5527644609bba1549dcfc58a5d9113"
+  },
+  "inputPins": 52,
+  "execution": {
+    "sourceProjection": 0,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "tailDerive": 0,
+    "engine": 0,
+    "focused": 1,
+    "certificates": 1,
+    "HTTP": 0,
+    "UI": 0,
+    "server": 0,
+    "build": false,
+    "negativeGuards": 69,
+    "mockFrames": 7,
+    "ordinaryParity": 126,
+    "direct9m1Parity": 9,
+    "nodeSyntax": 2,
+    "pythonAST": 1,
+    "embeddedJS": 1,
+    "helperGuard": 1,
+    "metadata": 1,
+    "oldChecksRepeated": 0
+  },
+  "sourceGeometrySHA256": "4a57bb3f1bde763a5d97f895413748f2d1e05a528650e000e365c515c0ddd2e6",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "appUI": false,
+  "failures": [
+    {
+      "stage": "pre-check patch validation",
+      "reason": "one patch repeated same serve.py operation three times; tool rejected atomically",
+      "filesChanged": 0,
+      "testsRun": 0,
+      "certificatesRun": 0,
+      "recovery": "single serve.py operation with three ordered hunks"
+    }
+  ],
+  "firstFocusedPassed": true,
+  "firstSyntaxAllPassed": true,
+  "firstHelperGuardPassed": true,
+  "sourceCounts": {
+    "pens": 15,
+    "masks": 17,
+    "polygons": 33
+  },
+  "initialCertificateOnly": true,
+  "actualUAMeasured": false
+}
