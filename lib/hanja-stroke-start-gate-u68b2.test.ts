@@ -70,7 +70,7 @@ test('梲 distance metadata matches same-frame caps and clears on cleanup',()=>{
 test('梲 enumerable source fields reject inherited and nonenumerable extra-key swaps',()=>{
  let cases=0
  for(const mode of['inherited','nonenumerable']as const){
-  const x=clone(),segment=x[2][0],expectedKeys=Object.keys(segment).length,weight=segment.weight
+  const x=clone(),segment=x[5][1],expectedKeys=Object.keys(segment).length,weight=segment.weight
   if(mode==='inherited'){delete (segment as Partial<typeof segment>).weight;Object.setPrototypeOf(segment,{weight})}else Object.defineProperty(segment,'weight',{value:weight,enumerable:false,writable:true,configurable:true})
   Object.assign(segment,{extra:true});assert.equal(Object.keys(segment).length,expectedKeys);assert.equal(segment.weight,weight)
   assert.equal(reviewedU68b2Context(x),null)
