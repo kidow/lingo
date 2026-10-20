@@ -1,0 +1,175 @@
+{
+  "schema": "actual-frozen-u6303-harness-validation-v1",
+  "date": "2026-10-21",
+  "configSHA256": "ca230ca361f49552b3f8305f2328f9a40ce079221dcb8c5f3851d8102ad3c525",
+  "ownSHA256": {
+    "config.json": "ca230ca361f49552b3f8305f2328f9a40ce079221dcb8c5f3851d8102ad3c525",
+    "check.mjs": "1cba906e500e096a10de43e72a16a5c14ea542216143bd781b01a3e8c74534e8",
+    "browser.js": "b370a4e9a603b053518b91db78e36fb6e5d8577e6479e6b34c86fcebe5950d5e",
+    "serve.py": "ece92d379771ed9218d8805342f59f123411dc8e25a2f8df851095eba86ada01",
+    "README.md": "c385f93a7e28111c2e878b1fbff5cc160b227c11f443227e44044fcf9cd7cc79"
+  },
+  "focus": {
+    "attempts": 1,
+    "firstPass": true,
+    "result": {
+      "passed": true,
+      "resourcesExecutions": 1,
+      "SSRActualComponent": true,
+      "SSRRenderCount": 6,
+      "sourceTranspileCounts": {
+        "commonJS": 9,
+        "ESM": 9
+      },
+      "extractedMockHelperTranspiles": 1,
+      "controlledIntermediateSSRStateSeeded": true,
+      "actualHydrationExecuted": false,
+      "actualAppPolicyParitySamples": 45,
+      "negative": 104,
+      "exactFiveTargetDOMAttributes": true,
+      "penAndMaskKeysUnique": true,
+      "internalConnectedMeasurementNoPathLength": true,
+      "displayPathLength1": true,
+      "snapshotAppBytesOnly": true,
+      "allSourceFieldsUnchanged": true,
+      "frameStatusIncludesEveryTarget": true,
+      "registryExecuted": false,
+      "sourceGeometryExecutions": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "HTTP": 0,
+      "server": 0,
+      "UI": 0,
+      "actualAppUI": false,
+      "routes": 17,
+      "distanceAttributeContract": true,
+      "missingDistanceExplicitFalse": true,
+      "observerDoesNotCoerceMissingDistanceToZero": true,
+      "sourceHashes": {
+        "component": "2f0009c6a37ac9c6f9f8f63ddff904bd3949907d6a97bd42a9aaa3d453ddcd1d",
+        "outline": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+        "gate": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+        "si": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+        "di": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+        "can": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7",
+        "u6303": "9774d49905f6d8f98c18d8e585296769065916f40de9a84e09254ea4b73c7ef8",
+        "u7277": "43757c391fc54957e04ae8f7116aa57dce06c8dc49f700b62ca2a4bd6046946b",
+        "timing": "4693b19ebe23b4248f8002f700aa38506799b6859f54a2492ec4fe7898f5e543"
+      }
+    }
+  },
+  "snapshotCheck": {
+    "attempts": 1,
+    "firstPass": true,
+    "result": {
+      "passed": true,
+      "focusedExecutions": 1,
+      "snapshots": 3,
+      "negative": 77,
+      "exactPathAndExpectedSHAPairs": true,
+      "snapshotTamperingRejected": true,
+      "privateBindingsUnchanged": true,
+      "liveAppFilesReadThisCheck": 0,
+      "componentBrowserReviewed": false,
+      "actualAppUI": false,
+      "runtime": false,
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "oldActualRerun": false,
+      "UI": 0,
+      "server": 0,
+      "Git": 0,
+      "build": 0
+    }
+  },
+  "syntax": {
+    "attempts": 1,
+    "NodeFiles": 4,
+    "declarationAST": 1,
+    "PythonAST": 1,
+    "helperGuard": 1,
+    "passed": true,
+    "results": [
+      {
+        "name": "snapshot-resolver-Node",
+        "status": 0
+      },
+      {
+        "name": "snapshot-check-Node",
+        "status": 0
+      },
+      {
+        "name": "harness-check-Node",
+        "status": 0
+      },
+      {
+        "name": "browser-Node",
+        "status": 0
+      },
+      {
+        "name": "resolver-declaration-AST",
+        "status": 0
+      },
+      {
+        "name": "serve-Python-AST",
+        "status": 0
+      },
+      {
+        "name": "harness-guard",
+        "status": 0
+      }
+    ]
+  },
+  "sourceCompilerCalls": 0,
+  "sourceFactoryCalls": 0,
+  "sourceGeometryExecutions": 0,
+  "tailDerivations": 0,
+  "engineRuns": 0,
+  "registryExecuted": false,
+  "sourceTranspileSSR": {
+    "pending": false,
+    "authorResourcesExecutions": 1,
+    "commonJSTranspiles": 9,
+    "ESMTranspiles": 9,
+    "extractedMockHelperTranspiles": 1,
+    "SSRActualComponentRenders": 6,
+    "SSRIdleRenders": 1,
+    "SSRControlledMidRenders": 5,
+    "noOriginalAppTestsExecuted": true
+  },
+  "actualAppUI": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "runtimeRegistered": false,
+  "runtimeApplied": false,
+  "serverStarted": false,
+  "PID": null,
+  "HTTP": false,
+  "UI": false,
+  "buildExecuted": false,
+  "GitExecuted": false,
+  "snapshotHistoricalApprovalFalsePermanent": true,
+  "SSRControlledIntermediateStateSeeding": true,
+  "actualHydrationExecuted": false,
+  "newScopeOnly": true,
+  "finalMetadataCheck": {
+    "attempts": 1,
+    "passed": true,
+    "exactScope": 13,
+    "snapshotFiles": 7,
+    "harnessFiles": 6,
+    "inputPins": 128,
+    "ownPins": 5,
+    "mismatch": 0,
+    "appBufferSnapshots": 3,
+    "oldTestsRepeated": 0
+  },
+  "nativeApproval": false,
+  "authoringHistory": {
+    "focusedSnapshotFirstPass": true,
+    "focusedHarnessFirstPass": true,
+    "syntaxFirstPass": true,
+    "metadataFirstPass": true,
+    "failures": 0,
+    "actualBrowserOrHydrationObserved": false
+  }
+}
