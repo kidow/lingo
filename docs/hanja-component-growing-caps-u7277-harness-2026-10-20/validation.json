@@ -1,0 +1,141 @@
+{
+  "schema": "actual-frozen-u7277-component-harness-validation-v1",
+  "date": "2026-10-20",
+  "configSHA256": "1d419a5d64f6db28247071292ff197ee2de22e5f2fe0c10baf70565fb6914eb8",
+  "ownSHA256": {
+    "config.json": "1d419a5d64f6db28247071292ff197ee2de22e5f2fe0c10baf70565fb6914eb8",
+    "serve.py": "db65f59023219a9393638e2489fb32f98e5ddc08e0271bb2114847b2f5dc38e3",
+    "browser.js": "d9cb7868789955a2fd2bf82ccf492c14586f9958cdf0b53e50550762d0be4be7",
+    "check.mjs": "a37a5a225ad81eac74ad0b6e40602acd8ab8f95591db2d074f3671879621384b",
+    "README.md": "f2c0c0e26427895562b15ffcd991f5e54f0471b6e915679ea5ebf9659ab0b00e"
+  },
+  "focus": {
+    "executions": 1,
+    "status": "PASS",
+    "exitCode": 0,
+    "resourcesExecutions": 1,
+    "SSRRenderCount": 5,
+    "controlledIntermediateSSRStateSeeded": true,
+    "actualHydrationExecuted": false,
+    "paritySamples": 36,
+    "negative": 84,
+    "repeated": false,
+    "stdout": {
+      "passed": true,
+      "resourcesExecutions": 1,
+      "SSRActualComponent": true,
+      "SSRRenderCount": 5,
+      "controlledIntermediateSSRStateSeeded": true,
+      "actualHydrationExecuted": false,
+      "actualAppPolicyParitySamples": 36,
+      "negative": 84,
+      "exactFourTargetDOMAttributes": true,
+      "penAndMaskKeysUnique": true,
+      "internalConnectedMeasurementNoPathLength": true,
+      "displayPathLength1": true,
+      "snapshotAppBytesOnly": true,
+      "allSourceFieldsUnchanged": true,
+      "frameStatusIncludesEveryTarget": true,
+      "registryExecuted": false,
+      "sourceGeometryExecutions": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "HTTP": 0,
+      "server": 0,
+      "UI": 0,
+      "actualAppUI": false,
+      "routes": 16,
+      "distanceAttributeContract": true,
+      "missingDistanceExplicitFalse": true,
+      "observerDoesNotCoerceMissingDistanceToZero": true,
+      "sourceHashes": {
+        "component": "64ccda53de43acacac1d8308c4095a62623822fa36bad71cc35b144bc2f70e5b",
+        "outline": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+        "gate": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+        "si": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+        "di": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+        "can": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7",
+        "u7277": "43757c391fc54957e04ae8f7116aa57dce06c8dc49f700b62ca2a4bd6046946b",
+        "timing": "4693b19ebe23b4248f8002f700aa38506799b6859f54a2492ec4fe7898f5e543"
+      }
+    }
+  },
+  "syntax": {
+    "node": {
+      "executions": 4,
+      "files": [
+        "snapshot/resolver.mjs",
+        "snapshot/check.mjs",
+        "harness/check.mjs",
+        "harness/browser.js"
+      ],
+      "passed": true
+    },
+    "declarationAST": {
+      "executions": 1,
+      "diagnostics": 0,
+      "passed": true
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "passed": true,
+      "server": 0,
+      "HTTP": 0
+    },
+    "oldSyntaxRepeated": false
+  },
+  "sourceCompilerCalls": 0,
+  "sourceGeometryExecutions": 0,
+  "tailDerivations": 0,
+  "engineRuns": 0,
+  "registryExecuted": false,
+  "actualAppUI": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "runtimeRegistered": false,
+  "serverStarted": false,
+  "HTTP": 0,
+  "UI": 0,
+  "buildExecuted": false,
+  "GitExecuted": false,
+  "snapshotHistoricalApprovalFalsePermanent": true,
+  "SSRControlledIntermediateStateSeeding": true,
+  "actualHydrationExecuted": false,
+  "newScopeOnly": true,
+  "snapshotCheck": {
+    "executions": 1,
+    "passed": true,
+    "snapshots": 3,
+    "negative": 77,
+    "repeated": false,
+    "stdout": {
+      "passed": true,
+      "focusedExecutions": 1,
+      "snapshots": 3,
+      "negative": 77,
+      "exactPathAndExpectedSHAPairs": true,
+      "snapshotTamperingRejected": true,
+      "privateBindingsUnchanged": true,
+      "liveAppFilesReadThisCheck": 0,
+      "componentBrowserReviewed": false,
+      "actualAppUI": false,
+      "runtime": false,
+      "sourceCompiles": 0,
+      "engineRuns": 0,
+      "oldActualRerun": false,
+      "UI": 0,
+      "server": 0,
+      "Git": 0,
+      "build": 0
+    }
+  },
+  "finalMetadataCheck": {
+    "executions": 1,
+    "scope": "exact13/input88/harnessOwn5/snapshotBytes/false states only",
+    "passed": true,
+    "mismatches": 0
+  }
+}
