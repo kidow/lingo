@@ -1,0 +1,12 @@
+export type SelectedProofIdentity=Readonly<{sourceRoot:'u90b0';sourceProofFile:'engine-whole-u90b0.json';sourceProofFileSha256:'b19f2a5114acb5851aaac25d09b003366d73b2f5f0e70205772716d58313b5c2';sourceHeaderFile:'engine-proof.json';sourceHeaderFileSha256:'d137e247819ed2a62185f045fb97dc24f48632cfbb1d210f6cdb6ffe88d58e8d'}>;
+export declare const sourceRoot:'u90b0',selectedProofIdentity:SelectedProofIdentity,nativeApproval:false,runtimeApplied:false,actualAppUI:false;
+export declare const sourceGroups:readonly(readonly number[])[];
+export declare function captureProjection(trace:unknown,proof:unknown,identity:SelectedProofIdentity):unknown;
+export declare function compileProgressive(trace:unknown,proof:unknown,identity:SelectedProofIdentity):unknown[][];
+export declare function compileSourceWhole(root:'u90b0',trace:unknown,proof:unknown,identity:SelectedProofIdentity):unknown[][];
+export declare function traceProjectionCallCount():number;
+export declare function newInternalRawProjectorCallCount():number;
+export declare function cachedPositiveCallCount():number;
+export declare function originalSourceCompilerCallCount():0;
+export declare function existingFactoryCallCount():0;
+export declare function renderProgressive(strokes:unknown[][],stroke:number,progress:number,prefix?:string):string;
