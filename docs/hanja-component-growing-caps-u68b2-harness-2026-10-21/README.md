@@ -13,3 +13,5 @@ root controls: whole11, prefix5/6/7/11(기본prefix는현재획75%;정확완료�
 CLI: python3 docs/hanja-component-growing-caps-u68b2-harness-2026-10-21/serve.py --port 0
 
 준비검사 실제이력: snapshot 최초1 PASS(음성77). harness resources4회(각SSR2/CJS17/ESM17)가필요prerequisite로산출됐습니다. 첫counts15/16/30 잔재FAIL→미실행tail에서ordinaryTails0잔재FAIL→미실행tail에서mock끝라벨잔재FAIL→그이후mock/parity tailPASS입니다. 통과assertions/APP9/snapshot77/standaloneguard는반복0입니다. resources의SSR생성누계8/TS CJS68·ESM68을기하컴파일0과구분합니다. 마지막신규mockhelper transpile1/negative24/targetparity9/ordinary90 PASS, Node구문누계7/declAST1/PyAST1/helperguard1. prior context의source미완기록은준비당시부분관찰이며다른별도최신review를대체하지않습니다.
+
+후속 선언정정: resolver.d.mts의복사리터럴glyph:'潗'를실제resolver와같은'梲'로부분수정했습니다. 원APP3/TSX/source/fixture/runtime모든bytes와승인false는불변입니다. snapshotcheck의자체핀과실제glyph/선언문자열대조를보강하고하네스input·자체핀만따라갱신했습니다. 기존focused/APP/snapshot77/resources/guard/SSR은반복0, changeddeclAST1+정확문자열·핀metadata1만확인합니다.

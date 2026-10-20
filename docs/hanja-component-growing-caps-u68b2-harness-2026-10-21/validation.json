@@ -1,13 +1,13 @@
 {
   "schema": "u68b2-frozen-component-harness-preparation-v1",
   "date": "2026-10-21",
-  "configSHA256": "2c1f68c6ee917577de6f639f0d770db776ebc6918a0df623771e3e8746d81e9e",
+  "configSHA256": "f4686b8a866173d8307424ed23a48a55a6e442664c406dd973a881c07aa92eb7",
   "ownSHA256": {
-    "config.json": "2c1f68c6ee917577de6f639f0d770db776ebc6918a0df623771e3e8746d81e9e",
+    "config.json": "f4686b8a866173d8307424ed23a48a55a6e442664c406dd973a881c07aa92eb7",
     "check.mjs": "98d5a9f7525f5c5b55c987fb8c21cad0c7405b5a27bcdc4bf24a4b8e9bc3b3d9",
     "browser.js": "da542852b4ae25ee6796047dc086f08a96b96182d1723873ab242e6bb5e2c4df",
     "serve.py": "dc155383f6f217d09aabe2195397ab1d70ad43a77ac0f240138c722a2bb59f8b",
-    "README.md": "bb225f2c37ea212c096dde47bb926c5e68db775aedf50be563d92719edb819f0"
+    "README.md": "1aab5de24737db1b8d5e6eba147edff088ca67274ff6587bf610bc4ac7e6d617"
   },
   "inputPins": 154,
   "ownPins": 5,
@@ -78,8 +78,11 @@
     "status": "PASS"
   },
   "metadata": {
-    "executions": 1,
-    "status": "PASS"
+    "initialFinalMeta": 1,
+    "declarationCorrectionMeta": 1,
+    "status": "PASS",
+    "existingFocusedRepeated": 0,
+    "resourcesRepeated": 0
   },
   "appAuthorHistory": {
     "orchestrationSyntaxFailures": 2,
@@ -116,5 +119,13 @@
   "UI": 0,
   "server": 0,
   "Git": 0,
-  "build": 0
+  "build": 0,
+  "declarationCorrection": {
+    "from": "潗",
+    "to": "梲",
+    "changedDeclarationAST": 1,
+    "exactLiteralAndPinsMeta": 1,
+    "APPFilesChanged": 0,
+    "snapshotFocusedRepeated": 0
+  }
 }
