@@ -1,0 +1,104 @@
+{
+  "schema": "source-specific-u68b2-HQ6-Q-growing-preparation-v1",
+  "date": "2026-10-21",
+  "glyph": "梲",
+  "configSHA256": "dc76f2e34b88d343d78f33e7b636fe2a30dbdaae3d665d33c372658dec5bea8f",
+  "newFilesSHA256": {
+    "config.json": "dc76f2e34b88d343d78f33e7b636fe2a30dbdaae3d665d33c372658dec5bea8f",
+    "render.mjs": "f02c70b18a4b2c641ddcf27568299274d5de7e6c76a44ce6289e779f7c4ed85c",
+    "check.mjs": "dcaf34ac7a4c6d8d943b4edd46095d885de05a4176f779a4ab3764e71e76faa6",
+    "serve.py": "ce9b912bd6f0be3827d75c3fe518ea5823b86c0c64a5c068fc57d510625e3d07",
+    "README.md": "ea3d9a3be2a6832fbd900e9db774d11d14fbf79e3975c909ec194f3ac31a8de1"
+  },
+  "inputPins": 41,
+  "ownPins": 5,
+  "focus": {
+    "status": "PASS: first prefix plus failed-only recovery tail",
+    "executions": 2,
+    "initialFailure": 1,
+    "recoveryPass": 1,
+    "passedPrefixRepeated": 0,
+    "ordinaryCumulative": 99,
+    "ordinaryRecovery": 0,
+    "mockFramesCumulative": 7,
+    "sourceFieldsUnchanged": true
+  },
+  "syntax": {
+    "renderNode": 1,
+    "checkNode": 2,
+    "helperPythonAST": 1,
+    "embeddedBrowserNode": 1,
+    "allPassed": true
+  },
+  "metadata": {
+    "status": "PASS expected by following single final exact-pin/JSON check",
+    "executions": 1,
+    "inputPins": 41,
+    "ownPins": 5
+  },
+  "sourceGeometryExecutions": 0,
+  "sourceProjectionExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "sourceFactoryCalls": 0,
+  "engineRuns": 0,
+  "newTailPartitions": 0,
+  "oldSourceChecksRepeated": 0,
+  "oldRendererChecksRepeated": 0,
+  "HTTP": 0,
+  "UI": 0,
+  "server": 0,
+  "Git": 0,
+  "build": 0,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "ownCertificate": {
+    "T": "1/3",
+    "K": "1/40",
+    "minimumT": "27303/141124",
+    "Smin": "6205081/35281",
+    "crossAbs": "2491/25",
+    "chordSquared": "15832489/202500",
+    "curvatureSquaredMargin": "1612824317982534599889/439159880930410000",
+    "rK": "7/40",
+    "cosLower": "3151/3200",
+    "cosMargin": "2591/3200",
+    "ownInitialArcOnly": true,
+    "notRasterOrWholePConnectivityProof": true
+  },
+  "originalNativeHoldPreserved": true,
+  "pen11UP5Unmodified": true,
+  "history": [
+    {
+      "phase": "first focused",
+      "status": "FAIL after passed prefix",
+      "passed": [
+        "source-fullgeometry-pins",
+        "ownQmath",
+        "target-negatives",
+        "UA-mocks",
+        "ordinary99",
+        "private-public-geometry"
+      ],
+      "failure": "copied prefix4 expected completed target6 before target existed",
+      "sourceOrRendererChanged": false
+    },
+    {
+      "phase": "failed-only recovery",
+      "status": "PASS",
+      "passedPrefixSHA256": "0f7a5a73e8fa68edee020181f1bd3f9c1b969859dac4d7cae66742d8947af07f",
+      "passedPrefixRepeated": 0,
+      "scope": "failed prefix7 assertion and previously unexecuted coverage/helper tail",
+      "PythonAST": 1,
+      "helperGuards": 1,
+      "newRouteNegative": 9,
+      "browserSyntax": 1
+    }
+  ],
+  "certificateInitializations": {
+    "firstFocused": 1,
+    "recoveryPrerequisite": 1,
+    "total": 2,
+    "sourceGeometry": 0
+  }
+}
