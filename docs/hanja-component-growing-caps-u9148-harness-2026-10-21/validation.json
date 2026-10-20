@@ -1,0 +1,143 @@
+{
+  "schema": "actual-frozen-u9148-harness-preparation-v1",
+  "date": "2026-10-21",
+  "configSHA256": "775046b3c365fc70d1a65b7538de5cdcc84ae1b5bcc3ab0df6fa6e161c760ac4",
+  "ownSHA256": {
+    "check.mjs": "c3c84989adb9a06fc2b9f52044d63c40825cdf9a8cb99f683e0bbb8df2524626",
+    "browser.js": "2d1a7ec047d1dd09557952ff7ed85e7a90d7c91418ef9679bad6ef0b29150ca3",
+    "serve.py": "2e52e0e6d5afd450f4faed2af3e3c28ba855c620c81832cf1a6b9044f56aabd0",
+    "README.md": "0db0af459fd1280fef7cc603a0382756f291c7ae72b3c4380578789082b35849",
+    "config.json": "775046b3c365fc70d1a65b7538de5cdcc84ae1b5bcc3ab0df6fa6e161c760ac4"
+  },
+  "focus": {
+    "status": "PASS",
+    "executions": 1,
+    "result": {
+      "passed": true,
+      "resourcesExecutions": 1,
+      "SSRActualComponent": true,
+      "SSRRenderCount": 3,
+      "sourceTranspileCounts": {
+        "commonJS": 12,
+        "ESM": 12
+      },
+      "extractedMockHelperTranspiles": 1,
+      "controlledIntermediateSSRStateSeeded": true,
+      "actualHydrationExecuted": false,
+      "actualAppPolicyParitySamples": 18,
+      "ordinaryComponentParity": {
+        "samples": 180,
+        "SSRAdditional": 360,
+        "baselineComponentTranspiles": 1,
+        "baselineComponentSHA256": "97f31915282e1d95676626a5e0b578300864b95b976b30cad311f576ab2d7564",
+        "originalComponentPoliciesUnchanged": true
+      },
+      "focusedTotalSSRCalls": 363,
+      "negative": 44,
+      "exactTwoTargetDOMAttributes": true,
+      "penAndMaskKeysUnique": true,
+      "internalConnectedMeasurementNoPathLength": true,
+      "displayPathLength1": true,
+      "snapshotAppBytesOnly": true,
+      "allSourceFieldsUnchanged": true,
+      "frameStatusIncludesEveryTarget": true,
+      "registryExecuted": false,
+      "sourceGeometryExecutions": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "HTTP": 0,
+      "server": 0,
+      "UI": 0,
+      "actualAppUI": false,
+      "routes": 20,
+      "distanceAttributeContract": true,
+      "missingDistanceExplicitFalse": true,
+      "observerDoesNotCoerceMissingDistanceToZero": true,
+      "sourceHashes": {
+        "component": "e5f11d29e6366215f539d1bb9f166cb7c5f046e316b55728b8bd6842c082fac2",
+        "outline": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+        "gate": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+        "si": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+        "di": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+        "can": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7",
+        "u9148": "8a566486c6ba4c214f89af62c5b42e270aa53ab50644d7c0bc8bd125ed1d35b4",
+        "u8cb6": "0af422a86d3eb458af58384108ad283a2119b91c435372ece85e41e766939c07",
+        "u7037": "ec09bcea8d5a8557a3d27d754cbfae86df07857bc496da08693fbb0e341a3868",
+        "u6303": "9774d49905f6d8f98c18d8e585296769065916f40de9a84e09254ea4b73c7ef8",
+        "u7277": "43757c391fc54957e04ae8f7116aa57dce06c8dc49f700b62ca2a4bd6046946b",
+        "timing": "4693b19ebe23b4248f8002f700aa38506799b6859f54a2492ec4fe7898f5e543"
+      }
+    }
+  },
+  "snapshotCheck": {
+    "status": "PASS",
+    "executions": 1,
+    "negative": 77
+  },
+  "syntax": {
+    "status": "PASS",
+    "nodeFiles": 4,
+    "nodeEachExecutions": 1,
+    "declarationAST": 1,
+    "PythonAST": 1,
+    "staticGuard": 1,
+    "declarationSetupErrorsBeforeParse": 2,
+    "successfulChecksRepeated": 0
+  },
+  "sourceCompilerCalls": 0,
+  "sourceFactoryCalls": 0,
+  "sourceGeometryExecutions": 0,
+  "tailDerivations": 0,
+  "engineRuns": 0,
+  "registryExecuted": false,
+  "sourceTranspileSSR": {
+    "status": "PASS",
+    "startupCommonJS": 12,
+    "startupESM": 12,
+    "startupSSR": 3,
+    "focusedExtraMockTranspile": 1,
+    "focusedExtraBaselineComponentTranspile": 1,
+    "focusedTotalTranspiles": 26,
+    "ordinaryParityPairs": 180,
+    "ordinaryExtraSSR": 360,
+    "focusedTotalSSR": 363
+  },
+  "actualAppUI": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "runtimeRegistered": false,
+  "runtimeApplied": false,
+  "serverStarted": false,
+  "PID": null,
+  "HTTP": false,
+  "UI": false,
+  "buildExecuted": false,
+  "GitExecuted": false,
+  "snapshotHistoricalApprovalFalsePermanent": true,
+  "SSRControlledIntermediateStateSeeding": true,
+  "actualHydrationExecuted": false,
+  "newScopeOnly": {
+    "snapshotFiles": 7,
+    "harnessFiles": 6,
+    "oldTestsExecuted": 0,
+    "sourceGeometryExecutions": 0
+  },
+  "pinUnion": {
+    "inputs": 118,
+    "own": 5
+  },
+  "nativeApproval": false,
+  "authoringHistory": [
+    {
+      "kind": "declarationASTToolSetupFailure",
+      "attempts": 2,
+      "declarationParses": 0,
+      "reason": "REPL module namespace exposed no TypeScript API; recovered only unexecuted declaration AST in standalone Node",
+      "previousNode4Python1ChecksRepeated": 0
+    }
+  ],
+  "finalMetadataCheck": {
+    "status": "PASS",
+    "executions": 1,
+    "scope": "exact13 digests/input118+own5/false flags and counts only; no prior checks repeated"
+  }
+}

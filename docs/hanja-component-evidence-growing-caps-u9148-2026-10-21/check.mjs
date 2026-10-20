@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {historicalAppSnapshotBindings,verifyHistoricalAppSnapshotBytes,readHistoricalAppSnapshot,historicalEvidence} from './resolver.mjs';
+const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+const EXPECTED=[{"originalPath":"lib/hanja-stroke-start-gate-u9148.ts","expectedSHA256":"8a566486c6ba4c214f89af62c5b42e270aa53ab50644d7c0bc8bd125ed1d35b4","snapshot":"lib__hanja-stroke-start-gate-u9148.ts.source.txt"},{"originalPath":"lib/hanja-stroke-start-gate-u9148.test.ts","expectedSHA256":"19babf44a44f81fb82069632db194c9eda780659888262a87acccad107bc6143","snapshot":"lib__hanja-stroke-start-gate-u9148.test.ts.source.txt"},{"originalPath":"components/hanja/stroke-outlines.tsx","expectedSHA256":"e5f11d29e6366215f539d1bb9f166cb7c5f046e316b55728b8bd6842c082fac2","snapshot":"components__hanja__stroke-outlines.tsx.source.txt"}],OWN={"resolver.mjs":"7cd4bf4e65fbed75fdd362f77a032398d2897955ed9f7964f61bb4cd1dd24dfb","resolver.d.mts":"ca06df443cc9f9d9dc6faebc00e9afe83ed6c00d59e368cafad786889db5fc48","README.md":"2f8f7280bb9ac27d56ef3e36167136d0fc0e52f5d0b54a78e6d11915bde4615c"};
+for(const[name,h]of Object.entries(OWN))assert.equal(sha(readFileSync(new URL(name,import.meta.url))),h,name);
+const entries=historicalAppSnapshotBindings();assert.deepEqual(entries,EXPECTED);assert.equal(entries.length,3);
+assert(Object.isFrozen(historicalEvidence));assert.equal(historicalEvidence.isolatedActualComponentBrowserVerified,false);assert.equal(historicalEvidence.actualAppUI,false);assert.equal(historicalEvidence.runtimeRegistered,false);assert.equal(historicalEvidence.runtimeApplied,false);assert.equal(historicalEvidence.approvalStatusLivesInFutureRuntimeReview,true);
+let negative=0;const reject=fn=>{assert.throws(fn);negative++};
+for(const e of entries){const b=readHistoricalAppSnapshot(e.originalPath,e.expectedSHA256);assert(Buffer.isBuffer(b));assert.equal(sha(b),e.expectedSHA256);assert.equal(sha(readFileSync(new URL(e.snapshot,import.meta.url))),e.expectedSHA256);assert.strictEqual(verifyHistoricalAppSnapshotBytes(e.originalPath,e.expectedSHA256,b),b);
+ for(const altered of[Buffer.concat([b,Buffer.from(' ')]),b.subarray(0,b.length-1),Buffer.concat([Buffer.from([239,187,191]),b]),Buffer.alloc(0)]){assert.notDeepEqual(altered,b);reject(()=>verifyHistoricalAppSnapshotBytes(e.originalPath,e.expectedSHA256,altered));reject(()=>verifyHistoricalAppSnapshotBytes(e.originalPath,sha(altered),altered));}
+ const bit=Buffer.from(b);bit[0]^=1;assert.notDeepEqual(bit,b);reject(()=>verifyHistoricalAppSnapshotBytes(e.originalPath,e.expectedSHA256,bit));reject(()=>verifyHistoricalAppSnapshotBytes(e.originalPath,e.expectedSHA256,b.toString('utf8')));
+ for(const p of['./'+e.originalPath,'../'+e.originalPath,e.originalPath+' ',e.snapshot,e.originalPath.toUpperCase()])reject(()=>readHistoricalAppSnapshot(p,e.expectedSHA256));
+ for(const h of['0'.repeat(64),e.expectedSHA256.toUpperCase()])reject(()=>readHistoricalAppSnapshot(e.originalPath,h));
+ const other=entries.find(x=>x.originalPath!==e.originalPath);reject(()=>verifyHistoricalAppSnapshotBytes(e.originalPath,e.expectedSHA256,readHistoricalAppSnapshot(other.originalPath,other.expectedSHA256)));
+ for(const args of[[],[e.originalPath],[e.originalPath,e.expectedSHA256,'extra']])reject(()=>Reflect.apply(readHistoricalAppSnapshot,null,args));
+ for(const args of[[],[e.originalPath,e.expectedSHA256],[e.originalPath,e.expectedSHA256,b,'extra']])reject(()=>Reflect.apply(verifyHistoricalAppSnapshotBytes,null,args));
+}
+reject(()=>readHistoricalAppSnapshot('lib/hanja-strokes.ts',entries[0].expectedSHA256));reject(()=>readHistoricalAppSnapshot(null,entries[0].expectedSHA256));reject(()=>readHistoricalAppSnapshot(entries[0].originalPath,null));reject(()=>historicalAppSnapshotBindings('extra'));reject(()=>{historicalEvidence.runtimeRegistered=true});
+const changed=historicalAppSnapshotBindings();changed[0].originalPath='changed';changed[0].expectedSHA256='0'.repeat(64);assert.deepEqual(historicalAppSnapshotBindings(),EXPECTED);
+console.log(JSON.stringify({passed:true,focusedExecutions:1,snapshots:3,negative,exactPathAndExpectedSHAPairs:true,snapshotTamperingRejected:true,privateBindingsUnchanged:true,liveAppFilesReadThisCheck:0,componentBrowserReviewed:false,actualAppUI:false,runtime:false,sourceCompiles:0,engineRuns:0,oldActualRerun:false,UI:0,server:0,Git:0,build:0}));
