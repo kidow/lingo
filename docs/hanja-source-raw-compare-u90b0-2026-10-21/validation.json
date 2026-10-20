@@ -1,0 +1,127 @@
+{
+  "schema": "original-raw-static-compare-preparation-v1",
+  "date": "2026-10-21",
+  "glyph": "邰",
+  "status": "prepared-static-check-first-pass-native-unreviewed",
+  "configSHA256": "106275d99eecd81a1b638ee1870934bab46fe385988757e94e17109dcf32b3c8",
+  "ownSHA256": {
+    "serve.py": "367b11b29ec0f7f1477979ce5513f4503f68cdb5e7dd5979a4fae00e2eea55f5",
+    "check.mjs": "4764d85b7a211bf94ee40af75dbc19beecb1f5f7bc92b53acd5e27dbbe0f6355",
+    "README.md": "cd345db749abfcb7daa223892eba9247a6968cf3cb77190c7fdd06c815ff0101"
+  },
+  "sourceInputPins": 15,
+  "focused": {
+    "executions": 1,
+    "status": "passed",
+    "firstExecution": true,
+    "failedExecutions": 0,
+    "repeated": 0,
+    "output": {
+      "passed": true,
+      "pythonAST": 1,
+      "helperGuard": 1,
+      "newHelperImportedOnly": true,
+      "wholeSamples": 1,
+      "rawSamples": 11,
+      "prefixSamples": 11,
+      "originalPolygonsExactlyOnce": 21,
+      "domesticStaticMockSamples": 16,
+      "syntheticXMLParserPositive": 1,
+      "syntheticXMLParserNegative": 1,
+      "validRoutes": 6,
+      "queryNegatives": 18,
+      "identityNegatives": 6,
+      "sourceCompilerCalls": 0,
+      "factoryCalls": 0,
+      "engineRuns": 0,
+      "HTTP": 0,
+      "server": 0,
+      "UI": 0,
+      "actualDomesticXMLFetched": false,
+      "rawGroupingAuthored": false,
+      "nativeApproval": false,
+      "inputPins": 15,
+      "ownPins": 3,
+      "actualFull5SelectedBody3Exact": true,
+      "originalIdentityKeys": 5,
+      "oldTestsRepeated": 0,
+      "geometryExecutions": 0
+    }
+  },
+  "syntax": {
+    "NodeCheck": {
+      "executions": 1,
+      "status": "passed",
+      "firstExecution": true
+    },
+    "PythonAST": {
+      "executions": 1,
+      "status": "passed",
+      "includedInFocused": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "status": "passed",
+      "includedInFocused": true
+    }
+  },
+  "originalSourceFilesChanged": false,
+  "sourceCompilerCalls": 0,
+  "factoryCalls": 0,
+  "engineRuns": 0,
+  "projectionExecutions": 0,
+  "geometryExecutions": 0,
+  "rawGroupingAuthored": false,
+  "newSourceFactory": false,
+  "newSource8": false,
+  "partialAnimation": false,
+  "domesticReferenceFetched": false,
+  "actualDomesticXMLFetched": false,
+  "privateMediaSaved": false,
+  "serverStarted": false,
+  "PID": null,
+  "UI": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "gitExecuted": false,
+  "buildExecuted": false,
+  "history": [
+    {
+      "phase": "inventory-local-reader",
+      "error": "966 review.json assumed absent; actual source-hold.json used after ENOENT",
+      "failures": 1,
+      "filesWritten": 0,
+      "geometryExecutions": 0,
+      "focusedExecutions": 0,
+      "recovered": true
+    },
+    {
+      "phase": "new-static-helper-authoring",
+      "oldNativeReviewOrSourceChecksRepeated": 0,
+      "sourceGeometryExecutions": 0,
+      "newSourceGrouping": false
+    },
+    {
+      "phase": "new-static-focused-and-syntax",
+      "focusedExecutions": 1,
+      "failedFocusedExecutions": 0,
+      "NodeCheckExecutions": 1,
+      "PythonASTExecutions": 1,
+      "helperGuardExecutions": 1,
+      "firstPass": true,
+      "oldTestsRepeated": 0,
+      "actualHTTP": 0,
+      "server": 0,
+      "UI": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0
+    }
+  ],
+  "futureRootNativeReviewRequired": true,
+  "metadata": {
+    "executions": 1,
+    "status": "passed",
+    "scope": "new config/own3/validation JSON and digests only; source pin loop and focused/syntax repeated0"
+  }
+}
