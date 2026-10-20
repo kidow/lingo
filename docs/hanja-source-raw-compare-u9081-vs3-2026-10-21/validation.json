@@ -1,0 +1,72 @@
+{
+  "schema": "u9081-vs3-raw-static-compare-validation-v1",
+  "status": "prepared-static-focused-pass-native-pending",
+  "date": "2026-10-21",
+  "configSHA256": "e5f65481c373b62e5462664f48616c6a838a6e35b6bc35fe25638491c42ece1b",
+  "ownSHA256": {
+    "serve.py": "7b0a4c436ee7a7e0a1f56c723b75664af690dfb5b918b18b0a76df5e81ac23f5",
+    "check.mjs": "9d3de463fc0fe30fe12917e08473fc70c1bd5e12fd6c2f6db4231ec343d20446",
+    "README.md": "1d1dde60c0eb4319bb1a5638cb202bc907c81374681549f75b2e150dce982047"
+  },
+  "checks": {
+    "newFocused": 1,
+    "newFocusedPassed": true,
+    "nodeSyntax": 1,
+    "nodeSyntaxPassed": true,
+    "pythonAST": 1,
+    "pythonASTPassed": true
+  },
+  "focusedResult": {
+    "inputPins": 10,
+    "ownPins": 3,
+    "wholeSamples": 1,
+    "rawSamples": 21,
+    "prefixSamples": 21,
+    "originalPolygonsExactlyOnce": 40,
+    "domesticStaticMockSamples": 34,
+    "syntheticXMLParserPositive": 1,
+    "syntheticXMLParserNegatives": 3,
+    "validRoutes": 6,
+    "queryNegatives": 18,
+    "identityNegatives": 8,
+    "HTTPDuringCheck": 0,
+    "nativeObservation": false
+  },
+  "history": {
+    "metadataReadSummaryErrors": 1,
+    "readError": "records is an object; optional map read failed before source/test execution; recovered with Object.keys",
+    "publicDomesticRAM": {
+      "nodeFetchAttempts": 1,
+      "nodeFetchSuccess": false,
+      "pythonFetchAttempts": 1,
+      "pythonFetchSuccess": true,
+      "status": 200,
+      "bytes": 9105,
+      "sha256": "6420e598ce98a33a9ead3c85650eea2fadadb1a22405fb21c94e950c80eb3dd6",
+      "rootAttributes": {
+        "id": "U9081ani",
+        "class": "ani-svg",
+        "viewBox": "0 0 1024 1152",
+        "version": "1.1"
+      },
+      "groupAttributes": {
+        "transform": "scale(1,-1) translate(12, -830)",
+        "fill": "currentColor",
+        "stroke": "none"
+      },
+      "mediaSaved": false
+    }
+  },
+  "sourceCompilerCalls": 0,
+  "factoryCalls": 0,
+  "engineRuns": 0,
+  "projectionExecutions": 0,
+  "serverStarts": 0,
+  "browserObservations": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "buildRun": false,
+  "originalFilesChanged": false,
+  "oldTestsRepeated": 0
+}
