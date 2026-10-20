@@ -1,0 +1,9 @@
+# batch1329 · 酈 런타임 준비
+
+ROOT standalone22방향과 실제 frozencomponent 검토를 결합한22p25m57 literal을 준비했습니다. actualfull5/id3·원27raw/31calls/57polygon·VQ17gap을보존합니다. raw23p23m57→VQbaseline22p23m57→기존UP19/LEFT21분리22p25m57이며 새source/compiler/cachedpositive/fixture/derive/engine0입니다. body19bounds동일, body21activeboundsminX77.9→78.85 정책을명시하고 guide·width14·bodyweight39.908568/41.473609·다른20획을보존합니다. tail12.5+5 총17.5의mask배분변경은 고정8초/획 증가가 아닙니다.
+
+실제component: whole22 exact1·prefix3/6/20·local12·rho6·firstL3·multi18·ordinarytail12·방향19/21 75%2로 controlled59(coverage action2포함)를 기록했습니다. prefix22버튼은미실행이며whole22로관찰을중복계산하지않습니다. coverage는초회helpermainmistarget후다시residual SVG2개를실제white로확인했습니다. coarse18@220/자연19·21 각8초 start .14987500001788068/.14565000001191947→1/paused 시작끝4관찰은별도입니다. 실제delta1e-6은standalone1e-10과구분하고 19bodylocal100=.9999999999999993 partial/21bodylocal100exact1/whole22exact1을구분합니다. 실제helper길이 미추출은standalone값으로채우지않았습니다. 앱controller/storage/routes/모든RAF는미검증입니다. ROOT가tab29를먼저닫고 PID46156/59970/session4483을SIGINT130으로종료하고PID부재를확인했습니다.
+
+부모1328 commit43537819312fcbfda39cf11ec79597f9816cf359/resumea61751c6c4bf9d40820ccce11c50adf725628f1e01a76e59dc1048d9acda2e83을상속합니다. canonical939 newHolds[40]는OBJECT가아닌STRING1(SHA8c8d688e72abfae1c7a928b4784035dccc8df13060900b668a7fda013379257c)이며 원9frameFAIL/나머지21획미관찰문자열을변경하지않고 resolution1을추가했습니다. ROOT 최초actual1 exit0 PASS로5745/233·historical349/resolved170/active179/refs386·targetSTRING1을확정했습니다.
+
+ROOT 최초 focused3/3 PASS(fail0,138.09625ms), verify구문1 exit0, 변경TS AST3 diagnostics0, actual1 exit0 PASS입니다. 126핀0불일치/22p25m57/family4·whole2·provider0·closure3/full5id3·새header결합0을확인했습니다. actualcomponent coarse18·coverage2·direction5202/isolatedtrue,appUIfalse/buildfalse이며 source/compiler/cachedpositive/fixture/derive/engine0입니다. agent는허용된최종metadata3 JSON/hash연결검사1만실행하며 ROOT통과3tests·구문·AST·actual verifier/이전source·SSR·app검사는반복하지않습니다. 원source/HOLD/NOTICE/snapshot/harness false와기존통과검사는보존했습니다. build/TSC/전체검사/Git/UI/server0입니다.
