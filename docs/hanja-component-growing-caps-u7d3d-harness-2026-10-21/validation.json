@@ -4,10 +4,10 @@
   "configSHA256": "3745adfe825f3d84674e773b217041c2e57981ca2c8f4ace4460a252a7a80418",
   "ownSHA256": {
     "config.json": "3745adfe825f3d84674e773b217041c2e57981ca2c8f4ace4460a252a7a80418",
-    "check.mjs": "51041d509678d9e660208df47edc40efc8ddb7143da6585a0ab9b77d3cfd3179",
+    "check.mjs": "04eddc4bb3771c491f4a52f02c3ad8a000ad23ff6df7e7958877ca0265b82c9c",
     "browser.js": "cf092d68510c5745c1d95138f1923392a747fc79048a90d43364fb840b476b60",
     "serve.py": "27c01ba35137295bec94cfd73932d82e76a4ffeea57e447f71d9438e8eacbd1a",
-    "README.md": "9a80d79a62b85dc1e3755f989b87c7e94b2ed4c04779d800ebbf581df77c1502"
+    "README.md": "aedd52b0835d0f4d72d030debde8d26c87735e95d94070a1454d861ff8bdec52"
   },
   "snapshotCheck": {
     "status": "PASS",
@@ -144,5 +144,60 @@
     "own": 5
   },
   "nativeApproval": false,
-  "authoringHistory": []
+  "authoringHistory": [
+    {
+      "date": "2026-10-21",
+      "kind": "caption-only-template-correction",
+      "rootObservation": "Before fresh actual browser review, ROOT found stale QB14/14p15m31/Q+C header; source geometry and controls were correct.",
+      "actualDefinition": "check.mjs routes HTML; serve.py unchanged",
+      "oldCaption": "紽 QB14 · 14p15m31 · Q T1/2 K1/100 · C T1/4 K1/12 · source/engine/registry0 · actualAppUI=false",
+      "newCaption": "紽 · 11p14m37 · 4Q: 1m1/2m1/2m2 T1/3 K1/20; 1m2 T1/2 K1/10 · body11m1 MLQL firstL50.5 K0 · source/engine/registry0 · actualAppUI=false",
+      "server": {
+        "pid": 72460,
+        "port": 63593,
+        "sessionId": 19784,
+        "tab": 35,
+        "tabClosedFirst": true,
+        "signal": "SIGINT",
+        "exitCode": 130,
+        "pidAbsent": true,
+        "rootConfirmed": true
+      },
+      "changes": [
+        "check.mjs HTML description string only",
+        "README.md correction history",
+        "validation.json own digests/history"
+      ],
+      "newChecks": {
+        "captionContract": {
+          "executions": 1,
+          "firstAttempt": true,
+          "status": "PASS",
+          "assertions": 8,
+          "oldCheckSHA256": "51041d509678d9e660208df47edc40efc8ddb7143da6585a0ab9b77d3cfd3179",
+          "inverseAfterReplacementSHA256": "51041d509678d9e660208df47edc40efc8ddb7143da6585a0ab9b77d3cfd3179"
+        },
+        "changedNodeSyntax": {
+          "executions": 1,
+          "firstAttempt": true,
+          "status": "PASS",
+          "exitCode": 0
+        }
+      },
+      "oldChecksRepeated": 0,
+      "SSRResourcesCalls": 0,
+      "sourceCompilerCalls": 0,
+      "sourceFactoryCalls": 0,
+      "geometryExecutions": 0,
+      "engineRuns": 0,
+      "authorUI": 0,
+      "authorServers": 0,
+      "Git": 0,
+      "build": 0,
+      "nativeApproval": false,
+      "actualComponentBrowserApproval": false,
+      "appApproval": false,
+      "runtimeApproval": false
+    }
+  ]
 }

@@ -11,3 +11,5 @@ ROOT freshcontrols: coverage5→epsilon5,whole11/prefix1·2·3·6·11,local30/rh
 ROOT만 `python3 docs/hanja-component-growing-caps-u7d3d-harness-2026-10-21/serve.py --port 0` 기동합니다. loopback/exactHost/고정22route/query거절/매GET핀검사,authorHTTP/UI/server/Git/build/Next/dev/TSC/install0입니다.
 
 새검사:firstsnapshot1(음성77)/firstharnessfocused1(SSR6,targetparity45,ordinary함수72,음성104)/Node신규4각1·declAST1·PythonAST1·startupguard1 모두최초PASS입니다. CJS14+ESM14+추출mock1 총29transpile이고sourcecompiler/factory/engine/geometry/oldtests0입니다. 입력145+own5 최종메타1,새실패0/통과검사반복0입니다. 실제component브라우저/hydration/app/runtime은false로유지합니다.
+
+2026-10-21 ROOT는 실제 검토 전 상단의 과거 템플릿 문구 `QB14/14p15m31/Q·C 인증` 오류를 발견했습니다. tab35를 먼저 닫고 PID72460/port63593/session19784를 SIGINT exit130으로 종료·PID부재 확인 후, HTML을 정의하는 check.mjs의 설명 문자열만 11p14m37·첫 QQ1/2의 4Q·body11m1 MLQL firstL50.5 정책으로 정정했습니다. serve.py/기하/앱 frozen7/브라우저 controls는 불변입니다. 이 정정은 새 native 승인 근거가 아니며 실제 검토 상태는 false입니다. 새 caption 한정 검사1·변경 Node 구문1만 수행하고 기존 SSR/resources/집중/핀 검사와 source/compiler/factory/engine/geometry는 재실행하지 않습니다.
