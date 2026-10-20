@@ -1,4 +1,5 @@
 'use client'
+import { reviewedU8cb6Context, reviewedU8cb6Policy, commitReviewedU8cb6Caps, type ReviewedU8cb6Policy } from '@/lib/hanja-stroke-start-gate-u8cb6'
 
 import { useEffect, useLayoutEffect, useId, useRef, useState, type RefObject } from 'react'
 import { STROKE_DURATION, STROKE_GAP } from '@/lib/hanja-strokes'
@@ -25,6 +26,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const quadraticContext = reviewedQuadraticCapsContext(strokes)
   const quanContext = reviewedQuanQuadraticCapsContext(strokes)
   const siContext = reviewedSiContext(strokes)
+  const u8cb6Context = reviewedU8cb6Context(strokes)
   const u7037Context = reviewedU7037Context(strokes)
   const u6303Context = reviewedU6303Context(strokes)
   const u7277Context = reviewedU7277Context(strokes)
@@ -50,6 +52,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
       const amounts = outlineSegmentProgress(segments, progress)
       return <g key={stroke} data-outline-stroke={stroke + 1}>{segments.map((segment, index) => {
         const p = amounts[index]
+        const u8cb6Policy = reviewedU8cb6Policy(u8cb6Context, stroke, index)
+        if (u8cb6Policy) return <U8cb6CapsOutline key={index} policy={u8cb6Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u7037Policy = reviewedU7037Policy(u7037Context, stroke, index)
         if (u7037Policy) return <U7037CapsOutline key={index} policy={u7037Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u6303Policy = reviewedU6303Policy(u6303Context, stroke, index)
@@ -134,6 +138,30 @@ function U6303CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU6303
     </defs>
     {valid&&progress===1&&<path key="u6303-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
     {valid&&progress>0&&progress<1&&<path key="u6303-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u6303-growing)'} visibility="hidden" />}
+  </g>
+}
+/** u8cb6 貶의 정확한 Q·C 두 마스크만 별도 원 path로 측정한다. */
+function U8cb6CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU8cb6Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>{
+    const committed=commitReviewedU8cb6Caps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current})
+    return committed.cleanup
+  },[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="growing-u8cb6-caps" data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u8cb6-measure'} data-growing-owner={clipId} data-u8cb6-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0} />
+      </mask>
+      <mask id={clipId+'-u8cb6-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u8cb6-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0} />
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+        <circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path key="u8cb6-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
+    {valid&&progress>0&&progress<1&&<path key="u8cb6-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u8cb6-growing)'} visibility="hidden" />}
   </g>
 }
 /** u7277 牷의 정확한 네 Q만 별도 원 path로 측정한다. */
