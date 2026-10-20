@@ -6,6 +6,7 @@ import { useEffect, useLayoutEffect, useId, useRef, useState, type RefObject } f
 import { STROKE_DURATION, STROKE_GAP } from '@/lib/hanja-strokes'
 import { reviewedU9148Context, reviewedU9148Policy, commitReviewedU9148Caps, type ReviewedU9148Policy } from '@/lib/hanja-stroke-start-gate-u9148'
 import { reviewedU7037Context, reviewedU7037Policy, commitReviewedU7037Caps, type ReviewedU7037Policy } from '@/lib/hanja-stroke-start-gate-u7037'
+import { reviewedU7d3dContext, reviewedU7d3dPolicy, commitReviewedU7d3dCaps, type ReviewedU7d3dPolicy } from '@/lib/hanja-stroke-start-gate-u7d3d'
 import { reviewedU6303Context, reviewedU6303Policy, commitReviewedU6303Caps, type ReviewedU6303Policy } from '@/lib/hanja-stroke-start-gate-u6303'
 import { reviewedU7277Context, reviewedU7277Policy, commitReviewedU7277Caps, type ReviewedU7277Policy } from '@/lib/hanja-stroke-start-gate-u7277'
 import { reviewedCanContext, reviewedCanPolicy, commitReviewedCanCaps, type ReviewedCanPolicy } from '@/lib/hanja-stroke-start-gate-can'
@@ -32,6 +33,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u8cb6Context = reviewedU8cb6Context(strokes)
   const u9148Context = reviewedU9148Context(strokes)
   const u7037Context = reviewedU7037Context(strokes)
+  const u7d3dContext = reviewedU7d3dContext(strokes)
   const u6303Context = reviewedU6303Context(strokes)
   const u7277Context = reviewedU7277Context(strokes)
   const canContext = reviewedCanContext(strokes)
@@ -64,6 +66,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u9148Policy) return <U9148CapsOutline key={index} policy={u9148Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u7037Policy = reviewedU7037Policy(u7037Context, stroke, index)
         if (u7037Policy) return <U7037CapsOutline key={index} policy={u7037Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+        const u7d3dPolicy = reviewedU7d3dPolicy(u7d3dContext, stroke, index)
+        if (u7d3dPolicy) return <U7d3dCapsOutline key={index} policy={u7d3dPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u6303Policy = reviewedU6303Policy(u6303Context, stroke, index)
         if (u6303Policy) return <U6303CapsOutline key={index} policy={u6303Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u7277Policy = reviewedU7277Policy(u7277Context, stroke, index)
@@ -98,6 +102,30 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
           </g>
       })}</g>
     })}
+  </g>
+}
+/** u7d3d 紽의 고정 네 Q·11MLQL만 별도 원 path로 측정한다. */
+function U7d3dCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU7d3dPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>{
+    const committed=commitReviewedU7d3dCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current})
+    return committed.cleanup
+  },[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="growing-u7d3d-caps" data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u7d3d-measure'} data-growing-owner={clipId} data-u7d3d-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0} />
+      </mask>
+      <mask id={clipId+'-u7d3d-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u7d3d-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0} />
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+        <circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path key="u7d3d-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
+    {valid&&progress>0&&progress<1&&<path key="u7d3d-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u7d3d-growing)'} visibility="hidden" />}
   </g>
 }
 /** u905d 遝의 정확한 QB14 두 마스크만 별도 원 path로 측정한다. */
