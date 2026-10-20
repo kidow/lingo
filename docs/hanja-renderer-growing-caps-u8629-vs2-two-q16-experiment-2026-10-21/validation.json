@@ -1,0 +1,217 @@
+{
+  "schema": "source-bound-two-Q16-growingcaps-preparation-v1",
+  "date": "2026-10-21",
+  "configSHA256": "a8c8c40c87a5c6c3e3d990e6e92529ab6fcc62d65371c7be9abf0a2895ca17b6",
+  "newFilesSHA256": {
+    "render.mjs": "ea6a29a043a1e11d46007c1a93ad9d3ad611f37119e761e4a10d1119c50502f1",
+    "check.mjs": "080bb7340a25f520782088037cc31c37731f689bca16adb79005fb8bfb7410ef",
+    "serve.py": "71c1e3a64ff964463e1bdec79efabf2f6589fd407107ad6a36e64691da34f77a",
+    "README.md": "ec30ef9d27f1e306cfed5798a67165986b46a191c9a2ee0d3ce68e53bd4e97e2"
+  },
+  "counts": {
+    "pens": 21,
+    "masks": 24,
+    "polygons": 54
+  },
+  "geometrySHA256": "4d858961b59c0abb02db765f3f0009b30d4333df83cae1aff2f441bc905c8192",
+  "sourceFixture": "../hanja-source-independent-qq-left-order-u8629-vs2-source-experiment-2026-10-19/fixtures.json",
+  "sourcePins": 49,
+  "sourceCompilerCalls": 0,
+  "engineRuns": 0,
+  "factoryCalls": 0,
+  "sourceDerivations": 0,
+  "focused": {
+    "executions": 3,
+    "wholeFocusedAttempts": 2,
+    "failedWholeAttempts": 2,
+    "failedOnlyContinuationAttempts": 1,
+    "failedOnlyContinuationStatus": "PASS",
+    "fullFocusedRunClaimed": false,
+    "allRequiredAssertionsAcrossDisjointRunsPassed": true,
+    "successfulPrefix": {
+      "certificates": 2,
+      "inputPins": 49,
+      "mockFrames": 14,
+      "targetNegativeAndLocalWholeBoundaryBlocksCompleted": true,
+      "negativeExactCountNotCapturedBeforeFailure": true,
+      "ordinarySamples": 71
+    },
+    "continuation": {
+      "mode": "failed-ordinary-and-unexecuted-helper-tail",
+      "status": "PASS",
+      "exitCode": 0,
+      "ordinaryExecuted": 109,
+      "priorOrdinarySamplesSkipped": 71,
+      "ordinaryCombined": 180,
+      "passedPrefixAssertionsRepeated": 0,
+      "certificateFocusedAssertionsExecuted": 0,
+      "newModuleAutomaticCertificateInitializations": 2,
+      "helperTailPassed": true
+    },
+    "sourceGeometry": 0,
+    "sourceCompilerCalls": 0,
+    "engineRuns": 0,
+    "factoryCalls": 0,
+    "HTTP": 0,
+    "UI": 0,
+    "server": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "syntax": {
+    "NodeChecks": 2,
+    "NodePassed": 2,
+    "PythonAST": 1,
+    "embeddedBrowserSyntax": 1,
+    "firstAttempt": true,
+    "oldChecksRepeated": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "appUI": false,
+  "HTTP": false,
+  "serverStarted": false,
+  "UI": false,
+  "Git": false,
+  "build": false,
+  "priorHOLD": {
+    "path": "docs/hanja-native-hold-u8629-vs2-2026-10-19.md",
+    "unchanged": true,
+    "status": "FIRSTboundary16 after secondQ separatednibFAIL",
+    "noApprovalInherited": true
+  },
+  "unmodifiedRisks": [
+    "ordinary8LEFT body/tail originalpolicy",
+    "ordinary17QQ activation not altered",
+    "all other20 ordinary policies unchanged; geometry/math not native"
+  ],
+  "independentExactQCertificates": [
+    {
+      "kind": "source-specific-Q",
+      "syntax": "M Q",
+      "T": "1/2",
+      "K": "1/90",
+      "A": [
+        "-6/1",
+        "453599999999999/100000000000000"
+      ],
+      "B": [
+        "-2/1",
+        "1/100000000000000"
+      ],
+      "aa": "565752959999999092800000000001/10000000000000000000000000000",
+      "ab": "120000000000000453599999999999/10000000000000000000000000000",
+      "bb": "40000000000000000000000000001/10000000000000000000000000000",
+      "abAtT": "280000000000000907199999999999/20000000000000000000000000000",
+      "cross": "113399999999999/12500000000000",
+      "halfSpeedSquaredLower": "565752959999999092800000000001/10000000000000000000000000000",
+      "chordSquared": "10052047359999989113600000000009/160000000000000000000000000000",
+      "speedMinimumAt": "0",
+      "parameterBound": 0.5,
+      "curvatureBound": 0.011111111111111112,
+      "initialArcMax": 7,
+      "exactDecimalRational": true,
+      "notRasterProof": true,
+      "notPolygonConnectivityProof": true,
+      "notFullSweepProof": true
+    },
+    {
+      "kind": "source-specific-Q",
+      "syntax": "M Q",
+      "T": "1/3",
+      "K": "1/50",
+      "A": [
+        "13/1",
+        "356400000000001/100000000000000"
+      ],
+      "B": [
+        "-7/1",
+        "129599999999999/50000000000000"
+      ],
+      "aa": "1817020960000000712800000000001/10000000000000000000000000000",
+      "ab": "-408810560000000226800000000001/5000000000000000000000000000",
+      "bb": "139296159999999740800000000001/2500000000000000000000000000",
+      "abAtT": "-947839360000001198800000000001/15000000000000000000000000000",
+      "cross": "5864399999999981/100000000000000",
+      "halfSpeedSquaredLower": "12004646560000002656800000000001/90000000000000000000000000000",
+      "chordSquared": "3509905360000001198800000000001/50625000000000000000000000000",
+      "speedMinimumAt": "T",
+      "parameterBound": 0.3333333333333333,
+      "curvatureBound": 0.02,
+      "initialArcMax": 7,
+      "exactDecimalRational": true,
+      "notRasterProof": true,
+      "notPolygonConnectivityProof": true,
+      "notFullSweepProof": true
+    }
+  ],
+  "requiredFreshNative": [
+    "risk16m2epsilon isolated first; then16m1epsilon",
+    "coverage16m2 then16m1 P-minus-fullround",
+    "whole3/all21directions fresh; original3/4order evidence separate",
+    "targetlocal12/rho6; nofirstL singleQ only",
+    "boundary16 before/at/after+global0epsilon95",
+    "fine/coarse21fresh as necessary; ordinary20 unchanged",
+    "natural16 eightseconds start/end only; oldHOLD not overridden",
+    "ordinary8LEFTtail and17QQ activation remain unchanged/unapproved"
+  ],
+  "history": [
+    {
+      "event": "first focused module initialization failed",
+      "error": "TypeError at POLICIES: FIXED_STROKES previous14-pen literal retained by missed blank-line replacement",
+      "exitCode": 1,
+      "certificateChecksReached": 0,
+      "inputPinAssertionsReached": 0,
+      "focusedAssertionsReached": 0
+    },
+    {
+      "event": "exact fixed whole literal replaced with bound original21p24m54; server renderSHA/ownpins updated",
+      "sourceGeometryChanged": false,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "passedChecksRepeated": 0
+    },
+    {
+      "event": "second focused reached ordinary8 global1 and failed exact shared43 parity",
+      "error": "non-target global1 forcedp1 erased original floating partial LEFTtail clip",
+      "sourcePinsPassed": 49,
+      "certificatesPassed": 2,
+      "mockFramesPassed": 14,
+      "targetNegativeAndLocalWholeBoundaryBlocksCompleted": true,
+      "ordinarySamplesPassed": 71,
+      "sourceGeometryChanged": false
+    },
+    {
+      "event": "p1 full-round override limited to new16 Q targets; active ordinary follows original float arithmetic",
+      "newModuleAutomaticCertificateInitializations": 2,
+      "explicitPassedCertificateMockAndTargetAssertionsSkipped": true,
+      "ordinarySamplesToResume": 109,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0
+    }
+  ],
+  "continuation": {
+    "configSHA256": "a8c8c40c87a5c6c3e3d990e6e92529ab6fcc62d65371c7be9abf0a2895ca17b6",
+    "sourceInputsCanonicalSHA256": "d34598fd0b450a73d03a6a54c05854aa90339cc661e2b27a510e7bf8672d391a",
+    "passedRenderPrefixSHA256": "6671666b1fe656306dabbd2affddd2b7e62a1fcbed38f594664ce32e556f54d3",
+    "originalShared43SHA256": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "passedCheckPrefixSHA256": "bc687edeca22c63abaa0a4746560b06dee609d192a962d6766c9a0bab7477e5b",
+    "previousFocusedRenderSHA256": "367c6b2f461bb7e7e115fdc14a3f7b594bfccde2fbed6d461d68712b4c4f8424",
+    "previousFocusedCheckSHA256": "5a75df8c5d7f13e826c2de46708c4143aa7905ee42bfc084fb2758f799a0c214",
+    "previousOrdinarySamplesPassed": 71,
+    "failedAndRemainingOrdinarySamples": 109
+  },
+  "finalMetadataCheck": {
+    "executions": 1,
+    "status": "PASS",
+    "files": 6,
+    "inputPins": 49,
+    "ownPins": 4,
+    "mismatch": 0,
+    "sourceGeometryUnchanged": true,
+    "controls": "risk16m2epsilon and coverageQ2 first,local12/rho6/boundary6/fine/coarse/natural",
+    "native": false,
+    "server": 0,
+    "UI": 0
+  }
+}
