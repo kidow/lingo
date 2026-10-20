@@ -17,3 +17,7 @@ partial은원connectedSVG/g/defs원path에서 L/endpoint를동일frame측정해 
 통과후body local95/99.99/99.999999/100·rho=r/firstL-end 전후와global11완료3단계,UP경계0.8781332763348043전후/0epsilon95,ordinaryUP11m2 local6,wholemasked/coarse9@220/8초naturalstart/end를검토합니다. body-local 및 tail-local은mask단독이고 main/boundary는획global입니다. sourceweight분배가달라져rho/firstL을globalp로잘못쓰지않고정확local값을따로표시합니다. 원tailtotal102.571068/비율만상속하며 고정획시간증가를주장하지 않습니다.
 
 새focused는고유초기조건을새whole/body에재결박·원함수byte보존·ordinary10×9 parity90·UP9 parity·정확UA/DOMmock및6distance필드회귀/새핀·새구문에한정1회입니다. 이전passed검사재실행0입니다. mock은실제UA측정/픽셀native를대체하지않습니다. 신규native/app/controller/storage/runtime모두false, 빌드·서버·HTTP·UI0이며ROOT만서버를시작하고검토완료/보류시정확ownedPID·포트·래퍼를종료합니다.
+
+## ROOT 최초 startup 실패와 상수핀 보정
+
+커밋 de82e7a 뒤 ROOT 최초 시작은 bind 이전 serve.py line33의 config changed로 실패했습니다. 서버/PID/HTTP/native 관찰0이며 기하 검토 실패가 아닙니다. CONFIG_SHA뿐 아니라 RENDER_SHA·FIXTURE_SHA도 이전 first-risk helper 값으로 남은 준비 오류였습니다. 새 현재 config/render/fixture의 원byte SHA 세 상수만 맞췄고 JS·source geometry·증명·기존 집중 검사·원HOLD는 바꾸지 않았습니다. 변경 Python AST와 추출 guards()의 순수 시작 검증만 새로1회 수행하며 서버를 실행하지 않습니다. 기존 focused PASS와 이 startup FAIL은 별도 이력으로 유지합니다.

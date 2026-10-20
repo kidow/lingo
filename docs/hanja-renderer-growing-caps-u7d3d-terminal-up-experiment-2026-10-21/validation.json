@@ -7,9 +7,9 @@
   "newFilesSHA256": {
     "render.mjs": "93c8a9c62d89b3b573a84f91247b5143b7682d0b490899a4a1318fdeac9873a0",
     "config.json": "5b10a0fab3938356b60986175d3dcd1c3b58e6109f88d30e78e0de6b3348ffcc",
-    "serve.py": "e8b2d9e9f8e0e2d989402c741c16528d94ac67644758df89011ec7eacc0e3892",
+    "serve.py": "7b90755932fd99c8a24810f5b5d0fa631144f5f24538668bbdf6da63eb41f65e",
     "check.mjs": "e45caa90db6f74feb2528976b2608b0fd223ac0781802a3e762c752192f03bd2",
-    "README.md": "6d81f1a195945e12bcee2ab5b26bcebb5ca1731ed06ccc73e5f44618ba006407"
+    "README.md": "1e552ccff1ba57d14a95701513177cd3ba721782d730f86b9af7b95dd85e1168"
   },
   "sourceGeometrySHA256": "987e48c251ae6a9862d508b3b435be600fb763b143adcc298990f82eec72ea25",
   "bodyMaskSHA256": "bcafe60b2990d7433e835f0702c1a02136566732a27d9fe7e4c1f9dbff458e98",
@@ -56,5 +56,51 @@
     "bodyrho7/L andfirstL50.5/L each±",
     "whole masked andnew11 direction",
     "pen11coarse9 and8secondnaturalstart/end"
-  ]
+  ],
+  "startupGuardRecovery": {
+    "rootInitialStartup": {
+      "status": "FAIL",
+      "beforeBind": true,
+      "serverStarted": false,
+      "PIDAssigned": false,
+      "HTTPRequests": 0,
+      "nativeObservations": 0,
+      "file": "serve.py",
+      "line": 33,
+      "error": "ValueError config changed",
+      "geometryFailure": false,
+      "oldServerSHA256": "e8b2d9e9f8e0e2d989402c741c16528d94ac67644758df89011ec7eacc0e3892",
+      "inheritedLiteralPinsWereStale": [
+        "CONFIG_SHA",
+        "RENDER_SHA",
+        "FIXTURE_SHA"
+      ]
+    },
+    "correction": {
+      "scope": "only three startup literal SHA constants and corresponding metadata",
+      "expectedSHA256": {
+        "CONFIG_SHA": "5b10a0fab3938356b60986175d3dcd1c3b58e6109f88d30e78e0de6b3348ffcc",
+        "RENDER_SHA": "93c8a9c62d89b3b573a84f91247b5143b7682d0b490899a4a1318fdeac9873a0",
+        "FIXTURE_SHA": "7941363c9574b6414e90a7c9d7a969f8d81e437d107c6f9fb8ca8b882500547d"
+      },
+      "newServerSHA256": "7b90755932fd99c8a24810f5b5d0fa631144f5f24538668bbdf6da63eb41f65e",
+      "sourceGeometryChanged": false,
+      "renderJSChanged": false,
+      "oldFocusedRepeated": 0
+    },
+    "pureStartupGuard": {
+      "executions": 1,
+      "status": "PASS",
+      "helperImported": false,
+      "mainCalled": false,
+      "HTTP": 0,
+      "server": 0
+    },
+    "changedPythonAST": {
+      "executions": 1,
+      "status": "PASS",
+      "diagnostics": 0,
+      "cumulativePythonASTRunsIncludingInitialPreparation": 2
+    }
+  }
 }
