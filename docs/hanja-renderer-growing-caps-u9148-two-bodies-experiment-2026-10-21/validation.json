@@ -1,0 +1,152 @@
+{
+  "schema": "u9148-two-bodies-renderer-preparation-v1",
+  "date": "2026-10-21",
+  "configSHA256": "0ac42fce0e1303d59b8cccc4e5cde41c9fb1bb18b831313db1f667430a063235",
+  "newFilesSHA256": {
+    "README.md": "6b6cca664ebfd91be231f86d224cfad85982f9c2df547a4e38d6137a18d7492c",
+    "config.json": "0ac42fce0e1303d59b8cccc4e5cde41c9fb1bb18b831313db1f667430a063235",
+    "render.mjs": "72dab4847bc22d7b0b912a1e0e940697fe338dc67bdf5fe8a46f22bdd280236f",
+    "check.mjs": "9ed5ddef49bab90df43ab133c00f0f6430ec6717fd7f619555221daa28541925",
+    "serve.py": "be92201d60584d7dd0841ecebbdaa8b4d8289cdb204fb8b0d8ad4417df174e6e"
+  },
+  "focused": {
+    "status": "PASS-after-failed-only-recovery",
+    "initialFocused": {
+      "attempt": 1,
+      "assertionFailure": "ordinary17 global1 expected byte equality",
+      "passedCertificates": 2,
+      "passedMockFrames": 14,
+      "passedNegative": 210,
+      "passedOrdinary": 152,
+      "runnerExitCode": null,
+      "runnerSignal": "SIGTERM",
+      "runnerError": "ENOBUFS",
+      "longAssertionOutputTruncated": true
+    },
+    "ordinaryRecovery": {
+      "attempt": 1,
+      "mode": "--resume-after-ordinary17",
+      "exitCode": 1,
+      "failure": "helper dynamic ID incorrectly searched as source literal",
+      "passedOldMathMockNegativeRepeated": false,
+      "passedOrdinaryAdditional": 28,
+      "ordinaryCumulative": 180,
+      "passedTailParity": 18,
+      "wholeAndFullroundChecksPassed": true,
+      "rendererCertificateReimports": 2
+    },
+    "helperRecovery": {
+      "attempt": 1,
+      "mode": "--resume-helper-contract",
+      "exitCode": 0,
+      "passed": true,
+      "helperOnly": true,
+      "priorFirstFocusedFAIL": true,
+      "priorRecoveryReachedHelperAssertion": true,
+      "passedMathMockOrdinaryTailRepeated": false,
+      "priorCertificatesCumulative": 4,
+      "priorMockFramesPASS": 14,
+      "priorOrdinaryParityPASS": 180,
+      "priorTailParityPASS": 18,
+      "helper": {
+        "passed": true,
+        "pages": 3,
+        "riskButtons": 2,
+        "uniqueIDs": true,
+        "coverageMasksDisjoint": true,
+        "HTTP": 0,
+        "server": 0
+      },
+      "sourceGeometry": 0,
+      "sourceCompiler": 0,
+      "engine": 0,
+      "UI": 0,
+      "server": 0
+    },
+    "certificateCalculationsCumulative": 4,
+    "distinctCertificates": 2,
+    "mockFrames": 14,
+    "negative": 210,
+    "ordinaryParity": 180,
+    "tailParity": 18,
+    "originalTestsExecuted": 0
+  },
+  "syntax": {
+    "renderNodeChecks": 2,
+    "checkNodeChecks": 3,
+    "embeddedBrowserNodeChecks": 1,
+    "PythonAST": 2,
+    "helperStaticGuards": 2,
+    "allExecutedChecksPASS": true,
+    "originalChecksRepeated": 0,
+    "changedOnlyRechecks": true
+  },
+  "sourcePins": 48,
+  "ownPins": 5,
+  "nativeApproval": false,
+  "appUI": false,
+  "runtimeApplied": false,
+  "sourceGeometryExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "sourceFactoryCalls": 0,
+  "engineRuns": 0,
+  "tailDerivations": 0,
+  "HTTP": 0,
+  "UI": 0,
+  "serverStarted": false,
+  "PID": null,
+  "buildExecuted": false,
+  "GitExecuted": false,
+  "originalSourceChanged": false,
+  "priorHOLDChanged": false,
+  "finalMetadataCheck": {
+    "status": "PASS",
+    "exitCode": 0,
+    "passed": true,
+    "metadataChecks": 1,
+    "files": 6,
+    "sourcePins": 48,
+    "ownPins": 5,
+    "mismatch": 0,
+    "geometry": "22p25m57",
+    "fixedFieldsUnchanged": true,
+    "oldHOLDUnchanged": true,
+    "oldSourceCompilerEngineGeometry": 0,
+    "UI": 0,
+    "server": 0,
+    "build": 0,
+    "nativeApproval": false
+  },
+  "authoringHistory": [
+    {
+      "event": "initial-source-specific-proof",
+      "lineInitialArc7": "L19 K0",
+      "cubicInitialArc7": "T1/4 K<1/10",
+      "sourceOriginalGeometryUnchanged": true
+    },
+    {
+      "event": "ordinary17-global1",
+      "kind": "harness-assertion-detected-display-calculation-difference",
+      "correctedOnlyNonTargetCurrentPenCalculation": true,
+      "shared43BytesUnchanged": true,
+      "passedPrefixSkipped": true
+    },
+    {
+      "event": "helper-control",
+      "kind": "dynamic-ID-static-literal-checker-error",
+      "correctedToMockRenderedHTML": true,
+      "helperNativeObservations": 0,
+      "HTTP": 0,
+      "sourceCompile": 0
+    },
+    {
+      "event": "metadata-only",
+      "sourcePins": 48,
+      "ownPins": 5,
+      "UI": 0,
+      "server": 0,
+      "Git": 0,
+      "build": 0
+    }
+  ]
+}
