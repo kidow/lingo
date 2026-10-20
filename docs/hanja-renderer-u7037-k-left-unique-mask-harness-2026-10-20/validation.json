@@ -1,0 +1,132 @@
+{
+  "schema": "hanja-unique-UI-coverage-ID-harness-v1",
+  "date": "2026-10-20",
+  "glyph": "瀷",
+  "root": "u7037-k",
+  "parentDirectory": "../hanja-renderer-growing-caps-u7037-k-five-targets-left-experiment-2026-10-20",
+  "parentFilesSHA256": {
+    "serve.py": "fdfd709afc238000680a5c3ab6403c07e8f25c1a2fab85ca3c3fbdf3577da93e",
+    "config.json": "c4ffe0d083e4c827856e61a569c835f994edf3f51b8cffc3939883b52d191c4e",
+    "validation.json": "a81815f7d05eaa1e3009988973ce9497f9aa9fccc9e7cbe727d2a8820c3a9736",
+    "README.md": "6f14f9630861bf4a56032ceb4cf90b6d9705a79f3ec36d8f333111abaaa9058c",
+    "render.mjs": "bdbf91c512e23a17234cd2e6859ef01ad1da25eae81cb2055593d76a01a44eb8",
+    "check.mjs": "db89f04966c2adc66f65c889b6f9904f8c1172d616a575a32858b618560af74a"
+  },
+  "ownFilesSHA256": {
+    "serve.py": "5f113458ae537ebb329e3975a646d12e85855aa707807609cf177ed485f40732",
+    "check.mjs": "2caeeb7380f9f6fcfde5b115458c39841d763f631fa04c281f20f8ccec10f0d8",
+    "README.md": "d31babad6310de14e10ece26e0d18144fc6a93707c704c7dfbf4b5fda6745d36"
+  },
+  "changeScopes": [
+    {
+      "kind": "UIIDOnly",
+      "oldButton": "coverage4m1",
+      "newButton": "risk-coverage-button-4m1",
+      "matchingGetElementByIdChanged": true,
+      "generalSVGMaskIDsUnchanged": true,
+      "epsilon4m1Unchanged": true,
+      "staticDiscovery": true,
+      "actualUAReproduction": false
+    },
+    {
+      "kind": "WholeStatusNodeOnly",
+      "wholeUnconditionallyCallsStatus": true,
+      "originalWholeMetricsNodeAbsent": true,
+      "newWholeOnlyMetricsNode": true,
+      "progressiveStatusMissingMetricsStillFails": true
+    },
+    {
+      "kind": "ExactPathRebinding",
+      "configRenderAndFixtureBase": "PARENT",
+      "repositoryBase": "HERE.parent.parent",
+      "sourceRendererBytesUnchanged": true
+    },
+    {
+      "kind": "OwnAndParentPinGuards",
+      "parentFiles": 6,
+      "ownFiles": 3,
+      "startupValidationBytesFixed": true,
+      "perGETGuards": true
+    }
+  ],
+  "sourceFixtureSHA256": "d01ecb1ffe2be961b0296a7de46e1273ec4e42232b052468f6b9fcafb466edcc",
+  "fixedGeometrySHA256": "80680f89c1bda592efb2514e8932457eb85109ab70bfe1cf8f8adcaf0e54a281",
+  "counts": {
+    "pens": 20,
+    "masks": 23,
+    "polygons": 51
+  },
+  "focused": {
+    "status": "PASS",
+    "executions": 1,
+    "exitCode": 0,
+    "negative": 4,
+    "repeated": false,
+    "stdout": {
+      "passed": true,
+      "staticDiscoveryOnly": true,
+      "allowedInverseByteEqual": true,
+      "controlIds": 19,
+      "DOMRefs": 20,
+      "maskIds": 6,
+      "IDIntersection": [],
+      "negative": 4,
+      "parentPins": 6,
+      "ownPins": 3,
+      "correctRelativeConfigRenderFixture": true,
+      "wholeMetricsNodeOnly": true,
+      "progressiveMissingMetricsStillFails": true,
+      "sourceCompiler": 0,
+      "moduleImports": 0,
+      "geometry": 0,
+      "derive": 0,
+      "engine": 0,
+      "server": 0,
+      "HTTP": 0,
+      "nativeApproval": false
+    }
+  },
+  "syntax": {
+    "node": {
+      "file": "check.mjs",
+      "executions": 1,
+      "passed": true
+    },
+    "pythonAST": {
+      "file": "serve.py",
+      "executions": 1,
+      "passed": true
+    },
+    "existingSyntaxRepeated": false
+  },
+  "toolingHistory": [
+    {
+      "stage": "prewriteRAMOrchestration",
+      "parseFailures": 2,
+      "toolCallsDuringFailures": 0,
+      "fileChanges": 0,
+      "checks": 0,
+      "geometry": 0,
+      "recovery": "bounded separate RAM text assembly"
+    }
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "appUI": false,
+  "actualBrowserExecuted": false,
+  "serverStarted": false,
+  "HTTPRequested": false,
+  "moduleImports": 0,
+  "sourceCompilerCalls": 0,
+  "geometryGenerated": 0,
+  "tailDerivations": 0,
+  "engineRuns": 0,
+  "oldChecksRepeated": false,
+  "buildExecuted": false,
+  "finalMetadataCheck": {
+    "executions": 1,
+    "passed": true,
+    "scope": "new4 own3 pins/false-state only",
+    "existingChecksRepeated": false
+  }
+}
