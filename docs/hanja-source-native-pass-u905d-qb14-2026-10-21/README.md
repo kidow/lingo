@@ -1,0 +1,11 @@
+# 遝 QB14 standalone PASS · 앱 전용 두mask 정책 준비
+
+ROOT가 수정serve ef29fe7f256fca8235c9d0fe0d944c7861a57fdb2f5e638580fb30b9bfca919e의인앱tab28/browser2·517×767패널에서whole3·국내14방향75%(28SVG)·risk14m1epsilon·Q/Ccoverage2white·local12(최초epsilon1+나머지11)·rho6±1e-10·QB경계6±1e-10및0epsilon95·완료fine3·pen14coarse9nominal220을PASS로관찰했습니다. coarse는기록된indices0/2/3/5/6/8뷰로모든9장면을확인했으며다른13획coarse를새native로부풀리지않습니다. helperL은23.169580459594727/66.84164428710938입니다.
+
+14획8초자연재생은시작0.06351249998807908과종료1 두관찰만PASS,모든RAF관찰은아닙니다. controlledRAM14records(wrapper11locals+samplebatches3)의errors는모두빈배열·sameFramefalse0입니다. 원fullround완료mask를유지하며기하FAIL0입니다. tab28을먼저닫고서버42027/59422/session25203을SIGINT exit130·PID부재로종료했습니다. 이전oldcaptiontab26/PID40300/59175/session37905는실제시각게이트전보류·종료/PID부재였고승인검사0입니다. 원source의초기QnibHOLD와별개이며원source/renderer/HOLD의당시false는고치지않습니다.
+
+새앱정책은원14p15m31 geometrya09c4b5aaa1eaae2e7ec70bf5cddb22f2dc450c3e92967bcc50ae69adf107c2c와14m1단일Q/14m2단일C에만결박합니다. 원actualfull5/선택body3/id5·base root·gap[-2,-2]·모든outline/guide/폭14/weight/순서·31polygon은불변입니다. Q는T1/2 K1/100, C는T1/4 K1/12의고유유리수인증만초기arc7에적용하며전체P연결성·raster·임의다른Q/C를승인하지않습니다.
+
+같은connectedSVG/g/defs의원NOpathLength측정과displaypathLength1을분리하고문서/parent/owner/transform을측정전중후·visibility직전확인합니다. sameframeL/endpoint/d/rho/dash/caps와canonical data-growing-distance 설정·cleanup을원자적으로유지합니다. p0empty/SSRpartialhidden/p1·prefix·whole alwaysfullroundmask,epsilonclipping0입니다. 최신酈포함모든기존child는바이트보존하며새import/context/branch/child제거시component SHAe5f11d29e6366215f539d1bb9f166cb7c5f046e316b55728b8bd6842c082fac2가복원됩니다. 다른13획ordinary117byteparity는이전standalone의근거이고새앱에서반복실행하지않습니다. 새context의다른모든mask정책null과정확2개SSR을검사합니다.
+
+standalonePASS와앱코드준비만완료할범위이며actualcomponent/hydration/controller/storage/autoplay·actualAppUI/runtime는false입니다. ROOT가앱커밋뒤고정snapshot/harness로별도실제검토해야합니다. 새전용focused1·변경TS3 AST각1만수행하며oldtests/sourcecompiler/factory/geometry/engine/derive/서버/UI/Git/build/TSC0입니다.
