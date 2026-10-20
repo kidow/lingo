@@ -1,0 +1,7 @@
+# 澯 distance 수정 revision의 CAN 원바이트
+
+fix commit976217db4ffc58770a773d716320b5c2ce17653f의 CAN모듈·test 두파일만추가보존하는독립6파일입니다. 이전snapshot9/main/test/component는70c1a38a1715e64c008086b6f199ff380c253aa2의기존resolver로재사용하고DI/SI도각기존resolver로읽습니다. 기존15파일과역사false를수정하거나복제하지않습니다.
+
+정확원경로/SHA쌍·arity·실제Buffer SHA만허용하며다른path/추측hash/문자열/변조를거부합니다. 이snapshot의native/actualAppUI/runtimefalse는영구불변입니다. 새실제검토결과는별도기록에서만승인합니다.
+
+이전준비SSR/parity PASS는실제첫pen3 distance/radius/end상태FAIL과구분합니다. 명칭정규화가data-growing-canstance오타를distance로되돌려감사가문제를가린이력은원HOLD2와새하네스validation에보존합니다. 새이름속성은data-growing-distance이며원기하/인증/DOM구조/폭/필순은불변입니다.

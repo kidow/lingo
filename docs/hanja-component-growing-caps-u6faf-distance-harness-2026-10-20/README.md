@@ -1,0 +1,11 @@
+# 澯 distance 수정 실제컴포넌트 독립 revision
+
+fixcommit976217db4ffc58770a773d716320b5c2ce17653f의CAN모듈·test두개만새snapshot6에서정확원경로/SHA로읽습니다. 원main/test/component는기존70c1a38a1715e64c008086b6f199ff380c253aa2 snapshotresolver,DI/SI는각기존resolver를재사용합니다. 기존15파일은불변이며중복source복제0/liveappread0입니다. source16p17m36·guide/width/order/cert/DOM형태는불변입니다. 새원코드는거리metadata설정·cleanup키를data-growing-distance로고친것만반영합니다.
+
+이전준비snapshot1/SSR3/parity18 검사는PASS였지만root첫실제whole16/prefix4PASS뒤pen3의sameFrame distanceMatches/radiusMatches/endMatches가FAIL했습니다. source기하FAIL0,이후gate0,서버2346/57422/session18998 STOP130입니다. data-growing-canstance오타를명칭정규화가distance로되돌려초기감사에서가린사실도보존합니다. 원HOLD2commit93870265a5afe601ae8bbd6e5227c69df6ccba4b의2파일과기존harness6를고정핀으로참조하며새승인으로덮지않습니다.
+
+새reporter는canonicaldistance속성이없으면present=false와NaN으로표현하고0으로조용히바꾸지않습니다. distanceMatches/radiusMatches/endMatches는false가되고잘못된getPointAtLength호출을피합니다. 기존13sameFrame boolean키는유지하고distanceAttributePresent를별도상태로보입니다. full-round완료의속성없음은partial실패와구분해읽습니다.
+
+새자원계약검사는actualfrozenTSX SSRwhole16+controlledmid2=3과두targetparity18·거리6속성값/cleanup·누락observer계약·필요음성만최초1회확인합니다. 새snapshot6 변조검사1회와새MJS5/declAST1외기존성공검사는반복하지않습니다. 실제browser/hydration/actualAppUI/runtime는여전히false이며sourcecompiler/engine/UI/서버/Git/build0입니다.
+
+Root만 `node docs/hanja-component-growing-caps-u6faf-distance-harness-2026-10-20/serve.mjs 0`으로한서버를기동하고필요완료후정확PID/port/session을종료합니다. `/`에서whole16/prefix4/pen3,두masklocal6각각/rho6/boundary3±1e-6/coverage2/coarse9/play8sec3만fresh확인합니다. 일반15방향/completion/coarse는반복하지않습니다. main520/coarse220이며3열720보드의오른열은좁은패널에서native가로스크롤로확인합니다. status의13sameFrame·두고유target·L/point/owner·측정NOpathLength/display1·caps거리metadata를실제로관찰합니다. 자연재생은start/end관찰로만기록하고near1partial을exactfullround로바꾸지않습니다.

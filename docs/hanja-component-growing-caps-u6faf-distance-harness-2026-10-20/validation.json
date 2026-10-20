@@ -1,0 +1,145 @@
+{
+  "schema": "actual-stroke-outlines-can-distance-preparation-v1",
+  "date": "2026-10-20",
+  "glyph": "澯",
+  "root": "u6faf",
+  "appFixCommit": "976217db4ffc58770a773d716320b5c2ce17653f",
+  "configSHA256": "ec98a245ecb05335f4310b5ed55ea9bcd0c1b0461a69e2f030ca3afc03755c00",
+  "ownSHA256": {
+    "config.json": "ec98a245ecb05335f4310b5ed55ea9bcd0c1b0461a69e2f030ca3afc03755c00",
+    "serve.mjs": "6f7a3348a9087d9c01e1568d72cc3d897024dc919c920f857e42b33a97c2931f",
+    "browser.mjs": "1316e969735bce61771509a3a720934fd09c381bbefdc6333aed2d0b174c99fa",
+    "check.mjs": "b8054f6fabf356d30b53c64edaf1c8c412f4d70ef3922f5bba53945775082376",
+    "README.md": "4ea94733856d8070aef34d368c3d3225109f6a0e7fa3700608c7d87a422d7325"
+  },
+  "sourcePins": 99,
+  "snapshotSources": 2,
+  "snapshotFiles": 6,
+  "sourceGeometrySHA256": "734fc080df851f3f7f681eb160e339dd7c11067f4a6da9e73b1cda23dd6d58c6",
+  "priorHistory": {
+    "preparationCommit": "70c1a38a1715e64c008086b6f199ff380c253aa2",
+    "preparedSnapshotFocusedPassed": true,
+    "preparedSSR": 3,
+    "preparedParity": 18,
+    "priorPreparationActualBrowserVerified": false,
+    "firstRootActualNative": {
+      "record": "docs/hanja-component-native-hold-u6faf-distance-2026-10-20/hold.json",
+      "sha256": "7146a29ad7bc1728cc6759d0cc0abe602d0d85364afbf5b13d52bb80a5a44e85",
+      "whole16": "passed",
+      "prefix4": "passed",
+      "firstFailedGate": "pen3-same-frame",
+      "failedChecks": [
+        "distanceMatches",
+        "radiusMatches",
+        "endMatches"
+      ],
+      "geometryFailuresObserved": 0,
+      "laterGatesExecuted": 0,
+      "server": {
+        "pid": 2346,
+        "port": 57422,
+        "session": 18998,
+        "stopped": true,
+        "exitCode": 130,
+        "pidAbsent": true
+      },
+      "auditCorrection": "Normalization concealed the wrong attribute; the earlier DOM contract audit conclusion was withdrawn."
+    },
+    "old15Modified": false,
+    "oldFirstPASSRelabelled": false
+  },
+  "checks": {
+    "status": "passed",
+    "snapshotFocused": {
+      "executions": 1,
+      "firstAttemptPassed": true,
+      "snapshots": 2,
+      "negative": 53,
+      "exactPathAndExpectedSHAPairs": true,
+      "snapshotTamperingRejected": true,
+      "liveAppFilesRead": 0
+    },
+    "resourceFocused": {
+      "executions": 1,
+      "firstAttemptPassed": true,
+      "resourcesExecutions": 1,
+      "SSRActualComponent": true,
+      "SSRRenderCount": 3,
+      "controlledIntermediateSSRStateSeeded": true,
+      "actualHydrationExecuted": false,
+      "actualAppPolicyParitySamples": 18,
+      "negative": 44,
+      "routes": 15,
+      "distanceAttributeContract": true,
+      "missingDistanceExplicitFalse": true,
+      "observerDoesNotCoerceMissingDistanceToZero": true,
+      "sourceHashes": {
+        "component": "bb0f589c2b941cfbdf77dceede33232fd4ff2b956177b06806aa347afc32754a",
+        "gate": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+        "si": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+        "di": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+        "can": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7"
+      },
+      "wallTimeSeconds": 0.199482625,
+      "sourceGeometryExecutions": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "HTTP": 0,
+      "server": 0,
+      "UI": 0
+    },
+    "syntax": {
+      "node": [
+        {
+          "path": "docs/hanja-component-evidence-growing-caps-u6faf-distance-2026-10-20/resolver.mjs",
+          "executions": 1,
+          "exitCode": 0
+        },
+        {
+          "path": "docs/hanja-component-evidence-growing-caps-u6faf-distance-2026-10-20/check.mjs",
+          "executions": 1,
+          "exitCode": 0
+        },
+        {
+          "path": "docs/hanja-component-growing-caps-u6faf-distance-harness-2026-10-20/serve.mjs",
+          "executions": 1,
+          "exitCode": 0
+        },
+        {
+          "path": "docs/hanja-component-growing-caps-u6faf-distance-harness-2026-10-20/browser.mjs",
+          "executions": 1,
+          "exitCode": 0
+        },
+        {
+          "path": "docs/hanja-component-growing-caps-u6faf-distance-harness-2026-10-20/check.mjs",
+          "executions": 1,
+          "exitCode": 0
+        }
+      ],
+      "declarationAST": {
+        "executions": 1,
+        "diagnostics": 0
+      }
+    },
+    "sourcePinCheck": {
+      "includedInResourcesExecution": true,
+      "input": 99,
+      "mismatch": 0,
+      "repeated": 0
+    },
+    "old15BytesUnchanged": true,
+    "oldSuccessChecksRepeated": 0
+  },
+  "actualHydrationExecuted": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "actualAppUI": false,
+  "runtimeRegistered": false,
+  "sourceGeometryExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "engineRuns": 0,
+  "HTTP": 0,
+  "UI": 0,
+  "server": 0,
+  "Git": 0,
+  "build": false
+}
