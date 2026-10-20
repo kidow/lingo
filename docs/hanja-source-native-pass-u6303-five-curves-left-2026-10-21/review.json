@@ -288,5 +288,64 @@
     "executions": 1,
     "scope": "new two metadata files / input byte pins and JSON consistency only",
     "passed": true
+  },
+  "appPreparation": {
+    "currentAppSHA256": {
+      "lib/hanja-stroke-start-gate-u6303.ts": "9774d49905f6d8f98c18d8e585296769065916f40de9a84e09254ea4b73c7ef8",
+      "lib/hanja-stroke-start-gate-u6303.test.ts": "53f23c6ca557be839353a971ba250678c1ccc08b40c61efc6a6bb19cb678e756",
+      "components/hanja/stroke-outlines.tsx": "2f0009c6a37ac9c6f9f8f63ddff904bd3949907d6a97bd42a9aaa3d453ddcd1d"
+    },
+    "exactTargets": [
+      "2m1 MLQ firstL78",
+      "3m1 Q K1/500",
+      "5m1 Q K1/100",
+      "5m2 Q K1/1000",
+      "6m1 Q K1/50"
+    ],
+    "sourceSpecificInitialArcOnly": 7,
+    "arbitraryGuidesAllowed": false,
+    "oldPolicyAndChildBytesPreserved": true,
+    "p0": "empty",
+    "partial": "SSR hidden; connected same-frame commit writes visibility last",
+    "p1WholePrefix": "always original round sweep masked",
+    "measurement": "same connected original path without pathLength; same frame L and endpoint; dash pathLength1; pre/between/post parent/document/owner/attribute+computed transform guards",
+    "checks": {
+      "focusedExecutions": 1,
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "durationMs": 303.272875,
+      "newSourceFieldNegativeAndSparseCoverage": true,
+      "newMockParityFrames": 45,
+      "syntheticUAMocksNotBrowser": true,
+      "SSR": "actual child SSR zero/three partial/full per target + idle whole; not hydration",
+      "oldSourceOrAppTestsRepeated": 0,
+      "initialChangedASTFiles": 3,
+      "diagnostics": 0,
+      "typeOnlyFollowup": {
+        "reason": "source literal copy initially omitted explicit HanjaOutlineStrokes annotation; restored original typed declaration",
+        "runtimeBehaviorChanged": false,
+        "changedModuleAST": 1,
+        "diagnostics": 0,
+        "focusedRepeated": 0
+      }
+    },
+    "authoringHistory": {
+      "patchComposerParseFailureBeforeWrites": 1,
+      "boundedReadJSONTruncationFailure": 1,
+      "failedAttemptsFileWrites": 0,
+      "failedAttemptsTests": 0
+    },
+    "finalAppMetadataCheck": {
+      "executions": 1,
+      "scope": "app3 SHA and new PASS2 consistency only; no 83 input loop or focused/SSR repeated",
+      "passed": true
+    },
+    "isolatedActualComponentBrowserVerified": false,
+    "actualAppUI": false,
+    "runtimeApplied": false,
+    "sourceCompilerCalls": 0,
+    "engineRuns": 0,
+    "tailDerivations": 0
   }
 }
