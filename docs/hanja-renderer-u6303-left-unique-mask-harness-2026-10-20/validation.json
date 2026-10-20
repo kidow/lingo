@@ -1,0 +1,177 @@
+{
+  "schema": "hanja-isolated-ui-mask-id-collision-helper-v1",
+  "date": "2026-10-20",
+  "glyph": "挃",
+  "originalDirectory": "docs/hanja-renderer-growing-caps-u6303-five-curves-left-experiment-2026-10-20/",
+  "originalCapsulePins": {
+    "docs/hanja-renderer-growing-caps-u6303-five-curves-left-experiment-2026-10-20/config.json": "3fb0a22f9ab714e40d9f514c5aa3c916eb3539b64db640b6feaf29c8765b5890",
+    "docs/hanja-renderer-growing-caps-u6303-five-curves-left-experiment-2026-10-20/render.mjs": "74d6d53cab3989052e204c8a5f93947a78cee4f1964aea3df7531ff6f06420e7",
+    "docs/hanja-renderer-growing-caps-u6303-five-curves-left-experiment-2026-10-20/check.mjs": "4374dd2619a7aaba37f6b40d60608772e9e71f62140fb2a1613edfc44a96780a",
+    "docs/hanja-renderer-growing-caps-u6303-five-curves-left-experiment-2026-10-20/serve.py": "cc627aa2cae7229a9868b2afea38100dfc952c1703cfaecbf1a1e1b5315de050",
+    "docs/hanja-renderer-growing-caps-u6303-five-curves-left-experiment-2026-10-20/README.md": "7c6190f1ce8566f100a1e8fc58358904ee0f2425ad313a4c9489860b2323cd07",
+    "docs/hanja-renderer-growing-caps-u6303-five-curves-left-experiment-2026-10-20/validation.json": "68e27beb996b131b2ef72d93b258a5ff2d0eb7acb855b8d7daca129c8827ac4a"
+  },
+  "originalSourceInputMap": {
+    "config": "docs/hanja-renderer-growing-caps-u6303-five-curves-left-experiment-2026-10-20/config.json",
+    "pointer": "targets.u6303.inputSHA256",
+    "sha256": "fd3e1b5b1f3ccf1189e28453c9cd6eafab2bf62ee35c338e0c2eada84d51841b",
+    "count": 73
+  },
+  "allowedReplacements": [
+    {
+      "before": "id=\"coverage2m1\"",
+      "after": "id=\"risk-coverage2m1-control\""
+    },
+    {
+      "before": "document.getElementById('coverage2m1')",
+      "after": "document.getElementById('risk-coverage2m1-control')"
+    }
+  ],
+  "geometrySHA256": "49d827b2f18f74efc30c2b9d4fa4682362aabcb84d8fde8f189d733943d1e85c",
+  "counts": {
+    "pens": 9,
+    "masks": 11,
+    "polygons": 24
+  },
+  "historicalCollision": {
+    "observer": "ROOT actual native panel",
+    "server": {
+      "pid": 64590,
+      "port": 49593,
+      "sessionId": 27336,
+      "signal": "SIGINT",
+      "exitCode": 130,
+      "stopped": true
+    },
+    "riskFirst": {
+      "body2m1CoverageWhite": true,
+      "body2m1EpsilonAndCompletionPassed": true,
+      "tail2m2LocalFrames": 6,
+      "pen2BoundaryFrames": 3
+    },
+    "generalCoverage": {
+      "boardsGenerated": 5,
+      "whiteObserved": [
+        "3m1",
+        "5m1"
+      ],
+      "bodyBlackObserved": "2m1",
+      "duplicateId": "coverage2m1",
+      "elements": [
+        "HTMLBUTTON",
+        "SVGmask"
+      ],
+      "rootDOMCollisionConfirmed": true,
+      "unobserved": [
+        "5m2",
+        "6m1"
+      ],
+      "sourceGeometryFailureEstablished": false
+    },
+    "laterGatesObserved": 0,
+    "newNativeApproval": false
+  },
+  "ownSHA256": {
+    "serve.py": "2b306e43558fa3f1e4e3b2456a03ab58e7fb645d641b7b1e132140b4dc01a3bc",
+    "check.mjs": "6277823626b5b031021f74de704214588a4d76ac653be0cbe1236f2f62d26f5d",
+    "README.md": "fea6bd40ea95bb7de205b709d8e8b8c71ba8a5aa71994fbf91f938717f8f41d0"
+  },
+  "checks": {
+    "status": "passed",
+    "executions": 1,
+    "firstAttempt": true,
+    "failures": 0,
+    "allowedIDReplacements": 2,
+    "originalBytesRestored": true,
+    "originalFileAndHerePreserved": true,
+    "controlIdCount": 18,
+    "coverageMaskIds": [
+      "coverage2m1",
+      "coverage3m1",
+      "coverage5m1",
+      "coverage5m2",
+      "coverage6m1"
+    ],
+    "coverageMasksDisjointFromHTMLControls": true,
+    "validSimulatedRoutes": 5,
+    "simulatedRouteNegatives": 8,
+    "originalSourceInputs": 73,
+    "originalCapsulePins": 6,
+    "ownPins": 3,
+    "coverageSerializationOnly": true,
+    "rendererModuleImports": 0,
+    "oldCertificateExecutions": 0,
+    "oldTestsRepeated": 0,
+    "sourceGeometryExecutions": 0,
+    "sourceCompilerCalls": 0,
+    "engineRuns": 0,
+    "HTTP": 0,
+    "server": 0,
+    "UI": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "syntax": {
+    "newCheckNode": {
+      "executions": 1,
+      "passed": true
+    },
+    "wrapperPythonAST": {
+      "executions": 1,
+      "passed": true,
+      "includedInFocused": true
+    },
+    "transformedPythonAST": {
+      "executions": 1,
+      "passed": true,
+      "includedInFocused": true
+    },
+    "embeddedBrowserNode": {
+      "executions": 1,
+      "passed": true,
+      "includedInFocused": true
+    },
+    "oldSuccessfulChecksRepeated": 0
+  },
+  "sourceGeometryExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "tailDerivations": 0,
+  "engineRuns": 0,
+  "oldChecksRepeated": 0,
+  "authorServer": false,
+  "authorUI": false,
+  "HTTP": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "registryChanged": false,
+  "gitExecuted": false,
+  "build": false,
+  "history": [
+    {
+      "stage": "new isolated UI-ID and simulated-route checks",
+      "executions": 1,
+      "firstAttempt": true,
+      "passed": true,
+      "allowedIDEdits": 2,
+      "originalBytesRestored": true,
+      "sourceGeometryExecutions": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "HTTP": 0,
+      "server": 0,
+      "UI": 0,
+      "oldCertificatesOrTestsRepeated": 0
+    },
+    {
+      "stage": "new check Node syntax",
+      "executions": 1,
+      "passed": true
+    }
+  ],
+  "finalMetadataCheck": {
+    "executions": 1,
+    "scope": "own3 hashes and validation JSON only; no old pin loop/focused/syntax repeated",
+    "passed": true
+  }
+}
