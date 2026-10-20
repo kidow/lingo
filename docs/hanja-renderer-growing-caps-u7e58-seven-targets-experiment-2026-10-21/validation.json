@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "glyph": "繘",
+  "status": "source-only-seven-targets-fourQ-threeBodies-preparation",
+  "configSHA256": "d6fa3256c8d3c865a2db23ced69c94faaafe2eb89e44a1a738b429863b194b5e",
+  "newFilesSHA256": {
+    "config.json": "d6fa3256c8d3c865a2db23ced69c94faaafe2eb89e44a1a738b429863b194b5e",
+    "render.mjs": "65cb25c77b84d1f2b32aeb54c4ded3ed2646b04ca23b8559761b8382ad733fc1",
+    "check.mjs": "455f98cb64c87cfdbca88f75c88cd5a2dce3b3e0ff10ed498a53bff9b615505d",
+    "serve.py": "57b85947053d71a16fea8a7b7502b515e56b4af2f6ba87026d48417633c502f8",
+    "README.md": "5783a3e362c24329e1215030312122e8f06b977a7f27b9ae538bec58f1f784dd"
+  },
+  "counts": {
+    "pens": 18,
+    "masks": 23,
+    "polygons": 52,
+    "QTargets": 4,
+    "firstLineTargets": 3
+  },
+  "geometrySHA256": "e1eb43905e4bedfb099ebf40adb2a71ecb66aba563805f026de47cfc06c7140c",
+  "pinCounts": {
+    "input": 48,
+    "own": 5
+  },
+  "checks": {
+    "focused": {
+      "status": "PASS_WITH_FAILED_ONLY_RECOVERY",
+      "attempts": 4,
+      "attemptsDetail": [
+        "module exact-source guard FAIL before certificate0/assert0",
+        "module certificates7 then first input path ENOENT before assert0",
+        "module certificates7 and immutable prefix PASS then id expected-key order assertion FAIL",
+        "resume-after-id-key-order first tail PASS with frozen prefix and four direct fingerprints"
+      ],
+      "passedPrefixRepeated": 0,
+      "result": {
+        "passed": true,
+        "certificates": 7,
+        "negative": 241,
+        "mockFrames": 49,
+        "ordinaryParity": 117,
+        "tailParity": 27,
+        "counts": [
+          18,
+          23,
+          52
+        ],
+        "newQCertificates": 4,
+        "sourceGeometry": 0,
+        "sourceCompiler": 0,
+        "factory": 0,
+        "engine": 0,
+        "tailDerivations": 0,
+        "oldTests": 0,
+        "UI": 0,
+        "server": 0,
+        "nativeApproval": false,
+        "appUI": false,
+        "runtimeApplied": false
+      },
+      "moduleCertificateImportsCumulative": 21,
+      "oldSourceChecksRepeated": 0
+    },
+    "syntax": {
+      "status": "PASS",
+      "renderNode": 2,
+      "checkerNode": 2,
+      "embeddedBrowserNode": 1,
+      "PythonAST": 3,
+      "unchangedSuccessfulFilesRepeated": 0,
+      "extraChecksOnlyChangedFiles": true
+    },
+    "startupGuardAndCaptions": {
+      "status": "PASS",
+      "executions": 1,
+      "result": {
+        "passed": true,
+        "startupGuards": 1,
+        "captionMockPages": 6,
+        "linksEachPage": 18,
+        "uniqueControlIDs": true,
+        "penMaskKeys": 7,
+        "Q4Body3ScopesExplicit": true,
+        "HTTP": 0,
+        "server": 0,
+        "sourceCompiler": 0,
+        "engine": 0
+      }
+    },
+    "metadata": {
+      "status": "PASS",
+      "executions": 1,
+      "scope": "exact6 digests/input48+own5/unchanged source geometry/false states only"
+    }
+  },
+  "certificationScope": "each own initial arc7 only; no arbitrary Q/whole P/raster or later corner theorem",
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "originalSourceAndNativeHistoryModified": false,
+  "authorExecution": {
+    "sourceCompiler": 0,
+    "factory": 0,
+    "geometry": 0,
+    "derive": 0,
+    "engine": 0,
+    "oldTests": 0,
+    "UI": 0,
+    "server": 0,
+    "Git": 0,
+    "build": 0
+  },
+  "authoringHistory": [
+    {
+      "kind": "pre-execution scope extension authorized by ROOT",
+      "from": 3,
+      "to": 7,
+      "filesBeforeExtension": 0,
+      "focusedBeforeExtension": 0,
+      "syntaxBeforeExtension": 0
+    },
+    {
+      "kind": "initial module exact-source guard rejected stale template fixture literal",
+      "focusedAttempt": 1,
+      "successfulCertificateImports": 0,
+      "checkerAssertionsExecuted": 0,
+      "sourceGeometryExecutions": 0,
+      "correction": "replace only FIXED_STROKES literal with authorized unchanged u7e58 cache; renderer SHA pin follows",
+      "previousPassedChecksRepeated": 0
+    },
+    {
+      "kind": "input pin relative-base ENOENT before first assertion",
+      "successfulModuleCertificateImports": 7,
+      "checkerAssertionsPassed": 0,
+      "correction": "normalize only new config source-relative38 input keys to repo paths; original expectedSHA values/source config unchanged",
+      "moduleInitializationReimportRequired": true
+    },
+    {
+      "kind": "focused identity expected-key order harness-only assertion FAIL",
+      "passedScope": "input48/own5/config/fixture/fullgeometry/counts/full5 payload prefix",
+      "failure": "actual keys were sorted but expected id3 keys were not sorted",
+      "sourcePolicyFieldsChanged": false,
+      "correction": "expected keys sorted; resume-after-id-key-order binds exact old passed prefix SHA plus four direct fingerprints, skips passed prefix",
+      "moduleCertificateImportsAtThisStage": 14,
+      "priorSuccessfulModuleImportsRecomputedOnlyAsModuleInit": true
+    }
+  ]
+}
