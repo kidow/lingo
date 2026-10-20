@@ -93,7 +93,7 @@ export function commitReviewedCanCaps(policy:ReviewedCanPolicy,segment:HanjaOutl
   const reset=()=>{
     ink?.setAttribute('visibility','hidden');guide?.setAttribute('stroke-dasharray','0 2')
     for(const cap of[startCap,endCap]){cap?.setAttribute('r','0');cap?.setAttribute('cx','0');cap?.setAttribute('cy','0')}
-    for(const key of['data-growing-progress','data-growing-length','data-growing-canstance','data-growing-radius','data-growing-end-x','data-growing-end-y'])ink?.removeAttribute(key)
+    for(const key of['data-growing-progress','data-growing-length','data-growing-distance','data-growing-radius','data-growing-end-x','data-growing-end-y'])ink?.removeAttribute(key)
   }
   reset()
   try{
@@ -111,7 +111,7 @@ export function commitReviewedCanCaps(policy:ReviewedCanPolicy,segment:HanjaOutl
     guide!.setAttribute('stroke-dasharray',String(frame.progress)+' 2')
     startCap!.setAttribute('cx',String(frame.q0[0]));startCap!.setAttribute('cy',String(frame.q0[1]));startCap!.setAttribute('r',String(frame.rho))
     endCap!.setAttribute('cx',String(frame.point.x));endCap!.setAttribute('cy',String(frame.point.y));endCap!.setAttribute('r',String(frame.rho))
-    for(const[key,value]of Object.entries({'data-growing-progress':frame.progress,'data-growing-length':frame.L,'data-growing-canstance':frame.d,'data-growing-radius':frame.rho,'data-growing-end-x':frame.point.x,'data-growing-end-y':frame.point.y}))ink!.setAttribute(key,String(value))
+    for(const[key,value]of Object.entries({'data-growing-progress':frame.progress,'data-growing-length':frame.L,'data-growing-distance':frame.d,'data-growing-radius':frame.rho,'data-growing-end-x':frame.point.x,'data-growing-end-y':frame.point.y}))ink!.setAttribute(key,String(value))
     if(!bound())throw new Error('澯 binding changed before visibility commit')
     ink!.setAttribute('visibility','visible')
     return{status:'visible' as const,frame,cleanup:reset}
