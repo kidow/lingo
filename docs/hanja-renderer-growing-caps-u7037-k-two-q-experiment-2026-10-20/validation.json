@@ -1,0 +1,176 @@
+{
+  "schema": "hanja-exact-two-Q-renderer-validation-v1",
+  "date": "2026-10-20",
+  "glyph": "瀷",
+  "root": "u7037-k",
+  "configSHA256": "05bb208993743f2cb5b4aec0b22835a4310dadc63388886cdb0a6665b446fdb8",
+  "newFilesSHA256": {
+    "./config.json": "05bb208993743f2cb5b4aec0b22835a4310dadc63388886cdb0a6665b446fdb8",
+    "./render.mjs": "6ea0e6a4786ba971501de4d1bcd47b2d0b2723360344dc4f836891fd7e60579f",
+    "./check.mjs": "9860d9c3cce59bfe2be6cc046f4352f0e34756fed4aa5562887a34996834016f",
+    "./serve.py": "7c45e4cda676711646d97b833e2189a261c2d598309cf84cf033b868ef4a6bf6",
+    "./README.md": "0e887084e206d1443ba5dbbce9644db9ba866c71cd8e043b136fb4c44cf6d413"
+  },
+  "geometrySHA256": "c565931e1404621b89a583c4c8785f5e7cb319053fadede07d5183612f360eb0",
+  "counts": {
+    "pens": 20,
+    "masks": 21,
+    "polygons": 51
+  },
+  "sourceIdentity": {
+    "root": "u7037-k",
+    "file": "../hanja-goal-glyphwiki-batch812-2026-10-13/engine-whole-u7037-k.json",
+    "fileSHA256": "9cfbe9ca3dcf0ed631a8c28b5e9a885c0b0ceadb132236708ccb8c9043948439"
+  },
+  "full5CanonicalSHA256": "fd6584b1f86f43d65d59430eeb2b00f543df6536fffec053fea02f93a47ae0e4",
+  "targets": [
+    {
+      "pen": 3,
+      "mask": 1,
+      "raw": 2,
+      "id": "u7037-k-3-1",
+      "path": "M7.1 65.5025 Q21.1 69.935 19.5 90.62",
+      "width": 14,
+      "weight": 28.011583,
+      "bounds": [
+        7.4,
+        65.2,
+        22.6,
+        92.1
+      ],
+      "maskSHA256": "4ad16d4ef919280bb5f8dcae92e15ccdbb32312597d96a33180eeb51b652b750",
+      "parameterBound": "1/3",
+      "curvatureBound": "1/11"
+    },
+    {
+      "pen": 3,
+      "mask": 2,
+      "raw": 3,
+      "id": "u7037-k-3-2",
+      "path": "M17.5 73.875 Q19.1 67.965 35.9 32.9975",
+      "width": 14,
+      "weight": 44.827782,
+      "bounds": [
+        14.6,
+        32.8,
+        36.3,
+        74.65
+      ],
+      "maskSHA256": "ceabb3588b80d528637e58f94fb7b1607fb3310e8270242677703b9a226a7ed8",
+      "parameterBound": "1/3",
+      "curvatureBound": "1/10"
+    }
+  ],
+  "shared43PrefixSHA256": "a5801fa72491522b062b17c83dffc7d518ebb8be712e5d3f852cfb6ae5be8fac",
+  "strictMeasurementHelperSource": "docs/hanja-component-evidence-growing-caps-u7de6-2026-10-20/lib__hanja-stroke-start-gate-si.ts.source.txt",
+  "strictMeasurementPattern": "docs/hanja-renderer-growing-caps-u6faf-two-q-experiment-2026-10-20/render.mjs",
+  "strictMeasurementPatternLogicUnchangedExceptGlyphErrorLabels": true,
+  "independentCertificateValues": [
+    {
+      "target": "3m1",
+      "T": "1/3",
+      "K": "1/11"
+    },
+    {
+      "target": "3m2",
+      "T": "1/3",
+      "K": "1/10",
+      "sameK1over11NotSufficient": true
+    }
+  ],
+  "sourceGeometryExecutions": 0,
+  "sourceCompilerCalls": 0,
+  "engineRuns": 0,
+  "tailDerivations": 0,
+  "checks": {
+    "status": "passed-after-selector-repair",
+    "focusedExecutions": 2,
+    "failedExecutions": 1,
+    "successfulExecutions": 1,
+    "firstFailureBeforeCheckerAssertions": true,
+    "firstFailurePreserved": true,
+    "certificatesPerNormalModuleLoad": 2,
+    "totalCertificateInitializations": 4,
+    "requiredRecoveryModuleReloads": 1,
+    "checkerBodySuccessfulExecutions": 1,
+    "negative": 113,
+    "mockFrames": 14,
+    "ordinaryParity": 171,
+    "fullGeometryGuards": true,
+    "targets": 2,
+    "sourceGeometryExecutions": 0,
+    "sourceCompilerCalls": 0,
+    "tailDerivations": 0,
+    "engineRuns": 0,
+    "UA": false,
+    "HTTP": 0,
+    "UI": 0,
+    "server": 0,
+    "oldChecksRepeated": false,
+    "passedCheckerBodyRepeated": false,
+    "recoveryPending": false
+  },
+  "syntax": {
+    "nodeModules": {
+      "executions": 2,
+      "passed": true,
+      "files": [
+        "render.mjs",
+        "check.mjs"
+      ]
+    },
+    "pythonAST": {
+      "executions": 1,
+      "passed": true
+    },
+    "embeddedBrowserNode": {
+      "executions": 1,
+      "passed": true
+    },
+    "helperGuard": {
+      "executions": 1,
+      "passed": true,
+      "HTTP": 0
+    },
+    "oldChecksRepeated": 0
+  },
+  "toolingHistory": [
+    {
+      "stage": "first focused checker target/fixture selector before assertions",
+      "failures": 1,
+      "reason": "Hyphenated root dot access C.targets.u7037-k and fixture.u7037-k parsed as subtraction",
+      "moduleCertificateInitializationsPassed": 2,
+      "checkerAssertions": 0,
+      "DOMMockFrames": 0,
+      "ordinaryParity": 0,
+      "sourceGeometryExecutions": 0,
+      "sourceCompilerCalls": 0,
+      "engineRuns": 0,
+      "recovery": "Two selectors corrected to bracket access. First process ended before checker assertions; authorized fresh process necessarily initializes the same two certificates again; remaining checker tail only runs once."
+    },
+    {
+      "stage": "partial metadata patch context matching",
+      "failures": 1,
+      "reason": "Generated EOF context did not match README trailing newline; apply_patch rejected before changes",
+      "sourceGeometryExecutions": 0,
+      "testsRepeated": 0,
+      "recovery": "Use exact existing file text and bounded EOF hunk"
+    }
+  ],
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "registryChanged": false,
+  "authorUI": false,
+  "authorServer": false,
+  "build": false,
+  "finalPinCheck": {
+    "executions": 1,
+    "input": 54,
+    "sourceOriginal38PlusSource8": 46,
+    "patternAndStrictReferences": 8,
+    "own": 5,
+    "mismatch": 0,
+    "method": "new final JSON/digest state only; successful checker/syntax/guard/source not repeated"
+  }
+}
