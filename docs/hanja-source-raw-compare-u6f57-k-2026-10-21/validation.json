@@ -2,12 +2,12 @@
   "schema": "original-raw-static-compare-preparation-v1",
   "date": "2026-10-21",
   "glyph": "潗",
-  "configSHA256": "4f468d1baded42b878fced67a2bc416b95611315931845c7e6536db5c5b30d22",
+  "configSHA256": "e67429dd0e038ea1340d6ce24f32110e12d55f58f2d6ce1b34fa9a13791ac5f7",
   "ownSHA256": {
-    "config.json": "4f468d1baded42b878fced67a2bc416b95611315931845c7e6536db5c5b30d22",
-    "check.mjs": "8c1111cb555fcd4f3c6ef5a8b740030180bf3e1ef05ae6858f37ade0a6912f78",
-    "serve.py": "d3f09830b2c54522ccca0d923fc4151f84de3c3c436c674e019c63d685145072",
-    "README.md": "7c01ef9ebc7b76587e30b0960dc7f1b88b895953e8e7f401326adb774d0af832"
+    "config.json": "e67429dd0e038ea1340d6ce24f32110e12d55f58f2d6ce1b34fa9a13791ac5f7",
+    "check.mjs": "ff7b08b449ac5c03a7ddbaf7ef409a1cadee6eab0c769e022cc5666676eb8ebd",
+    "serve.py": "02987f4503007b0926bea1f531ed580dd7666e22eb02f51bbe9483f1f4b9d2ac",
+    "README.md": "aa3a32e155d422141196240d7ab57e6ab9b4a3d3505a6619368ab0ceb7f87aad"
   },
   "focus": {
     "status": "PASS",
@@ -43,7 +43,7 @@
   "sourceProjectionCalls": 0,
   "geometryExecutions": 0,
   "engineRuns": 0,
-  "HTTP": 0,
+  "HTTP": 1,
   "serverStarted": false,
   "UI": false,
   "sourceGroupsApproved": false,
@@ -69,6 +69,84 @@
       "nodeSyntax": 1,
       "PythonAST": 1,
       "oldChecksRepeated": 0
+    },
+    {
+      "kind": "ROOT first startup viewBox assertion failure before listen",
+      "initialMockAssumption": "0 0 1024 1024",
+      "actualPinnedXML": "0 0 1024 1152",
+      "nativeApproval": false,
+      "sourceIdentityGuardModified": false
+    },
+    {
+      "kind": "failed-only domestic XML contract recovery",
+      "executions": 1,
+      "status": "PASS",
+      "newNegative": 9,
+      "nodeSyntax": 1,
+      "PythonAST": 1,
+      "oldChecksRepeated": 0
     }
-  ]
+  ],
+  "rootStartupFailure": {
+    "beforeListen": true,
+    "serverPIDCreated": false,
+    "HTTPServerStarted": false,
+    "reason": "incorrect domestic viewBox 1024x1024 assumption; actual is1024x1152",
+    "nativeObservation": 0
+  },
+  "domesticDiagnostic": {
+    "authorHTTPCalls": 1,
+    "source": "exact original pinned URL",
+    "bytes": 7294,
+    "sha256": "f47f7bed7e88a0c521a020905135e9fffae2ec09a5440285041a94c55a5e8527",
+    "rootAttributes": {
+      "id": "U6F57ani",
+      "class": "ani-svg",
+      "viewBox": "0 0 1024 1152",
+      "version": "1.1"
+    },
+    "groupAttributes": {
+      "transform": "scale(1,-1) translate(0, -879)",
+      "fill": "currentColor",
+      "stroke": "none"
+    },
+    "title": "潗",
+    "paths": 30,
+    "clips": 15,
+    "animatedPaths": 15,
+    "XMLSaved": false,
+    "XMLFullOutput": false
+  },
+  "recovery": {
+    "status": "PASS",
+    "focusedExecutions": 1,
+    "firstAttempt": true,
+    "mode": "--resume-after-domestic-viewbox",
+    "sourceIdentityLoaderSHA256": "4311386fea7b07558350a1fe2b013fe3d3a9f9dbaebaa92520f38a5fed97b96c",
+    "sourceIdentityLoaderUnchanged": true,
+    "exactOriginalRootGroupAttributes": true,
+    "viewBox": "0 0 1024 1152",
+    "mockPaths": 30,
+    "mockClips": 15,
+    "mockAnimatedPaths": 15,
+    "correctedDomesticSingle": 1,
+    "newNegative": 9,
+    "changedNodeSyntax": 1,
+    "PythonAST": 1,
+    "PythonDefinitionLoad": 1,
+    "defaultMockCorrected": true,
+    "defaultFullCheckRerun": false,
+    "oldSourceAndRawChecksRepeated": 0,
+    "HTTP": 0,
+    "server": 0,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "engine": 0,
+    "geometry": 0
+  },
+  "recoveryMetadata": {
+    "status": "PASS",
+    "executions": 1,
+    "scope": "changed5/own4/input22 digests plus domestic contract and loader byte preservation only"
+  }
 }

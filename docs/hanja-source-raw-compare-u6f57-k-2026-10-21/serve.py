@@ -48,8 +48,10 @@ def source_svg(proof,count=None,prefix=False):
         out.append('</g>')
     return ''.join(out)+'</g></svg>'
 def parse_dictionary_xml(raw):
-    root=ET.fromstring(raw);assert root.get('viewBox')==CONFIG['domesticViewBox'],'dictionary viewBox changed';title=root.find(NS+'title');assert title is not None and title.text==CONFIG['glyph'],'dictionary title changed'
+    root=ET.fromstring(raw);assert root.attrib==CONFIG['domesticXMLContract']['rootAttributes']and root.get('viewBox')==CONFIG['domesticViewBox'],'dictionary exact root attributes/viewBox changed';title=root.find(NS+'title');assert title is not None and title.text==CONFIG['glyph'],'dictionary title changed'
     groups=list(root.iter(NS+'g'));assert len(groups)==1,'dictionary group count changed'
+    assert groups[0].attrib==CONFIG['domesticXMLContract']['groupAttributes'],'dictionary exact group attributes changed'
+    assert len(list(root.iter(NS+'path')))==CONFIG['domesticXMLContract']['paths'],'dictionary path count changed'
     transform=groups[0].get('transform','');assert re.fullmatch(r'scale\(1,-1\) translate\(-?\d+, -\d+\)',transform),'dictionary transform changed'
     paths={p.get('id'):p for p in root.iter(NS+'path')if p.get('id')};clips={}
     for clip in root.iter(NS+'clipPath'):
@@ -63,7 +65,8 @@ def parse_dictionary_xml(raw):
         strokes.append({'d':outline.get('d'),'id':outline.get('id'),'delay':int(delay.group(1)),'duration':int(duration.group(1))})
     strokes.sort(key=lambda s:s['delay']);assert len(clips)==len(strokes)==CONFIG['catalogStrokes']==15 and len({s['id']for s in strokes})==15,'dictionary clip count changed'
     assert all(not i or s['delay']>=strokes[i-1]['delay']+strokes[i-1]['duration']for i,s in enumerate(strokes)),'overlapping domestic order'
-    return {'transform':transform,'strokes':strokes}
+    assert len(clips)==CONFIG['domesticXMLContract']['clips']and len(strokes)==CONFIG['domesticXMLContract']['animatedPaths'],'dictionary shape count changed'
+    return {'transform':transform,'strokes':strokes,'viewBox':root.get('viewBox')}
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self,*args,**kwargs):raise ValueError('Dictionary redirect rejected')
 def fetch_dictionary_once():
@@ -76,7 +79,7 @@ def fetch_dictionary_once():
     return parse_dictionary_xml(raw)
 def domestic_svg(data,count=None,prefix=False):
     indexes=list(range(15))if count is None else list(range(count))if prefix else[count-1]
-    return '<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="'+CONFIG['domesticViewBox']+'"><g fill="#222" transform="'+html.escape(data['transform'],quote=True)+'">'+''.join('<path data-domestic-stroke="'+str(i+1)+'" d="'+html.escape(data['strokes'][i]['d'],quote=True)+'"/>'for i in indexes)+'</g></svg>'
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="'+data['viewBox']+'"><g fill="#222" transform="'+html.escape(data['transform'],quote=True)+'">'+''.join('<path data-domestic-stroke="'+str(i+1)+'" d="'+html.escape(data['strokes'][i]['d'],quote=True)+'"/>'for i in indexes)+'</g></svg>'
 def selection(route,query):
     assert route in['/','/whole','/compare','/checks'],'unknown route'
     q={}if not query else parse_qs(query,keep_blank_values=True,strict_parsing=True)
