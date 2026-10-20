@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "glyph": "紽",
+  "status": "source-only-new-four-Q-renderer-preparation",
+  "configSHA256": "8bdebb72155f2a0be8b46c94be4e3faee341b60e9aed30f5bb25754d065e97d8",
+  "newFilesSHA256": {
+    "config.json": "8bdebb72155f2a0be8b46c94be4e3faee341b60e9aed30f5bb25754d065e97d8",
+    "render.mjs": "d5f7908d27424b410a3d34a0e73dfc774938e3f3e4c0b4a032e9668f8c4ba3c7",
+    "check.mjs": "b425c8c9ef6fff949c1ddfa35ad424b3a05ac07598f12e8ce0c74a655ed52696",
+    "serve.py": "5d01ff21e89e823805e215ffeaf1ee2e5abe3af47d7cab4f178c38e0108f03a4",
+    "README.md": "68e82b1ba08b1ebe122f6927bd2a9d68ed0a500900305457ada56d61335facb1"
+  },
+  "sourceGeometrySHA256": "987e48c251ae6a9862d508b3b435be600fb763b143adcc298990f82eec72ea25",
+  "counts": {
+    "pens": 11,
+    "masks": 14,
+    "polygons": 37,
+    "newQTargets": 4,
+    "preservedLineTargets": 1
+  },
+  "pinCounts": {
+    "input": 63,
+    "own": 5
+  },
+  "checks": {
+    "focused": {
+      "status": "PASS",
+      "executions": 1,
+      "result": {
+        "passed": true,
+        "newQCertificates": 4,
+        "inheritedFirstLineCertificate": 1,
+        "negative": 142,
+        "mockFrames": 28,
+        "ordinaryParity": 72,
+        "preserved11StateParity": 99,
+        "allFieldsGeometryUnchanged": true,
+        "counts": [
+          11,
+          14,
+          37
+        ],
+        "sourceCompiler": 0,
+        "factory": 0,
+        "engine": 0,
+        "geometry": 0,
+        "derive": 0,
+        "UI": 0,
+        "server": 0,
+        "nativeApproval": false,
+        "appUI": false,
+        "runtimeApplied": false
+      },
+      "preserved11ParityIsCodeComparisonNotNativeReplay": true,
+      "original11NativeChecksRepeated": 0
+    },
+    "syntax": {
+      "status": "PASS",
+      "renderNode": 1,
+      "checkerNode": {
+        "firstFAIL": 1,
+        "correctedPASS": 1
+      },
+      "embeddedBrowserNode": 1,
+      "PythonAST": 1,
+      "passedFilesRepeated": 0
+    },
+    "startupGuardAndCaptions": {
+      "status": "PASS",
+      "executions": 1,
+      "passed": true,
+      "startupGuards": 1,
+      "captionMockPages": 4,
+      "uniqueStaticControlIDs": true,
+      "penMaskKeys": 5,
+      "HTTP": 0,
+      "server": 0,
+      "sourceCompiler": 0,
+      "engine": 0
+    },
+    "metadata": {
+      "status": "PASS",
+      "executions": 1,
+      "scope": "six file digests/input63+own5/immutable geometry/false states only"
+    }
+  },
+  "previousScoped11PASSIsNotFullCharacterApproval": true,
+  "priorQQActivationFAILPreserved": true,
+  "oldSourceAndRendererAndHOLDModified": false,
+  "authorExecution": {
+    "sourceCompiler": 0,
+    "factory": 0,
+    "engine": 0,
+    "geometry": 0,
+    "tailDerivation": 0,
+    "oldTests": 0,
+    "UI": 0,
+    "server": 0,
+    "Git": 0,
+    "build": 0
+  },
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "firstRiskSequence": [
+    "four exact Q coverages",
+    "four exact Q localepsilon",
+    "QQ1 and QQ2 boundaries12",
+    "remaining gates after ROOT decision"
+  ],
+  "authoringHistory": [
+    {
+      "kind": "checkerSyntaxFAIL",
+      "executions": 1,
+      "reason": "mock mask parameter collided with local mask DOM node; renamed parameter only",
+      "focusedExecutions": 0,
+      "certificateImports": 0,
+      "recovered": "only failed check.mjs syntax then previously unexecuted focused"
+    }
+  ]
+}
