@@ -1,0 +1,98 @@
+{
+  "schema": "u82fd-vs3-static-body3-harness-validation/v1",
+  "date": "2026-10-21",
+  "configSHA256": "fcaaa2f6c8dc959ecb363bb1a6e2c96d0857800d5645a3f0b1b38f67ccaef433",
+  "inputPins": 6,
+  "ownSHA256": {
+    "config.json": "fcaaa2f6c8dc959ecb363bb1a6e2c96d0857800d5645a3f0b1b38f67ccaef433",
+    "serve.py": "25266cacf9c4aa8fe22e808e7446c0d5332bd1ddbbf374c267bdfc45067e90f7",
+    "check.mjs": "0241c58e8c5398de522bb2c44ac37bdcce6ca265a91ae8684397bc0a5a0a0d1e",
+    "README.md": "7d93f9140dc6d6b65d1599d5ecd52f32ed11a86fa82f3165ae799ae46530ff60"
+  },
+  "checks": {
+    "focused": {
+      "executions": 2,
+      "status": "PASS-after-failed-only-tail",
+      "firstPass": false,
+      "initialFailure": {
+        "exitCode": 1,
+        "location": "Python line72",
+        "reason": "新검사가 whole의 /compare 링크를 /compare?로 잘못 기대",
+        "helperChanged": false,
+        "sourceChanged": false,
+        "checkSHA256": "253b525e3cdf4c6fb9c309e8746563d35aa01dec8d01eb72213d0c58a94c7bc0",
+        "passedPrefix": {
+          "inputPins": 6,
+          "ownPins": 4,
+          "rawSingles": 10,
+          "rawPrefixes": 10,
+          "allPolygonsExactlyOnce": 22,
+          "queryNegatives": 19,
+          "identityNegatives": 4,
+          "proofRoleNegatives": 2,
+          "domesticSyntheticViews": 18,
+          "XMLNegatives": 3,
+          "PythonAST": 1
+        },
+        "unexecuted": [
+          "raw7/8 priority selectors/page",
+          "fetch0 final assertion"
+        ]
+      },
+      "recovery": {
+        "mode": "--failed-tail",
+        "fixedCheckSHA256": "0241c58e8c5398de522bb2c44ac37bdcce6ca265a91ae8684397bc0a5a0a0d1e",
+        "directMaterialFingerprints": 3,
+        "passedPythonPrefixFingerprint": 1,
+        "passedPrefixRepeated": 0,
+        "pending": false,
+        "exitCode": 0,
+        "status": "PASS",
+        "failedAssertionAndRemainingOnly": true,
+        "priorityRawSelectors": [
+          7,
+          8
+        ]
+      }
+    },
+    "syntax": {
+      "PythonAST": 1,
+      "checkNode": 2,
+      "status": "PASS",
+      "changedCheckSyntaxOnlySecond": true
+    },
+    "metadata": {
+      "executions": 1,
+      "status": "PASS",
+      "ownPins": 4,
+      "mismatch": 0,
+      "exactFiles": 5,
+      "sourcePinsRechecked": 0
+    }
+  },
+  "sourceRoots": {
+    "vs3": {
+      "actualBody3Only": true,
+      "actualFull5": false,
+      "newHeaderComposition": false,
+      "rawGroups": 10,
+      "drawingCalls": 11,
+      "polygons": 22
+    }
+  },
+  "oldTestsRepeated": 0,
+  "nativeObservation": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "sourceCompilerCalls": 0,
+  "factoryCalls": 0,
+  "projectionExecutions": 0,
+  "engineRuns": 0,
+  "HTTP": 0,
+  "UI": 0,
+  "server": 0,
+  "Git": 0,
+  "build": 0,
+  "TSC": 0
+}
