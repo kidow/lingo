@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "glyph": "俓",
+  "status": "READY source-only, native/app/runtime false",
+  "configSHA256": "bf816148dd4b7757badd4e7a65f42ef663460faae18fab2ace7d568a5f6e5efe",
+  "newFilesSHA256": {
+    "config.json": "bf816148dd4b7757badd4e7a65f42ef663460faae18fab2ace7d568a5f6e5efe",
+    "candidate.mjs": "304172c2a399b831df6f89680326dc8ef5ee0ea9a0a70c9f4d8ab352e80ace69",
+    "candidate.d.mts": "235a60584f8ba27a53105d7077c01c9a99cc99454d30f736ef68bedfb2c6a4ff",
+    "fixtures.json": "8774215fd380fe4bf3a410d65f6fdf3a2b8442ef13cc7085b146e1e34339b04d",
+    "source-check.mjs": "8df461a00dba9b5734a4b5bfe2603354cb06d8765cb16be194575035a071d830",
+    "serve.py": "835a4e9eca8a992307309e04871d776694fb7db8acb3fdea4ee9fa61948c4732",
+    "README.md": "ca09b85d4837b8f21457b71f651dc4ab24ba7e1586065a527a33fa9b4b727a26"
+  },
+  "inputSHA256": {
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/NOTICE.md": "7d9f951a48bb8e26b248c1c015548785c0bd7b6307c09804dcf754bbd3c3fcf2",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/README.md": "eaaf0ff8b285a0ea759bb3db2c486baf395de984e787a007a226a565ea3beb39",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/candidate-compile-analysis.json": "470e2ea74c28275f0a1dee981b2e2f846793d8c85238f08542b3c151a84a7714",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/checkpoint-validation.json": "4e30162fc5464686e6bf07fc266223afed47e0f5d5d0606f3626863cbc52b47c",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/engine-proof.json": "655ccee1ebef3e043e7e2b3d1fdf4f6a8fd299cd2e84fb6c0650d158b1bfb936",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/engine-whole-u4fd3-k.json": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/engine-whole-u4fd3-ue0100.json": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/engine-whole-u4fd3.json": "a250c28afc35e6e2e3c999a21e55f630213de9ecea3e08872ccf5df353e09fa4",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/metadata.json": "bf69ba44796dd145c227e8b44e14a2156ef43eef37cb54f2ed5e4df374f081c9",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/native-server-preparation-source-analysis.json": "8c671c8ab72a36af2181569465b653ccc0f0967b1f42f90593afb24e46f0dc60",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/native-server-validation.json": "c073f9ef54730938b2f55f4815c4365ebfe44bbdbc55f235977df150efcf661d",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/progressive.mjs": "cf88c0ef1bfc0e8f78e2167c8a143c8928fb17c986e0f7274fd428b6591a5dd9",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/resume.json": "f37020db542a326baaf7a4c46886c8736d5708c39a6a5872e9592f7811a66370",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/serve-whole.py": "57be36254fb24d1936b09c74ca85fa642366b558ddb88b384e2b68e482352265",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/source-analysis.json": "c884337013b4430d9505a7b7966396683eccf61264b17c6740cb9a4db9f437e0",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/source-hold.json": "063ad8ce640c95ab0130dda0309f46618d95b6fc372b1eb16b36d903800c4fa3",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/source-join-analysis.json": "b355fac9aeea97886ed2425691d63e7200eabc5b6e822dfaa741803bba80300e",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/source-only-helper-readiness.json": "c8d48ad05e5dc048a0a8a376852c3f3f3a6ce357e6b8af4071a82815f31d302a",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/sources.json": "b19ddfdd57ce69e70a8167d85db9d2e88437f3143d284b2afa28a1b9f879049a",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/validation.json": "9b807eb3a97b996a5c42652e7084af9f0e46ea483ac055fd84e9c41e3d076a7c",
+    "../hanja-goal-glyphwiki-batch1067-2026-10-13/verify-source.mjs": "34b902e5d7b7e9ed5a7e05c0afc21d02f063884e4d05b06dced99902c9b51342",
+    "../hanja-source-raw-compare-u4fd3-2026-10-21/config.json": "20a5e181f3cc088d4473a36e2d7d45d8b025505a71654d9d226399282c144512",
+    "../hanja-source-raw-compare-u4fd3-2026-10-21/serve.py": "65e1549bbba60e19d5fc3109f79c1ae370372883425ed8bb9da52bca76ee6fd3",
+    "../hanja-source-raw-compare-u4fd3-2026-10-21/check.mjs": "77e35015e024ecc98eff544b69f0f6a104483967e543ecc024aff309f71fd390",
+    "../hanja-source-raw-compare-u4fd3-2026-10-21/README.md": "103120e8be173ebaf653916d3645c034fc97a2cb86b5166ab6ad30cbe07d4779",
+    "../hanja-source-raw-compare-u4fd3-2026-10-21/validation.json": "5e4acf03dd9b45c3352a32e3c50c137286d20b06b7eb536c7fd231dcbccd1ee3",
+    "../hanja-source-raw-review-u4fd3-2026-10-21/README.md": "a14a4dab1863198c680e9d77891ccdae2bba98958bcbe8951eff460d6bc5c26a",
+    "../hanja-source-raw-review-u4fd3-2026-10-21/review.json": "3791081ca9dd01b7bdcae4715f0a551ca434cce25fedfb88c28e1bbe180dd1fe",
+    "../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "../hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/candidate.mjs": "8c8d93691d023ee16df89f5d5f848acde016ee79a8ba9178522ed4105283c212",
+    "../hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/candidate.d.mts": "082f8676fd9158af0ab93d48929becd3dc5b6b3d37a51751e84e98e9c8e682e9"
+  },
+  "counts": {
+    "raw": 12,
+    "drawCalls": 12,
+    "pens": 9,
+    "masks": 12,
+    "polygons": 27
+  },
+  "geometrySHA256": "f731ac914a72e3021f43db274bca35d7b4f91968e964601f9112bdb900052726",
+  "rawBaselineSHA256": "d2004bb6c9a39d1ac5975d5aedf6892e307b789d4398703ea9a4bf73727a026a",
+  "fixtureFileSHA256": "8774215fd380fe4bf3a410d65f6fdf3a2b8442ef13cc7085b146e1e34339b04d",
+  "identity": {
+    "sourceRoot": "u4fd3",
+    "sourceProofFile": "engine-proof.json",
+    "sourceProofFileSha256": "655ccee1ebef3e043e7e2b3d1fdf4f6a8fd299cd2e84fb6c0650d158b1bfb936"
+  },
+  "existingActualFull5": true,
+  "newHeaderCombination": false,
+  "staticMappingApproved": true,
+  "staticMappingOnly": true,
+  "sourceOrderApproved": false,
+  "nativeDirectionsApproved": false,
+  "nativeAnimationApproved": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "history": [
+    {
+      "stage": "RAM read/code orchestration",
+      "syntaxFailuresBeforeWrites": 2,
+      "sourceExecution": 0,
+      "projection": 0
+    },
+    {
+      "stage": "REPL candidate import",
+      "failures": 2,
+      "reasons": [
+        "process is not defined",
+        "node:process import unavailable in node_repl"
+      ],
+      "projection": 0
+    },
+    {
+      "stage": "native Node selected capture FIRST1",
+      "PASS": true,
+      "traceProjectionOperations": 1,
+      "newInternalRawProjectorExecutions": 1,
+      "publicFixtureImmediatelySaved": true,
+      "originalCompiler": 0,
+      "existingFactory": 0,
+      "engine": 0
+    },
+    {
+      "stage": "first cached focused",
+      "status": "FAIL",
+      "passed": [
+        "cachedPositive1",
+        "9p12m27",
+        "all raw fields",
+        "27 polygons exactly once"
+      ],
+      "failure": "factory extractor excluded final newline:8066!==8067",
+      "cachedPositive": 1,
+      "projection": 0
+    },
+    {
+      "stage": "failed-only recovery plan",
+      "mode": "--resume-after-factory-extraction",
+      "passedPrefixSHA256": "9761e82ccae7c7b6009f5e521f998cd719baf14512a309424e8c5b145c59745c",
+      "frozenDirectInputSHA256": {
+        "config.json": "bf816148dd4b7757badd4e7a65f42ef663460faae18fab2ace7d568a5f6e5efe",
+        "candidate.mjs": "304172c2a399b831df6f89680326dc8ef5ee0ea9a0a70c9f4d8ab352e80ace69",
+        "candidate.d.mts": "235a60584f8ba27a53105d7077c01c9a99cc99454d30f736ef68bedfb2c6a4ff",
+        "fixtures.json": "8774215fd380fe4bf3a410d65f6fdf3a2b8442ef13cc7085b146e1e34339b04d"
+      },
+      "skipPassedPrefix": true
+    },
+    {
+      "stage": "first failed-only tail",
+      "status": "FAIL",
+      "cachedPositive": 0,
+      "projection": 0,
+      "passed": "8067 byte count",
+      "failure": "prior source has an additional wrapper-separator newline; entire function boundary must exclude wrapper separator",
+      "correction": "fixed8067 function literal/hash compare, no source function changes"
+    },
+    {
+      "stage": "second failed-only tail",
+      "status": "PASS",
+      "cachedPositive": 0,
+      "cumulativeCachedPositive": 1,
+      "projection": 0,
+      "result": {
+        "PASS": true,
+        "failedOnlyRecovery": true,
+        "cachedPositive": 0,
+        "cumulativeCachedPositive": 1,
+        "projectionReexecuted": 0,
+        "sourcePins": 31,
+        "ownPins": 7,
+        "pens": 9,
+        "masks": 12,
+        "polygons": 27,
+        "polygonBijection": true,
+        "allRawFieldsPreserved": true,
+        "factory8067ByteExact": true,
+        "independentQQPens": [
+          4,
+          5,
+          6
+        ],
+        "exactJoinedPens": [],
+        "tailDerivations": 0,
+        "negative": 28,
+        "PythonAST": 1,
+        "helperGuards": 1,
+        "queryPositive": 6,
+        "queryNegatives": 14,
+        "HTTP": 0,
+        "server": 0,
+        "embeddedJavaScriptSyntax": 1,
+        "sourceCompiler": 0,
+        "factoryCalls": 0,
+        "engine": 0,
+        "nativeApproval": false,
+        "runtimeApplied": false
+      }
+    }
+  ],
+  "focused": {
+    "executions": 3,
+    "first": "FAIL",
+    "firstRecovery": "FAIL",
+    "secondRecovery": "PASS",
+    "cachedPositiveCumulative": 1,
+    "passedPrefixRepeated": 0,
+    "projectionRepeated": 0,
+    "negative": 28,
+    "queryNegatives": 14
+  },
+  "syntax": {
+    "Node": [
+      {
+        "file": "candidate.mjs",
+        "status": 0
+      },
+      {
+        "file": "source-check.mjs",
+        "status": 0
+      }
+    ],
+    "declarationAST": 1,
+    "declarationDiagnostics": 0,
+    "PythonAST": 1,
+    "embeddedJavaScriptSyntax": 1,
+    "CLIHelp": {
+      "executions": 1,
+      "status": 0,
+      "HTTP": 0,
+      "server": 0
+    }
+  },
+  "metadata": {
+    "executions": 1,
+    "status": "PASS",
+    "expectedInputPins": 31,
+    "expectedOwnPins": 7,
+    "exactScope": 8,
+    "notes": "final JSON/count/hash check only; existing focused/projection/syntax not repeated"
+  },
+  "sourceCompilerCalls": 0,
+  "newPureProjectionOperations": 1,
+  "newInternalRawProjectorExecutions": 1,
+  "existingFactoryCalls": 0,
+  "engineRuns": 0,
+  "tailDerivations": 0,
+  "HTTP": 0,
+  "server": 0,
+  "UI": 0,
+  "Git": 0,
+  "build": 0,
+  "TSC": 0,
+  "privateMediaSaved": false
+}
