@@ -1,0 +1,70 @@
+{
+  "schema": "u7d85-frozen-seven-starts-component-harness-validation-v1",
+  "date": "2026-10-21",
+  "configSHA256": "a0dd47caadcb49e9166455aae03984d565d66dc701dbe3dc3aa2e309292e38e2",
+  "inputPins": 218,
+  "ownSHA256": {
+    "check.mjs": "46b755391ae9b7087b90500446d667bf8f616f5288c05ee50ccfebcc4d3f5fd8",
+    "browser.js": "603641964e600c715fa0ed41bea0e00fd506fa4b7ca2636d9fb14d4cae2b7c40",
+    "serve.py": "9ce19d96a9310d6cbbbeb5ec20e90708bd81cc0231c82023f881375d0f3d2fce",
+    "README.md": "3614cc2c824712f97506decf996c64ca5062bea4c1521239fad7cf005a86ad88"
+  },
+  "checks": {
+    "snapshot": {
+      "executions": 1,
+      "status": "FIRST-PASS",
+      "bindings": 3,
+      "negative": 54
+    },
+    "harness": {
+      "executions": 1,
+      "status": "FIRST-PASS",
+      "resourcesExecutions": 1,
+      "SSRRenderCount": 8,
+      "controlledIntermediateSeeds": 7,
+      "commonJSTranspiles": 21,
+      "ESMTranspiles": 21,
+      "newMockHelperTranspiles": 1,
+      "policyParity": 63,
+      "ordinaryOutlineParity": 72,
+      "reporterCases": 14,
+      "negative": 136,
+      "HTTP": 0,
+      "server": 0
+    },
+    "syntax": {
+      "nodeExecutions": 4,
+      "declarationAST": 1,
+      "PythonAST": 1,
+      "diagnostics": 0,
+      "status": "FIRST-PASS"
+    },
+    "metadata": {
+      "executions": 1,
+      "status": "PASS",
+      "scope": "new exact13/own4/config and frozen dependency refs only; snapshot/harness resources/tests not repeated"
+    }
+  },
+  "sourceGeometry": 0,
+  "sourceProjection": 0,
+  "sourceCompiler": 0,
+  "engine": 0,
+  "oldSourceAPPChecksRepeated": 0,
+  "authorServer": 0,
+  "authorUI": 0,
+  "actualHydrationExecuted": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "actualAppUI": false,
+  "runtimeRegistered": false,
+  "nativeApproval": false,
+  "sourceFiniteReviewHistoricalSeparate": true,
+  "prewriteHistory": [
+    {
+      "reason": "first combined pattern read output warning prefix prevented JSON parse",
+      "count": 1,
+      "files": 0,
+      "tests": 0,
+      "recovery": "smaller bounded file groups read"
+    }
+  ]
+}
