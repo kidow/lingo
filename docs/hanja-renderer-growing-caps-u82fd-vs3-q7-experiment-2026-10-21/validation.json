@@ -25,7 +25,7 @@
     "config.json": "67ada77863f04356d7820d7a23b8beff2fee14437542987fe3eb4341bddf35f2",
     "render.mjs": "64a7f41e3fa449c9d940d5859f524ee2846a4c0e803c4ec7293df723e23bbb7b",
     "check.mjs": "b4727d1ce2e6131b288c9f2dfbe3e7ae6fc692463afdf40954df9c2299b4a373",
-    "serve.py": "0c6df6fdc1b097203665f5944e43bebccd8e2431cc508c624b4141751d97eafb",
+    "serve.py": "74ea728b91962e2c83bf2bc23db1741cc1d9fcb6c12eec0cc0b38ad6c69a2f76",
     "README.md": "9c64ef5dab2ff207227e54647b6a4cd719e21e075caf5bbc01884e2285e506b3"
   },
   "history": {
@@ -36,7 +36,56 @@
     "compiler": 0,
     "factory": 0,
     "existingPassedChecksRepeated": 0,
-    "oldQArithmeticRepeated": 0
+    "oldQArithmeticRepeated": 0,
+    "startupEncodingRecovery": {
+      "ROOTFirstStart": {
+        "executions": 1,
+        "result": "FAIL before bind/HTTP/server creation",
+        "command": "python3 -B serve.py --port 59412",
+        "reason": "Non-UTF-8 code starting with byte eb at line10; no encoding declared"
+      },
+      "ROOTHelpBeforeFix": {
+        "executions": 1,
+        "result": "same FAIL",
+        "python": "/usr/bin/python3 3.9.6"
+      },
+      "localInspection": {
+        "bytesBeforeFix": 8346,
+        "utf8FatalDecode": "PASS",
+        "originalByteSHA256": "0c6df6fdc1b097203665f5944e43bebccd8e2431cc508c624b4141751d97eafb",
+        "sameAsPreparedText": true,
+        "newByteASTParse": {
+          "executions": 1,
+          "result": "PASS"
+        },
+        "newCLIHelpBeforeFix": {
+          "executions": 1,
+          "result": "same FAIL"
+        },
+        "exactInternalCPythonCause": "not established; CLI-vs-AST source-loading behavior differs"
+      },
+      "fix": {
+        "scope": "first-line explicit UTF-8 declaration only",
+        "oldServerSHA256": "0c6df6fdc1b097203665f5944e43bebccd8e2431cc508c624b4141751d97eafb",
+        "newServerSHA256": "74ea728b91962e2c83bf2bc23db1741cc1d9fcb6c12eec0cc0b38ad6c69a2f76",
+        "JavaScriptAndBodyBytesChanged": 0
+      },
+      "newCLIHelpFailedOnlyRecovery": {
+        "executions": 1,
+        "exit": 0,
+        "result": "PASS",
+        "command": "/usr/bin/python3 -B docs/hanja-renderer-growing-caps-u82fd-vs3-q7-experiment-2026-10-21/serve.py --help",
+        "serverCreated": 0,
+        "HTTP": 0
+      },
+      "oldSuccessfulFocusedRepeated": 0,
+      "oldSyntaxRepeated": 0,
+      "newPinCheck": {
+        "scope": "changed serve pin and inverse header only",
+        "executions": 1,
+        "result": "PASS"
+      }
+    }
   },
   "checks": {
     "newFocused": {
