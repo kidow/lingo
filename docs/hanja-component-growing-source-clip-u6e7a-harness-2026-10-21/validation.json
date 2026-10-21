@@ -1,0 +1,154 @@
+{
+  "schema": "u6e7a-actual-component-harness-preparation-v1",
+  "date": "2026-10-21",
+  "configSHA256": "72ce16a486feb2ec27feb3977a559bb947d47be9557a223d82090098fc47b339",
+  "ownSHA256": {
+    "config.json": "72ce16a486feb2ec27feb3977a559bb947d47be9557a223d82090098fc47b339",
+    "browser.js": "85972a81e3ca82afd12166b2d0422a68e9ae7fea0279b47b4d86074f44176174",
+    "check.mjs": "57c9f5928626b719aeb7f5b349283b8764881448d2cd8f7b7a8b0111cb880e40",
+    "serve.py": "a59e856f5b35307101c98163f324a8c85b54898a0890af142cd17c0f34719f34",
+    "README.md": "87ad60f7747d092774d6d3179aee311ee880cfc92a1f9aeab20ff9ef10e62669"
+  },
+  "inputPins": 101,
+  "ownPins": 5,
+  "snapshot": {
+    "files": 7,
+    "appByteSnapshots": 3,
+    "legacyResolversReferenced": 18,
+    "oldCopiesNew": 0
+  },
+  "focused": {
+    "firstAttempt": {
+      "state": "FAIL",
+      "stage": "timing declarations outside first16KB",
+      "snapshotBindings": 3,
+      "snapshotNegative": 43,
+      "inputAndSourceGuardsPassed": true,
+      "transpiles": 0,
+      "SSR": 0
+    },
+    "recovery": {
+      "state": "FAIL",
+      "snapshotRepeated": 0,
+      "inputGuardPrefixRepeated": 0,
+      "resourcesAndSourceResolverReadsAsPrerequisite": true,
+      "resourceSSR6Passed": true,
+      "phasePrefixSSR7Passed": true,
+      "sourceMaterialNegatives": 25,
+      "targetCount": 5,
+      "oldChildInverseBytes": true,
+      "failure": "reporter literal assertion; runtime key was built from prefix, not app typo",
+      "resourceCountersNotCapturedBeforeProcessExit": true
+    },
+    "remainingTail": {
+      "state": "PASS",
+      "failedReporterLiteralRecovery": true,
+      "negative": 7,
+      "routeManifest": 31,
+      "resourcesRepeated": 0,
+      "SSRRepeated": 0,
+      "oldAppTests": 0,
+      "sourceGeometry": 0,
+      "browser": 0,
+      "server": 0
+    },
+    "reporterFrameNew": {
+      "state": "FIRSTPASS",
+      "actualBrowserFunctionMock": true,
+      "positive": 5,
+      "negative": 20,
+      "SSR": 0,
+      "resources": 0,
+      "UA": "mock only",
+      "browser": 0,
+      "server": 0
+    }
+  },
+  "syntax": {
+    "state": "FIRSTPASS",
+    "node": [
+      {
+        "path": "docs/hanja-component-evidence-growing-source-clip-u6e7a-2026-10-21/resolver.mjs",
+        "status": 0
+      },
+      {
+        "path": "docs/hanja-component-evidence-growing-source-clip-u6e7a-2026-10-21/check.mjs",
+        "status": 0
+      },
+      {
+        "path": "docs/hanja-component-growing-source-clip-u6e7a-harness-2026-10-21/check.mjs",
+        "status": 0
+      },
+      {
+        "path": "docs/hanja-component-growing-source-clip-u6e7a-harness-2026-10-21/browser.js",
+        "status": 0
+      }
+    ],
+    "declarationASTDiagnostics": 0,
+    "pythonAST": 1
+  },
+  "metadata": {
+    "state": "PASS",
+    "inputPins": 101,
+    "ownPins": 5,
+    "newFiles": 13,
+    "configMatch": true,
+    "ownMismatch": 0,
+    "snapshotApp3Mismatch": 0,
+    "inputMapPreserved": true,
+    "actualBrowserApproval": false
+  },
+  "appPreparationHistory": {
+    "firstPrerequisiteFixtureKeyFailure": {
+      "tests": 8,
+      "passed": 0,
+      "policyAndUAChecksNotReached": true
+    },
+    "failedOnlyRecovery": {
+      "tests": 8,
+      "passed": 8
+    },
+    "newIndependentMaskFingerprintTest": {
+      "tests": 1,
+      "passed": 1,
+      "other7Repeated": 0
+    },
+    "actualTSXTargetedFirst": {
+      "tests": 3,
+      "passed": 3,
+      "childSSRStates": 30,
+      "ordinaryParity": 72
+    },
+    "oldAppTestsRepeatedByThisHarness": 0
+  },
+  "sourceProjection": 0,
+  "sourceCompilerCalls": 0,
+  "sourceFactoryCalls": 0,
+  "engineRuns": 0,
+  "geometry": 0,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "runtimeRegistered": false,
+  "runtimeApplied": false,
+  "UI": 0,
+  "server": 0,
+  "Git": 0,
+  "build": 0,
+  "startupCLI": {
+    "encodingDeclaration": "second line utf-8",
+    "help": {
+      "firstPASS": true,
+      "exit": 0
+    },
+    "checkOnly": {
+      "firstPASS": true,
+      "exit": 0,
+      "sourceCompiler": 0,
+      "engine": 0,
+      "HTTP": 0,
+      "server": 0
+    },
+    "resourcesStartupStillRootPrerequisite": true
+  }
+}
