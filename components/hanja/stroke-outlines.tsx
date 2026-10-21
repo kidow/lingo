@@ -1,4 +1,5 @@
 'use client'
+import { reviewedU7d7aContext, reviewedU7d7aPolicy, commitReviewedU7d7aCaps, type ReviewedU7d7aPolicy } from '@/lib/hanja-stroke-start-gate-u7d7a'
 import { reviewedU7c1cContext, reviewedU7c1cPolicy, commitReviewedU7c1cCaps, commitReviewedU7c1cMonotone, type ReviewedU7c1cGrowingPolicy, type ReviewedU7c1cMonotonePolicy } from '@/lib/hanja-stroke-start-gate-u7c1c'
 import { reviewedU9081Context, reviewedU9081Policy, commitReviewedU9081Caps, type ReviewedU9081Policy } from '@/lib/hanja-stroke-start-gate-u9081'
 import { reviewedU564bContext, reviewedU564bPolicy, commitReviewedU564bCaps, type ReviewedU564bPolicy } from '@/lib/hanja-stroke-start-gate-u564b'
@@ -42,6 +43,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u7d3dContext = reviewedU7d3dContext(strokes)
   const u6303Context = reviewedU6303Context(strokes)
   const u7277Context = reviewedU7277Context(strokes)
+  const u7d7aContext = reviewedU7d7aContext(strokes)
   const u7c1cContext = reviewedU7c1cContext(strokes)
   const u564bContext = reviewedU564bContext(strokes)
   const u68b2Context = reviewedU68b2Context(strokes)
@@ -84,6 +86,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u6303Policy) return <U6303CapsOutline key={index} policy={u6303Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u7277Policy = reviewedU7277Policy(u7277Context, stroke, index)
         if (u7277Policy) return <U7277CapsOutline key={index} policy={u7277Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+        const u7d7aPolicy = reviewedU7d7aPolicy(u7d7aContext, stroke, index)
+        if (u7d7aPolicy) return <U7d7aCapsOutline key={index} policy={u7d7aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u7c1cPolicy = reviewedU7c1cPolicy(u7c1cContext, stroke, index)
         if (u7c1cPolicy?.kind === 'growing-u7c1c-caps') return <U7c1cCapsOutline key={index} policy={u7c1cPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         if (u7c1cPolicy?.kind === 'original-P-x-u7c1c') return <U7c1cMonotoneOutline key={index} policy={u7c1cPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
@@ -123,6 +127,29 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
           </g>
       })}</g>
     })}
+  </g>
+}
+function U7d7aCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU7d7aPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>{
+    const committed=commitReviewedU7d7aCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current})
+    return committed.cleanup
+  },[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="growing-u7d7a-caps" data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u7d7a-measure'} data-growing-owner={clipId} data-u7d7a-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0} />
+      </mask>
+      <mask id={clipId+'-u7d7a-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u7d7a-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0} />
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+        <circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path key="u7d7a-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
+    {valid&&progress>0&&progress<1&&<path key="u7d7a-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u7d7a-growing)'} visibility="hidden" />}
   </g>
 }
 /** 簜 water9m1만 조건부 growing 정책. */
