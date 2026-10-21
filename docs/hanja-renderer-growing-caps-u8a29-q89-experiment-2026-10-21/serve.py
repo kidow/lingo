@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+import sys
+sys.dont_write_bytecode=True
+import argparse,hashlib,html,importlib.util,json
+from pathlib import Path
+from urllib.parse import urlparse,parse_qs
+from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
+HERE=Path(__file__).resolve().parent
+ROOT=HERE.parent.parent
+CONFIG=json.loads((HERE/'config.json').read_text(encoding='utf-8'))
+BROWSER="import{renderOriginal,renderGrowingCaps,renderWhole,renderTargetOnly,targetMask,targetCoverageResidual,measureBrowserFrame,browserMetrics}from'/render.mjs';const C=await(await fetch('/config.json')).json(),F=await(await fetch('/fixture.json')).json(),S=F.u8a29.strokes,$=s=>document.querySelector(s);let pen=8,p=0,serial=0,errors=[];function status(mode,extra={}){$('#status').textContent=JSON.stringify({mode,pen,requestedGlobal:p,report:browserMetrics(),errors,...extra})}function paint(){try{$('#reference').innerHTML=renderOriginal(S,pen,p,'reference');$('#candidate').innerHTML=renderGrowingCaps(S,pen,p,'candidate');$('#progress').value=p*100;$('#percent').textContent=(p*100).toFixed(10)+'%';status('main')}catch(e){$('#candidate').innerHTML='';errors.push(String(e));status('invalid-hidden')}}function record(svg,label,width,reference=null,report=null){const d=document.createElement('section');d.className='sample';d.innerHTML='<h3>'+label+'</h3>'+(reference===null?'<p>후보만 표시/reference숨김</p>':'<div class=\"sample-ref\">'+reference+'</div>')+'<div class=\"sample-new\">'+svg+'</div>';for(const s of d.querySelectorAll('svg')){s.style.width=width+'px';s.style.height=width+'px'}d.dataset.report=JSON.stringify(report);$('#samples').appendChild(d);d.scrollIntoView({block:'start'});return d}function chosen(){return Number($('#target').value)}function targetSample(v,label='local'){pen=chosen();p=v;$('#pen').value=pen;$('#local').value=v;paint();const svg=renderTargetOnly(pen,v,'target-'+serial++);record(svg,'Q'+pen+'m1 target-only '+label+' '+v,520,null,browserMetrics());status('target-only',{requestedLocal:v})}for(const v of C.localSamples){const b=document.createElement('button');b.textContent='target local '+v;b.onclick=()=>targetSample(v);$('#locals').appendChild(b)}for(const v of C.earlyLocals){const b=document.createElement('button');b.textContent='초기연결 local '+v;b.onclick=()=>targetSample(v,'초기위험');$('#early').appendChild(b)}$('#target').onchange=()=>{pen=chosen();p=0;$('#pen').value=pen;paint()};$('#pen').onchange=e=>{pen=Number(e.target.value);p=0;paint()};$('#progress').oninput=e=>{p=Number(e.target.value)/100;paint()};$('#local').onchange=e=>targetSample(Number(e.target.value));$('#rho').onclick=()=>{const t=chosen(),frame=measureBrowserFrame(targetMask(t),.5);for(const e of[-1e-10,0,1e-10])targetSample(7/frame.L+e,'rho±1e-10')};$('#coverage').onclick=()=>{const t=chosen();record(targetCoverageResidual(targetMask(t),'coverage-'+serial++),'Q'+t+' P-minus-original-fullround · marker없음',520);$('#status').textContent=JSON.stringify({mode:'coverage',target:t,report:null,errors})};$('#whole').onclick=()=>{$('#reference').innerHTML=renderOriginal(S,11,1,'reference-whole');$('#candidate').innerHTML=renderWhole(S,'whole-'+serial++);status('whole',{requestedGlobal:1,mainGlobal:p})};$('#coarse').onclick=()=>{const compact=$('#compact').checked,size=compact?150:Number($('#size').value);$('#samples').innerHTML='';$('#samples').className=compact?'compact':'';for(const v of C.coarseSamples){const svg=renderGrowingCaps(S,pen,v,'coarse-'+serial++);record(svg,'pen'+pen+' global '+v,size,compact?null:renderOriginal(S,pen,v,'coarse-reference-'+serial),browserMetrics())}$('#samples').scrollIntoView({block:'start'});status('coarse-last-sample',{requestedGlobal:1,mainGlobal:p,sampleCount:9})};$('#clear').onclick=()=>{$('#samples').innerHTML='';$('#samples').className=''};$('#play').onclick=()=>{pen=chosen();$('#pen').value=pen;const start=performance.now();function tick(now){p=Math.min(1,(now-start)/8000);paint();if(p<1)requestAnimationFrame(tick);else $('#status').dataset.natural='complete'}requestAnimationFrame(tick)};window.koReports=()=>({current:JSON.parse($('#status').textContent),samples:[...document.querySelectorAll('#samples .sample')].map(d=>JSON.parse(d.dataset.report))});paint();"
+def sha(b):return hashlib.sha256(b).hexdigest()
+def guards():
+    v=json.loads((HERE/'validation.json').read_text(encoding='utf-8'))
+    for path,pin in CONFIG['inputSHA256'].items():assert sha((ROOT/path).read_bytes())==pin,'fixed input changed: '+path
+    for name,pin in v['ownSHA256'].items():assert sha((HERE/name).read_bytes())==pin,'experiment changed: '+name
+    b=(ROOT/CONFIG['sourceFixture']).read_bytes();assert sha(b)==CONFIG['fixtureSHA256'],'fixture changed'
+    return b
+def selection(path,query):
+    q=parse_qs(query,keep_blank_values=True,strict_parsing=True)if query else{}
+    assert not q,'query unsupported'
+    assert path in('/','/progressive','/render.mjs','/browser.js','/fixture.json','/config.json'),'route unsupported'
+    return path
+def page(domestic):
+    options=''.join('<option value="%d" %s>%d</option>'%(i,'selected'if i==8 else'',i)for i in range(1,12))
+    return ('<!doctype html><meta charset="utf-8"><title>訩 Q8·Q9 growing candidate</title><style>body{font:16px system-ui;margin:12px}button{margin:4px}svg{width:520px;height:520px;background:white}.grid{display:grid;grid-template-columns:repeat(3,540px);gap:12px;width:1644px}.sample{border:1px solid #ddd;margin:12px 0;padding:8px;width:max-content}.sample>div{display:inline-block}.compact{display:grid;grid-template-columns:repeat(3,166px);gap:4px;width:506px}.compact .sample{width:150px;margin:0;padding:4px}.compact h3{font-size:11px}.compact p{font-size:9px}pre{white-space:pre-wrap;max-width:850px}</style><h1>訩 고유Q8·Q9 성장 후보 · native미승인</h1><p>원11p13m23/다른11mask는shared43그대로. 각MQ T1/2 K1/100만결박. 원M밖/별도P성분위험은유지하며관찰전FAIL이나연결합격으로단정하지않음. 임의threshold/guide이동/폭변경0. p0/p1·whole/prefix에서는UA측정값을null로리셋해stale frame을현재값으로쓰지않음.</p><label>획<select id="pen">'+options+'</select></label><label>고위험target<select id="target"><option>8</option><option>9</option></select></label><input id="progress" type="range" min="0" max="100" step="any" value="0"><b id="percent"></b><button id="play">선택target 자연8초</button><button id="whole">exact whole11</button><div id="locals"></div><input id="local" type="number" min="0" max="1" step="any" value="0"><div id="early"></div><button id="rho">선택target rho3</button><button id="coverage">원P-minus-fullround</button><label><input id="compact" type="checkbox" checked>compact9 후보150px 3×3/reference숨김</label><select id="size"><option>220</option><option>520</option></select><button id="coarse">현재획 coarse9</button><button id="clear">샘플지우기</button><pre id="status"></pre><div class="grid"><section><h2>국내whole · 시간승인아님</h2>'+domestic+'</section><section><h2>같은source shared43 reference</h2><div id="reference"></div></section><section><h2>새후보 main520</h2><div id="candidate"></div></section></div><div id="samples"></div><script type="module" src="/browser.js"></script>').encode('utf-8')
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        try:
+            guards();u=urlparse(self.path);route=selection(u.path,u.query)
+            if route in('/','/progressive'):b=PAGE;kind='text/html; charset=utf-8'
+            elif route=='/browser.js':b=BROWSER.encode('utf-8');kind='text/javascript; charset=utf-8'
+            elif route=='/render.mjs':b=(HERE/'render.mjs').read_bytes();kind='text/javascript; charset=utf-8'
+            elif route=='/config.json':b=(HERE/'config.json').read_bytes();kind='application/json'
+            else:b=FIXTURE;kind='application/json'
+            self.send_response(200);self.send_header('Content-Type',kind);self.send_header('Cache-Control','no-store');self.end_headers();self.wfile.write(b)
+        except Exception:self.send_error(409,'fixed experiment contract rejected')
+    def log_message(self,*args):pass
+def main():
+    global FIXTURE,PAGE
+    p=argparse.ArgumentParser();p.add_argument('--port',type=int,default=0);a=p.parse_args();FIXTURE=guards()
+    source=ROOT/'docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py';spec=importlib.util.spec_from_file_location('fixed_ko_dictionary',source);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);domestic=m.fetch_dictionary_once();PAGE=page(m.domestic_svg(domestic))
+    s=ThreadingHTTPServer(('127.0.0.1',a.port),Handler);print(json.dumps({'port':s.server_port,'glyph':'訩','sourceCompiler':0,'projection':0,'engine':0,'domesticFetch':1}),flush=True)
+    try:s.serve_forever()
+    finally:s.server_close()
+if __name__=='__main__':main()
