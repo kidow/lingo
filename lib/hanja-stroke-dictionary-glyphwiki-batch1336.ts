@@ -1,0 +1,297 @@
+import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
+
+/** Unregistered provisional batch1336; confirmed parent1335, actual component/runtime pending. */
+const EXPECTED = [
+  {
+    "glyph": "絺",
+    "verificationSource": "ehanja-crosschecked",
+    "verifiedAt": "2026-10-21",
+    "geometrySource": "655563d7ee2431cc79de5e2164953ff3fc4e4607bab8b59eb2fb70ec8637afa0",
+    "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
+    "sourceStrokeIndices": [
+      1,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      11,
+      14,
+      15,
+      13
+    ],
+    "paths": [
+      "M28.2 9.75 L27.05 11.7 L25.85 13.65 L24.6 15.6 L23.35 17.5 L22.05 19.35 L20.7 21.2 L19.3 23.05 L17.85 24.8 L16.3 26.55 L14.7 28.2 L13.95 27.75 L14.85 25.6 L15.7 23.5 L16.65 21.4 L17.55 19.35 L18.45 17.3 L19.35 15.25 L20.25 13.25 L21.15 11.2 L22 9.15 L22.8 7.1 Z M22.6 7.55 L23.1 6.55 L28.2 9.75 Z M28.2 9.75 L29.1 11.3 L26.2 11.55 Z M7.3 22.35 L9.1 23.2 L10.9 24.1 L12.6 25.1 L14.15 26.3 L15.65 27.55 L17 28.95 L18.3 30.45 L19.45 32.05 L20.5 33.75 L21.4 35.55 L15.8 37.6 L15.35 36.05 L14.8 34.5 L14.2 33 L13.45 31.5 L12.6 30.05 L11.7 28.65 L10.65 27.25 L9.5 25.85 L8.25 24.4 L6.8 23.1 Z M21.4 35.55 L21.3 37.8 L19.65 39.4 L17.35 39.25 L15.8 37.6 Z",
+      "M38.75 21.35 L36.6 24.95 L34.35 28.45 L32.1 31.95 L29.75 35.4 L27.35 38.85 L24.95 42.25 L22.45 45.6 L19.85 48.9 L17.15 52.1 L14.35 55.25 L13.6 54.7 L15.6 51 L17.65 47.4 L19.7 43.75 L21.75 40.15 L23.8 36.6 L25.8 32.95 L27.8 29.35 L29.75 25.75 L31.65 22.1 L33.5 18.45 Z M33.3 18.9 L33.8 17.95 L38.75 21.35 Z M38.75 21.35 L39.6 22.95 L36.7 23.05 Z M7.45 53.45 L10.4 53.2 L13.35 52.9 L16.25 52.6 L19.15 52.25 L22 51.9 L24.9 51.5 L27.7 51.1 L30.55 50.7 L33.4 50.35 L36.25 50.05 L36.5 50.9 L33.9 52.15 L31.25 53.3 L28.5 54.3 L25.7 55.2 L22.9 56.05 L20.05 56.8 L17.15 57.55 L14.2 58.2 L11.25 58.8 L8.25 59.4 Z M8.25 59.4 L6.45 53.55 L7.45 53.45 Z M8.25 59.4 L11 57.5 L9.4 60.75 Z",
+      "M29.35 39 L30.85 40.05 L32.4 41.2 L33.8 42.5 L35.15 43.95 L36.35 45.45 L37.5 47.15 L38.55 48.9 L39.5 50.75 L40.35 52.7 L41.15 54.8 L35.3 56.25 L35 54.4 L34.55 52.55 L34.1 50.8 L33.55 49.1 L32.9 47.4 L32.25 45.8 L31.45 44.2 L30.65 42.65 L29.75 41.1 L28.75 39.65 Z M41.15 54.8 L40.8 57.05 L38.95 58.45 L36.7 58.1 L35.3 56.25 Z",
+      "M27.25 53.5 L27.25 91.5 L21.25 94.5 L21.25 53.5 Z",
+      "M18.35 64.3 L17.85 67.1 L17.2 69.85 L16.45 72.55 L15.55 75.25 L14.5 77.9 L13.3 80.5 L12 83.05 L10.55 85.5 L8.85 87.9 L7 90.2 L6.25 89.75 L7.2 87 L8.1 84.35 L9 81.75 L9.8 79.15 L10.5 76.55 L11.05 73.95 L11.55 71.4 L11.95 68.8 L12.25 66.25 L12.4 63.65 Z M12.35 64.15 L12.5 62.6 L18.35 64.3 Z M18.35 64.3 L19.75 65.45 L17.1 66.65 Z",
+      "M29.7 61.05 L31.2 62.2 L32.65 63.5 L34.05 64.9 L35.3 66.5 L36.45 68.2 L37.5 70.05 L38.5 71.95 L39.35 74 L40.15 76.15 L40.85 78.4 L35 79.6 L34.7 77.55 L34.35 75.55 L33.9 73.6 L33.4 71.75 L32.85 69.95 L32.25 68.2 L31.55 66.5 L30.8 64.85 L30 63.2 L29.05 61.65 Z M40.85 78.4 L40.4 80.65 L38.55 81.95 L36.3 81.5 L35 79.6 Z",
+      "M83.25 11.9 L80.75 14.15 L77.95 16.4 L74.8 18.6 L71.35 20.8 L67.6 23 L63.5 25.15 L59.1 27.3 L54.35 29.4 L49.25 31.45 L43.8 33.4 L43.45 32.55 L48.45 29.75 L53.15 27 L57.55 24.4 L61.6 21.85 L65.35 19.4 L68.75 16.95 L71.8 14.6 L74.5 12.25 L76.9 10 L78.9 7.8 Z M78.55 8.15 L79.05 7.6 L83.25 11.9 Z M83.25 11.9 L83.65 13.65 L80.8 13.05 Z",
+      "M49.65 9.3 L54.15 11 L58.35 12.8 L62.35 14.65 L66.1 16.55 L69.6 18.5 L72.85 20.4 L75.9 22.35 L78.75 24.3 L81.35 26.3 L83.75 28.25 L79.6 32.6 L77.6 30.6 L75.4 28.5 L72.9 26.4 L70.2 24.25 L67.3 22.05 L64.1 19.8 L60.7 17.5 L57.1 15.15 L53.3 12.7 L49.25 10.1 Z M83.75 28.25 L84.65 30.35 L83.85 32.5 L81.75 33.4 L79.6 32.6 Z",
+      "M64.9 32.3 L63.3 36.85 L61.45 41.3 L59.35 45.6 L57.05 49.85 L54.5 53.95 L51.75 57.9 L48.75 61.75 L45.5 65.45 L42 68.95 L38.2 72.3 L37.55 71.65 L40.55 67.7 L43.4 63.75 L46.1 59.8 L48.6 55.8 L50.85 51.75 L52.95 47.65 L54.8 43.5 L56.45 39.25 L57.9 35 L59.15 30.6 Z M59 31.1 L59.4 29.8 L64.9 32.3 Z M64.9 32.3 L66.05 33.7 L63.25 34.4 Z",
+      "M37.55 40 L93.9 40 L93.9 42 L37.55 42 Z M93.9 40 L81.9 41 L87.9 35 Z",
+      "M55.05 56.5 L55.05 84.5 L49.05 87.5 L49.05 56.5 Z",
+      "M52.05 56.5 L84.45 56.5 L84.45 58.5 L52.05 58.5 Z M87.45 57.5 L87.45 79 L81.45 79 L81.45 57.5 Z M81.45 56.5 L84.45 54 L89.95 58.5 L87.45 60.5 L81.45 57.5 Z M81.45 79 L87.45 79 L86.25 80.8 L84.45 82 L82.65 80.8 Z M87.45 79 L87.4 80.25 L87.15 81.5 L86.75 82.7 L86.15 83.85 L85.3 84.85 L84.3 85.65 L83.2 86.3 L82 86.7 L80.75 86.9 L79.45 87 L79.45 81 L80.05 80.95 L80.5 80.85 L80.8 80.75 L81 80.7 L81.1 80.6 L81.15 80.5 L81.25 80.35 L81.35 80.05 L81.4 79.6 L81.45 79 Z M79.45 84 L74.45 82.5 L74.45 81 L79.45 81 Z",
+      "M70.6 45.5 L70.6 91 L64.6 94 L64.6 44.5 Z M70.6 45.5 L72.1 46.5 L69.6 48 Z"
+    ],
+    "outlines": [
+      [
+        {
+          "outline": "M28.2 9.75 L27.05 11.7 L25.85 13.65 L24.6 15.6 L23.35 17.5 L22.05 19.35 L20.7 21.2 L19.3 23.05 L17.85 24.8 L16.3 26.55 L14.7 28.2 L13.95 27.75 L14.85 25.6 L15.7 23.5 L16.65 21.4 L17.55 19.35 L18.45 17.3 L19.35 15.25 L20.25 13.25 L21.15 11.2 L22 9.15 L22.8 7.1 Z M22.6 7.55 L23.1 6.55 L28.2 9.75 Z M28.2 9.75 L29.1 11.3 L26.2 11.55 Z",
+          "bounds": [
+            13.95,
+            6.55,
+            29.1,
+            28.2
+          ],
+          "direction": "curve",
+          "weight": 23.017147,
+          "revealPath": "M25.755 8 Q20.61 18.5 14.3625 28",
+          "revealWidth": 14
+        },
+        {
+          "outline": "M7.3 22.35 L9.1 23.2 L10.9 24.1 L12.6 25.1 L14.15 26.3 L15.65 27.55 L17 28.95 L18.3 30.45 L19.45 32.05 L20.5 33.75 L21.4 35.55 L15.8 37.6 L15.35 36.05 L14.8 34.5 L14.2 33 L13.45 31.5 L12.6 30.05 L11.7 28.65 L10.65 27.25 L9.5 25.85 L8.25 24.4 L6.8 23.1 Z M21.4 35.55 L21.3 37.8 L19.65 39.4 L17.35 39.25 L15.8 37.6 Z",
+          "bounds": [
+            6.8,
+            22.35,
+            21.4,
+            39.4
+          ],
+          "direction": "curve",
+          "weight": 19.909169,
+          "revealPath": "M6.645 22.5 Q15.465 28 19.14 38",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M38.75 21.35 L36.6 24.95 L34.35 28.45 L32.1 31.95 L29.75 35.4 L27.35 38.85 L24.95 42.25 L22.45 45.6 L19.85 48.9 L17.15 52.1 L14.35 55.25 L13.6 54.7 L15.6 51 L17.65 47.4 L19.7 43.75 L21.75 40.15 L23.8 36.6 L25.8 32.95 L27.8 29.35 L29.75 25.75 L31.65 22.1 L33.5 18.45 Z M33.3 18.9 L33.8 17.95 L38.75 21.35 Z M38.75 21.35 L39.6 22.95 L36.7 23.05 Z",
+          "bounds": [
+            13.6,
+            17.95,
+            39.6,
+            55.25
+          ],
+          "direction": "curve",
+          "weight": 41.985644,
+          "revealPath": "M36.4125 19.5 Q26.1225 38 13.995 55",
+          "revealWidth": 14
+        },
+        {
+          "outline": "M7.45 53.45 L10.4 53.2 L13.35 52.9 L16.25 52.6 L19.15 52.25 L22 51.9 L24.9 51.5 L27.7 51.1 L30.55 50.7 L33.4 50.35 L36.25 50.05 L36.5 50.9 L33.9 52.15 L31.25 53.3 L28.5 54.3 L25.7 55.2 L22.9 56.05 L20.05 56.8 L17.15 57.55 L14.2 58.2 L11.25 58.8 L8.25 59.4 Z M8.25 59.4 L6.45 53.55 L7.45 53.45 Z M8.25 59.4 L11 57.5 L9.4 60.75 Z",
+          "bounds": [
+            6.45,
+            50.05,
+            36.5,
+            60.75
+          ],
+          "direction": "curve",
+          "weight": 29.646012,
+          "revealPath": "M7.38 56.5 Q22.815 54.5 36.4125 50.5",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M29.35 39 L30.85 40.05 L32.4 41.2 L33.8 42.5 L35.15 43.95 L36.35 45.45 L37.5 47.15 L38.55 48.9 L39.5 50.75 L40.35 52.7 L41.15 54.8 L35.3 56.25 L35 54.4 L34.55 52.55 L34.1 50.8 L33.55 49.1 L32.9 47.4 L32.25 45.8 L31.45 44.2 L30.65 42.65 L29.75 41.1 L28.75 39.65 Z M41.15 54.8 L40.8 57.05 L38.95 58.45 L36.7 58.1 L35.3 56.25 Z",
+          "bounds": [
+            28.75,
+            39,
+            41.15,
+            58.45
+          ],
+          "direction": "curve",
+          "weight": 20.553735,
+          "revealPath": "M28.695 39 Q35.6775 45.5 38.6175 57",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M27.25 53.5 L27.25 91.5 L21.25 94.5 L21.25 53.5 Z",
+          "bounds": [
+            21.25,
+            53.5,
+            27.25,
+            94.5
+          ],
+          "direction": "down",
+          "weight": 38.5
+        }
+      ],
+      [
+        {
+          "outline": "M18.35 64.3 L17.85 67.1 L17.2 69.85 L16.45 72.55 L15.55 75.25 L14.5 77.9 L13.3 80.5 L12 83.05 L10.55 85.5 L8.85 87.9 L7 90.2 L6.25 89.75 L7.2 87 L8.1 84.35 L9 81.75 L9.8 79.15 L10.5 76.55 L11.05 73.95 L11.55 71.4 L11.95 68.8 L12.25 66.25 L12.4 63.65 Z M12.35 64.15 L12.5 62.6 L18.35 64.3 Z M18.35 64.3 L19.75 65.45 L17.1 66.65 Z",
+          "bounds": [
+            6.25,
+            62.6,
+            19.75,
+            90.2
+          ],
+          "direction": "curve",
+          "weight": 27.929239,
+          "revealPath": "M15.465 63.5 Q13.995 77.5 6.645 90",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M29.7 61.05 L31.2 62.2 L32.65 63.5 L34.05 64.9 L35.3 66.5 L36.45 68.2 L37.5 70.05 L38.5 71.95 L39.35 74 L40.15 76.15 L40.85 78.4 L35 79.6 L34.7 77.55 L34.35 75.55 L33.9 73.6 L33.4 71.75 L32.85 69.95 L32.25 68.2 L31.55 66.5 L30.8 64.85 L30 63.2 L29.05 61.65 Z M40.85 78.4 L40.4 80.65 L38.55 81.95 L36.3 81.5 L35 79.6 Z",
+          "bounds": [
+            29.05,
+            61.05,
+            40.85,
+            81.95
+          ],
+          "direction": "curve",
+          "weight": 21.555977,
+          "revealPath": "M29.0625 61 Q35.6775 68 38.25 80.5",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M83.25 11.9 L80.75 14.15 L77.95 16.4 L74.8 18.6 L71.35 20.8 L67.6 23 L63.5 25.15 L59.1 27.3 L54.35 29.4 L49.25 31.45 L43.8 33.4 L43.45 32.55 L48.45 29.75 L53.15 27 L57.55 24.4 L61.6 21.85 L65.35 19.4 L68.75 16.95 L71.8 14.6 L74.5 12.25 L76.9 10 L78.9 7.8 Z M78.55 8.15 L79.05 7.6 L83.25 11.9 Z M83.25 11.9 L83.65 13.65 L80.8 13.05 Z",
+          "bounds": [
+            43.45,
+            7.6,
+            83.65,
+            33.4
+          ],
+          "direction": "curve",
+          "weight": 44.509437,
+          "revealPath": "M81.4375 9.5 Q70.6375 21 43.6375 33",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M49.65 9.3 L54.15 11 L58.35 12.8 L62.35 14.65 L66.1 16.55 L69.6 18.5 L72.85 20.4 L75.9 22.35 L78.75 24.3 L81.35 26.3 L83.75 28.25 L79.6 32.6 L77.6 30.6 L75.4 28.5 L72.9 26.4 L70.2 24.25 L67.3 22.05 L64.1 19.8 L60.7 17.5 L57.1 15.15 L53.3 12.7 L49.25 10.1 Z M83.75 28.25 L84.65 30.35 L83.85 32.5 L81.75 33.4 L79.6 32.6 Z",
+          "bounds": [
+            49.25,
+            9.3,
+            84.65,
+            33.4
+          ],
+          "direction": "curve",
+          "weight": 40.28725,
+          "revealPath": "M49.0375 9.5 Q71.3125 20.5 82.7875 31.5",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M64.9 32.3 L63.3 36.85 L61.45 41.3 L59.35 45.6 L57.05 49.85 L54.5 53.95 L51.75 57.9 L48.75 61.75 L45.5 65.45 L42 68.95 L38.2 72.3 L37.55 71.65 L40.55 67.7 L43.4 63.75 L46.1 59.8 L48.6 55.8 L50.85 51.75 L52.95 47.65 L54.8 43.5 L56.45 39.25 L57.9 35 L59.15 30.6 Z M59 31.1 L59.4 29.8 L64.9 32.3 Z M64.9 32.3 L66.05 33.7 L63.25 34.4 Z",
+          "bounds": [
+            37.55,
+            29.8,
+            66.05,
+            72.3
+          ],
+          "direction": "curve",
+          "weight": 47.660151,
+          "revealPath": "M62.2 31 Q55.45 54 37.9 72",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M37.55 40 L93.9 40 L93.9 42 L37.55 42 Z M93.9 40 L81.9 41 L87.9 35 Z",
+          "bounds": [
+            37.55,
+            35,
+            93.9,
+            42
+          ],
+          "direction": "right",
+          "weight": 56.3625
+        }
+      ],
+      [
+        {
+          "outline": "M55.05 56.5 L55.05 84.5 L49.05 87.5 L49.05 56.5 Z",
+          "bounds": [
+            49.05,
+            56.5,
+            55.05,
+            87.5
+          ],
+          "direction": "down",
+          "weight": 28.5
+        }
+      ],
+      [
+        {
+          "outline": "M52.05 56.5 L84.45 56.5 L84.45 58.5 L52.05 58.5 Z M87.45 57.5 L87.45 79 L81.45 79 L81.45 57.5 Z M81.45 56.5 L84.45 54 L89.95 58.5 L87.45 60.5 L81.45 57.5 Z M81.45 79 L87.45 79 L86.25 80.8 L84.45 82 L82.65 80.8 Z M87.45 79 L87.4 80.25 L87.15 81.5 L86.75 82.7 L86.15 83.85 L85.3 84.85 L84.3 85.65 L83.2 86.3 L82 86.7 L80.75 86.9 L79.45 87 L79.45 81 L80.05 80.95 L80.5 80.85 L80.8 80.75 L81 80.7 L81.1 80.6 L81.15 80.5 L81.25 80.35 L81.35 80.05 L81.4 79.6 L81.45 79 Z M79.45 84 L74.45 82.5 L74.45 81 L79.45 81 Z",
+          "bounds": [
+            52.05,
+            54,
+            89.95,
+            87
+          ],
+          "direction": "curve",
+          "weight": 60.971068,
+          "revealPath": "M52.075 57.5 L84.475 57.5 L84.475 79 Q84.475 84 79.475 84",
+          "revealWidth": 14
+        }
+      ],
+      [
+        {
+          "outline": "M70.6 45.5 L70.6 91 L64.6 94 L64.6 44.5 Z M70.6 45.5 L72.1 46.5 L69.6 48 Z",
+          "bounds": [
+            64.6,
+            44.5,
+            72.1,
+            94
+          ],
+          "direction": "down",
+          "weight": 47.5
+        }
+      ]
+    ],
+    "pathsSha256": "9c80b6cc5d7357ba839ebce8a59faee386c344b83997add6a7c048d298df6b0b",
+    "sourceReference": {
+      "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7d00/7d7a.svg",
+      "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/7d00/7d7a.svg",
+      "dictionarySvgSha256": "65647029e592d4c8c344ba974bca23eb87b764ca9e336930ec1f4da044e0fd28",
+      "dictionaryDirectionStrokes": "기존 static13 대응과 ROOT source-finite PASS만 참조. 실제 component/APP/runtime 승인 전 미등록 provisional batch1336.",
+      "orderReviewSha256": "180a836c7be0d9e576c247e44b6929305c29325a50007e7705412c21ce75cc41",
+      "geometryReviewSha256": "8df6e895652b87a8f4804987c49d1546344979306c2b3489b1bd20f19a216eff",
+      "directionReviewSha256": "180a836c7be0d9e576c247e44b6929305c29325a50007e7705412c21ce75cc41"
+    },
+    "geometryLicense": {
+      "spdx": "LicenseRef-GlyphWiki",
+      "attribution": "GlyphWiki Project and contributors",
+      "url": "https://glyphwiki.org/wiki/GlyphWiki:License@18",
+      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "revision": "Fixed base actualfull5/id3 + selectedbody3; UNREGISTERED provisional batch1336. Source finite evidence only; actual component/APP/runtime pending.",
+      "editableSource": "/hanja-strokes/glyphwiki/u7d7a.json",
+      "modifications": "미등록 provisional batch1336 준비 번들이다. 부모1335는 실제5751적용/227미적용으로 확인됐고 batch1336 registry 등록은0이다. 원949 actualfull5와 동일selectedbody3의 defaults/groups/trace 및 id3/root/file/SHA를 고정하며 새 header 조합0이다. 고정 source fixture13p15m38 geometry933b3e52ba6e2a53237c09777724d4ea34ac05cd3124e1ecfb1ae38682cf719b의 모든 원필드를 그대로 복사한다. QQ1/2는 비영점 gap을 지닌 원2mask씩 독립 유지하며 guide 결합/connector0이다. 원raw15/16의 정확 endpoint만 원캐시대로12획MLLQ 하나로 유지하고 다른 raw 새합침/순서 추론0이다. 기존13획15mask38polygon 전체 원형·폭·guide·weight·bounds·순서를 보존하며 신규tail분리0이다. Q4의 개별 초기곡률 증명과12획MLLQ 첫직선 증명에 따른 growingcaps는 별도 표시정책으로서 geometry수정0이다. ROOT source finite PASS는 고정 source review의 범위만 참조하며 APP 실제브라우저/전체13획연속재생/국내temporal/controller/storage/routes/runtime 승인은 아직false다. 과거 sourceprep/HOLD/NOTICE 및 frozen preparation의 false는 역사 그대로 유지하며 sourceProvenance.review는 실제 component 승인 전null이다. verifiedAt와 eh anja category는 정적대응/준비 기준으로 최종native 완료 주장이 아니다. 이번 번들 준비 source/compiler/factory/projection/derive/engine/geometry 실행0이다."
+    }
+  }
+] as unknown as readonly HanjaDictionaryStrokeData[]
+function freezeDeep(value:unknown):void {if(value&&typeof value==='object'){for(const child of Object.values(value))freezeDeep(child);Object.freeze(value)}}
+freezeDeep(EXPECTED)
+function sameJSON(a:unknown,b:unknown):boolean {
+ if(Object.is(a,b))return true
+ if(!b||typeof b!=='object'||!a||typeof a!=='object')return false
+ if(Array.isArray(b)){
+  if(!Array.isArray(a)||Object.getPrototypeOf(a)!==Array.prototype||a.length!==b.length||Reflect.ownKeys(a).length!==b.length+1)return false
+  return b.every((value,index)=>{const d=Object.getOwnPropertyDescriptor(a,String(index));return !!d&&d.enumerable&&Object.hasOwn(d,'value')&&sameJSON(d.value,value)})
+ }
+ if(Array.isArray(a)||Object.getPrototypeOf(a)!==Object.prototype)return false
+ const keys=Object.keys(b),expected=b as Record<string,unknown>
+ return Reflect.ownKeys(a).length===keys.length&&keys.every(key=>{const d=Object.getOwnPropertyDescriptor(a,key);return !!d&&d.enumerable&&Object.hasOwn(d,'value')&&sameJSON(d.value,expected[key])})
+}
+export function loadGlyphWikiBatch1336Strokes(bundle:unknown):readonly HanjaDictionaryStrokeData[] {
+ if(arguments.length!==1||!sameJSON(bundle,EXPECTED))throw new Error('Invalid GlyphWiki batch1336 provisional bundle')
+ return EXPECTED
+}
+export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1336_STROKES:ReturnType<typeof loadGlyphWikiBatch1336Strokes>=EXPECTED
+export const GLYPHWIKI_BATCH1336_NATIVE_APPROVAL=false
+export const GLYPHWIKI_BATCH1336_RUNTIME_APPLIED=false
+export const GLYPHWIKI_BATCH1336_ASSIGNMENT_PROVISIONAL=true
