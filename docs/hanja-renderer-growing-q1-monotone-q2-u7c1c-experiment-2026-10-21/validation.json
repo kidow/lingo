@@ -4,8 +4,8 @@
   "configSHA256": "866a3c783e8e76ce5e59fb1de1b372bbd625e0a1d61c6768d9411519e6815e2a",
   "newFilesSHA256": {
     "config.json": "866a3c783e8e76ce5e59fb1de1b372bbd625e0a1d61c6768d9411519e6815e2a",
-    "render.mjs": "e1736d654a06dea231edd9acb4153b4428cd2a28f28ee6f61f695ca5278c51ee",
-    "check.mjs": "4a8472da06b793da15b00f7b8a8ee610ce793a01e4c97d1a15cc534684f1254b",
+    "render.mjs": "3c8e8f322ea7b959ccefabc98d6d291f89cf2eb474914976028d6837db69df09",
+    "check.mjs": "b60b968d93410757bf30a2f857fba3bf39e63a808f461eb6c3d0c4924c930558",
     "serve.py": "21688a7063f256f757ac12c55e01392f13ba0cf4778faf0cd95182c3935f358b",
     "README.md": "dcf91e07b5a9ff4c7ac10cfc6659f0900e1fab5dd7ea7b9fd15f7bdd8745a164"
   },
@@ -84,6 +84,75 @@
     "originalFactory": 0,
     "engine": 0,
     "sourceFieldsChanged": 0
+  },
+  "q2CompletionRecovery": {
+    "rootObservedFailure": "Q2 local0/epsilon/.95/.9999/.99999999 PASS; exact1 FIRSTFAIL blank because commit reset clip rect width0 but completed path still referenced clip",
+    "sourceGeometryUnchanged": true,
+    "scope": "only exact p1 Q2 full original-P path clip reference removed; Q1 and all intermediate policies unchanged",
+    "nativeApproval": false,
+    "rootOtherUnrunAtFirstFailure": [
+      "rho",
+      "coarse",
+      "natural",
+      "whole",
+      "remaining fine"
+    ],
+    "regression": {
+      "cases": 1,
+      "result": "FIRST PASS",
+      "partialPolicyLoopsRepeated": 0,
+      "prior99NegativeRepeated": 0,
+      "prior14MockRepeated": 0,
+      "ordinary153Repeated": 0,
+      "policyModuleCertificateInitializationPrerequisites": 2
+    },
+    "rootFollowupNative": {
+      "rootReported": true,
+      "scope": "failed Q2 exact local1 frame only; not final whole-character approval",
+      "observation": {
+        "browserTab": 62,
+        "selector": "#samples svg11",
+        "localProgress": 1,
+        "fullOriginalPObserved": true,
+        "fullInkScreenshot": true,
+        "completedPathClipPath": null,
+        "result": "PASS recovery1"
+      },
+      "reload409": {
+        "result": "request rejected before new observation",
+        "reason": "serve.py parses V=validation.json at module startup; old process kept old renderer/check own pins in RAM",
+        "oldServerPID": 17871,
+        "oldServerExitCode": 130
+      },
+      "newStartup": {
+        "sandboxDNSFailure": 1,
+        "approvedNetworkStartupPASS": 1,
+        "pid": 23151,
+        "sessionId": 32382,
+        "port": 59412,
+        "serverWasLiveAtReport": true
+      },
+      "previousPassedNativeFramesRepeated": 0,
+      "sourceGeometryChanged": false,
+      "sourceCompilerRuns": 0,
+      "rendererChangedByThisMetadataUpdate": false,
+      "checkChangedByThisMetadataUpdate": false,
+      "wholeCharacterNativeApproval": false,
+      "actualAppUI": false,
+      "runtimeApplied": false,
+      "authorMetadataCheck": {
+        "count": 1,
+        "scope": "JSON/exact one observation delta/unchanged render and check/own pins only",
+        "result": "PASS"
+      }
+    },
+    "originalRenderSHA256": "e1736d654a06dea231edd9acb4153b4428cd2a28f28ee6f61f695ca5278c51ee",
+    "inverseOneEditSHA256": "e1736d654a06dea231edd9acb4153b4428cd2a28f28ee6f61f695ca5278c51ee",
+    "syntax": {
+      "nodeChangedModules": 2,
+      "result": "FIRST PASS"
+    },
+    "metadata": {"count":1,"result":"FIRST PASS","inputPins":53,"ownPins":5,"inverseExactOneEdit":true,"sourceUnchanged":true}
   }
 }
 
