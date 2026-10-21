@@ -1,0 +1,105 @@
+{
+  "schema": "u6e7a-single7-native-point-HV-source-clip/v1",
+  "date": "2026-10-21",
+  "glyph": "湺",
+  "root": "u6e7a",
+  "sourceFixture": "../hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/fixtures.json",
+  "fixtureRoot": "u6e7a",
+  "fixtureSHA256": "247767960d239c885d98e1975f0774de34fac914ab1a9402bcf602d78e8f8aa4",
+  "fixedStrokesSHA256": "643e371661c0557ea3338b28d58e94490385f0dac495b6738fdd3991d2d8d1d6",
+  "fullProofSHA256": "ff4da0992129c85be7886b7d2831c8ea00d8e192d51fc72836cc74d4d7bd57ad",
+  "identity": {
+    "sourceRoot": "u6e7a",
+    "sourceProofFile": "engine-proof.json",
+    "sourceProofFileSha256": "ccf22653a5c6c89fc3f1a186e8757ee07250ae36813dce4e07c52fc6ae48f2f9"
+  },
+  "counts": {
+    "pens": 12,
+    "masks": 13,
+    "polygons": 23
+  },
+  "target": {
+    "pen": 7,
+    "mask": 1,
+    "id": "u6e7a-7-1",
+    "raw": [
+      8,
+      9
+    ],
+    "flags": [
+      22,
+      23
+    ],
+    "maskSHA256": "1f7c593b97516e4e19525ac968f9cbb8132163beff3ab101b32cc80ce190b185",
+    "expectedSegment": {
+      "outline": "M56 12.5 L83.7 12.5 L83.7 14.5 L56 14.5 Z M86.7 13.5 L86.7 44 L80.7 47 L80.7 13.5 Z M80.7 12.5 L83.7 10 L89.2 14.5 L86.7 16.5 L80.7 13.5 Z",
+      "bounds": [
+        56,
+        10,
+        89.2,
+        47
+      ],
+      "direction": "curve",
+      "weight": 54.22,
+      "revealPath": "M56.019999999999996 13.5 L83.74000000000001 13.5 L83.74000000000001 40",
+      "revealWidth": 14
+    },
+    "policy": "original-HJ-x-then-B-y-halfplane",
+    "H": "M56 12.5 L83.7 12.5 L83.7 14.5 L56 14.5 Z",
+    "B": "M86.7 13.5 L86.7 44 L80.7 47 L80.7 13.5 Z",
+    "J": "M80.7 12.5 L83.7 10 L89.2 14.5 L86.7 16.5 L80.7 13.5 Z",
+    "HThreshold": [
+      56,
+      89.2
+    ],
+    "VThreshold": [
+      13.5,
+      47
+    ],
+    "HNormalization": "(nativeqx-56.019999999999996)/(83.74000000000001-56.019999999999996)",
+    "VNormalization": "(nativeqy-13.5)/(53/2)",
+    "branch": "nativeqy<=13.5 H; otherwise V; clamp alpha; native quantization monotonicity/AA not proved"
+  },
+  "rawStaticHelper": "../hanja-source-raw-compare-u6e7a-2026-10-21/serve.py",
+  "sharedRendererReference": "../hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/render.mjs",
+  "inputSHA256": {
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/README.md": "c881e9cfd476e3e0d051095b5221e6f68e3efd975fd5763cdce72d89d963779e",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/config.json": "aae777e3fd0680c43e6e0aade49749bc120b7f727292e3ae555cb827777a1a92",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/candidate.mjs": "cf2e80cca7dc84accb0e7de98cb8b670de40f5fea6ea82656ca50062b4675fe4",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/candidate.d.mts": "4b76916708cfcc52c0a60f05cbcce73718206321b99330516e1c6ce71d36ed58",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/fixtures.json": "247767960d239c885d98e1975f0774de34fac914ab1a9402bcf602d78e8f8aa4",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/source-check.mjs": "cc8f41a6bf8ef2b718dff53fdb398647d61577e838718893ae8c5de04771b1c8",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/serve.py": "3665c9b064c7e47b44c0b829194a8cc1ad056138393a13fda9eade1f61f938ea",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/preparation.json": "ec17ac9bd20bb291591b206669aa570ce32ddb991ba6f0643b1ca1f77c2f744e",
+    "docs/hanja-goal-glyphwiki-batch1087-2026-10-13/engine-proof.json": "ccf22653a5c6c89fc3f1a186e8757ee07250ae36813dce4e07c52fc6ae48f2f9",
+    "docs/hanja-u6e7a-pen7-terminal-source-analysis-2026-10-21/README.md": "2b0c70ec00aa871e8050820e14f943ac2e218de57cf84f78945e726c33b40e2e",
+    "docs/hanja-source-native-hold-u6e7a-startcaps-terminal-2026-10-21/README.md": "05dcec8b3e4fe2d1cd54000b4762ce520b2369b033c96faa2e5f58b6cdac1275",
+    "docs/hanja-source-native-hold-u6e7a-startcaps-terminal-2026-10-21/hold.json": "098cdb85403ca79f729d0aff2d7e5d5b5cffb33b76e925673a6adf1c0bc62cfd",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/README.md": "887dc56f675c9bdaa8f34cf3309d5abdea9ab9e02042fe4e4a361eecb3bef01e",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/config.json": "93940aff48668e03c716188ace24ad4807e7d8c2c5273766823253258e545d45",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/serve.py": "09c180633ef7b8fe77fb6f52bc359dcd2ef156941b5b486d169409a0ff3aca62",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/check.mjs": "8bcf131e701d62ee379e254572c66f4880760381af4eb5e457f83b999d30af76",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/validation.json": "d5016a8ad6c929622804ec4bf502c3d6512f20b694d3665e1217c0b8e191255a",
+    "docs/hanja-u6e7a-pen7-source-clip-policy-review-2026-10-21/README.md": "88c0e3d42f0c1211fe767ff163507571101a314d8ec20622431a2effeb99a804",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-native-2026-10-21/README.md": "b50e9d777d78e6c61eda3eafc3f5e768b355db137c34188c54d35234a88c8833",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-native-2026-10-21/review.json": "826387aae60de4c9de368caf1a5a5e46ef55237fc617cd45e0fb9d19dfea2848",
+    "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/render.mjs": "0c1f0ac9e154186745b32a5ab575096663e4e3740fad83f920bdd4f839e4c4ca"
+  },
+  "sourceGeometry": 0,
+  "sourceProjection": 0,
+  "sourceCompiler": 0,
+  "engine": 0,
+  "tailDerivation": 0,
+  "newArithmetic": 0,
+  "oldChecksRepeated": 0,
+  "other11PensShared43Unchanged": true,
+  "unresolved": [
+    "1/2 startcaps",
+    "3 QQ start activation and connectivity",
+    "all12 native direction/animation",
+    "APP/runtime"
+  ],
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false
+}

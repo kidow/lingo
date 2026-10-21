@@ -1,0 +1,53 @@
+{
+  "schema": "u6e7a-single7-source-clip-validation/v1",
+  "status": "READY-single7-native-pending",
+  "configSHA256": "d88dcc4613ec36674c63ae42468af418fc41afd168831023b87ca91040d61a33",
+  "newFilesSHA256": {
+    "config.json": "d88dcc4613ec36674c63ae42468af418fc41afd168831023b87ca91040d61a33",
+    "render.mjs": "9ba4eaf0d2655002fc2d6cd37cbbab1a12191381ec42df76755d5a1747d8c4e7",
+    "check.mjs": "44bf9a5875e9bdbbd64eefaea65956a8d7f6ef9a05d3163140d6a59b13cf9b0a",
+    "serve.py": "716d31cc264448f930c163bfff5375ce5f8c67e61ee9f682ef2511807502fb6b",
+    "README.md": "30959fa9a67af77ecf3a7f353f1bda2dca86a314e86da16692d409a4f03ed439"
+  },
+  "inputPinCount": 21,
+  "storedGeometryMathRepeated": 0,
+  "otherStartPoliciesChanged": 0,
+  "checks": {
+    "firstFocused": 1,
+    "result": "PASS",
+    "negative": 47,
+    "mockFrames": 6,
+    "NodeSyntax": {
+      "render": 1,
+      "check": 1,
+      "embeddedBrowser": 1
+    },
+    "PythonAST": 1,
+    "helperRoutes": 6,
+    "helperNegativeRoutes": 10,
+    "captionAndWhole": 1,
+    "newMetadata": 1,
+    "input21PinsFirstFocusedPassed": true,
+    "inputPinsRepeatedAtFinal": 0
+  },
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "sourceGeometry": 0,
+  "engine": 0,
+  "UI": 0,
+  "server": 0,
+  "history": [
+    {
+      "event": "new single-target focused FIRSTPASS",
+      "sourceStoredConvexAndContactMathRepeated": 0,
+      "oldSourceOrTinTestsRepeated": 0
+    },
+    {
+      "event": "before first helper syntax/route check",
+      "change": "/whole initial display bound to whole flag",
+      "policyChanged": false,
+      "focusedRepeated": 0
+    }
+  ]
+}
