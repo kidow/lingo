@@ -1,0 +1,89 @@
+{
+  "schema": "hanja-source-exact-mixed-renderer-preparation/v1",
+  "date": "2026-10-21",
+  "configSHA256": "866a3c783e8e76ce5e59fb1de1b372bbd625e0a1d61c6768d9411519e6815e2a",
+  "newFilesSHA256": {
+    "config.json": "866a3c783e8e76ce5e59fb1de1b372bbd625e0a1d61c6768d9411519e6815e2a",
+    "render.mjs": "e1736d654a06dea231edd9acb4153b4428cd2a28f28ee6f61f695ca5278c51ee",
+    "check.mjs": "4a8472da06b793da15b00f7b8a8ee610ce793a01e4c97d1a15cc534684f1254b",
+    "serve.py": "21688a7063f256f757ac12c55e01392f13ba0cf4778faf0cd95182c3935f358b",
+    "README.md": "dcf91e07b5a9ff4c7ac10cfc6659f0900e1fab5dd7ea7b9fd15f7bdd8745a164"
+  },
+  "counts": {
+    "pens": 18,
+    "masks": 20,
+    "polygons": 37
+  },
+  "fixedStrokesSHA256": "209c157e9535c7121937dfa7646b52052d05797a76e4de882d70a239b902d00b",
+  "inputPins": 53,
+  "newChecks": {
+    "focused": {
+      "attempts": 3,
+      "first": "FAIL bytepin before policy import; input53prefix PASS",
+      "recovery1": "source/full5 verification prerequisite PASS; Q1 certificate PASS; Q2 polygon PASS then missing-coordinate grammar FAIL",
+      "recovery2": "PASS first test loops only",
+      "negatives": 99,
+      "mockFrames": 14,
+      "ordinaryParity": 153,
+      "unchangedSourcePrefixSkipped": true,
+      "full5BindingPrerequisites": 2,
+      "initialCertificateImports": {
+        "Q1": 2,
+        "Q2Polygon": 2,
+        "Q2CompletedCertificate": 1
+      },
+      "oldPassedTestsRepeated": 0
+    },
+    "syntax": {
+      "nodeModules": 2,
+      "embeddedBrowser": 1,
+      "pythonAST": 1,
+      "result": "FIRST PASS"
+    },
+    "helperGuard": {
+      "count": 1,
+      "result": "FIRST PASS",
+      "server": 0,
+      "HTTP": 0
+    },
+    "metadata": {
+      "count": 1,
+      "result": "FIRST PASS",
+      "inputPins": 53,
+      "ownPins": 5,
+      "mismatch": 0,
+      "routeValid": 2,
+      "routeNegative": 8,
+      "HTTP": 0,
+      "server": 0
+    }
+  },
+  "orchestrationHistory": {
+    "bufferHashAdapterMistakeBeforeFilesOrImport": 1,
+    "recovery": "raw Buffer bytes,53 original dependency mismatches0",
+    "sourceOperations": 0,
+    "nativePatchAddedTerminalLF": 1,
+    "partialPatchSearchMissBeforeWrite": 1
+  },
+  "sourceGeometry": 0,
+  "sourceProjection": 0,
+  "sourceCompiler": 0,
+  "sourceFactory": 0,
+  "engine": 0,
+  "authorUI": 0,
+  "authorServer": 0,
+  "authorGit": 0,
+  "build": 0,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "sourceOperations": {
+    "sourceGeometry": 0,
+    "sourceProjection": 0,
+    "sourceCompiler": 0,
+    "originalFactory": 0,
+    "engine": 0,
+    "sourceFieldsChanged": 0
+  }
+}
+
