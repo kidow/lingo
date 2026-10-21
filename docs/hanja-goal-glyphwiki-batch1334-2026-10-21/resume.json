@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "previousResume": "docs/hanja-goal-glyphwiki-batch1333-2026-10-21/resume.json",
+  "previousResumeSHA256": "820ea8537f46c7eb34dc544e6fc296ad8b611afa9e7a97e91fd4f5edc5529c72",
+  "checkpointStatus": "ROOT-first-actual-confirmed",
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "runtimePrepared": true,
+  "completedRuntime": 5750,
+  "total": 5978,
+  "remainingCommittedRuntime": 228,
+  "pendingRuntime": [],
+  "lastCompletedBatch": 1334,
+  "lastRuntimeBatch": 1334,
+  "lastPreparedBatch": 1334,
+  "newHoldsThisBatch": [],
+  "existingHoldsInherited": 175,
+  "historicalCanonicalHolds": 349,
+  "totalHolds": 174,
+  "resolvedHoldsThisBatch": [
+    {
+      "glyph": "噋",
+      "batch": 1334,
+      "originalBatch": 970,
+      "root": "u564b",
+      "originalHold": "docs/hanja-goal-glyphwiki-batch970-2026-10-13/resume.json#/newHoldsThisBatch/0",
+      "originalHoldRecordSHA256": "c0225ac30079a4a782d30bddb4b771455edcf858c93fc5fa39338923fa465965",
+      "review": "docs/hanja-goal-glyphwiki-batch1334-2026-10-21/review.json",
+      "runtimeApplied": true
+    }
+  ],
+  "resolvedHolds": [],
+  "inheritancePolicy": "single canonical970 resolution; previous records and false histories preserved",
+  "lastReview": "docs/hanja-goal-glyphwiki-batch1334-2026-10-21/review.json",
+  "canonicalInspection": {
+    "originalBatch": 970,
+    "targetMatchesExpected": 1,
+    "targetRecordType": "object",
+    "originalHoldRecordSHA256": "c0225ac30079a4a782d30bddb4b771455edcf858c93fc5fa39338923fa465965",
+    "historical": 349,
+    "resolvedBefore": 174,
+    "resolvedAfter": 175,
+    "activeBefore": 175,
+    "activeAfter": 174,
+    "referencesBefore": 390,
+    "referencesIncludingDraft": 391,
+    "references": 391,
+    "countsStatus": "confirmed-by-first-ROOT-actual"
+  },
+  "provisionalAfterApproval": {
+    "completedRuntime": 5750,
+    "remaining": 228,
+    "resolved": 175,
+    "active": 174,
+    "references": 391,
+    "nextBatch": 1335
+  },
+  "verificationPolicy": "ROOT actual verifier once; no old focused/loader/resources/SSR replay; new verifier syntax and metadata only",
+  "isolatedActualComponentBrowserVerified": true,
+  "actualAppUI": false,
+  "wholeReplay": false,
+  "authoringHistory": {
+    "preparedFiveTestsRepeated": 0,
+    "parentCommit": "815b91f009cf53312f3e9ef338479f581d1fc9af",
+    "sourceCompiler": 0,
+    "sourceProjection": 0,
+    "factory": 0,
+    "engine": 0,
+    "build": 0
+  },
+  "countStatus": "confirmed-by-first-ROOT-actual",
+  "focusedTests": {
+    "newExecutions": 0,
+    "existingLoaderFocusedRepeated": 0
+  },
+  "syntax": {
+    "newVerifier": 1,
+    "status": "PASS"
+  },
+  "actualRuntimeVerifier": {
+    "executions": 1,
+    "status": "FIRST-PASS",
+    "authority": "ROOT",
+    "authorExecutions": 0,
+    "passedVerifierRepeated": 0,
+    "sourcePins": 167,
+    "pinMismatches": 0,
+    "verifierSHA256": "9e7c7e0d7e83da97b97b0c9923efd69fd858c450352e70ce31c5164cd312d3dc"
+  },
+  "rootFirstResult": {
+    "batch": 1334,
+    "glyph": "噋",
+    "status": "PASS",
+    "passed": true,
+    "firstExecution": true,
+    "exitCode": 0,
+    "registryUnique": 5750,
+    "remaining": 228,
+    "historical": 349,
+    "resolved": 175,
+    "active": 174,
+    "refs": 391,
+    "sourcePins": 167,
+    "pinMismatches": 0,
+    "targetMatches": 1,
+    "targetRecordType": "object",
+    "actualComponentBrowserVerified": true,
+    "actualAppUI": false,
+    "wholeReplay": false,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "engine": 0,
+    "geometry": 0,
+    "build": false,
+    "verifierSHA256": "9e7c7e0d7e83da97b97b0c9923efd69fd858c450352e70ce31c5164cd312d3dc"
+  },
+  "postActualMetadataFocused": {
+    "executions": 2,
+    "status": "PASS",
+    "initial": {
+      "status": "FAIL",
+      "location": "last README provisional-sentence absence assertion",
+      "cause": "literal replacement expected middle dot but original used slash before refs391",
+      "actualFlagsAndCountsAndResultPinsPassed": true,
+      "verifierRepeated": 0,
+      "sourcePinsRechecked": 0
+    },
+    "failedOnlyTail": {
+      "executions": 1,
+      "status": "PASS",
+      "scope": "corrected README result sentence and changed metadata hashes/history only",
+      "passedActualFlagsOrCountsRepeated": 0
+    },
+    "verifierRepeated": 0,
+    "sourcePinsRechecked": 0
+  }
+}
