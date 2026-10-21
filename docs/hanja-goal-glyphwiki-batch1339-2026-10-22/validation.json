@@ -1,0 +1,85 @@
+{
+  "schema": "hanja-minimal-single-runtime-validation-v1",
+  "batch": 1339,
+  "date": "2026-10-22",
+  "status": "FIRST-actual-runtime-verifier-PASS",
+  "counts": {
+    "pens": 11,
+    "masks": 13,
+    "polygons": 23
+  },
+  "geometrySHA256": "217071f7050ebbb9e3f2d63c51fda0401004287c00f90de5210f6bd71d74c3bc",
+  "parent": {
+    "resume": "docs/hanja-goal-glyphwiki-batch1338-2026-10-21/resume.json",
+    "sha256": "809cb241001a91799b2473be84e98f8e84f2f150e3c1f50867669ef71c54f7a6",
+    "applied": 5754,
+    "remaining": 224
+  },
+  "sourcePins": 22,
+  "checks": {
+    "newLoader3": {
+      "executions": 1,
+      "passed": 3,
+      "failed": 0
+    },
+    "newLoaderAST": {
+      "files": 2,
+      "executionsEach": 1,
+      "diagnostics": 0
+    },
+    "newVerifierSyntax": {
+      "executions": 1,
+      "status": "PASS"
+    },
+    "actualRegistryVerifier": {
+      "executions": 1,
+      "status": "FIRST PASS",
+      "exit": 0
+    },
+    "old123PinsRepeated": 0,
+    "oldAPP8Repeated": 0,
+    "SSRRepeated": 0,
+    "sourceProjection": 0,
+    "postMetadata": {
+      "executions": 1,
+      "status": "PASS",
+      "scope": "review/resume/validation actual result contract only; no22pins/loader/actual verifier repeat"
+    }
+  },
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "isolatedActualComponentBrowserVerified": true,
+  "actualAppUI": false,
+  "wholeReplay": false,
+  "build": false,
+  "actualVerifierResult": {
+    "passed": true,
+    "firstExecution": true,
+    "executions": 1,
+    "exitCode": 0,
+    "wallTimeSeconds": 0.554595625,
+    "registryUnique": 5755,
+    "remaining": 223,
+    "historical": 349,
+    "resolved": 180,
+    "active": 169,
+    "refs": 396,
+    "targetMatches": 1,
+    "targetRecordType": "object",
+    "sourcePins": 22,
+    "pinMismatch": 0,
+    "isolatedActualComponentBrowserVerified": true,
+    "actualAppUI": false,
+    "wholeReplay": false,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "projection": 0,
+    "engine": 0,
+    "old123PinChecks": 0,
+    "SSRRepeated": 0,
+    "APPFocusedRepeated": 0,
+    "build": false
+  }
+}
