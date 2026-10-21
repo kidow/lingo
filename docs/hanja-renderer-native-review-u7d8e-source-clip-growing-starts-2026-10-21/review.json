@@ -1,0 +1,245 @@
+{
+  "schema": "u7d8e-source-only-native-HOLD-review/v1",
+  "date": "2026-10-21",
+  "glyph": "綎",
+  "status": "HOLD-QQ-connectivity-pen1-global-0.625",
+  "experimentDirectory": "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21",
+  "sourceGeometrySHA256": "43e7fb4fb818efc60c325c72710b74ffb7c6d601d5710afa02f5b85be3670f67",
+  "sourceCounts": {
+    "pens": 13,
+    "masks": 15,
+    "polygons": 35
+  },
+  "sourceIdentity": {
+    "sourceRoot": "u7d8e",
+    "sourceProofFile": "engine-whole-u7d8e.json",
+    "sourceProofFileSha256": "e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25"
+  },
+  "experimentSHA256": {
+    "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/README.md": "ce624861466e5120a68a8f1fef05634def9b3185c0730660828513b3b75b3962",
+    "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/check.mjs": "a46c996afbf596949d4ac857963665271d69892fbaf7a2f9df5b28a9b6bb2946",
+    "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/config.json": "2cbd091e85902619d02694e8b37aba52618fe596a1d020813b3553babb508c4a",
+    "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/render.mjs": "0c1f0ac9e154186745b32a5ab575096663e4e3740fad83f920bdd4f839e4c4ca",
+    "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/serve.py": "cb963aa8c3831cf3220175987f6fb05c8c40340247ab9b705cc3dbcd07d2b13b",
+    "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/validation.json": "aa487782764998460afd84f2c82981a71731cf5089fcf270984257172042e6da"
+  },
+  "transitiveInputPinCount": 48,
+  "sourceAndExperimentUnchanged": true,
+  "evidenceAuthor": "ROOT actual browser observations; author did not run browser/server",
+  "observations": {
+    "pen11": {
+      "policy": "source-specific H/J then B halfplane; exact p1 original-P-direct",
+      "local": {
+        "extraEpsilonSamples": 1,
+        "local6": [
+          0,
+          0.000001,
+          0.95,
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "local6Samples": 6,
+        "nominalSVG": 520
+      },
+      "UATransition": [
+        {
+          "p": 0.3520532867255941,
+          "phase": "H",
+          "q": {
+            "x": 52.974998474121094,
+            "y": 16.5
+          }
+        },
+        {
+          "p": 0.3520532868255941,
+          "phase": "L",
+          "q": {
+            "x": 52.974998474121094,
+            "y": 16.500003814697266
+          }
+        },
+        {
+          "p": 0.3520532869255941,
+          "phase": "L",
+          "q": {
+            "x": 52.974998474121094,
+            "y": 16.500003814697266
+          }
+        }
+      ],
+      "coarse": {
+        "progress": [
+          0,
+          0.125,
+          0.25,
+          0.375,
+          0.5,
+          0.625,
+          0.75,
+          0.875,
+          1
+        ],
+        "candidateSamples": 9,
+        "nominalSVG": 220
+      },
+      "natural": {
+        "durationSeconds": 8,
+        "observedFrames": 2,
+        "firstObservedApproximateProgress": 0.1908875,
+        "lastObservedProgress": 1,
+        "recordedAllRAFFrames": false,
+        "continuousWholePlaybackReviewed": false
+      },
+      "tautologicalPminusSamePResidualUsed": false
+    },
+    "fiveGrowingTargets": {
+      "keys": [
+        "1m1",
+        "1m2",
+        "2m1",
+        "2m2",
+        "12m1"
+      ],
+      "local6Each": 6,
+      "localSamples": 30,
+      "nominalSVG": 520,
+      "rhoSamplesEach": 3,
+      "rhoSamples": 15,
+      "firstL12Samples": 3,
+      "QQMainBoundarySamples": {
+        "pen1": 3,
+        "pen2": 3,
+        "total": 6
+      },
+      "PminusOriginalFullRoundResidual": {
+        "samples": 5,
+        "blackResidualObserved": false,
+        "mathematicalCoverageProved": false
+      }
+    },
+    "visibility": {
+      "currentTargetInkFullyInView": true,
+      "lowerNextRowPeekExcluded": true,
+      "epsilonObservation": "finite samples show no finite blob; no universal continuity claim"
+    },
+    "status": {
+      "errorsAtReadTime": [],
+      "fullConsoleInvestigationCompleted": false
+    },
+    "all13NearCompletionFine": {
+      "globalProgress": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "pens": 13,
+      "samples": 39,
+      "nominalSVG": 520,
+      "terminalShapeJumpObserved": false,
+      "scope": "near-completion shape only; not start or direction approval"
+    },
+    "pen1QQConnectivityHOLD": {
+      "coarse": {
+        "progress": [
+          0,
+          0.125,
+          0.25,
+          0.375,
+          0.5,
+          0.625,
+          0.75,
+          0.875,
+          1
+        ],
+        "candidateSamples": 9,
+        "nominalSVG": 220
+      },
+      "firstConfirmedGlobalProgress": 0.625,
+      "observation": "white gap between two path inks and a separate small fragment visible",
+      "reconfirmationScreens": 1,
+      "ROOTLocatorLabel": "svg20",
+      "ROOTCandidateRect": {
+        "x": 11.7116,
+        "y": 121.115,
+        "width": 220
+      },
+      "currentSVGOnly": true,
+      "nextLowerRowSharedInkExcluded": true,
+      "confirmedAt520": false,
+      "sourceGapPreserved": true,
+      "mathematicalCauseEstablished": false,
+      "wholeIntervalFailureClaimed": false,
+      "evidenceCapture": {
+        "guardTimeouts": 1,
+        "successfulRetries": 1,
+        "notAnUnsafeJudgment": true
+      }
+    },
+    "startAndCompletionSamples": {
+      "finiteBlobObserved": false,
+      "terminalShapeJumpObserved": false,
+      "scope": "only previously listed local/rho/boundary and near-completion samples; does not approve QQ connectivity"
+    }
+  },
+  "pending": [
+    "unreviewed11pens coarse stopped after QQ HOLD",
+    "additional natural playback stopped after QQ HOLD",
+    "all13 direction not approved by near-completion fine",
+    "full console inspection not performed"
+  ],
+  "server": {
+    "pid": 78260,
+    "port": 59412,
+    "portNotProvided": false,
+    "session": 29694,
+    "stopped": true,
+    "signal": "Ctrl-C",
+    "wrapperExitCode": 130,
+    "stopOutputBytes": 0,
+    "pidAbsentConfirmedByROOT": true,
+    "ownedServersAfterStop": 0
+  },
+  "isolatedSourceRendererObserved": true,
+  "fullCharacterNativeApproved": false,
+  "universalContinuityApproved": false,
+  "UAMonotonicityProved": false,
+  "AABehaviorProved": false,
+  "actualComponentObserved": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "authorWork": {
+    "newRendererChanges": 0,
+    "sourceGeometryCompilerEngine": 0,
+    "oldChecksRepeated": 0,
+    "browser": 0,
+    "server": 0,
+    "newMetadataFinalization": 1
+  },
+  "coarseSummary": {
+    "reviewedPens": [
+      11,
+      1
+    ],
+    "reviewedSamples": 18,
+    "pen11PriorFiniteObservation": "no issue observed in its nine samples",
+    "pen1Outcome": "HOLD at global0.625",
+    "unreviewedPens": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13
+    ],
+    "unreviewedPenCount": 11
+  },
+  "finalNativeOutcome": "HOLD",
+  "isolatedRendererNativeHOLD": true
+}
