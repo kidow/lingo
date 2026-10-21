@@ -1,0 +1,163 @@
+{
+  "schema": "u7d8e-pen11-terminal-native-coverage/v1",
+  "date": "2026-10-21",
+  "glyph": "綎",
+  "root": "u7d8e",
+  "status": "source-specific-fullround-coverage-fail",
+  "observer": "ROOT actual native coverage helper",
+  "boardCommit": "1c52912fe70dabfb1d10bb5d61fa7c3a246647e7",
+  "boardDirectory": "docs/hanja-u7d8e-pen11-terminal-coverage-2026-10-21",
+  "sourceDirectory": "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21",
+  "geometrySHA256": "43e7fb4fb818efc60c325c72710b74ffb7c6d601d5710afa02f5b85be3670f67",
+  "counts": {
+    "pens": 13,
+    "masks": 15,
+    "polygons": 35
+  },
+  "sourceIdentity": {
+    "sourceRoot": "u7d8e",
+    "sourceProofFile": "engine-whole-u7d8e.json",
+    "sourceProofFileSha256": "e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25"
+  },
+  "target": {
+    "pen": 11,
+    "mask": 1,
+    "raw": [
+      8,
+      9
+    ],
+    "maskSHA256": "a28fc333fc2c6241d32fce321060f1aa1dc7cc031f4dd0db80671e5a7a37dcc5",
+    "sourceFlags": [
+      22,
+      113
+    ],
+    "guide": "M36.825 16.5 L52.975 16.5 L43 44.5",
+    "width": 14,
+    "weight": 45.873738,
+    "fieldsUnchanged": true
+  },
+  "nativeCoverage": {
+    "route": "/coverage",
+    "panelsObserved": [
+      "original-P",
+      "original-full-guide",
+      "P-minus-fullround-residual"
+    ],
+    "screens": 3,
+    "residualPanelWitnessMarkers": false,
+    "observation": "marker 없는 잔여패널에서 원P foot의 왼쪽 아래 작은 검정 삼각 잔여가 명확하게 보임",
+    "result": "FAIL",
+    "coverageContract": "fixed original P is not completely covered by original fullround width14 guide",
+    "pixelCountMeasured": false,
+    "areaMeasured": false,
+    "near1SnapCauseEstablished": false,
+    "witnessButtonExecutions": 0,
+    "separateMarkerPanelReviewed": false,
+    "status": {
+      "ready": true,
+      "errors": [],
+      "witnessVisible": false
+    },
+    "nativeGuideMeasurement": {
+      "L": 45.87373352050781,
+      "endpoint": {
+        "x": 43,
+        "y": 44.5
+      },
+      "source": "same connected original guide path / NOpathLength / full undashed guide",
+      "mathematicalLengthSubstituted": false
+    },
+    "wholeCharacterApproval": false,
+    "animationApproval": false,
+    "actualAppApproval": false,
+    "runtimeApproval": false
+  },
+  "server": {
+    "pid": 64402,
+    "port": 59412,
+    "sessionId": 40033,
+    "stopped": true,
+    "exitCode": 130,
+    "shortTraceback": true,
+    "psStatus": 1,
+    "pidAbsentConfirmedByRoot": true
+  },
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/NOTICE.md": "0c84d4e51c257aa3ef89f6bb6d75195cb2a7a9936975fb27d4a6950047715726",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/README.md": "83971ba98caca6418cf236a0492f89a7570e69a9fc9b37bd8571c4e0dcfc00a4",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/candidate-compile-analysis.json": "18fc3c63d604e64fe624ec87b6d5f0b2753ff146f49e897a6e0dc368ad4a01db",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/engine-proof.json": "e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/engine-whole-u7d8e-k.json": "b5b9694c81d1f4ab14bde7f728e982bd12be9ec770d0fcee37de8e5fabfdf2f5",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/engine-whole-u7d8e-var-001.json": "fa0e85b3b2e1928732471022876227273369f19561cf059b2563ab55390584dd",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/engine-whole-u7d8e.json": "e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/metadata.json": "9f99c5a827220fe77bb5eb9763c90a9dd1e8591822b33aec8d52b4e2ceed1bb6",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/progressive.mjs": "67206d2ddb6b96c2d812f4ededb4c1b050c625b4463d81756d53cfdd63a9dab2",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/resume.json": "161a95e5a5fa13e353ed0cbd7d06d647a3dafdcd98ebac957d1dcf6b70f3118f",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/review.json": "b057368f861264e719d4ba64aee71c641e837daf25b64f4d4c648be02f1a1a91",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/serve-progressive.py": "3312291a2cae11ea6c53a16b109d2c60005e7441413406146df22b76bfb7d198",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/serve-whole.py": "cf9f9afec566a1b7bc9dd99419bfa9ef617abff842f5c0106525b1fba8347bcd",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/source-analysis.json": "9d32b6bb94c619f583c9e83ccb5179c1fdf0551cb2ccbb8bf5ba82458e4b7fca",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/source-join-analysis.json": "b8e52078468c5143c1d6ba715d28f90504d8869491843695856c5b7d3de0612e",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/source-preservation-audit.json": "7d88f3e460d89b734120e747e034d0ffc2cfde795cec16913217532cebdad36a",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/sources.json": "3c3ed837fae6e1fd83e7db2e8386154f086dabfd7bba37b9c899a6bbda79a771",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/validation.json": "cb01e34c26b3fa35f7dd7689d4a2fe6d4e6752b7f7ee9ace2cf277a8dafcc7dc",
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/verify-source.mjs": "d46cd122ad4d4fe11869634e8fbb18843685a47b2c3e94f388e8b479c60b9af9",
+    "docs/hanja-source-raw-compare-u7d8e-2026-10-21/config.json": "4647f46e821d46108c2ce2811020115a6d3ff656286a55f2495039eb96c56781",
+    "docs/hanja-source-raw-compare-u7d8e-2026-10-21/serve.py": "25266cacf9c4aa8fe22e808e7446c0d5332bd1ddbbf374c267bdfc45067e90f7",
+    "docs/hanja-source-raw-compare-u7d8e-2026-10-21/check.mjs": "5c6cc6814668a3d9b14ed4b8b15a76cfa1f1a565c66740242719a3c05a7b04d4",
+    "docs/hanja-source-raw-compare-u7d8e-2026-10-21/README.md": "37eca31833f09923b13d654f9da8eee537f19222059dfe66c585c2b4b0aac34b",
+    "docs/hanja-source-raw-compare-u7d8e-2026-10-21/validation.json": "f5f5541479bde859cefc00d3be80fc242d5c375e48e1da9d1e172f3f5fb1f036",
+    "docs/hanja-source-raw-review-u7d8e-2026-10-21/README.md": "e8a162de87031a03476117a23900783990a2c2b4960c9b93c3a844bcc7c37a39",
+    "docs/hanja-source-raw-review-u7d8e-2026-10-21/review.json": "e1dfaa520d4cb32397f71285392795ac7f9edae9e9ccd2a1c997bc4ad6ff6cac",
+    "docs/hanja-source-independent-qq-reorder-u7d7a-source-experiment-2026-10-21/candidate.mjs": "c5de7d721edfe195fb8394b0f435872fc1f1ee885ac70a4bffa060a31358f374",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/README.md": "9274f34ff4ae1e5c89e2e5483dbc999a981249665ea6e427637b07b67a2576e7",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/candidate.d.mts": "621b42084c20ffa4f12523c422181cfa221c11478dab2a9eab7cb8a61ba937f3",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/candidate.mjs": "ac38052ea783f34742fe8e72c1e55dcdfd457480ddac06fc2c49580d07f14709",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/config.json": "96e2a43d5020485f6b75e8c12dca8e07825ae9c15719d6f444557ef9beb632f0",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/fixture.json": "cd22bb35196582ca3e4eb8a122f6b5f260185b23daa326851cc2306d7ea6887c",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/prep.json": "8f312b99ac62bcdfd3e4bd18e703b9ed2d1b6e0e17a68ad8edd3d4f8138b4353",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/serve.py": "67d83af82082be1fb2ad8fec0778a97daba5737919b6754dc0566e67628aaa38",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/source-check.mjs": "6328a4431e7ada3e33780c352b763b5b27262822174ba8c24168304772748714",
+    "docs/hanja-u7d8e-start-geometry-proof-2026-10-21/README.md": "40cd9f09bf92c580af78385c6ed3d727cb030cb2c143db5aa29672b3416b3e7c",
+    "docs/hanja-source-native-hold-u7d8e-startcaps-terminal-2026-10-21/README.md": "da94b6f50b1a2b1fc299f2a3d7578adda9abf3e5b175387cc589589cb27186b3",
+    "docs/hanja-source-native-hold-u7d8e-startcaps-terminal-2026-10-21/hold.json": "1822634ff57513cbf3d947a2e0c919ed16a0d312b435279afa441eca01acc7b5",
+    "docs/hanja-u7d8e-pen11-terminal-coverage-2026-10-21/README.md": "53250b54873b8f631bf83b69add9cccd3d8a58be8dca203bcc0ed79b9d7e4360",
+    "docs/hanja-u7d8e-pen11-terminal-coverage-2026-10-21/config.json": "d8ecc37eba80997469df557ba762fcf1e3f45d523216c4f49250fb0151026f95",
+    "docs/hanja-u7d8e-pen11-terminal-coverage-2026-10-21/check.mjs": "4940a530f253965faf7b0afc362eb9e4f3b3754b666284d86bc5154106f09d10",
+    "docs/hanja-u7d8e-pen11-terminal-coverage-2026-10-21/serve.py": "4e73c47063bba175401dda565a22fa1cbfd0ad6a902ac77264ca78085abc409b",
+    "docs/hanja-u7d8e-pen11-terminal-coverage-2026-10-21/validation.json": "fcf6891c9d6d757eecb47c7241a9772aefa999e8d565a8783f2a2bc600d0d3d4"
+  },
+  "pinCounts": {
+    "sourceAndPriorEvidence": 39,
+    "boardFiles": 5,
+    "unique": 44
+  },
+  "checks": {
+    "newMetadataOnly": {
+      "executions": 1,
+      "status": "PASS"
+    },
+    "oldChecksRepeated": 0,
+    "coverageArithmeticRepeated": 0
+  },
+  "nativeCoverageObservationRecorded": true,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "originalSourceBoardProofHoldUnchanged": true,
+  "authorExecution": {
+    "sourceCompiler": 0,
+    "sourceProjection": 0,
+    "factory": 0,
+    "geometry": 0,
+    "engine": 0,
+    "HTTP": 0,
+    "UI": 0,
+    "server": 0,
+    "Git": 0,
+    "build": 0,
+    "TSC": 0
+  },
+  "readmeSHA256": "97a5b33a8f65f504c003a947bebd8a20603b49a88078c94e90b775a342cbd8fb"
+}
