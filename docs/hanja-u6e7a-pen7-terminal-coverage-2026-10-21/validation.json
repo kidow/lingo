@@ -1,0 +1,74 @@
+{
+  "schema": "u6e7a-terminal-coverage-harness-validation/v1",
+  "date": "2026-10-21",
+  "configSHA256": "93940aff48668e03c716188ace24ad4807e7d8c2c5273766823253258e545d45",
+  "inputPins": 12,
+  "sourceOwnPins": 8,
+  "evidencePins": 4,
+  "newFilesSHA256": {
+    "README.md": "887dc56f675c9bdaa8f34cf3309d5abdea9ab9e02042fe4e4a361eecb3bef01e",
+    "config.json": "93940aff48668e03c716188ace24ad4807e7d8c2c5273766823253258e545d45",
+    "serve.py": "09c180633ef7b8fe77fb6f52bc359dcd2ef156941b5b486d169409a0ff3aca62",
+    "check.mjs": "8bcf131e701d62ee379e254572c66f4880760381af4eb5e457f83b999d30af76"
+  },
+  "checks": {
+    "focused": {
+      "executions": 1,
+      "firstPass": true,
+      "status": "PASS",
+      "sourcePins": 12,
+      "sourceOwnPins": 8,
+      "evidencePins": 4,
+      "ownPins": 4,
+      "mismatch": 0,
+      "positiveUAMocks": 2,
+      "negativeUAMocks": 21,
+      "quantizedEndpointAccepted": true,
+      "sourceWeightNotNativeLength": true,
+      "helperRoutes": 3,
+      "negativeRoutes": 7,
+      "uniqueIds": 18,
+      "storedMathRecomputed": 0
+    },
+    "syntax": {
+      "pythonAST": 1,
+      "embeddedJS": 1,
+      "checkNode": 1,
+      "firstPass": true,
+      "status": "PASS"
+    },
+    "metadata": {
+      "executions": 1,
+      "status": "PASS",
+      "ownPins": 4,
+      "mismatch": 0,
+      "exactFiles": 5,
+      "sourcePinsRechecked": 0
+    }
+  },
+  "endpointContract": {
+    "sourceExactEquality": false,
+    "arbitraryEpsilon": false,
+    "sourceFractionCollinearity": false,
+    "sameConnectedNativeGuide": true,
+    "nativeLengthPointFiniteRequired": true,
+    "originalGuideNoPathLength": true
+  },
+  "storedCoverageArithmeticRepeated": 0,
+  "oldTestsRepeated": 0,
+  "nativeCoverageApproved": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "sourceCompiler": 0,
+  "projection": 0,
+  "geometry": 0,
+  "factory": 0,
+  "engine": 0,
+  "HTTP": 0,
+  "UI": 0,
+  "server": 0,
+  "Git": 0,
+  "build": 0,
+  "TSC": 0
+}
