@@ -1,0 +1,230 @@
+{
+  "schema": "hanja-renderer-native-finite-review-v1",
+  "date": "2026-10-21",
+  "glyph": "湺",
+  "status": "ROOT finite isolated combined observations PASS; actual APP/runtime unapproved",
+  "observer": "ROOT actual browser native screenshots and status",
+  "experimentDirectory": "docs/hanja-renderer-growing-starts-source-clip-u6e7a-experiment-2026-10-21",
+  "sourceCounts": {
+    "pens": 12,
+    "masks": 13,
+    "polygons": 23
+  },
+  "sourceGeometrySHA256": "643e371661c0557ea3338b28d58e94490385f0dac495b6738fdd3991d2d8d1d6",
+  "sourceIdentity": {
+    "sourceRoot": "u6e7a",
+    "sourceProofFile": "engine-proof.json",
+    "sourceProofFileSha256": "ccf22653a5c6c89fc3f1a186e8757ee07250ae36813dce4e07c52fc6ae48f2f9"
+  },
+  "targets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "kind": "fixed-MQ-source-certified"
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "kind": "fixed-MQ-source-certified"
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "kind": "fixed-MQ-source-certified"
+    },
+    {
+      "pen": 3,
+      "mask": 2,
+      "kind": "fixed-MQ-source-certified"
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "kind": "source-HV-clip"
+    }
+  ],
+  "observations": {
+    "newMQ": {
+      "targets": 4,
+      "localSamples": 24,
+      "rhoSamples": 12,
+      "QQ3BoundarySamples": 3,
+      "coverageSamples": 4,
+      "result": "finite observed PASS"
+    },
+    "all12Coarse": {
+      "pens": 12,
+      "samplesPerPen": 9,
+      "candidateSamples": 108,
+      "nativeScreenshots": 12,
+      "layout": "complete compact candidate-only 3x3 boards; nominal candidate150px; reference hidden",
+      "result": "finite observed PASS",
+      "highResolution220Or520Claim": false
+    },
+    "all12Fine": {
+      "pens": 12,
+      "progress": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "candidateSamples": 36,
+      "result": "finite observed PASS"
+    },
+    "whole": {
+      "nativeScreenshots": 2,
+      "result": "finite observed PASS"
+    },
+    "naturalPen3": {
+      "pen": 3,
+      "nominalDurationSeconds": 8,
+      "runs": [
+        {
+          "run": 1,
+          "firstProgress": 0.15142499999998835,
+          "earlyScreenshots": 1,
+          "completionProgress": 1,
+          "completionScreenshots": 4,
+          "completionScreenshotsSameCaseRepeated": true
+        },
+        {
+          "run": 2,
+          "observedApproximateProgress": [
+            0.14205,
+            0.1848375,
+            0.2223375,
+            0.2588,
+            0.2942125,
+            0.335875,
+            0.3743375,
+            0.4118125
+          ],
+          "screenshots": 8
+        },
+        {
+          "run": 3,
+          "observedApproximateProgress": [
+            0.2285375,
+            0.26085,
+            0.2930125,
+            0.3347,
+            0.3733375,
+            0.4066375,
+            0.4482625,
+            0.4868,
+            0.5222875
+          ],
+          "screenshots": 9
+        }
+      ],
+      "progressPrecision": "run2/3 values are supplied approximations; observed status floating decimal tails about -6e-12 are not reconstructed",
+      "validScreenshotTotal": 22,
+      "uniqueCompletionCase": 1,
+      "sourceSummaryInitial19LabelCorrectedByExplicitSum": "1+4+8+9=22",
+      "statusAndScreenshotBothObserved": true,
+      "visibleConnectionObservation": "p≈.406–.412 round cap visible at connection with no separated island in these finite frames; p≥≈.448 upward connection observed",
+      "smoothnessGuaranteed": false,
+      "allRAFFramesObserved": false,
+      "continuousVideoObserved": false
+    },
+    "excluded": {
+      "truncatedCoarseGridScreenshots": 7,
+      "truncatedFineScreenshots": 3,
+      "initialNaturalBlankScreenshots": 9,
+      "initialBlankReason": "svg2 rect width0; not valid ink observation",
+      "horizontalRecovery": "ROOT native scrolling changed candidate rect x from -1892 to12 before valid natural observations"
+    },
+    "statusErrorsAtReadTime": [],
+    "fullConsoleInspection": {
+      "tabWarnErrorCollected": true,
+      "limit": 10,
+      "result": [],
+      "scope": "당해 탭 warn/error 수집 범위만; 전체 console 이력 무오류 보장 아님"
+    },
+    "finalPen3Progress": 1,
+    "finalStatusErrors": []
+  },
+  "approval": {
+    "isolatedCandidateFiniteGatesOnly": true,
+    "eligibleForNextActualAPPValidation": true,
+    "fullNativeApproval": false,
+    "universalContinuity": false,
+    "pixelSmoothness": false,
+    "actualComponentObserved": false,
+    "actualAppUI": false,
+    "controllerStorageObserved": false,
+    "runtimeApplied": false,
+    "wholeCharacterReplayApproved": false,
+    "domesticTemporalApproved": false
+  },
+  "oldHoldAndSourceFalseHistoryPreserved": true,
+  "old7FiniteReviewNotPromotedToWholeCharacterApproval": true,
+  "sourceAndExperimentUnchanged": true,
+  "authorExecution": {
+    "sourceCompiler": 0,
+    "factory": 0,
+    "projection": 0,
+    "engine": 0,
+    "geometryChanged": 0,
+    "codeChanged": 0,
+    "serverStarted": 0,
+    "browserUsed": 0,
+    "oldChecksRepeated": 0,
+    "buildTSC": 0
+  },
+  "server": {
+    "pid": 27046,
+    "port": 59412,
+    "session": 43835,
+    "status": "ROOT stopped",
+    "signal": "Ctrl-C",
+    "exitCode": 130,
+    "outputBytes": 0,
+    "pidAbsentConfirmedByROOT": true
+  },
+  "inputSHA256": {
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/README.md": "c881e9cfd476e3e0d051095b5221e6f68e3efd975fd5763cdce72d89d963779e",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/config.json": "aae777e3fd0680c43e6e0aade49749bc120b7f727292e3ae555cb827777a1a92",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/candidate.mjs": "cf2e80cca7dc84accb0e7de98cb8b670de40f5fea6ea82656ca50062b4675fe4",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/candidate.d.mts": "4b76916708cfcc52c0a60f05cbcce73718206321b99330516e1c6ce71d36ed58",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/fixtures.json": "247767960d239c885d98e1975f0774de34fac914ab1a9402bcf602d78e8f8aa4",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/source-check.mjs": "cc8f41a6bf8ef2b718dff53fdb398647d61577e838718893ae8c5de04771b1c8",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/serve.py": "3665c9b064c7e47b44c0b829194a8cc1ad056138393a13fda9eade1f61f938ea",
+    "docs/hanja-source-independent-watergap-hv-u6e7a-source-experiment-2026-10-21/preparation.json": "ec17ac9bd20bb291591b206669aa570ce32ddb991ba6f0643b1ca1f77c2f744e",
+    "docs/hanja-goal-glyphwiki-batch1087-2026-10-13/engine-proof.json": "ccf22653a5c6c89fc3f1a186e8757ee07250ae36813dce4e07c52fc6ae48f2f9",
+    "docs/hanja-u6e7a-pen7-terminal-source-analysis-2026-10-21/README.md": "2b0c70ec00aa871e8050820e14f943ac2e218de57cf84f78945e726c33b40e2e",
+    "docs/hanja-source-native-hold-u6e7a-startcaps-terminal-2026-10-21/README.md": "05dcec8b3e4fe2d1cd54000b4762ce520b2369b033c96faa2e5f58b6cdac1275",
+    "docs/hanja-source-native-hold-u6e7a-startcaps-terminal-2026-10-21/hold.json": "098cdb85403ca79f729d0aff2d7e5d5b5cffb33b76e925673a6adf1c0bc62cfd",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/README.md": "887dc56f675c9bdaa8f34cf3309d5abdea9ab9e02042fe4e4a361eecb3bef01e",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/config.json": "93940aff48668e03c716188ace24ad4807e7d8c2c5273766823253258e545d45",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/serve.py": "09c180633ef7b8fe77fb6f52bc359dcd2ef156941b5b486d169409a0ff3aca62",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/check.mjs": "8bcf131e701d62ee379e254572c66f4880760381af4eb5e457f83b999d30af76",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-2026-10-21/validation.json": "d5016a8ad6c929622804ec4bf502c3d6512f20b694d3665e1217c0b8e191255a",
+    "docs/hanja-u6e7a-pen7-source-clip-policy-review-2026-10-21/README.md": "88c0e3d42f0c1211fe767ff163507571101a314d8ec20622431a2effeb99a804",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-native-2026-10-21/README.md": "b50e9d777d78e6c61eda3eafc3f5e768b355db137c34188c54d35234a88c8833",
+    "docs/hanja-u6e7a-pen7-terminal-coverage-native-2026-10-21/review.json": "826387aae60de4c9de368caf1a5a5e46ef55237fc617cd45e0fb9d19dfea2848",
+    "docs/hanja-renderer-source-clip-growing-starts-u7d8e-experiment-2026-10-21/render.mjs": "0c1f0ac9e154186745b32a5ab575096663e4e3740fad83f920bdd4f839e4c4ca",
+    "docs/hanja-renderer-source-clip-u6e7a-pen7-experiment-2026-10-21/config.json": "d88dcc4613ec36674c63ae42468af418fc41afd168831023b87ca91040d61a33",
+    "docs/hanja-renderer-source-clip-u6e7a-pen7-experiment-2026-10-21/render.mjs": "9ba4eaf0d2655002fc2d6cd37cbbab1a12191381ec42df76755d5a1747d8c4e7",
+    "docs/hanja-renderer-source-clip-u6e7a-pen7-experiment-2026-10-21/check.mjs": "44bf9a5875e9bdbbd64eefaea65956a8d7f6ef9a05d3163140d6a59b13cf9b0a",
+    "docs/hanja-renderer-source-clip-u6e7a-pen7-experiment-2026-10-21/serve.py": "716d31cc264448f930c163bfff5375ce5f8c67e61ee9f682ef2511807502fb6b",
+    "docs/hanja-renderer-source-clip-u6e7a-pen7-experiment-2026-10-21/README.md": "30959fa9a67af77ecf3a7f353f1bda2dca86a314e86da16692d409a4f03ed439",
+    "docs/hanja-renderer-source-clip-u6e7a-pen7-experiment-2026-10-21/validation.json": "d78c21c3e608d01dcc31ba7bbb595840a27228a14463e170441d48e4355922b1",
+    "docs/hanja-renderer-native-review-u6e7a-pen7-source-clip-2026-10-21/README.md": "6ea2b5b49ac78d9dc6ff8c2e91d8f9528442a841969f276b0bc8dbeec307e322",
+    "docs/hanja-renderer-native-review-u6e7a-pen7-source-clip-2026-10-21/review.json": "79552755c227ceb9d83a435642a33f7e1a5ffa1f86374356271e80c3a1374074",
+    "docs/hanja-u6e7a-start-geometry-proof-2026-10-21/README.md": "1b022108cad73df9d24c1fcb9e565a707d35260e934e59201e0cec930aa09efd",
+    "docs/hanja-renderer-growing-starts-source-clip-u6e7a-experiment-2026-10-21/README.md": "a8fd7ed4515fbfbd74c11abb38adbbbcd79a652058b2f230a3f2956b3759bf27",
+    "docs/hanja-renderer-growing-starts-source-clip-u6e7a-experiment-2026-10-21/check.mjs": "6c758639a7044b9973119a4b250f11b5a8ac72594a88d2d5302183850238598d",
+    "docs/hanja-renderer-growing-starts-source-clip-u6e7a-experiment-2026-10-21/config.json": "625eb793f5c2fa20cfdb3aa354bd49a3717811e11a7afe530b55f52d50f1e271",
+    "docs/hanja-renderer-growing-starts-source-clip-u6e7a-experiment-2026-10-21/render.mjs": "f5258b124e20d1eb30839a3956cbe7272d15ec34a748e1e2d2d2ac9dc11be843",
+    "docs/hanja-renderer-growing-starts-source-clip-u6e7a-experiment-2026-10-21/serve.py": "8760fbcb8b78654aed0a762954352f21a61973b268624903c250388867342df7",
+    "docs/hanja-renderer-growing-starts-source-clip-u6e7a-experiment-2026-10-21/validation.json": "ff22fcadbbba352328f53db3eb733263d4c8ebf720d82535fcaf67135f3f2f89"
+  },
+  "checks": {
+    "recordSchemaAndPins": {
+      "executions": 1,
+      "result": "PASS",
+      "scope": "new record schema/counts/36 input byte hashes only; old focused/compiler/geometry not run"
+    }
+  }
+}
