@@ -1,0 +1,84 @@
+{
+  "schema": "hanja-source-raw-static-validation-u9654/v1",
+  "date": "2026-10-21",
+  "configSHA256": "ca8b6e42a414dbdd96d239854a00d1b5a0229637feca5a7d449081bb82292fac",
+  "ownSHA256": {
+    "config.json": "ca8b6e42a414dbdd96d239854a00d1b5a0229637feca5a7d449081bb82292fac",
+    "serve.py": "25266cacf9c4aa8fe22e808e7446c0d5332bd1ddbbf374c267bdfc45067e90f7",
+    "check.mjs": "36020fcad8dfbead12900bcc6f99fd4b134fff9fb63f95361fca20c3c24d2cb2",
+    "README.md": "55612b0fbc3e41359e4420bbeec8211251b43bd6ba445bd2aa4b38ef284fc62c"
+  },
+  "inputPins": 8,
+  "sourceCounts": {
+    "raw": 11,
+    "calls": 12,
+    "polygons": 25,
+    "domestic": 9
+  },
+  "executions": {
+    "focused": 1,
+    "nodeSyntax": 1,
+    "pythonAST": 1,
+    "metadata": 1,
+    "HTTP": 0,
+    "actualDomesticXML": 0,
+    "server": 0,
+    "UI": 0,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "projection": 0,
+    "engine": 0,
+    "oldChecksRepeated": 0,
+    "helperGuard": 1
+  },
+  "passed": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "history": [
+    {
+      "stage": "prewrite-original-metadata-read",
+      "result": "ENOENT",
+      "path": "original NOTICE.md absent",
+      "count": 1,
+      "filesWritten": 0,
+      "checksRun": 0,
+      "HTTP": 0,
+      "geometry": 0,
+      "recovery": "pin only actual existing original files; no NOTICE created"
+    }
+  ],
+  "firstFocusedResult": {
+    "passed": true,
+    "rawSingles": 11,
+    "rawPrefixes": 11,
+    "allPolygonsExactlyOnce": 25,
+    "domesticSyntheticViews": 18,
+    "queryNegatives": 19,
+    "identityNegatives": 4,
+    "proofRoleNegatives": 2,
+    "syntheticXMLPositive": 1,
+    "XMLNegatives": 3,
+    "PythonAST": 1,
+    "helperGuard": 1,
+    "sourceCompiler": 0,
+    "projection": 0,
+    "engine": 0,
+    "HTTP": 0,
+    "UI": 0,
+    "server": 0,
+    "inputPins": 8,
+    "ownPins": 4,
+    "focusedExecutions": 1,
+    "oldChecksRepeated": 0,
+    "oldHelperExecuted": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "actualAppUI": false
+  },
+  "syntax": {
+    "nodeCheckExit": 0,
+    "PythonAST": 1
+  },
+  "metadataScope": "final JSON/digests only; source/projection/HTTP/check not rerun"
+}
