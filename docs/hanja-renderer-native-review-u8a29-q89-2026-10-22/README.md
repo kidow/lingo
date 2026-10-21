@@ -8,7 +8,7 @@ Q8 원M은 원P 밖이지만 이번 초기·rho 표본에서 같은 획의 새 �
 
 원 cardinal6/10의 경계·완료12표본은 이전 리뷰를 참조하며 재실행하지 않았다. 기존 source/HOLD/준비 false는 보존한다. 실제 앱 컴포넌트·controller·storage·제품 UI·runtime 승인은 아직 false다.
 
-서버8878과53869는 모두 exit130, 59412 listener 부재로 종료 확인됐다. 상세 표본·핀은 review.json에 고정한다. 신규 문서 메타·합산·핀 검사1회만 수행하며 기존 renderer 검사·산술·engine·projection은 반복하지 않는다.
+서버 세션8878과53869는 모두 exit130, 59412 listener 부재로 종료 확인됐다. 8878/53869는 exec session_id이며 실제 PID는 미계측(null)이다. 최초 기록의 PID 라벨을 이 사실 정정에서 바로잡았으며 원기하·정책·승인 근거는 바뀌지 않는다. 상세 표본·핀은 review.json에 고정한다. 신규 문서 메타·합산·핀 검사1회만 수행하며 기존 renderer 검사·산술·engine·projection은 반복하지 않는다.
 
 ## 실제 component 연결 준비 이력
 
@@ -20,6 +20,8 @@ Q8 원M은 원P 밖이지만 이번 초기·rho 표본에서 같은 획의 새 �
 
 최종 app3 SHA:
 
-- `lib/hanja-stroke-start-gate-u8a29.ts`: `9e7172f82af9c3824c89d40c4b272502ddafe9237c73ef4185e279a6ab3c1a6e`
+- `lib/hanja-stroke-start-gate-u8a29.ts`: `934888e6b7edf95ef5d5b5a26513e475d839aecfea07c83dd93955bd9dec6df1`
 - `lib/hanja-stroke-start-gate-u8a29.test.ts`: `94e158b9c21dd65b6986e47ca8b7254a51a14ba1cca815e6c70e7ca4b338a94f`
 - `components/hanja/stroke-outlines.tsx`: `e149a6c35233e3c6464007b15a0fec707746394601afd54eb17c2066cd05358f`
+
+PID/session 사실정정 후 전용 module의 standaloneFiniteReviewSHA256 metadata1필드만 최신 리뷰 SHA로 연결했다. 옛 값으로 역교체하면 최초 앱 module byte가 복원됨을 새정정 tail1로 확인했으며 정책·애니메이션·SSR 검사는 반복하지 않았다.

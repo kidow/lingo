@@ -206,20 +206,22 @@
   },
   "servers": [
     {
-      "pid": 8878,
+      "pid": null,
       "port": 59412,
       "exit": 130,
       "tracebackLines": 6,
       "tracebackTokens": 135,
-      "listenerAbsent": true
+      "listenerAbsent": true,
+      "sessionId": 8878
     },
     {
-      "pid": 53869,
+      "pid": null,
       "port": 59412,
       "exit": 130,
       "tracebackLines": 3,
       "tracebackTokens": 45,
-      "listenerAbsent": true
+      "listenerAbsent": true,
+      "sessionId": 53869
     }
   ],
   "helperCommitPrefix": "257c151",
@@ -269,5 +271,11 @@
       "screens": 68,
       "oldChecksRepeated": 0
     }
+  },
+  "serverIdentityCorrection": {
+    "reason": "ROOT가 전달한8878/53869는 PID가 아닌 exec session_id이며 실제PID 미계측",
+    "originalFieldMislabelPreservedInCommit": "4b69c9b2e9c964da7e4191441fac9aef8508751e",
+    "geometryPolicyAndApprovalChanged": false,
+    "newFactCorrectionTailChecks": 1
   }
 }
