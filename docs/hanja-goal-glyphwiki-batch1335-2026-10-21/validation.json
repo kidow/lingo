@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 1,
+  "batch": 1335,
+  "date": "2026-10-21",
+  "status": "ROOT-first-actual-confirmed",
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/NOTICE.md": "08b1272b08ff4a0ee4c8de6eb2cf30dbbbd40201b01125a4ec792ca79f711e07",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/README.md": "a1f81f15cbd3517df31d695a4546b4d7037e3bf5d4471e19ecc86c1147eb6060",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/candidate-compile-analysis.json": "00bf825366ebcf7ffc244b675a2a2e66bbbcaa6ab3b8342e2fb03733eb459852",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/engine-proof.json": "9d3fc6a34716614537223cbd2f8e8345bbd43f4eddebe9d05ffa9adb5da3082b",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/engine-whole-u7c1c.json": "ce024be69d2544cabadde7968d0a12963735bb29775066ed54b962ed6c5cbeec",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/metadata.json": "795ca72fa2498d93acca21430ac917921ec7594349bd71832e7e2911bbcac685",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/native-server-preflight-hold.json": "7d6fbb1f34e4649185aa484633bad2bd2bb6262a7f8f7e5acff78a56ee825135",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/native-static-input-pins.json": "cc3da13a10e427f6157d42d1f3db8c5218f385d92c82478e02b562c37436e41e",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/progressive.mjs": "abd82103da04bc7c48b7724362a67c60aa1b51ca3e87d86b10e6844234efc2a9",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/resume.json": "6b336db3f7739e9f3211adb975527b82594115ee5119e2b622de002e951897f0",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/serve-static-native.py": "6ef8d50909637997006297c044a1ff0e4573bede457821a56b33d78ada2abf84",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/source-analysis.json": "21d4631c0883c52cac6c4159393bd93feff55ef9947c8112ae7373f4a1e8a2f8",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/source-hold.json": "0a2f9336195b3ab9ba928fa244eced53d9bc0a0761f01e778a866bc4a5ad0641",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/source-join-analysis.json": "322d494e3fe4db4eeaa15b6b98a905b23cb5c25171ccb85b4256c85222b50c2a",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/source-only-helper-readiness-2026-10-14.json": "395fcfb638f0ac0ccc945eb34dc470501e13c24e47f36408598d9dda27c37622",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/source-preservation-audit.json": "6670fb3648c302d1879bc190e802a15afe96b993a56c719e8e3aae4a535719fc",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/sources.json": "0addebdceb61df423294a766186288584817d816adee44db5cca50b309502728",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/validation.json": "f5772b019e1ce983499e24d23e75c654fe182f05c7f3a59384d3a13774d618f2",
+    "docs/hanja-goal-glyphwiki-batch965-2026-10-13/verify-source.mjs": "66427479ba50757a8bdcd0dce3b3a4b4b8f21762765efdcb363f7f3deb2605ee",
+    "docs/hanja-source-raw-compare-u564b-2026-10-21/serve.py": "eac29cfcfac49f5584dc3a67e3ab90b6c47920156563d6833bf6ae1f88832efc",
+    "docs/hanja-source-raw-compare-u564b-2026-10-21/check.mjs": "2d58f4ad1bf96f343232df7951196824827c054b8fbc6a7f67dcb27bc7716703",
+    "docs/hanja-source-raw-compare-u7c1c-2026-10-21/config.json": "8b629fa6161ae6ece3575453fc758b1cb74b09748a85aef5ec6be7070c99e5c6",
+    "docs/hanja-source-raw-compare-u7c1c-2026-10-21/serve.py": "25266cacf9c4aa8fe22e808e7446c0d5332bd1ddbbf374c267bdfc45067e90f7",
+    "docs/hanja-source-raw-compare-u7c1c-2026-10-21/check.mjs": "5413ac0ece90138c47d405ac2fdef098b2502f987110446dfc120ddb943344a8",
+    "docs/hanja-source-raw-compare-u7c1c-2026-10-21/README.md": "1d9cb5abe8a77514fe44baa39aabfebaa6cafe43c6d95f2f4589467e8d180ada",
+    "docs/hanja-source-raw-compare-u7c1c-2026-10-21/validation.json": "8632f0aba57ea02da4b482100e5356ec3b7505c6ee2d2706ae88712d790d637f",
+    "docs/hanja-source-native-raw-correspondence-u7c1c-2026-10-21/README.md": "e6066caa24954b047099f54c0a64afcf236d8f06fac1bb231241f272a193d09d",
+    "docs/hanja-source-native-raw-correspondence-u7c1c-2026-10-21/review.json": "c31426957959a0acc67615ade4048b21c4327f9227e5429a63064c6adb04b0c2",
+    "docs/hanja-source-independent-hq-reorder-u564b-source-experiment-2026-10-21/candidate.mjs": "ebd6c61f0581a24fcc954ceaaa01de77f19270b96b8268077065de76a7f4267e",
+    "docs/hanja-source-independent-hq-reorder-u564b-source-experiment-2026-10-21/source-check.mjs": "8ef22f5e23d8178235fcf3f7b6eb6e39385d218e9790285c05249709c0a1fdc6",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "docs/hanja-g2-batch10-2026-09-16/serve.py": "3aa179d2dba9043c213052c2fb6a51664a0403682292769325aac38143c83a47",
+    "docs/hanja-g2-batch10-2026-09-16/originals.json": "5e14aff1d1c731ad58cbcd4e48fffda5197361ecacd5ff4732e529775f5eda91",
+    "docs/hanja-source-independent-qq-hv-u7c1c-source-experiment-2026-10-21/README.md": "4c1136e3de8ad7eab597ad3c3835b20b7bf935acaf9853f1bf7eaaec019bf122",
+    "docs/hanja-source-independent-qq-hv-u7c1c-source-experiment-2026-10-21/candidate.d.mts": "a1b78fc2b6229d92b56faea3b91c116956609b70a32f66cf6ffed485c99542ef",
+    "docs/hanja-source-independent-qq-hv-u7c1c-source-experiment-2026-10-21/candidate.mjs": "d7e7a436a03903782437c22137f70bd253e85f835af7bc645edb6699921ae2b8",
+    "docs/hanja-source-independent-qq-hv-u7c1c-source-experiment-2026-10-21/config.json": "0c0a841867993b95a74aa9b9ea3ddc839c474b7edf5c4efd4b852333c54fa791",
+    "docs/hanja-source-independent-qq-hv-u7c1c-source-experiment-2026-10-21/fixtures.json": "29cc3fb7d563f55abfc6b54f31c2bc97e37c85699bce733c17e60b1b1e858e5b",
+    "docs/hanja-source-independent-qq-hv-u7c1c-source-experiment-2026-10-21/preparation.json": "006bf105488e4b66049880942dde8bfde58cb9df01aa12121b7ba94012f024f0",
+    "docs/hanja-source-independent-qq-hv-u7c1c-source-experiment-2026-10-21/serve.py": "c3c2c8916bc7cdb3db0301ed5e83b3f83e64d05d7680e4406974f2bd83027aca",
+    "docs/hanja-source-independent-qq-hv-u7c1c-source-experiment-2026-10-21/source-check.mjs": "92ad1d5d275a6b8184dbcee777c5f55e051346cdc846641ae743ec782c1d6fe1",
+    "docs/hanja-source-independent-qq-hv-left-u7c1c-source-experiment-2026-10-21/README.md": "47ba6fc06508411b797aa5fff5dbc5c4dc1b78676d81513caaace8f89e0a7946",
+    "docs/hanja-source-independent-qq-hv-left-u7c1c-source-experiment-2026-10-21/candidate.d.mts": "e4c658245ac075c9af47c6d4ed037b40e8792906c70358fdc760c92287382e9f",
+    "docs/hanja-source-independent-qq-hv-left-u7c1c-source-experiment-2026-10-21/candidate.mjs": "5ff086272c5ed14f2ae3fefdeed3129e0e0dae33d05ec8200c94cd8c692e2ec2",
+    "docs/hanja-source-independent-qq-hv-left-u7c1c-source-experiment-2026-10-21/config.json": "d07cd7a5e5db79eb7a5e9bbbccfdd7d5c852b49a2701e724e27807062c48583e",
+    "docs/hanja-source-independent-qq-hv-left-u7c1c-source-experiment-2026-10-21/fixtures.json": "94c62cc9254d611c96adf6fc3a1d6865744e804230c5604bc458650931cc8543",
+    "docs/hanja-source-independent-qq-hv-left-u7c1c-source-experiment-2026-10-21/preparation.json": "339c861507841ff30f46bd39cf8298af5fe4477c82a709733ce5c35de2d12de3",
+    "docs/hanja-source-independent-qq-hv-left-u7c1c-source-experiment-2026-10-21/serve.py": "72a5a24480e3cde1039e3b4b5ecf950a3d29b54cd41d71bf2cf8087b8845db27",
+    "docs/hanja-source-independent-qq-hv-left-u7c1c-source-experiment-2026-10-21/source-check.mjs": "364fb69af00870b1e4954465d40708daa068670ff809164027c987d071ec3e7c",
+    "docs/hanja-source-native-hold-u7c1c-qq9-left16-2026-10-21/README.md": "5df757472f65faa4484b3990b3d7f83937b7437fe9d58444c9400e218861007d",
+    "docs/hanja-source-native-hold-u7c1c-qq9-left16-2026-10-21/hold.json": "33e95a9afaa9c6b0a9bb294514bcadb9a8da2399fbbb500423d84cb78d1fd026",
+    "docs/hanja-renderer-growing-caps-u6f57-k-qq3-two-q-experiment-2026-10-21/render.mjs": "03774a1c5a6b2a2e61599b0166ea34fac46005134ba7844160a0a30d702db660",
+    "docs/hanja-u7c1c-water9-geometry-analysis-2026-10-21/README.md": "1085d4a2262f14868b8b91fe3509495fb8a4208e779196a7d6b6a772d55f5de9",
+    "lib/hanja-stroke-start-gate-u905d.ts": "963ba442d0a9217fc191dbb3ed4277fcc854c92e926c214d0c0c07a2d3366dbf",
+    "docs/hanja-component-evidence-growing-caps-u905d-2026-10-21/lib__hanja-stroke-start-gate-u905d.ts.source.txt": "963ba442d0a9217fc191dbb3ed4277fcc854c92e926c214d0c0c07a2d3366dbf",
+    "lib/hanja-stroke-start-gate-u905d.test.ts": "879b6eba2d11760acd563427ef13d2202ed822c2b9cca8208c4350b71413fdc2",
+    "docs/hanja-component-evidence-growing-caps-u905d-2026-10-21/lib__hanja-stroke-start-gate-u905d.test.ts.source.txt": "879b6eba2d11760acd563427ef13d2202ed822c2b9cca8208c4350b71413fdc2",
+    "components/hanja/stroke-outlines.tsx": "1a0f49eb55cc4ab85c618b46a55bc08b5137de5951db46b5731744020664143f",
+    "lib/hanja-stroke-start-gate-si.ts": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+    "docs/hanja-component-evidence-growing-caps-u7de6-2026-10-20/lib__hanja-stroke-start-gate-si.ts.source.txt": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+    "lib/hanja-stroke-start-gate-si.test.ts": "f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515",
+    "docs/hanja-component-evidence-growing-caps-u7de6-2026-10-20/lib__hanja-stroke-start-gate-si.test.ts.source.txt": "f939e0d4113e3cce88fba3c6f61be47fa4e6f1543236c31ddee360bea112b515",
+    "lib/hanja-stroke-start-gate-di.ts": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+    "docs/hanja-component-evidence-growing-caps-u75b7-2026-10-20/lib__hanja-stroke-start-gate-di.ts.source.txt": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+    "lib/hanja-stroke-start-gate-di.test.ts": "ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160",
+    "docs/hanja-component-evidence-growing-caps-u75b7-2026-10-20/lib__hanja-stroke-start-gate-di.test.ts.source.txt": "ff43c4ce6d608439b84e9dab200fd4c48a004580a617b82019179829243fe160",
+    "lib/hanja-stroke-start-gate.ts": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+    "docs/hanja-component-evidence-growing-caps-u6faf-2026-10-20/lib__hanja-stroke-start-gate.ts.source.txt": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+    "lib/hanja-stroke-start-gate.test.ts": "0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8",
+    "docs/hanja-component-evidence-growing-caps-u6faf-2026-10-20/lib__hanja-stroke-start-gate.test.ts.source.txt": "0f0ea878d6a2c10f7104bfa92440bf8d7e4e2f3bb64efd78d40a44c76ad132c8",
+    "lib/hanja-stroke-start-gate-can.ts": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7",
+    "docs/hanja-component-evidence-growing-caps-u6faf-distance-2026-10-20/lib__hanja-stroke-start-gate-can.ts.source.txt": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7",
+    "lib/hanja-stroke-start-gate-can.test.ts": "97f12ba390197e4ef5178eed70ef1662b508879656a26690c2bc25d62d504572",
+    "docs/hanja-component-evidence-growing-caps-u6faf-distance-2026-10-20/lib__hanja-stroke-start-gate-can.test.ts.source.txt": "97f12ba390197e4ef5178eed70ef1662b508879656a26690c2bc25d62d504572",
+    "lib/hanja-stroke-start-gate-u7277.ts": "43757c391fc54957e04ae8f7116aa57dce06c8dc49f700b62ca2a4bd6046946b",
+    "docs/hanja-component-evidence-growing-caps-u7277-2026-10-20/lib__hanja-stroke-start-gate-u7277.ts.source.txt": "43757c391fc54957e04ae8f7116aa57dce06c8dc49f700b62ca2a4bd6046946b",
+    "lib/hanja-stroke-start-gate-u7277.test.ts": "fc30aeb5a2fbbce1170f8c57ce9918e3a04f3a8e1d685717abc70f63240cced1",
+    "docs/hanja-component-evidence-growing-caps-u7277-2026-10-20/lib__hanja-stroke-start-gate-u7277.test.ts.source.txt": "fc30aeb5a2fbbce1170f8c57ce9918e3a04f3a8e1d685717abc70f63240cced1",
+    "lib/hanja-stroke-start-gate-u6303.ts": "9774d49905f6d8f98c18d8e585296769065916f40de9a84e09254ea4b73c7ef8",
+    "docs/hanja-component-evidence-growing-caps-u6303-2026-10-21/lib__hanja-stroke-start-gate-u6303.ts.source.txt": "9774d49905f6d8f98c18d8e585296769065916f40de9a84e09254ea4b73c7ef8",
+    "lib/hanja-stroke-start-gate-u6303.test.ts": "53f23c6ca557be839353a971ba250678c1ccc08b40c61efc6a6bb19cb678e756",
+    "docs/hanja-component-evidence-growing-caps-u6303-2026-10-21/lib__hanja-stroke-start-gate-u6303.test.ts.source.txt": "53f23c6ca557be839353a971ba250678c1ccc08b40c61efc6a6bb19cb678e756",
+    "lib/hanja-stroke-start-gate-u7037.ts": "ec09bcea8d5a8557a3d27d754cbfae86df07857bc496da08693fbb0e341a3868",
+    "docs/hanja-component-evidence-growing-caps-u7037-k-2026-10-21/lib__hanja-stroke-start-gate-u7037.ts.source.txt": "ec09bcea8d5a8557a3d27d754cbfae86df07857bc496da08693fbb0e341a3868",
+    "lib/hanja-stroke-start-gate-u7037.test.ts": "ad455ccd83ec909c90b641c7b1ae30d730301dbebeb5c36663619d84b2036939",
+    "docs/hanja-component-evidence-growing-caps-u7037-k-2026-10-21/lib__hanja-stroke-start-gate-u7037.test.ts.source.txt": "ad455ccd83ec909c90b641c7b1ae30d730301dbebeb5c36663619d84b2036939",
+    "lib/hanja-stroke-start-gate-u8cb6.ts": "0af422a86d3eb458af58384108ad283a2119b91c435372ece85e41e766939c07",
+    "docs/hanja-component-evidence-growing-caps-u8cb6-2026-10-21/lib__hanja-stroke-start-gate-u8cb6.ts.source.txt": "0af422a86d3eb458af58384108ad283a2119b91c435372ece85e41e766939c07",
+    "lib/hanja-stroke-start-gate-u8cb6.test.ts": "707c6f0a9ab8056aec1aa1a4226330a7783c68990b5deee867ca3c5fe6a4e408",
+    "docs/hanja-component-evidence-growing-caps-u8cb6-2026-10-21/lib__hanja-stroke-start-gate-u8cb6.test.ts.source.txt": "707c6f0a9ab8056aec1aa1a4226330a7783c68990b5deee867ca3c5fe6a4e408",
+    "lib/hanja-stroke-start-gate-u9148.ts": "8a566486c6ba4c214f89af62c5b42e270aa53ab50644d7c0bc8bd125ed1d35b4",
+    "docs/hanja-component-evidence-growing-caps-u9148-2026-10-21/lib__hanja-stroke-start-gate-u9148.ts.source.txt": "8a566486c6ba4c214f89af62c5b42e270aa53ab50644d7c0bc8bd125ed1d35b4",
+    "lib/hanja-stroke-start-gate-u9148.test.ts": "19babf44a44f81fb82069632db194c9eda780659888262a87acccad107bc6143",
+    "docs/hanja-component-evidence-growing-caps-u9148-2026-10-21/lib__hanja-stroke-start-gate-u9148.test.ts.source.txt": "19babf44a44f81fb82069632db194c9eda780659888262a87acccad107bc6143",
+    "lib/hanja-stroke-start-gate-u7d3d.ts": "f821ad2913459ae6a37d3bc84b211ce9f84b06f87fcaa3ec3c2f63008b891a44",
+    "docs/hanja-component-evidence-growing-caps-u7d3d-2026-10-21/lib__hanja-stroke-start-gate-u7d3d.ts.source.txt": "f821ad2913459ae6a37d3bc84b211ce9f84b06f87fcaa3ec3c2f63008b891a44",
+    "lib/hanja-stroke-start-gate-u7d3d.test.ts": "4005a619a9261899925eb3cec178820ce30ffcc201beb0bbf85e9d41c514608b",
+    "docs/hanja-component-evidence-growing-caps-u7d3d-2026-10-21/lib__hanja-stroke-start-gate-u7d3d.test.ts.source.txt": "4005a619a9261899925eb3cec178820ce30ffcc201beb0bbf85e9d41c514608b",
+    "lib/hanja-stroke-start-gate-u6f57.ts": "a7b35a0aae7b35afede3d123cfc8b736a6d56ae46cb54bbd5b3286949896cac5",
+    "docs/hanja-component-evidence-growing-caps-u6f57-k-2026-10-21/lib__hanja-stroke-start-gate-u6f57.ts.source.txt": "a7b35a0aae7b35afede3d123cfc8b736a6d56ae46cb54bbd5b3286949896cac5",
+    "lib/hanja-stroke-start-gate-u6f57.test.ts": "ab7e27b0204d958b678bf745b4861c948a6a1925ee77d079c9476896e65f092c",
+    "docs/hanja-component-evidence-growing-caps-u6f57-k-2026-10-21/lib__hanja-stroke-start-gate-u6f57.test.ts.source.txt": "ab7e27b0204d958b678bf745b4861c948a6a1925ee77d079c9476896e65f092c",
+    "lib/hanja-stroke-start-gate-u68b2.ts": "fe77ebf811228ca5c6ddefedbea354f8e4233d00851e0d4200c207c05492180f",
+    "docs/hanja-component-evidence-growing-caps-u68b2-2026-10-21/lib__hanja-stroke-start-gate-u68b2.ts.source.txt": "fe77ebf811228ca5c6ddefedbea354f8e4233d00851e0d4200c207c05492180f",
+    "lib/hanja-stroke-start-gate-u68b2.test.ts": "eb15e79892ba5342293fa0c91ad43b5d06398a1d1f55f65abe12f0e6fe4b5188",
+    "docs/hanja-component-evidence-growing-caps-u68b2-2026-10-21/lib__hanja-stroke-start-gate-u68b2.test.ts.source.txt": "eb15e79892ba5342293fa0c91ad43b5d06398a1d1f55f65abe12f0e6fe4b5188",
+    "lib/hanja-stroke-start-gate-u9081.ts": "7a58927ef750acee31d2975b08b07f23ba2fbfdfc5af729272abdc7db8b16585",
+    "docs/hanja-component-evidence-growing-caps-u9081-vs3-2026-10-21/lib__hanja-stroke-start-gate-u9081.ts.source.txt": "7a58927ef750acee31d2975b08b07f23ba2fbfdfc5af729272abdc7db8b16585",
+    "lib/hanja-stroke-start-gate-u9081.test.ts": "50b897f4f4d55eb1d3135f66a7b50faa6755b5c3629ff5ee7674c3b4bff61125",
+    "docs/hanja-component-evidence-growing-caps-u9081-vs3-2026-10-21/lib__hanja-stroke-start-gate-u9081.test.ts.source.txt": "50b897f4f4d55eb1d3135f66a7b50faa6755b5c3629ff5ee7674c3b4bff61125",
+    "lib/hanja-stroke-start-gate-u564b.ts": "ca01869bb519fb57827704909aeec3e2b8071bd311915c5340ddb975fcd1c613",
+    "lib/hanja-stroke-start-gate-u564b.test.ts": "c2ec07bc0c9996bebc6c8934e2212af36c84fff9ac42f948bf0c3a6ac8043221",
+    "lib/hanja-stroke-outline.ts": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+    "docs/hanja-component-evidence-growing-caps-u7de6-2026-10-20/resolver.mjs": "2d26236cf767df56ae6a3b76159ff41771aa37cc721ab4259b61ac82c226002c",
+    "docs/hanja-component-evidence-growing-caps-u7de6-2026-10-20/resolver.d.mts": "6859b52ef906d4a5344f970b5abda514d2350ce4b2f6643723eb3d1026c2b56a",
+    "docs/hanja-component-evidence-growing-caps-u75b7-2026-10-20/resolver.mjs": "a59ba9b34d221d392ebb027b35fde4c28b2ee141a24a7ae17100fe6f63a93ce9",
+    "docs/hanja-component-evidence-growing-caps-u75b7-2026-10-20/resolver.d.mts": "e726632edd5510d72709fdfebbf3d1dc0f1e1e9421e1d02c2ca7f0034a1b1afb",
+    "docs/hanja-component-evidence-growing-caps-u6faf-2026-10-20/resolver.mjs": "a48c4a95249f606cfcb4cf39ccb5ed2577cf9474b224b53ea3dbd933e57a670c",
+    "docs/hanja-component-evidence-growing-caps-u6faf-2026-10-20/resolver.d.mts": "7528771623d79e864bebea358664068be4b7084b05ab67275672164ee38e42c0",
+    "docs/hanja-component-evidence-growing-caps-u6faf-distance-2026-10-20/resolver.mjs": "801a66a6585d9682b08b4a8f55675d5265c0e0242c407db9f2dce45a1e823c9e",
+    "docs/hanja-component-evidence-growing-caps-u6faf-distance-2026-10-20/resolver.d.mts": "7528771623d79e864bebea358664068be4b7084b05ab67275672164ee38e42c0",
+    "docs/hanja-component-evidence-growing-caps-u7277-2026-10-20/resolver.mjs": "28db09d399952cedda97886ea722b5e473953ee1836350f8dc82c703f24f5a2a",
+    "docs/hanja-component-evidence-growing-caps-u7277-2026-10-20/resolver.d.mts": "491b12fd2caa7b51c126d1238b94ba7aa854f698a82ec4d568376febffaac066",
+    "docs/hanja-component-evidence-growing-caps-u6303-2026-10-21/resolver.mjs": "a467b0065c328be21b5bd11a210027cf9e63ba83068da8bf2295ff8bf74daca0",
+    "docs/hanja-component-evidence-growing-caps-u6303-2026-10-21/resolver.d.mts": "80c5a612ec1145aa3b1d64e09127eb65c5121fb030a7676d79b6556e4306e4dc",
+    "docs/hanja-component-evidence-growing-caps-u7037-k-2026-10-21/resolver.mjs": "2609b2753cb62dcc00301d19609662ea811f8be0ecb85f654a0ea561e0ad8ba4",
+    "docs/hanja-component-evidence-growing-caps-u7037-k-2026-10-21/resolver.d.mts": "923d0240699405a05a05a738d4756eeec972729b0acfdecc50f61d1e22266f69",
+    "docs/hanja-component-evidence-growing-caps-u8cb6-2026-10-21/resolver.mjs": "65ee574487a3c8c3f3b911d1ba24b06553942dea06948e99bc2a7c9ac15d786d",
+    "docs/hanja-component-evidence-growing-caps-u8cb6-2026-10-21/resolver.d.mts": "65697c7f8da1c804a83561eaaf500f6df928f0cf664c81d185aa23129745cf67",
+    "docs/hanja-component-evidence-growing-caps-u9148-2026-10-21/resolver.mjs": "7cd4bf4e65fbed75fdd362f77a032398d2897955ed9f7964f61bb4cd1dd24dfb",
+    "docs/hanja-component-evidence-growing-caps-u9148-2026-10-21/resolver.d.mts": "ca06df443cc9f9d9dc6faebc00e9afe83ed6c00d59e368cafad786889db5fc48",
+    "docs/hanja-component-evidence-growing-caps-u905d-2026-10-21/resolver.mjs": "d833965ea4a1eb3e3f8a00728efc6579823a54dccf25c25e8613b427eef9e926",
+    "docs/hanja-component-evidence-growing-caps-u905d-2026-10-21/resolver.d.mts": "65697c7f8da1c804a83561eaaf500f6df928f0cf664c81d185aa23129745cf67",
+    "docs/hanja-component-evidence-growing-caps-u7d3d-2026-10-21/resolver.mjs": "3fa8807a79b9c066b30f9cd11910d9c49d9dc21526303933f50a3c2d8eb2bf9d",
+    "docs/hanja-component-evidence-growing-caps-u7d3d-2026-10-21/resolver.d.mts": "65697c7f8da1c804a83561eaaf500f6df928f0cf664c81d185aa23129745cf67",
+    "docs/hanja-component-evidence-growing-caps-u6f57-k-2026-10-21/resolver.mjs": "6d7d97ca27c1478613b1c76b5dc20e3ff11d4d86f9866430e3e760dfe36f54e8",
+    "docs/hanja-component-evidence-growing-caps-u6f57-k-2026-10-21/resolver.d.mts": "df4bb0ab02c2584c6253ef9657eca4e0fea25abacf465dd1e836f3cab2bb94f8",
+    "docs/hanja-component-evidence-growing-caps-u9081-vs3-2026-10-21/resolver.mjs": "47675c2a080e682ceda42a3c5968600a2a1b3e8963c149598447c4e2b1c1a166",
+    "docs/hanja-component-evidence-growing-caps-u9081-vs3-2026-10-21/resolver.d.mts": "84c5990df0ea944e1a5cbd2cfaef4060d0b8cfebba09ba3ed99efc39b85ef18b",
+    "docs/hanja-component-evidence-growing-caps-u68b2-2026-10-21/resolver.mjs": "02c39b6ef85d66653d58bcef9b2018f56f4500f366f48bb0f0696976bf4af3fb",
+    "docs/hanja-component-evidence-growing-caps-u68b2-2026-10-21/resolver.d.mts": "9bc7505a2e625116ad040ceab826fe7371a1c9ed49b577bd006c08c52dc5be7e",
+    "docs/hanja-component-evidence-growing-caps-u564b-2026-10-21/lib__hanja-stroke-start-gate-u564b.ts.source.txt": "ca01869bb519fb57827704909aeec3e2b8071bd311915c5340ddb975fcd1c613",
+    "docs/hanja-component-evidence-growing-caps-u564b-2026-10-21/lib__hanja-stroke-start-gate-u564b.test.ts.source.txt": "c2ec07bc0c9996bebc6c8934e2212af36c84fff9ac42f948bf0c3a6ac8043221",
+    "docs/hanja-component-evidence-growing-caps-u564b-2026-10-21/components__hanja__stroke-outlines.tsx.source.txt": "bd6386d76cbc7599209c234b66660dfe42a88cae91e374d87e5946970cf26e63",
+    "docs/hanja-component-evidence-growing-caps-u564b-2026-10-21/resolver.mjs": "82efe8322dfc2412cc66a6b7ddcb71d2b4bc560cd6a8a17d687eb9d028844b30",
+    "docs/hanja-component-evidence-growing-caps-u564b-2026-10-21/resolver.d.mts": "a8392bc4149f6b5f80eb0ac288d9ba88bcd33006f7e45f91185c2896daaa6b08",
+    "docs/hanja-component-evidence-growing-caps-u564b-2026-10-21/README.md": "09ca41d63ede153503eedb50bcb22345089548a38be54077e92dc35e86425115",
+    "docs/hanja-component-evidence-growing-caps-u564b-2026-10-21/check.mjs": "c1c43c8df41e03bd7a3d8bf308874e074c3814307db0d1c795c9b91f6b5cb903",
+    "lib/hanja-stroke-start-gate-u7c1c.ts": "0a915bbaba4bdb858b4349fbb9b16bd413cd34700a4321fbf36a1e73a1433f73",
+    "lib/hanja-stroke-start-gate-u7c1c.test.ts": "09c414c8a2f010ecfa5c25026124b699944e96937edae80ae2fc076520b58bde",
+    "docs/hanja-component-evidence-mixed-u7c1c-2026-10-21/lib__hanja-stroke-start-gate-u7c1c.ts.source.txt": "0a915bbaba4bdb858b4349fbb9b16bd413cd34700a4321fbf36a1e73a1433f73",
+    "docs/hanja-component-evidence-mixed-u7c1c-2026-10-21/lib__hanja-stroke-start-gate-u7c1c.test.ts.source.txt": "09c414c8a2f010ecfa5c25026124b699944e96937edae80ae2fc076520b58bde",
+    "docs/hanja-component-evidence-mixed-u7c1c-2026-10-21/components__hanja__stroke-outlines.tsx.source.txt": "1a0f49eb55cc4ab85c618b46a55bc08b5137de5951db46b5731744020664143f",
+    "docs/hanja-component-evidence-mixed-u7c1c-2026-10-21/resolver.mjs": "535783baf7d7cc101368d36fd790d67447ac5e4ce51835d2ae8b0dd11cd1f58e",
+    "docs/hanja-component-evidence-mixed-u7c1c-2026-10-21/resolver.d.mts": "a880cce641a80c062621d4b61ba5d3eec358b2ae068fc1ad090e6ba471d6264c",
+    "docs/hanja-component-evidence-mixed-u7c1c-2026-10-21/README.md": "d3d796b3dd797102855d9bddcd9d246991f845c9a14919d4a5cbcd99474ac706",
+    "docs/hanja-component-evidence-mixed-u7c1c-2026-10-21/check.mjs": "8b701500522b266cfedb4c45e721f48c0d4137d8c989947d5eddf0e15584105d",
+    "docs/hanja-renderer-growing-q1-monotone-q2-u7c1c-experiment-2026-10-21/README.md": "dcf91e07b5a9ff4c7ac10cfc6659f0900e1fab5dd7ea7b9fd15f7bdd8745a164",
+    "docs/hanja-renderer-growing-q1-monotone-q2-u7c1c-experiment-2026-10-21/check.mjs": "b60b968d93410757bf30a2f857fba3bf39e63a808f461eb6c3d0c4924c930558",
+    "docs/hanja-renderer-growing-q1-monotone-q2-u7c1c-experiment-2026-10-21/config.json": "866a3c783e8e76ce5e59fb1de1b372bbd625e0a1d61c6768d9411519e6815e2a",
+    "docs/hanja-renderer-growing-q1-monotone-q2-u7c1c-experiment-2026-10-21/render.mjs": "3c8e8f322ea7b959ccefabc98d6d291f89cf2eb474914976028d6837db69df09",
+    "docs/hanja-renderer-growing-q1-monotone-q2-u7c1c-experiment-2026-10-21/serve.py": "21688a7063f256f757ac12c55e01392f13ba0cf4778faf0cd95182c3935f358b",
+    "docs/hanja-renderer-growing-q1-monotone-q2-u7c1c-experiment-2026-10-21/validation.json": "dc1765a38df2cd7f5cb79e1a61626553c0a653640687c212b39d77f8dfe02943",
+    "docs/hanja-source-native-pass-u7c1c-mixed-2026-10-21/README.md": "b69819613c74d2e633a426039f15acea19a4a6cdd156c9babdb19ff4294339c6",
+    "docs/hanja-source-native-pass-u7c1c-mixed-2026-10-21/review.json": "2e02cb2000c1514d4442d72fc5a38e2ad2cbf50e285dca4edc4a1c4b2f2ada60",
+    "docs/hanja-u7c1c-water9-monotone-reveal-proof-2026-10-21/README.md": "c17ac96e480789b2eb11473d209b2ea533cbbd973a9a21343c2472ddbd06e77d",
+    "docs/hanja-component-mixed-u7c1c-harness-2026-10-21/config.json": "7e31df2b560d108617d83b8a3c3e1c4126c0aafe62c7d08a87351de3a6bb2bed",
+    "docs/hanja-component-mixed-u7c1c-harness-2026-10-21/check.mjs": "67f39907cec6b2b0080ddf2cf49042e1ef7eb60946a1d952fd55857b63a27e57",
+    "docs/hanja-component-mixed-u7c1c-harness-2026-10-21/browser.js": "a762160c2b1c5eb38c6b85e9a41a068b051ae968dfc6613ca6cbc1282b9b3413",
+    "docs/hanja-component-mixed-u7c1c-harness-2026-10-21/serve.py": "56698794711f2e5390e4b25cc3e0ac4b4f8083e0811aeaa656ff38012582f487",
+    "docs/hanja-component-mixed-u7c1c-harness-2026-10-21/README.md": "13660706e4120171128301cd0a83d3f34391a4bc5a606073ec74d04e0af1a905",
+    "docs/hanja-component-mixed-u7c1c-harness-2026-10-21/validation.json": "2bdda09cb562f06aec9c29f754d712a245a728b67725beceff93d2e100eeede7",
+    "public/hanja-strokes/glyphwiki/u7c1c.json": "846523f01ec9df94d5cf063d9b835a5aad2f76c910ab767a41af83be6f7fb48c",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1335.json": "c48104009c4bd83cf93a029d18e7065d198b445705269b7dd7c8a34bef7a32e4",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1335.ts": "b6f8c830f7042311108dd340996b4bd321fd3166d1a00801e5c903cb77814bf8",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1335.test.ts": "872222fe6e0734728467b799ca3c6400d876853b690510a77a1b9796f7e9cc78",
+    "public/hanja-strokes/glyphwiki/u7c1c.NOTICE.md": "087cc8427a47dbc4d46130e381ea6569979ad856c53e71f4b2e26b5b173295d3",
+    "docs/hanja-source-native-pass-u7c1c-component-2026-10-21/README.md": "4eeebd9a0bf4043a871c3a58bd6a4252bba03b630037edfade2763927826a26d",
+    "docs/hanja-source-native-pass-u7c1c-component-2026-10-21/review.json": "475082fe40d282ae9cb48c6d9d57fa89b4416ab15818f0be13812191c3f4027e",
+    "docs/hanja-goal-glyphwiki-batch1334-2026-10-21/resume.json": "5530b442e9a3a65880a4a00a582deaa6cc28820c397f3791c803083d884b3cd4"
+  },
+  "ownFilesSHA256": {
+    "README.md": "498a5d7bed46bd56285612e5bc6305e3df82a9b1bb31fab041d8b29cd3fcae3c",
+    "resume.json": "656f12a15621e4ef449ce073bb3a6f27dcf25dce9082836bc2918033160c9663",
+    "review.json": "0ac1bdf345aa661e266e31553fc6f59e68869f2aa7974e11f6883efd9140c607",
+    "verify-runtime.mjs": "39db7df5b177ea6eab74907c01da323574aabe9d646f450b58e9b7567c813249"
+  },
+  "sourceComponentPass": {
+    "README": "4eeebd9a0bf4043a871c3a58bd6a4252bba03b630037edfade2763927826a26d",
+    "review": "475082fe40d282ae9cb48c6d9d57fa89b4416ab15818f0be13812191c3f4027e"
+  },
+  "counts": {
+    "pens": 18,
+    "masks": 20,
+    "polygons": 37
+  },
+  "geometrySHA256": "209c157e9535c7121937dfa7646b52052d05797a76e4de882d70a239b902d00b",
+  "sourcePins": 180,
+  "sourceContract": {
+    "proofKind": "existing-actual-full5-with-same-selected-body3-id3",
+    "identity": {
+      "sourceRoot": "u7c1c",
+      "sourceProofFile": "engine-proof.json",
+      "sourceProofFileSha256": "9d3fc6a34716614537223cbd2f8e8345bbd43f4eddebe9d05ffa9adb5da3082b"
+    },
+    "actualSelectedFull5Available": true,
+    "actualFull5File": "docs/hanja-goal-glyphwiki-batch965-2026-10-13/engine-proof.json",
+    "actualFull5SHA256": "9d3fc6a34716614537223cbd2f8e8345bbd43f4eddebe9d05ffa9adb5da3082b",
+    "fullProofSHA256": "40b8d1f21ee2ae6667f5208b50f430fba87554fc730be00cdf33bdce0adec48e",
+    "selectedBody3File": "docs/hanja-goal-glyphwiki-batch965-2026-10-13/engine-whole-u7c1c.json",
+    "selectedBody3SHA256": "ce024be69d2544cabadde7968d0a12963735bb29775066ed54b962ed6c5cbeec",
+    "selectedBody3CanonicalSHA256": "26135be0a4a3906f24dfe9c7540d784a8550477fbc997fcb3d8f64809c087932",
+    "selectedBodyFieldsEqualFull5": true,
+    "headerSynthesized": false,
+    "originalFieldsPreserved": true
+  },
+  "sourceFamily": {
+    "records": 6,
+    "wholeNames": [
+      "u7c1c"
+    ],
+    "providers": 1,
+    "providerVersions": [
+      {
+        "name": "u661c-02@5",
+        "apiUrl": "https://glyphwiki.org/api/glyph?name=u661c-02%405",
+        "version": "5",
+        "sha256": "a2e8fa531f01d51ed452fd1a58011ecd263ec0fcad0186e9950187dcc8cec953"
+      }
+    ],
+    "selectedRoot": "u7c1c",
+    "selectedRootClosureInferred": false,
+    "rootMixing": false
+  },
+  "canonical": {
+    "originalHold": "docs/hanja-goal-glyphwiki-batch965-2026-10-13/resume.json#/newHoldsThisBatch/0",
+    "originalHoldRecordType": "object",
+    "originalHoldRecordExact": {
+      "batch": 965,
+      "glyph": "簜",
+      "root": "u7c1c",
+      "catalogStrokes": 18,
+      "hold": "docs/hanja-goal-glyphwiki-batch965-2026-10-13/source-hold.json",
+      "holdSHA256": "0a2f9336195b3ab9ba928fa244eced53d9bc0a0761f01e778a866bc4a5ad0641",
+      "runtimeApplied": false,
+      "nativeApproval": false
+    },
+    "originalHoldRecordSHA256": "1a88bd53ffe28afeaa145c0e390cdb023cd6d36bf801f7034e14abdf5c345bbc",
+    "targetMatchesExpected": 1,
+    "targetResolved": true,
+    "status": "ROOT-authorized-resolution-awaiting-first-actual"
+  },
+  "expectedRegistry": {
+    "applied": 5751,
+    "remaining": 227,
+    "historical": 349,
+    "resolved": 176,
+    "active": 173,
+    "refs": 392,
+    "status": "confirmed-by-first-ROOT-actual"
+  },
+  "nativeScope": {
+    "observer": "ROOT",
+    "actualHarness": "docs/hanja-component-mixed-u7c1c-harness-2026-10-21",
+    "server": {
+      "PID": 36955,
+      "port": 59412,
+      "session": 62811,
+      "startupPrerequisites": {
+        "newRAMResources": 1,
+        "CommonJSAndESMTranspile": true,
+        "SSRStates": 3,
+        "notOldFocusedReplay": true
+      },
+      "signal": "SIGINT",
+      "exitCode": 130,
+      "output": "short traceback",
+      "PIDAbsent": true,
+      "psOutput": "empty",
+      "running": false
+    },
+    "viewport": {
+      "width": 518,
+      "height": 766,
+      "SVGNominalPixels": 520,
+      "whiteMarginsOnlyClipped": true,
+      "allInkVisible": true,
+      "fullUnclippedSVGBoxClaim": false
+    },
+    "freshActual": {
+      "hydrationReady": true,
+      "hydrationErrors": [],
+      "idleWhole": {
+        "images": 1,
+        "passed": true
+      },
+      "coverage": {
+        "Q1": {
+          "white": true,
+          "passed": true
+        },
+        "Q2": {
+          "blackPositiveAreaResidualObserved": false,
+          "faintOriginalPBoundaryAA": true,
+          "pureWhite": false,
+          "positiveAreaMeasured": false
+        }
+      },
+      "Q1Local": {
+        "requested": [
+          0,
+          0.000001,
+          0.95,
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "actual": [
+          0,
+          0.000001000000002679362,
+          0.9499999999999978,
+          0.9999000000000016,
+          0.9999999899999984,
+          0.9999999999999982
+        ],
+        "imagesPassed": 6,
+        "partialSameFrameAllTrue": true,
+        "requested100ActualFull": false,
+        "epsilonClamping": false
+      },
+      "Q2Local": {
+        "requested": [
+          0,
+          0.000001,
+          0.95,
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "actual": [
+          0,
+          9.999999982096783e-7,
+          0.9499999999999984,
+          0.9999000000000012,
+          0.9999999900000004,
+          0.9999999999999992
+        ],
+        "imagesPassed": 6,
+        "partialSameFrameAllTrue": true,
+        "requested100ActualFullOriginal": false,
+        "epsilonClamping": false
+      },
+      "separateExactGates": {
+        "whole18": {
+          "bothTargetLocal": 1,
+          "Q1FullRound": true,
+          "Q2OriginalPDirect": true,
+          "Q2ClipPath": null,
+          "Q2Mask": null
+        },
+        "prefixes": [
+          {
+            "pen": 9,
+            "targetLocal": 1
+          },
+          {
+            "pen": 16,
+            "targetLocal": 1
+          },
+          {
+            "pen": 18,
+            "targetLocal": 1
+          },
+          {
+            "pen": 8,
+            "bothTargetLocal": 0,
+            "bothInkHidden": true
+          }
+        ],
+        "wholeAndPrefixImages": 5,
+        "imagesPassed": true,
+        "Q2DynamicDirectOriginalPScreenshot": true
+      },
+      "Q1Rho": {
+        "centerLocal": 0.2772684387996429,
+        "deltaLocal": 1e-10,
+        "actualLocal": [
+          0.2772684386996446,
+          0.2772684387996427,
+          0.2772684388996407
+        ],
+        "rho": [
+          6.999999997475414,
+          6.999999999999994,
+          7
+        ],
+        "imagesPassed": 3,
+        "partialSameFrameAllTrue": true
+      },
+      "Q9Boundary": {
+        "global": 0.3866547471255951,
+        "deltaGlobal": 1e-10,
+        "positions": [
+          "before",
+          "at",
+          "after"
+        ],
+        "at": {
+          "Q1Local": 0.9999999999999982,
+          "Q2Local": 0
+        },
+        "after": {
+          "Q1Local": 1,
+          "Q2Local": 1.6304092803891216e-10
+        },
+        "imagesPassed": 3,
+        "partialSameFrameAllTrue": true
+      },
+      "LEFT16Boundary": {
+        "global": 0.8676299359771006,
+        "deltaGlobal": 1e-10,
+        "positions": [
+          "before",
+          "at",
+          "after"
+        ],
+        "imagesPassed": 3
+      },
+      "ordinaryLEFT16Tail": {
+        "requested": [
+          0,
+          0.000001,
+          0.95,
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "global": [
+          0.8676299359771006,
+          0.8676300683471647,
+          0.993381496798855,
+          0.9999867629935976,
+          0.9999999986762994,
+          1
+        ],
+        "imagesPassed": 6
+      },
+      "coarse": {
+        "pens": [
+          9,
+          16
+        ],
+        "perPen": 9,
+        "total": 18,
+        "pixels": 220,
+        "screenshotsPerPen": 2,
+        "totalScreenshots": 4,
+        "allRowsAndColumnsObserved": true,
+        "horizontalMovementForRemainingColumn": true,
+        "allInkVisible": true,
+        "partialSameFrameAllTrue": true,
+        "passed": true
+      },
+      "natural9": {
+        "attempts": [
+          {
+            "attempt": 1,
+            "startGlobal": 0.15621250001191947,
+            "endGlobal": 1,
+            "completionStatus": "natural-complete",
+            "startEndInkVisible": true,
+            "errors": [],
+            "startEndPassed": true,
+            "endQ2Local": 0.9999999999999992,
+            "endQ2FullOriginal": false,
+            "endVisibleWidthFull": true
+          }
+        ],
+        "continuousEightSecondsObserved": false,
+        "allRAFsObserved": false
+      },
+      "natural16": {
+        "attempts": [
+          {
+            "attempt": 1,
+            "startGlobal": 0.159250000005959,
+            "endGlobal": 1,
+            "completionStatus": "natural-complete",
+            "startEndInkVisible": true,
+            "errors": [],
+            "startEndPassed": true
+          }
+        ],
+        "continuousEightSecondsObserved": false,
+        "allRAFsObserved": false
+      }
+    },
+    "reusedSourceFine": {
+      "samples": 54,
+      "evidence": "docs/hanja-source-native-pass-u7c1c-mixed-2026-10-21/review.json",
+      "notFreshAllDirectionOrWholeReplay": true
+    },
+    "reusedOrdinarySSRParity": {
+      "samples": 153,
+      "pens": 17,
+      "notFreshNativeCoarse": true
+    },
+    "otherSixteenActualCoarseObserved": 0,
+    "otherSixteenNaturalObserved": 0,
+    "allEighteenNaturalApproved": false,
+    "domesticTemporalObserved": false,
+    "actualControllerObserved": false,
+    "actualStorageObserved": false,
+    "userTab62Kept": true
+  },
+  "checks": {
+    "existingPreparedLoaderFocusedRepeated": 0,
+    "sourceChecksRepeated": 0,
+    "APPFocusedRepeated": 0,
+    "resourcesRepeated": 0,
+    "SSRRepeated": 0,
+    "newVerifierSyntax": {
+      "executions": 1,
+      "status": "PASS"
+    },
+    "newMetadata": {
+      "executions": 1,
+      "status": "PASS"
+    },
+    "actualRuntimeVerifier": {
+      "executions": 1,
+      "status": "FIRST-PASS",
+      "authority": "ROOT",
+      "authorExecutions": 0,
+      "passedVerifierRepeated": 0,
+      "verifierSHA256": "39db7df5b177ea6eab74907c01da323574aabe9d646f450b58e9b7567c813249"
+    },
+    "postActualMetadata": {
+      "executions": 1,
+      "status": "PASS",
+      "scope": "final README/resume/validation only",
+      "verifierRepeated": 0,
+      "sourcePinsRechecked": 0
+    }
+  },
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "isolatedActualComponentBrowserVerified": true,
+  "actualAppUI": false,
+  "wholeReplay": false,
+  "sourceCompiler": 0,
+  "sourceProjection": 0,
+  "factory": 0,
+  "fixtureCompiles": 0,
+  "derive": 0,
+  "engine": 0,
+  "authorUI": 0,
+  "authorServer": 0,
+  "Git": 0,
+  "build": 0,
+  "originalPreparationHistoryFalsePreserved": true,
+  "NOTICEOnlyPreparedPublicFileChanged": true,
+  "rootFirstResult": {
+    "batch": 1335,
+    "glyph": "簜",
+    "status": "PASS",
+    "passed": true,
+    "firstExecution": true,
+    "exitCode": 0,
+    "registryUnique": 5751,
+    "remaining": 227,
+    "historical": 349,
+    "resolved": 176,
+    "active": 173,
+    "refs": 392,
+    "sourcePins": 180,
+    "pinMismatches": 0,
+    "targetMatches": 1,
+    "targetRecordType": "object",
+    "actualComponentBrowserVerified": true,
+    "actualAppUI": false,
+    "wholeReplay": false,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "engine": 0,
+    "geometry": 0,
+    "build": false,
+    "verifierSHA256": "39db7df5b177ea6eab74907c01da323574aabe9d646f450b58e9b7567c813249"
+  }
+}

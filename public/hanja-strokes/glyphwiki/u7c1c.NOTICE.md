@@ -20,3 +20,7 @@ source preparation docs/hanja-source-independent-qq-hv-left-u7c1c-source-experim
 geometry 209c157e9535c7121937dfa7646b52052d05797a76e4de882d70a239b902d00b /18p20m37
 
 GlyphWiki Project and contributors; LicenseRef-GlyphWiki. CC0가아닙니다. 원기여자/NOTICE/역사HOLD를보존하고국내SVG는URL/SHA만기록하며새미디어저장/전송0입니다. 이작업은등록수증가를만들지않습니다.
+
+## 현재 ROOT 유한범위 승인 · runtime1335
+
+위 미등록/false 문구와 public preparationHistory는 준비 당시의 역사이며 원본 그대로 보존합니다. 현재 ROOT는 실제 동결 컴포넌트의 제한된 gates를 승인했습니다. 현재 검토는 docs/hanja-source-native-pass-u7c1c-component-2026-10-21/review.json 및 docs/hanja-goal-glyphwiki-batch1335-2026-10-21/review.json 에서 확인합니다. 전체18자연·연속8초/모든RAF·APP controller/storage/routes 승인은 false이고, 실제 적용계수는 runtime1335 resume/validation의 ROOT 검증 결과를 기준으로 합니다. 기존 publicJSON/bundle/loader/test의 기하와 준비 이력은 수정하지 않습니다.
