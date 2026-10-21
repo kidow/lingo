@@ -1,0 +1,145 @@
+{
+  "schema": "u7d85-seven-starts-validation/v1",
+  "date": "2026-10-21",
+  "configSHA256": "460d5953f158cde4dfa2d586aa1cca3598e648ca4f93886bf8b3819b76561dac",
+  "inputPins": 49,
+  "newFilesSHA256": {
+    "README.md": "d44fc8b9e314b0b86539028396b6734be46fa7286a38b3b88e813afee120eefa",
+    "config.json": "460d5953f158cde4dfa2d586aa1cca3598e648ca4f93886bf8b3819b76561dac",
+    "render.mjs": "43c46356cfcb501d54dc4a536d8aff46df3f8c21505a98f3911c7e7ac530a3ff",
+    "check.mjs": "375e41ca31d4adf1c0beafa2dc48ef3966f216f19a0d917cc04e86217df8bd1c",
+    "serve.py": "598eafb8d1b86fda464ae2c4ef15d8bcea5d8c6eef8976e8c905d8e1efb44f8f"
+  },
+  "checks": {
+    "focused": {
+      "runs": 1,
+      "firstPass": false,
+      "firstStatus": "FAIL",
+      "failure": {
+        "location": "check.mjs initial line7 first straight-prefix firstLine assertion",
+        "actual": "2875500/100000",
+        "expected": "5751/200",
+        "cause": "equivalent rational textual reduction assumption",
+        "rendererOrGeometryFailure": false
+      },
+      "firstCheckerSHA256": "edfc71293fd3e5b0300ec3e8d17493d4ff59cdc502589273908465cd33a5e29a",
+      "passedPrefix": {
+        "inputPins": 49,
+        "ownPins": 5,
+        "sourceGeometryAndFull5": true,
+        "originalRendererPrefixAndOrdinaryBytes": true,
+        "sourceCertificatesInitialized": 7,
+        "firstFourQTargetCases": true,
+        "negatives": 44
+      },
+      "recoveryTail": {
+        "runs": 1,
+        "status": "PASS",
+        "passedPrefixRepeated": 0,
+        "passedQTargetCasesSkipped": 4,
+        "requiredModuleCertificateInitialization": 7,
+        "exactRationalCrossMultiplication": true,
+        "originalSourceOrRendererChanged": false,
+        "result": {
+          "passed": true,
+          "negative": 180,
+          "mockFrames": 35,
+          "ordinary": 72,
+          "passedSourcePinPrefixRepeated": 0,
+          "passedQTargetCasesSkipped": 4,
+          "certificatesInitializedForRecovery": 7
+        }
+      },
+      "ordinaryNonTargetPens": 8,
+      "ordinaryFrames": 72,
+      "certificateInitialization": {
+        "firstFocused": 7,
+        "necessaryRecoveryProcess": 7,
+        "total": 14,
+        "oldProofChecksCalled": 0
+      }
+    },
+    "syntax": {
+      "renderNode": 1,
+      "checkNode": 1,
+      "embeddedBrowserNode": 1,
+      "pythonAST": 1,
+      "allPassed": true
+    },
+    "helperContracts": {
+      "runs": 1,
+      "routesPositive": 8,
+      "routesNegative": 8,
+      "captionTargets": 7,
+      "HTTP": 0,
+      "server": 0,
+      "passed": true
+    },
+    "metadata": {
+      "runs": 1,
+      "passed": true,
+      "inputPinsRepeated": 0,
+      "own": 5,
+      "mismatch": 0,
+      "READMEAndValidationOnlyFinalMetadataRevision": true,
+      "focusedOnFinalMetadataBytesRepeated": false
+    },
+    "startupCheckOnly": {
+      "runs": 0,
+      "authorServer": 0,
+      "firstActualStartupByROOT": true
+    }
+  },
+  "sourceGeometry": 0,
+  "sourceProjection": 0,
+  "sourceCompiler": 0,
+  "engine": 0,
+  "factory": 0,
+  "tailDerivations": 0,
+  "oldChecksRepeated": 0,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "history": [
+    {
+      "event": "own-new-seven-target-context; existing source/proof/other glyph successful tests not called",
+      "oldChecksRepeated": 0,
+      "sourceGeometry": 0
+    },
+    {
+      "event": "first line7 firstLine fraction spelling assertion failed; equivalent value verified by exact cross multiplication in failed-only tail",
+      "firstCheckerSHA256": "edfc71293fd3e5b0300ec3e8d17493d4ff59cdc502589273908465cd33a5e29a",
+      "rendererChanged": false,
+      "sourceChanged": false,
+      "oldChecksRepeated": 0
+    },
+    {
+      "event": "failed-only remaining tail PASS; untouched renderer and original source",
+      "negative": 180,
+      "mockFrames": 35,
+      "ordinary": 72,
+      "passedSourcePinPrefixRepeated": 0,
+      "passedQTargetCasesSkipped": 4,
+      "necessaryModuleCertificateInitialization": 7
+    },
+    {
+      "event": "new syntax and helper contract FIRST-PASS; final README/history/pin revision only",
+      "focusedOrSyntaxRepeated": 0,
+      "sourceInput49PinsRepeated": 0
+    }
+  ],
+  "referenceRenderer": {
+    "directory": "docs/hanja-renderer-growing-starts-u7d7a-experiment-2026-10-21",
+    "immutable": true
+  },
+  "sourceNativeHold": {
+    "directory": "docs/hanja-source-native-hold-u7d85-startcaps-2026-10-21",
+    "originalSevenFailuresNotOverwritten": true
+  },
+  "certificationLimits": {
+    "onlyInitialArc7": true,
+    "notLaterCornerProof": true,
+    "notWholePolygonCoverageOrConnectivityProof": true,
+    "fullOriginalBrowserLengthRequired": true
+  }
+}
