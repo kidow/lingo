@@ -1,0 +1,71 @@
+{
+  "schema": "hanja-source-raw-static-validation-v1",
+  "date": "2026-10-21",
+  "glyph": "訩",
+  "configSHA256": "9da280fc21cc104923c24fef67b87d5c2ecb3c9bdd84ddc272e5ebb3a9e1e152",
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/metadata.json": "f8b95555ea8c624884ef8b613447118192d0b1169599d0c2396a7f65f60eb20d",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/sources.json": "df0f33ef60ec805f5508c8fc2d51b49e368307bc4341181974d3b41d1b887293",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/README.md": "10b16e7012bc41105c03d332e55137d1ecaae14f094282e462ef9d63ab747c12",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-hold.json": "1abd78e564b1b4d79344ad63c366c5fd1e4a605cb0b6449dc115d238bd4f365c",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/candidate-compile-analysis.json": "a007f216e1941f35cb265d46bec6547c74897588340e97153c0bd0e4a2cccf8f",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-only-helper-readiness.json": "4a41f526dfd4902dfe39917e8490c70b872f13428e432713da64f98a1c92e9ba",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/engine-whole-u8a29.json": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1",
+    "docs/hanja-source-raw-compare-u82fd-vs3-2026-10-21/serve.py": "25266cacf9c4aa8fe22e808e7446c0d5332bd1ddbbf374c267bdfc45067e90f7"
+  },
+  "ownSHA256": {
+    "config.json": "9da280fc21cc104923c24fef67b87d5c2ecb3c9bdd84ddc272e5ebb3a9e1e152",
+    "serve.py": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d",
+    "check.mjs": "7259abfa4c2a30cab3d6803726bd3b23fb8137be1db904406d6f3da93f456703",
+    "README.md": "52c1828e8e7f494712f3e2f071186cbb5506ab47b1abd71086f702255a8784c7"
+  },
+  "checks": {
+    "newFocused": {
+      "executions": 1,
+      "exit": 0,
+      "inputPins": 8,
+      "ownPins": 4,
+      "actualFull5Keys": 5,
+      "originalRaw": 13,
+      "originalPolygonsExactlyOnce": 23,
+      "rawSinglePrefixCases": 26,
+      "domesticSyntheticSinglePrefixCases": 22,
+      "negativeCases": 22,
+      "authorHTTP": 0,
+      "server": 0
+    },
+    "newNodeSyntax": {
+      "executions": 1,
+      "exit": 0
+    },
+    "PythonAST": {
+      "executions": 1,
+      "exit": 0,
+      "inNewFocused": true
+    },
+    "actualCLIHelp": {
+      "executions": 1,
+      "exit": 0,
+      "python": "/usr/bin/python3 -B",
+      "encodingDeclared": true,
+      "sourceFunctionsOrHTTPExecuted": false
+    },
+    "metadata": {
+      "executions": 1,
+      "result": "PASS",
+      "scope": "final validation contracts/five-file count; passed8input4own pins not repeated"
+    }
+  },
+  "history": {
+    "knownPathChecksOnly": true,
+    "originalCountMinimum12GreaterThanDomestic11Preserved": true,
+    "originalNativeWhole0Preserved": true,
+    "originalDomesticSingle0Preserved": true,
+    "engineCompilerProjectionOldTestsRepeated": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "authorHTTP": 0,
+  "serverStarted": 0
+}
