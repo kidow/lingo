@@ -11,3 +11,5 @@ ROOT controls: whole15/prefix8,9,10,15(현재획75%기본;exact100/완료는별�
 CLI: python3 docs/hanja-component-growing-caps-u564b-harness-2026-10-21/serve.py --port 0
 
 첫guard는원renderer inputSHA256의repo-root 경로를relative로잘못취급한중복경로에서실패했습니다(resources/SSR/TS변환/집중assert0). 핀값/identity를바꾸지않고경로형식만교정한뒤미실행집중검사·실패guard를통과했습니다. 통과snapshot77/구문/APP9반복0입니다. 기존梲snapshot 선언glyph정정(실제값梲) 이후frozen fallback declaration핀만따라갱신했으며이후 focused/resources반복0, 최종메타1만실행합니다.
+
+추가 최소 라벨 보정: client browser.js의 복사 aria-label 潗를 실제 glyph 噋와 일치시켰습니다. 총15획 HTML 캡션과 serve.py는 이미 정확해 변경하지 않습니다. frozen component/module/fixture/source 및 표시 로직은 불변입니다. 보정 전 actual harness는 SSR/client aria-label 불일치 위험이 있었으므로 과거 관찰의 hydrationErrors=[]를 가정하지 않습니다. 噋의 실제 경고 건수는 이번 읽기 점검에서 관측하지 않았고, ROOT fresh reload의 오류0 확인 전에는 성공으로 올리지 않습니다. 변경JS 구문1·역치환1·새메타1만 확인하며 기존 focused/resources/SSR/source 검사 반복0입니다.

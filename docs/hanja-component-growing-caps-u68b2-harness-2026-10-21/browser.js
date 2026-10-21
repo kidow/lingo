@@ -15,7 +15,7 @@ function targetsIn(host){return expectedTargets.map(expected=>{
 function report(){const status={hydrationReady:ready,hydrationErrors:[...errors],frame:++frameNumber,snapshotAt:performance.now(),mode,pen,progress:last,clockTime:clock.current[0]?.currentTime??null,clockPlayState:clock.current[0]?.playState??null,targets:targetsIn(document.getElementById('root')),coarse:[...document.querySelectorAll('#coarse > div')].map(div=>({sample:div.dataset.sample,targets:targetsIn(div)})),actualAppUI:false};document.getElementById('status').textContent=JSON.stringify(status,null,2);window.harnessStatus=status}
 function reportLoop(){report();requestAnimationFrame(reportLoop)}
 function Probe(){useEffect(()=>{ready=true;setup();if(!reporting){reporting=true;requestAnimationFrame(reportLoop)}},[]);return null}
-const svg=(phase='idle',count=0,c=clock,size=520)=>e('svg',{width:size,height:size,viewBox:'0 0 100 100','aria-label':'潗 actual StrokeOutlines'},e(StrokeOutlines,{strokes,clock:c,phase,count,manual:false}));const view=(phase='idle',count=0)=>e(Fragment,null,svg(phase,count),e(Probe));
+const svg=(phase='idle',count=0,c=clock,size=520)=>e('svg',{width:size,height:size,viewBox:'0 0 100 100','aria-label':'梲 actual StrokeOutlines'},e(StrokeOutlines,{strokes,clock:c,phase,count,manual:false}));const view=(phase='idle',count=0)=>e(Fragment,null,svg(phase,count),e(Probe));
 const root=hydrateRoot(document.getElementById('root'),view(),{identifierPrefix:'hc-',onRecoverableError:error=>{errors.push(String(error));report()}});
 function show(p){if(!ready)return;generation++;mode='sample';last=p;clock={current:[{currentTime:(pen-1)*(D+G)+p*D,playState:'running',pending:false}]};root.render(view('playing',pen))}
 function select(p,value=.75){pen=p;show(value)}

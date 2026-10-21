@@ -4,10 +4,10 @@
   "configSHA256": "f4686b8a866173d8307424ed23a48a55a6e442664c406dd973a881c07aa92eb7",
   "ownSHA256": {
     "config.json": "f4686b8a866173d8307424ed23a48a55a6e442664c406dd973a881c07aa92eb7",
-    "check.mjs": "98d5a9f7525f5c5b55c987fb8c21cad0c7405b5a27bcdc4bf24a4b8e9bc3b3d9",
-    "browser.js": "da542852b4ae25ee6796047dc086f08a96b96182d1723873ab242e6bb5e2c4df",
+    "check.mjs": "02f91ab368b991bd1324dd53f103e7a48f9ae5a1fffc1aee4323aea1a4f36e5f",
+    "browser.js": "6264f83ad6f3afb497d417ad0e5b57f4d52aff74f68ea820a802ecd8b214e477",
     "serve.py": "dc155383f6f217d09aabe2195397ab1d70ad43a77ac0f240138c722a2bb59f8b",
-    "README.md": "1aab5de24737db1b8d5e6eba147edff088ca67274ff6587bf610bc4ac7e6d617"
+    "README.md": "6e3df0e16660d604c5a3c6158ed4ec68345e3a41416c9b13f836b0705832fbe2"
   },
   "inputPins": 154,
   "ownPins": 5,
@@ -127,5 +127,58 @@
     "exactLiteralAndPinsMeta": 1,
     "APPFilesChanged": 0,
     "snapshotFocusedRepeated": 0
+  },
+  "nativeAriaLabelCorrection": {
+    "date": "2026-10-21",
+    "changed": {
+      "browser.js": "one aria-label 潗 -> 梲",
+      "check.mjs": "one HTML caption 全15획 -> 全11획"
+    },
+    "servePyChanged": false,
+    "configChanged": false,
+    "sourceFixtureOrFrozenAppChanged": false,
+    "rootPriorActualObservation": {
+      "hydrationReady": true,
+      "hydrationWarningCount": 1,
+      "warning": "SSR 梲/client 潗 aria-label mismatch",
+      "coverageWhite": 1,
+      "Qlocal": 6,
+      "rho": 3,
+      "boundary6And11": 6,
+      "UPtailLocal": 6,
+      "wholeAndPrefixImagePass": true,
+      "sameFrameBad": [],
+      "allImagesWereObservedWithAriaWarning": true,
+      "hydrationErrorsEmptyClaim": false
+    },
+    "freshReload": {
+      "observed": false,
+      "zeroHydrationErrorsConfirmed": false,
+      "naturalCoarsePending": true,
+      "rootOnly": true
+    },
+    "checks": {
+      "changedJSSyntax": 2,
+      "changedPythonAST": 0,
+      "inverseDiff": 2,
+      "metadata": 1,
+      "status": "PASS",
+      "oldFocusedRepeated": 0,
+      "resourcesRepeated": 0,
+      "SSRRepeated": 0,
+      "sourceChecksRepeated": 0
+    },
+    "authorBrowser": 0,
+    "authorServer": 0,
+    "sourceCompiler": 0,
+    "engine": 0,
+    "build": 0,
+    "patchPreparation": {
+      "attempts": 2,
+      "initialAtomicPatchRejected": 1,
+      "cause": "append hunk context encoded an extra empty context line",
+      "filesChangedByRejectedPatch": 0,
+      "testsRunBeforeRecovery": 0
+    }
   }
 }

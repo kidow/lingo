@@ -5,9 +5,9 @@
   "ownSHA256": {
     "config.json": "3d7c6b26f3650d1073aa7811be3f6050eb59fa69bf27828ad23e83f9b5773bcf",
     "check.mjs": "6e1e0811ec1d9aaaac8c0abc1d0b816504ffc157e006343cb03fa734cfd20f8f",
-    "browser.js": "c14508a7b0c865eb7976818f6d7fb80f9b22c3c61e3e9d675fe221783c81198d",
+    "browser.js": "81ce035593f01e607b6c0eba19a11393bffd6a15ec8eeebf4b9af6c62dcc3572",
     "serve.py": "798423669d9dd5c70bc8c71670e13128de24ee63ae0ce988c88a38530b696ece",
-    "README.md": "167400102c5b3012f96c3f71eb9ad7786ee993962b949a38e18e130c2f9702ac"
+    "README.md": "3681122bfb0f273ea7494c707986365c8c29fbc7bf1087c55740d763dae58be9"
   },
   "inputPins": 153,
   "ownPins": 5,
@@ -88,5 +88,50 @@
     "declarationPinOnly": true,
     "focusedRepeated": 0,
     "resourcesRepeated": 0
+  },
+  "nativeAriaLabelCorrection": {
+    "date": "2026-10-21",
+    "changed": {
+      "browser.js": "one aria-label 潗 -> 噋"
+    },
+    "captionWholePens": 15,
+    "captionAlreadyCorrect": true,
+    "servePyChanged": false,
+    "checkMjsChanged": false,
+    "configChanged": false,
+    "sourceFixtureOrFrozenAppChanged": false,
+    "rootPriorActualObservation": {
+      "potentialAriaMismatch": true,
+      "hydrationWarningCountObserved": null,
+      "hydrationErrorsEmptyClaim": false,
+      "notAClaimOfNewNativeObservation": true
+    },
+    "freshReload": {
+      "observed": false,
+      "zeroHydrationErrorsConfirmed": false,
+      "rootOnly": true
+    },
+    "checks": {
+      "changedJSSyntax": 1,
+      "changedPythonAST": 0,
+      "inverseDiff": 1,
+      "metadata": 1,
+      "status": "PASS",
+      "oldFocusedRepeated": 0,
+      "resourcesRepeated": 0,
+      "SSRRepeated": 0,
+      "sourceChecksRepeated": 0
+    },
+    "authorBrowser": 0,
+    "authorServer": 0,
+    "sourceCompiler": 0,
+    "engine": 0,
+    "build": 0,
+    "patchPreparation": {
+      "sameSharedPatchFailure": true,
+      "initialAtomicPatchRejected": 1,
+      "filesChangedByRejectedPatch": 0,
+      "testsRunBeforeRecovery": 0
+    }
   }
 }
