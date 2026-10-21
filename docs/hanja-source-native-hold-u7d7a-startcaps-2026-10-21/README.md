@@ -1,0 +1,9 @@
+# 絺 source 시작 roundcap HOLD
+
+원source1449e5604bf3e855f5ec218e6b7c472a72cdf8eb의13p15m38/geometry933b3e52ba6e2a53237c09777724d4ea34ac05cd3124e1ecfb1ae38682cf719b/full5-id3는불변입니다. ROOT는518×766 viewport의명목520 SVG에서흰모서리만잘리고실제ink전체가보이는조건으로아래실패를직접관찰했습니다.
+
+첫확인FAIL은pen1 global1e−6의고정roundcap큰유한첫조각이며별도p0빈이미지도확인했습니다. pen1 경계.5362013129661535±1e−10와pen2 경계.5861325333592735±1e−10의before/at에는두번째Q가없고after에는큰유한Q2stub가나왔습니다. pen2첫Q epsilon도고정capFAIL입니다. pen12원MLLQ의epsilon첫H도큰chunk였고, 선행11획은남아있고선택12획은없는p0이미지와비교했습니다. 붙음/떨어짐의위상이나AA원인은이기록만으로확정하지않습니다.
+
+pen12의.9999/.99999999/1 완료3이미지는원LEFT514끝까지fullink PASS였습니다. tail분리/좌표·guide·폭·weight교정은하지않고이완료증거와다섯시작FAIL을구분합니다. 오류로그는미조사이므로errors[]라고추정하지않습니다. 다른gates나전체시간필순/native·APP·runtime승인은없습니다.
+
+ROOT가PID40761/port59412/session47775를CtrlC130으로종료했고serve69짧은traceback후ps부재를확인했습니다. 새기하/원compiler/factory/engine/UI/server/Git/build실행0이며원source8/HOLD/NOTICE/false는보존합니다. 다음표시후보는고유4Q인증과pen12 firstL32.4의별도직선초기증명뿐이고coverage/raster는ROOT새검토가필요합니다.
