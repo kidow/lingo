@@ -1,0 +1,189 @@
+{
+  "schema": "u9654-source-hq-qq-native-review-hold-v1",
+  "date": "2026-10-21",
+  "glyph": "陔",
+  "status": "HOLD-start-and-QQ-activation",
+  "source": {
+    "directory": "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/",
+    "commit": "62335492",
+    "pens": 9,
+    "masks": 10,
+    "polygons": 25,
+    "geometrySHA256": "217aabd8f2b39b0f4489607a26be20800411422465a8297660a0469c202ea398",
+    "identity": {
+      "sourceRoot": "u9654",
+      "sourceProofFile": "engine-whole-u9654.json",
+      "sourceProofFileSha256": "c9c59133365d33fdbe9c6cb6d58963c100db5cf91be234c9b3df4f1e7e7ea169"
+    },
+    "originalSourceAndHOLDPreserved": true,
+    "sourceGroupsAndStaticRecordUnchanged": true,
+    "staticEvidence": "docs/hanja-source-raw-review-u9654-2026-10-21/review.json",
+    "gapRaw": [
+      -22,
+      -14
+    ],
+    "gapDisplay": [
+      -11,
+      -7
+    ],
+    "connector": 0,
+    "tailPartition": 0
+  },
+  "inputSHA256": {
+    "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/README.md": "4624a508a34cd1648d10f3f854888a991df5500f7239c8bdde41b09e493932c1",
+    "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/candidate.d.mts": "082f8676fd9158af0ab93d48929becd3dc5b6b3d37a51751e84e98e9c8e682e9",
+    "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/candidate.mjs": "8c8d93691d023ee16df89f5d5f848acde016ee79a8ba9178522ed4105283c212",
+    "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/config.json": "99ee7405e92d86fdbfaa21c14e2bf8e1e5df74a4cd970342d1e04d1734f2de1c",
+    "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/fixtures.json": "62ea332acd6d3aa4179c0f6f509c372f2231cd68915a83b03814bf24f7f61750",
+    "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/preparation.json": "1aa076c81c10ebcb5050de748b4f80596e986b994fc2f2fae5e1cdcc09d25ab3",
+    "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/serve.py": "1a911678c0d81fd5e4cf936f945c656ce0a92601ff31290ddf1d8793c63b8d15",
+    "docs/hanja-source-independent-hq-qq-u9654-source-experiment-2026-10-21/source-check.mjs": "47cdb92167bb92edb72787dd21f0b93793c8e74c25474313ebb7a33134573b13"
+  },
+  "ownSHA256": {
+    "README.md": "d295a0867bf87faf279fde3e6672df31c3846eec4184a9904fc806aa90431162"
+  },
+  "nativeObservation": {
+    "owner": "ROOT",
+    "validPhotographs": 7,
+    "SVGSize": 520,
+    "pen6Epsilon": {
+      "progress": 0.000001,
+      "photographs": 1,
+      "observed": "큰 finite 시작 닙",
+      "result": "HOLD"
+    },
+    "pen6QQBoundary": {
+      "b": 0.49113196107229623,
+      "delta": 1e-10,
+      "photographs": 3,
+      "before": "완료 원 Q7만 관찰",
+      "at": "완료 원 Q7만 관찰",
+      "after": "왼쪽 위 원 Q8 초기 삼각형 별도조각 뚜렷이 관찰",
+      "result": "HOLD-activation",
+      "geometryCauseOrRasterProof": false
+    },
+    "pen2Q514Completion": {
+      "progress": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "photographs": 3,
+      "terminalFlags": [
+        2,
+        514
+      ],
+      "jumpObservedBetweenFiniteSamples": false,
+      "initialCapApproved": false,
+      "wholeApproved": false,
+      "coverageApproved": false,
+      "allIntervalApproval": false
+    },
+    "excluded": {
+      "firstEpsilonDomesticSVG0": {
+        "photographs": 1,
+        "candidateEvidence": false
+      },
+      "validCandidateAfterHorizontalMove": {
+        "xBefore": 1106,
+        "xAfter": 12,
+        "alreadyIncludedInEpsilon1": true
+      },
+      "priorWholeAndStatic26Separate": true,
+      "priorWholeStaticRecount": 0
+    },
+    "stoppedAfterHold": [
+      "remaining coarse",
+      "natural",
+      "other fine",
+      "APP"
+    ],
+    "boundedConsoleQuery": {
+      "levels": [
+        "warn",
+        "error"
+      ],
+      "limit": 10,
+      "entries": [],
+      "fullConsoleAudit": false
+    }
+  },
+  "server": {
+    "owner": "ROOT",
+    "PID": 56053,
+    "port": 59412,
+    "session": 48165,
+    "stop": {
+      "signal": "Ctrl-C",
+      "exit": 130,
+      "output": {
+        "bufferedStartupJSONLines": 1,
+        "tracebackLines": 6,
+        "totalLines": 7,
+        "tokens": 197,
+        "source": "ROOT supplied summary",
+        "fullOutputRequeried": false
+      },
+      "psAbsent": true
+    }
+  },
+  "approval": {
+    "nativeApproval": false,
+    "sourceNativeApproval": false,
+    "nativeDirectionApproved": false,
+    "nativeTemporalApproved": false,
+    "mergedDrawingApproved": false,
+    "animationApproved": false,
+    "actualAppUI": false,
+    "runtimeApplied": false
+  },
+  "authorActions": {
+    "newFiles": 2,
+    "schemaAndHashChecks": 2,
+    "sourceChanged": 0,
+    "codeChanged": 0,
+    "registryChanged": 0,
+    "geometry": 0,
+    "sourceCompiler": 0,
+    "engine": 0,
+    "server": 0,
+    "UI": 0,
+    "Git": 0,
+    "build": 0,
+    "oldTests": 0,
+    "additionalDOMMetadataCheck": 1,
+    "original8InputPinChecksRepeated": 0
+  },
+  "additionalDomesticDOMEvidence": {
+    "owner": "ROOT",
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9600/9654.svg",
+    "tab": 64,
+    "title": "陔",
+    "copyright": "©2020 e-hanja",
+    "clipPath": "url(#U9654c6)",
+    "pathAttributes": {
+      "style": "--d:5377ms;--t:791ms;stroke-dasharray:795;stroke-dashoffset:797;",
+      "d": "M680 648L564 502L460 511L618 386",
+      "pathLength": "791",
+      "type": "normal"
+    },
+    "reportedWholeBytes": 4653,
+    "wholeBytesActuallyVerified": false,
+    "wholeFileSHA256": null,
+    "allTemporalIntermediateFramesReviewed": false,
+    "previousAuthorDNSUnavailableHistoryImmutable": true,
+    "preparationFalseImmutable": true,
+    "candidateCopy": 0,
+    "guideSynthesis": 0,
+    "gapConnectorApproved": false,
+    "temporalIdentityApproved": false,
+    "sourceWholeReferencePhotographs": 1,
+    "candidateEvidenceAdded": 0,
+    "imageScope": "원전체/초기회색+보라 참고상태",
+    "parenthesisErrors": {
+      "count": 2,
+      "UIActions": 0,
+      "evidence": 0
+    }
+  }
+}
