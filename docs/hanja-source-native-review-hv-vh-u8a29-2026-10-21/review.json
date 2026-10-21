@@ -1,0 +1,182 @@
+{
+  "schema": "hanja-source-native-finite-review-v1",
+  "date": "2026-10-21",
+  "glyph": "訩",
+  "observer": "ROOT actual browser native",
+  "experimentDirectory": "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21",
+  "sourceCommit": "cfb4e835",
+  "status": "cardinal pair finite12 observations PASS; original Q8/Q9 epsilon start FAIL; overall unapproved",
+  "sourceIdentity": {
+    "sourceRoot": "u8a29",
+    "sourceProofFile": "engine-whole-u8a29.json",
+    "sourceProofFileSha256": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1"
+  },
+  "actualFull5Direct": true,
+  "sourceGeometrySHA256": "217071f7050ebbb9e3f2d63c51fda0401004287c00f90de5210f6bd71d74c3bc",
+  "sourceCounts": {
+    "pens": 11,
+    "masks": 13,
+    "polygons": 23
+  },
+  "observations": {
+    "cardinalPairs": [
+      {
+        "logicalPen": 10,
+        "type": "VH independent2mask",
+        "rawOneBased": [
+          11,
+          13
+        ],
+        "boundary": 0.6147091108671789,
+        "boundarySamples": 3,
+        "delta": 1e-10,
+        "positions": [
+          "before",
+          "at",
+          "after"
+        ],
+        "fine": [
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "fineSamples": 3,
+        "nominalSVG": 520,
+        "separatedNewFragmentObservedInTheseFrames": false,
+        "completionJumpObservedInTheseFrames": false,
+        "result": "finite observed PASS"
+      },
+      {
+        "logicalPen": 6,
+        "type": "HV independent2mask",
+        "rawOneBased": [
+          6,
+          7
+        ],
+        "boundary": 0.5088852988691438,
+        "boundarySamples": 3,
+        "delta": 1e-10,
+        "positions": [
+          "before",
+          "at",
+          "after"
+        ],
+        "fine": [
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "fineSamples": 3,
+        "nominalSVG": 520,
+        "separatedNewFragmentObservedInTheseFrames": false,
+        "completionJumpObservedInTheseFrames": false,
+        "result": "finite observed PASS"
+      }
+    ],
+    "initialFailures": [
+      {
+        "logicalPen": 8,
+        "mask": 1,
+        "rawOneBased": 9,
+        "requestedGlobal": 0.000001,
+        "screenshots": 1,
+        "nominalSVG": 520,
+        "observation": "large black head blob visible from epsilon",
+        "result": "FIRST initial finite-cap FAIL"
+      },
+      {
+        "logicalPen": 9,
+        "mask": 1,
+        "rawOneBased": 10,
+        "requestedGlobal": 0.000001,
+        "screenshots": 1,
+        "nominalSVG": 520,
+        "observation": "finite triangular nib visible from epsilon",
+        "result": "FIRST initial finite-cap FAIL"
+      }
+    ],
+    "validNativeScreenshots": 14,
+    "cardinalPairFiniteScreenshots": 12,
+    "curveInitialFailScreenshots": 2,
+    "stoppedFurtherGates": true,
+    "notRun": [
+      "remaining coarse",
+      "natural playback",
+      "other fine",
+      "new native whole",
+      "every domestic direction",
+      "actual APP",
+      "runtime"
+    ],
+    "console": {
+      "warnErrorCollectedLimit": 10,
+      "result": [],
+      "scope": "current-tab collected warn/error only"
+    }
+  },
+  "nativeWholeApproval": false,
+  "nativeDirectionApproval": false,
+  "nativeAnimationApproval": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "wholeReplayApproved": false,
+  "originalSourceCountHoldAndFalseHistoryPreserved": true,
+  "sourceGeometryFieldsChanged": 0,
+  "server": {
+    "pid": 73142,
+    "port": 59412,
+    "session": 82003,
+    "signal": "Ctrl-C",
+    "exitCode": 130,
+    "tracebackLines": 3,
+    "tracebackApproxTokens": 47,
+    "pidAbsentConfirmedByROOT": true
+  },
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/metadata.json": "f8b95555ea8c624884ef8b613447118192d0b1169599d0c2396a7f65f60eb20d",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/sources.json": "df0f33ef60ec805f5508c8fc2d51b49e368307bc4341181974d3b41d1b887293",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/README.md": "10b16e7012bc41105c03d332e55137d1ecaae14f094282e462ef9d63ab747c12",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-hold.json": "1abd78e564b1b4d79344ad63c366c5fd1e4a605cb0b6449dc115d238bd4f365c",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/candidate-compile-analysis.json": "a007f216e1941f35cb265d46bec6547c74897588340e97153c0bd0e4a2cccf8f",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-only-helper-readiness.json": "4a41f526dfd4902dfe39917e8490c70b872f13428e432713da64f98a1c92e9ba",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/engine-whole-u8a29.json": "b56d6a71c7835c50f2dba80ea1f66a9b61d076ec166128476da75d4cc5cef8d1",
+    "docs/hanja-source-raw-compare-u82fd-vs3-2026-10-21/serve.py": "25266cacf9c4aa8fe22e808e7446c0d5332bd1ddbbf374c267bdfc45067e90f7",
+    "docs/hanja-goal-glyphwiki-batch1055-2026-10-13/source-join-analysis.json": "e547f51e584f8338efee7d755edf2b10a51c8d1380beefb7ff8b0012f217b6a1",
+    "docs/hanja-source-raw-compare-u8a29-2026-10-21/config.json": "9da280fc21cc104923c24fef67b87d5c2ecb3c9bdd84ddc272e5ebb3a9e1e152",
+    "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d",
+    "docs/hanja-source-raw-compare-u8a29-2026-10-21/check.mjs": "7259abfa4c2a30cab3d6803726bd3b23fb8137be1db904406d6f3da93f456703",
+    "docs/hanja-source-raw-compare-u8a29-2026-10-21/README.md": "52c1828e8e7f494712f3e2f071186cbb5506ab47b1abd71086f702255a8784c7",
+    "docs/hanja-source-raw-compare-u8a29-2026-10-21/validation.json": "704aaee116b7345eed866df01a1a99322674ae91c5ab110b1af706c4d54a6542",
+    "docs/hanja-source-raw-review-u8a29-2026-10-21/README.md": "1ce209e6385947bae6d187602f4242e2a9ce22b9b1f9832461f47ad9e631971d",
+    "docs/hanja-source-raw-review-u8a29-2026-10-21/review.json": "0a808c5ac55d39409fe6fd062e3149bd412a1745fcc8219e6eafa754f0f4bef4",
+    "docs/hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs": "a69ec8daf44d40344a112e6e5cd4da39079e82ce03c6ebdadc391dd9064eae09",
+    "docs/hanja-source-independent-vs3-actualfull5-u82fd-source-experiment-2026-10-21/candidate.mjs": "79761746a1cc0b3630460cc83d3d4e145cf0abe097ef98a4c37de5616ccdea7e",
+    "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21/config.json": "284d7a83525051b4be196e0d71282d99df41398480b2c9bb4d82d23048932b9a",
+    "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21/candidate.mjs": "6723637c5d9a98917d81bd8a08356eb744b5782f4767d559242b935b831618cb",
+    "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21/candidate.d.mts": "2e805b8a161a5deb279c871d4a24515a94cb67062f28de27e6633ee64f2bbc51",
+    "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21/fixtures.json": "8ee191a3a00bf9e12f2077f122ae0d78b2cafd5e7ca83e6312f60a2ca20c8b6e",
+    "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21/source-check.mjs": "4e2c065dbf0127f911e5394753da6d1fcecca85d7f309d755d2c37abccab039b",
+    "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21/serve.py": "9fcf1496ea25d3ccb8cf69e68f31381d2b0fce8f73da2b504ad53124b2c9cda8",
+    "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21/README.md": "26ac0853ef2f8d638125dac9e47eb9b89d2e8431f31cd68093c96da2ed817b0f",
+    "docs/hanja-source-independent-hv-vh-u8a29-source-experiment-2026-10-21/preparation.json": "8200c1fcf7a6527afba156a1164a5d0fe1fc445ccf2a428d7aa59bdd9a4e7dce"
+  },
+  "checks": {
+    "newRecordSchemaAndPins": {
+      "executions": 1,
+      "result": "PASS"
+    }
+  },
+  "authorExecution": {
+    "oldChecksRepeated": 0,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "projection": 0,
+    "engine": 0,
+    "newGeometry": 0,
+    "HTTP": 0,
+    "server": 0,
+    "Git": 0,
+    "buildTSC": 0
+  }
+}
