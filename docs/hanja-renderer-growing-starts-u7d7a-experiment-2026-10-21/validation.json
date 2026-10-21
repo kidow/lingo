@@ -1,0 +1,79 @@
+{
+  "schema": "u7d7a-five-starts-validation/v1",
+  "date": "2026-10-21",
+  "configSHA256": "d28bbe6f39aac116cbfff41e6ab2bcae8f41aec97dd7b48144135605fdf5abe1",
+  "inputPins": 39,
+  "newFilesSHA256": {
+    "README.md": "f34f5acd777203a4f40d1934522e2fcf143bc1c9028f3a55ac562c63beb4bea4",
+    "config.json": "d28bbe6f39aac116cbfff41e6ab2bcae8f41aec97dd7b48144135605fdf5abe1",
+    "render.mjs": "aeedd44a50e0b928568da901c1edbd221786272c7033b754b45783feb89a6ad6",
+    "check.mjs": "48c97bba1bd4b76188dcebfeda3c55e037e4f37e643dca681ff12086d6eee91a",
+    "serve.py": "5b40d4bba838c0d958f1cb2e500777e8092a448465ccc55ec439630b8062fcaf"
+  },
+  "checks": {
+    "focused": {
+      "runs": 1,
+      "firstPass": true,
+      "certificates": 5,
+      "negative": 134,
+      "mockFrames": 25,
+      "ordinaryNonTargetPens": 10,
+      "ordinaryFrames": 90
+    },
+    "syntax": {
+      "renderNode": 1,
+      "checkNode": 1,
+      "embeddedBrowserNode": 1,
+      "pythonAST": 1,
+      "allPassed": true
+    },
+    "helperContracts": {
+      "runs": 1,
+      "routesPositive": 1,
+      "routesNegative": 6,
+      "captionTargets": 5,
+      "HTTP": 0,
+      "passed": true
+    },
+    "metadata": {
+      "runs": 1,
+      "passed": true,
+      "input": 39,
+      "own": 5,
+      "mismatch": 0
+    },
+    "startupCheckOnly": {
+      "runs": 1,
+      "passed": true,
+      "HTTP": 0,
+      "server": 0
+    }
+  },
+  "sourceGeometry": 0,
+  "sourceCompiler": 0,
+  "engine": 0,
+  "factory": 0,
+  "tailDerivations": 0,
+  "oldChecksRepeated": 0,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "history": [
+    {
+      "event": "new-focused-first-pass",
+      "oldChecksRepeated": 0
+    },
+    {
+      "event": "syntax orchestration process binding undefined",
+      "pythonASTAndHelperContractAlreadyPassed": true,
+      "browserSyntaxExecutedBeforeFailure": false,
+      "recovery": "unexecuted browser syntax only, first pass",
+      "passedPrefixRepeated": 0
+    },
+    {
+      "event": "final CLI read found missing directory slash in README only",
+      "sourceAndHelperChanged": false,
+      "focusedAndSyntaxRepeated": 0
+    }
+  ]
+}
