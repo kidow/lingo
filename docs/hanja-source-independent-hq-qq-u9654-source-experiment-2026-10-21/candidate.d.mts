@@ -1,0 +1,14 @@
+export type ProofIdentity=Readonly<{sourceRoot:'u9654';sourceProofFile:'engine-whole-u9654.json';sourceProofFileSha256:'c9c59133365d33fdbe9c6cb6d58963c100db5cf91be234c9b3df4f1e7e7ea169'}>;
+export type FullProof=Readonly<{engineRevision:string;engineHashes:Readonly<Record<string,string>>;groups:readonly unknown[];trace:readonly unknown[];defaults:Readonly<Record<string,number>>}>;
+export type Mask=Readonly<{outline:string;bounds:readonly[number,number,number,number];direction:string;weight:number;revealPath?:string;revealWidth?:number}>;
+export type Strokes=readonly(readonly Mask[])[];
+export const sourceRoot:'u9654',selectedProofIdentity:ProofIdentity,sourceGroups:readonly(readonly number[])[],nativeApproval:false,runtimeApplied:false,actualAppUI:false;
+export function captureProjection(trace:FullProof['trace'],proof:FullProof,identity:ProofIdentity):{fullProof:FullProof;rawBaseline:Strokes;baseline:Strokes;strokes:Strokes;traceProjectionOperations:1;newInternalRawProjectorExecutions:1;originalCompilerExecutions:0;existingFactoryCalls:0;engineRuns:0;tailDerivations:0;staticMappingApproved:true;nativeAnimationApproved:false;nativeApproval:false;runtimeApplied:false};
+export function compileProgressive(trace:FullProof['trace'],proof:FullProof,identity:ProofIdentity):Strokes;
+export function compileSourceWhole(root:'u9654',trace:FullProof['trace'],proof:FullProof,identity:ProofIdentity):Strokes;
+export function traceProjectionCallCount():number;
+export function newInternalRawProjectorCallCount():number;
+export function cachedPositiveCallCount():number;
+export function originalSourceCompilerCallCount():number;
+export function existingFactoryCallCount():number;
+export function renderProgressive(strokes:Strokes,stroke:number,progress:number,prefix?:string):string;
