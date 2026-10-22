@@ -261,10 +261,10 @@
   },
   "sourceProvenance": {
     "sourceModule": "docs/hanja-source-cache-u7c69-2026-10-22/source.mjs",
-    "sourceModuleSHA256": "c0c3ef0c1e5e2103c66c6b08e51c7a104abe7a57972c4e494e98b91552e433d7",
+    "sourceModuleSHA256": "338e17a3e8d3801262d4ccf2d200d7b0bb8f2e2d60086c5565ade0d3a7c5da5c",
     "cacheFile": "docs/hanja-source-cache-u7c69-2026-10-22/source.json",
-    "cacheFileSHA256": "fbb24ad24cee1081585c859d6bdb8b570ea08dc1ddb0cf03b74615c62b0071ab",
-    "geometrySHA256": "487cd2e28d504e22859e3cac45f985c46b4f6018630ee197701d1b2724b80c1e",
+    "cacheFileSHA256": "d522480b52244a5ad689383445a3633fa65e3b759b12087b40bd6ed896cb4f2f",
+    "geometrySHA256": "a318844147f674ab9d14bb25d85060ac665b05ab50aa5a1f629885f0e19a9850",
     "actualFull5File": "docs/hanja-public-glyphwiki-engine-capture-2026-10-22/engine-whole-u7c69.json",
     "actualFull5SHA256": "a902211b39ab636e2e7804b5cf6ffe584ad69865e32e7bbb27a3b5598de34721",
     "full5CanonicalSHA256": "5ace9b85076723e41e0333f518bc1fe2fc4bd015ef13c1c0bf201da8065de3b5",
@@ -273,7 +273,7 @@
     "staticReview": "docs/hanja-source-native-raw-correspondence-u7c69-2026-10-22.json",
     "staticReviewSHA256": "190c80a8d649aaff6e6cb506b2d8853d572b887c85de1418773b5a71d226d91f"
   },
-  "modifications": "1355 미등록 source 후보. current u7c69@18 closure actualfull5/id3 한 소스와 ROOT 정적25그룹을 고정했다. 기존 순수projector본문 FIRST1 뒤 즉시캐시, 재투영/engine/compiler/factory0. HV9(raw15/16), HQ15(raw22/23), H+QQ20(raw28/29)는 원endpoint exactjoin만 사용한다. QB25(raw11/12)는 원gap(-2,-1.63)을 유지한 독립2mask이며 connector를 만들지 않는다. UP17 및 LEFT20 끝polygon은 원형 미분리로 남아 초기cap/terminal/coverage/연결/시간/방향/native·APP/runtime는 미승인이다. 원63P/calls/guide/폭/bodyweight/필드가 보존되며 옛HOLD는 변경하지 않는다.",
+  "modifications": "1355 미등록 source 후보. current u7c69@18 closure actualfull5/id3 한 소스와 ROOT 정적25그룹을 고정했다. 기존 순수projector본문 FIRST1 뒤 즉시캐시, 재투영/engine/compiler/factory0. HV9(raw15/16), HQ15(raw22/23), H+QQ20(raw28/29)는 원endpoint exactjoin만 사용한다. QB25(raw11/12)는 원gap(-2,-1.63)을 유지한 독립2mask이며 connector를 만들지 않는다. UP17은 원형 그대로다. LEFT20은 native residual/완료 HOLD 후 원raw29 마지막quad만 별도left mask로 cached correction FIRST1 분리했다. bodyguide/폭14/weight41.539066을 유지하고 tailweight10은 내부배분에만 추가했다. 이전26mask HOLD는 보존하며 보정후 초기cap/terminal/coverage/연결/시간/방향/native·APP/runtime는 미승인이다. 원63P/calls/guide/폭/bodyweight/필드가 보존되며 옛HOLD는 변경하지 않는다.",
   "preparationHistory": {
     "candidateBatch": 1355,
     "batchAssignmentProvisional": true,
@@ -282,12 +282,13 @@
     "originalCompilerCalls": 0,
     "existingCandidateFactoryCalls": 0,
     "engineRuns": 0,
-    "newTerminalDerivations": 0,
+    "newTerminalDerivations": 1,
     "nativeApproval": false,
     "actualAppUI": false,
     "runtimeRegistered": false,
     "runtimeApplied": false,
-    "registrationApproved": false
+    "registrationApproved": false,
+    "newCachedCorrectionOperations": 1
   },
   "exactInterRawJoins": [
     [
@@ -323,15 +324,6 @@
         5
       ],
       "policy": "원UPquad 미분리/완료native미검토"
-    },
-    {
-      "pen": 20,
-      "rawOneBased": 29,
-      "flags": [
-        2,
-        14
-      ],
-      "policy": "원QQ LEFT14 미분리/완료native미검토"
     },
     {
       "pen": 9,
@@ -388,9 +380,12 @@
       "newConnector": false
     },
     "UP17OriginalTerminalUnpartitioned": true,
-    "LEFT20OriginalTerminalUnpartitioned": true,
+    "LEFT20OriginalTerminalUnpartitioned": false,
     "originalCallFieldsUnchanged": true,
-    "newGuideOrConnector": false
+    "newGuideOrConnector": false,
+    "LEFT20OriginalQuadPartitioned": true,
+    "UP17Unchanged": true,
+    "other24PensUnchanged": true
   },
   "engineProof": {
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
@@ -7069,5 +7064,94 @@
       "kMinWidthT": 6,
       "kAdjustMageStep": 5
     }
+  },
+  "previousFixedCandidate": {
+    "sourceModule": "docs/hanja-source-cache-u7c69-2026-10-22/source.mjs",
+    "sourceModuleSHA256": "c0c3ef0c1e5e2103c66c6b08e51c7a104abe7a57972c4e494e98b91552e433d7",
+    "cacheFile": "docs/hanja-source-cache-u7c69-2026-10-22/source.json",
+    "cacheFileSHA256": "fbb24ad24cee1081585c859d6bdb8b570ea08dc1ddb0cf03b74615c62b0071ab",
+    "geometrySHA256": "487cd2e28d504e22859e3cac45f985c46b4f6018630ee197701d1b2724b80c1e",
+    "actualFull5File": "docs/hanja-public-glyphwiki-engine-capture-2026-10-22/engine-whole-u7c69.json",
+    "actualFull5SHA256": "a902211b39ab636e2e7804b5cf6ffe584ad69865e32e7bbb27a3b5598de34721",
+    "full5CanonicalSHA256": "5ace9b85076723e41e0333f518bc1fe2fc4bd015ef13c1c0bf201da8065de3b5",
+    "capsuleFile": "docs/hanja-public-glyphwiki-source-closure-u8ff2-u7e86-u7c69-2026-10-22.json",
+    "capsuleSHA256": "4393a7d5320483766e3985e73ef61fadc1c6f1666ee0ea1ec59fa9e03b8b8cc1",
+    "staticReview": "docs/hanja-source-native-raw-correspondence-u7c69-2026-10-22.json",
+    "staticReviewSHA256": "190c80a8d649aaff6e6cb506b2d8853d572b887c85de1418773b5a71d226d91f",
+    "maskCount": 26,
+    "nativeApproval": false
+  },
+  "previousUnmodifiedTerminalRisks": [
+    {
+      "pen": 17,
+      "rawOneBased": 25,
+      "flags": [
+        5006,
+        5
+      ],
+      "policy": "원UPquad 미분리/완료native미검토"
+    },
+    {
+      "pen": 20,
+      "rawOneBased": 29,
+      "flags": [
+        2,
+        14
+      ],
+      "policy": "원QQ LEFT14 미분리/완료native미검토"
+    },
+    {
+      "pen": 9,
+      "rawOneBased": 16,
+      "flags": [
+        22,
+        323
+      ],
+      "policy": "원V323 foot 그대로"
+    },
+    {
+      "pen": 25,
+      "rawOneBased": [
+        11,
+        12
+      ],
+      "policy": "원gap 독립mask의 실제activation/연결 미검토"
+    }
+  ],
+  "cachedCorrection": {
+    "kind": "cached-original-raw29-LEFT14-last-quad-partition",
+    "priorCacheSHA256": "fbb24ad24cee1081585c859d6bdb8b570ea08dc1ddb0cf03b74615c62b0071ab",
+    "priorGeometrySHA256": "487cd2e28d504e22859e3cac45f985c46b4f6018630ee197701d1b2724b80c1e",
+    "priorSourceModuleSHA256": "c0c3ef0c1e5e2103c66c6b08e51c7a104abe7a57972c4e494e98b91552e433d7",
+    "nativeHold": "docs/hanja-actual-component-profiles-2026-10-22/u7c69-native-hold.json",
+    "nativeHoldSHA256": "d7f5459206a638e185730e73a51b615dfbc4d3ea33126babad077a59ae6fb042",
+    "rawOneBased": 29,
+    "originalTerminalArgs": [
+      156.16697803474662,
+      160.77095671862844,
+      148.92000000000002,
+      167.66162500000002,
+      138.92000000000002,
+      167.66162500000002,
+      2,
+      14
+    ],
+    "quadSHA256": "326bb74ec92a7dcff19cb826804c32cee0ddb56d2c2f8fc43a40ee802f180be8",
+    "width": 6,
+    "jump": 20,
+    "bodyGuidePreserved": "M54.3 73.04836250000001 L79.14 73.04836250000001 Q78.78 79.7232125 78.08348901737331 80.38547835931422 Q74.46000000000001 83.83081250000001 69.46000000000001 83.83081250000001",
+    "bodyWidth": 14,
+    "bodyWeight": 41.539066,
+    "tailWeight": 10,
+    "bodyBoundsPolicy": "원마지막quad를 제외한 active body P bounds",
+    "pen20Weights": [
+      41.539066,
+      10
+    ],
+    "bodyTailBoundary": 0.8059724248786347,
+    "successfulCachedCorrectionOperations": 1,
+    "wholeProjectionRepeated": 0,
+    "engineRuns": 0,
+    "newNativeApproval": false
   }
 }
