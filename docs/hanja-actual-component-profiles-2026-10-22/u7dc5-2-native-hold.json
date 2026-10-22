@@ -1,0 +1,145 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "緅",
+  "root": "u7dc5",
+  "status": "HOLD-first-ordinary-MQ-3-5-6-11-14-starts",
+  "observedBy": "ROOT",
+  "source": {
+    "fixture": "docs/hanja-source-cache-u7dc5-2026-10-22/source.json",
+    "SHA256": "7b990fa370d0f5907fc6e460f9677d8635b4d4296491268fd845a2607621f297",
+    "geometrySHA256": "42365c0828e201ff8b1092b73bfeedf3d6bd5815da0ea7d44e48b01761fe7b6e",
+    "pens": 14,
+    "masks": 17,
+    "polygons": 33,
+    "actualFull5": "docs/hanja-public-glyphwiki-engine-capture-u7dc5-2026-10-22/engine-whole-u7dc5.json",
+    "actualFull5SHA256": "cea1c8819afa5605a8348082319c415cc5b22278d001a3f8dd9fed0d290e1803"
+  },
+  "observedPinsAreHistorical": true,
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u7dc5-2.json": "65b9bf2f215fe9360890e78cf790e20e2fafc88d92f5d7d1b60f386b83d2d0e1",
+    "scripts/hanja-actual-component-review.mjs": "746b7e56e8c0831a0e73317fa08121c468148858a0fffe3e32a8f96b1551cc84",
+    "components/hanja/stroke-outlines.tsx": "a173cf31db03c2407601c78f8dbcb18f977c7cb7b76292fce8b51ee31b757dea",
+    "lib/hanja-stroke-start-hq-u7dc5.ts": "0912c0c25b951731fa589cb7f6d7bf52793fe9d91a737badd8e0ea75c6873a9b"
+  },
+  "native": {
+    "validScreens": 16,
+    "HQ13FinitePass": {
+      "screens": 6,
+      "boundaryGlobal": [
+        0.2991482496214432,
+        0.2991482497214432,
+        0.2991482498214432
+      ],
+      "secondMaskLocal": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "observation": "큰 초기 head jump가 삭제되고 점진적인 초기형상으로 보임",
+      "notContinuousFullApproval": true
+    },
+    "ordinaryFirstFailures": [
+      {
+        "pen": 3,
+        "mask": 1,
+        "screens": 2,
+        "selectedProgress": [
+          0,
+          0.000001
+        ],
+        "observation": "p0 기준의 이전prefix에는 없던 일정 크기의 검은 닙이 epsilon에서 새로 등장 FIRSTFAIL",
+        "pixelSizeAreaOrExactCauseClaim": false
+      },
+      {
+        "pen": 5,
+        "mask": 1,
+        "screens": 2,
+        "selectedProgress": [
+          0,
+          0.000001
+        ],
+        "observation": "p0 기준의 이전prefix에는 없던 일정 크기의 검은 닙이 epsilon에서 새로 등장 FIRSTFAIL",
+        "pixelSizeAreaOrExactCauseClaim": false
+      },
+      {
+        "pen": 6,
+        "mask": 1,
+        "screens": 2,
+        "selectedProgress": [
+          0,
+          0.000001
+        ],
+        "observation": "p0 기준의 이전prefix에는 없던 일정 크기의 검은 닙이 epsilon에서 새로 등장 FIRSTFAIL",
+        "pixelSizeAreaOrExactCauseClaim": false
+      },
+      {
+        "pen": 11,
+        "mask": 1,
+        "screens": 2,
+        "selectedProgress": [
+          0,
+          0.000001
+        ],
+        "observation": "p0 기준의 이전prefix에는 없던 일정 크기의 검은 닙이 epsilon에서 새로 등장 FIRSTFAIL",
+        "pixelSizeAreaOrExactCauseClaim": false
+      },
+      {
+        "pen": 14,
+        "mask": 1,
+        "screens": 2,
+        "selectedProgress": [
+          0,
+          0.000001
+        ],
+        "observation": "p0 기준의 이전prefix에는 없던 일정 크기의 검은 닙이 epsilon에서 새로 등장 FIRSTFAIL",
+        "pixelSizeAreaOrExactCauseClaim": false
+      }
+    ],
+    "previousFourReuseReobserved": false,
+    "notRun": [
+      "all14compact",
+      "coverage",
+      "fine",
+      "natural",
+      "wholeapproval"
+    ],
+    "statusErrorsAndConsoleNotSeparatelySpecifiedInHandoff": true
+  },
+  "server": {
+    "pid": 72643,
+    "port": 59412,
+    "sessionId": 95897,
+    "startupSSR": 1,
+    "CJS": 50,
+    "ESM": 50,
+    "exitCode": 130,
+    "output": "EMPTY",
+    "processAbsenceQuerySeparatelyClaimed": false
+  },
+  "historicalHOLDs": [
+    {
+      "file": "docs/hanja-actual-component-profiles-2026-10-22/u7dc5-plain-start-hold.json",
+      "SHA256": "3e15e97079a0f80615558c7d61841c5dd84f2d68274b0d966c58b9822cb21d96"
+    },
+    {
+      "file": "docs/hanja-actual-component-profiles-2026-10-22/u7dc5-1-native-hold.json",
+      "SHA256": "bd3f96c32503f5e1231b830240df2e4ea10606b9305b36c30b91c2dee344804d"
+    }
+  ],
+  "sourceCoordinatesGuideWidthWeightChanged": false,
+  "nativeApproval": false,
+  "actualProductAppUI": false,
+  "controller": false,
+  "storage": false,
+  "all14Autoplay": false,
+  "runtimeApplied": false,
+  "authorExecution": {
+    "SSR": 0,
+    "HTTP": 0,
+    "server": 0,
+    "engine": 0,
+    "projection": 0,
+    "oldMathOrDOMChecks": 0
+  }
+}
