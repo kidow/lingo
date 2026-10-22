@@ -24,7 +24,7 @@ for(let i=0;i<POLICIES.length;i++){
 function owned(policy:ReviewedU7d8ePolicy):OwnInfo{const info=INFO.get(policy);ensure(info,'Private exact 綎 policy required');return info}
 export function reviewedU7d8eContext(strokes:HanjaOutlineStrokes):ReviewedU7d8eContext|null{return sameJSON(strokes,FIXED_STROKES)?CONTEXT:null}
 export function reviewedU7d8ePolicy(context:ReviewedU7d8eContext|null,pen:number,mask:number):ReviewedU7d8ePolicy|null{return context===CONTEXT?POLICIES.find(p=>p.pen===pen&&p.mask===mask)??null:null}
-export const REVIEWED_U7D8E_SOURCE={"sourceFile":"docs/hanja-goal-glyphwiki-batch851-2026-10-13/engine-whole-u7d8e.json","sourceSHA256":"e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25","sourceCacheFile":"docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/fixture.json","sourceCacheSHA256":"cd22bb35196582ca3e4eb8a122f6b5f260185b23daa326851cc2306d7ea6887c","geometrySHA256":"43e7fb4fb818efc60c325c72710b74ffb7c6d601d5710afa02f5b85be3670f67","proofSHA256":"1891886de2a1648037ad55e44eef8045871d6cbc5ad8e64f72a5cc2c7bbbff5c","pens":13,"masks":15,"polygons":35,"targets":[[1,2],[2,2]],"newInternalClock":true,"sourceTimingPreservedClaim":false,"sourcePGuideWidthWeightPreserved":true,"sourcePartition":false,"nativeApproval":false,"runtimeApplied":false,"actualAppUI":false,"DOMAdapterPrepared":false,"priorP1WholeFullRoundCoverageApproved":false,"macroBodyDirections":["down-right via native y","right via native x"],"microBackfillOfficialDirectionOrTimingEquivalent":false} as const;freeze(REVIEWED_U7D8E_SOURCE)
+export const REVIEWED_U7D8E_SOURCE={"sourceFile":"docs/hanja-goal-glyphwiki-batch851-2026-10-13/engine-whole-u7d8e.json","sourceSHA256":"e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25","sourceCacheFile":"docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/fixture.json","sourceCacheSHA256":"cd22bb35196582ca3e4eb8a122f6b5f260185b23daa326851cc2306d7ea6887c","geometrySHA256":"43e7fb4fb818efc60c325c72710b74ffb7c6d601d5710afa02f5b85be3670f67","proofSHA256":"1891886de2a1648037ad55e44eef8045871d6cbc5ad8e64f72a5cc2c7bbbff5c","pens":13,"masks":15,"polygons":35,"targets":[[1,2],[2,2]],"newInternalClock":true,"sourceTimingPreservedClaim":false,"sourcePGuideWidthWeightPreserved":true,"sourcePartition":false,"nativeApproval":false,"runtimeApplied":false,"actualAppUI":false,"DOMAdapterPrepared":true,"priorP1WholeFullRoundCoverageApproved":false,"macroBodyDirections":["down-right via native y","right via native x"],"microBackfillOfficialDirectionOrTimingEquivalent":false} as const;freeze(REVIEWED_U7D8E_SOURCE)
 export type ReviewedU7d8eNativePointSample=Readonly<{sourceGuide:string;L:number;d:number;point:Readonly<{x:number;y:number}>}>
 export type ReviewedU7d8eFootFrame=Readonly<{policyId:string;progress:number;phase:'empty'|'foot'|'body'|'full';footPathD:string;footFullTriangles:number;footLocal:number;bodyProgress:number;bodyClip:Readonly<{x:number;y:number;width:number;height:number}>|null;nativePoint:Readonly<{x:number;y:number}>|null;L:number|null;d:number|null;originalPDirect:boolean}>
 function polygon(points:readonly (readonly number[])[],axis:'x'|'y'){return'M'+points.map(p=>(axis==='y'?[p[1],p[0]]:p).join(' ')).join('L')+'Z'}
@@ -37,4 +37,82 @@ export function sampleReviewedU7d8eFoot(policy:ReviewedU7d8ePolicy,progress:numb
  const phase=progress<=SHARE?'foot':'body',bodyProgress=phase==='foot'?0:(progress-SHARE)/(1-SHARE),fp=footFrame(info,phase==='foot'?progress/SHARE:1);let h=CUT,L:number|null=null,d:number|null=null,q:Readonly<{x:number;y:number}>|null=null
  if(phase==='body'){ensure(ownData(sample,['sourceGuide','L','d','point'])&&ownData(sample.point,['x','y']),'Own data-only native sample required');ensure(sample.sourceGuide===policy.segment.revealPath,'Unchanged original Q2 guide required');ensure(typeof sample.L==='number'&&Number.isFinite(sample.L)&&sample.L>0,'Finite positive native L required');ensure(typeof sample.d==='number'&&sample.d===bodyProgress*sample.L,'Same-progress native sample required');const x=sample.point.x,y=sample.point.y;ensure(typeof x==='number'&&typeof y==='number'&&Number.isFinite(x)&&Number.isFinite(y),'Finite native point required');const projection=axis==='x'?x:y;h=Math.max(CUT,Math.min(MAX,CUT+(MAX-CUT)*(projection-q0)/(q1-q0)));L=sample.L;d=sample.d;q=Object.freeze({x,y})}
  const b=policy.segment.bounds,bodyClip=axis==='x'?{x:CUT,y:b[1],width:h-CUT,height:b[3]-b[1]}:{x:b[0],y:CUT,width:b[2]-b[0],height:h-CUT};return Object.freeze({policyId:policy.id,progress,phase,footPathD:fp.d,footFullTriangles:fp.full,footLocal:fp.local,bodyProgress,bodyClip:Object.freeze(bodyClip),nativePoint:q,L,d,originalPDirect:false})
+}
+
+export type ReviewedU7d8eFrame=ReviewedU7d8eFootFrame & Readonly<{point:Readonly<{x:number;y:number}>|null;threshold:number;UARead:boolean}>
+export type ReviewedU7d8eNodes={ink:SVGPathElement|null;foot:SVGPathElement|null;body:SVGPathElement|null;rect:SVGRectElement|null;measurement:SVGPathElement|null}
+const frames=new WeakMap<object,{policy:ReviewedU7d8ePolicy;measurement:SVGPathElement;exact:()=>boolean}>()
+const committedFull=new WeakSet<SVGPathElement>()
+function coordinateBinding(nodes:readonly SVGElement[],owner:SVGSVGElement):()=>boolean {
+  const document=owner.ownerDocument,view=document?.defaultView
+  if(!view||view.document!==document)throw new Error('Connected 綎 SVG document required')
+  const parents=new Map<Element,Element|null>()
+  for(const node of nodes){
+    let current:Element|null=node
+    const visited=new Set<Element>()
+    while(current){
+      if(visited.has(current))throw new Error('Cyclic 綎 SVG parent')
+      visited.add(current)
+      if(current.namespaceURI!=='http://www.w3.org/2000/svg'||current.ownerDocument!==document||!current.isConnected||(current!==owner&&(current as SVGElement).ownerSVGElement!==owner))throw new Error('Mismatched 綎 SVG coordinate owner')
+      const parent=current.parentElement
+      if(parent&&(!parent.isConnected||parent.ownerDocument!==document))throw new Error('Mismatched 綎 outer SVG parent')
+      parents.set(current,parent)
+      if(current===owner)break
+      current=current.parentElement
+    }
+    if(current!==owner)throw new Error('Detached 綎 SVG coordinate tree')
+  }
+  return()=>{
+    if(owner.ownerDocument!==document||document.defaultView!==view||view.document!==document)return false
+    for(const[node,parent]of parents){
+      if(!node.isConnected||node.ownerDocument!==document||node.parentElement!==parent||(node!==owner&&(node as SVGElement).ownerSVGElement!==owner)||node.getAttribute('transform')!==null)return false
+      const style=view.getComputedStyle(node)
+      if(style.transform!=='none'||['translate','rotate','scale'].some(key=>{const value=style.getPropertyValue(key);return value!==''&&value!=='none'}))return false
+    }
+    return true
+  }
+}
+
+
+export function measureReviewedU7d8eFrame(policy:ReviewedU7d8ePolicy,progress:number,path:SVGPathElement|null):ReviewedU7d8eFrame{
+ const{SHARE,CUT,MAX,axis}=owned(policy);ensure(Number.isFinite(progress)&&progress>=0&&progress<=1,'Finite 綎 progress required')
+ const owner=path?.ownerSVGElement,defs=path?.parentElement,target=defs?.parentElement
+ ensure(path&&owner&&defs?.localName==='defs'&&target?.localName==='g'&&target.getAttribute('data-stroke-start-gate')===policy.id,'Connected exact 綎 measurement tree required')
+ const coordinates=coordinateBinding([path],owner),originalD=policy.segment.revealPath
+ const exact=()=>coordinates()&&path.parentElement===defs&&defs.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&target.getAttribute('data-stroke-reveal-progress')===String(progress)&&path.getAttribute('data-u7d8e-measurement')==='true'&&path.getAttribute('d')===originalD&&path.getAttribute('pathLength')===null
+ ensure(exact(),'Original 綎 measurement path required')
+ const phase=progress===0?'empty':progress===1?'full':progress<=SHARE?'foot':'body',bodyProgress=progress<=SHARE?0:progress===1?1:(progress-SHARE)/(1-SHARE)
+ let sample:ReviewedU7d8eNativePointSample|undefined
+ if(phase==='body'){
+  const L=path.getTotalLength();ensure(Number.isFinite(L)&&L>0&&exact(),'Invalid same-path 綎 length')
+  const start=path.getPointAtLength(0);ensure([start.x,start.y].every(Number.isFinite)&&exact(),'Invalid original 綎 start')
+  const end=path.getPointAtLength(L);ensure([end.x,end.y].every(Number.isFinite)&&(axis==='x'?end.x>start.x:end.y>start.y)&&exact(),'Invalid original 綎 end')
+  const d=bodyProgress*L,q=path.getPointAtLength(d)
+  ensure([q.x,q.y].every(Number.isFinite)&&exact()&&path.getTotalLength()===L&&exact(),'Changing 綎 point/length')
+  sample={sourceGuide:originalD,L,d,point:{x:q.x,y:q.y}}
+ }
+ const pure=sampleReviewedU7d8eFoot(policy,progress,sample)
+ const frame=Object.freeze({...pure,point:pure.nativePoint,threshold:progress===1?MAX:pure.bodyClip?(axis==='x'?pure.bodyClip.x+pure.bodyClip.width:pure.bodyClip.y+pure.bodyClip.height):CUT,UARead:phase==='body'})
+ frames.set(frame,{policy,measurement:path,exact});return frame
+}
+const NUMERIC=['data-growing-progress','data-growing-length','data-growing-distance','data-growing-radius','data-growing-end-x','data-growing-end-y']
+const META=['data-u7d8e-phase','data-u7d8e-body-progress','data-u7d8e-UA-read','data-u7d8e-foot-triangles','data-u7d8e-foot-local','data-u7d8e-full-mask','data-monotone-threshold']
+function attribute(node:SVGElement,key:string,value:number|null){if(value===null)node.removeAttribute(key);else node.setAttribute(key,String(value))}
+/** Own original P is the only ink. p1 is unmasked original P; all writes precede visibility. */
+export function commitReviewedU7d8eMask(nodes:ReviewedU7d8eNodes,frame:ReviewedU7d8eFrame):boolean{
+ const{ink,foot:footNode,body,rect,measurement}=nodes;ink?.setAttribute('visibility','hidden');for(const k of[...NUMERIC,...META])ink?.removeAttribute(k);footNode?.setAttribute('d','');footNode?.setAttribute('visibility','hidden');body?.setAttribute('visibility','hidden');/* The clipped body stays hidden until its own axis and static bounds are verified. */
+ try{
+  const saved=frames.get(frame);ensure(saved&&ink&&footNode&&body&&rect&&measurement&&saved.measurement===measurement&&saved.exact(),'Private fresh 綎 frame required');const policy=saved.policy,{CUT,axis}=owned(policy),owner=ink.ownerSVGElement,target=ink.parentElement,defs=measurement.parentElement,mask=footNode.parentElement,clip=rect.parentElement,clipId=ink.getAttribute('data-owner')
+  ensure(owner&&target?.localName==='g'&&defs?.localName==='defs'&&defs.parentElement===target&&mask?.localName==='mask'&&mask.parentElement===defs&&body.parentElement===mask&&clip?.localName==='clipPath'&&clip.parentElement===defs&&clipId,'Exact 綎 parent binding required')
+  const dynamic=axis==='x'?'width':'height';const stable=coordinateBinding([ink,footNode,body,rect,measurement],owner),maskURL='url(#'+clipId+'-u7d8e-foot-axis-mask)',bodyURL='url(#'+clipId+'-u7d8e-body-clip)',bounds=policy.segment.bounds
+  const bound=()=>stable()&&saved.exact()&&ink.parentElement===target&&measurement.parentElement===defs&&defs.parentElement===target&&footNode.parentElement===mask&&body.parentElement===mask&&mask.parentElement===defs&&rect.parentElement===clip&&clip.parentElement===defs&&ink.getAttribute('data-owner')===clipId&&target.getAttribute('data-stroke-start-gate')===policy.id&&mask.id===clipId+'-u7d8e-foot-axis-mask'&&mask.getAttribute('maskUnits')==='userSpaceOnUse'&&clip.id===clipId+'-u7d8e-body-clip'&&clip.getAttribute('clipPathUnits')==='userSpaceOnUse'&&ink.id===clipId+'-u7d8e-ink'&&footNode.id===clipId+'-u7d8e-foot'&&body.id===clipId+'-u7d8e-body'&&rect.id===clipId+'-u7d8e-rect'&&measurement.id===clipId+'-u7d8e-measure'&&ink.getAttribute('data-u7d8e-ink')==='true'&&footNode.getAttribute('data-u7d8e-foot')==='true'&&body.getAttribute('data-u7d8e-body')==='true'&&ink.getAttribute('d')===policy.segment.outline&&ink.getAttribute('fill-rule')==='nonzero'&&ink.getAttribute('stroke')==='none'&&body.getAttribute('d')===policy.segment.outline&&footNode.getAttribute('fill')==='white'&&footNode.getAttribute('fill-rule')==='nonzero'&&footNode.getAttribute('stroke')==='none'&&body.getAttribute('fill')==='white'&&body.getAttribute('fill-rule')==='nonzero'&&body.getAttribute('stroke')==='none'&&body.getAttribute('clip-path')===bodyURL&&rect.getAttribute('x')===String(axis==='x'?CUT:bounds[0])&&rect.getAttribute('y')===String(axis==='y'?CUT:bounds[1])&&rect.getAttribute(axis==='x'?'height':'width')===String(axis==='x'?bounds[3]-bounds[1]:bounds[2]-bounds[0])&&body.getAttribute('pathLength')===null&&[ink,footNode,body,rect].every(n=>n.getAttribute('stroke-dasharray')===null&&n.getAttribute('stroke-dashoffset')===null)
+  ensure(bound()&&(ink.getAttribute('mask')===maskURL||(committedFull.has(ink)&&ink.getAttribute('mask')===null)),'Exact 綎 source/mask attrs required')
+  rect.setAttribute(dynamic,'0');ink.setAttribute('mask',maskURL);committedFull.delete(ink);footNode.setAttribute('d',frame.footPathD);footNode.setAttribute('visibility',frame.footPathD?'visible':'hidden')
+  if(frame.phase==='body'||frame.phase==='full'){rect.setAttribute(dynamic,String(frame.threshold-CUT));body.setAttribute('visibility','visible')}
+  attribute(ink,'data-growing-progress',frame.progress);attribute(ink,'data-growing-length',frame.L);attribute(ink,'data-growing-distance',frame.d);attribute(ink,'data-growing-radius',null);attribute(ink,'data-growing-end-x',frame.point?.x??null);attribute(ink,'data-growing-end-y',frame.point?.y??null)
+  ink.setAttribute('data-u7d8e-phase',frame.phase);ink.setAttribute('data-u7d8e-body-progress',String(frame.bodyProgress));ink.setAttribute('data-u7d8e-UA-read',String(frame.UARead));ink.setAttribute('data-u7d8e-foot-triangles',String(frame.footFullTriangles));ink.setAttribute('data-u7d8e-foot-local',String(frame.footLocal));ink.setAttribute('data-u7d8e-full-mask',String(frame.phase==='full'));attribute(ink,'data-monotone-threshold',frame.phase==='body'?frame.threshold:null)
+  if(frame.phase==='full'){ink.removeAttribute('mask');committedFull.add(ink)}
+  ensure(bound()&&footNode.getAttribute('d')===frame.footPathD&&rect.getAttribute(dynamic)===String(frame.phase==='body'||frame.phase==='full'?frame.threshold-CUT:0)&&ink.getAttribute('mask')===(frame.phase==='full'?null:maskURL),'Changed 綎 source frame before visibility')
+  ink.setAttribute('visibility',frame.progress===0?'hidden':'visible');return true
+ }catch{ink?.setAttribute('visibility','hidden');footNode?.setAttribute('visibility','hidden');body?.setAttribute('visibility','hidden');return false}
 }
