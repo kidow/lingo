@@ -1,0 +1,139 @@
+{
+  "schema": "hanja-direct-public-engine-capture/v1",
+  "date": "2026-10-22",
+  "batch": 1375,
+  "glyph": "薯",
+  "selectedRoot": "u85af-k",
+  "source": {
+    "file": "docs/hanja-goal-glyphwiki-batch1089-2026-10-13/sources.json",
+    "fileSHA256": "e265279b268be343fe3b7ae5336a6f55c68b4e2c3b554771fc00453b58addfbf",
+    "archive": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+    },
+    "selectedRecordNames": [
+      "u85af-k",
+      "koseki-365350",
+      "u8279-k03",
+      "ufa5a",
+      "u7f52-03",
+      "u7f52",
+      "ufa5b-07"
+    ],
+    "allBundleRecords": 19,
+    "latestSubstitution": false,
+    "supplementalUsedForWholeReplay": false,
+    "providerVersions": []
+  },
+  "originalBody3": {
+    "file": "docs/hanja-goal-glyphwiki-batch1089-2026-10-13/engine-whole-u85af-k.json",
+    "fileSHA256": "ff35daefae38ee8a4b1c86ce484d65323c2b091b93a457a207713527c955326f",
+    "groupsTraceDefaultsDeepEqual": true
+  },
+  "capture": {
+    "entryPoint": "docs/hanja-goal-glyphwiki-batch1089-2026-10-13/verify-source.mjs",
+    "entryPointFileSHA256": "53cf65fe9aef169992a3c9cfbd13c45d56b0c523e8d705b9146e18e02076c660",
+    "extractedLiteral": "engineScript",
+    "literalSHA256": "b4f563387655e0f22b567a5341ee871852c355a5690505d5b56d1e529b30d5a4",
+    "literalBytes": 889,
+    "entireOldVerifyExecuted": false,
+    "sameVM": true,
+    "actualMakeGlyphCalls": 1,
+    "firstCapturePass": true,
+    "stdoutOriginalProofExposedToContext": false,
+    "immediateNativeApplyPatch": true,
+    "originalHeaderBodyAssembled": false,
+    "provenancePayloadLimitBeforeExecution": 1,
+    "provenanceRecoveryReadsSavedProofOnly": true
+  },
+  "engine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "inputs": [
+      {
+        "file": "2d.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/2d.js",
+        "bytes": 3585,
+        "SHA256": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942"
+      },
+      {
+        "file": "buhin.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/buhin.js",
+        "bytes": 419,
+        "SHA256": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456"
+      },
+      {
+        "file": "curve.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/curve.js",
+        "bytes": 6015,
+        "SHA256": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da"
+      },
+      {
+        "file": "kage.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kage.js",
+        "bytes": 17027,
+        "SHA256": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78"
+      },
+      {
+        "file": "kagecd.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+        "bytes": 46537,
+        "SHA256": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860"
+      },
+      {
+        "file": "kagedf.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagedf.js",
+        "bytes": 22556,
+        "SHA256": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847"
+      },
+      {
+        "file": "polygon.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/polygon.js",
+        "bytes": 1325,
+        "SHA256": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2"
+      },
+      {
+        "file": "polygons.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/polygons.js",
+        "bytes": 3728,
+        "SHA256": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+      }
+    ],
+    "networkRequests": 8,
+    "fetchedBytesHashCheckedBeforeVMLoad": true,
+    "archiveRequests": 0,
+    "glyphSourceRequests": 0
+  },
+  "output": {
+    "file": "docs/hanja-public-glyphwiki-engine-capture-u85af-2026-10-22/engine-whole-u85af-k.json",
+    "fileSHA256": "de0d33d6a729f5533e86a1483307a7b9e838e4353638786192ed644a6ce0f925",
+    "canonicalSHA256": "9e463db6a3eca14d322c64d0f0ed478edf49297de297aed0d2a6a6aee1562233",
+    "keys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "actualFull5": true,
+    "headerSynthesized": false,
+    "rawGroups": 20,
+    "drawingCalls": 20,
+    "polygons": 32,
+    "identity": {
+      "sourceRoot": "u85af-k",
+      "sourceProofFile": "engine-whole-u85af-k.json",
+      "sourceProofFileSha256": "de0d33d6a729f5533e86a1483307a7b9e838e4353638786192ed644a6ce0f925"
+    }
+  },
+  "originalSourcesAndHOLDUnchanged": true,
+  "sourceProjection": 0,
+  "originalSourceCompiler": 0,
+  "oldTests": 0,
+  "SSR": 0,
+  "server": 0,
+  "build": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false
+}
