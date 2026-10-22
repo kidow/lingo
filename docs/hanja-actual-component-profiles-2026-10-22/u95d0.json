@@ -4,11 +4,11 @@
   "glyph": "闐",
   "root": "u95d0",
   "pens": 18,
-  "masks": 21,
+  "masks": 22,
   "polygons": 42,
-  "adapterSHA256": "7b199e08f7280357abdb1eacb8c55ca9cfeba0b6f762cb57230b958a5e18ab6d",
+  "adapterSHA256": "95ae53ff414972e1b39e6e1a9433cf9bc8db7eb4cebf9691e3a5e548093b7580",
   "fixture": "docs/hanja-source-cache-u95d0-2026-10-22/source.json",
-  "geometrySHA256": "5c652462021180ed6699b7640e91fd5eea35aba50a40e09780b94cc67490fc85",
+  "geometrySHA256": "8b683fa352794e6b6b2c92f1571ec5017b57e301fe740824837297aa690c2b7e",
   "component": "components/hanja/stroke-outlines.tsx",
   "inputSHA256": {
     "components/hanja/stroke-outlines.tsx": "c6c3c7bf719ecf384ae7d2262fdc0989e7dbf2238aa2a7e71f5a7c610129b85e",
@@ -43,11 +43,11 @@
     "lib/hanja-stroke-start-gate.ts": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
     "lib/hanja-stroke-start-gate-u7e1d.ts": "f58bad28fc2dae0a102f2432fdcd46f7ecde850e5a00429931e9d72326d4151a",
     "lib/hanja-stroke-source-foot-u7d70.ts": "f650cd4d38c9157ab8f672b71f703287a881cbccc263903f2a59d0288bb16811",
-    "docs/hanja-source-cache-u95d0-2026-10-22/source.mjs": "37f6eecc3d6df7c8fd9027ab562ef411cb00c7ea5e39a5090a74aa82f7fa7885",
-    "docs/hanja-source-cache-u95d0-2026-10-22/source.json": "fb06c5d6aa1b69e1407b6f39f6c28a95362b332808ffdea26a0e27415d69a90b",
-    "public/hanja-strokes/glyphwiki/u95d0.json": "6f526b6fac1225bf31d6ea3ca48a5f3690ddccef9b23e7d27d0a2da22c250b52",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1352.json": "ba96eabc2b3ecb640606a377eb3e1e5e3c72d364a09935c9925563cea6d63b58",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch1352.ts": "f053b409b358d71b1eb2c391932ddd8a7ccba0906f24c8e21999bde877b8858d",
+    "docs/hanja-source-cache-u95d0-2026-10-22/source.mjs": "0745d3c9b1dbfb47a0988c33a76cb80bbed23fb107db179fa6814302ac2324e8",
+    "docs/hanja-source-cache-u95d0-2026-10-22/source.json": "119f0aa47f192f40f4d86308d9bcda18fc386aebffe29f4bdec72c7db214c261",
+    "public/hanja-strokes/glyphwiki/u95d0.json": "772e5880de01c342c37b8dc97b75dc447e4af6bc943003348d69b9378956d9cc",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1352.json": "6e9502f1db3a7799ab6467d2abaa9f6485d2ea8c142a9035237dcac5ab37328b",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1352.ts": "12d628e28f24cdf4736466e8959e9442868acd2db7a25aa840090ac8b2ee3cc4",
     "docs/hanja-source-native-raw-correspondence-u95d0-2026-10-22.json": "d329a9069a7e21a409a515bc0b5eebe7c1f94b727cf747e237509d8cea0c0e63",
     "docs/hanja-public-glyphwiki-engine-capture-2026-10-22/engine-whole-u95d0.json": "ffacb236e411b30435d798b968cab0b4e1e199e001566744dd270df357d6294d",
     "docs/hanja-official-media-compare-u95d0-2026-10-22/native-review.json": "84da85f35f8a6ab669f327dbf6f455224b002462c0b8d879613e618cb7c0db92"
@@ -60,7 +60,7 @@
     1,
     1,
     1,
-    2,
+    3,
     1,
     1,
     1,
@@ -94,7 +94,7 @@
       "sourceRawOneBased": [
         8
       ],
-      "maskSHA256": "7557128e5820aeb05c90ffb8e8f40f2d3f5a08418043d40bf25dec1cffd50789",
+      "maskSHA256": "0e9e2901c25735c44927afaf6de4932d2977b0c146201e89c26d149799b27e28",
       "grammar": "MLQ",
       "path": "M85.5 13 L85.5 86.5 Q85.5 91.5 80.5 91.5",
       "width": 14,
@@ -242,6 +242,22 @@
         14
       ],
       "weight": 27
+    },
+    {
+      "pen": 6,
+      "mask": 3,
+      "sourceRawOneBased": [
+        8
+      ],
+      "maskSHA256": "958ff44e8575eef56ef8e85853cbc87ab230b53438030ea29762504c2d05a332",
+      "direction": "left",
+      "bounds": [
+        70.5,
+        88.5,
+        80.5,
+        91.5
+      ],
+      "weight": 10
     },
     {
       "pen": 7,
@@ -429,7 +445,7 @@
   },
   "coverage": "각curve 원P minus 실제 partial 원guide의 dash만 제거한 fullround 잔여를 관찰한다. cardinal은 원P 직접완료이며 roundcoverage 증명이 아니다. multi-mask는 각mask 자체 local.5에서 실제guide를 개별캡처하는 helper를 사용한다.",
   "requiredFreshNative": [
-    "6획 H→원LQ의 m2 early/경계·LEFT14 완료를 먼저 확인한다. 독립mask와 원guide를 유지했으며 연결성/완료shape는 미승인이다.",
+    "6획 H→원LQ body→원LEFT14 quad의 두 경계, body fullround residual, near1→1 완료를 보정후 새로 확인한다. 이전21mask의 residual/완료 FAIL은 보존되며 새22mask 승인으로 승계하지 않는다.",
     "10UP body/tail 경계와 near1→1, 16V/H 경계·원foot 완료를 별도 확인한다. 원P 분할은 시간적 유한성 승인이 아니다.",
     "2/12HV 초기cap·fullround 잔여와 11V313 등 원cardinalfoot을 확인한 뒤 전체18compact/fine를 ROOT가 판정한다.",
     "공식clock은 거시 방향 근거만이다. 실제source 초기cap·경계·완료·선택재생·whole/prefix는 ROOT가 새로 관찰하며 전체제품UI/storage/runtime승인은 없다."
@@ -445,21 +461,38 @@
     "profileMetadataOnly": true,
     "authorSSR": 0,
     "oldChecksRepeated": 0,
-    "sourceGeometryChanged": false
+    "sourceGeometryChanged": true,
+    "cachedCorrectionOperations": 1,
+    "projectionRepeated": 0,
+    "newSSR": 0,
+    "previousProfileSHA256": "66eeba21b2471b9436654f87834add60f6f0de181c5b8048c1a536403030b8b9",
+    "historicalNativeHold": "docs/hanja-actual-component-profiles-2026-10-22/u95d0-native-review.json",
+    "historicalNativeHoldSHA256": "cf66657d4bcf73030e5ea52e36da7448f9c450e6979207ae10146177bd8375ef"
   },
   "pairProgress": [
     {
       "pen": 6,
       "weights": [
         27,
-        80.571068
+        80.571068,
+        10
       ],
-      "boundary": 0.2509968572590541,
+      "boundaries": [
+        0.2296483349117829,
+        0.9149450611437842
+      ],
       "boundaryDelta": 1e-10,
       "beforeAtAfter": [
-        0.25099685715905407,
-        0.2509968572590541,
-        0.2509968573590541
+        [
+          0.2296483348117829,
+          0.2296483349117829,
+          0.22964833501178292
+        ],
+        [
+          0.9149450610437841,
+          0.9149450611437842,
+          0.9149450612437842
+        ]
       ],
       "localToGlobal": [
         {
@@ -467,18 +500,18 @@
           "values": [
             {
               "local": 0.000001,
-              "global": 2.5099685725905406e-7,
-              "globalPercent": 0.000025099685725905405
+              "global": 2.2964833491178289e-7,
+              "globalPercent": 0.00002296483349117829
             },
             {
               "local": 0.01,
-              "global": 0.002509968572590541,
-              "globalPercent": 0.2509968572590541
+              "global": 0.002296483349117829,
+              "globalPercent": 0.2296483349117829
             },
             {
               "local": 0.03,
-              "global": 0.0075299057177716225,
-              "globalPercent": 0.7529905717771622
+              "global": 0.006889450047353487,
+              "globalPercent": 0.6889450047353487
             }
           ]
         },
@@ -487,18 +520,38 @@
           "values": [
             {
               "local": 0.000001,
-              "global": 0.25099760626219686,
-              "globalPercent": 25.099760626219688
+              "global": 0.22964902020850914,
+              "globalPercent": 22.964902020850914
             },
             {
               "local": 0.01,
-              "global": 0.2584868886864636,
-              "globalPercent": 25.84868886864636
+              "global": 0.23650130217410292,
+              "globalPercent": 23.650130217410293
             },
             {
               "local": 0.03,
-              "global": 0.2734669515412825,
-              "globalPercent": 27.34669515412825
+              "global": 0.2502072366987429,
+              "globalPercent": 25.02072366987429
+            }
+          ]
+        },
+        {
+          "mask": 3,
+          "values": [
+            {
+              "local": 0.000001,
+              "global": 0.914945146198723,
+              "globalPercent": 91.4945146198723
+            },
+            {
+              "local": 0.01,
+              "global": 0.9157956105323463,
+              "globalPercent": 91.57956105323463
+            },
+            {
+              "local": 0.03,
+              "global": 0.9174967093094706,
+              "globalPercent": 91.74967093094706
             }
           ]
         }
