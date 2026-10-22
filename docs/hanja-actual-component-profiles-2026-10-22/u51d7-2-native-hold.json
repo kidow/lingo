@@ -1,0 +1,118 @@
+{
+  "schema": "hanja-isolated-actual-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "凗",
+  "root": "u51d7",
+  "observer": "ROOT",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u51d7-2.json": "88c30760173f1f179e9bb8db448bc517afe7a49415776d4eeb4461c9078fde49",
+    "docs/hanja-source-independent-reorder-u51d7-source-experiment-2026-10-22/fixture.json": "3bf4651d6156ea375cb3623f8a9831ddaebece741bba55b0acb6c766d789ea57",
+    "lib/hanja-stroke-start-caps-u51d7.ts": "181080dbf722a65a3a9c5b02fb47a53ec47e24269886aa12cd15e29bc37fb3ee"
+  },
+  "historicalObservationPins": {
+    "helperSHA256": "d9154566bbfb89306905335411cffcc0544dc26903589b4311e4d83a81a80f7a",
+    "componentSHA256": "6506fd34ebda7e301ac94168b218c2d64c365464cdd51e51b31fae881696c21f",
+    "sharedVersion": 50,
+    "currentMutableSharedFileVerification": false
+  },
+  "source": {
+    "pens": 13,
+    "masks": 15,
+    "polygons": 28,
+    "geometrySHA256": "a14c7307545efa5a402aa55b6610794ab47d5b25d5360281103196be195cbc65",
+    "originalPGuideWidthWeightUnchanged": true
+  },
+  "native": {
+    "validVisualScreens": 8,
+    "targets": [
+      {
+        "pen": 2,
+        "mask": 1,
+        "localProgress": [
+          0.000001,
+          0.01,
+          0.03,
+          0.1
+        ]
+      },
+      {
+        "pen": 2,
+        "mask": 2,
+        "localProgress": [
+          0.000001,
+          0.01,
+          0.03,
+          0.1
+        ]
+      }
+    ],
+    "visualFinding": "두 mask에서 기존 큰 유한 nib가 사라지고 작은 잉크가 점진적으로 나타남을 관찰. 전체 회복 승인은 아님.",
+    "reporter": {
+      "approved": false,
+      "failedCheck": "policy",
+      "affectedTargetIds": [
+        "u51d7rest-2-1",
+        "u51d7rest-2-2",
+        "u51d7rest-6-1",
+        "u51d7rest-8-1"
+      ],
+      "observedAttribute": "growing-u51d7rest-rest-caps",
+      "expectedPolicyKind": "growing-u51d7-rest-caps",
+      "otherReportedChecksTrue": [
+        "sourceGuide",
+        "measurementBinding",
+        "caps",
+        "sameNativeFrame"
+      ],
+      "preErrors": [],
+      "preBadEmpty": false,
+      "preBadScope": "네 target의 :policy 실패가 존재. errors[]로 bad 실패를 무효화하지 않음."
+    },
+    "unobserved": [
+      "6m1/8m1 ε 회복",
+      "후속 전체 compact matrix",
+      "coverage",
+      "fine",
+      "natural",
+      "VH 경계",
+      "전체 회복"
+    ],
+    "wholeApproval": false
+  },
+  "server": {
+    "pid": 83825,
+    "sessionId": 61375,
+    "startupCount": 1,
+    "successfulServerSSR": 1,
+    "CJS": 51,
+    "ESM": 51,
+    "exitCode": 130,
+    "stopOutput": "empty",
+    "stoppedBy": "ROOT",
+    "pidAbsenceRequery": false
+  },
+  "scope": {
+    "visualEightPreserved": true,
+    "reporterFailurePreserved": true,
+    "sourceNativeApproval": false,
+    "actualComponentApproval": false,
+    "actualAppUI": false,
+    "runtimeApplied": false,
+    "sourceHOLDAndHistoricalFalsePreserved": true
+  },
+  "correctionPlan": {
+    "owner": "runtime1283_continuation",
+    "componentAttributeOnly": "data-stroke-reveal-policy={policy.kind}",
+    "sharedEditByAuthor": false,
+    "geometryOrPolicyMathBodyChange": false,
+    "newNativeReporterRecoveryPending": true
+  },
+  "authorExecution": {
+    "HTTP": 0,
+    "server": 0,
+    "SSR": 0,
+    "engine": 0,
+    "projection": 0,
+    "oldMathOrDOMRepeated": 0
+  }
+}
