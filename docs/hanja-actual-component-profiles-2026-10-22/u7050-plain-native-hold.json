@@ -1,0 +1,207 @@
+{
+  "schema": "hanja-isolated-actual-component-native-hold/v1",
+  "glyph": "灐",
+  "root": "u7050",
+  "reviewedAt": "2026-10-23",
+  "observer": "/root",
+  "status": "HOLD-original-fixed-round-finite-initial-heads",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u7050.json": "fa11678e3baddf1c36118fd1ccae9ab0d6f57f8643e42375bf73afc76e4fc5f7",
+    "docs/hanja-source-cache-u7050-2026-10-23/fixture.json": "0505b0e8c19132f37e611cb83ccce136d10b8423ca01bbd7ed8ee28002081b30",
+    "docs/hanja-source-cache-u7050-2026-10-23/config.json": "043ac2a2f250061102c1c53da26d944c7522d0ec8b97092c6e1c3f10806ba5bc",
+    "docs/hanja-source-cache-u7050-2026-10-23/source.mjs": "d087594c9d7352487b5384d008d3d7cbb0736dc192eb7e1db1e8cb0f179eed91"
+  },
+  "source": {
+    "actualFull5": "docs/hanja-goal-glyphwiki-batch1017-2026-10-13/engine-proof.json",
+    "SHA256": "f8bb397b969b2d0df140586790f7372c622d4286c09c30aa6e2e442c9ec4eeec",
+    "identity": {
+      "root": "u7050",
+      "file": "../hanja-goal-glyphwiki-batch1017-2026-10-13/engine-proof.json",
+      "fileSHA256": "f8bb397b969b2d0df140586790f7372c622d4286c09c30aa6e2e442c9ec4eeec"
+    },
+    "counts": {
+      "pens": 21,
+      "masks": 23,
+      "polygons": 49
+    },
+    "geometrySHA256": "6054dafb9bbf02f88636c551c7531b7829a9c66e7d0ac2b40f9dff31291b0b78",
+    "originalRaw24RowsRetained": true,
+    "nonDrawingRaw5Preserved": true,
+    "originalPGuideWidthWeightUnchanged": true
+  },
+  "observedShared": {
+    "version": 73,
+    "component": "components/hanja/stroke-outlines.tsx",
+    "componentSHA256": "77eefaf77df816e985b16eb355bb4612f77095afad6e5c849a823250a880554a",
+    "helper": "scripts/hanja-actual-component-review.mjs",
+    "helperSHA256": "89fc08f4e7066fc0d2453697666baca581200e22608354b0ffa22164352ab079",
+    "historicalPins": true,
+    "currentSharedEqualityRequired": false
+  },
+  "native": {
+    "validScreens": 47,
+    "breakdown": {
+      "originalFullRoundCoverage": {
+        "screens": 17,
+        "masks": 18,
+        "allWhite": true,
+        "curvePens": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          19,
+          20
+        ],
+        "additionalMask": [
+          13,
+          2
+        ],
+        "pen3BoardHasTwoMasks": true
+      },
+      "firstMaskEpsilon": {
+        "screens": 16,
+        "pens": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          19,
+          20
+        ],
+        "globalProgress": 0.000001,
+        "allFiniteInitialHeadFragmentsFirstFAIL": true
+      },
+      "secondMaskBoundaries": {
+        "screens": 14,
+        "pens": [
+          3,
+          13
+        ],
+        "masks": [
+          2,
+          2
+        ],
+        "perTarget": [
+          "source-boundary-minus1e-10",
+          "source-boundary-exact",
+          "source-boundary-plus1e-10",
+          "local-epsilon1e-6",
+          "local.01",
+          "local.03",
+          "local.1"
+        ],
+        "observations": [
+          {
+            "pen": 3,
+            "mask": 2,
+            "finiteJumpAttachedToPriorAtBoundary": true
+          },
+          {
+            "pen": 13,
+            "mask": 2,
+            "beforeAndAtHorizontalTipClear": true,
+            "afterFiniteChunkAttachedHorizontalEdgeAndGrows": true
+          }
+        ],
+        "contactFailureNotAsserted": true
+      }
+    },
+    "errors": [],
+    "bad": [],
+    "incidentalRootActualPenImage": 1,
+    "incidentalImageIsNotCoverage": true,
+    "incidentalImageNotIncludedInValid47": true,
+    "largeHeadVisualFAILNotOverriddenByDOMOrWhiteCoverage": true,
+    "allCompactFineNaturalNotReviewed": true
+  },
+  "execution": {
+    "SSR": 1,
+    "CJSModules": 78,
+    "ESMModules": 78,
+    "engine": 0,
+    "projection": 0,
+    "server": {
+      "PID": 7605,
+      "sessionId": 21653,
+      "port": 59412,
+      "stopped": true,
+      "exitCode": 130,
+      "outputEmpty": true,
+      "finalPIDQueryNotClaimed": true
+    }
+  },
+  "mathematicalQ0RelationSeparate": [
+    {
+      "pen": 3,
+      "mask": 2,
+      "sourceQ0": [
+        "152/5",
+        "150"
+      ],
+      "priorOriginalRawCount": 3,
+      "priorOriginalPHits": [
+        {
+          "rawOneBased": 3,
+          "polygonIndex0": 0,
+          "classification": 1
+        }
+      ],
+      "Q0InsidePriorOriginalUnion": true,
+      "actualRenderedCoverageNotProved": true,
+      "contactAllTimeNotProved": true
+    },
+    {
+      "pen": 13,
+      "mask": 2,
+      "sourceQ0": [
+        "4478/25",
+        "15145931/200000"
+      ],
+      "priorOriginalRawCount": 14,
+      "priorOriginalPHits": [],
+      "Q0InsidePriorOriginalUnion": false,
+      "actualRenderedCoverageNotProved": true,
+      "contactAllTimeNotProved": true
+    }
+  ],
+  "scope": {
+    "sourcePContactAllTimeApproved": false,
+    "capRecoveryNativeApproved": false,
+    "sourceFootPolicyApproved": false,
+    "actualProductUI": false,
+    "controller": false,
+    "storage": false,
+    "runtimeApplied": false
+  },
+  "historicalSourceFalseAndHOLDPreserved": true,
+  "authorActions": {
+    "SSR": 0,
+    "engine": 0,
+    "projection": 0,
+    "shared": 0,
+    "registry": 0,
+    "Git": 0,
+    "server": 0
+  }
+}

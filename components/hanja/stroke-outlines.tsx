@@ -4,6 +4,7 @@ import { reviewedU61e5Context, reviewedU61e5Policy, commitReviewedU61e5Caps, typ
 import { reviewedU61e5FootContext, reviewedU61e5FootPolicy, measureReviewedU61e5FootFrame, commitReviewedU61e5FootMask, type ReviewedU61e5FootPolicy } from '@/lib/hanja-stroke-source-foot-u61e5'
 import { reviewedU9b4bContext, reviewedU9b4bPolicy, commitReviewedU9b4bCaps, type ReviewedU9b4bPolicy } from '@/lib/hanja-stroke-start-caps-u9b4b'
 import { reviewedU7043Context, reviewedU7043Policy, commitReviewedU7043Caps, type ReviewedU7043Policy } from '@/lib/hanja-stroke-start-caps-u7043'
+import { reviewedU7050Context, reviewedU7050Policy, commitReviewedU7050Caps, type ReviewedU7050Policy } from '@/lib/hanja-stroke-start-caps-u7050'
 import { reviewedU84ebContext, reviewedU84ebPolicy, commitReviewedU84ebCaps, type ReviewedU84ebPolicy } from '@/lib/hanja-stroke-start-caps-u84eb'
 import { reviewedU906dKContext, reviewedU906dKPolicy, commitReviewedU906dKCaps, type ReviewedU906dKPolicy } from '@/lib/hanja-stroke-start-caps-u906d-k'
 import { reviewedU97d4Context, reviewedU97d4Policy, commitReviewedU97d4Caps, type ReviewedU97d4Policy } from '@/lib/hanja-stroke-start-caps-u97d4'
@@ -110,6 +111,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u61e5FootContext = reviewedU61e5FootContext(strokes)
   const u9b4bContext = reviewedU9b4bContext(strokes)
   const u7043Context = reviewedU7043Context(strokes)
+  const u7050Context = reviewedU7050Context(strokes)
   const u84ebContext = reviewedU84ebContext(strokes)
   const u906dKContext = reviewedU906dKContext(strokes)
   const u97d4Context = reviewedU97d4Context(strokes)
@@ -211,8 +213,10 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u61e5FootPolicy) return <U61e5FootOutline key={index} policy={u61e5FootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u9b4bPolicy = reviewedU9b4bPolicy(u9b4bContext, stroke, index)
         const u7043Policy = reviewedU7043Policy(u7043Context, stroke, index)
+        const u7050Policy = reviewedU7050Policy(u7050Context, stroke, index)
         if (u9b4bPolicy) return <U9b4bCapsOutline key={index} policy={u9b4bPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         if (u7043Policy) return <U7043CapsOutline key={index} policy={u7043Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+        if (u7050Policy) return <U7050CapsOutline key={index} policy={u7050Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u84ebPolicy = reviewedU84ebPolicy(u84ebContext, stroke, index)
         if (u84ebPolicy) return <U84ebCapsOutline key={index} policy={u84ebPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u906dKPolicy = reviewedU906dKPolicy(u906dKContext, stroke, index)
@@ -2102,6 +2106,30 @@ function U7043CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU7043
     </defs>
     {valid&&progress===1&&<path key="u7043-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
     {valid&&progress>0&&progress<1&&<path key="u7043-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u7043-growing)'} visibility="hidden" />}
+  </g>
+}
+
+function U7050CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU7050Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>{
+    const committed=commitReviewedU7050Caps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current})
+    return committed.cleanup
+  },[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u7050-progress={String(progress)} data-u7050-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u7050-measure'} data-growing-owner={clipId} data-u7050-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0} />
+      </mask>
+      <mask id={clipId+'-u7050-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u7050-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0} />
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+        <circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path key="u7050-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
+    {valid&&progress>0&&progress<1&&<path key="u7050-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u7050-growing)'} visibility="hidden" />}
   </g>
 }
 function U84ebCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU84ebPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
