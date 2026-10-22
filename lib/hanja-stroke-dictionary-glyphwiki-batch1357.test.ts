@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict'
+import test from 'node:test'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1357_STROKES as EXPECTED,loadGlyphWikiBatch1357Strokes as load,GLYPHWIKI_BATCH1357_NATIVE_APPROVAL,GLYPHWIKI_BATCH1357_RUNTIME_APPLIED,GLYPHWIKI_BATCH1357_ASSIGNMENT_PROVISIONAL} from './hanja-stroke-dictionary-glyphwiki-batch1357.ts'
+const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(bytes(p).toString()),sha=(b:string|Buffer)=>createHash('sha256').update(b).digest('hex'),clone=(v:any)=>JSON.parse(JSON.stringify(v))
+test('1357 fixed source: actual full5, original20P and independent QB9',async()=>{
+ const c=json('docs/hanja-source-cache-u8fea-k-2026-10-22/source.json'),a=json('public/hanja-strokes/glyphwiki/u8fea-k.json'),p=json('docs/hanja-public-glyphwiki-engine-capture-u8fea-k-2026-10-22/engine-whole-u8fea-k.json'),m=await import('../docs/hanja-source-cache-u8fea-k-2026-10-22/source.mjs')
+ assert.equal(sha(bytes('docs/hanja-public-glyphwiki-engine-capture-u8fea-k-2026-10-22/engine-whole-u8fea-k.json')),'e35bcc0a2a9ce973de3a1f11e8c38a1dd074b93cfe1599aeeb125067cd59c7ba');assert.deepEqual(Object.keys(p).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.deepEqual(a.engineProof,p)
+ assert.deepEqual(m.compileProgressive(p.trace,p,c.identity),c.strokes);assert.equal(m.cachedPositiveCallCount(),1);assert.equal(m.projectionCallCount(),0)
+ assert.equal(c.strokes.length,9);assert.equal(c.strokes.flat().length,10);assert.equal(c.geometrySHA256,'9b7ad70e6b8a0c4ea7543431c1b6d5b21aeed00a9b2f6896ad07ea3737b150be');assert.equal(sha(JSON.stringify(c.strokes)),c.geometrySHA256)
+ assert.deepEqual(c.sourceGroups,[[6],[7,8],[9],[10],[11],[0],[1],[2,3],[4,5]]);assert.deepEqual(c.sourceGroups.flat().sort((a:number,b:number)=>a-b),Array.from({length:12},(_,i)=>i))
+ const path=(poly:any[])=>{assert(poly.every(v=>v.off===0));const area=poly.reduce((n,v,i)=>{const q=poly[(i+1)%poly.length];return n+v.x*q.y-q.x*v.y},0);assert.notEqual(area,0);const a=area<0?[poly[0],...poly.slice(1).reverse()]:poly;return a.map((v,i)=>(i?'L':'M')+v.x/2+' '+v.y/2).join(' ')+' Z'}
+ const originals=p.trace.flatMap((r:any[])=>r.flatMap(x=>x.polygons)).map(path).sort(),emitted=c.strokes.flat().flatMap((m:any)=>m.outline.match(/M[^M]+/g).map((s:string)=>s.trim())).sort();assert.equal(originals.length,20);assert.deepEqual(emitted,originals)
+ for(const [pen,raw]of [[2,[7,8]],[8,[2,3]]] as const){const v=p.trace[raw[0]][0].args,w=p.trace[raw[1]][0].args;assert.deepEqual(v.slice(2,4),w.slice(0,2));assert.equal(c.strokes[pen-1].length,1);assert.equal(c.strokes[pen-1][0].revealPath,`M${v[0]/2} ${v[1]/2} L${v[2]/2} ${v[3]/2} L${w[2]/2} ${w[3]/2}`)}
+ const q=p.trace[4][0],b=p.trace[5][0];assert.equal(q.kind,'cdDrawCurve');assert.equal(b.kind,'cdDrawBezier');assert.deepEqual(b.args.slice(0,2).map((v:number,i:number)=>v-q.args[4+i]),[-2,-2]);assert.equal(c.strokes[8].length,2)
+ for(const [i,raw] of [[0,4],[1,5]])assert.equal(c.strokes[8][i].outline,p.trace[raw].flatMap((x:any)=>x.polygons).map(path).join(' '))
+ assert.deepEqual(c.strokes[8].map((m:any)=>m.revealPath.match(/[MLQC]/g).join('')),['MQ','MC']);assert(c.strokes[8].every((m:any)=>m.revealWidth===14))
+ assert.equal(c.preparation.successfulPureProjectionOperations,1);assert.equal(c.preparation.newTerminalDerivations,0);assert.equal(c.preparation.engineRuns,0);assert.equal(a.sourceProvenance.sourceModuleSHA256,sha(bytes('docs/hanja-source-cache-u8fea-k-2026-10-22/source.mjs')));assert.equal(a.sourceProvenance.cacheFileSHA256,sha(bytes('docs/hanja-source-cache-u8fea-k-2026-10-22/source.json')))
+ for(const field of ['nativeApproval','directionApproved','temporalOrderApproved','actualAppUI','runtimeApplied'])assert.equal(c[field],false)
+ const bad=clone(p);bad.trace[5][0].args[0]++;assert.throws(()=>m.compileProgressive(bad.trace,bad,c.identity));assert.throws(()=>m.compileProgressive(p.trace,p,{...c.identity,root:'wrong'}));assert.throws(()=>Reflect.apply(m.compileProgressive,null,[p.trace,p]));assert.throws(()=>m.captureProjection(p.trace,p,c.identity));assert.equal(m.cachedPositiveCallCount(),1);assert.equal(m.projectionCallCount(),0)
+})
+test('1357 provisional loader: semantic JSON and strict source fields',()=>{
+ const b=json('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1357.json'),c=json('docs/hanja-source-cache-u8fea-k-2026-10-22/source.json'),a=json('public/hanja-strokes/glyphwiki/u8fea-k.json')
+ assert.deepEqual(load(b),EXPECTED);assert.deepEqual(EXPECTED[0].outlines,c.strokes);assert.equal(EXPECTED[0].geometrySource,sha(bytes('public/hanja-strokes/glyphwiki/u8fea-k.json')));assert.equal(EXPECTED[0].pathsSha256,sha(JSON.stringify(EXPECTED[0].paths)));assert.equal(a.records.length,3);assert.equal(a.missingReferences.length,0)
+ const reorder=(v:any):any=>Array.isArray(v)?v.map(reorder):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).reverse().map(([k,x])=>[k,reorder(x)])):v;assert.deepEqual(load(reorder(b)),EXPECTED)
+ for(const change of [(x:any)=>x[0].glyph='wrong',(x:any)=>x[0].outlines[8].reverse(),(x:any)=>x[0].outlines[8][1].weight++,(x:any)=>x[0].outlines[1][0].revealPath+=' ',(x:any)=>x[0].outlines[0][0].bounds[0]++,(x:any)=>x[0].sourceStrokeIndices.reverse(),(x:any)=>x[0].nativeApproval=true]){const x=clone(b);change(x);assert.notDeepEqual(x,b);assert.throws(()=>load(x))}
+ const sparse=clone(b);delete sparse[0].outlines[8][1];assert.throws(()=>load(sparse));let reads=0;const getter=clone(b);Object.defineProperty(getter[0].outlines[8][0],'weight',{enumerable:true,get(){reads++;return 1}});assert.throws(()=>load(getter));assert.equal(reads,0);assert.throws(()=>Reflect.apply(load,null,[]));assert.throws(()=>Reflect.apply(load,null,[b,0]));assert(Object.isFrozen(EXPECTED[0].outlines![8][1].bounds))
+ assert.equal(GLYPHWIKI_BATCH1357_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1357_RUNTIME_APPLIED,false);assert.equal(GLYPHWIKI_BATCH1357_ASSIGNMENT_PROVISIONAL,true);assert.equal(a.preparationHistory.runtimeApplied,false)
+})
