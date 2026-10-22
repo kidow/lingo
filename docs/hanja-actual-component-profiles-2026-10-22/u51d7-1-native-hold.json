@@ -1,0 +1,106 @@
+{
+  "schema": "hanja-isolated-actual-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "凗",
+  "root": "u51d7",
+  "observer": "ROOT",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u51d7-1.json": "dd0d7f7c77f1377bfe3015c2a8b320504ce9c73be51e4e3f64ddd04b82d9e5a0",
+    "docs/hanja-source-independent-reorder-u51d7-source-experiment-2026-10-22/fixture.json": "3bf4651d6156ea375cb3623f8a9831ddaebece741bba55b0acb6c766d789ea57",
+    "lib/hanja-stroke-start-gate-u51d7.ts": "0d02720f80f099a9f6ca5fed1cfcbb83cde1299d5204e8ea01a86b460685c035"
+  },
+  "historicalObservationPins": {
+    "helperSHA256": "c87329c4c1c36483affe9df0baa432f87a6310b4bea53725e5b369b6f10e8325",
+    "componentSHA256": "6f4ee022c0745559de55eeec21612ffcbe8abb2a411c47e047f99c10b1679cdc",
+    "sharedVersion": 48
+  },
+  "source": {
+    "pens": 13,
+    "masks": 15,
+    "polygons": 28,
+    "geometrySHA256": "a14c7307545efa5a402aa55b6610794ab47d5b25d5360281103196be195cbc65",
+    "sourceFieldsChanged": false
+  },
+  "native": {
+    "validScreens": 9,
+    "finiteRecovery": {
+      "target": "1m1",
+      "local": [
+        0,
+        0.000001,
+        0.01,
+        0.03,
+        0.1
+      ],
+      "screens": 5,
+      "result": "큰초기조각이제거됨. epsilon은육안빈화면, .03작은점, .1작은쐐기로점진표시",
+      "allTimeOrCoverageApproved": false
+    },
+    "independentFailures": [
+      {
+        "target": "2m1",
+        "global": 0.000001,
+        "result": "큰검은삼각head"
+      },
+      {
+        "target": "2m2",
+        "local": 0.000001,
+        "global": 0.3949337935048037,
+        "result": "큰head"
+      },
+      {
+        "target": "6m1",
+        "global": 0.000001,
+        "result": "큰nib"
+      },
+      {
+        "target": "8m1",
+        "global": 0.000001,
+        "result": "큰nib"
+      }
+    ],
+    "failedTargets": 4,
+    "bad": [],
+    "errors": [],
+    "visualFailureNotOverriddenByDOM": true,
+    "unrun": [
+      "full-matrix",
+      "coverage",
+      "fine",
+      "natural",
+      "pen4-VH-boundary",
+      "later-sweep"
+    ],
+    "unrunClassifiedAsFailure": false
+  },
+  "server": {
+    "pid": 67973,
+    "port": 59412,
+    "session": 46004,
+    "stopped": true,
+    "exitCode": 130,
+    "outputEmpty": true,
+    "startupSSR": 1,
+    "CJS": 49,
+    "ESM": 49
+  },
+  "scope": {
+    "firstTargetPartialRecoveryOnly": true,
+    "newFourTargetRecoveryApproved": false,
+    "secondMaskPredecessorContactApproved": false,
+    "sourceGeometryAltered": false,
+    "nativeAnimationApproved": false,
+    "wholeGlyphApproved": false,
+    "actualAppUI": false,
+    "runtimeApplied": false
+  },
+  "authorExecution": {
+    "HTTP": 0,
+    "server": 0,
+    "SSR": 0,
+    "engine": 0,
+    "projection": 0,
+    "oldChecksRepeated": 0,
+    "build": false
+  }
+}
