@@ -1,6 +1,6 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** Immutable unregistered1345 source preparation; product/registration approval pending. */
+/** Fixed1345 source; ROOT isolated component finite approval. Registration is owned by ROOT. */
 const EXPECTED = [
   {
     "glyph": "銍",
@@ -291,6 +291,7 @@ export function loadGlyphWikiBatch1345Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1345_STROKES:ReturnType<typeof loadGlyphWikiBatch1345Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1345_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1345_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1345_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1345_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1345_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1345_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1345_ACTUAL_COMPONENT_REVIEW=Object.freeze({file:"docs/hanja-actual-component-profiles-2026-10-22/u928d-native-review.json",sha256:"87510ed0f06f3293f8c7eca5ee190d7f120434a5ff2e21c792ea2df872e1b36e",isolatedActualComponentFiniteApproved:true,actualAppUI:false,all14Autoplay:false})

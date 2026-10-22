@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {HANJA_STROKES,hanjaStrokeData} from '../lib/hanja-strokes.ts'
+import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1345_STROKES as ENTRY,GLYPHWIKI_BATCH1345_NATIVE_APPROVAL,GLYPHWIKI_BATCH1345_ACTUAL_COMPONENT_REVIEW as REVIEW} from '../lib/hanja-stroke-dictionary-glyphwiki-batch1345.ts'
+const root=new URL('../',import.meta.url),read=p=>readFileSync(new URL(p,root)),json=p=>JSON.parse(read(p)),sha=v=>createHash('sha256').update(v).digest('hex')
+const r=json(REVIEW.file);assert.equal(sha(read(REVIEW.file)),REVIEW.sha256);assert.equal(GLYPHWIKI_BATCH1345_NATIVE_APPROVAL,true);assert.equal(r.approval.rootRegistrationApproved,true);assert.equal(r.approval.actualAppUI,false);assert.equal(r.approval.all14Autoplay,false);assert.equal(r.native.validScreens,26)
+const bundle=json('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1345.json');assert.deepEqual(bundle,ENTRY);assert.equal(ENTRY.length,1);const e=ENTRY[0];assert.equal(e.glyph,'銍');assert.equal(e.outlines.length,14);assert.equal(e.outlines.flat().length,15);assert.equal(sha(JSON.stringify(e.outlines)),"90604e63ce498f938a54b857214622e36f5302938dc11186a48033ef667b8625");assert.equal(e.geometrySource,sha(read('public/hanja-strokes/glyphwiki/u928d.json')))
+const a=json('public/hanja-strokes/glyphwiki/u928d.json');assert.equal(a.sourceProvenance.actualFull5SHA256,r.source.full5SHA256);for(const k of ['nativeApproval','isolatedActualComponentBrowserVerified','runtimeRegistered','runtimeApplied','registrationApproved'])assert.equal(a.preparationHistory[k],false,'immutable preparation history')
+const unique=new Set(HANJA_STROKES.map(x=>x.glyph));assert.equal(unique.size,5760);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='銍').length,1);assert.deepEqual(hanjaStrokeData({glyph:'銍',strokes:14}),e);assert.equal(5978-unique.size,218)
+console.log(JSON.stringify({batch:1345,glyph:'銍',passed:true,registryUnique:unique.size,remaining:5978-unique.size,targetMatches:1,pens:14,masks:15,polygons:34,geometrySHA256:r.source.geometrySHA256,actualFiniteScreens:26,isolatedActualComponentFiniteApproved:true,actualAppUI:false,all14Autoplay:false,sourceCompiler:0,engine:0,sourceProjection:0,build:false}))
