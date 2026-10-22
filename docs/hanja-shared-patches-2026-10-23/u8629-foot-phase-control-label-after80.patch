@@ -1,0 +1,6 @@
+*** Begin Patch
+*** Update File: scripts/hanja-actual-component-review.mjs
+@@
+- if(t.kind==='source-foot-x-u8629')for(const d of[-1e-10,0,1e-10])button(t.id+' foot/body '+d,()=>{T=t;pen=t.pen;local(t.phaseShare+d);});
++ if(t.kind==='source-foot-x-u8629')for(const d of[-1e-10,0,1e-10])button(t.id+' foot/body '+(t.phaseShare+d),()=>{T=t;pen=t.pen;local(t.phaseShare+d);});
+*** End Patch

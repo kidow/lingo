@@ -656,7 +656,7 @@ function u8629Coverage(selected){
 function setupU8629(){
  for(const t of C.targets){for(const p of[0,1e-6,.01,.03,.1,.25,.5,.75,.95,.9999,.99999999,1])button(t.id+' local '+p,()=>{T=t;pen=t.pen;local(p);});
  if(t.kind==='growing-u8629-caps')for(const d of[-1e-10,0,1e-10])button(t.id+' rho7 local '+d,()=>u51d7Rho(t,d));
- if(t.kind==='source-foot-x-u8629')for(const d of[-1e-10,0,1e-10])button(t.id+' foot/body '+d,()=>{T=t;pen=t.pen;local(t.phaseShare+d);});
+ if(t.kind==='source-foot-x-u8629')for(const d of[-1e-10,0,1e-10])button(t.id+' foot/body '+(t.phaseShare+d),()=>{T=t;pen=t.pen;local(t.phaseShare+d);});
  button(t.id+(t.kind==='growing-u8629-caps'?' full-round residual':' coverage exact original-P'),()=>u8629Coverage(t));}
  for(const item of C.pairProgress)for(const d of[-1e-10,0,1e-10])button('pen'+item.pen+' source before mask'+item.nextMask+' '+d,()=>{T=null;pen=item.pen;show(item.boundary+d);});
  const a=strokes[7],sum=a.reduce((n,m)=>n+m.weight,0);for(const p of[0,1e-6,.01,.03,.1,.5,.95,.9999,.99999999,1])button('pen8 LEFT local '+p,()=>{T=null;pen=8;show((a[0].weight+p*a[1].weight)/sum);});
