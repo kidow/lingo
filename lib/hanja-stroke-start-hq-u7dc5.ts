@@ -1,0 +1,101 @@
+import type { HanjaOutlineSegment, HanjaOutlineStrokes } from './hanja-stroke-outline'
+
+/** 緅 고정14p17m33의 13m2 전용 초기arc7 정책. 원P coverage·후반·native 승인은 별도다. */
+const FIXED_STROKES:HanjaOutlineStrokes=[[{"outline":"M26 9.65 L24.95 11.6 L23.85 13.55 L22.75 15.45 L21.6 17.4 L20.4 19.25 L19.2 21.15 L17.9 22.95 L16.6 24.75 L15.2 26.5 L13.75 28.2 L12.95 27.75 L13.7 25.65 L14.45 23.55 L15.2 21.5 L15.95 19.45 L16.75 17.4 L17.5 15.4 L18.3 13.35 L19.05 11.3 L19.75 9.3 L20.45 7.25 Z M20.25 7.7 L20.75 6.6 L26 9.65 Z M26 9.65 L26.95 11.15 L24.05 11.5 Z","bounds":[12.95,6.6,26.95,28.2],"direction":"curve","weight":22.394321,"revealPath":"M23.45 8 Q18.9 18.5 13.375 28","revealWidth":14},{"outline":"M7.2 22.4 L8.8 23.3 L10.45 24.15 L11.95 25.2 L13.4 26.4 L14.75 27.65 L16 29.05 L17.15 30.55 L18.15 32.15 L19.1 33.85 L19.95 35.6 L14.25 37.5 L13.9 35.9 L13.45 34.35 L12.9 32.85 L12.3 31.4 L11.6 29.95 L10.8 28.55 L9.95 27.15 L8.95 25.8 L7.9 24.4 L6.65 23.15 Z M19.95 35.6 L19.75 37.9 L18.05 39.4 L15.75 39.2 L14.25 37.5 Z","bounds":[6.65,22.4,19.95,39.4],"direction":"curve","weight":19.035559,"revealPath":"M6.55 22.5 Q14.35 28 17.6 38","revealWidth":14}],[{"outline":"M35.3 21.25 L33.4 24.8 L31.4 28.35 L29.35 31.85 L27.25 35.3 L25.15 38.75 L22.95 42.15 L20.7 45.5 L18.4 48.8 L15.95 52.05 L13.4 55.2 L12.65 54.75 L14.35 51.05 L16.1 47.45 L17.9 43.85 L19.65 40.25 L21.45 36.7 L23.2 33.1 L24.9 29.5 L26.6 25.85 L28.3 22.25 L29.95 18.6 Z M29.7 19.05 L30.2 18.05 L35.3 21.25 Z M35.3 21.25 L36.25 22.8 L33.3 23.05 Z","bounds":[12.65,18.05,36.25,55.2],"direction":"curve","weight":40.660554,"revealPath":"M32.875 19.5 Q23.775 38 13.05 55","revealWidth":14},{"outline":"M7.25 53.45 L9.85 53.2 L12.4 52.9 L14.95 52.6 L17.5 52.25 L20.05 51.9 L22.6 51.5 L25.1 51.1 L27.6 50.7 L30.15 50.35 L32.7 50.05 L33 50.9 L30.7 52.15 L28.35 53.3 L25.95 54.25 L23.5 55.2 L21.05 56 L18.5 56.8 L15.95 57.5 L13.35 58.2 L10.75 58.8 L8.1 59.35 Z M8.1 59.35 L6.25 53.6 L7.25 53.45 Z M8.1 59.35 L10.85 57.45 L9.3 60.7 Z","bounds":[6.25,50.05,33,60.7],"direction":"curve","weight":26.366752,"revealPath":"M7.2 56.5 Q20.85 54.5 32.875 50.5","revealWidth":14}],[{"outline":"M26.7 39.05 L28.05 40.15 L29.45 41.3 L30.75 42.6 L31.95 44 L33.05 45.55 L34.1 47.25 L35.05 49 L35.9 50.85 L36.7 52.8 L37.4 54.85 L31.55 56.15 L31.25 54.3 L30.95 52.45 L30.55 50.7 L30.05 49 L29.55 47.35 L29 45.7 L28.35 44.15 L27.65 42.6 L26.95 41.1 L26.05 39.65 Z M37.4 54.85 L37 57.1 L35.15 58.45 L32.9 58 L31.55 56.15 Z","bounds":[26.05,39.05,37.4,58.45],"direction":"curve","weight":20.025,"revealPath":"M26.05 39 Q32.225 45.5 34.825 57","revealWidth":14}],[{"outline":"M25.15 53.5 L25.15 91.5 L19.15 94.5 L19.15 53.5 Z","bounds":[19.15,53.5,25.15,94.5],"direction":"down","weight":38.5}],[{"outline":"M17.25 64.25 L16.8 67.05 L16.2 69.8 L15.5 72.5 L14.7 75.2 L13.75 77.85 L12.7 80.45 L11.5 82.95 L10.15 85.45 L8.65 87.85 L6.9 90.2 L6.15 89.75 L6.9 87.05 L7.7 84.4 L8.4 81.8 L9.1 79.2 L9.7 76.6 L10.2 74.05 L10.6 71.45 L10.9 68.9 L11.15 66.3 L11.3 63.7 Z M11.25 64.2 L11.4 62.6 L17.25 64.25 Z M17.25 64.25 L18.65 65.4 L16.05 66.65 Z","bounds":[6.15,62.6,18.65,90.2],"direction":"curve","weight":27.624084,"revealPath":"M14.35 63.5 Q13.05 77.5 6.55 90","revealWidth":14}],[{"outline":"M27 61.05 L28.35 62.25 L29.7 63.55 L30.95 65 L32.1 66.6 L33.15 68.3 L34.1 70.1 L35 72.05 L35.8 74.1 L36.5 76.25 L37.15 78.45 L31.25 79.55 L31 77.45 L30.7 75.45 L30.35 73.5 L29.95 71.65 L29.5 69.85 L28.95 68.15 L28.4 66.45 L27.75 64.8 L27.1 63.2 L26.35 61.65 Z M37.15 78.45 L36.65 80.7 L34.75 81.95 L32.5 81.45 L31.25 79.55 Z","bounds":[26.35,61.05,37.15,81.95],"direction":"curve","weight":21.125,"revealPath":"M26.375 61 Q32.225 68 34.5 80.5","revealWidth":14}],[{"outline":"M38.1 13 L93.35 13 L93.35 15 L38.1 15 Z M93.35 13 L81.35 14 L87.35 8 Z","bounds":[38.1,8,93.35,15],"direction":"right","weight":55.245}],[{"outline":"M48.1 13 L48.1 76.5 L42.1 76.5 L42.1 13 Z","bounds":[42.1,13,48.1,76.5],"direction":"down","weight":61.5}],[{"outline":"M45.1 32 L60.65 32 L60.65 34 L45.1 34 Z","bounds":[45.1,32,60.65,34],"direction":"right","weight":15.5575}],[{"outline":"M45.1 51 L60.65 51 L60.65 53 L45.1 53 Z","bounds":[45.1,51,60.65,53],"direction":"right","weight":15.5575}],[{"outline":"M37.9 75 L39.8 74.45 L41.75 73.85 L43.85 73.2 L45.95 72.5 L48.15 71.75 L50.45 71 L52.8 70.15 L55.25 69.3 L57.8 68.45 L60.45 67.6 L60.85 68.35 L58.6 70.05 L56.4 71.6 L54.2 73.05 L52 74.35 L49.9 75.6 L47.8 76.75 L45.75 77.8 L43.75 78.85 L41.8 79.75 L39.9 80.65 Z M39.9 80.65 L36.95 75.3 L37.9 75 Z M39.9 80.65 L42.2 78.2 L41.35 81.7 Z","bounds":[36.95,67.6,60.85,81.7],"direction":"curve","weight":24.371102,"revealPath":"M38.445 78 Q48.2875 74.5 60.67 68","revealWidth":14}],[{"outline":"M63.65 13 L63.65 91.5 L57.65 94.5 L57.65 13 Z","bounds":[57.65,13,63.65,94.5],"direction":"down","weight":79}],[{"outline":"M60.65 32 L87.95 32 L87.95 34 L60.65 34 Z","bounds":[60.65,32,87.95,34],"direction":"right","weight":27.305},{"outline":"M90.9 33.4 L89.45 42 L87.7 50 L85.75 57.45 L83.5 64.35 L81.05 70.65 L78.3 76.35 L75.3 81.45 L72.05 85.9 L68.55 89.7 L64.75 92.8 L64.15 92.15 L67.1 88.45 L69.9 84.35 L72.5 79.8 L74.9 74.7 L77.1 69.05 L79.1 62.9 L80.9 56.15 L82.45 48.85 L83.85 41 L85 32.55 Z M84.95 32 L87.95 29.5 L93.45 34 L90.95 35.5 L84.95 38 Z","bounds":[64.15,29.5,93.45,92.8],"direction":"curve","weight":63.970814,"revealPath":"M87.975 33 Q81.9425 77 64.48 92.5","revealWidth":14}],[{"outline":"M69.7 33.45 L71.25 41.15 L72.9 48.35 L74.75 55 L76.75 61.05 L79 66.6 L81.5 71.55 L84.2 75.95 L87.1 79.8 L90.2 83.15 L93.5 85.9 L89.4 91.05 L85.7 87.5 L82.45 83.45 L79.5 78.9 L76.9 73.85 L74.7 68.35 L72.8 62.35 L71.2 55.9 L70 48.9 L69.2 41.45 L68.8 33.5 Z M89.4 91.05 L93.5 85.9 L94.8 86.95 Z","bounds":[68.8,33.45,94.8,91.05],"direction":"curve","weight":59.784619,"revealPath":"M69.2425 33 Q73.37 74 91.4675 88.5","revealWidth":14}]]
+function freezeFixed(){for(const masks of FIXED_STROKES){for(const s of masks){Object.freeze(s.bounds);Object.freeze(s)}Object.freeze(masks)}Object.freeze(FIXED_STROKES)}
+freezeFixed()
+function ensure(value:unknown,message:string):asserts value {if(!value)throw new Error(message)}
+function sameJSON(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b)||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);if(ak.length!==bk.length)return false;return bk.every(k=>{const ad=Object.getOwnPropertyDescriptor(a,k),bd=Object.getOwnPropertyDescriptor(b,k);return!!ad&&!!bd&&'value'in ad&&'value'in bd&&ad.enumerable===bd.enumerable&&sameJSON(ad.value,bd.value)})}
+function sameSegment(a:HanjaOutlineSegment,b:HanjaOutlineSegment){return sameJSON(a,b)}
+function sameWhole(strokes:HanjaOutlineStrokes){return sameJSON(strokes,FIXED_STROKES)}
+export type ReviewedU7dc5HqContext=Readonly<{id:'u7dc5-hq-source-13m2'}>
+export type ReviewedU7dc5HqGrowingCertificate=Readonly<{syntax:'MQ';T:string;K:string;initialArcMax:7;storedBounds:Readonly<Record<string,unknown>>;notRasterProof:true;notPreviousMaskConnectivityProof:true;notFullSweepProof:true}>
+export type ReviewedU7dc5HqPolicy=Readonly<{id:string;kind:'growing-u7dc5-hq-caps';segment:HanjaOutlineSegment;certificate:ReviewedU7dc5HqGrowingCertificate}>
+const CONTEXT:ReviewedU7dc5HqContext=Object.freeze({id:'u7dc5-hq-source-13m2'})
+function deepFreeze<T>(v:T):T{if(v&&typeof v==='object'){for(const k of Reflect.ownKeys(v as object)){const d=Object.getOwnPropertyDescriptor(v,k);if(d&&'value'in d)deepFreeze(d.value)}Object.freeze(v)}return v}
+const TARGETS=deepFreeze([{"pen":13,"mask":2,"id":"u7dc5-hq-13-2","path":"M87.975 33 Q81.9425 77 64.48 92.5","certificate":{"pen":13,"mask":2,"rawOneBased":16,"syntax":"MQ","maskSHA256":"532ed398240a18841800aea4af7e9d7828f138d7a870df6ef5cea27528b93403","guide":"M87.975 33 Q81.9425 77 64.48 92.5","width":14,"radius":7,"weight":63.970814,"T":"1/2","K":"1/50","initialArcMax":7,"onlyInitialSufficientConditions":true,"initialSourcePConnectedNotProved":true,"fullCoverageNotProved":true,"fullSweepNotProved":true}}])
+const POLICIES:readonly ReviewedU7dc5HqPolicy[]=Object.freeze(TARGETS.map(t=>Object.freeze({id:t.id,kind:'growing-u7dc5-hq-caps' as const,segment:FIXED_STROKES[t.pen-1][t.mask-1],certificate:deepFreeze({syntax:'MQ' as const,T:t.certificate.T,K:t.certificate.K,initialArcMax:7 as const,storedBounds:t.certificate,notRasterProof:true as const,notPreviousMaskConnectivityProof:true as const,notFullSweepProof:true as const})})))
+export function reviewedU7dc5HqContext(strokes:HanjaOutlineStrokes):ReviewedU7dc5HqContext|null{return sameWhole(strokes)?CONTEXT:null}
+/** pen/mask는 기존 StrokeOutlines와 같은 0-based 인덱스다. */
+export function reviewedU7dc5HqPolicy(context:ReviewedU7dc5HqContext|null,pen:number,mask:number):ReviewedU7dc5HqPolicy|null{if(context!==CONTEXT)return null;return POLICIES.find(t=>t.id==='u7dc5-hq-'+(pen+1)+'-'+(mask+1))??null}
+function source(policy:ReviewedU7dc5HqPolicy,segment:HanjaOutlineSegment){ensure(POLICIES.includes(policy)&&sameSegment(segment,policy.segment),'private 緅 policy and exact original fields required');ensure(segment.revealWidth===14&&segment.direction==='curve'&&segment.revealPath,'original 緅 guide/width');const q0=segment.revealPath.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number);return{q0,r:7,minimumLength:7}}
+export type ReviewedU7dc5HqFrame=Readonly<{policyId:string;guide:string;progress:number;L:number;d:number;rho:number|null;q0:readonly number[];point:Readonly<{x:number;y:number}>}>
+export type ReviewedU7dc5HqNodes={measurement:SVGPathElement|null;guide:SVGPathElement|null;startCap:SVGCircleElement|null;endCap:SVGCircleElement|null;ink:SVGPathElement|null}
+function u7dc5HqCoordinateBinding(nodes:readonly SVGElement[],owner:SVGSVGElement):()=>boolean {
+  const document=owner.ownerDocument,view=document?.defaultView
+  if(!view||view.document!==document)throw new Error('Connected 緅 SVG document required')
+  const parents=new Map<Element,Element|null>()
+  for(const node of nodes){
+    let current:Element|null=node
+    const visited=new Set<Element>()
+    while(current){
+      if(visited.has(current))throw new Error('Cyclic 緅 SVG parent')
+      visited.add(current)
+      if(current.namespaceURI!=='http://www.w3.org/2000/svg'||current.ownerDocument!==document||!current.isConnected||(current!==owner&&(current as SVGElement).ownerSVGElement!==owner))throw new Error('Mismatched 緅 SVG coordinate owner')
+      const parent=current.parentElement
+      if(parent&&(!parent.isConnected||parent.ownerDocument!==document))throw new Error('Mismatched 緅 outer SVG parent')
+      parents.set(current,parent)
+      if(current===owner)break
+      current=current.parentElement
+    }
+    if(current!==owner)throw new Error('Detached 緅 SVG coordinate tree')
+  }
+  return()=>{
+    if(owner.ownerDocument!==document||document.defaultView!==view||view.document!==document)return false
+    for(const[node,parent]of parents){
+      if(!node.isConnected||node.ownerDocument!==document||node.parentElement!==parent||(node!==owner&&(node as SVGElement).ownerSVGElement!==owner)||node.getAttribute('transform')!==null)return false
+      const style=view.getComputedStyle(node)
+      if(style.transform!=='none'||['translate','rotate','scale'].some(key=>{const value=style.getPropertyValue(key);return value!==''&&value!=='none'}))return false
+    }
+    return true
+  }
+}
+export function measureReviewedU7dc5HqFrame(policy:ReviewedU7dc5HqPolicy,segment:HanjaOutlineSegment,progress:number,guide:SVGPathElement|null):ReviewedU7dc5HqFrame {
+  const fixed=source(policy,segment)
+  if(!Number.isFinite(progress)||progress<0||progress>1)throw new Error('Invalid 緅 Q progress')
+  const owner=guide?.ownerSVGElement
+  const defs=guide?.parentElement,target=defs?.parentElement
+  if(!owner||!guide||defs?.localName!=='defs'||target?.localName!=='g'||target.getAttribute('data-stroke-start-gate')!==policy.id)throw new Error('Exact 緅 measurement parent required')
+  const coordinates=u7dc5HqCoordinateBinding([guide],owner)
+  const exact=()=>coordinates()&&guide.parentElement===defs&&defs.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&target.getAttribute('data-u7dc5-hq-progress')===String(progress)&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('data-u7dc5-hq-measurement')==='true'&&guide.getAttribute('pathLength')===null
+  if(!exact())throw new Error('Exact connected 緅 measurement guide required')
+  const L=guide!.getTotalLength()
+  if(!Number.isFinite(L)||L<=fixed.minimumLength||!exact())throw new Error('Invalid 緅 browser length')
+  const d=Math.min(progress*L,L),point=guide!.getPointAtLength(d)
+  if(!Number.isFinite(point.x)||!Number.isFinite(point.y)||!exact())throw new Error('Changed 緅 guide or invalid endpoint')
+  if(progress===0&&Math.hypot(point.x-fixed.q0[0],point.y-fixed.q0[1])>=1e-4)throw new Error('緅 UA start differs from exact M')
+  return Object.freeze({policyId:policy.id,guide:segment.revealPath!,progress,L,d,rho:policy.kind==='growing-u7dc5-hq-caps'?Math.min(7,d):null,q0:Object.freeze(fixed.q0),point:Object.freeze({x:point.x,y:point.y})})
+}
+export function commitReviewedU7dc5HqCaps(policy:ReviewedU7dc5HqPolicy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedU7dc5HqNodes) {
+  const{measurement,guide,startCap,endCap,ink}=nodes
+  const reset=()=>{
+    ink?.setAttribute('visibility','hidden');guide?.setAttribute('stroke-dasharray','0 2')
+    for(const cap of[startCap,endCap]){cap?.setAttribute('r','0');cap?.setAttribute('cx','0');cap?.setAttribute('cy','0')}
+    for(const key of['data-growing-progress','data-growing-length','data-growing-distance','data-growing-radius','data-growing-end-x','data-growing-end-y'])ink?.removeAttribute(key)
+  }
+  reset()
+  try{
+    source(policy,segment);ensure(policy.kind==='growing-u7dc5-hq-caps','private 緅 13m2 MQ policy only')
+    if(!Number.isFinite(progress)||progress<0||progress>1||!/^[A-Za-z0-9_:.-]+$/.test(clipId))throw new Error('Invalid 緅 frame/id')
+    if(progress===0||progress===1)return{status:progress===0?'empty' as const:'complete' as const,frame:null,cleanup:reset}
+    const owner=measurement?.ownerSVGElement
+    const defs=measurement?.parentElement,target=defs?.parentElement,mask=guide?.parentElement
+    if(!owner||!measurement||!guide||!startCap||!endCap||!ink||defs?.localName!=='defs'||target?.localName!=='g'||mask?.localName!=='mask')throw new Error('Missing 緅 SVG binding tree')
+    const coordinates=u7dc5HqCoordinateBinding([measurement,guide,startCap,endCap,ink],owner)
+    const bound=()=>coordinates()&&measurement.parentElement===defs&&defs.parentElement===target&&guide.parentElement===mask&&mask.parentElement===defs&&startCap.parentElement===mask&&endCap.parentElement===mask&&ink.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&target.getAttribute('data-u7dc5-hq-progress')===String(progress)&&target.getAttribute('data-u7dc5-hq-clip')===clipId&&mask.getAttribute('id')===clipId+'-u7dc5-hq-growing'&&mask.getAttribute('maskUnits')==='userSpaceOnUse'&&['x','y'].every(key=>mask.getAttribute(key)==='0')&&['width','height'].every(key=>mask.getAttribute(key)==='100')&&[measurement,guide,startCap,endCap,ink].every(node=>node.getAttribute('data-growing-owner')===clipId)&&measurement.getAttribute('id')===clipId+'-u7dc5-hq-measure'&&guide.getAttribute('id')===clipId+'-u7dc5-hq-guide'&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('pathLength')==='1'&&guide.getAttribute('stroke-width')==='14'&&guide.getAttribute('stroke-linecap')==='butt'&&guide.getAttribute('stroke-linejoin')==='miter'&&ink.getAttribute('d')===segment.outline&&ink.getAttribute('mask')==='url(#'+clipId+'-u7dc5-hq-growing)'
+    if(!bound())throw new Error('Mismatched 緅 SVG binding')
+    const frame=measureReviewedU7dc5HqFrame(policy,segment,progress,measurement);ensure(frame.rho!==null,'growing frame radius')
+    if(!bound())throw new Error('緅 binding changed during UA read')
+    guide!.setAttribute('stroke-dasharray',String(frame.progress)+' 2')
+    startCap!.setAttribute('cx',String(frame.q0[0]));startCap!.setAttribute('cy',String(frame.q0[1]));startCap!.setAttribute('r',String(frame.rho))
+    endCap!.setAttribute('cx',String(frame.point.x));endCap!.setAttribute('cy',String(frame.point.y));endCap!.setAttribute('r',String(frame.rho))
+    for(const[key,value]of Object.entries({'data-growing-progress':frame.progress,'data-growing-length':frame.L,'data-growing-distance':frame.d,'data-growing-radius':frame.rho,'data-growing-end-x':frame.point.x,'data-growing-end-y':frame.point.y}))ink!.setAttribute(key,String(value))
+    if(!bound())throw new Error('緅 binding changed before visibility commit')
+    ink!.setAttribute('visibility','visible')
+    return{status:'visible' as const,frame,cleanup:reset}
+  }catch{reset();return{status:'hidden' as const,frame:null,cleanup:reset}}
+}
+
+
+export const REVIEWED_U7DC5_HQ_SOURCE=deepFreeze({"root":"u7dc5","geometrySHA256":"42365c0828e201ff8b1092b73bfeedf3d6bd5815da0ea7d44e48b01761fe7b6e","counts":{"pens":14,"masks":17,"polygons":33,"targets":1},"sourceFixture":"docs/hanja-source-cache-u7dc5-2026-10-22/source.json","fixtureSHA256":"7b990fa370d0f5907fc6e460f9677d8635b4d4296491268fd845a2607621f297","full5File":"docs/hanja-public-glyphwiki-engine-capture-u7dc5-2026-10-22/engine-whole-u7dc5.json","full5SHA256":"cea1c8819afa5605a8348082319c415cc5b22278d001a3f8dd9fed0d290e1803","identityShape":"actual-full5-id3","sourceIdentity":{"root":"u7dc5","file":"../hanja-public-glyphwiki-engine-capture-u7dc5-2026-10-22/engine-whole-u7dc5.json","fileSHA256":"cea1c8819afa5605a8348082319c415cc5b22278d001a3f8dd9fed0d290e1803"},"targetMaskSHA256":"532ed398240a18841800aea4af7e9d7828f138d7a870df6ef5cea27528b93403","guide":"M87.975 33 Q81.9425 77 64.48 92.5","width":14,"weight":63.970814,"initialArcMax":7,"sourcePGuideWidthWeightChanged":false,"sourceClockChanged":false,"firstTwoReuseUnchanged":true,"originalHOLDPreserved":true,"nativeApproval":false,"actualComponentApproval":false,"actualAppUI":false,"runtimeApplied":false,"engineRuns":0,"sourceProjection":0,"newGeometry":false})
+export const REVIEWED_U7DC5_HQ_INPUT_SHA256=Object.freeze({"docs/hanja-source-cache-u7dc5-2026-10-22/source.json":"7b990fa370d0f5907fc6e460f9677d8635b4d4296491268fd845a2607621f297","docs/hanja-public-glyphwiki-engine-capture-u7dc5-2026-10-22/engine-whole-u7dc5.json":"cea1c8819afa5605a8348082319c415cc5b22278d001a3f8dd9fed0d290e1803","docs/hanja-actual-component-profiles-2026-10-22/u7dc5-1-native-hold.json":"bd3f96c32503f5e1231b830240df2e4ea10606b9305b36c30b91c2dee344804d"})
