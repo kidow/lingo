@@ -1,6 +1,6 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** 1357 미등록 迪 후보. 원176/HOLD는 보존; 새native/APP/runtime 미승인. */
+/** 1357 迪: ROOT 유한 실제component 승인. 원176/HOLD와 미승인 제품UI 범위는 보존. */
 const EXPECTED = [
   {
     "glyph": "迪",
@@ -222,6 +222,7 @@ export function loadGlyphWikiBatch1357Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1357_STROKES:ReturnType<typeof loadGlyphWikiBatch1357Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1357_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1357_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1357_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1357_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1357_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1357_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1357_ACTUAL_COMPONENT_REVIEW=Object.freeze({file:"docs/hanja-actual-component-profiles-2026-10-22/u8fea-activation-review.json",sha256:"0c4f03f8cb9a74ed9f7c41301a38f62bb2ea64b5a6dbe3405c43d101c5fab80f",isolatedActualComponentFiniteApproved:true,rootRegistrationApproved:true,actualAppUI:false,all9Autoplay:false,storage:false})
