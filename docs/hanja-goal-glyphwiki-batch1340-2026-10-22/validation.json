@@ -1,0 +1,89 @@
+{
+  "schema": "hanja-minimal-single-runtime-validation-v1",
+  "batch": 1340,
+  "date": "2026-10-22",
+  "status": "FIRST-actual-runtime-verifier-PASS",
+  "counts": {
+    "pens": 9,
+    "masks": 12,
+    "polygons": 27
+  },
+  "geometrySHA256": "f731ac914a72e3021f43db274bca35d7b4f91968e964601f9112bdb900052726",
+  "parent": {
+    "resume": "docs/hanja-goal-glyphwiki-batch1339-2026-10-22/resume.json",
+    "sha256": "561d8e01c0020b4811835337a2ad3c42796c7ffa1a3d237dfeb6bc0291cc9070",
+    "applied": 5755,
+    "remaining": 223
+  },
+  "sourcePins": 22,
+  "checks": {
+    "newLoader3": {
+      "executions": 1,
+      "passed": 3,
+      "failed": 0
+    },
+    "newLoaderAST": {
+      "files": 2,
+      "executionsEach": 1,
+      "diagnostics": 0
+    },
+    "newVerifierSyntax": {
+      "status": "PASS",
+      "executions": 1
+    },
+    "actualRegistryVerifier": {
+      "status": "FIRST PASS",
+      "executions": 1,
+      "exit": 0
+    },
+    "oldAPPTestsRepeated": 0,
+    "SSRRepeated": 0,
+    "sourceProjection": 0,
+    "pendingMetadata": {
+      "status": "PASS",
+      "executions": 1,
+      "scope": "pending flags, parent/review link and exactnewpaths only; prior3loader/APP8/SSR not repeated"
+    },
+    "postActualMetadata": {
+      "status": "PASS",
+      "executions": 1,
+      "scope": "final review/resume/validation contract only; no verifier/22pins/loader3/APP8/SSR repeat"
+    }
+  },
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "isolatedActualComponentBrowserVerified": true,
+  "actualAppUI": false,
+  "wholeReplay": false,
+  "build": false,
+  "actualVerifierResult": {
+    "passed": true,
+    "firstExecution": true,
+    "executions": 1,
+    "exitCode": 0,
+    "wallTimeSeconds": 0.649554625,
+    "registryUnique": 5756,
+    "remaining": 222,
+    "historical": 349,
+    "resolved": 181,
+    "active": 168,
+    "refs": 397,
+    "targetMatches": 1,
+    "targetRecordType": "object",
+    "sourcePins": 22,
+    "pinMismatch": 0,
+    "isolatedActualComponentBrowserVerified": true,
+    "actualComponentFiniteScreens": 39,
+    "actualAppUI": false,
+    "wholeReplay": false,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "projection": 0,
+    "engine": 0,
+    "APPFocusedRepeated": 0,
+    "SSRRepeated": 0,
+    "build": false
+  }
+}

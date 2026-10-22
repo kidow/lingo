@@ -1,0 +1,81 @@
+{
+  "schema": "u4fd3-minimal-live-component-harness-validation-v1",
+  "date": "2026-10-22",
+  "status": "READY first startup resources and syntax passed; actualbrowser pending",
+  "configSHA256": "bd7bfff9e2c46d95107a3f6b2d503c7c581accd6c7f061cea03dfce489f09955",
+  "ownSHA256": {
+    "config.json": "bd7bfff9e2c46d95107a3f6b2d503c7c581accd6c7f061cea03dfce489f09955",
+    "check.mjs": "3e1b522c41ec92040fe7831ba5802c15ea8ce8338da39e1fa99f4086f27a5e45",
+    "browser.js": "b5195bb313af06b3382a59f90590e39769c7396c48b128cfe83eed3f1248b434",
+    "serve.py": "be3c5ce5b416062f17a69e86b73c0547c9335c238c1a39d66fc6f8298c687c0f",
+    "README.md": "dd32f0f9269558de629b2b19acb0b64ef4b217bdf73f4ea95a3c9f9a4447254e"
+  },
+  "inputPins": 5,
+  "APPFocusedAlreadyPassed8": true,
+  "oldAPPFocusedRepeated": 0,
+  "oldSnapshotChecksRepeated": 0,
+  "newSnapshotFiles": 0,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "registryExecuted": false,
+  "sourceCompiler": 0,
+  "geometry": 0,
+  "engine": 0,
+  "HTTP": 0,
+  "server": 0,
+  "Git": 0,
+  "build": 0,
+  "newHarnessFocused": {
+    "executions": 1,
+    "result": {
+      "PASS": true,
+      "newHarnessFocused": 1,
+      "inputPins": 5,
+      "ownPins": 5,
+      "SSR": 8,
+      "transpileCounts": {
+        "commonJS": 24,
+        "ESM": 24
+      },
+      "targets": 7,
+      "registryExecuted": false,
+      "oldFocusedRepeated": 0,
+      "geometry": 0,
+      "HTTP": 0,
+      "server": 0
+    }
+  },
+  "syntax": {
+    "Node": [
+      {
+        "file": "check.mjs",
+        "status": 0
+      },
+      {
+        "file": "browser.js",
+        "status": 0
+      }
+    ],
+    "PythonAST": 1,
+    "CLIHelp": {
+      "executions": 1,
+      "status": 0
+    }
+  },
+  "resourceScope": {
+    "newSSR": 8,
+    "CJS24AndESM24AsInitialPrerequisite": true,
+    "serverStartupRecreatesProcessRAMAsUIPrerequisite": true,
+    "oldAPPFocusedRepeated": 0,
+    "oldSnapshotChecksRepeated": 0,
+    "legacyFilesCopied": 0
+  },
+  "metadata": {
+    "executions": 1,
+    "status": "PASS",
+    "inputPins": 5,
+    "ownPins": 5,
+    "scope": 6
+  }
+}
