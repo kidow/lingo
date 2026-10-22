@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
-import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1355_STROKES as EXPECTED,loadGlyphWikiBatch1355Strokes as load,GLYPHWIKI_BATCH1355_NATIVE_APPROVAL,GLYPHWIKI_BATCH1355_RUNTIME_APPLIED,GLYPHWIKI_BATCH1355_ASSIGNMENT_PROVISIONAL} from './hanja-stroke-dictionary-glyphwiki-batch1355.ts'
+import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1355_STROKES as EXPECTED,loadGlyphWikiBatch1355Strokes as load,GLYPHWIKI_BATCH1355_NATIVE_APPROVAL,GLYPHWIKI_BATCH1355_RUNTIME_APPLIED,GLYPHWIKI_BATCH1355_ASSIGNMENT_PROVISIONAL,GLYPHWIKI_BATCH1355_ACTUAL_COMPONENT_REVIEW as REVIEW} from './hanja-stroke-dictionary-glyphwiki-batch1355.ts'
 const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(bytes(p).toString()),sha=(b:string|Buffer)=>createHash('sha256').update(b).digest('hex'),clone=(v:any)=>JSON.parse(JSON.stringify(v))
 test('1355 fixed source: full5 and original63P exact once, independent QB25',async()=>{
  const fixed=json('docs/hanja-source-cache-u7c69-2026-10-22/source.json'),c={...fixed,strokes:fixed.baselineStrokes??fixed.strokes,geometrySHA256:fixed.baselineGeometrySHA256??fixed.geometrySHA256,preparation:fixed.baselinePreparation??fixed.preparation},a=json('public/hanja-strokes/glyphwiki/u7c69.json'),p=json('docs/hanja-public-glyphwiki-engine-capture-2026-10-22/engine-whole-u7c69.json'),m=await import('../docs/hanja-source-cache-u7c69-2026-10-22/source.mjs')
@@ -27,7 +27,7 @@ test('1355 provisional loader: semantic JSON and strict source binding',()=>{
  const reorder=(v:any):any=>Array.isArray(v)?v.map(reorder):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).reverse().map(([k,x])=>[k,reorder(x)])):v;assert.deepEqual(load(reorder(b)),EXPECTED)
  for(const change of [(x:any)=>x[0].glyph='wrong',(x:any)=>x[0].outlines[24].reverse(),(x:any)=>x[0].outlines[24][1].weight++,(x:any)=>x[0].outlines[19][0].revealPath+=' ',(x:any)=>x[0].outlines[16][0].bounds[0]++,(x:any)=>x[0].sourceStrokeIndices.reverse(),(x:any)=>x[0].nativeApproval=true]){const x=clone(b);change(x);assert.notDeepEqual(x,b);assert.throws(()=>load(x))}
  const sparse=clone(b);delete sparse[0].outlines[24][1];assert.throws(()=>load(sparse));let reads=0;const getter=clone(b);Object.defineProperty(getter[0].outlines[19][0],'weight',{enumerable:true,get(){reads++;return 1}});assert.throws(()=>load(getter));assert.equal(reads,0);assert.throws(()=>Reflect.apply(load,null,[]));assert.throws(()=>Reflect.apply(load,null,[b,0]));assert(Object.isFrozen(EXPECTED[0].outlines![24][1].bounds))
- assert.equal(GLYPHWIKI_BATCH1355_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1355_RUNTIME_APPLIED,false);assert.equal(GLYPHWIKI_BATCH1355_ASSIGNMENT_PROVISIONAL,true);assert.equal(a.preparationHistory.runtimeApplied,false)
+ assert.equal(GLYPHWIKI_BATCH1355_NATIVE_APPROVAL,true);assert.equal(GLYPHWIKI_BATCH1355_RUNTIME_APPLIED,true);assert.equal(GLYPHWIKI_BATCH1355_ASSIGNMENT_PROVISIONAL,false);assert.equal(a.preparationHistory.runtimeApplied,false)
 })
 
 test('1355 LEFT20 changed tail: original quad partition and strict bundle',async()=>{
@@ -45,5 +45,21 @@ test('1355 LEFT20 changed tail: original quad partition and strict bundle',async
  assert.deepEqual(load(b),EXPECTED);assert.deepEqual(EXPECTED[0].outlines,c.strokes);assert.equal(EXPECTED[0].geometrySource,sha(bytes('public/hanja-strokes/glyphwiki/u7c69.json')))
  for(const change of [(x:any)=>x[0].outlines[19].reverse(),(x:any)=>x[0].outlines[19][1].weight++,(x:any)=>x[0].outlines[19][0].bounds[0]--,(x:any)=>x[0].outlines[19][0].revealPath+=' ']){const x=clone(b);change(x);assert.notDeepEqual(x,b);assert.throws(()=>load(x))}
  for(const field of ['nativeApproval','actualAppUI','runtimeApplied'])assert.equal(c[field],false)
- assert.equal(GLYPHWIKI_BATCH1355_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1355_RUNTIME_APPLIED,false)
+ assert.equal(GLYPHWIKI_BATCH1355_NATIVE_APPROVAL,true);assert.equal(GLYPHWIKI_BATCH1355_RUNTIME_APPLIED,true)
+})
+
+test('1355 activation tail: ROOT59 finite screens and exact active target',async()=>{
+ const r=json(REVIEW.file);assert.equal(sha(bytes(REVIEW.file)),REVIEW.sha256);assert.equal(r.schema,'hanja-isolated-actual-component-finite-review/v1');assert.equal(r.glyph,'籩');assert.equal(r.batch,1355)
+ for(const [p,h]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(p)),h,p)
+ // 공용helper/컴포넌트/profile은 관찰 당시 역사 지문이다. 활성화 뒤의 현재파일로 재검사하지 않는다.
+ assert.equal(r.approval.isolatedActualComponentFiniteApproved,true);assert.equal(r.approval.rootRegistrationApproved,true);for(const key of ['actualProductAppUI','actualAppUI','controllerWorkflow','storage','all25Autoplay','wholeReplay'])assert.equal(r.approval[key],false)
+ assert.equal(r.native.validScreens,59);assert.equal(r.native.originalValidScreens,54);assert.equal(r.native.additional520RecheckScreens,1);assert.equal(r.native.additional1040Screens,4);assert.equal(r.native.breakdown.reduce((n:number,x:any)=>n+x.screens,0),59);assert.equal(r.native.breakdown[0].uniqueSamples,225);assert.equal(r.native.breakdown[1].screens,17)
+ assert.equal(r.native.zoom.positiveInkContactAtLocal01And03Observed,true);assert.equal(r.native.zoom.extremeEpsilonNewInkVisuallyDetected,false);assert.equal(r.native.zoom.onlyMainSizeChanged,true);assert.equal(r.native.zoom.originalGuideWidth,14);assert.equal(r.native.zoom.extremeLocalDash,1e-6);assert.equal(r.native.mathSupplement.usedAsNativeReplacement,false)
+ assert.equal(r.native.fixedCapAcceptance.newGrowthPolicy,false);assert.equal(r.native.fixedCapAcceptance.zeroAreaStartProven,false);assert.equal(r.native.fixedCapAcceptance.noFiniteJumpProven,false);assert.equal(r.native.fixedCapAcceptance.allTimeConnectedProven,false);assert.equal(r.native.fixedCapAcceptance.AACauseProven,false)
+ const c=json('docs/hanja-source-cache-u7c69-2026-10-22/source.json'),a=json('public/hanja-strokes/glyphwiki/u7c69.json');assert.equal(c.nativeApproval,false);assert.equal(c.runtimeApplied,false);assert.equal(a.preparationHistory.runtimeApplied,false);assert.equal(r.oldFourScreenHOLDRecordPreserved,true);assert.deepEqual(EXPECTED[0].outlines,c.strokes);assert.equal(sha(JSON.stringify(EXPECTED[0].outlines)),r.source.geometrySHA256);assert.equal(r.source.geometrySHA256,'a318844147f674ab9d14bb25d85060ac665b05ab50aa5a1f629885f0e19a9850');assert.deepEqual([EXPECTED[0].outlines!.length,EXPECTED[0].outlines!.flat().length,EXPECTED[0].outlines!.flat().map(m=>m.outline).join(' ').match(/M/g)!.length],[25,27,63])
+ assert.deepEqual(r.source.QB25GapSourceUnits,[-2,-1.63]);assert.equal(r.source.UP17Unchanged,true);assert.equal(r.source.LEFT20OriginalQuadPartitioned,true)
+ assert.equal(GLYPHWIKI_BATCH1355_NATIVE_APPROVAL,true);assert.equal(GLYPHWIKI_BATCH1355_RUNTIME_APPLIED,true);assert.equal(GLYPHWIKI_BATCH1355_ASSIGNMENT_PROVISIONAL,false)
+ const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts');const unique=new Set(HANJA_STROKES.map(x=>x.glyph));assert(unique.size>=5769);assert(5978-unique.size<=209);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='籩').length,1);assert.deepEqual(hanjaStrokeData({glyph:'籩',strokes:25}),EXPECTED[0])
+ const registry=bytes('lib/hanja-strokes.ts').toString();assert.equal((registry.match(/import[^\n]+HANJA_DICTIONARY_GLYPHWIKI_BATCH1355_STROKES[^\n]+from/g)||[]).length,1);assert.equal((registry.match(/\.\.\.HANJA_DICTIONARY_GLYPHWIKI_BATCH1355_STROKES/g)||[]).length,1);assert(bytes('public/hanja-strokes/glyphwiki/u7c69.NOTICE.md').length>0)
+ console.log(JSON.stringify({batch:1355,glyph:'籩',registryUnique:unique.size,remaining:5978-unique.size,targetMatches:1,pens:25,masks:27,polygons:63,actualFiniteScreens:59,compactUniqueSamples:225,curveResidualMasks:17,isolatedActualComponentFiniteApproved:true,actualAppUI:false,all25Autoplay:false,newGrowthPolicy:false,noFiniteJumpProven:false,sourceProjection:0,engine:0,oldLoaderNegativesRepeated:0}))
 })

@@ -484,6 +484,7 @@ export function loadGlyphWikiBatch1355Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1355_STROKES:ReturnType<typeof loadGlyphWikiBatch1355Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1355_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1355_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1355_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1355_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1355_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1355_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1355_ACTUAL_COMPONENT_REVIEW=Object.freeze({file:"docs/hanja-actual-component-profiles-2026-10-22/u7c69-activation-review.json",sha256:"a0b0fcef5ccc8af5db432f57700b540512cd531a3075a252e8f6b53d77d89b72",isolatedActualComponentFiniteApproved:true,rootRegistrationApproved:true,actualAppUI:false,all25Autoplay:false,storage:false})
