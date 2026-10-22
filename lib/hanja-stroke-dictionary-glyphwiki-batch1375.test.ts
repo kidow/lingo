@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict'
+import test from 'node:test'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1375_STROKES as ENTRY,loadGlyphWikiBatch1375Strokes as load,GLYPHWIKI_BATCH1375_NATIVE_APPROVAL,GLYPHWIKI_BATCH1375_RUNTIME_APPLIED} from './hanja-stroke-dictionary-glyphwiki-batch1375.ts'
+import {reviewedU85afContext,reviewedU85afPolicy} from './hanja-stroke-source-cap-u85af.ts'
+const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(bytes(p).toString()),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex'),clone=(v:any)=>JSON.parse(JSON.stringify(v))
+function polygonKey(p:number[][]):string {const rotations=(q:number[][])=>q.map((_,i)=>JSON.stringify([...q.slice(i),...q.slice(0,i)]));return [...rotations(p),...rotations(p.slice().reverse())].sort()[0]}
+test('1375 activation tail: sourcegate and actual resolver 薯 once',async()=>{
+ const f=json("docs/hanja-source-cache-u85af-2026-10-22/source.json"),p=json("public/hanja-strokes/glyphwiki/u85af-k.json"),bundle=json("public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1375.json"),review=json("docs/hanja-actual-component-profiles-2026-10-22/u85af-activation-review.json"),proof=json(p.sourceIdentity.actualFull5File)
+ assert.equal(sha(bytes("docs/hanja-source-cache-u85af-2026-10-22/source.json")),"b640c523c1e7296a9f25dd0368413c97fa82948eb96b82deaf9deb0bb924afee")
+ assert.equal(sha(bytes(p.sourceIdentity.actualFull5File)),"de0d33d6a729f5533e86a1483307a7b9e838e4353638786192ed644a6ce0f925")
+ assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.deepEqual(p.engineProof,proof)
+ const old=json(p.sourceIdentity.selectedHistoricalBodyFile);for(const key of ['groups','trace','defaults'])assert.deepEqual(proof[key],old[key])
+ assert.equal(p.sourceProofShape.newHeaderTraceCombination,false);assert.deepEqual(p.sourceGroups,f.sourceGroups);assert.deepEqual(p.strokes,f.strokes);assert.deepEqual(bundle[0].outlines,f.strokes);assert.deepEqual(load(bundle),ENTRY)
+ assert.deepEqual([...f.sourceGroups.flat()].sort((a:number,b:number)=>a-b),Array.from({length:20},(_,i)=>i));assert.equal(sha(JSON.stringify(f.strokes)),"3f6487e78a2610278918da4b685c1be48f13ea755898d1eb0fb5eb70eb71544a")
+ assert.deepEqual([f.strokes.length,f.strokes.flat().length,f.strokes.flat().reduce((n:number,m:any)=>n+(m.outline.match(/M/g)||[]).length,0)],[18,18,32])
+ const original=proof.trace.flat().flatMap((c:any)=>c.polygons).map((poly:any[])=>polygonKey(poly.map(v=>[v.x/2,v.y/2]))).sort()
+ const emitted=f.strokes.flat().flatMap((m:any)=>m.outline.match(/M[^Z]+Z/g)||[]).map((d:string)=>{const n=d.match(/-?\d+(?:\.\d+)?/g)!.map(Number);return polygonKey(Array.from({length:n.length/2},(_,i)=>[n[2*i],n[2*i+1]]))}).sort();assert.deepEqual(emitted,original)
+ assert.deepEqual(bundle[0].paths,f.strokes.map((row:any[])=>row.map(m=>m.outline).join(' ')));assert.equal(bundle[0].pathsSha256,sha(JSON.stringify(bundle[0].paths)));assert.equal(bundle[0].geometrySource,sha(bytes("public/hanja-strokes/glyphwiki/u85af-k.json")))
+ assert.equal(p.records.length,7);assert.deepEqual(p.missingReferences,[]);assert.equal(p.preparationHistory.nativeApproval,false);assert.equal(p.preparationHistory.runtimeApplied,false);assert.equal(f.nativeApproval,false);assert.equal(f.runtimeApplied,false);assert.equal(GLYPHWIKI_BATCH1375_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1375_RUNTIME_APPLIED,false)
+ const C=reviewedU85afContext(bundle[0].outlines);assert(C);for(let i=0;i<18;i++){const P=reviewedU85afPolicy(C,i,0);if(i===14){assert(P);assert.equal(P.id,'u85af-15-1');assert.deepEqual(P.segment,f.strokes[i][0])}else assert.equal(P,null)}
+ for(const mutate of[(x:any)=>x[0].outlines[14][0].weight++,(x:any)=>x[0].outlines[14][0].bounds[0]++,(x:any)=>x[0].paths.reverse(),(x:any)=>x[0].glyph='署',(x:any)=>x[0].geometrySource='bad']){const bad=clone(bundle);mutate(bad);assert.throws(()=>load(bad))}assert.throws(()=>load());assert.throws(()=>load(bundle,bundle));assert(Object.isFrozen(ENTRY[0].outlines))
+ assert.equal(review.native.validScreens,35);assert.equal(review.native.breakdown.reduce((n:number,x:any)=>n+x.screens,0),35);assert.equal(review.native.breakdown.find((x:any)=>x.case==='all18-compact9').uniqueSamples,162);assert.equal(review.source.newInternalClock,true);assert.equal(review.source.sourceTimingPreservedClaim,false);assert.equal(review.approval.rootIsolatedActualComponentFiniteApproved,true);assert.equal(review.approval.runtimeRegistrationAuthorized,true);for(const k of ['actualAppUI','controller','storage','all18Autoplay'])assert.equal(review.approval[k],false)
+ for(const [path,hash] of Object.entries(review.inputSHA256))assert.equal(sha(bytes(path)),hash,path)
+ const registry=bytes('lib/hanja-strokes.ts').toString(),imp="import { HANJA_DICTIONARY_GLYPHWIKI_BATCH1375_STROKES } from './hanja-stroke-dictionary-glyphwiki-batch1375.ts'\n",spread="  ...HANJA_DICTIONARY_GLYPHWIKI_BATCH1375_STROKES,\n";assert.equal(registry.split(imp).length,2);assert.equal(registry.split(spread).length,2)
+ const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts'),unique=new Set(HANJA_STROKES.map(x=>x.glyph));assert.equal(unique.size,5790);assert.equal(5978-unique.size,188);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='薯').length,1);assert.deepEqual(hanjaStrokeData({glyph:'薯',strokes:18}),bundle[0]);assert.equal(hanjaStrokeData({glyph:'薯',strokes:17}),null)
+ assert(bytes("public/hanja-strokes/glyphwiki/u85af-k.NOTICE.md").toString().includes(sha(bytes("docs/hanja-actual-component-profiles-2026-10-22/u85af-activation-review.json"))))
+ console.log(JSON.stringify({actualRegistryImport:true,applied:unique.size,remaining:5978-unique.size,targetMatches:1,pens:18,masks:18,polygons:32,sourcePins:Object.keys(review.inputSHA256).length,mismatch:0,nativeFiniteScreens:35,sourceProjection:0,engine:0,oldTests:0,SSR:0,build:false}))
+})
