@@ -1,6 +1,6 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** 1348 미등록 후보. 원정적대응만 확인; 공식방향/source진행/APP/runtime 미승인. */
+/** 1348 ROOT 격리actualcomponent 유한검토/등록승인. 원준비false이력은보존. */
 const EXPECTED = [
   {
     "glyph": "禛",
@@ -311,6 +311,7 @@ export function loadGlyphWikiBatch1348Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1348_STROKES:ReturnType<typeof loadGlyphWikiBatch1348Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1348_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1348_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1348_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1348_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1348_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1348_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1348_ACTUAL_COMPONENT_REVIEW=Object.freeze({file:"docs/hanja-actual-component-profiles-2026-10-22/u799b-native-review.json",sha256:"efa149f6df511726ed9038322d4b33b52bbb83ebb7230841da8d179fc7f14719",isolatedActualComponentFiniteApproved:true,rootRegistrationApproved:true,actualAppUI:false,all15Autoplay:false,storage:false})
