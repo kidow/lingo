@@ -1,0 +1,924 @@
+{
+  "schema": "hanja-actual-component-profile/v1",
+  "kind": "growing-u6f68-caps",
+  "glyph": "潨",
+  "root": "u6f68",
+  "pens": 15,
+  "masks": 17,
+  "polygons": 33,
+  "expectedMaskCounts": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "adapterSHA256": "7aa18de213087eee694a6bcc5a10639311f94fdd06d2dbc07b96f8ac0c59e18a",
+  "fixture": "docs/hanja-source-independent-reorder-u6f68-source-experiment-2026-10-23/fixture.json",
+  "geometrySHA256": "99ac9fce880e3aadcedad052dce8c487290eb5ccb7e6750a6260fd89e3ffb46d",
+  "component": "components/hanja/stroke-outlines.tsx",
+  "inputSHA256": {
+    "docs/hanja-source-independent-reorder-u6f68-source-experiment-2026-10-23/source.mjs": "ccb2482dab9d3bbd852233012d068fc3cc9e386070061500daa980f192e35f47",
+    "docs/hanja-source-independent-reorder-u6f68-source-experiment-2026-10-23/config.json": "28cba4726ea8c45c41390db72356ed0d75da6ffa78d841226f753d8ec18057b3",
+    "docs/hanja-source-independent-reorder-u6f68-source-experiment-2026-10-23/fixture.json": "d07dc4934de46af1ac84ef33cfee28b57d231c660d0a2f5678c6f3e8768a3494",
+    "docs/hanja-source-raw-compare-u6f68-2026-10-23/engine-whole-u6f68.json": "7411f7ea88acc7ba7544d5ac54a8d9f98602569b383a2445c8f6cb5f33367e52",
+    "docs/hanja-source-raw-compare-u6f68-2026-10-23/native-review.json": "0e814e100fee9a835b98dbbcdac83da0dbbe77f698bd549e1ebb35605dfbc2df",
+    "docs/hanja-official-media-compare-u6f68-2026-10-23/official-temporal-native-review.json": "9538bd5158c04fc30ac8713ef77a19870fcc9947deeff8ed388c931af68d4460",
+    "lib/hanja-stroke-start-gate-u6f68.ts": "fa4336f9d6d5592c70680ad89c774a6989cb0174134bfd31477e152015be1e75",
+    "lib/hanja-stroke-start-gate-u6f68.test.ts": "4762324ecaa569138e89e617009471c33b95d30042133f3d2aa370b2ff1738de",
+    "components/hanja/stroke-outlines.tsx": "6a36cd26dc06d56ba96bc28e75e91358886900f2d5ca341f3a7b264bbb633447",
+    "lib/hanja-stroke-start-gate-u7e86.ts": "1127ad53cc9d48904ab359bc4dea738014abcd8c20df72af4279e0f2cf2ea1da",
+    "lib/hanja-stroke-start-gate-u7e1d.ts": "f58bad28fc2dae0a102f2432fdcd46f7ecde850e5a00429931e9d72326d4151a",
+    "lib/hanja-stroke-start-gate-u73b9.ts": "e9949dbd44d77e4fa8a0b2c8c2f0c14b818f3525d8a156610e09fae0e045d24c",
+    "lib/hanja-stroke-start-gate-u7d8e.ts": "7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70",
+    "lib/hanja-stroke-source-clip-u7d8e.ts": "55175df2b275edd0d392e9f13e10734ed4614cbe9dc2a4c8d493d93567ce79cb",
+    "lib/hanja-stroke-start-caps-u7d8e.ts": "b7cba160349b496406d19d0dcba753200906381093fa2de7ebae80bc6ef2d8f9",
+    "lib/hanja-stroke-source-cap-u85af.ts": "aa4dc46ebfab26aa8833870f1ffd23c586ee84feb64e44119cb955f22af21fa5",
+    "lib/hanja-stroke-start-gate-u68b4.ts": "35bab3321db501e8759c0b5a022b51601c94fd8854513cf013defec2724b214b",
+    "lib/hanja-stroke-start-gate-u96ae.ts": "c6384d3d729500a7e7bb3b2202990ec515801721627850e88007e8a53a15a947",
+    "lib/hanja-stroke-start-gate-u7a67.ts": "fe24068e0428c4b59a5737fb7d873bc85aa406acefbc85084a2d647c2cc132c1",
+    "lib/hanja-stroke-start-gate-u686d.ts": "87b8eb126bef1fd11929d6fc7b89318f84c7445f8c5a0f441eee5fd954742027",
+    "lib/hanja-stroke-start-gate-u795b.ts": "52d864d1deb8437f0275dc8aa073ce3984695068df2c7fbd880086120d7a11bf",
+    "lib/hanja-stroke-source-foot-u9e80.ts": "ec875bf079c11150b19e8c5d488fdf4751fd525b6b782e58dc64eb3afc0aa885",
+    "lib/hanja-stroke-source-foot-u7d70.ts": "f650cd4d38c9157ab8f672b71f703287a881cbccc263903f2a59d0288bb16811",
+    "lib/hanja-stroke-start-gate-u5611.ts": "bbb2451ea122e350f1ef0ee09af0eae43dc829c11fd59dde6c55decbd56cd84b",
+    "lib/hanja-stroke-start-gate-u8a29.ts": "934888e6b7edf95ef5d5b5a26513e475d839aecfea07c83dd93955bd9dec6df1",
+    "lib/hanja-stroke-start-gate-u4fd3.ts": "5e4d42771b7a59ad72eec3faab47e5a1741afd8319d81ba6db6074ddd0c8451d",
+    "lib/hanja-stroke-start-gate-u82fd.ts": "ede5d9e900f48cb466138acfb8cc07cfa8a7d30719093180204c652b8c19eac3",
+    "lib/hanja-stroke-start-gate-u6f90.ts": "d9d8e37955b131f12604ea82068e276c2e1241abbed0150363fc7db96075ff48",
+    "lib/hanja-stroke-start-gate-u90b0.ts": "b428f6c24968e2e21e6e909b5c7cded1befb9b99435f986905500857c23921ea",
+    "lib/hanja-stroke-contact-foot-u90b0.ts": "c91d9f2bbc41b75e9855831e5ed6fb246c64c3da96a814c25cb7444e3d192077",
+    "lib/hanja-stroke-start-gate-u6e7a.ts": "6c4384d3db8e9d0043936548efb0264462de4ef2fe1c7886c0b7500969f7bd89",
+    "lib/hanja-stroke-start-gate-u7d85.ts": "9950ab90953cf21347797dc7417c801f07a4b89633db972c03ab29e47ab29a89",
+    "lib/hanja-stroke-start-gate-u7d7a.ts": "eb445f1f9afb0979ade777c495a16185e40cbfdcef74001a07b29dd15ea5c6d9",
+    "lib/hanja-stroke-start-gate-u84b2.ts": "1d69ed73776afde3ea44548c39b653eb7a1c37a51f4caf9ab3f5be2ffb893baf",
+    "lib/hanja-stroke-start-gate-u7c1c.ts": "0a915bbaba4bdb858b4349fbb9b16bd413cd34700a4321fbf36a1e73a1433f73",
+    "lib/hanja-stroke-start-gate-u8fed.ts": "c166fe87adb3db61fda140bf963dd925e4076e925997833c3b683c200badec26",
+    "lib/hanja-stroke-start-gate-u928d.ts": "50eb176f4db69eeb39a3a7f0af3b147eaba44118c8b974223357458d75eba3bf",
+    "lib/hanja-stroke-start-gate-u9081.ts": "7a58927ef750acee31d2975b08b07f23ba2fbfdfc5af729272abdc7db8b16585",
+    "lib/hanja-stroke-start-gate-u564b.ts": "ca01869bb519fb57827704909aeec3e2b8071bd311915c5340ddb975fcd1c613",
+    "lib/hanja-stroke-start-gate-u68b2.ts": "fe77ebf811228ca5c6ddefedbea354f8e4233d00851e0d4200c207c05492180f",
+    "lib/hanja-stroke-start-gate-u6f57.ts": "a7b35a0aae7b35afede3d123cfc8b736a6d56ae46cb54bbd5b3286949896cac5",
+    "lib/hanja-stroke-start-gate-u905d.ts": "963ba442d0a9217fc191dbb3ed4277fcc854c92e926c214d0c0c07a2d3366dbf",
+    "lib/hanja-stroke-start-gate-u8cb6.ts": "0af422a86d3eb458af58384108ad283a2119b91c435372ece85e41e766939c07",
+    "lib/hanja-stroke-start-gate-u9148.ts": "8a566486c6ba4c214f89af62c5b42e270aa53ab50644d7c0bc8bd125ed1d35b4",
+    "lib/hanja-stroke-start-gate-u7037.ts": "ec09bcea8d5a8557a3d27d754cbfae86df07857bc496da08693fbb0e341a3868",
+    "lib/hanja-stroke-start-gate-u7d3d.ts": "f821ad2913459ae6a37d3bc84b211ce9f84b06f87fcaa3ec3c2f63008b891a44",
+    "lib/hanja-stroke-contact-foot-u7d3d.ts": "63c0e90c46550b2d50eba6f4bc039905fda246cb00bed1469809b01b0dc1a872",
+    "lib/hanja-stroke-start-gate-u6303.ts": "9774d49905f6d8f98c18d8e585296769065916f40de9a84e09254ea4b73c7ef8",
+    "lib/hanja-stroke-start-gate-u7277.ts": "43757c391fc54957e04ae8f7116aa57dce06c8dc49f700b62ca2a4bd6046946b",
+    "lib/hanja-stroke-start-gate-can.ts": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7",
+    "lib/hanja-stroke-start-gate-di.ts": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+    "lib/hanja-stroke-start-gate-si.ts": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+    "lib/hanja-stroke-outline.ts": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+    "lib/hanja-stroke-start-gate.ts": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+    "lib/hanja-stroke-source-reuse-u7dc5.ts": "fa2a8f702381fadf4f131f4c37f84255ba88794f6a7ed5cb699ca70723270846",
+    "lib/hanja-stroke-start-hq-u7dc5.ts": "0912c0c25b951731fa589cb7f6d7bf52793fe9d91a737badd8e0ea75c6873a9b",
+    "lib/hanja-stroke-start-gate-u51d7.ts": "0d02720f80f099a9f6ca5fed1cfcbb83cde1299d5204e8ea01a86b460685c035",
+    "lib/hanja-stroke-start-caps-u51d7.ts": "181080dbf722a65a3a9c5b02fb47a53ec47e24269886aa12cd15e29bc37fb3ee",
+    "lib/hanja-stroke-start-other-u7dc5.ts": "862e8d32c5d0bc3883fc78db6676234281548d9163c27b671e1eef26921befeb"
+  },
+  "target": {
+    "id": "u6f68-1-1",
+    "pen": 1,
+    "mask": 1,
+    "kind": "growing-u6f68-caps",
+    "type": "initial-cap",
+    "segment": {
+      "outline": "M12.75 9.75 L14.4 10.25 L16.05 10.7 L17.65 11.2 L19.15 11.85 L20.6 12.6 L21.9 13.45 L23.15 14.35 L24.3 15.4 L25.4 16.5 L26.35 17.75 L21.05 20.6 L20.7 19.55 L20.25 18.55 L19.7 17.55 L19 16.55 L18.2 15.55 L17.3 14.5 L16.25 13.5 L15.1 12.5 L13.85 11.45 L12.4 10.6 Z M26.35 17.75 L26.55 20 L25.15 21.8 L22.85 22 L21.05 20.6 Z",
+      "bounds": [
+        12.4,
+        9.75,
+        26.55,
+        22
+      ],
+      "direction": "curve",
+      "weight": 16.195027,
+      "revealPath": "M12.1175 10 Q20.68 13.5 24.4475 20.5",
+      "revealWidth": 14
+    },
+    "sourceFieldSHA256": "eb88b08de9cd4e726aeb91bd69699084cc0239ac4f88bb3838093ec431b3b632",
+    "q0": [
+      12.1175,
+      10.0
+    ],
+    "radius": 7,
+    "minimumLength": 7,
+    "certificate": {
+      "syntax": "MQ",
+      "T": "1/2",
+      "K": "1/20",
+      "initialArcMax": 7,
+      "notRasterProof": true,
+      "notPreviousMaskConnectivityProof": true,
+      "notFullSweepProof": true
+    }
+  },
+  "attrs": {
+    "measurement": "data-u6f68-measurement",
+    "progress": "data-u6f68-progress",
+    "clip": "data-u6f68-clip"
+  },
+  "prefixes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "SSRPens": [],
+  "constantsFile": "lib/hanja-strokes.ts",
+  "constantLines": [
+    "const STROKE_PLAYBACK_SPEED = 1.5",
+    "export const STROKE_DURATION = 650 / STROKE_PLAYBACK_SPEED",
+    "export const STROKE_GAP = 180 / STROKE_PLAYBACK_SPEED"
+  ],
+  "constantsScanMaxBytes": 262144,
+  "versions": {
+    "react": "19.2.8",
+    "reactDOM": "19.2.8",
+    "scheduler": "0.27.0",
+    "typescript": "5.9.3"
+  },
+  "vendorSHA256": {
+    "react": "e7a035fea0b35de567a563966fdb5e05c01f01f8ff776770d3a44794990ba3d7",
+    "react-dom": "07d30cb25cb9bdf68b9dc7c9467b8f29d9c7ffe0f65c6ade9924e16ac207061b",
+    "react-dom-client": "261c3275492d8f0b1f9b76f78268882316c8435217c39c78c65853bdcd89d500",
+    "scheduler": "646eb671c8585382baff16daf92fe16a4cdd10dcf1a363c58b2ae1f6bf3a2b8d",
+    "jsx-runtime": "dd50fd0db2fba44e0eee66243a45c81cfa3774cf41e4e6c0c080a601815c694d"
+  },
+  "sourceIdentity": {
+    "root": "u6f68",
+    "file": "../hanja-source-raw-compare-u6f68-2026-10-23/engine-whole-u6f68.json",
+    "fileSHA256": "7411f7ea88acc7ba7544d5ac54a8d9f98602569b383a2445c8f6cb5f33367e52"
+  },
+  "curveTargets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 16.195027,
+      "sourceFieldSHA256": "eb88b08de9cd4e726aeb91bd69699084cc0239ac4f88bb3838093ec431b3b632",
+      "revealPath": "M12.1175 10 Q20.68 13.5 24.4475 20.5",
+      "revealWidth": 14
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 16.457286,
+      "sourceFieldSHA256": "2a5b8c023ad3c3a0c93e5071d8dd802e325bb4e0fd5fc38a95f3be7e2633cea6",
+      "revealPath": "M5.61 33 Q14.8575 36.5 18.2825 43.5",
+      "revealWidth": 14
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 27.622116,
+      "sourceFieldSHA256": "b967c03e70965a73d2f8d60182bf1e692ac6e24dbb623330bbe11da15fe19dc2",
+      "revealPath": "M6.295 66.5 Q18.2825 71 16.9125 92",
+      "revealWidth": 14
+    },
+    {
+      "pen": 3,
+      "mask": 2,
+      "direction": "curve",
+      "weight": 44.389977,
+      "sourceFieldSHA256": "72152507f7a93a931a1b000f1051d154686e5ec7074a0ef7fef497aaa9c6b7b7",
+      "revealPath": "M15.2 75 Q16.57 69 30.955 33.5",
+      "revealWidth": 14
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 17.5,
+      "sourceFieldSHA256": "333574b81c9c152840cc77e79c2bf4575cbff046b2786ed24e42db1d861a3946",
+      "revealPath": "M62.875 7.5 Q58.375 14 52.375 21.5",
+      "revealWidth": 14
+    },
+    {
+      "pen": 10,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 41.382363,
+      "sourceFieldSHA256": "2dd64cf44e4c5338076e57757f715cafff8a248a1d4d53ab459665b75d3af671",
+      "revealPath": "M73.375 47 Q61.375 52 32.875 55.5",
+      "revealWidth": 14
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 25.294515,
+      "sourceFieldSHA256": "fc4b1094b0b656e611cfa51ff7478f6398c0fa07a4058f921d3085f41d999c4d",
+      "revealPath": "M49 58.5 Q42.625 69 31.75 77",
+      "revealWidth": 14
+    },
+    {
+      "pen": 13,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 33.51329,
+      "sourceFieldSHA256": "a1ecb3646e7a56fcefd546e925436d47f812ff3b5d0e71702ebd4b9b45a5791c",
+      "revealPath": "M54.25 70 Q43.75 84.5 29.875 93",
+      "revealWidth": 14
+    },
+    {
+      "pen": 14,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 19.445838,
+      "sourceFieldSHA256": "3aee67b55d14c0fb7fba7f2d55da1384c1b20d6b0d529332e19465db19c26e3e",
+      "revealPath": "M86.875 54.5 Q82.375 61 74.5 69.5",
+      "revealWidth": 14
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 46.392517,
+      "sourceFieldSHA256": "b9cbf588c923058bd4d89b88708cf9e148d5cfea2eb0169a5471d3270f5adbea",
+      "revealPath": "M66.25 50 Q76 78 91.375 89",
+      "revealWidth": 14
+    }
+  ],
+  "cardinalTargets": [
+    {
+      "pen": 5,
+      "mask": 1,
+      "direction": "down",
+      "weight": 21.5,
+      "sourceFieldSHA256": "b54ae7c5c01f6ef1e238f184126911fcd2778bd7c731b1386929542d78cc2ec5"
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "direction": "right",
+      "weight": 38.25,
+      "sourceFieldSHA256": "e1822b341b578af90e3971c4f6e923ed1aa13c17642d48743aef25ef75b982e7"
+    },
+    {
+      "pen": 6,
+      "mask": 2,
+      "direction": "down",
+      "weight": 21.5,
+      "sourceFieldSHA256": "69af37df6d3e277c661018b935481d23a584cb2daee2d2a7c4224ccbbc2e4956"
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "direction": "down",
+      "weight": 21.5,
+      "sourceFieldSHA256": "d02230f02232aa541d737429438f23210eade019de38ffa8352dd8305dffe76d"
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "direction": "down",
+      "weight": 21.5,
+      "sourceFieldSHA256": "88e51589a5d598ac8f5a8739822189d5fec9bde1e5119f9ecf83fca9ef026342"
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "direction": "right",
+      "weight": 62.625,
+      "sourceFieldSHA256": "eb4f09c80f5856153e65a8ca8257cf1ace9fd90e3d23dbe397f51478fbb7c4b5"
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "direction": "down",
+      "weight": 43,
+      "sourceFieldSHA256": "66bdb46d48248b5755f6188bc2baecbeb4f0dff9380af179f6be966d957b0c0d"
+    }
+  ],
+  "pairProgress": [
+    {
+      "pen": 3,
+      "weights": [
+        27.622116,
+        44.389977
+      ],
+      "totalWeight": 72.012093,
+      "boundary": 0.3835760752017026,
+      "beforeAtAfter": [
+        0.3835760751017026,
+        0.3835760752017026,
+        0.3835760753017026
+      ],
+      "secondMaskLocalToGlobal": [
+        {
+          "local": 1e-06,
+          "global": 0.38357669162562735
+        },
+        {
+          "local": 0.01,
+          "global": 0.3897403144496856
+        },
+        {
+          "local": 0.03,
+          "global": 0.4020687929456515
+        }
+      ],
+      "deferredUntilInitialRiskReview": true
+    },
+    {
+      "pen": 6,
+      "weights": [
+        38.25,
+        21.5
+      ],
+      "totalWeight": 59.75,
+      "boundary": 0.6401673640167364,
+      "beforeAtAfter": [
+        0.6401673639167363,
+        0.6401673640167364,
+        0.6401673641167364
+      ],
+      "secondMaskLocalToGlobal": [
+        {
+          "local": 1e-06,
+          "global": 0.6401677238493725
+        },
+        {
+          "local": 0.01,
+          "global": 0.643765690376569
+        },
+        {
+          "local": 0.03,
+          "global": 0.6509623430962344
+        }
+      ],
+      "deferredUntilInitialRiskReview": true
+    }
+  ],
+  "coverage": "원P minus 실제 원full-round mask. 각growing target의 p1 원round와 나머지cardinal7을 분리하며 coverage native아직0.",
+  "initialRiskPlan": {
+    "scope": "새10MQ growing정책의 corrected starts 새native관찰(미실시)",
+    "targets": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "sourceFieldSHA256": "eb88b08de9cd4e726aeb91bd69699084cc0239ac4f88bb3838093ec431b3b632",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 1e-06,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "sourceFieldSHA256": "2a5b8c023ad3c3a0c93e5071d8dd802e325bb4e0fd5fc38a95f3be7e2633cea6",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 1e-06,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 3,
+        "mask": 1,
+        "sourceFieldSHA256": "b967c03e70965a73d2f8d60182bf1e692ac6e24dbb623330bbe11da15fe19dc2",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 3.835760752017026e-07,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 3,
+        "mask": 2,
+        "sourceFieldSHA256": "72152507f7a93a931a1b000f1051d154686e5ec7074a0ef7fef497aaa9c6b7b7",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 0.38357669162562735,
+        "requestedLocalZeroGlobal": 0.3835760752017026,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 4,
+        "mask": 1,
+        "sourceFieldSHA256": "333574b81c9c152840cc77e79c2bf4575cbff046b2786ed24e42db1d861a3946",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 1e-06,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 10,
+        "mask": 1,
+        "sourceFieldSHA256": "2dd64cf44e4c5338076e57757f715cafff8a248a1d4d53ab459665b75d3af671",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 1e-06,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 12,
+        "mask": 1,
+        "sourceFieldSHA256": "fc4b1094b0b656e611cfa51ff7478f6398c0fa07a4058f921d3085f41d999c4d",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 1e-06,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 13,
+        "mask": 1,
+        "sourceFieldSHA256": "a1ecb3646e7a56fcefd546e925436d47f812ff3b5d0e71702ebd4b9b45a5791c",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 1e-06,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 14,
+        "mask": 1,
+        "sourceFieldSHA256": "3aee67b55d14c0fb7fba7f2d55da1384c1b20d6b0d529332e19465db19c26e3e",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 1e-06,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      },
+      {
+        "pen": 15,
+        "mask": 1,
+        "sourceFieldSHA256": "b9cbf588c923058bd4d89b88708cf9e148d5cfea2eb0169a5471d3270f5adbea",
+        "requestedLocalEpsilon": 1e-06,
+        "requestedGlobalForLocalEpsilon": 1e-06,
+        "requestedLocalZeroGlobal": 0,
+        "zeroComparisonOnlyIfNeeded": true,
+        "actualNativeObserved": false
+      }
+    ],
+    "actualFailuresObserved": 0,
+    "observationStatus": "corrected-policy-not-run",
+    "continueOtherIndependentMQStartsAfterOneFailure": true,
+    "onAnyInitialFailureStop": [
+      "full-matrices",
+      "coverage",
+      "fine",
+      "natural"
+    ],
+    "pairBoundariesDeferred": [
+      3,
+      6
+    ],
+    "zeroAreaOrContinuityClaim": false,
+    "arclengthNotMathematicallySubstituted": true,
+    "historicalPlainInitialFailures": 10
+  },
+  "requiredFreshNative": [
+    "10개 ownMQ 보정시작·early/rho/p1/coverage를 ROOT 새유한관찰로 검토. 초기plain20/HOLD와고유수학·DOM mock은새native승인을대신하지않음.",
+    "3QQ 원경계 및3m2 선행원P접촉·시간연결은caps와독립한미승인 게이트. 6VH 원독립cardinal2 경계와나머지cardinal7 보존확인.",
+    "원15획compact/fine/natural/whole은위험통과후ROOT별도진행. 전체시간/UA·AA수학보장·제품UI/runtime승인false."
+  ],
+  "historicalSourceHOLDAndFalsePreserved": true,
+  "staticMappingReference": {
+    "path": "docs/hanja-source-raw-compare-u6f68-2026-10-23/native-review.json",
+    "SHA256": "0e814e100fee9a835b98dbbcdac83da0dbbe77f698bd549e1ebb35605dfbc2df",
+    "screens": 24,
+    "initial21MisreadPreserved": true,
+    "correctedRows": [
+      12,
+      13,
+      14
+    ],
+    "scope": "정정3 재관찰+나머지12 기존정적근거만"
+  },
+  "officialMacroReference": {
+    "path": "docs/hanja-official-media-compare-u6f68-2026-10-23/official-temporal-native-review.json",
+    "SHA256": "9538bd5158c04fc30ac8713ef77a19870fcc9947deeff8ed388c931af68d4460",
+    "screens": 45,
+    "sourceTimeOrInternalClockEquivalence": false
+  },
+  "expectedResourceClosureModules": 53,
+  "resourceClosureSHA256": "2f27d3f0b714b8db0c5d88c251a4092cf8c554b35337062402bd77af0e4fc51f",
+  "sharedWindowPending": false,
+  "profileFinalized": true,
+  "executionEnabled": true,
+  "isolatedActualComponentBrowserVerified": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "authorSSR": 0,
+  "authorHTTP": 0,
+  "authorServer": 0,
+  "engineRuns": 0,
+  "sourceProjection": 0,
+  "date": "2026-10-23",
+  "targets": [
+    {
+      "id": "u6f68-1-1",
+      "pen": 1,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M12.75 9.75 L14.4 10.25 L16.05 10.7 L17.65 11.2 L19.15 11.85 L20.6 12.6 L21.9 13.45 L23.15 14.35 L24.3 15.4 L25.4 16.5 L26.35 17.75 L21.05 20.6 L20.7 19.55 L20.25 18.55 L19.7 17.55 L19 16.55 L18.2 15.55 L17.3 14.5 L16.25 13.5 L15.1 12.5 L13.85 11.45 L12.4 10.6 Z M26.35 17.75 L26.55 20 L25.15 21.8 L22.85 22 L21.05 20.6 Z",
+        "bounds": [
+          12.4,
+          9.75,
+          26.55,
+          22
+        ],
+        "direction": "curve",
+        "weight": 16.195027,
+        "revealPath": "M12.1175 10 Q20.68 13.5 24.4475 20.5",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "eb88b08de9cd4e726aeb91bd69699084cc0239ac4f88bb3838093ec431b3b632",
+      "q0": [
+        12.1175,
+        10.0
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/2",
+        "K": "1/20",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-2-1",
+      "pen": 2,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M6.2 32.75 L8 33.25 L9.8 33.65 L11.45 34.2 L13 34.85 L14.5 35.55 L15.85 36.4 L17.15 37.35 L18.3 38.4 L19.35 39.55 L20.3 40.8 L14.9 43.45 L14.6 42.5 L14.2 41.55 L13.65 40.55 L13 39.55 L12.15 38.55 L11.2 37.55 L10.1 36.5 L8.85 35.5 L7.5 34.45 L5.9 33.55 Z M20.3 40.8 L20.4 43.1 L18.9 44.8 L16.65 44.95 L14.9 43.45 Z",
+        "bounds": [
+          5.9,
+          32.75,
+          20.4,
+          44.95
+        ],
+        "direction": "curve",
+        "weight": 16.457286,
+        "revealPath": "M5.61 33 Q14.8575 36.5 18.2825 43.5",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "2a5b8c023ad3c3a0c93e5071d8dd802e325bb4e0fd5fc38a95f3be7e2633cea6",
+      "q0": [
+        5.61,
+        33.0
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/2",
+        "K": "1/20",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-3-1",
+      "pen": 3,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M6.9 66.25 L9.4 66.85 L11.7 67.95 L13.75 69.55 L15.5 71.55 L17 73.95 L18.2 76.65 L19.05 79.7 L19.65 83.1 L19.95 86.75 L20 90.65 L14 90.3 L14.25 86.75 L14.3 83.5 L14.1 80.55 L13.7 77.95 L13.1 75.6 L12.3 73.55 L11.25 71.7 L10 70 L8.45 68.5 L6.6 67.05 Z M20 90.65 L18.95 92.7 L16.8 93.45 L14.75 92.45 L14 90.3 Z",
+        "bounds": [
+          6.6,
+          66.25,
+          20,
+          93.45
+        ],
+        "direction": "curve",
+        "weight": 27.622116,
+        "revealPath": "M6.295 66.5 Q18.2825 71 16.9125 92",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "b967c03e70965a73d2f8d60182bf1e692ac6e24dbb623330bbe11da15fe19dc2",
+      "q0": [
+        6.295,
+        66.5
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/3",
+        "K": "1/13",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-3-2",
+      "pen": 3,
+      "mask": 2,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M12.25 74.3 L12.85 72.65 L13.7 70.55 L14.8 67.9 L16.15 64.65 L17.8 60.85 L19.75 56.45 L21.95 51.5 L24.45 46 L27.3 39.95 L30.5 33.3 L31.35 33.65 L29.05 40.65 L26.95 47 L25 52.7 L23.25 57.85 L21.8 62.35 L20.55 66.25 L19.55 69.55 L18.8 72.25 L18.3 74.3 L18.1 75.65 Z",
+        "bounds": [
+          12.25,
+          33.3,
+          31.35,
+          75.65
+        ],
+        "direction": "curve",
+        "weight": 44.389977,
+        "revealPath": "M15.2 75 Q16.57 69 30.955 33.5",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "72152507f7a93a931a1b000f1051d154686e5ec7074a0ef7fef497aaa9c6b7b7",
+      "q0": [
+        15.2,
+        75.0
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/3",
+        "K": "1/12",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-4-1",
+      "pen": 4,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M65.05 9.6 L64 10.75 L62.95 11.9 L61.8 13.1 L60.65 14.3 L59.45 15.5 L58.2 16.7 L56.9 17.95 L55.55 19.2 L54.1 20.45 L52.7 21.75 L52 21.2 L53 19.55 L53.8 17.85 L54.65 16.25 L55.5 14.7 L56.35 13.15 L57.15 11.7 L57.95 10.25 L58.7 8.85 L59.4 7.5 L60.1 6.2 Z M59.8 6.6 L60.35 5.85 L65.05 9.6 Z M65.05 9.6 L65.7 11.25 L62.8 11.1 Z",
+        "bounds": [
+          52,
+          5.85,
+          65.7,
+          21.75
+        ],
+        "direction": "curve",
+        "weight": 17.5,
+        "revealPath": "M62.875 7.5 Q58.375 14 52.375 21.5",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "333574b81c9c152840cc77e79c2bf4575cbff046b2786ed24e42db1d861a3946",
+      "q0": [
+        62.875,
+        7.5
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/2",
+        "K": "1/100",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-10-1",
+      "pen": 10,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M74.05 49.95 L71.35 50.8 L68.4 51.6 L65.1 52.35 L61.45 53.05 L57.55 53.75 L53.3 54.35 L48.7 54.9 L43.75 55.35 L38.5 55.7 L32.9 55.9 L32.8 55.05 L38.25 53.8 L43.35 52.7 L48.15 51.65 L52.6 50.6 L56.7 49.55 L60.4 48.55 L63.8 47.5 L66.8 46.45 L69.45 45.45 L71.75 44.4 Z M71.25 44.6 L76.25 49 L74.05 49.95 Z M76.25 49 L76.35 50.6 L73.1 49.25 Z",
+        "bounds": [
+          32.8,
+          44.4,
+          76.35,
+          55.9
+        ],
+        "direction": "curve",
+        "weight": 41.382363,
+        "revealPath": "M73.375 47 Q61.375 52 32.875 55.5",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "2dd64cf44e4c5338076e57757f715cafff8a248a1d4d53ab459665b75d3af671",
+      "q0": [
+        73.375,
+        47.0
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/4",
+        "K": "1/40",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-12-1",
+      "pen": 12,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M51.3 60.45 L49.8 62.5 L48.25 64.45 L46.6 66.3 L44.8 68.15 L42.95 69.9 L41 71.6 L38.95 73.2 L36.75 74.7 L34.45 76.1 L32 77.35 L31.45 76.6 L33.25 74.6 L35 72.65 L36.7 70.8 L38.35 68.9 L39.85 67 L41.3 65.1 L42.65 63.2 L43.9 61.25 L45.1 59.3 L46.15 57.35 Z M45.9 57.75 L46.4 56.9 L51.3 60.45 Z M51.3 60.45 L52.05 62.1 L49.15 62.1 Z",
+        "bounds": [
+          31.45,
+          56.9,
+          52.05,
+          77.35
+        ],
+        "direction": "curve",
+        "weight": 25.294515,
+        "revealPath": "M49 58.5 Q42.625 69 31.75 77",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "fc4b1094b0b656e611cfa51ff7478f6398c0fa07a4058f921d3085f41d999c4d",
+      "q0": [
+        49.0,
+        58.5
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/3",
+        "K": "1/50",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-13-1",
+      "pen": 13,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M56.35 72.15 L54.1 74.9 L51.75 77.5 L49.35 80 L46.85 82.4 L44.25 84.6 L41.6 86.7 L38.85 88.65 L36.05 90.45 L33.1 92 L30.1 93.35 L29.6 92.6 L32.05 90.45 L34.45 88.25 L36.8 86.1 L39.1 83.85 L41.35 81.55 L43.5 79.15 L45.6 76.65 L47.65 74.05 L49.6 71.4 L51.5 68.6 Z M51.2 69.05 L51.75 68.3 L56.35 72.15 Z M56.35 72.15 L57 73.85 L54.1 73.6 Z",
+        "bounds": [
+          29.6,
+          68.3,
+          57,
+          93.35
+        ],
+        "direction": "curve",
+        "weight": 33.51329,
+        "revealPath": "M54.25 70 Q43.75 84.5 29.875 93",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "a1ecb3646e7a56fcefd546e925436d47f812ff3b5d0e71702ebd4b9b45a5791c",
+      "q0": [
+        54.25,
+        70.0
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/4",
+        "K": "1/80",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-14-1",
+      "pen": 14,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M89.05 56.6 L87.95 57.8 L86.85 59 L85.6 60.25 L84.35 61.55 L82.95 62.85 L81.5 64.2 L79.95 65.55 L78.35 66.95 L76.6 68.3 L74.8 69.8 L74.15 69.15 L75.45 67.3 L76.6 65.4 L77.75 63.65 L78.85 61.95 L79.9 60.3 L80.9 58.75 L81.8 57.25 L82.65 55.85 L83.4 54.5 L84.1 53.2 Z M83.8 53.6 L84.35 52.85 L89.05 56.6 Z M89.05 56.6 L89.7 58.25 L86.8 58.1 Z",
+        "bounds": [
+          74.15,
+          52.85,
+          89.7,
+          69.8
+        ],
+        "direction": "curve",
+        "weight": 19.445838,
+        "revealPath": "M86.875 54.5 Q82.375 61 74.5 69.5",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "3aee67b55d14c0fb7fba7f2d55da1384c1b20d6b0d529332e19465db19c26e3e",
+      "q0": [
+        86.875,
+        54.5
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/2",
+        "K": "1/60",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    },
+    {
+      "id": "u6f68-15-1",
+      "pen": 15,
+      "mask": 1,
+      "kind": "growing-u6f68-caps",
+      "type": "initial-cap",
+      "segment": {
+        "outline": "M66.8 50.3 L69.35 55.4 L71.8 60.2 L74.3 64.65 L76.8 68.8 L79.4 72.55 L82.05 76 L84.75 79.1 L87.55 81.85 L90.35 84.25 L93.25 86.3 L89.45 91.65 L86.3 89 L83.35 86 L80.55 82.7 L77.9 79.05 L75.45 75.1 L73.15 70.85 L71.05 66.3 L69.1 61.4 L67.4 56.15 L65.95 50.6 Z M89.45 91.65 L93.25 86.3 L94.9 87.45 Z",
+        "bounds": [
+          65.95,
+          50.3,
+          94.9,
+          91.65
+        ],
+        "direction": "curve",
+        "weight": 46.392517,
+        "revealPath": "M66.25 50 Q76 78 91.375 89",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "b9cbf588c923058bd4d89b88708cf9e148d5cfea2eb0169a5471d3270f5adbea",
+      "q0": [
+        66.25,
+        50.0
+      ],
+      "radius": 7,
+      "minimumLength": 7,
+      "certificate": {
+        "syntax": "MQ",
+        "T": "1/4",
+        "K": "1/100",
+        "initialArcMax": 7,
+        "notRasterProof": true,
+        "notPreviousMaskConnectivityProof": true,
+        "notFullSweepProof": true
+      }
+    }
+  ],
+  "historicalPlainHoldReference": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u6f68-plain-native-hold.json",
+    "SHA256": "96fb15c561f4a5216eca370f0672655b6551d3fe18dd44ef79f6847f8124c142",
+    "validScreens": 20,
+    "initialNibFailures": 10
+  },
+  "componentContract": {
+    "child": "U6f68CapsOutline",
+    "context": "reviewedU6f68Context",
+    "policy": "reviewedU6f68Policy",
+    "commit": "commitReviewedU6f68Caps",
+    "dataStrokeRevealPolicy": "policy.kind",
+    "expectedTargetKind": "growing-u6f68-caps",
+    "reporterNamespace": "u6f68",
+    "newHelperAliasImportGuardKindRequired": "growing-u6f68-caps",
+    "oldBranchesMustInverseByteRestore": true,
+    "oldMathDOMReruns": 0,
+    "CSetupRuns": 0
+  },
+  "sharedVersion": 52,
+  "actualFull5File": "docs/hanja-source-raw-compare-u6f68-2026-10-23/engine-whole-u6f68.json",
+  "actualFull5SHA256": "7411f7ea88acc7ba7544d5ac54a8d9f98602569b383a2445c8f6cb5f33367e52"
+}
