@@ -1,0 +1,143 @@
+{
+  "schema": "hanja-source-terminal-coverage-analysis/v1",
+  "date": "2026-10-23",
+  "glyph": "蓫",
+  "root": "u84eb-ue0100",
+  "pen": 7,
+  "mask": 1,
+  "rawOneBased": 14,
+  "status": "exact-positive-area-original-LEFT-quad-not-covered-by-original-full-round-guide",
+  "inputSHA256": {
+    "docs/hanja-source-cache-vs0-u84eb-2026-10-23/fixture.json": "c67bb25247c2d80c43728bfc1d773e542084f3ff3eac977dfe44b0b5dcffb149",
+    "docs/hanja-source-cache-vs0-u84eb-2026-10-23/config.json": "3e51c96fe49b2e151d6685b1e95c2c0bc00a4cdb27797aff400cea1691a57a92",
+    "docs/hanja-goal-glyphwiki-batch937-2026-10-13/engine-whole-u84eb-ue0100.json": "dfb4f007cd74373bae70ca8fee7eedb9ccb3f197c4bd6d42bb1c133c0f30bd54"
+  },
+  "sourceGeometrySHA256": "a7430c823dbf1398dc3abd6e5ae05023a566268bbb54eac3ae8b4255dc251cad",
+  "sourceCounts": {
+    "pens": 15,
+    "masks": 18,
+    "polygons": 35
+  },
+  "source": {
+    "direction": "curve",
+    "guide": "M56.815 38.732 Q72.1875 61.36999999999999 66.28332134766033 78.81003540383412 Q64.68 83.546 59.68000000000001 83.546",
+    "width": 14,
+    "bodyWeight": 49.307365,
+    "originalPolygonCount": 4,
+    "terminalOriginalP": "M59.65 83.5 L49.65 82 L49.65 80.5 L59.65 80.5 Z",
+    "terminalSourceFlags": [
+      2,
+      14
+    ],
+    "bodyOriginalPolygons": 3,
+    "sourceVsBaseMixed": false
+  },
+  "nativeReportScope": {
+    "observer": "ROOT",
+    "coverageScreens": 9,
+    "coverageMasks": 10,
+    "pen7OriginalTerminalBlackResidualObserved": true,
+    "otherNineMasksWhite": true,
+    "notAnInitialHeadCapIssue": true,
+    "pixelAreaNotMeasured": true
+  },
+  "proof": {
+    "exactDecimalRationals": true,
+    "witnessBox": [
+      [
+        "497/10",
+        "249/5"
+      ],
+      [
+        "403/5",
+        "807/10"
+      ]
+    ],
+    "witnessArea": "1/100",
+    "allBoxCornersStrictInsideConvexTerminal": true,
+    "entireGuideBezierConvexHullMinX": "11363/200",
+    "roundTubeDistanceSquaredLower": "1968409/40000",
+    "roundTubeDistanceSquaredMinus49": "8409/40000",
+    "roundCapsIncludedBySameTubeBound": true,
+    "miterAtOnlyQQJoin": {
+      "join": [
+        "6628332134766033/100000000000000",
+        "1970250885095853/25000000000000"
+      ],
+      "incomingTangent": [
+        "-590417865233967/100000000000000",
+        "1744003540383413/100000000000000"
+      ],
+      "outgoingTangent": [
+        "-160332134766033/100000000000000",
+        "118399114904147/25000000000000"
+      ],
+      "tangentDot": "184123371804269092209368859551/2000000000000000000000000000",
+      "dotPositive": true,
+      "turnAngleStrictlyBelow90Degrees": true,
+      "miterLengthStrictlyLessThan": "7*sqrt(2)<10",
+      "miterXStrictlyGreaterThan": "5628332134766033/100000000000000",
+      "witnessMaxX": "249/5",
+      "joinCannotReachWitness": true
+    },
+    "positiveAreaCoverageFailure": true,
+    "raw14TerminalFourPointsEqualProductTerminal": true
+  },
+  "partitionFeasibilityPlanOnly": {
+    "sourceMutationExecuted": false,
+    "retainOriginalBodyThreePolygons": true,
+    "retainOriginalBodyGuideWidthWeight": true,
+    "moveWholeOriginalQuadToSeparateMask": true,
+    "terminalDirection": "left",
+    "terminalBounds": [
+      49.65,
+      80.5,
+      59.65,
+      83.5
+    ],
+    "terminalWeightProposal": "10",
+    "newInternalMicroclock": true,
+    "newGuide": false,
+    "newInk": false,
+    "newConnector": false,
+    "original35PolygonsExactlyOnceIfWholeQuadMoved": true,
+    "proposedCounts": {
+      "pens": 15,
+      "masks": 19,
+      "polygons": 35,
+      "originalPolygons": 35,
+      "fragments": 35
+    },
+    "originalBodyTerminalSharedSegment": [
+      [
+        "1193/20",
+        "161/2"
+      ],
+      [
+        "1193/20",
+        "167/2"
+      ]
+    ],
+    "sharedSegmentLength": "3",
+    "sharedSegmentInsideActualOriginalBodyEdge": true,
+    "sharedSegmentWithinOriginalRoundEndpointDiskSquaredMax": "92790160000000006000000000001/10000000000000000000000000000",
+    "sharedSegmentInsideOriginalRoundEndpointDisk": true,
+    "newLeftClip": "originalQuad intersect x >= maxX - (maxX-minX)*localProgress; p0 explicit empty,p1 originalQuad",
+    "idealAreaUpper": "30*localProgress -> 0",
+    "terminalArea": "45/2",
+    "allBodyThreePolygonsFullRoundCoverageProved": false,
+    "rootFreshBodyCoverageBoundaryFineRequired": true,
+    "nativeApproval": false,
+    "allUAOrAAPolicyProof": false,
+    "officialMicroTimingEquivalent": false
+  },
+  "authorActions": {
+    "newMathBatch": 1,
+    "sourceProjection": 0,
+    "engine": 0,
+    "rendererChanged": false,
+    "sourceChanged": false,
+    "sharedChanged": false,
+    "runtimeApplied": false
+  }
+}
