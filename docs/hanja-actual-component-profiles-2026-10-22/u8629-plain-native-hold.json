@@ -1,0 +1,152 @@
+{
+  "schema": "hanja-isolated-actual-component-native-hold/v1",
+  "glyph": "蘩",
+  "root": "u8629-ue0102",
+  "date": "2026-10-23",
+  "observer": "/root",
+  "status": "HOLD: fixed initial heads, two source-terminal coverage omissions and QQ16/17 detached activation",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u8629.json": "c5b1a7eb9898491715f542b0e74c0a15ec8715252a64c4e9c779838df7bc3db6",
+    "docs/hanja-source-cache-u8629-vs2-2026-10-23/config.json": "85556041c995dceff45e28163d2fffb4387515f97366e4ab5c865492098df44b",
+    "docs/hanja-source-cache-u8629-vs2-2026-10-23/source.mjs": "9ef463521266802036270d159460e7da443b3cd85aa4b3e3d1d9811d331eeb53",
+    "docs/hanja-source-cache-u8629-vs2-2026-10-23/fixture.json": "33d167d14d57f9ec122386b101fbab2ed5557342af9353c3158c37f85e44e1c4",
+    "docs/hanja-goal-glyphwiki-batch593-2026-10-11/engine-whole-u8629-ue0102.json": "941040794a9a052683f9a5b5d62c9fcce4519e28bceecabc0c2471ecb84cb780"
+  },
+  "observedShared": {
+    "version": 75,
+    "TSX": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "bb49111b69ad2eefbf0551e24cdb996c6ad538d0b190d9b48938cc0dc01457c1"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "0f10862ed0f58a68c045a4eecc114624c9ddf47ae1f44535fe56033408314188"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u8629.json",
+      "SHA256": "c5b1a7eb9898491715f542b0e74c0a15ec8715252a64c4e9c779838df7bc3db6"
+    }
+  },
+  "source": {
+    "pens": 21,
+    "masks": 23,
+    "polygons": 54,
+    "geometrySHA256": "d907abe27b2415b93a0ccf63d0908e03dc4e7ecd4e32de842c1824729b609a71",
+    "unchanged": true
+  },
+  "native": {
+    "validScreens": 45,
+    "coverage": {
+      "screens": 13,
+      "curveMasks": 15,
+      "positiveBlackResidual": [
+        {
+          "pen": 7,
+          "mask": 1,
+          "syntax": "MLL",
+          "scope": "작은 원삼각형 잔여; AA로판정하지않음"
+        },
+        {
+          "pen": 8,
+          "mask": 1,
+          "syntax": "MLQQ",
+          "scope": "원LEFTtail 잔여; AA로판정하지않음"
+        }
+      ],
+      "otherMasksWhite": 13
+    },
+    "initialEpsilon": {
+      "screens": 13,
+      "pens": [
+        5,
+        7,
+        8,
+        9,
+        10,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21
+      ],
+      "finiteHeadFirstFAIL": 13
+    },
+    "QQActivation": {
+      "screens": 14,
+      "pens": [
+        16,
+        17
+      ],
+      "eachBoundarySamples": 3,
+      "eachSecondMaskLocals": [
+        0.000001,
+        0.01,
+        0.03,
+        0.1
+      ],
+      "fixedHeadFAIL": true,
+      "pen17SecondMaskDetachedAtAllFourLocals": true,
+      "pen16SecondMaskDetachedAtGlobalHalf": true
+    },
+    "pen16GlobalHalf": {
+      "screens": 1,
+      "global": 0.5,
+      "detachedLowerLeftTriangle": true
+    },
+    "terminalBoards": {
+      "screens": 4,
+      "pens": [
+        7,
+        8
+      ],
+      "compact9Boards": 2,
+      "fine3Boards": 2,
+      "nearOneToExactOriginalPJumpObserved": true,
+      "pen7SmallTriangleGapCoverage": true,
+      "pen8LeftTailParticularlyVisible": true
+    },
+    "bad": [],
+    "errors": [],
+    "boundaryExactZeroClaimed": false,
+    "possibleULPStaleAtBoundaryNotUsedAsZeroEvidence": true,
+    "unexecuted": [
+      "전체21coarse matrix",
+      "다른획fine",
+      "natural replay",
+      "제품UI",
+      "runtime승인"
+    ]
+  },
+  "server": {
+    "PID": 31019,
+    "sessionId": 43291,
+    "port": 59412,
+    "SSR": 1,
+    "CJS": 81,
+    "ESM": 81,
+    "engineRuns": 0,
+    "projectionRuns": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "stopOutputEmpty": true
+  },
+  "preservation": {
+    "oldQQ16HOLD": "docs/hanja-source-native-hold-u8629-vs2-qq16-connectivity-2026-10-21/hold.json",
+    "oldHOLDUnchanged": true,
+    "officialMacro63Separate": true,
+    "staticMapping21Separate": true,
+    "sourceChanged": false,
+    "rendererChanged": false,
+    "profileChanged": false,
+    "sourceContactApprovalInherited": false
+  },
+  "nativeApproval": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "authorSSR": 0,
+  "authorServerStarts": 0
+}
