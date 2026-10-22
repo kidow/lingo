@@ -1,0 +1,90 @@
+{
+  "schema": "hanja-source-native-hold-u5611-left14-completion/v1",
+  "date": "2026-10-22",
+  "glyph": "嘑",
+  "status": "UP9-finite-recovery-LEFT14-FIRSTcompletionFAIL",
+  "inputSHA256": {
+    "docs/hanja-renderer-growing-hq6-up9-u5611-experiment-2026-10-22/fixture.json": "da96222ca399787ebafbaf15d78dbbd3c742dc67d3aa22cfa5aac9cf389b2260",
+    "docs/hanja-renderer-growing-hq6-up9-u5611-experiment-2026-10-22/render.mjs": "5bfc92d50d3ae4c6499993bfe37ee2f59d9a2dc4c65e2803ecb7793cffbe0f3c",
+    "docs/hanja-renderer-growing-hq6-up9-u5611-experiment-2026-10-22/serve.py": "a6e651db024a5e60d233b018f5b294a3566370dc2c50f52be758a8a90fe31cce",
+    "docs/hanja-renderer-growing-hq6-up9-u5611-experiment-2026-10-22/check.mjs": "e627b5292b7c95f6998f42285fb6faf566e3e018b23659253890b8452da4264f"
+  },
+  "readmeSHA256": "e9776f397f7f124c268347aa993e736b4872826111f21f189b89801122464d75",
+  "counts": {
+    "pens": 14,
+    "masks": 17,
+    "polygons": 40
+  },
+  "geometrySHA256": "ea03032f8d367306063644973a80a18d73db3e1df2dde62b6ae17096d939ab31",
+  "observations": {
+    "owner": "ROOT",
+    "actual520Frames": 9,
+    "UP9Completion": {
+      "global": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "frames": 3,
+      "largeJumpObserved": false
+    },
+    "UP9Boundary": {
+      "boundary": 0.7757789940003481,
+      "delta": 1e-10,
+      "frames": 3,
+      "newLargeInkObserved": false
+    },
+    "LEFT14Completion": {
+      "global": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "frames": 3,
+      "result": "FIRSTFAIL",
+      "description": "exact1 extends short left tip into long horizontal/triangular lower-left tail",
+      "approxPixelsVisualOnly": 18,
+      "pixelsMeasured": false
+    },
+    "currentErrors": [],
+    "allNativeApproved": false
+  },
+  "terminal": {
+    "kind": "cdDrawCurve",
+    "args": [
+      137.015,
+      173,
+      137.015,
+      183,
+      127.01499999999999,
+      183,
+      1,
+      14
+    ],
+    "flags": "LEFT14",
+    "terminal23": false
+  },
+  "server": {
+    "pid": 18734,
+    "port": 58378,
+    "session": 77937,
+    "owner": "ROOT",
+    "stopped": true,
+    "exitCode": 130,
+    "traceLines": 2,
+    "traceTokens": 45,
+    "pidAbsentConfirmed": null
+  },
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "oldHistoryUnchanged": true,
+  "sourceCompiler": 0,
+  "engine": 0,
+  "oldChecksRepeated": 0,
+  "metadata": {
+    "executions": 1,
+    "status": "PASS",
+    "scope": "record input digests and actual-result relationships only"
+  }
+}
