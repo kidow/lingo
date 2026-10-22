@@ -294,17 +294,28 @@
     ],
     [
       {
-        "outline": "M52.6 57 L67.65 57 L67.65 59 L52.6 59 Z M70.65 58 L70.65 78 L64.65 81 L64.65 58 Z M64.65 57 L67.65 54.5 L73.15 59 L70.65 61 L64.65 58 Z",
+        "outline": "M52.6 57 L67.65 57 L67.65 59 L52.6 59 Z M70.65 58 L70.65 74 L64.65 74 L64.65 58 Z M64.65 57 L67.65 54.5 L73.15 59 L70.65 61 L64.65 58 Z",
         "bounds": [
           52.6,
           54.5,
           73.15,
-          81
+          74
         ],
         "direction": "curve",
         "weight": 31.015,
         "revealPath": "M52.635 58 L67.65 58 L67.65 74",
         "revealWidth": 14
+      },
+      {
+        "outline": "M70.65 74 L70.65 78 L64.65 81 L64.65 74 Z",
+        "bounds": [
+          64.65,
+          74,
+          70.65,
+          81
+        ],
+        "direction": "down",
+        "weight": 7
       }
     ],
     [
@@ -347,7 +358,7 @@
       }
     ]
   ],
-  "geometrySHA256": "ad28c4ceeebbd1cb083e5f75c8ce1e7c7600b82e024a79cc4497fddeb99c6c98",
+  "geometrySHA256": "fd1107914d54d9c146417adebd316fe9e674c0d9677f6c4cb6d66133d420b142",
   "pureProjectorBodySHA256": "5da77fd17e75d995446b3ed6ee2ced96b9a60cf92eec0c8d39f89100bb2abf87",
   "basePureProjectorBodySHA256": "f58c62d83c662318ab347384c31cc6403342289cb96fe5523a003b0e2bc72038",
   "preparation": {
@@ -356,10 +367,12 @@
     "originalCompilerCalls": 0,
     "existingCandidateFactoryCalls": 0,
     "engineRuns": 0,
-    "newTerminalDerivations": 1
+    "newTerminalDerivations": 2,
+    "cachedCorrectionOperations": 1,
+    "exactTerminalPolygonSplits": 1
   },
   "sourcePreservation": {
-    "original36PolygonsExactlyOnce": true,
+    "original36PolygonsExactlyOnce": false,
     "nonDrawingRaw": {
       "oneBased": 9,
       "group": {
@@ -419,7 +432,119 @@
     "originalBodyGuideWidthWeightPreserved": true,
     "newGuideOrConnector": false,
     "logicalStrokeDurationChanged": false,
-    "internalBodyTailAllocationChanged": true
+    "internalBodyTailAllocationChanged": true,
+    "originalProjection36PolygonsExactlyOnce": true,
+    "original36PolygonUnionExact": true,
+    "emittedPolygonCount": 37,
+    "terminal23Split": {
+      "logicalPen": 14,
+      "rawOneBased": 16,
+      "polygonIndex": 0,
+      "sourceTerminal": 23,
+      "sourceCutY": 148,
+      "originalPolygon": [
+        {
+          "x": 141.3,
+          "y": 116,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 156,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 162,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 116,
+          "off": 0
+        }
+      ],
+      "bodyPolygon": [
+        {
+          "x": 141.3,
+          "y": 116,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 116,
+          "off": 0
+        }
+      ],
+      "footPolygon": [
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 156,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 162,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        }
+      ],
+      "originalArea": 516,
+      "bodyArea": 384,
+      "footArea": 132,
+      "interiorDisjoint": true,
+      "sharedEdge": [
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        }
+      ],
+      "bodyGuideUnchanged": true,
+      "bodyWidth": 14,
+      "bodyWeight": 31.015,
+      "tailBounds": [
+        64.65,
+        74,
+        70.65,
+        81
+      ],
+      "tailWeight": 7,
+      "strictWitness": {
+        "point": [
+          130,
+          161
+        ],
+        "distanceSquaredFromEndpoint": "19709/100",
+        "originalRawRadiusSquared": "196",
+        "positiveDifference": "109/100"
+      },
+      "priorGeometrySHA256": "ad28c4ceeebbd1cb083e5f75c8ce1e7c7600b82e024a79cc4497fddeb99c6c98"
+    }
   },
   "staticMappingApproved": true,
   "directionApproved": false,

@@ -1,0 +1,116 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-22",
+  "glyph": "錡",
+  "root": "u9321-k",
+  "batch": 1359,
+  "observedHistoricalPins": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u9321.json",
+      "SHA256": "4f9307afd4802b45875ffaebd80b82a5758a3fd1716f6d135b4874fdb2334ab1"
+    },
+    "helperSHA256": "f87e85f18a0a4e02029eb6ef372a175bc9cb2d71c8aef3e7545fb3bdee2f6df7",
+    "componentSHA256": "ef90831ec3d7d6ee4259372690e636c8363cef5107e9854df7c916393a75a2bf",
+    "sourceCache": {
+      "path": "docs/hanja-source-cache-u9321-k-2026-10-22/source.json",
+      "SHA256": "fac3bb86bccc1e51081a451b9f30e9b05b8f816cfe2bf719d1c8b8277ddbb46e",
+      "geometrySHA256": "ad28c4ceeebbd1cb083e5f75c8ce1e7c7600b82e024a79cc4497fddeb99c6c98"
+    }
+  },
+  "validScreens": 33,
+  "groups": [
+    {
+      "kind": "fine16 board",
+      "screens": 1
+    },
+    {
+      "kind": "pen16 body residual",
+      "screens": 1,
+      "result": "blank"
+    },
+    {
+      "kind": "all16 compact9",
+      "screens": 16,
+      "uniqueSamples": 144
+    },
+    {
+      "kind": "ordinary curve residual",
+      "pens": [
+        1,
+        2,
+        6,
+        7,
+        8,
+        10,
+        11,
+        14
+      ],
+      "screens": 8,
+      "result": "1/2/6/7/8/10/11 blank;14만 검정terminal triangle 관찰",
+      "residual14": {
+        "approximateWidthPx": 3,
+        "approximateLocation": [
+          349,
+          605
+        ],
+        "pixelMeasurement": false
+      }
+    },
+    {
+      "kind": "fine14 small150 board",
+      "screens": 1,
+      "result": "작은보드에서차이안보임;520residualFAIL을취소하지않음"
+    },
+    {
+      "kind": "LEFT16 body-tail boundary",
+      "screens": 3,
+      "formula": "46.571068/(46.571068+10)",
+      "delta": 1e-10,
+      "result": "유한관찰연속"
+    },
+    {
+      "kind": "natural8 early/end",
+      "screens": 2,
+      "endProgress": 1,
+      "endVisibleMasks": 17,
+      "continuousWatch": false
+    },
+    {
+      "kind": "done whole",
+      "screens": 1,
+      "result": "완성자형확인"
+    }
+  ],
+  "status": {
+    "bad": [],
+    "errors": []
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "residual": {
+    "width": 520,
+    "height": 520,
+    "y": 188.015625
+  },
+  "server": {
+    "pid": 18936,
+    "sessionId": 81395,
+    "exit": 130,
+    "output": "empty",
+    "pidAbsenceSeparatelyQueried": false
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 35,
+    "ESM": 35
+  },
+  "decision": "HOLD: logical14 원terminal23 P의 일부가 original full-round 밖에 남음",
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "engineRuns": 0,
+  "sourceProjection": 0,
+  "oldLEFT16HoldPreserved": true
+}

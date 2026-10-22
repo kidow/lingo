@@ -1,12 +1,12 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** 1359 미등록후보. 원16대응 정적승인만; LEFT16 보정native/APP/runtime 미승인. */
+/** 1359 ROOT isolated actual component 유한승인. 원준비false는 public/source 역사로 보존. */
 const EXPECTED = [
   {
     "glyph": "錡",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
-    "geometrySource": "75c7223a8ccc3305ecf6a352929d128210ea2568930c0e02d8bdcf5ff50d0095",
+    "geometrySource": "2f7c2f49e9468b92145133bcbd50a5fb1c78e3b424f2a10970b3917f15d1ad0d",
     "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
     "sourceStrokeIndices": [
       1,
@@ -40,7 +40,7 @@ const EXPECTED = [
       "M66 25.75 L68.2 26.35 L70.4 26.95 L72.5 27.75 L74.5 28.7 L76.45 29.7 L78.3 30.85 L80.05 32.1 L81.75 33.45 L83.4 34.9 L84.95 36.4 L80.25 40.2 L79.2 38.65 L78.05 37.2 L76.8 35.75 L75.45 34.35 L74.05 33 L72.55 31.65 L70.95 30.4 L69.3 29.1 L67.5 27.8 L65.65 26.6 Z M84.95 36.4 L85.55 38.6 L84.5 40.65 L82.3 41.25 L80.25 40.2 Z",
       "M42.6 46 L92.65 46 L92.65 48 L42.6 48 Z M92.65 46 L80.65 47 L86.65 41 Z",
       "M55.6 57 L55.6 81 L49.6 84 L49.6 54 Z",
-      "M52.6 57 L67.65 57 L67.65 59 L52.6 59 Z M70.65 58 L70.65 78 L64.65 81 L64.65 58 Z M64.65 57 L67.65 54.5 L73.15 59 L70.65 61 L64.65 58 Z",
+      "M52.6 57 L67.65 57 L67.65 59 L52.6 59 Z M70.65 58 L70.65 74 L64.65 74 L64.65 58 Z M64.65 57 L67.65 54.5 L73.15 59 L70.65 61 L64.65 58 Z M70.65 74 L70.65 78 L64.65 81 L64.65 74 Z",
       "M52.6 73 L67.65 73 L67.65 75 L52.6 75 Z",
       "M84.75 46 L84.75 86.5 L78.75 86.5 L78.75 46 Z M78.75 86.5 L84.75 86.5 L83.55 88.3 L81.75 89.5 L79.95 88.3 Z M84.75 86.5 L84.65 87.75 L84.45 89 L84.05 90.2 L83.45 91.35 L82.6 92.35 L81.6 93.15 L80.45 93.8 L79.25 94.2 L78 94.4 L76.75 94.5 L76.75 88.5 L77.35 88.45 L77.8 88.35 L78.1 88.25 L78.25 88.2 L78.35 88.1 L78.45 88 L78.5 87.85 L78.6 87.55 L78.7 87.1 L78.75 86.5 Z M76.75 91.5 L66.75 90 L66.75 88.5 L76.75 88.5 Z"
     ],
@@ -230,17 +230,28 @@ const EXPECTED = [
       ],
       [
         {
-          "outline": "M52.6 57 L67.65 57 L67.65 59 L52.6 59 Z M70.65 58 L70.65 78 L64.65 81 L64.65 58 Z M64.65 57 L67.65 54.5 L73.15 59 L70.65 61 L64.65 58 Z",
+          "outline": "M52.6 57 L67.65 57 L67.65 59 L52.6 59 Z M70.65 58 L70.65 74 L64.65 74 L64.65 58 Z M64.65 57 L67.65 54.5 L73.15 59 L70.65 61 L64.65 58 Z",
           "bounds": [
             52.6,
             54.5,
             73.15,
-            81
+            74
           ],
           "direction": "curve",
           "weight": 31.015,
           "revealPath": "M52.635 58 L67.65 58 L67.65 74",
           "revealWidth": 14
+        },
+        {
+          "outline": "M70.65 74 L70.65 78 L64.65 81 L64.65 74 Z",
+          "bounds": [
+            64.65,
+            74,
+            70.65,
+            81
+          ],
+          "direction": "down",
+          "weight": 7
         }
       ],
       [
@@ -283,7 +294,7 @@ const EXPECTED = [
         }
       ]
     ],
-    "pathsSha256": "22a7db8c215b0720eaa78468edee464bec89c9a3d929c7edd05bf986e3e55bed",
+    "pathsSha256": "5ba58f4b564128b1ec371207a89c25bc5de7096693b870bfeb9dccaeee68aa69",
     "sourceReference": {
       "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9300/9321.svg",
       "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/9300/9321.svg",
@@ -299,7 +310,7 @@ const EXPECTED = [
       "sourceUrl": "https://glyphwiki.org/wiki/u9321-k",
       "revision": "archive a7dd7f3d911936770fa742e8c37d16bee7e2173c 원5record/3wholemetadata+실제엔진full5",
       "editableSource": "/hanja-strokes/glyphwiki/u9321-k.json",
-      "modifications": "1359 미등록후보. freshactualfull5 u9321-k/id3 18raw18calls36P를 ROOT정적16그룹에 따라 고정1회 투영. 원비그리기raw9는 proof/group/trace와빈P 그대로보존하고 논리획에발명하지않음. raw15→16만원exactendpoint HV. raw18 terminal14의 원마지막LEFTquad만 독립leftmask로분리; bodyguide/width14/bodyweight46.571068 유지, tail10은원jump20/2.16p17m36. 원P/원순서/원좌표/connector변경0. 논리획기간그대로/내부body-tail배분만변화. 신규방향·시간·coverage·APP/runtime미승인."
+      "modifications": "1359 미등록후보. freshactualfull5 u9321-k/id3 18raw18calls36P를 ROOT정적16그룹에 따라 고정1회 투영. 원비그리기raw9는 proof/group/trace와빈P 그대로보존하고 논리획에발명하지않음. raw15→16만원exactendpoint HV. raw18 terminal14의 원마지막LEFTquad만 독립leftmask로분리; bodyguide/width14/bodyweight46.571068 유지, tail10은원jump20/2.16p18m37(원36P exactunion). 원P/원순서/원좌표/connector변경0. 논리획기간그대로/내부body-tail배분만변화. 신규방향·시간·coverage·APP/runtime미승인. 추가보정: 원raw16 terminal23 V quad를 원endpoint y148에서 body384+foot132=원area516으로 분할. bodyHVguide/폭14/weight31.015 유지; downfoot7은 원y148..162/2, 원36P union보존/37조각 출력. 다른15획byte동일/새glyphink·connector·guide0. 기존33화면HOLD보존·새보정native미승인."
     }
   }
 ] as unknown as readonly HanjaDictionaryStrokeData[]
@@ -322,6 +333,8 @@ export function loadGlyphWikiBatch1359Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1359_STROKES:ReturnType<typeof loadGlyphWikiBatch1359Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1359_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1359_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1359_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1359_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1359_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1359_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1359_ACTIVATION_REVIEW="docs/hanja-actual-component-profiles-2026-10-22/u9321-activation-review.json"
+export const GLYPHWIKI_BATCH1359_ACTIVATION_REVIEW_SHA256="27d0ace9154980e33d03b4b0546e46f35d9883fa709bbbc13645475dd82b9c22"

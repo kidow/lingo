@@ -163,10 +163,10 @@
   },
   "sourceProvenance": {
     "sourceModule": "docs/hanja-source-cache-u9321-k-2026-10-22/source.mjs",
-    "sourceModuleSHA256": "395ebf94717ef8b4341d7655687a94794486dd0834cf1ee669b5392c50b14801",
+    "sourceModuleSHA256": "0bc376c29cc982fb427688d7e8dcc8545c61dcfe7046c7be9984f32a6e1e53b0",
     "cacheFile": "docs/hanja-source-cache-u9321-k-2026-10-22/source.json",
-    "cacheFileSHA256": "fac3bb86bccc1e51081a451b9f30e9b05b8f816cfe2bf719d1c8b8277ddbb46e",
-    "geometrySHA256": "ad28c4ceeebbd1cb083e5f75c8ce1e7c7600b82e024a79cc4497fddeb99c6c98",
+    "cacheFileSHA256": "89d6ca454169496515771ac2f5b370ff6e01edecc21a9409a4549a97f7d17ad2",
+    "geometrySHA256": "fd1107914d54d9c146417adebd316fe9e674c0d9677f6c4cb6d66133d420b142",
     "actualFull5File": "docs/hanja-public-glyphwiki-engine-capture-u9321-k-2026-10-22/engine-whole-u9321-k.json",
     "actualFull5SHA256": "837a67b7f889874b852b6429f1b2dd61cdf0d64831a19a59409fe99dc0433cd5",
     "full5CanonicalSHA256": "a215dc91bdb71a7355161156a5eb62851a730411138910f419f19ead80d2b199",
@@ -180,9 +180,18 @@
     "basePureProjectorBodySHA256": "f58c62d83c662318ab347384c31cc6403342289cb96fe5523a003b0e2bc72038",
     "sourceSpecificChange": "exact raw9(type0,emptytrace,emptyP)만 nonDrawing으로 제외;다른17drawingrawexactonce",
     "mutablePredecessorFileDependencies": false,
-    "legacyProvenanceTextPreservedNotAuthority": true
+    "legacyProvenanceTextPreservedNotAuthority": true,
+    "cachedCorrection": {
+      "priorCacheSHA256": "fac3bb86bccc1e51081a451b9f30e9b05b8f816cfe2bf719d1c8b8277ddbb46e",
+      "priorGeometrySHA256": "ad28c4ceeebbd1cb083e5f75c8ce1e7c7600b82e024a79cc4497fddeb99c6c98",
+      "nativeHold": "docs/hanja-actual-component-profiles-2026-10-22/u9321-native-hold.json",
+      "nativeHoldSHA256": "15bf16b13f4c3fac2c3a779107db63d84777e14cdc6604a3d6804ecf3f9fe130",
+      "operations": 1,
+      "engineRuns": 0,
+      "sourceProjection": 0
+    }
   },
-  "modifications": "1359 미등록후보. freshactualfull5 u9321-k/id3 18raw18calls36P를 ROOT정적16그룹에 따라 고정1회 투영. 원비그리기raw9는 proof/group/trace와빈P 그대로보존하고 논리획에발명하지않음. raw15→16만원exactendpoint HV. raw18 terminal14의 원마지막LEFTquad만 독립leftmask로분리; bodyguide/width14/bodyweight46.571068 유지, tail10은원jump20/2.16p17m36. 원P/원순서/원좌표/connector변경0. 논리획기간그대로/내부body-tail배분만변화. 신규방향·시간·coverage·APP/runtime미승인.",
+  "modifications": "1359 미등록후보. freshactualfull5 u9321-k/id3 18raw18calls36P를 ROOT정적16그룹에 따라 고정1회 투영. 원비그리기raw9는 proof/group/trace와빈P 그대로보존하고 논리획에발명하지않음. raw15→16만원exactendpoint HV. raw18 terminal14의 원마지막LEFTquad만 독립leftmask로분리; bodyguide/width14/bodyweight46.571068 유지, tail10은원jump20/2.16p18m37(원36P exactunion). 원P/원순서/원좌표/connector변경0. 논리획기간그대로/내부body-tail배분만변화. 신규방향·시간·coverage·APP/runtime미승인. 추가보정: 원raw16 terminal23 V quad를 원endpoint y148에서 body384+foot132=원area516으로 분할. bodyHVguide/폭14/weight31.015 유지; downfoot7은 원y148..162/2, 원36P union보존/37조각 출력. 다른15획byte동일/새glyphink·connector·guide0. 기존33화면HOLD보존·새보정native미승인.",
   "preparationHistory": {
     "staticCorrespondenceReviewed": true,
     "directionApproved": false,
@@ -231,6 +240,118 @@
       "bodyWeight": 46.571068,
       "bodyGuideUnchanged": true,
       "bodyWidth": 14
+    },
+    {
+      "pen": 14,
+      "bodyMask": 1,
+      "tailMask": 2,
+      "logicalPen": 14,
+      "rawOneBased": 16,
+      "polygonIndex": 0,
+      "sourceTerminal": 23,
+      "sourceCutY": 148,
+      "originalPolygon": [
+        {
+          "x": 141.3,
+          "y": 116,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 156,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 162,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 116,
+          "off": 0
+        }
+      ],
+      "bodyPolygon": [
+        {
+          "x": 141.3,
+          "y": 116,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 116,
+          "off": 0
+        }
+      ],
+      "footPolygon": [
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 156,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 162,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        }
+      ],
+      "originalArea": 516,
+      "bodyArea": 384,
+      "footArea": 132,
+      "interiorDisjoint": true,
+      "sharedEdge": [
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        }
+      ],
+      "bodyGuideUnchanged": true,
+      "bodyWidth": 14,
+      "bodyWeight": 31.015,
+      "tailBounds": [
+        64.65,
+        74,
+        70.65,
+        81
+      ],
+      "tailWeight": 7,
+      "strictWitness": {
+        "point": [
+          130,
+          161
+        ],
+        "distanceSquaredFromEndpoint": "19709/100",
+        "originalRawRadiusSquared": "196",
+        "positiveDifference": "109/100"
+      },
+      "priorGeometrySHA256": "ad28c4ceeebbd1cb083e5f75c8ce1e7c7600b82e024a79cc4497fddeb99c6c98"
     }
   ],
   "orderEvidence": {
@@ -240,7 +361,7 @@
   },
   "legacyHoldScope": "원16획99/100 LEFTtip-pop HOLD 보존. 새split source만으로 회복승인승계0.",
   "sourcePreservation": {
-    "original36PolygonsExactlyOnce": true,
+    "original36PolygonsExactlyOnce": false,
     "nonDrawingRaw": {
       "oneBased": 9,
       "group": {
@@ -300,7 +421,119 @@
     "originalBodyGuideWidthWeightPreserved": true,
     "newGuideOrConnector": false,
     "logicalStrokeDurationChanged": false,
-    "internalBodyTailAllocationChanged": true
+    "internalBodyTailAllocationChanged": true,
+    "originalProjection36PolygonsExactlyOnce": true,
+    "original36PolygonUnionExact": true,
+    "emittedPolygonCount": 37,
+    "terminal23Split": {
+      "logicalPen": 14,
+      "rawOneBased": 16,
+      "polygonIndex": 0,
+      "sourceTerminal": 23,
+      "sourceCutY": 148,
+      "originalPolygon": [
+        {
+          "x": 141.3,
+          "y": 116,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 156,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 162,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 116,
+          "off": 0
+        }
+      ],
+      "bodyPolygon": [
+        {
+          "x": 141.3,
+          "y": 116,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 116,
+          "off": 0
+        }
+      ],
+      "footPolygon": [
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 141.3,
+          "y": 156,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 162,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        }
+      ],
+      "originalArea": 516,
+      "bodyArea": 384,
+      "footArea": 132,
+      "interiorDisjoint": true,
+      "sharedEdge": [
+        {
+          "x": 141.3,
+          "y": 148,
+          "off": 0
+        },
+        {
+          "x": 129.3,
+          "y": 148,
+          "off": 0
+        }
+      ],
+      "bodyGuideUnchanged": true,
+      "bodyWidth": 14,
+      "bodyWeight": 31.015,
+      "tailBounds": [
+        64.65,
+        74,
+        70.65,
+        81
+      ],
+      "tailWeight": 7,
+      "strictWitness": {
+        "point": [
+          130,
+          161
+        ],
+        "distanceSquaredFromEndpoint": "19709/100",
+        "originalRawRadiusSquared": "196",
+        "positiveDifference": "109/100"
+      },
+      "priorGeometrySHA256": "ad28c4ceeebbd1cb083e5f75c8ce1e7c7600b82e024a79cc4497fddeb99c6c98"
+    }
   },
   "engineProof": {
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
