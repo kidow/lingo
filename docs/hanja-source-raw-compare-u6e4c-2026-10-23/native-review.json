@@ -1,0 +1,159 @@
+{
+  "schema": "hanja-static-raw-native-review/v1",
+  "date": "2026-10-23",
+  "glyph": "湌",
+  "root": "u6e4c",
+  "observedBy": "ROOT",
+  "status": "static-correspondence-approved-only",
+  "inputSHA256": {
+    "docs/hanja-source-raw-compare-u6e4c-2026-10-23/config.json": "4917b952fe18d76ea916368796242528f1ddc2f4ab1d05ea49e399a441a6589d",
+    "docs/hanja-source-raw-compare-u6e4c-2026-10-23/board-config.json": "268107820f23bbeda018a3830cd785eece856f5df01a0e13f1cca954280e0594",
+    "docs/hanja-source-raw-compare-u6e4c-2026-10-23/board-config-before-pairs.json": "234a5cc22bff989aebbf59e386909d34d8a7e8fc15fe9ad2318de65447247125",
+    "docs/hanja-source-raw-compare-u6e4c-2026-10-23/engine-whole-u6e4c.json": "c8e2523c06393b3a7f4ff58c7346ea3a4aded0de6d16910ff3cd490fae220587",
+    "docs/hanja-goal-glyphwiki-batch908-2026-10-13/review.json": "43d4fd15119d18894d6299b65d077d33f0c9d7ea228be6dcb16019f24cc78a07"
+  },
+  "source": {
+    "actualFull5": "docs/hanja-source-raw-compare-u6e4c-2026-10-23/engine-whole-u6e4c.json",
+    "SHA256": "c8e2523c06393b3a7f4ff58c7346ea3a4aded0de6d16910ff3cd490fae220587",
+    "keys": [
+      "engineRevision",
+      "engineHashes",
+      "groups",
+      "trace",
+      "defaults"
+    ],
+    "sourceProofIdentity": {
+      "sourceRoot": "u6e4c",
+      "sourceProofFile": "engine-whole-u6e4c.json",
+      "sourceProofFileSha256": "c8e2523c06393b3a7f4ff58c7346ea3a4aded0de6d16910ff3cd490fae220587"
+    },
+    "rawGroups": 15,
+    "drawingCalls": 15,
+    "polygons": 28,
+    "domesticCount": 12
+  },
+  "native": {
+    "validScreens": 16,
+    "whole": 1,
+    "raw15GridScreens": 3,
+    "domestic12GridScreens": 6,
+    "paired12GroupScreens": 6,
+    "observation": "모든 12개 대응에서 원형과 위치가 정적으로 대응함. 붓체 차이가 있으므로 원경로·pixel·정확geometry 동일성은 주장하지 않음.",
+    "oneBasedGroups": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ]
+    ],
+    "eachOriginalRawExactlyOnce": true,
+    "compoundStaticCorrespondences": [
+      {
+        "logicalPen": 3,
+        "raw": [
+          3,
+          4
+        ],
+        "kind": "water",
+        "independentMasksOnly": true
+      },
+      {
+        "logicalPen": 7,
+        "raw": [
+          8,
+          9
+        ],
+        "kind": "HV",
+        "independentMasksOnly": true
+      },
+      {
+        "logicalPen": 10,
+        "raw": [
+          12,
+          13
+        ],
+        "kind": "VT",
+        "independentMasksOnly": true
+      }
+    ],
+    "contactConnectivityTemporalDirectionNotObserved": true
+  },
+  "servers": [
+    {
+      "pid": 71787,
+      "sessionId": 77931,
+      "domesticRAMFetches": 1,
+      "exitCode": 130,
+      "output": "EMPTY"
+    },
+    {
+      "pid": 80535,
+      "sessionId": 20967,
+      "domesticRAMFetches": 1,
+      "exitCode": 130,
+      "output": "EMPTY"
+    }
+  ],
+  "historicalOriginalHOLD": {
+    "review": "docs/hanja-goal-glyphwiki-batch908-2026-10-13/review.json",
+    "status": "held:water3 source split;minimum14 exceeds domestic12",
+    "minimum14GreaterThanDomestic12": true,
+    "unchanged": true,
+    "oldDictionaryDirectionStrokes": [
+      3
+    ],
+    "oldDirectionIsNotFreshApproval": true
+  },
+  "staticMappingApproved": true,
+  "sourceGroupsApproved": false,
+  "joinedGuidesOrConnectorsApproved": false,
+  "directionApproved": false,
+  "temporalOrderApproved": false,
+  "nativeAnimationApproval": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "authorExecution": {
+    "HTTP": 0,
+    "server": 0,
+    "SSR": 0,
+    "engine": 0,
+    "projection": 0,
+    "oldChecks": 0
+  }
+}
