@@ -3,6 +3,7 @@ import { reviewedU7e1dContext, reviewedU7e1dPolicy, measureReviewedU7e1dFrame, c
 'use client'
 import { reviewedU73b9Context, reviewedU73b9Policy, measureReviewedU73b9Frame, commitReviewedU73b9Mask, type ReviewedU73b9Policy } from '@/lib/hanja-stroke-start-gate-u73b9'
 import { reviewedU85afContext, reviewedU85afPolicy, measureReviewedU85afFrame, commitReviewedU85afMask, type ReviewedU85afPolicy } from '@/lib/hanja-stroke-source-cap-u85af'
+import { reviewedU68b4Context, reviewedU68b4Policy, applyReviewedU68b4Prefix, type ReviewedU68b4Policy } from '@/lib/hanja-stroke-start-gate-u68b4'
 import { reviewedU96aeContext, reviewedU96aePolicy, measureReviewedU96aeFrame, commitReviewedU96aeMask, type ReviewedU96aePolicy } from '@/lib/hanja-stroke-start-gate-u96ae'
 import { reviewedU7a67Context, reviewedU7a67Policy, measureReviewedU7a67Frame, commitReviewedU7a67Mask, type ReviewedU7a67Policy } from '@/lib/hanja-stroke-start-gate-u7a67'
 import { reviewedU686dContext, reviewedU686dPolicy, measureReviewedU686dFrame, commitReviewedU686dMask, type ReviewedU686dPolicy } from '@/lib/hanja-stroke-start-gate-u686d'
@@ -65,6 +66,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u8fedContext = reviewedU8fedContext(strokes)
   const u73b9Context = reviewedU73b9Context(strokes)
   const u85afContext = reviewedU85afContext(strokes)
+  const u68b4Context = reviewedU68b4Context(strokes)
   const u96aeContext = reviewedU96aeContext(strokes)
   const u7a67Context = reviewedU7a67Context(strokes)
   const u686dContext = reviewedU686dContext(strokes)
@@ -129,6 +131,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u8fedPolicy) return <U8fedCapsOutline key={index} policy={u8fedPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u85afPolicy = reviewedU85afPolicy(u85afContext, stroke, index)
         if (u85afPolicy) return <U85afCapOutline key={index} policy={u85afPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+        const u68b4Policy = reviewedU68b4Policy(u68b4Context, stroke, index)
+        if (u68b4Policy) return <U68b4PrefixOutline key={index} policy={u68b4Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u96aePolicy = reviewedU96aePolicy(u96aeContext, stroke, index)
         if (u96aePolicy) return <U96aeFootOutline key={index} policy={u96aePolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u7a67Policy = reviewedU7a67Policy(u7a67Context, stroke, index)
@@ -590,6 +594,21 @@ function U85afCapOutline({policy,segment,progress,clipId}:{policy:ReviewedU85afP
       </clipPath>
     </defs>
     <path ref={ink} id={clipId+'-u85af-ink'} data-owner={clipId} data-u85af-ink="true" d={segment.outline} clipPath={'url(#'+clipId+'-u85af-cap)'} visibility="hidden" />
+  </g>
+}
+
+function U68b4PrefixOutline({policy,segment,progress,clipId}:{policy:ReviewedU68b4Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const ink=useRef<SVGPathElement|null>(null),rect=useRef<SVGRectElement|null>(null)
+  useLayoutEffect(()=>{
+    const inkNode=ink.current,rectNode=rect.current
+    applyReviewedU68b4Prefix(policy,progress,{ink:inkNode,rect:rectNode})
+    return()=>{inkNode?.setAttribute('visibility','hidden')}
+  },[policy,progress,clipId])
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'}>
+    <defs><clipPath id={clipId+'-u68b4-prefix-clip'} clipPathUnits="userSpaceOnUse">
+      <rect ref={rect} id={clipId+'-u68b4-prefix-rect'} x="60.15" y="67" width="0" height="7" />
+    </clipPath></defs>
+    <path ref={ink} id={clipId+'-u68b4-ink'} data-owner={clipId} data-u68b4-ink="true" d={segment.outline} clipPath={'url(#'+clipId+'-u68b4-prefix-clip)'} visibility="hidden" />
   </g>
 }
 
