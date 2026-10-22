@@ -6,7 +6,7 @@ const EXPECTED = [
     "glyph": "迪",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
-    "geometrySource": "3d1b37e1b74e56ed038a6e6b698654019e5c6108f0b996ec621ebb409e6253d3",
+    "geometrySource": "21959f4bf65678002d7cd52a4e11e5a2d33322ee36083cc64c150d54fdc4b1ad",
     "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
     "sourceStrokeIndices": [
       7,
@@ -21,7 +21,7 @@ const EXPECTED = [
     ],
     "paths": [
       "M43.9 27.05 L43.9 76.7 L37.9 79.7 L37.9 24.05 Z",
-      "M40.9 27.05 L86.55 27.05 L86.55 29.05 L40.9 29.05 Z M89.55 28.05 L89.55 76.2 L83.55 79.2 L83.55 28.05 Z M83.55 27.05 L86.55 24.55 L92.05 29.05 L89.55 31.05 L83.55 28.05 Z",
+      "M40.9 27.05 L86.55 27.05 L86.55 29.05 L40.9 29.05 Z M89.55 28.05 L89.55 76.2 L83.55 76.2 L83.55 28.05 Z M83.55 27.05 L86.55 24.55 L92.05 29.05 L89.55 31.05 L83.55 28.05 Z M89.55 76.2 L83.55 79.2 L83.55 76.2 Z",
       "M40.9 48.1 L86.55 48.1 L86.55 50.1 L40.9 50.1 Z",
       "M66.75 9.15 L66.75 73.2 L60.75 73.2 L60.75 8.15 Z M66.75 9.15 L68.25 10.15 L65.75 11.65 Z",
       "M40.9 71.2 L86.55 71.2 L86.55 73.2 L40.9 73.2 Z",
@@ -46,17 +46,28 @@ const EXPECTED = [
       ],
       [
         {
-          "outline": "M40.9 27.05 L86.55 27.05 L86.55 29.05 L40.9 29.05 Z M89.55 28.05 L89.55 76.2 L83.55 79.2 L83.55 28.05 Z M83.55 27.05 L86.55 24.55 L92.05 29.05 L89.55 31.05 L83.55 28.05 Z",
+          "outline": "M40.9 27.05 L86.55 27.05 L86.55 29.05 L40.9 29.05 Z M89.55 28.05 L89.55 76.2 L83.55 76.2 L83.55 28.05 Z M83.55 27.05 L86.55 24.55 L92.05 29.05 L89.55 31.05 L83.55 28.05 Z",
           "bounds": [
             40.9,
             24.55,
             92.05,
-            79.2
+            76.2
           ],
           "direction": "curve",
           "weight": 89.7625,
           "revealPath": "M40.9375 28.075 L86.5625 28.075 L86.5625 72.2125",
           "revealWidth": 14
+        },
+        {
+          "outline": "M89.55 76.2 L83.55 79.2 L83.55 76.2 Z",
+          "bounds": [
+            83.55,
+            76.2,
+            89.55,
+            79.2
+          ],
+          "direction": "down",
+          "weight": 3
         }
       ],
       [
@@ -172,7 +183,7 @@ const EXPECTED = [
         }
       ]
     ],
-    "pathsSha256": "bc4d780c2c826ae7972db4a1cf38c2d57b47ae653652633a7de6af4ba1395fa7",
+    "pathsSha256": "13ffbb202e80adb94b83a5409c039df3f519cba2c19fd77d2e9fd5082481b417",
     "sourceReference": {
       "orderUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8F00/8FEA.svg",
       "dictionarySvgUrl": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8F00/8FEA.svg",
@@ -188,7 +199,7 @@ const EXPECTED = [
       "sourceUrl": "https://glyphwiki.org/wiki/u8fea-k@7",
       "revision": "고정 u8fea-k@7/u8fb6-j@2/u7531-07@2;2026-10-22 신규actualfull5 직접캡처",
       "editableSource": "/hanja-strokes/glyphwiki/u8fea-k.json",
-      "modifications": "1357 미등록 source 후보. 고정public u8fea-k@7/u8fb6-j@2/u7531-07@2 한 closure의 신규 actualfull5/id3를 사용하며 옛header4/trace를 합성하지 않았다. ROOT9정적그룹의 순수projector FIRST1→즉시cache로 원20P를 보존했다. HV2(raw8/9), HV8(raw3/4)는 원endpoint exactjoin만 사용하고 QB9(raw5/6)는 gap[-2,-2]의 독립2mask다. 새connector/좌표/guide/폭/bodyweight/flag 수정·terminal분리 없이 원형이다. 새 source 시간/방향/초기cap/terminal/coverage/연결/APP/runtime는 미승인이고 batch176 HOLD는 보존한다."
+      "modifications": "1357 미등록 source 후보. 고정public u8fea-k@7/u8fb6-j@2/u7531-07@2 한 closure의 신규 actualfull5/id3를 사용하며 옛header4/trace를 합성하지 않았다. ROOT9정적그룹의 순수projector FIRST1→즉시cache로 원20P를 보존했다. HV2(raw8/9), HV8(raw3/4)는 원endpoint exactjoin만 사용하고 QB9(raw5/6)는 gap[-2,-2]의 독립2mask다. 새connector/좌표/guide/폭/bodyweight/flag 수정·terminal분리 없이 원형이다. 새 source 시간/방향/초기cap/terminal/coverage/연결/APP/runtime는 미승인이고 batch176 HOLD는 보존한다. 이후 ROOT26 유효화면 중 HV2 원terminal23 잔여를 확인하여 원quad 하나를 원B.y와 원CD edge 교점으로 rectangle+triangle 두 fragment로만 분할했다. 원20P union은 그대로이고 표시fragment는21개다. 원bodyguide/width14/bodyweight89.7625는 유지하며 원triangle을 down weight3으로 표시한다. 다른8획은 동일하고 새native/APP/runtime 승인은 없다."
     }
   }
 ] as unknown as readonly HanjaDictionaryStrokeData[]

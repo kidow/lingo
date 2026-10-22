@@ -83,10 +83,10 @@
   },
   "sourceProvenance": {
     "sourceModule": "docs/hanja-source-cache-u8fea-k-2026-10-22/source.mjs",
-    "sourceModuleSHA256": "0081be50d5acb784378fda8c8136412cdbd7014bf9b83a36af5fe7b9a034c5f5",
+    "sourceModuleSHA256": "d585044b70deea59fdb12c2e440ebc5ca0569625dc6005a8b7bd62662015f6c5",
     "cacheFile": "docs/hanja-source-cache-u8fea-k-2026-10-22/source.json",
-    "cacheFileSHA256": "e22d04d494c4618bd67726d291d5e384535d6e81c8ab38ee619ab0c51b66c028",
-    "geometrySHA256": "9b7ad70e6b8a0c4ea7543431c1b6d5b21aeed00a9b2f6896ad07ea3737b150be",
+    "cacheFileSHA256": "94c14ff3c297fe347c9630408c70c93a9b8ab6a186109daf4f81f4a537b2ccac",
+    "geometrySHA256": "bd5f197f8e5fa156722ac07fc475d319f3e8a47b779dd688698990c2bb3d5eed",
     "actualFull5File": "docs/hanja-public-glyphwiki-engine-capture-u8fea-k-2026-10-22/engine-whole-u8fea-k.json",
     "actualFull5SHA256": "e35bcc0a2a9ce973de3a1f11e8c38a1dd074b93cfe1599aeeb125067cd59c7ba",
     "full5CanonicalSHA256": "5ef8ae0a4b7c7044033f8e0496756165ea63766523a05bdc638a0f399435aa4d",
@@ -95,7 +95,7 @@
     "staticReview": "docs/hanja-source-native-raw-correspondence-u8fea-k-2026-10-22.json",
     "staticReviewSHA256": "40891d072ac1449e7791c66719a978d91c334e73950b2ae90050c8b667b54fd7"
   },
-  "modifications": "1357 미등록 source 후보. 고정public u8fea-k@7/u8fb6-j@2/u7531-07@2 한 closure의 신규 actualfull5/id3를 사용하며 옛header4/trace를 합성하지 않았다. ROOT9정적그룹의 순수projector FIRST1→즉시cache로 원20P를 보존했다. HV2(raw8/9), HV8(raw3/4)는 원endpoint exactjoin만 사용하고 QB9(raw5/6)는 gap[-2,-2]의 독립2mask다. 새connector/좌표/guide/폭/bodyweight/flag 수정·terminal분리 없이 원형이다. 새 source 시간/방향/초기cap/terminal/coverage/연결/APP/runtime는 미승인이고 batch176 HOLD는 보존한다.",
+  "modifications": "1357 미등록 source 후보. 고정public u8fea-k@7/u8fb6-j@2/u7531-07@2 한 closure의 신규 actualfull5/id3를 사용하며 옛header4/trace를 합성하지 않았다. ROOT9정적그룹의 순수projector FIRST1→즉시cache로 원20P를 보존했다. HV2(raw8/9), HV8(raw3/4)는 원endpoint exactjoin만 사용하고 QB9(raw5/6)는 gap[-2,-2]의 독립2mask다. 새connector/좌표/guide/폭/bodyweight/flag 수정·terminal분리 없이 원형이다. 새 source 시간/방향/초기cap/terminal/coverage/연결/APP/runtime는 미승인이고 batch176 HOLD는 보존한다. 이후 ROOT26 유효화면 중 HV2 원terminal23 잔여를 확인하여 원quad 하나를 원B.y와 원CD edge 교점으로 rectangle+triangle 두 fragment로만 분할했다. 원20P union은 그대로이고 표시fragment는21개다. 원bodyguide/width14/bodyweight89.7625는 유지하며 원triangle을 down weight3으로 표시한다. 다른8획은 동일하고 새native/APP/runtime 승인은 없다.",
   "preparationHistory": {
     "candidateBatch": 1357,
     "batchAssignmentProvisional": true,
@@ -104,12 +104,13 @@
     "originalCompilerCalls": 0,
     "existingCandidateFactoryCalls": 0,
     "engineRuns": 0,
-    "newTerminalDerivations": 0,
+    "newTerminalDerivations": 1,
     "nativeApproval": false,
     "actualAppUI": false,
     "runtimeRegistered": false,
     "runtimeApplied": false,
-    "registrationApproved": false
+    "registrationApproved": false,
+    "newCachedCorrectionOperations": 1
   },
   "exactInterRawJoins": [
     [
@@ -136,7 +137,7 @@
     {
       "pen": 2,
       "rawOneBased": 9,
-      "policy": "원V23 끝foot을 HVguide에서 새native로 확인해야 함"
+      "policy": "원terminal23 quad를 경계교점으로 body+down3 분할; 보정 뒤 pen2 새native pending"
     },
     {
       "pen": 8,
@@ -161,7 +162,7 @@
   },
   "legacyHoldPreserved": true,
   "sourcePreservation": {
-    "original20PolygonsExactlyOnce": true,
+    "original20PolygonsExactlyOnce": false,
     "exactInterRawJoinsOneBased": [
       [
         8,
@@ -186,7 +187,15 @@
     },
     "originalCallFieldsUnchanged": true,
     "originalTerminalFieldsUnchanged": true,
-    "newGuideOrConnector": false
+    "newGuideOrConnector": false,
+    "original20PolygonsUnionPreserved": true,
+    "originalPolygonCount": 20,
+    "emittedFragmentCount": 21,
+    "oneOriginalQuadPartitioned": true,
+    "other19OriginalPolygonsUnchanged": true,
+    "other8PensUnchanged": true,
+    "originalContourUnchanged": true,
+    "newExternalInk": false
   },
   "engineProof": {
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
@@ -2204,5 +2213,144 @@
       "kMinWidthT": 6,
       "kAdjustMageStep": 5
     }
+  },
+  "previousFixedCandidate": {
+    "sourceProvenance": {
+      "sourceModule": "docs/hanja-source-cache-u8fea-k-2026-10-22/source.mjs",
+      "sourceModuleSHA256": "0081be50d5acb784378fda8c8136412cdbd7014bf9b83a36af5fe7b9a034c5f5",
+      "cacheFile": "docs/hanja-source-cache-u8fea-k-2026-10-22/source.json",
+      "cacheFileSHA256": "e22d04d494c4618bd67726d291d5e384535d6e81c8ab38ee619ab0c51b66c028",
+      "geometrySHA256": "9b7ad70e6b8a0c4ea7543431c1b6d5b21aeed00a9b2f6896ad07ea3737b150be",
+      "actualFull5File": "docs/hanja-public-glyphwiki-engine-capture-u8fea-k-2026-10-22/engine-whole-u8fea-k.json",
+      "actualFull5SHA256": "e35bcc0a2a9ce973de3a1f11e8c38a1dd074b93cfe1599aeeb125067cd59c7ba",
+      "full5CanonicalSHA256": "5ef8ae0a4b7c7044033f8e0496756165ea63766523a05bdc638a0f399435aa4d",
+      "retainedPublicSourceFile": "docs/hanja-goal-glyphwiki-batch176-2026-10-03/sources.json",
+      "retainedPublicSourceSHA256": "631c558b3ea1dde616f1844fc0c4479e1962fcb0717eb14bebb80f12b7d2feaf",
+      "staticReview": "docs/hanja-source-native-raw-correspondence-u8fea-k-2026-10-22.json",
+      "staticReviewSHA256": "40891d072ac1449e7791c66719a978d91c334e73950b2ae90050c8b667b54fd7"
+    },
+    "maskCount": 10,
+    "polygonCount": 20,
+    "preparationHistory": {
+      "candidateBatch": 1357,
+      "batchAssignmentProvisional": true,
+      "successfulPureProjectionOperations": 1,
+      "internalPureCompileBoundCalls": 1,
+      "originalCompilerCalls": 0,
+      "existingCandidateFactoryCalls": 0,
+      "engineRuns": 0,
+      "newTerminalDerivations": 0,
+      "nativeApproval": false,
+      "actualAppUI": false,
+      "runtimeRegistered": false,
+      "runtimeApplied": false,
+      "registrationApproved": false
+    }
+  },
+  "cachedCorrection": {
+    "kind": "original-raw9-terminal23-boundary-intersection-down-fragment",
+    "priorCacheSHA256": "e22d04d494c4618bd67726d291d5e384535d6e81c8ab38ee619ab0c51b66c028",
+    "priorGeometrySHA256": "9b7ad70e6b8a0c4ea7543431c1b6d5b21aeed00a9b2f6896ad07ea3737b150be",
+    "priorSourceModuleSHA256": "0081be50d5acb784378fda8c8136412cdbd7014bf9b83a36af5fe7b9a034c5f5",
+    "nativeHold": "docs/hanja-actual-component-profiles-2026-10-22/u8fea-native-hold.json",
+    "nativeHoldSHA256": "08a89ffda86e4391e3c4101f6cd3af60cdc582ee93e7a93c3dcdefe9e421aa8f",
+    "rawOneBased": 9,
+    "originalArgs": [
+      173.125,
+      56.15,
+      173.125,
+      144.425,
+      22,
+      23
+    ],
+    "originalQuad": [
+      {
+        "x": 179.1,
+        "y": 56.1,
+        "off": 0
+      },
+      {
+        "x": 179.1,
+        "y": 152.4,
+        "off": 0
+      },
+      {
+        "x": 167.1,
+        "y": 158.4,
+        "off": 0
+      },
+      {
+        "x": 167.1,
+        "y": 56.1,
+        "off": 0
+      }
+    ],
+    "cutPoint": {
+      "x": 167.1,
+      "y": 152.4,
+      "off": 0
+    },
+    "cutRule": "x=original C.x on CD; y=original B.y",
+    "bodyRectangle": [
+      {
+        "x": 179.1,
+        "y": 56.1,
+        "off": 0
+      },
+      {
+        "x": 179.1,
+        "y": 152.4,
+        "off": 0
+      },
+      {
+        "x": 167.1,
+        "y": 152.4,
+        "off": 0
+      },
+      {
+        "x": 167.1,
+        "y": 56.1,
+        "off": 0
+      }
+    ],
+    "tailTriangle": [
+      {
+        "x": 179.1,
+        "y": 152.4,
+        "off": 0
+      },
+      {
+        "x": 167.1,
+        "y": 158.4,
+        "off": 0
+      },
+      {
+        "x": 167.1,
+        "y": 152.4,
+        "off": 0
+      }
+    ],
+    "originalAreaRaw": "5958/5",
+    "bodyRectangleAreaRaw": "5778/5",
+    "tailTriangleAreaRaw": "36",
+    "bodyGuidePreserved": "M40.9375 28.075 L86.5625 28.075 L86.5625 72.2125",
+    "bodyWidth": 14,
+    "bodyWeight": 89.7625,
+    "tailWeight": 3,
+    "bodyBoundsPolicy": "원quad에서 triangle을 제외한 active body P bounds",
+    "bodyTailBoundary": 0.9676593451017383,
+    "positiveOutsideWitnessDisplay": [
+      83.75,
+      79
+    ],
+    "witnessSquaredDisplay": "172737/3200",
+    "sourceRadiusSquaredDisplay": "49",
+    "bodyRectangleMaxCapsuleSquaredRaw": "79921/800",
+    "headMaxJointDiscSquaredRaw": "39761/320",
+    "originalHMaxCapsuleSquaredRaw": "6733/1600",
+    "successfulCachedCorrectionOperations": 1,
+    "wholeProjectionRepeated": 0,
+    "engineRuns": 0,
+    "newNativeApproval": false
   }
 }

@@ -1,0 +1,136 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-22",
+  "glyph": "迪",
+  "root": "u8fea-k",
+  "batch": 1357,
+  "candidate": {
+    "pens": 9,
+    "masks": 10,
+    "originalPolygons": 20,
+    "geometrySHA256": "9b7ad70e6b8a0c4ea7543431c1b6d5b21aeed00a9b2f6896ad07ea3737b150be"
+  },
+  "historicalSourceSHA256": {
+    "docs/hanja-source-cache-u8fea-k-2026-10-22/source.mjs": "0081be50d5acb784378fda8c8136412cdbd7014bf9b83a36af5fe7b9a034c5f5",
+    "docs/hanja-source-cache-u8fea-k-2026-10-22/source.json": "e22d04d494c4618bd67726d291d5e384535d6e81c8ab38ee619ab0c51b66c028",
+    "public/hanja-strokes/glyphwiki/u8fea-k.json": "3d1b37e1b74e56ed038a6e6b698654019e5c6108f0b996ec621ebb409e6253d3",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1357.json": "4841ef4d1d99c20cf4d8d8073752269df3efee9326c2cea58501f63a972ab4ea",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1357.ts": "0e3d9e15ae9bf810098087280e32d4c4fd360b6842019676c8ff11070245686f",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1357.test.ts": "c7ee6b8b33c569b6daf55c9add53538138e45622e0f8c063df9da1305953306a"
+  },
+  "historicalObservationPins": {
+    "profileFile": "docs/hanja-actual-component-profiles-2026-10-22/u8fea.json",
+    "profileSHA256": "5211a56b2b56cdaa0b15d133068f24d08f06dd5530861d32c90100a1977919d1",
+    "helperSHA256": "fdb07751579db19404706786d9e0f5bc8d881a240ec80552f56c081a0387823e",
+    "componentSHA256": "0ebb04f67a962805f88bdddb4b139d5852a86f1157b907a3fd0ca62535affaf3",
+    "registrySHA256": "84dce03a207fd041768d4bac0e0d577024997d66ee99436fb5ee34715fe2734a"
+  },
+  "observation": {
+    "observer": "ROOT",
+    "validScreens": 26,
+    "breakdown": [
+      {
+        "case": "QB9m2-early",
+        "screens": 2,
+        "local": [
+          0.01,
+          0.03
+        ],
+        "result": "connected in these samples"
+      },
+      {
+        "case": "QB9-boundary",
+        "screens": 3,
+        "boundary": 0.26504538893145446,
+        "delta": 1e-10,
+        "result": "connected positive fixedcap change observed; no zeroarea/nojump/alltime claim"
+      },
+      {
+        "case": "all9compact",
+        "screens": 9,
+        "uniqueSamples": 81
+      },
+      {
+        "case": "individual-original-fullround-residual",
+        "screens": 6,
+        "targets": [
+          "2m1",
+          "6m1",
+          "7m1",
+          "8m1",
+          "9m1",
+          "9m2"
+        ],
+        "result": "2m1 tiny black triangle near terminal; other5 white"
+      },
+      {
+        "case": "fine2/8/9boards",
+        "screens": 3,
+        "eachSamples": [
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "pen2": "tiny residual was not obvious in fine; no AA cause conclusion"
+      },
+      {
+        "case": "natural9-early-end",
+        "screens": 2,
+        "endP": 1,
+        "firstStartFullFrameValid": true,
+        "allFramesObserved": false
+      },
+      {
+        "case": "done",
+        "screens": 1
+      }
+    ],
+    "pen2ResidualApproxPixels": [
+      3,
+      3
+    ],
+    "pixelSizeIsVisualEstimateNotMeasurement": true,
+    "onlyUnresolvedIssue": "2m1 originalHV terminal fullround residual",
+    "bad": [],
+    "errors": [],
+    "other8PensEvidenceReusableOnlyIfExactUnchanged": true
+  },
+  "server": {
+    "pid": 504,
+    "session": 80016,
+    "stopped": true,
+    "exitCode": 130,
+    "outputEmpty": true,
+    "startupSSR": 1,
+    "CJSResources": 34,
+    "ESMResources": 34,
+    "PIDRequeryNotReported": true
+  },
+  "math": {
+    "witnessDisplay": [
+      83.75,
+      79
+    ],
+    "nearestGuideSquaredDisplay": "172737/3200",
+    "roundRadiusSquaredDisplay": "49",
+    "positiveAreaOutsideIdealSweep": true,
+    "standaloneTailPolygonExists": false,
+    "scope": "원V23의 단일quad 끝에 양의 잔여가 있다. 경계 교점 분리는 후속후보이며 이 원후보의 native PASS가 아니다."
+  },
+  "approval": {
+    "native": false,
+    "actualAppUI": false,
+    "controllerWorkflow": false,
+    "storage": false,
+    "all9Autoplay": false,
+    "runtimeApplied": false
+  },
+  "legacy176HoldPreserved": true,
+  "authorExecution": {
+    "sourceProjection": 0,
+    "engine": 0,
+    "oldChecks": 0,
+    "server": 0,
+    "build": false
+  }
+}
