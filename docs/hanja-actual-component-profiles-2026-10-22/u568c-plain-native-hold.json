@@ -1,0 +1,185 @@
+{
+  "schema": "hanja-isolated-actual-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "嚌",
+  "root": "u568c",
+  "observer": "ROOT",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u568c.json": "a9761dd8c2b28b8678668de03c55c8315fdd458258446d77ea3da1b55404a18c",
+    "docs/hanja-source-cache-u568c-2026-10-23/fixture.json": "fd3319d9ac2f941e9ef51a5a505c6d3e72b90788c92f9493ae1dc69ac6423d55"
+  },
+  "historicalObservationPins": {
+    "helperSHA256": "9f84eed60cc629c25e589cf90597026b10029fb20a00eb0f2ab0a583cda9d162",
+    "componentSHA256": "e10fb2d7d9a435a0de16a5bcbb96650122c2cb51f28ef79d6243fc8b6f4da2d0",
+    "sharedVersion": 54,
+    "currentSharedFileReverification": false
+  },
+  "source": {
+    "pens": 17,
+    "masks": 19,
+    "polygons": 39,
+    "geometrySHA256": "aa124ad522573bf1e5ba90f904ffcf2796af551fb294d070c6d19779b53661c8",
+    "originalPGuideWidthWeightChanged": false
+  },
+  "native": {
+    "validScreens": 22,
+    "positiveHeadFailureScreens": 13,
+    "zeroOrBeforeBaselineScreens": 9,
+    "pen12SecondMask": {
+      "localProgress": [
+        0.000001,
+        0.01,
+        0.03,
+        0.1
+      ],
+      "screens": 4,
+      "finding": "원 round guide의 큰 유한 head가 나타나 있음; 원인과 회복 승인은 별도"
+    },
+    "otherCurveStarts": {
+      "targets": [
+        [
+          2,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ]
+      ],
+      "logicalGlobalProgress": 0.000001,
+      "screens": 8,
+      "finding": "각 첫곡선에서 큰 유한 head 관찰"
+    },
+    "baselines": {
+      "currentLogicalPenZeroTargets": [
+        2,
+        6,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14
+      ],
+      "screens": 8,
+      "meaning": "선택된 현재획 잉크 없음. 선행 완료획은 유지되므로 whole blank 주장이 아님",
+      "wholeBlankAtZero": false,
+      "pen12BoundaryBefore": {
+        "requestedGlobal": 0.4648569064497792,
+        "screens": 1,
+        "secondMaskInkAbsent": true
+      }
+    },
+    "nominalExactBoundary": {
+      "pen": 12,
+      "requestedGlobal": 0.4648569065497792,
+      "screens": 1,
+      "finding": "ROOT가 float상 아주작은 positive 진행에서 큰 head노출을 관찰. 수학적 mask-local exact0 관찰로 간주하지 않음",
+      "exactMeasuredLocalValueNotProvided": true
+    },
+    "preBad": [],
+    "preErrors": [],
+    "visualFailuresRemainDespiteDOMChecks": true,
+    "wholeApproval": false
+  },
+  "server": {
+    "pid": 26616,
+    "execSessionId": 6014,
+    "port": 59412,
+    "startupSSR": 1,
+    "CJS": 55,
+    "ESM": 55,
+    "exitCode": 130,
+    "stopOutput": "empty",
+    "pidAbsenceRequery": false
+  },
+  "scope": {
+    "sourceGeometryChanged": false,
+    "newClockApproved": false,
+    "contactApproved": false,
+    "allTimeContinuityProved": false,
+    "nativeRecoveryApproved": false,
+    "actualAppUI": false,
+    "runtimeApplied": false,
+    "originalHOLDAndPreparationFalsePreserved": true
+  },
+  "assignedFollowup": {
+    "singleMQ": [
+      [
+        6,
+        1
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        13,
+        1
+      ]
+    ],
+    "compoundTargetsOtherOwner": [
+      [
+        2,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        14,
+        1
+      ]
+    ],
+    "contactFootOtherOwner": [
+      [
+        12,
+        2
+      ]
+    ],
+    "sharedChangesByAuthor": false
+  },
+  "authorExecution": {
+    "newRecordMetadata": 1,
+    "HTTP": 0,
+    "server": 0,
+    "SSR": 0,
+    "engine": 0,
+    "projection": 0,
+    "oldChecksRepeated": 0,
+    "build": false
+  }
+}
