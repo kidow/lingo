@@ -1,0 +1,111 @@
+{
+  "schema": "hanja-isolated-component-native-hold/v1",
+  "glyph": "縐",
+  "root": "u7e10",
+  "reviewedAt": "2026-10-23",
+  "status": "HOLD:initial finite heads / QQ1 transition detached fragment / original LEFT8,13 positive fullround residual",
+  "observer": "ROOT actual browser",
+  "scope": "원16p22m53 plain74 유한관찰. DOM bad/errors[]와 육안FAIL은 별도다.",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u7e10.json": "1cbb6b8f471290f2dec967851e064610cc72f47641a4013a9045ac0ab46d6525",
+    "docs/hanja-source-cache-u7e10-2026-10-23/config.json": "c6da12f20a1c7269452c241dd1bed38d28ff28cb00bfde27eca6188bd721459a",
+    "docs/hanja-source-cache-u7e10-2026-10-23/source.mjs": "0b36ec4c4e3334f2c23ddb1f6efc20e631d43e7558ddd362eaccfec235979ba9",
+    "docs/hanja-source-cache-u7e10-2026-10-23/fixture.json": "ce861a051f8e6608320f076d48cc42e54261e8b93c15b8b3bef31fa7b94113aa"
+  },
+  "historicalObservedShared": {
+    "version": 74,
+    "componentSHA256": "d83f1f8892789a54308ff0c2f3a24b949db60ae052c9d7fcf96b2e26e6cd75b5",
+    "adapterSHA256": "c91351d692f08774aa3dd0807b58d5803917d70d9d5645e8c93d2cd351a3df97",
+    "closure": 79,
+    "currentPinCheckRequired": false
+  },
+  "geometrySHA256": "5c5491aa10552a600712693e83fcc03b2fded1bf9ebd295829a3e71d23fedfa4",
+  "native": {
+    "validScreens": 48,
+    "coverage": {
+      "screens": 11,
+      "masks": 13,
+      "positiveFilledResidual": [
+        [
+          8,
+          2
+        ],
+        [
+          13,
+          2
+        ]
+      ],
+      "positiveResidualIsNotAABorder": true,
+      "remainingMasksWhite": 11
+    },
+    "initial": {
+      "screens": 9,
+      "pens": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        11,
+        12,
+        16
+      ],
+      "globalProgress": 0.000001,
+      "result": "각 finite head fragment FAIL"
+    },
+    "secondMaskTransitions": {
+      "screens": 28,
+      "pens": [
+        1,
+        2,
+        8,
+        13
+      ],
+      "samplesPerPen": 7,
+      "samples": "원weighted boundary±1e-10/exact, local epsilon/.01/.03/.1",
+      "observations": {
+        "pen1": "boundary after detached triangle, local .1까지 접촉 회복 전 gap; .1 attached",
+        "pen2": "finite head지만 긴 대각선에 붙음",
+        "pen8": "finite head가 선행H edge에 붙음",
+        "pen13": "finite head가 선행H edge에 붙음"
+      }
+    },
+    "bad": [],
+    "errors": [],
+    "visualFailureDespiteStructuralChecks": true
+  },
+  "server": {
+    "PID": 16661,
+    "session": 65975,
+    "port": 59412,
+    "successfulStartupSSR": 1,
+    "CJS": 79,
+    "ESM": 79,
+    "engine": 0,
+    "projection": 0,
+    "stop": {
+      "exitCode": 130,
+      "output": "EMPTY"
+    }
+  },
+  "oldQQ1HOLD": {
+    "path": "docs/hanja-source-native-hold-u7e10-qq1-activation-2026-10-21/hold.json",
+    "preserved": true,
+    "separateFromCurrentPlainObservation": true
+  },
+  "correction": {
+    "sourceOrPolicyApproved": false,
+    "terminal8And13SeparateOriginalPolygonCandidateOnly": true,
+    "initialCapsAndQQ1ContactRemainUnresolved": true
+  },
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "authorActions": {
+    "SSR": 0,
+    "server": 0,
+    "engine": 0,
+    "projection": 0
+  }
+}

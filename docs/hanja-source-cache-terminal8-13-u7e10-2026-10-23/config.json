@@ -1,0 +1,199 @@
+{
+  "schema": "hanja-original-terminal-partition-source-config/v1",
+  "glyph": "縐",
+  "root": "u7e10",
+  "identity": {
+    "root": "u7e10",
+    "file": "../hanja-goal-glyphwiki-batch936-2026-10-13/engine-whole-u7e10.json",
+    "fileSHA256": "9b2aac1b87f1e5a1d0a58cc2ecde53f267ccadce42cfbfff1cd21d1778011d39"
+  },
+  "actualFull5File": "docs/hanja-goal-glyphwiki-batch936-2026-10-13/engine-whole-u7e10.json",
+  "baselineFixture": "docs/hanja-source-cache-u7e10-2026-10-23/fixture.json",
+  "inputSHA256": {
+    "docs/hanja-source-cache-u7e10-2026-10-23/config.json": "c6da12f20a1c7269452c241dd1bed38d28ff28cb00bfde27eca6188bd721459a",
+    "docs/hanja-source-cache-u7e10-2026-10-23/source.mjs": "0b36ec4c4e3334f2c23ddb1f6efc20e631d43e7558ddd362eaccfec235979ba9",
+    "docs/hanja-source-cache-u7e10-2026-10-23/fixture.json": "ce861a051f8e6608320f076d48cc42e54261e8b93c15b8b3bef31fa7b94113aa",
+    "docs/hanja-goal-glyphwiki-batch936-2026-10-13/engine-whole-u7e10.json": "9b2aac1b87f1e5a1d0a58cc2ecde53f267ccadce42cfbfff1cd21d1778011d39",
+    "docs/hanja-actual-component-profiles-2026-10-22/u7e10-plain-native-hold.json": "72a229363afb356ac477123af5e04f2a85830db57d37753061136404b412df96"
+  },
+  "baselineCounts": {
+    "logicalPens": 16,
+    "masks": 22,
+    "polygons": 53
+  },
+  "newCounts": {
+    "logicalPens": 16,
+    "masks": 24,
+    "polygons": 53
+  },
+  "partitions": [
+    {
+      "pen": 8,
+      "mask": 2,
+      "raw": 11,
+      "originalMask": {
+        "outline": "M90.3 15.9 L90.35 20.2 L90.35 24.15 L90.25 27.85 L90.05 31.2 L89.8 34.25 L89.45 37 L89 39.45 L88.4 41.6 L87.75 43.55 L86.9 45.25 L81.75 42.15 L82.2 41.25 L82.7 39.9 L83.1 38.15 L83.5 36.05 L83.8 33.6 L84.05 30.75 L84.25 27.6 L84.35 24.1 L84.35 20.25 L84.3 16.05 Z M84.3 15 L87.3 12.5 L92.8 17 L90.3 18.5 L84.3 21 Z M86.9 45.25 L86.2 46.3 L85.4 47.25 L84.55 48.1 L83.6 48.85 L82.6 49.5 L81.5 50.05 L80.35 50.45 L79.15 50.75 L77.95 50.9 L76.7 51 L76.7 45 L77.4 44.95 L78.05 44.85 L78.65 44.7 L79.15 44.55 L79.65 44.3 L80.1 44 L80.55 43.65 L80.95 43.25 L81.35 42.75 L81.75 42.15 Z M76.7 48 L66.7 46.5 L66.7 45 L76.7 45 Z",
+        "bounds": [
+          66.7,
+          12.5,
+          92.8,
+          51
+        ],
+        "direction": "curve",
+        "weight": 36.607634,
+        "revealPath": "M87.32 16 Q87.8275 38 84.33818299713055 43.729584569572175 Q81.7375 48 76.7375 48",
+        "revealWidth": 14
+      },
+      "originalTerminalPolygon": "M76.7 48 L66.7 46.5 L66.7 45 L76.7 45 Z",
+      "bodyGuide": "M87.32 16 Q87.8275 38 84.33818299713055 43.729584569572175 Q81.7375 48 76.7375 48",
+      "bodyWidth": 14,
+      "bodyWeight": 36.607634,
+      "terminalBounds": [
+        66.7,
+        45,
+        76.7,
+        48
+      ],
+      "terminalDirection": "left",
+      "terminalWeight": 10,
+      "terminalFlags": [
+        2,
+        14
+      ],
+      "terminalCallKind": "cdDrawCurve",
+      "originalPolygonCount": 4,
+      "bodyPolygonCount": 3
+    },
+    {
+      "pen": 13,
+      "mask": 2,
+      "raw": 18,
+      "originalMask": {
+        "outline": "M90.8 57 L90.75 61.55 L90.65 65.8 L90.5 69.7 L90.25 73.3 L89.95 76.55 L89.55 79.5 L89.1 82.15 L88.6 84.5 L87.95 86.55 L87.15 88.35 L81.8 85.65 L82.3 84.5 L82.8 82.95 L83.25 81 L83.65 78.65 L84 75.9 L84.3 72.8 L84.5 69.4 L84.65 65.6 L84.75 61.45 L84.8 57 Z M84.8 56 L87.8 53.5 L93.3 58 L90.8 59.5 L84.8 62 Z M87.15 88.35 L86.55 89.45 L85.8 90.5 L85 91.4 L84.1 92.2 L83.1 92.9 L82.05 93.5 L80.9 93.95 L79.7 94.25 L78.45 94.4 L77.2 94.5 L77.2 88.5 L77.9 88.45 L78.5 88.35 L79.05 88.2 L79.55 88.05 L79.95 87.8 L80.35 87.5 L80.75 87.2 L81.1 86.75 L81.45 86.25 L81.8 85.65 Z M77.2 91.5 L67.2 90 L67.2 88.5 L77.2 88.5 Z",
+        "bounds": [
+          67.2,
+          53.5,
+          93.3,
+          94.5
+        ],
+        "direction": "curve",
+        "weight": 38.746382,
+        "revealPath": "M87.8275 57 Q87.8275 80.5 84.50778004916185 87.04132010017369 Q82.245 91.5 77.245 91.5",
+        "revealWidth": 14
+      },
+      "originalTerminalPolygon": "M77.2 91.5 L67.2 90 L67.2 88.5 L77.2 88.5 Z",
+      "bodyGuide": "M87.8275 57 Q87.8275 80.5 84.50778004916185 87.04132010017369 Q82.245 91.5 77.245 91.5",
+      "bodyWidth": 14,
+      "bodyWeight": 38.746382,
+      "terminalBounds": [
+        67.2,
+        88.5,
+        77.2,
+        91.5
+      ],
+      "terminalDirection": "left",
+      "terminalWeight": 10,
+      "terminalFlags": [
+        2,
+        14
+      ],
+      "terminalCallKind": "cdDrawCurve",
+      "originalPolygonCount": 4,
+      "bodyPolygonCount": 3
+    }
+  ],
+  "ownRationalPositiveResidual": {
+    "ownRationalTerminalFailedTail": "PASS",
+    "firstFailure": "rectangle test assumed CCW but originalP is clockwise; source unchanged",
+    "passedPen8FormulaPrefixReexecuted": false,
+    "targets": [
+      {
+        "pen": 8,
+        "raw": 11,
+        "originalTerminal14PolygonExact": true,
+        "terminalEngineJump": "20",
+        "terminalWeight": "10",
+        "tailOriginalPolygon": [
+          [
+            "767/10",
+            "48"
+          ],
+          [
+            "767/10",
+            "45"
+          ],
+          [
+            "667/10",
+            "45"
+          ],
+          [
+            "667/10",
+            "93/2"
+          ]
+        ],
+        "fullGuideConvexXLowerBound": "6139/80",
+        "fullRoundRadius": "7",
+        "positiveResidualRectangle": [
+          "67",
+          "68",
+          "181/4",
+          "46"
+        ],
+        "positiveArea": "3/4",
+        "distanceXLowerBound": "699/80",
+        "strictOutsideFullRound": true,
+        "bodyGuide": "M87.32 16 Q87.8275 38 84.33818299713055 43.729584569572175 Q81.7375 48 76.7375 48",
+        "bodyWeight": 36.607634,
+        "bodyWidth": 14
+      },
+      {
+        "pen": 13,
+        "raw": 18,
+        "originalTerminal14PolygonExact": true,
+        "terminalEngineJump": "20",
+        "terminalWeight": "10",
+        "tailOriginalPolygon": [
+          [
+            "386/5",
+            "183/2"
+          ],
+          [
+            "386/5",
+            "177/2"
+          ],
+          [
+            "336/5",
+            "177/2"
+          ],
+          [
+            "336/5",
+            "90"
+          ]
+        ],
+        "fullGuideConvexXLowerBound": "15449/200",
+        "fullRoundRadius": "7",
+        "positiveResidualRectangle": [
+          "135/2",
+          "137/2",
+          "355/4",
+          "179/2"
+        ],
+        "positiveArea": "3/4",
+        "distanceXLowerBound": "1749/200",
+        "strictOutsideFullRound": true,
+        "bodyGuide": "M87.8275 57 Q87.8275 80.5 84.50778004916185 87.04132010017369 Q82.245 91.5 77.245 91.5",
+        "bodyWeight": 38.746382,
+        "bodyWidth": 14
+      }
+    ],
+    "sourceGeometryChanges": 0,
+    "engine": 0,
+    "projection": 0
+  },
+  "partitionPolicy": "各原末尾terminal14 quad全体を独立LEFT maskへ移す。body guide/w/weight/boundsと原53P union保持。原P分割/新ink/connector/guidejoin0。LEFT新内部clockは未観察。",
+  "initialCapsAndQQ1ContactUnresolved": true,
+  "historicalHOLDPreserved": true,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false
+}
