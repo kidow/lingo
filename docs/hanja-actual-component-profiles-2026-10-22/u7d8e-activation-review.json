@@ -225,9 +225,9 @@
     "docs/hanja-goal-glyphwiki-batch851-2026-10-13/engine-whole-u7d8e.json": "e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25",
     "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/fixture.json": "cd22bb35196582ca3e4eb8a122f6b5f260185b23daa326851cc2306d7ea6887c",
     "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/config.json": "96e2a43d5020485f6b75e8c12dca8e07825ae9c15719d6f444557ef9beb632f0",
-    "lib/hanja-stroke-start-gate-u7d8e.ts": "3d084b8e321ecbc1fcfe4c6f195e0d3d12d72791beba1a68f182cd3c4822bf51",
+    "lib/hanja-stroke-start-gate-u7d8e.ts": "7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70",
     "lib/hanja-stroke-source-clip-u7d8e.ts": "55175df2b275edd0d392e9f13e10734ed4614cbe9dc2a4c8d493d93567ce79cb",
-    "lib/hanja-stroke-start-caps-u7d8e.ts": "701544c34d2d22f1c914b74099d0c2e1fd665f977be98ea21eaa7c9e3367691e",
+    "lib/hanja-stroke-start-caps-u7d8e.ts": "b7cba160349b496406d19d0dcba753200906381093fa2de7ebae80bc6ef2d8f9",
     "docs/hanja-actual-component-profiles-2026-10-22/u7d8e-1.json": "02243dabef2f185293bcd2363118fd62b840307c47635a7876c4687b82e723ef",
     "docs/hanja-actual-component-profiles-2026-10-22/u7d8e-1-before-controls.json": "e927d09165c5871696c26c5be12415c5d54e2fbedb4337140d72183b4518622d",
     "docs/hanja-official-media-compare-u7d8e-2026-10-22/official-temporal-native-review.json": "bcebc8d979a3c2bee98a4275c8e0ee14e6ada25b0bf0290c802d277884fef361",
@@ -319,5 +319,33 @@
     "sourceGeometryAndOriginalFalseHistoryUnchanged": true,
     "newTimingOrInternalClockEquivalenceClaim": false,
     "registryCountOrNativeRerun": 0
+  },
+  "namedAliasMaintenance": {
+    "date": "2026-10-23",
+    "scope": "named-u7dc5-alias-only; original-u7d8e-policy-body-byte-exact",
+    "historicalActivationReviewSHA256": "5a962a916cbb2b4b9e59657fbc0551b9a4e88e3fa54209cc050b9dc8397c2681",
+    "inversePieces": {
+      "lib/hanja-stroke-start-gate-u7d8e.ts": {
+        "prefix": "import{isReviewedU7dc5ReuseContext,type ReviewedU7dc5ReuseContext}from'./hanja-stroke-source-reuse-u7dc5.ts'\n",
+        "suffix": "\n/** 緅全14source private token限定。綎の既存context/guard/owned policyは拡張しない。 */\nexport function reviewedU7dc5FootAliasPolicy(context:ReviewedU7dc5ReuseContext|null,pen:number,mask:number):ReviewedU7d8ePolicy|null{return isReviewedU7dc5ReuseContext(context)&&(pen===0||pen===1)&&mask===1?POLICIES.find(p=>p.pen===pen&&p.mask===mask)??null:null}\n",
+        "oldSHA256": "3d084b8e321ecbc1fcfe4c6f195e0d3d12d72791beba1a68f182cd3c4822bf51",
+        "aliasSHA256": "7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70"
+      },
+      "lib/hanja-stroke-start-caps-u7d8e.ts": {
+        "prefix": "import{isReviewedU7dc5ReuseContext,type ReviewedU7dc5ReuseContext}from'./hanja-stroke-source-reuse-u7dc5.ts'\n",
+        "suffix": "\n/** 緅先頭2つのQ1だけ。綎12m1や他glyphへ移譲しない。 */\nexport function reviewedU7dc5StartsAliasPolicy(context:ReviewedU7dc5ReuseContext|null,pen:number,mask:number):ReviewedU7d8eStartsPolicy|null{return isReviewedU7dc5ReuseContext(context)&&(pen===0||pen===1)&&mask===0?POLICIES.find(p=>p.pen===pen+1&&p.mask===mask+1)??null:null}\n",
+        "oldSHA256": "701544c34d2d22f1c914b74099d0c2e1fd665f977be98ea21eaa7c9e3367691e",
+        "aliasSHA256": "b7cba160349b496406d19d0dcba753200906381093fa2de7ebae80bc6ef2d8f9"
+      }
+    },
+    "historicalSOURCEAndProfilesUnchanged": true,
+    "originalPayloadAndApprovalExportUnchanged": true,
+    "originalNativeObservationAndRegistrationUnchanged": true,
+    "newNativeApproval": false,
+    "mathReruns": 0,
+    "oldTestsRerun": 0,
+    "SSR": 0,
+    "engineProjectionRuns": 0,
+    "verificationScope": "새 유지보수 검사만: exact alias inverse, 역사 SOURCE핀, 현재 활성핀/NOTICE 정합"
   }
 }

@@ -1,0 +1,41 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import{readFileSync}from'node:fs'
+import{createHash}from'node:crypto'
+import type{HanjaOutlineStrokes}from'./hanja-stroke-outline.ts'
+import{reviewedU7dc5ReuseContext as context,isReviewedU7dc5ReuseContext as owned,REVIEWED_U7DC5_REUSE_SOURCE as SOURCE,type ReviewedU7dc5ReuseContext}from'./hanja-stroke-source-reuse-u7dc5.ts'
+import{reviewedU7dc5FootAliasPolicy as footAlias,reviewedU7d8eContext,reviewedU7d8ePolicy,sampleReviewedU7d8eFoot,measureReviewedU7d8eFrame,commitReviewedU7d8eMask}from'./hanja-stroke-start-gate-u7d8e.ts'
+import{reviewedU7dc5StartsAliasPolicy as startsAlias,reviewedU7d8eStartsContext,reviewedU7d8eStartsPolicy,measureReviewedU7d8eStartsFrame,commitReviewedU7d8eStartsCaps}from'./hanja-stroke-start-caps-u7d8e.ts'
+const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(read(p).toString()),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex')
+const inversePieces={"lib/hanja-stroke-start-gate-u7d8e.ts":{"prefix":"import{isReviewedU7dc5ReuseContext,type ReviewedU7dc5ReuseContext}from'./hanja-stroke-source-reuse-u7dc5.ts'\n","suffix":"\n/** 緅全14source private token限定。綎の既存context/guard/owned policyは拡張しない。 */\nexport function reviewedU7dc5FootAliasPolicy(context:ReviewedU7dc5ReuseContext|null,pen:number,mask:number):ReviewedU7d8ePolicy|null{return isReviewedU7dc5ReuseContext(context)&&(pen===0||pen===1)&&mask===1?POLICIES.find(p=>p.pen===pen&&p.mask===mask)??null:null}\n","oldSHA256":"3d084b8e321ecbc1fcfe4c6f195e0d3d12d72791beba1a68f182cd3c4822bf51"},"lib/hanja-stroke-start-caps-u7d8e.ts":{"prefix":"import{isReviewedU7dc5ReuseContext,type ReviewedU7dc5ReuseContext}from'./hanja-stroke-source-reuse-u7dc5.ts'\n","suffix":"\n/** 緅先頭2つのQ1だけ。綎12m1や他glyphへ移譲しない。 */\nexport function reviewedU7dc5StartsAliasPolicy(context:ReviewedU7dc5ReuseContext|null,pen:number,mask:number):ReviewedU7d8eStartsPolicy|null{return isReviewedU7dc5ReuseContext(context)&&(pen===0||pen===1)&&mask===0?POLICIES.find(p=>p.pen===pen+1&&p.mask===mask+1)??null:null}\n","oldSHA256":"701544c34d2d22f1c914b74099d0c2e1fd665f977be98ea21eaa7c9e3367691e"}}
+function measurement(policy:{id:string;segment:{revealPath?:string}},progress:number,flag:string){
+ const doc:{defaultView:object|null}={defaultView:null},view={document:doc,getComputedStyle:()=>({transform:'none',getPropertyValue:()=>''})};doc.defaultView=view;
+ const ns='http://www.w3.org/2000/svg';
+ function node(name:string,parent:object|null){const attrs=new Map<string,string>();return{localName:name,namespaceURI:ns,parentElement:parent,ownerDocument:doc,isConnected:true,ownerSVGElement:null as object|null,getAttribute:(k:string)=>attrs.get(k)??null,setAttribute:(k:string,v:string)=>{attrs.set(k,String(v))},removeAttribute:(k:string)=>{attrs.delete(k)}}}
+ const svg=node('svg',null),g=node('g',svg),defs=node('defs',g),path=node('path',defs);g.ownerSVGElement=svg;defs.ownerSVGElement=svg;path.ownerSVGElement=svg;
+ g.setAttribute('data-stroke-start-gate',policy.id);g.setAttribute('data-stroke-reveal-progress',String(progress));path.setAttribute('d',policy.segment.revealPath!);path.setAttribute(flag,'true');
+ const a=policy.segment.revealPath!.match(/-?\d+(?:\.\d+)?/g)!.map(Number),start=a.slice(0,2),end=a.slice(-2),L=42;
+ return{g,path:Object.assign(path,{getTotalLength:()=>L,getPointAtLength:(d:number)=>({x:start[0]+(end[0]-start[0])*d/L,y:start[1]+(end[1]-start[1])*d/L})})}
+}
+test('緅 exact14 source-bound alias: private4 lifecycle and negatives only',()=>{
+ const f=json(SOURCE.fixture),strokes:HanjaOutlineStrokes=f.strokes,tin=json(SOURCE.identicalProofOwnerFixture).u7d8e.strokes,full=json(SOURCE.actualFull5File);
+ assert.equal(sha(read(SOURCE.actualFull5File)),SOURCE.actualFull5SHA256);assert.deepEqual(Object.keys(full).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(sha(read(SOURCE.fixture)),SOURCE.fixtureSHA256);assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.equal(strokes.length,14);assert.equal(strokes.flat().length,17);assert.equal(strokes.flat().reduce((n,s)=>n+(s.outline.match(/M/g)||[]).length,0),33);
+ const ctx=context(strokes);assert(ctx);assert(owned(ctx));assert.equal(ctx.geometryOwner,'u7dc5');assert.equal(ctx.proofOwner,'u7d8e');assert.equal(context(tin),null);assert.equal(reviewedU7d8eContext(strokes),null);assert.equal(reviewedU7d8eStartsContext(strokes),null);
+ const forged:ReviewedU7dc5ReuseContext={id:'u7dc5-exact14-equivalent-first2',geometryOwner:'u7dc5',proofOwner:'u7d8e'};assert.equal(owned(forged),false);assert.equal(footAlias(forged,0,1),null);assert.equal(startsAlias(forged,0,0),null);
+ for(const change of[(s:any)=>{s[13][0].weight+=1},(s:any)=>{s[0][0].revealWidth+=1},(s:any)=>{s[1][1].outline+=' M0 0 Z'},(s:any)=>{s[2][0].extra=true}]){const s=structuredClone(strokes);change(s);assert.equal(context(s),null)}
+ const getter=structuredClone(strokes);let reads=0;Object.defineProperty(getter[0][0],'outline',{enumerable:true,get(){reads++;return strokes[0][0].outline}});assert.equal(context(getter),null);assert.equal(reads,0);
+ const oldFoot=reviewedU7d8eContext(tin),oldStarts=reviewedU7d8eStartsContext(tin);assert(oldFoot);assert(oldStarts);
+ let aliasTargets=0;
+ for(const pen of[0,1]){
+  assert.equal(sha(JSON.stringify(strokes[pen])),SOURCE.fragmentJSONSHA256[pen]);assert.deepEqual(strokes[pen],tin[pen]);const fp=footAlias(ctx,pen,1),cp=startsAlias(ctx,pen,0);assert(fp);assert(cp);aliasTargets+=2;
+  assert.equal(fp,reviewedU7d8ePolicy(oldFoot,pen,1));assert.equal(cp,reviewedU7d8eStartsPolicy(oldStarts,pen,0));assert.deepEqual(fp.segment,strokes[pen][1]);assert.deepEqual(cp.segment,strokes[pen][0]);
+  assert.equal(sampleReviewedU7d8eFoot(fp,0).phase,'empty');assert.equal(sampleReviewedU7d8eFoot(fp,fp.phaseShare/2).phase,'foot');assert.equal(sampleReviewedU7d8eFoot(fp,1).phase,'full');
+  const body=(fp.phaseShare+1)/2,footNodes=measurement(fp,body,'data-u7d8e-measurement');const ff=Reflect.apply(measureReviewedU7d8eFrame,undefined,[fp,body,footNodes.path]);assert.equal(ff.phase,'body');assert.equal(ff.UARead,true);assert.equal(ff.policyId,fp.id);assert.equal(commitReviewedU7d8eMask({ink:null,foot:null,body:null,rect:null,measurement:null},ff),false);footNodes.path.setAttribute('pathLength','1');assert.throws(()=>Reflect.apply(measureReviewedU7d8eFrame,undefined,[fp,body,footNodes.path]));
+  const p=1e-6,capNodes=measurement(cp,p,'data-u7d8e-starts-measurement');const cf=Reflect.apply(measureReviewedU7d8eStartsFrame,undefined,[cp,strokes[pen][0],p,capNodes.path]);assert.equal(cf.policyId,cp.id);assert.equal(cf.rho,cf.d);assert.equal(cf.d,p*42);capNodes.path.setAttribute('pathLength','1');assert.throws(()=>Reflect.apply(measureReviewedU7d8eStartsFrame,undefined,[cp,strokes[pen][0],p,capNodes.path]));
+  const resetNodes={measurement:null,guide:null,startCap:null,endCap:null,ink:null};assert.equal(commitReviewedU7d8eStartsCaps(cp,strokes[pen][0],0,'alias',resetNodes).status,'empty');assert.equal(commitReviewedU7d8eStartsCaps(cp,strokes[pen][0],1,'alias',resetNodes).status,'complete');assert.throws(()=>Reflect.apply(measureReviewedU7d8eStartsFrame,undefined,[{...cp},strokes[pen][0],p,null]));
+ }
+ assert.equal(aliasTargets,4);for(const[p,m]of[[-1,0],[2,0],[11,0],[13,0],[0,1],[0,.5]])assert.equal(startsAlias(ctx,p,m),null);for(const[p,m]of[[0,0],[2,1],[12,1],[1,2],[0,1.1]])assert.equal(footAlias(ctx,p,m),null);assert.equal(startsAlias(null,0,0),null);assert.equal(footAlias(null,0,1),null);
+ for(const[path,pieces]of Object.entries(inversePieces)){const now=read(path).toString();assert(now.startsWith(pieces.prefix));assert(now.endsWith(pieces.suffix));assert.equal(sha(now.slice(pieces.prefix.length,-pieces.suffix.length)),pieces.oldSHA256)}
+ assert.equal(SOURCE.forbiddenProofOwnerStart12Transfer,true);assert.equal(SOURCE.newMathDerivations,0);assert.equal(SOURCE.oldProofMathLoopsRepeated,0);assert.equal(SOURCE.nativeApproval,false);assert.equal(SOURCE.runtimeApplied,false);
+ console.log(JSON.stringify({glyph:'緅',wholeGeometryGuard:'14p17m33',aliasTargets,geometryOwner:ctx.geometryOwner,proofOwner:ctx.proofOwner,oldMathLoops:0,engine:0,projection:0,SSR:0,native:false,oldGateCapsInverse:true}));
+});

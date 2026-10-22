@@ -1,3 +1,4 @@
+import{isReviewedU7dc5ReuseContext,type ReviewedU7dc5ReuseContext}from'./hanja-stroke-source-reuse-u7dc5.ts'
 import type{HanjaOutlineSegment,HanjaOutlineStrokes}from'./hanja-stroke-outline.ts'
 import{reviewedU7d8eContext as exactWholeContext}from'./hanja-stroke-start-gate-u7d8e.ts'
 /** 綎 원1m1/2m1/12m1 전용 growth. 저장된 고유 초기증명만 결박하며 현재native/AA/전체연속성 승인은 아니다. */
@@ -92,3 +93,6 @@ export function commitReviewedU7d8eStartsCaps(policy:ReviewedU7d8eStartsPolicy,s
     return{status:'visible' as const,frame,cleanup:reset}
   }catch{reset();return{status:'hidden' as const,frame:null,cleanup:reset}}
 }
+
+/** 緅先頭2つのQ1だけ。綎12m1や他glyphへ移譲しない。 */
+export function reviewedU7dc5StartsAliasPolicy(context:ReviewedU7dc5ReuseContext|null,pen:number,mask:number):ReviewedU7d8eStartsPolicy|null{return isReviewedU7dc5ReuseContext(context)&&(pen===0||pen===1)&&mask===0?POLICIES.find(p=>p.pen===pen+1&&p.mask===mask+1)??null:null}

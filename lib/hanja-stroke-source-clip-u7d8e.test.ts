@@ -4,6 +4,18 @@ import{readFileSync}from'node:fs'
 import{createHash}from'node:crypto'
 import{reviewedU7d8eClipContext as context,reviewedU7d8eClipPolicy as policy,sampleReviewedU7d8eClip as sample,measureReviewedU7d8eClipFrame as measure,commitReviewedU7d8eClip as commit,REVIEWED_U7D8E_CLIP_SOURCE as SOURCE,REVIEWED_U7D8E_CLIP_GEOMETRY as GEO}from'./hanja-stroke-source-clip-u7d8e.ts'
 const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(read(p).toString()),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex'),clone=(v:any)=>JSON.parse(JSON.stringify(v))
+const NAMED_ALIAS_HISTORY:Readonly<Record<string,{prefix:string;suffix:string;oldSHA256:string;aliasSHA256:string}>>={"lib/hanja-stroke-start-gate-u7d8e.ts":{"prefix":"import{isReviewedU7dc5ReuseContext,type ReviewedU7dc5ReuseContext}from'./hanja-stroke-source-reuse-u7dc5.ts'\n","suffix":"\n/** 緅全14source private token限定。綎の既存context/guard/owned policyは拡張しない。 */\nexport function reviewedU7dc5FootAliasPolicy(context:ReviewedU7dc5ReuseContext|null,pen:number,mask:number):ReviewedU7d8ePolicy|null{return isReviewedU7dc5ReuseContext(context)&&(pen===0||pen===1)&&mask===1?POLICIES.find(p=>p.pen===pen&&p.mask===mask)??null:null}\n","oldSHA256":"3d084b8e321ecbc1fcfe4c6f195e0d3d12d72791beba1a68f182cd3c4822bf51","aliasSHA256":"7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70"}}
+function historicalSourceSHA(path:string):string{
+ const raw=read(path),current=sha(raw),pin=NAMED_ALIAS_HISTORY[path]
+ if(!pin||current===pin.oldSHA256)return current
+ assert.equal(current,pin.aliasSHA256,path)
+ const text=raw.toString()
+ assert(text.startsWith(pin.prefix),path);assert(text.endsWith(pin.suffix),path)
+ assert.equal(text.split(pin.prefix).length,2,path);assert.equal(text.split(pin.suffix).length,2,path)
+ const original=text.slice(pin.prefix.length,-pin.suffix.length)
+ assert.equal(sha(original),pin.oldSHA256,path)
+ return sha(original)
+}
 function tree(P:any,p:number,q={x:45,y:16.5}){
  const writes:{id:string;key:string;value:string|null}[]=[],reads:string[]=[];let readHook:((s:string)=>void)|null=null,writeHook:((n:any,k:string)=>void)|null=null
  const view:any={getComputedStyle:(n:any)=>({transform:n.cssTransform??'none',getPropertyValue:(k:string)=>n.css?.[k]??''})},doc:any={defaultView:view};view.document=doc
@@ -19,7 +31,7 @@ function tree(P:any,p:number,q={x:45,y:16.5}){
  return{nodes:{measurement,hRect,bPlane,hInk,bInk,partial,ink},target,defs,hc,bc,measurement,hRect,bPlane,hInk,bInk,partial,ink,svg,doc,view,reads,writes,setProgress:(p:number)=>{target.attrs['data-stroke-reveal-progress']=String(p)},onRead:(f:typeof readHook)=>{readHook=f},onWrite:(f:typeof writeHook)=>{writeHook=f}}
 }
 test('綎11 source H/J/B DOM adapter tail FIRST; old math loops not rerun',()=>{
- for(const[p,h]of Object.entries(SOURCE.inputSHA256))assert.equal(sha(read(p)),h,p)
+ for(const[p,h]of Object.entries(SOURCE.inputSHA256))assert.equal(historicalSourceSHA(p),h,p)
  const cache=json(SOURCE.sourceCacheFile).u7d8e,full=json(SOURCE.sourceFile);assert.equal(sha(JSON.stringify(cache.strokes)),SOURCE.geometrySHA256);assert.deepEqual(Object.keys(full).sort(),['engineRevision','engineHashes','groups','trace','defaults'].sort());assert.deepEqual(full.trace[9][0].args.slice(-2),[22,113]);assert.deepEqual(SOURCE.identity,{sourceRoot:'u7d8e',sourceProofFile:'engine-whole-u7d8e.json',sourceProofFileSha256:SOURCE.sourceSHA256})
  const C=context(cache.strokes),P=policy(C,10,0)!;assert(C&&P);assert.deepEqual(P.segment,cache.strokes[10][0]);assert.equal(P.segment.outline,GEO.H+' '+GEO.B+' '+GEO.J);assert.equal(sha(JSON.stringify(P.segment)),SOURCE.maskSHA256);assert.equal(policy({...C},10,0),null);assert.equal(policy(C,10,1),null);assert.equal(policy(C,9,0),null)
  const changed=clone(cache.strokes);changed[0][0].weight++;assert.equal(context(changed),null);const targetChanged=clone(cache.strokes);targetChanged[10][0].outline+=' ';assert.equal(context(targetChanged),null)
