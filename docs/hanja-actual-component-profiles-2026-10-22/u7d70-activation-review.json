@@ -1,0 +1,199 @@
+{
+  "schema": "hanja-runtime-scoped-activation-review/v1",
+  "date": "2026-10-22",
+  "batch": 1349,
+  "glyph": "絰",
+  "root": "u7d70",
+  "source": {
+    "pens": 12,
+    "masks": 15,
+    "polygons": 33,
+    "geometrySHA256": "7b8dbfaf6d3b4af02817e26e63a8e838e69dfa5a19f2cd4145f1611fbb589fd5",
+    "sourceCache": {
+      "path": "docs/hanja-source-cache-u7d70-2026-10-22/source.json",
+      "SHA256": "af07667e5ff539e45157643fc15b408b1720a7a2040cf56c14c7d8e1e648222e"
+    },
+    "actualFull5": {
+      "path": "docs/hanja-public-glyphwiki-engine-capture-second-six-2026-10-22/engine-whole-u7d70.json",
+      "SHA256": "e9f335492943b9f162f58751490a038c9772135580dbd36b155471c186a9d92a"
+    },
+    "originalGlyphPGuideWidthWeightOrderPreserved": true
+  },
+  "observedHistoricalPins": {
+    "policy": {
+      "path": "lib/hanja-stroke-source-foot-u7d70.ts",
+      "SHA256": "f650cd4d38c9157ab8f672b71f703287a881cbccc263903f2a59d0288bb16811"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "8cd3c4f1e6f3566857a53163ddfa7f021ba7daddc3ab2118fdb1c52609add075"
+    },
+    "firstHelper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "bc52e16e51c3fbcb27d8f9b625bddc310ccf7c1157108b8da8642ec06c114c3f",
+      "commit": "a2dadc07d63b6e33278855f8f1f76c4246e98326"
+    },
+    "firstProfile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7d70-1.json",
+      "SHA256": "2873168df78e2edd164906ddd59e6b849982c3651a09b37deb0818dc96d99124"
+    },
+    "ordinaryHelper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "50679f2893496a20730d4bc6cbb2d9aac0ba1007a4776e61c57d609fd4d6842f",
+      "commit": "1e17dc629da4d2dc6b79e85ea751505597db958b"
+    },
+    "ordinaryProfile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7d70-1.json",
+      "SHA256": "3c930dc2f470135dd8cef38a9ddd06f2e6e73d7d35d8a36c885da2bb96189c44"
+    },
+    "meaning": "ROOT가 관찰한 고정 커밋의 역사 바이트. 다른 후보의 후속 공용 TSX/helper 변경을 현재SHA 불일치로 거부하지 않는다."
+  },
+  "native": {
+    "observer": "ROOT",
+    "validScreens": 37,
+    "firstHelperScreens": 29,
+    "ordinaryResidualScreens": 8,
+    "firstHelper": {
+      "initialFoot": 4,
+      "footBodyBoundaries": 6,
+      "compact": {
+        "pens": 12,
+        "screens": 12,
+        "samples": 108
+      },
+      "fine": {
+        "pens": [
+          1,
+          8
+        ],
+        "screens": 2,
+        "samples": 6
+      },
+      "natural": {
+        "pen": 8,
+        "earlyAndEndScreens": 2,
+        "continuousAllRAF": false
+      },
+      "doneWhole": 1,
+      "specialResiduals": {
+        "screens": 2,
+        "pens": [
+          1,
+          8
+        ],
+        "result": "검은 면적 없이 얇은 AA 원P 테두리만 관찰. 수학적 blank/round-sweep coverage 증명으로 주장하지 않음."
+      }
+    },
+    "ordinaryResiduals": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "result": "blank",
+        "alignment": "별도 전체SVG 정렬 후 유효"
+      },
+      {
+        "pen": 2,
+        "mask": 2,
+        "result": "blank"
+      },
+      {
+        "pen": 3,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 5,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 6,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 8,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 9,
+        "mask": 1,
+        "result": "blank"
+      }
+    ],
+    "excluded": {
+      "initialSpecialCoverageMainShots": 2,
+      "wrongOrdinaryControlsSelectedSpecial8": 4,
+      "ordinaryCoverageFromExcludedShots": false
+    },
+    "bad": [],
+    "errors": [],
+    "conclusion": "새 foot/body 전환·전체 compact·선택 fine/자연 및 ordinary residual의 유한 관찰에서 큰 분리조각 없음. 삼각쐐기는 이 한정 관찰에서 수용됨. 연속성의 모든 픽셀·모든RAF 보장 아님."
+  },
+  "mathematicalScope": {
+    "ownSourceUnionArrangementConnectedFoot": true,
+    "ownSourceXMonotoneBodyConnectivity": true,
+    "exactP1OriginalInkCoverage": true,
+    "originalRoundSweepCoverageClaim": false,
+    "nativeResidualIsMathematicalProof": false
+  },
+  "approval": {
+    "rootScopedFiniteApproval": true,
+    "isolatedActualComponentBrowserVerified": true,
+    "runtimeActivationAuthorized": true,
+    "actualProductUI": false,
+    "controller": false,
+    "storage": false,
+    "all12Autoplay": false,
+    "domesticTemporalAll12": false,
+    "allRAF": false
+  },
+  "preservedHistory": {
+    "oldHold": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7d70-native-hold.json",
+      "SHA256": "54d67a1c073c8d8d4cb85921efd2055543fb1d32e19433aa0b352d1daa8c3f95"
+    },
+    "sourceCachePreparationAndPublicHistoryFalseUnchanged": true,
+    "oldPlainProfileUnchanged": true
+  },
+  "servers": [
+    {
+      "scope": "ordinary residual8",
+      "pid": 47708,
+      "sessionId": 26295,
+      "exitCode": 130,
+      "output": "empty",
+      "finalPIDQuery": false
+    },
+    {
+      "scope": "first helper29",
+      "pid": 43994,
+      "sessionId": 75241,
+      "exitCode": 130,
+      "output": "empty",
+      "finalPIDQuery": false
+    }
+  ],
+  "activation": {
+    "expectedApplied": 5765,
+    "expectedRemaining": 213,
+    "countVerification": "ROOT 수행; 이 기록 작성자는 registry 변경·actual verifier 미실행"
+  },
+  "authorOperations": {
+    "newRecordMetadataCheck": 1,
+    "changedTSAST": 2,
+    "oldTests": 0,
+    "newActivationTestExecution": 0,
+    "SSR": 0,
+    "sourceProjection": 0,
+    "engine": 0,
+    "build": 0,
+    "server": 0
+  }
+}
