@@ -1,5 +1,5 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
-/** 1358 정적9그룹 미등록후보;source/public 준비이력false 보존. */
+/** 1358 ROOT isolated actual component 유한34화면 승인;source/public 준비이력false 보존. */
 const EXPECTED=[
   {
     "glyph": "玹",
@@ -217,6 +217,7 @@ function sameJSON(a:unknown,b:unknown):boolean {
 }
 export function loadGlyphWikiBatch1358Strokes(bundle:unknown):readonly HanjaDictionaryStrokeData[]{if(arguments.length!==1||!sameJSON(bundle,EXPECTED))throw Error('Invalid GlyphWiki batch1358 provisional bundle');return EXPECTED}
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1358_STROKES:ReturnType<typeof loadGlyphWikiBatch1358Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1358_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1358_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1358_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1358_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1358_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1358_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1358_NATIVE_REVIEW=Object.freeze({path:'docs/hanja-actual-component-profiles-2026-10-22/u73b9-activation-review.json',sha256:'c2978623740dc8283257d1041d5bbcc751a918be3f779cf484af82833fb4d50e'})
