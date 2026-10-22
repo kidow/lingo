@@ -1,4 +1,5 @@
 'use client'
+import { reviewedU7d70Context, reviewedU7d70Policy, measureReviewedU7d70Frame, commitReviewedU7d70Mask, type ReviewedU7d70Policy } from '@/lib/hanja-stroke-source-foot-u7d70'
 import { reviewedU5611Context, reviewedU5611Policy, commitReviewedU5611Caps, type ReviewedU5611Policy } from '@/lib/hanja-stroke-start-gate-u5611'
 import { reviewedU8a29Context, reviewedU8a29Policy, commitReviewedU8a29Caps, type ReviewedU8a29Policy } from '@/lib/hanja-stroke-start-gate-u8a29'
 import { reviewedU4fd3Context, reviewedU4fd3Policy, commitReviewedU4fd3Caps, type ReviewedU4fd3Policy } from '@/lib/hanja-stroke-start-gate-u4fd3'
@@ -54,6 +55,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const quanContext = reviewedQuanQuadraticCapsContext(strokes)
   const siContext = reviewedSiContext(strokes)
   const u8fedContext = reviewedU8fedContext(strokes)
+  const u7d70Context = reviewedU7d70Context(strokes)
   const u928dContext = reviewedU928dContext(strokes)
   const u9081Context = reviewedU9081Context(strokes)
   const u905dContext = reviewedU905dContext(strokes)
@@ -109,6 +111,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u6e7aPolicy?.kind === 'original-HJ-B-u6e7a') return <U6e7aHVOutline key={index} policy={u6e7aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u8fedPolicy = reviewedU8fedPolicy(u8fedContext, stroke, index)
         if (u8fedPolicy) return <U8fedCapsOutline key={index} policy={u8fedPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+        const u7d70Policy = reviewedU7d70Policy(u7d70Context, stroke, index)
+        if (u7d70Policy) return <U7d70FootOutline key={index} policy={u7d70Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u928dPolicy = reviewedU928dPolicy(u928dContext, stroke, index)
         if (u928dPolicy) return <U928dFootOutline key={index} policy={u928dPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u9081Policy = reviewedU9081Policy(u9081Context, stroke, index)
@@ -539,6 +543,34 @@ function U68b2CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU68b2
 /** 潗 K의 원3m1/3m2만 고유 Q growing cap으로 표시한다. 다른 child는 그대로 둔다. */
 /** 邁 VS3 body3 QB17의 정확한 두 mask만 조건부 APP 정책으로 측정한다. native/runtime 승인 아님. */
 /** 銍 10획의 두 번째 mask만 원윤곽에 연결된 foot과 원 Q guide로 표시한다. */
+function U7d70FootOutline({policy,segment,progress,clipId}:{policy:ReviewedU7d70Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),foot=useRef<SVGPathElement|null>(null),body=useRef<SVGPathElement|null>(null),rect=useRef<SVGRectElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  const b=segment.bounds
+  useLayoutEffect(()=>{
+    const inkNode=ink.current,footNode=foot.current,bodyNode=body.current,rectNode=rect.current
+    const frame=measureReviewedU7d70Frame(policy,progress,measurement.current)
+    commitReviewedU7d70Mask({ink:inkNode,foot:footNode,body:bodyNode,rect:rectNode,measurement:measurement.current},frame)
+    return ()=>{
+      inkNode?.setAttribute('visibility','hidden')
+      footNode?.setAttribute('visibility','hidden')
+      bodyNode?.setAttribute('visibility','hidden')
+    }
+  },[policy,progress,clipId])
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="source-foot-x-u7d70" data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u7d70-measure'} data-u7d70-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <clipPath id={clipId+'-u7d70-body-clip'} clipPathUnits="userSpaceOnUse">
+        <rect ref={rect} id={clipId+'-u7d70-rect'} x={b[0]} y={b[1]} width="0" height={b[3]-b[1]} />
+      </clipPath>
+      <mask id={clipId+'-u7d70-foot-x-mask'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={foot} id={clipId+'-u7d70-foot'} data-u7d70-foot="true" d="" fill="white" fillRule="nonzero" stroke="none" visibility="hidden" />
+        <path ref={body} id={clipId+'-u7d70-body'} data-u7d70-body="true" d={segment.outline} fill="white" fillRule="nonzero" stroke="none" clipPath={'url(#'+clipId+'-u7d70-body-clip)'} visibility="hidden" />
+      </mask>
+    </defs>
+    <path ref={ink} id={clipId+'-u7d70-ink'} data-owner={clipId} data-u7d70-ink="true" d={segment.outline} mask={'url(#'+clipId+'-u7d70-foot-x-mask)'} visibility="hidden" />
+  </g>
+}
+
 function U928dFootOutline({policy,segment,progress,clipId}:{policy:ReviewedU928dPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
   const measurement=useRef<SVGPathElement|null>(null),foot=useRef<SVGPathElement|null>(null),body=useRef<SVGPathElement|null>(null),ink=useRef<SVGPathElement|null>(null)
   useLayoutEffect(()=>{
