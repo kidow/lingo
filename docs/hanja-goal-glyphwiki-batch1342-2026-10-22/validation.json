@@ -1,0 +1,89 @@
+{
+  "schema": "hanja-minimal-single-runtime-validation-v1",
+  "batch": 1342,
+  "date": "2026-10-22",
+  "status": "FIRST-actual-runtime-verifier-PASS",
+  "counts": {
+    "pens": 9,
+    "masks": 10,
+    "polygons": 22
+  },
+  "geometrySHA256": "4a842b0535cbeee6a9392eb1be179c0aed335617db1019ba558b2cf9cfab0698",
+  "parent": {
+    "resume": "docs/hanja-goal-glyphwiki-batch1340-2026-10-22/resume.json",
+    "sha256": "1b8d027aef2ccf98f25309a620750d568b72838677b9ee4e58acfb765acfe96d",
+    "applied": 5756,
+    "remaining": 222
+  },
+  "sourcePins": 18,
+  "checks": {
+    "newLoader3": {
+      "executions": 1,
+      "passed": 3,
+      "failed": 0
+    },
+    "newLoaderAST": {
+      "files": 2,
+      "executionsEach": 1,
+      "diagnostics": 0
+    },
+    "newVerifierSyntax": {
+      "status": "PASS",
+      "executions": 1
+    },
+    "actualRegistryVerifier": {
+      "status": "FIRST PASS",
+      "executions": 1,
+      "exit": 0
+    },
+    "oldAPPTestsRepeated": 0,
+    "SSRRepeated": 0,
+    "sourceProjection": 0,
+    "pendingMetadata": {
+      "status": "PASS",
+      "executions": 1,
+      "scope": "new pending flags/parent/review/NOTICE/APP3 references only; prior loader3/AST2 and source/APP checks not repeated"
+    },
+    "postActualMetadata": {
+      "status": "PASS",
+      "executions": 1,
+      "scope": "final review/resume/validation/README contract only; no actual verifier/source18pins/loader3/APP/SSR repeats"
+    }
+  },
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "isolatedActualComponentBrowserVerified": true,
+  "actualAppUI": false,
+  "wholeReplay": false,
+  "build": false,
+  "actualVerifierResult": {
+    "passed": true,
+    "firstExecution": true,
+    "executions": 1,
+    "exitCode": 0,
+    "wallTimeSeconds": 0.54624225,
+    "registryUnique": 5757,
+    "remaining": 221,
+    "historical": 349,
+    "resolved": 182,
+    "active": 167,
+    "refs": 398,
+    "targetMatches": 1,
+    "targetRecordType": "object",
+    "sourcePins": 18,
+    "pinMismatch": 0,
+    "isolatedActualComponentBrowserVerified": true,
+    "actualComponentFiniteScreens": 41,
+    "actualAppUI": false,
+    "wholeReplay": false,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "projection": 0,
+    "engine": 0,
+    "APPFocusedRepeated": 0,
+    "SSRRepeated": 0,
+    "build": false
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "u82fd-vs3-live-harness-preparation-v1",
+  "configSHA256": "9bef7d6fdc83e0a93fdf41654dc3eb4103d7fcf6a5ca7c18343ff82f14e8fb5a",
+  "ownSHA256": {
+    "config.json": "9bef7d6fdc83e0a93fdf41654dc3eb4103d7fcf6a5ca7c18343ff82f14e8fb5a",
+    "check.mjs": "8cbea89c96f6312295a5b2e3aabbbc2a8f24fd9110d5c99773de3f1d97b196e0",
+    "browser.js": "7c3d083bea1aa693c80f6e2413f7d8d4dee4cbf3808b2d4175457296b07ab062",
+    "serve.py": "d65075d401c3fd4f1042690913a88c7986d7e09babc39746672f504a4d33ce34",
+    "README.md": "7addea5c82753fef2e20d99db6319fae622ca5840354f66cceda4a293e7b9ab1"
+  },
+  "inputPins": 6,
+  "appFocused": {
+    "first": {
+      "pass": 7,
+      "fail": 1,
+      "reason": "ordinary pen list copied from previous glyph included new targets"
+    },
+    "failedOnlyRecovery": {
+      "pass": 1,
+      "ordinaryComparisons": 63,
+      "oldComponentInverseByteExact": true
+    }
+  },
+  "newHarnessFocused": {
+    "firstPass": true,
+    "count": 1,
+    "inputPins": 6,
+    "ownPins": 5,
+    "SSR": 3,
+    "targetBindings": 2,
+    "transpileCounts": {
+      "commonJS": 25,
+      "ESM": 25
+    },
+    "oldFocusedRepeated": 0
+  },
+  "syntax": {
+    "appAST3": [
+      {
+        "path": "lib/hanja-stroke-start-gate-u82fd.ts",
+        "diagnostics": 0
+      },
+      {
+        "path": "lib/hanja-stroke-start-gate-u82fd.test.ts",
+        "diagnostics": 0
+      },
+      {
+        "path": "components/hanja/stroke-outlines.tsx",
+        "diagnostics": 0
+      }
+    ],
+    "node2": [
+      {
+        "path": "check.mjs",
+        "status": 0,
+        "stderr": ""
+      },
+      {
+        "path": "browser.js",
+        "status": 0,
+        "stderr": ""
+      }
+    ],
+    "pythonAST1": {
+      "status": 0
+    }
+  },
+  "CLIHelp": {
+    "firstPass": true,
+    "count": 1,
+    "status": 0,
+    "serverStarted": false
+  },
+  "oldFocusedRepeated": 0,
+  "sourceGeometry": 0,
+  "sourceCompiler": 0,
+  "engine": 0,
+  "HTTP": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "metadata": {
+    "finalPinReadOncePlanned": true
+  }
+}
