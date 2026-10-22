@@ -1,6 +1,6 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** 1350 미등록 후보. ROOT정적16그룹만 확인, source/native/APP/runtime 미승인. */
+/** ROOT scoped isolated-component approval1350. Fixed preparation JSON remains historical. */
 const EXPECTED = [
   {
     "glyph": "縝",
@@ -361,6 +361,7 @@ export function loadGlyphWikiBatch1350Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1350_STROKES:ReturnType<typeof loadGlyphWikiBatch1350Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1350_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1350_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1350_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1350_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1350_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1350_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1350_NATIVE_REVIEW=Object.freeze({path:'docs/hanja-actual-component-profiles-2026-10-22/u7e1d-activation-review.json',sha256:'1d23164c24df1c42f07eb92a407f1019af0ee83f76469293c565442bcb0a2ac2'})

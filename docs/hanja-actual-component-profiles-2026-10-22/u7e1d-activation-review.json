@@ -1,0 +1,200 @@
+{
+  "schema": "hanja-runtime-scoped-activation-review/v1",
+  "date": "2026-10-22",
+  "batch": 1350,
+  "glyph": "縝",
+  "root": "u7e1d",
+  "source": {
+    "pens": 16,
+    "masks": 20,
+    "polygons": 46,
+    "geometrySHA256": "f7307bb9c41ed488c220e1789090367fbfce329349b8ab79bdb6fce0d41b693b",
+    "sourceCache": {
+      "path": "docs/hanja-source-cache-u7e1d-2026-10-22/source.json",
+      "SHA256": "b059654ca50044da046eab0ece34121b32bb299bb0b5ac043c84567c819b0f8c"
+    },
+    "actualFull5": {
+      "path": "docs/hanja-public-glyphwiki-engine-capture-second-six-2026-10-22/engine-whole-u7e1d.json",
+      "SHA256": "b278e11ebed3c0b66c02f7d5eca2edac92aefa55292f60e1c2fbe919b34b289c"
+    },
+    "originalPGuideWidthWeightOrderPreserved": true,
+    "QQ2OrdinaryUnchanged": true
+  },
+  "observedHistoricalPins": {
+    "meaning": "ROOT가 실제관찰한 당시 코드의 역사 핀. 다른후보의 후속 공용코드 변경을 현재SHA불일치로 거부하지 않는다.",
+    "policy": {
+      "path": "lib/hanja-stroke-start-gate-u7e1d.ts",
+      "SHA256": "f58bad28fc2dae0a102f2432fdcd46f7ecde850e5a00429931e9d72326d4151a"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "c6c3c7bf719ecf384ae7d2262fdc0989e7dbf2238aa2a7e71f5a7c610129b85e"
+    },
+    "firstHelper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "4945a5eda514acccda7329879307678ea841ab28941fe94fbe82a29cc34adbe7",
+      "commit": "4eac70e12faa919106028f448ad72e8b594f5c3b"
+    },
+    "firstProfile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7e1d-1.json",
+      "SHA256": "094bb80d3087fdcc75ae0282ee39907b9821c9f038c3a070dc1da05ed40af273",
+      "commit": "4eac70e12faa919106028f448ad72e8b594f5c3b"
+    },
+    "ordinaryHelper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "7b199e08f7280357abdb1eacb8c55ca9cfeba0b6f762cb57230b958a5e18ab6d"
+    },
+    "ordinaryProfile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7e1d-1.json",
+      "SHA256": "bdcb048a7db9bbccd30b8baf99196b9af03816ca311d83710a91fba90b9b29f3"
+    }
+  },
+  "native": {
+    "observer": "ROOT",
+    "validScreens": 40,
+    "firstHelperScreens": 29,
+    "ordinaryResidualScreens": 11,
+    "firstHelper": {
+      "initialQQ1m2": 3,
+      "QQ1Boundary": 3,
+      "compact": {
+        "pens": 16,
+        "screens": 16,
+        "samples": 144
+      },
+      "fine": {
+        "pens": [
+          1,
+          8,
+          14
+        ],
+        "screens": 3,
+        "samples": 9
+      },
+      "natural": {
+        "pen": 1,
+        "earlyAndEndScreens": 2,
+        "continuousAllRAF": false
+      },
+      "doneWhole": 1,
+      "specialExactResidual": {
+        "screens": 1,
+        "pen": 1,
+        "mask": 2,
+        "result": "얇은 AA 원P테두리만 관찰; 수학적 blank 또는 원round-guide coverage 증명 아님."
+      }
+    },
+    "ordinaryResiduals": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 2,
+        "mask": 2,
+        "result": "blank"
+      },
+      {
+        "pen": 3,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 5,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 6,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 7,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 8,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 10,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 15,
+        "mask": 1,
+        "result": "blank"
+      },
+      {
+        "pen": 16,
+        "mask": 1,
+        "result": "blank"
+      }
+    ],
+    "ordinaryAlignment": "첫두 P는 각각 전체520SVG를 별도정렬해관찰; ordinary 유효11화면",
+    "bad": [],
+    "errors": [],
+    "ordinaryAttemptOnFirstHelper": false,
+    "conclusion": "정확대상 유한관찰에서 큰 분리조각/새 유한점프 미관찰. source-bound foot 표시를 이 범위에서 수용; 모든픽셀/모든RAF/UA단조증명 아님."
+  },
+  "approval": {
+    "rootScopedFiniteApproval": true,
+    "isolatedActualComponentBrowserVerified": true,
+    "runtimeActivationAuthorized": true,
+    "actualProductUI": false,
+    "controller": false,
+    "storage": false,
+    "all16Autoplay": false,
+    "domesticTemporalAll16": false,
+    "allRAF": false
+  },
+  "preservedHistory": {
+    "oldHold": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7e1d-native-review.json",
+      "SHA256": "353cc7017417b46eaf64fd6427f8c87689dda1776cbeb8e200e2f2e39e832ab6"
+    },
+    "sourceCachePreparationAndPublicHistoryFalseUnchanged": true,
+    "oldPlainProfileUnchanged": true
+  },
+  "servers": [
+    {
+      "scope": "first29",
+      "pid": 52479,
+      "sessionId": 65474,
+      "exitCode": 130,
+      "output": "empty"
+    },
+    {
+      "scope": "ordinary11",
+      "pid": 55119,
+      "sessionId": 34451,
+      "exitCode": 130,
+      "output": "empty"
+    }
+  ],
+  "activation": {
+    "expectedApplied": 5766,
+    "expectedRemaining": 212,
+    "countVerification": "ROOT registry추가후 신규runtime import tail1회 예정; 아직 미실행"
+  },
+  "authorOperations": {
+    "newRecordMetadataCheckPlanned": 1,
+    "oldTests": 0,
+    "newActivationTestExecution": 0,
+    "SSR": 0,
+    "sourceProjection": 0,
+    "engine": 0,
+    "build": 0,
+    "server": 0
+  }
+}
