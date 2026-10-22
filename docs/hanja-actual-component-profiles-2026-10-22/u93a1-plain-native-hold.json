@@ -1,0 +1,302 @@
+{
+  "schema": "hanja-plain-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "鎡",
+  "root": "u93a1-ue0103",
+  "observer": "ROOT",
+  "status": "HOLD-fifteen-finite-initial-heads-and-same-pen-source-contact-risk",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u93a1.json": "0a8f7272797494d1a169a96635106d1947694487ae1ea223b020380d6c9735be",
+    "docs/hanja-source-cache-u93a1-ue0103-2026-10-23/config.json": "0b6075c001aef617ba23d20fbf4b72bb499ed38bc16f171ba21794e92f1f01c7",
+    "docs/hanja-source-cache-u93a1-ue0103-2026-10-23/source.mjs": "1b984181e32339f738dea3ed017bedd3d1a0386bbcbb6f4088bb71d88190c9bc",
+    "docs/hanja-source-cache-u93a1-ue0103-2026-10-23/fixture.json": "dc4e46a09dd63ba06ee7ef679eca3237ac5c3e6314affd6e9abd5c3c15a9540b",
+    "docs/hanja-goal-glyphwiki-batch823-2026-10-13/engine-whole-u93a1-ue0103.json": "ff41d6bf78642ce8a1d5a4c6f0d696c3be083397a04cb49a99324ae7642fa259"
+  },
+  "sourceGeometrySHA256": "468c4e5ad64e5797dd5db00965a0e3bae0413bcb9b43403f24a58a907ee34f43",
+  "sourceCounts": {
+    "pens": 18,
+    "masks": 22,
+    "polygons": 52
+  },
+  "observedShared": {
+    "historicalPins": true,
+    "sharedVersion": 72,
+    "componentSHA256": "53d64747432be2cc7910a703d462a8f29ba1bd66aa60107912853cabd2240a1d",
+    "helperSHA256": "c3e4b0d79ec947b359c3954d5e7e73b795ec3e926c387d54809d5ded96deae8f",
+    "profileSHA256": "0a8f7272797494d1a169a96635106d1947694487ae1ea223b020380d6c9735be",
+    "currentEqualityRequired": false
+  },
+  "native": {
+    "validScreens": 61,
+    "breakdown": [
+      {
+        "scope": "fullround residual15masks",
+        "screens": 11
+      },
+      {
+        "scope": "firstcurve11 p0-and-epsilon",
+        "screens": 22
+      },
+      {
+        "scope": "four-m2 boundary and early7 each",
+        "screens": 28
+      }
+    ],
+    "coverage": {
+      "screens": 11,
+      "masks": 15,
+      "pens": [
+        1,
+        2,
+        6,
+        7,
+        8,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "allWHITE": true,
+      "notNewZeroAreaOrAllTimeProof": true
+    },
+    "firstCurve": {
+      "pens": [
+        1,
+        2,
+        6,
+        7,
+        8,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "screens": 22,
+      "samples": [
+        0,
+        1e-06
+      ],
+      "allElevenPositiveEpsilonFiniteHeadFIRSTFAIL": true
+    },
+    "m2": {
+      "pens": [
+        13,
+        14,
+        16,
+        17
+      ],
+      "screens": 28,
+      "perPenSamples": [
+        "source-boundary-before",
+        "source-boundary-exact",
+        "source-boundary-after",
+        "local-epsilon",
+        "local-.01",
+        "local-.03",
+        "local-.1"
+      ],
+      "allFourFiniteHeadFIRSTFAIL": true,
+      "observedIslands": [
+        {
+          "pen": 13,
+          "local": [
+            1e-06,
+            0.01
+          ],
+          "separateFromSameLogicalPriorMaskTip": true,
+          "atLocal03AppearedTouching": true,
+          "exactMathematicsNotYetConcluded": true
+        },
+        {
+          "pen": 16,
+          "local": [
+            1e-06,
+            0.01
+          ],
+          "separateFromSameLogicalPriorMaskTip": true,
+          "atLocal03AppearedTouching": true,
+          "exactMathematicsNotYetConcluded": true
+        }
+      ],
+      "currentlyFixedRoundHeadAppearedAttachedPens": [
+        14,
+        17
+      ],
+      "shrinkingCapsContactNotApproved": true
+    },
+    "pairProgress": [
+      {
+        "pen": 13,
+        "weights": [
+          23.506329,
+          19.508102
+        ],
+        "totalWeight": 43.014431,
+        "boundary": 0.5464754142627157,
+        "beforeAtAfter": [
+          0.5464754141627157,
+          0.5464754142627157,
+          0.5464754143627157
+        ],
+        "secondMaskLocalToGlobal": [
+          {
+            "local": 1e-06,
+            "global": 0.5464758677873014
+          },
+          {
+            "local": 0.01,
+            "global": 0.5510106601200885
+          },
+          {
+            "local": 0.03,
+            "global": 0.5600811518348342
+          },
+          {
+            "local": 0.1,
+            "global": 0.5918278728364441
+          }
+        ],
+        "independentOriginalMasks": true,
+        "contactOrTimingNotApproved": true
+      },
+      {
+        "pen": 14,
+        "weights": [
+          44.749987,
+          23.571588
+        ],
+        "totalWeight": 68.321575,
+        "boundary": 0.6549905648398767,
+        "beforeAtAfter": [
+          0.6549905647398767,
+          0.6549905648398767,
+          0.6549905649398767
+        ],
+        "secondMaskLocalToGlobal": [
+          {
+            "local": 1e-06,
+            "global": 0.654990909849312
+          },
+          {
+            "local": 0.01,
+            "global": 0.658440659191478
+          },
+          {
+            "local": 0.03,
+            "global": 0.6653408478946804
+          },
+          {
+            "local": 0.1,
+            "global": 0.689491508355889
+          }
+        ],
+        "independentOriginalMasks": true,
+        "contactOrTimingNotApproved": true
+      },
+      {
+        "pen": 16,
+        "weights": [
+          24.885689,
+          20.133356
+        ],
+        "totalWeight": 45.019045,
+        "boundary": 0.5527813617547862,
+        "beforeAtAfter": [
+          0.5527813616547862,
+          0.5527813617547862,
+          0.5527813618547862
+        ],
+        "secondMaskLocalToGlobal": [
+          {
+            "local": 1e-06,
+            "global": 0.5527818089734244
+          },
+          {
+            "local": 0.01,
+            "global": 0.5572535481372384
+          },
+          {
+            "local": 0.03,
+            "global": 0.5661979209021426
+          },
+          {
+            "local": 0.1,
+            "global": 0.5975032255793077
+          }
+        ],
+        "independentOriginalMasks": true,
+        "contactOrTimingNotApproved": true
+      },
+      {
+        "pen": 17,
+        "weights": [
+          46.193723,
+          22.978433
+        ],
+        "totalWeight": 69.172156,
+        "boundary": 0.6678080555997127,
+        "beforeAtAfter": [
+          0.6678080554997127,
+          0.6678080555997127,
+          0.6678080556997127
+        ],
+        "secondMaskLocalToGlobal": [
+          {
+            "local": 1e-06,
+            "global": 0.6678083877916571
+          },
+          {
+            "local": 0.01,
+            "global": 0.6711299750437155
+          },
+          {
+            "local": 0.03,
+            "global": 0.6777738139317213
+          },
+          {
+            "local": 0.1,
+            "global": 0.7010272500397413
+          }
+        ],
+        "independentOriginalMasks": true,
+        "contactOrTimingNotApproved": true
+      }
+    ],
+    "bad": [],
+    "errors": [],
+    "all18CompactRun": false,
+    "fineRun": false,
+    "naturalRun": false
+  },
+  "server": {
+    "PID": 95089,
+    "session": 62054,
+    "port": 59412,
+    "SSRChecks": 1,
+    "CJS": 76,
+    "ESM": 76,
+    "engine": 0,
+    "sourceProjection": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "outputEmpty": true
+  },
+  "preserved": {
+    "sourcePGuideWidthWeightUnchanged": true,
+    "originalStaticAndOfficialEvidence": true,
+    "sourceApprovalHistoryFalse": true,
+    "newNativeApproval": false,
+    "runtimeApplied": false
+  },
+  "authorActions": {
+    "engine": 0,
+    "sourceProjection": 0,
+    "rendererChanged": false,
+    "sourceChanged": false,
+    "sharedChanged": false
+  }
+}
