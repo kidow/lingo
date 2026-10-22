@@ -288,7 +288,7 @@
     ],
     [
       {
-        "outline": "M70.4 7.5 L70.95 28.3 L72.5 45.25 L74.75 58.6 L77.5 68.85 L80.5 76.25 L83.55 81.35 L86.35 84.5 L88.65 86.15 L90.35 86.85 L91.2 87 L91.2 93 L88.8 92.65 L85.8 91.4 L82.35 88.95 L78.7 84.9 L75.15 78.95 L71.8 70.75 L68.85 59.9 L66.55 46 L64.95 28.65 L64.4 7.5 Z M64.4 8 L64.4 6.3 L70.4 7.5 Z M70.4 7.5 L71.9 8.5 L69.4 10 Z M91.2 87 L93.3 87.9 L94.2 90 L93.3 92.1 L91.2 93 Z M91.2 87.5 L88.2 87.5 L91.2 74.5 L92.2 74.5 Z",
+        "outline": "M70.4 7.5 L70.95 28.3 L72.5 45.25 L74.75 58.6 L77.5 68.85 L80.5 76.25 L83.55 81.35 L86.35 84.5 L88.65 86.15 L90.35 86.85 L91.2 87 L91.2 93 L88.8 92.65 L85.8 91.4 L82.35 88.95 L78.7 84.9 L75.15 78.95 L71.8 70.75 L68.85 59.9 L66.55 46 L64.95 28.65 L64.4 7.5 Z M64.4 8 L64.4 6.3 L70.4 7.5 Z M70.4 7.5 L71.9 8.5 L69.4 10 Z M91.2 87 L93.3 87.9 L94.2 90 L93.3 92.1 L91.2 93 Z",
         "bounds": [
           64.4,
           6.3,
@@ -299,6 +299,17 @@
         "weight": 86.341445,
         "revealPath": "M67.42750000000001 7 C67.42750000000001 84.5 87.3225 90 91.215 90",
         "revealWidth": 14
+      },
+      {
+        "outline": "M91.2 87.5 L88.2 87.5 L91.2 74.5 L92.2 74.5 Z",
+        "bounds": [
+          88.2,
+          74.5,
+          92.2,
+          87.5
+        ],
+        "direction": "up",
+        "weight": 13
       }
     ],
     [
@@ -332,7 +343,7 @@
       }
     ]
   ],
-  "geometrySHA256": "7d6d971132e85835e533a5ef97bc3e7b45a58ae4dd81bab876763e87cc4f2bdf",
+  "geometrySHA256": "c062ede616c4629f7e2f3436fde7583105e6b4ed0bb2c15cd77ceed2126a799e",
   "pureProjectorBodySHA256": "f58c62d83c662318ab347384c31cc6403342289cb96fe5523a003b0e2bc72038",
   "preparation": {
     "successfulPureProjectionOperations": 1,
@@ -340,7 +351,8 @@
     "originalCompilerCalls": 0,
     "existingCandidateFactoryCalls": 0,
     "engineRuns": 0,
-    "newTerminalDerivations": 0
+    "newTerminalDerivations": 1,
+    "cachedCorrectionOperations": 1
   },
   "sourcePreservation": {
     "original38PolygonsExactlyOnce": true,
@@ -368,7 +380,52 @@
     ],
     "newGuideOrConnector": false,
     "originalTerminalUP12Preserved": true,
-    "terminalUP12NativeRiskUnreviewed": true
+    "terminalUP12NativeRiskUnreviewed": true,
+    "UP12TailPartition": {
+      "rawOneBased": 16,
+      "sourceTerminal": 15,
+      "quad": [
+        {
+          "x": 182.4,
+          "y": 175,
+          "off": 0
+        },
+        {
+          "x": 184.4,
+          "y": 149,
+          "off": 0
+        },
+        {
+          "x": 182.4,
+          "y": 149,
+          "off": 0
+        },
+        {
+          "x": 176.4,
+          "y": 175,
+          "off": 0
+        }
+      ],
+      "bodyPolygons": 4,
+      "bodyWeight": 86.341445,
+      "bodyGuideUnchanged": true,
+      "bodyWidth": 14,
+      "width": 6,
+      "jump": 25,
+      "sourceFootY": 175,
+      "sourceFarY": 149,
+      "tailBounds": [
+        88.2,
+        74.5,
+        92.2,
+        87.5
+      ],
+      "tailWeight": 13,
+      "weightBasis": "原quad yextent (175-149)/2",
+      "logicalStrokeDurationChanged": false,
+      "internalBodyTailAllocationChanged": true
+    },
+    "priorGeometrySHA256": "7d6d971132e85835e533a5ef97bc3e7b45a58ae4dd81bab876763e87cc4f2bdf"
   },
   "staticMappingApproved": true,
   "directionApproved": false,

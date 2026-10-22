@@ -6,7 +6,7 @@ const EXPECTED = [
     "glyph": "戩",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
-    "geometrySource": "851e13bba4d836c5fba365d19e04ce0e68184a5134ece558df8b8e0a37006515",
+    "geometrySource": "3fa82de3292200d78b123b3d1f67b2ef8e160dd4be084d3531210442352b9b67",
     "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
     "sourceStrokeIndices": [
       1,
@@ -224,7 +224,7 @@ const EXPECTED = [
       ],
       [
         {
-          "outline": "M70.4 7.5 L70.95 28.3 L72.5 45.25 L74.75 58.6 L77.5 68.85 L80.5 76.25 L83.55 81.35 L86.35 84.5 L88.65 86.15 L90.35 86.85 L91.2 87 L91.2 93 L88.8 92.65 L85.8 91.4 L82.35 88.95 L78.7 84.9 L75.15 78.95 L71.8 70.75 L68.85 59.9 L66.55 46 L64.95 28.65 L64.4 7.5 Z M64.4 8 L64.4 6.3 L70.4 7.5 Z M70.4 7.5 L71.9 8.5 L69.4 10 Z M91.2 87 L93.3 87.9 L94.2 90 L93.3 92.1 L91.2 93 Z M91.2 87.5 L88.2 87.5 L91.2 74.5 L92.2 74.5 Z",
+          "outline": "M70.4 7.5 L70.95 28.3 L72.5 45.25 L74.75 58.6 L77.5 68.85 L80.5 76.25 L83.55 81.35 L86.35 84.5 L88.65 86.15 L90.35 86.85 L91.2 87 L91.2 93 L88.8 92.65 L85.8 91.4 L82.35 88.95 L78.7 84.9 L75.15 78.95 L71.8 70.75 L68.85 59.9 L66.55 46 L64.95 28.65 L64.4 7.5 Z M64.4 8 L64.4 6.3 L70.4 7.5 Z M70.4 7.5 L71.9 8.5 L69.4 10 Z M91.2 87 L93.3 87.9 L94.2 90 L93.3 92.1 L91.2 93 Z",
           "bounds": [
             64.4,
             6.3,
@@ -235,6 +235,17 @@ const EXPECTED = [
           "weight": 86.341445,
           "revealPath": "M67.42750000000001 7 C67.42750000000001 84.5 87.3225 90 91.215 90",
           "revealWidth": 14
+        },
+        {
+          "outline": "M91.2 87.5 L88.2 87.5 L91.2 74.5 L92.2 74.5 Z",
+          "bounds": [
+            88.2,
+            74.5,
+            92.2,
+            87.5
+          ],
+          "direction": "up",
+          "weight": 13
         }
       ],
       [
@@ -284,7 +295,7 @@ const EXPECTED = [
       "sourceUrl": "https://glyphwiki.org/wiki/u6229",
       "revision": "archive a7dd7f3d911936770fa742e8c37d16bee7e2173c의 원9records/whole4 유지",
       "editableSource": "/hanja-strokes/glyphwiki/u6229.json",
-      "modifications": "1356 미등록 후보. 원base actualfull5/id3의 17raw17calls38P를 국내14 정적대응으로 순열. QQ2/4는 각각 독립2mask와 원gap 유지; raw10H→11V만 exact endpoint HV. 마지막3은 raw16/17/15. 원P/guide/폭/weight와 UP12 terminal 유지; 새connector/clip/tail분리0."
+      "modifications": "1356 미등록 후보. 원base actualfull5/id3의 17raw17calls38P를 국내14 정적대응으로 순열. QQ2/4는 각각 독립2mask와 원gap 유지; raw10H→11V만 exact endpoint HV. 마지막3은 raw16/17/15. 원P/guide/폭/원bodyweight 유지; raw16 terminal15 마지막quad만 UP12 독립cardinal로 복원. body86.341445 유지/tail13(원y175→149)/14p17m38, 논리획기간은 그대로이며 내부body/tail배분만 변화. 새glyphP/connector/clip0, 보정native미승인."
     }
   }
 ] as unknown as readonly HanjaDictionaryStrokeData[]

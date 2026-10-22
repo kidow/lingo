@@ -130,10 +130,10 @@
   },
   "sourceProvenance": {
     "sourceModule": "docs/hanja-source-cache-u6229-2026-10-22/source.mjs",
-    "sourceModuleSHA256": "55ad3953cdf58e692c16d6a275800e3accb4a17e8f71eacbf52f845d18f248e8",
+    "sourceModuleSHA256": "6281c4cb836a2730713efe103246bce00afd210209c73fc54747909ebbadaa4d",
     "cacheFile": "docs/hanja-source-cache-u6229-2026-10-22/source.json",
-    "cacheFileSHA256": "71a21c1892b4f0571fd8581242701bdd461eaf874d08a7cca0aac188f664d07a",
-    "geometrySHA256": "7d6d971132e85835e533a5ef97bc3e7b45a58ae4dd81bab876763e87cc4f2bdf",
+    "cacheFileSHA256": "bff29f33b82be160c7625e182b8242dc56b1b5875a4fe0754ae1a77505d37bd4",
+    "geometrySHA256": "c062ede616c4629f7e2f3436fde7583105e6b4ed0bb2c15cd77ceed2126a799e",
     "actualFull5File": "docs/hanja-goal-glyphwiki-batch845-2026-10-13/engine-whole-u6229.json",
     "actualFull5SHA256": "561d47bcd2e5da61e87b0600cc3e9616252109afdbb08e4e9fa12317bcac1ec4",
     "full5CanonicalSHA256": "0c034789bb751b1eae8f78a9724b187f03e7cefba9047521325141e9066a3408",
@@ -142,9 +142,18 @@
     "staticReview": "docs/hanja-source-raw-compare-u6229-2026-10-22/native-review.json",
     "staticReviewSHA256": "a384ef6a7ebe4c2c3ee1d2c787316981876f9e9c11020175f20e98da1ad44257",
     "immutablePureProjectorBodySHA256": "f58c62d83c662318ab347384c31cc6403342289cb96fe5523a003b0e2bc72038",
-    "mutablePredecessorFileDependencies": false
+    "mutablePredecessorFileDependencies": false,
+    "cachedCorrection": {
+      "priorCacheSHA256": "71a21c1892b4f0571fd8581242701bdd461eaf874d08a7cca0aac188f664d07a",
+      "priorGeometrySHA256": "7d6d971132e85835e533a5ef97bc3e7b45a58ae4dd81bab876763e87cc4f2bdf",
+      "nativeHold": "docs/hanja-actual-component-profiles-2026-10-22/u6229-native-hold.json",
+      "nativeHoldSHA256": "d7f8813c950694fdaddf88fe25fcc347045c6f67d599853564231ed8c5028764",
+      "operations": 1,
+      "sourceProjection": 0,
+      "engineRuns": 0
+    }
   },
-  "modifications": "1356 미등록 후보. 원base actualfull5/id3의 17raw17calls38P를 국내14 정적대응으로 순열. QQ2/4는 각각 독립2mask와 원gap 유지; raw10H→11V만 exact endpoint HV. 마지막3은 raw16/17/15. 원P/guide/폭/weight와 UP12 terminal 유지; 새connector/clip/tail분리0.",
+  "modifications": "1356 미등록 후보. 원base actualfull5/id3의 17raw17calls38P를 국내14 정적대응으로 순열. QQ2/4는 각각 독립2mask와 원gap 유지; raw10H→11V만 exact endpoint HV. 마지막3은 raw16/17/15. 원P/guide/폭/원bodyweight 유지; raw16 terminal15 마지막quad만 UP12 독립cardinal로 복원. body86.341445 유지/tail13(원y175→149)/14p17m38, 논리획기간은 그대로이며 내부body/tail배분만 변화. 새glyphP/connector/clip0, 보정native미승인.",
   "preparationHistory": {
     "staticCorrespondenceReviewed": true,
     "directionApproved": false,
@@ -184,14 +193,7 @@
       ]
     }
   ],
-  "unmodifiedTerminalRisks": [
-    {
-      "pen": 12,
-      "rawOneBased": 16,
-      "kind": "MC-original-terminal-UP",
-      "nativeReviewed": false
-    }
-  ],
+  "unmodifiedTerminalRisks": [],
   "orderEvidence": {
     "path": "docs/hanja-source-raw-compare-u6229-2026-10-22/native-review.json",
     "SHA256": "a384ef6a7ebe4c2c3ee1d2c787316981876f9e9c11020175f20e98da1ad44257",
@@ -224,7 +226,52 @@
     ],
     "newGuideOrConnector": false,
     "originalTerminalUP12Preserved": true,
-    "terminalUP12NativeRiskUnreviewed": true
+    "terminalUP12NativeRiskUnreviewed": true,
+    "UP12TailPartition": {
+      "rawOneBased": 16,
+      "sourceTerminal": 15,
+      "quad": [
+        {
+          "x": 182.4,
+          "y": 175,
+          "off": 0
+        },
+        {
+          "x": 184.4,
+          "y": 149,
+          "off": 0
+        },
+        {
+          "x": 182.4,
+          "y": 149,
+          "off": 0
+        },
+        {
+          "x": 176.4,
+          "y": 175,
+          "off": 0
+        }
+      ],
+      "bodyPolygons": 4,
+      "bodyWeight": 86.341445,
+      "bodyGuideUnchanged": true,
+      "bodyWidth": 14,
+      "width": 6,
+      "jump": 25,
+      "sourceFootY": 175,
+      "sourceFarY": 149,
+      "tailBounds": [
+        88.2,
+        74.5,
+        92.2,
+        87.5
+      ],
+      "tailWeight": 13,
+      "weightBasis": "原quad yextent (175-149)/2",
+      "logicalStrokeDurationChanged": false,
+      "internalBodyTailAllocationChanged": true
+    },
+    "priorGeometrySHA256": "7d6d971132e85835e533a5ef97bc3e7b45a58ae4dd81bab876763e87cc4f2bdf"
   },
   "engineProof": {
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
@@ -4004,5 +4051,54 @@
       "kMinWidthT": 6,
       "kAdjustMageStep": 5
     }
-  }
+  },
+  "terminalPartitions": [
+    {
+      "pen": 12,
+      "bodyMask": 1,
+      "tailMask": 2,
+      "rawOneBased": 16,
+      "sourceTerminal": 15,
+      "quad": [
+        {
+          "x": 182.4,
+          "y": 175,
+          "off": 0
+        },
+        {
+          "x": 184.4,
+          "y": 149,
+          "off": 0
+        },
+        {
+          "x": 182.4,
+          "y": 149,
+          "off": 0
+        },
+        {
+          "x": 176.4,
+          "y": 175,
+          "off": 0
+        }
+      ],
+      "bodyPolygons": 4,
+      "bodyWeight": 86.341445,
+      "bodyGuideUnchanged": true,
+      "bodyWidth": 14,
+      "width": 6,
+      "jump": 25,
+      "sourceFootY": 175,
+      "sourceFarY": 149,
+      "tailBounds": [
+        88.2,
+        74.5,
+        92.2,
+        87.5
+      ],
+      "tailWeight": 13,
+      "weightBasis": "原quad yextent (175-149)/2",
+      "logicalStrokeDurationChanged": false,
+      "internalBodyTailAllocationChanged": true
+    }
+  ]
 }

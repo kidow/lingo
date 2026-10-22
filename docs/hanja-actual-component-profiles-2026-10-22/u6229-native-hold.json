@@ -1,0 +1,102 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-22",
+  "glyph": "戩",
+  "batch": 1356,
+  "scope": "plain-outline original14p16m38 finite5screens",
+  "observedProfile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u6229.json",
+    "SHA256": "5295957a0f61718a5db76eb5445ca0d4f294c0be2dfe7cc7e08b4a1be5580796",
+    "adapterSHA256": "fdb07751579db19404706786d9e0f5bc8d881a240ec80552f56c081a0387823e",
+    "componentSHA256": "0ebb04f67a962805f88bdddb4b139d5852a86f1157b907a3fd0ca62535affaf3"
+  },
+  "source": {
+    "file": "docs/hanja-source-cache-u6229-2026-10-22/source.json",
+    "SHA256": "71a21c1892b4f0571fd8581242701bdd461eaf874d08a7cca0aac188f664d07a",
+    "geometrySHA256": "7d6d971132e85835e533a5ef97bc3e7b45a58ae4dd81bab876763e87cc4f2bdf"
+  },
+  "validScreens": 5,
+  "samples": [
+    {
+      "pen": 2,
+      "global": 0.55,
+      "kind": "baseline",
+      "screens": 1
+    },
+    {
+      "pen": 12,
+      "kind": "full-round residual",
+      "screens": 1,
+      "result": "FAIL: UP末端에검정잔여",
+      "approximateVisualSizePx": [
+        13,
+        44
+      ],
+      "pixelMeasurement": false
+    },
+    {
+      "pen": 2,
+      "mask": 2,
+      "local": 0.01,
+      "globalFormula": "(25.60335 + 18.938309 * .01) / (25.60335 + 18.938309)",
+      "screens": 1,
+      "result": "해당유한표본연결관찰"
+    },
+    {
+      "pen": 4,
+      "mask": 2,
+      "local": 0.01,
+      "secondWeight": 18.172217,
+      "screens": 1,
+      "result": "해당유한표본연결관찰"
+    },
+    {
+      "pen": 12,
+      "kind": "fine3",
+      "progress": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "screens": 1,
+      "result": "FAIL: 늦은UP갈고리jump 관찰"
+    }
+  ],
+  "status": {
+    "bad": [],
+    "errors": []
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "residual": {
+    "width": 520,
+    "height": 520,
+    "y": 188.015625
+  },
+  "server": {
+    "pid": 92583,
+    "sessionId": 55519,
+    "exit": 130,
+    "output": "empty",
+    "pidAbsenceSeparatelyQueried": false
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 34,
+    "ESM": 34
+  },
+  "priorPinLaunchFailure": {
+    "count": 1,
+    "SSR": 0,
+    "native": 0
+  },
+  "all14MatrixObserved": false,
+  "QQ2And4AllTimeConnected": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "engineRuns": 0,
+  "sourceProjection": 0
+}
