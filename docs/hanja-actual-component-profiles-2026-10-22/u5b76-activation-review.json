@@ -1,0 +1,203 @@
+{
+  "schema": "hanja-root-isolated-component-activation-review/v1",
+  "date": "2026-10-23",
+  "batch": 1399,
+  "glyph": "孶",
+  "root": "u5b76-ue0102",
+  "writtenFrom": "ROOT direct finite native handoff; author actual registry import0",
+  "inputSHA256": {
+    "docs/hanja-source-independent-vs2-pairs-left-u5b76-source-experiment-2026-10-21/fixture.json": "f531fad7b23c8302c721d632e3a14e5ef7e19b1f41de568c9aff5464944ef889",
+    "docs/hanja-source-independent-vs2-pairs-left-u5b76-source-experiment-2026-10-21/config.json": "0416fc571c4e9753392be06b52790e03e19cffce28c6874af589a9f2db8189b2",
+    "docs/hanja-source-independent-vs2-pairs-left-u5b76-source-experiment-2026-10-21/candidate.mjs": "587d8ed5688a63b2f377204f28c6e89715143eca2919de7a57b12a9450dcc2af",
+    "docs/hanja-goal-glyphwiki-batch822-2026-10-13/engine-whole-u5b76-ue0102.json": "21a36539fcd4ca8ce572502737989296f674f03611dc5bd369a2cc37d0a9eaa0",
+    "lib/hanja-stroke-start-caps-u5b76.ts": "99e199a1b5a17f6f61151fb6f2546218222a06387d3d439955926b5f4e789fd9",
+    "lib/hanja-stroke-source-foot-u5b76.ts": "0d7cadd15291d51452ec93fd535cf99660d6b0c97f944b55c67651264d3e8779",
+    "docs/hanja-source-raw-review-u5b76-vs2-2026-10-21/review.json": "3931fb800e195cbecf6e5ac7226340e7f203789b5f01ea5d57e1e0f4cf6c349f",
+    "docs/hanja-source-native-review-u5b76-vs2-left14-2026-10-21/review.json": "f9cc42013a1f25cf5b1807ef77f97faad37fdd5a123dc407be754db48e9d519d",
+    "docs/hanja-official-media-compare-u5b76-2026-10-23/official-temporal-native-review.json": "df322081eb29f5bb08e10c35b56f95a6d0bedbddbd014924b9c6dba1ff8f6ff3",
+    "docs/hanja-actual-component-profiles-2026-10-22/u5b76-plain-native-hold.json": "25f200f361c16854acb02b556f1f5d1dd2bdb04d501533fd1eb3f60844b6254f",
+    "docs/hanja-actual-component-profiles-2026-10-22/u5b76-1.json": "eb744a7c7de28ad3de086e3a541a79550f9e5c11828ed204bc429226f7941c16",
+    "docs/hanja-goal-glyphwiki-batch822-2026-10-13/sources.json": "4e6e3ed3bcf8615ab7136579f0dfa7a66fe702514c4d7355e231083758dfe5d7"
+  },
+  "geometry": {
+    "pens": 13,
+    "masks": 19,
+    "polygons": 44,
+    "raw": 18,
+    "calls": 19,
+    "SHA256": "572250853463ea4b80aa45e778d9fcc0a4f27dada4dc6b8d5c1b9b090103945b",
+    "original44PExactlyOnce": true,
+    "original18Raw19CallsRetained": true,
+    "originalGuideWidthAndBodyWeightsPreserved": true,
+    "originalLEFTQuad": {
+      "pen": 12,
+      "mask": 2,
+      "raw": 17,
+      "weight": 10
+    },
+    "activeBodyBoundsPolicyPreserved": true,
+    "newInternalMicroclocksExplicit": true,
+    "newGuideOrConnector": false
+  },
+  "all13OfficialMacroEvidence": {
+    "path": "docs/hanja-official-media-compare-u5b76-2026-10-23/official-temporal-native-review.json",
+    "SHA256": "df322081eb29f5bb08e10c35b56f95a6d0bedbddbd014924b9c6dba1ff8f6ff3",
+    "screens": 39,
+    "scope": "공식13macro order/direction만. 새foot/LEFT microclock 일치 승인 아님"
+  },
+  "static13Evidence": {
+    "path": "docs/hanja-source-raw-review-u5b76-vs2-2026-10-21/review.json",
+    "SHA256": "3931fb800e195cbecf6e5ac7226340e7f203789b5f01ea5d57e1e0f4cf6c349f",
+    "screens": 52,
+    "scope": "정적 shape/position 대응만"
+  },
+  "reusedLEFT15": {
+    "path": "docs/hanja-source-native-review-u5b76-vs2-left14-2026-10-21/review.json",
+    "SHA256": "f9cc42013a1f25cf5b1807ef77f97faad37fdd5a123dc407be754db48e9d519d",
+    "screens": 15,
+    "notIncludedInNew132": true,
+    "scope": "기존LEFT12 원quad/완료 native15 한정"
+  },
+  "historicalPlain31": {
+    "file": "docs/hanja-actual-component-profiles-2026-10-22/u5b76-plain-native-hold.json",
+    "SHA256": "25f200f361c16854acb02b556f1f5d1dd2bdb04d501533fd1eb3f60844b6254f",
+    "status": "HOLD; newpolicy recovery pending",
+    "screens": 31,
+    "preservedHOLD": true,
+    "retroactivePASS": false
+  },
+  "native": {
+    "validScreens": 132,
+    "breakdown": [
+      {
+        "case": "foot4 local0 epsilon .01 .03 .1 .5 .95 1",
+        "screens": 32
+      },
+      {
+        "case": "foot4 exact-P residual thinAA",
+        "screens": 4
+      },
+      {
+        "case": "foot4 phase before/exact/after",
+        "screens": 12
+      },
+      {
+        "case": "caps8 epsilon/.03",
+        "screens": 16
+      },
+      {
+        "case": "caps8 rho7 before/exact/after",
+        "screens": 24
+      },
+      {
+        "case": "source6pens boundary before/exact/after",
+        "screens": 18
+      },
+      {
+        "case": "all13 compact boards",
+        "screens": 13
+      },
+      {
+        "case": "fine5/6/8/9 boards",
+        "screens": 4
+      },
+      {
+        "case": "natural5/6/8/9 early/end",
+        "screens": 8
+      },
+      {
+        "case": "done whole",
+        "screens": 1
+      }
+    ],
+    "compactSamples": 117,
+    "footCoverage": {
+      "result": "thin AA lines only; no missing positive-area region observed",
+      "WHITEClaim": false,
+      "pixelEqualityClaim": false
+    },
+    "priorDetachedFourFootTargetsRecoveredWithinObservedCases": true,
+    "noTransitionIssueObserved": true,
+    "bad": [],
+    "errors": [],
+    "natural": {
+      "pens": [
+        5,
+        6,
+        8,
+        9
+      ],
+      "screens": 8,
+      "endObserved": true,
+      "all13AutoplayObserved": false
+    },
+    "allFramesContinuousObservation": false,
+    "universalContinuityProved": false,
+    "noFiniteJumpOrZeroAreaUniversalClaim": false,
+    "server": {
+      "PID": 53289,
+      "session": 96117,
+      "port": 59412,
+      "stopped": true,
+      "exitCode": 130,
+      "outputEmpty": true,
+      "successfulStartupSSR": 1,
+      "CJS": 83,
+      "ESM": 83,
+      "engine": 0,
+      "projection": 0,
+      "PIDRequeryClaim": false
+    },
+    "observedShared": {
+      "version": 78,
+      "componentSHA256": "03693d4c1f5a11eb685585708a127b36b97b3ea9aa68af89597b12d80823eeac",
+      "helperSHA256": "faf3328c43081579c307954a59b4a34bf8e30ed80abca06f2b6f864789a41f1a",
+      "profileSHA256": "eb744a7c7de28ad3de086e3a541a79550f9e5c11828ed204bc429226f7941c16",
+      "historicalPins": true,
+      "currentFileEqualityRequired": false,
+      "subsequentShared79NotNativeEvidence": true
+    }
+  },
+  "originalHOLDPreserved": true,
+  "sourcePGuideWidthAndBodyWeightsUnchanged": true,
+  "sourceFootUsed": true,
+  "sourceFootApproval": "ROOT finite scopes only, new internal clocks explicit",
+  "newGuideOrConnector": false,
+  "approval": {
+    "rootIsolatedActualComponentFiniteApproved": true,
+    "runtimeRegistrationAuthorized": true,
+    "actualProductAppUI": false,
+    "controller": false,
+    "storage": false,
+    "pauseResume": false,
+    "all13Autoplay": false,
+    "wholeReplayAllTime": false,
+    "officialMicroTimingEquivalent": false
+  },
+  "runtimeActualGate": {
+    "expectedBefore": {
+      "applied": 5813,
+      "remaining": 165
+    },
+    "expectedAfter": {
+      "applied": 5814,
+      "remaining": 164
+    },
+    "rootOnly": true,
+    "status": "pending",
+    "authorActualRegistryImport": 0,
+    "rootActualCheck": {
+      "status": "pending",
+      "executedByAuthor": false
+    }
+  },
+  "authorPreparationHistory": {
+    "sourceProjection": 0,
+    "engine": 0,
+    "oldMathDOM": 0,
+    "SSR": 0,
+    "server": 0,
+    "build": false,
+    "sourcegate": "new FIRST only; no registry import"
+  }
+}
