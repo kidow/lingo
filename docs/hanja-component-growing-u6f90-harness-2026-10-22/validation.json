@@ -1,0 +1,72 @@
+{
+  "schema": "u6f90-live-harness-preparation-v1",
+  "configSHA256": "75777fee0c0b31c8f809689784c6216174118c3f8770ab2206e22dfdd5a98893",
+  "ownSHA256": {
+    "config.json": "75777fee0c0b31c8f809689784c6216174118c3f8770ab2206e22dfdd5a98893",
+    "check.mjs": "ffaa89f15e8dec3c1a30bfbcd0eb7ff04c380b90d10714d0d5d3faf86db483f2",
+    "browser.js": "771891a9febc8d6d0b1f42cb2efec8f0ecce6a506f874e97304f6a80847a27fc",
+    "serve.py": "90b58bd5fc9294289fe0c3910a310fc93a2d1777494106bbd979b40069f6308b",
+    "README.md": "d3973efd9f4904157c89ecf540fd38822a2d40597b9de5de894809dc167cf83f"
+  },
+  "inputPins": 7,
+  "newHarnessFocused": {
+    "firstFailureBeforeResources": true,
+    "failedOnlyRecoveryPass": true,
+    "successfulRuns": 1,
+    "SSR": 5,
+    "ordinaryComparisons": 117,
+    "ordinarySSR": 234,
+    "totalSSR": 239,
+    "inverseOldComponentExact": true,
+    "targets": 4,
+    "inputPins": 7,
+    "ownPins": 5,
+    "transpileCounts": {
+      "commonJS": 27,
+      "ESM": 27
+    }
+  },
+  "syntax": {
+    "TSXAST1": 0,
+    "Node2": [
+      {
+        "path": "check.mjs",
+        "status": 0,
+        "stderr": ""
+      },
+      {
+        "path": "browser.js",
+        "status": 0,
+        "stderr": ""
+      }
+    ],
+    "PythonAST1": 0
+  },
+  "CLIHelp": {
+    "firstPass": true,
+    "status": 0,
+    "count": 1,
+    "server": 0
+  },
+  "oldPolicyTestsRepeated": 0,
+  "oldStandaloneChecksRepeated": 0,
+  "sourceGeometry": 0,
+  "engine": 0,
+  "HTTP": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "firstFailure": {
+    "stage": "process argv assertion",
+    "expected4Actual2": true,
+    "resources": 0,
+    "SSR": 0,
+    "geometry": 0,
+    "reason": "copied numeric literal changed CLI argc instead of fullround target count"
+  },
+  "metadata": {
+    "finalPinReadOncePlanned": true
+  }
+}
