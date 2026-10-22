@@ -169,10 +169,10 @@
   },
   "sourceProvenance": {
     "sourceModule": "docs/hanja-source-cache-u5bd8-2026-10-22/source.mjs",
-    "sourceModuleSHA256": "210ddfbb5d984a62e4a2fa8cd3a0753a0afc8d7d7aa20fd3d278ecd2c60e5f1f",
+    "sourceModuleSHA256": "a3038d6eb609202a51d2e88186d01d873cbe90a8189be522b727ea9402f33e11",
     "cacheFile": "docs/hanja-source-cache-u5bd8-2026-10-22/source.json",
-    "cacheFileSHA256": "cc9e032a2c4d69cb629c794feb62a3e1c0bc629a045fa76b0eb69630b68f4539",
-    "geometrySHA256": "49d4afb76f69af37ce081c75284251481a203aeb5c2bb51196bc4f2f82f14b04",
+    "cacheFileSHA256": "afb727d3dc56a34336d32d0c71e9b8bd35513ca9c96604f63007333ae191e10a",
+    "geometrySHA256": "09d0c9e1a5d83a69b0e1e0715ca375759bf5ef205da91a54b97a8a9924e951cc",
     "actualFull5File": "docs/hanja-public-glyphwiki-engine-capture-second-six-2026-10-22/engine-whole-u5bd8.json",
     "actualFull5SHA256": "56562fc1898b65d7101b8ccf89cb3ebb9f65623c6dd876b286eda83dbe21b223",
     "capsuleFile": "docs/hanja-public-glyphwiki-source-closure-u5bd8-u655d-u9079-2026-10-22.json",
@@ -180,9 +180,11 @@
     "staticReview": "docs/hanja-source-native-raw-correspondence-u5bd8-2026-10-22.json",
     "staticReviewSHA256": "0fd6908e0a5b13cc749958579a41cd8c6d43b547cd22302586faeb72444c7ae9",
     "officialClockReview": "docs/hanja-official-media-compare-u5bd8-2026-10-22/native-review.json",
-    "officialClockReviewSHA256": "43fe1b5a028a5c471211b9bf5d7400fc33969fa40366708b552efd8bbcea24b5"
+    "officialClockReviewSHA256": "43fe1b5a028a5c471211b9bf5d7400fc33969fa40366708b552efd8bbcea24b5",
+    "priorNativeReview": "docs/hanja-actual-component-profiles-2026-10-22/u5bd8-native-review.json",
+    "priorNativeReviewSHA256": "71d027f51347cec3da263a1b710f7d1cddaaa4f1f5efe574cec8764665576dbf"
   },
-  "modifications": "1347 미등록 후보 준비. 고정 current public closure의 actual full5/id3 16raw18calls34P와 ROOT정적13그룹을 기존8067 pureprojector 성공1회로 보존했다. raw3/4(HQ),8/9(HV),13/14(VH)는원endpoint가정확같은기존연속규칙만사용했다. independent mask를임의로잇거나새connector·guide·좌표·폭·weight·tail을만들지않았다. 공식3/5/7/11의CSS시계에서거시방향만관찰했으며이후보의진행·시작cap·foot·terminal·coverage·전체native/APP/runtime는미승인이다.",
+  "modifications": "1347 미등록 보정후보13p15m34. 원13mask의 actual21화면 중5·11 fullround coverageFAIL은 별도기록에보존했다. cached 보정1회로5의원UPquad1개만 up6.5로분리하고 body7P/guide/width14/weight73.963568을유지했다.11은원raw13V113·raw14H100을 독립cardinal2mask로복원했으며원P/좌표/순서/원13정적그룹/전체34P union불변, 새connector0이다. 다른11pen은byte동일. 원pureprojector/engine/compiler/factory재실행0; 새native/APP/runtime미승인.",
   "preparationHistory": {
     "candidateBatch": 1347,
     "batchAssignmentProvisional": true,
@@ -207,22 +209,27 @@
     [
       7,
       8
-    ],
-    [
-      12,
-      13
     ]
   ],
-  "independentMaskPolicies": [],
-  "unmodifiedTerminalRisks": [
+  "independentMaskPolicies": [
     {
-      "pen": 5,
-      "rawZeroBased": 5,
-      "call": "cdDrawLine",
-      "startFlag": 3006,
-      "endFlag": 5,
-      "policy": "원UP꼬리/전체compound guide/weight미분리;completion미검토"
-    },
+      "pen": 11,
+      "rawZeroBased": [
+        12,
+        13
+      ],
+      "directions": [
+        "down",
+        "right"
+      ],
+      "originalEndpointPreserved": true,
+      "originalPolygonsPreserved": true,
+      "joinedDerivedGuideRemoved": true,
+      "connector": false,
+      "nativeApproval": false
+    }
+  ],
+  "unmodifiedTerminalRisks": [
     {
       "pen": 6,
       "rawZeroBased": 6,
@@ -238,14 +245,6 @@
       "startFlag": 22,
       "endFlag": 323,
       "policy": "원V323 foot미보정"
-    },
-    {
-      "pen": 11,
-      "rawZeroBased": 12,
-      "call": "cdDrawLine",
-      "startFlag": 0,
-      "endFlag": 113,
-      "policy": "원V113 foot미보정"
     }
   ],
   "orderEvidence": {
@@ -3398,5 +3397,79 @@
       "kMinWidthT": 6,
       "kAdjustMageStep": 5
     }
+  },
+  "terminalPartition": {
+    "count": 1,
+    "pen": 5,
+    "rawZeroBased": 5,
+    "sourcePolygonIndex": 7,
+    "direction": "up",
+    "tailWeight": 6.5,
+    "bodyWeight": 73.963568,
+    "bodyGuideUnchanged": true,
+    "bodyBoundsUnchanged": true,
+    "sourcePolygonUnionUnchanged": true
+  },
+  "cachedCorrectionHistory": {
+    "operation": "cached-source-preserving-UP5-and-cardinal-VH11",
+    "priorCacheSHA256": "cc9e032a2c4d69cb629c794feb62a3e1c0bc629a045fa76b0eb69630b68f4539",
+    "priorGeometrySHA256": "49d4afb76f69af37ce081c75284251481a203aeb5c2bb51196bc4f2f82f14b04",
+    "nativeHold": "docs/hanja-actual-component-profiles-2026-10-22/u5bd8-native-review.json",
+    "nativeHoldSHA256": "71d027f51347cec3da263a1b710f7d1cddaaa4f1f5efe574cec8764665576dbf",
+    "successfulCachedCorrectionOperations": 1,
+    "wholePureProjectionRepeated": 0,
+    "engineRuns": 0,
+    "pen5": {
+      "rawZeroBased": 5,
+      "polygonIndex": 7,
+      "tailDirection": "up",
+      "tailWeight": 6.5,
+      "width": 4.5,
+      "jump": 13,
+      "bodyWeightPreserved": 73.963568,
+      "bodyGuidePreserved": "M24 23.6125 L24 34.504999999999995 Q24 39.504999999999995 29 39.504999999999995 L85 39.504999999999995",
+      "sourcePolygonUnionUnchanged": true
+    },
+    "pen11": {
+      "rawZeroBased": [
+        12,
+        13
+      ],
+      "directions": [
+        "down",
+        "right"
+      ],
+      "rawPolygonCounts": [
+        2,
+        2
+      ],
+      "priorJoinedMask": {
+        "outline": "M20 46.1 L20 83.5 L14 86.5 L14 45.1 Z M20 46.1 L21.5 47.1 L19 48.6 Z M17 78 L93.5 78 L93.5 80 L17 80 Z M93.5 78 L83.5 79 L88.5 73.5 Z",
+        "bounds": [
+          14,
+          45.1,
+          93.5,
+          86.5
+        ],
+        "direction": "curve",
+        "weight": 109.915,
+        "revealPath": "M17 45.6175 L17 79.0325 L93.5 79.0325",
+        "revealWidth": 14
+      },
+      "newConnector": false
+    },
+    "other11PensUnchanged": true,
+    "source34PolygonsExactlyOnce": true,
+    "newNativeApproval": false,
+    "authoringPreparationFailures": [
+      {
+        "kind": "module-path-query-resolution",
+        "correctionRuns": 0
+      },
+      {
+        "kind": "NodeREPL-process-global-unavailable",
+        "correctionRuns": 0
+      }
+    ]
   }
 }

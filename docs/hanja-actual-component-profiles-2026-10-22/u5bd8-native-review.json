@@ -1,0 +1,77 @@
+{
+  "schema": "hanja-actual-component-finite-review/v1",
+  "date": "2026-10-22",
+  "glyph": "寘",
+  "batch": 1347,
+  "observer": "ROOT",
+  "historicalInputPinsAtObservation": {
+    "sourceFile": "docs/hanja-source-cache-u5bd8-2026-10-22/source.json",
+    "sourceSHA256": "cc9e032a2c4d69cb629c794feb62a3e1c0bc629a045fa76b0eb69630b68f4539",
+    "geometrySHA256": "49d4afb76f69af37ce081c75284251481a203aeb5c2bb51196bc4f2f82f14b04",
+    "profile": "docs/hanja-actual-component-profiles-2026-10-22/u5bd8.json",
+    "profileSHA256": "db71236eb9e4f3ee650f4d01e15e0c3c42026a10366935c19c57589208cf2e18",
+    "componentSHA256": "e2756f9dc69e5d4575364d98e61a569b9cce16ac982b28ff1976851d17c9c027",
+    "adapterSHA256": "1a169e39cdc6b5dea955ca3d57dfefbe5a1ee387fe06e47350c3e8ad5a894163"
+  },
+  "native": {
+    "validScreens": 21,
+    "compact": {
+      "pens": 13,
+      "samples": 117,
+      "screens": 13,
+      "shapeObservedGood": true,
+      "bad": []
+    },
+    "fullRoundResidual": {
+      "screens": 8,
+      "blankPens": [
+        2,
+        3,
+        4,
+        7,
+        12,
+        13
+      ],
+      "failurePens": [
+        5,
+        11
+      ],
+      "pen5": "작은 검정 비스듬사각형 잔여 실제관찰",
+      "pen11": "작은 검정 sliver 실제관찰. 화면위치 약(85,636), SVG y188; 정량좌표/원인측정아님",
+      "construction": "실제 partial 원guide에서 dash만 제거한 원fullround guide; 원P-minus-fullround, marker0"
+    },
+    "viewportNotes": "주검토520; pen11 잔여 관찰 당시 viewport1280x720",
+    "newDirectionOrTemporalApproval": false
+  },
+  "approval": {
+    "nativeApproval": false,
+    "registrationApproved": false,
+    "runtimeApplied": false,
+    "actualAppUI": false
+  },
+  "server": {
+    "pid": 99835,
+    "sessionId": 64668,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "output": "",
+    "processAbsenceIndependentlyChecked": false
+  },
+  "sourceAnalysis": {
+    "ownRationalBatchFirst": 1,
+    "pen5StrictInteriorWitness": [
+      "85.5",
+      "31"
+    ],
+    "pen5DistanceSquared": "2903400999999996598000000000001/40000000000000000000000000000",
+    "pen11StrictInteriorWitness": [
+      "14.1",
+      "86.4"
+    ],
+    "pen11DistanceSquared": "10030409/160000",
+    "radiusSquared": "49",
+    "nativeRasterCauseClaim": false
+  },
+  "next": "새13p15m34: pen5 원UPquad 독립up;pen11 원V/H 독립cardinal. 이 기록은 원13p13m34 실패이며 새후보native미관찰."
+}
