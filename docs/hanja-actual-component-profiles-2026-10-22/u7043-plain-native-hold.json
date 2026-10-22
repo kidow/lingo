@@ -1,0 +1,137 @@
+{
+  "schema": "hanja-isolated-actual-component-native-hold/v1",
+  "glyph": "灃",
+  "root": "u7043",
+  "reviewedAt": "2026-10-23",
+  "observer": "/root",
+  "status": "HOLD-six-finite-initial-heads",
+  "sourceGeometrySHA256": "68e45a703ddf9710b4b2b40db002584694da407f2edb3441fa081454b84ed023",
+  "sourcePens": 21,
+  "sourceMasks": 24,
+  "originalPolygons": 44,
+  "observedShared": {
+    "historicalPins": true,
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7043.json",
+      "SHA256": "ce1e92ff35d0cb9e4ea2ae547d9be75a4523e17dbab44d50ed119325abbb2034"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "5f136d29c387042b5bd2751ab461961c3dc52d27c86d3f43677b82f6a26704d5"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "b29f8d3513dd5df984b986e29e4fb12183aaae79fb839e3be0996fd961af4476"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-cache-u7043-2026-10-23/fixture.json",
+      "SHA256": "0dd4287370d96f668870202776f3bcd909eb51a47fe631b163470c513db72700"
+    },
+    "currentPinEqualityRequired": false
+  },
+  "native": {
+    "validScreens": 30,
+    "fullRoundGuideResidual": {
+      "screens": 5,
+      "masks": 6,
+      "allWhite": true,
+      "targets": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          1
+        ]
+      ]
+    },
+    "firstMaskInitial": {
+      "pens": [
+        1,
+        2,
+        3,
+        19,
+        20
+      ],
+      "p0AndEpsilonScreens": 10,
+      "allFivePositiveEpsilonFiniteHeadFIRSTFAIL": true,
+      "allP0BaselinesNoHeadClaimed": false
+    },
+    "pen3Mask2": {
+      "screens": 7,
+      "samples": [
+        "boundary before",
+        "boundary exact",
+        "boundary after",
+        "local epsilon",
+        "local .01",
+        "local .03",
+        "local .1"
+      ],
+      "finiteHeadFIRSTFAIL": true,
+      "touchesPriorMask1": true,
+      "visibleGapObserved": false
+    },
+    "cardinalPairBoundaries": {
+      "screens": 6,
+      "pens": [
+        13,
+        17
+      ],
+      "beforeAtAfter": true,
+      "visibleProblemObserved": false
+    },
+    "clearPrefixAndPen3Zero": {
+      "screens": 2,
+      "prefix": 2,
+      "selectedPen3P0EmptyAfterClear": true,
+      "firstFastCrossPen3P0HadTinyPriorPen2HeadVisible": true,
+      "allP0NoHeadClaimed": false
+    },
+    "allBad": [],
+    "allErrors": [],
+    "all21CompactRun": false,
+    "fineRun": false,
+    "naturalRun": false
+  },
+  "server": {
+    "PID": 61350,
+    "sessionId": 72723,
+    "port": 59412,
+    "SSRProcesses": 1,
+    "CJSModules": 72,
+    "ESMModules": 72,
+    "engineRuns": 0,
+    "sourceProjectionRuns": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "outputEmpty": true
+  },
+  "preserved": {
+    "originalPGuideWidthWeightUnchanged": true,
+    "oldMinimum22ConsecutiveContractHOLD": true,
+    "newNativeApproval": false,
+    "runtimeApplied": false
+  },
+  "notes": [
+    "최초의빠른획전환pen3p0이미지에서선행pen2tinyhead잔여가보였으므로모든p0무head를주장하지않는다. clear재검토pen3p0만empty확인.",
+    "3m2의유한접촉관찰은전체시각연속성이나foot영구불필요의수학적증명이아니다. 원P양면적접촉은source-specific하게별도확인한다."
+  ]
+}
