@@ -9,7 +9,7 @@ from urllib.parse import parse_qs
 
 ROOT = Path(__file__).resolve().parent.parent
 LAUNCHER = 'scripts/hanja-raw-static-compare.py'
-LAUNCHER_SHA = '35caf57bfbd28f24ace3632feb9e99eb0e7a52bd44a287d683a3366fcd6952cb'
+LAUNCHER_SHA = '11fc829854a98e91789e13b40aff0ba1c297b3da68ee6a1cdbc2590a57732e90'
 
 
 def require(value, message):
