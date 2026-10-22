@@ -1,0 +1,89 @@
+{
+  "schema": "hanja-isolated-component-native-hold/v1",
+  "date": "2026-10-22",
+  "glyph": "遹",
+  "root": "u9079",
+  "candidateBatch": 1353,
+  "source": {
+    "pens": 16,
+    "masks": 19,
+    "polygons": 45,
+    "geometrySHA256": "d3c2db058b6d31c64227846f7483e3c4b81d94d74490c8290b58152e2dba514f",
+    "cacheSHA256": "3150ae6c37250063ce16e4445afa993f2ecf2b2d97b63ad1898bbc8f72727c3d",
+    "actualFull5SHA256": "a7d9dbff1349d2bb06f853e7b7580d6ade4c098a063ded22894442047884e334"
+  },
+  "historicalObservedPins": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u9079.json",
+      "SHA256": "e7ae0c4a4ce7607a59dc9f5f0fa3eda9528802581f942968959c622cd3070cd6"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "7b199e08f7280357abdb1eacb8c55ca9cfeba0b6f762cb57230b958a5e18ab6d"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "c6c3c7bf719ecf384ae7d2262fdc0989e7dbf2238aa2a7e71f5a7c610129b85e"
+    },
+    "meaning": "관찰 당시의 역사 핀. 후속 source 보정이나 다른 후보의 공용 코드를 이 옛 SHA로 되돌리는 계약이 아니다."
+  },
+  "native": {
+    "observer": "ROOT",
+    "validScreens": 2,
+    "mode": "actual original-P minus original full-round guide",
+    "samples": [
+      {
+        "pen": 4,
+        "mask": 1,
+        "raw": 12,
+        "terminal": 14,
+        "result": "FAIL",
+        "observed": "검정 terminal 잔여. ROOT 화면상 약20px 설명이며 독립 거리·면적·픽셀수 계측값 아님."
+      },
+      {
+        "pen": 7,
+        "mask": 2,
+        "raw": 16,
+        "terminal": 114,
+        "result": "FAIL",
+        "observed": "검정 terminal 잔여. ROOT 화면상 약12px 설명이며 독립 거리·면적·픽셀수 계측값 아님."
+      }
+    ],
+    "bad": [],
+    "errors": [],
+    "all16MatrixRun": false,
+    "otherNativeGates": "미실행",
+    "consoleFinalSeparatelyReviewed": false
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 33,
+    "ESM": 33,
+    "engine": 0,
+    "projection": 0
+  },
+  "server": {
+    "pid": 56859,
+    "sessionId": 87471,
+    "exitCode": 130,
+    "output": "empty",
+    "independentPIDAbsenceChecked": false
+  },
+  "approval": {
+    "nativeApproval": false,
+    "actualAppUI": false,
+    "runtimeApplied": false,
+    "registrationAllowed": false
+  },
+  "preservation": {
+    "originalSourceAndOldProfileUnchangedAtObservation": true,
+    "newSourceCorrectionIsSeparateUnobservedCandidate": true
+  },
+  "authorOperations": {
+    "newRecordMetadata": 1,
+    "sourceProjection": 0,
+    "engine": 0,
+    "build": 0,
+    "server": 0
+  }
+}

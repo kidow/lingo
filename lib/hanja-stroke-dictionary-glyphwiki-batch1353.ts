@@ -6,7 +6,7 @@ const EXPECTED = [
     "glyph": "遹",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
-    "geometrySource": "85c100e5c62eace5b219c102ac258d8b4180782ebe253f3a01918cd51cc3c3c0",
+    "geometrySource": "67f0a3421ea2c51bc3b756339c062e2bd744a738b7d1a3c8669854466fe81f34",
     "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
     "sourceStrokeIndices": [
       7,
@@ -92,9 +92,9 @@ const EXPECTED = [
       ],
       [
         {
-          "outline": "M68.85 25.25 L68.85 38.9 L62.85 38.9 L62.85 25.25 Z M62.85 38.9 L68.85 38.9 L67.65 40.65 L65.85 41.9 L64.05 40.65 Z M68.85 38.9 L68.8 40.15 L68.55 41.4 L68.15 42.6 L67.55 43.75 L66.7 44.75 L65.7 45.55 L64.6 46.2 L63.4 46.6 L62.15 46.8 L60.85 46.9 L60.85 40.9 L61.45 40.85 L61.9 40.75 L62.2 40.65 L62.4 40.6 L62.5 40.5 L62.55 40.4 L62.65 40.25 L62.75 39.95 L62.8 39.5 L62.85 38.9 Z M60.85 43.9 L50.85 42.4 L50.85 40.9 L60.85 40.9 Z",
+          "outline": "M68.85 25.25 L68.85 38.9 L62.85 38.9 L62.85 25.25 Z M62.85 38.9 L68.85 38.9 L67.65 40.65 L65.85 41.9 L64.05 40.65 Z M68.85 38.9 L68.8 40.15 L68.55 41.4 L68.15 42.6 L67.55 43.75 L66.7 44.75 L65.7 45.55 L64.6 46.2 L63.4 46.6 L62.15 46.8 L60.85 46.9 L60.85 40.9 L61.45 40.85 L61.9 40.75 L62.2 40.65 L62.4 40.6 L62.5 40.5 L62.55 40.4 L62.65 40.25 L62.75 39.95 L62.8 39.5 L62.85 38.9 Z",
           "bounds": [
-            50.85,
+            60.85,
             25.25,
             68.85,
             46.9
@@ -103,6 +103,17 @@ const EXPECTED = [
           "weight": 19.711068,
           "revealPath": "M65.875 26.26 L65.875 38.9 Q65.875 43.9 60.875 43.9",
           "revealWidth": 14
+        },
+        {
+          "outline": "M60.85 43.9 L50.85 42.4 L50.85 40.9 L60.85 40.9 Z",
+          "bounds": [
+            50.85,
+            40.9,
+            60.85,
+            43.9
+          ],
+          "direction": "left",
+          "weight": 10
         }
       ],
       [
@@ -146,9 +157,9 @@ const EXPECTED = [
           "weight": 48.807
         },
         {
-          "outline": "M89.65 48.1 L89.65 75 L83.65 75 L83.65 48.1 Z M83.65 47.1 L86.65 44.6 L92.15 49.1 L89.65 51.1 L83.65 48.1 Z M83.65 75 L89.65 75 L88.45 76.8 L86.65 78 L84.85 76.8 Z M89.65 75 L89.55 76.3 L89.35 77.5 L88.95 78.75 L88.3 79.85 L87.5 80.85 L86.5 81.7 L85.35 82.3 L84.15 82.7 L82.9 82.95 L81.65 83 L81.65 77 L82.25 76.95 L82.7 76.9 L83 76.8 L83.15 76.7 L83.25 76.6 L83.35 76.55 L83.4 76.35 L83.5 76.05 L83.6 75.6 L83.65 75 Z M81.65 80 L72.65 78.5 L72.65 77 L81.65 77 Z",
+          "outline": "M89.65 48.1 L89.65 75 L83.65 75 L83.65 48.1 Z M83.65 47.1 L86.65 44.6 L92.15 49.1 L89.65 51.1 L83.65 48.1 Z M83.65 75 L89.65 75 L88.45 76.8 L86.65 78 L84.85 76.8 Z M89.65 75 L89.55 76.3 L89.35 77.5 L88.95 78.75 L88.3 79.85 L87.5 80.85 L86.5 81.7 L85.35 82.3 L84.15 82.7 L82.9 82.95 L81.65 83 L81.65 77 L82.25 76.95 L82.7 76.9 L83 76.8 L83.15 76.7 L83.25 76.6 L83.35 76.55 L83.4 76.35 L83.5 76.05 L83.6 75.6 L83.65 75 Z",
           "bounds": [
-            72.65,
+            81.65,
             44.6,
             92.15,
             83
@@ -157,6 +168,17 @@ const EXPECTED = [
           "weight": 33.991068,
           "revealPath": "M86.6535 48.1 L86.6535 75.02 Q86.6535 80.02 81.6535 80.02",
           "revealWidth": 14
+        },
+        {
+          "outline": "M81.65 80 L72.65 78.5 L72.65 77 L81.65 77 Z",
+          "bounds": [
+            72.65,
+            77,
+            81.65,
+            80
+          ],
+          "direction": "left",
+          "weight": 9
         }
       ],
       [
@@ -331,7 +353,7 @@ const EXPECTED = [
       "sourceUrl": "https://glyphwiki.org/wiki/u9079@10",
       "revision": "u9079@10 및capsule원8record고정;2026-10-22 freshactualfull5",
       "editableSource": "/hanja-strokes/glyphwiki/u9079.json",
-      "modifications": "1353 미등록 후보. current u9079@10 단일실제full5/id3의22raw26calls45P와 ROOT정적16그룹을 고정했다. 기존순수projector본문 최초1회 후 즉시캐시했다. HQ1/3·HV11/15만 원endpoint exactjoin이고 7H/LQ는 원guide를 각각보존한2mask다. VQ4terminal14·7terminal114는 원LQ/꼬리를 그대로두고 실제검토위험으로 남긴다. 9UP5006/5의 원마지막quad1만 exactguard로 분리하며 원bodyguide·폭14·bodyweight20.043943을 보존하고 tail2.5를 내부mask배분에 추가했다(획당시간 증가 아님). QB16의 원gap[-2,-2]와 Q/C각guide·폭·weight·P는 독립2mask로 유지했다. 새좌표/connector/guide/폭/원bodyweight변경없음. 시간방향·초기cap·terminal·coverage·전체native·APP/runtime는 미승인이고 원HOLD는 바꾸지 않는다."
+      "modifications": "1353 미등록 보정 후보 16p21m45. 원actualfull5/id3의22raw26call45P와 논리16순서는 그대로다. 원순수projection1은 준비이력으로 유지하고 추가projector/engine실행0의 cached LEFT 보정1회로 raw12 terminal14와raw16 terminal114의 원마지막quad만 각각left mask로 분리했다. 원bodyguide·폭14·bodyweight19.711068/33.991068은 보존,tailweight10/9는 내부mask배분에만 추가하며 획당시간 증가를 주장하지 않는다. H/LQ7은 H·원LQbody·LEFT의3mask,4VQ는body·LEFT의2mask. 기존UP9 tail2.5/원body20.043943 및독립QB16 gap[-2,-2] 그대로. 모든45P exactonce/원glyph path문자열동일/새P·guide·connector·폭확대0. 보정전2coverageFAIL은역사HOLD로보존하고 새후보native/APP/runtime승인false."
     }
   }
 ] as unknown as readonly HanjaDictionaryStrokeData[]

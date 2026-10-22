@@ -213,10 +213,10 @@
   },
   "sourceProvenance": {
     "sourceModule": "docs/hanja-source-cache-u9079-2026-10-22/source.mjs",
-    "sourceModuleSHA256": "405de6e38486a4bb4e654cad64417e84d84b21cf66ba08410c62241d22a39ba0",
+    "sourceModuleSHA256": "72d8dcfbfeb769e1e111683a7fc0147301895ee7d3148a34a5feb9c48f5f600b",
     "cacheFile": "docs/hanja-source-cache-u9079-2026-10-22/source.json",
-    "cacheFileSHA256": "3150ae6c37250063ce16e4445afa993f2ecf2b2d97b63ad1898bbc8f72727c3d",
-    "geometrySHA256": "d3c2db058b6d31c64227846f7483e3c4b81d94d74490c8290b58152e2dba514f",
+    "cacheFileSHA256": "7b8169ad662448ab25738d5c3b28e93e1036e980ff3bd21647b7c837ab67a7b9",
+    "geometrySHA256": "2f74c84d05fb40ebbe5a0251d616ef4b08bbdc1e533b3fa4efd6f535c99b91aa",
     "actualFull5File": "docs/hanja-public-glyphwiki-engine-capture-second-six-2026-10-22/engine-whole-u9079.json",
     "actualFull5SHA256": "a7d9dbff1349d2bb06f853e7b7580d6ade4c098a063ded22894442047884e334",
     "full5CanonicalSHA256": "112ac0c696e433040a51f58a2e684407c6a29d0b8edf4732d96216f60c0f5047",
@@ -225,7 +225,7 @@
     "staticReview": "docs/hanja-source-raw-compare-fresh-u9079-2026-10-22/native-review.json",
     "staticReviewSHA256": "62cfc5f32b2514a27dc60d1f7e18be88309ae1f93dbda50d04318beba2e87c59"
   },
-  "modifications": "1353 미등록 후보. current u9079@10 단일실제full5/id3의22raw26calls45P와 ROOT정적16그룹을 고정했다. 기존순수projector본문 최초1회 후 즉시캐시했다. HQ1/3·HV11/15만 원endpoint exactjoin이고 7H/LQ는 원guide를 각각보존한2mask다. VQ4terminal14·7terminal114는 원LQ/꼬리를 그대로두고 실제검토위험으로 남긴다. 9UP5006/5의 원마지막quad1만 exactguard로 분리하며 원bodyguide·폭14·bodyweight20.043943을 보존하고 tail2.5를 내부mask배분에 추가했다(획당시간 증가 아님). QB16의 원gap[-2,-2]와 Q/C각guide·폭·weight·P는 독립2mask로 유지했다. 새좌표/connector/guide/폭/원bodyweight변경없음. 시간방향·초기cap·terminal·coverage·전체native·APP/runtime는 미승인이고 원HOLD는 바꾸지 않는다.",
+  "modifications": "1353 미등록 보정 후보 16p21m45. 원actualfull5/id3의22raw26call45P와 논리16순서는 그대로다. 원순수projection1은 준비이력으로 유지하고 추가projector/engine실행0의 cached LEFT 보정1회로 raw12 terminal14와raw16 terminal114의 원마지막quad만 각각left mask로 분리했다. 원bodyguide·폭14·bodyweight19.711068/33.991068은 보존,tailweight10/9는 내부mask배분에만 추가하며 획당시간 증가를 주장하지 않는다. H/LQ7은 H·원LQbody·LEFT의3mask,4VQ는body·LEFT의2mask. 기존UP9 tail2.5/원body20.043943 및독립QB16 gap[-2,-2] 그대로. 모든45P exactonce/원glyph path문자열동일/새P·guide·connector·폭확대0. 보정전2coverageFAIL은역사HOLD로보존하고 새후보native/APP/runtime승인false.",
   "preparationHistory": {
     "candidateBatch": 1353,
     "batchAssignmentProvisional": true,
@@ -261,13 +261,27 @@
   ],
   "independentMaskPolicies": [
     {
+      "pen": 4,
+      "originalRawZeroBased": [
+        11
+      ],
+      "maskCount": 2,
+      "policy": "원VQbody/원terminal14 quad LEFT 독립2mask",
+      "bodyGuideUnchanged": true,
+      "bodyWeight": 19.711068,
+      "tailWeight": 10
+    },
+    {
       "pen": 7,
       "originalRawZeroBased": [
         14,
         15
       ],
-      "maskCount": 2,
-      "policy": "원H/LQ guide별mask;terminal114미분리"
+      "maskCount": 3,
+      "policy": "원H/원LQbody/원terminal114 quad LEFT 독립3mask",
+      "bodyGuideUnchanged": true,
+      "bodyWeight": 33.991068,
+      "tailWeight": 9
     },
     {
       "pen": 9,
@@ -296,24 +310,6 @@
     }
   ],
   "unmodifiedTerminalRisks": [
-    {
-      "pen": 4,
-      "rawZeroBased": 11,
-      "flags": [
-        1,
-        14
-      ],
-      "policy": "원VQ terminal14 꼬리미분리"
-    },
-    {
-      "pen": 7,
-      "rawZeroBased": 15,
-      "flags": [
-        1,
-        114
-      ],
-      "policy": "원LQ terminal114 꼬리미분리"
-    },
     {
       "pen": 10,
       "rawZeroBased": 18,
@@ -375,15 +371,17 @@
         15,
         16
       ],
-      "maskCount": 2,
+      "maskCount": 3,
       "newInterRawGuide": false,
       "originalLQGuideUnchanged": true,
-      "terminal114Unpartitioned": true
+      "terminal114Unpartitioned": false,
+      "originalBodyGuideUnchanged": true
     },
     "VQ4": {
       "rawOneBased": 12,
-      "terminal14Unpartitioned": true,
-      "originalGuideUnchanged": true
+      "terminal14Unpartitioned": false,
+      "originalGuideUnchanged": true,
+      "maskCount": 2
     },
     "UP9": {
       "rawOneBased": 18,
@@ -417,7 +415,41 @@
       "newConnector": false
     },
     "originalCallFieldsUnchanged": true,
-    "newGuideOrConnector": false
+    "newGuideOrConnector": false,
+    "LEFT4_7": [
+      {
+        "pen": 4,
+        "bodyMask": 1,
+        "tailMask": 2,
+        "raw": 12,
+        "terminalFlag": 14,
+        "quadSHA256": "51e5088fd12f0000bf3950d29476793a33f55f952594a5b521205d62c2b61c66",
+        "sourceWidth": 6,
+        "sourceJump": 20,
+        "tailWeight": 10,
+        "bodyWeight": 19.711068,
+        "bodyGuideUnchanged": true,
+        "bodyWidthUnchanged": true,
+        "logicalBodyTailBoundary": 0.663425091282481,
+        "bodyTailInternalBoundary": 0.663425091282481
+      },
+      {
+        "pen": 7,
+        "bodyMask": 2,
+        "tailMask": 3,
+        "raw": 16,
+        "terminalFlag": 114,
+        "quadSHA256": "43e75e96c60ca0e3c672d3764de3136f6e2165f391e4f31edf7cf8b9c9dadcd6",
+        "sourceWidth": 6,
+        "sourceJump": 18,
+        "tailWeight": 9,
+        "bodyWeight": 33.991068,
+        "bodyGuideUnchanged": true,
+        "bodyWidthUnchanged": true,
+        "logicalBodyTailBoundary": 0.901958720961317,
+        "bodyTailInternalBoundary": 0.7906541889119851
+      }
+    ]
   },
   "engineProof": {
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
@@ -5483,5 +5515,131 @@
       "kMinWidthT": 6,
       "kAdjustMageStep": 5
     }
+  },
+  "cachedLeftCorrection": {
+    "schema": "exact-original-LEFT-quad-split/v1",
+    "referencePinRevision": {
+      "path": "../hanja-source-cache-u95d0-2026-10-22/source.mjs",
+      "priorSHA256": "37f6eecc3d6df7c8fd9027ab562ef411cb00c7ea5e39a5090a74aa82f7fa7885",
+      "SHA256": "0745d3c9b1dbfb47a0988c33a76cb80bbed23fb107db179fa6814302ac2324e8",
+      "projectorBodySHA256": "f58c62d83c662318ab347384c31cc6403342289cb96fe5523a003b0e2bc72038"
+    },
+    "firstAttemptFailure": {
+      "reason": "mutable predecessor whole-file pin changed during authorized independent correction",
+      "cachedDerivationRuns": 0,
+      "projection": 0,
+      "engine": 0
+    },
+    "originalCacheSHA256": "3150ae6c37250063ce16e4445afa993f2ecf2b2d97b63ad1898bbc8f72727c3d",
+    "originalGeometrySHA256": "d3c2db058b6d31c64227846f7483e3c4b81d94d74490c8290b58152e2dba514f",
+    "parts": [
+      {
+        "pen": 4,
+        "bodyMask": 1,
+        "tailMask": 2,
+        "raw": 12,
+        "terminalFlag": 14,
+        "quadSHA256": "51e5088fd12f0000bf3950d29476793a33f55f952594a5b521205d62c2b61c66",
+        "sourceWidth": 6,
+        "sourceJump": 20,
+        "tailWeight": 10,
+        "bodyWeight": 19.711068,
+        "bodyGuideUnchanged": true,
+        "bodyWidthUnchanged": true,
+        "logicalBodyTailBoundary": 0.663425091282481,
+        "bodyTailInternalBoundary": 0.663425091282481
+      },
+      {
+        "pen": 7,
+        "bodyMask": 2,
+        "tailMask": 3,
+        "raw": 16,
+        "terminalFlag": 114,
+        "quadSHA256": "43e75e96c60ca0e3c672d3764de3136f6e2165f391e4f31edf7cf8b9c9dadcd6",
+        "sourceWidth": 6,
+        "sourceJump": 18,
+        "tailWeight": 9,
+        "bodyWeight": 33.991068,
+        "bodyGuideUnchanged": true,
+        "bodyWidthUnchanged": true,
+        "logicalBodyTailBoundary": 0.901958720961317,
+        "bodyTailInternalBoundary": 0.7906541889119851
+      }
+    ],
+    "sourcePolygonsExactlyOnce": 45,
+    "newGlyphPolygon": 0,
+    "newGuide": 0,
+    "newConnector": 0,
+    "originalPerPenDurationPreservedClaim": true,
+    "internalMaskAllocationChanged": true,
+    "nativeApproval": false,
+    "priorUnmodifiedTerminalRisks": [
+      {
+        "pen": 4,
+        "rawZeroBased": 11,
+        "flags": [
+          1,
+          14
+        ],
+        "policy": "원VQ terminal14 꼬리미분리"
+      },
+      {
+        "pen": 7,
+        "rawZeroBased": 15,
+        "flags": [
+          1,
+          114
+        ],
+        "policy": "원LQ terminal114 꼬리미분리"
+      },
+      {
+        "pen": 10,
+        "rawZeroBased": 18,
+        "flags": [
+          12,
+          313
+        ],
+        "policy": "원V313foot미교정"
+      },
+      {
+        "pen": 11,
+        "rawZeroBased": 20,
+        "flags": [
+          22,
+          323
+        ],
+        "policy": "원HV323foot미교정"
+      },
+      {
+        "pen": 15,
+        "rawZeroBased": 3,
+        "flags": [
+          22,
+          300
+        ],
+        "policy": "원HV300foot미교정"
+      }
+    ],
+    "priorPreparationHistory": {
+      "candidateBatch": 1353,
+      "batchAssignmentProvisional": true,
+      "nativeApproval": false,
+      "actualAppUI": false,
+      "runtimeRegistered": false,
+      "runtimeApplied": false,
+      "registrationApproved": false,
+      "successfulPureProjectionOperations": 1,
+      "internalPureCompileBoundCalls": 1,
+      "originalCompilerCalls": 0,
+      "existingCandidateFactoryCalls": 0,
+      "engineRuns": 0,
+      "newTerminalDerivations": 1
+    },
+    "hold": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u9079-native-hold.json",
+      "SHA256": "dc267028ea6de0ec8c38f52483348af88ddf2b9ed2b3a7d48599e935b0232b21"
+    },
+    "actualAppUI": false,
+    "runtimeApplied": false
   }
 }
