@@ -43,6 +43,25 @@ def validate_original_empty_body3(spec,path):
     require(all(g['raw'][0]!=0 and len(g['polygons'])>0 for i,g in enumerate(groups) if i!=4),'only raw5 is non-drawing')
     require([g['polygons'] for g in groups]==[[p for call in row for p in call['polygons']] for row in trace],'original raw/trace/P correspondence changed')
 
+def validate_original_full8_u7cbb(spec,path):
+    import math
+    require(spec['root']=='u7cbb' and spec['file']=='docs/hanja-goal-glyphwiki-batch830-2026-10-13/engine-whole-u7cbb.json' and spec['fileSHA256']=='8546b3ac8bd9f17e4e3c7f28b6adb4618f24e648f51f7359c7883497d0c90a19','exact original 粻 full8 identity required')
+    require(spec['proofKind']=='actual-full8-u7cbb-direct' and spec['proofKeys']==['defaults', 'engineHashes', 'engineRevision', 'groups', 'sourceArchiveSHA256', 'sourceProofFile', 'sourceRoot', 'trace'],'exact 粻 full8 keys/kind required')
+    raw=path.read_bytes();require(digest(raw)==spec['fileSHA256'],'original 粻 full8 file changed')
+    proof=json.loads(raw);require(sorted(proof)==['defaults', 'engineHashes', 'engineRevision', 'groups', 'sourceArchiveSHA256', 'sourceProofFile', 'sourceRoot', 'trace'],'complete original 粻 full8 required')
+    require(proof['sourceRoot']=='u7cbb' and proof['sourceProofFile']=='engine-whole-u7cbb.json' and proof['sourceArchiveSHA256']=='7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62','original 粻 provenance3 changed')
+    require(proof['engineRevision']=='49232bac0348fe815f4200d4116ab7917e0db47f','original 粻 revision changed')
+    require(spec['sourceProofIdentity']=={'sourceRoot':'u7cbb','sourceProofFile':'engine-whole-u7cbb.json','sourceProofFileSha256':digest(raw)},'exact 粻 static identity3 changed')
+    require(len(proof['groups'])==len(proof['trace'])==spec['rawGroups']==15 and sum(len(row)for row in proof['trace'])==spec['drawingCalls']==15,'original 粻 raw15/calls15 required')
+    require([g['polygons']for g in proof['groups']]==[[p for call in row for p in call['polygons']]for row in proof['trace']],'original 粻 group/trace polygons differ')
+    require([len(g['polygons'])for g in proof['groups']]==spec['polygonCounts'] and sum(len(g['polygons'])for g in proof['groups'])==spec['polygons']==30,'original 粻 polygon30 counts required')
+    for group in proof['groups']:
+        require(sorted(group)==['polygons','raw'],'original 粻 group shape changed')
+        for poly in group['polygons']:
+            require(len(poly)>=3,'original 粻 polygon size')
+            for p in poly:require(sorted(p)==['off','x','y'] and p['off']==0 and all(type(p[k])in[int,float] and math.isfinite(p[k])for k in['x','y']),'only original 粻 finite off0 polygons')
+    return proof
+
 def main():
     require(__debug__ and sys.flags.optimize==0,'optimized assertion-free execution forbidden')
     parser=argparse.ArgumentParser(description='Pinned static whole/raw/domestic comparison; ROOT starts HTTP.')
@@ -66,6 +85,7 @@ def main():
         require(type(spec['root'])is str and re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None,'original root identity required')
         path=pinned_path(spec['file']);require(path.name=='engine-whole-'+spec['root']+'.json'and hexsha(spec['fileSHA256']),'actual whole file required')
         if bound_body:validate_original_empty_body3(spec,path)
+        elif spec['proofKind']=='actual-full8-u7cbb-direct':validate_original_full8_u7cbb(spec,path)
         else:require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct','single actual full5 only; no header synthesis')
         require(spec['sourceProofIdentity']=={'sourceRoot':spec['root'],'sourceProofFile':path.name,'sourceProofFileSha256':spec['fileSHA256']},'exact source identity3 required')
         require(type(spec['rawGroups'])is int and 1<=spec['rawGroups']<=128 and type(spec['drawingCalls'])is int and ((not bound_body and spec['drawingCalls']>=spec['rawGroups'])or(bound_body and spec['rawGroups']==24 and spec['drawingCalls']==23)),'raw/call counts required')
@@ -86,6 +106,13 @@ def main():
     spec=importlib.util.spec_from_file_location('hanja_static_raw_shared',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared)
     require(shared.FETCH_COUNT==0 and callable(shared.main)and callable(shared.load_sources),'unchanged shared entry contract required')
     shared.CONFIG=config;shared.HERE=config_path.parent;shared.ROOT=ROOT
+    # Complete original eight-key proof is returned unchanged; old full5/body3 path stays original.
+    if any(item['proofKind']=='actual-full8-u7cbb-direct'for item in roots.values()):
+        require(config['glyph']=='粻' and config['catalogStrokes']==14 and list(roots)==['selected'],'exact isolated 粻 full8 comparison only')
+        def load_original_u7cbb_full8():
+            parameter_guards()
+            return {'selected':validate_original_full8_u7cbb(roots['selected'],pinned_path(roots['selected']['file']))}
+        shared.load_sources=load_original_u7cbb_full8
     # Explicit replacement of sidecar location guards; all original source/XML/route guards stay byte-exact.
     shared.guards=parameter_guards
     # Explicit CSS-only response wrapper: original page function and every SVG byte stay unchanged.
