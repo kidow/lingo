@@ -1,0 +1,69 @@
+{
+  "schema": "u5611-minimal-component-harness-validation/v1",
+  "configSHA256": "53f2b367f8aab12ea8ddaab7c6a7491c4e8936cec295c176e816cbaebcf8981e",
+  "ownSHA256": {
+    "README.md": "ae6318616f70525a33659c0e8f7608b1c738891f277c293ddfcc5d18d9838282",
+    "browser.js": "498ac578426497bec1e36e3330c9749a8dbf22e379fabbf4fffc5ea7d11933bb",
+    "check.mjs": "9647810185c369dfb7d340fdb56b97cce47ce306485f5d05f74b1a860abfeea6",
+    "serve.py": "f74c4e721bda18a9b6732db576d01625a6d9ee8b5eaa83b260ac0b2a086d85e5"
+  },
+  "focused": {
+    "executions": 1,
+    "status": "PASS",
+    "firstExecution": true,
+    "SSRIdleWhole": 1,
+    "controlledMidSSR": 1,
+    "ordinary9and14PriorComponentParity": 18,
+    "ordinarySSRCalls": 36,
+    "negative": 3,
+    "inputPins": 28,
+    "registryExecuted": false,
+    "oldFocusedRepeated": 0,
+    "HTTP": 0,
+    "server": 0
+  },
+  "syntax": {
+    "executions": 1,
+    "status": "PASS",
+    "checkerNode": 1,
+    "browserNode": 1,
+    "helperPythonAST": 1
+  },
+  "appFocused": {
+    "executions": 1,
+    "tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "durationMs": 104.73975,
+    "ASTFiles": 3,
+    "ASTDiagnostics": 0,
+    "priorTSXInverseByteExact": true
+  },
+  "sourceGeometry": 0,
+  "sourceCompiler": 0,
+  "engine": 0,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "metadata": {
+    "executions": 1,
+    "status": "PASS",
+    "scope": "final harness6 own/config/validation state relationships and APP3 bytes only; no source or focused repeated"
+  },
+  "startupRecovery": {
+    "firstFailure": "KeyError: historicalSourceFiles",
+    "SSRAtFailure": 0,
+    "serverAtFailure": 0,
+    "correction": "Use optional historical mapping with direct live paths as the default",
+    "guardCheck": "PASS",
+    "guardCheckExecutions": 1
+  },
+  "authoringRecovery": {
+    "prewriteStructuredCloneUnavailable": 1,
+    "patchAssemblyLinePrefixFailure": 1,
+    "filesAtFailures": 0,
+    "testsAtFailures": 0,
+    "sourceOrGeometryAtFailures": 0,
+    "recovery": "RAM metadata assembly only; passed checks not repeated"
+  }
+}

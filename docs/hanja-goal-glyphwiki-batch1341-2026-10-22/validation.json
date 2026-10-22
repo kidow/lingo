@@ -1,0 +1,97 @@
+{
+  "schema": "hanja-minimal-single-runtime-validation-v1",
+  "batch": 1341,
+  "date": "2026-10-22",
+  "status": "FIRST-actual-runtime-verifier-PASS",
+  "counts": {
+    "pens": 14,
+    "masks": 18,
+    "polygons": 40
+  },
+  "geometrySHA256": "1fa8bb9250960fa6aa09664ba76147f42a799005f38d8dbf34abdb580aa977db",
+  "parent": {
+    "resume": "docs/hanja-goal-glyphwiki-batch1342-2026-10-22/resume.json",
+    "sha256": "b1a368eb75f484cf101408cda1878961f56a2c60540d2f0c75c72b9dd093de28",
+    "applied": 5757,
+    "remaining": 221
+  },
+  "sourcePins": 20,
+  "checks": {
+    "initial16MaskLoader3": {
+      "executions": 1,
+      "passed": 3,
+      "failed": 0,
+      "historyOnly": true,
+      "repeated": 0
+    },
+    "initial16MaskAST2": {
+      "historyOnly": true,
+      "diagnostics": 0,
+      "repeated": 0
+    },
+    "changed18MaskLoader": {
+      "executions": 1,
+      "passed": 1,
+      "failed": 0,
+      "oldSemanticPrefixRepeated": 0
+    },
+    "newVerifierSyntax": {
+      "status": "PASS",
+      "executions": 1
+    },
+    "actualRegistryVerifier": {
+      "status": "FIRST PASS",
+      "executions": 1,
+      "exit": 0
+    },
+    "oldAPPTestsRepeated": 0,
+    "SSRRepeated": 0,
+    "sourceProjection": 0,
+    "pendingMetadata": {
+      "status": "PASS",
+      "executions": 1,
+      "scope": "new pending flags/parent/review/NOTICE/APP3 and startup failure history only; prior checks not repeated"
+    },
+    "postActualMetadata": {
+      "status": "PASS",
+      "executions": 1,
+      "scope": "final review/resume/validation/README contract only; actual verifier/source20pins/prior focused/APP/SSR not repeated"
+    }
+  },
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "isolatedActualComponentBrowserVerified": true,
+  "actualAppUI": false,
+  "wholeReplay": false,
+  "build": false,
+  "actualVerifierResult": {
+    "passed": true,
+    "firstExecution": true,
+    "executions": 1,
+    "exitCode": 0,
+    "wallTimeSeconds": 0.571248333,
+    "registryUnique": 5758,
+    "remaining": 220,
+    "historical": 349,
+    "resolved": 183,
+    "active": 166,
+    "refs": 399,
+    "targetMatches": 1,
+    "targetRecordType": "object",
+    "sourcePins": 20,
+    "pinMismatch": 0,
+    "isolatedActualComponentBrowserVerified": true,
+    "actualComponentFiniteScreens": 60,
+    "actualAppUI": false,
+    "wholeReplay": false,
+    "sourceCompiler": 0,
+    "factory": 0,
+    "projection": 0,
+    "engine": 0,
+    "APPFocusedRepeated": 0,
+    "SSRRepeated": 0,
+    "build": false
+  }
+}
