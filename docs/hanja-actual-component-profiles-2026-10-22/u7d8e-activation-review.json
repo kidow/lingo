@@ -1,0 +1,238 @@
+{
+  "schema": "hanja-isolated-actual-component-activation/v1",
+  "date": "2026-10-22",
+  "glyph": "綎",
+  "root": "u7d8e",
+  "batch": 1376,
+  "source": {
+    "pens": 13,
+    "masks": 15,
+    "polygons": 35,
+    "geometrySHA256": "43e7fb4fb818efc60c325c72710b74ffb7c6d601d5710afa02f5b85be3670f67",
+    "sourcePGuideWidthWeightUnchanged": true,
+    "sourcePartition": false,
+    "newProjection": 0,
+    "sourceIdentity": {
+      "sourceRoot": "u7d8e",
+      "sourceProofFile": "engine-whole-u7d8e.json",
+      "sourceProofFileSha256": "e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25"
+    }
+  },
+  "native": {
+    "observer": "ROOT",
+    "validScreens": 82,
+    "viewport": {
+      "width": 544,
+      "height": 900
+    },
+    "nominalMainSVG": 520,
+    "compactUniqueSamples": 117,
+    "versions": [
+      {
+        "helperSHA256": "a59ff0046535cb2ab570bb1cba678d1a907dc1c0c47b2f26707b63daee082c0a",
+        "profileSHA256": "e927d09165c5871696c26c5be12415c5d54e2fbedb4337140d72183b4518622d",
+        "profileSnapshot": "docs/hanja-actual-component-profiles-2026-10-22/u7d8e-1-before-controls.json",
+        "screens": 74,
+        "SSR": 1,
+        "CJS": 44,
+        "ESM": 44,
+        "pid": 22797,
+        "session": 93362,
+        "port": 59412,
+        "exitCode": 130,
+        "outputEmpty": true
+      },
+      {
+        "helperSHA256": "5b1ae993b14a21daabb6817852c90cfbdaa13ce848cb7be5adb11d7987118ce8",
+        "profileSHA256": "02243dabef2f185293bcd2363118fd62b840307c47635a7876c4687b82e723ef",
+        "screens": 8,
+        "old74Repeated": 0,
+        "SSR": 1,
+        "CJS": 44,
+        "ESM": 44,
+        "pid": 33012,
+        "session": 67775,
+        "port": 59412,
+        "exitCode": 130,
+        "outputEmpty": true
+      }
+    ],
+    "breakdown": [
+      {
+        "case": "QQ1m2/2m2 early requested0/epsilon/.01/.03/.1",
+        "screens": 10,
+        "version": 1
+      },
+      {
+        "case": "11m1 early requested0/epsilon/.01/.03/.1",
+        "screens": 5,
+        "version": 1
+      },
+      {
+        "case": "11m1 exact-original-P residual",
+        "screens": 1,
+        "thinAAEdge": true,
+        "interiorWhite": true,
+        "version": 1
+      },
+      {
+        "case": "11m1 fine3 board",
+        "screens": 1,
+        "samples": 3,
+        "version": 1
+      },
+      {
+        "case": "cap1m1/2m1/12m1 epsilon/.01/.03",
+        "screens": 9,
+        "version": 1
+      },
+      {
+        "case": "QQ2 exact-original-P residual",
+        "screens": 2,
+        "thinAAEdge": true,
+        "interiorWhite": true,
+        "sameD_DOM": true,
+        "version": 1
+      },
+      {
+        "case": "cap3 original-fullround residual",
+        "screens": 3,
+        "white": true,
+        "version": 1
+      },
+      {
+        "case": "11 H/L actual UA transition",
+        "screens": 3,
+        "boundary": 0.35205331593034944,
+        "offsets": [
+          -1e-10,
+          0,
+          1e-10
+        ],
+        "version": 1
+      },
+      {
+        "case": "QQ2 foot/body transitions",
+        "screens": 6,
+        "version": 1
+      },
+      {
+        "case": "cap3 local .1",
+        "screens": 3,
+        "version": 1
+      },
+      {
+        "case": "cap3 rho=r transitions",
+        "screens": 9,
+        "version": 1
+      },
+      {
+        "case": "QQ1/2 original-mask boundaries",
+        "screens": 6,
+        "version": 1
+      },
+      {
+        "case": "all13 compact9",
+        "screens": 13,
+        "uniqueSamples": 117,
+        "version": 1
+      },
+      {
+        "case": "fine1/2/12 boards",
+        "screens": 3,
+        "samples": 9,
+        "version": 1
+      },
+      {
+        "case": "ordinary original-fullround residual",
+        "pens": [
+          3,
+          5,
+          6,
+          7,
+          13
+        ],
+        "screens": 5,
+        "white": true,
+        "version": 2
+      },
+      {
+        "case": "natural11 early/end",
+        "screens": 2,
+        "earlyControllerProgress": 0.06798749997615812,
+        "endControllerProgress": 1,
+        "exactTargetFullNotAssumedFromControllerFloat": true,
+        "continuousAllRAFReviewed": false,
+        "version": 2
+      },
+      {
+        "case": "done whole",
+        "screens": 1,
+        "version": 2
+      }
+    ],
+    "bad": [],
+    "errors": [],
+    "pixelEqualityClaim": false,
+    "universalContinuityClaim": false,
+    "UAMonotonicityProved": false,
+    "AAProved": false,
+    "originalMicroTimingEquivalent": false,
+    "excluded": [
+      {
+        "case": "readonly DOM SVG.getTotalLength unavailable",
+        "attempts": 1,
+        "screens": 0,
+        "note": "native L45.87373352050781은 화면state에서 확보"
+      },
+      {
+        "case": "missing UI payload stopped setup after target controls",
+        "nativeScreensAdded": 0,
+        "note": "별도 controls 복구. 이전74는 새helper의관찰로소급하지 않음."
+      }
+    ],
+    "fullGuideNativeLength11": 45.87373352050781,
+    "engineRuns": 0,
+    "sourceProjection": 0,
+    "totalStartupSSR": 2,
+    "observedTSXSHA256": "96e4c304a4865e43785836f0de03353fb7b668b995a7ac9e6606c3ffe67a9bdc",
+    "sharedPinsAreHistorical": true
+  },
+  "approval": {
+    "rootIsolatedActualComponentFiniteApproved": true,
+    "runtimeRegistrationAuthorized": true,
+    "actualProductAppUI": false,
+    "actualAppUI": false,
+    "controller": false,
+    "storage": false,
+    "all13Autoplay": false
+  },
+  "originalHOLDPreserved": true,
+  "officialMacroSeparate": true,
+  "newContactFootInternalClock": true,
+  "sourcePreparationFalsePreserved": true,
+  "runtimeActualGate": {
+    "status": "ROOT pending FIRST",
+    "expectedApplied": 5792,
+    "expectedRemaining": 186,
+    "previousApplied": 5791,
+    "previousRemaining": 187,
+    "authorSourcegateRuns": 0,
+    "authorActualRegistryRuns": 0
+  },
+  "sharedCommit": "ecfdfd1",
+  "inputSHA256": {
+    "docs/hanja-goal-glyphwiki-batch851-2026-10-13/engine-whole-u7d8e.json": "e774251d4531b0813c96f2303da5beb41b0401a557407bac35587f10ef5d7e25",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/fixture.json": "cd22bb35196582ca3e4eb8a122f6b5f260185b23daa326851cc2306d7ea6887c",
+    "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/config.json": "96e2a43d5020485f6b75e8c12dca8e07825ae9c15719d6f444557ef9beb632f0",
+    "lib/hanja-stroke-start-gate-u7d8e.ts": "3d084b8e321ecbc1fcfe4c6f195e0d3d12d72791beba1a68f182cd3c4822bf51",
+    "lib/hanja-stroke-source-clip-u7d8e.ts": "55175df2b275edd0d392e9f13e10734ed4614cbe9dc2a4c8d493d93567ce79cb",
+    "lib/hanja-stroke-start-caps-u7d8e.ts": "701544c34d2d22f1c914b74099d0c2e1fd665f977be98ea21eaa7c9e3367691e",
+    "docs/hanja-actual-component-profiles-2026-10-22/u7d8e-1.json": "02243dabef2f185293bcd2363118fd62b840307c47635a7876c4687b82e723ef",
+    "docs/hanja-actual-component-profiles-2026-10-22/u7d8e-1-before-controls.json": "e927d09165c5871696c26c5be12415c5d54e2fbedb4337140d72183b4518622d",
+    "docs/hanja-official-media-compare-u7d8e-2026-10-22/official-temporal-native-review.json": "bcebc8d979a3c2bee98a4275c8e0ee14e6ada25b0bf0290c802d277884fef361",
+    "docs/hanja-source-native-hold-u7d8e-startcaps-terminal-2026-10-21/hold.json": "1822634ff57513cbf3d947a2e0c919ed16a0d312b435279afa441eca01acc7b5",
+    "docs/hanja-u7d8e-pen11-terminal-coverage-native-2026-10-21/review.json": "19cd472b684f354e465df9f810e06e6eaa8b7c21504bd113b5bb9c713b190c72",
+    "docs/hanja-renderer-native-review-u7d8e-source-clip-growing-starts-2026-10-21/review.json": "43cff5019266b20a807b9106f565da1b7aab7bfb6c78c113e66fd3a135357bb7"
+  }
+}
