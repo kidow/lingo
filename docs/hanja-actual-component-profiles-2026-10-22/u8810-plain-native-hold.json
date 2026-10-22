@@ -1,0 +1,116 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "蠐",
+  "root": "u8810",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u8810.json": "0218e53e25ab1f573af998b2c75a47a6368ac62e05e5ce29db3173e9138bc3d0",
+    "docs/hanja-source-independent-reorder-u8810-source-experiment-2026-10-23/fixture.json": "b6e2f229a4fbf730f357e12b7c4ca581b95cd2996f84864d162af7ac00e33e55",
+    "docs/hanja-source-raw-compare-u8810-2026-10-23/engine-whole-u8810.json": "8061eba86732b7e13a5c5e169b08adebf4e846bf176a7a938cfde5f1dcab3a4b"
+  },
+  "geometry": {
+    "pens": 20,
+    "masks": 23,
+    "polygons": 46,
+    "geometrySHA256": "f333a586206102922031a9b39bf376e0cdc00c9a658e690510ee2d9f733b800f"
+  },
+  "native": {
+    "validScreens": 36,
+    "breakdown": [
+      {
+        "scope": "curve10 epsilon positive finite-head FAIL",
+        "screens": 10
+      },
+      {
+        "scope": "12m2/15m2 local .01/.03/.1 attached finite heads",
+        "screens": 6
+      },
+      {
+        "scope": "8first p0 plus12/15 prior-boundary baseline nohead",
+        "screens": 10
+      },
+      {
+        "scope": "curve10 original full-round residual white",
+        "screens": 10
+      }
+    ],
+    "targets": [
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        12,
+        2
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        14,
+        1
+      ],
+      [
+        15,
+        2
+      ],
+      [
+        16,
+        1
+      ],
+      [
+        17,
+        1
+      ]
+    ],
+    "failure": "p0 또는 직전경계 baseline에 없던 큰 고정캡 head가 epsilon에서 나타남",
+    "laterObservedHeadAttached": true,
+    "filledPContactFailureAsserted": false,
+    "coverage10": "white",
+    "bad": [],
+    "errors": []
+  },
+  "observedShared": {
+    "historicalPins": true,
+    "componentSHA256": "e24d0bab9dcd2c03545f286dd354a7af94f924b0a0c44708f62c3065ccc0c077",
+    "adapterSHA256": "6fe3db7bb60fb93d40ab2b0aed1e7b2b957282d5280967bb1c43d165dcc30bc0",
+    "profileSHA256": "0218e53e25ab1f573af998b2c75a47a6368ac62e05e5ce29db3173e9138bc3d0"
+  },
+  "server": {
+    "PID": 68999,
+    "session": 38901,
+    "port": 59412,
+    "SSRChecks": 1,
+    "CJS": 61,
+    "ESM": 61,
+    "engine": 0,
+    "projection": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "outputEmpty": true
+  },
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "originalSourceUnchanged": true,
+  "originalHOLDPreserved": true,
+  "author": {
+    "SSR": 0,
+    "engine": 0,
+    "projection": 0,
+    "server": 0
+  }
+}
