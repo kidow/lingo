@@ -1,0 +1,111 @@
+{
+  "schema": "hanja-isolated-component-native-hold/v1",
+  "glyph": "縐",
+  "root": "u7e10",
+  "reviewedAt": "2026-10-23",
+  "status": "HOLD:2m2 growing cap detached LEFT island at local .03/.1, attached at .5",
+  "scope": "shared75 caps12+foot1 isolated有限観察。fullmatrix/rho/natural/done未実施。旧HOLD48/LEFT26は別記録のまま。",
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u7e10-2.json": "307df30e45b8fcd547ae1434ecd212fa1e40ff59af02d598516f898c6d8a188c",
+    "lib/hanja-stroke-start-caps-u7e10.ts": "239610422bb01b06dd5dd8bcbff9542447f18f11d5b223c3e3ed202aa4d77243",
+    "lib/hanja-stroke-source-foot-u7e10.ts": "bc7ea16ff79b76dee7c549be626a8512311e1542a55231f74e48ef977faca9df",
+    "docs/hanja-source-cache-terminal8-13-u7e10-2026-10-23/fixture.json": "743933e8b6ec78a2acb56c2327936941a081badd27c9248df18ed236b3773455"
+  },
+  "historicalObservedShared": {
+    "version": 75,
+    "componentSHA256": "bb49111b69ad2eefbf0551e24cdb996c6ad538d0b190d9b48938cc0dc01457c1",
+    "adapterSHA256": "0f10862ed0f58a68c045a4eecc114624c9ddf47ae1f44535fe56033408314188",
+    "CJS": 81,
+    "ESM": 81,
+    "currentPinCheckRequired": false
+  },
+  "geometrySHA256": "37da6cbcc6cedd43da1d2f49d3e60450580a799806677c122e67d5510622fd03",
+  "native": {
+    "validScreens": 42,
+    "foot1m2": {
+      "screens": 12,
+      "locals": [
+        0,
+        0.000001,
+        0.01,
+        0.03,
+        0.1,
+        0.5,
+        0.95,
+        1
+      ],
+      "localScreens": 8,
+      "exactOriginalPCoverageScreens": 1,
+      "exactOriginalPCoverageResult": "thin AA outline; not WHITE/pixel equality claim",
+      "footBodyBoundaryScreens": 3,
+      "finitePartialPASS": true
+    },
+    "firstMaskCaps": {
+      "screens": 18,
+      "pens": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        11,
+        12,
+        16
+      ],
+      "locals": [
+        0.000001,
+        0.03
+      ],
+      "result": "큰 초기head 제거 점진PASS"
+    },
+    "secondMaskCaps": {
+      "screens": 12,
+      "pens": [
+        2,
+        8,
+        13
+      ],
+      "locals": [
+        0.000001,
+        0.03,
+        0.1,
+        0.5
+      ],
+      "pen2": "local .03/.1 LEFT island detached at Q0 away from preceding long diagonal; .5 attached",
+      "pen8": "local .03/.1 fine attached Htip; no other failure observed",
+      "pen13": "local .03/.1 fine attached Htip; no other failure observed"
+    },
+    "excluded": "local .5 전용버튼 부재로 처음 얻은 3이미지는 제외. 공통 진행률input으로 exact .5 재시도한 유효 12장만 포함.",
+    "bad": [],
+    "errors": [],
+    "allRhoOrCompactOrNaturalOrDoneExecuted": false
+  },
+  "server": {
+    "PID": 29677,
+    "session": 82658,
+    "port": 59412,
+    "SSR": 1,
+    "CJS": 81,
+    "ESM": 81,
+    "engine": 0,
+    "projection": 0,
+    "stop": {
+      "exitCode": 130,
+      "output": "EMPTY"
+    }
+  },
+  "old48HOLDPreserved": true,
+  "LEFT26PartialEvidenceSeparate": true,
+  "foot1m2Finite12Approved": true,
+  "allGlyphNativeApproval": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "authorActions": {
+    "SSR": 0,
+    "server": 0,
+    "engine": 0,
+    "projection": 0
+  }
+}

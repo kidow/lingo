@@ -1,0 +1,15 @@
+*** Begin Patch
+*** Update File: scripts/hanja-actual-component-review.mjs
+@@
+-const fixture=JSON.parse(read(C.fixture)),strokes=C.kind==='contact-foot-x-u90b0'?fixture.u90b0.strokes:C.kind==='contact-foot-axis-u7d3d'?fixture.u7d3d.strokes:C.kind==='source-foot-x-u9e80'?fixture.u9e80.strokes:C.kind==='mixed-u7d8e'?fixture.u7d8e.strokes:C.kind==='cardinal-contact-prefix-u68b4'?fixture.originalOrderBaseline:C.kind==='contact-foot-x-u7a67'?fixture.u7a67.strokes:fixture.strokes;assert.equal(sha(JSON.stringify(strokes)),C.geometrySHA256);assert.equal(strokes.length,C.pens);assert.equal(strokes.flat().length,C.masks);
++function plainU5b76FixedFixture(config,fixture){
++ assert.equal(config.kind,'plain-outline');assert.equal(config.root,'u5b76-ue0102');assert.equal(config.fixtureKey,'u5b76-ue0102.strokes');
++ assert.equal(config.fixture,"docs/hanja-source-independent-vs2-pairs-left-u5b76-source-experiment-2026-10-21/fixture.json");assert.equal(config.inputSHA256[config.fixture],"f531fad7b23c8302c721d632e3a14e5ef7e19b1f41de568c9aff5464944ef889");
++ assert.deepEqual([config.pens,config.masks,config.polygons],[13,19,44]);assert.equal(config.geometrySHA256,"572250853463ea4b80aa45e778d9fcc0a4f27dada4dc6b8d5c1b9b090103945b");assert.deepEqual(config.expectedMaskCounts,[1,1,1,1,2,2,1,2,2,1,2,2,1]);
++ assert.deepEqual(Object.keys(fixture),['u5b76-ue0102']);const fixed=fixture['u5b76-ue0102'];assert(fixed&&Array.isArray(fixed.strokes));assert.equal(sha(JSON.stringify(fixed.strokes)),config.geometrySHA256);
++ assert.equal(config.actualFull5File,"docs/hanja-goal-glyphwiki-batch822-2026-10-13/engine-whole-u5b76-ue0102.json");assert.equal(config.actualFull5SHA256,"21a36539fcd4ca8ce572502737989296f674f03611dc5bd369a2cc37d0a9eaa0");assert.equal(config.inputSHA256[config.actualFull5File],config.actualFull5SHA256);assert.deepEqual(config.sourceIdentity,{"sourceRoot":"u5b76-ue0102","sourceProofFile":"engine-whole-u5b76-ue0102.json","sourceProofFileSha256":"21a36539fcd4ca8ce572502737989296f674f03611dc5bd369a2cc37d0a9eaa0"});
++ assert.deepEqual(Object.keys(fixed.fullProof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(sha(JSON.stringify(fixed.fullProof)),"13963a3e69966dbb29354a335493976b0783c69129b228ff3cca2ec8f0b7d874");assert.deepEqual(fixed.fullProof,JSON.parse(read(config.actualFull5File)));
++ return fixed.strokes;
++}
++const fixture=JSON.parse(read(C.fixture)),strokes=C.kind==='plain-outline'&&C.fixtureKey!==undefined?plainU5b76FixedFixture(C,fixture):C.kind==='contact-foot-x-u90b0'?fixture.u90b0.strokes:C.kind==='contact-foot-axis-u7d3d'?fixture.u7d3d.strokes:C.kind==='source-foot-x-u9e80'?fixture.u9e80.strokes:C.kind==='mixed-u7d8e'?fixture.u7d8e.strokes:C.kind==='cardinal-contact-prefix-u68b4'?fixture.originalOrderBaseline:C.kind==='contact-foot-x-u7a67'?fixture.u7a67.strokes:fixture.strokes;assert.equal(sha(JSON.stringify(strokes)),C.geometrySHA256);assert.equal(strokes.length,C.pens);assert.equal(strokes.flat().length,C.masks);
+*** End Patch
