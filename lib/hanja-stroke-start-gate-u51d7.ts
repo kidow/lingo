@@ -1,0 +1,101 @@
+import type { HanjaOutlineSegment, HanjaOutlineStrokes } from './hanja-stroke-outline'
+
+/** 凗 고정13p15m28의 1m1 전용 초기arc7 정책. 원P coverage·후반·native 승인은 별도다. */
+const FIXED_STROKES:HanjaOutlineStrokes=[[{"outline":"M10.7 15.8 L12.6 16.45 L14.5 17.1 L16.3 17.85 L18 18.75 L19.6 19.75 L21.05 20.85 L22.45 22.05 L23.75 23.35 L24.9 24.75 L25.95 26.3 L20.6 29 L20.1 27.7 L19.5 26.4 L18.8 25.15 L17.95 23.9 L17 22.65 L15.9 21.4 L14.7 20.2 L13.4 18.95 L11.95 17.7 L10.3 16.6 Z M25.95 26.3 L26.1 28.55 L24.65 30.3 L22.35 30.45 L20.6 29 Z","bounds":[10.3,15.8,26.1,30.45],"direction":"curve","weight":19.046427,"revealPath":"M10.08 16 Q19.68 20.5 24 29","revealWidth":14}],[{"outline":"M6.9 60 L9.55 62.05 L11.95 64.3 L14 66.75 L15.75 69.35 L17.2 72.05 L18.35 74.9 L19.2 77.85 L19.75 80.9 L20 84.1 L19.95 87.35 L13.95 86.65 L14.3 83.95 L14.4 81.3 L14.25 78.7 L13.9 76.15 L13.25 73.6 L12.35 71.05 L11.2 68.5 L9.8 65.95 L8.15 63.3 L6.25 60.65 Z M19.95 87.35 L18.8 89.3 L16.6 89.95 L14.6 88.85 L13.95 86.65 Z","bounds":[6.25,60,20,89.95],"direction":"curve","weight":30.39348,"revealPath":"M6.24 60 Q18.72 72 16.8 88.5","revealWidth":14},{"outline":"M10.95 67.75 L12.7 65.45 L14.55 62.75 L16.55 59.7 L18.65 56.2 L20.9 52.4 L23.25 48.2 L25.7 43.6 L28.3 38.7 L31.1 33.4 L34.1 27.8 L34.95 28.15 L32.85 34.15 L30.75 39.8 L28.7 45 L26.65 49.85 L24.65 54.3 L22.75 58.4 L20.95 62.15 L19.15 65.5 L17.5 68.55 L15.85 71.2 Z","bounds":[10.95,27.8,34.95,71.2],"direction":"curve","weight":46.565056,"revealPath":"M13.44 69.5 Q21.6 58 34.56 28","revealWidth":14}],[{"outline":"M66.1 7.8 L66.1 27.4 L60.1 27.4 L60.1 6.8 Z M66.1 7.8 L67.6 8.8 L65.1 10.3 Z","bounds":[60.1,6.8,67.6,27.4],"direction":"down","weight":19.082437}],[{"outline":"M44.15 13 L44.15 30.9 L38.15 33.9 L38.15 12 Z M44.15 13 L45.65 14 L43.15 15.5 Z","bounds":[38.15,12,45.65,33.9],"direction":"down","weight":13.889938},{"outline":"M41.15 25.4 L85.05 25.4 L85.05 27.4 L41.15 27.4 Z","bounds":[41.15,25.4,85.05,27.4],"direction":"right","weight":43.899504}],[{"outline":"M88.05 13 L88.05 29.4 L82.05 32.4 L82.05 12 Z M88.05 13 L89.55 14 L87.05 15.5 Z","bounds":[82.05,12,89.55,32.4],"direction":"down","weight":13.889938}],[{"outline":"M52.8 33.75 L51.1 36.7 L49.2 39.6 L47.2 42.5 L45 45.3 L42.7 48.1 L40.25 50.9 L37.6 53.6 L34.8 56.25 L31.8 58.85 L28.65 61.3 L28 60.65 L30.45 57.5 L32.85 54.45 L35.15 51.45 L37.3 48.5 L39.35 45.55 L41.25 42.65 L43 39.7 L44.6 36.85 L46.1 33.95 L47.45 31.05 Z M47.25 31.5 L47.7 30.55 L52.8 33.75 Z M52.8 33.75 L53.7 35.35 L50.8 35.55 Z","bounds":[28,30.55,53.7,61.3],"direction":"curve","weight":36.424739,"revealPath":"M50.379999999999995 32 Q42.84 47 28.340000000000003 61","revealWidth":14}],[{"outline":"M46.4 44.5 L46.4 91.5 L40.4 94.5 L40.4 44.5 Z","bounds":[40.4,44.5,46.4,94.5],"direction":"down","weight":41.5}],[{"outline":"M72.5 33.85 L71.6 35 L70.7 36.2 L69.75 37.35 L68.75 38.55 L67.7 39.75 L66.6 40.95 L65.45 42.15 L64.25 43.3 L62.95 44.5 L61.75 45.75 L61 45.2 L61.85 43.7 L62.55 42.1 L63.2 40.6 L63.85 39.1 L64.5 37.65 L65.1 36.25 L65.7 34.9 L66.2 33.55 L66.75 32.25 L67.2 31 Z M66.95 31.45 L67.45 30.5 L72.5 33.85 Z M72.5 33.85 L73.35 35.4 L70.4 35.55 Z","bounds":[61,30.5,73.35,45.75],"direction":"curve","weight":16.060511,"revealPath":"M70.1 32 Q66.62 38.5 61.400000000000006 45.5","revealWidth":14}],[{"outline":"M43.4 44.5 L90.95 44.5 L90.95 46.5 L43.4 46.5 Z M90.95 44.5 L78.95 45.5 L84.95 39.5 Z","bounds":[43.4,39.5,90.95,46.5],"direction":"right","weight":47.56}],[{"outline":"M43.4 58.5 L87.5 58.5 L87.5 60.5 L43.4 60.5 Z M87.5 58.5 L75.5 59.5 L81.5 53.5 Z","bounds":[43.4,53.5,87.5,60.5],"direction":"right","weight":44.08}],[{"outline":"M43.4 72.5 L87.5 72.5 L87.5 74.5 L43.4 74.5 Z M87.5 72.5 L75.5 73.5 L81.5 67.5 Z","bounds":[43.4,67.5,87.5,74.5],"direction":"right","weight":44.08}],[{"outline":"M66.1 44.5 L66.1 88 L60.1 88 L60.1 44.5 Z","bounds":[60.1,44.5,66.1,88],"direction":"down","weight":41.5}],[{"outline":"M43.4 86 L93.3 86 L93.3 88 L43.4 88 Z M93.3 86 L81.3 87 L87.3 81 Z","bounds":[43.4,81,93.3,88],"direction":"right","weight":49.88}]]
+function freezeFixed(){for(const masks of FIXED_STROKES){for(const s of masks){Object.freeze(s.bounds);Object.freeze(s)}Object.freeze(masks)}Object.freeze(FIXED_STROKES)}
+freezeFixed()
+function ensure(value:unknown,message:string):asserts value {if(!value)throw new Error(message)}
+function sameJSON(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b)||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);if(ak.length!==bk.length)return false;return bk.every(k=>{const ad=Object.getOwnPropertyDescriptor(a,k),bd=Object.getOwnPropertyDescriptor(b,k);return!!ad&&!!bd&&'value'in ad&&'value'in bd&&ad.enumerable===bd.enumerable&&sameJSON(ad.value,bd.value)})}
+function sameSegment(a:HanjaOutlineSegment,b:HanjaOutlineSegment){return sameJSON(a,b)}
+function sameWhole(strokes:HanjaOutlineStrokes){return sameJSON(strokes,FIXED_STROKES)}
+export type ReviewedU51d7Context=Readonly<{id:'u51d7-source-1m1'}>
+export type ReviewedU51d7GrowingCertificate=Readonly<{syntax:'MQ';T:string;K:string;initialArcMax:7;storedBounds:Readonly<Record<string,unknown>>;notRasterProof:true;notPreviousMaskConnectivityProof:true;notFullSweepProof:true}>
+export type ReviewedU51d7Policy=Readonly<{id:string;kind:'growing-u51d7-caps';segment:HanjaOutlineSegment;certificate:ReviewedU51d7GrowingCertificate}>
+const CONTEXT:ReviewedU51d7Context=Object.freeze({id:'u51d7-source-1m1'})
+function deepFreeze<T>(v:T):T{if(v&&typeof v==='object'){for(const k of Reflect.ownKeys(v as object)){const d=Object.getOwnPropertyDescriptor(v,k);if(d&&'value'in d)deepFreeze(d.value)}Object.freeze(v)}return v}
+const TARGETS=deepFreeze([{pen:1,mask:1,id:'u51d7-1-1',path:"M10.08 16 Q19.68 20.5 24 29",certificate:{"pen":1,"mask":1,"rawOneBased":1,"syntax":"MQ","maskSHA256":"405646c757dfa89936042180fcf26d0015604f7a156a2893005ebd5a52e0d252","guide":"M10.08 16 Q19.68 20.5 24 29","width":14,"radius":7,"weight":19.046427,"T":"1/2","K":"1/20","A":["252/25","16"],"u":["48/5","9/2"],"v":["-132/25","4"],"lambdaMin":"226729/2500","lambdaMinAt":"1/2","cross":"1554/25","chordSquaredAtT":"247021/2500","chordSquaredMinus49":"124521/2500","rK":"7/20","cosLower":"751/800","cosMinusRK":"471/800","injectiveAxis":"x","derivativeEndpoints":["96/5","216/25"],"initialArcMax":7,"onlyInitialSufficientConditions":true,"initialSourcePConnectedNotProved":true,"fullCoverageNotProved":true,"fullSweepNotProved":true}}])
+const POLICIES:readonly ReviewedU51d7Policy[]=Object.freeze(TARGETS.map(t=>Object.freeze({id:t.id,kind:'growing-u51d7-caps' as const,segment:FIXED_STROKES[t.pen-1][t.mask-1],certificate:deepFreeze({syntax:'MQ' as const,T:t.certificate.T,K:t.certificate.K,initialArcMax:7 as const,storedBounds:t.certificate,notRasterProof:true as const,notPreviousMaskConnectivityProof:true as const,notFullSweepProof:true as const})})))
+export function reviewedU51d7Context(strokes:HanjaOutlineStrokes):ReviewedU51d7Context|null{return sameWhole(strokes)?CONTEXT:null}
+/** pen/mask는 기존 StrokeOutlines와 같은 0-based 인덱스다. */
+export function reviewedU51d7Policy(context:ReviewedU51d7Context|null,pen:number,mask:number):ReviewedU51d7Policy|null{if(context!==CONTEXT)return null;return POLICIES.find(t=>t.id==='u51d7-'+(pen+1)+'-'+(mask+1))??null}
+function source(policy:ReviewedU51d7Policy,segment:HanjaOutlineSegment){ensure(POLICIES.includes(policy)&&sameSegment(segment,policy.segment),'private 凗 policy and exact original fields required');ensure(segment.revealWidth===14&&segment.direction==='curve'&&segment.revealPath,'original 凗 guide/width');const q0=segment.revealPath.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number);return{q0,r:7,minimumLength:7}}
+export type ReviewedU51d7Frame=Readonly<{policyId:string;guide:string;progress:number;L:number;d:number;rho:number|null;q0:readonly number[];point:Readonly<{x:number;y:number}>}>
+export type ReviewedU51d7Nodes={measurement:SVGPathElement|null;guide:SVGPathElement|null;startCap:SVGCircleElement|null;endCap:SVGCircleElement|null;ink:SVGPathElement|null}
+function u51d7CoordinateBinding(nodes:readonly SVGElement[],owner:SVGSVGElement):()=>boolean {
+  const document=owner.ownerDocument,view=document?.defaultView
+  if(!view||view.document!==document)throw new Error('Connected 凗 SVG document required')
+  const parents=new Map<Element,Element|null>()
+  for(const node of nodes){
+    let current:Element|null=node
+    const visited=new Set<Element>()
+    while(current){
+      if(visited.has(current))throw new Error('Cyclic 凗 SVG parent')
+      visited.add(current)
+      if(current.namespaceURI!=='http://www.w3.org/2000/svg'||current.ownerDocument!==document||!current.isConnected||(current!==owner&&(current as SVGElement).ownerSVGElement!==owner))throw new Error('Mismatched 凗 SVG coordinate owner')
+      const parent=current.parentElement
+      if(parent&&(!parent.isConnected||parent.ownerDocument!==document))throw new Error('Mismatched 凗 outer SVG parent')
+      parents.set(current,parent)
+      if(current===owner)break
+      current=current.parentElement
+    }
+    if(current!==owner)throw new Error('Detached 凗 SVG coordinate tree')
+  }
+  return()=>{
+    if(owner.ownerDocument!==document||document.defaultView!==view||view.document!==document)return false
+    for(const[node,parent]of parents){
+      if(!node.isConnected||node.ownerDocument!==document||node.parentElement!==parent||(node!==owner&&(node as SVGElement).ownerSVGElement!==owner)||node.getAttribute('transform')!==null)return false
+      const style=view.getComputedStyle(node)
+      if(style.transform!=='none'||['translate','rotate','scale'].some(key=>{const value=style.getPropertyValue(key);return value!==''&&value!=='none'}))return false
+    }
+    return true
+  }
+}
+export function measureReviewedU51d7Frame(policy:ReviewedU51d7Policy,segment:HanjaOutlineSegment,progress:number,guide:SVGPathElement|null):ReviewedU51d7Frame {
+  const fixed=source(policy,segment)
+  if(!Number.isFinite(progress)||progress<0||progress>1)throw new Error('Invalid 凗 Q progress')
+  const owner=guide?.ownerSVGElement
+  const defs=guide?.parentElement,target=defs?.parentElement
+  if(!owner||!guide||defs?.localName!=='defs'||target?.localName!=='g'||target.getAttribute('data-stroke-start-gate')!==policy.id)throw new Error('Exact 凗 measurement parent required')
+  const coordinates=u51d7CoordinateBinding([guide],owner)
+  const exact=()=>coordinates()&&guide.parentElement===defs&&defs.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&target.getAttribute('data-u51d7-progress')===String(progress)&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('data-u51d7-measurement')==='true'&&guide.getAttribute('pathLength')===null
+  if(!exact())throw new Error('Exact connected 凗 measurement guide required')
+  const L=guide!.getTotalLength()
+  if(!Number.isFinite(L)||L<=fixed.minimumLength||!exact())throw new Error('Invalid 凗 browser length')
+  const d=Math.min(progress*L,L),point=guide!.getPointAtLength(d)
+  if(!Number.isFinite(point.x)||!Number.isFinite(point.y)||!exact())throw new Error('Changed 凗 guide or invalid endpoint')
+  if(progress===0&&Math.hypot(point.x-fixed.q0[0],point.y-fixed.q0[1])>=1e-4)throw new Error('凗 UA start differs from exact M')
+  return Object.freeze({policyId:policy.id,guide:segment.revealPath!,progress,L,d,rho:policy.kind==='growing-u51d7-caps'?Math.min(7,d):null,q0:Object.freeze(fixed.q0),point:Object.freeze({x:point.x,y:point.y})})
+}
+export function commitReviewedU51d7Caps(policy:ReviewedU51d7Policy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedU51d7Nodes) {
+  const{measurement,guide,startCap,endCap,ink}=nodes
+  const reset=()=>{
+    ink?.setAttribute('visibility','hidden');guide?.setAttribute('stroke-dasharray','0 2')
+    for(const cap of[startCap,endCap]){cap?.setAttribute('r','0');cap?.setAttribute('cx','0');cap?.setAttribute('cy','0')}
+    for(const key of['data-growing-progress','data-growing-length','data-growing-distance','data-growing-radius','data-growing-end-x','data-growing-end-y'])ink?.removeAttribute(key)
+  }
+  reset()
+  try{
+    source(policy,segment);ensure(policy.kind==='growing-u51d7-caps','private 凗 1m1 MQ policy only')
+    if(!Number.isFinite(progress)||progress<0||progress>1||!/^[A-Za-z0-9_:.-]+$/.test(clipId))throw new Error('Invalid 凗 frame/id')
+    if(progress===0||progress===1)return{status:progress===0?'empty' as const:'complete' as const,frame:null,cleanup:reset}
+    const owner=measurement?.ownerSVGElement
+    const defs=measurement?.parentElement,target=defs?.parentElement,mask=guide?.parentElement
+    if(!owner||!measurement||!guide||!startCap||!endCap||!ink||defs?.localName!=='defs'||target?.localName!=='g'||mask?.localName!=='mask')throw new Error('Missing 凗 SVG binding tree')
+    const coordinates=u51d7CoordinateBinding([measurement,guide,startCap,endCap,ink],owner)
+    const bound=()=>coordinates()&&measurement.parentElement===defs&&defs.parentElement===target&&guide.parentElement===mask&&mask.parentElement===defs&&startCap.parentElement===mask&&endCap.parentElement===mask&&ink.parentElement===target&&target.getAttribute('data-stroke-start-gate')===policy.id&&target.getAttribute('data-u51d7-progress')===String(progress)&&target.getAttribute('data-u51d7-clip')===clipId&&mask.getAttribute('id')===clipId+'-u51d7-growing'&&mask.getAttribute('maskUnits')==='userSpaceOnUse'&&['x','y'].every(key=>mask.getAttribute(key)==='0')&&['width','height'].every(key=>mask.getAttribute(key)==='100')&&[measurement,guide,startCap,endCap,ink].every(node=>node.getAttribute('data-growing-owner')===clipId)&&measurement.getAttribute('id')===clipId+'-u51d7-measure'&&guide.getAttribute('id')===clipId+'-u51d7-guide'&&guide.getAttribute('d')===segment.revealPath&&guide.getAttribute('pathLength')==='1'&&guide.getAttribute('stroke-width')==='14'&&guide.getAttribute('stroke-linecap')==='butt'&&guide.getAttribute('stroke-linejoin')==='miter'&&ink.getAttribute('d')===segment.outline&&ink.getAttribute('mask')==='url(#'+clipId+'-u51d7-growing)'
+    if(!bound())throw new Error('Mismatched 凗 SVG binding')
+    const frame=measureReviewedU51d7Frame(policy,segment,progress,measurement);ensure(frame.rho!==null,'growing frame radius')
+    if(!bound())throw new Error('凗 binding changed during UA read')
+    guide!.setAttribute('stroke-dasharray',String(frame.progress)+' 2')
+    startCap!.setAttribute('cx',String(frame.q0[0]));startCap!.setAttribute('cy',String(frame.q0[1]));startCap!.setAttribute('r',String(frame.rho))
+    endCap!.setAttribute('cx',String(frame.point.x));endCap!.setAttribute('cy',String(frame.point.y));endCap!.setAttribute('r',String(frame.rho))
+    for(const[key,value]of Object.entries({'data-growing-progress':frame.progress,'data-growing-length':frame.L,'data-growing-distance':frame.d,'data-growing-radius':frame.rho,'data-growing-end-x':frame.point.x,'data-growing-end-y':frame.point.y}))ink!.setAttribute(key,String(value))
+    if(!bound())throw new Error('凗 binding changed before visibility commit')
+    ink!.setAttribute('visibility','visible')
+    return{status:'visible' as const,frame,cleanup:reset}
+  }catch{reset();return{status:'hidden' as const,frame:null,cleanup:reset}}
+}
+
+
+export const REVIEWED_U51D7_SOURCE=deepFreeze({"root":"u51d7","geometrySHA256":"a14c7307545efa5a402aa55b6610794ab47d5b25d5360281103196be195cbc65","counts":{"pens":13,"masks":15,"polygons":28,"targets":1},"sourceFixture":"docs/hanja-source-independent-reorder-u51d7-source-experiment-2026-10-22/fixture.json","fixtureSHA256":"3bf4651d6156ea375cb3623f8a9831ddaebece741bba55b0acb6c766d789ea57","full5File":"docs/hanja-goal-glyphwiki-batch929-2026-10-13/engine-proof.json","full5SHA256":"6f1a58e9442e481f0f09d71d2d3895c4def9044179c246652682a9ca9d43ba1c","identityShape":"actual-full5-id3","sourceIdentity":{"root":"u51d7","file":"../hanja-goal-glyphwiki-batch929-2026-10-13/engine-proof.json","fileSHA256":"6f1a58e9442e481f0f09d71d2d3895c4def9044179c246652682a9ca9d43ba1c"},"targetMaskSHA256":"405646c757dfa89936042180fcf26d0015604f7a156a2893005ebd5a52e0d252","guide":"M10.08 16 Q19.68 20.5 24 29","width":14,"weight":19.046427,"initialArcMax":7,"sourcePGuideWidthWeightChanged":false,"sourceClockChanged":false,"originalHOLDPreserved":true,"nativeApproval":false,"actualComponentApproval":false,"actualAppUI":false,"runtimeApplied":false,"engineRuns":0,"sourceProjection":0,"newGeometry":false})
+export const REVIEWED_U51D7_INPUT_SHA256=Object.freeze({"docs/hanja-source-independent-reorder-u51d7-source-experiment-2026-10-22/fixture.json":"3bf4651d6156ea375cb3623f8a9831ddaebece741bba55b0acb6c766d789ea57","docs/hanja-goal-glyphwiki-batch929-2026-10-13/engine-proof.json":"6f1a58e9442e481f0f09d71d2d3895c4def9044179c246652682a9ca9d43ba1c","docs/hanja-actual-component-profiles-2026-10-22/u51d7-native-hold.json":"55f366909a5ebebf1d2151d00c98b8e29c160d5e85d16e2c34544fb1cee8db46"})
