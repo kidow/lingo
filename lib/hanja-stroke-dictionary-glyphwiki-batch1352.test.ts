@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
-import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1352_STROKES as EXPECTED,loadGlyphWikiBatch1352Strokes as load,GLYPHWIKI_BATCH1352_NATIVE_APPROVAL,GLYPHWIKI_BATCH1352_RUNTIME_APPLIED,GLYPHWIKI_BATCH1352_ASSIGNMENT_PROVISIONAL} from './hanja-stroke-dictionary-glyphwiki-batch1352.ts'
+import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1352_STROKES as EXPECTED,loadGlyphWikiBatch1352Strokes as load,GLYPHWIKI_BATCH1352_NATIVE_APPROVAL,GLYPHWIKI_BATCH1352_RUNTIME_APPLIED,GLYPHWIKI_BATCH1352_ASSIGNMENT_PROVISIONAL,GLYPHWIKI_BATCH1352_NATIVE_REVIEW} from './hanja-stroke-dictionary-glyphwiki-batch1352.ts'
 const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(bytes(p).toString()),sha=(b:string|Buffer)=>createHash('sha256').update(b).digest('hex'),clone=(v:any)=>JSON.parse(JSON.stringify(v))
 test('1352 source cache: exact full5, UP10 quad, independent H-LQ6 and VH16',async()=>{
  const fixed=json('docs/hanja-source-cache-u95d0-2026-10-22/source.json'),c={...fixed,strokes:fixed.baselineStrokes??fixed.strokes,geometrySHA256:fixed.baselineGeometrySHA256??fixed.geometrySHA256,preparation:fixed.baselinePreparation??fixed.preparation},a=json('public/hanja-strokes/glyphwiki/u95d0.json'),p=json('docs/hanja-public-glyphwiki-engine-capture-2026-10-22/engine-whole-u95d0.json'),m=await import('../docs/hanja-source-cache-u95d0-2026-10-22/source.mjs')
@@ -26,7 +26,7 @@ test('1352 provisional loader: semantic same JSON and strict source fields',()=>
  const reorder=(v:any):any=>Array.isArray(v)?v.map(reorder):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).reverse().map(([k,x])=>[k,reorder(x)])):v;assert.deepEqual(load(reorder(b)),EXPECTED)
  for(const change of[(x:any)=>x[0].glyph='wrong',(x:any)=>x[0].outlines[9].reverse(),(x:any)=>x[0].outlines[9][1].weight++,(x:any)=>x[0].outlines[5][1].revealPath+=' ',(x:any)=>x[0].outlines[15][0].bounds[0]++,(x:any)=>x[0].sourceStrokeIndices.reverse(),(x:any)=>x[0].nativeApproval=true]){const x=clone(b);change(x);assert.notDeepEqual(x,b);assert.throws(()=>load(x))}
  const sparse=clone(b);delete sparse[0].outlines[9][1];assert.throws(()=>load(sparse));let reads=0;const getter=clone(b);Object.defineProperty(getter[0].outlines[15][0],'weight',{enumerable:true,get(){reads++;return 1}});assert.throws(()=>load(getter));assert.equal(reads,0);assert.throws(()=>Reflect.apply(load,null,[]));assert.throws(()=>Reflect.apply(load,null,[b,0]));assert(Object.isFrozen(EXPECTED[0].outlines![9][1].bounds))
- assert.equal(GLYPHWIKI_BATCH1352_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1352_RUNTIME_APPLIED,false);assert.equal(GLYPHWIKI_BATCH1352_ASSIGNMENT_PROVISIONAL,true);assert.equal(a.preparationHistory.runtimeApplied,false)
+ assert.equal(GLYPHWIKI_BATCH1352_NATIVE_APPROVAL,true);assert.equal(GLYPHWIKI_BATCH1352_RUNTIME_APPLIED,true);assert.equal(GLYPHWIKI_BATCH1352_ASSIGNMENT_PROVISIONAL,false);assert.equal(a.preparationHistory.runtimeApplied,false)
 })
 
 test('1352 LEFT6 correction tail: original quad partition and strict current bundle',async()=>{
@@ -49,5 +49,12 @@ test('1352 LEFT6 correction tail: original quad partition and strict current bun
  assert.deepEqual(load(b),EXPECTED);assert.deepEqual(EXPECTED[0].outlines,c.strokes);assert.equal(EXPECTED[0].geometrySource,sha(bytes('public/hanja-strokes/glyphwiki/u95d0.json')))
  for(const change of [(x:any)=>x[0].outlines[5].reverse(),(x:any)=>x[0].outlines[5][2].weight++,(x:any)=>x[0].outlines[5][1].bounds[0]--,(x:any)=>x[0].outlines[5][1].revealPath+=' ']){const x=clone(b);change(x);assert.notDeepEqual(x,b);assert.throws(()=>load(x))}
  for(const field of ['nativeApproval','actualAppUI','runtimeApplied'])assert.equal(c[field],false)
- assert.equal(a.preparationHistory.runtimeApplied,false);assert.equal(GLYPHWIKI_BATCH1352_NATIVE_APPROVAL,false);assert.equal(GLYPHWIKI_BATCH1352_RUNTIME_APPLIED,false)
+ assert.equal(a.preparationHistory.runtimeApplied,false);assert.equal(GLYPHWIKI_BATCH1352_NATIVE_APPROVAL,true);assert.equal(GLYPHWIKI_BATCH1352_RUNTIME_APPLIED,true)
+})
+
+test('1352 scoped activation and actual registry resolves 闐 exactly once',async()=>{
+ const ref=GLYPHWIKI_BATCH1352_NATIVE_REVIEW,r=json(ref.path);assert.equal(sha(bytes(ref.path)),ref.sha256);assert.equal(r.batch,1352);assert.equal(r.glyph,'闐');assert.equal(r.native.validScreens,36);assert.equal(r.native.compact.screens+r.native.ordinaryFullRoundCoverage.screens+r.native.fine.screens+r.native.pen6Boundaries.screens+r.native.natural.earlyAndEndScreens+r.native.doneWhole,36);assert.equal(r.native.compact.uniqueSamples,162);assert.deepEqual(r.native.ordinaryFullRoundCoverage.pens,[2,6,9,10,12,17,18]);assert.deepEqual(r.native.bad,[]);assert.deepEqual(r.native.errors,[])
+ assert.equal(r.native.pen6Boundaries.zeroAreaOrNoJumpClaimForInitialFixedCap,false);assert.equal(r.approval.rootScopedFiniteApproval,true);assert.equal(r.approval.isolatedActualComponentBrowserVerified,true);for(const k of['actualProductUI','controller','storage','all18Autoplay','domesticTemporalAll18','allRAF'])assert.equal(r.approval[k],false);assert.equal(r.source.geometrySHA256,'8b683fa352794e6b6b2c92f1571ec5017b57e301fe740824837297aa690c2b7e');assert.equal(r.server.exitCode,130)
+ assert.equal(r.preservedHistory.sourceCachePreparationAndPublicHistoryFalseUnchanged,true);assert.equal(sha(bytes(r.preservedHistory.oldHold.path)),r.preservedHistory.oldHold.SHA256);assert.equal(json('public/hanja-strokes/glyphwiki/u95d0.json').preparationHistory.runtimeApplied,false);assert.equal(GLYPHWIKI_BATCH1352_NATIVE_APPROVAL,true);assert.equal(GLYPHWIKI_BATCH1352_RUNTIME_APPLIED,true);assert.equal(GLYPHWIKI_BATCH1352_ASSIGNMENT_PROVISIONAL,false)
+ const {HANJA_STROKES,hanjaStrokeData}=await import('./hanja-strokes.ts');const unique=new Set(HANJA_STROKES.map(x=>x.glyph));assert(unique.size>=5767);assert(5978-unique.size<=211);assert.equal(HANJA_STROKES.filter(x=>x.glyph==='闐').length,1);assert.deepEqual(hanjaStrokeData({glyph:'闐',strokes:18}),json('public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1352.json')[0]);console.log(JSON.stringify({glyph:'闐',applied:unique.size,remaining:5978-unique.size,targetMatches:1,actualRegistryImport:true,build:false}))
 })
