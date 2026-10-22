@@ -1,0 +1,268 @@
+{
+  "schema": "hanja-direct-single-root-capture/v1",
+  "date": "2026-10-22",
+  "batch": 1359,
+  "glyph": "錡",
+  "root": "u9321-k",
+  "actualFull5": {
+    "path": "docs/hanja-public-glyphwiki-engine-capture-u9321-k-2026-10-22/engine-whole-u9321-k.json",
+    "SHA256": "837a67b7f889874b852b6429f1b2dd61cdf0d64831a19a59409fe99dc0433cd5",
+    "canonicalSHA256": "a215dc91bdb71a7355161156a5eb62851a730411138910f419f19ead80d2b199",
+    "keys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "identity": {
+      "sourceRoot": "u9321-k",
+      "sourceProofFile": "engine-whole-u9321-k.json",
+      "sourceProofFileSha256": "837a67b7f889874b852b6429f1b2dd61cdf0d64831a19a59409fe99dc0433cd5"
+    }
+  },
+  "capture": {
+    "root": "u9321-k",
+    "actualMakeGlyphCalls": 1,
+    "VMSetups": 1,
+    "vendorFetches": 8,
+    "vendorInputs": [
+      {
+        "file": "2d.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/2d.js",
+        "hash": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+        "bytes": 3585
+      },
+      {
+        "file": "buhin.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/buhin.js",
+        "hash": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+        "bytes": 419
+      },
+      {
+        "file": "curve.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/curve.js",
+        "hash": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+        "bytes": 6015
+      },
+      {
+        "file": "kage.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kage.js",
+        "hash": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+        "bytes": 17027
+      },
+      {
+        "file": "kagecd.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagecd.js",
+        "hash": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+        "bytes": 46537
+      },
+      {
+        "file": "kagedf.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/kagedf.js",
+        "hash": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+        "bytes": 22556
+      },
+      {
+        "file": "polygon.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/polygon.js",
+        "hash": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+        "bytes": 1325
+      },
+      {
+        "file": "polygons.js",
+        "url": "https://raw.githubusercontent.com/kamichikoichi/kage-engine/49232bac0348fe815f4200d4116ab7917e0db47f/polygons.js",
+        "hash": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a",
+        "bytes": 3728
+      }
+    ],
+    "recipePath": "docs/hanja-goal-glyphwiki-batch176-2026-10-03/verify.mjs",
+    "recipeFileSHA256": "b117dae37a8c0455aa1f9e36bb89098e9df1cec745d016b37095f1e7382b4ced",
+    "recipeBodySHA256": "b65913a7f0c9444b729794760a054704f1e157fbe7c62c12a4c6176ee0ada61b",
+    "sourceFile": "docs/hanja-goal-glyphwiki-batch335-2026-10-05/sources.json",
+    "sourceFileSHA256": "544d133f9c62a5539ae016262d9e94add232ebb2d25ac93076e480458466198f",
+    "originalProof4File": "docs/hanja-goal-glyphwiki-batch335-2026-10-05/engine-proof.json",
+    "originalProof4SHA256": "8de747e0ef213eedfecbd9600ff10b71e757dddcb4f3075a6b51b19fc36d46a3",
+    "originalTraceFile": "docs/hanja-goal-glyphwiki-batch335-2026-10-05/draw-trace.json",
+    "originalTraceSHA256": "1b019f7e35fc8f568c11b5afc9bc2cc847fe8cb1bf8500e70470388a0cbe3080",
+    "comparisons": {
+      "groups": true,
+      "trace": true,
+      "defaults": true,
+      "nonDrawingRaw9": true,
+      "headerConstructedFromActualLoadedCodeOnly": true,
+      "oldHeaderAndTraceNotUsedToConstructActualOutput": true
+    },
+    "sourceProjection": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "preparationFailures": [
+      {
+        "kind": "NodeREPL dynamic template decode denied",
+        "engineCalls": 0,
+        "networkFetches": 0,
+        "ordinaryNodeDecodeRecovered": true
+      },
+      {
+        "kind": "orchestration string quoting syntax error before dispatch",
+        "engineCalls": 0,
+        "networkFetches": 0
+      }
+    ]
+  },
+  "counts": {
+    "raw": 18,
+    "drawingCalls": 18,
+    "polygons": 36,
+    "nonDrawingRawOneBased": [
+      9
+    ]
+  },
+  "legacyGrouping": {
+    "metadata": "docs/hanja-goal-glyphwiki-batch335-2026-10-05/metadata.json",
+    "metadataSHA256": "339a8efbf559ff0d06fff0df97edabf91106299063dc51a9bcd9280fb0eaca4f",
+    "sourceGroupsZeroBased": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14,
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ]
+    ],
+    "provisionalGroupsOneBased": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15,
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ]
+    ],
+    "domestic16MappingRecordedPreviously": true,
+    "freshNativeApproval": false
+  },
+  "minorTerminalRisk": {
+    "logicalPen": 16,
+    "rawOneBased": 18,
+    "sourceCall": "cdDrawCurve",
+    "flags": [
+      1,
+      14
+    ],
+    "originalQuad": [
+      {
+        "x": 153.5,
+        "y": 183,
+        "off": 0
+      },
+      {
+        "x": 153.5,
+        "y": 177,
+        "off": 0
+      },
+      {
+        "x": 133.5,
+        "y": 177,
+        "off": 0
+      },
+      {
+        "x": 133.5,
+        "y": 180,
+        "off": 0
+      }
+    ],
+    "sourceCorrectionExecuted": false
+  },
+  "newSourceProjection": 0,
+  "sourceCacheGenerated": false,
+  "engineCaptureCalls": 1,
+  "authorMetadataChecks": 1,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false
+}
