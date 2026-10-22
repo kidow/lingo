@@ -1,0 +1,50 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "粻",
+  "root": "u7cbb",
+  "sharedVersion": 83,
+  "observedBy": "ROOT in browser panel",
+  "recordedBy": "u7cbb_prepare from ROOT's explicit native report",
+  "profile": "docs/hanja-actual-component-profiles-2026-10-22/u7cbb-1.json",
+  "profileSHA256": "cf48c42f6f16f9a93c3050eae04fe219a658ce627cab6e607a0af08d26421601",
+  "componentSHA256": "1b2214d98b78c4fc171d50db45ab0d0d2b5ef9562fc3e9e2c3a22667e380fabd",
+  "helperSHA256": "d4cbac659b0b99ad2d46c650acf578961ba9ae41a19932be471108bc8c3ab2d4",
+  "footModuleSHA256": "09dd7721d68db23997c848da071742698f0523263454aa7ce9031f9ae7e6cc06",
+  "sourceGeometrySHA256": "e892464c3b8f7075f7291d0927ac84edb30056308652f71c6e01789e1cbddcf7",
+  "resourceLoad": {
+    "initialSSRFailedBeforeServer": true,
+    "cause": "missing new kind in existing local-dependency alias condition",
+    "correctedSSRExecutions": 1,
+    "CJS": 93,
+    "ESM": 93
+  },
+  "observedScreens": {
+    "capsTargets": ["u7cbb-1-1", "u7cbb-2-1", "u7cbb-5-1", "u7cbb-6-1", "u7cbb-13-1", "u7cbb-14-1"],
+    "capsEpsilonAndPoint03": 12,
+    "capsRhoBoundaryMinusExactPlus": 18,
+    "capsOriginalRoundResidual": 6,
+    "capsObservedPASS": 36,
+    "footTarget": "u7cbb-12-2",
+    "footLocalSamples": [0, 0.000001, 0.01, 0.03, 0.1, 0.5, 0.95, 1],
+    "footSamplesObserved": 8,
+    "footSamplesWithVisibleSeparation": [0.01, 0.03, 0.1],
+    "footSamplePoint5Connects": true,
+    "otherFiveFootSamplesNotPromotedToWholeNativeApproval": true,
+    "totalObserved": 44,
+    "badAndErrorsReportedEmpty": true,
+    "emptyReportsDoNotOverrideVisualFAIL": true
+  },
+  "failure": {
+    "description": "Lower-left tiny triangle visibly separated from preceding vertical at foot local .01/.03/.1; .5 connects.",
+    "initialSchedule": "completed original triangles plus active triangle scaled around stored seed; body x-prefix begins only after stored foot phase share",
+    "requiredCorrectionScope": "actual visible completed 12m1 and every early 12m2 reveal prefix",
+    "originalSeedMembershipDoesNotEstablishNativeVisibleConnectivity": true,
+    "originalAnalyticFootProofPreservedAtItsNarrowScope": true
+  },
+  "unobservedRemaining": ["foot/body phase boundary", "source mask boundary", "all logical compact boards", "fine12", "natural playback", "whole completion"],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceGuideWidthWeightPChanged": false,
+  "server": {"PID": 34315, "execSession": 90012, "port": 59412, "stoppedByROOT": true, "exitCode": 130, "emptyConfirmedByROOT": true}
+}
