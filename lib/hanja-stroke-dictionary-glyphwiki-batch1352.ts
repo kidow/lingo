@@ -6,7 +6,7 @@ const EXPECTED = [
     "glyph": "闐",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
-    "geometrySource": "6f526b6fac1225bf31d6ea3ca48a5f3690ddccef9b23e7d27d0a2da22c250b52",
+    "geometrySource": "772e5880de01c342c37b8dc97b75dc447e4af6bc943003348d69b9378956d9cc",
     "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
     "sourceStrokeIndices": [
       1,
@@ -129,9 +129,9 @@ const EXPECTED = [
           "weight": 27
         },
         {
-          "outline": "M88.5 13 L88.5 86.5 L82.5 86.5 L82.5 13 Z M82.5 12 L85.5 9.5 L91 14 L88.5 16 L82.5 13 Z M82.5 86.5 L88.5 86.5 L87.3 88.3 L85.5 89.5 L83.7 88.3 Z M88.5 86.5 L88.4 87.75 L88.2 89 L87.8 90.2 L87.15 91.35 L86.35 92.35 L85.35 93.15 L84.2 93.8 L83 94.2 L81.75 94.4 L80.5 94.5 L80.5 88.5 L81.1 88.45 L81.55 88.35 L81.85 88.25 L82 88.2 L82.1 88.1 L82.2 88 L82.25 87.85 L82.35 87.55 L82.45 87.1 L82.5 86.5 Z M80.5 91.5 L70.5 90 L70.5 88.5 L80.5 88.5 Z",
+          "outline": "M88.5 13 L88.5 86.5 L82.5 86.5 L82.5 13 Z M82.5 12 L85.5 9.5 L91 14 L88.5 16 L82.5 13 Z M82.5 86.5 L88.5 86.5 L87.3 88.3 L85.5 89.5 L83.7 88.3 Z M88.5 86.5 L88.4 87.75 L88.2 89 L87.8 90.2 L87.15 91.35 L86.35 92.35 L85.35 93.15 L84.2 93.8 L83 94.2 L81.75 94.4 L80.5 94.5 L80.5 88.5 L81.1 88.45 L81.55 88.35 L81.85 88.25 L82 88.2 L82.1 88.1 L82.2 88 L82.25 87.85 L82.35 87.55 L82.45 87.1 L82.5 86.5 Z",
           "bounds": [
-            70.5,
+            80.5,
             9.5,
             91,
             94.5
@@ -140,6 +140,17 @@ const EXPECTED = [
           "weight": 80.571068,
           "revealPath": "M85.5 13 L85.5 86.5 Q85.5 91.5 80.5 91.5",
           "revealWidth": 14
+        },
+        {
+          "outline": "M80.5 91.5 L70.5 90 L70.5 88.5 L80.5 88.5 Z",
+          "bounds": [
+            70.5,
+            88.5,
+            80.5,
+            91.5
+          ],
+          "direction": "left",
+          "weight": 10
         }
       ],
       [
@@ -347,7 +358,7 @@ const EXPECTED = [
       "sourceUrl": "https://glyphwiki.org/wiki/u95d0@11",
       "revision": "u95d0@11 및capsule원5record고정;2026-10-22 freshactualfull5",
       "editableSource": "/hanja-strokes/glyphwiki/u95d0.json",
-      "modifications": "1352 미등록 후보. current u95d0@11 closure의 실제full5/id3 22raw25calls42P와 ROOT정적18그룹을 고정했다. 기존순수projector본문 최초1회→즉시캐시 후 재투영없음. HV2(raw2/3)·HV12(raw14/15)만 원endpoint exactjoin을 사용한다. 6은 raw7H와 raw8원LQ를 독립2mask로 유지하며 원LEFT14꼬리는 미분리다. 10UP의 원4006/5 마지막quad1만 exactguard로 분리하고 원bodyguide·폭14·bodyweight50.616068을 유지하며 원tail4.5를 내부mask배분에 추가한다(획당시간 증가 아님). 16의 raw19V1000/313과raw20H2/100은 원cardinal2mask로 원foot을 보존한다. 새connector/좌표/guide/폭/원bodyweight 변화없음. 방향·시간·초기cap·terminal·coverage·전체native·APP/runtime 미승인이고 옛HOLD는 그대로다."
+      "modifications": "1352 미등록 후보. current u95d0@11 closure의 실제full5/id3 22raw25calls42P와 ROOT정적18그룹을 고정했다. 기존순수projector본문 최초1회→즉시캐시 후 재투영없음. HV2(raw2/3)·HV12(raw14/15)만 원endpoint exactjoin을 사용한다. 6은 원raw7H, raw8LQ body, 원LEFT14 마지막quad의 3mask로 유지한다. cached correction1회로 원quad만 분리하고 bodyguide·폭14·bodyweight80.571068은 그대로, tailweight10은 내부배분에만 추가한다. 첫 native residual/완료 FAIL은 별도 역사로 보존하며 보정후 native는 미승인이다. 10UP의 원4006/5 마지막quad1만 exactguard로 분리하고 원bodyguide·폭14·bodyweight50.616068을 유지하며 원tail4.5를 내부mask배분에 추가한다(획당시간 증가 아님). 16의 raw19V1000/313과raw20H2/100은 원cardinal2mask로 원foot을 보존한다. 새connector/좌표/guide/폭/원bodyweight 변화없음. 방향·시간·초기cap·terminal·coverage·전체native·APP/runtime 미승인이고 옛HOLD는 그대로다."
     }
   }
 ] as unknown as readonly HanjaDictionaryStrokeData[]

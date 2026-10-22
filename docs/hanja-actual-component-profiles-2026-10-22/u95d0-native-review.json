@@ -1,0 +1,83 @@
+{
+  "schema": "hanja-actual-component-source-hold/v1",
+  "glyph": "闐",
+  "root": "u95d0",
+  "batch": 1352,
+  "date": "2026-10-22",
+  "observer": "ROOT",
+  "sourceAtObservation": {
+    "pens": 18,
+    "masks": 21,
+    "polygons": 42,
+    "geometrySHA256": "5c652462021180ed6699b7640e91fd5eea35aba50a40e09780b94cc67490fc85",
+    "inputSHA256": {
+      "docs/hanja-source-cache-u95d0-2026-10-22/source.mjs": "37f6eecc3d6df7c8fd9027ab562ef411cb00c7ea5e39a5090a74aa82f7fa7885",
+      "docs/hanja-source-cache-u95d0-2026-10-22/source.json": "fb06c5d6aa1b69e1407b6f39f6c28a95362b332808ffdea26a0e27415d69a90b",
+      "public/hanja-strokes/glyphwiki/u95d0.json": "6f526b6fac1225bf31d6ea3ca48a5f3690ddccef9b23e7d27d0a2da22c250b52",
+      "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1352.json": "ba96eabc2b3ecb640606a377eb3e1e5e3c72d364a09935c9925563cea6d63b58",
+      "lib/hanja-stroke-dictionary-glyphwiki-batch1352.ts": "f053b409b358d71b1eb2c391932ddd8a7ccba0906f24c8e21999bde877b8858d",
+      "lib/hanja-stroke-dictionary-glyphwiki-batch1352.test.ts": "2f82598ce9ca357616562aaf554af08d87bcee93e9090cfc99e4ecf23e54cfef"
+    },
+    "pinsAreHistorical": true
+  },
+  "observedHarness": {
+    "profile": "docs/hanja-actual-component-profiles-2026-10-22/u95d0.json",
+    "profileSHA256": "66eeba21b2471b9436654f87834add60f6f0de181c5b8048c1a536403030b8b9",
+    "helperSHA256": "7b199e08f7280357abdb1eacb8c55ca9cfeba0b6f762cb57230b958a5e18ab6d",
+    "componentSHA256": "c6c3c7bf719ecf384ae7d2262fdc0989e7dbf2238aa2a7e71f5a7c610129b85e"
+  },
+  "native": {
+    "validScreens": 2,
+    "pen": 6,
+    "mask": 2,
+    "observations": [
+      {
+        "kind": "actual-fullround-residual",
+        "screens": 1,
+        "result": "원LQ 아래왼쪽 terminal에 약20px 검정 잔여",
+        "sizeIsVisualEstimate": true,
+        "pixelOrAreaMeasurement": false
+      },
+      {
+        "kind": "fine-board",
+        "screens": 1,
+        "globalValues": [
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "samples": 3,
+        "result": "exact1에서 뒤늦게 왼쪽hook이 나타남"
+      }
+    ],
+    "bad": [],
+    "errors": [],
+    "structuralDOMChecksDidNotDetectVisualFailure": true,
+    "all18MatrixObserved": false
+  },
+  "approval": {
+    "nativeWholeCandidateApproved": false,
+    "isolatedActualComponentFiniteApproved": false,
+    "actualAppUI": false,
+    "runtimeApplied": false
+  },
+  "server": {
+    "pid": 56364,
+    "session": 66572,
+    "stoppedByRoot": true,
+    "exitCode": 130,
+    "outputEmpty": true,
+    "finalPIDRequery": false
+  },
+  "executions": {
+    "rootStartupSSR": 1,
+    "rootCJS": 33,
+    "rootESM": 33,
+    "engine": 0,
+    "sourceProjection": 0,
+    "agentServer": 0,
+    "agentBrowser": 0,
+    "newRecordMetadataCheck": 1,
+    "oldPassedTestsRepeated": 0
+  }
+}
