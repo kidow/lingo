@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import type {HanjaOutlineStrokes} from './hanja-stroke-outline'
 import {reviewedU568cContext,reviewedU568cPolicy,commitReviewedU568cCaps,REVIEWED_U568C_SOURCE,REVIEWED_U568C_PROOFS,REVIEWED_U568C_INPUT_SHA256} from './hanja-stroke-start-caps-u568c.ts'
-const fixture=JSON.parse(readFileSync(new URL('../docs/hanja-source-cache-u568c-2026-10-23/fixture.json',import.meta.url),'utf8')),strokes=fixture.strokes as HanjaOutlineStrokes,clone=<T,>(x:T):T=>JSON.parse(JSON.stringify(x)),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex')
+const fixture=JSON.parse(readFileSync(new URL('../docs/hanja-source-terminal-down-u568c-experiment-2026-10-23/fixture.json',import.meta.url),'utf8')),strokes=fixture.strokes as HanjaOutlineStrokes,clone=<T,>(x:T):T=>JSON.parse(JSON.stringify(x)),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex')
 const targets=[[5,0],[6,0],[9,0],[10,0],[12,0]] as const,context=reviewedU568cContext(strokes),policies=targets.map(([p,m])=>{const q=reviewedU568cPolicy(context,p,m);assert(q);return q})
 // 새exact Fraction 산술배치1의 저장결과를 검증하며, 그 산술과 타 source 수학은 재실행하지 않는다.
 test('嚌 own five MQ source guards and stored own certificates FIRST',()=>{

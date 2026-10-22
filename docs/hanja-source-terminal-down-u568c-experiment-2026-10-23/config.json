@@ -1,0 +1,166 @@
+{
+  "schema": "hanja-source-cached-terminal-partition/v1",
+  "root": "u568c",
+  "baselineFixture": {
+    "file": "docs/hanja-source-cache-u568c-2026-10-23/fixture.json",
+    "sha256": "fd3319d9ac2f941e9ef51a5a505c6d3e72b90788c92f9493ae1dc69ac6423d55"
+  },
+  "originalActualFull5": {
+    "file": "docs/hanja-source-raw-compare-u568c-2026-10-23/engine-whole-u568c.json",
+    "sha256": "0fb793d710713d24757c82f0ba9494beb5d025d43ceb10ede0a0dfd7ecc6535d",
+    "identityUnchanged": true
+  },
+  "fixture": {
+    "file": "docs/hanja-source-terminal-down-u568c-experiment-2026-10-23/fixture.json",
+    "sha256": "c9fac0a075bf84d00e597130cd6e2fb22bace01af92cedd64f1a1321325b48b3"
+  },
+  "derivation": {
+    "file": "docs/hanja-source-terminal-down-u568c-experiment-2026-10-23/derive.mjs",
+    "sha256": "f4bb48c1a79db8a5620347233903c541ab0cb01507f649ebd20dc816bd176aa1",
+    "successfulCalls": 1,
+    "cachedCorrection": 1,
+    "sourceProjection": 0,
+    "engine": 0,
+    "compiler": 0
+  },
+  "priorNativeHold": {
+    "file": "docs/hanja-actual-component-profiles-2026-10-22/u568c-1-native-hold.json",
+    "sha256": "44fb59c75ea6468d025a40e96c57faa57e9e06a9acd3061af43b8809db8ef867",
+    "observedScreens": 93,
+    "allPass": false
+  },
+  "geometrySHA256": "7555a299e6cc2a6a7d522520aa5f226bab6c46b5032393d3d9c124719ad6dad7",
+  "counts": {
+    "pens": 17,
+    "masks": 20,
+    "originalPolygons": 39,
+    "emittedFragments": 40
+  },
+  "partition": {
+    "pen": 2,
+    "mask": 1,
+    "raw": 3,
+    "terminalFlags": [
+      22,
+      23
+    ],
+    "originalQuad": [
+      [
+        29.4,
+        21.85
+      ],
+      [
+        29.4,
+        70.1
+      ],
+      [
+        23.4,
+        73.1
+      ],
+      [
+        23.4,
+        21.85
+      ]
+    ],
+    "cutPoint": [
+      23.4,
+      70.1
+    ],
+    "cutRule": "original C.x on CD at original B.y",
+    "bodyRectangle": [
+      [
+        29.4,
+        21.85
+      ],
+      [
+        29.4,
+        70.1
+      ],
+      [
+        23.4,
+        70.1
+      ],
+      [
+        23.4,
+        21.85
+      ]
+    ],
+    "tailTriangle": [
+      [
+        29.4,
+        70.1
+      ],
+      [
+        23.4,
+        73.1
+      ],
+      [
+        23.4,
+        70.1
+      ]
+    ],
+    "bodyBounds": [
+      10.1,
+      18.35,
+      31.9,
+      70.1
+    ],
+    "tailBounds": [
+      23.4,
+      70.1,
+      29.4,
+      73.1
+    ],
+    "bodyWeight": 60.6012,
+    "tailWeight": 3,
+    "boundary": 0.9528310786588933,
+    "bodyContainedInFullRoundCapsulesExact": true,
+    "sourceSetUnionExact": true,
+    "nativeApproval": false
+  },
+  "proof": {
+    "originalQuadArea": "597/2",
+    "bodyRectangleArea": "579/2",
+    "tailTriangleArea": "9",
+    "interiorsDisjoint": "body y<=70.1; tail y>=70.1; shared segment BE only",
+    "exactSourceUnion": true,
+    "originalContourUnchanged": true,
+    "originalOther38PolygonsUnchanged": true,
+    "other16PensByteUnchanged": true,
+    "bodyGuideWidthAndWeightUnchanged": true,
+    "bodyPFullRoundCoverage": "all body convex polygon vertices inside corresponding original straight capsule / right-angle joint disc; exact scaled BigInt FIRST proof in derive.mjs",
+    "rasterOrActualCoverageApproved": false
+  },
+  "clock": {
+    "bodyWeight": 60.6012,
+    "tailWeight": 3,
+    "boundary": 0.9528310786588933,
+    "originalBodyClockWeightUnchanged": true,
+    "logicalPenClockChanged": true,
+    "officialMicroClockApproved": false
+  },
+  "strictContextImpact": {
+    "policies": [
+      "lib/hanja-stroke-start-caps-u568c.ts",
+      "lib/hanja-stroke-start-compound-u568c.ts",
+      "lib/hanja-stroke-source-foot-u568c.ts"
+    ],
+    "wholeJSONRebindRequired": true,
+    "onlyChangedTarget": "compound 2m1 outline/bounds",
+    "MQ5TargetsUnchanged": true,
+    "compound9And14TargetsUnchanged": true,
+    "foot12SourceAndTriangulationUnchanged": true,
+    "sharedTSXChangeNeeded": false,
+    "helperOwnStrictCountsRebindNeeded": true
+  },
+  "requiredFreshNative": [
+    "pen2 original-guide full-round residual",
+    "pen2 compact/fine",
+    "pen2 body/DOWN boundary ±1e-10 and exact",
+    "pen2 natural early/end and done whole"
+  ],
+  "unchangedNativeReuse": "나머지16획과 해당8정책 target fields는 exact byte 동일성이 확인될 때만 기존93관찰의 해당 사례를 참고; 2획 coverage FAIL은 새후보 PASS로 소급하지 않음",
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false
+}

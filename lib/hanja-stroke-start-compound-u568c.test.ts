@@ -2,7 +2,7 @@ import assert from'node:assert/strict'
 import{test}from'node:test'
 import{readFileSync}from'node:fs'
 import{createHash}from'node:crypto'
-const FIXTURE='docs/hanja-source-cache-u568c-2026-10-23/fixture.json',FULL5='docs/hanja-source-raw-compare-u568c-2026-10-23/engine-whole-u568c.json'
+const FIXTURE='docs/hanja-source-terminal-down-u568c-experiment-2026-10-23/fixture.json',FULL5='docs/hanja-source-raw-compare-u568c-2026-10-23/engine-whole-u568c.json'
 const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex'),clone=<T,>(v:T):T=>structuredClone(v)
 const fixture=JSON.parse(read(FIXTURE).toString()),strokes=fixture.strokes
 type R=readonly[bigint,bigint]
@@ -11,7 +11,7 @@ function r(a:bigint,b=1n):R{assert(b!==0n);if(b<0n){a=-a;b=-b}const g=gcd(a,b);r
 function q(s:string):R{if(s.includes('/')){const[a,b]=s.split('/').map(BigInt);return r(a,b)}const[a,b='']=s.split('.');return r(BigInt(a+b),10n**BigInt(b.length))}
 const add=(a:R,b:R)=>r(a[0]*b[1]+b[0]*a[1],a[1]*b[1]),neg=(a:R)=>r(-a[0],a[1]),sub=(a:R,b:R)=>add(a,neg(b)),mul=(a:R,b:R)=>r(a[0]*b[0],a[1]*b[1]),div=(a:R,b:R)=>r(a[0]*b[1],a[1]*b[0]),cmp=(a:R,b:R)=>a[0]*b[1]-b[0]*a[1],square=(a:R)=>mul(a,a),text=(a:R)=>a[1]===1n?String(a[0]):a[0]+'/'+a[1],dot=(a:R[],b:R[])=>add(mul(a[0],b[0]),mul(a[1],b[1])),abs=(a:R)=>a[0]<0n?neg(a):a
 test('嚌 compound3 exact first straight arc7 proof FIRST batch',()=>{
- assert.equal(sha(read(FIXTURE)),'fd3319d9ac2f941e9ef51a5a505c6d3e72b90788c92f9493ae1dc69ac6423d55');assert.equal(sha(JSON.stringify(strokes)),'aa124ad522573bf1e5ba90f904ffcf2796af551fb294d070c6d19779b53661c8');assert.equal(strokes.length,17);assert.equal(strokes.flat().length,19)
+ assert.equal(sha(read(FIXTURE)),'c9fac0a075bf84d00e597130cd6e2fb22bace01af92cedd64f1a1321325b48b3');assert.equal(sha(JSON.stringify(strokes)),'7555a299e6cc2a6a7d522520aa5f226bab6c46b5032393d3d9c124719ad6dad7');assert.equal(strokes.length,17);assert.equal(strokes.flat().length,20)
  assert.equal(sha(read(FULL5)),'0fb793d710713d24757c82f0ba9494beb5d025d43ceb10ede0a0dfd7ecc6535d');const full=JSON.parse(read(FULL5).toString());assert.deepEqual(Object.keys(full).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(full.groups.flatMap((g:any)=>g.polygons).length,39)
  const certificates:any[]=[]
  for(const[pen,syntax]of[[2,'MLL'],[9,'MLQQ'],[14,'MLQ']]as const){const m=strokes[pen-1][0];assert.equal(m.direction,'curve');assert.equal(m.revealWidth,14);assert.equal(m.revealPath.match(/[MLQC]/g).join(''),syntax)
@@ -37,7 +37,7 @@ const dispatch=(x:ReturnType<typeof fake>,p:number,s=x.segment)=>commitReviewedU
 
 test('嚌 compound3 DOM sourceguards and lifecycle FIRST batch',()=>{
  const context=reviewedU568cCompoundContext(strokes);assert(context)
- assert.deepEqual(REVIEWED_U568C_COMPOUND_SOURCE.counts,{pens:17,masks:19,polygons:39,targets:3})
+ assert.deepEqual(REVIEWED_U568C_COMPOUND_SOURCE.counts,{pens:17,masks:20,polygons:40,targets:3,originalPolygons:39})
  for(const[p,h]of Object.entries(REVIEWED_U568C_COMPOUND_INPUT_SHA256))assert.equal(sha(read(p)),h,p)
  let selected=0;for(let i=0;i<strokes.length;i++)for(let j=0;j<strokes[i].length;j++)if(reviewedU568cCompoundPolicy(context,i,j))selected++;assert.equal(selected,3)
  let materialNegative=0;for(let i=0;i<strokes.length;i++)for(let j=0;j<strokes[i].length;j++)for(const key of Object.keys(strokes[i][j])){const x=clone(strokes),m=x[i][j];if(key==='bounds')m.bounds[0]+=.01;else if(typeof m[key]==='number')m[key]+=.01;else m[key]+=' ';assert.equal(reviewedU568cCompoundContext(x),null);materialNegative++}

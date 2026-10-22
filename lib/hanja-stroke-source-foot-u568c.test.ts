@@ -43,7 +43,7 @@ function setup(index=0){
 const failedTail=process.env.LINGO_U568C_FOOT_FAILED_TAIL
 test('u568c12 own exact source authority, union, foot partition and connected frontier FIRST',()=>{
  if(!failedTail){
- assert.equal(sha(bytes(SOURCE.sourceFile)),SOURCE.sourceSHA256);assert.equal(sha(bytes(SOURCE.sourceCacheFile)),SOURCE.sourceCacheSHA256);assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.deepEqual([strokes.length,strokes.flat().length,strokes.flat().reduce((n,m)=>n+(m.outline.match(/M/g)||[]).length,0)],[17,19,39]);assert(context);assert.equal(makeReviewedU568cFootSourceContext(proof,identity,strokes),context);
+ assert.equal(sha(bytes(SOURCE.sourceFile)),SOURCE.sourceSHA256);assert.equal(sha(bytes(SOURCE.sourceCacheFile)),SOURCE.sourceCacheSHA256);assert.deepEqual(Object.keys(proof).sort(),['defaults','engineHashes','engineRevision','groups','trace']);assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.deepEqual([strokes.length,strokes.flat().length,strokes.flat().reduce((n,m)=>n+(m.outline.match(/M/g)||[]).length,0)],[17,20,40]);assert(context);assert.equal(makeReviewedU568cFootSourceContext(proof,identity,strokes),context);
  }
  if(failedTail!=='strokes'){
  for(let i=0;i<17;i++)for(let j=0;j<strokes[i].length;j++)assert.equal(!!reviewedU568cFootPolicy(context,i,j),i===11&&j===1);

@@ -1,0 +1,93 @@
+{
+  "schema": "hanja-isolated-component-native-hold/v1",
+  "glyph": "嚌",
+  "root": "u568c",
+  "recordedFrom": "ROOT 전달 실제 관찰",
+  "observedProfile": {
+    "file": "docs/hanja-actual-component-profiles-2026-10-22/u568c-1.json",
+    "sha256": "deef2f4b2d96e8622be40921082c96fb4ea40a2393fbc0804a60cb7af372c068",
+    "componentSHA256": "340a29b94e01443a0c03ab986a7c53466d3c381595ba5f34d255f4e30e3fe26b",
+    "helperSHA256": "82a888d59401ec3e1e7fde2141034fd62b19c86adb5bf1aa151851ee70bc4f21"
+  },
+  "source": {
+    "fixture": "docs/hanja-source-cache-u568c-2026-10-23/fixture.json",
+    "sha256": "fd3319d9ac2f941e9ef51a5a505c6d3e72b90788c92f9493ae1dc69ac6423d55",
+    "pens": 17,
+    "masks": 19,
+    "polygons": 39,
+    "geometrySHA256": "aa124ad522573bf1e5ba90f904ffcf2796af551fb294d070c6d19779b53661c8"
+  },
+  "native": {
+    "observedScreens": 93,
+    "allScreensPassed": false,
+    "registrationHOLD": true,
+    "allFrameBad": [],
+    "allFrameErrors": [],
+    "coverage": {
+      "capTargetsWhite": 7,
+      "pen2CompoundFullRoundResidual": "tiny black corner; 완전 white 아님",
+      "pen12Foot": "thin AA outline 관찰; 픽셀 비교 동등성 승인 아님"
+    },
+    "otherFiniteObservations": "ROOT 보고 초기8×epsilon/.03, foot local7, all17 compact153sample, rho24, source boundaries6, foot/body3, fine2/9/12/14와 자연/완료 관찰을 보존. 전체93 중 pen2 coverage 양의 잔여 FAIL을 제외하지 않음."
+  },
+  "exactSourceAnalysis": {
+    "raw": 3,
+    "kind": "cdDrawLine",
+    "args": [
+      52.8612,
+      43.72,
+      52.8612,
+      132.28,
+      22,
+      23
+    ],
+    "sourceVertex": [
+      "23.4",
+      "73.1"
+    ],
+    "guideEnd": [
+      "26.4306",
+      "66.14"
+    ],
+    "radius": 7,
+    "distanceSquared": "1440653409/25000000",
+    "outsideMargin": "215653409/25000000",
+    "positiveWitnessRectangle": [
+      "23.4",
+      "23.7",
+      "72.9",
+      "72.94"
+    ],
+    "area": "3/250",
+    "sourceEdgeMargin": "1/100",
+    "rectangleOutsideMargin": "103844409/25000000",
+    "leftResidualHeightOpenBounds": [
+      ".64",
+      ".66"
+    ],
+    "newArithmeticRuns": 1,
+    "filesChanged": 0,
+    "proposedPartition": {
+      "cutY": 66.14,
+      "bodyGuidePreserved": true,
+      "tailDirection": "down",
+      "newExteriorInk": false,
+      "approved": false
+    }
+  },
+  "server": {
+    "pid": 40489,
+    "stopped": true,
+    "exitCode": 130,
+    "outputEmpty": true,
+    "PIDRequery": false
+  },
+  "priorHOLDPreserved": true,
+  "sourceChanged": false,
+  "sourceClockApproved": false,
+  "allTimeApproved": false,
+  "actualAppUI": false,
+  "controller": false,
+  "storage": false,
+  "runtimeApplied": false
+}
