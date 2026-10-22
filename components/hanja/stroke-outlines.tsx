@@ -1,5 +1,7 @@
 import { reviewedU7dc5OtherContext, reviewedU7dc5OtherPolicy, commitReviewedU7dc5OtherCaps, type ReviewedU7dc5OtherPolicy } from '@/lib/hanja-stroke-start-other-u7dc5'
 import { reviewedU7dc5HqContext, reviewedU7dc5HqPolicy, commitReviewedU7dc5HqCaps, type ReviewedU7dc5HqPolicy } from '@/lib/hanja-stroke-start-hq-u7dc5'
+import { reviewedU97d4Context, reviewedU97d4Policy, commitReviewedU97d4Caps, type ReviewedU97d4Policy } from '@/lib/hanja-stroke-start-caps-u97d4'
+import { reviewedU97d4FootContext, reviewedU97d4FootPolicy, measureReviewedU97d4FootFrame, commitReviewedU97d4FootMask, type ReviewedU97d4FootPolicy } from '@/lib/hanja-stroke-source-foot-u97d4'
 import { reviewedU8810Context, reviewedU8810Policy, commitReviewedU8810Caps, type ReviewedU8810Policy } from '@/lib/hanja-stroke-start-caps-u8810'
 import { reviewedU85fbKContext, reviewedU85fbKPolicy, commitReviewedU85fbKCaps, type ReviewedU85fbKPolicy } from '@/lib/hanja-stroke-start-gate-u85fb-k'
 import { reviewedU568cContext, reviewedU568cPolicy, commitReviewedU568cCaps, type ReviewedU568cPolicy } from '@/lib/hanja-stroke-start-caps-u568c'
@@ -93,6 +95,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u7dc5ReuseContext = reviewedU7dc5ReuseContext(strokes)
   const u7dc5HqContext = reviewedU7dc5HqContext(strokes)
   const u7dc5OtherContext = reviewedU7dc5OtherContext(strokes)
+  const u97d4Context = reviewedU97d4Context(strokes)
+  const u97d4FootContext = reviewedU97d4FootContext(strokes)
   const u8810Context = reviewedU8810Context(strokes)
   const u85fbKContext = reviewedU85fbKContext(strokes)
   const u568cContext = reviewedU568cContext(strokes)
@@ -179,6 +183,10 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u6e7aPolicy?.kind === 'original-HJ-B-u6e7a') return <U6e7aHVOutline key={index} policy={u6e7aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u8fedPolicy = reviewedU8fedPolicy(u8fedContext, stroke, index)
         if (u8fedPolicy) return <U8fedCapsOutline key={index} policy={u8fedPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+        const u97d4Policy = reviewedU97d4Policy(u97d4Context, stroke, index)
+        if (u97d4Policy) return <U97d4CapsOutline key={index} policy={u97d4Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+        const u97d4FootPolicy = reviewedU97d4FootPolicy(u97d4FootContext, stroke, index)
+        if (u97d4FootPolicy) return <U97d4FootOutline key={index} policy={u97d4FootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u8810Policy = reviewedU8810Policy(u8810Context, stroke, index)
         if (u8810Policy) return <U8810CapsOutline key={index} policy={u8810Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u85fbKPolicy = reviewedU85fbKPolicy(u85fbKContext, stroke, index)
@@ -1913,4 +1921,50 @@ function QuanQuadraticCapsOutline({policy,segment,progress,clipId}:{policy:Revie
     {valid&&progress===1&&<path key="quan-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
     {valid&&progress>0&&progress<1&&<path key="quan-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-quan-growing)'} visibility="hidden" />}
   </g>
+}
+
+function U97d4CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU97d4Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>{
+    const committed=commitReviewedU97d4Caps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current})
+    return committed.cleanup
+  },[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u97d4-progress={String(progress)} data-u97d4-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u97d4-measure'} data-growing-owner={clipId} data-u97d4-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0} />
+      </mask>
+      <mask id={clipId+'-u97d4-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u97d4-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0} />
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+        <circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path key="u97d4-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
+    {valid&&progress>0&&progress<1&&<path key="u97d4-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u97d4-growing)'} visibility="hidden" />}
+  </g>
+}
+function U97d4FootOutline({
+  clipId,segment,progress,policy,
+}:{clipId:string;segment:HanjaOutlineSegment;progress:number;policy:ReviewedU97d4FootPolicy}){
+ const inkRef=useRef<SVGPathElement>(null),footRef=useRef<SVGPathElement>(null),bodyRef=useRef<SVGPathElement>(null),rectRef=useRef<SVGRectElement>(null),measurementRef=useRef<SVGPathElement>(null)
+ useLayoutEffect(()=>{
+  const nodes={ink:inkRef.current,foot:footRef.current,body:bodyRef.current,rect:rectRef.current,measurement:measurementRef.current}
+  try{commitReviewedU97d4FootMask(nodes,measureReviewedU97d4FootFrame(policy,progress,nodes.measurement))}catch{nodes.ink?.setAttribute('visibility','hidden');nodes.foot?.setAttribute('visibility','hidden');nodes.body?.setAttribute('visibility','hidden')}
+  return()=>{nodes.ink?.setAttribute('visibility','hidden');nodes.foot?.setAttribute('visibility','hidden');nodes.body?.setAttribute('visibility','hidden')}
+ },[policy,progress,clipId])
+ const b=segment.bounds,maskId=clipId+'-u97d4-foot-foot-x-mask',bodyId=clipId+'-u97d4-foot-body-clip'
+ return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={progress}>
+  <defs>
+   <path ref={measurementRef} id={clipId+'-u97d4-foot-measure'} data-u97d4-foot-measurement="true" d={segment.revealPath} fill="none" stroke="none" />
+   <clipPath id={bodyId} clipPathUnits="userSpaceOnUse"><rect ref={rectRef} id={clipId+'-u97d4-foot-rect'} x={b[0]} y={b[1]} width={0} height={b[3]-b[1]} /></clipPath>
+   <mask id={maskId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+    <path ref={footRef} id={clipId+'-u97d4-foot-foot'} data-u97d4-foot-foot="true" d="" fill="white" fillRule="nonzero" stroke="none" visibility="hidden" />
+    <path ref={bodyRef} id={clipId+'-u97d4-foot-body'} data-u97d4-foot-body="true" d={segment.outline} fill="white" fillRule="nonzero" stroke="none" clipPath={'url(#'+bodyId+')'} visibility="hidden" />
+   </mask>
+  </defs>
+  <path ref={inkRef} id={clipId+'-u97d4-foot-ink'} data-owner={clipId} data-u97d4-foot-ink="true" d={segment.outline} mask={'url(#'+maskId+')'} visibility="hidden" />
+ </g>
 }
