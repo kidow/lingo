@@ -1,6 +1,6 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 1375 고정18획 cache 복제. 준비false는 역사이며 ROOT 유한승인은 별도record이다. */
-const EXPECTED=[
+const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
   {
     "glyph": "薯",
     "verificationSource": "ehanja-crosschecked",

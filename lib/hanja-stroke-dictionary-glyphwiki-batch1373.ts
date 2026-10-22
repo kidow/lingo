@@ -1,6 +1,6 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 1373 고정19획 독립fixture 제품복제; source 준비false와 별도유한native승인기록을 구분. */
-const EXPECTED=[
+const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
   {
     "glyph": "穧",
     "verificationSource": "ehanja-crosschecked",

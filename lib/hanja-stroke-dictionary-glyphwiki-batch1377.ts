@@ -1,6 +1,6 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 1377 선택variant11p12m25 복제; 준비false와 별도유한native승인을 구분. */
-const EXPECTED=[
+const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
   {
     "glyph": "梴",
     "verificationSource": "ehanja-crosschecked",

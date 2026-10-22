@@ -1,6 +1,6 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 1374 고정17획 cache 제품복제. 준비false와 별도ROOT유한승인기록을 구분한다. */
-const EXPECTED=[
+const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
   {
     "glyph": "隮",
     "verificationSource": "ehanja-crosschecked",
