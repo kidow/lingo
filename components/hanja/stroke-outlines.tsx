@@ -1,10 +1,11 @@
+import { reviewedU7dc5ReuseContext } from '@/lib/hanja-stroke-source-reuse-u7dc5'
 import { reviewedU7e86Context, reviewedU7e86Policy, measureReviewedU7e86Frame, commitReviewedU7e86Mask, type ReviewedU7e86Policy } from '@/lib/hanja-stroke-start-gate-u7e86'
 import { reviewedU7e1dContext, reviewedU7e1dPolicy, measureReviewedU7e1dFrame, commitReviewedU7e1dMask, type ReviewedU7e1dPolicy } from '@/lib/hanja-stroke-start-gate-u7e1d'
 'use client'
 import { reviewedU73b9Context, reviewedU73b9Policy, measureReviewedU73b9Frame, commitReviewedU73b9Mask, type ReviewedU73b9Policy } from '@/lib/hanja-stroke-start-gate-u73b9'
-import { reviewedU7d8eContext, reviewedU7d8ePolicy, measureReviewedU7d8eFrame, commitReviewedU7d8eMask, type ReviewedU7d8ePolicy } from '@/lib/hanja-stroke-start-gate-u7d8e'
+import { reviewedU7dc5FootAliasPolicy, reviewedU7d8eContext, reviewedU7d8ePolicy, measureReviewedU7d8eFrame, commitReviewedU7d8eMask, type ReviewedU7d8ePolicy } from '@/lib/hanja-stroke-start-gate-u7d8e'
 import { reviewedU7d8eClipContext, reviewedU7d8eClipPolicy, measureReviewedU7d8eClipFrame, commitReviewedU7d8eClip, REVIEWED_U7D8E_CLIP_GEOMETRY as U7D8E_CLIP, type ReviewedU7d8eClipPolicy } from '@/lib/hanja-stroke-source-clip-u7d8e'
-import { reviewedU7d8eStartsContext, reviewedU7d8eStartsPolicy, commitReviewedU7d8eStartsCaps, type ReviewedU7d8eStartsPolicy } from '@/lib/hanja-stroke-start-caps-u7d8e'
+import { reviewedU7dc5StartsAliasPolicy, reviewedU7d8eStartsContext, reviewedU7d8eStartsPolicy, commitReviewedU7d8eStartsCaps, type ReviewedU7d8eStartsPolicy } from '@/lib/hanja-stroke-start-caps-u7d8e'
 import { reviewedU85afContext, reviewedU85afPolicy, measureReviewedU85afFrame, commitReviewedU85afMask, type ReviewedU85afPolicy } from '@/lib/hanja-stroke-source-cap-u85af'
 import { reviewedU68b4Context, reviewedU68b4Policy, applyReviewedU68b4Prefix, type ReviewedU68b4Policy } from '@/lib/hanja-stroke-start-gate-u68b4'
 import { reviewedU96aeContext, reviewedU96aePolicy, measureReviewedU96aeFrame, commitReviewedU96aeMask, type ReviewedU96aePolicy } from '@/lib/hanja-stroke-start-gate-u96ae'
@@ -72,6 +73,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const siContext = reviewedSiContext(strokes)
   const u8fedContext = reviewedU8fedContext(strokes)
   const u73b9Context = reviewedU73b9Context(strokes)
+  const u7dc5ReuseContext = reviewedU7dc5ReuseContext(strokes)
   const u7d8eContext = reviewedU7d8eContext(strokes)
   const u7d8eClipContext = reviewedU7d8eClipContext(strokes)
   const u7d8eStartsContext = reviewedU7d8eStartsContext(strokes)
@@ -143,6 +145,10 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u6e7aPolicy?.kind === 'original-HJ-B-u6e7a') return <U6e7aHVOutline key={index} policy={u6e7aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u8fedPolicy = reviewedU8fedPolicy(u8fedContext, stroke, index)
         if (u8fedPolicy) return <U8fedCapsOutline key={index} policy={u8fedPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+        const u7dc5FootPolicy = reviewedU7dc5FootAliasPolicy(u7dc5ReuseContext, stroke, index)
+        if (u7dc5FootPolicy) return <U7d8eFootOutline key={index} policy={u7dc5FootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+        const u7dc5StartsPolicy = reviewedU7dc5StartsAliasPolicy(u7dc5ReuseContext, stroke, index)
+        if (u7dc5StartsPolicy) return <U7d8eStartsOutline key={index} policy={u7dc5StartsPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u7d8ePolicy = reviewedU7d8ePolicy(u7d8eContext, stroke, index)
         if (u7d8ePolicy) return <U7d8eFootOutline key={index} policy={u7d8ePolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u7d8eClipPolicy = reviewedU7d8eClipPolicy(u7d8eClipContext, stroke, index)
