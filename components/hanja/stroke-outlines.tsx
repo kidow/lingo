@@ -19,6 +19,7 @@ import { reviewedU4fd3Context, reviewedU4fd3Policy, commitReviewedU4fd3Caps, typ
 import { reviewedU82fdContext, reviewedU82fdPolicy, commitReviewedU82fdCaps, type ReviewedU82fdPolicy } from '@/lib/hanja-stroke-start-gate-u82fd'
 import { reviewedU6f90Context, reviewedU6f90Policy, commitReviewedU6f90Caps, type ReviewedU6f90Policy } from '@/lib/hanja-stroke-start-gate-u6f90'
 import { reviewedU90b0Context, reviewedU90b0Policy, commitReviewedU90b0Caps, type ReviewedU90b0Policy } from '@/lib/hanja-stroke-start-gate-u90b0'
+import { reviewedU90b0ContactContext, reviewedU90b0ContactPolicy, measureReviewedU90b0ContactFrame, commitReviewedU90b0ContactMask, type ReviewedU90b0ContactPolicy } from '@/lib/hanja-stroke-contact-foot-u90b0'
 import { reviewedU6e7aContext, reviewedU6e7aPolicy, commitReviewedU6e7aCaps, commitReviewedU6e7aHV, REVIEWED_U6E7A_HV_PARTS, type ReviewedU6e7aGrowingPolicy, type ReviewedU6e7aHVPolicy } from '@/lib/hanja-stroke-start-gate-u6e7a'
 import { reviewedU7d85Context, reviewedU7d85Policy, commitReviewedU7d85Caps, type ReviewedU7d85Policy } from '@/lib/hanja-stroke-start-gate-u7d85'
 import { reviewedU7d7aContext, reviewedU7d7aPolicy, commitReviewedU7d7aCaps, type ReviewedU7d7aPolicy } from '@/lib/hanja-stroke-start-gate-u7d7a'
@@ -62,6 +63,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u4fd3Context = reviewedU4fd3Context(strokes)
   const u82fdContext = reviewedU82fdContext(strokes)
   const u6f90Context = reviewedU6f90Context(strokes)
+  const u90b0ContactContext = reviewedU90b0ContactContext(strokes)
   const u90b0Context = reviewedU90b0Context(strokes)
   const u6e7aContext = reviewedU6e7aContext(strokes)
   const revealContext = reviewedHanjaRevealContext(strokes)
@@ -132,6 +134,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u82fdPolicy) return <U82fdCapsOutline key={index} policy={u82fdPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u6f90Policy = reviewedU6f90Policy(u6f90Context, stroke, index)
         if (u6f90Policy) return <U6f90CapsOutline key={index} policy={u6f90Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+        const u90b0ContactPolicy = reviewedU90b0ContactPolicy(u90b0ContactContext, stroke, index)
+        if (u90b0ContactPolicy) return <U90b0ContactOutline key={index} policy={u90b0ContactPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u90b0Policy = reviewedU90b0Policy(u90b0Context, stroke, index)
         if (u90b0Policy) return <U90b0CapsOutline key={index} policy={u90b0Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u6e7aPolicy = reviewedU6e7aPolicy(u6e7aContext, stroke, index)
@@ -350,6 +354,38 @@ function U6f90CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU6f90
     {valid&&progress>0&&progress<1&&<path key="u6f90-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u6f90-growing)'} visibility="hidden" />}
   </g>
 }
+function U90b0ContactOutline({policy,segment,progress,clipId}:{policy:ReviewedU90b0ContactPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),foot=useRef<SVGPathElement|null>(null),body=useRef<SVGPathElement|null>(null),rect=useRef<SVGRectElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  const b=segment.bounds,cut=policy.cutX
+  useLayoutEffect(()=>{
+    const inkNode=ink.current,footNode=foot.current,bodyNode=body.current,rectNode=rect.current
+    try {
+      const frame=measureReviewedU90b0ContactFrame(policy,progress,measurement.current)
+      commitReviewedU90b0ContactMask({ink:inkNode,foot:footNode,body:bodyNode,rect:rectNode,measurement:measurement.current},frame)
+    } catch {
+      inkNode?.setAttribute('visibility','hidden');footNode?.setAttribute('visibility','hidden');bodyNode?.setAttribute('visibility','hidden');rectNode?.setAttribute('width','0')
+    }
+    return ()=>{
+      inkNode?.setAttribute('visibility','hidden')
+      footNode?.setAttribute('visibility','hidden')
+      bodyNode?.setAttribute('visibility','hidden')
+    }
+  },[policy,progress,clipId])
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="contact-foot-x-u90b0" data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u90b0-contact-measure'} data-u90b0-contact-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <clipPath id={clipId+'-u90b0-contact-body-clip'} clipPathUnits="userSpaceOnUse">
+        <rect ref={rect} id={clipId+'-u90b0-contact-rect'} x={cut} y={b[1]} width="0" height={b[3]-b[1]} />
+      </clipPath>
+      <mask id={clipId+'-u90b0-contact-foot-x-mask'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={foot} id={clipId+'-u90b0-contact-foot'} data-u90b0-contact-foot="true" d="" fill="white" fillRule="nonzero" stroke="none" visibility="hidden" />
+        <path ref={body} id={clipId+'-u90b0-contact-body'} data-u90b0-contact-body="true" d={segment.outline} fill="white" fillRule="nonzero" stroke="none" clipPath={'url(#'+clipId+'-u90b0-contact-body-clip)'} visibility="hidden" />
+      </mask>
+    </defs>
+    <path ref={ink} id={clipId+'-u90b0-contact-ink'} data-owner={clipId} data-u90b0-contact-ink="true" fillRule="nonzero" stroke="none" d={segment.outline} mask={'url(#'+clipId+'-u90b0-contact-foot-x-mask)'} visibility="hidden" />
+  </g>
+}
+
 function U90b0CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU90b0Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
   const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
   useLayoutEffect(()=>{
