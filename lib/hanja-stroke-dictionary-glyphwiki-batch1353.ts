@@ -1,6 +1,6 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** 1353 미등록 후보. ROOT정적16그룹만 확인, source/native/APP/runtime 미승인. */
+/** ROOT scoped isolated-component approval1353. Fixed source/public preparation remains historical. */
 const EXPECTED = [
   {
     "glyph": "遹",
@@ -376,6 +376,7 @@ export function loadGlyphWikiBatch1353Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1353_STROKES:ReturnType<typeof loadGlyphWikiBatch1353Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1353_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1353_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1353_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1353_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1353_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1353_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1353_NATIVE_REVIEW=Object.freeze({path:'docs/hanja-actual-component-profiles-2026-10-22/u9079-activation-review.json',sha256:'02a268888b4d3a8161e551c48c3a5c258e2b87abd6bbe1a35223c52f6a39cfad'})
