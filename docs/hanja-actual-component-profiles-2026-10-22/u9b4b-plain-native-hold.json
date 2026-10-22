@@ -1,0 +1,151 @@
+{
+  "schema": "hanja-isolated-actual-component-native-hold/v1",
+  "glyph": "魋",
+  "root": "u9b4b",
+  "reviewedAt": "2026-10-23",
+  "observer": "/root",
+  "status": "HOLD-eight-initial-heads-and-pen8-terminal-coverage",
+  "sourceGeometrySHA256": "5c6450bc11f05ebc7f8a422cef3f82077777c157400ca761c8c2b87e722657ec",
+  "sourcePens": 18,
+  "sourceMasks": 20,
+  "originalPolygons": 45,
+  "observedShared": {
+    "historicalPins": true,
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "77497678d687bd564316a888137a53b2c38bfa7ac894e5491a00abb4b25604f8"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "c50c7b5a6eab298b06eaafa615fd9f4c16d42dd0191d1844514e2423a622e509"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u9b4b.json",
+      "SHA256": "dcd0157b9aaf5d9bf24a1fb0ab95f90674f15c35c3388041ec6c7451f7276463"
+    },
+    "staticRecord": {
+      "path": "docs/hanja-source-raw-compare-u9b4b-2026-10-23/staticnative-review.json",
+      "SHA256": "d9e63657b06542c9734642fd1f30b97b0dd2900ee55caee804cdb1686010ec95"
+    },
+    "source": {
+      "path": "docs/hanja-source-cache-u9b4b-2026-10-23/source.mjs",
+      "SHA256": "09375bd738c78b36dbd63c8ec430919516020042c54dc8d566f93d18a7f78557"
+    },
+    "config": {
+      "path": "docs/hanja-source-cache-u9b4b-2026-10-23/config.json",
+      "SHA256": "d7dcd5c55bdfc5700b220dc590d44fc8ed895b81f33b8b444bbe2f132af31cd2"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-cache-u9b4b-2026-10-23/fixture.json",
+      "SHA256": "e5fefcc11e31be87f86cbcacbd8a1f132a6eaff12a51c64e5211f5049c0c7290"
+    },
+    "metadataCorrectionAfterServerSnapshot": true,
+    "currentPinEqualityRequired": false
+  },
+  "native": {
+    "validScreens": 28,
+    "fullRoundGuideResidual": {
+      "screens": 7,
+      "masks": 8,
+      "whiteMasks": [
+        [
+          1,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "positiveBlackArea": {
+        "pen": 8,
+        "mask": 1,
+        "location": "오른쪽 말단"
+      },
+      "controllerProgressIsExactMaskCompletionEvidence": false,
+      "scope": "원full-round guide mask 잔여만 관찰"
+    },
+    "firstMaskInitial": {
+      "pens": [
+        1,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "baselineP0Screens": 7,
+      "positiveEpsilonScreens": 7,
+      "allSevenFiniteHeadFIRSTFAIL": true,
+      "allBaselinePrefixesNoExtraHead": true
+    },
+    "pen9Mask2": {
+      "screens": 7,
+      "samples": [
+        "source boundary before",
+        "exact boundary",
+        "source boundary after",
+        "local epsilon",
+        "local .01",
+        "local .03",
+        "local .1"
+      ],
+      "finiteHeadFIRSTFAIL": true,
+      "headTouchesPriorPen9Mask1": true,
+      "visibleGapObserved": false,
+      "directionObserved": "왼아래→오른쪽 성장",
+      "newPolicyRequired": true
+    },
+    "allBad": [],
+    "allErrors": [],
+    "sourceBoundary3Observed": false,
+    "all18MatrixRun": false,
+    "fineRun": false,
+    "naturalRun": false
+  },
+  "server": {
+    "PID": 45398,
+    "sessionId": 11511,
+    "port": 59412,
+    "SSRProcesses": 1,
+    "CJSModules": 71,
+    "ESMModules": 71,
+    "engineRuns": 0,
+    "sourceProjectionRuns": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "outputEmpty": true
+  },
+  "preserved": {
+    "sourcePGuideWidthWeightUnchanged": true,
+    "oldMinimum19ConsecutiveContractHOLD": true,
+    "newNativeApproval": false,
+    "runtimeApplied": false
+  },
+  "notes": [
+    "DOM bad/errors[]는 시각적 초기head·말단잔여를 보증하지 않는다.",
+    "가시적 접촉유지 관찰을 모든시각 연속성·zeroarea증명으로 확대하지 않는다.",
+    "정적record의 중복4회 오기는 종료후note로수정; 실제served 옛핀은historical로보존한다."
+  ]
+}

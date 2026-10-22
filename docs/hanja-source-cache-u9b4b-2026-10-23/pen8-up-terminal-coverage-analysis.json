@@ -1,0 +1,194 @@
+{
+  "schema": "hanja-original-UP-quad-coverage-feasibility/v1",
+  "date": "2026-10-23",
+  "glyph": "魋",
+  "root": "u9b4b",
+  "inputSHA256": {
+    "docs/hanja-source-cache-u9b4b-2026-10-23/fixture.json": "e5fefcc11e31be87f86cbcacbd8a1f132a6eaff12a51c64e5211f5049c0c7290",
+    "docs/hanja-source-cache-u9b4b-2026-10-23/config.json": "b085c8b8a0f4e4e98eb9a4cbe78e96a8e816dac4719891e8c3885cc5a0227c1a",
+    "docs/hanja-source-cache-u9b4b-2026-10-23/../hanja-source-raw-compare-u9b4b-2026-10-23/engine-whole-u9b4b.json": "a6709fc82c9f8a05369835a3b68de457e894902aaf8b71bf5970ba5f7e8b1b04"
+  },
+  "geometrySHA256": "5c6450bc11f05ebc7f8a422cef3f82077777c157400ca761c8c2b87e722657ec",
+  "target": {
+    "pen": 8,
+    "mask": 1,
+    "rawOneBased": 9,
+    "syntax": "MLQL",
+    "authoredCalls": "L→Q→H",
+    "originalGuide": "M30.11 51 L30.11 84 Q30.11 89 35.11 89 L91.82 89",
+    "revealWidth": 14,
+    "radius": 7,
+    "weight": 96.781068
+  },
+  "sourceUPQuad": "M91.8 86.5 L89.3 86.5 L91.8 78 L92.8 78 Z",
+  "full5Raw9LastPolygonExact": true,
+  "witness": {
+    "rectangle": [
+      [
+        "9179/100",
+        "7899/100"
+      ],
+      [
+        "9181/100",
+        "7899/100"
+      ],
+      [
+        "9181/100",
+        "7901/100"
+      ],
+      [
+        "9179/100",
+        "7901/100"
+      ]
+    ],
+    "area": "1/2500",
+    "strictInsideOrientedEdgeMargins": [
+      [
+        "751/40",
+        "239/100",
+        "99/100",
+        "1519/200"
+      ],
+      [
+        "751/40",
+        "64/25",
+        "99/100",
+        "297/40"
+      ],
+      [
+        "749/40",
+        "261/100",
+        "101/100",
+        "1481/200"
+      ],
+      [
+        "749/40",
+        "61/25",
+        "101/100",
+        "303/40"
+      ]
+    ],
+    "distanceSquaredLowerBounds": {
+      "firstVerticalLine": "2377764/625",
+      "quadraticConvexHullXBound": "2007889/625",
+      "lastHorizontalLine": "998001/10000"
+    },
+    "radiusSquared": "49",
+    "allStrictlyGreaterThanRadiusSquared": true,
+    "positiveAreaOutsideOriginalFullRoundSweep": true,
+    "joinMiterCannotReachWitness": "두 연결점 모두 원guide의 정방향 C1 접선이 일치하므로 miter 코너 외연이 생기지 않는다. 이 원MLQL만의 조건이다.",
+    "pixelAreaCountClaim": false,
+    "ROOTMarkerObserved": false
+  },
+  "nativeContext": {
+    "ROOTCoverageScreens": 7,
+    "ROOTCoverageMasks": 8,
+    "ROOTBlackRemainderCandidate": [
+      [
+        8,
+        1
+      ]
+    ],
+    "ROOTWhiteObserved": [
+      [
+        1,
+        1
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        13,
+        1
+      ]
+    ],
+    "imageMarkerAndExactPixelAreaNotObserved": true,
+    "geometricCounterexampleNotAAAssumption": true
+  },
+  "partitionPlanOnly": {
+    "status": "not executed; ROOT authorization and fresh native required",
+    "bodyOriginalPolygons": 7,
+    "bodyOutline": "M33.1 51.5 L33.1 84 L27.1 84 L27.1 50.5 Z M33.1 51.5 L34.6 52.5 L32.1 54 Z M27.1 84 L33.1 84 L31.9 85.8 L30.1 87 L28.3 85.8 Z M33.1 84 L33.05 84.6 L33.1 85.05 L33.15 85.4 L33.2 85.6 L33.3 85.8 L33.4 85.95 L33.6 86.1 L33.9 86.25 L34.4 86.4 L35.1 86.5 L35.1 91.5 L33.85 91.45 L32.65 91.3 L31.5 90.95 L30.4 90.4 L29.4 89.65 L28.55 88.75 L27.9 87.65 L27.45 86.5 L27.2 85.25 L27.1 84 Z M35.1 86.5 L36.85 87.25 L37.6 89 L36.85 90.75 L35.1 91.5 Z M35.1 86.5 L91.8 86.5 L91.8 91.5 L35.1 91.5 Z M91.8 86.5 L93.3 87.5 L94.3 89 L93.3 90.5 L91.8 91.5 Z",
+    "bodyBounds": [
+      27.1,
+      50.5,
+      94.3,
+      91.5
+    ],
+    "bodyGuide": "M30.11 51 L30.11 84 Q30.11 89 35.11 89 L91.82 89",
+    "bodyWidth": 14,
+    "bodyWeight": 96.781068,
+    "bodyGuideWidthWeightUnchanged": true,
+    "terminalOriginalP": "M91.8 86.5 L89.3 86.5 L91.8 78 L92.8 78 Z",
+    "terminalDirection": "up",
+    "terminalBounds": [
+      89.3,
+      78,
+      92.8,
+      86.5
+    ],
+    "newTerminalGuide": false,
+    "sharedHBodyEdge": [
+      [
+        "893/10",
+        "173/2"
+      ],
+      [
+        "459/5",
+        "173/2"
+      ]
+    ],
+    "sharedEdgeLength": "5/2",
+    "connectedBodyTailOriginalPEdge": true,
+    "originalUPQuadArea": "119/8",
+    "proposedCounts": {
+      "pens": 18,
+      "masks": 21,
+      "polygons": 45,
+      "originalPolygons": 45,
+      "newFragments": 45
+    },
+    "original45PolygonsExactlyOnce": true,
+    "oldPolygonRedrawing": false,
+    "noNewInk": true,
+    "noConnector": true,
+    "proposedTerminalWeight": 8.5,
+    "weightIsNewMicroclockNotOriginalTiming": true,
+    "bodyFullGuideCoverageProved": false,
+    "allUAAndAAContinuityProved": false,
+    "mustObserve": [
+      "pen8 body fullround residual",
+      "new UP start/sourceboundary",
+      "near1 and exact1 terminal",
+      "official macro direction separate from internal clock"
+    ]
+  },
+  "officialMacro8": {
+    "path": "docs/hanja-official-media-compare-u9b4b-2026-10-23/officialnative-review.json",
+    "SHA256": "45e004431ea96486811858f13407847ce6c99bdcded4d9e035280a877d5748b5",
+    "direction": "세로 아래→오른쪽 밑선→위로 갈고리",
+    "microClockEquivalence": false
+  },
+  "sourceMutation": false,
+  "sourceProjection": 0,
+  "engine": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

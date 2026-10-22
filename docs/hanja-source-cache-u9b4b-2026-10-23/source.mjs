@@ -3,7 +3,7 @@ import {readFileSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 export {renderProgressive} from '../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs';
 const sha=v=>createHash('sha256').update(v).digest('hex'),digest=v=>sha(JSON.stringify(v)),clone=v=>JSON.parse(JSON.stringify(v));
-const CONFIG_SHA='d7dcd5c55bdfc5700b220dc590d44fc8ed895b81f33b8b444bbe2f132af31cd2',config=JSON.parse(readFileSync(new URL('./config.json',import.meta.url)));
+const CONFIG_SHA='b085c8b8a0f4e4e98eb9a4cbe78e96a8e816dac4719891e8c3885cc5a0227c1a',config=JSON.parse(readFileSync(new URL('./config.json',import.meta.url)));
 const IDENTITY=config.identity,EXPECTED_GROUPS=config.sourceGroups,ORIGINAL_SOURCE_GROUPS=config.atomicSourceGroups,sourceGroups=ORIGINAL_SOURCE_GROUPS,RAW_COUNT=config.rawCount,ORIGINAL=config.rawCalls,TRACE_SHA256=config.traceSHA256,GROUPS_SHA256=config.groupsSHA256,PROOF_SHA256=config.fullProofJSONSHA256,PINNED_DEFAULTS=config.defaults,ENGINE_REVISION=config.engineRevision,ENGINE_HASHES=config.engineHashes;
 const UP_TAIL_GROUPS=[],LEFT_TAIL_GROUPS=[],SINGLE_CARDINAL_TIP_RAW=[];
 const FIXED_CACHE_SHA='e5fefcc11e31be87f86cbcacbd8a1f132a6eaff12a51c64e5211f5049c0c7290';
