@@ -1,0 +1,168 @@
+{
+  "schema": "hanja-isolated-plain-native-hold/v1",
+  "glyph": "懥",
+  "root": "u61e5",
+  "sourceGeometrySHA256": "5712ae71a66fd84d40fac29c8ed953289ad7b663ee00e290b8255000753024e7",
+  "sourceCounts": {
+    "pens": 18,
+    "masks": 21,
+    "polygons": 38
+  },
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u61e5.json",
+    "SHA256": "1378d7865a12786d1958435ea8a76292e2f47170090e81deafc983fdbbbda27d"
+  },
+  "observedShared": {
+    "version": 66,
+    "componentSHA256": "a306adffdd526682a99b1a2a10db9fa8e63f43847a1e1ce6c29d034ef3b29925",
+    "helperSHA256": "2c51ca736cc4ce5c98e967c4f27fd3af7ac1e68f848e8318a306beccf344d14f",
+    "historicalOnly": true
+  },
+  "native": {
+    "observer": "ROOT",
+    "validScreens": 32,
+    "initialPairs": {
+      "targets": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          18,
+          1
+        ]
+      ],
+      "global": [
+        0,
+        0.000001
+      ],
+      "screens": 14
+    },
+    "secondMasksBoundaryBeforeAndLocalEpsilon": {
+      "targets": [
+        [
+          7,
+          2
+        ],
+        [
+          13,
+          2
+        ]
+      ],
+      "screens": 4
+    },
+    "secondMaskEarly": {
+      "targets": [
+        [
+          7,
+          2
+        ],
+        [
+          13,
+          2
+        ]
+      ],
+      "local": [
+        0.01,
+        0.03,
+        0.1
+      ],
+      "screens": 6
+    },
+    "fullRoundCoverage": {
+      "screens": 8,
+      "masks": 9,
+      "allWhite": true,
+      "combinedBoardPen13": true
+    },
+    "finiteHeadFailures": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        13,
+        2
+      ],
+      [
+        14,
+        1
+      ],
+      [
+        17,
+        1
+      ],
+      [
+        18,
+        1
+      ]
+    ],
+    "contactObservation": {
+      "7m2": "유한 head가 선행 H에 붙어 있음",
+      "13m2": "local epsilon/.01/.03 head 분리 gap, .1에서 붙음"
+    },
+    "guideGapAloneNotFailureProof": true,
+    "bad": [],
+    "errors": [],
+    "routeRecovery": {
+      "excludedSelectorFailure": 1,
+      "reason": "/board reload가 옛 遭 정적 HTML을 표시",
+      "validAfter": "actual goto('/')와 h1 懥 확인",
+      "notProductError": true
+    }
+  },
+  "server": {
+    "PID": 24499,
+    "session": 33485,
+    "port": 59412,
+    "SSR": 1,
+    "CJS": 67,
+    "ESM": 67,
+    "engine": 0,
+    "projection": 0,
+    "exitCode": 130,
+    "outputEmpty": true
+  },
+  "correctionNativeApproved": false,
+  "sourceChanged": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "historicalHOLDPreserved": true,
+  "official13Scope": "撇折 macro만 확인. 새 microclock·원guide합성 승인 없음"
+}
