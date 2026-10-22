@@ -9,16 +9,19 @@
   "drawingCalls": 17,
   "polygons": 33,
   "native": {
-    "validScreens": 21,
+    "validScreens": 24,
     "whole": 1,
     "originalRawGrid": 4,
     "domesticGrid": 8,
     "pairedBoardScreens": 8,
-    "staticCorrespondence": "국내15행과원raw17의전체구성·위치대응을확인. 획끝붓체차이가있으며동일경로·pixel동일성을주장하지않음.",
+    "staticCorrespondence": "현재 정적대응은 정정12·13·14의 개별재관찰3화면과 나머지12행의 기존근거로 확인. 원경로동일성·시간·접촉승인 아님.",
     "compositeScope": "국내3=raw3+4 water 및국내6=raw6+7 VH는정적합성형상대응만확인. 시작·방향·접촉·시간은미승인.",
     "previousWholeRawDomesticScreens": 13,
     "newPairedScreens": 8,
-    "consoleReviewed": false
+    "consoleReviewed": false,
+    "initialScreensPreserved": 21,
+    "initialStaticCorrespondence": "초기21화면은관찰기록이며전체정적대응승인아님. 하단12·13·14행을넓은grid의위치로판독한초기판단에오류가있었음.",
+    "correctedPairedReobservationScreens": 3
   },
   "confirmedGroupsOneBased": [
     [
@@ -57,13 +60,13 @@
       13
     ],
     [
-      15
-    ],
-    [
       16
     ],
     [
       17
+    ],
+    [
+      15
     ],
     [
       14
@@ -106,13 +109,13 @@
       13
     ],
     [
-      15
-    ],
-    [
       16
     ],
     [
       17
+    ],
+    [
+      15
     ],
     [
       14
@@ -133,10 +136,12 @@
   "oldChecksRepeated": 0,
   "inputSHA256": {
     "docs/hanja-source-raw-compare-u6f68-2026-10-23/config.json": "a6ec83fdd3ab7c9f1b040637688445f3826b12c7aaeb5d767a3b10153be484ca",
-    "docs/hanja-source-raw-compare-u6f68-2026-10-23/board-config.json": "9a9bf95f37313383fca053dedbeec0399e554570ad5dd26545bf43bc42c9e15d",
+    "docs/hanja-source-raw-compare-u6f68-2026-10-23/board-config.json": "2d8c280f124642c14583ab9f897db04b4390a198a6afc17039f5fe999909e0c3",
     "docs/hanja-source-raw-compare-u6f68-2026-10-23/board-config-before-pairs.json": "a37e86f234091e5c93b442700a5137c92b32b18b119b4570c77efa11b5913eb5",
     "docs/hanja-source-raw-compare-u6f68-2026-10-23/engine-whole-u6f68.json": "7411f7ea88acc7ba7544d5ac54a8d9f98602569b383a2445c8f6cb5f33367e52",
-    "docs/hanja-goal-glyphwiki-batch928-2026-10-13/metadata.json": "63d7fdca2399b928e92a0e583147dcc7551bce8695d804ac7c2d85e8022aab7b"
+    "docs/hanja-goal-glyphwiki-batch928-2026-10-13/metadata.json": "63d7fdca2399b928e92a0e583147dcc7551bce8695d804ac7c2d85e8022aab7b",
+    "docs/hanja-source-raw-compare-u6f68-2026-10-23/board-config-before-official-order.json": "9a9bf95f37313383fca053dedbeec0399e554570ad5dd26545bf43bc42c9e15d",
+    "docs/hanja-official-media-compare-u6f68-2026-10-23/official-temporal-native-review.json": "9538bd5158c04fc30ac8713ef77a19870fcc9947deeff8ed388c931af68d4460"
   },
   "serverHistory": [
     {
@@ -170,6 +175,16 @@
       "stopped": true,
       "exitCode": 130,
       "outputEmpty": true
+    },
+    {
+      "phase": "corrected-paired-single",
+      "pid": 61802,
+      "session": 46432,
+      "port": 59412,
+      "domesticRAMFetches": 1,
+      "stopped": true,
+      "exitCode": 130,
+      "outputEmpty": true
     }
   ],
   "serverCurrentlyRunning": false,
@@ -189,5 +204,179 @@
     "engine": 0,
     "projection": 0,
     "build": false
+  },
+  "initialGroupsOneBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      11
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      14
+    ]
+  ],
+  "orderCorrection": {
+    "reportedBy": "ROOT",
+    "basis": "공식15획 macro45화면 관찰 뒤 원raw와국내 하단순서 판독교정",
+    "initialAllRowsApprovalRetracted": true,
+    "initialScreensPreserved": 21,
+    "incorrectInitialRows": [
+      12,
+      13,
+      14
+    ],
+    "initialRowGroups": [
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ]
+    ],
+    "correctedRowGroups": [
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        15
+      ]
+    ],
+    "correctedGroupsOneBased": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        11
+      ],
+      [
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        15
+      ],
+      [
+        14
+      ]
+    ],
+    "newPairedScreensObserved": 3,
+    "correctedPairedNativeApproved": true,
+    "sourceProjection": 0,
+    "geometryChanged": false,
+    "officialMacroReference": {
+      "path": "docs/hanja-official-media-compare-u6f68-2026-10-23/official-temporal-native-review.json",
+      "SHA256": "9538bd5158c04fc30ac8713ef77a19870fcc9947deeff8ed388c931af68d4460",
+      "screens": 45,
+      "sourceGroupingApproved": false,
+      "microTimingApproved": false
+    },
+    "historicalReadBeforeCorrectionReviewSHA256": "2ad306fc0f843d7bc08b16a1ef09fa3a5c5dbcb1b697b999885f97a8aa761857",
+    "cumulativeValidScreens": 24,
+    "correctedRowsObserved": [
+      {
+        "domesticStroke": 12,
+        "rawGroupsOneBased": [
+          16
+        ],
+        "position": "왼쪽 위 빗획",
+        "screens": 1
+      },
+      {
+        "domesticStroke": 13,
+        "rawGroupsOneBased": [
+          17
+        ],
+        "position": "왼쪽 아래 빗획",
+        "screens": 1
+      },
+      {
+        "domesticStroke": 14,
+        "rawGroupsOneBased": [
+          15
+        ],
+        "position": "오른쪽 빗획",
+        "screens": 1
+      }
+    ],
+    "otherTwelveRowsUseExistingEvidence": true,
+    "fontStyleAndTerminalDifferencesAllowed": true,
+    "originalPathsIdenticalClaim": false,
+    "staticOnly": true
   }
 }

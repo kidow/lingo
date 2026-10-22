@@ -1,0 +1,108 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "緅",
+  "root": "u7dc5",
+  "status": "HOLD-first-pen13-m2-fixed-round-start",
+  "observedBy": "ROOT",
+  "source": {
+    "fixture": "docs/hanja-source-cache-u7dc5-2026-10-22/source.json",
+    "SHA256": "7b990fa370d0f5907fc6e460f9677d8635b4d4296491268fd845a2607621f297",
+    "geometrySHA256": "42365c0828e201ff8b1092b73bfeedf3d6bd5815da0ea7d44e48b01761fe7b6e",
+    "pens": 14,
+    "masks": 17,
+    "polygons": 33,
+    "actualFull5": "docs/hanja-public-glyphwiki-engine-capture-u7dc5-2026-10-22/engine-whole-u7dc5.json",
+    "actualFull5SHA256": "cea1c8819afa5605a8348082319c415cc5b22278d001a3f8dd9fed0d290e1803"
+  },
+  "observedPinsAreHistorical": true,
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u7dc5-1.json": "096d07fdac65030d7af77cf7fb1e8cf5f49cf67aaa3a2a0c11b00176f8733b48",
+    "scripts/hanja-actual-component-review.mjs": "2877969f9bf8ac35fca143e1f4563e02eda7c961e9efdced178bf58b97265aa1",
+    "components/hanja/stroke-outlines.tsx": "e61fc2a5c44aa3ff667df27766006d83d3e18e26e1cff60945469186f292ce46",
+    "lib/hanja-stroke-source-reuse-u7dc5.ts": "fa2a8f702381fadf4f131f4c37f84255ba88794f6a7ed5cb699ca70723270846",
+    "lib/hanja-stroke-start-gate-u7d8e.ts": "7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70",
+    "lib/hanja-stroke-start-caps-u7d8e.ts": "b7cba160349b496406d19d0dcba753200906381093fa2de7ebae80bc6ef2d8f9"
+  },
+  "native": {
+    "validScreens": 12,
+    "finitePass": {
+      "pen1m1": [
+        0,
+        0.000001
+      ],
+      "pen1m2Local": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "pen2m1Local": [
+        0.000001
+      ],
+      "pen2m2Local": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "observation": "첫 두 QQ의 이 유한 초기 표본은 연결된 성장으로 관찰"
+    },
+    "firstFail": {
+      "pen": 13,
+      "mask": 2,
+      "boundary": 0.2991482497214432,
+      "globalSamples": [
+        0.2991482496214432,
+        0.2991482497214432,
+        0.2991482498214432
+      ],
+      "observations": [
+        "before: 가로선만 보임",
+        "exact: 우상 꺾임에 큰 검은 원형 닙 block이 즉시 추가됨 FIRSTFAIL",
+        "after: 같은 큰 닙 block이 보임"
+      ],
+      "pixelAreaOrExactCauseClaim": false
+    },
+    "bad": [],
+    "errors": [],
+    "structuralBadEmptyDoesNotProveGeometry": true,
+    "notRun": [
+      "all14compact",
+      "coverage",
+      "pen13m2 following local samples",
+      "fine",
+      "natural",
+      "wholeapproval"
+    ]
+  },
+  "server": {
+    "pid": 60577,
+    "port": 59412,
+    "sessionId": 38709,
+    "startupSSR": 1,
+    "CJS": 48,
+    "ESM": 48,
+    "exitCode": 130,
+    "output": "EMPTY",
+    "processAbsenceQuerySeparatelyClaimed": false
+  },
+  "priorFirstPenHold": {
+    "file": "docs/hanja-actual-component-profiles-2026-10-22/u7dc5-plain-start-hold.json",
+    "SHA256": "3e15e97079a0f80615558c7d61841c5dd84f2d68274b0d966c58b9822cb21d96",
+    "preserved": true
+  },
+  "sourceCoordinatesGuideWidthWeightChanged": false,
+  "nativeApproval": false,
+  "actualProductAppUI": false,
+  "controller": false,
+  "storage": false,
+  "all14Autoplay": false,
+  "runtimeApplied": false,
+  "authorExecution": {
+    "SSR": 0,
+    "HTTP": 0,
+    "server": 0,
+    "engine": 0,
+    "projection": 0,
+    "oldMathOrDOMChecks": 0
+  }
+}
