@@ -6804,21 +6804,21 @@
           ]
         },
         "ru": {
-          "term": "стойка",
+          "term": "стойка для одежды",
           "part_of_speech": "명사",
-          "romanization": "stoyka",
           "examples": [
             {
-              "text": "В прихожей стоит стойка.",
-              "ko": "현관에 옷걸이대가 있습니다.",
-              "romanization": "V prikhozhey stoit stoyka."
+              "text": "В прихожей у нас стоит стойка для одежды на колёсиках.",
+              "ko": "우리 집 현관에는 바퀴 달린 옷걸이대가 있다.",
+              "romanization": "V prikhozhey u nas stoit stoyka dlya odezhdy na kolyosikakh."
             },
             {
-              "text": "Для зонтов нужна стойка.",
-              "ko": "우산 둘 받침대가 필요합니다.",
-              "romanization": "Dlya zontov nuzhna stoyka."
+              "text": "Мне нужна стойка для одежды, потому что в шкафу нет места.",
+              "ko": "옷장에 자리가 없어서 옷걸이대가 필요하다.",
+              "romanization": "Mne nuzhna stoyka dlya odezhdy, potomu chto v shkafu net mesta."
             }
-          ]
+          ],
+          "romanization": "stoyka dlya odezhdy"
         }
       }
     },
@@ -43178,22 +43178,22 @@
           "romanization": "ˈskwɑndɜr"
         },
         "ja": {
-          "term": "使い果たす",
-          "reading": "つかいはたす",
+          "term": "食いつぶす",
+          "reading": "くいつぶす",
           "part_of_speech": "동사",
           "examples": [
             {
-              "text": "ギャンブルで ざいさんを つかいはたす ひとも いる。",
-              "ko": "도박으로 재산을 털어 없애는 사람도 있다.",
-              "romanization": "gyanburu de zaisan o tsukaihatasu hito mo iru."
+              "text": "しごとを しないで いたら ちちの のこした おかねを くいつぶす ことに なる。",
+              "ko": "일을 하지 않고 있으면 아버지가 남긴 돈을 털어 없애게 된다.",
+              "romanization": "shigoto o shinai de itara chichi no nokoshita okane o kuitsubusu koto ni naru."
             },
             {
-              "text": "こづかいを つかいはたす まえに よく かんがえよう。",
-              "ko": "용돈을 털어 없애기 전에 잘 생각하자.",
-              "romanization": "kozukai o tsukaihatasu maeni yoku kangaeyō."
+              "text": "おじは ギャンブルで いえの ざいさんを くいつぶす ところだった。",
+              "ko": "삼촌은 도박으로 집안 재산을 털어 없앨 뻔했다.",
+              "romanization": "oji wa gyanburu de ie no zaisan o kuitsubusu tokorodatta."
             }
           ],
-          "romanization": "tsukaihatasu"
+          "romanization": "kuitsubusu"
         },
         "zh": {
           "term": "倾家荡产",
@@ -50200,18 +50200,21 @@
           "traditional": "成套工具"
         },
         "es": {
-          "term": "juego de piezas",
+          "term": "juego de herramientas",
           "part_of_speech": "명사",
           "examples": [
             {
-              "text": "El juego de piezas trae todas las medidas.",
-              "ko": "부품 세트에는 모든 크기가 다 있다."
+              "text": "Mi padre me regaló un juego de herramientas para el piso nuevo.",
+              "ko": "아버지가 새집에 쓰라고 공구 세트를 선물해 주셨다."
             },
             {
-              "text": "Un juego de piezas cabe bajo el asiento.",
-              "ko": "부품 세트 하나가 좌석 밑에 들어간다."
+              "text": "¿Dónde está el juego de herramientas? Necesito un destornillador.",
+              "ko": "공구 세트 어디 있어요? 드라이버가 필요해요."
             }
-          ]
+          ],
+          "attributes": {
+            "gender": "m"
+          }
         },
         "fr": {
           "term": "coffret d'outils",
@@ -50229,35 +50232,38 @@
           "romanization": "kofʁɛ d uti"
         },
         "de": {
-          "term": "Bausatz",
+          "term": "Werkzeugset",
           "part_of_speech": "명사",
           "examples": [
             {
-              "text": "Den Bausatz gibt es in jeder Größe.",
-              "ko": "그 조립 키트는 모든 크기로 나온다."
+              "text": "Zum Geburtstag hat mein Vater ein Werkzeugset bekommen.",
+              "ko": "아버지는 생일 선물로 공구 세트를 받았다."
             },
             {
-              "text": "Ein Bausatz passt unter den Sitz.",
-              "ko": "조립 키트 하나가 좌석 밑에 들어간다."
-            }
-          ]
-        },
-        "ru": {
-          "term": "набор",
-          "part_of_speech": "명사",
-          "examples": [
-            {
-              "text": "В набор входят все размеры.",
-              "ko": "공구 세트에 모든 크기가 다 들어 있다.",
-              "romanization": "V nabor vkhodyat vse razmery."
-            },
-            {
-              "text": "Под сиденье влезет набор.",
-              "ko": "좌석 밑에 공구 세트가 들어간다.",
-              "romanization": "Pod sidene vlezet nabor."
+              "text": "Im Kofferraum liegt immer ein Werkzeugset für Notfälle.",
+              "ko": "트렁크에는 비상용 공구 세트가 늘 들어 있다."
             }
           ],
-          "romanization": "nabor"
+          "attributes": {
+            "article": "das"
+          }
+        },
+        "ru": {
+          "term": "набор инструментов",
+          "part_of_speech": "명사",
+          "examples": [
+            {
+              "text": "Папа подарил мне набор инструментов на день рождения.",
+              "ko": "아빠가 생일 선물로 공구 세트를 주셨다.",
+              "romanization": "Papa podaril mne nabor instrumentov na den rozhdeniya."
+            },
+            {
+              "text": "В багажнике машины всегда лежит набор инструментов.",
+              "ko": "자동차 트렁크에는 늘 공구 세트가 들어 있다.",
+              "romanization": "V bagazhnike mashiny vsegda lezhit nabor instrumentov."
+            }
+          ],
+          "romanization": "nabor instrumentov"
         }
       }
     },
@@ -52580,22 +52586,22 @@
           "romanization": "kajishitsu"
         },
         "zh": {
-          "term": "多功能间",
+          "term": "杂物间",
           "part_of_speech": "명사",
           "examples": [
             {
-              "text": "洗衣机放在多功能间。",
-              "ko": "세탁기는 다용도실에 있다.",
-              "romanization": "Xǐyījī fàng zài duōgōngnéng jiān."
+              "text": "洗衣机放在厨房旁边的杂物间里。",
+              "ko": "세탁기는 부엌 옆 다용도실에 있다.",
+              "romanization": "Xǐyījī fàng zài chúfáng pángbiān de záwù jiān lǐ."
             },
             {
-              "text": "腌菜坛子摆满多功能间。",
-              "ko": "다용도실에 장아찌 항아리가 가득 놓여 있다.",
-              "romanization": "Yān cài tánzi bǎimǎn duōgōngnéng jiān."
+              "text": "妈妈让我去杂物间拿拖把。",
+              "ko": "엄마가 나에게 다용도실에 가서 대걸레를 가져오라고 했다.",
+              "romanization": "Māma ràng wǒqù záwù jiān ná tuōbǎ."
             }
           ],
-          "romanization": "duōgōngnéng jiān",
-          "traditional": "多功能間"
+          "romanization": "záwù jiān",
+          "traditional": "雜物間"
         },
         "es": {
           "term": "cuarto de la lavadora",
