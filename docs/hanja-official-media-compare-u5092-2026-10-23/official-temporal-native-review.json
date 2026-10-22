@@ -1,0 +1,110 @@
+{
+  "schema": "hanja-controlled-original-media-native-review/v1",
+  "glyph": "傒",
+  "root": "u5092",
+  "reviewedAt": "2026-10-23",
+  "observer": "/root",
+  "preparedBy": "/root/activation1401",
+  "scope": "공식 원미디어 12획 macro 방향 유한 36화면. 합성 source·접촉·미세 clock·실제 APP 승인은 별도입니다.",
+  "inputSHA256": {
+    "docs/hanja-official-media-compare-u5092-2026-10-23/config.json": "01a166bcf73ffcb317a0e84534786be714ac2493cf283d956c2d4bb33d5b7540",
+    "docs/hanja-official-media-compare-u5092-2026-10-23/metadata.json": "0758d896734fac09e9bbf275e575f30ad3f6f9aa0c978597b0f13c30c5fabaca"
+  },
+  "media": {
+    "SVG": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/5000/5092.svg",
+      "bytes": 6159,
+      "sha256": "62fca9865335de4abdb2fc3a39d4b5a9ed707091f67588f30394b5a88349551d"
+    },
+    "CSS": {
+      "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/libs/opmGna.svg.ani.min.css",
+      "bytes": 804,
+      "sha256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18"
+    },
+    "privateMediaSaved": false
+  },
+  "native": {
+    "validScreens": 36,
+    "strokes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "clockFractions": [0.1, 0.5, 0.75],
+    "observations": [
+      {
+        "strokes": [1, 2, 3, 4, 5, 6],
+        "validScreens": 18,
+        "reused": true,
+        "reuseBasis": "동일 config·metadata·SVG·CSS 및 원 path/clip 속성이 유지된 ROOT 관찰입니다. 중단 후 서버 종료 코드는 확인하지 못했습니다."
+      },
+      {
+        "strokes": [7, 8, 9, 10, 11, 12],
+        "validScreens": 18,
+        "reused": false,
+        "interruptedStroke7ClickEvidence": 0
+      }
+    ],
+    "directions": [
+      {"stroke": 1, "direction": "왼아래 곡선"},
+      {"stroke": 2, "direction": "세로 아래"},
+      {"stroke": 3, "direction": "오른쪽→약간 왼아래: 위쪽 爪 첫 곡선"},
+      {"stroke": 4, "direction": "왼아래 곡선"},
+      {"stroke": 5, "direction": "오른아래 점"},
+      {"stroke": 6, "direction": "오른아래 곡선"},
+      {"stroke": 7, "direction": "왼아래→오른아래 꺾음"},
+      {"stroke": 8, "direction": "긴 왼아래→가로 오른쪽"},
+      {"stroke": 9, "direction": "오른아래 점"},
+      {"stroke": 10, "direction": "가로 오른쪽"},
+      {"stroke": 11, "direction": "긴 왼아래 곡선"},
+      {"stroke": 12, "direction": "긴 오른아래 곡선"}
+    ],
+    "originalAllPathClipAttributesUnchanged": true,
+    "errors": []
+  },
+  "servers": [
+    {
+      "PID": 72262,
+      "sessionId": 61254,
+      "observedStrokes": [1, 2, 3, 4, 5, 6],
+      "resumeProcessCheck": "PID absent",
+      "stopped": null,
+      "exitCode": null,
+      "terminationOutput": "이전 중단으로 종료 출력은 확인하지 못했습니다."
+    },
+    {
+      "PID": 87223,
+      "sessionId": 62394,
+      "observedStrokes": [7, 8, 9, 10, 11, 12],
+      "RAMFetches": 2,
+      "HTTP200Logs": 3,
+      "stopped": true,
+      "exitCode": 130,
+      "outputEmpty": false,
+      "exceptionTail": false
+    }
+  ],
+  "preservedHistoricalContext": {
+    "static32SeparateEvidence": true,
+    "originalSourcePens": 12,
+    "originalSourceMasks": 14,
+    "originalSourcePolygons": 35,
+    "sourceHOLD8Preserved": true,
+    "sourceFootMathSeparateEvidence": true,
+    "official36DoesNotApproveSourceTransitions": true
+  },
+  "macroDirectionFiniteApproval": true,
+  "sourceGroupsApproved": false,
+  "pathContactApproved": false,
+  "microClockIdentityApproved": false,
+  "allTimesApproved": false,
+  "officialParentUIApproved": false,
+  "actualComponentApproved": false,
+  "runtimeApplied": false,
+  "authorActions": {
+    "HTTP": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "SSR": 0,
+    "server": 0,
+    "shared": 0,
+    "registry": 0,
+    "Git": 0
+  }
+}
