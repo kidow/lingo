@@ -1,6 +1,6 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** 1347 미등록 후보. 원정적대응/공식 일부 거시방향만 확인; source진행/APP/runtime 미승인. */
+/** 1347 ROOT 유한 component 검토 후 등록. EXPECTED는 준비 당시 고정 bundle 계약을 보존하며 현재 승인은 별도 activation 기록을 따른다. 제품UI·저장·전체자동재생은 미승인. */
 const EXPECTED = [
   {
     "glyph": "寘",
@@ -284,6 +284,9 @@ export function loadGlyphWikiBatch1347Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1347_STROKES:ReturnType<typeof loadGlyphWikiBatch1347Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1347_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1347_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1347_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1347_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1347_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1347_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1347_ACTIVATION_REVIEW=Object.freeze({path:'docs/hanja-actual-component-profiles-2026-10-22/u5bd8-activation-review.json',SHA256:'b549435f97a3ef24c7b23ff6a639b55eb326ad10b11f0511598cf8fd11e23df4'})
+export const GLYPHWIKI_BATCH1347_ACTUAL_PRODUCT_APP_UI=false
+export const GLYPHWIKI_BATCH1347_ALL_PENS_AUTOPLAY_APPROVED=false
