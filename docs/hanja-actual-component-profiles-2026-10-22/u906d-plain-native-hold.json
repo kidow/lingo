@@ -1,0 +1,136 @@
+{
+  "schema": "hanja-isolated-actual-component-native-hold/v1",
+  "date": "2026-10-23",
+  "glyph": "遭",
+  "root": "u906d-k",
+  "observer": "ROOT",
+  "observedInputs": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u906d.json",
+      "SHA256": "84622ccd78c99b5a92fd53e93da38667ee878e6c06dec71809226637eca00e27"
+    },
+    "componentSHA256": "a306adffdd526682a99b1a2a10db9fa8e63f43847a1e1ce6c29d034ef3b29925",
+    "adapterSHA256": "2c51ca736cc4ce5c98e967c4f27fd3af7ac1e68f848e8318a306beccf344d14f",
+    "fixture": {
+      "path": "docs/hanja-source-cache-reorder-u906d-k-2026-10-23/fixture.json",
+      "SHA256": "8503729f72579cac9f6029501f1699c2182896b330220683e50ca71c7c676d60"
+    },
+    "geometrySHA256": "1e67a6daa66c2d9e88e82ffcf242bf88c3a99e8203c3a4f1d68662b2601c3113"
+  },
+  "native": {
+    "validScreens": 26,
+    "breakdown": {
+      "sixPensZeroAndEpsilon": 12,
+      "prefix13AndPen14Zero": 2,
+      "last15SecondMaskBeforeEpsilon01_03_1": 5,
+      "prefix2ResetAndPen3Zero": 1,
+      "coverageSixScreensSevenMasks": 6
+    },
+    "finiteHeadFAILTargets": [
+      [
+        3,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        14,
+        1
+      ],
+      [
+        15,
+        1
+      ],
+      [
+        15,
+        2
+      ]
+    ],
+    "second15AttachedObserved": true,
+    "second15NewFiniteHeadAppeared": true,
+    "zeroBaselineCaveat": "최초 MLL p0 화면에 직전 상태 같은 작은 H가 있어 모든 baseline이 no-head였다고 주장하지 않는다. prefixclear 뒤 3/14 p0에서 새 head 없음은 별도 확인했다.",
+    "coverage": {
+      "positiveBlackRemainder": [
+        [
+          3,
+          1
+        ]
+      ],
+      "whiteObserved": [
+        [
+          9,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          2
+        ]
+      ],
+      "screenWidth": 520,
+      "initialResidualLocationApproximate": {
+        "x": 429,
+        "y": 287
+      },
+      "notAssumedAA": true
+    },
+    "bad": [],
+    "errors": [],
+    "excludedAttempts": [
+      {
+        "scope": "nonexistent prefix8 selector",
+        "failures": 1,
+        "returnedEvidenceImages": 0,
+        "counted": false
+      }
+    ],
+    "fullMatrix": false,
+    "natural": false
+  },
+  "coverageAnalysis": {
+    "path": "docs/hanja-source-cache-reorder-u906d-k-2026-10-23/pen3-terminal-coverage-analysis.json",
+    "SHA256": "fcfd286be939d02d2e8e3f185bdfac1623cb8274561deabc14520dcefc694163"
+  },
+  "server": {
+    "PID": 31537,
+    "session": 93515,
+    "port": 59412,
+    "SSR": 1,
+    "CJS": 67,
+    "ESM": 67,
+    "engine": 0,
+    "projection": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "outputEmpty": true
+  },
+  "historicalHOLDPreserved": true,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false
+}

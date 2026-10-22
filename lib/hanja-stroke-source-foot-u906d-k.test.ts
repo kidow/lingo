@@ -81,3 +81,38 @@ test('u906d-k-foot actual DOM adapter new frame owner/reset/visibility-last FIRS
  const forged=setup();forged.g.setAttribute('data-stroke-reveal-progress','0.8');const f=measureReviewedU906dKFootFrame(forged.policy,.8,forged.nodes.measurement);assert.equal(commitReviewedU906dKFootMask(forged.nodes,{...f}),false)
  const transformed=setup();transformed.g.setAttribute('data-stroke-reveal-progress','0.8');transformed.svg.setAttribute('transform','translate(0 0)');assert.throws(()=>measureReviewedU906dKFootFrame(transformed.policy,.8,transformed.nodes.measurement))
 })
+
+test('u906d-k corrected-order source-context maintenance only',()=>{
+ const previous=JSON.parse(bytes('docs/hanja-source-cache-u906d-k-2026-10-23/fixture.json'))
+ assert.equal(sha(bytes(SOURCE.sourceCacheFile)),SOURCE.sourceCacheSHA256)
+ assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256)
+ assert(context);assert.equal(makeReviewedU906dKFootSourceContext(proof,identity,strokes),context)
+ assert.equal(reviewedU906dKFootContext(previous.strokes),null)
+ assert.equal(makeReviewedU906dKFootSourceContext(proof,identity,previous.strokes),null)
+ const order=[0,1,2,5,3,4,6,7,8,9,10,11,12,13,14]
+ const reordered=JSON.parse(bytes('docs/hanja-source-cache-reorder-u906d-k-2026-10-23/fixture.json')).strokes
+ assert.deepEqual(reordered,order.map(i=>previous.strokes[i]));assert.equal(reviewedU906dKFootContext(reordered),null)
+ assert.deepEqual(strokes[14],previous.strokes[14])
+ assert(reviewedU906dKFootPolicy(context,14,1))
+ for(let pi=0;pi<strokes.length;pi++)for(let mi=0;mi<strokes[pi].length;mi++)if(pi!==14||mi!==1)assert.equal(reviewedU906dKFootPolicy(context,pi,mi),null)
+ for(const[p,h]of Object.entries(SOURCE.inputSHA256))assert.equal(sha(bytes(p)),h,p)
+ const removeStrokes=(s:string)=>s.replace(/^const FIXED_STROKES=.*$/m,'const FIXED_STROKES=HISTORICAL')
+ const body=removeStrokes(code).replace(/^export const REVIEWED_U906D_K_FOOT_SOURCE=.*$/m,'export const REVIEWED_U906D_K_FOOT_SOURCE=HISTORICAL')
+ assert.equal(sha(body),'8eaf1edc04e314f074c6afbf351162ab3e3bd36bc0b186b8a89459ccdcd79d24')
+})
+
+test('u906d-k pen3 partition context maintenance only',()=>{
+ const previous=JSON.parse(bytes('docs/hanja-source-cache-reorder-u906d-k-2026-10-23/fixture.json'))
+ assert(context);assert.equal(makeReviewedU906dKFootSourceContext(proof,identity,strokes),context)
+ assert.equal(reviewedU906dKFootContext(previous.strokes),null)
+ assert.equal(makeReviewedU906dKFootSourceContext(proof,identity,previous.strokes),null)
+ assert.deepEqual(strokes[14],previous.strokes[14])
+ for(let i=0;i<15;i++)if(i!==2)assert.deepEqual(strokes[i],previous.strokes[i])
+ assert.equal(strokes[2].length,2);assert.equal(strokes[2][1].direction,'down')
+ assert.equal(reviewedU906dKFootPolicy(context,14,1)?.segment.revealPath,previous.strokes[14][1].revealPath)
+ for(let i=0;i<15;i++)for(let j=0;j<strokes[i].length;j++)if(i!==14||j!==1)assert.equal(reviewedU906dKFootPolicy(context,i,j),null)
+ assert.equal(sha(bytes(SOURCE.sourceCacheFile)),SOURCE.sourceCacheSHA256)
+ assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256)
+ const body=code.replace(/^const FIXED_STROKES=.*$/m,'const FIXED_STROKES=HISTORICAL').replace(/^export const REVIEWED_U906D_K_FOOT_SOURCE=.*$/m,'export const REVIEWED_U906D_K_FOOT_SOURCE=HISTORICAL')
+ assert.equal(sha(body),'8eaf1edc04e314f074c6afbf351162ab3e3bd36bc0b186b8a89459ccdcd79d24')
+})
