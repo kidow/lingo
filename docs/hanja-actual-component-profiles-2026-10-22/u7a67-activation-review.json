@@ -31,8 +31,8 @@
     "docs/hanja-source-native-hold-u7a67-vq-activation-2026-10-19/hold.json": "8bc20355a22f4b28980d7a01fbb2f9595891ba2e83924b683899605213afa0b2",
     "lib/hanja-stroke-start-gate-u7a67.ts": "fe24068e0428c4b59a5737fb7d873bc85aa406acefbc85084a2d647c2cc132c1",
     "public/hanja-strokes/glyphwiki/u7a67.json": "6ef09f30acd0ec92a7d121c3e37223c75431f54987873dfb1ebd08db4356a283",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1373.json": "2298e4f04d3f27e051c83b8dfa8f62cedd7f35e2fb5464f1c8bef8b440aee86d",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch1373.ts": "6179da6d660d10c3c06958edab06bbb85f9b17d176d2e96199b771c93af82550"
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1373.json": "65c95e9a8e5cf1fbce6efb9c5e99aa690d45ad47acf9dca14d55c291c59c7608",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1373.ts": "a903c955fb1061a522ae330a2aedbfa4442b2531545dd5e3d0b5c625a2d4ae11"
   },
   "historicalObservationPins": {
     "profile": "docs/hanja-actual-component-profiles-2026-10-22/u7a67-1.json",
@@ -192,5 +192,44 @@
     "buildRuns": 0,
     "tscRuns": 0,
     "oldActivationOrSourcegateTestsRerun": 0
+  },
+  "typeAlignmentMaintenance": {
+    "date": "2026-10-22",
+    "scope": "required-sourceReference-field-and-contextual-array-type-only",
+    "reason": "필수directionReviewSha256 추가와 core contextual타입검증; geometryLicense는 runtime동일 metadata spread로 보존",
+    "historicalActivationReviewSHA256": "c5a328b658031010b309db2efad3f4f2628860b5de3377d0c6bfb4bbc3bf2b26",
+    "historicalObservedInputPins": {
+      "module": "6179da6d660d10c3c06958edab06bbb85f9b17d176d2e96199b771c93af82550",
+      "bundle": "2298e4f04d3f27e051c83b8dfa8f62cedd7f35e2fb5464f1c8bef8b440aee86d"
+    },
+    "readBeforeEditArtifactSHA256": {
+      "module": "6179da6d660d10c3c06958edab06bbb85f9b17d176d2e96199b771c93af82550",
+      "bundle": "2298e4f04d3f27e051c83b8dfa8f62cedd7f35e2fb5464f1c8bef8b440aee86d"
+    },
+    "currentArtifactSHA256": {
+      "module": "a903c955fb1061a522ae330a2aedbfa4442b2531545dd5e3d0b5c625a2d4ae11",
+      "bundle": "65c95e9a8e5cf1fbce6efb9c5e99aa690d45ad47acf9dca14d55c291c59c7608"
+    },
+    "directionEvidence": {
+      "path": "docs/hanja-goal-glyphwiki-batch859-2026-10-13/review.json",
+      "SHA256": "5a26cb9ddd4854fbace71c2c8978c64341857f421c6762f89b080f853f3c6261",
+      "meaning": "원859 공식19획 방향관찰. 당시candidate 순서·경계/HOLD 판정과 구분하고 새clock 미세시간 동일성을 주장하지 않음.",
+      "newOfficialObservation": false,
+      "microTimingEquivalenceClaim": false
+    },
+    "geometryLicenseRuntimeValueUnchanged": true,
+    "allOriginalPathsOutlinesGuideBoundsWidthWeightUnchanged": true,
+    "publicSourceAssetUnchanged": true,
+    "sourceAssetPath": "public/hanja-strokes/glyphwiki/u7a67.json",
+    "newRequiredPayloadFieldOnly": "sourceReference.directionReviewSha256",
+    "originalNativeAndRegistrationResultsUnchanged": true,
+    "originalHOLDAndFalseHistoryUnchanged": true,
+    "sourceEngineProjectionRuns": 0,
+    "SSR": 0,
+    "nativeRerun": 0,
+    "oldActivationTailRerun": 0,
+    "oldCountVerificationRerun": 0,
+    "newMetadataAndTypeStructureCheckOnly": true,
+    "changedTestFiles": false
   }
 }

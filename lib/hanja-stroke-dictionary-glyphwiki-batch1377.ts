@@ -1,7 +1,9 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 1377 선택variant11p12m25 복제; 준비false와 별도유한native승인을 구분. */
-const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
+const GEOMETRY_LICENSE={"geometryLicense":{"spdx":"LicenseRef-GlyphWiki","attribution":"GlyphWiki Project and contributors","url":"https://glyphwiki.org/wiki/GlyphWiki:License@18","sourceUrl":"https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt","revision":"2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; selected variant references retained explicit public providers u5ef6-t02@2/u5ef4-g02@1","editableSource":"/hanja-strokes/glyphwiki/u68b4-var-001.json","modifications":"선택u68b4-var-001 실제full5와 고정11p12m25 fixture를 그대로 복제한다. base/VS0 31P는 선택하지 않는다. 원25P·outline·guide·폭·weight·논리순서는 불변이다. 8m2는 원guide/width 없는 cardinal H의 원P를 완료V 내부 양의접촉core에서 양방향x clip으로 표시한다. 새mask 내부clock이며 공식V→right macro의시간·미세backfill재현 주장이 아니다. 새engine/compiler/factory/projection/기하분할0; 원HOLD와준비false역사는 보존한다."}}
+const EXPECTED: readonly HanjaDictionaryStrokeData[] = [
   {
+    ...GEOMETRY_LICENSE,
     "glyph": "梴",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
@@ -208,19 +210,11 @@ const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
       "dictionarySvgSha256": "4e9f11d0b2d826d5a6d0b92db1e5857fbcc64a3d3893ac45e20bdeae87232de0",
       "dictionaryDirectionStrokes": "ROOT 원공식11획방향·순서대조와 선택variant 정적대응을 보존. 새8m2 내부clock은 공식시간/미세backfill동일성 미승인.",
       "orderReviewSha256": "d276ba8319f3c1fef6f4d109c4ec075184f2b8edd1a70f9cc6dfd2880f91741d",
-      "geometryReviewSha256": "039f6a12433c4d6aa5d403198897e09c2ccd9e242497aa3684d3dd9841ea957e"
-    },
-    "geometryLicense": {
-      "spdx": "LicenseRef-GlyphWiki",
-      "attribution": "GlyphWiki Project and contributors",
-      "url": "https://glyphwiki.org/wiki/GlyphWiki:License@18",
-      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
-      "revision": "2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; selected variant references retained explicit public providers u5ef6-t02@2/u5ef4-g02@1",
-      "editableSource": "/hanja-strokes/glyphwiki/u68b4-var-001.json",
-      "modifications": "선택u68b4-var-001 실제full5와 고정11p12m25 fixture를 그대로 복제한다. base/VS0 31P는 선택하지 않는다. 원25P·outline·guide·폭·weight·논리순서는 불변이다. 8m2는 원guide/width 없는 cardinal H의 원P를 완료V 내부 양의접촉core에서 양방향x clip으로 표시한다. 새mask 내부clock이며 공식V→right macro의시간·미세backfill재현 주장이 아니다. 새engine/compiler/factory/projection/기하분할0; 원HOLD와준비false역사는 보존한다."
+      "geometryReviewSha256": "039f6a12433c4d6aa5d403198897e09c2ccd9e242497aa3684d3dd9841ea957e",
+      "directionReviewSha256": "d276ba8319f3c1fef6f4d109c4ec075184f2b8edd1a70f9cc6dfd2880f91741d"
     }
   }
-] as unknown as readonly HanjaDictionaryStrokeData[]
+]
 
 function freezeDeep(value:unknown):void {if(value&&typeof value==='object'){for(const child of Object.values(value))freezeDeep(child);Object.freeze(value)}}
 freezeDeep(EXPECTED)

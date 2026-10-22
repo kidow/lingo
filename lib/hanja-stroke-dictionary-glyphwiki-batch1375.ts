@@ -1,7 +1,9 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 1375 고정18획 cache 복제. 준비false는 역사이며 ROOT 유한승인은 별도record이다. */
-const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
+const GEOMETRY_LICENSE={"geometryLicense":{"spdx":"LicenseRef-GlyphWiki","attribution":"GlyphWiki Project and contributors","url":"https://glyphwiki.org/wiki/GlyphWiki:License@18","sourceUrl":"https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt","revision":"2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; individual revisions unavailable","editableSource":"/hanja-strokes/glyphwiki/u85af-k.json","modifications":"고정2016 archive 선택K의 실제full5를 단일VM makeGlyph FIRST1로 직접 확보하고 기존K groups/trace/defaults와 deep-equal 확인했다. 실제full5에서 pureprojection FIRST1 후 즉시18p18m32 cache를 저장했으며 모든 원P·guide·폭·weight·논리순서를 복제한다. 15획에만 원M이 자기P와 선행P 내부인 seed에서 convex head를 성장시키고 아래body를 표시하는 고유 source-cap 정책을 사용한다. glyph ink·윤곽·총weight는 불변이며 면적배분 내부clock은 원공식시간 재현이 아니다. 원1089 cap HOLD와 준비false는 역사로 보존한다."}}
+const EXPECTED: readonly HanjaDictionaryStrokeData[] = [
   {
+    ...GEOMETRY_LICENSE,
     "glyph": "薯",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
@@ -298,19 +300,11 @@ const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
       "dictionarySvgSha256": "839e04202c163562ed9c9ea6ccb72b012c5c0ca6835df256daec272e193fc052",
       "dictionaryDirectionStrokes": "원공식18획방향·순서대조와 최종source-order를 보존한다. 새15획 내부clock은 원공식시간 동일성 미승인.",
       "orderReviewSha256": "facb5e0c0fade926dc109543040eceba9f452fcb7b46a747b8b928ec947cc5c0",
-      "geometryReviewSha256": "b640c523c1e7296a9f25dd0368413c97fa82948eb96b82deaf9deb0bb924afee"
-    },
-    "geometryLicense": {
-      "spdx": "LicenseRef-GlyphWiki",
-      "attribution": "GlyphWiki Project and contributors",
-      "url": "https://glyphwiki.org/wiki/GlyphWiki:License@18",
-      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
-      "revision": "2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; individual revisions unavailable",
-      "editableSource": "/hanja-strokes/glyphwiki/u85af-k.json",
-      "modifications": "고정2016 archive 선택K의 실제full5를 단일VM makeGlyph FIRST1로 직접 확보하고 기존K groups/trace/defaults와 deep-equal 확인했다. 실제full5에서 pureprojection FIRST1 후 즉시18p18m32 cache를 저장했으며 모든 원P·guide·폭·weight·논리순서를 복제한다. 15획에만 원M이 자기P와 선행P 내부인 seed에서 convex head를 성장시키고 아래body를 표시하는 고유 source-cap 정책을 사용한다. glyph ink·윤곽·총weight는 불변이며 면적배분 내부clock은 원공식시간 재현이 아니다. 원1089 cap HOLD와 준비false는 역사로 보존한다."
+      "geometryReviewSha256": "b640c523c1e7296a9f25dd0368413c97fa82948eb96b82deaf9deb0bb924afee",
+      "directionReviewSha256": "4d67f9825e2ac09698b882428c6c7b29ad36b85b768191edc25c60aac43fd884"
     }
   }
-] as unknown as readonly HanjaDictionaryStrokeData[]
+]
 
 function freezeDeep(value:unknown):void {if(value&&typeof value==='object'){for(const child of Object.values(value))freezeDeep(child);Object.freeze(value)}}
 freezeDeep(EXPECTED)

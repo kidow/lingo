@@ -1,7 +1,9 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 1373 고정19획 독립fixture 제품복제; source 준비false와 별도유한native승인기록을 구분. */
-const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
+const GEOMETRY_LICENSE={"geometryLicense":{"spdx":"LicenseRef-GlyphWiki","attribution":"GlyphWiki Project and contributors","url":"https://glyphwiki.org/wiki/GlyphWiki:License@18","sourceUrl":"https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt","revision":"2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c;individual revisions unavailable","editableSource":"/hanja-strokes/glyphwiki/u7a67.json","modifications":"고정2016공개보관 u7a67 actualfull5·19p21m43 독립fixture의 모든mask필드를 그대로 제품으로 복제. 새engine/compiler/factory/projection/geometry생성0. 원QQ/QV/VQ의 독립mask와 gap·원guide/width/weight·원43P를 유지. 11획의 기존LEFT414 tail6 분리 및 원body정책은 이전fixture 그대로이며 새tail분할0. 14m2만 고유원P contact-foot/x-frontier 표시정책을 사용하고 새면적배분내부clock을명시, 원시간재현주장0. 원HOLD 및 source준비false역사 보존."}}
+const EXPECTED: readonly HanjaDictionaryStrokeData[] = [
   {
+    ...GEOMETRY_LICENSE,
     "glyph": "穧",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
@@ -349,19 +351,12 @@ const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
       "dictionarySvgSha256": "38067dbe097425f240b593859741b98f10b861500072b92f9d46c22e69d61295",
       "dictionaryDirectionStrokes": "ROOT 원공식19획방향비교 및 독립source순서/경계보정 기록. 14 V then rise; 고유display clock의원시간동일성미승인.",
       "orderReviewSha256": "5a26cb9ddd4854fbace71c2c8978c64341857f421c6762f89b080f853f3c6261",
-      "geometryReviewSha256": "ab4cd61afded8c0d7c5e669933b24e1cb160916a417b1ab7c2087e0da2a1ed20"
-    },
-    "geometryLicense": {
-      "spdx": "LicenseRef-GlyphWiki",
-      "attribution": "GlyphWiki Project and contributors",
-      "url": "https://glyphwiki.org/wiki/GlyphWiki:License@18",
-      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
-      "revision": "2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c;individual revisions unavailable",
-      "editableSource": "/hanja-strokes/glyphwiki/u7a67.json",
-      "modifications": "고정2016공개보관 u7a67 actualfull5·19p21m43 독립fixture의 모든mask필드를 그대로 제품으로 복제. 새engine/compiler/factory/projection/geometry생성0. 원QQ/QV/VQ의 독립mask와 gap·원guide/width/weight·원43P를 유지. 11획의 기존LEFT414 tail6 분리 및 원body정책은 이전fixture 그대로이며 새tail분할0. 14m2만 고유원P contact-foot/x-frontier 표시정책을 사용하고 새면적배분내부clock을명시, 원시간재현주장0. 원HOLD 및 source준비false역사 보존."
+      "geometryReviewSha256": "ab4cd61afded8c0d7c5e669933b24e1cb160916a417b1ab7c2087e0da2a1ed20",
+      "directionReviewSha256": "5a26cb9ddd4854fbace71c2c8978c64341857f421c6762f89b080f853f3c6261"
     }
   }
-] as unknown as readonly HanjaDictionaryStrokeData[]
+]
+
 function freezeDeep(value:unknown):void {if(value&&typeof value==='object'){for(const child of Object.values(value))freezeDeep(child);Object.freeze(value)}}
 freezeDeep(EXPECTED)
 function sameJSON(a:unknown,b:unknown):boolean {

@@ -1,7 +1,9 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 1374 고정17획 cache 제품복제. 준비false와 별도ROOT유한승인기록을 구분한다. */
-const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
+const GEOMETRY_LICENSE={"geometryLicense":{"spdx":"LicenseRef-GlyphWiki","attribution":"GlyphWiki Project and contributors","url":"https://glyphwiki.org/wiki/GlyphWiki:License@18","sourceUrl":"https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt","revision":"2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; individual revisions unavailable","editableSource":"/hanja-strokes/glyphwiki/u96ae.json","modifications":"고정2016 공개보관 u96ae 원실제full5 한 파일을 사용한다. 선택body3와 실제full5의 groups/trace/defaults가 동일하며 header/trace 재조립이나 최신variant혼합은 없다. 기존고정compiler FIRST1 후 즉시17p20m42 cache를 저장했으며 그모든mask필드를 제품으로 복제한다. 기존LEFT2·UP9 원quad와 독립12m2 gap·원42P/guide/폭/bodyweight/순서를 유지한다. 12m2만 원cardinal-P1과 양의교집합인 seed부터 contact-foot를 성장시키고 원Q native arc-x frontier로 표시하는 고유정책을 사용한다. 새내부면적clock이며 원공식시간동일성·전시간연속성·zero-area native승인을 주장하지 않는다. 원857 HOLD/source준비false는 역사로 보존한다."}}
+const EXPECTED: readonly HanjaDictionaryStrokeData[] = [
   {
+    ...GEOMETRY_LICENSE,
     "glyph": "隮",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
@@ -328,19 +330,12 @@ const EXPECTED: readonly HanjaDictionaryStrokeData[]=[
       "dictionarySvgSha256": "6202e04dc7496e55c310edb1a182acddb096ce2341b8649cd142f7ed3855044b",
       "dictionaryDirectionStrokes": "ROOT 원공식17획방향비교/순서·경계보정 기록을 보존. 기존12m2 고정start-nib FAIL은유지하며 새contact-foot 내부clock의원시간동일성미승인.",
       "orderReviewSha256": "02ff30be0d5871124736afe49e635b64eb93589ce8906f69ac15c475bed3b47d",
-      "geometryReviewSha256": "cb15dde1e5e3e4afe29cddaaab7d2ad27eff8866e7b2ad535ce52b9ed5bcf5a6"
-    },
-    "geometryLicense": {
-      "spdx": "LicenseRef-GlyphWiki",
-      "attribution": "GlyphWiki Project and contributors",
-      "url": "https://glyphwiki.org/wiki/GlyphWiki:License@18",
-      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
-      "revision": "2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; individual revisions unavailable",
-      "editableSource": "/hanja-strokes/glyphwiki/u96ae.json",
-      "modifications": "고정2016 공개보관 u96ae 원실제full5 한 파일을 사용한다. 선택body3와 실제full5의 groups/trace/defaults가 동일하며 header/trace 재조립이나 최신variant혼합은 없다. 기존고정compiler FIRST1 후 즉시17p20m42 cache를 저장했으며 그모든mask필드를 제품으로 복제한다. 기존LEFT2·UP9 원quad와 독립12m2 gap·원42P/guide/폭/bodyweight/순서를 유지한다. 12m2만 원cardinal-P1과 양의교집합인 seed부터 contact-foot를 성장시키고 원Q native arc-x frontier로 표시하는 고유정책을 사용한다. 새내부면적clock이며 원공식시간동일성·전시간연속성·zero-area native승인을 주장하지 않는다. 원857 HOLD/source준비false는 역사로 보존한다."
+      "geometryReviewSha256": "cb15dde1e5e3e4afe29cddaaab7d2ad27eff8866e7b2ad535ce52b9ed5bcf5a6",
+      "directionReviewSha256": "02ff30be0d5871124736afe49e635b64eb93589ce8906f69ac15c475bed3b47d"
     }
   }
-] as unknown as readonly HanjaDictionaryStrokeData[]
+]
+
 function freezeDeep(value:unknown):void {if(value&&typeof value==='object'){for(const child of Object.values(value))freezeDeep(child);Object.freeze(value)}}
 freezeDeep(EXPECTED)
 function sameJSON(a:unknown,b:unknown):boolean {

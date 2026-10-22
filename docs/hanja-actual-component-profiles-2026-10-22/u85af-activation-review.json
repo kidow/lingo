@@ -30,8 +30,8 @@
     "docs/hanja-goal-glyphwiki-batch1089-2026-10-13/native-review.json": "4d67f9825e2ac09698b882428c6c7b29ad36b85b768191edc25c60aac43fd884",
     "docs/hanja-goal-glyphwiki-batch1089-2026-10-13/source-order-preparation.json": "facb5e0c0fade926dc109543040eceba9f452fcb7b46a747b8b928ec947cc5c0",
     "public/hanja-strokes/glyphwiki/u85af-k.json": "272b7a2e79b1d9ad18bea7e06e2aebc5470b1dc0d150819b50dcdd5e28cab555",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1375.json": "a5c7dcc232c6074ac49c8b2d693b13f481831cbbe9fd13511d15de251b7fdb2b",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch1375.ts": "56692551a035b93b9ff08bfdc1fb73e511c3c931518ee666f67d2c9a3c87222f"
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1375.json": "f82832e9140b83ab441f4fbd3b5ecfb2ffc93c79c9f4897fff05e2c8dd5f94f6",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1375.ts": "93f22b32f40d099bc580e53e8f384628360910a294844de5208cfbfb24d69345"
   },
   "historicalObservationPins": {
     "profile": "docs/hanja-actual-component-profiles-2026-10-22/u85af.json",
@@ -187,5 +187,44 @@
     "buildRuns": 0,
     "tscRuns": 0,
     "oldActivationOrSourcegateTestsRerun": 0
+  },
+  "typeAlignmentMaintenance": {
+    "date": "2026-10-22",
+    "scope": "required-sourceReference-field-and-contextual-array-type-only",
+    "reason": "필수directionReviewSha256 추가와 core contextual타입검증; geometryLicense는 runtime동일 metadata spread로 보존",
+    "historicalActivationReviewSHA256": "3e6fe1369fb7193ef5dbd9c95213b285dafc11fe1e5c6ad3316fd5385c653e2f",
+    "historicalObservedInputPins": {
+      "module": "56692551a035b93b9ff08bfdc1fb73e511c3c931518ee666f67d2c9a3c87222f",
+      "bundle": "a5c7dcc232c6074ac49c8b2d693b13f481831cbbe9fd13511d15de251b7fdb2b"
+    },
+    "readBeforeEditArtifactSHA256": {
+      "module": "56692551a035b93b9ff08bfdc1fb73e511c3c931518ee666f67d2c9a3c87222f",
+      "bundle": "a5c7dcc232c6074ac49c8b2d693b13f481831cbbe9fd13511d15de251b7fdb2b"
+    },
+    "currentArtifactSHA256": {
+      "module": "93f22b32f40d099bc580e53e8f384628360910a294844de5208cfbfb24d69345",
+      "bundle": "f82832e9140b83ab441f4fbd3b5ecfb2ffc93c79c9f4897fff05e2c8dd5f94f6"
+    },
+    "directionEvidence": {
+      "path": "docs/hanja-goal-glyphwiki-batch1089-2026-10-13/native-review.json",
+      "SHA256": "4d67f9825e2ac09698b882428c6c7b29ad36b85b768191edc25c60aac43fd884",
+      "meaning": "원1089 native-review.rootNative.directions: 원18획관찰·교정7획 fresh방향비교. 당시15획cap HOLD는 그대로이며 새내부clock 시간재현 주장0.",
+      "newOfficialObservation": false,
+      "microTimingEquivalenceClaim": false
+    },
+    "geometryLicenseRuntimeValueUnchanged": true,
+    "allOriginalPathsOutlinesGuideBoundsWidthWeightUnchanged": true,
+    "publicSourceAssetUnchanged": true,
+    "sourceAssetPath": "public/hanja-strokes/glyphwiki/u85af-k.json",
+    "newRequiredPayloadFieldOnly": "sourceReference.directionReviewSha256",
+    "originalNativeAndRegistrationResultsUnchanged": true,
+    "originalHOLDAndFalseHistoryUnchanged": true,
+    "sourceEngineProjectionRuns": 0,
+    "SSR": 0,
+    "nativeRerun": 0,
+    "oldActivationTailRerun": 0,
+    "oldCountVerificationRerun": 0,
+    "newMetadataAndTypeStructureCheckOnly": true,
+    "changedTestFiles": false
   }
 }

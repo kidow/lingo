@@ -8,4 +8,6 @@ ROOT 격리된 실제 StrokeOutlines 유효50화면을 유한 범위로 승인�
 
 성공서버 SSR1/CJS39/ESM39와 별도로 첫sandbox listen EPERM 전에 resources(false)가 실행되어 SSR/compile이 추가 실행되었을 수 있습니다. 첫실패를 SSR0으로 처리하지 않습니다. 두단계의engine/projection은0입니다.
 
-기록: [u96ae-activation-review.json](../../../docs/hanja-actual-component-profiles-2026-10-22/u96ae-activation-review.json) · SHA256 80aa738217fa8bbd9117aa2623a738a91b269f270c9f1e9aab45e213bb8cd69a. author 등록검사0과 ROOT 신규tail 결과를 별도필드로 구분하며 현재수치는 ROOT검사 전 예상5789/189입니다. 공유39핀은 관찰당시 역사핀입니다.
+기록: [u96ae-activation-review.json](../../../docs/hanja-actual-component-profiles-2026-10-22/u96ae-activation-review.json) · SHA256 683203932e367252371566a40aebbe5de29a0b7f319c2d1742f1d09e2aaf9a76. author 등록검사0과 ROOT 신규tail 결과를 별도필드로 구분하며 현재수치는 ROOT검사 전 예상5789/189입니다. 공유39핀은 관찰당시 역사핀입니다.
+
+타입정합성 유지보수: 필수 directionReviewSha256은 기존공식 방향관찰 기록에 결박했습니다. 원license값·기하·native/등록결과·source준비false는 불변이며 새로운시간/브라우저/실제count 검사는 수행하지 않았습니다. 관찰당시 승인SHA는 typeAlignmentMaintenance의 역사필드로 보존합니다.

@@ -33,8 +33,8 @@
     "lib/hanja-stroke-start-gate-u68b4.ts": "35bab3321db501e8759c0b5a022b51601c94fd8854513cf013defec2724b214b",
     "lib/hanja-stroke-start-gate-u68b4.test.ts": "9914739537abf0b74cb833e3c0a48031ca4ef0e77280e9ac98d01cb202f022bd",
     "public/hanja-strokes/glyphwiki/u68b4-var-001.json": "c14def9aa30b5af7a19db46f190144c6537b80b7b572ff8f9c7eb78158d7084c",
-    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1377.json": "43baaf1685026089c58280699564dd2e67ff323679a49e3686e0fd7e4a577746",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch1377.ts": "161cec2e03519490ff3b5742fb3513fbd3bbc3ce6535dda272010d63b3f6bcda"
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1377.json": "1cd24626ec907bc91a9cf0512fdca275db10f91b7cb16ce16e528429c81d682c",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1377.ts": "19bde68556771389f834b7b7429e409f8a650c19ee91d6f8bcdcbb6ae12c0590"
   },
   "historicalObservationPins": {
     "profile": "docs/hanja-actual-component-profiles-2026-10-22/u68b4-1.json",
@@ -186,5 +186,44 @@
     "buildRuns": 0,
     "tscRuns": 0,
     "oldActivationOrSourcegateTestsRerun": 0
+  },
+  "typeAlignmentMaintenance": {
+    "date": "2026-10-22",
+    "scope": "required-sourceReference-field-and-contextual-array-type-only",
+    "reason": "필수directionReviewSha256 추가와 core contextual타입검증; geometryLicense는 runtime동일 metadata spread로 보존",
+    "historicalActivationReviewSHA256": "ee560c833a6108474ec05c305156a471d61b8ca4449cab0b8a8f134897824dcd",
+    "historicalObservedInputPins": {
+      "module": "161cec2e03519490ff3b5742fb3513fbd3bbc3ce6535dda272010d63b3f6bcda",
+      "bundle": "43baaf1685026089c58280699564dd2e67ff323679a49e3686e0fd7e4a577746"
+    },
+    "readBeforeEditArtifactSHA256": {
+      "module": "161cec2e03519490ff3b5742fb3513fbd3bbc3ce6535dda272010d63b3f6bcda",
+      "bundle": "43baaf1685026089c58280699564dd2e67ff323679a49e3686e0fd7e4a577746"
+    },
+    "currentArtifactSHA256": {
+      "module": "19bde68556771389f834b7b7429e409f8a650c19ee91d6f8bcdcbb6ae12c0590",
+      "bundle": "1cd24626ec907bc91a9cf0512fdca275db10f91b7cb16ce16e528429c81d682c"
+    },
+    "directionEvidence": {
+      "path": "docs/hanja-goal-glyphwiki-batch915-2026-10-13/review.json",
+      "SHA256": "d276ba8319f3c1fef6f4d109c4ec075184f2b8edd1a70f9cc6dfd2880f91741d",
+      "meaning": "원915 공식11획 방향관찰. 새8m2 source-bound backfill microclock 동일성 승인0.",
+      "newOfficialObservation": false,
+      "microTimingEquivalenceClaim": false
+    },
+    "geometryLicenseRuntimeValueUnchanged": true,
+    "allOriginalPathsOutlinesGuideBoundsWidthWeightUnchanged": true,
+    "publicSourceAssetUnchanged": true,
+    "sourceAssetPath": "public/hanja-strokes/glyphwiki/u68b4-var-001.json",
+    "newRequiredPayloadFieldOnly": "sourceReference.directionReviewSha256",
+    "originalNativeAndRegistrationResultsUnchanged": true,
+    "originalHOLDAndFalseHistoryUnchanged": true,
+    "sourceEngineProjectionRuns": 0,
+    "SSR": 0,
+    "nativeRerun": 0,
+    "oldActivationTailRerun": 0,
+    "oldCountVerificationRerun": 0,
+    "newMetadataAndTypeStructureCheckOnly": true,
+    "changedTestFiles": false
   }
 }

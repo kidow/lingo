@@ -1,7 +1,9 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** 고정13p15m35 원캐시복제. false상수는source준비역사; 현재ROOT유한승인은별도review참조. */
+const GEOMETRY_LICENSE={"geometryLicense":{"spdx":"LicenseRef-GlyphWiki","attribution":"GlyphWiki Project and contributors","url":"https://glyphwiki.org/wiki/GlyphWiki:License@18","sourceUrl":"https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt","revision":"2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; individual revisions unavailable","editableSource":"/hanja-strokes/glyphwiki/u7d8e.json","modifications":"고정13p15m35 fixture를그대로제품복제. 원QQ1/2 독립mask와gap/H-L11/H-Q12/원35P/guide/width/weight 유지. 기하/분할0. 표시만 QQ2 contact-axis/11HJB/cap3 고유정책. 새내부공간배분이며공식미세시간동일성미증명."}}
 const EXPECTED: readonly HanjaDictionaryStrokeData[] = [
   {
+    ...GEOMETRY_LICENSE,
     "glyph": "綎",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
@@ -259,19 +261,12 @@ const EXPECTED: readonly HanjaDictionaryStrokeData[] = [
       "dictionarySvgSha256": "bac035241f678de2858085183d7b70052840313c5e0315f74ebac4beba0020a9",
       "dictionaryDirectionStrokes": "기존13획정적대응과공식1/2 macro7화면. 새표시의공식미세방향/시간동일성미증명.",
       "orderReviewSha256": "bcebc8d979a3c2bee98a4275c8e0ee14e6ada25b0bf0290c802d277884fef361",
-      "geometryReviewSha256": "128c94dc054b02292d8f6f048c3d992e4915148beee87c6ed3869c14004c2d2a"
-    },
-    "geometryLicense": {
-      "spdx": "LicenseRef-GlyphWiki",
-      "attribution": "GlyphWiki Project and contributors",
-      "url": "https://glyphwiki.org/wiki/GlyphWiki:License@18",
-      "sourceUrl": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
-      "revision": "2016-05-02 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; individual revisions unavailable",
-      "editableSource": "/hanja-strokes/glyphwiki/u7d8e.json",
-      "modifications": "고정13p15m35 fixture를그대로제품복제. 원QQ1/2 독립mask와gap/H-L11/H-Q12/원35P/guide/width/weight 유지. 기하/분할0. 표시만 QQ2 contact-axis/11HJB/cap3 고유정책. 새내부공간배분이며공식미세시간동일성미증명."
+      "geometryReviewSha256": "128c94dc054b02292d8f6f048c3d992e4915148beee87c6ed3869c14004c2d2a",
+      "directionReviewSha256": "bcebc8d979a3c2bee98a4275c8e0ee14e6ada25b0bf0290c802d277884fef361"
     }
   }
 ]
+
 function freezeDeep(value:unknown):void {if(value&&typeof value==='object'){for(const child of Object.values(value))freezeDeep(child);Object.freeze(value)}}
 freezeDeep(EXPECTED)
 function sameJSON(a:unknown,b:unknown):boolean {
@@ -291,4 +286,5 @@ export const GLYPHWIKI_BATCH1376_NATIVE_APPROVAL=false
 export const GLYPHWIKI_BATCH1376_RUNTIME_APPLIED=false
 export const GLYPHWIKI_BATCH1376_ASSIGNMENT_PROVISIONAL=true
 
+/** Immutable historical native-approval revision SHA; current metadata maintenance is recorded separately. */
 export const GLYPHWIKI_BATCH1376_APPROVAL_REVIEW=Object.freeze({path:"docs/hanja-actual-component-profiles-2026-10-22/u7d8e-activation-review.json",SHA256:"128c94dc054b02292d8f6f048c3d992e4915148beee87c6ed3869c14004c2d2a"})
