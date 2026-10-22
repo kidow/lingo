@@ -34,7 +34,7 @@
     "docs/hanja-goal-glyphwiki-batch857-2026-10-13/review.json": "02ff30be0d5871124736afe49e635b64eb93589ce8906f69ac15c475bed3b47d",
     "public/hanja-strokes/glyphwiki/u96ae.json": "a05d2fd334eb73181167cd13097d1d5aedb1e65ba9141c90836b49023bb3f204",
     "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1374.json": "481bc9ccb77a0fb27b591d5c5eaa1bcf54544f6ddc99d555ffa0da2f63f31766",
-    "lib/hanja-stroke-dictionary-glyphwiki-batch1374.ts": "635bf943185b49ac8953a19f6c7198e9a42316365be4a641ca5ba1460c4a7314"
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1374.ts": "742c0d686569e09f71b593d5c66a751ab36ff8537c33e2f2c2db352d462ed215"
   },
   "historicalObservationPins": {
     "profile": "docs/hanja-actual-component-profiles-2026-10-22/u96ae-1.json",
@@ -205,5 +205,19 @@
     "sourceGateRuns": 0,
     "actualRegistryTailRuns": 0,
     "build": false
+  },
+  "typeOnlyMaintenance": {
+    "rootCommit": "1d3c4bd4",
+    "change": "const EXPECTED: readonly HanjaDictionaryStrokeData[] contextual type only",
+    "rootVerification": {
+      "emittedJavaScriptBeforeAfterByteIdentical": true,
+      "ASTFiles": 4,
+      "ASTDiagnostics": 0
+    },
+    "runtimeEquivalent": true,
+    "historicalNativeResultsUnchanged": true,
+    "buildRuns": 0,
+    "tscRuns": 0,
+    "oldActivationOrSourcegateTestsRerun": 0
   }
 }

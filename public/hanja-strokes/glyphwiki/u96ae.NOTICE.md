@@ -8,4 +8,4 @@ ROOT 격리된 실제 StrokeOutlines 유효50화면을 유한 범위로 승인�
 
 성공서버 SSR1/CJS39/ESM39와 별도로 첫sandbox listen EPERM 전에 resources(false)가 실행되어 SSR/compile이 추가 실행되었을 수 있습니다. 첫실패를 SSR0으로 처리하지 않습니다. 두단계의engine/projection은0입니다.
 
-기록: [u96ae-activation-review.json](../../../docs/hanja-actual-component-profiles-2026-10-22/u96ae-activation-review.json) · SHA256 97f8d14455b21b3d5c6456c8bfd6c33d4246a6febf15b27272e4621cd0d9fcbe. author 등록검사0과 ROOT 신규tail 결과를 별도필드로 구분하며 현재수치는 ROOT검사 전 예상5789/189입니다. 공유39핀은 관찰당시 역사핀입니다.
+기록: [u96ae-activation-review.json](../../../docs/hanja-actual-component-profiles-2026-10-22/u96ae-activation-review.json) · SHA256 80aa738217fa8bbd9117aa2623a738a91b269f270c9f1e9aab45e213bb8cd69a. author 등록검사0과 ROOT 신규tail 결과를 별도필드로 구분하며 현재수치는 ROOT검사 전 예상5789/189입니다. 공유39핀은 관찰당시 역사핀입니다.
