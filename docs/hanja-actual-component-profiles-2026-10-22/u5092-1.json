@@ -1,0 +1,1339 @@
+{
+  "schema": "hanja-actual-component-profile/v1",
+  "component": "components/hanja/stroke-outlines.tsx",
+  "attrs": {},
+  "SSRPens": [],
+  "constantsFile": "lib/hanja-strokes.ts",
+  "constantLines": [
+    "const STROKE_PLAYBACK_SPEED = 1.5",
+    "export const STROKE_DURATION = 650 / STROKE_PLAYBACK_SPEED",
+    "export const STROKE_GAP = 180 / STROKE_PLAYBACK_SPEED"
+  ],
+  "constantsScanMaxBytes": 262144,
+  "versions": {
+    "react": "19.2.8",
+    "reactDOM": "19.2.8",
+    "scheduler": "0.27.0",
+    "typescript": "5.9.3"
+  },
+  "vendorSHA256": {
+    "react": "e7a035fea0b35de567a563966fdb5e05c01f01f8ff776770d3a44794990ba3d7",
+    "react-dom": "07d30cb25cb9bdf68b9dc7c9467b8f29d9c7ffe0f65c6ade9924e16ac207061b",
+    "react-dom-client": "261c3275492d8f0b1f9b76f78268882316c8435217c39c78c65853bdcd89d500",
+    "scheduler": "646eb671c8585382baff16daf92fe16a4cdd10dcf1a363c58b2ae1f6bf3a2b8d",
+    "jsx-runtime": "dd50fd0db2fba44e0eee66243a45c81cfa3774cf41e4e6c0c080a601815c694d"
+  },
+  "kind": "growing-u5092-caps",
+  "adapterSHA256": "42b7e4033e89def4fe8e1e60ac513a9ed9354f20a6792bad3c5c0365864d807f",
+  "sharedVersion": 82,
+  "sharedWindowPending": false,
+  "profileFinalized": true,
+  "executionEnabled": true,
+  "glyph": "傒",
+  "root": "u5092",
+  "pens": 12,
+  "masks": 14,
+  "polygons": 35,
+  "fixture": "docs/hanja-source-independent-qq2-u5092-source-experiment-2026-10-21/fixtures.json",
+  "fixtureKey": "u5092.strokes",
+  "geometrySHA256": "642621410227020153fb15458ea6231f0f65dcbc752ad836d4cb7b56666a0063",
+  "expectedMaskCounts": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "prefixes": [
+    0,
+    6,
+    7,
+    8,
+    12
+  ],
+  "sourceIdentity": {
+    "sourceRoot": "u5092",
+    "sourceProofFile": "engine-proof.json",
+    "sourceProofFileSha256": "4df5262150a106350598ea1e99134d87c2a21bd62a171bde1110ff94d3a1f13d"
+  },
+  "actualFull5File": "docs/hanja-goal-glyphwiki-batch1021-2026-10-13/engine-proof.json",
+  "actualFull5SHA256": "4df5262150a106350598ea1e99134d87c2a21bd62a171bde1110ff94d3a1f13d",
+  "inputSHA256": {
+    "lib/hanja-stroke-start-other-u7dc5.ts": "862e8d32c5d0bc3883fc78db6676234281548d9163c27b671e1eef26921befeb",
+    "lib/hanja-stroke-start-hq-u7dc5.ts": "0912c0c25b951731fa589cb7f6d7bf52793fe9d91a737badd8e0ea75c6873a9b",
+    "lib/hanja-stroke-start-caps-u61e5.ts": "f4eff051f5fdd390eb57ec8489c0bfafb4c6673733705bc88e95a37b202a775f",
+    "lib/hanja-stroke-source-foot-u61e5.ts": "98aee5ec267dc017ab9e97dc59a2f4fa7fa22ecce3dc619a143b292c745d43a6",
+    "lib/hanja-stroke-start-caps-u9b4b.ts": "5ab559824e3977fcbc2d3bc4a747d2bf9dc7ef6cf85513a0cf119b1b91bb705f",
+    "lib/hanja-stroke-start-caps-u7043.ts": "ff41b80104653b4f65a371d3e36f70a072c28c3180f209d1d4b0331ee70e788c",
+    "lib/hanja-stroke-start-caps-u84eb.ts": "1a35158f1174f1fd88efe15afab3edccfc29fc7bf6f758c7dfcafaef5148a31b",
+    "lib/hanja-stroke-start-caps-u906d-k.ts": "150ad9d0253f8345aca81a05be2834aca8e8c471422aee1c0cb707baa70e9efa",
+    "lib/hanja-stroke-start-caps-u97d4.ts": "836940055b8471ae5170fc59cc361948a2d4d335701ee06f92197935cbbcf10a",
+    "lib/hanja-stroke-source-foot-u906d-k.ts": "5259ae13683e71e8d7b882b694f2b2c919b7a76c604e87242571af42ed0fe3cd",
+    "lib/hanja-stroke-source-foot-u97d4.ts": "b08fe733651c7b937575a294427818d8786ecfa43afa44b169f2782a771cfd4c",
+    "lib/hanja-stroke-start-caps-u7e36.ts": "d72ee3b6198cbb61caa7057dfe9615c8fd904bd9b828fdc1753fcef91ed767e7",
+    "lib/hanja-stroke-start-caps-u93a1.ts": "b4ab92931b4a42a1ee82511e010492ff80dc1c785dc709649cecde8154010998",
+    "lib/hanja-stroke-start-caps-u8810.ts": "1cec22a89ec1af2e4354af14c143c220e4e36c406c5963e9d57f20dae3d7f9ba",
+    "lib/hanja-stroke-start-gate-u85fb-k.ts": "2be71dbe23e6b356a288c8c57d5426e6b6005d2388929b9e846f567e0b1c9c96",
+    "lib/hanja-stroke-start-caps-u568c.ts": "7a8ba0f2596b88d203679dab57e975327e4c54e93e9233d2b7ef3d98bbb4da26",
+    "lib/hanja-stroke-start-compound-u85fb.ts": "826042d41f7f8a5624755974025e46a8f3d863c96b4169f066d5d00308130711",
+    "lib/hanja-stroke-start-compound-u568c.ts": "7d5e44b10ae1956d7ffd7b2c89f93af207bfc262bb305e95375cc2ddefd63aaf",
+    "lib/hanja-stroke-source-foot-u7e36.ts": "fea5a1612a5629236b624141a144bb070947ea622173f011196347514cefe24a",
+    "lib/hanja-stroke-source-foot-u93a1.ts": "8d0c3172429fa947dbce1bc849191037e12114b13344f51b5f1d48388431731f",
+    "lib/hanja-stroke-source-foot-u8810.ts": "8d2efbd16a26eddb1988957bd29167e41f90017898d6a67f19b01c61821275b9",
+    "lib/hanja-stroke-source-foot-u85fb-k.ts": "691c376db8c497e90b407084996f1e6b7ea0c95fb0efb297b6045f349fcdbbba",
+    "lib/hanja-stroke-source-foot-u568c.ts": "ae62d9e1cc14f7d211a84ae1bab3e6448be8a047091e12e7bcc6458be1e192d3",
+    "lib/hanja-stroke-start-caps-u61e0.ts": "91a5ce7f727caf0017b7ce97f69df13ca1c02964548111b4eab34ee24eab6c13",
+    "lib/hanja-stroke-source-foot-u61e0.ts": "7347f3024f211be5f1e892e3296303f6bff6ebb943419fe80cbde88b476fde63",
+    "lib/hanja-stroke-start-caps-u51d7.ts": "181080dbf722a65a3a9c5b02fb47a53ec47e24269886aa12cd15e29bc37fb3ee",
+    "lib/hanja-stroke-start-gate-u51d7.ts": "0d02720f80f099a9f6ca5fed1cfcbb83cde1299d5204e8ea01a86b460685c035",
+    "lib/hanja-stroke-start-gate-u6f68.ts": "fa4336f9d6d5592c70680ad89c774a6989cb0174134bfd31477e152015be1e75",
+    "lib/hanja-stroke-start-gate-u6e4c.ts": "40808a6186371d77140f89106b555466037711852cb5df92fcd966ad6881035c",
+    "lib/hanja-stroke-source-foot-u6e4c.ts": "08b8c19dca7edd68a7b3c7e7a8aea5e9dc50e3132fb4241a5102b6860c951b11",
+    "lib/hanja-stroke-source-reuse-u7dc5.ts": "fa2a8f702381fadf4f131f4c37f84255ba88794f6a7ed5cb699ca70723270846",
+    "lib/hanja-stroke-start-gate-u7e86.ts": "1127ad53cc9d48904ab359bc4dea738014abcd8c20df72af4279e0f2cf2ea1da",
+    "lib/hanja-stroke-start-gate-u7e1d.ts": "f58bad28fc2dae0a102f2432fdcd46f7ecde850e5a00429931e9d72326d4151a",
+    "lib/hanja-stroke-start-gate-u73b9.ts": "e9949dbd44d77e4fa8a0b2c8c2f0c14b818f3525d8a156610e09fae0e045d24c",
+    "lib/hanja-stroke-start-gate-u7d8e.ts": "7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70",
+    "lib/hanja-stroke-source-clip-u7d8e.ts": "55175df2b275edd0d392e9f13e10734ed4614cbe9dc2a4c8d493d93567ce79cb",
+    "lib/hanja-stroke-start-caps-u7d8e.ts": "b7cba160349b496406d19d0dcba753200906381093fa2de7ebae80bc6ef2d8f9",
+    "lib/hanja-stroke-source-cap-u85af.ts": "aa4dc46ebfab26aa8833870f1ffd23c586ee84feb64e44119cb955f22af21fa5",
+    "lib/hanja-stroke-start-gate-u68b4.ts": "35bab3321db501e8759c0b5a022b51601c94fd8854513cf013defec2724b214b",
+    "lib/hanja-stroke-start-gate-u96ae.ts": "c6384d3d729500a7e7bb3b2202990ec515801721627850e88007e8a53a15a947",
+    "lib/hanja-stroke-start-gate-u7a67.ts": "fe24068e0428c4b59a5737fb7d873bc85aa406acefbc85084a2d647c2cc132c1",
+    "lib/hanja-stroke-start-gate-u686d.ts": "87b8eb126bef1fd11929d6fc7b89318f84c7445f8c5a0f441eee5fd954742027",
+    "lib/hanja-stroke-start-gate-u795b.ts": "52d864d1deb8437f0275dc8aa073ce3984695068df2c7fbd880086120d7a11bf",
+    "lib/hanja-stroke-source-foot-u9e80.ts": "ec875bf079c11150b19e8c5d488fdf4751fd525b6b782e58dc64eb3afc0aa885",
+    "lib/hanja-stroke-source-foot-u7d70.ts": "f650cd4d38c9157ab8f672b71f703287a881cbccc263903f2a59d0288bb16811",
+    "lib/hanja-stroke-start-gate-u5611.ts": "bbb2451ea122e350f1ef0ee09af0eae43dc829c11fd59dde6c55decbd56cd84b",
+    "lib/hanja-stroke-start-gate-u8a29.ts": "934888e6b7edf95ef5d5b5a26513e475d839aecfea07c83dd93955bd9dec6df1",
+    "lib/hanja-stroke-start-gate-u4fd3.ts": "5e4d42771b7a59ad72eec3faab47e5a1741afd8319d81ba6db6074ddd0c8451d",
+    "lib/hanja-stroke-start-gate-u82fd.ts": "ede5d9e900f48cb466138acfb8cc07cfa8a7d30719093180204c652b8c19eac3",
+    "lib/hanja-stroke-start-gate-u6f90.ts": "d9d8e37955b131f12604ea82068e276c2e1241abbed0150363fc7db96075ff48",
+    "lib/hanja-stroke-start-gate-u90b0.ts": "b428f6c24968e2e21e6e909b5c7cded1befb9b99435f986905500857c23921ea",
+    "lib/hanja-stroke-contact-foot-u90b0.ts": "c91d9f2bbc41b75e9855831e5ed6fb246c64c3da96a814c25cb7444e3d192077",
+    "lib/hanja-stroke-start-gate-u6e7a.ts": "6c4384d3db8e9d0043936548efb0264462de4ef2fe1c7886c0b7500969f7bd89",
+    "lib/hanja-stroke-start-gate-u7d85.ts": "9950ab90953cf21347797dc7417c801f07a4b89633db972c03ab29e47ab29a89",
+    "lib/hanja-stroke-start-gate-u7d7a.ts": "eb445f1f9afb0979ade777c495a16185e40cbfdcef74001a07b29dd15ea5c6d9",
+    "lib/hanja-stroke-start-gate-u84b2.ts": "1d69ed73776afde3ea44548c39b653eb7a1c37a51f4caf9ab3f5be2ffb893baf",
+    "lib/hanja-stroke-start-gate-u7c1c.ts": "0a915bbaba4bdb858b4349fbb9b16bd413cd34700a4321fbf36a1e73a1433f73",
+    "lib/hanja-stroke-start-gate-u8fed.ts": "c166fe87adb3db61fda140bf963dd925e4076e925997833c3b683c200badec26",
+    "lib/hanja-stroke-start-gate-u928d.ts": "50eb176f4db69eeb39a3a7f0af3b147eaba44118c8b974223357458d75eba3bf",
+    "lib/hanja-stroke-start-gate-u9081.ts": "7a58927ef750acee31d2975b08b07f23ba2fbfdfc5af729272abdc7db8b16585",
+    "lib/hanja-stroke-start-gate-u564b.ts": "ca01869bb519fb57827704909aeec3e2b8071bd311915c5340ddb975fcd1c613",
+    "lib/hanja-stroke-start-gate-u68b2.ts": "fe77ebf811228ca5c6ddefedbea354f8e4233d00851e0d4200c207c05492180f",
+    "lib/hanja-stroke-start-gate-u6f57.ts": "a7b35a0aae7b35afede3d123cfc8b736a6d56ae46cb54bbd5b3286949896cac5",
+    "lib/hanja-stroke-start-gate-u905d.ts": "963ba442d0a9217fc191dbb3ed4277fcc854c92e926c214d0c0c07a2d3366dbf",
+    "lib/hanja-stroke-start-gate-u8cb6.ts": "0af422a86d3eb458af58384108ad283a2119b91c435372ece85e41e766939c07",
+    "lib/hanja-stroke-start-gate-u9148.ts": "8a566486c6ba4c214f89af62c5b42e270aa53ab50644d7c0bc8bd125ed1d35b4",
+    "lib/hanja-stroke-start-gate-u7037.ts": "ec09bcea8d5a8557a3d27d754cbfae86df07857bc496da08693fbb0e341a3868",
+    "lib/hanja-stroke-start-gate-u7d3d.ts": "f821ad2913459ae6a37d3bc84b211ce9f84b06f87fcaa3ec3c2f63008b891a44",
+    "lib/hanja-stroke-contact-foot-u7d3d.ts": "63c0e90c46550b2d50eba6f4bc039905fda246cb00bed1469809b01b0dc1a872",
+    "lib/hanja-stroke-start-gate-u6303.ts": "9774d49905f6d8f98c18d8e585296769065916f40de9a84e09254ea4b73c7ef8",
+    "lib/hanja-stroke-start-gate-u7277.ts": "43757c391fc54957e04ae8f7116aa57dce06c8dc49f700b62ca2a4bd6046946b",
+    "lib/hanja-stroke-start-gate-can.ts": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7",
+    "lib/hanja-stroke-start-gate-di.ts": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+    "lib/hanja-stroke-start-gate-si.ts": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+    "lib/hanja-stroke-outline.ts": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+    "lib/hanja-stroke-start-gate.ts": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+    "components/hanja/stroke-outlines.tsx": "f384a0fa9b1ca97848db5586daffe8604fe2134489b8a4c473b6f46edef43b62",
+    "lib/hanja-stroke-start-caps-u7050.ts": "203c1e0bc9ed033dfc568427672ce6e7ee03e552776383ab04dbbb3cbbbf5510",
+    "lib/hanja-stroke-start-caps-u7e10.ts": "239610422bb01b06dd5dd8bcbff9542447f18f11d5b223c3e3ed202aa4d77243",
+    "lib/hanja-stroke-source-foot-u7e10.ts": "41b8b8bb8b736aa485a080cf5fb17d22239a9346b48414fcf2d12f70be6c6567",
+    "lib/hanja-stroke-start-caps-u5b76.ts": "99e199a1b5a17f6f61151fb6f2546218222a06387d3d439955926b5f4e789fd9",
+    "lib/hanja-stroke-source-foot-u5b76.ts": "0d7cadd15291d51452ec93fd535cf99660d6b0c97f944b55c67651264d3e8779",
+    "lib/hanja-stroke-start-caps-u8629.ts": "17cece69a64cf8575ad7395b3e1205de49549684f7eaae728e4cbfe9584a80e9",
+    "lib/hanja-stroke-source-foot-u8629.ts": "bde303c08b4441c5d93b7827c45467cb74f680c425f8bc7ff007407ac2b0b8ac",
+    "lib/hanja-stroke-source-y-u8629.ts": "665d83b9bccc7e47d664ba37b2fcf4f95140a9fb1e23d9820733bd95fd4778b1",
+    "lib/hanja-stroke-source-oblique-u8629.ts": "7696a01a1638c052b8621f03a584c3c5dc76d7d99b01ade712e49e9ec4921fbd",
+    "lib/hanja-stroke-start-caps-u9654.ts": "1a0cf534e83cdd9c75024847a61e6d71169f0409db51c9481371f64ba15804d2",
+    "lib/hanja-stroke-start-caps-u9654.test.ts": "c0f0a31629a0d8b015fa6246d160fe6378db10152e081c17923abd0459814921",
+    "lib/hanja-stroke-source-foot-u9654.ts": "d95028dad0d1568a49aa0e3c02b1684da5df827c86de8cf439994489f09b7801",
+    "lib/hanja-stroke-source-foot-u9654.test.ts": "a4a3a23d0b13ce36a5b8ef4e5a2ba3596a6c5c377e55293bb097ec03cda32900",
+    "docs/hanja-source-independent-qq2-u5092-source-experiment-2026-10-21/fixtures.json": "1e6e1ccaaf07bc0204df4bde76d0c12e14926077864d57c178a274d475d10971",
+    "docs/hanja-source-independent-qq2-u5092-source-experiment-2026-10-21/config.json": "c3b16b704464a17ae4582b42b2d2879c7691f24993b8c6dbe39ceca5a9fac88a",
+    "docs/hanja-goal-glyphwiki-batch1021-2026-10-13/engine-proof.json": "4df5262150a106350598ea1e99134d87c2a21bd62a171bde1110ff94d3a1f13d",
+    "docs/hanja-u5092-qq2-start-geometry-proof-2026-10-22/README.md": "fb0952376a8c1cc2fce8c7b470a58b15b37ad76544ab20abb68f5b76ddd1be13",
+    "docs/hanja-source-native-review-qq2-u5092-2026-10-22/review.json": "5fca36b13ddc2369849f897471915b0ca2f80515bc5a1ca9a69a391df2190a75",
+    "docs/hanja-official-media-compare-u5092-2026-10-23/config.json": "01a166bcf73ffcb317a0e84534786be714ac2493cf283d956c2d4bb33d5b7540",
+    "docs/hanja-official-media-compare-u5092-2026-10-23/metadata.json": "0758d896734fac09e9bbf275e575f30ad3f6f9aa0c978597b0f13c30c5fabaca",
+    "lib/hanja-stroke-start-caps-u5092.ts": "f1203494e68ed648456dbb1ce9be239b49bb8c75e0f7f450effcede70fa0fd95",
+    "lib/hanja-stroke-source-foot-u5092.ts": "738e2e9fc35309117acdc926dafa4f817d556582548e180444d37686d684f218"
+  },
+  "targets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "id": "u5092-1-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M37.1 9.1 L34.55 14.65 L31.9 20.1 L29.1 25.4 L26.15 30.6 L23.1 35.65 L19.9 40.6 L16.55 45.35 L13.1 50 L9.45 54.5 L5.6 58.75 L4.85 58.2 L7.9 53.35 L10.9 48.5 L13.8 43.6 L16.65 38.6 L19.4 33.55 L22.05 28.4 L24.6 23.15 L27.05 17.8 L29.35 12.35 L31.55 6.8 Z M31.4 7.25 L31.85 6.15 L37.1 9.1 Z M37.1 9.1 L38.1 10.6 L35.25 11 Z",
+        "bounds": [
+          4.85,
+          6.15,
+          38.1,
+          58.75
+        ],
+        "direction": "curve",
+        "weight": 58.823657,
+        "revealPath": "M34.5625 7.5 Q22.75 36 5.25 58.5",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "5227dbb8de43883d784837f7935e911b657ff4fda4998ada3c55ef9067cae50e",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        34.5625,
+        7.5
+      ],
+      "certificate": {
+        "pen": 1,
+        "mask": 1,
+        "syntax": "MQ",
+        "guide": "M34.5625 7.5 Q22.75 36 5.25 58.5",
+        "width": 14,
+        "weight": 58.823657,
+        "A": [
+          "553/16",
+          "15/2"
+        ],
+        "u": [
+          "-189/16",
+          "57/2"
+        ],
+        "v": [
+          "-91/16",
+          "-6"
+        ],
+        "T": "1/4",
+        "K": "1/100",
+        "lambdaMin": "3703393/4096",
+        "lambdaMinAt": "1/4",
+        "cross": "7455/32",
+        "chordSquaredAtT": "15186313/65536",
+        "chordSquaredMinus49": "11975049/65536",
+        "curvatureMargin": "41468200806621639457/171798691840000",
+        "rK": "7/100",
+        "cosLower": "19951/20000",
+        "cosMinusRK": "18551/20000",
+        "tangentSquareMargin": "396082401/400000000",
+        "injectiveAxis": "x",
+        "derivativeEndpoints": [
+          "-189/8",
+          "-847/32"
+        ],
+        "initialSufficientConditions": true,
+        "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+        "initialKind": "single-quadratic",
+        "radius": 7,
+        "maskSHA256": "5227dbb8de43883d784837f7935e911b657ff4fda4998ada3c55ef9067cae50e",
+        "certificateOrigin": "new-unique-fraction-batch",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true
+      }
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "id": "u5092-3-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M84.95 12 L81.35 12.8 L77.75 13.6 L74.05 14.3 L70.3 14.95 L66.5 15.6 L62.65 16.15 L58.7 16.6 L54.75 17 L50.7 17.3 L46.55 17.4 L46.45 16.55 L50.4 15.4 L54.25 14.4 L58.1 13.4 L61.9 12.4 L65.6 11.45 L69.3 10.45 L72.9 9.4 L76.45 8.4 L79.9 7.3 L83.3 6.2 Z M82.85 6.35 L88.4 11 L84.95 12 Z M88.4 11 L88.55 12.55 L85.05 10.95 Z",
+        "bounds": [
+          46.45,
+          6.2,
+          88.55,
+          17.4
+        ],
+        "direction": "curve",
+        "weight": 38.945516,
+        "revealPath": "M84.64 9 Q66.82 14 46.525 17",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "304c896488d2e317393b054c605fe80c64ec277655025e353979837514a525f4",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        84.64,
+        9
+      ],
+      "certificate": {
+        "pen": 3,
+        "mask": 1,
+        "syntax": "MQ",
+        "guide": "M84.64 9 Q66.82 14 46.525 17",
+        "width": 14,
+        "weight": 38.945516,
+        "A": [
+          "2116/25",
+          "9"
+        ],
+        "u": [
+          "-891/50",
+          "5"
+        ],
+        "v": [
+          "-99/40",
+          "-2"
+        ],
+        "T": "1/4",
+        "K": "1/100",
+        "lambdaMin": "856381/2500",
+        "lambdaMinAt": "0",
+        "cross": "9603/200",
+        "chordSquaredAtT": "899166049/10240000",
+        "chordSquaredMinus49": "397406049/10240000",
+        "curvatureMargin": "538003647287691841/39062500000000",
+        "rK": "7/100",
+        "cosLower": "19951/20000",
+        "cosMinusRK": "18551/20000",
+        "tangentSquareMargin": "396082401/400000000",
+        "injectiveAxis": "x",
+        "derivativeEndpoints": [
+          "-891/25",
+          "-14751/400"
+        ],
+        "initialSufficientConditions": true,
+        "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+        "initialKind": "single-quadratic",
+        "radius": 7,
+        "maskSHA256": "304c896488d2e317393b054c605fe80c64ec277655025e353979837514a525f4",
+        "certificateOrigin": "new-unique-fraction-batch",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true
+      }
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "id": "u5092-4-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M50.7 15.35 L49.75 17.85 L48.7 20.3 L47.6 22.75 L46.45 25.15 L45.2 27.5 L43.85 29.75 L42.45 32 L40.9 34.15 L39.25 36.25 L37.5 38.2 L36.7 37.75 L37.65 35.3 L38.55 32.85 L39.5 30.5 L40.45 28.1 L41.3 25.7 L42.15 23.3 L42.95 20.9 L43.65 18.5 L44.35 16.05 L44.95 13.6 Z M44.8 14.05 L45.2 12.8 L50.7 15.35 Z M50.7 15.35 L51.85 16.7 L49 17.45 Z",
+        "bounds": [
+          36.7,
+          12.8,
+          51.85,
+          38.2
+        ],
+        "direction": "curve",
+        "weight": 26.355115,
+        "revealPath": "M48.01 14 Q44.05 27 37.12 38",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "22e3e81de15e2eca239b9df49e100eb68a643c9668cf9b3ebfccaf7fb3f526d6",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        48.01,
+        14
+      ],
+      "certificate": {
+        "pen": 4,
+        "mask": 1,
+        "syntax": "MQ",
+        "guide": "M48.01 14 Q44.05 27 37.12 38",
+        "width": 14,
+        "weight": 26.355115,
+        "A": [
+          "4801/100",
+          "14"
+        ],
+        "u": [
+          "-99/25",
+          "13"
+        ],
+        "v": [
+          "-297/100",
+          "-2"
+        ],
+        "T": "1/3",
+        "K": "1/100",
+        "lambdaMin": "635809/3600",
+        "lambdaMinAt": "1/3",
+        "cross": "4653/100",
+        "chordSquaredAtT": "64904929/810000",
+        "chordSquaredMinus49": "25214929/810000",
+        "curvatureMargin": "4497378814780129/116640000000000",
+        "rK": "7/100",
+        "cosLower": "19951/20000",
+        "cosMinusRK": "18551/20000",
+        "tangentSquareMargin": "396082401/400000000",
+        "injectiveAxis": "x",
+        "derivativeEndpoints": [
+          "-198/25",
+          "-99/10"
+        ],
+        "initialSufficientConditions": true,
+        "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+        "initialKind": "single-quadratic",
+        "radius": 7,
+        "maskSHA256": "22e3e81de15e2eca239b9df49e100eb68a643c9668cf9b3ebfccaf7fb3f526d6",
+        "certificateOrigin": "new-unique-fraction-batch",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true
+      }
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "id": "u5092-5-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M60.55 18 L61.55 18.85 L62.65 19.6 L63.7 20.45 L64.7 21.3 L65.65 22.25 L66.5 23.25 L67.3 24.3 L68 25.4 L68.7 26.55 L69.25 27.7 L63.5 29.35 L63.4 28.35 L63.25 27.3 L63.05 26.25 L62.8 25.2 L62.5 24.15 L62.1 23.05 L61.7 21.95 L61.2 20.85 L60.65 19.65 L59.9 18.65 Z M69.25 27.7 L69 30 L67.2 31.4 L64.95 31.1 L63.5 29.35 Z",
+        "bounds": [
+          59.9,
+          18,
+          69.25,
+          31.4
+        ],
+        "direction": "curve",
+        "weight": 13.857305,
+        "revealPath": "M59.89 18 Q64.84 23 66.82 30",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "0d1ef486dd4405332e23d5b0a8c02a49428571c275d70f5c9fa9fa611eceab06",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        59.89,
+        18
+      ],
+      "certificate": {
+        "pen": 5,
+        "mask": 1,
+        "syntax": "MQ",
+        "guide": "M59.89 18 Q64.84 23 66.82 30",
+        "width": 14,
+        "weight": 13.857305,
+        "A": [
+          "5989/100",
+          "18"
+        ],
+        "u": [
+          "99/20",
+          "5"
+        ],
+        "v": [
+          "-297/100",
+          "2"
+        ],
+        "T": "2/3",
+        "K": "1/25",
+        "lambdaMin": "6125625/128209",
+        "lambdaMinAt": "47015/128209",
+        "cross": "99/4",
+        "chordSquaredAtT": "4301344/50625",
+        "chordSquaredMinus49": "1820719/50625",
+        "curvatureMargin": "2881969097267742471/33719064810133264",
+        "rK": "7/25",
+        "cosLower": "1201/1250",
+        "cosMinusRK": "851/1250",
+        "tangentSquareMargin": "1319901/1562500",
+        "injectiveAxis": "x",
+        "derivativeEndpoints": [
+          "99/10",
+          "297/50"
+        ],
+        "initialSufficientConditions": true,
+        "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+        "initialKind": "single-quadratic",
+        "radius": 7,
+        "maskSHA256": "0d1ef486dd4405332e23d5b0a8c02a49428571c275d70f5c9fa9fa611eceab06",
+        "certificateOrigin": "new-unique-fraction-batch",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true
+      }
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "id": "u5092-6-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M78.35 15.9 L80 16.9 L81.65 17.8 L83.2 18.85 L84.7 20 L86.05 21.25 L87.35 22.5 L88.6 23.9 L89.7 25.3 L90.75 26.8 L91.7 28.4 L86.2 30.8 L85.75 29.35 L85.2 27.95 L84.55 26.5 L83.85 25.1 L83.05 23.7 L82.2 22.3 L81.2 20.85 L80.2 19.45 L79.1 18 L77.8 16.65 Z M91.7 28.4 L91.75 30.7 L90.15 32.35 L87.9 32.35 L86.2 30.8 Z",
+        "bounds": [
+          77.8,
+          15.9,
+          91.75,
+          32.35
+        ],
+        "direction": "curve",
+        "weight": 19.134639,
+        "revealPath": "M77.71 16 Q85.63 22 89.59 31",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "91145c5b9d88270ed2e6a73150552841e9921e20599ec49264637818185b660c",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        77.71,
+        16
+      ],
+      "certificate": {
+        "pen": 6,
+        "mask": 1,
+        "syntax": "MQ",
+        "guide": "M77.71 16 Q85.63 22 89.59 31",
+        "width": 14,
+        "weight": 19.134639,
+        "A": [
+          "7771/100",
+          "16"
+        ],
+        "u": [
+          "198/25",
+          "6"
+        ],
+        "v": [
+          "-99/25",
+          "3"
+        ],
+        "T": "1/2",
+        "K": "1/32",
+        "lambdaMin": "114417/1250",
+        "lambdaMinAt": "1/2",
+        "cross": "1188/25",
+        "chordSquaredAtT": "467937/5000",
+        "chordSquaredMinus49": "222937/5000",
+        "curvatureMargin": "368786338549713/500000000000",
+        "rK": "7/32",
+        "cosLower": "1999/2048",
+        "cosMinusRK": "1551/2048",
+        "tangentSquareMargin": "3795297/4194304",
+        "injectiveAxis": "x",
+        "derivativeEndpoints": [
+          "396/25",
+          "297/25"
+        ],
+        "initialSufficientConditions": true,
+        "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+        "initialKind": "single-quadratic",
+        "radius": 7,
+        "maskSHA256": "91145c5b9d88270ed2e6a73150552841e9921e20599ec49264637818185b660c",
+        "certificateOrigin": "new-unique-fraction-batch",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true
+      }
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "id": "u5092-7-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M63.85 32.25 L62.75 33.3 L61.65 34.35 L60.5 35.45 L59.35 36.6 L58.1 37.75 L56.85 39 L55.55 40.25 L54.15 41.55 L52.7 42.85 L51.3 44.25 L50.6 43.7 L51.55 41.95 L52.4 40.2 L53.3 38.55 L54.15 36.9 L55.05 35.4 L55.9 33.9 L56.75 32.45 L57.6 31.05 L58.4 29.75 L59.2 28.45 Z M58.9 28.85 L59.4 28.2 L63.85 32.25 Z M63.85 32.25 L64.35 34 L61.5 33.55 Z",
+        "bounds": [
+          50.6,
+          28.2,
+          64.35,
+          44.25
+        ],
+        "direction": "curve",
+        "weight": 17.736744,
+        "revealPath": "M61.87 30 Q56.92 36 50.98 44",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "afeff9704be9e1ff9e89871bfc5527b527ef46bcf1571af1601b207d90e0191e",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        61.87,
+        30
+      ],
+      "certificate": {
+        "pen": 7,
+        "mask": 1,
+        "syntax": "MQ",
+        "initialKind": "single-quadratic",
+        "guide": "M61.87 30 Q56.92 36 50.98 44",
+        "width": 14,
+        "radius": 7,
+        "weight": 17.736744,
+        "maskSHA256": "afeff9704be9e1ff9e89871bfc5527b527ef46bcf1571af1601b207d90e0191e",
+        "originalProofMaskSHA256": "afeff9704be9e1ff9e89871bfc5527b527ef46bcf1571af1601b207d90e0191e",
+        "sourceProofDocument": "docs/hanja-u5092-qq2-start-geometry-proof-2026-10-22/README.md",
+        "sourceProofDocumentSHA256": "fb0952376a8c1cc2fce8c7b470a58b15b37ad76544ab20abb68f5b76ddd1be13",
+        "certificateOrigin": "reused-fixed-guide-proof",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "initialSufficientConditions": true,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true,
+        "T": "1/2",
+        "K": "1/100",
+        "lambdaMin": "24201/400",
+        "chordSquaredMinus49": "3242241/160000",
+        "curvatureMargin": "11665188992601/160000000000",
+        "cosMinusRK": "18551/20000",
+        "storedOriginalProofSectionSHA256": "f82f80244f84bdb9b77d8d881a0f48261fe4d4251bda2345c6f6b0d7522e84c2"
+      }
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "id": "u5092-8-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M78.6 37.35 L76.55 39.4 L74.45 41.45 L72.35 43.45 L70.2 45.5 L68 47.55 L65.8 49.55 L63.5 51.55 L61.15 53.55 L58.75 55.45 L56.2 57.3 L55.6 56.65 L57.4 54.1 L59.25 51.65 L61.15 49.25 L63.05 46.9 L64.9 44.6 L66.8 42.3 L68.65 40.05 L70.5 37.8 L72.35 35.55 L74.15 33.35 Z M73.8 33.7 L74.3 33.15 L78.6 37.35 Z M78.6 37.35 L79.05 39.1 L76.15 38.55 Z",
+        "bounds": [
+          55.6,
+          33.15,
+          79.05,
+          57.3
+        ],
+        "direction": "curve",
+        "weight": 30.269194,
+        "revealPath": "M76.72 35 Q66.82 46 55.93 57",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "54915e8e59bbe5f893e865811fb7200effffbd2221a5714e67125b75bbc1fb5b",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        76.72,
+        35
+      ],
+      "certificate": {
+        "pen": 8,
+        "mask": 1,
+        "syntax": "MQ",
+        "initialKind": "single-quadratic",
+        "guide": "M76.72 35 Q66.82 46 55.93 57",
+        "width": 14,
+        "radius": 7,
+        "weight": 30.269194,
+        "maskSHA256": "54915e8e59bbe5f893e865811fb7200effffbd2221a5714e67125b75bbc1fb5b",
+        "originalProofMaskSHA256": "54915e8e59bbe5f893e865811fb7200effffbd2221a5714e67125b75bbc1fb5b",
+        "sourceProofDocument": "docs/hanja-u5092-qq2-start-geometry-proof-2026-10-22/README.md",
+        "sourceProofDocumentSHA256": "fb0952376a8c1cc2fce8c7b470a58b15b37ad76544ab20abb68f5b76ddd1be13",
+        "certificateOrigin": "reused-fixed-guide-proof",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "initialSufficientConditions": true,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true,
+        "T": "1/2",
+        "K": "1/100",
+        "lambdaMin": "21901/100",
+        "chordSquaredMinus49": "27995481/160000",
+        "curvatureMargin": "10208417645701/2500000000",
+        "cosMinusRK": "18551/20000",
+        "storedOriginalProofSectionSHA256": "b4f92085c00ec322af591d77bdccb971caa272d787e94fa04487edb4b2fd3bd7"
+      }
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "id": "u5092-9-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M76.35 47.85 L78.15 48.6 L79.95 49.3 L81.7 50.1 L83.3 51.05 L84.85 52.05 L86.3 53.1 L87.7 54.25 L89 55.45 L90.2 56.75 L91.35 58.1 L86.2 61.3 L85.6 60 L84.9 58.7 L84.1 57.45 L83.2 56.15 L82.25 54.9 L81.15 53.65 L80 52.4 L78.75 51.1 L77.4 49.8 L75.9 48.6 Z M91.35 58.1 L91.65 60.4 L90.35 62.25 L88.1 62.6 L86.2 61.3 Z",
+        "bounds": [
+          75.9,
+          47.85,
+          91.65,
+          62.6
+        ],
+        "direction": "curve",
+        "weight": 19.002621,
+        "revealPath": "M75.73 48 Q84.64 53 89.59 61",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "a8d02ebf451cea2e3ac11ee0b1f9d6467fc19ea1bf47a6053725c132865c2444",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        75.73,
+        48
+      ],
+      "certificate": {
+        "pen": 9,
+        "mask": 1,
+        "syntax": "MQ",
+        "guide": "M75.73 48 Q84.64 53 89.59 61",
+        "width": 14,
+        "weight": 19.002621,
+        "A": [
+          "7573/100",
+          "48"
+        ],
+        "u": [
+          "891/100",
+          "5"
+        ],
+        "v": [
+          "-99/25",
+          "3"
+        ],
+        "T": "1/2",
+        "K": "1/32",
+        "lambdaMin": "902749/10000",
+        "lambdaMinAt": "1/2",
+        "cross": "4653/100",
+        "chordSquaredAtT": "957889/10000",
+        "chordSquaredMinus49": "467889/10000",
+        "curvatureMargin": "181450024276895749/256000000000000",
+        "rK": "7/32",
+        "cosLower": "1999/2048",
+        "cosMinusRK": "1551/2048",
+        "tangentSquareMargin": "3795297/4194304",
+        "injectiveAxis": "x",
+        "derivativeEndpoints": [
+          "891/50",
+          "693/50"
+        ],
+        "initialSufficientConditions": true,
+        "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+        "initialKind": "single-quadratic",
+        "radius": 7,
+        "maskSHA256": "a8d02ebf451cea2e3ac11ee0b1f9d6467fc19ea1bf47a6053725c132865c2444",
+        "certificateOrigin": "new-unique-fraction-batch",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true
+      }
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "id": "u5092-11-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M66.75 62.8 L65.7 68 L64.15 72.8 L62 77.2 L59.35 81.1 L56.15 84.6 L52.5 87.55 L48.35 90.05 L43.75 92.05 L38.7 93.5 L33.25 94.4 L33.05 93.55 L38.15 91.7 L42.7 89.55 L46.7 87.2 L50.2 84.55 L53.15 81.6 L55.6 78.4 L57.55 74.85 L59.1 70.95 L60.15 66.75 L60.8 62.15 Z M60.75 62.65 L60.9 61.1 L66.75 62.8 Z M66.75 62.8 L68.15 64 L65.45 65.2 Z",
+        "bounds": [
+          33.05,
+          61.1,
+          68.15,
+          94.4
+        ],
+        "direction": "curve",
+        "weight": 44.338201,
+        "revealPath": "M63.849999999999994 62 Q60.88 88 33.16 94",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "74fc6521bb7ea8b1649536953340caade05fee26361e8a630f049d98dc6b9150",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        63.849999999999994,
+        62
+      ],
+      "certificate": {
+        "pen": 11,
+        "mask": 1,
+        "syntax": "MQ",
+        "guide": "M63.849999999999994 62 Q60.88 88 33.16 94",
+        "width": 14,
+        "weight": 44.338201,
+        "A": [
+          "31924999999999997/500000000000000",
+          "62"
+        ],
+        "u": [
+          "-1484999999999997/500000000000000",
+          "26"
+        ],
+        "v": [
+          "-12375000000000003/500000000000000",
+          "-20"
+        ],
+        "T": "1/4",
+        "K": "1/32",
+        "lambdaMin": "2099439224999999670330000000000081/4000000000000000000000000000000",
+        "lambdaMinAt": "1/4",
+        "cross": "175725000000000009/250000000000000",
+        "chordSquaredAtT": "9424305024999998981290000000000441/64000000000000000000000000000000",
+        "chordSquaredMinus49": "6288305024999998981290000000000441/64000000000000000000000000000000",
+        "curvatureMargin": "1158766098285832619604896159961030208542555549387174348382342567733063328374993511105390000000531441/16384000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "rK": "7/32",
+        "cosLower": "1999/2048",
+        "cosMinusRK": "1551/2048",
+        "tangentSquareMargin": "3795297/4194304",
+        "injectiveAxis": "x",
+        "derivativeEndpoints": [
+          "-1484999999999997/250000000000000",
+          "-18314999999999991/1000000000000000"
+        ],
+        "initialSufficientConditions": true,
+        "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+        "initialKind": "single-quadratic",
+        "radius": 7,
+        "maskSHA256": "74fc6521bb7ea8b1649536953340caade05fee26361e8a630f049d98dc6b9150",
+        "certificateOrigin": "new-unique-fraction-batch",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true
+      }
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "id": "u5092-12-1",
+      "kind": "growing-u5092-caps",
+      "segment": {
+        "outline": "M65.45 72.2 L67.35 74.5 L69.3 76.6 L71.25 78.55 L73.3 80.3 L75.5 81.9 L77.8 83.3 L80.25 84.55 L82.85 85.6 L85.55 86.55 L88.5 87.3 L86.7 93.65 L83.45 92.45 L80.4 91 L77.55 89.4 L74.95 87.55 L72.55 85.55 L70.4 83.3 L68.5 80.95 L66.9 78.35 L65.6 75.6 L64.65 72.6 Z M86.7 93.65 L88.5 87.3 L92.5 88.45 Z",
+        "bounds": [
+          64.65,
+          72.2,
+          92.5,
+          93.65
+        ],
+        "direction": "curve",
+        "weight": 29.338079,
+        "revealPath": "M64.84 72 Q71.77 86 87.61 90.5",
+        "revealWidth": 14
+      },
+      "sourceFieldSHA256": "93843baac42a3327701cb7c8be28e63cf67034c79636053ffa647f52f13f2210",
+      "radius": 7,
+      "minimumLength": 7,
+      "q0": [
+        64.84,
+        72
+      ],
+      "certificate": {
+        "pen": 12,
+        "mask": 1,
+        "syntax": "MQ",
+        "guide": "M64.84 72 Q71.77 86 87.61 90.5",
+        "width": 14,
+        "weight": 29.338079,
+        "A": [
+          "1621/25",
+          "72"
+        ],
+        "u": [
+          "693/100",
+          "14"
+        ],
+        "v": [
+          "891/100",
+          "-19/2"
+        ],
+        "T": "1/4",
+        "K": "1/32",
+        "lambdaMin": "35040069/160000",
+        "lambdaMinAt": "1/4",
+        "cross": "-7623/40",
+        "chordSquaredAtT": "5858869/102400",
+        "chordSquaredMinus49": "841269/102400",
+        "curvatureMargin": "4939368077991676648509/1048576000000000000",
+        "rK": "7/32",
+        "cosLower": "1999/2048",
+        "cosMinusRK": "1551/2048",
+        "tangentSquareMargin": "3795297/4194304",
+        "injectiveAxis": "x",
+        "derivativeEndpoints": [
+          "693/50",
+          "3663/200"
+        ],
+        "initialSufficientConditions": true,
+        "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+        "initialKind": "single-quadratic",
+        "radius": 7,
+        "maskSHA256": "93843baac42a3327701cb7c8be28e63cf67034c79636053ffa647f52f13f2210",
+        "certificateOrigin": "new-unique-fraction-batch",
+        "oldMathReexecuted": false,
+        "initialArcMax": 7,
+        "UAFullOriginalGuideRequired": true,
+        "previousMaskContactNotProved": true,
+        "sourcePConnectedNotProved": true,
+        "fullCoverageNotProved": true,
+        "fullSweepNotProved": true
+      }
+    },
+    {
+      "pen": 7,
+      "mask": 2,
+      "id": "u5092-7-2",
+      "kind": "source-foot-x-u5092",
+      "footIndex": 0,
+      "phaseShare": 0.5043810213296556,
+      "phaseShareExact": [
+        "96481253",
+        "191286446"
+      ],
+      "cutX": 52.568604651162794,
+      "cutXExact": [
+        "45209",
+        "860"
+      ],
+      "triangles": 16,
+      "footGeometrySHA256": "134f444795abfba02d88502f50b9e3e3c7299d7f015fd59fe17384d3383bdae6",
+      "sourceFieldSHA256": "ab2a0e740c25f5d0d57aa55f23ee420888972769a3c0ae6697dc8375d0e2c2af",
+      "predecessorSHA256": "afeff9704be9e1ff9e89871bfc5527b527ef46bcf1571af1601b207d90e0191e",
+      "newClockNativeApproved": false,
+      "segment": {
+        "outline": "M43.65 39.75 L45.2 40.15 L46.8 40.5 L48.35 40.95 L49.8 41.5 L51.25 42.2 L52.6 43 L53.9 43.85 L55.15 44.8 L56.35 45.85 L57.5 47 L52.6 50.5 L52 49.4 L51.35 48.3 L50.65 47.25 L49.85 46.25 L49 45.25 L48.05 44.25 L47 43.25 L45.9 42.3 L44.7 41.35 L43.35 40.55 Z M57.5 47 L57.95 49.25 L56.75 51.2 L54.55 51.7 L52.6 50.5 Z",
+        "bounds": [
+          43.35,
+          39.75,
+          57.95,
+          51.7
+        ],
+        "direction": "curve",
+        "weight": 16.298371,
+        "revealPath": "M43.06 40 Q50.98 43 55.93 50",
+        "revealWidth": 14
+      },
+      "predecessor": {
+        "outline": "M63.85 32.25 L62.75 33.3 L61.65 34.35 L60.5 35.45 L59.35 36.6 L58.1 37.75 L56.85 39 L55.55 40.25 L54.15 41.55 L52.7 42.85 L51.3 44.25 L50.6 43.7 L51.55 41.95 L52.4 40.2 L53.3 38.55 L54.15 36.9 L55.05 35.4 L55.9 33.9 L56.75 32.45 L57.6 31.05 L58.4 29.75 L59.2 28.45 Z M58.9 28.85 L59.4 28.2 L63.85 32.25 Z M63.85 32.25 L64.35 34 L61.5 33.55 Z",
+        "bounds": [
+          50.6,
+          28.2,
+          64.35,
+          44.25
+        ],
+        "direction": "curve",
+        "weight": 17.736744,
+        "revealPath": "M61.87 30 Q56.92 36 50.98 44",
+        "revealWidth": 14
+      }
+    },
+    {
+      "pen": 8,
+      "mask": 2,
+      "id": "u5092-8-2",
+      "kind": "source-foot-x-u5092",
+      "footIndex": 1,
+      "phaseShare": 0.5412710122957868,
+      "phaseShareExact": [
+        "13471924460050671",
+        "24889425359968675"
+      ],
+      "cutX": 58.076698727893266,
+      "cutXExact": [
+        "935906",
+        "16115"
+      ],
+      "triangles": 10,
+      "footGeometrySHA256": "089f854124a9f6fbec1cc6ee8dd8dad48ad499bf095e1d4b805ee719caba6cf1",
+      "sourceFieldSHA256": "196ccec865a28e4e2ddd6fb7911ebbf613bafdaf80ff0b0acc14d57727849342",
+      "predecessorSHA256": "54915e8e59bbe5f893e865811fb7200effffbd2221a5714e67125b75bbc1fb5b",
+      "newClockNativeApproved": false,
+      "segment": {
+        "outline": "M39.35 56.95 L44.35 56.7 L49.25 56.45 L54.1 56.15 L58.8 55.9 L63.45 55.6 L68.05 55.3 L72.55 55.05 L76.95 54.8 L81.25 54.6 L85.55 54.55 L85.65 55.4 L81.55 56.5 L77.3 57.45 L72.95 58.3 L68.5 59.1 L63.95 59.8 L59.3 60.5 L54.55 61.15 L49.75 61.8 L44.8 62.35 L39.8 62.95 Z M39.8 62.95 L38.35 57 L39.35 56.95 Z M39.8 62.95 L42.7 61.2 L40.9 64.35 Z",
+        "bounds": [
+          38.35,
+          54.55,
+          85.65,
+          64.35
+        ],
+        "direction": "curve",
+        "weight": 46.797873,
+        "revealPath": "M39.1 60 Q64.84 58 85.63 55",
+        "revealWidth": 14
+      },
+      "predecessor": {
+        "outline": "M78.6 37.35 L76.55 39.4 L74.45 41.45 L72.35 43.45 L70.2 45.5 L68 47.55 L65.8 49.55 L63.5 51.55 L61.15 53.55 L58.75 55.45 L56.2 57.3 L55.6 56.65 L57.4 54.1 L59.25 51.65 L61.15 49.25 L63.05 46.9 L64.9 44.6 L66.8 42.3 L68.65 40.05 L70.5 37.8 L72.35 35.55 L74.15 33.35 Z M73.8 33.7 L74.3 33.15 L78.6 37.35 Z M78.6 37.35 L79.05 39.1 L76.15 38.55 Z",
+        "bounds": [
+          55.6,
+          33.15,
+          79.05,
+          57.3
+        ],
+        "direction": "curve",
+        "weight": 30.269194,
+        "revealPath": "M76.72 35 Q66.82 46 55.93 57",
+        "revealWidth": 14
+      }
+    }
+  ],
+  "target": {
+    "pen": 1,
+    "mask": 1,
+    "id": "u5092-1-1",
+    "kind": "growing-u5092-caps",
+    "segment": {
+      "outline": "M37.1 9.1 L34.55 14.65 L31.9 20.1 L29.1 25.4 L26.15 30.6 L23.1 35.65 L19.9 40.6 L16.55 45.35 L13.1 50 L9.45 54.5 L5.6 58.75 L4.85 58.2 L7.9 53.35 L10.9 48.5 L13.8 43.6 L16.65 38.6 L19.4 33.55 L22.05 28.4 L24.6 23.15 L27.05 17.8 L29.35 12.35 L31.55 6.8 Z M31.4 7.25 L31.85 6.15 L37.1 9.1 Z M37.1 9.1 L38.1 10.6 L35.25 11 Z",
+      "bounds": [
+        4.85,
+        6.15,
+        38.1,
+        58.75
+      ],
+      "direction": "curve",
+      "weight": 58.823657,
+      "revealPath": "M34.5625 7.5 Q22.75 36 5.25 58.5",
+      "revealWidth": 14
+    },
+    "sourceFieldSHA256": "5227dbb8de43883d784837f7935e911b657ff4fda4998ada3c55ef9067cae50e",
+    "radius": 7,
+    "minimumLength": 7,
+    "q0": [
+      34.5625,
+      7.5
+    ],
+    "certificate": {
+      "pen": 1,
+      "mask": 1,
+      "syntax": "MQ",
+      "guide": "M34.5625 7.5 Q22.75 36 5.25 58.5",
+      "width": 14,
+      "weight": 58.823657,
+      "A": [
+        "553/16",
+        "15/2"
+      ],
+      "u": [
+        "-189/16",
+        "57/2"
+      ],
+      "v": [
+        "-91/16",
+        "-6"
+      ],
+      "T": "1/4",
+      "K": "1/100",
+      "lambdaMin": "3703393/4096",
+      "lambdaMinAt": "1/4",
+      "cross": "7455/32",
+      "chordSquaredAtT": "15186313/65536",
+      "chordSquaredMinus49": "11975049/65536",
+      "curvatureMargin": "41468200806621639457/171798691840000",
+      "rK": "7/100",
+      "cosLower": "19951/20000",
+      "cosMinusRK": "18551/20000",
+      "tangentSquareMargin": "396082401/400000000",
+      "injectiveAxis": "x",
+      "derivativeEndpoints": [
+        "-189/8",
+        "-847/32"
+      ],
+      "initialSufficientConditions": true,
+      "certificateScope": "initial source arc7 only; no full coverage/contact/native approval",
+      "initialKind": "single-quadratic",
+      "radius": 7,
+      "maskSHA256": "5227dbb8de43883d784837f7935e911b657ff4fda4998ada3c55ef9067cae50e",
+      "certificateOrigin": "new-unique-fraction-batch",
+      "oldMathReexecuted": false,
+      "initialArcMax": 7,
+      "UAFullOriginalGuideRequired": true,
+      "previousMaskContactNotProved": true,
+      "sourcePConnectedNotProved": true,
+      "fullCoverageNotProved": true,
+      "fullSweepNotProved": true
+    }
+  },
+  "curveTargets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "5227dbb8de43883d784837f7935e911b657ff4fda4998ada3c55ef9067cae50e"
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "304c896488d2e317393b054c605fe80c64ec277655025e353979837514a525f4"
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "22e3e81de15e2eca239b9df49e100eb68a643c9668cf9b3ebfccaf7fb3f526d6"
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "0d1ef486dd4405332e23d5b0a8c02a49428571c275d70f5c9fa9fa611eceab06"
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "91145c5b9d88270ed2e6a73150552841e9921e20599ec49264637818185b660c"
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "afeff9704be9e1ff9e89871bfc5527b527ef46bcf1571af1601b207d90e0191e"
+    },
+    {
+      "pen": 7,
+      "mask": 2,
+      "kind": "source-foot-x-u5092",
+      "sourceFieldSHA256": "ab2a0e740c25f5d0d57aa55f23ee420888972769a3c0ae6697dc8375d0e2c2af"
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "54915e8e59bbe5f893e865811fb7200effffbd2221a5714e67125b75bbc1fb5b"
+    },
+    {
+      "pen": 8,
+      "mask": 2,
+      "kind": "source-foot-x-u5092",
+      "sourceFieldSHA256": "196ccec865a28e4e2ddd6fb7911ebbf613bafdaf80ff0b0acc14d57727849342"
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "a8d02ebf451cea2e3ac11ee0b1f9d6467fc19ea1bf47a6053725c132865c2444"
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "74fc6521bb7ea8b1649536953340caade05fee26361e8a630f049d98dc6b9150"
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "kind": "growing-u5092-caps",
+      "sourceFieldSHA256": "93843baac42a3327701cb7c8be28e63cf67034c79636053ffa647f52f13f2210"
+    }
+  ],
+  "cardinalTargets": [
+    {
+      "pen": 2,
+      "mask": 1,
+      "direction": "down",
+      "bounds": [
+        19.75,
+        36,
+        27.25,
+        94.5
+      ]
+    },
+    {
+      "pen": 10,
+      "mask": 1,
+      "direction": "right",
+      "bounds": [
+        36.6,
+        66,
+        92.55,
+        73
+      ]
+    }
+  ],
+  "pairProgress": [
+    {
+      "pen": 7,
+      "nextMask": 2,
+      "boundary": 0.5211307204338813
+    },
+    {
+      "pen": 8,
+      "nextMask": 2,
+      "boundary": 0.39276431786355637
+    }
+  ],
+  "nativeGuideTransitions": [],
+  "coverage": {
+    "caps": "original-P minus original complete round guide, fresh native required",
+    "foot": "exact original-P minus actual unmasked complete; AA perimeter may remain, not mathematical raster equality",
+    "ordinaryCardinal": "source bounds unchanged",
+    "noPriorCoverageNativeApproval": true
+  },
+  "requiredFreshNative": [
+    "official12macro is still pending; source-only proof not temporal approval",
+    "caps10 each local epsilon/.03 (only7/8 firstMQ priorFAIL; other8 not observed yet)",
+    "foot7/8m2 local epsilon/.01/.03/.1/.25/.5/.75",
+    "source7/8 boundaries before/at/after",
+    "foot7/8 body phase before/at/after",
+    "caps10 rho7 before/at/after",
+    "all12 compact9",
+    "all12 curve full residual: cap10 vs foot2 AA distinction",
+    "fine7/8 and other terminal risk if native detects",
+    "natural each7/8 and final12,done whole"
+  ],
+  "historicalSourceHOLDAndFalsePreserved": true,
+  "sourceFootNewMicroclockExplicit": true,
+  "originalClockIdentityApproved": false,
+  "nativeInitialFAILTargetsKnownOnly": [
+    [
+      7,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      8,
+      2
+    ]
+  ],
+  "otherInitialTargetsPreviouslyUnobserved": [
+    [
+      1,
+      1
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      11,
+      1
+    ],
+    [
+      12,
+      1
+    ]
+  ],
+  "staticMappingReference": {
+    "path": "docs/hanja-source-raw-review-u5092-2026-10-21/review.json",
+    "SHA256": "7f2a9f02a28c6ee9015055c59b217ac7908442ce50f913280987c7bc2999d19a",
+    "finiteScreens": 32,
+    "onlyStatic": true
+  },
+  "officialMacroReference": {
+    "config": "docs/hanja-official-media-compare-u5092-2026-10-23/config.json",
+    "SHA256": "01a166bcf73ffcb317a0e84534786be714ac2493cf283d956c2d4bb33d5b7540",
+    "ROOTNativeApproved": false,
+    "reviewFile": null
+  },
+  "historicalNativeHOLDReference": {
+    "path": "docs/hanja-source-native-review-qq2-u5092-2026-10-22/review.json",
+    "SHA256": "5fca36b13ddc2369849f897471915b0ca2f80515bc5a1ca9a69a391df2190a75",
+    "frames": 8,
+    "notChangedToApproval": true
+  },
+  "rawSourcePreservation": {
+    "raw": 14,
+    "calls": 14,
+    "P": 35,
+    "independentPairs": [
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "noGuideJoin": true,
+    "noConnector": true,
+    "originalGuideWidthWeightPUnchanged": true
+  },
+  "expectedResourceClosureModules": 91,
+  "preparationSharedSnapshot": {
+    "baselineVersion": 81,
+    "baselineTSX": "adc38a6e2f48b00076cff9b58748b8b41b6aa5ba62677cc8ce7336e734b5a44b",
+    "baselineHelper": "8b0a209bc039b8ca4556eb29408025784675c1780534670bbcd172a04fa079e6",
+    "baseline80TSX": "adc38a6e2f48b00076cff9b58748b8b41b6aa5ba62677cc8ce7336e734b5a44b",
+    "baseline80Helper": "714d281ddf23aa143d112610358dbf741557438ca6c07f2b5605067032213d95",
+    "label81Patch": "docs/hanja-shared-patches-2026-10-23/u8629-foot-phase-control-label-after80.patch",
+    "label81PatchSHA256": "77eb19649a72767d78b06fb3b2b388e846932209c9886b52d4322eb35a0fe62c",
+    "expectedVersion": 82,
+    "expectedTSX": "f384a0fa9b1ca97848db5586daffe8604fe2134489b8a4c473b6f46edef43b62",
+    "expectedHelper": "42b7e4033e89def4fe8e1e60ac513a9ed9354f20a6792bad3c5c0365864d807f",
+    "actualMutationBy": "ROOT only"
+  },
+  "isolatedActualComponentBrowserVerified": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "authorSSR": 0,
+  "authorHTTP": 0,
+  "authorServer": 0,
+  "engineRuns": 0,
+  "sourceProjection": 0,
+  "authorValidation": {
+    "newAST": {
+      "tsx": 0,
+      "helper": 0,
+      "browser": 0
+    },
+    "newKindAlias": {
+      "positive": 1,
+      "negative": 6,
+      "executions": 1
+    },
+    "actualSerializedCSetup": {
+      "executions": 1,
+      "controls": 205,
+      "targets": 12,
+      "pairProgress": 2,
+      "ordinaryNaturalTailCreated": true,
+      "footPhaseLabelsExact": true
+    },
+    "inverse81ByteExact": true,
+    "existingU9654BehaviorChanged": false,
+    "oldMathDOMRepeated": 0,
+    "newResourceSSR": 0,
+    "sourceProjection": 0,
+    "engineRuns": 0,
+    "actualSharedWrites": 0,
+    "RAMPreparationRecovery": {
+      "olderAllowlistAndCoverageAnchorsAbsent": true,
+      "adjustedToReadCurrent81Anchors": true,
+      "partialCellBindingRollbackReconstructedFromRecordedOps": true,
+      "notRuntimeOrSourceFailure": true
+    }
+  }
+}
