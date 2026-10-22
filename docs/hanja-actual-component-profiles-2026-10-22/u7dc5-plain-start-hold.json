@@ -1,0 +1,101 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-22",
+  "glyph": "緅",
+  "root": "u7dc5",
+  "status": "HOLD-first-pen1-m1-fixed-round-start",
+  "observedBy": "ROOT",
+  "source": {
+    "fixture": "docs/hanja-source-cache-u7dc5-2026-10-22/source.json",
+    "SHA256": "7b990fa370d0f5907fc6e460f9677d8635b4d4296491268fd845a2607621f297",
+    "geometrySHA256": "42365c0828e201ff8b1092b73bfeedf3d6bd5815da0ea7d44e48b01761fe7b6e",
+    "pens": 14,
+    "masks": 17,
+    "polygons": 33,
+    "actualFull5": "docs/hanja-public-glyphwiki-engine-capture-u7dc5-2026-10-22/engine-whole-u7dc5.json",
+    "actualFull5SHA256": "cea1c8819afa5605a8348082319c415cc5b22278d001a3f8dd9fed0d290e1803"
+  },
+  "observedPinsAreHistorical": true,
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u7dc5.json": "9c8ba131e12c7adb07e1ced2b644bd8e2f0f2c6ebc4cca5c621265a0739a718b",
+    "scripts/hanja-actual-component-review.mjs": "ee548599b42b3a84c3d19459f9cf217d07875514141e2c5dfdc320e7dba16ed5",
+    "components/hanja/stroke-outlines.tsx": "5c049d6613e98b4986cbd485182a256afa7ce0f426aa29e866bb87f95ba1bc45",
+    "docs/hanja-source-cache-u7dc5-2026-10-22/source.json": "7b990fa370d0f5907fc6e460f9677d8635b4d4296491268fd845a2607621f297",
+    "docs/hanja-public-glyphwiki-engine-capture-u7dc5-2026-10-22/engine-whole-u7dc5.json": "cea1c8819afa5605a8348082319c415cc5b22278d001a3f8dd9fed0d290e1803"
+  },
+  "native": {
+    "validScreens": 2,
+    "cases": [
+      {
+        "pen": 1,
+        "globalProgress": 0,
+        "observation": "선택첫획과선행획없음: empty"
+      },
+      {
+        "pen": 1,
+        "mask": 1,
+        "globalProgress": 0.000001,
+        "observation": "상단첫획에서 큰fixedround 초기닙block을관찰하여FIRSTFAIL",
+        "visualApproximationOnly": "약40px로보였으나측정하지않음",
+        "pixelAreaOrExactCauseClaim": false
+      }
+    ],
+    "bad": [],
+    "errors": [],
+    "structuralBadEmptyDoesNotProveGeometry": true,
+    "notRun": [
+      "pen1m2",
+      "pen2m1/m2",
+      "pen13HQ",
+      "all14compact",
+      "coverage",
+      "fine",
+      "natural",
+      "wholeapproval"
+    ]
+  },
+  "exactFragmentReadOnlyFinding": {
+    "referenceFixture": "docs/hanja-source-independent-qq-reorder-hl-hq-u7d8e-source-experiment-2026-10-21/fixture.json",
+    "referenceFixtureSHA256": "cd22bb35196582ca3e4eb8a122f6b5f260185b23daa326851cc2306d7ea6887c",
+    "completeFirstTwoStrokeJSONExactlyEqual": true,
+    "pen1AllMaskJSONSHA256": "a56872b881149169901030df33b068859ebc5b3f82f2d8b6b1a4bcfdf9401681",
+    "pen2AllMaskJSONSHA256": "0792f67862f038cbbe82b995a5a65e0e1d732b0edf2e874412b26d23f0761067",
+    "fields": [
+      "outline",
+      "bounds",
+      "direction",
+      "weight",
+      "revealPath",
+      "revealWidth"
+    ],
+    "newNativeOrTimingApprovalInherited": false,
+    "HQ13SameDatasetWholeSegmentMatch": false
+  },
+  "server": {
+    "pid": 22992,
+    "port": 59412,
+    "sessionId": 23396,
+    "startupSSR": 1,
+    "CJS": 47,
+    "ESM": 47,
+    "exitCode": 130,
+    "output": "EMPTY",
+    "processAbsenceQuerySeparatelyClaimed": false
+  },
+  "originalSourceStaticHOLDAndHistoryUnchanged": true,
+  "sourceCoordinatesGuideWidthWeightChanged": false,
+  "nativeApproval": false,
+  "actualProductAppUI": false,
+  "controller": false,
+  "storage": false,
+  "all14Autoplay": false,
+  "runtimeApplied": false,
+  "authorExecution": {
+    "SSR": 0,
+    "HTTP": 0,
+    "server": 0,
+    "engine": 0,
+    "projection": 0,
+    "oldMathOrDOMChecks": 0
+  }
+}
