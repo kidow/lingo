@@ -1,0 +1,135 @@
+{
+  "schema": "hanja-actual-component-finite-hold/v1",
+  "date": "2026-10-22",
+  "glyph": "縝",
+  "batch": 1350,
+  "status": "HOLD-pen1m2-detached-ink",
+  "observer": "ROOT actual browser",
+  "source": {
+    "file": "docs/hanja-source-cache-u7e1d-2026-10-22/source.json",
+    "fileSHA256": "b059654ca50044da046eab0ece34121b32bb299bb0b5ac043c84567c819b0f8c",
+    "geometrySHA256": "f7307bb9c41ed488c220e1789090367fbfce329349b8ab79bdb6fce0d41b693b",
+    "pens": 16,
+    "masks": 20,
+    "polygons": 46
+  },
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u7e1d.json": "d9c1fafa9d11023dd691c660657aba8aa4ec2ac4a30ef608af2cddd7c11c1891",
+    "scripts/hanja-actual-component-review.mjs": "c9590067e8433cc7b85ab1e3d3069de51a3c7946dd38d0cc9395546b681c2f0d",
+    "components/hanja/stroke-outlines.tsx": "74c9411ff541a1f31063e660af0f147398f1ab79beddc2e7741b4f843bfaae89",
+    "docs/hanja-source-cache-u7e1d-2026-10-22/source.json": "b059654ca50044da046eab0ece34121b32bb299bb0b5ac043c84567c819b0f8c"
+  },
+  "native": {
+    "validScreens": 4,
+    "pen1m2": {
+      "screens": 2,
+      "locals": [
+        0.01,
+        0.03
+      ],
+      "globals": [
+        0.5425951497436302,
+        0.5518356517690115
+      ],
+      "observation": "약30px삼각잉크와약5px흰틈분리. 대략적시각표현/pixel계측아님",
+      "result": "FIRST HOLD"
+    },
+    "pen2m2": {
+      "screens": 2,
+      "locals": [
+        0.01,
+        0.03
+      ],
+      "globals": [
+        0.598236255244642,
+        0.6063526945326291
+      ],
+      "observation": "원roundcap연결됨;growing/전체진행승인아님"
+    },
+    "viewport": [
+      1280,
+      720
+    ],
+    "candidateSVG": {
+      "width": 520,
+      "y": 188
+    },
+    "bad": [],
+    "errors": [],
+    "otherGatesNotRun": true
+  },
+  "sourcePairAnalysis": {
+    "arithmeticRuns": 1,
+    "scope": "각고정QQ두mask쌍만;누적다른획/UA·AA전체증명아님",
+    "QQ1": {
+      "raw": [
+        1,
+        2
+      ],
+      "secondM": [
+        12.8,
+        45
+      ],
+      "MInsideOwnP": false,
+      "MInsidePreviousP": false,
+      "MToPreviousPDistanceSquaredSource": "27869/100",
+      "positiveOverlapWitness": [
+        28,
+        54
+      ],
+      "witnessBoundaryDistanceSquared": "441/1460"
+    },
+    "QQ2": {
+      "raw": [
+        3,
+        4
+      ],
+      "secondM": [
+        14.2,
+        113
+      ],
+      "MInsideOwnP": true,
+      "MInsidePreviousP": false,
+      "MToPreviousPDistanceSquaredSource": "761/5",
+      "positiveOverlapWitness": [
+        28,
+        106
+      ],
+      "witnessBoundaryDistanceSquared": "10201/167450",
+      "initialTangentPreviousVertexProjectionMin": "9033/25",
+      "risk": "이전P밖/자기P안인원M과ρ→0때문에growing초기연결은별도검토필요"
+    },
+    "axisClipLimit": "두P2의min/max x/y seed가각previousP밖. 단순axisclip이식승인불가",
+    "next": "contact-rooted 원P partition prototype만별도검토. 원P/guide/폭/weight불변; hide-until-contact의유한jump 회피증명필요"
+  },
+  "approval": {
+    "isolatedActualComponentObserved": true,
+    "isolatedActualComponentFiniteApproved": false,
+    "rootRegistrationApproved": false,
+    "actualAppUI": false,
+    "runtimeApplied": false
+  },
+  "startup": {
+    "sandboxEPERMFailure": 1,
+    "allowedLaunch": 1,
+    "SSR": 1,
+    "CJS": 31,
+    "ESM": 31,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "server": {
+    "pid": 32560,
+    "session": 3873,
+    "port": 59412,
+    "stopExitCode": 130,
+    "stopOutput": "empty",
+    "closed": true,
+    "pidRequery": false
+  },
+  "preservation": {
+    "sourceAndAPPUnchanged": true,
+    "registryUnchanged": true,
+    "sourceNativeHistoryFalsePreserved": true
+  }
+}
