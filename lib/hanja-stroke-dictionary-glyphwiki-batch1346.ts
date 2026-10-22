@@ -1,6 +1,6 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** 1346 미등록 후보. 정적대응만 확인됐으며 native/APP/runtime 미승인. */
+/** 1346 ROOT actualcomponent 유한검토/등록 승인. 원 public 준비이력 false는 보존. */
 const EXPECTED = [
   {
     "glyph": "蒲",
@@ -286,6 +286,7 @@ export function loadGlyphWikiBatch1346Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1346_STROKES:ReturnType<typeof loadGlyphWikiBatch1346Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1346_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1346_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1346_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1346_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1346_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1346_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1346_ACTUAL_COMPONENT_REVIEW=Object.freeze({file:"docs/hanja-actual-component-profiles-2026-10-22/u84b2-native-review.json",sha256:"f82c6c66895894c5b017c7b976c6b7a50c6c0bcee948eb8bc701859cb8810aa0",isolatedActualComponentFiniteApproved:true,rootRegistrationApproved:true,actualAppUI:false,all14Autoplay:false,storage:false})

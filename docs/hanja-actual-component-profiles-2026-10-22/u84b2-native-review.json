@@ -1,0 +1,162 @@
+{
+  "schema": "hanja-actual-component-finite-review/v1",
+  "date": "2026-10-22",
+  "glyph": "蒲",
+  "batch": 1346,
+  "observer": "ROOT actual browser",
+  "scope": "K 14p15m30 실제 StrokeOutlines 7m1 growing +7m2 original-P x clip 유한검토/등록승인",
+  "source": {
+    "geometrySHA256": "185c361ed9dd5505518ac6bb446fbc8b8ee567eccda754a1639adba42150a8e5",
+    "pens": 14,
+    "masks": 15,
+    "polygons": 30,
+    "full5SHA256": "c2da80aa5b6392cdf8986c8b6d0383e4ddf47fd854e48b0c496bf9fc17ac4ed0",
+    "identity": {
+      "root": "u84b2-k",
+      "file": "../hanja-goal-glyphwiki-batch985-2026-10-13/engine-whole-u84b2-k.json",
+      "fileSHA256": "c2da80aa5b6392cdf8986c8b6d0383e4ddf47fd854e48b0c496bf9fc17ac4ed0"
+    }
+  },
+  "inputSHA256": {
+    "components/hanja/stroke-outlines.tsx": "74c9411ff541a1f31063e660af0f147398f1ab79beddc2e7741b4f843bfaae89",
+    "lib/hanja-stroke-start-gate-u84b2.ts": "1d69ed73776afde3ea44548c39b653eb7a1c37a51f4caf9ab3f5be2ffb893baf",
+    "lib/hanja-stroke-start-gate-u84b2.test.ts": "f492262cd21a7b638e692729f9412e2457566f9fe42f4537e20de7ca704802c0",
+    "scripts/hanja-actual-component-review.mjs": "ce400255005f7d45938fd5b38bd9c09f917e36efe5d40dcecf504446db6a3de6",
+    "docs/hanja-actual-component-profiles-2026-10-22/u84b2.json": "25957a11ca9354961e1350240d840f507730b839ae4a35539be3f1dd9291e5f3",
+    "docs/hanja-source-cache-u84b2-k-2026-10-22/source.json": "ba63db14c071ea936f9bb5c905c9b09d274b3b99997e3e0dd575900668ba34c8",
+    "docs/hanja-source-cache-u84b2-k-2026-10-22/source.mjs": "fe90cca2ad0a12482e1463f41b26f8e01e5ccaae96a05e5590d9fb92ea81b15e",
+    "docs/hanja-goal-glyphwiki-batch985-2026-10-13/engine-whole-u84b2-k.json": "c2da80aa5b6392cdf8986c8b6d0383e4ddf47fd854e48b0c496bf9fc17ac4ed0",
+    "public/hanja-strokes/glyphwiki/u84b2-k.json": "d68ccc524850ad24229d3f2ab9b000a9aedc7999ed4c9a528a7cd20871daffe7",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1346.json": "0007ee27a0ff3c13c13c81f54ea971a04555b2207b87a5b8b509cc224e501f09",
+    "docs/hanja-source-native-raw-correspondence-u84b2-k-2026-10-22.json": "9ead216ad22e61b204e69de5934593dcf224f79f8929149e133be59ee10bcbbb"
+  },
+  "native": {
+    "validScreens": 39,
+    "first": {
+      "screens": 28,
+      "compact14": {
+        "screens": 14,
+        "uniqueSamples": 126
+      },
+      "Q2early": {
+        "screens": 3,
+        "locals": [
+          0.01,
+          0.03,
+          0.1
+        ],
+        "detachedInkObserved": false
+      },
+      "coverage": {
+        "screens": 3,
+        "Q1": "blank",
+        "Q2": "동일原P residual의 얇은 AA경계만/실체잔여없음; 순백·원round-guide coverage 주장 아님",
+        "pen10Q514": "blank"
+      },
+      "boundary": {
+        "screens": 3,
+        "firstTwoReporterCapsFalse": true
+      },
+      "nearQ2Prefix7Done": {
+        "screens": 3
+      },
+      "naturalStartEnd": {
+        "screens": 2
+      }
+    },
+    "corrected": {
+      "screens": 11,
+      "compact7": {
+        "screens": 1,
+        "samples": 9
+      },
+      "Q1early": {
+        "screens": 2,
+        "locals": [
+          0.01,
+          0.03
+        ]
+      },
+      "Q1rho": {
+        "screens": 3,
+        "radii": [
+          6.999999997483741,
+          7,
+          7
+        ]
+      },
+      "boundary": {
+        "screens": 3
+      },
+      "naturalStartEnd": {
+        "screens": 2
+      },
+      "bad": [],
+      "errors": []
+    },
+    "compactObservedSamples": 135,
+    "compactUniqueSamples": 126,
+    "reporterHistory": {
+      "priorAdapterSHA256": "eb05f7f275c1fa29882505fba56108be83ae69e1d12ba6361e313cc57cc22000",
+      "priorProfileSHA256": "a36113b87d1d36b1fd04bf5fa2e92485890785c17b5e71ca44e512af74b06b01",
+      "correctedAdapterSHA256": "ce400255005f7d45938fd5b38bd9c09f917e36efe5d40dcecf504446db6a3de6",
+      "correctedProfileSHA256": "25957a11ca9354961e1350240d840f507730b839ae4a35539be3f1dd9291e5f3",
+      "priorCapsFalseTargetFrames": 6,
+      "affected": "compact7의 sample1/2/3 +boundary앞2 +naturalearly; 같은compact화면의3states를별도screens로더하지않음",
+      "cause": "정확원M capcenter와 UA 반올림 getPointAtLength(0)의 ===비교에 의한 reporter 오판. APP/원기하변경없음",
+      "correctedScopeAllBadEmpty": true
+    },
+    "metrics": {
+      "Q1L": 25.16225814819336,
+      "Q2L": 35.64994430541992,
+      "Q2near1Threshold": 36.39999785587354,
+      "boundaryQ1": [
+        0.9999999997416412,
+        0.9999999999999996,
+        1
+      ],
+      "boundaryQ2After": 1.6314761060120612e-10,
+      "boundaryQ2ThresholdAfter": 14.45,
+      "naturalEndedController": 1
+    },
+    "exactPrefix7Done": "Q1 original full round mask, Q2 original P direct",
+    "noDetachedGapJumpObserved": true,
+    "viewport": [
+      1280,
+      720
+    ],
+    "mainResidualSVG": [
+      520,
+      520
+    ],
+    "sourceShapeChanged": false,
+    "allRAFsObserved": false
+  },
+  "approval": {
+    "rootRegistrationApproved": true,
+    "isolatedActualComponentFiniteApproved": true,
+    "actualAppUI": false,
+    "all14Autoplay": false,
+    "storage": false,
+    "allRAFsObserved": false
+  },
+  "server": {
+    "pid": 11195,
+    "session": 30484,
+    "port": 59412,
+    "stopExitCode": 130,
+    "stopOutput": "empty",
+    "closed": true
+  },
+  "immutableHistory": {
+    "sourceCacheAndPublicPreparationFalsePreserved": true,
+    "originalSourceAndPolygonsUnchanged": true,
+    "oldLoaderNegativeTestsRepeated": 0
+  },
+  "registration": {
+    "owner": "ROOT",
+    "registryChangedByAuthor": false,
+    "runtimeAppliedBeforeROOTImport": false,
+    "activationTailPrepared": true
+  }
+}
