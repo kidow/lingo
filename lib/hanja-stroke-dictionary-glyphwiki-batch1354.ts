@@ -1,6 +1,6 @@
 import type { HanjaDictionaryStrokeData } from './hanja-stroke-dictionary.ts'
 
-/** 1354 미등록후보. 정적21그룹만확인;시간/애니메이션/native/APP/runtime미승인. */
+/** 1354 ROOT isolated actual component 유한46화면 승인. 원source/public 준비이력은 보존. */
 const EXPECTED = [
   {
     "glyph": "纆",
@@ -418,6 +418,7 @@ export function loadGlyphWikiBatch1354Strokes(bundle:unknown):readonly HanjaDict
  return EXPECTED
 }
 export const HANJA_DICTIONARY_GLYPHWIKI_BATCH1354_STROKES:ReturnType<typeof loadGlyphWikiBatch1354Strokes>=EXPECTED
-export const GLYPHWIKI_BATCH1354_NATIVE_APPROVAL=false
-export const GLYPHWIKI_BATCH1354_RUNTIME_APPLIED=false
-export const GLYPHWIKI_BATCH1354_ASSIGNMENT_PROVISIONAL=true
+export const GLYPHWIKI_BATCH1354_NATIVE_APPROVAL=true
+export const GLYPHWIKI_BATCH1354_RUNTIME_APPLIED=true
+export const GLYPHWIKI_BATCH1354_ASSIGNMENT_PROVISIONAL=false
+export const GLYPHWIKI_BATCH1354_NATIVE_REVIEW=Object.freeze({path:'docs/hanja-actual-component-profiles-2026-10-22/u7e86-activation-review.json',sha256:'5bbbeb056337063331abc0785eb3a640f7eaee6a51b872c9b3940ec1c332cca1'})
