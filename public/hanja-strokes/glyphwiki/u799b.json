@@ -158,18 +158,24 @@
   },
   "sourceProvenance": {
     "sourceModule": "docs/hanja-source-cache-u799b-2026-10-22/source.mjs",
-    "sourceModuleSHA256": "171411a8fcdaa8eadcf46c195b9ad632bfe8a729ff5e8c032770bda2cb7c03ef",
+    "sourceModuleSHA256": "933f1dc3c6c9aff19ed1e1bb19dbb501ba99c34f757acc8b22afec2802ee6602",
     "cacheFile": "docs/hanja-source-cache-u799b-2026-10-22/source.json",
-    "cacheFileSHA256": "fe4a48617edf3d8a485ef4fab79a89844846e9916acf5f37f9593eb1c11f0f37",
-    "geometrySHA256": "68ce025578bf5e283747988bc01e803d2d59dfad15004ed9dacf27100a5aabc8",
+    "cacheFileSHA256": "7462d4dd1a26b91b6e783945cd63e5581a729422c044f7b63d3fe904995bab29",
+    "geometrySHA256": "4af5b9e1055c0c5c24681c02f65c0e0188782b1528b40dc511c009b0a7c31c67",
     "actualFull5File": "docs/hanja-public-glyphwiki-engine-capture-second-six-2026-10-22/engine-whole-u799b.json",
     "actualFull5SHA256": "876e21ebba154ca75ab0d5f1421f83f9f664b0ee2112b9e8d5025e2e29392440",
     "capsuleFile": "docs/hanja-public-glyphwiki-source-closure-u7e1d-u799b-u7d70-2026-10-22.json",
     "capsuleSHA256": "5ff1eceb5586a5445faa106daba22e4debb8d30c5ea910d563066f181db87737",
     "staticReview": "docs/hanja-source-native-raw-correspondence-u799b-2026-10-22.json",
-    "staticReviewSHA256": "a9fabf5667ea22094b373a2cadcda67c05f0a15a9ac2dc186b5796d7a24577e4"
+    "staticReviewSHA256": "a9fabf5667ea22094b373a2cadcda67c05f0a15a9ac2dc186b5796d7a24577e4",
+    "previousFixedCandidate": {
+      "assetFileSHA256": "fe52e97e49d077d2ee3de1b49ff133a96ec1f16e28d48f5fdd98413a8403307d",
+      "sourceModuleSHA256": "171411a8fcdaa8eadcf46c195b9ad632bfe8a729ff5e8c032770bda2cb7c03ef",
+      "cacheFileSHA256": "fe4a48617edf3d8a485ef4fab79a89844846e9916acf5f37f9593eb1c11f0f37",
+      "geometrySHA256": "68ce025578bf5e283747988bc01e803d2d59dfad15004ed9dacf27100a5aabc8"
+    }
   },
-  "modifications": "1348 미등록 후보 준비. 고정current public closure의actualfull5/id3 17raw20calls38P와ROOT정적15그룹을기존8067pureprojector성공1회로보존했다. raw9/10(HV),14/15(VH)는원endpoint가정확같은기존연속규칙만사용했다. 새connector·guide·좌표·폭·weight·tail생성0. 공식시간방향/시작cap·foot·terminal·coverage·전체native/APP/runtime미승인.",
+  "modifications": "1348 미등록 후보 준비. 고정current public closure의actualfull5/id3 17raw20calls38P와ROOT정적15그룹을기존8067pureprojector성공1회로보존했다. raw9/10(HV),14/15(VH)는원endpoint가정확같은기존연속규칙만사용했다. 새connector·guide·좌표·폭·weight·tail생성0. 공식시간방향/시작cap·foot·terminal·coverage·전체native/APP/runtime미승인. 원38P/필순/좌표를그대로유지한cached파생1회로7UP의원마지막quad(width5/jump17)를body뒤mask로분리했다. body의guide·폭14·weight54.571068은그대로이며tailweight8.5를내부mask배분에추가했다(획당고정재생시간증가아님). 13VH의원V1000/113와H2/0을각cardinalmask(weight41/48)로복원해기존foot전부를유지했다. 다른13획은deep불변. 최초15mask캐시는baselineStrokes와해시로보존. 이번17mask의sourcefinite/native/APP/runtime는미승인이다.",
   "preparationHistory": {
     "candidateBatch": 1348,
     "batchAssignmentProvisional": true,
@@ -183,9 +189,82 @@
     "originalCompilerCalls": 0,
     "existingCandidateFactoryCalls": 0,
     "engineRuns": 0,
-    "newTerminalDerivations": 0
+    "newTerminalDerivations": 1,
+    "newCachedCorrectionOperations": 1,
+    "publicMetadataAuthoringFailure": 1,
+    "publicMetadataPatchVerificationFailure": 1
   },
   "exactInterRawJoins": [
+    [
+      8,
+      9
+    ]
+  ],
+  "independentMaskPolicies": [
+    {
+      "pen": 7,
+      "sourceRawZeroBased": [
+        6
+      ],
+      "kind": "original-UP-last-quad-partition",
+      "maskCount": 2,
+      "bodyGuideUnchanged": true,
+      "bodyWidthUnchanged": true,
+      "bodyWeight": 54.571068,
+      "tailWeight": 8.5,
+      "boundary": 0.8652313926252208,
+      "bodyBoundsPolicy": "원quad만 제외한 active body P bounds; 원bodyguide·width14·bodyweight 유지",
+      "nativeApproval": false
+    },
+    {
+      "pen": 13,
+      "sourceRawZeroBased": [
+        13,
+        14
+      ],
+      "kind": "original-V-H-cardinal-mask-restore",
+      "maskCount": 2,
+      "gapSourceUnits": [
+        0,
+        0
+      ],
+      "originalRawFieldsUnchanged": true,
+      "weights": [
+        41,
+        48
+      ],
+      "boundary": 0.4606741573033708,
+      "newGuideOrConnector": false,
+      "nativeApproval": false
+    }
+  ],
+  "unmodifiedTerminalRisks": [
+    {
+      "pen": 8,
+      "rawZeroBased": 7,
+      "call": "cdDrawLine",
+      "startFlag": 1012,
+      "endFlag": 313,
+      "policy": "원V313foot미보정"
+    },
+    {
+      "pen": 9,
+      "rawZeroBased": 9,
+      "call": "cdDrawLine",
+      "startFlag": 22,
+      "endFlag": 323,
+      "policy": "원V323foot미보정"
+    }
+  ],
+  "orderEvidence": {
+    "rootStaticShapeMapping": true,
+    "officialControlledMacroDirectionStrokes": [],
+    "officialPublisherParentUI": false,
+    "sourceAnimationApproved": false,
+    "wholeNativeApproved": false
+  },
+  "legacyHoldScope": "원batch893 G/VS2 whole불일치HOLD는수정하지않음;현재고정J형자료의정적대응만확인",
+  "previousExactInterRawJoins": [
     [
       8,
       9
@@ -195,8 +274,7 @@
       14
     ]
   ],
-  "independentMaskPolicies": [],
-  "unmodifiedTerminalRisks": [
+  "previousUnmodifiedTerminalRisks": [
     {
       "pen": 7,
       "rawZeroBased": 6,
@@ -230,14 +308,88 @@
       "policy": "원V113foot미보정"
     }
   ],
-  "orderEvidence": {
-    "rootStaticShapeMapping": true,
-    "officialControlledMacroDirectionStrokes": [],
-    "officialPublisherParentUI": false,
-    "sourceAnimationApproved": false,
-    "wholeNativeApproved": false
+  "cachedCorrection": {
+    "kind": "exact-original-UP7-quad-and-VH13-raw-mask-restore",
+    "priorCacheSHA256": "fe4a48617edf3d8a485ef4fab79a89844846e9916acf5f37f9593eb1c11f0f37",
+    "sourceExactChecks": {
+      "UP7": {
+        "rawZeroBased": 6,
+        "call": [
+          111,
+          54,
+          177,
+          54,
+          2006,
+          5
+        ],
+        "quadSHA256": "6ba9b9953deb2daf8e9d6d1d76dc543698fdb336150e34eeeeae878506de6bef",
+        "width": 5,
+        "jump": 17,
+        "uncoveredWitness": {
+          "point": [
+            89.5,
+            16
+          ],
+          "finalGuideDistanceSquared": "122",
+          "radiusSquared": "49"
+        }
+      },
+      "VH13": {
+        "rawZeroBased": [
+          13,
+          14
+        ],
+        "calls": [
+          [
+            92,
+            69,
+            92,
+            151,
+            1000,
+            113
+          ],
+          [
+            92,
+            151,
+            188,
+            151,
+            2,
+            0
+          ]
+        ],
+        "uncoveredWitness": {
+          "point": [
+            43.25,
+            82.75
+          ],
+          "pointY": "331/4",
+          "fullGuideMaxYPlusRadius": "330/4"
+        }
+      }
+    },
+    "bodyBoundsPolicy": "원quad만 제외한 active body P bounds; 원bodyguide·width14·bodyweight 유지",
+    "body7Weight": 54.571068,
+    "tail7Weight": 8.5,
+    "pen7MaskAllocationAdded": 8.5,
+    "pen7BodyTailBoundary": 0.8652313926252208,
+    "pen13OriginalWeight": 89,
+    "pen13Weights": [
+      41,
+      48
+    ],
+    "pen13Boundary": 0.4606741573033708,
+    "fixedPerPenHelperDurationUnchanged": true,
+    "newGuideOrConnector": false,
+    "other13PensUnchanged": true,
+    "original38PolygonsExactlyOnce": true,
+    "predecessorPinRebind": {
+      "oldSHA256": "210ddfbb5d984a62e4a2fa8cd3a0753a0afc8d7d7aa20fd3d278ecd2c60e5f1f",
+      "currentSHA256": "a3038d6eb609202a51d2e88186d01d873cbe90a8189be522b727ea9402f33e11",
+      "originalProjectorBodyUnchanged": true,
+      "derivationObservedSHA256": "ece4d3a236f38e8615760578b9d5d91b4e2d86d47d58dc3a39668595d44a89e1",
+      "finalMetadataPinRebind": true
+    }
   },
-  "legacyHoldScope": "원batch893 G/VS2 whole불일치HOLD는수정하지않음;현재고정J형자료의정적대응만확인",
   "engineProof": {
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
     "engineHashes": {

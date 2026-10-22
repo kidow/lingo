@@ -6,7 +6,7 @@ const EXPECTED = [
     "glyph": "禛",
     "verificationSource": "ehanja-crosschecked",
     "verifiedAt": "2026-10-22",
-    "geometrySource": "fe52e97e49d077d2ee3de1b49ff133a96ec1f16e28d48f5fdd98413a8403307d",
+    "geometrySource": "cdbb5fbf4acfe66d2b988cffbae0ee5a961a3bd2e035804e9e0440995740c755",
     "geometryCorrection": "glyphwiki-reviewed-filled-outline-reveal-v1",
     "sourceStrokeIndices": [
       1,
@@ -127,7 +127,7 @@ const EXPECTED = [
       ],
       [
         {
-          "outline": "M53.5 8 L53.5 22 L47.5 22 L47.5 7 Z M53.5 8 L55 9 L52.5 10.5 Z M47.5 22 L53.5 22 L52.3 23.8 L50.5 25 L48.7 23.8 Z M53.5 22 L53.45 22.6 L53.5 23.05 L53.55 23.4 L53.6 23.6 L53.65 23.8 L53.75 23.95 L53.95 24.1 L54.3 24.25 L54.8 24.4 L55.5 24.5 L55.5 29.5 L54.25 29.45 L53.05 29.3 L51.9 28.95 L50.8 28.4 L49.8 27.65 L48.95 26.75 L48.3 25.65 L47.85 24.5 L47.6 23.25 L47.5 22 Z M55.5 24.5 L57.25 25.25 L58 27 L57.25 28.75 L55.5 29.5 Z M55.5 24.5 L88.5 24.5 L88.5 29.5 L55.5 29.5 Z M88.5 24.5 L90 25.5 L91 27 L90 28.5 L88.5 29.5 Z M88.5 24.5 L86 24.5 L88.5 16 L89.5 16 Z",
+          "outline": "M53.5 8 L53.5 22 L47.5 22 L47.5 7 Z M53.5 8 L55 9 L52.5 10.5 Z M47.5 22 L53.5 22 L52.3 23.8 L50.5 25 L48.7 23.8 Z M53.5 22 L53.45 22.6 L53.5 23.05 L53.55 23.4 L53.6 23.6 L53.65 23.8 L53.75 23.95 L53.95 24.1 L54.3 24.25 L54.8 24.4 L55.5 24.5 L55.5 29.5 L54.25 29.45 L53.05 29.3 L51.9 28.95 L50.8 28.4 L49.8 27.65 L48.95 26.75 L48.3 25.65 L47.85 24.5 L47.6 23.25 L47.5 22 Z M55.5 24.5 L57.25 25.25 L58 27 L57.25 28.75 L55.5 29.5 Z M55.5 24.5 L88.5 24.5 L88.5 29.5 L55.5 29.5 Z M88.5 24.5 L90 25.5 L91 27 L90 28.5 L88.5 29.5 Z",
           "bounds": [
             47.5,
             7,
@@ -138,6 +138,17 @@ const EXPECTED = [
           "weight": 54.571068,
           "revealPath": "M50.5 7.5 L50.5 22 Q50.5 27 55.5 27 L88.5 27",
           "revealWidth": 14
+        },
+        {
+          "outline": "M88.5 24.5 L86 24.5 L88.5 16 L89.5 16 Z",
+          "bounds": [
+            86,
+            16,
+            89.5,
+            24.5
+          ],
+          "direction": "up",
+          "weight": 8.5
         }
       ],
       [
@@ -209,17 +220,26 @@ const EXPECTED = [
       ],
       [
         {
-          "outline": "M48.75 35 L48.75 80 L43.25 82.75 L43.25 34 Z M48.75 35 L50.1 36 L47.75 37.5 Z M46 74.5 L94 74.5 L94 76.5 L46 76.5 Z M94 74.5 L82 75.5 L88 69.5 Z",
+          "outline": "M48.75 35 L48.75 80 L43.25 82.75 L43.25 34 Z M48.75 35 L50.1 36 L47.75 37.5 Z",
           "bounds": [
             43.25,
             34,
-            94,
+            50.1,
             82.75
           ],
-          "direction": "curve",
-          "weight": 89,
-          "revealPath": "M46 34.5 L46 75.5 L94 75.5",
-          "revealWidth": 14
+          "direction": "down",
+          "weight": 41
+        },
+        {
+          "outline": "M46 74.5 L94 74.5 L94 76.5 L46 76.5 Z M94 74.5 L82 75.5 L88 69.5 Z",
+          "bounds": [
+            46,
+            69.5,
+            94,
+            76.5
+          ],
+          "direction": "right",
+          "weight": 48
         }
       ],
       [
@@ -269,7 +289,7 @@ const EXPECTED = [
       "sourceUrl": "https://glyphwiki.org/wiki/u799b@13",
       "revision": "u799b@13 및캡슐에고정한5record revision;2026-10-22 freshactualfull5",
       "editableSource": "/hanja-strokes/glyphwiki/u799b.json",
-      "modifications": "1348 미등록 후보 준비. 고정current public closure의actualfull5/id3 17raw20calls38P와ROOT정적15그룹을기존8067pureprojector성공1회로보존했다. raw9/10(HV),14/15(VH)는원endpoint가정확같은기존연속규칙만사용했다. 새connector·guide·좌표·폭·weight·tail생성0. 공식시간방향/시작cap·foot·terminal·coverage·전체native/APP/runtime미승인."
+      "modifications": "1348 미등록 후보 준비. 고정current public closure의actualfull5/id3 17raw20calls38P와ROOT정적15그룹을기존8067pureprojector성공1회로보존했다. raw9/10(HV),14/15(VH)는원endpoint가정확같은기존연속규칙만사용했다. 새connector·guide·좌표·폭·weight·tail생성0. 공식시간방향/시작cap·foot·terminal·coverage·전체native/APP/runtime미승인. 원38P/필순/좌표를그대로유지한cached파생1회로7UP의원마지막quad(width5/jump17)를body뒤mask로분리했다. body의guide·폭14·weight54.571068은그대로이며tailweight8.5를내부mask배분에추가했다(획당고정재생시간증가아님). 13VH의원V1000/113와H2/0을각cardinalmask(weight41/48)로복원해기존foot전부를유지했다. 다른13획은deep불변. 최초15mask캐시는baselineStrokes와해시로보존. 이번17mask의sourcefinite/native/APP/runtime는미승인이다."
     }
   }
 ] as unknown as readonly HanjaDictionaryStrokeData[]
