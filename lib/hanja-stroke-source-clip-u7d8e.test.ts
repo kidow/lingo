@@ -1,0 +1,51 @@
+import assert from'node:assert/strict'
+import test from'node:test'
+import{readFileSync}from'node:fs'
+import{createHash}from'node:crypto'
+import{reviewedU7d8eClipContext as context,reviewedU7d8eClipPolicy as policy,sampleReviewedU7d8eClip as sample,measureReviewedU7d8eClipFrame as measure,commitReviewedU7d8eClip as commit,REVIEWED_U7D8E_CLIP_SOURCE as SOURCE,REVIEWED_U7D8E_CLIP_GEOMETRY as GEO}from'./hanja-stroke-source-clip-u7d8e.ts'
+const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(read(p).toString()),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex'),clone=(v:any)=>JSON.parse(JSON.stringify(v))
+function tree(P:any,p:number,q={x:45,y:16.5}){
+ const writes:{id:string;key:string;value:string|null}[]=[],reads:string[]=[];let readHook:((s:string)=>void)|null=null,writeHook:((n:any,k:string)=>void)|null=null
+ const view:any={getComputedStyle:(n:any)=>({transform:n.cssTransform??'none',getPropertyValue:(k:string)=>n.css?.[k]??''})},doc:any={defaultView:view};view.document=doc
+ const node=(name:string,parent:any,attrs:Record<string,string>={})=>({localName:name,namespaceURI:'http://www.w3.org/2000/svg',ownerDocument:doc,isConnected:true,parentElement:parent,ownerSVGElement:null as any,attrs:{...attrs},get id(){return this.attrs.id??''},getAttribute(k:string){return Object.hasOwn(this.attrs,k)?this.attrs[k]:null},setAttribute(k:string,v:string){this.attrs[k]=v;writes.push({id:this.id,key:k,value:v});writeHook?.(this,k)},removeAttribute(k:string){delete this.attrs[k];writes.push({id:this.id,key:k,value:null});writeHook?.(this,k)}})
+ const id='u7d8e-clip-test',svg:any=node('svg',null),target:any=node('g',svg,{'data-stroke-start-gate':P.id,'data-stroke-reveal-progress':String(p)}),defs:any=node('defs',target),hc:any=node('clipPath',defs,{id:id+'-u7d8e-h-plane',clipPathUnits:'userSpaceOnUse'}),bc:any=node('clipPath',defs,{id:id+'-u7d8e-b-plane',clipPathUnits:'userSpaceOnUse'})
+ const measurement:any=node('path',defs,{id:id+'-u7d8e-clip-measure','data-owner':id,'data-u7d8e-source-clip-measurement':'true',d:P.segment.revealPath,stroke:'none',fill:'none'})
+ const hRect:any=node('rect',hc,{id:id+'-u7d8e-h-rect','data-owner':id,x:'36.8',y:'13',height:'8.5',width:'0'}),bPlane:any=node('path',bc,{id:id+'-u7d8e-b-plane-path','data-owner':id,d:''})
+ const partial:any=node('g',target,{id:id+'-u7d8e-clip-partial','data-owner':id,visibility:'hidden'}),ink:any=node('path',target,{id:id+'-u7d8e-clip-ink','data-owner':id,d:P.segment.outline,stroke:'none','fill-rule':'nonzero',visibility:'hidden'})
+ const hInk:any=node('path',partial,{id:id+'-u7d8e-hj-ink','data-owner':id,d:GEO.H+' '+GEO.J,'clip-path':'url(#'+hc.id+')',stroke:'none','fill-rule':'nonzero'}),bInk:any=node('path',partial,{id:id+'-u7d8e-b-ink','data-owner':id,d:GEO.B,'clip-path':'url(#'+bc.id+')',stroke:'none','fill-rule':'nonzero'})
+ for(const n of[target,defs,hc,bc,measurement,hRect,bPlane,partial,ink,hInk,bInk])n.ownerSVGElement=svg
+ measurement.getTotalLength=()=>{reads.push('L');readHook?.('L');return 45.87373352050781}
+ measurement.getPointAtLength=(d:number)=>{reads.push('q');readHook?.('q');return {...q}}
+ return{nodes:{measurement,hRect,bPlane,hInk,bInk,partial,ink},target,defs,hc,bc,measurement,hRect,bPlane,hInk,bInk,partial,ink,svg,doc,view,reads,writes,setProgress:(p:number)=>{target.attrs['data-stroke-reveal-progress']=String(p)},onRead:(f:typeof readHook)=>{readHook=f},onWrite:(f:typeof writeHook)=>{writeHook=f}}
+}
+test('綎11 source H/J/B DOM adapter tail FIRST; old math loops not rerun',()=>{
+ for(const[p,h]of Object.entries(SOURCE.inputSHA256))assert.equal(sha(read(p)),h,p)
+ const cache=json(SOURCE.sourceCacheFile).u7d8e,full=json(SOURCE.sourceFile);assert.equal(sha(JSON.stringify(cache.strokes)),SOURCE.geometrySHA256);assert.deepEqual(Object.keys(full).sort(),['engineRevision','engineHashes','groups','trace','defaults'].sort());assert.deepEqual(full.trace[9][0].args.slice(-2),[22,113]);assert.deepEqual(SOURCE.identity,{sourceRoot:'u7d8e',sourceProofFile:'engine-whole-u7d8e.json',sourceProofFileSha256:SOURCE.sourceSHA256})
+ const C=context(cache.strokes),P=policy(C,10,0)!;assert(C&&P);assert.deepEqual(P.segment,cache.strokes[10][0]);assert.equal(P.segment.outline,GEO.H+' '+GEO.B+' '+GEO.J);assert.equal(sha(JSON.stringify(P.segment)),SOURCE.maskSHA256);assert.equal(policy({...C},10,0),null);assert.equal(policy(C,10,1),null);assert.equal(policy(C,9,0),null)
+ const changed=clone(cache.strokes);changed[0][0].weight++;assert.equal(context(changed),null);const targetChanged=clone(cache.strokes);targetChanged[10][0].outline+=' ';assert.equal(context(targetChanged),null)
+ const history=json('docs/hanja-renderer-native-review-u7d8e-source-clip-growing-starts-2026-10-21/review.json');assert.equal(history.observations.pen11.coarse.candidateSamples,9);assert.equal(history.fullCharacterNativeApproved,false);assert.equal(SOURCE.priorROOTObservationsHistoricalOnly,true)
+ let guards=0
+ for(const [p,q,phase]of [[.2,{x:45,y:16.5},'H'],[.3520532868255941,{x:52.974998474121094,y:16.500003814697266},'L']] as const){
+  const T=tree(P,p,q),F=measure(P,p,T.measurement);assert.equal(F.phase,phase);assert.equal(F.UARead,true);assert.deepEqual(T.reads,['L','q','L']);assert.equal(F.L,45.87373352050781);assert.equal(F.d,p*F.L!);assert.deepEqual(F.point,q);assert.equal(commit(T.nodes,F),true);assert.equal(T.partial.attrs.visibility,'visible');assert.equal(T.ink.attrs.visibility,'hidden');assert.equal(T.writes.at(-1)!.id,T.partial.id);assert.equal(T.writes.at(-1)!.key,'visibility');assert.equal(T.hRect.attrs.width,String(F.hWidth));assert.equal(T.bPlane.attrs.d,F.bodyPlaneD);assert.equal(T.ink.attrs['data-growing-distance'],String(F.d));assert.equal(T.hInk.attrs.d,GEO.H+' '+GEO.J);assert.equal(T.bInk.attrs.d,GEO.B)
+  const reads=T.reads.length;T.setProgress(1);assert.equal(commit(T.nodes,measure(P,1,T.measurement)),true);assert.equal(T.reads.length,reads);assert.equal(T.ink.attrs.visibility,'visible');assert.equal(T.partial.attrs.visibility,'hidden');assert.equal(T.ink.attrs.d,P.segment.outline);assert.equal(T.ink.getAttribute('mask'),null);assert.equal(T.ink.getAttribute('clip-path'),null);assert.equal(T.ink.getAttribute('data-growing-distance'),null);assert.equal(T.ink.attrs['data-u7d8e-source-clip-full'],'true');assert.equal(T.hRect.attrs.width,'0');assert.equal(T.bPlane.attrs.d,'')
+  T.setProgress(0);assert.equal(commit(T.nodes,measure(P,0,T.measurement)),true);assert.equal(T.ink.attrs.visibility,'hidden');assert.equal(T.partial.attrs.visibility,'hidden');assert.equal(T.ink.attrs.d,P.segment.outline);assert.equal(T.reads.length,reads)
+  T.setProgress(p);assert.equal(commit(T.nodes,measure(P,p,T.measurement)),true);assert.equal(T.partial.attrs.visibility,'visible');assert.equal(T.ink.attrs.visibility,'hidden')
+  for(const mutate of[(t:any)=>t.measurement.attrs.d+=' ',(t:any)=>t.measurement.attrs.pathLength='1',(t:any)=>t.measurement.attrs.stroke='black',(t:any)=>t.target.attrs['data-stroke-reveal-progress']='.1',(t:any)=>t.measurement.parentElement=t.svg,(t:any)=>t.defs.attrs.transform='translate(1)',(t:any)=>t.svg.cssTransform='scale(2)',(t:any)=>t.measurement.ownerDocument={},(t:any)=>t.view.document={},(t:any)=>t.measurement.isConnected=false]){
+   const bad=tree(P,p,q);mutate(bad);assert.throws(()=>measure(P,p,bad.measurement));assert.equal(bad.reads.length,0);guards++
+  }
+  for(const stage of['L','q']){const bad=tree(P,p,q);bad.onRead(s=>{if(s===stage)bad.target.attrs['data-stroke-reveal-progress']='.1'});assert.throws(()=>measure(P,p,bad.measurement));guards++}
+  const changing=tree(P,p,q);let calls=0;changing.measurement.getTotalLength=()=>++calls===1?45.87373352050781:46;assert.throws(()=>measure(P,p,changing.measurement));guards++
+  const nan=tree(P,p,q);nan.measurement.getPointAtLength=()=>({x:NaN,y:16.5});assert.throws(()=>measure(P,p,nan.measurement));guards++
+  for(const mutate of[(t:any)=>t.hInk.attrs.d+=' ',(t:any)=>t.bInk.attrs.d+=' ',(t:any)=>t.ink.attrs.d+=' ',(t:any)=>t.ink.attrs.mask='url(#other)',(t:any)=>t.ink.attrs['clip-path']='url(#other)',(t:any)=>t.hRect.attrs.x='37',(t:any)=>t.hRect.attrs.y='14',(t:any)=>t.hRect.attrs.height='9',(t:any)=>t.bc.attrs.clipPathUnits='objectBoundingBox',(t:any)=>t.hInk.parentElement=t.target,(t:any)=>t.measurement.attrs['data-owner']='other',(t:any)=>t.target.css={rotate:'1deg'},(t:any)=>t.target.attrs['data-stroke-reveal-progress']='.1']){
+   const bad=tree(P,p,q),f=measure(P,p,bad.measurement);mutate(bad);assert.equal(commit(bad.nodes,f),false);assert.equal(bad.ink.attrs.visibility,'hidden');assert.equal(bad.partial.attrs.visibility,'hidden');assert.equal(bad.hRect.attrs.width,'0');assert.equal(bad.bPlane.attrs.d,'');guards++
+  }
+  const stale=tree(P,p,q),f=measure(P,p,stale.measurement);stale.onWrite((n,k)=>{if(n===stale.ink&&k==='data-u7d8e-source-clip-phase')stale.hRect.attrs.x='999'});assert.equal(commit(stale.nodes,f),false);assert.equal(stale.ink.attrs.visibility,'hidden');assert.equal(stale.partial.attrs.visibility,'hidden');guards++
+  const copy=tree(P,p,q),privateFrame=measure(P,p,copy.measurement);assert.equal(commit(copy.nodes,{...privateFrame}),false);guards++
+ }
+ assert.throws(()=>sample({...P},.1));for(const p of[-1,NaN,Infinity,1.01])assert.throws(()=>sample(P,p))
+ const p=.5,L=45.87373352050781,valid={sourceGuide:P.segment.revealPath!,L,d:p*L,point:{x:52.974998474121094,y:16.500003814697266}}
+ for(const mutate of[(v:any)=>v.d++,(v:any)=>v.sourceGuide+=' ',(v:any)=>v.L=NaN,(v:any)=>v.point.y=Infinity]){const bad=clone(valid);mutate(bad);assert.throws(()=>sample(P,p,bad));guards++}
+ let getterReads=0;const getter=clone(valid);Object.defineProperty(getter,'L',{enumerable:true,get(){getterReads++;return L}});assert.throws(()=>sample(P,p,getter));assert.equal(getterReads,0);guards++
+ assert.equal(SOURCE.nativeApproval,false);assert.equal(SOURCE.AAApproved,false);assert.equal(SOURCE.originalTimingEquivalent,false);assert.equal(SOURCE.sourcePartition,false)
+ console.log(JSON.stringify({glyph:'綎',target:'11m1',phases:['H','L','empty','full','replay'],guards,sourcePGuideWidthWeightUnchanged:true,oldMathLoopsRepeated:0,actualUA:false,currentNativeApproval:false,SSR:0,sourceProjection:0,engine:0,sharedEdits:0}))
+})
