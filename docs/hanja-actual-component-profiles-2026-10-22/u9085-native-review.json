@@ -1,0 +1,193 @@
+{
+  "schema": "hanja-isolated-actual-component-finite-review/v1",
+  "date": "2026-10-22",
+  "glyph": "邅",
+  "root": "u9085",
+  "batch": 1351,
+  "scope": "원source를 바꾸지 않은 실제 StrokeOutlines의 격리 유한관찰에 대한 ROOT 등록 승인; 제품 전체UI 검토 아님",
+  "source": {
+    "pens": 17,
+    "masks": 18,
+    "polygons": 34,
+    "geometrySHA256": "5798b45122f9077412d9a2e6e5bcea94bc8c541ac1db2c86af0996f708bcbd62",
+    "originalFull5Id3": true,
+    "newHeaderCombination": false,
+    "sourceGeometryChanged": false,
+    "QB17GapSourceUnits": [
+      -2,
+      -2
+    ],
+    "independentQB17Masks": 2
+  },
+  "inputSHA256": {
+    "docs/hanja-source-cache-u9085-2026-10-22/source.mjs": "031e9900104264c972724b08b3bdc87fc14dba0d98b6cb40d2c480e040501124",
+    "docs/hanja-source-cache-u9085-2026-10-22/source.json": "9fb408f14f01b1f7b7db668d8d996c7f21557c8f27172d93994466a20d95aa14",
+    "public/hanja-strokes/glyphwiki/u9085.json": "8f8dee648a6e22e5148ea26331fb6b968c1376b5b8f6aa6fd58d3b29c924215b",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1351.json": "5cc73ed623f54cbc6b1d933d15b72bf1c6b3d20e6eb8e0d41b0a2168917e659e",
+    "docs/hanja-public-glyphwiki-engine-capture-2026-10-22/engine-whole-u9085.json": "141da37dfebf6ce8b32daaeb052a9074cdc4d2ce239b8803bb554d79b60b3702",
+    "docs/hanja-source-native-raw-correspondence-u9085-2026-10-22.json": "f4d15f7de910bfd5afd1a9d459c14e998a9989476cdc175ec0e4b252749423ff",
+    "docs/hanja-official-media-compare-u9085-2026-10-22/native-review.json": "12788795d4eacc6db08a79866645b6ffe625d91834cc5a18bd0e2a1c55857217",
+    "components/hanja/stroke-outlines.tsx": "74c9411ff541a1f31063e660af0f147398f1ab79beddc2e7741b4f843bfaae89",
+    "scripts/hanja-actual-component-review.mjs": "48ed036c3e1b29ff273a5b9b413f345850f69caffe73a8c632670a93d3ada5a0",
+    "docs/hanja-actual-component-profiles-2026-10-22/u9085.json": "c80a4207089f52c8b72035f01281b2a7bfec0a6b7c72fbdf2b3314c3b1456d93"
+  },
+  "native": {
+    "observer": "ROOT",
+    "validScreens": 34,
+    "originalValidScreens": 32,
+    "additionalResidualScreens": 2,
+    "first": {
+      "helperSHA256": "c9590067e8433cc7b85ab1e3d3069de51a3c7946dd38d0cc9395546b681c2f0d",
+      "profileSHA256": "ff1ebad43ec5adc6a5c8afe8e97e546d0b616b86ca45aab2c187baa1f109de14",
+      "screens": 32
+    },
+    "correctedCoverage": {
+      "helperSHA256": "48ed036c3e1b29ff273a5b9b413f345850f69caffe73a8c632670a93d3ada5a0",
+      "profileSHA256": "c80a4207089f52c8b72035f01281b2a7bfec0a6b7c72fbdf2b3314c3b1456d93",
+      "screens": 2,
+      "pen": 17,
+      "masks": [
+        1,
+        2
+      ],
+      "svgSize": 520,
+      "actualOriginalFullRoundResidual": "both-white",
+      "mask1CroppedAttemptExcluded": 1,
+      "eachGuideCapturedAtOwnPartial": true
+    },
+    "breakdown": [
+      {
+        "kind": "all17compact",
+        "screens": 17,
+        "uniqueSamples": 153,
+        "samplesPerPen": 9,
+        "bad": [],
+        "errors": []
+      },
+      {
+        "kind": "QB17m2-early",
+        "screens": 2,
+        "local": [
+          0.01,
+          0.03
+        ],
+        "observedConnected": true
+      },
+      {
+        "kind": "singleCurveCoverage",
+        "screens": 6,
+        "pens": [
+          4,
+          6,
+          10,
+          14,
+          15,
+          16
+        ],
+        "result": "blank"
+      },
+      {
+        "kind": "QB17-boundary",
+        "screens": 3,
+        "global": 0.2536388359096775,
+        "delta": 1e-10,
+        "positions": [
+          "before",
+          "at",
+          "after"
+        ],
+        "observation": "正の進捗で既存fixed round capが接続したまま出現",
+        "zeroAreaStartClaim": false,
+        "noJumpClaim": false
+      },
+      {
+        "kind": "pen17fine-board",
+        "screens": 1,
+        "globalValues": [
+          0.9999,
+          0.99999999,
+          1
+        ],
+        "samples": 3
+      },
+      {
+        "kind": "pen17natural",
+        "screens": 2,
+        "startAndEndOnly": true,
+        "allRAFsObserved": false,
+        "endGlobal": 1,
+        "errors": []
+      },
+      {
+        "kind": "doneWhole",
+        "screens": 1
+      },
+      {
+        "kind": "QB17-fullround-residuals",
+        "screens": 2,
+        "maskNumbers": [
+          1,
+          2
+        ],
+        "result": "both-white"
+      }
+    ],
+    "diagnostics": {
+      "failedOldHelperResidual17AttemptExcluded": 1,
+      "reason": "旧helperは全maskを共通global.5で探し、先行Qが既に完了してpartial guideを取得できなかった",
+      "reloadClearedErrors": true,
+      "sourceFailureInferred": false
+    },
+    "fixedCapAcceptance": {
+      "existingFixedCapRetained": true,
+      "positiveProgressConnectedAppearanceObserved": true,
+      "zeroAreaStartProven": false,
+      "noFiniteJumpProven": false,
+      "newGrowthPolicy": false
+    },
+    "servers": [
+      {
+        "pid": 34870,
+        "session": 22334,
+        "stoppedByRoot": true,
+        "exitCode": 130
+      },
+      {
+        "pid": 38748,
+        "session": 67838,
+        "stoppedByRoot": true,
+        "exitCode": 130
+      }
+    ],
+    "finalPIDRequery": false
+  },
+  "approval": {
+    "isolatedActualComponentFiniteApproved": true,
+    "rootRegistrationApproved": true,
+    "actualProductAppUI": false,
+    "actualAppUI": false,
+    "controllerWorkflow": false,
+    "storage": false,
+    "all17Autoplay": false,
+    "wholeReplay": false,
+    "runtimeAppliedAtObservation": false
+  },
+  "registration": {
+    "batch": 1351,
+    "expectedRegisteredUnique": 5764,
+    "expectedRemaining": 214,
+    "actualRegistryVerificationPending": true
+  },
+  "historicalPreparationFalsePreserved": true,
+  "executions": {
+    "agentSourceProjection": 0,
+    "agentEngine": 0,
+    "agentSSR": 0,
+    "agentBrowser": 0,
+    "agentServer": 0,
+    "oldPassedTestsRepeated": 0,
+    "newActivationTailExecuted": 0,
+    "newRecordMetadataCheck": 1,
+    "build": false
+  }
+}
