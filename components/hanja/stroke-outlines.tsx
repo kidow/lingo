@@ -9,6 +9,7 @@ import { reviewedU6e7aContext, reviewedU6e7aPolicy, commitReviewedU6e7aCaps, com
 import { reviewedU7d85Context, reviewedU7d85Policy, commitReviewedU7d85Caps, type ReviewedU7d85Policy } from '@/lib/hanja-stroke-start-gate-u7d85'
 import { reviewedU7d7aContext, reviewedU7d7aPolicy, commitReviewedU7d7aCaps, type ReviewedU7d7aPolicy } from '@/lib/hanja-stroke-start-gate-u7d7a'
 import { reviewedU7c1cContext, reviewedU7c1cPolicy, commitReviewedU7c1cCaps, commitReviewedU7c1cMonotone, type ReviewedU7c1cGrowingPolicy, type ReviewedU7c1cMonotonePolicy } from '@/lib/hanja-stroke-start-gate-u7c1c'
+import { reviewedU8fedContext, reviewedU8fedPolicy, commitReviewedU8fedCaps, type ReviewedU8fedPolicy } from '@/lib/hanja-stroke-start-gate-u8fed'
 import { reviewedU9081Context, reviewedU9081Policy, commitReviewedU9081Caps, type ReviewedU9081Policy } from '@/lib/hanja-stroke-start-gate-u9081'
 import { reviewedU564bContext, reviewedU564bPolicy, commitReviewedU564bCaps, type ReviewedU564bPolicy } from '@/lib/hanja-stroke-start-gate-u564b'
 import { reviewedU68b2Context, reviewedU68b2Policy, commitReviewedU68b2Caps, type ReviewedU68b2Policy } from '@/lib/hanja-stroke-start-gate-u68b2'
@@ -50,6 +51,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const quadraticContext = reviewedQuadraticCapsContext(strokes)
   const quanContext = reviewedQuanQuadraticCapsContext(strokes)
   const siContext = reviewedSiContext(strokes)
+  const u8fedContext = reviewedU8fedContext(strokes)
   const u9081Context = reviewedU9081Context(strokes)
   const u905dContext = reviewedU905dContext(strokes)
   const u8cb6Context = reviewedU8cb6Context(strokes)
@@ -101,6 +103,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         const u6e7aPolicy = reviewedU6e7aPolicy(u6e7aContext, stroke, index)
         if (u6e7aPolicy?.kind === 'growing-u6e7a-caps') return <U6e7aCapsOutline key={index} policy={u6e7aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         if (u6e7aPolicy?.kind === 'original-HJ-B-u6e7a') return <U6e7aHVOutline key={index} policy={u6e7aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+        const u8fedPolicy = reviewedU8fedPolicy(u8fedContext, stroke, index)
+        if (u8fedPolicy) return <U8fedCapsOutline key={index} policy={u8fedPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u9081Policy = reviewedU9081Policy(u9081Context, stroke, index)
         if (u9081Policy) return <U9081CapsOutline key={index} policy={u9081Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
         const u905dPolicy = reviewedU905dPolicy(u905dContext, stroke, index)
@@ -484,6 +488,30 @@ function U68b2CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU68b2
 
 /** 潗 K의 원3m1/3m2만 고유 Q growing cap으로 표시한다. 다른 child는 그대로 둔다. */
 /** 邁 VS3 body3 QB17의 정확한 두 mask만 조건부 APP 정책으로 측정한다. native/runtime 승인 아님. */
+function U8fedCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU8fedPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>{
+    const committed=commitReviewedU8fedCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current})
+    return committed.cleanup
+  },[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="growing-u8fed-caps" data-u8fed-progress={String(progress)} data-u8fed-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u8fed-measure'} data-growing-owner={clipId} data-u8fed-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden" />
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0} />
+      </mask>
+      <mask id={clipId+'-u8fed-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u8fed-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0} />
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+        <circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white" />
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path key="u8fed-full-round-ink" data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'} />}
+    {valid&&progress>0&&progress<1&&<path key="u8fed-growing-ink" ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u8fed-growing)'} visibility="hidden" />}
+  </g>
+}
+
 function U9081CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU9081Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}) {
   const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
   useLayoutEffect(()=>{

@@ -1,0 +1,125 @@
+{
+  "schema": "hanja-runtime-finite-validation-v1",
+  "batch": 1344,
+  "date": "2026-10-22",
+  "status": "FIRST-actual-runtime-verifier-PASS",
+  "counts": {
+    "pens": 9,
+    "masks": 10,
+    "polygons": 25
+  },
+  "geometrySHA256": "2d1d7518d10f00319804e6e2e841f95bee2248e1e4f2c8df8f570ed1ac4e7262",
+  "parent": {
+    "batch": 1341,
+    "resume": "docs/hanja-goal-glyphwiki-batch1341-2026-10-22/resume.json",
+    "SHA256": "69a65a535b030c5821107fd924272224afffcba6101b3b97d222cf620185712b",
+    "applied": 5758,
+    "remaining": 220
+  },
+  "sourcePins": {
+    "count": 55,
+    "immutableListIn": "review.json#/immutableFilesSHA256"
+  },
+  "checks": {
+    "newPublicLoader": {
+      "firstExecution": true,
+      "passed": 3,
+      "executions": 1,
+      "repeated": 0
+    },
+    "newLoaderAST": {
+      "files": 2,
+      "diagnostics": 0,
+      "repeated": 0
+    },
+    "verifierAST": {
+      "executions": 1,
+      "diagnostics": 0
+    },
+    "actualRuntimeVerifier": {
+      "executions": 1,
+      "status": "PASS",
+      "firstExecution": true,
+      "exitCode": 0,
+      "wallSeconds": 0.6695133329927921
+    },
+    "postMetadata": {
+      "executions": 1,
+      "status": "PASS",
+      "actualVerifierRepeated": 0
+    },
+    "oldTestsRepeated": 0,
+    "SSRRepeated": 0,
+    "sourceCompiler": 0,
+    "engine": 0,
+    "projection": 0
+  },
+  "actualCheckpointVerified": true,
+  "actualRegistryVerified": true,
+  "runtimeRegistered": true,
+  "runtimeApplied": true,
+  "isolatedActualComponentBrowserVerified": true,
+  "actualAppUI": false,
+  "wholeReplay": false,
+  "automaticPlaybackAllApproved": false,
+  "build": false,
+  "actualVerifierResult": {
+    "executions": 1,
+    "status": "PASS",
+    "firstExecution": true,
+    "exitCode": 0,
+    "wallSeconds": 0.6695133329927921,
+    "result": {
+      "batch": 1344,
+      "glyph": "迭",
+      "passed": true,
+      "firstExecution": true,
+      "registryUnique": 5759,
+      "remaining": 219,
+      "historical": 349,
+      "resolved": 184,
+      "active": 165,
+      "refs": 400,
+      "targetMatches": 1,
+      "targetRecordType": "object",
+      "sourcePins": 55,
+      "pinMismatch": 0,
+      "pens": 9,
+      "masks": 10,
+      "polygons": 25,
+      "geometry": "2d1d7518d10f00319804e6e2e841f95bee2248e1e4f2c8df8f570ed1ac4e7262",
+      "records": 10,
+      "existingFull5Id3": true,
+      "newHeaderCombination": false,
+      "isolatedActualComponentBrowserVerified": true,
+      "actualComponentFiniteScreens": 41,
+      "naturalBExactRound": false,
+      "exactPrefixDoneBothFullRound": true,
+      "actualAppUI": false,
+      "automaticPlaybackAllApproved": false,
+      "wholeReplay": false,
+      "sourceCompiler": 0,
+      "factory": 0,
+      "projection": 0,
+      "engine": 0,
+      "oldTestsRepeated": 0,
+      "SSRRepeated": 0,
+      "build": false
+    },
+    "stderrEmpty": true,
+    "oldChecksRepeated": 0,
+    "SSRRepeated": 0
+  },
+  "ownedFilesSHA256": {
+    "public/hanja-strokes/glyphwiki/u8fed-k.json": "971637a5dc48641605be172471a47f095d9d34886731a738bd784a33264d4e46",
+    "public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1344.json": "770dbce448360060a0539dfb79287c7142401d4a5b9d7487a5eae016a1c75566",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1344.ts": "7f35145ffac03bee983ebf7adf871c8ab11446f6098336bb1fe8cc66aca1ceef",
+    "lib/hanja-stroke-dictionary-glyphwiki-batch1344.test.ts": "f3c6ed2584de377dbcbfd0baab249064a214ffb53e11c14fd10453993c0fc210",
+    "public/hanja-strokes/glyphwiki/u8fed-k.NOTICE.md": "8958fb773af82ada2ae38eb3cb4523afa7bb3bdba917b5da8a1774856828520f",
+    "lib/hanja-strokes.ts": "a8e36e97553abc4ee64116aeaf04af31e147a82db07a42be37592ede236b3077",
+    "docs/hanja-goal-glyphwiki-batch1344-2026-10-22/README.md": "065eab0c5b10e0e5bc341e0ccfc76658656263d819f7cdaef4e00f840101ab24",
+    "docs/hanja-goal-glyphwiki-batch1344-2026-10-22/review.json": "60fa390aa0e77cbbe3e16baf3320cc9a5682317adf9f164ab6cf6307bfb87321",
+    "docs/hanja-goal-glyphwiki-batch1344-2026-10-22/resume.json": "6ac2ee5a6a0901de969e2eafc80d48e94b60d958f47636a4b5ee6733572d3817",
+    "docs/hanja-goal-glyphwiki-batch1344-2026-10-22/verify-runtime.mjs": "db6b5368a0541401d0c6e82f6154dcf3c1ea2e3a1031d02edada5948767bbe2c"
+  }
+}
