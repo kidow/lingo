@@ -72,8 +72,8 @@ export function measureReviewedU7e58FootFrame(policy:ReviewedU7e58FootPolicy,pro
   L=path.getTotalLength();ensure(Number.isFinite(L)&&L>0&&exact(),'Invalid same-path 繘1m2 length');d=bodyProgress*L
   const start=path.getPointAtLength(0);ensure([start.x,start.y].every(Number.isFinite)&&exact(),'Invalid original 繘1m2 start')
   const end=path.getPointAtLength(L);ensure([end.x,end.y].every(Number.isFinite)&&end.x>start.x&&exact(),'Invalid original 繘1m2 end')
-  const value=path.getPointAtLength(d);ensure([value.x,value.y].every(Number.isFinite)&&value.x>=start.x&&value.x<=end.x&&exact(),'Invalid same-frame 繘1m2 point')
-  ensure(path.getTotalLength()===L&&exact(),'Changing 繘1m2 path length');q=Object.freeze({x:value.x,y:value.y});threshold=cut+(maxX-cut)*(value.x-start.x)/(end.x-start.x)
+  const value=path.getPointAtLength(d);ensure([value.x,value.y].every(Number.isFinite)&&exact(),'Invalid same-frame 繘1m2 point')
+  ensure(path.getTotalLength()===L&&exact(),'Changing 繘1m2 path length');q=Object.freeze({x:value.x,y:value.y});threshold=cut+(maxX-cut)*Math.max(0,Math.min(1,(value.x-start.x)/(end.x-start.x)))
   ensure(Number.isFinite(threshold)&&threshold>=cut&&threshold<=maxX,'Source-bound 繘1m2 threshold required')
  }
  const frame=Object.freeze({policyId:policy.id,progress,phase,footPathD:fp.d,footFullTriangles:fp.full,footLocal:fp.local,bodyProgress,threshold,L,d,point:q,UARead:phase==='body'});frames.set(frame,{policy,measurement:path,exact});return frame

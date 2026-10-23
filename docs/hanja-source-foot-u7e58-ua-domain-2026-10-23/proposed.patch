@@ -1,0 +1,18 @@
+--- a/lib/hanja-stroke-source-foot-u7e58.ts
++++ b/lib/hanja-stroke-source-foot-u7e58.ts
+@@ -73,6 +73,6 @@
+   const start=path.getPointAtLength(0);ensure([start.x,start.y].every(Number.isFinite)&&exact(),'Invalid original 繘1m2 start')
+   const end=path.getPointAtLength(L);ensure([end.x,end.y].every(Number.isFinite)&&end.x>start.x&&exact(),'Invalid original 繘1m2 end')
+-  const value=path.getPointAtLength(d);ensure([value.x,value.y].every(Number.isFinite)&&value.x>=start.x&&value.x<=end.x&&exact(),'Invalid same-frame 繘1m2 point')
+-  ensure(path.getTotalLength()===L&&exact(),'Changing 繘1m2 path length');q=Object.freeze({x:value.x,y:value.y});threshold=cut+(maxX-cut)*(value.x-start.x)/(end.x-start.x)
++  const value=path.getPointAtLength(d);ensure([value.x,value.y].every(Number.isFinite)&&exact(),'Invalid same-frame 繘1m2 point')
++  ensure(path.getTotalLength()===L&&exact(),'Changing 繘1m2 path length');q=Object.freeze({x:value.x,y:value.y});threshold=cut+(maxX-cut)*Math.max(0,Math.min(1,(value.x-start.x)/(end.x-start.x)))
+   ensure(Number.isFinite(threshold)&&threshold>=cut&&threshold<=maxX,'Source-bound 繘1m2 threshold required')
+  }
+--- a/scripts/hanja-actual-component-review.mjs
++++ b/scripts/hanja-actual-component-review.mjs
+@@ -655,3 +655,3 @@
+  let L=null,d=null,q=null,threshold=null;
+- if(expected==='body'&&checks.sameOwner&&checks.noTransforms){try{const original=measurement.getAttribute('d');L=measurement.getTotalLength();const start=measurement.getPointAtLength(0),end=measurement.getPointAtLength(L);d=bp*L;const v=measurement.getPointAtLength(d);q={x:v.x,y:v.y};threshold=t.cutX+(b[2]-t.cutX)*(v.x-start.x)/(end.x-start.x);checks.sameNativeFrame=L>0&&Number.isFinite(L)&&[d,v.x,v.y,threshold].every(Number.isFinite)&&measurement.getTotalLength()===L&&measurement.getAttribute('d')===original&&number(ink,'data-growing-length')===L&&number(ink,'data-growing-distance')===d&&number(ink,'data-growing-end-x')===v.x&&number(ink,'data-growing-end-y')===v.y;checks.bodyClip=number(ink,'data-monotone-threshold')===threshold&&number(rect,'width')===threshold-b[0]&&body?.getAttribute('visibility')==='visible';}catch{checks.sameNativeFrame=false;}}
++ if(expected==='body'&&checks.sameOwner&&checks.noTransforms){try{const original=measurement.getAttribute('d');L=measurement.getTotalLength();const start=measurement.getPointAtLength(0),end=measurement.getPointAtLength(L);d=bp*L;const v=measurement.getPointAtLength(d);q={x:v.x,y:v.y};threshold=t.cutX+(b[2]-t.cutX)*Math.max(0,Math.min(1,(v.x-start.x)/(end.x-start.x)));checks.sameNativeFrame=L>0&&Number.isFinite(L)&&[d,v.x,v.y,threshold].every(Number.isFinite)&&measurement.getTotalLength()===L&&measurement.getAttribute('d')===original&&number(ink,'data-growing-length')===L&&number(ink,'data-growing-distance')===d&&number(ink,'data-growing-end-x')===v.x&&number(ink,'data-growing-end-y')===v.y;checks.bodyClip=number(ink,'data-monotone-threshold')===threshold&&number(rect,'width')===threshold-b[0]&&body?.getAttribute('visibility')==='visible';}catch{checks.sameNativeFrame=false;}}
+  else{checks.noStaleUA=['data-growing-length','data-growing-distance','data-growing-end-x','data-growing-end-y','data-monotone-threshold'].every(k=>ink?.getAttribute(k)===null);checks.bodyReset=expected==='full'||(body?.getAttribute('visibility')==='hidden'&&number(rect,'width')===0);}
