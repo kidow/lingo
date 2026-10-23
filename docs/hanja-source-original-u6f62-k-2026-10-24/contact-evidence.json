@@ -1,0 +1,96 @@
+{
+  "schema": "hanja-original-initial-prior-disk-contact/v1",
+  "date": "2026-10-24",
+  "glyph": "潢",
+  "sourceRoot": "u6f62-k",
+  "pen": 3,
+  "mask": 2,
+  "fixture": {
+    "file": "docs/hanja-source-original-u6f62-k-2026-10-24/fixtures.json",
+    "SHA256": "0eddf34fe269b7822f51f4feb86255987aea5757e45da423eba5ee590eac3682",
+    "key": "u6f62K",
+    "geometrySHA256": "d332919bd6a7b464e08f62f2714611748e1de31661c772f22f99c28b15311f4a"
+  },
+  "target": {
+    "outline": "M14.25 74.2 L14.95 72.55 L15.9 70.45 L17.15 67.75 L18.7 64.55 L20.55 60.75 L22.7 56.4 L25.2 51.45 L28 45.95 L31.2 39.9 L34.8 33.3 L35.65 33.65 L32.95 40.7 L30.45 47.05 L28.2 52.8 L26.15 57.9 L24.4 62.45 L22.95 66.35 L21.8 69.65 L20.9 72.35 L20.35 74.4 L20.1 75.75 Z",
+    "bounds": [
+      14.25,
+      33.3,
+      35.65,
+      75.75
+    ],
+    "direction": "curve",
+    "weight": 45.257409,
+    "revealPath": "M17.2 75 Q18.77 69 35.255 33.5",
+    "revealWidth": 14,
+    "sourceFieldSHA256": "7dfa96244043ed56eb943a2846ffeab386f3c8e5440c41e747783aea394a8827"
+  },
+  "prior": {
+    "outline": "M7.6 66.2 L10.35 66.8 L12.95 67.9 L15.25 69.45 L17.25 71.45 L18.95 73.8 L20.25 76.55 L21.25 79.65 L21.9 83.05 L22.25 86.75 L22.25 90.7 L16.25 90.25 L16.55 86.75 L16.55 83.5 L16.35 80.65 L15.85 78.05 L15.15 75.7 L14.15 73.65 L12.9 71.75 L11.4 70.05 L9.55 68.5 L7.3 67.05 Z M22.25 90.7 L21.2 92.75 L19.05 93.45 L17 92.4 L16.25 90.25 Z",
+    "bounds": [
+      7.3,
+      66.2,
+      22.25,
+      93.45
+    ],
+    "direction": "curve",
+    "weight": 28.254169,
+    "revealPath": "M6.995 66.5 Q20.7325 71 19.1625 92",
+    "revealWidth": 14,
+    "sourceFieldSHA256": "ff21878563c80c5ad0551526f90236198e91acec4c734beac645c76f89f54f9b"
+  },
+  "contact": {
+    "originalQStart": [
+      17.2,
+      75
+    ],
+    "startStrictInsidePriorP": true,
+    "startStrictInsideOwnP": false,
+    "startPriorBoundaryDistanceSquared": "6497401/1480400",
+    "startOwnBoundaryDistanceSquared": "1849/5860000",
+    "commonPoint": [
+      17.2,
+      74.9
+    ],
+    "commonPriorMarginSquared": "6235009/1480400",
+    "commonOwnMarginSquared": "36481/5860000",
+    "actualPriorCompletedGuideWitness": {
+      "t": "1/2",
+      "point": [
+        16.905625,
+        75.125
+      ],
+      "radius": 7,
+      "originalStartDistanceSquared": "261841/2560000",
+      "commonPointDistanceSquared": "351441/2560000"
+    },
+    "strictPriorDisk": {
+      "center": [
+        17.2,
+        75
+      ],
+      "radius": 2,
+      "insideOriginalPriorP": "6497401/1480400 > 4",
+      "insideActualCompletedPriorMask": "sqrt(261841/2560000)+2 < 7"
+    },
+    "initialGrowingCapImplication": {
+      "condition": "Original measured arc distance d <= 1, original guide prefix and cap radius <= d",
+      "bound": "Every guide-prefix cap point lies within distance <= 2d <= 2 of original Q start",
+      "result": "Any initial own-P ink is contained in the already completed actual prior P-and-guide mask",
+      "ownStartInsideRequirementReused": false
+    },
+    "centerlineBridgeAdded": false
+  },
+  "pairProgressBoundary": 0.38434991832170984,
+  "limits": {
+    "initialOnly": true,
+    "allPrefixConnectivityProven": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "registered": false,
+    "sourceFieldsChanged": false,
+    "newFootModule": false,
+    "newMicroclock": false
+  },
+  "initialMQCertificate": "Not requested yet; independent initial-only certification required before policy selection"
+}
