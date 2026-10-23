@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict'
+import {test} from 'node:test'
+import {readFileSync} from 'node:fs'
+import {makeReviewedU6f11TerminalSourceContext,reviewedU6f11TerminalContext,reviewedU6f11TerminalPolicy,reviewedU6f11TerminalFrame,measureReviewedU6f11TerminalFrame,REVIEWED_U6F11_TERMINALS} from './hanja-stroke-original-terminal-u6f11.ts'
+const f=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u6f11-2026-10-24/fixtures.json',import.meta.url),'utf8')).u6f11,s=f.strokes
+test('漑14 original RIGHT and UP12.5 FIRST',()=>{
+ const ctx=reviewedU6f11TerminalContext(s);assert(ctx);assert.equal(makeReviewedU6f11TerminalSourceContext(f.fullProof,f.identity,s),ctx);assert.equal(makeReviewedU6f11TerminalSourceContext(f.fullProof,{...f.identity,sourceRoot:"wrong"},s),null);assert.equal(reviewedU6f11TerminalPolicy(ctx,13,1),null);const policy=reviewedU6f11TerminalPolicy(ctx,13,2);assert(policy);const seg=s[13][2];assert.equal(policy.bodyOutline+" "+policy.tailOutline,seg.outline);assert.equal(policy.bodyShare,8.99125/(8.99125+12.5));
+ for(const p of[0,1e-10,.03,policy.bodyShare-1e-10,policy.bodyShare,policy.bodyShare+1e-10,.9,.999999,1]){const v=measureReviewedU6f11TerminalFrame(policy,seg,p,p===0?0:1,null);assert.equal(v.visible,p>0);assert.equal(v.L,null);assert.equal(v.point,null);assert.equal(v.bodyRect.x,82.35);assert.equal(v.bodyRect.y,85.5);assert.equal(v.bodyRect.width,12*v.bodyProgress);assert.equal(v.bodyRect.height,6);assert.equal(v.tailRect.x,88.35);assert.equal(v.tailRect.y,85.5-12.5*v.tailProgress);assert.equal(v.tailRect.width,4);assert.equal(v.tailRect.height,12.5*v.tailProgress)}
+ for(const p of[NaN,Infinity,-1,1.1])assert.throws(()=>reviewedU6f11TerminalFrame(policy,seg,p,1));assert.throws(()=>reviewedU6f11TerminalFrame(policy,seg,.1,.999));assert.throws(()=>reviewedU6f11TerminalFrame({...policy},seg,.1,1));assert.throws(()=>reviewedU6f11TerminalFrame(policy,{...seg,weight:1},.1,1));assert.equal(REVIEWED_U6F11_TERMINALS.nativeApproval,false);
+})
