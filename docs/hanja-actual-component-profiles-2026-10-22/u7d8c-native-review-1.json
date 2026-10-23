@@ -1,0 +1,127 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "glyph": "綌",
+  "root": "u7d8c",
+  "date": "2026-10-24",
+  "observer": "/root",
+  "sharedVersion": 99,
+  "componentSHA256": "6ecfc240c0753034e2956bd6117217732c35c58d9678747ef804f6b2260500e9",
+  "helperSHA256": "393a3ca393e33678e7d28d2bbdb3b3998120d71b0ff02325b1779afbb1b8e8aa",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u7d8c-1.json",
+    "SHA256": "dba2373d44b90f214f290309760928d9c09f7aaa5e22c2a3da4e2d84af88ec96"
+  },
+  "distinctPASS": 68,
+  "distinctFAIL": 0,
+  "freshScreenshots": 68,
+  "freshDistinctScopes": 68,
+  "freshPASS": 68,
+  "freshFAIL": 0,
+  "reusedSuccessfulScopes": 0,
+  "scopeCounts": {
+    "MQ9InitialEpsilon03AndResidual": 27,
+    "foot2EarlyPhaseAndCoverage": 12,
+    "QQSourceBoundaries": 6,
+    "MLL12SourceBracket": 3,
+    "compact13Boards": 13,
+    "doneWhole": 1,
+    "natural1And2And12EarlyEnded": 6,
+    "total": 68
+  },
+  "scopeDetails": {
+    "MQInitial": {
+      "targets": 9,
+      "epsilonAnd03": 18
+    },
+    "fullRoundResidual": {
+      "targets": 9,
+      "white": true
+    },
+    "footCoverage": {
+      "targets": 2,
+      "whiteInterior": true,
+      "thinAntialiasOutline": true,
+      "pixelEqualityClaimed": false
+    },
+    "QQSourceBoundaries": {
+      "targets": 2,
+      "minusExactPlus": 6
+    },
+    "MLL12SourceBracket": {
+      "center": 0.544221962826614,
+      "deltas": [
+        -0.0001,
+        0,
+        0.0001
+      ],
+      "UAExactTurnClaimed": false
+    },
+    "compactBoards": {
+      "boards": 13,
+      "panelsNotCountedAsSeparateScopes": true
+    },
+    "natural": {
+      "pens": [
+        1,
+        2,
+        12
+      ],
+      "earlyProgress": {
+        "pen1": 0.1235875,
+        "pen2": 0.069175,
+        "pen12": 0.0596
+      },
+      "allEndedProgress": 1,
+      "finalPen12Mode": "natural-ended"
+    },
+    "doneWholeProgress": 1
+  },
+  "allFullyVisible": true,
+  "allBad": [],
+  "allErrors": [],
+  "visualMissingInk": false,
+  "visualSeparatedFragment": false,
+  "excluded": {
+    "wrongRootResidualScreenshots": 2,
+    "explanation": "Two residuals were initially viewed at #root; excluded. Only the subsequent #board observations count.",
+    "staleClosureHandlerAttemptsWithoutImage": 1,
+    "sandboxBindFailure": {
+      "error": "EPERM",
+      "exitCode": 1,
+      "productFailure": false,
+      "nativeEvidence": false
+    },
+    "unusedRhoNamespace": {
+      "calls": 0,
+      "nativeEvidence": false
+    }
+  },
+  "SSR": {
+    "actualEscalatedSnapshotRuns": 1,
+    "CJS": 117,
+    "ESM": 117,
+    "sameSnapshotAfterSandboxBindFailure": true
+  },
+  "server": {
+    "PID": 50509,
+    "session": 22697,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "stdoutEmpty": true,
+    "reviewTab4Closed": true
+  },
+  "approval": {
+    "finiteNative": true,
+    "runtimeRegistrationAuthorizedByROOT": true,
+    "actualProductAppUI": false,
+    "controllerWorkflow": false,
+    "storageWorkflow": false,
+    "all13Replay": false,
+    "wholeReplayAllTime": false,
+    "officialMicroTimingEquivalent": false
+  },
+  "registered": false,
+  "authorAdditionalTests": 0,
+  "build": false
+}

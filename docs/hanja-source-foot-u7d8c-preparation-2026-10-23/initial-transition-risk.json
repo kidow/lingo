@@ -1,0 +1,194 @@
+{
+  "schema": "hanja-source-initial-transition-risk-inventory/v1",
+  "date": "2026-10-23",
+  "glyph": "綌",
+  "root": "u7d8c",
+  "preparedBy": "/root/activation1401",
+  "sourceFixture": "docs/hanja-source-independent-thread-qq-two-u7d8c-source-experiment-2026-10-23/fixtures.json",
+  "geometrySHA256": "41775e1ca7a738e13e58551035401c5cb77dc47deb25d976961792e29e2361b2",
+  "sourceFull5SHA256": "d025868602d7d0e1de4a06676126549ba88bd304e3d1695098b85d673b1d6713",
+  "initialMQTargets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    },
+    {
+      "pen": 10,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialSufficientConditions": true,
+      "fullSweepAndPConnectivityApproved": false
+    }
+  ],
+  "QQTransitions": [
+    {
+      "pen": 1,
+      "priorMask": 1,
+      "nextMask": 2,
+      "originalRaw": [
+        0,
+        1
+      ],
+      "guideGapSourceUnits": 18.44418675355463,
+      "sourceGuideChanged": false,
+      "strictRoot": {
+        "pen": 1,
+        "rawPairZeroBased": [
+          0,
+          1
+        ],
+        "strictEndpointDiskFound": true,
+        "normalizedSeed": [
+          "141/10",
+          "55/2"
+        ],
+        "openDiskRadius": "2/5",
+        "primaryPBoundaryDistanceSquared": [
+          "229441/842000",
+          "14884/37925"
+        ],
+        "previousGuideEndpoint": [
+          "1107/80",
+          "28"
+        ],
+        "seedToEndpointSquared": "2041/6400",
+        "endpointDiskRadius": "7",
+        "endpointContainmentThresholdSquared": "1089/25",
+        "oldCenterlineGapPreserved": true,
+        "fullPrefixProofApproved": false,
+        "nativeApproved": false
+      },
+      "exactConnectedPrefixProofPending": true,
+      "nativePending": true
+    },
+    {
+      "pen": 2,
+      "priorMask": 1,
+      "nextMask": 2,
+      "originalRaw": [
+        2,
+        3
+      ],
+      "guideGapSourceUnits": 13.039789108724111,
+      "sourceGuideChanged": false,
+      "strictRoot": {
+        "pen": 2,
+        "rawPairZeroBased": [
+          2,
+          3
+        ],
+        "strictEndpointDiskFound": true,
+        "normalizedSeed": [
+          "29/2",
+          "107/2"
+        ],
+        "openDiskRadius": "1/2",
+        "primaryPBoundaryDistanceSquared": [
+          "833/2000",
+          "7569/12688"
+        ],
+        "previousGuideEndpoint": [
+          "2697/200",
+          "55"
+        ],
+        "seedToEndpointSquared": "131209/40000",
+        "endpointDiskRadius": "7",
+        "endpointContainmentThresholdSquared": "169/4",
+        "oldCenterlineGapPreserved": true,
+        "fullPrefixProofApproved": false,
+        "nativeApproved": false
+      },
+      "exactConnectedPrefixProofPending": true,
+      "nativePending": true
+    }
+  ],
+  "MLLInitial": {
+    "pen": 12,
+    "mask": 1,
+    "guide": "M50.1725 60.31 L80.4775 60.31 L80.4775 85.69",
+    "firstLegLength": "6061/200",
+    "radius": 7,
+    "firstLegLongerThanDiameter": true,
+    "targetSpecificPolicyNotYetPrepared": true,
+    "turnAndResidualNativePending": true
+  },
+  "cardinalMasks": [
+    {
+      "pen": 4,
+      "direction": "down"
+    },
+    {
+      "pen": 11,
+      "direction": "down"
+    },
+    {
+      "pen": 13,
+      "direction": "right"
+    }
+  ],
+  "finiteNewNativeRiskScopesRequired": [
+    "초기 MQ9개의 epsilon/.03/rho7 경계와 완료 잔여",
+    "QQ 1·2획 두 번째 mask의 초기/prefix phase/원 경계/coverage",
+    "12획 MLL 초기·L전환·완료 잔여",
+    "전체 13획과 해당 원 자연재생·완료"
+  ],
+  "oldHOLDPreserved": true,
+  "sourcePGuideWidthWeightChanged": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newSourceEngine": 0,
+  "newSourceProjection": 0,
+  "sharedRendererModified": false
+}
