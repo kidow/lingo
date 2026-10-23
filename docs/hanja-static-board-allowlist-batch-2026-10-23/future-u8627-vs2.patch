@@ -1,0 +1,30 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-board.py
+@@
+             and base.get('launcherSHA256')==config['launcher']['SHA256'])
+ 
+ 
++def exact_u8627_vs2_prepared_launcher(config,base):
++    # Exact original 蘧 VS2 full5; source/renderer/three existing admissions unchanged.
++    selected=base.get('sourceRoots',{}).get('selected',{})
++    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':"c7f2ffb34eefbdc889a1016ece7c756258542655c662d45ffa84f822d0c7387f"}
++            and config.get('baseConfig')=={'path':"docs/hanja-source-raw-compare-u8627-vs2-2026-10-23/config.json",'SHA256':"12762981a5d51fbdafcf31f7f13dbe30e50ea5e0a1501b57fb9f1b054bfbc83e"}
++            and base.get('glyph')=='蘧' and base.get('catalogStrokes')==21
++            and list(base.get('sourceRoots',{}))==['selected']
++            and selected=={"root":"u8627-ue0102","file":"docs/hanja-source-raw-compare-u8627-vs2-2026-10-23/engine-whole-u8627-ue0102.json","fileSHA256":"cfc15b75a2dad4fdc5af7c22c8b2c8632735cd72a3130ce0fb9ca3ba0eca45cd","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u8627-ue0102","sourceProofFile":"engine-whole-u8627-ue0102.json","sourceProofFileSha256":"cfc15b75a2dad4fdc5af7c22c8b2c8632735cd72a3130ce0fb9ca3ba0eca45cd"},"rawGroups":24,"drawingCalls":28,"polygonCounts":[2,2,2,2,2,2,1,2,3,2,2,1,4,1,1,3,2,2,2,1,2,3,2,8],"polygons":54}
++            and base.get('launcherSHA256')==config['launcher']['SHA256'])
++
++
+ def main():
+     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
+     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
+@@
+     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
+     base_path = fixed_path(config['baseConfig']['path'])
+     base = json.loads(base_path.read_bytes())
+-    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
++    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
+     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
+     validate_groups(config['provisionalGroups'], base)
+ 
+*** End Patch
