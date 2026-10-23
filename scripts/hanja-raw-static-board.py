@@ -310,6 +310,16 @@ def exact_u7e81_prepared_launcher(config,base):
             and base['sourceRoots']['selected']=={"root":"u7e81","file":"docs/hanja-goal-glyphwiki-batch1047-2026-10-13/engine-whole-u7e81.json","fileSHA256":"a1823d5561cf955317c983a38753aa419edfb790f75d772aed00a85ab96dbe9f","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u7e81","sourceProofFile":"engine-whole-u7e81.json","sourceProofFileSha256":"a1823d5561cf955317c983a38753aa419edfb790f75d772aed00a85ab96dbe9f"},"rawGroups":23,"drawingCalls":23,"polygonCounts":[3,2,3,3,2,1,3,2,3,2,1,1,2,1,1,2,2,2,3,2,2,2,2],"polygons":47}
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
+def exact_u9436_prepared_launcher(config,base):
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"7c755b435bc47ccd06e28c27f70bb719736428a2ae3110f59e4f959fef465f92"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u9436-2026-10-24/config.json","SHA256":"960213ec06d87c7d04e3a898d0d5093c239f2121ad02a50a8bc50116efac1a7f"}
+            and base.get('glyph')=='鐶' and base.get('catalogStrokes')==21
+            and list(base.get('sourceRoots',{}))==['selected']
+            and base['sourceRoots']['selected']=={"root":"u9436","file":"docs/hanja-source-raw-compare-u9436-2026-10-24/engine-whole-u9436.json","fileSHA256":"0092d199029b6b8a54336de1a02bacccdea6197f55c425fd3fe0d1954381e603","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u9436","sourceProofFile":"engine-whole-u9436.json","sourceProofFileSha256":"0092d199029b6b8a54336de1a02bacccdea6197f55c425fd3fe0d1954381e603"},"rawGroups":24,"drawingCalls":24,"polygonCounts":[3,2,2,2,1,2,3,3,1,1,2,1,1,1,2,1,1,2,1,3,1,3,3,2],"polygons":44}
+            and config.get('provisionalGroups')=={"selected":[[1],[2],[3],[4],[5],[6],[7],[8],[9],[10,11],[12],[13],[14],[15],[16],[17,18],[19],[20],[21,22],[23],[24]]}
+            and digest(fixed_path('docs/hanja-source-original-u9436-2026-10-24/fixtures.json').read_bytes())=='43f22c4c0b286fbba367ffd000011c42ccfcbfe9cd81ff05f89b6e79d0eb6900'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -329,7 +339,7 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
-    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base) or exact_u95e5_prepared_launcher(config,base) or exact_u852d_k_prepared_launcher(config,base) or exact_u8aed_k_prepared_launcher(config,base) or exact_u9d25_prepared_launcher(config,base) or exact_u6d8f_prepared_launcher(config,base) or exact_u8fe8_prepared_launcher(config,base) or exact_u6f11_prepared_launcher(config,base) or exact_u6f7e_prepared_launcher(config,base) or exact_u7e81_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
+    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base) or exact_u95e5_prepared_launcher(config,base) or exact_u852d_k_prepared_launcher(config,base) or exact_u8aed_k_prepared_launcher(config,base) or exact_u9d25_prepared_launcher(config,base) or exact_u6d8f_prepared_launcher(config,base) or exact_u8fe8_prepared_launcher(config,base) or exact_u6f11_prepared_launcher(config,base) or exact_u6f7e_prepared_launcher(config,base) or exact_u7e81_prepared_launcher(config,base) or exact_u9436_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
     validate_groups(config['provisionalGroups'], base)
 
