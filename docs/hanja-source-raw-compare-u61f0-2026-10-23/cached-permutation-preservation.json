@@ -1,0 +1,35 @@
+{
+  "schema": "hanja-existing-cache-permutation-preservation/v1",
+  "glyph": "懰",
+  "root": "u61f0",
+  "sourceFixture": "docs/hanja-source-independent-qq-two-left-order-u61f0-source-experiment-2026-10-20/fixtures.json",
+  "sourceFixtureSHA256": "7062861f079b180285526189f8f4114d6d9e83a8ae460540a2fadd6eff982e9a",
+  "originalGeometrySHA256": "53b43d75907e625b4645860ca93491fb1d6400c009e2d0cb41b334cb0211f015",
+  "relativeCachedOrder": [1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 9, 10],
+  "archiveLogicalOrder": [2, 3, 1, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 9, 10],
+  "proposedArraySHA256": "15862bafc75a16bf6981ca437662026db9dbb46372dceaa4dbdccf13db20ff5a",
+  "confirmedCodeAssertions": {
+    "exactBijection": true,
+    "originalRowReferences": true,
+    "allSourceFieldJSONMultisetEqual": true,
+    "originalPUnionUnchanged": true,
+    "countsBeforeAndAfter": [18, 21, 46],
+    "exactDecimalWeightMicrounitSumEqual": true,
+    "sourceGroupFieldPresent": false,
+    "additionalRawGroupIdentityClaim": false
+  },
+  "reviewReuse": {
+    "approvedDirectionPensUnchanged": [1, 2, 3, 4, 5, 6, 7, 8],
+    "oldDirectionDiagnosticOnly": [9, 10, 11],
+    "oldDirectionUnobserved": [12, 13, 14, 15, 16, 17, 18],
+    "newDomestic9Through18TemporalApproval": false,
+    "reference": "docs/hanja-source-native-hold-u61f0-order9-2026-10-20/hold.json"
+  },
+  "codeCheckDiagnostic": "Original-row/P/weight assertions passed. A separate optional sourceGroups lookup then failed because the existing cache has no such field; no raw-group reconstruction or assertion is claimed.",
+  "newFixtureWritten": false,
+  "sourceProjection": 0,
+  "engineRuns": 0,
+  "newNativeScreens": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
