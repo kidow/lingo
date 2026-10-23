@@ -64,11 +64,14 @@ def validate(config):
 def load_config(name, expected_sha):
     require(re.fullmatch('[0-9a-f]{64}', expected_sha), 'Config SHA required')
     path = pinned_path(name)
-    require(path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name), 'Explicit official-media config location required')
+    terminal16 = path == ROOT/'docs/hanja-official-media-compare-u802d-2026-10-24/config-16.json'
+    require(terminal16 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
     raw = path.read_bytes()
     require(len(raw) <= 65536 and sha(raw) == expected_sha, 'Config changed')
     config = json.loads(raw)
     validate(config)
+    if terminal16:
+        require(config['sourceRoot'] == 'u802d-k' and config['allowedStrokes'] == [16] and config['defaultStroke'] == 16 and config['metadataFile'] == 'docs/hanja-official-media-compare-u802d-2026-10-24/metadata-16.json', 'Exact 耭16 terminal-only config required')
     require(path.parent.name.startswith('hanja-official-media-compare-u'+format(ord(config['glyph']),'x')+'-'), 'Glyph/config path mismatch')
     require(sha(Path(__file__).read_bytes()) == config['launcherSHA256'], 'Adapter changed')
     require(sha(pinned_path(SHARED).read_bytes()) == SHARED_SHA, 'Original fixed media helper changed')
@@ -135,7 +138,7 @@ function restore(p){const i=paths.indexOf(p),s=snapshots[i];if(s.class===null)p.
  for(const [key,value]of [['animation-delay',s.delay],['animation-play-state',s.state]])if(value)p.style.setProperty(key,value);else p.style.removeProperty(key);}
 function reset(){verify();restore(selected);void doc.documentElement.getBoundingClientRect();}
 function at(f){try{
- if(![0,.05,.1,.25,.5,.75,1].includes(f))throw Error('Unlisted original clock fraction');
+ if(![0,.05,.1,.25,.5,.75,1].includes(f)&&!(CFG.terminal16===true&&[.9,.99].includes(f)))throw Error('Unlisted original clock fraction');
  reset();selected.classList.add('stroke-normal','immediate');selected.style.animationPlayState='paused';selected.style.animationDelay=String(-f*CFG.timedPaths[selectedStroke-1].durationMs)+'ms';
  requested=f;mode='paused-original-css';const css=doc.defaultView.getComputedStyle(selected);
  if(css.animationName!=='framesNormal'||!Number.isFinite(parseFloat(css.animationDuration))||Math.abs(parseFloat(css.animationDuration)*1000-CFG.timedPaths[selectedStroke-1].durationMs)>1e-6)throw Error('Original CSS clock initialization failed');
@@ -169,8 +172,10 @@ setInterval(()=>{if(selected)report();},100);
 
 def page(config, svg_route):
     selected = ''.join('<button disabled data-stroke="'+str(n)+'">국내 '+str(n)+'획 선택</button>' for n in config['allowedStrokes'])
-    clocks = ''.join('<button disabled data-fraction="'+str(f)+'">시계 '+str(f)+'</button>' for f in [0,.05,.1,.25,.5,.75,1])
+    terminal16 = config['sourceRoot'] == 'u802d-k' and config['allowedStrokes'] == [16] and config['metadataFile'] == 'docs/hanja-official-media-compare-u802d-2026-10-24/metadata-16.json'
+    clocks = ''.join('<button disabled data-fraction="'+str(f)+'">시계 '+str(f)+'</button>' for f in [0,.05,.1,.25,.5,.75,1]+([.9,.99] if terminal16 else []))
     browser_config = {k:config[k] for k in ['glyph','sourceRoot','domesticClips','allowedStrokes','defaultStroke','svgRoot','timedPaths','inertOriginalScripts']}
+    browser_config['terminal16'] = terminal16
     script = BROWSER.replace('__CONFIG__',json.dumps(browser_config,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c'),1)
     title = html.escape(config['glyph'])+' 공식 원미디어 시계 검토'
     return ('<!doctype html><html lang="ko"><meta charset="utf-8"><title>'+title+'</title>'
