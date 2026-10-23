@@ -1,0 +1,150 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "駾",
+  "root": "u99fe",
+  "observedBy": "ROOT browser panel",
+  "result": "PASS",
+  "distinctScopes": 96,
+  "finiteScopes": 90,
+  "naturalScopes": 6,
+  "freshScopes": 96,
+  "reusedScopes": 0,
+  "nativeApproval": true,
+  "source": {
+    "fixture": "docs/hanja-source-original-u99fe-2026-10-24/fixtures.json",
+    "geometrySHA256": "94c064150bb05b8c637e35ef2e21033143b89d5cc27707f37637697b6b3de8ee",
+    "originalPens": 17,
+    "originalMasks": 23,
+    "originalPolygons": 43,
+    "originalPGuideWidthWeightUnchanged": true,
+    "originalOuterClockUnchanged": true,
+    "newInternalDisplayClocks": {
+      "foot": [
+        "12m2"
+      ],
+      "terminal": [
+        "6m3",
+        "17m3"
+      ],
+      "cardinalContact": [
+        "14m2"
+      ]
+    },
+    "newConnector": 0,
+    "newSourceMask": 0
+  },
+  "freshScopeBreakdown": {
+    "capsEightInitialAndActualBoardCoverage": 24,
+    "shortSeventeenDistances": 7,
+    "footTwelve": 6,
+    "terminalTwo": 14,
+    "cardinalFourteen": 3,
+    "sourceBoundariesSix": 18,
+    "compactSeventeenNineFramesEach": 17,
+    "doneWhole": 1,
+    "naturalSixTwelveSeventeenEarlyEnd": 6
+  },
+  "coverage": {
+    "allCaps8ResidualWhite": true,
+    "foot1AndTerminal2ThinAAOutlineOnlyNoFilledResidual": true,
+    "actualBoardFullyVisible": true,
+    "mainRoot520FullyVisible": true,
+    "pixelEqualityClaim": false
+  },
+  "allFullyVisible": true,
+  "bad": [],
+  "errors": [],
+  "observations": {
+    "caps": "Eight epsilon/.03 starts and eight actual #board original-round residuals WHITE; p1 source P direct with original-round defs retained.",
+    "shortSeventeen": "Original guide distances1−1e−8,1,1+1e−8,2,4,6,7 directly observed, continuous. Initial source certificate covers arc1 only; finite observation is not arc7 mathematical proof.",
+    "foot": "12m2 epsilon/.1, foot/body−/exact/+ and actual originalP coverage maintained contact; AA contour only.",
+    "terminal": "6m3 originalQ origin-Y band then LEFT;17m3 original RIGHT then UP. Each epsilon/.03, share−/exact/+, tailmid and composite coverage PASS.",
+    "cardinal": "14m2 epsilon/.03/.9999 maintain exact completed priorH contact.",
+    "sourceBoundary": "6m2/6m3/12m2/14m2/17m2/17m3 minus/exact/plus18.",
+    "compact": "Seventeen boards each nine stopped frames, counted as17 observations.",
+    "natural": [
+      {
+        "pen": 6,
+        "earlyProgress": 0.05623750000000291,
+        "endProgress": 1,
+        "mode": "natural-ended"
+      },
+      {
+        "pen": 12,
+        "earlyProgress": 0.060662500005957555,
+        "endProgress": 1,
+        "mode": "natural-ended"
+      },
+      {
+        "pen": 17,
+        "earlyProgress": 0.05853750000595755,
+        "endProgress": 1,
+        "mode": "natural-ended"
+      }
+    ]
+  },
+  "initialSixContactEvidence": {
+    "path": "docs/hanja-source-original-u99fe-2026-10-24/initial-contact-6-2.json",
+    "SHA256": "5f191a26d6d2712f221d785dd1c554df46399af3717e8a9d8990cec00290ddc2",
+    "scope": "Original priorH and butt-normal strip intersect own original capP2 strictly; does not assert wholeP prefix or all-time raster proof."
+  },
+  "finalObservation": {
+    "phase": "natural-ended",
+    "pen": 17,
+    "progress": 1,
+    "bad": [],
+    "errors": [],
+    "originalComplete": true,
+    "fullyVisible": true
+  },
+  "server": {
+    "pid": 25967,
+    "port": 59412,
+    "session": 77154,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 68,
+    "tabClosed": true,
+    "CJS": 161,
+    "ESM": 161,
+    "successfulSSRChecks": 1,
+    "stdoutEmpty": true
+  },
+  "excludedPreparationFailures": [
+    {
+      "profile": "docs/hanja-actual-component-profiles-2026-10-22/u99fe-1.json",
+      "SHA256": "721c9b1c9c5930bfe0fcf13c940fde3c65006eb97b5349194c0f2ea1a7a7641a",
+      "stage": "first startup before SSR",
+      "error": "u99feFixedFixture: actual fixtureKey u99fe, erroneous expected u99fe.strokes",
+      "successfulSSR": 0,
+      "server": 0,
+      "exitCode": 1,
+      "productVisualObservations": 0,
+      "productFailure": false
+    }
+  ],
+  "authorSSR": 0,
+  "childScreenshots": 0,
+  "actualAppUI": false,
+  "controllerWorkflow": false,
+  "storageWorkflow": false,
+  "allTimeProof": false,
+  "runtimeApplied": false,
+  "pins": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u99fe-2.json",
+      "SHA256": "ad4d03861fd179f80661abf2a69651bfc25a143b3f1704c087fc7f9eb84d2946"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "bb21c8dadcf501d2a027ccbd858ebbb9adb4c3109b5dc92bac669aad9ffde846"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "b79f495035fd9ee9139614d965f518904e2bd5005c08957399c1656e4331a3e4"
+    },
+    "resourceClosure": 161,
+    "sharedVersion": 122
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "hanja-original-initial-contact/v1",
+  "date": "2026-10-24",
+  "glyph": "駾",
+  "target": "u99fe-6-2",
+  "sourceFixture": {
+    "path": "docs/hanja-source-original-u99fe-2026-10-24/fixtures.json",
+    "SHA256": "2a829f327bc1b9e749e1c2f077588ff47e421b901b2ebfc09c31bbe39933df64",
+    "geometrySHA256": "94c064150bb05b8c637e35ef2e21033143b89d5cc27707f37637697b6b3de8ee"
+  },
+  "previousOriginalP": "M12.7 53.9 L40 53.9 L40 55.9 L12.7 55.9 Z",
+  "originalGuide": "M40.04 54.9 Q40.95 77.44 35.738613865001355 86.35359257479406",
+  "originalWidth": 14,
+  "ownOriginalCapP2": "M37 53.9 L40 51.4 L45.5 55.9 L43 57.4 L37 59.9 Z",
+  "calculation": {
+    "newScope": "u99fe-6-2 original H + own capP2 + butt-normal contact, not disk contact",
+    "tauMax": "1/100000",
+    "Wx": "399/10",
+    "WyBounds": [
+      "25256599825103253285753/460000000000000000000",
+      "15469701207936196465826395281/281748296699071849257500000"
+    ],
+    "WyDecimal": [
+      54.905651793702724,
+      54.906103742870144
+    ],
+    "ownP2EdgeCrossLower": [
+      "4722799475309759857259/460000000000000000000",
+      "18152598076135786143283/920000000000000000000",
+      "1226702854450801321173054719/112699318679628739703000000",
+      "3199727717480486460535126657/140874148349535924628750000",
+      "87/5"
+    ],
+    "normalDistanceSquaredUpper": "6235321943747071331750484069343154164360896168698729/317528410771312884433761723457203213205225000000000000",
+    "normalDistanceSquaredUpperDecimal": 0.019637052094333102,
+    "priorHStrictMarginsLower": [
+      0.1,
+      1.0056517937027245,
+      0.9938962571298569
+    ],
+    "startButtPositiveFactorLower": "229225047803556545545304135034042525289148027/225398637359257479406000000000000000000000",
+    "crossUV": "1255760127259320529/10000000000000000",
+    "writes": 0,
+    "oldInitialCertificateRerun": 0
+  },
+  "parameterWitness": {
+    "u": [
+      "91/100",
+      "1127/50"
+    ],
+    "v": [
+      "-1224277226999729/200000000000000",
+      "-681320371260297/50000000000000"
+    ],
+    "formula": "Q=A+2tu+t²v; w=u+tv; W=Q+((Qx−39.9)/wy)(−wy,wx)",
+    "initialParameterChoice": "For end parameter e<=2e-5 choose t=e/2; otherwise retain t=1e-5 in the original prefix.",
+    "endButtStrictFactorLower": "end-butt strict factor lower = 4584416375470507104412297545033203716491910133371240378623313/4507972747185149588120000000000000000000000000000000000000 = 1016.9574291089249"
+  },
+  "conclusion": {
+    "strictPreviousHAndOwnP2AndButtNormalStripContact": true,
+    "startEndDisksAloneForDistanceBelowPoint04DoNotContact": true,
+    "positiveAreaFromStrictInteriorWitness": true,
+    "originalSourceChanged": false
+  },
+  "limits": {
+    "initialPriorContactOnly": true,
+    "wholeOwnPIntersectionPrefixConnectivityProved": false,
+    "allTimeRasterProof": false,
+    "browserNativeApproval": false,
+    "exactBrowserRasterEquality": false
+  },
+  "authorWrites": [
+    "this evidence JSON only"
+  ],
+  "oldInitialCertificateRerun": 0
+}
