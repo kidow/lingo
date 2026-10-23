@@ -1,0 +1,100 @@
+{
+  "schema": "hanja-original-start-positive-contact/v1",
+  "date": "2026-10-24",
+  "glyph": "朦",
+  "sourceRoot": "u6726-ue0102",
+  "pen": 13,
+  "mask": 2,
+  "status": "source-positive-contact-initial-only",
+  "fixture": {
+    "file": "docs/hanja-source-original-u6726-vs2-2026-10-24/fixtures.json",
+    "SHA256": "70154c4e5f62bc8aa2ac38f0bcaa9de907053926c5626c57e6c21bf41c618c5f",
+    "key": "u6726VS2",
+    "geometrySHA256": "61a81631669d0ade4af314e2e668b73050e127f7587c576fa3285cce96b6b28a"
+  },
+  "engineProof": {
+    "file": "docs/hanja-source-original-u6726-vs2-2026-10-24/engine-proof.json",
+    "SHA256": "9ab1a7ccf5e47f80efe1353b006c8f943210f5feea87fbfd7c7ccaaf6cf8bf3b"
+  },
+  "target": {
+    "sourceFieldSHA256": "378bd55d319f99a85dc169072f5f2d7b75cb48096c39c842f2937893a7f66a8e",
+    "guide": "M64.4075 50.1313095 Q57.9 58.14994320000001 37.35 65.80409355",
+    "width": 14,
+    "weight": 31.268906,
+    "originalOutline": "M68.6 50.1 L66.7 52 L64.95 53.7 L62.95 55.35 L60.7 56.9 L58.2 58.4 L55.45 59.85 L52.4 61.3 L49.1 62.65 L45.5 63.95 L41.65 65.1 L37.5 66.2 L37.15 65.35 L40.95 63.35 L44.45 61.45 L47.7 59.65 L50.65 57.9 L53.3 56.2 L55.65 54.5 L57.7 52.85 L59.5 51.25 L60.5 50.1 Z"
+  },
+  "prior": {
+    "mask": 1,
+    "originalOutline": "M62 49.1 L67.45 49.1 L67.45 51.1 L62 51.1 Z",
+    "bounds": [
+      62,
+      49.1,
+      67.45,
+      51.1
+    ],
+    "direction": "right",
+    "weight": 5.48,
+    "completedOriginalCardinalPContract": true
+  },
+  "contact": {
+    "point": [
+      64.4075,
+      50.1313095
+    ],
+    "pointIsOriginalQStart": true,
+    "strictInsidePriorP": true,
+    "strictInsideOwnP": true,
+    "priorMinimumBoundaryDistanceSquared": {
+      "exact": [
+        "3753445139161",
+        "4000000000000"
+      ],
+      "value": 0.93836128479025
+    },
+    "ownMinimumBoundaryDistanceSquared": {
+      "exact": [
+        "3921139161",
+        "4000000000000"
+      ],
+      "value": 0.00098028479025
+    },
+    "strictCommonOpenDiskRadius": [
+      "3",
+      "100"
+    ],
+    "priorGuideEnd": [
+      67.49000000000001,
+      50.1313095
+    ],
+    "centerlineEndStartGap": 3.0825000000000102,
+    "centerlineConnectorAdded": false
+  },
+  "initialCertificate": {
+    "reportedBy": "remaining_inventory",
+    "criterion": "existing rational MQ initial arc7 sufficient conditions",
+    "T": "1/2",
+    "K": "1/18",
+    "cosMinus7K": "347/648",
+    "result": "PASS",
+    "sourceFieldSHA256": "378bd55d319f99a85dc169072f5f2d7b75cb48096c39c842f2937893a7f66a8e",
+    "scope": "initial original MQ arc7 only; not clipped-P full-prefix connectivity"
+  },
+  "decision": {
+    "by": "ROOT",
+    "originalClockAndExistingGrowingCaps": true,
+    "newFootModule": false,
+    "newMicroclock": false,
+    "sourceFieldsChanged": false,
+    "allPrefixConnectivityProven": false,
+    "actualFiniteStartTransitionCompletionAndMiddleQGridRequired": true
+  },
+  "limits": {
+    "notOfficialMicrotimingProof": true,
+    "notAllTimeProof": true,
+    "notPIntersectionFullSweepProof": true,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "registered": false
+  },
+  "authorNewSourceMathRuns": 0
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "glyph": "朦",
+  "root": "u6726-vs2",
+  "date": "2026-10-24",
+  "observedBy": "/root",
+  "result": "HOLD",
+  "nativeApproval": false,
+  "registrationApproved": false,
+  "runtimeApplied": false,
+  "distinctObservedScreens": 36,
+  "observedScopes": {
+    "initialCaps9": {
+      "screens": 27,
+      "result": "PASS",
+      "initialEpsilonAnd03AndFullRoundResidual": true
+    },
+    "shortTail2And14": {
+      "screens": 6,
+      "result": "FAIL-scope",
+      "observation": "Base local epsilon/.03 shows a large round hook suddenly exposed. Group includes full-round residual screenshots; this scope result does not claim every individual screenshot failed."
+    },
+    "pen2Mask3SourceBoundary": {
+      "screens": 3,
+      "result": "FAIL-scope",
+      "deltas": [
+        -1e-10,
+        0,
+        1e-10
+      ],
+      "observation": "Sudden hook exposure confirmed after the exact original source boundary."
+    }
+  },
+  "planned73Complete": false,
+  "unobservedOrUnapprovedRemainder": 37,
+  "bad": [],
+  "errors": [],
+  "failureIsVisualDespiteDOMChecks": true,
+  "pins": {
+    "componentSHA256": "a84ad7dca5acfc3dcd6892a86e1023c924a78058fc8c1d3e930971aae5011b4c",
+    "helperSHA256": "00d3305cdc6ce8a1b478ecd435b7e9b2cbade02a9d6c61670f88bbed6ae77f19",
+    "profileSHA256": "162e2a62d6b2177d2e8e4a82ad61f8076dd9f2e3dbba6a5fed4fb8a37979be18",
+    "geometrySHA256": "61a81631669d0ade4af314e2e668b73050e127f7587c576fa3285cce96b6b28a"
+  },
+  "source": {
+    "pens": 18,
+    "masks": 24,
+    "originalP": 41,
+    "originalPGuideWidthWeightClockUnchanged": true
+  },
+  "actualAppUI": false,
+  "allTimeAnimationProof": false,
+  "childScreenshots": 0,
+  "server": {
+    "pid": 95034,
+    "session": 57410,
+    "stopped": true,
+    "exitCode": 130,
+    "tabClosed": 22
+  },
+  "activationPackageCreated": false
+}
