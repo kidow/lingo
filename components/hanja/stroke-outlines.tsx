@@ -8,6 +8,8 @@ import { reviewedU7bd2Context, reviewedU7bd2Policy, commitReviewedU7bd2Caps, typ
 import { reviewedU6726VS2Context, reviewedU6726VS2Policy, commitReviewedU6726VS2Caps, type ReviewedU6726VS2Policy } from '@/lib/hanja-stroke-start-caps-u6726-vs2'
 import { reviewedU6faeKContext, reviewedU6faeKPolicy, commitReviewedU6faeKCaps, type ReviewedU6faeKPolicy } from '@/lib/hanja-stroke-start-caps-u6fae-k'
 import { reviewedU6f62KContext, reviewedU6f62KPolicy, commitReviewedU6f62KCaps, type ReviewedU6f62KPolicy } from '@/lib/hanja-stroke-start-caps-u6f62-k'
+import { reviewedU802dKTailContext, reviewedU802dKTailFrame, type ReviewedU802dKTailContext } from '@/lib/hanja-stroke-original-up-tail-u802d-k'
+import { commitReviewedU802dKTail } from '@/lib/hanja-stroke-original-up-tail-dom-u802d-k'
 import { reviewedU802dKContext, reviewedU802dKPolicy, commitReviewedU802dKCaps, type ReviewedU802dKPolicy } from '@/lib/hanja-stroke-start-caps-u802d-k'
 import { reviewedU802dKFootContext, reviewedU802dKFootPolicy, measureReviewedU802dKFootFrame, commitReviewedU802dKFootMask, type ReviewedU802dKFootPolicy } from '@/lib/hanja-stroke-source-foot-u802d-k'
 import { reviewedU78ceKContext, reviewedU78ceKPolicy, commitReviewedU78ceKCaps, type ReviewedU78ceKPolicy } from '@/lib/hanja-stroke-start-caps-u78ce-k'
@@ -232,6 +234,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u6726VS2Context = reviewedU6726VS2Context(strokes)
   const u6faeKContext = reviewedU6faeKContext(strokes)
   const u6f62KContext = reviewedU6f62KContext(strokes)
+  const u802dKTailContext = reviewedU802dKTailContext(strokes)
   const u802dKContext = reviewedU802dKContext(strokes)
   const u802dKFootContext = reviewedU802dKFootContext(strokes)
   const u78ceKContext = reviewedU78ceKContext(strokes)
@@ -441,6 +444,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         const u802dKFootPolicy = reviewedU802dKFootPolicy(u802dKFootContext, stroke, index)
         if (u802dKFootPolicy) return <U802dKFootOutline key={index} policy={u802dKFootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u802dKPolicy = reviewedU802dKPolicy(u802dKContext, stroke, index)
+        if (u802dKPolicy && u802dKTailContext && stroke===15 && index===0) return <U802dKCompositeOutline key={index} context={u802dKTailContext} policy={u802dKPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         if (u802dKPolicy) return <U802dKCapsOutline key={index} policy={u802dKPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u78ceKFootPolicy = reviewedU78ceKFootPolicy(u78ceKFootContext, stroke, index)
         if (u78ceKFootPolicy) return <U78ceKFootOutline key={index} policy={u78ceKFootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
@@ -730,6 +734,27 @@ function U8629YOutline({policy,segment,progress,clipId}:{policy:ReviewedU8629YPo
  </g>
 }
 
+
+function U802dKCompositeOutline({context,policy,segment,progress,clipId}:{context:ReviewedU802dKTailContext;policy:ReviewedU802dKPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+  const measurement=useRef<SVGPathElement|null>(null),bodyClip=useRef<SVGPathElement|null>(null),tailClip=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),bodyFill=useRef<SVGPathElement|null>(null),tailRect=useRef<SVGRectElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>commitReviewedU802dKTail(context,policy,segment,progress,clipId,{measurement:measurement.current,bodyClip:bodyClip.current,tailClip:tailClip.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,bodyFill:bodyFill.current,tailRect:tailRect.current,ink:ink.current}).cleanup,[context,policy,segment,progress,clipId])
+  let frame:ReturnType<typeof reviewedU802dKTailFrame>|null=null
+  try{frame=reviewedU802dKTailFrame(context,segment,progress)}catch{}
+  if(!frame)return <g data-stroke-start-gate={policy.id} data-stroke-reveal-progress="invalid"/>
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="original-up-u802d-k-composite" data-u802d-k-progress={String(frame.bodyProgress)} data-u802d-k-composite-progress={String(progress)} data-u802d-k-clip={clipId} data-stroke-reveal-progress={progress}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u802d-k-measure'} data-u802d-k-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
+      <clipPath id={clipId+'-u802d-k-body'} clipPathUnits="userSpaceOnUse"><path ref={bodyClip} d={frame.bodyOutline}/></clipPath>
+      <clipPath id={clipId+'-u802d-k-up'} clipPathUnits="userSpaceOnUse"><path ref={tailClip} d={frame.tailOutline}/></clipPath>
+      <mask id={clipId+'-u802d-k-composite'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <g id={clipId+'-u802d-k-body-guide'} clipPath={'url(#'+clipId+'-u802d-k-body)'}><path ref={guide} d={segment.revealPath} fill="none" stroke="white" strokeWidth={14} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/><circle ref={startCap} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} cx="0" cy="0" r="0" fill="white"/></g>
+        <path ref={bodyFill} d={frame.bodyOutline} fill="white" visibility="hidden"/>
+        <g clipPath={'url(#'+clipId+'-u802d-k-up)'}><rect ref={tailRect} x={87.5} y={87.5} width={4} height={0} fill="white"/></g>
+      </mask>
+    </defs>
+    <path ref={ink} d={segment.outline} mask={'url(#'+clipId+'-u802d-k-composite)'} visibility="hidden"/>
+  </g>
+}
 
 function U802dKCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU802dKPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
   const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
