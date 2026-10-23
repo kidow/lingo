@@ -1,7 +1,7 @@
 import type {HanjaDictionaryStrokeData} from './hanja-stroke-dictionary.ts'
 /** Historical preparation flags remain false; ROOT finite approval is separately pinned. */
 const GEOMETRY_LICENSE={"geometryLicense":{"spdx":"LicenseRef-GlyphWiki","attribution":"GlyphWiki Project and contributors","url":"https://glyphwiki.org/wiki/GlyphWiki:License@18","sourceUrl":"https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt","revision":"Pinned2016 archive a7dd7f3d911936770fa742e8c37d16bee7e2173c; exact u890a-ue0101 three-record closure, no latest substitution or HKCS substitution.","editableSource":"/hanja-strokes/glyphwiki/u890a.json","modifications":"Original17raw19calls31 filled polygons/actual full5 preserved. Domestic14pens15masks use the explicitly reviewed complete VS1 whole and domestic logical7/8/9 zero-based rawmap [8,9],[10],[7]. Target-specific initial caps7 retain original P/guide/width/weight; original LEFT11 terminal remains separate. ROOT53 finite native PASS(51 finite+2 natural), official42 macroframes and static19 whole/raw screens reused unchanged. Prior HKCS HOLD remains separate. No official microtiming, all-time or product AppUI/controller/storage approval."}}
-const CORE=[
+const CORE: readonly HanjaDictionaryStrokeData[] = [
   {
     "glyph": "褊",
     "verificationSource": "ehanja-crosschecked",
