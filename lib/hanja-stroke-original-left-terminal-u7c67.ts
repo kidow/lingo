@@ -1,0 +1,22 @@
+/** Source-bound LEFT14 reveal-side partition. Native approval pending. */
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline'
+import {reviewedU7c67Context,makeReviewedU7c67SourceContext} from './hanja-stroke-start-caps-u7c67'
+const SEGMENT:HanjaOutlineSegment={"outline":"M63.15 58.55 L66.05 59.75 L68.65 61.2 L70.8 62.9 L72.6 64.9 L74 67.2 L74.9 69.7 L75.3 72.4 L75.25 75.25 L74.65 78.2 L73.6 81.2 L67.65 78.35 L68.75 76.2 L69.5 74.2 L69.9 72.3 L70 70.5 L69.75 68.75 L69.2 66.95 L68.2 65.15 L66.8 63.25 L65 61.3 L62.7 59.35 Z M67.65 78.35 L73.6 81.2 L66.35 81.1 Z M73.35 81.1 L72.75 82.2 L72.05 83.2 L71.25 84.15 L70.35 85 L69.35 85.7 L68.3 86.3 L67.15 86.75 L65.95 87.05 L64.75 87.25 L63.5 87.3 L63.5 81.3 L64.15 81.25 L64.75 81.2 L65.3 81.05 L65.75 80.85 L66.15 80.65 L66.55 80.35 L66.9 80 L67.25 79.6 L67.6 79.1 L67.95 78.5 Z M63.5 84.3 L53.5 82.8 L53.5 81.3 L63.5 81.3 Z","bounds":[53.5,58.55,75.3,87.3],"direction":"curve","weight":31.053594,"revealPath":"M62.5 58.75 Q77 66.5875 70.6607624161982 79.81599725208054 Q68.5 84.325 63.5 84.325","revealWidth":14}
+const BODY="M63.15 58.55 L66.05 59.75 L68.65 61.2 L70.8 62.9 L72.6 64.9 L74 67.2 L74.9 69.7 L75.3 72.4 L75.25 75.25 L74.65 78.2 L73.6 81.2 L67.65 78.35 L68.75 76.2 L69.5 74.2 L69.9 72.3 L70 70.5 L69.75 68.75 L69.2 66.95 L68.2 65.15 L66.8 63.25 L65 61.3 L62.7 59.35 Z M67.65 78.35 L73.6 81.2 L66.35 81.1 Z M73.35 81.1 L72.75 82.2 L72.05 83.2 L71.25 84.15 L70.35 85 L69.35 85.7 L68.3 86.3 L67.15 86.75 L65.95 87.05 L64.75 87.25 L63.5 87.3 L63.5 81.3 L64.15 81.25 L64.75 81.2 L65.3 81.05 L65.75 80.85 L66.15 80.65 L66.55 80.35 L66.9 80 L67.25 79.6 L67.6 79.1 L67.95 78.5 Z",TAIL="M63.5 84.3 L53.5 82.8 L53.5 81.3 L63.5 81.3 Z"
+function same(x:unknown,y:unknown):boolean{if(Object.is(x,y))return true;if(!x||!y||typeof x!=='object'||typeof y!=='object'||Object.getPrototypeOf(x)!==Object.getPrototypeOf(y))return false;const keys=Reflect.ownKeys(y);if(Reflect.ownKeys(x).length!==keys.length)return false;return keys.every(k=>{const a=Object.getOwnPropertyDescriptor(x,k),b=Object.getOwnPropertyDescriptor(y,k);return !!a&&!!b&&'value'in a&&'value'in b&&a.enumerable===b.enumerable&&same(a.value,b.value)})}
+Object.freeze(SEGMENT.bounds);Object.freeze(SEGMENT)
+const CONTEXT=Object.freeze({id:'u7c67-original-left-terminal' as const})
+export type LeftContext=typeof CONTEXT
+const POLICY=Object.freeze({id:'u7c67-15-1',kind:'original-left-terminal' as const,root:'u7c67',pen:15,mask:1,segment:SEGMENT,originalLogicalPens:23,originalMaskCount:24,originalPolygonCount:60})
+export type LeftPolicy=typeof POLICY
+export function makeReviewedU7c67LeftSourceContext(full:unknown,identity:unknown,strokes:HanjaOutlineStrokes):LeftContext|null{return makeReviewedU7c67SourceContext(full,identity,strokes)?CONTEXT:null}
+export function reviewedU7c67LeftContext(strokes:HanjaOutlineStrokes):LeftContext|null{return reviewedU7c67Context(strokes)?CONTEXT:null}
+export function reviewedU7c67LeftPolicy(context:LeftContext|null,pen:number,mask:number):LeftPolicy|null{return context===CONTEXT&&pen===14&&mask===0?POLICY:null}
+const SHARE=15526797/20526797
+export function leftFrame(policy:LeftPolicy,segment:HanjaOutlineSegment,progress:number){
+ if(policy!==POLICY||!same(segment,SEGMENT))throw Error('Private 籧 whole-bound original LEFT policy required')
+ if(!Number.isFinite(progress)||progress<0||progress>1)throw Error('Finite original LEFT progress required')
+ const bodyProgress=Math.min(1,progress/SHARE),tailProgress=progress<=SHARE?0:progress===1?1:(progress-SHARE)/(1-SHARE)
+ return Object.freeze({policyId:policy.id,root:policy.root,progress,phase:progress===0?'empty':progress===1?'complete':progress<=SHARE?'body':'tail',bodyProgress,tailProgress,bodyOutline:BODY,tailOutline:TAIL,originalInkOutline:segment.outline,tailRect:Object.freeze({x:63.5-10*tailProgress,y:81.3,width:10*tailProgress,height:3}),paintOriginalInkOnce:true,originalLogicalPens:23,originalMaskCount:24,originalPolygonCount:60,originalOuterWeight:segment.weight,internalRevealPhases:2,newDisplayMicroclock:true})
+}
+export const REVIEWED_U7C67_LEFT_SOURCE=Object.freeze({sourceTerminalFlag:14,sourceRaw14:true,sourceCalls:2,originalPolygons:4,bodyPolygons:3,terminalPolygons:1,bodyShareExact:[15526797,20526797],bodyShare:SHARE,bodyWeight:31.053594,terminalExtent:10,originalOuterWeightUnchanged:true,originalGuideWidthUnchanged:true,originalMasks:24,sourceInkChanges:0,nativeApproval:false,runtimeApplied:false})
