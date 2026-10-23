@@ -1,0 +1,104 @@
+{
+  "schema": "hanja-original-left-terminal-reveal-preparation/v1",
+  "glyphs": [
+    "籧",
+    "蘧"
+  ],
+  "sourceBindings": [
+    {
+      "root": "u7c67",
+      "pen": 15,
+      "mask": 1,
+      "raw": 14,
+      "originalPens": 23,
+      "originalMasks": 24,
+      "originalPolygons": 60
+    },
+    {
+      "root": "u8627-ue0102",
+      "pen": 13,
+      "mask": 1,
+      "raw": 12,
+      "originalPens": 21,
+      "originalMasks": 22,
+      "originalPolygons": 54
+    }
+  ],
+  "sourceSameConditions": [
+    "Exact whole fixture pins independently bound",
+    "Both original Q calls, args and all4 source polygons equal",
+    "Same original source terminal14 engine branch and exact engine SHA",
+    "Full original segment fields equal; no appearance-based extrapolation"
+  ],
+  "proof": {
+    "FIRSTComputations": 1,
+    "terminalConvex": true,
+    "sharedOriginalBodyEdgeLength": 3,
+    "connectedEveryPositiveLeftClipPrefix": true,
+    "completeSourceWhitePartitionExactlyFourOriginalP": true
+  },
+  "newInnerClock": {
+    "bodyShareExact": [
+      15526797,
+      20526797
+    ],
+    "bodyWeight": 31.053594,
+    "tailExtent": 10,
+    "outerWeightUnchanged": true,
+    "officialTimingApproval": false
+  },
+  "checks": {
+    "sourceFrameGuardFIRST": {
+      "tests": 1,
+      "pass": 1,
+      "negativeCases": 42,
+      "getterReads": 0,
+      "finiteFrames": 20,
+      "durationMs": 3.919959
+    },
+    "DOMFIRST": {
+      "tests": 1,
+      "pass": 1,
+      "negativeCases": 44,
+      "finiteSamples": 20,
+      "durationMs": 7.611875,
+      "actualUA": false
+    },
+    "newCompletePartitionOnly": {
+      "tests": 1,
+      "pass": 1,
+      "durationMs": 0.723084,
+      "oldChecksReplayed": 0
+    }
+  },
+  "files": {
+    "verify-terminal.mjs": "9f93b7d26eefa772726c42c0ea3ef28b76557afed3e60a75c1939edcc99bc290",
+    "terminal-proof.json": "93b8e1af6f8386f476b46e0e3e691258c8060e0a51639ebf92b0b12aaa6bb51a",
+    "left-terminal.ts": "1fa31d51af6db9cca1517441aa76f4398b59387340cd5c2003ca638256535953",
+    "left-terminal.test.ts": "d9e56a25e8f3650e44fa088618d6f015ddecdc01dca1e038db5c73d3d03675b4",
+    "left-dom-u7c67.ts": "c28d8403b93a67512921e3d9dfb6c9d160d571e366cf15bf1f6c8eaa42fcec08",
+    "left-dom-u8627.ts": "6894b1bb759253383dac2b1c4aab1b437a903c53f6b1ef6803ae52be22d13eb3",
+    "left-dom.test.ts": "e7e643d06db5f89a586929e5f75b4fe69af01f85bf942341cc5aa19725586ed7"
+  },
+  "sourceInkChanges": 0,
+  "sourceCoordinateChanges": 0,
+  "sourceWeightsChanges": 0,
+  "newSourceMasks": 0,
+  "sourceProjection": 0,
+  "sourceEngineRuns": 0,
+  "oldInitialMathReplayed": 0,
+  "shared95Changes": 0,
+  "actualProfilesChanged": 0,
+  "SSR": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registered": false,
+  "pending": [
+    "ROOT authorizes shared composite integration after95HOLD commit",
+    "Actual renderer body clipping and original guide/UA observation",
+    "Body full-round residual excluding terminal, inner-Q transition and body/tail boundary",
+    "Actual complete composite residual, fine ending and natural autoplay",
+    "Sibling whole activation remains separate despite exact original terminal source"
+  ]
+}
