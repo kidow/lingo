@@ -1,0 +1,91 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-24",
+  "glyph": "絿",
+  "root": "u7d7f-k",
+  "observer": "ROOT browser panel",
+  "status": "HOLD",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u7d7f-1.json",
+    "SHA256": "95e398e826f217805ddb0c8186e7c49a0ebd1e01b81cc421933003084bfb294a"
+  },
+  "reviewedSnapshot": {
+    "componentSHA256": "fe21d432bf0fa76276702cedb0257e26a082d7465422275097764731efb1b006",
+    "helperSHA256": "6de721fb9e56f7044277fff87e6bec3baebdd818611a950e220757d8cd5f75e7",
+    "resourceClosureModules": 136
+  },
+  "observedScreens": 6,
+  "approvedNativeScopes": 0,
+  "plannedNativeScopes": 79,
+  "unobservedPlannedScopes": 73,
+  "observations": [
+    {
+      "target": "u7d7f-k-8-2",
+      "scope": "tail initial epsilon",
+      "result": "visual FAIL",
+      "reason": "Wide original body is exposed immediately by the ordinary short-Q radius7 start cap"
+    },
+    {
+      "target": "u7d7f-k-8-2",
+      "scope": "tail initial .03",
+      "result": "visual FAIL",
+      "reason": "Wide original body is still exposed abruptly at the initial frame"
+    },
+    {
+      "target": "u7d7f-k-8-2",
+      "scope": "original body full-round residual in #board",
+      "appearance": "white",
+      "approval": "No native PASS credited; confirms only the original P1 coverage geometry in this observed residual"
+    },
+    {
+      "target": "u7d7f-k-8-2",
+      "scope": "body/LEFT boundary minus",
+      "appearance": "Little apparent shape change at handoff",
+      "approval": "Not approved because global observer reported bad flags"
+    },
+    {
+      "target": "u7d7f-k-8-2",
+      "scope": "body/LEFT boundary exact",
+      "appearance": "Little apparent shape change at handoff",
+      "approval": "Not approved because global observer reported bad flags"
+    },
+    {
+      "target": "u7d7f-k-8-2",
+      "scope": "body/LEFT boundary plus",
+      "appearance": "Little apparent shape change at handoff",
+      "approval": "Not approved because global observer reported bad flags"
+    }
+  ],
+  "diagnostics": {
+    "errors": [],
+    "ownTailBad": [],
+    "globalMainNoSpecialPolicyReports": 2,
+    "globalCause": "Main special-policy whitelist included only ten caps and omitted the two foot policies and one tail policy",
+    "globalDiagnosticDoesNotInvalidateVisualFailure": true,
+    "rootSubsequentHelperFix": {
+      "SHA256": "7c6e12876afb10217a8f1b94243874a7d0450d9297304c0bd14f804ca320c359",
+      "scope": "One whitelist condition corrected by ROOT after STOP; renderer unchanged",
+      "syntaxErrors": 0,
+      "reviewedInTheseSixScreens": false
+    }
+  },
+  "server": {
+    "PID": 34420,
+    "session": 88923,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 32,
+    "tabClosed": true
+  },
+  "sourceOriginalPGuideWidthWeightUnchanged": true,
+  "historicalProfilePreserved": true,
+  "nextPolicy": "Independent source-preserving Y-clip tail proof preparation by A; no approval inferred",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registrationChanges": 0,
+  "actualAppUI": false,
+  "allTimeAnimationProof": false,
+  "authorExtraSSR": 0,
+  "authorExtraBrowserScreens": 0
+}
