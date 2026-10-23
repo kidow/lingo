@@ -97,15 +97,26 @@
       "polygons": 45
     },
     "priorSourceQToBGap": {
-      "sourceRaw": 21,
       "delta": [
         -1.37,
         -1.18
       ],
       "preserved": true,
-      "nativeApproved": false
+      "nativeApproved": false,
+      "logicalPen": 21,
+      "sourceRawZeroBased": [
+        14,
+        15
+      ]
     }
   },
   "nativeApproval": false,
-  "runtimeApplied": false
+  "runtimeApplied": false,
+  "preparationCorrection": {
+    "previousField": "selectedScope.priorSourceQToBGap.sourceRaw",
+    "previousValue": 21,
+    "reason": "Logical domestic pen21 was mislabeled as a raw source index; original source Q/C rows are zero-based14 and15.",
+    "correctedBeforeAnyOfficialObservation": true,
+    "originalMediaAndGeometryChanged": false
+  }
 }

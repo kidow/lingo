@@ -1,0 +1,436 @@
+{
+  "schema": "hanja-original-contact-prefix-analysis/v1",
+  "date": "2026-10-24",
+  "glyph": "闥",
+  "root": "u95e5",
+  "status": "source-only connected-prefix candidate; official direction and runtime pending",
+  "source": {
+    "path": "docs/hanja-goal-glyphwiki-batch502-2026-10-10/engine-whole-u95e5.json",
+    "SHA256": "5938703e815f431ed2eba11c34b17fcaae2784ef16759dda94862c1f2ab26711",
+    "logicalPenHypothesis": 21,
+    "rawZeroBased": [
+      14,
+      15
+    ],
+    "priorCall": {
+      "kind": "cdDrawCurve",
+      "args": [
+        41.96,
+        168.61,
+        54.975,
+        162.12,
+        68.675,
+        153.86,
+        0,
+        7
+      ]
+    },
+    "nextCall": {
+      "kind": "cdDrawBezier",
+      "args": [
+        67.305,
+        152.68,
+        77.58,
+        164.48000000000002,
+        88.53999999999999,
+        169.79000000000002,
+        153.615,
+        167.43,
+        7,
+        0
+      ]
+    },
+    "originalPolygons": [
+      3,
+      2
+    ],
+    "wholeCounts": {
+      "raw": 25,
+      "calls": 26,
+      "polygons": 45
+    }
+  },
+  "oldHold": {
+    "path": "docs/hanja-goal-glyphwiki-batch502-2026-10-10/whole-review.json",
+    "SHA256": "67e94802ffee6e6284803a8e18dc260c5523838c3cf979c437125f71a5a63656",
+    "sourceGapOriginalUnits": [
+      -1.37,
+      -1.18
+    ],
+    "preserved": true
+  },
+  "originalPointAudit": {
+    "Cstart": [
+      "13461/400",
+      "3817/50"
+    ],
+    "priorQend": [
+      "2747/80",
+      "7693/100"
+    ],
+    "gap": [
+      "-137/200",
+      "-59/100"
+    ],
+    "QendToCstartSquared": "32693/40000",
+    "prior": [
+      {
+        "polygon": 0,
+        "strictInside": false,
+        "boundarySquared": "18037009/171040000"
+      },
+      {
+        "polygon": 1,
+        "strictInside": false,
+        "boundarySquared": "41512249/200000"
+      },
+      {
+        "polygon": 2,
+        "strictInside": false,
+        "boundarySquared": "22191777/160000"
+      }
+    ],
+    "target": [
+      {
+        "polygon": 0,
+        "strictInside": false,
+        "boundarySquared": "741321/3400000"
+      },
+      {
+        "polygon": 1,
+        "strictInside": false,
+        "boundarySquared": "298442977/160000"
+      }
+    ],
+    "originalPolygonCounts": [
+      3,
+      2
+    ],
+    "CpositiveXControls": [
+      "411/80",
+      "1095999999999999/200000000000000",
+      "6507500000000001/200000000000000"
+    ]
+  },
+  "pointAuditLimitation": "Original C M is outside both filled priorP and ownP. Do not use the original C start as a strict contact witness, or infer disconnected filled geometry from centerline gap alone.",
+  "connectedPrefixCandidate": {
+    "proof": {
+      "cutX": [
+        "35",
+        "1"
+      ],
+      "phaseShare": [
+        "664227",
+        "75324637"
+      ],
+      "boundary": [
+        [
+          [
+            "168",
+            "5"
+          ],
+          [
+            "77",
+            "1"
+          ]
+        ],
+        [
+          [
+            "343",
+            "10"
+          ],
+          [
+            "382",
+            "5"
+          ]
+        ],
+        [
+          [
+            "35",
+            "1"
+          ],
+          [
+            "14211",
+            "185"
+          ]
+        ],
+        [
+          [
+            "35",
+            "1"
+          ],
+          [
+            "9833",
+            "124"
+          ]
+        ],
+        [
+          [
+            "139",
+            "4"
+          ],
+          [
+            "79",
+            "1"
+          ]
+        ]
+      ],
+      "triangles": [
+        [
+          [
+            [
+              "139",
+              "4"
+            ],
+            [
+              "79",
+              "1"
+            ]
+          ],
+          [
+            [
+              "168",
+              "5"
+            ],
+            [
+              "77",
+              "1"
+            ]
+          ],
+          [
+            [
+              "343",
+              "10"
+            ],
+            [
+              "382",
+              "5"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "139",
+              "4"
+            ],
+            [
+              "79",
+              "1"
+            ]
+          ],
+          [
+            [
+              "343",
+              "10"
+            ],
+            [
+              "382",
+              "5"
+            ]
+          ],
+          [
+            [
+              "35",
+              "1"
+            ],
+            [
+              "14211",
+              "185"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "35",
+              "1"
+            ],
+            [
+              "14211",
+              "185"
+            ]
+          ],
+          [
+            [
+              "35",
+              "1"
+            ],
+            [
+              "9833",
+              "124"
+            ]
+          ],
+          [
+            [
+              "139",
+              "4"
+            ],
+            [
+              "79",
+              "1"
+            ]
+          ]
+        ]
+      ],
+      "order": [
+        {
+          "triangle": 0,
+          "seed": [
+            [
+              "341",
+              "10"
+            ],
+            [
+              "386",
+              "5"
+            ]
+          ],
+          "priorTriangle": null,
+          "shared": null
+        },
+        {
+          "triangle": 1,
+          "seed": [
+            [
+              "1381",
+              "40"
+            ],
+            [
+              "777",
+              "10"
+            ]
+          ],
+          "priorTriangle": 0,
+          "shared": [
+            [
+              [
+                "343",
+                "10"
+              ],
+              [
+                "382",
+                "5"
+              ]
+            ],
+            [
+              [
+                "139",
+                "4"
+              ],
+              [
+                "79",
+                "1"
+              ]
+            ]
+          ]
+        },
+        {
+          "triangle": 2,
+          "seed": [
+            [
+              "279",
+              "8"
+            ],
+            [
+              "14413",
+              "185"
+            ]
+          ],
+          "priorTriangle": 1,
+          "shared": [
+            [
+              [
+                "139",
+                "4"
+              ],
+              [
+                "79",
+                "1"
+              ]
+            ],
+            [
+              [
+                "35",
+                "1"
+              ],
+              [
+                "14211",
+                "185"
+              ]
+            ]
+          ]
+        }
+      ],
+      "weights": [
+        [
+          "958892",
+          "1992681"
+        ],
+        [
+          "749084",
+          "1992681"
+        ],
+        [
+          "284705",
+          "1992681"
+        ]
+      ],
+      "footArea": [
+        "1992681",
+        "917600"
+      ],
+      "totalArea": [
+        "197013",
+        "800"
+      ],
+      "strictRootMarginSquared": [
+        "7744",
+        "69625"
+      ]
+    },
+    "strictRootSeed": [
+      "341/10",
+      "386/5"
+    ],
+    "strictRootDiskRadius": "1/8",
+    "actualPriorEndCapsule": {
+      "seedToPriorQEndSquared": "20689/160000",
+      "endpointCapsuleMarginSquared": "7541811/160000",
+      "rootDiskRadius": "1/8"
+    },
+    "actualPriorCompleteRequirement": "Same-frame original prior Q P directly unmasked at progress1. If prior output is represented as original P intersect radius7 completed Q capsule, the root disk is separately inside that original endpoint capsule.",
+    "sourceFootDisplayClock": "Explicit new foot-growth phase followed by unchanged original C guide x-position law; phaseShare664227/75324637. Not original source timing equivalence.",
+    "originalGuideXDerivativeControls": [
+      "411/80",
+      "1095999999999999/200000000000000",
+      "6507500000000001/200000000000000"
+    ],
+    "fullPrefixRootPositiveSharedEdgeBFS": true,
+    "bodySinglePositiveCrossSection": true,
+    "allOriginalPUnchanged": true,
+    "newSourceGuide": 0,
+    "newConnector": 0,
+    "newWidth": 0,
+    "sourceOuterWeightChanged": false,
+    "newDisplayMicroclock": true,
+    "firstProofExecution": 1,
+    "proofReuse": "Existing exact original-P slab/earclip/BFS factory, new source input only. No earlier successful target recomputation."
+  },
+  "approval": {
+    "originalDirectionApproved": false,
+    "sourceOrderApproved": false,
+    "staticMappingApproved": false,
+    "nativeApproved": false,
+    "runtimeApplied": false,
+    "registered": false,
+    "allTimeRasterProof": false
+  },
+  "author": {
+    "engineRuns": 0,
+    "sourceProjection": 0,
+    "wholeCompilerRuns": 0,
+    "server": 0,
+    "mediaFetch": 0
+  }
+}
