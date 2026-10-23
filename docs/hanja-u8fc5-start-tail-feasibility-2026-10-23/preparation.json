@@ -1,0 +1,80 @@
+{
+  "schema": "hanja-source-initial-cap-and-original-tail-preparation/v1",
+  "glyph": "迅",
+  "root": "u8fc5-ue0102",
+  "preparedAt": "2026-10-23",
+  "sourceFixture": "docs/hanja-source-independent-qb-u8fc5-vs2-source-experiment-2026-10-19/fixtures.json",
+  "sourceFixtureSHA256": "6d61dce090101293999a78f83fba373d5b93d77dc53ab14e4e8a76c0e4f2598f",
+  "geometrySHA256": "780347f088e4ec9baeba17018b1c64c7be9538ffd5da3cd424d326968cd3d8e7",
+  "originalSource": {
+    "pens": 7,
+    "masks": 8,
+    "polygons": 23,
+    "headerKeys": 4,
+    "separateTraceIdentityKeys": 7,
+    "sourceFieldsPreserved": true,
+    "newProjection": 0,
+    "newEngineRuns": 0
+  },
+  "firstFeasibility": {
+    "script": "docs/hanja-u8fc5-start-tail-feasibility-2026-10-23/check.py",
+    "SHA256": "88fc20bc149f0dd73d24eea8bae3d575765ecb5874b3715072e67c530b4e92de",
+    "invocations": 1,
+    "parts": [
+      "starts",
+      "tail"
+    ],
+    "result": "PASS",
+    "repeatedAfterUnchangedInputs": 0,
+    "scope": "exact Fraction initial curvature/availability and original body coverage/UP-prefix connection; not native rendering or full sweep"
+  },
+  "initialCertificates": {
+    "MLQ": 1,
+    "MQ": 5,
+    "MLL": 1,
+    "MC": 1,
+    "cubicSeparateFromQuadratic": true,
+    "radius": 7
+  },
+  "tail": {
+    "originalLogicalPen": 1,
+    "sourceUPFlag": 15,
+    "bodyOriginalPolygons": 4,
+    "UPOriginalPolygons": 1,
+    "sourceMasksPreserved": 8,
+    "derivedSourceMasks": 0,
+    "internalRevealPhases": 2,
+    "originalBodyWeight": 106.887122,
+    "newInternalUPClock": 13,
+    "phaseShare": "106.887122/(106.887122+13)",
+    "originalInkPaths": 1,
+    "finiteMissingOriginalCoverageWitness": [
+      89.5,
+      66
+    ],
+    "tailEveryPositivePrefixConnectionWitness": "x=88.5,y=78-min(13p/2,1/8)",
+    "sourceGuideUnchanged": true,
+    "sourceWidthUnchanged": true,
+    "sourceWeightsUnchanged": true,
+    "originalOutlineUnionExact": true
+  },
+  "focusedPolicyVerification": {
+    "command": "node --test lib/hanja-stroke-start-caps-u8fc5.test.ts",
+    "tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "materialTamperRejects": 48,
+    "getterReads": 0,
+    "newMathRuns": 0
+  },
+  "integration": {
+    "sharedChanged": false,
+    "compositeDOMRendererConnected": false,
+    "SSR": false,
+    "newNativeScreens": 0,
+    "sourcePriorNativeHold": "docs/hanja-actual-component-profiles-2026-10-22/u8fc5-native-hold.json",
+    "sourcePriorValidScreens": 21
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
