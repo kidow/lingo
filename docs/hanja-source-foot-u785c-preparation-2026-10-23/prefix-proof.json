@@ -1,0 +1,1450 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "glyph": "硜",
+  "glyphId": "u785c",
+  "status": "exact-source-only-prefix-connected-preparation-not-native-approved",
+  "sourceFullProof": {
+    "path": "docs/hanja-source-original-full-u785c-2026-10-23/engine-proof.json",
+    "sha256": "da9a0299154697b3d5aa39f520f725175da503ec23168aeeb431c38c2eae3f39",
+    "originalRawGroups": 16,
+    "originalMovements": 16,
+    "originalPolygons": 30
+  },
+  "priorStrictRootProof": {
+    "path": "docs/hanja-source-original-full-u785c-2026-10-23/strict-root-proof.json",
+    "sha256": "e4ad6befa6d3d52969001c2be2d82f66a8547900f209e82ab15e38bf80dae206",
+    "reusedUnchanged": true
+  },
+  "method": "Reuse existing exact fraction union/slab/triangulation generator with only this source and three independently selected cuts/witness windows. Each original filled polygon union is partitioned exactly at the cut. A strict prior-P root triangle begins the foot; remaining triangles attach by positive shared edges in BFS order. Homothetic triangle prefixes retain the root/shared-edge attachment for every positive progress. The later increasing-x body has one positive interval per slab, positive overlap between adjacent slab cross-sections, and positive overlap with the completed foot frontier. Whole source filled union is unchanged.",
+  "triangleRevealContract": "For an active triangle with seed s, scale all three original triangle vertices about s by active phase t in (0,1]. The root seed is strict inside previous P; later seeds are shared-edge midpoints. Completed triangles remain visible. Body reveal is increasing-x clipping of the unchanged original P, beginning at cutX after the foot completes.",
+  "changedSourceGeometry": false,
+  "changedOriginalGuide": false,
+  "changedOriginalWidths": false,
+  "changedOriginalWeights": false,
+  "engineExecutions": 0,
+  "nativeScreens": 0,
+  "runtimeRegistered": false,
+  "pieces": [
+    {
+      "raw": 8,
+      "cut": "45",
+      "data": {
+        "cutX": [
+          "45",
+          "1"
+        ],
+        "phaseShare": [
+          "522163",
+          "7153310"
+        ],
+        "boundary": [
+          [
+            [
+              "833",
+              "20"
+            ],
+            [
+              "773",
+              "20"
+            ]
+          ],
+          [
+            [
+              "169",
+              "4"
+            ],
+            [
+              "759",
+              "20"
+            ]
+          ],
+          [
+            [
+              "177",
+              "4"
+            ],
+            [
+              "157",
+              "4"
+            ]
+          ],
+          [
+            [
+              "45",
+              "1"
+            ],
+            [
+              "1511",
+              "38"
+            ]
+          ],
+          [
+            [
+              "45",
+              "1"
+            ],
+            [
+              "4307",
+              "100"
+            ]
+          ],
+          [
+            [
+              "889",
+              "20"
+            ],
+            [
+              "423",
+              "10"
+            ]
+          ],
+          [
+            [
+              "431",
+              "10"
+            ],
+            [
+              "809",
+              "20"
+            ]
+          ]
+        ],
+        "triangles": [
+          [
+            [
+              [
+                "431",
+                "10"
+              ],
+              [
+                "809",
+                "20"
+              ]
+            ],
+            [
+              [
+                "833",
+                "20"
+              ],
+              [
+                "773",
+                "20"
+              ]
+            ],
+            [
+              [
+                "169",
+                "4"
+              ],
+              [
+                "759",
+                "20"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "431",
+                "10"
+              ],
+              [
+                "809",
+                "20"
+              ]
+            ],
+            [
+              [
+                "169",
+                "4"
+              ],
+              [
+                "759",
+                "20"
+              ]
+            ],
+            [
+              [
+                "177",
+                "4"
+              ],
+              [
+                "157",
+                "4"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "431",
+                "10"
+              ],
+              [
+                "809",
+                "20"
+              ]
+            ],
+            [
+              [
+                "177",
+                "4"
+              ],
+              [
+                "157",
+                "4"
+              ]
+            ],
+            [
+              [
+                "45",
+                "1"
+              ],
+              [
+                "1511",
+                "38"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "45",
+                "1"
+              ],
+              [
+                "1511",
+                "38"
+              ]
+            ],
+            [
+              [
+                "45",
+                "1"
+              ],
+              [
+                "4307",
+                "100"
+              ]
+            ],
+            [
+              [
+                "889",
+                "20"
+              ],
+              [
+                "423",
+                "10"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "45",
+                "1"
+              ],
+              [
+                "1511",
+                "38"
+              ]
+            ],
+            [
+              [
+                "889",
+                "20"
+              ],
+              [
+                "423",
+                "10"
+              ]
+            ],
+            [
+              [
+                "431",
+                "10"
+              ],
+              [
+                "809",
+                "20"
+              ]
+            ]
+          ]
+        ],
+        "order": [
+          {
+            "triangle": 0,
+            "seed": [
+              [
+                "421",
+                "10"
+              ],
+              [
+                "193",
+                "5"
+              ]
+            ],
+            "priorTriangle": null,
+            "shared": null
+          },
+          {
+            "triangle": 1,
+            "seed": [
+              [
+                "1707",
+                "40"
+              ],
+              [
+                "196",
+                "5"
+              ]
+            ],
+            "priorTriangle": 0,
+            "shared": [
+              [
+                [
+                  "169",
+                  "4"
+                ],
+                [
+                  "759",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "431",
+                  "10"
+                ],
+                [
+                  "809",
+                  "20"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 2,
+            "seed": [
+              [
+                "1747",
+                "40"
+              ],
+              [
+                "797",
+                "20"
+              ]
+            ],
+            "priorTriangle": 1,
+            "shared": [
+              [
+                [
+                  "431",
+                  "10"
+                ],
+                [
+                  "809",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "177",
+                  "4"
+                ],
+                [
+                  "157",
+                  "4"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 4,
+            "seed": [
+              [
+                "881",
+                "20"
+              ],
+              [
+                "30481",
+                "760"
+              ]
+            ],
+            "priorTriangle": 2,
+            "shared": [
+              [
+                [
+                  "431",
+                  "10"
+                ],
+                [
+                  "809",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "45",
+                  "1"
+                ],
+                [
+                  "1511",
+                  "38"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 3,
+            "seed": [
+              [
+                "1789",
+                "40"
+              ],
+              [
+                "3898",
+                "95"
+              ]
+            ],
+            "priorTriangle": 4,
+            "shared": [
+              [
+                [
+                  "889",
+                  "20"
+                ],
+                [
+                  "423",
+                  "10"
+                ]
+              ],
+              [
+                [
+                  "45",
+                  "1"
+                ],
+                [
+                  "1511",
+                  "38"
+                ]
+              ]
+            ]
+          }
+        ],
+        "weights": [
+          [
+            "79610",
+            "522163"
+          ],
+          [
+            "148010",
+            "522163"
+          ],
+          [
+            "56625",
+            "522163"
+          ],
+          [
+            "168805",
+            "522163"
+          ],
+          [
+            "69113",
+            "522163"
+          ]
+        ],
+        "footArea": [
+          "522163",
+          "76000"
+        ],
+        "totalArea": [
+          "37649",
+          "400"
+        ],
+        "strictRootMarginSquared": [
+          "3249",
+          "34000"
+        ]
+      },
+      "slabs": 25,
+      "footTriangles": 5,
+      "bodySlabs": 20,
+      "directionCondition": "original Q x0<cx<x1 and y0<cy<y1 checked separately",
+      "bodyPrefixProof": "Each later vertical slab has one positive cell, adjacent slabs/frontier share positive vertical intervals; triangulated prefix shared-edge BFS attaches to a strict prior-P root; union equality exact.",
+      "marginSquared": "3249/34000",
+      "seed": [
+        "421/10",
+        "193/5"
+      ],
+      "sourceRawPairZeroBased": [
+        7,
+        8
+      ],
+      "normalization": "engine coordinates /2",
+      "certifiedRootOpenDiskRadius": [
+        "3",
+        "10"
+      ],
+      "certifiedRootRadiusSquared": [
+        "9",
+        "100"
+      ],
+      "previousCompletedEndpointMaskRadius": [
+        "7",
+        "1"
+      ],
+      "priorCompletedMaskScope": "Current generic completed branch shows full P1; the stricter disk also fits completed radius7 endpoint round mask intersect P1. Root seed was additionally checked within endpoint radius6. Since the root radius .3 is below1, this is sufficient for containment in radius7."
+    },
+    {
+      "raw": 10,
+      "cut": "123/2",
+      "data": {
+        "cutX": [
+          "123",
+          "2"
+        ],
+        "phaseShare": [
+          "180939",
+          "2382695"
+        ],
+        "boundary": [
+          [
+            [
+              "581",
+              "10"
+            ],
+            [
+              "773",
+              "20"
+            ]
+          ],
+          [
+            [
+              "1173",
+              "20"
+            ],
+            [
+              "759",
+              "20"
+            ]
+          ],
+          [
+            [
+              "1213",
+              "20"
+            ],
+            [
+              "157",
+              "4"
+            ]
+          ],
+          [
+            [
+              "123",
+              "2"
+            ],
+            [
+              "3784",
+              "95"
+            ]
+          ],
+          [
+            [
+              "123",
+              "2"
+            ],
+            [
+              "4321",
+              "100"
+            ]
+          ],
+          [
+            [
+              "1217",
+              "20"
+            ],
+            [
+              "423",
+              "10"
+            ]
+          ],
+          [
+            [
+              "119",
+              "2"
+            ],
+            [
+              "809",
+              "20"
+            ]
+          ]
+        ],
+        "triangles": [
+          [
+            [
+              [
+                "119",
+                "2"
+              ],
+              [
+                "809",
+                "20"
+              ]
+            ],
+            [
+              [
+                "581",
+                "10"
+              ],
+              [
+                "773",
+                "20"
+              ]
+            ],
+            [
+              [
+                "1173",
+                "20"
+              ],
+              [
+                "759",
+                "20"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "119",
+                "2"
+              ],
+              [
+                "809",
+                "20"
+              ]
+            ],
+            [
+              [
+                "1173",
+                "20"
+              ],
+              [
+                "759",
+                "20"
+              ]
+            ],
+            [
+              [
+                "1213",
+                "20"
+              ],
+              [
+                "157",
+                "4"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "119",
+                "2"
+              ],
+              [
+                "809",
+                "20"
+              ]
+            ],
+            [
+              [
+                "1213",
+                "20"
+              ],
+              [
+                "157",
+                "4"
+              ]
+            ],
+            [
+              [
+                "123",
+                "2"
+              ],
+              [
+                "3784",
+                "95"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "123",
+                "2"
+              ],
+              [
+                "3784",
+                "95"
+              ]
+            ],
+            [
+              [
+                "123",
+                "2"
+              ],
+              [
+                "4321",
+                "100"
+              ]
+            ],
+            [
+              [
+                "1217",
+                "20"
+              ],
+              [
+                "423",
+                "10"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "123",
+                "2"
+              ],
+              [
+                "3784",
+                "95"
+              ]
+            ],
+            [
+              [
+                "1217",
+                "20"
+              ],
+              [
+                "423",
+                "10"
+              ]
+            ],
+            [
+              [
+                "119",
+                "2"
+              ],
+              [
+                "809",
+                "20"
+              ]
+            ]
+          ]
+        ],
+        "order": [
+          {
+            "triangle": 0,
+            "seed": [
+              [
+                "1171",
+                "20"
+              ],
+              [
+                "773",
+                "20"
+              ]
+            ],
+            "priorTriangle": null,
+            "shared": null
+          },
+          {
+            "triangle": 1,
+            "seed": [
+              [
+                "2363",
+                "40"
+              ],
+              [
+                "196",
+                "5"
+              ]
+            ],
+            "priorTriangle": 0,
+            "shared": [
+              [
+                [
+                  "1173",
+                  "20"
+                ],
+                [
+                  "759",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "119",
+                  "2"
+                ],
+                [
+                  "809",
+                  "20"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 2,
+            "seed": [
+              [
+                "2403",
+                "40"
+              ],
+              [
+                "797",
+                "20"
+              ]
+            ],
+            "priorTriangle": 1,
+            "shared": [
+              [
+                [
+                  "119",
+                  "2"
+                ],
+                [
+                  "809",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "1213",
+                  "20"
+                ],
+                [
+                  "157",
+                  "4"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 4,
+            "seed": [
+              [
+                "121",
+                "2"
+              ],
+              [
+                "30507",
+                "760"
+              ]
+            ],
+            "priorTriangle": 2,
+            "shared": [
+              [
+                [
+                  "119",
+                  "2"
+                ],
+                [
+                  "809",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "123",
+                  "2"
+                ],
+                [
+                  "3784",
+                  "95"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 3,
+            "seed": [
+              [
+                "2447",
+                "40"
+              ],
+              [
+                "3121",
+                "76"
+              ]
+            ],
+            "priorTriangle": 4,
+            "shared": [
+              [
+                [
+                  "1217",
+                  "20"
+                ],
+                [
+                  "423",
+                  "10"
+                ]
+              ],
+              [
+                [
+                  "123",
+                  "2"
+                ],
+                [
+                  "3784",
+                  "95"
+                ]
+              ]
+            ]
+          }
+        ],
+        "weights": [
+          [
+            "74860",
+            "542817"
+          ],
+          [
+            "148010",
+            "542817"
+          ],
+          [
+            "64175",
+            "542817"
+          ],
+          [
+            "172325",
+            "542817"
+          ],
+          [
+            "83447",
+            "542817"
+          ]
+        ],
+        "footArea": [
+          "542817",
+          "76000"
+        ],
+        "totalArea": [
+          "75243",
+          "800"
+        ],
+        "strictRootMarginSquared": [
+          "3249",
+          "34600"
+        ]
+      },
+      "slabs": 25,
+      "footTriangles": 5,
+      "bodySlabs": 20,
+      "directionCondition": "original Q x0<cx<x1 and y0<cy<y1 checked separately",
+      "bodyPrefixProof": "Each later vertical slab has one positive cell, adjacent slabs/frontier share positive vertical intervals; triangulated prefix shared-edge BFS attaches to a strict prior-P root; union equality exact.",
+      "marginSquared": "3249/34600",
+      "seed": [
+        "1171/20",
+        "773/20"
+      ],
+      "sourceRawPairZeroBased": [
+        9,
+        10
+      ],
+      "normalization": "engine coordinates /2",
+      "certifiedRootOpenDiskRadius": [
+        "3",
+        "10"
+      ],
+      "certifiedRootRadiusSquared": [
+        "9",
+        "100"
+      ],
+      "previousCompletedEndpointMaskRadius": [
+        "7",
+        "1"
+      ],
+      "priorCompletedMaskScope": "Current generic completed branch shows full P1; the stricter disk also fits completed radius7 endpoint round mask intersect P1. Root seed was additionally checked within endpoint radius6. Since the root radius .3 is below1, this is sufficient for containment in radius7."
+    },
+    {
+      "raw": 12,
+      "cut": "155/2",
+      "data": {
+        "cutX": [
+          "155",
+          "2"
+        ],
+        "phaseShare": [
+          "371557",
+          "5290670"
+        ],
+        "boundary": [
+          [
+            [
+              "1481",
+              "20"
+            ],
+            [
+              "773",
+              "20"
+            ]
+          ],
+          [
+            [
+              "373",
+              "5"
+            ],
+            [
+              "759",
+              "20"
+            ]
+          ],
+          [
+            [
+              "1533",
+              "20"
+            ],
+            [
+              "391",
+              "10"
+            ]
+          ],
+          [
+            [
+              "155",
+              "2"
+            ],
+            [
+              "3961",
+              "100"
+            ]
+          ],
+          [
+            [
+              "155",
+              "2"
+            ],
+            [
+              "2391",
+              "56"
+            ]
+          ],
+          [
+            [
+              "1541",
+              "20"
+            ],
+            [
+              "843",
+              "20"
+            ]
+          ],
+          [
+            [
+              "378",
+              "5"
+            ],
+            [
+              "807",
+              "20"
+            ]
+          ]
+        ],
+        "triangles": [
+          [
+            [
+              [
+                "378",
+                "5"
+              ],
+              [
+                "807",
+                "20"
+              ]
+            ],
+            [
+              [
+                "1481",
+                "20"
+              ],
+              [
+                "773",
+                "20"
+              ]
+            ],
+            [
+              [
+                "373",
+                "5"
+              ],
+              [
+                "759",
+                "20"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "378",
+                "5"
+              ],
+              [
+                "807",
+                "20"
+              ]
+            ],
+            [
+              [
+                "373",
+                "5"
+              ],
+              [
+                "759",
+                "20"
+              ]
+            ],
+            [
+              [
+                "1533",
+                "20"
+              ],
+              [
+                "391",
+                "10"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "378",
+                "5"
+              ],
+              [
+                "807",
+                "20"
+              ]
+            ],
+            [
+              [
+                "1533",
+                "20"
+              ],
+              [
+                "391",
+                "10"
+              ]
+            ],
+            [
+              [
+                "155",
+                "2"
+              ],
+              [
+                "3961",
+                "100"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "378",
+                "5"
+              ],
+              [
+                "807",
+                "20"
+              ]
+            ],
+            [
+              [
+                "155",
+                "2"
+              ],
+              [
+                "3961",
+                "100"
+              ]
+            ],
+            [
+              [
+                "155",
+                "2"
+              ],
+              [
+                "2391",
+                "56"
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                "155",
+                "2"
+              ],
+              [
+                "2391",
+                "56"
+              ]
+            ],
+            [
+              [
+                "1541",
+                "20"
+              ],
+              [
+                "843",
+                "20"
+              ]
+            ],
+            [
+              [
+                "378",
+                "5"
+              ],
+              [
+                "807",
+                "20"
+              ]
+            ]
+          ]
+        ],
+        "order": [
+          {
+            "triangle": 0,
+            "seed": [
+              [
+                "149",
+                "2"
+              ],
+              [
+                "193",
+                "5"
+              ]
+            ],
+            "priorTriangle": null,
+            "shared": null
+          },
+          {
+            "triangle": 1,
+            "seed": [
+              [
+                "751",
+                "10"
+              ],
+              [
+                "783",
+                "20"
+              ]
+            ],
+            "priorTriangle": 0,
+            "shared": [
+              [
+                [
+                  "373",
+                  "5"
+                ],
+                [
+                  "759",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "378",
+                  "5"
+                ],
+                [
+                  "807",
+                  "20"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 2,
+            "seed": [
+              [
+                "609",
+                "8"
+              ],
+              [
+                "1589",
+                "40"
+              ]
+            ],
+            "priorTriangle": 1,
+            "shared": [
+              [
+                [
+                  "378",
+                  "5"
+                ],
+                [
+                  "807",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "1533",
+                  "20"
+                ],
+                [
+                  "391",
+                  "10"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 3,
+            "seed": [
+              [
+                "1531",
+                "20"
+              ],
+              [
+                "1999",
+                "50"
+              ]
+            ],
+            "priorTriangle": 2,
+            "shared": [
+              [
+                [
+                  "378",
+                  "5"
+                ],
+                [
+                  "807",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "155",
+                  "2"
+                ],
+                [
+                  "3961",
+                  "100"
+                ]
+              ]
+            ]
+          },
+          {
+            "triangle": 4,
+            "seed": [
+              [
+                "1531",
+                "20"
+              ],
+              [
+                "23253",
+                "560"
+              ]
+            ],
+            "priorTriangle": 3,
+            "shared": [
+              [
+                [
+                  "378",
+                  "5"
+                ],
+                [
+                  "807",
+                  "20"
+                ]
+              ],
+              [
+                [
+                  "155",
+                  "2"
+                ],
+                [
+                  "2391",
+                  "56"
+                ]
+              ]
+            ]
+          }
+        ],
+        "weights": [
+          [
+            "56560",
+            "371557"
+          ],
+          [
+            "105560",
+            "371557"
+          ],
+          [
+            "44744",
+            "371557"
+          ],
+          [
+            "164198",
+            "371557"
+          ],
+          [
+            "495",
+            "371557"
+          ]
+        ],
+        "footArea": [
+          "371557",
+          "56000"
+        ],
+        "totalArea": [
+          "75581",
+          "800"
+        ],
+        "strictRootMarginSquared": [
+          "529",
+          "5072"
+        ]
+      },
+      "slabs": 25,
+      "footTriangles": 5,
+      "bodySlabs": 20,
+      "directionCondition": "original Q x0<cx<x1 and y0<cy<y1 checked separately",
+      "bodyPrefixProof": "Each later vertical slab has one positive cell, adjacent slabs/frontier share positive vertical intervals; triangulated prefix shared-edge BFS attaches to a strict prior-P root; union equality exact.",
+      "marginSquared": "529/5072",
+      "seed": [
+        "149/2",
+        "193/5"
+      ],
+      "sourceRawPairZeroBased": [
+        11,
+        12
+      ],
+      "normalization": "engine coordinates /2",
+      "certifiedRootOpenDiskRadius": [
+        "3",
+        "10"
+      ],
+      "certifiedRootRadiusSquared": [
+        "9",
+        "100"
+      ],
+      "previousCompletedEndpointMaskRadius": [
+        "7",
+        "1"
+      ],
+      "priorCompletedMaskScope": "Current generic completed branch shows full P1; the stricter disk also fits completed radius7 endpoint round mask intersect P1. Root seed was additionally checked within endpoint radius6. Since the root radius .3 is below1, this is sufficient for containment in radius7."
+    }
+  ],
+  "limits": [
+    "No shared renderer/projector, candidate runtime or registration has been changed.",
+    "The phase and triangle weights are source-only preparation until wired to a version-pinned actual renderer.",
+    "Root radius .3 is this exact derived candidate certificate; no universal approval threshold is asserted.",
+    "Exact all-prefix connectedness does not establish raster visibility, no-jump behavior or domestic stroke-order approval. Direct browser review remains required.",
+    "Existing domestic/whole-form records keep their original scope. No additional official direction observations were performed."
+  ]
+}
