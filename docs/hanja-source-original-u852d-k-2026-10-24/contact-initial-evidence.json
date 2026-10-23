@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-source-contact-evidence/v1",
+  "date": "2026-10-24",
+  "glyph": "蔭",
+  "sourceRoot": "u852d-k",
+  "full5": {
+    "path": "docs/hanja-goal-glyphwiki-batch803-2026-10-13/engine-whole-u852d-k.json",
+    "SHA256": "96ed622d7b6f588da0aa02b1c91278ab7d1208b13a79137b2bddc1c329a10b6e",
+    "allFiveOriginalKeysPreserved": true
+  },
+  "scope": "Original source raw16-to17 contact feasibility only; no normalization/projection or sourcegeometry change.",
+  "originalPriorActualMask": "Complete original quadratic guide with radius14 in source200 coordinates, intersected with original prior polygon.",
+  "calculation": {
+    "sourceRawPrior": 16,
+    "sourceRawNext": 17,
+    "witnessSource200": [
+      "99",
+      "170"
+    ],
+    "witnessNormalized100": [
+      "99/2",
+      "85"
+    ],
+    "priorPolygonStrictInterior": true,
+    "ownOriginalBodyStrictInterior": true,
+    "priorMinEdgeDistanceSquared": "130321/206900",
+    "ownMinEdgeDistanceSquared": "23716/4925",
+    "priorActualQParameter": "4/5",
+    "priorActualQPoint": [
+      "99341/1000",
+      "840089/5000"
+    ],
+    "distanceSquaredFromCompletedOriginalQ": "50567473/12500000",
+    "maskRadiusSquaredSource200": 196,
+    "strictMarginSquared": "2399432527/12500000",
+    "originalQStartNext": [
+      73.85,
+      175.805
+    ],
+    "endpointDelta": [
+      -18.85,
+      1.57
+    ],
+    "newConnector": 0,
+    "wholeOriginalPGuideUnchanged": true,
+    "allPrefixConnected": false,
+    "nativeApproval": false
+  },
+  "existingWholeEvidence": {
+    "path": "docs/hanja-goal-glyphwiki-batch803-2026-10-13/review.json",
+    "SHA256": "61a002997c1a0eebb8827171817f85668b65dc8462f898eab2b296162aa5a1f0",
+    "compatibleRoots": [
+      "u852d-k",
+      "u852d-ue0102"
+    ],
+    "directDirectionStrokes": [
+      5,
+      6,
+      10,
+      14,
+      15
+    ]
+  },
+  "limits": {
+    "allPrefixProof": false,
+    "nextInitialContactProved": false,
+    "newDisplayClockApproved": false,
+    "proposed15GroupsApproved": false,
+    "sourceGeometryChanged": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "nextCondition": "After source/static/official group review, root-first exact originalP partition must retain a strict completed-prior intersection witness for each initial prefix; do not substitute endpointdisk or infer connection from radical."
+}
