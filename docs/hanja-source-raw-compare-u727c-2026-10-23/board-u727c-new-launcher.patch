@@ -1,0 +1,38 @@
+--- a/scripts/hanja-raw-static-board.py
++++ b/scripts/hanja-raw-static-board.py
+@@ -97,6 +97,23 @@
+     return original_page, grouped_svg
+ 
+ 
++def exact_u727c_new_launcher(config,base):
++    # Only the pinned original15raw14call32P/zeroRaw4 comparison may use this new launcher.
++    selected=base.get('sourceRoots',{}).get('selected',{})
++    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'c7f2ffb34eefbdc889a1016ece7c756258542655c662d45ffa84f822d0c7387f'}
++            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u727c-2026-10-23/config.json','SHA256':'dedb492f64aa35ea4ccb572b5f31ca5dc26dac3fbc60cafdd5416c419a554543'}
++            and base.get('glyph')=='牼' and base.get('catalogStrokes')==11
++            and list(base.get('sourceRoots',{}))==['selected']
++            and selected.get('root')=='u727c'
++            and selected.get('file')=='docs/hanja-source-raw-compare-u727c-2026-10-23/engine-whole-u727c.json'
++            and selected.get('fileSHA256')=='89859c169dac0332017f79e4c1b39424063e39caa95f3306d972318e0f0702db'
++            and selected.get('proofKind')=='actual-full5-direct'
++            and selected.get('proofKeys')==['defaults','engineHashes','engineRevision','groups','trace']
++            and (selected.get('rawGroups'),selected.get('drawingCalls'),selected.get('polygons'))==(15,14,32)
++            and selected.get('polygonCounts')==[3,2,2,3,0,2,3,2,3,2,3,2,2,1,2]
++            and base.get('launcherSHA256')==config['launcher']['SHA256'])
++
++
+ def main():
+     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
+     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
+@@ -112,10 +129,11 @@
+     config = json.loads(raw)
+     require(set(config) == {'schema', 'baseConfig', 'launcher', 'sharedServe', 'wrapper', 'provisionalGroups', 'nativeApproval', 'runtimeApplied'}, 'exact board fields required')
+     require(config['schema'] == 'hanja-provisional-static-board/v1' and config['nativeApproval'] is False and config['runtimeApplied'] is False, 'unapproved static board only')
+-    require(config['launcher'] == {'path': LAUNCHER, 'SHA256': LAUNCHER_SHA}, 'original launcher required')
++    legacy_launcher = config['launcher'] == {'path': LAUNCHER, 'SHA256': LAUNCHER_SHA}
+     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
+     base_path = fixed_path(config['baseConfig']['path'])
+     base = json.loads(base_path.read_bytes())
++    require(legacy_launcher or exact_u727c_new_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
+     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
+     validate_groups(config['provisionalGroups'], base)
