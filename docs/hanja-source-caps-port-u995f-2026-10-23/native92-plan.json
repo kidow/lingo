@@ -1,0 +1,149 @@
+{
+  "schema": "hanja-finite-native-review-plan/v1",
+  "date": "2026-10-23",
+  "root": "u995f",
+  "glyph": "饟",
+  "sharedVersion": 92,
+  "profile": "docs/hanja-actual-component-profiles-2026-10-22/u995f-3.json",
+  "all196ControlsNotRequired": true,
+  "categories": [
+    {
+      "kind": "caps initial",
+      "targets": 8,
+      "conditions": [
+        0.000001,
+        0.03
+      ],
+      "screens": 16
+    },
+    {
+      "kind": "caps rho7",
+      "targets": 8,
+      "deltas": [
+        -1e-10,
+        0,
+        1e-10
+      ],
+      "screens": 24
+    },
+    {
+      "kind": "caps full-round residual",
+      "targets": 8,
+      "screens": 8,
+      "includesMLLTerminalPens": [
+        4,
+        13,
+        16
+      ]
+    },
+    {
+      "kind": "foot24m2 initial/full locals",
+      "targets": 1,
+      "conditions": [
+        0,
+        0.000001,
+        0.01,
+        0.03,
+        0.1,
+        0.5,
+        0.95,
+        1
+      ],
+      "screens": 8
+    },
+    {
+      "kind": "foot24m2 phase",
+      "targets": 1,
+      "deltas": [
+        -1e-10,
+        0,
+        1e-10
+      ],
+      "screens": 3
+    },
+    {
+      "kind": "foot24m2 exact-original-P coverage",
+      "targets": 1,
+      "screens": 1
+    },
+    {
+      "kind": "original source boundaries",
+      "pens": [
+        23,
+        24
+      ],
+      "deltas": [
+        -1e-10,
+        0,
+        1e-10
+      ],
+      "screens": 6
+    },
+    {
+      "kind": "all26 compact9 boards",
+      "boards": 26,
+      "panelsPerBoard": 9,
+      "screens": 26
+    },
+    {
+      "kind": "fine3 boards",
+      "pens": [
+        4,
+        13,
+        16,
+        24
+      ],
+      "boards": 4,
+      "panelsPerBoard": 3,
+      "screens": 4
+    },
+    {
+      "kind": "natural playback early/end",
+      "pens": [
+        1,
+        23,
+        24
+      ],
+      "conditions": [
+        "early",
+        "end"
+      ],
+      "screens": 6
+    },
+    {
+      "kind": "done whole",
+      "screens": 1
+    }
+  ],
+  "reuse": {
+    "sourceStaticMapping26Rows": true,
+    "originalDirectionAndWholeSourceEvidenceAtRecordedScope": true,
+    "initialCertificates9AndFootExactProof": true,
+    "finiteGuardsDOMAndCJS2": true,
+    "priorActualSetup196Controls": true
+  },
+  "counts": {
+    "screens": 103,
+    "boardScreens": 30,
+    "compactPanels": 234,
+    "finePanels": 12,
+    "singleViewScreens": 73,
+    "notClaimedUniquePixelOrAllTimeConditions": true
+  },
+  "stopOnVisualFailure": true,
+  "executionOrder": [
+    "caps16 + foot8 initial fail-fast",
+    "rho24 + phase3 + source boundaries6",
+    "caps residual8 + foot coverage1",
+    "compact26 + fine4",
+    "natural6 + done1"
+  ],
+  "limits": {
+    "nativeScreensObservedByChild": 0,
+    "notAllTimeProof": true,
+    "notActualProductUI": true,
+    "noSourceAAExactEqualityClaim": true,
+    "runtimeApproval": false,
+    "sharedApplyPendingROOT": true
+  }
+}

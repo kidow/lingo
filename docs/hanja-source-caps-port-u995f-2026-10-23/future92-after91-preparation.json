@@ -1,0 +1,59 @@
+{
+  "schema": "hanja-future-shared-rebase/v1",
+  "date": "2026-10-23",
+  "root": "u995f",
+  "glyph": "饟",
+  "basisSharedVersion": 91,
+  "plannedSharedVersion": 92,
+  "base": {
+    "component": "e3ad798672b4090fa51cdfcbeb5ec6456b8ae20048dbeff9801931b72f7cba2f",
+    "helper": "b1be2bb58163db094015969793c96ffa5ea71cc0b7c9fa20b759f0d93458abff"
+  },
+  "future": {
+    "component": "406693bf2016caa2b8d3c45f24015f1aecbcdf86047338c77aec9065f27527a9",
+    "helper": "7a40609450b53a6aab8f4bfab53eb720d9b62914b40bd48233299f67fb360771"
+  },
+  "patch": "docs/hanja-source-caps-port-u995f-2026-10-23/future92-after91.patch",
+  "profile": "docs/hanja-actual-component-profiles-2026-10-22/u995f-3.json",
+  "profileFinalized": true,
+  "executionEnabled": true,
+  "actualApplyPending": true,
+  "actualSharedFilesEdited": false,
+  "changedTailChecks": {
+    "baseExactA91": true,
+    "twoNewImports": [
+      "@/lib/hanja-stroke-start-caps-u995f",
+      "@/lib/hanja-stroke-source-foot-u995f"
+    ],
+    "twoNewPolicyHashesUnchanged": true,
+    "nativePatchParityFiles": 2,
+    "uniqueScopedAnchors": true,
+    "componentContextSyntaxDiagnostics": 0,
+    "profileCLIRegex": true,
+    "ownSetupByteEquality": true,
+    "expectedModules": 104
+  },
+  "reused": {
+    "actualTopAdmissionGatePositive1ForeignNegative1": true,
+    "actualResourceLoop": "prior after90 validated algorithm; only base/import delta checked here",
+    "actualSerializerPair2Targets9": true,
+    "setup196Controls26OptionsNatural": true,
+    "newOwnCJS2": true,
+    "sourceProofAndGuardsDOM": true
+  },
+  "contextOnlyHunkFailure": {
+    "oldNearImportContextChangedByA91": true,
+    "initialShortClosingBraceHunkAmbiguous": true,
+    "uniqueComponentContextExpandedToLines": 8,
+    "finalNativePatchParityConfirmed": true,
+    "sameOwnInsertionsReanchored": true,
+    "geometryChanged": false
+  },
+  "newSSR": 0,
+  "engine": 0,
+  "sourceProjection": 0,
+  "servers": 0,
+  "fullTests": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
