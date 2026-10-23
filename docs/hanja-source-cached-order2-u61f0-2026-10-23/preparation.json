@@ -1,0 +1,94 @@
+{
+  "schema": "hanja-cached-row-direction-integration-preparation/v1",
+  "glyph": "懰",
+  "root": "u61f0",
+  "preparedAt": "2026-10-23",
+  "sharedVersion": 88,
+  "sourceFixture": {
+    "path": "docs/hanja-source-cached-order2-u61f0-2026-10-23/fixtures.json",
+    "SHA256": "8b6167b4be2b6d8d98803367c1a32fc4ce835c24c6d34e6ee1b4ac046d399be5",
+    "geometrySHA256": "15862bafc75a16bf6981ca437662026db9dbb46372dceaa4dbdccf13db20ff5a"
+  },
+  "config": {
+    "path": "docs/hanja-source-cached-order2-u61f0-2026-10-23/config.json",
+    "SHA256": "505b148b01f396a8a7608ea3dd8198a5459af979ae2f4d5883a506b4a710a544"
+  },
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u61f0-1.json",
+    "SHA256": "17db73677ea114bcaf54f2214d82c301928117628d4a3b7b076a8e0e516803d6"
+  },
+  "patch": {
+    "path": "docs/hanja-shared-patches-2026-10-23/u61f0-order2-alias-shared88.patch",
+    "SHA256": "fe2edbdda8777fcb56290079772226e97a7713394f42e67508658016d4c5f3fa"
+  },
+  "baselineShared87": {
+    "helperSHA256": "8ff9b78864a19883b6012a81cbe72fecb7aa02e9c780adcdc6f2380e600cd4d6",
+    "componentSHA256": "a3a003af452053beaacb656f2f448938aa4047ea934fb75512eb2e845650d94d",
+    "sourceFootU7e58SHA256": "9a6254b6da0f3335b4c777f051d11e95da9a023b89cc3b5f8128b651c553e237"
+  },
+  "actualShared88": {
+    "helperSHA256": "e43eb438a4a2327b93df716e7e8431464d9c1b4e2f443a2ec637641391e4fbe3",
+    "componentUnchanged": true,
+    "helperOnlyAppliedWithRootAuthorization": true,
+    "expectedResourceClosureModules": 99
+  },
+  "focusedVerification": {
+    "aliasGuardFirst": {
+      "positive": 1,
+      "negative": 13,
+      "result": "PASS"
+    },
+    "unchangedGuardReruns": 0,
+    "futureHelperAST": "PASS",
+    "actualValidatedFixtureDispatchRouteCalls": 1,
+    "serializedNewGeometry": "PASS",
+    "actualRelativeMapperLoop": "PASS",
+    "unresolvedRuntimeRelativeImports": 0,
+    "actualAppliedHelperMatchesVerifiedFutureBytes": true,
+    "allCurrentProfilePins": "PASS"
+  },
+  "directionScope": {
+    "oldPrefixDirectionsReused": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "newSourceDirectionPens": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "new17WasParent9": true,
+    "new18WasParent10": true,
+    "pen18OriginalMLQAndSeparateLeftBoundary": 0.8953658234728527,
+    "prefixInitialCapsApproval": false,
+    "sourceDirectionApproval": false,
+    "newNativeScreens": 0,
+    "initialProgressiveApproval": false
+  },
+  "authorActions": {
+    "SSR": 0,
+    "server": 0,
+    "browser": 0,
+    "sourceCompiler": 0,
+    "engine": 0,
+    "projection": 0,
+    "oldMatrixReruns": 0,
+    "build": 0,
+    "wholeTSC": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
