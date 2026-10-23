@@ -1,0 +1,31 @@
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {reviewedU8aedKContext,makeReviewedU8aedKSourceContext} from './hanja-stroke-start-caps-u8aed-k.ts'
+function freeze<T>(v:T):T{if(v&&typeof v==='object'){for(const d of Object.values(Object.getOwnPropertyDescriptors(v)))if('value'in d)freeze(d.value);Object.freeze(v)}return v}
+const TARGET=freeze({"id":"u8aed-k-12-3","pen":12,"mask":3,"kind":"original-terminal-u8aed-k","segment":{"outline":"M63.8 86.5 L63.7 87.75 L63.5 89 L63.1 90.2 L62.5 91.35 L61.65 92.35 L60.65 93.15 L59.5 93.8 L58.3 94.2 L57.05 94.4 L55.8 94.5 L55.8 88.5 L56.4 88.45 L56.85 88.35 L57.15 88.25 L57.3 88.2 L57.4 88.1 L57.5 88 L57.6 87.85 L57.7 87.55 L57.75 87.1 L57.8 86.5 Z M55.8 91.5 L50.8 90 L50.8 88.5 L55.8 88.5 Z","bounds":[50.8,86.5,63.8,94.5],"direction":"curve","weight":7.071068,"revealPath":"M60.8125 86.5 Q60.8125 91.5 55.8125 91.5","revealWidth":14},"predecessor":{"outline":"M63.8 47.5 L63.8 86.5 L57.8 86.5 L57.8 47.5 Z M57.8 46.5 L60.8 44 L66.3 48.5 L63.8 50.5 L57.8 47.5 Z M57.8 86.5 L63.8 86.5 L62.6 88.3 L60.8 89.5 L59 88.3 Z","bounds":[57.8,44,66.3,89.5],"direction":"down","weight":39},"bodyOutline":"M63.8 86.5 L63.7 87.75 L63.5 89 L63.1 90.2 L62.5 91.35 L61.65 92.35 L60.65 93.15 L59.5 93.8 L58.3 94.2 L57.05 94.4 L55.8 94.5 L55.8 88.5 L56.4 88.45 L56.85 88.35 L57.15 88.25 L57.3 88.2 L57.4 88.1 L57.5 88 L57.6 87.85 L57.7 87.55 L57.75 87.1 L57.8 86.5 Z","tailOutline":"M55.8 91.5 L50.8 90 L50.8 88.5 L55.8 88.5 Z","bodyBounds":[55.8,86.5,63.8,94.5],"bodyAxis":"q-start-y-band","originY":86.5,"terminal":"LEFT","terminalClock":5,"bodyWeight":7.071068,"bodyShare":0.5857864440826611} as const)
+const CONTEXT=Object.freeze({id:'u8aed-k-original-terminal'})
+export type ReviewedU8aedKTerminalContext=typeof CONTEXT
+export type ReviewedU8aedKTerminalPolicy=typeof TARGET
+function same(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);return ak.length===bk.length&&bk.every(k=>{const x=Object.getOwnPropertyDescriptor(a,k),y=Object.getOwnPropertyDescriptor(b,k);return!!x&&!!y&&'value'in x&&'value'in y&&x.enumerable===y.enumerable&&same(x.value,y.value)})}
+export function reviewedU8aedKTerminalContext(strokes:HanjaOutlineStrokes):ReviewedU8aedKTerminalContext|null{return reviewedU8aedKContext(strokes)?CONTEXT:null}
+export function makeReviewedU8aedKTerminalSourceContext(proof:unknown,identity:unknown,strokes:HanjaOutlineStrokes):ReviewedU8aedKTerminalContext|null{return makeReviewedU8aedKSourceContext(proof,identity,strokes)?CONTEXT:null}
+export function reviewedU8aedKTerminalPolicy(context:ReviewedU8aedKTerminalContext|null,pen:number,mask:number):ReviewedU8aedKTerminalPolicy|null{return context===CONTEXT&&pen===11&&mask===2?TARGET:null}
+/** New internal Q-start Y-prefix then original LEFT5, preserving all original source fields/outer clock. */
+export function reviewedU8aedKTerminalFrame(policy:ReviewedU8aedKTerminalPolicy,segment:HanjaOutlineSegment,p:number,previousMaskProgress:number){
+ if(policy!==TARGET||!same(segment,TARGET.segment))throw Error('Exact original 諭 terminal required')
+ if(![p,previousMaskProgress].every(Number.isFinite)||p<0||p>1||previousMaskProgress<0||previousMaskProgress>1)throw Error('Finite 諭 progress required')
+ if(p>0&&previousMaskProgress!==1)throw Error('Same-frame completed opaque original 諭 predecessor required')
+ const bodyProgress=Math.min(1,p/policy.bodyShare),tailProgress=p<=policy.bodyShare?0:Math.min(1,(p-policy.bodyShare)/(1-policy.bodyShare))
+ return Object.freeze({policyId:policy.id,phase:p===0?'empty' as const:p===1?'complete' as const:p<=policy.bodyShare?'body' as const:'tail' as const,bodyProgress,tailProgress,bodyOutline:policy.bodyOutline,tailOutline:policy.tailOutline,tailRect:Object.freeze({x:55.8-5*tailProgress,y:88.5,width:5*tailProgress,height:3}),visible:p>0,requiresExactPriorOriginalOpaqueInk:true as const,paintOriginalInkOnce:true as const,originalMaskCount:22,internalRevealPhases:2})
+}
+export function measureReviewedU8aedKTerminalFrame(policy:ReviewedU8aedKTerminalPolicy,segment:HanjaOutlineSegment,p:number,previousMaskProgress:number,path:SVGPathElement|null){
+ const base=reviewedU8aedKTerminalFrame(policy,segment,p,previousMaskProgress);let alpha=base.phase==='empty'?0:1,L:number|null=null,point:Readonly<{x:number;y:number}>|null=null
+ if(base.phase==='body'){
+  if(!path||path.getAttribute('d')!==segment.revealPath||path.getAttribute('pathLength')!==null)throw Error('Exact original 諭 Q measurement required')
+  const d=path.getAttribute('d');L=path.getTotalLength();if(!Number.isFinite(L)||L<=0)throw Error('Finite 諭 Q length required')
+  const start=path.getPointAtLength(0),end=path.getPointAtLength(L),value=path.getPointAtLength(base.bodyProgress*L)
+  if(![start.x,start.y,end.x,end.y,value.x,value.y].every(Number.isFinite)||Math.abs(start.y-86.5)>1e-4||Math.abs(end.y-91.5)>1e-4||end.y<=start.y||path.getAttribute('d')!==d||path.getTotalLength()!==L)throw Error('Unchanged original monotone-Y 諭 Q required')
+  point=Object.freeze({x:value.x,y:value.y});alpha=Math.max(0,Math.min(1,(value.y-start.y)/(end.y-start.y)))
+ }
+ return Object.freeze({...base,alpha,L,point,bodyRect:Object.freeze({x:55.8,y:86.5,width:8,height:8*alpha}),bodyOriginIsOriginalQStartY:true})
+}
+export const REVIEWED_U8AEDK_TERMINALS=freeze({targets:[TARGET],namespace:"u8aed-k-terminal",originalPens:16,originalMasks:22,originalPolygons:41,sourceFieldsUnchanged:true,originalOuterClockUnchanged:true,newInternalDisplayClock:true,previousMaskProgressAndExactDOMInkRequired:true,noNewGuide:true,nativeApproval:false,runtimeApplied:false,proof:{"originalBodyHorizontalSlabs":20,"eachOpenSlabOnePositiveInterval":true,"bodyTopSharedPriorVEndEdge":[[57.8,86.5],[63.8,86.5]],"priorOriginalCompletedP3Preserved":true,"bodyPrefixOriginOriginalQStartY":86.5,"allPositiveBodyPrefixConnected":true,"leftTailExtent":5,"positiveSharedBodyTailEdge":[[55.8,88.5],[55.8,91.5]],"allPositiveLeftPrefixConnected":true,"nativeApproval":false,"originalLeftQuadConvexTurns":[7.5,7.5,15,15]}})
