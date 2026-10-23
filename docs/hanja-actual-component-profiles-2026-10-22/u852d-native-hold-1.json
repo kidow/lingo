@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-24",
+  "glyph": "蔭",
+  "root": "u852d-k",
+  "observer": "ROOT browser panel",
+  "recorder": "/root/activation1401 from explicit ROOT report",
+  "result": "HOLD",
+  "plannedScopes": 65,
+  "plannedFinite": 59,
+  "plannedNatural": 6,
+  "observedScreens": 44,
+  "observedPlannedScopes": 43,
+  "successfulScopes": 40,
+  "failedComparisonScopes": 3,
+  "excludedDiagnosticScreens": 1,
+  "remainingPlannedScopes": 22,
+  "successBreakdown": {
+    "terminal": 7,
+    "foot": 6,
+    "caps": 18,
+    "sourceBoundaryOther": 9
+  },
+  "failure": {
+    "pen": 11,
+    "mask": 2,
+    "scope": "source before mask2 -1e-10/0/+1e-10 comparison group",
+    "observedBeforeAndAt": "이전 H만 표시됨",
+    "observedAfter": "양의 진행 직후 오른쪽 끝 아래 사선 시작의 큰 마름모가 갑자기 노출됨",
+    "visualInitialPop": true,
+    "DOMBad": [],
+    "errors": [],
+    "wholeApproval": false
+  },
+  "excluded": [
+    {
+      "count": 1,
+      "reason": "root coverage diagnostic; actual-board native approval에 추가하지 않음"
+    }
+  ],
+  "snapshots": {
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "84bed47cdd1d42d8fa6b9953f315192ccf9f9a5cd47adb0b9f0d3ee1e3f16714"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "a2c0804df8a423904715aab8638976d52bf9381930f5e7aa5443142c097d8538"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u852d-1.json",
+      "SHA256": "a11fe5532ed77564e30a81a2af191c5e27c50fee18f99f43b98b9de1af46f409"
+    }
+  },
+  "server": {
+    "pid": 60352,
+    "execSession": 82512,
+    "port": 59412,
+    "tabsClosed": [
+      80
+    ],
+    "stopped": true,
+    "exitCode": 130,
+    "stdoutEmpty": true,
+    "SSR": 1,
+    "CJS": 172,
+    "ESM": 172
+  },
+  "historicalRendererReproducible": "Remove only the ML import/context/branch/wrapper additions from the later renderer in RAM to reproduce exact historical SHA84bed47c. Original renderer bytes were not restored to the live file.",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "actualAppUI": false,
+  "allTimeProof": false
+}
