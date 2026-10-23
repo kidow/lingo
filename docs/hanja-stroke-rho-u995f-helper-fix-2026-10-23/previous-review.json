@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-isolated-review-helper-hold/v1",
+  "date": "2026-10-23",
+  "root": "u995f",
+  "glyph": "饟",
+  "sharedVersion": 92,
+  "observedBy": "ROOT",
+  "recordedBy": "u7cbb_prepare",
+  "code": {
+    "componentSHA256": "406693bf2016caa2b8d3c45f24015f1aecbcdf86047338c77aec9065f27527a9",
+    "helperSHA256": "7a40609450b53a6aab8f4bfab53eb720d9b62914b40bd48233299f67fb360771",
+    "profile": "docs/hanja-actual-component-profiles-2026-10-22/u995f-3.json",
+    "profileSHA256": "c106d503c71aa8f18409e538d259157cf7cb1607703a873b8323af26e50b6055"
+  },
+  "observations": {
+    "distinctValidPASS": 32,
+    "breakdown": {
+      "capsInitial": 16,
+      "footLocals": 8,
+      "capsFullRoundResiduals": 8
+    },
+    "repeatImages": 1,
+    "repeatCondition": "u995f-4-1 local .03",
+    "validImages": 33,
+    "invalidHelperAttempts": 6,
+    "totalImages": 39,
+    "invalidTargets": [
+      1,
+      2
+    ],
+    "invalidDeltas": [
+      -1e-10,
+      0,
+      1e-10
+    ],
+    "invalidReason": "rho control used fallback data-u51d7-measurement selector and stopped at p=.5; requested boundaries were not reached",
+    "invalidNotCountedAsNativeApproval": true,
+    "observedResiduals": "all8 WHITE",
+    "componentStateBadAndErrorsEmptyBeforeControlFailure": true
+  },
+  "initial4Adjudication": {
+    "initialFAILRetracted": true,
+    "ROOTFinalDecision": "PASS",
+    "reason": "Small block was the correct original horizontal start near native q, not a remote P fragment.",
+    "sourceAudit": "docs/hanja-initial-start-u995f-4m1-adjudication-2026-10-23/review.json",
+    "repeatNotNewDistinctCondition": true
+  },
+  "helperFailure": {
+    "sourceFunction": "u51d7Rho",
+    "errorExpression": "Error('Exact '+C.glyph+' original guide length required')",
+    "completeErrorLiteralNotPresentBecauseConstructed": true,
+    "policyWasNotCalledByControl": true,
+    "namespaceMissing": "growing-u995f-caps",
+    "wrongSelector": "[data-u51d7-measurement=\"true\"]",
+    "requiredSelector": "[data-u995f-measurement=\"true\"]",
+    "componentOrPolicyDefectNotEstablished": true
+  },
+  "server": {
+    "PID": 87308,
+    "session": 18840,
+    "stoppedByROOT": true,
+    "exitCode": 130,
+    "emptyOutput": true
+  },
+  "remaining": {
+    "rhoValid": 0,
+    "footPhase": 0,
+    "sourceBoundary": 0,
+    "footExactCoverage": 0,
+    "compact": 0,
+    "fine": 0,
+    "natural": 0,
+    "doneWhole": 0
+  },
+  "scope": {
+    "distinct32ReuseAllowedAfterControlOnlyFix": true,
+    "componentPolicyGeometryOutputUnchanged": true,
+    "allTimeOrProductUIApproval": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  }
+}
