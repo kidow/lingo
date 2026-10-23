@@ -14,6 +14,9 @@ import { reviewedU802dKContext, reviewedU802dKPolicy, commitReviewedU802dKCaps, 
 import { reviewedU802dKFootContext, reviewedU802dKFootPolicy, measureReviewedU802dKFootFrame, commitReviewedU802dKFootMask, type ReviewedU802dKFootPolicy } from '@/lib/hanja-stroke-source-foot-u802d-k'
 import { reviewedU78ceKContext, reviewedU78ceKPolicy, commitReviewedU78ceKCaps, type ReviewedU78ceKPolicy } from '@/lib/hanja-stroke-start-caps-u78ce-k'
 import { reviewedU78ceKFootContext, reviewedU78ceKFootPolicy, measureReviewedU78ceKFootFrame, commitReviewedU78ceKFootMask, type ReviewedU78ceKFootPolicy } from '@/lib/hanja-stroke-source-foot-u78ce-k'
+import { reviewedU6f5dContext, reviewedU6f5dPolicy, commitReviewedU6f5dCaps, type ReviewedU6f5dPolicy } from '@/lib/hanja-stroke-start-caps-u6f5d'
+import { reviewedU6f5dCardinalContext, reviewedU6f5dCardinalPolicy, sampleReviewedU6f5dCardinalFrame, type ReviewedU6f5dCardinalPolicy } from '@/lib/hanja-stroke-cardinal-contact-u6f5d'
+import { reviewedU6f5dHookContext, reviewedU6f5dHookPolicy, measureReviewedU6f5dHookFrame, type ReviewedU6f5dHookPolicy } from '@/lib/hanja-stroke-original-left-hook-u6f5d'
 import { reviewedU67b2CardinalContext, reviewedU67b2CardinalPolicy, sampleReviewedU67b2CardinalFrame, type ReviewedU67b2CardinalPolicy } from '@/lib/hanja-stroke-cardinal-contact-u67b2'
 import { reviewedU67b2Context, reviewedU67b2Policy, commitReviewedU67b2Caps, type ReviewedU67b2Policy } from '@/lib/hanja-stroke-start-caps-u67b2'
 import { reviewedU67b2FootContext, reviewedU67b2FootPolicy, measureReviewedU67b2FootFrame, commitReviewedU67b2FootMask, type ReviewedU67b2FootPolicy } from '@/lib/hanja-stroke-source-foot-u67b2'
@@ -244,6 +247,9 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u802dKFootContext = reviewedU802dKFootContext(strokes)
   const u78ceKContext = reviewedU78ceKContext(strokes)
   const u78ceKFootContext = reviewedU78ceKFootContext(strokes)
+  const u6f5dContext = reviewedU6f5dContext(strokes)
+  const u6f5dCardinalContext = reviewedU6f5dCardinalContext(strokes)
+  const u6f5dHookContext = reviewedU6f5dHookContext(strokes)
   const u67b2CardinalContext = reviewedU67b2CardinalContext(strokes)
   const u67b2Context = reviewedU67b2Context(strokes)
   const u67b2FootContext = reviewedU67b2FootContext(strokes)
@@ -460,6 +466,12 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u78ceKFootPolicy) return <U78ceKFootOutline key={index} policy={u78ceKFootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u78ceKPolicy = reviewedU78ceKPolicy(u78ceKContext, stroke, index)
         if (u78ceKPolicy) return <U78ceKCapsOutline key={index} policy={u78ceKPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+        const u6f5dHookPolicy = reviewedU6f5dHookPolicy(u6f5dHookContext, stroke, index)
+        if (u6f5dHookPolicy) return <U6f5dHookOutline key={index} policy={u6f5dHookPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} />
+        const u6f5dCardinalPolicy = reviewedU6f5dCardinalPolicy(u6f5dCardinalContext, stroke, index)
+        if (u6f5dCardinalPolicy) return <U6f5dCardinalOutline key={index} policy={u6f5dCardinalPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} />
+        const u6f5dPolicy = reviewedU6f5dPolicy(u6f5dContext, stroke, index)
+        if (u6f5dPolicy) return <U6f5dCapsOutline key={index} policy={u6f5dPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u67b2CardinalPolicy = reviewedU67b2CardinalPolicy(u67b2CardinalContext, stroke, index)
         if (u67b2CardinalPolicy) return <U67b2CardinalOutline key={index} policy={u67b2CardinalPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} previousMaskProgress={amounts[0]} clipId={id+'-'+stroke+'-'+index} />
         const u67b2FootPolicy = reviewedU67b2FootPolicy(u67b2FootContext, stroke, index)
@@ -855,6 +867,85 @@ function U78ceKFootOutline({
    </mask>
   </defs>
   <path ref={inkRef} id={clipId+'-u78ce-k-foot-ink'} data-owner={clipId} data-u78ce-k-foot-ink="true" d={segment.outline} mask={'url(#'+maskId+')'} visibility="hidden" />
+ </g>
+}
+
+function U6f5dCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU6f5dPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>commitReviewedU6f5dCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current}).cleanup,[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u6f5d-progress={String(progress)} data-u6f5d-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u6f5d-measure'} data-growing-owner={clipId} data-u6f5d-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0}/></mask>
+      <mask id={clipId+'-u6f5d-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u6f5d-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/>
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/>
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'}/>}
+    {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u6f5d-growing)'} visibility="hidden"/>}
+  </g>
+}
+
+
+function U6f5dCardinalOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU6f5dCardinalPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null)
+ let frame:ReturnType<typeof sampleReviewedU6f5dCardinalFrame>|null=null
+ try{frame=sampleReviewedU6f5dCardinalFrame(policy,segment,progress,previousMaskProgress)}catch{}
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current;const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u6f5d-cardinal-committed','false')}
+  reset();if(!g||!p||!frame)return reset
+  const owner=p.ownerSVGElement,doc=p.ownerDocument,view=doc.defaultView,previous=g.previousElementSibling
+  const nodes=[g,p,owner]
+  const stable=()=>!!owner&&!!view&&nodes.every(n=>{if(!n||!n.isConnected||n.ownerDocument!==doc||(n!==owner&&(n as SVGElement).ownerSVGElement!==owner)||n.getAttribute('transform')!==null)return false;const s=view.getComputedStyle(n);return s.transform==='none'&&['translate','rotate','scale'].every(k=>['','none'].includes(s.getPropertyValue(k)))})&&g.parentElement===p.parentElement?.parentElement&&p.parentElement===g&&p.getAttribute('d')===segment.outline
+  const previousComplete=()=>{if(!previous||!view)return false;const s=view.getComputedStyle(previous);return previous.localName==='path'&&previous.parentElement===g.parentElement&&previous.nextElementSibling===g&&previous.getAttribute('d')===policy.predecessor.outline&&previous.getAttribute('mask')===null&&previous.getAttribute('clip-path')===null&&previous.getAttribute('pathLength')===null&&s.visibility==='visible'&&s.display!=='none'&&s.opacity==='1'&&s.fillOpacity==='1'&&s.stroke==='none'}
+  if(!stable()||(progress>0&&(!previousComplete()||previousMaskProgress!==1)))return reset
+  p.setAttribute('data-u6f5d-cardinal-progress',String(progress));p.setAttribute('data-u6f5d-cardinal-previous-progress',String(previousMaskProgress));p.setAttribute('data-u6f5d-cardinal-previous-full',String(progress>0));p.setAttribute('data-u6f5d-cardinal-original-direct',String(frame.originalPDirect))
+  if(!stable()||(progress>0&&!previousComplete()))return reset
+  p.setAttribute('data-u6f5d-cardinal-committed','true');p.setAttribute('visibility',frame.visible?'visible':'hidden')
+  return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const clip=frame?.clip,id=clipId+'-u6f5d-cardinal-clip',b=segment.bounds
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u6f5d-cardinal-previous-progress={String(previousMaskProgress)}>
+  <defs><clipPath id={id} clipPathUnits="userSpaceOnUse"><rect id={clipId+'-u6f5d-cardinal-rect'} x={clip?.x??b[0]} y={clip?.y??policy.originY} width={clip?.width??b[2]-b[0]} height={clip?.height??0}/></clipPath></defs>
+  <path ref={ink} data-owner={clipId} data-u6f5d-cardinal-ink="true" d={segment.outline} clipPath={frame?.originalPDirect?undefined:'url(#'+id+')'} visibility="hidden"/>
+ </g>
+}
+
+
+function U6f5dHookOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU6f5dHookPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),measurement=useRef<SVGPathElement>(null),bodyRect=useRef<SVGRectElement>(null),tailRect=useRef<SVGRectElement>(null),ink=useRef<SVGPathElement>(null)
+ useLayoutEffect(()=>{
+  const g=group.current,m=measurement.current,br=bodyRect.current,tr=tailRect.current,p=ink.current
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u6f5d-hook-committed','false')}
+  reset();if(!g||!m||!br||!tr||!p)return reset
+  const owner=p.ownerSVGElement,doc=p.ownerDocument,view=doc.defaultView,priorGroup=g.previousElementSibling,prior=priorGroup?.querySelector('[data-u6f5d-cardinal-ink]')
+  const stable=()=>!!owner&&!!view&&[g,m,br,tr,p,owner].every(n=>{if(!n.isConnected||n.ownerDocument!==doc||(n!==owner&&n.ownerSVGElement!==owner)||n.getAttribute('transform')!==null)return false;const s=view.getComputedStyle(n);return s.transform==='none'&&['translate','rotate','scale'].every(k=>['','none'].includes(s.getPropertyValue(k)))})&&m.getAttribute('d')===segment.revealPath&&p.getAttribute('d')===segment.outline
+  const previousComplete=()=>{if(!priorGroup||!prior||!view)return false;const s=view.getComputedStyle(prior);return priorGroup.parentElement===g.parentElement&&priorGroup.nextElementSibling===g&&priorGroup.getAttribute('data-stroke-start-gate')===policy.id.replace('-3','-2')&&Number(priorGroup.getAttribute('data-stroke-reveal-progress'))===1&&prior.getAttribute('d')===policy.predecessor.outline&&prior.getAttribute('mask')===null&&prior.getAttribute('clip-path')===null&&prior.getAttribute('data-u6f5d-cardinal-original-direct')==='true'&&prior.getAttribute('data-u6f5d-cardinal-committed')==='true'&&s.visibility==='visible'&&s.display!=='none'&&s.opacity==='1'&&s.fillOpacity==='1'&&s.stroke==='none'}
+  if(!stable()||(progress>0&&(!previousComplete()||previousMaskProgress!==1)))return reset
+  try{
+   const f=measureReviewedU6f5dHookFrame(policy,segment,progress,previousMaskProgress,m)
+   for(const [k,v]of Object.entries(f.bodyRect))br.setAttribute(k,String(v))
+   for(const [k,v]of Object.entries(f.tailRect))tr.setAttribute(k,String(v))
+   p.setAttribute('data-u6f5d-hook-progress',String(progress));p.setAttribute('data-u6f5d-hook-body-progress',String(f.bodyProgress));p.setAttribute('data-u6f5d-hook-tail-progress',String(f.tailProgress));p.setAttribute('data-u6f5d-hook-alpha',String(f.alpha));p.setAttribute('data-u6f5d-hook-phase',f.phase);p.setAttribute('data-u6f5d-hook-previous-progress',String(previousMaskProgress))
+   if(!stable()||(progress>0&&!previousComplete()))return reset
+   p.setAttribute('data-u6f5d-hook-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden')
+  }catch{}
+  return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const key=clipId+'-u6f5d-hook',b=policy.bodyBounds
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy="original-left-hook-u6f5d" data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'}>
+  <defs>
+   <path ref={measurement} data-u6f5d-hook-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
+   <clipPath id={key+'-body'} clipPathUnits="userSpaceOnUse"><path d={policy.bodyOutline}/></clipPath>
+   <clipPath id={key+'-left'} clipPathUnits="userSpaceOnUse"><path d={policy.tailOutline}/></clipPath>
+   <mask id={key} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+    <g clipPath={'url(#'+key+'-body)'}><rect ref={bodyRect} data-u6f5d-hook-body="true" x={b[0]} y={b[1]} width={b[2]-b[0]} height={0} fill="white"/></g>
+    <g clipPath={'url(#'+key+'-left)'}><rect ref={tailRect} data-u6f5d-hook-left="true" x={policy.edgeX} y={86} width={0} height={3} fill="white"/></g>
+   </mask>
+  </defs>
+  <path ref={ink} data-u6f5d-hook-ink="true" d={segment.outline} mask={'url(#'+key+')'} visibility="hidden"/>
  </g>
 }
 
