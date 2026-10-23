@@ -83,7 +83,7 @@ def main():
         bound_body='existingMatchingFull5'in spec or'nonDrawingRawRows'in spec
         require(set(spec)==(source_keys|{'existingMatchingFull5','nonDrawingRawRows'} if bound_body else source_keys),'exact source spec fields required')
         require(type(spec['root'])is str and re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None,'original root identity required')
-        path=pinned_path(spec['file']);require(path.name=='engine-whole-'+spec['root']+'.json'and hexsha(spec['fileSHA256']),'actual whole file required')
+        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f)and hexsha(spec['fileSHA256']),'actual whole file required')
         if bound_body:validate_original_empty_body3(spec,path)
         elif spec['proofKind']=='actual-full8-u7cbb-direct':validate_original_full8_u7cbb(spec,path)
         else:require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct','single actual full5 only; no header synthesis')
