@@ -1,0 +1,135 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "潚",
+  "root": "u6f5a",
+  "observedBy": "ROOT browser panel",
+  "result": "PASS",
+  "distinctScopes": 59,
+  "finiteScopes": 53,
+  "naturalScopes": 6,
+  "freshScopes": 59,
+  "reusedScopes": 0,
+  "nativeApproval": true,
+  "source": {
+    "fixture": "docs/hanja-source-original-u6f5a-2026-10-24/fixtures.json",
+    "geometrySHA256": "d91ff4b3968ad39c5b71c2e422f7c8186a0579ef631e788d064b9e77930dc5d6",
+    "originalPens": 16,
+    "originalMasks": 21,
+    "originalPolygons": 33,
+    "originalPGuideWidthWeightUnchanged": true,
+    "originalOuterClockUnchanged": true,
+    "newInternalDisplayClocks": {
+      "cardinalContact": [
+        4,
+        11
+      ]
+    },
+    "newConnector": 0,
+    "newSourceMask": 0
+  },
+  "freshScopeBreakdown": {
+    "capsInitialAndActualBoardCoverage": 15,
+    "cardinalTwo": 6,
+    "sourceBoundariesFive": 15,
+    "compactSixteenNineFramesEach": 16,
+    "doneWhole": 1,
+    "naturalThreeSevenTwelveEarlyEnd": 6
+  },
+  "coverage": {
+    "allCaps5ResidualWhite": true,
+    "pixelEqualityClaim": false,
+    "cardinalTwoNoDetachedFragment": true,
+    "source7LQContactMaintained": true,
+    "actualBoardFullyVisible": true,
+    "mainRoot520FullyVisible": true
+  },
+  "allFullyVisible": true,
+  "bad": [],
+  "errors": [],
+  "observations": {
+    "caps": "Five epsilon/.03 gradual starts and five direct actual #board full-round residuals WHITE.",
+    "cardinal": "4/11m2 epsilon/.03/.9999 maintain exact completed prior H connection.",
+    "sourceBoundary": "Original five pairs3m2/4m2/7m2/11m2/12m2 minus/exact/plus15.",
+    "compact": "All16 logical pens each9 stopped frames show original progression and completion.",
+    "natural": [
+      {
+        "pen": 3,
+        "earlyProgress": 0.06759999998808053,
+        "endProgress": 1
+      },
+      {
+        "pen": 7,
+        "earlyProgress": 0.06709999999999855,
+        "endProgress": 1
+      },
+      {
+        "pen": 12,
+        "earlyProgress": 0.06771249999404244,
+        "endProgress": 1
+      }
+    ]
+  },
+  "finalObservation": {
+    "phase": "natural-ended",
+    "pen": 12,
+    "progress": 1,
+    "bad": [],
+    "errors": [],
+    "originalComplete": true,
+    "fullyVisible": true
+  },
+  "server": {
+    "pid": 13228,
+    "port": 59412,
+    "session": 49201,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 64,
+    "tabClosed": true,
+    "CJS": 157,
+    "ESM": 157,
+    "successfulSSRChecks": 1,
+    "stdoutEmpty": true
+  },
+  "excludedPreparationFailures": [
+    {
+      "profile": "docs/hanja-actual-component-profiles-2026-10-22/u6f5a-1.json",
+      "SHA256": "84bdad496b80c3f8e4eafd8b328d2443933a84de14ca6633fd480f88ac187284",
+      "session": 57102,
+      "exitCode": 1,
+      "stage": "first actual startup SSR import resolution",
+      "bind": 0,
+      "HTTP": 0,
+      "productVisualObservations": 0,
+      "productFailure": false,
+      "reason": "New u6f5a kind absent from existing u7d8e relative-mapper admission condition; source/product unchanged.",
+      "successfulSSR": 0,
+      "exactReportedImportId": null,
+      "diagnosisBasis": "Confirmed static omission in legacy mapper kind admission; actual first error line was truncated and exact import id is not known."
+    }
+  ],
+  "authorSSR": 0,
+  "childScreenshots": 0,
+  "actualAppUI": false,
+  "controllerWorkflow": false,
+  "storageWorkflow": false,
+  "allTimeProof": false,
+  "runtimeApplied": false,
+  "pins": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u6f5a-2.json",
+      "SHA256": "a81a8929d3ef4931317283b6c6d1e9edcd8e37bbdb319fc02044fdd55870963d"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "38de9242acd8d5ed58b67883a74cb73c8dbde83548c370340fbdf731402f9bff"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "6c85dce73046a94040ae10a073a574d4c5f0dde2bfd72233a717c0c98f17bb2a"
+    },
+    "resourceClosure": 157,
+    "sharedVersion": 121
+  }
+}
