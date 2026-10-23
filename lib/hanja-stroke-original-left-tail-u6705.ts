@@ -26,3 +26,15 @@ export function reviewedU6705TailFrame(context:ReviewedU6705TailContext|null,seg
 }
 export const REVIEWED_U6705_LEFT_TAIL=Object.freeze({bodyWeight:BODY_WEIGHT,leftClock:LEFT_CLOCK,bodyShare:SHARE,originalLogicalPen:11,originalMaskCount:15,originalPolygonCount:37,derivedSourceMasks:0,originalLEFTFlag:14,originalLEFTVertices:LEFT,sourceFieldsUnchanged:true,bodyCoverageAndEveryPositiveTailPrefixProof:'docs/hanja-original-left-tail-u6705-11-preparation-2026-10-23/verify-tail.py',nativeApproval:false,runtimeApplied:false})
 
+/** Target14 only: original terminal13 V lower region, then original H. */
+const FIXED14={"outline":"M52.1 64.2 L52.1 90.15 L46.1 93.15 L46.1 63.2 Z M52.1 64.2 L53.6 65.2 L51.1 66.7 Z M49.1 82.15 L79.35 82.15 L79.35 84.15 L49.1 84.15 Z M79.35 82.15 L67.35 83.15 L73.35 77.15 Z","bounds":[46.1,63.2,79.35,93.15],"direction":"curve","weight":49.730587,"revealPath":"M49.124100000000006 63.72 L49.124100000000006 83.19 L79.3846875 83.19","revealWidth":14} as HanjaOutlineSegment
+function exact14(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b)||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const keys=Reflect.ownKeys(b);return Reflect.ownKeys(a).length===keys.length&&keys.every(k=>{const x=Object.getOwnPropertyDescriptor(a,k),y=Object.getOwnPropertyDescriptor(b,k);return!!x&&!!y&&'value'in x&&'value'in y&&exact14(x.value,y.value)})}
+export const REVIEWED_U6705_DOWN14=Object.freeze({vOutline:"M52.1 64.2 L52.1 90.15 L46.1 93.15 L46.1 63.2 Z M52.1 64.2 L53.6 65.2 L51.1 66.7 Z",hOutline:"M49.1 82.15 L79.35 82.15 L79.35 84.15 L49.1 84.15 Z M79.35 82.15 L67.35 83.15 L73.35 77.15 Z",firstVArc:19.47,downClock:4.15,cutY:89,sourceWeight:49.730587,sourceTerminalFlag:13,newInternalDisplayClock:true,sourceFieldsUnchanged:true,nativeApproval:false})
+export function reviewedU6705Down14Frame(context:ReviewedU6705TailContext|null,segment:HanjaOutlineSegment,progress:number,L:number){
+ if(context!==CONTEXT||!exact14(segment,FIXED14))throw Error('Exact original 朅14 source required')
+ if(!Number.isFinite(progress)||progress<0||progress>1||!Number.isFinite(L)||L<=23.62)throw Error('Invalid 朅14 frame')
+ const d=progress*L,vArc=Math.min(d,19.47),downProgress=Math.max(0,Math.min(1,(d-19.47)/4.15)),hProgress=Math.max(0,Math.min(1,(d-23.62)/(L-23.62)))
+ return Object.freeze({phase:progress===0?'empty':progress===1?'complete':d<=19.47?'V':d<=23.62?'down':'H',progress,L,d,vArc,vProgress:vArc/L,rho:Math.min(7,vArc),downProgress,hProgress})
+}
+
+

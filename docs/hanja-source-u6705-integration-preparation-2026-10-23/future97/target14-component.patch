@@ -1,0 +1,43 @@
+--- a/components/hanja/stroke-outlines.tsx
++++ b/components/hanja/stroke-outlines.tsx
+@@ -1,7 +1,7 @@
+ import { reviewedU6705Context, reviewedU6705Policy, commitReviewedU6705Caps, type ReviewedU6705Policy } from '@/lib/hanja-stroke-start-caps-u6705'
+ import { reviewedU6705FootContext, reviewedU6705FootPolicy, measureReviewedU6705FootFrame, commitReviewedU6705FootMask, type ReviewedU6705FootPolicy } from '@/lib/hanja-stroke-source-foot-u6705'
+-import { reviewedU6705TailContext, reviewedU6705TailFrame, type ReviewedU6705TailContext } from '@/lib/hanja-stroke-original-left-tail-u6705'
+-import { commitReviewedU6705Tail } from '@/lib/hanja-stroke-original-left-tail-dom-u6705'
++import { reviewedU6705TailContext, reviewedU6705TailFrame, REVIEWED_U6705_DOWN14, type ReviewedU6705TailContext } from '@/lib/hanja-stroke-original-left-tail-u6705'
++import { commitReviewedU6705Tail, commitReviewedU6705Down14 } from '@/lib/hanja-stroke-original-left-tail-dom-u6705'
+ import { reviewedU7c67LeftContext, reviewedU7c67LeftPolicy, leftFrame, type LeftPolicy } from '@/lib/hanja-stroke-original-left-terminal-u7c67'
+ import { commitLeftU7c67 } from '@/lib/hanja-stroke-original-left-terminal-dom-u7c67'
+ import { reviewedU7c67Context, reviewedU7c67Policy, commitReviewedU7c67Caps, type ReviewedU7c67Policy } from '@/lib/hanja-stroke-start-caps-u7c67'
+@@ -368,6 +368,7 @@
+         const u7c67LeftCaps = reviewedU7c67Policy(u7c67Context, stroke, index)
+         if (u7c67LeftPolicy && u7c67LeftCaps) return <U7c67LeftCompositeOutline key={index} context={u7c67LeftPolicy} policy={u7c67LeftCaps} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+         const u6705Policy = reviewedU6705Policy(u6705Context, stroke, index)
++        if (u6705Policy && stroke === 13 && index === 0 && u6705TailContext) return <U6705Down14Outline key={index} context={u6705TailContext} policy={u6705Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+         if (u6705Policy && stroke === 10 && index === 0 && u6705TailContext) return <U6705CompositeOutline key={index} context={u6705TailContext} policy={u6705Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+         if (u6705Policy) return <U6705CapsOutline key={index} policy={u6705Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+         const u7c67Policy = reviewedU7c67Policy(u7c67Context, stroke, index)
+@@ -3154,3 +3155,22 @@
+     <path ref={ink} d={segment.outline} mask={'url(#'+clipId+'-u6705-composite)'} visibility="hidden"/>
+   </g>
+ }
++
++function U6705Down14Outline({context,policy,segment,progress,clipId}:{context:ReviewedU6705TailContext;policy:ReviewedU6705Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
++ const measurement=useRef<SVGPathElement>(null),bodyClip=useRef<SVGPathElement>(null),hClip=useRef<SVGPathElement>(null),guide=useRef<SVGPathElement>(null),startCap=useRef<SVGCircleElement>(null),endCap=useRef<SVGCircleElement>(null),downFoot=useRef<SVGPathElement>(null),downRect=useRef<SVGRectElement>(null),hRect=useRef<SVGRectElement>(null),ink=useRef<SVGPathElement>(null)
++ useLayoutEffect(()=>commitReviewedU6705Down14(context,policy,segment,progress,clipId,{measurement:measurement.current,bodyClip:bodyClip.current,hClip:hClip.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,downFoot:downFoot.current,downRect:downRect.current,hRect:hRect.current,ink:ink.current}).cleanup,[context,policy,segment,progress,clipId])
++ return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy="original-down-foot-u6705-composite" data-u6705-progress={String(progress)} data-u6705-clip={clipId} data-stroke-reveal-progress={progress}>
++  <defs>
++   <path ref={measurement} id={clipId+'-u6705-v14-measure'} data-u6705-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
++   <clipPath id={clipId+'-u6705-v14-body'} clipPathUnits="userSpaceOnUse"><path ref={bodyClip} d={REVIEWED_U6705_DOWN14.vOutline}/></clipPath>
++   <clipPath id={clipId+'-u6705-v14-down'} clipPathUnits="userSpaceOnUse"><rect ref={downRect} x={46.1} y={89} width={6} height={0}/></clipPath>
++   <clipPath id={clipId+'-u6705-v14-h'} clipPathUnits="userSpaceOnUse"><path ref={hClip} d={REVIEWED_U6705_DOWN14.hOutline}/></clipPath>
++   <mask id={clipId+'-u6705-v14-mask'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
++    <g clipPath={'url(#'+clipId+'-u6705-v14-body)'}><path ref={guide} id={clipId+'-u6705-v14-guide'} d={segment.revealPath} fill="none" stroke="white" strokeWidth={14} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/><circle ref={startCap} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} cx="0" cy="0" r="0" fill="white"/></g>
++    <path ref={downFoot} d={REVIEWED_U6705_DOWN14.vOutline} fill="white" clipPath={'url(#'+clipId+'-u6705-v14-down)'}/>
++    <rect ref={hRect} id={clipId+'-u6705-v14-h-rect'} x={49.1} y={77.15} width={0} height={7} fill="white" clipPath={'url(#'+clipId+'-u6705-v14-h)'}/>
++   </mask>
++  </defs>
++  <path ref={ink} d={segment.outline} mask={'url(#'+clipId+'-u6705-v14-mask)'} visibility="hidden"/>
++ </g>
++}

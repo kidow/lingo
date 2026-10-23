@@ -1,0 +1,72 @@
+{
+  "schema": "hanja-native-hold/v1",
+  "root": "u6705",
+  "glyph": "朅",
+  "sharedVersion": 97,
+  "sourceGeometrySHA256": "29cffb3c3ddc0456d34e0fe55b9ffa966cff7470f47d6e80a5f729e545524c4d",
+  "componentSHA256": "4285ea128e69c2017152ec0bb479b0b919f1711f76b44dd346f7f6e43275331b",
+  "helperSHA256": "3d6958b7b6d9e751f93dcefa9d765e9024fd6d5031b77a8b43091ea81829455d",
+  "profileSHA256": "a6f84da3273c4710dcea4b1e680b1f13779df117e089fdabf0e5006c95403ead",
+  "observer": "/root",
+  "uniqueObservedScopes": 45,
+  "distinctPASS": 44,
+  "distinctFAIL": 1,
+  "validImages": 46,
+  "repeatedFailureImages": 1,
+  "scopeCounts": {
+    "initialCaps": 16,
+    "footLocal": 8,
+    "footBodyBoundary": 3,
+    "bodyLEFTBoundary": 3,
+    "rhoPen4And5": 6,
+    "residualCapsAndLEFT": 8,
+    "footCoverage": 1,
+    "total": 45
+  },
+  "failure": {
+    "id": "u6705-14-1",
+    "control": "u6705-14-1 full residual",
+    "observation": "Bottom-left black triangle; ROOT confirmed repeat same missing filled area, not thin AA edge.",
+    "DOMBad": [],
+    "errors": [],
+    "fullyVisible": true
+  },
+  "allFullyVisible": true,
+  "allDOMBad": [],
+  "allErrors": [],
+  "remainingPlannedScopesNotObserved": 55,
+  "SSR": {
+    "runs": 1,
+    "CJS": 115,
+    "ESM": 115
+  },
+  "server": {
+    "PID": 5458,
+    "session": 28620,
+    "stopped": true,
+    "exitCode": 130,
+    "stdoutEmpty": true
+  },
+  "sourceAudit": {
+    "rawZeroBased": [
+      16,
+      17
+    ],
+    "raw16TerminalFlag": 13,
+    "originalMLLGuideUnchanged": true,
+    "guideEndOfFirstV": {
+      "x": 49.124100000000006,
+      "y": 83.19
+    },
+    "originalFullRoundRadius": 7,
+    "maximumGuideY": 83.19,
+    "maximumPossibleGuideMaskY": 90.19,
+    "originalVerticalPolygonMaximumY": 93.15,
+    "excessBelowGuideMask": 2.96,
+    "diagnosis": "Original terminal13 vertical source extends below the entire fixed MLL guide radius7. This is genuine original source ink outside that mask, not a DOM/state/foot defect."
+  },
+  "sharedChanged": false,
+  "registered": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}

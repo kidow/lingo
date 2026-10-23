@@ -1,0 +1,103 @@
+{
+  "schema": "hanja-own-future-minimal-rebase/v1",
+  "root": "u6705",
+  "glyph": "朅",
+  "historicalBase95Preserved": true,
+  "historicalPreparationCommit": "681d2c4a",
+  "baseSharedVersion": 96,
+  "futureSharedVersion": 97,
+  "sharedBaseSHA256": {
+    "component": "3a42ebedabbd4b5f138dd7f24c02a2099c8f31677efa13fb4681742bb4373ce3",
+    "helper": "096f25ed9da70050b9a9aa2479bb92d02d47b48032eae052adfea11695f86291"
+  },
+  "futureSHA256": {
+    "component": "4285ea128e69c2017152ec0bb479b0b919f1711f76b44dd346f7f6e43275331b",
+    "helper": "3d6958b7b6d9e751f93dcefa9d765e9024fd6d5031b77a8b43091ea81829455d"
+  },
+  "profile": {
+    "path": "docs/hanja-source-u6705-integration-preparation-2026-10-23/future97/u6705-1.json",
+    "sha256": "a6f84da3273c4710dcea4b1e680b1f13779df117e089fdabf0e5006c95403ead",
+    "promotedPath": "docs/hanja-actual-component-profiles-2026-10-22/u6705-1.json",
+    "CLIRegexCompatible": true,
+    "executionEnabled": false,
+    "sharedWindowPending": true,
+    "profileFinalized": false
+  },
+  "sourceOrPoliciesChanged": false,
+  "unchangedOwnImplementations": [
+    "u6705FixedFixture",
+    "U6705CapsOutline",
+    "U6705FootOutline",
+    "U6705CompositeOutline",
+    "u6705CombinedState",
+    "u6705FootState",
+    "u6705CompositeState",
+    "u6705Coverage",
+    "u6705CompositeCoverage",
+    "u6705Rho",
+    "u6705FirstL",
+    "setupU6705"
+  ],
+  "changedScope": {
+    "newBaseC96OriginalLEFTPolicyModules": {
+      "lib/hanja-stroke-original-left-terminal-u7c67.ts": {
+        "sha256": "cf6a1940721e7a1a3ca2d8a3471633f02041919adcf0b240e6188767105fe8fd",
+        "bytes": 4477
+      },
+      "lib/hanja-stroke-original-left-terminal-dom-u7c67.ts": {
+        "sha256": "260ac0a9343b6a043fe629265540428f0c37a707f2a363e6a8623dccbf0cb1f6",
+        "bytes": 7245
+      }
+    },
+    "resourceClosureBefore": 113,
+    "resourceClosureAfter": 115,
+    "actualRelativeMapper": true,
+    "actualFixtureSerializer": true,
+    "wholeSetupOnly": true
+  },
+  "firstChangedWire": {
+    "result": "PASS",
+    "durationSeconds": 0.159746833,
+    "newC96MappedModules": 2,
+    "oldOrNewPoliciesTranspiled": 0,
+    "sourceGuardOrMathRerun": 0,
+    "actualFixtureSerializer": true,
+    "wholeSetupControls": 177,
+    "natural8sec": true,
+    "first30Present": true,
+    "SSR": 0,
+    "HTTP": 0,
+    "server": 0
+  },
+  "reusedSuccessfulScope": {
+    "base95ASTAndFixedSource": true,
+    "newOwn4CJSAndESM": true,
+    "rho24AndFirstL9Callbacks": true,
+    "originalOwnPolicyDOMAndMath": true,
+    "firstPriorityNativeConditions": 30,
+    "totalFiniteNativeConditions": 100
+  },
+  "sharedApplied": false,
+  "registered": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "files": {
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/future97/future-tsx-base96.patch": {
+      "sha256": "fbf15d4f78624fa4ed1acfe68d34a1e61766cbb7319ef6acfa46f080189c2175",
+      "bytes": 11795
+    },
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/future97/future-helper-base96.patch": {
+      "sha256": "95efab7f52baded8ced32970347b7750c446b10a49e367c6926e582bd4f7ac1b",
+      "bytes": 85625
+    },
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/future97/u6705-1.json": {
+      "sha256": "a6f84da3273c4710dcea4b1e680b1f13779df117e089fdabf0e5006c95403ead",
+      "bytes": 42763
+    },
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/future97/verify-changed-wire.mjs": {
+      "sha256": "d135ca90ac6a0ae8fffb79ffb19d446510380dafc38fcea9d2f45e5b1c980067",
+      "bytes": 4679
+    }
+  }
+}
+

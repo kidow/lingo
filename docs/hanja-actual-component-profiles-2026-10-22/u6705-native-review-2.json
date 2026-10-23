@@ -1,0 +1,91 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "glyph": "朅",
+  "root": "u6705",
+  "date": "2026-10-24",
+  "observer": "/root",
+  "sharedVersion": 98,
+  "componentSHA256": "222654935c9f15122df539472da2c0ae310b69681777f608daa729a423c3985d",
+  "helperSHA256": "e2d720e773074b16d257992d06ba24f9e52ce9a271938c61653352d844dae2e9",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u6705-2.json",
+    "SHA256": "3653cd433c246c51343d45296ca1f6665b1faee2c7857b00038abce4593a04b3"
+  },
+  "distinctPASS": 107,
+  "distinctFAIL": 0,
+  "freshScreenshots": 64,
+  "freshDistinctScopes": 64,
+  "freshPASS": 64,
+  "freshFAIL": 0,
+  "reusedSuccessfulScopes": 44,
+  "oldFreshDuplicateScopes": 1,
+  "successfulObservationsIncludingDuplicate": 108,
+  "counting": "44 prior successful scopes +64 fresh scopes -1 repeated local14.03 =107 distinct PASS. Three pen14 firstL conditions were already inside the fresh target14 twelve and were reused rather than replayed.",
+  "corrected14": {
+    "freshPASS": 12,
+    "scopes": {
+      "actualCompositeResidual": 1,
+      "local03": 1,
+      "VDownBoundary": 3,
+      "DownHBoundary": 3,
+      "downMiddle": 1,
+      "HMiddleNearEnd": 3
+    },
+    "originalMissingTriangleResolved": true,
+    "connectionPreserved": true
+  },
+  "finalFour": {
+    "pen11NaturalEnded": 1,
+    "pen14NaturalEarly": 1,
+    "pen14NaturalEnded": 1,
+    "doneWhole": 1,
+    "pen14EarlyStateProgress": 0.0836,
+    "pen14EarlyScreenshotProgress": 0.1036,
+    "endedAndDoneProgress": 1
+  },
+  "allFullyVisible": true,
+  "allBad": [],
+  "allErrors": [],
+  "visualMissingInk": false,
+  "visualSeparatedFragment": false,
+  "scopeDetails": {
+    "fullRoundResidual": {
+      "white": true
+    },
+    "footCoverage": {
+      "whiteInterior": true,
+      "pixelEqualityClaimed": false
+    },
+    "target14ActualCompositeResidual": {
+      "white": true,
+      "originalPGuideWidthWeightUnchanged": true,
+      "internalDisplayClockExplicit": true
+    }
+  },
+  "excluded": {
+    "historicalHoldPath": "docs/hanja-source-u6705-integration-preparation-2026-10-23/future97/native-hold.json",
+    "historicalTarget14ResidualFailurePreserved": true,
+    "observerFalsePositiveImages": 1,
+    "observerFalsePositive": "First pen7 rho attempt read retained phase on hidden pen14. Helper corrected to hidden/zero-rect contract; this was not a product failure and is not PASS evidence."
+  },
+  "server": {
+    "PID": 31409,
+    "session": 69569,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "stdoutEmpty": true
+  },
+  "approval": {
+    "finiteNative": true,
+    "runtimeRegistrationAuthorizedByROOT": true,
+    "actualProductAppUI": false,
+    "controllerWorkflow": false,
+    "storageWorkflow": false,
+    "wholeReplayAllTime": false,
+    "officialMicroTimingEquivalent": false
+  },
+  "registered": false,
+  "authorAdditionalTests": 0,
+  "build": false
+}
