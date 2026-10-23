@@ -1,94 +1,87 @@
 {
-  "archive": {
-    "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
-    "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
-    "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
-  },
-  "root": "u6f90",
+  "schema": "hanja-fixed-public-source-candidate/v1",
   "glyph": "澐",
-  "wholeNames": [
-    "u6f90",
-    "u6f90-k",
-    "u6f90-ue0100"
-  ],
-  "records": {
-    "u6f90": {
+  "root": "u6f90",
+  "sourceFamily": {
+    "kind": "fixed-GlyphWiki-archive-and-pinned-version-closure",
+    "archive": {
+      "url": "https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt",
+      "sha256": "7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62",
+      "repositoryRevision": "a7dd7f3d911936770fa742e8c37d16bee7e2173c"
+    },
+    "providerVersions": [
+      {
+        "name": "u96f2@9",
+        "version": "9",
+        "apiUrl": "https://glyphwiki.org/api/glyph?name=u96f2%409",
+        "responseIdentity": {
+          "name": "u96f2",
+          "version": "9",
+          "related": "U+96F2",
+          "data": "99:0:0:8:1:193:202:u96e8-03@6$99:0:0:5:20:195:199:u4e91-04@1"
+        },
+        "sha256": "0838621b1778a8f7420e03d0dff45d36ded93d354da8563d95d7ea298bebe63c"
+      },
+      {
+        "name": "u96e8-03@6",
+        "version": "6",
+        "apiUrl": "https://glyphwiki.org/api/glyph?name=u96e8-03%406",
+        "responseIdentity": {
+          "name": "u96e8-03",
+          "version": "6",
+          "related": "U+96E8",
+          "data": "1:0:0:25:25:175:25$2:7:8:30:34:31:64:16:75$1:2:2:30:46:179:46$2:22:7:179:46:173:58:165:69$1:32:0:100:25:100:98$1:0:0:37:68:84:68$1:0:0:32:88:84:88$1:0:0:116:68:161:68$1:0:0:116:88:168:88"
+        },
+        "sha256": "b71b224cc541e2df1e54cc7b320fab097b22b362f9068f990b47a35ccefe4764"
+      },
+      {
+        "name": "u4e91-04@1",
+        "version": "1",
+        "apiUrl": "https://glyphwiki.org/api/glyph?name=u4e91-04%401",
+        "responseIdentity": {
+          "name": "u4e91-04",
+          "version": "1",
+          "related": "U+4E91",
+          "data": "2:32:7:80:130:71:152:53:174$2:0:7:24:176:96:169:157:162$2:7:8:133:140:158:160:169:185$1:0:0:34:104:165:104$1:0:0:15:130:185:130"
+        },
+        "sha256": "1b03813925a2d8f69a2f72bf7fd7674311f1561c14e72dd2276408d949f9fbce"
+      }
+    ],
+    "currentLatestClaim": false,
+    "versionedProviderRecordsAreNot2016ArchiveClaim": true
+  },
+  "records": [
+    {
       "name": "u6f90",
       "related": "u6f90",
       "data": "99:0:0:1:0:126:200:u6c35-01$99:0:0:39:0:201:198:u96f2@9"
     },
-    "u6c35-01": {
+    {
       "name": "u6c35-01",
       "related": "u6c35",
       "data": "2:7:8:31:20:56:27:67:41$2:7:8:12:66:39:73:49:87$2:7:8:14:133:49:142:45:184$2:32:7:40:150:44:138:86:67"
     },
-    "u96f2@9": {
+    {
       "name": "u96f2@9",
       "related": "U+96F2",
       "data": "99:0:0:8:1:193:202:u96e8-03@6$99:0:0:5:20:195:199:u4e91-04@1"
     },
-    "u96e8-03@6": {
+    {
       "name": "u96e8-03@6",
       "related": "U+96E8",
       "data": "1:0:0:25:25:175:25$2:7:8:30:34:31:64:16:75$1:2:2:30:46:179:46$2:22:7:179:46:173:58:165:69$1:32:0:100:25:100:98$1:0:0:37:68:84:68$1:0:0:32:88:84:88$1:0:0:116:68:161:68$1:0:0:116:88:168:88"
     },
-    "u4e91-04@1": {
+    {
       "name": "u4e91-04@1",
       "related": "U+4E91",
       "data": "2:32:7:80:130:71:152:53:174$2:0:7:24:176:96:169:157:162$2:7:8:133:140:158:160:169:185$1:0:0:34:104:165:104$1:0:0:15:130:185:130"
-    },
-    "u6f90-k": {
-      "name": "u6f90-k",
-      "related": "u3013",
-      "data": "99:0:0:0:0:200:200:u6f90"
-    },
-    "u6f90-ue0100": {
-      "name": "u6f90-ue0100",
-      "related": "u3013",
-      "data": "99:0:0:0:0:200:200:u6f90"
-    }
-  },
-  "missing": [],
-  "aliases": [],
-  "providerVersions": [
-    {
-      "name": "u96f2@9",
-      "version": "9",
-      "apiUrl": "https://glyphwiki.org/api/glyph?name=u96f2%409",
-      "responseIdentity": {
-        "name": "u96f2",
-        "version": "9",
-        "related": "U+96F2",
-        "data": "99:0:0:8:1:193:202:u96e8-03@6$99:0:0:5:20:195:199:u4e91-04@1"
-      },
-      "sha256": "0838621b1778a8f7420e03d0dff45d36ded93d354da8563d95d7ea298bebe63c"
-    },
-    {
-      "name": "u96e8-03@6",
-      "version": "6",
-      "apiUrl": "https://glyphwiki.org/api/glyph?name=u96e8-03%406",
-      "responseIdentity": {
-        "name": "u96e8-03",
-        "version": "6",
-        "related": "U+96E8",
-        "data": "1:0:0:25:25:175:25$2:7:8:30:34:31:64:16:75$1:2:2:30:46:179:46$2:22:7:179:46:173:58:165:69$1:32:0:100:25:100:98$1:0:0:37:68:84:68$1:0:0:32:88:84:88$1:0:0:116:68:161:68$1:0:0:116:88:168:88"
-      },
-      "sha256": "b71b224cc541e2df1e54cc7b320fab097b22b362f9068f990b47a35ccefe4764"
-    },
-    {
-      "name": "u4e91-04@1",
-      "version": "1",
-      "apiUrl": "https://glyphwiki.org/api/glyph?name=u4e91-04%401",
-      "responseIdentity": {
-        "name": "u4e91-04",
-        "version": "1",
-        "related": "U+4E91",
-        "data": "2:32:7:80:130:71:152:53:174$2:0:7:24:176:96:169:157:162$2:7:8:133:140:158:160:169:185$1:0:0:34:104:165:104$1:0:0:15:130:185:130"
-      },
-      "sha256": "1b03813925a2d8f69a2f72bf7fd7674311f1561c14e72dd2276408d949f9fbce"
     }
   ],
-  "selectedRoot": "u6f90",
+  "sourceIdentity": {
+    "root": "u6f90",
+    "file": "../hanja-goal-glyphwiki-batch764-2026-10-12/engine-proof.json",
+    "fileSHA256": "9d000786ff93811edc86e829b39d23046838456f0e3d640c6ce4fe5f000fd196"
+  },
   "sourceGroups": [
     [
       0
@@ -139,353 +132,6 @@
       15
     ]
   ],
-  "sourceIdentity": {
-    "root": "u6f90",
-    "file": "../hanja-goal-glyphwiki-batch764-2026-10-12/engine-proof.json",
-    "fileSHA256": "9d000786ff93811edc86e829b39d23046838456f0e3d640c6ce4fe5f000fd196"
-  },
-  "sourceProofShape": {
-    "existingActualFull5": true,
-    "newHeaderTraceCombination": false,
-    "identityKeys": 3,
-    "fullProofSHA256": "9d000786ff93811edc86e829b39d23046838456f0e3d640c6ce4fe5f000fd196",
-    "selectedBaseOnly": true
-  },
-  "sourceProvenance": {
-    "originalDirectory": "docs/hanja-goal-glyphwiki-batch764-2026-10-12",
-    "sourceCandidate": "docs/hanja-source-independent-qq-two-u6f90-source-experiment-2026-10-19",
-    "sourceProof": "docs/hanja-goal-glyphwiki-batch764-2026-10-12/engine-proof.json",
-    "sourceProofFileSHA256": "9d000786ff93811edc86e829b39d23046838456f0e3d640c6ce4fe5f000fd196",
-    "fullProofCanonicalSHA256": "c1dd9e540ebe8f152e97790065148e1cf94c250347c4aa36738f9b08f0550c9e",
-    "sourcePreparationSHA256": "a995f149bf6b02dccffa416dc8cf0745df58be3623fe66d61758e7f39d0e18c6",
-    "staticMappingEvidence": "docs/hanja-goal-glyphwiki-batch764-2026-10-12/review.json",
-    "nativeHoldEvidence": "docs/hanja-goal-glyphwiki-batch764-2026-10-12/review.json",
-    "nativeHoldSHA256": "7022b86cfe10c299093750f618acda63c68d493915a79f09e4b59f25a2c13dd3",
-    "finiteSourceEvidence": null,
-    "review": null,
-    "sourceFieldsDeepPreserved": true
-  },
-  "modifications": "batch1343 미등록 준비. 원764 selectedbase actualfull5 원identity3(root/file/fileSHA256)와 고정source15p17m33 geometryb50d38105f00eb26be9e7b60ce4f425a14a52b0a2b294601a12a93c9025b784a를 그대로 복제한다. 원18raw/18drawcall/33polygon·guide·폭·weight·기존정확join[6,7]과 독립QQ3/14의 비영점gap은 불변이며 connector/새joinedguide/새tail/새투영0이다. 가족7records/3whole/3provider는 원metadata 그대로, K/VS0기하혼합0이다. 원764 미지원trajectory joins HOLD와 원source/native/runtimefalse를 역사로 보존한다. 전체필순은 원literal 후보이며 기존국내3/14 외 미관찰방향은 승인하지 않는다. 새4대상3m1/3m2/14m1/14m2 및 실제component 유한승인은 대기false, 제품UI/controller/storage/국내temporal/전체자동재생false.",
-  "preparationHistory": {
-    "candidateBatch": 1343,
-    "batchAssignmentProvisional": true,
-    "parentBatch": 1342,
-    "parentResume": "docs/hanja-goal-glyphwiki-batch1342-2026-10-22/resume.json",
-    "parentResumeSHA256": "b1a368eb75f484cf101408cda1878961f56a2c60540d2f0c75c72b9dd093de28",
-    "parentActualCounts": {
-      "applied": 5757,
-      "remaining": 221
-    },
-    "expectedAfterRegistration": {
-      "applied": 5758,
-      "remaining": 220,
-      "provisional": true
-    },
-    "nativeApproval": false,
-    "isolatedActualComponentBrowserVerified": false,
-    "actualAppUI": false,
-    "runtimeRegistered": false,
-    "runtimeApplied": false,
-    "registrationApproved": false,
-    "APPModuleSHA256": null,
-    "APPComponentSHA256": null,
-    "frozenCommit": null,
-    "immutableUnregisteredHistory": true
-  },
-  "independentMaskPolicies": [
-    {
-      "pen": 3,
-      "raw": [
-        2,
-        3
-      ],
-      "kinds": [
-        "cdDrawCurve",
-        "cdDrawCurve"
-      ],
-      "end": [
-        29.125,
-        184
-      ],
-      "start": [
-        26,
-        150
-      ],
-      "delta": [
-        -3.125,
-        -34
-      ],
-      "rawCoordinateGap": 34.14331010608081,
-      "normalizedGap": 17.071655053040406,
-      "trajectoryConcatenation": false,
-      "connector": false,
-      "newCoordinates": false
-    },
-    {
-      "pen": 14,
-      "raw": [
-        13,
-        14
-      ],
-      "kinds": [
-        "cdDrawCurve",
-        "cdDrawCurve"
-      ],
-      "end": [
-        83.8335,
-        173.9727
-      ],
-      "start": [
-        61.518,
-        175.7448
-      ],
-      "delta": [
-        -22.3155,
-        1.7720999999999947
-      ],
-      "rawCoordinateGap": 22.385751688518305,
-      "normalizedGap": 11.192875844259152,
-      "trajectoryConcatenation": false,
-      "connector": false,
-      "newCoordinates": false
-    }
-  ],
-  "exactInterRawJoins": [
-    [
-      6,
-      7
-    ]
-  ],
-  "unmodifiedTerminalRisks": [],
-  "unmodifiedSourceFlags": [
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          7,
-          8
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          7,
-          8
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          7,
-          8
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          32,
-          7
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          0,
-          0
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          7,
-          8
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          2,
-          2
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          22,
-          7
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          32,
-          0
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          0,
-          200
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          0,
-          100
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          0,
-          200
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          0,
-          100
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          132,
-          7
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          0,
-          7
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "flags": [
-          7,
-          8
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          0,
-          100
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "flags": [
-          0,
-          0
-        ]
-      }
-    ]
-  ],
-  "orderEvidence": {
-    "originalReviewFile": "review.json",
-    "completeArrayStoredInOriginal": true,
-    "originalField": "sourceGroupsZeroBased",
-    "completeArrayWasApproved": false,
-    "observedDomesticPens": [
-      3,
-      14
-    ],
-    "unobservedDomesticPens": [
-      1,
-      2,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      15
-    ],
-    "compatibleWholeRoots": [
-      "u6f90",
-      "u6f90-k",
-      "u6f90-ue0100"
-    ],
-    "wholeCompatibilityScope": "static shape only; no whole trajectory approved",
-    "allArchiveAlternativeNamesReviewed": false,
-    "groupBasis": "Literal original sourceGroupsZeroBased including original16/17/13,14/15 ordering; only domestic3/14 observed. Full order provisional, not approved.",
-    "provisionalCompleteOrder": true,
-    "newProgressiveApproval": false
-  },
-  "terminalPartition": {
-    "count": 0,
-    "sourceOperationsForThisBundle": 0
-  },
-  "displayPolicyReferences": {
-    "targets": [
-      {
-        "pen": 3,
-        "mask": 1
-      },
-      {
-        "pen": 3,
-        "mask": 2
-      },
-      {
-        "pen": 14,
-        "mask": 1
-      },
-      {
-        "pen": 14,
-        "mask": 2
-      }
-    ],
-    "sourceRendererExperiment": null,
-    "sourceNativeHold": "docs/hanja-goal-glyphwiki-batch764-2026-10-12/review.json",
-    "actualComponentReview": "docs/hanja-goal-glyphwiki-batch1343-2026-10-22/review.json",
-    "p1": "original-fullround",
-    "productAppUIApproval": false,
-    "allAutomaticReplayApproval": false
-  },
   "engineProof": {
     "engineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
     "engineHashes": {
@@ -4155,1820 +3801,346 @@
       "kAdjustMageStep": 5
     }
   },
-  "drawTrace": [
+  "derived": [
     [
       {
-        "kind": "cdDrawCurve",
-        "args": [
-          20.375,
-          20,
-          36,
-          27,
-          42.875,
-          41,
-          7,
-          8
-        ],
-        "polygons": [
-          [
-            {
-              "x": 21.6,
-              "y": 19.5,
-              "off": 0
-            },
-            {
-              "x": 24.7,
-              "y": 20.6,
-              "off": 0
-            },
-            {
-              "x": 27.8,
-              "y": 21.5,
-              "off": 0
-            },
-            {
-              "x": 30.7,
-              "y": 22.5,
-              "off": 0
-            },
-            {
-              "x": 33.5,
-              "y": 23.8,
-              "off": 0
-            },
-            {
-              "x": 36.1,
-              "y": 25.3,
-              "off": 0
-            },
-            {
-              "x": 38.6,
-              "y": 27,
-              "off": 0
-            },
-            {
-              "x": 40.9,
-              "y": 28.9,
-              "off": 0
-            },
-            {
-              "x": 43.1,
-              "y": 30.9,
-              "off": 0
-            },
-            {
-              "x": 45.1,
-              "y": 33.2,
-              "off": 0
-            },
-            {
-              "x": 46.9,
-              "y": 35.6,
-              "off": 0
-            },
-            {
-              "x": 36.1,
-              "y": 40.9,
-              "off": 0
-            },
-            {
-              "x": 35.5,
-              "y": 38.9,
-              "off": 0
-            },
-            {
-              "x": 34.7,
-              "y": 36.9,
-              "off": 0
-            },
-            {
-              "x": 33.7,
-              "y": 34.9,
-              "off": 0
-            },
-            {
-              "x": 32.6,
-              "y": 32.9,
-              "off": 0
-            },
-            {
-              "x": 31.2,
-              "y": 30.9,
-              "off": 0
-            },
-            {
-              "x": 29.6,
-              "y": 28.9,
-              "off": 0
-            },
-            {
-              "x": 27.8,
-              "y": 26.9,
-              "off": 0
-            },
-            {
-              "x": 25.7,
-              "y": 24.9,
-              "off": 0
-            },
-            {
-              "x": 23.5,
-              "y": 22.8,
-              "off": 0
-            },
-            {
-              "x": 20.9,
-              "y": 21.2,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 46.9,
-              "y": 35.6,
-              "off": 0
-            },
-            {
-              "x": 47.1,
-              "y": 40.2,
-              "off": 0
-            },
-            {
-              "x": 44.1,
-              "y": 43.6,
-              "off": 0
-            },
-            {
-              "x": 39.6,
-              "y": 43.9,
-              "off": 0
-            },
-            {
-              "x": 36.1,
-              "y": 40.9,
-              "off": 0
-            }
-          ]
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "args": [
-          8.5,
-          66,
-          25.375,
-          73,
-          31.625,
-          87,
-          7,
-          8
-        ],
-        "polygons": [
-          [
-            {
-              "x": 9.7,
-              "y": 65.5,
-              "off": 0
-            },
-            {
-              "x": 13,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 16.3,
-              "y": 67.4,
-              "off": 0
-            },
-            {
-              "x": 19.4,
-              "y": 68.5,
-              "off": 0
-            },
-            {
-              "x": 22.3,
-              "y": 69.8,
-              "off": 0
-            },
-            {
-              "x": 25,
-              "y": 71.3,
-              "off": 0
-            },
-            {
-              "x": 27.6,
-              "y": 72.9,
-              "off": 0
-            },
-            {
-              "x": 30,
-              "y": 74.8,
-              "off": 0
-            },
-            {
-              "x": 32.1,
-              "y": 76.9,
-              "off": 0
-            },
-            {
-              "x": 34.1,
-              "y": 79.3,
-              "off": 0
-            },
-            {
-              "x": 35.8,
-              "y": 81.8,
-              "off": 0
-            },
-            {
-              "x": 24.9,
-              "y": 86.7,
-              "off": 0
-            },
-            {
-              "x": 24.4,
-              "y": 84.8,
-              "off": 0
-            },
-            {
-              "x": 23.7,
-              "y": 82.8,
-              "off": 0
-            },
-            {
-              "x": 22.8,
-              "y": 80.9,
-              "off": 0
-            },
-            {
-              "x": 21.6,
-              "y": 78.9,
-              "off": 0
-            },
-            {
-              "x": 20.2,
-              "y": 77,
-              "off": 0
-            },
-            {
-              "x": 18.5,
-              "y": 75,
-              "off": 0
-            },
-            {
-              "x": 16.5,
-              "y": 73,
-              "off": 0
-            },
-            {
-              "x": 14.4,
-              "y": 70.9,
-              "off": 0
-            },
-            {
-              "x": 11.9,
-              "y": 68.8,
-              "off": 0
-            },
-            {
-              "x": 9,
-              "y": 67.2,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 35.8,
-              "y": 81.8,
-              "off": 0
-            },
-            {
-              "x": 35.9,
-              "y": 86.3,
-              "off": 0
-            },
-            {
-              "x": 32.8,
-              "y": 89.7,
-              "off": 0
-            },
-            {
-              "x": 28.2,
-              "y": 89.8,
-              "off": 0
-            },
-            {
-              "x": 24.9,
-              "y": 86.7,
-              "off": 0
-            }
-          ]
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawCurve",
-        "args": [
+        "outline": "M10.8 9.75 L12.35 10.3 L13.9 10.75 L15.35 11.25 L16.75 11.9 L18.05 12.65 L19.3 13.5 L20.45 14.45 L21.55 15.45 L22.55 16.6 L23.45 17.8 L18.05 20.45 L17.75 19.45 L17.35 18.45 L16.85 17.45 L16.3 16.45 L15.6 15.45 L14.8 14.45 L13.9 13.45 L12.85 12.45 L11.75 11.4 L10.45 10.6 Z M23.45 17.8 L23.55 20.1 L22.05 21.8 L19.8 21.95 L18.05 20.45 Z",
+        "bounds": [
+          10.45,
           9.75,
-          133,
-          31.625,
-          142,
-          29.125,
-          184,
-          7,
-          8
+          23.55,
+          21.95
         ],
-        "polygons": [
-          [
-            {
-              "x": 11,
-              "y": 132.5,
-              "off": 0
-            },
-            {
-              "x": 15.6,
-              "y": 133.8,
-              "off": 0
-            },
-            {
-              "x": 19.9,
-              "y": 136,
-              "off": 0
-            },
-            {
-              "x": 23.7,
-              "y": 139.2,
-              "off": 0
-            },
-            {
-              "x": 27,
-              "y": 143.2,
-              "off": 0
-            },
-            {
-              "x": 29.7,
-              "y": 148,
-              "off": 0
-            },
-            {
-              "x": 31.9,
-              "y": 153.4,
-              "off": 0
-            },
-            {
-              "x": 33.5,
-              "y": 159.5,
-              "off": 0
-            },
-            {
-              "x": 34.6,
-              "y": 166.2,
-              "off": 0
-            },
-            {
-              "x": 35.2,
-              "y": 173.5,
-              "off": 0
-            },
-            {
-              "x": 35.2,
-              "y": 181.3,
-              "off": 0
-            },
-            {
-              "x": 23.3,
-              "y": 180.6,
-              "off": 0
-            },
-            {
-              "x": 23.8,
-              "y": 173.5,
-              "off": 0
-            },
-            {
-              "x": 23.9,
-              "y": 166.9,
-              "off": 0
-            },
-            {
-              "x": 23.6,
-              "y": 161.1,
-              "off": 0
-            },
-            {
-              "x": 22.9,
-              "y": 155.8,
-              "off": 0
-            },
-            {
-              "x": 21.8,
-              "y": 151.1,
-              "off": 0
-            },
-            {
-              "x": 20.4,
-              "y": 146.9,
-              "off": 0
-            },
-            {
-              "x": 18.5,
-              "y": 143.3,
-              "off": 0
-            },
-            {
-              "x": 16.3,
-              "y": 140,
-              "off": 0
-            },
-            {
-              "x": 13.6,
-              "y": 137,
-              "off": 0
-            },
-            {
-              "x": 10.3,
-              "y": 134.2,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 35.2,
-              "y": 181.3,
-              "off": 0
-            },
-            {
-              "x": 33.2,
-              "y": 185.4,
-              "off": 0
-            },
-            {
-              "x": 28.9,
-              "y": 186.9,
-              "off": 0
-            },
-            {
-              "x": 24.8,
-              "y": 184.9,
-              "off": 0
-            },
-            {
-              "x": 23.3,
-              "y": 180.6,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "curve",
+        "weight": 15.388713,
+        "revealPath": "M10.1875 10 Q18 13.5 21.4375 20.5",
+        "revealWidth": 14
       }
     ],
     [
       {
-        "kind": "cdDrawCurve",
-        "args": [
-          26,
-          150,
-          28.5,
-          138,
-          54.75,
-          67,
-          32,
-          7
+        "outline": "M4.85 32.75 L6.5 33.3 L8.15 33.7 L9.7 34.25 L11.15 34.9 L12.5 35.65 L13.8 36.45 L15 37.4 L16.05 38.45 L17.05 39.65 L17.9 40.9 L12.45 43.35 L12.2 42.4 L11.85 41.4 L11.4 40.45 L10.8 39.45 L10.1 38.5 L9.25 37.5 L8.25 36.5 L7.2 35.45 L5.95 34.4 L4.5 33.6 Z M17.9 40.9 L17.95 43.15 L16.4 44.85 L14.1 44.9 L12.45 43.35 Z",
+        "bounds": [
+          4.5,
+          32.75,
+          17.95,
+          44.9
         ],
-        "polygons": [
-          [
-            {
-              "x": 20.1,
-              "y": 148.7,
-              "off": 0
-            },
-            {
-              "x": 21.2,
-              "y": 145.5,
-              "off": 0
-            },
-            {
-              "x": 22.8,
-              "y": 141.2,
-              "off": 0
-            },
-            {
-              "x": 24.8,
-              "y": 135.9,
-              "off": 0
-            },
-            {
-              "x": 27.3,
-              "y": 129.4,
-              "off": 0
-            },
-            {
-              "x": 30.4,
-              "y": 121.8,
-              "off": 0
-            },
-            {
-              "x": 33.9,
-              "y": 113,
-              "off": 0
-            },
-            {
-              "x": 38,
-              "y": 103.1,
-              "off": 0
-            },
-            {
-              "x": 42.6,
-              "y": 92.1,
-              "off": 0
-            },
-            {
-              "x": 47.9,
-              "y": 79.9,
-              "off": 0
-            },
-            {
-              "x": 53.9,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 55.5,
-              "y": 67.3,
-              "off": 0
-            },
-            {
-              "x": 51.5,
-              "y": 81.2,
-              "off": 0
-            },
-            {
-              "x": 47.7,
-              "y": 93.9,
-              "off": 0
-            },
-            {
-              "x": 44.2,
-              "y": 105.3,
-              "off": 0
-            },
-            {
-              "x": 41.1,
-              "y": 115.6,
-              "off": 0
-            },
-            {
-              "x": 38.4,
-              "y": 124.6,
-              "off": 0
-            },
-            {
-              "x": 36.2,
-              "y": 132.4,
-              "off": 0
-            },
-            {
-              "x": 34.4,
-              "y": 139,
-              "off": 0
-            },
-            {
-              "x": 33,
-              "y": 144.4,
-              "off": 0
-            },
-            {
-              "x": 32.2,
-              "y": 148.5,
-              "off": 0
-            },
-            {
-              "x": 31.8,
-              "y": 151.2,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "curve",
+        "weight": 15.618624,
+        "revealPath": "M4.25 33 Q12.6875 36.5 15.8125 43.5",
+        "revealWidth": 14
       }
     ],
     [
       {
-        "kind": "cdDrawLine",
-        "args": [
-          64.21125,
-          25.86375,
-          176.59875,
-          25.86375,
-          0,
-          0
+        "outline": "M5.5 66.25 L7.8 66.9 L9.95 68 L11.85 69.6 L13.5 71.6 L14.85 74 L15.95 76.7 L16.75 79.75 L17.3 83.1 L17.6 86.75 L17.6 90.65 L11.65 90.3 L11.9 86.75 L11.95 83.45 L11.8 80.55 L11.45 77.9 L10.9 75.55 L10.2 73.45 L9.25 71.65 L8.15 70 L6.8 68.5 L5.15 67.1 Z M17.6 90.65 L16.6 92.7 L14.45 93.45 L12.4 92.45 L11.65 90.3 Z",
+        "bounds": [
+          5.15,
+          66.25,
+          17.6,
+          93.45
         ],
-        "polygons": [
-          [
-            {
-              "x": 64.2,
-              "y": 23.8,
-              "off": 0
-            },
-            {
-              "x": 176.5,
-              "y": 23.8,
-              "off": 0
-            },
-            {
-              "x": 176.5,
-              "y": 27.8,
-              "off": 0
-            },
-            {
-              "x": 64.2,
-              "y": 27.8,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 176.5,
-              "y": 23.8,
-              "off": 0
-            },
-            {
-              "x": 152.5,
-              "y": 25.8,
-              "off": 0
-            },
-            {
-              "x": 164.5,
-              "y": 13.8,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "curve",
+        "weight": 27.278153,
+        "revealPath": "M4.875 66.5 Q15.8125 71 14.5625 92",
+        "revealWidth": 14
+      },
+      {
+        "outline": "M10.05 74.35 L10.6 72.75 L11.4 70.6 L12.4 67.95 L13.65 64.7 L15.2 60.9 L16.95 56.5 L19 51.55 L21.3 46.05 L23.95 39.95 L26.95 33.3 L27.75 33.65 L25.75 40.6 L23.85 46.95 L22.1 52.65 L20.55 57.8 L19.2 62.3 L18.1 66.2 L17.2 69.5 L16.5 72.2 L16.1 74.25 L15.9 75.6 Z",
+        "bounds": [
+          10.05,
+          33.3,
+          27.75,
+          75.6
+        ],
+        "direction": "curve",
+        "weight": 43.919137,
+        "revealPath": "M13 75 Q14.25 69 27.375 33.5",
+        "revealWidth": 14
       }
     ],
     [
       {
-        "kind": "cdDrawCurve",
-        "args": [
-          67.9575,
-          34.8183,
-          68.70675,
-          64.6668,
-          57.468,
-          75.61125,
-          7,
-          8
+        "outline": "M32.1 11.9 L88.25 11.9 L88.25 13.9 L32.1 13.9 Z M88.25 11.9 L76.25 12.9 L82.25 6.9 Z",
+        "bounds": [
+          32.1,
+          6.9,
+          88.25,
+          13.9
         ],
-        "polygons": [
-          [
-            {
-              "x": 68.8,
-              "y": 35.7,
-              "off": 0
-            },
-            {
-              "x": 69.5,
-              "y": 41.4,
-              "off": 0
-            },
-            {
-              "x": 70.1,
-              "y": 46.6,
-              "off": 0
-            },
-            {
-              "x": 70.4,
-              "y": 51.6,
-              "off": 0
-            },
-            {
-              "x": 70.4,
-              "y": 56.2,
-              "off": 0
-            },
-            {
-              "x": 70.1,
-              "y": 60.5,
-              "off": 0
-            },
-            {
-              "x": 69.5,
-              "y": 64.5,
-              "off": 0
-            },
-            {
-              "x": 68.6,
-              "y": 68.2,
-              "off": 0
-            },
-            {
-              "x": 67.4,
-              "y": 71.7,
-              "off": 0
-            },
-            {
-              "x": 65.8,
-              "y": 74.9,
-              "off": 0
-            },
-            {
-              "x": 63.8,
-              "y": 77.8,
-              "off": 0
-            },
-            {
-              "x": 55.4,
-              "y": 69.2,
-              "off": 0
-            },
-            {
-              "x": 56.8,
-              "y": 68.1,
-              "off": 0
-            },
-            {
-              "x": 58.2,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 59.6,
-              "y": 64.5,
-              "off": 0
-            },
-            {
-              "x": 61,
-              "y": 61.9,
-              "off": 0
-            },
-            {
-              "x": 62.3,
-              "y": 58.8,
-              "off": 0
-            },
-            {
-              "x": 63.5,
-              "y": 55.1,
-              "off": 0
-            },
-            {
-              "x": 64.6,
-              "y": 51,
-              "off": 0
-            },
-            {
-              "x": 65.5,
-              "y": 46.4,
-              "off": 0
-            },
-            {
-              "x": 66.4,
-              "y": 41.3,
-              "off": 0
-            },
-            {
-              "x": 67,
-              "y": 35.8,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 63.8,
-              "y": 77.8,
-              "off": 0
-            },
-            {
-              "x": 59.5,
-              "y": 79.4,
-              "off": 0
-            },
-            {
-              "x": 55.3,
-              "y": 77.7,
-              "off": 0
-            },
-            {
-              "x": 53.6,
-              "y": 73.4,
-              "off": 0
-            },
-            {
-              "x": 55.4,
-              "y": 69.2,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "right",
+        "weight": 56.19375
       }
     ],
     [
       {
-        "kind": "cdDrawLine",
-        "args": [
-          67.9575,
-          46.75769999999999,
-          179.59574999999998,
-          46.75769999999999,
-          2,
-          2
+        "outline": "M34.4 17.85 L34.75 20.7 L35.05 23.3 L35.2 25.8 L35.2 28.1 L35.05 30.25 L34.75 32.25 L34.3 34.1 L33.7 35.85 L32.9 37.45 L31.9 38.9 L27.7 34.6 L28.4 34.05 L29.1 33.3 L29.8 32.25 L30.5 30.95 L31.15 29.4 L31.75 27.55 L32.3 25.5 L32.75 23.2 L33.2 20.65 L33.5 17.9 Z M31.9 38.9 L29.75 39.7 L27.65 38.85 L26.8 36.7 L27.7 34.6 Z",
+        "bounds": [
+          26.8,
+          17.85,
+          35.2,
+          39.7
         ],
-        "polygons": [
-          [
-            {
-              "x": 67.9,
-              "y": 44.7,
-              "off": 0
-            },
-            {
-              "x": 179.5,
-              "y": 44.7,
-              "off": 0
-            },
-            {
-              "x": 179.5,
-              "y": 48.7,
-              "off": 0
-            },
-            {
-              "x": 67.9,
-              "y": 48.7,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "curve",
+        "weight": 21.06,
+        "revealPath": "M33.97875 17.40915 Q34.353375 32.3334 28.734 37.805625",
+        "revealWidth": 14
       }
     ],
     [
       {
-        "kind": "cdDrawCurve",
-        "args": [
-          179.59574999999998,
-          46.75769999999999,
-          175.10025,
-          58.6971,
-          169.10625,
-          69.64155,
-          22,
-          7
+        "outline": "M33.95 22.35 L89.75 22.35 L89.75 24.35 L33.95 24.35 Z M92.6 24.4 L91.9 25.55 L91.2 26.7 L90.5 27.8 L89.8 28.9 L89 29.95 L88.25 31 L87.4 32.05 L86.55 33.05 L85.65 34 L84.9 35 L84.15 34.6 L84.6 33.4 L84.85 32.15 L85.1 30.9 L85.4 29.65 L85.65 28.45 L85.95 27.2 L86.2 26 L86.45 24.75 L86.7 23.5 L86.95 22.3 Z M86.75 22.35 L89.75 19.85 L95.25 24.35 L92.75 25.85 L86.75 28.35 Z",
+        "bounds": [
+          33.95,
+          19.85,
+          95.25,
+          35
         ],
-        "polygons": [
-          [
-            {
-              "x": 185.2,
-              "y": 48.8,
-              "off": 0
-            },
-            {
-              "x": 183.8,
-              "y": 51.1,
-              "off": 0
-            },
-            {
-              "x": 182.4,
-              "y": 53.4,
-              "off": 0
-            },
-            {
-              "x": 181,
-              "y": 55.6,
-              "off": 0
-            },
-            {
-              "x": 179.6,
-              "y": 57.8,
-              "off": 0
-            },
-            {
-              "x": 178,
-              "y": 59.9,
-              "off": 0
-            },
-            {
-              "x": 176.5,
-              "y": 62,
-              "off": 0
-            },
-            {
-              "x": 174.8,
-              "y": 64.1,
-              "off": 0
-            },
-            {
-              "x": 173.1,
-              "y": 66.1,
-              "off": 0
-            },
-            {
-              "x": 171.3,
-              "y": 68,
-              "off": 0
-            },
-            {
-              "x": 169.8,
-              "y": 70,
-              "off": 0
-            },
-            {
-              "x": 168.3,
-              "y": 69.2,
-              "off": 0
-            },
-            {
-              "x": 169.2,
-              "y": 66.8,
-              "off": 0
-            },
-            {
-              "x": 169.7,
-              "y": 64.3,
-              "off": 0
-            },
-            {
-              "x": 170.2,
-              "y": 61.8,
-              "off": 0
-            },
-            {
-              "x": 170.8,
-              "y": 59.3,
-              "off": 0
-            },
-            {
-              "x": 171.3,
-              "y": 56.9,
-              "off": 0
-            },
-            {
-              "x": 171.9,
-              "y": 54.4,
-              "off": 0
-            },
-            {
-              "x": 172.4,
-              "y": 52,
-              "off": 0
-            },
-            {
-              "x": 172.9,
-              "y": 49.5,
-              "off": 0
-            },
-            {
-              "x": 173.4,
-              "y": 47,
-              "off": 0
-            },
-            {
-              "x": 173.9,
-              "y": 44.6,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 173.5,
-              "y": 44.7,
-              "off": 0
-            },
-            {
-              "x": 179.5,
-              "y": 39.7,
-              "off": 0
-            },
-            {
-              "x": 190.5,
-              "y": 48.7,
-              "off": 0
-            },
-            {
-              "x": 185.5,
-              "y": 51.7,
-              "off": 0
-            },
-            {
-              "x": 173.5,
-              "y": 56.7,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "curve",
+        "weight": 68.405826,
+        "revealPath": "M33.97875 23.378849999999996 L89.79787499999999 23.378849999999996 Q87.550125 29.34855 84.553125 34.820775",
+        "revealWidth": 14
       }
     ],
     [
       {
-        "kind": "cdDrawLine",
-        "args": [
-          120.405,
-          25.86375,
-          120.405,
-          98.49510000000001,
-          32,
-          0
+        "outline": "M63.2 11.9 L63.2 47.7 L57.2 50.7 L57.2 11.9 Z",
+        "bounds": [
+          57.2,
+          11.9,
+          63.2,
+          50.7
         ],
-        "polygons": [
-          [
-            {
-              "x": 126.4,
-              "y": 23.8,
-              "off": 0
-            },
-            {
-              "x": 126.4,
-              "y": 95.4,
-              "off": 0
-            },
-            {
-              "x": 114.4,
-              "y": 101.4,
-              "off": 0
-            },
-            {
-              "x": 114.4,
-              "y": 23.8,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "down",
+        "weight": 36.315675
       }
     ],
     [
       {
-        "kind": "cdDrawLine",
-        "args": [
-          73.20224999999999,
-          68.6466,
-          108.417,
-          68.6466,
-          0,
-          200
+        "outline": "M36.6 33.3 L54.2 33.3 L54.2 35.3 L36.6 35.3 Z M54.2 33.3 L46.2 34.3 L50.2 29.8 Z",
+        "bounds": [
+          36.6,
+          29.8,
+          54.2,
+          35.3
         ],
-        "polygons": [
-          [
-            {
-              "x": 73.2,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 108.4,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 108.4,
-              "y": 70.6,
-              "off": 0
-            },
-            {
-              "x": 73.2,
-              "y": 70.6,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 108.4,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 92.4,
-              "y": 68.6,
-              "off": 0
-            },
-            {
-              "x": 100.4,
-              "y": 59.6,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "right",
+        "weight": 17.607375
       }
     ],
     [
       {
-        "kind": "cdDrawLine",
-        "args": [
-          69.456,
-          88.5456,
-          108.417,
-          88.5456,
-          0,
-          100
+        "outline": "M34.7 43.25 L54.2 43.25 L54.2 45.25 L34.7 45.25 Z M54.2 43.25 L44.2 44.25 L49.2 38.75 Z",
+        "bounds": [
+          34.7,
+          38.75,
+          54.2,
+          45.25
         ],
-        "polygons": [
-          [
-            {
-              "x": 69.4,
-              "y": 86.5,
-              "off": 0
-            },
-            {
-              "x": 108.4,
-              "y": 86.5,
-              "off": 0
-            },
-            {
-              "x": 108.4,
-              "y": 90.5,
-              "off": 0
-            },
-            {
-              "x": 69.4,
-              "y": 90.5,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 108.4,
-              "y": 86.5,
-              "off": 0
-            },
-            {
-              "x": 88.4,
-              "y": 88.5,
-              "off": 0
-            },
-            {
-              "x": 98.4,
-              "y": 77.5,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "right",
+        "weight": 19.4805
       }
     ],
     [
       {
-        "kind": "cdDrawLine",
-        "args": [
-          132.39299999999997,
-          68.6466,
-          166.10925000000003,
-          68.6466,
-          0,
-          200
+        "outline": "M66.15 33.3 L83.05 33.3 L83.05 35.3 L66.15 35.3 Z M83.05 33.3 L75.05 34.3 L79.05 29.8 Z",
+        "bounds": [
+          66.15,
+          29.8,
+          83.05,
+          35.3
         ],
-        "polygons": [
-          [
-            {
-              "x": 132.3,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 166.1,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 166.1,
-              "y": 70.6,
-              "off": 0
-            },
-            {
-              "x": 132.3,
-              "y": 70.6,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 166.1,
-              "y": 66.6,
-              "off": 0
-            },
-            {
-              "x": 150.1,
-              "y": 68.6,
-              "off": 0
-            },
-            {
-              "x": 158.1,
-              "y": 59.6,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "right",
+        "weight": 16.858125
       }
     ],
     [
       {
-        "kind": "cdDrawLine",
-        "args": [
-          132.39299999999997,
-          88.5456,
-          171.35399999999998,
-          88.5456,
-          0,
-          100
+        "outline": "M66.15 43.25 L85.65 43.25 L85.65 45.25 L66.15 45.25 Z M85.65 43.25 L75.65 44.25 L80.65 38.75 Z",
+        "bounds": [
+          66.15,
+          38.75,
+          85.65,
+          45.25
         ],
-        "polygons": [
-          [
-            {
-              "x": 132.3,
-              "y": 86.5,
-              "off": 0
-            },
-            {
-              "x": 171.3,
-              "y": 86.5,
-              "off": 0
-            },
-            {
-              "x": 171.3,
-              "y": 90.5,
-              "off": 0
-            },
-            {
-              "x": 132.3,
-              "y": 90.5,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 171.3,
-              "y": 86.5,
-              "off": 0
-            },
-            {
-              "x": 151.3,
-              "y": 88.5,
-              "off": 0
-            },
-            {
-              "x": 161.3,
-              "y": 77.5,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "right",
+        "weight": 19.4805
       }
     ],
     [
       {
-        "kind": "cdDrawCurve",
-        "args": [
-          104.61,
-          134.9865,
-          97.6845,
-          154.4796,
-          83.8335,
-          173.9727,
-          132,
-          7
+        "outline": "M34.6 54.95 L85 54.95 L85 56.95 L34.6 56.95 Z M85 54.95 L75 55.95 L80 50.45 Z",
+        "bounds": [
+          34.6,
+          50.45,
+          85,
+          56.95
         ],
-        "polygons": [
-          [
-            {
-              "x": 111,
-              "y": 134.9,
-              "off": 0
-            },
-            {
-              "x": 110.2,
-              "y": 136.9,
-              "off": 0
-            },
-            {
-              "x": 108.4,
-              "y": 140.9,
-              "off": 0
-            },
-            {
-              "x": 106.4,
-              "y": 144.8,
-              "off": 0
-            },
-            {
-              "x": 104.3,
-              "y": 148.7,
-              "off": 0
-            },
-            {
-              "x": 102,
-              "y": 152.6,
-              "off": 0
-            },
-            {
-              "x": 99.5,
-              "y": 156.4,
-              "off": 0
-            },
-            {
-              "x": 96.9,
-              "y": 160.1,
-              "off": 0
-            },
-            {
-              "x": 94.1,
-              "y": 163.8,
-              "off": 0
-            },
-            {
-              "x": 91.1,
-              "y": 167.5,
-              "off": 0
-            },
-            {
-              "x": 87.9,
-              "y": 171,
-              "off": 0
-            },
-            {
-              "x": 84.5,
-              "y": 174.4,
-              "off": 0
-            },
-            {
-              "x": 83,
-              "y": 173.4,
-              "off": 0
-            },
-            {
-              "x": 85.1,
-              "y": 169.1,
-              "off": 0
-            },
-            {
-              "x": 86.9,
-              "y": 164.8,
-              "off": 0
-            },
-            {
-              "x": 88.8,
-              "y": 160.6,
-              "off": 0
-            },
-            {
-              "x": 90.6,
-              "y": 156.5,
-              "off": 0
-            },
-            {
-              "x": 92.3,
-              "y": 152.5,
-              "off": 0
-            },
-            {
-              "x": 93.8,
-              "y": 148.5,
-              "off": 0
-            },
-            {
-              "x": 95.3,
-              "y": 144.6,
-              "off": 0
-            },
-            {
-              "x": 96.6,
-              "y": 140.7,
-              "off": 0
-            },
-            {
-              "x": 97.8,
-              "y": 136.8,
-              "off": 0
-            },
-            {
-              "x": 98.3,
-              "y": 134.9,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "right",
+        "weight": 50.40225
       }
     ],
     [
       {
-        "kind": "cdDrawCurve",
-        "args": [
-          61.518,
-          175.7448,
-          116.922,
-          169.54245,
-          163.86149999999998,
-          163.3401,
-          0,
-          7
+        "outline": "M27.25 66.45 L92.7 66.45 L92.7 68.45 L27.25 68.45 Z M92.7 66.45 L80.7 67.45 L86.7 61.45 Z",
+        "bounds": [
+          27.25,
+          61.45,
+          92.7,
+          68.45
         ],
-        "polygons": [
-          [
-            {
-              "x": 61.8,
-              "y": 169.6,
-              "off": 0
-            },
-            {
-              "x": 72.6,
-              "y": 168.7,
-              "off": 0
-            },
-            {
-              "x": 83.3,
-              "y": 167.8,
-              "off": 0
-            },
-            {
-              "x": 93.9,
-              "y": 166.9,
-              "off": 0
-            },
-            {
-              "x": 104.2,
-              "y": 166.1,
-              "off": 0
-            },
-            {
-              "x": 114.5,
-              "y": 165.3,
-              "off": 0
-            },
-            {
-              "x": 124.6,
-              "y": 164.5,
-              "off": 0
-            },
-            {
-              "x": 134.6,
-              "y": 163.7,
-              "off": 0
-            },
-            {
-              "x": 144.4,
-              "y": 163.1,
-              "off": 0
-            },
-            {
-              "x": 154.1,
-              "y": 162.6,
-              "off": 0
-            },
-            {
-              "x": 163.7,
-              "y": 162.4,
-              "off": 0
-            },
-            {
-              "x": 163.9,
-              "y": 164.2,
-              "off": 0
-            },
-            {
-              "x": 154.6,
-              "y": 166.4,
-              "off": 0
-            },
-            {
-              "x": 145.1,
-              "y": 168.4,
-              "off": 0
-            },
-            {
-              "x": 135.4,
-              "y": 170.3,
-              "off": 0
-            },
-            {
-              "x": 125.5,
-              "y": 172,
-              "off": 0
-            },
-            {
-              "x": 115.5,
-              "y": 173.7,
-              "off": 0
-            },
-            {
-              "x": 105.3,
-              "y": 175.3,
-              "off": 0
-            },
-            {
-              "x": 95,
-              "y": 176.9,
-              "off": 0
-            },
-            {
-              "x": 84.5,
-              "y": 178.5,
-              "off": 0
-            },
-            {
-              "x": 73.9,
-              "y": 180,
-              "off": 0
-            },
-            {
-              "x": 63.1,
-              "y": 181.5,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 63.1,
-              "y": 181.5,
-              "off": 0
-            },
-            {
-              "x": 61.8,
-              "y": 169.6,
-              "off": 0
-            },
-            {
-              "x": 59.8,
-              "y": 169.8,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 63.1,
-              "y": 181.5,
-              "off": 0
-            },
-            {
-              "x": 65.5,
-              "y": 184.3,
-              "off": 0
-            },
-            {
-              "x": 68.8,
-              "y": 177.9,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "right",
+        "weight": 65.4075
       }
     ],
     [
       {
-        "kind": "cdDrawCurve",
-        "args": [
-          145.39350000000002,
-          143.847,
-          164.631,
-          161.56799999999998,
-          173.09550000000002,
-          183.71925,
-          7,
-          8
+        "outline": "M55.5 67.45 L55.1 68.45 L54.2 70.45 L53.2 72.4 L52.15 74.35 L51 76.3 L49.75 78.2 L48.45 80.05 L47.05 81.9 L45.55 83.75 L43.95 85.5 L42.25 87.2 L41.5 86.7 L42.55 84.55 L43.45 82.4 L44.4 80.3 L45.3 78.25 L46.15 76.25 L46.9 74.25 L47.65 72.3 L48.3 70.35 L48.9 68.4 L49.15 67.45 Z",
+        "bounds": [
+          41.5,
+          67.45,
+          55.5,
+          87.2
         ],
-        "polygons": [
-          [
-            {
-              "x": 146.7,
-              "y": 143.8,
-              "off": 0
-            },
-            {
-              "x": 150.9,
-              "y": 146.7,
-              "off": 0
-            },
-            {
-              "x": 154.9,
-              "y": 149.7,
-              "off": 0
-            },
-            {
-              "x": 158.6,
-              "y": 152.9,
-              "off": 0
-            },
-            {
-              "x": 162,
-              "y": 156.2,
-              "off": 0
-            },
-            {
-              "x": 165.2,
-              "y": 159.7,
-              "off": 0
-            },
-            {
-              "x": 168.1,
-              "y": 163.3,
-              "off": 0
-            },
-            {
-              "x": 170.8,
-              "y": 167,
-              "off": 0
-            },
-            {
-              "x": 173.3,
-              "y": 170.8,
-              "off": 0
-            },
-            {
-              "x": 175.6,
-              "y": 174.7,
-              "off": 0
-            },
-            {
-              "x": 177.6,
-              "y": 178.7,
-              "off": 0
-            },
-            {
-              "x": 166.4,
-              "y": 183,
-              "off": 0
-            },
-            {
-              "x": 165.2,
-              "y": 179.3,
-              "off": 0
-            },
-            {
-              "x": 163.8,
-              "y": 175.6,
-              "off": 0
-            },
-            {
-              "x": 162.3,
-              "y": 171.9,
-              "off": 0
-            },
-            {
-              "x": 160.5,
-              "y": 168.2,
-              "off": 0
-            },
-            {
-              "x": 158.4,
-              "y": 164.5,
-              "off": 0
-            },
-            {
-              "x": 156.2,
-              "y": 160.7,
-              "off": 0
-            },
-            {
-              "x": 153.8,
-              "y": 156.9,
-              "off": 0
-            },
-            {
-              "x": 151.2,
-              "y": 153.1,
-              "off": 0
-            },
-            {
-              "x": 148.5,
-              "y": 149.1,
-              "off": 0
-            },
-            {
-              "x": 145.5,
-              "y": 145.1,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 177.6,
-              "y": 178.7,
-              "off": 0
-            },
-            {
-              "x": 177.4,
-              "y": 183.3,
-              "off": 0
-            },
-            {
-              "x": 174.1,
-              "y": 186.5,
-              "off": 0
-            },
-            {
-              "x": 169.6,
-              "y": 186.3,
-              "off": 0
-            },
-            {
-              "x": 166.4,
-              "y": 183,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "curve",
+        "weight": 22.088384,
+        "revealPath": "M52.305 67.49325 Q48.84225 77.2398 41.91675 86.98635",
+        "revealWidth": 14
+      },
+      {
+        "outline": "M30.9 84.8 L36.3 84.35 L41.65 83.9 L46.95 83.45 L52.1 83.05 L57.25 82.65 L62.3 82.25 L67.3 81.85 L72.2 81.55 L77.05 81.3 L81.85 81.2 L81.95 82.1 L77.3 83.2 L72.55 84.2 L67.7 85.15 L62.75 86 L57.75 86.85 L52.65 87.65 L47.5 88.45 L42.25 89.25 L36.95 90 L31.55 90.75 Z M31.55 90.75 L29.9 84.9 L30.9 84.8 Z M31.55 90.75 L34.4 88.95 L32.75 92.15 Z",
+        "bounds": [
+          29.9,
+          81.2,
+          81.95,
+          92.15
+        ],
+        "direction": "curve",
+        "weight": 51.546262,
+        "revealPath": "M30.759 87.8724 Q58.461 84.771225 81.93074999999999 81.67005",
+        "revealWidth": 14
       }
     ],
     [
       {
-        "kind": "cdDrawLine",
-        "args": [
-          69.213,
-          111.9492,
-          170.0175,
-          111.9492,
-          0,
-          100
+        "outline": "M73.35 71.9 L75.45 73.35 L77.45 74.85 L79.3 76.45 L81 78.1 L82.6 79.85 L84.05 81.65 L85.4 83.5 L86.65 85.4 L87.8 87.35 L88.8 89.35 L83.2 91.5 L82.6 89.65 L81.9 87.8 L81.15 85.95 L80.25 84.1 L79.2 82.25 L78.1 80.35 L76.9 78.45 L75.6 76.55 L74.25 74.55 L72.75 72.55 Z M88.8 89.35 L88.7 91.65 L87.05 93.25 L84.8 93.15 L83.2 91.5 Z",
+        "bounds": [
+          72.75,
+          71.9,
+          88.8,
+          93.25
         ],
-        "polygons": [
-          [
-            {
-              "x": 69.2,
-              "y": 109.9,
-              "off": 0
-            },
-            {
-              "x": 170,
-              "y": 109.9,
-              "off": 0
-            },
-            {
-              "x": 170,
-              "y": 113.9,
-              "off": 0
-            },
-            {
-              "x": 69.2,
-              "y": 113.9,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 170,
-              "y": 109.9,
-              "off": 0
-            },
-            {
-              "x": 150,
-              "y": 111.9,
-              "off": 0
-            },
-            {
-              "x": 160,
-              "y": 100.9,
-              "off": 0
-            }
-          ]
-        ]
-      }
-    ],
-    [
-      {
-        "kind": "cdDrawLine",
-        "args": [
-          54.5925,
-          134.9865,
-          185.4075,
-          134.9865,
-          0,
-          0
-        ],
-        "polygons": [
-          [
-            {
-              "x": 54.5,
-              "y": 132.9,
-              "off": 0
-            },
-            {
-              "x": 185.4,
-              "y": 132.9,
-              "off": 0
-            },
-            {
-              "x": 185.4,
-              "y": 136.9,
-              "off": 0
-            },
-            {
-              "x": 54.5,
-              "y": 136.9,
-              "off": 0
-            }
-          ],
-          [
-            {
-              "x": 185.4,
-              "y": 132.9,
-              "off": 0
-            },
-            {
-              "x": 161.4,
-              "y": 134.9,
-              "off": 0
-            },
-            {
-              "x": 173.4,
-              "y": 122.9,
-              "off": 0
-            }
-          ]
-        ]
+        "direction": "curve",
+        "weight": 24.275487,
+        "revealPath": "M72.69675000000001 71.9235 Q82.3155 80.78399999999999 86.54775000000001 91.859625",
+        "revealWidth": 14
       }
     ]
-  ]
+  ],
+  "geometrySHA256": "b50d38105f00eb26be9e7b60ce4f425a14a52b0a2b294601a12a93c9025b784a",
+  "counts": {
+    "pens": 15,
+    "masks": 17,
+    "polygons": 33,
+    "raw": 18,
+    "calls": 18
+  },
+  "sourcePreservation": {
+    "original33PolygonsExactlyOnce": true,
+    "all18RawExactlyOnce": true,
+    "originalPGuideWidthWeightUnchanged": true,
+    "independentMaskPairs": [
+      [
+        3,
+        1,
+        2
+      ],
+      [
+        14,
+        1,
+        2
+      ]
+    ],
+    "newConnector": false,
+    "newGuideCoordinates": false
+  },
+  "displayPolicy": {
+    "storedOriginalMQCertificates": 4,
+    "activeCaps": [
+      {
+        "pen": 3,
+        "mask": 1,
+        "id": "u6f90-3-1",
+        "kind": "growing-u6f90-caps",
+        "sourceFieldSHA256": "e326f7f93cfc8fbabf33c1b659bc19c5731dbc60aa6fd76ac8d43f6fcf899eef"
+      },
+      {
+        "pen": 3,
+        "mask": 2,
+        "id": "u6f90-3-2",
+        "kind": "growing-u6f90-caps",
+        "sourceFieldSHA256": "a9b9ea3348467b0b8e02833fc300f80f81ad55d4b1d0e45fda561aa7d8550e95"
+      },
+      {
+        "pen": 14,
+        "mask": 1,
+        "id": "u6f90-14-1",
+        "kind": "growing-u6f90-caps",
+        "sourceFieldSHA256": "07613a3e56bf96a0f7b8d8fad16e80d8bf3d5aad5492b17715040e09cbdc718c"
+      }
+    ],
+    "feet": [
+      {
+        "pen": 14,
+        "mask": 2,
+        "id": "u6f90-14-2",
+        "kind": "source-foot-x-u6f90",
+        "footIndex": 0,
+        "phaseShare": 0.3874380638274047,
+        "phaseShareExact": [
+          "104394745097",
+          "269448861234"
+        ],
+        "cutX": 45.0,
+        "cutXExact": [
+          "45",
+          "1"
+        ],
+        "triangles": 9,
+        "newClockNativeApproved": false,
+        "footGeometrySHA256": "9c1d0c26de42d20a9accb9f9ca2741df5d1191d38b4c217452091673c5c6687c"
+      }
+    ],
+    "capsModule": {
+      "path": "lib/hanja-stroke-start-gate-u6f90.ts",
+      "SHA256": "d9d8e37955b131f12604ea82068e276c2e1241abbed0150363fc7db96075ff48"
+    },
+    "footModule": {
+      "path": "lib/hanja-stroke-source-foot-u6f90.ts",
+      "SHA256": "db2e02ae9b9230b52687e88dfd7f27cc111497bda2df4cd77b955e36ae34c699"
+    },
+    "newSourceFootClockExplicit": true,
+    "officialMicroTimingEquivalent": false
+  },
+  "preparationHistory": {
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "registrationApproved": false,
+    "runtimeRegistered": false,
+    "packagingOnly": true,
+    "engineRuns": 0,
+    "sourceProjectionRuns": 0,
+    "existingSourceFixture": "docs/hanja-source-independent-qq-two-u6f90-source-experiment-2026-10-19/fixtures.json",
+    "existingSourceFixtureSHA256": "217939e1f435cfedc58562a819ba81475d8acae242f520607ad604a83fdf4987",
+    "originalSourceFlags": {
+      "nativeApproval": false,
+      "runtimeApplied": false
+    },
+    "historicalHOLD8": {
+      "path": "docs/hanja-component-native-hold-u6f90-qq14-continuity-2026-10-22/hold.json",
+      "SHA256": "98be3876a7a46e5938fb599ccc61fcf8c6df8eedcc1828181d4eaebba582fb49",
+      "retroactivePASS": false
+    }
+  }
 }
