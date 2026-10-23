@@ -1,0 +1,116 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "飡",
+  "root": "u98e1-k",
+  "observedBy": "ROOT browser panel",
+  "result": "PASS",
+  "distinctScopes": 54,
+  "finiteScopes": 48,
+  "naturalScopes": 6,
+  "freshScopes": 54,
+  "reusedScopes": 0,
+  "nativeApproval": true,
+  "source": {
+    "fixture": "docs/hanja-source-original-u98e1-k-2026-10-24/fixtures.json",
+    "geometrySHA256": "704a98bbfe53c95d84ae80087fead23e6ff6e543c6caed600ac058de238394ea",
+    "originalPens": 11,
+    "originalMasks": 14,
+    "originalPolygons": 26,
+    "originalPGuideWidthWeightUnchanged": true,
+    "originalOuterClockUnchanged": true,
+    "newInternalDisplayClocks": {
+      "foot": [
+        2,
+        9
+      ]
+    },
+    "newConnector": 0,
+    "newSourceMask": 0
+  },
+  "freshScopeBreakdown": {
+    "capsInitialAndActualBoardCoverage": 18,
+    "sourceFootTwoNine": 12,
+    "sourceBoundariesTwoNine": 6,
+    "compact11NineFramesEach": 11,
+    "doneWhole": 1,
+    "naturalTwoNineElevenEarlyEnd": 6
+  },
+  "coverage": {
+    "allCaps6ActualBoardFullyVisible": true,
+    "allCaps6ResidualWhite": true,
+    "footTwoNineActualCoverageWhiteInterior": true,
+    "thinAAEdgesObserved": true,
+    "pixelEqualityClaim": false
+  },
+  "allFullyVisible": true,
+  "bad": [],
+  "errors": [],
+  "observations": {
+    "caps": "6 epsilon/.03 gradual starts plus6 actual full-board residuals white",
+    "foot": "2/9m2 each epsilon/.03/phase-share minus/exact/plus/actual-board coverage12; thin AA outline only",
+    "sourceBoundary": "original2/9 transition minus/exact/plus6",
+    "compact": "all11 pens each9 stopped frames gradual direction and completion",
+    "natural": [
+      {
+        "pen": 2,
+        "earlyProgress": 0.0764375,
+        "endProgress": 1
+      },
+      {
+        "pen": 9,
+        "earlyProgress": 0.0616625,
+        "endProgress": 1
+      },
+      {
+        "pen": 11,
+        "earlyProgress": 0.0652625,
+        "endProgress": 1
+      }
+    ]
+  },
+  "finalObservation": {
+    "phase": "natural-ended",
+    "pen": 11,
+    "progress": 1,
+    "bad": [],
+    "errors": [],
+    "originalComplete": true,
+    "fullyVisible": true
+  },
+  "server": {
+    "pid": 53290,
+    "port": 59412,
+    "session": 92051,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 41,
+    "tabClosed": true,
+    "CJS": 145,
+    "ESM": 145,
+    "successfulSSRChecks": 1
+  },
+  "authorSSR": 0,
+  "childScreenshots": 0,
+  "actualAppUI": false,
+  "controllerWorkflow": false,
+  "storageWorkflow": false,
+  "allTimeProof": false,
+  "runtimeApplied": false,
+  "pins": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u98e1-1.json",
+      "SHA256": "8df3adef3aadab3a3553396f7fdcddd8a6efa0f96d849566dc0b311436fc09c1"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "c303e244b504b2dbff2f4c1057186b76d92822d3085c805e2db17735e59388f0"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "fc9debadfba128dc60c51ca8955931f24d4e5cb60ca66966a448bb700feaa908"
+    },
+    "resourceClosure": 145,
+    "sharedVersion": 114
+  }
+}
