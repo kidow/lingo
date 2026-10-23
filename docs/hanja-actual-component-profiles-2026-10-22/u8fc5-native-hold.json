@@ -1,0 +1,203 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "glyph": "迅",
+  "root": "u8fc5-ue0102",
+  "reviewedAt": "2026-10-23",
+  "observer": "/root",
+  "status": "HOLD: all eight curve-mask starts expose large fragments; pen1 full-round guide misses lower-right hook",
+  "scope": "ROOT isolated actual component finite21 observations; new independent Q+B masks not approved",
+  "inputSHA256": {
+    "scripts/hanja-actual-component-review.mjs": "c6734babf2d15796f865ed0f1404c2ed9296ca743611f7102f8c03d7ca0088e3",
+    "components/hanja/stroke-outlines.tsx": "1b2214d98b78c4fc171d50db45ab0d0d2b5ef9562fc3e9e2c3a22667e380fabd",
+    "docs/hanja-actual-component-profiles-2026-10-22/u8fc5.json": "c31588893d15a6bdcba7adedf0ba579b8ea0016fb71758631e9fa4eabbb7d168",
+    "docs/hanja-source-independent-qb-u8fc5-vs2-source-experiment-2026-10-19/fixtures.json": "6d61dce090101293999a78f83fba373d5b93d77dc53ab14e4e8a76c0e4f2598f"
+  },
+  "geometrySHA256": "780347f088e4ec9baeba17018b1c64c7be9538ffd5da3cd424d326968cd3d8e7",
+  "fullProofSHA256": "2af58546d8f4396a7d2bacf24d87cd3fde76ef489a628d578b24ab68cc0d5b0b",
+  "counts": {
+    "pens": 7,
+    "masks": 8,
+    "polygons": 23
+  },
+  "sourceContract": {
+    "originalHeaderKeys": [
+      "defaults",
+      "engineRevision",
+      "groups",
+      "hashes"
+    ],
+    "originalFullProofKeys": [
+      "defaults",
+      "engineRevision",
+      "groups",
+      "hashes",
+      "trace"
+    ],
+    "originalHeader4Preserved": true,
+    "originalTraceSeparatePreserved": true,
+    "identitySevenOriginalFieldsPreserved": true,
+    "archiveActualFull5Claim": false,
+    "newHeaderSynthesized": false,
+    "originalPGuideWidthWeightsPreserved": true
+  },
+  "startup": {
+    "newSSRChecks": 1,
+    "CJSModules": 93,
+    "ESMModules": 93
+  },
+  "validScreens": 21,
+  "observations": {
+    "initial": {
+      "screens": 8,
+      "targets": [
+        {
+          "pen": 1,
+          "mask": 1
+        },
+        {
+          "pen": 2,
+          "mask": 1
+        },
+        {
+          "pen": 3,
+          "mask": 1
+        },
+        {
+          "pen": 4,
+          "mask": 1
+        },
+        {
+          "pen": 5,
+          "mask": 1
+        },
+        {
+          "pen": 6,
+          "mask": 1
+        },
+        {
+          "pen": 7,
+          "mask": 1
+        },
+        {
+          "pen": 7,
+          "mask": 2
+        }
+      ],
+      "firstMaskGlobalProgress": 0.000001,
+      "mask7m2LocalProgress": 0.000001,
+      "mask7m2GlobalProgress": 0.2650461238860655,
+      "result": "FAIL: all eight expose visibly large initial fragments",
+      "causalMechanismProved": false
+    },
+    "pen1Additional": {
+      "screens": 1,
+      "globalProgress": 0.03,
+      "result": "same large head observed",
+      "estimatedNativeFragmentPixels": 32,
+      "pixelsMeasured": false
+    },
+    "pen7Boundary": {
+      "screens": 3,
+      "boundary": 0.26504538893145446,
+      "deltas": [
+        -1e-10,
+        0,
+        1e-10
+      ],
+      "result": "after-boundary second mask opens a large piece",
+      "contactContinuityApproved": false
+    },
+    "coverage": {
+      "screens": 8,
+      "maskFigures": 8,
+      "fullyVisible": true,
+      "handler": "plainCoverage; original segment P minus actual original full round guide with dash removed only",
+      "target": "board",
+      "failures": [
+        {
+          "pen": 1,
+          "mask": 1,
+          "result": "BLACK lower-right hook fragment remains outside full original guide"
+        }
+      ],
+      "finiteWhiteTargets": [
+        {
+          "pen": 2,
+          "mask": 1
+        },
+        {
+          "pen": 3,
+          "mask": 1
+        },
+        {
+          "pen": 4,
+          "mask": 1
+        },
+        {
+          "pen": 5,
+          "mask": 1
+        },
+        {
+          "pen": 6,
+          "mask": 1
+        },
+        {
+          "pen": 7,
+          "mask": 1
+        },
+        {
+          "pen": 7,
+          "mask": 2
+        }
+      ],
+      "whiteIsNotMathematicalCoverageProof": true
+    },
+    "pen1TerminalFine": {
+      "screens": 1,
+      "samples": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "result": "small final hook change observed",
+      "terminalApproved": false
+    },
+    "badAndErrorsEmptyInAllValidObservations": true,
+    "emptyReporterDoesNotProveAccuracy": true
+  },
+  "excludedDiagnostics": [
+    {
+      "kind": "whole-board residual screenshot",
+      "fullyVisible": false,
+      "addedToValidScreens": false
+    }
+  ],
+  "server": {
+    "PID": 64850,
+    "sessionId": 25260,
+    "stopped": true,
+    "exitCode": 130,
+    "terminalEmptyConfirmed": true
+  },
+  "reuse": {
+    "originalMacroAndCumulativeRecord": "docs/hanja-goal-glyphwiki-batch75-2026-09-22/findings.json",
+    "SHA256": "7f3311367a37659e90727b02114f1e55fee382cc6080e80a7d5c2e9bc9c46648",
+    "sevenDirectionsAndCumulativeCompletedObserved": true,
+    "notApprovalOfNewIndependentMasks": true
+  },
+  "requiredNext": [
+    "Prepare original-source-specific start conditions for all eight curves; do not infer mask1 M-L-Q, Q or cubic conditions from one another.",
+    "Independently explain and correct pen1 uncovered hook using original polygons and source lineage; shrinking the initial cap cannot repair full-guide coverage.",
+    "Review actual corrected starts, transitions, terminal hook and affected replay only after ROOT approves prepared changes."
+  ],
+  "isolatedActualComponentObserved": true,
+  "isolatedActualComponentBrowserVerified": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "authorNewSSR": 0,
+  "authorNewHTTP": 0,
+  "authorNewServer": 0,
+  "authorNewSourceCompiler": 0,
+  "authorNewEngineRuns": 0
+}
