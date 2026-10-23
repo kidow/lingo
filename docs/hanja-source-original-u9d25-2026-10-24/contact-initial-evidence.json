@@ -1,0 +1,115 @@
+{
+  "schema": "hanja-original-initial-contact/v1",
+  "date": "2026-10-24",
+  "glyph": "鴥",
+  "sourceRoot": "u9d25",
+  "target": "u9d25-16-2",
+  "source": {
+    "fixture": "docs/hanja-source-original-u9d25-2026-10-24/fixtures.json",
+    "fixtureSHA256": "93506634ad7e1d55f9447fa0fc058db96f794cda2a6a0bb6827dd44cfe75655f",
+    "geometrySHA256": "fe5acd75682b5dac9aa80d300ace9f1fdc27f8f015477c677c0e210c8e597716",
+    "full5": {
+      "path": "docs/hanja-goal-glyphwiki-batch798-2026-10-13/engine-whole-u9d25.json",
+      "SHA256": "188aa697b354779ac0c83b68a5bdb934c178bb6495dab1272373aafe7f81e630"
+    }
+  },
+  "priorOriginalH": {
+    "outline": "M59.75 40.6 L79.2 40.6 L79.2 42.6 L59.75 42.6 Z M79.2 40.6 L69.2 41.6 L74.2 36.1 Z",
+    "bounds": [
+      59.75,
+      36.1,
+      79.2,
+      42.6
+    ],
+    "direction": "right",
+    "weight": 19.44
+  },
+  "nextOriginalQ": {
+    "outline": "M76.15 42.1 L77.3 48.8 L78.45 55.05 L79.75 60.8 L81.2 66.1 L82.85 70.95 L84.65 75.3 L86.6 79.15 L88.7 82.5 L91 85.4 L93.4 87.85 L88.75 92.55 L86.1 89.3 L83.75 85.65 L81.65 81.6 L79.9 77.2 L78.4 72.35 L77.15 67.1 L76.2 61.5 L75.55 55.45 L75.2 49 L75.25 42.15 Z M88.75 92.55 L93.4 87.85 L94.15 88.55 Z",
+    "bounds": [
+      75.2,
+      42.1,
+      94.15,
+      92.55
+    ],
+    "direction": "curve",
+    "weight": 50.954712,
+    "revealPath": "M75.71000000000001 41.6375 Q77.87 77.1625 91.1 90.2125",
+    "revealWidth": 14
+  },
+  "newTargetCalculation": {
+    "target": "u9d25-16-2",
+    "originalQStart": [
+      "7571000000000001/100000000000000",
+      "3331/80"
+    ],
+    "originalQStartInsidePriorH": true,
+    "originalQStartInsideOwnP": false,
+    "T": "1/200",
+    "witness": [
+      "303/4",
+      "211/5"
+    ],
+    "QAtT": [
+      "302927507000000039601/4000000000000000000",
+      "67187501/1600000"
+    ],
+    "witnessInsidePriorAndOwn": true,
+    "witnessToEndCapCenterDistanceSquared": "696227641305244258409414001568239201/16000000000000000000000000000000000000",
+    "arcLengthLowerAtT": "567501/1600000",
+    "arcLengthUpperAtT": "757054499999999801/2000000000000000000",
+    "endCapRadiusEqualsArcLengthAtT": true,
+    "strictGrowingEndCapWitness": true,
+    "initialMaskMaximumYUpper": "30051619169374998607/708252500000000000",
+    "initialMaskMaximumYUpperDecimal": 42.43065738472508,
+    "initialOwnInkIsEntirelyInsidePriorH": true,
+    "initialClippedOwnPBounds": [
+      "7301353309330625001393/97030592500000000000",
+      "421/10",
+      "7232465680395624967961/94905835000000000000",
+      "30051619169374998607/708252500000000000"
+    ],
+    "initialGrowingCapNestedUntilRadius7": true,
+    "fullOwnPPrefixConnectivityProved": false,
+    "outsideInitialWindowNativeRequired": true,
+    "noNewFootMicroclockProvedNecessary": true,
+    "sourceGeometryChanged": false,
+    "nativeApproval": false,
+    "sourceEndpointGapNormalizedExact": [
+      "-350999999999999/100000000000000",
+      "0"
+    ],
+    "sourceEndpointGapSource200Exact": [
+      "-350999999999999/50000000000000",
+      "0"
+    ],
+    "oldReportedSourceGapApproximate": [
+      -7.02,
+      0
+    ]
+  },
+  "interpretation": {
+    "policyCondition": "Existing growing-cap law rho=min(7,original UA guide distance), original butt guide width14; ordinary fixed round radius at initial time is not covered by this evidence.",
+    "untilT": "For0<=t<=1/200, bound all butt-guide and growing cap Y by42.43065738472508; every original ownP intersection at or below that bound lies strictly inside completed original H rectangle.",
+    "positiveInkWitness": "At t1/200 W=(75.75,42.2) is inside original H and ownP and strictly inside end cap because squared distance < (Qy−Ay)^2 <= actual arc length^2 <7^2.",
+    "afterWitness": "Growing end-cap balls are nested until distance7 by |Q(d2)−Q(d1)|<=d2−d1; this preserves the contact witness, not a proof of whole P-prefix component topology.",
+    "sourceClock": "Original guide/width/weight/clock preserved; new foot clock is not established as necessary by initial contact facts."
+  },
+  "requires": {
+    "sameFramePreviousMaskProgress": 1,
+    "previousOriginalHExactOpaqueCompleted": true,
+    "initialMQCertificateStillRequired": true,
+    "nativeStartsTransitionsResidualAndCompletionRequired": true
+  },
+  "limits": {
+    "allPrefixOwnPConnectivityProved": false,
+    "allTimeRasterProof": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "sourceGeometryChanged": false,
+    "sourceGuideChanged": false
+  },
+  "firstNewContactCalculation": 1,
+  "oldSourceGuardsRepeated": 0,
+  "sourceProjectionExecutionsDuringContact": 0
+}
