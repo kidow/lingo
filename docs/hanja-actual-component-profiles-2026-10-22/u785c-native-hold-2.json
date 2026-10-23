@@ -1,0 +1,65 @@
+{
+  "glyph": "硜",
+  "root": "u785c",
+  "reviewVariant": "shared89-original-terminal23-unsplit",
+  "observer": "/root",
+  "preparedBy": "/root/activation1401",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "status": "hold-one-terminal-residue",
+  "plannedDistinctScopes": 102,
+  "actualDistinctScopes": 96,
+  "actualScreenshots": 97,
+  "passingTargetScopes": 95,
+  "failingTargetScopes": 1,
+  "repeatFailureConfirmations": 1,
+  "observations": {
+    "capsLocal": 10,
+    "rho7": 15,
+    "fullRoundResidual": {
+      "total": 5,
+      "white": 4,
+      "failed": [
+        "4m1"
+      ]
+    },
+    "footLocal": 24,
+    "footPhase": 9,
+    "footCoverage": 3,
+    "QQSourceBoundary": 9,
+    "compact": 11,
+    "fine": 4,
+    "natural": 6
+  },
+  "unperformedMovedToNewVariant": {
+    "pen4MLLBoundary": 3,
+    "compact4": 1,
+    "fine4": 1,
+    "doneWhole": 1
+  },
+  "allReturnedStateBad": [],
+  "allReturnedErrors": [],
+  "allValidScreensFullyVisible": true,
+  "scopeLimit": "Target-scope PASS is not whole-screen approval: known pen4 terminal residue remains. Thin antialias boundary only for foot coverage, no interior hole.",
+  "failedScope": {
+    "pen": 4,
+    "mask": 1,
+    "reason": "Original terminal23 quad corner is outside radius7 of original MLL endpoint. A repeated native capture confirms black triangular terminal residue."
+  },
+  "excluded": {
+    "staleBrowserFunctionBeforeAction": 1,
+    "screenshotsFromStaleFailure": 0
+  },
+  "server": {
+    "pid": 59377,
+    "session": 59949,
+    "exitCode": 130,
+    "stdoutEmpty": true,
+    "stopped": true
+  },
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u785c-1.json": "050f1951b2426c6dac54f4f69cf7153b1d2b8b27f1a6942c6b564b6a8ab2de1e",
+    "components/hanja/stroke-outlines.tsx": "6d07a255d3df824df4eb8521ee39a4d0bb1faaf8d037f9f7ce3981707d67ff55",
+    "scripts/hanja-actual-component-review.mjs": "771c4e673dd993608f505c1b31105cdc813fb9f78d3e225b9e3afd17d4082154"
+  }
+}
