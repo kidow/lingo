@@ -1,0 +1,667 @@
+{
+  "schema": "hanja-actual-component-profile/v1",
+  "component": "components/hanja/stroke-outlines.tsx",
+  "attrs": {},
+  "SSRPens": [],
+  "constantsFile": "lib/hanja-strokes.ts",
+  "constantLines": [
+    "const STROKE_PLAYBACK_SPEED = 1.5",
+    "export const STROKE_DURATION = 650 / STROKE_PLAYBACK_SPEED",
+    "export const STROKE_GAP = 180 / STROKE_PLAYBACK_SPEED"
+  ],
+  "constantsScanMaxBytes": 262144,
+  "versions": {
+    "react": "19.2.8",
+    "reactDOM": "19.2.8",
+    "scheduler": "0.27.0",
+    "typescript": "5.9.3"
+  },
+  "vendorSHA256": {
+    "react": "e7a035fea0b35de567a563966fdb5e05c01f01f8ff776770d3a44794990ba3d7",
+    "react-dom": "07d30cb25cb9bdf68b9dc7c9467b8f29d9c7ffe0f65c6ade9924e16ac207061b",
+    "react-dom-client": "261c3275492d8f0b1f9b76f78268882316c8435217c39c78c65853bdcd89d500",
+    "scheduler": "646eb671c8585382baff16daf92fe16a4cdd10dcf1a363c58b2ae1f6bf3a2b8d",
+    "jsx-runtime": "dd50fd0db2fba44e0eee66243a45c81cfa3774cf41e4e6c0c080a601815c694d"
+  },
+  "inputSHA256": {
+    "lib/hanja-stroke-start-caps-u61f0.ts": "815c6eb84dfbffd897ea0d960f59df82eacdce5d0054ac692d0934b2c5c66595",
+    "lib/hanja-stroke-source-foot-u61f0.ts": "be8ca767d8de4318b03fd47be4cab99e17fc7a771a2cba136a16d8d9a1295576",
+    "lib/hanja-stroke-start-caps-u8fc5.ts": "78b846a8227f2e3817f2220ca3bec28d25078c6c43fd46cc594fb3d84c46bba3",
+    "lib/hanja-stroke-start-caps-u727c.ts": "6e5ff2233a6487c93417703c8ba8941ee9b811b0b939b10f932e3deb39436d12",
+    "lib/hanja-stroke-start-caps-u785c-t23.ts": "21ad783be371bb1b23ed53662af825346350f9cc1e73e6626b97c006c5b64434",
+    "lib/hanja-stroke-original-up-tail-u8fc5.ts": "5bbb705a82389274f724c021428e78eb3164e7c95174f78180dc699520eb5669",
+    "lib/hanja-stroke-original-up-tail-dom-u8fc5.ts": "14cb1548def14d701e07c2b56cf52e8ee9090be6f2fc5a4e8b60343f62de00c1",
+    "lib/hanja-stroke-start-caps-u8629.ts": "17cece69a64cf8575ad7395b3e1205de49549684f7eaae728e4cbfe9584a80e9",
+    "lib/hanja-stroke-source-foot-u8629.ts": "bde303c08b4441c5d93b7827c45467cb74f680c425f8bc7ff007407ac2b0b8ac",
+    "lib/hanja-stroke-source-y-u8629.ts": "665d83b9bccc7e47d664ba37b2fcf4f95140a9fb1e23d9820733bd95fd4778b1",
+    "lib/hanja-stroke-source-oblique-u8629.ts": "7696a01a1638c052b8621f03a584c3c5dc76d7d99b01ade712e49e9ec4921fbd",
+    "lib/hanja-stroke-start-other-u7dc5.ts": "862e8d32c5d0bc3883fc78db6676234281548d9163c27b671e1eef26921befeb",
+    "lib/hanja-stroke-start-hq-u7dc5.ts": "0912c0c25b951731fa589cb7f6d7bf52793fe9d91a737badd8e0ea75c6873a9b",
+    "lib/hanja-stroke-start-caps-u61e5.ts": "f4eff051f5fdd390eb57ec8489c0bfafb4c6673733705bc88e95a37b202a775f",
+    "lib/hanja-stroke-source-foot-u61e5.ts": "98aee5ec267dc017ab9e97dc59a2f4fa7fa22ecce3dc619a143b292c745d43a6",
+    "lib/hanja-stroke-start-caps-u9b4b.ts": "5ab559824e3977fcbc2d3bc4a747d2bf9dc7ef6cf85513a0cf119b1b91bb705f",
+    "lib/hanja-stroke-start-caps-u7043.ts": "ff41b80104653b4f65a371d3e36f70a072c28c3180f209d1d4b0331ee70e788c",
+    "lib/hanja-stroke-start-caps-u7050.ts": "203c1e0bc9ed033dfc568427672ce6e7ee03e552776383ab04dbbb3cbbbf5510",
+    "lib/hanja-stroke-start-caps-u7e10.ts": "239610422bb01b06dd5dd8bcbff9542447f18f11d5b223c3e3ed202aa4d77243",
+    "lib/hanja-stroke-source-foot-u7e10.ts": "41b8b8bb8b736aa485a080cf5fb17d22239a9346b48414fcf2d12f70be6c6567",
+    "lib/hanja-stroke-start-caps-u9654.ts": "1a0cf534e83cdd9c75024847a61e6d71169f0409db51c9481371f64ba15804d2",
+    "lib/hanja-stroke-source-foot-u9654.ts": "d95028dad0d1568a49aa0e3c02b1684da5df827c86de8cf439994489f09b7801",
+    "lib/hanja-stroke-start-caps-u84eb.ts": "1a35158f1174f1fd88efe15afab3edccfc29fc7bf6f758c7dfcafaef5148a31b",
+    "lib/hanja-stroke-start-caps-u906d-k.ts": "150ad9d0253f8345aca81a05be2834aca8e8c471422aee1c0cb707baa70e9efa",
+    "lib/hanja-stroke-start-caps-u97d4.ts": "836940055b8471ae5170fc59cc361948a2d4d335701ee06f92197935cbbcf10a",
+    "lib/hanja-stroke-source-foot-u906d-k.ts": "5259ae13683e71e8d7b882b694f2b2c919b7a76c604e87242571af42ed0fe3cd",
+    "lib/hanja-stroke-source-foot-u97d4.ts": "b08fe733651c7b937575a294427818d8786ecfa43afa44b169f2782a771cfd4c",
+    "lib/hanja-stroke-start-caps-u7e36.ts": "d72ee3b6198cbb61caa7057dfe9615c8fd904bd9b828fdc1753fcef91ed767e7",
+    "lib/hanja-stroke-start-caps-u93a1.ts": "b4ab92931b4a42a1ee82511e010492ff80dc1c785dc709649cecde8154010998",
+    "lib/hanja-stroke-start-caps-u8810.ts": "1cec22a89ec1af2e4354af14c143c220e4e36c406c5963e9d57f20dae3d7f9ba",
+    "lib/hanja-stroke-start-gate-u85fb-k.ts": "2be71dbe23e6b356a288c8c57d5426e6b6005d2388929b9e846f567e0b1c9c96",
+    "lib/hanja-stroke-start-caps-u568c.ts": "7a8ba0f2596b88d203679dab57e975327e4c54e93e9233d2b7ef3d98bbb4da26",
+    "lib/hanja-stroke-start-compound-u85fb.ts": "826042d41f7f8a5624755974025e46a8f3d863c96b4169f066d5d00308130711",
+    "lib/hanja-stroke-start-compound-u568c.ts": "7d5e44b10ae1956d7ffd7b2c89f93af207bfc262bb305e95375cc2ddefd63aaf",
+    "lib/hanja-stroke-source-foot-u7e36.ts": "fea5a1612a5629236b624141a144bb070947ea622173f011196347514cefe24a",
+    "lib/hanja-stroke-source-foot-u93a1.ts": "8d0c3172429fa947dbce1bc849191037e12114b13344f51b5f1d48388431731f",
+    "lib/hanja-stroke-source-foot-u8810.ts": "8d2efbd16a26eddb1988957bd29167e41f90017898d6a67f19b01c61821275b9",
+    "lib/hanja-stroke-source-foot-u85fb-k.ts": "691c376db8c497e90b407084996f1e6b7ea0c95fb0efb297b6045f349fcdbbba",
+    "lib/hanja-stroke-source-foot-u568c.ts": "ae62d9e1cc14f7d211a84ae1bab3e6448be8a047091e12e7bcc6458be1e192d3",
+    "lib/hanja-stroke-start-caps-u61e0.ts": "91a5ce7f727caf0017b7ce97f69df13ca1c02964548111b4eab34ee24eab6c13",
+    "lib/hanja-stroke-source-foot-u61e0.ts": "7347f3024f211be5f1e892e3296303f6bff6ebb943419fe80cbde88b476fde63",
+    "lib/hanja-stroke-start-caps-u51d7.ts": "181080dbf722a65a3a9c5b02fb47a53ec47e24269886aa12cd15e29bc37fb3ee",
+    "lib/hanja-stroke-start-gate-u51d7.ts": "0d02720f80f099a9f6ca5fed1cfcbb83cde1299d5204e8ea01a86b460685c035",
+    "lib/hanja-stroke-start-gate-u6f68.ts": "fa4336f9d6d5592c70680ad89c774a6989cb0174134bfd31477e152015be1e75",
+    "lib/hanja-stroke-start-caps-u5092.ts": "f1203494e68ed648456dbb1ce9be239b49bb8c75e0f7f450effcede70fa0fd95",
+    "lib/hanja-stroke-start-caps-u7cbb.ts": "7aae41301d64562439909de518c74ad9da0dd41c265bec718a0f7394c71123c4",
+    "lib/hanja-stroke-source-foot-u5092.ts": "738e2e9fc35309117acdc926dafa4f817d556582548e180444d37686d684f218",
+    "lib/hanja-stroke-source-foot-u7cbb.ts": "923c186a1ca8735a102a3828050ad35536d22688ab281ff2ad63129164ec0ba5",
+    "lib/hanja-stroke-start-caps-u5b76.ts": "99e199a1b5a17f6f61151fb6f2546218222a06387d3d439955926b5f4e789fd9",
+    "lib/hanja-stroke-source-foot-u5b76.ts": "0d7cadd15291d51452ec93fd535cf99660d6b0c97f944b55c67651264d3e8779",
+    "lib/hanja-stroke-start-gate-u6e4c.ts": "40808a6186371d77140f89106b555466037711852cb5df92fcd966ad6881035c",
+    "lib/hanja-stroke-source-foot-u6e4c.ts": "08b8c19dca7edd68a7b3c7e7a8aea5e9dc50e3132fb4241a5102b6860c951b11",
+    "lib/hanja-stroke-source-reuse-u7dc5.ts": "fa2a8f702381fadf4f131f4c37f84255ba88794f6a7ed5cb699ca70723270846",
+    "lib/hanja-stroke-start-gate-u7e86.ts": "1127ad53cc9d48904ab359bc4dea738014abcd8c20df72af4279e0f2cf2ea1da",
+    "lib/hanja-stroke-start-gate-u7e1d.ts": "f58bad28fc2dae0a102f2432fdcd46f7ecde850e5a00429931e9d72326d4151a",
+    "lib/hanja-stroke-start-gate-u73b9.ts": "e9949dbd44d77e4fa8a0b2c8c2f0c14b818f3525d8a156610e09fae0e045d24c",
+    "lib/hanja-stroke-start-gate-u7d8e.ts": "7e458be5443708da2c056b01218ac4ee27b7f90efc0eb3ef3924b0032f756e70",
+    "lib/hanja-stroke-source-clip-u7d8e.ts": "55175df2b275edd0d392e9f13e10734ed4614cbe9dc2a4c8d493d93567ce79cb",
+    "lib/hanja-stroke-start-caps-u7d8e.ts": "b7cba160349b496406d19d0dcba753200906381093fa2de7ebae80bc6ef2d8f9",
+    "lib/hanja-stroke-source-cap-u85af.ts": "aa4dc46ebfab26aa8833870f1ffd23c586ee84feb64e44119cb955f22af21fa5",
+    "lib/hanja-stroke-start-gate-u68b4.ts": "35bab3321db501e8759c0b5a022b51601c94fd8854513cf013defec2724b214b",
+    "lib/hanja-stroke-start-gate-u96ae.ts": "c6384d3d729500a7e7bb3b2202990ec515801721627850e88007e8a53a15a947",
+    "lib/hanja-stroke-start-gate-u7a67.ts": "fe24068e0428c4b59a5737fb7d873bc85aa406acefbc85084a2d647c2cc132c1",
+    "lib/hanja-stroke-start-gate-u686d.ts": "87b8eb126bef1fd11929d6fc7b89318f84c7445f8c5a0f441eee5fd954742027",
+    "lib/hanja-stroke-start-gate-u795b.ts": "52d864d1deb8437f0275dc8aa073ce3984695068df2c7fbd880086120d7a11bf",
+    "lib/hanja-stroke-source-foot-u9e80.ts": "ec875bf079c11150b19e8c5d488fdf4751fd525b6b782e58dc64eb3afc0aa885",
+    "lib/hanja-stroke-source-foot-u7d70.ts": "f650cd4d38c9157ab8f672b71f703287a881cbccc263903f2a59d0288bb16811",
+    "lib/hanja-stroke-start-gate-u5611.ts": "bbb2451ea122e350f1ef0ee09af0eae43dc829c11fd59dde6c55decbd56cd84b",
+    "lib/hanja-stroke-start-gate-u8a29.ts": "934888e6b7edf95ef5d5b5a26513e475d839aecfea07c83dd93955bd9dec6df1",
+    "lib/hanja-stroke-start-gate-u4fd3.ts": "5e4d42771b7a59ad72eec3faab47e5a1741afd8319d81ba6db6074ddd0c8451d",
+    "lib/hanja-stroke-start-gate-u82fd.ts": "ede5d9e900f48cb466138acfb8cc07cfa8a7d30719093180204c652b8c19eac3",
+    "lib/hanja-stroke-start-gate-u6f90.ts": "d9d8e37955b131f12604ea82068e276c2e1241abbed0150363fc7db96075ff48",
+    "lib/hanja-stroke-source-foot-u6f90.ts": "db2e02ae9b9230b52687e88dfd7f27cc111497bda2df4cd77b955e36ae34c699",
+    "lib/hanja-stroke-source-foot-u727c.ts": "4bfcab4a4045fa087e93ab471f928bfda77daa59d4fb1d4f98dc0718e831071a",
+    "lib/hanja-stroke-source-foot-u785c-t23.ts": "d81621d972af9c251f4f341d555012df094c70d6d29df3d8e5e73af5e171e405",
+    "lib/hanja-stroke-start-caps-u7e58.ts": "b2b076bde08412987676dc29d736ea0311acb4705216faadb5645f29b6ad2de6",
+    "lib/hanja-stroke-start-caps-u995f.ts": "31cf64bcee277d5c534b72cd0c6de1af0287b4aec13abf34c5cc8ed12ec8042d",
+    "lib/hanja-stroke-source-foot-u7e58.ts": "9a6254b6da0f3335b4c777f051d11e95da9a023b89cc3b5f8128b651c553e237",
+    "lib/hanja-stroke-source-foot-u995f.ts": "68cc34678d1cad5ffb8d9005e08a510b8d38c9ca025794ef38e3799a21eb721f",
+    "lib/hanja-stroke-start-gate-u90b0.ts": "b428f6c24968e2e21e6e909b5c7cded1befb9b99435f986905500857c23921ea",
+    "lib/hanja-stroke-contact-foot-u90b0.ts": "c91d9f2bbc41b75e9855831e5ed6fb246c64c3da96a814c25cb7444e3d192077",
+    "lib/hanja-stroke-start-gate-u6e7a.ts": "6c4384d3db8e9d0043936548efb0264462de4ef2fe1c7886c0b7500969f7bd89",
+    "lib/hanja-stroke-start-gate-u7d85.ts": "9950ab90953cf21347797dc7417c801f07a4b89633db972c03ab29e47ab29a89",
+    "lib/hanja-stroke-start-gate-u7d7a.ts": "eb445f1f9afb0979ade777c495a16185e40cbfdcef74001a07b29dd15ea5c6d9",
+    "lib/hanja-stroke-start-gate-u84b2.ts": "1d69ed73776afde3ea44548c39b653eb7a1c37a51f4caf9ab3f5be2ffb893baf",
+    "lib/hanja-stroke-start-gate-u7c1c.ts": "0a915bbaba4bdb858b4349fbb9b16bd413cd34700a4321fbf36a1e73a1433f73",
+    "lib/hanja-stroke-start-gate-u8fed.ts": "c166fe87adb3db61fda140bf963dd925e4076e925997833c3b683c200badec26",
+    "lib/hanja-stroke-start-gate-u928d.ts": "50eb176f4db69eeb39a3a7f0af3b147eaba44118c8b974223357458d75eba3bf",
+    "lib/hanja-stroke-start-gate-u9081.ts": "7a58927ef750acee31d2975b08b07f23ba2fbfdfc5af729272abdc7db8b16585",
+    "lib/hanja-stroke-start-gate-u564b.ts": "ca01869bb519fb57827704909aeec3e2b8071bd311915c5340ddb975fcd1c613",
+    "lib/hanja-stroke-start-gate-u68b2.ts": "fe77ebf811228ca5c6ddefedbea354f8e4233d00851e0d4200c207c05492180f",
+    "lib/hanja-stroke-start-gate-u6f57.ts": "a7b35a0aae7b35afede3d123cfc8b736a6d56ae46cb54bbd5b3286949896cac5",
+    "lib/hanja-stroke-start-gate-u905d.ts": "963ba442d0a9217fc191dbb3ed4277fcc854c92e926c214d0c0c07a2d3366dbf",
+    "lib/hanja-stroke-start-gate-u8cb6.ts": "0af422a86d3eb458af58384108ad283a2119b91c435372ece85e41e766939c07",
+    "lib/hanja-strokes.ts": "cee32be6bc26fc0632048838c876f8355b417da30b9e5011a7a2fc38e19c6db5",
+    "lib/hanja-stroke-start-gate-u9148.ts": "8a566486c6ba4c214f89af62c5b42e270aa53ab50644d7c0bc8bd125ed1d35b4",
+    "lib/hanja-stroke-start-gate-u7037.ts": "ec09bcea8d5a8557a3d27d754cbfae86df07857bc496da08693fbb0e341a3868",
+    "lib/hanja-stroke-start-gate-u7d3d.ts": "f821ad2913459ae6a37d3bc84b211ce9f84b06f87fcaa3ec3c2f63008b891a44",
+    "lib/hanja-stroke-contact-foot-u7d3d.ts": "63c0e90c46550b2d50eba6f4bc039905fda246cb00bed1469809b01b0dc1a872",
+    "lib/hanja-stroke-start-gate-u6303.ts": "9774d49905f6d8f98c18d8e585296769065916f40de9a84e09254ea4b73c7ef8",
+    "lib/hanja-stroke-start-gate-u7277.ts": "43757c391fc54957e04ae8f7116aa57dce06c8dc49f700b62ca2a4bd6046946b",
+    "lib/hanja-stroke-start-gate-can.ts": "472be0fadeb11edc77d89fb3645a809f9a9f062387af99fcda335616d8ad60f7",
+    "lib/hanja-stroke-start-gate-di.ts": "53c2bd788f47d4c183ae826e52c767bb628e7e1c828cb59dec25f139106bfde6",
+    "lib/hanja-stroke-start-gate-si.ts": "57806d5be50d813dfbfbcb21ffc2056aa968a2f900cf4da72ba649582eecce73",
+    "lib/hanja-stroke-outline.ts": "fb5e309e567de18fdeb19efdc200cd73cc8bce68934554be8d884b5b6e10ff44",
+    "lib/hanja-stroke-start-gate.ts": "1a734d87d44093198cda60bafff96d963b1e62510acb5f4e1fa4e3f3a60d1704",
+    "docs/hanja-source-independent-qq-three-u727c-source-experiment-2026-10-23/fixtures.json": "90caec4d8b1d11bd15cb34dffb09469d9254385b5fee4316605f5de6af260b7d",
+    "docs/hanja-source-original-full-u727c-2026-10-23/engine-proof.json": "89859c169dac0332017f79e4c1b39424063e39caa95f3306d972318e0f0702db",
+    "docs/hanja-source-original-full-u727c-2026-10-23/strict-root-proof.json": "df11ac7c78c342e34ee2b34d3af58c1212d680962dc04210a9e1d8ba02d432ff",
+    "docs/hanja-goal-glyphwiki-batch429-2026-10-09/sources.json": "9980cf61b3ec3593e64bb7092fcb45f2422dcc48f85df31683128555ce322f7b",
+    "docs/hanja-source-foot-u727c-preparation-2026-10-23/prefix-proof.json": "9183629684a39d3909885f3be6fc288a45923dede5aea56786ca01e662c65a6e",
+    "docs/hanja-start-caps-u727c-preparation-2026-10-23/initial-proof.json": "756f1b62d58d767ac5e5ed915952df99c6b27117cef75e8b6b6fd03c25714d70",
+    "docs/hanja-official-media-compare-u727c-2026-10-23/official-temporal-native-review.json": "3981f038ca698a3120fe7ae2fef754befb3ad978b98ad30de9248f8469f0d0d6",
+    "docs/hanja-source-raw-compare-u727c-2026-10-23/native-static-review.json": "52eb77d51a1654bdd41e21020999679cdab32c12f90e76f358759185e47f5100",
+    "lib/hanja-stroke-preparation-u727c.test.ts": "22d5e56ad91143cb49c47681dc1216fa1852ea52221c8482b66d328d9aacf4c0",
+    "docs/hanja-source-foot-u727c-preparation-2026-10-23/future94-tsx-base93.patch": "ef8b614cc69ac81f66cc140d1ede08bbcb0b11139a8e0225b7477c15b767f719",
+    "docs/hanja-source-foot-u727c-preparation-2026-10-23/future94-helper-base93.patch": "a02ea9c95f85987ec7ec6a37d3d4c82c552938f13b23191aaa00c0b3158d78ed",
+    "components/hanja/stroke-outlines.tsx": "4ab078fdf74a0397ed9a922656bbbbbd2126eefdbac6f221af0a2d3fd239e759",
+    "scripts/hanja-actual-component-review.mjs": "c48952728af4a0840e2f161df21d784ada18bd2ce738994eebaba300e199b170",
+    "lib/hanja-stroke-start-caps-u7c67.ts": "ef6fd7a0a8f9df01f682f594cfc8098a755d2a88a9ee0f0b4d2f67640ed64c01",
+    "lib/hanja-stroke-source-foot-u7c67.ts": "bead25e4bee572182736e10a790e48ebe10fc07e2dd3fbe55ea4a6c3f07ac421",
+    "docs/hanja-source-original-u7c67-2026-10-23/fixtures.json": "ac326e4aa2bf4036cc23049bd84b02948e1e9b296ad4498f5fce9e55575e345d",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/engine-proof.json": "e39b22b71e665cc542587e82049ee405a80ca8488cef9ab1fe3349f41d75844c",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/draw-trace.json": "67c0480f7b19474f2d23c0adc7866591c1b1b1f753d7f07bad661f6177cdce71",
+    "docs/hanja-goal-glyphwiki-batch414-2026-10-09/sources.json": "637f5c2f6467aeed655aa5187b3dfbbf25709b37690b95c37e2ed7e44b318693",
+    "docs/hanja-official-media-compare-u7c67-2026-10-23/official-temporal-native-review-first.json": "8d0b8c7beff43202d37b1d1be18e6682d2871e929a4ec77ce7527b7eb27c323e",
+    "docs/hanja-official-media-compare-u7c67-2026-10-23/official-temporal-native-review-remaining.json": "930fab885032f90d2007e8574d680c9cee2915233fc91dfd00689f351de60e47",
+    "docs/hanja-original-qb-policy-proof-2026-10-23/source-contact-prefix.json": "0643365abb1deeba6b650ece48af4dd79509783ea13f675e558c3f4ff4b0914c",
+    "lib/hanja-stroke-start-caps-u6705.ts": "71bc866dc7f8a8c38f74be017b1e4f34338f30307aa40099b9e499765137ccc3",
+    "lib/hanja-stroke-source-foot-u6705.ts": "31a4847111d762a64f5491bca8bfc61c7f16699da35cb5a6bf49394c5777d8fc",
+    "lib/hanja-stroke-start-caps-u6705.test.ts": "f2b287a2c704feb38aa228296b2f2218750c2c26b1736e782be898d74eea2e6c",
+    "docs/hanja-start-caps-u6705-preparation-2026-10-23/README.md": "c80dafc94d2cec4bd3c00f3ce8616246cf57f2de95e0dca22237e61200519871",
+    "docs/hanja-start-caps-u6705-preparation-2026-10-23/proof.json": "f22407f0518523271fbf8d8ccac710e4163dcb19fbfc431c173342f51afa7b27",
+    "docs/hanja-start-caps-u6705-preparation-2026-10-23/verify-initial.py": "5cb41d3bbad06ad4ff2f364f73a4e208b33b481bd2be104b07d16f9295bc17ef",
+    "docs/hanja-start-caps-u6705-preparation-2026-10-23/preparation.json": "1b485891c751836ba2f9f427685dff79ab6ac9748a40b3ef184afccbcc86c0b5",
+    "lib/hanja-stroke-original-left-tail-u6705.ts": "b1ebca0f8373dbd281cc52f8c87e5d2f1544d7df2e69ff9e633853f7829afeb5",
+    "lib/hanja-stroke-original-left-tail-dom-u6705.ts": "acc371269a6cc83d7016734e67c95a2cff251e85fc333ea8bbb5dcd8449d2414",
+    "lib/hanja-stroke-original-left-tail-dom-u6705.test.ts": "26e7ecdcd307e59d998077896afaacf19e10f85668a4abd8dc1371991804250e",
+    "docs/hanja-original-left-tail-u6705-11-preparation-2026-10-23/README.md": "666e4efeedc5a1c5552e3bb230c312752a5cc2a3705e4ed690fcbb6194376a34",
+    "docs/hanja-original-left-tail-u6705-11-preparation-2026-10-23/proof.json": "65f6e6499436c726624623791d7cdcf918d7f73f3d952b1543fd2c41f75a072b",
+    "docs/hanja-original-left-tail-u6705-11-preparation-2026-10-23/verify-tail.py": "24ba3c37c09fcfa33244cd374c84eb1b5a761984f440c7de6daf8af1672d9ad0",
+    "docs/hanja-original-left-tail-u6705-11-preparation-2026-10-23/preparation.json": "253e79156dc4ade823b1f04f500a6f01888625dc9193377d88630e31faae6e4f",
+    "docs/hanja-source-independent-qq-u6705-source-experiment-2026-10-23/fixtures.json": "a4414ed12632efcd34934856579a5c45941631bf27d16e5069101e1f443b327f",
+    "docs/hanja-source-raw-compare-u6705-2026-10-23/engine-whole-u6705.json": "9ed7129b5a50de139bce4fc494c2e216807d54c8f670f24f7a7b3988eb3b4675",
+    "docs/hanja-goal-glyphwiki-batch417-2026-10-09/engine-proof.json": "ad06c8f0ce5d3912935f8393fbdc1ce68f144432a31e5aadf755176612a476fa",
+    "docs/hanja-goal-glyphwiki-batch417-2026-10-09/draw-trace.json": "0fd77624601fcb16a3acd027c23b7ca66863bc8f56d71cc54689ac7d2c2975b6",
+    "docs/hanja-goal-glyphwiki-batch417-2026-10-09/sources.json": "3735192b5c96b7f5ab75b3eca113b5612b87da9434a5e702e828a76ae426f152",
+    "lib/hanja-stroke-original-left-terminal-u7c67.ts": "cf6a1940721e7a1a3ca2d8a3471633f02041919adcf0b240e6188767105fe8fd",
+    "lib/hanja-stroke-original-left-terminal-dom-u7c67.ts": "260ac0a9343b6a043fe629265540428f0c37a707f2a363e6a8623dccbf0cb1f6",
+    "lib/hanja-stroke-start-caps-u7d8c.ts": "52b39d46fa2ee5a83f6dc2336023237c0c9025c38faa605bc01d4912ce05f2fa",
+    "lib/hanja-stroke-source-foot-u7d8c.ts": "b49f50a17e92a9e71d14be71886bad7c47585b1e47c0dc6da520543c96a10943",
+    "docs/hanja-source-independent-thread-qq-two-u7d8c-source-experiment-2026-10-23/fixtures.json": "7e6832f1bf8b4b9b30108c16325cdc6d5ab4d5e1c5ca86dc26f4697da1708f28",
+    "docs/hanja-source-original-full-u7d8c-2026-10-23/engine-proof.json": "d025868602d7d0e1de4a06676126549ba88bd304e3d1695098b85d673b1d6713",
+    "docs/hanja-official-media-compare-u7d8c-2026-10-23/official-temporal-native-review.json": "1c0fbff046e5efbda3254c6fbc70ae412191e988b68bda9f3abf67c09c6077fc",
+    "docs/hanja-source-raw-compare-u7d8c-2026-10-23/native-static-review.json": "4c0aa2041da375ae8357032a999334f1bc1f6c4d44bbd99d9ed2c45a277997d5",
+    "lib/hanja-stroke-start-caps-u7367.ts": "a23fea6d958bccb3e8cf3ea196ee856e2d88628364c05d4fcdc8e9e8a6f4eb66",
+    "lib/hanja-stroke-source-foot-u7367.ts": "10a06e7ff7ab65f01eee9ad9cf5568b3f64d62dc42358ee9ad9430293469d0cd",
+    "docs/hanja-source-original-u7367-2026-10-23/fixtures.json": "a0a9fd12e075cb6bb462569efe3360d1205dfe8dcb6836b5c7857861704dca77",
+    "docs/hanja-official-media-compare-u7367-2026-10-24/config.json": "e6d3cdce75d2f5670eaae9187889722ea16df4136472f8664192a2796dbd3af7",
+    "docs/hanja-goal-glyphwiki-batch423-2026-10-09/review.json": "678991121426a97640369d9df73fd2d51ab7a3396bd3bdce6ffe921066856966",
+    "docs/hanja-official-media-compare-u7367-2026-10-24/official-temporal-native-review.json": "72333ba6896331c5141127618f87a43aa47a9eabbfbff5924cc367cbe3893470",
+    "lib/hanja-stroke-original-left-tail-u7367.ts": "93ec082002bb7602978140adb1ff4439b077198720457b71d3e730611050944e",
+    "lib/hanja-stroke-original-left-tail-dom-u7367.ts": "87e02c73fa07ce12b43756f4f4ae174c1729ce821fb5e7c6db11cd510f8bcc2c",
+    "docs/hanja-source-original-u8927-2026-10-24/fixtures.json": "c02da825d7fd6295fc178aa84511795b1507f79ebe9e9bfe97ad003b5f0c672a",
+    "lib/hanja-stroke-start-caps-u8927.ts": "433af4cb40f2d2aad4d28be35dd82171eda67f4ca57678081a376426f87ec1e1",
+    "lib/hanja-stroke-source-foot-u8927.ts": "ae9bdaf17d092e6bb9b91209e433941b02d09906f93314af662712afe35f808b",
+    "docs/hanja-official-media-compare-u8927-2026-10-24/official-temporal-native-review.json": "706bb7f8838b6c166962fd46f04d675781d8e09b6987e75ec0de071e761e167a",
+    "docs/hanja-source-original-u7e7e-2026-10-23/fixtures.json": "d473785bac705922c25e1b648dbc2dd14d929d587e17ef3ac39881c31072670b",
+    "lib/hanja-stroke-start-caps-u7e7e.ts": "bb30590fce029780c67665d656f79d18900c4ecb9b7dc3fb2f1b0a65c0f207ad",
+    "lib/hanja-stroke-source-foot-u7e7e.ts": "56db48c1df9e931024bb5fd51974e30a1eef877c0c2e6f22f184d78b127f7682",
+    "docs/hanja-source-original-u890a-2026-10-24/fixtures.json": "43951623842cf001a9092c40c025978d40ec65b8fbd87d8690c03e26b0f097aa",
+    "lib/hanja-stroke-start-caps-u890a.ts": "07acaa6f32cada683786c6e2b0185c67a41eb11e5436c213eea2dc24204de9b7",
+    "docs/hanja-source-original-u890a-vs1-2026-10-24/fixtures.json": "f2ea5b21eb9f1694f01d64244a81787d3ae5b20415a3a158620e965bb350786f",
+    "lib/hanja-stroke-start-caps-u890a-vs1.ts": "48ba9374610b9f0b0ac8453f40e97fb6ca176705cbfb3e210f7eb2d30abe106f",
+    "docs/hanja-source-original-u7bd2-k-2026-10-24/fixtures.json": "dbf96dbbe761cd8659a9328646d5097d23de3ab066f4e7afc7b2221a920f9a47",
+    "docs/hanja-source-original-u7bd2-k-2026-10-24/engine-proof.json": "a2af067e88ef1d945c6e9ea512116641e975084e9681afad28d44585908f585f",
+    "lib/hanja-stroke-start-caps-u7bd2.ts": "d6f074d39e17b66ac1f974ade6c201e4fb2dfc8f873f2ba1980b18456a63cef6",
+    "lib/hanja-stroke-contact-u7bd2.ts": "f6fb69c0fd37c5c80154caabadeb359b4b59b9750ec2df4c87be21a6767c986c"
+  },
+  "expectedResourceClosureModules": 129,
+  "kind": "growing-u7bd2-caps",
+  "adapterSHA256": "c48952728af4a0840e2f161df21d784ada18bd2ce738994eebaba300e199b170",
+  "sharedVersion": 107,
+  "baseSharedVersion": 106,
+  "sharedWindowPending": false,
+  "profileFinalized": true,
+  "executionEnabled": false,
+  "glyph": "篒",
+  "root": "u7bd2",
+  "pens": 15,
+  "masks": 17,
+  "polygons": 35,
+  "fixture": "docs/hanja-source-original-u7bd2-k-2026-10-24/fixtures.json",
+  "fixtureKey": "u7bd2K.strokes",
+  "geometrySHA256": "20e83c465365d9bc4a9ab89bae868a60426edd7033fc4d652d50e870fa1e17cf",
+  "expectedMaskCounts": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1
+  ],
+  "prefixes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "sourceIdentity": {
+    "sourceRoot": "u7bd2-k",
+    "sourceProofFile": "./engine-proof.json",
+    "sourceProofFileSha256": "a2af067e88ef1d945c6e9ea512116641e975084e9681afad28d44585908f585f",
+    "sourceCapsuleFile": "../hanja-goal-glyphwiki-batch309-2026-10-05/sources.json",
+    "sourceCapsuleFileSha256": "b1337144ca03165f963983c8c8602d11582918fa96ff0c01fdb1b555fb957234",
+    "sourceChecksFile": "../hanja-goal-glyphwiki-batch309-2026-10-05/findings.json",
+    "sourceChecksFileSha256": "17d6eaac8b3b0e3cbd45be1c72136a49c8f31a9137525ba55e1ffc428d9b800a"
+  },
+  "actualFull5File": null,
+  "actualFull5SHA256": null,
+  "canonicalFull5SHA256": "16f7a0415b152e902c8d9c28d0aff9462e651103ddb5c61035739f1eaa58f821",
+  "targets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "id": "u7bd2-1-1",
+      "kind": "growing-u7bd2-caps",
+      "segment": {
+        "outline": "M27.7 8.2 L26.5 11.15 L25.15 14 L23.55 16.7 L21.75 19.35 L19.75 21.9 L17.6 24.3 L15.2 26.6 L12.6 28.75 L9.8 30.75 L6.75 32.6 L6.2 31.85 L8.55 29.3 L10.75 26.8 L12.8 24.35 L14.7 21.85 L16.35 19.35 L17.85 16.85 L19.15 14.3 L20.25 11.7 L21.2 9.1 L21.95 6.45 Z M21.8 6.9 L22.2 5.65 L27.7 8.2 Z M27.7 8.2 L28.85 9.6 L26 10.3 Z",
+        "bounds": [
+          6.2,
+          5.65,
+          28.85,
+          32.6
+        ],
+        "direction": "curve",
+        "weight": 31.408937,
+        "revealPath": "M25 6.8625 Q20.5 21.52 6.5 32.245000000000005",
+        "revealWidth": 14
+      },
+      "q0": [
+        25,
+        6.8625
+      ],
+      "radius": 7,
+      "sourceFieldSHA256": "67e0e061dc07203f39accab40192865aa66f369135114342b2a4d4293290f085"
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "id": "u7bd2-3-1",
+      "kind": "growing-u7bd2-caps",
+      "segment": {
+        "outline": "M25.1 16.3 L27.1 17 L29 17.6 L30.8 18.3 L32.45 19.1 L34 20 L35.45 20.95 L36.8 22 L38 23.1 L39.05 24.3 L40 25.6 L34.6 28.25 L34.3 27.25 L33.85 26.25 L33.25 25.2 L32.5 24.1 L31.55 22.95 L30.5 21.8 L29.3 20.65 L27.95 19.45 L26.45 18.2 L24.75 17.1 Z M40 25.6 L40.1 27.9 L38.65 29.65 L36.35 29.75 L34.6 28.25 Z",
+        "bounds": [
+          24.75,
+          16.3,
+          40.1,
+          29.75
+        ],
+        "direction": "curve",
+        "weight": 17.928497,
+        "revealPath": "M24.5 16.515 Q34.5 21.1625 38 28.3125",
+        "revealWidth": 14
+      },
+      "q0": [
+        24.5,
+        16.515
+      ],
+      "radius": 7,
+      "sourceFieldSHA256": "285bad4a37718080a8ad95d7290e4f5cd2ad67e5445ec7d9bebe968708b54a87"
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "id": "u7bd2-4-1",
+      "kind": "growing-u7bd2-caps",
+      "segment": {
+        "outline": "M67.2 8.2 L66.2 10.5 L65.05 12.75 L63.75 14.85 L62.25 16.9 L60.6 18.8 L58.75 20.6 L56.75 22.3 L54.6 23.85 L52.25 25.25 L49.75 26.5 L49.2 25.75 L51.15 23.8 L52.9 21.9 L54.5 20 L56 18.1 L57.3 16.2 L58.45 14.3 L59.4 12.35 L60.25 10.4 L60.95 8.45 L61.45 6.45 Z M61.3 6.9 L61.7 5.65 L67.2 8.2 Z M67.2 8.2 L68.35 9.6 L65.5 10.3 Z",
+        "bounds": [
+          49.2,
+          5.65,
+          68.35,
+          26.5
+        ],
+        "direction": "curve",
+        "weight": 24.447557,
+        "revealPath": "M64.5 6.8625 Q61 18.3025 49.5 26.1675",
+        "revealWidth": 14
+      },
+      "q0": [
+        64.5,
+        6.8625
+      ],
+      "radius": 7,
+      "sourceFieldSHA256": "486b5f8aa27471b70a1ee089ba7af91561b6d5facc9222e596b52a85b6c426e5"
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "id": "u7bd2-6-1",
+      "kind": "growing-u7bd2-caps",
+      "segment": {
+        "outline": "M64.6 16.3 L66.6 17 L68.5 17.6 L70.3 18.3 L71.95 19.1 L73.5 20 L74.95 20.95 L76.3 22 L77.5 23.1 L78.55 24.3 L79.5 25.6 L74.1 28.25 L73.8 27.25 L73.35 26.25 L72.75 25.2 L72 24.1 L71.05 22.95 L70 21.8 L68.8 20.65 L67.45 19.45 L65.95 18.2 L64.25 17.1 Z M79.5 25.6 L79.6 27.9 L78.15 29.65 L75.85 29.75 L74.1 28.25 Z",
+        "bounds": [
+          64.25,
+          16.3,
+          79.6,
+          29.75
+        ],
+        "direction": "curve",
+        "weight": 17.928497,
+        "revealPath": "M64 16.515 Q74 21.1625 77.5 28.3125",
+        "revealWidth": 14
+      },
+      "q0": [
+        64,
+        16.515
+      ],
+      "radius": 7,
+      "sourceFieldSHA256": "c7c19919b8ca538e9b2a2fecb6818f9c421bb6037dc39548a098e3d8d9befa19"
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "id": "u7bd2-7-1",
+      "kind": "growing-u7bd2-caps",
+      "segment": {
+        "outline": "M53.1 32.05 L49.2 35.2 L45.15 38.25 L40.9 41.15 L36.45 43.95 L31.85 46.65 L27.1 49.2 L22.15 51.6 L17 53.85 L11.7 55.95 L6.15 57.85 L5.8 57 L10.9 54.25 L15.85 51.45 L20.6 48.7 L25.2 45.9 L29.65 43 L33.9 40.05 L37.95 37.05 L41.85 34 L45.55 30.8 L49.1 27.6 Z M48.75 27.9 L49.2 27.5 L53.1 32.05 Z M53.1 32.05 L53.35 33.85 L50.55 33 Z",
+        "bounds": [
+          5.8,
+          27.5,
+          53.35,
+          57.85
+        ],
+        "direction": "curve",
+        "weight": 53.388528,
+        "revealPath": "M51.5 29.5125 Q33 46.05 6 57.4425",
+        "revealWidth": 14
+      },
+      "q0": [
+        51.5,
+        29.5125
+      ],
+      "radius": 7,
+      "sourceFieldSHA256": "27ccf1b461a5b9a20db04b240f09f9622e8d1342d0276dad6d85dd1ac0bb0354"
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "id": "u7bd2-8-1",
+      "kind": "growing-u7bd2-caps",
+      "segment": {
+        "outline": "M50.65 31.3 L54.55 33.5 L58.4 35.7 L62.25 37.8 L66.1 39.75 L70 41.55 L73.95 43.2 L77.95 44.7 L82.05 46.1 L86.15 47.3 L90.35 48.35 L88.6 54.7 L84.25 53.25 L80.05 51.65 L75.9 49.85 L71.85 47.85 L67.9 45.7 L64.05 43.35 L60.35 40.85 L56.75 38.15 L53.3 35.2 L50.1 32 Z M88.6 54.7 L90.35 48.35 L94.45 49.5 Z",
+        "bounds": [
+          50.1,
+          31.3,
+          94.45,
+          54.7
+        ],
+        "direction": "curve",
+        "weight": 44.371107,
+        "revealPath": "M50 31.35 Q68 45.6825 89.5 51.5625",
+        "revealWidth": 14
+      },
+      "q0": [
+        50,
+        31.35
+      ],
+      "radius": 7,
+      "sourceFieldSHA256": "fd5e1aeea32080d675670513991f38039c7a69733e089f7ae61681f5709f7313"
+    },
+    {
+      "pen": 14,
+      "mask": 1,
+      "id": "u7bd2-14-1",
+      "kind": "growing-u7bd2-caps",
+      "segment": {
+        "outline": "M82.9 72.45 L81.15 73.15 L79.3 73.9 L77.3 74.7 L75.25 75.5 L73.05 76.35 L70.7 77.2 L68.25 78.1 L65.7 78.95 L63 79.8 L60.15 80.6 L59.8 79.8 L62.25 78.15 L64.6 76.6 L66.9 75.2 L69.1 73.85 L71.2 72.6 L73.2 71.4 L75.1 70.25 L76.9 69.15 L78.55 68.1 L80.15 67.1 Z M79.7 67.35 L84.25 71.75 L82.9 72.45 Z M84.25 71.75 L84.35 73.4 L81.3 72.15 Z",
+        "bounds": [
+          59.8,
+          67.1,
+          84.35,
+          80.6
+        ],
+        "direction": "curve",
+        "weight": 24.445497,
+        "revealPath": "M82 69.57 Q73.5 73.97999999999999 60 80.22749999999999",
+        "revealWidth": 14
+      },
+      "q0": [
+        82,
+        69.57
+      ],
+      "radius": 7,
+      "sourceFieldSHA256": "d84ca4ebdf28bd67783069fa2b1e5e1b69355708a91625884e88752cdce8da6f"
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "id": "u7bd2-15-1",
+      "kind": "growing-u7bd2-caps",
+      "segment": {
+        "outline": "M46.65 69.3 L49.9 72.1 L53.25 74.7 L56.75 77.05 L60.4 79.2 L64.25 81.05 L68.3 82.7 L72.6 84.1 L77.15 85.25 L81.9 86.2 L86.95 86.85 L86 93.4 L80.7 92.35 L75.65 91 L70.85 89.35 L66.35 87.45 L62.1 85.25 L58.2 82.75 L54.6 79.95 L51.3 76.9 L48.4 73.55 L45.95 69.85 Z M86 93.4 L86.95 86.85 L91.95 87.55 Z",
+        "bounds": [
+          45.95,
+          69.3,
+          91.95,
+          93.4
+        ],
+        "direction": "curve",
+        "weight": 45.596576,
+        "revealPath": "M46 69.2025 Q60 86.475 86.5 90.15",
+        "revealWidth": 14
+      },
+      "q0": [
+        46,
+        69.2025
+      ],
+      "radius": 7,
+      "sourceFieldSHA256": "b4504dc205b4ae6a9df89dec1e0a83d11409a42609188f1e190919f42e8283d1"
+    },
+    {
+      "pen": 13,
+      "mask": 2,
+      "id": "u7bd2-13-2",
+      "kind": "source-foot-x-u7bd2",
+      "segment": {
+        "outline": "M15.4 87.45 L19.65 86.8 L23.85 86.15 L28.05 85.45 L32.3 84.8 L36.5 84.1 L40.75 83.4 L45 82.7 L49.25 82 L53.55 81.4 L57.85 80.85 L58.1 81.75 L54 83.25 L49.9 84.6 L45.75 85.9 L41.6 87.1 L37.4 88.2 L33.25 89.3 L29.1 90.4 L24.9 91.4 L20.7 92.4 L16.5 93.35 Z M16.5 93.35 L14.45 87.65 L15.4 87.45 Z M16.5 93.35 L19.2 91.3 L17.8 94.65 Z",
+        "bounds": [
+          14.45,
+          80.85,
+          58.1,
+          94.65
+        ],
+        "direction": "curve",
+        "weight": 43.481722,
+        "revealPath": "M15.5 90.5175 Q37 86.475 58 81.33",
+        "revealWidth": 14
+      },
+      "predecessor": {
+        "outline": "M32 52.4 L32 88.55 L26 88.55 L26 49.4 Z",
+        "bounds": [
+          26,
+          49.4,
+          32,
+          88.55
+        ],
+        "direction": "down",
+        "weight": 34.1775
+      },
+      "sourceFieldSHA256": "23163c9c8f17b94ec000bc37237ee1c81f3ed9504b34f51e6c689386732e2dff",
+      "cutX": 33,
+      "phaseShareExact": [
+        "1901746697",
+        "3446880357"
+      ],
+      "phaseShare": 0.5517298252426694,
+      "triangles": 11,
+      "footGeometrySHA256": "8014c9c8fe4ba48fababb1b8a84bd44cc8a381a62deb733d194c0c09d7dc8474"
+    }
+  ],
+  "curveTargets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "id": "u7bd2-1-1",
+      "kind": "growing-u7bd2-caps"
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "id": "u7bd2-3-1",
+      "kind": "growing-u7bd2-caps"
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "id": "u7bd2-4-1",
+      "kind": "growing-u7bd2-caps"
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "id": "u7bd2-6-1",
+      "kind": "growing-u7bd2-caps"
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "id": "u7bd2-7-1",
+      "kind": "growing-u7bd2-caps"
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "id": "u7bd2-8-1",
+      "kind": "growing-u7bd2-caps"
+    },
+    {
+      "pen": 14,
+      "mask": 1,
+      "id": "u7bd2-14-1",
+      "kind": "growing-u7bd2-caps"
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "id": "u7bd2-15-1",
+      "kind": "growing-u7bd2-caps"
+    },
+    {
+      "pen": 13,
+      "mask": 2,
+      "id": "u7bd2-13-2",
+      "kind": "source-foot-x-u7bd2"
+    }
+  ],
+  "cardinalTargets": [
+    {
+      "pen": 2,
+      "mask": 1
+    },
+    {
+      "pen": 5,
+      "mask": 1
+    },
+    {
+      "pen": 9,
+      "mask": 1
+    },
+    {
+      "pen": 10,
+      "mask": 1
+    },
+    {
+      "pen": 10,
+      "mask": 2
+    },
+    {
+      "pen": 11,
+      "mask": 1
+    },
+    {
+      "pen": 12,
+      "mask": 1
+    },
+    {
+      "pen": 13,
+      "mask": 1
+    }
+  ],
+  "pairProgress": [
+    {
+      "pen": 13,
+      "nextMask": 2,
+      "boundary": 0.4400958330486494,
+      "priorMaskWeight": 34.1775,
+      "totalWeight": 77.659222,
+      "newBoundary": false
+    }
+  ],
+  "nativeGuideTransitions": [],
+  "coverage": {
+    "caps": "Original P minus unchanged complete original round guide; eight residuals require native observation.",
+    "foot": "Original P versus actual source foot/body; native residual pending."
+  },
+  "requiredFreshNative": {
+    "initial": 24,
+    "foot": 6,
+    "sourceBoundary": 3,
+    "compact": 15,
+    "done": 1,
+    "natural": 6,
+    "total": 55
+  },
+  "finiteNativePlan": {
+    "initialMQ": [
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      14,
+      15
+    ],
+    "foot": "13m2 epsilon/.03/share-delta/share/share+delta and full originalP coverage",
+    "sourceBoundary": "13 before mask2 minus/exact/plus",
+    "compact": "15 original logical pens",
+    "done": "whole completed",
+    "natural": "pens1/8/13 early+end six"
+  },
+  "officialDirectionEvidence": {
+    "currentPen13RecordSHA256": "74085766bc8fc602641b433dceaf476d6bdf52f2d38199b3ec4e3181f472356f",
+    "oldBatch309Scope": "15 static domestic order/shape and original logical13 L/Q; no temporal source approval"
+  },
+  "staticMappingEvidence": {
+    "existingBatch309": true,
+    "newNativePending": true
+  },
+  "sourceFootNewMicroclockExplicit": true,
+  "originalClockIdentityApproved": false,
+  "isolatedActualComponentBrowserVerified": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "authorSSR": 0,
+  "authorHTTP": 0,
+  "authorServer": 0,
+  "engineRuns": 0,
+  "sourceProjection": 0,
+  "authorValidation": {
+    "capsFIRST2Passed": true,
+    "newMQCertificates": 8,
+    "oldMathRerun": 0,
+    "sharedPatchPreparedOnly": true
+  },
+  "finalIntegrationPinsPending": false
+}
