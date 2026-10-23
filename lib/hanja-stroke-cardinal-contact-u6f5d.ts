@@ -1,0 +1,21 @@
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {reviewedU6f5dContext,makeReviewedU6f5dSourceContext} from './hanja-stroke-start-caps-u6f5d.ts'
+function deepFreeze<T>(v:T):T{if(v&&typeof v==='object'){for(const k of Reflect.ownKeys(v as object)){const d=Object.getOwnPropertyDescriptor(v,k);if(d&&'value'in d)deepFreeze(d.value)}Object.freeze(v)}return v}
+const TARGETS=deepFreeze([{"id":"u6f5d-8-2","pen":8,"mask":2,"segment":{"outline":"M80.75 35.5 L80.75 48.5 L74.75 51.5 L74.75 35.5 Z M74.75 34.5 L77.75 32 L83.25 36.5 L80.75 38.5 L74.75 35.5 Z","bounds":[74.75,32,83.25,51.5],"direction":"down","weight":11},"predecessor":{"outline":"M44.2 34.5 L77.75 34.5 L77.75 36.5 L44.2 36.5 Z","bounds":[44.2,34.5,77.75,36.5],"direction":"right","weight":33.54},"originY":35.5},{"id":"u6f5d-10-2","pen":10,"mask":2,"segment":{"outline":"M59.7 56.5 L59.7 84 L53.7 84 L53.7 56.5 Z M53.7 55.5 L56.7 53 L62.2 57.5 L59.7 59.5 L53.7 56.5 Z M53.7 84 L59.7 84 L58.5 85.8 L56.7 87 L54.9 85.8 Z","bounds":[53.7,53,62.2,87],"direction":"down","weight":27.5},"predecessor":{"outline":"M31.35 55.5 L56.7 55.5 L56.7 57.5 L31.35 57.5 Z","bounds":[31.35,55.5,56.7,57.5],"direction":"right","weight":25.35},"originY":56.5},{"id":"u6f5d-13-2","pen":13,"mask":2,"segment":{"outline":"M91.3 57 L91.3 84 L85.3 84 L85.3 57 Z M85.3 56 L88.3 53.5 L93.8 58 L91.3 60 L85.3 57 Z M85.3 84 L91.3 84 L90.1 85.8 L88.3 87 L86.5 85.8 Z","bounds":[85.3,53.5,93.8,87],"direction":"down","weight":27},"predecessor":{"outline":"M63.7 56 L88.3 56 L88.3 58 L63.7 58 Z","bounds":[63.7,56,88.3,58],"direction":"right","weight":24.57},"originY":57}] as const)
+const CONTEXT=Object.freeze({id:'u6f5d-original-cardinal-contact' as const})
+export type ReviewedU6f5dCardinalContext=typeof CONTEXT
+const POLICIES=TARGETS.map(t=>Object.freeze({...t,kind:'cardinal-contact-prefix-u6f5d' as const}))
+export type ReviewedU6f5dCardinalPolicy=typeof POLICIES[number]
+function same(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);return ak.length===bk.length&&bk.every(k=>{const x=Object.getOwnPropertyDescriptor(a,k),y=Object.getOwnPropertyDescriptor(b,k);return!!x&&!!y&&'value'in x&&'value'in y&&x.enumerable===y.enumerable&&same(x.value,y.value)})}
+export function reviewedU6f5dCardinalContext(strokes:HanjaOutlineStrokes):ReviewedU6f5dCardinalContext|null{return reviewedU6f5dContext(strokes)?CONTEXT:null}
+export function makeReviewedU6f5dCardinalSourceContext(proof:unknown,identity:unknown,strokes:HanjaOutlineStrokes):ReviewedU6f5dCardinalContext|null{return makeReviewedU6f5dSourceContext(proof,identity,strokes)?CONTEXT:null}
+export function reviewedU6f5dCardinalPolicy(context:ReviewedU6f5dCardinalContext|null,pen:number,mask:number):ReviewedU6f5dCardinalPolicy|null{return context===CONTEXT?POLICIES.find(t=>t.pen===pen+1&&t.mask===mask+1)??null:null}
+/** Source direction/weight remain fixed; display clip expands from the connected H origin. */
+export function sampleReviewedU6f5dCardinalFrame(policy:ReviewedU6f5dCardinalPolicy,segment:HanjaOutlineSegment,p:number,previousMaskProgress:number){
+ if(!POLICIES.includes(policy)||!same(segment,policy.segment))throw Error('Exact 潝 original cardinal target required')
+ if(![p,previousMaskProgress].every(Number.isFinite)||p<0||p>1||previousMaskProgress<0||previousMaskProgress>1)throw Error('Finite 潝 progress required')
+ if(p>0&&previousMaskProgress!==1)throw Error('Completed opaque original 潝 H predecessor required')
+ const b=policy.segment.bounds,y=policy.originY-(policy.originY-b[1])*p,bottom=policy.originY+(b[3]-policy.originY)*p
+ return Object.freeze({policyId:policy.id,progress:p,previousMaskProgress,phase:p===0?'empty' as const:p===1?'full' as const:'contact-prefix' as const,visible:p>0,originalPDirect:p===1,clip:p===0||p===1?null:Object.freeze({x:b[0],y,width:b[2]-b[0],height:bottom-y}),requiresCompletedOriginalPredecessor:true as const,UARead:false as const})
+}
+export const REVIEWED_U6F5D_CARDINAL=Object.freeze({pens:Object.freeze([8,10,13]),mask:2,sourceFieldsUnchanged:true,sourceOuterClockChanged:false,newDisplayClipLaw:true,nativeApproval:false,runtimeApplied:false})
