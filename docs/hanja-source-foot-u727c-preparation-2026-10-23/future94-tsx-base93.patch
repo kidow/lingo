@@ -1,0 +1,107 @@
+--- a/components/hanja/stroke-outlines.tsx
++++ b/components/hanja/stroke-outlines.tsx
+@@ -1,6 +1,7 @@
+ import { reviewedU61f0Context, reviewedU61f0Policy, commitReviewedU61f0Caps, type ReviewedU61f0Policy } from '@/lib/hanja-stroke-start-caps-u61f0'
+ import { reviewedU61f0FootContext, reviewedU61f0FootPolicy, measureReviewedU61f0FootFrame, commitReviewedU61f0FootMask, type ReviewedU61f0FootPolicy } from '@/lib/hanja-stroke-source-foot-u61f0'
+ import { reviewedU8fc5Context, reviewedU8fc5Policy, commitReviewedU8fc5Caps, type ReviewedU8fc5Policy } from '@/lib/hanja-stroke-start-caps-u8fc5'
++import { reviewedU727cContext, reviewedU727cPolicy, commitReviewedU727cCaps, type ReviewedU727cPolicy } from '@/lib/hanja-stroke-start-caps-u727c'
+ import { reviewedU785cT23Context as reviewedU785cContext, reviewedU785cT23Policy as reviewedU785cPolicy, commitReviewedU785cT23Caps as commitReviewedU785cCaps, type ReviewedU785cT23Policy as ReviewedU785cPolicy } from '@/lib/hanja-stroke-start-caps-u785c-t23'
+ import { reviewedU8fc5TailContext, reviewedU8fc5TailFrame, type ReviewedU8fc5TailContext } from '@/lib/hanja-stroke-original-up-tail-u8fc5'
+ import { commitReviewedU8fc5Tail } from '@/lib/hanja-stroke-original-up-tail-dom-u8fc5'
+@@ -71,6 +72,7 @@
+ import { reviewedU82fdContext, reviewedU82fdPolicy, commitReviewedU82fdCaps, type ReviewedU82fdPolicy } from '@/lib/hanja-stroke-start-gate-u82fd'
+ import { reviewedU6f90Context, reviewedU6f90Policy, commitReviewedU6f90Caps, type ReviewedU6f90Policy } from '@/lib/hanja-stroke-start-gate-u6f90'
+ import { reviewedU6f90FootContext, reviewedU6f90FootPolicy, measureReviewedU6f90FootFrame, commitReviewedU6f90FootMask, type ReviewedU6f90FootPolicy } from '@/lib/hanja-stroke-source-foot-u6f90'
++import { reviewedU727cFootContext, reviewedU727cFootPolicy, measureReviewedU727cFootFrame, commitReviewedU727cFootMask, type ReviewedU727cFootPolicy } from '@/lib/hanja-stroke-source-foot-u727c'
+ import { reviewedU785cT23FootContext as reviewedU785cFootContext, reviewedU785cT23FootPolicy as reviewedU785cFootPolicy, measureReviewedU785cT23FootFrame as measureReviewedU785cFootFrame, commitReviewedU785cT23FootMask as commitReviewedU785cFootMask, type ReviewedU785cT23FootPolicy as ReviewedU785cFootPolicy } from '@/lib/hanja-stroke-source-foot-u785c-t23'
+ import { reviewedU7e58Context, reviewedU7e58Policy, commitReviewedU7e58Caps, type ReviewedU7e58Policy } from '@/lib/hanja-stroke-start-caps-u7e58'
+ import { reviewedU995fContext, reviewedU995fPolicy, commitReviewedU995fCaps, type ReviewedU995fPolicy } from '@/lib/hanja-stroke-start-caps-u995f'
+@@ -124,6 +126,7 @@
+   const u7e58Context = reviewedU7e58Context(strokes)
+   const u995fContext = reviewedU995fContext(strokes)
+   const u6f90FootContext = reviewedU6f90FootContext(strokes)
++  const u727cFootContext = reviewedU727cFootContext(strokes)
+   const u785cFootContext = reviewedU785cFootContext(strokes)
+   const u7e58FootContext = reviewedU7e58FootContext(strokes)
+   const u995fFootContext = reviewedU995fFootContext(strokes)
+@@ -178,6 +181,7 @@
+   const u61f0Context = reviewedU61f0Context(strokes)
+   const u61f0FootContext = reviewedU61f0FootContext(strokes)
+   const u8fc5Context = reviewedU8fc5Context(strokes)
++  const u727cContext = reviewedU727cContext(strokes)
+   const u785cContext = reviewedU785cContext(strokes)
+   const u8fc5TailContext = reviewedU8fc5TailContext(strokes)
+   const u7cbbContext = reviewedU7cbbContext(strokes)
+@@ -257,6 +261,8 @@
+         if (u995fPolicy) return <U995fCapsOutline key={index} policy={u995fPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={`${id}-${stroke}-${index}`} />
+         const u6f90FootPolicy = reviewedU6f90FootPolicy(u6f90FootContext, stroke, index)
+         if (u6f90FootPolicy) return <U6f90FootOutline key={index} policy={u6f90FootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
++        const u727cFootPolicy = reviewedU727cFootPolicy(u727cFootContext, stroke, index)
++        if (u727cFootPolicy) return <U727cFootOutline key={index} policy={u727cFootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+         const u785cFootPolicy = reviewedU785cFootPolicy(u785cFootContext, stroke, index)
+         if (u785cFootPolicy) return <U785cFootOutline key={index} policy={u785cFootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+         const u6f90Policy = reviewedU6f90Policy(u6f90Context, stroke, index)
+@@ -340,6 +346,8 @@
+         if (u5092FootPolicy) return <U5092FootOutline key={index} policy={u5092FootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+         const u5092Policy = reviewedU5092Policy(u5092Context, stroke, index)
+         if (u5092Policy) return <U5092CapsOutline key={index} policy={u5092Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
++        const u727cPolicy = reviewedU727cPolicy(u727cContext, stroke, index)
++        if (u727cPolicy) return <U727cCapsOutline key={index} policy={u727cPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+         const u785cPolicy = reviewedU785cPolicy(u785cContext, stroke, index)
+         if (u785cPolicy) return <U785cCapsOutline key={index} policy={u785cPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+         const u61f0FootPolicy = reviewedU61f0FootPolicy(u61f0FootContext, stroke, index)
+@@ -620,6 +628,24 @@
+   </g>
+ }
+ 
++function U727cCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU727cPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
++  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
++  useLayoutEffect(()=>commitReviewedU727cCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current}).cleanup,[policy,segment,progress,clipId])
++  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
++  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u727c-progress={String(progress)} data-u727c-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
++    <defs>
++      <path ref={measurement} id={clipId+'-u727c-measure'} data-growing-owner={clipId} data-u727c-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
++      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0}/></mask>
++      <mask id={clipId+'-u727c-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
++        <path ref={guide} id={clipId+'-u727c-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/>
++        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/>
++      </mask>
++    </defs>
++    {valid&&progress===1&&<path data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'}/>}
++    {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u727c-growing)'} visibility="hidden"/>}
++  </g>
++}
++
+ function U785cCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU785cPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+   const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+   useLayoutEffect(()=>commitReviewedU785cCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current}).cleanup,[policy,segment,progress,clipId])
+@@ -1436,6 +1462,29 @@
+  </g>
+ }
+ 
++function U727cFootOutline({
++  clipId,segment,progress,policy,
++}:{clipId:string;segment:HanjaOutlineSegment;progress:number;policy:ReviewedU727cFootPolicy}){
++ const inkRef=useRef<SVGPathElement>(null),footRef=useRef<SVGPathElement>(null),bodyRef=useRef<SVGPathElement>(null),rectRef=useRef<SVGRectElement>(null),measurementRef=useRef<SVGPathElement>(null)
++ useLayoutEffect(()=>{
++  const nodes={ink:inkRef.current,foot:footRef.current,body:bodyRef.current,rect:rectRef.current,measurement:measurementRef.current}
++  try{commitReviewedU727cFootMask(nodes,measureReviewedU727cFootFrame(policy,progress,nodes.measurement))}catch{nodes.ink?.setAttribute('visibility','hidden');nodes.foot?.setAttribute('visibility','hidden');nodes.body?.setAttribute('visibility','hidden')}
++  return()=>{nodes.ink?.setAttribute('visibility','hidden');nodes.foot?.setAttribute('visibility','hidden');nodes.body?.setAttribute('visibility','hidden')}
++ },[policy,progress,clipId])
++ const b=segment.bounds,maskId=clipId+'-u727c-foot-foot-x-mask',bodyId=clipId+'-u727c-foot-body-clip'
++ return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={progress}>
++  <defs>
++   <path ref={measurementRef} id={clipId+'-u727c-foot-measure'} data-u727c-foot-measurement="true" d={segment.revealPath} fill="none" stroke="none" />
++   <clipPath id={bodyId} clipPathUnits="userSpaceOnUse"><rect ref={rectRef} id={clipId+'-u727c-foot-rect'} x={b[0]} y={b[1]} width={0} height={b[3]-b[1]} /></clipPath>
++   <mask id={maskId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
++    <path ref={footRef} id={clipId+'-u727c-foot-foot'} data-u727c-foot-foot="true" d="" fill="white" fillRule="nonzero" stroke="none" visibility="hidden" />
++    <path ref={bodyRef} id={clipId+'-u727c-foot-body'} data-u727c-foot-body="true" d={segment.outline} fill="white" fillRule="nonzero" stroke="none" clipPath={'url(#'+bodyId+')'} visibility="hidden" />
++   </mask>
++  </defs>
++  <path ref={inkRef} id={clipId+'-u727c-foot-ink'} data-owner={clipId} data-u727c-foot-ink="true" d={segment.outline} mask={'url(#'+maskId+')'} visibility="hidden" />
++ </g>
++}
++
+ function U785cFootOutline({
+   clipId,segment,progress,policy,
+ }:{clipId:string;segment:HanjaOutlineSegment;progress:number;policy:ReviewedU785cFootPolicy}){
