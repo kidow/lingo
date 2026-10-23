@@ -1,0 +1,30 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-board.py
+@@
+             and base.get('launcherSHA256')==config['launcher']['SHA256'])
+ 
+ 
++def exact_u6705_new_launcher(config,base):
++    # One exact original18raw19calls37P whole captured from the same pinned engine8.
++    selected=base.get('sourceRoots',{}).get('selected',{})
++    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':"c7f2ffb34eefbdc889a1016ece7c756258542655c662d45ffa84f822d0c7387f"}
++            and config.get('baseConfig')=={'path':"docs/hanja-source-raw-compare-u6705-2026-10-23/config.json",'SHA256':"e9bc71d1de6e9e934761e991023c7ba2a2cf452e929f34d57ca9fc2f455a08a1"}
++            and base.get('glyph')=='朅' and base.get('catalogStrokes')==14
++            and list(base.get('sourceRoots',{}))==['selected']
++            and selected=={"root":"u6705","file":"docs/hanja-source-raw-compare-u6705-2026-10-23/engine-whole-u6705.json","fileSHA256":"9ed7129b5a50de139bce4fc494c2e216807d54c8f670f24f7a7b3988eb3b4675","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u6705","sourceProofFile":"engine-whole-u6705.json","sourceProofFileSha256":"9ed7129b5a50de139bce4fc494c2e216807d54c8f670f24f7a7b3988eb3b4675"},"rawGroups":18,"drawingCalls":19,"polygonCounts":[3,3,2,2,2,2,1,1,2,1,1,3,1,4,3,2,2,2],"polygons":37}
++            and base.get('launcherSHA256')==config['launcher']['SHA256'])
++
++
+ def main():
+     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
+     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
+@@
+     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
+     base_path = fixed_path(config['baseConfig']['path'])
+     base = json.loads(base_path.read_bytes())
+-    require(legacy_launcher or exact_u727c_new_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
++    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_new_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
+     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
+     validate_groups(config['provisionalGroups'], base)
+ 
+*** End Patch

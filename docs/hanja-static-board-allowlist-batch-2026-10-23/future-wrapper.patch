@@ -1,0 +1,52 @@
+*** Begin Patch
+*** Update File: scripts/hanja-raw-static-board.py
+@@
+             and base.get('launcherSHA256')==config['launcher']['SHA256'])
+ 
+ 
++def exact_u6705_prepared_launcher(config,base):
++    # Exact u6705 actual-full5 source/base pin only; renderer and source guards remain unchanged.
++    selected=base.get('sourceRoots',{}).get('selected',{})
++    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':"c7f2ffb34eefbdc889a1016ece7c756258542655c662d45ffa84f822d0c7387f"}
++            and config.get('baseConfig')=={'path':"docs/hanja-source-raw-compare-u6705-2026-10-23/config.json",'SHA256':"e9bc71d1de6e9e934761e991023c7ba2a2cf452e929f34d57ca9fc2f455a08a1"}
++            and base.get('glyph')=="朅" and base.get('catalogStrokes')==14
++            and list(base.get('sourceRoots',{}))==['selected']
++            and selected=={"root":"u6705","file":"docs/hanja-source-raw-compare-u6705-2026-10-23/engine-whole-u6705.json","fileSHA256":"9ed7129b5a50de139bce4fc494c2e216807d54c8f670f24f7a7b3988eb3b4675","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u6705","sourceProofFile":"engine-whole-u6705.json","sourceProofFileSha256":"9ed7129b5a50de139bce4fc494c2e216807d54c8f670f24f7a7b3988eb3b4675"},"rawGroups":18,"drawingCalls":19,"polygonCounts":[3,3,2,2,2,2,1,1,2,1,1,3,1,4,3,2,2,2],"polygons":37}
++            and base.get('launcherSHA256')==config['launcher']['SHA256'])
++
++
++def exact_u7c67_prepared_launcher(config,base):
++    # Exact u7c67 actual-full5 source/base pin only; renderer and source guards remain unchanged.
++    selected=base.get('sourceRoots',{}).get('selected',{})
++    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':"c7f2ffb34eefbdc889a1016ece7c756258542655c662d45ffa84f822d0c7387f"}
++            and config.get('baseConfig')=={'path':"docs/hanja-source-raw-compare-u7c67-2026-10-23/config.json",'SHA256':"a997df7fd29a5a8725e0296d34fa69ee13568ab469dde7f1671f062ea60d34dc"}
++            and base.get('glyph')=="籧" and base.get('catalogStrokes')==23
++            and list(base.get('sourceRoots',{}))==['selected']
++            and selected=={"root":"u7c67","file":"docs/hanja-source-raw-compare-u7c67-2026-10-23/engine-whole-u7c67.json","fileSHA256":"67be1942eaa84b04bd30b6384ab2edbd1f3124f5a1264577d2eb42f983ca3756","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u7c67","sourceProofFile":"engine-whole-u7c67.json","sourceProofFileSha256":"67be1942eaa84b04bd30b6384ab2edbd1f3124f5a1264577d2eb42f983ca3756"},"rawGroups":26,"drawingCalls":30,"polygonCounts":[3,2,2,3,2,2,2,2,1,2,3,2,2,1,4,1,1,3,2,2,2,1,2,3,2,8],"polygons":60}
++            and base.get('launcherSHA256')==config['launcher']['SHA256'])
++
++
++def exact_u7d8c_prepared_launcher(config,base):
++    # Exact u7d8c actual-full5 source/base pin only; renderer and source guards remain unchanged.
++    selected=base.get('sourceRoots',{}).get('selected',{})
++    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':"bcefa6073be1d338ad17cf72e1a23456e2fd12c15c0296915925243695ad92f2"}
++            and config.get('baseConfig')=={'path':"docs/hanja-source-raw-compare-u7d8c-2026-10-23/config.json",'SHA256':"fcc0ef1aec732f5fb3bf0b71ca806d9cb5fd3ee7b54032fe2127b0d52e3a99d3"}
++            and base.get('glyph')=="綌" and base.get('catalogStrokes')==13
++            and list(base.get('sourceRoots',{}))==['selected']
++            and selected=={"root":"u7d8c","file":"docs/hanja-source-raw-compare-u7d8c-2026-10-23/engine-whole-u7d8c.json","fileSHA256":"d025868602d7d0e1de4a06676126549ba88bd304e3d1695098b85d673b1d6713","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u7d8c","sourceProofFile":"engine-whole-u7d8c.json","sourceProofFileSha256":"d025868602d7d0e1de4a06676126549ba88bd304e3d1695098b85d673b1d6713"},"rawGroups":17,"drawingCalls":16,"polygonCounts":[3,2,3,3,2,1,3,2,0,3,2,3,2,1,1,2,1],"polygons":34}
++            and base.get('launcherSHA256')==config['launcher']['SHA256'])
++
++
+ def main():
+     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
+     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
+@@
+     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
+     base_path = fixed_path(config['baseConfig']['path'])
+     base = json.loads(base_path.read_bytes())
+-    require(legacy_launcher or exact_u727c_new_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
++    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
+     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
+     validate_groups(config['provisionalGroups'], base)
+ 
+*** End Patch
