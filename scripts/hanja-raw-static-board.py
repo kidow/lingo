@@ -266,6 +266,16 @@ def exact_u9d25_prepared_launcher(config,base):
             and selected=={"root":"u9d25","file":"docs/hanja-goal-glyphwiki-batch798-2026-10-13/engine-whole-u9d25.json","fileSHA256":"188aa697b354779ac0c83b68a5bdb934c178bb6495dab1272373aafe7f81e630","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u9d25","sourceProofFile":"engine-whole-u9d25.json","sourceProofFileSha256":"188aa697b354779ac0c83b68a5bdb934c178bb6495dab1272373aafe7f81e630"},"rawGroups":20,"drawingCalls":21,"polygonCounts":[3,1,1,2,1,1,2,1,4,2,2,2,2,2,2,1,2,2,2,3],"polygons":38}
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
+def exact_u8fe8_prepared_launcher(config,base):
+    # Exact original base13 full5 / unapproved 台5・辶4 static hypothesis only.
+    selected=base.get('sourceRoots',{}).get('selected',{})
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"bcefa6073be1d338ad17cf72e1a23456e2fd12c15c0296915925243695ad92f2"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u8fe8-2026-10-24/config.json","SHA256":"16f54696be367ee3b8f6de3e824b73e35d46a29a2dd416ef7561808932c518b0"}
+            and base.get('glyph')=='迨' and base.get('catalogStrokes')==9
+            and list(base.get('sourceRoots',{}))==['selected']
+            and selected=={"root":"u8fe8","file":"docs/hanja-source-raw-compare-u8fe8-2026-10-24/engine-whole-u8fe8.json","fileSHA256":"b761033f1011dae76fe3d30324ddae06448954c52a583305ee2ee085f21f80b1","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u8fe8","sourceProofFile":"engine-whole-u8fe8.json","sourceProofFileSha256":"b761033f1011dae76fe3d30324ddae06448954c52a583305ee2ee085f21f80b1"},"rawGroups":13,"drawingCalls":13,"polygonCounts":[2,2,1,2,3,2,3,3,2,1,1,2,1],"polygons":25}
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def exact_u6d8f_prepared_launcher(config,base):
     # Exact 涏 full5 and new unapproved10-row static hypothesis only.
     selected=base.get('sourceRoots',{}).get('selected',{})
@@ -295,7 +305,7 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
-    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base) or exact_u95e5_prepared_launcher(config,base) or exact_u852d_k_prepared_launcher(config,base) or exact_u8aed_k_prepared_launcher(config,base) or exact_u9d25_prepared_launcher(config,base) or exact_u6d8f_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
+    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base) or exact_u95e5_prepared_launcher(config,base) or exact_u852d_k_prepared_launcher(config,base) or exact_u8aed_k_prepared_launcher(config,base) or exact_u9d25_prepared_launcher(config,base) or exact_u6d8f_prepared_launcher(config,base) or exact_u8fe8_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
     validate_groups(config['provisionalGroups'], base)
 

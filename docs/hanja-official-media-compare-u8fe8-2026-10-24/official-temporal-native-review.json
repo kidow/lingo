@@ -1,0 +1,193 @@
+{
+  "schema": "hanja-original-media-temporal-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "迨",
+  "sourceRoot": "u8fe8",
+  "config": {
+    "file": "docs/hanja-official-media-compare-u8fe8-2026-10-24/config.json",
+    "SHA256": "e7648d4882c58e8105842cddd7631af2f1c3daaa8ae470419be0d10070c13edd"
+  },
+  "metadata": {
+    "file": "docs/hanja-official-media-compare-u8fe8-2026-10-24/metadata.json",
+    "SHA256": "0fc097f45f394f3316c18b12524300a3d447693ff134f27a95d64fa6cf2fe026"
+  },
+  "originalSVG": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/8f00/8fe8.svg",
+    "bytes": 4795,
+    "sha256": "f738ccc59d5ec78a101eae8399c428160e1e9778479c60b0ac547c13bbeede5d"
+  },
+  "originalCSS": {
+    "url": "http://img.e-hanja.kr/hanjaSvg/aniSVG/libs/opmGna.svg.ani.min.css",
+    "bytes": 804,
+    "sha256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18"
+  },
+  "observedBy": "ROOT browser panel",
+  "scope": "Original controlled SVG/CSS all nine strokes at three finite fractions; mapping and source-geometry approval separate.",
+  "strokes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "fractions": [
+    0.1,
+    0.5,
+    0.75
+  ],
+  "freshScreens": 29,
+  "result": "PASS within original-media observation scope",
+  "observations": {
+    "macroDirections": [
+      {
+        "stroke": 1,
+        "direction": "down-left then rising right as one fold"
+      },
+      {
+        "stroke": 2,
+        "direction": "dot down-right"
+      },
+      {
+        "stroke": 3,
+        "direction": "down"
+      },
+      {
+        "stroke": 4,
+        "direction": "right then down"
+      },
+      {
+        "stroke": 5,
+        "direction": "right"
+      },
+      {
+        "stroke": 6,
+        "direction": "dot down-right"
+      },
+      {
+        "stroke": 7,
+        "direction": "dot down-right"
+      },
+      {
+        "stroke": 8,
+        "direction": "right then down only"
+      },
+      {
+        "stroke": 9,
+        "direction": "short rising-right then down-right curve into right horizontal as one stroke"
+      }
+    ],
+    "sourceTimingOrder": "Original clips U8FE8c1..c9 and inline --d ascending agree.",
+    "rejectedFirstProvisionalBoundary": {
+      "old8Zero": [
+        2,
+        3,
+        4
+      ],
+      "old9Zero": [
+        5
+      ],
+      "reason": "Original media stroke8 ends after H-to-V; original raw4 (zero-based) belongs to proposed stroke9 rather than stroke8."
+    },
+    "exactMicroTimingDerivativeProved": false,
+    "stroke9DirectionCorrection": {
+      "withdrawnInitialDescription": "short down-left; .1 screenshot already showed the entire short slant and did not prove its start direction",
+      "additionalROOTNativeFrames": [
+        {
+          "stroke": 9,
+          "fraction": 0,
+          "observed": "no red anywhere"
+        },
+        {
+          "stroke": 9,
+          "fraction": 0.05,
+          "observed": "entire short slant red; following curve still pale"
+        }
+      ],
+      "additionalReadySingleOriginalAttributesUnchanged": true,
+      "additionalErrors": [],
+      "startDirectionByImageAlone": false,
+      "originalPath": {
+        "d": "M126 -17L197 53L268 50L423 -24L862 -48L939 -3",
+        "pathLength": "1169",
+        "parentTransform": "scale(1,-1) translate(0, -879)",
+        "screenStart": [
+          126,
+          896
+        ],
+        "screenFirstEnd": [
+          197,
+          826
+        ],
+        "screenFirstDelta": [
+          71,
+          -70
+        ],
+        "direction": "up-right"
+      },
+      "originalSourceRaw5Q": {
+        "start": [
+          16,
+          179
+        ],
+        "control": [
+          35,
+          168
+        ],
+        "end": [
+          55,
+          154
+        ],
+        "direction": "up-right",
+        "initialDirectionMatches": true
+      },
+      "originalSVGBytePinMatched": true,
+      "localRAMReads": 2,
+      "externalFetches": 0,
+      "savedMedia": 0,
+      "additionalNativeScreens": 2,
+      "exactMicroTimingEquivalence": false
+    }
+  },
+  "sourceAttributesUnchanged": true,
+  "ready": true,
+  "oneSelected": true,
+  "errors": [],
+  "authorFetches": 1,
+  "authorCSSFetches": 0,
+  "authorServer": 0,
+  "savedMedia": 0,
+  "originalSourceContactApproved": false,
+  "sourceGeometryApproved": false,
+  "actualProductBrowserApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "launcher": {
+    "path": "scripts/hanja-official-media-compare.py",
+    "SHA256": "8c0d30263a5cf44a457dfc7df84460159caad7e84cf8d33d50fb759eaffc8559"
+  },
+  "server": {
+    "PID": 75458,
+    "session": 72413,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 86,
+    "tabClosed": true,
+    "RAMFetches": 2
+  },
+  "first27ScreensPreserved": true,
+  "additionalToFirst27": {
+    "stroke": 9,
+    "fractions": [
+      0,
+      0.05
+    ],
+    "screens": 2,
+    "observedBy": "ROOT browser panel",
+    "serverLifecycle": "ROOT managed separately; original first27 server record retained"
+  }
+}
