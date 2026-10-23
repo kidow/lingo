@@ -1,0 +1,143 @@
+{
+  "schema": "hanja-original-source-own-future-integration/v1",
+  "root": "u6705",
+  "glyph": "朅",
+  "baseSharedVersion": 95,
+  "draftSharedVersion": 96,
+  "versionReserved": false,
+  "rebaseRequired": true,
+  "rebaseReason": "C owns the next shared version after95; this draft must be rebased to the eventual actual C snapshot and assigned a later version before ROOT exclusive apply.",
+  "sharedBaseSHA256": {
+    "component": "c1d2e6acc03ae561c1b53af7c086b809297b478c82b4ec5560772e657623235b",
+    "helper": "11df96e5029d82dfdf622c823f9846020d7f764dc2bc16f32a253e799c391bd7"
+  },
+  "futureSHA256": {
+    "component": "e087beae352a89d5a5ecabdb4ece608e4cde984352f70548f352852ab95ae21d",
+    "helper": "cc75666e1ab5e81c325a81ed04c93d1526d93e9659e7e090c991b5deaaa4729f"
+  },
+  "profileDraft": {
+    "path": "docs/hanja-source-u6705-integration-preparation-2026-10-23/u6705-1.json",
+    "sha256": "e1480d65035f0aeb573bdcce5360770fd0cc7992f8926ef4fdafbb66ad536b4c",
+    "promotedPath": "docs/hanja-actual-component-profiles-2026-10-22/u6705-1.json",
+    "CLIRegexCompatible": true,
+    "profileFinalized": false,
+    "executionEnabled": false,
+    "sharedWindowPending": true
+  },
+  "targets": {
+    "caps": 7,
+    "originalLEFTComposite": 1,
+    "sourceFoot": 1,
+    "footPriority": [
+      [
+        4,
+        2
+      ]
+    ],
+    "initialCapsCertificates": 8,
+    "pen11CertificateUsedInsideComposite": true
+  },
+  "source": {
+    "fixtureSHA256": "a4414ed12632efcd34934856579a5c45941631bf27d16e5069101e1f443b327f",
+    "geometrySHA256": "29cffb3c3ddc0456d34e0fe55b9ffa966cff7470f47d6e80a5f729e545524c4d",
+    "pens": 14,
+    "masks": 15,
+    "polygons": 37,
+    "originalGuideWidthWeightPUnchanged": true,
+    "internalFootAndLEFTClocksExplicit": true
+  },
+  "focusedFutureWire": {
+    "firstAttempt": "AST/helper/component/browser + strict fixed source and target field fingerprints PASS, then actual resource mapper rejected one missing input pin lib/hanja-stroke-source-foot-u6705.ts; zero module transpiles/SSR/native before failure.",
+    "correction": "Added only the committed exact source-foot module inputSHA256. Resumed from mapper; successful pre-mapper assertions not repeated.",
+    "correctedMapperTail": "PASS",
+    "durationSeconds": 0.230803875,
+    "actualResourceMapper": true,
+    "newResourceClosure": 113,
+    "newModulesCJS": 4,
+    "newModulesESM": 4,
+    "oldModulesRetranspiled": 0,
+    "unknownImports": [],
+    "actualFixtureSerializer": true,
+    "actualSetupControls": 131,
+    "actualRhoCallbacks": 24,
+    "originalFirstLineCallbacks": 9,
+    "actualNamespaces": 33,
+    "admissionPositive": 1,
+    "admissionForeignNegative": 1
+  },
+  "actualSerializedWholeSetupFirst": {
+    "result": "PASS",
+    "durationSeconds": 0.087573083,
+    "controls": 177,
+    "natural8sec": true,
+    "pause": true,
+    "resume": true,
+    "first30Present": true,
+    "oldMapperOrMathRerun": 0
+  },
+  "finiteNativePlan": {
+    "firstTranche": {
+      "capsInitial": 16,
+      "footLocal": 8,
+      "footBodyBoundary": 3,
+      "bodyLEFTBoundary": 3,
+      "total": 30
+    },
+    "conditionalExpanded": {
+      "residual": 8,
+      "footCoverage": 1,
+      "rho": 24,
+      "sourceBoundary": 3,
+      "firstL": 9,
+      "compact": 14,
+      "fine": 4,
+      "naturalEarlyEnd": 6,
+      "doneWhole": 1,
+      "total": 70
+    },
+    "allFiniteScopes": 100
+  },
+  "priorEvidenceReuse": {
+    "officialScreens": 42,
+    "staticScreens": 16,
+    "nativeActualComponentScreens": 0,
+    "notNativeApproval": true
+  },
+  "sourceMathRerun": 0,
+  "sourceGeometryCompilerRerun": 0,
+  "SSR": 0,
+  "HTTP": 0,
+  "servers": 0,
+  "sharedApplied": false,
+  "registered": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "commitByROOTOnly": true,
+  "files": {
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/future-tsx-base95.patch": {
+      "sha256": "0c06d6566f75fe6b617ebdb7747270773d95a18acda7f7ea78d04b5fd9fb8d0a",
+      "bytes": 11959
+    },
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/future-helper-base95.patch": {
+      "sha256": "5348a698d9a28e2fa9309fba0e91dc55258de4702d5c4d2106e82417dde685a6",
+      "bytes": 85971
+    },
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/u6705-1.json": {
+      "sha256": "e1480d65035f0aeb573bdcce5360770fd0cc7992f8926ef4fdafbb66ad536b4c",
+      "bytes": 42325
+    },
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/first30-controls.json": {
+      "sha256": "81dfe4bc351220ab6e03747e678eb378a7c35a4539c5e3a339b387c813e253cd",
+      "bytes": 3548
+    },
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/verify-future-wire.mjs": {
+      "sha256": "e9f51d0342e2e19d7cd2c19a97c5086b398cf9271599d8ce50566e7a795cd9aa",
+      "bytes": 8577
+    },
+    "docs/hanja-source-u6705-integration-preparation-2026-10-23/verify-natural-entry.mjs": {
+      "sha256": "a0e709ceb3057193611eafe95d78b6938cb9dae4e563c8bad1240c135ca72483",
+      "bytes": 2895
+    }
+  }
+}
+
