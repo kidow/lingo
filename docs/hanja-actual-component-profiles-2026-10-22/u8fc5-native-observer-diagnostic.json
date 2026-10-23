@@ -1,0 +1,76 @@
+{
+  "schema": "hanja-actual-component-native-observer-diagnostic/v1",
+  "glyph": "迅",
+  "root": "u8fc5-ue0102",
+  "reviewedAt": "2026-10-23",
+  "observer": "/root",
+  "sourceProfile": "docs/hanja-actual-component-profiles-2026-10-22/u8fc5-1.json",
+  "observedProfileSHA256": "0520c4d5e45a7f833a8dabb91aa868cbfd36a4f30a4ca1d5234f27959c6fe696",
+  "helperSHA256": "7ff99eb29769af37b3952566e6c9dc32dba8a56d0cb59b7846cbec090fe78336",
+  "componentSHA256": "a8f49e543e6c4b12158169eb11daf8df19b639a5242d2816d2b16a56310590e2",
+  "native": {
+    "retainedVisualScreens": 22,
+    "observations": [
+      {
+        "scope": "8 target local epsilon",
+        "screens": 8,
+        "result": "Previous large initial fragments absent; pen1 bad[]; seven caps sameNativeFrame false."
+      },
+      {
+        "scope": "8 target local .03",
+        "screens": 8,
+        "result": "Visible progression; retained unchanged-renderer observations."
+      },
+      {
+        "scope": "pen1 actual complete composite mask residual",
+        "screens": 1,
+        "fullyVisible": true,
+        "result": "WHITE with thin antialiasing edges; old black lower-right hook absent."
+      },
+      {
+        "scope": "pen1 body/UP phase boundary and positive UP prefixes",
+        "screens": 5,
+        "positions": [
+          "share-1e-10",
+          "share",
+          "share+1e-10",
+          "share+(1-share)*1e-6",
+          "share+(1-share)*.5"
+        ],
+        "result": "Connected, no jump, bad[]."
+      }
+    ]
+  },
+  "observerFailure": {
+    "affectedTargets": 7,
+    "flag": "sameNativeFrame",
+    "rootCause": "Profile targets omitted q0. Generic readCapsTarget reads t.q0[0] after radius checks; undefined access is caught and changes sameNativeFrame to false.",
+    "classification": "review-state error",
+    "rendererFailureInferred": false,
+    "ULPToleranceChanged": false,
+    "repair": "Add exact original guide M coordinates to the eight profile targets only.",
+    "correctedProfileSHA256": "cbd70e0cb00178383ba7c35b42d1fdda2b87f9fd59cb31f5f30b43cca4da32d0",
+    "focusedExactQ0Targets": 8,
+    "stateRecheckPending": true
+  },
+  "reuseScope": {
+    "rendererUnchanged": true,
+    "sourceUnchanged": true,
+    "helperUnchanged": true,
+    "retainedVisualScreens": 22,
+    "correctedStateConfirmedScreens": 0,
+    "sourceTemporalMicroClockApproval": false
+  },
+  "server": {
+    "PID": 12541,
+    "sessionId": 33473,
+    "stopped": true,
+    "exitCode": 130,
+    "emptyTerminationOutput": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "authorNewScreens": 0,
+  "authorSSR": 0,
+  "authorServer": 0
+}
