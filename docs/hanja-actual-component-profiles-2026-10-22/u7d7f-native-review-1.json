@@ -1,0 +1,128 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "絿",
+  "root": "u7d7f-k",
+  "observedBy": "ROOT browser panel",
+  "result": "PASS",
+  "distinctScopes": 79,
+  "finiteScopes": 73,
+  "naturalScopes": 6,
+  "freshScopes": 79,
+  "reusedScopes": 0,
+  "nativeApproval": true,
+  "source": {
+    "fixture": "docs/hanja-source-original-u7d7f-k-2026-10-24/fixtures.json",
+    "geometrySHA256": "dd4b5fdf0e32df563cf23cd3688c1e59cf9d7ea0b5ef2b9438a1f6c3154b5ba5",
+    "originalPens": 13,
+    "originalMasks": 16,
+    "originalPolygons": 38,
+    "originalPGuideWidthWeightUnchanged": true,
+    "originalOuterClockUnchanged": true,
+    "newInternalDisplayClocks": {
+      "foot": [
+        1,
+        2
+      ],
+      "tail": "8m2 original body monotone-Y prefix then original LEFT8 phase"
+    },
+    "newConnector": 0,
+    "newSourceMask": 0
+  },
+  "pins": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7d7f-2.json",
+      "SHA256": "5f700838bda7e7bd8f40ac11fb224e025636cb791d20c7974d65034bd8df2a1e"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "67ef9660a4183b3cc1e7e6bcd88efa6c29c1f0d1f747f3e928f6c9ff4dfddeb5"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "e0eb7e4eb4daecb37f61aacaf094f038d6d2ff096888eb1a9e3c1c87a646ffcc"
+    },
+    "resourceClosure": 137,
+    "sharedVersion": 113
+  },
+  "freshScopeBreakdown": {
+    "capsInitialAndActualBoardCoverage": 30,
+    "sourceFootTwo": 12,
+    "tailYBodyLEFT": 8,
+    "sourceBoundariesOneTwoEight": 9,
+    "compact13NineFramesEach": 13,
+    "doneWhole": 1,
+    "naturalOneTwoEightEarlyEnd": 6
+  },
+  "coverage": {
+    "allCaps10ActualBoardFullyVisible": true,
+    "allCaps10ResidualWhite": true,
+    "footTwoActualCoverageWhiteInterior": true,
+    "tailBodyRectAndCompositeActualCoverageWhiteInterior": true,
+    "thinAAEdgesObserved": true,
+    "pixelEqualityClaim": false
+  },
+  "allFullyVisible": true,
+  "bad": [],
+  "errors": [],
+  "observations": {
+    "caps": "10 epsilon/.03 gradual starts plus10 actual full-board residuals white",
+    "foot": "two original source feet strict contact,6 scopes each; residual thin AA only",
+    "tail": "8m2 epsilon/.03 gradual vertical body; original LEFT boundary3 continuous and mid extension; body and composite residuals thin AA only",
+    "sourceBoundaries": "original pairs1/2/8 before/at/after boundary9 scopes",
+    "compact": "all13 pens each9 stopped frames; gradual direction and completion observed",
+    "natural": [
+      {
+        "pen": 1,
+        "earlyProgress": 0.0585375,
+        "endProgress": 1
+      },
+      {
+        "pen": 2,
+        "earlyProgress": 0.0594,
+        "endProgress": 1
+      },
+      {
+        "pen": 8,
+        "earlyProgress": 0.058425,
+        "endProgress": 1
+      }
+    ]
+  },
+  "finalObservation": {
+    "phase": "natural-ended",
+    "pen": 8,
+    "progress": 1,
+    "bad": [],
+    "errors": [],
+    "originalComplete": true,
+    "fullyVisible": true
+  },
+  "server": {
+    "pid": 41482,
+    "port": 59412,
+    "session": 55776,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 37,
+    "tabClosed": true,
+    "CJS": 137,
+    "ESM": 137,
+    "successfulSSRChecks": 1
+  },
+  "oldFailure": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u7d7f-native-hold-1.json",
+    "SHA256": "1714f3325ddb5f824256949d117f5dbe4d0c6043d50adcb2736504583f8be922",
+    "observedScopes": 6,
+    "approvedScopes": 0,
+    "reusedScopes": 0,
+    "tailWideBodyPopAndObserverWhitelistFailurePreserved": true
+  },
+  "authorSSR": 0,
+  "childScreenshots": 0,
+  "actualAppUI": false,
+  "controllerWorkflow": false,
+  "storageWorkflow": false,
+  "allTimeProof": false,
+  "runtimeApplied": false
+}
