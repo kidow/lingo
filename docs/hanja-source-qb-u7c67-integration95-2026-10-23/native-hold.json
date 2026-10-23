@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-native-visual-hold/v1",
+  "glyph": "籧",
+  "root": "u7c67",
+  "sharedVersion": 95,
+  "profileFile": "docs/hanja-actual-component-profiles-2026-10-22/u7c67-1.json",
+  "profileSHA256": "1fce581f9180546fc2ebcdcaad4584338e0807c99248d5fe000a8e6a7060fe4a",
+  "componentSHA256": "c1d2e6acc03ae561c1b53af7c086b809297b478c82b4ec5560772e657623235b",
+  "helperSHA256": "11df96e5029d82dfdf622c823f9846020d7f764dc2bc16f32a253e799c391bd7",
+  "geometrySHA256": "71dd8ca53d86c8808365b831f3b65df0a6d6b50b22c7a6311ede12740518e287",
+  "firstSSR": {
+    "CJS": 109,
+    "ESM": 109,
+    "engine": 0
+  },
+  "freshUniqueScopes": 30,
+  "uniquePASS": 29,
+  "uniqueFAIL": 1,
+  "failureRecheckImages": 1,
+  "totalFreshImages": 31,
+  "reviewedPens": [
+    1,
+    3,
+    4,
+    6,
+    9,
+    10,
+    12,
+    14,
+    15,
+    16
+  ],
+  "perPenScopes": [
+    "local 0.000001",
+    "local 0.03",
+    "full-round residual"
+  ],
+  "allFullyVisible": true,
+  "surfaceBad": [],
+  "surfaceErrors": [],
+  "visualFailureOverridesSurfaceChecks": true,
+  "failure": {
+    "pen": 15,
+    "mask": 1,
+    "scope": "full-round residual",
+    "observation": "A small black quadrilateral remains at the board bottom, distinctly inside the residual area rather than a thin AA edge. Recheck reproduced the same fragment.",
+    "initialEpsilon": "PASS",
+    "initial03": "PASS",
+    "originalTerminalCauseUnderCodeReview": true
+  },
+  "unreviewedFirstTranchePens": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "conditional110ScopesStarted": false,
+  "first54Completed": false,
+  "server": {
+    "PID": 44872,
+    "session": 89423,
+    "stopped": true,
+    "exitCode": 130,
+    "stdoutEmpty": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registered": false,
+  "sourceOrGeometryChanged": false,
+  "status": "HOLD"
+}
