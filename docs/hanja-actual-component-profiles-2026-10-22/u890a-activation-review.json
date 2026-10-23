@@ -1,0 +1,120 @@
+{
+  "schema": "hanja-runtime-activation-review/v1",
+  "glyph": "褊",
+  "root": "u890a-ue0101",
+  "batch": 1416,
+  "date": "2026-10-24",
+  "preparedBy": "/root/activation1401",
+  "sourceIdentity": {
+    "sourceRoot": "u890a-ue0101",
+    "sourceProofFile": "./engine-proof.json",
+    "sourceProofFileSha256": "31c6869729f506b017683ec2b116b856040af3f40d90630612d8237458cd0854",
+    "sourceCapsuleFile": "./sources.json",
+    "sourceCapsuleFileSha256": "0185884d0a26463aadba3909a51ebdfe97f85bebdc2798aaefd4071fa55d8829",
+    "sourceChecksFile": "../hanja-related-whole-jing-bian-pian-audit-2026-10-14/findings.json",
+    "sourceChecksFileSha256": "6b478fdd93388ed5876b68f8ff5e608a88aa8ddc432fab41ac41c8fa0511d32b"
+  },
+  "sourceFixture": {
+    "path": "docs/hanja-source-original-u890a-vs1-2026-10-24/fixtures.json",
+    "fixtureKey": "u890aVS1",
+    "SHA256": "f2ea5b21eb9f1694f01d64244a81787d3ae5b20415a3a158620e965bb350786f",
+    "geometrySHA256": "18b06c8f75c111a8220750af0c1f429c3fcbb56c12d6a5ad0726bd711dac2707"
+  },
+  "actualFull5": {
+    "path": "docs/hanja-source-original-u890a-vs1-2026-10-24/engine-proof.json",
+    "SHA256": "31c6869729f506b017683ec2b116b856040af3f40d90630612d8237458cd0854",
+    "originalActualEngineCapturePreserved": true
+  },
+  "counts": {
+    "logicalPens": 14,
+    "displayMasks": 15,
+    "originalRawStrokes": 17,
+    "originalEngineCalls": 19,
+    "originalPolygons": 31,
+    "sourceClosure": 3,
+    "engineModules": 8
+  },
+  "nativeEvidence": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u890a-vs1-native-review-1.json",
+    "SHA256": "676a5eb9e1d9f6406acad9bcd0567250ada35e1c0c116dca0ff84ba042a17dd7",
+    "distinctPASS": 53,
+    "distinctFAIL": 0,
+    "finiteScopes": 51,
+    "naturalScopes": 2,
+    "priorHKCSHOLDNotReclassified": true
+  },
+  "officialDirectionEvidence": {
+    "path": "docs/hanja-official-media-compare-u890a-2026-10-24/official-temporal-native-review.json",
+    "SHA256": "7243af8691241581962471c9fba96d71093c6f51f7f34ad23dd66cae0b9b2a6e",
+    "freshExistingFrames": 42,
+    "strokes": 14,
+    "replayedFrames": 0
+  },
+  "staticWholeEvidence": {
+    "path": "docs/hanja-source-raw-compare-u890a-vs1-2026-10-24/native-static-review.json",
+    "SHA256": "1bfadde51b2ed0cd0c0eec268529c9688cc472fb91bbd11856fce578a1a51a2b",
+    "freshExistingScreens": 19,
+    "originalRawSingles": 17,
+    "separateWhole": 2,
+    "explicitDomestic14Map": true,
+    "temporalApproval": false,
+    "replayedScreens": 0
+  },
+  "displayCorrections": {
+    "initialCaps": 7,
+    "sourceFoot": [],
+    "originalLEFT11AlreadySeparate": true,
+    "bodyToOriginalLEFTBoundary": 0.9161386074513866,
+    "sourceGeometryUnchanged": true,
+    "sourceGuideWidthWeightUnchanged": true,
+    "noNewConnector": true,
+    "explicitDomestic7And8And9RawMapZeroBased": [
+      [
+        8,
+        9
+      ],
+      [
+        10
+      ],
+      [
+        7
+      ]
+    ]
+  },
+  "approval": {
+    "runtimeRegistrationAuthorized": true,
+    "actualProductAppUI": false,
+    "controllerWorkflow": false,
+    "storageWorkflow": false,
+    "wholeReplayAllTime": false,
+    "officialMicroTimingEquivalent": false,
+    "all14Autoplay": false
+  },
+  "runtimeActualGate": {
+    "authorActualRegistryImport": 0,
+    "ROOTMustAppendThenRunTailFIRST1": true
+  },
+  "preparationHistory": {
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "registrationApproved": false,
+    "runtimeRegistered": false,
+    "preparer": "/root/activation1401",
+    "newEngine": 0,
+    "newProjection": 0
+  },
+  "inputSHA256": {
+    "docs/hanja-actual-component-profiles-2026-10-22/u890a-vs1-native-review-1.json": "676a5eb9e1d9f6406acad9bcd0567250ada35e1c0c116dca0ff84ba042a17dd7",
+    "docs/hanja-actual-component-profiles-2026-10-22/u890a-2.json": "b0efe6ffddb5d49e77dd09fa7b773932c7aa2e90507bfb803e9be46a8452b147",
+    "docs/hanja-source-original-u890a-vs1-2026-10-24/fixtures.json": "f2ea5b21eb9f1694f01d64244a81787d3ae5b20415a3a158620e965bb350786f",
+    "docs/hanja-source-original-u890a-vs1-2026-10-24/engine-proof.json": "31c6869729f506b017683ec2b116b856040af3f40d90630612d8237458cd0854",
+    "docs/hanja-source-original-u890a-vs1-2026-10-24/sources.json": "0185884d0a26463aadba3909a51ebdfe97f85bebdc2798aaefd4071fa55d8829",
+    "docs/hanja-source-original-u890a-vs1-2026-10-24/candidate.mjs": "c718ebff322ebe3765d99bbabea826d081b7765f6bc442d0acde596adf63e16b",
+    "docs/hanja-source-raw-compare-u890a-vs1-2026-10-24/native-static-review.json": "1bfadde51b2ed0cd0c0eec268529c9688cc472fb91bbd11856fce578a1a51a2b",
+    "docs/hanja-official-media-compare-u890a-2026-10-24/official-temporal-native-review.json": "7243af8691241581962471c9fba96d71093c6f51f7f34ad23dd66cae0b9b2a6e",
+    "lib/hanja-stroke-start-caps-u890a-vs1.ts": "48ba9374610b9f0b0ac8453f40e97fb6ca176705cbfb3e210f7eb2d30abe106f",
+    "components/hanja/stroke-outlines.tsx": "892556fa5278e1f1f3410de0459666967113998e85e2ad49176432eb760667ee",
+    "scripts/hanja-actual-component-review.mjs": "8b1d3a3729ffb52a0e285209c32fdb64737edfe7378e99037fb79d5b7a85d552"
+  },
+  "controllerRoot": "u890a-vs1"
+}

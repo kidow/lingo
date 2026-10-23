@@ -3,6 +3,7 @@ import { reviewedU7367Context, reviewedU7367Policy, commitReviewedU7367Caps, typ
 import { reviewedU8927Context, reviewedU8927Policy, commitReviewedU8927Caps, type ReviewedU8927Policy } from '@/lib/hanja-stroke-start-caps-u8927'
 import { reviewedU7e7eContext, reviewedU7e7ePolicy, commitReviewedU7e7eCaps, type ReviewedU7e7ePolicy } from '@/lib/hanja-stroke-start-caps-u7e7e'
 import { reviewedU890aContext, reviewedU890aPolicy, commitReviewedU890aCaps, type ReviewedU890aPolicy } from '@/lib/hanja-stroke-start-caps-u890a'
+import { reviewedU890aVS1Context, reviewedU890aVS1Policy, commitReviewedU890aVS1Caps, type ReviewedU890aVS1Policy } from '@/lib/hanja-stroke-start-caps-u890a-vs1'
 import { reviewedU7e7eFootContext, reviewedU7e7eFootPolicy, measureReviewedU7e7eFootFrame, commitReviewedU7e7eFootMask, type ReviewedU7e7eFootPolicy } from '@/lib/hanja-stroke-source-foot-u7e7e'
 import { reviewedU8927FootContext, reviewedU8927FootPolicy, measureReviewedU8927FootFrame, commitReviewedU8927FootMask, type ReviewedU8927FootPolicy } from '@/lib/hanja-stroke-source-foot-u8927'
 import { reviewedU7367TailContext, reviewedU7367TailFrame, type ReviewedU7367TailContext } from '@/lib/hanja-stroke-original-left-tail-u7367'
@@ -208,6 +209,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u8927Context = reviewedU8927Context(strokes)
   const u7e7eContext = reviewedU7e7eContext(strokes)
   const u890aContext = reviewedU890aContext(strokes)
+  const u890aVS1Context = reviewedU890aVS1Context(strokes)
   const u7e7eFootContext = reviewedU7e7eFootContext(strokes)
   const u8927FootContext = reviewedU8927FootContext(strokes)
   const u7367TailContext = reviewedU7367TailContext(strokes)
@@ -394,6 +396,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u7e7eFootPolicy) return <U7e7eFootOutline key={index} policy={u7e7eFootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u7e7ePolicy = reviewedU7e7ePolicy(u7e7eContext, stroke, index)
         const u890aPolicy = reviewedU890aPolicy(u890aContext, stroke, index)
+        const u890aVS1Policy = reviewedU890aVS1Policy(u890aVS1Context, stroke, index)
+        if (u890aVS1Policy) return <U890aVS1CapsOutline key={index} policy={u890aVS1Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         if (u890aPolicy) return <U890aCapsOutline key={index} policy={u890aPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         if (u7e7ePolicy) return <U7e7eCapsOutline key={index} policy={u7e7ePolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         if (u8927FootPolicy) return <U8927FootOutline key={index} policy={u8927FootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
@@ -3209,6 +3213,24 @@ function U890aCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU890a
     </defs>
     {valid&&progress===1&&<path data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'}/>}
     {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u890a-growing)'} visibility="hidden"/>}
+  </g>
+}
+
+function U890aVS1CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU890aVS1Policy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>commitReviewedU890aVS1Caps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current}).cleanup,[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u890a-vs1-progress={String(progress)} data-u890a-vs1-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u890a-vs1-measure'} data-growing-owner={clipId} data-u890a-vs1-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0}/></mask>
+      <mask id={clipId+'-u890a-vs1-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u890a-vs1-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/>
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/>
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'}/>}
+    {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u890a-vs1-growing)'} visibility="hidden"/>}
   </g>
 }
 
