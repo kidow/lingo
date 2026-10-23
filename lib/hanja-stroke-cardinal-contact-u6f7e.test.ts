@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict'
+import {test} from 'node:test'
+import {readFileSync} from 'node:fs'
+import {reviewedU6f7eCardinalContext,makeReviewedU6f7eCardinalSourceContext,reviewedU6f7eCardinalPolicy,sampleReviewedU6f7eCardinalFrame,REVIEWED_U6F7E_CARDINAL_SOURCE} from './hanja-stroke-cardinal-contact-u6f7e.ts'
+const f=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u6f7e-2026-10-24/fixtures.json',import.meta.url),'utf8')).u6f7e,s=f.strokes
+ test('潾14 original V-to-H source contact band FIRST',()=>{
+ const ctx=reviewedU6f7eCardinalContext(s);assert(ctx);assert.equal(makeReviewedU6f7eCardinalSourceContext(f.fullProof,f.identity,s),ctx);assert.equal(makeReviewedU6f7eCardinalSourceContext(f.fullProof,{...f.identity,sourceRoot:'wrong'},s),null);assert.equal(makeReviewedU6f7eCardinalSourceContext({...f.fullProof,engineRevision:'wrong'},f.identity,s),null);assert.equal(reviewedU6f7eCardinalPolicy(ctx,0,0),null)
+ const policy=reviewedU6f7eCardinalPolicy(ctx,13,1);assert(policy);const seg=s[13][1];for(const p of[1e-10,.03,.5,.99999999]){const frame=sampleReviewedU6f7eCardinalFrame(policy,seg,p,1);assert(frame.clip);assert.equal(frame.clip.x,66.65-11.15*p);assert.equal(frame.clip.y,74);assert.equal(frame.clip.height,6.5);assert(Math.abs(frame.clip.width-38.05*p)<1e-12);assert.equal(frame.originalPDirect,false)}
+ assert.equal(sampleReviewedU6f7eCardinalFrame(policy,seg,0,0).visible,false);assert.equal(sampleReviewedU6f7eCardinalFrame(policy,seg,1,1).originalPDirect,true);for(const p of[NaN,Infinity,-1,1.1])assert.throws(()=>sampleReviewedU6f7eCardinalFrame(policy,seg,p,1));assert.throws(()=>sampleReviewedU6f7eCardinalFrame(policy,seg,.03,.999));assert.throws(()=>sampleReviewedU6f7eCardinalFrame({...policy},seg,.03,1));assert.throws(()=>sampleReviewedU6f7eCardinalFrame(policy,{...seg,weight:1},.03,1));const changed=structuredClone(s);changed[14][0].weight+=.1;assert.equal(reviewedU6f7eCardinalContext(changed),null);assert.equal(REVIEWED_U6F7E_CARDINAL_SOURCE.nativeApproval,false)
+})
