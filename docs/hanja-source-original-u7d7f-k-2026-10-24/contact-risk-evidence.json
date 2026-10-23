@@ -1,0 +1,155 @@
+{
+  "schema": "hanja-original-source-contact-risk/v1",
+  "date": "2026-10-24",
+  "glyph": "絿",
+  "sourceRoot": "u7d7f-k",
+  "fixture": {
+    "file": "docs/hanja-source-original-u7d7f-k-2026-10-24/fixtures.json",
+    "SHA256": "1b3ac9e26da11aeafcacd08ab2fd8fe6de299c24e2506ee0bfe9101c70dea759",
+    "key": "u7d7fK",
+    "geometrySHA256": "dd4b5fdf0e32df563cf23cd3688c1e59cf9d7ea0b5ef2b9438a1f6c3154b5ba5"
+  },
+  "findings": [
+    {
+      "pen": 1,
+      "QStart": {
+        "priorInside": false,
+        "priorMargin2": "463761/5800",
+        "ownInside": false,
+        "ownMargin2": "1089/5200"
+      },
+      "strictOriginalPContact": {
+        "point": [
+          "1377/100",
+          "692/25"
+        ],
+        "priorMargin2": "2/18125",
+        "ownMargin2": "1338649/985000",
+        "priorCompletedEndDiskDistance2": "9137/40000"
+      }
+    },
+    {
+      "pen": 2,
+      "QStart": {
+        "priorInside": false,
+        "priorMargin2": "697/16",
+        "ownInside": true,
+        "ownMargin2": "1681/5965600"
+      },
+      "strictOriginalPContact": {
+        "point": [
+          "1337/100",
+          "5469/100"
+        ],
+        "priorMargin2": "11449/71570000",
+        "ownMargin2": "114982729/35170000",
+        "priorCompletedEndDiskDistance2": "481/2000"
+      }
+    },
+    {
+      "pen": 8,
+      "QStart": {
+        "priorInside": true,
+        "priorMargin2": "0",
+        "ownInside": true,
+        "ownMargin2": "0"
+      },
+      "strictOriginalPContact": {
+        "point": [
+          "1617/25",
+          "4301/50"
+        ],
+        "priorMargin2": "1/5200",
+        "ownMargin2": "1/2500"
+      }
+    },
+    {
+      "pen8Tail": {
+        "originalTailLeftX": "1093/20",
+        "minOriginalQX": "25069/400",
+        "maxRadius": "7",
+        "uncoveredPositiveXStrip": [
+          "1093/20",
+          "22269/400"
+        ],
+        "reason": "All original quadratic x(t)>=62.6725; the open original tail area x<55.6725 is outside every radius7 disk.",
+        "nativeObservedFailure": false
+      }
+    }
+  ],
+  "existingDirectionEvidence": {
+    "path": "docs/hanja-goal-glyphwiki-batch391-2026-10-09/review.json",
+    "SHA256": "94c2057cc2b352609cea8a4c118756ec92120e5625165264d65fe5fa86d5f2ce",
+    "cumulativeWhole13Only": true,
+    "qiuOrder": "horizontal, hooked vertical, left dot, rising, right falling, long right falling, final top dot",
+    "freshTemporalDirectionApproved": false
+  },
+  "nextConditions": {
+    "sourceFootCandidates": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "sourceFootFactoryNotExecuted": true,
+    "shortHook": [
+      8,
+      2
+    ],
+    "originalTailSplitCandidate": true,
+    "initialMQIndependentTargets": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        13,
+        1
+      ]
+    ],
+    "sourceOriginalPGuideWeightClockChanged": false
+  },
+  "limits": {
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "registered": false,
+    "allPrefixConnectivityProven": false,
+    "bridgeAdded": false
+  }
+}
