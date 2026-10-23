@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-source-order-native-hold/v1",
+  "date": "2026-10-24",
+  "glyph": "褊",
+  "root": "u890a",
+  "sourceRoot": "hkcs_u890a",
+  "status": "HOLD",
+  "initialPrepared": true,
+  "sourceOrderResult": "FAIL",
+  "reportedBy": [
+    "ROOT",
+    "activation1401"
+  ],
+  "conflicts": [
+    {
+      "sourcePen": 6,
+      "sourceGuide": "M53.275 6.5 Q61.675 10.5 65.35 18",
+      "sourceDirection": "down-right dot",
+      "officialPen": 6,
+      "officialDirection": "left"
+    },
+    {
+      "sourcePens": [
+        7,
+        8,
+        9
+      ],
+      "sourceDirections": [
+        "down-then-down-left",
+        "right-then-down",
+        "right"
+      ],
+      "officialDirections": [
+        "right-then-down",
+        "right",
+        "down-then-down-left"
+      ],
+      "reorderedSourceCandidate": [
+        8,
+        9,
+        7
+      ],
+      "reorderApproved": false
+    }
+  ],
+  "preparedSnapshot": {
+    "sharedVersion": 105,
+    "fixture": "docs/hanja-source-original-u890a-2026-10-24/fixtures.json",
+    "fixtureSHA256": "43951623842cf001a9092c40c025978d40ec65b8fbd87d8690c03e26b0f097aa",
+    "geometrySHA256": "0af2c8473617933322bc4489e8347c55fc1f367212fbf6dfd89c0a27ad377587",
+    "profile": "docs/hanja-actual-component-profiles-2026-10-22/u890a-1.json",
+    "profileSHA256": "e7198fd3b837f3d7c82685ea118af3c41a1c5932c09de4b7d52a6c6be27d5fa6",
+    "componentSHA256": "3108ccdd2ff27a0db9496eb54304d3fc1c7a2fea723a4d7e5cd7f20595eac8a3",
+    "helperSHA256": "97d2d4e30e66dc18605ee12eb3a6a0e8c77e6912da06202ebef6f75da3063d23",
+    "initialPolicy": "lib/hanja-stroke-start-caps-u890a.ts",
+    "initialPolicySHA256": "07acaa6f32cada683786c6e2b0185c67a41eb11e5436c213eea2dc24204de9b7",
+    "initialTest": "lib/hanja-stroke-start-caps-u890a.test.ts",
+    "initialTestSHA256": "aec455cafdbca766e0ba13589dde31fc09081ed1ca7ee536cd4d360019f449f1"
+  },
+  "startup": {
+    "FIRST": 1,
+    "resourceClosure": 126,
+    "SSRPassed": true,
+    "serverPID": 69042,
+    "session": 17754,
+    "stoppedImmediately": true,
+    "exitCode": 130,
+    "browserOpened": false,
+    "nativeObservations": 0
+  },
+  "nativeApproval": false,
+  "registered": false,
+  "runtimeApplied": false,
+  "sourceModified": false,
+  "preparedArtifactsPreserved": true,
+  "scope": "Prepared fixed-fixture policy is not source-order approval; no source correction or registration authorised by preparation.",
+  "authorAdditionalTests": 0
+}
