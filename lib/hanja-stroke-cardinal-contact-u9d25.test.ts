@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict'
+import {test} from 'node:test'
+import {readFileSync} from 'node:fs'
+const fixture=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u9d25-2026-10-24/fixtures.json',import.meta.url),'utf8')).u9d25,strokes=fixture.strokes,clone=(x:any)=>JSON.parse(JSON.stringify(x))
+import {makeReviewedU9d25CardinalSourceContext,reviewedU9d25CardinalContext,reviewedU9d25CardinalPolicy,sampleReviewedU9d25CardinalFrame,REVIEWED_U9D25_CARDINAL_PROOF} from './hanja-stroke-cardinal-contact-u9d25.ts'
+test('鴥3m2 original convex contact and finite clip FIRST',()=>{
+ const ctx=reviewedU9d25CardinalContext(strokes);assert(ctx);assert.equal(makeReviewedU9d25CardinalSourceContext(fixture.fullProof,fixture.identity,strokes),ctx);assert.equal(makeReviewedU9d25CardinalSourceContext({...fixture.fullProof,defaults:{}},fixture.identity,strokes),null);const a=clone(strokes);a[15][1].weight+=1;assert.equal(reviewedU9d25CardinalContext(a),null);assert.equal(reviewedU9d25CardinalPolicy(ctx,2,0),null);const policy=reviewedU9d25CardinalPolicy(ctx,2,1);assert(policy);const seg=strokes[2][1];
+ for(const p of[1e-10,.03,.5,.99999999]){const f=sampleReviewedU9d25CardinalFrame(policy,seg,p,1);assert(f.clip);assert.equal(f.clip.x,35.75);assert.equal(f.clip.width,8.5);assert.equal(f.clip.y,19-3.5*p);assert(Math.abs(f.clip.height-30.5*p)<1e-13);const wy=19+Math.min(13.5*p,.1);assert(wy>=f.clip.y&&wy<=f.clip.y+f.clip.height);assert.equal(f.originalPDirect,false)}
+ assert.equal(sampleReviewedU9d25CardinalFrame(policy,seg,0,0).visible,false);assert.equal(sampleReviewedU9d25CardinalFrame(policy,seg,1,1).originalPDirect,true);for(const p of[NaN,Infinity,-1,1.1])assert.throws(()=>sampleReviewedU9d25CardinalFrame(policy,seg,p,1));assert.throws(()=>sampleReviewedU9d25CardinalFrame(policy,seg,.03,.999));assert.throws(()=>sampleReviewedU9d25CardinalFrame({...policy},seg,.03,1));assert.throws(()=>sampleReviewedU9d25CardinalFrame(policy,{...seg,weight:1},.03,1));assert.equal(REVIEWED_U9D25_CARDINAL_PROOF.convexTurns.length,2);
+})
