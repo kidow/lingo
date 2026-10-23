@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "glyph": "硜",
+  "root": "u785c",
+  "fixtureSHA256": "06e18a0306703657b660e64ec62ef90bc5218dd519027af203abb85c99e247e4",
+  "sourceGroups": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ]
+  ],
+  "curveMasks": [
+    {
+      "pen": 2,
+      "mask": 1,
+      "raw": [
+        1
+      ],
+      "firstGuide": "MQ",
+      "originalFlags": [
+        132,
+        7
+      ],
+      "coordinateCondition": "x0>cx>x1; y0<cy<y1, original source values checked",
+      "status": "target-specific initial-Q proof pending; no caps selected"
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "raw": [
+        3,
+        4
+      ],
+      "firstGuide": "MLL",
+      "originalFlags": [
+        [
+          2,
+          2
+        ],
+        [
+          22,
+          23
+        ]
+      ],
+      "coordinateCondition": "first H-right and exact shared endpoint followed by V-down",
+      "status": "target-specific first-L/turn review pending; not eligible for Q-only certificate"
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "raw": [
+        7
+      ],
+      "firstGuide": "MQ",
+      "originalFlags": [
+        0,
+        7
+      ],
+      "coordinateCondition": "x0>cx>x1; y0<cy<y1, each original source checked independently",
+      "status": "potential first-Q growing-cap candidate; exact target proof and initial exposure review pending; no automatic caps"
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "raw": [
+        9
+      ],
+      "firstGuide": "MQ",
+      "originalFlags": [
+        0,
+        7
+      ],
+      "coordinateCondition": "x0>cx>x1; y0<cy<y1, each original source checked independently",
+      "status": "potential first-Q growing-cap candidate; exact target proof and initial exposure review pending; no automatic caps"
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "raw": [
+        11
+      ],
+      "firstGuide": "MQ",
+      "originalFlags": [
+        0,
+        7
+      ],
+      "coordinateCondition": "x0>cx>x1; y0<cy<y1, each original source checked independently",
+      "status": "potential first-Q growing-cap candidate; exact target proof and initial exposure review pending; no automatic caps"
+    },
+    {
+      "pen": 7,
+      "mask": 2,
+      "raw": [
+        8
+      ],
+      "firstGuide": "MQ",
+      "originalFlags": [
+        7,
+        8
+      ],
+      "coordinateCondition": "x0<cx<x1; y0<cy<y1 checked per source",
+      "status": "source-foot exact prefix proof prepared; actual source-foot wiring/native review pending"
+    },
+    {
+      "pen": 8,
+      "mask": 2,
+      "raw": [
+        10
+      ],
+      "firstGuide": "MQ",
+      "originalFlags": [
+        7,
+        8
+      ],
+      "coordinateCondition": "x0<cx<x1; y0<cy<y1 checked per source",
+      "status": "source-foot exact prefix proof prepared; actual source-foot wiring/native review pending"
+    },
+    {
+      "pen": 9,
+      "mask": 2,
+      "raw": [
+        12
+      ],
+      "firstGuide": "MQ",
+      "originalFlags": [
+        7,
+        8
+      ],
+      "coordinateCondition": "x0<cx<x1; y0<cy<y1 checked per source",
+      "status": "source-foot exact prefix proof prepared; actual source-foot wiring/native review pending"
+    }
+  ],
+  "cardinalMasks": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "direction": "right"
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "direction": "down"
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "direction": "right"
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "direction": "right"
+    },
+    {
+      "pen": 10,
+      "mask": 1,
+      "direction": "right"
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "direction": "down"
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "direction": "right"
+    }
+  ],
+  "capsCurrentlyApplied": [],
+  "sourceFootRuntimeApplied": false,
+  "policySelectionFromShapeSimilarity": false,
+  "limits": [
+    "Code classification only; original flags and guide commands do not establish absence of early islands.",
+    "Every pending MQ/MLL condition needs its own exact first-guide proof before a cap policy is selected.",
+    "All initial risk areas and all source boundaries remain required direct browser review."
+  ]
+}

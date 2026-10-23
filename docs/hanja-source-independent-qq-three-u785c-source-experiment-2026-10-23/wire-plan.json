@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "glyph": "硜",
+  "kindProposed": "growing-u785c-foot",
+  "sourceOnly": true,
+  "executionEnabled": false,
+  "profileFinalized": false,
+  "sharedMutation": false,
+  "fixturePrepared": true,
+  "ownFootPolicyPrepared": true,
+  "actualHelperWirePrepared": false,
+  "futureTsxPatch": {
+    "file": "future-stroke-outlines.patch",
+    "baselineSHA256": "a3a003af452053beaacb656f2f448938aa4047ea934fb75512eb2e845650d94d",
+    "futureSHA256": "20aa35814c7eda95feea327d24962f3ce0823fadf6c86250a59bcfe9f4782924",
+    "applyOnlyAfterRootStopAndExplicitAuthorization": true
+  },
+  "ownPolicy": "lib/hanja-stroke-source-foot-u785c.ts",
+  "sourceFixture": "docs/hanja-source-independent-qq-three-u785c-source-experiment-2026-10-23/fixtures.json",
+  "sourceIdentity": {
+    "root": "u785c",
+    "file": "../hanja-source-original-full-u785c-2026-10-23/engine-proof.json",
+    "fileSHA256": "da9a0299154697b3d5aa39f520f725175da503ec23168aeeb431c38c2eae3f39"
+  },
+  "expected": {
+    "pens": 12,
+    "masks": 15,
+    "polygons": 30
+  },
+  "footTargets": [
+    {
+      "pen": 7,
+      "mask": 2,
+      "id": "u785c-7-2",
+      "footIndex": 0
+    },
+    {
+      "pen": 8,
+      "mask": 2,
+      "id": "u785c-8-2",
+      "footIndex": 1
+    },
+    {
+      "pen": 9,
+      "mask": 2,
+      "id": "u785c-9-2",
+      "footIndex": 2
+    }
+  ],
+  "sourcePairBoundaries": [
+    7,
+    8,
+    9
+  ],
+  "naturalPairsToSerialize": [
+    7,
+    8,
+    9
+  ],
+  "remainingActualHelperTail": [
+    "Add target-specific immutable u785c fixture/identity validation without aliasing a different glyph's first-guide policies.",
+    "Include the new own source-foot module in exact resource closure and both actual CJS mapper/fixture serializer kind allowlists.",
+    "Serialize all three foot targets and natural source pairs from actual routes.set('/fixture.json').body, then test that exact payload and setup controls.",
+    "Create version-pinned profile only after ROOT coordinates the pending other initial MQ/MLL policy decision; do not claim SSR/DOM/native from this preparation."
+  ],
+  "approvalGates": {
+    "officialMapping": "pending fresh direct original-media stroke direction review; old cumulative evidence is scope-limited",
+    "initialGuides": "five non-foot curve masks have pending target-specific exact first-guide proofs",
+    "actualSharedWindow": "ROOT-only after current shared87 server stops",
+    "native": "not performed",
+    "runtime": "not applied"
+  }
+}
