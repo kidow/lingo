@@ -1,0 +1,167 @@
+{
+  "schema": "hanja-future-foot-integration-contract/v1",
+  "date": "2026-10-23",
+  "root": "u61f0",
+  "glyph": "懰",
+  "plannedSharedVersion": 93,
+  "basis": "shared92fix",
+  "pins": {
+    "baseComponent": "406693bf2016caa2b8d3c45f24015f1aecbcdf86047338c77aec9065f27527a9",
+    "baseHelper": "d1322084cca8094ab18365b782209dc4eba5a17f21bc69320dcfd0be23919c43",
+    "futureComponent": "7d09f84bd21686fb4696124c228b24ab79628d3a3ac5d0d6db26a4d44fcf7301",
+    "futureHelper": "c846ba1952cbff130ffccfade1cef2f9f1ad3ea4e5a6395267589a7907b20d6f"
+  },
+  "profileWritten": false,
+  "actualSharedFilesChanged": false,
+  "sourcePolicy": {
+    "path": "lib/hanja-stroke-source-foot-u61f0.ts",
+    "SHA256": "be8ca767d8de4318b03fd47be4cab99e17fc7a771a2cba136a16d8d9a1295576"
+  },
+  "replacementTarget": {
+    "pen": 5,
+    "mask": 2,
+    "id": "u61f0-5-2",
+    "kind": "source-foot-x-u61f0",
+    "footIndex": 0,
+    "phaseShare": 0.5961905265589714,
+    "phaseShareExact": [
+      "7672874453",
+      "12869836254"
+    ],
+    "cutX": 39,
+    "cutXExact": [
+      "39",
+      "1"
+    ],
+    "triangles": 12,
+    "newClockNativeApproved": false,
+    "footGeometrySHA256": "9a89a3b5abe31568dae59059a61ac593078ecd4312ea77c59f9d72293d727beb",
+    "segment": {
+      "outline": "M31.5 31.95 L32.75 31.55 L34.1 31.05 L35.55 30.5 L37.05 29.9 L38.65 29.25 L40.3 28.55 L42.05 27.85 L43.9 27.1 L45.9 26.35 L47.85 25.45 L48.3 26.2 L46.65 27.6 L45.05 29 L43.55 30.3 L42.05 31.5 L40.6 32.65 L39.2 33.7 L37.85 34.7 L36.6 35.65 L35.35 36.5 L34.2 37.3 Z M34.2 37.3 L30.6 32.4 L31.5 31.95 Z M34.2 37.3 L36.2 34.65 L35.75 38.2 Z",
+      "bounds": [
+        30.6,
+        25.45,
+        48.3,
+        38.2
+      ],
+      "direction": "curve",
+      "weight": 18.109456,
+      "revealPath": "M32.4125 34.895 Q38.7825 31.67 48.11 25.865",
+      "revealWidth": 14
+    },
+    "predecessor": {
+      "outline": "M39.95 13.9 L39.95 32.95 L33.95 32.95 L33.95 10.9 Z",
+      "bounds": [
+        33.95,
+        10.9,
+        39.95,
+        32.95
+      ],
+      "direction": "down",
+      "weight": 17.0925
+    },
+    "sourceFieldSHA256": "f6a88839a4f441ac2bed6712ca644fb93713d10ea8fb2f94ea42ef12c1ecc6ea",
+    "predecessorSHA256": "233346c80e9de62a96e24eeb1bf95861b60c6f8379d3a14097b88c65ff30c8d7"
+  },
+  "expectedTargetPairs": [
+    [
+      1,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      2,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      4,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      5,
+      2,
+      "source-foot-x-u61f0"
+    ],
+    [
+      6,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      7,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      8,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      9,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      10,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      14,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      15,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      16,
+      1,
+      "growing-u61f0-caps"
+    ],
+    [
+      18,
+      1,
+      "growing-u61f0-caps"
+    ]
+  ],
+  "caps": 12,
+  "feet": 1,
+  "footPriority": [
+    [
+      5,
+      2
+    ]
+  ],
+  "requiredFutureProfileChanges": [
+    "replace only5m2 target kind/certificate with source-foot target",
+    "pin new foot module and future two shared files",
+    "preserve original cached order2/header4/trace1/source identity",
+    "record only unchanged caps observations as reuse"
+  ],
+  "requiredFreshNative": {
+    "footLocalScreens": 8,
+    "footPhaseScreens": 3,
+    "source5BoundaryScreens": 3,
+    "exactOriginalPCoverage": 1,
+    "compact5Board": 1,
+    "fine5Board": 1,
+    "natural5EarlyEnd": 2,
+    "doneWhole": 1,
+    "totalScreens": 20,
+    "boardPanelsCountedSeparately": true
+  },
+  "eligibleReuse": {
+    "unchangedCapsInitialScreens": 24,
+    "ROOTReportedPriorScope": true,
+    "finalReuseDecisionByROOT": true,
+    "changed5m2OldEpsilonNotReused": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
