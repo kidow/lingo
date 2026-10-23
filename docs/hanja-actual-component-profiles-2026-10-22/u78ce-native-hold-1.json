@@ -1,0 +1,70 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-24",
+  "glyph": "磎",
+  "root": "u78ce-k",
+  "observer": "ROOT browser panel",
+  "status": "HOLD",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u78ce-1.json",
+    "SHA256": "023385e88d95292b63fd87bfc7b47d9385e03ff49738c06e6b31575500ed72b5"
+  },
+  "reviewedSnapshot": {
+    "componentSHA256": "c303e244b504b2dbff2f4c1057186b76d92822d3085c805e2db17735e59388f0",
+    "helperSHA256": "fc9debadfba128dc60c51ca8955931f24d4e5cb60ca66966a448bb700feaa908",
+    "resourceClosureModules": 145,
+    "successfulSSRChecks": 1
+  },
+  "observedScreens": 2,
+  "approvedNativeScopes": 0,
+  "plannedNativeScopes": 70,
+  "unobservedPlannedScopes": 68,
+  "observations": [
+    {
+      "pen": 8,
+      "scope": "compact9 stopped-frame grid",
+      "result": "visual FAIL",
+      "reason": "At the first .125 frame a small dot mass is already exposed",
+      "screens": 1
+    },
+    {
+      "pen": 8,
+      "scope": "global epsilon",
+      "result": "visual FAIL",
+      "reason": "A triangular mass approximately one third of the final dot area appears immediately",
+      "screens": 1
+    }
+  ],
+  "diagnostics": {
+    "errors": [],
+    "bad": [],
+    "emptyDiagnosticsDoNotOverrideVisualFailure": true
+  },
+  "preparationEvidence": {
+    "existingCapsTargets": 9,
+    "capsPolicyPreparationOnly": true,
+    "existingFootTargets": [
+      10,
+      11
+    ],
+    "ordinaryShortMQPen8NotApproved": true
+  },
+  "server": {
+    "PID": 50162,
+    "session": 78684,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 39,
+    "tabClosed": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registrationChanges": 0,
+  "activationPackageCreated": false,
+  "actualAppUI": false,
+  "allTimeAnimationProof": false,
+  "authorExtraSSR": 0,
+  "authorExtraBrowserScreens": 0,
+  "next": "磎 activation suspended. Batch1422 reserved for 渼 after its own actual native PASS and STOP."
+}
