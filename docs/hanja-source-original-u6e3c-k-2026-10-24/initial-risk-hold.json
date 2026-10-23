@@ -7,7 +7,7 @@
   "sourceGeometrySHA256": "88dd3672b454db3dee43ba92e67967298d597d69d3b03b8b9689142d058bc172",
   "scope": "Existing MQ sufficient conditions T1/2 K1/20 for first arc7 only; original-P intersection connectivity and native product replay are separate.",
   "newTargets": 7,
-  "initialMathPassed": 6,
+  "initialMathPassed": 7,
   "exactAlreadyProvedInputsMatched": 0,
   "mathRunsPerNewTarget": 1,
   "facts": [
@@ -18,7 +18,8 @@
       "id": "u6e3c-k-1-1",
       "ownPStart": "outside",
       "initialMathPassed": true,
-      "sourceFieldSHA256": "e7c9886658584b1f45cd94bc8b62f8ed6c6848306183b3082efbae51277c5332"
+      "sourceFieldSHA256": "e7c9886658584b1f45cd94bc8b62f8ed6c6848306183b3082efbae51277c5332",
+      "role": "Native original-P initial intersection observation target; not final rejection."
     },
     {
       "glyph": "渼",
@@ -27,7 +28,8 @@
       "id": "u6e3c-k-2-1",
       "ownPStart": "outside",
       "initialMathPassed": true,
-      "sourceFieldSHA256": "b28787a2b098b39beb31c89a3a524f7efff19cf87f6d1ad27bae5d939fa7c40e"
+      "sourceFieldSHA256": "b28787a2b098b39beb31c89a3a524f7efff19cf87f6d1ad27bae5d939fa7c40e",
+      "role": "Native original-P initial intersection observation target; not final rejection."
     },
     {
       "glyph": "渼",
@@ -35,8 +37,9 @@
       "mask": 1,
       "id": "u6e3c-k-3-1",
       "ownPStart": "outside",
-      "initialMathPassed": false,
-      "sourceFieldSHA256": "2cd52e18d5a22eb31afe5295fbd36b22543d960e663188f8d7c46fe53abd090b"
+      "initialMathPassed": true,
+      "sourceFieldSHA256": "2cd52e18d5a22eb31afe5295fbd36b22543d960e663188f8d7c46fe53abd090b",
+      "role": "Native original-P initial intersection observation target; not final rejection."
     },
     {
       "glyph": "渼",
@@ -45,7 +48,8 @@
       "id": "u6e3c-k-4-1",
       "ownPStart": "outside",
       "initialMathPassed": true,
-      "sourceFieldSHA256": "c796303fa265b3580645b80510664fca1b68e5d360ce29e689cc419e567cc9fd"
+      "sourceFieldSHA256": "c796303fa265b3580645b80510664fca1b68e5d360ce29e689cc419e567cc9fd",
+      "role": "Native original-P initial intersection observation target; not final rejection."
     },
     {
       "glyph": "渼",
@@ -54,7 +58,8 @@
       "id": "u6e3c-k-5-1",
       "ownPStart": "outside",
       "initialMathPassed": true,
-      "sourceFieldSHA256": "7ab3f2667f88cb560b7c3e18b7598b7e7c18ff318da827981ea88811df49106f"
+      "sourceFieldSHA256": "7ab3f2667f88cb560b7c3e18b7598b7e7c18ff318da827981ea88811df49106f",
+      "role": "Native original-P initial intersection observation target; not final rejection."
     },
     {
       "glyph": "渼",
@@ -63,7 +68,8 @@
       "id": "u6e3c-k-11-1",
       "ownPStart": "inside",
       "initialMathPassed": true,
-      "sourceFieldSHA256": "c825131e772f3a16b3ba41865596cc5f7a32bd974d00874a9c8854e7b7e5f295"
+      "sourceFieldSHA256": "c825131e772f3a16b3ba41865596cc5f7a32bd974d00874a9c8854e7b7e5f295",
+      "role": "Native initial observation target."
     },
     {
       "glyph": "渼",
@@ -72,7 +78,8 @@
       "id": "u6e3c-k-12-1",
       "ownPStart": "outside",
       "initialMathPassed": true,
-      "sourceFieldSHA256": "eaeb9f2cf3ff985752ed7c761091ae4285f8f7f611f08f75ea190e58b6c9f091"
+      "sourceFieldSHA256": "eaeb9f2cf3ff985752ed7c761091ae4285f8f7f611f08f75ea190e58b6c9f091",
+      "role": "Native original-P initial intersection observation target; not final rejection."
     }
   ],
   "initialCertificates": [
@@ -309,56 +316,49 @@
         "454/25",
         "5221/200"
       ]
-    }
-  ],
-  "possibleSimpleCaps": [
-    {
-      "pen": 11,
-      "mask": 1,
-      "id": "u6e3c-k-11-1",
-      "scope": "Initial guide sufficient condition only; source-P prefix connectivity and raster unverified."
-    }
-  ],
-  "heldInitialMathFailure": [
+    },
     {
       "pen": 3,
       "mask": 1,
-      "id": "u6e3c-k-3-1",
-      "reason": "Existing first7 sufficient condition not satisfied; no alternate T/K or extrapolation assumed."
+      "guide": "M6.81 66.5 Q21.335 71 19.675 92",
+      "maskSHA256": "2cd52e18d5a22eb31afe5295fbd36b22543d960e663188f8d7c46fe53abd090b",
+      "syntax": "MQ",
+      "width": 14,
+      "radius": 7,
+      "weight": 28.561481,
+      "initialArcMax": 7,
+      "initialSufficientConditions": true,
+      "notRasterProof": true,
+      "PIntersectionConnectivityNotProved": true,
+      "notFullSweepProof": true,
+      "initialKind": "single-quadratic",
+      "T": "1/2",
+      "K": "1/14",
+      "firstLegLength": null,
+      "u": [
+        "581/40",
+        "9/2"
+      ],
+      "v": [
+        "-3237/200",
+        "33/2"
+      ],
+      "lambda": "434013889/2374241",
+      "lambdaAt": "2144495/7122723",
+      "cross": "62499/200",
+      "chordSquaredMinus49": "86524689/640000",
+      "curvatureMargin": "708542815484000671400505538471/26231943760989163861160000",
+      "cosLower": "7/8",
+      "cosMinusRK": "3/8",
+      "strictAxis": "x",
+      "derivativeEndpoints": [
+        "581/20",
+        "2573/200"
+      ]
     }
   ],
-  "heldDespiteMathPass": [
-    {
-      "pen": 1,
-      "mask": 1,
-      "id": "u6e3c-k-1-1",
-      "reason": "Original guide starts outside its source P; no source-P connectivity proof or native approval."
-    },
-    {
-      "pen": 2,
-      "mask": 1,
-      "id": "u6e3c-k-2-1",
-      "reason": "Original guide starts outside its source P; no source-P connectivity proof or native approval."
-    },
-    {
-      "pen": 4,
-      "mask": 1,
-      "id": "u6e3c-k-4-1",
-      "reason": "Original guide starts outside its source P; no source-P connectivity proof or native approval."
-    },
-    {
-      "pen": 5,
-      "mask": 1,
-      "id": "u6e3c-k-5-1",
-      "reason": "Original guide starts outside its source P; no source-P connectivity proof or native approval."
-    },
-    {
-      "pen": 12,
-      "mask": 1,
-      "id": "u6e3c-k-12-1",
-      "reason": "Original guide starts outside its source P; no source-P connectivity proof or native approval."
-    }
-  ],
+  "heldInitialMathFailure": [],
+  "heldDespiteMathPass": [],
   "footPriority": [
     [
       3,
@@ -371,5 +371,85 @@
   "engine": 0,
   "nativeApproval": false,
   "runtimeApplied": false,
-  "registered": false
+  "registered": false,
+  "preparedOriginalGuideCapsCandidates": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "id": "u6e3c-k-1-1",
+      "ownPStart": "outside",
+      "initialMathSufficientOnly": true,
+      "originalPIntersectionApproved": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "id": "u6e3c-k-2-1",
+      "ownPStart": "outside",
+      "initialMathSufficientOnly": true,
+      "originalPIntersectionApproved": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "id": "u6e3c-k-4-1",
+      "ownPStart": "outside",
+      "initialMathSufficientOnly": true,
+      "originalPIntersectionApproved": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "id": "u6e3c-k-5-1",
+      "ownPStart": "outside",
+      "initialMathSufficientOnly": true,
+      "originalPIntersectionApproved": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "id": "u6e3c-k-11-1",
+      "ownPStart": "inside",
+      "initialMathSufficientOnly": true,
+      "originalPIntersectionApproved": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "id": "u6e3c-k-12-1",
+      "ownPStart": "outside",
+      "initialMathSufficientOnly": true,
+      "originalPIntersectionApproved": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "id": "u6e3c-k-3-1",
+      "ownPStart": "outside",
+      "initialMathSufficientOnly": true,
+      "originalPIntersectionApproved": false,
+      "nativeApproval": false
+    }
+  ],
+  "outsideOriginalPStatus": "Not a final HOLD/rejection. Exact original guide caps candidates await ROOT browser observation of initial P intersection, fragments, transitions, coverage and completion.",
+  "requiredNextNative": "Use actual original P and unchanged original guide/caps; inspect initial visibility for disconnected sudden fragments, then transitions/coverage/completion. Math does not approve source P intersection.",
+  "originalGuideClockWidthWeightUnchanged": true,
+  "applied": false,
+  "singleAdditionalCheck": {
+    "pen": 3,
+    "mask": 1,
+    "T": "1/2",
+    "K": "1/14",
+    "sourceFieldSHA256": "2cd52e18d5a22eb31afe5295fbd36b22543d960e663188f8d7c46fe53abd090b",
+    "result": "PASS",
+    "newMathRuns": 1,
+    "oldSixSuccessesRerun": 0,
+    "priorK1Over20FailureRetained": true
+  }
 }
