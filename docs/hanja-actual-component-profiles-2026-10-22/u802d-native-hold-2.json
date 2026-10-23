@@ -1,0 +1,92 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-24",
+  "glyph": "耭",
+  "root": "u802d-k",
+  "observer": "ROOT browser panel",
+  "status": "HOLD",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u802d-2.json",
+    "SHA256": "d3961805fc52dc7758c689bafe32182da7980b7a393c2f7d2d7a743b4a7390a5"
+  },
+  "reviewedSnapshot": {
+    "componentSHA256": "c303e244b504b2dbff2f4c1057186b76d92822d3085c805e2db17735e59388f0",
+    "helperSHA256": "e0f5cd35c8b35279d64be54b6911d87e9e273517a242fd3fab3b7bf120708e52",
+    "resourceClosureModules": 145,
+    "successfulSSRChecks": 1
+  },
+  "observedScreens": 8,
+  "targetScopePASS": 5,
+  "targetScopeFAIL": 1,
+  "targetScopeHOLD": 2,
+  "approvedWholeNativeScopes": 0,
+  "plannedNativeScopes": 103,
+  "unobservedPlannedScopes": 95,
+  "observations": [
+    {
+      "pen": 16,
+      "scope": "epsilon/.03",
+      "screens": 2,
+      "result": "target-scope PASS",
+      "reason": "Gradual initial exposure observed; not whole-stroke completion approval"
+    },
+    {
+      "pen": 18,
+      "scope": "epsilon/.03",
+      "screens": 2,
+      "result": "target-scope PASS",
+      "reason": "Gradual initial exposure observed"
+    },
+    {
+      "pen": 18,
+      "scope": "actual #board full-round residual",
+      "screens": 1,
+      "result": "target-scope PASS",
+      "reason": "Actual residual area observed white"
+    },
+    {
+      "pen": 16,
+      "scope": "actual #board full-round residual",
+      "screens": 1,
+      "result": "visual FAIL",
+      "reason": "Black triangular residual area remains at the rising hook"
+    },
+    {
+      "pen": 16,
+      "scope": "local .9999 and1",
+      "screens": 2,
+      "result": "completion HOLD",
+      "reason": "Only the short lower part of the hook is drawn; the full rising tip is missing"
+    }
+  ],
+  "oldFailure": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u802d-native-hold-1.json",
+    "SHA256": "b80aca7dfedb51e1325baf806bd131f7a2c8b16ed0abe86649093b37d09e4cd4",
+    "observedScreens": 4,
+    "reusedScopes": 0,
+    "preservedSeparately": true
+  },
+  "diagnostics": {
+    "errors": [],
+    "bad": [],
+    "emptyDiagnosticsDoNotOverrideVisualFailure": true
+  },
+  "server": {
+    "PID": 57556,
+    "session": 17830,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 42,
+    "tabClosed": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registrationChanges": 0,
+  "activationPackageCreated": false,
+  "actualAppUI": false,
+  "allTimeAnimationProof": false,
+  "authorExtraSSR": 0,
+  "authorExtraBrowserScreens": 0,
+  "next": "Pen16 original guide cannot cover the full rising tip; source-preserving correction requires independent preparation and actual native validation. Batch1424 now reserved for 磎."
+}
