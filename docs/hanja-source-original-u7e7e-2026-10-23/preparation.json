@@ -1,0 +1,179 @@
+{
+  "schema": "hanja-original-source-whole-preparation-v1",
+  "glyph": "繾",
+  "root": "u7e7e",
+  "sourceBatch": 424,
+  "sourceFamily": {
+    "selectedPrimaryClosureNames": [
+      "aj1-13754",
+      "u20ccb-06",
+      "u7cf8-01",
+      "u7e7e",
+      "u8fb6"
+    ],
+    "selectedPrimaryClosureCount": 5,
+    "capturedRecordCount": 5,
+    "missing": [],
+    "alternateRoots": [
+      "u7e7e-ue0100",
+      "u7e7e-ue0101",
+      "u7e7e-ue0102"
+    ],
+    "alternateWholesNotCompiled": true
+  },
+  "originalProof": {
+    "headerFields": 4,
+    "separateTrace": true,
+    "explicitRAMFull5": true,
+    "archiveFull5FileCreated": false,
+    "canonicalFull5SHA256": "12f19a4d1d372871cfd182ba18b8d6943ce17c319f5cf8c044e25b6d6e45d6b6",
+    "engineHashes": 8,
+    "identityFields": 7,
+    "rawGroups": 27,
+    "calls": 27,
+    "polygons": 49,
+    "allPreserved": true
+  },
+  "firstCompile": {
+    "existingPureCompilerRuns": 1,
+    "engineRuns": 0,
+    "newProjectorImplementation": false,
+    "candidateBeforeFreezeSHA256": "fc1f8f4c31fa4563c97b8fe58f2abe00f72385298e24fbe7c97d32bb94839114",
+    "fixtureSHA256": "d473785bac705922c25e1b648dbc2dd14d929d587e17ef3ac39881c31072670b",
+    "geometrySHA256": "0884b854279f6228115aa178fcd4f1693bfb7ebd92761abc39f22534fd9e4c92",
+    "pens": 20,
+    "masks": 23,
+    "polygons": 49,
+    "cacheFrozenImmediately": true,
+    "laterCaptureRejected": true
+  },
+  "independentSourcePairs": [
+    {
+      "pen": 1,
+      "indices": [
+        0,
+        1
+      ],
+      "prev": "cdDrawCurve",
+      "current": "cdDrawCurve",
+      "end": [
+        26.625,
+        56
+      ],
+      "start": [
+        12.45,
+        45
+      ],
+      "gap": 17.942425281995746,
+      "coordinatesChanged": false,
+      "connectorAdded": false,
+      "maskPartitionOnly": true,
+      "contactNotApproved": true
+    },
+    {
+      "pen": 2,
+      "indices": [
+        2,
+        3
+      ],
+      "prev": "cdDrawCurve",
+      "current": "cdDrawCurve",
+      "end": [
+        25.95,
+        110
+      ],
+      "start": [
+        13.8,
+        113
+      ],
+      "gap": 12.514891130169689,
+      "coordinatesChanged": false,
+      "connectorAdded": false,
+      "maskPartitionOnly": true,
+      "contactNotApproved": true
+    },
+    {
+      "pen": 20,
+      "indices": [
+        12,
+        13
+      ],
+      "prev": "cdDrawCurve",
+      "current": "cdDrawBezier",
+      "end": [
+        100.2,
+        154
+      ],
+      "start": [
+        98.92,
+        152
+      ],
+      "gap": 2.3745315327449332,
+      "coordinatesChanged": false,
+      "connectorAdded": false,
+      "maskPartitionOnly": true,
+      "contactNotApproved": true
+    }
+  ],
+  "additionalConditionBeyondLegacyHold": "Logical pen20 raw12 quadratic to raw13 cubic also has unequal endpoints, unlike the two QQ gaps explicitly listed by the old failure. All three are retained unchanged.",
+  "oldHold": {
+    "reason": "All four complete wholes have unequal quadratic endpoints in original 糸 pens1 and2. Whole-character pen permutation 糸, right遣, then辶 matches domestic order, but original folded trajectories are discontinuous. Unchanged compiler rejects; no connector or coordinate adjustment.",
+    "gaps": [
+      {
+        "root": "u7e7e",
+        "firstGap": 17.942425281995742,
+        "secondGap": 12.51489113016969
+      },
+      {
+        "root": "u7e7e-ue0100",
+        "firstGap": 17.942425281995742,
+        "secondGap": 12.51489113016969
+      },
+      {
+        "root": "u7e7e-ue0101",
+        "firstGap": 17.942425281995742,
+        "secondGap": 12.51489113016969
+      },
+      {
+        "root": "u7e7e-ue0102",
+        "firstGap": 18.27605058539727,
+        "secondGap": 12.864684216878391
+      }
+    ]
+  },
+  "checks": {
+    "sourceContext": {
+      "passed": 1,
+      "negativeCases": 12,
+      "getterReads": 0,
+      "durationMs": 8.769875
+    },
+    "frozenCache": {
+      "passed": 1,
+      "negativeCases": 6,
+      "getterReads": 0,
+      "originalPolygonCycles": 49,
+      "durationMs": 889.4185
+    },
+    "compiledAgain": 0,
+    "engineRuns": 0
+  },
+  "files": {
+    "source-context.mjs": "36e9a54bfdd9e3129b70824433c1a9d641bc09421d3ed4245de11190bb7c5cfc",
+    "source-context.test.mjs": "4b1f7f001f6984960c0e391a0c694347141626b57d9af27e9e8a14b0a1294521",
+    "prepare-candidate.mjs": "bf295766466da242868c9be599a60bcf95c5475a559ed9301f0cb21a1f1d2a76",
+    "candidate.mjs": "28c42183517d42a5cc972a1b32dcb1eefbcff177e318a13e2546de4635104caf",
+    "fixtures.json": "d473785bac705922c25e1b648dbc2dd14d929d587e17ef3ac39881c31072670b",
+    "frozen-cache.test.mjs": "01f32e7930fc84d7857185f1e28e5999ed3a4dc5fa76a409f42885cd8a01e01d"
+  },
+  "pending": [
+    "Official source order/direction correspondence, especially permuted original groups",
+    "Independent QQ1, QQ2 and QB20 source contact exposure policies",
+    "Browser initial, transition, contact, terminal and residual review"
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registered": false,
+  "serverRuns": 0,
+  "Jev": "Not used for code-determined source identity, masks or tests"
+}
