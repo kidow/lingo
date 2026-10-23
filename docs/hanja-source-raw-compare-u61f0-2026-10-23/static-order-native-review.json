@@ -1,0 +1,142 @@
+{
+  "schema": "hanja-existing-source-static-order-native-review/v1",
+  "glyph": "懰",
+  "root": "u61f0",
+  "reviewedAt": "2026-10-23",
+  "observer": "/root",
+  "scope": "20 fully visible browser-panel screens: domestic9..18 original SVG versus existing raw13..20,11,12 P. Static correspondence only; no temporal/source-direction/clock/contact approval.",
+  "inputSHA256": {
+    "docs/hanja-source-raw-compare-u61f0-2026-10-23/config.json": "31314a462b8858d0a3615a1e0b67cf0f949c3d1e572242362b2c2834debd74e5",
+    "docs/hanja-goal-glyphwiki-batch545-2026-10-11/engine-whole-u61f0.json": "fde72d50f7826f444227a00661180fc8cd5e66db9c5fded55fb3b86ee7c787d4",
+    "docs/hanja-source-independent-qq-two-left-order-u61f0-source-experiment-2026-10-20/fixtures.json": "7062861f079b180285526189f8f4114d6d9e83a8ae460540a2fadd6eff982e9a"
+  },
+  "native": {
+    "validScreens": 20,
+    "screensPerPair": 2,
+    "allFullyVisible": true,
+    "mapping": [
+      {
+        "domestic": 9,
+        "cachedLogicalPen": 11,
+        "rawOneBased": 13,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 10,
+        "cachedLogicalPen": 12,
+        "rawOneBased": 14,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 11,
+        "cachedLogicalPen": 13,
+        "rawOneBased": 15,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 12,
+        "cachedLogicalPen": 14,
+        "rawOneBased": 16,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 13,
+        "cachedLogicalPen": 15,
+        "rawOneBased": 17,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 14,
+        "cachedLogicalPen": 16,
+        "rawOneBased": 18,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 15,
+        "cachedLogicalPen": 17,
+        "rawOneBased": 19,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 16,
+        "cachedLogicalPen": 18,
+        "rawOneBased": 20,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 17,
+        "cachedLogicalPen": 9,
+        "rawOneBased": 11,
+        "staticShapeCompatible": true
+      },
+      {
+        "domestic": 18,
+        "cachedLogicalPen": 10,
+        "rawOneBased": 12,
+        "staticShapeCompatible": true
+      }
+    ],
+    "fontStylisticDifferencesObserved": true,
+    "diagnosticsExcluded": [
+      {
+        "domestic": 9,
+        "rawOneBased": 11,
+        "screens": 2,
+        "fullyVisible": false,
+        "reason": "Wrong correspondence and clipped diagnostic captures; not part of approved20."
+      }
+    ]
+  },
+  "proposedCachedLogicalOrder": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    9,
+    10
+  ],
+  "preparationDiagnostics": [
+    {
+      "command": "raw-static-board.py with launcher config",
+      "result": "exact board fields required",
+      "serverStarted": false
+    },
+    {
+      "reason": "initial config SHA typo",
+      "serverStarted": false
+    }
+  ],
+  "servers": [
+    {
+      "PID": 473,
+      "sessionId": 4843,
+      "port": 59412,
+      "stopped": true,
+      "exitCode": 130,
+      "terminationOutput": "8-line Ctrl-C serve_forever traceback; expected, not empty"
+    }
+  ],
+  "staticMappingApproved": true,
+  "originalSourcePUnionPreservationPending": true,
+  "sourceTemporalOrderApproved": false,
+  "sourceDirectionApproved": false,
+  "sourceClockApproved": false,
+  "sourceContactApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "authorNewScreens": 0,
+  "authorNewMediaFetches": 0,
+  "authorServer": 0
+}
