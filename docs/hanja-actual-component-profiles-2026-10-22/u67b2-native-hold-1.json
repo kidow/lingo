@@ -1,0 +1,98 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-24",
+  "glyph": "枲",
+  "root": "u67b2",
+  "observer": "ROOT browser panel",
+  "status": "HOLD",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u67b2-1.json",
+    "SHA256": "b5028610fe8e2df5e5eb4e240e1902a5150f1ef23bf6c82e933778e66d8949b2"
+  },
+  "reviewedSnapshot": {
+    "componentSHA256": "229a319fc66b646a675099d82540469ade95bb0ba7c7db2680da7d9eac662a75",
+    "helperSHA256": "a1709b6ebd66a4449be15bab3ac48aceb2b308842cd782d3fdadafdd055c3a3b",
+    "actualCJSModules": 149,
+    "actualESMModules": 149,
+    "successfulSSRChecks": 1,
+    "incorrectProfileExpectedClosure": 147,
+    "closureCause": "Base116 profile already expected147; two new 枲 source modules raise actual closure to149. The author incorrectly added two to an obsolete145 baseline."
+  },
+  "observedScreens": 3,
+  "targetScopePASS": 2,
+  "targetScopeFAIL": 1,
+  "approvedWholeNativeScopes": 0,
+  "plannedNativeScopes": 43,
+  "unobservedPlannedScopes": 40,
+  "observations": [
+    {
+      "pen": 4,
+      "mask": 2,
+      "scope": "ordinary local epsilon",
+      "globalProgress": 0.7402909020197946,
+      "result": "target-scope PASS",
+      "screens": 1,
+      "reason": "Only the previous top horizontal is visible at this initial frame"
+    },
+    {
+      "pen": 4,
+      "mask": 2,
+      "scope": "ordinary local .03",
+      "globalProgress": 0.7480819230411239,
+      "result": "visual FAIL",
+      "screens": 1,
+      "reason": "A detached small black triangle appears above the right end of the top horizontal"
+    },
+    {
+      "pen": 4,
+      "mask": 2,
+      "scope": "ordinary local .9999",
+      "globalProgress": 0.999974029064231,
+      "result": "target-scope PASS",
+      "screens": 1,
+      "reason": "Original stroke completion looks normal; this does not approve the failed initial contact"
+    }
+  ],
+  "diagnostics": {
+    "errors": [],
+    "bad": [],
+    "emptyDiagnosticsDoNotOverrideVisualFailure": true,
+    "reviewControlBug": {
+      "cause": "u67b2 setup returned before common selector, compact, done and natural controls were created",
+      "sourceHelperSHA256": "a1709b6ebd66a4449be15bab3ac48aceb2b308842cd782d3fdadafdd055c3a3b",
+      "missingControls": [
+        "current logical pen combobox",
+        "compact",
+        "done",
+        "natural"
+      ],
+      "doesNotInvalidateVisualFailure": true
+    }
+  },
+  "preparationEvidence": {
+    "caps": 4,
+    "sourceFoot": {
+      "pen": 1,
+      "mask": 2
+    },
+    "nativeCapsFootApproval": false
+  },
+  "server": {
+    "PID": 78733,
+    "session": 86301,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 52,
+    "tabClosed": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registrationChanges": 0,
+  "activationPackageCreated": false,
+  "actualAppUI": false,
+  "allTimeAnimationProof": false,
+  "authorExtraSSR": 0,
+  "authorExtraBrowserScreens": 0,
+  "next": "Source-preserving pen4 mask2 cardinal correction by B; helper common controls must be restored before a new profile2 actual review."
+}
