@@ -214,6 +214,17 @@ def exact_u99fe_prepared_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u7049_prepared_launcher(config,base):
+    # 灉 원full5/고정정적설정만 추가;21행대응은미승인가설입니다.
+    selected=base.get('sourceRoots',{}).get('selected',{})
+    return (config.get('launcher')=={'path': 'scripts/hanja-raw-static-compare.py', 'SHA256': 'bcefa6073be1d338ad17cf72e1a23456e2fd12c15c0296915925243695ad92f2'}
+            and config.get('baseConfig')=={'path': 'docs/hanja-source-raw-compare-u7049-2026-10-24/config.json', 'SHA256': '3ae900379f9e3b91d229fd3a1151659e9b131a09d047c16a7e76f139cf70b9b7'}
+            and base.get('glyph')=='灉' and base.get('catalogStrokes')==21
+            and list(base.get('sourceRoots',{}))==['selected']
+            and selected=={'root': 'u7049', 'file': 'docs/hanja-source-raw-compare-u7049-2026-10-24/engine-whole-u7049.json', 'fileSHA256': '39a8f010eeae63eac2530ed90c3b26267c9df5ea811b38ccd85b5e8cffa15228', 'proofKeys': ['defaults', 'engineHashes', 'engineRevision', 'groups', 'trace'], 'proofKind': 'actual-full5-direct', 'sourceProofIdentity': {'sourceRoot': 'u7049', 'sourceProofFile': 'engine-whole-u7049.json', 'sourceProofFileSha256': '39a8f010eeae63eac2530ed90c3b26267c9df5ea811b38ccd85b5e8cffa15228'}, 'rawGroups': 27, 'drawingCalls': 29, 'polygonCounts': [2, 2, 2, 1, 3, 2, 3, 2, 3, 2, 1, 1, 2, 1, 1, 2, 1, 7, 1, 3, 1, 3, 2, 1, 2, 2, 2], 'polygons': 55}
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -233,7 +244,7 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
-    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
+    require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
     validate_groups(config['provisionalGroups'], base)
 
