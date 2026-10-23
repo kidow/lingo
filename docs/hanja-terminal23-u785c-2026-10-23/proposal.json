@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "glyph": "硜",
+  "root": "u785c",
+  "status": "original-terminal23-exact-partition-proposal-not-applied",
+  "failedTarget": {
+    "pen": 4,
+    "mask": 1,
+    "id": "u785c-4-1"
+  },
+  "originalFull5": {
+    "file": "docs/hanja-source-original-full-u785c-2026-10-23/engine-proof.json",
+    "sha256": "da9a0299154697b3d5aa39f520f725175da503ec23168aeeb431c38c2eae3f39"
+  },
+  "nativeHold": {
+    "file": "docs/hanja-actual-component-profiles-2026-10-22/u785c-native-hold-1.json",
+    "sha256": "3563e1162dedbfb932862694efdc54cb6b557322ab8df1228439c10c99219610"
+  },
+  "sourceFacts": {
+    "rawOneBased": [
+      4,
+      5
+    ],
+    "verticalTerminalFlags": [
+      22,
+      23
+    ],
+    "originalQuad": [
+      [
+        "71",
+        "87"
+      ],
+      [
+        "71",
+        "163"
+      ],
+      [
+        "59",
+        "169"
+      ],
+      [
+        "59",
+        "87"
+      ]
+    ],
+    "intersectionE": [
+      "59",
+      "163"
+    ],
+    "bodyRectangle": [
+      [
+        "71",
+        "87"
+      ],
+      [
+        "71",
+        "163"
+      ],
+      [
+        "59",
+        "163"
+      ],
+      [
+        "59",
+        "87"
+      ]
+    ],
+    "downTriangle": [
+      [
+        "71",
+        "163"
+      ],
+      [
+        "59",
+        "169"
+      ],
+      [
+        "59",
+        "163"
+      ]
+    ],
+    "engineCoordinateAreas": {
+      "quad": "948",
+      "rectangle": "912",
+      "triangle": "36"
+    },
+    "normalizedAreas": {
+      "quad": "237",
+      "rectangle": "228",
+      "triangle": "9"
+    },
+    "unchangedGuide": "M16.8475 43.5 L32.51 43.5 L32.51 77.5",
+    "unchangedWidth": 14,
+    "unchangedBodyWeight": "3973/80",
+    "newInnerTailWeight": "3",
+    "newBodyShare": "3973/4213",
+    "sourceGuideEndpoint": [
+      "3251/100",
+      "155/2"
+    ],
+    "outsideCorner": [
+      "59/2",
+      "169/2"
+    ],
+    "outsideCornerDistanceSquared": "580601/10000",
+    "outsideRadiusSquaredMargin": "90601/10000",
+    "bodyRectangleMaxDistanceSquaredToOriginalV": "250601/10000",
+    "topSerifMaxDistanceSquaredToOriginalJoint": "311401/10000",
+    "firstOriginalLineLength": "1253/80",
+    "secondOriginalLineLength": "34",
+    "proposedCounts": {
+      "logicalPens": 12,
+      "displayMasks": 16,
+      "sourceOriginalPolygons": 30,
+      "displayPartitionFragments": 31
+    }
+  },
+  "existingPrecedent": {
+    "mechanism": "Accepted original-terminal23 vertical quad is partitioned at original B.y using E=(C.x,B.y) on its original left edge, into a body rectangle and a cardinal DOWN triangle. This is an exact filled-union partition, not a connector or centerline repair.",
+    "implementation": "docs/hanja-source-cache-u8fea-k-2026-10-22/source.mjs",
+    "inputSHA256": {
+      "docs/hanja-source-cache-u8fea-k-2026-10-22/source.mjs": "d585044b70deea59fdb12c2e440ebc5ca0569625dc6005a8b7bd62662015f6c5",
+      "lib/hanja-stroke-dictionary-glyphwiki-batch1357.ts": "7b0040f3034fa6c534ad4930dd97e3fafc72446f837546d6e164ce5b9bca19a5",
+      "lib/hanja-stroke-dictionary-glyphwiki-batch1361.ts": "e35ccb2dc8d92fdd93f5da01fffedd8de769c652db8f0d2686cf90743517e8ab",
+      "lib/hanja-stroke-dictionary-glyphwiki-batch1385.ts": "1b7f68511bbe88e73397305a34ab7295133df766ef9e932e5b59886f743040b8"
+    },
+    "scope": "Reused mechanism only; target-specific flags, original quad, edge intersection, signed areas and endpoints independently checked for 硜. No old precedent test/math was rerun."
+  },
+  "applicableConditions": {
+    "originalVerticalLineFlags": [
+      22,
+      23
+    ],
+    "horizontalToVerticalSharedEndpointExact": true,
+    "originalQuadAxisEdges": true,
+    "intersectionOnOriginalLeftEdge": true,
+    "positiveRectangleAndTriangleAreas": true,
+    "sharedPositiveHorizontalEdgeEngineUnits": 12,
+    "strictlyDisjointInteriors": true,
+    "fullOriginalQuadUnionPreserved": true,
+    "wholeOriginalGuideUnchanged": true,
+    "sourceWidth14Unchanged": true,
+    "originalBodyWeightUnchanged": true,
+    "logicalStrokeDurationUnchanged": true,
+    "newInnerBodyTailWeightExplicit": true
+  },
+  "proposedImplementation": {
+    "ownCachedCorrection": "Keep baseline15 masks30 original polygons intact as historical input. Derive a separate corrected fixture once: replace only raw5 original terminal23 quad by the exact rectangle+triangle fragments. Keep all other original polygons/segments unchanged. Pen4 becomes body+DOWN triangle; no live source file is changed.",
+    "body": "Existing body full MLL guide and width14/weight49.6625 stay exact. Only its original terminal quad is restricted to the rectangle fragment, with all original other polygons retained.",
+    "tail": "The existing triangle is revealed by its original bounds in the DOWN direction. It receives explicit inner weight3; this changes only the within-pen phase. It has no invented guide.",
+    "futurePolicy": "Rebind exact source5caps/3feet contexts to the new immutable whole fixture while preserving all unaffected target fields/certificates. The pen4 initial-arc certificate depends on the unchanged MLL guide/width; do not relabel it full-animation approval.",
+    "freshValidation": "New exact quad partition/once-only fragment accounting, new target hashes/shape guards, pen4 body/tail boundary before/at/after, body full-round residual and triangle/P total coverage, natural pen4 early/body→tail/end/whole. Reuse unchanged target source/caps/foot results under exact target fields and identical renderer behavior."
+  },
+  "bodyCoverageConditions": {
+    "originalVRectangleMaxDistanceSquared": "250601/10000 <49",
+    "originalTopSerifJointDiskMaxDistanceSquared": "311401/10000 <49",
+    "originalFirstLineLength": "1253/80 >7",
+    "originalSecondLineLength": "34 >7",
+    "originalTurn": "exact H-right to V-down right angle",
+    "joinCondition": "Top serif disk containment in actual full guide is conditional on unchanged SVG miter join with miter-limit at least sqrt(2). Confirm actual bound/computed join in the new focused renderer/native review; no broad whole-guide theorem is claimed."
+  },
+  "notApplicable": {
+    "terminal13WholeCardinalReuse": "Rejected: current raw is terminal23 and the protruding part is inside the main original quad, not a standalone terminal13 primitive/polygon.",
+    "outlineFontOrGuideExtension": "Rejected: do not stretch endpoints, width, or append an authored guide."
+  },
+  "newFactProofRuns": 1,
+  "sourceProjection": 0,
+  "engineRuns": 0,
+  "liveSharedMutation": false,
+  "livePolicyMutation": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "This proposal does not change the live89 fixture, policies, shared renderer or helper.",
+    "The early native HOLD remains authoritative until the corrected source variant is actually prepared and directly reviewed.",
+    "Planned102 native conditions are still incomplete in this early record; ROOT is reviewing other independent scopes."
+  ]
+}

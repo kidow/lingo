@@ -1,0 +1,19 @@
+--- a/components/hanja/stroke-outlines.tsx
++++ b/components/hanja/stroke-outlines.tsx
+@@ -1,6 +1,6 @@
+ import { reviewedU61f0Context, reviewedU61f0Policy, commitReviewedU61f0Caps, type ReviewedU61f0Policy } from '@/lib/hanja-stroke-start-caps-u61f0'
+ import { reviewedU8fc5Context, reviewedU8fc5Policy, commitReviewedU8fc5Caps, type ReviewedU8fc5Policy } from '@/lib/hanja-stroke-start-caps-u8fc5'
+-import { reviewedU785cContext, reviewedU785cPolicy, commitReviewedU785cCaps, type ReviewedU785cPolicy } from '@/lib/hanja-stroke-start-caps-u785c'
++import { reviewedU785cT23Context as reviewedU785cContext, reviewedU785cT23Policy as reviewedU785cPolicy, commitReviewedU785cT23Caps as commitReviewedU785cCaps, type ReviewedU785cT23Policy as ReviewedU785cPolicy } from '@/lib/hanja-stroke-start-caps-u785c-t23'
+ import { reviewedU8fc5TailContext, reviewedU8fc5TailFrame, type ReviewedU8fc5TailContext } from '@/lib/hanja-stroke-original-up-tail-u8fc5'
+ import { commitReviewedU8fc5Tail } from '@/lib/hanja-stroke-original-up-tail-dom-u8fc5'
+ import { reviewedU8629Context, reviewedU8629Policy, commitReviewedU8629Caps, type ReviewedU8629Policy } from '@/lib/hanja-stroke-start-caps-u8629'
+@@ -70,7 +70,7 @@
+ import { reviewedU82fdContext, reviewedU82fdPolicy, commitReviewedU82fdCaps, type ReviewedU82fdPolicy } from '@/lib/hanja-stroke-start-gate-u82fd'
+ import { reviewedU6f90Context, reviewedU6f90Policy, commitReviewedU6f90Caps, type ReviewedU6f90Policy } from '@/lib/hanja-stroke-start-gate-u6f90'
+ import { reviewedU6f90FootContext, reviewedU6f90FootPolicy, measureReviewedU6f90FootFrame, commitReviewedU6f90FootMask, type ReviewedU6f90FootPolicy } from '@/lib/hanja-stroke-source-foot-u6f90'
+-import { reviewedU785cFootContext, reviewedU785cFootPolicy, measureReviewedU785cFootFrame, commitReviewedU785cFootMask, type ReviewedU785cFootPolicy } from '@/lib/hanja-stroke-source-foot-u785c'
++import { reviewedU785cT23FootContext as reviewedU785cFootContext, reviewedU785cT23FootPolicy as reviewedU785cFootPolicy, measureReviewedU785cT23FootFrame as measureReviewedU785cFootFrame, commitReviewedU785cT23FootMask as commitReviewedU785cFootMask, type ReviewedU785cT23FootPolicy as ReviewedU785cFootPolicy } from '@/lib/hanja-stroke-source-foot-u785c-t23'
+ import { reviewedU7e58Context, reviewedU7e58Policy, commitReviewedU7e58Caps, type ReviewedU7e58Policy } from '@/lib/hanja-stroke-start-caps-u7e58'
+ import { reviewedU7e58FootContext, reviewedU7e58FootPolicy, measureReviewedU7e58FootFrame, commitReviewedU7e58FootMask, type ReviewedU7e58FootPolicy } from '@/lib/hanja-stroke-source-foot-u7e58'
+ import { reviewedU90b0Context, reviewedU90b0Policy, commitReviewedU90b0Caps, type ReviewedU90b0Policy } from '@/lib/hanja-stroke-start-gate-u90b0'
