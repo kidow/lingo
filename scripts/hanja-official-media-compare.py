@@ -65,13 +65,16 @@ def load_config(name, expected_sha):
     require(re.fullmatch('[0-9a-f]{64}', expected_sha), 'Config SHA required')
     path = pinned_path(name)
     terminal16 = path == ROOT/'docs/hanja-official-media-compare-u802d-2026-10-24/config-16.json'
-    require(terminal16 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
+    terminal17 = path == ROOT/'docs/hanja-official-media-compare-u99fe-2026-10-24/config-17.json'
+    require(terminal16 or terminal17 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
     raw = path.read_bytes()
     require(len(raw) <= 65536 and sha(raw) == expected_sha, 'Config changed')
     config = json.loads(raw)
     validate(config)
     if terminal16:
         require(config['sourceRoot'] == 'u802d-k' and config['allowedStrokes'] == [16] and config['defaultStroke'] == 16 and config['metadataFile'] == 'docs/hanja-official-media-compare-u802d-2026-10-24/metadata-16.json', 'Exact 耭16 terminal-only config required')
+    if terminal17:
+        require(config['sourceRoot'] == 'u99fe' and config['allowedStrokes'] == [17] and config['defaultStroke'] == 17 and config['metadataFile'] == 'docs/hanja-official-media-compare-u99fe-2026-10-24/metadata.json', 'Exact 駾17 terminal-only config required')
     require(path.parent.name.startswith('hanja-official-media-compare-u'+format(ord(config['glyph']),'x')+'-'), 'Glyph/config path mismatch')
     require(sha(Path(__file__).read_bytes()) == config['launcherSHA256'], 'Adapter changed')
     require(sha(pinned_path(SHARED).read_bytes()) == SHARED_SHA, 'Original fixed media helper changed')
