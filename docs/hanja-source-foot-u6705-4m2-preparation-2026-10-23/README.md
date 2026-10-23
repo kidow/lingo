@@ -1,0 +1,11 @@
+# 朅4m2 · root-connected original-P prefix proof
+
+New source scope only, after ROOT official14×3 and static14pairs+whole2 review. The fixed14p15m/37P cache is unchanged. The original second Q, its polygons/guide/width14/weight30.825406, and previous firstQ are retained literally; no connector, source point or source projection.
+
+Exact original-P union uses26 vertical slabs. Split at x17, retain the exact left union boundary, ear-clip to11 triangles and visit all11 once using positive shared edges. The chosen root is triangle3 with strict seed(13.5,80.1). An open disk radius1/8 about that seed lies inside both the root triangle and actual completed prior originalP; squared margin841/4100 and remaining12431/65600 are positive. It also lies within the conservative original completed endpoint radius7 cap, so future full-round prior handling must retain that original endpoint cap. This does not rely on an unmasked-only guess.
+
+The first triangle expands about that fixed interior root; each subsequent partial triangle expands from a midpoint on an already exposed positive edge. Every positive root/triangle prefix remains attached. The14 later body slabs each have one positive vertical interval, positive left section and positive overlap at every adjacent frontier and the foot/body boundary. The original Q has strictly positive x-derivative half-endpoints, so the body threshold can advance monotonically across those source intervals. Original union area is unchanged.
+
+The explicit new display microclock foot share is50873452/111401271. It is not an official trajectory/timing claim. A future UA body implementation must preserve the existing clamp-to-domain and raw-UA diagnostics; this exact rational proof does not replace native playback, finite transition/residual/coverage or completion checks. Native/runtime approval remains false and there is no shared/policy/profile/server/registry/Git edit.
+
+FIRST new proof succeeded. Its5.2KB stdout was indexed by context-mode; the exact original JSON was recovered from that own project index in read-only mode, compressed for transfer, without rerunning any arithmetic/assertions/engine/source compile. Old contact/negative/source tests were not rerun.
