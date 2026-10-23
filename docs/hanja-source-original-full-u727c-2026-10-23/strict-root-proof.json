@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "status": "exact-strict-primary-source-and-previous-complete-mask-root-certified-not-animation-approved",
+  "glyphId": "u727c",
+  "sourceFullProofSHA256": "89859c169dac0332017f79e4c1b39424063e39caa95f3306d972318e0f0702db",
+  "strictRootCertificates": [
+    {
+      "originalRawPairZeroBased": [
+        6,
+        7
+      ],
+      "normalizedSeed": [
+        "823/20",
+        "193/5"
+      ],
+      "openDiskRadius": "9/20",
+      "radiusSquared": "81/400",
+      "originalFilledContourWitnesses": [
+        {
+          "polygon": 0,
+          "boundaryDistanceSquared": "173/800"
+        },
+        {
+          "polygon": 0,
+          "boundaryDistanceSquared": "13689/56900"
+        }
+      ],
+      "previousCompletedQEndpoint": [
+        "409/10",
+        "39"
+      ],
+      "previousRoundMaskRadius": "7",
+      "seedToPreviousEndpointSquared": "89/400",
+      "endpointContainmentUpperBoundSquared": "17161/400"
+    },
+    {
+      "originalRawPairZeroBased": [
+        8,
+        9
+      ],
+      "normalizedSeed": [
+        "579/10",
+        "193/5"
+      ],
+      "openDiskRadius": "9/20",
+      "radiusSquared": "81/400",
+      "originalFilledContourWitnesses": [
+        {
+          "polygon": 0,
+          "boundaryDistanceSquared": "173/800"
+        },
+        {
+          "polygon": 0,
+          "boundaryDistanceSquared": "13689/56900"
+        }
+      ],
+      "previousCompletedQEndpoint": [
+        "11529/200",
+        "39"
+      ],
+      "previousRoundMaskRadius": "7",
+      "seedToPreviousEndpointSquared": "9001/40000",
+      "endpointContainmentUpperBoundSquared": "17161/400"
+    },
+    {
+      "originalRawPairZeroBased": [
+        10,
+        11
+      ],
+      "normalizedSeed": [
+        "371/5",
+        "193/5"
+      ],
+      "openDiskRadius": "9/20",
+      "radiusSquared": "81/400",
+      "originalFilledContourWitnesses": [
+        {
+          "polygon": 0,
+          "boundaryDistanceSquared": "1058/4325"
+        },
+        {
+          "polygon": 0,
+          "boundaryDistanceSquared": "1849/6500"
+        }
+      ],
+      "previousCompletedQEndpoint": [
+        "29559/400",
+        "39"
+      ],
+      "previousRoundMaskRadius": "7",
+      "seedToPreviousEndpointSquared": "40241/160000",
+      "endpointContainmentUpperBoundSquared": "17161/400"
+    }
+  ],
+  "sourceCoordinateScale": "original engine coordinates divided by 2",
+  "progressiveWidthContract": {
+    "path": "docs/hanja-goal-glyphwiki-batch429-2026-10-09/progressive.mjs",
+    "sha256": "0c0a2b80b2fe25df2a01fd84cf288afad6552b2b98837e4e3efc63c6b1622ef9",
+    "revealWidth": 14
+  },
+  "actualRendererRead": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "sha256": "a8f49e543e6c4b12158169eb11daf8df19b639a5242d2816d2b16a56310590e2",
+    "lines": 421,
+    "contract": "Generic p>=1 returns original outline P unmasked; generic partial Q uses round linecap, revealWidth14. Each certificate proves a root in both P1 and P2 AND inside the previous complete Q endpoint radius7, a stricter subset sufficient for either complete-P generic fallback or a future completed-round-mask intersect P1. No new policy is wired."
+  },
+  "proofMethod": "Exact fractions from decimal source vertices. For each witness: exact odd/even interior test; squared point-to-every-edge distances exceed radiusSquared in the selected original polygon of both source pieces. The seed-to-previous-Q-end squared distance is less than (7-radius)^2, proving the entire root disk is inside the completed round endpoint cap. Original contours, trajectory, grouping, flags, widths and weights are unchanged.",
+  "nativeReviewPerformed": false,
+  "runtimeRegistered": false,
+  "limits": [
+    "No all-prefix connectedness or source-foot triangulation is proved.",
+    "No start/transition/completion screen or animation approval is claimed.",
+    "The radius is a derived candidate witness, not a universal acceptance threshold.",
+    "No guarantee about raster visibility follows from the mathematical disk certificate."
+  ]
+}
