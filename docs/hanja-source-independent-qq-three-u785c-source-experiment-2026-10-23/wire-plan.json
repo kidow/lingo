@@ -2,7 +2,7 @@
   "schema": 1,
   "date": "2026-10-23",
   "glyph": "硜",
-  "kindProposed": "growing-u785c-foot",
+  "kindProposed": "growing-u785c-caps",
   "sourceOnly": true,
   "executionEnabled": false,
   "profileFinalized": false,
@@ -13,10 +13,12 @@
   "futureTsxPatch": {
     "file": "future-stroke-outlines.patch",
     "baselineSHA256": "a3a003af452053beaacb656f2f448938aa4047ea934fb75512eb2e845650d94d",
-    "futureSHA256": "20aa35814c7eda95feea327d24962f3ce0823fadf6c86250a59bcfe9f4782924",
+    "futureSHA256": "6d07a255d3df824df4eb8521ee39a4d0bb1faaf8d037f9f7ce3981707d67ff55",
     "applyOnlyAfterRootStopAndExplicitAuthorization": true
   },
   "ownPolicy": "lib/hanja-stroke-source-foot-u785c.ts",
+  "ownCapsPolicy": "lib/hanja-stroke-start-caps-u785c.ts",
+  "capsTargets": [{"pen":2,"mask":1},{"pen":4,"mask":1},{"pen":7,"mask":1},{"pen":8,"mask":1},{"pen":9,"mask":1}],
   "sourceFixture": "docs/hanja-source-independent-qq-three-u785c-source-experiment-2026-10-23/fixtures.json",
   "sourceIdentity": {
     "root": "u785c",
@@ -62,11 +64,11 @@
     "Add target-specific immutable u785c fixture/identity validation without aliasing a different glyph's first-guide policies.",
     "Include the new own source-foot module in exact resource closure and both actual CJS mapper/fixture serializer kind allowlists.",
     "Serialize all three foot targets and natural source pairs from actual routes.set('/fixture.json').body, then test that exact payload and setup controls.",
-    "Create version-pinned profile only after ROOT coordinates the pending other initial MQ/MLL policy decision; do not claim SSR/DOM/native from this preparation."
+    "Create version-pinned combined caps5/foot3 profile after ROOT coordinates the shared window; initial MQ/MLL conditions are separately certified, but no SSR/DOM/native is claimed from this preparation."
   ],
   "approvalGates": {
     "officialMapping": "pending fresh direct original-media stroke direction review; old cumulative evidence is scope-limited",
-    "initialGuides": "five non-foot curve masks have pending target-specific exact first-guide proofs",
+    "initialGuides": "five target-specific initial MQ/MLL sufficient-condition certificates and own source caps policies prepared; actual exposure review remains pending",
     "actualSharedWindow": "ROOT-only after current shared87 server stops",
     "native": "not performed",
     "runtime": "not applied"
