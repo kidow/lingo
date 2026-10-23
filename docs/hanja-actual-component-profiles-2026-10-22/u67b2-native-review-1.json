@@ -1,0 +1,142 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "枲",
+  "root": "u67b2",
+  "observedBy": "ROOT browser panel",
+  "result": "PASS",
+  "distinctScopes": 43,
+  "finiteScopes": 37,
+  "naturalScopes": 6,
+  "freshScopes": 43,
+  "reusedScopes": 0,
+  "nativeApproval": true,
+  "source": {
+    "fixture": "docs/hanja-source-original-u67b2-2026-10-24/fixtures.json",
+    "geometrySHA256": "6261a77994fb7830448cb39e77bc69e76768928372d05a5862c31dcd881e0628",
+    "originalPens": 9,
+    "originalMasks": 11,
+    "originalPolygons": 20,
+    "originalPGuideWidthWeightUnchanged": true,
+    "originalOuterClockUnchanged": true,
+    "newInternalDisplayClocks": {
+      "foot": [
+        1
+      ],
+      "cardinalContact": [
+        4
+      ]
+    },
+    "newConnector": 0,
+    "newSourceMask": 0
+  },
+  "freshScopeBreakdown": {
+    "capsInitialAndActualBoardCoverage": 12,
+    "sourceFootOne": 6,
+    "cardinalContactFour": 3,
+    "sourceBoundariesOneFour": 6,
+    "compactNineNineFramesEach": 9,
+    "doneWhole": 1,
+    "naturalOneFourNineEarlyEnd": 6
+  },
+  "coverage": {
+    "allCaps4ResidualWhite": true,
+    "foot1ActualCoverageWhiteInterior": true,
+    "thinAAEdgesObserved": true,
+    "filledResidualArea": 0,
+    "pixelEqualityClaim": false,
+    "cardinal4NoDetachedFragment": true,
+    "cardinal4OriginalComplete": true,
+    "actualBoardFullyVisible": true,
+    "mainRoot520FullyVisible": true,
+    "board520Top": 188,
+    "board520Bottom": 708
+  },
+  "allFullyVisible": true,
+  "bad": [],
+  "errors": [],
+  "observations": {
+    "caps": "4 initial epsilon/.03 gradual starts and four direct actual #board residuals WHITE.",
+    "foot": "1m2 epsilon/.1 plus phase minus/exact/plus and actual #board coverage six scopes; thin AA outline only and filled area0.",
+    "cardinal": "4m2 epsilon/.03/.9999 three screens maintain completed predecessor H contact; no detached triangle; completion normal.",
+    "sourceBoundary": "pen1/4 original source boundary minus/exact/plus six screens.",
+    "compact": "all9 logical pens each9 stopped frames, original progression and completion.",
+    "natural": [
+      {
+        "pen": 1,
+        "earlyProgress": 0.0683374999940388,
+        "endProgress": 1
+      },
+      {
+        "pen": 4,
+        "earlyProgress": 0.06936250001192093,
+        "endProgress": 1
+      },
+      {
+        "pen": 9,
+        "earlyProgress": 0.06777500001788211,
+        "endProgress": 1
+      }
+    ]
+  },
+  "finalObservation": {
+    "phase": "natural-ended",
+    "pen": 9,
+    "progress": 1,
+    "bad": [],
+    "errors": [],
+    "originalComplete": true,
+    "fullyVisible": true
+  },
+  "server": {
+    "pid": 89006,
+    "port": 59412,
+    "session": 36293,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 55,
+    "tabClosed": true,
+    "CJS": 150,
+    "ESM": 150,
+    "successfulSSRChecks": 1
+  },
+  "preparationFailuresExcluded": [
+    {
+      "session": 45354,
+      "exitCode": 1,
+      "SSRPreparations": 1,
+      "reason": "Non-escalated listen EPERM after SSR preparation; no actual browser observation or product failure."
+    }
+  ],
+  "oldFailure": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u67b2-native-hold-1.json",
+    "observedScreens": 3,
+    "approvedScopes": 0,
+    "reusedScopes": 0,
+    "preservedSeparately": true,
+    "SHA256": "4f80673c02dc419a61df4a0da80baabdaad34d4e3b87a8ed1b7cf19b299eba62"
+  },
+  "authorSSR": 0,
+  "childScreenshots": 0,
+  "actualAppUI": false,
+  "controllerWorkflow": false,
+  "storageWorkflow": false,
+  "allTimeProof": false,
+  "runtimeApplied": false,
+  "pins": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u67b2-2.json",
+      "SHA256": "4bc9e66e1b363da3341acabfe2f13dd5eca549d28426423890c09b4957d61374"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "d9842d6f8cef8f43abd8e9d6256f1301c93a1bcd6c677d7edcdb0964648f4d1d"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "ead47a6754ae808a715145c7cb46a25a81587c21777dc87235eae0eed0c25d53"
+    },
+    "resourceClosure": 150,
+    "sharedVersion": 118
+  }
+}

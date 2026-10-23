@@ -14,6 +14,7 @@ import { reviewedU802dKContext, reviewedU802dKPolicy, commitReviewedU802dKCaps, 
 import { reviewedU802dKFootContext, reviewedU802dKFootPolicy, measureReviewedU802dKFootFrame, commitReviewedU802dKFootMask, type ReviewedU802dKFootPolicy } from '@/lib/hanja-stroke-source-foot-u802d-k'
 import { reviewedU78ceKContext, reviewedU78ceKPolicy, commitReviewedU78ceKCaps, type ReviewedU78ceKPolicy } from '@/lib/hanja-stroke-start-caps-u78ce-k'
 import { reviewedU78ceKFootContext, reviewedU78ceKFootPolicy, measureReviewedU78ceKFootFrame, commitReviewedU78ceKFootMask, type ReviewedU78ceKFootPolicy } from '@/lib/hanja-stroke-source-foot-u78ce-k'
+import { reviewedU67b2CardinalContext, reviewedU67b2CardinalPolicy, sampleReviewedU67b2CardinalFrame, type ReviewedU67b2CardinalPolicy } from '@/lib/hanja-stroke-cardinal-contact-u67b2'
 import { reviewedU67b2Context, reviewedU67b2Policy, commitReviewedU67b2Caps, type ReviewedU67b2Policy } from '@/lib/hanja-stroke-start-caps-u67b2'
 import { reviewedU67b2FootContext, reviewedU67b2FootPolicy, measureReviewedU67b2FootFrame, commitReviewedU67b2FootMask, type ReviewedU67b2FootPolicy } from '@/lib/hanja-stroke-source-foot-u67b2'
 import { reviewedU6e3cKContext, reviewedU6e3cKPolicy, commitReviewedU6e3cKCaps, type ReviewedU6e3cKPolicy } from '@/lib/hanja-stroke-start-caps-u6e3c-k'
@@ -241,6 +242,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u802dKFootContext = reviewedU802dKFootContext(strokes)
   const u78ceKContext = reviewedU78ceKContext(strokes)
   const u78ceKFootContext = reviewedU78ceKFootContext(strokes)
+  const u67b2CardinalContext = reviewedU67b2CardinalContext(strokes)
   const u67b2Context = reviewedU67b2Context(strokes)
   const u67b2FootContext = reviewedU67b2FootContext(strokes)
   const u6e3cKContext = reviewedU6e3cKContext(strokes)
@@ -454,6 +456,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u78ceKFootPolicy) return <U78ceKFootOutline key={index} policy={u78ceKFootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u78ceKPolicy = reviewedU78ceKPolicy(u78ceKContext, stroke, index)
         if (u78ceKPolicy) return <U78ceKCapsOutline key={index} policy={u78ceKPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+        const u67b2CardinalPolicy = reviewedU67b2CardinalPolicy(u67b2CardinalContext, stroke, index)
+        if (u67b2CardinalPolicy) return <U67b2CardinalOutline key={index} policy={u67b2CardinalPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} previousMaskProgress={amounts[0]} clipId={id+'-'+stroke+'-'+index} />
         const u67b2FootPolicy = reviewedU67b2FootPolicy(u67b2FootContext, stroke, index)
         if (u67b2FootPolicy) return <U67b2FootOutline key={index} policy={u67b2FootPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         const u67b2Policy = reviewedU67b2Policy(u67b2Context, stroke, index)
@@ -843,6 +847,30 @@ function U78ceKFootOutline({
    </mask>
   </defs>
   <path ref={inkRef} id={clipId+'-u78ce-k-foot-ink'} data-owner={clipId} data-u78ce-k-foot-ink="true" d={segment.outline} mask={'url(#'+maskId+')'} visibility="hidden" />
+ </g>
+}
+
+function U67b2CardinalOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU67b2CardinalPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null)
+ let frame:ReturnType<typeof sampleReviewedU67b2CardinalFrame>|null=null
+ try{frame=sampleReviewedU67b2CardinalFrame(policy,segment,progress,previousMaskProgress)}catch{}
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current;const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u67b2-cardinal-committed','false')}
+  reset();if(!g||!p||!frame)return reset
+  const owner=p.ownerSVGElement,doc=p.ownerDocument,view=doc.defaultView,previous=g.previousElementSibling
+  const nodes=[g,p,owner]
+  const stable=()=>!!owner&&!!view&&nodes.every(n=>{if(!n||!n.isConnected||n.ownerDocument!==doc||(n!==owner&&(n as SVGElement).ownerSVGElement!==owner)||n.getAttribute('transform')!==null)return false;const s=view.getComputedStyle(n);return s.transform==='none'&&['translate','rotate','scale'].every(k=>['','none'].includes(s.getPropertyValue(k)))})&&g.parentElement===p.parentElement?.parentElement&&p.parentElement===g&&p.getAttribute('d')===segment.outline
+  const previousComplete=()=>{if(!previous||!view)return false;const s=view.getComputedStyle(previous);return previous.localName==='path'&&previous.parentElement===g.parentElement&&previous.nextElementSibling===g&&previous.getAttribute('d')===policy.predecessor.outline&&previous.getAttribute('mask')===null&&previous.getAttribute('clip-path')===null&&previous.getAttribute('pathLength')===null&&s.visibility==='visible'&&s.display!=='none'&&s.opacity==='1'&&s.fillOpacity==='1'&&s.stroke==='none'}
+  if(!stable()||(progress>0&&(!previousComplete()||previousMaskProgress!==1)))return reset
+  p.setAttribute('data-u67b2-cardinal-progress',String(progress));p.setAttribute('data-u67b2-cardinal-previous-progress',String(previousMaskProgress));p.setAttribute('data-u67b2-cardinal-previous-full',String(progress>0));p.setAttribute('data-u67b2-cardinal-original-direct',String(frame.originalPDirect))
+  if(!stable()||(progress>0&&!previousComplete()))return reset
+  p.setAttribute('data-u67b2-cardinal-committed','true');p.setAttribute('visibility',frame.visible?'visible':'hidden')
+  return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const clip=frame?.clip,id=clipId+'-u67b2-cardinal-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u67b2-cardinal-previous-progress={String(previousMaskProgress)}>
+  <defs><clipPath id={id} clipPathUnits="userSpaceOnUse"><rect id={clipId+'-u67b2-cardinal-rect'} x={clip?.x??71} y={clip?.y??35.05} width={clip?.width??8.5} height={clip?.height??0}/></clipPath></defs>
+  <path ref={ink} data-owner={clipId} data-u67b2-cardinal-ink="true" d={segment.outline} clipPath={frame?.originalPDirect?undefined:'url(#'+id+')'} visibility="hidden"/>
  </g>
 }
 
