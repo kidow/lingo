@@ -62,6 +62,26 @@ def validate_original_full8_u7cbb(spec,path):
             for p in poly:require(sorted(p)==['off','x','y'] and p['off']==0 and all(type(p[k])in[int,float] and math.isfinite(p[k])for k in['x','y']),'only original 粻 finite off0 polygons')
     return proof
 
+def validate_original_full5_u727c(config,label,spec,path):
+    # One pinned original full5 with its actual zero-draw raw4; no general sparse-source exemption.
+    require(config['glyph']=='牼' and config['catalogStrokes']==11 and list(config['sourceRoots'])==['selected'] and label=='selected' and config['sourceRoots']['selected']==spec,'exact isolated 牼 comparison required')
+    require(set(spec)=={'root','file','fileSHA256','proofKeys','proofKind','sourceProofIdentity','rawGroups','drawingCalls','polygonCounts','polygons'},'exact original 牼 full5 fields required')
+    original='docs/hanja-source-original-full-u727c-2026-10-23/engine-proof.json'
+    alias='docs/hanja-source-raw-compare-u727c-2026-10-23/engine-whole-u727c.json'
+    pin='89859c169dac0332017f79e4c1b39424063e39caa95f3306d972318e0f0702db'
+    require(spec['root']=='u727c' and spec['file']==alias and spec['fileSHA256']==pin and path==pinned_path(alias),'exact original 牼 full5 path/pin required')
+    require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and spec['sourceProofIdentity']=={'sourceRoot':'u727c','sourceProofFile':'engine-whole-u727c.json','sourceProofFileSha256':pin},'actual 牼 full5 and identity3 required')
+    require(config['inputSHA256'].get(alias)==pin and config['inputSHA256'].get(original)==pin,'both original 牼 byte pins required')
+    require((spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(15,14,32) and spec['polygonCounts']==[3,2,2,3,0,2,3,2,3,2,3,2,2,1,2],'original 牼15raw14calls32P required')
+    raw=path.read_bytes();original_raw=pinned_path(original).read_bytes()
+    require(digest(raw)==pin and digest(original_raw)==pin and raw==original_raw,'original 牼 alias must be byte-identical actual full5')
+    proof=json.loads(raw);require(sorted(proof)==FIVE and proof['engineRevision']=='49232bac0348fe815f4200d4116ab7917e0db47f' and len(proof['engineHashes'])==8,'complete original 牼 full5 required')
+    groups,trace=proof['groups'],proof['trace']
+    require(len(groups)==len(trace)==15 and groups[4]=={'raw':[0,0,0,0,None,None,None,None,None,None,None],'polygons':[]} and trace[4]==[],'original 牼 raw4 zero-draw row must remain')
+    require(all(len(row)==(0 if i==4 else 1) for i,row in enumerate(trace)) and sum(map(len,trace))==14,'only original 牼 raw4 may have no call')
+    require(all(g['raw'][0]!=0 and len(g['polygons'])>0 for i,g in enumerate(groups) if i!=4),'no other 牼 zero-draw rows allowed')
+    require([len(g['polygons']) for g in groups]==spec['polygonCounts'] and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace],'original 牼 raw/trace/P correspondence changed')
+
 def main():
     require(__debug__ and sys.flags.optimize==0,'optimized assertion-free execution forbidden')
     parser=argparse.ArgumentParser(description='Pinned static whole/raw/domestic comparison; ROOT starts HTTP.')
@@ -88,7 +108,9 @@ def main():
         elif spec['proofKind']=='actual-full8-u7cbb-direct':validate_original_full8_u7cbb(spec,path)
         else:require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct','single actual full5 only; no header synthesis')
         require(spec['sourceProofIdentity']=={'sourceRoot':spec['root'],'sourceProofFile':path.name,'sourceProofFileSha256':spec['fileSHA256']},'exact source identity3 required')
-        require(type(spec['rawGroups'])is int and 1<=spec['rawGroups']<=128 and type(spec['drawingCalls'])is int and ((not bound_body and spec['drawingCalls']>=spec['rawGroups'])or(bound_body and spec['rawGroups']==24 and spec['drawingCalls']==23)),'raw/call counts required')
+        original_u727c=(config['glyph']=='牼' and config['catalogStrokes']==11 and list(roots)==['selected'] and label=='selected' and spec['root']=='u727c')
+        if original_u727c:validate_original_full5_u727c(config,label,spec,path)
+        require(type(spec['rawGroups'])is int and 1<=spec['rawGroups']<=128 and type(spec['drawingCalls'])is int and ((not bound_body and (spec['drawingCalls']>=spec['rawGroups'] or original_u727c))or(bound_body and spec['rawGroups']==24 and spec['drawingCalls']==23)),'raw/call counts required')
         require(type(spec['polygonCounts'])is list and len(spec['polygonCounts'])==spec['rawGroups']and all(type(n)is int and n>=0 for n in spec['polygonCounts'])and type(spec['polygons'])is int and sum(spec['polygonCounts'])==spec['polygons'],'original polygon counts required')
     domestic=config['domestic'];require(type(domestic)is dict and set(domestic)=={'url','status','bytes','sha256','clips','glyph','privateMediaSaved'}and domestic['glyph']==config['glyph']and domestic['status']==200 and domestic['clips']==config['catalogStrokes']and domestic['privateMediaSaved']is False and type(domestic['bytes'])is int and 0<domestic['bytes']<=1048576 and hexsha(domestic['sha256']),'pinned domestic metadata required')
     require(type(domestic['url'])is str and re.fullmatch(r'http://img\.e-hanja\.kr/hanjaSvg/aniSVG/[0-9A-Fa-f]{4}/[0-9A-Fa-f]{4,6}\.svg',domestic['url'])is not None and domestic['url'].rsplit('/',1)[-1].lower()==format(ord(config['glyph']),'x')+'.svg','fixed domestic source only')

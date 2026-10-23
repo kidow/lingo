@@ -1,0 +1,61 @@
+{
+  "schema": "hanja-static-failed-tail-preparation/v1",
+  "date": "2026-10-23",
+  "glyph": "牼",
+  "root": "u727c",
+  "preparedBy": "/root/activation1401",
+  "firstROOTAttempt": {
+    "observer": "/root",
+    "boardConfigSHA256": "b129118b63a1790ba3e9fc9835d4a98d14f4f472b89a8e57a0118f29f03897c0",
+    "baseConfigSHA256": "60e7cd9dc7f599c56050e8a0adfd9a1a0ae27d5e55c202d54d6ecd1d3a695648",
+    "launcherSHA256": "17e77f57900f45e6561976bcb0bcd14ccb81f7da07046645e1bdad3e45ca83f0",
+    "failedBeforeHTTP": true,
+    "error": "scripts/hanja-raw-static-compare.py raw/call counts required",
+    "cause": "Original u727c has15 raw rows but14 drawing calls; raw index4 is an actual zero-draw source row. Default full5 requires calls>=raw; the existing sparse body3 opt-in is pinned solely to u7050 exact24/23.",
+    "HTTP": 0,
+    "network": 0,
+    "server": 0,
+    "staticScreens": 0
+  },
+  "unchangedSource": {
+    "actualFull5SHA256": "89859c169dac0332017f79e4c1b39424063e39caa95f3306d972318e0f0702db",
+    "byteIdenticalAlias": true,
+    "rawRows": 15,
+    "drawingCalls": 14,
+    "originalPolygons": 32,
+    "zeroDrawRawZeroBased": 4,
+    "rawZeroPreserved": true,
+    "additionalEmptyPolygons": 0,
+    "headerSynthesized": false
+  },
+  "futurePatch": {
+    "path": "launcher-u727c-zero-row.patch",
+    "SHA256": "b622f5e5547091ed494b6ad3166bc90a109c4ee4f373c2d74aa3fa9024496d43",
+    "baselineLauncherSHA256": "17e77f57900f45e6561976bcb0bcd14ccb81f7da07046645e1bdad3e45ca83f0",
+    "futureLauncherSHA256": "c7f2ffb34eefbdc889a1016ece7c756258542655c662d45ffa84f822d0c7387f",
+    "scope": "Only exact u727c isolated selected root/牼11, actual full5 source and alias pins, actual15raw14call32P with zero raw4. Default and exact u7050 body3 count rules remain.",
+    "actualLauncherModified": false,
+    "sharedServeModified": false,
+    "boardCodeModified": false
+  },
+  "futureConfig": {
+    "baseSHA256": "dedb492f64aa35ea4ccb572b5f31ca5dc26dac3fbc60cafdd5416c419a554543",
+    "boardSHA256": "aa0fc890e3048d17cc31287d98bee662d0b8a6d0bbdb179f35a530ac00489452",
+    "requiresROOTLauncherApplication": true
+  },
+  "focusedCheck": {
+    "firstRun": true,
+    "positivePinnedSource": 1,
+    "negativeMutations": 16,
+    "changedCountExpressionCases": 4,
+    "passed": true,
+    "wholeBoardCheckPerformed": false,
+    "HTTP": 0,
+    "server": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "official33Replayed": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
