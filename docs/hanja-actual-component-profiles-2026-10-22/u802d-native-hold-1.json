@@ -1,0 +1,86 @@
+{
+  "schema": "hanja-actual-component-native-hold/v1",
+  "date": "2026-10-24",
+  "glyph": "耭",
+  "root": "u802d-k",
+  "observer": "ROOT browser panel",
+  "status": "HOLD",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u802d-1.json",
+    "SHA256": "76c14f766fd583d48e3e62c8ff3d38c25d7eb09a435713c362482596b3068816"
+  },
+  "reviewedSnapshot": {
+    "componentSHA256": "c303e244b504b2dbff2f4c1057186b76d92822d3085c805e2db17735e59388f0",
+    "helperSHA256": "fc9debadfba128dc60c51ca8955931f24d4e5cb60ca66966a448bb700feaa908",
+    "resourceClosureModules": 145,
+    "successfulSSRChecks": 1
+  },
+  "observedScreens": 4,
+  "approvedNativeScopes": 0,
+  "plannedNativeScopes": 103,
+  "unobservedPlannedScopes": 99,
+  "observations": [
+    {
+      "pen": 18,
+      "scope": "compact9 stopped-frame grid",
+      "result": "visual FAIL",
+      "reason": "From the first .125 frame, substantially the same dot mass remains through the final frame; no gradual reveal observed",
+      "screens": 1
+    },
+    {
+      "pen": 18,
+      "scope": "global epsilon",
+      "result": "visual FAIL",
+      "reason": "The upper-right dot already exposes most of its area at initial progress",
+      "screens": 1
+    },
+    {
+      "pen": 16,
+      "scope": "compact9 stopped-frame grid",
+      "result": "HOLD diagnostic only",
+      "reason": "The long curve progresses, but this grid does not approve its initial exposure",
+      "screens": 1
+    },
+    {
+      "pen": 16,
+      "scope": "global epsilon",
+      "result": "visual FAIL",
+      "reason": "An approximately14-wide rectangular mass appears abruptly at the top of the long curve",
+      "screens": 1
+    }
+  ],
+  "diagnostics": {
+    "errors": [],
+    "bad": [],
+    "emptyDiagnosticsDoNotOverrideVisualFailure": true
+  },
+  "preparationEvidence": {
+    "existingCapsTargets": 12,
+    "capsPolicyPreparationOnly": true,
+    "existingFootTargets": [
+      7,
+      8,
+      10,
+      11
+    ],
+    "policyPreparationNotNativeApproval": true
+  },
+  "server": {
+    "PID": 48721,
+    "session": 99250,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 38,
+    "tabClosed": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registrationChanges": 0,
+  "activationPackageCreated": false,
+  "actualAppUI": false,
+  "allTimeAnimationProof": false,
+  "authorExtraSSR": 0,
+  "authorExtraBrowserScreens": 0,
+  "next": "耭 activation suspended. Batch1422 reserved for 磎 after its own actual native PASS and STOP."
+}

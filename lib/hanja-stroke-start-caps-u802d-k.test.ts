@@ -5,15 +5,15 @@ import {createHash} from 'node:crypto'
 import type {HanjaOutlineStrokes} from './hanja-stroke-outline'
 import {makeReviewedU802dKSourceContext,reviewedU802dKContext,reviewedU802dKPolicy,commitReviewedU802dKCaps,REVIEWED_U802dK_SOURCE,REVIEWED_U802dK_PROOFS,REVIEWED_U802dK_INPUT_SHA256} from './hanja-stroke-start-caps-u802d-k.ts'
 const fixture=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u802d-k-2026-10-24/fixtures.json',import.meta.url),'utf8')).u802dK,strokes=fixture.strokes as HanjaOutlineStrokes,clone=<T,>(x:T):T=>JSON.parse(JSON.stringify(x)),sha=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex')
-const targets=[[0,0],[4,0],[13,0]] as const,context=reviewedU802dKContext(strokes),policies=targets.map(([p,m])=>{const q=reviewedU802dKPolicy(context,p,m);assert(q);return q})
+const targets=[[0,0],[4,0],[5,0],[6,0],[7,0],[8,0],[9,0],[10,0],[11,0],[13,0],[14,0],[16,0]] as const,context=reviewedU802dKContext(strokes),policies=targets.map(([p,m])=>{const q=reviewedU802dKPolicy(context,p,m);assert(q);return q})
 test('耭 own whole guard and new certificate fingerprints FIRST',()=>{
  assert(context);assert.equal(makeReviewedU802dKSourceContext(fixture.fullProof,fixture.identity,strokes),context);const other=clone(fixture.fullProof);other.groups[0].raw[0]++;assert.equal(makeReviewedU802dKSourceContext(other,fixture.identity,strokes),null);const foreignIdentity=clone(fixture.identity);foreignIdentity.sourceRoot+="-wrong";assert.equal(makeReviewedU802dKSourceContext(fixture.fullProof,foreignIdentity,strokes),null);assert.equal(sha(JSON.stringify(strokes)),REVIEWED_U802dK_SOURCE.geometrySHA256);assert.deepEqual(fixture.identity,REVIEWED_U802dK_SOURCE.sourceIdentity);assert.deepEqual(fixture.fullProof,JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u802d-k-2026-10-24/engine-proof.json',import.meta.url),'utf8')))
  for(const[p,h]of Object.entries(REVIEWED_U802dK_INPUT_SHA256))assert.equal(sha(readFileSync(new URL('../'+p,import.meta.url))),h)
  for(let i=0;i<targets.length;i++){const[p,m]=targets[i],q=policies[i],c=REVIEWED_U802dK_PROOFS[i];assert.equal(sha(JSON.stringify(strokes[p][m])),c.maskSHA256);assert.equal(q.segment.revealPath,c.guide);assert(c.initialSufficientConditions);assert.equal(c.PIntersectionConnectivityNotProved,true)}
- assert.equal(reviewedU802dKPolicy(context,2,1),null);assert.equal(reviewedU802dKPolicy(context,5,0),null);assert.equal(reviewedU802dKPolicy(context,17,0),null)
+ assert.equal(reviewedU802dKPolicy(context,2,1),null);assert(reviewedU802dKPolicy(context,5,0));assert.equal(reviewedU802dKPolicy(context,17,0),null)
  let n=0;for(let p=0;p<strokes.length;p++)for(let m=0;m<strokes[p].length;m++)for(const k of Object.keys(strokes[p][m])){const a=clone(strokes),s=a[p][m] as any;if(k==='bounds')s.bounds[0]+=.01;else if(typeof s[k]==='number')s[k]+=.01;else s[k]+=' ';assert.equal(reviewedU802dKContext(a),null);n++}
  let reads=0;const a=clone(strokes);Object.defineProperty(a[0][0],'weight',{enumerable:true,get(){reads++;return 1}});assert.equal(reviewedU802dKContext(a),null);assert.equal(reads,0);assert.equal(reviewedU802dKPolicy({...context!},0,0),null)
- console.log(JSON.stringify({materialNegative:n,targets:3,oldMathRerun:0,nativeApproval:false}))
+ console.log(JSON.stringify({materialNegative:n,targets:12,oldMathRerun:0,nativeApproval:false}))
 })
 function fake(index:number){
  const policy=policies[index];
@@ -43,3 +43,6 @@ function runDOM(index:number){
  console.log(JSON.stringify({DOMFirst:true,targetIndex:index,visibleSamples:3,emptyCompleteSamples:2,negative:negatives,canonicalSetRemove:true,visibilityLast:true,SSR:0,nativeApproval:false}))
 }
 test('耭 first MQ namespace DOM canonical lifecycle FIRST',()=>runDOM(0))
+
+test('耭 nine added original-guide target guards FIRST',()=>{const added=[[5,0],[6,0],[7,0],[8,0],[9,0],[10,0],[11,0],[14,0],[16,0]];for(const[p,m]of added){const q=reviewedU802dKPolicy(context,p,m);assert(q);const c=REVIEWED_U802dK_PROOFS.find(c=>c.pen===p+1&&c.mask===m+1)!;assert.deepEqual(q.segment,strokes[p][m]);assert.equal(sha(JSON.stringify(strokes[p][m])),c.maskSHA256);assert.equal(q.segment.revealPath,c.guide);assert.equal(q.kind,'growing-u802d-k-caps');assert.equal(q.id,'u802d-k-'+(p+1)+'-'+(m+1));const foreign=clone(strokes);(foreign[p][m]as any).weight+=.01;assert.equal(reviewedU802dKContext(foreign),null)}console.log(JSON.stringify({addedTargets:9,sourceFieldNegatives:9,oldMathRerun:0,nativeApproval:false}))})
+test('耭 nine added original-guide target DOM FIRST',()=>{for(const pen of[6,7,8,9,10,11,12,15,17] )runDOM(targets.findIndex(([p,m])=>p===pen-1&&m===0))})
