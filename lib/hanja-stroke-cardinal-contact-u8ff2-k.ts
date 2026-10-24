@@ -1,0 +1,22 @@
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {reviewedU8ff2KContext,makeReviewedU8ff2KSourceContext} from './hanja-stroke-start-caps-u8ff2-k.ts'
+function freeze<T>(v:T):T{if(v&&typeof v==='object'){for(const d of Object.values(Object.getOwnPropertyDescriptors(v)))if('value'in d)freeze(d.value);Object.freeze(v)}return v}
+const TARGETS=freeze([{"id":"u8ff2-k-8-2","kind":"cardinal-contact-prefix-u8ff2-k","pen":8,"mask":2,"segment":{"outline":"M28 53.5 L28 77.5 L22 80.5 L22 53.5 Z M22 52.5 L25 50 L30.5 54.5 L28 56.5 L22 53.5 Z","bounds":[22,50,30.5,80.5],"direction":"down","weight":25.5},"predecessor":{"outline":"M7 52.5 L25 52.5 L25 54.5 L7 54.5 Z","bounds":[7,52.5,25,54.5],"direction":"right","weight":18},"axis":"y","originY":53.5,"origin":53.5,"negativeExtent":3.5,"positiveExtent":27}] as const)
+const CONTEXT=Object.freeze({id:'u8ff2-k-original-down-cardinal-contact' as const})
+export type ReviewedU8ff2KCardinalContext=typeof CONTEXT
+export type ReviewedU8ff2KCardinalPolicy=typeof TARGETS[number]
+function exact(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b)||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);return ak.length===bk.length&&bk.every(k=>{const x=Object.getOwnPropertyDescriptor(a,k),y=Object.getOwnPropertyDescriptor(b,k);return!!x&&!!y&&'value'in x&&'value'in y&&x.enumerable===y.enumerable&&exact(x.value,y.value)})}
+export function reviewedU8ff2KCardinalContext(strokes:HanjaOutlineStrokes):ReviewedU8ff2KCardinalContext|null{return reviewedU8ff2KContext(strokes)?CONTEXT:null}
+export function makeReviewedU8ff2KCardinalSourceContext(proof:unknown,identity:unknown,strokes:HanjaOutlineStrokes):ReviewedU8ff2KCardinalContext|null{return makeReviewedU8ff2KSourceContext(proof,identity,strokes)?CONTEXT:null}
+export function reviewedU8ff2KCardinalPolicy(context:ReviewedU8ff2KCardinalContext|null,pen:number,mask:number):ReviewedU8ff2KCardinalPolicy|null{return context===CONTEXT?TARGETS.find(t=>t.pen===pen+1&&t.mask===mask+1)??null:null}
+export type ReviewedU8ff2KCardinalFrame=Readonly<{policyId:string;progress:number;previousMaskProgress:number;phase:'empty'|'contact-prefix'|'full';visible:boolean;originalPDirect:boolean;clip:Readonly<{x:number;y:number;width:number;height:number}>|null;requiresCompletedOriginalPredecessor:true;UARead:false}>
+export function sampleReviewedU8ff2KCardinalFrame(policy:ReviewedU8ff2KCardinalPolicy,segment:HanjaOutlineSegment,progress:number,previousMaskProgress:number):ReviewedU8ff2KCardinalFrame{
+ if(!TARGETS.includes(policy)||!exact(segment,policy.segment))throw Error('Private exact original 迲 V/cardinal fields required')
+ if(!Number.isFinite(progress)||progress<0||progress>1||!Number.isFinite(previousMaskProgress)||previousMaskProgress<0||previousMaskProgress>1)throw Error('Finite original progress required')
+ if(progress>0&&previousMaskProgress!==1)throw Error('Same-frame completed opaque original 迲 predecessor required')
+ if(progress===0||progress===1)return Object.freeze({policyId:policy.id,progress,previousMaskProgress,phase:progress===0?'empty':'full',visible:progress===1,originalPDirect:progress===1,clip:null,requiresCompletedOriginalPredecessor:true,UARead:false})
+ const b=policy.segment.bounds,clip={x:b[0],y:policy.origin-policy.negativeExtent*progress,width:b[2]-b[0],height:(policy.negativeExtent+policy.positiveExtent)*progress}
+ return Object.freeze({policyId:policy.id,progress,previousMaskProgress,phase:'contact-prefix',visible:true,originalPDirect:false,clip:Object.freeze(clip),requiresCompletedOriginalPredecessor:true,UARead:false})
+}
+export const REVIEWED_U8FF2K_CARDINAL_SOURCE=freeze({"fixture":"docs/hanja-source-original-u8ff2-k-2026-10-24/fixtures.json","fixtureSHA256":"187f580611a8adb110c0200a74e57efd0559f15a379b8e73d67062fad5dc5d73","geometrySHA256":"2647f8b5345c3a29193e1273e0a5ef2a133bfada0f3800708e5ba25f94b46eb2","targets":[[8,2]],"sourceFieldsChanged":false,"originalOuterClockChanged":false,"newDisplayBandExplicit":true,"proof":{"pen":8,"mask":2,"axis":"y","origin":53.5,"negativeExtent":3.5,"positiveExtent":27,"convexTurns":[["144","144","162","162"],["3","109/4","89/4","39/2","6"]],"witness":"x23,y53.5+min(13.5p,1/10)","allPositiveBandsConnectedToOriginalPriorH":true},"nativeApproval":false,"runtimeApplied":false})
+
