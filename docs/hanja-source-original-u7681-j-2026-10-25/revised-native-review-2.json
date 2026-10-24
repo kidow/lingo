@@ -1,0 +1,107 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "皁",
+  "root": "u7681-j",
+  "observer": "ROOT browser panel",
+  "result": "PASS",
+  "nativeApproval": true,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "registrationApproved": false,
+  "finite": {
+    "fresh": 6,
+    "reusedUnchanged": 24,
+    "totalDistinct": 30,
+    "passed": 30,
+    "held": 0,
+    "earlyLocals": [
+      1e-06,
+      0.01,
+      0.03
+    ],
+    "midNearLocals": [
+      0.5,
+      0.9999999899999998
+    ],
+    "completionResidual": 1,
+    "allResidualOriginalPAndQChecks": true
+  },
+  "natural": {
+    "pens": [
+      1
+    ],
+    "distinctSnapshots": 2,
+    "mid": {
+      "statusProgress": 0.0432625,
+      "screenshotProgress": 0.1036875
+    },
+    "endProgress": 1,
+    "nearProgressExcluded": 0.973425,
+    "continuousReplayProof": false,
+    "waitHistory": "Wait for incorrect natural-done timed out; existing natural-ended DOM confirmed without replay. Near state excluded from end count."
+  },
+  "whole": {
+    "exactPrefix": 7,
+    "result": "PASS",
+    "sourceShapePreserved": true,
+    "whiteAndLowerVGapPreserved": true,
+    "rect": [
+      12,
+      380.015625,
+      520,
+      520
+    ]
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "mainSize": 520,
+    "sampleSize": 220,
+    "mainTop": 435.015625,
+    "sampleTop": 968.015625
+  },
+  "inputs": {
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "be358cb35faf61b91439822e7bb97caed6fa5137919cb8ab5faf8deaf7311b38"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "279ef1e3b8cb840ee74592ba5cd6638372a4ac3635461e15e0cbb5c4e89e7061"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7681-2.json",
+      "SHA256": "dbe9f6eff9c9b05d4dcc210acccf4b78e4c47bd6a716ef132a8a61522ad9ef82"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "2768906f7359dae241026e4ff0a6dd305faa3706ecb95680db369c6c7b949fc3"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u7681-j-2026-10-25/fixtures.json",
+      "SHA256": "adc6ae636137d1d6a3dd5c13e6c9d69e01aa19c2acf14d5f36d4129baef1e4b6"
+    }
+  },
+  "server": {
+    "newSSRChecks": 1,
+    "CJS": 271,
+    "ESM": 271,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "pid": 72884,
+    "session": 12301,
+    "port": 59412,
+    "exitCode": 130,
+    "tab": 169,
+    "tabClosed": true,
+    "ownedServerRemaining": false
+  },
+  "bad": [],
+  "errors": [],
+  "sourceGeometryGuideWidthWeightOuterClockUnchanged": true,
+  "allTimeProof": false,
+  "publisherMicrotimingEquivalent": false,
+  "sourceEngineMathReplay": 0
+}
