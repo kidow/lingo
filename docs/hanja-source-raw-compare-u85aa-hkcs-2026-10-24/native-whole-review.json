@@ -1,0 +1,123 @@
+{
+  "schema": "hanja-authored-HK-whole-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "薪",
+  "providerRoot": "hkcs_m85aa",
+  "localArtifactTag": "u85aa-hkcs",
+  "observedBy": "ROOT",
+  "status": "REJECT-this-new-HK-whole-macro-source",
+  "catalogStrokes": 17,
+  "domesticClips": 17,
+  "rawGroups": 17,
+  "drawingCalls": 18,
+  "sourcePolygons": 35,
+  "sourceProvenance": "Five-record mixed-date provider closure: preserved root@3/新@3/亲-left@2 plus observed pinned 艹@2 and 斤@2; no historical archive restoration.",
+  "pins": {
+    "observedConfig": {
+      "path": "docs/hanja-source-raw-compare-u85aa-hkcs-2026-10-24/config.json",
+      "SHA256": "4c10fa8be9735daa6018cf3f873f37ec0c81135c4050961d52c19ad1d47b3048",
+      "historicalObservedBytesBeforeDescriptionFix": true
+    },
+    "currentConfigAfterDescriptionOnlyCorrection": {
+      "path": "docs/hanja-source-raw-compare-u85aa-hkcs-2026-10-24/config.json",
+      "SHA256": "4f5ff0a4f1d41b2f8c1f9b290f3547ce73d25aa74bcef61637718dfd30c642dd"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "6e22af31974d6b5e2356c9d13f4be091c2281a0eab5cbe46b2bc1d57f558df03"
+    },
+    "sharedServe": {
+      "path": "docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py",
+      "SHA256": "ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u85aa-hkcs-2026-10-24/engine-whole-u85aa-hkcs.json",
+      "SHA256": "6d96c4399080dd42593ee83c7a03c8c84987c27cee6bf9ce2915ed3014b7f44f"
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u85aa-hkcs-2026-10-24/capture.json",
+      "SHA256": "fe472a221e2343f8101aab513e0803aa5de559faa6de5ebcb495db438dc9bdfe"
+    },
+    "closure": {
+      "path": "docs/hanja-source-alternative-u85aa-hkcs-2026-10-24/sources.json",
+      "SHA256": "b1aa4a93b3d982549f3b58a47a7bcd6e9825c453cf527ccbf183fdd2195750ce"
+    },
+    "reviewMetadata": {
+      "path": "docs/hanja-source-raw-compare-u85aa-hkcs-2026-10-24/review-metadata.json",
+      "SHA256": "3fc6afc2f1ea7ae5c5f29f2336e83ba5c1a3cd39a3954e7c98952b6716095900"
+    }
+  },
+  "scope": {
+    "freshActualScreens": 2,
+    "macroOnly": true,
+    "wholeGlyphsFullVisible": true,
+    "innerHeight": 1280,
+    "domestic": {
+      "width": 520,
+      "top": 297.203125,
+      "bottom": 817.203125
+    },
+    "source": {
+      "width": 520,
+      "top": 748.03125,
+      "bottom": 1268.03125
+    },
+    "directionAndFilledStructureDirectlyObserved": true,
+    "newTemporalObservations": 0
+  },
+  "findings": {
+    "location": "upper 立-like area of left 新 component",
+    "domestic": "Upper first stroke is a vertical dot, followed by a horizontal.",
+    "source": "Original new HK whole shows two separated horizontal bars in that area.",
+    "decision": "Reject this new HK whole for structural and directional mismatch, rather than font thickness alone.",
+    "fontWeightOnlyMismatchClaimed": false,
+    "clockOrGuideCannotTurnOriginalHIntoDomesticVerticalDot": true,
+    "sourceGeometryChangeAuthorized": false,
+    "sourceBridgeAuthorized": false,
+    "existingDomestic12And15HoldsUnresolved": true
+  },
+  "descriptionOnlyCorrection": {
+    "incorrectObservedProse": "Copied unrelated 髓 hkcs_m9ad3/raw19 metadata/30raw/logical23 summary.",
+    "observedHeadingAndGeometryWereCorrectGlyph": true,
+    "changedConfigFields": [
+      "holdSummary"
+    ],
+    "sourceRootsDomesticInputsLauncherAndAllPGuideFieldsUnchanged": true,
+    "currentDescriptionNamesCorrectProviderAndCounts": true,
+    "holdSummaryValueDelta": {
+      "oldValue": "DRAFT new independent authored HK 髓 whole; original provider hkcs_m9ad3 with explicit child hkcs_m9040@2 and grandchild hkcs_cdp-8ca9-16@1 preserved. Mixed-date5-record closure. Original metadata raw19 from literal $0 remains type0/trace0/P0 and is never a logical drawing pen. Actual30raw/29drawingrows31calls51P do not approve logical23. Whole/form/walk entry compatibility is unreviewed. One exact provider/local filename/full5/capture/closure/raw19 admission allows STATIC comparison only; no alias, bridge, P deletion, guide or width changes, or old base replay.",
+      "newValue": "DRAFT independent authored HK 薪 whole: original provider hkcs_m85aa@3, existing 新 hkcs_m65b0@3 and 亲-left@2 retained; only missing 艹/斤 observed@2 were added. Five-record mixed-date closure; no historical restoration or provider alias. Actual17raw/17drawingrows18calls35P do not approve logical17. ROOT rejected this HK whole: the upper-left 立 part has two horizontal bars where domestic has a vertical dot followed by H, a structural/directional difference rather than font weight alone. Existing domestic12 separation and domestic15 curve HOLD remain unresolved. Do not change original P/guide/width or add bridges.",
+      "byteReconstruction": "Replace only the JSON-encoded new holdSummary string token with the JSON-encoded old value in current UTF-8 file bytes; preserve every other byte including indentation and final LF.",
+      "reconstructedObservedConfigSHA256": "4c10fa8be9735daa6018cf3f873f37ec0c81135c4050961d52c19ad1d47b3048"
+    },
+    "nativeReplayForProseCorrection": 0
+  },
+  "limitations": {
+    "thisHKCaseOnly": true,
+    "otherSourcesImpossibleClaimed": false,
+    "oldBaseEvidencePreservedSeparately": true,
+    "raw17DoesNotApproveLogical17": true
+  },
+  "approval": {
+    "wholeFormCompatible": false,
+    "sourceGroupingApproved": false,
+    "newMotionApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "productionImportAllowed": false
+  },
+  "server": {
+    "PID": 72836,
+    "session": 30352,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 110,
+    "tabClosed": true
+  },
+  "sourceGeometryChanged": false,
+  "sourceProjection": 0,
+  "engineReplay": 0,
+  "sharedToolsChangedByRecord": false,
+  "privateMediaSaved": false
+}
