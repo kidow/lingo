@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict'
+import {test} from 'node:test'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {reviewedU8646KCardinalContext,makeReviewedU8646KCardinalSourceContext,reviewedU8646KCardinalPolicy,sampleReviewedU8646KCardinalFrame,REVIEWED_U8646K_CARDINAL_SOURCE as SOURCE} from './hanja-stroke-cardinal-contact-u8646-k.ts'
+const f=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u8646-k-2026-10-24/fixtures.json',import.meta.url),'utf8'))['u8646-k'],strokes=f.strokes,context=reviewedU8646KCardinalContext(strokes),clone=(x:any)=>JSON.parse(JSON.stringify(x)),sha=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex')
+test('虆 exact3 H/V cardinal binding and finite predecessor contract FIRST',()=>{
+ assert(context);assert.equal(makeReviewedU8646KCardinalSourceContext(f.fullProof,f.identity,strokes),context);assert.equal(makeReviewedU8646KCardinalSourceContext({...f.fullProof,engineRevision:'wrong'},f.identity,strokes),null);assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.equal(sha(readFileSync(new URL('../'+SOURCE.fixture,import.meta.url))),SOURCE.fixtureSHA256)
+ let frames=0;for(const[pen,origin,positive]of[[6,24.45,18],[11,44.5,18.6],[16,44.5,20.6]]){const q=reviewedU8646KCardinalPolicy(context,pen-1,1);assert(q);assert.equal(q.origin,origin);assert.equal(q.negativeExtent,3.5);assert.equal(q.positiveExtent,positive);assert.deepEqual(q.segment,strokes[pen-1][1]);assert.deepEqual(q.predecessor,strokes[pen-1][0]);
+ for(const p of[0,1e-6,.03,.5,.9999,1]){const a=sampleReviewedU8646KCardinalFrame(q,q.segment,p,1);frames++;assert.equal(a.visible,p>0);assert.equal(a.originalPDirect,p===1);if(p>0&&p<1){assert(a.clip);assert(a.clip.width>0&&a.clip.height>0);assert.equal(a.UARead,false);assert.equal(a.clip.y,origin-3.5*p)}}assert.throws(()=>sampleReviewedU8646KCardinalFrame(q,q.segment,.1,0));assert.throws(()=>sampleReviewedU8646KCardinalFrame(q,{...q.segment,outline:q.segment.outline+' '},.1,1));const changed=clone(strokes);changed[pen-1][1].outline+=' ';assert.equal(reviewedU8646KCardinalContext(changed),null);assert.equal(reviewedU8646KCardinalPolicy({...context},pen-1,1),null)}
+ assert.equal(SOURCE.nativeApproval,false);assert.equal(SOURCE.sourceTimingEquivalent,false);console.log(JSON.stringify({HVCases:3,finiteFrames:frames,sourceMathReused:true,nativeApproval:false}))
+})
