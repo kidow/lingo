@@ -1,0 +1,46 @@
+{
+  "schema": "hanja-fixed-source-facts/v1",
+  "date": "2026-10-24",
+  "root": "hkcs_m85a9",
+  "fixture": "docs/hanja-source-original-u85a9-hkcs-2026-10-24/fixtures.json",
+  "fixtureSHA256": "05d7a137e69d5de696a195411e990f7ed8777e0c124de2770e022f9093271b53",
+  "geometrySHA256": "9dd8e7687f6168de289d8431c60689b3d516a537b36b70587678952df31d0a40",
+  "method": "Materialization of already calculated exact Fraction witnesses; checker verifies only these fixed witnesses and fixed polynomial coefficients, without repeating a candidate search",
+  "priorUnion": "All earlier logical pens and earlier masks in the same pen, each using unchanged original filled P",
+  "initialWitnessScope": "Strictly inside new filled P, strictly outside all prior filled P, and strictly inside radius7 disk at the original Q start. Positive edge distances imply a positive-area neighborhood. This is not a complete sweep or connection proof.",
+  "initialWitnesses": [
+    {"target":[5,2],"point":["829/25","15495000000000001/500000000000000"],"diskDistanceSquared":"0","newEdgeDistanceSquared":"27225000000037290000000012769/3572500000000000000000000000000000","priorEdgeDistanceSquared":"1/10000","priorPolygons":9},
+    {"target":[6,1],"point":["4707/200","799/16"],"diskDistanceSquared":"1/2","newEdgeDistanceSquared":"3500641/58400000","priorEdgeDistanceSquared":"68121/104000000","priorPolygons":11},
+    {"target":[6,2],"point":["16417776307549161/500000000000000","3602659320107351/50000000000000"],"diskDistanceSquared":"25/4","newEdgeDistanceSquared":"56474201006967529446302887249/62500000000000000000000000000","priorEdgeDistanceSquared":"100710227051154929410299607871529/9433250000000000000000000000000000","priorPolygons":13},
+    {"target":[13,2],"point":["203/5","6703/100"],"diskDistanceSquared":"25/4","newEdgeDistanceSquared":"45522009/47620000","priorEdgeDistanceSquared":"9/32500","priorPolygons":29},
+    {"target":[10,1],"point":["157/2","7611/200"],"diskDistanceSquared":"1/4","newEdgeDistanceSquared":"263169/151400000","priorEdgeDistanceSquared":"185761/40000","priorPolygons":20},
+    {"target":[11,1],"point":["103/2","971/25"],"diskDistanceSquared":"1/4","newEdgeDistanceSquared":"2601/3050000","priorEdgeDistanceSquared":"21609/2500","priorPolygons":23},
+    {"target":[14,1],"point":["11247999999999999/200000000000000","1180447/20000"],"diskDistanceSquared":"1/4","newEdgeDistanceSquared":"11220490090000328270600000002401/580040000000000000000000000000000","priorEdgeDistanceSquared":"7301189809/400000000","priorPolygons":30}
+  ],
+  "compound6": {
+    "firstMask": {
+      "target":[6,1],
+      "guideStartMinusPriorEnd":["0","-157/400"],
+      "guideContinuous":false,
+      "strictPriorFilledPOverlapWitness":["2371/100","4941/100"],
+      "outsideFullOriginalQtubeVertex":["533/20","1527/20"],
+      "outsideVertexOriginalSubpath":2,
+      "distanceSquaredMinus49BernsteinDegree4":["110136141/160000","15448241/40000","34298958662431894511/150000000000000000","9107610885669085463/100000000000000000","3151066198740228641774855524021/250000000000000000000000000000"],
+      "conclusion":"All five Bernstein coefficients are strictly positive, so this original filled-P vertex lies outside every radius7 disk on the original Q for t in [0,1]. A simple Q cap alone cannot prove original-P completion coverage.",
+      "nonzeroTrianglePreserved":true
+    },
+    "secondMask": {
+      "target":[6,2],
+      "guideStartMinusPriorEnd":["0","0"],
+      "guideContinuous":true,
+      "strictPriorFilledPOverlapWitness":["856/25","3533/50"],
+      "fullOriginalQtubeCoverage":"Not proven. The earlier absence of an all-positive Bernstein vertex counterexample is not a containment proof."
+    }
+  },
+  "sourceGeometryChanged":false,
+  "sourceGuideChanged":false,
+  "engineRuns":0,
+  "nativeApproval":false,
+  "runtimeApplied":false,
+  "productionImportAllowed":false
+}
