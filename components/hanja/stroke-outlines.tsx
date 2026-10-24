@@ -1,6 +1,7 @@
 import {reviewedU85a9HkcsContext,reviewedU85a9HkcsPolicy,commitReviewedU85a9HkcsCaps,type ReviewedU85a9HkcsPolicy} from '@/lib/hanja-stroke-start-caps-u85a9-hkcs'
 import {reviewedU85a9HkcsCompoundContext,reviewedU85a9HkcsCompoundPolicy,commitReviewedU85a9HkcsCompoundCaps,reviewedU85a9HkcsCompoundPreviousComplete,type ReviewedU85a9HkcsCompoundPolicy} from '@/lib/hanja-stroke-compound-caps-u85a9-hkcs'
 import {reviewedU85a9HkcsReturnContext,reviewedU85a9HkcsReturnPolicy,commitReviewedU85a9HkcsReturnCaps,reviewedU85a9HkcsReturnPreviousComplete,type ReviewedU85a9HkcsReturnPolicy} from '@/lib/hanja-stroke-return-caps-u85a9-hkcs'
+import {reviewedU85a9HkcsSourceReturnContext,reviewedU85a9HkcsSourceReturnPolicy,sampleReviewedU85a9HkcsSourceReturnFrame,verifyReviewedU85a9HkcsSourceReturnPrior,type ReviewedU85a9HkcsSourceReturnPolicy} from '@/lib/hanja-stroke-source-return-u85a9-hkcs'
 import {reviewedU85a9HkcsSourcePrefixContext,reviewedU85a9HkcsSourcePrefixPolicy,sampleReviewedU85a9HkcsSourcePrefixFrame,type ReviewedU85a9HkcsSourcePrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u85a9-hkcs'
 import { reviewedU64C4KTerminalPrefixContext, reviewedU64C4KTerminalPrefixPolicy, sampleReviewedU64C4KTerminalPrefixFrame, type ReviewedU64C4KTerminalPrefixPolicy } from '@/lib/hanja-stroke-terminal-prefix-u64c4-k'
 import { reviewedU64C4KFootContext, reviewedU64C4KFootPolicy, sampleReviewedU64C4KFootFrame, type ReviewedU64C4KFootPolicy } from '@/lib/hanja-stroke-source-foot-u64c4-k'
@@ -389,6 +390,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u85a9HkcsCompoundContext = u85a9HkcsContext ? reviewedU85a9HkcsCompoundContext(strokes) : null
   const u85a9HkcsReturnContext = u85a9HkcsContext ? reviewedU85a9HkcsReturnContext(strokes) : null
   const u85a9HkcsSourcePrefixContext = u85a9HkcsContext ? reviewedU85a9HkcsSourcePrefixContext(strokes) : null
+  const u85a9HkcsSourceReturnContext = u85a9HkcsContext ? reviewedU85a9HkcsSourceReturnContext(strokes) : null
   const u9f08Context = reviewedU9f08Context(strokes)
   const u8438KContext = reviewedU8438KContext(strokes)
   const u84d1HkcsContext = reviewedU84d1HkcsContext(strokes)
@@ -728,6 +730,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u85a9HkcsSourcePrefixPolicy) return <U85a9HkcsSourcePrefixOutline key={index} policy={u85a9HkcsSourcePrefixPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} previousPenProgress={phase==='idle'||phase==='done'?1:manual?stroke<=count?1:0:Number.isFinite(elapsed)?Math.max(0,Math.min(1,(elapsed-(stroke-1)*(STROKE_DURATION+STROKE_GAP))/STROKE_DURATION)):NaN} clipId={id+'-'+stroke+'-'+index} />
         const u85a9HkcsCompoundPolicy = reviewedU85a9HkcsCompoundPolicy(u85a9HkcsCompoundContext, stroke, index)
         if (u85a9HkcsCompoundPolicy) return <U85a9HkcsCompoundCapsOutline key={index} policy={u85a9HkcsCompoundPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} />
+        const u85a9HkcsSourceReturnPolicy = reviewedU85a9HkcsSourceReturnPolicy(u85a9HkcsSourceReturnContext, stroke, index)
+        if (u85a9HkcsSourceReturnPolicy) return <U85a9HkcsSourceReturnOutline key={index} policy={u85a9HkcsSourceReturnPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} />
         const u85a9HkcsReturnPolicy = reviewedU85a9HkcsReturnPolicy(u85a9HkcsReturnContext, stroke, index)
         if (u85a9HkcsReturnPolicy) return <U85a9HkcsReturnCapsOutline key={index} policy={u85a9HkcsReturnPolicy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} />
         const u85a9HkcsPolicy = reviewedU85a9HkcsPolicy(u85a9HkcsContext, stroke, index)
@@ -1292,6 +1296,37 @@ function U85a9HkcsReturnCapsOutline({policy,segment,progress,previousMaskProgres
   </defs>
   {valid&&progress===1&&<path ref={fullInk} data-growing-full-round="true" data-u85a9-hkcs-return-full-original-q-tube="true" d={segment.outline} mask={'url(#'+clipId+')'} visibility="hidden"/>}
   {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u85a9-hkcs-return-growing)'} visibility="hidden"/>}
+ </g>
+}
+
+function U85a9HkcsSourceReturnOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU85a9HkcsSourceReturnPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ let frame:ReturnType<typeof sampleReviewedU85a9HkcsSourceReturnFrame>|null=null
+ try{frame=sampleReviewedU85a9HkcsSourceReturnFrame(policy,segment,progress,previousMaskProgress)}catch{}
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current,f=frame
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u85a9-hkcs-source-return-committed','false')};reset()
+  if(!g||!p||!r||!c||!f)return reset
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u85a9-hkcs-source-return-clip'
+  const previousComplete=()=>verifyReviewedU85a9HkcsSourceReturnPrior(policy,g,previousMaskProgress)
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||g.getAttribute('data-u85a9-hkcs-source-return-previous-progress')!==String(previousMaskProgress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const b=segment.bounds,expected=f.clip??{x:b[0],y:b[1],width:b[2]-b[0],height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||previousComplete())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u85a9-hkcs-source-return-progress',String(progress));p.setAttribute('data-u85a9-hkcs-source-return-phase',f.phase);p.setAttribute('data-u85a9-hkcs-source-return-direct-original',String(f.originalPDirect));p.setAttribute('data-u85a9-hkcs-source-return-source-full',String(f.originalSourceFull));p.setAttribute('data-u85a9-hkcs-source-return-one-p','true');p.setAttribute('data-u85a9-hkcs-source-return-ua-read','false')
+  if(!stable())return reset
+  p.setAttribute('data-u85a9-hkcs-source-return-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const b=segment.bounds,clip=frame?.clip,key=clipId+'-u85a9-hkcs-source-return-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u85a9-hkcs-source-return-previous-progress={String(previousMaskProgress)} data-u85a9-hkcs-source-return-display-clock="source-P-x-return-34.25-to-21.3">
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={clip?.x??b[0]} y={clip?.y??b[1]} width={clip?.width??b[2]-b[0]} height={clip?.height??0}/></clipPath></defs>
+  <path ref={ink} data-u85a9-hkcs-source-return-ink="true" d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
  </g>
 }
 
