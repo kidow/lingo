@@ -1,0 +1,133 @@
+{
+  "schema": "hanja-actual-component-native-approval/v1",
+  "date": "2026-10-25",
+  "glyph": "楰",
+  "root": "u6970",
+  "result": "PASS",
+  "observer": "ROOT browser panel",
+  "finiteScopes": 60,
+  "freshFiniteScopes": 21,
+  "reusedUnchangedFiniteScopes": 39,
+  "naturalSnapshots": 8,
+  "exactWhole13Separate": true,
+  "record": {
+    "path": "docs/hanja-source-original-u6970-2026-10-25/revised-native-review-2.json",
+    "SHA256": "7b27a12cf982797f4bda2ce922d02e19cb83c09282772166e99dc2b272020f89"
+  },
+  "source": {
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "daae1a69950449ea8db0c7871ca75470a77ac3170c71a9f66e2d68dbf75532b7"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "ac15d955d451f33608d3a06014c84f204867bf102cf6e12aad72a2513cd44f75"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u6970-2.json",
+      "SHA256": "0a8e1c48377fe098f5e5ad8f6e0d6c765d6b0c5240aa9a6f2cf5f7aeaaf0495b"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "2c512907ee9b974fc0ad3f1af6c0538cae018b99d26720dc8c54d7bafe9e77fa"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u6970-2026-10-25/fixtures.json",
+      "SHA256": "1bd6cfb4f69e4f8a4d0e5e6aba3d109a8414ccecf5081edd08c4416baf9fca3c"
+    }
+  },
+  "finite": {
+    "fresh": 21,
+    "reusedUnchanged": 39,
+    "totalDistinct": 60,
+    "passed": 60,
+    "held": 0,
+    "capSixStates": 18,
+    "priorBoundaryStates": 3,
+    "capPens": [
+      3,
+      4,
+      5
+    ],
+    "earlyLocals": [
+      1e-06,
+      0.01,
+      0.03
+    ],
+    "midNearLocals": [
+      0.5,
+      0.99999999
+    ],
+    "completionResidual": 3,
+    "allResidualOriginalPAndQChecks": true,
+    "boundary12m2": {
+      "result": "PASS",
+      "reason": "Minus V rounded end versus exact/plus flat end is original prior mask1 P completion contour. It is neither an isolated new mask2 initial fragment nor omitted sourceP. All three states preserve original source and have bad/errors empty."
+    }
+  },
+  "natural": {
+    "pens": [
+      3,
+      4,
+      5,
+      12
+    ],
+    "distinctSnapshots": 8,
+    "samples": [
+      {
+        "pen": 3,
+        "statusProgress": 0.0828375,
+        "screenshotProgress": 0.0986375,
+        "endProgress": 1
+      },
+      {
+        "pen": 4,
+        "statusProgress": 0.078575,
+        "screenshotProgress": 0.1087125,
+        "endProgress": 1
+      },
+      {
+        "pen": 5,
+        "statusProgress": 0.0796125,
+        "screenshotProgress": 0.1086375,
+        "endProgress": 1
+      },
+      {
+        "pen": 12,
+        "statusProgress": 0.089099,
+        "screenshotProgress": 0.1036875,
+        "endProgress": 1
+      }
+    ],
+    "continuousReplayProof": false,
+    "excludedAttempts": [
+      {
+        "pen": 3,
+        "kind": "Combined mid/end wait3sec exception before image returned",
+        "accepted": 0
+      }
+    ],
+    "retryHistory": "Same-run end accepted once; only missing pen3 mid repeated once. No successful end replay."
+  },
+  "server": {
+    "newSSRChecks": 1,
+    "CJS": 272,
+    "ESM": 272,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "pid": 78778,
+    "session": 71644,
+    "port": 59412,
+    "exitCode": 130,
+    "tab": 172,
+    "tabClosed": true,
+    "ownedServerRemaining": false
+  },
+  "bad": [],
+  "errors": [],
+  "allTimeProof": false,
+  "actualAppUI": false,
+  "nativeApproval": true,
+  "runtimeApplied": false
+}
