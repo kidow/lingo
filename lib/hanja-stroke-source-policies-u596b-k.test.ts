@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import {transpileModule,ScriptTarget,ModuleKind,JsxEmit} from 'typescript'
+import {runInNewContext} from 'node:vm'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
-import {makeReviewedU596bKSourceContext,reviewedU596bKContext,reviewedU596bKPolicy,measureReviewedU596bKFrame,verifyReviewedU596bKCapsPrior,REVIEWED_U596BK_INPUT_SHA256,REVIEWED_U596BK_SOURCE} from './hanja-stroke-start-caps-u596b-k.ts'
+import {makeReviewedU596bKSourceContext,reviewedU596bKContext,reviewedU596bKPolicy,measureReviewedU596bKFrame,commitReviewedU596bKCaps,verifyReviewedU596bKCapsPrior,REVIEWED_U596BK_INPUT_SHA256,REVIEWED_U596BK_SOURCE} from './hanja-stroke-start-caps-u596b-k.ts'
 import {reviewedU596bKCardinalContext,reviewedU596bKCardinalPolicy,sampleReviewedU596bKCardinalFrame,verifyReviewedU596bKCardinalPrior} from './hanja-stroke-cardinal-contact-u596b-k.ts'
 import {reviewedU596bKFootContext,reviewedU596bKFootPolicy,sampleReviewedU596bKFootFrame,verifyReviewedU596bKFootPrior,verifyReviewedU596bKFootCompletion} from './hanja-stroke-source-foot-u596b-k.ts'
 const read=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),sha=(x:any)=>createHash('sha256').update(x).digest('hex'),f=JSON.parse(read('docs/hanja-source-original-u596b-k-2026-10-25/fixtures.json').toString())['u596b-k'],clone=(x:any)=>structuredClone(x)
@@ -47,4 +49,18 @@ test('奫 foot requires sole canonical completedQ7/miter/dash and exact original
  ink.css.fillRule='evenodd';assert.equal(verifyReviewedU596bKFootPrior(q,g,1),false);ink.css.fillRule='nonzero';put(prev,el(w.doc,w.svg,'path',{d:q.previousSegment.outline,visibility:'hidden'}));assert.equal(verifyReviewedU596bKFootPrior(q,g,1),false);prev.children.pop();assert.equal(verifyReviewedU596bKFootPrior(q,g,1),true)
  for(const[k,v]of Object.entries({'data-stroke-reveal-progress':'1','data-u596b-k-foot-progress':'1','data-u596b-k-foot-source-full':'true','data-u596b-k-foot-direct-original':'true','data-u596b-k-foot-committed':'true'}))g.setAttribute(k,v)
  const finalInk=el(w.doc,w.svg,'path',{d:q.segment.outline,'data-u596b-k-foot-original':'true'});put(g,el(w.doc,w.svg,'defs'),finalInk);assert.equal(verifyReviewedU596bKFootCompletion(q,g),true);finalInk.setAttribute('mask','url(#fake)');assert.equal(verifyReviewedU596bKFootCompletion(q,g),false)
+})
+test('奫 compound7 completion binds actual full ink before strict prior validation',()=>{
+ const policy=reviewedU596bKPolicy(reviewedU596bKContext(f.strokes),6,1)!;
+ const w=directPrior(7,policy,f.strokes[6][0]);
+ const empty={measurement:null,guide:null,startCap:null,endCap:null,ink:null};
+ assert.equal(commitReviewedU596bKCaps(policy,policy.segment,1,'completion-seven',empty,1).status,'hidden');
+ const renderer=read('components/hanja/stroke-outlines.tsx').toString(),start=renderer.indexOf('function U596bKCapsOutline('),end=renderer.indexOf('\nfunction U596bKFootOutline(',start);
+ assert(start>=0&&end>start);const component=renderer.slice(start,end);
+ const effects:Array<()=>unknown>=[],jsx=(name:string,props:any)=>{const attrs:Record<string,string>={};for(const[k,v]of Object.entries(props??{})){if(['children','ref','key'].includes(k)||v===undefined||v===null||v===false)continue;const names:Record<string,string>={fillRule:'fill-rule',strokeWidth:'stroke-width',strokeLinecap:'stroke-linecap',strokeLinejoin:'stroke-linejoin',strokeDasharray:'stroke-dasharray',strokeDashoffset:'stroke-dashoffset',clipPath:'clip-path'};attrs[names[k]??k]=String(v)}const node=el(w.doc,w.svg,name,attrs);const append=(v:any)=>{if(Array.isArray(v))v.forEach(append);else if(v&&typeof v==='object'&&v.localName)put(node,v)};append(props?.children);if(props?.ref)props.ref.current=node;return node};
+ const out=transpileModule('export '+component,{compilerOptions:{target:ScriptTarget.ES2022,module:ModuleKind.CommonJS,jsx:JsxEmit.ReactJSX}}).outputText;
+ const module={exports:{}as any},sandbox={module,exports:module.exports,require:(id:string)=>{assert.equal(id,'react/jsx-runtime');return{jsx,jsxs:jsx}},useRef:()=>({current:null}),useLayoutEffect:(fn:()=>unknown)=>effects.push(fn),commitReviewedU596bKCaps,verifyReviewedU596bKCapsPrior};
+ runInNewContext(out,sandbox);const actual=sandbox.module.exports.U596bKCapsOutline({policy,segment:policy.segment,progress:1,previousMaskProgress:1,clipId:'completion-seven'});
+ w.parent.children.pop();put(w.parent,actual);effects.forEach(fn=>fn());const ink=actual.children.find((n:any)=>n.localName==='path');assert(ink);assert.equal(ink.getAttribute('visibility'),'visible');assert.equal(ink.getAttribute('data-u596b-k-full-committed'),'true');assert.equal(ink.getAttribute('d'),policy.segment.outline);
+ w.v.setAttribute('d',policy.previousSegment!.outline+' ');effects.forEach(fn=>fn());assert.equal(ink.getAttribute('visibility'),'hidden');
 })

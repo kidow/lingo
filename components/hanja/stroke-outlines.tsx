@@ -1740,7 +1740,7 @@ function U596bKCapsOutline({policy,segment,progress,previousMaskProgress,clipId}
   if(progress>0&&!prior())return reset
   const nodes={measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:partial}
   if(progress===1){
-   const checked=commitReviewedU596bKCaps(policy,segment,1,clipId,nodes,previousMaskProgress)
+   const checked=commitReviewedU596bKCaps(policy,segment,1,clipId,{...nodes,ink:full},previousMaskProgress)
    if(checked.status!=='complete'||!prior())return reset
    const mask=fullMask.current,path=fullGuide.current,owner=g.ownerSVGElement,defs=mask?.parentElement,doc=g.ownerDocument,view=doc.defaultView
    const stable=()=>{

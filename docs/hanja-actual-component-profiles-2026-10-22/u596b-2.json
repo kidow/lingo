@@ -587,7 +587,8 @@
     "Actual new setup32buttons:63distinct controlled frames plus3natural controls PASS",
     "New three renderer functions actual API semantic[]/browser module syntax PASS",
     "Renderer/helper inverse byte preservation exact; unchanged source/math/engine/old69 not replayed",
-    "No author SSR/resource preflight/server; ROOT first startup performs one graph load"
+    "No author SSR/resource preflight/server; ROOT first startup performs one graph load",
+    "New actual U596bKCapsOutline completion + real policy API: null partial rejected/full node visible/prior D mutation hidden PASS; changed function semantic[]"
   ],
   "officialDirectionEvidence": {
     "path": "docs/hanja-goal-glyphwiki-batch274-2026-10-04/review.json",
@@ -898,7 +899,7 @@
     "lib/hanja-stroke-start-caps-u902d.ts": "7e696eddc4b3528dc5ce2156c6103890a66173f410344c07ebf07fa31a67efb7",
     "lib/hanja-stroke-source-foot-u902d.ts": "6c9ca4e771df9e14ebdfb29e85ba5bd93442fad699e98caef000b42b701b1a27",
     "lib/hanja-stroke-cardinal-contact-u902d.ts": "1782a8554c0d6281cccd819ffad0d3082a758b1b577c9cfcc8130b21980d9cf6",
-    "components/hanja/stroke-outlines.tsx": "94181d948beba165028346489b00c1365c7969ac64ee30e96cde77d4a37a3156",
+    "components/hanja/stroke-outlines.tsx": "7b0c67edcf0ba5656ac1ff92d97a05811ac1ccd9d9f44b3a4dd8159076218773",
     "docs/hanja-source-original-u902d-2026-10-25/fixtures.json": "a50e133dbdf91d394a398c4e0dddee855af6b81ec60c6bbcb8f7438059a4effd",
     "docs/hanja-source-original-u902d-2026-10-25/candidate.mjs": "d8abe06da87eecf8b094f1412ec8cc4c9f82ca4ea87e78bb8b646a1880af51de",
     "docs/hanja-goal-glyphwiki-batch1035-2026-10-13/engine-whole-u902d.json": "c56b9afad6c730d87e65ccb4e65068eafef3f3e8d5e2530c209877c71f8e00e2",
@@ -955,7 +956,7 @@
     "lib/hanja-stroke-source-foot-u596b-k.ts": "6eede4b68d6fbc758abd5e9e15a721d0bad9fd81b8c02d77ee5c3e9a35e1a82e",
     "lib/hanja-stroke-cardinal-contact-u596b-k.ts": "faf6dfa5a748565c1040f18b42b1582dbd9b7712c858eeeb48fe99af23eba563",
     "docs/hanja-source-original-u596b-k-2026-10-25/correction-source-facts.json": "6d9bf5ba07c443f8e857b7fecf919821061d197a8595c671a0e20fddc62161a7",
-    "lib/hanja-stroke-source-policies-u596b-k.test.ts": "08fb5936eb27722df68fd4ded8a2bda09e7ef85c99893647bc75b4d7ed02bfd5"
+    "lib/hanja-stroke-source-policies-u596b-k.test.ts": "a02596e402adee2555d850534a8490fc8df18ee7a0bca49698513fefa79c1979"
   },
   "adapterSHA256": "f967197f9ac7560282fac6531419c140dfe1c23ddcf17bc0e3614d6f83de6346",
   "originalNonDrawingRawRows": [],
@@ -1263,7 +1264,7 @@
     "notReplayed": true
   },
   "integrationPins": {
-    "rendererSHA256": "94181d948beba165028346489b00c1365c7969ac64ee30e96cde77d4a37a3156",
+    "rendererSHA256": "7b0c67edcf0ba5656ac1ff92d97a05811ac1ccd9d9f44b3a4dd8159076218773",
     "helperSHA256": "f967197f9ac7560282fac6531419c140dfe1c23ddcf17bc0e3614d6f83de6346",
     "constantsSHA256": "9d50b7ebb889c05b79bf144cabb385b195c5a48d1393b03a7169135505cbda37",
     "expectedCJS": 293,
@@ -1274,6 +1275,41 @@
       "rendererImportsAdded": 0,
       "timingConstantsOnlyInReviewGraph": true,
       "resourceClosureExpected": 293
+    }
+  },
+  "startupDiagnostics": {
+    "firstCorrectedAttempt": {
+      "profileSHA256": "84cea76cbb92ce1dbf709cd9ca00b18f7e2624a0272acba307efd2ec57ee7886",
+      "inputCommit": "b581cf6b3",
+      "helperSHA256": "f967197f9ac7560282fac6531419c140dfe1c23ddcf17bc0e3614d6f83de6346",
+      "rendererSHA256": "94181d948beba165028346489b00c1365c7969ac64ee30e96cde77d4a37a3156",
+      "SSR": 1,
+      "CJS": 293,
+      "ESM": 293,
+      "engine": 0,
+      "sourceProjection": 0,
+      "firstIdleDiagnostic": {
+        "target": "u596b-k-7-2",
+        "sameFrame": false,
+        "fullRound": false,
+        "visibility": "hidden",
+        "acceptedControlledFrames": 0
+      },
+      "cause": "p1 component supplied null partial ink to strict completed-prior gate; actual full ink must be supplied",
+      "PID": 75932,
+      "session": 32718,
+      "port": 59412,
+      "exitCode": 130,
+      "tab": 215,
+      "tabClosed": true,
+      "viewportReset": true
+    },
+    "correction": {
+      "rendererOnlyCallBinding": true,
+      "originalPolicyGateUnchanged": true,
+      "sourcePGuideWidthWeightUnchanged": true,
+      "actualComponentAndAPIFocusedTestPassed": true,
+      "noOldWholeApprovalExpanded": true
     }
   }
 }
