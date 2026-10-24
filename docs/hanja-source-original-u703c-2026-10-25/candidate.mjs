@@ -1,0 +1,70 @@
+// DRAFT 瀼 base original20; body3 unchanged, static comparison only.
+import assert from 'node:assert/strict'
+export {renderProgressive} from '../hanja-goal-glyphwiki-batch43-2026-09-22/progressive.mjs'
+export const sourceGroups=deepFreeze([[0],[1],[2,3],[4],[5],[6],[7,8],[9],[10],[11,12],[13],[14],[17],[15],[16],[18],[19,20],[21,22],[23],[24]])
+const CURVES={"0:0":[25.785,20,44.16,27,52.245,41,7,8],"1:0":[11.82,66,31.665,73,39.015,87,7,8],"2:0":[13.29,133,39.015,142,36.075,184,7,8],"3:0":[32.4,150,35.34,138,66.21000000000001,67,32,7],"20:0":[116.924,131.6804,99.896,154.1384,60.164,167.6132,132,7],"22:0":[77.19200000000001,181.08800000000002,109.829,175.0992,142.466,167.6132,0,7],"23:0":[168.00799999999998,139.1664,158.075,148.14960000000002,143.88500000000002,158.63,0,7],"24:0":[125.43799999999999,130.9318,145.304,167.6132,177.94100000000003,179.59080000000003,7,0]}
+const BEZIERS={}
+const DIAGONALS={}
+function compileOriginal(trace, proof) {
+  assert.equal(trace.length,25)
+  // Existing compound source coordinates remain independent; no continuity approval.
+  const segment=(polygons,direction,weight)=>{
+    const points=polygons.flat(),xs=points.map(p=>p.x/2),ys=points.map(p=>p.y/2)
+    assert(points.every(p=>p.off===0))
+    // Separate source polygons are filled independently. Normalize winding before
+    // joining SVG subpaths so overlapping source decorations remain a union.
+    const normalized=polygons.map(p=>{
+      const area=p.reduce((n,v,i)=>{const next=p[(i+1)%p.length];return n+v.x*next.y-next.x*v.y},0)
+      assert(area!==0)
+      return area<0?[p[0],...p.slice(1).reverse()]:p
+    })
+    return {outline:normalized.map(p=>p.map((v,i)=>`${i?'L':'M'}${v.x/2} ${v.y/2}`).join(' ')+' Z').join(' '),bounds:[Math.min(...xs),Math.min(...ys),Math.max(...xs),Math.max(...ys)],direction,weight:Math.round(weight*1e6)/1e6}
+  }
+  return sourceGroups.map(indices=>indices.flatMap(index=>{
+    assert.deepEqual(trace[index].flatMap(c=>c.polygons),proof.groups[index].polygons)
+    return trace[index].flatMap((call,j)=>{
+      const a=call.args
+      if(call.kind==='cdDrawCurve'){
+        assert.deepEqual(a,CURVES[index+':'+j])
+        return [{...segment(call.polygons,'curve',Math.hypot(a[4]-a[0],a[5]-a[1])/2),revealPath:`M${a[0]/2} ${a[1]/2} Q${a[2]/2} ${a[3]/2} ${a[4]/2} ${a[5]/2}`,revealWidth:14}]
+      }
+      if(call.kind==='cdDrawBezier'){
+        assert.deepEqual(a,BEZIERS[index+':'+j])
+        return [{...segment(call.polygons,'curve',Math.hypot(a[6]-a[0],a[7]-a[1])/2),revealPath:`M${a[0]/2} ${a[1]/2} C${a[2]/2} ${a[3]/2} ${a[4]/2} ${a[5]/2} ${a[6]/2} ${a[7]/2}`,revealWidth:14}]
+      }
+      assert.equal(call.kind,'cdDrawLine')
+      const[x1,y1,x2,y2]=a
+      if(x1!==x2&&y1!==y2){assert.deepEqual(a,DIAGONALS[index+':'+j]);return [{...segment(call.polygons,'curve',Math.hypot(x2-x1,y2-y1)/2),revealPath:`M${x1/2} ${y1/2} L${x2/2} ${y2/2}`,revealWidth:14}]}
+      assert(x1===x2||y1===y2,'Only exact cardinal original lines')
+      return [segment(call.polygons,x1===x2?(y2>y1?'down':'up'):(x2>x1?'right':'left'),Math.hypot(x2-x1,y2-y1)/2)]
+    })
+  }))
+}
+
+import{readFileSync}from'node:fs'
+import{createHash}from'node:crypto'
+function deepFreeze(x){if(x&&typeof x==='object'&&!Object.isFrozen(x)){Object.freeze(x);for(const v of Object.values(x))deepFreeze(v)}return x}
+function sameJSON(a,b) {
+ if(Object.is(a,b))return true
+ if(!b||typeof b!=='object'||!a||typeof a!=='object')return false
+ if(Array.isArray(b)){
+  if(!Array.isArray(a)||Object.getPrototypeOf(a)!==Array.prototype||a.length!==b.length||Reflect.ownKeys(a).length!==b.length+1)return false
+  return b.every((value,index)=>{const d=Object.getOwnPropertyDescriptor(a,String(index));return !!d&&d.enumerable&&Object.hasOwn(d,'value')&&sameJSON(d.value,value)})
+ }
+ if(Array.isArray(a)||Object.getPrototypeOf(a)!==Object.prototype)return false
+ const keys=Object.keys(b),expected=b
+ return Reflect.ownKeys(a).length===keys.length&&keys.every(key=>{const d=Object.getOwnPropertyDescriptor(a,key);return !!d&&d.enumerable&&Object.hasOwn(d,'value')&&sameJSON(d.value,expected[key])})
+}
+export const selectedProofIdentity=deepFreeze({"sourceRoot":"u703c","sourceProofFile":"../hanja-goal-glyphwiki-batch702-2026-10-12/engine-whole-u703c.json","sourceProofFileSha256":"a907518027a96ab51ab57615a7b1cd2f22be75b979535c6f2f111ed09643f351","sourceCapsuleFile":"../hanja-goal-glyphwiki-batch702-2026-10-12/sources.json","sourceCapsuleFileSha256":"4655632ef2ad9dc36f710f48880a5b002e3e59bca94ec66f51fbc2e2909f27d5","sourceChecksFile":"../hanja-goal-glyphwiki-batch702-2026-10-12/verify-source.mjs","sourceChecksFileSha256":"fb71ad5d5c66e8809a54daa879359d58dcf0f85a1a24b335c511395bae41747a"})
+const pinned=deepFreeze(JSON.parse(readFileSync(new URL("../hanja-goal-glyphwiki-batch702-2026-10-12/engine-whole-u703c.json",import.meta.url))))
+export function compileProgressive(trace,proof,identity){
+ assert.equal(arguments.length,3)
+ assert(sameJSON(identity,selectedProofIdentity),'Exact seven-field source identity required')
+ assert(sameJSON(proof,pinned)&&sameJSON(trace,pinned.trace),'Exact original stored body3 and trace required')
+ for(const[f,p]of[[identity.sourceProofFile,identity.sourceProofFileSha256],[identity.sourceCapsuleFile,identity.sourceCapsuleFileSha256],[identity.sourceChecksFile,identity.sourceChecksFileSha256]])assert.equal(createHash('sha256').update(readFileSync(new URL(f,import.meta.url))).digest('hex'),p)
+ return compileOriginal(trace,proof)
+}
+export const nativeApproved=false
+export const runtimeApplied=false
+
+export const sourceProposal=deepFreeze({"status":"DRAFT-original-base-body3-static20-only","catalogStrokes":20,"proposedPlaybackStrokes":20,"sourceProofKind":"selected-body3-only","originalStoredFields":["groups","trace","defaults"],"full5Claimed":false,"engineHeaderAdded":false,"groups":[[0],[1],[2,3],[4],[5],[6],[7,8],[9],[10],[11,12],[13],[14],[17],[15],[16],[18],[19,20],[21,22],[23],[24]],"originalRows":25,"originalCalls":25,"originalP":42,"expectedPens":20,"expectedMasks":25,"sourceRawEachOnce":true,"sourceGeometryChanged":false,"sourceGuideReversed":false,"sourceArgsChanged":false,"sourceRowsDeleted":false,"sourcePAndCallOrderWithinRawUnchanged":true,"sourceTimingEquivalent":false,"examBodyApproval":false,"sourceStaticMappingApproved":false,"initialContactApproved":false,"allFramesApproved":false,"productionImportAllowed":false,"nativeApproval":false,"runtimeApplied":false,"dictionaryReview":{"path":"docs/hanja-official-media-compare-u703c-2026-10-25/official-temporal-native-review.json","SHA256":"fca938bde46d9d0a1f6773aaabbb341de44e677716b59eb22e7c7fd4f1b85e33"},"wholeReview":{"path":"docs/hanja-source-raw-compare-u703c-2026-10-25/native-whole-review.json","SHA256":"a69e104e46fafba7967db7a36714ccf134f3b50a87d1d7669ea3f387f5bd82bd"},"groupingBasis":"ROOT60 original frames and fresh whole1 support the existing20-row proposal for static comparison. Original horizontal raw18 precedes raw16/17 verticals as logical13/14/15, matching direct original directions; each raw remains once. Original gap-bearing pairs3/17/18 remain independent masks.","retainedConcerns":["Logical3 originalQ then risingQ guide gap34.19803539678851 source units retained","Logical17 shortH/longDL gap4.9665 and logical18 V/risingQ gap21.060049164472524 retained; no connector or forced join","Filled-P contacts, source-specific clocks, all-time connectivity and native runtime remain unapproved"]})
