@@ -54,6 +54,10 @@ def install_board(shared, base, groups, board_guards):
 
     def selection(route, query):
         board_guards()
+        if route == '/draft-pen' and base.get('glyph') == '庾' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u5ebe-ue0102':
+            q = parse_qs(query, keep_blank_values=True, strict_parsing=True)
+            require(set(q) == {'pen'} and len(q['pen']) == 1 and q['pen'][0] in [str(i) for i in range(1, 13)], 'exact 庾 draft pen 1..12 required')
+            return {'draftPen': int(q['pen'][0])}
         if route != '/board':
             return original_selection(route, query)
         q = {} if not query else parse_qs(query, keep_blank_values=True, strict_parsing=True)
@@ -72,6 +76,16 @@ def install_board(shared, base, groups, board_guards):
         return shell.split('<g fill="#222">', 1)[0] + '<g fill="#222">' + ''.join(pieces) + '</g></svg>'
 
     def page(route, selected, sources, domestic):
+        if route == '/draft-pen' and base.get('glyph') == '庾' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u5ebe-ue0102':
+            board_guards()
+            pen = selected['draftPen']
+            require(type(pen) is int and 1 <= pen <= 12, 'exact 庾 selected pen required')
+            old = original_page('/whole', None, sources, domestic)
+            require(old.count('<div class="grid">') == 1, 'original page shell changed')
+            head = old.split('<div class="grid">', 1)[0]
+            indexes = groups['selected'][pen - 1]
+            links = ' '.join('<a href="/draft-pen?pen=' + str(i) + '">' + str(i) + '</a>' for i in range(1, 13))
+            return head + '<nav>' + links + '</nav><p>DRAFT · 정적 원부분 대조만 · 8획 nohook 세부·접촉·재생 미승인</p><style>.draft-single svg{width:520px!important;height:520px!important;min-width:520px!important;min-height:520px!important;max-width:none!important}.draft-single{display:block}</style><div class="draft-single"><h2>국내 ' + str(pen) + '</h2>' + shared.domestic_svg(domestic, pen) + '<h2>원 VS2 raw ' + ','.join(map(str,indexes)) + '</h2>' + grouped_svg(sources['selected'], indexes) + '</div>'
         if route != '/board':
             return original_page(route, selected, sources, domestic)
         board_guards()
@@ -111,6 +125,8 @@ def install_board(shared, base, groups, board_guards):
             note += '<p data-source-draft="u8910"><strong>DRAFT · 배정14획 유지 / 사전13획 · productionImportAllowed=false</strong> · base만 원16raw/19mask/36P를13행으로 대조 · 다른7대표는 전부 미배정 · 원형·접촉·재생·개별variant 미승인</p>'
         if base.get('glyph') == '瘦' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'hkcs_m7626':
             note += '<p data-source-draft="u7626-hkcs"><strong>DRAFT · 배정14획 유지 / 사전15획 정적판 · productionImportAllowed=false</strong> · 原provider hkcs_m7626 · 원17raw/18mask/32P 전체 보존 · 연속raw10+11 및15+16은 국내방향에 따른 검토후보 · 원10 H/V guide 간격 유지 · 접촉·재생·개별variant 미승인</p>'
+        if base.get('glyph') == '庾' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u5ebe-ue0102':
+            note += '<p data-source-draft="u5ebe-ue0102"><strong>DRAFT · 배정11 / 사전12 · productionImportAllowed=false</strong> · 원13raw/15calls/26P 보존 · 원raw9H→raw8V 재배열 · 8획 nohook 세부/접촉/재생 미승인</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
 
     shared.guards, shared.selection, shared.page = guarded, selection, page
@@ -595,6 +611,16 @@ def exact_u8910_dictionary_draft_launcher(config,base):
             and digest(fixed_path('docs/hanja-source-original-u8910-2026-10-24/fixtures.json').read_bytes())=='18d5ca375b100afafb8e97cc3c13b70bdbca568b06135f9abb0a7b9bffb2cd07'
             and digest(fixed_path('docs/hanja-official-media-compare-u8910-2026-10-24/official-temporal-native-review.json').read_bytes())=='9c6816117caf9ea1d5b305b207193002fd8f6f514c713cb4dcb7cf63bd2a31e8')
 
+def exact_u5ebe_vs2_dictionary_draft_launcher(config,base):
+    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'5d1d958ddc92a1ca6856c5967d56ec4b59bf5b7bee69497814653b7a978d4630'}
+            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u5ebe-ue0102-2026-10-25/config.json','SHA256':'02505e17d5d4b1002614aa56332b69d8b180a6d6b555efb09ab43fd753b9f78f'}
+            and base.get('glyph')=='庾' and base.get('catalogStrokes')==11 and base.get('dictionaryPlaybackStrokes')==12
+            and base.get('domestic',{}).get('sha256')=='190242cbbb8b6b542ec8d60cbc8dba05358d3403fdfb2dc3351b91f6699ce339'
+            and base.get('sourceRoots')=={'selected': {'root': 'u5ebe-ue0102', 'file': 'docs/hanja-goal-glyphwiki-batch776-2026-10-13/engine-whole-u5ebe-ue0102.json', 'fileSHA256': '38329a01b786dbbfe3cf6a199cebf8352ebd6838dbcdd7583679ff0d8638faec', 'proofKeys': ['defaults', 'engineHashes', 'engineRevision', 'groups', 'trace'], 'proofKind': 'actual-full5-direct', 'sourceProofIdentity': {'sourceRoot': 'u5ebe-ue0102', 'sourceProofFile': 'engine-whole-u5ebe-ue0102.json', 'sourceProofFileSha256': '38329a01b786dbbfe3cf6a199cebf8352ebd6838dbcdd7583679ff0d8638faec'}, 'rawGroups': 13, 'drawingCalls': 15, 'polygonCounts': [2, 2, 3, 3, 1, 2, 1, 2, 1, 1, 4, 2, 2], 'polygons': 26}}
+            and config.get('provisionalGroups')=={'selected': [[1], [2], [3], [4], [5], [6], [13], [9, 8], [10], [7], [11], [12]]}
+            and digest(fixed_path('docs/hanja-source-original-u5ebe-ue0102-2026-10-25/fixtures.json').read_bytes())=='bf08ec3b2ddbbe373f8c92510271733f517df2c08f342541977a824778922560'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -617,6 +643,8 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    dictionary_u5ebe = exact_u5ebe_vs2_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or dictionary_u5ebe
     dictionary_u83f1 = exact_u83f1_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u83f1
     dictionary_u7626 = exact_u7626_hkcs_dictionary_draft_launcher(config,base)
@@ -648,6 +676,7 @@ def main():
     if dictionary_u83f1:base = {**base,'catalogStrokes':11}  # review-view copy only; pinned catalog remains12
     if dictionary_u7626:base = {**base,'catalogStrokes':15}  # review-view copy only; pinned source config remains14
     if dictionary_u8910:base = {**base,'catalogStrokes':13}  # review-view only; exact original catalog14 remains unchanged
+    if dictionary_u5ebe:base = {**base,'catalogStrokes':12}  # review-view only; catalogue11 unchanged
     validate_groups(config['provisionalGroups'], base)
 
     def board_guards():
