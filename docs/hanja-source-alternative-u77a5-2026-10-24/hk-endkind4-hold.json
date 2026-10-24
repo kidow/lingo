@@ -1,0 +1,107 @@
+{
+  "schema": "hanja-public-source-endkind-feasibility-review/v1",
+  "date": "2026-10-24",
+  "glyph": "瞥",
+  "status": "HK-hook-condition-conflicts-with-observed-official4; no engine",
+  "source": {
+    "providerRoot": "hkcs_m77a5",
+    "reportedVersion": 2,
+    "rootData": "99:0:0:0:2:200:180:hkcs_m655d-p03-s02$99:0:0:-4:12:204:200:hkcs_m76ee-p04-s00",
+    "rootURL": "https://glyphwiki.org/api/glyph?name=hkcs_m77a5",
+    "rootHTTPStatusReportedByROOT": 200,
+    "rootRetrievedBy": "/root; exact RAM text supplied to child",
+    "fixedVersionURLRefetched": false,
+    "upperChild": {
+      "name": "hkcs_m655d-p03-s02",
+      "reportedVersion": 1,
+      "reportedLiteralRows": 12,
+      "reportedDependencies": [],
+      "inspectedRightFrameRow": "1:22:4:91:52:91:109",
+      "fullDataNotCopiedOrReconstructed": true
+    },
+    "lowerChild": {
+      "name": "hkcs_m76ee-p04-s00",
+      "reportedVersion": 1,
+      "reportedLiteralRows": 6,
+      "fullDataNotCopiedOrReconstructed": true
+    },
+    "parentCoordinateReflections": false,
+    "parentUpperBox": [
+      0,
+      2,
+      200,
+      180
+    ],
+    "parentLowerBox": [
+      -4,
+      12,
+      204,
+      200
+    ]
+  },
+  "vendor": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "kagedfSHA256": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+    "kageSHA256": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+    "originalBranch": "Mincho type1 and a3%100==4: line stops kMage before endpoint, followed by curve ending left of endpoint. adjustHane changes hundreds only, keeping remainder4.",
+    "originalBaseInput": "1:22:4:99:46:99:101",
+    "originalBaseActualCalls": [
+      {
+        "kind": "cdDrawLine",
+        "args": [
+          99,
+          46,
+          99,
+          91,
+          22,
+          1
+        ]
+      },
+      {
+        "kind": "cdDrawCurve",
+        "args": [
+          99,
+          91,
+          99,
+          101,
+          89,
+          101,
+          1,
+          514
+        ]
+      }
+    ],
+    "originalBaseActualEvidence": "docs/hanja-actual-engine-capture-u77a5-2026-10-24/engine-whole-u77a5.json"
+  },
+  "comparison": {
+    "officialRecord": "docs/hanja-official-media-compare-u77a5-2026-10-24/official-temporal-native-review.json",
+    "officialRecordSHA256": "b7039d69d3783993f102978cef981b4d9c78c985a3349726fc9574fad915d4de",
+    "official4": "Horizontal-right then vertical-down; no bottom-left hook observed",
+    "HKSameEndkind4Condition": true,
+    "HKConcreteHookLengthOrFinalPApproved": false,
+    "rootParentPositiveScaleOnly": true
+  },
+  "otherPublicProbe": {
+    "name": "u77a5-t",
+    "url": "https://glyphwiki.org/api/glyph?name=u77a5-t",
+    "HTTPStatus": 200,
+    "response": {
+      "name": "u77a5-t",
+      "data": null,
+      "related": null,
+      "version": null
+    },
+    "conclusion": "No source data in this exact response; not proof that no other authored source exists"
+  },
+  "limits": {
+    "newEngine": 0,
+    "newProjection": 0,
+    "sourceGeometryChanged": false,
+    "sourceRowEndkindChanged": false,
+    "sharedChanges": false,
+    "nativeHKWholeReviewed": false,
+    "wholeRejectionClaimed": false,
+    "runtimeRegistered": false,
+    "build": false
+  }
+}
