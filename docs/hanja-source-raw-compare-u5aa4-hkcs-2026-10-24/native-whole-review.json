@@ -1,0 +1,90 @@
+{
+  "schema": "hanja-authored-HK-whole-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "媤",
+  "providerRoot": "hkcs_m5aa4",
+  "localArtifactTag": "u5aa4-hkcs",
+  "observedBy": "ROOT",
+  "status": "REJECT-new-HK-whole-macro-source",
+  "catalogStrokes": 12,
+  "domesticClips": 12,
+  "rawGroups": 14,
+  "drawingCalls": 16,
+  "sourcePolygons": 29,
+  "pins": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u5aa4-hkcs-2026-10-24/config.json",
+      "SHA256": "b71e7f4f5789fe8cb5a5ec5c9902cf6894ede79bb5d9be0574674e8e4d6f739d"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "e855a0e780ca901124cabb2585d00bc903f0422e167a369abe3444066ba3f054"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u5aa4-hkcs-2026-10-24/engine-whole-u5aa4-hkcs.json",
+      "SHA256": "aca7b885e8630c93ad9b410fbd4d99d484a71d36a080a0e0184e2b1c45c68260"
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u5aa4-hkcs-2026-10-24/capture.json",
+      "SHA256": "ee8309796a361ef83b34cb5cbfaf14136c4e3e6f1e3f73d02d3b13960f08548e"
+    },
+    "closure": {
+      "path": "docs/hanja-source-alternative-u5aa4-hkcs-2026-10-24/sources.json",
+      "SHA256": "4813bc42946a901b21dd9c4b89c450da67c4de429a2bba58ca96f343094fda8c"
+    }
+  },
+  "scope": {
+    "freshActualScreens": 2,
+    "macroOnly": true,
+    "wholeGlyphsFullVisible": true,
+    "innerHeight": 1280,
+    "domestic": {
+      "width": 520,
+      "top": 294.203125,
+      "bottom": 814.203125
+    },
+    "source": {
+      "width": 520,
+      "top": 748.03125,
+      "bottom": 1268.03125
+    },
+    "newTemporalObservations": 0,
+    "initialFramesApproved": 0
+  },
+  "findings": {
+    "location": "first female-radical bend at lower left",
+    "source": "Original HK filled geometry retains an additional downward protrusion, appearing as a flat thick foot below the bend.",
+    "domestic": "Original domestic filled geometry ends at the bend without that downward protrusion.",
+    "decision": "New HK whole is not macro-compatible at the reviewed feature; reject this source candidate.",
+    "fontWeightDifferenceNotAssumedAsCause": true,
+    "changingOnlyClockOrGuideCannotJustifyDeletingOriginalCompletedProtrusion": true,
+    "sourceDeletionOrTrimmingAuthorized": false,
+    "bridgeOrCoordinateEditAuthorized": false
+  },
+  "priorEvidence": {
+    "baseHoldPreservedSeparately": true,
+    "oldBaseReplayOrApprovalInherited": false,
+    "newFindingScope": "Only these2 fresh HK whole macro observations; no source grouping, order, initial timing or app approval."
+  },
+  "approval": {
+    "wholeFormCompatible": false,
+    "sourceGroupingApproved": false,
+    "temporalApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "productionImportAllowed": false
+  },
+  "server": {
+    "PID": 17060,
+    "session": 28414,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 101,
+    "tabClosed": true
+  },
+  "sourceGeometryChanged": false,
+  "sourceProjection": 0,
+  "engineReplay": 0,
+  "privateMediaSaved": false
+}
