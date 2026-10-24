@@ -1,0 +1,159 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "縭",
+  "root": "u7e2d",
+  "observer": "ROOT browser panel",
+  "recorder": "/root/activation1440 from explicit ROOT final report",
+  "result": "PASS",
+  "distinctScopes": 94,
+  "finiteScopes": 88,
+  "naturalScopes": 6,
+  "freshScopes": 94,
+  "reusedScopes": 0,
+  "acceptedFreshScreenshots": 94,
+  "totalCaptureCount": null,
+  "totalCaptureCountClaimed": false,
+  "bad": [],
+  "errors": [],
+  "allFullyVisible": true,
+  "visibilityScope": "All accepted actual target and board regions viewed fully at520px. One extra recapture of the same terminal coverage is not an additional distinct scope or a total-capture claim.",
+  "freshScopeBreakdown": {
+    "foot": 12,
+    "cardinal": 6,
+    "caps": 30,
+    "terminal": 7,
+    "sourceBoundary": 15,
+    "compact": 17,
+    "done": 1,
+    "natural": 6
+  },
+  "source": {
+    "pens": 17,
+    "masks": 22,
+    "polygons": 48,
+    "raw": 21,
+    "calls": 22,
+    "originalPGuideWidthWeightUnchanged": true,
+    "originalOuterClockUnchanged": true,
+    "newInternalDisplayClocks": {
+      "u7e2d-1-2": {
+        "kind": "source-foot-x-u7e2d",
+        "cutX": 16,
+        "phaseShareExact": [
+          "31301563",
+          "55464480"
+        ],
+        "triangles": 17,
+        "newDisplayClockExplicit": true,
+        "officialMicrotimingEquivalent": false
+      },
+      "u7e2d-2-2": {
+        "kind": "source-foot-x-u7e2d",
+        "cutX": 16,
+        "phaseShareExact": [
+          "492936185597",
+          "1126000480572"
+        ],
+        "triangles": 8,
+        "newDisplayClockExplicit": true,
+        "officialMicrotimingEquivalent": false
+      },
+      "u7e2d-14-3": {
+        "kind": "original-terminal-u7e2d",
+        "terminal": "LEFT",
+        "bodyAxis": "source-P-top-y-band",
+        "bodyShare": 0.4691816134065615,
+        "terminalClock": 8,
+        "newDisplayClockExplicit": true,
+        "officialMicrotimingEquivalent": false
+      }
+    },
+    "newDisplayFrontierLaw": [
+      "11m2 original-P source-X band",
+      "14m2 original-P source-Y band",
+      "1m2 and2m2 connected source-foot union then original-Q normalized-X body",
+      "14m3 original-P down body then LEFT tail with explicit terminal clock"
+    ],
+    "newMicroclock": true
+  },
+  "coverage": {
+    "allCaps10ResidualWhite": true,
+    "actualFootCompositeNoFilledBlack": true,
+    "terminalCompositeNoFilledBlack": true,
+    "thinAntialiasOutlineOnly": true,
+    "actualBoardFullyVisible": true,
+    "terminalCoverageRect": {
+      "x": 12,
+      "y": 268.015625,
+      "width": 520,
+      "height": 520,
+      "bottom": 788.015625
+    },
+    "pixelEqualityClaim": false
+  },
+  "natural": [
+    {
+      "pen": 1,
+      "early": 0.06811250001787994,
+      "ended": 1
+    },
+    {
+      "pen": 2,
+      "early": 0.07030000001192092,
+      "ended": 1
+    },
+    {
+      "pen": 14,
+      "early": 0.07123750000000291,
+      "ended": 1
+    }
+  ],
+  "finalObservation": {
+    "phase": "natural-ended",
+    "pen": 14,
+    "p": 1,
+    "originalComplete": true,
+    "final520RegionFresh": true
+  },
+  "excludedObservations": [],
+  "extraNonScopeCaptures": 1,
+  "server": {
+    "pid": 90687,
+    "execSession": 46059,
+    "port": 59412,
+    "tabsClosed": [
+      10
+    ],
+    "browser": 4,
+    "stopped": true,
+    "exitCode": 130,
+    "stdoutEmpty": true,
+    "successfulSSR": 1,
+    "CJS": 200,
+    "ESM": 200,
+    "engineRuns": 0,
+    "sourceProjection": 0
+  },
+  "nativeApproval": true,
+  "isolatedActualComponentOnly": true,
+  "actualAppUI": false,
+  "storageVerified": false,
+  "allTimeProof": false,
+  "officialMicrotimingEquivalent": false,
+  "snapshots": {
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "84ec29e7bf5ac2afb55ec89236aeb53850c083ec585f3f5e42b87ece1dbb66c1"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "4ac5400a3707daef9718ace6fd977fe9acc83b49a4ec07521d3d39da7298d5e0"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7e2d-1.json",
+      "SHA256": "07e44304e7268b63cfa0b6aa6e5266f5be5c978b060fb550b98aea000448cfab"
+    }
+  },
+  "extraNonScopeReason": "Fresh complete recapture of the same14m3 terminal coverage"
+}
