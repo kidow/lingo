@@ -1,0 +1,601 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "萸",
+  "root": "u8438-k",
+  "observer": "ROOT browser panel",
+  "recordedBy": "source_next from ROOT observations",
+  "status": "Ordinary baseline finite observations; provisional classification pending independent initial net-area audit",
+  "inputs": {
+    "renderer": {
+      "file": "components/hanja/stroke-outlines.tsx",
+      "sha256": "60a3d0779202a061b02baff93c9ef92993ab60ffe5973795395be543c1759e51"
+    },
+    "helper": {
+      "file": "scripts/hanja-actual-component-review.mjs",
+      "sha256": "3d0f6e10ba566b32f6cd22f345542665621c69667aa6c4e372d1bf20311c73ee"
+    },
+    "profile": {
+      "file": "docs/hanja-actual-component-profiles-2026-10-22/u8438-k-1.json",
+      "sha256": "96c800d97639982a72769cf7b66a1d8e89b2d87abd99af7d42bdb081920ce653"
+    },
+    "constants": {
+      "file": "lib/hanja-strokes.ts",
+      "sha256": "a6303aa6d7abce9e0b8d0e372a5db4e6320fcf48545eee034a06703f8beda5de"
+    },
+    "fixture": {
+      "file": "docs/hanja-source-original-u8438-k-2026-10-24/fixtures.json",
+      "sha256": "0c329d676ac1615a5c313b6afa89590b591ab5e034883e0370b2b5d0eee27b6a"
+    },
+    "geometrySHA256": "a1d3e3eb347dc685f20f524b19e4d49edb7956f6d30c5477f0834c6dd9b87591"
+  },
+  "resourceSetup": {
+    "firstFailure": {
+      "stage": "Exact profile filename entry guard",
+      "exitCode": 1,
+      "SSR": 0,
+      "CJS": 0,
+      "HTTPServerStarted": false,
+      "acceptedNative": 0
+    },
+    "secondStartup": {
+      "SSR": 1,
+      "CJS": 249,
+      "ESM": 249,
+      "confirmed": true,
+      "engineRuns": 0,
+      "sourceProjection": 0
+    }
+  },
+  "native": {
+    "screenshots": 15,
+    "finiteSlots": 51,
+    "distinctFiniteSlots": 51,
+    "DOMBad": [],
+    "errors": [],
+    "classificationProvisional": true,
+    "passed": 40,
+    "held": 11,
+    "passScope": [
+      {
+        "category": "Other cardinal initial samples",
+        "targets": 11,
+        "samplesEach": 3,
+        "slots": 33
+      },
+      {
+        "category": "pen13 curve initial samples",
+        "locals": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "slots": 3,
+        "claim": "No obvious newly fixed fragment in these finite frames only; not all-time connectivity or initial net-area proof"
+      },
+      {
+        "category": "pen9 source boundary",
+        "slots": 3,
+        "result": "Only completed prior H visible; no independent new ink discerned at the finite boundary samples; later 9m2 contact issue is a separate scope"
+      },
+      {
+        "category": "pen12 source boundary minus",
+        "slots": 1,
+        "result": "Prior V only"
+      }
+    ],
+    "holdScope": [
+      {
+        "pen": 5,
+        "mask": 1,
+        "category": "curve initial",
+        "slots": 3,
+        "cause": "Fixed initial chunk"
+      },
+      {
+        "pen": 9,
+        "mask": 2,
+        "category": "cardinal initial",
+        "slots": 3,
+        "cause": "Detached serif triangle above prior H; confirmed at local .03/global .4198495186466024 on enlarged520 view; not a positive fixed-area limit claim"
+      },
+      {
+        "pen": 12,
+        "mask": 2,
+        "category": "curve initial",
+        "slots": 3,
+        "cause": "Fixed increment at V lower end"
+      },
+      {
+        "pen": 12,
+        "mask": 2,
+        "category": "source boundary exact/plus",
+        "slots": 2,
+        "cause": "New Q endpoint chunk appears at once from prior V round end"
+      }
+    ],
+    "diagnosticZoom": {
+      "screenshots": 3,
+      "acceptedAdditionalFiniteSlots": 0,
+      "details": [
+        "pen9m2 local .03 enlarged520 ×1",
+        "pen13 progress0 and epsilon enlarged520 ×2"
+      ],
+      "result": "pen13 zero/epsilon showed no identifiable newly fixed piece; this is not an all-progress source intersection proof"
+    },
+    "samples": {
+      "earlyTargets": [
+        {
+          "pen": 1,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.030000000000000002
+            }
+          ]
+        },
+        {
+          "pen": 2,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.030000000000000002
+            }
+          ]
+        },
+        {
+          "pen": 3,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.030000000000000002
+            }
+          ]
+        },
+        {
+          "pen": 4,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.030000000000000002
+            }
+          ]
+        },
+        {
+          "pen": 5,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.030000000000000002
+            }
+          ]
+        },
+        {
+          "pen": 6,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.03
+            }
+          ]
+        },
+        {
+          "pen": 7,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.03
+            }
+          ]
+        },
+        {
+          "pen": 8,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.03
+            }
+          ]
+        },
+        {
+          "pen": 9,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 4.019067202542293e-7
+            },
+            {
+              "local": 0.01,
+              "global": 0.004019067202542293
+            },
+            {
+              "local": 0.03,
+              "global": 0.012057201607626881
+            }
+          ]
+        },
+        {
+          "pen": 9,
+          "mask": 2,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.4019073183475091
+            },
+            {
+              "local": 0.01,
+              "global": 0.407887653051687
+            },
+            {
+              "local": 0.03,
+              "global": 0.4198495186466024
+            }
+          ]
+        },
+        {
+          "pen": 10,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.030000000000000002
+            }
+          ]
+        },
+        {
+          "pen": 11,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.01
+            },
+            {
+              "local": 0.03,
+              "global": 0.030000000000000002
+            }
+          ]
+        },
+        {
+          "pen": 12,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 3.5070133198632243e-7
+            },
+            {
+              "local": 0.01,
+              "global": 0.003507013319863225
+            },
+            {
+              "local": 0.03,
+              "global": 0.010521039959589674
+            }
+          ]
+        },
+        {
+          "pen": 12,
+          "mask": 2,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.3507019812849905
+            },
+            {
+              "local": 0.01,
+              "global": 0.35719431866645923
+            },
+            {
+              "local": 0.03,
+              "global": 0.3701802920267328
+            }
+          ]
+        },
+        {
+          "pen": 13,
+          "mask": 1,
+          "samples": [
+            {
+              "local": 0.000001,
+              "global": 0.000001
+            },
+            {
+              "local": 0.01,
+              "global": 0.009999999999999998
+            },
+            {
+              "local": 0.03,
+              "global": 0.03
+            }
+          ]
+        }
+      ],
+      "sourceBoundaries": [
+        {
+          "pen": 9,
+          "nextMask": 2,
+          "boundary": 0.40190672025422935,
+          "priorMaskWeight": 21.5,
+          "totalWeight": 53.495000000000005,
+          "beforeAtAfter": [
+            0.40190672015422935,
+            0.40190672025422935,
+            0.40190672035422936
+          ]
+        },
+        {
+          "pen": 12,
+          "nextMask": 2,
+          "boundary": 0.3507013319863225,
+          "priorMaskWeight": 30.02,
+          "totalWeight": 85.599903,
+          "beforeAtAfter": [
+            0.35070133188632246,
+            0.3507013319863225,
+            0.3507013320863225
+          ]
+        }
+      ]
+    },
+    "allGlyphsFullVisible": true,
+    "actualAppUI": false
+  },
+  "sourceAxisLimitEvidence": {
+    "status": "Independent exact arithmetic on this new geometry, not a native replacement",
+    "targets": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "direction": "right",
+        "vertices": 7,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "5239/20",
+        "plainClipAreaCoefficientExact": "5239/20",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "direction": "down",
+        "vertices": 7,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "1275/8",
+        "plainClipAreaCoefficientExact": "1275/8",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 3,
+        "mask": 1,
+        "direction": "right",
+        "vertices": 7,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "2821/10",
+        "plainClipAreaCoefficientExact": "2821/10",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 4,
+        "mask": 1,
+        "direction": "down",
+        "vertices": 7,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "1275/8",
+        "plainClipAreaCoefficientExact": "1275/8",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 6,
+        "mask": 1,
+        "direction": "down",
+        "vertices": 4,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "264",
+        "plainClipAreaCoefficientExact": "264",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 7,
+        "mask": 1,
+        "direction": "right",
+        "vertices": 7,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "299/2",
+        "plainClipAreaCoefficientExact": "299/2",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 8,
+        "mask": 1,
+        "direction": "right",
+        "vertices": 7,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "611/4",
+        "plainClipAreaCoefficientExact": "611/4",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 9,
+        "mask": 1,
+        "direction": "right",
+        "vertices": 4,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "43",
+        "plainClipAreaCoefficientExact": "43",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 9,
+        "mask": 2,
+        "direction": "down",
+        "vertices": 9,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "1445/4",
+        "plainClipAreaCoefficientExact": "1445/4",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 10,
+        "mask": 1,
+        "direction": "right",
+        "vertices": 4,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "43",
+        "plainClipAreaCoefficientExact": "43",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 11,
+        "mask": 1,
+        "direction": "right",
+        "vertices": 4,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "43",
+        "plainClipAreaCoefficientExact": "43",
+        "fixedPositiveAreaLimit": 0
+      },
+      {
+        "pen": 12,
+        "mask": 1,
+        "direction": "down",
+        "vertices": 12,
+        "allOriginalVerticesInBounds": true,
+        "bboxAreaExact": "1005/4",
+        "plainClipAreaCoefficientExact": "1005/4",
+        "fixedPositiveAreaLimit": 0
+      }
+    ],
+    "claim": "0 <= area(original P intersect cardinal clip(p)) <= bboxArea*p; limit as p tends to 0 from above is 0",
+    "notProved": [
+      "finite antialiasing appearance",
+      "connectivity",
+      "all native frames"
+    ],
+    "contactApprovalFromAreaLimit": false
+  },
+  "initialNetAreaAudit": {
+    "pens": [
+      12,
+      13
+    ],
+    "pending": true,
+    "scope": "Strict positive area in original new P intersect initial radius7 disk outside original prior union; finite native observations remain separately recorded"
+  },
+  "preservation": {
+    "examCatalogStrokes": 12,
+    "proposedDictionaryPlaybackStrokes": 13,
+    "individualVariantApproved": false,
+    "catalogCountChanged": false,
+    "productionImportAllowed": false,
+    "sourcePUnchanged": true,
+    "guideWidthAndOuterClockUnchanged": true,
+    "existingProofsRecomputed": false,
+    "engineRuns": 0,
+    "sourceProjection": 0
+  },
+  "approval": {
+    "baselineFailureRecorded": true,
+    "ordinaryAnimationApproved": false,
+    "nativeAllProgressApproved": false,
+    "actualAppUI": false,
+    "registration": false
+  },
+  "server": {
+    "pid": 10450,
+    "session": 89354,
+    "port": 59412,
+    "exitCode": 130,
+    "tab100Closed": true,
+    "ownedServerRemaining": false
+  },
+  "recordActions": {
+    "builds": 0,
+    "fullTypeChecks": 0,
+    "commitsByRecorder": 0
+  }
+}
