@@ -1,0 +1,67 @@
+{
+  "schema": "hanja-original-P-cardinal-contact-proof/v1",
+  "glyph": "萸",
+  "root": "u8438-k",
+  "target": [
+    9,
+    2
+  ],
+  "inputs": {
+    "docs/hanja-source-original-u8438-k-2026-10-24/fixtures.json": "0c329d676ac1615a5c313b6afa89590b591ab5e034883e0370b2b5d0eee27b6a",
+    "lib/hanja-stroke-start-caps-u8438-k.ts": "647af78608f96974f9ed190ea44c90c74926fca36a3acf12fd45042b6a6943cf"
+  },
+  "geometrySHA256": "a1d3e3eb347dc685f20f524b19e4d49edb7956f6d30c5477f0834c6dd9b87591",
+  "sourceSegmentSHA256": "9d28dc4408f97bbe7d8e63816df4f9ebfc5ccee49252f9d53d41514ccc7cba22",
+  "sourcePredecessorSHA256": "5d31ba428360833699334c39a1b14efbf5443910c82af536ab7f80dcd1caa793",
+  "sourceCondition": {
+    "turns": [
+      [
+        "216",
+        "234",
+        "234",
+        "216"
+      ],
+      [
+        "109/4",
+        "89/4",
+        "39/2",
+        "6",
+        "3"
+      ]
+    ],
+    "commonRectangle": {
+      "x": [
+        "159/2",
+        "161/2"
+      ],
+      "y": [
+        "713/20",
+        "359/10"
+      ]
+    },
+    "origin": "713/20",
+    "negativeExtent": "7/2",
+    "positiveExtent": "39",
+    "witnessForEveryPositiveP": "x in (159/2,161/2), y in (713/20,713/20+min(39*p/2,1/4)); contained in both original target polygons, original prior H, and new bidirectional Y band",
+    "feasibleConditionsOnly": true
+  },
+  "argument": [
+    "Both original filled polygons are convex; their intersection with any Y band is convex.",
+    "For every p>0 the disclosed strict positive rectangle lies in both polygon band intersections and in the completed original prior H. Their union therefore remains connected to that original H.",
+    "Band origin35.65 is the original body top, negativeExtent7/2 reaches exact original serif top32.15 and positiveExtent39 reaches original bottom74.65 at p1.",
+    "Original P, source args, no source guide, reveal width, mask weight and outer clock are unchanged. Only the internal display band changes.",
+    "Runtime wrapper must validate the same-frame completed opaque unmasked original predecessor. The numeric previousMaskProgress argument alone is not a DOM proof.",
+    "At p0 no area is shown; at p1 the original P is painted once direct and unmasked."
+  ],
+  "oldOrdinaryHold": {
+    "file": "docs/hanja-source-original-u8438-k-2026-10-24/ordinary-baseline-native-review.json",
+    "sha256": "557c563548e7d0cc529b1d896411d2566bfacaca8cd2c125418f6180904c9692",
+    "reason": "Detached serif initial fragment; area limit0 does not establish contact"
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "individualVariantApproved": false,
+  "examCatalogStrokes": 12,
+  "dictionaryPlaybackStrokes": 13
+}
