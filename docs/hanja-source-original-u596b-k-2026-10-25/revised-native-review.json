@@ -1,0 +1,141 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "奫",
+  "root": "u596b-k",
+  "observer": "ROOT browser panel",
+  "result": "PASS",
+  "nativeApproval": true,
+  "finiteScopes": 63,
+  "freshFiniteScopes": 63,
+  "reusedUnchangedFiniteScopes": 0,
+  "finiteScopeBreakdown": {
+    "targets": 8,
+    "early3Frames": 24,
+    "midNear2Frames": 16,
+    "completedResidualFrames": 8,
+    "samePenBoundaryFrames": 12,
+    "footInternalPhaseFrames": 3,
+    "totalUnique": 63
+  },
+  "finiteObserved": {
+    "allActualDOMBadEmpty": true,
+    "allBrowserErrorsEmpty": true,
+    "allRequiredStartMidNearCompleteAndTransitionsObserved": true,
+    "completed7m2FullRoundVisible": true,
+    "noFixedInitialPieceDetachedPointOrMissingInkObserved": true,
+    "completedOriginalHBranchesPreserved": true,
+    "residual": {
+      "targets": 8,
+      "SVGSize": 520,
+      "allFullBBoxVisible": true,
+      "visualWhiteNoSolidResidual": true,
+      "automaticPixelCounts": null
+    }
+  },
+  "naturalSnapshots": 6,
+  "naturalPens": [
+    6,
+    7,
+    11
+  ],
+  "naturalObserved": [
+    {
+      "pen": 6,
+      "midProgressDOM": 0.3233125,
+      "midProgressScreenshotApprox": 0.338,
+      "endGlobalProgress": 1
+    },
+    {
+      "pen": 7,
+      "midProgressDOM": 0.3228875,
+      "midProgressScreenshotApprox": 0.3386,
+      "endGlobalProgress": 1
+    },
+    {
+      "pen": 11,
+      "midProgressDOM": 0.320275,
+      "midProgressScreenshotApprox": 0.3203,
+      "endGlobalProgress": 1
+    }
+  ],
+  "naturalScope": "One accepted mid and one accepted end snapshot per pen; DOM and screenshot progress differ within the same observation, not extra samples. No continuous replay proof.",
+  "whole": {
+    "logicalPens": 15,
+    "acceptedObservations": 1,
+    "result": "PASS",
+    "reused": true,
+    "evidencePath": "docs/hanja-source-original-u596b-k-2026-10-25/baseline-native-review.json",
+    "evidenceSHA256": "0ef2099d779de72d7ac6894f47666979648b3e71e6cf535f44cd52810c5b6b14",
+    "separateFromFinite63AndNatural6": true
+  },
+  "sourcePreservation": {
+    "originalPGuideWidthWeightUnchanged": true,
+    "sourceGuideGap6Source200": [
+      -4.125,
+      -22.1
+    ],
+    "all18Raw19Calls32POnce": true,
+    "noBridgeOrNewGuide": true
+  },
+  "bad": [],
+  "errors": [],
+  "excludedDiagnostics": [
+    {
+      "kind": "First corrected idle hid7m2 full ink due null partial ref; accepted controlled frames0; preserved in profile startupDiagnostics",
+      "additionalUnique": 0
+    },
+    {
+      "kind": "Truncated earlier boundary15 summary not accepted; ROOT directly reconfirmed footphase3+fourboundaries12 in final segment without duplicate count",
+      "additionalUnique": 0
+    }
+  ],
+  "observedInputs": {
+    "historicalInputGit": "c9189f1b7",
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "f967197f9ac7560282fac6531419c140dfe1c23ddcf17bc0e3614d6f83de6346"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u596b-2.json",
+      "SHA256": "79a20e3dca527f6b8437f8675429923fa6dffa1a85fa7ce9eadd708a4b05b504"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "7b0c67edcf0ba5656ac1ff92d97a05811ac1ccd9d9f44b3a4dd8159076218773"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "9d50b7ebb889c05b79bf144cabb385b195c5a48d1393b03a7169135505cbda37"
+    },
+    "sourceFixture": {
+      "path": "docs/hanja-source-original-u596b-k-2026-10-25/fixtures.json",
+      "SHA256": "ed840bac44f96f027a0930a80293b5a85609ae64da2af567a7f4d1549d5e2774",
+      "geometrySHA256": "6a08406f730368bfc3b075f99fd3d19f26058cb2f9a754a84f3a8e3e9d5bb494"
+    }
+  },
+  "server": {
+    "PID": 79911,
+    "session": 1930,
+    "port": 59412,
+    "SSR": 1,
+    "CJS": 293,
+    "ESM": 293,
+    "engine": 0,
+    "sourceProjection": 0,
+    "exitCode": 130,
+    "tab": 216,
+    "tabClosed": true,
+    "viewportReset": true
+  },
+  "notClaims": {
+    "automaticZeroPixelCount": false,
+    "allTimeRasterConnectivity": false,
+    "continuousNaturalReplay": false,
+    "publisherMicrotimingEquivalence": false,
+    "actualAppUI": false
+  },
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "recorderEngineSourceProjectionOrUIReplay": 0
+}
