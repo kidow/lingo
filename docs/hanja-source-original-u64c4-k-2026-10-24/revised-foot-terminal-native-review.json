@@ -1,0 +1,680 @@
+{
+  "schema": "hanja-revised-actual-component-finite-PASS-review/v1",
+  "date": "2026-10-24",
+  "glyph": "擄",
+  "root": "u64c4-k",
+  "observer": "/root",
+  "recordedBy": "/root/source_next",
+  "status": "PASS-new15m2-foot-and15m3-terminal-controlled-scope-registration-pending",
+  "inputs": {
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "8385efc1d8dce2b57f1f3c303e8678f024b9ef3b78659f743170237466afdc01"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "370612f38e7f1168d92a692748380432172749b466462532a9ed135e18dceb10"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u64c4-3.json",
+      "SHA256": "7e6dde8864e220d664cd6479712e2cfc274e52e1b96231d8fa659aa2c6f79930"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u64c4-k-2026-10-24/fixtures.json",
+      "SHA256": "5c32d5b87902415e499e15f4607ea15ca7776dfecb3b4eddb1e10d3caba96ccb",
+      "geometrySHA256": "544d2e9072813366e969ba2f7ec353763a524c0973470141957b6371d85de85f"
+    },
+    "newFoot": {
+      "path": "lib/hanja-stroke-source-foot-u64c4-k.ts",
+      "SHA256": "ee4fa890899f0591e804a06db82cf17602bf20eb6f3559bd0e0da806aaa5bf97"
+    },
+    "newTerminal": {
+      "path": "lib/hanja-stroke-terminal-prefix-u64c4-k.ts",
+      "SHA256": "593d8dcef8e4bf542eba6a775c2e654f44180e6214c4cbf66b81b9878ea7eab7"
+    }
+  },
+  "resourceSetup": {
+    "SSR": 1,
+    "CJS": 247,
+    "ESM": 247,
+    "engine": 0,
+    "sourceProjection": 0,
+    "scope": "First necessary startup for final new resource dependency mapping; no full project build or typecheck."
+  },
+  "native": {
+    "finite": {
+      "freshAcceptedScreens": 17,
+      "acceptedSlots": 71,
+      "distinctStateAndModeCases": 70,
+      "allCasesDirectlyObserved": true,
+      "allHydrateBadEmpty": true,
+      "allErrorsEmpty": true,
+      "scopes": {
+        "newEarly": 6,
+        "sourceBoundaries": 6,
+        "footBodyPhase": 3,
+        "footTriangleRisks": 44,
+        "footTriangleGrids": 8,
+        "terminalBodyTailPhase": 3,
+        "terminalTailMidpoint": 1,
+        "footNearEnd": 3,
+        "terminalNearEnd": 3,
+        "footResidual": 1,
+        "terminalResidual": 1
+      },
+      "allFiniteSourceSVG220FullyVisible": true,
+      "allResidualSVG520FullyVisible": true,
+      "noDisconnectionOrRemainingSolidChunkObserved": true,
+      "cases": [
+        {
+          "scope": "initial-m2",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6430256441186529,
+          "mask": 2,
+          "local": 0.000001
+        },
+        {
+          "scope": "initial-m2",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6450107513607066,
+          "mask": 2,
+          "local": 0.01
+        },
+        {
+          "scope": "initial-m2",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6489813629059689,
+          "mask": 2,
+          "local": 0.03
+        },
+        {
+          "scope": "initial-m3",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8415561812951612,
+          "mask": 3,
+          "local": 0.000001
+        },
+        {
+          "scope": "initial-m3",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8431404626226723,
+          "mask": 3,
+          "local": 0.01
+        },
+        {
+          "scope": "initial-m3",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8463093421656486,
+          "mask": 3,
+          "local": 0.03
+        },
+        {
+          "scope": "source-boundary-m2-minus",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6430254454880756
+        },
+        {
+          "scope": "source-boundary-m2-exact",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6430254455880756
+        },
+        {
+          "scope": "source-boundary-m2-plus",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6430254456880756
+        },
+        {
+          "scope": "source-boundary-m3-minus",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.841556022751184
+        },
+        {
+          "scope": "source-boundary-m3-exact",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.841556022851184
+        },
+        {
+          "scope": "source-boundary-m3-plus",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.841556022951184
+        },
+        {
+          "scope": "foot-phase--1e-10",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8040430506833051
+        },
+        {
+          "scope": "foot-phase-0",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8040430507031581
+        },
+        {
+          "scope": "foot-phase-1e-10",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8040430507230112
+        },
+        {
+          "scope": "foot-triangle-1",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.64302545255545
+        },
+        {
+          "scope": "foot-triangle-2",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6499928259027111
+        },
+        {
+          "scope": "foot-triangle-3",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6558891240527169
+        },
+        {
+          "scope": "foot-triangle-4",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6570503683398291
+        },
+        {
+          "scope": "foot-triangle-5",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6734289722780702
+        },
+        {
+          "scope": "foot-triangle-6",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6746206175965821
+        },
+        {
+          "scope": "foot-triangle-7",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6821676655826829
+        },
+        {
+          "scope": "foot-triangle-8",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6909344851156853
+        },
+        {
+          "scope": "foot-triangle-9",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.6978556588904785
+        },
+        {
+          "scope": "foot-triangle-10",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7037790058773787
+        },
+        {
+          "scope": "foot-triangle-11",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7065432357324316
+        },
+        {
+          "scope": "foot-triangle-12",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7090943761758861
+        },
+        {
+          "scope": "foot-triangle-13",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7120099645592854
+        },
+        {
+          "scope": "foot-triangle-14",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7146472291996472
+        },
+        {
+          "scope": "foot-triangle-15",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7148816017046613
+        },
+        {
+          "scope": "foot-triangle-16",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7151127792464423
+        },
+        {
+          "scope": "foot-triangle-17",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7210595797115206
+        },
+        {
+          "scope": "foot-triangle-18",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7269862410700689
+        },
+        {
+          "scope": "foot-triangle-19",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7302267953387067
+        },
+        {
+          "scope": "foot-triangle-20",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.733472469897266
+        },
+        {
+          "scope": "foot-triangle-21",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7399638125384973
+        },
+        {
+          "scope": "foot-triangle-22",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7464706045604953
+        },
+        {
+          "scope": "foot-triangle-23",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7467959444708523
+        },
+        {
+          "scope": "foot-triangle-24",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7471214728908813
+        },
+        {
+          "scope": "foot-triangle-25",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.751678811562001
+        },
+        {
+          "scope": "foot-triangle-26",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7562722677088387
+        },
+        {
+          "scope": "foot-triangle-27",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7598814125951631
+        },
+        {
+          "scope": "foot-triangle-28",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7634881241679388
+        },
+        {
+          "scope": "foot-triangle-29",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7700457762298427
+        },
+        {
+          "scope": "foot-triangle-30",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7766256312422769
+        },
+        {
+          "scope": "foot-triangle-31",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7772836173354364
+        },
+        {
+          "scope": "foot-triangle-32",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7779413370412422
+        },
+        {
+          "scope": "foot-triangle-33",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7835319126794523
+        },
+        {
+          "scope": "foot-triangle-34",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7891906636702639
+        },
+        {
+          "scope": "foot-triangle-35",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7925193421510517
+        },
+        {
+          "scope": "foot-triangle-36",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7959047549371343
+        },
+        {
+          "scope": "foot-triangle-37",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7965818380376125
+        },
+        {
+          "scope": "foot-triangle-38",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.797260517928067
+        },
+        {
+          "scope": "foot-triangle-39",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.7996358916202412
+        },
+        {
+          "scope": "foot-triangle-40",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8020252806738188
+        },
+        {
+          "scope": "foot-triangle-41",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8020269714655883
+        },
+        {
+          "scope": "foot-triangle-42",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8023666226438227
+        },
+        {
+          "scope": "foot-triangle-43",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8027038488831819
+        },
+        {
+          "scope": "foot-triangle-44",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8033783006777474
+        },
+        {
+          "scope": "terminal-phase--1e-10",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.9238250109703019
+        },
+        {
+          "scope": "terminal-phase-0",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.9238250109861462
+        },
+        {
+          "scope": "terminal-phase-1e-10",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.9238250110019905
+        },
+        {
+          "scope": "terminal-tail-mid",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.9619125054930731
+        },
+        {
+          "scope": "near-end-m2-0.9999",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8415361697934578,
+          "mask": 2,
+          "local": 0.9999
+        },
+        {
+          "scope": "near-end-m2-0.99999999",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.8415560208658783,
+          "mask": 2,
+          "local": 0.99999999
+        },
+        {
+          "scope": "near-end-m2-1",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.841556022851184,
+          "mask": 2,
+          "local": 1
+        },
+        {
+          "scope": "near-end-m3-0.9999",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.9999841556022852,
+          "mask": 3,
+          "local": 0.9999
+        },
+        {
+          "scope": "near-end-m3-0.99999999",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.9999999984155603,
+          "mask": 3,
+          "local": 0.99999999
+        },
+        {
+          "scope": "near-end-m3-1",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 1,
+          "mask": 3,
+          "local": 1
+        },
+        {
+          "scope": "residual-m2",
+          "pen": 15,
+          "mask": 2,
+          "mode": "actual-residual",
+          "global": 1
+        },
+        {
+          "scope": "residual-m3",
+          "pen": 15,
+          "mask": 3,
+          "mode": "actual-residual",
+          "global": 1
+        }
+      ]
+    },
+    "natural": {
+      "acceptedScreens": 4,
+      "freshScreensWithinFinalScope": 4,
+      "bothRunsUseSameFinalInputPins": true,
+      "previousAcceptedRunScreens": 2,
+      "currentFreshScreens": 2,
+      "previousRun": {
+        "startPenProgress": 0.0713,
+        "endPenProgress": 1,
+        "existingObservationReusedWithinSameFinalScope": true,
+        "notOldProfile2Evidence": true
+      },
+      "currentRun": {
+        "inFlight": {
+          "penProgress": 0.7246875000059663,
+          "footLocalProgress": 0.4113323778314835,
+          "terminalEmpty": true
+        },
+        "ended": {
+          "penProgress": 1,
+          "terminalLocalProgress": 0.9999999999999952,
+          "exactTerminalLocalOneNotClaimed": true
+        },
+        "bad": [],
+        "errors": []
+      },
+      "distinctCountNotClaimed": true,
+      "sameEndedStateMayRepeat": true,
+      "noDisconnectionOrRemainingSolidChunkObserved": true
+    },
+    "viewport": {
+      "requested": {
+        "width": 1280,
+        "height": 1280
+      },
+      "initialActual": {
+        "innerWidth": 1163,
+        "innerHeight": 1163,
+        "devicePixelRatio": 1.10000002384,
+        "pageZoomPercent": 110,
+        "computedSampleCSSWidth": "220px",
+        "sampleRectWidth": 219.9999847,
+        "rectNumericTolerance": 0.01,
+        "boardBottom": 1071.768,
+        "fullVisibilityConfirmed": true
+      },
+      "later": {
+        "reportedCSSViewportHeight": 1280,
+        "rootCSSWidth": 520,
+        "rootTop": 380.015625,
+        "rootBottom": 900.015625,
+        "rootFullyVisible": true
+      },
+      "requestedAndActualCSSViewportsNotConflated": true
+    }
+  },
+  "deterministicCountVerification": {
+    "slots": 71,
+    "distinct": 70,
+    "keyDomain": "Actual-source mode + pen + exact IEEE754 global progress; residual mode separately keyed by pen/mask. Captions and grid grouping not separate glyph states.",
+    "duplicate": [
+      [
+        {
+          "scope": "source-boundary-m3-exact",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.841556022851184
+        },
+        {
+          "scope": "near-end-m2-1",
+          "pen": 15,
+          "mode": "actual-source",
+          "global": 0.841556022851184,
+          "mask": 2,
+          "local": 1
+        }
+      ]
+    ],
+    "arithmetic": "6+6+3+44+3+1+3+3+1+1=71; one shared state gives70",
+    "naturalStateDistinctNotAsserted": true
+  },
+  "reusedEvidence": {
+    "priorRecord": {
+      "path": "docs/hanja-source-original-u64c4-k-2026-10-24/revised-native-review.json",
+      "SHA256": "d6f97e1c1b75f4e2355d4be38ea6736aecfca8fc2c4a7a7891202a7c4aecc320",
+      "commit": "ea8459eca",
+      "observedScreens": 42,
+      "observedDistinct": 105,
+      "priorPositives": 97
+    },
+    "unchangedPositivesReused": 87,
+    "mechanicalBreakdown": {
+      "eightIndependentInitial": 24,
+      "fourUnchangedGrowingInitialAndMidNearResidual": 24,
+      "threeOldCompoundInitialPhaseMidResidual": 24,
+      "fiveUnchangedSourceBoundaries": 15
+    },
+    "oldClockRelatedPositivesExcluded": {
+      "old15m3Initial": 3,
+      "old15m3Mid": 1,
+      "old15m3SourceBoundary": 3,
+      "old15m2NearEnd": 2,
+      "old15m2Residual": 1
+    },
+    "oldEightHOLDObservationsPreserved": true,
+    "newTwoPoliciesSupersedeOld15m2And15m3ClockRelatedResults": true,
+    "unchangedSourceOfficialDirectionsAndStaticEvidenceReused": true,
+    "sourceEngineMathSuccessfulReplays": 0
+  },
+  "excludedDiagnostics": {
+    "wrongRegexTimeoutAccepted": 0,
+    "wrongButtonSpacingAccepted": 0,
+    "truncatedScreensAccepted": 0,
+    "truncatedScreenCount": 3,
+    "strictWidthEqualityDiagnostic": {
+      "predicate": "rect.width ===220",
+      "result": false,
+      "cause": "Page zoom and floating layout219.9999847, despite220px computed CSS and fully visible SVG.",
+      "notSourceOrRuntimeFailure": true
+    },
+    "sourceOrGeometryChangedToFitDiagnostics": false
+  },
+  "preservation": {
+    "sourcePGuideWidthWeightAndBBoxUnchanged": true,
+    "originalSourceRetraceStringKept": true,
+    "newDisplayClocksExplicit": true,
+    "footP1OriginalDDirectOnce": true,
+    "terminalP1OriginalPartsUnionMaskOnce": true,
+    "catalogResolved16Original15Preserved": true
+  },
+  "approval": {
+    "newTwoPolicyFiniteScope": true,
+    "isolatedActualComponentPlaybackScope": true,
+    "reuseOnlyUnchanged87": true,
+    "naturalObservedStatesOnly": true,
+    "exactTerminalOneViaNatural": false,
+    "actualAppUI": false,
+    "production": false,
+    "runtimeRegistered": false
+  },
+  "server": {
+    "PID": 63190,
+    "session": 24286,
+    "exitCode": 130,
+    "stopSignal": "Ctrl-C",
+    "serverStopped": true,
+    "tab": 95,
+    "tabClosed": true
+  },
+  "recordActions": {
+    "recordOnly": true,
+    "sharedChanges": 0,
+    "newEngine": 0,
+    "newSourceProjection": 0,
+    "commit": 0,
+    "registry": 0
+  }
+}
