@@ -641,6 +641,15 @@ def exact_u8adb_vs1_dictionary_draft_launcher(config,base):
             and digest(fixed_path('docs/hanja-source-original-u8adb-ue0101-2026-10-25/fixtures.json').read_bytes())=='d7af3d8df626f1d225861bbc99864003729bb6c5fac8e25d294dc2f2beb2f294'
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
+def exact_u596b_dictionary_draft_launcher(config,base):
+    expected=json.loads(r'''{"launcher":{"path":"scripts/hanja-raw-static-compare.py","SHA256":"4b63616a78742bc67e4f0e87131a88b1ebc19bde124931c10df8f547be0da712"},"baseConfig":{"path":"docs/hanja-source-raw-compare-u596b-k-2026-10-25/config.json","SHA256":"c82410ecb0ed45aeccd2c6266e7f9e1b8419164e1c0007f56fd8dbe0ae02b985"},"sourceRoots":{"selected":{"root":"u596b-k","file":"docs/hanja-goal-glyphwiki-batch794-2026-10-13/engine-whole-u596b-k.json","fileSHA256":"79e34e202be30dcb3365c899e220b0d9ad2f67633e5931ffd4d984530e500da7","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u596b-k","sourceProofFile":"engine-whole-u596b-k.json","sourceProofFileSha256":"79e34e202be30dcb3365c899e220b0d9ad2f67633e5931ffd4d984530e500da7"},"rawGroups":18,"drawingCalls":19,"polygonCounts":[2,3,2,2,2,2,1,4,2,1,2,1,1,2,1,1,2,1],"polygons":32}},"groups":{"selected":[[1],[2],[3],[4],[5],[6,7],[8],[9],[10],[11,12],[13,14],[15],[16],[17],[18]]},"mappingEvidence":{"path":"docs/hanja-goal-glyphwiki-batch794-2026-10-13/source-join-analysis.json","SHA256":"17f376b302feb670251b52a7b36a79a7b70a1a19719ac6cd7b79669d235ed4ad"}}''')
+    return (config.get('launcher')==expected['launcher'] and config.get('baseConfig')==expected['baseConfig']
+            and base.get('glyph')=='奫' and type(base.get('catalogStrokes'))is int and base['catalogStrokes']==14
+            and type(base.get('dictionaryPlaybackStrokes'))is int and base['dictionaryPlaybackStrokes']==15
+            and base.get('sourceRoots')==expected['sourceRoots'] and base.get('domestic',{}).get('sha256')=='853d6ab639c0e5905851787ba1c1050a2bd80a5fe72d2aadf0309fe9380955ea'
+            and config.get('provisionalGroups')==expected['groups']
+            and digest(fixed_path(expected['mappingEvidence']['path']).read_bytes())==expected['mappingEvidence']['SHA256'])
+
 def exact_u6970_dictionary_draft_launcher(config,base):
     expected=json.loads("{\"launcher\":{\"path\":\"scripts/hanja-raw-static-compare.py\",\"SHA256\":\"aab08a897e880560507418b63ed9402d6f18a1708d0c2071b4890892e71699c1\"},\"baseConfig\":{\"path\":\"docs/hanja-source-raw-compare-u6970-2026-10-25/config.json\",\"SHA256\":\"3005ab84f64757d56b7c64c9d7c61c5d86911e7691bd8e65bdae4911d5bdb2de\"},\"sourceRoots\":{\"selected\":{\"root\":\"u6970\",\"file\":\"docs/hanja-goal-glyphwiki-batch786-2026-10-13/engine-whole-u6970.json\",\"fileSHA256\":\"2907c73d361c9529f96f18380699f3bb5c22ae2a4ee0a60ebf1c0faab676a2c7\",\"proofKeys\":[\"defaults\",\"engineHashes\",\"engineRevision\",\"groups\",\"trace\"],\"proofKind\":\"actual-full5-direct\",\"sourceProofIdentity\":{\"sourceRoot\":\"u6970\",\"sourceProofFile\":\"engine-whole-u6970.json\",\"sourceProofFileSha256\":\"2907c73d361c9529f96f18380699f3bb5c22ae2a4ee0a60ebf1c0faab676a2c7\"},\"rawGroups\":14,\"drawingCalls\":15,\"polygonCounts\":[2,2,1,2,3,1,2,2,1,2,1,1,4,2],\"polygons\":26}},\"groups\":{\"selected\":[[1],[2],[3],[4],[5],[6],[7],[8],[9,10],[11],[12],[13],[14]]},\"fixture\":{\"path\":\"docs/hanja-source-original-u6970-2026-10-25/fixtures.json\",\"SHA256\":\"1bd6cfb4f69e4f8a4d0e5e6aba3d109a8414ccecf5081edd08c4416baf9fca3c\"}}")
     return (config.get('launcher')==expected['launcher'] and config.get('baseConfig')==expected['baseConfig']
@@ -731,6 +740,8 @@ def main():
     legacy_launcher = legacy_launcher or exact_u82d4_k_prepared_launcher(config,base)
     dictionary_u6583 = exact_u6583_body3_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u6583
+    dictionary_u596b = exact_u596b_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or dictionary_u596b
     dictionary_u6970 = exact_u6970_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u6970
     dictionary_u8adb = exact_u8adb_vs1_dictionary_draft_launcher(config,base)
@@ -771,6 +782,7 @@ def main():
     if dictionary_u8910:base = {**base,'catalogStrokes':13}  # review-view only; exact original catalog14 remains unchanged
     if dictionary_u5ebe:base = {**base,'catalogStrokes':12}  # review-view only; catalogue11 unchanged
     if dictionary_u8adb:base = {**base,'catalogStrokes':16}  # review-view only; catalogue15 unchanged
+    if dictionary_u596b:base = {**base,'catalogStrokes':15}  # exact review-view only; catalogue14 unchanged
     if dictionary_u6970:base = {**base,'catalogStrokes':13}  # review-view only; catalogue12 unchanged
     if dictionary_u6583:base = {**base,'catalogStrokes':17}  # review-view only; catalogue18 unchanged
     validate_groups(config['provisionalGroups'], base)
