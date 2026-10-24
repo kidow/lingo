@@ -711,6 +711,15 @@ def exact_u5dd1_body3_prepared_launcher(config,base):
             and config.get('provisionalGroups')==expected['groups']
             and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
 
+def exact_u7228_body3_dictionary_draft_launcher(config,base):
+    expected=json.loads("{\"launcher\":{\"path\":\"scripts/hanja-raw-static-compare.py\",\"SHA256\":\"22aa53176bbedd953580b8eb48c0c12fbd5dce27f0569df1a19bbc82f37dd789\"},\"baseConfig\":{\"path\":\"docs/hanja-source-raw-compare-u7228-vs0-2026-10-25/config.json\",\"SHA256\":\"f09773690e601d29ba1e5da4304ed9f256122efacc186fce0f72be9500d52215\"},\"sourceRoots\":{\"selected\":{\"root\":\"u7228-ue0100\",\"file\":\"docs/hanja-goal-glyphwiki-batch906-2026-10-13/engine-whole-u7228-ue0100.json\",\"fileSHA256\":\"549ca8a55811c992150da6ff4aa09e1b6e287e6c0e921ac373b3688bad3d7194\",\"proofKeys\":[\"defaults\",\"groups\",\"trace\"],\"proofKind\":\"selected-body3-only\",\"sourceProofIdentity\":{\"sourceRoot\":\"u7228-ue0100\",\"sourceProofFile\":\"engine-whole-u7228-ue0100.json\",\"sourceProofFileSha256\":\"549ca8a55811c992150da6ff4aa09e1b6e287e6c0e921ac373b3688bad3d7194\"},\"rawGroups\":34,\"drawingCalls\":34,\"polygonCounts\":[1,1,2,2,1,1,2,1,3,1,2,2,1,2,1,1,2,1,2,2,2,1,2,2,2,1,2,2,3,2,2,3,3,2],\"polygons\":60}},\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/7200/7228.svg\",\"status\":200,\"bytes\":13544,\"sha256\":\"b9f07e2b5104874bb0d85ccd2971c01f6b4bbfa8fd0691ff38e6443c25e5971f\",\"clips\":30,\"glyph\":\"爨\",\"privateMediaSaved\":false},\"inputSHA256\":{\"docs/hanja-goal-glyphwiki-batch906-2026-10-13/engine-whole-u7228-ue0100.json\":\"549ca8a55811c992150da6ff4aa09e1b6e287e6c0e921ac373b3688bad3d7194\",\"docs/hanja-goal-glyphwiki-batch906-2026-10-13/sources.json\":\"cc3ebe631c0e0e12d95abd9c22131aa2800f8179e88b9125a3781fd062370b59\",\"docs/hanja-goal-glyphwiki-batch906-2026-10-13/metadata.json\":\"2cc259fb3f92f327015a1d8bbe3d398f5d995ff878643e6d82c33598369902d5\",\"docs/hanja-goal-glyphwiki-batch906-2026-10-13/review.json\":\"b1a3cec48c17a21dcca02df8c8120a0ce41477a6153ebd673dc61452fb07f908\",\"docs/hanja-official-media-compare-u7228-2026-10-25/official-temporal-native-review.json\":\"48886725eb1b0ec46bc66f508922f4081d119046ba2bce4f47a00d983d87329d\"},\"groups\":{\"selected\":[[9],[10],[11],[12],[1],[2,3],[4],[5],[6,7],[8],[13,14],[15],[16],[17],[18,19],[20],[21],[22],[23],[24],[25],[26],[27],[28],[29],[30],[31],[32],[33],[34]]}}")
+    return (config.get('launcher')==expected['launcher'] and config.get('baseConfig')==expected['baseConfig']
+            and base.get('glyph')=='爨' and type(base.get('catalogStrokes'))is int and base['catalogStrokes']==29
+            and type(base.get('dictionaryPlaybackStrokes'))is int and base['dictionaryPlaybackStrokes']==30
+            and base.get('defaultSource')=='selected' and base.get('sourceRoots')==expected['sourceRoots']
+            and base.get('domestic')==expected['domestic'] and base.get('inputSHA256')==expected['inputSHA256']
+            and config.get('provisionalGroups')==expected['groups'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -735,6 +744,8 @@ def main():
     base = json.loads(base_path.read_bytes())
     legacy_launcher = legacy_launcher or exact_u703c_body3_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u5dd1_body3_prepared_launcher(config,base)
+    dictionary_u7228 = exact_u7228_body3_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or dictionary_u7228
     legacy_launcher = legacy_launcher or exact_u6f0c_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u6b0c_var001_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u82d4_k_prepared_launcher(config,base)
@@ -785,6 +796,7 @@ def main():
     if dictionary_u596b:base = {**base,'catalogStrokes':15}  # exact review-view only; catalogue14 unchanged
     if dictionary_u6970:base = {**base,'catalogStrokes':13}  # review-view only; catalogue12 unchanged
     if dictionary_u6583:base = {**base,'catalogStrokes':17}  # review-view only; catalogue18 unchanged
+    if dictionary_u7228:base = {**base,'catalogStrokes':30}  # exact review-view only; catalogue29 unchanged
     validate_groups(config['provisionalGroups'], base)
 
     def board_guards():
