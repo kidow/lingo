@@ -1,0 +1,327 @@
+{
+  "schema": "hanja-actual-component-revised-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "褐",
+  "providerRoot": "u8910",
+  "observer": "/root",
+  "status": "partial native review; source-P renderer CSS serialization gate failure; registration blocked",
+  "inputs": {
+    "scripts/hanja-actual-component-review.mjs": "a8526c25ccad8b96b7258c412f1f53e78b1f1da0753f46edde6e491823e17099",
+    "components/hanja/stroke-outlines.tsx": "4057928d42f011e30a887e1da66186d228da5b79c23170e7fd60d59f0e7012c2",
+    "lib/hanja-strokes.ts": "2768906f7359dae241026e4ff0a6dd305faa3706ecb95680db369c6c7b949fc3",
+    "docs/hanja-actual-component-profiles-2026-10-22/u8910-2.json": "92ba4caa1df0dc9bf75588b6e9781359088cdc3d72330049b14a73a7f9be242d"
+  },
+  "source": {
+    "catalogStrokes": 14,
+    "playbackStrokes": 13,
+    "geometrySHA256": "f9f1d130e335a7f8ebdcbff5fc69b264c9ab14d4404d5d17f128fe15effa0a35",
+    "originalPathsGuidesWidthsWeightsUnchanged": true
+  },
+  "finite": {
+    "fresh": 72,
+    "freshPass": 56,
+    "freshHold": 16,
+    "reused": 30,
+    "total": 102,
+    "pass": 86,
+    "hold": 16,
+    "caps": {
+      "targets": [
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          12,
+          1
+        ]
+      ],
+      "sixFramesEach": true,
+      "pass": 24,
+      "hold": 0
+    },
+    "sourceP": {
+      "targets": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          13,
+          2
+        ]
+      ],
+      "pass": 21,
+      "hold": 9,
+      "failedStates": [
+        {
+          "targets": [
+            [
+              2,
+              2
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              3
+            ]
+          ],
+          "states": [
+            "early epsilon1e-6",
+            "near1 0.99999999"
+          ],
+          "count": 8
+        },
+        {
+          "targets": [
+            [
+              13,
+              2
+            ]
+          ],
+          "states": [
+            "near1 0.99999999"
+          ],
+          "count": 1
+        }
+      ],
+      "allFiveExactCompletionResidualsWhite": true
+    },
+    "boundaries": {
+      "targets": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          13,
+          3
+        ]
+      ],
+      "samples": [
+        "minus",
+        "exact",
+        "plus"
+      ],
+      "pass": 11,
+      "hold": 7,
+      "failedStates": [
+        {
+          "targets": [
+            [
+              2,
+              2
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              11,
+              2
+            ]
+          ],
+          "sampleIndices": [
+            2
+          ],
+          "count": 3
+        },
+        {
+          "targets": [
+            [
+              11,
+              3
+            ]
+          ],
+          "sampleIndices": [
+            0,
+            2
+          ],
+          "count": 2
+        },
+        {
+          "targets": [
+            [
+              13,
+              2
+            ]
+          ],
+          "sampleIndices": [
+            2
+          ],
+          "count": 1
+        },
+        {
+          "targets": [
+            [
+              13,
+              3
+            ]
+          ],
+          "sampleIndices": [
+            0
+          ],
+          "count": 1
+        }
+      ]
+    },
+    "errors": [],
+    "reuse": {
+      "record": "docs/hanja-source-original-u8910-2026-10-24/ordinary-baseline-native-review.json",
+      "scope": "ten unchanged ordinary masks, three early samples each",
+      "priorBaselineHoldsPreserved": true
+    }
+  },
+  "failure": {
+    "kind": "renderer CSS serialization comparison",
+    "observedBad": [
+      "committed",
+      "metadata",
+      "visibility",
+      "paint"
+    ],
+    "actualFilledPathUnchanged": true,
+    "previousMaskProgress": 1,
+    "mid": {
+      "local": 0.5000000000000001,
+      "rectAttributes": {
+        "height": 21.900000000000006,
+        "width": 34.300000000000004,
+        "x": 5.3,
+        "y": 25.25
+      },
+      "computedCSS": {
+        "height": 21.9,
+        "width": 34.3,
+        "x": 5.3,
+        "y": 25.25
+      },
+      "visible": true
+    },
+    "near": {
+      "local": 0.9999999899999995,
+      "rectAttributes": {
+        "height": 43.79999956199998,
+        "width": 34.300000000000004,
+        "x": 5.3,
+        "y": 23.500000035000003
+      },
+      "computedCSS": {
+        "height": 43.8,
+        "width": 34.3,
+        "x": 5.3,
+        "y": 23.5
+      },
+      "visible": false
+    },
+    "cause": "U8910SourcePOutline stable() rejected computed CSS numeric serialization when absolute difference from exact attributes exceeded1e-9. Exact source attributes, private frame and completed predecessor remained valid. This record does not approve a fix or infer source-P trajectory correctness."
+  },
+  "viewport": {
+    "width": 1163,
+    "height": 1163,
+    "allAcceptedTargetsFullyVisible": true,
+    "board": {
+      "width": 220,
+      "height": 220,
+      "x": [
+        11.995738,
+        235.994308,
+        459.992889
+      ],
+      "y": 851.8394775
+    },
+    "residual": {
+      "width": 520,
+      "height": 520,
+      "x": 11.995738,
+      "y": 551.8394775
+    }
+  },
+  "natural": {
+    "checked": false,
+    "acceptedSnapshots": 0
+  },
+  "whole": {
+    "checked": false,
+    "acceptedScreens": 0
+  },
+  "acceptedServer": {
+    "PID": 53571,
+    "port": 59412,
+    "sessionId": 63188,
+    "tab": 141,
+    "SSR": 1,
+    "CJS": 270,
+    "ESM": 270,
+    "compiler": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "tabClosed": true
+  },
+  "excludedStartup": {
+    "profileSHA256": "94dd65304df0bdd623ed57c59cff217115c294796f2af678deb984ab3aedde73",
+    "reason": "Unpinned dependency lib/hanja-stroke-start-caps-u83f1.ts before SSR; four previously added 菱/瘦 module pins were missing. Profile-only dependency collection correction followed.",
+    "exitCode": 1,
+    "acceptedScreens": 0,
+    "SSR": 0
+  },
+  "approval": {
+    "finiteNative": false,
+    "naturalSnapshots": false,
+    "wholeCompletion": false,
+    "individualVariantRegistrationApproved": false,
+    "runtimeApplied": false,
+    "actualAppUI": false,
+    "allTime": false
+  },
+  "actions": {
+    "build": false,
+    "fullProjectTypeCheck": false,
+    "push": false
+  }
+}
