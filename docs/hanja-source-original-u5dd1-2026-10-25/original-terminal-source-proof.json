@@ -1,0 +1,179 @@
+{
+  "target": [
+    15,
+    3
+  ],
+  "bodyOriginalSubpaths": [
+    1,
+    2
+  ],
+  "tailOriginalSubpath": 3,
+  "bodyPath": "M87.55 37.95 L91.65 37.95 L91.65 43.45 L87.55 43.45 Z M91.65 37.95 L93.3 39.05 L94.4 40.7 L93.3 42.35 L91.65 43.45 Z",
+  "tailPath": "M91.65 37.95 L88.9 37.95 L91.65 27.45 L92.65 27.45 Z",
+  "body": {
+    "axis": "x",
+    "sign": 1,
+    "slabs": [
+      {
+        "from": "1751/20",
+        "to": "1833/20",
+        "startInterval": [
+          "759/20",
+          "869/20"
+        ],
+        "endInterval": [
+          "759/20",
+          "869/20"
+        ],
+        "area": "451/20"
+      },
+      {
+        "from": "1833/20",
+        "to": "933/10",
+        "startInterval": [
+          "759/20",
+          "869/20"
+        ],
+        "endInterval": [
+          "781/20",
+          "847/20"
+        ],
+        "area": "363/50"
+      },
+      {
+        "from": "933/10",
+        "to": "472/5",
+        "startInterval": [
+          "781/20",
+          "847/20"
+        ],
+        "endInterval": [
+          "407/10",
+          "407/10"
+        ],
+        "area": "363/200"
+      }
+    ],
+    "strictPositiveInternalFrontierWidths": [
+      "11/2",
+      "33/10"
+    ],
+    "area": "253/8",
+    "positiveProgressConnected": true,
+    "areaZeroAtStartLimit": true,
+    "allVerticesInStoredBounds": true
+  },
+  "tail": {
+    "axis": "y",
+    "sign": -1,
+    "slabs": [
+      {
+        "from": "-759/20",
+        "to": "-549/20",
+        "startInterval": [
+          "889/10",
+          "1833/20"
+        ],
+        "endInterval": [
+          "1833/20",
+          "1853/20"
+        ],
+        "area": "315/16"
+      }
+    ],
+    "strictPositiveInternalFrontierWidths": [],
+    "area": "315/16",
+    "positiveProgressConnected": true,
+    "areaZeroAtStartLimit": true,
+    "allVerticesInStoredBounds": true
+  },
+  "priorContactStrip": [
+    [
+      "1751/20",
+      "203/5"
+    ],
+    [
+      "1753/20",
+      "203/5"
+    ],
+    [
+      "1753/20",
+      "204/5"
+    ],
+    [
+      "1751/20",
+      "204/5"
+    ]
+  ],
+  "rejectedStrictClosedCornerSufficientCondition": {
+    "passed": false,
+    "reason": "Closed rectangle includes x87.55, an original prior/body boundary. Its open interior is strictly inside both; no source coordinate is moved."
+  },
+  "newIntermediatePrefixProofRestoredAfterEarlyContactAssert": true,
+  "sourceBounds": {
+    "body": [
+      "1751/20",
+      "759/20",
+      "472/5",
+      "869/20"
+    ],
+    "tail": [
+      "889/10",
+      "549/20",
+      "1853/20",
+      "759/20"
+    ]
+  },
+  "priorContactClaim": "Every positive body X-prefix overlaps completed original15m2 in a positive-area substrip; actual DOM completion remains required.",
+  "bodyTailSharedEdge": [
+    [
+      "889/10",
+      "759/20"
+    ],
+    [
+      "1833/20",
+      "759/20"
+    ]
+  ],
+  "sharedEdgeLength": "11/4",
+  "bodyTailStrictAreaOverlap": false,
+  "bodyTailAttachment": "Every positive tail Y-reverse prefix includes the original shared base edge; attachment is positive-length boundary, not area overlap or raster claim.",
+  "oldOrdinaryXExposureWitness": {
+    "point": [
+      "917/10",
+      "30"
+    ],
+    "minimumLocalProgressAtX": "83/137",
+    "strictInsideOriginalUpP": true,
+    "bodyNotCompleteAtThisProgress": true
+  },
+  "phaseShareExact": "137/347",
+  "phaseBasis": "body source X extent6.85 / sum(6.85+tail source Y extent10.5); not guide arclength",
+  "sourcePGuideWidthWeightChanged": false,
+  "sourceEngineProjectionReplayed": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "root": "u5dd1",
+  "fixture": "docs/hanja-source-original-u5dd1-2026-10-25/fixtures.json",
+  "fixtureSHA256": "92cbc5fa6f48cc959a6e29a4274301f546666033fe7be034841c5fbdd00212ef",
+  "geometrySHA256": "577820a1d7bbe9d5d0a054ae06d5be4d433ccf9702dfca9f91a4c9e4a590820b",
+  "sourceProofFormat": "actual-body3",
+  "sourceSegmentSHA256": "7e802364a8562cf4e4c98528a108bebfbaf114972f86917740d16169eda359e9",
+  "previousSegmentSHA256": "74e3304b82004e23a09a38261af8c8da751b656ca2c535a6d8a7d76c25ec4108",
+  "previousVerticalSegmentSHA256": "81ccdb77b60aa8cca8b92a83d930804bf52b2bc1c9db34f435dbb8087bde7927",
+  "canonicalContext": "lib/hanja-stroke-start-caps-u5dd1.ts",
+  "canonicalContextSHA256": "e608dc33edae566c061942376248cfbbb65919d31b898afd2a2cd9e75b77b277",
+  "originalDirectionEvidence": {
+    "path": "docs/hanja-official-media-compare-u5dd1-2026-10-25/official-temporal-native-review.json",
+    "SHA256": "939ae7016b90d666247b1db07b8686d60a6206517076c1b7bf125fca2555506b",
+    "scope": "Existing66 original CSS frames/direction15 V-H-UP only; not public temporal approval"
+  },
+  "actualPriorFootContract": {
+    "id": "u5dd1-source-foot-15-2",
+    "kind": "source-foot-x-u5dd1",
+    "namespace": "u5dd1-foot",
+    "completedOriginalDirect": true,
+    "requiresActualParent15Mask1AndMask2Completion": true,
+    "DOMIntegrationPending": true
+  }
+}
