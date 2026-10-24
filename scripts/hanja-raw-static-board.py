@@ -658,6 +658,14 @@ def exact_u82d4_k_prepared_launcher(config,base):
             and config.get('provisionalGroups')==expected['groups']
             and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
 
+def exact_u6b0c_var001_prepared_launcher(config,base):
+    expected=json.loads("{\"launcher\":{\"path\":\"scripts/hanja-raw-static-compare.py\",\"SHA256\":\"f4eeceffcce7a2bebf4417f1ce94116b62e3708169f5233672ca7bbdf779d0ed\"},\"baseConfig\":{\"path\":\"docs/hanja-source-raw-compare-u6b0c-var-001-2026-10-25/config.json\",\"SHA256\":\"4c3aacc57e4d28d86d2ad8e92ccb35072f7ec4861f89027764cb9d82b62166cd\"},\"sourceRoots\":{\"selected\":{\"root\":\"u6b0c-var-001\",\"file\":\"docs/hanja-actual-engine-capture-u6b0c-var-001-2026-10-25/engine-whole-u6b0c-var-001.json\",\"fileSHA256\":\"e0b47d747f02bbe3c2f3ee6323eb3ce83751358467cb3710707022e65458c88b\",\"proofKeys\":[\"defaults\",\"engineHashes\",\"engineRevision\",\"groups\",\"trace\"],\"proofKind\":\"actual-full5-direct\",\"sourceProofIdentity\":{\"sourceRoot\":\"u6b0c-var-001\",\"sourceProofFile\":\"engine-whole-u6b0c-var-001.json\",\"sourceProofFileSha256\":\"e0b47d747f02bbe3c2f3ee6323eb3ce83751358467cb3710707022e65458c88b\"},\"rawGroups\":25,\"drawingCalls\":26,\"polygonCounts\":[2,2,1,2,2,2,2,2,2,1,1,1,3,2,1,2,1,1,2,1,1,2,5,3,2],\"polygons\":46}},\"groups\":{\"selected\":[[1],[2],[3],[4],[5],[6],[7],[8],[9,10],[11],[12],[13],[14],[16],[17],[18,19],[20],[21],[15,22],[23],[24],[25]]},\"fixture\":{\"path\":\"docs/hanja-source-original-u6b0c-var-001-2026-10-25/fixtures.json\",\"SHA256\":\"8c8c979732a5f90a1741e94796277f58fb55632d32f634e3fd69c036e5bfc11c\"}}")
+    return (config.get('launcher')==expected['launcher'] and config.get('baseConfig')==expected['baseConfig']
+            and base.get('glyph')=='欌' and type(base.get('catalogStrokes'))is int and base['catalogStrokes']==22
+            and base.get('sourceRoots')==expected['sourceRoots'] and base.get('domestic',{}).get('sha256')=="d835eedc52bc7920963b15f4ac9cfd6e0fbae9d8f0f4a3f2f1c680ccf41a162d"
+            and config.get('provisionalGroups')==expected['groups']
+            and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -680,6 +688,7 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    legacy_launcher = legacy_launcher or exact_u6b0c_var001_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u82d4_k_prepared_launcher(config,base)
     dictionary_u6970 = exact_u6970_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u6970
