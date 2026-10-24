@@ -378,7 +378,7 @@ U6583_FIXED_BODY3 = json.loads('{"sourceRoots":{"base":{"root":"u6583","file":"d
 
 def validate_exact_u6583_dictionary17(config,config_path):
     require(config_path==ROOT/'docs/hanja-source-raw-compare-u6583-2026-10-25/config.json','exact 斃 original-body comparison path required')
-    require(config.get('glyph')=='斃' and type(config.get('catalogStrokes'))is int and config['catalogStrokes']==18 and type(config.get('dictionaryPlaybackStrokes'))is int and config['dictionaryPlaybackStrokes']==17,'exact 斃 catalogue12/private dictionary17 required')
+    require(config.get('glyph')=='斃' and type(config.get('catalogStrokes'))is int and config['catalogStrokes']==18 and type(config.get('dictionaryPlaybackStrokes'))is int and config['dictionaryPlaybackStrokes']==17,'exact 斃 catalogue18/private dictionary17 required')
     require(config.get('defaultSource')=='base' and config.get('sourceRoots')==U6583_FIXED_BODY3['sourceRoots'] and list(config['sourceRoots'])==['base','k','g','vs1','vs3','vs4'],'exact six authored 斃 original bodies required')
     require(config.get('domestic')==U6583_FIXED_BODY3['domestic'] and config.get('inputSHA256')==U6583_FIXED_BODY3['inputSHA256'],'exact 斃 original media/closure/body pins required')
 
@@ -388,6 +388,10 @@ def validate_exact_u6583_body3(config,label,spec,path):
     proof=json.loads(path.read_bytes())
     require(sorted(proof)==['defaults','groups','trace'] and len(proof['groups'])==len(proof['trace'])==spec['rawGroups'],'original three fields only; no header synthesis')
     require([g['polygons']for g in proof['groups']]==[[p for call in row for p in call['polygons']]for row in proof['trace']],'original 斃 trace/P identity required')
+
+def exact_original_u6f0c(config,roots,spec):
+    expected=json.loads("{\"root\":\"u6f0c\",\"file\":\"docs/hanja-goal-glyphwiki-batch481-2026-10-10/engine-proof.json\",\"fileSHA256\":\"e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97\",\"proofKeys\":[\"defaults\",\"engineHashes\",\"engineRevision\",\"groups\",\"trace\"],\"proofKind\":\"actual-full5-direct\",\"sourceProofIdentity\":{\"sourceRoot\":\"u6f0c\",\"sourceProofFile\":\"engine-proof.json\",\"sourceProofFileSha256\":\"e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97\"},\"rawGroups\":16,\"drawingCalls\":16,\"polygonCounts\":[2,2,2,1,2,2,2,1,1,1,2,1,2,1,2,2],\"polygons\":26}")
+    return (config.get('glyph')=='漌' and type(config.get('catalogStrokes'))is int and config['catalogStrokes']==14 and config.get('defaultSource')=='selected' and list(roots)==['selected'] and roots.get('selected')==spec and spec==expected and config.get('domestic',{}).get('sha256')=='b61a3cd80eb278bdcd04005706a5593ec3a10be91d67110588506ce048215d91')
 
 def main():
     require(__debug__ and sys.flags.optimize==0,'optimized assertion-free execution forbidden')
@@ -451,7 +455,7 @@ def main():
         original_hkcs_m7626=(config['glyph']=='瘦' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m7626')
         if original_hkcs_m7626:validate_exact_hkcs_m7626_capture(config,label,spec,pinned_path(spec['file']))
         require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa or original_hkcs_m7626),'original root identity required')
-        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa or original_hkcs_m7626)and hexsha(spec['fileSHA256']),'actual whole file required')
+        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or exact_original_u6f0c(config,roots,spec) or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa or original_hkcs_m7626)and hexsha(spec['fileSHA256']),'actual whole file required')
         if bound_body:validate_original_empty_body3(spec,path)
         elif spec['proofKind']=='selected-body3-only':
             if original_u6583_config:validate_exact_u6583_body3(config,label,spec,path)
