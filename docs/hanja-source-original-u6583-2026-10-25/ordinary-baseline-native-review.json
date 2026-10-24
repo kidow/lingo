@@ -1,0 +1,188 @@
+{
+  "schema": "hanja-ordinary-baseline-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "斃",
+  "root": "u6583",
+  "observer": "ROOT browser panel",
+  "result": "HOLD",
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "productionImportAllowed": false,
+  "scope": {
+    "observed": 81,
+    "earlyMasks": 23,
+    "earlyFrames": 69,
+    "boundaryFrames": 12,
+    "boundaries": 6,
+    "boundaryModes": [
+      "before",
+      "exact"
+    ],
+    "afterReusesMaskEarlyEpsilon": true,
+    "allObserved": true,
+    "passTotalNotAssigned": true,
+    "holdTotalNotAssigned": true
+  },
+  "clearInitialTargets": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      10,
+      1
+    ],
+    [
+      14,
+      2
+    ],
+    [
+      16,
+      1
+    ]
+  ],
+  "uncertainInitialTargets": [
+    {
+      "pen": 13,
+      "mask": 1,
+      "observation": "선행획에 붙은 시작 덩어리처럼 보여 실제원P 접촉대조 필요"
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "observation": "선행획에 붙은 시작 덩어리처럼 보여 실제원P 접촉대조 필요"
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "observation": "초기 판정 불확실"
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "observation": "초기 판정 불확실"
+    }
+  ],
+  "simpleHorizontalTinyProgressNotAutomaticallyFailed": true,
+  "boundary": {
+    "passed": 12,
+    "stable": true
+  },
+  "whole": {
+    "exactPrefix": 17,
+    "result": "PASS",
+    "separate": true,
+    "rect": [
+      12,
+      380.015625,
+      520,
+      520
+    ]
+  },
+  "additionalInspection": {
+    "pen": 17,
+    "compactProgress": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "compactObservations": 9,
+    "observation": "0.875 bottomH 부분에서1 UP완성. 별도0.9999/1 직접확인은 모두UP끝이이미그려짐.",
+    "separateLargeProgress": [
+      0.9999,
+      1
+    ],
+    "separateLargeObservations": 2,
+    "completionOnlySuddenUpAppearanceClaimed": false,
+    "temporalUpDirectionApproved": false,
+    "originalHGuideAndUpFilledPPreserved": true,
+    "excludedAttempts": [
+      {
+        "progress": 1,
+        "reason": "첫화면 main잘림",
+        "accepted": 0
+      }
+    ],
+    "retry": "스크롤 후 정상전체1 화면만 승인",
+    "distinctUnionWithCompactNotClaimed": true
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "mainSize": 520,
+    "sampleSize": 220,
+    "earlyMainRect": [
+      12,
+      435.015625,
+      520,
+      520
+    ],
+    "nineSamplesThreeRows": true
+  },
+  "sourceProofFormat": "actual-body3",
+  "syntheticFull5": false,
+  "inputs": {
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "1cd79331c9ab9bd58b3ee811dd72c1e828c88f78a8c52beebf6a23dbc5385426"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "acad1326f183c8c01db8977013b5f3aa27d1aa1bb80875995660166a803b9c8d"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u6583-1.json",
+      "SHA256": "dd7ec525e70aa52ebf9bf6783e66cc2e8c82ea3d2c742a6f80e7e91f0c5a1b60"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "60d4253b6443e6c6d85d09e44c4daac69765993c1568ba542232962cdf1180c0"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u6583-2026-10-25/fixtures.json",
+      "SHA256": "742ac496567c95b100901ad6f9bd6523e746055461b65b3cb3d9ee82e95af124"
+    }
+  },
+  "server": {
+    "pid": 15090,
+    "session": 25077,
+    "port": 59412,
+    "newSSRChecks": 1,
+    "CJS": 275,
+    "ESM": 275,
+    "engine": 0,
+    "sourceProjection": 0,
+    "exitCode": 130,
+    "tab": 183,
+    "tabClosed": true,
+    "ownedServerRemaining": false
+  },
+  "bad": [],
+  "errors": [],
+  "sourceGeometryGuideWidthWeightUnchanged": true,
+  "allTimeProof": false,
+  "sourceEngineMathReplay": 0
+}
