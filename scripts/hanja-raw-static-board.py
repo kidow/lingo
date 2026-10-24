@@ -639,6 +639,15 @@ def exact_u8adb_vs1_dictionary_draft_launcher(config,base):
             and digest(fixed_path('docs/hanja-source-original-u8adb-ue0101-2026-10-25/fixtures.json').read_bytes())=='d7af3d8df626f1d225861bbc99864003729bb6c5fac8e25d294dc2f2beb2f294'
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
+def exact_u6970_dictionary_draft_launcher(config,base):
+    expected=json.loads("{\"launcher\":{\"path\":\"scripts/hanja-raw-static-compare.py\",\"SHA256\":\"aab08a897e880560507418b63ed9402d6f18a1708d0c2071b4890892e71699c1\"},\"baseConfig\":{\"path\":\"docs/hanja-source-raw-compare-u6970-2026-10-25/config.json\",\"SHA256\":\"3005ab84f64757d56b7c64c9d7c61c5d86911e7691bd8e65bdae4911d5bdb2de\"},\"sourceRoots\":{\"selected\":{\"root\":\"u6970\",\"file\":\"docs/hanja-goal-glyphwiki-batch786-2026-10-13/engine-whole-u6970.json\",\"fileSHA256\":\"2907c73d361c9529f96f18380699f3bb5c22ae2a4ee0a60ebf1c0faab676a2c7\",\"proofKeys\":[\"defaults\",\"engineHashes\",\"engineRevision\",\"groups\",\"trace\"],\"proofKind\":\"actual-full5-direct\",\"sourceProofIdentity\":{\"sourceRoot\":\"u6970\",\"sourceProofFile\":\"engine-whole-u6970.json\",\"sourceProofFileSha256\":\"2907c73d361c9529f96f18380699f3bb5c22ae2a4ee0a60ebf1c0faab676a2c7\"},\"rawGroups\":14,\"drawingCalls\":15,\"polygonCounts\":[2,2,1,2,3,1,2,2,1,2,1,1,4,2],\"polygons\":26}},\"groups\":{\"selected\":[[1],[2],[3],[4],[5],[6],[7],[8],[9,10],[11],[12],[13],[14]]},\"fixture\":{\"path\":\"docs/hanja-source-original-u6970-2026-10-25/fixtures.json\",\"SHA256\":\"1bd6cfb4f69e4f8a4d0e5e6aba3d109a8414ccecf5081edd08c4416baf9fca3c\"}}")
+    return (config.get('launcher')==expected['launcher'] and config.get('baseConfig')==expected['baseConfig']
+            and base.get('glyph')=='楰' and type(base.get('catalogStrokes'))is int and base['catalogStrokes']==12
+            and type(base.get('dictionaryPlaybackStrokes'))is int and base['dictionaryPlaybackStrokes']==13
+            and base.get('sourceRoots')==expected['sourceRoots'] and base.get('domestic',{}).get('sha256')=='d7381090fd4f0696f8366156ef95e054f8d8e91493c0b4d7ca855f8d41c8974f'
+            and config.get('provisionalGroups')==expected['groups']
+            and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -661,6 +670,8 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    dictionary_u6970 = exact_u6970_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or dictionary_u6970
     dictionary_u8adb = exact_u8adb_vs1_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u8adb
     dictionary_u5ebe = exact_u5ebe_vs2_dictionary_draft_launcher(config,base)
@@ -699,6 +710,7 @@ def main():
     if dictionary_u8910:base = {**base,'catalogStrokes':13}  # review-view only; exact original catalog14 remains unchanged
     if dictionary_u5ebe:base = {**base,'catalogStrokes':12}  # review-view only; catalogue11 unchanged
     if dictionary_u8adb:base = {**base,'catalogStrokes':16}  # review-view only; catalogue15 unchanged
+    if dictionary_u6970:base = {**base,'catalogStrokes':13}  # review-view only; catalogue12 unchanged
     validate_groups(config['provisionalGroups'], base)
 
     def board_guards():
