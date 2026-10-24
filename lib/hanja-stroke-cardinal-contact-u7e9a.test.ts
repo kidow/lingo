@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict'
+import {test} from 'node:test'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {reviewedU7e9aCardinalContext,makeReviewedU7e9aCardinalSourceContext,reviewedU7e9aCardinalPolicy,sampleReviewedU7e9aCardinalFrame,REVIEWED_U7E9A_CARDINAL_SOURCE as SOURCE} from './hanja-stroke-cardinal-contact-u7e9a.ts'
+const f=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u7e9a-2026-10-24/fixtures.json',import.meta.url),'utf8')).u7e9a,strokes=f.strokes,context=reviewedU7e9aCardinalContext(strokes),clone=(x:any)=>JSON.parse(JSON.stringify(x)),sha=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex')
+test('纚 exact3 H/V plus original shortQ band binding FIRST',()=>{
+ assert(context);assert.equal(makeReviewedU7e9aCardinalSourceContext(f.fullProof,f.identity,strokes),context);assert.equal(makeReviewedU7e9aCardinalSourceContext({...f.fullProof,engineRevision:'wrong'},f.identity,strokes),null);assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.equal(sha(readFileSync(new URL('../'+SOURCE.fixture,import.meta.url))),SOURCE.fixtureSHA256)
+ let frames=0;for(const[pen,origin,negative,positive]of[[9,19.05,3.5,18.1],[13,19.05,3.5,17.85],[18,52.25,3.5,13.55],[25,84.9,0,8]]){const q=reviewedU7e9aCardinalPolicy(context,pen-1,1);assert(q);assert.equal(q.origin,origin);assert.equal(q.negativeExtent,negative);assert.equal(q.positiveExtent,positive);assert.deepEqual(q.segment,strokes[pen-1][1]);assert.deepEqual(q.predecessor,strokes[pen-1][0]);assert.equal(q.kind,pen===25?'source-Q-y-band-u7e9a':'cardinal-contact-prefix-u7e9a');
+ for(const p of[0,1e-6,.03,.5,.9999,1]){const a=sampleReviewedU7e9aCardinalFrame(q,q.segment,p,1);frames++;assert.equal(a.visible,p>0);assert.equal(a.originalPDirect,p===1);if(p>0&&p<1){assert(a.clip);assert(a.clip.width>0&&a.clip.height>0);assert.equal(a.UARead,false);assert.equal(a.clip.y,origin-negative*p)}}assert.throws(()=>sampleReviewedU7e9aCardinalFrame(q,q.segment,.1,0));assert.throws(()=>sampleReviewedU7e9aCardinalFrame(q,{...q.segment,outline:q.segment.outline+' '},.1,1));const changed=clone(strokes);changed[pen-1][1].outline+=' ';assert.equal(reviewedU7e9aCardinalContext(changed),null);assert.equal(reviewedU7e9aCardinalPolicy({...context},pen-1,1),null)}
+ assert.equal(SOURCE.nativeApproval,false);assert.equal(SOURCE.sourceTimingEquivalent,false);console.log(JSON.stringify({HVCases:3,sourceQBandCases:1,finiteFrames:frames,sourceMathReused:true,nativeApproval:false}))
+})
