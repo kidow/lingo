@@ -1,0 +1,207 @@
+{
+  "schema": "hanja-original-source-filled-contact-facts/v1",
+  "glyph": "瘦",
+  "providerRoot": "hkcs_m7626",
+  "localArtifactTag": "u7626-hkcs",
+  "catalogStrokes": 14,
+  "dictionaryPlaybackStrokes": 15,
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u7626-hkcs-2026-10-24/engine-whole-u7626-hkcs.json",
+    "SHA256": "8fc24300a67ccd8ad2836ce31218aff2fe624751a641c11b37d674b79f761ff6"
+  },
+  "fixture": {
+    "path": "docs/hanja-source-original-u7626-hkcs-2026-10-24/fixtures.json",
+    "SHA256": "e4a3b4f84ff5172b88114abe41770a1048a48fb78b20e3c7a7eca30bb00e2772",
+    "geometrySHA256": "97104242baa1bf71304f87f6ac3189976bddf46b15c4ad60346e0df24883053c"
+  },
+  "numericDomain": "Exact Fraction(str(JSON number)) on original captured200-unit serialized coordinates; no tolerance, radius disc, guide bridge or component-shape substitution.",
+  "cases": [
+    {
+      "id": "glyph1V-to-2H-final-contact",
+      "pens": [
+        1,
+        2
+      ],
+      "rawOneBased": [
+        1,
+        2
+      ],
+      "scope": "Later H intersects earlier V in completed whole; cannot assume that later H exists as prior support during stroke1.",
+      "positiveFilledIntersections": [
+        {
+          "PpairOneBased": [
+            1,
+            1
+          ],
+          "witness": {
+            "kind": "proper-edge-crossing",
+            "edgeAZeroBased": 0,
+            "edgeBZeroBased": 0,
+            "crossProducts": [
+              "1836",
+              "-1836",
+              "-3128",
+              "544"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "left臼-6Q-to-7V",
+      "pens": [
+        6,
+        7
+      ],
+      "rawOneBased": [
+        6,
+        7
+      ],
+      "scope": "Pen6 is shallow down-left Q, not H; source7V begins strictly inside prior6Q P1.",
+      "positiveFilledIntersections": [
+        {
+          "PpairOneBased": [
+            1,
+            1
+          ],
+          "witness": {
+            "kind": "A-vertex-strict-inside-B",
+            "vertexZeroBased": 9,
+            "point": [
+              "388/5",
+              "351/5"
+            ]
+          }
+        }
+      ],
+      "guideStartFact": {
+        "currentRawOneBased": 7,
+        "point": [
+          "741/10",
+          "349/5"
+        ],
+        "strictInsidePreviousPOneBased": 1
+      }
+    },
+    {
+      "id": "pen10-H-to-V",
+      "pens": [
+        10,
+        10
+      ],
+      "rawOneBased": [
+        10,
+        11
+      ],
+      "scope": "Full original P intersection positive; guide H end and V start differ, so no literal continuous trajectory or all-prefix connection claim.",
+      "positiveFilledIntersections": [
+        {
+          "PpairOneBased": [
+            1,
+            1
+          ],
+          "witness": {
+            "kind": "A-vertex-strict-inside-B",
+            "vertexZeroBased": 2,
+            "point": [
+              "1623/10",
+              "351/5"
+            ]
+          }
+        },
+        {
+          "PpairOneBased": [
+            1,
+            2
+          ],
+          "witness": {
+            "kind": "A-vertex-strict-inside-B",
+            "vertexZeroBased": 1,
+            "point": [
+              "1623/10",
+              "331/5"
+            ]
+          }
+        }
+      ],
+      "guideStartFact": {
+        "currentRawOneBased": 11,
+        "point": [
+          "1623/10",
+          "3331/50"
+        ],
+        "onPreviousPOneBased": 1,
+        "onPreviousPEdgeZeroBased": 1,
+        "strictInteriorClaimed": false
+      },
+      "guideEndpointMismatch": {
+        "previousEnd": [
+          162.3,
+          68.21000000000001
+        ],
+        "nextStart": [
+          162.3,
+          66.62
+        ],
+        "literal": false,
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "id": "14H-to-final15DR-start",
+      "pens": [
+        14,
+        15
+      ],
+      "rawOneBased": [
+        15,
+        17
+      ],
+      "scope": "Source15 DR begins strictly inside H part of pen14; no all-time growing-mask connection or native reuse approval.",
+      "positiveFilledIntersections": [
+        {
+          "PpairOneBased": [
+            1,
+            1
+          ],
+          "witness": {
+            "kind": "B-vertex-strict-inside-A",
+            "vertexZeroBased": 0,
+            "point": [
+              "859/10",
+              "132"
+            ]
+          }
+        }
+      ],
+      "guideStartFact": {
+        "currentRawOneBased": 17,
+        "point": [
+          "423/5",
+          "13181/100"
+        ],
+        "strictInsidePreviousPOneBased": 1
+      }
+    }
+  ],
+  "limits": {
+    "positiveIntersectionOnlyForListedOriginalP": true,
+    "allOriginalPolygonsConnectedNotProved": true,
+    "allPrefixConnectivityNotProved": true,
+    "growingMaskPIntersectionNotProved": true,
+    "sourceTimingApproved": false,
+    "priorDOMCompletionApproved": false,
+    "nativeReuseApproved": false,
+    "individualVariantApproved": false,
+    "catalogCountChanged": false,
+    "sourcePGuideWidthFlagsChanged": false,
+    "connectorAdded": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "checker": {
+    "path": "docs/hanja-source-original-u7626-hkcs-2026-10-24/source-filled-contact-check.py",
+    "SHA256": "b9384099af6bce3f9aaed5fac4b37b7e13fec19bbb1dae5361eae43e7e258a28",
+    "scope": "Validate fixed witnesses only. Does not replay whole-pair search, source projection, engine, prior native observations or all-sweep geometry."
+  }
+}
