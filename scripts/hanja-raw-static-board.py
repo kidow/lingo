@@ -47,6 +47,8 @@ def validate_groups(groups, base):
 
 def install_board(shared, base, groups, board_guards):
     original_selection, original_page, original_guards = shared.selection, shared.page, shared.guards
+    draft_pen_count = {('庾','u5ebe-ue0102'):12,('諛','u8adb-ue0101'):16}.get((base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root')))
+
 
     def guarded():
         original_guards()
@@ -54,9 +56,9 @@ def install_board(shared, base, groups, board_guards):
 
     def selection(route, query):
         board_guards()
-        if route == '/draft-pen' and base.get('glyph') == '庾' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u5ebe-ue0102':
+        if route == '/draft-pen' and draft_pen_count is not None:
             q = parse_qs(query, keep_blank_values=True, strict_parsing=True)
-            require(set(q) == {'pen'} and len(q['pen']) == 1 and q['pen'][0] in [str(i) for i in range(1, 13)], 'exact 庾 draft pen 1..12 required')
+            require(set(q) == {'pen'} and len(q['pen']) == 1 and q['pen'][0] in [str(i) for i in range(1, draft_pen_count + 1)], 'exact candidate draft pen required')
             return {'draftPen': int(q['pen'][0])}
         if route != '/board':
             return original_selection(route, query)
@@ -76,16 +78,16 @@ def install_board(shared, base, groups, board_guards):
         return shell.split('<g fill="#222">', 1)[0] + '<g fill="#222">' + ''.join(pieces) + '</g></svg>'
 
     def page(route, selected, sources, domestic):
-        if route == '/draft-pen' and base.get('glyph') == '庾' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u5ebe-ue0102':
+        if route == '/draft-pen' and draft_pen_count is not None:
             board_guards()
             pen = selected['draftPen']
-            require(type(pen) is int and 1 <= pen <= 12, 'exact 庾 selected pen required')
+            require(type(pen) is int and 1 <= pen <= draft_pen_count, 'exact selected draft pen required')
             old = original_page('/whole', None, sources, domestic)
             require(old.count('<div class="grid">') == 1, 'original page shell changed')
             head = old.split('<div class="grid">', 1)[0]
             indexes = groups['selected'][pen - 1]
-            links = ' '.join('<a href="/draft-pen?pen=' + str(i) + '">' + str(i) + '</a>' for i in range(1, 13))
-            return head + '<nav>' + links + '</nav><p>DRAFT · 정적 원부분 대조만 · 8획 nohook 세부·접촉·재생 미승인</p><style>.draft-single svg{width:520px!important;height:520px!important;min-width:520px!important;min-height:520px!important;max-width:none!important}.draft-single{display:block}</style><div class="draft-single"><h2>국내 ' + str(pen) + '</h2>' + shared.domestic_svg(domestic, pen) + '<h2>원 VS2 raw ' + ','.join(map(str,indexes)) + '</h2>' + grouped_svg(sources['selected'], indexes) + '</div>'
+            links = ' '.join('<a href="/draft-pen?pen=' + str(i) + '">' + str(i) + '</a>' for i in range(1, draft_pen_count + 1))
+            return head + '<nav>' + links + '</nav><p>DRAFT · 정적 원부분 대조만 · 원끝모양 세부·접촉·재생 미승인</p><style>.draft-single svg{width:520px!important;height:520px!important;min-width:520px!important;min-height:520px!important;max-width:none!important}.draft-single{display:block}</style><div class="draft-single"><h2>국내 ' + str(pen) + '</h2>' + shared.domestic_svg(domestic, pen) + '<h2>원 VS2 raw ' + ','.join(map(str,indexes)) + '</h2>' + grouped_svg(sources['selected'], indexes) + '</div>'
         if route != '/board':
             return original_page(route, selected, sources, domestic)
         board_guards()
@@ -628,6 +630,15 @@ def exact_u7681_j_draft_launcher(config,base):
             and config.get('provisionalGroups')==expected['groups']
             and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
 
+def exact_u8adb_vs1_dictionary_draft_launcher(config,base):
+    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'aab08a897e880560507418b63ed9402d6f18a1708d0c2071b4890892e71699c1'}
+            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u8adb-ue0101-2026-10-25/config.json','SHA256':'030502f76d73588f0a75387cfe9eaa74bb39316855acf44ebf3b2042a6dff127'}
+            and base.get('glyph')=='諛' and base.get('catalogStrokes')==15 and base.get('dictionaryPlaybackStrokes')==16
+            and base.get('sourceRoots')=={'selected': {'root': 'u8adb-ue0101', 'file': 'docs/hanja-goal-glyphwiki-batch778-2026-10-13/engine-whole-u8adb-ue0101.json', 'fileSHA256': 'e66150bcadc9d0634fe3b75bb7803f0a900f7f57cd67c229558dc878b7881808', 'proofKeys': ['defaults', 'engineHashes', 'engineRevision', 'groups', 'trace'], 'proofKind': 'actual-full5-direct', 'sourceProofIdentity': {'sourceRoot': 'u8adb-ue0101', 'sourceProofFile': 'engine-whole-u8adb-ue0101.json', 'sourceProofFileSha256': 'e66150bcadc9d0634fe3b75bb7803f0a900f7f57cd67c229558dc878b7881808'}, 'rawGroups': 18, 'drawingCalls': 19, 'polygonCounts': [2, 2, 2, 2, 1, 1, 2, 1, 3, 1, 2, 2, 1, 2, 1, 1, 4, 2], 'polygons': 32}}
+            and config.get('provisionalGroups')=={'selected': [[1], [2], [3], [4], [5], [6, 7], [8], [9], [10], [11], [12], [13, 14], [15], [16], [17], [18]]}
+            and digest(fixed_path('docs/hanja-source-original-u8adb-ue0101-2026-10-25/fixtures.json').read_bytes())=='d7af3d8df626f1d225861bbc99864003729bb6c5fac8e25d294dc2f2beb2f294'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -650,6 +661,8 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    dictionary_u8adb = exact_u8adb_vs1_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or dictionary_u8adb
     dictionary_u5ebe = exact_u5ebe_vs2_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u5ebe
     legacy_launcher = legacy_launcher or exact_u7681_j_draft_launcher(config,base)
@@ -685,6 +698,7 @@ def main():
     if dictionary_u7626:base = {**base,'catalogStrokes':15}  # review-view copy only; pinned source config remains14
     if dictionary_u8910:base = {**base,'catalogStrokes':13}  # review-view only; exact original catalog14 remains unchanged
     if dictionary_u5ebe:base = {**base,'catalogStrokes':12}  # review-view only; catalogue11 unchanged
+    if dictionary_u8adb:base = {**base,'catalogStrokes':16}  # review-view only; catalogue15 unchanged
     validate_groups(config['provisionalGroups'], base)
 
     def board_guards():
