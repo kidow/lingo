@@ -47,7 +47,7 @@ def validate_groups(groups, base):
 
 def install_board(shared, base, groups, board_guards):
     original_selection, original_page, original_guards = shared.selection, shared.page, shared.guards
-    draft_pen_count = {('逭','u902d'):12,('庾','u5ebe-ue0102'):12,('諛','u8adb-ue0101'):16,('藿','koseki-368300'):20}.get((base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root')))
+    draft_pen_count = {('逭','u902d'):12,('庾','u5ebe-ue0102'):12,('諛','u8adb-ue0101'):16,('藿','koseki-368300'):20,('葯','hkcs_m846f'):13}.get((base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root')))
 
 
     def guarded():
@@ -87,7 +87,7 @@ def install_board(shared, base, groups, board_guards):
             head = old.split('<div class="grid">', 1)[0]
             indexes = groups['selected'][pen - 1]
             links = ' '.join('<a href="/draft-pen?pen=' + str(i) + '">' + str(i) + '</a>' for i in range(1, draft_pen_count + 1))
-            return head + '<nav>' + links + '</nav><p>DRAFT · 정적 원부분 대조만 · 원끝모양 세부·접촉·재생 미승인</p><style>.draft-single svg{width:520px!important;height:520px!important;min-width:520px!important;min-height:520px!important;max-width:none!important}.draft-single{display:block}</style><div class="draft-single"><h2>국내 ' + str(pen) + '</h2>' + shared.domestic_svg(domestic, pen) + '<h2>' + ('원 raw ' if (base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root'))==('藿','koseki-368300') else '원 base raw ' if (base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root'))==('逭','u902d') else '원 VS2 raw ') + ','.join(map(str,indexes)) + '</h2>' + grouped_svg(sources['selected'], indexes) + '</div>'
+            return head + '<nav>' + links + '</nav><p>DRAFT · 정적 원부분 대조만 · 원끝모양 세부·접촉·재생 미승인</p><style>.draft-single svg{width:520px!important;height:520px!important;min-width:520px!important;min-height:520px!important;max-width:none!important}.draft-single{display:block}</style><div class="draft-single"><h2>국내 ' + str(pen) + '</h2>' + shared.domestic_svg(domestic, pen) + '<h2>' + ('원 raw ' if (base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root'))in [('藿','koseki-368300'),('葯','hkcs_m846f')] else '원 base raw ' if (base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root'))==('逭','u902d') else '원 VS2 raw ') + ','.join(map(str,indexes)) + '</h2>' + grouped_svg(sources['selected'], indexes) + '</div>'
         if route != '/board':
             return original_page(route, selected, sources, domestic)
         board_guards()
@@ -726,6 +726,21 @@ def exact_u902d_base_draft_launcher(config,base):
             and base==expected['base'] and config.get('provisionalGroups')==expected['groups']
             and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
 
+def exact_u846f_hkcs_draft_launcher(config,base):
+    selected=base.get('sourceRoots',{}).get('selected',{})
+    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'3364e08f6bf87094300c337f72d935a390e79397e78b8692cd504982d8b0fda6'}
+            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u846f-hkcs-whole-2026-10-25/config.json','SHA256':'77d1be5d5b371be2db590519136cfce9e554f9a341ad96211755b65cedf95d3b'}
+            and base.get('glyph')=='葯' and base.get('catalogStrokes')==13 and base.get('wholeOnly')is True
+            and list(base.get('sourceRoots',{}))==['selected']
+            and selected.get('root')=='hkcs_m846f'
+            and selected.get('file')=='docs/hanja-actual-engine-capture-u846f-hkcs-2026-10-25/engine-whole-hkcs_m846f.json'
+            and selected.get('fileSHA256')=='0aa5daf820225c29fe6ad0d31a8bec2be44c983b06cd7680f5f924f6e50ede21'
+            and selected.get('proofKind')=='actual-full5-direct' and selected.get('proofKeys')==['defaults','engineHashes','engineRevision','groups','trace']
+            and (selected.get('rawGroups'),selected.get('drawingCalls'),selected.get('polygons'))==(16,17,37)
+            and config.get('provisionalGroups')=={'selected':[[1],[2],[3],[4],[5,6],[7,8],[9],[10],[11],[12],[13],[14,15],[16]]}
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
+
 def exact_u85ff_koseki_draft_launcher(config,base):
     selected=base.get('sourceRoots',{}).get('selected',{})
     return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'3364e08f6bf87094300c337f72d935a390e79397e78b8692cd504982d8b0fda6'}
@@ -765,6 +780,7 @@ def main():
     base = json.loads(base_path.read_bytes())
     legacy_launcher = legacy_launcher or exact_u902d_base_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u85ff_koseki_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u846f_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u703c_body3_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u5dd1_body3_prepared_launcher(config,base)
     dictionary_u7228 = exact_u7228_body3_dictionary_draft_launcher(config,base)
