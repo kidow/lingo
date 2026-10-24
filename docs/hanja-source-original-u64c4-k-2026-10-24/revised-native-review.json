@@ -1,0 +1,1033 @@
+{
+  "schema": "hanja-revised-actual-component-finite-HOLD-review/v1",
+  "date": "2026-10-24",
+  "glyph": "擄",
+  "root": "u64c4-k",
+  "observer": "/root",
+  "recordedBy": "/root/activation1440 from explicit ROOT observations",
+  "status": "HOLD: ordinary15m2 entry pop and15m3 final terminal coverage unresolved",
+  "inputs": {
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "19a9badda31a176f2e7a185bc0c38fbebf3e1dde50c81bdaf7303856cfe0dc8b"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "2cdf721198c5d7f3d37bb87883c9156d2ff4b04d8b400d4d06b741dfa54b3a62"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u64c4-2.json",
+      "SHA256": "2804931adf5ce527b1208ef579415b5b1e385646d58de2e179857a7cd09b022e"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u64c4-k-2026-10-24/fixtures.json",
+      "SHA256": "5c32d5b87902415e499e15f4607ea15ca7776dfecb3b4eddb1e10d3caba96ccb",
+      "geometrySHA256": "544d2e9072813366e969ba2f7ec353763a524c0973470141957b6371d85de85f"
+    },
+    "baselineReference": {
+      "path": "docs/hanja-source-original-u64c4-k-2026-10-24/ordinary-baseline-native-review.json",
+      "SHA256": "ffcbf953fc35e1430cde5147b04951a3cf1475992c802a810fba0dc3a8aa3d1c",
+      "acceptedFiniteSamples": 96,
+      "repeated": false
+    }
+  },
+  "native": {
+    "acceptedScreensReportedByROOT": 42,
+    "displayedCaseSlots": 106,
+    "distinctDiagnosticStates": 105,
+    "slotResults": {
+      "PASS": 98,
+      "HOLD": 8
+    },
+    "distinctStateResults": {
+      "PASS": 97,
+      "HOLD": 8
+    },
+    "allScreensPassed": false,
+    "allCaseSlotsPassed": false,
+    "naturalScreens": 0,
+    "originalBoardSVGWidthPixels": 220,
+    "everyAcceptedBoardSVGFull": true,
+    "maximumBoardBottomPixels": 1188.016,
+    "actualJPEGHeightPixels": 1234,
+    "finalViewport": {
+      "width": 1280,
+      "height": 1280
+    },
+    "viewportSetAfterCreatingTab": true,
+    "bindingBad": [],
+    "bindingErrors": [],
+    "bindingPassDoesNotImplyVisualPass": true,
+    "lastMainWhole": {
+      "sourcePensAtP1": 16,
+      "originalSVGWidthPixels": 520,
+      "fullyVisible": true,
+      "bindingBad": []
+    },
+    "controllerCaveat": "Residual controllerProgress field remained .9999 while actual main source masks were all p1; controller alone is not frame evidence.",
+    "totalCaptureCount": null
+  },
+  "scopeResults": [
+    {
+      "scope": "new-policy initial buttons",
+      "pens": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        9,
+        10,
+        13,
+        15,
+        16
+      ],
+      "targets": 16,
+      "localFractions": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "displayedSlots": 48,
+      "PASS": 48,
+      "HOLD": 0
+    },
+    {
+      "scope": "source mask boundaries excluding unchangedpen11",
+      "boundaries": [
+        [
+          2,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          3
+        ]
+      ],
+      "samples": "boundary±1e-10/exact",
+      "displayedSlots": 21,
+      "PASS": 18,
+      "HOLD": 3,
+      "hold": "15m2 entry: sudden full serif and short vertical at exact/plus; entire three-sample comparison retained as HOLD"
+    },
+    {
+      "scope": "ordinary15m2 early",
+      "localFractions": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "displayedSlots": 3,
+      "PASS": 0,
+      "HOLD": 3,
+      "observation": "Same sudden serif/short-vertical pop"
+    },
+    {
+      "scope": "ordinary15m2 near-end",
+      "localFractions": [
+        0.9999,
+        0.99999999,
+        1
+      ],
+      "displayedSlots": 3,
+      "PASS": 3,
+      "HOLD": 0,
+      "observation": "Stable; local1 duplicates15 nextMask3 exact state"
+    },
+    {
+      "scope": "ordinary15m2 original full-round residual",
+      "displayedSlots": 1,
+      "PASS": 1,
+      "HOLD": 0,
+      "observation": "White residual"
+    },
+    {
+      "scope": "three compound internal phase brackets",
+      "targetIds": [
+        "u64c4-k-compound-prefix-2-2",
+        "u64c4-k-compound-prefix-9-2",
+        "u64c4-k-compound-prefix-9-3"
+      ],
+      "displayedSlots": 9,
+      "PASS": 9,
+      "HOLD": 0,
+      "observation": "LEFT/RIGHT/UP source body→tail sequential"
+    },
+    {
+      "scope": "three compound tail midpoints",
+      "displayedSlots": 3,
+      "PASS": 3,
+      "HOLD": 0
+    },
+    {
+      "scope": "three compound actual source-P residuals",
+      "displayedSlots": 3,
+      "PASS": 3,
+      "HOLD": 0,
+      "observation": "Thin AA only, no solid black"
+    },
+    {
+      "scope": "five growing mid/near-end/residual",
+      "targetIds": [
+        "u64c4-k-3-1",
+        "u64c4-k-6-2",
+        "u64c4-k-7-2",
+        "u64c4-k-15-3",
+        "u64c4-k-16-1"
+      ],
+      "samples": [
+        "local.5",
+        "local.9999",
+        "full-round residual"
+      ],
+      "displayedSlots": 15,
+      "PASS": 13,
+      "HOLD": 2,
+      "holds": [
+        {
+          "target": "15m3",
+          "sample": "local.9999",
+          "observation": "Left terminal missing"
+        },
+        {
+          "target": "15m3",
+          "sample": "full-round residual",
+          "observation": "Solid black left chunk"
+        }
+      ]
+    }
+  ],
+  "deterministicCountVerification": {
+    "method": "Read pinned profile and helper local/board arithmetic only; no browser/source replay",
+    "slots": 106,
+    "uniqueKeys": 105,
+    "stateKey": "[view-mode,pen,global-progress]; coverage keys retain exact target and purpose",
+    "knownDuplicate": {
+      "ordinary15m2Local1": 0.841556022851184,
+      "boundary15NextMask3Exact": 0.841556022851184,
+      "globalProgress": 0.841556022851184,
+      "numberExactEqual": true
+    },
+    "unfilteredCases": [
+      {
+        "scope": "new-initial:2:1",
+        "pen": 2,
+        "global": 9.1688046046395e-7,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:2:1",
+        "pen": 2,
+        "global": 0.0091688046046395,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:2:1",
+        "pen": 2,
+        "global": 0.0275064138139185,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:2:2",
+        "pen": 2,
+        "global": 0.9168805435834895,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:2:2",
+        "pen": 2,
+        "global": 0.9177116558593106,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:2:2",
+        "pen": 2,
+        "global": 0.9193740466500315,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:3:1",
+        "pen": 3,
+        "global": 0.000001,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:3:1",
+        "pen": 3,
+        "global": 0.01,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:3:1",
+        "pen": 3,
+        "global": 0.03,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:4:1",
+        "pen": 4,
+        "global": 0.000001,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:4:1",
+        "pen": 4,
+        "global": 0.01,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:4:1",
+        "pen": 4,
+        "global": 0.03,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:6:1",
+        "pen": 6,
+        "global": 7.978194680527784e-7,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:6:1",
+        "pen": 6,
+        "global": 0.007978194680527784,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:6:1",
+        "pen": 6,
+        "global": 0.023934584041583353,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:6:2",
+        "pen": 6,
+        "global": 0.7978196702333104,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:6:2",
+        "pen": 6,
+        "global": 0.7998412733722506,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:6:2",
+        "pen": 6,
+        "global": 0.8038848840111951,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:7:1",
+        "pen": 7,
+        "global": 4.618735138775581e-7,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:7:1",
+        "pen": 7,
+        "global": 0.004618735138775581,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:7:1",
+        "pen": 7,
+        "global": 0.013856205416326744,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:7:2",
+        "pen": 7,
+        "global": 0.46187405200404424,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:7:2",
+        "pen": 7,
+        "global": 0.4672547787387826,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:7:2",
+        "pen": 7,
+        "global": 0.4780173084612313,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:1",
+        "pen": 9,
+        "global": 3.098386296154136e-7,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:1",
+        "pen": 9,
+        "global": 0.0030983862961541367,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:1",
+        "pen": 9,
+        "global": 0.009295158888462407,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:2",
+        "pen": 9,
+        "global": 0.30983879190356317,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:2",
+        "pen": 9,
+        "global": 0.3114615111109969,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:2",
+        "pen": 9,
+        "global": 0.3147072741021634,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:3",
+        "pen": 9,
+        "global": 0.47212730704696065,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:3",
+        "pen": 9,
+        "global": 0.47740551138200243,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:9:3",
+        "pen": 9,
+        "global": 0.48796297579852765,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:10:1",
+        "pen": 10,
+        "global": 0.000001,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:10:1",
+        "pen": 10,
+        "global": 0.01,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:10:1",
+        "pen": 10,
+        "global": 0.030000000000000002,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:13:1",
+        "pen": 13,
+        "global": 0.000001,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:13:1",
+        "pen": 13,
+        "global": 0.01,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:13:1",
+        "pen": 13,
+        "global": 0.030000000000000002,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:15:1",
+        "pen": 15,
+        "global": 6.430254455880756e-7,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:15:1",
+        "pen": 15,
+        "global": 0.006430254455880757,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:15:1",
+        "pen": 15,
+        "global": 0.019290763367642266,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:15:3",
+        "pen": 15,
+        "global": 0.8415561812951612,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:15:3",
+        "pen": 15,
+        "global": 0.8431404626226723,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:15:3",
+        "pen": 15,
+        "global": 0.8463093421656486,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:16:1",
+        "pen": 16,
+        "global": 0.000001,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:16:1",
+        "pen": 16,
+        "global": 0.01,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "new-initial:16:1",
+        "pen": 16,
+        "global": 0.030000000000000002,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:2:2",
+        "pen": 2,
+        "global": 0.91688046036395,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:2:2",
+        "pen": 2,
+        "global": 0.91688046046395,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:2:2",
+        "pen": 2,
+        "global": 0.91688046056395,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:6:2",
+        "pen": 6,
+        "global": 0.7978194679527785,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:6:2",
+        "pen": 6,
+        "global": 0.7978194680527785,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:6:2",
+        "pen": 6,
+        "global": 0.7978194681527785,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:7:2",
+        "pen": 7,
+        "global": 0.4618735137775581,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:7:2",
+        "pen": 7,
+        "global": 0.4618735138775581,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:7:2",
+        "pen": 7,
+        "global": 0.4618735139775581,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:9:2",
+        "pen": 9,
+        "global": 0.30983862951541363,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:9:2",
+        "pen": 9,
+        "global": 0.30983862961541364,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:9:2",
+        "pen": 9,
+        "global": 0.30983862971541365,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:9:3",
+        "pen": 9,
+        "global": 0.47212677907373984,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:9:3",
+        "pen": 9,
+        "global": 0.47212677917373985,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:9:3",
+        "pen": 9,
+        "global": 0.47212677927373986,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:15:2",
+        "pen": 15,
+        "global": 0.6430254454880756,
+        "result": "HOLD",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:15:2",
+        "pen": 15,
+        "global": 0.6430254455880756,
+        "result": "HOLD",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:15:2",
+        "pen": 15,
+        "global": 0.6430254456880756,
+        "result": "HOLD",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:15:3",
+        "pen": 15,
+        "global": 0.841556022751184,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:15:3",
+        "pen": 15,
+        "global": 0.841556022851184,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "boundary:15:3",
+        "pen": 15,
+        "global": 0.841556022951184,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "ordinary15m2early",
+        "pen": 15,
+        "global": 0.6430256441186529,
+        "result": "HOLD",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "ordinary15m2early",
+        "pen": 15,
+        "global": 0.6450107513607066,
+        "result": "HOLD",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "ordinary15m2early",
+        "pen": 15,
+        "global": 0.6489813629059689,
+        "result": "HOLD",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "ordinary15m2near",
+        "pen": 15,
+        "global": 0.8415361697934578,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "ordinary15m2near",
+        "pen": 15,
+        "global": 0.8415560208658783,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "ordinary15m2near",
+        "pen": 15,
+        "global": 0.841556022851184,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "ordinary15m2residual",
+        "pen": 15,
+        "global": 1,
+        "result": "PASS",
+        "mode": "ordinary-full-round-residual"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-2-2",
+        "pen": 2,
+        "global": 0.9612108815415313,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-2-2",
+        "pen": 2,
+        "global": 0.9612108815498434,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-2-2",
+        "pen": 2,
+        "global": 0.9612108815581554,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundmid:u64c4-k-compound-prefix-2-2",
+        "pen": 2,
+        "global": 0.9806054407749217,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundresidual:u64c4-k-compound-prefix-2-2",
+        "pen": 2,
+        "global": 1,
+        "result": "PASS",
+        "mode": "compound-original-P-residual:u64c4-k-compound-prefix-2-2"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-9-2",
+        "pen": 9,
+        "global": 0.43369011215685477,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-9-2",
+        "pen": 9,
+        "global": 0.4336901121730837,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-9-2",
+        "pen": 9,
+        "global": 0.4336901121893124,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundmid:u64c4-k-compound-prefix-9-2",
+        "pen": 9,
+        "global": 0.4529084456734117,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundresidual:u64c4-k-compound-prefix-9-2",
+        "pen": 9,
+        "global": 1,
+        "result": "PASS",
+        "mode": "compound-original-P-residual:u64c4-k-compound-prefix-9-2"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-9-3",
+        "pen": 9,
+        "global": 0.8919314665497107,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-9-3",
+        "pen": 9,
+        "global": 0.891931466602498,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundphase:u64c4-k-compound-prefix-9-3",
+        "pen": 9,
+        "global": 0.8919314666552853,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundmid:u64c4-k-compound-prefix-9-3",
+        "pen": 9,
+        "global": 0.945965733301249,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "compoundresidual:u64c4-k-compound-prefix-9-3",
+        "pen": 9,
+        "global": 1,
+        "result": "PASS",
+        "mode": "compound-original-P-residual:u64c4-k-compound-prefix-9-3"
+      },
+      {
+        "scope": "growing:u64c4-k-3-1:0.5",
+        "pen": 3,
+        "global": 0.5,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growing:u64c4-k-3-1:0.9999",
+        "pen": 3,
+        "global": 0.9999,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growingresidual:u64c4-k-3-1",
+        "pen": 3,
+        "global": 1,
+        "result": "PASS",
+        "mode": "growing-full-round-residual:u64c4-k-3-1"
+      },
+      {
+        "scope": "growing:u64c4-k-6-2:0.5",
+        "pen": 6,
+        "global": 0.8989097340263893,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growing:u64c4-k-6-2:0.9999",
+        "pen": 6,
+        "global": 0.9999797819468054,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growingresidual:u64c4-k-6-2",
+        "pen": 6,
+        "global": 1,
+        "result": "PASS",
+        "mode": "growing-full-round-residual:u64c4-k-6-2"
+      },
+      {
+        "scope": "growing:u64c4-k-7-2:0.5",
+        "pen": 7,
+        "global": 0.730936756938779,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growing:u64c4-k-7-2:0.9999",
+        "pen": 7,
+        "global": 0.9999461873513878,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growingresidual:u64c4-k-7-2",
+        "pen": 7,
+        "global": 1,
+        "result": "PASS",
+        "mode": "growing-full-round-residual:u64c4-k-7-2"
+      },
+      {
+        "scope": "growing:u64c4-k-15-3:0.5",
+        "pen": 15,
+        "global": 0.920778011425592,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growing:u64c4-k-15-3:0.9999",
+        "pen": 15,
+        "global": 0.9999841556022852,
+        "result": "HOLD",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growingresidual:u64c4-k-15-3",
+        "pen": 15,
+        "global": 1,
+        "result": "HOLD",
+        "mode": "growing-full-round-residual:u64c4-k-15-3"
+      },
+      {
+        "scope": "growing:u64c4-k-16-1:0.5",
+        "pen": 16,
+        "global": 0.5,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growing:u64c4-k-16-1:0.9999",
+        "pen": 16,
+        "global": 0.9999,
+        "result": "PASS",
+        "mode": "ordinary"
+      },
+      {
+        "scope": "growingresidual:u64c4-k-16-1",
+        "pen": 16,
+        "global": 1,
+        "result": "PASS",
+        "mode": "growing-full-round-residual:u64c4-k-16-1"
+      }
+    ]
+  },
+  "reusedEvidence": {
+    "unchangedPen11BoundarySamples": 3,
+    "source": {
+      "path": "docs/hanja-source-original-u64c4-k-2026-10-24/ordinary-baseline-native-review.json",
+      "SHA256": "ffcbf953fc35e1430cde5147b04951a3cf1475992c802a810fba0dc3a8aa3d1c",
+      "acceptedFiniteSamples": 96,
+      "repeated": false
+    },
+    "freshlyReplayed": false,
+    "notIncludedIn106Slots": true
+  },
+  "excludedDiagnostics": [
+    {
+      "tab": 92,
+      "reason": "Idle metadata fault",
+      "acceptedNativeScopes": 0
+    },
+    {
+      "tab": 94,
+      "reason": "Earlier720 viewport pen2 screenshot duplicates scopes; accepted pen2 re-observed fully at1280 viewport",
+      "includedIn42ScreensOr106Slots": false
+    }
+  ],
+  "preservation": {
+    "sourcePGuideWidthWeightUnchanged": true,
+    "sourceOrderChanged": false,
+    "sourceCoordinatesChanged": false,
+    "oldHoldsRetained": true
+  },
+  "approval": {
+    "overallNative": false,
+    "nativeRuntime": false,
+    "actualAppUI": false,
+    "production": false,
+    "runtimeRegistered": false
+  },
+  "server": {
+    "PID": 46461,
+    "port": 59412,
+    "sessionId": 96548,
+    "exitCode": 130,
+    "stdoutEmpty": true,
+    "tab": 94,
+    "tabClosed": true,
+    "viewportReset": true,
+    "stopped": true,
+    "ownedServersRemaining": 0
+  },
+  "recordActions": {
+    "browserReplay": 0,
+    "extraNatural": 0,
+    "sourceProjection": 0,
+    "sourceMathRerun": 0,
+    "engine": 0,
+    "sharedEdits": 0,
+    "build": false
+  }
+}
