@@ -1,0 +1,125 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "諛",
+  "root": "u8adb-ue0101",
+  "observer": "ROOT browser panel",
+  "result": "PASS",
+  "nativeApproval": true,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "registrationApproved": false,
+  "catalogStrokes": 15,
+  "proposedDictionaryPlaybackStrokes": 16,
+  "finite": {
+    "fresh": 9,
+    "reusedUnchanged": 60,
+    "totalDistinct": 69,
+    "passed": 69,
+    "held": 0,
+    "capSixStates": 6,
+    "priorBoundaryStates": 3,
+    "capPens": [
+      8
+    ],
+    "earlyLocals": [
+      1e-06,
+      0.01,
+      0.03
+    ],
+    "midNearLocals": [
+      0.5,
+      0.99999999
+    ],
+    "completionResidual": 1,
+    "allResidualOriginalPAndQChecks": true,
+    "boundary15m2": {
+      "result": "PASS",
+      "reason": "Minus V rounded end versus exact/plus flat end is original prior mask1 P completion contour. It is neither an isolated new mask2 initial fragment nor omitted sourceP. All three states preserve original source and have bad/errors empty."
+    }
+  },
+  "natural": {
+    "pens": [
+      8,
+      15
+    ],
+    "distinctSnapshots": 4,
+    "samples": [
+      {
+        "pen": 8,
+        "statusProgress": 0.081774999994,
+        "screenshotProgress": 0.097374999994,
+        "endProgress": 1
+      },
+      {
+        "pen": 15,
+        "statusProgress": 0.075537500006,
+        "screenshotProgress": 0.091237500006,
+        "endProgress": 1
+      }
+    ],
+    "continuousReplayProof": false,
+    "excludedAttempts": [],
+    "retryHistory": "No failed or replayed natural observations reported."
+  },
+  "whole": {
+    "exactPrefix": 16,
+    "result": "PASS",
+    "sourceShapePreserved": true
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "mainSize": 520,
+    "sampleSize": 220,
+    "mainRect": [
+      12,
+      435.015625,
+      520,
+      520
+    ]
+  },
+  "inputs": {
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "0598439c19d632df4fc9df448aeedc5cb06aac9119e78b073f909edff6c88c95"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "f05801c90ca64fc9f1269ccd71f15bdbb4f0b9ff9d6966f97fc99a4996bf9ea9"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u8adb-ue0101-2.json",
+      "SHA256": "736e5d6c3dbd467dc87a0abc7006399c4047ed1811885044fcd829cf013dfb99"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "2c512907ee9b974fc0ad3f1af6c0538cae018b99d26720dc8c54d7bafe9e77fa"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u8adb-ue0101-2026-10-25/fixtures.json",
+      "SHA256": "d7af3d8df626f1d225861bbc99864003729bb6c5fac8e25d294dc2f2beb2f294"
+    }
+  },
+  "server": {
+    "newSSRChecks": 1,
+    "CJS": 273,
+    "ESM": 273,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "pid": 86858,
+    "session": 32715,
+    "port": 59412,
+    "exitCode": 130,
+    "tab": 175,
+    "tabClosed": true,
+    "ownedServerRemaining": false
+  },
+  "bad": [],
+  "errors": [],
+  "sourceGeometryGuideWidthWeightOuterClockUnchanged": true,
+  "allTimeProof": false,
+  "publisherMicrotimingEquivalent": false,
+  "sourceEngineMathReplay": 0
+}
