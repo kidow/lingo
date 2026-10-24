@@ -1,0 +1,71 @@
+{
+  "schema": "hanja-ordinary-native-review-v1",
+  "glyph": "爨",
+  "sourceRoot": "u7228-ue0100",
+  "catalogStrokes": 29,
+  "dictionaryPlaybackStrokes": 30,
+  "status": "HOLD: 명확 HOLD 48표본과 추가 확인 66표본; finite PASS 0",
+  "observedPins": {
+    "helper": { "path": "scripts/hanja-actual-component-review.mjs", "sha256": "c339c5cb937e18cff5a701086829d0432f760bdb87c21d8b147be0c2b7244905" },
+    "profile": { "path": "docs/hanja-actual-component-profiles-2026-10-22/u7228-1.json", "sha256": "c7241658d2896ebc49e5a9eb03e0af22dc8c63bd8ecffde376eb56161a9c774c" },
+    "renderer": { "path": "components/hanja/stroke-outlines.tsx", "sha256": "bbf31717ade779ec38b0f926a97da9a8e6ffaed1bdd67cce2f12b5264320c32f" },
+    "constants": { "path": "lib/hanja-strokes.ts", "sha256": "d86df6297ce6403cb52e6bfcbd97c39c8cf8966eef781725386a87ea9133bd86" },
+    "geometrySHA256": "6bdf80d4f98edcf67b4c3260c315c994a4134cc7e91a653abd9f6942b78a8953",
+    "preparationCommit": "9df5c2e787323a870e45eeede1a363996aac3aee"
+  },
+  "controlledObservation": {
+    "reviewer": "root 직접 브라우저 관찰",
+    "earlySamples": 102,
+    "boundarySamples": 12,
+    "observedDistinct": 114,
+    "finitePass": 0,
+    "clearHold": 48,
+    "pending": 66,
+    "bad": [],
+    "errors": [],
+    "earlyClearHold": {
+      "targets": ["1m1", "11m2", "14m1", "15m2", "18m1", "19m1", "22m1", "23m1", "25m1", "26m1", "27m1", "28m1", "29m1", "30m1"],
+      "samplesEach": 3,
+      "total": 42,
+      "finding": "초기부터 고정된 새 조각이 크게 나타남"
+    },
+    "earlyPending": {
+      "total": 60,
+      "cornerTargets": ["6m2", "9m2"],
+      "finding": "6m2/9m2의 작은 상단 corner는 완료 H 귀속과 분리 확인 필요. 나머지 cardinal은 epsilon에서 비고 .01/.03에 작게 성장하지만 exact 원P prefix와 접촉 facts는 미확인"
+    },
+    "boundaryClearHold": {
+      "pens": [11, 15],
+      "samplesEach": 3,
+      "total": 6,
+      "finding": "before에는 없고 exact/plus에서 큰 신규 cap 등장. exact의 부동소수 활성 epsilon 여부는 코드 대조 전 미확정"
+    },
+    "boundaryPending": {
+      "pens": [6, 9],
+      "samplesEach": 3,
+      "total": 6,
+      "finding": "minus/exact/plus에서 육안으로 큰 새 잉크는 없으나 접촉 판정은 보류"
+    }
+  },
+  "actualWhole": { "mode": "exact-prefix", "pen": 30, "progress": 1, "freshObserved": 1, "pass": 1, "finding": "실제 컴포넌트 완성 자형 PASS; finite114와 별도" },
+  "startup": { "actualServerSSRUnique": 1, "CJSModules": 287, "ESMModules": 287, "ordinaryCompilerRuns": 0, "engineRuns": 0, "sourceProjection": 0 },
+  "preparationChecks": {
+    "DOMStubHandlerRows": 114,
+    "DOMStubCaptionsProduced": true,
+    "oldHelperByteInverseExact": true,
+    "checkNew": "FAIL",
+    "failure": "일반 SSR 단정은 pen .5 렌더링에서 첫 mask 방향을 검사. 11획 첫 H의 weight share .3626442349448699 이후 둘째 curve가 활성인데 첫 H 기준 clipPath를 요구함",
+    "actualStartupSeparatedFromCheckNewFailure": true
+  },
+  "reusedEvidence": {
+    "originalDirection90": "docs/hanja-official-media-compare-u7228-2026-10-25/official-temporal-native-review.json",
+    "static30": "docs/hanja-source-raw-compare-u7228-vs0-2026-10-25/native-group-review.json",
+    "sourceProof": "docs/hanja-goal-glyphwiki-batch906-2026-10-13/engine-whole-u7228-ue0100.json",
+    "sourceProofFormat": "실제 groups/trace/defaults body3 직접 사용",
+    "replayedOriginalDirection": 0,
+    "replayedStatic": 0,
+    "replayedOriginalWholeFive": 0
+  },
+  "cleanup": { "PID": 38186, "session": 69699, "port": 59412, "exitCode": 130, "tab": 211, "tabClosed": true, "viewportReset": true },
+  "approval": { "finiteApproved": false, "runtimeApplied": false, "productionImportAllowed": false, "registered": false, "sourceMicrotimingEquivalent": false, "allTimeProof": false }
+}
