@@ -1,0 +1,230 @@
+{
+  "schema": "hanja-original-filled-contact-facts/v1",
+  "date": "2026-10-24",
+  "glyph": "菱",
+  "root": "u83f1",
+  "catalogStrokes": 12,
+  "dictionaryPlaybackCandidate": 11,
+  "source": {
+    "file": "docs/hanja-goal-glyphwiki-batch1121-2026-10-14/engine-whole-u83f1.json",
+    "SHA256": "730a2ec4643d370ac0341cfd1f65c1c58d9f110d7edb225cbad51cadf2b3359b",
+    "viewBox": "0 0 200 200",
+    "rawPairSHA256": "b6f985b94f4d73aae746fc4373db4859e507c8571b1daecf54daa85ae2a1e5c5",
+    "rawPairHashDomain": "UTF8 compact JSON.stringify({H:groups[5],DL:groups[6]})"
+  },
+  "facts": {
+    "confirmedRawOneBased": [
+      6,
+      7
+    ],
+    "horizontalRawArgs": [
+      1,
+      0,
+      0,
+      15,
+      94.4,
+      185,
+      94.4,
+      null,
+      null,
+      null,
+      null
+    ],
+    "downLeftRawArgs": [
+      2,
+      0,
+      7,
+      76,
+      99.2,
+      62,
+      125.6,
+      17,
+      136,
+      null,
+      null
+    ],
+    "renderModel": "Separate black filled paths per original polygon, hence set union; no winding cancellation between distinct paths.",
+    "pairIntersections": [
+      {
+        "HPolygon": 1,
+        "DLPolygon": 1,
+        "area": "0",
+        "positivePieces": []
+      },
+      {
+        "HPolygon": 1,
+        "DLPolygon": 2,
+        "area": "2579/62700",
+        "positivePieces": [
+          [
+            [
+              "11716/165",
+              "482/5"
+            ],
+            [
+              "13413/190",
+              "482/5"
+            ],
+            [
+              "707/10",
+              "481/5"
+            ]
+          ]
+        ]
+      },
+      {
+        "HPolygon": 1,
+        "DLPolygon": 3,
+        "area": "0",
+        "positivePieces": []
+      },
+      {
+        "HPolygon": 2,
+        "DLPolygon": 1,
+        "area": "0",
+        "positivePieces": []
+      },
+      {
+        "HPolygon": 2,
+        "DLPolygon": 2,
+        "area": "0",
+        "positivePieces": []
+      },
+      {
+        "HPolygon": 2,
+        "DLPolygon": 3,
+        "area": "0",
+        "positivePieces": []
+      }
+    ],
+    "rawFilledSetsIntersectionPositive": true,
+    "rawFilledSetsMinimumDistanceSquared": "0",
+    "positiveContactWitness": [
+      "665563/9405",
+      "289/3"
+    ],
+    "contactThroughDLSecondaryStartSerifOnly": true,
+    "DLMainBodyToSecondarySerifIntersectionArea": "628723/102050",
+    "DLMainBodyToSecondarySerifPositivePieces": [
+      [
+        [
+          "351/5",
+          "486/5"
+        ],
+        [
+          "404/5",
+          "514/5"
+        ],
+        [
+          "212666/2989",
+          "4425832/44835"
+        ]
+      ],
+      [
+        [
+          "351/5",
+          "486/5"
+        ],
+        [
+          "212666/2989",
+          "4425832/44835"
+        ],
+        [
+          "582088/8269",
+          "4068094/41345"
+        ]
+      ],
+      [
+        [
+          "351/5",
+          "486/5"
+        ],
+        [
+          "582088/8269",
+          "4068094/41345"
+        ],
+        [
+          "1670449/23836",
+          "11710781/119180"
+        ]
+      ],
+      [
+        [
+          "351/5",
+          "486/5"
+        ],
+        [
+          "1670449/23836",
+          "11710781/119180"
+        ],
+        [
+          "1803841/25810",
+          "2534029/25810"
+        ]
+      ],
+      [
+        [
+          "351/5",
+          "486/5"
+        ],
+        [
+          "1803841/25810",
+          "2534029/25810"
+        ],
+        [
+          "13194322/189175",
+          "394932/4025"
+        ]
+      ],
+      [
+        [
+          "142291/2041",
+          "1001181/10205"
+        ],
+        [
+          "351/5",
+          "486/5"
+        ],
+        [
+          "13194322/189175",
+          "394932/4025"
+        ]
+      ]
+    ],
+    "mainDLBodyToHorizontalGap": "4/5",
+    "mainDLBodyToHorizontalGapSquared": "16/25",
+    "mainBodyClosestPair": {
+      "horizontal": [
+        "351/5",
+        "482/5"
+      ],
+      "DLmain": [
+        "351/5",
+        "486/5"
+      ]
+    },
+    "normalization200to100Gap": "2/5",
+    "pixelConnectivityClaim": false,
+    "naturalTimingClaim": false,
+    "runtimeApproval": false
+  },
+  "method": "Exact Fraction(str(original polygon coordinate)) ear triangulation and convex triangle clipping; no raster or bounding-box overlap substituted for filled intersection. Main-body gap proved by separated y bounds and an exact closest pair. Raw SVG draws each original polygon as a distinct filled path, so union semantics apply.",
+  "limits": {
+    "positiveFilledIntersectionIsNotPixelContinuity": true,
+    "wholeSourceMacroStillROOTDecision": true,
+    "strokeOrderDirectionApproved": false,
+    "allProgressConnectionApproved": false,
+    "nativeRuntimeApproved": false,
+    "sourceRootVariantsNotAutoApproved": true
+  },
+  "preservation": {
+    "sourcePChanged": false,
+    "sourceGuideChanged": false,
+    "connectorAdded": false,
+    "newEngine": 0,
+    "newSourceProjection": 0,
+    "previousSuccessfulGeometryProofReplayed": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
