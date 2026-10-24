@@ -1,0 +1,241 @@
+{
+  "schema": "hanja-original-source-static-group-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "褐",
+  "providerRoot": "u8910",
+  "observedBy": "ROOT",
+  "status": "PASS-static-dictionary13-base-group-correspondence-only",
+  "catalogStrokes": 14,
+  "dictionaryStrokes": 13,
+  "catalogChanged": false,
+  "countConflictResolved": false,
+  "pins": {
+    "board": {
+      "path": "docs/hanja-source-raw-compare-u8910-2026-10-24/board.json",
+      "SHA256": "b6bad9e17a7ae72dd811521a37b51f3eb8b36d434c9202a2fd3701943d51b52c"
+    },
+    "baseConfig": {
+      "path": "docs/hanja-source-raw-compare-u8910-2026-10-24/config.json",
+      "SHA256": "7f467f04063681641c1e88d9d5f082f410d5919675b4a5a2e63985ab03c5edb0"
+    },
+    "wrapper": {
+      "path": "scripts/hanja-raw-static-board.py",
+      "SHA256": "3eb9573c259b6799adbd46b65a4db533d878373ba2501b95b60d16efdb6c09bc"
+    },
+    "rawLauncher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "a933de27300fabd55f1972dc9651ce765543e01c2ba68b0213400dab80714eef"
+    },
+    "sourceFixture": {
+      "path": "docs/hanja-source-original-u8910-2026-10-24/fixtures.json",
+      "SHA256": "18d5ca375b100afafb8e97cc3c13b70bdbca568b06135f9abb0a7b9bffb2cd07"
+    },
+    "sourceGeometrySHA256": "f9f1d130e335a7f8ebdcbff5fc69b264c9ab14d4404d5d17f128fe15effa0a35",
+    "officialReview": {
+      "path": "docs/hanja-official-media-compare-u8910-2026-10-24/official-temporal-native-review.json",
+      "SHA256": "9c6816117caf9ea1d5b305b207193002fd8f6f514c713cb4dcb7cf63bd2a31e8"
+    }
+  },
+  "sourceGroupsOneBased": [
+    [
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ]
+  ],
+  "unmappedOtherRepresentatives": [
+    "i001",
+    "i002",
+    "i003",
+    "i004",
+    "i005",
+    "i006",
+    "k"
+  ],
+  "sourceOriginalRawRows": 16,
+  "sourceMasks": 19,
+  "sourcePolygons": 36,
+  "allOriginalRawRowsExactlyOnce": true,
+  "scope": {
+    "freshScreens": 3,
+    "viewport": {
+      "width": 1280,
+      "height": 1280
+    },
+    "pairGlyphSize": 220,
+    "uniqueDomesticSourcePairsFullyVisible": 13,
+    "partialPairsCounted": 0,
+    "duplicatePairsCounted": 0,
+    "screens": [
+      {
+        "screen": 1,
+        "uniquePairs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "pairRowBBoxes": [
+          {
+            "pairs": [
+              1,
+              2
+            ],
+            "top": 414.09375,
+            "bottom": 634.09375
+          },
+          {
+            "pairs": [
+              3,
+              4
+            ],
+            "top": 689.984375,
+            "bottom": 909.984375
+          },
+          {
+            "pairs": [
+              5,
+              6
+            ],
+            "top": 965.875,
+            "bottom": 1185.875
+          }
+        ]
+      },
+      {
+        "screen": 2,
+        "uniquePairs": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "repeatedPairsExcluded": [
+          5,
+          6
+        ],
+        "pairRowBBoxes": [
+          {
+            "pairs": [
+              7,
+              8
+            ],
+            "top": 473.765625,
+            "bottom": 693.765625
+          },
+          {
+            "pairs": [
+              9,
+              10
+            ],
+            "top": 749.65625,
+            "bottom": 969.65625
+          },
+          {
+            "pairs": [
+              11,
+              12
+            ],
+            "top": 1025.546875,
+            "bottom": 1245.546875
+          }
+        ]
+      },
+      {
+        "screen": 3,
+        "uniquePairs": [
+          13
+        ],
+        "otherRepeatedPairsExcluded": true,
+        "pairRowBBoxes": [
+          {
+            "pairs": [
+              13
+            ],
+            "top": 977.9375,
+            "bottom": 1197.9375
+          }
+        ]
+      }
+    ],
+    "macroOnly": true,
+    "newTemporalObservations": 0,
+    "naturalPlaybackObservations": 0
+  },
+  "findings": {
+    "all13MacroCorrespondence": true,
+    "explicitNotes": [
+      "7 H→V without hook compatible.",
+      "11 H→curve V→left hook compatible.",
+      "13 V→curve H→UP tail compatible."
+    ],
+    "originalPContactProofClaimed": false
+  },
+  "approval": {
+    "sourceStaticMappingApproved": true,
+    "originalPContactApproved": false,
+    "sourceTimingApproved": false,
+    "initialContactApproved": false,
+    "allFramesApproved": false,
+    "individualDictionaryVariantApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "productionImportAllowed": false
+  },
+  "server": {
+    "PID": 45504,
+    "session": 89138,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 123,
+    "tabClosed": true
+  },
+  "sourcePChanged": false,
+  "sourceGuideChanged": false,
+  "sourceWidthOrWeightChanged": false,
+  "sourceProjectionReplay": 0,
+  "engineReplay": 0,
+  "privateMediaSaved": false
+}
