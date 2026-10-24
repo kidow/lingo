@@ -1,0 +1,86 @@
+{
+  "schema": "hanja-ordinary-baseline-observation-plan/v1",
+  "date": "2026-10-24",
+  "glyph": "萸",
+  "sourceRoot": "u8438-k",
+  "status": "PLANNED-unobserved-ordinary-renderer-only",
+  "examCatalogStrokes": 12,
+  "proposedDictionaryPlaybackStrokes": 13,
+  "fixture": {
+    "path": "docs/hanja-source-original-u8438-k-2026-10-24/fixtures.json",
+    "SHA256": "0c329d676ac1615a5c313b6afa89590b591ab5e034883e0370b2b5d0eee27b6a"
+  },
+  "geometrySHA256": "a1d3e3eb347dc685f20f524b19e4d49edb7956f6d30c5477f0834c6dd9b87591",
+  "counts": {
+    "pens": 13,
+    "masks": 15,
+    "originalPolygons": 27,
+    "allMaskInitialCases": 45,
+    "compoundBoundaries": 2,
+    "boundaryAdditionalCases": 6,
+    "totalDistinctPlannedFrames": 51
+  },
+  "progressDefinition": {
+    "epsilon": 0.000001,
+    "maskLocalProgress": [
+      0.000001,
+      0.01,
+      0.03
+    ],
+    "sourceOriginalWeightsUnchanged": true,
+    "boundaryGlobalOffsets": [
+      -1e-10,
+      0,
+      1e-10
+    ],
+    "boundaryAfterIsDistinctFromInitialEpsilon": true,
+    "noNewPolicyActivation": true
+  },
+  "boundaryTargets": [
+    {
+      "pen": 9,
+      "nextMask": 2,
+      "boundary": 0.40190672025422935,
+      "beforeAtAfter": [
+        0.40190672015422935,
+        0.40190672025422935,
+        0.40190672035422936
+      ]
+    },
+    {
+      "pen": 12,
+      "nextMask": 2,
+      "boundary": 0.3507013319863225,
+      "beforeAtAfter": [
+        0.35070133188632246,
+        0.3507013319863225,
+        0.3507013320863225
+      ]
+    }
+  ],
+  "priorEvidenceReuse": {
+    "dictionary39Replay": 0,
+    "static13Replay": 0,
+    "sourceProjectionReplay": 0,
+    "engineReplay": 0
+  },
+  "inspectionCriteria": [
+    "Each ordinary mask early epsilon/.01/.03: sudden initial pieces, detached polygons, distant terminal islands.",
+    "Pen9 H-to-V boundary: unchanged completed H before current V, extra top serif exposure, contact.",
+    "Pen12 straight-to-curved segment boundary: predecessor persistence, source root contact and completion.",
+    "These51 initial/boundary samples do not approve full-source residual or final app playback."
+  ],
+  "executionBinding": {
+    "sharedPinsPending": true,
+    "ordinaryHelperDispatchPending": true,
+    "currentClosurePending": true,
+    "serverStarted": false
+  },
+  "results": {
+    "observedFrames": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "individualVariantApproved": false,
+    "productionImportAllowed": false
+  }
+}

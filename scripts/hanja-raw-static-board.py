@@ -103,6 +103,8 @@ def install_board(shared, base, groups, board_guards):
             note += '<p data-source-draft="u77a5"><strong>DRAFT · productionImportAllowed=false</strong> · 원4 H/V의 left-hook 보존 · 공식4 H/V와 세부hook 차이 미승인 · source접촉·재생 미승인</p>'
         if base.get('glyph') == '鼈' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u9f08':
             note += '<p data-source-draft="u9f08"><strong>DRAFT · productionImportAllowed=false</strong> · 24획 후보 · 原archive5+固定公開2 혼합출처(과거누락복원아님) · 원17 V/Q/H+UP 보존 · 접촉·재생 미승인</p>'
+        if base.get('glyph') == '萸' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u8438-k':
+            note += '<p data-source-draft="u8438-k"><strong>DRAFT · 사전13획 / 배정12획 유지 · productionImportAllowed=false</strong> · 원raw14 전체 보존 · raw10 H 다음 raw9 V 묶음은 정적 비교 후보 · 전체13 대응·접촉·재생·개별variant 미승인</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
 
     shared.guards, shared.selection, shared.page = guarded, selection, page
@@ -523,6 +525,18 @@ def exact_u9f08_draft_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u8438_k_dictionary_draft_launcher(config,base):
+    # Only dictionary13 STATIC rows; authoritative exam catalog12 remains unchanged.
+    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'ae1868a1be81fe6ffce6d8254cfaa65a64f9c0b861eeb0fa99a7f2328fa0522f'}
+            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u8438-k-2026-10-24/config.json','SHA256':'e7b8a94c5bad5cf771a6f142a19c4014107a9ed707a4f4943b079ffaf7cb9f2f'}
+            and base.get('glyph')=='萸' and base.get('catalogStrokes')==13
+            and base.get('sourceRoots')=={"selected":{"root":"u8438-k","file":"docs/hanja-goal-glyphwiki-batch781-2026-10-13/engine-whole-u8438-k.json","fileSHA256":"83fe67507b40f4ae74c76c543c97724ad608f3b32db09e3d631a02cb3f64bc37","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u8438-k","sourceProofFile":"engine-whole-u8438-k.json","sourceProofFileSha256":"83fe67507b40f4ae74c76c543c97724ad608f3b32db09e3d631a02cb3f64bc37"},"rawGroups":14,"drawingCalls":15,"polygonCounts":[2,2,2,2,3,1,2,1,2,1,1,4,2,2],"polygons":27}}
+            and config.get('provisionalGroups')=={"selected":[[1],[2],[4],[3],[5],[6],[7],[14],[10,9],[11],[8],[12],[13]]}
+            and base.get('domestic',{}).get('clips')==13
+            and base.get('domestic',{}).get('sha256')=='b5bb4dcf25d744e91f0d77be849502bd3e16f07e1e7e2dcf960180ce0fa1d8c1'
+            and digest(fixed_path('docs/hanja-source-original-u8438-k-2026-10-24/fixtures.json').read_bytes())=='0c329d676ac1615a5c313b6afa89590b591ab5e034883e0370b2b5d0eee27b6a'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -558,6 +572,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u7006_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u85a9_t_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u9f08_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u8438_k_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u64c4_k_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u77a5_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u85a9_hkcs_draft_launcher(config,base)
