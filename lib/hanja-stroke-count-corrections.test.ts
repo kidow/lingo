@@ -98,3 +98,28 @@ test('擄의 공식16획 보정은 XLS15와 근거 및 학습 식별자를 보�
   assert.deepEqual(keys(lo), keys(original))
   assert.deepEqual(keys(lo), ['hanja:char:u64c4:recognition', 'hanja:char:u64c4:hun-eum'])
 })
+
+const componentCountEvidence = JSON.parse(readFileSync(new URL('../docs/hanja-count-corrections-u77a5-u9f08-2026-10-24/sources.json', import.meta.url), 'utf8'))
+for (const expected of [{"id":"u9f08","glyph":"鼈","hun":"자라","eum":"별","readingGrade":"1급","radical":"黽","strokes":25,"sourceRow":2058,"sourceHunEum":"자라 별","example":{"word":"權鼈","reading":"권별","source":{"dictionary":"표준국어대사전","targetCode":41693,"url":"https://stdict.korean.go.kr/search/searchView.do?word_no=41693&searchKeywordTo=3","verifiedAt":"2026-09-17"}}},{"id":"u77a5","glyph":"瞥","hun":"눈깜짝할","eum":"별","readingGrade":"1급","radical":"目","strokes":17,"sourceRow":2059,"sourceHunEum":"눈깜짝할 별","example":{"word":"瞥見","reading":"별견","source":{"dictionary":"표준국어대사전","targetCode":143096,"url":"https://stdict.korean.go.kr/search/searchView.do?word_no=143096&searchKeywordTo=3","verifiedAt":"2026-09-17"}}}]) {
+  test(expected.glyph + '의 component-count 보정은 원문·근거·학습 키를 보존한다', () => {
+    const g1 = JSON.parse(readFileSync(new URL('../content/hanja/characters/g1.json', import.meta.url), 'utf8')) as { source: { sha256: string }; characters: HanjaCharacter[] }
+    const actual = g1.characters.find(item => item.id === expected.id)!
+    const correction = corrections.entries.filter(item => item.glyph === expected.glyph)
+    assert.equal(correction.length, 1)
+    assert.equal(corrections.workbookSha256, g1.source.sha256)
+    assert.deepEqual([correction[0].sourceRow, correction[0].sourceStrokes, correction[0].strokes], [expected.sourceRow, expected.strokes, expected.strokes - 1])
+    assert.equal(actual.strokeCountCorrection, 'eomunhoe-16424-' + expected.id)
+    assert.equal(actual.sourceStrokes, expected.strokes)
+    const claim = componentCountEvidence.conclusions.find((item: { id: string }) => item.id === expected.id)
+    assert.equal(claim.components.reduce((sum: number, item: [string, number]) => sum + item[1], 0), actual.strokes)
+    assert.equal(componentCountEvidence.grounds[0].literalWholeCountsStated, false)
+    assert.equal(componentCountEvidence.workbook.publicationDateKnown, false)
+    assert.equal(componentCountEvidence.grounds[1].url, 'https://dict.revised.moe.edu.tw/dictView.jsp?ID=26212&la=0')
+    assert.equal(componentCountEvidence.grounds[2].url, 'https://stroke-order.learningweb.moe.edu.tw/searchR.jsp?la=1')
+    const restored = { ...actual, strokes: actual.sourceStrokes! }
+    delete restored.sourceStrokes
+    delete restored.strokeCountCorrection
+    assert.deepEqual(restored, expected)
+    assert.deepEqual(hanjaEntries([actual]).map(item => item.key), ['hanja:char:' + expected.id + ':recognition', 'hanja:char:' + expected.id + ':hun-eum'])
+  })
+}

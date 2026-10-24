@@ -1,0 +1,104 @@
+{
+  "reviewedAt": "2026-10-24",
+  "scope": "count-only; no animation registration or trajectory approval",
+  "workbook": {
+    "url": "https://www.hanja.re.kr/kccpt/exam/levelConfirm.do",
+    "document": "배정한자 전체 대표훈음 부수 음표 명기본(xls).xls",
+    "sha256": "97b8db715ebe1dd6e00e8e58d338a9ba70e7420bf5ec84da38f987d60eb64b17",
+    "publicationDateKnown": false,
+    "originalRows": [
+      {
+        "row": 2058,
+        "glyph": "鼈",
+        "strokes": 25
+      },
+      {
+        "row": 2059,
+        "glyph": "瞥",
+        "strokes": 17
+      }
+    ]
+  },
+  "grounds": [
+    {
+      "organization": "한국어문회",
+      "url": "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=16424",
+      "date": "2025-09-13",
+      "claim": "㡀7획 기준을 瞥·鼈에도 적용한다고 명시",
+      "existingEvidence": [
+        "docs/hanja-goal-glyphwiki-batch1084-2026-10-13/count-counsel-review.json",
+        "docs/hanja-goal-glyphwiki-batch1085-2026-10-13/count-counsel-review.json"
+      ],
+      "literalWholeCountsStated": false,
+      "newFetchStatus": "ERR_EMPTY_RESPONSE; existing verified evidence reused; no retry"
+    },
+    {
+      "organization": "중화민국 교육부",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=26212&la=0",
+      "claim": "攵 [攴部-0畫-共4畫]; 攴의 이체",
+      "role": "independent component count, not Korean exam whole-count ruling"
+    },
+    {
+      "organization": "중화민국 교육부",
+      "url": "https://stroke-order.learningweb.moe.edu.tw/searchR.jsp?la=1",
+      "claim": "4 Strokes: 攴; 5 Strokes: 目; 13 Strokes: 黽",
+      "role": "independent component count, not stroke-path approval"
+    },
+    {
+      "organization": "한국어문회",
+      "url": "https://www.hanja.re.kr/kccpt/exam/levelConfirm.do",
+      "claim": "동일 SHA XLS에서 目5획(1752행), 黽13획(1877행)",
+      "basis": "existing imported catalog rows with workbook provenance; workbook not downloaded again"
+    }
+  ],
+  "conclusions": [
+    {
+      "glyph": "瞥",
+      "id": "u77a5",
+      "components": [
+        [
+          "㡀",
+          7
+        ],
+        [
+          "攵",
+          4
+        ],
+        [
+          "目",
+          5
+        ]
+      ],
+      "strokes": 16,
+      "sourceStrokes": 17,
+      "sourceRow": 2059
+    },
+    {
+      "glyph": "鼈",
+      "id": "u9f08",
+      "components": [
+        [
+          "㡀",
+          7
+        ],
+        [
+          "攵",
+          4
+        ],
+        [
+          "黽",
+          13
+        ]
+      ],
+      "strokes": 24,
+      "sourceStrokes": 25,
+      "sourceRow": 2058
+    }
+  ],
+  "limits": [
+    "Totals are component sums, not literal whole-count answers from counsel16424.",
+    "No chronological priority over the workbook is asserted because its publication date is unknown.",
+    "Original source counts, glyphs, rows, IDs, huneum, grades, examples and learning keys are preserved.",
+    "Count correction does not approve any animation source, shape, order, direction, connection or timing."
+  ]
+}
