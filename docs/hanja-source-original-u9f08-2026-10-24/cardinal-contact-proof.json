@@ -1,0 +1,180 @@
+{
+  "schema": "hanja-original-P-cardinal-contact-proof/v1",
+  "glyph": "鼈",
+  "root": "u9f08",
+  "targets": [
+    [
+      13,
+      2
+    ],
+    [
+      22,
+      2
+    ]
+  ],
+  "inputs": {
+    "docs/hanja-source-original-u9f08-2026-10-24/fixtures.json": "2429c5557e056c72da95208953c67ea71c9c011588c0b514f872bb48f9a26e05",
+    "lib/hanja-stroke-start-caps-u9f08.ts": "0e4c39c169279566ec3cb3d2c3dbdc214b924ee7a46de3d40781b30e4bc5453b",
+    "docs/hanja-actual-engine-capture-u9f08-2026-10-24/engine-whole-u9f08.json": "8709710f1c22ce9ac8b8977b3b7692c560e8bd882be593612372816425f7de86"
+  },
+  "geometrySHA256": "a00876552fed6d4f6d033055935cbf7d99724f779aa4ebf33c4d3f7264ff230a",
+  "sourceFields": [
+    {
+      "pen": 13,
+      "mask": 2,
+      "segmentSHA256": "87a78c7993d81c54c5073b9fcad2e466cb60d194a6f7c5380f53f4459df9882c",
+      "priorSHA256": "ead63a5287af31a4d21136694827a76505101295180f84a798c53bac27a023a3"
+    },
+    {
+      "pen": 22,
+      "mask": 2,
+      "segmentSHA256": "2d8afda0639d13e089e05cd277f81bea764be05cccc1bb79a1cc9b81b81ea3f7",
+      "priorSHA256": "e3414bcf9cee966afffcca9d18b054e10e4a44b4e98656fb6fe62a4630a3b96b"
+    }
+  ],
+  "certificate": [
+    {
+      "pen": 13,
+      "mask": 2,
+      "convexTurns": [
+        [
+          "63",
+          "81",
+          "81",
+          "63"
+        ],
+        [
+          "109/4",
+          "89/4",
+          "39/2",
+          "6",
+          "3"
+        ]
+      ],
+      "priorConvexTurns": [
+        "1159/10",
+        "1159/10",
+        "1159/10",
+        "1159/10"
+      ],
+      "origin": "903/20",
+      "negativeExtent": "7/2",
+      "positiveExtent": "27/2",
+      "sourceBoundsExact": [
+        "386/5",
+        "833/20",
+        "857/10",
+        "1173/20"
+      ],
+      "fixedCommonRectangle": {
+        "x": [
+          "391/5",
+          "396/5"
+        ],
+        "y": [
+          "903/20",
+          "227/5"
+        ]
+      },
+      "positiveWitness": "x in open fixed x interval; y in (origin,origin+min(positiveExtent*p/2,1/4))",
+      "witnessInsideBothOriginalPolygonsAndPriorH": true,
+      "allPositiveBandPrefixesConnectedToOriginalPriorH": true,
+      "areaUpperBoundCoefficient": "289/2",
+      "areaLimitAtZero": 0,
+      "p1BandEqualsOriginalSourceBBox": true,
+      "allOriginalVerticesInsideFullBand": true,
+      "sourcePChanged": false,
+      "sourceOuterWeightChanged": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 22,
+      "mask": 2,
+      "convexTurns": [
+        [
+          "519/5",
+          "609/5",
+          "609/5",
+          "519/5"
+        ],
+        [
+          "109/4",
+          "89/4",
+          "39/2",
+          "6",
+          "3"
+        ]
+      ],
+      "priorConvexTurns": [
+        "246/5",
+        "246/5",
+        "246/5",
+        "246/5"
+      ],
+      "origin": "631/10",
+      "negativeExtent": "7/2",
+      "positiveExtent": "203/10",
+      "sourceBoundsExact": [
+        "801/10",
+        "298/5",
+        "443/5",
+        "417/5"
+      ],
+      "fixedCommonRectangle": {
+        "x": [
+          "811/10",
+          "821/10"
+        ],
+        "y": [
+          "631/10",
+          "1267/20"
+        ]
+      },
+      "positiveWitness": "x in open fixed x interval; y in (origin,origin+min(positiveExtent*p/2,1/4))",
+      "witnessInsideBothOriginalPolygonsAndPriorH": true,
+      "allPositiveBandPrefixesConnectedToOriginalPriorH": true,
+      "areaUpperBoundCoefficient": "2023/10",
+      "areaLimitAtZero": 0,
+      "p1BandEqualsOriginalSourceBBox": true,
+      "allOriginalVerticesInsideFullBand": true,
+      "sourcePChanged": false,
+      "sourceOuterWeightChanged": false,
+      "nativeApproval": false
+    }
+  ],
+  "argument": [
+    "Each target was independently read from its unchanged original source; neither source certificate is inherited from a similar glyph.",
+    "Each of the two original filled polygons and its original prior H is convex with strictly positive recorded turns.",
+    "For every p>0 the disclosed rectangle with delta=min(positiveExtent*p/2,1/4) has positive area, lies in both polygon-band intersections, and lies in the original prior H. The union is connected to that H.",
+    "All original vertices are in the source bbox. At p1 the new band equals that bbox exactly; no original subpath is deleted. The runtime endpoint paints the entire original P once direct/unmasked.",
+    "The clip area is bounded by the recorded coefficient*p, hence zero-area limit at p0. Source P/width/weight/outer mask clock remain unchanged; internal bidirectional Y display timing is new and explicit.",
+    "Runtime must independently validate the same-frame completed opaque direct original predecessor before and after committing visible ink; a scalar previousMaskProgress is not a DOM proof."
+  ],
+  "nativeHoldEvidence": [
+    {
+      "pen": 13,
+      "mask": 2,
+      "local": 0.03,
+      "global": 0.8634638922888616,
+      "cause": "Triangle above prior H with white gap at520; source early3 HOLD"
+    },
+    {
+      "pen": 22,
+      "mask": 2,
+      "local": 0.03,
+      "global": 0.6283304879392004,
+      "cause": "Detached triangle above prior H at520; source early3 HOLD"
+    }
+  ],
+  "otherCandidate": {
+    "pen": 4,
+    "mask": 2,
+    "status": "Finite PASS only; overlap with previous pen2 curve made new floating fragment unidentifiable; no policy or inferred approval added"
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "engineRuns": 0,
+  "sourceProjection": 0,
+  "sourceStaticOrOfficialReplayed": false
+}
