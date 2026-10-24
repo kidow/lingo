@@ -1,0 +1,42 @@
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {reviewedU83f1Context,makeReviewedU83f1SourceContext} from './hanja-stroke-start-caps-u83f1.ts'
+function freeze<T>(v:T):T{if(v&&typeof v==='object'){for(const d of Object.values(Object.getOwnPropertyDescriptors(v)))if('value'in d)freeze(d.value);Object.freeze(v)}return v}
+const POLICIES=freeze([{"id":"u83f1-source-prefix-7-1","kind":"source-P-y-prefix-u83f1","pen":7,"mask":1,"previousPen":6,"previousMask":1,"previousRelation":"previous-pen","segment":{"outline":"M40.4 51.4 L38.55 54.1 L36.4 56.6 L33.95 58.85 L31.2 60.9 L28.15 62.7 L24.8 64.3 L21.2 65.7 L17.3 66.85 L13.1 67.75 L8.6 68.4 L8.35 67.55 L12.55 65.95 L16.4 64.35 L19.9 62.65 L23.1 60.9 L25.95 59.1 L28.4 57.15 L30.55 55.15 L32.4 53.05 L33.9 50.85 L35.1 48.6 Z M34.85 49.05 L35.35 48.1 L40.4 51.4 Z M40.4 51.4 L41.25 53 L38.35 53.15 Z","bounds":[8.35,48.1,41.25,68.4],"direction":"curve","weight":34.767945,"revealPath":"M38 49.6 Q31 62.8 8.5 68","revealWidth":14},"predecessor":{"outline":"M7.5 46.2 L92.5 46.2 L92.5 48.2 L7.5 48.2 Z M92.5 46.2 L80.5 47.2 L86.5 41.2 Z","bounds":[7.5,41.2,92.5,48.2],"direction":"right","weight":85},"origin":48.1,"end":68.4,"span":20.3},{"id":"u83f1-source-prefix-8-2","kind":"source-P-y-prefix-u83f1","pen":8,"mask":2,"previousPen":8,"previousMask":1,"previousRelation":"previous-mask","segment":{"outline":"M62.5 55.4 L62.4 56 L62.4 56.5 L62.4 56.85 L62.45 57.15 L62.5 57.35 L62.6 57.6 L62.85 57.8 L63.2 58.05 L63.75 58.25 L64.5 58.4 L64.5 62.4 L63.3 62.4 L62.15 62.3 L61 62.05 L59.95 61.55 L58.95 60.9 L58.1 60 L57.45 59 L56.95 57.85 L56.65 56.65 L56.5 55.4 Z M64.5 58.4 L65.9 59 L66.5 60.4 L65.9 61.8 L64.5 62.4 Z","bounds":[56.5,55.4,66.5,62.4],"direction":"curve","weight":7.071068,"revealPath":"M59.5 55.4 Q59.5 60.4 64.5 60.4","revealWidth":14},"predecessor":{"outline":"M62.5 46.2 L62.5 55.4 L56.5 55.4 L56.5 46.2 Z M56.5 55.4 L62.5 55.4 L61.3 57.2 L59.5 58.4 L57.7 57.2 Z","bounds":[56.5,46.2,62.5,58.4],"direction":"down","weight":8.2},"origin":55.4,"end":62.4,"span":7}] as const)
+const CONTEXT=Object.freeze({id:'u83f1-two-original-P-y-prefixes' as const})
+export type ReviewedU83f1SourcePrefixContext=typeof CONTEXT
+export type ReviewedU83f1SourcePrefixPolicy=typeof POLICIES[number]
+function exact(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b)||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);return ak.length===bk.length&&bk.every(k=>{const x=Object.getOwnPropertyDescriptor(a,k),y=Object.getOwnPropertyDescriptor(b,k);return!!x&&!!y&&'value'in x&&'value'in y&&x.enumerable===y.enumerable&&exact(x.value,y.value)})}
+export function reviewedU83f1SourcePrefixContext(strokes:HanjaOutlineStrokes):ReviewedU83f1SourcePrefixContext|null{return reviewedU83f1Context(strokes)?CONTEXT:null}
+export function makeReviewedU83f1SourcePrefixSourceContext(proof:unknown,identity:unknown,strokes:HanjaOutlineStrokes):ReviewedU83f1SourcePrefixContext|null{return makeReviewedU83f1SourceContext(proof,identity,strokes)?CONTEXT:null}
+export function reviewedU83f1SourcePrefixPolicy(context:ReviewedU83f1SourcePrefixContext|null,pen:number,mask:number):ReviewedU83f1SourcePrefixPolicy|null{return context===CONTEXT?POLICIES.find(p=>p.pen===pen+1&&p.mask===mask+1)??null:null}
+export type ReviewedU83f1SourcePrefixFrame=Readonly<{policyId:string;progress:number;previousProgress:number;phase:'empty'|'source-y-prefix'|'full';visible:boolean;originalPDirect:boolean;originalSourceFull:boolean;clip:Readonly<{x:number;y:number;width:number;height:number}>|null;requiresCompletedOriginalPredecessor:true;paintOriginalPOnce:true;sourceGuideChanged:false;UARead:false}>
+export function sampleReviewedU83f1SourcePrefixFrame(policy:ReviewedU83f1SourcePrefixPolicy,segment:HanjaOutlineSegment,progress:number,previousProgress:number):ReviewedU83f1SourcePrefixFrame{
+ if(!(POLICIES as readonly unknown[]).includes(policy)||!exact(segment,policy.segment))throw Error('Private exact 菱 original source required')
+ if(!Number.isFinite(progress)||progress<0||progress>1||!Number.isFinite(previousProgress)||previousProgress<0||previousProgress>1)throw Error('Finite original progress required')
+ if(progress>0&&previousProgress!==1)throw Error('Same-frame completed opaque exact 菱 prior P required')
+ const common={policyId:policy.id,progress,previousProgress,requiresCompletedOriginalPredecessor:true as const,paintOriginalPOnce:true as const,sourceGuideChanged:false as const,UARead:false as const}
+ if(progress===0||progress===1)return Object.freeze({...common,phase:progress===0?'empty':'full',visible:progress===1,originalPDirect:progress===1,originalSourceFull:progress===1,clip:null})
+ const b=policy.segment.bounds,clip=Object.freeze({x:b[0],y:policy.origin,width:b[2]-b[0],height:policy.span*progress})
+ return Object.freeze({...common,phase:'source-y-prefix',visible:true,originalPDirect:false,originalSourceFull:false,clip})
+}
+export function verifyReviewedU83f1SourcePrefixPrior(policy:ReviewedU83f1SourcePrefixPolicy,g:SVGGElement|null,previousProgress:number):boolean{
+ try{
+  if(!(POLICIES as readonly unknown[]).includes(policy)||previousProgress!==1||!g?.isConnected||g.getAttribute('data-stroke-start-gate')!==policy.id)return false
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,pen=g.parentElement
+  if(!owner||!view||view.document!==doc||!pen||pen.getAttribute('data-outline-stroke')!==String(policy.pen))return false
+  const priorPen=policy.previousRelation==='previous-pen'?pen.previousElementSibling:pen
+  if(!priorPen||priorPen.getAttribute('data-outline-stroke')!==String(policy.previousPen))return false
+  if(policy.previousRelation==='previous-pen'&&(priorPen.parentElement!==pen.parentElement||priorPen.nextElementSibling!==pen||g.previousElementSibling!==null))return false
+  const previous=policy.previousRelation==='previous-pen'?priorPen.lastElementChild:g.previousElementSibling
+  if(!previous||previous.parentElement!==priorPen||(policy.previousRelation==='previous-mask'&&previous.nextElementSibling!==g))return false
+  const paths=previous.localName==='path'?[previous]:Array.from(previous.children).filter(n=>n.localName==='path')
+  if(paths.length!==1)return false
+  const p=paths[0]
+  if(p.getAttribute('d')!==policy.predecessor.outline||['mask','clip-path','pathLength'].some(k=>p.getAttribute(k)!==null)||(previous.localName!=='path'&&previous.getAttribute('data-stroke-reveal-progress')!=='1'))return false
+  const nodes:Element[]=[g,previous,p,priorPen];let current:Element|null=pen
+  while(current){nodes.push(current);if(current===owner)break;current=current.parentElement}
+  if(current!==owner)return false
+  return nodes.every(n=>{if(!n.isConnected||n.ownerDocument!==doc||(n!==owner&&(n as SVGElement).ownerSVGElement!==owner)||['transform','filter','mask','clip-path'].some(k=>n.getAttribute(k)!==null))return false;const s=view.getComputedStyle(n);return s.transform==='none'&&s.filter==='none'&&s.clipPath==='none'&&['','none'].includes(s.getPropertyValue('mask-image'))&&s.visibility==='visible'&&s.display!=='none'&&Number(s.opacity)===1&&Number(s.fillOpacity)===1&&s.stroke==='none'&&s.fill!=='none'&&s.fill!=='transparent'&&['translate','rotate','scale'].every(k=>['','none'].includes(s.getPropertyValue(k)))})
+ }catch{return false}
+}
+export const REVIEWED_U83F1_SOURCE_PREFIX_SOURCE=freeze({"root":"u83f1","fixture":"docs/hanja-source-original-u83f1-2026-10-24/fixtures.json","fixtureSHA256":"acdc6c480e6ee5787a92c38ab9b293113b67e0ce0b8ff56b3e29c9d406457990","geometrySHA256":"1e3a412bc9b490a6695995d35582172aba9e649067d1ec65d2834369663cd480","sourceContextModule":"lib/hanja-stroke-start-caps-u83f1.ts","sourceContextSHA256":"d97118d35c3c2194ac4ae6893c1f8d78fe75903fca0f1bdf1c01bfbf4a6525d5","targets":[[7,1],[8,2]],"proofFile":"docs/hanja-source-original-u83f1-2026-10-24/initial-correction-proof.json","proofSHA256":"1a3772cf7545e48bd8e40a03017037595fb35bb6f08931d1a73b3fbcb9a4e860","originalFieldsAndOuterClockUnchanged":true,"newInternalPClockExplicit":true,"p1DirectOriginalPOnce":true,"priorGateBeforeAndAfterRequired":true,"main7BodyGapToPriorHStill":"2/5","noNewGuideOrConnector":true,"catalogStrokes":12,"individualPlaybackStrokes":11,"individualVariantApprovalPending":true,"nativeApproval":false,"runtimeApplied":false})
