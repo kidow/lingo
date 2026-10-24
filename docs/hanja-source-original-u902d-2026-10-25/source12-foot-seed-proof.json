@@ -1,0 +1,868 @@
+{
+  "schema": "hanja-source-P-foot-seed-certificate/v1",
+  "date": "2026-10-25",
+  "glyph": "逭",
+  "root": "u902d",
+  "target": [
+    12,
+    2
+  ],
+  "fixture": {
+    "path": "docs/hanja-source-original-u902d-2026-10-25/fixtures.json",
+    "SHA256": "a50e133dbdf91d394a398c4e0dddee855af6b81ec60c6bbcb8f7438059a4effd",
+    "geometrySHA256": "6f03a75cb5d9e9aee3ac646bd98b3e69fffca6b6b7ca7b1b5b4a82b589d30feb"
+  },
+  "originalDirectionReference": {
+    "path": "docs/hanja-official-media-compare-u902d-2026-10-25/native-stroke12-supplemental-review.json",
+    "SHA256": "d32d59fc59f04d2533ba510ee75ef3605c9c591f1aa77da7b35e8a0e594d0e9c",
+    "scope": ".05 Q lower-left foot to upper-right; .1 reaches upper turn; .25 B right-down body; .5 long right body; .75 right end slight upward. Fixed samples, no continuous timing equivalence."
+  },
+  "staticReference": {
+    "path": "docs/hanja-source-raw-compare-u902d-2026-10-25/native-group-review.json",
+    "SHA256": "41c4493e9d9e0e2d225e1f57331a6883a3c86bcec76c0977b63c231e4a1a72c8",
+    "scope": "completed P only"
+  },
+  "reusedContactFacts": {
+    "metadata": "docs/hanja-official-media-compare-u902d-2026-10-25/metadata.json",
+    "properCrossingsSource200": [
+      [
+        "13009/245",
+        "4307/28"
+      ],
+      [
+        "20680/381",
+        "593929/3810"
+      ]
+    ],
+    "recomputed": false,
+    "sufficientForTiming": false
+  },
+  "rejectedSeeds": {
+    "BGuideStart": {
+      "point": [
+        "53/2",
+        "76"
+      ],
+      "outsideBothP": true
+    },
+    "priorQGuideEnd": {
+      "point": [
+        "55/2",
+        "77"
+      ],
+      "outsidePriorP": true,
+      "insideBP": true
+    },
+    "plainXMinPrefix": {
+      "leftmostP": [
+        "132/5",
+        "1533/20"
+      ],
+      "outsidePriorP": true,
+      "notCertifiedAsConnectedStart": true
+    }
+  },
+  "candidate": {
+    "target": [
+      12,
+      2
+    ],
+    "seed": [
+      "27",
+      "387/5"
+    ],
+    "cutX": "141/5",
+    "priorBoundaryMarginSquared": "9025/38096",
+    "DATA": {
+      "cutX": [
+        "141",
+        "5"
+      ],
+      "phaseShare": [
+        "65127",
+        "7361120"
+      ],
+      "boundary": [
+        [
+          [
+            "132",
+            "5"
+          ],
+          [
+            "1533",
+            "20"
+          ]
+        ],
+        [
+          [
+            "543",
+            "20"
+          ],
+          [
+            "761",
+            "10"
+          ]
+        ],
+        [
+          [
+            "141",
+            "5"
+          ],
+          [
+            "8011",
+            "104"
+          ]
+        ],
+        [
+          [
+            "141",
+            "5"
+          ],
+          [
+            "399",
+            "5"
+          ]
+        ]
+      ],
+      "triangles": [
+        [
+          [
+            [
+              "141",
+              "5"
+            ],
+            [
+              "399",
+              "5"
+            ]
+          ],
+          [
+            [
+              "132",
+              "5"
+            ],
+            [
+              "1533",
+              "20"
+            ]
+          ],
+          [
+            [
+              "543",
+              "20"
+            ],
+            [
+              "761",
+              "10"
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              "543",
+              "20"
+            ],
+            [
+              "761",
+              "10"
+            ]
+          ],
+          [
+            [
+              "141",
+              "5"
+            ],
+            [
+              "8011",
+              "104"
+            ]
+          ],
+          [
+            [
+              "141",
+              "5"
+            ],
+            [
+              "399",
+              "5"
+            ]
+          ]
+        ]
+      ],
+      "order": [
+        {
+          "triangle": 0,
+          "seed": [
+            [
+              "27",
+              "1"
+            ],
+            [
+              "387",
+              "5"
+            ]
+          ],
+          "priorTriangle": null,
+          "shared": null
+        },
+        {
+          "triangle": 1,
+          "seed": [
+            [
+              "1107",
+              "40"
+            ],
+            [
+              "1559",
+              "20"
+            ]
+          ],
+          "priorTriangle": 0,
+          "shared": [
+            [
+              [
+                "543",
+                "20"
+              ],
+              [
+                "761",
+                "10"
+              ]
+            ],
+            [
+              [
+                "141",
+                "5"
+              ],
+              [
+                "399",
+                "5"
+              ]
+            ]
+          ]
+        }
+      ],
+      "weights": [
+        [
+          "11622",
+          "21709"
+        ],
+        [
+          "10087",
+          "21709"
+        ]
+      ],
+      "footArea": [
+        "65127",
+        "20800"
+      ],
+      "totalArea": [
+        "3539",
+        "10"
+      ],
+      "strictRootMarginSquared": [
+        "36",
+        "1625"
+      ]
+    },
+    "checks": {
+      "xSlabs": 22,
+      "bodySlabs": 20,
+      "footTriangles": 2,
+      "bodySingleInterval": true,
+      "positiveAdjacentFrontiers": true,
+      "rootStrictInsideBoth": true,
+      "footBFSConnected": true,
+      "areaLimitZero": true,
+      "wholeOriginalPUnionPartition": true
+    },
+    "sourceSegmentSHA256": "5c147702d6394d955c6e1044fd620f44a79f0f619f222177b17ef5277fed90fe",
+    "previousSegmentSHA256": "2091b81d6549aa323c494cd7442c61027de2ea2e4b3a9021b0a0d166bd0985c1"
+  },
+  "priorFullQ7Coverage": {
+    "pen": 12,
+    "mask": 1,
+    "originalPolygons": 3,
+    "originalTriangles": [
+      [
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "69/10",
+            "1733/20"
+          ],
+          [
+            "44/5",
+            "857/10"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "44/5",
+            "857/10"
+          ],
+          [
+            "107/10",
+            "424/5"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "107/10",
+            "424/5"
+          ],
+          [
+            "253/20",
+            "419/5"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "253/20",
+            "419/5"
+          ],
+          [
+            "73/5",
+            "414/5"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "73/5",
+            "414/5"
+          ],
+          [
+            "83/5",
+            "409/5"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "83/5",
+            "409/5"
+          ],
+          [
+            "93/5",
+            "323/4"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "93/5",
+            "323/4"
+          ],
+          [
+            "207/10",
+            "797/10"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "207/10",
+            "797/10"
+          ],
+          [
+            "114/5",
+            "1573/20"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "114/5",
+            "1573/20"
+          ],
+          [
+            "25",
+            "1553/20"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "25",
+            "1553/20"
+          ],
+          [
+            "136/5",
+            "383/5"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "136/5",
+            "383/5"
+          ],
+          [
+            "111/4",
+            "1547/20"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "111/4",
+            "1547/20"
+          ],
+          [
+            "26",
+            "1581/20"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "26",
+            "1581/20"
+          ],
+          [
+            "121/5",
+            "323/4"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "121/5",
+            "323/4"
+          ],
+          [
+            "449/20",
+            "823/10"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "449/20",
+            "823/10"
+          ],
+          [
+            "413/20",
+            "1677/20"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "413/20",
+            "1677/20"
+          ],
+          [
+            "377/20",
+            "853/10"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "377/20",
+            "853/10"
+          ],
+          [
+            "341/20",
+            "1733/20"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "341/20",
+            "1733/20"
+          ],
+          [
+            "61/4",
+            "88"
+          ]
+        ],
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "61/4",
+            "88"
+          ],
+          [
+            "269/20",
+            "1787/20"
+          ]
+        ],
+        [
+          [
+            "269/20",
+            "1787/20"
+          ],
+          [
+            "233/20",
+            "453/5"
+          ],
+          [
+            "99/10",
+            "459/5"
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "121/20",
+            "1743/20"
+          ],
+          [
+            "69/10",
+            "1733/20"
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "99/10",
+            "459/5"
+          ],
+          [
+            "47/4",
+            "89"
+          ],
+          [
+            "231/20",
+            "463/5"
+          ]
+        ]
+      ]
+    ],
+    "coverLeaves": [
+      {
+        "route": "0:0:",
+        "centerT": "1/16",
+        "radiusSquaredMargin": "128146819/3276800"
+      },
+      {
+        "route": "0:1:",
+        "centerT": "7/64",
+        "radiusSquaredMargin": "30633280931/838860800"
+      },
+      {
+        "route": "0:2:",
+        "centerT": "41/256",
+        "radiusSquaredMargin": "1325107005127/42949672960"
+      },
+      {
+        "route": "0:3:",
+        "centerT": "53/256",
+        "radiusSquaredMargin": "988219350327/42949672960"
+      },
+      {
+        "route": "0:4:",
+        "centerT": "33/128",
+        "radiusSquaredMargin": "33278105447/2684354560"
+      },
+      {
+        "route": "0:5:0",
+        "centerT": "15/32",
+        "radiusSquaredMargin": "1878867907/52428800"
+      },
+      {
+        "route": "0:5:1",
+        "centerT": "33/128",
+        "radiusSquaredMargin": "33278105447/2684354560"
+      },
+      {
+        "route": "0:6:0",
+        "centerT": "139/256",
+        "radiusSquaredMargin": "6848046845203/214748364800"
+      },
+      {
+        "route": "0:6:10",
+        "centerT": "11/64",
+        "radiusSquaredMargin": "978441227/33554432"
+      },
+      {
+        "route": "0:6:11",
+        "centerT": "15/32",
+        "radiusSquaredMargin": "1878867907/52428800"
+      },
+      {
+        "route": "0:7:0",
+        "centerT": "157/256",
+        "radiusSquaredMargin": "5927972244979/214748364800"
+      },
+      {
+        "route": "0:7:10",
+        "centerT": "51/256",
+        "radiusSquaredMargin": "5206821596979/214748364800"
+      },
+      {
+        "route": "0:7:11",
+        "centerT": "139/256",
+        "radiusSquaredMargin": "6848046845203/214748364800"
+      },
+      {
+        "route": "0:8:0",
+        "centerT": "11/16",
+        "radiusSquaredMargin": "14392439/655360"
+      },
+      {
+        "route": "0:8:10",
+        "centerT": "59/256",
+        "radiusSquaredMargin": "159490133195/8589934592"
+      },
+      {
+        "route": "0:8:11",
+        "centerT": "157/256",
+        "radiusSquaredMargin": "5927972244979/214748364800"
+      },
+      {
+        "route": "0:9:0",
+        "centerT": "195/256",
+        "radiusSquaredMargin": "3362144760691/214748364800"
+      },
+      {
+        "route": "0:9:10",
+        "centerT": "33/128",
+        "radiusSquaredMargin": "158969828611/13421772800"
+      },
+      {
+        "route": "0:9:11",
+        "centerT": "11/16",
+        "radiusSquaredMargin": "14392439/655360"
+      },
+      {
+        "route": "0:10:00",
+        "centerT": "195/256",
+        "radiusSquaredMargin": "3177213801331/214748364800"
+      },
+      {
+        "route": "0:10:01",
+        "centerT": "67/256",
+        "radiusSquaredMargin": "2442367897971/214748364800"
+      },
+      {
+        "route": "0:10:1",
+        "centerT": "195/256",
+        "radiusSquaredMargin": "3362144760691/214748364800"
+      },
+      {
+        "route": "0:11:00",
+        "centerT": "175/256",
+        "radiusSquaredMargin": "4533218705731/214748364800"
+      },
+      {
+        "route": "0:11:01",
+        "centerT": "67/256",
+        "radiusSquaredMargin": "2442367897971/214748364800"
+      },
+      {
+        "route": "0:11:1",
+        "centerT": "195/256",
+        "radiusSquaredMargin": "3177213801331/214748364800"
+      },
+      {
+        "route": "0:12:00",
+        "centerT": "155/256",
+        "radiusSquaredMargin": "1123760183159/42949672960"
+      },
+      {
+        "route": "0:12:01",
+        "centerT": "15/64",
+        "radiusSquaredMargin": "14331782851/838860800"
+      },
+      {
+        "route": "0:12:1",
+        "centerT": "175/256",
+        "radiusSquaredMargin": "4533218705731/214748364800"
+      },
+      {
+        "route": "0:13:00",
+        "centerT": "17/32",
+        "radiusSquaredMargin": "1582657091/52428800"
+      },
+      {
+        "route": "0:13:01",
+        "centerT": "27/128",
+        "radiusSquaredMargin": "12076570699/536870912"
+      },
+      {
+        "route": "0:13:1",
+        "centerT": "155/256",
+        "radiusSquaredMargin": "1123760183159/42949672960"
+      },
+      {
+        "route": "0:14:00",
+        "centerT": "29/64",
+        "radiusSquaredMargin": "27988198899/838860800"
+      },
+      {
+        "route": "0:14:01",
+        "centerT": "47/256",
+        "radiusSquaredMargin": "5808519423811/214748364800"
+      },
+      {
+        "route": "0:14:1",
+        "centerT": "17/32",
+        "radiusSquaredMargin": "1582657091/52428800"
+      },
+      {
+        "route": "0:15:0",
+        "centerT": "33/128",
+        "radiusSquaredMargin": "33218279271/2684354560"
+      },
+      {
+        "route": "0:15:1",
+        "centerT": "29/64",
+        "radiusSquaredMargin": "27988198899/838860800"
+      },
+      {
+        "route": "0:16:",
+        "centerT": "33/128",
+        "radiusSquaredMargin": "33218279271/2684354560"
+      },
+      {
+        "route": "0:17:",
+        "centerT": "53/256",
+        "radiusSquaredMargin": "978513534263/42949672960"
+      },
+      {
+        "route": "0:18:",
+        "centerT": "41/256",
+        "radiusSquaredMargin": "1325107005127/42949672960"
+      },
+      {
+        "route": "0:19:",
+        "centerT": "7/64",
+        "radiusSquaredMargin": "6127638407/167772160"
+      },
+      {
+        "route": "1:0:",
+        "centerT": "0",
+        "radiusSquaredMargin": "15867/400"
+      },
+      {
+        "route": "2:0:",
+        "centerT": "17/256",
+        "radiusSquaredMargin": "249543145659/8589934592"
+      }
+    ],
+    "unresolved": [],
+    "maxSplitDepth": 2,
+    "strictFullPContained": true,
+    "argument": "Ear triangles partition the original polygon area exactly. Every split replaces one triangle by two exact midpoint triangles. Each leaf triangle lies strictly in a radius7 disk centred at an exact original Q(t), because all three vertices have positive radius-squared margin. Convex disks contain each leaf interior.",
+    "notRasterProof": true,
+    "notAllTimeGrowingIntersectionProof": true
+  },
+  "partitionArgument": {
+    "BPolygonsJoin": "Main P0 and terminal triangle P1 share exactly edge [(1787/20,426/5),(448/5,367/4)]. Opposite-side interiors yield the original-P union boundary. Its two x-monotone chains imply every open X section is one interval.",
+    "foot": "cutX=141/5 contains strict original-Q-body contact seed and B turn. Two original-P foot triangles attach by a positive shared edge; root grows from strict common interior. New triangles attach from completed-edge midpoint.",
+    "body": "After foot completes, X threshold increases from141/5 to95. Positive cut/adjacent cross-sections keep the accumulated original-P prefix connected. All positive progress is attached to completed original priorP.",
+    "area": "Foot triangle scale sqrt(localAreaProgress) gives area proportional to localAreaProgress and area→0. Body cut moves continuously. At1 foot+body equals entire original-P union; paint original outline once directly.",
+    "clock": "New source-P foot-area phase65127/7361120, then linear-X body. Outer original B weight64.228109 and prior Qweight23.16247 unchanged. This is not a mutation of the original MC guide, nor a claim of original temporal equivalence."
+  },
+  "requiredDOMContract": "Before and after partial/complete updates, require exact same-frame preceding source12m1 completed original round-Q radius7 tube, strict original guide/d/pathLength/dash/owner/SVG/document/style/visibility/mask-completion gate. Boolean previousProgress=1 alone is insufficient.",
+  "sourceFields": {
+    "priorGuide": "M8 89.5 Q17.5 84 27.5 77",
+    "BGuide": "M26.5 76 C34 86 42 90.5 89.5 88.5",
+    "width": 14,
+    "weights": [
+      23.16247,
+      64.228109
+    ],
+    "guideGapSource200": [
+      -2,
+      -2
+    ],
+    "changed": false
+  },
+  "limitations": {
+    "newDisplayClock": true,
+    "temporalEquivalenceProved": false,
+    "allTimePreviousQGrowingIntersectionConnected": false,
+    "actualDOMVerified": false,
+    "rasterOrNativeApproved": false,
+    "priorInitialRevealPolicyUnchanged": true,
+    "p1DirectOriginalRequiresNewRuntimeBranch": true,
+    "footStageMonotoneDirectionalFrontierNotProved": true,
+    "originalTurnOrderStillHOLD": "Completed Q then body-X growth respects the coarse stage order only. The two-triangle seed expansion also recovers original P above/left of its root; equivalence to the observed forward turn has not been proved or visually reviewed."
+  },
+  "execution": {
+    "newFootPartitionInputRuns": 1,
+    "newPriorQ7InputRuns": 1,
+    "fixedCertificateVerificationPending": false,
+    "fixedCertificatePositiveCases": 1,
+    "changedCertificateNegativeCases": 4,
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "privateMediaFetch": 0,
+    "oldSuccessfulProofReplay": 0
+  },
+  "runtimeApplied": false,
+  "productionImportAllowed": false
+}
