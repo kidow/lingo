@@ -1,0 +1,152 @@
+{
+  "schema": "hanja-ordinary-baseline-native-review/v1",
+  "date": "2026-10-25",
+  "observer": "/root",
+  "status": "observed original-source ordinary baseline; runtime registration HOLD",
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "samples": {
+      "width": 220,
+      "height": 220,
+      "x": [
+        12,
+        236,
+        460
+      ],
+      "lowerY": 968.015625,
+      "upperYForSixSamples": 731.015625
+    }
+  },
+  "DOMBad": [],
+  "errors": [],
+  "nativePlaybackApproved": false,
+  "runtimeApplied": false,
+  "sourceEngineReplayed": false,
+  "sharedCodeChanged": false,
+  "glyph": "庾",
+  "providerRoot": "u5ebe-ue0102",
+  "profile": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u5ebe-ue0102-1.json",
+    "SHA256": "2510aecce5a386455150eb818161d0df682e92ca43d03109c870c43c3b05af14"
+  },
+  "source": {
+    "catalogStrokes": 11,
+    "dictionaryStrokes": 12,
+    "pens": 12,
+    "masks": 15,
+    "P": 26,
+    "geometrySHA256": "7a0ce084854021f6befdac71d5be4e6b2a6f32bb7281fab33386e2834ffa7557"
+  },
+  "scope": {
+    "early": 45,
+    "boundaries": 9,
+    "totalObserved": 54,
+    "boundaryTargets": [
+      [
+        3,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        11,
+        2
+      ]
+    ],
+    "numericPASSHOLDTally": null,
+    "reason": "Observer requested no inferred PASS total; source-clock suitability and stroke attribution remain unresolved."
+  },
+  "observations": {
+    "risks": [
+      {
+        "pen": 3,
+        "mask": 2,
+        "note": "At epsilon substantial upper outer V area was visible; minus-to-exact boundary also changed apparent outer V fragment length."
+      },
+      {
+        "pen": 4,
+        "mask": 1,
+        "note": "Separate upper starting cap visible at epsilon/.01/.03."
+      },
+      {
+        "pen": 6,
+        "mask": 1,
+        "note": "Much of inner V already visible at epsilon; must distinguish completed prior V from new H."
+      }
+    ],
+    "boundaryNotes": [
+      {
+        "pen": 8,
+        "mask": 2,
+        "note": "Prior H appears retained; not automatically a failure."
+      },
+      {
+        "pen": 11,
+        "mask": 2,
+        "note": "Prior V appears retained; not automatically a failure."
+      }
+    ],
+    "otherEarlyStatus": "Small initial fragments in1/2/3m1/5/7/8m1/9/10/11m1/12 differ visually; source-clock suitability pending."
+  },
+  "sourceAssessment": {
+    "curve3m2": {
+      "guide": "M17 51 Q17 80.5 4.5 94.5",
+      "width": 14,
+      "ordinaryMechanism": "Original round dash mask has fixed radius7 at every positive progress; candidate cause of new initial Q fragment, not an approved correction.",
+      "newProofRequired": [
+        "exact initial curve conditions",
+        "full original-P coverage",
+        "same-frame completed original prior3m1"
+      ]
+    },
+    "curve4m1": {
+      "guide": "M48.505 27.035 Q42.065 31.185 30.795 34.09",
+      "width": 14,
+      "candidateMechanism": "Existing growing-radius caps primitive; new exact source certificate required."
+    },
+    "pen6Attribution": {
+      "ownDirection": "right",
+      "ownPContainsLongV": false,
+      "ordinaryEpsilonClip": {
+        "x": 30.75,
+        "y": 42.25,
+        "width": 0.000018549999999999997,
+        "height": 6.5
+      },
+      "priorPen5OriginalVBounds": [
+        27.75,
+        30.05,
+        33.75,
+        75.6
+      ],
+      "conclusion": "Presence of long V alone is not a pen6 failure: completed prior5 is a V, while own6 is H. Native prefix attribution still required."
+    },
+    "reuse": "Reuse existing algorithms only; existing per-whole source contexts do not authorize this new12-pen whole."
+  },
+  "whole": {
+    "mode": "exact-prefix12",
+    "pass": true,
+    "freshScreens": 1
+  },
+  "server": {
+    "PID": 30899,
+    "sessionId": 89892,
+    "tab": 159,
+    "port": 59412,
+    "SSR": 1,
+    "CJS": 270,
+    "ESM": 270,
+    "engine": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "tabClosed": true
+  },
+  "sharedPins": {
+    "helper": "712709f4c74199267c5d9cdf1668df351968db790d3665a9e3d2b6812b35bf15",
+    "renderer": "503f1af396d0f88e3015a0e4ee7b8daf24b2491f564671c19d8f9a56d41b6114",
+    "observedCommit": "a03cf532c"
+  }
+}
