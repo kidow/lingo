@@ -529,6 +529,21 @@ def exact_u9f08_draft_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u83f1_dictionary_draft_launcher(config,base):
+    # One fixed catalog12/private dictionary11 draft; only base mapping is assigned.
+    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'bf99f0a60fdc725c2e52a02384c17acb9bb2ad02d3511dd2a3838187ca102f1b'}
+            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u83f1-2026-10-24/config.json','SHA256':'4275b2644e2d79dcd989bedb53e03c57a26bdd9a7c1d477ba12945856342b008'}
+            and base.get('glyph')=='菱' and base.get('catalogStrokes')==12
+            and base.get('domestic',{}).get('clips')==11
+            and base.get('domestic',{}).get('sha256')=='b2fd0ac7500d75a3fc481366fb4a8e5b0c185f4c366b33ad80052f6d15980038'
+            and list(base.get('sourceRoots',{}))==["base","k","t","vs1","vs2","vs3","vs4","vs5","compat","var1"]
+            and base.get('defaultSource')=='base'
+            and base['sourceRoots']['base']['root']=='u83f1'
+            and base['sourceRoots']['base']['fileSHA256']=='730a2ec4643d370ac0341cfd1f65c1c58d9f110d7edb225cbad51cadf2b3359b'
+            and config.get('provisionalGroups')=={"base":[[1],[2],[3],[4],[5],[6],[7],[8],[9],[10,11],[12]],"k":[None,None,None,None,None,None,None,None,None,None,None],"t":[None,None,None,None,None,None,None,None,None,None,None],"vs1":[None,None,None,None,None,None,None,None,None,None,None],"vs2":[None,None,None,None,None,None,None,None,None,None,None],"vs3":[None,None,None,None,None,None,None,None,None,None,None],"vs4":[None,None,None,None,None,None,None,None,None,None,None],"vs5":[None,None,None,None,None,None,None,None,None,None,None],"compat":[None,None,None,None,None,None,None,None,None,None,None],"var1":[None,None,None,None,None,None,None,None,None,None,None]}
+            and digest(fixed_path('docs/hanja-source-original-u83f1-2026-10-24/fixtures.json').read_bytes())=='acdc6c480e6ee5787a92c38ab9b293113b67e0ce0b8ff56b3e29c9d406457990'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def exact_u8438_k_dictionary_draft_launcher(config,base):
     # Only dictionary13 STATIC rows; authoritative exam catalog12 remains unchanged.
     return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'ae1868a1be81fe6ffce6d8254cfaa65a64f9c0b861eeb0fa99a7f2328fa0522f'}
@@ -591,6 +606,8 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    dictionary_u83f1 = exact_u83f1_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or dictionary_u83f1
     dictionary_u7626 = exact_u7626_hkcs_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u7626
     legacy_launcher = legacy_launcher or exact_u7e2d_prepared_launcher(config,base)
@@ -615,6 +632,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u704c_ue0102_prepared_launcher(config,base)
     require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base) or exact_u95e5_prepared_launcher(config,base) or exact_u852d_k_prepared_launcher(config,base) or exact_u8aed_k_prepared_launcher(config,base) or exact_u9d25_prepared_launcher(config,base) or exact_u6d8f_prepared_launcher(config,base) or exact_u8fe8_prepared_launcher(config,base) or exact_u6f11_prepared_launcher(config,base) or exact_u6f7e_prepared_launcher(config,base) or exact_u7e81_prepared_launcher(config,base) or exact_u9436_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
+    if dictionary_u83f1:base = {**base,'catalogStrokes':11}  # review-view copy only; pinned catalog remains12
     if dictionary_u7626:base = {**base,'catalogStrokes':15}  # review-view copy only; pinned source config remains14
     validate_groups(config['provisionalGroups'], base)
 
