@@ -345,6 +345,13 @@ def validate_exact_u5ebe_vs2_dictionary12(config,config_path):
     require(config.get('defaultSource')=='selected' and config.get('sourceRoots')==expected['sourceRoots'] and list(config['sourceRoots'])==['selected'],'exact original 庾 VS2 full5 only')
     require(config.get('domestic')==expected['domestic'] and config.get('inputSHA256')==expected['inputSHA256'],'exact 庾 dictionary12 and source pins required')
 
+def validate_exact_u8adb_vs1_dictionary16(config,config_path):
+    expected=json.loads('{"sourceRoots":{"selected":{"root":"u8adb-ue0101","file":"docs/hanja-goal-glyphwiki-batch778-2026-10-13/engine-whole-u8adb-ue0101.json","fileSHA256":"e66150bcadc9d0634fe3b75bb7803f0a900f7f57cd67c229558dc878b7881808","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u8adb-ue0101","sourceProofFile":"engine-whole-u8adb-ue0101.json","sourceProofFileSha256":"e66150bcadc9d0634fe3b75bb7803f0a900f7f57cd67c229558dc878b7881808"},"rawGroups":18,"drawingCalls":19,"polygonCounts":[2,2,2,2,1,1,2,1,3,1,2,2,1,2,1,1,4,2],"polygons":32}},"domestic":{"url":"http://img.e-hanja.kr/hanjaSvg/aniSVG/8A00/8ADB.svg","status":200,"bytes":8102,"sha256":"dcd2fa4df76674b1c714044dbccaa39f160f5552fe0dab8aeba28fd33603c013","clips":16,"glyph":"諛","privateMediaSaved":false},"inputSHA256":{"docs/hanja-goal-glyphwiki-batch778-2026-10-13/engine-whole-u8adb-ue0101.json":"e66150bcadc9d0634fe3b75bb7803f0a900f7f57cd67c229558dc878b7881808","docs/hanja-goal-glyphwiki-batch778-2026-10-13/sources.json":"f4cdf79cefa541ab3958faba211283def4b0714d242d4ad390c2f3b7f9e5b24a","docs/hanja-goal-glyphwiki-batch778-2026-10-13/validation.json":"a1d6a855b583dd38ff97bcd7b8ee6667e7ffec07e4c29912dcb98cc4d7df134e","docs/hanja-goal-glyphwiki-batch778-2026-10-13/review.json":"7bfb49d73bca8eecbc69730263a5cf7e85f287b53972555fdd2e191abf18ae05","docs/hanja-official-media-compare-u8adb-2026-10-25/metadata.json":"19504c2b0d211fefde984b6381d38c2096853e2dfb396d03fca4b2a0e05c7294"}}')
+    require(config_path==ROOT/'docs/hanja-source-raw-compare-u8adb-ue0101-2026-10-25/config.json','exact 諛 VS1 comparison path required')
+    require(config.get('glyph')=='諛' and type(config.get('catalogStrokes'))is int and config['catalogStrokes']==15 and type(config.get('dictionaryPlaybackStrokes'))is int and config['dictionaryPlaybackStrokes']==16,'exact 諛 catalogue15/private dictionary16 required')
+    require(config.get('defaultSource')=='selected' and config.get('sourceRoots')==expected['sourceRoots'] and list(config['sourceRoots'])==['selected'],'exact original 諛 VS1 full5 only')
+    require(config.get('domestic')==expected['domestic'] and config.get('inputSHA256')==expected['inputSHA256'],'exact 諛 dictionary16 and source byte pins required')
+
 def main():
     require(__debug__ and sys.flags.optimize==0,'optimized assertion-free execution forbidden')
     parser=argparse.ArgumentParser(description='Pinned static whole/raw/domestic comparison; ROOT starts HTTP.')
@@ -364,12 +371,15 @@ def main():
     if original_u9008_config:keys.add('dictionaryPlaybackStrokes')
     original_u5ebe_config=(type(config)is dict and config.get('glyph')=='庾' and 'dictionaryPlaybackStrokes'in config)
     if original_u5ebe_config:keys.add('dictionaryPlaybackStrokes')
+    original_u8adb_config=(type(config)is dict and config.get('glyph')=='諛' and 'dictionaryPlaybackStrokes'in config)
+    if original_u8adb_config:keys.add('dictionaryPlaybackStrokes')
     require(type(config)is dict and set(config)==keys and config['schema']=='hanja-shared-static-raw-compare/v1','exact config fields required')
     require(type(config['glyph'])is str and len(config['glyph'])==1 and type(config['catalogStrokes'])is int and 1<=config['catalogStrokes']<=128,'glyph/count required')
     require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']=='stacked520-css-only','original source/local host required')
     require(config['nativeApproval']is False and config['runtimeApplied']is False and config['noPartialAnimation']is True and config['guardMode']=='explicit-parameter-pins-v1','static unapproved scope required')
     require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA}and hexsha(config['launcherSHA256']),'shared code identity changed')
     roots=config['sourceRoots']
+    if original_u8adb_config:validate_exact_u8adb_vs1_dictionary16(config,config_path)
     if original_u5ebe_config:validate_exact_u5ebe_vs2_dictionary12(config,config_path)
     if original_u83f1_family_config:validate_exact_u83f1_dictionary11_family(config,config_path)
     if original_u8910_family_config:validate_exact_u8910_dictionary13_family(config,config_path)
@@ -407,7 +417,7 @@ def main():
         if original_u7d8c:validate_original_full5_u7d8c(config,label,spec,path)
         require(type(spec['rawGroups'])is int and 1<=spec['rawGroups']<=128 and type(spec['drawingCalls'])is int and ((not bound_body and (spec['drawingCalls']>=spec['rawGroups'] or original_u727c or original_u7d8c or original_hkcs_m84d1))or(bound_body and spec['rawGroups']==24 and spec['drawingCalls']==23)),'raw/call counts required')
         require(type(spec['polygonCounts'])is list and len(spec['polygonCounts'])==spec['rawGroups']and all(type(n)is int and n>=0 for n in spec['polygonCounts'])and type(spec['polygons'])is int and sum(spec['polygonCounts'])==spec['polygons'],'original polygon counts required')
-    dictionary_count=config['dictionaryPlaybackStrokes'] if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config or original_u5ebe_config else config['catalogStrokes']
+    dictionary_count=config['dictionaryPlaybackStrokes'] if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config or original_u5ebe_config or original_u8adb_config else config['catalogStrokes']
     domestic=config['domestic'];require(type(domestic)is dict and set(domestic)=={'url','status','bytes','sha256','clips','glyph','privateMediaSaved'}and domestic['glyph']==config['glyph']and domestic['status']==200 and domestic['clips']==dictionary_count and domestic['privateMediaSaved']is False and type(domestic['bytes'])is int and 0<domestic['bytes']<=1048576 and hexsha(domestic['sha256']),'pinned domestic metadata required')
     require(type(domestic['url'])is str and re.fullmatch(r'http://img\.e-hanja\.kr/hanjaSvg/aniSVG/[0-9A-Fa-f]{4}/[0-9A-Fa-f]{4,6}\.svg',domestic['url'])is not None and domestic['url'].rsplit('/',1)[-1].lower()==format(ord(config['glyph']),'x')+'.svg','fixed domestic source only')
     require(type(config['inputSHA256'])is dict and all(type(p)is str and hexsha(h)for p,h in config['inputSHA256'].items()),'input pins required')
@@ -423,7 +433,7 @@ def main():
     # Main guard prevents HTTP, source projection or dictionary access during import.
     spec=importlib.util.spec_from_file_location('hanja_static_raw_shared',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared)
     require(shared.FETCH_COUNT==0 and callable(shared.main)and callable(shared.load_sources),'unchanged shared entry contract required')
-    shared.CONFIG={**config,'catalogStrokes':dictionary_count} if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config or original_u5ebe_config else config;shared.HERE=config_path.parent;shared.ROOT=ROOT
+    shared.CONFIG={**config,'catalogStrokes':dictionary_count} if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config or original_u5ebe_config or original_u8adb_config else config;shared.HERE=config_path.parent;shared.ROOT=ROOT
     # Complete original eight-key proof is returned unchanged; old full5/body3 path stays original.
     if any(item['proofKind']=='actual-full8-u7cbb-direct'for item in roots.values()):
         require(config['glyph']=='粻' and config['catalogStrokes']==14 and list(roots)==['selected'],'exact isolated 粻 full8 comparison only')
