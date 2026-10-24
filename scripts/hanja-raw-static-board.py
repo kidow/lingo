@@ -101,6 +101,8 @@ def install_board(shared, base, groups, board_guards):
             note += '<p data-source-draft="u85a9-hkcs"><strong>DRAFT · productionImportAllowed=false</strong> · 原provider hkcs_m85a9 · 기존T와독립된 authored source · 원8 shortV 및13 V+Q 보존 · 세부 방향·접촉·재생 미승인</p>'
         if base.get('glyph') == '瞥' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u77a5':
             note += '<p data-source-draft="u77a5"><strong>DRAFT · productionImportAllowed=false</strong> · 원4 H/V의 left-hook 보존 · 공식4 H/V와 세부hook 차이 미승인 · source접촉·재생 미승인</p>'
+        if base.get('glyph') == '鼈' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u9f08':
+            note += '<p data-source-draft="u9f08"><strong>DRAFT · productionImportAllowed=false</strong> · 24획 후보 · 原archive5+固定公開2 혼합출처(과거누락복원아님) · 원17 V/Q/H+UP 보존 · 접촉·재생 미승인</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
 
     shared.guards, shared.selection, shared.page = guarded, selection, page
@@ -511,6 +513,16 @@ def exact_u77a5_draft_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u9f08_draft_launcher(config,base):
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"ae1868a1be81fe6ffce6d8254cfaa65a64f9c0b861eeb0fa99a7f2328fa0522f"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u9f08-2026-10-24/config.json","SHA256":"ff5a36bf5b540769b6f5ba410f56b78f376871d24432f63bd1c9bda0ca49a129"}
+            and base.get('glyph')=='鼈' and base.get('catalogStrokes')==24
+            and base.get('sourceRoots')=={"selected":{"root":"u9f08","file":"docs/hanja-actual-engine-capture-u9f08-2026-10-24/engine-whole-u9f08.json","fileSHA256":"8709710f1c22ce9ac8b8977b3b7692c560e8bd882be593612372816425f7de86","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u9f08","sourceProofFile":"engine-whole-u9f08.json","sourceProofFileSha256":"8709710f1c22ce9ac8b8977b3b7692c560e8bd882be593612372816425f7de86"},"rawGroups":27,"drawingCalls":30,"polygonCounts":[3,2,3,2,1,1,2,1,1,1,7,1,2,1,1,1,3,1,1,2,1,1,5,3,2,3,2],"polygons":54}}
+            and config.get('provisionalGroups')=={"selected":[[24],[25],[21],[22,23],[20],[26],[27],[1],[2],[3],[4],[5],[6,7],[8],[9],[10],[11],[17],[16],[18],[19],[12,13],[14],[15]]}
+            and digest(fixed_path('docs/hanja-source-original-u9f08-2026-10-24/fixtures.json').read_bytes())=='2429c5557e056c72da95208953c67ea71c9c011588c0b514f872bb48f9a26e05'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -545,6 +557,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u66c1_ue0102_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u7006_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u85a9_t_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u9f08_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u64c4_k_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u77a5_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u85a9_hkcs_draft_launcher(config,base)
