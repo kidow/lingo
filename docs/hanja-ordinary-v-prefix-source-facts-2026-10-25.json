@@ -1,0 +1,585 @@
+{
+  "schema": "hanja-ordinary-down-prefix-source-facts/v1",
+  "date": "2026-10-25",
+  "sourceInputs": {
+    "u6f0c": {
+      "path": "docs/hanja-source-original-u6f0c-2026-10-25/fixtures.json",
+      "SHA256": "9f4425b11402aeb83f26e0de338b001224bde219cba045245c24180b9e8fdd32",
+      "geometrySHA256": "e98a6494f70cc7a77b095ee3dc704e6e29bcafd01876ae5aca94eec740101912"
+    },
+    "u703c": {
+      "path": "docs/hanja-source-original-u703c-2026-10-25/fixtures.json",
+      "SHA256": "93a4ba99264f97a89208ee4a8c3c2f5c4da0e7b33cf6bd8cd726fbac1d76d29c",
+      "geometrySHA256": "3ded238d9646bdc2984a9622092bd0c243388158c8f3e7a02ac75f38bf4cb216"
+    }
+  },
+  "method": {
+    "description": "기존 C 欌 V5의 exact Fraction Y-event/slab 판별을 변경 없이 새 원본11개에만 적용",
+    "existingClassifierSHA256": "13e46c8d0bd325472d8e7933a60b087d21f493d4dbb8273cfac106702d091c77",
+    "existingPureKernelSHA256": "7c227d42591e95cb014184f3efcdd4d204b76cb28f3830db157a3a81518edbe3",
+    "events": "원vertexY와원edge교차Y",
+    "condition": "모든openYslab 단일interval, 내부event 단면양의중첩, 원vertex모두원bounds내",
+    "ordinaryDownClip": "x=bounds[0], y=bounds[1], width=bounds[2]-bounds[0], height=(bounds[3]-bounds[1])*p",
+    "areaBound": "면적≤bboxArea*p; 따라서 p→0에서0",
+    "previousSuccessfulGeometryReplayed": false
+  },
+  "targets": [
+    {
+      "glyph": "漌",
+      "root": "u6f0c",
+      "pen": 5,
+      "mask": 1,
+      "segmentSHA256": "2722432628b8e7a33b49ea6e971cd761b466fca51bb3bd4574a6f4af2ff4dc29",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "2722432628b8e7a33b49ea6e971cd761b466fca51bb3bd4574a6f4af2ff4dc29",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        48.75,
+        7,
+        56.25,
+        35
+      ],
+      "originalSubpaths": 2,
+      "ySlabs": 6,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "6",
+        "15/2",
+        "6",
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "6297/40",
+      "prefixAreaUpperBoundCoefficient": "210",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "147/62500000000"
+        },
+        {
+          "p": "1/100",
+          "area": "147/625"
+        },
+        {
+          "p": "3/100",
+          "area": "1323/625"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "漌",
+      "root": "u6f0c",
+      "pen": 6,
+      "mask": 1,
+      "segmentSHA256": "83489726b485c42c23bf7f036080790f40f92666f27e8ec7bbff4e85fa1d83f9",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "83489726b485c42c23bf7f036080790f40f92666f27e8ec7bbff4e85fa1d83f9",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        71.7,
+        7,
+        79.2,
+        34.5
+      ],
+      "originalSubpaths": 2,
+      "ySlabs": 6,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "6",
+        "15/2",
+        "6",
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "6177/40",
+      "prefixAreaUpperBoundCoefficient": "825/4",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "363/160000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "363/1600"
+        },
+        {
+          "p": "3/100",
+          "area": "3267/1600"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "漌",
+      "root": "u6f0c",
+      "pen": 8,
+      "mask": 1,
+      "segmentSHA256": "aa1c428268391d263c7960c93cab61f228b8eb39f9b15efbaf3cd17e8b8116dd",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "aa1c428268391d263c7960c93cab61f228b8eb39f9b15efbaf3cd17e8b8116dd",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        39.2,
+        37,
+        45.2,
+        60.5
+      ],
+      "originalSubpaths": 1,
+      "ySlabs": 3,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "123",
+      "prefixAreaUpperBoundCoefficient": "141",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "2209/4000000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "2209/40000"
+        },
+        {
+          "p": "3/100",
+          "area": "19881/40000"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "漌",
+      "root": "u6f0c",
+      "pen": 9,
+      "mask": 2,
+      "segmentSHA256": "c64a58ea7f771bbae6a21a713c6fac3bacd419fd3aba40950c86e78a9f6175f2",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "c64a58ea7f771bbae6a21a713c6fac3bacd419fd3aba40950c86e78a9f6175f2",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        81.25,
+        37.5,
+        89.75,
+        60
+      ],
+      "originalSubpaths": 2,
+      "ySlabs": 6,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "109/18",
+        "131/18",
+        "17/2",
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "989/8",
+      "prefixAreaUpperBoundCoefficient": "765/4",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "981/1600000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "981/16000"
+        },
+        {
+          "p": "3/100",
+          "area": "8829/16000"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "瀼",
+      "root": "u703c",
+      "pen": 4,
+      "mask": 1,
+      "segmentSHA256": "41426d3e83f800cc694628c8fb9b7a0fd1f70cebe5034a78d263deb167634d6c",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "41426d3e83f800cc694628c8fb9b7a0fd1f70cebe5034a78d263deb167634d6c",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        59.6,
+        6.3,
+        67.1,
+        18.9
+      ],
+      "originalSubpaths": 2,
+      "ySlabs": 5,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "6",
+        "15/2",
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "2961/40",
+      "prefixAreaUpperBoundCoefficient": "189/2",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "11907/25000000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "11907/250000"
+        },
+        {
+          "p": "3/100",
+          "area": "107163/250000"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "瀼",
+      "root": "u703c",
+      "pen": 6,
+      "mask": 1,
+      "segmentSHA256": "bae20c12683261dc8695d95816df2e14a6aa7b53217752f8b6989a57391c79a5",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "bae20c12683261dc8695d95816df2e14a6aa7b53217752f8b6989a57391c79a5",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        37.4,
+        21.85,
+        43.4,
+        41.6
+      ],
+      "originalSubpaths": 1,
+      "ySlabs": 3,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "201/2",
+      "prefixAreaUpperBoundCoefficient": "237/2",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "6241/16000000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "6241/160000"
+        },
+        {
+          "p": "3/100",
+          "area": "56169/160000"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "瀼",
+      "root": "u703c",
+      "pen": 7,
+      "mask": 2,
+      "segmentSHA256": "168915525344cdd1550f45882c6eab5b3753aef377cb04f16548027494e98805",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "168915525344cdd1550f45882c6eab5b3753aef377cb04f16548027494e98805",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        54.15,
+        22.35,
+        62.15,
+        39.85
+      ],
+      "originalSubpaths": 2,
+      "ySlabs": 6,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "17/3",
+        "41/6",
+        "8",
+        "11/2",
+        "11/2"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "695/8",
+      "prefixAreaUpperBoundCoefficient": "140",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "833/2400000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "833/24000"
+        },
+        {
+          "p": "3/100",
+          "area": "2499/8000"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "瀼",
+      "root": "u703c",
+      "pen": 9,
+      "mask": 1,
+      "segmentSHA256": "5962c28f55d48aef9f80dde4cbbf81d9808440e662488881c0bcd610dfd16ba0",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "5962c28f55d48aef9f80dde4cbbf81d9808440e662488881c0bcd610dfd16ba0",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        65.25,
+        22.1,
+        70.75,
+        39.85
+      ],
+      "originalSubpaths": 1,
+      "ySlabs": 3,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "11/2",
+        "11/2"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "165/2",
+      "prefixAreaUpperBoundCoefficient": "781/8",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "5041/16000000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "5041/160000"
+        },
+        {
+          "p": "3/100",
+          "area": "45369/160000"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "瀼",
+      "root": "u703c",
+      "pen": 10,
+      "mask": 2,
+      "segmentSHA256": "603e27364b709ac2fa87c3b8b413c7ec685ecc86d7cfb2c65465411fc5464eb7",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "603e27364b709ac2fa87c3b8b413c7ec685ecc86d7cfb2c65465411fc5464eb7",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        82.15,
+        22.35,
+        90.65,
+        41.1
+      ],
+      "originalSubpaths": 2,
+      "ySlabs": 6,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "109/18",
+        "131/18",
+        "17/2",
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "809/8",
+      "prefixAreaUpperBoundCoefficient": "1275/8",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "109/256000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "109/2560"
+        },
+        {
+          "p": "3/100",
+          "area": "981/2560"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "瀼",
+      "root": "u703c",
+      "pen": 14,
+      "mask": 1,
+      "segmentSHA256": "cbebf32e6e18d7724cd6550828ed3487c3ad660e8c0d89a572c007ce6dd13365",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "cbebf32e6e18d7724cd6550828ed3487c3ad660e8c0d89a572c007ce6dd13365",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        49.05,
+        39.4,
+        56.55,
+        66.5
+      ],
+      "originalSubpaths": 2,
+      "ySlabs": 5,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "6",
+        "15/2",
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "6441/40",
+      "prefixAreaUpperBoundCoefficient": "813/4",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "220323/100000000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "220323/1000000"
+        },
+        {
+          "p": "3/100",
+          "area": "1982907/1000000"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    },
+    {
+      "glyph": "瀼",
+      "root": "u703c",
+      "pen": 15,
+      "mask": 1,
+      "segmentSHA256": "e420f9e8c611f600bc44b7762d441b6096e2a17afde93311adc1a2100d2c30b3",
+      "segmentSHADomain": "JavaScript JSON.stringify exact fixture segment",
+      "classifierSegmentSHA256": "e420f9e8c611f600bc44b7762d441b6096e2a17afde93311adc1a2100d2c30b3",
+      "classifierSegmentSHADomain": "Python json.dumps(segment,separators=(comma,colon))",
+      "sourceDirection": "down",
+      "sourceHasRevealPath": false,
+      "bounds": [
+        67.5,
+        39.4,
+        75,
+        66.5
+      ],
+      "originalSubpaths": 2,
+      "ySlabs": 5,
+      "singleIntervalAllSlabs": true,
+      "positiveInternalFrontierLengths": [
+        "6",
+        "15/2",
+        "6",
+        "6"
+      ],
+      "originalPConnectedByYSlabs": true,
+      "ordinaryAlreadyExactYPrefix": true,
+      "originalUnionArea": "6441/40",
+      "prefixAreaUpperBoundCoefficient": "813/4",
+      "prefixAreaLimitZero": true,
+      "finiteSourcePrefixAreas": [
+        {
+          "p": "1/1000000",
+          "area": "220323/100000000000000"
+        },
+        {
+          "p": "1/100",
+          "area": "220323/1000000"
+        },
+        {
+          "p": "3/100",
+          "area": "1982907/1000000"
+        }
+      ],
+      "priorPContactApproved": false,
+      "rasterApproved": false,
+      "correctionNecessityEstablished": false
+    }
+  ],
+  "conclusion": {
+    "newInputs": 11,
+    "sourcePrefixConditionsPassed": 11,
+    "sourceGeometricFailureFound": 0,
+    "statement": "동일판별기준에서11개모두원P연결·ordinary동일Yprefix·초기면적0수렴조건을통과. tiny장식의보정필요성은이기하사실만으로확정하지않음."
+  },
+  "limits": [
+    "선행원P와의접촉검토를포함하지않음",
+    "브라우저520raster·AA·실제자연재생·필순승인을대신하지않음",
+    "새보정정책/모듈/공유renderer 변경의근거로자동확대하지않음"
+  ],
+  "execution": {
+    "newSourceTargets": 11,
+    "newModules": 0,
+    "sharedCodeChanges": 0,
+    "sourceEngine": 0,
+    "newSourceProjection": 0,
+    "repeatedSuccessfulOldTargets": 0
+  }
+}
