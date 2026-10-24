@@ -676,6 +676,14 @@ def exact_u6583_body3_dictionary_draft_launcher(config,base):
             and config.get('provisionalGroups')==expected['groups']
             and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
 
+def exact_u6f0c_prepared_launcher(config,base):
+    expected=json.loads("{\"launcher\":{\"path\":\"scripts/hanja-raw-static-compare.py\",\"SHA256\":\"451d4dbef65a9d7041e597fc528b59dd4b2ddc792e290050cec181e7c47cdb64\"},\"baseConfig\":{\"path\":\"docs/hanja-source-raw-compare-u6f0c-2026-10-25/config.json\",\"SHA256\":\"b782b948f7dce3649f1ec9cfe3d7d273bafbaa075b3c56fce37e1930f3542c7a\"},\"sourceRoots\":{\"selected\":{\"root\":\"u6f0c\",\"file\":\"docs/hanja-goal-glyphwiki-batch481-2026-10-10/engine-proof.json\",\"fileSHA256\":\"e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97\",\"proofKeys\":[\"defaults\",\"engineHashes\",\"engineRevision\",\"groups\",\"trace\"],\"proofKind\":\"actual-full5-direct\",\"sourceProofIdentity\":{\"sourceRoot\":\"u6f0c\",\"sourceProofFile\":\"engine-proof.json\",\"sourceProofFileSha256\":\"e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97\"},\"rawGroups\":16,\"drawingCalls\":16,\"polygonCounts\":[2,2,2,1,2,2,2,1,1,1,2,1,2,1,2,2],\"polygons\":26}},\"groups\":{\"selected\":[[1],[2],[3,4],[5],[6],[7],[8],[9],[10,11],[12],[13],[15],[14],[16]]},\"fixture\":{\"path\":\"docs/hanja-source-original-u6f0c-2026-10-25/fixtures.json\",\"SHA256\":\"9f4425b11402aeb83f26e0de338b001224bde219cba045245c24180b9e8fdd32\"}}")
+    return (config.get('launcher')==expected['launcher'] and config.get('baseConfig')==expected['baseConfig']
+            and base.get('glyph')=='漌' and type(base.get('catalogStrokes'))is int and base['catalogStrokes']==14
+            and base.get('sourceRoots')==expected['sourceRoots'] and base.get('domestic',{}).get('sha256')=="b61a3cd80eb278bdcd04005706a5593ec3a10be91d67110588506ce048215d91"
+            and config.get('provisionalGroups')==expected['groups']
+            and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -698,6 +706,7 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    legacy_launcher = legacy_launcher or exact_u6f0c_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u6b0c_var001_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u82d4_k_prepared_launcher(config,base)
     dictionary_u6583 = exact_u6583_body3_dictionary_draft_launcher(config,base)
