@@ -1,0 +1,1294 @@
+{
+  "schema": "hanja-ordinary-outline-baseline-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "髓",
+  "root": "hkcs_m9ad3",
+  "localArtifactTag": "u9ad3-hkcs",
+  "observer": "ROOT browser panel",
+  "status": "HOLD: finite visible defects require source-specific corrections",
+  "inputs": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u9ad3-hkcs-1.json",
+      "SHA256": "afb7627d67b81d42c78f2f6a4405cac5b446e6db9eb322a0cc971b8fa06e5eaa"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "862be93e8744fc2c66bac8510edd1a057ea975706445cbdeb7770c3f7c3de2cf"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "6f03ad0773e60a7accc634ef1abf4ec2f113c5c526000d39d2b38f0223d3ffc5"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "4a8fe908655395dec910a5d34205f2b7208ebff86ccfe900b3219e60cf830d3c"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u9ad3-hkcs-2026-10-24/fixtures.json",
+      "SHA256": "7fdbb4c5403f12809c8f08161235f6a9e54b3c0ad3226ebb2667f3f79ee0773a"
+    },
+    "geometrySHA256": "e5abfd7fc4b7db418b2911a477bf0b800b6b0be6f45b2f21e422d7a0d7068899"
+  },
+  "resourceStartup": {
+    "SSR": 1,
+    "CJS": 255,
+    "ESM": 255,
+    "engineRuns": 0,
+    "sourceProjection": 0
+  },
+  "finite": {
+    "acceptedDistinct": 109,
+    "early": 93,
+    "boundaries": 16,
+    "visualPASS": 69,
+    "visualHOLD": 40,
+    "curveEarlyHOLD": 27,
+    "cardinalEarlyHOLD": 12,
+    "boundaryHOLD": 1,
+    "boundaryPASS": 15,
+    "controlCaseSlots": [
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 1,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 1,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 1,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.030000000000000002,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 2,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 4.1029711952823764e-7,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 2,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.004102971195282377,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 2,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.012308913585847129,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 2,
+        "mask": 2,
+        "local": 0.000001,
+        "global": 0.4102977092311181,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 2,
+        "mask": 2,
+        "local": 0.01,
+        "global": 0.4161941483329553,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 2,
+        "mask": 2,
+        "local": 0.03,
+        "global": 0.42798820594239056,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 3,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 3,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 3,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 4,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 4,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.009999999999999998,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 4,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 5,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 5,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 5,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.029999999999999995,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 6,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 7.545163800405338e-7,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 6,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.007545163800405337,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 6,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.022635491401216012,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 6,
+        "mask": 2,
+        "local": 0.000001,
+        "global": 0.7545166255241537,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 6,
+        "mask": 2,
+        "local": 0.01,
+        "global": 0.7569712162401284,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 6,
+        "mask": 2,
+        "local": 0.03,
+        "global": 0.7618808886393178,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 7,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 7,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 7,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 2.9577639160911966e-7,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.0029577639160911972,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.00887329174827359,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 2,
+        "local": 0.000001,
+        "global": 0.2957769802188543,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 2,
+        "local": 0.01,
+        "global": 0.3016624889545748,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 2,
+        "local": 0.03,
+        "global": 0.3134346836454851,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 3,
+        "local": 0.000001,
+        "global": 0.8843862417685054,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 3,
+        "local": 0.01,
+        "global": 0.8855422648930853,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 8,
+        "mask": 3,
+        "local": 0.03,
+        "global": 0.8878545423699927,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 9,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 9,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 9,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 10,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 10,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 10,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 11,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 11,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 11,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 12,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 12,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 12,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 13,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 13,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 13,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 14,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 14,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 14,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.029999999999999995,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 15,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 15,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 15,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 16,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 16,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 16,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.029999999999999995,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 4.052987806057307e-7,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.004052987806057307,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.01215896341817192,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 2,
+        "local": 0.000001,
+        "global": 0.4052992518833826,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 2,
+        "local": 0.01,
+        "global": 0.410011557124402,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 2,
+        "local": 0.03,
+        "global": 0.41943711016174456,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 3,
+        "local": 0.000001,
+        "global": 0.876576555896427,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 3,
+        "local": 0.01,
+        "global": 0.8778106681481309,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 17,
+        "mask": 3,
+        "local": 0.03,
+        "global": 0.8802791394986738,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 18,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 18,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 18,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.029999999999999995,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 19,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 19,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 19,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.029999999999999995,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 20,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 20,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 20,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 21,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 21,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 21,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 22,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 3.048797441957458e-7,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 22,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.0030487974419574583,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 22,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.009146392325872374,
+        "result": "PASS",
+        "reason": "No initial defect observed in this controlled finite sample"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 22,
+        "mask": 2,
+        "local": 0.000001,
+        "global": 0.3048804393160017,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 22,
+        "mask": 2,
+        "local": 0.01,
+        "global": 0.31183094675378836,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 22,
+        "mask": 2,
+        "local": 0.03,
+        "global": 0.32573335186987346,
+        "result": "HOLD",
+        "reason": "Detached triangular serif above preceding H confirmed at local .03; all three initial samples held"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 23,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 2.8976648314335215e-7,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 23,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.0028976648314335217,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 23,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.008692994494300565,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 23,
+        "mask": 2,
+        "local": 0.000001,
+        "global": 0.28976719337686907,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 23,
+        "mask": 2,
+        "local": 0.01,
+        "global": 0.29686881831191864,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "early",
+        "mode": "clock",
+        "pen": 23,
+        "mask": 2,
+        "local": 0.03,
+        "global": 0.3110734886490516,
+        "result": "HOLD",
+        "reason": "Visible initial finite Q chunk; new source-bound review needed"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 2,
+        "nextMask": 2,
+        "global": 0.41029711942823766,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 2,
+        "nextMask": 2,
+        "global": 0.41029711952823766,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 6,
+        "nextMask": 2,
+        "global": 0.7545163799405338,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 6,
+        "nextMask": 2,
+        "global": 0.7545163800405338,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 8,
+        "nextMask": 2,
+        "global": 0.2957763915091197,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 8,
+        "nextMask": 2,
+        "global": 0.2957763916091197,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 8,
+        "nextMask": 3,
+        "global": 0.8843861260546316,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 8,
+        "nextMask": 3,
+        "global": 0.8843861261546316,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 17,
+        "nextMask": 2,
+        "global": 0.4052987805057307,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 17,
+        "nextMask": 2,
+        "global": 0.4052987806057307,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 17,
+        "nextMask": 3,
+        "global": 0.8765764323728595,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 17,
+        "nextMask": 3,
+        "global": 0.8765764324728595,
+        "result": "HOLD",
+        "reason": "Exact weighted boundary produced actual mask3 dash8.038873174576741e-15 and visible new cap"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 22,
+        "nextMask": 2,
+        "global": 0.3048797440957458,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 22,
+        "nextMask": 2,
+        "global": 0.3048797441957458,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 23,
+        "nextMask": 2,
+        "global": 0.2897664830433522,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      },
+      {
+        "category": "boundary",
+        "mode": "clock",
+        "pen": 23,
+        "nextMask": 2,
+        "global": 0.2897664831433522,
+        "result": "PASS",
+        "reason": "No new defect observed at this finite boundary"
+      }
+    ],
+    "DOMBad": [],
+    "errors": [],
+    "DOMBindingSuccessIsNotVisualApproval": true
+  },
+  "findings": {
+    "curveEarlyTargets": [
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        17,
+        3
+      ],
+      [
+        20,
+        1
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        23,
+        1
+      ],
+      [
+        23,
+        2
+      ]
+    ],
+    "cardinalEarlyTargets": [
+      [
+        2,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        17,
+        2
+      ],
+      [
+        22,
+        2
+      ]
+    ],
+    "cardinalDiagnostic": "At source-local .03, enlarged520 view shows a small detached triangle above previous H for each four targets. This is finite observation, not complete prior-P/net-area proof.",
+    "boundary17m3": {
+      "sample": "exact weighted boundary",
+      "actualCurveMask": 3,
+      "observedDash": 8.038873174576741e-15,
+      "visibleNewCap": true,
+      "additionalDistinctScope": 0
+    }
+  },
+  "diagnosticEnlargements": {
+    "additionalDistinct": 0,
+    "cardinals": [
+      {
+        "pen": 2,
+        "global": 0.42798820594239056
+      },
+      {
+        "pen": 8,
+        "global": 0.3134346836454851
+      },
+      {
+        "pen": 17,
+        "global": 0.41943711016174456
+      },
+      {
+        "pen": 22,
+        "global": 0.32573335186987346
+      }
+    ],
+    "curve23m2": {
+      "global": 0.28976719337686907,
+      "result": "HOLD"
+    },
+    "mainTop": 321.811065,
+    "mainBottom": 841.811065,
+    "SVGSize": 520
+  },
+  "visibility": {
+    "requestedViewportCap": 1280,
+    "actualInnerWidth": 1163,
+    "actualInnerHeight": 1163,
+    "actualScreenshotFullHeight": 1164,
+    "CSSGridSVGSize": 220,
+    "mainSVGSize": 520,
+    "allAcceptedImagesFullyVisible": true,
+    "oneRowSVG": [
+      851.811035,
+      1071.81102
+    ],
+    "oneRowCardsIncludingCaption": [
+      839.083801,
+      1071.811066
+    ],
+    "twoRowCards": [
+      602.265625,
+      1071.71872
+    ],
+    "threeRowCards": [
+      365.447418,
+      1071.62637
+    ],
+    "singleRowDocumentCrop": {
+      "x": 11.995738,
+      "y": 1777.72015,
+      "width": 667.997136,
+      "height": 232.727264
+    },
+    "afterPen18": "Full viewport capture used after crop-coordinate discrepancies were identified"
+  },
+  "excludedDiagnostics": [
+    {
+      "kind": "Initial pen4/18 crop-coordinate errors",
+      "acceptedScopes": 0,
+      "pen4Recaptured": true,
+      "pen18FinalFullViewportAccepted": true
+    }
+  ],
+  "exactPrefixWhole": {
+    "pens": 23,
+    "result": "PASS",
+    "separateFrom109": true,
+    "temporalCorrectnessNotClaimed": true
+  },
+  "captureCount": null,
+  "captureCountClaimed": false,
+  "naturalSnapshots": 0,
+  "sourceGeometryGuideWidthWeightUnchanged": true,
+  "sourceContactCorrectionApproved": false,
+  "initialPriorNetAreaProofComplete": false,
+  "allTimeProof": false,
+  "actualAppUI": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "server": {
+    "pid": 33950,
+    "session": 44794,
+    "exitCode": 130,
+    "tab122Closed": true,
+    "ownedServerRemaining": false
+  },
+  "recordActions": {
+    "engineRuns": 0,
+    "sourceProjection": 0,
+    "successfulProofReplay": false,
+    "builds": 0,
+    "fullTypeChecks": 0
+  }
+}
