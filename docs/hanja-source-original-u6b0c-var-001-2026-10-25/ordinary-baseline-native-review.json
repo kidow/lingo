@@ -1,0 +1,168 @@
+{
+  "schema": "hanja-ordinary-baseline-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "欌",
+  "root": "u6b0c-var-001",
+  "observer": "ROOT browser panel",
+  "result": "HOLD",
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "productionImportAllowed": false,
+  "actualAppUI": false,
+  "scope": {
+    "observed": 90,
+    "earlyMasks": 26,
+    "earlyFrames": 78,
+    "boundaries": 4,
+    "boundaryFrames": 12,
+    "allObserved": true,
+    "passTotalNotAssigned": true,
+    "holdTotalNotAssigned": true
+  },
+  "boundary": {
+    "passed": 12,
+    "stablePens": [
+      9,
+      16,
+      19
+    ],
+    "pen12": {
+      "result": "PASS",
+      "reason": "직전V round끝에서 exact/plus 원P flat끝으로 바뀌는 것은 선행 원P의 완료 윤곽 정리이며 새 분리 조각이나 원P 누락으로 판정하지 않음."
+    }
+  },
+  "whole": {
+    "exactPrefix": 22,
+    "result": "PASS",
+    "separate": true
+  },
+  "clearInitialRisks": [
+    {
+      "pen": 2,
+      "mask": 1,
+      "locals": [
+        0.01,
+        0.03
+      ],
+      "observation": "새 V 상단 장식이 분리되어 보임; epsilon 판정은 이 항목에 추가하지 않음."
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "observation": "epsilon부터 기존 V 오른쪽에 새 DR 시작 덩어리."
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "observation": "epsilon부터 새 DL 시작 T형 덩어리."
+    },
+    {
+      "pen": 20,
+      "mask": 1,
+      "observation": "epsilon부터 굵은 V 시작 덩어리."
+    },
+    {
+      "pen": 21,
+      "mask": 1,
+      "observation": "epsilon부터 분리된 시작 캡; DR처럼 보였으나 실제 원DL인지 원자료로 구분 필요."
+    }
+  ],
+  "uncertainInitials": [
+    {
+      "pen": 6,
+      "mask": 1,
+      "observation": "V 상단 장식 조각"
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "observation": "V 상단 장식 조각"
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "observation": "작은 조각"
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "observation": "작은 조각"
+    },
+    {
+      "pen": 22,
+      "mask": 1,
+      "observation": "작은 조각"
+    }
+  ],
+  "uncertainty": "220px 상대 관찰만으로 불확실 항목을 PASS/HOLD로 자동 분류하지 않음. 단순 H의 tiny progress도 실패로 단정하지 않음.",
+  "additionalInspection": {
+    "pen": 20,
+    "progress": [
+      0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1
+    ],
+    "observations": 9,
+    "lateUpFilledShapeAppeared": true,
+    "upDirectionApproved": false,
+    "newUpGuideOrCompositeAuthorized": false,
+    "separateFromBaseline90": true
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "mainSize": 520,
+    "sampleSize": 220,
+    "earlyMainTop": 435.015625,
+    "sixSampleUpperTop": 731.015625,
+    "sampleLowerTop": 968.015625
+  },
+  "inputs": {
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "adc0339ac145ccdd060ff6e765c7fcb7808ee56533d85a919b4a41c3c51e8c83"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "f05801c90ca64fc9f1269ccd71f15bdbb4f0b9ff9d6966f97fc99a4996bf9ea9"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u6b0c-var-001-1.json",
+      "SHA256": "ca82387eb614115d15c094a289d46f4b2d213c19f5ad7fddc3132099e6841b9a"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "2c512907ee9b974fc0ad3f1af6c0538cae018b99d26720dc8c54d7bafe9e77fa"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u6b0c-var-001-2026-10-25/fixtures.json",
+      "SHA256": "8c8c979732a5f90a1741e94796277f58fb55632d32f634e3fd69c036e5bfc11c"
+    }
+  },
+  "server": {
+    "pid": 93490,
+    "session": 15660,
+    "port": 59412,
+    "newSSRChecks": 1,
+    "CJS": 273,
+    "ESM": 273,
+    "engine": 0,
+    "sourceProjection": 0,
+    "exitCode": 130,
+    "tab": 177,
+    "tabClosed": true,
+    "ownedServerRemaining": false
+  },
+  "bad": [],
+  "errors": [],
+  "sourceGeometryGuideWidthWeightUnchanged": true,
+  "allTimeProof": false,
+  "publisherMicrotimingEquivalent": false,
+  "sourceEngineMathReplay": 0
+}
