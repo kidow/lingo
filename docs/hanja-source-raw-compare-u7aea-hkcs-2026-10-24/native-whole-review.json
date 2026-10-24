@@ -1,0 +1,94 @@
+{
+  "schema": "hanja-authored-HK-whole-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "竪",
+  "providerRoot": "hkcs_m7aea",
+  "localArtifactTag": "u7aea-hkcs",
+  "observedBy": "ROOT",
+  "status": "REJECT-this-new-HK-whole-macro-source",
+  "catalogStrokes": 13,
+  "domesticClips": 13,
+  "rawGroups": 16,
+  "drawingCalls": 16,
+  "sourcePolygons": 27,
+  "sourceProvenance": "Three-record mixed-date provider closure preserved; no historical archive restoration claimed.",
+  "pins": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u7aea-hkcs-2026-10-24/config.json",
+      "SHA256": "cad4b01e8b3041b1de119eab6c120f1f6067a47118feea86e6c2aa2f8ae7d2c6"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "f34a93934799b2380a544243ebafe61bde39321bd5a4ced7f3176f0385009290"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u7aea-hkcs-2026-10-24/engine-whole-u7aea-hkcs.json",
+      "SHA256": "536d7954a717e614d677633e8c5fa9cdffa79236109070ce699660c5683461ae"
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u7aea-hkcs-2026-10-24/capture.json",
+      "SHA256": "c68097c4347a4029ef3483d1a8011c4d1c96521b75e7e5a56ca38eeb841ae56f"
+    },
+    "closure": {
+      "path": "docs/hanja-source-alternative-u7aea-hkcs-2026-10-24/sources.json",
+      "SHA256": "598ea80cd5e08b08a58b8edcf99bef7674abdfa7c447cf3fcfa5f2d837cf2a17"
+    }
+  },
+  "scope": {
+    "freshActualScreens": 2,
+    "macroOnly": true,
+    "wholeGlyphsFullVisible": true,
+    "innerHeight": 1280,
+    "domestic": {
+      "width": 520,
+      "top": 276.703125,
+      "bottom": 796.703125
+    },
+    "source": {
+      "width": 520,
+      "top": 748.03125,
+      "bottom": 1268.03125
+    },
+    "filledGeometryGapDirectlyObserved": true,
+    "guideEndpointOnlyInference": false,
+    "newTemporalObservations": 0
+  },
+  "findings": {
+    "location": "inner left curved dot inside lower 立 component",
+    "domestic": "Filled stroke connects to upper and lower horizontals.",
+    "source": "Filled dot begins below upper H and ends above lower H, leaving visible white gaps on both sides.",
+    "decision": "This newly captured HK whole does not resolve the old dot/bar HOLD; reject this candidate.",
+    "clockOrGuideCannotJustifyBridgeWhereOriginalPIsAbsent": true,
+    "sourceBridgeAuthorized": false,
+    "sourceGeometryChangeAuthorized": false,
+    "fontWeightOnlyMismatchClaimed": false
+  },
+  "limitations": {
+    "thisHKCaseOnly": true,
+    "otherSourcesImpossibleClaimed": false,
+    "oldBaseEvidencePreservedSeparately": true,
+    "raw16DoesNotApproveLogical13": true
+  },
+  "approval": {
+    "wholeFormCompatible": false,
+    "sourceGroupingApproved": false,
+    "newMotionApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "productionImportAllowed": false
+  },
+  "server": {
+    "PID": 27054,
+    "session": 90115,
+    "port": 59412,
+    "stopped": true,
+    "exitCode": 130,
+    "tab": 102,
+    "tabClosed": true
+  },
+  "sourceGeometryChanged": false,
+  "sourceProjection": 0,
+  "engineReplay": 0,
+  "sharedToolsChangedByRecord": false,
+  "privateMediaSaved": false
+}

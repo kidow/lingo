@@ -145,6 +145,34 @@ def validate_exact_hkcs_m5aa4_capture(config,label,spec,path):
     require(len(groups)==len(trace)==14 and sum(map(len,trace))==16 and all(g['raw'][0]!=0 and len(g['polygons'])>0 and len(trace[i])>0 for i,g in enumerate(groups)),'no hidden or fabricated empty source rows')
     require([len(g['polygons'])for g in groups]==spec['polygonCounts'] and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace],'original raw/trace/P correspondence required')
 
+def validate_exact_hkcs_m7aea_capture(config,label,spec,path):
+    # One newly captured authored 竪 provider; no Unicode alias or broad root exception.
+    require(config['glyph']=='竪' and ord(config['glyph'])==0x7aea and config['catalogStrokes']==13 and list(config['sourceRoots'])==['selected'] and label=='selected' and config['sourceRoots']['selected']==spec,'exact isolated 竪 HK source required')
+    require(set(spec)=={'root','file','fileSHA256','proofKeys','proofKind','sourceProofIdentity','rawGroups','drawingCalls','polygonCounts','polygons'},'exact 竪 HK source fields required')
+    file='docs/hanja-actual-engine-capture-u7aea-hkcs-2026-10-24/engine-whole-u7aea-hkcs.json'
+    capture_file='docs/hanja-actual-engine-capture-u7aea-hkcs-2026-10-24/capture.json'
+    closure_file='docs/hanja-source-alternative-u7aea-hkcs-2026-10-24/sources.json'
+    pin='536d7954a717e614d677633e8c5fa9cdffa79236109070ce699660c5683461ae'
+    capture_pin='c68097c4347a4029ef3483d1a8011c4d1c96521b75e7e5a56ca38eeb841ae56f'
+    closure_pin='598ea80cd5e08b08a58b8edcf99bef7674abdfa7c447cf3fcfa5f2d837cf2a17'
+    require(spec['root']=='hkcs_m7aea' and spec['file']==file and spec['fileSHA256']==pin and path==pinned_path(file),'exact 竪 provider and original artifact filename/pin required')
+    require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and spec['sourceProofIdentity']=={'sourceRoot':'hkcs_m7aea','sourceProofFile':'engine-whole-u7aea-hkcs.json','sourceProofFileSha256':pin},'exact 竪 source full5 and identity3 required')
+    require(config['inputSHA256'].get(file)==pin and config['inputSHA256'].get(capture_file)==capture_pin and config['inputSHA256'].get(closure_file)==closure_pin,'whole/capture/closure pins required')
+    raw=path.read_bytes();capture_raw=pinned_path(capture_file).read_bytes();closure_raw=pinned_path(closure_file).read_bytes()
+    require(digest(raw)==pin and digest(capture_raw)==capture_pin and digest(closure_raw)==closure_pin,'original 竪 bytes changed')
+    proof,capture,closure=json.loads(raw),json.loads(capture_raw),json.loads(closure_raw)
+    require(capture['glyph']=='竪' and capture['providerRoot']=='hkcs_m7aea' and capture['localArtifactTag']=='u7aea-hkcs' and capture['localArtifactTagIsProviderRoot'] is False,'provider/local tag must remain distinct')
+    source=capture['source']
+    require(source['closureFile']==closure_file and source['closureSHA256']==closure_pin and source['records']==closure['records'] and source['recordNames']==['hkcs_m7aea','hkcs_m7acb-p04-s01','hkcs_m81e4-p03-s00'] and source['versions']==[['hkcs_m7aea',3],['hkcs_m7acb-p04-s01',1],['hkcs_m81e4-p03-s00','3']] and source['missing']==[],'exact three-record/version closure required')
+    require(source['mixedDateProviderClosure'] is True and source['historicalArchiveRestoration'] is False and source['singleAsOfDateClaimed'] is False and source['originalDataChanged'] is False and source['sourcePartsSubstituted'] is False,'mixed observation provenance must remain explicit')
+    require(capture['capture']['engineBuhinRoot']=='hkcs_m7aea' and capture['capture']['actualMakeGlyphCalls']==1 and capture['capture']['oldBaseOrOtherVariantReplay']==0 and capture['capture']['aliasInsertedIntoEngine'] is False and capture['capture']['originalMetadataNotRemoved'] is True,'actual new HK capture only; no alias or deletion')
+    require(sorted(proof)==FIVE and proof['engineRevision']=='49232bac0348fe815f4200d4116ab7917e0db47f' and proof['engineHashes']==capture['engine']['actualLoadedHashes'] and len(proof['engineHashes'])==8,'original full5 fixed engine required')
+    require((spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(16,16,27) and spec['polygonCounts']==[2,1,1,1,2,1,1,2,1,2,2,2,2,2,3,2],'actual16raw16calls27P required, not logical13 approval')
+    groups,trace=proof['groups'],proof['trace']
+    require(len(groups)==len(trace)==16 and sum(map(len,trace))==16 and all(g['raw'][0]!=0 and len(g['polygons'])>0 and len(trace[i])>0 for i,g in enumerate(groups)),'no hidden or fabricated empty source rows')
+    require(sum(g['raw'][0]==101 for g in groups)==4,'original four type101 rows required')
+    require([len(g['polygons'])for g in groups]==spec['polygonCounts'] and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace],'original raw/trace/P correspondence required')
+
 def validate_original_full5_u727c(config,label,spec,path):
     # One pinned original full5 with its actual zero-draw raw4; no general sparse-source exemption.
     require(config['glyph']=='牼' and config['catalogStrokes']==11 and list(config['sourceRoots'])==['selected'] and label=='selected' and config['sourceRoots']['selected']==spec,'exact isolated 牼 comparison required')
@@ -222,8 +250,10 @@ def main():
         if original_hkcs_m85a9:validate_exact_hkcs_m85a9_capture(config,label,spec,pinned_path(spec['file']))
         original_hkcs_m5aa4=(config['glyph']=='媤' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m5aa4')
         if original_hkcs_m5aa4:validate_exact_hkcs_m5aa4_capture(config,label,spec,pinned_path(spec['file']))
-        require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4),'original root identity required')
-        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4)and hexsha(spec['fileSHA256']),'actual whole file required')
+        original_hkcs_m7aea=(config['glyph']=='竪' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m7aea')
+        if original_hkcs_m7aea:validate_exact_hkcs_m7aea_capture(config,label,spec,pinned_path(spec['file']))
+        require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea),'original root identity required')
+        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea)and hexsha(spec['fileSHA256']),'actual whole file required')
         if bound_body:validate_original_empty_body3(spec,path)
         elif spec['proofKind']=='selected-body3-only':validate_exact_u6f7e_body3(config,label,spec,path)
         elif spec['proofKind']=='actual-full8-u7cbb-direct':validate_original_full8_u7cbb(spec,path)
