@@ -6,16 +6,38 @@ import {makeReviewedU7228SourceContext,reviewedU7228Context,reviewedU7228Policy,
 const f=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u7228-vs0-2026-10-25/fixtures.json',import.meta.url),'utf8')).u7228_ue0100
 const clone=<T>(v:T):T=>JSON.parse(JSON.stringify(v))
 const targets=[[1,1],[11,2],[14,1],[15,2],[18,1],[19,1],[22,1],[23,1],[25,1],[26,1],[27,1],[28,1],[29,1],[30,1]]
-test('爨 exact body3 selects only fourteen original curve masks and rejects altered inputs',()=>{
+test('爨 exact body3 selects only fifteen original curve masks and rejects altered inputs',()=>{
  const ctx=makeReviewedU7228SourceContext(f.fullProof,f.identity,f.strokes);assert.ok(ctx);assert.equal(ctx,reviewedU7228Context(f.strokes))
  assert.deepEqual(Object.keys(f.fullProof).sort(),['defaults','groups','trace'])
- for(let p=0;p<30;p++)for(let m=0;m<f.strokes[p].length;m++){const policy=reviewedU7228Policy(ctx,p,m);assert.equal(!!policy,targets.some(([a,b])=>a===p+1&&b===m+1));if(policy){assert.deepEqual(policy.segment,f.strokes[p][m]);assert.equal(policy.certificate.initialArcMax,7);assert.equal(policy.certificate.syntax,p===10?'ML':'MQ')}}
+ for(let p=0;p<30;p++)for(let m=0;m<f.strokes[p].length;m++){const policy=reviewedU7228Policy(ctx,p,m);assert.equal(!!policy,targets.some(([a,b])=>a===p+1&&b===m+1)||(p===1&&m===0));if(policy){assert.deepEqual(policy.segment,f.strokes[p][m]);assert.equal(policy.certificate.initialArcMax,7);assert.equal(policy.certificate.syntax,p===1||p===10?'ML':'MQ')}}
  assert.equal(makeReviewedU7228SourceContext({...f.fullProof,engineRevision:'synthetic'},f.identity,f.strokes),null)
  const identity=clone(f.identity);identity.sourceRoot='foreign';assert.equal(makeReviewedU7228SourceContext(f.fullProof,identity,f.strokes),null)
  const getter=clone(f.fullProof);Object.defineProperty(getter,'groups',{enumerable:true,get(){throw Error('must not invoke getter')}});assert.equal(makeReviewedU7228SourceContext(getter,f.identity,f.strokes),null)
  for(const field of ['outline','revealPath','revealWidth','weight']){const strokes=clone(f.strokes);strokes[10][1][field]=typeof strokes[10][1][field]==='number'?strokes[10][1][field]+1:strokes[10][1][field]+' ';assert.equal(reviewedU7228Context(strokes),null)}
  const elsewhere=clone(f.strokes);elsewhere[1][0].weight+=1;assert.equal(reviewedU7228Context(elsewhere),null)
  assert.equal(REVIEWED_U7228_SOURCE.nativeApproval,false);assert.equal(REVIEWED_U7228_SOURCE.runtimeApplied,false)
+})
+
+test('爨 added second original ML has a strict full-P capsule and zero initial area',()=>{
+ const ctx=makeReviewedU7228SourceContext(f.fullProof,f.identity,f.strokes),policy=reviewedU7228Policy(ctx,1,0)!,s=f.strokes[1][0],none={measurement:null,guide:null,startCap:null,endCap:null,ink:null}
+ assert.equal(policy.certificate.syntax,'ML');assert.equal(policy.mask,1)
+ assert.equal(commitReviewedU7228Caps(policy,s,0,'own',none).status,'empty');assert.equal(commitReviewedU7228Caps(policy,s,1,'own',none).status,'complete')
+ for(const p of [Number.EPSILON,1e-15,1e-10,.01,.03]){const d=measurement(policy,p),frame=measureReviewedU7228Frame(policy,s,p,d.guide);assert.equal(frame.rho,Math.min(7,frame.d));if(p<=1e-10)assert(14*frame.d+2*Math.PI*frame.d**2<1.5e-7)}
+ const code=String.raw`
+from pathlib import Path
+from fractions import Fraction as F
+import json,re,hashlib
+b=Path.cwd();proof=json.loads((b/'docs/hanja-source-original-u7228-vs0-2026-10-25/independent-initial-caps-proof.json').read_text());f=json.loads((b/proof['fixture']).read_text())['u7228_ue0100'];s=f['strokes'][1][0];c=proof['additionalMLCertificate'];cov=proof['additionalMLFullCoverageCertificate'];n=list(map(F,re.findall(r'-?\d+(?:\.\d+)?',s['revealPath'])));q0,q1=n[:2],n[2:];v=[q1[i]-q0[i]for i in [0,1]];L2=sum(x*x for x in v);assert L2==F(c['lineSquared'])>49
+assert hashlib.sha256(json.dumps(s,separators=(',',':')).encode()).hexdigest()==c['maskSHA256']
+p=list(map(F,re.findall(r'-?\d+(?:\.\d+)?',s['outline'])));poly=[tuple(p[i:i+2])for i in range(0,len(p),2)]
+def cross(a,b,c):return(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0])
+assert all(cross(poly[i],poly[(i+1)%4],poly[(i+2)%4])>0 for i in range(4))
+for pt,row in zip(poly,cov['originalVertices']):
+ t=max(F(0),min(F(1),sum((pt[i]-q0[i])*v[i]for i in [0,1])/L2));margin=49-sum((pt[i]-q0[i]-t*v[i])**2 for i in [0,1]);assert list(map(str,pt))==row['vertex'] and t==F(row['centerT']) and margin==F(row['radiusSquaredMargin'])>0
+assert c['initialSufficientConditions'] and cov['strictFullPContained'] and not proof['nativeApproval']
+print('새 원ML 2m1 초기조건·전체 원P capsule 증명 PASS')
+`
+ const r=spawnSync('python3',['-c',code],{cwd:new URL('..',import.meta.url),encoding:'utf8',timeout:30000});assert.equal(r.status,0,r.stdout+r.stderr)
 })
 function measurement(policy:NonNullable<ReturnType<typeof reviewedU7228Policy>>,progress:number){
  const style={transform:'none',filter:'none',clipPath:'none',visibility:'visible',display:'inline',opacity:'1',fillOpacity:'1',stroke:'none',fill:'black',fillRule:'nonzero',strokeDasharray:'none',getPropertyValue:()=> 'none'}

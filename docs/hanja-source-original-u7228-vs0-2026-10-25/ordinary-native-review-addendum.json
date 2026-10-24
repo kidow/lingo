@@ -1,0 +1,29 @@
+{
+  "schema": "hanja-u7228-source-facts-addendum/v1",
+  "nativeRecord": "ordinary-native-review.json",
+  "nativeRecordCommit": "689e6f3d85eea0cf930ab62c13a07d16e4a3bef9",
+  "originalObservedClassificationPreserved": { "clearHOLD": 48, "pending": 66, "finitePASS": 0, "wholePASSSeparate": 1 },
+  "basis": "pending-source-facts.json",
+  "finding": "기존 pending66을 새 원P 사실로 분류. 새 화면 관찰이 아니며 기존 root native 기록과 관찰핀은 변경하지 않음",
+  "newSourceHOLD": {
+    "samples": 9,
+    "targets": ["2m1", "6m2", "9m2"],
+    "samplesEach": 3,
+    "2m1": "고정 radius7 시작cap 안의 원P 양수면적 사각형이 완료1획 원P 밖에 있으므로 p→0에서도 새 잉크가 남음",
+    "6m2_9m2": "원bounds Yprefix의 양수면적 초기 corner와 실제 완료H 사이에 엄격한 Ygap 존재"
+  },
+  "unchangedSourcePrefixReuseCandidates": {
+    "masks": 17,
+    "samples": 51,
+    "fact": "별도 논리획의 원P 축prefix는 면적0에서 시작하고 모든 내부 frontier가 단일 양수단면. 완료 원P와 원문 방향 보존. 다른 pen의 P와 초기접촉은 강제하지 않음",
+    "nativePASSNewlyClaimed": false
+  },
+  "unchangedBoundaryPending": { "pens": [6, 9], "samples": 6, "status": "새 contact-Yband 후보가 준비되면 변경 범위로 검토" },
+  "candidateChanges": { "originalGrowingCaps": 15, "contactYBandPending": ["6m2", "9m2"], "nativeApproved": false },
+  "originalDirection90Replayed": 0,
+  "originalWholeFiveReplayed": 0,
+  "static30Replayed": 0,
+  "actual114Replayed": 0,
+  "runtimeApplied": false,
+  "allTimeProof": false
+}
