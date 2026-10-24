@@ -234,6 +234,38 @@ def validate_exact_hkcs_m85aa_capture(config,label,spec,path):
     require(len(groups)==len(trace)==17 and sum(map(len,trace))==18 and all(g['raw'][0]!=0 and len(g['polygons'])>0 and len(trace[i])>0 for i,g in enumerate(groups)),'all original17 drawing rows without empty or fabricated rows required')
     require([len(g['polygons'])for g in groups]==spec['polygonCounts'] and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace],'original raw/trace/P correspondence changed')
 
+def validate_exact_hkcs_m7626_capture(config,label,spec,path):
+    # One authored 瘦 source only; catalog14 and dictionary15 remain separate facts.
+    require(config['glyph']=='瘦' and ord(config['glyph'])==0x7626 and config['catalogStrokes']==14 and config.get('dictionaryPlaybackStrokes')==15 and list(config['sourceRoots'])==['selected'] and label=='selected' and config['sourceRoots']['selected']==spec,'exact isolated 瘦 HK catalog14/dictionary15 source required')
+    require(set(spec)=={'root','file','fileSHA256','proofKeys','proofKind','sourceProofIdentity','rawGroups','drawingCalls','polygonCounts','polygons'},'exact 瘦 HK source fields required')
+    file='docs/hanja-actual-engine-capture-u7626-hkcs-2026-10-24/engine-whole-u7626-hkcs.json'
+    capture_file='docs/hanja-actual-engine-capture-u7626-hkcs-2026-10-24/capture.json'
+    closure_file='docs/hanja-source-alternative-u7626-hkcs-2026-10-24/sources.json'
+    pin='8fc24300a67ccd8ad2836ce31218aff2fe624751a641c11b37d674b79f761ff6'
+    capture_pin='d705ed14d3f26d63e3016e1559ae40f4f686f702c806465adb1286fc77d20dbd'
+    closure_pin='bce4db95c7b8c248edc8de507f8c379bf5bc5bc157f44351e6124560fd7af8c4'
+    require(spec['root']=='hkcs_m7626' and spec['file']==file and spec['fileSHA256']==pin and path==pinned_path(file),'exact original 瘦 provider/local artifact required')
+    require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and spec['sourceProofIdentity']=={'sourceRoot':'hkcs_m7626','sourceProofFile':'engine-whole-u7626-hkcs.json','sourceProofFileSha256':pin},'exact 瘦 full5 and identity3 required')
+    require(config['inputSHA256'].get(file)==pin and config['inputSHA256'].get(capture_file)==capture_pin and config['inputSHA256'].get(closure_file)==closure_pin,'whole/capture/closure pins required')
+    require(config['domestic']=={'url':'http://img.e-hanja.kr/hanjaSvg/aniSVG/7600/7626.svg','status':200,'bytes':7181,'sha256':'5b34d06b90fe5c959a3afe2d5dd94487f9c34f6f68d088c29fef6ebfc8b11b39','clips':15,'glyph':'瘦','privateMediaSaved':False},'exact original dictionary15 media pin required')
+    raw=path.read_bytes();capture_raw=pinned_path(capture_file).read_bytes();closure_raw=pinned_path(closure_file).read_bytes()
+    require(digest(raw)==pin and digest(capture_raw)==capture_pin and digest(closure_raw)==closure_pin,'original 瘦 bytes changed')
+    proof,capture,closure=json.loads(raw),json.loads(capture_raw),json.loads(closure_raw)
+    require(capture['glyph']=='瘦' and capture['providerRoot']=='hkcs_m7626' and capture['localArtifactTag']=='u7626-hkcs' and capture['localArtifactTagIsProviderRoot'] is False,'provider and local artifact remain distinct')
+    source=capture['source'];names=['hkcs_m7626','hkcs_m7592-p05-s00','hkcs_m53df-p02-s00'];versions=[['hkcs_m7626',2],['hkcs_m7592-p05-s00','2'],['hkcs_m53df-p02-s00','2']]
+    require(source['closureFile']==closure_file and source['closureSHA256']==closure_pin and source['records']==closure['records'] and source['recordNames']==closure['recordNames']==names and source['versions']==closure['versions']==versions and source['missing']==[],'exact original three-record/version closure required')
+    require(source['mixedDateProviderClosure'] is True and source['historicalArchiveRestoration'] is False and source['singleAsOfDateClaimed'] is False and source['originalDataChanged'] is False and source['sourcePartsSubstituted'] is False and source['oldRootReacquired'] is False,'mixed-date provenance and preserved root required')
+    provenance=closure['provenance']
+    require(provenance['mixedDateProviderClosure'] is True and provenance['historicalArchiveRestoration'] is False and provenance['singleAsOfDateClaimed'] is False and provenance['preservedExisting']['refetched'] is False and provenance['preservedExisting']['recordNames']==names[:1],'exact separate-date source provenance required')
+    require([r['query'] for r in provenance['newRecords']]==['hkcs_m7592-p05-s00@2','hkcs_m53df-p02-s00@2'] and all(type(r['observedAt']) is str and re.fullmatch(r'\d{4}-\d{2}-\d{2}T[0-9:.]+Z',r['observedAt']) and r['unversionedMatchesExplicitVersion'] is True for r in provenance['newRecords']),'only observed pinned new children/date evidence required')
+    require(capture['capture']['engineBuhinRoot']=='hkcs_m7626' and capture['capture']['actualMakeGlyphCalls']==1 and capture['capture']['oldBaseOrOtherVariantReplay']==0 and capture['capture']['aliasInsertedIntoEngine'] is False,'one new original provider capture required')
+    require(capture['output']['approvedLogicalPens'] is None and capture['output']['nonDrawingRawRows']==[] and capture['output']['catalogStrokes']==14 and capture['output']['existingDomesticClips']==15 and capture['output']['catalogDomesticCountConflictResolved'] is False,'catalog14/dictionary15/raw17 independent counts required')
+    require(sorted(proof)==FIVE and proof['engineRevision']=='49232bac0348fe815f4200d4116ab7917e0db47f' and proof['engineHashes']==capture['engine']['actualLoadedHashes'] and len(proof['engineHashes'])==8,'complete original fixed-engine full5 required')
+    require((spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(17,18,32) and spec['polygonCounts']==[2,2,3,2,3,3,1,2,2,1,2,1,1,2,1,2,2],'original17raw18calls32P required')
+    groups,trace=proof['groups'],proof['trace']
+    require(len(groups)==len(trace)==17 and sum(map(len,trace))==18 and all(g['raw'][0]!=0 and len(g['polygons'])>0 and len(trace[i])>0 for i,g in enumerate(groups)),'all original17 drawing rows without empty or fabricated rows required')
+    require([len(g['polygons'])for g in groups]==spec['polygonCounts'] and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace],'original raw/trace/P correspondence changed')
+
 def validate_original_full5_u727c(config,label,spec,path):
     # One pinned original full5 with its actual zero-draw raw4; no general sparse-source exemption.
     require(config['glyph']=='牼' and config['catalogStrokes']==11 and list(config['sourceRoots'])==['selected'] and label=='selected' and config['sourceRoots']['selected']==spec,'exact isolated 牼 comparison required')
@@ -294,6 +326,8 @@ def main():
     config_bytes=config_path.read_bytes();require(len(config_bytes)<=65536 and digest(config_bytes)==args.config_sha,'config SHA changed')
     config=json.loads(config_bytes)
     keys={'schema','glyph','catalogStrokes','sourceViewBox','defaultSource','sourceRoots','domestic','inputSHA256','holdSummary','launcherSHA256','sharedServe','noPartialAnimation','nativeApproval','runtimeApplied','guardMode','host','layoutMode'}
+    original_hkcs_m7626_config=(type(config)is dict and config.get('glyph')=='瘦' and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['selected'] and type(config['sourceRoots']['selected'])is dict and config['sourceRoots']['selected'].get('root')=='hkcs_m7626')
+    if original_hkcs_m7626_config:keys.add('dictionaryPlaybackStrokes')
     require(type(config)is dict and set(config)==keys and config['schema']=='hanja-shared-static-raw-compare/v1','exact config fields required')
     require(type(config['glyph'])is str and len(config['glyph'])==1 and type(config['catalogStrokes'])is int and 1<=config['catalogStrokes']<=128,'glyph/count required')
     require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']=='stacked520-css-only','original source/local host required')
@@ -317,8 +351,10 @@ def main():
         if original_hkcs_m9ad3:validate_exact_hkcs_m9ad3_capture(config,label,spec,pinned_path(spec['file']))
         original_hkcs_m85aa=(config['glyph']=='薪' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m85aa')
         if original_hkcs_m85aa:validate_exact_hkcs_m85aa_capture(config,label,spec,pinned_path(spec['file']))
-        require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa),'original root identity required')
-        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa)and hexsha(spec['fileSHA256']),'actual whole file required')
+        original_hkcs_m7626=(config['glyph']=='瘦' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m7626')
+        if original_hkcs_m7626:validate_exact_hkcs_m7626_capture(config,label,spec,pinned_path(spec['file']))
+        require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa or original_hkcs_m7626),'original root identity required')
+        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa or original_hkcs_m7626)and hexsha(spec['fileSHA256']),'actual whole file required')
         if bound_body:validate_original_empty_body3(spec,path)
         elif spec['proofKind']=='selected-body3-only':validate_exact_u6f7e_body3(config,label,spec,path)
         elif spec['proofKind']=='actual-full8-u7cbb-direct':validate_original_full8_u7cbb(spec,path)
@@ -330,7 +366,8 @@ def main():
         if original_u7d8c:validate_original_full5_u7d8c(config,label,spec,path)
         require(type(spec['rawGroups'])is int and 1<=spec['rawGroups']<=128 and type(spec['drawingCalls'])is int and ((not bound_body and (spec['drawingCalls']>=spec['rawGroups'] or original_u727c or original_u7d8c or original_hkcs_m84d1))or(bound_body and spec['rawGroups']==24 and spec['drawingCalls']==23)),'raw/call counts required')
         require(type(spec['polygonCounts'])is list and len(spec['polygonCounts'])==spec['rawGroups']and all(type(n)is int and n>=0 for n in spec['polygonCounts'])and type(spec['polygons'])is int and sum(spec['polygonCounts'])==spec['polygons'],'original polygon counts required')
-    domestic=config['domestic'];require(type(domestic)is dict and set(domestic)=={'url','status','bytes','sha256','clips','glyph','privateMediaSaved'}and domestic['glyph']==config['glyph']and domestic['status']==200 and domestic['clips']==config['catalogStrokes']and domestic['privateMediaSaved']is False and type(domestic['bytes'])is int and 0<domestic['bytes']<=1048576 and hexsha(domestic['sha256']),'pinned domestic metadata required')
+    dictionary_count=config['dictionaryPlaybackStrokes'] if original_hkcs_m7626_config else config['catalogStrokes']
+    domestic=config['domestic'];require(type(domestic)is dict and set(domestic)=={'url','status','bytes','sha256','clips','glyph','privateMediaSaved'}and domestic['glyph']==config['glyph']and domestic['status']==200 and domestic['clips']==dictionary_count and domestic['privateMediaSaved']is False and type(domestic['bytes'])is int and 0<domestic['bytes']<=1048576 and hexsha(domestic['sha256']),'pinned domestic metadata required')
     require(type(domestic['url'])is str and re.fullmatch(r'http://img\.e-hanja\.kr/hanjaSvg/aniSVG/[0-9A-Fa-f]{4}/[0-9A-Fa-f]{4,6}\.svg',domestic['url'])is not None and domestic['url'].rsplit('/',1)[-1].lower()==format(ord(config['glyph']),'x')+'.svg','fixed domestic source only')
     require(type(config['inputSHA256'])is dict and all(type(p)is str and hexsha(h)for p,h in config['inputSHA256'].items()),'input pins required')
     for spec in roots.values():
@@ -345,7 +382,7 @@ def main():
     # Main guard prevents HTTP, source projection or dictionary access during import.
     spec=importlib.util.spec_from_file_location('hanja_static_raw_shared',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared)
     require(shared.FETCH_COUNT==0 and callable(shared.main)and callable(shared.load_sources),'unchanged shared entry contract required')
-    shared.CONFIG=config;shared.HERE=config_path.parent;shared.ROOT=ROOT
+    shared.CONFIG={**config,'catalogStrokes':dictionary_count} if original_hkcs_m7626_config else config;shared.HERE=config_path.parent;shared.ROOT=ROOT
     # Complete original eight-key proof is returned unchanged; old full5/body3 path stays original.
     if any(item['proofKind']=='actual-full8-u7cbb-direct'for item in roots.values()):
         require(config['glyph']=='粻' and config['catalogStrokes']==14 and list(roots)==['selected'],'exact isolated 粻 full8 comparison only')
@@ -365,7 +402,7 @@ def main():
     shared.page=stacked_page
     if args.check_only:
         sources=shared.load_sources();require(shared.FETCH_COUNT==0,'preparation cannot fetch domestic media')
-        print(json.dumps({'guardMode':config['guardMode'],'sharedFunctionCopies':0,'roots':list(sources),'domesticCount':config['catalogStrokes'],'raw':{k:len(p['groups'])for k,p in sources.items()},'HTTP':0,'server':0,'sourceCompiler':0,'engine':0,'projection':0,'nativeApproval':False}));return
+        print(json.dumps({'guardMode':config['guardMode'],'sharedFunctionCopies':0,'roots':list(sources),'domesticCount':dictionary_count,'raw':{k:len(p['groups'])for k,p in sources.items()},'HTTP':0,'server':0,'sourceCompiler':0,'engine':0,'projection':0,'nativeApproval':False}));return
     original_argv=sys.argv
     try:
         sys.argv=[str(pinned_path(SHARED)),'--port',str(args.port)]
