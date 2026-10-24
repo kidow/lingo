@@ -1,0 +1,221 @@
+{
+  "schema": "hanja-actual-component-revised-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "褐",
+  "providerRoot": "u8910",
+  "observer": "/root",
+  "status": "ROOT finite102, natural16 snapshots and exactwhole13 PASS; individual variant registration pending",
+  "inputs": {
+    "scripts/hanja-actual-component-review.mjs": "6ad28af9d9e2c535a8a6575d51467267a0504f681b8c3a6c3a3726e19f7a7972",
+    "components/hanja/stroke-outlines.tsx": "503f1af396d0f88e3015a0e4ee7b8daf24b2491f564671c19d8f9a56d41b6114",
+    "lib/hanja-strokes.ts": "2768906f7359dae241026e4ff0a6dd305faa3706ecb95680db369c6c7b949fc3",
+    "docs/hanja-actual-component-profiles-2026-10-22/u8910-8.json": "2297131d2200109c7670f5dcbf0e739f9f43612365afe3137744b6dedb943b88"
+  },
+  "source": {
+    "catalogStrokes": 14,
+    "playbackStrokes": 13,
+    "geometrySHA256": "f9f1d130e335a7f8ebdcbff5fc69b264c9ab14d4404d5d17f128fe15effa0a35",
+    "originalPathsGuidesWidthsWeightsUnchanged": true
+  },
+  "finite": {
+    "fresh": 7,
+    "reused": 95,
+    "total": 102,
+    "pass": 102,
+    "hold": 0,
+    "retries": {
+      "targetEpsilon": [
+        {
+          "pen": 7,
+          "mask": 2,
+          "local": 0.000001
+        },
+        {
+          "pen": 11,
+          "mask": 2,
+          "local": 0.000001
+        }
+      ],
+      "boundaryPlus": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          13,
+          2
+        ]
+      ],
+      "allSevenScreensPass": true
+    },
+    "reuse": {
+      "revision7Passed": 41,
+      "unchangedCaps": 24,
+      "unchangedOrdinary": 30,
+      "unchangedSourceAndSuccessfulBranches": true,
+      "noPreviouslySuccessfulFramesCountedFresh": true
+    },
+    "checksBad": [],
+    "errors": []
+  },
+  "precision": {
+    "sourceAttributeStringsExact": true,
+    "computedCSSAllowance": "max(1e-7 absolute original SVG parser allowance, six-significant-digit serialization allowance)",
+    "typedLengthsAndBBoxDiagnosticOnly": true,
+    "notSourceGeometryCorrection": true
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "retryRect": [
+      12,
+      968.015625,
+      220,
+      220
+    ],
+    "naturalAndWholeRect": [
+      12,
+      435.015625,
+      520,
+      520
+    ],
+    "allAcceptedTargetsFullyVisible": true
+  },
+  "natural": {
+    "scope": "eight actual mixed-mask natural runs; mid/end snapshots only",
+    "pens": [
+      2,
+      4,
+      5,
+      7,
+      10,
+      11,
+      12,
+      13
+    ],
+    "freshAcceptedSnapshots": 16,
+    "pass": 16,
+    "hold": 0,
+    "mid": [
+      {
+        "pen": 2,
+        "DOM": 0.4173624999880776,
+        "screenshot": 0.43193749998807834
+      },
+      {
+        "pen": 4,
+        "DOM": 0.41607499997615743,
+        "screenshot": 0.4306749999761596
+      },
+      {
+        "pen": 5,
+        "DOM": 0.4159499999761574,
+        "screenshot": 0.4305749999761574
+      },
+      {
+        "pen": 7,
+        "DOM": 0.4260999999761589,
+        "screenshot": 0.4406874999761567
+      },
+      {
+        "pen": 10,
+        "DOM": 0.4283749999761567,
+        "screenshot": 0.4439874999761596
+      },
+      {
+        "pen": 11,
+        "DOM": 0.42444999997616106,
+        "screenshot": 0.45472499997615523
+      },
+      {
+        "pen": 12,
+        "DOM": 0.4131249999821157,
+        "screenshot": 0.42769999998212005
+      },
+      {
+        "pen": 13,
+        "DOM": 0.42090000000000144,
+        "screenshot": 0.4354499999999971
+      }
+    ],
+    "ends": {
+      "allProgress": 1,
+      "mode": "natural-ended"
+    },
+    "continuousAllTimeProof": false,
+    "mixedRunSnapshots": true,
+    "excludedAttempts": [
+      {
+        "pen": 2,
+        "reason": "Combined mid/end wait timed out and output mid image was lost; accepted0. Actual end screenshot and separate mid replay later accepted2 unique snapshots.",
+        "acceptedSnapshots": 0
+      },
+      {
+        "pen": 4,
+        "reason": "Later .7 wait missed interval; accepted0 from that wait, then actual end screenshot PASS.",
+        "acceptedSnapshots": 0
+      }
+    ],
+    "checksBad": [],
+    "errors": []
+  },
+  "whole": {
+    "mode": "exact-prefix13",
+    "freshAcceptedScreens": 1,
+    "pass": true,
+    "checksBad": [],
+    "errors": []
+  },
+  "acceptedServer": {
+    "PID": 99247,
+    "port": 59412,
+    "sessionId": 54112,
+    "tab": 153,
+    "SSR": 1,
+    "CJS": 270,
+    "ESM": 270,
+    "engine": 0,
+    "sourceProjection": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "tabClosed": true
+  },
+  "history": {
+    "initialRevision2": "56PASS16HOLDfresh+30reuse; preserved in commit013675cdb",
+    "partialRecords": [
+      "docs/hanja-source-original-u8910-2026-10-24/revised-native-review-3.json",
+      "docs/hanja-source-original-u8910-2026-10-24/revised-native-review-4.json",
+      "docs/hanja-source-original-u8910-2026-10-24/revised-native-review-5.json",
+      "docs/hanja-source-original-u8910-2026-10-24/revised-native-review-6.json",
+      "docs/hanja-source-original-u8910-2026-10-24/revised-native-review-7.json"
+    ],
+    "partialAttemptsDoNotExpandFinalFiniteCount": true,
+    "failedOrTimedOutAttemptsNotApproved": true
+  },
+  "approval": {
+    "finiteNative": true,
+    "naturalSnapshots": true,
+    "wholeCompletion": true,
+    "individualVariantRegistrationApproved": false,
+    "runtimeApplied": false,
+    "actualAppUI": false,
+    "allTime": false
+  },
+  "actions": {
+    "build": false,
+    "fullProjectTypeCheck": false,
+    "push": false
+  }
+}

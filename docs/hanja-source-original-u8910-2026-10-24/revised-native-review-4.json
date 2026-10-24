@@ -1,0 +1,75 @@
+{
+  "schema": "hanja-actual-component-revised-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "褐",
+  "providerRoot": "u8910",
+  "observer": "/root",
+  "status": "revision4 read-only diagnostic confirmed Float32 bounding-box roundoff",
+  "inputs": {
+    "scripts/hanja-actual-component-review.mjs": "dbfcabb9d3118a40dfee304a44d53f82acb960898b00ee18da0414253870b756",
+    "components/hanja/stroke-outlines.tsx": "81a7774f4d99affc7038d08404cf5ff471ac41e9cb23e585a9d50577df64099f",
+    "docs/hanja-actual-component-profiles-2026-10-22/u8910-4.json": "19a75f9e64af9e2e48e43959f37f06317bb777d8e9df606f198a6ecdad8f486c"
+  },
+  "observed": {
+    "target": "u8910-source-p-2-2",
+    "states": [
+      0.5,
+      0.99999999
+    ],
+    "pass": 0,
+    "hold": 2,
+    "bad": [
+      "committed",
+      "metadata",
+      "visibility",
+      "paint"
+    ],
+    "errors": [],
+    "furtherScopeExecuted": 0,
+    "naturalSnapshots": 0,
+    "wholeScreens": 0,
+    "sourceAndPriorPrivateFrameAndSourceClipChecksPass": true,
+    "expectedFloat32X": 5.300000190734863,
+    "actualBBoxX": 5.299999713897705,
+    "sourceOfMismatch": "one Float32 ULP lower x in actual getBBox; y/width/height equal expectedFloat32",
+    "midBBox": [
+      5.299999713897705,
+      25.25,
+      34.29999923706055,
+      21.899999618530273
+    ],
+    "nearBBox": [
+      5.299999713897705,
+      23.5,
+      34.29999923706055,
+      43.79999923706055
+    ],
+    "typedBaseAndAnimatedAllFourExactFloat32": true,
+    "computedCSSAllWithinSerializationAllowance": true
+  },
+  "server": {
+    "PID": 73397,
+    "sessionId": 51545,
+    "port": 59412,
+    "tab": 145,
+    "SSR": 1,
+    "CJS": 270,
+    "ESM": 270,
+    "engine": 0,
+    "sourceProjection": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "tabClosed": true
+  },
+  "approval": {
+    "finiteNative": false,
+    "naturalSnapshots": false,
+    "wholeCompletion": false,
+    "runtimeApplied": false
+  },
+  "preservation": {
+    "sourceGeometryUnchanged": true,
+    "sourceEngineRerun": false,
+    "previousRevision2ScopeNotReplaced": true
+  }
+}

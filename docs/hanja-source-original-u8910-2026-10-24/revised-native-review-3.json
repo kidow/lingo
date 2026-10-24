@@ -1,0 +1,60 @@
+{
+  "schema": "hanja-actual-component-revised-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "褐",
+  "providerRoot": "u8910",
+  "observer": "/root",
+  "status": "revision3 first-target regression; further48 scope stopped",
+  "inputs": {
+    "scripts/hanja-actual-component-review.mjs": "3d342bf1310a138915a1103b71fe83bf962347313687b78cdc4d6f4a44c08a60",
+    "components/hanja/stroke-outlines.tsx": "81a7774f4d99affc7038d08404cf5ff471ac41e9cb23e585a9d50577df64099f",
+    "docs/hanja-actual-component-profiles-2026-10-22/u8910-3.json": "1e211591c90f469e6fb5d53edbd139c89d610042e2187942b156a3ebabfe3051"
+  },
+  "observed": {
+    "target": "u8910-source-p-2-2",
+    "states": [
+      0.5,
+      0.99999999
+    ],
+    "pass": 0,
+    "hold": 2,
+    "bad": [
+      "committed",
+      "metadata",
+      "visibility",
+      "paint"
+    ],
+    "errors": [],
+    "screenshot": "Both samples show only prior H; source-P DL hidden. Mid was visible in revision2.",
+    "furtherPlannedFreshFramesExecuted": 0,
+    "naturalSnapshots": 0,
+    "wholeScreens": 0
+  },
+  "diagnosis": {
+    "newGetBBoxStrictGateSuspected": true,
+    "actualBBoxResultNotYetAvailable": true,
+    "CUASanitizedDOMGetBBoxUnavailable": true,
+    "noSourceGeometryInference": true
+  },
+  "server": {
+    "PID": 69076,
+    "sessionId": 14683,
+    "port": 59412,
+    "tab": 144,
+    "stopped": true,
+    "exitCode": 130,
+    "tabClosed": true
+  },
+  "approval": {
+    "finiteNative": false,
+    "naturalSnapshots": false,
+    "wholeCompletion": false,
+    "runtimeApplied": false
+  },
+  "preservation": {
+    "previousRevision2Result": "56PASS16HOLDfresh+30reuse; source-P mid states previously PASS; not replaced by this two-frame attempt",
+    "sourceGeometryUnchanged": true,
+    "sourceEngineRerun": false,
+    "allTimeProof": false
+  }
+}

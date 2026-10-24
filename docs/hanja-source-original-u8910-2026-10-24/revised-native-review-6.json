@@ -1,0 +1,80 @@
+{
+  "schema": "hanja-actual-component-revised-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "褐",
+  "providerRoot": "u8910",
+  "observer": "/root",
+  "status": "revision6 native SVG typed-length parser mismatch; typed lengths are diagnostic only in subsequent revision",
+  "inputs": {
+    "scripts/hanja-actual-component-review.mjs": "cce9c6f754cf9662491c484a4625beecff0b48098b4b0d4fd76fa9a81278fa2a",
+    "components/hanja/stroke-outlines.tsx": "84054a1157b546248fef882ce819fbb90fe40a6aeb528382081e54354bf9cc61",
+    "docs/hanja-actual-component-profiles-2026-10-22/u8910-6.json": "670d09a339e66e86549d5ba8a9857649eb4cfbb76d5ba22ffa88ddd4fd622f6f"
+  },
+  "observed": {
+    "target": "u8910-source-p-2-2",
+    "states": [
+      0.000001,
+      0.01,
+      0.03
+    ],
+    "pass": 1,
+    "hold": 2,
+    "passStates": [
+      0.000001
+    ],
+    "holdStates": [
+      0.01,
+      0.03
+    ],
+    "bad": [
+      "committed",
+      "metadata",
+      "visibility",
+      "paint"
+    ],
+    "errors": [],
+    "furtherScopeExecuted": 0,
+    "naturalSnapshots": 0,
+    "wholeScreens": 0,
+    "sourceAttributesAndPriorChecksPass": true,
+    "computedCSSAllWithinSerializationAllowance": true,
+    "typedParserCases": [
+      {
+        "local": 0.01,
+        "field": "height",
+        "expected": 0.4379999999999953,
+        "expectedFloat32": 0.43799999356269836,
+        "actualBase": 0.4379999041557312,
+        "actualAnimated": 0.4379999041557312
+      },
+      {
+        "local": 0.03,
+        "field": "height",
+        "expected": 1.313999999999993,
+        "expectedFloat32": 1.3140000104904175,
+        "actualBase": 1.313999891281128,
+        "actualAnimated": 1.313999891281128
+      }
+    ]
+  },
+  "server": {
+    "PID": 85952,
+    "sessionId": 49497,
+    "port": 59412,
+    "tab": 150,
+    "stopped": true,
+    "exitCode": 130,
+    "tabClosed": true
+  },
+  "approval": {
+    "finiteNative": false,
+    "naturalSnapshots": false,
+    "wholeCompletion": false,
+    "runtimeApplied": false
+  },
+  "preservation": {
+    "sourceGeometryUnchanged": true,
+    "sourceEngineRerun": false,
+    "previousRevision2ScopeNotReplaced": true
+  }
+}

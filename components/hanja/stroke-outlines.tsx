@@ -1249,6 +1249,14 @@ function U8910CapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU8910
  </g>
 }
 
+function u8910RectGeometryMatches(rect:SVGRectElement,expected:Readonly<{x:number;y:number;width:number;height:number}>,view:Window){
+ try{
+  const keys=['x','y','width','height'] as const
+  const style=view.getComputedStyle(rect)
+  return keys.every(k=>{const text=style.getPropertyValue(k).trim(),value=Number.parseFloat(text),want=expected[k];if(!/^-?(?:\d*\.?\d+)(?:e[+-]?\d+)?px$/i.test(text)||!Number.isFinite(value)||!Number.isFinite(want))return false;const rounding=Math.max(1e-7,5*10**(Math.floor(Math.log10(Math.abs(want)||1))-6)),noise=32*Number.EPSILON*Math.max(1,Math.abs(want));return Math.abs(value-want)<=rounding+noise})
+ }catch{return false}
+}
+
 function U8910SourcePOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU8910SourcePPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
  const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
  let frame:ReturnType<typeof sampleReviewedU8910SourcePFrame>|null=null
@@ -1266,7 +1274,7 @@ function U8910SourcePOutline({policy,segment,progress,previousMaskProgress,clipI
    const b=segment.bounds,expected=f.clip??{x:b[0],y:b[1],width:b[2]-b[0],height:0}
    if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
    for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
-   const rp=view.getComputedStyle(r);if(rp.stroke!=='none'||rp.fill==='none'||rp.fill==='transparent'||Number(rp.fillOpacity)!==1||rp.visibility!=='visible'||rp.display==='none')return false;for(const k of['x','y','width','height']){const v=parseFloat(rp.getPropertyValue(k));if(!Number.isFinite(v)||Math.abs(v-expected[k as keyof typeof expected])>1e-9)return false}
+   const rp=view.getComputedStyle(r);if(rp.stroke!=='none'||rp.fill==='none'||rp.fill==='transparent'||Number(rp.fillOpacity)!==1||rp.visibility!=='visible'||rp.display==='none')return false;if(!u8910RectGeometryMatches(r,expected,view))return false
    const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(f.originalPDirect?paint.clipPath==='none':paint.clipPath.includes(key))&&(progress===0||previousComplete())
   }
   if(!stable())return reset
