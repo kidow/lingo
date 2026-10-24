@@ -1,0 +1,162 @@
+{
+  "schema": "hanja-own-short-quarter-caps-source-proof/v1",
+  "glyph": "鼈",
+  "root": "u9f08",
+  "source": {
+    "path": "docs/hanja-source-original-u9f08-2026-10-24/fixtures.json",
+    "SHA256": "2429c5557e056c72da95208953c67ea71c9c011588c0b514f872bb48f9a26e05",
+    "geometrySHA256": "a00876552fed6d4f6d033055935cbf7d99724f779aa4ebf33c4d3f7264ff230a"
+  },
+  "contextModule": {
+    "path": "lib/hanja-stroke-start-caps-u9f08.ts",
+    "SHA256": "0e4c39c169279566ec3cb3d2c3dbdc214b924ee7a46de3d40781b30e4bc5453b"
+  },
+  "initialQuarterConditions": [
+    {
+      "pen": 4,
+      "mask": 3,
+      "guide": "M48 35 Q48 40 43 40",
+      "segmentSHA256": "4d120f037b518ee250a3eb06463c14b8866c704f45ea2df599b2b99832e9ba61",
+      "previousSegmentSHA256": "181dc55445de56cdd8ee6ed7ecc653f0dab2ce9c3e71ff8011dc78415fa63980",
+      "u": [
+        "0",
+        "5"
+      ],
+      "v": [
+        "-5",
+        "-5"
+      ],
+      "T": "1/2",
+      "K": "3/10",
+      "initialArcMax": 1,
+      "radius": 1,
+      "runtimeMaxCapRadius": 7,
+      "lambda": "25/2",
+      "lambdaAt": "1/2",
+      "cross": "25",
+      "chordSquaredMinus1": "117/8",
+      "curvatureMargin": "625/8",
+      "cosLower": "191/200",
+      "cosMinusRK": "131/200",
+      "strictAxis": "y",
+      "derivativeEndpoints": [
+        "10",
+        "5"
+      ],
+      "reusedExactDerivativeCondition": true,
+      "reusedFrom": "lib/hanja-stroke-start-caps-u6f11.ts",
+      "xReflection": true,
+      "fullPInUnionOfOriginalGuideEndpointRadius7Disks": true,
+      "endpointDiskPieces": [
+        {
+          "polygon": 1,
+          "nearestEndpoint": "start",
+          "vertices": 12,
+          "maxSquaredDistance": "6989/200"
+        },
+        {
+          "polygon": 1,
+          "nearestEndpoint": "end",
+          "vertices": 12,
+          "maxSquaredDistance": "6989/200"
+        },
+        {
+          "polygon": 2,
+          "nearestEndpoint": "end",
+          "vertices": 4,
+          "maxSquaredDistance": "34"
+        }
+      ],
+      "exactOriginalPriorSharedVertices": [
+        [
+          "51",
+          "35"
+        ],
+        [
+          "45",
+          "35"
+        ]
+      ],
+      "requiresCompletedExactPreviousMask": true,
+      "arc1To7NativeRequired": true,
+      "growingPIntersectionAllProgressProved": false,
+      "nativeApproval": false
+    },
+    {
+      "pen": 17,
+      "mask": 2,
+      "guide": "M43.08 84.4625 Q43.08 89.4625 48.08 89.4625",
+      "segmentSHA256": "bbdff2a93ec7990e2e5c06f910b64dc644b5d86d5e6e7cf779f3cf14c034c753",
+      "previousSegmentSHA256": "586896f64ed5e5eb941964d534d816e2921c0045e2c26581fd9b25298f20c6aa",
+      "u": [
+        "0",
+        "5"
+      ],
+      "v": [
+        "5",
+        "-5"
+      ],
+      "T": "1/2",
+      "K": "3/10",
+      "initialArcMax": 1,
+      "radius": 1,
+      "runtimeMaxCapRadius": 7,
+      "lambda": "25/2",
+      "lambdaAt": "1/2",
+      "cross": "-25",
+      "chordSquaredMinus1": "117/8",
+      "curvatureMargin": "625/8",
+      "cosLower": "191/200",
+      "cosMinusRK": "131/200",
+      "strictAxis": "y",
+      "derivativeEndpoints": [
+        "10",
+        "5"
+      ],
+      "reusedExactDerivativeCondition": true,
+      "reusedFrom": "lib/hanja-stroke-start-caps-u6f11.ts",
+      "xReflection": false,
+      "fullPInUnionOfOriginalGuideEndpointRadius7Disks": true,
+      "endpointDiskPieces": [
+        {
+          "polygon": 1,
+          "nearestEndpoint": "start",
+          "vertices": 14,
+          "maxSquaredDistance": "2024509/61250"
+        },
+        {
+          "polygon": 1,
+          "nearestEndpoint": "end",
+          "vertices": 12,
+          "maxSquaredDistance": "2024509/61250"
+        },
+        {
+          "polygon": 2,
+          "nearestEndpoint": "end",
+          "vertices": 5,
+          "maxSquaredDistance": "1010169/160000"
+        }
+      ],
+      "exactOriginalPriorSharedVertices": [
+        [
+          "921/20",
+          "1689/20"
+        ],
+        [
+          "801/20",
+          "1689/20"
+        ]
+      ],
+      "requiresCompletedExactPreviousMask": true,
+      "arc1To7NativeRequired": true,
+      "growingPIntersectionAllProgressProved": false,
+      "nativeApproval": false
+    }
+  ],
+  "scope": "Initial arclength≤1 only; radius runtime min(7,d), arc1..7 and entire growing-P intersection require native review. Original full-P endpoint-disk union gives completion containment only, not all-time connectedness.",
+  "sourcePChanged": false,
+  "guideChanged": false,
+  "sourceWidthChanged": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
