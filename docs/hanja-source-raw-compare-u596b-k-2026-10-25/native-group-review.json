@@ -4,7 +4,7 @@
   "sourceRoot": "u596b-k",
   "catalogStrokes": 14,
   "dictionaryPlaybackStrokes": 15,
-  "status": "HOLD-source-mapping-mismatch",
+  "status": "static-mapping-approved-after-correction",
   "pins": {
     "board": {
       "path": "docs/hanja-source-raw-compare-u596b-k-2026-10-25/board.json",
@@ -174,13 +174,155 @@
     "viewportReset": true,
     "stdout": "not reported"
   },
-  "approval": {
+  "reusedWhole": "기존 compatible whole 승인만 별도 재사용; 잘못된15mapping 등록 불가",
+  "historicalPinsCommit": "94497bc48",
+  "initialReviewStatus": "HOLD-source-mapping-mismatch",
+  "initialApproval": {
     "all15StaticMappingApproved": false,
     "matchedRowsStaticMacroOnly": true,
     "sourcePContactApproved": false,
     "temporalRuntimeApproved": false,
     "productionRegistered": false
   },
-  "reusedWhole": "기존 compatible whole 승인만 별도 재사용; 잘못된15mapping 등록 불가",
-  "historicalPinsCommit": "94497bc48"
+  "correctionReview": {
+    "pins": {
+      "board": {
+        "path": "docs/hanja-source-raw-compare-u596b-k-2026-10-25/board.json",
+        "SHA256": "00894a133323412863e41d9bdca3b18235380525569355fd4f66701fe4bf8727"
+      },
+      "wrapper": {
+        "path": "scripts/hanja-raw-static-board.py",
+        "SHA256": "b1d0ccf222062f05888657a61b67e9d380a7d4afe99d3292ab7f437dfbf77256"
+      }
+    },
+    "freshScreens": 2,
+    "freshRows": [
+      10,
+      12,
+      13,
+      14,
+      15
+    ],
+    "freshRowCount": 5,
+    "reusedMatchedRows": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "reusedRowCount": 10,
+    "all15StaticMappingApproved": true,
+    "SVGSize": 220,
+    "mappingOneBased": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        18
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ]
+    ],
+    "confirmedMatches": [
+      {
+        "stroke": 10,
+        "raw": [
+          18
+        ],
+        "shape": "긴 H"
+      },
+      {
+        "stroke": 12,
+        "raw": [
+          11,
+          12
+        ],
+        "shape": "V→H"
+      },
+      {
+        "stroke": 13,
+        "raw": [
+          15
+        ],
+        "shape": "V"
+      },
+      {
+        "stroke": 14,
+        "raw": [
+          16
+        ],
+        "shape": "H"
+      },
+      {
+        "stroke": 15,
+        "raw": [
+          17
+        ],
+        "shape": "V"
+      }
+    ],
+    "cleanup": {
+      "PID": 13256,
+      "session": 4310,
+      "exitCode": 130,
+      "tab": 203,
+      "tabClosed": true,
+      "viewportReset": true,
+      "stdout": "not reported"
+    }
+  },
+  "approval": {
+    "all15StaticMappingApproved": true,
+    "sourcePContactApproved": false,
+    "temporalDirectionApproved": false,
+    "allTimeConnectionApproved": false,
+    "temporalRuntimeApproved": false,
+    "productionRegistered": false
+  }
 }
