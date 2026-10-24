@@ -1,0 +1,186 @@
+{
+  "schema": "hanja-static-source-mapping-native-review/v1",
+  "glyph": "奫",
+  "sourceRoot": "u596b-k",
+  "catalogStrokes": 14,
+  "dictionaryPlaybackStrokes": 15,
+  "status": "HOLD-source-mapping-mismatch",
+  "pins": {
+    "board": {
+      "path": "docs/hanja-source-raw-compare-u596b-k-2026-10-25/board.json",
+      "SHA256": "b2a4f6495c1e0362a224392d3fea9f08e7b8fff8a0270c22807c79682258bb47"
+    },
+    "wrapper": {
+      "path": "scripts/hanja-raw-static-board.py",
+      "SHA256": "fea73a2e8996ecf0735cc63fbc85d2e004245e7383a7db4702138dc00d21d5eb"
+    },
+    "rawConfig": {
+      "path": "docs/hanja-source-raw-compare-u596b-k-2026-10-25/config.json",
+      "SHA256": "c82410ecb0ed45aeccd2c6266e7f9e1b8419164e1c0007f56fd8dbe0ae02b985"
+    },
+    "rawLauncher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "4b63616a78742bc67e4f0e87131a88b1ebc19bde124931c10df8f547be0da712"
+    },
+    "full5": {
+      "path": "docs/hanja-goal-glyphwiki-batch794-2026-10-13/engine-whole-u596b-k.json",
+      "SHA256": "79e34e202be30dcb3365c899e220b0d9ad2f67633e5931ffd4d984530e500da7"
+    }
+  },
+  "observations": {
+    "reviewer": "ROOT native browser panel",
+    "freshScreens": 3,
+    "screenRowRanges": [
+      [
+        1,
+        6
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        9,
+        15
+      ]
+    ],
+    "uniquePairsReviewed": 15,
+    "SVGSize": 220,
+    "allAcceptedGlyphsFullyVisible": true,
+    "viewport": {
+      "width": 1280,
+      "height": 1280
+    },
+    "duplicateRowsNotAdded": true,
+    "matchedRows": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "heldRows": [
+      10,
+      12,
+      13,
+      14,
+      15
+    ],
+    "mismatches": [
+      {
+        "stroke": 10,
+        "domestic": "H",
+        "oldRaw": [
+          11,
+          12
+        ],
+        "source": "V→H"
+      },
+      {
+        "stroke": 12,
+        "domestic": "V→H",
+        "oldRaw": [
+          15
+        ],
+        "source": "V"
+      },
+      {
+        "stroke": 13,
+        "domestic": "V",
+        "oldRaw": [
+          16
+        ],
+        "source": "H"
+      },
+      {
+        "stroke": 14,
+        "domestic": "H",
+        "oldRaw": [
+          17
+        ],
+        "source": "V"
+      },
+      {
+        "stroke": 15,
+        "domestic": "V",
+        "oldRaw": [
+          18
+        ],
+        "source": "H"
+      }
+    ]
+  },
+  "observedMappingOneBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ]
+  ],
+  "cleanup": {
+    "PID": 9412,
+    "session": 25378,
+    "exitCode": 130,
+    "tab": 201,
+    "tabClosed": true,
+    "viewportReset": true,
+    "stdout": "not reported"
+  },
+  "approval": {
+    "all15StaticMappingApproved": false,
+    "matchedRowsStaticMacroOnly": true,
+    "sourcePContactApproved": false,
+    "temporalRuntimeApproved": false,
+    "productionRegistered": false
+  },
+  "reusedWhole": "기존 compatible whole 승인만 별도 재사용; 잘못된15mapping 등록 불가",
+  "historicalPinsCommit": "94497bc48"
+}
