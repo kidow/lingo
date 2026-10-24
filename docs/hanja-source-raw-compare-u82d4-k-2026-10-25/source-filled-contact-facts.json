@@ -1,0 +1,72 @@
+{
+  "schema": "hanja-exact-source-filled-contact-facts/v1",
+  "date": "2026-10-25",
+  "glyph": "苔",
+  "providerRoot": "u82d4-k",
+  "source": {
+    "path": "docs/hanja-goal-glyphwiki-batch1125-2026-10-14/engine-whole-u82d4-k.json",
+    "SHA256": "c2924297dabbc70fb398317be731f5066372cff17dbf2f149df9f8865f54465b"
+  },
+  "guide": {
+    "raw5QEnd": [
+      "26",
+      "11413/200"
+    ],
+    "raw6QStart": [
+      "27/2",
+      "2323/40"
+    ],
+    "gap": [
+      "-25/2",
+      "101/100"
+    ],
+    "gapSquared": "1572701/10000",
+    "exactGuideContinuity": false,
+    "originalGuideUnchanged": true
+  },
+  "filledContact": {
+    "originalRawPair": [
+      5,
+      6
+    ],
+    "witness": [
+      "53/2",
+      "284/5"
+    ],
+    "squareHalfSide": "1/100",
+    "strictCommonSquareArea": "1/2500",
+    "certificate": [
+      {
+        "rawOneBased": 5,
+        "PoneBased": 1,
+        "vertices": 22,
+        "simple": true,
+        "strictInside": true,
+        "minEdgeDistanceSquared": "61009/605300",
+        "squareRadiusSquaredMax": "1/5000"
+      },
+      {
+        "rawOneBased": 6,
+        "PoneBased": 1,
+        "vertices": 22,
+        "simple": true,
+        "strictInside": true,
+        "minEdgeDistanceSquared": "26142769/5296400",
+        "squareRadiusSquaredMax": "1/5000"
+      }
+    ],
+    "proof": "Simple polygon winding contains witness; every original edge has squared distance greater than square circumscribed radius². The entire positive-area square lies strictly inside both original main filled polygons.",
+    "positiveAreaContact": true
+  },
+  "limits": {
+    "nativeContactApproved": false,
+    "allTimePrefixConnected": false,
+    "newSourceClockApproved": false,
+    "originalGuideContinuityClaimed": false,
+    "sourcePModified": false,
+    "guideModified": false,
+    "runtimeApplied": false
+  },
+  "engineRuns": 0,
+  "sourceProjection": 0
+}
