@@ -80,7 +80,7 @@ export function measureReviewedU85a9HkcsReturnFrame(policy:ReviewedU85a9HkcsRetu
   const d=Math.min(progress*L,L),point=guide!.getPointAtLength(d)
   if(!Number.isFinite(point.x)||!Number.isFinite(point.y)||!exact()||!previousDOM())throw new Error('Changed 薩 guide or invalid endpoint')
   if(progress===0&&Math.hypot(point.x-fixed.q0[0],point.y-fixed.q0[1])>=1e-4)throw new Error('薩 UA start differs from exact M')
-  return Object.freeze({policyId:policy.id,guide:segment.revealPath!,progress,L,d,rho:policy.kind==='growing-u85a9-hkcs-return-caps'?Math.min(7,d):null,q0:Object.freeze(fixed.q0),point:Object.freeze({x:point.x,y:point.y})})
+  return Object.freeze({policyId:policy.id,guide:segment.revealPath!,progress,L,d,rho:policy.kind==='growing-u85a9-hkcs-return-caps'?Math.min(policy.certificate.initialArcMax,d):null,q0:Object.freeze(fixed.q0),point:Object.freeze({x:point.x,y:point.y})})
 }
 export function commitReviewedU85a9HkcsReturnCaps(policy:ReviewedU85a9HkcsReturnPolicy,segment:HanjaOutlineSegment,progress:number,clipId:string,nodes:ReviewedU85a9HkcsReturnNodes,previousMaskProgress:number) {
   const{measurement,guide,startCap,endCap,ink}=nodes
