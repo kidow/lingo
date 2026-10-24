@@ -76,3 +76,25 @@ test('표시 획수 보정은 熙의 학습 키나 다른 여덟 후보의 획�
     assert.equal(character.strokeCountCorrection, undefined)
   }
 })
+
+test('擄의 공식16획 보정은 XLS15와 근거 및 학습 식별자를 보존한다', () => {
+  const g1 = JSON.parse(readFileSync(new URL('../content/hanja/characters/g1.json', import.meta.url), 'utf8')) as { source: { sha256: string }; characters: HanjaCharacter[] }
+  const lo = g1.characters.find(item => item.id === 'u64c4')!
+  const evidence = corrections.entries.filter(entry => entry.id === lo.strokeCountCorrection)
+  assert.equal(evidence.length, 1)
+  const correction = evidence[0]
+  assert.equal(corrections.version, 1)
+  assert.equal(corrections.workbookSha256, g1.source.sha256)
+  assert.equal(g1.source.sha256, '97b8db715ebe1dd6e00e8e58d338a9ba70e7420bf5ec84da38f987d60eb64b17')
+  assert.deepEqual([correction.id, correction.glyph, correction.sourceGlyph, correction.sourceRow, correction.sourceStrokes, correction.strokes], ['eomunhoe-8928-u64c4', '擄', '擄', 1420, 15, 16])
+  assert.equal(correction.sourceUrl, 'https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=8928')
+  assert.equal(correction.sourceDate, '2013-05-27')
+  assert.deepEqual([lo.sourceStrokes, lo.strokes], [15, 16])
+  const original = { ...lo, strokes: lo.sourceStrokes! }
+  delete original.sourceStrokes
+  delete original.strokeCountCorrection
+  assert.deepEqual(original, {"id":"u64c4","glyph":"擄","hun":"노략질할","eum":"로","readingGrade":"1급","radical":"手","strokes":15,"sourceRow":1420,"sourceHunEum":"노략질할 로","example":{"word":"擄掠","reading":"노략","source":{"dictionary":"표준국어대사전","targetCode":66623,"url":"https://stdict.korean.go.kr/search/searchView.do?word_no=66623&searchKeywordTo=3","verifiedAt":"2026-09-17"}}})
+  const keys = (item: HanjaCharacter) => hanjaEntries([item]).map(entry => entry.key)
+  assert.deepEqual(keys(lo), keys(original))
+  assert.deepEqual(keys(lo), ['hanja:char:u64c4:recognition', 'hanja:char:u64c4:hun-eum'])
+})
