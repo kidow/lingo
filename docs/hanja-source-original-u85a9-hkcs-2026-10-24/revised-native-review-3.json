@@ -1,0 +1,309 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "薩",
+  "root": "hkcs_m85a9",
+  "localArtifactTag": "u85a9-hkcs",
+  "observer": "ROOT browser panel",
+  "recordedBy": "/root/activation1440 from ROOT observations",
+  "status": "Finite96 passed; natural snapshots separately scoped, no continuous replay claim",
+  "historicalCommit": "6c07a3f4d",
+  "inputs": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u85a9-hkcs-3.json",
+      "SHA256": "28da9580aeeb7c13a5c2c0086489c39ad6ca938767f9f6d5aec7263160102c08",
+      "historicalCommit": "6c07a3f4d"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "779b8ce51f87874d540246e521ef2053d11aad23192fa6e04debfb0756c6dfa4",
+      "historicalCommit": "6c07a3f4d"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "830f2da20c638c44333ce8733fea8b8f4b915f8e611662763ad0d470aa56100f"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "4a8fe908655395dec910a5d34205f2b7208ebff86ccfe900b3219e60cf830d3c"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u85a9-hkcs-2026-10-24/fixtures.json",
+      "SHA256": "05d7a137e69d5de696a195411e990f7ed8777e0c124de2770e022f9093271b53"
+    },
+    "geometrySHA256": "9dd8e7687f6168de289d8431c60689b3d516a537b36b70587678952df31d0a40"
+  },
+  "resources": {
+    "actualSuccessfulStartup": {
+      "SSR": 1,
+      "CJS": 260,
+      "ESM": 260,
+      "engineRuns": 0,
+      "sourceProjection": 0
+    }
+  },
+  "finite": {
+    "freshDistinct": 9,
+    "freshPassed": 9,
+    "freshHeld": 0,
+    "counts": {
+      "early3": 3,
+      "midNear2": 2,
+      "originalSourcePCompletionResidual1": 1,
+      "pen6Boundary3": 3
+    },
+    "samples": [
+      {
+        "mode": "finite",
+        "target": "u85a9-hkcs-source-return-6-2",
+        "pen": 6,
+        "mask": 2,
+        "local": 0.000001,
+        "global": 0.7413741107203901,
+        "passed": true
+      },
+      {
+        "mode": "finite",
+        "target": "u85a9-hkcs-source-return-6-2",
+        "pen": 6,
+        "mask": 2,
+        "local": 0.01,
+        "global": 0.7439601135732997,
+        "passed": true
+      },
+      {
+        "mode": "finite",
+        "target": "u85a9-hkcs-source-return-6-2",
+        "pen": 6,
+        "mask": 2,
+        "local": 0.03,
+        "global": 0.7491326365314148,
+        "passed": true
+      },
+      {
+        "mode": "finite",
+        "target": "u85a9-hkcs-source-return-6-2",
+        "pen": 6,
+        "mask": 2,
+        "local": 0.5,
+        "global": 0.8706869260471211,
+        "passed": true
+      },
+      {
+        "mode": "finite",
+        "target": "u85a9-hkcs-source-return-6-2",
+        "pen": 6,
+        "mask": 2,
+        "local": 0.99999999,
+        "global": 0.9999999974137385,
+        "passed": true
+      },
+      {
+        "mode": "original-completion-residual",
+        "target": "u85a9-hkcs-source-return-6-2",
+        "pen": 6,
+        "mask": 2,
+        "local": 1,
+        "passed": true,
+        "originalFullPCompletion": true
+      },
+      {
+        "mode": "finite",
+        "category": "same-pen-boundary",
+        "pen": 6,
+        "global": 0.7413738519942421,
+        "passed": true
+      },
+      {
+        "mode": "finite",
+        "category": "same-pen-boundary",
+        "pen": 6,
+        "global": 0.7413738520942421,
+        "passed": true
+      },
+      {
+        "mode": "finite",
+        "category": "same-pen-boundary",
+        "pen": 6,
+        "global": 0.7413738521942421,
+        "passed": true
+      }
+    ],
+    "controlInputsNotPerFrameMeasuredProgress": true,
+    "DOMBad": [],
+    "errors": [],
+    "observations": [
+      "6m2 source-X-prefix early/middle/near completion recovers original foot continuously",
+      "Original sole directP completion residual white",
+      "pen6 predecessor transition stable; no source guide or P edits"
+    ]
+  },
+  "reuse": {
+    "previousReview": {
+      "path": "docs/hanja-source-original-u85a9-hkcs-2026-10-24/revised-native-review-2.json",
+      "SHA256": "7ebb4370831d13e79e7d7d31a5c35f9830eb488d4cd2e1c1f2f5176942ac49c7"
+    },
+    "unchangedPreviousBaselinePositive": 42,
+    "unchangedReview2Positive": 45,
+    "totalUnchangedPositive": 87,
+    "changedPriorPositiveExcluded": 8,
+    "oldNearEndHoldReplaced": true,
+    "crossScopeDuplicates": 0,
+    "combinedFiniteDistinct": 96,
+    "combinedPassed": 96,
+    "combinedHolds": 0,
+    "basis": "Previous95 positives minus8 changed positive slots; old1HOLD replaced within fresh9. Baseline42 already scoped by previous review2; source-return6m2 positive old states are not reused."
+  },
+  "natural": {
+    "acceptedSnapshots": 13,
+    "mixedRuns": true,
+    "continuousReplayProved": false,
+    "allFullVisible": true,
+    "snapshots": [
+      {
+        "pen": 5,
+        "phase": "early",
+        "progress": 0.07877500000596047
+      },
+      {
+        "pen": 5,
+        "phase": "middle",
+        "progress": 0.4685500000059619,
+        "separateReplay": true
+      },
+      {
+        "pen": 5,
+        "phase": "ended",
+        "progress": 1
+      },
+      {
+        "pen": 6,
+        "phase": "early",
+        "progress": 0.07220000000000072
+      },
+      {
+        "pen": 6,
+        "phase": "middle",
+        "progress": 0.46726250000000075,
+        "separateReplay": true
+      },
+      {
+        "pen": 6,
+        "phase": "return-transition",
+        "progress": 0.8619624999880762
+      },
+      {
+        "pen": 6,
+        "phase": "ended",
+        "progress": 1
+      },
+      {
+        "pen": 13,
+        "phase": "early",
+        "progress": 0.0838500000059612
+      },
+      {
+        "pen": 13,
+        "phase": "middle",
+        "progress": 0.4734000000059605
+      },
+      {
+        "pen": 13,
+        "phase": "ended",
+        "progress": 1
+      },
+      {
+        "pen": 14,
+        "phase": "early",
+        "progress": 0.07341249999403954
+      },
+      {
+        "pen": 14,
+        "phase": "middle",
+        "progress": 0.4651374999999971,
+        "separateReplay": true
+      },
+      {
+        "pen": 14,
+        "phase": "ended",
+        "progress": 1
+      }
+    ],
+    "DOMBad": [],
+    "errors": [],
+    "exactMaskLocalOneNotInferred": true
+  },
+  "excludedDiagnostics": [
+    {
+      "kind": "Duplicate pen6 ended snapshot",
+      "additionalDistinct": 0
+    },
+    {
+      "kind": "pen5 middle wait timeout",
+      "acceptedNative": 0,
+      "replacedBySeparateReplay": true
+    },
+    {
+      "kind": "pen14 middle wait timeout",
+      "acceptedNative": 0,
+      "replacedBySeparateReplay": true
+    }
+  ],
+  "visibility": {
+    "naturalMain520": [
+      380.015625,
+      900.015625
+    ],
+    "naturalMainDocumentOrigin": [
+      12,
+      1123.515625
+    ],
+    "freshGridCSSSVG": 220,
+    "freshGridIncludingCaptionHeight": 233,
+    "freshGrid": [
+      955.015625,
+      1188.015625
+    ],
+    "freshGridDocumentOrigin": [
+      12,
+      1643.515625
+    ],
+    "sourcePResidual520": [
+      668.015625,
+      1188.015625
+    ],
+    "sourcePResidualDocumentY": 1657.515625,
+    "allAcceptedImagesFullyVisible": true
+  },
+  "exactWhole": {
+    "pens": 18,
+    "passed": true,
+    "separateFromFiniteAndNatural": true
+  },
+  "captureCount": null,
+  "captureCountClaimed": false,
+  "history": {
+    "oldOrdinaryBaselineAndHoldsPreserved": true,
+    "review2NearEndFootPopPreserved": true,
+    "initialArc1AndFullQtube7EvidenceNotOverstated": true,
+    "new6m2OriginalSourcePReturnDisplayClockExplicit": true
+  },
+  "sourceGeometryGuideWidthWeightUnchanged": true,
+  "server": {
+    "pid": 79470,
+    "session": 54423,
+    "exitCode": 130,
+    "tab125Closed": true,
+    "ownedServerRemaining": false
+  },
+  "approval": {
+    "controlledFiniteScopePassed": true,
+    "actualAppUI": false,
+    "continuousReplay": false,
+    "allTime": false,
+    "productionRegistrationByRecorder": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "productionImportAllowed": false
+}
