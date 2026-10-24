@@ -107,6 +107,8 @@ def install_board(shared, base, groups, board_guards):
             note += '<p data-source-draft="u8438-k"><strong>DRAFT · 사전13획 / 배정12획 유지 · productionImportAllowed=false</strong> · 원raw14 전체 보존 · raw10 H 다음 raw9 V 묶음은 정적 비교 후보 · 전체13 대응·접촉·재생·개별variant 미승인</p>'
         if base.get('glyph') == '髓' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'hkcs_m9ad3':
             note += '<p data-source-draft="u9ad3-hkcs"><strong>DRAFT · productionImportAllowed=false</strong> · 原provider hkcs_m9ad3 · raw19 type0/trace0/P0는 비그리기 메타행으로 미배정 보존 · 원22/23 guide 간격 유지 · filled-P 교집합은 별도 코드 사실이며 필순·시간·전체 연결 승인 아님</p>'
+        if base.get('glyph') == '瘦' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'hkcs_m7626':
+            note += '<p data-source-draft="u7626-hkcs"><strong>DRAFT · 배정14획 유지 / 사전15획 정적판 · productionImportAllowed=false</strong> · 原provider hkcs_m7626 · 원17raw/18mask/32P 전체 보존 · 연속raw10+11 및15+16은 국내방향에 따른 검토후보 · 원10 H/V guide 간격 유지 · 접촉·재생·개별variant 미승인</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
 
     shared.guards, shared.selection, shared.page = guarded, selection, page
@@ -554,6 +556,19 @@ def exact_u9ad3_hkcs_draft_launcher(config,base):
             and base.get('inputSHA256',{}).get('docs/hanja-source-alternative-u9ad3-hkcs-2026-10-24/sources.json')=='4807c804675ba1627f6aaaf34b7240e4da43c1ac5150085d2f283a987c5bdc8d'
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
+def exact_u7626_hkcs_dictionary_draft_launcher(config,base):
+    # Only this pinned provider/source may render15 dictionary rows while catalog14 stays unchanged.
+    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'bf99f0a60fdc725c2e52a02384c17acb9bb2ad02d3511dd2a3838187ca102f1b'}
+            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u7626-hkcs-2026-10-24/config.json','SHA256':'1f896ff364811708b36aeb73c116a5efe3a9371881d2a6fcc7e119ab3aa18f69'}
+            and base.get('glyph')=='瘦' and base.get('catalogStrokes')==14 and base.get('dictionaryPlaybackStrokes')==15
+            and base.get('sourceRoots')=={"selected":{"root":"hkcs_m7626","file":"docs/hanja-actual-engine-capture-u7626-hkcs-2026-10-24/engine-whole-u7626-hkcs.json","fileSHA256":"8fc24300a67ccd8ad2836ce31218aff2fe624751a641c11b37d674b79f761ff6","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"hkcs_m7626","sourceProofFile":"engine-whole-u7626-hkcs.json","sourceProofFileSha256":"8fc24300a67ccd8ad2836ce31218aff2fe624751a641c11b37d674b79f761ff6"},"rawGroups":17,"drawingCalls":18,"polygonCounts":[2,2,3,2,3,3,1,2,2,1,2,1,1,2,1,2,2],"polygons":32}}
+            and config.get('provisionalGroups')=={"selected":[[1],[2],[3],[4],[5],[6],[7],[8],[9],[10,11],[12],[13],[14],[15,16],[17]]}
+            and base.get('domestic')=={"url":"http://img.e-hanja.kr/hanjaSvg/aniSVG/7600/7626.svg","status":200,"bytes":7181,"sha256":"5b34d06b90fe5c959a3afe2d5dd94487f9c34f6f68d088c29fef6ebfc8b11b39","clips":15,"glyph":"瘦","privateMediaSaved":False}
+            and base.get('inputSHA256',{}).get('docs/hanja-actual-engine-capture-u7626-hkcs-2026-10-24/capture.json')=='d705ed14d3f26d63e3016e1559ae40f4f686f702c806465adb1286fc77d20dbd'
+            and base.get('inputSHA256',{}).get('docs/hanja-source-alternative-u7626-hkcs-2026-10-24/sources.json')=='bce4db95c7b8c248edc8de507f8c379bf5bc5bc157f44351e6124560fd7af8c4'
+            and digest(fixed_path('docs/hanja-source-original-u7626-hkcs-2026-10-24/fixtures.json').read_bytes())=='e4a3b4f84ff5172b88114abe41770a1048a48fb78b20e3c7a7eca30bb00e2772'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -576,6 +591,8 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    dictionary_u7626 = exact_u7626_hkcs_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or dictionary_u7626
     legacy_launcher = legacy_launcher or exact_u7e2d_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u7e91_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u7e9a_prepared_launcher(config,base)
@@ -598,6 +615,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u704c_ue0102_prepared_launcher(config,base)
     require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base) or exact_u95e5_prepared_launcher(config,base) or exact_u852d_k_prepared_launcher(config,base) or exact_u8aed_k_prepared_launcher(config,base) or exact_u9d25_prepared_launcher(config,base) or exact_u6d8f_prepared_launcher(config,base) or exact_u8fe8_prepared_launcher(config,base) or exact_u6f11_prepared_launcher(config,base) or exact_u6f7e_prepared_launcher(config,base) or exact_u7e81_prepared_launcher(config,base) or exact_u9436_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
+    if dictionary_u7626:base = {**base,'catalogStrokes':15}  # review-view copy only; pinned source config remains14
     validate_groups(config['provisionalGroups'], base)
 
     def board_guards():
