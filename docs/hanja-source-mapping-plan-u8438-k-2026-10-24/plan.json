@@ -1,0 +1,178 @@
+{
+  "schema": "hanja-dictionary-form-original-source-mapping-plan/v1",
+  "date": "2026-10-24",
+  "glyph": "萸",
+  "sourceRoot": "u8438-k",
+  "catalogStrokes": 12,
+  "proposedDictionaryPlaybackStrokes": 13,
+  "examCatalogUnchanged": true,
+  "countExceptionNotYetApproved": true,
+  "selectedWhole": {
+    "path": "docs/hanja-goal-glyphwiki-batch781-2026-10-13/engine-whole-u8438-k.json",
+    "SHA256": "83fe67507b40f4ae74c76c543c97724ad608f3b32db09e3d631a02cb3f64bc37",
+    "schemaKeys": [
+      "engineRevision",
+      "engineHashes",
+      "groups",
+      "trace",
+      "defaults"
+    ],
+    "existingOriginalFull5Exists": true,
+    "newActualCaptureCapsuleExists": false,
+    "sourceEngineReplay": 0
+  },
+  "dictionaryDirectionEvidence": {
+    "path": "docs/hanja-official-media-compare-u8438-2026-10-24/official-temporal-native-review.json",
+    "SHA256": "585112c7161fd8f5f928f03dd37be63e53a0b7ab51c163132e36d700a96796fb",
+    "screens": 39,
+    "examBodyApproval": false
+  },
+  "proposal": {
+    "rawIndexBasis": "zero-based; exact original rows are preserved and individually partitioned",
+    "sourceGroups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ],
+      [
+        2
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        13
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        10
+      ],
+      [
+        7
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ]
+    ],
+    "logicalPens": 13,
+    "originalRawRows": 14,
+    "originalDrawCalls": 15,
+    "anticipatedMasks": 15,
+    "originalPolygons": 27,
+    "expectedMaskCounts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1
+    ],
+    "newSourceGeometry": false,
+    "newGuide": false,
+    "newFlags": false,
+    "newBridge": false,
+    "deletedSourceRows": false,
+    "newStrokeSplits": false,
+    "onlyProposedGrouping": [
+      [
+        9,
+        8
+      ]
+    ],
+    "orderChangesExplained": [
+      {
+        "logical": 3,
+        "raw": [
+          3
+        ],
+        "reason": "dictionary right grass H precedes V; original raw4 precedes raw3 in proposal"
+      },
+      {
+        "logical": 4,
+        "raw": [
+          2
+        ],
+        "reason": "dictionary right grass V follows right H"
+      },
+      {
+        "logical": 8,
+        "raw": [
+          13
+        ],
+        "reason": "dictionary left bottom H before right upper H/V"
+      },
+      {
+        "logical": 9,
+        "raw": [
+          9,
+          8
+        ],
+        "reason": "dictionary right upper H then V in one stroke; exact original H endpoint equals original V start"
+      },
+      {
+        "logical": 11,
+        "raw": [
+          7
+        ],
+        "reason": "dictionary right bottom H after right middle H"
+      }
+    ],
+    "raw10To9Contact": {
+      "literalJoint": [
+        163,
+        71.39
+      ],
+      "positiveFilledIntersectionRect": [
+        157,
+        71.3,
+        163,
+        73.3
+      ],
+      "area": 12,
+      "proofScope": "previous source-only exact endpoint/rect inspection reused; no source point or flag change"
+    }
+  },
+  "validationScope": {
+    "newPartitionOnly": true,
+    "sourcePOrderingAndWholeMappingNativeApproved": false,
+    "existingWholeCompatibility": "historical final-form observation only; fresh paired static mapping required",
+    "sourceGuideAndOriginalPOnceNativeApproved": false,
+    "initialAndBoundaryFramesApproved": false,
+    "compoundTailAndFullSourceResidualApproved": false
+  },
+  "nextRequired": [
+    "Confirm fixed original full5 provenance is sufficient; create only a source projection with exact unchanged original rows if authorized, without engine replay.",
+    "ROOT pair all13 dictionary pens against proposed source grouping, including reordered grass and bottom horizontals.",
+    "Run actual initial/transition/completion review for source15masks, with H-to-V contact and long central MC terminal as separate risks.",
+    "If all accepted, prepare a NEW per-glyph catalog12/playback13 dictionary-form variant entry with exact source/paths/review pins; do not inherit 臾 approval or modify catalog."
+  ],
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "sharedRegistryChanged": false,
+  "sharedHelperChanged": false,
+  "sharedRendererChanged": false
+}
