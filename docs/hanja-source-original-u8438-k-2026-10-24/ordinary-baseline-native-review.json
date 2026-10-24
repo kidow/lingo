@@ -563,8 +563,62 @@
       12,
       13
     ],
-    "pending": true,
-    "scope": "Strict positive area in original new P intersect initial radius7 disk outside original prior union; finite native observations remain separately recorded"
+    "pending": false,
+    "method": "Exact rational polygon clipping and strict rectangle/disk inequalities on unchanged original P; not an actual rendered prior-mask or moving-prefix proof",
+    "sourceFieldsUnchanged": true,
+    "certificate": {
+      "pen12": {
+        "strictPositiveWitness": true,
+        "rectangle": [
+          [
+            "269/5",
+            "59"
+          ],
+          [
+            "54",
+            "59"
+          ],
+          [
+            "54",
+            "296/5"
+          ],
+          [
+            "269/5",
+            "296/5"
+          ]
+        ],
+        "area": "1/25",
+        "maxDiskDistanceSquared": "43849/2500",
+        "radiusSquared": "49",
+        "outsideEveryOriginalPriorPolygonByBoundingBox": true
+      },
+      "pen13": {
+        "strictPositiveWitnessExists": false,
+        "diskBoundingSquareClippedPieces": 1,
+        "upperContainedInOriginalPriorV": true,
+        "lowerLeftBoundCoveredByOriginalPriorQHead": true,
+        "potentialUncoveredRightPolygon": [
+          [
+            "485143/8950",
+            "789253/13425"
+          ],
+          [
+            "607437/11200",
+            "5889/100"
+          ],
+          [
+            "82649/1525",
+            "5889/100"
+          ]
+        ],
+        "minimumDistanceSquared": "5827054201/115347600",
+        "radiusSquared": "49",
+        "strictMarginSquared": "175021801/115347600",
+        "scope": "Only original new P intersect radius7 initial disk outside original prior P union; actual prior round-mask coverage and later moving Q prefix not proved"
+      }
+    },
+    "nativeClassificationCounterexampleFound": false,
+    "productionApproval": false
   },
   "preservation": {
     "examCatalogStrokes": 12,
