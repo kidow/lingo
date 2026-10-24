@@ -429,6 +429,45 @@ def exact_original_u6f0c(config,roots,spec):
     expected=json.loads("{\"root\":\"u6f0c\",\"file\":\"docs/hanja-goal-glyphwiki-batch481-2026-10-10/engine-proof.json\",\"fileSHA256\":\"e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97\",\"proofKeys\":[\"defaults\",\"engineHashes\",\"engineRevision\",\"groups\",\"trace\"],\"proofKind\":\"actual-full5-direct\",\"sourceProofIdentity\":{\"sourceRoot\":\"u6f0c\",\"sourceProofFile\":\"engine-proof.json\",\"sourceProofFileSha256\":\"e944cc2432b0f858ab6fd2b4d29b9feed338e77bf46a6583f8305a5b8cc53d97\"},\"rawGroups\":16,\"drawingCalls\":16,\"polygonCounts\":[2,2,2,1,2,2,2,1,1,1,2,1,2,1,2,2],\"polygons\":26}")
     return (config.get('glyph')=='漌' and type(config.get('catalogStrokes'))is int and config['catalogStrokes']==14 and config.get('defaultSource')=='selected' and list(roots)==['selected'] and roots.get('selected')==spec and spec==expected and config.get('domestic',{}).get('sha256')=='b61a3cd80eb278bdcd04005706a5593ec3a10be91d67110588506ce048215d91')
 
+NEW_PUBLIC_WHOLES=json.loads("{\"koseki-368300\":{\"glyph\":\"藿\",\"catalogStrokes\":20,\"config\":\"docs/hanja-source-raw-compare-u85ff-koseki-368300-whole-2026-10-25/config.json\",\"full\":\"docs/hanja-actual-engine-capture-u85ff-koseki-368300-2026-10-25/engine-whole-koseki-368300.json\",\"fullSHA\":\"329c2326b5a5e3da8545566a9913cac666aa97dac6534efd51fc9b0778a19454\",\"capture\":\"docs/hanja-actual-engine-capture-u85ff-koseki-368300-2026-10-25/capture.json\",\"captureSHA\":\"6fcc3207279b05b2769e0a5ad2763bdb0b542e59b41300d5958ffe57de954b26\",\"source\":\"docs/hanja-source-alternative-u85ff-koseki-368300-2026-10-25/sources.json\",\"sourceSHA\":\"f57ba4df4b3819fc635ae7e7606160618269345d5887ccc401cb8e82c0afd98c\",\"metadata\":\"docs/hanja-goal-glyphwiki-batch52-2026-09-22/metadata.json\",\"metadataSHA\":\"8e095639b52ea7a9e801e99bb6149d1ddcf598776369abb159aeab920d05bc26\",\"readme\":\"docs/hanja-goal-glyphwiki-batch52-2026-09-22/README.md\",\"readmeSHA\":\"8d63f15f57514347fa2d3999c77cf198b4dbc79adcc2f6fd7e3633c013501a80\",\"raw\":21,\"calls\":21,\"polygons\":37,\"rootVersion\":9,\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/85FF.svg\",\"status\":200,\"bytes\":10729,\"sha256\":\"e09d059235539525e288bcb03d07ce0b77e113da1500c48a8cd058ebdd4023d4\",\"clips\":20,\"glyph\":\"藿\",\"privateMediaSaved\":false}},\"hkcs_m846f\":{\"glyph\":\"葯\",\"catalogStrokes\":13,\"config\":\"docs/hanja-source-raw-compare-u846f-hkcs-whole-2026-10-25/config.json\",\"full\":\"docs/hanja-actual-engine-capture-u846f-hkcs-2026-10-25/engine-whole-hkcs_m846f.json\",\"fullSHA\":\"0aa5daf820225c29fe6ad0d31a8bec2be44c983b06cd7680f5f924f6e50ede21\",\"capture\":\"docs/hanja-actual-engine-capture-u846f-hkcs-2026-10-25/capture.json\",\"captureSHA\":\"bf37bb95bf707e4118d4b34064ad191b2aa39d0aed7887c2f10d9e1ceb2eca8e\",\"source\":\"docs/hanja-source-alternative-u846f-hkcs-2026-10-25/sources.json\",\"sourceSHA\":\"392d3bc9e1a281f61f5c826cfc4476200c441a29480cd9553f47632b4e1b6e4a\",\"metadata\":\"docs/hanja-goal-glyphwiki-batch46-2026-09-22/metadata.json\",\"metadataSHA\":\"cec6bf1587e31fc6f38a0a7609c83dab7fe8c22554a6dc7f73441dafd3664de2\",\"readme\":\"docs/hanja-goal-glyphwiki-batch46-2026-09-22/README.md\",\"readmeSHA\":\"affe4f67dd3d222f3663030b667b40a48bcd2c6a25e23ec74f59d51e0b980252\",\"raw\":16,\"calls\":17,\"polygons\":37,\"rootVersion\":2,\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/8400/846F.svg\",\"status\":200,\"bytes\":7517,\"sha256\":\"0ba6911d684a6075475145c43d7a628ee75dd1b1d2f46ffa89a571099ac11b38\",\"clips\":13,\"glyph\":\"葯\",\"privateMediaSaved\":false}}}")
+def new_public_whole_case(config):
+    if type(config)is not dict or type(config.get('sourceRoots'))is not dict or list(config['sourceRoots'])!=['selected']:return None
+    spec=config['sourceRoots']['selected']
+    return NEW_PUBLIC_WHOLES.get(spec.get('root'))if type(spec)is dict else None
+def validate_new_public_whole(config,label,spec,path,config_path,case):
+    require(config_path==ROOT/case['config'] and label=='selected' and list(config['sourceRoots'])==['selected'],'exact new whole comparison location required')
+    require(config['glyph']==case['glyph'] and config['catalogStrokes']==case['catalogStrokes'] and config.get('wholeOnly')is True and config['layoutMode']=='whole-pair520-css-only','new whole-only candidate required')
+    require(path==ROOT/case['full'] and spec['file']==case['full'] and spec['fileSHA256']==case['fullSHA'] and digest(path.read_bytes())==case['fullSHA'],'exact newly captured full5 required')
+    require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and (spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(case['raw'],case['calls'],case['polygons']),'new whole source counts and full5 contract required')
+    require(config['domestic']==case['domestic'],'unchanged original dictionary whole metadata required')
+    for name,pin in [('full','fullSHA'),('capture','captureSHA'),('source','sourceSHA'),('metadata','metadataSHA'),('readme','readmeSHA')]:
+        require(config['inputSHA256'].get(case[name])==case[pin] and digest(pinned_path(case[name]).read_bytes())==case[pin],'new whole/source/original evidence pin changed')
+    proof=json.loads(path.read_bytes());capture=json.loads(pinned_path(case['capture']).read_bytes());source=json.loads(pinned_path(case['source']).read_bytes())
+    require(sorted(proof)==FIVE and capture['full5']['path']==case['full'] and capture['full5']['SHA256']==case['fullSHA'],'actual full5 capture binding changed')
+    require(capture['source']['path']==case['source'] and capture['source']['SHA256']==case['sourceSHA'] and capture['source']['root']==spec['root'] and source['root']==spec['root'] and source['rootVersion']==case['rootVersion'],'actual complete provider identity changed')
+    require(capture['engine']['actualLoadedHashes']==proof['engineHashes'] and capture['engine']['revision']==proof['engineRevision']=='49232bac0348fe815f4200d4116ab7917e0db47f','executed original vendor identity changed')
+    facts=capture['captureFacts']
+    require((facts['actualVMContexts'],facts['vendorEvaluations'],facts['captureEvaluation'],facts['makeGlyphCalls'])==(1,8,1,1) and facts['newHeaderFromExecutedCodeBytesOnly']is True and facts['oldHeaderOrBodyCombined']is False and facts['aliasInserted']is False and capture['privateDictionaryFilesWritten']==0,'single original whole capture required')
+    require(capture['approval']=={'whole':False,'individualStrokes':False,'native':False,'runtime':False} and source['nativeApproval']is False and source['runtimeApplied']is False,'unapproved whole preparation only')
+    if spec['root']=='koseki-368300':
+        alias=source['aliasEvidence']
+        require(alias['record']['name']=='gaijin_krcourt-085ff' and int(alias['record']['version'])==1 and alias['record']['data']=='99:0:0:0:0:200:200:koseki-368300' and alias['canonicalRoot']=='koseki-368300@9' and alias['engineAliasInserted']is False,'exact original law-glyph alias required')
+def install_new_whole_only(shared,original_page):
+    original_selection=shared.selection
+    def whole_selection(route,query):
+        require(route in['/','/whole','/checks'] and not query,'new candidate whole-only route required')
+        return original_selection(route,query)
+    def whole_page(route,selected,sources,domestic):
+        require(route in['/','/whole'] and selected is None,'new candidate whole-only page required')
+        original=original_page(route,selected,sources,domestic)
+        link=' <a href="/compare">각 원번호 선택</a>';anchor='<a href="/whole">국내·각 원source 전체</a>'
+        require(original.count(link)==1 and original.count(anchor)==1,'original whole navigation hook changed')
+        page=original.replace(link,'',1)
+        require(page.replace(anchor,anchor+link,1)==original,'whole navigation inverse changed original SVG bytes')
+        return page
+    shared.selection=whole_selection
+    shared.page=whole_page
+
 def main():
     require(__debug__ and sys.flags.optimize==0,'optimized assertion-free execution forbidden')
     parser=argparse.ArgumentParser(description='Pinned static whole/raw/domestic comparison; ROOT starts HTTP.')
@@ -437,7 +476,9 @@ def main():
     config_path=pinned_path(args.config);require(config_path.name=='config.json'and config_path.parent.parent==ROOT/'docs'and config_path.parent.name.startswith('hanja-source-raw-compare-'),'comparison config location required')
     config_bytes=config_path.read_bytes();require(len(config_bytes)<=65536 and digest(config_bytes)==args.config_sha,'config SHA changed')
     config=json.loads(config_bytes)
+    new_public_whole=new_public_whole_case(config)
     keys={'schema','glyph','catalogStrokes','sourceViewBox','defaultSource','sourceRoots','domestic','inputSHA256','holdSummary','launcherSHA256','sharedServe','noPartialAnimation','nativeApproval','runtimeApplied','guardMode','host','layoutMode'}
+    if new_public_whole:keys.add('wholeOnly')
     original_hkcs_m7626_config=(type(config)is dict and config.get('glyph')=='瘦' and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['selected'] and type(config['sourceRoots']['selected'])is dict and config['sourceRoots']['selected'].get('root')=='hkcs_m7626')
     if original_hkcs_m7626_config:keys.add('dictionaryPlaybackStrokes')
     original_u83f1_family_config=(type(config)is dict and config.get('glyph')=='菱' and 'dictionaryPlaybackStrokes'in config)
@@ -462,7 +503,7 @@ def main():
     if original_u7228_config:keys.add('dictionaryPlaybackStrokes')
     require(type(config)is dict and set(config)==keys and config['schema']=='hanja-shared-static-raw-compare/v1','exact config fields required')
     require(type(config['glyph'])is str and len(config['glyph'])==1 and type(config['catalogStrokes'])is int and 1<=config['catalogStrokes']<=128,'glyph/count required')
-    require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']=='stacked520-css-only','original source/local host required')
+    require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']==('whole-pair520-css-only'if new_public_whole else'stacked520-css-only'),'original source/local host required')
     require(config['nativeApproval']is False and config['runtimeApplied']is False and config['noPartialAnimation']is True and config['guardMode']=='explicit-parameter-pins-v1','static unapproved scope required')
     require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA}and hexsha(config['launcherSHA256']),'shared code identity changed')
     roots=config['sourceRoots']
@@ -481,6 +522,7 @@ def main():
         source_keys={'root','file','fileSHA256','proofKeys','proofKind','sourceProofIdentity','rawGroups','drawingCalls','polygonCounts','polygons'}
         bound_body='existingMatchingFull5'in spec or'nonDrawingRawRows'in spec
         require(set(spec)==(source_keys|{'existingMatchingFull5','nonDrawingRawRows'} if bound_body else source_keys),'exact source spec fields required')
+        if new_public_whole:validate_new_public_whole(config,label,spec,pinned_path(spec['file']),config_path,new_public_whole)
         original_hkcs_m84d1=(config['glyph']=='蓑' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m84d1')
         if original_hkcs_m84d1:validate_exact_hkcs_m84d1_capture(config,label,spec,pinned_path(spec['file']))
         original_hkcs_m85a9=(config['glyph']=='薩' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m85a9')
@@ -495,7 +537,7 @@ def main():
         if original_hkcs_m85aa:validate_exact_hkcs_m85aa_capture(config,label,spec,pinned_path(spec['file']))
         original_hkcs_m7626=(config['glyph']=='瘦' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m7626')
         if original_hkcs_m7626:validate_exact_hkcs_m7626_capture(config,label,spec,pinned_path(spec['file']))
-        require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa or original_hkcs_m7626),'original root identity required')
+        require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa or original_hkcs_m7626 or new_public_whole),'original root identity required')
         path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or exact_original_u6f0c(config,roots,spec) or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3 or original_hkcs_m85aa or original_hkcs_m7626)and hexsha(spec['fileSHA256']),'actual whole file required')
         if bound_body:validate_original_empty_body3(spec,path)
         elif spec['proofKind']=='selected-body3-only':
@@ -548,6 +590,7 @@ def main():
         require(page.replace(PAGE_CSS_NEW,PAGE_CSS_OLD,1)==original,'CSS inverse changed original page/SVG bytes')
         return page
     shared.page=stacked_page
+    if new_public_whole:install_new_whole_only(shared,original_page)
     if args.check_only:
         sources=shared.load_sources();require(shared.FETCH_COUNT==0,'preparation cannot fetch domestic media')
         print(json.dumps({'guardMode':config['guardMode'],'sharedFunctionCopies':0,'roots':list(sources),'domesticCount':dictionary_count,'raw':{k:len(p['groups'])for k,p in sources.items()},'HTTP':0,'server':0,'sourceCompiler':0,'engine':0,'projection':0,'nativeApproval':False}));return
