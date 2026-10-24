@@ -1,0 +1,557 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "蓑",
+  "root": "hkcs_m84d1",
+  "observer": "ROOT browser panel",
+  "recordedBy": "source_next from ROOT observations",
+  "status": "New four-policy controlled component scope passed; actual application UI not tested",
+  "inputs": {
+    "renderer": {
+      "file": "components/hanja/stroke-outlines.tsx",
+      "sha256": "60a3d0779202a061b02baff93c9ef92993ab60ffe5973795395be543c1759e51"
+    },
+    "helper": {
+      "file": "scripts/hanja-actual-component-review.mjs",
+      "sha256": "1e32a1c00c8fb4b8311010b19315040e1e3dc3f9d3deb17701095312fd7b4451"
+    },
+    "profile": {
+      "file": "docs/hanja-actual-component-profiles-2026-10-22/u84d1-hkcs-2.json",
+      "sha256": "38b143ae50fe5d3463216807c567cb0b2975384aec98981c6d589229d841ae41"
+    },
+    "fixture": {
+      "file": "docs/hanja-source-original-u84d1-hkcs-2026-10-24/fixtures.json",
+      "sha256": "486f3a7f1a37050ed8bfbeb15eff7383126f1b4eb4ed591ac54faa30032bc966"
+    },
+    "geometrySHA256": "aa6e53199f9fb796e4fa810169ec2645c84ce2b1bf3e7f86be0d0255705908ec",
+    "capsModule": {
+      "file": "lib/hanja-stroke-start-caps-u84d1-hkcs.ts",
+      "sha256": "a99409014d9f03632fe89f7e2a211cd1adf709eae235fd0725b6b7f9d896a52b"
+    },
+    "footModule": {
+      "file": "lib/hanja-stroke-source-foot-u84d1-hkcs.ts",
+      "sha256": "52257529437075273b4c746f129a0949ee2ef6ef52a71589bab0269f4cb988d0"
+    }
+  },
+  "resources": {
+    "initialFailure": {
+      "cause": "Unknown import ./hanja-stroke-start-gate-u7d8e.ts",
+      "exit": 1,
+      "SSRCompleted": 0,
+      "CJSSuccess": 0,
+      "serverStarted": false,
+      "acceptedNative": 0
+    },
+    "correctedStartup": {
+      "SSR": 1,
+      "CJS": 249,
+      "ESM": 249,
+      "confirmed": true,
+      "engineRuns": 0,
+      "sourceProjection": 0
+    }
+  },
+  "finite": {
+    "screenshots": 18,
+    "slots": 45,
+    "passed": 45,
+    "DOMBad": [],
+    "errors": [],
+    "counts": {
+      "early": 12,
+      "capsMidNearEnd": 9,
+      "sourceBoundary": 3,
+      "footTriangleInterior": 11,
+      "footBodyPhase": 3,
+      "footMidNearEnd": 3,
+      "residual": 4
+    },
+    "samples": [
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 11,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 11,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 11,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.030000000000000002
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 13,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 13,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 13,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 14,
+        "mask": 1,
+        "local": 0.000001,
+        "global": 0.000001
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 14,
+        "mask": 1,
+        "local": 0.01,
+        "global": 0.01
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 14,
+        "mask": 1,
+        "local": 0.03,
+        "global": 0.03
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.000001,
+        "global": 0.26555978340825687
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.01,
+        "global": 0.2729034584776328
+      },
+      {
+        "category": "early",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.03,
+        "global": 0.2875922774982867
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 11,
+        "mask": 1,
+        "local": 0.5,
+        "global": 0.5
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 11,
+        "mask": 1,
+        "local": 0.99999999,
+        "global": 0.99999999
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 11,
+        "mask": 1,
+        "local": 1,
+        "global": 1
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 13,
+        "mask": 1,
+        "local": 0.5,
+        "global": 0.5
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 13,
+        "mask": 1,
+        "local": 0.99999999,
+        "global": 0.99999999
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 13,
+        "mask": 1,
+        "local": 1,
+        "global": 1
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 14,
+        "mask": 1,
+        "local": 0.5,
+        "global": 0.5
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 14,
+        "mask": 1,
+        "local": 0.99999999,
+        "global": 0.9999999899999998
+      },
+      {
+        "category": "caps-mid-near-end",
+        "mode": "actual",
+        "pen": 14,
+        "mask": 1,
+        "local": 1,
+        "global": 1
+      },
+      {
+        "category": "source-boundary",
+        "mode": "actual",
+        "pen": 12,
+        "global": 0.26555904886730586
+      },
+      {
+        "category": "source-boundary",
+        "mode": "actual",
+        "pen": 12,
+        "global": 0.26555904896730587
+      },
+      {
+        "category": "source-boundary",
+        "mode": "actual",
+        "pen": 12,
+        "global": 0.2655590490673059
+      },
+      {
+        "category": "foot-triangle-1",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.10194664613894232,
+        "global": 0.34043284071218416
+      },
+      {
+        "category": "foot-triangle-2",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.22153088484931446,
+        "global": 0.42826040271915067
+      },
+      {
+        "category": "foot-triangle-3",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.23994236889523038,
+        "global": 0.4417825505717564
+      },
+      {
+        "category": "foot-triangle-4",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.27704452911779487,
+        "global": 0.46903189641098403
+      },
+      {
+        "category": "foot-triangle-5",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.3143941020250174,
+        "global": 0.4964629522576295
+      },
+      {
+        "category": "foot-triangle-6",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.35232629811027516,
+        "global": 0.5243219104252449
+      },
+      {
+        "category": "foot-triangle-7",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.3894121554895476,
+        "global": 0.5515592827887406
+      },
+      {
+        "category": "foot-triangle-8",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.4272005878776272,
+        "global": 0.5793126550098764
+      },
+      {
+        "category": "foot-triangle-9",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.46503664399851924,
+        "global": 0.6071010040506308
+      },
+      {
+        "category": "foot-triangle-10",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.4695428701411354,
+        "global": 0.6104105610643821
+      },
+      {
+        "category": "foot-triangle-11",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.4821271737871999,
+        "global": 0.6196529890022819
+      },
+      {
+        "category": "foot-body-phase",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.4904278403766192,
+        "global": 0.6257493384664203
+      },
+      {
+        "category": "foot-body-phase",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.4904278404766192,
+        "global": 0.6257493385398645
+      },
+      {
+        "category": "foot-body-phase",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.4904278405766192,
+        "global": 0.6257493386133086
+      },
+      {
+        "category": "foot-mid-near-end",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.75,
+        "global": 0.8163897622418265
+      },
+      {
+        "category": "foot-mid-near-end",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 0.99999999,
+        "global": 0.9999999926555905
+      },
+      {
+        "category": "foot-mid-near-end",
+        "mode": "actual",
+        "pen": 12,
+        "mask": 2,
+        "local": 1,
+        "global": 1
+      },
+      {
+        "category": "original-P-residual",
+        "mode": "residual",
+        "pen": 11,
+        "mask": 1,
+        "global": 1
+      },
+      {
+        "category": "original-P-residual",
+        "mode": "residual",
+        "pen": 13,
+        "mask": 1,
+        "global": 1
+      },
+      {
+        "category": "original-P-residual",
+        "mode": "residual",
+        "pen": 14,
+        "mask": 1,
+        "global": 1
+      },
+      {
+        "category": "original-P-residual",
+        "mode": "residual",
+        "pen": 12,
+        "mask": 2,
+        "global": 1
+      }
+    ],
+    "allFiniteGlyphsFullVisible": true,
+    "glyphCSSSize": 220,
+    "residual": {
+      "acceptedBoards": 4,
+      "boardCSSSize": 520,
+      "top": 668.015625,
+      "bottom": 1188.015625,
+      "viewportHeight": 1280,
+      "capPens": [
+        11,
+        13,
+        14
+      ],
+      "capsResult": "white",
+      "footPen": 12,
+      "footResult": "thin antialiasing only; no solid residual",
+      "diagnosticRootOnlyScreens": 2,
+      "diagnosticAccepted": 0
+    }
+  },
+  "deduplication": {
+    "key": [
+      "renderingMode",
+      "pen",
+      "globalProgress"
+    ],
+    "explanation": "Residual boards are a distinct rendering mode from component progress samples; natural runs are excluded from this finite count.",
+    "freshDistinct": 45,
+    "reusedPositiveSlots": 40,
+    "reusedDistinct": 40,
+    "crossScopeDuplicateKeys": [
+      "[\"actual\",12,0.26555904886730586]"
+    ],
+    "crossScopeDuplicateDescription": "pen12 source-boundary minus is reobserved and overlaps the old positive prior-V frame",
+    "combinedFiniteDistinct": 84
+  },
+  "reuse": {
+    "file": "docs/hanja-source-original-u84d1-hkcs-2026-10-24/ordinary-baseline-native-review.json",
+    "sha256": "34f3c6a6d1993a092270a859372bdc2c3bfb722bc9dd91b19bc85ade2d6708c2",
+    "positiveScope": [
+      "12 cardinal initial targets × 3 = 36",
+      "pen8 source boundary × 3",
+      "pen12 source boundary minus × 1"
+    ],
+    "positiveSlots": 40,
+    "old14HoldsPreservedAsHistory": true,
+    "newPoliciesAddressFourAffectedTargetsOnly": true
+  },
+  "natural": {
+    "acceptedScreenshots": 7,
+    "snapshots": [
+      {
+        "pen": 12,
+        "position": "start",
+        "globalProgress": 0.090012499988
+      },
+      {
+        "pen": 12,
+        "position": "body",
+        "globalProgress": 0.720224999988,
+        "footPhase": "body"
+      },
+      {
+        "pen": 12,
+        "position": "end",
+        "globalProgress": 1,
+        "footPhase": "body",
+        "roundingCaveat": "Exact local progress 1 not claimed"
+      },
+      {
+        "pen": 12,
+        "position": "independent foot-phase inflight",
+        "globalProgress": 0.5191999999999971,
+        "footPhase": "foot"
+      },
+      {
+        "pen": 14,
+        "position": "start",
+        "globalProgress": 0.07597499999999854
+      },
+      {
+        "pen": 14,
+        "position": "end",
+        "globalProgress": 1,
+        "localProgress": 0.9999999999999994
+      },
+      {
+        "pen": 14,
+        "position": "independent middle",
+        "globalProgress": 0.520312499994041
+      }
+    ],
+    "DOMBad": [],
+    "errors": [],
+    "mainCSSSize": 520,
+    "top": 380.015625,
+    "bottom": 900.015625,
+    "allFullVisible": true,
+    "continuousWholeRunProved": false,
+    "independentRunSnapshotsDisclosed": true
+  },
+  "preservation": {
+    "sourcePUnchanged": true,
+    "guideUnchanged": true,
+    "widthAndOuterWeightUnchanged": true,
+    "source12GuideGap": [
+      -30,
+      1.65
+    ],
+    "originalGuideGapClosureClaim": false,
+    "nonDrawingRaw7Preserved": true,
+    "nonDrawingRaw7LogicalAssignment": null,
+    "existingProofsRecomputed": false,
+    "newEngineRuns": 0,
+    "newSourceProjection": 0,
+    "fullSweepMathematicalClaim": false
+  },
+  "approval": {
+    "controlledNewFourPolicyScope": true,
+    "actualAppUI": false,
+    "productionRegistration": false,
+    "allTimesNativeGuarantee": false
+  },
+  "server": {
+    "pid": 98623,
+    "session": 23302,
+    "port": 59412,
+    "exitCode": 130,
+    "tab99Closed": true,
+    "ownedServerRemaining": false
+  },
+  "recordActions": {
+    "builds": 0,
+    "fullTypeChecks": 0,
+    "commitsByRecorder": 0
+  }
+}

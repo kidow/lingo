@@ -1,0 +1,85 @@
+{
+  "schema": "hanja-native-activation-evidence/v1",
+  "date": "2026-10-24",
+  "glyph": "蓑",
+  "root": "hkcs_m84d1",
+  "localArtifactTag": "u84d1-hkcs",
+  "observer": "/root",
+  "recordedBy": "/root/activation1440",
+  "result": "PASS",
+  "finalChangedScope": {
+    "path": "docs/hanja-source-original-u84d1-hkcs-2026-10-24/revised-foot-caps-native-review.json",
+    "SHA256": "3cea561e746791272ceca02f1a09632a6385d1b1cae2be8132cff6c63ee3e9bc",
+    "freshFiniteSlots": 45,
+    "freshFiniteDistinct": 45,
+    "acceptedFiniteScreens": 18,
+    "naturalScreens": 7,
+    "naturalDistinctCountClaimed": false,
+    "continuousNaturalWholeRunProved": false
+  },
+  "reusedUnchangedFiniteScopes": 40,
+  "crossScopeDuplicateCount": 1,
+  "combinedFiniteDistinct": 84,
+  "oldFourteenHoldsPreserved": true,
+  "totalCaptureCount": null,
+  "totalCaptureCountClaimed": false,
+  "nativeApproval": true,
+  "isolatedActualComponentOnly": true,
+  "actualAppUI": false,
+  "allTimeProof": false,
+  "sourceMicrotimingEquivalence": false,
+  "server": {
+    "pid": 98623,
+    "session": 23302,
+    "port": 59412,
+    "exitCode": 130,
+    "tab99Closed": true,
+    "ownedServerRemaining": false
+  },
+  "finalInputs": {
+    "renderer": {
+      "file": "components/hanja/stroke-outlines.tsx",
+      "sha256": "60a3d0779202a061b02baff93c9ef92993ab60ffe5973795395be543c1759e51"
+    },
+    "helper": {
+      "file": "scripts/hanja-actual-component-review.mjs",
+      "sha256": "1e32a1c00c8fb4b8311010b19315040e1e3dc3f9d3deb17701095312fd7b4451"
+    },
+    "profile": {
+      "file": "docs/hanja-actual-component-profiles-2026-10-22/u84d1-hkcs-2.json",
+      "sha256": "38b143ae50fe5d3463216807c567cb0b2975384aec98981c6d589229d841ae41"
+    },
+    "fixture": {
+      "file": "docs/hanja-source-original-u84d1-hkcs-2026-10-24/fixtures.json",
+      "sha256": "486f3a7f1a37050ed8bfbeb15eff7383126f1b4eb4ed591ac54faa30032bc966"
+    },
+    "geometrySHA256": "aa6e53199f9fb796e4fa810169ec2645c84ce2b1bf3e7f86be0d0255705908ec",
+    "capsModule": {
+      "file": "lib/hanja-stroke-start-caps-u84d1-hkcs.ts",
+      "sha256": "a99409014d9f03632fe89f7e2a211cd1adf709eae235fd0725b6b7f9d896a52b"
+    },
+    "footModule": {
+      "file": "lib/hanja-stroke-source-foot-u84d1-hkcs.ts",
+      "sha256": "52257529437075273b4c746f129a0949ee2ef6ef52a71589bab0269f4cb988d0"
+    }
+  },
+  "resources": {
+    "initialFailure": {
+      "cause": "Unknown import ./hanja-stroke-start-gate-u7d8e.ts",
+      "exit": 1,
+      "SSRCompleted": 0,
+      "CJSSuccess": 0,
+      "serverStarted": false,
+      "acceptedNative": 0
+    },
+    "correctedStartup": {
+      "SSR": 1,
+      "CJS": 249,
+      "ESM": 249,
+      "confirmed": true,
+      "engineRuns": 0,
+      "sourceProjection": 0
+    }
+  },
+  "limits": "84finite=40unchanged+45fresh−1cross-scope duplicate. Seven natural screenshots are separate mixed-run snapshots; no continuous full-run or exact local1 guarantee."
+}
