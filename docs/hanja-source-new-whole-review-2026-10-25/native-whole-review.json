@@ -1,0 +1,128 @@
+{
+  "schema": "hanja-new-public-whole-native-review/v1",
+  "scope": "새 공개 전체 원본과 기존 원문 whole의 실제 520px 대조만",
+  "launcher": {
+    "path": "scripts/hanja-raw-static-compare.py",
+    "sha256": "3364e08f6bf87094300c337f72d935a390e79397e78b8692cd504982d8b0fda6"
+  },
+  "observed": [
+    {
+      "glyph": "藿",
+      "sourceRoot": "koseki-368300",
+      "sourceVersion": 9,
+      "config": {
+        "path": "docs/hanja-source-raw-compare-u85ff-koseki-368300-whole-2026-10-25/config.json",
+        "sha256": "17e35b3cf64da7bbb082fb694d22041f8c0d9e1852ff012bed6d21dbd916016c"
+      },
+      "full5": {
+        "path": "docs/hanja-actual-engine-capture-u85ff-koseki-368300-2026-10-25/engine-whole-koseki-368300.json",
+        "sha256": "329c2326b5a5e3da8545566a9913cac666aa97dac6534efd51fc9b0778a19454"
+      },
+      "reviewer": "root 실제 브라우저 직접 관찰",
+      "wholeCompatible": true,
+      "freshWholePass": 1,
+      "viewport": [
+        1280,
+        1280
+      ],
+      "originalPublisherSVG": [
+        520,
+        520
+      ],
+      "publicWholeSVG": [
+        520,
+        520
+      ],
+      "bothCompletelyVisible": true,
+      "finding": "4획 초두/雨/隹의 전체 표준구조에 누락·추가 없음. 상부 점/H 두 줄/雨 중V/隹 두V·상부DL점·네H의 주요 접속에 whole 단계 육안상 큰 불일치 없음",
+      "sourceRaw": 21,
+      "dictionaryStrokes": 20,
+      "logicalMapping": null,
+      "startup": {
+        "privateRAMFetch": 1,
+        "engine": 0,
+        "projection": 0
+      },
+      "cleanup": {
+        "PID": 73193,
+        "session": 54476,
+        "port": 59412,
+        "exitCode": 130,
+        "tab": 213,
+        "tabClosed": true,
+        "viewportReset": true
+      }
+    },
+    {
+      "glyph": "葯",
+      "sourceRoot": "hkcs_m846f",
+      "sourceVersion": 2,
+      "config": {
+        "path": "docs/hanja-source-raw-compare-u846f-hkcs-whole-2026-10-25/config.json",
+        "sha256": "77d1be5d5b371be2db590519136cfce9e554f9a341ad96211755b65cedf95d3b"
+      },
+      "full5": {
+        "path": "docs/hanja-actual-engine-capture-u846f-hkcs-2026-10-25/engine-whole-hkcs_m846f.json",
+        "sha256": "0aa5daf820225c29fe6ad0d31a8bec2be44c983b06cd7680f5f924f6e50ede21"
+      },
+      "reviewer": "root 실제 브라우저 직접 관찰",
+      "wholeCompatible": true,
+      "freshWholePass": 1,
+      "viewport": [
+        1280,
+        1280
+      ],
+      "originalPublisherSVG": [
+        520,
+        520
+      ],
+      "publicWholeSVG": [
+        520,
+        520
+      ],
+      "bothCompletelyVisible": true,
+      "finding": "4획 초두/糸/勺의 전체 표준구조 호환. 마지막 내부 H 확인. 좌하 별획은 윗H와 분리되고 중심V는 H와 이어진 전체 형태이며 큰 누락·추가 없음. 8번 대응 추정이나 개별P 접촉 판정이 아님",
+      "sourceRaw": 16,
+      "dictionaryStrokes": 13,
+      "logicalMapping": null,
+      "startup": {
+        "privateRAMFetch": 1,
+        "engine": 0,
+        "projection": 0
+      },
+      "cleanup": {
+        "PID": 74113,
+        "session": 51520,
+        "port": 59412,
+        "exitCode": 130,
+        "tab": 214,
+        "tabClosed": true,
+        "viewportReset": true
+      }
+    }
+  ],
+  "approval": {
+    "individualPContact": false,
+    "individualStrokeDirection": false,
+    "strokeOrder": false,
+    "sourceTimingEquivalent": false,
+    "examBody": false,
+    "courtStrokeOrder": false,
+    "runtime": false,
+    "wholeCompatible": true
+  },
+  "aliasScope": "GlyphWiki canonical koseki-368300과 gaijin_krcourt-085ff의 실제 identity 참조만 확인. 공식 법원 필순 승인을 의미하지 않음",
+  "privatePublisherSVGOrCSSFilesWritten": 0,
+  "existingFailedSourceReplayed": 0,
+  "additionalEngineCaptures": 0,
+  "status": "원문 RAM 직접 대조 whole PASS2; 개별 획·P접촉·필순·매핑 미승인",
+  "preparationCommits": {
+    "publicSourcesAndSingleCaptures": "704b75e667a30661bcd8620792bdb32abd3083aa",
+    "exactOriginalRAMWholeComparisons": "857f7f172b45d4bde4881c4c3b07e70fa706f22b"
+  },
+  "totalFreshWholePass": 2,
+  "sourceRawToDictionaryMappingApproved": false,
+  "sourcePOrderAssumed": false,
+  "sourceGlyphGeometryChanged": false,
+  "DOwnServerStarted": 0
+}
