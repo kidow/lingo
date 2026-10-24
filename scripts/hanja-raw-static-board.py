@@ -105,6 +105,8 @@ def install_board(shared, base, groups, board_guards):
             note += '<p data-source-draft="u9f08"><strong>DRAFT · productionImportAllowed=false</strong> · 24획 후보 · 原archive5+固定公開2 혼합출처(과거누락복원아님) · 원17 V/Q/H+UP 보존 · 접촉·재생 미승인</p>'
         if base.get('glyph') == '萸' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u8438-k':
             note += '<p data-source-draft="u8438-k"><strong>DRAFT · 사전13획 / 배정12획 유지 · productionImportAllowed=false</strong> · 원raw14 전체 보존 · raw10 H 다음 raw9 V 묶음은 정적 비교 후보 · 전체13 대응·접촉·재생·개별variant 미승인</p>'
+        if base.get('glyph') == '髓' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'hkcs_m9ad3':
+            note += '<p data-source-draft="u9ad3-hkcs"><strong>DRAFT · productionImportAllowed=false</strong> · 原provider hkcs_m9ad3 · raw19 type0/trace0/P0는 비그리기 메타행으로 미배정 보존 · 원22/23 guide 간격 유지 · filled-P 교집합은 별도 코드 사실이며 필순·시간·전체 연결 승인 아님</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
 
     shared.guards, shared.selection, shared.page = guarded, selection, page
@@ -537,6 +539,21 @@ def exact_u8438_k_dictionary_draft_launcher(config,base):
             and digest(fixed_path('docs/hanja-source-original-u8438-k-2026-10-24/fixtures.json').read_bytes())=='0c329d676ac1615a5c313b6afa89590b591ab5e034883e0370b2b5d0eee27b6a'
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
+def exact_u9ad3_hkcs_draft_launcher(config,base):
+    # Authored HK provider is retained; raw19 type0 stays unassigned, never a pen.
+    selected = base.get('sourceRoots',{}).get('selected',{})
+    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'300c8273f88a6cb60358b33aef0f3b07f249a8759dcb7f8672a435b10e959620'}
+            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u9ad3-hkcs-2026-10-24/config.json','SHA256':'f21a9fca0d46748bfc9feb80e6a29cd8f9574c7e788c5aa540b8c218210ba751'}
+            and base.get('glyph')=='髓' and base.get('catalogStrokes')==23
+            and base.get('sourceRoots')=={"selected":{"root":"hkcs_m9ad3","file":"docs/hanja-actual-engine-capture-u9ad3-hkcs-2026-10-24/engine-whole-u9ad3-hkcs.json","fileSHA256":"d3de8246042950a06f0479b278b3c23842a733849d1f890702ad6f82e8fdd644","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"hkcs_m9ad3","sourceProofFile":"engine-whole-u9ad3-hkcs.json","sourceProofFileSha256":"d3de8246042950a06f0479b278b3c23842a733849d1f890702ad6f82e8fdd644"},"rawGroups":30,"drawingCalls":31,"polygonCounts":[1,1,2,1,1,2,1,2,1,1,5,1,1,2,3,2,1,2,0,1,1,5,1,1,2,2,1,2,3,2],"polygons":51}}
+            and config.get('provisionalGroups')=={"selected":[[1],[2,3],[5],[4],[6],[7,8],[9],[10,11],[12],[13],[14],[15],[16],[17],[18],[20],[21,22],[23],[24],[25],[26],[27,28],[29,30]]}
+            and base.get('domestic',{}).get('clips')==23
+            and base.get('domestic',{}).get('sha256')=='2db8529bdf015e14c41d577adff4d165760ad9b84a92f0e6487034b049a6035a'
+            and digest(fixed_path('docs/hanja-source-original-u9ad3-hkcs-2026-10-24/fixtures.json').read_bytes())=='7fdbb4c5403f12809c8f08161235f6a9e54b3c0ad3226ebb2667f3f79ee0773a'
+            and base.get('inputSHA256',{}).get('docs/hanja-actual-engine-capture-u9ad3-hkcs-2026-10-24/capture.json')=='3ddcd9d9ad156fa253186a5f2d3ac8c729d83121c8517fda7a13faf4a0da1792'
+            and base.get('inputSHA256',{}).get('docs/hanja-source-alternative-u9ad3-hkcs-2026-10-24/sources.json')=='4807c804675ba1627f6aaaf34b7240e4da43c1ac5150085d2f283a987c5bdc8d'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -573,6 +590,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u85a9_t_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u9f08_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u8438_k_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u9ad3_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u64c4_k_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u77a5_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u85a9_hkcs_draft_launcher(config,base)

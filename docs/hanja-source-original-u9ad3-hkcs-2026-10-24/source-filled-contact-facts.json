@@ -1,0 +1,125 @@
+{
+  "schema": "hanja-original-source-filled-contact-facts/v1",
+  "glyph": "髓",
+  "providerRoot": "hkcs_m9ad3",
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u9ad3-hkcs-2026-10-24/engine-whole-u9ad3-hkcs.json",
+    "SHA256": "d3de8246042950a06f0479b278b3c23842a733849d1f890702ad6f82e8fdd644"
+  },
+  "method": "Winding-number strict point-in-polygon and proper edge crossing, exact Fraction(str(JSON number)); no tolerance or guide-radius discs.",
+  "observations": [
+    {
+      "pen": 22,
+      "rawOneBased": [
+        27,
+        28
+      ],
+      "numericDomain": "exact rational interpretation of JSON decimal f64 values; source200 coordinates",
+      "positiveFilledOverlap": true,
+      "pairs": [
+        {
+          "previousP": 1,
+          "nextP": 1,
+          "strictInteriorVertexWitnesses": [
+            {
+              "kind": "AvertexInsideB",
+              "vertex": 2,
+              "point": [
+                "501/5",
+                "110"
+              ]
+            },
+            {
+              "kind": "BvertexInsideA",
+              "vertex": 3,
+              "point": [
+                "929/10",
+                "108"
+              ]
+            }
+          ],
+          "properEdgeCrossings": 2,
+          "positiveFilledOverlap": true
+        },
+        {
+          "previousP": 1,
+          "nextP": 2,
+          "strictInteriorVertexWitnesses": [
+            {
+              "kind": "AvertexInsideB",
+              "vertex": 1,
+              "point": [
+                "501/5",
+                "106"
+              ]
+            },
+            {
+              "kind": "AvertexInsideB",
+              "vertex": 2,
+              "point": [
+                "501/5",
+                "110"
+              ]
+            },
+            {
+              "kind": "BvertexInsideA",
+              "vertex": 4,
+              "point": [
+                "929/10",
+                "108"
+              ]
+            }
+          ],
+          "properEdgeCrossings": 1,
+          "positiveFilledOverlap": true
+        }
+      ],
+      "guideJoinLiteral": false,
+      "trajectoryOrWholeStrokeConnectivityApproved": false
+    },
+    {
+      "pen": 23,
+      "rawOneBased": [
+        29,
+        30
+      ],
+      "numericDomain": "exact rational interpretation of JSON decimal f64 values; source200 coordinates",
+      "positiveFilledOverlap": true,
+      "pairs": [
+        {
+          "previousP": 1,
+          "nextP": 1,
+          "strictInteriorVertexWitnesses": [
+            {
+              "kind": "AvertexInsideB",
+              "vertex": 10,
+              "point": [
+                "203/2",
+                "767/5"
+              ]
+            },
+            {
+              "kind": "AvertexInsideB",
+              "vertex": 11,
+              "point": [
+                "514/5",
+                "309/2"
+              ]
+            }
+          ],
+          "properEdgeCrossings": 2,
+          "positiveFilledOverlap": true
+        }
+      ],
+      "guideJoinLiteral": false,
+      "trajectoryOrWholeStrokeConnectivityApproved": false
+    }
+  ],
+  "scope": "Positive intersection of at least one original filled polygon across each raw pair only. Not proof every polygon in either raw is connected, not full-prefix connectedness, not source-direction/time approval.",
+  "sourceGeometryChanged": false,
+  "sourceGuideChanged": false,
+  "connectorAdded": false,
+  "engineReplay": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
