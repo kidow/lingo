@@ -93,6 +93,8 @@ def install_board(shared, base, groups, board_guards):
         note = '<h2>220px 정적 검토판 · provisionalGroups는 검토 가설이며 승인 아님</h2><p>같은 번호·원raw 합성은 시간·방향·연결성·합획 승인이 아닙니다. 미정은 빈 SVG가 아닌 미정으로 표시합니다. 원P/원좌표 그대로 · 520 비교는 위 링크 사용.</p>'
         if base.get('glyph') == '薩' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u85a9-t':
             note += '<p data-source-draft="u85a9-t"><strong>DRAFT · productionImportAllowed=false</strong> · 8획 공식 short V ↔ 원Q down-right 미확정 · 13획 초기 V+Q 미확정 · 2·4획 원slant 보존 · 정적 대조만 가능, 자동 승인 없음</p>'
+        if base.get('glyph') == '擄' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u64c4-k':
+            note += '<p data-source-draft="u64c4-k"><strong>DRAFT · productionImportAllowed=false</strong> · 16획 후보 · 원6H+hook 다음7longV/DL · 원9UP·田/力 경계·초기 재생 위험 미승인</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
 
     shared.guards, shared.selection, shared.page = guarded, selection, page
@@ -463,6 +465,16 @@ def exact_u85a9_t_draft_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u64c4_k_draft_launcher(config,base):
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"b5007019ad279c0c84f0698440f4446c093892c98be4191c13608d9d614c0544"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u64c4-k-2026-10-24/config.json","SHA256":"ac140a46fcf3c1ea60045cee7d3004106ec504c02f288b8fca5b1e6088ea6857"}
+            and base.get('glyph')=='擄' and base.get('catalogStrokes')==16
+            and base.get('sourceRoots')=={"selected":{"root":"u64c4-k","file":"docs/hanja-actual-engine-capture-u64c4-k-2026-10-24/engine-whole-u64c4-k.json","fileSHA256":"a3563f77d80bf7e4ba1754fc244abd28d05589bfcbaa429c36d6110c2f16e792","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u64c4-k","sourceProofFile":"engine-whole-u64c4-k.json","sourceProofFileSha256":"a3563f77d80bf7e4ba1754fc244abd28d05589bfcbaa429c36d6110c2f16e792"},"rawGroups":19,"drawingCalls":24,"polygonCounts":[2,5,3,2,2,3,1,2,2,8,1,1,2,2,1,1,1,4,3],"polygons":46}}
+            and config.get('provisionalGroups')=={"selected":[[1],[2],[3],[4],[5],[7,8],[6],[9],[10],[11],[12,13],[14],[15],[16],[17,18],[19]]}
+            and digest(fixed_path('docs/hanja-source-original-u64c4-k-2026-10-24/fixtures.json').read_bytes())=='5c32d5b87902415e499e15f4607ea15ca7776dfecb3b4eddb1e10d3caba96ccb'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -497,6 +509,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u66c1_ue0102_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u7006_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u85a9_t_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u64c4_k_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u704c_ue0102_prepared_launcher(config,base)
     require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base) or exact_u95e5_prepared_launcher(config,base) or exact_u852d_k_prepared_launcher(config,base) or exact_u8aed_k_prepared_launcher(config,base) or exact_u9d25_prepared_launcher(config,base) or exact_u6d8f_prepared_launcher(config,base) or exact_u8fe8_prepared_launcher(config,base) or exact_u6f11_prepared_launcher(config,base) or exact_u6f7e_prepared_launcher(config,base) or exact_u7e81_prepared_launcher(config,base) or exact_u9436_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
