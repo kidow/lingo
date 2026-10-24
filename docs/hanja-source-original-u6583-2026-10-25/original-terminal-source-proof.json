@@ -1,0 +1,216 @@
+{
+  "schema": "hanja-original-terminal-source-proof/v1",
+  "glyph": "斃",
+  "root": "u6583",
+  "target": [
+    17,
+    3
+  ],
+  "fixture": {
+    "path": "docs/hanja-source-original-u6583-2026-10-25/fixtures.json",
+    "SHA256": "742ac496567c95b100901ad6f9bd6523e746055461b65b3cb3d9ee82e95af124",
+    "geometrySHA256": "9dd73d9ccd0223c439460852e9366df944034bc557925ebcccf13f306011b1f7"
+  },
+  "canonicalContext": {
+    "path": "lib/hanja-stroke-start-caps-u6583.ts",
+    "SHA256": "9cd552a9a0bc3e438431930304a1d49787a8686d6297206a9cb5734d334fd3e4",
+    "sourceProofFormat": "actual-body3",
+    "syntheticHeader": false
+  },
+  "sourceSegment": {
+    "outline": "M62 87.5 L90 87.5 L90 93.5 L62 93.5 Z M90 87.5 L91.8 88.7 L93 90.5 L91.8 92.3 L90 93.5 Z M90 87.5 L87 87.5 L90 75 L91 75 Z",
+    "bounds": [
+      62,
+      75,
+      93,
+      93.5
+    ],
+    "direction": "right",
+    "weight": 28
+  },
+  "sourcePredecessor": {
+    "outline": "M60 85.5 L60 86.1 L60.1 86.55 L60.2 86.85 L60.25 87 L60.35 87.1 L60.45 87.2 L60.6 87.25 L60.9 87.35 L61.35 87.45 L62 87.5 L62 93.5 L60.7 93.4 L59.45 93.2 L58.25 92.8 L57.1 92.15 L56.1 91.35 L55.3 90.35 L54.65 89.2 L54.25 88 L54.05 86.75 L54 85.5 Z M62 87.5 L64.1 88.4 L65 90.5 L64.1 92.6 L62 93.5 Z",
+    "bounds": [
+      54,
+      85.5,
+      65,
+      93.5
+    ],
+    "direction": "curve",
+    "weight": 7.071068,
+    "revealPath": "M57 85.5 Q57 90.5 62 90.5",
+    "revealWidth": 14
+  },
+  "segmentSHA256": "2d831dd72276cae0e014e2d69bb8f8aad5361f6745452f4f514c926115725164",
+  "predecessorSHA256": "34262720d03c79aadc1b5245a675d406102874e7fa2c20560748a09ad0b833b3",
+  "bodyPath": "M62 87.5 L90 87.5 L90 93.5 L62 93.5 Z M90 87.5 L91.8 88.7 L93 90.5 L91.8 92.3 L90 93.5 Z",
+  "tailPath": "M90 87.5 L87 87.5 L90 75 L91 75 Z",
+  "bodyPOriginalSubpaths": [
+    1,
+    2
+  ],
+  "tailPOriginalSubpath": 3,
+  "tailOriginalVertices": [
+    [
+      "90",
+      "175/2"
+    ],
+    [
+      "87",
+      "175/2"
+    ],
+    [
+      "90",
+      "75"
+    ],
+    [
+      "91",
+      "75"
+    ]
+  ],
+  "partitionOriginalStringExact": true,
+  "bodyXSlabs": [
+    {
+      "x": [
+        "62",
+        "90"
+      ],
+      "midpoint": "76",
+      "interval": [
+        "175/2",
+        "187/2"
+      ]
+    },
+    {
+      "x": [
+        "90",
+        "459/5"
+      ],
+      "midpoint": "909/10",
+      "interval": [
+        "881/10",
+        "929/10"
+      ]
+    },
+    {
+      "x": [
+        "459/5",
+        "93"
+      ],
+      "midpoint": "462/5",
+      "interval": [
+        "448/5",
+        "457/5"
+      ]
+    }
+  ],
+  "bodyPositiveFrontiers": [
+    {
+      "x": "62",
+      "interval": [
+        "175/2",
+        "187/2"
+      ]
+    },
+    {
+      "x": "90",
+      "interval": [
+        "175/2",
+        "187/2"
+      ]
+    },
+    {
+      "x": "459/5",
+      "interval": [
+        "887/10",
+        "923/10"
+      ]
+    }
+  ],
+  "bodyTerminalFrontierAt93": "singleton90.5 is original closed endpoint; no positive-area claim there",
+  "sourcePriorContact": {
+    "priorOriginalP2IsInsideBodyRectangle": true,
+    "commonLeftEdge": [
+      "62",
+      "87.5",
+      "93.5"
+    ],
+    "forEveryPositiveBodyWidthDelta": "For 0<delta<=1, rectangle (62,62+delta)x(88.5,92.5) lies strictly in original prior diamond and current body. For delta>1 the first unit rectangle remains.",
+    "positiveOverlapAreaLowerBound": "4*min(delta,1)",
+    "actualPriorRequirement": "exact completed unmasked source17m2 P; Q7 coverage is not assumed"
+  },
+  "tailYSlab": {
+    "y": [
+      "75",
+      "175/2"
+    ],
+    "midpoint": "325/4",
+    "interval": [
+      "177/2",
+      "181/2"
+    ],
+    "left": "90-(6/25)*(y-75)",
+    "right": "91-(2/25)*(y-75)",
+    "width": "1+(4/25)*(y-75)>0"
+  },
+  "bodyTailContact": {
+    "edge": [
+      [
+        "87",
+        "175/2"
+      ],
+      [
+        "90",
+        "175/2"
+      ]
+    ],
+    "edgeLength": "3",
+    "bodyInteriorYMin": "175/2",
+    "tailInteriorYMax": "175/2",
+    "positiveAreaOverlapClaimed": false,
+    "connectedClosedUnion": true
+  },
+  "zeroAreaLimitBounds": {
+    "body": "6*31*bodyProgress",
+    "tail": "4*(25/2)*tailProgress"
+  },
+  "displayClock": {
+    "phaseShareExact": "62/87",
+    "bodyAxis": "x-positive",
+    "bodyStart": "62",
+    "bodyEnd": "93",
+    "tailAxis": "y-negative",
+    "tailStart": "175/2",
+    "tailEnd": "75",
+    "outerWeight": 28,
+    "publisherTimingEquivalent": false
+  },
+  "oldOrdinaryXClipFacts": {
+    "bbox": [
+      62,
+      75,
+      93,
+      93.5
+    ],
+    "tailFirstX": 87,
+    "tailLastX": 91,
+    "tailFullByLocalExact": "29/31",
+    "completionOnlyJumpClaimed": false
+  },
+  "paintContract": {
+    "originalPOnce": true,
+    "bodyMaskUsesOnlyOriginalBodySubpaths": true,
+    "tailMustRemainZeroAreaDuringBody": true,
+    "p1OriginalDirectAtomic": true,
+    "sourceGuideGenerated": false,
+    "UARead": false
+  },
+  "limits": [
+    "Exact polygon/half-plane topology only, not all-time raster AA proof",
+    "New display clock needs ROOT actual finite/natural review",
+    "Shared renderer/helper not modified"
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceEngineReplay": 0
+}
