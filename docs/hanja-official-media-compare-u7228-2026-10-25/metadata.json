@@ -105,9 +105,89 @@
       0.75
     ],
     "expectedFrames": 90,
-    "sameConfigAllowlistTransitionRequired": true
+    "sameConfigAllowlistTransitionRequired": true,
+    "activeStage": "17-30"
   },
-  "scope": "Prepared original CSS fixed-frame observation only; all30 directions and runtime unapproved",
+  "scope": "First16 original directions observed; remaining17-30 and all source grouping, clock remapping and runtime unapproved",
   "nativeApproval": false,
-  "runtimeApplied": false
+  "runtimeApplied": false,
+  "originalDirectionStages": [
+    {
+      "stage": "1-16",
+      "observer": "ROOT direct browser panel",
+      "strokes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "fractions": [
+        0.1,
+        0.5,
+        0.75
+      ],
+      "freshScreens": 48,
+      "result": "PASS",
+      "originalSourceFullyVisible": true,
+      "sourceSize": 520,
+      "viewport": [
+        1280,
+        1280
+      ],
+      "allClipChecks": true,
+      "allSingleSelectionChecks": true,
+      "errors": [],
+      "directions": [
+        "DL",
+        "V",
+        "H",
+        "H",
+        "V",
+        "H→V(no hook)",
+        "H",
+        "V",
+        "H→V",
+        "H",
+        "H→V",
+        "H",
+        "H",
+        "short curved DL dot",
+        "long H→terminal DL hook",
+        "H"
+      ],
+      "historicalConfig": {
+        "path": "docs/hanja-official-media-compare-u7228-2026-10-25/config.json",
+        "SHA256": "4d6719d72acdf79a1dd8888731e91411b10ccdfd4a8288654185eb7a0cc4b9c4",
+        "commit": "7b9ff2085d7cd9d64861a8746b6f1438aa5b7aa2"
+      },
+      "historicalMetadata": {
+        "path": "docs/hanja-official-media-compare-u7228-2026-10-25/metadata.json",
+        "SHA256": "06cb0298980c0e52726c038e22505a81fbfa110d7b958ec212885c69e44f0084",
+        "commit": "7b9ff2085d7cd9d64861a8746b6f1438aa5b7aa2"
+      },
+      "sourceGroupingApproved": false,
+      "sourceClockRemappingApproved": false,
+      "server": {
+        "pid": 5348,
+        "session": 12406,
+        "port": 59412,
+        "exitCode": 130,
+        "tab": 200,
+        "tabClosed": true,
+        "viewportReset": true
+      }
+    }
+  ]
 }
