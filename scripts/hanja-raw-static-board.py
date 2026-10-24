@@ -95,6 +95,12 @@ def install_board(shared, base, groups, board_guards):
             note += '<p data-source-draft="u85a9-t"><strong>DRAFT · productionImportAllowed=false</strong> · 8획 공식 short V ↔ 원Q down-right 미확정 · 13획 초기 V+Q 미확정 · 2·4획 원slant 보존 · 정적 대조만 가능, 자동 승인 없음</p>'
         if base.get('glyph') == '擄' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u64c4-k':
             note += '<p data-source-draft="u64c4-k"><strong>DRAFT · productionImportAllowed=false</strong> · 16획 후보 · 원6H+hook 다음7longV/DL · 원9UP·田/力 경계·초기 재생 위험 미승인</p>'
+        if base.get('glyph') == '蓑' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'hkcs_m84d1':
+            note += '<p data-source-draft="u84d1-hkcs"><strong>DRAFT · productionImportAllowed=false</strong> · 原provider hkcs_m84d1 · raw7 type0/trace0/P0 metadata는 비그리기행이며 필획에 배정하지 않음 · 원12 V/Q gap 접속 미승인</p>'
+        if base.get('glyph') == '薩' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'hkcs_m85a9':
+            note += '<p data-source-draft="u85a9-hkcs"><strong>DRAFT · productionImportAllowed=false</strong> · 原provider hkcs_m85a9 · 기존T와독립된 authored source · 원8 shortV 및13 V+Q 보존 · 세부 방향·접촉·재생 미승인</p>'
+        if base.get('glyph') == '瞥' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u77a5':
+            note += '<p data-source-draft="u77a5"><strong>DRAFT · productionImportAllowed=false</strong> · 원4 H/V의 left-hook 보존 · 공식4 H/V와 세부hook 차이 미승인 · source접촉·재생 미승인</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
 
     shared.guards, shared.selection, shared.page = guarded, selection, page
@@ -475,6 +481,36 @@ def exact_u64c4_k_draft_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u84d1_hkcs_draft_launcher(config,base):
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"ae1868a1be81fe6ffce6d8254cfaa65a64f9c0b861eeb0fa99a7f2328fa0522f"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u84d1-hkcs-2026-10-24/config.json","SHA256":"03f50c7ece6a376b65572676e4680d5ab788a77baa2102e5d6dc99dab850ac09"}
+            and base.get('glyph')=='蓑' and base.get('catalogStrokes')==14
+            and base.get('sourceRoots')=={"selected":{"root":"hkcs_m84d1","file":"docs/hanja-actual-engine-capture-u84d1-hkcs-2026-10-24/engine-whole-u84d1-hkcs.json","fileSHA256":"ab7220e5d130e893e4e82462f8b60e4891d2e542278a3cec744f4d797c8d70ee","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"hkcs_m84d1","sourceProofFile":"engine-whole-u84d1-hkcs.json","sourceProofFileSha256":"ab7220e5d130e893e4e82462f8b60e4891d2e542278a3cec744f4d797c8d70ee"},"rawGroups":17,"drawingCalls":16,"polygonCounts":[2,2,2,2,2,2,0,1,1,2,2,1,1,1,3,3,2],"polygons":29}}
+            and config.get('provisionalGroups')=={"selected":[[1],[2],[3],[4],[5],[6],[8],[9,10],[11],[12],[13],[14,15],[16],[17]]}
+            and digest(fixed_path('docs/hanja-source-original-u84d1-hkcs-2026-10-24/fixtures.json').read_bytes())=='486f3a7f1a37050ed8bfbeb15eff7383126f1b4eb4ed591ac54faa30032bc966'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
+
+def exact_u85a9_hkcs_draft_launcher(config,base):
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"ae1868a1be81fe6ffce6d8254cfaa65a64f9c0b861eeb0fa99a7f2328fa0522f"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u85a9-hkcs-2026-10-24/config.json","SHA256":"774c980fdc4a12dadfcb7c57bb14d2f34518b58ad941fe13816f58fd527f5a09"}
+            and base.get('glyph')=='薩' and base.get('catalogStrokes')==18
+            and base.get('sourceRoots')=={"selected":{"root":"hkcs_m85a9","file":"docs/hanja-actual-engine-capture-u85a9-hkcs-2026-10-24/engine-whole-u85a9-hkcs.json","fileSHA256":"5d170f317debfacc063795bbcd23b7b3b5c84703b2415decd8ca9c8535a41267","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"hkcs_m85a9","sourceProofFile":"engine-whole-u85a9-hkcs.json","sourceProofFileSha256":"5d170f317debfacc063795bbcd23b7b3b5c84703b2415decd8ca9c8535a41267"},"rawGroups":19,"drawingCalls":21,"polygonCounts":[2,2,2,2,1,2,4,1,2,2,3,2,2,3,3,2,2,2,2],"polygons":41}}
+            and config.get('provisionalGroups')=={"selected":[[1],[2],[3],[4],[5,6],[7],[8],[9],[10],[11],[12],[13],[14],[15],[16],[17],[18],[19]]}
+            and digest(fixed_path('docs/hanja-source-original-u85a9-hkcs-2026-10-24/fixtures.json').read_bytes())=='05d7a137e69d5de696a195411e990f7ed8777e0c124de2770e022f9093271b53'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
+
+def exact_u77a5_draft_launcher(config,base):
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"ae1868a1be81fe6ffce6d8254cfaa65a64f9c0b861eeb0fa99a7f2328fa0522f"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u77a5-2026-10-24/config.json","SHA256":"6cd5d771d49d45f1ed4c18f8496679fc656553820b1a530fd1850f9bbb73e4fe"}
+            and base.get('glyph')=='瞥' and base.get('catalogStrokes')==16
+            and base.get('sourceRoots')=={"selected":{"root":"u77a5","file":"docs/hanja-actual-engine-capture-u77a5-2026-10-24/engine-whole-u77a5.json","fileSHA256":"774030b77f6e8433e97fad37cd69a504dd461e52a2cfce6d1e4e749d640e6889","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u77a5","sourceProofFile":"engine-whole-u77a5.json","sourceProofFileSha256":"774030b77f6e8433e97fad37cd69a504dd461e52a2cfce6d1e4e749d640e6889"},"rawGroups":18,"drawingCalls":19,"polygonCounts":[2,1,1,5,3,2,3,2,3,2,3,2,1,1,2,1,1,1],"polygons":36}}
+            and config.get('provisionalGroups')=={"selected":[[5],[6],[2],[3,4],[1],[7],[8],[9],[10],[11],[12],[13],[14,15],[16],[17],[18]]}
+            and digest(fixed_path('docs/hanja-source-original-u77a5-2026-10-24/fixtures.json').read_bytes())=='c83c5411f13fe33360691edfc74ecd670ed18a003efd67421ac0cd856375f50d'
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -510,6 +546,9 @@ def main():
     legacy_launcher = legacy_launcher or exact_u7006_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u85a9_t_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u64c4_k_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u77a5_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u85a9_hkcs_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u84d1_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u704c_ue0102_prepared_launcher(config,base)
     require(legacy_launcher or exact_u727c_new_launcher(config,base) or exact_u6705_prepared_launcher(config,base) or exact_u7c67_prepared_launcher(config,base) or exact_u7d8c_prepared_launcher(config,base) or exact_u8627_vs2_prepared_launcher(config,base) or exact_u83f0_k_prepared_launcher(config,base) or exact_u6fbe_k_prepared_launcher(config,base) or exact_u6f5d_prepared_launcher(config,base) or exact_u6f5a_prepared_launcher(config,base) or exact_u99fe_prepared_launcher(config,base) or exact_u7049_prepared_launcher(config,base) or exact_u95e5_prepared_launcher(config,base) or exact_u852d_k_prepared_launcher(config,base) or exact_u8aed_k_prepared_launcher(config,base) or exact_u9d25_prepared_launcher(config,base) or exact_u6d8f_prepared_launcher(config,base) or exact_u8fe8_prepared_launcher(config,base) or exact_u6f11_prepared_launcher(config,base) or exact_u6f7e_prepared_launcher(config,base) or exact_u7e81_prepared_launcher(config,base) or exact_u9436_prepared_launcher(config,base), 'original launcher or exact pinned 牼 launcher required')
     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
