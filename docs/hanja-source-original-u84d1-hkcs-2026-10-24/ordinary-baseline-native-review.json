@@ -1,0 +1,312 @@
+{
+  "schema": "hanja-ordinary-actual-component-baseline-HOLD-review/v1",
+  "date": "2026-10-24",
+  "glyph": "蓑",
+  "root": "hkcs_m84d1",
+  "observer": "/root",
+  "recordedBy": "/root/source_next",
+  "status": "HOLD-40-scope-PASS14-HOLD",
+  "inputs": {
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "8385efc1d8dce2b57f1f3c303e8678f024b9ef3b78659f743170237466afdc01"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "da5679c810f5e3e1d538e56806a58558b331201a968e53f950a1b495cb910e97"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u84d1-hkcs-1.json",
+      "SHA256": "9f18269dea5bce1b93e6aa3603d1a891a787f3afc94bcdd74ff29a232dcb7e63"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u84d1-hkcs-2026-10-24/fixtures.json",
+      "SHA256": "486f3a7f1a37050ed8bfbeb15eff7383126f1b4eb4ed591ac54faa30032bc966",
+      "geometrySHA256": "aa6e53199f9fb796e4fa810169ec2645c84ce2b1bf3e7f86be0d0255705908ec"
+    }
+  },
+  "resourceSetup": {
+    "SSR": 1,
+    "CJS": 247,
+    "ESM": 247,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "native": {
+    "acceptedScreens": 16,
+    "acceptedSlots": 54,
+    "allDOMBadEmpty": true,
+    "errors": [],
+    "allSampleSVG220FullyVisible": true,
+    "actualViewportHeight": 1280,
+    "boardBottom": 1188.015625,
+    "scopePASS": 40,
+    "scopeHOLD": 14,
+    "cardinal": {
+      "targets": 12,
+      "slots": 36,
+      "status": "PASS-finite-observation-scope",
+      "observation": "Small initial pieces visibly increase between the three finite frames; not a fixed chunk. Initial epsilon hairline ambiguity at4/5 is retained as raster/AA limitation, not silently treated as a full-area chunk."
+    },
+    "curves": {
+      "targets": [
+        {
+          "pen": 11,
+          "mask": 1
+        },
+        {
+          "pen": 12,
+          "mask": 2
+        },
+        {
+          "pen": 13,
+          "mask": 1
+        },
+        {
+          "pen": 14,
+          "mask": 1
+        }
+      ],
+      "slots": 12,
+      "status": "HOLD",
+      "observation": "All three initial samples for each target show a fixed initial fragment."
+    },
+    "boundaries": {
+      "pen8": {
+        "slots": 3,
+        "status": "PASS"
+      },
+      "pen12": {
+        "minus": {
+          "slots": 1,
+          "status": "PASS",
+          "observation": "Only preceding V visible."
+        },
+        "exactAndPlus": {
+          "slots": 2,
+          "status": "HOLD",
+          "observation": "Detached foot chunk appears."
+        }
+      }
+    }
+  },
+  "sourceAxisLimitEvidence": {
+    "basis": "0<=area(P intersect axisClip(p))<=bboxArea*p for0<=p<=1; exact outlineClip frozen formula, all source P bounded",
+    "targets": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "axis": "x",
+        "direction": "right",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "301",
+        "paintAreaUpperBound": "(301)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "43/1000000",
+        "observationEpsilonPaintAreaUpperBound": "301/1000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "axis": "y",
+        "direction": "down",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "1119/8",
+        "paintAreaUpperBound": "(1119/8)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "373/20000000",
+        "observationEpsilonPaintAreaUpperBound": "1119/8000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 3,
+        "mask": 1,
+        "axis": "x",
+        "direction": "right",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "266",
+        "paintAreaUpperBound": "(266)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "19/500000",
+        "observationEpsilonPaintAreaUpperBound": "133/500000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 4,
+        "mask": 1,
+        "axis": "y",
+        "direction": "down",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "1119/8",
+        "paintAreaUpperBound": "(1119/8)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "373/20000000",
+        "observationEpsilonPaintAreaUpperBound": "1119/8000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 5,
+        "mask": 1,
+        "axis": "y",
+        "direction": "down",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "171/2",
+        "paintAreaUpperBound": "(171/2)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "57/5000000",
+        "observationEpsilonPaintAreaUpperBound": "171/2000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 6,
+        "mask": 1,
+        "axis": "x",
+        "direction": "right",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "559",
+        "paintAreaUpperBound": "(559)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "43/500000",
+        "observationEpsilonPaintAreaUpperBound": "559/1000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 7,
+        "mask": 1,
+        "axis": "y",
+        "direction": "down",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "819/5",
+        "paintAreaUpperBound": "(819/5)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "273/10000000",
+        "observationEpsilonPaintAreaUpperBound": "819/5000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 8,
+        "mask": 1,
+        "axis": "x",
+        "direction": "right",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "96",
+        "paintAreaUpperBound": "(96)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "3/62500",
+        "observationEpsilonPaintAreaUpperBound": "3/31250",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 8,
+        "mask": 2,
+        "axis": "y",
+        "direction": "down",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "1139/5",
+        "paintAreaUpperBound": "(1139/5)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "67/2500000",
+        "observationEpsilonPaintAreaUpperBound": "1139/5000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 9,
+        "mask": 1,
+        "axis": "x",
+        "direction": "right",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "2223/4",
+        "paintAreaUpperBound": "(2223/4)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "171/2000000",
+        "observationEpsilonPaintAreaUpperBound": "2223/4000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 10,
+        "mask": 1,
+        "axis": "x",
+        "direction": "right",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "92",
+        "paintAreaUpperBound": "(92)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "23/500000",
+        "observationEpsilonPaintAreaUpperBound": "23/250000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      },
+      {
+        "pen": 12,
+        "mask": 1,
+        "axis": "y",
+        "direction": "down",
+        "PVerticesInsideDeclaredBounds": true,
+        "bboxArea": "543/5",
+        "paintAreaUpperBound": "(543/5)*p",
+        "limitAreaAtP0": "0",
+        "observationEpsilonAxisSpan": "181/10000000",
+        "observationEpsilonPaintAreaUpperBound": "543/5000000",
+        "fixedPositiveAreaFragmentPossibleUnderFormula": false
+      }
+    ],
+    "all12AreaLimitZero": true,
+    "independentOfNativePixelAndAAResult": true,
+    "notAnInfiniteDomainNativeOrRasterGuarantee": true,
+    "notFullPlaybackOrContactApproval": true,
+    "newMathVerification": "FIRST12 exact bounds/area-limit check only; no successful prior proof replay."
+  },
+  "preservation": {
+    "originalSourceGeometryGuideWidthWeightUnchanged": true,
+    "original12GuideGap": [
+      -30,
+      1.65
+    ],
+    "originalRaw7NonDrawingUnassigned": true,
+    "priorOfficialWholeStaticRecordsPreserved": true,
+    "wholeSourceSelectedOnlyNotRuntimeApproved": true
+  },
+  "next": {
+    "initialCapsCandidates": [
+      [
+        11,
+        1
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        14,
+        1
+      ]
+    ],
+    "pen12ExistingSourceFootProofMustBeReused": true,
+    "pen12OldProofReplay": 0,
+    "rendererIntegrationNotApplied": true
+  },
+  "approval": {
+    "baselineFailurePreserved": true,
+    "finiteScopeOnly": true,
+    "overallNative": false,
+    "actualAppUI": false,
+    "runtimeApplied": false,
+    "production": false,
+    "runtimeRegistered": false
+  },
+  "server": {
+    "PID": 78249,
+    "session": 34543,
+    "exitCode": 130,
+    "tab": 97,
+    "tabClosed": true,
+    "serverStopped": true
+  },
+  "recordActions": {
+    "newRecordOnly": true,
+    "sharedChanges": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "commit": 0
+  }
+}
