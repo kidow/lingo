@@ -1,0 +1,109 @@
+{
+  "schema": "hanja-whole-source-candidate-preparation/v1",
+  "glyph": "藿",
+  "id": "u85ff",
+  "date": "2026-10-24",
+  "readingGrade": "1급",
+  "catalogStrokes": 20,
+  "status": "HOLD-exact-version-body-source-unavailable",
+  "officialEvidence": {
+    "path": "docs/hanja-official-media-compare-u85ff-2026-10-24/official-temporal-native-review.json",
+    "SHA256": "4e281ced7a4c3bef6b0a04a21a626da5cb203775219a6933011c08b3e3206a59",
+    "clips": 20,
+    "acceptedFrames": 60,
+    "stroke15": "down-left",
+    "sourceMappingApproved": false
+  },
+  "existingHold": {
+    "path": "docs/hanja-goal-glyphwiki-batch52-2026-09-22/findings.json",
+    "SHA256": "a099b01a3b26ac4e3111d13b1116528e2d01c35841214b3945444932296a1a87",
+    "retained": true,
+    "reason": "Saved primary k whole has15 down-right; saved base whole has grass3. Unchanged catalog and observed media require20 whole strokes with grass4 and15 down-left."
+  },
+  "candidates": [
+    {
+      "root": "u85ff-var-001",
+      "priority": 1,
+      "directRefs": [
+        "ufa5e-03",
+        "u970d@8"
+      ],
+      "knownGrassDependency": "ufa5e-03 -> u8279-k03",
+      "knownGrassRawRows": 4,
+      "bodyExactVersionAvailable": false,
+      "correctStroke15Unknown": true,
+      "nativeWholeObserved": false
+    },
+    {
+      "root": "u85ff-ue0102",
+      "priority": 2,
+      "alias": "koseki-368300",
+      "directRefs": [
+        "ufa5e-03",
+        "u970d-var-001@1"
+      ],
+      "knownGrassDependency": "ufa5e-03 -> u8279-k03",
+      "knownGrassRawRows": 4,
+      "bodyExactVersionAvailable": false,
+      "correctStroke15Unknown": true,
+      "nativeWholeObserved": false
+    }
+  ],
+  "otherRoots": [
+    {
+      "root": "u85ff",
+      "reason": "grass3 source retained; wrong grass partition for this domestic whole"
+    },
+    {
+      "root": "u85ff-ue0100",
+      "reason": "aliases u85ff base"
+    },
+    {
+      "root": "u85ff-ue0101",
+      "reason": "aliases u85ff base"
+    },
+    {
+      "root": "u85ff-k",
+      "reason": "existing retained wrong15 down-right HOLD; exactbodyg4 available in old source capsule"
+    }
+  ],
+  "sourceAvailability": [
+    {
+      "exactRef": "u970d@8",
+      "publicRequestStatus": 403,
+      "attempts": 1,
+      "retries": 0,
+      "localExactRecordFound": false
+    },
+    {
+      "exactRef": "u970d-var-001@1",
+      "publicRequestStatus": 403,
+      "attempts": 1,
+      "retries": 0,
+      "localExactRecordFound": false
+    },
+    {
+      "exactRef": "u970d-g@4",
+      "publicRequestStatus": 403,
+      "attempts": 1,
+      "retries": 0,
+      "existingRecordPath": "docs/hanja-goal-glyphwiki-batch52-2026-09-22/sources.json",
+      "existingRootRejected": true
+    }
+  ],
+  "limits": {
+    "archiveFetches": 1,
+    "sourceGeometryCaptured": false,
+    "full5Captured": false,
+    "proofHeaderSynthesized": false,
+    "wholeComponentMixing": false,
+    "sourceOrderAltered": false,
+    "sourcePAltered": false,
+    "privateMediaSaved": false,
+    "privateMediaTransmitted": false,
+    "engineRuns": 0,
+    "nativeWholeApproval": false,
+    "registrationApproval": false,
+    "runtimeApplied": false
+  }
+}
