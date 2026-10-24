@@ -1,0 +1,553 @@
+{
+  "schema": "hanja-ordinary-outline-baseline-native-review/v1",
+  "date": "2026-10-24",
+  "glyph": "瘦",
+  "root": "hkcs_m7626",
+  "localArtifactTag": "u7626-hkcs",
+  "observer": "ROOT browser panel",
+  "status": "HOLD: seven curve initial regions require source-specific correction",
+  "examCatalogStrokes": 14,
+  "dictionaryPlaybackStrokes": 15,
+  "catalogChanged": false,
+  "individualVariantApproved": false,
+  "inputs": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7626-hkcs-1.json",
+      "SHA256": "4479a228262f281e87b5860962d43d5168fc0b4f028d3cc49758d36341203bb5"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "3a4f786e03fd5a8985ffb14bf74bf766898ad650e57ed02d38abd1138646e1b6"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "4be2b4833502b061b59324332b03ecc3d3f1f00b027139234f2bf5ffea5ee191"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "0f962bc4c585f459e72dc12bebc5bc1273901a15e0e664b98f2e390169c1a81f"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u7626-hkcs-2026-10-24/fixtures.json",
+      "SHA256": "e4a3b4f84ff5172b88114abe41770a1048a48fb78b20e3c7a7eca30bb00e2772"
+    },
+    "geometrySHA256": "97104242baa1bf71304f87f6ac3189976bddf46b15c4ad60346e0df24883053c"
+  },
+  "startupHistory": {
+    "failedAttempts": [
+      {
+        "attempt": 1,
+        "helperSHA256": "a4c01c6c9a3d388350d68e22f8f10c9b3c105ab112038c181fbd9c28171a2aa7",
+        "profileSHA256": "9951df988cfb189da3fdcd4675dde4355b0ed3b4ee440258d68850cb4334a540",
+        "error": "Unknown import ./hanja-stroke-start-caps-u85a9-hkcs.ts",
+        "phase": "CJS loader before SSR",
+        "errorOutputTruncated": true,
+        "completedGraph": false,
+        "successfulSSR": 0,
+        "acceptedVisualObservations": 0
+      },
+      {
+        "attempt": 2,
+        "purpose": "Complete truncated startup diagnostic only",
+        "sameInputsAsAttempt": 1,
+        "error": "Unknown import ./hanja-stroke-start-caps-u85a9-hkcs.ts",
+        "phase": "CJS loader before SSR",
+        "completedGraph": false,
+        "successfulSSR": 0,
+        "acceptedVisualObservations": 0
+      }
+    ],
+    "cause": "Old fixed 薩 canonical-import loop was incorrectly conditional on active 薩 profile; changing to unconditional fixed seven-module mapping preserved the canonical cache keys.",
+    "successfulAttempt": {
+      "helperSHA256": "3a4f786e03fd5a8985ffb14bf74bf766898ad650e57ed02d38abd1138646e1b6",
+      "profileSHA256": "4479a228262f281e87b5860962d43d5168fc0b4f028d3cc49758d36341203bb5",
+      "SSR": 1,
+      "CJS": 264,
+      "ESM": 264,
+      "engineRuns": 0,
+      "sourceProjection": 0,
+      "geometrySHA256": "97104242baa1bf71304f87f6ac3189976bddf46b15c4ad60346e0df24883053c"
+    }
+  },
+  "finite": {
+    "acceptedDistinct": 60,
+    "early": 54,
+    "boundaries": 6,
+    "visualPASS": 39,
+    "visualHOLD": 21,
+    "earlyPASS": 33,
+    "earlyHOLD": 21,
+    "boundaryPASS": 6,
+    "boundaryHOLD": 0,
+    "earlyTargets": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.030000000000000002
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 3,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 3.71055006121745e-7
+          },
+          {
+            "local": 0.01,
+            "global": 0.0037105500612174503
+          },
+          {
+            "local": 0.03,
+            "global": 0.01113165018365235
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 3,
+        "mask": 2,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.3710556350667389
+          },
+          {
+            "local": 0.01,
+            "global": 0.3773444560605276
+          },
+          {
+            "local": 0.03,
+            "global": 0.3899233559380927
+          }
+        ],
+        "result": "HOLD",
+        "reason": "Finite initial curve chunk observed; source-specific correction needed."
+      },
+      {
+        "pen": 4,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.030000000000000002
+          }
+        ],
+        "result": "HOLD",
+        "reason": "Finite initial curve chunk observed; source-specific correction needed."
+      },
+      {
+        "pen": 5,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "HOLD",
+        "reason": "Finite initial curve chunk observed; source-specific correction needed."
+      },
+      {
+        "pen": 6,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.010000000000000002
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "HOLD",
+        "reason": "Finite initial curve chunk observed; source-specific correction needed."
+      },
+      {
+        "pen": 7,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 8,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 9,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 10,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 3.6621823617339306e-7
+          },
+          {
+            "local": 0.01,
+            "global": 0.003662182361733931
+          },
+          {
+            "local": 0.03,
+            "global": 0.010986547085201793
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 10,
+        "mask": 2,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.3662188699551569
+          },
+          {
+            "local": 0.01,
+            "global": 0.3725560538116592
+          },
+          {
+            "local": 0.03,
+            "global": 0.3852316890881913
+          }
+        ],
+        "result": "HOLD",
+        "reason": "Finite initial curve chunk observed; source-specific correction needed."
+      },
+      {
+        "pen": 11,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 12,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 13,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 14,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 4.3786819877647486e-7
+          },
+          {
+            "local": 0.01,
+            "global": 0.004378681987764749
+          },
+          {
+            "local": 0.03,
+            "global": 0.013136045963294247
+          }
+        ],
+        "result": "PASS",
+        "reason": "No initial defect observed in these three finite samples."
+      },
+      {
+        "pen": 14,
+        "mask": 2,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.4378687609082761
+          },
+          {
+            "local": 0.01,
+            "global": 0.4434895167887101
+          },
+          {
+            "local": 0.03,
+            "global": 0.45473215281318063
+          }
+        ],
+        "result": "HOLD",
+        "reason": "Finite initial curve chunk observed; source-specific correction needed."
+      },
+      {
+        "pen": 15,
+        "mask": 1,
+        "samples": [
+          {
+            "local": 0.000001,
+            "global": 0.000001
+          },
+          {
+            "local": 0.01,
+            "global": 0.01
+          },
+          {
+            "local": 0.03,
+            "global": 0.03
+          }
+        ],
+        "result": "HOLD",
+        "reason": "Finite initial curve chunk observed; source-specific correction needed."
+      }
+    ],
+    "boundaryTargets": [
+      {
+        "pen": 3,
+        "nextMask": 2,
+        "global": [
+          0.371055006021745,
+          0.371055006121745
+        ],
+        "labels": [
+          "minus",
+          "exact"
+        ],
+        "result": "PASS",
+        "reason": "No extra new curve chunk at these two finite boundary frames; pen3 exact Q progress0."
+      },
+      {
+        "pen": 10,
+        "nextMask": 2,
+        "global": [
+          0.3662182360733931,
+          0.3662182361733931
+        ],
+        "labels": [
+          "minus",
+          "exact"
+        ],
+        "result": "PASS",
+        "reason": "No extra new curve chunk at these two finite boundary frames; pen3 exact Q progress0."
+      },
+      {
+        "pen": 14,
+        "nextMask": 2,
+        "global": [
+          0.43786819867647486,
+          0.43786819877647487
+        ],
+        "labels": [
+          "minus",
+          "exact"
+        ],
+        "result": "PASS",
+        "reason": "No extra new curve chunk at these two finite boundary frames; pen3 exact Q progress0."
+      }
+    ],
+    "DOMBad": [],
+    "errors": [],
+    "DOMBindingSuccessIsNotVisualApproval": true
+  },
+  "visibility": {
+    "actualInnerWidth": 1163,
+    "actualInnerHeight": 1163,
+    "CSSGridSVGSize": 220,
+    "allAcceptedImagesFullyVisible": true,
+    "captionCardBBox": {
+      "top": 838.9701538085938,
+      "bottom": 1071.6974182128906
+    },
+    "documentCrop": {
+      "x": 11.99573802947998,
+      "y": 1497.1519775390625,
+      "width": 667.9971361160278,
+      "height": 232.72726440429688
+    },
+    "twoCardWidth": 443.99855518341064,
+    "cropWidthsDescribeExistingThreeOrTwoCardRows": true
+  },
+  "exactPrefixWhole": {
+    "pens": 15,
+    "result": "PASS",
+    "separateFrom60": true,
+    "temporalCorrectnessNotClaimed": true,
+    "SVGSize": 520,
+    "bbox": {
+      "x": 11.99573802947998,
+      "y": 321.6974182128906,
+      "width": 520,
+      "height": 520
+    },
+    "DOMBad": [],
+    "errors": []
+  },
+  "captureCount": null,
+  "captureCountClaimed": false,
+  "naturalSnapshots": 0,
+  "sourceGeometryGuideWidthWeightUnchanged": true,
+  "sourceContactCorrectionApproved": false,
+  "initialPriorNetAreaProofComplete": false,
+  "allTimeProof": false,
+  "actualAppUI": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "server": {
+    "pid": 4457,
+    "session": 98683,
+    "port": 59412,
+    "exitCode": 130,
+    "stopped": true,
+    "tab": 126,
+    "tabClosed": true,
+    "ownedServerRemaining": false
+  },
+  "recordActions": {
+    "engineRuns": 0,
+    "sourceProjection": 0,
+    "successfulProofReplay": false,
+    "builds": 0,
+    "fullTypeChecks": 0
+  }
+}
