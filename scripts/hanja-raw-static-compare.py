@@ -173,6 +173,36 @@ def validate_exact_hkcs_m7aea_capture(config,label,spec,path):
     require(sum(g['raw'][0]==101 for g in groups)==4,'original four type101 rows required')
     require([len(g['polygons'])for g in groups]==spec['polygonCounts'] and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace],'original raw/trace/P correspondence required')
 
+def validate_exact_hkcs_m9ad3_capture(config,label,spec,path):
+    # Only this captured 髓 provider and its original raw19 type0 metadata; never a general empty-row exception.
+    require(config['glyph']=='髓' and ord(config['glyph'])==0x9ad3 and config['catalogStrokes']==23 and list(config['sourceRoots'])==['selected'] and label=='selected' and config['sourceRoots']['selected']==spec,'exact isolated 髓 HK source required')
+    require(set(spec)=={'root','file','fileSHA256','proofKeys','proofKind','sourceProofIdentity','rawGroups','drawingCalls','polygonCounts','polygons'},'exact 髓 HK source fields required')
+    file='docs/hanja-actual-engine-capture-u9ad3-hkcs-2026-10-24/engine-whole-u9ad3-hkcs.json'
+    capture_file='docs/hanja-actual-engine-capture-u9ad3-hkcs-2026-10-24/capture.json'
+    closure_file='docs/hanja-source-alternative-u9ad3-hkcs-2026-10-24/sources.json'
+    pin='d3de8246042950a06f0479b278b3c23842a733849d1f890702ad6f82e8fdd644'
+    capture_pin='3ddcd9d9ad156fa253186a5f2d3ac8c729d83121c8517fda7a13faf4a0da1792'
+    closure_pin='4807c804675ba1627f6aaaf34b7240e4da43c1ac5150085d2f283a987c5bdc8d'
+    require(spec['root']=='hkcs_m9ad3' and spec['file']==file and spec['fileSHA256']==pin and path==pinned_path(file),'exact original 髓 provider and local artifact required')
+    require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and spec['sourceProofIdentity']=={'sourceRoot':'hkcs_m9ad3','sourceProofFile':'engine-whole-u9ad3-hkcs.json','sourceProofFileSha256':pin},'exact 髓 full5 and identity3 required')
+    require(config['inputSHA256'].get(file)==pin and config['inputSHA256'].get(capture_file)==capture_pin and config['inputSHA256'].get(closure_file)==closure_pin,'whole/capture/closure pins required')
+    raw=path.read_bytes();capture_raw=pinned_path(capture_file).read_bytes();closure_raw=pinned_path(closure_file).read_bytes()
+    require(digest(raw)==pin and digest(capture_raw)==capture_pin and digest(closure_raw)==closure_pin,'original 髓 bytes changed')
+    proof,capture,closure=json.loads(raw),json.loads(capture_raw),json.loads(closure_raw)
+    require(capture['glyph']=='髓' and capture['providerRoot']=='hkcs_m9ad3' and capture['localArtifactTag']=='u9ad3-hkcs' and capture['localArtifactTagIsProviderRoot'] is False,'provider and local tag must remain distinct')
+    source=capture['source']
+    require(source['closureFile']==closure_file and source['closureSHA256']==closure_pin and source['records']==closure['records'] and source['recordNames']==['hkcs_m9ad3','hkcs_m9040@2','hkcs_m8fb6-p05-s00','hkcs_m9aa8-p01-s00','hkcs_cdp-8ca9-16@1'] and source['versions']==[['hkcs_m9ad3',1],['hkcs_m9040@2','2'],['hkcs_m8fb6-p05-s00',2],['hkcs_m9aa8-p01-s00','2'],['hkcs_cdp-8ca9-16@1','1']] and source['missing']==[],'exact original five-record/version closure required')
+    require(source['mixedDateProviderClosure'] is True and source['historicalArchiveRestoration'] is False and source['singleAsOfDateClaimed'] is False and source['originalDataChanged'] is False and source['sourcePartsSubstituted'] is False and source['explicitVersionReferenceKeysPreserved'] is True,'original mixed-date and version-reference provenance required')
+    require(source['originalMetadataLiteral']=={'recordKey':'hkcs_cdp-8ca9-16@1','oneBasedRow':6,'literal':'0'} and source['records']['hkcs_cdp-8ca9-16@1']['data'].split('$')[5]=='0','original metadata literal must not be deleted or assigned as a pen')
+    require(capture['capture']['engineBuhinRoot']=='hkcs_m9ad3' and capture['capture']['actualMakeGlyphCalls']==1 and capture['capture']['oldBaseOrOtherVariantReplay']==0 and capture['capture']['aliasInsertedIntoEngine'] is False and capture['capture']['originalMetadataNotRemoved'] is True,'one new provider capture without alias or deletion required')
+    require(capture['output']['approvedLogicalPens'] is None and capture['output']['nonDrawingRawRows']==[19],'raw19 independent metadata required; no logical23 approval')
+    require(sorted(proof)==FIVE and proof['engineRevision']=='49232bac0348fe815f4200d4116ab7917e0db47f' and proof['engineHashes']==capture['engine']['actualLoadedHashes'] and len(proof['engineHashes'])==8,'complete original fixed-engine full5 required')
+    require((spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(30,31,51) and spec['polygonCounts']==[1,1,2,1,1,2,1,2,1,1,5,1,1,2,3,2,1,2,0,1,1,5,1,1,2,2,1,2,3,2],'original30raw31calls51P required')
+    groups,trace=proof['groups'],proof['trace']
+    require(len(groups)==len(trace)==30 and sum(map(len,trace))==31 and groups[18]=={'raw':[0,None,None,None,None,None,None,None,None,None,None],'polygons':[]} and trace[18]==[],'exact original raw19 type0/trace0/P0 required')
+    require(all(g['raw'][0]!=0 and len(g['polygons'])>0 and len(trace[i])>0 for i,g in enumerate(groups) if i!=18),'no additional zero or empty rows allowed')
+    require([len(g['polygons'])for g in groups]==spec['polygonCounts'] and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace],'original raw/trace/P correspondence changed')
+
 def validate_original_full5_u727c(config,label,spec,path):
     # One pinned original full5 with its actual zero-draw raw4; no general sparse-source exemption.
     require(config['glyph']=='牼' and config['catalogStrokes']==11 and list(config['sourceRoots'])==['selected'] and label=='selected' and config['sourceRoots']['selected']==spec,'exact isolated 牼 comparison required')
@@ -252,8 +282,10 @@ def main():
         if original_hkcs_m5aa4:validate_exact_hkcs_m5aa4_capture(config,label,spec,pinned_path(spec['file']))
         original_hkcs_m7aea=(config['glyph']=='竪' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m7aea')
         if original_hkcs_m7aea:validate_exact_hkcs_m7aea_capture(config,label,spec,pinned_path(spec['file']))
-        require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea),'original root identity required')
-        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea)and hexsha(spec['fileSHA256']),'actual whole file required')
+        original_hkcs_m9ad3=(config['glyph']=='髓' and list(roots)==['selected'] and label=='selected' and spec['root']=='hkcs_m9ad3')
+        if original_hkcs_m9ad3:validate_exact_hkcs_m9ad3_capture(config,label,spec,pinned_path(spec['file']))
+        require(type(spec['root'])is str and (re.fullmatch(r'u[0-9a-f]{4,6}(?:-[a-z0-9-]+)?',spec['root'])is not None or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3),'original root identity required')
+        path=pinned_path(spec['file']);original_u995f=(config['glyph']=='饟'and config['catalogStrokes']==26 and list(roots)==['selected']and spec['root']=='u995f'and spec['file']=='docs/hanja-goal-glyphwiki-batch701-2026-10-12/engine-proof.json'and spec['fileSHA256']=='ce533cc6fd25af9b6058423b1efafd878f8e40f682fc614432d92aced651139d'and spec['proofKind']=='actual-full5-direct');require((path.name=='engine-whole-'+spec['root']+'.json'or original_u995f or original_hkcs_m84d1 or original_hkcs_m85a9 or original_hkcs_m5aa4 or original_hkcs_m7aea or original_hkcs_m9ad3)and hexsha(spec['fileSHA256']),'actual whole file required')
         if bound_body:validate_original_empty_body3(spec,path)
         elif spec['proofKind']=='selected-body3-only':validate_exact_u6f7e_body3(config,label,spec,path)
         elif spec['proofKind']=='actual-full8-u7cbb-direct':validate_original_full8_u7cbb(spec,path)
