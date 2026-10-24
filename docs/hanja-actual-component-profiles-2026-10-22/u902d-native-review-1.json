@@ -1,0 +1,144 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "逭",
+  "root": "u902d",
+  "observer": "ROOT browser panel",
+  "result": "PASS",
+  "nativeApproval": true,
+  "finiteScopes": 72,
+  "freshFiniteScopes": 72,
+  "reusedUnchangedFiniteScopes": 0,
+  "finiteScopeBreakdown": {
+    "targets": 9,
+    "early3Frames": 27,
+    "midNear2Frames": 18,
+    "completedResidualFrames": 9,
+    "samePenBoundaryFrames": 15,
+    "footInternalPhaseFrames": 3,
+    "totalUnique": 72
+  },
+  "finiteObserved": {
+    "allOriginalDirectionCompatible": true,
+    "allActualDOMBadEmpty": true,
+    "allBrowserErrorsEmpty": true,
+    "allRequiredStartMidNearCompleteAndTransitionsObserved": true,
+    "source3m2": "At the finite 220px views the tiny initial line was not visibly detached and grew from the completed H end; PASS is limited to the observed states.",
+    "residual": {
+      "targets": 9,
+      "SVGSize": 520,
+      "allFullBBoxVisible": true,
+      "visualWhiteNoSolidResidual": true,
+      "automaticPixelCounts": null,
+      "interpretation": "Caps subtract their selected actual completed original round-Q7 guide from selected original P. Foot/bands compare selected original P against their actual p1 sole direct-P completion. Near-end/transition samples separately check pops."
+    }
+  },
+  "naturalSnapshots": 6,
+  "naturalPens": [
+    3,
+    7,
+    12
+  ],
+  "naturalObserved": [
+    {
+      "pen": 3,
+      "midProgressDOMApprox": "0.323",
+      "midProgressScreenshotApprox": "0.338",
+      "endGlobalProgress": 1
+    },
+    {
+      "pen": 7,
+      "midProgressDOMApprox": "0.316",
+      "midProgressScreenshotApprox": "0.330",
+      "endGlobalProgress": 1
+    },
+    {
+      "pen": 12,
+      "midProgressDOMApprox": "0.320",
+      "midProgressScreenshotApprox": "0.335",
+      "endGlobalProgress": 1
+    }
+  ],
+  "naturalScope": "One accepted mid and one accepted end snapshot per pen. DOM probe and screenshot progress can differ; they are the same mid observation, not extra samples. No continuous replay proof.",
+  "whole": {
+    "logicalPens": 12,
+    "acceptedObservations": 1,
+    "result": "PASS",
+    "separateFromFinite72AndNatural6": true
+  },
+  "reusedEvidence": {
+    "originalDirectionDistinctFrames": 38,
+    "wholeMacroObservations": 3,
+    "staticCompletedPMappingPens": 12,
+    "replayed": false
+  },
+  "bad": [],
+  "errors": [],
+  "sourcePreservation": {
+    "originalPGuideWidthWeightUnchanged": true,
+    "sourceGuideGap12Source200": [
+      -2,
+      -2
+    ],
+    "noBridgeOrNewGuide": true,
+    "raw17Calls17P28Once": true
+  },
+  "excludedDiagnostics": [
+    {
+      "kind": "initial residual view lacked full-bbox confirmation; accepted recapture used instead",
+      "additionalUnique": 0
+    },
+    {
+      "kind": "10/12 grouped image output lost after foot-selector failure; individual accepted views recaptured",
+      "additionalUnique": 0
+    },
+    {
+      "kind": "pen3 first mid missed and regex wait failed; later string-UI wait confirmed the accepted mid",
+      "additionalUnique": 0
+    }
+  ],
+  "observedInputs": {
+    "historicalInputGit": "455d6f998",
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "cf0eceb8958d18cf8d9b9581c3acdd2c090f3c8f1b413143fd933c812297bf81"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u902d-1.json",
+      "SHA256": "fd2dafaafb004f570c7b7401a650160bc8b26fa4c0d2f289779de308f80548fc"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "2b24053e0e91d90ada4d58a2d4a8341c8c5830b9cf28ece66aed7c08bcd995ff"
+    },
+    "sourceFixture": {
+      "path": "docs/hanja-source-original-u902d-2026-10-25/fixtures.json",
+      "SHA256": "a50e133dbdf91d394a398c4e0dddee855af6b81ec60c6bbcb8f7438059a4effd",
+      "geometrySHA256": "6f03a75cb5d9e9aee3ac646bd98b3e69fffca6b6b7ca7b1b5b4a82b589d30feb"
+    }
+  },
+  "server": {
+    "PID": 63196,
+    "session": 51677,
+    "port": 59412,
+    "SSR": 1,
+    "CJS": 290,
+    "ESM": 290,
+    "engine": 0,
+    "sourceProjection": 0,
+    "exitCode": 130,
+    "tab": 212,
+    "tabClosed": true,
+    "viewportReset": true
+  },
+  "notClaims": {
+    "automaticZeroPixelCount": false,
+    "allTimeRasterConnectivity": false,
+    "continuousNaturalReplay": false,
+    "publisherMicrotimingEquivalence": false,
+    "actualAppUI": false
+  },
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "recorderEngineSourceProjectionOrUIReplay": 0
+}
