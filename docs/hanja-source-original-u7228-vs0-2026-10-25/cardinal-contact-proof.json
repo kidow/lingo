@@ -1,0 +1,66 @@
+{
+  "schema": "hanja-u7228-original-cardinal-contact-proof/v1",
+  "fixture": "docs/hanja-source-original-u7228-vs0-2026-10-25/fixtures.json",
+  "fixtureSHA256": "271a29619cbea939672009d7cc94e37b8755c00cc2beee5bbb2a4444861d0208",
+  "sourceFacts": "docs/hanja-source-original-u7228-vs0-2026-10-25/pending-source-facts.json",
+  "sourceFactsSHA256": "ca6d9a68527f33ad7901d55f0499f760cf78ae1bd35919f522e3cf6ec71bb433",
+  "targets": [
+    {
+      "pen": 6,
+      "mask": 2,
+      "rawIndex0": 2,
+      "sourceGuideStartY": "173/16",
+      "sourceGuideStartYBeforeScale": "173/8",
+      "quantizedPBodyStartY": "54/5",
+      "negativeExtent": "281/80",
+      "positiveExtent": "427/16",
+      "actualPriorContactX": [
+        "61",
+        "127/2"
+      ],
+      "contactWidth": "5/2",
+      "priorPositiveHeadroom": "79/80",
+      "contactHeight": "min(priorPositiveHeadroom, positiveExtent*p)",
+      "positiveContactAllPAboveZero": true,
+      "singlePositiveFrontierCertificate": {
+        "sourceFactsFile": "pending-source-facts.json",
+        "rowSHA256": "29772d6e25004bf092cc981032291e1abe6c2e28e4ff6bed51ec74b662b31a97"
+      },
+      "zeroAreaAt0": true,
+      "completeDirectOriginalP": true,
+      "sourcePGuideWeightChanged": false
+    },
+    {
+      "pen": 9,
+      "mask": 2,
+      "rawIndex0": 6,
+      "sourceGuideStartY": "916899/40000",
+      "sourceGuideStartYBeforeScale": "916899/20000",
+      "quantizedPBodyStartY": "229/10",
+      "negativeExtent": "140899/40000",
+      "positiveExtent": "427101/40000",
+      "actualPriorContactX": [
+        "1059/20",
+        "276/5"
+      ],
+      "contactWidth": "9/4",
+      "priorPositiveHeadroom": "39101/40000",
+      "contactHeight": "min(priorPositiveHeadroom, positiveExtent*p)",
+      "positiveContactAllPAboveZero": true,
+      "singlePositiveFrontierCertificate": {
+        "sourceFactsFile": "pending-source-facts.json",
+        "rowSHA256": "3ffa122bb9362dcbea719bc885ceb262a36339c363ffd09bdcc799880357e978"
+      },
+      "zeroAreaAt0": true,
+      "completeDirectOriginalP": true,
+      "sourcePGuideWeightChanged": false
+    }
+  ],
+  "argument": "원raw H/V의 공통 guide 시작Y를 그대로 band 원점으로 사용. 위/아래 extents는 원P bounds까지의 정확한 거리이며 p=0 면적0, p=1 direct 원P. 원P 모든 내부Y단면은 기존 exact arrangement 인증에서 단일 양수구간이다. 원점부터 아래로 높이min(H하단-원점, downExtent*p)이고 폭contactWidth인 직사각형은 원V body와 실제 완료H 모두에 포함되므로 모든p>0 양수접촉이다. 실제DOM 완료H 검증은 별도 전후필수.",
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "newGuideAdded": false,
+  "sourceEngineReplay": 0,
+  "sourceProjection": 0
+}
+
