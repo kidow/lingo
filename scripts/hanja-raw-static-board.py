@@ -107,6 +107,8 @@ def install_board(shared, base, groups, board_guards):
             note += '<p data-source-draft="u8438-k"><strong>DRAFT · 사전13획 / 배정12획 유지 · productionImportAllowed=false</strong> · 원raw14 전체 보존 · raw10 H 다음 raw9 V 묶음은 정적 비교 후보 · 전체13 대응·접촉·재생·개별variant 미승인</p>'
         if base.get('glyph') == '髓' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'hkcs_m9ad3':
             note += '<p data-source-draft="u9ad3-hkcs"><strong>DRAFT · productionImportAllowed=false</strong> · 原provider hkcs_m9ad3 · raw19 type0/trace0/P0는 비그리기 메타행으로 미배정 보존 · 원22/23 guide 간격 유지 · filled-P 교집합은 별도 코드 사실이며 필순·시간·전체 연결 승인 아님</p>'
+        if base.get('glyph') == '褐' and base.get('sourceRoots', {}).get('base', {}).get('root') == 'u8910':
+            note += '<p data-source-draft="u8910"><strong>DRAFT · 배정14획 유지 / 사전13획 · productionImportAllowed=false</strong> · base만 원16raw/19mask/36P를13행으로 대조 · 다른7대표는 전부 미배정 · 원형·접촉·재생·개별variant 미승인</p>'
         if base.get('glyph') == '瘦' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'hkcs_m7626':
             note += '<p data-source-draft="u7626-hkcs"><strong>DRAFT · 배정14획 유지 / 사전15획 정적판 · productionImportAllowed=false</strong> · 原provider hkcs_m7626 · 원17raw/18mask/32P 전체 보존 · 연속raw10+11 및15+16은 국내방향에 따른 검토후보 · 원10 H/V guide 간격 유지 · 접촉·재생·개별variant 미승인</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
@@ -584,6 +586,15 @@ def exact_u7626_hkcs_dictionary_draft_launcher(config,base):
             and digest(fixed_path('docs/hanja-source-original-u7626-hkcs-2026-10-24/fixtures.json').read_bytes())=='e4a3b4f84ff5172b88114abe41770a1048a48fb78b20e3c7a7eca30bb00e2772'
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
+def exact_u8910_dictionary_draft_launcher(config,base):
+    # Exact source-family snapshot, catalog14 retained; only base has provisional13 mapping.
+    return (config.get('launcher')=={'path':LAUNCHER,'SHA256':'a933de27300fabd55f1972dc9651ce765543e01c2ba68b0213400dab80714eef'}
+            and config.get('baseConfig')=={'path':'docs/hanja-source-raw-compare-u8910-2026-10-24/config.json','SHA256':'7f467f04063681641c1e88d9d5f082f410d5919675b4a5a2e63985ab03c5edb0'}
+            and digest(json.dumps(base,ensure_ascii=False,separators=(',',':')).encode('utf-8'))=='b6ef2cc94a8129a16670116c3cd72673f36175fe8a1cdd479a8dd2ad4ef18b4b'
+            and config.get('provisionalGroups')=={"base":[[1],[2,3],[4],[5],[6],[7],[8,9],[10],[11],[12],[13,14],[15],[16]],"i001":[None,None,None,None,None,None,None,None,None,None,None,None,None],"i002":[None,None,None,None,None,None,None,None,None,None,None,None,None],"i003":[None,None,None,None,None,None,None,None,None,None,None,None,None],"i004":[None,None,None,None,None,None,None,None,None,None,None,None,None],"i005":[None,None,None,None,None,None,None,None,None,None,None,None,None],"i006":[None,None,None,None,None,None,None,None,None,None,None,None,None],"k":[None,None,None,None,None,None,None,None,None,None,None,None,None]}
+            and digest(fixed_path('docs/hanja-source-original-u8910-2026-10-24/fixtures.json').read_bytes())=='18d5ca375b100afafb8e97cc3c13b70bdbca568b06135f9abb0a7b9bffb2cd07'
+            and digest(fixed_path('docs/hanja-official-media-compare-u8910-2026-10-24/official-temporal-native-review.json').read_bytes())=='9c6816117caf9ea1d5b305b207193002fd8f6f514c713cb4dcb7cf63bd2a31e8')
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -610,6 +621,8 @@ def main():
     legacy_launcher = legacy_launcher or dictionary_u83f1
     dictionary_u7626 = exact_u7626_hkcs_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u7626
+    dictionary_u8910 = exact_u8910_dictionary_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or dictionary_u8910
     legacy_launcher = legacy_launcher or exact_u7e2d_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u7e91_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u7e9a_prepared_launcher(config,base)
@@ -634,6 +647,7 @@ def main():
     require(config['sharedServe'] == base['sharedServe'], 'same original shared renderer')
     if dictionary_u83f1:base = {**base,'catalogStrokes':11}  # review-view copy only; pinned catalog remains12
     if dictionary_u7626:base = {**base,'catalogStrokes':15}  # review-view copy only; pinned source config remains14
+    if dictionary_u8910:base = {**base,'catalogStrokes':13}  # review-view only; exact original catalog14 remains unchanged
     validate_groups(config['provisionalGroups'], base)
 
     def board_guards():
