@@ -333,6 +333,11 @@ def validate_exact_u8910_dictionary13_family(config,config_path):
     require(type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==expected['labels'] and config['sourceRoots']==expected['sourceRoots'],'exact eight original 褐 whole representatives required')
     require(config.get('defaultSource')=='base' and config.get('domestic')==expected['domestic'] and config.get('inputSHA256')==expected['inputSHA256'],'exact 褐 dictionary13 and source13 byte pins required')
 
+def validate_exact_u9008_dictionary10(config,config_path):
+    expected=json.loads("{\"configPath\":\"docs/hanja-source-raw-compare-u9008-2026-10-24/config.json\",\"catalogStrokes\":9,\"dictionaryPlaybackStrokes\":10,\"sourceRoots\":{\"selected\":{\"root\":\"u9008\",\"file\":\"docs/hanja-current-source-u9008-2026-10-18/engine-whole-u9008.json\",\"fileSHA256\":\"e919e19d5e37595880dcb76dfe50b96254e9eb6e92e84cfea34421e52a861c04\",\"proofKeys\":[\"defaults\",\"engineHashes\",\"engineRevision\",\"groups\",\"trace\"],\"proofKind\":\"actual-full5-direct\",\"sourceProofIdentity\":{\"sourceRoot\":\"u9008\",\"sourceProofFile\":\"engine-whole-u9008.json\",\"sourceProofFileSha256\":\"e919e19d5e37595880dcb76dfe50b96254e9eb6e92e84cfea34421e52a861c04\"},\"rawGroups\":14,\"drawingCalls\":15,\"polygonCounts\":[2,2,1,2,3,2,3,1,1,5,1,1,2,1],\"polygons\":27}},\"domestic\":{\"glyph\":\"逈\",\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/9008.svg\",\"status\":200,\"bytes\":5204,\"sha256\":\"d5e6ab0e623a06634a3ca3dfabee6158f17217e38262dcdebe1a7da321f29eec\",\"privateMediaSaved\":false,\"clips\":10},\"inputSHA256\":{\"docs/hanja-current-source-u9008-2026-10-18/engine-whole-u9008.json\":\"e919e19d5e37595880dcb76dfe50b96254e9eb6e92e84cfea34421e52a861c04\",\"docs/hanja-current-source-u9008-2026-10-18/sources.json\":\"8889060d63d4089bab03ab4646d6ebaf12cfeda3eabc45778aec33a9782542b7\",\"docs/hanja-current-source-u9008-2026-10-18/source-inventory.json\":\"d03d2a9d4edfd185d846520e689271b2d70314d51c05c612de2776aa9ddf61aa\",\"docs/hanja-goal-glyphwiki-batch394-2026-10-09/metadata.json\":\"027107f51a3362ab0edd69f1a3b1db15238b0d60ab2e7bd82c4a018aca2af722\"}}")
+    require(config_path==ROOT/expected['configPath'] and type(config['catalogStrokes'])is int and config['catalogStrokes']==9 and type(config['dictionaryPlaybackStrokes'])is int and config['dictionaryPlaybackStrokes']==10,'exact current 逈 catalog9/dictionary10 required')
+    require(config['sourceRoots']==expected['sourceRoots'] and config['domestic']==expected['domestic'] and config['inputSHA256']==expected['inputSHA256'],'exact current 逈 original whole and source pins required')
+
 def main():
     require(__debug__ and sys.flags.optimize==0,'optimized assertion-free execution forbidden')
     parser=argparse.ArgumentParser(description='Pinned static whole/raw/domestic comparison; ROOT starts HTTP.')
@@ -348,6 +353,8 @@ def main():
     if original_u83f1_family_config:keys.add('dictionaryPlaybackStrokes')
     original_u8910_family_config=(type(config)is dict and config.get('glyph')=='褐' and 'dictionaryPlaybackStrokes'in config)
     if original_u8910_family_config:keys.add('dictionaryPlaybackStrokes')
+    original_u9008_config=(type(config)is dict and config.get('glyph')=='逈' and 'dictionaryPlaybackStrokes'in config)
+    if original_u9008_config:keys.add('dictionaryPlaybackStrokes')
     require(type(config)is dict and set(config)==keys and config['schema']=='hanja-shared-static-raw-compare/v1','exact config fields required')
     require(type(config['glyph'])is str and len(config['glyph'])==1 and type(config['catalogStrokes'])is int and 1<=config['catalogStrokes']<=128,'glyph/count required')
     require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']=='stacked520-css-only','original source/local host required')
@@ -356,6 +363,7 @@ def main():
     roots=config['sourceRoots']
     if original_u83f1_family_config:validate_exact_u83f1_dictionary11_family(config,config_path)
     if original_u8910_family_config:validate_exact_u8910_dictionary13_family(config,config_path)
+    if original_u9008_config:validate_exact_u9008_dictionary10(config,config_path)
     require(type(roots)is dict and (len(roots)==10 if original_u83f1_family_config else 1<=len(roots)<=8) and config['defaultSource']in roots,'selected original roots required')
     for label,spec in roots.items():
         require(re.fullmatch(r'[A-Za-z][A-Za-z0-9_-]{0,31}',label)is not None and type(spec)is dict,'static root label required')
@@ -389,7 +397,7 @@ def main():
         if original_u7d8c:validate_original_full5_u7d8c(config,label,spec,path)
         require(type(spec['rawGroups'])is int and 1<=spec['rawGroups']<=128 and type(spec['drawingCalls'])is int and ((not bound_body and (spec['drawingCalls']>=spec['rawGroups'] or original_u727c or original_u7d8c or original_hkcs_m84d1))or(bound_body and spec['rawGroups']==24 and spec['drawingCalls']==23)),'raw/call counts required')
         require(type(spec['polygonCounts'])is list and len(spec['polygonCounts'])==spec['rawGroups']and all(type(n)is int and n>=0 for n in spec['polygonCounts'])and type(spec['polygons'])is int and sum(spec['polygonCounts'])==spec['polygons'],'original polygon counts required')
-    dictionary_count=config['dictionaryPlaybackStrokes'] if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config else config['catalogStrokes']
+    dictionary_count=config['dictionaryPlaybackStrokes'] if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config else config['catalogStrokes']
     domestic=config['domestic'];require(type(domestic)is dict and set(domestic)=={'url','status','bytes','sha256','clips','glyph','privateMediaSaved'}and domestic['glyph']==config['glyph']and domestic['status']==200 and domestic['clips']==dictionary_count and domestic['privateMediaSaved']is False and type(domestic['bytes'])is int and 0<domestic['bytes']<=1048576 and hexsha(domestic['sha256']),'pinned domestic metadata required')
     require(type(domestic['url'])is str and re.fullmatch(r'http://img\.e-hanja\.kr/hanjaSvg/aniSVG/[0-9A-Fa-f]{4}/[0-9A-Fa-f]{4,6}\.svg',domestic['url'])is not None and domestic['url'].rsplit('/',1)[-1].lower()==format(ord(config['glyph']),'x')+'.svg','fixed domestic source only')
     require(type(config['inputSHA256'])is dict and all(type(p)is str and hexsha(h)for p,h in config['inputSHA256'].items()),'input pins required')
@@ -405,7 +413,7 @@ def main():
     # Main guard prevents HTTP, source projection or dictionary access during import.
     spec=importlib.util.spec_from_file_location('hanja_static_raw_shared',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared)
     require(shared.FETCH_COUNT==0 and callable(shared.main)and callable(shared.load_sources),'unchanged shared entry contract required')
-    shared.CONFIG={**config,'catalogStrokes':dictionary_count} if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config else config;shared.HERE=config_path.parent;shared.ROOT=ROOT
+    shared.CONFIG={**config,'catalogStrokes':dictionary_count} if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config else config;shared.HERE=config_path.parent;shared.ROOT=ROOT
     # Complete original eight-key proof is returned unchanged; old full5/body3 path stays original.
     if any(item['proofKind']=='actual-full8-u7cbb-direct'for item in roots.values()):
         require(config['glyph']=='粻' and config['catalogStrokes']==14 and list(roots)==['selected'],'exact isolated 粻 full8 comparison only')
