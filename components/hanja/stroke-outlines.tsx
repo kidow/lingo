@@ -1,3 +1,5 @@
+import { reviewedU64C4KTerminalPrefixContext, reviewedU64C4KTerminalPrefixPolicy, sampleReviewedU64C4KTerminalPrefixFrame, type ReviewedU64C4KTerminalPrefixPolicy } from '@/lib/hanja-stroke-terminal-prefix-u64c4-k'
+import { reviewedU64C4KFootContext, reviewedU64C4KFootPolicy, sampleReviewedU64C4KFootFrame, type ReviewedU64C4KFootPolicy } from '@/lib/hanja-stroke-source-foot-u64c4-k'
 import { reviewedU64c4KContext, reviewedU64c4KPolicy, commitReviewedU64c4KCaps, sampleReviewedU64c4KInitialPFrame, type ReviewedU64c4KGrowingPolicy, type ReviewedU64c4KInitialPPolicy } from '@/lib/hanja-stroke-first-mask-caps-u64c4-k'
 import { reviewedU64C4KContext, reviewedU64C4KPolicy, commitReviewedU64C4KCaps, type ReviewedU64C4KPolicy } from '@/lib/hanja-stroke-start-caps-u64c4-k'
 import { reviewedU64C4KCompoundPrefixContext, reviewedU64C4KCompoundPrefixPolicy, sampleReviewedU64C4KCompoundPrefixFrame, type ReviewedU64C4KCompoundPrefixPolicy } from '@/lib/hanja-stroke-compound-prefix-u64c4-k'
@@ -378,6 +380,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u64c4FirstContext = reviewedU64c4KContext(strokes)
   const u64c4CurveContext = reviewedU64C4KContext(strokes)
   const u64c4CompoundContext = reviewedU64C4KCompoundPrefixContext(strokes)
+  const u64c4FootContext = reviewedU64C4KFootContext(strokes)
+  const u64c4TerminalContext = reviewedU64C4KTerminalPrefixContext(strokes)
   const u7006Context = reviewedU7006Context(strokes)
   const u7006FootContext = reviewedU7006FootContext(strokes)
   const u7006TerminalContext = reviewedU7006TerminalContext(strokes)
@@ -720,6 +724,10 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         const u64c4Progress = Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN
         if (u64c4FirstPolicy?.kind === 'source-P-independent-axis-prefix-u64c4-k') return <U64C4InitialPOutline key={index} policy={u64c4FirstPolicy} segment={segment} progress={u64c4Progress} clipId={id+'-'+stroke+'-'+index} />
         if (u64c4FirstPolicy) return <U64C4CapsOutline key={index} family="first" policy={u64c4FirstPolicy} segment={segment} progress={u64c4Progress} previousMaskProgress={index>0?amounts[index-1]:0} predecessor={index>0?segments[index-1]:null} clipId={id+'-'+stroke+'-'+index} />
+        const u64c4FootPolicy = reviewedU64C4KFootPolicy(u64c4FootContext, stroke, index)
+        if (u64c4FootPolicy) return <U64C4FootOutline key={index} policy={u64c4FootPolicy} segment={segment} predecessor={segments[index-1]} progress={u64c4Progress} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} />
+        const u64c4TerminalPolicy = reviewedU64C4KTerminalPrefixPolicy(u64c4TerminalContext, stroke, index)
+        if (u64c4TerminalPolicy) return <U64C4CompoundOutline key={index} policy={u64c4TerminalPolicy} previousPolicy={null} predecessor={segments[index-1]} segment={segment} progress={u64c4Progress} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index} />
         const u64c4CurvePolicy = reviewedU64C4KPolicy(u64c4CurveContext, stroke, index)
         if (u64c4CurvePolicy) return <U64C4CapsOutline key={index} family="curve" policy={u64c4CurvePolicy} segment={segment} progress={u64c4Progress} previousMaskProgress={amounts[index-1]} predecessor={segments[index-1]} clipId={id+'-'+stroke+'-'+index} />
         const u64c4CompoundPolicy = reviewedU64C4KCompoundPrefixPolicy(u64c4CompoundContext, stroke, index)
@@ -6962,6 +6970,25 @@ function U64C4InitialPOutline({policy,segment,progress,clipId}:{policy:ReviewedU
  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={progress}><defs><clipPath id={clip} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={box.x} y={box.y} width={box.width} height={box.height}/></clipPath></defs><path ref={ink} data-u64c4-k-initial-p-ink="true" d={segment.outline} fill="currentColor" stroke="none" visibility="hidden" clipPath={frame?.originalPDirect?undefined:'url(#'+clip+')'}/></g>
 }
 
+function U64C4FootOutline({policy,segment,predecessor,progress,previousMaskProgress,clipId}:{policy:ReviewedU64C4KFootPolicy;segment:HanjaOutlineSegment;predecessor:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),foot=useRef<SVGPathElement>(null),fullFoot=useRef<SVGRectElement>(null),body=useRef<SVGRectElement>(null),key=clipId+'-u64c4-k-foot'
+ let frame:ReturnType<typeof sampleReviewedU64C4KFootFrame>|null=null;try{frame=sampleReviewedU64C4KFootFrame(policy,segment,progress,previousMaskProgress)}catch{}
+ const empty={x:policy.bounds[0],y:policy.bounds[1],width:0,height:0},ff=frame?.fullFootClip??empty,bb=frame?.bodyClip??empty
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,fp=foot.current,fr=fullFoot.current,br=body.current,f=frame
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.removeAttribute('data-u64c4-k-foot-committed');p?.removeAttribute('data-u64c4-k-foot-source-full')};reset();if(!g||!p||!fp||!fr||!br||!f)return reset
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView
+  const stable=()=>{
+   const mask=fp.parentElement,defs=mask?.parentElement
+   return !!owner&&!!view&&!!mask&&!!defs&&mask.id===key&&mask.localName==='mask'&&mask.getAttribute('maskUnits')==='userSpaceOnUse'&&mask.getAttribute('maskContentUnits')==='userSpaceOnUse'&&['x','y'].every(k=>mask.getAttribute(k)==='0')&&['width','height'].every(k=>mask.getAttribute(k)==='100')&&defs.localName==='defs'&&defs.parentNode===g&&fr.parentElement===mask&&br.parentElement===mask&&p.parentNode===g&&p.getAttribute('d')===segment.outline&&p.getAttribute('mask')===(f.originalPDirect?null:'url(#'+key+')')&&p.getAttribute('clip-path')===null&&p.getAttribute('pathLength')===null&&fp.getAttribute('d')===f.footPathD&&g.getAttribute('data-stroke-start-gate')===policy.id&&g.getAttribute('data-stroke-reveal-progress')===String(progress)&&[[fr,f.fullFootClip],[br,f.bodyClip]].every(([n,b])=>Object.entries(b as Record<string,number>).every(([k,v])=>(n as Element).getAttribute(k)!==null&&Number((n as Element).getAttribute(k))===v))&&[fp,fr,br].every(n=>{const s=view.getComputedStyle(n);return n.getAttribute('fill')==='white'&&n.getAttribute('stroke')==='none'&&n.getAttribute('fill-rule')==='nonzero'&&s.fill.replace(/\s/g,'')==='rgb(255,255,255)'&&s.stroke==='none'&&s.fillRule==='nonzero'&&s.opacity==='1'&&s.fillOpacity==='1'&&s.visibility==='visible'&&s.display!=='none'})&&[g,p,fp,fr,br,mask,defs].every(n=>n.isConnected&&n.ownerDocument===doc&&(n as SVGElement).ownerSVGElement===owner&&n.getAttribute('transform')===null&&view.getComputedStyle(n).transform==='none'&&['translate','rotate','scale'].every(k=>['','none'].includes(view.getComputedStyle(n).getPropertyValue(k))))
+  }
+  if(!stable()||(progress>0&&!u7006PriorComplete(g,predecessor,previousMaskProgress)))return reset
+  for(const[k,v]of Object.entries({progress:f.progress,phase:f.phase,'foot-progress':f.footProgress,'body-progress':f.bodyProgress,'foot-full-triangles':f.footFullTriangles,'foot-local':f.footLocal,'source-full':f.originalSourceFull,'direct-original':f.originalPDirect,'one-p':f.paintOriginalPOnce,'zero-retrace-preserved':f.zeroRetraceOriginalPathPreserved,'UA-read':f.UARead}))p.setAttribute('data-u64c4-k-foot-'+k,String(v))
+  p.setAttribute('data-u64c4-k-foot-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable()||(progress>0&&!u7006PriorComplete(g,predecessor,previousMaskProgress)))reset();return reset
+ },[policy,segment,predecessor,progress,previousMaskProgress,clipId])
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={progress} data-u64c4-k-foot-previous-progress={String(previousMaskProgress)}><defs><mask id={key} data-u64c4-k-foot-mask="true" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path ref={foot} data-u64c4-k-foot-path="true" d={frame?.footPathD??''} fill="white" stroke="none" fillRule="nonzero"/><rect ref={fullFoot} data-u64c4-k-foot-full-foot="true" x={ff.x} y={ff.y} width={ff.width} height={ff.height} fill="white" stroke="none" fillRule="nonzero"/><rect ref={body} data-u64c4-k-foot-body="true" x={bb.x} y={bb.y} width={bb.width} height={bb.height} fill="white" stroke="none" fillRule="nonzero"/></mask></defs><path ref={ink} data-u64c4-k-foot-ink="true" d={segment.outline} fill="currentColor" stroke="none" visibility="hidden" mask={frame?.originalPDirect?undefined:'url(#'+key+')'}/></g>
+}
+
 function u64c4PriorComplete(g:SVGGElement,expected:HanjaOutlineSegment,progress:number,policy:ReviewedU64C4KCompoundPrefixPolicy|null){
  if(!policy)return u7006PriorComplete(g,expected,progress)
  if(progress!==1||!g.isConnected)return false
@@ -6975,7 +7002,7 @@ function u64c4PriorComplete(g:SVGGElement,expected:HanjaOutlineSegment,progress:
  return [[body,f.bodyClip],[tail,f.tailClip]].every(([n,b])=>Object.entries(b as Record<string,number>).every(([k,v])=>(n as Element).getAttribute(k)!==null&&Number((n as Element).getAttribute(k))===v))&&[previous,p,body,tail,bs,ts,mask,defs,bg,tg,bc,tc].every(n=>{const s=view.getComputedStyle(n);return n.isConnected&&n.ownerDocument===doc&&(n as SVGElement).ownerSVGElement===owner&&n.getAttribute('transform')===null&&s.transform==='none'&&s.visibility==='visible'&&s.display!=='none'&&s.opacity==='1'&&s.fillOpacity==='1'&&s.stroke==='none'&&['translate','rotate','scale'].every(k=>['','none'].includes(s.getPropertyValue(k)))})
 }
 
-function U64C4CompoundOutline({policy,previousPolicy,predecessor,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU64C4KCompoundPrefixPolicy;previousPolicy:ReviewedU64C4KCompoundPrefixPolicy|null;predecessor:HanjaOutlineSegment;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+function U64C4CompoundOutline({policy,previousPolicy,predecessor,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU64C4KCompoundPrefixPolicy|ReviewedU64C4KTerminalPrefixPolicy;previousPolicy:ReviewedU64C4KCompoundPrefixPolicy|null;predecessor:HanjaOutlineSegment;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
  const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),body=useRef<SVGRectElement>(null),tail=useRef<SVGRectElement>(null),bodyShape=useRef<SVGPathElement>(null),tailShape=useRef<SVGPathElement>(null),key=clipId+'-u64c4-k-compound'
  useLayoutEffect(()=>{
   const g=group.current,p=ink.current,b=body.current,t=tail.current,bs=bodyShape.current,ts=tailShape.current
@@ -6987,7 +7014,7 @@ function U64C4CompoundOutline({policy,previousPolicy,predecessor,segment,progres
   }
   if(!stable()||(progress>0&&!u64c4PriorComplete(g,predecessor,previousMaskProgress,previousPolicy)))return reset
   try{
-   const f=sampleReviewedU64C4KCompoundPrefixFrame(policy,segment,progress,previousMaskProgress)
+   const f=policy.kind==='source-P-terminal-prefix-u64c4-k'?sampleReviewedU64C4KTerminalPrefixFrame(policy,segment,progress,previousMaskProgress):sampleReviewedU64C4KCompoundPrefixFrame(policy,segment,progress,previousMaskProgress)
    for(const[k,v]of Object.entries(f.bodyClip))b.setAttribute(k,String(v));for(const[k,v]of Object.entries(f.tailClip))t.setAttribute(k,String(v))
    const exactRects=()=>[[b,f.bodyClip],[t,f.tailClip]].every(([n,box])=>Object.entries(box as Record<string,number>).every(([k,v])=>(n as Element).getAttribute(k)!==null&&Number((n as Element).getAttribute(k))===v))
    for(const[k,v]of Object.entries({progress:f.progress,phase:f.phase,'body-progress':f.bodyProgress,'tail-progress':f.tailProgress,'source-full':f.originalSourceFull,'direct-original':f.originalPDirect}))p.setAttribute('data-u64c4-k-compound-'+k,String(v))
