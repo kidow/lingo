@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict'
+import {test} from 'node:test'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {reviewedU7e2dCardinalContext,makeReviewedU7e2dCardinalSourceContext,reviewedU7e2dCardinalPolicy,sampleReviewedU7e2dCardinalFrame,REVIEWED_U7E2D_CARDINAL_SOURCE as SOURCE} from './hanja-stroke-cardinal-contact-u7e2d.ts'
+const f=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u7e2d-2026-10-24/fixtures.json',import.meta.url),'utf8')).u7e2d,strokes=f.strokes,context=reviewedU7e2dCardinalContext(strokes),clone=(x:any)=>JSON.parse(JSON.stringify(x)),sha=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex')
+test('縭 new original cardinal bands guard and transitions FIRST',()=>{
+ assert(context);assert.equal(makeReviewedU7e2dCardinalSourceContext(f.fullProof,f.identity,strokes),context);assert.equal(sha(JSON.stringify(strokes)),SOURCE.geometrySHA256);assert.equal(sha(readFileSync(new URL('../'+SOURCE.fixture,import.meta.url))),SOURCE.fixtureSHA256)
+ for(const [pen,mask,axis,origin,negative,positive]of [[10,1,'x',49.05,1,34.6],[13,1,'y',61.85,3.5,27.1]] as const){const q=reviewedU7e2dCardinalPolicy(context,pen,mask);assert(q);assert.equal(q.axis,axis);assert.equal(q.origin,origin);assert.equal(q.negativeExtent,negative);assert.equal(q.positiveExtent,positive);assert.deepEqual(q.segment,strokes[pen][mask]);assert.deepEqual(q.predecessor,strokes[pen][mask-1]);for(const p of [0,1e-6,.03,.5,.9999,1]){const frame=sampleReviewedU7e2dCardinalFrame(q,q.segment,p,1);assert.equal(frame.visible,p>0);assert.equal(frame.originalPDirect,p===1);if(p>0&&p<1){assert(frame.clip);assert(frame.clip.width>0&&frame.clip.height>0);assert.equal(frame.UARead,false)}}assert.throws(()=>sampleReviewedU7e2dCardinalFrame(q,q.segment,.1,0));assert.throws(()=>sampleReviewedU7e2dCardinalFrame(q,{...q.segment,outline:q.segment.outline+' '},.1,1));const changed=clone(strokes);changed[pen][mask].outline+=' ';assert.equal(reviewedU7e2dCardinalContext(changed),null)}
+ assert.equal(reviewedU7e2dCardinalPolicy({...context},10,1),null);assert.equal(SOURCE.nativeApproval,false);console.log(JSON.stringify({newCardinalTargets:2,finiteFrames:12,newSourceMathReused:true,nativeApproval:false}))
+})
