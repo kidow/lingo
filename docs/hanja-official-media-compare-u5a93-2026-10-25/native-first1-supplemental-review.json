@@ -78,5 +78,34 @@
   "nativeApprovalScope": "controlled original stroke1 supplemental frames only",
   "sourceMappingApproved": false,
   "runtimeApplied": false,
-  "productionImportAllowed": false
+  "productionImportAllowed": false,
+  "sourceTimingHoldDiagnostic": {
+    "disposition": "HOLD",
+    "verifiedFacts": {
+      "exactOriginalPCrossingIsNotForwardTurnTimingProof": true,
+      "originalPContactEvidence": {
+        "path": "docs/hanja-goal-glyphwiki-batch1039-2026-10-13/boundary-source-preparation.json",
+        "SHA256": "7e044b948b0b8ea95ab403318b13b6eb30b397f09aea2150d161778d5d21a567",
+        "field": "geometryOnlyEvidence: exact BigInt rational properCrossingPoints, not bounding boxes"
+      },
+      "existingBacktrackObservation": {
+        "path": "docs/hanja-goal-glyphwiki-batch1039-2026-10-13/boundary-native-review.json",
+        "SHA256": "50ead7d1648942391779e794ab0c19d20d3a759d8b73771c4e8262a44452abe7",
+        "field": "nativeReview.observation/backtrackObserved"
+      }
+    },
+    "existingSequentialSourceFoot": "HOLD: requiring raw0 complete before starting the raw1 foot preserves the return to the higher source start and does not prove the observed forward turn.",
+    "unverifiedHypothesis": {
+      "wholePDisplayClock": "Not implemented or approved; feasibility not established.",
+      "missingProofs": [
+        "monotone source-P frontier",
+        "forward reveal order matching original stroke1",
+        "unchanged original mask-weight clock correspondence"
+      ],
+      "sourceGeometryChanged": false
+    },
+    "supplementalReferencePassRemainsTwoFramesOnly": true,
+    "newExternalSources": 0,
+    "newSourceMathOrRendererExecution": 0
+  }
 }
