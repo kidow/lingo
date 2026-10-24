@@ -1,0 +1,165 @@
+{
+  "schema": "hanja-ordinary-baseline-native-review/v1",
+  "date": "2026-10-25",
+  "observer": "ROOT browser panel",
+  "result": "HOLD",
+  "runtimeApplied": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "productionImportAllowed": false,
+  "bad": [],
+  "errors": [],
+  "sourceGeometryGuideWidthWeightUnchanged": true,
+  "allTimeProof": false,
+  "sourceEngineMathReplay": 0,
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "mainSize": 520,
+    "sampleSize": 220,
+    "mainRect": [
+      12,
+      435.015625,
+      520,
+      520
+    ]
+  },
+  "glyph": "瀼",
+  "root": "u703c",
+  "scope": {
+    "observed": 85,
+    "earlyMasks": 25,
+    "earlyFrames": 75,
+    "boundaries": 5,
+    "boundaryFrames": 10,
+    "boundaryModes": [
+      "before",
+      "exact"
+    ],
+    "afterReusesMaskEarlyEpsilon": true,
+    "allObserved": true,
+    "passTotalNotAssigned": true,
+    "holdTotalNotAssigned": true
+  },
+  "clearInitialTargets": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      17,
+      2
+    ],
+    [
+      18,
+      2
+    ],
+    [
+      19,
+      1
+    ],
+    [
+      20,
+      1
+    ]
+  ],
+  "uncertainSmallVerticalDecorationTargets": [
+    [
+      4,
+      1
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      10,
+      2
+    ],
+    [
+      14,
+      1
+    ],
+    [
+      15,
+      1
+    ]
+  ],
+  "uncertainty": "작은 V장식은 기존Yprefix일수있어보존. 단순H나기존획에붙은초기성장을자동실패로보지않고총PASS수를추정하지않음.",
+  "boundary": {
+    "passed": 9,
+    "held": 1,
+    "pen18m2": {
+      "minus": "PASS",
+      "exact": "HOLD",
+      "sourceDasharray": "1.7590245310505256e-15 2",
+      "observation": "minus에서는 선행V만 보이나 exact의 양의미소progress에서 독립foot이 이미노출",
+      "weightedInverseRoundoffObserved": true,
+      "arbitraryEpsilonBiasApplied": false,
+      "newPolicyMustHaveZeroAreaLimit": true
+    }
+  },
+  "whole": {
+    "exactPrefix": 20,
+    "result": "PASS",
+    "separate": true
+  },
+  "sourceProofFormat": "actual-body3",
+  "syntheticFull5": false,
+  "inputs": {
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "fc807cf46225b157cdac596e125d3d50481654018bb2d5f38b7a6cbce7e3e9f2"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "acad1326f183c8c01db8977013b5f3aa27d1aa1bb80875995660166a803b9c8d"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u703c-1.json",
+      "SHA256": "c89689ff3149561aa9622919878edc51dfca073136a54fb3ed0bda7b92e9df13"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "60d4253b6443e6c6d85d09e44c4daac69765993c1568ba542232962cdf1180c0"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u703c-2026-10-25/fixtures.json",
+      "SHA256": "93a4ba99264f97a89208ee4a8c3c2f5c4da0e7b33cf6bd8cd726fbac1d76d29c"
+    }
+  },
+  "server": {
+    "pid": 26294,
+    "session": 86975,
+    "port": 59412,
+    "newSSRChecks": 1,
+    "CJS": 275,
+    "ESM": 275,
+    "engine": 0,
+    "sourceProjection": 0,
+    "exitCode": 130,
+    "tab": 187,
+    "tabClosed": true,
+    "ownedServerRemaining": false
+  }
+}
