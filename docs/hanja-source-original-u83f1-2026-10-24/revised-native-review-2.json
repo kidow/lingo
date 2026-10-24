@@ -1,0 +1,194 @@
+{
+  "schema": "hanja-actual-component-revised-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "菱",
+  "providerRoot": "u83f1",
+  "observer": "/root",
+  "status": "finite native review PASS; individual variant registration pending",
+  "inputs": {
+    "scripts/hanja-actual-component-review.mjs": "51602e081462790fbb2bac843c11f713fdf40b31e668d2f71add7a6fceed27da",
+    "components/hanja/stroke-outlines.tsx": "36d1dcc6dbcd9c7f88a07dafad0e9cfaca3637768cfe07bbc563cc1d7747b6b2",
+    "lib/hanja-strokes.ts": "2768906f7359dae241026e4ff0a6dd305faa3706ecb95680db369c6c7b949fc3",
+    "docs/hanja-actual-component-profiles-2026-10-22/u83f1-2.json": "521679e73a9562d23cf1bc7b53c79b2acbd10c16b68f693e7174601d812322c1",
+    "docs/hanja-source-original-u83f1-2026-10-24/fixtures.json": "acdc6c480e6ee5787a92c38ab9b293113b67e0ce0b8ff56b3e29c9d406457990",
+    "docs/hanja-source-original-u83f1-2026-10-24/initial-correction-proof.json": "1a3772cf7545e48bd8e40a03017037595fb35bb6f08931d1a73b3fbcb9a4e860"
+  },
+  "source": {
+    "geometrySHA256": "1e3a412bc9b490a6695995d35582172aba9e649067d1ec65d2834369663cd480",
+    "catalogStrokes": 12,
+    "playbackStrokes": 11,
+    "originalPathsGuidesWidthsWeightsUnchanged": true,
+    "originalBodyGapPreserved": true
+  },
+  "finite": {
+    "fresh": 42,
+    "reused": 27,
+    "total": 69,
+    "pass": 69,
+    "hold": 0,
+    "targets": [
+      "u83f1-9-1",
+      "u83f1-10-2",
+      "u83f1-11-1",
+      "u83f1-source-prefix-7-1",
+      "u83f1-source-prefix-8-2"
+    ],
+    "perTarget": {
+      "early": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "midNear": [
+        0.5,
+        0.99999999
+      ],
+      "completionResidual": 1,
+      "pass": 6
+    },
+    "boundaries": [
+      "pen8 mask2 boundary3",
+      "pen8 mask3 boundary3",
+      "pen10 mask2 boundary3",
+      "pen7 cross-start3"
+    ],
+    "perBoundary": [
+      "minus",
+      "exact",
+      "plus"
+    ],
+    "completionResidualsAllWhite": true,
+    "checksBad": [],
+    "errors": [],
+    "reuse": {
+      "record": "docs/hanja-source-original-u83f1-2026-10-24/ordinary-baseline-native-review.json",
+      "scope": "nine unchanged ordinary masks, three early samples each",
+      "reason": "Same original P, guide, width, weight and ordinary renderer. New five exact-context branches do not change these ordinary masks.",
+      "baselineHoldsPreserved": true,
+      "priorBoundaryResultsNotCountedAgain": true
+    }
+  },
+  "viewport": {
+    "width": 1163,
+    "height": 1163
+  },
+  "acceptedRects": {
+    "samples": {
+      "x": [
+        11.99573802947998,
+        235.9943084716797,
+        459.9928894042969
+      ],
+      "y": 851.7826538085938,
+      "width": 219.99998474121097,
+      "height": 219.99998474121097
+    },
+    "residual": {
+      "x": 11.99573802947998,
+      "y": 551.7826538085938,
+      "width": 520,
+      "height": 520
+    },
+    "naturalAndWhole": {
+      "x": 11.99573802947998,
+      "y": 321.78265380859375,
+      "width": 520,
+      "height": 520
+    },
+    "allAcceptedTargetsFullyVisible": true,
+    "croppedScreensAccepted": 0
+  },
+  "natural": {
+    "scope": "five actual mixed-mask runs, mid and end snapshots only",
+    "pens": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "freshAcceptedSnapshots": 10,
+    "pass": 10,
+    "hold": 0,
+    "mid": [
+      {
+        "pen": 7,
+        "DOM": 0.42269999999403807,
+        "screenshot": 0.42269999999403807
+      },
+      {
+        "pen": 8,
+        "DOM": 0.4196749999940403,
+        "screenshot": 0.435312499994041
+      },
+      {
+        "pen": 9,
+        "DOM": 0.4184124999999985,
+        "screenshot": 0.4331124999999993
+      },
+      {
+        "pen": 10,
+        "DOM": 0.4242499999821193,
+        "screenshot": 0.4399874999821186
+      },
+      {
+        "pen": 11,
+        "DOM": 0.42697499999999855,
+        "screenshot": 0.4415374999999853
+      }
+    ],
+    "ends": {
+      "allProgress": 1,
+      "mode": "natural-ended"
+    },
+    "continuousAllTimeProof": false,
+    "excludedAttempt": {
+      "pen": 7,
+      "reason": "Regex selector wait timed out before any screenshot; repeated with literal status substring wait.",
+      "acceptedSnapshots": 0
+    },
+    "checksBad": [],
+    "errors": []
+  },
+  "whole": {
+    "mode": "exact-prefix11",
+    "freshAcceptedScreens": 1,
+    "pass": true,
+    "checksBad": [],
+    "errors": [],
+    "staleSampleBoardNotCounted": true
+  },
+  "acceptedServer": {
+    "PID": 15982,
+    "port": 59412,
+    "sessionId": 7786,
+    "tab": "135",
+    "SSR": 1,
+    "CJS": 268,
+    "ESM": 268,
+    "engine": 0,
+    "sourceProjection": 0,
+    "stopped": true,
+    "exitCode": 130,
+    "tabClosed": true
+  },
+  "excludedStartup": {
+    "sessionId": 82806,
+    "reason": "Sandbox bind EPERM on 127.0.0.1:59412; authorized local server then launched with required permission.",
+    "acceptedScreens": 0
+  },
+  "approval": {
+    "finiteNative": true,
+    "naturalSnapshots": true,
+    "wholeCompletion": true,
+    "individualVariantRegistrationApproved": false,
+    "runtimeApplied": false,
+    "actualAppUI": false,
+    "allTime": false
+  },
+  "actions": {
+    "build": false,
+    "fullProjectTypeCheck": false,
+    "push": false
+  }
+}
