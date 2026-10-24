@@ -47,7 +47,7 @@ def validate_groups(groups, base):
 
 def install_board(shared, base, groups, board_guards):
     original_selection, original_page, original_guards = shared.selection, shared.page, shared.guards
-    draft_pen_count = {('庾','u5ebe-ue0102'):12,('諛','u8adb-ue0101'):16}.get((base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root')))
+    draft_pen_count = {('逭','u902d'):12,('庾','u5ebe-ue0102'):12,('諛','u8adb-ue0101'):16}.get((base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root')))
 
 
     def guarded():
@@ -87,7 +87,7 @@ def install_board(shared, base, groups, board_guards):
             head = old.split('<div class="grid">', 1)[0]
             indexes = groups['selected'][pen - 1]
             links = ' '.join('<a href="/draft-pen?pen=' + str(i) + '">' + str(i) + '</a>' for i in range(1, draft_pen_count + 1))
-            return head + '<nav>' + links + '</nav><p>DRAFT · 정적 원부분 대조만 · 원끝모양 세부·접촉·재생 미승인</p><style>.draft-single svg{width:520px!important;height:520px!important;min-width:520px!important;min-height:520px!important;max-width:none!important}.draft-single{display:block}</style><div class="draft-single"><h2>국내 ' + str(pen) + '</h2>' + shared.domestic_svg(domestic, pen) + '<h2>원 VS2 raw ' + ','.join(map(str,indexes)) + '</h2>' + grouped_svg(sources['selected'], indexes) + '</div>'
+            return head + '<nav>' + links + '</nav><p>DRAFT · 정적 원부분 대조만 · 원끝모양 세부·접촉·재생 미승인</p><style>.draft-single svg{width:520px!important;height:520px!important;min-width:520px!important;min-height:520px!important;max-width:none!important}.draft-single{display:block}</style><div class="draft-single"><h2>국내 ' + str(pen) + '</h2>' + shared.domestic_svg(domestic, pen) + '<h2>' + ('원 base raw ' if (base.get('glyph'),base.get('sourceRoots',{}).get('selected',{}).get('root'))==('逭','u902d') else '원 VS2 raw ') + ','.join(map(str,indexes)) + '</h2>' + grouped_svg(sources['selected'], indexes) + '</div>'
         if route != '/board':
             return original_page(route, selected, sources, domestic)
         board_guards()
@@ -720,6 +720,12 @@ def exact_u7228_body3_dictionary_draft_launcher(config,base):
             and base.get('domestic')==expected['domestic'] and base.get('inputSHA256')==expected['inputSHA256']
             and config.get('provisionalGroups')==expected['groups'])
 
+def exact_u902d_base_draft_launcher(config,base):
+    expected=json.loads('{"launcher":{"path":"scripts/hanja-raw-static-compare.py","SHA256":"22aa53176bbedd953580b8eb48c0c12fbd5dce27f0569df1a19bbc82f37dd789"},"baseConfig":{"path":"docs/hanja-source-raw-compare-u902d-2026-10-25/config.json","SHA256":"db554118a3fb709ca10b9288ee647885979d4fa82de48c4af9a2f73b839a5d22"},"base":{"schema":"hanja-shared-static-raw-compare/v1","glyph":"逭","catalogStrokes":12,"sourceViewBox":"0 0 200 200","defaultSource":"selected","sourceRoots":{"selected":{"root":"u902d","file":"docs/hanja-goal-glyphwiki-batch1035-2026-10-13/engine-whole-u902d.json","fileSHA256":"c56b9afad6c730d87e65ccb4e65068eafef3f3e8d5e2530c209877c71f8e00e2","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u902d","sourceProofFile":"engine-whole-u902d.json","sourceProofFileSha256":"c56b9afad6c730d87e65ccb4e65068eafef3f3e8d5e2530c209877c71f8e00e2"},"rawGroups":17,"drawingCalls":17,"polygonCounts":[2,2,1,2,3,2,2,2,1,2,1,1,2,1,1,2,1],"polygons":28}},"domestic":{"url":"http://img.e-hanja.kr/hanjaSvg/aniSVG/9000/902D.svg","status":200,"bytes":6163,"sha256":"963d60eff0734c407c97657465a42bb97b1009b8fcbc4619f337e84b7590d90d","clips":12,"glyph":"逭","privateMediaSaved":false},"inputSHA256":{"docs/hanja-goal-glyphwiki-batch1035-2026-10-13/engine-whole-u902d.json":"c56b9afad6c730d87e65ccb4e65068eafef3f3e8d5e2530c209877c71f8e00e2","docs/hanja-goal-glyphwiki-batch1035-2026-10-13/sources.json":"7cbd857454ee44c4f4d066bbf697d6e1c43544b94ed6dc264fb8f8b884938168","docs/hanja-goal-glyphwiki-batch1035-2026-10-13/native-hold.json":"878ac81ce427d7c41103f35e9f53d32e1f41455effff9f5c9ad85668c5180d38","docs/hanja-official-media-compare-u902d-2026-10-25/metadata.json":"12ac1a19b00d1fc6096ad3f0025c347b9b8a3281cc38d12003350bb7489cb81a","docs/hanja-official-media-compare-u902d-2026-10-25/native-first11-supplemental-review.json":"e58d38a64d3d6978b721ac1f9611451ce60ba27d18880f9eca01b7193e0b264d","docs/hanja-official-media-compare-u902d-2026-10-25/native-stroke12-supplemental-review.json":"d32d59fc59f04d2533ba510ee75ef3605c9c591f1aa77da7b35e8a0e594d0e9c","docs/hanja-source-original-u902d-2026-10-25/candidate.mjs":"d8abe06da87eecf8b094f1412ec8cc4c9f82ca4ea87e78bb8b646a1880af51de","docs/hanja-source-original-u902d-2026-10-25/fixtures.json":"a50e133dbdf91d394a398c4e0dddee855af6b81ec60c6bbcb8f7438059a4effd"},"holdSummary":"DRAFT static mapping only. ROOT original38 directions and historical compatible base whole reused. All17raw/17calls/28P are unchanged and used once; source raw4/5 guide gap[-2,-2] remains. No new clock, source timing or runtime approval.","launcherSHA256":"22aa53176bbedd953580b8eb48c0c12fbd5dce27f0569df1a19bbc82f37dd789","sharedServe":{"path":"docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py","SHA256":"ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d"},"noPartialAnimation":true,"nativeApproval":false,"runtimeApplied":false,"guardMode":"explicit-parameter-pins-v1","host":"127.0.0.1","layoutMode":"stacked520-css-only"},"groups":{"selected":[[7],[8],[9,10],[11],[12,13],[14],[15,16],[17],[1],[2],[3,4],[5,6]]},"fixture":{"path":"docs/hanja-source-original-u902d-2026-10-25/fixtures.json","SHA256":"a50e133dbdf91d394a398c4e0dddee855af6b81ec60c6bbcb8f7438059a4effd"}}')
+    return (config.get('launcher')==expected['launcher'] and config.get('baseConfig')==expected['baseConfig']
+            and base==expected['base'] and config.get('provisionalGroups')==expected['groups']
+            and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -742,6 +748,7 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    legacy_launcher = legacy_launcher or exact_u902d_base_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u703c_body3_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u5dd1_body3_prepared_launcher(config,base)
     dictionary_u7228 = exact_u7228_body3_dictionary_draft_launcher(config,base)
