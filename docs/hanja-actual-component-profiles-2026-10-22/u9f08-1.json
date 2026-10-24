@@ -1,0 +1,1289 @@
+{
+  "schema": "hanja-actual-component-profile/v1",
+  "component": "components/hanja/stroke-outlines.tsx",
+  "constantsFile": "lib/hanja-strokes.ts",
+  "constantLines": [
+    "const STROKE_PLAYBACK_SPEED = 1.5",
+    "export const STROKE_DURATION = 650 / STROKE_PLAYBACK_SPEED",
+    "export const STROKE_GAP = 180 / STROKE_PLAYBACK_SPEED"
+  ],
+  "constantsScanMaxBytes": 262144,
+  "versions": {
+    "react": "19.2.8",
+    "reactDOM": "19.2.8",
+    "scheduler": "0.27.0",
+    "typescript": "5.9.3"
+  },
+  "vendorSHA256": {
+    "react": "e7a035fea0b35de567a563966fdb5e05c01f01f8ff776770d3a44794990ba3d7",
+    "react-dom": "07d30cb25cb9bdf68b9dc7c9467b8f29d9c7ffe0f65c6ade9924e16ac207061b",
+    "react-dom-client": "261c3275492d8f0b1f9b76f78268882316c8435217c39c78c65853bdcd89d500",
+    "scheduler": "646eb671c8585382baff16daf92fe16a4cdd10dcf1a363c58b2ae1f6bf3a2b8d",
+    "jsx-runtime": "dd50fd0db2fba44e0eee66243a45c81cfa3774cf41e4e6c0c080a601815c694d"
+  },
+  "coverage": "Existing plainCoverage: actual source P minus actual original complete round guide; black residual is an observation requiring review, not automatically failure or approval.",
+  "kind": "plain-outline",
+  "glyph": "鼈",
+  "root": "u9f08",
+  "fixture": "docs/hanja-source-original-u9f08-2026-10-24/fixtures.json",
+  "fixtureKey": "u9f08.strokes",
+  "fixtureSHA256": "2429c5557e056c72da95208953c67ea71c9c011588c0b514f872bb48f9a26e05",
+  "geometrySHA256": "a00876552fed6d4f6d033055935cbf7d99724f779aa4ebf33c4d3f7264ff230a",
+  "pens": 24,
+  "masks": 30,
+  "polygons": 54,
+  "expectedMaskCounts": [
+    1,
+    1,
+    1,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    3,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+  ],
+  "target": null,
+  "targets": [],
+  "attrs": {},
+  "prefixes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "SSRPens": [
+    1,
+    4,
+    13,
+    17,
+    22,
+    24
+  ],
+  "sourceIdentity": {
+    "sourceRoot": "u9f08",
+    "sourceProofFile": "../hanja-actual-engine-capture-u9f08-2026-10-24/engine-whole-u9f08.json",
+    "sourceProofFileSha256": "8709710f1c22ce9ac8b8977b3b7692c560e8bd882be593612372816425f7de86",
+    "sourceCapsuleFile": "../hanja-actual-engine-capture-u9f08-2026-10-24/capture.json",
+    "sourceCapsuleFileSha256": "546a4cf5d66be4971c451422b761d51a9bd176cf614ea48dfb4123be73474c8d",
+    "sourceChecksFile": "../hanja-official-media-compare-u9f08-2026-10-24/official-temporal-native-review.json",
+    "sourceChecksFileSha256": "99a15e76cc7d2739a271538250617c64ad080efb0ea58db2161be092544e88ca"
+  },
+  "actualFull5File": "docs/hanja-actual-engine-capture-u9f08-2026-10-24/engine-whole-u9f08.json",
+  "actualFull5SHA256": "8709710f1c22ce9ac8b8977b3b7692c560e8bd882be593612372816425f7de86",
+  "canonicalFull5SHA256": "8789b79cb171a32d71b64cc01dd8f94e277de5fbcf1c595610cb072fb076fd34",
+  "sourceGroups": [
+    [
+      23
+    ],
+    [
+      24
+    ],
+    [
+      20
+    ],
+    [
+      21,
+      22
+    ],
+    [
+      19
+    ],
+    [
+      25
+    ],
+    [
+      26
+    ],
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      16
+    ],
+    [
+      15
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ]
+  ],
+  "sourcePreservation": {
+    "sourcePGuideWidthWeightUnchanged": true,
+    "original54POnce": true,
+    "sourceRowsDeleted": false,
+    "sourceArgsChanged": false,
+    "newPolicies": 0
+  },
+  "maskEarlyTargets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 19.300259,
+      "sourceFieldSHA256": "e2d78a15e964d96577f2fa8dd4278bfd2c417c5f291ac1971db74ee8fa007bbe",
+      "revealPath": "M22 9.5 Q17.5 15.5 6.5 21",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.030000000000000002
+        }
+      ]
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 17.442764,
+      "sourceFieldSHA256": "11809bd9310cdbbee72f0cbcafce824fceaaa5ab6f7f4e40c76b910642d9e2ac",
+      "revealPath": "M37 9 Q46.5 11.5 52.5 17",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 3,
+      "mask": 1,
+      "direction": "down",
+      "weight": 23,
+      "sourceFieldSHA256": "b1da1bb8429312283bda8e530761f71d30ae8abc858c973653c191cf4c7a52d2",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "direction": "right",
+      "weight": 33.5,
+      "sourceFieldSHA256": "c1468089e935387d9dbaef7bad032bd2764bc73eb51924ade72de8ec48c9cc50",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 5.974560712843923e-7
+        },
+        {
+          "local": 0.01,
+          "global": 0.005974560712843922
+        },
+        {
+          "local": 0.03,
+          "global": 0.017923682138531762
+        }
+      ]
+    },
+    {
+      "pen": 4,
+      "mask": 2,
+      "direction": "down",
+      "weight": 15.5,
+      "sourceFieldSHA256": "181dc55445de56cdd8ee6ed7ecc653f0dab2ce9c3e71ff8011dc78415fa63980",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.5974563477192909
+        },
+        {
+          "local": 0.01,
+          "global": 0.6002204202709319
+        },
+        {
+          "local": 0.03,
+          "global": 0.6057491182440115
+        }
+      ]
+    },
+    {
+      "pen": 4,
+      "mask": 3,
+      "direction": "curve",
+      "weight": 7.071068,
+      "sourceFieldSHA256": "4d120f037b518ee250a3eb06463c14b8866c704f45ea2df599b2b99832e9ba61",
+      "revealPath": "M48 35 Q48 40 43 40",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.8738910960473947
+        },
+        {
+          "local": 0.01,
+          "global": 0.875152060238981
+        },
+        {
+          "local": 0.03,
+          "global": 0.8776742408402137
+        }
+      ]
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "direction": "down",
+      "weight": 34,
+      "sourceFieldSHA256": "eb2faea092e1602db1b041ac7ae0fe12d8b8b1f4f66509ef9827fdbc2f03cc30",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 15.337862,
+      "sourceFieldSHA256": "88903da8675460bbdda609d183ad9c879fa5bba46f77e5c3b7187f67b289edbc",
+      "revealPath": "M24 23.5 Q23.5 31.5 19 38",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 12.816006,
+      "sourceFieldSHA256": "8b74fb0c5506a5acf71c76b39ac6e3154121b4bf1d1716c9e98182d449e6227a",
+      "revealPath": "M36.5 22 Q40.5 26 41 34",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.030000000000000002
+        }
+      ]
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 24.622145,
+      "sourceFieldSHA256": "92cb22a06e3dfe67311fd0469bbe1d6c7c73b1a14260c80a15fc5129439e9751",
+      "revealPath": "M65 7 Q62 22 53 28.5",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "direction": "right",
+      "weight": 28.5,
+      "sourceFieldSHA256": "f86823cf33d81c1ad51a1dba06fc8bfadf760cc61241b4ffe64bde99230b1323",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.010000000000000002
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 10,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 37.326264,
+      "sourceFieldSHA256": "a068eb10701c00dfe2bbf20daadefa4a52407f692501d65c796778caed181c5e",
+      "revealPath": "M81 18.5 Q73 36 52 42",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 35.70014,
+      "sourceFieldSHA256": "adf0110834e537d0a84160107821e14809877285435fa18687b29f7676885e8f",
+      "revealPath": "M61.5 19.5 Q71 34.5 90 41",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.030000000000000002
+        }
+      ]
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "direction": "down",
+      "weight": 9.4875,
+      "sourceFieldSHA256": "631d4a4b71473bd0c6d6ca13317585758e682f10fc282e054e959ed10b7829f1",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 13,
+      "mask": 1,
+      "direction": "right",
+      "weight": 57.915,
+      "sourceFieldSHA256": "ead63a5287af31a4d21136694827a76505101295180f84a798c53bac27a023a3",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 8.592411260709914e-7
+        },
+        {
+          "local": 0.01,
+          "global": 0.008592411260709915
+        },
+        {
+          "local": 0.03,
+          "global": 0.02577723378212974
+        }
+      ]
+    },
+    {
+      "pen": 13,
+      "mask": 2,
+      "direction": "down",
+      "weight": 9.4875,
+      "sourceFieldSHA256": "87a78c7993d81c54c5073b9fcad2e466cb60d194a6f7c5380f53f4459df9882c",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.8592412668298653
+        },
+        {
+          "local": 0.01,
+          "global": 0.8606487148102815
+        },
+        {
+          "local": 0.03,
+          "global": 0.8634638922888616
+        }
+      ]
+    },
+    {
+      "pen": 14,
+      "mask": 1,
+      "direction": "right",
+      "weight": 20.79,
+      "sourceFieldSHA256": "fa571f90172757e141dbbfa41a1a1811d309cccf534fd1c52fd900ae9810ff69",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "direction": "right",
+      "weight": 21.78,
+      "sourceFieldSHA256": "89bfca31dcb5e57542d53c8c207153813b2a1876a3f8a8b9d16405f9e89ff860",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 16,
+      "mask": 1,
+      "direction": "down",
+      "weight": 37.95,
+      "sourceFieldSHA256": "2f3f2855eede3e1c3eb601930c23407d7f1d34ab5363f806d60ff0f400243ef6",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 17,
+      "mask": 1,
+      "direction": "down",
+      "weight": 39.275,
+      "sourceFieldSHA256": "586896f64ed5e5eb941964d534d816e2921c0045e2c26581fd9b25298f20c6aa",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 4.494680701316216e-7
+        },
+        {
+          "local": 0.01,
+          "global": 0.004494680701316216
+        },
+        {
+          "local": 0.03,
+          "global": 0.01348404210394865
+        }
+      ]
+    },
+    {
+      "pen": 17,
+      "mask": 2,
+      "direction": "curve",
+      "weight": 7.071068,
+      "sourceFieldSHA256": "bbdff2a93ec7990e2e5c06f910b64dc644b5d86d5e6e7cf779f3cf14c034c753",
+      "revealPath": "M43.08 84.4625 Q43.08 89.4625 48.08 89.4625",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.4494681510538186
+        },
+        {
+          "local": 0.01,
+          "global": 0.45027729210176276
+        },
+        {
+          "local": 0.03,
+          "global": 0.45189573604204514
+        }
+      ]
+    },
+    {
+      "pen": 17,
+      "mask": 3,
+      "direction": "right",
+      "weight": 41.035,
+      "sourceFieldSHA256": "2b863dfccb846791dc871b51a269b06ce42de8c11df5c209990e8de2bed15798",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.5303907367554721
+        },
+        {
+          "local": 0.01,
+          "global": 0.5350863644742818
+        },
+        {
+          "local": 0.03,
+          "global": 0.544478559131367
+        }
+      ]
+    },
+    {
+      "pen": 18,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 18.586033,
+      "sourceFieldSHA256": "2ec17228ec5872693dccdc483ba95ddbe3d4a00d7f0b98789643ef5450e493a1",
+      "revealPath": "M36.645 60.7125 Q28.725 62.725 18.33 63.875",
+      "revealWidth": 14,
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.029999999999999995
+        }
+      ]
+    },
+    {
+      "pen": 19,
+      "mask": 1,
+      "direction": "down",
+      "weight": 14.375,
+      "sourceFieldSHA256": "f72a2cd73dba530110a12e2ab8a55a14f45dfbcce78d27b24874dcae56bc07cd",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.010000000000000002
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 20,
+      "mask": 1,
+      "direction": "right",
+      "weight": 24.75,
+      "sourceFieldSHA256": "5f2615df17a4fc1d15eea7b979597c55a33de67c0384e54840cbe30f26576bd9",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 21,
+      "mask": 1,
+      "direction": "right",
+      "weight": 24.75,
+      "sourceFieldSHA256": "6a4e832212ee1e00668e32acccb14de796d87b467f29e05613d37820a37b30b2",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 22,
+      "mask": 1,
+      "direction": "right",
+      "weight": 24.6411,
+      "sourceFieldSHA256": "e3414bcf9cee966afffcca9d18b054e10e4a44b4e98656fb6fe62a4630a3b96b",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 6.168355545764952e-7
+        },
+        {
+          "local": 0.01,
+          "global": 0.006168355545764953
+        },
+        {
+          "local": 0.03,
+          "global": 0.018505066637294856
+        }
+      ]
+    },
+    {
+      "pen": 22,
+      "mask": 2,
+      "direction": "down",
+      "weight": 15.3065,
+      "sourceFieldSHA256": "2d8afda0639d13e089e05cd277f81bea764be05cccc1bb79a1cc9b81b81ea3f7",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.6168359377409407
+        },
+        {
+          "local": 0.01,
+          "global": 0.6206671990307303
+        },
+        {
+          "local": 0.03,
+          "global": 0.6283304879392004
+        }
+      ]
+    },
+    {
+      "pen": 23,
+      "mask": 1,
+      "direction": "right",
+      "weight": 23.7006,
+      "sourceFieldSHA256": "2874418a0d49e958767d2ad53896db5b62fed210f6f5b80471107f883abfcebb",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    },
+    {
+      "pen": 24,
+      "mask": 1,
+      "direction": "right",
+      "weight": 25.0173,
+      "sourceFieldSHA256": "050ffdd71b2c67a4a7b5bb3d359438ec3fb5184e2b0f73355cecf04f14147da0",
+      "samples": [
+        {
+          "local": 0.000001,
+          "global": 0.000001
+        },
+        {
+          "local": 0.01,
+          "global": 0.01
+        },
+        {
+          "local": 0.03,
+          "global": 0.03
+        }
+      ]
+    }
+  ],
+  "pairProgress": [
+    {
+      "pen": 4,
+      "nextMask": 2,
+      "boundary": 0.5974560712843922,
+      "priorMaskWeight": 33.5,
+      "totalWeight": 56.071068,
+      "newBoundary": false,
+      "beforeAtAfter": [
+        0.5974560711843921,
+        0.5974560712843922
+      ],
+      "afterInitialSampleReused": {
+        "pen": 4,
+        "mask": 2,
+        "local": 0.000001
+      }
+    },
+    {
+      "pen": 4,
+      "nextMask": 3,
+      "boundary": 0.8738909699383647,
+      "priorMaskWeight": 49,
+      "totalWeight": 56.071068,
+      "newBoundary": false,
+      "beforeAtAfter": [
+        0.8738909698383647,
+        0.8738909699383647
+      ],
+      "afterInitialSampleReused": {
+        "pen": 4,
+        "mask": 3,
+        "local": 0.000001
+      }
+    },
+    {
+      "pen": 13,
+      "nextMask": 2,
+      "boundary": 0.8592411260709913,
+      "priorMaskWeight": 57.915,
+      "totalWeight": 67.4025,
+      "newBoundary": false,
+      "beforeAtAfter": [
+        0.8592411259709913,
+        0.8592411260709913
+      ],
+      "afterInitialSampleReused": {
+        "pen": 13,
+        "mask": 2,
+        "local": 0.000001
+      }
+    },
+    {
+      "pen": 17,
+      "nextMask": 2,
+      "boundary": 0.44946807013162166,
+      "priorMaskWeight": 39.275,
+      "totalWeight": 87.381068,
+      "newBoundary": false,
+      "beforeAtAfter": [
+        0.44946807003162165,
+        0.44946807013162166
+      ],
+      "afterInitialSampleReused": {
+        "pen": 17,
+        "mask": 2,
+        "local": 0.000001
+      }
+    },
+    {
+      "pen": 17,
+      "nextMask": 3,
+      "boundary": 0.5303902671457392,
+      "priorMaskWeight": 46.346068,
+      "totalWeight": 87.381068,
+      "newBoundary": false,
+      "beforeAtAfter": [
+        0.5303902670457392,
+        0.5303902671457392
+      ],
+      "afterInitialSampleReused": {
+        "pen": 17,
+        "mask": 3,
+        "local": 0.000001
+      }
+    },
+    {
+      "pen": 22,
+      "nextMask": 2,
+      "boundary": 0.6168355545764952,
+      "priorMaskWeight": 24.6411,
+      "totalWeight": 39.9476,
+      "newBoundary": false,
+      "beforeAtAfter": [
+        0.6168355544764952,
+        0.6168355545764952
+      ],
+      "afterInitialSampleReused": {
+        "pen": 22,
+        "mask": 2,
+        "local": 0.000001
+      }
+    }
+  ],
+  "curveTargets": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 19.300259,
+      "sourceFieldSHA256": "e2d78a15e964d96577f2fa8dd4278bfd2c417c5f291ac1971db74ee8fa007bbe",
+      "revealPath": "M22 9.5 Q17.5 15.5 6.5 21",
+      "revealWidth": 14
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 17.442764,
+      "sourceFieldSHA256": "11809bd9310cdbbee72f0cbcafce824fceaaa5ab6f7f4e40c76b910642d9e2ac",
+      "revealPath": "M37 9 Q46.5 11.5 52.5 17",
+      "revealWidth": 14
+    },
+    {
+      "pen": 4,
+      "mask": 3,
+      "direction": "curve",
+      "weight": 7.071068,
+      "sourceFieldSHA256": "4d120f037b518ee250a3eb06463c14b8866c704f45ea2df599b2b99832e9ba61",
+      "revealPath": "M48 35 Q48 40 43 40",
+      "revealWidth": 14
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 15.337862,
+      "sourceFieldSHA256": "88903da8675460bbdda609d183ad9c879fa5bba46f77e5c3b7187f67b289edbc",
+      "revealPath": "M24 23.5 Q23.5 31.5 19 38",
+      "revealWidth": 14
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 12.816006,
+      "sourceFieldSHA256": "8b74fb0c5506a5acf71c76b39ac6e3154121b4bf1d1716c9e98182d449e6227a",
+      "revealPath": "M36.5 22 Q40.5 26 41 34",
+      "revealWidth": 14
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 24.622145,
+      "sourceFieldSHA256": "92cb22a06e3dfe67311fd0469bbe1d6c7c73b1a14260c80a15fc5129439e9751",
+      "revealPath": "M65 7 Q62 22 53 28.5",
+      "revealWidth": 14
+    },
+    {
+      "pen": 10,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 37.326264,
+      "sourceFieldSHA256": "a068eb10701c00dfe2bbf20daadefa4a52407f692501d65c796778caed181c5e",
+      "revealPath": "M81 18.5 Q73 36 52 42",
+      "revealWidth": 14
+    },
+    {
+      "pen": 11,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 35.70014,
+      "sourceFieldSHA256": "adf0110834e537d0a84160107821e14809877285435fa18687b29f7676885e8f",
+      "revealPath": "M61.5 19.5 Q71 34.5 90 41",
+      "revealWidth": 14
+    },
+    {
+      "pen": 17,
+      "mask": 2,
+      "direction": "curve",
+      "weight": 7.071068,
+      "sourceFieldSHA256": "bbdff2a93ec7990e2e5c06f910b64dc644b5d86d5e6e7cf779f3cf14c034c753",
+      "revealPath": "M43.08 84.4625 Q43.08 89.4625 48.08 89.4625",
+      "revealWidth": 14
+    },
+    {
+      "pen": 18,
+      "mask": 1,
+      "direction": "curve",
+      "weight": 18.586033,
+      "sourceFieldSHA256": "2ec17228ec5872693dccdc483ba95ddbe3d4a00d7f0b98789643ef5450e493a1",
+      "revealPath": "M36.645 60.7125 Q28.725 62.725 18.33 63.875",
+      "revealWidth": 14
+    }
+  ],
+  "cardinalTargets": [
+    {
+      "pen": 3,
+      "mask": 1,
+      "direction": "down",
+      "weight": 23,
+      "sourceFieldSHA256": "b1da1bb8429312283bda8e530761f71d30ae8abc858c973653c191cf4c7a52d2"
+    },
+    {
+      "pen": 4,
+      "mask": 1,
+      "direction": "right",
+      "weight": 33.5,
+      "sourceFieldSHA256": "c1468089e935387d9dbaef7bad032bd2764bc73eb51924ade72de8ec48c9cc50"
+    },
+    {
+      "pen": 4,
+      "mask": 2,
+      "direction": "down",
+      "weight": 15.5,
+      "sourceFieldSHA256": "181dc55445de56cdd8ee6ed7ecc653f0dab2ce9c3e71ff8011dc78415fa63980"
+    },
+    {
+      "pen": 5,
+      "mask": 1,
+      "direction": "down",
+      "weight": 34,
+      "sourceFieldSHA256": "eb2faea092e1602db1b041ac7ae0fe12d8b8b1f4f66509ef9827fdbc2f03cc30"
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "direction": "right",
+      "weight": 28.5,
+      "sourceFieldSHA256": "f86823cf33d81c1ad51a1dba06fc8bfadf760cc61241b4ffe64bde99230b1323"
+    },
+    {
+      "pen": 12,
+      "mask": 1,
+      "direction": "down",
+      "weight": 9.4875,
+      "sourceFieldSHA256": "631d4a4b71473bd0c6d6ca13317585758e682f10fc282e054e959ed10b7829f1"
+    },
+    {
+      "pen": 13,
+      "mask": 1,
+      "direction": "right",
+      "weight": 57.915,
+      "sourceFieldSHA256": "ead63a5287af31a4d21136694827a76505101295180f84a798c53bac27a023a3"
+    },
+    {
+      "pen": 13,
+      "mask": 2,
+      "direction": "down",
+      "weight": 9.4875,
+      "sourceFieldSHA256": "87a78c7993d81c54c5073b9fcad2e466cb60d194a6f7c5380f53f4459df9882c"
+    },
+    {
+      "pen": 14,
+      "mask": 1,
+      "direction": "right",
+      "weight": 20.79,
+      "sourceFieldSHA256": "fa571f90172757e141dbbfa41a1a1811d309cccf534fd1c52fd900ae9810ff69"
+    },
+    {
+      "pen": 15,
+      "mask": 1,
+      "direction": "right",
+      "weight": 21.78,
+      "sourceFieldSHA256": "89bfca31dcb5e57542d53c8c207153813b2a1876a3f8a8b9d16405f9e89ff860"
+    },
+    {
+      "pen": 16,
+      "mask": 1,
+      "direction": "down",
+      "weight": 37.95,
+      "sourceFieldSHA256": "2f3f2855eede3e1c3eb601930c23407d7f1d34ab5363f806d60ff0f400243ef6"
+    },
+    {
+      "pen": 17,
+      "mask": 1,
+      "direction": "down",
+      "weight": 39.275,
+      "sourceFieldSHA256": "586896f64ed5e5eb941964d534d816e2921c0045e2c26581fd9b25298f20c6aa"
+    },
+    {
+      "pen": 17,
+      "mask": 3,
+      "direction": "right",
+      "weight": 41.035,
+      "sourceFieldSHA256": "2b863dfccb846791dc871b51a269b06ce42de8c11df5c209990e8de2bed15798"
+    },
+    {
+      "pen": 19,
+      "mask": 1,
+      "direction": "down",
+      "weight": 14.375,
+      "sourceFieldSHA256": "f72a2cd73dba530110a12e2ab8a55a14f45dfbcce78d27b24874dcae56bc07cd"
+    },
+    {
+      "pen": 20,
+      "mask": 1,
+      "direction": "right",
+      "weight": 24.75,
+      "sourceFieldSHA256": "5f2615df17a4fc1d15eea7b979597c55a33de67c0384e54840cbe30f26576bd9"
+    },
+    {
+      "pen": 21,
+      "mask": 1,
+      "direction": "right",
+      "weight": 24.75,
+      "sourceFieldSHA256": "6a4e832212ee1e00668e32acccb14de796d87b467f29e05613d37820a37b30b2"
+    },
+    {
+      "pen": 22,
+      "mask": 1,
+      "direction": "right",
+      "weight": 24.6411,
+      "sourceFieldSHA256": "e3414bcf9cee966afffcca9d18b054e10e4a44b4e98656fb6fe62a4630a3b96b"
+    },
+    {
+      "pen": 22,
+      "mask": 2,
+      "direction": "down",
+      "weight": 15.3065,
+      "sourceFieldSHA256": "2d8afda0639d13e089e05cd277f81bea764be05cccc1bb79a1cc9b81b81ea3f7"
+    },
+    {
+      "pen": 23,
+      "mask": 1,
+      "direction": "right",
+      "weight": 23.7006,
+      "sourceFieldSHA256": "2874418a0d49e958767d2ad53896db5b62fed210f6f5b80471107f883abfcebb"
+    },
+    {
+      "pen": 24,
+      "mask": 1,
+      "direction": "right",
+      "weight": 25.0173,
+      "sourceFieldSHA256": "050ffdd71b2c67a4a7b5bb3d359438ec3fb5184e2b0f73355cecf04f14147da0"
+    }
+  ],
+  "footTargets": [],
+  "terminalTargets": [],
+  "initialRiskPlan": {
+    "scope": "ALL30 ordinary masks; no policy correction",
+    "maskLocalProgress": [
+      0.000001,
+      0.01,
+      0.03
+    ],
+    "allMaskEarlyFrames": 90,
+    "sourceBoundaryFrames": 12,
+    "afterBoundaryInitialEpsilonReused": true,
+    "sourceGuideCapsUnmodified": true,
+    "plannedInput": {
+      "path": "docs/hanja-source-original-u9f08-2026-10-24/ordinary-baseline-plan.json",
+      "SHA256": "f6273fc184067e25e567ab8ca21c44b58e84619e2d5aa2cdf99d8f6fb8033665"
+    },
+    "epsilonImplementation": {
+      "planExpression": "Number.EPSILON",
+      "profileObservationValue": 0.000001,
+      "reason": "Avoid weighted global time rounding a positive mask-local epsilon to exact0. Explicit observational epsilon, not source geometry/time-weight change.",
+      "approvedImplementationBy": "/root/runtime_next"
+    },
+    "boundaryImplementation": {
+      "beforeGlobalOffset": 1e-10,
+      "beforeAtAfterArrayLabels": [
+        "minus",
+        "exact"
+      ],
+      "afterReusedFromEarlyMaskEpsilon": true
+    },
+    "allObservationsPending": true
+  },
+  "requiredFreshNative": {
+    "earlyMaskFrames": 90,
+    "sourceBoundaryFrames": 12,
+    "total": 102,
+    "initialOnly": true,
+    "status": "unobserved"
+  },
+  "expectedResourceClosureModules": null,
+  "sharedVersion": null,
+  "baseSharedVersion": 150,
+  "sharedWindowPending": true,
+  "profileFinalized": false,
+  "executionEnabled": false,
+  "finalIntegrationPinsPending": true,
+  "isolatedActualComponentBrowserVerified": false,
+  "nativeApproval": false,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "sourceStaticMappingApproved": true,
+  "officialMacroApproved": true,
+  "authorSSR": 0,
+  "authorHTTP": 0,
+  "authorServer": 0,
+  "engineRuns": 0,
+  "sourceProjection": 0,
+  "authorValidation": {
+    "ordinaryOnlyBaseline": true,
+    "newPolicies": 0,
+    "rendererChanged": false,
+    "sourceEngineAndMathRepeated": false,
+    "actualSerializerSetupPending": true,
+    "actualBrowserObserved": false,
+    "firstResourceSetup": null,
+    "firstBrowserStrict": null
+  },
+  "officialDirectionEvidence": {
+    "path": "docs/hanja-official-media-compare-u9f08-2026-10-24/official-temporal-native-review.json",
+    "SHA256": "99a15e76cc7d2739a271538250617c64ad080efb0ea58db2161be092544e88ca",
+    "scope": "ROOT72 direction observations reused; no replay"
+  },
+  "wholeEvidence": {
+    "path": "docs/hanja-source-raw-compare-u9f08-2026-10-24/native-whole-review.json",
+    "SHA256": "9d64e413107c4d7862a1ec328a02fec9d2024dd88edbdad3e7e45df3d252eec0",
+    "scope": "ROOT complete whole macro only"
+  },
+  "staticMappingEvidence": {
+    "path": "docs/hanja-source-raw-compare-u9f08-2026-10-24/native-group-review.json",
+    "SHA256": "89e11c0d7262f7f338bc99bb2912cd0c093da7c9a57c8a2f2f20ed54d876c04a",
+    "scope": "ROOT24 static macro/4screens anchors1,9,15,21 only; contact/timing unapproved"
+  },
+  "inputSHA256": {
+    "docs/hanja-source-original-u9f08-2026-10-24/fixtures.json": "2429c5557e056c72da95208953c67ea71c9c011588c0b514f872bb48f9a26e05",
+    "docs/hanja-actual-engine-capture-u9f08-2026-10-24/engine-whole-u9f08.json": "8709710f1c22ce9ac8b8977b3b7692c560e8bd882be593612372816425f7de86",
+    "docs/hanja-actual-engine-capture-u9f08-2026-10-24/capture.json": "546a4cf5d66be4971c451422b761d51a9bd176cf614ea48dfb4123be73474c8d",
+    "docs/hanja-source-original-u9f08-2026-10-24/candidate.mjs": "137b4feedaa17f498f9882ebec5a9d190cbe314fa39f56a203f526b00f211443",
+    "docs/hanja-official-media-compare-u9f08-2026-10-24/official-temporal-native-review.json": "99a15e76cc7d2739a271538250617c64ad080efb0ea58db2161be092544e88ca",
+    "docs/hanja-source-raw-compare-u9f08-2026-10-24/native-group-review.json": "89e11c0d7262f7f338bc99bb2912cd0c093da7c9a57c8a2f2f20ed54d876c04a",
+    "docs/hanja-source-raw-compare-u9f08-2026-10-24/native-whole-review.json": "9d64e413107c4d7862a1ec328a02fec9d2024dd88edbdad3e7e45df3d252eec0",
+    "docs/hanja-source-original-u9f08-2026-10-24/ordinary-baseline-plan.json": "f6273fc184067e25e567ab8ca21c44b58e84619e2d5aa2cdf99d8f6fb8033665"
+  },
+  "adapterSHA256": null,
+  "futureIntegration": {
+    "rendererSHA256": null,
+    "helperSHA256": null,
+    "registrySHA256": null,
+    "expectedClosure": null,
+    "actualClosureConfirmed": false,
+    "pendingHelperDispatch": "u9f08 plain-outline profile not connected yet; B sole shared writer"
+  },
+  "draftScope": "Independent source-bound profile only. Current shared renderer/helper/closure pins and real setup must be supplied before execution; no copied prior-candidate setup results."
+}
