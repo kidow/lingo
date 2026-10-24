@@ -12,7 +12,8 @@ export function HanjaStudyGlyph({ character, className = '', decorative = false 
   if (!data) return <HanjaGlyph glyph={character.glyph} className={className} decorative={decorative} />
   return <svg viewBox="0 0 100 100" className={className} role={decorative ? undefined : 'img'}
     aria-label={decorative ? undefined : `${character.glyph} ${data.variant.form} 자형`}
-    aria-hidden={decorative || undefined} focusable="false" fill="none" stroke="currentColor"
+    aria-hidden={decorative || undefined} focusable="false"
+    fill={data.outlines ? 'currentColor' : 'none'} stroke={data.outlines ? 'none' : 'currentColor'}
     strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
     {data.paths.map((d, i) => <path key={i} d={d} />)}
   </svg>
