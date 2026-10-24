@@ -129,6 +129,8 @@ def install_board(shared, base, groups, board_guards):
             note += '<p data-source-draft="u7626-hkcs"><strong>DRAFT · 배정14획 유지 / 사전15획 정적판 · productionImportAllowed=false</strong> · 原provider hkcs_m7626 · 원17raw/18mask/32P 전체 보존 · 연속raw10+11 및15+16은 국내방향에 따른 검토후보 · 원10 H/V guide 간격 유지 · 접촉·재생·개별variant 미승인</p>'
         if base.get('glyph') == '庾' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u5ebe-ue0102':
             note += '<p data-source-draft="u5ebe-ue0102"><strong>DRAFT · 배정11 / 사전12 · productionImportAllowed=false</strong> · 원13raw/15calls/26P 보존 · 원raw9H→raw8V 재배열 · 8획 nohook 세부/접촉/재생 미승인</p>'
+        if base.get('glyph') == '苔' and base.get('sourceRoots', {}).get('selected', {}).get('root') == 'u82d4-k':
+            note += '<p data-source-draft="u82d4-k"><strong>DRAFT · productionImportAllowed=false</strong> · 원11raw/11calls/21P · 5획 원Q둘 별도mask/guide gap[-12.5,+1.01]유지 · 정면적filledP접촉은별도수학근거이며시간접촉승인아님</p>'
         return head + style + note + '<div class="board">' + ''.join(rows) + '</div><h2>미배정 원raw (삭제 없음)</h2><div class="unassigned">' + rest + '</div>'
 
     shared.guards, shared.selection, shared.page = guarded, selection, page
@@ -648,6 +650,14 @@ def exact_u6970_dictionary_draft_launcher(config,base):
             and config.get('provisionalGroups')==expected['groups']
             and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
 
+def exact_u82d4_k_prepared_launcher(config,base):
+    expected=json.loads('{"launcher":{"path":"scripts/hanja-raw-static-compare.py","SHA256":"aab08a897e880560507418b63ed9402d6f18a1708d0c2071b4890892e71699c1"},"baseConfig":{"path":"docs/hanja-source-raw-compare-u82d4-k-2026-10-25/config.json","SHA256":"1632ee0a9a8abb6dc022b44ff88296069274352d406cbc429134605ae3250a80"},"sourceRoots":{"selected":{"root":"u82d4-k","file":"docs/hanja-goal-glyphwiki-batch1125-2026-10-14/engine-whole-u82d4-k.json","fileSHA256":"c2924297dabbc70fb398317be731f5066372cff17dbf2f149df9f8865f54465b","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"u82d4-k","sourceProofFile":"engine-whole-u82d4-k.json","sourceProofFileSha256":"c2924297dabbc70fb398317be731f5066372cff17dbf2f149df9f8865f54465b"},"rawGroups":11,"drawingCalls":11,"polygonCounts":[2,2,2,2,3,3,2,1,1,2,1],"polygons":21}},"groups":{"selected":[[1],[2],[4],[3],[5,6],[7],[8],[9,10],[11]]},"fixture":{"path":"docs/hanja-source-original-u82d4-k-2026-10-25/fixtures.json","SHA256":"8daca33d9ff6e7275d2a19432dd03805f98034353872eabcb4d40cfb2a8e6fbd"}}')
+    return (config.get('launcher')==expected['launcher'] and config.get('baseConfig')==expected['baseConfig']
+            and base.get('glyph')=='苔' and type(base.get('catalogStrokes'))is int and base['catalogStrokes']==9
+            and base.get('sourceRoots')==expected['sourceRoots'] and base.get('domestic',{}).get('sha256')=='8630374d7f9c5e11c81cacd6523d5c4c30a53d11c7ba1373d0714865c68dfb18'
+            and config.get('provisionalGroups')==expected['groups']
+            and digest(fixed_path(expected['fixture']['path']).read_bytes())==expected['fixture']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -670,6 +680,7 @@ def main():
     require(config['wrapper']['path'] == str(Path(__file__).resolve().relative_to(ROOT)), 'fixed board wrapper')
     base_path = fixed_path(config['baseConfig']['path'])
     base = json.loads(base_path.read_bytes())
+    legacy_launcher = legacy_launcher or exact_u82d4_k_prepared_launcher(config,base)
     dictionary_u6970 = exact_u6970_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or dictionary_u6970
     dictionary_u8adb = exact_u8adb_vs1_dictionary_draft_launcher(config,base)

@@ -1,0 +1,166 @@
+{
+  "schema": "hanja-original-P-static-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "苔",
+  "root": "u82d4-k",
+  "observer": "ROOT browser panel",
+  "catalogStrokes": 9,
+  "dictionaryPlaybackCandidate": 9,
+  "sourceStaticMappingApproved": true,
+  "macroCorrespondenceOnly": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "productionImportAllowed": false,
+  "temporalContactApproval": false,
+  "allTimeContactProof": false,
+  "inputs": {
+    "rawLauncher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "aab08a897e880560507418b63ed9402d6f18a1708d0c2071b4890892e71699c1"
+    },
+    "wrapper": {
+      "path": "scripts/hanja-raw-static-board.py",
+      "SHA256": "ef276d21ed3d501cf48218a72623aabc32d9bebdb3f009adac2aa6697fde8907"
+    },
+    "board": {
+      "path": "docs/hanja-source-raw-compare-u82d4-k-2026-10-25/board.json",
+      "SHA256": "ca591a9b7f733a67183b8737926377c18a0bbd397b5151f5bef5b0fb806bccfa"
+    },
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u82d4-k-2026-10-25/config.json",
+      "SHA256": "1632ee0a9a8abb6dc022b44ff88296069274352d406cbc429134605ae3250a80"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u82d4-k-2026-10-25/fixtures.json",
+      "SHA256": "8daca33d9ff6e7275d2a19432dd03805f98034353872eabcb4d40cfb2a8e6fbd"
+    },
+    "contactFacts": {
+      "path": "docs/hanja-source-raw-compare-u82d4-k-2026-10-25/source-filled-contact-facts.json",
+      "SHA256": "cf8e38d28a4cc7e5b1a183816c2d019573c2f12597e74d8bf4aaaf5e1b6d5169"
+    }
+  },
+  "mapping": [
+    {
+      "logicalPen": 1,
+      "sourceRawOneBased": [
+        1
+      ],
+      "macroCompatible": true
+    },
+    {
+      "logicalPen": 2,
+      "sourceRawOneBased": [
+        2
+      ],
+      "macroCompatible": true
+    },
+    {
+      "logicalPen": 3,
+      "sourceRawOneBased": [
+        4
+      ],
+      "macroCompatible": true
+    },
+    {
+      "logicalPen": 4,
+      "sourceRawOneBased": [
+        3
+      ],
+      "macroCompatible": true
+    },
+    {
+      "logicalPen": 5,
+      "sourceRawOneBased": [
+        5,
+        6
+      ],
+      "macroCompatible": true
+    },
+    {
+      "logicalPen": 6,
+      "sourceRawOneBased": [
+        7
+      ],
+      "macroCompatible": true
+    },
+    {
+      "logicalPen": 7,
+      "sourceRawOneBased": [
+        8
+      ],
+      "macroCompatible": true
+    },
+    {
+      "logicalPen": 8,
+      "sourceRawOneBased": [
+        9,
+        10
+      ],
+      "macroCompatible": true
+    },
+    {
+      "logicalPen": 9,
+      "sourceRawOneBased": [
+        11
+      ],
+      "macroCompatible": true
+    }
+  ],
+  "observations": {
+    "acceptedScreens": 2,
+    "uniquePairs": 9,
+    "viewport": [
+      1280,
+      1280
+    ],
+    "SVGSize": 220,
+    "pairX": [
+      12,
+      242,
+      646,
+      876
+    ],
+    "screens": [
+      {
+        "pens": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "rowY": [
+          393.59375,
+          669.484375,
+          945.375
+        ]
+      },
+      {
+        "pens": [
+          7,
+          8,
+          9
+        ],
+        "rowY": [
+          702.265625,
+          978.15625
+        ]
+      }
+    ],
+    "allFullyVisible": true
+  },
+  "findings": {
+    "pen5": "Original DL then H filled shape corresponds. Original Q guide gap remains and is not approved by static comparison.",
+    "pen8": "Original H then V without reverse hook corresponds at static scale.",
+    "grass": "Logical3/4 use original raw4/raw3, matching independently recorded grass H/V order."
+  },
+  "sourcePGuideWidthWeightUnchanged": true,
+  "cleanup": {
+    "pid": 8603,
+    "session": 17449,
+    "exitCode": 130,
+    "tab154Closed": true,
+    "ownedServerRemaining": false
+  }
+}
