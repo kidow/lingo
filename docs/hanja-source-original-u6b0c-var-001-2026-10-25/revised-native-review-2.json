@@ -1,0 +1,183 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "欌",
+  "root": "u6b0c-var-001",
+  "observer": "ROOT browser panel",
+  "result": "PASS",
+  "nativeApproval": true,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "finite": {
+    "fresh": 50,
+    "reusedUnchanged": 60,
+    "totalDistinct": 110,
+    "passed": 110,
+    "held": 0,
+    "earlyFivePreservedBeforeResidualFix": 5,
+    "remainingFreshAfterFix": 45,
+    "targetSixStates": 24,
+    "ordinaryV520EarlyStates": 15,
+    "terminalStates": 11,
+    "caps": [
+      [
+        4,
+        1
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        22,
+        1
+      ]
+    ],
+    "terminal": [
+      20,
+      1
+    ],
+    "ordinaryVTargets": [
+      [
+        2,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        12,
+        1
+      ]
+    ],
+    "terminalBreakdown": {
+      "early": 3,
+      "bodyMid": 1,
+      "phaseBoundary": 3,
+      "tailMidNearFull": 3,
+      "completionResidual": 1
+    },
+    "terminalPhaseExact": "269/321",
+    "bodyBeforeUpStable": true,
+    "upGrowsBottomToTop": true,
+    "phaseContactStable": true,
+    "allResidualsWhite": true,
+    "reuse": {
+      "path": "docs/hanja-source-original-u6b0c-var-001-2026-10-25/ordinary-baseline-native-review.json",
+      "SHA256": "fa659eea4fb89f242aa1a9e97246bb1a40824932c1522be168f387e06959ab8e",
+      "scope": "60 unchanged positives reused; initial five successful cap4 observations are retained, not replayed. Fixed residual branch enabled remaining45 new observations."
+    }
+  },
+  "natural": {
+    "pens": [
+      4,
+      20
+    ],
+    "distinctSnapshots": 4,
+    "samples": [
+      {
+        "pen": 4,
+        "statusProgress": 0.0784875,
+        "screenshotProgress": 0.0942125,
+        "endProgress": 1,
+        "endStatus": "natural-ended"
+      },
+      {
+        "pen": 20,
+        "statusProgress": 0.07435,
+        "screenshotProgress": 0.089925,
+        "endProgress": 1,
+        "endStatus": "natural-ended"
+      }
+    ],
+    "continuousReplayProof": false
+  },
+  "whole": {
+    "exactPrefix": 22,
+    "result": "PASS",
+    "mainSize": 520,
+    "separate": true
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "mainSize": 520,
+    "sampleSize": 220,
+    "singleSize": 520,
+    "fullSamplesObserved": true
+  },
+  "inputs": {
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "66cec240b2d044533424f4aa3078f5552b30cf4cee468d5074f3825b530afa52"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "8d47bd58d0ebcaf84a84b77b75a562d77d28ad7ddfd05bd070e98cc7e45290dc"
+    },
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u6b0c-var-001-2.json",
+      "SHA256": "3ebfe1526b879938d8ef2f4ac2aa2d647ecfa743b2f598b455181957b357771f"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "881e9e6ef2159fdda6661f26b27bade3e518e29566435b280cebd79a39250b7b"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u6b0c-var-001-2026-10-25/fixtures.json",
+      "SHA256": "8c8c979732a5f90a1741e94796277f58fb55632d32f634e3fd69c036e5bfc11c"
+    }
+  },
+  "observedInputPinCorrection": {
+    "historicalObservedProfileSHA256": "b4f115a62ab7d0f47f1115976f85ececc5449a3a9f60aca350f62f96e3902371",
+    "historicalCalculatedHelperSHA256": "cefd6e7bd929b62ae6cf26fe91b0c8ae81dc5530cbc4f894af87f73937798e03",
+    "actualObservedHelperSHA256": "66cec240b2d044533424f4aa3078f5552b30cf4cee468d5074f3825b530afa52",
+    "actualObservedRendererSHA256": "8d47bd58d0ebcaf84a84b77b75a562d77d28ad7ddfd05bd070e98cc7e45290dc",
+    "difference": "One leading indentation space in coverage state line; behavior unchanged.",
+    "nativeEvidenceReplayed": false
+  },
+  "historicalUnapprovedRun": {
+    "residualPen4Error": "TypeError",
+    "approved": false,
+    "newSSRChecks": 1,
+    "successfulEarlyFiveRetained": true,
+    "repairedBranch": "source-specific cap residual coverage"
+  },
+  "server": {
+    "newSSRChecks": 1,
+    "totalStartupSSRChecksIncludingUnapproved": 2,
+    "CJS": 283,
+    "ESM": 283,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "pid": 75191,
+    "session": 22838,
+    "port": 59412,
+    "exitCode": 130,
+    "tab": 193,
+    "tabClosed": true,
+    "ownedServerRemaining": false
+  },
+  "bad": [],
+  "errors": [],
+  "sourceProofFormat": "actual-full5-capture",
+  "syntheticFull5": false,
+  "sourceGeometryGuideWidthWeightOuterClockUnchanged": true,
+  "allTimeProof": false,
+  "publisherMicrotimingEquivalent": false,
+  "sourceEngineMathReplay": 0
+}
