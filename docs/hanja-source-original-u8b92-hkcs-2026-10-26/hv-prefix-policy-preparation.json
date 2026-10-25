@@ -1,0 +1,235 @@
+{
+  "schema": "hanja-independent-HV-prefix-policy-preparation/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "root": "hkcs_m8b92",
+  "files": [
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/verify-hv-common-kernels.py",
+      "SHA256": "0b72bb71b6b311c663f1eb5fe8f7d9832159484d67c0fe53166671b9381da966"
+    },
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/hv-common-kernel-proof.json",
+      "SHA256": "ee813e38f5a2b512a30cfc7b1c82e8b905ee58c930fddfd30a43cecc90ac922f"
+    },
+    {
+      "path": "lib/hanja-stroke-cardinal-contact-u8b92-hkcs.ts",
+      "SHA256": "e2a8210d39caaade7b92a013f46e5fc66bc8e5e59754ce7e301bcc3a3494a4ed"
+    },
+    {
+      "path": "lib/hanja-stroke-cardinal-contact-u8b92-hkcs.test.ts",
+      "SHA256": "ce19aec56ebedadfeeff63da16ca0114dbfec089c1ffad87a6ff037cefe9d278"
+    }
+  ],
+  "sourceFactory": {
+    "path": "lib/hanja-stroke-start-caps-u8b92-hkcs.ts",
+    "SHA256": "2f2c490ef229f4d66415994b0cd17a0f2ab8becb55449a689edbe7c542145655",
+    "counts": {
+      "pens": 24,
+      "masks": 34,
+      "P": 63
+    },
+    "identity": {
+      "sourceRoot": "hkcs_m8b92",
+      "sourceProofFile": "../hanja-actual-engine-capture-u8b92-hkcs-2026-10-26/engine-whole-hkcs_m8b92.json",
+      "sourceProofFileSha256": "4ebc488e6effd4d7ea1e7866ab84f0070bad147a4e5282c1cb188e2cf7683cdb",
+      "sourceCapsuleFile": "../hanja-source-alternative-u8b92-hkcs-2026-10-26/sources.json",
+      "sourceCapsuleFileSha256": "afe61564814ceb1be31b91dc9ca74673bd192d0fd327d649a854f9b8b5205094",
+      "sourceChecksFile": "../hanja-actual-engine-capture-u8b92-hkcs-2026-10-26/capture.json",
+      "sourceChecksFileSha256": "ad2392e22369ead8fe52681ce75a527c5ad661ee8417bdc46691b8ffafcd3954"
+    }
+  },
+  "targets": [
+    {
+      "pen": 6,
+      "mask": 2,
+      "sourceV": {
+        "outline": "M33.7 64 L33.7 91 L27.7 91 L27.7 64 Z M27.7 63 L30.7 60.5 L36.2 65 L33.7 67 L27.7 64 Z",
+        "bounds": [
+          27.7,
+          60.5,
+          36.2,
+          91
+        ],
+        "direction": "down",
+        "weight": 26
+      },
+      "sourceH": {
+        "outline": "M13.15 63 L30.7 63 L30.7 65 L13.15 65 Z",
+        "bounds": [
+          13.15,
+          63,
+          30.7,
+          65
+        ],
+        "direction": "right",
+        "weight": 17.535
+      },
+      "anchor": [
+        "297/10",
+        "129/2"
+      ],
+      "strictBoxHalfWidth": "1/6",
+      "originY": 64.5,
+      "negativeExtent": 4,
+      "positiveExtent": 26.5
+    },
+    {
+      "pen": 11,
+      "mask": 2,
+      "sourceV": {
+        "outline": "M87 21 L87 32.5 L81 32.5 L81 21 Z M81 20 L84 17.5 L89.5 22 L87 24 L81 21 Z",
+        "bounds": [
+          81,
+          17.5,
+          89.5,
+          32.5
+        ],
+        "direction": "down",
+        "weight": 10.5
+      },
+      "sourceH": {
+        "outline": "M48 20 L83.5 20 L83.5 22 L48 22 Z",
+        "bounds": [
+          48,
+          20,
+          83.5,
+          22
+        ],
+        "direction": "right",
+        "weight": 35.5
+      },
+      "anchor": [
+        "331/4",
+        "43/2"
+      ],
+      "strictBoxHalfWidth": "1/8",
+      "originY": 21.5,
+      "negativeExtent": 4,
+      "positiveExtent": 11
+    },
+    {
+      "pen": 20,
+      "mask": 2,
+      "sourceV": {
+        "outline": "M87 64 L87 77 L81 77 L81 64 Z M81 63 L84 60.5 L89.5 65 L87 67 L81 64 Z",
+        "bounds": [
+          81,
+          60.5,
+          89.5,
+          77
+        ],
+        "direction": "down",
+        "weight": 12
+      },
+      "sourceH": {
+        "outline": "M48 63 L84 63 L84 65 L48 65 Z",
+        "bounds": [
+          48,
+          63,
+          84,
+          65
+        ],
+        "direction": "right",
+        "weight": 36
+      },
+      "anchor": [
+        "83",
+        "129/2"
+      ],
+      "strictBoxHalfWidth": "1/6",
+      "originY": 64.5,
+      "negativeExtent": 4,
+      "positiveExtent": 12.5
+    }
+  ],
+  "authorCounter": {
+    "scale": "Normalized local progress chosen by author, not inferred from original Q or original publisher time",
+    "lower": "anchorY-negativeExtent*progress",
+    "upper": "anchorY+positiveExtent*progress",
+    "zero": "Explicit empty/hidden state",
+    "one": "Exact unclipped original P2",
+    "newSourceInk": false,
+    "originalQYIsNotClipThreshold": true,
+    "originalClockIdentityApproved": false
+  },
+  "sourceSeams": {
+    "pen6Normalized": [
+      0,
+      0
+    ],
+    "pen11Normalized": [
+      0.5,
+      0
+    ],
+    "pen20Normalized": [
+      0,
+      0
+    ],
+    "repaired": false,
+    "newConnector": false
+  },
+  "baselineRisk": {
+    "sourceHeadAboveH": "5/2 in normalized100 coordinates for all3",
+    "separatedVLocalIntervals": {
+      "pen6": [
+        "0",
+        "5/61"
+      ],
+      "pen11": [
+        "0",
+        "1/6"
+      ],
+      "pen20": [
+        "0",
+        "5/33"
+      ]
+    },
+    "nativeBaselineFailureClaimed": false
+  },
+  "checks": {
+    "focusedTests": 4,
+    "passed": 4,
+    "failed": 0,
+    "limitedTypeDiagnostics": 0,
+    "limitedTypeRoots": [
+      "lib/hanja-stroke-cardinal-contact-u8b92-hkcs.ts",
+      "lib/hanja-stroke-cardinal-contact-u8b92-hkcs.test.ts"
+    ],
+    "testLabelOnlyCorrectionAfterRun": true,
+    "proofSavedSyntaxStatus": 0,
+    "sourceKernelComputations": 1,
+    "additionalGlobalConvexityCertificateRuns": 1,
+    "previous8CoverageReplay": 0,
+    "sourceProjection": 0,
+    "sourceEngine": 0,
+    "sharedRendererChanges": 0,
+    "sharedHelperChanges": 0,
+    "SSR": 0,
+    "server": 0
+  },
+  "pending": {
+    "originalMicro": [
+      "Existing broad H→V source correspondence does not approve the new centered y-band author clock.",
+      "Source pen11 noncoincident Q seam remains; no temporal equivalence or direction correction is inferred."
+    ],
+    "actualBrowser": [
+      "0/initial epsilon/early/mid/near-complete/exact full source P2",
+      "Same-frame completed opaque H and H→V boundary",
+      "Shared positive-area source kernel under actual clipping, AA edge/residual and no detached head",
+      "Reset complete→empty and natural playback mid/end"
+    ],
+    "sharedIntegration": false,
+    "runtimeRegistration": false
+  },
+  "sourcePChanged": false,
+  "sourceQChanged": false,
+  "sourceWeightsChanged": false,
+  "originalDrawingCountChanged": false,
+  "actualRasterProof": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registered": false,
+  "build": 0,
+  "wholeProjectTypecheck": 0
+}
