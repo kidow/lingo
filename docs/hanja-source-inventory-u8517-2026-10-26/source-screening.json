@@ -1,0 +1,104 @@
+{
+  "schema": "hanja-public-source-only-screening/v1",
+  "date": "2026-10-26",
+  "glyph": "蔗",
+  "catalog": {
+    "grade": "1급",
+    "strokes": 15,
+    "applied": false,
+    "confirmedBy": "ROOT from D1488 RAM roster"
+  },
+  "inventory": {
+    "path": "docs/hanja-source-inventory-u8517-2026-10-26/public-records.json",
+    "SHA256": "b27fbc0f3277576f87116375e635c13a3e1f015e25380d9a96bd03212f8b875a"
+  },
+  "prior": [
+    {
+      "path": "docs/hanja-source-raw-compare-u8517-k-2026-10-21/README.md",
+      "SHA256": "cb140bea0c40ef6106ccb23b27284bae360740a0341980a73750fd6ee652ec92",
+      "meaning": "K whole compatible but original pen13 second 灬dot DL versus source raw13 DR direct FAIL; no repeated whole/direction needed."
+    },
+    {
+      "path": "docs/hanja-source-alternative-u8517-j-2026-10-25/source-screening.json",
+      "SHA256": "0be9a78c22f248191cd05df9d447773804f76a2e1d2a97358a5fd5d3c92d4181",
+      "meaning": "J original dot spatial-direction necessary condition unresolved."
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch819-2026-10-13/sources.json",
+      "SHA256": "faee40308b8142f698aa3ac861ef20b41080ebd475bd9a3d0a828eea8bb4c409",
+      "meaning": "Old40records and12captured whole identities preserved; source40 is not a selected closure count."
+    }
+  ],
+  "HKPartialSourceFacts": {
+    "root": "hkcs_m8517@2",
+    "body": "hkcs_m5eb6@1",
+    "fire": "hkcs_m706c-p04-s00@2",
+    "secondOriginalDot": "2:7:8:72:144:85:162:82:180",
+    "start": [
+      72,
+      144
+    ],
+    "control": [
+      85,
+      162
+    ],
+    "end": [
+      82,
+      180
+    ],
+    "xRelativeToStart": "26*t-16*t^2 = 2*t*(13-8*t)",
+    "yRelativeToStart": "36*t",
+    "forEveryInteriorParameter": "x displacement positive for 0<t<=1 because13-8t>=5; y increases",
+    "rootParentBox": [
+      4,
+      32,
+      196,
+      197
+    ],
+    "fireParentBox": [
+      26,
+      -18,
+      192,
+      200
+    ],
+    "ancestorXAndYScalesPositive": true,
+    "sourceDeclaredDirection": "down-right relative to head, not observed required down-left",
+    "sameNecessaryConditionUnresolved": true,
+    "completeSourceClosure": false,
+    "newCaptureSkipped": true
+  },
+  "additionalAuthoredFacts": [
+    {
+      "root": "gaijin_krcourt-08517@1",
+      "reference": "u5eb6-itaiji-001@7",
+      "oldReferenceFamilyPresent": true,
+      "fullGeometryOrVersionEqualityNotClaimed": true
+    },
+    {
+      "roots": [
+        "dsknmt_hkrm-08022220@1",
+        "hdic_hkrm-08022220@1"
+      ],
+      "exactRootDataEqual": true,
+      "reference": "juki-b0d3@7",
+      "childGeometryEqualityNotClaimed": true,
+      "duplicateRootCaptureSkipped": true
+    }
+  ],
+  "assessment": "New HK original dot row does not resolve the pinned spatial-direction requirement. Other partial authored sources are inventory only; no native whole failure transferred.",
+  "actions": {
+    "engine": 0,
+    "projection": 0,
+    "native": 0,
+    "sourceEdited": false,
+    "directionReversed": false,
+    "componentSubstituted": false,
+    "privateInputs": false
+  },
+  "approval": {
+    "whole": false,
+    "direction": false,
+    "contact": false,
+    "runtime": false
+  }
+}
