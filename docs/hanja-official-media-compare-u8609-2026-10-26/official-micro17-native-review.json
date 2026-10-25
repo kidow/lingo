@@ -1,0 +1,94 @@
+{
+  "schema": "hanja-publisher-original-micro-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "蘉",
+  "stroke": 17,
+  "status": "PASS for observed original start location; fine micro-boundary motion unresolved",
+  "reviewer": "ROOT direct browser-panel observation",
+  "inputs": {
+    "helper": "scripts/hanja-official-media-compare.py",
+    "helperSHA256": "0b233230ad5372bf2feb910aa703456b446e059c9d45367914b6a165c6d1eaab",
+    "config": "docs/hanja-official-media-compare-u8609-2026-10-26/config-17-micro.json",
+    "configSHA256": "5bdf1ae045888ef4c970a2ed3ca62087a6ad3938727f1bc04b8971c717481222",
+    "SVG_SHA256": "22da025142775d47bafceb3d5250d88555aa71555dac314625fc37bfeb566ca2",
+    "CSS_SHA256": "5c427b5157bb10b0f03e2b42207c55cb2149098044c3a254cd6d0a8d22f8af18",
+    "geometrySHA256": "d2e6e97c57bbe3f0c43b0dc85f65bc9cbfa1ea88a8e618117d4f1cd80b25378e",
+    "delayMs": 14167,
+    "durationMs": 414,
+    "unchangedBeforeAndAfter": true
+  },
+  "frames": [
+    {
+      "fraction": 0,
+      "offset": "420px",
+      "observation": "No red selected-stroke ink visible."
+    },
+    {
+      "fraction": 0.01,
+      "offset": "414.4px",
+      "observation": "Small red wedge visible at upper-right start of the selected down-left stroke."
+    },
+    {
+      "fraction": 0.03,
+      "offset": "403.2px",
+      "observation": "Small red wedge remains at upper-right start; fine boundary displacement cannot be resolved confidently at 520px."
+    },
+    {
+      "fraction": 0.05,
+      "offset": "392px",
+      "observation": "Small red wedge remains at upper-right start; fine boundary displacement cannot be resolved confidently at 520px."
+    }
+  ],
+  "commonObserved": {
+    "ready": true,
+    "selectedStroke": 17,
+    "allowedStrokes": [
+      17
+    ],
+    "sourceContext": "u8609-hkcs",
+    "originalAllPathClipAttributesUnchanged": true,
+    "onlyOneSelection": true,
+    "errors": [],
+    "objectCSS": {
+      "x": 12,
+      "y": 582.1875,
+      "width": 520,
+      "height": 520
+    },
+    "fullPageEntireObjectVisible": true
+  },
+  "scope": {
+    "freshFrames": 4,
+    "prior60ReusedWithoutReplay": true,
+    "existingBroadDirection": "down-left",
+    "sameNumericPublisherAndAuthorClockApproved": false,
+    "sourceQStartToPFirstInkClockMappingApproved": false,
+    "initialRightwardWideningApproved": false,
+    "actualPrefixApproved": false,
+    "nativeRuntimeApproved": false
+  },
+  "limits": [
+    "Publisher e-hanja original media, not government/exam authority.",
+    "Fine left/right boundary growth among .01/.03/.05 is unresolved at this display size; do not claim three-frame micro-direction approval.",
+    "Existing broad direction is retained from prior evidence; a new source-bound author prefix still requires actual browser review.",
+    "No private original SVG, CSS, images or screenshots were written to files."
+  ],
+  "execution": {
+    "failedNodeEnvironmentStart": {
+      "attempts": 1,
+      "reason": "DNS resolution failed",
+      "exit": 1,
+      "serverStarted": false
+    },
+    "successfulContextEnvironmentStart": {
+      "PID": 75682,
+      "port": 59412,
+      "startupLogCaptured": false,
+      "sourceMediaValidationRequiredBeforeBind": true
+    },
+    "finishedServerStopped": true,
+    "tabClosed": true,
+    "engine": 0,
+    "projection": 0
+  }
+}
