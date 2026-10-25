@@ -1,0 +1,233 @@
+{
+  "schema": "hanja-body-rising-band-feasibility/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "logical": 7,
+  "coordinateSpace": "normalized100",
+  "source": {
+    "path": "docs/hanja-actual-engine-capture-u840d-hkcs-2026-10-25/engine-whole-hkcs_m840d.json",
+    "SHA256": "f5c8184820c51cbfe0506959745703496eec6d7d271b29735d22bee2cec8a205"
+  },
+  "bodyCandidate": {
+    "sourceRaw": [
+      8,
+      9
+    ],
+    "cutY": "147/2",
+    "bottomY": "1867/20",
+    "mask": "cut<=y<=cut+t*(bottom-cut)",
+    "initialSharedFootRectangle": [
+      [
+        "17",
+        "147/2"
+      ],
+      [
+        "18",
+        "147/2"
+      ],
+      [
+        "18",
+        "74"
+      ],
+      [
+        "17",
+        "74"
+      ]
+    ],
+    "positiveExistingFootContactAreaLowerBound": "min(newBandHeight,1/2)",
+    "newAreaUpperBound": "100*newBandHeight ->0",
+    "sweep": {
+      "label": "body P8/P9 down-band",
+      "range": [
+        "147/2",
+        "1867/20"
+      ],
+      "criticalY": [
+        "147/2",
+        "1471/20",
+        "368/5",
+        "1483/20",
+        "743/10",
+        "1499/20",
+        "2711081/35980",
+        "1527/20",
+        "382/5",
+        "1531/20",
+        "1537/20",
+        "79203/1030",
+        "771/10",
+        "155/2",
+        "1557/20",
+        "1567/20",
+        "104541/1330",
+        "140153/1780",
+        "793/10",
+        "1587/20",
+        "159/2",
+        "399/5",
+        "1611/20",
+        "1617/20",
+        "1639/20",
+        "412/5",
+        "167/2",
+        "84",
+        "1699/20",
+        "426/5",
+        "1707/20",
+        "857/10",
+        "1741/20",
+        "437/5",
+        "441/5",
+        "89",
+        "893/10",
+        "449/5",
+        "1821/20",
+        "1841/20",
+        "929/10",
+        "1867/20"
+      ],
+      "openSlabs": 41,
+      "singleIntervalEveryOpenSlab": true,
+      "bad": [],
+      "positiveWidthAcrossEveryInternalCriticalY": true,
+      "minimumCriticalJoinWidth": "1503/520"
+    }
+  },
+  "risingCandidate": {
+    "sourceRaw": [
+      8,
+      9,
+      10
+    ],
+    "startY": "393/5",
+    "endY": "423/10",
+    "front": "h=78.6-t*(78.6-42.3)",
+    "bodyMask": "y>=min(73.5,h)",
+    "P10Mask": "y>=h",
+    "originalLowestP10Tip": [
+      "387/20",
+      "393/5"
+    ],
+    "tipInsideExistingBodyRadius": "1/4",
+    "minimumSquaredTipToP9Boundary": "720801/291700",
+    "positiveInitialContactTriangle": [
+      [
+        "387/20",
+        "393/5"
+      ],
+      [
+        "6207/320",
+        "50253/640"
+      ],
+      [
+        "12311/640",
+        "3137/40"
+      ]
+    ],
+    "contactTriangleArea": "7083/819200",
+    "contactHeight": "7/40",
+    "positiveInitialContactAreaWitness": "min(newRiseHeight/contactHeight,1)^2 * contactTriangleArea",
+    "newAreaUpperBound": "100*newRiseHeight ->0",
+    "lowerSweep": {
+      "label": "P10 bottom-to-junction initial rise",
+      "range": [
+        "147/2",
+        "393/5"
+      ],
+      "criticalY": [
+        "147/2",
+        "1483/20",
+        "1521/20",
+        "393/5"
+      ],
+      "openSlabs": 3,
+      "singleIntervalEveryOpenSlab": true,
+      "bad": [],
+      "positiveWidthAcrossEveryInternalCriticalY": true,
+      "minimumCriticalJoinWidth": "7083/2240"
+    },
+    "upperSweep": {
+      "label": "P8/P9/P10 upper rising union; prior open31 evidence reused, new critical joins checked",
+      "range": [
+        "423/10",
+        "147/2"
+      ],
+      "criticalY": [
+        "423/10",
+        "853/20",
+        "234/5",
+        "951/20",
+        "1021/20",
+        "521/10",
+        "1099/20",
+        "225/4",
+        "117/2",
+        "1201/20",
+        "247/4",
+        "309/5",
+        "1243/20",
+        "1271/20",
+        "647/10",
+        "1307/20",
+        "667/10",
+        "673/10",
+        "1353/20",
+        "1369/20",
+        "139/2",
+        "1391/20",
+        "1413/20",
+        "1429/20",
+        "72",
+        "721/10",
+        "92379/1280",
+        "1447/20",
+        "73",
+        "1599955/21908",
+        "107314/1469",
+        "147/2"
+      ],
+      "openSlabs": 31,
+      "singleIntervalEveryOpenSlab": true,
+      "bad": [],
+      "positiveWidthAcrossEveryInternalCriticalY": true,
+      "minimumCriticalJoinWidth": "1873/1800"
+    }
+  },
+  "preservation": {
+    "footUnchangedAfterCompletion": true,
+    "sourceP9EachPaintedIndependently": true,
+    "noNewInk": true,
+    "noNewQOrConnectionLine": true,
+    "sourceWidthUnchanged": true,
+    "masksNestedAcrossBothPhases": true,
+    "finalUnionExactlyOriginalP9": true,
+    "completedBodiesNeverHideDuringRise": true
+  },
+  "limits": [
+    "This is a candidate source-space band split, not an approved original publisher phase boundary.",
+    "Original .05/.25 observations support broad foot then downward body then rising arm order only; new finite browser comparison is required.",
+    "P3 attached foot correction is reused; this does not approve full logical7, app integration or runtime registration."
+  ],
+  "sourceEngine": 0,
+  "sourceProjection": 0,
+  "nativeApproved": false,
+  "runtimeApplied": false,
+  "exactSourceRangeFacts": {
+    "bodyMaximumY": "1867/20",
+    "P10MaximumY": "393/5",
+    "nonfootMinimumY": "423/10",
+    "sourcePCoordinatesUnchanged": true
+  },
+  "script": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py",
+    "SHA256": "2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76"
+  },
+  "reusedFootCorrection": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-p3-attached-native-review.json",
+    "SHA256": "05138706b9aa42e175497abf6c039237664877e57efeaebbe1525789547f8b54"
+  },
+  "originalDirectionEvidence": {
+    "path": "docs/hanja-official-media-compare-u840d-2026-10-25/official-temporal-native-review.json",
+    "SHA256": "310857e12ff3075c11a1d2cd54a4f4be261407f4fe559b21331a5470895054d1"
+  }
+}
