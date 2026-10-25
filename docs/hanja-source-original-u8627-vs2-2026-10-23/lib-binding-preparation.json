@@ -17,21 +17,21 @@
       "input": "docs/hanja-original-qb-policy-proof-2026-10-23/caps-u8627.ts",
       "inputSHA256": "d55abcfd838b9ac02cee2a2b5e8ae6e4b3dd184efb9fd523c153fdf30742fb25",
       "output": "lib/hanja-stroke-start-caps-u8627.ts",
-      "outputSHA256": "fa07c3d5c04a459d6929c10402f91f35b4830d797ee1c9a983b09364518f8446",
+      "outputSHA256": "bc29153c786a591d91198c6e91d1f9da645391fc4de22c6f16947478463ecc0a",
       "scope": "Only import paths changed; LEFT DOM also corrects an undefined type name to its existing exported Nodes type."
     },
     {
       "input": "docs/hanja-original-qb-policy-proof-2026-10-23/foot-u8627.ts",
       "inputSHA256": "fc44d52307efe3e05df7a3908d099ce49bb3e6fb06d3bdbdd347c59b562d0159",
       "output": "lib/hanja-stroke-source-foot-u8627.ts",
-      "outputSHA256": "59df35e91a1c8cf34f25f092a113423d53ccd6284660dbd8220ed97bd26c6ef5",
+      "outputSHA256": "b8b7176a0e0e39c01cb740f111b5b036ca6a9d9082c51bc304d2057e561d1bae",
       "scope": "Only import paths changed; LEFT DOM also corrects an undefined type name to its existing exported Nodes type."
     },
     {
       "input": "docs/hanja-original-left-terminal-qb-preparation-2026-10-23/left-dom-u8627.ts",
       "inputSHA256": "6894b1bb759253383dac2b1c4aab1b437a903c53f6b1ef6803ae52be22d13eb3",
       "output": "lib/hanja-stroke-original-left-terminal-dom-u8627.ts",
-      "outputSHA256": "1c44ef7a7441208b436e2fec23466c149cd49af0b999186fb2635681bde6f63a",
+      "outputSHA256": "c329d3ab379bb650765a616157678e032f340a5a3d9a3d483740a9a5985025a9",
       "scope": "Only import paths changed; LEFT DOM also corrects an undefined type name to its existing exported Nodes type."
     },
     {
@@ -43,7 +43,6 @@
     }
   ],
   "invariants": {
-    "firstThreeInverseByteExact": true,
     "terminalOriginalSegmentExact": true,
     "terminalCoefficientFormulaUnchanged": true,
     "sourceInkChanged": false,
@@ -66,7 +65,18 @@
     "terminalBodyShare": [
       15526797,
       20526797
-    ]
+    ],
+    "firstThreeInverseByteExactAfterRestoringOneTerminalBlankLine": true,
+    "terminalBlankLineNormalization": {
+      "files": [
+        "lib/hanja-stroke-start-caps-u8627.ts",
+        "lib/hanja-stroke-source-foot-u8627.ts",
+        "lib/hanja-stroke-original-left-terminal-dom-u8627.ts"
+      ],
+      "originalTerminalNewlines": 2,
+      "savedTerminalNewlines": 1,
+      "codeOrCoefficientChanges": false
+    }
   },
   "checks": {
     "focusedTests": 4,
@@ -91,7 +101,8 @@
     "sourceProjection": 0,
     "SSR": 0,
     "server": 0,
-    "sharedRendererChanges": 0
+    "sharedRendererChanges": 0,
+    "recordCorrection": "Output hashes now use saved file bytes. Native Add File normalized a second terminal newline in three ports; restoring only that newline before inverse import/type-name substitutions reproduces each original byte."
   },
   "pending": [
     "Own actual renderer/helper integration after current live candidate completes",
