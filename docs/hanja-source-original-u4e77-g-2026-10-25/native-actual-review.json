@@ -1,0 +1,376 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "glyph": "乷",
+  "root": "u4e77-g",
+  "reviewedAt": "2026-10-26",
+  "status": "ROOT-finite72-natural17-done8-PASS",
+  "reviewer": "/root browser panel",
+  "inputCommit": "441fb9028",
+  "inputs": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u4e77-1.json",
+      "SHA256": "f5ab7c9c9e32f822e944da329d69a01e0978f468aba403bedeefa67d3c4767c9"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "b94b691b882ee4f5b8bc55921c4bead95d26ee7d3927c87154b2c129b9c21991"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "08adfb5c0ec49838e2fae50177ccae5acc3125b65a38a97887e54041be8645f9"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "68b9c67cdc1a929ef709753b5d552eeb7a3d4784950fe6a77b61697950830778"
+    }
+  },
+  "geometrySHA256": "4c65fe59e5e8e9cfd963a087ca083b3f28cf94ceb264af8e224d2f82475209fd",
+  "finite": {
+    "status": "ROOT-direct-finite72-PASS",
+    "uniqueFrames": 72,
+    "perTarget": {
+      "targets": 10,
+      "early": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "midNear": [
+        0.5,
+        0.99999999
+      ],
+      "completion": 1,
+      "frames": 60
+    },
+    "boundaries": [
+      {
+        "pen": 3,
+        "nextMask": 2
+      },
+      {
+        "pen": 8,
+        "nextMask": 2
+      },
+      {
+        "pen": 8,
+        "nextMask": 3
+      },
+      {
+        "pen": 8,
+        "nextMask": 4
+      }
+    ],
+    "boundaryFrames": 12,
+    "display": {
+      "grids220": true,
+      "completionAndResidual520": true
+    },
+    "actualRequestedPVerifiedWithinFloatingRoundoff": true,
+    "allChecks": true,
+    "bad": [],
+    "errors": [],
+    "excludedFirstStaleRead": {
+      "id": "u4e77g-5-1",
+      "sample": "sample1",
+      "requestedLocal": 0.99999999,
+      "observedP": 0,
+      "approved": false
+    },
+    "correction": {
+      "id": "u4e77g-5-1",
+      "repeatedMidNearOnly": 2,
+      "uniqueCountUnaffected": true
+    },
+    "tinyTransitionsPreserved": {
+      "p3m2Boundary": 2.25e-16,
+      "pen8PreBoundaryEndResidual": "preserved without threshold rounding"
+    },
+    "noNewLossPopOrLargeIslandObserved": true,
+    "notAllFrameIntegrityProof": true,
+    "coverageReadyOnlyAtComplete": true,
+    "naturalPending": false,
+    "wholePending": false
+  },
+  "natural": {
+    "buttonExecutions": 10,
+    "progressObservations": [
+      {
+        "id": "u4e77g-1-1",
+        "controller": "0.05602499999404245",
+        "targetP": "0.05602499999404245",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-2-1",
+        "controller": "0.05182499999999709",
+        "targetP": "0.051824999999997075",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-3-1",
+        "controller": "0.07173750000000291",
+        "targetP": "0.17936291677290292",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-source-prefix-3-2",
+        "controller": "0.4623197558968255",
+        "targetP": "0.10393009601989156",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-5-1",
+        "controller": "0.05508750001191948",
+        "targetP": "0.05508750001191962",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-6-1",
+        "controller": "0.05717500000000291",
+        "targetP": "0.0571750000000027",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-7-1",
+        "controller": "0.06136250001788721",
+        "targetP": "0.0613625000178868",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-8-2",
+        "controller": "0.41644877549480946",
+        "targetP": "0.22915529299646725",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-source-prefix-8-3",
+        "controller": "0.6690736639436864",
+        "targetP": "0.7513933296594951",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      },
+      {
+        "id": "u4e77g-source-prefix-8-4",
+        "controller": "0.7443888938409202",
+        "targetP": "0.17720274253326856",
+        "mode": "natural",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "displaySize": [
+          520,
+          520
+        ]
+      }
+    ],
+    "uniqueProgressObservations": 10,
+    "progressScope": "Nonzero target progress below1; these are not claimed to be exact50% samples.",
+    "endObservations": [
+      {
+        "pen": 1,
+        "mode": "natural-ended",
+        "controller": "1",
+        "visibleCompletion": true,
+        "bad": [],
+        "errors": []
+      },
+      {
+        "pen": 2,
+        "mode": "natural-ended",
+        "controller": "1",
+        "visibleCompletion": true,
+        "targetP": "0.9999999999999998",
+        "bad": [],
+        "errors": []
+      },
+      {
+        "pen": 3,
+        "mode": "natural-ended",
+        "controller": "1",
+        "visibleCompletion": true,
+        "lastPrefixP": "0.9999999999999996",
+        "lastPrefixPhase": "prefix",
+        "bad": [],
+        "errors": []
+      },
+      {
+        "pen": 5,
+        "mode": "natural-ended",
+        "controller": "1",
+        "visibleCompletion": true,
+        "bad": [],
+        "errors": []
+      },
+      {
+        "pen": 6,
+        "mode": "natural-ended",
+        "controller": "1",
+        "visibleCompletion": true,
+        "bad": [],
+        "errors": []
+      },
+      {
+        "pen": 7,
+        "mode": "natural-ended",
+        "controller": "1",
+        "visibleCompletion": true,
+        "bad": [],
+        "errors": []
+      },
+      {
+        "pen": 8,
+        "mode": "natural-ended",
+        "controller": "1",
+        "visibleCompletion": true,
+        "lastPrefixP": "0.999999999999998",
+        "lastPrefixPhase": "prefix",
+        "bad": [],
+        "errors": []
+      }
+    ],
+    "uniqueEndObservations": 7,
+    "uniqueObservations": 17,
+    "reusedEnds": [
+      {
+        "id": "u4e77g-source-prefix-3-2",
+        "penEnd": 3
+      },
+      {
+        "id": "u4e77g-source-prefix-8-3",
+        "penEnd": 8
+      },
+      {
+        "id": "u4e77g-source-prefix-8-4",
+        "penEnd": 8
+      }
+    ],
+    "reusedEndScope": "Existing same-pen completion reused; these three progress experiments moved to the next experiment without a new end observation.",
+    "exactFullCommitAtEveryNaturalEndClaimed": false,
+    "numericReadAndScreenshotSimultaneous": false,
+    "screenshotExample": {
+      "id": "u4e77g-1-1",
+      "readController": "0.05602499999404245",
+      "laterScreenshotController": "0.07061249999403663"
+    },
+    "reportCollection": "Requested target p checked against actual sample p within floating roundoff before acceptance; immediate stale pre is not accepted. Current reporter has120ms fallback and does not guarantee first React commit or all-frame integrity."
+  },
+  "doneWhole": {
+    "observations": 1,
+    "pen": 8,
+    "mode": "done",
+    "allTenTargetP": 1,
+    "prefixFullCount": 3,
+    "ordinaryBad": [],
+    "bad": [],
+    "errors": [],
+    "wholeGlyphVisible": [
+      520,
+      520
+    ],
+    "exactFullCommitScope": "This separate done8 observation verifies exact p1/full for all ten targets; not inferred from approximate natural-ended p."
+  },
+  "sourcePreservation": {
+    "sourcePUnchanged": true,
+    "sourceQGuideUnchanged": true,
+    "sourceWeightUnchanged": true,
+    "newBridge": false,
+    "trimmedP": false,
+    "thinSharedBoundaryAA": "Same as original full fill; no new path loss, pop or large island observed.",
+    "residualWhiteVisualAt520": true,
+    "zeroRasterPixelClaimed": false
+  },
+  "reusedEvidence": {
+    "originalCSS24": "docs/hanja-official-media-compare-u4e77-2026-10-25/native-original-review.json",
+    "static8": "docs/hanja-source-raw-compare-u4e77-g-whole-2026-10-25/native-group-review.json",
+    "whole1": "docs/hanja-source-raw-compare-u4e77-g-whole-2026-10-25/native-whole-review.json",
+    "initialAndCompletion": "docs/hanja-source-original-u4e77-g-2026-10-25/initial-risk-proof.json",
+    "paintAndCorrectedCoverage": "docs/hanja-source-original-u4e77-g-2026-10-25/nonzero-paint-equivalence-proof.json",
+    "sourcePrefixes": "docs/hanja-source-original-u4e77-g-2026-10-25/compound-source-prefix-proof.json",
+    "replayedOriginalOrStaticFrames": 0
+  },
+  "scope": "Reviewed source-bound actual-component samples and required natural/whole observations only. Not every browser frame, app UI autoplay, raster identity, or exam-body approval.",
+  "runs": {
+    "SSRChecks": 1,
+    "CJS": 313,
+    "ESM": 313,
+    "engine": 0,
+    "sourceProjection": 0,
+    "privateFetch": 0
+  },
+  "cleanup": {
+    "pid": 23567,
+    "session": 8935,
+    "port": 59412,
+    "tabClosed": 61,
+    "exitCode": 130,
+    "viewportReset": [
+      614,
+      767
+    ],
+    "ownServers": 0
+  },
+  "nativeApproval": true,
+  "runtimeApplied": false
+}
