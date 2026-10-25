@@ -1,0 +1,83 @@
+{
+  "schema": "hanja-public-source-supplement/v1",
+  "date": "2026-10-26",
+  "glyph": "薪",
+  "records": [
+    {
+      "requested": "u85aa-jn@2",
+      "url": "https://glyphwiki.org/api/glyph?name=u85aa-jn%402",
+      "record": {
+        "data": "99:0:0:0:3:200:160:u8279-03$99:0:0:0:44:200:197:u65b0-j",
+        "version": "2",
+        "related": "U+85AA",
+        "name": "u85aa-jn"
+      }
+    },
+    {
+      "requested": "zihai-029338@2",
+      "url": "https://glyphwiki.org/api/glyph?name=zihai-029338%402",
+      "record": {
+        "version": "2",
+        "name": "zihai-029338",
+        "related": "U+85AA",
+        "data": "99:0:0:0:3:200:160:u8279-03:0:0:0$99:0:0:20:38:198:196:u65a4-02:0:0:0$99:0:0:0:38:111:197:u2840c-g:0:0:0"
+      }
+    },
+    {
+      "requested": "u2840c-g",
+      "url": "https://glyphwiki.org/api/glyph?name=u2840c-g",
+      "record": {
+        "version": 4,
+        "related": "U+2840C",
+        "name": "u2840c-g",
+        "data": "99:0:0:0:2:200:199:u7acb-g03$99:0:0:4:80:195:194:u30001-jv"
+      }
+    },
+    {
+      "requested": "u7acb-g03",
+      "url": "https://glyphwiki.org/api/glyph?name=u7acb-g03",
+      "record": {
+        "version": 2,
+        "name": "u7acb-g03",
+        "related": "U+7ACB",
+        "data": "2:7:8:78:12:96:21:103:32$1:0:0:26:40:174:40$2:7:8:54:44:70:56:76:75$2:0:7:140:46:133:60:116:83$1:0:0:15:83:185:83"
+      }
+    }
+  ],
+  "existingExactRecords": "docs/hanja-source-alternative-u85aa-k-2026-10-26/sources.json",
+  "sourceRowFacts": {
+    "jnBodyUsesSameObservedVerticalPrimitive": true,
+    "jnGrassReference": "u8279-03",
+    "zihaiFirstPrimitive": {
+      "path": [
+        "u2840c-g",
+        "u7acb-g03"
+      ],
+      "row": "2:7:8:78:12:96:21:103:32",
+      "type": "authored DR curve",
+      "verticalPrimitive": false
+    }
+  },
+  "pending": [
+    "u8279-03",
+    "u30001-jv"
+  ],
+  "limits": [
+    "Row conditions only; the new K whole HOLD is not transferred to these unobserved alternatives.",
+    "Incomplete source closures; no native, order, P-contact or compatibility approval."
+  ],
+  "actions": {
+    "engine": 0,
+    "projection": 0,
+    "native": 0,
+    "sourceEdited": false,
+    "geometryEdited": false,
+    "privateInputs": false
+  },
+  "approval": {
+    "whole": false,
+    "direction": false,
+    "contact": false,
+    "runtime": false
+  }
+}
