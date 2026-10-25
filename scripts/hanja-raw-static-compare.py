@@ -476,6 +476,8 @@ def new_public_whole_case(config):
     if type(config)is not dict or type(config.get('sourceRoots'))is not dict or list(config['sourceRoots'])!=['selected']:return None
     spec=config['sourceRoots']['selected']
     case=NEW_PUBLIC_WHOLES.get(spec.get('root'))if type(spec)is dict else None
+    if case and spec.get('root')=='hkcs_m8b92' and config.get('wholeOnly')is False:
+        case={**case,'config':"docs/hanja-source-raw-compare-u8b92-hkcs-individual-2026-10-26/config.json",'individualStatic':True}
     return case if case and 'pairedRoots'not in case else None
 NEW_PUBLIC_WHOLES['hkcs_m8587']=json.loads("{\"glyph\":\"薇\",\"catalogStrokes\":17,\"config\":\"docs/hanja-source-raw-compare-u8587-hkcs-whole-2026-10-25/config.json\",\"full\":\"docs/hanja-actual-engine-capture-u8587-hkcs-2026-10-25/engine-whole-hkcs_m8587.json\",\"fullSHA\":\"ed62eaf8cb1cb39a17cca1fcc32857d04b6d934d2b6b9edcb60ac6ec6283768d\",\"capture\":\"docs/hanja-actual-engine-capture-u8587-hkcs-2026-10-25/capture.json\",\"captureSHA\":\"a6cf15af6944d0273d4b29e5a701a5d7e26fff0d757476e164505a483dd6e397\",\"source\":\"docs/hanja-source-alternative-u8587-hkcs-2026-10-25/sources.json\",\"sourceSHA\":\"228bed8d10710ae16e72d747f7bd218a59a2434fb43ad86ee00aa26f3ce6bdd3\",\"metadata\":\"docs/hanja-goal-glyphwiki-batch56-2026-09-22/metadata.json\",\"metadataSHA\":\"d7e479ffd6e6a25129d2e1b1722dec0924fce5d7e70790a3c0c1d585eae42b20\",\"readme\":\"docs/hanja-goal-glyphwiki-batch56-2026-09-22/README.md\",\"readmeSHA\":\"2afcfdb5c7b9a01c72f8e2ce89ecce572face760a4935fc4083d40302df878c5\",\"raw\":20,\"calls\":20,\"polygons\":42,\"rootVersion\":2,\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/8587.svg\",\"status\":200,\"bytes\":8765,\"sha256\":\"dd9350d3980f901887d7dd4090afdac4e28a6c543f127a3063aba86042fb65c7\",\"clips\":17,\"glyph\":\"薇\",\"privateMediaSaved\":false}}")
 
@@ -493,11 +495,18 @@ NEW_PUBLIC_WHOLES['hkcs_m8b92']=json.loads("{\"glyph\":\"讒\",\"catalogStrokes\
 def validate_new_public_whole(config,label,spec,path,config_path,case):
     pair=case.get('pairedRoots')
     require(config_path==ROOT/case['config'] and ((list(config['sourceRoots'])==list(pair) and label in pair and {k:v.get('root')for k,v in config['sourceRoots'].items()}==pair and spec['root']==pair[label])if pair else(label=='selected' and list(config['sourceRoots'])==['selected'])),'exact new whole comparison location required')
-    require(config['glyph']==case['glyph'] and config['catalogStrokes']==case['catalogStrokes'] and config.get('wholeOnly')is True and config['layoutMode']=='whole-pair520-css-only','new whole-only candidate required')
+    require(config['glyph']==case['glyph'] and config['catalogStrokes']==case['catalogStrokes'] and config.get('wholeOnly')is(False if case.get('individualStatic')else True) and config['layoutMode']=='whole-pair520-css-only','exact whole or individual-static candidate required')
     require(path==ROOT/case['full'] and spec['file']==case['full'] and spec['fileSHA256']==case['fullSHA'] and digest(path.read_bytes())==case['fullSHA'],'exact newly captured full5 required')
     require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and (spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(case['raw'],case['calls'],case['polygons']),'new whole source counts and full5 contract required')
     if spec['root']=='hkcs_m9c49':require(config['catalogStrokes']==23 and config.get('dictionaryPlaybackStrokes')==case.get('dictionaryPlaybackStrokes')==22,'exact 鱉 catalog23/private22 whole-only context required')
     require(config['domestic']==case['domestic'],'unchanged original dictionary whole metadata required')
+    if case.get('individualStatic'):
+        original=pinned_path("docs/hanja-source-raw-compare-u8b92-hkcs-whole-2026-10-26/config.json").read_bytes()
+        require(spec['root']=='hkcs_m8b92' and digest(original)=="aa13de751b87edee997be49433f90323f2d43ff940fed55a3fefce8c7d08153c",'exact original 讒 HK whole input required')
+        expected=json.loads(original)
+        expected.update({'wholeOnly':False,'holdSummary':"Original static individual/prefix review only for ROOT original1..7 versus unchanged hkcs_m8b92 raw1..4,6..9. Whole macro PASS is reused, not repeated. No provisional24 mapping or pen6 raw7/8 merge is approved. Complete24 original clips/31raw and original P order retained; metadata raw5 stays empty and unchanged. New exact config alone opens existing shared individual selectors; no animation/compiler/engine/projection.",'launcherSHA256':config.get('launcherSHA256')})
+        expected['inputSHA256']={**expected['inputSHA256'],**json.loads("{\"docs/hanja-source-raw-compare-u8b92-hkcs-whole-2026-10-26/config.json\":\"aa13de751b87edee997be49433f90323f2d43ff940fed55a3fefce8c7d08153c\",\"docs/hanja-source-raw-compare-u8b92-hkcs-whole-2026-10-26/native-whole-review.json\":\"6732516133f7263109dcaa429678c6733699a4bf24a62d16a4651d4e7625fc5e\",\"docs/hanja-source-raw-compare-u8b92-hkcs-whole-2026-10-26/adjacent-Q-boundaries.json\":\"8232580bfbb4ec100d0ad11278d9d101552a5b7fdab922716942b7ea11dc2f26\",\"docs/hanja-source-raw-compare-u8b92-hkcs-whole-2026-10-26/adjacent-contact-analysis.json\":\"5297bd415ac7d2e3f6c0b8084ea6e9fc2e1f3cb1a8cef5f892648822465470f3\",\"docs/hanja-source-raw-compare-u8b92-hkcs-whole-2026-10-26/analyze-adjacent-contact.py\":\"12236988d4d1566fb91d2b346c74cf59b9c2754ae9f562f34d1e111759292437\"}")}
+        require(config==expected,'exact unchanged 讒 HK individual-static config required')
     for name,pin in [('full','fullSHA'),('capture','captureSHA'),('source','sourceSHA'),('metadata','metadataSHA'),('readme','readmeSHA')]:
         require(config['inputSHA256'].get(case[name])==case[pin] and digest(pinned_path(case[name]).read_bytes())==case[pin],'new whole/source/original evidence pin changed')
     proof=json.loads(path.read_bytes());capture=json.loads(pinned_path(case['capture']).read_bytes());source=json.loads(pinned_path(case['source']).read_bytes())
@@ -687,7 +696,9 @@ def main():
         require(page.replace(css,PAGE_CSS_OLD,1)==original,'CSS inverse changed original page/SVG bytes')
         return page
     shared.page=stacked_page
-    if new_public_whole:install_new_whole_only(shared,original_page)
+    if new_public_whole:
+        if new_public_whole.get('individualStatic'):shared.page=original_page
+        else:install_new_whole_only(shared,original_page)
     if original_u840d_1040_config:install_new_whole_only(shared,stacked_page)
     if args.check_only:
         sources=shared.load_sources();require(shared.FETCH_COUNT==0,'preparation cannot fetch domestic media')
