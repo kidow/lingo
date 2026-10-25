@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-source-spatial-direction-review/v1",
+  "date": "2026-10-25",
+  "glyph": "鱉",
+  "root": "hkcs_u9c49",
+  "status": "HOLD-spatial-direction-conflict",
+  "source": {
+    "path": "docs/hanja-source-alternative-u9c49-hkcs-u-2026-10-25/sources.json",
+    "SHA256": "042f62fde4b7f8406a0d69f60f360c8123ce5c034b4d5601f081848bfcdd7502"
+  },
+  "reusedOriginalDirection": {
+    "reviewer": "ROOT browser panel",
+    "temporalObservation": false,
+    "priorNativePath": "docs/hanja-remaining-native-prep-u9c49-2026-10-18/native-boundary-review-2026-10-24.json",
+    "priorNativeSHA256": "636986180c6b8bd0176cf3fe9a9ad3b99f6f11fed0053a5438a53985f146ff38",
+    "wholeEvent": {
+      "existingNativePath": "docs/hanja-source-raw-compare-u9c49-hkcs-m-whole-2026-10-25/native-whole-review.json",
+      "existingNativeSHA256": "8761ea510c23af3ab9e171a8b8be03cd79931f2dcbcc461f7aa323d70cd4dbbd",
+      "PID": 89977,
+      "session": 71922,
+      "scope": "ROOT가 같은 기존 whole 대조 화면에서 원문의 위 왼쪽 긴획은 DL, 오른쪽 짧은 점은 DR임을 직접 확인했다. 이 보완은 원문1DL/2DR 기록과 부합한다."
+    },
+    "leftUpper": "DL",
+    "rightUpper": "DR"
+  },
+  "publicDeclaredGeometry": {
+    "coordinates": "upper source local200",
+    "rootTransform": "99:0:0:0:0:200:190:hkcs_u655d-03",
+    "rootPreservesXAndPositiveY": true,
+    "centerVerticalX": 61,
+    "leftQ": {
+      "start": [
+        27,
+        17
+      ],
+      "control": [
+        39,
+        24
+      ],
+      "end": [
+        44,
+        37
+      ],
+      "allXBelow61": true,
+      "direction": "DR"
+    },
+    "rightQ": {
+      "start": [
+        94,
+        18
+      ],
+      "control": [
+        85,
+        30
+      ],
+      "end": [
+        72,
+        41
+      ],
+      "allXAbove61": true,
+      "direction": "DL"
+    }
+  },
+  "conclusion": "행 순서를 바꾸어도 왼쪽 DR과 오른쪽 DL의 공간 방향은 바뀌지 않는다. 원문의 왼 DL·오른 DR과 다른 형상 방향으로 보류하며, 원P·위치·가이드를 임의로 바꾸지 않는다.",
+  "scope": "원본 source의 위치별 방향만 판정하며 새 P·전체 자형·접촉·진행 애니메이션을 검토했다고 주장하지 않는다.",
+  "actions": {
+    "newEngine": 0,
+    "newWhole": 0,
+    "newOriginalFetches": 0,
+    "projection": 0,
+    "privatePUsed": false
+  },
+  "approval": {
+    "runtime": false,
+    "whole": false,
+    "originalPChanged": false
+  }
+}
