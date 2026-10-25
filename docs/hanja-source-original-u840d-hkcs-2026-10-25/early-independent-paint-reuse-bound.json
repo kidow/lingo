@@ -1,0 +1,54 @@
+{
+  "schema": "hanja-early-paint-reuse-bound/v1",
+  "coordinateSpace": "normalized100",
+  "glyph": "萍",
+  "inputs": {
+    "sourceFull5": {
+      "path": "docs/hanja-actual-engine-capture-u840d-hkcs-2026-10-25/engine-whole-hkcs_m840d.json",
+      "SHA256": "f5c8184820c51cbfe0506959745703496eec6d7d271b29735d22bee2cec8a205"
+    },
+    "sourceGuideNormalized100": "M19.245 76.34 Q17.465 74.44 8.120000000000001 72.92",
+    "sourceIndependentPaintPathsSHA256": "ce61281342d0c951b73a7ffd3f336a1dbadf9a0acad199496135e8bb787bb339",
+    "observedJoinedHTML": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-experiment.html",
+      "SHA256": "e2690726c2077152d9275d69e1bd1ebb506d372c9ce1b34c3fe1d627500e793d"
+    },
+    "sameFrontNewIndependentHTML": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-paint-parts-experiment.html",
+      "SHA256": "bc5c2274475d6ca3545862f68ccc48c27d52ea3f3f73a2a9649d9b7cb527ac29"
+    }
+  },
+  "scope": "same Q/front and p<=1/4 finite states; all non-P1 source paint is outside mask bound",
+  "ROOTActualQuarter": {
+    "L": "11.760997772216797",
+    "d": "2940249443054199/1000000000000000",
+    "pointX": "11014608383178713/1000000000000000",
+    "pointY": "73.43531799316406",
+    "rho": "2940249443054199/1000000000000000",
+    "offset": "-3/4"
+  },
+  "QReverseParameterUpper": "1/5",
+  "QReverseXAtParameterUpper": "18055312500000001/1562500000000000",
+  "strictReverseXMonotone": true,
+  "derivativeXLower": "9789999999999999/1250000000000000",
+  "derivativeYUpper": "399/250",
+  "normalXAbsoluteUpper": "1/4",
+  "buttStrokeWidth": 14,
+  "buttStripXUpper": "257/20",
+  "endCapXUpper": "141/10",
+  "startCapXUpper": "11120000000000001/1000000000000000",
+  "wholeMaskXUpper": "141/10",
+  "allOtherOriginalPMinX": "297/20",
+  "strictGap": "3/4",
+  "onlyRaw7P1CanIntersectMask": true,
+  "raw7P1SignedAreaPositive": true,
+  "raw7P1IndependentDAlreadyUnchanged": true,
+  "earlyJoinedAndP9FilledGeometrySame": true,
+  "notPixelZeroMeasurement": true,
+  "assumptions": [
+    "Frozen original Q dash prefix is the same measured original path segment ending at ROOT observed UA quarter point; pathLength1/dash p-1 uses same original d.",
+    "Derivative bound applies throughout this reverse prefix; smooth single Q has no miter join, and butt endpoints add no extension.",
+    "Round caps radius=min(7,pL)<=3 for p<=1/4; fixed and measured endpoint x bounds are monotone."
+  ],
+  "runtimeApproved": false
+}

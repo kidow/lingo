@@ -1,0 +1,108 @@
+{
+  "schema": "hanja-source-independent-paint-assessment/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "logical": 7,
+  "full5": {
+    "path": "docs/hanja-actual-engine-capture-u840d-hkcs-2026-10-25/engine-whole-hkcs_m840d.json",
+    "SHA256": "f5c8184820c51cbfe0506959745703496eec6d7d271b29735d22bee2cec8a205"
+  },
+  "joinedExperiment": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-experiment.html",
+    "SHA256": "e2690726c2077152d9275d69e1bd1ebb506d372c9ce1b34c3fe1d627500e793d",
+    "paths": 4
+  },
+  "independentExperiment": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-paint-parts-experiment.html",
+    "SHA256": "bc5c2274475d6ca3545862f68ccc48c27d52ea3f3f73a2a9649d9b7cb527ac29",
+    "paths": 9
+  },
+  "exactDifference": {
+    "exactPaintDifference": true,
+    "selfCrossRaw7P1Edges": [
+      1,
+      21
+    ],
+    "intersection": [
+      "261401/7730",
+      "601423/3865"
+    ],
+    "witnessRaw200": [
+      "78163/2319",
+      "1204611/7730"
+    ],
+    "witnessNormalized100": [
+      "78163/4638",
+      "1204611/15460"
+    ],
+    "originalIndividualPolygonWinding": [
+      -1,
+      -1,
+      0
+    ],
+    "wholePolygonSignedAreaSigns": [
+      1,
+      -1,
+      -1
+    ],
+    "normalizedJoinedSubpathWinding": [
+      -1,
+      1,
+      0
+    ],
+    "normalizedJoinedNonzeroTotal": 0,
+    "sourceSeparatePaintFilled": true,
+    "joinedOutlinePaintFilled": false,
+    "sourceCoordinatesChanged": false
+  },
+  "properSelfCrossingsAcrossP9": [
+    {
+      "raw": 7,
+      "polygon": 1,
+      "edges": [
+        1,
+        21
+      ]
+    }
+  ],
+  "interpretation": {
+    "sourceIndependentNonzeroPaintRequired": true,
+    "joinedPaintEquivalent": false,
+    "oldJoinedNativeObservationsApplyOnlyToActualJoinedInput": true,
+    "newP9NativeApproval": false,
+    "sourceUnitCompatibilityOutlineStillJoined": true,
+    "sourceUnitIndependentInkPathsPrepared": true,
+    "sourceUnitCorrectionPending": false,
+    "customRuntimePaintPending": true,
+    "sharedNormalizerChange": false,
+    "runtimeRegistrationPermitted": false
+  },
+  "sourceUnitCorrection": {
+    "sourceModule": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/candidate.mjs",
+      "SHA256": "70fdb6867eae9537a20212d1d04e861efe00746f70589c700c08ae38d305ae9e"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/fixtures.json",
+      "SHA256": "86cafe4a029685e7c842156e7bc1016174c463d945c893aa2da0f50674e1a1c7"
+    },
+    "geometrySHA256": "b2de4a5e668e6ca9f88a63429c7fc09eb37f55ea9175b0ed6f3744e9722e86ae",
+    "metadataStrippedGeometrySHA256": "8429d1f323f06bb62d9012115ca61dab045f4aab736da09e1f9f43d7ea6bbb53",
+    "footInkPaths": [
+      3,
+      2,
+      2,
+      2
+    ],
+    "changedSourceOutputProjection": 1,
+    "sourceEngine": 0,
+    "sourceOriginalPAndQAndWidthAndOrderUnchanged": true,
+    "legacyRenderRefusesLogical7OrLater": true,
+    "customRuntimePaintPending": true
+  },
+  "limits": [
+    "A witness proves actual paint difference; it does not quantify pixel appearance or all affected mask states.",
+    "Original coordinates, Q and width are unchanged. Independent P paths restore original source painting semantics.",
+    "Full-Q7 vertex-disk containment and raw P1 interior-start contact proofs concern separate original P and remain reusable."
+  ]
+}

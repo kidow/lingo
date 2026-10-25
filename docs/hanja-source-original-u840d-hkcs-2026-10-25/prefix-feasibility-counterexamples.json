@@ -1,0 +1,95 @@
+{
+  "schema": "hanja-source-prefix-feasibility-counterexamples/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "logical": 7,
+  "status": "DRAFT; bbox prefix disproved; same-Q reverse front unresolved after coordinate-scale correction",
+  "inputs": {
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u840d-hkcs-2026-10-25/engine-whole-hkcs_m840d.json",
+      "SHA256": "f5c8184820c51cbfe0506959745703496eec6d7d271b29735d22bee2cec8a205"
+    },
+    "candidate": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/candidate.mjs",
+      "SHA256": "70fdb6867eae9537a20212d1d04e861efe00746f70589c700c08ae38d305ae9e"
+    },
+    "nativeBoundary": {
+      "path": "docs/hanja-official-media-compare-u840d-2026-10-25/pen7-boundary-native-review.json",
+      "SHA256": "1fd9c91b7bc15f3cb05dd7a90ef2821ccec088300c0ddab023219b6db88aa16c"
+    }
+  },
+  "wholeP4FootBboxXPrefix": {
+    "scope": "original P union of raw7..10 clipped to source raw7 minimum bbox; not a native-approved phase boundary",
+    "bbox": [
+      "16",
+      "1443/10",
+      "43",
+      "315/2"
+    ],
+    "arithmetic": "exact fractions of original decimal P coordinates",
+    "criticalEvents": 101,
+    "openSlabs": 100,
+    "trapezoidNodes": 102,
+    "allSingleIntervalSlices": false,
+    "twoIntervalSlabs": 2,
+    "allPrefixClosedConnected": false,
+    "allPrefixPositiveWidthConnected": false,
+    "independentFragment": {
+      "slab": 29,
+      "xLo": "19369/590",
+      "xHi": "29221/890",
+      "firstBoundaryY": [
+        "315/2",
+        "315/2"
+      ],
+      "priorPrefixContact": false
+    },
+    "secondTwoIntervalSlabIsPriorAttachedBranch": true,
+    "sourceCoordinatesChanged": false,
+    "approved": false
+  },
+  "sameQReverseFront": {
+    "scope": "scale audit only; prior Q7 rejection withdrawn because raw200 distance was compared to normalized100 radius",
+    "sourceArgsRaw200": [
+      38.49,
+      152.68,
+      34.93,
+      148.88,
+      16.240000000000002,
+      145.84,
+      0,
+      7
+    ],
+    "fixtureGuideNormalized100": "M19.245 76.34 Q17.465 74.44 8.120000000000001 72.92",
+    "fixtureSourceP3VertexNormalized100": [
+      "43/2",
+      "1443/20"
+    ],
+    "normalizer": "P and every Q coordinate divided by2; source width parameters unchanged",
+    "revealWidthNormalized100": 14,
+    "radiusSquaredNormalized100": "49",
+    "supportingLineLowerBoundSquaredRaw200": "13789100329/169460000",
+    "supportingLineLowerBoundSquaredNormalized100": "13789100329/677840000",
+    "lowerBoundDoesNotDisproveQ7Containment": true,
+    "priorRejectionWithdrawn": true,
+    "fullQ7Containment": "proved independently in normalized100 units by one Q(9/16) radius7 disk",
+    "correctedProof": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/same-q-reverse-front-feasibility.json",
+      "SHA256": "a40241548ab8a6cf29a88ea52ec5390fdbd942ce5e7889af58da32edd444fd63"
+    },
+    "sameQReverseFrontImplemented": false,
+    "approved": false
+  },
+  "sourceDataBindingCorrection": {
+    "priorSourceUnitCommit": "d95f07a73",
+    "priorCandidateSHA256": "d1f79a296ce2b7ba3560ea6a9b6e3d49a3057d9ecf549005149025a1e1d50af4",
+    "reason": "candidate logical7 independent inkPaths metadata and fail-closed legacy paint gate only; source P/Q/width unchanged",
+    "geometryProofsReusedWithoutRecalculation": true
+  },
+  "scopeLimits": [
+    "Only the exact stated bbox prefix is disproved. The raw200 bound does not disprove same-Q reverse front; corrected normalized100 containment and initial cap contact are proved separately, while whole-P4 all-time connectivity remains unproved.",
+    "Whole/static source mapping PASS and original36 direction observations remain valid and unchanged.",
+    "No new Q, P, connection line, width, source order, cap or runtime implementation.",
+    "No unchanged baseline animation replay, private media fetch, source engine or fresh projection was used."
+  ]
+}
