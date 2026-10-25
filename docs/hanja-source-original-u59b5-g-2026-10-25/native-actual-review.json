@@ -1,0 +1,190 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "glyph": "妵",
+  "root": "u59b5-g",
+  "reviewedAt": "2026-10-26",
+  "status": "ROOT-actual-finite27-natural7-done8-PASS",
+  "reviewer": "ROOT direct browser-panel observation",
+  "inputCommit": "76ba2ca6b",
+  "inputs": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u59b5-1.json",
+      "SHA256": "3b13969e6f23823d21d3e4f7c655b5e0bdccec703aef675ce5eac57839889d45"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "c88ac920fe067b6cccc1f89abccf94d34cb19f47a5aec379eb86b397622d8e7e"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "c3cfb70c9a6ef907ab9e1d778b8e518316871f70572d6b3ba48a1d3cda5fc375"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "25254b34bc37433e3334f56b31ca1357d9121fa6487b028bd567399d786918ce"
+    }
+  },
+  "geometrySHA256": "227e9d69dae8085afb3c916f4307de379b50e3c56760cc02324e79ba28dae5cd",
+  "finite": {
+    "uniqueFrames": 27,
+    "perTarget": {
+      "targets": 4,
+      "early": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "midNear": [
+        0.5,
+        0.99999999
+      ],
+      "completion": 1,
+      "frames": 24
+    },
+    "boundaries": [
+      {
+        "pen": 1,
+        "nextMask": 2
+      }
+    ],
+    "boundaryFrames": 3,
+    "actualRequestedPVerifiedWithinFloatingRoundoff": true,
+    "allChecks": true,
+    "bad": [],
+    "errors": [],
+    "noFragmentPopLossOrDisconnectionObserved": true,
+    "notAllFrameIntegrityProof": true
+  },
+  "natural": {
+    "buttonExecutions": 4,
+    "uniqueProgressObservations": 4,
+    "uniqueEndObservations": 3,
+    "uniqueObservations": 7,
+    "progressObservations": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "p": 0.09615511353960572,
+        "controller": 0.05888750000000073
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "p": 0.05783749997615823
+      },
+      {
+        "pen": 4,
+        "mask": 1,
+        "p": 0.07461249999404013
+      },
+      {
+        "pen": 1,
+        "mask": 2,
+        "p": 0.16309617216540315,
+        "controller": 0.6756344277758132
+      }
+    ],
+    "endObservations": [
+      {
+        "pen": 1,
+        "p": 1
+      },
+      {
+        "pen": 2,
+        "p": 0.9999999999999998
+      },
+      {
+        "pen": 4,
+        "p": 1
+      }
+    ],
+    "reusedEnds": [
+      {
+        "pen": 1,
+        "mask": 2,
+        "from": "previous distinct pen1 natural-end",
+        "newEndObservation": false
+      }
+    ],
+    "allChecks": true,
+    "bad": [],
+    "errors": [],
+    "exactFullCommitAtEveryNaturalEndClaimed": false,
+    "numericReadAndScreenshotSimultaneous": false
+  },
+  "doneWhole": {
+    "observations": 1,
+    "logicalStrokes": 8,
+    "mode": "done",
+    "reportedPen": 1,
+    "reportedP": 1,
+    "whole8Visible": true,
+    "oldBoundary3GridBelowExcluded": true
+  },
+  "sourcePreservation": {
+    "originalP": 16,
+    "rawRows": 9,
+    "drawingCalls": 9,
+    "originalPGuideWidthWeightChanged": false,
+    "newBridge": false
+  },
+  "reusedEvidence": {
+    "original8": {
+      "metadataPath": "docs/hanja-goal-glyphwiki-batch118-2026-09-27/metadata.json",
+      "metadataSHA256": "06e88e6005c7345f4851c005b65d611baa51247796626636ac89c41fee3332ca",
+      "readmePath": "docs/hanja-goal-glyphwiki-batch118-2026-09-27/README.md",
+      "findingsPath": "docs/hanja-goal-glyphwiki-batch118-2026-09-27/findings.json",
+      "observedPens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "cumulativeAndFinal": true,
+      "oldSourceProgressiveReviewed": false,
+      "originalSVGIdentical": true,
+      "oldSourceDiscontinuityNotTransferred": true,
+      "replayedFrames": 0
+    },
+    "static8": "docs/hanja-source-raw-compare-u59b5-g-whole-2026-10-25/native-static-review.json",
+    "whole1": "docs/hanja-source-raw-compare-u59b5-g-whole-2026-10-25/native-whole-review.json",
+    "initialAndCompletion": "docs/hanja-source-original-u59b5-g-2026-10-25/initial-risk-proof.json",
+    "sourcePrefix": "docs/hanja-source-original-u59b5-g-2026-10-25/compound-source-prefix-proof.json",
+    "cardinalAndPaint": "docs/hanja-source-original-u59b5-g-2026-10-25/cardinal-and-paint-proof.json",
+    "replayedOriginalOrStaticFrames": 0
+  },
+  "scope": "Reviewed source-bound actual-component samples only. Not every browser frame, app UI autoplay, raster identity, or exam-body approval.",
+  "preparation": {
+    "batchedRendererHelper": true,
+    "profilesFinalModuleCountAdjustedBeforeObservations": [
+      322,
+      324
+    ],
+    "sourceAndRendererUnchangedDuringObservation": true
+  },
+  "runs": {
+    "SSR": 1,
+    "CJS": 324,
+    "ESM": 324,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "cleanup": {
+    "PID": 65466,
+    "session": 3893,
+    "exitCode": 130,
+    "tab": 72,
+    "tabClosed": true,
+    "viewportReset": true,
+    "reportedReset": "614²",
+    "ownServers": 0,
+    "termination": "ROOT SIGINT exact PID; D session poll exit130"
+  },
+  "nativeApproval": true,
+  "runtimeApplied": false
+}
