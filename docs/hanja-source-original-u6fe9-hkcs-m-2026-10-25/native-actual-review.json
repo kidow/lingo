@@ -1,0 +1,234 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "glyph": "濩",
+  "root": "hkcs_m6fe9",
+  "reviewedAt": "2026-10-26",
+  "status": "ROOT-actual-finite53-natural16-done17-PASS",
+  "reviewer": "ROOT direct browser-panel observation",
+  "inputCommit": "f18231b14",
+  "inputs": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u6fe9-1.json",
+      "SHA256": "a7f23941dc6ef0f2192a367fb3ceb968a42247dcf477337dc6cccf4aedb12759"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "c88ac920fe067b6cccc1f89abccf94d34cb19f47a5aec379eb86b397622d8e7e"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "c3cfb70c9a6ef907ab9e1d778b8e518316871f70572d6b3ba48a1d3cda5fc375"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "1fe32e5037b76876801995d04a6469f0402f29122d206de4cd6d38665385dd56"
+    }
+  },
+  "geometrySHA256": "be3b0646168456af0a5a2bef45fb868d949aaeb37881fccae66663ace557afb4",
+  "finite": {
+    "uniqueFrames": 53,
+    "capsFrames": 36,
+    "logical3States": [
+      0,
+      0.000001,
+      0.01,
+      0.03,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.99,
+      1
+    ],
+    "logical3Frames": 11,
+    "boundaryFrames": 6,
+    "boundaries": [
+      "foot/body",
+      "body/rise"
+    ],
+    "boundariesUseActualMeasuredOriginalQLength": true,
+    "actualRequestedPVerifiedWithinFloatingRoundoff": true,
+    "allChecks": true,
+    "bad": [],
+    "errors": [],
+    "noFragmentPopLossOrDisconnectionObserved": true,
+    "completionButtonDuplicatesExistingP1": true,
+    "notAllFrameIntegrityProof": true
+  },
+  "normalizedEndpoint": {
+    "requestedControllerP": 1,
+    "reportedLogical3P": 1,
+    "reportedPlanProgress": 1,
+    "rawProgress": "0.9999999999999999",
+    "rawLocal": "0.9999999999999996",
+    "status": "visible",
+    "bodyY": "26.850000000000023",
+    "bodyHeight": "66.59999999999998",
+    "riseHeight": "45.99999999999997",
+    "sameReportObjectContainedNumericAndAttributeDiscrepancy": true,
+    "rawAttributesTakePrecedence": true,
+    "reportDiscrepancyCauseNotEstablished": true,
+    "exactCompleteClaimedForThisPartialEndpoint": false,
+    "noEpsilonAdded": true,
+    "resetToP0HiddenEmptyObserved": true
+  },
+  "natural": {
+    "uniqueProgressObservations": 9,
+    "uniqueEndObservations": 7,
+    "uniqueObservations": 16,
+    "caps": {
+      "targets": [
+        {
+          "id": "u6fe9-hkcs-m-1-1",
+          "pen": 1,
+          "mask": 1
+        },
+        {
+          "id": "u6fe9-hkcs-m-2-1",
+          "pen": 2,
+          "mask": 1
+        },
+        {
+          "id": "u6fe9-hkcs-m-8-1",
+          "pen": 8,
+          "mask": 1
+        },
+        {
+          "id": "u6fe9-hkcs-m-10-1",
+          "pen": 10,
+          "mask": 1
+        },
+        {
+          "id": "u6fe9-hkcs-m-16-2",
+          "pen": 16,
+          "mask": 2
+        },
+        {
+          "id": "u6fe9-hkcs-m-17-1",
+          "pen": 17,
+          "mask": 1
+        }
+      ],
+      "uniqueProgressObservations": 6,
+      "uniqueEndObservations": 6,
+      "allObservedWithNoBadOrErrors": true,
+      "knownProgress": [
+        {
+          "pen": 16,
+          "mask": 2,
+          "p": 0.05127262578561605,
+          "controller": 0.4758125,
+          "checks": 23,
+          "priorHContact": true
+        },
+        {
+          "pen": 17,
+          "p": 0.08726249998211223
+        }
+      ],
+      "otherNumericalValuesNotInvented": true
+    },
+    "logical3": {
+      "progressObservations": [
+        {
+          "phase": "foot",
+          "p": 0.04556249999403375,
+          "local": 0.295919009528901
+        },
+        {
+          "phase": "body",
+          "p": 0.18089999998806156,
+          "local": 0.10172438038342851,
+          "bodyHeight": 2.1311257690328276
+        },
+        {
+          "phase": "rise",
+          "p": 0.4442124999641965,
+          "local": 0.04387317831768325,
+          "bodyY": 70.83183379738657,
+          "bodyHeight": 22.61816620261344,
+          "riseHeight": 2.018166202613429
+        }
+      ],
+      "endUsesNormalizedPartialEndpointAbove": true,
+      "paths": 9
+    },
+    "allChecks": true,
+    "bad": [],
+    "errors": [],
+    "numericReadAndScreenshotSimultaneous": false,
+    "exactFullCommitAtEveryNaturalEndClaimed": false,
+    "collectionRepairs": {
+      "preRegexAndLocatorTimeoutsWereNotSourceFailures": true,
+      "extraDuplicateEndsCounted": 0,
+      "cap16OnlyMissingQProgressRepaired": true,
+      "cap10OnlyMissingEndImageRepaired": true,
+      "cap10FinalFullpageImageConfirmed": true,
+      "cap17ProgressImageRepairedWithExistingEndReused": true,
+      "miniBodyPhaseExtraObservationNotCounted": true,
+      "noNewCodeOrSSR": true
+    },
+    "profileLegacyPlanned14NotActualApproval": true
+  },
+  "doneWhole": {
+    "observations": 1,
+    "logicalStrokes": 17,
+    "mode": "done",
+    "selectedPen": 3,
+    "reportedP": 1,
+    "whole17Visible": true,
+    "logical3": {
+      "rawProgress": "1",
+      "rawLocal": "1",
+      "status": "complete",
+      "bodyY": 26.85,
+      "bodyHeight": 66.6,
+      "riseHeight": 45.99999999999999,
+      "independentOriginalP": 9
+    },
+    "exactCompletionEvidenceSeparateFromNormalizedPartialEndpoint": true
+  },
+  "sourcePreservation": {
+    "originalP": 41,
+    "rawRows": 21,
+    "drawingCalls": 21,
+    "originalPGuideWidthWeightChanged": false,
+    "newBridge": false,
+    "logical3IndependentP": [
+      3,
+      4,
+      2
+    ],
+    "inkPathsNotAdded": true
+  },
+  "reusedEvidence": {
+    "originalRemaining48": "docs/hanja-official-media-compare-u6fe9-2026-10-25/remaining16-temporal-native-review.json",
+    "originalWater3": "docs/hanja-official-media-compare-u6fe9-2026-10-25/water3-temporal-native-review.json",
+    "static17": "docs/hanja-source-raw-compare-u6fe9-hkcs-whole-2026-10-25/native-group-review.json",
+    "whole1": "docs/hanja-source-raw-compare-u6fe9-hkcs-whole-2026-10-25/native-whole-m-review.json",
+    "standaloneLogical3NotCountedAsActual": true,
+    "sourceMathReplayed": 0
+  },
+  "scope": "Reviewed actual-component samples only. Not every browser frame, app UI autoplay, raster identity, or exam-body approval.",
+  "runs": {
+    "SSR": 1,
+    "CJS": 324,
+    "ESM": 324,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "cleanup": {
+    "PID": 87586,
+    "session": 77333,
+    "exitCode": 130,
+    "tab": 79,
+    "tabClosed": true,
+    "viewportReset": true,
+    "ownServers": 0,
+    "termination": "ROOT SIGINT exact PID; D session poll exit130"
+  },
+  "nativeApproval": true,
+  "runtimeApplied": false
+}
