@@ -69,7 +69,8 @@ def load_config(name, expected_sha):
     terminal21 = path == ROOT/'docs/hanja-official-media-compare-u7049-2026-10-24/config-17-21.json'
     terminal95e5 = path == ROOT/'docs/hanja-official-media-compare-u95e5-2026-10-24/config-17-21.json'
     boundary840d7 = path == ROOT/'docs/hanja-official-media-compare-u840d-2026-10-25/config-7.json'
-    require(terminal16 or terminal17 or terminal21 or terminal95e5 or boundary840d7 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
+    remaining6fe9 = path == ROOT/'docs/hanja-official-media-compare-u6fe9-2026-10-25/config-remaining16.json'
+    require(terminal16 or terminal17 or terminal21 or terminal95e5 or boundary840d7 or remaining6fe9 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
     raw = path.read_bytes()
     require(len(raw) <= 65536 and sha(raw) == expected_sha, 'Config changed')
     config = json.loads(raw)
@@ -80,6 +81,12 @@ def load_config(name, expected_sha):
         expected=json.loads(original)
         expected.update({'allowedStrokes':[7],'defaultStroke':7,'launcherSHA256':config['launcherSHA256']})
         require(config==expected,'Exact 萍7 boundary-only config required')
+    if remaining6fe9:
+        original=pinned_path('docs/hanja-official-media-compare-u6fe9-2026-10-25/config.json').read_bytes()
+        require(sha(original)=='9162462d6fe38501dc55f7a197c1205c04392a41ec058e125d6c3f0d9376ca5d','Original 濩 stroke3 config changed')
+        expected=json.loads(original)
+        expected.update({'allowedStrokes':[1,2]+list(range(4,18)),'defaultStroke':1,'launcherSHA256':config['launcherSHA256']})
+        require(config==expected,'Exact 濩 remaining16 original control config required')
     if terminal16:
         require(config['sourceRoot'] == 'u802d-k' and config['allowedStrokes'] == [16] and config['defaultStroke'] == 16 and config['metadataFile'] == 'docs/hanja-official-media-compare-u802d-2026-10-24/metadata-16.json', 'Exact 耭16 terminal-only config required')
     if terminal17:
