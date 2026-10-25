@@ -1,0 +1,185 @@
+{
+  "schema": "hanja-source-held-family-preconditions/v1",
+  "date": "2026-10-26",
+  "glyph": "幪",
+  "root": "hkcs_m5e6a",
+  "fixture": {
+    "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/fixtures.json",
+    "SHA256": "9a4f42f0206be94e4905f2a177caef251dbce5f0d7073772a52a7d47f84eace8"
+  },
+  "geometrySHA256": "a2cf337d73821d42be30b945b96ae67d6c4ae668a9447681bb4dc63c4f415e33",
+  "script": {
+    "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/verify-held-family-preconditions.py",
+    "SHA256": "416e6f18ee202ff04eaa29079fbf2131aa25b9a962453e74beae900c00abc7ba"
+  },
+  "sectionConditions": [
+    {
+      "pen": 2,
+      "mask": 3,
+      "axis": "x",
+      "minX": "491/20",
+      "maxX": "357/10",
+      "openSlabs": 20,
+      "singleIntervalEverySlab": true,
+      "minimumCriticalJoin": "6/5",
+      "allCriticalJoinsPositive": true
+    },
+    {
+      "pen": 13,
+      "mask": 2,
+      "axis": "x",
+      "minX": "53",
+      "maxX": "1411/20",
+      "openSlabs": 21,
+      "singleIntervalEverySlab": true,
+      "minimumCriticalJoin": "1503/1120",
+      "allCriticalJoinsPositive": true
+    },
+    {
+      "pen": 2,
+      "mask": 2,
+      "polygons": [
+        {
+          "vertices": 4,
+          "strictConvex": true,
+          "minimumHalfplaneMargin": "87/2"
+        },
+        {
+          "vertices": 4,
+          "strictConvex": true,
+          "minimumHalfplaneMargin": "407/2"
+        },
+        {
+          "vertices": 5,
+          "strictConvex": true,
+          "minimumHalfplaneMargin": "11/4"
+        },
+        {
+          "vertices": 5,
+          "strictConvex": true,
+          "minimumHalfplaneMargin": "121/80"
+        }
+      ],
+      "sourceHeadMinY": "45/2",
+      "priorMinY": "25",
+      "eachPolygonStrictConvex": true
+    },
+    {
+      "pen": 9,
+      "mask": 2,
+      "polygons": [
+        {
+          "vertices": 4,
+          "strictConvex": true,
+          "minimumHalfplaneMargin": "87"
+        },
+        {
+          "vertices": 22,
+          "strictConvex": false,
+          "minimumHalfplaneMargin": "-417/100"
+        },
+        {
+          "vertices": 5,
+          "strictConvex": true,
+          "minimumHalfplaneMargin": "11/4"
+        }
+      ],
+      "sourceHeadMinY": "51/2",
+      "priorMinY": "28",
+      "eachPolygonStrictConvex": false
+    }
+  ],
+  "halfplaneKernelCandidates": [
+    {
+      "pen": 2,
+      "mask": 2,
+      "sourcePIncluded": 3,
+      "excludedLowerFoot": true,
+      "kernelArea": "7/4",
+      "vertices": [
+        [
+          "161/5",
+          "27"
+        ],
+        [
+          "151/5",
+          "26"
+        ],
+        [
+          "659/20",
+          "26"
+        ],
+        [
+          "659/20",
+          "27"
+        ]
+      ],
+      "scope": "Halfplane kernel only. Concave-P simplicity and closed cross-section conditions not yet certified; no policy or clock/native approval."
+    },
+    {
+      "pen": 9,
+      "mask": 2,
+      "sourcePIncluded": 3,
+      "excludedLowerFoot": false,
+      "kernelArea": "9/16000",
+      "vertices": [
+        [
+          "8797/100",
+          "30"
+        ],
+        [
+          "88",
+          "2397/80"
+        ],
+        [
+          "88",
+          "30"
+        ]
+      ],
+      "scope": "Halfplane kernel only. Concave-P simplicity and closed cross-section conditions not yet certified; no policy or clock/native approval."
+    }
+  ],
+  "exactPredicateReuse": [
+    {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py",
+      "SHA256": "2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76",
+      "oldTargetLoopsExecuted": false
+    },
+    {
+      "path": "docs/hanja-source-original-u846f-hkcs-2026-10-25/initial-feasibility.py",
+      "SHA256": "91670b2c888fd7cd691e4a19c9e43a498b0b964695ba2a7c975ab46bb958926e",
+      "oldTargetLoopsExecuted": false
+    },
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/verify-hv-common-kernels.py",
+      "SHA256": "0b72bb71b6b311c663f1eb5fe8f7d9832159484d67c0fe53166671b9381da966",
+      "oldTargetLoopsExecuted": false
+    }
+  ],
+  "interpretation": {
+    "short2Candidate": "Original x>=front prefix from source xmax to xmin; open-slab section connectivity only.",
+    "cardinal2Candidate": "Strict convex common kernel covers priorH+newVbody/head, not lower foot. Existing whole 2P HV policy cannot be copied unchanged.",
+    "fold9Candidate": "Original body is not strictly convex. Tiny halfplane kernel exists; simplicity/star-shaped/closed-event conditions are not yet certified."
+  },
+  "requiredBeforePolicy": [
+    "All critical closed sections and adjacent-limit equalities for short2.",
+    "Positive initial intersection with exact completed original prior for every positive small prefix.",
+    "Original lower-foot y63 edge-only contact preserved without extra ink.",
+    "For pen9 concave body, certify simplicity and star-shaped halfplane justification.",
+    "Author display clock explicitly distinguished from publisher microclock.",
+    "Fresh actual browser review."
+  ],
+  "limits": [
+    "Open slabs are exact event arrangements with affine edges, not raster samples. Closed events are not certified.",
+    "Kernel areas are exact halfplane intersections only; no new policy approval.",
+    "Initial caps failures3 remain unchanged; no impossible-animation conclusion."
+  ],
+  "newEngine": 0,
+  "sourceProjection": 0,
+  "sourcePGuideWidthWeightChanged": false,
+  "newServer": 0,
+  "newSharedChanges": 0,
+  "newPolicyApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
