@@ -1,0 +1,152 @@
+{
+  "schema": "hanja-public-alternative-source-screening/v1",
+  "date": "2026-10-26",
+  "glyph": "朕",
+  "catalog": {
+    "grade": "1급",
+    "strokes": 10,
+    "applied": false,
+    "confirmedBy": "ROOT using D latest single resolver check"
+  },
+  "prior": {
+    "readiness": {
+      "path": "docs/hanja-remaining-source-prep-u6715-2026-10-18/source-readiness.json",
+      "SHA256": "695bab2e88a9af870100b2755d9ea32645e1c0c9230737ab1bbf33adb33c3953"
+    },
+    "summary": "Base/VS0/VS3 have numeric minimum10, but their source raw3/4 are two horizontal lines. The existing domestic research requires two descending dots. VS2/VS4 carry descending curved source primitives, but retain12raw/minimum11. Other K/VS1/fixedK@5 profiles also have minimum11. No captured profile currently satisfies both constraints.",
+    "successfulOldProofsReplayed": false
+  },
+  "source": {
+    "path": "docs/hanja-source-alternative-u6715-hkcs-2026-10-26/sources.json",
+    "SHA256": "7ce92561dd8b9dd6b13712404302b66552164a4f3c30e235d23058faf5edf031",
+    "root": "hkcs_m6715@4",
+    "closure": 3
+  },
+  "primary": {
+    "url": "https://glyphwiki.org/wiki/u6715@10",
+    "namedRootVersions": [
+      [
+        "u6715",
+        10
+      ],
+      [
+        "u6715-05",
+        2
+      ],
+      [
+        "u6715-05-var-001",
+        1
+      ],
+      [
+        "u6715-05-var-002",
+        10
+      ],
+      [
+        "u6715-g",
+        3
+      ],
+      [
+        "u6715-g05",
+        6
+      ],
+      [
+        "u6715-itaiji-001",
+        1
+      ],
+      [
+        "u6715-j",
+        3
+      ],
+      [
+        "u6715-k",
+        5
+      ],
+      [
+        "u6715-kp",
+        1
+      ],
+      [
+        "u6715-t",
+        2
+      ],
+      [
+        "u6715-ue0102",
+        5
+      ],
+      [
+        "chiuming-neko_u6715",
+        1
+      ],
+      [
+        "hkcs_m6715",
+        4
+      ],
+      [
+        "hkcs_m6715-p02-s00",
+        1
+      ],
+      [
+        "hkcs_m6715-p05-s00",
+        3
+      ],
+      [
+        "hkcs_m6715-p05-s01",
+        1
+      ],
+      [
+        "hkcs_m6715-p05-s02",
+        3
+      ],
+      [
+        "hkcs_m6715-p05-s03",
+        2
+      ],
+      [
+        "hs_u6715",
+        1
+      ],
+      [
+        "hs_u6715-var-002",
+        1
+      ],
+      [
+        "univerx_u6715-001",
+        1
+      ],
+      [
+        "u2ff0-u76ee-u6715",
+        3
+      ]
+    ]
+  },
+  "sourceOnlyDifference": "New original left part has two authored descending DR curves instead of two horizontals; this does not resolve the10 logical-count condition by itself.",
+  "declaredPrimitiveRows": 12,
+  "engineRuns": 0,
+  "sourceProjection": 0,
+  "nativeObservation": 0,
+  "logicalMappingApproved": false,
+  "rootWholeSelectionPending": true,
+  "sourceChanged": false,
+  "runtimeApplied": false,
+  "domesticEvidenceConsistency": {
+    "review": {
+      "path": "docs/hanja-g1-batch24-2026-09-20/review.json",
+      "SHA256": "5b3c180ede3228b86446fe2a23b7fb2e70a94c82b3d7c10fd1d94a8abf729f83",
+      "pointer": "/entries/11"
+    },
+    "research": {
+      "path": "docs/hanja-remaining-seven-sources-2026-10-17/research.json",
+      "SHA256": "7ca8aa25e14fa72eace2820fe473074e9fdb207d7c73d62412e286e8a4a928fe",
+      "pointer": "/glyphs/glyph=朕"
+    },
+    "reviewNotesSay": "원문 月 내부는 DR 점 둘이고 old Ja/MM/Hans는 가로 둘이라 자형 불일치",
+    "savedDirectionsForInterior": [
+      "R",
+      "R"
+    ],
+    "savedDirectionCheck": "match",
+    "researchRepeatsDRRequirement": true,
+    "internalConflictUnresolved": true,
+    "newOriginalDirectReviewNeededBeforeDirectionApproval": true
+  }
+}
