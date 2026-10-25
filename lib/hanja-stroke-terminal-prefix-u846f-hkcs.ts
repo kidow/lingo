@@ -1,0 +1,60 @@
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {reviewedU846fHkcsContext,makeReviewedU846fHkcsSourceContext} from './hanja-stroke-start-caps-u846f-hkcs.ts'
+function ensure(v:unknown,m:string):asserts v{if(!v)throw new Error(m)}
+function sameJSON(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);return ak.length===bk.length&&bk.every(k=>{const ad=Object.getOwnPropertyDescriptor(a,k),bd=Object.getOwnPropertyDescriptor(b,k);return !!ad&&!!bd&&'value'in ad&&'value'in bd&&ad.enumerable===bd.enumerable&&sameJSON(ad.value,bd.value)})}
+function deepFreeze<T>(x:T):T{if(x&&typeof x==='object'){for(const k of Reflect.ownKeys(x as object)){const d=Object.getOwnPropertyDescriptor(x,k);if(d&&'value'in d)deepFreeze(d.value)}Object.freeze(x)}return x}
+export type ReviewedU846fHkcsTerminalPrefixContext=Readonly<{id:'u846f-hkcs-terminal-prefix-canonical13'}>
+const CONTEXT:ReviewedU846fHkcsTerminalPrefixContext=Object.freeze({id:'u846f-hkcs-terminal-prefix-canonical13'})
+export type ReviewedU846fHkcsTerminalPrefixPolicy=Readonly<{id:'u846f-hkcs-terminal-prefix-12-3';kind:'source-P-boundary-x-prefix-u846f-hkcs';pen:12;mask:3;segment:HanjaOutlineSegment;previousSegment:HanjaOutlineSegment;originalSharedBoundaryOnly:true;strictPriorInteriorSeed:false}>
+const POLICY:ReviewedU846fHkcsTerminalPrefixPolicy=deepFreeze({id:'u846f-hkcs-terminal-prefix-12-3',kind:'source-P-boundary-x-prefix-u846f-hkcs',pen:12,mask:3,segment:{"outline":"M82.3 90.15 L81.3 90.7 L80.25 91.2 L79.25 91.65 L78.15 92 L77.1 92.35 L76 92.6 L74.9 92.8 L73.75 92.95 L72.6 93.05 L71.5 93.05 L71.5 87.05 L72.3 87.05 L73.15 87 L73.95 86.85 L74.75 86.75 L75.55 86.55 L76.3 86.3 L77.05 86.05 L77.85 85.75 L78.6 85.35 L79.3 84.95 Z M71.5 90.05 L61.5 88.55 L61.5 87.05 L71.5 87.05 Z","bounds":[61.5,84.95,82.3,93.05],"direction":"curve","weight":9.662749,"revealPath":"M80.83687220422178 87.59671957282775 Q76.5 90.085 71.5 90.085","revealWidth":14},previousSegment:{"outline":"M88.95 42.6 L89 50.6 L88.95 57.85 L88.7 64.3 L88.4 70.05 L87.9 75.05 L87.3 79.35 L86.55 82.9 L85.6 85.85 L84.35 88.3 L82.3 90.15 L79.3 84.95 L79.45 84.8 L80.05 83.6 L80.75 81.4 L81.4 78.3 L81.95 74.35 L82.4 69.6 L82.7 64.05 L82.95 57.7 L83 50.55 L83 42.65 Z M83 41.65 L86 39.15 L91.5 43.65 L89 45.15 L83 47.65 Z","bounds":[79.3,39.15,91.5,90.15],"direction":"curve","weight":45.23733,"revealPath":"M86 42.655 Q86.5 84.3475 80.83687220422178 87.59671957282775","revealWidth":14},originalSharedBoundaryOnly:true,strictPriorInteriorSeed:false})
+const POLICIES:readonly ReviewedU846fHkcsTerminalPrefixPolicy[]=Object.freeze([POLICY])
+export function reviewedU846fHkcsTerminalPrefixContext(strokes:HanjaOutlineStrokes):ReviewedU846fHkcsTerminalPrefixContext|null{return reviewedU846fHkcsContext(strokes)!==null?CONTEXT:null}
+export function makeReviewedU846fHkcsTerminalPrefixSourceContext(proof:unknown,identity:unknown,strokes:HanjaOutlineStrokes):ReviewedU846fHkcsTerminalPrefixContext|null{return makeReviewedU846fHkcsSourceContext(proof,identity,strokes)!==null?CONTEXT:null}
+export function reviewedU846fHkcsTerminalPrefixPolicy(ctx:ReviewedU846fHkcsTerminalPrefixContext|null,pen:number,mask:number):ReviewedU846fHkcsTerminalPrefixPolicy|null{return ctx===CONTEXT&&pen===11&&mask===2?POLICY:null}
+export type ReviewedU846fHkcsTerminalPrefixFrame=Readonly<{policyId:string;progress:number;displayProgress:number;phase:'empty'|'source-x-prefix'|'full';clip:Readonly<{x:number;y:number;width:number;height:number}>|null;visible:boolean;originalPDirect:boolean;originalSourceFull:boolean;paintOriginalPOnce:true;UARead:false;originalSharedBoundaryOnly:true;strictPriorInteriorSeed:false;previousProgress:number}>
+export function sampleReviewedU846fHkcsTerminalPrefixFrame(policy:ReviewedU846fHkcsTerminalPrefixPolicy,segment:HanjaOutlineSegment,p:number,previousMaskProgress:number):ReviewedU846fHkcsTerminalPrefixFrame{
+ ensure(policy===POLICY&&sameJSON(segment,POLICY.segment),'Private 葯12m3 policy/exact original P/Q/width/weight required')
+ ensure(Number.isFinite(p)&&p>=0&&p<=1,'葯 prefix progress in [0,1]')
+ ensure(p===0||previousMaskProgress===1,'Exact completed prior12m2 required')
+ const clip=p>0&&p<1?Object.freeze({x:82.3-20.8*p,y:84.95,width:20.8*p,height:93.05-84.95}):null
+ return Object.freeze({policyId:policy.id,progress:p,displayProgress:p,phase:p===0?'empty':p===1?'full':'source-x-prefix',clip,visible:p>0,originalPDirect:p===1,originalSourceFull:p===1,paintOriginalPOnce:true,UARead:false,originalSharedBoundaryOnly:true,strictPriorInteriorSeed:false,previousProgress:previousMaskProgress})
+}
+function attrs(n:Element,k:Record<string,string|null>){return Object.entries(k).every(([a,b])=>n.getAttribute(a)===b)}
+function opaque(n:Element,view:Window,ink:boolean,allowedMask:string|null=null){const s=view.getComputedStyle(n),mi=s.getPropertyValue('mask-image'),clean=mi.replaceAll('"','').replaceAll("'",'');return s.transform==='none'&&s.filter==='none'&&s.clipPath==='none'&&(allowedMask?(clean.startsWith('url(')&&clean.endsWith('#'+allowedMask+')')&&!clean.includes(',')):['','none'].includes(mi))&&s.visibility==='visible'&&s.display!=='none'&&Number(s.opacity)===1&&Number(s.fillOpacity)===1&&['translate','rotate','scale'].every(k=>['','none'].includes(s.getPropertyValue(k)))&&(!ink||(s.stroke==='none'&&s.fill!=='none'&&s.fill!=='transparent'))}
+export function verifyReviewedU846fHkcsTerminalPrefixPrior(policy:ReviewedU846fHkcsTerminalPrefixPolicy,g:SVGGElement|null,previousMaskProgress:number):boolean{
+ try{
+  if(!POLICIES.includes(policy)||previousMaskProgress!==1||!g?.isConnected||g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind)return false
+  const prev=g.previousElementSibling,owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,pen=g.parentElement
+  if(!prev||!owner||!view||view.document!==doc||!pen||pen.getAttribute('data-outline-stroke')!==String(policy.pen)||prev.parentElement!==pen||prev.nextElementSibling!==g||Array.from(pen.children).indexOf(g)!==policy.mask-1||pen.children.length!==3)return false
+  const nodes:Element[]=[g,prev];let ink:Element|null=null;let guide:Element|null=null;let fullMask:Element|null=null
+  if(prev.localName==='path'){if(policy.previousSegment.direction==='curve')return false;ink=prev}
+  else{
+   if(prev.localName!=='g'||prev.getAttribute('data-stroke-reveal-progress')!=='1'||prev.getAttribute('data-stroke-start-gate')!=='u846f-hkcs-12-2'||prev.getAttribute('data-stroke-reveal-policy')!=='growing-u846f-hkcs-caps')return false
+   const direct=Array.from(prev.children).filter(n=>n.localName==='path');if(direct.length!==1||Array.from(prev.children).some(n=>!['defs','path'].includes(n.localName)))return false;ink=direct[0];if(ink.getAttribute('data-u846f-hkcs-full-original-q-tube')!=='true'||ink.getAttribute('data-u846f-hkcs-full-committed')!=='true')return false
+   if(policy.previousSegment.direction==='curve'){
+    const ref=ink.getAttribute('mask');if(!ref||!/^url\(#[A-Za-z0-9_-]+\)$/.test(ref))return false;fullMask=doc.getElementById(ref.slice(5,-1));if(!fullMask||fullMask.localName!=='mask'||!prev.contains(fullMask)||!attrs(fullMask,{maskUnits:'userSpaceOnUse',x:'0',y:'0',width:'100',height:'100'}))return false
+    if(![null,'userSpaceOnUse'].includes(fullMask.getAttribute('maskContentUnits')))return false
+    const gg=Array.from(fullMask.children);if(gg.length!==1||gg[0].localName!=='path')return false;guide=gg[0]
+    if(!attrs(guide,{d:policy.previousSegment.revealPath??null,fill:'none',stroke:'white','stroke-width':'14','stroke-linecap':'round','stroke-linejoin':'miter',pathLength:'1','stroke-dasharray':'1 2','stroke-dashoffset':'0',transform:null,mask:null,'clip-path':null}))return false
+    const cs=view.getComputedStyle(guide);if(cs.fill!=='none'||!['white','rgb(255, 255, 255)'].includes(cs.stroke)||Number.parseFloat(cs.strokeWidth)!==14||cs.strokeLinecap!=='round'||cs.strokeLinejoin!=='miter'||Number(cs.strokeOpacity)!==1||Number.parseFloat(cs.strokeDashoffset)!==0||cs.strokeDasharray.split(/[ ,]+/).filter(Boolean).map(Number.parseFloat).join(',')!=='1,2')return false
+   }else if(ink.getAttribute('mask')!==null)return false
+  }
+  if(!ink||ink.getAttribute('d')!==policy.previousSegment.outline||ink.getAttribute('clip-path')!==null||ink.getAttribute('pathLength')!==null||(!fullMask&&ink.getAttribute('mask')!==null)||ink.getAttribute('transform')!==null)return false
+  nodes.push(ink);if(guide&&fullMask){if(fullMask.parentElement?.localName!=='defs'||fullMask.parentElement.parentElement!==prev||guide.parentElement!==fullMask)return false;nodes.push(guide,fullMask,fullMask.parentElement)}
+  let n:Element|null=pen;while(n){nodes.push(n);if(n===owner)break;n=n.parentElement}if(nodes[nodes.length-1]!==owner)return false
+  return nodes.every(n=>n.namespaceURI==='http://www.w3.org/2000/svg'&&n.isConnected&&n.ownerDocument===doc&&(n===owner||(n as SVGElement).ownerSVGElement===owner)&&attrs(n,{transform:null,filter:null,'clip-path':null})&&(n===ink&&fullMask||n===guide||n===fullMask||n.getAttribute('mask')===null)&&opaque(n,view,n!==guide&&n!==fullMask,n===ink&&fullMask?fullMask.getAttribute('id'):null))
+ }catch{return false}
+}
+export function verifyReviewedU846fHkcsTerminalPrefixCompletion(policy:ReviewedU846fHkcsTerminalPrefixPolicy,g:SVGGElement|null):boolean{
+ try{
+  if(policy!==POLICY||!g||g.getAttribute('data-stroke-reveal-progress')!=='1'||!verifyReviewedU846fHkcsTerminalPrefixPrior(policy,g,1))return false
+  for(const[k,v]of Object.entries({'data-u846f-hkcs-terminal-prefix-progress':'1','data-u846f-hkcs-terminal-prefix-source-full':'true','data-u846f-hkcs-terminal-prefix-direct-original':'true','data-u846f-hkcs-terminal-prefix-committed':'true'}))if(g.getAttribute(k)!==v)return false
+  const paths=Array.from(g.children).filter(n=>n.localName==='path');if(paths.length!==1||Array.from(g.children).some(n=>!['defs','path'].includes(n.localName)))return false
+  const ink=paths[0],doc=g.ownerDocument,view=doc.defaultView,owner=g.ownerSVGElement
+  if(!view||view.document!==doc||!owner||ink.getAttribute('d')!==policy.segment.outline||ink.getAttribute('data-u846f-hkcs-terminal-prefix-original')!=='true'||view.getComputedStyle(ink).fillRule!=='nonzero'||!attrs(ink,{mask:null,'clip-path':null,pathLength:null,'stroke-dasharray':null,'stroke-dashoffset':null,transform:null,filter:null}))return false
+  const nodes:Element[]=[ink];let n:Element|null=g;while(n){nodes.push(n);if(n===owner)break;n=n.parentElement}
+  if(nodes[nodes.length-1]!==owner)return false
+  return nodes.every(n=>n.namespaceURI==='http://www.w3.org/2000/svg'&&n.isConnected&&n.ownerDocument===doc&&(n===owner||(n as SVGElement).ownerSVGElement===owner)&&attrs(n,{transform:null,filter:null,mask:null,'clip-path':null})&&opaque(n,view,n===ink))
+ }catch{return false}
+}
+export const REVIEWED_U846F_HKCS_TERMINAL_PREFIX_SOURCE=deepFreeze({root:'hkcs_m846f',localArtifactTag:'u846f-hkcs',targets:[[12,3]],sourceCacheFile:'docs/hanja-source-original-u846f-hkcs-2026-10-25/fixtures.json',sourceCacheSHA256:'2d2c52ffb39bcb2450f1571e16de12c6c5dffe68161f9f25d1bd4f9b581bd0f2',geometrySHA256:'d3f1ed65d1a64d2ecc49b7839f696c8912cc3c6d75f5ffdb411abb1a4281f66d',proofFile:'docs/hanja-source-original-u846f-hkcs-2026-10-25/terminal-prefix-feasibility-proof.json',proofSHA256:'66eba94926be3dbe86a5edf12d97037d6fc305da8a6118f86c00071949eb45f3',displayClock:'xnegative 82.3→61.5 with unchanged outer source weight; p0empty/p1sole original P',originalSharedBoundary:[[79.3,84.95],[82.3,90.15]],positiveBoundaryContactForEveryPositiveP:true,strictPriorInteriorSeed:false,allTimeRasterApproval:false,sourcePGuideWidthWeightChanged:false,nativeApproval:false,runtimeApplied:false})
