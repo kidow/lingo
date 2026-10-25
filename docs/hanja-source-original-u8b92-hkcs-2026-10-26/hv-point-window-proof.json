@@ -1,0 +1,156 @@
+{
+  "schema": "hanja-source-HV-point-window-conditions/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "root": "hkcs_m8b92",
+  "inputs": [
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/hv-common-kernel-proof.json",
+      "SHA256": "ee813e38f5a2b512a30cfc7b1c82e8b905ee58c930fddfd30a43cecc90ac922f"
+    },
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/fixtures.json",
+      "SHA256": "5e8411814e4f13dd0da9fdce4e52614f2143b4c9e0db99f69ec174297a4389c9"
+    }
+  ],
+  "results": [
+    {
+      "pen": 6,
+      "mask": 2,
+      "anchor": [
+        "297/10",
+        "129/2"
+      ],
+      "extents": [
+        "2",
+        "13/2",
+        "4",
+        "53/2"
+      ],
+      "strictCommonBoxHalfWidth": "1/6",
+      "positiveTripleOverlapAreaLowerBoundCoefficient": "1/9",
+      "originalBounds": [
+        27.7,
+        60.5,
+        36.2,
+        91
+      ],
+      "initialDiameterSquaredUpperBoundCoefficient": "2005/2",
+      "sourceQSeam200": [
+        "0",
+        "0"
+      ],
+      "sourceQSeam100": [
+        "0",
+        "0"
+      ],
+      "oldGlobalConvexityAndCommonKernelReplayed": false,
+      "allPositivePConnected": true,
+      "allPositivePPriorBodyHeadAreaOverlap": true,
+      "nested": true,
+      "p0HiddenPointRequired": true,
+      "p1OriginalComplete": true
+    },
+    {
+      "pen": 11,
+      "mask": 2,
+      "anchor": [
+        "331/4",
+        "43/2"
+      ],
+      "extents": [
+        "7/4",
+        "27/4",
+        "4",
+        "11"
+      ],
+      "strictCommonBoxHalfWidth": "1/8",
+      "positiveTripleOverlapAreaLowerBoundCoefficient": "1/16",
+      "originalBounds": [
+        81,
+        17.5,
+        89.5,
+        32.5
+      ],
+      "initialDiameterSquaredUpperBoundCoefficient": "1189/4",
+      "sourceQSeam200": [
+        "1",
+        "0"
+      ],
+      "sourceQSeam100": [
+        "1/2",
+        "0"
+      ],
+      "oldGlobalConvexityAndCommonKernelReplayed": false,
+      "allPositivePConnected": true,
+      "allPositivePPriorBodyHeadAreaOverlap": true,
+      "nested": true,
+      "p0HiddenPointRequired": true,
+      "p1OriginalComplete": true
+    },
+    {
+      "pen": 20,
+      "mask": 2,
+      "anchor": [
+        "83",
+        "129/2"
+      ],
+      "extents": [
+        "2",
+        "13/2",
+        "4",
+        "25/2"
+      ],
+      "strictCommonBoxHalfWidth": "1/6",
+      "positiveTripleOverlapAreaLowerBoundCoefficient": "1/9",
+      "originalBounds": [
+        81,
+        60.5,
+        89.5,
+        77
+      ],
+      "initialDiameterSquaredUpperBoundCoefficient": "689/2",
+      "sourceQSeam200": [
+        "0",
+        "0"
+      ],
+      "sourceQSeam100": [
+        "0",
+        "0"
+      ],
+      "oldGlobalConvexityAndCommonKernelReplayed": false,
+      "allPositivePConnected": true,
+      "allPositivePPriorBodyHeadAreaOverlap": true,
+      "nested": true,
+      "p0HiddenPointRequired": true,
+      "p1OriginalComplete": true
+    }
+  ],
+  "newArgument": [
+    "Use the already certified exact common strict box in completed H, unchanged convex body and unchanged convex head. No old convexity, kernel, full-Q or original temporal computation is repeated.",
+    "For p in (0,1], scale the common box about A by p. Convexity and A inside each polygon imply this scaled box remains in each original polygon. New arithmetic verifies all four rectangle extents exceed delta, so it also lies inside the new 2D rectangle.",
+    "Each original convex body/head intersected with the rectangle is convex and both contain that positive-area scaled box. Their union is connected and has positive area in the completed original H for every p>0.",
+    "Both rectangle axes shrink linearly to A. Ink diameter is bounded by the rectangle diagonal times p and tends to zero. Nested rectangles give monotone ink inclusion; at p1 the full original bounds and original P2 are preserved."
+  ],
+  "authorClockNotOriginalQOrPublisherTime": true,
+  "actualPriorOpaqueStillRequired": true,
+  "old1DYBandNativeHoldPreserved": true,
+  "sourcePOrQOrWidthOrWeightChanged": false,
+  "virtualConnector": false,
+  "newPolicyImplemented": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceEngine": 0,
+  "sourceProjection": 0,
+  "originalTemporalReplay": 0,
+  "sharedRendererChanges": 0,
+  "server": 0,
+  "verification": {
+    "script": {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/verify-hv-point-windows.py",
+      "SHA256": "3605bf8b695b4b46e6e0764ea1c2c3899e1132c350ffbdd7cdccc2b85594888a"
+    },
+    "newExactArithmeticRun": 1,
+    "existingKernelOrConvexityRun": 0
+  }
+}
