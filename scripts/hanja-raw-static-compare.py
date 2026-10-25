@@ -475,6 +475,8 @@ def new_public_whole_case(config):
     spec=config['sourceRoots']['selected']
     case=NEW_PUBLIC_WHOLES.get(spec.get('root'))if type(spec)is dict else None
     return case if case and 'pairedRoots'not in case else None
+NEW_PUBLIC_WHOLES['hkcs_m8587']=json.loads("{\"glyph\":\"薇\",\"catalogStrokes\":17,\"config\":\"docs/hanja-source-raw-compare-u8587-hkcs-whole-2026-10-25/config.json\",\"full\":\"docs/hanja-actual-engine-capture-u8587-hkcs-2026-10-25/engine-whole-hkcs_m8587.json\",\"fullSHA\":\"ed62eaf8cb1cb39a17cca1fcc32857d04b6d934d2b6b9edcb60ac6ec6283768d\",\"capture\":\"docs/hanja-actual-engine-capture-u8587-hkcs-2026-10-25/capture.json\",\"captureSHA\":\"a6cf15af6944d0273d4b29e5a701a5d7e26fff0d757476e164505a483dd6e397\",\"source\":\"docs/hanja-source-alternative-u8587-hkcs-2026-10-25/sources.json\",\"sourceSHA\":\"228bed8d10710ae16e72d747f7bd218a59a2434fb43ad86ee00aa26f3ce6bdd3\",\"metadata\":\"docs/hanja-goal-glyphwiki-batch56-2026-09-22/metadata.json\",\"metadataSHA\":\"d7e479ffd6e6a25129d2e1b1722dec0924fce5d7e70790a3c0c1d585eae42b20\",\"readme\":\"docs/hanja-goal-glyphwiki-batch56-2026-09-22/README.md\",\"readmeSHA\":\"2afcfdb5c7b9a01c72f8e2ce89ecce572face760a4935fc4083d40302df878c5\",\"raw\":20,\"calls\":20,\"polygons\":42,\"rootVersion\":2,\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/8587.svg\",\"status\":200,\"bytes\":8765,\"sha256\":\"dd9350d3980f901887d7dd4090afdac4e28a6c543f127a3063aba86042fb65c7\",\"clips\":17,\"glyph\":\"薇\",\"privateMediaSaved\":false}}")
+
 def validate_new_public_whole(config,label,spec,path,config_path,case):
     pair=case.get('pairedRoots')
     require(config_path==ROOT/case['config'] and ((list(config['sourceRoots'])==list(pair) and label in pair and {k:v.get('root')for k,v in config['sourceRoots'].items()}==pair and spec['root']==pair[label])if pair else(label=='selected' and list(config['sourceRoots'])==['selected'])),'exact new whole comparison location required')
@@ -491,7 +493,11 @@ def validate_new_public_whole(config,label,spec,path,config_path,case):
     require(capture['engine']['actualLoadedHashes']==proof['engineHashes'] and capture['engine']['revision']==proof['engineRevision']=='49232bac0348fe815f4200d4116ab7917e0db47f','executed original vendor identity changed')
     facts=capture['captureFacts']
     require((facts['actualVMContexts'],facts['vendorEvaluations'],facts['captureEvaluation'],facts['makeGlyphCalls'])==(1,8,1,1) and facts['newHeaderFromExecutedCodeBytesOnly']is True and facts['oldHeaderOrBodyCombined']is False and facts['aliasInserted']is False and capture['privateDictionaryFilesWritten']==0,'single original whole capture required')
-    require(capture['approval']=={'whole':False,'individualStrokes':False,'native':False,'runtime':False} and source['nativeApproval']is False and source['runtimeApplied']is False,'unapproved whole preparation only')
+    source_unapproved=source.get('nativeApproval')is False
+    if spec['root']=='hkcs_m8587':
+        source_unapproved=source.get('wholeApproval')is False and source.get('strokeApproval')is False and 'nativeApproval'not in source
+        require(len(proof['groups'])==len(proof['trace'])==20 and [i for i,g in enumerate(proof['groups'])if g['raw'][0]==0]==[12] and proof['groups'][12]=={'raw':[0,0]+[None]*9,'polygons':[]} and proof['trace'][12]==[],'exact 薇 original0:0 metadata row13 required')
+    require(capture['approval']=={'whole':False,'individualStrokes':False,'native':False,'runtime':False} and source_unapproved and source['runtimeApplied']is False,'unapproved whole preparation only')
     if spec['root']=='hkcs_m61b8':
         groups,trace=proof['groups'],proof['trace']
         require(len(groups)==len(trace)==21 and [i for i,g in enumerate(groups)if g['raw'][0]==0]==[6,11,16],'exact 憸 metadata rows7/12/17 required')
