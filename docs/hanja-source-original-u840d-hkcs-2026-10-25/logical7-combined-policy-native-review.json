@@ -1,0 +1,139 @@
+{
+  "schema": "hanja-logical-policy-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "logical": 7,
+  "observer": "ROOT browser panel",
+  "result": "PASS complete source-P9 logical7 review policy only",
+  "inputs": {
+    "experiment": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/logical7-combined-policy-experiment.html",
+      "SHA256": "e6962f94da36418800929c7c42b830b03700d03ea1d530f7b73b528360b529ca"
+    },
+    "P3Correction": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-p3-attached-native-review.json",
+      "SHA256": "05138706b9aa42e175497abf6c039237664877e57efeaebbe1525789547f8b54"
+    },
+    "bodyRising": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/body-rising-band-native-review.json",
+      "SHA256": "5575b81e6b139088ecc8e3795389680b7181461c2d85f4eb5384fdbfb4814434"
+    }
+  },
+  "finiteActions": [
+    "start0",
+    "epsilon",
+    "foot1",
+    "body0",
+    "body1",
+    "rise0",
+    "rise1"
+  ],
+  "finiteObservations": {
+    "originalIndependentP9Unchanged": true,
+    "errors": [],
+    "foot1Body0ActualDOMPaintEqual": true,
+    "body1Rise0ActualDOMPaintEqual": true,
+    "finalShapeComplete": true
+  },
+  "naturalPlayback": {
+    "configuredDurationMs": 2400,
+    "runs": [
+      {
+        "purpose": "observe body phase and completion",
+        "midRead": {
+          "globalP": 0.22075,
+          "localBodyP": 0.162738
+        },
+        "midScreenshot": {
+          "globalP": 0.2555,
+          "localBodyP": 0.281653
+        },
+        "final": {
+          "globalP": 1,
+          "frames": 289,
+          "phaseTrace": [
+            {
+              "phase": "foot",
+              "globalP": 0
+            },
+            {
+              "phase": "body",
+              "globalP": 0.1756667
+            },
+            {
+              "phase": "rise",
+              "globalP": 0.4672917
+            }
+          ]
+        }
+      },
+      {
+        "purpose": "supplement only missed rising mid-phase observation",
+        "midRead": {
+          "phase": "rise",
+          "globalP": 0.5365833,
+          "localP": 0.1330279,
+          "running": true
+        },
+        "midScreenshot": {
+          "phase": "rise",
+          "globalP": 0.5783333,
+          "localP": 0.2111349
+        },
+        "final": {
+          "globalP": 1,
+          "frames": 289,
+          "phaseTrace": [
+            {
+              "phase": "foot",
+              "globalP": 0
+            },
+            {
+              "phase": "body",
+              "globalP": 0.175875
+            },
+            {
+              "phase": "rise",
+              "globalP": 0.4675417
+            }
+          ],
+          "errors": []
+        }
+      }
+    ],
+    "readAndScreenshotProgressAreDifferentLiveFrames": true,
+    "visuallyNewSeparatedPiecesObserved": false,
+    "visuallyLargeJumpsObserved": false,
+    "finalMatchesOriginalStaticPaint": true
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "both520SquaresFullyVisible": true
+  },
+  "scope": {
+    "completeLogical7ReviewPolicyApproved": true,
+    "sourceOriginalPAndQAndWidthPreserved": true,
+    "publisherClockCorrespondenceApproved": false,
+    "actualSharedRendererApproved": false,
+    "fullGlyphAll12StrokesApproved": false,
+    "actualAppApproved": false,
+    "runtimeApplied": false
+  },
+  "cleanup": {
+    "PID": 57522,
+    "session": 67795,
+    "exitCode": 130,
+    "tab": 48,
+    "tabClosed": true,
+    "viewportReset": true,
+    "ownServerRemaining": 0
+  },
+  "requests": {
+    "staticGETs": 1,
+    "originalMedia": 0,
+    "sourceEngine": 0,
+    "sourceProjection": 0
+  },
+  "next": "Bind only this successful source-P9 logical7 policy to the actual renderer with exact source/policy/component guards. Inspect actual component startup, transitions, completion and natural playback before glyph registration."
+}
