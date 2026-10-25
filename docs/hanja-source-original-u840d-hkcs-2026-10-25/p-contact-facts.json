@@ -1,0 +1,119 @@
+{
+  "schema": "hanja-exact-source-p-contact-facts/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "logical": 7,
+  "source": {
+    "full5": "docs/hanja-actual-engine-capture-u840d-hkcs-2026-10-25/engine-whole-hkcs_m840d.json",
+    "SHA256": "f5c8184820c51cbfe0506959745703496eec6d7d271b29735d22bee2cec8a205",
+    "raw": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "polygonCounts": [
+      3,
+      2,
+      2,
+      2
+    ],
+    "polygonsVertexCounts": [
+      [
+        22,
+        3,
+        3
+      ],
+      [
+        22,
+        5
+      ],
+      [
+        22,
+        5
+      ],
+      [
+        22,
+        3
+      ]
+    ]
+  },
+  "arithmetic": {
+    "inputCoordinatesHaveAtMostOneDecimalDigit": true,
+    "representation": "BigInt from original canonical decimal strings scaled by10 exactly; no rounded coordinates",
+    "properCrossing": "strict opposite signs of integer cross(a,b,c) and cross(a,b,d), and strict opposite signs of cross(c,d,a) and cross(c,d,b)",
+    "strictInterior": "integer winding number with exact boundary exclusion",
+    "sourceCoordinatesChanged": false
+  },
+  "pairFacts": [
+    {
+      "raw": [
+        7,
+        8
+      ],
+      "properBoundaryCrossings": 12,
+      "strictInteriorSourceVertices": 17,
+      "positiveInteriorOverlapWitness": true
+    },
+    {
+      "raw": [
+        7,
+        9
+      ],
+      "properBoundaryCrossings": 4,
+      "strictInteriorSourceVertices": 14,
+      "positiveInteriorOverlapWitness": true
+    },
+    {
+      "raw": [
+        7,
+        10
+      ],
+      "properBoundaryCrossings": 10,
+      "strictInteriorSourceVertices": 12,
+      "positiveInteriorOverlapWitness": true
+    },
+    {
+      "raw": [
+        8,
+        9
+      ],
+      "properBoundaryCrossings": 6,
+      "strictInteriorSourceVertices": 22,
+      "positiveInteriorOverlapWitness": true
+    },
+    {
+      "raw": [
+        8,
+        10
+      ],
+      "properBoundaryCrossings": 10,
+      "strictInteriorSourceVertices": 8,
+      "positiveInteriorOverlapWitness": true
+    },
+    {
+      "raw": [
+        9,
+        10
+      ],
+      "properBoundaryCrossings": 4,
+      "strictInteriorSourceVertices": 13,
+      "positiveInteriorOverlapWitness": true
+    }
+  ],
+  "conclusions": {
+    "allSixPairsHaveActualPIntersectionWitness": true,
+    "sourceGuideEndpointEqualityStillFalse": true,
+    "PDisconnectedFromGuideEndpointMismatchInferred": false,
+    "prefixOrBandApproved": false,
+    "branchOrBothTransitionContactsProved": false,
+    "allTimeCoverageApproved": false,
+    "sourceNativeDirectionApproved": false,
+    "runtimeApplied": false
+  },
+  "limits": [
+    "Facts concern unchanged source filled P only, not a source guide connection or time sequence.",
+    "A proper boundary crossing is an actual source geometry witness; no raster pixel measurement is claimed.",
+    "No P point, source Q, width, order, clock or outline was changed."
+  ]
+}

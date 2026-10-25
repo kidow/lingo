@@ -68,11 +68,18 @@ def load_config(name, expected_sha):
     terminal17 = path == ROOT/'docs/hanja-official-media-compare-u99fe-2026-10-24/config-17.json'
     terminal21 = path == ROOT/'docs/hanja-official-media-compare-u7049-2026-10-24/config-17-21.json'
     terminal95e5 = path == ROOT/'docs/hanja-official-media-compare-u95e5-2026-10-24/config-17-21.json'
-    require(terminal16 or terminal17 or terminal21 or terminal95e5 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
+    boundary840d7 = path == ROOT/'docs/hanja-official-media-compare-u840d-2026-10-25/config-7.json'
+    require(terminal16 or terminal17 or terminal21 or terminal95e5 or boundary840d7 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
     raw = path.read_bytes()
     require(len(raw) <= 65536 and sha(raw) == expected_sha, 'Config changed')
     config = json.loads(raw)
     validate(config)
+    if boundary840d7:
+        original=pinned_path('docs/hanja-official-media-compare-u840d-2026-10-25/config.json').read_bytes()
+        require(sha(original)=='076428dcf64e278187926fe7e8437a7d739b9cce5d9e50bf457d54be992507d9','Original 萍36 config changed')
+        expected=json.loads(original)
+        expected.update({'allowedStrokes':[7],'defaultStroke':7,'launcherSHA256':config['launcherSHA256']})
+        require(config==expected,'Exact 萍7 boundary-only config required')
     if terminal16:
         require(config['sourceRoot'] == 'u802d-k' and config['allowedStrokes'] == [16] and config['defaultStroke'] == 16 and config['metadataFile'] == 'docs/hanja-official-media-compare-u802d-2026-10-24/metadata-16.json', 'Exact 耭16 terminal-only config required')
     if terminal17:
