@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-authored-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "幪",
+  "root": "hkcs_m5e6a",
+  "rootVersion": 1,
+  "status": "PASS macro whole only",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "scope": "A newly captured complete authored HK whole; previous HOLDs remain separate.",
+  "inputs": {
+    "config": "docs/hanja-source-raw-compare-u5e6a-hkcs-whole-2026-10-26/config.json",
+    "configSHA256": "bb5e6955a61f5e90cb6dfcf3f8dcece9159cc48ce2080670d2467c9345c32bcb",
+    "helper": "scripts/hanja-raw-static-compare.py",
+    "helperSHA256": "2b5f4fb6bc50d4984b8e1a4fcec69e6ffb7e23c666dbf0811a7a0bd9b8187c1a",
+    "full5SHA256": "e8831644fbe62a6af83581d45c4024cf2c324732b731ada72372309ef62ccb11",
+    "unchangedBeforeAndAfter": true
+  },
+  "observed": {
+    "wholePairs": 1,
+    "domesticPenCount": 17,
+    "sourceRawCount": 19,
+    "sourceDrawingCalls": 21,
+    "sourcePolygons": 38,
+    "fullPage": true,
+    "entireImagesVisible": true,
+    "bboxes": [
+      {
+        "x": 12,
+        "y": 275.203125,
+        "width": 520,
+        "height": 520
+      },
+      {
+        "x": 562,
+        "y": 303.203125,
+        "width": 520,
+        "height": 520
+      }
+    ],
+    "compatibleMacroFeatures": [
+      "split four-stroke grass",
+      "roof and inner horizontal, separate lower horizontal",
+      "lower 豕 left sweeps and terminal left-up/right-down sweeps",
+      "left 巾 placement and hook"
+    ],
+    "extraUnaccountedShortHorizontalObserved": false,
+    "remainingVisualConcern": "A fine horizontal seam is visible inside the source 巾 bend/body. It is not classified as a geometry gap or raster effect; exact source contact/paint and actual rendering remain to be checked."
+  },
+  "decision": {
+    "macroWholeCompatible": true,
+    "logicalStrokeGroupingApproved": false,
+    "staticIndividualCorrespondenceApproved": false,
+    "sourceStrokeOrderApproved": false,
+    "sourceDirectionApproved": false,
+    "contactApproved": false,
+    "progressiveReviewStarted": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "serverPID": 85636,
+    "port": 59412,
+    "startupLogCaptured": false,
+    "serverStopped": true,
+    "tabClosed": true,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesWritten": 0
+  },
+  "limits": [
+    "Macro comparison is not complete path, logical stroke, direction or playback approval.",
+    "Original source rows and P/Q remain unchanged; no deletion, connector or substitution.",
+    "Publisher dictionary cross-check is not examination-body certification."
+  ]
+}
