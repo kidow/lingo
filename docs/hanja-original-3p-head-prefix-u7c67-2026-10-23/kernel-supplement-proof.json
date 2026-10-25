@@ -1,0 +1,112 @@
+{
+  "schema": "hanja-original-3p-kernel-supplement/v1",
+  "glyph": "籧",
+  "pen": 18,
+  "mask": 1,
+  "source": {
+    "path": "docs/hanja-source-original-u7c67-2026-10-23/fixtures.json",
+    "SHA256": "ac326e4aa2bf4036cc23049bd84b02948e1e9b296ad4498f5fce9e55575e345d",
+    "segmentSHA256": "424037413381ed1fbfc5f57c4144d68033f7668528370594ecac5ed9633c9515"
+  },
+  "polygons": [
+    {
+      "vertices": 22,
+      "simple": true,
+      "positiveWinding": true,
+      "anchorMinimumMargin": "0",
+      "anchorNegativeEdges": 0,
+      "anchorZeroEdges": 3,
+      "sharedBoxMinimumMargin": "2183/200000"
+    },
+    {
+      "vertices": 3,
+      "simple": true,
+      "positiveWinding": true,
+      "anchorMinimumMargin": "0",
+      "anchorNegativeEdges": 0,
+      "anchorZeroEdges": 2,
+      "sharedBoxMinimumMargin": "3/1250"
+    },
+    {
+      "vertices": 3,
+      "simple": true,
+      "positiveWinding": true,
+      "anchorMinimumMargin": "7/40",
+      "anchorNegativeEdges": 0,
+      "anchorZeroEdges": 0,
+      "sharedBoxMinimumMargin": "3857/40000"
+    }
+  ],
+  "kernelAnchor": [
+    "439/5",
+    "623/10"
+  ],
+  "commonBox": {
+    "center": [
+      "4389/50",
+      "2491/40"
+    ],
+    "halfExtent": "1/10000",
+    "area": "1/25000000"
+  },
+  "homothetyCandidate": {
+    "formula": "H_i(p)=B+p*(P_i-B); keep original ink and clip by union(H_i(p))",
+    "allRealPositiveProgressConnected": true,
+    "reason": "Each original simple positive-winding polygon has B in its closed kernel. H_i(p) is inside P_i and nested in p. The scaled common interior box belongs to every H_i(p), with positive area p^2/25000000. Thus their union is connected and equals the original ink intersected with this clip union.",
+    "areaUpperBoundAtProgressP": "9913/160 * p^2",
+    "zeroHiddenRequired": true,
+    "fullOneDirectOriginalRequired": true,
+    "floatingPointAndDOMApproved": false
+  },
+  "existingXPrefixCounterexample": {
+    "policy": "x >= 88 - (167/10)*p",
+    "onlyRootTriangleForProgress": "0 < p < 1/334",
+    "start": [
+      "88",
+      "1279/20"
+    ],
+    "cut": "x=88-delta",
+    "yBounds": [
+      "1279/20 - 35*delta",
+      "1279/20 - (23/54)*delta"
+    ],
+    "initialGrowth": "up-left",
+    "officialMacro": "upper-right then short down-left sweep",
+    "directionConflict": true,
+    "draftExecutedOrModified": false
+  },
+  "officialEvidence": {
+    "path": "docs/hanja-official-media-compare-u7c67-2026-10-23/official-temporal-native-review-remaining.json",
+    "SHA256": "930fab885032f90d2007e8574d680c9cee2915233fc91dfd00689f351de60e47",
+    "SVGSourceSHA256": "ab60c152894c0f352838ae4a24d269cec166a5049ee821a93e714babcc1bb97c",
+    "reviewedLocalFrames": [
+      0.1,
+      0.5,
+      0.75
+    ],
+    "scope": "Existing macro only; not approval of the changed kernel start."
+  },
+  "changedDisplayStart": {
+    "originalQ0": [
+      "173/2",
+      "2383/40"
+    ],
+    "candidateAnchor": [
+      "439/5",
+      "623/10"
+    ],
+    "distanceSquared": "2917/320",
+    "officialStartApproval": false,
+    "officialEarlyDirectionApproval": false
+  },
+  "sourceInkChanges": 0,
+  "sourceGuideChanges": 0,
+  "sourceWeightChanges": 0,
+  "sharedRendererChanges": 0,
+  "vendorRuns": 0,
+  "projectionRuns": 0,
+  "SSR": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registered": false
+}
