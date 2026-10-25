@@ -14,6 +14,7 @@ SHARED='docs/hanja-source-raw-compare-u8a29-2026-10-21/serve.py'
 SHARED_SHA='ba91ba7f00bc2e4899ca4d3c69d03ab5cd6f8b0a9f888899eea49aa69a58665d'
 PAGE_CSS_OLD=".grid{display:grid;grid-template-columns:repeat(2,540px);gap:10px;width:max-content}.panel{width:540px}svg{display:block;width:520px;height:520px;min-width:520px;min-height:520px}"
 PAGE_CSS_NEW=".grid{display:grid;grid-template-columns:minmax(0,520px);gap:10px;width:100%;max-width:520px}.panel{width:100%;max-width:520px}svg{display:block;width:520px;height:520px;max-width:100%;min-width:0;min-height:0}"
+PAGE_CSS_1040=".grid{display:grid;grid-template-columns:1040px;gap:10px;width:max-content}.panel{width:1040px}svg{display:block;width:1040px;height:1040px;min-width:1040px;min-height:1040px;max-width:none}"
 FIVE=['defaults','engineHashes','engineRevision','groups','trace']
 def require(value,message):
     if not value:raise ValueError(message)
@@ -488,6 +489,15 @@ def install_new_whole_only(shared,original_page):
     shared.selection=whole_selection
     shared.page=whole_page
 
+def exact_u840d_k_1040_config(config,config_path):
+    if config_path!=pinned_path('docs/hanja-source-raw-compare-u840d-k-1040-2026-10-25/config.json'):return False
+    original_bytes=pinned_path('docs/hanja-source-raw-compare-u840d-k-2026-10-25/config.json').read_bytes()
+    require(digest(original_bytes)=='22ae7f16c7b54b86503ee5956415fadec9d0180f7ab2f66b7b6068991800a309','original 萍 K config changed')
+    expected=json.loads(original_bytes)
+    expected.update({'layoutMode':'stacked1040-css-only','holdSummary':"Existing K original filled-P dot/bar separation is exact (minimum distance squared169/52925); the prior520px whole remains raster-uncertain and unchanged. This isolated1040px CSS-only whole inspection targets that uncertainty only. Original36 temporal observations and source engine/capture are reused, no geometry/Q/width/raw rows change. A new server requires one pinned domesticSVG RAM fetch if absent; no private media file is saved. Whole/native/runtime approval remains false until ROOT inspects this changed display size.",'launcherSHA256':config.get('launcherSHA256')})
+    require(config==expected,'exact 萍1040 source/domestic/input scope required')
+    return True
+
 def main():
     require(__debug__ and sys.flags.optimize==0,'optimized assertion-free execution forbidden')
     parser=argparse.ArgumentParser(description='Pinned static whole/raw/domestic comparison; ROOT starts HTTP.')
@@ -497,6 +507,7 @@ def main():
     config_bytes=config_path.read_bytes();require(len(config_bytes)<=65536 and digest(config_bytes)==args.config_sha,'config SHA changed')
     config=json.loads(config_bytes)
     new_public_whole=new_public_whole_case(config)
+    original_u840d_1040_config=exact_u840d_k_1040_config(config,config_path)
     keys={'schema','glyph','catalogStrokes','sourceViewBox','defaultSource','sourceRoots','domestic','inputSHA256','holdSummary','launcherSHA256','sharedServe','noPartialAnimation','nativeApproval','runtimeApplied','guardMode','host','layoutMode'}
     if new_public_whole:keys.add('wholeOnly')
     original_hkcs_m7626_config=(type(config)is dict and config.get('glyph')=='瘦' and type(config.get('sourceRoots'))is dict and list(config['sourceRoots'])==['selected'] and type(config['sourceRoots']['selected'])is dict and config['sourceRoots']['selected'].get('root')=='hkcs_m7626')
@@ -525,7 +536,7 @@ def main():
     if original_u83bd_config:keys.add('dictionaryPlaybackStrokes')
     require(type(config)is dict and set(config)==keys and config['schema']=='hanja-shared-static-raw-compare/v1','exact config fields required')
     require(type(config['glyph'])is str and len(config['glyph'])==1 and type(config['catalogStrokes'])is int and 1<=config['catalogStrokes']<=128,'glyph/count required')
-    require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']==('whole-pair520-css-only'if new_public_whole else'stacked520-css-only'),'original source/local host required')
+    require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']==('stacked1040-css-only'if original_u840d_1040_config else'whole-pair520-css-only'if new_public_whole else'stacked520-css-only'),'original source/local host required')
     require(config['nativeApproval']is False and config['runtimeApplied']is False and config['noPartialAnimation']is True and config['guardMode']=='explicit-parameter-pins-v1','static unapproved scope required')
     require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA}and hexsha(config['launcherSHA256']),'shared code identity changed')
     roots=config['sourceRoots']
@@ -609,11 +620,13 @@ def main():
     original_page=shared.page
     def stacked_page(*params):
         original=original_page(*params);require(original.count(PAGE_CSS_OLD)==1,'exact original CSS hook changed')
-        page=original.replace(PAGE_CSS_OLD,PAGE_CSS_NEW,1)
-        require(page.replace(PAGE_CSS_NEW,PAGE_CSS_OLD,1)==original,'CSS inverse changed original page/SVG bytes')
+        css=PAGE_CSS_1040 if original_u840d_1040_config else PAGE_CSS_NEW
+        page=original.replace(PAGE_CSS_OLD,css,1)
+        require(page.replace(css,PAGE_CSS_OLD,1)==original,'CSS inverse changed original page/SVG bytes')
         return page
     shared.page=stacked_page
     if new_public_whole:install_new_whole_only(shared,original_page)
+    if original_u840d_1040_config:install_new_whole_only(shared,stacked_page)
     if args.check_only:
         sources=shared.load_sources();require(shared.FETCH_COUNT==0,'preparation cannot fetch domestic media')
         print(json.dumps({'guardMode':config['guardMode'],'sharedFunctionCopies':0,'roots':list(sources),'domesticCount':dictionary_count,'raw':{k:len(p['groups'])for k,p in sources.items()},'HTTP':0,'server':0,'sourceCompiler':0,'engine':0,'projection':0,'nativeApproval':False}));return
