@@ -1,0 +1,183 @@
+{
+  "schema": "hanja-source-bound-caps-initial-preparation/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "root": "hkcs_m8b92",
+  "source": {
+    "fixture": {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/fixtures.json",
+      "SHA256": "5e8411814e4f13dd0da9fdce4e52614f2143b4c9e0db99f69ec174297a4389c9"
+    },
+    "geometrySHA256": "3e0339d807e7bc697bed53420f88ff3fc52048df340c1d658c483898c6f406eb",
+    "identity": {
+      "sourceRoot": "hkcs_m8b92",
+      "sourceProofFile": "../hanja-actual-engine-capture-u8b92-hkcs-2026-10-26/engine-whole-hkcs_m8b92.json",
+      "sourceProofFileSha256": "4ebc488e6effd4d7ea1e7866ab84f0070bad147a4e5282c1cb188e2cf7683cdb",
+      "sourceCapsuleFile": "../hanja-source-alternative-u8b92-hkcs-2026-10-26/sources.json",
+      "sourceCapsuleFileSha256": "afe61564814ceb1be31b91dc9ca74673bd192d0fd327d649a854f9b8b5205094",
+      "sourceChecksFile": "../hanja-actual-engine-capture-u8b92-hkcs-2026-10-26/capture.json",
+      "sourceChecksFileSha256": "ad2392e22369ead8fe52681ce75a527c5ad661ee8417bdc46691b8ffafcd3954"
+    },
+    "pens": 24,
+    "masks": 34,
+    "P": 63,
+    "metadataRawOneBased": 5,
+    "sourceGroupsPreserved": true
+  },
+  "files": [
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/verify-caps-initial-conditions.py",
+      "SHA256": "c0d0a32ad406663ebf62ba54dfc599811b6776a57cb8ee03fdb4339100704e36"
+    },
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/verify-caps-full-Q7.py",
+      "SHA256": "cd717ee41dd9df53ce2e3bd283e2d56493e57d7fad4d29eb98714b4f1430d8af"
+    },
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/caps-conditions-proof.json",
+      "SHA256": "20c5642b596e8a393a5785acea4580fb6f5fe4b808a54fd3a4b7e552452ac6fe"
+    },
+    {
+      "path": "lib/hanja-stroke-start-caps-u8b92-hkcs.ts",
+      "SHA256": "2f2c490ef229f4d66415994b0cd17a0f2ab8becb55449a689edbe7c542145655"
+    },
+    {
+      "path": "lib/hanja-stroke-start-caps-u8b92-hkcs.test.ts",
+      "SHA256": "efa7e2de96752e699ce848aea11a92c137a47c8b5646b006695651819f398ab0"
+    }
+  ],
+  "method": {
+    "template": "docs/hanja-original-qb-policy-proof-2026-10-23/caps-u8627.ts",
+    "templateSHA256": "d55abcfd838b9ac02cee2a2b5e8ae6e4b3dd184efb9fd523c153fdf30742fb25",
+    "initialAndCoverage": "docs/hanja-source-original-u705d-hkcs-m-2026-10-26/verify-independent-conditions.py",
+    "initialAndCoverageSHA256": "4f18233d2bba8eb440506fc2a4134b052fa304bfaa27ef9826b39ec9ae3b1221",
+    "acceptanceAlgorithmChanged": false,
+    "coverageTargetFailuresCapturedWithoutPromotion": true,
+    "coverageLeavesFullyRetained": true
+  },
+  "result": {
+    "initialMQTargets": 10,
+    "initialPass": 8,
+    "initialFail": [
+      [
+        16,
+        2
+      ],
+      [
+        23,
+        2
+      ]
+    ],
+    "fullQCoveragePass": 8,
+    "coverageLeaves": 236,
+    "coverageUnresolved": 0,
+    "preparedPolicyCount": 7,
+    "preparedTargets": [
+      [
+        8,
+        1
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        15,
+        1
+      ],
+      [
+        17,
+        1
+      ],
+      [
+        18,
+        2
+      ],
+      [
+        22,
+        1
+      ],
+      [
+        24,
+        1
+      ]
+    ],
+    "heldInitialPass": [
+      [
+        14,
+        2
+      ]
+    ],
+    "heldReason": "Original Q seam and prior V contact require a separate source-bound display policy; free-standing caps are not assumed compatible.",
+    "compoundSeams": {
+      "source200": {
+        "pen11": [
+          1,
+          0
+        ],
+        "pen14": [
+          -18,
+          5
+        ]
+      },
+      "normalized100": {
+        "pen11": [
+          0.5,
+          0
+        ],
+        "pen14": [
+          -9,
+          2.5
+        ]
+      }
+    },
+    "flag5TailTargets": [
+      [
+        16,
+        3
+      ],
+      [
+        23,
+        3
+      ]
+    ],
+    "flag5TailApproved": false
+  },
+  "checks": {
+    "tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "limitedTypeRoots": [
+      "lib/hanja-stroke-start-caps-u8b92-hkcs.ts",
+      "lib/hanja-stroke-start-caps-u8b92-hkcs.test.ts"
+    ],
+    "limitedTypeDiagnostics": 0,
+    "savedAlgorithmSyntaxPending": false,
+    "oldSourceProjectionReplay": 0,
+    "oldOriginalMediaReplay": 0,
+    "oldPaintEquivalenceReplay": 0,
+    "oldMathReplay": 0,
+    "newInitialAnalysis": 10,
+    "newFullQCoverageAnalysis": 8,
+    "savedAlgorithmSyntaxStatus": 0
+  },
+  "sourceCoordinatesChanged": false,
+  "sourceQChanged": false,
+  "sourceWidthChanged": false,
+  "sourceWeightsChanged": false,
+  "sourceInkChanged": false,
+  "sourceEngine": 0,
+  "sourceProjection": 0,
+  "sharedRendererChanges": 0,
+  "sharedHelperChanges": 0,
+  "registryChanges": 0,
+  "SSR": 0,
+  "server": 0,
+  "build": 0,
+  "wholeProjectTypecheck": 0,
+  "allTimeGrowingIntersectionApproved": false,
+  "compoundContactApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registered": false
+}
