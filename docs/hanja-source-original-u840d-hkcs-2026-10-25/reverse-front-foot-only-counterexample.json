@@ -1,0 +1,72 @@
+{
+  "schema": "hanja-foot-only-independent-fragment-counterexample/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "logical": 7,
+  "coordinateSpace": "normalized100",
+  "scope": "foot-only raw7 original3P same-Q reverse front at ROOT observed p0.425 only",
+  "actualUA": {
+    "p": "17/40",
+    "L": "11.760997772216797",
+    "d": "4998424053192139/1000000000000000",
+    "rho": "4998424053192139/1000000000000000",
+    "point": [
+      "13027956008911133/1000000000000000",
+      "7386205291748047/100000000000000"
+    ],
+    "offset": "-23/40"
+  },
+  "sameQ": "M19.245 76.34 Q17.465 74.44 8.120000000000001 72.92",
+  "width": 14,
+  "reverseParameterUpper": "7/20",
+  "reverseXAtParameterUpper": "5493915000000000169/400000000000000000",
+  "derivativeXLower": "133944999999999987/20000000000000000",
+  "derivativeYUpper": "1653/1000",
+  "normalXAbsoluteUpper": "1/4",
+  "buttStripXUpper": "14777956008911133/1000000000000000",
+  "startCapXUpper": "655921202659607/50000000000000",
+  "endCapXUpper": "2253297507762909/125000000000000",
+  "wholeMaskXUpper": "2253297507762909/125000000000000",
+  "sourceP3Tip": [
+    "179/10",
+    "291/4"
+  ],
+  "sourceP3TipStrictlyInsideEndCapSquaredMargin": "2692168286942560069632157683/250000000000000000000000000000",
+  "P3OtherOriginalPContactMinX": "99853/5420",
+  "strictMaskToContactXGap": "13437625396251661/33875000000000000",
+  "conclusion": {
+    "positiveAreaP3FragmentVisible": true,
+    "P3CannotContactP1OrP2WithinMask": true,
+    "mainP1StillHasPositiveInkAtReverseStart": true,
+    "actualIndependentInkComponent": true,
+    "footOnlyPolicyApproved": false,
+    "notPixelMeasurement": true
+  },
+  "argument": [
+    "Original P3 tip is a triangle vertex strictly inside the observed endpoint disk, so a positive-area P3 wedge is visible.",
+    "Every original P3 contact with P1/P2 has x at least99853/5420. Existing exact polygon edge/vertex intersection bound is reused.",
+    "Entire mask is left of that contact: smooth Q butt strip normal.x<1/4, endpoint disk and original-start disk bounded explicitly. Therefore no remaining masked ink can connect this P3 wedge to P1/P2.",
+    "Original Q end is strict interior of source P1 and within the start disk, so a separate main positive-area ink component also exists."
+  ],
+  "sourcePChanged": false,
+  "sourceQChanged": false,
+  "revealWidthChanged": false,
+  "engine": 0,
+  "projection": 0,
+  "runtimeApplied": false,
+  "inputs": {
+    "sourceFull5": {
+      "path": "docs/hanja-actual-engine-capture-u840d-hkcs-2026-10-25/engine-whole-hkcs_m840d.json",
+      "SHA256": "f5c8184820c51cbfe0506959745703496eec6d7d271b29735d22bee2cec8a205"
+    },
+    "native": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-foot-only-native-review.json",
+      "SHA256": "b4289ed3e71c2cfcb9ccc43b639d09659257c9157cbb68ab33117a52d6f1e054"
+    },
+    "experiment": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-foot-only-experiment.html",
+      "SHA256": "b5f5e2e59b3d5d963f31d4cab0a16aefe69e5871088a89b9de7089b74e1e3e6b"
+    }
+  },
+  "contactBoundMethod": "Enumerate exact edge/edge intersections and vertices in the other closed nonzero fill; the leftmost original P3 contact occurs at P1/P3 x99853/5420. P2/P3 can contact only from x421/20. Boundary candidates make a conservative contact lower bound even for original P1 self-crossing."
+}

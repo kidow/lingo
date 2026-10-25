@@ -1,0 +1,101 @@
+{
+  "schema": "hanja-finite-native-experiment-review/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "logical": 7,
+  "observer": "ROOT browser panel",
+  "result": "PASS original-P3 attachment correction only",
+  "actualInput": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/reverse-front-p3-attached-experiment.html",
+    "SHA256": "f9c5a1699f40028afdc738841fef1b9ee8d18991d79e15760f288e97a4147434",
+    "proof": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/p3-attached-frontier-feasibility.json",
+      "SHA256": "a8b8a2e02573948e32cb39f914cf0c4c1f5bd2a96d9f3e4c48a6d3d1ae71dac2"
+    },
+    "referenceOriginalP": 9,
+    "targetOriginalP": 3,
+    "sourceQAndWidthUnchanged": true,
+    "coordinateSpace": "normalized100"
+  },
+  "freshFiniteStates": [
+    0.425,
+    0.5,
+    0.749999,
+    0.75,
+    0.750001,
+    0.8,
+    0.9,
+    1
+  ],
+  "observations": {
+    "beforeOrAtGate": {
+      "states": [
+        0.425,
+        0.5,
+        0.749999,
+        0.75
+      ],
+      "P3Status": "hidden",
+      "s": 0
+    },
+    "afterGate": [
+      {
+        "p": 0.750001,
+        "s": 0.000004,
+        "clipArea": 4.8316906031686806e-11,
+        "idealPositiveP1ContactArea": 1.9000000001092714e-12,
+        "description": "very small start at actual contact region"
+      },
+      {
+        "p": 0.8,
+        "s": 0.2
+      },
+      {
+        "p": 0.9,
+        "s": 0.6
+      },
+      {
+        "p": 1,
+        "s": 1,
+        "clipArea": 3.0149999999999864,
+        "idealPositiveP1ContactArea": 0.11875,
+        "pointsExactlyOriginalP3": true
+      }
+    ],
+    "visuallyIndependentFragmentsObserved": false,
+    "visuallyLargeSuddenBoundaryExposureObserved": false,
+    "originalQAndP9ReferenceUnchanged": true,
+    "errors": []
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 1280,
+    "referenceAndTarget520SquaresFullyVisible": true
+  },
+  "scope": {
+    "P3AttachmentCorrectionFiniteApproved": true,
+    "P3AttachedFrontierMathUnderRequiredGuardsApproved": true,
+    "P1P2AllTimeSweepProved": false,
+    "entireFootPolicyApproved": false,
+    "fullLogical7Approved": false,
+    "threePhaseApproved": false,
+    "actualAppApproved": false,
+    "runtimeApplied": false
+  },
+  "cleanup": {
+    "PID": 33513,
+    "session": 54386,
+    "exitCode": 130,
+    "tab": 39,
+    "tabClosed": true,
+    "viewportReset": true,
+    "ownServerRemaining": 0
+  },
+  "requests": {
+    "localStaticGETs": 1,
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "originalMedia": 0
+  },
+  "next": "Reuse this P3-only fix and existing source geometry/math. Analyze only minimal lower-body and rising-phase coverage, transition contact and initial exposure conditions before any complete logical7 policy or registration."
+}
