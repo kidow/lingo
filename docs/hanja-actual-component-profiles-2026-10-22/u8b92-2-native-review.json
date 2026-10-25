@@ -1,0 +1,309 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "status": "HOLD cardinal three early horizontal needles; other reviewed scopes pass",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "profile": "u8b92-2.json",
+  "profileSHA256": "7a618851bd237a0c1da55e35f03426e2a921bd9e4b62fe00b044e7f9a62efd5d",
+  "component": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "SHA256": "88b24299dc3d80298de8a06e786723bd5bcdb1cc1b7e35e763d47bcff353c1f5"
+  },
+  "helper": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "4cb9f34dbaac0870054bcd7b2ccd9dfdfa3294e40e6dfb415dba5cb0054cb9c7"
+  },
+  "afterObservationPins": {
+    "count": 372,
+    "mismatches": 0
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 339,
+    "ESM": 339,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "finite": {
+    "uniqueStates": 127,
+    "uniqueButtons": 58,
+    "targetIDs": [
+      "u8b92-hkcs-8-1",
+      "u8b92-hkcs-9-2",
+      "u8b92-hkcs-15-1",
+      "u8b92-hkcs-17-1",
+      "u8b92-hkcs-18-2",
+      "u8b92-hkcs-22-1",
+      "u8b92-hkcs-24-1",
+      "u8b92-hkcs-short-curve-16-2",
+      "u8b92-hkcs-short-curve-23-2",
+      "u8b92-hkcs-cardinal-contact-6-2",
+      "u8b92-hkcs-cardinal-contact-11-2",
+      "u8b92-hkcs-cardinal-contact-20-2",
+      "u8b92-hkcs-flag5-tail-16-3",
+      "u8b92-hkcs-flag5-tail-23-3",
+      "u8b92-prior-point-window-14-2"
+    ],
+    "eachTarget": {
+      "early": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "midNear": [
+        0.5,
+        0.99999999
+      ],
+      "completeResidual": 1
+    },
+    "pointSupplement": 0.001,
+    "duplicatePoint01CountedAgain": false,
+    "maskBoundaries": [
+      [
+        6,
+        2
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        16,
+        2
+      ],
+      [
+        16,
+        3
+      ],
+      [
+        18,
+        2
+      ],
+      [
+        20,
+        2
+      ],
+      [
+        23,
+        2
+      ],
+      [
+        23,
+        3
+      ]
+    ],
+    "maskBoundaryStates": 30,
+    "flag5InternalBoundaryStates": 6,
+    "allDOMChecksClear": true,
+    "allErrorsEmpty": true,
+    "unaffectedScopePotentialReuseStates": 100,
+    "reuseRequiresUnchangedBranchesAndInputs": true
+  },
+  "hold": {
+    "targets": [
+      "u8b92-hkcs-cardinal-contact-6-2",
+      "u8b92-hkcs-cardinal-contact-11-2",
+      "u8b92-hkcs-cardinal-contact-20-2"
+    ],
+    "observations": "At early grid samples and local .01 main520, approximately27px thin horizontal ink extends right of completed H before the source head grows. Existing y-only band has finite initial width. Source P is unchanged, DOM checks pass; source/contact proof does not establish acceptable temporal exposure.",
+    "expandedMain01": [
+      {
+        "pen": 6,
+        "global": 0.4087515791891582
+      },
+      {
+        "pen": 11,
+        "global": 0.7740217391304347
+      },
+      {
+        "pen": 20,
+        "global": 0.7525
+      }
+    ],
+    "doNotTreatAsApproved": true
+  },
+  "point14": {
+    "finiteUnique": 7,
+    "initial001Main520": "prior vertical below-edge needle absent",
+    "natural": "progress and near-complete observed; old1D HOLD not promoted",
+    "status": "PASS observed v2 point window scope"
+  },
+  "natural": {
+    "uniqueProgressObservations": 14,
+    "uniqueEndObservations": 10,
+    "totalUnique": 24,
+    "starts": [
+      {
+        "id": "u8b92-prior-point-window-14-2",
+        "p": 0.12167607099780613,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-8-1",
+        "p": 0.07706249999404079,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-9-2",
+        "p": 0.21076545262292015,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-15-1",
+        "p": 0.08555000000000221,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-17-1",
+        "p": 0.09532500001787972,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-18-2",
+        "p": 0.20630618399511944,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-22-1",
+        "p": 0.08659999999403926,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-24-1",
+        "p": 0.07708750001787709,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-short-curve-16-2",
+        "p": 0.39479991042498774,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-short-curve-23-2",
+        "p": 0.3799431885774706,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-flag5-tail-16-3",
+        "p": 0.16930010091563297,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-flag5-tail-16-3 UP-tail",
+        "p": 0.9121810919362404,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-flag5-tail-23-3",
+        "p": 0.16494589870982812,
+        "errors": [],
+        "bad": []
+      },
+      {
+        "id": "u8b92-hkcs-flag5-tail-23-3 UP-tail",
+        "p": 0.7681400107696824,
+        "errors": [],
+        "bad": []
+      }
+    ],
+    "ends": [
+      {
+        "pen": 14,
+        "p": 0.999999999999999,
+        "phase": "partial"
+      },
+      {
+        "pen": 8,
+        "p": 0.9999999999999992
+      },
+      {
+        "pen": 9,
+        "p": 0.9999999999999984
+      },
+      {
+        "pen": 15,
+        "p": 0.9999999999999992
+      },
+      {
+        "pen": 17,
+        "p": 1
+      },
+      {
+        "pen": 18,
+        "p": 1
+      },
+      {
+        "pen": 22,
+        "p": 1
+      },
+      {
+        "pen": 24,
+        "p": 1
+      },
+      {
+        "pen": 16,
+        "p": 1,
+        "phase": "full"
+      },
+      {
+        "pen": 23,
+        "p": 1,
+        "phase": "full"
+      }
+    ],
+    "allEndMode": "natural-ended",
+    "allErrorsEmpty": true,
+    "allDOMChecksClear": true,
+    "duplicateFlagBodyAndUpEndsCountedAgain": false,
+    "cardinalProgressAndEndsUnreviewed": 6,
+    "planTotal30NotComplete": true
+  },
+  "whole": {
+    "screens": 1,
+    "logicalPens": 24,
+    "mode": "done",
+    "targets": 15,
+    "allTargetPExactly1": true,
+    "ordinarySegments": 19,
+    "bad": [],
+    "errors": [],
+    "nativeShape": "PASS full original shape"
+  },
+  "limits": [
+    "No raster-zero or antialiasing cause claim.",
+    "Near-one natural p is preserved and not changed to exact1; exact done whole separately checked.",
+    "New cardinal policy needs fresh affected scope and source/version binding; whole and final runtime approval remain separate."
+  ],
+  "server": {
+    "ownedPID": 30215,
+    "port": 59412,
+    "stopped": true,
+    "pidAbsent": true,
+    "portClosed": true,
+    "tab102Closed": true
+  },
+  "actualAppUI": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
