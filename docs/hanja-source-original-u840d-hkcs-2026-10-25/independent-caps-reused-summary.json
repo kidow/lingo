@@ -1,0 +1,88 @@
+{
+  "schema": "hanja-independent-curve-conditions-reused-summary/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "sourceRoot": "hkcs_m840d",
+  "fixture": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/fixtures.json",
+    "SHA256": "86cafe4a029685e7c842156e7bc1016174c463d945c893aa2da0f50674e1a1c7",
+    "key": "hkcs_m840d",
+    "geometrySHA256": "b2de4a5e668e6ca9f88a63429c7fc09eb37f55ea9175b0ed6f3744e9722e86ae"
+  },
+  "executedScript": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-independent-curve-conditions.py",
+    "SHA256": "9c17dc5a8b86b3f5a708dcc15497a2508e6374cdb368317e55e34564c6d1410d",
+    "executionBy": "A",
+    "reexecutedByThisAgent": false
+  },
+  "reportedCases": [
+    {
+      "pen": 5,
+      "mask": 1,
+      "fullQ7Reported": true,
+      "coverLeavesReported": 23,
+      "unresolvedReported": 0,
+      "T": "1/2",
+      "K": "1/10",
+      "initialSufficientConditionsReported": true,
+      "guide": "M13.46 29.22 Q21.47 31.880000000000003 25.03 38.72",
+      "maskSHA256": "2a802afc3d52e172125bffc29eec0e3f5c8a566a88bf9f582abc6a3e24c9959b"
+    },
+    {
+      "pen": 6,
+      "mask": 1,
+      "fullQ7Reported": true,
+      "coverLeavesReported": 25,
+      "unresolvedReported": 0,
+      "T": "1/2",
+      "K": "1/10",
+      "initialSufficientConditionsReported": true,
+      "guide": "M7.23 45.18 Q15.24 47.84 18.8 54.68",
+      "maskSHA256": "77675c508225ead335f6e384f9912afba8c9a7b45ab5ef5f2debb09fc0d7c318"
+    },
+    {
+      "pen": 9,
+      "mask": 1,
+      "fullQ7Reported": true,
+      "coverLeavesReported": 32,
+      "unresolvedReported": 0,
+      "T": "1/2",
+      "K": "1/20",
+      "initialSufficientConditionsReported": true,
+      "guide": "M46 41 Q42 52.4 33 63.04",
+      "maskSHA256": "00c5f746e5d78c949b0f139da59f7c95e8466ec72cc560dc4c7d2ba8f709d542"
+    },
+    {
+      "pen": 10,
+      "mask": 1,
+      "fullQ7Reported": true,
+      "coverLeavesReported": 37,
+      "unresolvedReported": 0,
+      "T": "1/2",
+      "K": "1/20",
+      "initialSufficientConditionsReported": true,
+      "guide": "M69 41 Q79 48.22 82.5 59.24",
+      "maskSHA256": "05d9b3d2fff46d0267c57a8194090f21f57b7fcc8f4fb095428fb94c59f9f852"
+    }
+  ],
+  "evidenceRetention": {
+    "kind": "successful-execution-summary-only",
+    "fullLeafDataRetained": false,
+    "fullLeafDataReverified": false,
+    "contextIndexRecoveryAttempt": "현재 에이전트 인덱스에서 원 encoded 항목을 찾지 못함",
+    "sourceOfSummary": "A가 원 실행 성공 결과와 정확 fixture/script 핀을 전달했고 root가 성공 재사용을 지시함"
+  },
+  "limits": [
+    "실제 보존된 것은 실행 성공 요약과 원 실행 코드이다. 전체 유리수 leaf 인증서를 로컬에서 보존·재검증했다고 주장하지 않는다.",
+    "원P·Q·폭·무게는 정확 fixture 문맥으로 고정한다. source 캡의 실제 P 교집합·시간 진행·브라우저·런타임 승인은 별도이다.",
+    "기존7획 정책과 원문·정적·수학 성공을 재연하지 않는다."
+  ],
+  "actions": {
+    "mathReplayByThisAgent": 0,
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "newNativeFrames": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
