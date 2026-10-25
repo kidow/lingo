@@ -1,0 +1,101 @@
+{
+  "schema": "hanja-exact-source-head-review/v1",
+  "date": "2026-10-25",
+  "glyph": "炚",
+  "source": "u709a-var-001@8",
+  "status": "HOLD-final-P-head-below-left-dot",
+  "inputs": [
+    {
+      "path": "docs/hanja-source-alternative-u709a-var-001-2026-10-25/sources.json",
+      "SHA256": "d117faf7292ab9b1e88e38d48c8c3acdbea915d731b09098e42839f4628f5f18"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u709a-var-001-2026-10-25/engine-whole-u709a-var-001.json",
+      "SHA256": "191bdb73fae0caae2b3dd5ad460b3edb7fb82cea2c0707fe1b11fee044c436a0"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u709a-var-001-2026-10-25/capture.json",
+      "SHA256": "c87b2ebe2e9c4e2f9c9923768daf3ed47cdaab4530c43ca95cbecd22f5a606a6"
+    },
+    {
+      "path": "docs/hanja-official-media-compare-u709a-2026-10-25/native-stroke8-review.json",
+      "SHA256": "501fd058a59c569925f8583ccb723cd654bb0016d8bc225344f33afe09f29f33"
+    }
+  ],
+  "originalRequirement": "ROOT 원문8의 .1/.5/.75에서 첫 선단은 왼 점 윗머리보다 위에서 시작한다. 이전 직접 관찰을 재사용하며 원문을 새로 조회하지 않았다.",
+  "publicPHeads": {
+    "coordinates": "original200",
+    "leftDot": {
+      "raw": 6,
+      "P": 2,
+      "minY": "259/5",
+      "headPoints": [
+        {
+          "x": 98.3,
+          "y": 51.8,
+          "off": 0
+        }
+      ]
+    },
+    "last": {
+      "raw": 9,
+      "P": 2,
+      "minY": "599/10",
+      "headPoints": [
+        {
+          "x": 133.1,
+          "y": 59.9,
+          "off": 0
+        }
+      ]
+    },
+    "lastMinusDotMinY": "81/10",
+    "lastIsBelow": true
+  },
+  "jReuse": {
+    "sourcePath": "docs/hanja-source-alternative-u709a-j-2026-10-25/sources.json",
+    "sourceSHA256": "af2b3d179f06917c4dac9e04bd04d3c1137d4b927ce5ce29a935550b6e705419",
+    "selectedFireRows": [
+      1,
+      4
+    ],
+    "selectedDeclaredRowsExactlySame": true,
+    "fireTransformExactlySame": true,
+    "differentShortRowOnly": 2,
+    "selectedCurveType": 2,
+    "startFlag": 7,
+    "terminalFlags": [
+      8,
+      0
+    ],
+    "globalAdjustmentExclusion": {
+      "adjustHane": "tail8/0 is not4",
+      "adjustUroko": "type2 is not1",
+      "adjustUroko2": "type2 is not1",
+      "adjustTate": "type2 is not1/3/7",
+      "adjustMage": "type2 is not3",
+      "adjustKirikuchi": "start7 is not32",
+      "adjustKakato": "type2 is not1"
+    },
+    "scope": "동일한 두 곡선과 폭 조건의 P 머리 판단만 재사용한다. 전체 자형·다른 짧은 획·연결·순서·진행의 동일성은 주장하지 않는다.",
+    "newEngine": 0,
+    "newPForJ": 0,
+    "newWholeForJ": 0,
+    "zeroSXAndSYSkipStretch": true,
+    "optionalStretchFieldsHaveNoEffect": true
+  },
+  "actions": {
+    "var001EngineRuns": 1,
+    "var001MakeGlyph": 1,
+    "newJEngine": 0,
+    "newWholeViews": 0,
+    "newOriginalFetches": 0,
+    "projection": 0,
+    "privatePUsed": false
+  },
+  "approval": {
+    "whole": false,
+    "runtime": false,
+    "sourceGeometryCorrection": false
+  }
+}

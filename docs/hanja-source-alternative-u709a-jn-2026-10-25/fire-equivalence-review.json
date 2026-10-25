@@ -1,0 +1,104 @@
+{
+  "schema": "hanja-exact-source-subset-equivalence/v1",
+  "date": "2026-10-25",
+  "glyph": "炚",
+  "root": "u709a-jn",
+  "status": "HOLD-unchanged-fire-start-feature",
+  "scope": "火 중 왼 점·마지막 곡선의 입력·폭 조건에 한정한다. 새 日·전체 자형의 동일성이나 새 whole 관찰을 주장하지 않는다.",
+  "inputs": [
+    {
+      "path": "docs/hanja-source-alternative-u709a-jn-2026-10-25/sources.json",
+      "SHA256": "135698dbf96537183af4fa775348cb8120e1ceb251219637145adad279093281"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch85-2026-09-27/sources.json",
+      "SHA256": "93cf23d8cffe0dbbf357d4ec4cc9b13cf773461628438cfe07a375ed1afcb2d7"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch85-2026-09-27/engine-proof.json",
+      "SHA256": "5a8272acd687313fc92bedc1726be7fb8872514bacf03d391fb74e02634cfd07"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch85-2026-09-27/draw-trace.json",
+      "SHA256": "1fa36ed27f80c8562ce7fa3633f0e4513cb299b5b2193f8d004f0a91bdac2ca6"
+    },
+    {
+      "path": "docs/hanja-official-media-compare-u709a-2026-10-25/native-stroke8-review.json",
+      "SHA256": "501fd058a59c569925f8583ccb723cd654bb0016d8bc225344f33afe09f29f33"
+    }
+  ],
+  "codeFacts": {
+    "fireDataBytesIdentical": true,
+    "fireTransformBytesIdentical": true,
+    "transform": "99:0:0:-25:0:200:200:u706b-02",
+    "leftDotQ": [
+      95.375,
+      51,
+      102.125,
+      87,
+      85.25,
+      103,
+      7,
+      8
+    ],
+    "lastQ": [
+      133.625,
+      59,
+      132.5,
+      147,
+      180.875,
+      181,
+      7,
+      0
+    ],
+    "bothMatchOldExecutedTrace": true,
+    "pinnedEngineRevision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "pinnedEngineHashes": {
+      "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+      "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+      "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+      "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+      "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+      "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+      "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+    },
+    "defaultParameters": {
+      "kMage": 10,
+      "kWidth": 5,
+      "kMinWidthT": 6,
+      "kAdjustMageStep": 5
+    },
+    "adjustmentExclusion": {
+      "adjustHane": "tail8/0 is not4",
+      "adjustUroko": "type2 is not1",
+      "adjustUroko2": "type2 is not1",
+      "adjustTate": "type2 is not1/3/7",
+      "adjustMage": "type2 is not3",
+      "adjustKirikuchi": "start7 is not32",
+      "adjustKakato": "type2 is not1"
+    }
+  },
+  "reusedPHeads": {
+    "coordinates": "original200",
+    "source": "Old exact matching fire draw trace only",
+    "leftDotMinY": "259/5",
+    "lastMinY": "599/10",
+    "lastMinusLeft": "81/10",
+    "newPGenerated": false
+  },
+  "originalRequirement": "ROOT 원문8 시간3에서 마지막 첫 선단이 왼 점 머리보다 위에서 시작하는 것을 직접 확인했다.",
+  "decision": "새 日만 바뀌고 이미 보류한 火 시작 조건이 그대로이므로 이 문제를 해소한 새 근거로 쓰지 않는다. 동일 실패의 엔진·whole 재연을 생략한다.",
+  "actions": {
+    "newEngine": 0,
+    "newWhole": 0,
+    "newSourceProjection": 0,
+    "newAPIRequests": 0,
+    "privatePUsed": false
+  },
+  "approval": {
+    "runtime": false,
+    "whole": false,
+    "newGeometry": false
+  }
+}
