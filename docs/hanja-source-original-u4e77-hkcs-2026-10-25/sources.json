@@ -1,0 +1,81 @@
+{
+  "schema": "hanja-provider-source-capsule/v1",
+  "root": "hkcs_m4e77",
+  "glyph": "乷",
+  "records": {
+    "hkcs_m4e77": {
+      "name": "hkcs_m4e77",
+      "version": "3",
+      "data": "99:0:0:0:8:200:120:hkcs_m6c99$99:0:0:0:104:200:190:hkcs_m4e59"
+    },
+    "hkcs_m5c11-p02-s00": {
+      "name": "hkcs_m5c11-p02-s00",
+      "version": "1",
+      "data": "1:0:4:134:15:134:125$2:0:7:110:51:104:82:85:108$2:7:8:153:50:174:67:184:91$2:0:7:171:101:145:164:75:187"
+    },
+    "hkcs_m4e59": {
+      "name": "hkcs_m4e59",
+      "version": "1",
+      "data": "1:0:2:36:40:136:40$4:22:5:136:40:10:169:170:170:174:170"
+    },
+    "hkcs_m6c99": {
+      "data": "99:0:0:0:0:200:200:hkcs_m6c35-p01-s00$99:0:0:-30:0:200:200:hkcs_m5c11-p02-s00",
+      "name": "hkcs_m6c99",
+      "related": "U+6C99",
+      "version": "4"
+    },
+    "hkcs_m6c35-p01-s00": {
+      "related": "U+6C35",
+      "data": "2:7:8:28:19:46:26:54:44$2:7:8:14:61:32:68:40:86$2:0:7:41:143:37:138:16:134$2:7:8:35:178:43:151:36:136$2:7:8:50:104:35:146:42:184$2:12:7:40:136:49:118:72:54",
+      "version": "5",
+      "name": "hkcs_m6c35-p01-s00"
+    }
+  },
+  "missing": [],
+  "providerVersions": {
+    "hkcs_m4e77": 3,
+    "hkcs_m5c11-p02-s00": 1,
+    "hkcs_m4e59": 1,
+    "hkcs_m6c99": 4,
+    "hkcs_m6c35-p01-s00": 5
+  },
+  "sourceProvenance": {
+    "reusedExactSummaries": [
+      "hkcs_m4e77@3",
+      "hkcs_m5c11-p02-s00@1",
+      "hkcs_m4e59@1"
+    ],
+    "reusedFields": [
+      "name",
+      "data",
+      "version"
+    ],
+    "reusedSummaryFullAPIByteHashClaimed": false,
+    "newVersionPinnedAPI": [
+      {
+        "requestedName": "hkcs_m6c99@4",
+        "url": "https://glyphwiki.org/json?name=hkcs_m6c99%404",
+        "APIResponseSHA256": "521a00680725583b7d80f7a732b3ba82cbba96b08ed104d85146d0980372b056"
+      },
+      {
+        "requestedName": "hkcs_m6c35-p01-s00@5",
+        "url": "https://glyphwiki.org/json?name=hkcs_m6c35-p01-s00%405",
+        "APIResponseSHA256": "2234dc4df7663a5a78b0038eacb55e7c0b4d25f2b5a7d727858c2a9090e5e515"
+      }
+    ],
+    "dependencyBinding": "Each unversioned 99 reference resolves only to this fixed 5-record closure; current upstream versions are not substituted."
+  },
+  "review": {
+    "catalogStrokes": 8,
+    "previousBaseHold": "docs/hanja-goal-glyphwiki-batch107-2026-09-27/findings.json",
+    "oldThirdStrokeDiscontinuityUnresolvedByNameOnly": true,
+    "oldFourthHookMismatchUnresolvedByNameOnly": true,
+    "mappingApproved": false,
+    "wholeShapeApproved": false,
+    "sourceClockApproved": false,
+    "engineRuns": 0,
+    "sourceProjection": 0,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  }
+}
