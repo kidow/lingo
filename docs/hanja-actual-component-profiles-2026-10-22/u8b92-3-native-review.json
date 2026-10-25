@@ -1,0 +1,155 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "status": "PASS reviewed source-bound actual component scopes",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "profile": "docs/hanja-actual-component-profiles-2026-10-22/u8b92-3.json",
+  "profileSHA256": "9347bc87e92797ecb4fa1ec5cf4ab322d88d447702aa3d17edc0c879cb195434",
+  "component": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "SHA256": "02fe2efca741f4d56136e776a69f6a269608a89e1f12a038418bf8543e4c5ecd"
+  },
+  "helper": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "bfb127582b3084ebf483252cc5bc1301d0f846d40d6fa23ce81f8d85c4d562a3"
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 340,
+    "ESM": 340,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "afterObservationPins": {
+    "count": 376,
+    "mismatches": 0
+  },
+  "freshFinite": {
+    "states": 27,
+    "uniqueButtons": 12,
+    "pens": [
+      6,
+      11,
+      20
+    ],
+    "targetPrefix": "u8b92-hkcs-cardinal-point-contact-",
+    "eachTarget": {
+      "mask": 2,
+      "early": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "midNear": [
+        0.5,
+        0.99999999
+      ],
+      "completeResidual": 1,
+      "boundary": 3
+    },
+    "allDOMChecksClear": true,
+    "allErrorsEmpty": true,
+    "native": "PASS initial, progression, complete residual and mask boundaries",
+    "expanded01": {
+      "pens": [
+        6,
+        11,
+        20
+      ],
+      "size520": true,
+      "needleAbsent": true,
+      "extraUniqueStateCount": 0
+    }
+  },
+  "freshNatural": {
+    "states": 6,
+    "records": [
+      {
+        "pen": 6,
+        "stage": "start",
+        "p": 0.1432887548176724,
+        "phase": "contact-prefix"
+      },
+      {
+        "pen": 6,
+        "stage": "end",
+        "p": 1,
+        "phase": "full"
+      },
+      {
+        "pen": 11,
+        "stage": "start",
+        "p": 0.38010238095238386,
+        "phase": "contact-prefix"
+      },
+      {
+        "pen": 11,
+        "stage": "end",
+        "p": 0.9999999999999972,
+        "phase": "contact-prefix"
+      },
+      {
+        "pen": 20,
+        "stage": "start",
+        "p": 0.32615000007152456,
+        "phase": "contact-prefix"
+      },
+      {
+        "pen": 20,
+        "stage": "end",
+        "p": 1,
+        "phase": "full"
+      }
+    ],
+    "allStartsMode": "natural",
+    "allEndsMode": "natural-ended",
+    "allDOMChecksClear": true,
+    "allErrorsEmpty": true,
+    "native": "PASS progression and complete visible shape; near-one remains near-one"
+  },
+  "reuse": {
+    "path": "docs/hanja-actual-component-profiles-2026-10-22/u8b92-2-native-review.json",
+    "SHA256": "a5adcc1336e0ad6da92317592c32cb5594dcfc211ad2c7dc1ef1afadab8c0509",
+    "finiteStates": 100,
+    "naturalStates": 24,
+    "basis": "Unchanged12 target JSON, source inputs and R6/H5 relevant functions independently compared byte-for-byte. Changed cardinal1D scopes excluded; old HOLD is not promoted.",
+    "conditionalOnProfileReuseProof": true
+  },
+  "totals": {
+    "finite": 127,
+    "natural": 30,
+    "doneWholeScreens": 1
+  },
+  "whole": {
+    "mode": "done",
+    "logicalPens": 24,
+    "targetCount": 15,
+    "allTargetPExactly1": true,
+    "ordinarySegments": 19,
+    "bad": [],
+    "errors": [],
+    "native": "PASS complete original whole",
+    "screens": 1,
+    "size520": true
+  },
+  "limits": [
+    "Finite sampled native observation is not an all-pixels/all-times guarantee.",
+    "Authored source clocks are not publisher original microclock identity.",
+    "Source P/Q/width/weight unchanged; original14/three cardinal1D native HOLD evidence preserved.",
+    "Actual product UI is separate from isolated actual component review."
+  ],
+  "server": {
+    "ownedPID": 41474,
+    "port": 59412,
+    "stopped": true,
+    "pidAbsent": true,
+    "portClosed": true,
+    "tab105Closed": true
+  },
+  "privateMediaSaved": false,
+  "actualComponentBrowserVerified": true,
+  "actualAppUI": false,
+  "nativeApproval": true,
+  "runtimeApplied": false
+}
