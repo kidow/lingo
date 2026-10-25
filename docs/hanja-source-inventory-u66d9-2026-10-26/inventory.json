@@ -1,0 +1,175 @@
+{
+  "schema": "hanja-authored-whole-public-inventory/v1",
+  "date": "2026-10-26",
+  "glyph": "曙",
+  "primarySource": "https://glyphwiki.org/wiki/u66d9@20",
+  "priorK": {
+    "path": "docs/hanja-goal-glyphwiki-batch59-2026-09-22/findings.json",
+    "SHA256": "7690230a33718e0c60f84903f30b010111e20197961bd466cc6ee121cd806365"
+  },
+  "priorJScreening": {
+    "path": "docs/hanja-source-alternative-u66d9-j-2026-10-25/source-screening.json",
+    "SHA256": "96787714484e2db53ff1c3aeb211807b2d6c49737add6528d300111373714c08"
+  },
+  "releaseRequirements": [
+    "Middle horizontal attaches to the left 日 right vertical",
+    "Separate DR dot reaches the top of lower 日"
+  ],
+  "rootResponses": [
+    {
+      "requested": "dkw-14220@3",
+      "record": {
+        "data": "99:0:0:-1:0:168:201:u66f0-01$99:0:0:-5:0:205:200:ufa5a-02",
+        "name": "dkw-14220",
+        "version": "3",
+        "related": "U+66D9"
+      },
+      "status": 200
+    },
+    {
+      "requested": "zihai-084458@1",
+      "record": {
+        "data": "99:0:0:0:0:170:200:u65e5-01$99:0:0:63:3:195:162:u7f52-03$99:0:0:63:38:193:142:u723b-09$99:0:0:69:41:190:198:u65e5-04",
+        "related": "U+66D9",
+        "version": "1",
+        "name": "zihai-084458"
+      },
+      "status": 200
+    },
+    {
+      "requested": "hs_u66d9@1",
+      "record": {
+        "related": "U+66D9",
+        "data": "99:0:0:0:0:200:200:u66d9:0:0:0$0:-1:-1:-1",
+        "name": "hs_u66d9",
+        "version": "1"
+      },
+      "status": 200
+    },
+    {
+      "requested": "hs_u66d9-var-001@1",
+      "record": {
+        "data": "99:0:0:0:0:200:200:u66d9-ue0101:0:0:0$0:-1:-1:-1",
+        "version": "1",
+        "name": "hs_u66d9-var-001",
+        "related": "U+66D9"
+      },
+      "status": 200
+    },
+    {
+      "requested": "simch-kx_t050104@1",
+      "record": {
+        "data": "99:0:0:0:0:170:200:u65e5-01:0:0:0$99:0:0:-5:0:205:200:ufa5a-02:0:0:0",
+        "name": "simch-kx_t050104",
+        "version": "1",
+        "related": "U+66D9"
+      },
+      "status": 200
+    },
+    {
+      "requested": "toikawa_hkrm-02088741@2",
+      "record": {
+        "version": "2",
+        "data": "99:0:0:0:0:200:200:u65e5-01:0:0:0$99:0:0:72:0:200:200:zihai-122528:0:0:0",
+        "name": "toikawa_hkrm-02088741",
+        "related": "U+66D9"
+      },
+      "status": 200
+    },
+    {
+      "requested": "toikawa_hkrm-02088742@1",
+      "record": {
+        "related": "U+66D9",
+        "version": "1",
+        "data": "99:0:0:0:0:200:200:u65e5-01:0:0:0$99:0:0:69:0:200:200:u262e7-t:0:0:0",
+        "name": "toikawa_hkrm-02088742"
+      },
+      "status": 200
+    },
+    {
+      "requested": "xotarios_u66d9-var-001@1",
+      "record": {
+        "version": "1",
+        "data": "99:0:0:-1:0:168:201:u66f0-01:0:0:0$99:0:0:36:52:179:178:ufa5b-02:0:0:0$1:12:13:77:19:77:166$1:2:2:77:19:176:20$1:22:4:176:20:176:182$1:32:32:109:20:109:52$1:32:32:142:19:142:51$1:2:2:80:52:173:52",
+        "related": "U+66D9",
+        "name": "xotarios_u66d9-var-001"
+      },
+      "status": 200
+    }
+  ],
+  "extraAlias": {
+    "record": {
+      "version": 20,
+      "data": "99:0:0:0:0:200:200:u66d9-k",
+      "related": "U+3013",
+      "name": "u66d9-ue0101"
+    },
+    "sourceURL": "https://glyphwiki.org/api/glyph?name=u66d9-ue0101"
+  },
+  "namedReferenceFamilies": [
+    {
+      "root": "hs_u66d9@1",
+      "wrapper": "u66d9",
+      "publishedDefaultAlias": "u66d9-j@2",
+      "extraMetadata": "0:-1:-1:-1",
+      "newWholeApproval": false
+    },
+    {
+      "root": "hs_u66d9-var-001@1",
+      "wrapper": "u66d9-ue0101@20",
+      "resolvedNamedReference": "u66d9-k",
+      "extraMetadata": "0:-1:-1:-1",
+      "newWholeApproval": false
+    },
+    {
+      "root": "simch-kx_t050104@1",
+      "refsAndBoundsMatchHeldK": true,
+      "claimLimit": "same named references and placements only; no new native verdict"
+    },
+    {
+      "root": "dkw-14220@3",
+      "leftReference": "u66f0-01",
+      "rightReference": "ufa5a-02",
+      "unclosedBody": true
+    },
+    {
+      "root": "zihai-084458@1",
+      "bodyReference": "u723b-09",
+      "unclosedBody": true
+    },
+    {
+      "root": "toikawa_hkrm-02088741@2",
+      "bodyReference": "zihai-122528",
+      "unclosedBody": true
+    },
+    {
+      "root": "toikawa_hkrm-02088742@1",
+      "bodyReference": "u262e7-t",
+      "unclosedBody": true
+    },
+    {
+      "root": "xotarios_u66d9-var-001@1",
+      "leftReference": "u66f0-01",
+      "lowerReference": "ufa5b-02",
+      "ownBoxRows": true,
+      "unclosedBody": true
+    }
+  ],
+  "nextSelected": {
+    "root": "hkcs_m66d9@3",
+    "source": "docs/hanja-source-alternative-u66d9-hkcs-2026-10-26/sources.json",
+    "SHA256": "3da60ac810db90c95b579ab085de58c8e236434980f7dafa2aace60778bd505c",
+    "closure5": true,
+    "separateDotPresent": true,
+    "selectedBy": "ROOT for new whole-only capture",
+    "geometryAndAttachmentApproved": false
+  },
+  "actions": {
+    "publicSourceInventoryOnly": true,
+    "engine": 0,
+    "projection": 0,
+    "privateFetch": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
