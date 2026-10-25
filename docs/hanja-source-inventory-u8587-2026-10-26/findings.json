@@ -1,0 +1,120 @@
+{
+  "schema": "hanja-authored-whole-inventory-findings/v1",
+  "date": "2026-10-26",
+  "glyph": "薇",
+  "basis": "Exact public rows and references; no AI score, native verdict transfer, or foreign order assumption",
+  "sameContinuousHeadName": {
+    "name": "u8279-03",
+    "knownPinnedVersion": 11,
+    "rootReferences": [
+      "u8587-j@8",
+      "u8587-ue0101@10",
+      "u8587-ue0105@8",
+      "u8587-ue0106@7",
+      "u8587-var-003@2"
+    ],
+    "priority": "later",
+    "claimLimit": "Same published component-name reference; not independent whole failure/approval for these roots"
+  },
+  "wrapper": {
+    "root": "hs_u8587@1",
+    "row": "99:0:0:0:0:200:200:u8587:0:0:0",
+    "extraOriginalMetadata": "0:-1:-1:-1",
+    "defaultPublishedAlias": "u8587@12→u8587-j@8",
+    "priority": "later",
+    "geometryEquivalenceNotExecuted": true
+  },
+  "otherSplitHeadCandidates": [
+    {
+      "root": "u8587-ue0103@8",
+      "headReference": "ufa5e-03",
+      "lowerDirectStarts": [
+        [
+          82,
+          126
+        ],
+        [
+          110,
+          126
+        ]
+      ],
+      "directHAtTheirY": [],
+      "claimLimit": "Only absence of an explicit connector H row in shown authored direct rows; no whole verdict"
+    },
+    {
+      "root": "twedu-a03578-001@3",
+      "headReference": "ufa5e-03",
+      "bodyReference": "u2304b@5",
+      "bodyDirectComponentNames": [
+        "u5c71",
+        "u6535-02@14"
+      ],
+      "claimLimit": "Published U+2304B body and no named 彳 reference require complete structural verification; no native absence claim"
+    }
+  ],
+  "nextSelected": {
+    "root": "c11-2139@1",
+    "selectedBy": "ROOT after inventory",
+    "headReference": "u8279-t03@1",
+    "headHorizontalRows": [
+      "1:0:0:13:39:95:39",
+      "1:0:0:105:39:187:39"
+    ],
+    "bodyChain": [
+      "u5fae-var-007@1",
+      "u22f38-02-var-002@2"
+    ],
+    "centralH": "1:2:2:80:114:111:114",
+    "closure": [
+      "c11-2139",
+      "u5fae-var-007",
+      "u22f38-02-var-002",
+      "u8279-t03",
+      "u5f73-01"
+    ],
+    "originalDuplicatePairs": [
+      {
+        "first": 10,
+        "again": 13,
+        "row": "1:2:0:148:63:188:63"
+      },
+      {
+        "first": 11,
+        "again": 14,
+        "row": "2:32:7:173:63:167:158:132:187"
+      }
+    ],
+    "distinctOriginalDRRows": [
+      {
+        "index": 12,
+        "row": "2:7:0:146:95:157:157:184:178"
+      },
+      {
+        "index": 15,
+        "row": "2:7:0:143:81:157:157:184:178"
+      }
+    ],
+    "deletedOrDeduplicated": false,
+    "geometryApproved": false
+  },
+  "unavailable": {
+    "root": "krcourt-a016e@2",
+    "error": "INVALID_ARGUMENT",
+    "retryLoop": false,
+    "notDiscardedAsIrrelevant": true
+  },
+  "preservedHolds": [
+    "docs/hanja-source-raw-compare-u8587-hkcs-whole-2026-10-25/native-whole-review.json",
+    "docs/hanja-source-raw-compare-u8587-g-whole-2026-10-26/native-whole-review.json",
+    "docs/hanja-source-raw-compare-u8587-k-2026-10-24/native-whole-review.json",
+    "docs/hanja-source-raw-compare-u8587-t-2026-10-24/native-whole-review.json"
+  ],
+  "actions": {
+    "inventoryOnly": true,
+    "engine": 0,
+    "projection": 0,
+    "privateRequests": 0
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
