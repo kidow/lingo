@@ -1,0 +1,452 @@
+{
+  "schema": "hanja-source-point-window-feasibility/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "pen": 14,
+  "mask": 2,
+  "inputs": [
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/14-prior-window-proof.json",
+      "SHA256": "192659a47f81014f615285df186dfd2559d51b6149389fc04244d6ff066a8905"
+    },
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/fixtures.json",
+      "SHA256": "5e8411814e4f13dd0da9fdce4e52614f2143b4c9e0db99f69ec174297a4389c9"
+    }
+  ],
+  "sourcePOrQOrWidthOrWeightChanged": false,
+  "virtualConnector": false,
+  "priorCommonStarKernel": {
+    "empty": true,
+    "globalCurrentKernelNotDetermined": true,
+    "exteriorEdge": [
+      [
+        "213/5",
+        "511/10"
+      ],
+      [
+        "819/20",
+        "543/10"
+      ]
+    ],
+    "exteriorEdgeWitness": [
+      "3309/80",
+      "107/2"
+    ],
+    "witnessOutsideOtherTwoP": true,
+    "priorTriangleDisjointFromCurrentYRange": true,
+    "priorCommonRegionMustHaveX": [
+      "45",
+      "51"
+    ],
+    "necessaryKernelHalfplane": "cross(edge,A)>=0; all candidate prior/current points violate it",
+    "lowerYFrontierBounds": [
+      {
+        "x": [
+          "45",
+          "451/10"
+        ],
+        "sourceLowerY": [
+          "-1/22",
+          "195/4"
+        ],
+        "necessaryEdgeCrossAtLowerY": [
+          "-171/400",
+          "-37/50"
+        ]
+      },
+      {
+        "x": [
+          "451/10",
+          "183/4"
+        ],
+        "sourceLowerY": [
+          "-3/47",
+          "11651/235"
+        ],
+        "necessaryEdgeCrossAtLowerY": [
+          "-37/50",
+          "-51729/18800"
+        ]
+      },
+      {
+        "x": [
+          "183/4",
+          "949/20"
+        ],
+        "sourceLowerY": [
+          "-3/47",
+          "11651/235"
+        ],
+        "necessaryEdgeCrossAtLowerY": [
+          "-51729/18800",
+          "-641/80"
+        ]
+      },
+      {
+        "x": [
+          "949/20",
+          "481/10"
+        ],
+        "sourceLowerY": [
+          "-1/13",
+          "251/5"
+        ],
+        "necessaryEdgeCrossAtLowerY": [
+          "-641/80",
+          "-1001/100"
+        ]
+      },
+      {
+        "x": [
+          "481/10",
+          "1001/20"
+        ],
+        "sourceLowerY": [
+          "-1/13",
+          "251/5"
+        ],
+        "necessaryEdgeCrossAtLowerY": [
+          "-1001/100",
+          "-6401/400"
+        ]
+      },
+      {
+        "x": [
+          "1001/20",
+          "1013/20"
+        ],
+        "sourceLowerY": [
+          "-4/55",
+          "4999/100"
+        ],
+        "necessaryEdgeCrossAtLowerY": [
+          "-6401/400",
+          "-35701/2000"
+        ]
+      },
+      {
+        "x": [
+          "1013/20",
+          "51"
+        ],
+        "sourceLowerY": [
+          "-4/55",
+          "4999/100"
+        ],
+        "necessaryEdgeCrossAtLowerY": [
+          "-35701/2000",
+          "-37857/2000"
+        ]
+      }
+    ],
+    "maximumPossibleCross": "-171/400",
+    "atA": "-567/50",
+    "scope": "Rules out an anchor in the completed prior for homothety of the entire P3 union. It does not rule out other clip families."
+  },
+  "newTwoDimensionalCondition": {
+    "prior1DProofReusedAsDataNotConclusion": true,
+    "extraFrontierConditions": [
+      {
+        "x": [
+          "763/20",
+          "783/20"
+        ],
+        "lowerSlope": "-1/10",
+        "upperSlope": "39/11",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "783/20",
+          "199/5"
+        ],
+        "lowerSlope": "-1/35",
+        "upperSlope": "39/11",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "199/5",
+          "409/10"
+        ],
+        "lowerSlope": "-1/35",
+        "upperSlope": "28/23",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "409/10",
+          "819/20"
+        ],
+        "lowerSlope": "-1/20",
+        "upperSlope": "28/23",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "819/20",
+          "208/5"
+        ],
+        "lowerSlope": "-1/20",
+        "upperSlope": "-64/33",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "208/5",
+          "473934/11315"
+        ],
+        "lowerSlope": "-1/20",
+        "upperSlope": "-64/33",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "473934/11315",
+          "213/5"
+        ],
+        "lowerSlope": "-1/20",
+        "upperSlope": "-9/40",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "213/5",
+          "429/10"
+        ],
+        "lowerSlope": "-1/20",
+        "upperSlope": "-9/40",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "429/10",
+          "218/5"
+        ],
+        "lowerSlope": "-1/22",
+        "upperSlope": "-9/40",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "218/5",
+          "451/10"
+        ],
+        "lowerSlope": "-1/22",
+        "upperSlope": "-9/43",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "451/10",
+          "183/4"
+        ],
+        "lowerSlope": "-3/47",
+        "upperSlope": "-9/43",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "183/4",
+          "949/20"
+        ],
+        "lowerSlope": "-3/47",
+        "upperSlope": "-10/47",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "949/20",
+          "481/10"
+        ],
+        "lowerSlope": "-1/13",
+        "upperSlope": "-10/47",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "481/10",
+          "1001/20"
+        ],
+        "lowerSlope": "-1/13",
+        "upperSlope": "-4/17",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "1001/20",
+          "1013/20"
+        ],
+        "lowerSlope": "-4/55",
+        "upperSlope": "-4/17",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "1013/20",
+          "264/5"
+        ],
+        "lowerSlope": "-4/55",
+        "upperSlope": "-13/55",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "264/5",
+          "267/5"
+        ],
+        "lowerSlope": "-4/59",
+        "upperSlope": "-13/55",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "267/5",
+          "223/4"
+        ],
+        "lowerSlope": "-4/59",
+        "upperSlope": "-7/29",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "223/4",
+          "563/10"
+        ],
+        "lowerSlope": "-1/16",
+        "upperSlope": "-7/29",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "563/10",
+          "1179/20"
+        ],
+        "lowerSlope": "-1/16",
+        "upperSlope": "-16/61",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "1179/20",
+          "1187/20"
+        ],
+        "lowerSlope": "-3/67",
+        "upperSlope": "-16/61",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "1187/20",
+          "623/10"
+        ],
+        "lowerSlope": "-3/67",
+        "upperSlope": "-18/65",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "623/10",
+          "313/5"
+        ],
+        "lowerSlope": "-1/72",
+        "upperSlope": "-18/65",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "313/5",
+          "659/10"
+        ],
+        "lowerSlope": "-1/72",
+        "upperSlope": "-22/69",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      },
+      {
+        "x": [
+          "659/10",
+          "1321/20"
+        ],
+        "lowerSlope": "17/3",
+        "upperSlope": "-22/69",
+        "lowerOneValley": true,
+        "upperOnePeak": true
+      }
+    ],
+    "lowerFrontierQuasiconvexMinimumX": "659/10",
+    "upperFrontierQuasiconcaveMaximumX": "819/20",
+    "argument": [
+      "Each old exact continuous vertical slice is [L(x),U(x)]. New slope checks prove L decreases then increases, so every sublevel of L is an interval; U increases then decreases, so every superlevel of U is an interval.",
+      "For every rectangle, active x positions are Xrange intersect {L<=rectangleTopHighY} intersect {U>=rectangleBottomLowY}; thus an interval. Every active vertical slice is one closed interval with continuous endpoints.",
+      "The proposed rectangle always contains A strictly inside original current and prior P. Therefore every positive-p intersection is nonempty, connected and has positive prior overlap. This is a new all-p 2D argument, not a transfer of the 1D window claim."
+    ]
+  },
+  "pointWindow": {
+    "anchor": [
+      "48",
+      "95/2"
+    ],
+    "anchorIsExactPreviousOriginalGuideEnd": true,
+    "extents": [
+      "197/20",
+      "361/20",
+      "39/20",
+      "34/5"
+    ],
+    "definition": "Original unchanged P3 union intersect [48-9.85p,48+18.05p] x [47.5-1.95p,47.5+6.8p],0<=p<=1",
+    "authoredClockNotQTraversalOrPublisherTime": true,
+    "p0PointAndHiddenRequired": true,
+    "p1ExactlyOriginalFullP3": true,
+    "nestedSetInclusion": true,
+    "allPositivePConnected": true,
+    "allPositivePPriorOverlap": true,
+    "priorOverlapAreaLowerBound": "(min((197/20)p,1/4)+min((361/20)p,1/4))*(min((39/20)p,1/2)+min((34/5)p,1/2))>0 for p>0",
+    "initialDiameterSquaredUpperBoundCoefficient": "341989/400",
+    "diameterUpperBound": "sqrt(341989/400)*p ->0",
+    "noNonzeroLengthNeedleInZeroProgressLimit": true,
+    "actualPriorOpaqueMustStillBeVerified": true,
+    "nativeInitialAppearanceNotYetApproved": true
+  },
+  "sourceInitialMQOrFullQ7Replayed": 0,
+  "sourceStaticOrOriginal72Replayed": 0,
+  "old1DNativeHoldPreserved": true,
+  "policyImplemented": false,
+  "nativeApproval": false,
+  "sourceEngine": 0,
+  "sourceProjection": 0,
+  "sharedRendererChanges": 0,
+  "server": 0,
+  "runtimeApplied": false,
+  "verification": {
+    "script": {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/verify-14-point-window.py",
+      "SHA256": "9c50343789e43315c07ec61842cad674ad267c0b1e5dd236d5efdb43f1e5de35"
+    },
+    "execution": "Exact rational proof completed once; prior stored certificates reused; no geometry sampling, engine, projection, original fetch, browser or shared renderer execution."
+  }
+}
