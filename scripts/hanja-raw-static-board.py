@@ -816,6 +816,20 @@ def exact_u585a_base_dictionary_draft_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u5767_hkcs_draft_launcher(config,base):
+    # Exact provisional grouping after whole compatibility only; no temporal approval.
+    expected=json.loads("{\"launcher\":{\"path\":\"scripts/hanja-raw-static-compare.py\",\"SHA256\":\"872d3bf483119340359c2a2f0e848728b1d894afc49aca143dfca5ded1d3bbf3\"},\"baseConfig\":{\"path\":\"docs/hanja-source-raw-compare-u5767-hkcs-whole-2026-10-25/config.json\",\"SHA256\":\"475e6faf917c4a6a3e06306d2116ab838289e789da20fac59de2816484014167\"},\"sourceRoots\":{\"selected\":{\"root\":\"hkcs_m5767\",\"file\":\"docs/hanja-actual-engine-capture-u5767-hkcs-2026-10-25/engine-whole-hkcs_m5767.json\",\"fileSHA256\":\"e2e69e4c25fd10809d6e159ee4a5c51dc60aec61c8fab27d3aaa6917116c476d\",\"proofKeys\":[\"defaults\",\"engineHashes\",\"engineRevision\",\"groups\",\"trace\"],\"proofKind\":\"actual-full5-direct\",\"sourceProofIdentity\":{\"sourceRoot\":\"hkcs_m5767\",\"sourceProofFile\":\"engine-whole-hkcs_m5767.json\",\"sourceProofFileSha256\":\"e2e69e4c25fd10809d6e159ee4a5c51dc60aec61c8fab27d3aaa6917116c476d\"},\"rawGroups\":9,\"drawingCalls\":9,\"polygonCounts\":[2,2,3,2,1,1,1,2,1],\"polygons\":15}},\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/5700/5767.svg\",\"status\":200,\"bytes\":4009,\"sha256\":\"9b8b2c477e5234e07cc972c63a2bcaab7d0686e7b8cd5346f3d35a0bd6c2f325\",\"clips\":8,\"glyph\":\"坧\",\"privateMediaSaved\":false},\"inputSHA256\":{\"docs/hanja-actual-engine-capture-u5767-hkcs-2026-10-25/engine-whole-hkcs_m5767.json\":\"e2e69e4c25fd10809d6e159ee4a5c51dc60aec61c8fab27d3aaa6917116c476d\",\"docs/hanja-actual-engine-capture-u5767-hkcs-2026-10-25/capture.json\":\"e1bc64d331b52e52e323cd2fa737b34e024c5851d60458ff2c703bfa97ab39e5\",\"docs/hanja-source-alternative-u5767-hkcs-2026-10-25/sources.json\":\"54244853a4770e157f2d8c7d35bb96b6a3473da1e7af781bd0279e46a7555d18\",\"docs/hanja-goal-glyphwiki-batch116-2026-09-27/metadata.json\":\"51813d0ac38f6bf0377c6f4d3c3ddfb61f98dcea4819e7b23f50810dffd222a0\",\"docs/hanja-goal-glyphwiki-batch116-2026-09-27/README.md\":\"fb7cb9ebe6165d2781de1927510ac456a813e23f583b215f81be301b3dd6a30f\"},\"provisionalGroups\":{\"selected\":[[1],[2],[3],[4],[5],[6],[7,8],[9]]},\"wholeEvidence\":{\"path\":\"docs/hanja-source-raw-compare-u5767-hkcs-whole-2026-10-25/native-whole-review.json\",\"SHA256\":\"1b0f186731734f15e830d8aca85eb81db796682f53385a18230acc9d1e509558\"}}")
+    return (config.get('launcher')==expected['launcher']
+            and config.get('baseConfig')==expected['baseConfig']
+            and base.get('glyph')=='坧' and base.get('catalogStrokes')==8 and base.get('wholeOnly')is True
+            and base.get('launcherSHA256')==expected['launcher']['SHA256']
+            and base.get('sourceRoots')==expected['sourceRoots']
+            and base.get('domestic')==expected['domestic']
+            and base.get('inputSHA256')==expected['inputSHA256']
+            and config.get('provisionalGroups')==expected['provisionalGroups']
+            and digest(fixed_path(expected['wholeEvidence']['path']).read_bytes())==expected['wholeEvidence']['SHA256'])
+
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -843,6 +857,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u846f_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u61b8_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u840d_hkcs_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u5767_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u585a_base_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u703c_body3_prepared_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u5dd1_body3_prepared_launcher(config,base)
