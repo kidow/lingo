@@ -5,8 +5,8 @@ import {spawnSync} from 'node:child_process'
 import {makeReviewedU5ebeSourceContext,reviewedU5ebeContext,reviewedU5ebePolicy,measureReviewedU5ebeFrame,commitReviewedU5ebeCaps,verifyReviewedU5ebeCapsPrior,REVIEWED_U5ebe_SOURCE} from './hanja-stroke-start-caps-u5ebe.ts'
 const f=JSON.parse(readFileSync(new URL('../docs/hanja-source-original-u5ebe-ue0102-2026-10-25/fixtures.json',import.meta.url),'utf8')).u5ebe_ue0102
 const clone=<T>(v:T):T=>JSON.parse(JSON.stringify(v))
-const targets=[[3,2],[4,1]]
-test('庾 exact full5 selects only two original curve masks and rejects altered inputs',()=>{
+const targets=[[3,2],[4,1],[11,2]]
+test('庾 exact full5 selects only three original curve masks and rejects altered inputs',()=>{
  const ctx=makeReviewedU5ebeSourceContext(f.fullProof,f.identity,f.strokes);assert.ok(ctx);assert.equal(ctx,reviewedU5ebeContext(f.strokes))
  assert.deepEqual(Object.keys(f.fullProof).sort(),['defaults','engineHashes','engineRevision','groups','trace'])
  for(let p=0;p<12;p++)for(let m=0;m<f.strokes[p].length;m++){const policy=reviewedU5ebePolicy(ctx,p,m);assert.equal(!!policy,targets.some(([a,b])=>a===p+1&&b===m+1));if(policy){assert.deepEqual(policy.segment,f.strokes[p][m]);assert.equal(policy.certificate.initialArcMax,7);assert.equal(policy.certificate.syntax,'MQ')}}
@@ -29,7 +29,7 @@ function measurement(policy:NonNullable<ReturnType<typeof reviewedU5ebePolicy>>,
  pen.parentElement=owner;g.parentElement=pen;defs.parentElement=g;guide.parentElement=defs;owner.children=[pen];g.children=[defs];defs.children=[guide]
  const prev=node('path',{d:policy.previousSegment?.outline??''});prev.ownerSVGElement=owner;prev.parentElement=pen;prev.nextElementSibling=g;g.previousElementSibling=prev;pen.children=policy.mask===2?[prev,g]:[g]
  const ink=node('path');ink.parentElement=g
- return {guide:guide as unknown as SVGPathElement,g:g as unknown as SVGGElement,prev,nodes:{measurement:null,guide:null,startCap:null,endCap:null,ink:ink as unknown as SVGPathElement}}
+ return {guide:guide as unknown as SVGPathElement,g:g as unknown as SVGGElement,prev,style,nodes:{measurement:null,guide:null,startCap:null,endCap:null,ink:ink as unknown as SVGPathElement}}
 }
 test('庾 epsilon radius tends to zero and compound masks require actual adjacent completed original V',()=>{
  const ctx=makeReviewedU5ebeSourceContext(f.fullProof,f.identity,f.strokes),none={measurement:null,guide:null,startCap:null,endCap:null,ink:null}
@@ -44,4 +44,13 @@ test('庾 epsilon radius tends to zero and compound masks require actual adjacen
 
 test('庾 신규 두Q 원P·초기조건·실제prior3V 접촉 exact 증명',()=>{
  const r=spawnSync('python3',['docs/hanja-source-original-u5ebe-ue0102-2026-10-25/verify-initial-caps-proof.py','--check'],{cwd:new URL('..',import.meta.url),encoding:'utf8',timeout:30000});assert.equal(r.status,0,r.stdout+r.stderr);assert.match(r.stdout,/접촉증명 PASS/)
+})
+
+test('庾 added11m2 keeps source and requires an opaque actual prior original V',()=>{
+ const ctx=makeReviewedU5ebeSourceContext(f.fullProof,f.identity,f.strokes),policy=reviewedU5ebePolicy(ctx,10,1)!
+ assert(policy);assert.deepEqual(policy.segment,f.strokes[10][1]);assert.deepEqual(policy.previousSegment,f.strokes[10][0])
+ assert.equal(policy.certificate.T,'1/4');assert.equal(policy.certificate.K,'1/30')
+ for(const p of [Number.EPSILON,1e-10,.01,.03,.5,.99999999]){const d=measurement(policy,p),frame=measureReviewedU5ebeFrame(policy,policy.segment,p,d.guide,1);assert.equal(frame.rho,Math.min(7,100*p))}
+ for(const fill of ['rgba(0,0,0,0)','rgb(0 0 0 / 0)','#0000','#00000000']){const d=measurement(policy,.01);d.style.fill=fill;assert.equal(verifyReviewedU5ebeCapsPrior(policy,d.g,1),false)}
+ const d=measurement(policy,1);assert.equal(commitReviewedU5ebeCaps(policy,policy.segment,1,'own',d.nodes,1).status,'complete');d.style.opacity='0';assert.equal(verifyReviewedU5ebeCapsPrior(policy,d.g,1),false)
 })

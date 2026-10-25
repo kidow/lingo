@@ -3,6 +3,7 @@ import {reviewedU5dd1FootContext,reviewedU5dd1FootPolicy,sampleReviewedU5dd1Foot
 import {reviewedU5dd1TerminalContext,reviewedU5dd1TerminalPolicy,sampleReviewedU5dd1TerminalFrame,verifyReviewedU5dd1TerminalPrior,type ReviewedU5dd1TerminalPolicy} from '@/lib/hanja-stroke-original-terminal-u5dd1'
 import {reviewedU7228Context,reviewedU7228Policy,commitReviewedU7228Caps,verifyReviewedU7228CapsPrior,type ReviewedU7228Policy} from '@/lib/hanja-stroke-start-caps-u7228'
 import {reviewedU7228CardinalContext,reviewedU7228CardinalPolicy,sampleReviewedU7228CardinalFrame,verifyReviewedU7228CardinalPrior,type ReviewedU7228CardinalPolicy} from '@/lib/hanja-stroke-cardinal-contact-u7228'
+import {reviewedU5ebeCardinalContext,reviewedU5ebeCardinalPolicy,sampleReviewedU5ebeCardinalFrame,verifyReviewedU5ebeCardinalPrior,type ReviewedU5ebeCardinalPolicy} from '@/lib/hanja-stroke-cardinal-contact-u5ebe'
 import {reviewedU5ebeContext,reviewedU5ebePolicy,commitReviewedU5ebeCaps,verifyReviewedU5ebeCapsPrior,type ReviewedU5ebePolicy} from '@/lib/hanja-stroke-start-caps-u5ebe'
 import {reviewedU846fHkcsContext,reviewedU846fHkcsPolicy,commitReviewedU846fHkcsCaps,verifyReviewedU846fHkcsCapsPrior,type ReviewedU846fHkcsPolicy} from '@/lib/hanja-stroke-start-caps-u846f-hkcs'
 import {reviewedU846fHkcsFootContext,reviewedU846fHkcsFootPolicy,sampleReviewedU846fHkcsFootFrame,verifyReviewedU846fHkcsFootPrior,type ReviewedU846fHkcsFootPolicy} from '@/lib/hanja-stroke-source-foot-u846f-hkcs'
@@ -445,6 +446,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u8adbUe0101Context=reviewedU8adbUe0101Context(strokes)
   const u6f0cContext=reviewedU6f0cContext(strokes)
   const u6f0cFootContext=reviewedU6f0cFootContext(strokes)
+  const u5ebeCardinalContext=reviewedU5ebeCardinalContext(strokes)
   const u5ebeContext=reviewedU5ebeContext(strokes)
   const u846fHkcsContext=reviewedU846fHkcsContext(strokes)
   const u846fHkcsFootContext=reviewedU846fHkcsFootContext(strokes)
@@ -647,6 +649,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if(u846fHkcsTerminalPrefixPolicy)return <U846fHkcsTerminalPrefixOutline key={index} policy={u846fHkcsTerminalPrefixPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
         const u846fHkcsFootPolicy=reviewedU846fHkcsFootPolicy(u846fHkcsFootContext,stroke,index)
         if(u846fHkcsFootPolicy)return <U846fHkcsFootOutline key={index} policy={u846fHkcsFootPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
+        const u5ebeCardinalPolicy=reviewedU5ebeCardinalPolicy(u5ebeCardinalContext,stroke,index)
+        if(u5ebeCardinalPolicy)return <U5ebeCardinalOutline key={index} policy={u5ebeCardinalPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
         const u5ebePolicy=reviewedU5ebePolicy(u5ebeContext,stroke,index)
         if(u5ebePolicy)return <U5ebeCapsOutline key={index} policy={u5ebePolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index}/>
         const u846fHkcsPolicy=reviewedU846fHkcsPolicy(u846fHkcsContext,stroke,index)
@@ -1834,6 +1838,37 @@ function U7228CardinalOutline({policy,segment,progress,previousMaskProgress,clip
  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u7228-cardinal-previous-progress={String(previousMaskProgress)} data-u7228-cardinal-display-clock="source-P-y-contact-band">
   <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={clip?.x??b[0]} y={clip?.y??b[1]} width={clip?.width??b[2]-b[0]} height={clip?.height??0}/></clipPath></defs>
   <path ref={ink} data-u7228-cardinal-ink="true" d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U5ebeCardinalOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU5ebeCardinalPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ let frame:ReturnType<typeof sampleReviewedU5ebeCardinalFrame>|null=null
+ try{frame=sampleReviewedU5ebeCardinalFrame(policy,segment,progress,previousMaskProgress)}catch{}
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current,f=frame
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u5ebe-cardinal-committed','false')};reset()
+  if(!g||!p||!r||!c||!f)return reset
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u5ebe-cardinal-clip'
+  const previousComplete=()=>verifyReviewedU5ebeCardinalPrior(policy,g,previousMaskProgress)
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||g.getAttribute('data-u5ebe-cardinal-previous-progress')!==String(previousMaskProgress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const b=segment.bounds,expected=f.clip??{x:b[0],y:b[1],width:b[2]-b[0],height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||previousComplete())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u5ebe-cardinal-progress',String(progress));p.setAttribute('data-u5ebe-cardinal-phase',f.phase);p.setAttribute('data-u5ebe-cardinal-direct-original',String(f.originalPDirect));p.setAttribute('data-u5ebe-cardinal-source-full',String(f.originalPDirect));p.setAttribute('data-u5ebe-cardinal-one-p','true');p.setAttribute('data-u5ebe-cardinal-ua-read','false')
+  if(!stable())return reset
+  p.setAttribute('data-u5ebe-cardinal-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const b=segment.bounds,clip=frame?.clip,key=clipId+'-u5ebe-cardinal-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u5ebe-cardinal-previous-progress={String(previousMaskProgress)} data-u5ebe-cardinal-display-clock="source-P-y-contact-band">
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={clip?.x??b[0]} y={clip?.y??b[1]} width={clip?.width??b[2]-b[0]} height={clip?.height??0}/></clipPath></defs>
+  <path ref={ink} data-u5ebe-cardinal-ink="true" d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
  </g>
 }
 
