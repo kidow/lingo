@@ -1,0 +1,74 @@
+{
+  "schema": "hanja-authored-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "饛",
+  "root": "hkcs_m995b",
+  "rootVersion": 1,
+  "status": "PASS macro whole only",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "scope": "A newly captured complete authored HK whole; previous HOLDs remain separate.",
+  "inputs": {
+    "config": "docs/hanja-source-raw-compare-u995b-hkcs-whole-2026-10-26/config.json",
+    "configSHA256": "9d8b04c3318be9b92785b112c45cb26e41bad15af2dad8ccde044ce1588beb2d",
+    "helper": "scripts/hanja-raw-static-compare.py",
+    "helperSHA256": "2b5f4fb6bc50d4984b8e1a4fcec69e6ffb7e23c666dbf0811a7a0bd9b8187c1a",
+    "full5SHA256": "bb47d298f52630aa55d4d48b03ba44187f5acd3d8430ca20f0cef9fe51f2689c",
+    "unchangedBeforeAndAfter": true
+  },
+  "observed": {
+    "wholePairs": 1,
+    "domesticPenCount": 23,
+    "sourceRawCount": 25,
+    "sourceDrawingCalls": 26,
+    "sourcePolygons": 46,
+    "fullPage": true,
+    "entireImagesVisible": true,
+    "bboxes": [
+      {
+        "x": 12,
+        "y": 275.203125,
+        "width": 520,
+        "height": 520
+      },
+      {
+        "x": 562,
+        "y": 303.203125,
+        "width": 520,
+        "height": 520
+      }
+    ],
+    "compatibleMacroFeatures": [
+      "split four-stroke grass",
+      "roof and inner horizontal, separate lower horizontal",
+      "lower 豕 left sweeps and terminal left-up/right-down sweeps",
+      "food-radical box and lower horizontals"
+    ],
+    "extraUnaccountedShortHorizontalObserved": false,
+    "remainingVisualConcern": null
+  },
+  "decision": {
+    "macroWholeCompatible": true,
+    "logicalStrokeGroupingApproved": false,
+    "staticIndividualCorrespondenceApproved": false,
+    "sourceStrokeOrderApproved": false,
+    "sourceDirectionApproved": false,
+    "contactApproved": false,
+    "progressiveReviewStarted": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "serverPID": 85045,
+    "port": 59412,
+    "startupLogCaptured": false,
+    "serverStopped": true,
+    "tabClosed": true,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesWritten": 0
+  },
+  "limits": [
+    "Macro comparison is not complete path, logical stroke, direction or playback approval.",
+    "Original source rows and P/Q remain unchanged; no deletion, connector or substitution.",
+    "Publisher dictionary cross-check is not examination-body certification."
+  ]
+}
