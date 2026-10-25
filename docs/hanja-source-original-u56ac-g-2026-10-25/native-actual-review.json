@@ -1,0 +1,245 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "glyph": "嚬",
+  "root": "u56ac-g",
+  "reviewedAt": "2026-10-26",
+  "status": "ROOT-actual-finite48-natural14-done19-PASS",
+  "reviewer": "ROOT direct browser-panel observation",
+  "inputCommit": "91a1d69c6",
+  "inputs": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u56ac-1.json",
+      "SHA256": "0acb330181f2963b693fd8ba1c57c4ebb1b9f971db2ea35d631ddbfb681e5c2a"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "ced7fe70621c3e5b43614bcda56f162b1c08f68089bb664a4b1f45892018d40b"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "9ab38f044d2df2c22d46254f26f0285486f78457f3668ccfd61fe305ae4e6619"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "358ca9741c6bc8f6234ce346165150655539fd47b20236fb4b989c2be5f82a1c"
+    }
+  },
+  "geometrySHA256": "3aa23536479df3d6c8a3b43f634d2977ce428edf6ca31cb49bdfdbe922a49d46",
+  "finite": {
+    "status": "ROOT-direct-finite48-PASS",
+    "uniqueFrames": 48,
+    "perTarget": {
+      "targets": 7,
+      "early": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "midNear": [
+        0.5,
+        0.99999999
+      ],
+      "completion": 1,
+      "frames": 42
+    },
+    "boundaries": [
+      {
+        "pen": 2,
+        "nextMask": 2
+      },
+      {
+        "pen": 14,
+        "nextMask": 2
+      }
+    ],
+    "boundaryFrames": 6,
+    "actualRequestedPVerifiedWithinFloatingRoundoff": true,
+    "allChecks": true,
+    "bad": [],
+    "errors": [],
+    "notAllFrameIntegrityProof": true,
+    "noFragmentPopLossOrDisconnectionObserved": true,
+    "exactCompletionCoverageReady": true
+  },
+  "natural": {
+    "buttonExecutions": 7,
+    "uniqueProgressObservations": 7,
+    "uniqueEndObservations": 7,
+    "uniqueObservations": 14,
+    "progressObservations": [
+      {
+        "pen": 9,
+        "p": 0.05456249999403973
+      },
+      {
+        "pen": 10,
+        "p": 0.06491249999403897
+      },
+      {
+        "pen": 12,
+        "p": 0.06300000000595901
+      },
+      {
+        "pen": 18,
+        "p": 0.06290000000595963
+      },
+      {
+        "pen": 19,
+        "p": 0.06399999999403988
+      },
+      {
+        "pen": 2,
+        "mask": 2,
+        "p": 0.08471072445548869,
+        "controller": 0.30862269315092716
+      },
+      {
+        "pen": 14,
+        "mask": 2,
+        "p": 0.08951253488372178,
+        "controller": 0.3717753369704757
+      }
+    ],
+    "endObservations": [
+      {
+        "pen": 9,
+        "p": 0.9999999999999992
+      },
+      {
+        "pen": 10,
+        "p": 0.9999999999999992
+      },
+      {
+        "pen": 12,
+        "p": 0.9999999999999992
+      },
+      {
+        "pen": 18,
+        "p": 1
+      },
+      {
+        "pen": 19,
+        "p": 1
+      },
+      {
+        "pen": 2,
+        "mask": 2,
+        "p": 1
+      },
+      {
+        "pen": 14,
+        "mask": 2,
+        "p": 0.999999999999999,
+        "phase": "contact-prefix",
+        "notExactFullCommit": true
+      }
+    ],
+    "allChecks": true,
+    "bad": [],
+    "errors": [],
+    "exactFullCommitAtEveryNaturalEndClaimed": false,
+    "numericReadAndScreenshotSimultaneous": false,
+    "progressScope": "Seven actual progress scenes, not exact halfway samples."
+  },
+  "doneWhole": {
+    "observations": 1,
+    "logicalStrokes": 19,
+    "mode": "done",
+    "reportedPen": 14,
+    "reportedP": 1,
+    "whole19Visible": true,
+    "oldBoundary3GridBelowExcluded": true
+  },
+  "sourcePreservation": {
+    "originalP": 36,
+    "rawRows": 21,
+    "drawingCalls": 21,
+    "originalPGuideWidthWeightChanged": false,
+    "newBridge": false
+  },
+  "reusedEvidence": {
+    "originalFirst12": {
+      "path": "docs/hanja-goal-glyphwiki-batch1088-2026-10-13/native-review.json",
+      "SHA256": "89eea231b8e1ffaabef83d145bdfa9d2895751c402f4a21c1a81b724d98eb662",
+      "observedPens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "oldSource8FailureNotTransferred": true,
+      "metadataPath": "docs/hanja-goal-glyphwiki-batch1088-2026-10-13/metadata.json",
+      "metadataSHA256": "99c14ef0e00a04643464c3235b88c1a94762dcf112f554d2dfaae851a31fee0b",
+      "originalSVGMatchesNewCSS21": true,
+      "replayedFrames": 0
+    },
+    "originalRemaining21": "docs/hanja-official-media-compare-u56ac-2026-10-25/native-original-review.json",
+    "static19": "docs/hanja-source-raw-compare-u56ac-g-whole-2026-10-25/native-group-review.json",
+    "whole1": "docs/hanja-source-raw-compare-u56ac-g-whole-2026-10-25/native-whole-review.json",
+    "initialAndCompletion": "docs/hanja-source-original-u56ac-g-2026-10-25/initial-risk-proof.json",
+    "HVContact": "docs/hanja-source-original-u56ac-g-2026-10-25/compound-HV-contact-proof.json",
+    "cardinalAndPaint": "docs/hanja-source-original-u56ac-g-2026-10-25/cardinal-and-paint-proof.json",
+    "replayedOriginalOrStaticFrames": 0
+  },
+  "scope": "Reviewed source-bound actual-component samples only. Not every browser frame, app UI autoplay, raster identity, or exam-body approval.",
+  "preparationRuns": [
+    {
+      "status": "localhost-listen-EPERM",
+      "exitCode": 1,
+      "session": 80055,
+      "server": 0,
+      "observations": 0,
+      "SSRResultNotEmitted": true
+    },
+    {
+      "status": "same-command-network-permission-success",
+      "PID": 48472,
+      "session": 54061,
+      "port": 59412,
+      "SSR": 1,
+      "CJS": 317,
+      "ESM": 317,
+      "ordinaryMatrixChecks": 0,
+      "engine": 0,
+      "sourceProjection": 0
+    },
+    {
+      "status": "stale-closed-tab66-helper-before-click-failed",
+      "observations": 0,
+      "reboundTo": "pi tab68"
+    }
+  ],
+  "nativeApproval": true,
+  "runtimeApplied": false,
+  "runs": {
+    "SSR": 1,
+    "CJS": 317,
+    "ESM": 317,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "cleanup": {
+    "PID": 48472,
+    "session": 54061,
+    "exitCode": 130,
+    "tab": 68,
+    "tabClosed": true,
+    "viewportReset": true,
+    "reportedReset": "614²",
+    "ownServers": 0,
+    "parentSessionPollFailedBeforeSignal": {
+      "reason": "Unknown process across agent ownership",
+      "commandDelivered": false
+    },
+    "termination": "ROOT SIGINT exact PID; D session poll exit130"
+  }
+}
