@@ -1,0 +1,382 @@
+{
+  "schema": "hanja-source-single-counter-feasibility/v1",
+  "date": "2026-10-26",
+  "glyph": "灝",
+  "root": "hkcs_m705d",
+  "source": {
+    "fixture": "docs/hanja-source-original-u705d-hkcs-m-2026-10-26/fixtures.json",
+    "fixtureSHA256": "882029a46c26f5b7be94defc8f95315f17c147243e5ff1650afe33cee3a32919",
+    "full5": "docs/hanja-actual-engine-capture-u705d-hkcs-m-2026-10-26/engine-whole-hkcs_m705d.json",
+    "full5SHA256": "dc3df9f8e327a0b221fc7e71db05301905f15cc6ad919d98a5ed2da04e72a74b",
+    "sourceGeometrySHA256": "22495a5b83df0d912c420b377bf3ceeacfd37d9c6a8e5bfacfe63696e94397bf"
+  },
+  "originalEvidence": {
+    "new72": {
+      "path": "docs/hanja-official-media-compare-u705d-2026-10-26/temporal-native-review.json",
+      "SHA256": "32c7f77e0c36e0363ee2ecad760cff58d8ff36eefec7ceada819def1a839a447"
+    },
+    "newWater2": {
+      "path": "docs/hanja-official-media-compare-u705d-2026-10-26/water3-temporal-supplement-native-review.json",
+      "SHA256": "a49ac6a10e9b6163680922610bf616b6be630914cb9bfff7d9ae27f5b4f31400"
+    }
+  },
+  "failedCandidates": [
+    {
+      "kind": "unmodified-halfplane-all9",
+      "facts": {
+        "axis": "8x+y",
+        "authorSelectedNotPublisherClock": true,
+        "range": [
+          "588/5",
+          "4783/20"
+        ],
+        "sourcePolygons": 9,
+        "slabs": 131,
+        "firstIntervals": 1,
+        "maxIntervals": 3,
+        "multiSlabs": 25,
+        "detachedBirths": [
+          {
+            "slab": 9,
+            "lo": "3261/20",
+            "hi": "22859/140",
+            "interval": 1,
+            "gap": "16/65"
+          }
+        ],
+        "allSlabJoinsNonnegative": false,
+        "strictPositiveAcrossAllJoins": false,
+        "zeroJoins": 0,
+        "minimumJoin": "-16/65",
+        "nativeApproval": false,
+        "sourceProjection": 0,
+        "engine": 0
+      },
+      "localOwnership": {
+        "axis": "8x+y",
+        "at": "22843/140",
+        "union": [
+          [
+            "675523/10220",
+            "125967/1820"
+          ],
+          [
+            "9707/140",
+            "107001/1540"
+          ]
+        ],
+        "contributors": [
+          {
+            "sourceRaw": 3,
+            "polygon": 1,
+            "intervals": [
+              [
+                "675523/10220",
+                "125967/1820"
+              ]
+            ]
+          },
+          {
+            "sourceRaw": 4,
+            "polygon": 1,
+            "intervals": [
+              [
+                "2245933/32340",
+                "107001/1540"
+              ]
+            ]
+          },
+          {
+            "sourceRaw": 4,
+            "polygon": 2,
+            "intervals": [
+              [
+                "9707/140",
+                "2245933/32340"
+              ]
+            ]
+          }
+        ],
+        "priorFailedSlabsRecomputed": false,
+        "engine": 0,
+        "projection": 0
+      },
+      "rendererRun": 0,
+      "nativeRun": 0
+    },
+    {
+      "kind": "body-kernel-too-late",
+      "facts": {
+        "axis": "8x+y",
+        "authorSelectedNotPublisherClock": true,
+        "range": [
+          "588/5",
+          "4783/20"
+        ],
+        "bodyStart": "9081/50",
+        "bodyComplete": "917/5",
+        "bodySourceRaw": 4,
+        "bodyAnchor": [
+          "703/50",
+          "1381/20"
+        ],
+        "bodyKernel": [
+          {
+            "polygon": 0,
+            "sharedEdge": [
+              10
+            ],
+            "minNonshared": "77/250"
+          },
+          {
+            "polygon": 1,
+            "sharedEdge": [
+              4
+            ],
+            "minNonshared": "1243/250"
+          }
+        ],
+        "existingFootCommonBox": [
+          [
+            "281/20",
+            "1726/25"
+          ],
+          [
+            "1407/100",
+            "1726/25"
+          ],
+          [
+            "1407/100",
+            "3453/50"
+          ],
+          [
+            "281/20",
+            "3453/50"
+          ]
+        ],
+        "commonBoxArea": "1/2500",
+        "openSlabs": 133,
+        "firstIntervals": 1,
+        "bodyBridges": [
+          {
+            "slab": 38,
+            "lo": "3669/20",
+            "interval": 1,
+            "bodyOverlapAtMid": "142/55"
+          }
+        ],
+        "bad": [
+          {
+            "slab": 33,
+            "lo": "727/4",
+            "interval": 1,
+            "reason": "base-prefix-before-body-complete",
+            "margin": "-136/245"
+          }
+        ],
+        "prefixConnectivityCandidate": false,
+        "fullBodyIsOriginalHomothetyClip": true,
+        "sourceGeometryChanged": false,
+        "officialSubphaseClaim": false,
+        "sourceProjection": 0,
+        "engine": 0,
+        "nativeApproval": false
+      },
+      "localActualGapCheck": {
+        "c": "181750001/1000000",
+        "scale": "130001/1780000",
+        "base": [
+          [
+            "534949993/9000000",
+            "498364287/7000000"
+          ],
+          [
+            "502249999/7000000",
+            "466375001/6500000"
+          ]
+        ],
+        "scaledBody": [
+          [
+            "2272988795683/33019000000",
+            "180226164153/2581000000"
+          ]
+        ],
+        "intersectionWidths": [
+          "236807956489/239387750000",
+          "-8681024587/4516750000"
+        ]
+      },
+      "rendererRun": 0,
+      "nativeRun": 0
+    }
+  ],
+  "candidate": {
+    "axis": "8x+y",
+    "authorSelectedNotPublisherClock": true,
+    "range": [
+      "588/5",
+      "4783/20"
+    ],
+    "bodyStart": "9081/50",
+    "bodyComplete": "182",
+    "bodySourceRaw": 4,
+    "bodyAnchor": [
+      "703/50",
+      "1381/20"
+    ],
+    "bodyKernel": [
+      {
+        "polygon": 0,
+        "sharedEdge": [
+          10
+        ],
+        "minNonshared": "77/250"
+      },
+      {
+        "polygon": 1,
+        "sharedEdge": [
+          4
+        ],
+        "minNonshared": "1243/250"
+      }
+    ],
+    "existingFootCommonBox": [
+      [
+        "281/20",
+        "1726/25"
+      ],
+      [
+        "1407/100",
+        "1726/25"
+      ],
+      [
+        "1407/100",
+        "3453/50"
+      ],
+      [
+        "281/20",
+        "3453/50"
+      ]
+    ],
+    "commonBoxArea": "1/2500",
+    "openSlabs": 133,
+    "firstIntervals": 1,
+    "bodyBridges": [
+      {
+        "slab": 33,
+        "lo": "727/4",
+        "interval": 1,
+        "bodyScale": "13/38",
+        "sourceContactPoint": [
+          "55/4",
+          "287/4"
+        ],
+        "bodyCertificate": {
+          "polygon": 0,
+          "fan": 4,
+          "triangle": [
+            [
+              "703/50",
+              "1381/20"
+            ],
+            [
+              "10423/760",
+              "723/10"
+            ],
+            [
+              "10397/760",
+              "54441/760"
+            ]
+          ],
+          "strictMargins": [
+            "1417/19000",
+            "24557/577600",
+            "17069/76000"
+          ]
+        }
+      },
+      {
+        "slab": 38,
+        "lo": "3669/20",
+        "interval": 1,
+        "bodyScale": "1",
+        "sourceContactPoint": [
+          "269/20",
+          "1517/20"
+        ],
+        "bodyCertificate": {
+          "polygon": 0,
+          "fan": 3,
+          "triangle": [
+            [
+              "703/50",
+              "1381/20"
+            ],
+            [
+              "263/20",
+              "1613/20"
+            ],
+            [
+              "261/20",
+              "1571/20"
+            ]
+          ],
+          "strictMargins": [
+            "111/125",
+            "111/100",
+            "1073/1000"
+          ]
+        }
+      }
+    ],
+    "bad": [],
+    "prefixConnectivityCandidate": true,
+    "fullBodyIsOriginalHomothetyClip": true,
+    "sourceGeometryChanged": false,
+    "officialSubphaseClaim": false,
+    "sourceProjection": 0,
+    "engine": 0,
+    "nativeApproval": false
+  },
+  "bodySimplePrerequisite": {
+    "code": "from pathlib import Path\nfrom fractions import Fraction as F\nimport json,hashlib,ast\nROOT=Path('/Users/kidow/Documents/dev/kidow/lingo')\nFULL=\"docs/hanja-actual-engine-capture-u705d-hkcs-m-2026-10-26/engine-whole-hkcs_m705d.json\"\nb=(ROOT/FULL).read_bytes();assert hashlib.sha256(b).hexdigest()=='dc3df9f8e327a0b221fc7e71db05301905f15cc6ad919d98a5ed2da04e72a74b'\nf=json.loads(b);groups=[[[(F(str(v['x']))/2,F(str(v['y']))/2)for v in p]for p in g['polygons']]for g in f['groups'][2:6]]\npredicate=ROOT/'docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-p3-attached-frontier.py'\nraw=predicate.read_bytes();assert hashlib.sha256(raw).hexdigest()=='b31d4fcdd87f1b29e2b4186b220daeb0ed40f1d5f6389991bc64456447e6ff80'\nfor node in ast.parse(raw.decode()).body:\n if isinstance(node,ast.FunctionDef)and node.name in {'cross','signed_area','triangle_contains','winding','edge_hits_triangle_interior'}:exec(compile(ast.Module(body=[node],type_ignores=[]),str(predicate),'exec'))\nbands=ROOT/'docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py'\nraw=bands.read_bytes();assert hashlib.sha256(raw).hexdigest()=='2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76'\nfor node in ast.parse(raw.decode()).body:\n if isinstance(node,ast.FunctionDef)and node.name in {'vec','det','value','union_row','events','certify'}:exec(compile(ast.Module(body=[node],type_ignores=[]),str(bands),'exec'))\nfoot=groups[0];body=groups[1]+groups[2];rising=groups[3];nonfoot=body+rising\ncut=F('72.5');bottom=F('93.45');riseBottom=F('72.85');top=F('26.85')\n\nresult=[]\nfor pi,p in enumerate(groups[1]):\n edges=list(zip(p,p[1:]+p[:1]));hits=[]\n for i,(a,b)in enumerate(edges):\n  for j,(c,d)in enumerate(edges[i+1:],i+1):\n   if j==i+1 or(i==0 and j==len(edges)-1):continue\n   r=vec(b,a);s=vec(d,c);den=det(r,s)\n   if not den:continue\n   t=det(vec(c,a),s)/den;u=det(vec(c,a),r)/den\n   if 0<t<1 and 0<u<1:hits.append([i,j])\n assert not hits;result.append(dict(polygon=pi,properCrossings=hits,nonzeroArea=signed_area(p)!=0))\nprint(json.dumps(dict(simpleBodyPolygons=result,sourceProjection=0,engine=0),separators=(',',':')))\n",
+    "SHA256": "accb04a8a7b9bb1c4f469887263a7f7220f6fe424290f2472d562207f2a9a1bc",
+    "result": {
+      "simpleBodyPolygons": [
+        {
+          "polygon": 0,
+          "properCrossings": [],
+          "nonzeroArea": true
+        },
+        {
+          "polygon": 1,
+          "properCrossings": [],
+          "nonzeroArea": true
+        }
+      ],
+      "sourceProjection": 0,
+      "engine": 0
+    },
+    "freshGraphReruns": 0
+  },
+  "executedProofScriptSHA256": "091ceaa0ae885547b09d0e95a4eade86e33bfaaddf51a65a6fc2080483bbe36c",
+  "storage": "성공한 입력-전용 실행 스크립트와 결과 요약·접속 증명은 보존. 133개 셀의 전체 행 테이블은 저장하지 않았다.",
+  "argument": [
+    "각 고정 원P의 nonzero winding 단면을 정확한 모든 선분 교차/꼭짓점 사건으로 분할한다.",
+    "원 raw4를 제외한 seven-P 접두구간의 첫 단면은 한 구간이다. 새 구간은 이전 접두와 이어지거나 원 raw4의 현재 homothety 안의 엄격한 source 삼각형과 접촉한다.",
+    "raw4의 두 원P는 공유변 위 kernel을 가지며, 각각의 homothety는 원P 내부에 중첩된다. 원래 두 P의 공유변은 양의 길이로 유지한다.",
+    "body가 나타날 때 기존 발의 면적1/2500 내부가 이미 표시된다. 이 조건은 실제 원P·counter·opacity·클립 귀속을 runtime에서 다시 확인해야 한다.",
+    "base 접두면적은 counter 증가량에 따라0으로 가고 body homothety 면적은 scale²에 비례해0으로 간다. 정확한 수학 후보를 실제 화면 승인으로 확대하지 않는다."
+  ],
+  "limits": [
+    "8x+y와 kernel release 수치는 작성자가 고른 source-bound 표시 후보이며 원문이 지정한 clock이 아니다.",
+    "발/하강몸통을 먼저 완성한 뒤 상승한다는 원문 하위순서를 주장하지 않는다.",
+    "새 연결선·원Q 변경·원P 삭제·다른 글자의 보정 수학 전이는 없다.",
+    "기존 잘못된 두 후보는 renderer/브라우저에서 재생하지 않았다.",
+    "실제 표시·자연 재생·원문 나란한 비교와 app/runtime은 아직 미승인이다."
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "sourceEngineReplay": 0,
+  "sourceProjection": 0
+}

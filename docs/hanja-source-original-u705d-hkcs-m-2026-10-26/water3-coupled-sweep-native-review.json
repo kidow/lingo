@@ -1,0 +1,160 @@
+{
+  "schema": "hanja-source-standalone-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "灝",
+  "root": "hkcs_m705d",
+  "reviewer": "ROOT browser panel",
+  "status": "PASS-source-standalone-only",
+  "input": {
+    "manifest": {
+      "path": "docs/hanja-source-original-u705d-hkcs-m-2026-10-26/water3-coupled-sweep-input.json",
+      "SHA256": "8aa0da7705fb36601f384a71c13d6e4ea7f12faaa4f674c187e708a506c2b4d6"
+    },
+    "scene": {
+      "path": "docs/hanja-source-original-u705d-hkcs-m-2026-10-26/water3-coupled-sweep-experiment.html",
+      "SHA256": "e75df664fd52777ebf3f1800dc8803a848a9d06ac1bccaf13ea1ae39d5e39b1b"
+    },
+    "launcher": {
+      "path": "docs/hanja-source-original-u705d-hkcs-m-2026-10-26/serve-water3-coupled-sweep.py",
+      "SHA256": "b7a8ff47337ae1f5c77e7eda93b9b5ce818269cfd13de2ed18a5f88ca1ef44fa"
+    },
+    "math": {
+      "path": "docs/hanja-source-original-u705d-hkcs-m-2026-10-26/water3-coupled-sweep-feasibility.json",
+      "SHA256": "01f13ace238852c3cef1af6532219cbc9621a3266a814fcbef6fd77e829a7560"
+    },
+    "originalConfig": {
+      "path": "docs/hanja-official-media-compare-u705d-2026-10-26/config.json",
+      "SHA256": "c08d26f9393a2f5d991cf9f84b01104dda19e5cb4394e8392a0c939694410b89"
+    },
+    "originalHelper": {
+      "path": "scripts/hanja-official-media-compare.py",
+      "SHA256": "27d3bb6459bc9b6a4106b399e6edafbec4d7189e79275ce3582536aa51fb05be"
+    }
+  },
+  "finite": {
+    "observations": 16,
+    "authorCounters": [
+      0,
+      0.000001,
+      0.01,
+      0.03,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.99,
+      1
+    ],
+    "kernelStates": [
+      "시작 직전",
+      "시작",
+      "시작 직후",
+      "완료"
+    ],
+    "sourceP9Unchanged": true,
+    "sourceGuideChanged": false,
+    "errors": []
+  },
+  "natural": {
+    "configuredDurationMs": 2400,
+    "observations": [
+      {
+        "reportedCounter": 0.15308333331346757,
+        "frames": 44
+      },
+      {
+        "reportedCounter": 0.5105833333134675,
+        "bodyScale": 0.4146128695414152,
+        "frames": 147
+      },
+      {
+        "reportedCounter": 0.7701249999999952,
+        "frames": 222
+      },
+      {
+        "reportedCounter": 1,
+        "frames": 289
+      }
+    ],
+    "counterAndScreenshotSimultaneityClaimed": false,
+    "sourceP9Unchanged": true,
+    "errors": []
+  },
+  "sideBySide": {
+    "comparisons": 2,
+    "originalFractions": [
+      0.5,
+      1
+    ],
+    "candidateCounters": [
+      0.5,
+      1
+    ],
+    "originalReady": true,
+    "originalOneSelection": true,
+    "originalPathClipAttributesUnchanged": true,
+    "errors": [],
+    "sameTimeClockEquivalenceApproved": false
+  },
+  "observations": [
+    "시작의 눈에 보이는 잔여 없음",
+    "초기 갑작스러운 조각 노출·분리 없음",
+    "body kernel 전환 연속",
+    "올림과 미완성 몸통이 공존함",
+    "완료는 원P9를 유지함",
+    "1에서0으로 되돌리면 비워짐"
+  ],
+  "viewport": {
+    "innerWidth": null,
+    "innerHeight": null,
+    "measuredAtReview": false,
+    "capture": "fullPage",
+    "candidateDOMRect": {
+      "width": 520,
+      "height": 520
+    },
+    "original520FromFrozenHelperAndFullPage": true,
+    "both520FullyVisibleForEveryFullPageScreenshot": true,
+    "clippedScreens": 0,
+    "resetAfterReview": true,
+    "note": "뷰포트 치수는 추정하거나 재촬영하지 않음"
+  },
+  "approval": {
+    "sourceStandaloneDisplay": true,
+    "originalClockEquivalence": false,
+    "officialWater3SubphaseOrder": false,
+    "actualComponent": false,
+    "appUI": false,
+    "runtime": false,
+    "examBody": false
+  },
+  "actions": {
+    "nativeFiniteObservations": 16,
+    "naturalObservations": 4,
+    "sideBySideReferenceComparisons": 2,
+    "distinctPaintCountClaimed": false,
+    "original74DirectionReplayed": false,
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "privateMediaSaved": 0,
+    "originalClockCopied": false
+  },
+  "cleanup": {
+    "PID": 7516,
+    "processNotRunningConfirmed": true,
+    "port": 59412,
+    "portClosed": true,
+    "tab": 82,
+    "tabClosed": true,
+    "viewportReset": true,
+    "inputPinsUnchangedAfterCleanup": true,
+    "remainingOwnedServers": 0
+  },
+  "limits": [
+    "8x+y와 body kernel 수치는 작성자가 고른 source-bound counter이며 원문이 정한 clock이 아니다.",
+    "발·하강몸통을 먼저 완성한 뒤 상승한다는 원문 하위순서를 주장하지 않는다.",
+    "순수 정책 모듈과 실제 DOM/component 연결 검증은 별도이다."
+  ]
+}
