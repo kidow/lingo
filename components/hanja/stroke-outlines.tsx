@@ -11,6 +11,11 @@ import {reviewedU5ebeCardinalContext,reviewedU5ebeCardinalPolicy,sampleReviewedU
 import {reviewedU5ebeContext,reviewedU5ebePolicy,commitReviewedU5ebeCaps,verifyReviewedU5ebeCapsPrior,type ReviewedU5ebePolicy} from '@/lib/hanja-stroke-start-caps-u5ebe'
 import {reviewedU5767HkcsContext,reviewedU5767HkcsPolicy,commitReviewedU5767HkcsCaps,verifyReviewedU5767HkcsCapsPrior,type ReviewedU5767HkcsPolicy} from '@/lib/hanja-stroke-start-caps-u5767-hkcs'
 import {reviewedU5767HkcsCardinalContext,reviewedU5767HkcsCardinalPolicy,sampleReviewedU5767HkcsCardinalFrame,verifyReviewedU5767HkcsCardinalPrior,type ReviewedU5767HkcsCardinalPolicy} from '@/lib/hanja-stroke-cardinal-contact-u5767-hkcs'
+import {reviewedU5aa4GContext,reviewedU5aa4GPolicy,commitReviewedU5aa4GCaps,verifyReviewedU5aa4GCapsPrior,type ReviewedU5aa4GPolicy} from '@/lib/hanja-stroke-start-caps-u5aa4-g'
+import {reviewedU5aa4GPrefixContext,reviewedU5aa4GPrefixPolicy,sampleReviewedU5aa4GPrefixFrame,verifyReviewedU5aa4GPrefixPrior,type ReviewedU5aa4GPrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u5aa4-g'
+import {reviewedU5aa4GCardinalContext,reviewedU5aa4GCardinalPolicy,sampleReviewedU5aa4GCardinalFrame,verifyReviewedU5aa4GCardinalPrior,type ReviewedU5aa4GCardinalPolicy} from '@/lib/hanja-stroke-cardinal-contact-u5aa4-g'
+import {reviewedU59b5GContext,reviewedU59b5GPolicy,commitReviewedU59b5GCaps,verifyReviewedU59b5GCapsPrior,type ReviewedU59b5GPolicy} from '@/lib/hanja-stroke-start-caps-u59b5-g'
+import {reviewedU59b5GPrefixContext,reviewedU59b5GPrefixPolicy,sampleReviewedU59b5GPrefixFrame,verifyReviewedU59b5GPrefixPrior,type ReviewedU59b5GPrefixPolicy} from '@/lib/hanja-stroke-source-prefix-u59b5-g'
 import {reviewedU56acGContext,reviewedU56acGPolicy,commitReviewedU56acGCaps,verifyReviewedU56acGCapsPrior,type ReviewedU56acGPolicy} from '@/lib/hanja-stroke-start-caps-u56ac-g'
 import {reviewedU56acGCardinalContext,reviewedU56acGCardinalPolicy,sampleReviewedU56acGCardinalFrame,verifyReviewedU56acGCardinalPrior,type ReviewedU56acGCardinalPolicy} from '@/lib/hanja-stroke-cardinal-contact-u56ac-g'
 import {reviewedU8543TContext,reviewedU8543TPolicy,commitReviewedU8543TCaps,verifyReviewedU8543TCapsPrior,type ReviewedU8543TPolicy} from '@/lib/hanja-stroke-start-caps-u8543-t'
@@ -466,6 +471,11 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u5ebeContext=reviewedU5ebeContext(strokes)
   const u5767HkcsContext=reviewedU5767HkcsContext(strokes)
   const u5767HkcsCardinalContext=reviewedU5767HkcsCardinalContext(strokes)
+  const u5aa4gContext=reviewedU5aa4GContext(strokes)
+  const u5aa4gPrefixContext=reviewedU5aa4GPrefixContext(strokes)
+  const u5aa4gCardinalContext=reviewedU5aa4GCardinalContext(strokes)
+  const u59b5gContext=reviewedU59b5GContext(strokes)
+  const u59b5gPrefixContext=reviewedU59b5GPrefixContext(strokes)
   const u56acgContext=reviewedU56acGContext(strokes)
   const u56acgCardinalContext=reviewedU56acGCardinalContext(strokes)
   const u8543tContext=reviewedU8543TContext(strokes)
@@ -696,6 +706,16 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if(u83bdTPolicy)return <U83bdTCapsOutline key={index} policy={u83bdTPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index}/>
         const u5ebePolicy=reviewedU5ebePolicy(u5ebeContext,stroke,index)
         if(u5ebePolicy)return <U5ebeCapsOutline key={index} policy={u5ebePolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index}/>
+        const u5aa4gPolicy=reviewedU5aa4GPolicy(u5aa4gContext,stroke,index)
+        if(u5aa4gPolicy)return <U5aa4GCapsOutline key={index} policy={u5aa4gPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index}/>
+        const u5aa4gPrefixPolicy=reviewedU5aa4GPrefixPolicy(u5aa4gPrefixContext,stroke,index)
+        if(u5aa4gPrefixPolicy)return <U5aa4GPrefixOutline key={index} policy={u5aa4gPrefixPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
+        const u5aa4gCardinalPolicy=reviewedU5aa4GCardinalPolicy(u5aa4gCardinalContext,stroke,index)
+        if(u5aa4gCardinalPolicy)return <U5aa4GCardinalOutline key={index} policy={u5aa4gCardinalPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
+        const u59b5gPolicy=reviewedU59b5GPolicy(u59b5gContext,stroke,index)
+        if(u59b5gPolicy)return <U59b5GCapsOutline key={index} policy={u59b5gPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index}/>
+        const u59b5gPrefixPolicy=reviewedU59b5GPrefixPolicy(u59b5gPrefixContext,stroke,index)
+        if(u59b5gPrefixPolicy)return <U59b5GPrefixOutline key={index} policy={u59b5gPrefixPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
         const u56acgPolicy=reviewedU56acGPolicy(u56acgContext,stroke,index)
         if(u56acgPolicy)return <U56acGCapsOutline key={index} policy={u56acgPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index}/>
         const u56acgCardinalPolicy=reviewedU56acGCardinalPolicy(u56acgCardinalContext,stroke,index)
@@ -2042,6 +2062,191 @@ function U7228CardinalOutline({policy,segment,progress,previousMaskProgress,clip
  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u7228-cardinal-previous-progress={String(previousMaskProgress)} data-u7228-cardinal-display-clock="source-P-y-contact-band">
   <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={clip?.x??b[0]} y={clip?.y??b[1]} width={clip?.width??b[2]-b[0]} height={clip?.height??0}/></clipPath></defs>
   <path ref={ink} data-u7228-cardinal-ink="true" d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U5aa4GCapsOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU5aa4GPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null),group=useRef<SVGGElement>(null),fullInk=useRef<SVGPathElement>(null),fullGuide=useRef<SVGPathElement>(null),fullMask=useRef<SVGMaskElement>(null)
+ useLayoutEffect(()=>{
+  const g=group.current,full=fullInk.current,partial=ink.current
+  const reset=()=>{full?.setAttribute('visibility','hidden');full?.removeAttribute('data-u5aa4g-full-committed');partial?.setAttribute('visibility','hidden')};reset()
+  if(!g||!Number.isFinite(progress)||progress<0||progress>1)return reset
+  const prior=()=>policy.mask===1||verifyReviewedU5aa4GCapsPrior(policy,g,previousMaskProgress)
+  if(progress>0&&!prior())return reset
+  const nodes={measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:partial}
+  if(progress===1){
+   const checked=commitReviewedU5aa4GCaps(policy,segment,1,clipId,{...nodes,ink:full},previousMaskProgress)
+   if(checked.status!=='complete'||!prior())return reset
+   const mask=fullMask.current,path=fullGuide.current,owner=g.ownerSVGElement,defs=mask?.parentElement,doc=g.ownerDocument,view=doc.defaultView
+   const stable=()=>{
+    const direct=Array.from(g.children).filter(n=>n.localName==='path');if(direct.length!==1||direct[0]!==full)return false
+    if(!full||!mask||!path||!defs||!owner||!view||defs.localName!=='defs'||defs.parentNode!==g||mask.parentNode!==defs||path.parentNode!==mask||full.parentNode!==g)return false
+    if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-u5aa4g-progress')!=='1'||g.getAttribute('data-u5aa4g-clip')!==clipId||g.getAttribute('data-stroke-reveal-progress')!=='1')return false
+    if(full.getAttribute('d')!==segment.outline||full.getAttribute('mask')!=='url(#'+clipId+')'||full.getAttribute('clip-path')!==null||full.getAttribute('pathLength')!==null||mask.getAttribute('id')!==clipId||mask.getAttribute('maskUnits')!=='userSpaceOnUse'||mask.getAttribute('maskContentUnits')!=='userSpaceOnUse'||['x','y'].some(k=>mask.getAttribute(k)!=='0')||['width','height'].some(k=>mask.getAttribute(k)!=='100')||mask.children.length!==1)return false
+    if(path.getAttribute('d')!==segment.revealPath||path.getAttribute('fill')!=='none'||path.getAttribute('stroke')!=='white'||path.getAttribute('stroke-width')!==String(segment.revealWidth)||path.getAttribute('stroke-linecap')!=='round'||path.getAttribute('stroke-linejoin')!=='miter'||path.getAttribute('pathLength')!=='1'||path.getAttribute('stroke-dasharray')!=='1 2'||path.getAttribute('stroke-dashoffset')!=='0'||path.getAttribute('mask')!==null||path.getAttribute('clip-path')!==null)return false
+    for(const node of[g,defs,mask,path,full]){
+     if(!node.isConnected||node.ownerDocument!==doc||(node as SVGElement).ownerSVGElement!==owner||node.getAttribute('transform')!==null)return false
+     const s=view.getComputedStyle(node);if(s.transform!=='none'||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false
+    }
+    const paint=view.getComputedStyle(path)
+    return paint.fill==='none'&&['white','rgb(255, 255, 255)'].includes(paint.stroke)&&parseFloat(paint.strokeWidth)===segment.revealWidth&&paint.strokeLinecap==='round'&&paint.strokeLinejoin==='miter'&&Number(paint.opacity)===1&&Number(paint.strokeOpacity)===1&&paint.visibility==='visible'
+   }
+   if(!stable()||!prior())return reset
+   full!.setAttribute('data-u5aa4g-full-committed','true');full!.setAttribute('visibility','visible');if(!stable()||!prior())reset();return reset
+  }
+  const result=commitReviewedU5aa4GCaps(policy,segment,progress,clipId,nodes,previousMaskProgress)
+  if(progress>0&&!prior()){result.cleanup();reset();return reset}
+  return()=>{result.cleanup();reset()}
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+ return <g ref={group} data-u5aa4g-display-clock="source-bound-growing-caps" data-u5aa4g-previous-progress={String(previousMaskProgress)} data-u5aa4g-prior-required={String(policy.mask>1)} data-u5aa4g-outer-clock-unchanged="true" data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u5aa4g-progress={String(progress)} data-u5aa4g-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+  <defs>
+   <path ref={measurement} id={clipId+'-u5aa4g-measure'} data-growing-owner={clipId} data-u5aa4g-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
+   <mask ref={fullMask} id={clipId} maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path ref={fullGuide} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0}/></mask>
+   <mask id={clipId+'-u5aa4g-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path ref={guide} id={clipId+'-u5aa4g-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/><circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/></mask>
+  </defs>
+  {valid&&progress===1&&<path ref={fullInk} data-growing-full-round="true" data-u5aa4g-full-original-q-tube="true" d={segment.outline} mask={'url(#'+clipId+')'} visibility="hidden"/>}
+  {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u5aa4g-growing)'} visibility="hidden"/>}
+ </g>
+}
+
+
+function U5aa4GPrefixOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU5aa4GPrefixPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ let frame:ReturnType<typeof sampleReviewedU5aa4GPrefixFrame>|null=null
+ try{frame=sampleReviewedU5aa4GPrefixFrame(policy,segment,progress,previousMaskProgress)}catch{}
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current,f=frame
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u5aa4g-prefix-committed','false');p?.removeAttribute('data-u5aa4g-full-committed')};reset()
+  if(!g||!p||!r||!c||!f)return reset
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u5aa4g-prefix-clip'
+  const previousComplete=()=>verifyReviewedU5aa4GPrefixPrior(policy,g,previousMaskProgress)
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||g.getAttribute('data-u5aa4g-prefix-previous-progress')!==String(previousMaskProgress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const b=segment.bounds,expected=f.clip??{x:b[0],y:b[1],width:b[2]-b[0],height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||previousComplete())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u5aa4g-prefix-progress',String(progress));p.setAttribute('data-u5aa4g-prefix-phase',f.phase);p.setAttribute('data-u5aa4g-prefix-direct-original',String(f.originalPDirect));p.setAttribute('data-u5aa4g-prefix-source-full',String(f.originalPDirect));p.setAttribute('data-u5aa4g-prefix-one-p','true');p.setAttribute('data-u5aa4g-prefix-ua-read','false')
+  if(!stable())return reset
+  if(f.originalPDirect)p.setAttribute('data-u5aa4g-full-committed','true');p.setAttribute('data-u5aa4g-prefix-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const b=segment.bounds,clip=frame?.clip,key=clipId+'-u5aa4g-prefix-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u5aa4g-prefix-previous-progress={String(previousMaskProgress)} data-u5aa4g-prefix-display-clock="source-P-left-prefix">
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={clip?.x??b[0]} y={clip?.y??b[1]} width={clip?.width??b[2]-b[0]} height={clip?.height??0}/></clipPath></defs>
+  <path ref={ink} data-u5aa4g-prefix-ink="true" data-u5aa4g-full-original-prefix={frame?.originalPDirect?'true':undefined} d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U5aa4GCardinalOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU5aa4GCardinalPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ let frame:ReturnType<typeof sampleReviewedU5aa4GCardinalFrame>|null=null
+ try{frame=sampleReviewedU5aa4GCardinalFrame(policy,segment,progress,previousMaskProgress)}catch{}
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current,f=frame
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u5aa4g-cardinal-committed','false')};reset()
+  if(!g||!p||!r||!c||!f)return reset
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u5aa4g-cardinal-clip'
+  const previousComplete=()=>verifyReviewedU5aa4GCardinalPrior(policy,g,previousMaskProgress)
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||g.getAttribute('data-u5aa4g-cardinal-previous-progress')!==String(previousMaskProgress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const b=segment.bounds,expected=f.clip??{x:b[0],y:b[1],width:b[2]-b[0],height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||previousComplete())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u5aa4g-cardinal-progress',String(progress));p.setAttribute('data-u5aa4g-cardinal-phase',f.phase);p.setAttribute('data-u5aa4g-cardinal-direct-original',String(f.originalPDirect));p.setAttribute('data-u5aa4g-cardinal-source-full',String(f.originalPDirect));p.setAttribute('data-u5aa4g-cardinal-one-p','true');p.setAttribute('data-u5aa4g-cardinal-ua-read','false')
+  if(!stable())return reset
+  p.setAttribute('data-u5aa4g-cardinal-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const b=segment.bounds,clip=frame?.clip,key=clipId+'-u5aa4g-cardinal-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u5aa4g-cardinal-previous-progress={String(previousMaskProgress)} data-u5aa4g-cardinal-display-clock="source-P-y-contact-band">
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={clip?.x??b[0]} y={clip?.y??b[1]} width={clip?.width??b[2]-b[0]} height={clip?.height??0}/></clipPath></defs>
+  <path ref={ink} data-u5aa4g-cardinal-ink="true" d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U59b5GCapsOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU59b5GPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null),group=useRef<SVGGElement>(null),fullInk=useRef<SVGPathElement>(null),fullGuide=useRef<SVGPathElement>(null),fullMask=useRef<SVGMaskElement>(null)
+ useLayoutEffect(()=>{
+  const g=group.current,full=fullInk.current,partial=ink.current
+  const reset=()=>{full?.setAttribute('visibility','hidden');full?.removeAttribute('data-u59b5g-full-committed');partial?.setAttribute('visibility','hidden')};reset()
+  if(!g||!Number.isFinite(progress)||progress<0||progress>1)return reset
+  const prior=()=>policy.mask===1||verifyReviewedU59b5GCapsPrior(policy,g,previousMaskProgress)
+  if(progress>0&&!prior())return reset
+  const nodes={measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:partial}
+  if(progress===1){
+   const checked=commitReviewedU59b5GCaps(policy,segment,1,clipId,{...nodes,ink:full},previousMaskProgress)
+   if(checked.status!=='complete'||!prior())return reset
+   const mask=fullMask.current,path=fullGuide.current,owner=g.ownerSVGElement,defs=mask?.parentElement,doc=g.ownerDocument,view=doc.defaultView
+   const stable=()=>{
+    const direct=Array.from(g.children).filter(n=>n.localName==='path');if(direct.length!==1||direct[0]!==full)return false
+    if(!full||!mask||!path||!defs||!owner||!view||defs.localName!=='defs'||defs.parentNode!==g||mask.parentNode!==defs||path.parentNode!==mask||full.parentNode!==g)return false
+    if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-u59b5g-progress')!=='1'||g.getAttribute('data-u59b5g-clip')!==clipId||g.getAttribute('data-stroke-reveal-progress')!=='1')return false
+    if(full.getAttribute('d')!==segment.outline||full.getAttribute('mask')!=='url(#'+clipId+')'||full.getAttribute('clip-path')!==null||full.getAttribute('pathLength')!==null||mask.getAttribute('id')!==clipId||mask.getAttribute('maskUnits')!=='userSpaceOnUse'||mask.getAttribute('maskContentUnits')!=='userSpaceOnUse'||['x','y'].some(k=>mask.getAttribute(k)!=='0')||['width','height'].some(k=>mask.getAttribute(k)!=='100')||mask.children.length!==1)return false
+    if(path.getAttribute('d')!==segment.revealPath||path.getAttribute('fill')!=='none'||path.getAttribute('stroke')!=='white'||path.getAttribute('stroke-width')!==String(segment.revealWidth)||path.getAttribute('stroke-linecap')!=='round'||path.getAttribute('stroke-linejoin')!=='miter'||path.getAttribute('pathLength')!=='1'||path.getAttribute('stroke-dasharray')!=='1 2'||path.getAttribute('stroke-dashoffset')!=='0'||path.getAttribute('mask')!==null||path.getAttribute('clip-path')!==null)return false
+    for(const node of[g,defs,mask,path,full]){
+     if(!node.isConnected||node.ownerDocument!==doc||(node as SVGElement).ownerSVGElement!==owner||node.getAttribute('transform')!==null)return false
+     const s=view.getComputedStyle(node);if(s.transform!=='none'||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false
+    }
+    const paint=view.getComputedStyle(path)
+    return paint.fill==='none'&&['white','rgb(255, 255, 255)'].includes(paint.stroke)&&parseFloat(paint.strokeWidth)===segment.revealWidth&&paint.strokeLinecap==='round'&&paint.strokeLinejoin==='miter'&&Number(paint.opacity)===1&&Number(paint.strokeOpacity)===1&&paint.visibility==='visible'
+   }
+   if(!stable()||!prior())return reset
+   full!.setAttribute('data-u59b5g-full-committed','true');full!.setAttribute('visibility','visible');if(!stable()||!prior())reset();return reset
+  }
+  const result=commitReviewedU59b5GCaps(policy,segment,progress,clipId,nodes,previousMaskProgress)
+  if(progress>0&&!prior()){result.cleanup();reset();return reset}
+  return()=>{result.cleanup();reset()}
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+ return <g ref={group} data-u59b5g-display-clock="source-bound-growing-caps" data-u59b5g-previous-progress={String(previousMaskProgress)} data-u59b5g-prior-required={String(policy.mask>1)} data-u59b5g-outer-clock-unchanged="true" data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u59b5g-progress={String(progress)} data-u59b5g-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+  <defs>
+   <path ref={measurement} id={clipId+'-u59b5g-measure'} data-growing-owner={clipId} data-u59b5g-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
+   <mask ref={fullMask} id={clipId} maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path ref={fullGuide} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0}/></mask>
+   <mask id={clipId+'-u59b5g-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path ref={guide} id={clipId+'-u59b5g-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/><circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/></mask>
+  </defs>
+  {valid&&progress===1&&<path ref={fullInk} data-growing-full-round="true" data-u59b5g-full-original-q-tube="true" d={segment.outline} mask={'url(#'+clipId+')'} visibility="hidden"/>}
+  {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u59b5g-growing)'} visibility="hidden"/>}
+ </g>
+}
+
+
+function U59b5GPrefixOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU59b5GPrefixPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ let frame:ReturnType<typeof sampleReviewedU59b5GPrefixFrame>|null=null
+ try{frame=sampleReviewedU59b5GPrefixFrame(policy,segment,progress,previousMaskProgress)}catch{}
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current,f=frame
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u59b5g-prefix-committed','false');p?.removeAttribute('data-u59b5g-full-committed')};reset()
+  if(!g||!p||!r||!c||!f)return reset
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u59b5g-prefix-clip'
+  const previousComplete=()=>verifyReviewedU59b5GPrefixPrior(policy,g,previousMaskProgress)
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||g.getAttribute('data-u59b5g-prefix-previous-progress')!==String(previousMaskProgress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const b=segment.bounds,expected=f.clip??{x:b[0],y:b[1],width:b[2]-b[0],height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||previousComplete())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u59b5g-prefix-progress',String(progress));p.setAttribute('data-u59b5g-prefix-phase',f.phase);p.setAttribute('data-u59b5g-prefix-direct-original',String(f.originalPDirect));p.setAttribute('data-u59b5g-prefix-source-full',String(f.originalPDirect));p.setAttribute('data-u59b5g-prefix-one-p','true');p.setAttribute('data-u59b5g-prefix-ua-read','false')
+  if(!stable())return reset
+  if(f.originalPDirect)p.setAttribute('data-u59b5g-full-committed','true');p.setAttribute('data-u59b5g-prefix-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const b=segment.bounds,clip=frame?.clip,key=clipId+'-u59b5g-prefix-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u59b5g-prefix-previous-progress={String(previousMaskProgress)} data-u59b5g-prefix-display-clock="source-P-left-prefix">
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={clip?.x??b[0]} y={clip?.y??b[1]} width={clip?.width??b[2]-b[0]} height={clip?.height??0}/></clipPath></defs>
+  <path ref={ink} data-u59b5g-prefix-ink="true" data-u59b5g-full-original-prefix={frame?.originalPDirect?'true':undefined} d={segment.outline} fillRule="nonzero" clipPath={frame?.originalPDirect?undefined:'url(#'+key+')'} visibility="hidden"/>
  </g>
 }
 
