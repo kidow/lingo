@@ -1,0 +1,147 @@
+{
+  "schema": "hanja-source-specific-actual-native-review/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "reviewer": "ROOT",
+  "scope": "isolated actual StrokeOutlines logical7, whole idle12; not product entire autoplay",
+  "pins": {
+    "helper": "26ec572f49d7f6fd908ede64a58e38cb94eeb7c3b7b9aca87ff11e7c5184887a",
+    "renderer": "252fb2c96e31cece358c6a2cd3312743d0b5d1719829acd42447daf6baa064a9",
+    "profile": "206741f5f01ae157069ce369282c14c28f59ef541556ab99a4927c117c3dbc9f",
+    "module": "e6730925ffdd9b563c230fbec0169ac2ed436838696afa014373c6ccb9152d12",
+    "constants": "69acd4d5cca79a94df532c8ee0b7695d4bcc4fe4058d22d94c5bf5d3bdd4d317"
+  },
+  "finite": {
+    "states": [
+      0,
+      0.000001,
+      0.01,
+      0.03,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.99,
+      1
+    ],
+    "count": 11,
+    "targetSize": 520,
+    "sourceIndependentPaths": 9,
+    "visual": "PASS",
+    "bad": [],
+    "errors": []
+  },
+  "boundaries": {
+    "count": 6,
+    "targetSize": 220,
+    "layout": "3x2 complete grid",
+    "visual": "PASS",
+    "actualRoundedSamples": {
+      "sample1": {
+        "penProgress": 0.17318252062301992,
+        "phase": "foot",
+        "localApprox": 0.9999999999999996
+      },
+      "sample4": {
+        "penProgress": 0.46547685660936133,
+        "phase": "rise",
+        "localApprox": 5.87e-16
+      }
+    },
+    "limits": "UA/controller roundoff retained; no exact clock-boundary equality claim",
+    "missingOrIslandOrVisibleLoss": false
+  },
+  "natural": {
+    "durationMs": 8000,
+    "runs": [
+      {
+        "run": 1,
+        "readPenProgress": 0.10603749999403976,
+        "screenshotControllerApprox": 0.123737,
+        "phase": "foot",
+        "ended": 1,
+        "visual": "PASS"
+      },
+      {
+        "run": 2,
+        "readPenProgress": 0.1862375000119213,
+        "phase": "body",
+        "visual": "EXCLUDED",
+        "reason": "screen bottom clipped; no full visual approval"
+      },
+      {
+        "run": 3,
+        "targetSize": 520,
+        "bodyReadPenProgress": 0.18831250001192215,
+        "bodyScreenshotController": 0.18831250001192215,
+        "riseReadPenProgress": 0.47380000001192074,
+        "riseScreenshotController": 0.48836250001192094,
+        "ended": 1,
+        "visual": "PASS"
+      }
+    ],
+    "scope": "logical7 only; read and screenshot can be different live frames"
+  },
+  "wholeIdle": {
+    "logicalStrokes": 12,
+    "count": 1,
+    "independentP9": true,
+    "visual": "PASS"
+  },
+  "computedGuideStyle": {
+    "strokeWidth": "14px",
+    "strokeLinecap": "butt",
+    "strokeLinejoin": "miter",
+    "stroke": "rgb(255, 255, 255)",
+    "opacity": 1,
+    "strokeOpacity": 1,
+    "pathLength": 1,
+    "strokeDasharray": "1px, 2px",
+    "strokeDashoffset": "0px"
+  },
+  "startup": {
+    "earlierMissingExactAliases": [
+      "./hanja-stroke-start-caps-u5ebe.ts",
+      "./hanja-stroke-start-caps-u5767-hkcs.ts"
+    ],
+    "earlierServers": 0,
+    "staticDependencyClosure": {
+      "modules": 310,
+      "missing": [],
+      "SSR": 0
+    },
+    "agentFocusedResources": "CJS/SSR/resources reached listen, then EPERM; server0",
+    "successfulServer": {
+      "PID": 87372,
+      "session": 28539,
+      "port": 59412
+    }
+  },
+  "cleanup": {
+    "exit": 130,
+    "tab": 57,
+    "closed": true,
+    "viewport": [
+      614,
+      767
+    ],
+    "ownServers": 0
+  },
+  "replayed": {
+    "engine": 0,
+    "projection": 0,
+    "privateFetch": 0,
+    "originalTemporal": 0,
+    "staticMapping": 0,
+    "sourceMath": 0
+  },
+  "approval": {
+    "actualLogical7": true,
+    "outsideCaps4": false,
+    "productWholeAutoplay": false,
+    "originalClockEquivalence": false,
+    "registry": false,
+    "runtimeApplied": false
+  }
+}
