@@ -1,0 +1,229 @@
+{
+  "schema": "hanja-source-standalone-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "濩",
+  "root": "hkcs_m6fe9",
+  "logical": 3,
+  "reviewer": "ROOT browser panel",
+  "historicalInputCommit": "54f955c12",
+  "status": "PARTIAL-PASS30-and-HOLD2",
+  "input": {
+    "htmlPath": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/logical3-combined-policy-experiment.html",
+    "htmlSHA256": "28851d8c6a2ea193a3f61bcc24db8cbb6e014aa66f9e2c6499cdca044c37fec9",
+    "manifestPath": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/logical3-standalone-input.json",
+    "manifestSHA256": "05b8e0c745a2e8f9c950f0a166c7c04f1fa2bdcd39504ec87e2e179fb3d4cd2f",
+    "sourceFixtureSHA256": "1e8ecca15fcef9e8ff684fd4abb9f50ddff900db4b2e09cd68208c6b1392e387",
+    "sourceGeometrySHA256": "be3b0646168456af0a5a2bef45fb868d949aaeb37881fccae66663ace557afb4"
+  },
+  "passedLocal": {
+    "count": 30,
+    "counts": {
+      "foot": 16,
+      "body": 6,
+      "rise": 8
+    },
+    "states": [
+      {
+        "phase": "foot",
+        "p": 0.000001
+      },
+      {
+        "phase": "foot",
+        "p": 0.001
+      },
+      {
+        "phase": "foot",
+        "p": 0.01
+      },
+      {
+        "phase": "foot",
+        "p": 0.05
+      },
+      {
+        "phase": "foot",
+        "p": 0.1
+      },
+      {
+        "phase": "foot",
+        "p": 0.25
+      },
+      {
+        "phase": "foot",
+        "p": 0.4
+      },
+      {
+        "phase": "foot",
+        "p": 0.425
+      },
+      {
+        "phase": "foot",
+        "p": 0.45
+      },
+      {
+        "phase": "foot",
+        "p": 0.5
+      },
+      {
+        "phase": "foot",
+        "p": 0.749999
+      },
+      {
+        "phase": "foot",
+        "p": 0.75
+      },
+      {
+        "phase": "foot",
+        "p": 0.750001
+      },
+      {
+        "phase": "foot",
+        "p": 0.8
+      },
+      {
+        "phase": "foot",
+        "p": 0.9
+      },
+      {
+        "phase": "foot",
+        "p": 1
+      },
+      {
+        "phase": "body",
+        "p": 0
+      },
+      {
+        "phase": "body",
+        "p": 0.000001
+      },
+      {
+        "phase": "body",
+        "p": 0.1
+      },
+      {
+        "phase": "body",
+        "p": 0.5
+      },
+      {
+        "phase": "body",
+        "p": 0.999999
+      },
+      {
+        "phase": "body",
+        "p": 1
+      },
+      {
+        "phase": "rise",
+        "p": 0
+      },
+      {
+        "phase": "rise",
+        "p": 0.000001
+      },
+      {
+        "phase": "rise",
+        "p": 0.007607695652173791
+      },
+      {
+        "phase": "rise",
+        "p": 0.007608695652173791
+      },
+      {
+        "phase": "rise",
+        "p": 0.007609695652173791
+      },
+      {
+        "phase": "rise",
+        "p": 0.1
+      },
+      {
+        "phase": "rise",
+        "p": 0.5
+      },
+      {
+        "phase": "rise",
+        "p": 0.999999
+      }
+    ],
+    "P9Unchanged": true,
+    "sourceQ4AndWidths14Unchanged": true,
+    "errors": [],
+    "referenceAndTargetBoth520FullyVisible": true,
+    "noLargePopOrVisibleSeparationObserved": true
+  },
+  "held": [
+    {
+      "action": "rise local1",
+      "ready": false,
+      "errors": [
+        "Error: Actual completed lower body required for rise"
+      ],
+      "targetHidden": true,
+      "cause": "합산 guard가 부동소수 반올림으로 거절됨. source 경로 결함으로 판정하지 않음"
+    },
+    {
+      "action": "global start0 after first failure",
+      "ready": false,
+      "errors": [
+        "Error: Actual completed lower body required for rise",
+        "Error: Source-bound foot correction failed"
+      ],
+      "targetHidden": true,
+      "cause": "첫 errors가 보존되어 상위 footReport.errors.length===0이 거절한 연쇄 상태. 독립 초기화 결함으로 판정하지 않음"
+    }
+  ],
+  "reportedBoundary": {
+    "body1ToRise0SameActualDOMPaint": true,
+    "lastSuccessfulRise": {
+      "local": 0.999999,
+      "bodyY": 26.850046,
+      "bodyHeight": 66.599954,
+      "riseHeight": 45.999954
+    }
+  },
+  "codeDiagnosis": {
+    "bodyY": 26.85,
+    "bodyHeight": 66.6,
+    "computedSum": 93.44999999999999,
+    "requiredBottom": 93.45,
+    "missingAmount": 1.4210854715202004e-14,
+    "failedCondition": "bodyY+bodyHeight>=bodyBottom",
+    "equivalentStableCondition": "bodyHeight>=bodyBottom-bodyY",
+    "epsilonProposed": false,
+    "sourcePathDefectClaimed": false,
+    "errorHistoryCleared": false
+  },
+  "unobservedOrUnaccepted": [
+    "정상 전체완료",
+    "자연재생",
+    "전역 제어8의 성공 프로토콜(실패후 start0만 HOLD로 관찰)"
+  ],
+  "approval": {
+    "finiteLocal30": true,
+    "wholeWater3": false,
+    "completion": false,
+    "natural": false,
+    "actualApp": false,
+    "runtime": false,
+    "allTimePIntersectionConnectivity": false
+  },
+  "actions": {
+    "staticHTTPGet": 1,
+    "externalPrivateFetch": 0,
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "sourcePOrQChanged": false
+  },
+  "cleanup": {
+    "PID": 28669,
+    "wrapperPID": 28668,
+    "session": 47352,
+    "exitCode": 130,
+    "tab": 63,
+    "tabClosed": true,
+    "viewportResetTo": [
+      614,
+      767
+    ],
+    "remainingOwnedServers": 0
+  }
+}

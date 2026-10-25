@@ -6,7 +6,7 @@
   "logical": 3,
   "html": {
     "path": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/logical3-combined-policy-experiment.html",
-    "SHA256": "28851d8c6a2ea193a3f61bcc24db8cbb6e014aa66f9e2c6499cdca044c37fec9"
+    "SHA256": "262c2259b7451bcdc3651afe9bd83812d56617d3c33d040633592b582c8ce650"
   },
   "reusedExperimentFormat": {
     "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/logical7-combined-policy-experiment.html",
@@ -235,5 +235,27 @@
   },
   "nativeApproval": false,
   "runtimeApplied": false,
-  "continuationOfSourceCaseDate": "2026-10-25"
+  "continuationOfSourceCaseDate": "2026-10-25",
+  "revision": "v2-stable-difference-guard",
+  "previousInput": {
+    "historicalCommit": "54f955c12",
+    "htmlSHA256": "28851d8c6a2ea193a3f61bcc24db8cbb6e014aa66f9e2c6499cdca044c37fec9",
+    "manifestSHA256": "05b8e0c745a2e8f9c950f0a166c7c04f1fa2bdcd39504ec87e2e179fb3d4cd2f",
+    "nativePath": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/logical3-standalone-v1-native-review.json",
+    "nativeSHA256": "51ef487c86b904db7a4407db2c160f665ca3cc7cbe7635db4c74d9978704d6d7",
+    "reusedFiniteLocalPasses": 30
+  },
+  "correction": {
+    "oldCondition": "state.bodyY+state.bodyHeight>=CFG.bodyBottom",
+    "newCondition": "state.bodyHeight>=CFG.bodyBottom-state.bodyY",
+    "reason": "구성식 bodyHeight=bodyBottom-bodyY와 동치인 차분 비교로 합산 반올림을 제거",
+    "epsilonAdded": false,
+    "sourcePOrQChanged": false,
+    "rectOrPhaseValuesChanged": false,
+    "errorHistoryCleared": false,
+    "remainingValidation": [
+      "새 페이지 exact rise1→start0",
+      "미관찰 전역8·자연재생"
+    ]
+  }
 }

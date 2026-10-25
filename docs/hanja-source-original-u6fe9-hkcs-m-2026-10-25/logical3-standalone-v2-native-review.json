@@ -1,0 +1,164 @@
+{
+  "schema": "hanja-source-standalone-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "濩",
+  "root": "hkcs_m6fe9",
+  "logical": 3,
+  "reviewer": "ROOT browser panel",
+  "status": "PASS-standalone-policy-only",
+  "input": {
+    "htmlPath": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/logical3-combined-policy-experiment.html",
+    "htmlSHA256": "262c2259b7451bcdc3651afe9bd83812d56617d3c33d040633592b582c8ce650",
+    "manifestPath": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/logical3-standalone-input.json",
+    "manifestSHA256": "079189daa7c439d952aa45ba49f08fc4e59cc3834f3f026c285d5bc8480eb3aa",
+    "sourceFixtureSHA256": "1e8ecca15fcef9e8ff684fd4abb9f50ddff900db4b2e09cd68208c6b1392e387",
+    "sourceGeometrySHA256": "be3b0646168456af0a5a2bef45fb868d949aaeb37881fccae66663ace557afb4"
+  },
+  "reusedV1": {
+    "path": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/logical3-standalone-v1-native-review.json",
+    "SHA256": "51ef487c86b904db7a4407db2c160f665ca3cc7cbe7635db4c74d9978704d6d7",
+    "finiteLocalPasses": 30,
+    "replayed": 0,
+    "foot1ToBody0SameActualDOMPaint": true,
+    "body1ToRise0SameActualDOMPaint": true,
+    "directCallGlobalActionsReused": [
+      "foot-end -> renderStage(foot,1)",
+      "body-start -> renderStage(body,0)",
+      "body-end -> renderStage(body,1)",
+      "rise-start -> renderStage(rise,0)"
+    ],
+    "reason": "HTML 차분 비교1곳 외 나머지 바이트·원P/Q·rect·phase 함수와 실제 paint 입력이 동일하다. 동일 direct call과 두 DOM paint equality를 재사용했다."
+  },
+  "newFinite": [
+    {
+      "action": "global complete1 / exact rise1",
+      "phase": "rise",
+      "local": 1,
+      "complete": true,
+      "bodyY": 26.85,
+      "bodyHeight": 66.6,
+      "riseHeight": 45.99999999999999
+    },
+    {
+      "action": "global start0 after completion",
+      "globalP": 0,
+      "targetEmpty": true
+    },
+    {
+      "action": "global epsilon",
+      "globalP": 0.000001,
+      "local": 0.000006494793076930601
+    }
+  ],
+  "naturalRuns": [
+    {
+      "durationMs": 2400,
+      "newUniqueVisualObservations": [
+        "body",
+        "end"
+      ],
+      "readState": {
+        "phase": "body",
+        "globalP": 0.24954166672627257,
+        "local": 0.3610039822308028
+      },
+      "screenshotState": {
+        "phase": "body",
+        "globalP": 0.28775000005960466,
+        "local": 0.5053258047184022
+      },
+      "end": {
+        "globalP": 1,
+        "local": 1,
+        "complete": true,
+        "frames": 288,
+        "visual": true
+      },
+      "phaseTrace": {
+        "bodyGlobalP": 0.1558333333929386,
+        "riseGlobalP": 0.41975000005960583
+      }
+    },
+    {
+      "durationMs": 2400,
+      "newUniqueVisualObservations": [
+        "rise"
+      ],
+      "readState": {
+        "phase": "rise",
+        "globalP": 0.4887500000198694,
+        "local": 0.1204914872418014
+      },
+      "screenshotState": {
+        "phase": "rise",
+        "globalP": 0.5268750000198694,
+        "local": 0.18607830787790805
+      },
+      "end": {
+        "globalP": 1,
+        "local": 1,
+        "complete": true,
+        "frames": 289,
+        "visual": false,
+        "stateReadOnly": true
+      },
+      "phaseTrace": {
+        "bodyGlobalP": 0.155375000019867,
+        "riseGlobalP": 0.41925000001986823
+      }
+    }
+  ],
+  "uniqueNewVisualCount": {
+    "finite": 3,
+    "natural": 3,
+    "total": 6,
+    "secondNaturalEndScreenReplayed": 0
+  },
+  "observations": {
+    "allReady": true,
+    "P9Unchanged": true,
+    "errors": [],
+    "referenceAndTargetBoth520FullyVisible": true,
+    "completionMissingObserved": false,
+    "largePopOrVisibleSeparationObserved": false,
+    "numericalReadAndScreenshotSimultaneous": false
+  },
+  "correction": {
+    "oldSumGuardRejectedExactEnd": true,
+    "newEquivalentDifferenceGuardPassed": true,
+    "sourcePOrQChanged": false,
+    "rectOrPhaseValuesChanged": false,
+    "epsilonAdded": false,
+    "priorErrorsAutomaticallyCleared": false
+  },
+  "approval": {
+    "standaloneWater3PolicyFiniteAndNatural": true,
+    "allP1P2ContinuousProgressMathProved": false,
+    "actualComponent": false,
+    "actualApp": false,
+    "runtime": false,
+    "examBody": false
+  },
+  "actions": {
+    "staticHTTPGet": 1,
+    "externalPrivateFetch": 0,
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "newFiniteVisuals": 3,
+    "newNaturalUniqueVisuals": 3,
+    "reusedFiniteVisuals": 30
+  },
+  "cleanup": {
+    "PID": 38412,
+    "wrapperPID": 38411,
+    "session": 93448,
+    "exitCode": 130,
+    "tab": 65,
+    "tabClosed": true,
+    "viewportResetTo": [
+      614,
+      767
+    ],
+    "remainingOwnedServers": 0
+  }
+}
