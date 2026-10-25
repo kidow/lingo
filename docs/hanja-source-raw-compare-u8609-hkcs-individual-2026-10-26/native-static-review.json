@@ -1,0 +1,261 @@
+{
+  "schema": "hanja-original-static-boundary-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "蘉",
+  "root": "hkcs_m8609",
+  "observer": "ROOT",
+  "recordedBy": "A",
+  "result": "PASS-static20-shape-boundaries-with-explicit-raw3-4-order-swap",
+  "pins": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u8609-hkcs-individual-2026-10-26/config.json",
+      "SHA256": "bc196c676f0c69e13f4cb41e967772ec93b426ca446d63f67ccd7bbca9eae3fa"
+    },
+    "launcher": "5595bb408080dec0c4edfaba4c3977abceb245848ffcd6c38f28fbc0f0e0024b",
+    "source": {
+      "path": "docs/hanja-source-alternative-u8609-hkcs-2026-10-26/sources.json",
+      "SHA256": "85584d7c432b0be8bcac22becd1ce201cb7bcc20ff78e8f4d4687f7d621cb60d"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u8609-hkcs-2026-10-26/engine-whole-hkcs_m8609.json",
+      "SHA256": "3fe1b0adf00c88fe9bda882c583cb6bc1189fa13b4f377386fcceabe22ebf7f7"
+    },
+    "PContactAnalysis": {
+      "path": "docs/hanja-source-original-u8609-hkcs-2026-10-26/raw-adjacent-conditions-proof.json",
+      "SHA256": "705b0cd96a96dbb578b02b9da2b46a9ea15a9e327c1c89ec39a44cbf932f7957"
+    }
+  },
+  "native": {
+    "directStaticScenes": 38,
+    "singleScenes": 31,
+    "matchedRawSingleScenes": 25,
+    "exploratoryMismatchSingleScenes": 6,
+    "prefixScenes": 7,
+    "prefixDomesticRaw": [
+      [
+        4,
+        4
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        14,
+        17
+      ],
+      [
+        18,
+        22
+      ],
+      [
+        19,
+        24
+      ],
+      [
+        20,
+        25
+      ]
+    ],
+    "eachSVGSize": [
+      520,
+      520
+    ],
+    "twoFullSVGsVisibleTogetherInFullPage": true,
+    "viewportExactNotRecorded": true,
+    "original20StaticBoundariesMatched": true,
+    "sourcePAndQUnchanged": true
+  },
+  "mappingRawOneBased": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      4
+    ],
+    [
+      3
+    ],
+    [
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16,
+      17
+    ],
+    [
+      18
+    ],
+    [
+      19
+    ],
+    [
+      20
+    ],
+    [
+      21,
+      22
+    ],
+    [
+      23,
+      24
+    ],
+    [
+      25
+    ]
+  ],
+  "sourceOrderCondition": {
+    "rawSourceOrderUnchanged": true,
+    "logicalPenOrderRequiresSwap": [
+      3,
+      4
+    ],
+    "originalPen3": "H maps raw4",
+    "originalPen4": "V maps raw3",
+    "temporalOrderNotYetApproved": true
+  },
+  "mergeEvidence": {
+    "requiredMerges": 5,
+    "pairs": [
+      {
+        "raw": [
+          6,
+          7
+        ],
+        "positiveArea": true,
+        "Qend": [
+          "386/5",
+          "1853/80"
+        ],
+        "Qstart": [
+          "386/5",
+          "1853/80"
+        ],
+        "Qexact": true
+      },
+      {
+        "raw": [
+          12,
+          13
+        ],
+        "positiveArea": true,
+        "Qend": [
+          "85",
+          "161699/4000"
+        ],
+        "Qstart": [
+          "85",
+          "161699/4000"
+        ],
+        "Qexact": true
+      },
+      {
+        "raw": [
+          16,
+          17
+        ],
+        "positiveArea": true,
+        "Qend": [
+          "7465599999999999/100000000000000",
+          "9596000000000001/200000000000000"
+        ],
+        "Qstart": [
+          "7465599999999999/100000000000000",
+          "9539/200"
+        ],
+        "Qexact": false
+      },
+      {
+        "raw": [
+          21,
+          22
+        ],
+        "positiveArea": true,
+        "Qend": [
+          "52663/625",
+          "3311/50"
+        ],
+        "Qstart": [
+          "52663/625",
+          "3311/50"
+        ],
+        "Qexact": true
+      },
+      {
+        "raw": [
+          23,
+          24
+        ],
+        "positiveArea": true,
+        "Qend": [
+          "7465599999999999/100000000000000",
+          "3653/50"
+        ],
+        "Qstart": [
+          "7465599999999999/100000000000000",
+          "3653/50"
+        ],
+        "Qexact": true
+      }
+    ],
+    "contactAloneNotApproval": true
+  },
+  "approval": {
+    "staticBoundaryShapeMapping": true,
+    "wholeMacroCompatible": true,
+    "temporalOrder": false,
+    "direction": false,
+    "trajectory": false,
+    "actualAnimation": false,
+    "runtimeApplied": false
+  },
+  "cleanup": {
+    "PID": 39046,
+    "port": 59412,
+    "PIDNotRunningConfirmedByROOT": true,
+    "portClosedConfirmedByROOT": true,
+    "tab": 87,
+    "tabClosedConfirmedByROOT": true,
+    "inputPinsUnchangedAtShutdownConfirmedByROOT": true
+  },
+  "actions": {
+    "engine": 0,
+    "projection": 0,
+    "geometryChanged": false,
+    "privateMediaFilesSaved": 0
+  },
+  "next": "Publisher20 temporal controls60 states(.1/.5/.75), preserve raw3/4 source order and explicitly bind the original pen-order swap only after direct temporal approval."
+}
