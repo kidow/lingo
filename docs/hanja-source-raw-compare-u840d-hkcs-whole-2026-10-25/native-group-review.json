@@ -1,0 +1,107 @@
+{
+  "schema": "hanja-native-static-group-review/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "observer": "ROOT browser panel",
+  "result": "PASS static mapping only",
+  "inputs": {
+    "board": {
+      "path": "docs/hanja-source-raw-compare-u840d-hkcs-whole-2026-10-25/board.json",
+      "SHA256": "83825c8fc07fedf20e301a1f46acaed549d3e08c87f23746290b320d86e3c5ef"
+    },
+    "wrapper": {
+      "path": "scripts/hanja-raw-static-board.py",
+      "SHA256": "29af295f298edd5dac94ea107b90e80a03d92bfcce902793a70c15f1abc31847"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u840d-hkcs-2026-10-25/engine-whole-hkcs_m840d.json",
+      "SHA256": "f5c8184820c51cbfe0506959745703496eec6d7d271b29735d22bee2cec8a205"
+    }
+  },
+  "provisionalGroups": {
+    "selected": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7,
+        8,
+        9,
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ]
+    ]
+  },
+  "observations": {
+    "pairs": 12,
+    "eachPairSourceAndOriginalSize": 220,
+    "viewport": [
+      1280,
+      1280
+    ],
+    "headingSelections": [
+      2,
+      5,
+      11
+    ],
+    "acceptedScreens": 3,
+    "allPairsFullyVisible": true,
+    "composite7": "short left foot, lower body, and long rising upper-right combined shape match",
+    "unresolvedGuideDirectionConnectionAndOrder": true
+  },
+  "approvals": {
+    "staticMapping": true,
+    "individualGuideDirection": false,
+    "guideConnection": false,
+    "guideOrder": false,
+    "temporal": false,
+    "nativeAnimation": false,
+    "runtime": false
+  },
+  "reused": {
+    "originalTemporal36": true,
+    "newWhole1": true
+  },
+  "cleanup": {
+    "PID": 66467,
+    "session": 68283,
+    "exitCode": 130,
+    "tab": 20,
+    "tabClosed": true,
+    "viewportReset": true,
+    "serverRemaining": 0
+  },
+  "limits": [
+    "Static P grouping only; four original guide rows of stroke7 remain unchanged and not approved as one continuous animated guide.",
+    "Source engine and projection were not replayed for static native observation."
+  ]
+}
