@@ -504,6 +504,7 @@ NEW_PUBLIC_WHOLES['hkcs_m9959']=json.loads("{\"glyph\":\"饙\",\"catalogStrokes\
 NEW_PUBLIC_WHOLES['hkcs_m5e6a'].update({'config':'docs/hanja-source-raw-compare-u5e6a-hkcs-individual-2026-10-26/config.json','individualStatic':True})
 NEW_PUBLIC_WHOLES['hkcs_m9959'].update({'config':'docs/hanja-source-raw-compare-u9959-hkcs-individual-2026-10-26/config.json','individualStatic':True})
 
+NEW_PUBLIC_WHOLES['hkcs_m8819']=json.loads("{\"glyph\":\"蠙\",\"catalogStrokes\":20,\"config\":\"docs/hanja-source-raw-compare-u8819-hkcs-whole-2026-10-26/config.json\",\"full\":\"docs/hanja-actual-engine-capture-u8819-hkcs-2026-10-26/engine-whole-hkcs_m8819.json\",\"fullSHA\":\"1b6efbd56add0a361572755488eb27f54fab06c4e74394bd2e9cc47a934d5da4\",\"capture\":\"docs/hanja-actual-engine-capture-u8819-hkcs-2026-10-26/capture.json\",\"captureSHA\":\"086d527ea0be1781dd5ab27c40ef8aebfdfeccce4828628a2ea334e23d3d81f9\",\"source\":\"docs/hanja-source-alternative-u8819-hkcs-2026-10-26/sources.json\",\"sourceSHA\":\"cd8ce8cb6c7cd1f9994056d8bc43b9a81ad66de921384824e08a686141f9776d\",\"metadata\":\"docs/hanja-goal-glyphwiki-batch630-2026-10-11/metadata.json\",\"metadataSHA\":\"88b1be4437ae4fb1d3cb7d0ea301b1193aad1d049faa17100782a48444d77074\",\"readme\":\"docs/hanja-goal-glyphwiki-batch630-2026-10-11/README.md\",\"readmeSHA\":\"83fe703296aef18a6ae6df3817ce191590f795798bc644100455136d42cebfc1\",\"raw\":24,\"calls\":24,\"polygons\":43,\"rootVersion\":1,\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/8800/8819.svg\",\"status\":200,\"bytes\":9367,\"sha256\":\"d4ecf2488603a4a8d25960cdc27c6cea73d8add73c339300b88f922c95cfb577\",\"clips\":20,\"glyph\":\"蠙\",\"privateMediaSaved\":false}}")
 def validate_new_public_whole(config,label,spec,path,config_path,case):
     pair=case.get('pairedRoots')
     require(config_path==ROOT/case['config'] and ((list(config['sourceRoots'])==list(pair) and label in pair and {k:v.get('root')for k,v in config['sourceRoots'].items()}==pair and spec['root']==pair[label])if pair else(label=='selected' and list(config['sourceRoots'])==['selected'])),'exact new whole comparison location required')
@@ -573,6 +574,10 @@ def validate_new_public_whole(config,label,spec,path,config_path,case):
         groups,trace=proof['groups'],proof['trace']
         require(len(groups)==len(trace)==30 and [i for i,g in enumerate(groups)if g['raw'][0]==0]==[21] and groups[21]=={'raw':[0]+[None]*10,'polygons':[]} and trace[21]==[],'exact 纘 literal0 metadata row22 required')
         require(sum(map(len,trace))==31 and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace] and [len(g['polygons'])for g in groups]==spec['polygonCounts'],'exact 纘 raw/trace/P correspondence required')
+    if spec['root']=='hkcs_m8819':
+        groups,trace=proof['groups'],proof['trace']
+        require(len(groups)==len(trace)==24 and [i for i,g in enumerate(groups)if g['raw'][0]==0]==[15] and groups[15]=={'raw':[0]+[None]*10,'polygons':[]} and trace[15]==[],'exact 蠙 HK literal0 metadata row16 required')
+        require(sum(map(len,trace))==24 and sum(len(g['polygons'])for g in groups)==43 and [g['polygons']for g in groups]==[[p for call in row for p in call['polygons']]for row in trace] and [len(g['polygons'])for g in groups]==spec['polygonCounts'],'exact 蠙 HK raw/trace/P correspondence required')
     if spec['root']=='hkcs_m8b92':
         groups,trace=proof['groups'],proof['trace']
         require(len(groups)==len(trace)==31 and [i for i,g in enumerate(groups)if g['raw'][0]==0]==[4] and groups[4]=={'raw':[0]+[None]*10,'polygons':[]} and trace[4]==[],'exact 讒 HK literal0 metadata row5 required')
