@@ -1,0 +1,103 @@
+{
+  "schema": "hanja-public-source-only-screening/v1",
+  "date": "2026-10-26",
+  "glyph": "薪",
+  "catalog": {
+    "grade": "1급",
+    "strokes": 17,
+    "applied": false,
+    "confirmedBy": "ROOT from D1488 RAM roster"
+  },
+  "inventory": {
+    "path": "docs/hanja-source-inventory-u85aa-2026-10-26/public-records.json",
+    "SHA256": "fe4cf57abac166a83a3bf1b825f2cfeed3471f65087088ff2216cc8dc1087cb2"
+  },
+  "priorHolds": [
+    {
+      "path": "docs/hanja-source-raw-compare-u85aa-hkcs-2026-10-24/native-whole-review.json",
+      "SHA256": "0371ea68f6685aece915c26a87703d33f1ac018864ae8618b07ea1ae5bb85e1a",
+      "reason": "New HK completed upper first feature is two H bars instead of original vertical dot; direct whole HOLD."
+    },
+    {
+      "path": "docs/hanja-source-raw-compare-u85aa-var-003-whole-2026-10-25/native-whole-hold.json",
+      "SHA256": "206c7f364f6205e89b2313c49dc7d0cfe3e27df8878a4069c0335ec55271f5f5",
+      "reason": "Var003 retains vertical initial dot but completed grass V and dot positively overlap unlike original white gap.",
+      "exactOriginalSourceAreas": [
+        "24/5",
+        "171/700"
+      ]
+    }
+  ],
+  "sourceOnlyFacts": [
+    {
+      "root": "u85aa-var-001@6",
+      "body": "u65b0-var-004@6 -> u4eb2-01-var-002@3",
+      "initialRow": "2:7:8:39:13:53:22:57:35",
+      "type": "DR curve, not vertical line"
+    },
+    {
+      "root": "u85aa-var-002@4",
+      "initialUpperRows": [
+        "1:0:0:25:62:89:62",
+        "1:0:0:15:78:99:78"
+      ],
+      "type": "two H rows preserved"
+    },
+    {
+      "root": "kk-shusei_kr106209-1@1",
+      "body": "kk-shusei_kr048010-1@1",
+      "initialUpperRows": [
+        "1:0:0:29:25:82:25",
+        "1:0:0:15:43:99:43"
+      ],
+      "type": "two H rows preserved"
+    },
+    {
+      "root": "kk-shusei_kr106209-2@1",
+      "body": "kk-shusei_kr048010-2@1",
+      "initialUpperRows": [
+        "1:0:0:29:25:82:25",
+        "1:0:0:15:43:99:43"
+      ],
+      "type": "two H rows preserved"
+    },
+    {
+      "root": "dzimuguri_u85aa@4",
+      "initialUpperRows": [
+        "1:0:0:29:63:82:63",
+        "1:0:0:15:76:99:76"
+      ],
+      "type": "two H rows preserved"
+    },
+    {
+      "root": "hkcs_u85aa@2",
+      "body": "hkcs_u65b0@1 -> hkcs_u4eb2-01@2",
+      "initialRow": "2:7:8:39:12:54:20:59:36",
+      "type": "DR curve, not vertical line"
+    },
+    {
+      "root": "takata_my-gaiji-0430@1",
+      "references": [
+        "u6728-01-var-009",
+        "u65b0-02"
+      ],
+      "type": "different authored 木+新 complete variant; source closure incomplete, compatibility not determined"
+    }
+  ],
+  "assessment": "No investigated unused authored whole has both a demonstrated original vertical-dot primitive and a confirmed grass-to-dot white gap. No captured or visual HOLD is transferred to unobserved alternatives.",
+  "actions": {
+    "engine": 0,
+    "projection": 0,
+    "native": 0,
+    "sourceEdited": false,
+    "geometryEdited": false,
+    "privateInput": false
+  },
+  "approval": {
+    "whole": false,
+    "direction": false,
+    "contact": false,
+    "runtime": false
+  },
+  "next": "Retain original source rows and hold evidence; no component substitution, gap creation, or repeated old source capture."
+}
