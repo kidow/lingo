@@ -1,0 +1,28 @@
+/** 蘉 fixed H→V folds6/14. Source-only authored clip clock; original timing/native/runtime pending. */
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import fixture from '../docs/hanja-source-original-u8609-hkcs-2026-10-26/fixtures.json' with {type:'json'}
+const FIXED=fixture.hkcs_m8609
+const STROKES=FIXED.strokes as HanjaOutlineStrokes
+function deepFreeze<T>(v:T):T{if(v&&typeof v==='object'){for(const k of Reflect.ownKeys(v as object)){const d=Object.getOwnPropertyDescriptor(v,k);if(d&&'value'in d)deepFreeze(d.value)}Object.freeze(v)}return v}
+deepFreeze(FIXED)
+function same(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);if(ak.length!==bk.length)return false;return bk.every(k=>{const ad=Object.getOwnPropertyDescriptor(a,k),bd=Object.getOwnPropertyDescriptor(b,k);return!!ad&&!!bd&&'value'in ad&&'value'in bd&&ad.enumerable===bd.enumerable&&same(ad.value,bd.value)})}
+export type ReviewedU8609FoldContext=Readonly<{id:'u8609-hkcs-original20-contact-folds'}>
+const CONTEXT:ReviewedU8609FoldContext=Object.freeze({id:'u8609-hkcs-original20-contact-folds'})
+const SPECS=deepFreeze([{"pen":6,"mask":2,"priorMask":1,"anchor":[76.5,23.5],"bodyBounds":[74.2,23.15,80.2,36.85],"headPath":"M74.2 22.15 L77.2 19.65 L82.7 24.15 L80.2 26.15 L74.2 23.15 Z","commonKernelHalfWidth":0.3,"rawOneBased":[6,7],"sourceQArgs":[[45.6,46.325,154.4,46.325,2,2],[154.4,46.325,154.4,71.7725,22,32]],"qSeam":"exact"},{"pen":14,"mask":2,"priorMask":1,"anchor":[74,48],"bodyBounds":[71.65,47.65,77.65,62.65],"headPath":"M71.65 46.65 L74.65 44.15 L80.15 48.65 L77.65 50.65 L71.65 47.65 Z","commonKernelHalfWidth":0.3,"rawOneBased":[16,17],"sourceQArgs":[[81.0112,95.96000000000001,149.31199999999998,95.96000000000001,0,2],[149.31199999999998,95.39,149.31199999999998,123.32,22,32]],"qSeam":"noncoincident-original-P-contact"}])
+export type ReviewedU8609FoldPolicy=Readonly<{id:string;kind:'u8609-hkcs-original-fold';spec:typeof SPECS[number];segment:HanjaOutlineSegment;priorSegment:HanjaOutlineSegment}>
+const POLICIES:readonly ReviewedU8609FoldPolicy[]=Object.freeze(SPECS.map(spec=>Object.freeze({id:'u8609-hkcs-fold-'+spec.pen+'-'+spec.mask,kind:'u8609-hkcs-original-fold' as const,spec,segment:STROKES[spec.pen-1][spec.mask-1],priorSegment:STROKES[spec.pen-1][spec.priorMask-1]})))
+export function makeReviewedU8609FoldContext(proof:unknown,identity:unknown,outlines:HanjaOutlineStrokes):ReviewedU8609FoldContext|null{return same(proof,FIXED.fullProof)&&same(identity,FIXED.identity)&&same(outlines,STROKES)?CONTEXT:null}
+export function reviewedU8609FoldPolicy(context:ReviewedU8609FoldContext|null,pen:number,mask:number):ReviewedU8609FoldPolicy|null{return context===CONTEXT?POLICIES.find(p=>p.spec.pen===pen+1&&p.spec.mask===mask+1)??null:null}
+export type ReviewedU8609FoldFrame=Readonly<{status:'empty'|'partial'|'complete';outline:string|null;bodyRect:Readonly<{x:number;y:number;width:number;height:number}>;headPath:string;headTransform:string;headScale:number;clock:'authored-local-linear-body-and-head';sourceQSeam:string;priorOpaqueRequired:true}>
+/** p is an authored mask-local clock, never a publisher-time or Q-arclength correspondence. */
+export function measureReviewedU8609FoldFrame(policy:ReviewedU8609FoldPolicy,segment:HanjaOutlineSegment,priorSegment:HanjaOutlineSegment,p:number,priorOpaque:boolean):ReviewedU8609FoldFrame{
+ if(!POLICIES.includes(policy)||!same(segment,policy.segment)||!same(priorSegment,policy.priorSegment))throw new Error('Exact whole-bound 蘉 fold/prior required')
+ if(!Number.isFinite(p)||p<0||p>1)throw new Error('Invalid authored 蘉 fold clock')
+ if(p>0&&priorOpaque!==true)throw new Error('Completed opaque prior H required; actual DOM binding remains pending')
+ const [x,y,x1,y1]=policy.spec.bodyBounds,[ax,ay]=policy.spec.anchor
+ // Both clip regions are subsets of their original P. Hence sourceOutline∩(bodyRect∪headClip)=bodyRect∪headClip.
+ const bodyRect=Object.freeze({x,y,width:x1-x,height:(y1-y)*p})
+ return Object.freeze({status:p===0?'empty':p===1?'complete':'partial',outline:p===0?null:segment.outline,bodyRect,headPath:policy.spec.headPath,headTransform:'translate('+ax+' '+ay+') scale('+p+') translate('+(-ax)+' '+(-ay)+')',headScale:p,clock:'authored-local-linear-body-and-head',sourceQSeam:policy.spec.qSeam,priorOpaqueRequired:true})
+}
+export const REVIEWED_U8609_FOLD_SOURCE=deepFreeze({glyph:'蘉',root:'hkcs_m8609',identity:FIXED.identity,sourcePAndQUnchanged:true,sourceOutlinePaintUnchanged:true,clipUnionUsesOnlyOriginalBodyAndAnchorScaledOriginalHead:true,commonKernelHalfWidth:.3,priorOpaqueMustBeBoundByFutureRenderer:true,originalTimingEquivalent:false,sharedRendererConnected:false,nativeApproval:false,runtimeApplied:false})
+export const REVIEWED_U8609_FOLD_INPUT_SHA256=Object.freeze({"docs/hanja-source-original-u8609-hkcs-2026-10-26/fixtures.json":"35a774f8c744cd0a6ccd4454221ce4f629860581434c57413696b830912e4ca6","docs/hanja-source-original-u8609-hkcs-2026-10-26/6-14-contact-kernel-proof.json":"f094270633a920833e5b3e3856266ceed38127d670e7427062940b498bb79bab","docs/hanja-source-original-u8609-hkcs-2026-10-26/verify-6-14-contact-kernels.py":"2b939f9951628dafd540f548747a19a378e173edda2d940d8dba70c85aa736a5","docs/hanja-official-media-compare-u8609-2026-10-26/official-temporal-native-review.json":"bb4f89831aa69f3fafb883fe1c0be33369708f7240bda6082f05196441206040","docs/hanja-source-original-u8609-hkcs-2026-10-26/source-Q-directions.json":"3a915bba6d80fc91f990d1564384387400e214e6bfa38e85096966ce6de8e466"})
