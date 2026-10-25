@@ -1,0 +1,106 @@
+{
+  "schema": "hanja-independent-original-module-binding/v1",
+  "date": "2026-10-26",
+  "glyph": "蘧",
+  "root": "u8627-ue0102",
+  "source": {
+    "fixture": "docs/hanja-source-original-u8627-vs2-2026-10-23/fixtures.json",
+    "fixtureSHA256": "25ee5175bb428fa2673b95b4aa2bf4ade6acc1ea49c9f52625865a5054fdd216",
+    "geometrySHA256": "4b072cd5bce9af00924187242767421b23ef4ce147bd3f17f29179bad40703f1",
+    "logicalPens": 21,
+    "masks": 22,
+    "originalP": 54,
+    "fullIdentityFields": 7
+  },
+  "ports": [
+    {
+      "input": "docs/hanja-original-qb-policy-proof-2026-10-23/caps-u8627.ts",
+      "inputSHA256": "d55abcfd838b9ac02cee2a2b5e8ae6e4b3dd184efb9fd523c153fdf30742fb25",
+      "output": "lib/hanja-stroke-start-caps-u8627.ts",
+      "outputSHA256": "fa07c3d5c04a459d6929c10402f91f35b4830d797ee1c9a983b09364518f8446",
+      "scope": "Only import paths changed; LEFT DOM also corrects an undefined type name to its existing exported Nodes type."
+    },
+    {
+      "input": "docs/hanja-original-qb-policy-proof-2026-10-23/foot-u8627.ts",
+      "inputSHA256": "fc44d52307efe3e05df7a3908d099ce49bb3e6fb06d3bdbdd347c59b562d0159",
+      "output": "lib/hanja-stroke-source-foot-u8627.ts",
+      "outputSHA256": "59df35e91a1c8cf34f25f092a113423d53ccd6284660dbd8220ed97bd26c6ef5",
+      "scope": "Only import paths changed; LEFT DOM also corrects an undefined type name to its existing exported Nodes type."
+    },
+    {
+      "input": "docs/hanja-original-left-terminal-qb-preparation-2026-10-23/left-dom-u8627.ts",
+      "inputSHA256": "6894b1bb759253383dac2b1c4aab1b437a903c53f6b1ef6803ae52be22d13eb3",
+      "output": "lib/hanja-stroke-original-left-terminal-dom-u8627.ts",
+      "outputSHA256": "1c44ef7a7441208b436e2fec23466c149cd49af0b999186fb2635681bde6f63a",
+      "scope": "Only import paths changed; LEFT DOM also corrects an undefined type name to its existing exported Nodes type."
+    },
+    {
+      "input": "lib/hanja-stroke-original-left-terminal-u7c67.ts",
+      "inputSHA256": "cf6a1940721e7a1a3ca2d8a3471633f02041919adcf0b240e6188767105fe8fd",
+      "output": "lib/hanja-stroke-original-left-terminal-u8627.ts",
+      "outputSHA256": "94a0f0c4e86d1b73437afaa1936c0d2f8fac7718fe05fc68eee5c2d17e39dd94",
+      "scope": "Same exact fixed LEFT source P and coefficient formulas, with distinct 蘧 source capability/pen13/counts21-22-54 instead of sibling whole."
+    }
+  ],
+  "invariants": {
+    "firstThreeInverseByteExact": true,
+    "terminalOriginalSegmentExact": true,
+    "terminalCoefficientFormulaUnchanged": true,
+    "sourceInkChanged": false,
+    "sourceQChanged": false,
+    "sourceWidthsChanged": false,
+    "outerWeightsChanged": false,
+    "newConnector": false,
+    "QEnd": [
+      27.5,
+      81.025
+    ],
+    "CStart": [
+      26.5,
+      80.2
+    ],
+    "originalPMaximumX": 95.1,
+    "guideEndX": 89.5,
+    "bodyClipMustReachOriginalPMaximum": true,
+    "footMicroclock": "Original prepared overlap-rooted triangles then connected x-body; new display clock, not publisher timing.",
+    "terminalBodyShare": [
+      15526797,
+      20526797
+    ]
+  },
+  "checks": {
+    "focusedTests": 4,
+    "passed": 4,
+    "failed": 0,
+    "changedNegativeTestRepeated": 1,
+    "limitedTypeRoots": [
+      "lib/hanja-stroke-start-caps-u8627.ts",
+      "lib/hanja-stroke-source-foot-u8627.ts",
+      "lib/hanja-stroke-original-left-terminal-dom-u8627.ts",
+      "lib/hanja-stroke-original-left-terminal-u8627.ts",
+      "lib/hanja-stroke-original-u8627-binding.test.ts"
+    ],
+    "limitedTypeDiagnostics": 0,
+    "testOnlyTypeRepairs": [
+      "Explicit non-null source raw numeric mutation",
+      "Mutable cloned mask array for negative test"
+    ],
+    "oldSourceProofReplay": 0,
+    "oldMathReplay": 0,
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "SSR": 0,
+    "server": 0,
+    "sharedRendererChanges": 0
+  },
+  "pending": [
+    "Own actual renderer/helper integration after current live candidate completes",
+    "Initial/transition/contact/terminal/residual/natural browser review in exact 蘧 source context",
+    "Runtime registration only after required direct observations"
+  ],
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registered": false,
+  "build": 0,
+  "wholeProjectTypecheck": 0
+}
