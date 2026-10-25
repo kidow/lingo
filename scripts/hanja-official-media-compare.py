@@ -87,7 +87,12 @@ def load_config(name, expected_sha):
     metadata_raw = pinned_path(config['metadataFile']).read_bytes()
     require(sha(metadata_raw) == config['metadataSHA256'], 'Original metadata changed')
     metadata = json.loads(metadata_raw)
-    require(metadata['glyph'] == config['glyph'] and metadata['candidate']['strokes'] == config['domesticClips'] == metadata['dictionary']['clips'], 'Domestic/catalog identity mismatch')
+    if path == ROOT/'docs/hanja-official-media-compare-u83bd-2026-10-25/config.json':
+        require(config['glyph']=='莽' and config['sourceRoot']=='u83bd-t' and config['domesticClips']==11 and config['allowedStrokes']==list(range(1,12)) and config['metadataFile']=='docs/hanja-official-media-compare-u83bd-2026-10-25/metadata.json', 'Exact 莽 original11 control config required')
+        require(metadata['glyph']=='莽' and metadata['candidate']['strokes']==metadata['catalogStrokes']==12 and metadata['dictionaryStrokes']==metadata['dictionary']['clips']==11, 'Preserve 莽 catalogue12 and original11 separately')
+        require(config['media']['svg']=={'url':'http://img.e-hanja.kr/hanjaSvg/aniSVG/8300/83bd.svg','bytes':6167,'sha256':'107d4827848943479fd58bb4e5b579e64dbeb9314a77c248b3d8fd3d3e113235'}, 'Exact 莽 original-media bytes required')
+    else:
+        require(metadata['glyph'] == config['glyph'] and metadata['candidate']['strokes'] == config['domesticClips'] == metadata['dictionary']['clips'], 'Domestic/catalog identity mismatch')
     require({k:metadata['dictionary'][k] for k in ['url','bytes','sha256']} == config['media']['svg'], 'Original dictionary pin mismatch')
     return config
 
