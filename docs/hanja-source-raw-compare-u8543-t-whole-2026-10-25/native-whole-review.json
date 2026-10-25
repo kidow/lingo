@@ -1,0 +1,89 @@
+{
+  "schema": "hanja-new-public-whole-native-review/v1",
+  "glyph": "蕃",
+  "root": "u8543-t",
+  "date": "2026-10-25",
+  "reviewer": "ROOT browser panel",
+  "status": "PASS-whole-only",
+  "frozenInput": {
+    "config": "docs/hanja-source-raw-compare-u8543-t-whole-2026-10-25/config.json",
+    "configSHA256": "4577e57f7bc903e30e62db348b2e4c6579a4ac641ff83908fcd28c0f2250805f",
+    "launcher": "scripts/hanja-raw-static-compare.py",
+    "launcherSHA256": "f3a2cf75d5e30be4e190862e6e4e4dcd354894c36a1f2bf7e2f0bc549588b24d",
+    "full5": "docs/hanja-actual-engine-capture-u8543-t-2026-10-25/engine-whole-u8543-t.json",
+    "full5SHA256": "ce3440da120fc128f9fbfc0d5018934f71ff38d0445f24add1cb8a994085d609",
+    "capture": "docs/hanja-actual-engine-capture-u8543-t-2026-10-25/capture.json",
+    "captureSHA256": "6adef38d22cbc4f244bc99d2d1c638f433266c7ae2b352281176f5bd43fd93cb"
+  },
+  "observations": {
+    "wholeComparisons": 1,
+    "wholePASS": 1,
+    "wholeHOLD": 0,
+    "viewport": [
+      1280,
+      1280
+    ],
+    "imageSizeEach": [
+      520,
+      520
+    ],
+    "bothWholeImagesFullyVisible": true,
+    "notes": [
+      "Four grass elements, upper/lower field and both side strokes are present.",
+      "The old central-V to field gap appears resolved in this new t source.",
+      "Nearby right short dot/central H and central V/field-top H are visually compatible."
+    ],
+    "sourceContactFacts": {
+      "origin": "ROOT exact×10 BigInt source boundary code",
+      "asReportedPairs": [
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          13
+        ]
+      ],
+      "properBoundaryCrossingsEach": 2,
+      "dotMaxY": 93.6,
+      "horizontalMinY": 93.3,
+      "scope": "Source filled-P contact only; not publisher timing, source call ordering or runtime approval."
+    },
+    "privateGraphicsSaved": false
+  },
+  "captureAcquisitionHistory": {
+    "totalVMContexts": 2,
+    "retainedVMContexts": 1,
+    "discardedSuccessfulOutputs": 1,
+    "reason": "First successful public capture output was displayed without retention; second identical capture retained. Both whole polygon hashes matched."
+  },
+  "pending": [
+    "raw15 V and raw16 H may require original logical14 H/15 V ordering correction",
+    "static16 and original-media time/directions remain pending"
+  ],
+  "cleanup": {
+    "PID": 41707,
+    "session": 95700,
+    "exitCode": 130,
+    "tab": 40,
+    "tabClosed": true,
+    "viewportReset": true,
+    "remainingCandidateServers": 0,
+    "RAMFetches": 1,
+    "engineRuns": 0,
+    "sourceProjection": 0
+  },
+  "approval": {
+    "whole": true,
+    "individualMapping": false,
+    "directionFromWhole": false,
+    "timing": false,
+    "contactFromWhole": false,
+    "nativeRuntime": false,
+    "runtime": false,
+    "examBodyApproved": false,
+    "allTimeProof": false
+  },
+  "runtimeAdded": 0
+}

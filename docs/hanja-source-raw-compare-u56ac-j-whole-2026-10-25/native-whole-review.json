@@ -1,0 +1,72 @@
+{
+  "schema": "hanja-new-public-whole-native-review/v1",
+  "glyph": "嚬",
+  "root": "u56ac-j",
+  "date": "2026-10-25",
+  "reviewer": "ROOT browser panel",
+  "status": "HOLD-new-source-central-hook-mismatch",
+  "frozenInput": {
+    "config": "docs/hanja-source-raw-compare-u56ac-j-whole-2026-10-25/config.json",
+    "configSHA256": "bd413f118f33d01d4b37251803c5e235217972d03966372e0ca4b2f2ae1c0fb0",
+    "launcher": "scripts/hanja-raw-static-compare.py",
+    "launcherSHA256": "f3a2cf75d5e30be4e190862e6e4e4dcd354894c36a1f2bf7e2f0bc549588b24d",
+    "full5": "docs/hanja-actual-engine-capture-u56ac-j-2026-10-25/engine-whole-u56ac-j.json",
+    "full5SHA256": "df4dcf1bee6156a32d5dcf6feda1635fbacc8afb6b11ed8884090a1fd084f6a3",
+    "capture": "docs/hanja-actual-engine-capture-u56ac-j-2026-10-25/capture.json",
+    "captureSHA256": "372d412fd355b9958808e34505cb81324eb19a288a5da25ebfcae30049c9c77e"
+  },
+  "observations": {
+    "wholeComparisons": 1,
+    "wholePASS": 0,
+    "wholeHOLD": 1,
+    "viewport": [
+      1280,
+      1280
+    ],
+    "imageSizeEach": [
+      520,
+      520
+    ],
+    "bothWholeImagesFullyVisible": true,
+    "notes": [
+      "Source step central V has a large left hook that joins a left DL and appears as a separate horizontal connection.",
+      "The publisher central V meets the long lower DL without that left-hook/horizontal connection.",
+      "This is a new J whole observation; no older source HOLD is transferred."
+    ],
+    "privateGraphicsSaved": false
+  },
+  "captureAcquisitionHistory": {
+    "totalVMContexts": 1,
+    "retainedVMContexts": 1,
+    "discardedSuccessfulOutputs": 0,
+    "reason": "First successful capture retained."
+  },
+  "pending": [
+    "No source trim, deletion or composition is authorized",
+    "No repeated J engine or static mapping is needed from this conflicting whole"
+  ],
+  "cleanup": {
+    "PID": 42999,
+    "session": 40178,
+    "exitCode": 130,
+    "tab": 42,
+    "tabClosed": true,
+    "viewportReset": true,
+    "remainingCandidateServers": 0,
+    "RAMFetches": 1,
+    "engineRuns": 0,
+    "sourceProjection": 0
+  },
+  "approval": {
+    "whole": false,
+    "individualMapping": false,
+    "directionFromWhole": false,
+    "timing": false,
+    "contactFromWhole": false,
+    "nativeRuntime": false,
+    "runtime": false,
+    "examBodyApproved": false,
+    "allTimeProof": false
+  },
+  "runtimeAdded": 0
+}
