@@ -1,0 +1,285 @@
+{
+  "schema": "hanja-original-source-static-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "饛",
+  "root": "hkcs_m995b",
+  "rootVersion": 1,
+  "status": "HOLD: new food-box to roof-dot filled contact differs from original gap",
+  "reviewer": "ROOT direct browser-panel observation",
+  "inputs": {
+    "config": "docs/hanja-source-raw-compare-u995b-hkcs-individual-2026-10-26/config.json",
+    "configSHA256": "7853746380da154d3bde12327294b5bc79d29f0b48f49f748ce77e58057efeeb",
+    "helper": "scripts/hanja-raw-static-compare.py",
+    "helperSHA256": "ea07fd50f740e0b4ab98ba060852d0d12d451aa0c463d504c68db6f0514c6b0f",
+    "full5": "docs/hanja-actual-engine-capture-u995b-hkcs-2026-10-26/engine-whole-hkcs_m995b.json",
+    "full5SHA256": "bb47d298f52630aa55d4d48b03ba44187f5acd3d8430ca20f0cef9fe51f2689c",
+    "unchangedBeforeAndAfter": true
+  },
+  "observations": {
+    "totalDirectScreens": 33,
+    "matchedSingleScreens": 25,
+    "prefixScreens": 5,
+    "exploratoryNonmatchingScreens": 3,
+    "singlePairs": [
+      {
+        "domestic": 1,
+        "raw": 1
+      },
+      {
+        "domestic": 2,
+        "raw": 2
+      },
+      {
+        "domestic": 3,
+        "raw": 3
+      },
+      {
+        "domestic": 4,
+        "raw": 5
+      },
+      {
+        "domestic": 4,
+        "raw": 6
+      },
+      {
+        "domestic": 5,
+        "raw": 7
+      },
+      {
+        "domestic": 6,
+        "raw": 8
+      },
+      {
+        "domestic": 7,
+        "raw": 4
+      },
+      {
+        "domestic": 8,
+        "raw": 9
+      },
+      {
+        "domestic": 9,
+        "raw": 10
+      },
+      {
+        "domestic": 10,
+        "raw": 11
+      },
+      {
+        "domestic": 11,
+        "raw": 12
+      },
+      {
+        "domestic": 12,
+        "raw": 13
+      },
+      {
+        "domestic": 13,
+        "raw": 14
+      },
+      {
+        "domestic": 14,
+        "raw": 15
+      },
+      {
+        "domestic": 15,
+        "raw": 16
+      },
+      {
+        "domestic": 15,
+        "raw": 17
+      },
+      {
+        "domestic": 16,
+        "raw": 18
+      },
+      {
+        "domestic": 17,
+        "raw": 19
+      },
+      {
+        "domestic": 18,
+        "raw": 20
+      },
+      {
+        "domestic": 19,
+        "raw": 21
+      },
+      {
+        "domestic": 20,
+        "raw": 22
+      },
+      {
+        "domestic": 21,
+        "raw": 23
+      },
+      {
+        "domestic": 22,
+        "raw": 24
+      },
+      {
+        "domestic": 23,
+        "raw": 25
+      }
+    ],
+    "prefixPairs": [
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        15,
+        17
+      ],
+      [
+        19,
+        21
+      ]
+    ],
+    "exploratoryPairs": [
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "fullPageEntireBothImages": true,
+    "bboxes": [
+      {
+        "x": 12,
+        "y": 383.203125,
+        "width": 520,
+        "height": 520
+      },
+      {
+        "x": 562,
+        "y": 383.203125,
+        "width": 520,
+        "height": 520
+      }
+    ],
+    "detail": "At original prefix15, the food box upper-right and roof left dot are visibly separated. In the new source prefix17 these filled parts touch. Individual shapes and later static prefix19 were also observed; this does not remove the cross-part contact mismatch."
+  },
+  "provisionalStaticMapping": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      4
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16,
+      17
+    ],
+    [
+      18
+    ],
+    [
+      19
+    ],
+    [
+      20
+    ],
+    [
+      21
+    ],
+    [
+      22
+    ],
+    [
+      23
+    ],
+    [
+      24
+    ],
+    [
+      25
+    ]
+  ],
+  "sourceOrderDifference": {
+    "raw4": "Long food-radical vertical corresponds to domestic7, not domestic4.",
+    "domestic4": "H/V fold corresponds to raw5+6.",
+    "sourceDataOrCoordinatesEdited": false,
+    "logicalOrderApproved": false
+  },
+  "priorMacroPass": {
+    "path": "docs/hanja-source-raw-compare-u995b-hkcs-whole-2026-10-26/native-whole-review.json",
+    "scope": "Macro structure only. Preserved as historical observation; the later detailed contact HOLD prevents whole compatibility approval."
+  },
+  "contactCertificate": "docs/hanja-source-raw-compare-u995b-hkcs-individual-2026-10-26/food-roof-contact-certificate.json",
+  "approval": {
+    "wholeCompatible": false,
+    "logicalGrouping": false,
+    "sourceDirection": false,
+    "temporal": false,
+    "actualPlayback": false,
+    "runtime": false
+  },
+  "execution": {
+    "serverPID": 89800,
+    "port": 59412,
+    "startupLogCaptured": false,
+    "serverStopped": true,
+    "tabClosed": true,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesWritten": 0
+  },
+  "limits": [
+    "Static appearance cannot certify direction, logical joins or a reusable radical policy.",
+    "Source P/Q, ordering rows and coordinates remain unchanged.",
+    "No connector removal, point shift, stroke deletion or geometry correction was attempted."
+  ]
+}
