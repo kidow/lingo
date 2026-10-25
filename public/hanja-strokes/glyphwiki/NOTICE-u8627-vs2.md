@@ -1,0 +1,12 @@
+# 蘧 GlyphWiki source attribution
+
+GlyphWiki Project and contributors; historical snapshot mirrored by tomcumming/glyphwiki-database. LicenseRef-GlyphWiki.
+
+- Root: u8627-ue0102; six exact authored records and original aliases retained.
+- Authoritative snapshot: https://raw.githubusercontent.com/tomcumming/glyphwiki-database/a7dd7f3d911936770fa742e8c37d16bee7e2173c/dump_newest_only.txt
+- Archive SHA256: 7ee5614570cb89bcdc8a1617a4cfd0f4f2a96580b6d52c11c56d7bee32986f62
+- Per-provider versions were not recorded; no version is invented.
+- Original engine header4 and separate drawing trace are preserved; no new full5 capture is claimed.
+- License: https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス@18
+- Original P/Q/width/weight retained; no connecting ink added.
+- Display microclock and raster edge limitations are recorded in u8627-activation-review.json.
