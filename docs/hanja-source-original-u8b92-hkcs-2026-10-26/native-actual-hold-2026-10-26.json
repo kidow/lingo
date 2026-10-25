@@ -1,0 +1,156 @@
+{
+  "schema": "hanja-native-actual-review/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "result": "HOLD-original-prior14-one-dimensional-window",
+  "observer": "ROOT browser panel; D recorded the reported observations",
+  "historyCommit": "987749d67",
+  "frozenInput": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u8b92-1.json",
+      "SHA256": "bee6cf3b313059e3f6faebfbae173abab04942b9a35a7e13bc7cafee6dc9d812"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "df8a2baca4ec8a697002f720da84a50e2cc7540029bb53ebc336e1ef96096129"
+    },
+    "renderer": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "99c1b63735ac1b9162ccf693ceedf9cc1dd856f253392b6003e621f470f98905"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "050dea90c57cc9e7b9e0014499266dec60438cad0d288db8cb59f3f8eafd2722"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/fixtures.json",
+      "SHA256": "5e8411814e4f13dd0da9fdce4e52614f2143b4c9e0db99f69ec174297a4389c9"
+    },
+    "geometrySHA256": "3e0339d807e7bc697bed53420f88ff3fc52048df340c1d658c483898c6f406eb"
+  },
+  "startup": {
+    "firstAttempt": {
+      "PID": 9320,
+      "exitCode": 1,
+      "portBound": false,
+      "SSRCompletionReported": false,
+      "visualObservations": 0,
+      "exactRequireIdNotCaptured": true,
+      "staticMissingWindowFixtureImportSubsequentlyFixed": true,
+      "notClaimedAsCapturedStderrId": true
+    },
+    "reviewAttempt": {
+      "PID": 12959,
+      "port": 59412,
+      "SSR": 1,
+      "CJS": 337,
+      "ESM": 337,
+      "engineRuns": 0,
+      "projectionRuns": 0
+    }
+  },
+  "planned": {
+    "finiteUnique": 127,
+    "baseFinite": 126,
+    "initial001Supplement": 1,
+    "naturalUnique": 30,
+    "wholePens": 24,
+    "completed": false
+  },
+  "observed": {
+    "targetId": "u8b92-prior-window-14-2",
+    "finiteUniqueMaskLocalP": [
+      0.000001,
+      0.001,
+      0.01,
+      0.03
+    ],
+    "finiteUniqueCount": 4,
+    "initialWidthPair": [
+      0.001,
+      0.01
+    ],
+    "earlyTriplet": [
+      0.000001,
+      0.01,
+      0.03
+    ],
+    "overlapping01NotDoubleCounted": true,
+    "additionalMain520At": [
+      0.001,
+      0.01
+    ],
+    "additionalMainViewsNotNewStates": true,
+    "anomaly": {
+      "position": "Below completed prior V",
+      "approximateVerticalExtentPixelsAtMain520": 14,
+      "at001": "Very thin grey vertical needle",
+      "at01": "Black vertical line",
+      "onlyWidthShrinksAtInitialClock": true,
+      "temporalHeightPopRisk": true,
+      "sourceGeometryContactStillPass": true,
+      "originalPTrimOrNewInkUsed": false
+    },
+    "natural": [
+      {
+        "maskLocalP": 0.126097523327617,
+        "phase": "partial",
+        "newProgressScreenObserved": true,
+        "observation": "Lower long vertical slit also visible"
+      },
+      {
+        "maskLocalP": 0.999999999999999,
+        "phase": "partial",
+        "endScreenObserved": true,
+        "completedShapeVisuallyPresent": true,
+        "exactP1CompleteApproved": false
+      }
+    ],
+    "naturalUniqueCount": 2,
+    "source14Bad": [],
+    "pageErrors": [],
+    "sampleSize": 220,
+    "mainSize": 520,
+    "global000001Excluded": {
+      "reason": "Global pen clock reached previous mask initial state; target14 window local p was0",
+      "counted": false
+    },
+    "exactDoneWhole": false,
+    "residualApproved": false,
+    "other14TargetsUnreviewed": true
+  },
+  "reportingIssue": {
+    "scope": "Seven caps idle diagnostics",
+    "cause": "u51d7ReadCapsTarget selects namespace using t.kind; growing-u8b92-hkcs-caps was missing and fell back to u51d7",
+    "actualJSXNamespace": "u8b92-hkcs",
+    "reportedFalseChecks": [
+      "sourceGuide",
+      "noPathLength",
+      "measurementBinding",
+      "sameOwner",
+      "fullRound"
+    ],
+    "rendererDefectEstablished": false,
+    "notCauseOfPrior14Needle": true,
+    "liveCodeChanged": false
+  },
+  "preservation": {
+    "original72Replayed": 0,
+    "static24Replayed": 0,
+    "mathematicalContactProofNotPromotedToTemporalHeightContinuity": true,
+    "sourcePAndQUnchanged": true,
+    "approvalForAll127Or30OrWhole24": false,
+    "registered": false
+  },
+  "cleanup": {
+    "PID": 12959,
+    "signal": "SIGINT",
+    "processAbsent": true,
+    "port59412Closed": true,
+    "tab99Closed": true,
+    "ownedServerCount": 0,
+    "exitCodeNotReported": true,
+    "viewportResetNotSeparatelyReported": true
+  },
+  "next": "Keep one-dimensional14 window on HOLD. Fix reporting namespace separately. Investigate a zero-extent-in-both-axes original-P clip only with new exact source-bound evidence."
+}
