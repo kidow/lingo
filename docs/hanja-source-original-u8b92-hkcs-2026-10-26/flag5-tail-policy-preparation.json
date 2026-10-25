@@ -1,0 +1,167 @@
+{
+  "schema": "hanja-independent-flag5-author-policy-preparation/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "root": "hkcs_m8b92",
+  "files": [
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/verify-flag5-up-tail-conditions.py",
+      "SHA256": "a31ab3d25b5a0c318f894995cb631fd28e94de23335da956eade73e95c2491c0"
+    },
+    {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/flag5-up-tail-conditions-proof.json",
+      "SHA256": "16db576c73ee25322bcd7fc332e6ccab568aa92bfdb430139732cb8de62e57f1"
+    },
+    {
+      "path": "lib/hanja-stroke-flag5-up-tail-u8b92-hkcs.ts",
+      "SHA256": "f8a83e678c085d785644032d9e054344dc7bc0eb0901eed6c98ace6ca3ba74b4"
+    },
+    {
+      "path": "lib/hanja-stroke-flag5-up-tail-u8b92-hkcs.test.ts",
+      "SHA256": "5403863cc7ff05f1f0c9d05295e4d1bb44c551633a3b6b196dc04e7ff02fd65b"
+    }
+  ],
+  "source": {
+    "fixture": {
+      "path": "docs/hanja-source-original-u8b92-hkcs-2026-10-26/fixtures.json",
+      "SHA256": "5e8411814e4f13dd0da9fdce4e52614f2143b4c9e0db99f69ec174297a4389c9"
+    },
+    "geometrySHA256": "3e0339d807e7bc697bed53420f88ff3fc52048df340c1d658c483898c6f406eb",
+    "identity": {
+      "sourceRoot": "hkcs_m8b92",
+      "sourceProofFile": "../hanja-actual-engine-capture-u8b92-hkcs-2026-10-26/engine-whole-hkcs_m8b92.json",
+      "sourceProofFileSha256": "4ebc488e6effd4d7ea1e7866ab84f0070bad147a4e5282c1cb188e2cf7683cdb",
+      "sourceCapsuleFile": "../hanja-source-alternative-u8b92-hkcs-2026-10-26/sources.json",
+      "sourceCapsuleFileSha256": "afe61564814ceb1be31b91dc9ca74673bd192d0fd327d649a854f9b8b5205094",
+      "sourceChecksFile": "../hanja-actual-engine-capture-u8b92-hkcs-2026-10-26/capture.json",
+      "sourceChecksFileSha256": "ad2392e22369ead8fe52681ce75a527c5ad661ee8417bdc46691b8ffafcd3954"
+    },
+    "counts": {
+      "pens": 24,
+      "masks": 34,
+      "P": 63
+    },
+    "originalInkCountPerTarget": 3,
+    "newSourceMasks": 0
+  },
+  "distanceClock": {
+    "formula": "distance=localProgress*(originalHBody2PWidth+originalUPQuadHeight)",
+    "boundary": "Derived originalHBody2PWidth/totalDistance; exact boundary progress snaps to original body endpoint without epsilon.",
+    "pen16": {
+      "bodyWidth": [
+        73,
+        4
+      ],
+      "upHeight": [
+        13,
+        2
+      ],
+      "totalDistance": [
+        99,
+        4
+      ],
+      "bodyShare": [
+        73,
+        99
+      ],
+      "originalOuterWeight": 16
+    },
+    "pen23": {
+      "bodyWidth": [
+        39,
+        2
+      ],
+      "upHeight": [
+        25,
+        2
+      ],
+      "totalDistance": [
+        32,
+        1
+      ],
+      "bodyShare": [
+        39,
+        64
+      ],
+      "originalOuterWeight": 16.5
+    },
+    "sourceBoundNotArbitraryFixedRatio": true,
+    "bodyThenUpIsAuthorSelectedSufficientSequence": true,
+    "originalBroadVThenHThenUpScopeReused": true,
+    "originalLocalClockIdentityApproved": false,
+    "originalMicroDirectionApproved": false
+  },
+  "maskContract": {
+    "oneOriginalInkPathWith3OriginalSubpaths": true,
+    "singleWhiteMaskContour": true,
+    "bodyPhase": "Original body bounds x-prefix; UP interior excluded by original baseline y.",
+    "upPhase": "One outer contour of full body rectangle union upward UP rectangle; shared original baseline is used exactly once.",
+    "derivedClipVerticesNotSourceInk": true,
+    "requiresSourceXOrdering": "bodyMinX<UPMinX<UPMaxX<bodyMaxX",
+    "requiresSourceYOrdering": "UPTopY<UPBaseY=bodyTopY<bodyBottomY",
+    "actualRasterSeamApproved": false,
+    "progress0Hidden": true,
+    "progress1OriginalPDirectUnmasked": true
+  },
+  "priorContract": {
+    "requiresFullOpaqueOriginalShortPrefixMask2": true,
+    "namespace": "u8b92-hkcs-short-curve",
+    "module": "lib/hanja-stroke-short-curve-prefix-u8b92-hkcs.ts",
+    "moduleSHA256": "8c61e418d702100c7ea8f86e1fb25a391a94a927936b5c368fcc81b886e2f4ea",
+    "plainPathPriorRejected": true,
+    "exactPhaseFullAndSourceFullAndCommittedRequired": true,
+    "originalVAlsoVerified": true,
+    "exact24SlotAnd3MasksRequired": true,
+    "sourceQSeamsUnchanged": true
+  },
+  "oldU8fc5": {
+    "patternOnly": true,
+    "sourceFlag15VersusOwn5": true,
+    "ownBody2PVersusOld4P": true,
+    "positiveAreaContactApprovalTransferred": false,
+    "ownBodyUPContactDimension": 1
+  },
+  "checks": {
+    "focusedTestDefinitions": 5,
+    "initialPass": 5,
+    "failed": 0,
+    "newSingleContourBoundInequalitiesRevalidatedTests": 1,
+    "limitedTypeRoots": [
+      "lib/hanja-stroke-flag5-up-tail-u8b92-hkcs.ts",
+      "lib/hanja-stroke-flag5-up-tail-u8b92-hkcs.test.ts"
+    ],
+    "limitedTypeDiagnostics": 0,
+    "scriptSyntaxStatus": 0,
+    "oldInitialOrCoverageOrNativeReplay": 0,
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "sharedRendererChanges": 0,
+    "sharedHelperChanges": 0,
+    "SSR": 0,
+    "server": 0
+  },
+  "pending": {
+    "originalMicro": [
+      "Broad original V→H→uphook supports phase order only; this distance clock and source-part boundaries are author selected.",
+      "Compare original local H completion/UP onset before claiming micro timing resemblance."
+    ],
+    "actualBrowser": [
+      "Source H-body0/epsilon/early/mid/near/full including original end-head beyond carrier endpoint",
+      "Derived bodyShare ±boundary and exact body-complete/UP-zero state",
+      "UP epsilon/mid/near/end with original shared-edge seam and no missing original tail",
+      "Actual completed opaque original short-prefix prior through m3 progress and done",
+      "Single white contour/sourceP3 preservation, exact done/unmask, clear and natural playback"
+    ],
+    "sharedIntegration": false,
+    "runtimeRegistration": false
+  },
+  "sourcePChanged": false,
+  "sourceQChanged": false,
+  "sourceWeightChanged": false,
+  "sourceClockIdentityClaimed": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registered": false,
+  "build": 0,
+  "wholeProjectTypecheck": 0
+}
