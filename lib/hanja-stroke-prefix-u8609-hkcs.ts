@@ -1,0 +1,24 @@
+/** 蘉17 original two-P Y-prefix. Authored clock only; prior/micro-direction/native pending. */
+import type {HanjaOutlineSegment,HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import fixture from '../docs/hanja-source-original-u8609-hkcs-2026-10-26/fixtures.json' with {type:'json'}
+const FIXED=fixture.hkcs_m8609,STROKES=FIXED.strokes as HanjaOutlineStrokes
+function deepFreeze<T>(v:T):T{if(v&&typeof v==='object'){for(const k of Reflect.ownKeys(v as object)){const d=Object.getOwnPropertyDescriptor(v,k);if(d&&'value'in d)deepFreeze(d.value)}Object.freeze(v)}return v}
+deepFreeze(FIXED)
+function same(a:unknown,b:unknown):boolean{if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Object.getPrototypeOf(a)!==Object.getPrototypeOf(b))return false;const ak=Reflect.ownKeys(a),bk=Reflect.ownKeys(b);if(ak.length!==bk.length)return false;return bk.every(k=>{const ad=Object.getOwnPropertyDescriptor(a,k),bd=Object.getOwnPropertyDescriptor(b,k);return!!ad&&!!bd&&'value'in ad&&'value'in bd&&ad.enumerable===bd.enumerable&&same(ad.value,bd.value)})}
+export type ReviewedU8609PrefixContext=Readonly<{id:'u8609-hkcs-original20-prefix17'}>
+const CONTEXT:ReviewedU8609PrefixContext=Object.freeze({id:'u8609-hkcs-original20-prefix17'})
+export type ReviewedU8609PrefixPolicy=Readonly<{id:'u8609-hkcs-prefix-17-1';kind:'u8609-hkcs-original-y-prefix';segment:HanjaOutlineSegment;pen:17;mask:1}>
+const POLICY:ReviewedU8609PrefixPolicy=Object.freeze({id:'u8609-hkcs-prefix-17-1',kind:'u8609-hkcs-original-y-prefix',segment:STROKES[16][0],pen:17,mask:1})
+const LO=64.35,HI=74.6,SPAN=10.25,Q_END_Y=72.49000000000001,Q_END_CLOCK=814000000000001/1025000000000000
+export function makeReviewedU8609PrefixContext(proof:unknown,identity:unknown,outlines:HanjaOutlineStrokes):ReviewedU8609PrefixContext|null{return same(proof,FIXED.fullProof)&&same(identity,FIXED.identity)&&same(outlines,STROKES)?CONTEXT:null}
+export function reviewedU8609PrefixPolicy(context:ReviewedU8609PrefixContext|null,pen:number,mask:number):ReviewedU8609PrefixPolicy|null{return context===CONTEXT&&pen===16&&mask===0?POLICY:null}
+export type ReviewedU8609PrefixFrame=Readonly<{status:'empty'|'partial'|'complete';outline:string|null;cutY:number;rect:Readonly<{x:number;y:number;width:number;height:number}>;clock:'authored-linear-source-y';sourceGuide:string;sourceQEndY:number;authoredQEndBoundary:number;authoredCompletionExtension:boolean}>
+/** h=sourceMinY+(sourceMaxY-sourceMinY)*p. No UA/Q-arclength or publisher-time mapping. */
+export function measureReviewedU8609PrefixFrame(policy:ReviewedU8609PrefixPolicy,segment:HanjaOutlineSegment,p:number):ReviewedU8609PrefixFrame{
+ if(policy!==POLICY||!same(segment,POLICY.segment))throw new Error('Exact whole-bound 蘉17 policy and original fields required')
+ if(!Number.isFinite(p)||p<0||p>1)throw new Error('Invalid authored 蘉17 clock')
+ const cutY=p===0?LO:p===1?HI:LO+SPAN*p
+ return Object.freeze({status:p===0?'empty':p===1?'complete':'partial',outline:p===0?null:segment.outline,cutY,rect:Object.freeze({x:30.4,y:LO,width:8.4,height:cutY-LO}),clock:'authored-linear-source-y',sourceGuide:segment.revealPath!,sourceQEndY:Q_END_Y,authoredQEndBoundary:Q_END_CLOCK,authoredCompletionExtension:p>Q_END_CLOCK})
+}
+export const REVIEWED_U8609_PREFIX_SOURCE=deepFreeze({glyph:'蘉',root:'hkcs_m8609',identity:FIXED.identity,pen:17,mask:1,originalPCount:2,virtualThirdP:false,sourceOutlinePaintUnchanged:true,sourceQAndWidthAndWeightUnchanged:true,sourceYRange:['1287/20','373/5'],originalQStartY:'3197/50',originalQEndY:'7249000000000001/100000000000000',directQYClipWouldBeIncomplete:true,authoredClock:'h=1287/20+(41/4)*p',authoredQEndBoundary:'814000000000001/1025000000000000',authoredCompletionExtent:'210999999999999/100000000000000',exactSourceGeometryPrefixConnected:true,bodyHeadContactDimension:1,bodyHeadPositiveAreaOverlap:false,originalTimingEquivalent:false,priorConnectivityApproved:false,initialMicroDirectionApproved:false,sharedRendererConnected:false,nativeApproval:false,runtimeApplied:false})
+export const REVIEWED_U8609_PREFIX_INPUT_SHA256=Object.freeze({"docs/hanja-source-original-u8609-hkcs-2026-10-26/fixtures.json":"35a774f8c744cd0a6ccd4454221ce4f629860581434c57413696b830912e4ca6","docs/hanja-source-original-u8609-hkcs-2026-10-26/17-alternative-prefix-proof.json":"cce9eaa8bb1de0be5bae8ebbb9276e74e7d583396fe6fc1cc6399f86f57f554b","docs/hanja-source-original-u8609-hkcs-2026-10-26/verify-17-alternative-prefix.py":"27e24705513b1a4e751292b50c3c7ef2d857399a4808304a602e9702769d34f3","docs/hanja-official-media-compare-u8609-2026-10-26/official-temporal-native-review.json":"bb4f89831aa69f3fafb883fe1c0be33369708f7240bda6082f05196441206040","docs/hanja-source-original-u8609-hkcs-2026-10-26/source-Q-directions.json":"3a915bba6d80fc91f990d1564384387400e214e6bfa38e85096966ce6de8e466"})
