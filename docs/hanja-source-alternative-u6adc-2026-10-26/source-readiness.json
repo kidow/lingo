@@ -1,0 +1,76 @@
+{
+  "schema": "hanja-source-only-alternative-assessment/v1",
+  "date": "2026-10-26",
+  "glyph": "櫜",
+  "catalogStrokes": 19,
+  "prior": {
+    "metadata": {
+      "path": "docs/hanja-goal-glyphwiki-batch438-2026-10-09/metadata.json",
+      "SHA256": "fcd620191f1324f07eb3013a44f531242057f81cf8c3a10cb3ab466ed03a8e00"
+    },
+    "readme": {
+      "path": "docs/hanja-goal-glyphwiki-batch438-2026-10-09/README.md",
+      "SHA256": "15b7561134dbc63349f1166d480ad86fd3c4bb080fbb43bdbc0c1a3f5cc1fef6"
+    },
+    "observedOriginalRightMiddle": "downward vertical followed by falling dot",
+    "priorWholeHolds": {
+      "default01000101": "vertical plus horizontal",
+      "ue0102": "left-falling plus falling dot"
+    },
+    "noCrossVariantTransplant": true
+  },
+  "source": {
+    "path": "docs/hanja-source-alternative-u6adc-2026-10-26/sources.json",
+    "SHA256": "13f1c4bf4df882d479e58ccbab56d584087289a50b57d1e848807d0b13f545de"
+  },
+  "newAuthoredRows": [
+    {
+      "root": "hkcs_m6adc@1",
+      "closureRecords": 6,
+      "body": "hkcs_m548e@3",
+      "rightLeaf": "hkcs_m5904-p03-s00@1",
+      "relevantRows": [
+        "2:0:7:142:24:130:72:100:100",
+        "2:7:8:132:54:156:66:168:92"
+      ],
+      "finding": "Left-falling and right-falling original Q carriers, not the sought vertical-and-dot pair. No whole geometry equivalence with old profiles is claimed."
+    },
+    {
+      "root": "u6adc-var-001@9",
+      "body": "u548e-j@3",
+      "rightLeaf": "u5904-03-var-001@1",
+      "finding": "Original Q carrier pair is DL (146,16→135,67→101,91) and DR (136,49→162,64→177,87). Whole unrendered."
+    },
+    {
+      "root": "u6adc-var-002@5",
+      "body": "u548e-var-002@2",
+      "relevantRows": [
+        "1:0:32:131:15:131:107",
+        "1:0:0:131:55:183:55"
+      ],
+      "finding": "Original V+H pair. Whole unrendered."
+    },
+    {
+      "root": "koseki-179850@9",
+      "body": "u548e-09@3",
+      "finding": "Original pair DL (133,69→125,86→101,95) and DR (126,80→145,85→156,93). Whole unrendered; alias naming alone does not transfer old geometry verdicts."
+    }
+  ],
+  "conclusion": "No new source-row evidence of the required V+DR pair in the inspected authored bodies; no new complete whole approval or fresh geometry HOLD is claimed.",
+  "uninspected": "u6adc-var-003@7 request was not run due rate limit; no automatic retry.",
+  "approval": {
+    "sourceRowsOnly": true,
+    "wholeCompatible": false,
+    "staticMapping": false,
+    "temporalDirection": false,
+    "runtimeApplied": false
+  },
+  "actions": {
+    "newFetch": 0,
+    "newEngine": 0,
+    "newProjection": 0,
+    "newServer": 0,
+    "geometryChanged": false,
+    "privateMediaSaved": false
+  }
+}
