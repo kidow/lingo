@@ -1,0 +1,67 @@
+{
+  "schema": "hanja-public-source-screening/v1",
+  "date": "2026-10-26",
+  "glyph": "韎",
+  "catalogStrokes": 14,
+  "existingEvidence": "../hanja-goal-glyphwiki-batch563-2026-10-11/progressive-review.json",
+  "existingHold": "All four previously pinned whole forms contain an extra upper-right vertical in the left component.",
+  "scope": "Source-only screening. No new whole geometry, direction, contact, stroke-count mapping or runtime approval.",
+  "candidates": [
+    {
+      "root": "hkcs_m97ce@2",
+      "closureComplete": true,
+      "sourceCondition": {
+        "component": "hkcs_m97cb-p01-s00@1",
+        "horizontal": "1:0:2:19:38:75:38",
+        "followingVertical": "1:22:32:75:38:75:64",
+        "rootTransform": [
+          0,
+          0,
+          200,
+          200
+        ],
+        "sharedEndpoint": [
+          75,
+          38
+        ]
+      },
+      "decision": "Existing necessary mismatch condition remains in the authored source. No new engine capture is justified by these rows alone.",
+      "limits": "Does not assert byte-identical geometry, width or contacts with the older source."
+    },
+    {
+      "root": "dkw-43126@3",
+      "closureComplete": true,
+      "sourceCondition": {
+        "component": "u97cb-08-var-012@2",
+        "horizontal": "1:0:2:58:36:123:36",
+        "followingVertical": "1:22:32:123:36:123:64",
+        "rootTransform": [
+          -32,
+          0,
+          143,
+          200
+        ],
+        "sharedEndpoint": [
+          123,
+          36
+        ]
+      },
+      "decision": "Existing necessary mismatch condition remains in the authored source. No new engine capture is justified by these rows alone.",
+      "limits": "Does not assert the complete shape equals a previously rejected whole."
+    },
+    {
+      "root": "hs_u97ce@1",
+      "closureComplete": false,
+      "explicitChain": [
+        "u97ce@5",
+        "u97ce-j@1"
+      ],
+      "decision": "Incomplete public chain; no compatibility conclusion and no engine run."
+    }
+  ],
+  "status": "source-only-no-activation",
+  "newEngineRuns": 0,
+  "newProjectionRuns": 0,
+  "newNativeScreens": 0,
+  "runtimeApplied": false
+}
