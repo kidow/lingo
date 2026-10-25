@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-public-source-only-screening/v1",
+  "date": "2026-10-26",
+  "glyph": "嫂",
+  "catalog": {
+    "grade": "1급",
+    "strokes": 12,
+    "dictionaryStrokes": 13,
+    "applied": false,
+    "confirmedBy": "ROOT existing hold/catalog evidence"
+  },
+  "inventory": {
+    "path": "docs/hanja-source-inventory-u5ac2-2026-10-26/public-records.json",
+    "SHA256": "a081f166a4f170df9aaf72f65c4bd2a2a93fed7d9f5cb7057ec229f6dbc0f03a"
+  },
+  "prior": [
+    {
+      "path": "docs/hanja-source-raw-compare-u5ac2-2026-10-25/native-whole-hold.json",
+      "SHA256": "943907a89092ba8885144bf5234572965c45e9847cd8ee54e1e839c7b9b7d648",
+      "meaning": "Five distinct complete wholes directly held: original centralV stops inside upper臼 leaving white gap above lower又H, source centralV reaches lowerH or upper connections differ."
+    },
+    {
+      "path": "docs/hanja-source-alternative-u5ac2-g-2026-10-25/unchanged-body-hold.json",
+      "SHA256": "155565e31a5508295447a81af7dfadb6cab6caa3672f06e6da812ba3223098cf",
+      "meaning": "New G differs female only; unchanged body raw5..15 exact public geometry reuses prior contact counterexample without repeat whole."
+    }
+  ],
+  "HKPartialSourceFacts": {
+    "root": "hkcs_m5ac2@1",
+    "body": "hkcs_m53df-p02-s00@2",
+    "centralV": "1:0:32:124:16:124:118",
+    "lowerH": "1:0:2:73:118:162:118",
+    "sharedOriginalGuidePoint": [
+      124,
+      118
+    ],
+    "rootBodyTransform": [
+      12,
+      0,
+      200,
+      200
+    ],
+    "samePointPreservedByPositiveTransform": true,
+    "oldGCoordinatesOrFilledPEqualityNotClaimed": true,
+    "newFilledContactNotComputed": true,
+    "originalSeparationNotResolvedByDeclaredEndpoints": true,
+    "newCaptureSkipped": true
+  },
+  "otherAuthoredFacts": [
+    {
+      "root": "utc-00595@6",
+      "originalReferences": [
+        "u5973-g01",
+        "u7a74-03-var-010",
+        "u201a2-03",
+        "u5915-j"
+      ],
+      "closureIncomplete": true,
+      "wholeCompatibilityUnknown": true
+    }
+  ],
+  "assessment": "New HK declared guide coincidence is preserved as a source-only risk, not promoted to filled-P identity or native whole failure. No newly verified original complete whole resolves centralV separation.",
+  "actions": {
+    "engine": 0,
+    "projection": 0,
+    "native": 0,
+    "privateInput": false,
+    "sourceEdited": false,
+    "centralVTrimmed": false,
+    "componentsRecombined": false
+  },
+  "approval": {
+    "whole": false,
+    "direction": false,
+    "contact": false,
+    "runtime": false
+  }
+}
