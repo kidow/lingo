@@ -502,6 +502,8 @@ NEW_PUBLIC_WHOLES['hkcs_m5e6a']=json.loads("{\"glyph\":\"幪\",\"catalogStrokes\
 NEW_PUBLIC_WHOLES['hkcs_m995b'].update({'config':'docs/hanja-source-raw-compare-u995b-hkcs-individual-2026-10-26/config.json','individualStatic':True})
 NEW_PUBLIC_WHOLES['hkcs_m9959']=json.loads("{\"glyph\":\"饙\",\"catalogStrokes\":22,\"config\":\"docs/hanja-source-raw-compare-u9959-hkcs-whole-2026-10-26/config.json\",\"full\":\"docs/hanja-actual-engine-capture-u9959-hkcs-2026-10-26/engine-whole-hkcs_m9959.json\",\"fullSHA\":\"9fd57d373484b85e20d7c74496dd2c9238441d0bab820914f5c03db1a5c137ed\",\"capture\":\"docs/hanja-actual-engine-capture-u9959-hkcs-2026-10-26/capture.json\",\"captureSHA\":\"e14dcb123b25c86a47f4ad74a3565267ea2d1ba22de9ed79582f7f4fcf3e8501\",\"source\":\"docs/hanja-source-alternative-u9959-hkcs-2026-10-26/sources.json\",\"sourceSHA\":\"40729007b7b0d6cf15302388d532a58b8c237bbf7469160141868bc608fec5c0\",\"metadata\":\"docs/hanja-goal-glyphwiki-batch613-2026-10-11/metadata.json\",\"metadataSHA\":\"9075e408341d19b0334f7504b209df279533c6fc2b9cb8d809c4c2730c94f262\",\"readme\":\"docs/hanja-goal-glyphwiki-batch613-2026-10-11/README.md\",\"readmeSHA\":\"5cb04b58a2a0d4bdcfc980033de6069048d49b6e0cebd183f6adfeeb3226def6\",\"raw\":24,\"calls\":24,\"polygons\":41,\"rootVersion\":1,\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/9900/9959.svg\",\"status\":200,\"bytes\":10138,\"sha256\":\"0b01935220722288aa7905ffe53f6a456083f17226ee4747ee476c740c972bf4\",\"clips\":22,\"glyph\":\"饙\",\"privateMediaSaved\":false}}")
 NEW_PUBLIC_WHOLES['hkcs_m5e6a'].update({'config':'docs/hanja-source-raw-compare-u5e6a-hkcs-individual-2026-10-26/config.json','individualStatic':True})
+NEW_PUBLIC_WHOLES['hkcs_m9959'].update({'config':'docs/hanja-source-raw-compare-u9959-hkcs-individual-2026-10-26/config.json','individualStatic':True})
+
 def validate_new_public_whole(config,label,spec,path,config_path,case):
     pair=case.get('pairedRoots')
     require(config_path==ROOT/case['config'] and ((list(config['sourceRoots'])==list(pair) and label in pair and {k:v.get('root')for k,v in config['sourceRoots'].items()}==pair and spec['root']==pair[label])if pair else(label=='selected' and list(config['sourceRoots'])==['selected'])),'exact new whole comparison location required')
@@ -510,6 +512,13 @@ def validate_new_public_whole(config,label,spec,path,config_path,case):
     require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and (spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(case['raw'],case['calls'],case['polygons']),'new whole source counts and full5 contract required')
     if spec['root']=='hkcs_m9c49':require(config['catalogStrokes']==23 and config.get('dictionaryPlaybackStrokes')==case.get('dictionaryPlaybackStrokes')==22,'exact 鱉 catalog23/private22 whole-only context required')
     require(config['domestic']==case['domestic'],'unchanged original dictionary whole metadata required')
+    if case.get('individualStatic') and spec['root']=='hkcs_m9959':
+        original=pinned_path('docs/hanja-source-raw-compare-u9959-hkcs-whole-2026-10-26/config.json').read_bytes()
+        require(digest(original)=='06d031d517fbb3187e3da1745f91619fbbe939b2d4333682ffb1589683576fc1','exact original 饙 HK whole input required')
+        expected=json.loads(original)
+        expected.update({'wholeOnly':False,'holdSummary':'Original static individual/prefix review only for publisher22 versus unchanged hkcs_m9959 raw24. Macro whole PASS reused; grouping, order, direction, contact and runtime remain unapproved. Original clips,24raw/24calls/41P retained. Existing selection/source_svg/page only; no source edit, projection or engine.','launcherSHA256':config.get('launcherSHA256')})
+        expected['inputSHA256']={**expected['inputSHA256'],'docs/hanja-source-raw-compare-u9959-hkcs-whole-2026-10-26/config.json':'06d031d517fbb3187e3da1745f91619fbbe939b2d4333682ffb1589683576fc1'}
+        require(config==expected,'exact unchanged 饙 HK individual-static config required')
     if case.get('individualStatic') and spec['root']=='hkcs_m5e6a':
         original=pinned_path("docs/hanja-source-raw-compare-u5e6a-hkcs-whole-2026-10-26/config.json").read_bytes()
         require(digest(original)=="bb5e6955a61f5e90cb6dfcf3f8dcece9159cc48ce2080670d2467c9345c32bcb",'exact original 幪 HK whole input required')
