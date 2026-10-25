@@ -1,0 +1,85 @@
+{
+  "schema": "hanja-public-source-only-screening/v1",
+  "date": "2026-10-26",
+  "glyph": "讒",
+  "catalog": {
+    "grade": "1급",
+    "strokes": 24,
+    "applied": false,
+    "confirmedBy": "ROOT from D1488 RAM roster"
+  },
+  "inventory": {
+    "path": "docs/hanja-source-inventory-u8b92-2026-10-26/public-records.json",
+    "SHA256": "a88f44e7f6c86170197e6bb653e9f5514e2ed11dd500292abd8980509415ea4c"
+  },
+  "prior": [
+    {
+      "path": "docs/hanja-remaining-source-prep-u8b92-2026-10-18/source-readiness.json",
+      "SHA256": "519f716c1afc6db31ec36aabbbe0bbb75a4b7024a966df690e373f7cffe15aea",
+      "meaning": "Old5captured profiles30nonempty raw/5exact adjacent joins/min25>24. No replay or bound transfer."
+    },
+    {
+      "path": "docs/hanja-g1-batch24-2026-09-20/review.json",
+      "SHA256": "5b3c180ede3228b86446fe2a23b7fb2e70a94c82b3d7c10fd1d94a8abf729f83",
+      "pointer": "/entries/glyph=讒",
+      "meaning": "Earlier notes require lower-component18 shallow right descent; saved first direction DR is historical, not new original observation."
+    }
+  ],
+  "HKPartialFacts": {
+    "root": "hkcs_m8b92@1",
+    "closure": 3,
+    "declaredRawIncludingMetadata": 31,
+    "declaredDrawingRows": 30,
+    "literalMetadata": "0",
+    "leftFirstRow": "1:0:0:22:32:78:32",
+    "leftFirstSourceH": true,
+    "firstFeatureNeedsNewOriginalReview": true,
+    "oldMinimum25NotTransferred": true,
+    "newEngine": 0
+  },
+  "otherSourceFacts": [
+    {
+      "roots": [
+        "u8b92-var-001@2",
+        "kk-shusei_kr118709-1@4",
+        "kk-shusei_kr118709-2@1"
+      ],
+      "sharedLeft": "u8a01-01@3",
+      "leftFirstRow": "1:0:0:20:30:77:30",
+      "sourceOnlyInitialHRisk": true,
+      "wholeNotReviewed": true
+    },
+    {
+      "root": "u8b92-var-002@3",
+      "closure": 5,
+      "declaredPrimitiveRows": 29,
+      "leftFirstSourceDR": true,
+      "authoredLowerDirectRows": 9,
+      "originalTerminalDotIndependentRowNotPresentInRoot": true,
+      "subcomponentShapeUnknown": true,
+      "wholeApproval": false
+    }
+  ],
+  "completeUnexecutedCandidate": {
+    "path": "docs/hanja-source-alternative-u8b92-var-002-2026-10-26/sources.json",
+    "SHA256": "0a204666f0e86858c95ee6ab45e1f58727e48cf64d525f7de1da435d2aa91813",
+    "root": "u8b92-var-002@3",
+    "sourceOnly": true,
+    "selectedByROOT": false
+  },
+  "assessment": "New original var002 closure differs from old captured profiles and avoids the source H-first feature, but shape and24 logical boundaries remain unverified. Never delete rows or infer missing joins.",
+  "actions": {
+    "engine": 0,
+    "projection": 0,
+    "native": 0,
+    "sourceEdited": false,
+    "geometryEdited": false,
+    "privateInputs": false
+  },
+  "approval": {
+    "whole": false,
+    "direction": false,
+    "contact": false,
+    "runtime": false
+  }
+}
