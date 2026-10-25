@@ -21,7 +21,7 @@
   },
   "source": {
     "path": "docs/hanja-source-alternative-u6adc-2026-10-26/sources.json",
-    "SHA256": "13f1c4bf4df882d479e58ccbab56d584087289a50b57d1e848807d0b13f545de"
+    "SHA256": "523eae26e1932b1c95ea2d9145c684a6b32dedea1581b26cbd8d4f93a12decad"
   },
   "newAuthoredRows": [
     {
@@ -54,10 +54,22 @@
       "root": "koseki-179850@9",
       "body": "u548e-09@3",
       "finding": "Original pair DL (133,69→125,86→101,95) and DR (126,80→145,85→156,93). Whole unrendered; alias naming alone does not transfer old geometry verdicts."
+    },
+    {
+      "root": "u6adc-var-003@7",
+      "bodyReferenceKey": "u548e-09",
+      "bodyRootTransform": [
+        0,
+        0,
+        200,
+        198
+      ],
+      "comparisonRecordAlreadyAvailable": "u548e-09@3",
+      "finding": "The newly fetched root references the same bare body key as previously inspected koseki. Existing pinned body rows are DL+DR and this positive body transform does not change their sign. No fresh complete dependency snapshot, original P equality or whole compatibility verdict is claimed."
     }
   ],
   "conclusion": "No new source-row evidence of the required V+DR pair in the inspected authored bodies; no new complete whole approval or fresh geometry HOLD is claimed.",
-  "uninspected": "u6adc-var-003@7 request was not run due rate limit; no automatic retry.",
+  "uninspected": "Earlier u6adc-var-003@7 request not run was preserved; one later public request obtained the root. Other unversioned references are not refetched or represented as a new complete snapshot.",
   "approval": {
     "sourceRowsOnly": true,
     "wholeCompatible": false,
@@ -66,7 +78,7 @@
     "runtimeApplied": false
   },
   "actions": {
-    "newFetch": 0,
+    "newFetch": 1,
     "newEngine": 0,
     "newProjection": 0,
     "newServer": 0,

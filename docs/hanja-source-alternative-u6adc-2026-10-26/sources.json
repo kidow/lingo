@@ -144,10 +144,20 @@
         "related": "U+5904",
         "version": 1
       }
+    },
+    {
+      "inventoryKey": "gaoVar3Followup",
+      "requestedURL": "https://glyphwiki.org/api/glyph?name=u6adc-var-003%407",
+      "record": {
+        "name": "u6adc-var-003",
+        "version": "7",
+        "related": "U+6ADC",
+        "data": "99:200:-17:-1:1:199:164:u2ff1-u30009-u5196-03:0:0:-20$99:0:0:0:0:200:198:u548e-09$1:0:0:17:145:181:145$1:32:0:99:130:99:185$2:32:7:93:145:66:169:12:182$2:7:0:104:145:134:166:179:177"
+      }
     }
   ],
   "retrieval": {
-    "successfulRecords": 13,
+    "successfulRecords": 14,
     "failedRequests": [
       {
         "name": "u6adc-var-003@7",
@@ -158,7 +168,16 @@
     "originalMediaFetch": 0,
     "newEngine": 0,
     "newProjection": 0,
-    "serverStarts": 0
+    "serverStarts": 0,
+    "followup": {
+      "name": "u6adc-var-003@7",
+      "singleExecutedRequest": 1,
+      "result": "exact authored root rows acquired",
+      "dependencyRefetch": 0,
+      "engine": 0,
+      "projection": 0,
+      "server": 0
+    }
   },
   "fixedVersionSemantics": "Every returned record retains its exact name/version/data. Bare dependency queries returned the recorded current version, not a claim of one historical snapshot."
 }
