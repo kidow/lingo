@@ -1,0 +1,225 @@
+{
+  "schema": "hanja-original-source-static-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "幪",
+  "root": "hkcs_m5e6a",
+  "rootVersion": 1,
+  "status": "PASS static location and shape correspondence only",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "inputs": {
+    "config": "docs/hanja-source-raw-compare-u5e6a-hkcs-individual-2026-10-26/config.json",
+    "configSHA256": "cb2cadd518f753c36449dd307499f0b2cdd9f8b77fdec7c1bb84d8b985fd563d",
+    "helper": "scripts/hanja-raw-static-compare.py",
+    "helperSHA256": "0a5920f7f2a6ce6ddbc758adc6ad7de697e72a4147ffa5305008bf4825f1fece",
+    "full5": "docs/hanja-actual-engine-capture-u5e6a-hkcs-2026-10-26/engine-whole-hkcs_m5e6a.json",
+    "full5SHA256": "e8831644fbe62a6af83581d45c4024cf2c324732b731ada72372309ef62ccb11",
+    "unchangedBeforeAndAfter": true
+  },
+  "observations": {
+    "totalDirectScreens": 23,
+    "singleScreens": 19,
+    "prefixScreens": 4,
+    "exploratoryScreens": 0,
+    "singlePairs": [
+      {
+        "domestic": 1,
+        "raw": 2
+      },
+      {
+        "domestic": 2,
+        "raw": 3
+      },
+      {
+        "domestic": 2,
+        "raw": 4
+      },
+      {
+        "domestic": 3,
+        "raw": 1
+      },
+      {
+        "domestic": 4,
+        "raw": 5
+      },
+      {
+        "domestic": 5,
+        "raw": 6
+      },
+      {
+        "domestic": 6,
+        "raw": 7
+      },
+      {
+        "domestic": 7,
+        "raw": 8
+      },
+      {
+        "domestic": 8,
+        "raw": 9
+      },
+      {
+        "domestic": 9,
+        "raw": 10
+      },
+      {
+        "domestic": 9,
+        "raw": 11
+      },
+      {
+        "domestic": 10,
+        "raw": 12
+      },
+      {
+        "domestic": 11,
+        "raw": 13
+      },
+      {
+        "domestic": 12,
+        "raw": 14
+      },
+      {
+        "domestic": 13,
+        "raw": 15
+      },
+      {
+        "domestic": 14,
+        "raw": 16
+      },
+      {
+        "domestic": 15,
+        "raw": 17
+      },
+      {
+        "domestic": 16,
+        "raw": 18
+      },
+      {
+        "domestic": 17,
+        "raw": 19
+      }
+    ],
+    "prefixPairs": [
+      [
+        3,
+        4
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        13,
+        15
+      ]
+    ],
+    "fullPageEntireBothImages": true,
+    "bboxes": [
+      {
+        "x": 12,
+        "y": 384.703125,
+        "width": 520,
+        "height": 520
+      },
+      {
+        "x": 562,
+        "y": 384.703125,
+        "width": 520,
+        "height": 520
+      }
+    ],
+    "details": [
+      "Domestic1 is the left 巾 vertical corresponding to source raw2.",
+      "Domestic2 H/V/hook corresponds to source raw3+4.",
+      "Domestic3 is the tall center vertical corresponding to source raw1.",
+      "Split four-stroke grass and the remaining roof/豕 strokes were individually observed.",
+      "The narrow visible 巾 seam remains a rendering concern. Existing public proof establishes exact edge-only source contact, not a geometry gap or an established raster cause."
+    ]
+  },
+  "provisionalStaticMapping": [
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ],
+    [
+      18
+    ],
+    [
+      19
+    ]
+  ],
+  "priorEvidence": {
+    "whole": "docs/hanja-source-raw-compare-u5e6a-hkcs-whole-2026-10-26/native-whole-review.json",
+    "paintContact": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/paint-and-contact-conditions-proof.json",
+    "unchangedEvidenceReusedWithoutReplay": true
+  },
+  "approval": {
+    "staticLocationShape": true,
+    "logicalGrouping": false,
+    "sourceTemporalDirection": false,
+    "sourceClockEquivalence": false,
+    "actualPlayback": false,
+    "runtime": false
+  },
+  "execution": {
+    "serverPID": 99416,
+    "port": 59412,
+    "startupLogCaptured": false,
+    "serverStopped": true,
+    "tabClosed": true,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesWritten": 0
+  },
+  "limits": [
+    "This per-glyph provisional order is directly paired from domestic static clips, not inferred from the radical or another glyph.",
+    "H/V grouping still requires source and temporal checks.",
+    "The source19 rows/P/Q and coordinates remain unchanged."
+  ]
+}
