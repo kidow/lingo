@@ -1,0 +1,64 @@
+{
+  "schema": "hanja-authored-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "穈",
+  "root": "hkcs_m7a48",
+  "rootVersion": 2,
+  "status": "HOLD",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "scope": "One new complete authored HK whole; prior four whole HOLDs not transferred.",
+  "inputs": {
+    "config": "docs/hanja-source-raw-compare-u7a48-hkcs-whole-2026-10-26/config.json",
+    "configSHA256": "be0f63de0bf0704f7740cb36c165855fd00ad3d8e88a3757a6677ddda531d8b1",
+    "helper": "scripts/hanja-raw-static-compare.py",
+    "helperSHA256": "6d03b8a57d40ae39d04b2a8bc67b859aed5980431ac88ee0bf40fb19c9ace075",
+    "full5SHA256": "911dc61d82647fc17df009c7499c0e8b8d36c7280a636ef5296716bf264ec3fa",
+    "unchangedBeforeAndAfter": true
+  },
+  "observed": {
+    "wholePairs": 1,
+    "domesticPenCount": 16,
+    "sourceRawCount": 16,
+    "sourceDrawingCalls": 21,
+    "sourcePolygons": 42,
+    "fullPage": true,
+    "entireImagesVisible": true,
+    "bboxes": [
+      {
+        "x": 12,
+        "y": 275.203125,
+        "width": 520,
+        "height": 520
+      },
+      {
+        "x": 562,
+        "y": 303.203125,
+        "width": 520,
+        "height": 520
+      }
+    ],
+    "mismatch": "The new HK inner-right 麻 ending rises into a clear terminal upward spike. The domestic pen11 ending curves right without that upward spike.",
+    "sameFilledPAsPriorNotClaimed": true
+  },
+  "decision": {
+    "wholeCompatible": false,
+    "progressiveReviewStarted": false,
+    "newGeometryEditsAllowed": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "serverPID": 80640,
+    "port": 59412,
+    "startupLogCaptured": false,
+    "serverStopped": true,
+    "tabClosed": true,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesWritten": 0
+  },
+  "limits": [
+    "Direct new whole observation only; no source deletion, hook removal, component transplantation or connector.",
+    "The public authored source and captured full5 remain unchanged.",
+    "Publisher dictionary cross-check is not examination-body stroke-order certification."
+  ]
+}
