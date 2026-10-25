@@ -751,6 +751,14 @@ def exact_u846f_hkcs_draft_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u6fe9_hkcs_m_draft_launcher(config,base):
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"577cdfaba8a8fcf1836e3baf78ff01c943ef712f69f337c9c863d91d9e4adb3e"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u6fe9-hkcs-whole-2026-10-25/config.json","SHA256":"0b1aa6f46321669f7f94592165af37015885150497dd48e3f3137ed1fe61a26c"}
+            and base.get('glyph')=='濩' and base.get('catalogStrokes')==17 and base.get('wholeOnly')is True
+            and base.get('sourceRoots')=={"m":{"root":"hkcs_m6fe9","file":"docs/hanja-actual-engine-capture-u6fe9-hkcs-m-2026-10-25/engine-whole-hkcs_m6fe9.json","fileSHA256":"fe2644ffc692b3eb4133fb4f9a9a26bd1d6f92da46eea97488991ab4fe4b7456","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"hkcs_m6fe9","sourceProofFile":"engine-whole-hkcs_m6fe9.json","sourceProofFileSha256":"fe2644ffc692b3eb4133fb4f9a9a26bd1d6f92da46eea97488991ab4fe4b7456"},"rawGroups":21,"drawingCalls":21,"polygonCounts":[2,2,3,2,2,2,1,2,2,2,3,1,3,2,2,2,1,2,1,2,2],"polygons":41},"u":{"root":"hkcs_u6fe9","file":"docs/hanja-actual-engine-capture-u6fe9-hkcs-u-2026-10-25/engine-whole-hkcs_u6fe9.json","fileSHA256":"1b3946aad2cda5a666a7384dfd50aaf0e6c262df7cb0677d03ea23b8290b2331","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"hkcs_u6fe9","sourceProofFile":"engine-whole-hkcs_u6fe9.json","sourceProofFileSha256":"1b3946aad2cda5a666a7384dfd50aaf0e6c262df7cb0677d03ea23b8290b2331"},"rawGroups":21,"drawingCalls":21,"polygonCounts":[2,2,3,2,2,2,1,2,2,2,3,1,2,1,2,2,2,2,1,2,2],"polygons":40}}
+            and config.get('provisionalGroups')=={"m":[[1],[2],[3,4,5,6],[7],[8],[10],[9],[11],[12],[13],[14],[15],[16],[17],[18],[19,20],[21]],"u":[None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None]}
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def exact_u8543_t_draft_launcher(config,base):
     selected=base.get('sourceRoots',{}).get('selected',{})
     return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"577cdfaba8a8fcf1836e3baf78ff01c943ef712f69f337c9c863d91d9e4adb3e"}
@@ -896,6 +904,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u840d_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u4e77_g_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u8543_t_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u6fe9_hkcs_m_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u56ac_g_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u5767_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u585a_base_dictionary_draft_launcher(config,base)
