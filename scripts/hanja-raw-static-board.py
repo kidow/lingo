@@ -751,6 +751,21 @@ def exact_u846f_hkcs_draft_launcher(config,base):
             and base.get('launcherSHA256')==config['launcher']['SHA256'])
 
 
+def exact_u4e77_g_draft_launcher(config,base):
+    selected=base.get('sourceRoots',{}).get('selected',{})
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"3891a24fa6db0b15196b091de33759c847f6da4936c79158a3a2755ef0d2716e"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u4e77-g-whole-2026-10-25/config.json","SHA256":"4060ca53a844901d2cae2d09d34f9dda4e6166c4b808ae974d216582e1842235"}
+            and base.get('glyph')=='乷' and base.get('catalogStrokes')==8 and base.get('wholeOnly')is True
+            and list(base.get('sourceRoots',{}))==['selected']
+            and selected.get('root')=='u4e77-g'
+            and selected.get('file')=='docs/hanja-actual-engine-capture-u4e77-g-2026-10-25/engine-whole-u4e77-g.json'
+            and selected.get('fileSHA256')=='75e6dca0ef2e25a455d91f688f5db083dbc715c88b12cfe58bcf0bdf2df56496'
+            and selected.get('proofKind')=='actual-full5-direct' and selected.get('proofKeys')==['defaults','engineHashes','engineRevision','groups','trace']
+            and (selected.get('rawGroups'),selected.get('drawingCalls'),selected.get('polygons'))==(10,12,25)
+            and selected.get('polygonCounts')==[2,2,2,1,2,3,2,3,1,7]
+            and config.get('provisionalGroups')=={"selected":[[1],[2],[3,4],[5],[6],[7],[8],[9,10]]}
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def exact_u840d_hkcs_draft_launcher(config,base):
     selected=base.get('sourceRoots',{}).get('selected',{})
     return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"d47c09933416c22f5fb89c90434d8371d0311c5904f86ec97dca52a8fd0e0db1"}
@@ -857,6 +872,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u846f_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u61b8_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u840d_hkcs_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u4e77_g_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u5767_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u585a_base_dictionary_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u703c_body3_prepared_launcher(config,base)
