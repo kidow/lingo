@@ -1,0 +1,143 @@
+{
+  "schema": "hanja-source-bound-correction-native-review/v1",
+  "date": "2026-10-25",
+  "observer": "/root",
+  "glyph": "庾",
+  "root": "u5ebe-ue0102",
+  "status": "PASS: explicitly reviewed corrections, exact remaining-source conditions and prior-stroke attribution; original baseline has no inferred numeric PASS tally",
+  "catalogStrokes": 11,
+  "dictionaryPlaybackStrokes": 12,
+  "sourceProofFormat": "actual-full5",
+  "originalPGuideWidthWeightChanged": false,
+  "newSourceEngineRuns": 0,
+  "newSourceProjectionRuns": 0,
+  "actualInput": {
+    "commit": "9655a0413",
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u5ebe-2.json",
+      "SHA256": "d668a4c7d9c0feacd6b52d06885c30a328f082670811cdff19808bf30987c83d"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "c8e54bdd4e7d8b2f29bbabb59e267cdcf534f70ac5764b93a49a8eab248c2a89"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "e42680292a51ef7a0ca2a8ad4350bb66822ffe0456206b5e24f36add928a6219"
+    },
+    "constants": {
+      "path": "lib/hanja-strokes.ts",
+      "SHA256": "4ba197a794e7a8f04e40a214c63dd91c02d98f9f16af73bd53f2f44cd5c68719"
+    },
+    "geometrySHA256": "7a0ce084854021f6befdac71d5be4e6b2a6f32bb7281fab33386e2834ffa7557",
+    "profileSourceVersionNote": "The numeric field 2 identifies this VS2 selection; no current GlyphWiki provider revision is inferred from it. Source provenance remains the pinned archived closure."
+  },
+  "freshFinite": {
+    "targets": ["u5ebe-3-2", "u5ebe-4-1"],
+    "perTarget": {
+      "early": [0.000001, 0.01, 0.03],
+      "middleAndNearEnd": [0.5, 0.99999999],
+      "completeResidual": 1
+    },
+    "targetFrames": 12,
+    "boundary": {"pen": 3, "nextMask": 2, "beforeExactAfter": 3},
+    "total": 15,
+    "PASS": 15,
+    "bad": [],
+    "errors": [],
+    "observations": {
+      "3m2": "The new curved source P grows continuously downward from the actual completed original 3m1 vertical; the prior original V remains present.",
+      "4m1": "The separate source Q starts at zero and grows toward the left and slightly downward without the old fixed starting fragment.",
+      "residual": "Both 520px complete residual views appeared white by direct visual inspection. No numeric pixel-zero result or proof for every time is claimed."
+    }
+  },
+  "naturalSnapshots": {
+    "total": 4,
+    "PASS": 4,
+    "pen3": {"readMid": 0.6123, "screenshotMid": 0.626825, "end": 1},
+    "pen4": {"readMid": 0.6236375, "screenshotMid": 0.6382375, "end": 1},
+    "bad": [],
+    "errors": [],
+    "scope": "Finite mid/end observations at the existing controller speed; no continuous-time or publisher microtiming equivalence claim."
+  },
+  "additionalReview": {
+    "commit": "5d5d30857",
+    "inputSHA256": {
+      "docs/hanja-actual-component-profiles-2026-10-22/u5ebe-3.json": "12e0a47df7590e9ad935f979356ff4864ea36c5cd24098cc959007bb9b787c1b",
+      "scripts/hanja-actual-component-review.mjs": "48a32258df5a69b43bfa0a271efa7c298b86c00aa27df868075eb49632f19ed3",
+      "components/hanja/stroke-outlines.tsx": "2280c55a019d0e0d985680bd446a6f83dee3038d8c8c6f51788758e6e08a1c26",
+      "lib/hanja-strokes.ts": "4ba197a794e7a8f04e40a214c63dd91c02d98f9f16af73bd53f2f44cd5c68719"
+    },
+    "finite": {
+      "new11m2Cap": {"early": 3, "middleAndNearEnd": 2, "completeResidual": 1, "transition": 3, "PASS": 9},
+      "new8m2Band": {"early": 3, "middleAndNearEnd": 2, "completeResidual": 1, "transition": 3, "PASS": 9},
+      "unchangedPlain12": {"early": 3, "middleAndNearEnd": 2, "completeResidual": 1, "PASS": 6},
+      "pen6PriorAttribution": {"views": 2, "PASS": 2},
+      "total": 26,
+      "PASS": 26,
+      "bad": [],
+      "errors": [],
+      "residualViews": 3,
+      "residualScope": "All three 520px residual views appeared white by direct inspection; no numeric pixel-zero result."
+    },
+    "natural": {
+      "snapshots": 4,
+      "PASS": 4,
+      "pen8": {"readMid": 0.622675, "screenshotMid": 0.6381375, "end": 1},
+      "pen11": {"readMid": 0.60895, "screenshotMid": 0.6237, "end": 1},
+      "bad": [],
+      "errors": []
+    },
+    "observations": {
+      "8m2": "Original P grows as a connected band from the actual completed adjacent original H; the old detached upper-uroko prefix is removed without changing source P.",
+      "11m2": "The new source-bound growing Q cap starts without the exact fixed-radius counterexample and retains the completed original prior V.",
+      "12": "No new initial piece; the original unmodified curve grows down-right and restores original P. The exact prior-union proof explains its unchanged initial mask.",
+      "6": "Prefix5 contains the original pen5 V and no pen6 P. At pen6 epsilon, pen5 d is byte-identical and own6 is a rightward H clipped to x30.75,y42.25,width0.000018549999992099117,height6.5."
+    },
+    "readOnlyInspectionDiagnostics": [
+      "getBBox was not available in the restricted inspection scope; no renderer failure or code change.",
+      "An initially missing pen6 P required a nullable DOM read; the corrected inspection completed. Actual page errors remained empty."
+    ],
+    "firstAliasStartup": {"exitCode": 1, "listened": false, "finiteFrames": 0, "fixedBy": "One canonical import alias for the existing caps module; no module duplication"},
+    "cleanup": {"PID": 25771, "session": 58413, "port": 59412, "exitCode": 130, "tab": "8", "tabClosed": true, "viewportReset": true, "ownServersRemaining": 0}
+  },
+  "remainingSourceConditions": {
+    "proof": "docs/hanja-source-original-u5ebe-ue0102-2026-10-25/remaining-mask-proof.json",
+    "reproducer": "docs/hanja-source-original-u5ebe-ue0102-2026-10-25/verify-remaining-mask-proof.py",
+    "straightOwnPrefixes": "Eleven exact affine arrangements have single connected P sections and prefix area bounded by bboxArea*p tending to zero. This own-P result alone did not establish prior-H contact for 8m2.",
+    "8m2Contact": "Its source-bound band has a positive original-P intersection with the actual completed original H for every positive progress; original P is recovered at completion.",
+    "11m2": "Exact fixed-Q7 counterexample required the added cap. Its initial certificate, full-Q7 coverage and positive original prior-V intersection are stored in the proof.",
+    "12": "Subtracting all completed prior original P gives 301 rational cells. Their minimum squared distance from Q0 is 52923576781/718240000, greater than 64; the unchanged Q7 prefix at arc distance at most 1 is hidden in the completed prior union.",
+    "old3m2And4m1": "Original two policy targets, measurement/commit functions and caps JSX are unchanged. Prior validation additionally rejects transparent fill and accepts the separately proved 11m2 source target; existing successful opaque frames are reused."
+  },
+  "reusedEvidence": {
+    "original36": "docs/hanja-official-media-compare-u5ebe-2026-10-24/official-temporal-native-review.json",
+    "static12AndWhole": "docs/hanja-source-raw-compare-u5ebe-ue0102-2026-10-25/native-group-review.json",
+    "ordinary54": "docs/hanja-source-original-u5ebe-ue0102-2026-10-25/ordinary-baseline-native-review.json",
+    "ordinaryTallyWasPASS": false,
+    "ordinaryScope": "The old 54 observations contain no numeric PASS/HOLD tally. Changed risks 3m2/4m1 are covered above; unchanged observations are not promoted to a new PASS total.",
+    "whole12Replayed": false,
+    "originalDirectionsReplayed": false,
+    "staticMappingReplayed": false
+  },
+  "approval": {
+    "twoCorrectedMasksFiniteApproved": true,
+    "unchangedOrdinaryAttributionClosed": true,
+    "runtimeRegistrationAuthorized": true,
+    "newFiniteSnapshots": 41,
+    "naturalSnapshotsSeparate": 8,
+    "allTimeProof": false,
+    "publisherMicrotimingEquivalent": false,
+    "examBodyApproved": false
+  },
+  "cleanup": {
+    "PID": 2980,
+    "session": 49837,
+    "port": 59412,
+    "exitCode": 130,
+    "tab": "4",
+    "tabClosed": true,
+    "viewportReset": true,
+    "ownServersRemaining": 0
+  }
+}
