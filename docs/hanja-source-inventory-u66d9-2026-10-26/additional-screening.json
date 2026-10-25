@@ -1,0 +1,112 @@
+{
+  "schema": "hanja-public-source-only-screening/v1",
+  "date": "2026-10-26",
+  "glyph": "曙",
+  "sources": {
+    "path": "docs/hanja-source-inventory-u66d9-2026-10-26/additional-public-records.json",
+    "SHA256": "8975a3c290b643139f97fb86c125cf7d683a906b6dcac1bd6f286f6941d8818a"
+  },
+  "priorInventory": {
+    "path": "docs/hanja-source-inventory-u66d9-2026-10-26/inventory.json",
+    "SHA256": "93ff8eadb7bce9359ac6ddb2bb5aa1060973cbb91dd0ee82baacd3f4bd57d94e"
+  },
+  "latestHKHold": {
+    "path": "docs/hanja-source-raw-compare-u66d9-hkcs-whole-2026-10-26/native-whole-review.json",
+    "SHA256": "62010e5372c635282a4ab2aa4b8d5d54a7dfb69b30680d7b6967131b5b607a13"
+  },
+  "oldKLeafParity": [
+    {
+      "name": "u65e5-01",
+      "versionAndDataEqual": true
+    },
+    {
+      "name": "ufa5a-02",
+      "versionAndDataEqual": true
+    },
+    {
+      "name": "u7f52-03",
+      "versionAndDataEqual": true
+    },
+    {
+      "name": "ufa5b-02",
+      "versionAndDataEqual": true
+    },
+    {
+      "name": "u65e5-04",
+      "versionAndDataEqual": true
+    }
+  ],
+  "facts": [
+    {
+      "root": "toikawa_hkrm-02088741@2",
+      "scope": "u8005-04-var-001@2 direct rows",
+      "separateDotRow": false,
+      "nativeVerdict": "not reviewed"
+    },
+    {
+      "root": "toikawa_hkrm-02088742@1",
+      "scope": "u8005-04@6 direct rows",
+      "separateDotRow": false,
+      "nativeVerdict": "not reviewed"
+    },
+    {
+      "root": "zihai-084458@1",
+      "scope": "u723b-09@1 direct rows",
+      "bodyUsesFourCurves": true,
+      "nativeVerdict": "not reviewed"
+    },
+    {
+      "root": "dkw-14220@3",
+      "rightBodyAndPlacementSameAsPriorK": true,
+      "leftReplacedByAuthoredYue": true,
+      "nativeVerdict": "not reviewed"
+    },
+    {
+      "root": "simch-kx_t050104@1",
+      "referencesBoundsAndCurrentLeafDataSameAsPriorK": true,
+      "rootStringNotByteIdentical": true,
+      "nativeVerdict": "not reviewed"
+    },
+    {
+      "root": "hs_u66d9@1",
+      "aliasToDefaultJ": true,
+      "nativeVerdict": "not reviewed"
+    },
+    {
+      "root": "hs_u66d9-var-001@1",
+      "aliasToUe0101ToK": true,
+      "nativeVerdict": "not reviewed"
+    }
+  ],
+  "recommendedNext": {
+    "root": "xotarios_u66d9-var-001@1",
+    "closureNames": [
+      "xotarios_u66d9-var-001",
+      "u66f0-01",
+      "ufa5b-02",
+      "u65e5-04"
+    ],
+    "completeClosure": true,
+    "separateDRDotOriginalRow": true,
+    "authoredDifferentBodyPlacementAndSixHeadRows": true,
+    "meaning": "新しい authored whole の判読候補のみ。接触・方向・完成型互換性は未承認。",
+    "parentSelectionPending": true
+  },
+  "counts": {
+    "additionalPublicRecords": 13,
+    "engine": 0,
+    "projection": 0,
+    "wholeCapture": 0,
+    "newVisualReview": 0
+  },
+  "sourceRowsChanged": false,
+  "componentsMovedByUs": false,
+  "connectorsAdded": false,
+  "approval": {
+    "whole": false,
+    "static": false,
+    "direction": false,
+    "contact": false,
+    "runtime": false
+  }
+}
