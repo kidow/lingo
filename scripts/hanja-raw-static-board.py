@@ -902,6 +902,14 @@ def exact_u5767_hkcs_draft_launcher(config,base):
             and digest(fixed_path(expected['wholeEvidence']['path']).read_bytes())==expected['wholeEvidence']['SHA256'])
 
 
+def exact_u705d_hkcs_m_draft_launcher(config,base):
+    return (config.get('launcher')=={"path":"scripts/hanja-raw-static-compare.py","SHA256":"d69aa62527e6d49ec7ce945af72deed63a1d76a7c302573205632c15ade96009"}
+            and config.get('baseConfig')=={"path":"docs/hanja-source-raw-compare-u705d-hkcs-whole-2026-10-26/config.json","SHA256":"8bb3e1dbeb927cef7ba58a6c37c8e5bc0f693305c298a49cb812d63641a54365"}
+            and base.get('glyph')=='灝' and base.get('catalogStrokes')==24 and base.get('wholeOnly')is True
+            and base.get('sourceRoots')=={"m":{"root":"hkcs_m705d","file":"docs/hanja-actual-engine-capture-u705d-hkcs-m-2026-10-26/engine-whole-hkcs_m705d.json","fileSHA256":"dc3df9f8e327a0b221fc7e71db05301905f15cc6ad919d98a5ed2da04e72a74b","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"hkcs_m705d","sourceProofFile":"engine-whole-hkcs_m705d.json","sourceProofFileSha256":"dc3df9f8e327a0b221fc7e71db05301905f15cc6ad919d98a5ed2da04e72a74b"},"rawGroups":30,"drawingCalls":31,"polygonCounts":[2,2,3,2,2,2,1,1,2,1,1,1,2,1,1,2,1,4,3,2,2,1,1,1,2,1,1,1,3,2],"polygons":51},"u":{"root":"hkcs_u705d","file":"docs/hanja-actual-engine-capture-u705d-hkcs-u-2026-10-26/engine-whole-hkcs_u705d.json","fileSHA256":"24393d9b285a538e879f2dad1d5bde5d67d494f146c52ecb4a5832bc4840b077","proofKeys":["defaults","engineHashes","engineRevision","groups","trace"],"proofKind":"actual-full5-direct","sourceProofIdentity":{"sourceRoot":"hkcs_u705d","sourceProofFile":"engine-whole-hkcs_u705d.json","sourceProofFileSha256":"24393d9b285a538e879f2dad1d5bde5d67d494f146c52ecb4a5832bc4840b077"},"rawGroups":30,"drawingCalls":31,"polygonCounts":[2,2,3,2,2,2,1,1,2,1,1,2,2,1,1,2,1,4,3,2,2,1,1,1,2,1,1,1,3,2],"polygons":52}}
+            and config.get('provisionalGroups')=={"m":[[1],[2],[3,4,5,6],[7],[8,9],[10],[11],[12],[13],[14],[15,16],[17],[18],[19],[20],[21],[22],[23],[24,25],[26],[27],[28],[29],[30]],"u":[None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None]}
+            and base.get('launcherSHA256')==config['launcher']['SHA256'])
+
 def main():
     require(__debug__ and sys.flags.optimize == 0, 'optimized execution forbidden')
     parser = argparse.ArgumentParser(description='Pinned provisional static board; ROOT starts HTTP.')
@@ -934,6 +942,7 @@ def main():
     legacy_launcher = legacy_launcher or exact_u59b5_g_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u8543_t_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u6fe9_hkcs_m_draft_launcher(config,base)
+    legacy_launcher = legacy_launcher or exact_u705d_hkcs_m_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u56ac_g_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u5767_hkcs_draft_launcher(config,base)
     legacy_launcher = legacy_launcher or exact_u585a_base_dictionary_draft_launcher(config,base)

@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-native-whole-review-v1",
+  "date": "2026-10-26",
+  "glyph": "灝",
+  "root": "hkcs_m705d",
+  "reviewer": "ROOT browser panel",
+  "historicalCommit": "d3b9f2b27",
+  "status": "PASS-whole-only",
+  "scope": "새 HK 원본 whole을 원문 전체와 직접 대조한 판정만. 정적 매핑·개별 원P·시간 방향·미세 접촉·보정·런타임 승인은 별도이다.",
+  "observation": "상단 日 아래 세로 연결과 긴 가로의 접촉이 원문처럼 유지되고, 전체520판독에서 눈에 보이는 누락이나 새 단절이 없었다.",
+  "input": {
+    "configPath": "docs/hanja-source-raw-compare-u705d-hkcs-whole-2026-10-26/config.json",
+    "configSHA256": "8bb3e1dbeb927cef7ba58a6c37c8e5bc0f693305c298a49cb812d63641a54365",
+    "launcherPath": "scripts/hanja-raw-static-compare.py",
+    "launcherSHA256": "d69aa62527e6d49ec7ce945af72deed63a1d76a7c302573205632c15ade96009",
+    "sourcePath": "docs/hanja-source-alternative-u705d-hkcs-m-2026-10-25/sources.json",
+    "sourceSHA256": "054dad6c016983f9e4855b11885891f8ba4543ef13547ace82d3b32810154e9f",
+    "full5Path": "docs/hanja-actual-engine-capture-u705d-hkcs-m-2026-10-26/engine-whole-hkcs_m705d.json",
+    "full5SHA256": "dc3df9f8e327a0b221fc7e71db05301905f15cc6ad919d98a5ed2da04e72a74b",
+    "dictionarySVG_SHA256": "9ac43a1a8a986cb35e89e7a545d6ebf88efb9e09c579ddba98eeaff42f4a66d3"
+  },
+  "viewport": {
+    "width": 1800,
+    "height": 1800,
+    "tab": 69,
+    "allThree520FullyVisible": true,
+    "DOMImages": 3,
+    "imageWidth": 520,
+    "imageHeight": 520,
+    "bottoms": [
+      758.96,
+      787.14,
+      1415.61
+    ],
+    "excludedFirstViewport": {
+      "width": 1800,
+      "height": 1280,
+      "uBottomClipped": true,
+      "uVerdict": false
+    },
+    "comparisonSequence": [
+      "최종1800×1800 원문/m/u 520×520 전체 동시 판독"
+    ]
+  },
+  "actions": {
+    "newWholeObservations": 1,
+    "privateMediaSaved": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "sourcePChanged": 0,
+    "originalMetadataRowsChanged": 0,
+    "domesticRAMFetchSharedAcrossPair": 1,
+    "domesticRAMFetchAttributedPerRoot": false
+  },
+  "approval": {
+    "wholeCompatibility": true,
+    "individualStrokes": false,
+    "order": false,
+    "direction": false,
+    "temporal": false,
+    "runtime": false,
+    "correctionReuse": false,
+    "examBody": false
+  },
+  "cleanup": {
+    "PID": 53254,
+    "detached": true,
+    "wrapper": false,
+    "terminationSignal": "SIGINT",
+    "tab": 69,
+    "tabClosed": true,
+    "viewportReset": true,
+    "processTerminationConfirmed": true,
+    "port": 59412,
+    "portClosed": true,
+    "remainingOwnedServers": 0
+  }
+}
