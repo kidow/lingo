@@ -1,0 +1,71 @@
+{
+  "schema": "hanja-source-cardinal-contact/v1",
+  "date": "2026-10-25",
+  "glyph": "坧",
+  "root": "hkcs_m5767",
+  "pen": 7,
+  "mask": 2,
+  "fixture": "docs/hanja-source-original-u5767-hkcs-2026-10-25/fixtures.json",
+  "fixtureSHA256": "d4f3238c0dc10e150edbed817b6607814ba27e3948028c4b14b6e7a20e1297ab",
+  "priorSegmentSHA256": "bb982a665bdadb847ade94885e69a707e15836e4424d7a0d351aabe1b14edc33",
+  "ownSegmentSHA256": "029c7c2442fda58280194f1c4b3dfb1fc342d386de18e912527f50dc9d4f88e2",
+  "contactSquare": {
+    "center": [
+      "80",
+      "49"
+    ],
+    "halfSide": "1/200",
+    "square": [
+      [
+        "15999/200",
+        "9799/200"
+      ],
+      [
+        "16001/200",
+        "9799/200"
+      ],
+      [
+        "16001/200",
+        "9801/200"
+      ],
+      [
+        "15999/200",
+        "9801/200"
+      ]
+    ],
+    "strictlyInsidePriorH": true,
+    "ownEar": {
+      "polygon": 1,
+      "triangle": 1,
+      "strictCrossMargin": "381/400"
+    }
+  },
+  "band": {
+    "axis": "y",
+    "origin": "49",
+    "negativeExtent": "7/2",
+    "positiveExtent": "43",
+    "emptyAt0": true,
+    "fullBoundsAt1": true,
+    "positiveSourceContactForPositiveP": "For p>0 choose epsilon=min(1/200,(7/2)*p/2,43*p/2); its square lies in the fixed common-interior square and the original-P band.",
+    "allTimeRasterClaimed": false,
+    "actualOpaquePriorStillRequired": true
+  },
+  "reuseConditions": {
+    "priorModule": "lib/hanja-stroke-cardinal-contact-u5ebe.ts",
+    "priorModuleSHA256": "1b782a384491c283682f4208061ed4b53663ad307eaaf34935326b56ad3d77b9",
+    "headTranslation": [
+      "9/10",
+      "17"
+    ],
+    "originalHeadExactlyTranslated": true,
+    "newShaftSlabFactsAreIndependent": true
+  },
+  "sourcePGuideWidthWeightChanged": false,
+  "newGuideOrBridge": false,
+  "oldTargetExecution": 0,
+  "engine": 0,
+  "projection": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
