@@ -1,0 +1,157 @@
+{
+  "schema": "hanja-exact-public-source-contact/v1",
+  "date": "2026-10-26",
+  "glyph": "纘",
+  "sourceRoot": "hkcs_m7e98@3",
+  "full5": {
+    "path": "docs/hanja-actual-engine-capture-u7e98-hkcs-m-2026-10-26/engine-whole-hkcs_m7e98.json",
+    "SHA256": "1d05a3718cfc27b49fe3b6a009ed03537280a1a3b2d2d8bdd4c485d90fca8503"
+  },
+  "coordinates": "original public KAGE 200 viewBox; no normalization applied",
+  "scope": "Only newly observed end-hook-to-horizontal source contact; not logical stroke mapping or native direction approval",
+  "horizontal": {
+    "rawOneBased": 19,
+    "polygonOneBased": 1,
+    "points": [
+      [
+        129.8,
+        54
+      ],
+      [
+        185.9,
+        54
+      ],
+      [
+        185.9,
+        58
+      ],
+      [
+        129.8,
+        58
+      ]
+    ]
+  },
+  "endLeg": {
+    "rawOneBased": 21,
+    "originalRaw": [
+      103,
+      32,
+      5,
+      164.405,
+      56,
+      164.405,
+      82,
+      183.105,
+      82,
+      null,
+      null
+    ],
+    "calls": [
+      {
+        "kind": "cdDrawLine",
+        "args": [
+          164.405,
+          56,
+          164.405,
+          72,
+          32,
+          1
+        ]
+      },
+      {
+        "kind": "cdDrawCurve",
+        "args": [
+          164.405,
+          72,
+          164.405,
+          82,
+          174.405,
+          82,
+          1,
+          1
+        ]
+      },
+      {
+        "kind": "cdDrawLine",
+        "args": [
+          174.405,
+          82,
+          183.105,
+          82,
+          6,
+          5
+        ]
+      }
+    ],
+    "endHook": {
+      "callOneBased": 3,
+      "callPolygonOneBased": 3,
+      "rawPolygonOneBased": 7,
+      "points": [
+        [
+          183.1,
+          76
+        ],
+        [
+          185.1,
+          51
+        ],
+        [
+          183.1,
+          51
+        ],
+        [
+          177.1,
+          76
+        ]
+      ]
+    }
+  },
+  "exactIntersection": {
+    "algorithm": "Sutherland-Hodgman clipping with Python Fraction on exact decimal coordinates",
+    "strictInteriorWitness": [
+      184,
+      55
+    ],
+    "witnessStrictlyInsideBoth": true,
+    "verticesRational": [
+      [
+        "9071/50",
+        "58"
+      ],
+      [
+        "9227/50",
+        "58"
+      ],
+      [
+        "9243/50",
+        "54"
+      ],
+      [
+        "9119/50",
+        "54"
+      ]
+    ],
+    "area": "56/5",
+    "positiveArea": true,
+    "filledRegionContactConfirmed": true
+  },
+  "limits": [
+    "Positive-area overlap is a source polygon fact, not a private-image inference.",
+    "A whole review observation is required for the original glyph counterpart.",
+    "No hook deletion, point change, component shift or connector."
+  ],
+  "actions": {
+    "newEngine": 0,
+    "projection": 0,
+    "privateInput": 0,
+    "privateFile": 0,
+    "sourceModified": false
+  },
+  "approval": {
+    "logicalMapping": false,
+    "direction": false,
+    "trajectory": false,
+    "runtime": false
+  }
+}
