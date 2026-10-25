@@ -1,0 +1,96 @@
+{
+  "schema": "hanja-public-source-only-screening/v1",
+  "date": "2026-10-26",
+  "glyph": "瞥",
+  "publicInventory": {
+    "path": "docs/hanja-source-inventory-u77a5-2026-10-26/public-records.json",
+    "SHA256": "bb4b3167b0623fdc6af90caa1572b4c9de5d8a48cbe8679050b069dead88f6b8"
+  },
+  "HK": {
+    "newCompleteSource": {
+      "path": "docs/hanja-source-alternative-u77a5-hkcs-2026-10-26/sources.json",
+      "SHA256": "62a93c61890d70df858aafc7dba6e428b7a76ce6822d2668830d977a55d529b2"
+    },
+    "priorEndkindHold": {
+      "path": "docs/hanja-source-alternative-u77a5-2026-10-24/hk-endkind4-hold.json",
+      "SHA256": "b60545e0d7f070b6172d3d81527a12e2b31b9fbd52182fa680ca67be642e8c78"
+    },
+    "comparison": {
+      "rootDataExactlySame": true,
+      "upperLeafNameAndVersionSame": true,
+      "upperFrameRowExactlySame": true,
+      "parentUpperTransformExactlySame": [
+        0,
+        2,
+        200,
+        180
+      ],
+      "oldHKWholeApproved": false,
+      "oldHKConcretePApproval": false,
+      "oldFullLeafBytesUnavailable": true,
+      "newCaptureSkipped": true
+    },
+    "scope": "Exact original frame condition preserved; not transferring an unobserved whole HOLD or claiming unchanged full P."
+  },
+  "sourceFacts": [
+    {
+      "root": "u77a5-g@5",
+      "topLeaf": "u655d-g@7",
+      "topLeft": "DR",
+      "topRight": "DL",
+      "frameEnd": 4
+    },
+    {
+      "root": "u77a5-k@8",
+      "topLeaf": "u655d-03@6",
+      "topLeft": "DL",
+      "topRight": "DR",
+      "frameEnd": 4
+    },
+    {
+      "root": "dkw-23672@6",
+      "topLeaf": "u655d-03@6",
+      "topLeft": "DL",
+      "topRight": "DR",
+      "frameEnd": 4
+    },
+    {
+      "root": "hkcs_u77a5@1",
+      "topLeaf": "hkcs_u655d-03@1",
+      "topLeft": "DR",
+      "topRight": "DL",
+      "frameEnd": 0
+    },
+    {
+      "root": "j90-4a4d@8",
+      "topLeft": "DR",
+      "topRight": "DL",
+      "frameEnd": 4
+    },
+    {
+      "root": "zihai-106327@3",
+      "topLeft": "DR",
+      "topRight": "DL",
+      "frameEnd": 4
+    }
+  ],
+  "assessment": "No investigated original authored whole source has both required position-specific DL/DR top rows and a no-hook right frame. Row facts only; incomplete closures and unobserved wholes not approved.",
+  "unresolved": [
+    "zihai-105923@9 was not executed because API rate limit; retries0",
+    "toikawa authored whole roots remain uninspected"
+  ],
+  "actions": {
+    "engine": 0,
+    "projection": 0,
+    "native": 0,
+    "sourceEdited": false,
+    "geometryEdited": false,
+    "privateData": false
+  },
+  "approval": {
+    "whole": false,
+    "direction": false,
+    "contact": false,
+    "runtime": false
+  }
+}
