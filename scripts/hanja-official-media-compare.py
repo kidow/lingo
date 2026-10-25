@@ -71,13 +71,20 @@ def load_config(name, expected_sha):
     terminal17 = path == ROOT/'docs/hanja-official-media-compare-u99fe-2026-10-24/config-17.json'
     terminal21 = path == ROOT/'docs/hanja-official-media-compare-u7049-2026-10-24/config-17-21.json'
     terminal95e5 = path == ROOT/'docs/hanja-official-media-compare-u95e5-2026-10-24/config-17-21.json'
+    micro8609_17 = path == ROOT/'docs/hanja-official-media-compare-u8609-2026-10-26/config-17-micro.json'
     boundary840d7 = path == ROOT/'docs/hanja-official-media-compare-u840d-2026-10-25/config-7.json'
     remaining6fe9 = path == ROOT/'docs/hanja-official-media-compare-u6fe9-2026-10-25/config-remaining16.json'
-    require(terminal16 or terminal17 or terminal21 or terminal95e5 or boundary840d7 or remaining6fe9 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
+    require(terminal16 or terminal17 or terminal21 or terminal95e5 or micro8609_17 or boundary840d7 or remaining6fe9 or (path.name == 'config.json' and path.parent.parent == ROOT/'docs' and re.fullmatch(r'hanja-official-media-compare-u[0-9a-f]{4,6}-\d{4}-\d{2}-\d{2}',path.parent.name)), 'Explicit official-media config location required')
     raw = path.read_bytes()
     require(len(raw) <= 65536 and sha(raw) == expected_sha, 'Config changed')
     config = json.loads(raw)
     validate(config)
+    if micro8609_17:
+        original=pinned_path('docs/hanja-official-media-compare-u8609-2026-10-26/config.json').read_bytes()
+        require(sha(original)=='f08537bfb0d77ce0f9703784755a9a75e3a60c31d1613be76d08ae66b8c5e140','Original 蘉20 config changed')
+        expected=json.loads(original)
+        expected.update({'allowedStrokes':[17],'defaultStroke':17,'launcherSHA256':config['launcherSHA256']})
+        require(config==expected,'Exact 蘉17 original early-clock subset required')
     if boundary840d7:
         original=pinned_path('docs/hanja-official-media-compare-u840d-2026-10-25/config.json').read_bytes()
         require(sha(original)=='076428dcf64e278187926fe7e8437a7d739b9cce5d9e50bf457d54be992507d9','Original 萍36 config changed')
@@ -169,7 +176,7 @@ function restore(p){const i=paths.indexOf(p),s=snapshots[i];if(s.class===null)p.
  for(const [key,value]of [['animation-delay',s.delay],['animation-play-state',s.state]])if(value)p.style.setProperty(key,value);else p.style.removeProperty(key);}
 function reset(){verify();restore(selected);void doc.documentElement.getBoundingClientRect();}
 function at(f){try{
- if(![0,.05,.1,.25,.5,.75,1].includes(f)&&!(CFG.terminal16===true&&[.9,.99].includes(f)))throw Error('Unlisted original clock fraction');
+ if(![0,.05,.1,.25,.5,.75,1].includes(f)&&!(CFG.terminal16===true&&[.9,.99].includes(f))&&!(CFG.micro8609_17===true&&selectedStroke===17&&[.01,.03].includes(f)))throw Error('Unlisted original clock fraction');
  reset();selected.classList.add('stroke-normal','immediate');selected.style.animationPlayState='paused';selected.style.animationDelay=String(-f*CFG.timedPaths[selectedStroke-1].durationMs)+'ms';
  requested=f;mode='paused-original-css';const css=doc.defaultView.getComputedStyle(selected);
  if(css.animationName!=='framesNormal'||!Number.isFinite(parseFloat(css.animationDuration))||Math.abs(parseFloat(css.animationDuration)*1000-CFG.timedPaths[selectedStroke-1].durationMs)>1e-6)throw Error('Original CSS clock initialization failed');
@@ -204,9 +211,11 @@ setInterval(()=>{if(selected)report();},100);
 def page(config, svg_route):
     selected = ''.join('<button disabled data-stroke="'+str(n)+'">국내 '+str(n)+'획 선택</button>' for n in config['allowedStrokes'])
     terminal16 = config['sourceRoot'] == 'u802d-k' and config['allowedStrokes'] == [16] and config['metadataFile'] == 'docs/hanja-official-media-compare-u802d-2026-10-24/metadata-16.json'
-    clocks = ''.join('<button disabled data-fraction="'+str(f)+'">시계 '+str(f)+'</button>' for f in [0,.05,.1,.25,.5,.75,1]+([.9,.99] if terminal16 else []))
+    micro8609_17 = config['glyph']=='蘉' and config['sourceRoot']=='u8609-hkcs' and config['domesticClips']==20 and config['allowedStrokes']==[17] and config['defaultStroke']==17 and config['metadataFile']=='docs/hanja-official-media-compare-u8609-2026-10-26/metadata.json'
+    clocks = ''.join('<button disabled data-fraction="'+str(f)+'">시계 '+str(f)+'</button>' for f in [0,.05,.1,.25,.5,.75,1]+([.9,.99] if terminal16 else [])+([.01,.03] if micro8609_17 else []))
     browser_config = {k:config[k] for k in ['glyph','sourceRoot','domesticClips','allowedStrokes','defaultStroke','svgRoot','timedPaths','inertOriginalScripts']}
     browser_config['terminal16'] = terminal16
+    browser_config['micro8609_17'] = micro8609_17
     script = BROWSER.replace('__CONFIG__',json.dumps(browser_config,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c'),1)
     title = html.escape(config['glyph'])+' 공식 원미디어 시계 검토'
     return ('<!doctype html><html lang="ko"><meta charset="utf-8"><title>'+title+'</title>'
