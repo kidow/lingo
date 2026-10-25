@@ -1,0 +1,72 @@
+{
+  "schema": "hanja-authored-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "饙",
+  "root": "hkcs_m9959",
+  "rootVersion": 1,
+  "status": "PASS macro whole only",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "scope": "New complete authored HK whole; prior batch613 whole HOLDs remain separate.",
+  "inputs": {
+    "config": "docs/hanja-source-raw-compare-u9959-hkcs-whole-2026-10-26/config.json",
+    "configSHA256": "06d031d517fbb3187e3da1745f91619fbbe939b2d4333682ffb1589683576fc1",
+    "helper": "scripts/hanja-raw-static-compare.py",
+    "helperSHA256": "f79d0edf75e7b3fb08ec9216c693e5d5bd0a6e29d64f651a50fb65e5e82b05c9",
+    "full5SHA256": "9fd57d373484b85e20d7c74496dd2c9238441d0bab820914f5c03db1a5c137ed",
+    "unchangedBeforeAndAfter": true
+  },
+  "observed": {
+    "wholePairs": 1,
+    "domesticPenCount": 22,
+    "sourceRawCount": 24,
+    "sourceDrawingCalls": 24,
+    "sourcePolygons": 41,
+    "fullPage": true,
+    "entireImagesVisible": true,
+    "bboxes": [
+      {
+        "x": 12,
+        "y": 275.203125,
+        "width": 520,
+        "height": 520
+      },
+      {
+        "x": 562,
+        "y": 303.203125,
+        "width": 520,
+        "height": 520
+      }
+    ],
+    "compatibleMacroFeatures": [
+      "food-radical box and lower horizontals",
+      "upper cross and split left/right grass crossbars",
+      "lower 貝 box, inner horizontals and two separate legs"
+    ],
+    "detailedContactChecksPending": true
+  },
+  "decision": {
+    "macroWholeCompatible": true,
+    "logicalStrokeGroupingApproved": false,
+    "staticIndividualCorrespondenceApproved": false,
+    "sourceStrokeOrderApproved": false,
+    "sourceDirectionApproved": false,
+    "contactApproved": false,
+    "actualPlaybackApproved": false,
+    "runtimeApplied": false
+  },
+  "execution": {
+    "serverPID": 95648,
+    "port": 59412,
+    "startupLogCaptured": false,
+    "serverStopped": true,
+    "tabClosed": true,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesWritten": 0
+  },
+  "limits": [
+    "Macro structure does not certify detailed cross-part contact; the later 饛 contact HOLD is not transferred to this new whole.",
+    "No previous matching radical is treated as automatic source-direction or DOM approval.",
+    "Publisher dictionary comparison is not examination-body certification."
+  ]
+}
