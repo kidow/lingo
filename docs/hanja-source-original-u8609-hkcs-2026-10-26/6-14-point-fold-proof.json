@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-source-point-fold-feasibility/v1",
+  "date": "2026-10-26",
+  "glyph": "蘉",
+  "reusedProof": {
+    "path": "docs/hanja-source-original-u8609-hkcs-2026-10-26/6-14-contact-kernel-proof.json",
+    "SHA256": "f094270633a920833e5b3e3856266ceed38127d670e7427062940b498bb79bab",
+    "convexKernelProofReexecuted": false
+  },
+  "rows": [
+    {
+      "pen": 6,
+      "anchor": [
+        "153/2",
+        "47/2"
+      ],
+      "bounds": [
+        "371/5",
+        "393/20",
+        "827/10",
+        "737/20"
+      ],
+      "pointWindowExtents": [
+        "23/10",
+        "31/5",
+        "77/20",
+        "267/20"
+      ],
+      "strictCommonSquareHalfWidthCoefficient": "3/20",
+      "oldFixedWidthBodyRisk": {
+        "outsidePriorHWidth": "3",
+        "prefixHeightCoefficient": "137/10",
+        "ownUnoccludedByPriorHLimitingDiameterAtLeast": "3",
+        "nativeFailureClaim": false
+      },
+      "allPositivePArgument": "For every p in (0,1], square A+[-e*p,e*p]^2 lies inside priorH, body, head and expanding window. Each original convex polygon intersect window is convex and contains that square. Their union and priorH union are connected with positive area contact.",
+      "initialDiameterSquaredCoefficient": "36809/100",
+      "initialDiameterBound": "diameter <= p * sqrt(coefficient), hence limit0",
+      "p1CoversAllOriginalVertices": true
+    },
+    {
+      "pen": 14,
+      "anchor": [
+        "74",
+        "48"
+      ],
+      "bounds": [
+        "1433/20",
+        "883/20",
+        "1603/20",
+        "1253/20"
+      ],
+      "pointWindowExtents": [
+        "47/20",
+        "123/20",
+        "77/20",
+        "293/20"
+      ],
+      "strictCommonSquareHalfWidthCoefficient": "3/20",
+      "oldFixedWidthBodyRisk": {
+        "outsidePriorHWidth": "3",
+        "prefixHeightCoefficient": "15",
+        "ownUnoccludedByPriorHLimitingDiameterAtLeast": "3",
+        "nativeFailureClaim": false
+      },
+      "allPositivePArgument": "For every p in (0,1], square A+[-e*p,e*p]^2 lies inside priorH, body, head and expanding window. Each original convex polygon intersect window is convex and contains that square. Their union and priorH union are connected with positive area contact.",
+      "initialDiameterSquaredCoefficient": "829/2",
+      "initialDiameterBound": "diameter <= p * sqrt(coefficient), hence limit0",
+      "p1CoversAllOriginalVertices": true
+    }
+  ],
+  "originalPAndQChanged": false,
+  "authorClockNotPublisherTiming": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "projection": 0,
+  "analysisScript": {
+    "path": "docs/hanja-source-original-u8609-hkcs-2026-10-26/verify-6-14-point-folds.py",
+    "SHA256": "7350256dd270ce4e4954d7c6b4c67d76d5257a95df291fefdb49667a47e65b6d"
+  }
+}
