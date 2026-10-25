@@ -1,0 +1,239 @@
+{
+  "schema": "hanja-source-standalone-candidate-input/v1",
+  "date": "2026-10-26",
+  "glyph": "濩",
+  "sourceRoot": "hkcs_m6fe9",
+  "logical": 3,
+  "html": {
+    "path": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/logical3-combined-policy-experiment.html",
+    "SHA256": "28851d8c6a2ea193a3f61bcc24db8cbb6e014aa66f9e2c6499cdca044c37fec9"
+  },
+  "reusedExperimentFormat": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/logical7-combined-policy-experiment.html",
+    "SHA256": "e6962f94da36418800929c7c42b830b03700d03ea1d530f7b73b528360b529ca",
+    "scope": "기존 standalone UI·UA 원Q mask·가드 형식만 재사용했다. 萍의 source 좌표·실제 성공·승인 상태를 이전하지 않는다."
+  },
+  "source": {
+    "fixturePath": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/fixtures.json",
+    "fixtureSHA256": "1e8ecca15fcef9e8ff684fd4abb9f50ddff900db4b2e09cd68208c6b1392e387",
+    "geometrySHA256": "be3b0646168456af0a5a2bef45fb868d949aaeb37881fccae66663ace557afb4",
+    "full5Path": "docs/hanja-actual-engine-capture-u6fe9-hkcs-m-2026-10-25/engine-whole-hkcs_m6fe9.json",
+    "full5SHA256": "fe2644ffc692b3eb4133fb4f9a9a26bd1d6f92da46eea97488991ab4fe4b7456",
+    "sourceRawOneBased": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "independentOriginalPaintPaths": 9,
+    "paintPathsSHA256": "fdfdaa6dcecf0683601eee96ba26e4457ab76709cc3c6a960b2a20bc860f96d5",
+    "pathsFromStoredProjectionOnly": true,
+    "sourcePChanged": false,
+    "sourceQPathChanged": false,
+    "sourceRevealWidths": [
+      14,
+      14,
+      14,
+      14
+    ],
+    "newGuideOrConnectorAdded": false
+  },
+  "conditions": {
+    "path": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/water3-source-conditions.json",
+    "SHA256": "2155dc4e320c9dfa0aaf0aa47ee268dadbe1e1ef657649ca932e2a84ebbbeed9",
+    "scopes": {
+      "bodyAndRise": "bands",
+      "positiveTransitions": "contacts",
+      "attachedLastP3": "attachedLastFootP3",
+      "fullQ7": "footFullQ7",
+      "reverseStartup": "reverseFootInitial"
+    },
+    "rejectedSimpleHorizontalFrontRendered": false,
+    "originalSelfIntersectionKept": true
+  },
+  "candidate": {
+    "foot": "동일 원Q의 역방향 UA traversal과 radius=min(7,d); P3는 p>3/4 이후 원P 내부 attached clip만 성장",
+    "body": {
+      "cutY": 72.5,
+      "bottomY": 93.45
+    },
+    "rise": {
+      "startY": 72.85,
+      "endY": 26.85
+    },
+    "p3MeasuredPointBox": [
+      16.5,
+      69.5,
+      19.25,
+      71.5
+    ],
+    "p3Anchor": [
+      20.416666666666668,
+      68.68333333333334
+    ],
+    "phaseTiming": "공개 기하 길이를 이용한 검토 배분이며 원문 clock 동일성 미승인"
+  },
+  "reviewActions": [
+    "start",
+    "epsilon",
+    "foot-end",
+    "body-start",
+    "body-end",
+    "rise-start",
+    "complete",
+    "natural"
+  ],
+  "localReviewStates": [
+    {
+      "phase": "foot",
+      "p": 0.000001
+    },
+    {
+      "phase": "foot",
+      "p": 0.001
+    },
+    {
+      "phase": "foot",
+      "p": 0.01
+    },
+    {
+      "phase": "foot",
+      "p": 0.05
+    },
+    {
+      "phase": "foot",
+      "p": 0.1
+    },
+    {
+      "phase": "foot",
+      "p": 0.25
+    },
+    {
+      "phase": "foot",
+      "p": 0.4
+    },
+    {
+      "phase": "foot",
+      "p": 0.425
+    },
+    {
+      "phase": "foot",
+      "p": 0.45
+    },
+    {
+      "phase": "foot",
+      "p": 0.5
+    },
+    {
+      "phase": "foot",
+      "p": 0.749999
+    },
+    {
+      "phase": "foot",
+      "p": 0.75
+    },
+    {
+      "phase": "foot",
+      "p": 0.750001
+    },
+    {
+      "phase": "foot",
+      "p": 0.8
+    },
+    {
+      "phase": "foot",
+      "p": 0.9
+    },
+    {
+      "phase": "foot",
+      "p": 1
+    },
+    {
+      "phase": "body",
+      "p": 0
+    },
+    {
+      "phase": "body",
+      "p": 0.000001
+    },
+    {
+      "phase": "body",
+      "p": 0.1
+    },
+    {
+      "phase": "body",
+      "p": 0.5
+    },
+    {
+      "phase": "body",
+      "p": 0.999999
+    },
+    {
+      "phase": "body",
+      "p": 1
+    },
+    {
+      "phase": "rise",
+      "p": 0
+    },
+    {
+      "phase": "rise",
+      "p": 0.000001
+    },
+    {
+      "phase": "rise",
+      "p": 0.007607695652173791
+    },
+    {
+      "phase": "rise",
+      "p": 0.007608695652173791
+    },
+    {
+      "phase": "rise",
+      "p": 0.007609695652173791
+    },
+    {
+      "phase": "rise",
+      "p": 0.1
+    },
+    {
+      "phase": "rise",
+      "p": 0.5
+    },
+    {
+      "phase": "rise",
+      "p": 0.999999
+    },
+    {
+      "phase": "rise",
+      "p": 1
+    }
+  ],
+  "preflight": {
+    "syntaxStatus": 0,
+    "all20PathCount": 20,
+    "sourcePathsEachTwice": true,
+    "originalFootQTwice": true,
+    "noOldNativeSHA": true,
+    "sourceCounts9": true,
+    "bodyRiseInitialCoordinates": true,
+    "noOriginalMediaOrExternalFetch": true
+  },
+  "remainingApproval": [
+    "첫 P1/P2의 역방향 Q 교집합 실제 연결성",
+    "시작·P3 gate·양 전환·rise cut 경계·자연 진행·완료·잔여의 실제 화면",
+    "실제 컴포넌트·앱·쓰기·런타임"
+  ],
+  "actions": {
+    "sourceEngine": 0,
+    "sourceProjection": 0,
+    "newNativeFrames": 0,
+    "privateMediaFetch": 0,
+    "privateMediaSaved": 0,
+    "sharedRendererChanged": false,
+    "serverStarted": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "continuationOfSourceCaseDate": "2026-10-25"
+}

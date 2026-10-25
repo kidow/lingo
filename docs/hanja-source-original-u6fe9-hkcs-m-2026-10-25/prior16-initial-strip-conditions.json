@@ -1,0 +1,80 @@
+{
+  "schema": "hanja-source-prior-initial-strip-contact/v1",
+  "date": "2026-10-26",
+  "glyph": "濩",
+  "pen": 16,
+  "mask": 2,
+  "sourceRawOneBased": [
+    19,
+    20
+  ],
+  "coordinateSpace": "normalized100",
+  "priorRawPolygon": 0,
+  "curveRawHeadPolygon": 1,
+  "sourcePChanged": false,
+  "sourceQChanged": false,
+  "parameterInterval": [
+    "0",
+    "1/2000"
+  ],
+  "normalCoefficientInterval": [
+    "1/100",
+    "3/100"
+  ],
+  "normalStripMap": "Q(t)-c*(u_y+t*v_y,-u_x-t*v_x)",
+  "mappedBounds": [
+    "7913304597/100000000",
+    "168713/2500",
+    "7953/100",
+    "678473159/10000000"
+  ],
+  "strictCommonRectangle": [
+    "791/10",
+    "337/5",
+    "398/5",
+    "679/10"
+  ],
+  "priorAndHeadStrictCrossMargins": {
+    "priorH": "1/5",
+    "sourceHeadP2": "36/5"
+  },
+  "normalRadiusSquaredUpper": "14748217496181/25000000000000",
+  "radiusSquared": 49,
+  "positiveJacobianLower": "3236339/2500",
+  "conditionalContactStatement": "원래 폭14 butt-prefix stroke가 원Q의 정상띠를 그리고 실제 이전 H가 같은 좌표에서 완료·불투명하다면, 임의의 양의 prefix에는 이 공통 사각형 안에 양의 접촉 조각이 있다. 전체 새P 교집합의 연결성을 주장하지 않는다.",
+  "runtimeStillRequired": [
+    "정확 원Q·폭·측정UA·좌표 owner",
+    "실제 완료·불투명한 원H와 동일 부모·경로 tuple",
+    "시작·전환·중간·완료·잔여의 브라우저 직접 검토"
+  ],
+  "allGrowingPComponentsConnectivityProved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "oldInitialSixReplay": 0,
+  "sourceEngine": 0,
+  "sourceProjection": 0,
+  "source": {
+    "full5Path": "docs/hanja-actual-engine-capture-u6fe9-hkcs-m-2026-10-25/engine-whole-hkcs_m6fe9.json",
+    "full5SHA256": "fe2644ffc692b3eb4133fb4f9a9a26bd1d6f92da46eea97488991ab4fe4b7456",
+    "fixturePath": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/fixtures.json",
+    "fixtureSHA256": "1e8ecca15fcef9e8ff684fd4abb9f50ddff900db4b2e09cd68208c6b1392e387",
+    "geometrySHA256": "be3b0646168456af0a5a2bef45fb868d949aaeb37881fccae66663ace557afb4",
+    "priorH": "M34.45 67 L79.7 67 L79.7 69 L34.45 69 Z",
+    "curveGuide": "M79.72 68 Q62.56 87 29.28 92",
+    "width": 14
+  },
+  "script": {
+    "path": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/verify-prior16-initial-strip.py",
+    "SHA256": "8a09e8442b68c2ab2b7cd21a9477fb616213203069420c4ec655e022985fca6c"
+  },
+  "reusedInitialCertificate": {
+    "path": "docs/hanja-source-original-u6fe9-hkcs-m-2026-10-25/initial-conditions-proof.json",
+    "SHA256": "6a507a700c14df6da0b547585de3a7d33aafa522f02d86652311b21a502fd5cb",
+    "pen": 16,
+    "mask": 2,
+    "T": "1/2",
+    "K": "1/20",
+    "mathReplays": 0
+  },
+  "actualOpaquePriorVerified": false
+}
