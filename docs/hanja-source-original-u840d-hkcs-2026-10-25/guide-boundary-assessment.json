@@ -1,0 +1,185 @@
+{
+  "schema": "hanja-source-guide-boundary-assessment/v1",
+  "date": "2026-10-25",
+  "glyph": "萍",
+  "status": "HOLD logical7 original guide order and connection",
+  "inputs": {
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u840d-hkcs-2026-10-25/engine-whole-hkcs_m840d.json",
+      "SHA256": "f5c8184820c51cbfe0506959745703496eec6d7d271b29735d22bee2cec8a205"
+    },
+    "candidate": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/candidate.mjs",
+      "SHA256": "d1f79a296ce2b7ba3560ea6a9b6e3d49a3057d9ecf549005149025a1e1d50af4"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/fixtures.json",
+      "SHA256": "e752ae3cb3c9e5185c411bebf5a8457637fb8a7e0731eb356fedf8a72cdfc7b6"
+    },
+    "originalTemporal": {
+      "path": "docs/hanja-official-media-compare-u840d-2026-10-25/official-temporal-native-review.json",
+      "SHA256": "310857e12ff3075c11a1d2cd54a4f4be261407f4fe559b21331a5470895054d1"
+    }
+  },
+  "projection": {
+    "freshPureProjection": 1,
+    "engine": 0,
+    "logical": 12,
+    "masks": 15,
+    "sourceP": 31,
+    "geometrySHA256": "8429d1f323f06bb62d9012115ca61dab045f4aab736da09e1f9f43d7ea6bbb53",
+    "sourceCoordinatesChanged": false,
+    "sourceGuidesReversed": false,
+    "sourceOrderChanged": false
+  },
+  "facts": {
+    "logical7Raw": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "rawGuideFacts": [
+      {
+        "raw": 7,
+        "kind": "cdDrawCurve",
+        "start": [
+          38.49,
+          152.68
+        ],
+        "control": [
+          34.93,
+          148.88
+        ],
+        "end": [
+          16.240000000000002,
+          145.84
+        ],
+        "initialDelta": [
+          -3.5600000000000023,
+          -3.8000000000000114
+        ],
+        "finalDelta": [
+          -18.689999999999998,
+          -3.039999999999992
+        ],
+        "argsUnchanged": true
+      },
+      {
+        "raw": 8,
+        "kind": "cdDrawCurve",
+        "start": [
+          33.15,
+          179.28
+        ],
+        "control": [
+          40.27,
+          158.76
+        ],
+        "end": [
+          34.04,
+          147.36
+        ],
+        "initialDelta": [
+          7.1200000000000045,
+          -20.52000000000001
+        ],
+        "finalDelta": [
+          -6.230000000000004,
+          -11.399999999999977
+        ],
+        "argsUnchanged": true
+      },
+      {
+        "raw": 9,
+        "kind": "cdDrawCurve",
+        "start": [
+          46.5,
+          123.04
+        ],
+        "control": [
+          33.15,
+          154.95999999999998
+        ],
+        "end": [
+          39.38,
+          183.84
+        ],
+        "initialDelta": [
+          -13.350000000000001,
+          31.919999999999973
+        ],
+        "finalDelta": [
+          6.230000000000004,
+          28.880000000000024
+        ],
+        "argsUnchanged": true
+      },
+      {
+        "raw": 10,
+        "kind": "cdDrawCurve",
+        "start": [
+          37.6,
+          147.36
+        ],
+        "control": [
+          45.61,
+          133.68
+        ],
+        "end": [
+          66.08,
+          85.03999999999999
+        ],
+        "initialDelta": [
+          8.009999999999998,
+          -13.680000000000007
+        ],
+        "finalDelta": [
+          20.47,
+          -48.640000000000015
+        ],
+        "argsUnchanged": true
+      }
+    ],
+    "adjacentGuideEndpoints": [
+      {
+        "from": 7,
+        "to": 8,
+        "endpointExactlySame": false,
+        "delta": [
+          16.909999999999997,
+          33.44
+        ]
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "endpointExactlySame": false,
+        "delta": [
+          12.46,
+          -24.320000000000007
+        ]
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "endpointExactlySame": false,
+        "delta": [
+          -1.7800000000000011,
+          -36.47999999999999
+        ]
+      }
+    ],
+    "originalObservedSummary": "short left horizontal-right foot, descending lower body, then long up-right rising; one logical stroke",
+    "exactAuthoredLeafPriorApprovedReuseFound": 0
+  },
+  "assessment": {
+    "staticPMappingApproved": true,
+    "unchangedGuideSequenceCompatibleWithOriginalDirection": false,
+    "filledPVisualConnectionInferredFromGuideEndpoints": false,
+    "guideReversalPermitted": false,
+    "guideBridgePermitted": false,
+    "runtimeRegistrationPermitted": false
+  },
+  "next": "Inspect only original7 onset and transition boundaries against original filled-P4 parts. Reuse original36 direction conclusions and static12 mapping. Any prefix/band must retain P/Q/width and prove actual P branching and both contacts; no invented ink or connection line."
+}
