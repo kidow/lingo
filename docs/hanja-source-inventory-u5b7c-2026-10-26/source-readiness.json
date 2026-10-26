@@ -1,0 +1,96 @@
+{
+  "schema": "hanja-public-source-only-readiness/v1",
+  "date": "2026-10-26",
+  "glyph": "孼",
+  "source": {
+    "path": "docs/hanja-source-inventory-u5b7c-2026-10-26/sources.json",
+    "SHA256": "62ac1240213f7000f19cb13b5a4cd83d23b119a9607caf570f7c08932b01682a"
+  },
+  "priorReferences": [
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch707-2026-10-12/README.md",
+      "SHA256": "5d1c994ed8349ad2bb70b8fcb278f75e8872a139ea0e1d8afed5f03db86066fd"
+    },
+    {
+      "path": "docs/hanja-goal-glyphwiki-batch707-2026-10-12/sources.json",
+      "SHA256": "03809b4a59b4b5a89e865580858fda597ef110033cad1ae18a7975334d4e0d44"
+    },
+    {
+      "path": "docs/hanja-source-raw-compare-u5b7c-hkcs-whole-2026-10-25/native-whole-m-review.json",
+      "SHA256": "2b43ac9d69ac114af83739d86e6ba74a2afb3561a1a010adb0dda5daafcfd56e"
+    },
+    {
+      "path": "docs/hanja-source-raw-compare-u5b7c-hkcs-whole-2026-10-25/native-whole-u-review.json",
+      "SHA256": "7f283817853c2a012863613c5b5da46bbf3497e9c8d6757748d4b5beeb073d93"
+    }
+  ],
+  "priorHeldWholes": [
+    "u5b7c",
+    "u5b7c-g",
+    "u5b7c-k",
+    "u5b7c-ue0100",
+    "u5b7c-ue0101",
+    "u5b7c-ue0102",
+    "u5b7c-ue0103",
+    "hkcs_m5b7c@2",
+    "hkcs_u5b7c@1"
+  ],
+  "priorDomesticRequirements": [
+    "Upper falling stroke contacts the mountain rather than detaching.",
+    "Bottom of 辛 remains separate from 子 upper turn.",
+    "Top of 辛 is an upright V meeting the first H; prior HK m H and HK u DR mark differed."
+  ],
+  "closures": [
+    {
+      "root": "zihai-071224@5",
+      "closed": true,
+      "records": [
+        "zihai-071224@5",
+        "u5c71-g03@2",
+        "u200a4-j@2",
+        "u8f9b-g@4",
+        "u5b50-04@2"
+      ],
+      "rawRows": 23
+    },
+    {
+      "root": "u5b7c-t@1",
+      "closed": true,
+      "records": [
+        "u5b7c-t@1",
+        "u8fa5-var-003@1",
+        "u21dab-t@1",
+        "u5c71-t03@3",
+        "u200a4-t@1",
+        "u8f9b-t08@1",
+        "u5b50-04@2"
+      ],
+      "rawRows": 23
+    }
+  ],
+  "rawConditions": [
+    {
+      "root": "zihai-071224@5",
+      "rootDataMatchesAnyOldRecord": [],
+      "topXinLeaf": "u8f9b-g@4",
+      "topXinOriginalRow": "2:7:8:77:13:96:27:101:39",
+      "originalRowKind": "quadratic DR mark; not an authored straight vertical row",
+      "claimLimit": "Published raw-row kind and root/reference differences only; no new whole visual verdict, contact proof or foreign stroke-order approval."
+    },
+    {
+      "root": "u5b7c-t@1",
+      "rootDataMatchesAnyOldRecord": [],
+      "topXinLeaf": "u8f9b-t08@1",
+      "topXinOriginalRow": "2:7:8:77:13:97:27:102:43",
+      "originalRowKind": "quadratic DR mark; not an authored straight vertical row",
+      "claimLimit": "Published raw-row kind and root/reference differences only; no new whole visual verdict, contact proof or foreign stroke-order approval."
+    }
+  ],
+  "recommendation": "Complete public closures retained, but the required upright-V top is not established by either candidate. No new engine capture or whole approval is recommended from these rows.",
+  "sourcePObtained": false,
+  "engine": 0,
+  "projection": 0,
+  "newPrivateMediaFetch": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
