@@ -1,3 +1,5 @@
+import {reviewedU85c7HkcsCardinalPointPolicy,sampleReviewedU85c7HkcsCardinalPointFrame,verifyReviewedU85c7HkcsCardinalPointPriorDOM,type ReviewedU85c7HkcsCardinalPointPolicy} from '@/lib/hanja-stroke-cardinal-point-windows-u85c7-hkcs'
+import {makeReviewedU85c7HkcsSourceContext,REVIEWED_U85C7_HKCS_SOURCE_INPUT,reviewedU85c7HkcsPolicy,commitReviewedU85c7HkcsCaps,type ReviewedU85c7HkcsPolicy} from '@/lib/hanja-stroke-start-caps-u85c7-hkcs'
 import {reviewedU6145HkcsCardinalPoint9Policy,sampleReviewedU6145HkcsCardinalPoint9Frame,verifyReviewedU6145HkcsCardinalPoint9PriorDOM,type ReviewedU6145HkcsCardinalPoint9Policy} from '@/lib/hanja-stroke-cardinal-point-window9-u6145-hkcs'
 import {makeReviewedU6145HkcsSourceContexts,REVIEWED_U6145_HKCS_SOURCE_INPUT} from '@/lib/hanja-stroke-source-context-u6145-hkcs'
 import {reviewedU6145HkcsPolicy,commitReviewedU6145HkcsCaps,type ReviewedU6145HkcsPolicy} from '@/lib/hanja-stroke-start-caps-u6145-hkcs'
@@ -649,6 +651,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u7c67Context = reviewedU7c67Context(strokes)
   const u7c67LeftContext = reviewedU7c67LeftContext(strokes)
   const u8b92HkcsFlag5TailContext = reviewedU8b92HkcsFlag5TailContext(strokes)
+  const u85c7SourceContext=strokes.length===18?makeReviewedU85c7HkcsSourceContext(REVIEWED_U85C7_HKCS_SOURCE_INPUT.fullProof,REVIEWED_U85C7_HKCS_SOURCE_INPUT.identity,strokes):null
   const u6145SourceContexts=strokes.length===13?makeReviewedU6145HkcsSourceContexts(REVIEWED_U6145_HKCS_SOURCE_INPUT.fullProof,REVIEWED_U6145_HKCS_SOURCE_INPUT.identity,strokes):null
   const u8609SourceContexts=reviewedU8609HkcsSourceContexts(strokes)
   const u8609Rect19Context=reviewedU8609HkcsPointRect19Context(strokes)
@@ -885,6 +888,10 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if(u6145Union12Policy)return <U6145HkcsUnion12Outline key={index} policy={u6145Union12Policy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
         const u6145Point9Policy=reviewedU6145HkcsCardinalPoint9Policy(u6145SourceContexts?.point9??null,stroke,index)
         if(u6145Point9Policy)return <U6145HkcsCardinalPoint9Outline key={index} policy={u6145Point9Policy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]??0} clipId={id+'-'+stroke+'-'+index}/>
+        const u85c7PointPolicy=reviewedU85c7HkcsCardinalPointPolicy(u85c7SourceContext,stroke,index)
+        if(u85c7PointPolicy)return <U85c7HkcsCardinalPointOutline key={index} policy={u85c7PointPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]??0} clipId={id+'-'+stroke+'-'+index}/>
+        const u85c7CapsPolicy=reviewedU85c7HkcsPolicy(u85c7SourceContext,stroke,index)
+        if(u85c7CapsPolicy)return <U85c7HkcsCapsOutline key={index} policy={u85c7CapsPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
         const u6145CapsPolicy=reviewedU6145HkcsPolicy(u6145SourceContexts?.caps??null,stroke,index)
         if(u6145CapsPolicy)return <U6145HkcsCapsOutline key={index} policy={u6145CapsPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
         const u8609PointFoldPolicy=reviewedU8609PointFoldPolicy(u8609FoldContext,stroke,index)
@@ -5507,6 +5514,58 @@ function U6145HkcsCardinalPoint9Outline({policy,segment,progress,previousMaskPro
   <path ref={ink} data-u6145-hkcs-cardinal-point9-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
  </g>
 }
+
+function U85c7HkcsCardinalPointOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU85c7HkcsCardinalPointPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u85c7-cardinal-point-committed','false')};reset()
+  if(!g||!p||!r||!c)return reset
+  const prior=()=>!policy.predecessor||verifyReviewedU85c7HkcsCardinalPointPriorDOM(policy,g,previousMaskProgress)
+  let f:ReturnType<typeof sampleReviewedU85c7HkcsCardinalPointFrame>
+  try{f=sampleReviewedU85c7HkcsCardinalPointFrame(policy,segment,progress,previousMaskProgress,prior())}catch{return reset}
+  const shape=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0};for(const[k,v]of Object.entries(shape))r.setAttribute(k,String(v))
+  if(f.originalPDirect)p.removeAttribute('clip-path');else p.setAttribute('clip-path','url(#'+clipId+'-u85c7-cardinal-point-clip)')
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u85c7-cardinal-point-clip'
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const expected=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||prior())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u85c7-cardinal-point-progress',String(progress));p.setAttribute('data-u85c7-cardinal-point-phase',f.phase);p.setAttribute('data-u85c7-cardinal-point-direct-original',String(f.originalPDirect));p.setAttribute('data-u85c7-cardinal-point-source-full',String(f.originalPDirect));p.setAttribute('data-u85c7-cardinal-point-one-ink','true');p.setAttribute('data-u85c7-cardinal-point-source-subpaths',String((segment.outline.match(/M/g)||[]).length));p.setAttribute('data-u85c7-cardinal-point-author-anchor-differs',String(f.authorAnchorDifferentFromSourceQ0));p.setAttribute('data-u85c7-cardinal-point-ua-read','false');p.setAttribute('data-u85c7-cardinal-point-original-line',f.originalLine);p.setAttribute('data-u85c7-cardinal-point-segment-guide-added',String(f.segmentGuideAdded))
+  if(!stable())return reset
+  p.setAttribute('data-u85c7-cardinal-point-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const key=clipId+'-u85c7-cardinal-point-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u85c7-cardinal-point-fingerprint={policy.proofFingerprint} data-u85c7-cardinal-point-clip={clipId} data-u85c7-cardinal-point-previous-progress={String(previousMaskProgress)} data-u85c7-cardinal-point-display-clock="source-author-cardinal-point-window" data-u85c7-cardinal-point-author-clock="true" data-u85c7-cardinal-point-original-clock-equivalent="false" data-u85c7-cardinal-point-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u85c7-cardinal-point-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U85c7HkcsCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU85c7HkcsPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+  const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
+  useLayoutEffect(()=>commitReviewedU85c7HkcsCaps(policy,segment,progress,clipId,{measurement:measurement.current,guide:guide.current,startCap:startCap.current,endCap:endCap.current,ink:ink.current}).cleanup,[policy,segment,progress,clipId])
+  const valid=Number.isFinite(progress)&&progress>=0&&progress<=1
+  return <g data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-u85c7-hkcs-progress={String(progress)} data-u85c7-hkcs-clip={clipId} data-stroke-reveal-progress={valid?progress:'invalid'}>
+    <defs>
+      <path ref={measurement} id={clipId+'-u85c7-hkcs-measure'} data-growing-owner={clipId} data-u85c7-hkcs-measurement="true" d={segment.revealPath} fill="none" stroke="none" visibility="hidden"/>
+      <mask id={clipId} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><path d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="round" strokeLinejoin="miter" pathLength="1" strokeDasharray="1 2" strokeDashoffset={0}/></mask>
+      <mask id={clipId+'-u85c7-hkcs-growing'} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+        <path ref={guide} id={clipId+'-u85c7-hkcs-guide'} data-growing-owner={clipId} d={segment.revealPath} fill="none" stroke="white" strokeWidth={segment.revealWidth} strokeLinecap="butt" strokeLinejoin="miter" pathLength="1" strokeDasharray="0 2" strokeDashoffset={0}/>
+        <circle ref={startCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/><circle ref={endCap} data-growing-owner={clipId} cx="0" cy="0" r="0" fill="white"/>
+      </mask>
+    </defs>
+    {valid&&progress===1&&<path data-growing-full-round="true" d={segment.outline} mask={'url(#'+clipId+')'}/>}
+    {valid&&progress>0&&progress<1&&<path ref={ink} data-growing-owner={clipId} d={segment.outline} mask={'url(#'+clipId+'-u85c7-hkcs-growing)'} visibility="hidden"/>}
+  </g>
+}
+
 
 function U6145HkcsCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU6145HkcsPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
   const measurement=useRef<SVGPathElement|null>(null),guide=useRef<SVGPathElement|null>(null),startCap=useRef<SVGCircleElement|null>(null),endCap=useRef<SVGCircleElement|null>(null),ink=useRef<SVGPathElement|null>(null)
