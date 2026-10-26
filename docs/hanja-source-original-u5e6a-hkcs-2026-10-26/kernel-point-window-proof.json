@@ -1,0 +1,196 @@
+{
+  "schema": "hanja-source-kernel-point-window-conditions/v1",
+  "date": "2026-10-26",
+  "glyph": "幪",
+  "root": "hkcs_m5e6a",
+  "inputs": [
+    {
+      "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/contact-kernel-band-conditions-proof.json",
+      "SHA256": "907cd910ccf25f0928ab145f1868fb5e2f35feb12efdcb086fb0b46c434a7b1b"
+    },
+    {
+      "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/fixtures.json",
+      "SHA256": "9a4f42f0206be94e4905f2a177caef251dbce5f0d7073772a52a7d47f84eace8"
+    }
+  ],
+  "results": [
+    {
+      "pen": 2,
+      "mask": 2,
+      "anchor": [
+        "1283/40",
+        "53/2"
+      ],
+      "extents": [
+        "15/8",
+        "49/8",
+        "4",
+        "157/4"
+      ],
+      "strictCommonBoxHalfWidth": "7/48",
+      "oldFixedWidthRisk": {
+        "outsidePriorWitnessBoxXThenY": [
+          "33",
+          "35",
+          "105/4",
+          "107/4"
+        ],
+        "strictWitnessMargins": [
+          [
+            "999/10",
+            "999/10",
+            "259/10",
+            "259/10"
+          ],
+          [
+            "1617/8",
+            "1595/8",
+            "1617/8",
+            "1595/8"
+          ],
+          [
+            "518/5",
+            "518/5",
+            "888/5",
+            "888/5"
+          ],
+          [
+            "11/8",
+            "33/8",
+            "11/8",
+            "33/8"
+          ]
+        ],
+        "priorMaximumX": "659/20",
+        "forEveryProgressOpenInterval": [
+          0,
+          "1/157"
+        ],
+        "constantHorizontalInkDiameterLowerBound": "2",
+        "argument": "For every 0<p<=pmax the old full-width centered band lies inside the strict witness Y interval, so the fixed witness X interval is painted outside the completed prior H. Its nonzero horizontal diameter does not shrink to zero.",
+        "geometryOnly": true,
+        "browserFailureClaimed": false
+      },
+      "initialDiameterSquaredUpperBoundCoefficient": "30953/16",
+      "priorBodyHeadPositiveAreaLowerBoundCoefficient": "49/576",
+      "allPositivePConnected": true,
+      "nestedOriginalPSubset": true,
+      "p0HiddenPointRequired": true,
+      "p1ExactlyOriginalP": true,
+      "source9StarKernelNotConvexity": false,
+      "foot": {
+        "originalFootUnchanged": true,
+        "sharedBaseY": "63",
+        "sharedBaseX": [
+          "151/5",
+          "357/10"
+        ],
+        "positiveBodyFootAreaOverlap": false,
+        "footConvexityReused": true,
+        "newRectangleLowerYAlwaysBelowBaseInCoordinateOrder": true,
+        "allPositivePFootIfVisibleAttachedThroughOriginalBase": true,
+        "argument": "For any foot point in the new rectangle, its vertical projection to the original y63 base is in the unchanged convex foot and in the rectangular body. It remains inside the same rectangle because its X is unchanged and rectangle lowerY<=anchorY<63. The foot/rectangle convex intersection is therefore attached through that original base even if the whole body is not yet complete.",
+        "oldBodyCompleteWhenFootAppearsNotTransferred": true,
+        "nativeAAAcceptabilityApproved": false
+      }
+    },
+    {
+      "pen": 9,
+      "mask": 2,
+      "anchor": [
+        "8799/100",
+        "2399/80"
+      ],
+      "extents": [
+        "267/50",
+        "551/100",
+        "359/80",
+        "117/16"
+      ],
+      "strictCommonBoxHalfWidth": "1/360",
+      "oldFixedWidthRisk": {
+        "outsidePriorWitnessBoxXThenY": [
+          "89",
+          "90",
+          "1499/50",
+          "5999/200"
+        ],
+        "strictWitnessMargins": [
+          [
+            "797/50",
+            "3197/200",
+            "461/25",
+            "3697/200"
+          ],
+          [
+            "1007/50",
+            "8089/400",
+            "391/25",
+            "6289/400"
+          ],
+          [
+            "34/5",
+            "541/80",
+            "53/10",
+            "421/80"
+          ],
+          [
+            "353/25",
+            "1403/100",
+            "581/50",
+            "1153/100"
+          ],
+          [
+            "24",
+            "24",
+            "30",
+            "30"
+          ]
+        ],
+        "priorMaximumX": "88",
+        "forEveryProgressOpenInterval": [
+          0,
+          "1/975"
+        ],
+        "constantHorizontalInkDiameterLowerBound": "1",
+        "argument": "For every 0<p<=pmax the old full-width centered band lies inside the strict witness Y interval, so the fixed witness X interval is painted outside the completed prior H. Its nonzero horizontal diameter does not shrink to zero.",
+        "geometryOnly": true,
+        "browserFailureClaimed": false
+      },
+      "initialDiameterSquaredUpperBoundCoefficient": "20557/80",
+      "priorBodyHeadPositiveAreaLowerBoundCoefficient": "1/32400",
+      "allPositivePConnected": true,
+      "nestedOriginalPSubset": true,
+      "p0HiddenPointRequired": true,
+      "p1ExactlyOriginalP": true,
+      "source9StarKernelNotConvexity": true,
+      "foot": {}
+    }
+  ],
+  "newArgument": [
+    "At each unchanged prior/body/head kernel anchor A, use the rectangle whose four extents are the original bounds minus A, multiplied by p. Existing simple/star or convex source certificates are reused; they are not rerun or relabeled.",
+    "Every rectangle contains A+p*strictBox. This positive-area box remains in the original prior/body/head by the certified visibility kernel. Intersections of original star-shaped polygons and an anchor-containing convex rectangle stay star-shaped; their shared box makes their union connected.",
+    "For pen2 the unchanged convex foot does not share the upper kernel, so the separate vertical-to-base argument proves its connection. No whole-body-completion claim from the old y-band is transferred.",
+    "Nested rectangles preserve original ink inclusion; both dimensions tend to zero at p0; p1 is the original full bounds. This is an authored geometric clock, not source-Q traversal or publisher timing."
+  ],
+  "sourcePOrQOrWidthOrWeightChanged": false,
+  "newConnector": false,
+  "existingKernelOrConvexityReplay": 0,
+  "nativeFailureClaimed": false,
+  "newPolicyImplemented": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engine": 0,
+  "projection": 0,
+  "originalFetch": 0,
+  "sharedChanges": 0,
+  "server": 0,
+  "verification": {
+    "script": {
+      "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/verify-kernel-point-windows.py",
+      "SHA256": "5f7fdeb94b541e199747e652a63a5101860c5ec2147c1d17747fc2781688cac3"
+    },
+    "newExactConditionsRun": 1,
+    "existingKernelAndConvexityRuns": 0
+  }
+}
