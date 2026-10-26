@@ -1,0 +1,29 @@
+import assert from 'node:assert/strict'
+import test from 'node:test'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import {execFileSync} from 'node:child_process'
+import {HANJA_DICTIONARY_GLYPHWIKI_BATCH1499_STROKES as ENTRY,loadGlyphWikiBatch1499Strokes as load,GLYPHWIKI_BATCH1499_APPROVAL_REVIEW as APPROVAL} from './hanja-stroke-dictionary-glyphwiki-batch1499.ts'
+import {makeReviewedU7c67SourceWindow18Context,reviewedU7c67SourceWindow18Policy} from './hanja-stroke-source-window-u7c67-18.ts'
+const bytes=(p:string)=>readFileSync(new URL('../'+p,import.meta.url)),json=(p:string)=>JSON.parse(bytes(p).toString()),sha=(b:string|Buffer)=>createHash('sha256').update(b).digest('hex')
+const PUB='public/hanja-strokes/glyphwiki/u7c67.json',BUNDLE='public/hanja-strokes/dictionary-reviewed-glyphwiki-batch1499.json',REVIEW='docs/hanja-actual-component-profiles-2026-10-22/u7c67-activation-review.json'
+test('1499 binds normal 籧23 to exact header4 and separate trace with scoped native approval',()=>{
+ const r=json(REVIEW),b=json(BUNDLE),c=json(PUB),f=json(r.sourceFixture.path).u7c67,n=json(r.nativeEvidence.path),source=json('docs/hanja-goal-glyphwiki-batch414-2026-10-09/sources.json'),header=json(r.originalHeader4.path),trace=json(r.originalTrace.path)
+ assert.equal(APPROVAL.path,REVIEW);assert.equal(sha(bytes(REVIEW)),APPROVAL.SHA256);assert.deepEqual(load(b),ENTRY)
+ for(const[file,hash]of Object.entries(r.inputSHA256))assert.equal(sha(bytes(file)),hash,file)
+ for(const item of r.historicalInputSHA256)assert.equal(sha(execFileSync('git',['show',item.commit+':'+item.path],{cwd:new URL('..',import.meta.url),maxBuffer:8*1024*1024})),item.SHA256,item.path)
+ assert.deepEqual(c.sourceRecords,source.records);assert.deepEqual(c.sourceProvenance,source);assert.equal(Object.keys(c.sourceRecords).length,4);assert.deepEqual(c.engineHeader,header);assert.deepEqual(c.drawTrace,trace);assert.deepEqual(Object.keys(header),['engineRevision','engineHashes','groups','defaults']);assert.equal(Object.keys(header.engineHashes).length,8);assert.equal(Object.hasOwn(c,'engineProof'),false);assert.equal(c.syntheticFull5,false);assert.equal(c.sourceProofFormat,'original-header4-and-separate-trace');for(const k of Object.keys(header))assert.deepEqual(f.fullProof[k],header[k]);assert.deepEqual(f.fullProof.trace,trace)
+ assert.deepEqual(c.outlines,f.strokes);assert.deepEqual(b[0].outlines,f.strokes);assert.equal(sha(JSON.stringify(f.strokes)),r.sourceFixture.geometrySHA256);assert.deepEqual(b[0].paths,f.strokes.map((row:{outline:string}[])=>row.map(s=>s.outline).join(' ')));assert.equal(sha(JSON.stringify(b[0].paths)),b[0].pathsSha256)
+ assert.equal(header.groups.length,26);assert.equal(trace.flat().length,30);assert.equal(header.groups.reduce((s:number,g:{polygons:unknown[]})=>s+g.polygons.length,0),60);assert.equal(f.strokes.length,23);assert.equal(f.strokes.flat().length,24);assert.deepEqual(c.sourceGroups,f.sourceGroups);assert.deepEqual([...c.sourceGroups.flat()].sort((a:number,b:number)=>a-b),Array.from({length:26},(_,i)=>i));assert.deepEqual(b[0].sourceStrokeIndices,c.sourceGroups.map((g:number[])=>g[0]+1))
+ const ctx=makeReviewedU7c67SourceWindow18Context(f.fullProof,f.identity,f.strokes);assert(ctx);const p=reviewedU7c67SourceWindow18Policy(ctx,17,0);assert(p);assert.deepEqual(p.anchor,[86.8,61]);assert.deepEqual(p.segment,f.strokes[17][0]);assert.equal(reviewedU7c67SourceWindow18Policy(ctx,14,0),null)
+ assert.equal(n.nativeApproval,true);assert.deepEqual([n.finite.total,n.finite.fresh,n.finite.reused],[45,7,38]);assert.equal(n.finite.target.exactZero,0);assert.equal(n.finite.target.exactZeroEmptyHidden,true);assert.equal(n.finite.target.completedPhase,'full');assert.equal(n.natural.unique,2);assert.equal(n.natural.records[0].end,1);assert.equal(n.natural.rawProgressSnapped,false);assert.equal(n.whole.pens,23);assert.equal(n.whole.masks,24);assert.equal(n.whole.ordinaryMasks,6);assert.equal(n.whole.specialTargets,18);assert.equal(n.whole.allSpecialProgressExactly1,true);assert.equal(n.whole.allChecks,true);assert.equal(n.postRun.portClosed,true);assert.deepEqual(n.postRun.mismatches,[])
+ assert.equal(r.approval.runtimeRegistrationAuthorized,true);for(const k of['allTime','pixelCount','publisherMicrotimingEquivalent','productWholeAutoplay','actualAppUI'])assert.equal(r.approval[k],false);assert.equal(c.preparationHistory.runtimeApplied,false);assert.equal('variant'in b[0],false);assert(bytes('public/hanja-strokes/glyphwiki/NOTICE-u7c67.md').length>0)
+})
+const reverse=(v:unknown):unknown=>Array.isArray(v)?v.map(reverse):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).reverse().map(([k,x])=>[k,reverse(x)])):v
+test('1499 strict loader accepts object key order and rejects semantic or reflective changes',()=>{
+ const b=json(BUNDLE);assert.deepEqual(load(reverse(b)),ENTRY);assert(Object.isFrozen(ENTRY)&&Object.isFrozen(ENTRY[0].outlines))
+ for(const field of['outline','weight','revealPath','revealWidth']){const x=json(BUNDLE),s=x[0].outlines[3][0];s[field]=typeof s[field]==='number'?s[field]+.001:s[field]+' ';assert.throws(()=>load(x))}
+ for(const field of['geometrySource','pathsSha256']){const x=json(BUNDLE);x[0][field]='changed';assert.throws(()=>load(x))}
+ const inherited=json(BUNDLE);Object.setPrototypeOf(inherited[0],{extra:1});assert.throws(()=>load(inherited));const symbol=json(BUNDLE);symbol[0][Symbol('unexpected')]=true;assert.throws(()=>load(symbol));const hidden=json(BUNDLE);Object.defineProperty(hidden,'extra',{value:1});assert.throws(()=>load(hidden))
+ let called=false;const getter=json(BUNDLE);Object.defineProperty(getter[0],'glyph',{enumerable:true,get(){called=true;throw Error('must not run')}});assert.throws(()=>load(getter));assert.equal(called,false);assert.throws(()=>(load as(...args:unknown[])=>unknown)(b,b));assert.throws(()=>load([]))
+})
