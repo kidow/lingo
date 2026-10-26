@@ -1,0 +1,94 @@
+{
+  "schema": "hanja-complete-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "竪",
+  "root": "hdic_hkrm-05090830",
+  "rootVersion": 1,
+  "status": "HOLD: 새 whole의 위 왼쪽 내부 구조와 아래 시작 모양이 사전 자형과 다름",
+  "reviewer": "ROOT 직접 Codex 브라우저 패널 관찰",
+  "recordedBy": "C",
+  "inputs": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u7aea-hdic-whole-2026-10-26/config.json",
+      "SHA256": "289efc4cf88cfe2f8aad7d56c0d9a241a85ab0ca16546de43b33f2fe59ee50fb"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "78837a0ff58395e7e984702f9fe9ae374c4702563759af5e1e5dddd882437a8b"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u7aea-hdic-2026-10-26/engine-whole-hdic_hkrm-05090830.json",
+      "SHA256": "efa6c59e2f8428f415d04ef6161385a4bafa5a79e68c2cbba5a45a5090a62f67"
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u7aea-hdic-2026-10-26/capture.json",
+      "SHA256": "270d25b04852df4f4beefcb7214de00661379ddbb4c24507516a25a11f1404e2"
+    },
+    "source": {
+      "path": "docs/hanja-source-alternative-u7aea-hdic-2026-10-26/sources.json",
+      "SHA256": "e55f80fefbdd3264c5a29c31033bbf55c86006fa2968a0d88fd50aa76ae9cbaa"
+    }
+  },
+  "native": {
+    "freshWholeObservations": 1,
+    "publisherSize": [
+      520,
+      520
+    ],
+    "publicSourceSize": [
+      520,
+      520
+    ],
+    "viewport": null,
+    "publisherPaths": 13,
+    "publicSourceP": 27,
+    "upperPublisher": "위 왼쪽이 臣처럼 안쪽의 위·아래 짧은 세로가 분리된 구조",
+    "upperPublic": "위 왼쪽이 目처럼 안쪽 가로가 이어진 세 칸 구조",
+    "lowerPublisher": "아래 立의 시작이 짧은 세로 모양",
+    "lowerPublic": "아래 立의 시작이 오른아래 점 모양",
+    "directCompletedShapeMismatches": 2,
+    "sourceComponentNamesUsedAsVisualEvidence": false,
+    "oldHoldTransferred": false,
+    "animationDirectionApproved": false,
+    "conclusion": "새 whole의 두 구성 부위가 직접 다르므로 자형 호환을 거절한다."
+  },
+  "preservation": {
+    "raw": 16,
+    "calls": 16,
+    "P": 27,
+    "metadataRows": 0,
+    "sourceRowsChanged": false,
+    "sourcePOrQChanged": false,
+    "aliasesInserted": false,
+    "partsSubstituted": false,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesSaved": 0
+  },
+  "approval": {
+    "whole": false,
+    "staticMapping": false,
+    "order": false,
+    "direction": false,
+    "contact": false,
+    "actualComponent": false,
+    "runtime": false
+  },
+  "afterObservationPins": {
+    "configUnchangedConfirmedByROOT": true,
+    "launcherUnchangedConfirmedByROOT": true
+  },
+  "cleanup": {
+    "PID": 35763,
+    "port": 59412,
+    "signal": "SIGINT",
+    "PIDAbsentConfirmedByROOT": true,
+    "portClosedConfirmedByROOT": true,
+    "tab": 125,
+    "tabClosed": true
+  },
+  "limits": [
+    "직접 관찰한 완료 자형 불일치만 기록한다. 아직 검토하지 않은 원문 진행 시계나 모든 표시 정책의 불가능성을 주장하지 않는다.",
+    "이전 후보의 보류를 전이하지 않으며 원문 이미지·미디어는 저장하지 않는다."
+  ]
+}

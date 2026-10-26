@@ -1,0 +1,91 @@
+{
+  "schema": "hanja-complete-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "蔗",
+  "root": "dsknmt_hkrm-08022220",
+  "rootVersion": 1,
+  "status": "HOLD: 새 whole의 위 草 가로 연결과 아래 부위가 사전 자형과 다름",
+  "reviewer": "ROOT 직접 Codex 브라우저 패널 관찰",
+  "recordedBy": "C",
+  "inputs": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u8517-dsknmt-whole-2026-10-26/config.json",
+      "SHA256": "284e2dc41588ef71403e3f800868ff66b4fbf3da6404b436d685d7945007aaa1"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "78837a0ff58395e7e984702f9fe9ae374c4702563759af5e1e5dddd882437a8b"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u8517-dsknmt-2026-10-26/engine-whole-dsknmt_hkrm-08022220.json",
+      "SHA256": "c24346818a826e37fae90911cb546290f0bbc2af16ded80b175dcc8e68ea4877"
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u8517-dsknmt-2026-10-26/capture.json",
+      "SHA256": "d2c1c8cd91e2ddd625024bc218d4c068937934c851ad5579d0fc559637d333f9"
+    },
+    "source": {
+      "path": "docs/hanja-source-alternative-u8517-dsknmt-2026-10-26/sources.json",
+      "SHA256": "1cb2f4f8ff2f9efeedacf58f52d4c93535b111ea8aca8768ca49d3f62a793d6c"
+    }
+  },
+  "native": {
+    "freshWholeObservations": 1,
+    "publisherSize": [
+      520,
+      520
+    ],
+    "publicSourceSize": [
+      520,
+      520
+    ],
+    "viewport": null,
+    "publisherPaths": 15,
+    "publicSourceP": 31,
+    "upperPublisher": "위 草의 좌우 가로 부분이 분리되어 보임",
+    "upperPublic": "위 草의 좌우 사이를 잇는 한 가로 부분이 보임",
+    "lowerPublisher": "아래 灬에 떨어진 점 네 개가 보임",
+    "lowerPublic": "아래가 从처럼 왼아래·오른아래로 벌어진 두 쌍의 모양으로 보임",
+    "directCompletedShapeMismatch": true,
+    "sourcePathPartitionUsedToInferSeparateStrokes": false,
+    "oldHoldTransferred": false,
+    "timeOrDirectionRejectionInferred": false,
+    "conclusion": "새 whole의 필수 부위와 배치가 직접 다르므로 자형 호환을 거절한다."
+  },
+  "preservation": {
+    "raw": 14,
+    "calls": 15,
+    "P": 31,
+    "metadataRows": 0,
+    "sourceRowsChanged": false,
+    "sourcePOrQChanged": false,
+    "aliasesInserted": false,
+    "partsSubstituted": false,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesSaved": 0
+  },
+  "approval": {
+    "whole": false,
+    "staticMapping": false,
+    "order": false,
+    "direction": false,
+    "contact": false,
+    "actualComponent": false,
+    "runtime": false
+  },
+  "afterObservationPins": {
+    "configUnchangedConfirmedByROOT": true,
+    "launcherUnchangedConfirmedByROOT": true
+  },
+  "cleanup": {
+    "PID": 34847,
+    "port": 59412,
+    "signal": null,
+    "PIDAbsentConfirmedByROOT": true,
+    "portClosedConfirmedByROOT": true,
+    "tab": 124,
+    "tabClosed": true
+  },
+  "nextScope": "새 원형을 임의 수정하거나 같은 whole을 반복하지 않고 다른 독립 자료를 검토한다."
+}
