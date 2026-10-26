@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "glyph": "蘉",
+  "pen": 17,
+  "mask": 1,
+  "inputSHA256": {
+    "docs/hanja-source-original-u8609-hkcs-2026-10-26/fixtures.json": "35a774f8c744cd0a6ccd4454221ce4f629860581434c57413696b830912e4ca6",
+    "docs/hanja-source-original-u8609-hkcs-2026-10-26/17-alternative-prefix-proof.json": "cce9eaa8bb1de0be5bae8ebbb9276e74e7d583396fe6fc1cc6399f86f57f554b",
+    "lib/hanja-stroke-prefix-u8609-hkcs.ts": "0de21ee44e47cbcf9552391b65b148d72c9386f5ee96fd70f4c45bbd94541715"
+  },
+  "geometrySHA256": "36c6d68c80e42dd733c2a293a9cbf7f4dd5c4109b4253ab19b2",
+  "method": "Reuse existing exact closed first line and affine first slab; inspect only unique source minimum and its adjacent edges. No full section sweep repeated.",
+  "sourceSubpaths": 2,
+  "sourceMinimumPoint": [
+    "757/20",
+    "1287/20"
+  ],
+  "sourceInitialClosedSectionSinglePoint": true,
+  "firstSlabY": [
+    "1287/20",
+    "1289/20"
+  ],
+  "leftAffine": [
+    "-2/9",
+    "1043/20"
+  ],
+  "rightAffine": [
+    "9",
+    "-5413/10"
+  ],
+  "epsilon": "(41/4)*p",
+  "progressDomain": [
+    "0",
+    "2/205"
+  ],
+  "strictUpperBound": true,
+  "actualSourceWedge": {
+    "xLower": "757/20-(2/9)*epsilon",
+    "xUpper": "757/20+9*epsilon",
+    "yLower": "1287/20",
+    "yUpper": "1287/20+epsilon"
+  },
+  "diameterSquaredUpperBound": "(6970/81)*epsilon^2",
+  "initialDiameterLimit": 0,
+  "outsideAnyCompletedPrior": "Subset of the actual clipped original source region, so the same diameter bound applies without assuming prior opacity or contact.",
+  "secondSubpathMinimumY": "691/10",
+  "secondSubpathHiddenProgressUpper": "19/41",
+  "alwaysPaintedCurrentHead": false,
+  "unconditionalPriorProvidedByPurePolicy": false,
+  "expectedPaintContract": "The whole original two-subpath outline is clipped by one Y-prefix rectangle; p=0 has null outline. A future renderer must not expose a separate current head.",
+  "fixedRectWidthNotUsedAsVisibleDiameter": true,
+  "priorConnectivityApproved": false,
+  "originalMicroDirectionApproved": false,
+  "originalClockEquivalent": false,
+  "actualRendererApproved": false,
+  "newPolicyNecessaryFromThisDiameterCondition": false,
+  "sourcePChanged": false,
+  "sourceQChanged": false,
+  "sourceWidthChanged": false,
+  "sourceWeightChanged": false,
+  "existingClosedSweepReplayed": 0,
+  "originalMicroReplay": 0,
+  "sourceEngine": 0,
+  "sourceProjection": 0,
+  "server": 0,
+  "script": "docs/hanja-source-original-u8609-hkcs-2026-10-26/verify-17-prefix-initial-visible-diameter.py",
+  "scriptSHA256": "d1b880e8ddc034432da575028603d31efd53b90b9ec92674ca5a0fd6c99c52c0"
+}
