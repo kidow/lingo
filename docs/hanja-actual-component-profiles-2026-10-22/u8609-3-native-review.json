@@ -1,0 +1,99 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "蘉",
+  "status": "PASS corrected review routing and completed actual-component review",
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "profileSHA256": "940aacbe670e42d2dc3d7afafbdbb2f2b2a1d21ab4e5c895a6f90b73be399b2b",
+  "componentSHA256": "78f7c160dcedf99fc92a1b19810515e41bf53a2737f1aa8a6ff4be5365891bef",
+  "helperSHA256": "b75b67af3e0e9c9774889fae6b9de2f6925b087abe552e2a8af9af66def3e5d5",
+  "geometrySHA256": "36c6d68c80e42dd733c2a293a9cbf7f4dd5e72f15d1e9fd5c4109b4253ab19b2",
+  "startup": { "SSR": 1, "CJS": 356, "ESM": 356, "engine": 0, "sourceProjection": 0 },
+  "afterObservationPins": { "count": 439, "mismatches": 0 },
+  "finiteCounts": {
+    "frozenPlanObservations": 92,
+    "distinctProgressStates": 89,
+    "reusedDistinctStates": 26,
+    "freshDistinctStates": 63,
+    "freshContractObservations": 66,
+    "zeroBoundaryCenterDuplicateObservations": 3,
+    "duplicateTargets": ["11-2", "18-2", "19-2"],
+    "foldInitialPoint01DuplicateSupplementalViews": 2,
+    "countingScope": "The four zero controls and all five mask-boundary triplets were observed. The zero controls for compound11/18/19 repeat their mask-boundary center, so they are not extra distinct progress states. Fold initial-point .01 views repeat their early3 .01 and are also not added."
+  },
+  "freshFiniteCoverage": {
+    "fourNewPointCompletedResiduals": 4,
+    "oldFiveTargetsRemainingStates": 24,
+    "fiveMaskBoundaryTriplets": 15,
+    "prefix17AdditionalStates": 8,
+    "foldInitialUniquePoint001": 2,
+    "newZeroControlObservations": 4,
+    "newConnectionBoundaryStates": 9,
+    "allRendererBadAndErrorListsEmpty": true,
+    "allCompletedResidualsVisuallyWhite": true,
+    "allPlannedControlsPresentAndCorrectlyRouted": true
+  },
+  "zeroAndBoundaryActualValues": {
+    "dedicatedZero11": { "p": 0, "phase": "empty" },
+    "dedicatedZero12": { "p": 0, "phase": "empty" },
+    "dedicatedZero18": { "p": 9.114834565890584e-15, "phase": "source-union-point-window" },
+    "dedicatedZero19": { "p": 1.0555664085936809e-15, "phase": "source-point-rect19" },
+    "mask18Before": { "p": 0, "phase": "empty" },
+    "mask19Before": { "p": 0, "phase": "empty" },
+    "scope": "The tiny positive weighted-boundary values are retained and are not labeled zero. Exact hidden-zero behavior for18/19 was directly confirmed in the already-required before-boundary samples. No epsilon or source correction was introduced."
+  },
+  "newConnectionBoundaries": {
+    "18PriorExit": "87/637",
+    "19FirstFiniteEdgeCorner": "79/1249",
+    "19LastFiniteEdgeCorner": "5389/5407",
+    "beforeAtAfterEachObserved": true,
+    "finding": "No missing region, early distant fragment or contact flicker was observed. The source-authored initial18 interval inside the completed prior was kept distinct from later new-ink emergence."
+  },
+  "reusedSuccessfulEvidence": {
+    "v1": "docs/hanja-actual-component-profiles-2026-10-22/u8609-1-native-review.json",
+    "v1Caps10And20EarlyStates": 6,
+    "v2": "docs/hanja-actual-component-profiles-2026-10-22/u8609-2-native-review.json",
+    "v2NewFourEarlyAndMidStates": 20,
+    "identity": "Renderer, source data and state functions remain unchanged. The helper repair only changes setup dispatch and accepts the new exact profile3 path in two strict fixture gates; reverse removal reproduces the frozen previous helper.",
+    "v2BrokenResidualOrMissingControlsReused": false
+  },
+  "natural": {
+    "verifiedUniqueObservations": 18,
+    "progressTargets": 9,
+    "endTargets": 9,
+    "actualEnds": {
+      "10-1": 0.9999999999999992,
+      "20-1": 1,
+      "fold6-2": 1,
+      "fold14-2": 0.9999999999999972,
+      "prefix17-1": 1,
+      "union11-2": 0.9999999999999944,
+      "union12-1": 0.9999999999999994,
+      "union18-2": 1,
+      "rect19-2": 1
+    },
+    "verified18ProgressOutsidePriorInterval": 0.2743598925572419,
+    "verified19Progress": 0.07004917208615846,
+    "allBadAndErrorListsEmpty": true,
+    "finding": "The nine source-specific sweeps and endpoints were directly observed. Early ink remains compact and intended prior contacts are retained.",
+    "reviewWaitRecovery": "Two UI selector waits exceeded the browser tool deadline. Unreturned image outputs were not counted as visual approvals. Affected progress/end views were directly recaptured with the unchanged renderer and normal animation controls; repeats do not add unique observations."
+  },
+  "freshDoneWhole": {
+    "wholeImages": 1,
+    "logicalPens": 20,
+    "sourceMasks": 25,
+    "sourcePolygons": 40,
+    "specialTargets": 9,
+    "allSpecialTargetsExactlyOne": true,
+    "ordinarySourceMasks": 16,
+    "allOrdinaryChecksPassed": true,
+    "allBadAndErrorListsEmpty": true,
+    "completedAppearancePassed": true
+  },
+  "limits": "Authored clipping clocks are not publisher microclock identity or source-Q traversal equivalence. Original source P, Q, width and weight remain unchanged. This is isolated production-component review; actual product-page UI is separate.",
+  "nativeApproval": true,
+  "actualAppUI": false,
+  "runtimeApplied": false,
+  "privateMediaSaved": false,
+  "server": { "ownedPID": 70068, "port": 59412, "tab": "117", "stopped": true, "pidAbsent": true, "portClosed": true, "tabClosed": true }
+}
