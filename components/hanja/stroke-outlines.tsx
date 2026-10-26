@@ -1,3 +1,4 @@
+import {makeReviewedU655dSourceWindowContext,REVIEWED_U655D_SOURCE_WINDOW_INPUT,reviewedU655dSourceWindowPolicy,commitReviewedU655dSourceWindow,reviewedU655dBodyTailPolicy,commitReviewedU655dBodyTail,type ReviewedU655dSourceWindowPolicy,type ReviewedU655dBodyTailPolicy} from '@/lib/hanja-stroke-source-windows-u655d'
 import {makeReviewedU7c67SourceWindow18Context,REVIEWED_U7C67_SOURCE_WINDOW18_INPUT,reviewedU7c67SourceWindow18Policy,commitReviewedU7c67SourceWindow18,type ReviewedU7c67SourceWindow18Policy} from '@/lib/hanja-stroke-source-window-u7c67-18'
 import {makeReviewedU7443GSourceWindowContext,REVIEWED_U7443_G_SOURCE_WINDOW_INPUT,reviewedU7443GSourceWindowPolicy,commitReviewedU7443GSourceWindow,reviewedU7443GHead9Policy,commitReviewedU7443GHead9,type ReviewedU7443GSourceWindowPolicy,type ReviewedU7443GHead9Policy} from '@/lib/hanja-stroke-source-windows-u7443-g'
 import {reviewedU85c7HkcsCardinalPointPolicy,sampleReviewedU85c7HkcsCardinalPointFrame,verifyReviewedU85c7HkcsCardinalPointPriorDOM,type ReviewedU85c7HkcsCardinalPointPolicy} from '@/lib/hanja-stroke-cardinal-point-windows-u85c7-hkcs'
@@ -650,6 +651,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u7367FootContext = reviewedU7367FootContext(strokes)
   const u7d8cFootContext = reviewedU7d8cFootContext(strokes)
   const u6705TailContext = reviewedU6705TailContext(strokes)
+ const u655dSourceWindowContext=makeReviewedU655dSourceWindowContext(REVIEWED_U655D_SOURCE_WINDOW_INPUT.fullProof,REVIEWED_U655D_SOURCE_WINDOW_INPUT.identity,strokes)
  const u7c67Window18Context=makeReviewedU7c67SourceWindow18Context(REVIEWED_U7C67_SOURCE_WINDOW18_INPUT.fullProof,REVIEWED_U7C67_SOURCE_WINDOW18_INPUT.identity,strokes)
   const u7c67Context = reviewedU7c67Context(strokes)
   const u7c67LeftContext = reviewedU7c67LeftContext(strokes)
@@ -1318,6 +1320,10 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if (u6705Policy && stroke === 13 && index === 0 && u6705TailContext) return <U6705Down14Outline key={index} context={u6705TailContext} policy={u6705Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         if (u6705Policy && stroke === 10 && index === 0 && u6705TailContext) return <U6705CompositeOutline key={index} context={u6705TailContext} policy={u6705Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
         if (u6705Policy) return <U6705CapsOutline key={index} policy={u6705Policy} segment={segment} progress={Number.isFinite(progress) ? progress >= 1 ? 1 : p : NaN} clipId={id+'-'+stroke+'-'+index} />
+       const u655dPointPolicy=reviewedU655dSourceWindowPolicy(u655dSourceWindowContext,stroke,index)
+       if(u655dPointPolicy)return <U655dSourceWindowOutline key={index} policy={u655dPointPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
+       const u655dBodyTailPolicy=reviewedU655dBodyTailPolicy(u655dSourceWindowContext,stroke,index)
+       if(u655dBodyTailPolicy)return <U655dBodyTailOutline key={index} policy={u655dBodyTailPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
        const u7c67Window18Policy=reviewedU7c67SourceWindow18Policy(u7c67Window18Context,stroke,index)
        if(u7c67Window18Policy)return <U7c67SourceWindow18Outline key={index} policy={u7c67Window18Policy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
         const u7c67Policy = reviewedU7c67Policy(u7c67Context, stroke, index)
@@ -5690,6 +5696,27 @@ function U8609HkcsUnionPointOutline({policy,segment,progress,previousMaskProgres
  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u8609-union-point-fingerprint={policy.proofFingerprint} data-u8609-union-point-clip={clipId} data-u8609-hkcs-union-point-previous-progress={String(previousMaskProgress)} data-u8609-hkcs-union-point-display-clock="source-author-union-point-window" data-u8609-hkcs-union-point-author-clock="true" data-u8609-hkcs-union-point-original-clock-equivalent="false" data-u8609-hkcs-union-point-source-guide={segment.revealPath??''}>
   <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
   <path ref={ink} data-u8609-hkcs-union-point-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U655dSourceWindowOutline({policy,segment,progress,clipId}:{policy:ReviewedU655dSourceWindowPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>commitReviewedU655dSourceWindow(policy,segment,progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clipPath.current}).cleanup,[policy,segment,progress,clipId])
+ const key=clipId+'-u655d-source-window-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u655d-source-window-clip={clipId} data-u655d-source-window-fingerprint={policy.proofFingerprint} data-u655d-source-window-display-clock="source-author-point-rectangle" data-u655d-source-window-original-clock-equivalent="false" data-u655d-source-window-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u655d-source-window-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U655dBodyTailOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU655dBodyTailPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),bodyGroup=useRef<SVGGElement>(null),bodyInkPaths=useRef<(SVGPathElement|null)[]>([]),bodyRect=useRef<SVGRectElement>(null),bodyClipPath=useRef<SVGClipPathElement>(null),tailInk=useRef<SVGPathElement>(null),tailPolygon=useRef<SVGPolygonElement>(null),tailClipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>{const result=commitReviewedU655dBodyTail(policy,segment,progress,previousMaskProgress,clipId,{group:group.current,bodyGroup:bodyGroup.current,bodyInkPaths:bodyInkPaths.current,bodyRect:bodyRect.current,bodyClipPath:bodyClipPath.current,tailInk:tailInk.current,tailPolygon:tailPolygon.current,tailClipPath:tailClipPath.current}),g=group.current,ns='data-u655d-source-body-tail-';g?.setAttribute(ns+'status',result.status);g?.setAttribute(ns+'error','error'in result?(result.error??''):'');if(result.frame){g?.setAttribute(ns+'phase',result.frame.phase);g?.setAttribute(ns+'tail-progress',String(result.frame.tailProgress));}else{g?.removeAttribute(ns+'phase');g?.removeAttribute(ns+'tail-progress');}return result.cleanup},[policy,segment,progress,previousMaskProgress,clipId])
+ const bodyKey=clipId+'-u655d-body-clip',tailKey=clipId+'-u655d-tail-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u655d-source-body-tail-clip={clipId} data-u655d-source-body-tail-fingerprint={policy.proofFingerprint} data-u655d-source-body-tail-prior-progress={String(previousMaskProgress)} data-u655d-source-body-tail-display-clock="source-author-L-chord-weight-body-attached-tail" data-u655d-source-body-tail-original-clock-equivalent="false" data-u655d-source-body-tail-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={bodyClipPath} id={bodyKey} clipPathUnits="userSpaceOnUse"><rect ref={bodyRect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath><clipPath ref={tailClipPath} id={tailKey} clipPathUnits="userSpaceOnUse"><polygon ref={tailPolygon} points="44.5,88 44.5,88 44.5,88 44.5,88"/></clipPath></defs>
+  <g ref={bodyGroup} data-u655d-source-body-tail-body="true" clipPath={'url(#'+bodyKey+')'}>{policy.sourceParts.slice(0,4).map((d,i)=><path key={i} ref={n=>{bodyInkPaths.current[i]=n}} data-u655d-source-body-tail-part={i+1} d={d} fillRule="nonzero" visibility="hidden"/>)}</g>
+  <path ref={tailInk} data-u655d-source-body-tail-tail="true" d={policy.sourceParts[4]} fillRule="nonzero" clipPath={'url(#'+tailKey+')'} visibility="hidden"/>
  </g>
 }
 
