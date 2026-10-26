@@ -1,0 +1,135 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-27",
+  "glyph": "媓",
+  "root": "u5a93",
+  "status": "HOLD-other-pens-initial-ink-and-direction-approval",
+  "reviewer": "ROOT direct browser panel observations, tab1; recorded by child agent from ROOT report",
+  "input": {
+    "profile": "docs/hanja-actual-component-profiles-2026-10-22/u5a93-1.json",
+    "profileSHA256": "7f62227471546146aaf68d8516b03636a7244c4dff41bbad4c6fc30ebcac1d78",
+    "rendererSHA256": "4eaeb22436d45b3297b9c46aeea52b5e43843176684e9e1013787c4be2944d50",
+    "adapterSHA256": "7086499cf0026816f841fcafd245b6104938c1e815f0dd764f333277277a58cb",
+    "geometrySHA256": "79aea820e2f76cc4fa9bbe75a4f65fb75bb62c261060b1aa4e2e3bf1e3d71752",
+    "pinnedFiles": 570,
+    "postRunPinMismatches": []
+  },
+  "firstPrefix": {
+    "sourceMasks": 2,
+    "sourcePPerMask": [2, 2],
+    "finiteObservations": 13,
+    "zero": {"p": 0, "phase": "empty"},
+    "early": [
+      {"p": 0.000001, "cutoff": 6.9000727},
+      {"p": 0.01, "cutoff": 7.627},
+      {"p": 0.03, "cutoff": 9.081}
+    ],
+    "midNear": [
+      {"p": 0.5, "cutoff": 43.24999999999999},
+      {"p": 0.9999999899999998, "cutoff": 79.59999927299998}
+    ],
+    "raw1FirstExposure": {
+      "exactSourcePrefixEvent": "518/727",
+      "actualProgress": [0.7125171938477304, 0.7125171939477304, 0.7125171940477304],
+      "actualCutoff": [58.69999999272999, 58.69999999999999, 58.70000000726999]
+    },
+    "raw0Complete": {
+      "exactSourcePrefixEvent": "1229/1454",
+      "actualProgress": [0.8452544703264099, 0.8452544704264099, 0.84525447052641],
+      "actualCutoff": [68.34999999272999, 68.35, 68.35000000727]
+    },
+    "completeResidual": {
+      "p": 1,
+      "phase": "full",
+      "cutoff": 79.6,
+      "observed": "White residual view; no pixel-equivalence or antialiasing conclusion"
+    },
+    "natural": [
+      {"mode": "natural", "p": 0.03708749999999963, "cutoff": 9.596261249999973},
+      {"mode": "natural-ended", "p": 1, "phase": "full", "coverageReady": true}
+    ],
+    "wholeDone": {"pens": 12, "p": 1, "phase": "full", "coverageReady": true},
+    "allFirstPrefixStates": 16,
+    "firstSourceMaskObservations": 32,
+    "checks": {
+      "twoOriginalOwners": true,
+      "sameCurrentFrameAndProgress": true,
+      "originalPPerMask": true,
+      "originalGuidesAndWeights": true,
+      "rectAttributesAndCSS": true,
+      "opaqueCommittedMasks": true
+    },
+    "bad": [],
+    "errors": [],
+    "paintBad": [],
+    "visualObservation": "Initial single cap, descending-left stem and a connected descending-right branch were observed; no distant fragment or break was observed in these finite views.",
+    "authorClock": "source-author-common-forward-y-prefix",
+    "originalGuideOrMaskWeightClockEquivalent": false,
+    "publisherMicroclockEquivalent": false,
+    "formalAllTwelveDirectionsApproved": false
+  },
+  "otherPens": {
+    "pens": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "coarse": {
+      "observations": 99,
+      "perPen": 9,
+      "progress": [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
+      "bad": [],
+      "errors": [],
+      "ordinaryBad": [],
+      "paintBad": [],
+      "observation": "No obvious distant jump in these coarse views; coarse success is not an initial-source proof."
+    },
+    "pen2FineEnd": {
+      "observations": 3,
+      "progress": [0.9999, 0.99999999, 1],
+      "isEarlyReview": false,
+      "p1DuplicatesCoarseComplete": true
+    },
+    "epsilon": {
+      "observations": 11,
+      "requestedProgress": 0.000001,
+      "selectedPenAndControllerConfirmed": true,
+      "bad": [],
+      "errors": [],
+      "ordinaryBad": [],
+      "paintBad": [],
+      "failures": [
+        {"pen": 2, "kind": "curve-mask", "dash": "1.0000000000987852e-6 2", "round": true, "visualResult": "Large initial head fragment appeared abruptly, separate from the completed first pen."},
+        {"pen": 4, "kind": "curve-mask", "dash": "1.0000000000987852e-6 2", "round": true, "visualResult": "Large triangular head was already visible at epsilon."}
+      ],
+      "pen6": {"kind": "curve-mask", "dash": "9.999999995740766e-7 2", "round": true, "observation": "Initial cap was in or near prior ink in this view; no all-time safety claim."},
+      "otherEight": {"pens": [3, 5, 7, 8, 9, 10, 11, 12], "kind": "cardinal-clip", "observation": "No obvious large fragment at these epsilon views; no universal safety claim."}
+    },
+    "pen6Corner": {
+      "observations": 3,
+      "sourceGeometricTurn": "1296880/2330539",
+      "progress": [0.5564721293086904, 0.5564721294086904, 0.5564721295086904],
+      "bad": [],
+      "errors": [],
+      "ordinaryBad": [],
+      "paintBad": [],
+      "observation": "Joined horizontal/vertical head and thick advance below the horizontal were visible.",
+      "sourceOrPublisherClockEquivalent": false
+    }
+  },
+  "observationAccounting": {
+    "firstPrefixStates": 16,
+    "otherCoarse": 99,
+    "pen2FineEnd": 3,
+    "otherEpsilon": 11,
+    "pen6Corner": 3,
+    "categoryTotal": 132,
+    "notAClaimOf132UniqueControllers": true,
+    "notAnAllPassClaim": true
+  },
+  "remaining": [
+    "Resolve observed pen2 and pen4 initial large-ink failures without changing source P/Q/width/weights.",
+    "Obtain fresh publisher direction/boundary evidence before all12 approval; old directionsPassed=false and otherElevenPensReviewed=false are not promoted."
+  ],
+  "postRun": {"pid": 16625, "port": 59412, "pidAbsent": true, "portClosed": true, "tab": "1", "tabClosed": true},
+  "privateMediaFilesWritten": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "registeredCountsUnchanged": {"applied": 5915, "remaining": 63}
+}
