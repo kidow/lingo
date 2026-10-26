@@ -82,7 +82,7 @@ export function WritingPractice({ character }: { character: HanjaCharacter }) {
         {reference && !started && <div className="pointer-events-none absolute inset-4 text-accent/20" aria-hidden>
           <HanjaStudyGlyph character={character} className="h-full w-full" decorative />
         </div>}
-        {diagram && <div className={`pointer-events-none absolute inset-4 text-accent/60 ${started ? '' : 'invisible'}`}>{diagram}</div>}
+        {diagram && <div className={`pointer-events-none absolute inset-4 text-accent opacity-60 ${started ? '' : 'invisible'}`}>{diagram}</div>}
         <canvas
           ref={canvas}
           data-vaul-no-drag
