@@ -1,0 +1,103 @@
+{
+  "schema": "hanja-independent-whole-native-review/v1",
+  "date": "2026-10-27",
+  "glyph": "菰",
+  "root": "u83f0-var-001",
+  "status": "HOLD-whole-grass-horizontal-connectivity",
+  "reviewer": "ROOT direct browser panel observation, tab3",
+  "recordedBy": "remaining_inventory_v2 from ROOT observation; recording agent did not operate browser",
+  "input": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u83f0-var-001-whole-2026-10-27/config.json",
+      "SHA256": "30f8795f0605ca9c8c40ba512a415adeb8c29905ab4fe4d79fc438fd1d43e201"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "832a413436661c202c1404c9a15742a80bf4b6879d76989592357ee0a03647d1"
+    },
+    "inputSHA256": {
+      "docs/hanja-goal-glyphwiki-batch395-2026-10-09/metadata.json": "0c5b179274c993aa2f19af5f736d07534d20f2f2a4b7a5fa69e56adaab75ba70",
+      "docs/hanja-goal-glyphwiki-batch395-2026-10-09/review.json": "214a514c34cd6c71c699fbef21d074832d8f39a882714dae211e39edc8961ee1",
+      "docs/hanja-source-alternative-u83f0-var-001-2026-10-27/sources.json": "a4216b0ef0fdde77310ec839d4443299450a4e532e718d8c254e6961c8c4dc25",
+      "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/capture.json": "548af8aadfb2717fa35ed115dc2703bb18562583ad67eadf94d15dbb1354eeed",
+      "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/capture-once.mjs": "eda3f6338fb54e965ff1b23ef641b0c11c04c5bdf9e82a29664514e2d4ff54e7",
+      "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/engine-whole-u83f0-var-001.json": "1cb6611538476804f6657d3b4d9d8b8e09828cbc8a53c076324531f038474629",
+      "docs/hanja-actual-engine-capture-u85a9-hkcs-2026-10-24/capture.json": "ab6f45a9c05f357e08c5ffd410053eecf51185a2c1ca73bf6742d3174cd305ef"
+    },
+    "source": {
+      "path": "docs/hanja-source-alternative-u83f0-var-001-2026-10-27/sources.json",
+      "SHA256": "a4216b0ef0fdde77310ec839d4443299450a4e532e718d8c254e6961c8c4dc25",
+      "rootVersion": 3,
+      "rootVersionType": "number",
+      "records": 6
+    },
+    "actualFull5": {
+      "path": "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/engine-whole-u83f0-var-001.json",
+      "SHA256": "1cb6611538476804f6657d3b4d9d8b8e09828cbc8a53c076324531f038474629",
+      "raw": 13,
+      "calls": 15,
+      "polygons": 32
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/capture.json",
+      "SHA256": "548af8aadfb2717fa35ed115dc2703bb18562583ad67eadf94d15dbb1354eeed"
+    }
+  },
+  "reference": {
+    "domesticGlyph": "菰",
+    "catalogStrokes": 12,
+    "domesticStrokes": 12,
+    "SVGBytes": 6589,
+    "SVGSHA256": "d46c38547b447d583edc3734f340e47f362e4c799e1c2b6513bc5b90e3c4c4ea",
+    "privateMediaSaved": false
+  },
+  "observation": {
+    "freshWholeScenes": 1,
+    "visiblePanels": 2,
+    "wholeOnly": true,
+    "sourceGrassHorizontal": "One continuous horizontal crosses both upper verticals.",
+    "domesticGrassHorizontals": "Two separate upper horizontals have a visible white gap in the middle.",
+    "lowerChildAndMelonComponentsVisibleInBoth": true,
+    "lowerComponentsCompatibilityApproved": false,
+    "wholeCompatibilityConfirmed": false,
+    "decisiveMismatch": "The original variant whole does not match the observed reference grass-horizontal connectivity.",
+    "rawRowCountUsedAsWholeVerdict": false,
+    "priorHKOrU83f0KHoldsTransferred": false,
+    "melonBodyDeclaredWrong": false,
+    "partsSubstitutedToRepair": false,
+    "originalU3013AliasMetadataPreserved": true,
+    "groupingInferred": false,
+    "directionsReviewed": false
+  },
+  "validation": {
+    "ROOTConfirmedCleanup": true,
+    "recordScope": "Fresh whole-view grass-connectivity counterexample only; source grouping, direction and animation remain unapproved."
+  },
+  "postRun": {
+    "PID": 45598,
+    "pidAbsent": true,
+    "port": 59412,
+    "portClosed": true,
+    "tab": "3",
+    "tabClosed": true,
+    "confirmedBy": "ROOT"
+  },
+  "wholeCompatibilityApproved": false,
+  "approval": {
+    "wholeShape": false,
+    "sourceOrder": false,
+    "direction": false,
+    "grouping": false,
+    "contactClock": false,
+    "nativeAnimation": false,
+    "runtime": false
+  },
+  "nativeAnimationApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "This is a new direct variant whole observation, not a conclusion from its raw-row count or a transferred HK/older-k HOLD.",
+    "Only the top grass-horizontal connectivity is the stated counterexample; no lower 子/瓜 component compatibility or incompatibility is approved.",
+    "Original U+3013 metadata and its u74dc-t alias reference remain unchanged; no part replacement or geometry edit is used.",
+    "No source-order, direction, logical12 grouping, contact clock, animation, private media file, engine replay or runtime approval."
+  ]
+}
