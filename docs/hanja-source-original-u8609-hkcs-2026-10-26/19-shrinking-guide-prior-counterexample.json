@@ -1,0 +1,79 @@
+{
+  "pen": 19,
+  "mask": 2,
+  "Q0": [
+    "7465599999999999/100000000000000",
+    "3653/50"
+  ],
+  "priorRight": "1493/20",
+  "strictGapX": "599999999999/100000000000000",
+  "Q0StrictInsideHead": true,
+  "headMargins": [
+    "421799999999999/40000000000000",
+    "3855600000000009/200000000000000",
+    "2143200000000003/200000000000000",
+    "897000000000001/40000000000000",
+    "901799999999997/50000000000000"
+  ],
+  "strictHeadLInfRadius": "421799999999999/220000000000000",
+  "DmaxStrict": "599999999999/400000000000000",
+  "supportBound": "All prefix centers are within D of Q0; every guide/cap radius <=D, hence all displayed support lies within 2D of Q0.",
+  "positiveInk": "For 0<D<Dmax, the source head contains the start disk of radius D; visible original ink is nonempty with positive area.",
+  "separation": "For 0<D<Dmax<=gap/4, displayed support x>priorRight+gap/2. It is disjoint from this completed original prior H.",
+  "scope": "Counterexample to all-positive-D direct prior-H contact for the proposed source-centered shrinking tube only; not a native observation or an animation impossibility.",
+  "schema": "hanja-shrinking-guide-prior-counterexample/v1",
+  "date": "2026-10-26",
+  "glyph": "蘉",
+  "fixture": "docs/hanja-source-original-u8609-hkcs-2026-10-26/fixtures.json",
+  "fixtureSHA256": "35a774f8c744cd0a6ccd4454221ce4f629860581434c57413696b830912e4ca6",
+  "geometrySHA256": "36c6d68c80e42dd733c2a293a9cbf7f4dd5e72f15d1e9fd5c4109b4253ab19b2",
+  "sourceFields": {
+    "outline": "M76.9 75 L73.85 77.95 L70.5 80.7 L66.8 83.15 L62.8 85.35 L58.45 87.35 L53.8 89.1 L48.85 90.6 L43.55 91.85 L37.95 92.8 L32 93.45 L31.85 92.55 L37.55 90.95 L42.85 89.25 L47.85 87.45 L52.45 85.55 L56.65 83.5 L60.5 81.3 L64 78.95 L67.15 76.45 L69.95 73.85 L72.35 71.05 Z M71.65 72.05 L74.65 69.55 L80.15 74.05 L77.65 75.55 L71.65 78.05 Z",
+    "bounds": [
+      31.85,
+      69.55,
+      80.15,
+      93.45
+    ],
+    "direction": "curve",
+    "weight": 47.119718,
+    "revealPath": "M74.65599999999999 73.06 Q61.84959999999999 87.88 31.967999999999996 93.00999999999999",
+    "revealWidth": 14
+  },
+  "completedPrior": {
+    "outline": "M39.4 72.05 L74.65 72.05 L74.65 74.05 L39.4 74.05 Z",
+    "bounds": [
+      39.4,
+      72.05,
+      74.65,
+      74.05
+    ],
+    "direction": "right",
+    "weight": 35.2176
+  },
+  "script": "docs/hanja-source-original-u8609-hkcs-2026-10-26/verify-19-shrinking-guide-prior-counterexample.py",
+  "scriptSHA256": "9bd6d9a3a81d9d7279d09445938d4383bf68db598879eef3b98556ec7f31421b",
+  "proposedCandidate": {
+    "displayMaskGuideWidth": "2*min(7,D)",
+    "startEndCapRadius": "min(7,D)",
+    "D": "p*L",
+    "originalSourceWidth": 14,
+    "originalQAndPUnchanged": true
+  },
+  "decision": "HOLD proposed simple shrinking-guide family: certified initial positive current ink is strictly disjoint from the exact completed prior H.",
+  "limits": [
+    "Exact analytic source-only counterexample to immediate prior-H contact; other previously completed pens are not analyzed.",
+    "No original micro timing, browser stroke/tube equivalence, pixel or visual failure is claimed.",
+    "The original P/Q must not be moved, trimmed or joined by new ink. A different staged mask is not approved by this result."
+  ],
+  "sourcePOrQOrWidth14Changed": false,
+  "candidateImplemented": false,
+  "sharedChanged": false,
+  "engine": 0,
+  "projection": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "controlPolygonL1UpperLength": "3914874999999999/62500000000000",
+  "sufficientPositivePDomainUpper": "2999999999995/125275999999999968"
+}
