@@ -1,0 +1,159 @@
+{
+  "schema": "hanja-source-roundcap-initial-exposure/v1",
+  "date": "2026-10-26",
+  "glyph": "藇",
+  "pen": 17,
+  "mask": 1,
+  "fixture": "docs/hanja-source-original-u85c7-hkcs-2026-10-26/fixtures.json",
+  "fixtureSHA256": "fbb7b817d68a9c1a70064f8ab31b49237dbdfbc0ab69e33b6f77f5dd9aa0aed1",
+  "geometrySHA256": "f9815c9af484d5f5a81ee6833768ce5b9a4e1606e5f40cdc830fd1bfabc945fc",
+  "originalGuide": "M38.5 77.9725 Q26.5 86.425 7 92.865",
+  "originalRadius": 7,
+  "sourcePCount": 3,
+  "witness": {
+    "point": [
+      "39",
+      "163/2"
+    ],
+    "inOriginalPolygonIndex1Based": 3,
+    "Q0": [
+      "77/2",
+      "31189/400"
+    ],
+    "distanceSquaredToQ0": "2030921/160000",
+    "radiusSquared": 49,
+    "strictOpenBoxHalfWidth": "1/100",
+    "openBoxArea": "1/2500",
+    "corners": [
+      {
+        "point": [
+          "3899/100",
+          "8149/100"
+        ],
+        "triangleMargins": [
+          "1727/1000",
+          "1341/1000",
+          "1767/1000"
+        ],
+        "diskDistanceSquared": "403613/32000"
+      },
+      {
+        "point": [
+          "3899/100",
+          "8151/100"
+        ],
+        "triangleMargins": [
+          "1729/1000",
+          "643/500",
+          "91/50"
+        ],
+        "diskDistanceSquared": "2040641/160000"
+      },
+      {
+        "point": [
+          "3901/100",
+          "8149/100"
+        ],
+        "triangleMargins": [
+          "1691/1000",
+          "341/250",
+          "89/50"
+        ],
+        "diskDistanceSquared": "404253/32000"
+      },
+      {
+        "point": [
+          "3901/100",
+          "8151/100"
+        ],
+        "triangleMargins": [
+          "1693/1000",
+          "1309/1000",
+          "1833/1000"
+        ],
+        "diskDistanceSquared": "2043841/160000"
+      }
+    ],
+    "prefix16AllOriginalBoundsMaxY": "729/10",
+    "strictlyOutsidePrefix16": true,
+    "boxMinYMinusPrefixMaxY": "859/100"
+  },
+  "jumpCondition": "When p0 hides current ink but every positive p includes the unchanged original start disk radius7, this fixed positive-area original-P box is immediately exposed outside prefix16. The proof does not attribute additional ink to any raster/AA effect.",
+  "newGrowingCapCertificate": {
+    "pen": 17,
+    "mask": 1,
+    "syntax": "MQ",
+    "initialKind": "single-quadratic",
+    "guide": "M38.5 77.9725 Q26.5 86.425 7 92.865",
+    "initialArcMax": 7,
+    "firstLegLength": null,
+    "T": "1/2",
+    "K": "1/20",
+    "u": [
+      "-12",
+      "3381/400"
+    ],
+    "v": [
+      "-15/2",
+      "-161/80"
+    ],
+    "lambdaAt": "0",
+    "lambda": "34471161/160000",
+    "cross": "14007/160",
+    "chordSquaredMinusRadiusSquared": "529172961/2560000",
+    "curvatureMargin": "37821597412464775546281/409600000000000000",
+    "cosLower": "751/800",
+    "cosMinusRK": "471/800",
+    "strictAxis": "x",
+    "initialSufficientConditions": true,
+    "attempts": [
+      {
+        "T": "1/2",
+        "K": "1/20",
+        "ok": true,
+        "chordMargin": "529172961/2560000",
+        "curvatureMargin": "37821597412464775546281/409600000000000000",
+        "cosMinusRK": "471/800"
+      }
+    ],
+    "width": 14,
+    "radius": 7,
+    "weight": 34.843027,
+    "maskSHA256": "ea3790c5d9636f98512605988b68520c1e0ba0d898c384b55073ed8742466073",
+    "notRasterProof": true,
+    "PIntersectionConnectivityNotProved": true,
+    "notFullSweepProof": true,
+    "priorMaskContactClaimed": false
+  },
+  "methodSource": "docs/hanja-source-original-u705d-hkcs-m-2026-10-26/verify-independent-conditions.py",
+  "methodSourceSHA256": "4f18233d2bba8eb440506fc2a4134b052fa304bfaa27ef9826b39ec9ae3b1221",
+  "limits": [
+    "New T=1/2,K=1/20 sufficient guide-initial conditions were evaluated for this target; they do not prove original-P intersection connectivity or the entire sweep.",
+    "Existing Q7 coverage and paint equivalence are reused without rerun. No source guide/originalP/width/weight is changed.",
+    "The certificate is source-only; new growing-cap runtime/native approval is absent."
+  ],
+  "previousCoverageRecomputed": false,
+  "previousPaintRecomputed": false,
+  "engine": 0,
+  "projection": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "existingEvidence": [
+    {
+      "path": "docs/hanja-source-original-u85c7-hkcs-2026-10-26/full-Q7-coverage-proof.json",
+      "SHA256": "f0a7869e25b7aa27d50f8009fbcc2ea66556f5cc3c3d68ee1af5412b8ddc4765"
+    },
+    {
+      "path": "docs/hanja-source-original-u85c7-hkcs-2026-10-26/paint-and-compound-contacts-proof.json",
+      "SHA256": "145b66073163a60abd737344d6204a92a5b34eafa37bc954034fbd31a8f5eebe"
+    },
+    {
+      "path": "docs/hanja-source-alternative-u85c7-hkcs-2026-10-26/sources.json",
+      "SHA256": "cae48a831179493986a2aa64127c80be2d29b7d6c3d28a750714b3bbe67767f9"
+    },
+    {
+      "path": "docs/hanja-actual-engine-capture-u85c7-hkcs-2026-10-26/engine-whole-hkcs_m85c7.json",
+      "SHA256": "fec68385651daa6711291f6e1d441333377c01cf1e8baeb2fe3480bb9ab10749"
+    }
+  ]
+}
