@@ -1,0 +1,78 @@
+{
+  "schema": "hanja-source-initial-conditions/v1",
+  "date": "2026-10-26",
+  "glyph": "藇",
+  "root": "hkcs_m85c7",
+  "fixture": "docs/hanja-source-original-u85c7-hkcs-2026-10-26/fixtures.json",
+  "fixtureSHA256": "fbb7b817d68a9c1a70064f8ab31b49237dbdfbc0ab69e33b6f77f5dd9aa0aed1",
+  "geometrySHA256": "f9815c9af484d5f5a81ee6833768ce5b9a4e1606e5f40cdc830fd1bfabc945fc",
+  "initialCases": [
+    {
+      "pen": 5,
+      "mask": 1,
+      "syntax": "MQ",
+      "initialKind": "single-quadratic",
+      "guide": "M35 28.0625 Q27 31.2825 18 34.1",
+      "initialArcMax": 7,
+      "firstLegLength": null,
+      "T": "1/2",
+      "K": "1/20",
+      "u": [
+        "-8",
+        "161/50"
+      ],
+      "v": [
+        "-1",
+        "-161/400"
+      ],
+      "lambdaAt": "0",
+      "lambda": "185921/2500",
+      "cross": "161/25",
+      "chordSquaredMinusRadiusSquared": "73710081/2560000",
+      "curvatureMargin": "6361857729984961/1562500000000",
+      "cosLower": "751/800",
+      "cosMinusRK": "471/800",
+      "strictAxis": "x",
+      "initialSufficientConditions": true,
+      "attempts": [
+        {
+          "T": "1/2",
+          "K": "1/20",
+          "ok": true,
+          "chordMargin": "73710081/2560000",
+          "curvatureMargin": "6361857729984961/1562500000000",
+          "cosMinusRK": "471/800"
+        }
+      ],
+      "width": 14,
+      "radius": 7,
+      "weight": 18.040272,
+      "maskSHA256": "339dbf6062c80bff7f3aa8bd180bca686f61a21ed03238a4abde12f57c08eb55",
+      "notRasterProof": true,
+      "PIntersectionConnectivityNotProved": true,
+      "notFullSweepProof": true,
+      "priorMaskContactClaimed": false
+    }
+  ],
+  "methodSource": "docs/hanja-source-original-u705d-hkcs-m-2026-10-26/verify-independent-conditions.py",
+  "methodSourceSHA256": "4f18233d2bba8eb440506fc2a4134b052fa304bfaa27ef9826b39ec9ae3b1221",
+  "fullQCoverageComputed": false,
+  "compoundContactApproved": false,
+  "flag5TerminalApproved": false,
+  "sourceEngineReplay": 0,
+  "sourceProjection": 0,
+  "sourcePGuideWidthWeightChanged": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "verifierReuse": {
+    "path": "docs/hanja-source-original-u6145-hkcs-2026-10-26/verify-six-caps-initial-conditions.py",
+    "SHA256": "d746812aaa1a77630619d89fa9a619a227a2cc6c22bd2c5e0007a2dedfef7b73",
+    "execution": "RAM-only exact same rational loop; fixture/root/geometry pins and TARGETS=[[5,1]] substituted; no old target loops executed",
+    "codeSHA256": "2c0c6eb23ae6e38bd56f662d440f25c38ed4ae5dccd94ab063b7ae3902b4dbcf"
+  },
+  "initialFixedStripRisk": {
+    "path": "docs/hanja-source-original-u85c7-hkcs-2026-10-26/initial-wide-strip-risks-proof.json",
+    "SHA256": "90e383d0b7fffcd4b02683bebe73bd94d01d3777e0940302416b188e18f4cac7",
+    "genericFixedStripApproved": false
+  }
+}
