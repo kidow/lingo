@@ -1,0 +1,141 @@
+{
+  "schema": "hanja-single-public-whole-capture/v1",
+  "date": "2026-10-26",
+  "glyph": "逈",
+  "source": {
+    "path": "docs/hanja-source-alternative-u9008-hkcs-2026-10-26/sources.json",
+    "SHA256": "966e792241d603fbde7bd3c2ec45615ce4e48d326b4294c34176942edc88de22",
+    "root": "hkcs_m9008",
+    "rootVersion": "1",
+    "records": 3,
+    "originalRecordNames": [
+      "hkcs_m9008",
+      "hkcs_m8fb6-p05-s01",
+      "hkcs_m5411"
+    ],
+    "originalRecordVersionTypes": [
+      {
+        "name": "hkcs_m9008",
+        "version": "1",
+        "type": "string"
+      },
+      {
+        "name": "hkcs_m8fb6-p05-s01",
+        "version": 2,
+        "type": "number"
+      },
+      {
+        "name": "hkcs_m5411",
+        "version": 1,
+        "type": "number"
+      }
+    ]
+  },
+  "helper": {
+    "path": "docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/capture-once.mjs",
+    "SHA256": "0ddd90c3aa324e4730b629185f54c27a84f2b0e89543fff82b2e50e69d3f3a5a"
+  },
+  "full5": {
+    "path": "docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/engine-whole-hkcs_m9008.json",
+    "SHA256": "5c94337d91522ab21760d32fa40ea070984ef2621f8114fff78935fb0b2c8ce2",
+    "keys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "raw": 14,
+    "calls": 15,
+    "polygons": 27
+  },
+  "engine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "actualLoadedHashes": {
+      "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+      "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+      "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+      "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+      "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+      "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+      "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+    },
+    "vendorReference": {
+      "path": "docs/hanja-actual-engine-capture-u85a9-hkcs-2026-10-24/capture.json",
+      "SHA256": "ab6f45a9c05f357e08c5ffd410053eecf51185a2c1ca73bf6742d3174cd305ef"
+    },
+    "newHeaderFromExecutedCodeBytesOnly": true
+  },
+  "captureFacts": {
+    "actualVMContexts": 1,
+    "vendorEvaluations": 8,
+    "captureEvaluation": 1,
+    "makeGlyphCalls": 1,
+    "actualProviderRoot": "hkcs_m9008",
+    "aliasInserted": false,
+    "wholePolygonsSHA256": "61e4f75383f7caaaf44c48faa3fcb809400a481b6775bd3c82d99f8ed5746a36",
+    "wholeAndTracePolygonsExactlySame": true,
+    "instrumentSHA256": "add218dbddeb1531c4e8da83806d97983593184ea726adc15315b1fc2836a08c",
+    "raw": 14,
+    "calls": 15,
+    "polygons": 27,
+    "nativeApproval": false,
+    "runtimeApplied": false,
+    "newHeaderFromExecutedCodeBytesOnly": true,
+    "oldHeaderOrBodyCombined": false,
+    "sourceProjection": 0
+  },
+  "finiteEvidence": {
+    "nonfiniteGeometry": [],
+    "unusedTailKinds": {
+      "NaN": 44
+    },
+    "allActiveRawAndPCoordinatesFinite": true,
+    "unusedTailNeverCoerced": true
+  },
+  "emptyFieldParserEvidence": {
+    "originalRootFirstRow": "99::0:0:0:200:200:hkcs_m8fb6-p05-s01",
+    "emptyField0based": 1,
+    "originalFieldValue": "",
+    "sourceModified": false,
+    "behavior": "pinned Kage.getEachStrokes component branch passes Math.floor(columns[1]); Math.floor(\"\") is0",
+    "engineFile": "kage.js",
+    "engineSHA256": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+    "componentBranchLines": [
+      74,
+      85
+    ],
+    "sourceLiteralPreserved": true,
+    "activeRawAndPFiniteInActualVM": true
+  },
+  "unusedTailPolicy": "Original engine unused raw NaN tails serialize to JSON null normally; they are counted separately, never replaced/coerced, and are not active-geometry failures.",
+  "metadataRows": [],
+  "sourceDataChanged": false,
+  "referenceKeysPreserved": true,
+  "versionTypesPreserved": true,
+  "aliasInserted": false,
+  "partsSubstituted": false,
+  "sourceCoordinatesChanged": false,
+  "sourceProjection": 0,
+  "privateDictionaryFetches": 0,
+  "privateMediaFilesWritten": 0,
+  "newServer": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "approval": {
+    "whole": false,
+    "individualStrokes": false,
+    "individualGrouping": false,
+    "order": false,
+    "direction": false,
+    "contact": false,
+    "clock": false,
+    "runtime": false
+  },
+  "limits": [
+    "This actual whole belongs only to the exact new authored root; the older current-J7/400 contact HOLD is neither recomputed nor transferred.",
+    "Captured raw/call/P counts are source facts, not domestic9/10 grouping or whole-shape approval.",
+    "No logical projection, private media fetch, alias insertion, source normalization or coordinate correction."
+  ]
+}
