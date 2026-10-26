@@ -131,3 +131,92 @@ test('瑃 fixed source/projection geometry and two distinct proof pins retain th
  for(const key of['sourcePOrQOrWidth14OrCalculatedWeightChanged','originalClockEquivalent','appRendererConnected','nativeApproval','runtimeApplied']as const)assert.equal(REVIEWED_U7443_G_SOURCE_WINDOWS[key],false)
  for(const[path,pin]of Object.entries(REVIEWED_U7443_G_SOURCE_WINDOW_INPUT_SHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),pin)
 })
+
+import {reviewedU7443GHead9Policy,sampleReviewedU7443GHead9Frame,verifyReviewedU7443GHead9PriorDOM,commitReviewedU7443GHead9,REVIEWED_U7443_G_SOURCE_WINDOW_INPUT,REVIEWED_U7443_G_HEAD9_SOURCE,REVIEWED_U7443_G_HEAD9_INPUT_SHA256} from './hanja-stroke-source-windows-u7443-g.ts'
+const head9Policy=()=>{const p=reviewedU7443GHead9Policy(context(),8,0);assert(p);return p}
+const H9='data-u7443-g-source-head9-'
+function head9DOM(progress:number,prior7Progress=1){
+ const p=head9Policy(),doc=new D(),owner=new N('svg',doc),outer=new N('g',doc)
+ owner.setAttribute('viewBox','0 0 100 100');owner.append(outer);outer.setAttribute('data-stroke-outlines','true')
+ for(let i=0;i<13;i++){const n=new N('g',doc);n.setAttribute('data-outline-stroke',String(i+1));outer.append(n)}
+ const priorSlot=outer.children[6],prior=new N('path',doc),slot=outer.children[8],g=new N('g',doc),defs=new N('defs',doc),c=new N('clipPath',doc),r=new N('rect',doc),ink=new N('path',doc),id='head9-8-0'
+ priorSlot.append(prior);prior.setAttribute('d',p.priorSegment.outline)
+ slot.append(g);g.append(defs);defs.append(c);c.append(r);g.append(ink)
+ for(const n of[outer,...outer.children,prior,g,defs,c,r,ink])n.ownerSVGElement=owner
+ g.setAttribute('data-stroke-start-gate',p.id);g.setAttribute('data-stroke-reveal-policy',p.kind);g.setAttribute('data-stroke-reveal-progress',String(progress));g.setAttribute(H9+'clip',id)
+ g.setAttribute(H9+'prior-stroke','7');g.setAttribute(H9+'prior-progress',String(prior7Progress))
+ c.setAttribute('id',id+'-u7443-g-source-head9-clip');c.setAttribute('clipPathUnits','userSpaceOnUse');ink.setAttribute('d',p.segment.outline);ink.setAttribute('visibility','hidden')
+ return {p,doc,owner,outer,priorSlot,prior,slot,g,defs,c,r,ink,id,nodes:{group:g,ink,rect:r,clipPath:c}as unknown as Parameters<typeof commitReviewedU7443GHead9>[5]}
+}
+test('瑃9 keeps4/8 selector unchanged and separately binds author anchor plus source stroke7',()=>{
+ const p=head9Policy(),c=context()
+ assert.equal(reviewedU7443GSourceWindowPolicy(c,8,0),null)
+ for(const i of[0,3,6,7,9,12])assert.equal(reviewedU7443GHead9Policy(c,i,0),null)
+ assert.equal(reviewedU7443GHead9Policy({...c},8,0),null)
+ assert.equal(p.priorStroke,7);assert.deepEqual(p.priorSegment,s[6][0]);assert.deepEqual(p.segment,s[8][0]);assert.deepEqual(p.anchor,[73,44.75])
+ const input=REVIEWED_U7443_G_SOURCE_WINDOW_INPUT
+ assert(Object.isFrozen(input));assert(makeReviewedU7443GSourceWindowContext(input.fullProof,input.identity,s))
+ const zero=sampleReviewedU7443GHead9Frame(p,p.segment,0,0,false);assert.equal(zero.visible,false);assert.equal(zero.outline,null)
+ for(const progress of[1e-6,.001,.01,.03,.5,.999999,1]){
+  for(const [priorProgress,opaque]of[[0,true],[.999999,true],[1,false]]as const)assert.throws(()=>sampleReviewedU7443GHead9Frame(p,p.segment,progress,priorProgress,opaque))
+  const f=sampleReviewedU7443GHead9Frame(p,p.segment,progress,1,true)
+  assert.equal(f.sourceGuide,'M72.53999999999999 44.11 Q79.91 59.3 90.965 66.16');assert.equal(f.sourceWidth,14)
+  assert.deepEqual(f.sourceQ0,[72.53999999999999,44.11]);assert.notDeepEqual(f.sourceQ0,p.anchor);assert.equal(f.anchorIsOriginalQ0,false)
+  assert.equal(f.originalClockEquivalent,false);assert.equal(f.priorStroke,7);assert.equal(f.UARead,false)
+  assert.deepEqual(f.authorAnchorOffsetFromOriginalQ0,[73-f.sourceQ0[0],44.75-f.sourceQ0[1]])
+  assert.equal(f.originalPDirect,progress===1)
+ }
+ assert.throws(()=>sampleReviewedU7443GHead9Frame({...p},p.segment,.03,1,true))
+ let reads=0;const bad=Object.defineProperty({...p},'segment',{get(){reads++;return p.segment}})
+ assert.throws(()=>sampleReviewedU7443GHead9Frame(bad,p.segment,.03,1,true));assert.equal(reads,0)
+ for(const patch of[{outline:p.segment.outline+' '},{revealPath:p.segment.revealPath+' '},{revealWidth:15},{weight:p.segment.weight+.01}])assert.throws(()=>sampleReviewedU7443GHead9Frame(p,{...p.segment,...patch},.03,1,true))
+ for(const n of[-1,NaN,Infinity,1.1])assert.throws(()=>sampleReviewedU7443GHead9Frame(p,p.segment,.03,n,true))
+})
+test('瑃9 verifies current separate7 direct opaque P and commits rect4, hidden0 and full1',()=>{
+ for(const progress of[0,1e-6,.03,.5,1]){
+  const d=head9DOM(progress,progress===0?0:1),prior7Progress=progress===0?0:1
+  assert.equal(verifyReviewedU7443GHead9PriorDOM(d.p,d.g as unknown as SVGGElement,progress,prior7Progress),progress!==0)
+  const result=commitReviewedU7443GHead9(d.p,d.p.segment,progress,prior7Progress,d.id,d.nodes)
+  assert.equal(result.status,progress===0?'empty':progress===1?'complete':'visible')
+  const frame=sampleReviewedU7443GHead9Frame(d.p,d.p.segment,progress,prior7Progress,progress!==0),shape=frame.clip??{x:73,y:44.75,width:0,height:0}
+  for(const[k,v]of Object.entries(shape))assert.equal(d.r.getAttribute(k),String(v))
+  assert.equal(d.ink.getAttribute('d'),d.p.segment.outline);assert.equal(d.prior.getAttribute('d'),s[6][0].outline)
+  assert.equal(d.ink.getAttribute('visibility'),progress===0?'hidden':'visible');assert.equal(d.ink.getAttribute(H9+'committed'),'true')
+  assert.equal(d.ink.getAttribute('clip-path'),progress===1?null:'url(#'+d.id+'-u7443-g-source-head9-clip)')
+ }
+})
+test('瑃9 rejects missing/wrong7, incomplete progress, owner, effects, visibility and direct-geometry changes',()=>{
+ const reject=(change:(d:ReturnType<typeof head9DOM>)=>void,prior7Progress=1)=>{const d=head9DOM(.03,prior7Progress);change(d);assert.equal(verifyReviewedU7443GHead9PriorDOM(d.p,d.g as unknown as SVGGElement,.03,prior7Progress),false);const r=commitReviewedU7443GHead9(d.p,d.p.segment,.03,prior7Progress,d.id,d.nodes);assert.equal(r.status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden')}
+ reject(()=>{},0);reject(()=>{},.999999)
+ reject(d=>{d.priorSlot.children=[]})
+ reject(d=>{d.prior.setAttribute('d',s[7][0].outline)})
+ reject(d=>{d.g.setAttribute(H9+'prior-stroke','8')})
+ reject(d=>{d.g.setAttribute(H9+'prior-progress','0')})
+ reject(d=>{d.prior.ownerSVGElement=new N('svg',d.doc)})
+ reject(d=>{d.prior.ownerDocument=new D()})
+ reject(d=>{d.prior.setAttribute('visibility','hidden')})
+ reject(d=>{d.prior.css.set('visibility','hidden')})
+ reject(d=>{d.prior.css.set('opacity','.5')})
+ reject(d=>{d.prior.css.set('fill','rgba(66,85,255,.5)')})
+ reject(d=>{d.prior.css.set('fillOpacity','.5')})
+ reject(d=>{d.prior.css.set('d','path("M0 0 L1 1 Z")')})
+ for(const k of['mask','clip-path','transform','filter','pathLength','stroke-dasharray','stroke-dashoffset'])reject(d=>{d.prior.setAttribute(k,k==='pathLength'?'1':'changed')})
+ for(const [k,v]of[['filter','blur(1px)'],['mask-image','url(#x)'],['transform','matrix(1,0,0,1,1,0)'],['display','none']])reject(d=>{d.priorSlot.css.set(k,v)})
+ reject(d=>{d.outer.children[6]=d.outer.children[7]})
+})
+test('瑃9 rechecks separate7 after rect updates and after target visibility mutation',()=>{
+ for(const stage of['rectangle','visible','style-read']as const){
+  const d=head9DOM(.03);let once=false
+  if(stage==='style-read')d.doc.onStyleRead=()=>{if(!once){once=true;d.prior.ownerSVGElement=new N('svg',d.doc)}}
+  else d.doc.onSet=(node,k,v)=>{if(!once&&((stage==='rectangle'&&node===d.r&&k==='x')||(stage==='visible'&&node===d.ink&&k==='visibility'&&v==='visible'))){once=true;d.prior.setAttribute('clip-path','url(#changed)')}}
+  const result=commitReviewedU7443GHead9(d.p,d.p.segment,.03,1,d.id,d.nodes)
+  assert.equal(result.status,'hidden');assert.equal(d.ink.getAttribute('visibility'),'hidden');assert.equal(d.ink.getAttribute(H9+'committed'),'false')
+ }
+})
+test('瑃9 preserves finite-rect and nonadjacent-prior proof scopes without replaying geometry',()=>{
+ assert.equal(REVIEWED_U7443_G_HEAD9_SOURCE.priorStroke,7);assert.equal(REVIEWED_U7443_G_HEAD9_SOURCE.priorIsSeparateNonAdjacentStroke,true)
+ assert.equal(REVIEWED_U7443_G_HEAD9_SOURCE.eventCount,75);assert.equal(REVIEWED_U7443_G_HEAD9_SOURCE.openIntervals,74);assert.equal(REVIEWED_U7443_G_HEAD9_SOURCE.closedPositiveStates,74)
+ assert.equal(REVIEWED_U7443_G_HEAD9_SOURCE.priorContactAreaLowerCoefficient,'1/2500')
+ for(const key of['anchorIsOriginalQ0','originalClockEquivalent','sourcePOrQOrWidthOrWeightChanged','appRendererConnected','nativeApproval','runtimeApplied']as const)assert.equal(REVIEWED_U7443_G_HEAD9_SOURCE[key],false)
+ for(const[path,pin]of Object.entries(REVIEWED_U7443_G_HEAD9_INPUT_SHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),pin)
+})

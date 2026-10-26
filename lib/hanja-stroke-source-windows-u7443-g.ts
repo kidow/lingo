@@ -115,3 +115,105 @@ export const REVIEWED_U7443_G_SOURCE_WINDOW_INPUT_SHA256=Object.freeze({
  'docs/hanja-source-alternative-u7443-g-2026-10-26/sources.json':'f3d3984cc8d32d7fb6092c203deabebe4db60ee4768f6d5d1df736aba3a92ae1',
  'docs/hanja-actual-engine-capture-u7443-g-2026-10-26/capture.json':'27753f9d6e98323e8d3cb4f59c9f07b32659fc1d1baf3a58df697dab000a3350'
 })
+
+/** Fixed public inputs for the unchanged strict three-argument factory; never an outlines-only gate. */
+export const REVIEWED_U7443_G_SOURCE_WINDOW_INPUT=Object.freeze({fullProof:FIXED.fullProof,identity:FIXED.identity})
+const HEAD9_PREFIX='data-u7443-g-source-head9-'
+export type ReviewedU7443GHead9Policy=Readonly<{
+ id:'u7443-g-source-head9-9-1';kind:'source-head-point-window-u7443-g';pen:9;mask:1;priorStroke:7;
+ segment:HanjaOutlineSegment;priorSegment:HanjaOutlineSegment;anchor:readonly[number,number];sourceBounds:readonly number[];
+ proofFingerprint:string;priorContactFingerprint:string
+}>
+const HEAD9_POLICY:ReviewedU7443GHead9Policy=freeze({
+ id:'u7443-g-source-head9-9-1',kind:'source-head-point-window-u7443-g',pen:9,mask:1,priorStroke:7,
+ segment:STROKES[8][0],priorSegment:STROKES[6][0],anchor:[73,44.75]as const,sourceBounds:STROKES[8][0].bounds,
+ proofFingerprint:'5618d9cb38f27fc441064a285a67c74cc3ed65ca8819db2ed25ed9b26e130fe0',
+ priorContactFingerprint:'ec675f3f61a96e538a9ef28d9670615186f838b214351a31f01d9afc2be02e70'
+})
+const HEAD9_Q0=Object.freeze(STROKES[8][0].revealPath!.match(/-?\d+(?:\.\d+)?/g)!.slice(0,2).map(Number))
+export function reviewedU7443GHead9Policy(context:ReviewedU7443GSourceWindowContext|null,pen:number,mask:number):ReviewedU7443GHead9Policy|null{
+ return context===CONTEXT&&pen===8&&mask===0?HEAD9_POLICY:null
+}
+export type ReviewedU7443GHead9Frame=Readonly<{
+ policyId:string;progress:number;phase:'empty'|'source-head9-point-window'|'full';visible:boolean;originalPDirect:boolean;
+ outline:string|null;clip:Readonly<{x:number;y:number;width:number;height:number}>|null;
+ sourceGuide:string;sourceWidth:14;sourceQ0:readonly number[];authorAnchorOffsetFromOriginalQ0:readonly number[];
+ anchorIsOriginalQ0:false;priorStroke:7;authorClock:'source-author-head9-point-rectangle';originalClockEquivalent:false;UARead:false
+}>
+export function sampleReviewedU7443GHead9Frame(policy:ReviewedU7443GHead9Policy,segment:HanjaOutlineSegment,p:number,prior7Progress=0,prior7Opaque=false):ReviewedU7443GHead9Frame{
+ if(policy!==HEAD9_POLICY||!same(segment,HEAD9_POLICY.segment))throw Error('Private 瑃9 policy and exact original P/Q/width/weight required')
+ if(!Number.isFinite(p)||p<0||p>1||!Number.isFinite(prior7Progress)||prior7Progress<0||prior7Progress>1||typeof prior7Opaque!=='boolean')throw Error('Exact current-frame unit progress required')
+ if(p>0&&(prior7Progress!==1||!prior7Opaque))throw Error('Actual opaque completed separate stroke7 required for 瑃9')
+ const [ax,ay]=HEAD9_POLICY.anchor,[x0,y0,x1,y1]=HEAD9_POLICY.sourceBounds
+ const clip=p>0&&p<1?Object.freeze({x:ax+(x0-ax)*p,y:ay+(y0-ay)*p,width:(x1-x0)*p,height:(y1-y0)*p}):null
+ return Object.freeze({policyId:policy.id,progress:p,phase:p===0?'empty':p===1?'full':'source-head9-point-window',visible:p>0,originalPDirect:p===1,outline:p===0?null:segment.outline,clip,sourceGuide:segment.revealPath!,sourceWidth:14,sourceQ0:HEAD9_Q0,authorAnchorOffsetFromOriginalQ0:Object.freeze([ax-HEAD9_Q0[0],ay-HEAD9_Q0[1]]),anchorIsOriginalQ0:false,priorStroke:7,authorClock:'source-author-head9-point-rectangle',originalClockEquivalent:false,UARead:false})
+}
+/** Non-adjacent prior is source stroke7, not previous mask or stroke8. Recheck current DOM, never cache true. */
+export function verifyReviewedU7443GHead9PriorDOM(policy:ReviewedU7443GHead9Policy,g:SVGGElement|null,progress:number,prior7Progress:number):boolean{
+ try{
+  if(policy!==HEAD9_POLICY||!g||!Number.isFinite(progress)||progress<0||progress>1||prior7Progress!==1)return false
+  const slot=g.parentNode,outer=slot?.parentNode,owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView
+  if(!slot||!outer||slot.nodeType!==1||outer.nodeType!==1||!owner||!view||view.document!==doc)return false
+  const current=slot as SVGGElement,outlines=outer as SVGGElement,priorSlot=outlines.children[6]as SVGGElement|undefined,prior=priorSlot?.children[0]as SVGPathElement|undefined
+  const clipId=g.getAttribute(HEAD9_PREFIX+'clip')
+  if(!priorSlot||!prior||!clipId||!/^[A-Za-z0-9_:.-]+$/.test(clipId)||!clipId.endsWith('-8-0'))return false
+  const exact=()=>g.localName==='g'&&g.parentNode===current&&current.parentNode===outlines&&current.children.length===1&&current.children[0]===g&&current.getAttribute('data-outline-stroke')==='9'&&outlines.getAttribute('data-stroke-outlines')==='true'&&outlines.children.length===13&&outlines.children[8]===current&&outlines.children[6]===priorSlot&&priorSlot.parentNode===outlines&&priorSlot.getAttribute('data-outline-stroke')==='7'&&priorSlot.children.length===1&&priorSlot.children[0]===prior&&prior.localName==='path'&&prior.parentNode===priorSlot&&prior.getAttribute('d')===HEAD9_POLICY.priorSegment.outline&&['pathLength','stroke-dasharray','stroke-dashoffset','mask','clip-path','transform','filter'].every(k=>prior.getAttribute(k)===null)&&['visible',null].includes(prior.getAttribute('visibility'))&&owner.getAttribute('viewBox')==='0 0 100 100'&&g.getAttribute('data-stroke-start-gate')===policy.id&&g.getAttribute('data-stroke-reveal-policy')===policy.kind&&g.getAttribute('data-stroke-reveal-progress')===String(progress)&&g.getAttribute(HEAD9_PREFIX+'clip')===clipId&&g.getAttribute(HEAD9_PREFIX+'prior-stroke')==='7'&&g.getAttribute(HEAD9_PREFIX+'prior-progress')===String(prior7Progress)
+  if(!exact())return false
+  const nodes:Element[]=[g,prior,priorSlot],seen=new Set<Element>();let n:Element|null=current
+  while(n){if(seen.has(n))return false;seen.add(n);nodes.push(n);if(n===owner)break;const parent:ParentNode|null=n.parentNode;n=parent&&parent.nodeType===1?parent as Element:null}
+  if(n!==owner)return false
+  const parents=new Map(nodes.map(node=>[node,node.parentNode]))
+  const valid=(node:Element)=>{
+   if(!node.isConnected||node.ownerDocument!==doc||node.namespaceURI!==NS||(node!==owner&&(node as SVGElement).ownerSVGElement!==owner)||node.parentNode!==parents.get(node)||['mask','clip-path','transform','filter'].some(k=>node.getAttribute(k)!==null))return false
+   const s=view.getComputedStyle(node)
+   return s.display!=='none'&&s.visibility==='visible'&&Number(s.opacity)===1&&Number(s.fillOpacity)===1&&s.transform==='none'&&s.filter==='none'&&s.clipPath==='none'&&['','none'].includes(s.getPropertyValue('mask-image'))&&s.mixBlendMode==='normal'&&['translate','rotate','scale'].every(k=>['','none'].includes(s.getPropertyValue(k)))
+  }
+  if(!nodes.every(valid))return false
+  const paint=view.getComputedStyle(prior)
+  if(paint.fillRule!=='nonzero'||paint.stroke!=='none'||!opaqueRGB(paint.fill)||!cssSourcePath(doc,paint.getPropertyValue('d').trim(),HEAD9_POLICY.priorSegment.outline))return false
+  return exact()&&doc.defaultView===view&&view.document===doc&&nodes.every(valid)&&exact()
+ }catch{return false}
+}
+export function commitReviewedU7443GHead9(policy:ReviewedU7443GHead9Policy,segment:HanjaOutlineSegment,progress:number,prior7Progress:number,clipId:string,nodes:ReviewedU7443GSourceWindowNodes){
+ const {group:g,ink:p,rect:r,clipPath:c}=nodes
+ const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute(HEAD9_PREFIX+'committed','false')}
+ reset()
+ try{
+  const f=sampleReviewedU7443GHead9Frame(policy,segment,progress,prior7Progress,verifyReviewedU7443GHead9PriorDOM(policy,g,progress,prior7Progress))
+  if(!g||!p||!r||!c||!/^[A-Za-z0-9_:.-]+$/.test(clipId)||!clipId.endsWith('-'+(policy.pen-1)+'-0'))throw Error('Exact 瑃 target nodes and id required')
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode,pen=g.parentNode,outer=pen?.parentNode
+  if(!owner||!view||view.document!==doc||!defs||!pen||!outer||defs.nodeType!==1||pen.nodeType!==1||outer.nodeType!==1)throw Error('Connected 瑃 SVG owner tree required')
+  const d=defs as SVGDefsElement,slot=pen as SVGGElement,outlines=outer as SVGGElement,key=clipId+'-u7443-g-source-head9-clip'
+  const shape=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
+  for(const [k,v]of Object.entries(shape))r.setAttribute(k,String(v))
+  if(f.originalPDirect)p.removeAttribute('clip-path');else p.setAttribute('clip-path','url(#'+key+')')
+  const expectedCSS=new Map<string,string>()
+  for(const [k,v]of Object.entries(shape)){const probe=doc.createElementNS(NS,'rect');probe.style.setProperty(k,String(v)+'px');expectedCSS.set(k,probe.style.getPropertyValue(k))}
+  const tree:Element[]=[g,p,d,c,r],seen=new Set<Element>();let n:Element|null=slot
+  while(n){if(seen.has(n))throw Error('Cyclic 瑃 owner');seen.add(n);tree.push(n);if(n===owner)break;const parent:ParentNode|null=n.parentNode;n=parent&&parent.nodeType===1?parent as Element:null}
+  if(n!==owner)throw Error('Disconnected 瑃 SVG chain')
+  const parents=new Map(tree.map(node=>[node,node.parentNode]))
+  const exact=(visibility:string,committed:boolean)=>g.localName==='g'&&p.localName==='path'&&r.localName==='rect'&&c.localName==='clipPath'&&d.localName==='defs'&&d.parentNode===g&&c.parentNode===d&&r.parentNode===c&&c.children.length===1&&c.children[0]===r&&p.parentNode===g&&g.children.length===2&&g.children[0]===d&&g.children[1]===p&&slot.children.length===1&&slot.children[0]===g&&slot.parentNode===outlines&&slot.getAttribute('data-outline-stroke')===String(policy.pen)&&outlines.getAttribute('data-stroke-outlines')==='true'&&outlines.children.length===13&&outlines.children[policy.pen-1]===slot&&owner.getAttribute('viewBox')==='0 0 100 100'&&g.getAttribute('data-stroke-start-gate')===policy.id&&g.getAttribute('data-stroke-reveal-policy')===policy.kind&&g.getAttribute('data-stroke-reveal-progress')===String(progress)&&g.getAttribute(HEAD9_PREFIX+'clip')===clipId&&p.getAttribute('d')===segment.outline&&p.getAttribute('pathLength')===null&&p.getAttribute('stroke-dasharray')===null&&p.getAttribute('stroke-dashoffset')===null&&p.getAttribute('mask')===null&&p.getAttribute('visibility')===visibility&&p.getAttribute(HEAD9_PREFIX+'committed')===String(committed)&&p.getAttribute('clip-path')===(f.originalPDirect?null:'url(#'+key+')')&&c.getAttribute('id')===key&&c.getAttribute('clipPathUnits')==='userSpaceOnUse'&&Object.entries(shape).every(([k,v])=>r.getAttribute(k)===String(v))
+  const stable=(visibility:string,committed:boolean)=>{
+   if((progress>0&&!verifyReviewedU7443GHead9PriorDOM(policy,g,progress,prior7Progress))||!exact(visibility,committed)||owner.ownerDocument!==doc||doc.defaultView!==view||view.document!==doc)return false
+   for(const node of tree){
+    if(!node.isConnected||node.ownerDocument!==doc||(node!==owner&&(node as SVGElement).ownerSVGElement!==owner)||node.namespaceURI!==NS||node.parentNode!==parents.get(node)||['transform','filter','mask'].some(k=>node.getAttribute(k)!==null)||(node!==p&&node.getAttribute('clip-path')!==null))return false
+    const s=view.getComputedStyle(node)
+    if(s.display==='none'||s.transform!=='none'||s.filter!=='none'||(node!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||s.mixBlendMode!=='normal'||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false
+   }
+   const rs=view.getComputedStyle(r)
+   if([...expectedCSS].some(([k,v])=>v===''||rs.getPropertyValue(k)!==v))return false
+   const paint=view.getComputedStyle(p)
+   if(paint.stroke!=='none'||Number(paint.fillOpacity)!==1||paint.fillRule!=='nonzero'||!opaqueRGB(paint.fill)||paint.visibility!==visibility||!cssSourcePath(doc,paint.getPropertyValue('d').trim(),segment.outline))return false
+   return (progress===0||verifyReviewedU7443GHead9PriorDOM(policy,g,progress,prior7Progress))&&exact(visibility,committed)&&tree.every(node=>node.isConnected&&node.ownerDocument===doc&&node.parentNode===parents.get(node)&&(node===owner||(node as SVGElement).ownerSVGElement===owner))
+  }
+  if(!stable('hidden',false))throw Error('Changed 瑃 source/coordinates/rectangle')
+  for(const [k,v]of Object.entries({progress,phase:f.phase,'direct-original':f.originalPDirect,'source-full':f.originalPDirect,'one-ink':true,'source-subpaths':(segment.outline.match(/M/g)||[]).length,'ua-read':false}))p.setAttribute(HEAD9_PREFIX+k,String(v))
+  if(!stable('hidden',false))throw Error('Changed 瑃 pre-visibility binding')
+  p.setAttribute(HEAD9_PREFIX+'committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden')
+  if(!stable(f.visible?'visible':'hidden',true))throw Error('Changed 瑃 visibility commit')
+  return {status:progress===0?'empty' as const:progress===1?'complete' as const:'visible' as const,frame:f,cleanup:reset}
+ }catch{reset();return {status:'hidden' as const,frame:null,cleanup:reset}}
+}
+export const REVIEWED_U7443_G_HEAD9_SOURCE=freeze({glyph:'瑃',root:'u7443-g',pen:9,mask:1,priorStroke:7,priorIsSeparateNonAdjacentStroke:true,sourceP:2,sourceQ0:HEAD9_Q0,authorAnchor:[73,44.75],anchorIsOriginalQ0:false,sourceBounds:HEAD9_POLICY.sourceBounds,sourceGuide:HEAD9_POLICY.segment.revealPath,sourceWidth:14,sourceCalculatedWeight:HEAD9_POLICY.segment.weight,eventCount:75,openIntervals:74,closedPositiveStates:74,positiveAreaComponentsAllOne:true,zeroAreaTail:false,priorContactAreaLowerCoefficient:'1/2500',authorClock:'source-author-head9-point-rectangle',originalClockEquivalent:false,prior7CurrentFrameOpaqueDOMRequired:true,sourcePOrQOrWidthOrWeightChanged:false,appRendererConnected:false,nativeApproval:false,runtimeApplied:false})
+export const REVIEWED_U7443_G_HEAD9_INPUT_SHA256=Object.freeze({"docs/hanja-source-original-u7443-g-2026-10-26/raw9-start-head-contact-proof.json":"ec675f3f61a96e538a9ef28d9670615186f838b214351a31f01d9afc2be02e70","docs/hanja-source-original-u7443-g-2026-10-26/raw9-point-rect-proof.json":"5618d9cb38f27fc441064a285a67c74cc3ed65ca8819db2ed25ed9b26e130fe0"})
