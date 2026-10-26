@@ -1,0 +1,169 @@
+{
+  "schema": "hanja-public-original-Q-dyadic-joint-feasibility/v1",
+  "date": "2026-10-27",
+  "glyph": "菰",
+  "originalRoot": "u83f0-var-001",
+  "inputs": {
+    "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/engine-whole-u83f0-var-001.json": "1cb6611538476804f6657d3b4d9d8b8e09828cbc8a53c076324531f038474629",
+    "docs/hanja-source-original-u83f0-var-001-2026-10-27/original-q0-conditions-proof.json": "e73a25d16c038d1eaaf878e5a815f22864a92020823fc6f3831fbe06437d4749",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396"
+  },
+  "scope": "original public VAR geometry only",
+  "coordinateFrame": "actual original capture decimals converted exactly to Fraction then divided by2; no rounding",
+  "originalQuadraticControls": [
+    [
+      "12007/200",
+      "1429/16"
+    ],
+    [
+      "6828999999999999/100000000000000",
+      "34549/400"
+    ],
+    [
+      "7432249999999999/100000000000000",
+      "33373/400"
+    ]
+  ],
+  "formula": "Q(t)=(1-t)^2 Q0+2t(1-t) C+t^2 Q1",
+  "testedDyadicsOnly": [
+    "1/16",
+    "1/8",
+    "1/4"
+  ],
+  "sourceQ0Baseline": {
+    "point": [
+      "12007/200",
+      "1429/16"
+    ],
+    "strictPriorContainmentFailed": true,
+    "YExceedsPriorMaxYBy": "41/80",
+    "newPointMustNotBeCalledOriginalStart": true
+  },
+  "QUnionBoundaryEdges": 24,
+  "QUnionKernelArea": "22397245609069/1204419480960",
+  "results": [
+    {
+      "t": "1/16",
+      "originalQuadraticPoint": [
+        "1563089749999999969/25600000000000000",
+        "17789/200"
+      ],
+      "isSourceQ0": false,
+      "priorVPointStates": [
+        -1,
+        -1
+      ],
+      "priorVOriginalConvexMarginsLInfinity": [
+        "-29/200",
+        "-5657589249999999907/204800000000000000"
+      ],
+      "strictCompletedPriorVInk": false,
+      "certifyingPriorVOriginalP": null,
+      "priorVCertificateMarginLInfinity": null,
+      "strictQUnionVisibilityKernel": true,
+      "QKernelMinimumMarginLInfinity": "1669932749999998357/2112000000000000000",
+      "minimumKernelConstraintEdge": [
+        [
+          "123/2",
+          "1839/20"
+        ],
+        [
+          "1171/20",
+          "1733/20"
+        ]
+      ],
+      "bothStrictConditions": false
+    },
+    {
+      "t": "1/8",
+      "originalQuadraticPoint": [
+        "79441949999999997/1280000000000000",
+        "35431/400"
+      ],
+      "isSourceQ0": false,
+      "priorVPointStates": [
+        1,
+        -1
+      ],
+      "priorVOriginalConvexMarginsLInfinity": [
+        "89/400",
+        "-284389849999999991/10240000000000000"
+      ],
+      "strictCompletedPriorVInk": true,
+      "certifyingPriorVOriginalP": 1,
+      "priorVCertificateMarginLInfinity": "89/400",
+      "strictQUnionVisibilityKernel": true,
+      "QKernelMinimumMarginLInfinity": "7796349999999997/5440000000000000",
+      "minimumKernelConstraintEdge": [
+        [
+          "364/5",
+          "417/5"
+        ],
+        [
+          "741/10",
+          "83"
+        ]
+      ],
+      "bothStrictConditions": true
+    },
+    {
+      "t": "1/4",
+      "originalQuadraticPoint": [
+        "102437749999999993/1600000000000000",
+        "35137/400"
+      ],
+      "isSourceQ0": false,
+      "priorVPointStates": [
+        1,
+        -1
+      ],
+      "priorVOriginalConvexMarginsLInfinity": [
+        "442250000000007/1600000000000000",
+        "-359013249999999979/12800000000000000"
+      ],
+      "strictCompletedPriorVInk": true,
+      "certifyingPriorVOriginalP": 1,
+      "priorVCertificateMarginLInfinity": "442250000000007/1600000000000000",
+      "strictQUnionVisibilityKernel": true,
+      "QKernelMinimumMarginLInfinity": "21759250000000483/137600000000000000",
+      "minimumKernelConstraintEdge": [
+        [
+          "738569/11640",
+          "352951/3880"
+        ],
+        [
+          "1259/20",
+          "93"
+        ]
+      ],
+      "bothStrictConditions": true
+    }
+  ],
+  "firstPassingTestedDyadic": "1/8",
+  "sourceQ0EqualsFirstPassingPoint": false,
+  "sourceQ0GapClaimedGone": false,
+  "newAuthorStartAndClockWouldDifferFromOriginal": true,
+  "anchorPolicyAdopted": false,
+  "originalPOrQFieldsChanged": false,
+  "partReuseApproved": false,
+  "wholeShapeApproved": false,
+  "sourceOrderApproved": false,
+  "sourceDirectionApproved": false,
+  "sourceClockApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineRuns": 0,
+  "networkRequests": 0,
+  "newPrivateMedia": 0,
+  "limits": [
+    "Only the three requested original-Q dyadics are evaluated; no grid scan, alternate Q, invented point or author reveal policy is produced.",
+    "A passing point establishes only strict geometric prior-V/kernel membership. Starting at a positive source t would require a new author start and clock; it does not preserve Q0 or prove publisher-forward timing.",
+    "Original Q0 remains outside completed V ink by the pinned baseline result. The original gap is not hidden or declared repaired.",
+    "No candidate composition or component identity is an input to this original-source-only proof. No part, whole, order, direction or runtime approval is transferred.",
+    "The existing union/kernel prefix executes without anchor-search code. No renderer, phase, smoothing, engine replay or private media is involved."
+  ],
+  "verifierSHA256": "abf93526202b5facafeca8fa9033c89d2a4fce2284720b824af847dcfe26e222",
+  "scopeHistory": "The initial computation used original VAR geometry and also checked local provenance bindings allowed by the then-current task; those bindings were removed when scope narrowed. Current proof reads original public VAR data only.",
+  "recordedPreparationMathExecutions": 2,
+  "forwardApproved": false
+}
