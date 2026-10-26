@@ -1,0 +1,105 @@
+{
+  "schema": "hanja-fixed-public-source-closure/v1",
+  "date": "2026-10-26",
+  "glyph": "薇",
+  "root": "twedu-a03578-001",
+  "rootVersion": "3",
+  "records": {
+    "twedu-a03578-001": {
+      "data": "99:0:0:0:0:200:180:ufa5e-03:0:0:0$99:0:0:0:52:200:196:u2304b@5:0:0:0",
+      "version": "3",
+      "name": "twedu-a03578-001",
+      "related": "U+8587"
+    },
+    "u2304b@5": {
+      "related": "U+2304B",
+      "version": "5",
+      "name": "u2304b",
+      "data": "99:0:0:9:6:103:94:u5c71$1:0:0:16:106:99:106$2:32:7:40:106:40:157:13:185$1:32:32:70:106:70:162$2:0:7:55:174:79:159:105:142$99:0:0:20:0:199:200:u6535-02@14"
+    },
+    "ufa5e-03": {
+      "name": "ufa5e-03",
+      "version": 8,
+      "related": "U+8279",
+      "data": "1:0:0:13:39:95:39$1:0:0:64:13:64:64$1:0:0:136:13:136:64$1:0:0:105:39:187:39"
+    },
+    "u5c71": {
+      "data": "99:0:0:0:0:200:200:u5c71-j",
+      "name": "u5c71",
+      "related": "U+3013",
+      "version": 3
+    },
+    "u6535-02@14": {
+      "data": "2:0:7:129:14:117:65:89:100$1:2:0:113:63:187:63$2:2:7:159:63:147:160:70:188$2:7:0:107:73:118:150:179:178",
+      "name": "u6535-02",
+      "related": "U+6535",
+      "version": "14"
+    },
+    "u5c71-j": {
+      "name": "u5c71-j",
+      "data": "1:0:32:100:18:100:165$1:0:13:34:58:34:165$1:2:2:34:165:166:165$1:0:23:166:58:166:165",
+      "related": "U+5C71",
+      "version": 2
+    }
+  },
+  "reusedInputs": {
+    "docs/hanja-source-inventory-u8587-2026-10-26/sources.json": "a5efbc592839580525e9788d2e05ffcdbbf090ad618a998e41cb6ab269fc4fb3",
+    "docs/hanja-goal-glyphwiki-batch56-2026-09-22/sources.json": "16d41ea56ec0f6106a6cfd8eed90a58cb0636e40b5ab7c724894f81aee9d8a94"
+  },
+  "reusedRecordLocations": {
+    "root": "rootResponses[requested=twedu-a03578-001@3].record",
+    "body": "bodyResponses[record.name=u2304b,version=string5].record",
+    "grass": "records.ufa5e-03"
+  },
+  "newPublicResponses": [
+    {
+      "requested": "u5c71",
+      "url": "https://glyphwiki.org/api/glyph?name=u5c71",
+      "status": 200,
+      "responseSHA256": "cbd18d0568e76a5c5517e3c70e645872d6094f14242e5ca2f6db31cd482f9ae2",
+      "record": {
+        "data": "99:0:0:0:0:200:200:u5c71-j",
+        "name": "u5c71",
+        "related": "U+3013",
+        "version": 3
+      }
+    },
+    {
+      "requested": "u6535-02@14",
+      "url": "https://glyphwiki.org/api/glyph?name=u6535-02%4014",
+      "status": 200,
+      "responseSHA256": "6ed77dd30d0a806383e1cc8f7e28b36dc97f4c23423b5a50ab4f30ea9be8b41e",
+      "record": {
+        "data": "2:0:7:129:14:117:65:89:100$1:2:0:113:63:187:63$2:2:7:159:63:147:160:70:188$2:7:0:107:73:118:150:179:178",
+        "name": "u6535-02",
+        "related": "U+6535",
+        "version": "14"
+      }
+    },
+    {
+      "requested": "u5c71-j",
+      "url": "https://glyphwiki.org/api/glyph?name=u5c71-j",
+      "status": 200,
+      "responseSHA256": "b729b479d6026239d334ed2d92b6926a24d2d5f7644a5c9adfec2033298ea776",
+      "record": {
+        "name": "u5c71-j",
+        "data": "1:0:32:100:18:100:165$1:0:13:34:58:34:165$1:2:2:34:165:166:165$1:0:23:166:58:166:165",
+        "related": "U+5C71",
+        "version": 2
+      }
+    }
+  ],
+  "unversionedReferencesFrozenAtSuccessfulResponseVersions": true,
+  "versionValueTypesPreserved": true,
+  "aliasRecordsPreserved": [
+    "u5c71@number3 -> u5c71-j@number2"
+  ],
+  "rootIsNotWholeAlias": true,
+  "sourceRowsChanged": false,
+  "engine": 0,
+  "projection": 0,
+  "privateDictionaryRequests": 0,
+  "privateMediaSaved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
