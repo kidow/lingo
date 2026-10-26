@@ -178,7 +178,7 @@ export function commitReviewedU655dBodyTail(policy:ReviewedU655dBodyTailPolicy,s
   const priorOK=p===0?false:verifyReviewedU655dBodyTailPriorDOM(policy,g,p,priorProgress)
   const bodyFrame=sampleReviewedU655dBodyTailFrame(policy,segment,Math.min(p,policy.cut),priorProgress,priorOK,false)
   const shape=bodyFrame.bodyRect??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
-  for(const[k,v]of Object.entries(shape))r.setAttribute(k,String(v))
+  for(const[k,v]of Object.entries(shape)){r.setAttribute(k,String(v));r.style.setProperty(k,String(v)+'px')}
   if(bodyFrame.bodyOriginalPDirect)b.removeAttribute('clip-path');else b.setAttribute('clip-path','url(#'+bodyKey+')')
   g.setAttribute(BODY_PREFIX+'body-progress',String(bodyFrame.bodyProgress))
   const tree:Element[]=[g,d,bc,r,tc,poly,b,...bodyPaths,t],parents=new Map(tree.map(n=>[n,n.parentNode]))

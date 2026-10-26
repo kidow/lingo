@@ -74,6 +74,18 @@ function dom(p:ReturnType<typeof policy>,progress:number){
  return {doc,owner,outer,slot,g,defs,c,r,ink,id,nodes:{group:g,ink,rect:r,clipPath:c}as unknown as Parameters<typeof commitReviewedU655dSourceWindow>[4]}
 }
 
+test('敝4 tiny positive progress preserves exact rect attributes and inline CSS instead of snapping',()=>{
+ const t=2.729126799396933e-16,d=bodyDOM(t),base=d.doc.defaultView.getComputedStyle
+ d.doc.defaultView.getComputedStyle=(n:N)=>{const style=base(n);return n!==d.r?style:{...style,getPropertyValue:(k:string)=>{if(['x','y','width','height'].includes(k)){const inline=n.css.get(k);if(inline!==undefined)return inline;const v=Number(n.getAttribute(k));if(v>0&&v<1e-12)return'0px'}return style.getPropertyValue(k)}}}
+ const r=commitReviewedU655dBodyTail(d.p,d.p.segment,t,1,d.id,d.nodes);assert.equal(r.status,'visible',r.status==='hidden'?r.error:'')
+ assert.equal(r.frame.progress,t);assert(r.frame.bodyProgress>0);assert.equal(r.frame.tailProgress,0);assert(r.frame.bodyRect)
+ for(const[k,v]of Object.entries(r.frame.bodyRect!)){assert.equal(d.r.getAttribute(k),String(v));assert.equal(d.r.style.getPropertyValue(k),String(v)+'px')}
+ assert(Number(d.r.getAttribute('width'))>0);assert(Number(d.r.getAttribute('height'))>0);assert.equal(d.tail.getAttribute('visibility'),'hidden');assert(d.paths.every(n=>n.getAttribute('visibility')==='visible'));r.cleanup()
+})
+test('敝4 tiny inline CSS does not bypass exact CSS or prior source guards',()=>{
+ for(const alter of[(d:ReturnType<typeof bodyDOM>)=>{d.doc.onStyleRead=n=>{if(n===d.r)n.css.set('width','1px')}},(d:ReturnType<typeof bodyDOM>)=>d.H.setAttribute('d','M0 0 Z')]){const t=2.729126799396933e-16,d=bodyDOM(t);alter(d);assert.equal(commitReviewedU655dBodyTail(d.p,d.p.segment,t,1,d.id,d.nodes).status,'hidden');assert(d.paths.every(n=>n.getAttribute('visibility')==='hidden'));assert.equal(d.tail.getAttribute('visibility'),'hidden')}
+})
+
 test('敝 point actual commits use11 source slots and reject geometry/CSS/owner changes',()=>{
  for(const pen of[1,2,6,7,8,10,11])for(const t of[0,.01,.5,1]){const p=policy(pen),d=dom(p,t),r=commitReviewedU655dSourceWindow(p,p.segment,t,d.id,d.nodes);assert.equal(r.status,t===0?'empty':t===1?'complete':'visible');assert.equal(d.ink.getAttribute('d'),p.segment.outline);r.cleanup();assert.equal(d.ink.getAttribute('visibility'),'hidden')}
  for(const alter of[(d:ReturnType<typeof dom>)=>d.owner.setAttribute('viewBox','0 0 200 200'),(d:ReturnType<typeof dom>)=>d.slot.css.set('opacity','.6'),(d:ReturnType<typeof dom>)=>d.ink.css.set('clipPath','none'),(d:ReturnType<typeof dom>)=>d.ink.setAttribute('d','M0 0 Z'),(d:ReturnType<typeof dom>)=>d.r.css.set('height','1px')]){const p=policy(8),d=dom(p,.01);alter(d);assert.equal(commitReviewedU655dSourceWindow(p,p.segment,.01,d.id,d.nodes).status,'hidden')}
