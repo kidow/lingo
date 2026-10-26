@@ -1,0 +1,135 @@
+{
+  "schema": "hanja-original-enclosure-sweep-contact/v1",
+  "date": "2026-10-26",
+  "glyph": "逈",
+  "root": "u9008",
+  "inputs": {
+    "docs/hanja-current-source-u9008-2026-10-18/engine-whole-u9008.json": "e919e19d5e37595880dcb76dfe50b96254e9eb6e92e84cfea34421e52a861c04",
+    "docs/hanja-current-source-u9008-2026-10-18/sources.json": "8889060d63d4089bab03ab4646d6ebaf12cfeda3eabc45778aec33a9782542b7",
+    "docs/hanja-source-raw-compare-u9008-2026-10-24/native-whole-review.json": "cb2940cb876cbb59fe5785472782d858b5109e367ef2242c24e84f3f2958e4c6",
+    "docs/hanja-current-source-u9008-2026-10-18/source-inventory.json": "d03d2a9d4edfd185d846520e689271b2d70314d51c05c612de2776aa9ddf61aa",
+    "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py": "2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76"
+  },
+  "fixedRoot": "u9008@9 -> u9008-j@2",
+  "sourceShape": {
+    "raw": 14,
+    "calls": 15,
+    "P": 27
+  },
+  "enclosureLeftVerticalRaw": 8,
+  "walkingRadicalRaw1to6": true,
+  "enclosureVerticalTrace": [
+    80.6,
+    51.51,
+    80.6,
+    162.76,
+    12,
+    0
+  ],
+  "walkingSweepRaw": 6,
+  "walkingSweepTrace": [
+    53,
+    152,
+    68,
+    172,
+    84,
+    181,
+    179,
+    177,
+    7,
+    0
+  ],
+  "results": [
+    {
+      "sourceRaw": 1,
+      "classification": "strict-gap-by-disjoint-axis-bounds",
+      "boundingGapX": "63/5",
+      "boundingGapY": "0"
+    },
+    {
+      "sourceRaw": 2,
+      "classification": "strict-gap-by-disjoint-axis-bounds",
+      "boundingGapX": "217/10",
+      "boundingGapY": "0"
+    },
+    {
+      "sourceRaw": 3,
+      "classification": "strict-gap-by-disjoint-axis-bounds",
+      "boundingGapX": "123/5",
+      "boundingGapY": "0"
+    },
+    {
+      "sourceRaw": 4,
+      "classification": "strict-gap-by-disjoint-axis-bounds",
+      "boundingGapX": "68/5",
+      "boundingGapY": "0"
+    },
+    {
+      "sourceRaw": 5,
+      "classification": "strict-gap-by-disjoint-axis-bounds",
+      "boundingGapX": "191/10",
+      "boundingGapY": "0"
+    },
+    {
+      "sourceRaw": 6,
+      "classification": "positive-area-original-fill-overlap",
+      "areaInOriginal200": "7/400",
+      "areaInNormalized100": "7/1600",
+      "positiveOpenSlabs": [
+        {
+          "lo": "6621/40",
+          "hi": "828/5",
+          "area": "3/400"
+        },
+        {
+          "lo": "828/5",
+          "hi": "1657/10",
+          "area": "1/100"
+        }
+      ],
+      "witnessOriginal200": {
+        "point": [
+          "1493/20",
+          "2649/16"
+        ],
+        "strictBoxHalf": "3/440",
+        "boxArea": "9/48400",
+        "supportingLineMargin": "3/220"
+      }
+    }
+  ],
+  "method": {
+    "exactRationalFromOriginalDecimal": true,
+    "coordinateSpace": "original public200; normalized100 area is divided by4",
+    "independentOriginalPNonzeroFillUnion": true,
+    "utilityASTAllowlist": [
+      "det",
+      "events",
+      "union_row",
+      "value",
+      "vec"
+    ],
+    "utilityTargetLoopsExecuted": 0,
+    "allVertexAndSegmentCrossingSlabs": true
+  },
+  "limits": [
+    "This certifies only static original filled-P contact for the exact saved current source.",
+    "Positive area overlap is stronger than boundary-only attachment; other5 radical rows are separated by strict bounding gaps.",
+    "It does not approve domestic stroke grouping, order, directions, correction, dynamic masks or runtime registration.",
+    "No source shape is deleted/moved, and no private dictionary image/SVG is read or stored."
+  ],
+  "sourceGeometryChanged": false,
+  "engine": 0,
+  "projection": 0,
+  "nativeScreens": 0,
+  "runtimeApplied": false,
+  "verifier": {
+    "path": "docs/hanja-source-original-u9008-2026-10-26/verify-enclosure-sweep-contact.py",
+    "SHA256": "cd73c4cb9401c1a51242fbdc8f8352dbb1e509ad8d92f88532326f7f361d88fd"
+  },
+  "nativeObservationBinding": {
+    "path": "docs/hanja-source-raw-compare-u9008-2026-10-24/native-whole-review.json",
+    "SHA256": "cb2940cb876cbb59fe5785472782d858b5109e367ef2242c24e84f3f2958e4c6",
+    "scope": "Existing whole HOLD contact observation only, no new native review"
+  }
+}
