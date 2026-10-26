@@ -1,3 +1,4 @@
+import {makeReviewedU7443GSourceWindowContext,REVIEWED_U7443_G_SOURCE_WINDOW_INPUT,reviewedU7443GSourceWindowPolicy,commitReviewedU7443GSourceWindow,reviewedU7443GHead9Policy,commitReviewedU7443GHead9,type ReviewedU7443GSourceWindowPolicy,type ReviewedU7443GHead9Policy} from '@/lib/hanja-stroke-source-windows-u7443-g'
 import {reviewedU85c7HkcsCardinalPointPolicy,sampleReviewedU85c7HkcsCardinalPointFrame,verifyReviewedU85c7HkcsCardinalPointPriorDOM,type ReviewedU85c7HkcsCardinalPointPolicy} from '@/lib/hanja-stroke-cardinal-point-windows-u85c7-hkcs'
 import {makeReviewedU85c7HkcsSourceContext,REVIEWED_U85C7_HKCS_SOURCE_INPUT,reviewedU85c7HkcsPolicy,commitReviewedU85c7HkcsCaps,type ReviewedU85c7HkcsPolicy} from '@/lib/hanja-stroke-start-caps-u85c7-hkcs'
 import {reviewedU6145HkcsCardinalPoint9Policy,sampleReviewedU6145HkcsCardinalPoint9Frame,verifyReviewedU6145HkcsCardinalPoint9PriorDOM,type ReviewedU6145HkcsCardinalPoint9Policy} from '@/lib/hanja-stroke-cardinal-point-window9-u6145-hkcs'
@@ -651,6 +652,8 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u7c67Context = reviewedU7c67Context(strokes)
   const u7c67LeftContext = reviewedU7c67LeftContext(strokes)
   const u8b92HkcsFlag5TailContext = reviewedU8b92HkcsFlag5TailContext(strokes)
+  const u7443GContext=strokes.length===13?makeReviewedU7443GSourceWindowContext(REVIEWED_U7443_G_SOURCE_WINDOW_INPUT.fullProof,REVIEWED_U7443_G_SOURCE_WINDOW_INPUT.identity,strokes):null
+  const u7443GPrior7Progress=u7443GContext?outlineSegmentProgress(strokes[6],phase==='idle'||phase==='done'?1:manual?(6<count?1:0):(elapsed-6*(STROKE_DURATION+STROKE_GAP))/STROKE_DURATION)[0]:0
   const u85c7SourceContext=strokes.length===18?makeReviewedU85c7HkcsSourceContext(REVIEWED_U85C7_HKCS_SOURCE_INPUT.fullProof,REVIEWED_U85C7_HKCS_SOURCE_INPUT.identity,strokes):null
   const u6145SourceContexts=strokes.length===13?makeReviewedU6145HkcsSourceContexts(REVIEWED_U6145_HKCS_SOURCE_INPUT.fullProof,REVIEWED_U6145_HKCS_SOURCE_INPUT.identity,strokes):null
   const u8609SourceContexts=reviewedU8609HkcsSourceContexts(strokes)
@@ -733,6 +736,10 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
       if(u840dHkcsLogical7Policy)return <g key={stroke} data-outline-stroke={stroke+1}><U840dHkcsLogical7Outline policy={u840dHkcsLogical7Policy} segments={segments} progress={Number.isFinite(progress)?Math.max(0,Math.min(1,progress)):NaN} clipId={id+'-'+stroke+'-u840d'}/></g>
       return <g key={stroke} data-outline-stroke={stroke + 1} data-u8609-fold-owner={u8609SourceContexts&&[5,13].includes(stroke)?id+'-u8609-fold-'+(stroke+1):undefined} data-u8609-fold-pen={u8609SourceContexts&&[5,13].includes(stroke)?String(stroke+1):undefined} data-u8b92-prior14-owner={u8b92HkcsContext&&stroke===13?id+'-u8b92-prior14':undefined} data-u8b92-prior14-pen={u8b92HkcsContext&&stroke===13?'14':undefined}>{segments.map((segment, index) => {
         const p = amounts[index]
+        const u7443GWindowPolicy=reviewedU7443GSourceWindowPolicy(u7443GContext,stroke,index)
+        if(u7443GWindowPolicy)return <U7443GSourceWindowOutline key={index} policy={u7443GWindowPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
+        const u7443GHead9Policy=reviewedU7443GHead9Policy(u7443GContext,stroke,index)
+        if(u7443GHead9Policy)return <U7443GHead9Outline key={index} policy={u7443GHead9Policy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} prior7Progress={u7443GPrior7Progress} clipId={id+'-'+stroke+'-'+index}/>
         const u705dHkcsMCapsPolicy=reviewedU705dHkcsMCapsPolicy(u705dHkcsMCapsContext,stroke,index)
         if(u705dHkcsMCapsPolicy)return <U705dHkcsMCapsOutline key={index} policy={u705dHkcsMCapsPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={index>0?amounts[index-1]:0} clipId={id+'-'+stroke+'-'+index}/>
         const u705dHkcsMCardinalPolicy=reviewedU705dHkcsMCardinalPolicy(u705dHkcsMCardinalContext,stroke,index)
@@ -5679,6 +5686,25 @@ function U8609HkcsUnionPointOutline({policy,segment,progress,previousMaskProgres
  return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u8609-union-point-fingerprint={policy.proofFingerprint} data-u8609-union-point-clip={clipId} data-u8609-hkcs-union-point-previous-progress={String(previousMaskProgress)} data-u8609-hkcs-union-point-display-clock="source-author-union-point-window" data-u8609-hkcs-union-point-author-clock="true" data-u8609-hkcs-union-point-original-clock-equivalent="false" data-u8609-hkcs-union-point-source-guide={segment.revealPath??''}>
   <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
   <path ref={ink} data-u8609-hkcs-union-point-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U7443GSourceWindowOutline({policy,segment,progress,clipId}:{policy:ReviewedU7443GSourceWindowPolicy;segment:HanjaOutlineSegment;progress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>commitReviewedU7443GSourceWindow(policy,segment,progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clipPath.current}).cleanup,[policy,segment,progress,clipId])
+ const key=clipId+'-u7443-g-source-window-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u7443-g-source-window-clip={clipId} data-u7443-g-source-window-fingerprint={policy.proofFingerprint} data-u7443-g-source-window-display-clock="source-author-Q0-point-rectangle" data-u7443-g-source-window-original-clock-equivalent="false" data-u7443-g-source-window-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u7443-g-source-window-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+function U7443GHead9Outline({policy,segment,progress,prior7Progress,clipId}:{policy:ReviewedU7443GHead9Policy;segment:HanjaOutlineSegment;progress:number;prior7Progress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>commitReviewedU7443GHead9(policy,segment,progress,prior7Progress,clipId,{group:group.current,ink:ink.current,rect:rect.current,clipPath:clipPath.current}).cleanup,[policy,segment,progress,prior7Progress,clipId])
+ const key=clipId+'-u7443-g-source-head9-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u7443-g-source-head9-clip={clipId} data-u7443-g-source-head9-fingerprint={policy.proofFingerprint} data-u7443-g-source-head9-prior-stroke="7" data-u7443-g-source-head9-prior-progress={String(prior7Progress)} data-u7443-g-source-head9-display-clock="source-author-head9-point-rectangle" data-u7443-g-source-head9-original-clock-equivalent="false" data-u7443-g-source-head9-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u7443-g-source-head9-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
  </g>
 }
 
