@@ -1,0 +1,210 @@
+{
+  "schema": "hanja-static-membership-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "逈",
+  "root": "hkcs_m9008",
+  "status": "PASS-static-membership-only",
+  "reviewer": "ROOT direct browser panel observation, tab153",
+  "recordedBy": "C from ROOT observations; C did not operate browser",
+  "input": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u9008-hkcs-individual-2026-10-26/config.json",
+      "SHA256": "ada1fc784d714524e452e7dca4acb7a2ac9ae8337c0718c44ac927adae0eb75b"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "8fb894a28c47a75f876f0ca362a4f34a5bcb7b1d277b18b8639d6474c6edf2ec"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u9008-hkcs-2026-10-26/engine-whole-hkcs_m9008.json",
+      "SHA256": "5c94337d91522ab21760d32fa40ea070984ef2621f8114fff78935fb0b2c8ce2"
+    },
+    "source": {
+      "path": "docs/hanja-source-alternative-u9008-hkcs-2026-10-26/sources.json",
+      "SHA256": "966e792241d603fbde7bd3c2ec45615ce4e48d326b4294c34176942edc88de22",
+      "root": "hkcs_m9008",
+      "rootVersion": "1",
+      "records": 3,
+      "originalRecordNames": [
+        "hkcs_m9008",
+        "hkcs_m8fb6-p05-s01",
+        "hkcs_m5411"
+      ],
+      "originalRecordVersionTypes": [
+        {
+          "name": "hkcs_m9008",
+          "version": "1",
+          "type": "string"
+        },
+        {
+          "name": "hkcs_m8fb6-p05-s01",
+          "version": 2,
+          "type": "number"
+        },
+        {
+          "name": "hkcs_m5411",
+          "version": 1,
+          "type": "number"
+        }
+      ]
+    },
+    "wholeNative": {
+      "path": "docs/hanja-source-raw-compare-u9008-hkcs-whole-2026-10-26/native-whole-review.json",
+      "SHA256": "77de043b0c2999c7f5168860d32e4fa80d0a4bdc5e1d483d867734e5ee775d63"
+    }
+  },
+  "reference": {
+    "publisher": "e-hanja",
+    "catalogStrokes": 9,
+    "dictionaryPlaybackStrokes": 10,
+    "SHA256": "d5e6ab0e623a06634a3ca3dfabee6158f17217e38262dcdebe1a7da321f29eec",
+    "privateMediaSaved": false
+  },
+  "observations": {
+    "freshPages": 16,
+    "visiblePanels": 28,
+    "domesticSinglePanels": 10,
+    "sourceRawSinglePanels": 14,
+    "pairedPrefixPages": 2,
+    "pairedPrefixPanels": 4,
+    "allDomestic10SeenAtLeastOnce": true,
+    "allOriginalRaw14SeenAtLeastOnce": true,
+    "visibleOmittedOrUnassignedPObserved": false,
+    "extraStructuralStrokeObserved": false,
+    "sourceRaw": 14,
+    "sourceCalls": 15,
+    "sourceP": 27,
+    "styleDifference": "Source ends are thicker/angular while publisher ends are rounded; no extra structural stroke observed.",
+    "prefixPairs": [
+      {
+        "domestic": 9,
+        "raw": 4,
+        "dview": "prefix",
+        "rview": "prefix",
+        "matchingPart": "two left dots plus horizontal/vertical bend",
+        "domesticIncludesAdditionalFacingComponent": true,
+        "sameWholePrefixInventoryClaimed": false
+      },
+      {
+        "domestic": 10,
+        "raw": 6,
+        "dview": "prefix",
+        "rview": "prefix",
+        "matchingPart": "complete walking-radical component",
+        "domesticIncludesAdditionalFacingComponent": true,
+        "sameWholePrefixInventoryClaimed": false
+      }
+    ],
+    "viewportWidth": null,
+    "viewportHeight": null
+  },
+  "mapping": {
+    "domestic1BasedToRaw1Based": [
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        14
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "sourceRawCoverage1Based": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "noRawDuplicateOrOmission": true,
+    "labels": [
+      "short upper left-falling stroke",
+      "outer left vertical",
+      "outer horizontal and right vertical hook",
+      "inner left vertical",
+      "inner horizontal and right vertical",
+      "inner bottom horizontal",
+      "first left dot",
+      "second left dot",
+      "left horizontal and vertical",
+      "up-left bend and sweep"
+    ],
+    "approval": "static visible membership only",
+    "sameNumberAutomaticMapping": false,
+    "reorderedPrefixClaimed": false
+  },
+  "reuse": {
+    "HKWholeCompatibility": true,
+    "HKWholeNative": "docs/hanja-source-raw-compare-u9008-hkcs-whole-2026-10-26/native-whole-review.json",
+    "oldCurrentJMembershipApprovalTransferred": false,
+    "oldCumulativeRecordTransferredAsDirectionCertificate": false,
+    "TWholeHOLDTransferred": false
+  },
+  "postRun": {
+    "PID": 73736,
+    "port": 59412,
+    "tab": 153,
+    "shutdownSignal": "SIGINT",
+    "PIDAbsent": true,
+    "portClosed": true,
+    "tabClosed": true,
+    "confirmedBy": "ROOT",
+    "configAndHelperUnchangedConfirmedBy": "ROOT; C also read current hashes"
+  },
+  "approval": {
+    "staticMembership": true,
+    "wholeHKCompatibilityReused": true,
+    "compoundContinuity": false,
+    "sourceOrder": false,
+    "direction": false,
+    "progressive": false,
+    "nativeAnimation": false,
+    "runtime": false,
+    "catalog9VersusPrivate10Resolved": false
+  },
+  "runtimeApplied": false,
+  "newEngine": 0,
+  "newSourceProjection": 0,
+  "limits": [
+    "No raw/call regrouping, P/Q modification, source compiler or new engine execution.",
+    "Prefix matches concern the specified left components only: domestic prefix additionally contains the facing component; no same-inventory or reordered-prefix equivalence is asserted.",
+    "Static membership does not approve source compound continuity, drawing order, direction, clock, progressive reveal, native animation or runtime.",
+    "Catalog9 and private dictionary10 remain unresolved; no silent catalogue correction or activation.",
+    "The previous current-J grouping hypothesis is not used as native approval for this new HK source."
+  ]
+}
