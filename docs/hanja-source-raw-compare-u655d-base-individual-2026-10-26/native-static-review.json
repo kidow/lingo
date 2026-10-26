@@ -1,0 +1,195 @@
+{
+  "schema": "hanja-original-static-correspondence-review/v1",
+  "date": "2026-10-26",
+  "glyph": "敝",
+  "root": "u655d",
+  "reviewer": "ROOT direct Codex browser panel",
+  "recorder": "C preserved ROOT report; C did not perform the native review",
+  "status": "PASS-static-correspondence-only",
+  "catalogStrokes": 11,
+  "originalXLSStrokes": 12,
+  "sourceRawRows": 13,
+  "sourceCalls": 14,
+  "sourcePolygons": 28,
+  "inputs": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u655d-base-individual-2026-10-26/config.json",
+      "SHA256": "e3b39c3ac5529a9b0b0677ff6bb664ab57b6373bd304740868ea98f7f9c8daf6"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "cc3fcc22283f90364eced1817cf3b3b09e497e4946323a306091d73d7e3f4718"
+    },
+    "whole": {
+      "path": "docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d.json",
+      "SHA256": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+      "proofKind": "selected-body3-only"
+    }
+  },
+  "sourceGroupsOneBased": [
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ]
+  ],
+  "qualifiedObservations": {
+    "singlePairs": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        11,
+        13
+      ]
+    ],
+    "prefixPairs": [
+      [
+        5,
+        7
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        11,
+        13
+      ]
+    ],
+    "singleScreens": 13,
+    "prefixScreens": 6,
+    "screens": 19,
+    "duplicateQualifiedScreens": 0,
+    "display": "fullPage observations include every required glyph region; domestic4 versus source raw5 diagnostic fullPage was counted once",
+    "diagnosticSinglePairCountedOnce": [
+      4,
+      5
+    ],
+    "finding": "All thirteen source raw rows were directly compared once in single mode against the proposed eleven domestic strokes. The H/V raw5+6 turn and nonconsecutive raw1+7 central vertical were separately compared, then the six listed cumulative pairs confirmed the corresponding completed static forms. This approves static correspondence only, not pixel identity or temporal direction."
+  },
+  "excludedObservations": {
+    "initialCroppedScreens": 4,
+    "reason": "Upper parts were clipped; no shape approval was taken from these screens. Required regions were reobserved fullPage.",
+    "includedInQualifiedScreens": false
+  },
+  "previousRouteFailure": {
+    "tab": 138,
+    "comparisonContractRejected": true,
+    "glyphObservations": 0,
+    "qualifiedScreens": 0,
+    "subsequentRouteFixCommit": "a427e2562",
+    "actualRouteConfirmedOnTab": 139
+  },
+  "limits": {
+    "sourcePOrQEdited": false,
+    "sourceEngineReplayed": false,
+    "sourceProjectionCreated": false,
+    "privateMediaSaved": false,
+    "temporalDirectionApproved": false,
+    "progressivePaintApproved": false,
+    "runtimeApplied": false,
+    "nativeLogicalGroupRendererTested": false
+  },
+  "verification": {
+    "postObservationConfigAndLauncherHashesUnchanged": true,
+    "qualifiedScreens": 19,
+    "excludedCroppedScreens": 4,
+    "originalSourceRowsEachExactlyOnce": true
+  },
+  "cleanup": {
+    "PID": 29423,
+    "port": 59412,
+    "PIDAbsentConfirmed": true,
+    "portClosedConfirmed": true,
+    "ownedTab": 139,
+    "ownedTabClosed": true
+  }
+}
