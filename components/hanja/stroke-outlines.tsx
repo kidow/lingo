@@ -3,6 +3,7 @@ import {reviewedU5e6aHkcsKernelPointWindowContext,reviewedU5e6aHkcsKernelPointWi
 import {reviewedU5e6aHkcsSourceContexts} from '@/lib/hanja-stroke-source-context-u5e6a-hkcs'
 import {reviewedU5e6aHkcsPolicy,commitReviewedU5e6aHkcsCaps,type ReviewedU5e6aHkcsPolicy} from '@/lib/hanja-stroke-start-caps-u5e6a-hkcs'
 import {reviewedU5e6aHkcsShortHookPolicy,sampleReviewedU5e6aHkcsShortHookFrame,type ReviewedU5e6aHkcsShortHookPolicy} from '@/lib/hanja-stroke-short-hook-prefix-u5e6a-hkcs'
+import {verifyReviewedU5e6aHkcsShortHookCapsPriorDOM} from '@/lib/hanja-stroke-short-hook-caps-dom-u5e6a-hkcs'
 import {verifyReviewedU5e6aHkcsShortHookPointPriorDOM} from '@/lib/hanja-stroke-short-hook-point-dom-u5e6a-hkcs'
 import { reviewedU8b92HkcsPointHvContext, reviewedU8b92HkcsPointHvPolicy, sampleReviewedU8b92HkcsPointHvFrame, verifyReviewedU8b92HkcsPointHvPrior, type ReviewedU8b92HkcsPointHvPolicy } from '@/lib/hanja-stroke-cardinal-point-contact-u8b92-hkcs'
 import { reviewedU8b92PriorPointWindowPolicy, measureReviewedU8b92PriorPointWindowFrame, type ReviewedU8b92PriorPointWindowPolicy } from '@/lib/hanja-stroke-prior-point-window-u8b92-hkcs'
@@ -5476,7 +5477,7 @@ function U5e6aHkcsShortHookOutline({policy,segment,progress,previousMaskProgress
   const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u5e6a-hkcs-short-hook-committed','false')};reset()
   if(!g||!p||!r||!c||!f)return reset
   const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u5e6a-hkcs-short-hook-clip'
-  const previousComplete=()=>verifyReviewedU5e6aHkcsShortHookPointPriorDOM(policy,g,previousMaskProgress)
+  const previousComplete=()=>verifyReviewedU5e6aHkcsShortHookCapsPriorDOM(policy,g,previousMaskProgress)
   const stable=()=>{
    if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
    if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||g.getAttribute('data-u5e6a-hkcs-short-hook-previous-progress')!==String(previousMaskProgress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
