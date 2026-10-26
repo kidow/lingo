@@ -1,0 +1,218 @@
+{
+  "schema": "hanja-reviewed-logical-order-permutation/v1",
+  "date": "2026-10-27",
+  "glyph": "媓",
+  "root": "u5a93",
+  "status": "prepared-order-permutation-not-native-approved",
+  "inputs": {
+    "fixture": {
+      "path": "docs/hanja-source-original-u5a93-2026-10-26/fixtures.json",
+      "SHA256": "a7ad43dd32a18ac22628c77d942fc53ab26d3642bcabce108248a74babf79733"
+    },
+    "publisherDirectionReview": {
+      "path": "docs/hanja-official-media-compare-u5a93-2026-10-27/native-controlled-direction-review.json",
+      "SHA256": "99e7f7ed69c21f9bb8726ae9a6f968a3b3872b91e96828bd2641fba4b7956f29"
+    },
+    "verifier": {
+      "path": "docs/hanja-source-order-u5a93-2026-10-27/verify-reviewed-order.mjs",
+      "SHA256": "c9829767e5a244db73434e64a06e6d9da730aa4ce6d0390a091c21a9be072841"
+    }
+  },
+  "originalSourceIdentity": {
+    "root": "u5a93",
+    "file": "engine-whole-u5a93.json",
+    "fileSHA256": "689e2d502a5cf1bf337192a939dc0efad1f877c476e0d980bc404d9ddf5c25f8"
+  },
+  "originalFullProofSnapshotSHA256": "3ab3258a839c3f6521bacd242ca98345f678d111fb9a31f582df72b4e817c48e",
+  "snapshotSerialization": "SHA256 of UTF-8 JavaScript JSON.stringify(actual entire stroke array); no Python float reserialization.",
+  "originalCompiledSHA256": "79aea820e2f76cc4fa9bbe75a4f65fb75bb62c261060b1aa4e2e3bf1e3d71752",
+  "reviewedOrderSnapshotSHA256": "36c733b72b0aeb002f7a02a51365c5206459a756828a8fef62224c81d4b04485",
+  "permutationZeroBased": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    9,
+    11
+  ],
+  "originalSourceGroups": [
+    [
+      0,
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ]
+  ],
+  "reviewedOrderSourceGroups": [
+    [
+      0,
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      13
+    ],
+    [
+      12
+    ],
+    [
+      14
+    ]
+  ],
+  "logicalPens": 12,
+  "originalPartCounts": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "reviewedPartCounts": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "changedLogicalPositions": [
+    {
+      "newPen": 10,
+      "oldPen": 11,
+      "originalRawIndices": [
+        13
+      ],
+      "macro": "R",
+      "partDirections": [
+        "right"
+      ]
+    },
+    {
+      "newPen": 11,
+      "oldPen": 10,
+      "originalRawIndices": [
+        12
+      ],
+      "macro": "D",
+      "partDirections": [
+        "down"
+      ]
+    }
+  ],
+  "verification": {
+    "allOriginalLogicalIndicesExactlyOnce": true,
+    "noStrokeOmittedOrDuplicated": true,
+    "entireStrokeArraysOnlyPermuted": true,
+    "allExistingPartPropertiesPreserved": true,
+    "originalP_Q_WidthWeightsBoundsUnchanged": true,
+    "firstNineAndLastUnchanged": true,
+    "originalSourceGroupMultisetPreserved": true,
+    "baseFixtureNotMutated": true,
+    "originalFullProofNotMutated": true,
+    "publisher10R11DMatchedByReviewedMetadata": true,
+    "sourceCompilerRuns": 0,
+    "engineRuns": 0,
+    "nativeObservations": 0,
+    "SSR": 0
+  },
+  "durationPreservation": {
+    "explicitPartDurationFields": 0,
+    "existingDurationValuesUnchanged": true,
+    "newDurationFieldsCreated": false,
+    "durationsRecomputed": false,
+    "limits": "All existing part properties and per-part weights are unchanged. The compiled fixture has no explicit duration fields when the count is zero; no timing-equivalence claim is made."
+  },
+  "approval": {
+    "orderDataCorrectionPrepared": true,
+    "sourceGeometryChanged": false,
+    "wholeCandidateApproved": false,
+    "nativeAnimation": false,
+    "runtime": false,
+    "examBody": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "Only complete existing stroke arrays at logical positions10 and11 are exchanged; no geometry, guide, width, weight or part property is edited.",
+    "This is order-data preparation based on ROOT publisher macro evidence, not a native playback or whole-candidate approval.",
+    "The remaining pen6 initial visual spur and all independent unresolved native conditions remain open.",
+    "Original compiled snapshot and newly reviewed-order snapshot have different explicit hashes; the original fixture/full5 remain unchanged."
+  ]
+}
