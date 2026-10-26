@@ -1,0 +1,70 @@
+{
+  "schema": "hanja-public-source-only-followup/v1",
+  "date": "2026-10-26",
+  "glyph": "韎",
+  "catalogStrokes": 14,
+  "existingChain": [
+    "hs_u97ce@1",
+    "u97ce@5",
+    "u97ce-j@1"
+  ],
+  "newPublicRecords": [
+    {
+      "record": {
+        "related": "U+97CE",
+        "version": "1",
+        "name": "u97ce-j",
+        "data": "99:0:0:-32:0:143:200:u97cb-08@2$99:0:0:30:0:196:200:u672b-02"
+      },
+      "url": "https://glyphwiki.org/api/glyph?name=u97ce-j%401",
+      "status": 200
+    },
+    {
+      "record": {
+        "version": "2",
+        "related": "U+97CB",
+        "data": "1:0:2:58:36:123:36$1:22:32:123:36:123:64$1:0:32:95:13:85:64$1:0:0:50:64:150:64$1:12:13:73:82:73:108$1:2:2:73:82:127:82$1:22:23:127:82:127:108$1:2:2:73:108:127:108$1:2:0:68:134:145:134$1:12:32:68:134:68:161$1:0:0:50:161:150:161$1:0:0:108:109:108:187",
+        "name": "u97cb-08"
+      },
+      "url": "https://glyphwiki.org/api/glyph?name=u97cb-08%402",
+      "status": 200
+    }
+  ],
+  "sourceOnlyFacts": {
+    "jOriginalReferences": [
+      "u97cb-08@2",
+      "u672b-02"
+    ],
+    "bodyExactFirstRows": [
+      "1:0:2:58:36:123:36",
+      "1:22:32:123:36:123:64"
+    ],
+    "declaredGuideJoin": [
+      123,
+      36
+    ],
+    "bodyTransform": [
+      -32,
+      0,
+      143,
+      200
+    ],
+    "sameOriginalRowsAsExistingDkwNecessaryMismatch": true,
+    "originalSourceRowComparisonOnly": true,
+    "filledPOrWidthEqualityClaimed": false,
+    "wholeHOLDTransferred": false
+  },
+  "existingEvidence": {
+    "path": "docs/hanja-source-inventory-u97ce-2026-10-26/source-screening.json",
+    "SHA256": "6bac81b4197eaa73a4488c35e8739f345ac9516fc24845813a9035499927e461",
+    "candidate": "dkw-43126@3 -> u97cb-08-var-012@2"
+  },
+  "decision": "The newly read authored leaf retains the same original H/V necessary-mismatch rows. Stop this chain without an engine replay or a new visual failure claim.",
+  "sourceEdited": false,
+  "newEngineRuns": 0,
+  "newProjectionRuns": 0,
+  "newNativeScreens": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
