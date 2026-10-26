@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-public-source-readiness-v1",
+  "date": "2026-10-26",
+  "glyph": "竪",
+  "source": {
+    "path": "docs/hanja-source-alternative-u7aea-kesuuko-2026-10-26/sources.json",
+    "SHA256": "790479cb51e9f0525e5724b8f6f65fbcfb28755699f3eb0a1b2ea7f2fa94c95b"
+  },
+  "catalogStrokes": 13,
+  "closureComplete": false,
+  "records": 26,
+  "previouslyKnownRecords": 6,
+  "newPublicRecords": 20,
+  "remainingReferences": [
+    "kesuuko_dot88-28",
+    "kesuuko_dot88-37",
+    "kesuuko_dot88-67",
+    "kesuuko_dot88-u4e00-04"
+  ],
+  "requests": {
+    "distinctMissingReferencesAttempted": 24,
+    "retries": 0,
+    "failures": [
+      {
+        "requested": "kesuuko_dot88-28",
+        "classification": "scrape-error",
+        "detailedCauseCaptured": false
+      },
+      {
+        "requested": "kesuuko_dot88-37",
+        "classification": "scrape-error",
+        "detailedCauseCaptured": false
+      },
+      {
+        "requested": "kesuuko_dot88-67",
+        "classification": "provider-rate-limit-request-not-run"
+      },
+      {
+        "requested": "kesuuko_dot88-u4e00-04",
+        "classification": "provider-rate-limit-request-not-run"
+      }
+    ],
+    "firecrawlAttemptsPerReference": 1,
+    "authorizedAlternativeHTTP": {
+      "transport": "context-mode Python urllib HTTPS",
+      "automaticRetries": 0,
+      "results": [
+        {
+          "requested": "kesuuko_dot88-67",
+          "attempts": 1,
+          "result": "HTTP 403 Forbidden",
+          "recordRecovered": false
+        },
+        {
+          "requested": "kesuuko_dot88-u4e00-04",
+          "attempts": 1,
+          "result": "HTTP 403 Forbidden",
+          "recordRecovered": false
+        }
+      ]
+    }
+  },
+  "sourceOnlyFacts": {
+    "newRecordsReferenceExistingTerminalOnly": true,
+    "originalNamesVersionsDataAndReferencesPreserved": true,
+    "previousFourLineGridRecordReused": true,
+    "expandedRowCountNotClaimedWhileIncomplete": true
+  },
+  "limits": [
+    "The public closure remains incomplete; no whole capture or grouping is approved.",
+    "The reused terminal four-row H/H/V/V structure is a source-row fact, not a whole-shape rejection.",
+    "No animation timing, direction, logical 13-stroke grouping, compatibility or runtime approval follows from this inventory."
+  ],
+  "engine": 0,
+  "projection": 0,
+  "privateFetch": 0,
+  "sharedChanges": 0,
+  "server": 0,
+  "wholeCompatibilityApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
