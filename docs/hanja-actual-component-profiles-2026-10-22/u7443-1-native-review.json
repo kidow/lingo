@@ -1,0 +1,232 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "瑃",
+  "root": "u7443-g",
+  "status": "PASS-scoped-source-window-native-review",
+  "reviewer": "ROOT direct browser panel screenshots",
+  "input": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u7443-1.json",
+      "SHA256": "7628ef63c81c86e743b74d2c026870748f646235c7a81bd91911e7689c72181c"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "156f1a2827028f6c349eb1c5a434debcacdbc762f945ba825d3190b53abdc5b1"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "d94823692e4e3aea6c64a9838dc5efccb54e3342a80b1bbb57cda738f78e0ab6"
+    },
+    "policy": {
+      "path": "lib/hanja-stroke-source-windows-u7443-g.ts",
+      "SHA256": "509618f92bd76e7f96f001ab7f805ab568c6da9f1b7bcebe5a0e9393e5633ef4"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u7443-g-2026-10-26/fixtures.json",
+      "SHA256": "060c2507167ccad9458a4e917117ca43f58578e626d783a95266c535e8700f66",
+      "geometrySHA256": "20d60fad2f377bb20583af6ce87ff23b40a73d07dee52a9442a9ebef5acacabd"
+    },
+    "necessaryInputPins": 508
+  },
+  "startup": {
+    "authorFocusedCheck": {
+      "SSR": 1,
+      "CJS": 364,
+      "ESM": 364,
+      "ordinaryMatrixChecks": 0,
+      "engine": 0,
+      "sourceProjection": 0
+    },
+    "actualReviewProcess": {
+      "pid": 61130,
+      "port": 59412
+    },
+    "actualBrowserControlsAndRenderingObserved": true,
+    "actualStartupCountersNotRepeatedFromAuthorCheck": true
+  },
+  "finite": {
+    "total": 24,
+    "fresh": 24,
+    "reused": 0,
+    "targets": [
+      {
+        "id": "u7443-g-source-window-4-1",
+        "pen": 4,
+        "mask": 1,
+        "earlyRequested": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "midNearRequested": [
+          0.5,
+          0.99999999
+        ],
+        "completedResidual": 1,
+        "exactZeroRequested": 0,
+        "allSevenNativeStatesPassed": true
+      },
+      {
+        "id": "u7443-g-source-window-8-1",
+        "pen": 8,
+        "mask": 1,
+        "earlyRequested": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "midNearRequested": [
+          0.5,
+          0.99999999
+        ],
+        "completedResidual": 1,
+        "exactZeroRequested": 0,
+        "allSevenNativeStatesPassed": true
+      },
+      {
+        "id": "u7443-g-source-head9-9-1",
+        "pen": 9,
+        "mask": 1,
+        "earlyRequested": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "midNearRequested": [
+          0.5,
+          0.99999999
+        ],
+        "completedResidual": 1,
+        "exactZeroRequested": 0,
+        "allSevenNativeStatesPassed": true
+      }
+    ],
+    "baseTargetStates": 21,
+    "boundaryStates": 3,
+    "prior7Exit": {
+      "id": "u7443-g-source-head9-9-1",
+      "exactBoundary": "7/484",
+      "requested": [
+        0.014462809817355373,
+        0.014462809917355372,
+        0.014462810017355372
+      ],
+      "actualProgress": [
+        0.014462809817354916,
+        0.014462809917355955,
+        0.014462810017354897
+      ],
+      "prior7Progress": 1,
+      "allChecks": true
+    },
+    "allDirectScreensObserved": true,
+    "bad": [],
+    "errors": [],
+    "rawFiniteValuesNotSeparatelyReportedAreNotInvented": true
+  },
+  "natural": {
+    "unique": 6,
+    "progress": 3,
+    "ends": 3,
+    "records": [
+      {
+        "pen": 4,
+        "id": "u7443-g-source-window-4-1",
+        "progress": 0.04095000004768368,
+        "end": 0.9999999999999998,
+        "progressReadScope": "main DOM immediately before screenshot; screenshot animation has progressed further",
+        "endMode": "natural-ended",
+        "endIsExactOne": false,
+        "endPhase": "partial",
+        "endCoverageReady": false
+      },
+      {
+        "pen": 8,
+        "id": "u7443-g-source-window-8-1",
+        "progress": 0.03987500000000007,
+        "end": 0.9999999999999992,
+        "progressReadScope": "main DOM immediately before screenshot; screenshot animation has progressed further",
+        "endMode": "natural-ended",
+        "endIsExactOne": false,
+        "endPhase": "partial",
+        "endCoverageReady": false
+      },
+      {
+        "pen": 9,
+        "id": "u7443-g-source-head9-9-1",
+        "progress": 0.03870000002384797,
+        "end": 0.9999999999999992,
+        "progressReadScope": "main DOM immediately before screenshot; screenshot animation has progressed further",
+        "endMode": "natural-ended",
+        "endIsExactOne": false,
+        "endPhase": "partial",
+        "endCoverageReady": false
+      }
+    ],
+    "prior7PositiveProgressExactly1": true,
+    "rawProgressSnapped": false,
+    "allDirectScreensObserved": true,
+    "bad": [],
+    "errors": []
+  },
+  "whole": {
+    "screens": 1,
+    "pens": 13,
+    "masks": 14,
+    "ordinaryMasks": 11,
+    "specialTargets": 3,
+    "SVGs": 1,
+    "allSpecialProgressExactly1": true,
+    "allSpecialCoverageReady": true,
+    "allChecks": true,
+    "prior7Progress": 1,
+    "fullOriginalPVisible": true,
+    "noTransforms": true,
+    "bad": [],
+    "errors": []
+  },
+  "productPaint": {
+    "rgb": [
+      66,
+      85,
+      255
+    ],
+    "svgOpacity": 1,
+    "htmlOpacity": 0.6,
+    "allChecks": true,
+    "bad": []
+  },
+  "observedResolution": {
+    "sourceWindow4And8": true,
+    "sourceHeadWindow9": true,
+    "actualOpaqueSeparatePrior7FreshlyVerified": true,
+    "originalPGuideWidthAndCalculatedWeightsUnchanged": true
+  },
+  "limits": {
+    "allTime": false,
+    "pixelCount": false,
+    "publisherMicrotimingEquivalent": false,
+    "sourceGuideClockIdentity": false,
+    "productWholeAutoplay": false,
+    "actualAppUI": false,
+    "examBodyApproval": false
+  },
+  "media": {
+    "privateSVGOrCSSWritten": false,
+    "observations": "Direct browser panel pixels; no new image artifacts supplied in handoff"
+  },
+  "postRun": {
+    "PID": 61130,
+    "PIDAbsent": true,
+    "port": 59412,
+    "portClosed": true,
+    "tab": 142,
+    "tabClosed": true,
+    "necessaryInputPinsCompared": 508,
+    "mismatches": [],
+    "allFrozenPinsMatch": true
+  },
+  "nativeApproval": true,
+  "runtimeApplied": false
+}
