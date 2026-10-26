@@ -1,0 +1,161 @@
+{
+  "schema": "hanja-original-first-head-kernel-anchor-facts/v1",
+  "date": "2026-10-26",
+  "glyph": "敝",
+  "inputs": {
+    "docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-proof.json": "a1e4d41afd749d9af493f30fcaf7eccb685b911aead2f38349104d6bbfb0fb87",
+    "docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d.json": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+    "docs/hanja-source-original-u655d-2026-10-26/fixtures.json": "a120891aa1745a7ecf885b71b665396c6977f95c69021d83025a38523da2cbd6",
+    "docs/hanja-source-original-u655d-2026-10-26/source-projection.json": "25540ad408269f15b544896e28162e37ffd4232748198de95373c9a7abddfb9d",
+    "docs/hanja-source-original-u655d-2026-10-26/q7-initial-risk-proof.json": "564eccc7b899422d3cacee4a16aa8a51d2fb57532390d4e0e197b50814bb24ec",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396",
+    "docs/hanja-source-original-u655d-2026-10-26/mask-union-start-kernel-proof.json": "7e1f34c33298e906859acb6fbc5be535c2801941fc04f0e3839c4be0e680070a",
+    "docs/hanja-source-original-u655d-2026-10-26/verify-mask-union-start-kernels.py": "cbe9bde4ad8335a81529f1233306778e99ae5d444a32ece73533b9e68390ce6f"
+  },
+  "verifier": {
+    "path": "docs/hanja-source-original-u655d-2026-10-26/verify-first-head-kernel-anchors.py",
+    "SHA256": "66cc5cd50b106fbf057a8282cb2d1a312d28b4aebea1619b7873bf8d85b75393"
+  },
+  "method": [
+    "Reuse the pinned previously computed union kernel; no boundary or kernel recomputation.",
+    "Select rational lattice points in the original first-head P, strict saved kernel and original open radius7 disk; nearest lattice candidate is diagnostic, not an approved start.",
+    "Strict distance to every head boundary supporting line keeps the entire convex box in the same nonzero-fill head component; all four corners also checked. Convex kernel halfplanes and disk give entire-box inclusion."
+  ],
+  "results": [
+    {
+      "pen": 1,
+      "mask": 1,
+      "raw": 2,
+      "headP1based": 2,
+      "headScope": "original start triangle",
+      "anchor": [
+        "549/25",
+        "378/25"
+      ],
+      "originalQ0": [
+        "22",
+        "15"
+      ],
+      "anchorOffsetFromQ0": [
+        "-1/25",
+        "3/25"
+      ],
+      "anchorEqualsQ0": false,
+      "distanceSquared": "2/125",
+      "kernelLInfinityMargin": "9/8150",
+      "headBoundaryLineLInfinityMargin": "9/8150",
+      "strictBoxHalf": "9/16300",
+      "strictBoxArea": "81/66422500",
+      "wholeBoxDistanceSquaredUpperBound": "2149073/132845000",
+      "wholeBoxInStrictHeadKernelOpenDisk": true,
+      "sourceStartOrClockApproved": false
+    },
+    {
+      "pen": 2,
+      "mask": 1,
+      "raw": 3,
+      "headP1based": 1,
+      "headScope": "original body P inside the source-start disk; not the terminal decoration",
+      "anchor": [
+        "1064/25",
+        "339/20"
+      ],
+      "originalQ0": [
+        "75/2",
+        "29/2"
+      ],
+      "anchorOffsetFromQ0": [
+        "253/50",
+        "49/20"
+      ],
+      "anchorEqualsQ0": false,
+      "distanceSquared": "316061/10000",
+      "kernelLInfinityMargin": "7/2750",
+      "headBoundaryLineLInfinityMargin": "7/2750",
+      "strictBoxHalf": "7/5500",
+      "strictBoxArea": "49/7562500",
+      "wholeBoxDistanceSquaredUpperBound": "956662893/30250000",
+      "wholeBoxInStrictHeadKernelOpenDisk": true,
+      "sourceStartOrClockApproved": false
+    },
+    {
+      "pen": 7,
+      "mask": 1,
+      "raw": 9,
+      "headP1based": 1,
+      "headScope": "original body P inside the source-start disk; not the terminal decoration",
+      "anchor": [
+        "761/20",
+        "1274/25"
+      ],
+      "originalQ0": [
+        "71/2",
+        "48"
+      ],
+      "anchorOffsetFromQ0": [
+        "51/20",
+        "74/25"
+      ],
+      "anchorEqualsQ0": false,
+      "distanceSquared": "152641/10000",
+      "kernelLInfinityMargin": "3/3400",
+      "headBoundaryLineLInfinityMargin": "3/3400",
+      "strictBoxHalf": "3/6800",
+      "strictBoxArea": "9/11560000",
+      "wholeBoxDistanceSquaredUpperBound": "70603681/4624000",
+      "wholeBoxInStrictHeadKernelOpenDisk": true,
+      "sourceStartOrClockApproved": false
+    },
+    {
+      "pen": 8,
+      "mask": 1,
+      "raw": 10,
+      "headP1based": 2,
+      "headScope": "original start triangle",
+      "anchor": [
+        "73429/1000",
+        "1999/250"
+      ],
+      "originalQ0": [
+        "353/5",
+        "7"
+      ],
+      "anchorOffsetFromQ0": [
+        "2829/1000",
+        "249/250"
+      ],
+      "anchorEqualsQ0": false,
+      "distanceSquared": "8995257/1000000",
+      "kernelLInfinityMargin": "7/55500",
+      "headBoundaryLineLInfinityMargin": "19/11000",
+      "strictBoxHalf": "7/111000",
+      "strictBoxArea": "49/3080250000",
+      "wholeBoxDistanceSquaredUpperBound": "22167301129/2464200000",
+      "wholeBoxInStrictHeadKernelOpenDisk": true,
+      "sourceStartOrClockApproved": false
+    }
+  ],
+  "checked": 4,
+  "sourceChanged": false,
+  "kernelRecomputed": 0,
+  "engine": 0,
+  "projection": 0,
+  "nativeApproval": false,
+  "sourceNormalizationEvidenceReused": {
+    "path": "docs/hanja-source-original-u655d-2026-10-26/q7-initial-risk-proof.json",
+    "scalars": 574,
+    "newNormalizationReplay": 0
+  },
+  "limits": [
+    "Only four positive geometric start-head boxes are established. They are not arbitrary central kernel points, but neither proximity nor being inside radius7 approves the original start location.",
+    "All anchors differ from original Q0; author point-window clock is not the original Q clock or publisher micro timing.",
+    "Pen8 has a particularly small kernel margin and strict box; do not round its rational anchor or extents.",
+    "Pen2 and pen7 use the initial portion of original body P1 within the source-start disk, not the separate terminal decoration.",
+    "No dynamic mask connectivity, actual display, DOM prior, policy, native playback or registration is approved by this proof."
+  ],
+  "sourceP_Q_WidthWeightChanged": false,
+  "sharedChanges": 0,
+  "selectionCalculations": 1,
+  "focusedCertificateChecks": 1,
+  "runtimeApplied": false
+}
