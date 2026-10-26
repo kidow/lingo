@@ -1,0 +1,82 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "藇",
+  "root": "hkcs_m85c7",
+  "status": "FAILED-CAP-DIAGNOSTIC-NAMESPACE-BEFORE-NATIVE-APPROVAL",
+  "recordedBy": "D from ROOT direct DOM diagnostics and cleanup report",
+  "input": {
+    "commit": "5d4fbb2dd",
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u85c7-3.json",
+      "SHA256": "58c6045d3e7ab7ca727973f774ecf41413b1b0934c48f04cd9cb2b78ecd2ef17"
+    },
+    "helperSHA256": "71fad5f69ce9cb6f9580455d5abda7b93d887968add8016433f360102e18b4db",
+    "rendererSHA256": "b21f09601449b16afd15fc0db13cc593d5e4e490e500cca94b229ad67d734737",
+    "geometrySHA256": "f9815c9af484d5f5a81ee6833768ce5b9a4e1606e5f40cdc830fd1bfabc945fc"
+  },
+  "startup": {
+    "pid": 49524,
+    "port": 59412,
+    "newSSRChecks": 1,
+    "CJSModules": 363,
+    "ESMModules": 363,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "browser": {
+    "hydrationReady": true,
+    "controlsInitialized": true,
+    "errors": 0,
+    "productPaint": {
+      "rgb": [
+        66,
+        85,
+        255
+      ],
+      "svgOpacity": 1,
+      "htmlOpacity": 0.6,
+      "bad": []
+    },
+    "pointTargetsBad": [],
+    "cap5": {
+      "idleDiagnosticBad": [
+        "sourceGuide",
+        "noPathLength",
+        "measurementBinding",
+        "sameOwner",
+        "fullRound"
+      ],
+      "early3DiagnosticOnly": true,
+      "early3VisualCaptures": 0,
+      "nativeApprovedFinite": 0,
+      "actualMeasurementNamespace": "u85c7-hkcs",
+      "incorrectReaderFallback": "u51d7",
+      "actualMeasurementLength": 18.04498863220215,
+      "actualInkHasLengthDistanceProgressRadiusOwnerMetadata": true
+    },
+    "naturalApproved": 0,
+    "wholeApproved": 0
+  },
+  "cause": {
+    "function": "u51d7ReadCapsTarget",
+    "missingExactKind": "growing-u85c7-hkcs-caps",
+    "expectedNamespace": "u85c7-hkcs",
+    "selectedNamespace": "u51d7",
+    "effect": "Measurement selector misses actual original guide; derived id/frame and completion-mask diagnostics fail.",
+    "rendererFailureInferred": false,
+    "sourceGeometryFailureInferred": false,
+    "fullP1RendererFailureProved": false
+  },
+  "postRun": {
+    "profileSHA256": "58c6045d3e7ab7ca727973f774ecf41413b1b0934c48f04cd9cb2b78ecd2ef17",
+    "helperSHA256": "71fad5f69ce9cb6f9580455d5abda7b93d887968add8016433f360102e18b4db",
+    "rendererSHA256": "b21f09601449b16afd15fc0db13cc593d5e4e490e500cca94b229ad67d734737",
+    "theseThreePinsUnchanged": true,
+    "pidAbsent": true,
+    "portClosed": true,
+    "tabClosed": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
