@@ -1,0 +1,153 @@
+{
+  "schema": "hanja-public-phased-window-conditions/v1",
+  "date": "2026-10-27",
+  "glyph": "媓",
+  "pen": 6,
+  "root": "u5a93",
+  "inputs": {
+    "docs/hanja-source-original-u5a93-2026-10-26/fixtures.json": "a7ad43dd32a18ac22628c77d942fc53ab26d3642bcabce108248a74babf79733",
+    "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py": "2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76",
+    "docs/hanja-source-original-u5a93-2026-10-27/verify-pen2-4-kernel-conditions.py": "8793931f804adcbe7212efc5f6d50eb587302a82c922d5a3a4c31e0ff60bfdd3",
+    "docs/hanja-source-original-u5a93-2026-10-27/pen6-fixed-startcap-risk-proof.json": "0430a147799aec60a48509d96b71d62013c5df7afe6f83ea64b5d91677a8452b"
+  },
+  "utilityAST": {
+    "vec": "c61e8c7f1f0c4aa8b56afb7c86c0dbff0ddaf1be70124843f2f52eed21cb31c8",
+    "det": "0a34c2b9248e30e5435884e6ec9255233ffea4db87a48876d0563560074c4e54",
+    "value": "1d593b2b5d267f8049b7cf14cd285e7a41adb3b0b73cdc9a5f851f0c8814da31",
+    "union_row": "344f5a0bf0651d35f2b272068786fa5e1d80f832f3c110cd4094ad894c1e0ffd",
+    "events": "6e364287d0ec55b5f5151a4c6050cf55bfd9b72f7376393bea47d5573f3cd189",
+    "certify": "e2e47d932f14436b0e6832427a0a744e879254be75b06aec2bfe9e792206fdf6"
+  },
+  "parserASTSHA256": "72b793bdcaeb53f546acc59fac9cdc829b2d6384863db77b63faf9edf5d52e18",
+  "oldTargetLoopsExecuted": false,
+  "originalMaskCount": 1,
+  "originalPCount": 3,
+  "sourceFieldSHA256": "5802b5b1f49b5cab221c4e70f52a77e3d8d03e65e24d15f9fde607fb18e8929a",
+  "HsourceCall": {
+    "kind": "cdDrawLine",
+    "args": [
+      97.20956,
+      41.1327695,
+      163.35044,
+      41.1327695,
+      2,
+      2
+    ],
+    "polygons": 1
+  },
+  "VsourceCall": {
+    "kind": "cdDrawLine",
+    "args": [
+      163.35044,
+      41.1327695,
+      163.35044,
+      93.8493785,
+      22,
+      223
+    ],
+    "polygons": 2
+  },
+  "existingWindingNormalizedOnly": true,
+  "sourceCoordinatesRounded": false,
+  "range": {
+    "xmin": "243/5",
+    "xmax": "1743/20",
+    "ymin": "341/20",
+    "ymax": "519/10",
+    "seamDerivedFromHorizontalOriginalP": "431/20"
+  },
+  "HbandXPrefix": {
+    "label": "pen6-Hband-X-prefix",
+    "range": [
+      "243/5",
+      "1743/20"
+    ],
+    "criticalY": [
+      "243/5",
+      "1573/20",
+      "1613/20",
+      "1633/20",
+      "1693/20",
+      "1743/20"
+    ],
+    "openSlabs": 5,
+    "singleIntervalEveryOpenSlab": true,
+    "bad": [],
+    "positiveWidthAcrossEveryInternalCriticalY": true,
+    "minimumCriticalJoinWidth": "2"
+  },
+  "VYPrefix": {
+    "label": "pen6-V-Y-prefix",
+    "range": [
+      "431/20",
+      "519/10"
+    ],
+    "criticalY": [
+      "431/20",
+      "471/20",
+      "489/10",
+      "519/10"
+    ],
+    "openSlabs": 3,
+    "singleIntervalEveryOpenSlab": true,
+    "bad": [],
+    "positiveWidthAcrossEveryInternalCriticalY": true,
+    "minimumCriticalJoinWidth": "6"
+  },
+  "transition": {
+    "sameOriginalUnionAtSeam": true,
+    "incomingVIntervalAtSeam": [
+      "1573/20",
+      "1743/20"
+    ],
+    "attachmentLength": "17/2",
+    "newLowerInkAreaUpperBoundTimesVlocal": "467997/400",
+    "newLowerInkAreaTendsToZero": true
+  },
+  "initial": {
+    "firstOtherOriginalPMinX": "1573/20",
+    "validHlocal": "0<u<601/771",
+    "originalHorizontalRectangleOnly": true,
+    "exactAreaCoefficientTimesU": "771/10",
+    "areaTendsToZero": true,
+    "verticalMinXEdgeLength": "2",
+    "diameterTendsToZeroClaim": false,
+    "otherMinimumVerticalEdgesAlreadyCoveredByHbody": true
+  },
+  "sourcePhaseReferences": {
+    "Hlength": "826761/25000",
+    "Vlength": "52716609/2000000",
+    "cut": "1296880/2330539",
+    "metadataWeightUnchanged": 59.428745,
+    "authorWindowClockNotUAOrPublisherClock": true
+  },
+  "oldUnsafeWitness": {
+    "referenceOnlyNotRecomputed": true,
+    "center": [
+      "54",
+      "41/2"
+    ],
+    "boxHalfWidth": "1/100",
+    "requestedLogicalEpsilon": "1/1000000",
+    "remedyMaximumXAtEpsilon": "1260569156845569/25937600000000",
+    "entireBoxNotPaintedAtRemedyEpsilon": true
+  },
+  "limits": [
+    "Finite exact union-row certificates prove connected source X/Y prefixes and positive critical joins, not native or publisher acceptance.",
+    "The first X-prefix has a vertical edge of length2; only initial AREA tends to0, not diameter.",
+    "The H window completes the original upper corner ornament before the V window expands below the actual H lower seam; this is a new author clock.",
+    "Original3P are clipped as one unchanged mask; clipped proof polygons are analysis-only and must not replace, split, trim, reorder or rewrite source P/Q/width/weight/flags."
+  ],
+  "sourceP_Q_WidthWeightsFlagsChanged": false,
+  "newNative": 0,
+  "engine": 0,
+  "projection": 0,
+  "privateRequests": 0,
+  "runtimeApplied": false,
+  "feasibilityPrototypeExecutions": 1,
+  "verifierExecutions": 1,
+  "verifier": {
+    "file": "docs/hanja-source-original-u5a93-2026-10-27/verify-pen6-phased-window-conditions.py",
+    "SHA256": "66062eb2d1d76a1d4c9b65ea92052d14fc48091b69950dcb464614efe7a79b12"
+  }
+}
