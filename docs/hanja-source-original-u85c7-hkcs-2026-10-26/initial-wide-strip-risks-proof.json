@@ -1,0 +1,88 @@
+{
+  "schema": "hanja-source-initial-fixed-strip-risk/v1",
+  "date": "2026-10-26",
+  "glyph": "藇",
+  "root": "hkcs_m85c7",
+  "fixture": "docs/hanja-source-original-u85c7-hkcs-2026-10-26/fixtures.json",
+  "fixtureSHA256": "fbb7b817d68a9c1a70064f8ab31b49237dbdfbc0ab69e33b6f77f5dd9aa0aed1",
+  "sourceCoordinates": "normalized100; original Q,width14,radius7 unchanged",
+  "targets": [
+    [
+      5,
+      1
+    ],
+    [
+      17,
+      1
+    ],
+    [
+      18,
+      1
+    ]
+  ],
+  "results": [
+    {
+      "pen": 5,
+      "mask": 1,
+      "initialNormalSufficientWitnessFound": true,
+      "point": [
+        "12871367579/356480640",
+        "6315785297/204976368"
+      ],
+      "normalLambda": "-281817985/1639810944",
+      "normalDistanceSquared": "590644070870508579689/67224498301554278400",
+      "strictInsideOriginalPOutsideCompletedPrior": true,
+      "strictWindingMarginLInfinity": "16349/35478880",
+      "witnessMotionCoefficient": "48875912219/2851845120",
+      "allSourceTau0ToTPreservesMembership": true,
+      "sourceGuideT": "468496944/34848525412147",
+      "normalDistanceLower": "338771285300022495128095834457153/114289986706201522273536000000000",
+      "prefixArcUpper": "8145539070589161/35129561907406250000",
+      "outsideBothShrinkingCapsForAllSmallPositiveP": true,
+      "definitelyEarlyNormalizedProgressInterval": [
+        0,
+        "2318712/180544223011"
+      ],
+      "nativeSuggestedFractions": [
+        0,
+        "1/100000000",
+        "1159356/180544223011",
+        "1/1000",
+        "1/100",
+        "3/100"
+      ]
+    },
+    {
+      "pen": 17,
+      "mask": 1,
+      "initialNormalSufficientWitnessFound": false,
+      "notSafetyProof": true,
+      "scope": "Only t0 normal-section strict source/prior test; later parameter exposure and full mask topology not classified."
+    },
+    {
+      "pen": 18,
+      "mask": 1,
+      "initialNormalSufficientWitnessFound": false,
+      "notSafetyProof": true,
+      "scope": "Only t0 normal-section strict source/prior test; later parameter exposure and full mask topology not classified."
+    }
+  ],
+  "method": "Exact rational t0 normal sections of independently filled original P; source-edge margin and polynomial motion bound certify a positive parameter interval, radius7 strip inclusion and exclusion from both shrinking radius=min(7,arc) disks. Chord/control bounds translate to a conservative progress interval. No UA/raster/topology inference.",
+  "UARead": false,
+  "PIntersectionConnectivityProved": false,
+  "noWitnessMeansSafe": false,
+  "nativeHoldOrPassClaimed": false,
+  "existingQCoverageReplayed": 0,
+  "sourcePOrQOrWidthOrWeightChanged": false,
+  "engine": 0,
+  "projection": 0,
+  "privateFetch": 0,
+  "sharedChanges": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "verifier": {
+    "path": "docs/hanja-source-original-u85c7-hkcs-2026-10-26/verify-initial-wide-strip-risks.py",
+    "SHA256": "2937998b12f4ae03d5d6310626372d467c83d80d3e50efe8e2ccd41af8356bca"
+  }
+}
