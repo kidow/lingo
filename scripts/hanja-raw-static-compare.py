@@ -445,7 +445,7 @@ def validate_exact_u655d_base_individual_body3(config,label,spec,path,config_pat
     original=pinned_path("docs/hanja-source-raw-compare-u655d-base-whole-2026-10-26/config.json").read_bytes()
     require(digest(original)=="47d01f73a38bf56d6bf5d2ffbc492fc9d309c795528e45c671d7af9f5f6b3499",'original 敝 base whole config changed')
     expected=json.loads(original)
-    expected.update({'wholeOnly':False,'holdSummary':"Original static single/prefix comparison only for publisher11 versus unchanged u655d body3 raw13/14calls/28P. ROOT whole-shape PASS is reused; proposed one-based groups [[2],[3],[4],[5,6],[1,7],[8],[9],[10],[11],[12],[13]] remain hypotheses, including nonconsecutive raw1+7 and H/V raw5+6. No automatic11 correspondence, source-order/direction/contact/clock/runtime approval. Corrected catalog11 and original XLS12 stay separate. Existing single/prefix selection and original P/Q only; no new source, mixed components, engine, projection or saved private media.",'launcherSHA256':config.get('launcherSHA256')})
+    expected.update({'wholeOnly':False,'holdSummary':"Original static single/prefix comparison only for publisher11 versus unchanged u655d body3 raw13/14calls/28P. ROOT whole-shape PASS is reused; proposed one-based groups [[2],[3],[4],[5,6],[1,7],[8],[9],[10],[11],[12],[13]] remain hypotheses, including nonconsecutive raw1+7 and H/V raw5+6. No automatic11 correspondence, source-order/direction/contact/clock/runtime approval. Corrected catalog11 and original XLS12 stay separate. Existing single/prefix selection and original P/Q only; no new source, mixed components, engine, projection or saved private media. Preparation correction: the c962175f8 input passed source-only check-only but the first actual /compare request was rejected before any glyph observation because the whole-only selection wrapper remained installed after only page restoration. This exact individual case now skips whole-only installation and retains the original strict shared selection. Previous input/native attempt remains unapproved; no failed observation is counted as a shape review.",'launcherSHA256':config.get('launcherSHA256')})
     expected['inputSHA256']={**expected['inputSHA256'],**{"docs/hanja-source-raw-compare-u655d-base-whole-2026-10-26/config.json":"47d01f73a38bf56d6bf5d2ffbc492fc9d309c795528e45c671d7af9f5f6b3499","docs/hanja-source-raw-compare-u655d-base-whole-2026-10-26/native-whole-review.json":"92e89dc837ee91cf2af9ffef855a34b4447f11c8bca37d784f4334f67da43408"}}
     require(config==expected,'unchanged 敝 source and exact unapproved individual input required')
     whole={**config,'wholeOnly':True,'inputSHA256':U655D_BASE_FIXED_BODY3['inputSHA256']}
@@ -895,7 +895,7 @@ def main():
     if new_public_whole:
         if new_public_whole.get('individualStatic'):shared.page=original_page
         else:install_new_whole_only(shared,original_page)
-    if original_u655d_config or original_u655d_vs1_config or original_u655d_base_config:install_new_whole_only(shared,original_page)
+    if (original_u655d_config or original_u655d_vs1_config or original_u655d_base_config) and not original_u655d_base_individual_config:install_new_whole_only(shared,original_page)
     if original_u655d_base_individual_config:shared.page=original_page
     if original_u840d_1040_config:install_new_whole_only(shared,stacked_page)
     if args.check_only:
