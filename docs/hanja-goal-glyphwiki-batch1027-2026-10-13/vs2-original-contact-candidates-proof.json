@@ -1,0 +1,164 @@
+{
+  "schema": "hanja-original-public-contact-candidates/v1",
+  "date": "2026-10-26",
+  "glyph": "薅",
+  "root": "u8585-ue0102",
+  "sourceFull5": {
+    "path": "docs/hanja-goal-glyphwiki-batch1027-2026-10-13/engine-whole-u8585-ue0102.json",
+    "SHA256": "0e3c057ae9641b610c89ec602558fe1ac7510278306b3dcb6f55f0ff6279ccd5"
+  },
+  "utility": {
+    "path": "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py",
+    "SHA256": "2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76",
+    "importedFunctions": [
+      "det",
+      "events",
+      "union_row",
+      "value",
+      "vec"
+    ],
+    "oldTargetLoopsExecuted": 0
+  },
+  "coordinates": "Unchanged original 200-unit polygon coordinates; exact decimal source tokens parsed as rational. No normalization or endpoint tolerance.",
+  "sourceCounts": {
+    "raw": 19,
+    "calls": 21,
+    "P": 42
+  },
+  "results": [
+    {
+      "rawPair": [
+        5,
+        6
+      ],
+      "originalPCounts": [
+        2,
+        2
+      ],
+      "originalCallKinds": [
+        [
+          "cdDrawLine"
+        ],
+        [
+          "cdDrawCurve"
+        ]
+      ],
+      "QEnd": [
+        "271/10",
+        "738/5"
+      ],
+      "QNextStart": [
+        "144/5",
+        "3367/25"
+      ],
+      "QExact": false,
+      "QDelta": [
+        "17/10",
+        "-323/25"
+      ],
+      "positiveAreaIntersection": true,
+      "exactIntersectionArea": "4879097593/269275600",
+      "positiveSlabCells": 7,
+      "firstPositiveWitnessCertificate": {
+        "ySlab": [
+          "134",
+          "2170864/16105"
+        ],
+        "leftBoundaryAffine": [
+          "-2/9",
+          "5371/90"
+        ],
+        "rightBoundaryAffine": [
+          "65/8",
+          "-21177/20"
+        ],
+        "interiorWitness": [
+          "72981581/2319120",
+          "2164467/16105"
+        ],
+        "centralHalfMinimumWidth": "3844597/2319120",
+        "positiveAreaLowerBound": "24593887009/37349427600",
+        "wholeCellArea": "24593887009/9337356900"
+      },
+      "nativeMergeApproved": false
+    },
+    {
+      "rawPair": [
+        13,
+        14
+      ],
+      "originalPCounts": [
+        1,
+        3
+      ],
+      "originalCallKinds": [
+        [
+          "cdDrawLine"
+        ],
+        [
+          "cdDrawCurve"
+        ]
+      ],
+      "QEnd": [
+        "117",
+        "3239/25"
+      ],
+      "QNextStart": [
+        "110",
+        "6666749999999999/50000000000000"
+      ],
+      "QExact": false,
+      "QDelta": [
+        "-7",
+        "188749999999999/50000000000000"
+      ],
+      "positiveAreaIntersection": true,
+      "exactIntersectionArea": "653583/10064",
+      "positiveSlabCells": 10,
+      "firstPositiveWitnessCertificate": {
+        "ySlab": [
+          "23161/185",
+          "1253/10"
+        ],
+        "leftBoundaryAffine": [
+          "-37/5",
+          "26236/25"
+        ],
+        "rightBoundaryAffine": [
+          "0",
+          "123"
+        ],
+        "interiorWitness": [
+          "24561/200",
+          "92683/740"
+        ],
+        "centralHalfMinimumWidth": "39/200",
+        "positiveAreaLowerBound": "1521/148000",
+        "wholeCellArea": "1521/37000"
+      },
+      "nativeMergeApproved": false
+    }
+  ],
+  "method": "All original vertices and exact segment intersections partition y into open slabs. Each original P is filled by nonzero winding independently, then united per raw. Exact row-interval intersections integrate positive affine widths. Central-half lower bounds certify positive area, not just coincident edges.",
+  "limits": [
+    "Positive original-P overlap alone does not approve a domestic pen boundary, 19-to17 grouping, temporal direction or clipping policy.",
+    "This proof does not replace whole/native evidence, and does not add, remove, reverse, merge or translate any P/Q/source row."
+  ],
+  "sourcePOrQChanged": false,
+  "engine": 0,
+  "projection": 0,
+  "oldWholeReplayed": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "traceOriginalJSON": {
+    "SHA256": "eae1f13587b051e4a6cf116fb7b89d4ed50a0db989af6588343da8d44da31fa2",
+    "bytes": 36647,
+    "scope": "Exact original trace JSON byte slice in the same pinned whole file; no separate header/body combination."
+  },
+  "sameWholeTraceRawPolygonsAsserted": true,
+  "sourceCapsule": {
+    "path": "docs/hanja-goal-glyphwiki-batch1027-2026-10-13/sources.json",
+    "SHA256": "880f96f454180b248b26ceb65d694c603ff02f613e390ccae27a558cca212ea4"
+  },
+  "sourceWholeEngineReplayed": false
+}
