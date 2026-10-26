@@ -1,0 +1,67 @@
+{
+  "schema": "hanja-public-original-q0-feasibility/v1",
+  "date": "2026-10-27",
+  "glyph": "菰",
+  "root": "u83f0-var-001",
+  "inputs": {
+    "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/engine-whole-u83f0-var-001.json": "1cb6611538476804f6657d3b4d9d8b8e09828cbc8a53c076324531f038474629",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396"
+  },
+  "sourceRowsOneBased": {
+    "priorV": 10,
+    "Q": 11
+  },
+  "coordinateFrame": "original actual P and call coordinates divided exactly by2; no input geometry changed",
+  "sourceQ0": [
+    "12007/200",
+    "1429/16"
+  ],
+  "prior": {
+    "originalPolygons": 2,
+    "pointStates": [
+      -1,
+      -1
+    ],
+    "maxY": "444/5",
+    "sourceQ0AboveMaxYBy": "41/80",
+    "Q0OutsideAllPriorInk": true
+  },
+  "QUnion": {
+    "originalPolygons": 3,
+    "originalSignedDoubleAreas": [
+      "22301/200",
+      "-2321/400",
+      "-1179/200"
+    ],
+    "normalisation": "Only independent opaque polygon orientations are normalised in analysis; untouched actual source P remains pinned.",
+    "sourceQ0PointStates": [
+      -1,
+      1,
+      -1
+    ],
+    "sourceQ0InsideAnyOriginalPolygon": true,
+    "boundaryEdges": 24,
+    "oneRegularBoundaryCycle": true,
+    "kernelArea": "22397245609069/1204419480960",
+    "sourceQ0InClosedVisibilityKernel": true,
+    "sourceQ0InStrictVisibilityKernel": true,
+    "negativeBoundaryHalfPlanes": 0,
+    "oneExactNegativeWitness": null
+  },
+  "strictOriginalQ0AndPriorKernelConditionPassed": false,
+  "inventedAnchorChosen": false,
+  "sourceGeometryChanged": false,
+  "wholeShapeApproved": false,
+  "partReuseApproved": false,
+  "sourceClockApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineRuns": 0,
+  "newPrivateMedia": 0,
+  "limits": [
+    "This is only exact feasibility for the original Q0 under this pinned source. It is not a proof that all possible source-conforming animation families fail.",
+    "No alternate anchor, substituted part, composite glyph, guide join, source reversal or new reveal policy is proposed.",
+    "The union/kernel algorithm prefix runs without its anchor-search or start-disk candidate code."
+  ],
+  "verifierSHA256": "5a0fdb3b06dbd68c985b089a4d3cc98cfc412baf9a7ea3c9d1d300a08e550399"
+}
