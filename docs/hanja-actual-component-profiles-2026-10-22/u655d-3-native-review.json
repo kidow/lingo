@@ -1,0 +1,366 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "敝",
+  "root": "u655d",
+  "status": "PASS-scoped-native-with-explicit-precision-safe-hidden-limit",
+  "reviewer": "ROOT direct browser panel pixels",
+  "input": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u655d-3.json",
+      "SHA256": "e99db378d1647eebf51b2747d64b54bb3081e4c3f7f79269e0d8987c4d35ddc2"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "76f1d7eb257c16e8f95c25bdd034bec28bcaec25461a3aaccc3b4ec4d082ccf3"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "23935a38a02d7ab97df7b8a5ca745e5360d9f718d7d747cfd3d86d1e68980f66"
+    },
+    "policy": {
+      "path": "lib/hanja-stroke-source-windows-u655d.ts",
+      "SHA256": "57faf555cd7e34d21240ad2e929d4a03e453f8d7e68937de3e7e1e144bbe4e96"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u655d-2026-10-26/fixtures.json",
+      "SHA256": "a120891aa1745a7ecf885b71b665396c6977f95c69021d83025a38523da2cbd6",
+      "geometrySHA256": "93f2ed030aeafa73a35a237d6b71cde8b966862ec9720bba3ff87746896e0f9e"
+    },
+    "necessaryInputPins": 552
+  },
+  "startup": {
+    "previousAuthorSSRChecksReplayed": 0,
+    "actualReviewProcess": {
+      "pid": 51452,
+      "port": 59412
+    },
+    "actualBrowserControlsAndRenderingObserved": true
+  },
+  "finite": {
+    "totalUnique": 67,
+    "plannedObservations": 68,
+    "duplicateControllerObservations": 1,
+    "normalNativePass": 65,
+    "reusedNormalPointFrames": 49,
+    "freshNormalBodyFrames": 16,
+    "freshPrecisionSafeHiddenFrames": 2,
+    "reuseEvidence": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u655d-2-native-review.json",
+      "SHA256": "76c0d43b96ba8bebc27fb7c4f9c0b3f632e3f959251c04f92b0742bb405b2ee1",
+      "reusedPointFrames": 49,
+      "bodyFramesReused": 0,
+      "pointModulePrefixByteExact": true,
+      "pointReaderByteExact": true,
+      "rendererAndPropsByteExact": true,
+      "pointSourceDescriptorsByteExact": true,
+      "productPaintByteExact": true,
+      "bodyInlineCSSUsesSameUnsnappedNumbers": true,
+      "pointModulePrefixSHA256": "b992b0eec5cffd43cdc5cd1e77d02c3f0eecfb0c604efa18c89d72dd5b812f5a",
+      "unchangedRendererSHA256": "23935a38a02d7ab97df7b8a5ca745e5360d9f718d7d747cfd3d86d1e68980f66"
+    },
+    "pointRawEvidence": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u655d-2-native-review.json",
+      "SHA256": "76c0d43b96ba8bebc27fb7c4f9c0b3f632e3f959251c04f92b0742bb405b2ee1"
+    },
+    "bodyNormal": {
+      "count": 16,
+      "directNativePass": true,
+      "requestedBase": [
+        0.000001,
+        0.01,
+        0.03,
+        0.5,
+        0.99999999,
+        1
+      ],
+      "sourcePhaseBoards": [
+        {
+          "label": "body-complete cut boundary3",
+          "progress": [
+            0.8642035149882636,
+            0.8642035150882637,
+            0.8642035151882637
+          ],
+          "meaning": "before body partial and tail hidden; at body direct and tail hidden; after actual complete P4 required before positive tail"
+        },
+        {
+          "label": "old whole-rect counterexample authored-p47over53",
+          "progress": [
+            0.8867924528301887
+          ],
+          "meaning": "current author clock attached-tail stage; original failed one-rect parameter is diagnostic, no old clock equivalence"
+        },
+        {
+          "label": "old counterexample body-local47over53",
+          "progress": [
+            0.7663691548895923
+          ],
+          "meaning": "body-local47/53; original P1..4 only, P5 hidden"
+        },
+        {
+          "label": "tail-local early3-and-mid",
+          "progress": [
+            0.8642036508847486,
+            0.865561479937381,
+            0.8682774096356157,
+            0.9321017575441318
+          ],
+          "meaning": "tail-local epsilon/.01/.03/.5 after exact completed original P4; current same-frame opaque priorH also required"
+        }
+      ],
+      "priorBoundaryBeforeActualZeroIndependentlyObserved": true,
+      "rawValuesNotSeparatelySuppliedNotInvented": true
+    },
+    "precisionSafeHidden": {
+      "count": 2,
+      "requestedZeroAndAtAreOneController": true,
+      "notNormalDisplayPass": true,
+      "rawBadPreserved": true,
+      "frames": [
+        {
+          "scope": "requested-zero / priorH boundary-at",
+          "requested": 0,
+          "actual": 2.729126799396933e-16,
+          "bodyProgress": 3.1579677144893343e-16,
+          "sourcePhase": "body",
+          "priorProgress": 1,
+          "tailProgress": 0,
+          "attributes": {
+            "x": 49.5,
+            "y": 39.5,
+            "width": 4.894849957458468e-15,
+            "height": 1.7842517586864738e-14
+          },
+          "inlineCSS": {
+            "width": "4.89485e-15px",
+            "height": "1.78425e-14px"
+          },
+          "computedCSS": {
+            "x": "49.5px",
+            "y": "39.5px",
+            "width": "0px",
+            "height": "0px"
+          },
+          "allFiveInkHidden": true,
+          "committed": false,
+          "bad": [
+            "tailProgress",
+            "phase",
+            "committed",
+            "status",
+            "visibility"
+          ],
+          "commitError": "Exact body paint and source rect required"
+        },
+        {
+          "scope": "priorH boundary-after",
+          "actual": 1.6913654174190515e-10,
+          "bodyProgress": 1.9571378591839066e-10,
+          "sourcePhase": "body",
+          "sourceRectanglePositive": true,
+          "computedResolvedRectangleZero": true,
+          "allFiveInkHidden": true,
+          "committed": false,
+          "bad": [
+            "tailProgress",
+            "phase",
+            "committed",
+            "status",
+            "visibility"
+          ],
+          "commitError": "Exact body paint and source rect required"
+        }
+      ],
+      "sourcePAndRawProgressUnchanged": true,
+      "blindEpsilonOrSnapUsed": false,
+      "strictGuardRejectionNotErased": true,
+      "notGeneralizedToArbitraryPOrCSS": true
+    },
+    "residual": {
+      "bodyExactOriginal5Paths": true,
+      "coverageReadyAtDone": true,
+      "thinVerticalAndLowerBoundaryLinesObserved": true,
+      "causeConfirmedAA": false,
+      "pureWhiteOrPixelZeroClaim": false
+    }
+  },
+  "natural": {
+    "unique": 16,
+    "progress": 8,
+    "ends": 8,
+    "records": [
+      {
+        "pen": 1,
+        "p": 0.03678750002384186,
+        "end": 1,
+        "phase": "full",
+        "coverage": true,
+        "progressReadScope": "main DOM before screenshot; screenshot animation progresses further",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "paintBad": []
+      },
+      {
+        "pen": 2,
+        "p": 0.03388749997614643,
+        "end": 1,
+        "phase": "source-point-window",
+        "coverage": false,
+        "progressReadScope": "main DOM before screenshot; screenshot animation progresses further",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "paintBad": []
+      },
+      {
+        "pen": 6,
+        "p": 0.028462499988090712,
+        "end": 1,
+        "phase": "full",
+        "coverage": true,
+        "progressReadScope": "main DOM before screenshot; screenshot animation progresses further",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "paintBad": []
+      },
+      {
+        "pen": 7,
+        "p": 0.03064999997615849,
+        "end": 1,
+        "phase": "full",
+        "coverage": true,
+        "progressReadScope": "main DOM before screenshot; screenshot animation progresses further",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "paintBad": []
+      },
+      {
+        "pen": 8,
+        "p": 0.027587500023829797,
+        "end": 0.9999999999999992,
+        "phase": "window",
+        "coverage": false,
+        "progressReadScope": "main DOM before screenshot; screenshot animation progresses further",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "paintBad": [],
+        "phaseLabelAsReportedByROOT": true
+      },
+      {
+        "pen": 10,
+        "p": 0.03187500002383646,
+        "end": 0.9999999999999994,
+        "phase": "window",
+        "coverage": false,
+        "progressReadScope": "main DOM before screenshot; screenshot animation progresses further",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "paintBad": [],
+        "phaseLabelAsReportedByROOT": true
+      },
+      {
+        "pen": 11,
+        "p": 0.03581250002383688,
+        "end": 0.9999999999999992,
+        "phase": "window",
+        "coverage": false,
+        "progressReadScope": "main DOM before screenshot; screenshot animation progresses further",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "paintBad": [],
+        "phaseLabelAsReportedByROOT": true
+      },
+      {
+        "pen": 4,
+        "mask": 2,
+        "p": 0.07114294830290281,
+        "bodyProgress": 0.08232198441779859,
+        "tailProgress": 0,
+        "priorProgress": 1,
+        "end": 0.9999999999999998,
+        "endBodyProgress": 1,
+        "endTailProgress": 0.9999999999999984,
+        "phase": "attached-tail",
+        "coverage": false,
+        "progressReadScope": "main DOM before screenshot; screenshot animation progresses further",
+        "allChecks": true,
+        "bad": [],
+        "errors": [],
+        "paintBad": []
+      }
+    ],
+    "reportedFloatsAndPhaseRetainedWithoutNormalization": true,
+    "pen2ReportedEndAndPhaseRetainedAsSupplied": true,
+    "invalidPen1ControlsScreenshotExcluded": true,
+    "pen1ReobservedStartAndEndAtNonnegativeCrop": true,
+    "reobservationAddsNoUniqueCount": true,
+    "rawProgressSnapped": false
+  },
+  "whole": {
+    "screens": 1,
+    "pens": 11,
+    "masks": 13,
+    "ordinaryMasks": 5,
+    "ordinaryMaskIds": [
+      "3m1",
+      "4m1",
+      "5m1",
+      "5m2",
+      "9m1"
+    ],
+    "specialTargets": 8,
+    "allSpecialProgressExactly1": true,
+    "allSpecialPhaseFull": true,
+    "allSpecialCoverageReady": true,
+    "allChecks": true,
+    "fullOriginalPVisible": true,
+    "noTransforms": true,
+    "bad": [],
+    "errors": [],
+    "paintBad": []
+  },
+  "productPaint": {
+    "rgb": [
+      66,
+      85,
+      255
+    ],
+    "svgOpacity": 1,
+    "htmlOpacity": 0.6,
+    "allChecks": true
+  },
+  "visualScope": {
+    "normalContinuousGlyphsObserved": true,
+    "unexpectedRemoteFragmentsNotObservedInReviewedViews": true
+  },
+  "limits": {
+    "allTime": false,
+    "pixelCount": false,
+    "pixelResidualZero": false,
+    "AAExplanation": false,
+    "publisherMicrotimingEquivalent": false,
+    "productWholeAutoplay": false,
+    "actualAppUI": false,
+    "examBodyApproval": false,
+    "precisionSafeHiddenIsExplicitLimit": true
+  },
+  "postRun": {
+    "PID": 51452,
+    "PIDAbsent": true,
+    "port": 59412,
+    "portClosed": true,
+    "tab": 150,
+    "tabClosed": true,
+    "necessaryInputPinsCompared": 552,
+    "mismatches": []
+  },
+  "nativeApproval": true,
+  "runtimeApplied": false
+}
