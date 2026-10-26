@@ -1,0 +1,284 @@
+{
+  "schema": "hanja-public-pen-kernel-conditions/v1",
+  "date": "2026-10-27",
+  "glyph": "媓",
+  "root": "u5a93",
+  "inputs": {
+    "docs/hanja-source-original-u5a93-2026-10-26/fixtures.json": "a7ad43dd32a18ac22628c77d942fc53ab26d3642bcabce108248a74babf79733",
+    "docs/hanja-goal-glyphwiki-batch1039-2026-10-13/engine-whole-u5a93.json": "689e2d502a5cf1bf337192a939dc0efad1f877c476e0d980bc404d9ddf5c25f8",
+    "docs/hanja-goal-glyphwiki-batch1039-2026-10-13/boundary-source-candidate.mjs": "02431a4c44f47fe4326cd3f60e7d276cfcdcec27b16f9576fda0a79e9f9b2cbb",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-raw9-point-rect.py": "4925401a247d15236789debce8eb467359569187a0bc99b761fb1921e8400cc3"
+  },
+  "utilityFunction": {
+    "name": "exterior",
+    "astSHA256": "d97cec3dc50d51c67978cf0c542a82d0f4dfcfc83eee779d7f918fb75a5f6ef0",
+    "oldTargetProofExecuted": false
+  },
+  "method": "Exact rational original compiled positive nonzero-P union exterior, single-cycle check and oriented-halfplane visibility kernel. Coordinates exactly match full5/2 after the pre-existing winding-only normalization; no coordinate rounding.",
+  "results": [
+    {
+      "pen": 2,
+      "originalMaskCount": 1,
+      "originalPCount": 2,
+      "sourceRawRows": [
+        2
+      ],
+      "originalCompiledPExactlyPreserved": true,
+      "rawFull5SignedAreas": [
+        "243727/800",
+        "81/2"
+      ],
+      "existingCompilerWindingNormalized": true,
+      "coordinatesRounded": false,
+      "positiveSignedAreas": [
+        "243727/800",
+        "81/2"
+      ],
+      "simpleExteriorEdges": 26,
+      "kernelVertices": [],
+      "kernelArea": "0",
+      "originalGuideStart": [
+        "7231/200",
+        "61/2"
+      ],
+      "originalGuideStartInClosedKernel": false,
+      "originalGuideStartViolations": [
+        {
+          "edge": [
+            [
+              "19/4",
+              "468/5"
+            ],
+            [
+              "93/10",
+              "1789/20"
+            ]
+          ],
+          "crossAtOriginalQ0": "-627097/4000"
+        },
+        {
+          "edge": [
+            [
+              "93/10",
+              "1789/20"
+            ],
+            [
+              "27/2",
+              "849/10"
+            ]
+          ],
+          "crossAtOriginalQ0": "-501599/4000"
+        },
+        {
+          "edge": [
+            [
+              "27/2",
+              "849/10"
+            ],
+            [
+              "173/10",
+              "799/10"
+            ]
+          ],
+          "crossAtOriginalQ0": "-18689/200"
+        },
+        {
+          "edge": [
+            [
+              "173/10",
+              "799/10"
+            ],
+            [
+              "83/4",
+              "1489/20"
+            ]
+          ],
+          "crossAtOriginalQ0": "-270681/4000"
+        },
+        {
+          "edge": [
+            [
+              "83/4",
+              "1489/20"
+            ],
+            [
+              "95/4",
+              "342/5"
+            ]
+          ],
+          "crossAtOriginalQ0": "-154599/4000"
+        },
+        {
+          "edge": [
+            [
+              "95/4",
+              "342/5"
+            ],
+            [
+              "132/5",
+              "1237/20"
+            ]
+          ],
+          "crossAtOriginalQ0": "-76729/4000"
+        },
+        {
+          "edge": [
+            [
+              "132/5",
+              "1237/20"
+            ],
+            [
+              "287/10",
+              "219/4"
+            ]
+          ],
+          "crossAtOriginalQ0": "-5689/2000"
+        }
+      ],
+      "singleCommonPointWindowReusable": false,
+      "reason": "Empty exact visibility kernel; do not force the existing one-anchor rectangle family.",
+      "fixedRoundStartWitnesses": [
+        {
+          "point": [
+            "37",
+            "30"
+          ],
+          "strictBoxHalf": "1/100",
+          "maxCornerDistanceSquaredFromOriginalQ0": "7929/8000",
+          "fixedRoundRadius": 7,
+          "positiveSourceInkAwayFromGuideStart": true,
+          "conditionalOnly": true
+        }
+      ]
+    },
+    {
+      "pen": 4,
+      "originalMaskCount": 1,
+      "originalPCount": 3,
+      "sourceRawRows": [
+        5
+      ],
+      "originalCompiledPExactlyPreserved": true,
+      "rawFull5SignedAreas": [
+        "33029/800",
+        "-3241/800",
+        "237/100"
+      ],
+      "existingCompilerWindingNormalized": true,
+      "coordinatesRounded": false,
+      "positiveSignedAreas": [
+        "33029/800",
+        "3241/800",
+        "237/100"
+      ],
+      "simpleExteriorEdges": 28,
+      "kernelVertices": [
+        [
+          "1347/20",
+          "97/10"
+        ],
+        [
+          "613733/9600",
+          "29109/3200"
+        ],
+        [
+          "1437743/22460",
+          "197121/22460"
+        ],
+        [
+          "118589/1760",
+          "8483/880"
+        ]
+      ],
+      "kernelArea": "3256800763/4743552000",
+      "originalGuideStart": [
+        "6542509000000001/100000000000000",
+        "8630548749999999/1000000000000000"
+      ],
+      "originalGuideStartInClosedKernel": false,
+      "originalGuideStartViolations": [
+        {
+          "edge": [
+            [
+              "1247/20",
+              "167/20"
+            ],
+            [
+              "1352177/21680",
+              "90569/10840"
+            ]
+          ],
+          "crossAtOriginalQ0": "-217904486250001529/21680000000000000000"
+        },
+        {
+          "edge": [
+            [
+              "313/5",
+              "15/2"
+            ],
+            [
+              "341/5",
+              "197/20"
+            ]
+          ],
+          "crossAtOriginalQ0": "-3078885000000291/10000000000000000"
+        }
+      ],
+      "potentialStrictAnchor": {
+        "point": [
+          "66808273120000009/1024000000000000",
+          "95418962439999991/10240000000000000"
+        ],
+        "onUnchangedOriginalQuadraticAt": "1/16",
+        "strictKernelBoxHalf": "1709832120000423/409600000000000000",
+        "equalsOriginalGuideStart": false,
+        "sourceMicroclockEquivalent": false
+      },
+      "singleCommonPointWindowGeometricallyPossible": true,
+      "forwardApproval": false,
+      "fixedRoundStartWitnesses": [
+        {
+          "point": [
+            "1287/20",
+            "87/10"
+          ],
+          "strictBoxHalf": "1/100",
+          "maxCornerDistanceSquaredFromOriginalQ0": "1183732809226584360702500000101/1000000000000000000000000000000",
+          "fixedRoundRadius": 7,
+          "positiveSourceInkAwayFromGuideStart": true,
+          "conditionalOnly": true
+        },
+        {
+          "point": [
+            "68",
+            "11"
+          ],
+          "strictBoxHalf": "1/100",
+          "maxCornerDistanceSquaredFromOriginalQ0": "12343547959226515560702500000101/1000000000000000000000000000000",
+          "fixedRoundRadius": 7,
+          "positiveSourceInkAwayFromGuideStart": true,
+          "conditionalOnly": true
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "The pen2 empty kernel rejects only the common single-anchor visibility-kernel route; it does not prove all animation routes impossible.",
+    "The pen4 candidate lies at original quadratic parameter1/16, not Q0. It gives a strict geometric kernel point, not original head order, publisher microclock, or forward approval.",
+    "Conditional radius7 witnesses do not replace ROOT native observations and do not approve a new clipping policy.",
+    "No new connector, trim, reorder, source substitution, path interpolation, outline merge or source-guide edit."
+  ],
+  "sourceP_Q_WidthWeightsFlagsChanged": false,
+  "newNative": 0,
+  "engine": 0,
+  "projection": 0,
+  "privateRequests": 0,
+  "runtimeApplied": false,
+  "successfulVerifierExecutions": 2,
+  "artifactMaterializationIncluded": true,
+  "failedSetupChecksBeforeSuccessfulRun": 1,
+  "verifier": {
+    "file": "docs/hanja-source-original-u5a93-2026-10-27/verify-pen2-4-kernel-conditions.py",
+    "SHA256": "8793931f804adcbe7212efc5f6d50eb587302a82c922d5a3a4c31e0ff60bfdd3"
+  }
+}
