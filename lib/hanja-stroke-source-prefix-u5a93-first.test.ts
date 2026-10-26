@@ -3,15 +3,22 @@ import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import fixture from '../docs/hanja-source-original-u5a93-2026-10-26/fixtures.json' with {type:'json'}
+import order from '../docs/hanja-source-order-u5a93-2026-10-27/reviewed-order-manifest.json' with {type:'json'}
 import type {HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
-import {makeReviewedU5a93FirstPrefixContext,reviewedU5a93FirstPrefixPolicy,sampleReviewedU5a93FirstPrefixFrame,commitReviewedU5a93FirstPrefix,REVIEWED_U5A93_FIRST_PREFIX_SOURCE,REVIEWED_U5A93_FIRST_PREFIX_INPUT_SHA256} from './hanja-stroke-source-prefix-u5a93-first.ts'
-const f=fixture.u5a93,s=f.strokes as HanjaOutlineStrokes,NS='http://www.w3.org/2000/svg',P='data-u5a93-first-prefix-',clone=<T,>(v:T):T=>JSON.parse(JSON.stringify(v))
+import {makeReviewedU5a93FirstPrefixContext,reviewedU5a93FirstPrefixPolicy,sampleReviewedU5a93FirstPrefixFrame,commitReviewedU5a93FirstPrefix,REVIEWED_U5A93_FIRST_PREFIX_SOURCE,REVIEWED_U5A93_FIRST_PREFIX_INPUT,REVIEWED_U5A93_FIRST_PREFIX_INPUT_SHA256} from './hanja-stroke-source-prefix-u5a93-first.ts'
+const f=fixture.u5a93,s=order.permutationZeroBased.map(i=>f.strokes[i])as HanjaOutlineStrokes,NS='http://www.w3.org/2000/svg',P='data-u5a93-first-prefix-',clone=<T,>(v:T):T=>JSON.parse(JSON.stringify(v))
 const context=()=>{const c=makeReviewedU5a93FirstPrefixContext(f.fullProof,f.identity,s);assert(c);return c}
 const policy=()=>{const p=reviewedU5a93FirstPrefixPolicy(context(),0);assert(p);return p}
-test('媓 true identity3/fullproof8 and exact all12 strokes gate has no getters or outlines-only route',()=>{
+test('媓 strict reviewed-order identity3/fullproof8 gate rejects old10/11 even as cloned values',()=>{
  assert.deepEqual(Object.keys(f.identity).sort(),['file','fileSHA256','root']);assert.equal(Object.keys(f.fullProof).length,8);assert.equal(s.length,12);assert.equal(s.flat().length,13)
- assert.equal(createHash('sha256').update(JSON.stringify(s)).digest('hex'),'79aea820e2f76cc4fa9bbe75a4f65fb75bb62c261060b1aa4e2e3bf1e3d71752')
+ assert.equal(createHash('sha256').update(JSON.stringify(f.strokes)).digest('hex'),order.originalCompiledSHA256)
+ assert.equal(createHash('sha256').update(JSON.stringify(s)).digest('hex'),order.reviewedOrderSnapshotSHA256)
+ assert.equal(order.originalCompiledSHA256,'79aea820e2f76cc4fa9bbe75a4f65fb75bb62c261060b1aa4e2e3bf1e3d71752');assert.equal(order.reviewedOrderSnapshotSHA256,'36c733b72b0aeb002f7a02a51365c5206459a756828a8fef62224c81d4b04485')
+ assert.deepEqual(REVIEWED_U5A93_FIRST_PREFIX_INPUT.strokes,s);assert.deepEqual(REVIEWED_U5A93_FIRST_PREFIX_INPUT.fullProof,f.fullProof);assert.deepEqual(REVIEWED_U5A93_FIRST_PREFIX_INPUT.identity,f.identity)
+ assert.deepEqual(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.reviewedOrderPermutationZeroBased,order.permutationZeroBased);assert.deepEqual(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.originalSourceGrouping,f.sourceGroups);assert.deepEqual(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.reviewedOrderSourceGrouping,order.reviewedOrderSourceGroups)
  const make=makeReviewedU5a93FirstPrefixContext as(...a:unknown[])=>unknown;assert(context());assert.equal(make(f.fullProof,f.identity),null);assert.equal(make(f.fullProof,f.identity,s,0),null)
+ assert.equal(context().id,'u5a93-reviewed-order-12-first-prefix-preview');assert(make(clone(f.fullProof),clone(f.identity),clone(s)));assert.equal(make(clone(f.fullProof),clone(f.identity),clone(f.strokes)),null)
+ const anotherOrder=[...clone(s)];[anotherOrder[0],anotherOrder[1]]=[anotherOrder[1],anotherOrder[0]];assert.equal(make(f.fullProof,f.identity,anotherOrder),null)
  for(const k of Object.keys(f.identity)){const id={...f.identity}as Record<string,unknown>;delete id[k];assert.equal(make(f.fullProof,id,s),null)}
  assert.equal(make(f.fullProof,{...f.identity,sourceRoot:'u5a93'},s),null)
  const wrong=clone(f.fullProof);wrong.trace[0][0].args[0]+=.01;assert.equal(make(wrong,f.identity,s),null)
@@ -74,4 +81,5 @@ test('媓 detects mid-commit rectCSS/visibility mutation and rolls back both ori
 test('媓 source snapshot/140-state proof pins stay exact and preview-only flags remain false for native/runtime',()=>{
  for(const[path,pin]of Object.entries(REVIEWED_U5A93_FIRST_PREFIX_INPUT_SHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),pin)
  assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.finitePositiveStates,140);assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.previewOnly,true);assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.nativeForwardApproval,false);assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.runtimeApplied,false);assert.equal(f.restoration.successfulCompilerRuns,1);assert.equal(f.restoration.engine,0);assert.equal(f.restoration.newGeometry,false)
+ assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.originalCompiledSHA256,order.originalCompiledSHA256);assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.reviewedOrderSnapshotSHA256,order.reviewedOrderSnapshotSHA256);assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.inputContract,'reviewed-order-only-v2-no-original-order-fallback');assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.inputContextChanged,true);assert.equal(REVIEWED_U5A93_FIRST_PREFIX_SOURCE.priorContextNativeApprovalTransferred,false)
 })
