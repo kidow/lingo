@@ -488,6 +488,8 @@ def new_public_whole_case(config):
         case={**case,'config':"docs/hanja-source-raw-compare-u8609-hkcs-individual-2026-10-26/config.json",'individualStatic':True}
     elif case and spec.get('root')=='hkcs_m6145' and config.get('wholeOnly')is False:
         case={**case,'config':"docs/hanja-source-raw-compare-u6145-hkcs-individual-2026-10-26/config.json",'individualStatic':True}
+    elif case and spec.get('root')=='hkcs_m85c7' and config.get('wholeOnly')is False:
+        case={**case,'config':'docs/hanja-source-raw-compare-u85c7-hkcs-individual-2026-10-26/config.json','individualStatic':True}
     return case if case and 'pairedRoots'not in case else None
 NEW_PUBLIC_WHOLES['hkcs_m8587']=json.loads("{\"glyph\":\"薇\",\"catalogStrokes\":17,\"config\":\"docs/hanja-source-raw-compare-u8587-hkcs-whole-2026-10-25/config.json\",\"full\":\"docs/hanja-actual-engine-capture-u8587-hkcs-2026-10-25/engine-whole-hkcs_m8587.json\",\"fullSHA\":\"ed62eaf8cb1cb39a17cca1fcc32857d04b6d934d2b6b9edcb60ac6ec6283768d\",\"capture\":\"docs/hanja-actual-engine-capture-u8587-hkcs-2026-10-25/capture.json\",\"captureSHA\":\"a6cf15af6944d0273d4b29e5a701a5d7e26fff0d757476e164505a483dd6e397\",\"source\":\"docs/hanja-source-alternative-u8587-hkcs-2026-10-25/sources.json\",\"sourceSHA\":\"228bed8d10710ae16e72d747f7bd218a59a2434fb43ad86ee00aa26f3ce6bdd3\",\"metadata\":\"docs/hanja-goal-glyphwiki-batch56-2026-09-22/metadata.json\",\"metadataSHA\":\"d7e479ffd6e6a25129d2e1b1722dec0924fce5d7e70790a3c0c1d585eae42b20\",\"readme\":\"docs/hanja-goal-glyphwiki-batch56-2026-09-22/README.md\",\"readmeSHA\":\"2afcfdb5c7b9a01c72f8e2ce89ecce572face760a4935fc4083d40302df878c5\",\"raw\":20,\"calls\":20,\"polygons\":42,\"rootVersion\":2,\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/8587.svg\",\"status\":200,\"bytes\":8765,\"sha256\":\"dd9350d3980f901887d7dd4090afdac4e28a6c543f127a3063aba86042fb65c7\",\"clips\":17,\"glyph\":\"薇\",\"privateMediaSaved\":false}}")
 
@@ -527,6 +529,13 @@ def validate_new_public_whole(config,label,spec,path,config_path,case):
     require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and (spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(case['raw'],case['calls'],case['polygons']),'new whole source counts and full5 contract required')
     if spec['root']=='hkcs_m9c49':require(config['catalogStrokes']==23 and config.get('dictionaryPlaybackStrokes')==case.get('dictionaryPlaybackStrokes')==22,'exact 鱉 catalog23/private22 whole-only context required')
     require(config['domestic']==case['domestic'],'unchanged original dictionary whole metadata required')
+    if case.get('individualStatic') and spec['root']=='hkcs_m85c7':
+        original=pinned_path('docs/hanja-source-raw-compare-u85c7-hkcs-whole-2026-10-26/config.json').read_bytes()
+        require(digest(original)=='17eeb9972f907ea637ee3f5d873e7498c227b38d318a46fa5f282e367c8d57a5','exact original 藇 whole input required')
+        expected=json.loads(original)
+        expected.update({'wholeOnly':False,'holdSummary':"Original static single/prefix comparison only for publisher18 versus unchanged hkcs_m85c7@2 raw23/20drawing rows/20calls/37P. Initial whole observation has no final PASS/HOLD; in particular source raw6 straight V versus the original central-upper stroke needs direct individual comparison. No logical grouping, source-order, direction or whole-shape approval inferred. Metadata raw10=0:0 and15/20=0 remain unchanged and empty in trace/P. Existing shared selection/source_svg/page only; no source edits, alias, transplant, projection or engine.",'launcherSHA256':config.get('launcherSHA256')})
+        expected['inputSHA256']={**expected['inputSHA256'],'docs/hanja-source-raw-compare-u85c7-hkcs-whole-2026-10-26/config.json':'17eeb9972f907ea637ee3f5d873e7498c227b38d318a46fa5f282e367c8d57a5'}
+        require(config==expected,'exact unapproved 藇 single/prefix comparison input required')
     if case.get('individualStatic') and spec['root']=='hkcs_m6145':
         original=pinned_path("docs/hanja-source-raw-compare-u6145-hkcs-whole-2026-10-26/config.json").read_bytes()
         require(digest(original)=="a2642c93bc3d4420ade67729d29dce45f385d57eec7a1b88e59d637356d15c5e",'exact original 慅 HK whole input required')
