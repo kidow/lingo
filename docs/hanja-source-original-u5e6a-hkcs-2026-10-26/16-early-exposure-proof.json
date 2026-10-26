@@ -1,0 +1,114 @@
+{
+  "schema": "hanja-source-early-wide-strip-audit/v1",
+  "date": "2026-10-26",
+  "glyph": "幪",
+  "pen": 16,
+  "mask": 1,
+  "fixture": {
+    "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/fixtures.json",
+    "SHA256": "9a4f42f0206be94e4905f2a177caef251dbce5f0d7073772a52a7d47f84eace8"
+  },
+  "sourceGuide": "M87 55 Q83 61 74 68",
+  "width": 14,
+  "UAReportedFrame": {
+    "p": "3/100",
+    "L": "369188117980957/20000000000000",
+    "d": "1107564353942871/2000000000000000",
+    "rho": "1107564353942871/2000000000000000",
+    "end": [
+      "88769/1024",
+      "5545783996582031/100000000000000"
+    ]
+  },
+  "prefixParameterUpper": "37/1000",
+  "prefixArcUpper": "5513/10000",
+  "beforeP03EvenUsingTotalChordLowerBound": true,
+  "facts": [
+    {
+      "name": "bodyHeadBridgeStart",
+      "point": [
+        "867/10",
+        "277/5"
+      ],
+      "normalRootEndpointSigns": [
+        "36/5",
+        "-142899489/250000000"
+      ],
+      "distanceSquaredFromQ0": "1/4",
+      "insideOriginalWidth14PrefixByNormalRoot": true
+    },
+    {
+      "name": "originalSharedVertex",
+      "point": [
+        "446/5",
+        "1141/20"
+      ],
+      "normalRootEndpointSigns": [
+        "7",
+        "-393624489/250000000"
+      ],
+      "distanceSquaredFromQ0": "3617/400",
+      "insideOriginalWidth14PrefixByNormalRoot": true
+    },
+    {
+      "name": "farOriginalTerminalPInterior",
+      "point": [
+        "17837/200",
+        "28541/500"
+      ],
+      "normalRootEndpointSigns": [
+        "938/125",
+        "-265644989/250000000"
+      ],
+      "distanceSquaredFromQ0": "9108949/1000000",
+      "insideOriginalWidth14PrefixByNormalRoot": true
+    }
+  ],
+  "farPointStrictOriginalP": 3,
+  "farPointOutsideBothReportedGrowingCaps": true,
+  "farPointDistanceSquaredFromReportedEnd": "88705250906133881953012084961/10000000000000000000000000000",
+  "farOriginalDecorationEarlyExposureProved": true,
+  "retainedExactInkBridge": {
+    "polyline": [
+      [
+        "867/10",
+        "277/5"
+      ],
+      [
+        "446/5",
+        "1141/20"
+      ],
+      [
+        "17837/200",
+        "28541/500"
+      ]
+    ],
+    "sourceFirstLeg": "Original body edge; C is also strictly inside original head triangle.",
+    "sourceSecondLeg": "Original convex terminal triangle from its original vertex to a strict positive-barycentric interior point.",
+    "maskArgument": "Normal-root signs and distance bounds remain strict for every point along each segment by linearity and convexity of the norm. Entire continuous polyline is in unchanged source ink and prefix normal strip."
+  },
+  "entireMaskIntersectionComponentsClassified": false,
+  "mathematicalDisconnectionClaimed": false,
+  "nativeAAExplanationClaimed": false,
+  "limits": [
+    "ROOT visual separated-fragment observation is preserved as a raster observation, not converted into a topological conclusion.",
+    "The fixed width14 strip can expose a terminal ornament far outside the small end caps. This audit is not a whole-sweep or publisher-clock approval.",
+    "Reported UA endpoint decimals are only used for the cap-distance comparison; analytic source-Q normal membership uses separate exact polynomials."
+  ],
+  "sourcePOrQOrWidthOrWeightChanged": false,
+  "engine": 0,
+  "projection": 0,
+  "privateOriginalFetch": 0,
+  "sharedChanges": 0,
+  "server": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "verification": {
+    "script": {
+      "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/verify-16-early-exposure.py",
+      "SHA256": "83c988a3495d9652eab5fa9c56464e2fe4ebf5bb79732f6570d58164f8132c00"
+    },
+    "focusedReproducibleProofRun": 1,
+    "priorRAMExactFeasibilityRun": 1
+  }
+}
