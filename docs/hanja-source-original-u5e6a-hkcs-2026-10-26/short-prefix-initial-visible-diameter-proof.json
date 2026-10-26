@@ -1,0 +1,179 @@
+{
+  "schema": "hanja-source-short-prefix-initial-visible-diameter/v1",
+  "date": "2026-10-26",
+  "glyph": "幪",
+  "root": "hkcs_m5e6a",
+  "fixture": {
+    "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/fixtures.json",
+    "SHA256": "9a4f42f0206be94e4905f2a177caef251dbce5f0d7073772a52a7d47f84eace8"
+  },
+  "geometrySHA256": "a2cf337d73821d42be30b945b96ae67d6c4ae668a9447681bb4dc63c4f415e33",
+  "script": {
+    "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/verify-short-prefix-initial-visible-diameter.py",
+    "SHA256": "19139db6be40a386915d672a6bca67f95fb561c765a62ed374e718d9e8eaab95"
+  },
+  "reusedClosedPrefixProof": {
+    "path": "docs/hanja-source-original-u5e6a-hkcs-2026-10-26/short-hook-closed-prefix-proof.json",
+    "SHA256": "d65d2103435d0f214299e6dc7ba244800002a6c476fa5a642aa99dfa0f0863eb",
+    "allOldEventSweepsReexecuted": false
+  },
+  "actualVisibleSet": "(unchanged current original P intersect {x>=h}) minus unchanged completed original prior P; no whole-rectangle diameter substituted.",
+  "results": [
+    {
+      "pen": 2,
+      "mask": 3,
+      "uniqueSourceMaximum": [
+        "357/10",
+        "63"
+      ],
+      "sourceMaximumOccurrenceCount": 1,
+      "neighborVertices": [
+        [
+          "151/5",
+          "63"
+        ],
+        [
+          "178/5",
+          "321/5"
+        ]
+      ],
+      "otherSubpathMaximumX": [
+        "571/20"
+      ],
+      "sourceXRange": [
+        "491/20",
+        "357/10"
+      ],
+      "reusedLastExactArrangementSlab": [
+        "178/5",
+        "357/10"
+      ],
+      "actualSourcePrefixSection": [
+        [
+          "0",
+          "63"
+        ],
+        [
+          "-12",
+          "2457/5"
+        ]
+      ],
+      "originalPriorIntersectionSection": [
+        [
+          "0",
+          "63"
+        ],
+        [
+          "-3/2",
+          "2331/20"
+        ]
+      ],
+      "sourceOutsideCompletedPriorPieces": [
+        {
+          "label": "abovePrior",
+          "lower": [
+            "-3/2",
+            "2331/20"
+          ],
+          "upper": [
+            "-12",
+            "2457/5"
+          ]
+        }
+      ],
+      "positiveAuthorProgressRange": [
+        0,
+        "2/223"
+      ],
+      "epsilonDefinition": "originalMaxX-h = (maxX-minX)*authorProgress",
+      "outsidePriorYSpanCoefficient": "12",
+      "outsidePriorDiameterSquaredUpperBoundCoefficient": "145",
+      "inequality": "diam(new source P intersect x>=h minus completed prior P)^2 <= coefficient*epsilon^2 ->0",
+      "finiteHeightOutsidePriorAtZero": false,
+      "wholeRectangleNotUsedAsVisibleGeometry": true,
+      "sourcePAndQUnchanged": true
+    },
+    {
+      "pen": 13,
+      "mask": 2,
+      "uniqueSourceMaximum": [
+        "1411/20",
+        "869/10"
+      ],
+      "sourceMaximumOccurrenceCount": 1,
+      "neighborVertices": [
+        [
+          "1299/20",
+          "339/4"
+        ],
+        [
+          "1401/20",
+          "1761/20"
+        ]
+      ],
+      "otherSubpathMaximumX": [
+        "61"
+      ],
+      "sourceXRange": [
+        "53",
+        "1411/20"
+      ],
+      "reusedLastExactArrangementSlab": [
+        "906233/12860",
+        "1411/20"
+      ],
+      "actualSourcePrefixSection": [
+        [
+          "43/112",
+          "133983/2240"
+        ],
+        [
+          "-23/10",
+          "49833/200"
+        ]
+      ],
+      "originalPriorIntersectionSection": [
+        [
+          "43/112",
+          "133983/2240"
+        ],
+        [
+          "-23/10",
+          "49833/200"
+        ]
+      ],
+      "sourceOutsideCompletedPriorPieces": [],
+      "positiveAuthorProgressRange": [
+        0,
+        "80/17361"
+      ],
+      "epsilonDefinition": "originalMaxX-h = (maxX-minX)*authorProgress",
+      "outsidePriorYSpanCoefficient": "0",
+      "outsidePriorDiameterSquaredUpperBoundCoefficient": "0",
+      "inequality": "New source P intersect x>=h is already inside completed prior P throughout this initial range; outside-prior visible set is empty.",
+      "finiteHeightOutsidePriorAtZero": false,
+      "wholeRectangleNotUsedAsVisibleGeometry": true,
+      "sourcePAndQUnchanged": true
+    }
+  ],
+  "conclusion": {
+    "sourcePrefixNewOutsidePriorDiameterTendsToZero": true,
+    "sourceKernelFixedWidthCounterexampleDoesNotApplyToTheseUniqueMaxVertices": true,
+    "new2DShortPolicyNeededForThisInitialDiameterCondition": false,
+    "currentOriginalShortPolicyBytesUnchanged": true
+  },
+  "limits": [
+    "This narrowly certifies the initial geometric visible-set diameter with a completed opaque exact prior. It does not approve publisher microclock equivalence, all intermediate local directions, antialiasing or actual renderer behavior.",
+    "No actual visual HOLD was observed or claimed.",
+    "The initial empty outside-prior set for13m2 is recorded as no newly visible source area, not as failure or erased source geometry.",
+    "Source P/Q/width/weight and existing author x counter are unchanged. Original51/static23 and closed-prefix sweeps are reused without replay."
+  ],
+  "engine": 0,
+  "sourceProjection": 0,
+  "newOriginalMedia": 0,
+  "newNative": 0,
+  "newServer": 0,
+  "newSharedChanges": 0,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
