@@ -1,0 +1,97 @@
+{
+  "schema": "hanja-complete-whole-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "薪",
+  "root": "takata_my-gaiji-0430",
+  "rootVersion": 1,
+  "status": "HOLD: 새 whole의 왼쪽 木+오른쪽 新 배치가 사전의 위 草4+아래 新과 다름",
+  "reviewer": "ROOT 직접 Codex 브라우저 패널 관찰",
+  "recordedBy": "C",
+  "inputs": {
+    "config": {
+      "path": "docs/hanja-source-raw-compare-u85aa-takata-whole-2026-10-26/config.json",
+      "SHA256": "9ada6734a9d792aac9d350601afc99ba03a7de763ac383052be3f85f02cab685"
+    },
+    "launcher": {
+      "path": "scripts/hanja-raw-static-compare.py",
+      "SHA256": "95e4364ebaa775fc03fe45b19637f811ba8f67dedb5ddcff537fd306b2c3d284"
+    },
+    "full5": {
+      "path": "docs/hanja-actual-engine-capture-u85aa-takata-2026-10-26/engine-whole-takata_my-gaiji-0430.json",
+      "SHA256": "ccf96ea5a969881dbcbb9ea4c82f1a31efbfb858e32a3dbe190d65a7eaf87401"
+    },
+    "capture": {
+      "path": "docs/hanja-actual-engine-capture-u85aa-takata-2026-10-26/capture.json",
+      "SHA256": "1d2e915e08e0c1d6504d53bafbf9bdf9a5e84fa1339717a491c7ead7ba058899"
+    },
+    "sourceBundle": {
+      "path": "docs/hanja-source-inventory-u85aa-2026-10-26/closure-followup-sources.json",
+      "SHA256": "2a09237d4d8f65c59c18b673630a3be655341e1a478b4e38bfd6ce9561752b98"
+    },
+    "selectedOriginalRecords": [
+      "takata_my-gaiji-0430",
+      "u6728-01-var-009",
+      "u65b0-02",
+      "u65a4-02"
+    ]
+  },
+  "native": {
+    "freshWholeObservations": 1,
+    "publisherSize": [
+      520,
+      520
+    ],
+    "publicSourceSize": [
+      520,
+      520
+    ],
+    "viewport": null,
+    "publisherPaths": 17,
+    "publicSourceP": 34,
+    "publisherLayout": "위 草4, 아래 新",
+    "publicSourceLayout": "왼쪽 木, 오른쪽 新",
+    "requiredUpperGrassAbsent": true,
+    "fontDifferenceOnly": false,
+    "oldHOLDTransferred": false,
+    "sourceNameOrRadicalAssumptionUsedAsVisualEvidence": false,
+    "directNewWholeObservation": true,
+    "conclusion": "필수 구성과 배치가 다른 새 자형이므로 whole 자형 호환을 거절한다."
+  },
+  "preservation": {
+    "raw": 17,
+    "calls": 18,
+    "P": 34,
+    "metadataRows": 0,
+    "sourceRowsChanged": false,
+    "sourcePOrQChanged": false,
+    "aliasesInserted": false,
+    "componentSubstituted": false,
+    "engineReplay": 0,
+    "projection": 0,
+    "privateMediaFilesSaved": 0
+  },
+  "approval": {
+    "whole": false,
+    "staticMapping": false,
+    "order": false,
+    "direction": false,
+    "contact": false,
+    "actualComponent": false,
+    "runtime": false
+  },
+  "afterObservationPins": {
+    "configUnchangedConfirmedByROOT": true,
+    "launcherUnchangedConfirmedByROOT": true
+  },
+  "cleanup": {
+    "PID": 19859,
+    "port": 59412,
+    "signal": "SIGINT",
+    "PIDAbsentConfirmedByROOT": true,
+    "portClosedConfirmedByROOT": true,
+    "tab": 122,
+    "tabClosed": true,
+    "wrapper": null
+  },
+  "nextScope": "같은 takata whole 반복 없이 다른 공개 authored closure 자료를 조사한다."
+}
