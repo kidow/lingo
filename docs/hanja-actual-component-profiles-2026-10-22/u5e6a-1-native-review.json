@@ -1,0 +1,126 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "幪",
+  "status": "HOLD completed caps13 prior rejected; unaffected kernel scopes pass",
+  "profile": "docs/hanja-actual-component-profiles-2026-10-22/u5e6a-1.json",
+  "profileSHA256": "ea5fb86b1321d5ec140c75fa8474b61d505edd2a9ea88b60097f1116bcc0811c",
+  "component": {
+    "path": "components/hanja/stroke-outlines.tsx",
+    "SHA256": "40c891624b7bb447be4551e8a11c7b3cef932227825a6a76abccbc05456d015e"
+  },
+  "helper": {
+    "path": "scripts/hanja-actual-component-review.mjs",
+    "SHA256": "ff7c48d6b2b70a3c11261dde378f0529dfb8e075d2495a00049eeb3c706d89fa"
+  },
+  "startup": {
+    "SSR": 1,
+    "CJS": 346,
+    "ESM": 346,
+    "engine": 0,
+    "sourceProjection": 0
+  },
+  "afterObservationPins": {
+    "count": 399,
+    "mismatches": 0
+  },
+  "reviewer": "ROOT direct Codex browser-panel observation",
+  "finite": {
+    "uniqueStates": 26,
+    "uniqueButtons": 12,
+    "kernelPointTargets": [
+      "u5e6a-hkcs-kernel-point-window-2-2",
+      "u5e6a-hkcs-kernel-point-window-9-2"
+    ],
+    "each": {
+      "initial": [
+        0.001,
+        0.01
+      ],
+      "early": [
+        0.000001,
+        0.01,
+        0.03
+      ],
+      "midNear": [
+        0.5,
+        0.99999999
+      ],
+      "completeResidual": 1,
+      "uniqueWithDuplicate01Removed": 7
+    },
+    "boundaries": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        9,
+        2
+      ]
+    ],
+    "boundaryStates": 9,
+    "originalFootBoundary": {
+      "target": "u5e6a-hkcs-kernel-point-window-2-2",
+      "p": "146/157",
+      "states": 3
+    },
+    "allSampleTargetChecksClear": true,
+    "allSampleErrorsEmpty": true,
+    "native": "PASS inspected kernel2 initial/mid/near/complete, three mask boundaries and original-foot crossing",
+    "mainViewDiagnostics": "When main was completed whole, short13m2 had five failed guards; those are preserved rather than ignored. Exact-prefix2/9 main and sample states have no bad checks.",
+    "initialCropHistory": "First initial/early grid crops were narrow. Same8 initial unique states were recaptured with100px vertical padding and full source drawings visible; duplicate screenshots not additional states."
+  },
+  "hold": {
+    "target": "u5e6a-hkcs-short-hook-13-2",
+    "mode": "done",
+    "p": 1,
+    "phase": "full",
+    "coverageReady": false,
+    "bad": [
+      "prior",
+      "metadata",
+      "committed",
+      "noUA",
+      "visibility"
+    ],
+    "native": "Completed whole missing short-hook ink. Source P exists; caps13m1 completed group is rejected by direct-path-only prior guard.",
+    "otherTenTargets": {
+      "pExactly1": true,
+      "bad": []
+    },
+    "wholeApproved": false
+  },
+  "natural": {
+    "observed": 0,
+    "plan20NotComplete": true
+  },
+  "whole": {
+    "screens": 1,
+    "logicalPens": 17,
+    "status": "HOLD short13 missing",
+    "reusableForApproval": false
+  },
+  "limits": [
+    "Only26 unaffected finite states observed; planned83 was not completed.",
+    "New prior DOM guard must be checked on actual component before registration.",
+    "Unchanged kernel branch/input proof is required before reuse; no missing stroke inferred or added outside original P.",
+    "No publisher original media files or screenshots saved."
+  ],
+  "privateMediaSaved": false,
+  "actualAppUI": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "server": {
+    "ownedPID": 83991,
+    "port": 59412,
+    "stopped": true,
+    "pidAbsent": true,
+    "portClosed": true,
+    "tab106Closed": true
+  }
+}
