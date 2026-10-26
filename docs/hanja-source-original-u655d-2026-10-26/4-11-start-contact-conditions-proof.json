@@ -1,0 +1,123 @@
+{
+  "schema": "hanja-source-initial-unilateral-prior-and-head-conditions/v1",
+  "date": "2026-10-26",
+  "glyph": "敝",
+  "inputs": {
+    "docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-proof.json": "a1e4d41afd749d9af493f30fcaf7eccb685b911aead2f38349104d6bbfb0fb87",
+    "docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d.json": "aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af",
+    "docs/hanja-source-original-u655d-2026-10-26/fixtures.json": "a120891aa1745a7ecf885b71b665396c6977f95c69021d83025a38523da2cbd6",
+    "docs/hanja-source-original-u655d-2026-10-26/source-projection.json": "25540ad408269f15b544896e28162e37ffd4232748198de95373c9a7abddfb9d",
+    "docs/hanja-source-original-u655d-2026-10-26/q7-initial-risk-proof.json": "564eccc7b899422d3cacee4a16aa8a51d2fb57532390d4e0e197b50814bb24ec",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396",
+    "docs/hanja-source-original-u655d-2026-10-26/mask-union-start-kernel-proof.json": "7e1f34c33298e906859acb6fbc5be535c2801941fc04f0e3839c4be0e680070a",
+    "docs/hanja-source-original-u655d-2026-10-26/verify-mask-union-start-kernels.py": "cbe9bde4ad8335a81529f1233306778e99ae5d444a32ece73533b9e68390ce6f"
+  },
+  "pen4mask2": {
+    "raw": 6,
+    "sourceSyntax": "MLQ",
+    "originalP": 5,
+    "anchor": [
+      "99/2",
+      "79/2"
+    ],
+    "anchorIsFirstOriginalLStart": true,
+    "QRestarted": false,
+    "headP1based": 2,
+    "headStrictLineMargin": "1",
+    "priorRaw": 5,
+    "priorMask": 1,
+    "priorH": [
+      [
+        "27/2",
+        "77/2"
+      ],
+      [
+        "99/2",
+        "77/2"
+      ],
+      [
+        "99/2",
+        "81/2"
+      ],
+      [
+        "27/2",
+        "81/2"
+      ]
+    ],
+    "anchorOnPriorRightBoundary": true,
+    "strictCommonAnchorBoxUnavailable": true,
+    "sourceBounds": [
+      "79/2",
+      "36",
+      "55",
+      "185/2"
+    ],
+    "sourceExtents": [
+      "10",
+      "11/2",
+      "7/2",
+      "53"
+    ],
+    "unilateralScaledBox": "[Ax-p/2,Ax-p/4] x [Ay-p/4,Ay+p/4]",
+    "unilateralBoxInsideOriginalHeadPriorAndRectForAllPositiveP": true,
+    "commonAreaLowerCoefficient": "1/8",
+    "actualPriorDOMNotGuaranteed": true,
+    "allTimeRectConnectivityNotProved": true
+  },
+  "pen11mask1": {
+    "raw": 13,
+    "originalP": 2,
+    "originalQ0": [
+      "309/5",
+      "73/2"
+    ],
+    "Q0OutsideOriginalP": true,
+    "candidateHeadAnchor": [
+      "3093/50",
+      "739/20"
+    ],
+    "offsetFromOriginalQ0": [
+      "3/50",
+      "9/20"
+    ],
+    "distanceSquared": "2061/10000",
+    "headP1based": 1,
+    "strictHeadLineMargin": "1/1000",
+    "strictHeadBoxHalf": "1/2000",
+    "boxArea": "1/1000000",
+    "boxWithinOriginalStartDisk7": true,
+    "sourceBounds": [
+      "307/5",
+      "369/10",
+      "189/2",
+      "1837/20"
+    ],
+    "sourceExtents": [
+      "23/50",
+      "816/25",
+      "1/20",
+      "549/10"
+    ],
+    "terminalP2NotUsedAsHead": true,
+    "allTimeRectConnectivityNotProved": true
+  },
+  "sourceKernelRecomputed": 0,
+  "Q7Replayed": 0,
+  "engine": 0,
+  "projection": 0,
+  "sourceP_Q_WidthWeightChanged": false,
+  "authorRectClockNotOriginalQOrPublisherMicroClock": true,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "verifier": {
+    "path": "docs/hanja-source-original-u655d-2026-10-26/verify-4-11-start-contact-conditions.py",
+    "SHA256": "5773415d748d04c78ad3d1bd36ec94f20135bb9e024fcad5522e6bdda53c73be"
+  },
+  "limits": [
+    "Pen4 unilateral box proves positive original-P/prior-H contact only; full rectangle-intersection connectivity is not yet established.",
+    "Pen4 starts at its first L and keeps all five original P together; it never restarts at Q.",
+    "Pen11 head anchor differs from original Q0; neither start-location equivalence nor original microclock is approved.",
+    "p0 hidden and p1 direct full original P remain future display contracts."
+  ],
+  "sharedChanges": 0
+}
