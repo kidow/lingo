@@ -1,0 +1,164 @@
+{
+  "schema": "hanja-public-fixed-startcap-positive-area-risk/v1",
+  "date": "2026-10-27",
+  "glyph": "媓",
+  "pen": 6,
+  "mask": 1,
+  "input": {
+    "path": "docs/hanja-source-original-u5a93-2026-10-26/fixtures.json",
+    "SHA256": "a7ad43dd32a18ac22628c77d942fc53ab26d3642bcabce108248a74babf79733"
+  },
+  "coordinateFrame": "unchanged public fixture normalised100 coordinates",
+  "source": {
+    "originalPolygons": 3,
+    "originalGuideStart": [
+      "2430239/50000",
+      "82265539/4000000"
+    ],
+    "originalFirstGuideEnd": [
+      "4083761/50000",
+      "82265539/4000000"
+    ],
+    "originalRevealWidth": "14",
+    "fixedDiskRadius": "7",
+    "guideStartInsidePriorInk": true,
+    "outlineAndGuideAndWidthChanged": false
+  },
+  "witness": {
+    "center": [
+      "54",
+      "41/2"
+    ],
+    "boxHalfWidth": "1/100",
+    "boxArea": "1/2500",
+    "currentOriginalP": 1,
+    "strictCurrentConvexEdgeCrossMinimum": "539/50",
+    "otherCurrentOriginalPOutsideBox": true,
+    "maximumCornerDistanceSquaredToOriginalA": "467555806054921/16000000000000",
+    "radiusSquared": "49",
+    "strictDiskDistanceSquaredMargin": "316444193945079/16000000000000",
+    "insideCurrentPAndFixedStartDisk": true,
+    "outsideAllPriorP": true
+  },
+  "prior": {
+    "pens": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "masks": 6,
+    "originalPolygons": 11,
+    "exactWholeMaskSeparations": [
+      {
+        "pen": 1,
+        "mask": 1,
+        "originalPolygons": 2,
+        "actualBounds": [
+          "93/10",
+          "69/10",
+          "113/4",
+          "1367/20"
+        ],
+        "separation": {
+          "side": "strictly left of witness box",
+          "gap": "1287/50"
+        }
+      },
+      {
+        "pen": 1,
+        "mask": 2,
+        "originalPolygons": 2,
+        "actualBounds": [
+          "55/4",
+          "587/10",
+          "409/10",
+          "398/5"
+        ],
+        "separation": {
+          "side": "strictly left of witness box",
+          "gap": "1309/100"
+        }
+      },
+      {
+        "pen": 2,
+        "mask": 1,
+        "originalPolygons": 2,
+        "actualBounds": [
+          "19/4",
+          "27",
+          "833/20",
+          "1887/20"
+        ],
+        "separation": {
+          "side": "strictly left of witness box",
+          "gap": "617/50"
+        }
+      },
+      {
+        "pen": 3,
+        "mask": 1,
+        "originalPolygons": 1,
+        "actualBounds": [
+          "153/20",
+          "59/2",
+          "723/20",
+          "63/2"
+        ],
+        "separation": {
+          "side": "strictly left of witness box",
+          "gap": "446/25"
+        }
+      },
+      {
+        "pen": 4,
+        "mask": 1,
+        "originalPolygons": 3,
+        "actualBounds": [
+          "61",
+          "15/2",
+          "347/5",
+          "207/10"
+        ],
+        "separation": {
+          "side": "strictly right of witness box",
+          "gap": "699/100"
+        }
+      },
+      {
+        "pen": 5,
+        "mask": 1,
+        "originalPolygons": 1,
+        "actualBounds": [
+          "228/5",
+          "331/20",
+          "258/5",
+          "262/5"
+        ],
+        "separation": {
+          "side": "strictly left of witness box",
+          "gap": "239/100"
+        }
+      }
+    ]
+  },
+  "conclusion": "There is positive area of current original P inside the unchanged fixed start disk and outside every original prior P. A fixed round start disk for strictly positive reveal can expose that future H ink independently of how tiny the reveal amount is.",
+  "condition": "Conditional source-geometry statement for a reveal mask that includes the fixed disk at original A with radius originalWidth/2; this proof does not read or execute the product mask.",
+  "alternativeAnchorProposed": false,
+  "phaseCCPolicyProposed": false,
+  "sourceGeometryChanged": false,
+  "sourceClockApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "engineRuns": 0,
+  "networkRequests": 0,
+  "newPrivateMedia": 0,
+  "limits": [
+    "This is a rational positive-area source witness, not a browser pixel-area, anti-aliasing or exact rendered-size claim.",
+    "Outside-prior proof uses exact bounding half-planes of every untouched straight source contour; no winding normalisation or smoothing is needed.",
+    "A metadata guard pass does not establish the semantic small-initial-ink condition. No new guard failure or runtime test is claimed by this source-only proof.",
+    "No source P/Q/flags/width, reveal guide, anchor policy, composite, frame scheduling or connected-component phase is changed."
+  ],
+  "verifierSHA256": "a68393424ba1137ba201137832caee895bdbdb46897f223891908958c58fa957"
+}
