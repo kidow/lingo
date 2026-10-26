@@ -5,9 +5,9 @@ import {createHash} from 'node:crypto'
 import fixture from '../docs/hanja-source-original-u85c7-hkcs-2026-10-26/fixtures.json' with {type:'json'}
 import type {HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
 import * as api from './hanja-stroke-start-caps-u85c7-hkcs.ts'
-const f=fixture.hkcs_m85c7,s=f.strokes as HanjaOutlineStrokes,clone=<T,>(x:T):T=>JSON.parse(JSON.stringify(x)),targets=[[5,1]]
+const f=fixture.hkcs_m85c7,s=f.strokes as HanjaOutlineStrokes,clone=<T,>(x:T):T=>JSON.parse(JSON.stringify(x)),targets=[[5,1],[17,1],[18,1]]
 const context=api.makeReviewedU85c7HkcsSourceContext(f.fullProof,f.identity,s);assert(context)
-test('藇 exact full source gate owns one policy and no outlines-only token API',()=>{
+test('藇 exact full source gate owns three policies and no outlines-only token API',()=>{
  assert.equal(context.id,'u85c7-hkcs-original-18-initial-guides')
  assert.equal('reviewedU85c7HkcsContext'in api,false);assert(Object.isFrozen(f.fullProof)&&Object.isFrozen(f.identity)&&Object.isFrozen(s))
  assert.equal(api.makeReviewedU85c7HkcsSourceContext(clone(f.fullProof),clone(f.identity),clone(s)),context)
@@ -40,5 +40,9 @@ test('藇 policies keep original Q and expose only guarded UA measurement, not n
 })
 test('藇 source proof pins distinguish guide conditions from intersection and native review',()=>{
  for(const[path,sha]of Object.entries(api.REVIEWED_U85C7_HKCS_CAPS_INPUT_SHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+path,import.meta.url))).digest('hex'),sha)
- assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_PROOFS.length,1);assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_SOURCE.fullGrowingIntersectionProof,false);assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_SOURCE.notT0WitnessIsNotSafety,true);assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_SOURCE.nativeApproval,false);assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_SOURCE.runtimeApplied,false)
+ assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_PROOFS.length,3);assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_SOURCE.fullGrowingIntersectionProof,false);assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_SOURCE.notT0WitnessIsNotSafety,true);assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_SOURCE.nativeApproval,false);assert.equal(api.REVIEWED_U85C7_HKCS_CAPS_SOURCE.runtimeApplied,false)
+})
+
+test('藇 newly added17 and18 use original MQ policies and guarded shrinking caps',()=>{
+ for(const pen of[17,18]){const p=api.reviewedU85c7HkcsPolicy(context,pen-1,0);assert(p);assert.deepEqual(p.segment,s[pen-1][0]);assert.equal(p.certificate.T,'1/2');assert.equal(p.certificate.K,'1/20');assert.equal(p.certificate.notFullSweepProof,true);const t=measurement(p,.01),v=api.measureReviewedU85c7HkcsFrame(p,p.segment,.01,t.guide as unknown as SVGPathElement);assert.equal(v.guide,p.segment.revealPath);assert.equal(v.rho,.4);assert.throws(()=>api.measureReviewedU85c7HkcsFrame({...p},p.segment,.01,t.guide as unknown as SVGPathElement));assert.throws(()=>api.measureReviewedU85c7HkcsFrame(p,{...p.segment,revealWidth:15},.01,t.guide as unknown as SVGPathElement));const empty={measurement:null,guide:null,startCap:null,endCap:null,ink:null};assert.equal(api.commitReviewedU85c7HkcsCaps(p,p.segment,0,'new-review',empty).status,'empty');assert.equal(api.commitReviewedU85c7HkcsCaps(p,p.segment,1,'new-review',empty).status,'complete');}
 })
