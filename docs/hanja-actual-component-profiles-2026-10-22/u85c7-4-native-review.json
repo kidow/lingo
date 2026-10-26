@@ -1,0 +1,165 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "藇",
+  "root": "hkcs_m85c7",
+  "status": "PARTIAL-HOLD-BASELINE17-18-INITIAL-EXPOSURE",
+  "reviewer": "ROOT direct browser panel images and DOM values; D records report",
+  "input": {
+    "commit": "cd78daa48",
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u85c7-4.json",
+      "SHA256": "e424838fe1612b5095dd41a6bb1ab2d176658e5379a9dcc3ff0efcbe1d6b8272"
+    },
+    "helperSHA256": "02c895d99f470507eeb2717b7281a422231ee48fe2d5a8a4e13d19db9aa76d67",
+    "rendererSHA256": "b21f09601449b16afd15fc0db13cc593d5e4e490e500cca94b229ad67d734737",
+    "geometrySHA256": "f9815c9af484d5f5a81ee6833768ce5b9a4e1606e5f40cdc830fd1bfabc945fc"
+  },
+  "startup": {
+    "pid": 52699,
+    "port": 59412,
+    "newSSRChecks": 1,
+    "CJSModules": 363,
+    "ESMModules": 363,
+    "ordinaryMatrixChecks": 0,
+    "engine": 0,
+    "sourceProjection": 0,
+    "controlsInitialized": true,
+    "idleBad": []
+  },
+  "observations": {
+    "plannedFinite": 45,
+    "observedFinite": 20,
+    "plannedRangeComplete": false,
+    "ordinaryUIOperations": 12,
+    "passedFramesReusableOnlyAfterBranchAndInputIdentityCheck": 12,
+    "passedTargetScopes": [
+      {
+        "id": "u85c7-hkcs-5-1",
+        "pen": 5,
+        "mask": 1,
+        "earlyRequestedProgress": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "earlyFrames": 3,
+        "earlyVisual": "PASS",
+        "fullResidualFrames": 1,
+        "fullResidualVisual": "PASS",
+        "bad": [],
+        "errors": []
+      },
+      {
+        "id": "u85c7-hkcs-cardinal-point-window-11-2",
+        "pen": 11,
+        "mask": 2,
+        "earlyRequestedProgress": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "earlyFrames": 3,
+        "earlyVisual": "PASS",
+        "fullResidualFrames": 1,
+        "fullResidualVisual": "PASS",
+        "bad": [],
+        "errors": []
+      },
+      {
+        "id": "u85c7-hkcs-cardinal-point-window-13-2",
+        "pen": 13,
+        "mask": 2,
+        "earlyRequestedProgress": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "earlyFrames": 3,
+        "earlyVisual": "PASS",
+        "fullResidualFrames": 1,
+        "fullResidualVisual": "PASS",
+        "bad": [],
+        "errors": []
+      }
+    ],
+    "baselineScopes": [
+      {
+        "id": "u85c7-original-curve-17-1",
+        "pen": 17,
+        "mask": 1,
+        "fullRoundResidual": {
+          "frames": 1,
+          "actualOriginalGuideDashRemoved": true,
+          "visual": "white PASS"
+        },
+        "earlyRequestedProgress": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "reportedEpsilonActualProgress": 9.999999985246598e-7,
+        "earlyFrames": 3,
+        "earlyVisual": "HOLD finite initial head diamond / DR fragment already apparent at tiny positive progress",
+        "baselineInitialSafetyApproved": false
+      },
+      {
+        "id": "u85c7-original-curve-18-1",
+        "pen": 18,
+        "mask": 1,
+        "fullRoundResidual": {
+          "frames": 1,
+          "actualOriginalGuideDashRemoved": true,
+          "visual": "white PASS"
+        },
+        "earlyRequestedProgress": [
+          0.000001,
+          0.01,
+          0.03
+        ],
+        "reportedEpsilonActualProgress": 9.999999985246598e-7,
+        "earlyFrames": 3,
+        "earlyVisual": "HOLD finite initial head diamond / DR fragment already apparent at tiny positive progress",
+        "baselineInitialSafetyApproved": false
+      }
+    ],
+    "extraZeroDiagnostics": [
+      {
+        "exactPrefix": 16,
+        "targetPen": 17,
+        "targetHeadAbsent": true
+      },
+      {
+        "exactPrefix": 17,
+        "targetPen": 18,
+        "targetHeadAbsent": true
+      }
+    ],
+    "extraZeroDiagnosticsCountedInPlannedFinite": false,
+    "diagnosticFrames": 2,
+    "naturalFrames": 0,
+    "wholeFrames": 0,
+    "imageFilesSaved": 0,
+    "privateMediaSaved": false
+  },
+  "scopeLimits": {
+    "fullQCoveragePassDoesNotProveInitialContinuity": true,
+    "sourcePGuideFlagsGeometryUnchanged": true,
+    "noOriginalDirectionOrWholeMismatchInferred": true,
+    "noDisconnectedTopologyConclusion": true,
+    "noWhole45Approval": true
+  },
+  "postRun": {
+    "profileSHA256": "e424838fe1612b5095dd41a6bb1ab2d176658e5379a9dcc3ff0efcbe1d6b8272",
+    "helperSHA256": "02c895d99f470507eeb2717b7281a422231ee48fe2d5a8a4e13d19db9aa76d67",
+    "rendererSHA256": "b21f09601449b16afd15fc0db13cc593d5e4e490e500cca94b229ad67d734737",
+    "ROOTReportedTheseThreeUnchanged": true,
+    "DCheckedInputPins": 478,
+    "DInputPinMismatches": [],
+    "pidAbsent": true,
+    "portClosed": true,
+    "tabClosed": true
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
