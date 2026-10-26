@@ -20,7 +20,8 @@
     "screenshots": "Direct tool images only; no publisher screenshot files"
   },
   "findings": [
-    "New source contains two DR-shaped interior strokes in the left component, but their starts visibly join its left vertical. Publisher original has white gaps at both starts.",
+    "New source contains two DR-shaped interior strokes in the left component. Both initially appeared to join the left vertical in the whole screenshot; exact public geometry corrects that impression for the first stroke: raw4 is separated from all raw1 polygons by at least2/5 original200 units. No first-stroke geometric contact is claimed.",
+    "Exact public geometry confirms contact only for the second interior stroke: raw5 P1 overlaps raw1 P1 by1107/2500, with interior witness (149/4,2057/20). Publisher original has a visible white gap at that second start. See verify-dot-contact.py and dot-contact-proof.json in this folder.",
     "The new right upper component has two separated marks above a horizontal; the publisher original upper horizontal and two descending sides have a different visible arrangement.",
     "Authored carrier coordinate gaps did not establish filled-P gaps. This is a fresh observation of the new complete whole, not transfer of an earlier source HOLD.",
     "Raw endpoint coincidence and count arithmetic do not authorize logical grouping or stroke order. No source parts modified or transplanted."
