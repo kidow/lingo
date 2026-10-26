@@ -35,6 +35,18 @@ function styleIsUnmodified(node:Element,view:Window):boolean{
 }
 
 
+export function reviewedU5e6aHkcsShortHookCapsExpectedCSS(doc:Document):string{
+ // Native CSS parsing only, detached from the live SVG; no layout or path geometry read.
+ const probe=doc.createElementNS('http://www.w3.org/2000/svg','path')
+ probe.style.setProperty('d','path("'+CAP!.segment.revealPath+'")')
+ return probe.style.getPropertyValue('d').trim()
+}
+function sameNativeComputedGuide(value:string,expected:string,doc:Document):boolean{
+ // Browser CSS serialization uses its own precision. Source attribute bytes stay exact.
+ if(expected!==CAP!.segment.revealPath)return false
+ const canonical=reviewedU5e6aHkcsShortHookCapsExpectedCSS(doc)
+ return canonical!==''&&value.trim()===canonical
+}
 function maskURL(value:string,id:string,doc:Document):boolean{
  const m=/^url\(["']?([^"')]+)["']?\)$/.exec(value.trim());if(!m)return false
  if(m[1]==='#'+id)return true
@@ -65,7 +77,7 @@ export function verifyReviewedU5e6aHkcsShortHookCapsPriorDOM(policy:ReviewedU5e6
   const parents=new Map(nodes.map(n=>[n,n.parentElement]))
   for(const n of nodes)if(!n.isConnected||n.ownerDocument!==doc||n.namespaceURI!=='http://www.w3.org/2000/svg'||(n!==owner&&(n as SVGElement).ownerSVGElement!==owner)||!noEffect(n,view,n===ink?id:null))return false
   const paint=view.getComputedStyle(ink),white=view.getComputedStyle(guide),ms=view.getComputedStyle(mask)
-  if(paint.fillRule!=='nonzero'||paint.stroke!=='none'||Number(paint.strokeOpacity)!==1||!opaqueRGB(paint.fill)||!sameComputedD(paint.getPropertyValue('d').trim(),CAP.segment.outline)||!sameComputedD(white.getPropertyValue('d').trim(),CAP.segment.revealPath!))return false
+  if(paint.fillRule!=='nonzero'||paint.stroke!=='none'||Number(paint.strokeOpacity)!==1||!opaqueRGB(paint.fill)||!sameComputedD(paint.getPropertyValue('d').trim(),CAP.segment.outline)||!sameNativeComputedGuide(white.getPropertyValue('d'),CAP.segment.revealPath!,doc))return false
   if(white.fill!=='none'||!['white','rgb(255, 255, 255)'].includes(white.stroke)||Number(white.strokeOpacity)!==1||white.getPropertyValue('stroke-width')!=='14px'||white.getPropertyValue('stroke-linecap')!=='round'||white.getPropertyValue('stroke-linejoin')!=='miter'||!['1px, 2px','1px 2px','1 2'].includes(white.getPropertyValue('stroke-dasharray'))||!['0px','0'].includes(white.getPropertyValue('stroke-dashoffset')))return false
   for(const[k,v]of Object.entries({x:0,y:0,width:100,height:100})){const css=ms.getPropertyValue(k);if(css!==''&&css!==String(v)+'px'&&css!==String(v))return false}
   // Existing exact source certificate covers all original filled P with this full round Q7 mask (73 leaves, no unresolved). No UA read or new coverage claim.
