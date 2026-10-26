@@ -1,0 +1,157 @@
+{
+  "schema": "hanja-source-initial-kernel-conditions/v1",
+  "date": "2026-10-26",
+  "glyph": "籧",
+  "root": "u7c67",
+  "pen": 18,
+  "mask": 1,
+  "sourceRaw": 18,
+  "inputSHA256": {
+    "docs/hanja-source-original-u7c67-2026-10-23/fixtures.json": "ac326e4aa2bf4036cc23049bd84b02948e1e9b296ad4498f5fce9e55575e345d",
+    "lib/hanja-stroke-start-caps-u7c67.ts": "ef6fd7a0a8f9df01f682f594cfc8098a755d2a88a9ee0f0b4d2f67640ed64c01",
+    "docs/hanja-original-left-terminal-qb-preparation-2026-10-23/future96-u7c67/native-hold.json": "c9d52718223aafc36bff11a9099aa62cfc69f3265cff388ab22a0a97897fa2d3",
+    "docs/hanja-source-original-u7443-g-2026-10-26/verify-curve-union-start-kernels.py": "95286fc3de0d18ff96735263582095325f7d9afa00bbd2c3a0ea42e03caf2396"
+  },
+  "sourceSegmentSHA256": "424037413381ed1fbfc5f57c4144d68033f7668528370594ecac5ed9633c9515",
+  "script": {
+    "path": "docs/hanja-source-initial-u7c67-18-2026-10-26/verify-original-kernel-conditions.py",
+    "sha256": "11b6cff0c5dcbba7fd0415ed8ecf99c006616690e706142055151bd7c2748074"
+  },
+  "existingNative": {
+    "reusedWithoutReplay": true,
+    "future96Pass": 40,
+    "future96Hold": 1,
+    "failure": "18m1 at .03: small dot and separate lower-right fragment",
+    "terminal15PassPreserved": true
+  },
+  "originalSegment": {
+    "outline": "M87.8 62.3 L86.35 63 L84.9 63.7 L83.4 64.35 L81.85 65 L80.25 65.55 L78.6 66.1 L76.95 66.6 L75.2 67 L73.4 67.35 L71.65 67.8 L71.3 66.95 L72.9 66.1 L74.35 65.05 L75.75 64.05 L77.15 63.1 L78.5 62.15 L79.75 61.2 L81 60.25 L82.15 59.3 L83.3 58.35 L84.35 57.4 Z M83.95 57.65 L87.95 62.2 L87.8 62.3 Z M87.95 62.2 L88 63.95 L85.3 62.8 Z",
+    "bounds": [
+      71.3,
+      57.4,
+      88,
+      67.8
+    ],
+    "direction": "curve",
+    "weight": 16.924137,
+    "revealPath": "M86.5 59.575 Q80 64.1125 71.5 67.4125",
+    "revealWidth": 14
+  },
+  "existingCapCertificate": {
+    "T": "2/3",
+    "K": "1/50",
+    "unchanged": true,
+    "doesNotCertifyAllVisibleOriginalPIntersectionsConnected": true
+  },
+  "exactOriginalUnionAudit": {
+    "raw": 18,
+    "P": 3,
+    "boundaryEdges": 27,
+    "regularBoundaryGraph": true,
+    "strictUnionKernelPositiveArea": true,
+    "kernelArea": "7106377259327/22859933376000",
+    "kernelVertices": [
+      [
+        "439/5",
+        "623/10"
+      ],
+      [
+        "3660821/42850",
+        "1273537/21425"
+      ],
+      [
+        "114137/1335",
+        "5075857/85440"
+      ],
+      [
+        "2711239/31220",
+        "67949/1115"
+      ]
+    ],
+    "sourceQ0": [
+      "173/2",
+      "2383/40"
+    ],
+    "Q0InsideOriginalUnion": false,
+    "Q0OnOriginalUnionBoundary": false,
+    "kernelMinDistanceSquaredToQ0": "2436721/5872400",
+    "kernelIntersectsOpenOriginalStartDisk7": true,
+    "strictStartRegionAnchorCandidate": [
+      "361635667606010299/4195083523663200",
+      "577833352715010203/9588762339801600"
+    ],
+    "strictStartRegionBoxHalfWidthCandidate": "160643/14654700",
+    "Q0StrictKernelMarginLInfinity": "-1561/3420",
+    "Q0IsStrictKernelAnchorCandidate": false,
+    "originalStartOrMicroClockApproved": false,
+    "nativeApproval": false,
+    "closedExteriorCycles": 1,
+    "originalSubpathsSimple": true,
+    "unionExteriorSimple": true
+  },
+  "candidateConditions": {
+    "authorAnchor": [
+      "434/5",
+      "61"
+    ],
+    "originalQ0": [
+      "173/2",
+      "2383/40"
+    ],
+    "anchorEqualsOriginalQ0": false,
+    "originalExteriorStrictLInfinityMargin": "71/1700",
+    "strictHeadBoxHalfWidth": "71/3400",
+    "headBoxInsideOriginalUnionAndKernel": true,
+    "distanceSquaredToQ0": "3393/1600",
+    "wholeHeadBoxStartDiskSquaredUpperBound": "25357337/11560000",
+    "insideOriginalStartDiskRadius": 7,
+    "sourceBounds": [
+      "713/10",
+      "287/5",
+      "88",
+      "339/5"
+    ],
+    "pointRectExtents": [
+      "31/2",
+      "6/5",
+      "18/5",
+      "34/5"
+    ],
+    "p0Hidden": true,
+    "p1WholeOriginalPDirectRequired": true,
+    "nestedRect": true,
+    "initialDiameterSquaredUpperBoundCoefficient": "7741/20"
+  },
+  "connectionArgument": [
+    "The exact original nonzero union has one regular simple exterior cycle and a strict visibility-kernel anchor A.",
+    "For each p>0 the proposed rectangle is convex, contains A in its interior, and is nested in p. Every point of originalP intersect rectangle connects to A by its segment inside both sets.",
+    "The strict head box around A lies in originalP and in its kernel. A scaled positive box lies in every p>0 rectangle, yielding positive initial ink. Strict kernel visibility excludes detached point-only new pieces for this simple union.",
+    "Rectangle diameter is p times the original bounds diagonal, so newly visible ink diameter tends to zero. At p1 the original P must be direct, with no outline edits."
+  ],
+  "limits": {
+    "candidateOnly": true,
+    "sameQClockClaimed": false,
+    "authorStartDiffersFromQ0": true,
+    "existingCapsPolicyAutomaticallyReusable": false,
+    "causeOfOldNativeFailureFullyProved": false,
+    "nativeApproved": false,
+    "UAOrAAVerified": false,
+    "newModuleWritten": false,
+    "sourcePOrQOrWidthOrWeightChanged": false,
+    "old40OrTerminal15Replayed": false,
+    "engine": 0,
+    "projection": 0,
+    "server": 0,
+    "sharedFilesChanged": false,
+    "registered": false
+  },
+  "artifactValidation": {
+    "preliminaryTarget18AuditRuns": 1,
+    "savedScriptAttempts": 2,
+    "firstSavedAttempt": "Failed ordered-array equality: existing original polygon versus fixture uses different orientation/start of the same closed triangle cycle. No coordinate/edge/source mutation.",
+    "focusedCorrection": "Compare exact closed cycles up to rotation/reversal; require all original subpaths and sole union exterior simple. No point approximation or epsilon.",
+    "finalSavedScript": "PASS",
+    "oldNative40OrTerminal15Runs": 0,
+    "reproductionNote": "Script stdout reproduces all fields except this artifactValidation provenance field."
+  }
+}
