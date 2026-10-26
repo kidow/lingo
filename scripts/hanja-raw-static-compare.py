@@ -438,6 +438,21 @@ def validate_exact_u83bd_body3(config,label,spec,path,config_path):
 
 U655D_VS1_FIXED_BODY3 = json.loads("{\"configPath\":\"docs/hanja-source-raw-compare-u655d-vs1-whole-2026-10-26/config.json\",\"sourceRoots\":{\"selected\":{\"root\":\"u655d-ue0101\",\"file\":\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d-ue0101.json\",\"fileSHA256\":\"f24790ad59a7bb1ba14f87c68efffb7419726f0e7b62b9b3ae4341259d126d49\",\"proofKeys\":[\"defaults\",\"groups\",\"trace\"],\"proofKind\":\"selected-body3-only\",\"sourceProofIdentity\":{\"sourceRoot\":\"u655d-ue0101\",\"sourceProofFile\":\"engine-whole-u655d-ue0101.json\",\"sourceProofFileSha256\":\"f24790ad59a7bb1ba14f87c68efffb7419726f0e7b62b9b3ae4341259d126d49\"},\"rawGroups\":12,\"drawingCalls\":13,\"polygonCounts\":[2,1,1,5,3,2,2,2,3,2,1,2],\"polygons\":26}},\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/6500/655d.svg\",\"status\":200,\"bytes\":5806,\"sha256\":\"5a2c703a64c720eec299329728d9fd690003125049cee66feee184c4c5808da1\",\"clips\":11,\"glyph\":\"敝\",\"privateMediaSaved\":false},\"inputSHA256\":{\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/sources.json\":\"9c41dc687373f9efe6866099dbc27310ccff04e7ccf37a26900aac2883eaa7e8\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/metadata.json\":\"4bdeadb13ffc9c00d1705dc0e9768de83a7de4cb08b7e863698b3d1ca25ab8f1\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/source-hold.json\":\"c1d89fed3b99a1b8bd7755e22ae559140a83e649d1bd3180f3a1563b87e67e10\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d-ue0101.json\":\"f24790ad59a7bb1ba14f87c68efffb7419726f0e7b62b9b3ae4341259d126d49\",\"content/hanja/stroke-count-corrections.json\":\"939c3b8fe3648ec11526c31b57bd2b7020fb996b0d2f303a843f9b5e82a25611\"}}")
 
+U655D_BASE_FIXED_BODY3 = json.loads("{\"configPath\":\"docs/hanja-source-raw-compare-u655d-base-whole-2026-10-26/config.json\",\"sourceRoots\":{\"selected\":{\"root\":\"u655d\",\"file\":\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d.json\",\"fileSHA256\":\"aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af\",\"proofKeys\":[\"defaults\",\"groups\",\"trace\"],\"proofKind\":\"selected-body3-only\",\"sourceProofIdentity\":{\"sourceRoot\":\"u655d\",\"sourceProofFile\":\"engine-whole-u655d.json\",\"sourceProofFileSha256\":\"aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af\"},\"rawGroups\":13,\"drawingCalls\":14,\"polygonCounts\":[2,3,2,1,1,5,1,3,2,3,2,1,2],\"polygons\":28}},\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/6500/655d.svg\",\"status\":200,\"bytes\":5806,\"sha256\":\"5a2c703a64c720eec299329728d9fd690003125049cee66feee184c4c5808da1\",\"clips\":11,\"glyph\":\"敝\",\"privateMediaSaved\":false},\"inputSHA256\":{\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/sources.json\":\"9c41dc687373f9efe6866099dbc27310ccff04e7ccf37a26900aac2883eaa7e8\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/metadata.json\":\"4bdeadb13ffc9c00d1705dc0e9768de83a7de4cb08b7e863698b3d1ca25ab8f1\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/source-hold.json\":\"c1d89fed3b99a1b8bd7755e22ae559140a83e649d1bd3180f3a1563b87e67e10\",\"content/hanja/stroke-count-corrections.json\":\"939c3b8fe3648ec11526c31b57bd2b7020fb996b0d2f303a843f9b5e82a25611\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d.json\":\"aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af\"}}")
+
+def validate_exact_u655d_base_body3(config,label,spec,path,config_path):
+    fixed=U655D_BASE_FIXED_BODY3
+    require(config_path==ROOT/fixed['configPath'] and config.get('glyph')=='敝' and type(config.get('catalogStrokes'))is int and config['catalogStrokes']==11 and type(config.get('dictionaryPlaybackStrokes'))is int and config['dictionaryPlaybackStrokes']==11,'exact 敝 corrected catalogue11/source XLS12/dictionary11 original body3 required')
+    require(config.get('defaultSource')=='selected' and label=='selected' and config.get('sourceRoots')==fixed['sourceRoots'] and spec==fixed['sourceRoots']['selected'],'exact selected 敝 original whole only')
+    require(config.get('domestic')==fixed['domestic'] and config.get('inputSHA256')==fixed['inputSHA256'],'exact 敝 fixed source and original-media pins required')
+    require(path==pinned_path(spec['file']) and digest(path.read_bytes())==spec['fileSHA256'],'original 敝 whole body bytes changed')
+    proof=json.loads(path.read_bytes())
+    require(sorted(proof)==['defaults','groups','trace'] and len(proof['groups'])==len(proof['trace'])==13,'original 敝 three fields only; no synthetic header')
+    require([g['polygons']for g in proof['groups']]==[[p for call in row for p in call['polygons']]for row in proof['trace']],'original 敝 trace/P identity required')
+
+    require(config.get('wholeOnly')is True and config.get('noPartialAnimation')is True,'exact 敝 whole-only comparison; no direction or grouping approval')
+    require(sum(map(len,proof['trace']))==14 and sum(len(g['polygons'])for g in proof['groups'])==28 and [len(g['polygons'])for g in proof['groups']]==spec['polygonCounts'],'exact 敝 base original14calls/28P required')
+
 def validate_exact_u655d_vs1_body3(config,label,spec,path,config_path):
     fixed=U655D_VS1_FIXED_BODY3
     require(config_path==ROOT/fixed['configPath'] and config.get('glyph')=='敝' and type(config.get('catalogStrokes'))is int and config['catalogStrokes']==11 and type(config.get('dictionaryPlaybackStrokes'))is int and config['dictionaryPlaybackStrokes']==11,'exact 敝 corrected catalogue11/source XLS12/dictionary11 original body3 required')
@@ -761,8 +776,9 @@ def main():
     if original_u6583_config:keys.add('dictionaryPlaybackStrokes')
     original_u7228_config=(type(config)is dict and config.get('glyph')=='爨' and 'dictionaryPlaybackStrokes'in config)
     if original_u7228_config:keys.add('dictionaryPlaybackStrokes')
+    original_u655d_base_config=(type(config)is dict and config_path==ROOT/U655D_BASE_FIXED_BODY3['configPath'] and config.get('glyph')=='敝' and 'dictionaryPlaybackStrokes'in config)
     original_u655d_vs1_config=(type(config)is dict and config_path==ROOT/U655D_VS1_FIXED_BODY3['configPath'] and config.get('glyph')=='敝' and 'dictionaryPlaybackStrokes'in config)
-    if original_u655d_vs1_config:keys.update({'dictionaryPlaybackStrokes','wholeOnly'})
+    if original_u655d_vs1_config or original_u655d_base_config:keys.update({'dictionaryPlaybackStrokes','wholeOnly'})
     original_u655d_config=(type(config)is dict and config_path==ROOT/U655D_FIXED_BODY3['configPath'] and config.get('glyph')=='敝' and 'dictionaryPlaybackStrokes'in config)
     if original_u655d_config:keys.update({'dictionaryPlaybackStrokes','wholeOnly'})
     original_u83bd_config=(type(config)is dict and config_path==ROOT/U83BD_FIXED_BODY3['configPath'] and config.get('glyph')=='莽' and 'dictionaryPlaybackStrokes'in config)
@@ -771,7 +787,7 @@ def main():
     if original_hkcs_m9c49_config:keys.add('dictionaryPlaybackStrokes')
     require(type(config)is dict and set(config)==keys and config['schema']=='hanja-shared-static-raw-compare/v1','exact config fields required')
     require(type(config['glyph'])is str and len(config['glyph'])==1 and type(config['catalogStrokes'])is int and 1<=config['catalogStrokes']<=128,'glyph/count required')
-    require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']==('stacked1040-css-only'if original_u840d_1040_config else'whole-pair520-css-only'if new_public_whole or original_u655d_config or original_u655d_vs1_config else'stacked520-css-only'),'original source/local host required')
+    require(config['sourceViewBox']=='0 0 200 200'and config['host']=='127.0.0.1'and config['layoutMode']==('stacked1040-css-only'if original_u840d_1040_config else'whole-pair520-css-only'if new_public_whole or original_u655d_config or original_u655d_vs1_config or original_u655d_base_config else'stacked520-css-only'),'original source/local host required')
     require(config['nativeApproval']is False and config['runtimeApplied']is False and config['noPartialAnimation']is True and config['guardMode']=='explicit-parameter-pins-v1','static unapproved scope required')
     require(config['sharedServe']=={'path':SHARED,'SHA256':SHARED_SHA}and hexsha(config['launcherSHA256']),'shared code identity changed')
     roots=config['sourceRoots']
@@ -815,6 +831,7 @@ def main():
             elif config['glyph']=='瀼':validate_exact_u703c_body3(config,label,spec,path,config_path)
             elif original_u6583_config:validate_exact_u6583_body3(config,label,spec,path)
             elif original_u5ac2_config:validate_exact_u5ac2_body3(config,label,spec,path)
+            elif original_u655d_base_config:validate_exact_u655d_base_body3(config,label,spec,path,config_path)
             elif original_u655d_vs1_config:validate_exact_u655d_vs1_body3(config,label,spec,path,config_path)
             elif original_u655d_config:validate_exact_u655d_body3(config,label,spec,path,config_path)
             else:validate_exact_u6f7e_body3(config,label,spec,path)
@@ -827,7 +844,7 @@ def main():
         if original_u7d8c:validate_original_full5_u7d8c(config,label,spec,path)
         require(type(spec['rawGroups'])is int and 1<=spec['rawGroups']<=128 and type(spec['drawingCalls'])is int and ((not bound_body and (spec['drawingCalls']>=spec['rawGroups'] or original_u727c or original_u7d8c or original_hkcs_m84d1 or (new_public_whole and spec['root']in('hkcs_m61b8','hkcs_m85c7'))))or(bound_body and spec['rawGroups']==24 and spec['drawingCalls']==23)),'raw/call counts required')
         require(type(spec['polygonCounts'])is list and len(spec['polygonCounts'])==spec['rawGroups']and all(type(n)is int and n>=0 for n in spec['polygonCounts'])and type(spec['polygons'])is int and sum(spec['polygonCounts'])==spec['polygons'],'original polygon counts required')
-    dictionary_count=config['dictionaryPlaybackStrokes'] if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config or original_u596b_config or original_u5ebe_config or original_u8adb_config or original_u6970_config or original_u5ac2_config or original_u6583_config or original_u7228_config or original_u83bd_config or original_u655d_config or original_u655d_vs1_config or original_hkcs_m9c49_config else config['catalogStrokes']
+    dictionary_count=config['dictionaryPlaybackStrokes'] if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config or original_u596b_config or original_u5ebe_config or original_u8adb_config or original_u6970_config or original_u5ac2_config or original_u6583_config or original_u7228_config or original_u83bd_config or original_u655d_config or original_u655d_vs1_config or original_u655d_base_config or original_hkcs_m9c49_config else config['catalogStrokes']
     domestic=config['domestic'];require(type(domestic)is dict and set(domestic)=={'url','status','bytes','sha256','clips','glyph','privateMediaSaved'}and domestic['glyph']==config['glyph']and domestic['status']==200 and domestic['clips']==dictionary_count and domestic['privateMediaSaved']is False and type(domestic['bytes'])is int and 0<domestic['bytes']<=1048576 and hexsha(domestic['sha256']),'pinned domestic metadata required')
     require(type(domestic['url'])is str and re.fullmatch(r'http://img\.e-hanja\.kr/hanjaSvg/aniSVG/[0-9A-Fa-f]{4}/[0-9A-Fa-f]{4,6}\.svg',domestic['url'])is not None and domestic['url'].rsplit('/',1)[-1].lower()==format(ord(config['glyph']),'x')+'.svg','fixed domestic source only')
     require(type(config['inputSHA256'])is dict and all(type(p)is str and hexsha(h)for p,h in config['inputSHA256'].items()),'input pins required')
@@ -843,7 +860,7 @@ def main():
     # Main guard prevents HTTP, source projection or dictionary access during import.
     spec=importlib.util.spec_from_file_location('hanja_static_raw_shared',pinned_path(SHARED));shared=importlib.util.module_from_spec(spec);spec.loader.exec_module(shared)
     require(shared.FETCH_COUNT==0 and callable(shared.main)and callable(shared.load_sources),'unchanged shared entry contract required')
-    shared.CONFIG={**config,'catalogStrokes':dictionary_count} if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config or original_u596b_config or original_u5ebe_config or original_u8adb_config or original_u6970_config or original_u5ac2_config or original_u6583_config or original_u7228_config or original_u83bd_config or original_u655d_config or original_u655d_vs1_config or original_hkcs_m9c49_config else config;shared.HERE=config_path.parent;shared.ROOT=ROOT
+    shared.CONFIG={**config,'catalogStrokes':dictionary_count} if original_hkcs_m7626_config or original_u83f1_family_config or original_u8910_family_config or original_u9008_config or original_u596b_config or original_u5ebe_config or original_u8adb_config or original_u6970_config or original_u5ac2_config or original_u6583_config or original_u7228_config or original_u83bd_config or original_u655d_config or original_u655d_vs1_config or original_u655d_base_config or original_hkcs_m9c49_config else config;shared.HERE=config_path.parent;shared.ROOT=ROOT
     # Complete original eight-key proof is returned unchanged; old full5/body3 path stays original.
     if any(item['proofKind']=='actual-full8-u7cbb-direct'for item in roots.values()):
         require(config['glyph']=='粻' and config['catalogStrokes']==14 and list(roots)==['selected'],'exact isolated 粻 full8 comparison only')
@@ -865,7 +882,7 @@ def main():
     if new_public_whole:
         if new_public_whole.get('individualStatic'):shared.page=original_page
         else:install_new_whole_only(shared,original_page)
-    if original_u655d_config or original_u655d_vs1_config:install_new_whole_only(shared,original_page)
+    if original_u655d_config or original_u655d_vs1_config or original_u655d_base_config:install_new_whole_only(shared,original_page)
     if original_u840d_1040_config:install_new_whole_only(shared,stacked_page)
     if args.check_only:
         sources=shared.load_sources();require(shared.FETCH_COUNT==0,'preparation cannot fetch domestic media')
