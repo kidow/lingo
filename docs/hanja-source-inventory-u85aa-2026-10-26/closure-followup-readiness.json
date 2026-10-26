@@ -1,0 +1,80 @@
+{
+  "schema": "hanja-public-source-closure-readiness/v1",
+  "date": "2026-10-26",
+  "glyph": "薪",
+  "source": {
+    "path": "docs/hanja-source-inventory-u85aa-2026-10-26/closure-followup-sources.json",
+    "SHA256": "2a09237d4d8f65c59c18b673630a3be655341e1a478b4e38bfd6ce9561752b98"
+  },
+  "catalogStrokes": 17,
+  "rootClosures": [
+    {
+      "root": "takata_my-gaiji-0430",
+      "records": 4,
+      "totalRows": 17,
+      "drawingRows": 17,
+      "metadataRows": 0,
+      "firstPrimitive": {
+        "record": "u6728-01-var-009",
+        "row": "1:0:0:13:61:90:61",
+        "type": "1"
+      },
+      "unresolved": []
+    },
+    {
+      "root": "zihai-029338",
+      "records": 6,
+      "totalRows": 15,
+      "drawingRows": 15,
+      "metadataRows": 0,
+      "firstPrimitive": {
+        "record": "u8279-03",
+        "row": "1:0:0:13:39:187:39",
+        "type": "1"
+      },
+      "unresolved": []
+    }
+  ],
+  "uniqueRecords": 9,
+  "newHTTPRecords": 2,
+  "reusedRecords": 7,
+  "originalReferencesOnly": true,
+  "aliasesInserted": false,
+  "partsSubstituted": false,
+  "sourceOnlyFacts": {
+    "takata": {
+      "originalRootRows": [
+        "99:0:0:0:0:162:200:u6728-01-var-009:0:0:0",
+        "99:0:0:10:0:200:200:u65b0-02:0:0:0"
+      ],
+      "bodyInitialRow": "1:0:32:92:13:92:42",
+      "bodyInitialType": "original vertical line row",
+      "declared17RowsEqualsCatalogCountOnly": true
+    },
+    "zihai": {
+      "originalFirstBodyPrimitive": "2:7:8:78:12:96:21:103:32",
+      "originalDRNecessaryConditionUnresolved": true,
+      "declared15RowsNotCatalog17": true,
+      "fullPOrWholeShapeNotCompared": true
+    }
+  },
+  "assessment": "Both authored closures are now complete. Takata is a new complete source-row candidate with17 declared drawing rows, without a shape/order claim. Zihai retains the already identified DR body primitive and15 declared rows; no prior visual HOLD is transferred. Neither has new filled geometry or whole/native review.",
+  "limits": [
+    "A declared row count is not a logical playback count. No minimum stroke count or grouping was inferred.",
+    "Original rows and transforms are preserved. Source reference/component names are not visual or radical-shape approval.",
+    "Two missing public records were fetched once. The third missing name was already in the same-day fixed K closure and reused without a request.",
+    "No engine, projection, browser, private publisher media or shared code was used or changed."
+  ],
+  "actions": {
+    "engine": 0,
+    "projection": 0,
+    "native": 0,
+    "privateFetch": 0,
+    "sharedChanges": 0,
+    "server": 0
+  },
+  "wholeCompatibilityApproved": false,
+  "directionApproved": false,
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
