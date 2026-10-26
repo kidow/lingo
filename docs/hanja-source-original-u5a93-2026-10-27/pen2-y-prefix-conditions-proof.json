@@ -1,0 +1,135 @@
+{
+  "schema": "hanja-public-y-prefix-conditions/v1",
+  "date": "2026-10-27",
+  "glyph": "媓",
+  "root": "u5a93",
+  "pen": 2,
+  "inputs": {
+    "docs/hanja-source-original-u5a93-2026-10-26/fixtures.json": "a7ad43dd32a18ac22628c77d942fc53ab26d3642bcabce108248a74babf79733",
+    "docs/hanja-source-original-u840d-hkcs-2026-10-25/verify-body-rising-bands.py": "2ceee7728789781ccb8bb58173b131560229dfebc794d47463bcad1f5ea00f76",
+    "docs/hanja-source-original-u5a93-2026-10-27/verify-pen2-4-kernel-conditions.py": "8793931f804adcbe7212efc5f6d50eb587302a82c922d5a3a4c31e0ff60bfdd3"
+  },
+  "reusedAST": {
+    "vec": "c61e8c7f1f0c4aa8b56afb7c86c0dbff0ddaf1be70124843f2f52eed21cb31c8",
+    "det": "0a34c2b9248e30e5435884e6ec9255233ffea4db87a48876d0563560074c4e54",
+    "value": "1d593b2b5d267f8049b7cf14cd285e7a41adb3b0b73cdc9a5f851f0c8814da31",
+    "union_row": "344f5a0bf0651d35f2b272068786fa5e1d80f832f3c110cd4094ad894c1e0ffd",
+    "events": "6e364287d0ec55b5f5151a4c6050cf55bfd9b72f7376393bea47d5573f3cd189",
+    "certify": "e2e47d932f14436b0e6832427a0a744e879254be75b06aec2bfe9e792206fdf6"
+  },
+  "parserASTSHA256": "72b793bdcaeb53f546acc59fac9cdc829b2d6384863db77b63faf9edf5d52e18",
+  "oldTargetLoopsExecuted": false,
+  "originalMaskCount": 1,
+  "originalPCount": 2,
+  "sourceFieldSHA256": "92415aa796f5a77cf62c7fd8690afc3a7957b6ad02f813bbb926f6fd5116d767",
+  "YRange": [
+    "27",
+    "1887/20"
+  ],
+  "finiteRowCertificate": {
+    "label": "pen2-original-two-P-whole-Y-sublevel",
+    "range": [
+      "27",
+      "1887/20"
+    ],
+    "criticalY": [
+      "27",
+      "59/2",
+      "603/20",
+      "154/5",
+      "63/2",
+      "33",
+      "269021/8108",
+      "71/2",
+      "389/10",
+      "797/20",
+      "471/10",
+      "967/20",
+      "219/4",
+      "225/4",
+      "1237/20",
+      "1271/20",
+      "342/5",
+      "703/10",
+      "1489/20",
+      "382/5",
+      "799/10",
+      "819/10",
+      "849/10",
+      "347/4",
+      "1789/20",
+      "909/10",
+      "468/5",
+      "1887/20"
+    ],
+    "openSlabs": 27,
+    "singleIntervalEveryOpenSlab": true,
+    "bad": [],
+    "positiveWidthAcrossEveryInternalCriticalY": true,
+    "minimumCriticalJoinWidth": "38/23"
+  },
+  "noHorizontalOriginalEdges": true,
+  "allPositivePrefixConnected": "One continuous nonzero interval per open slab, positive interval overlap at every internal event, no horizontal-edge jump and one initial minimum imply a connected positive-area whole-Y sublevel for every cutoff strictly above27.",
+  "zeroAreaTailCondition": "No horizontal original edge, no disconnected row slab, positive critical joins and the unique initial point; a finite-prefix boundary is not an isolated dangling ink component.",
+  "initial": {
+    "uniqueMinimum": [
+      "723/20",
+      "27"
+    ],
+    "nextCriticalY": "59/2",
+    "validProgress": "0<p<50/1347",
+    "exactPrefixIsSingleTriangle": true,
+    "leftXSlopePerY": "-6/5",
+    "rightXSlopePerY": "11/9",
+    "diameterSquaredCoefficientTimesP2": "2395221481/90000",
+    "diameterTendsToZero": true
+  },
+  "originalGuide": {
+    "Q0": [
+      "7231/200",
+      "61/2"
+    ],
+    "Q1": [
+      "6163/200",
+      "153/2"
+    ],
+    "Q2": [
+      "1001/200",
+      "94"
+    ],
+    "derivativeXEndpointValues": [
+      "-267/25",
+      "-2581/50"
+    ],
+    "derivativeYEndpointValues": [
+      "92",
+      "35"
+    ],
+    "strictDescendingLeftForAllParameters": true
+  },
+  "potentialDisplay": {
+    "commonYPrefix": true,
+    "zeroExplicitlyHidden": true,
+    "completeUsesBothOriginalPDirect": true,
+    "newCenterlineRequired": false,
+    "sameOriginalMaskAndP": true,
+    "sourceAuthorClockNotOriginalGuideClock": true,
+    "initialMinEqualsQ0": false
+  },
+  "limits": [
+    "These are exact rational conditions on the frozen compiled original P; no browser, publisher or registration approval.",
+    "The display begins at the original outline minimum(36.15,27), not the original guide Q0(36.155,30.5); macro descending-left compatibility does not prove source microclock or detailed head order.",
+    "All component, CSS, finite native transition and natural playback checks remain required for any implementation."
+  ],
+  "sourceP_Q_WidthWeightFlagsChanged": false,
+  "newNative": 0,
+  "engine": 0,
+  "projection": 0,
+  "privateRequests": 0,
+  "runtimeApplied": false,
+  "verifierExecutions": 1,
+  "verifier": {
+    "file": "docs/hanja-source-original-u5a93-2026-10-27/verify-pen2-y-prefix-conditions.py",
+    "SHA256": "d206b750b1425cdb6fbd1d65b9c8456aa038604b3d67f0e41ba36eda292e2194"
+  }
+}
