@@ -504,6 +504,8 @@ def new_public_whole_case(config):
         case={**case,'config':"docs/hanja-source-raw-compare-u6145-hkcs-individual-2026-10-26/config.json",'individualStatic':True}
     elif case and spec.get('root')=='hkcs_m85c7' and config.get('wholeOnly')is False:
         case={**case,'config':'docs/hanja-source-raw-compare-u85c7-hkcs-individual-2026-10-26/config.json','individualStatic':True}
+    elif case and spec.get('root')=='u7443-g' and config.get('wholeOnly')is False:
+        case={**case,'config':'docs/hanja-source-raw-compare-u7443-g-individual-2026-10-26/config.json','individualStatic':True}
     return case if case and 'pairedRoots'not in case else None
 NEW_PUBLIC_WHOLES['hkcs_m8587']=json.loads("{\"glyph\":\"薇\",\"catalogStrokes\":17,\"config\":\"docs/hanja-source-raw-compare-u8587-hkcs-whole-2026-10-25/config.json\",\"full\":\"docs/hanja-actual-engine-capture-u8587-hkcs-2026-10-25/engine-whole-hkcs_m8587.json\",\"fullSHA\":\"ed62eaf8cb1cb39a17cca1fcc32857d04b6d934d2b6b9edcb60ac6ec6283768d\",\"capture\":\"docs/hanja-actual-engine-capture-u8587-hkcs-2026-10-25/capture.json\",\"captureSHA\":\"a6cf15af6944d0273d4b29e5a701a5d7e26fff0d757476e164505a483dd6e397\",\"source\":\"docs/hanja-source-alternative-u8587-hkcs-2026-10-25/sources.json\",\"sourceSHA\":\"228bed8d10710ae16e72d747f7bd218a59a2434fb43ad86ee00aa26f3ce6bdd3\",\"metadata\":\"docs/hanja-goal-glyphwiki-batch56-2026-09-22/metadata.json\",\"metadataSHA\":\"d7e479ffd6e6a25129d2e1b1722dec0924fce5d7e70790a3c0c1d585eae42b20\",\"readme\":\"docs/hanja-goal-glyphwiki-batch56-2026-09-22/README.md\",\"readmeSHA\":\"2afcfdb5c7b9a01c72f8e2ce89ecce572face760a4935fc4083d40302df878c5\",\"raw\":20,\"calls\":20,\"polygons\":42,\"rootVersion\":2,\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/8500/8587.svg\",\"status\":200,\"bytes\":8765,\"sha256\":\"dd9350d3980f901887d7dd4090afdac4e28a6c543f127a3063aba86042fb65c7\",\"clips\":17,\"glyph\":\"薇\",\"privateMediaSaved\":false}}")
 
@@ -548,6 +550,13 @@ def validate_new_public_whole(config,label,spec,path,config_path,case):
     require(spec['proofKeys']==FIVE and spec['proofKind']=='actual-full5-direct' and (spec['rawGroups'],spec['drawingCalls'],spec['polygons'])==(case['raw'],case['calls'],case['polygons']),'new whole source counts and full5 contract required')
     if spec['root']=='hkcs_m9c49':require(config['catalogStrokes']==23 and config.get('dictionaryPlaybackStrokes')==case.get('dictionaryPlaybackStrokes')==22,'exact 鱉 catalog23/private22 whole-only context required')
     require(config['domestic']==case['domestic'],'unchanged original dictionary whole metadata required')
+    if case.get('individualStatic') and spec['root']=='u7443-g':
+        original=pinned_path("docs/hanja-source-raw-compare-u7443-g-whole-2026-10-26/config.json").read_bytes()
+        require(digest(original)=="7efbed32bb0d4afc541c863baeaa732d153eaa95319b9f6d1f3db5104b27d4ff",'exact original 瑃 G whole input required')
+        expected=json.loads(original)
+        expected.update({'wholeOnly':False,'holdSummary':"Original static individual/prefix comparison only for publisher13 versus unchanged u7443-g raw14/calls14/P25. ROOT new whole-shape PASS is reused; thirteen static groups [[1],[3],[2],[4],[5],[6],[7],[8],[9],[10],[11,12],[13],[14]] are a hypothesis only, not automatic correspondence or order/direction/contact/clock/runtime approval. All original P/Q/source values remain unchanged; no new engine, projection, part substitution or saved private media. Existing selection/source_svg/page only.",'launcherSHA256':config.get('launcherSHA256')})
+        expected['inputSHA256']={**expected['inputSHA256'],**{"docs/hanja-source-raw-compare-u7443-g-whole-2026-10-26/config.json":"7efbed32bb0d4afc541c863baeaa732d153eaa95319b9f6d1f3db5104b27d4ff","docs/hanja-source-raw-compare-u7443-g-whole-2026-10-26/native-whole-review.json":"bb3d43643e92598b2747674ec4bdb6cb1fb7cabc99f0e3553483d726ce7885d6"}}
+        require(config==expected,'exact unchanged 瑃 G individual-static config required')
     if case.get('individualStatic') and spec['root']=='hkcs_m85c7':
         original=pinned_path('docs/hanja-source-raw-compare-u85c7-hkcs-whole-2026-10-26/config.json').read_bytes()
         require(digest(original)=='17eeb9972f907ea637ee3f5d873e7498c227b38d318a46fa5f282e367c8d57a5','exact original 藇 whole input required')
