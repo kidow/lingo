@@ -1,5 +1,7 @@
 import type {ReviewedU5e6aHkcsKernelBandContext} from '@/lib/hanja-stroke-contact-kernel-band-u5e6a-hkcs'
 import {reviewedU5e6aHkcsUnion16Policy,sampleReviewedU5e6aHkcsUnion16Frame,type ReviewedU5e6aHkcsUnion16Policy} from '@/lib/hanja-stroke-union-point-window16-u5e6a-hkcs'
+import {reviewedU8609HkcsPointRect19Context,reviewedU8609HkcsPointRect19Policy,sampleReviewedU8609HkcsPointRect19Frame,verifyReviewedU8609HkcsPointRect19Prior,type ReviewedU8609HkcsPointRect19Policy} from '@/lib/hanja-stroke-point-rect19-u8609-hkcs'
+import {reviewedU8609HkcsUnionPointPolicy,sampleReviewedU8609HkcsUnionPointFrame,verifyReviewedU8609HkcsUnionPointPrior,type ReviewedU8609HkcsUnionPointPolicy} from '@/lib/hanja-stroke-union-point-windows-u8609-hkcs'
 import {reviewedU8609HkcsSourceContexts} from '@/lib/hanja-stroke-source-context-u8609-hkcs'
 import {reviewedU8609HkcsPolicy,commitReviewedU8609HkcsCaps,type ReviewedU8609HkcsPolicy} from '@/lib/hanja-stroke-start-caps-u8609-hkcs'
 import type {ReviewedU8609FoldContext} from '@/lib/hanja-stroke-fold-u8609-hkcs'
@@ -643,6 +645,7 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
   const u7c67LeftContext = reviewedU7c67LeftContext(strokes)
   const u8b92HkcsFlag5TailContext = reviewedU8b92HkcsFlag5TailContext(strokes)
   const u8609SourceContexts=reviewedU8609HkcsSourceContexts(strokes)
+  const u8609Rect19Context=reviewedU8609HkcsPointRect19Context(strokes)
   const u8609FoldContext:ReviewedU8609FoldContext|null=u8609SourceContexts?.fold??null
   const u5e6aHkcsContexts = reviewedU5e6aHkcsSourceContexts(strokes)
   const u5e6aKernelPointContext = reviewedU5e6aHkcsKernelPointWindowContext(strokes)
@@ -874,6 +877,10 @@ export function StrokeOutlines({ strokes, clock, phase, count, manual }: {
         if(u8609PointFoldPolicy)return <U8609PointFoldOutline key={index} policy={u8609PointFoldPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]} clipId={id+'-'+stroke+'-'+index}/>
         const u8609PrefixPolicy=reviewedU8609PrefixPolicy(u8609SourceContexts?.prefix??null,stroke,index)
         if(u8609PrefixPolicy)return <U8609PrefixOutline key={index} policy={u8609PrefixPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
+        const u8609UnionPointPolicy=reviewedU8609HkcsUnionPointPolicy(u8609SourceContexts?.caps??null,stroke,index)
+        if(u8609UnionPointPolicy)return <U8609HkcsUnionPointOutline key={index} policy={u8609UnionPointPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]??0} clipId={id+'-'+stroke+'-'+index}/>
+        const u8609Rect19Policy=reviewedU8609HkcsPointRect19Policy(u8609Rect19Context,stroke,index)
+        if(u8609Rect19Policy)return <U8609HkcsPointRect19Outline key={index} policy={u8609Rect19Policy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} previousMaskProgress={amounts[index-1]??0} clipId={id+'-'+stroke+'-'+index}/>
         const u8609CapsPolicy=reviewedU8609HkcsPolicy(u8609SourceContexts?.caps??null,stroke,index)
         if(u8609CapsPolicy)return <U8609HkcsCapsOutline key={index} policy={u8609CapsPolicy} segment={segment} progress={Number.isFinite(progress)?progress>=1?1:p:NaN} clipId={id+'-'+stroke+'-'+index}/>
         const u5e6aUnion16Policy=reviewedU5e6aHkcsUnion16Policy(u5e6aHkcsContexts?.caps??null,stroke,index)
@@ -5453,6 +5460,72 @@ function U8609HkcsCapsOutline({policy,segment,progress,clipId}:{policy:ReviewedU
   </g>
 }
 
+
+function U8609HkcsUnionPointOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU8609HkcsUnionPointPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u8609-hkcs-union-point-committed','false')};reset()
+  if(!g||!p||!r||!c)return reset
+  const prior=()=>!policy.predecessor||verifyReviewedU8609HkcsUnionPointPrior(policy,g,previousMaskProgress)
+  let f:ReturnType<typeof sampleReviewedU8609HkcsUnionPointFrame>
+  try{f=sampleReviewedU8609HkcsUnionPointFrame(policy,segment,progress,previousMaskProgress,prior())}catch{return reset}
+  const shape=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0};for(const[k,v]of Object.entries(shape))r.setAttribute(k,String(v))
+  if(f.originalPDirect)p.removeAttribute('clip-path');else p.setAttribute('clip-path','url(#'+clipId+'-u8609-hkcs-union-point-clip)')
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u8609-hkcs-union-point-clip'
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const expected=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||prior())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u8609-hkcs-union-point-progress',String(progress));p.setAttribute('data-u8609-hkcs-union-point-phase',f.phase);p.setAttribute('data-u8609-hkcs-union-point-direct-original',String(f.originalPDirect));p.setAttribute('data-u8609-hkcs-union-point-source-full',String(f.originalPDirect));p.setAttribute('data-u8609-hkcs-union-point-one-ink','true');p.setAttribute('data-u8609-hkcs-union-point-source-subpaths',String((segment.outline.match(/M/g)||[]).length));p.setAttribute('data-u8609-hkcs-union-point-author-anchor-differs',String(f.authorAnchorDifferentFromSourceQ0));p.setAttribute('data-u8609-hkcs-union-point-ua-read','false')
+  if(!stable())return reset
+  p.setAttribute('data-u8609-hkcs-union-point-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const key=clipId+'-u8609-hkcs-union-point-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u8609-union-point-fingerprint={policy.proofFingerprint} data-u8609-union-point-clip={clipId} data-u8609-hkcs-union-point-previous-progress={String(previousMaskProgress)} data-u8609-hkcs-union-point-display-clock="source-author-union-point-window" data-u8609-hkcs-union-point-author-clock="true" data-u8609-hkcs-union-point-original-clock-equivalent="false" data-u8609-hkcs-union-point-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u8609-hkcs-union-point-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
+
+function U8609HkcsPointRect19Outline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU8609HkcsPointRect19Policy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
+ const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
+ useLayoutEffect(()=>{
+  const g=group.current,p=ink.current,r=rect.current,c=clipPath.current
+  const reset=()=>{p?.setAttribute('visibility','hidden');p?.setAttribute('data-u8609-hkcs-point-rect19-committed','false')};reset()
+  if(!g||!p||!r||!c)return reset
+  const prior=()=>verifyReviewedU8609HkcsPointRect19Prior(policy,g,previousMaskProgress)
+  let f:ReturnType<typeof sampleReviewedU8609HkcsPointRect19Frame>
+  try{f=sampleReviewedU8609HkcsPointRect19Frame(policy,segment,progress,previousMaskProgress,prior())}catch{return reset}
+  const shape=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0};for(const[k,v]of Object.entries(shape))r.setAttribute(k,String(v))
+  if(f.originalPDirect)p.removeAttribute('clip-path');else p.setAttribute('clip-path','url(#'+clipId+'-u8609-hkcs-point-rect19-clip)')
+  const owner=g.ownerSVGElement,doc=g.ownerDocument,view=doc.defaultView,defs=c.parentNode as SVGDefsElement|null,key=clipId+'-u8609-hkcs-point-rect19-clip'
+  const stable=()=>{
+   if(!owner||!view||!defs||defs.localName!=='defs'||defs.parentNode!==g||c.parentNode!==defs||r.parentNode!==c||c.children.length!==1||p.parentNode!==g||Array.from(g.children).filter(n=>n.localName==='path').length!==1)return false
+   if(g.getAttribute('data-stroke-start-gate')!==policy.id||g.getAttribute('data-stroke-reveal-policy')!==policy.kind||g.getAttribute('data-stroke-reveal-progress')!==String(progress)||p.getAttribute('d')!==segment.outline||p.getAttribute('mask')!==null||p.getAttribute('pathLength')!==null||c.getAttribute('id')!==key||c.getAttribute('clipPathUnits')!=='userSpaceOnUse')return false
+   if(f.originalPDirect){if(p.getAttribute('clip-path')!==null)return false}else{if(p.getAttribute('clip-path')!=='url(#'+key+')')return false}
+   const expected=f.clip??{x:policy.anchor[0],y:policy.anchor[1],width:0,height:0}
+   if(['x','y','width','height'].some(k=>r.getAttribute(k)!==String(expected[k as keyof typeof expected])))return false
+   for(const n of [g,p,defs,c,r]){if(!n.isConnected||n.ownerDocument!==doc||(n as SVGElement).ownerSVGElement!==owner||n.getAttribute('transform')!==null||n.getAttribute('filter')!==null||(n!==p&&n.getAttribute('clip-path')!==null)||n.getAttribute('mask')!==null)return false;const s=view.getComputedStyle(n);if(s.transform!=='none'||s.filter!=='none'||(n!==p&&s.clipPath!=='none')||!['','none'].includes(s.getPropertyValue('mask-image'))||Number(s.opacity)!==1||['translate','rotate','scale'].some(k=>!['','none'].includes(s.getPropertyValue(k))))return false}
+   const paint=view.getComputedStyle(p);return paint.stroke==='none'&&Number(paint.fillOpacity)===1&&paint.fill!=='none'&&paint.fill!=='transparent'&&paint.display!=='none'&&paint.visibility===p.getAttribute('visibility')&&paint.fillRule==='nonzero'&&(progress===0||prior())
+  }
+  if(!stable())return reset
+  p.setAttribute('data-u8609-hkcs-point-rect19-progress',String(progress));p.setAttribute('data-u8609-hkcs-point-rect19-phase',f.phase);p.setAttribute('data-u8609-hkcs-point-rect19-direct-original',String(f.originalPDirect));p.setAttribute('data-u8609-hkcs-point-rect19-source-full',String(f.originalPDirect));p.setAttribute('data-u8609-hkcs-point-rect19-one-ink','true');p.setAttribute('data-u8609-hkcs-point-rect19-source-subpaths',String((segment.outline.match(/M/g)||[]).length));p.setAttribute('data-u8609-hkcs-point-rect19-ua-read','false')
+  if(!stable())return reset
+  p.setAttribute('data-u8609-hkcs-point-rect19-committed','true');p.setAttribute('visibility',f.visible?'visible':'hidden');if(!stable())reset();return reset
+ },[policy,segment,progress,previousMaskProgress,clipId])
+ const key=clipId+'-u8609-hkcs-point-rect19-clip'
+ return <g ref={group} data-stroke-start-gate={policy.id} data-stroke-reveal-policy={policy.kind} data-stroke-reveal-progress={Number.isFinite(progress)?progress:'invalid'} data-u8609-point-rect19-fingerprint={policy.proofFingerprint} data-u8609-point-rect19-clip={clipId} data-u8609-hkcs-point-rect19-previous-progress={String(previousMaskProgress)} data-u8609-hkcs-point-rect19-display-clock="source-author-point-rect19" data-u8609-hkcs-point-rect19-author-clock="true" data-u8609-hkcs-point-rect19-original-clock-equivalent="false" data-u8609-hkcs-point-rect19-source-guide={segment.revealPath??''}>
+  <defs><clipPath ref={clipPath} id={key} clipPathUnits="userSpaceOnUse"><rect ref={rect} x={policy.anchor[0]} y={policy.anchor[1]} width={0} height={0}/></clipPath></defs>
+  <path ref={ink} data-u8609-hkcs-point-rect19-ink="true" d={segment.outline} fillRule="nonzero" clipPath={progress===1?undefined:'url(#'+key+')'} visibility="hidden"/>
+ </g>
+}
 
 function U8609PointFoldOutline({policy,segment,progress,previousMaskProgress,clipId}:{policy:ReviewedU8609PointFoldPolicy;segment:HanjaOutlineSegment;progress:number;previousMaskProgress:number;clipId:string}){
  const group=useRef<SVGGElement>(null),ink=useRef<SVGPathElement>(null),rect=useRef<SVGRectElement>(null),clipPath=useRef<SVGClipPathElement>(null)
