@@ -1,0 +1,80 @@
+{
+  "schema": "hanja-actual-component-native-review/v1",
+  "date": "2026-10-26",
+  "glyph": "敝",
+  "root": "u655d",
+  "status": "FAILED-browser-initialization",
+  "input": {
+    "profile": {
+      "path": "docs/hanja-actual-component-profiles-2026-10-22/u655d-1.json",
+      "SHA256": "a69db0b22bfd2ea6035808e6cabebf7b436e109812300a17e4507a466a78a589"
+    },
+    "helper": {
+      "path": "scripts/hanja-actual-component-review.mjs",
+      "SHA256": "f4dbdef23eb4fe4a4484a8bcdba16117af7943dcaccaa5eaa8bccc81ad7d93a8"
+    },
+    "component": {
+      "path": "components/hanja/stroke-outlines.tsx",
+      "SHA256": "23935a38a02d7ab97df7b8a5ca745e5360d9f718d7d747cfd3d86d1e68980f66"
+    },
+    "policy": {
+      "path": "lib/hanja-stroke-source-windows-u655d.ts",
+      "SHA256": "185036a535f3a022dee04dea73bcd0795a27b106ff9a9e4d51546684912b89a4"
+    },
+    "fixture": {
+      "path": "docs/hanja-source-original-u655d-2026-10-26/fixtures.json",
+      "SHA256": "a120891aa1745a7ecf885b71b665396c6977f95c69021d83025a38523da2cbd6"
+    }
+  },
+  "startup": {
+    "authorFocusedCheck": {
+      "SSR": 1,
+      "CJS": 366,
+      "ESM": 366,
+      "engine": 0,
+      "sourceProjection": 0
+    },
+    "actualProcess": {
+      "pid": 18009,
+      "port": 59412
+    },
+    "actualBrowserControls": 0,
+    "pre": "loading",
+    "SSRImageOnly": true
+  },
+  "diagnosis": {
+    "publicBrowserHTTP": 200,
+    "publicBrowserBytes": 1461516,
+    "dependency0HTTP": 200,
+    "dependency0Bytes": 59220,
+    "fixtureFieldsAndNamedExportsPresent": true,
+    "strictBrowserESMParse": "SyntaxError: Identifier u7c67Window18State has already been declared",
+    "browserSecondDeclarationLine": 2382,
+    "componentAndNewDependencyStrictParsePassed": true,
+    "cause": "Copied new color reader inadvertently included the following existing 籧18 state function. Duplicate ESM function declaration prevents browser initialization.",
+    "previousTSParseDiagnosticsDidNotCatchDuplicate": true,
+    "sourceGeometryOrFactoryFailure": false
+  },
+  "finite": {
+    "fresh": 0,
+    "reused": 0
+  },
+  "natural": {
+    "unique": 0
+  },
+  "whole": {
+    "screens": 0
+  },
+  "postRun": {
+    "PID": 18009,
+    "PIDAbsent": true,
+    "port": 59412,
+    "portClosed": true,
+    "tab": 148,
+    "tabClosed": true,
+    "necessaryInputPinsCompared": 547,
+    "mismatches": []
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false
+}
