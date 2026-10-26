@@ -440,6 +440,17 @@ U655D_VS1_FIXED_BODY3 = json.loads("{\"configPath\":\"docs/hanja-source-raw-comp
 
 U655D_BASE_FIXED_BODY3 = json.loads("{\"configPath\":\"docs/hanja-source-raw-compare-u655d-base-whole-2026-10-26/config.json\",\"sourceRoots\":{\"selected\":{\"root\":\"u655d\",\"file\":\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d.json\",\"fileSHA256\":\"aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af\",\"proofKeys\":[\"defaults\",\"groups\",\"trace\"],\"proofKind\":\"selected-body3-only\",\"sourceProofIdentity\":{\"sourceRoot\":\"u655d\",\"sourceProofFile\":\"engine-whole-u655d.json\",\"sourceProofFileSha256\":\"aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af\"},\"rawGroups\":13,\"drawingCalls\":14,\"polygonCounts\":[2,3,2,1,1,5,1,3,2,3,2,1,2],\"polygons\":28}},\"domestic\":{\"url\":\"http://img.e-hanja.kr/hanjaSvg/aniSVG/6500/655d.svg\",\"status\":200,\"bytes\":5806,\"sha256\":\"5a2c703a64c720eec299329728d9fd690003125049cee66feee184c4c5808da1\",\"clips\":11,\"glyph\":\"敝\",\"privateMediaSaved\":false},\"inputSHA256\":{\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/sources.json\":\"9c41dc687373f9efe6866099dbc27310ccff04e7ccf37a26900aac2883eaa7e8\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/metadata.json\":\"4bdeadb13ffc9c00d1705dc0e9768de83a7de4cb08b7e863698b3d1ca25ab8f1\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/source-hold.json\":\"c1d89fed3b99a1b8bd7755e22ae559140a83e649d1bd3180f3a1563b87e67e10\",\"content/hanja/stroke-count-corrections.json\":\"939c3b8fe3648ec11526c31b57bd2b7020fb996b0d2f303a843f9b5e82a25611\",\"docs/hanja-goal-glyphwiki-batch984-2026-10-13/engine-whole-u655d.json\":\"aec1600890713b18fd739998c8b2451eaf267e664039ab6db60b6124c39a94af\"}}")
 
+def validate_exact_u655d_base_individual_body3(config,label,spec,path,config_path):
+    require(config_path==ROOT/"docs/hanja-source-raw-compare-u655d-base-individual-2026-10-26/config.json",'exact 敝 base individual config required')
+    original=pinned_path("docs/hanja-source-raw-compare-u655d-base-whole-2026-10-26/config.json").read_bytes()
+    require(digest(original)=="47d01f73a38bf56d6bf5d2ffbc492fc9d309c795528e45c671d7af9f5f6b3499",'original 敝 base whole config changed')
+    expected=json.loads(original)
+    expected.update({'wholeOnly':False,'holdSummary':"Original static single/prefix comparison only for publisher11 versus unchanged u655d body3 raw13/14calls/28P. ROOT whole-shape PASS is reused; proposed one-based groups [[2],[3],[4],[5,6],[1,7],[8],[9],[10],[11],[12],[13]] remain hypotheses, including nonconsecutive raw1+7 and H/V raw5+6. No automatic11 correspondence, source-order/direction/contact/clock/runtime approval. Corrected catalog11 and original XLS12 stay separate. Existing single/prefix selection and original P/Q only; no new source, mixed components, engine, projection or saved private media.",'launcherSHA256':config.get('launcherSHA256')})
+    expected['inputSHA256']={**expected['inputSHA256'],**{"docs/hanja-source-raw-compare-u655d-base-whole-2026-10-26/config.json":"47d01f73a38bf56d6bf5d2ffbc492fc9d309c795528e45c671d7af9f5f6b3499","docs/hanja-source-raw-compare-u655d-base-whole-2026-10-26/native-whole-review.json":"92e89dc837ee91cf2af9ffef855a34b4447f11c8bca37d784f4334f67da43408"}}
+    require(config==expected,'unchanged 敝 source and exact unapproved individual input required')
+    whole={**config,'wholeOnly':True,'inputSHA256':U655D_BASE_FIXED_BODY3['inputSHA256']}
+    validate_exact_u655d_base_body3(whole,label,spec,path,ROOT/U655D_BASE_FIXED_BODY3['configPath'])
+
 def validate_exact_u655d_base_body3(config,label,spec,path,config_path):
     fixed=U655D_BASE_FIXED_BODY3
     require(config_path==ROOT/fixed['configPath'] and config.get('glyph')=='敝' and type(config.get('catalogStrokes'))is int and config['catalogStrokes']==11 and type(config.get('dictionaryPlaybackStrokes'))is int and config['dictionaryPlaybackStrokes']==11,'exact 敝 corrected catalogue11/source XLS12/dictionary11 original body3 required')
@@ -776,7 +787,8 @@ def main():
     if original_u6583_config:keys.add('dictionaryPlaybackStrokes')
     original_u7228_config=(type(config)is dict and config.get('glyph')=='爨' and 'dictionaryPlaybackStrokes'in config)
     if original_u7228_config:keys.add('dictionaryPlaybackStrokes')
-    original_u655d_base_config=(type(config)is dict and config_path==ROOT/U655D_BASE_FIXED_BODY3['configPath'] and config.get('glyph')=='敝' and 'dictionaryPlaybackStrokes'in config)
+    original_u655d_base_individual_config=(type(config)is dict and config_path==ROOT/"docs/hanja-source-raw-compare-u655d-base-individual-2026-10-26/config.json" and config.get('glyph')=='敝' and 'dictionaryPlaybackStrokes'in config)
+    original_u655d_base_config=(type(config)is dict and config_path==ROOT/U655D_BASE_FIXED_BODY3['configPath'] and config.get('glyph')=='敝' and 'dictionaryPlaybackStrokes'in config) or original_u655d_base_individual_config
     original_u655d_vs1_config=(type(config)is dict and config_path==ROOT/U655D_VS1_FIXED_BODY3['configPath'] and config.get('glyph')=='敝' and 'dictionaryPlaybackStrokes'in config)
     if original_u655d_vs1_config or original_u655d_base_config:keys.update({'dictionaryPlaybackStrokes','wholeOnly'})
     original_u655d_config=(type(config)is dict and config_path==ROOT/U655D_FIXED_BODY3['configPath'] and config.get('glyph')=='敝' and 'dictionaryPlaybackStrokes'in config)
@@ -831,6 +843,7 @@ def main():
             elif config['glyph']=='瀼':validate_exact_u703c_body3(config,label,spec,path,config_path)
             elif original_u6583_config:validate_exact_u6583_body3(config,label,spec,path)
             elif original_u5ac2_config:validate_exact_u5ac2_body3(config,label,spec,path)
+            elif original_u655d_base_individual_config:validate_exact_u655d_base_individual_body3(config,label,spec,path,config_path)
             elif original_u655d_base_config:validate_exact_u655d_base_body3(config,label,spec,path,config_path)
             elif original_u655d_vs1_config:validate_exact_u655d_vs1_body3(config,label,spec,path,config_path)
             elif original_u655d_config:validate_exact_u655d_body3(config,label,spec,path,config_path)
@@ -883,6 +896,7 @@ def main():
         if new_public_whole.get('individualStatic'):shared.page=original_page
         else:install_new_whole_only(shared,original_page)
     if original_u655d_config or original_u655d_vs1_config or original_u655d_base_config:install_new_whole_only(shared,original_page)
+    if original_u655d_base_individual_config:shared.page=original_page
     if original_u840d_1040_config:install_new_whole_only(shared,stacked_page)
     if args.check_only:
         sources=shared.load_sources();require(shared.FETCH_COUNT==0,'preparation cannot fetch domestic media')
