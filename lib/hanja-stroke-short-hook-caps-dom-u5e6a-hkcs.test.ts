@@ -1,0 +1,34 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createHash} from 'node:crypto'
+import fixture from '../docs/hanja-source-original-u5e6a-hkcs-2026-10-26/fixtures.json' with {type:'json'}
+import type {HanjaOutlineStrokes} from './hanja-stroke-outline.ts'
+import {reviewedU5e6aHkcsSourceContexts} from './hanja-stroke-source-context-u5e6a-hkcs.ts'
+import {reviewedU5e6aHkcsPolicy} from './hanja-stroke-start-caps-u5e6a-hkcs.ts'
+import {reviewedU5e6aHkcsShortHookPolicy} from './hanja-stroke-short-hook-prefix-u5e6a-hkcs.ts'
+import {verifyReviewedU5e6aHkcsShortHookCapsPriorDOM,REVIEWED_U5E6A_SHORT_HOOK_CAPS_DOM_INPUT_SHA256} from './hanja-stroke-short-hook-caps-dom-u5e6a-hkcs.ts'
+const f=fixture.hkcs_m5e6a,c=reviewedU5e6aHkcsSourceContexts(f.strokes as HanjaOutlineStrokes);assert(c)
+const short=reviewedU5e6aHkcsShortHookPolicy(c.shortHook,12,1),cap=reviewedU5e6aHkcsPolicy(c.caps,12,0);assert(short);assert(cap)
+class Node{
+ localName:string;namespaceURI='http://www.w3.org/2000/svg';isConnected=true;ownerDocument:Doc;ownerSVGElement:Node|null=null;parentElement:Node|null=null;children:Node[]=[];previousElementSibling:Node|null=null;nextElementSibling:Node|null=null;attrs=new Map<string,string>()
+ style={display:'inline',visibility:'visible',opacity:'1',fillOpacity:'1',strokeOpacity:'1',transform:'none',filter:'none',clipPath:'none',mixBlendMode:'normal',fillRule:'nonzero',stroke:'none',strokeDasharray:'none',fill:'rgb(142, 142, 255)',props:{'mask-image':'none'} as Record<string,string>,getPropertyValue:(k:string):string=>this.style.props[k]??''}
+ constructor(name:string,doc:Doc){this.localName=name;this.ownerDocument=doc}getAttribute(k:string){return this.attrs.get(k)??null}get parentNode(){return this.parentElement}
+}
+type Doc={defaultView:{document:Doc;getComputedStyle:(n:Node)=>Node['style']}|null}
+function tree(){
+ const doc:Doc={defaultView:null};doc.defaultView={document:doc,getComputedStyle:n=>n.style};const owner=new Node('svg',doc),outer=new Node('g',doc);owner.attrs.set('viewBox','0 0 100 100');owner.children=[outer];outer.parentElement=owner;outer.ownerSVGElement=owner;outer.attrs.set('data-stroke-outlines','true');outer.children=Array.from({length:17},()=>new Node('g',doc));for(const n of outer.children){n.parentElement=outer;n.ownerSVGElement=owner}
+ const pen=outer.children[12],b=new Node('g',doc),g=new Node('g',doc),defs=new Node('defs',doc),ink=new Node('path',doc),measurement=new Node('path',doc),mask=new Node('mask',doc),unused=new Node('mask',doc),guide=new Node('path',doc),id='fixture-12-0';pen.attrs.set('data-outline-stroke','13');pen.children=[b,g];b.children=[defs,ink];defs.children=[measurement,mask,unused];mask.children=[guide]
+ for(const p of [pen,b,defs,mask])for(const[i,n]of p.children.entries()){n.parentElement=p;n.ownerSVGElement=owner;n.previousElementSibling=p.children[i-1]??null;n.nextElementSibling=p.children[i+1]??null}
+ for(const[k,v]of Object.entries({'data-stroke-start-gate':short!.id,'data-stroke-reveal-policy':short!.kind}))g.attrs.set(k,v)
+ for(const[k,v]of Object.entries({'data-stroke-start-gate':cap!.id,'data-stroke-reveal-policy':cap!.kind,'data-u5e6a-hkcs-progress':'1','data-stroke-reveal-progress':'1','data-u5e6a-hkcs-clip':id}))b.attrs.set(k,v)
+ for(const[k,v]of Object.entries({id,maskUnits:'userSpaceOnUse',x:'0',y:'0',width:'100',height:'100'}))mask.attrs.set(k,v)
+ for(const[k,v]of Object.entries({d:cap!.segment.revealPath!,fill:'none',stroke:'white','stroke-width':'14','stroke-linecap':'round','stroke-linejoin':'miter',pathLength:'1','stroke-dasharray':'1 2','stroke-dashoffset':'0'}))guide.attrs.set(k,v)
+ guide.style.fill='none';guide.style.stroke='white';Object.assign(guide.style.props,{'stroke-width':'14px','stroke-linecap':'round','stroke-linejoin':'miter','stroke-dasharray':'1px, 2px','stroke-dashoffset':'0px',d:'path("'+cap!.segment.revealPath+'")'})
+ ink.attrs.set('data-growing-full-round','true');ink.attrs.set('d',cap!.segment.outline);ink.attrs.set('mask','url(#'+id+')');ink.style.props['mask-image']='url("#'+id+'")';ink.style.props.d='path("'+cap!.segment.outline+'")';return{doc,owner,outer,pen,b,g,defs,ink,measurement,mask,guide,unused,id}
+}
+const verify=(t:ReturnType<typeof tree>,p=1)=>verifyReviewedU5e6aHkcsShortHookCapsPriorDOM(short!,t.g as unknown as Element,p)
+test('exact source caps13 completion with certified full Q7 mask is accepted without UA',()=>{const t=tree();assert(verify(t));assert.equal(verify(t,.99999),false);assert.equal(verifyReviewedU5e6aHkcsShortHookCapsPriorDOM({...short!},t.g as unknown as Element,1),false)})
+test('partial/wrong mask guide, geometry, source owner and private identity are rejected',()=>{const changes:Array<(t:ReturnType<typeof tree>)=>void>=[t=>t.b.attrs.set('data-u5e6a-hkcs-progress','.5'),t=>t.b.attrs.set('data-stroke-start-gate','other'),t=>t.guide.attrs.set('d','M0 0 Q1 1 2 2'),t=>t.guide.attrs.set('stroke-width','13'),t=>t.guide.attrs.set('stroke-linecap','butt'),t=>t.guide.attrs.set('stroke-dasharray','.99 2'),t=>t.mask.attrs.set('width','99'),t=>t.mask.attrs.set('maskContentUnits','objectBoundingBox'),t=>t.ink.attrs.set('d',cap!.segment.outline+' '),t=>t.ink.attrs.set('data-growing-full-round','false'),t=>t.ink.attrs.set('mask','url(#other)'),t=>t.unused.attrs.set('id',t.id),t=>t.pen.children.push(new Node('path',t.doc)),t=>{t.outer.children[12]=new Node('g',t.doc)},t=>t.owner.attrs.set('viewBox','0 0 200 200')];for(const change of changes){const t=tree();change(t);assert.equal(verify(t),false)}})
+test('CSS mask/guide overrides, nonopaque paint and mutations during reads are rejected',()=>{const changes:Array<(t:ReturnType<typeof tree>)=>void>=[t=>{t.ink.style.props['mask-image']='none'},t=>{t.guide.style.props['stroke-width']='13px'},t=>{t.guide.style.props['stroke-dasharray']='.9px 2px'},t=>{t.guide.style.stroke='black'},t=>{t.mask.style.props.width='99px'},t=>{t.ink.style.fill='rgba(1,2,3,.5)'},t=>{t.pen.style.opacity='.5'},t=>{t.ink.style.props.d='none'},t=>{t.ink.isConnected=false},t=>{t.guide.ownerSVGElement=new Node('svg',t.doc)}];for(const change of changes){const t=tree();change(t);assert.equal(verify(t),false)}const t=tree(),read=t.ink.style.getPropertyValue;t.ink.style.getPropertyValue=k=>{if(k==='d')t.guide.attrs.set('stroke-width','1');return read(k)};assert.equal(verify(t),false)})
+test('fixed source and unchanged prior guards remain pinned',()=>{for(const[p,s]of Object.entries(REVIEWED_U5E6A_SHORT_HOOK_CAPS_DOM_INPUT_SHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+p,import.meta.url))).digest('hex'),s)})
