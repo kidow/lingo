@@ -1,0 +1,150 @@
+{
+  "reviewedAt": "2026-10-26",
+  "scope": "鱉 한 글자의 획수23→22 보정. 자형·순서·방향·합획·애니메이션 승인은 별도다.",
+  "workbook": {
+    "organization": "한국어문회",
+    "url": "https://www.hanja.re.kr/kccpt/exam/levelConfirm.do",
+    "document": "배정한자 전체 대표훈음 부수 음표 명기본(xls).xls",
+    "sheet": "배정한자",
+    "sha256": "97b8db715ebe1dd6e00e8e58d338a9ba70e7420bf5ec84da38f987d60eb64b17",
+    "verifiedAt": "2026-09-06",
+    "publicationDateKnown": false,
+    "downloadedAgain": false,
+    "originalRow": 2060,
+    "originalCatalogEntry": {
+      "id": "u9c49",
+      "glyph": "鱉",
+      "hun": "자라",
+      "eum": "별",
+      "readingGrade": "특급II",
+      "radical": "魚",
+      "strokes": 23,
+      "sourceRow": 2060,
+      "sourceHunEum": "자라[鼈] 별"
+    }
+  },
+  "grounds": [
+    {
+      "organization": "한국어문회",
+      "url": "https://www.hanja.re.kr/klea/counsel/hanjaDetail.do?id=16424",
+      "title": "敝가 攴부 8획으로 여겨지는 까닭",
+      "date": "2025-09-13",
+      "existingEvidence": "docs/hanja-count-correction-u655d-2026-10-26/sources.json",
+      "existingEvidenceSHA256": "8818a06245eb5a57d0805f78746d641aac450693895279ce993467f4ceb92def",
+      "existingHTMLSHA256": "c281a39c5fff957d00d267e4d57679eaffcea4bca5e1e3eb14d505d1a889c38a",
+      "liveNativePanelReview": {
+        "reviewer": "ROOT",
+        "inheritedReview": true,
+        "finding": "상담16424 답변의 㡀7획 기준 적용목록에 鱉도 명시됨을 직접 확인했다.",
+        "newCReview": false
+      },
+      "literalWhole22Stated": false,
+      "role": "㡀7획을 鱉에 적용하는 공식 기준. 총22획은 합산이며 답변의 총획 직접 인용이 아니다.",
+      "fetchedAgain": false
+    },
+    {
+      "organization": "중화민국 교육부",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=26212&la=0",
+      "finding": "攵는 攴의 이체이며 총4획이다.",
+      "role": "攵4의 독립 구성요소 근거만 재사용한다.",
+      "existingEvidence": "docs/hanja-count-corrections-u77a5-u9f08-2026-10-24/sources.json",
+      "existingEvidenceSHA256": "22f819def50f65c0a2c213898eb23086f8400c4a025d8bbb5565e58ca0d89c4d",
+      "fetchedAgain": false
+    },
+    {
+      "organization": "한국어문회",
+      "file": "content/hanja/characters/g5.json",
+      "fileSHA256": "4e588e7ced7e1e9024a0a002efcf7219c75ce5426d3295a39fff1239f59fe8aa",
+      "workbookSHA256": "97b8db715ebe1dd6e00e8e58d338a9ba70e7420bf5ec84da38f987d60eb64b17",
+      "entry": {
+        "id": "u9b5a",
+        "glyph": "魚",
+        "hun": "고기/물고기",
+        "eum": "어",
+        "readingGrade": "5급",
+        "radical": "魚",
+        "strokes": 11,
+        "sourceRow": 3159,
+        "sourceHunEum": "고기/물고기 어",
+        "example": {
+          "word": "文魚",
+          "reading": "문어",
+          "source": {
+            "dictionary": "표준국어대사전",
+            "targetCode": 428363,
+            "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=428363&searchKeywordTo=3",
+            "verifiedAt": "2026-09-17"
+          }
+        }
+      },
+      "sourceRow": 3159,
+      "strokes": 11,
+      "countCorrectionAbsent": true,
+      "role": "동일 SHA 공식 XLS에서 이미 가져온 독립 魚 항목11획이다. 鱉 전체 획수 직접 표기나 애니메이션 근거가 아니다.",
+      "downloadedAgain": false
+    }
+  ],
+  "conclusion": {
+    "glyph": "鱉",
+    "id": "u9c49",
+    "components": [
+      [
+        "㡀",
+        7
+      ],
+      [
+        "攵",
+        4
+      ],
+      [
+        "魚",
+        11
+      ]
+    ],
+    "strokes": 22,
+    "sourceStrokes": 23,
+    "sourceRow": 2060,
+    "correctionId": "eomunhoe-16424-u9c49",
+    "derivedComponentTotal": true
+  },
+  "historicalReviews": [
+    {
+      "file": "docs/hanja-remaining-native-prep-u9c49-2026-10-18/native-boundary-review-2026-10-24.json",
+      "sha256": "636986180c6b8bd0176cf3fe9a9ad3b99f6f11fed0053a5438a53985f146ff38",
+      "retainedOriginalCatalogStrokes": 23,
+      "domesticClips": 22,
+      "observation": "국내 중앙 연속V에 원source pens1+6가 기하상 대응한다는 기존 관찰만 보존한다.",
+      "countQuestionResolvedByThisCorrectionOnly": true,
+      "nonconsecutiveMergeAuthorized": false,
+      "sourceOrderChangeAuthorized": false,
+      "runtimeApplied": false
+    },
+    {
+      "file": "docs/hanja-source-raw-compare-u9c49-hkcs-m-whole-2026-10-25/native-whole-review.json",
+      "sha256": "8761ea510c23af3ab9e171a8b8be03cd79931f2dcbcc461f7aa323d70cd4dbbd",
+      "status": "HOLD",
+      "finding": "국내 원문은 위 오른쪽 DR 점 끝과 尚 지붕 사이에 흰 간격이 있다. 새 m 완성형은 점 끝이 지붕의 오른쪽 V 머리 봉우리와 붙는다. 임의로 원P를 분리하지 않고 보류한다.",
+      "transferredApproval": false
+    }
+  ],
+  "verification": {
+    "unrelated1149CharactersSHA256BeforeAndAfter": "b432d1caba0d367954b809f1f977ce96d52cf198b3e8023bd3cce220840742eb",
+    "otherRootMetadataSHA256BeforeAndAfter": "74f502eec0b554d51dd1293e13cb0da0aa0bd6a9b0ced1af8643d1fa92e5102a",
+    "expectedNormalizerExactTarget": true,
+    "originalCountAndRowPreserved": [
+      23,
+      2060
+    ],
+    "changedSourceCountAndRowRejected": 2,
+    "unrelatedCorrectionEntriesUnchanged": true,
+    "fishEntryAndFileUnchanged": true,
+    "buildRun": false,
+    "fullProjectTypeCheckRun": false
+  },
+  "limits": [
+    "22획 보정은 공식 구성요소 기준의 합산이다. 상담이 총22획을 직접 명시했다고 주장하지 않는다.",
+    "원XLS23획·2060행/훈음 자라[鼈] 별/특급II/식별자와 학습키를 보존한다.",
+    "과거23획 입력 기록은 당시 지문 그대로 보존한다. 기존 K 합획·순서나 HK m whole HOLD를 승인으로 바꾸지 않는다.",
+    "출처의 발행일 우선순위나 새 필순·전체 자형·진행·runtime 승인을 주장하지 않는다."
+  ]
+}
