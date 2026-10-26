@@ -1,0 +1,1175 @@
+{
+  "schema": "hanja-local-authored-component-capture/v1",
+  "date": "2026-10-27",
+  "glyph": "菰",
+  "root": "lingo-u83f0-components-v1",
+  "recipeCandidateAuthored": true,
+  "locallyAuthoredRoot": true,
+  "mixedParts": true,
+  "originalPublicRootClaim": false,
+  "originalWhole": false,
+  "authority": "Explicit locally authored mixed data experiment; not an original public GlyphWiki whole",
+  "inputs": {
+    "recipe": {
+      "path": "docs/hanja-component-recipe-u83f0-2026-10-27/recipe.json",
+      "SHA256": "9ec71fa63dc8b74d4b1e6d9ca87692b96bfafd52d399533fe48cbcb01c406c59"
+    },
+    "readinessAtRecipePreparation": {
+      "path": "docs/hanja-component-recipe-u83f0-2026-10-27/source-readiness.json",
+      "SHA256": "d8169fdd608f7e49ec69b4ea237dcd930c3a09b526af707021f58ce962ec64b6"
+    },
+    "originalParentSources": [
+      {
+        "path": "docs/hanja-source-alternative-u83f0-hkcs-2026-10-27/sources.json",
+        "SHA256": "ae88468528e2d7b95517d6ce6aa463387079e98c19a93f759ce5e6bd3616777e",
+        "root": "hkcs_m83f0",
+        "version": 2,
+        "originalRowZeroBased": 0,
+        "originalRow": "99:0:0:0:3:200:170:hkcs_m8279-p03-s04"
+      },
+      {
+        "path": "docs/hanja-source-alternative-u83f0-var-001-2026-10-27/sources.json",
+        "SHA256": "a4216b0ef0fdde77310ec839d4443299450a4e532e718d8c254e6961c8c4dc25",
+        "root": "u83f0-var-001",
+        "version": 3,
+        "originalRowZeroBased": 1,
+        "originalRow": "99:0:0:0:25:200:225:u5b64-09-var-001:0:0:0"
+      }
+    ],
+    "originalParentActualCaptures": [
+      {
+        "root": "hkcs_m83f0",
+        "metadata": {
+          "path": "docs/hanja-actual-engine-capture-u83f0-hkcs-2026-10-27/capture.json",
+          "SHA256": "2af550e59b2607e42f2d75a77873bf9aebe873175537c95fe85ffef2fa7fdc88"
+        },
+        "full5": {
+          "path": "docs/hanja-actual-engine-capture-u83f0-hkcs-2026-10-27/engine-whole-hkcs_m83f0.json",
+          "SHA256": "6ac99c69546c9bc11cacedaf81d2d7ff773c5c89656b685c861277e1f268fc8f"
+        }
+      },
+      {
+        "root": "u83f0-var-001",
+        "metadata": {
+          "path": "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/capture.json",
+          "SHA256": "548af8aadfb2717fa35ed115dc2703bb18562583ad67eadf94d15dbb1354eeed"
+        },
+        "full5": {
+          "path": "docs/hanja-actual-engine-capture-u83f0-var-001-2026-10-27/engine-whole-u83f0-var-001.json",
+          "SHA256": "1cb6611538476804f6657d3b4d9d8b8e09828cbc8a53c076324531f038474629"
+        }
+      }
+    ]
+  },
+  "helper": {
+    "path": "docs/hanja-component-capture-u83f0-2026-10-27/capture-once.mjs",
+    "SHA256": "4abecca7d862f8c7610458439476dfcaa578a6f0369e6979dca5932b74650a37"
+  },
+  "full5": {
+    "path": "docs/hanja-component-capture-u83f0-2026-10-27/engine-whole-lingo-u83f0-components-v1.json",
+    "SHA256": "3ebfc53955e9f8694b3615c14c9e1d1249b3fa1797403b1d630b2355106bf7c4",
+    "keys": [
+      "defaults",
+      "engineHashes",
+      "engineRevision",
+      "groups",
+      "trace"
+    ],
+    "raw": 14,
+    "calls": 16,
+    "polygons": 34
+  },
+  "engine": {
+    "revision": "49232bac0348fe815f4200d4116ab7917e0db47f",
+    "actualLoadedHashes": {
+      "2d.js": "dd17c52d85a6fcdf8a76e30189a24ba2f73856e0d298e80a72e0a562bcb70942",
+      "buhin.js": "6fa8e13bd964525299fa697dc40ea2c8b436d2ccb5952fe95f45d7fbf67b9456",
+      "curve.js": "77477845aff9c4d53616c91247510bd10daeb4282423bdfcde7a8bebcd21f0da",
+      "kage.js": "c36a60ff9ae7d392740d8aad62e823553dc25c991eba40482fcbc8a1a1db6d78",
+      "kagecd.js": "489fdd76e307642f6adaa99d280a41b1dda0760b4ca64b4711f0f49c08d9c860",
+      "kagedf.js": "e6d7cb5eeacda24705306302fd85a01c78f2adcdfdba43d1cac1d3616b6bf847",
+      "polygon.js": "f0afbe3b0c6f4723005ec927d2292eb991ecf5c598c16cfefb7bc55cfef75bf2",
+      "polygons.js": "111b9b0aaca536805cf92ab9d1e7be099f9e082a2169cc7c0bf49e3deee20b1a"
+    },
+    "headerFromActualLoadedCodeBytesOnly": true
+  },
+  "localSourceProvenance": {
+    "root": {
+      "name": "lingo-u83f0-components-v1",
+      "version": "local-recipe-v1",
+      "versionOrigin": "Locally authored experiment; not a public GlyphWiki revision",
+      "related": "U+83F0",
+      "data": "99:0:0:0:3:200:170:hkcs_m8279-p03-s04$99:0:0:0:25:200:225:u5b64-09-var-001:0:0:0",
+      "isPublicGlyphWikiRecord": false
+    },
+    "originalChildRecords": 5,
+    "originalChildOrigins": {
+      "hkcs_m8279-p03-s04": {
+        "path": "docs/hanja-source-alternative-u83f0-hkcs-2026-10-27/sources.json",
+        "SHA256": "ae88468528e2d7b95517d6ce6aa463387079e98c19a93f759ce5e6bd3616777e",
+        "recordKey": "hkcs_m8279-p03-s04",
+        "version": 2,
+        "versionType": "number"
+      },
+      "u5b64-09-var-001": {
+        "path": "docs/hanja-source-alternative-u83f0-var-001-2026-10-27/sources.json",
+        "SHA256": "a4216b0ef0fdde77310ec839d4443299450a4e532e718d8c254e6961c8c4dc25",
+        "recordKey": "u5b64-09-var-001",
+        "version": 1,
+        "versionType": "number"
+      },
+      "u5b50-01": {
+        "path": "docs/hanja-source-alternative-u83f0-var-001-2026-10-27/sources.json",
+        "SHA256": "a4216b0ef0fdde77310ec839d4443299450a4e532e718d8c254e6961c8c4dc25",
+        "recordKey": "u5b50-01",
+        "version": 5,
+        "versionType": "number"
+      },
+      "u74dc-ue0104": {
+        "path": "docs/hanja-source-alternative-u83f0-var-001-2026-10-27/sources.json",
+        "SHA256": "a4216b0ef0fdde77310ec839d4443299450a4e532e718d8c254e6961c8c4dc25",
+        "recordKey": "u74dc-ue0104",
+        "version": 1,
+        "versionType": "number"
+      },
+      "u74dc-t": {
+        "path": "docs/hanja-source-alternative-u83f0-var-001-2026-10-27/sources.json",
+        "SHA256": "a4216b0ef0fdde77310ec839d4443299450a4e532e718d8c254e6961c8c4dc25",
+        "recordKey": "u74dc-t",
+        "version": 3,
+        "versionType": "number"
+      }
+    },
+    "originalChildFieldsUnchanged": true,
+    "originalParentRowsUnchanged": true,
+    "originalParentWholeSourcesModified": false,
+    "originalParentCapturesModified": false,
+    "originalU3013AliasPreserved": true,
+    "additionalAliasInserted": false,
+    "newLocalRootCompositionCreated": true
+  },
+  "captureFacts": {
+    "actualVMContexts": 1,
+    "vendorEvaluations": 8,
+    "captureEvaluation": 1,
+    "makeGlyphCalls": 1,
+    "actualProviderRoot": "lingo-u83f0-components-v1",
+    "recipeCandidateAuthored": true,
+    "mixedParts": true,
+    "originalPublicRootClaim": false,
+    "originalChildDataChanged": false,
+    "localRootRowsChangedFromRecipe": false,
+    "newLocalMixedWholeCreated": true,
+    "wholePolygonsSHA256": "48df8bdca623316e623a7ea9f8c1f6c6ab080a454a0259afcda4718e58c745ff",
+    "wholeAndTracePolygonsExactlySame": true,
+    "instrumentSHA256": "9f89609712e6018c278cfa7dbe548aa278fbbc9dd1571c443886d9ee7185dc77",
+    "raw": 14,
+    "calls": 16,
+    "polygons": 34,
+    "sourceProjection": 0,
+    "partReuseApproved": false,
+    "wholeApproved": false,
+    "sourceOrderApproved": false,
+    "directionApproved": false,
+    "nativeApproval": false,
+    "runtimeApplied": false
+  },
+  "finiteEvidence": {
+    "nonfiniteGeometry": [],
+    "unusedTailKinds": {
+      "NaN": 40
+    },
+    "allActiveRawAndPCoordinatesFinite": true,
+    "unusedTailNeverCoerced": true
+  },
+  "parserEvidence": {
+    "usedReferences": [
+      "lingo-u83f0-components-v1",
+      "hkcs_m8279-p03-s04",
+      "u5b64-09-var-001",
+      "u5b50-01",
+      "u74dc-ue0104",
+      "u74dc-t"
+    ],
+    "topPartParses": [
+      {
+        "matchingOriginalKeys": [
+          "hkcs_m8279-p03-s04"
+        ],
+        "transformArgs": [
+          0,
+          3,
+          200,
+          170,
+          0,
+          0,
+          null,
+          null
+        ],
+        "rows": [
+          [
+            1,
+            0,
+            0,
+            16,
+            36.4,
+            102,
+            36.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            1,
+            0,
+            32,
+            70,
+            14.69,
+            70,
+            51.43,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            1,
+            0,
+            0,
+            108,
+            36.4,
+            184,
+            36.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            1,
+            0,
+            32,
+            128,
+            14.69,
+            128,
+            48.09,
+            null,
+            null,
+            null,
+            null
+          ]
+        ]
+      },
+      {
+        "matchingOriginalKeys": [
+          "u5b64-09-var-001"
+        ],
+        "transformArgs": [
+          0,
+          25,
+          200,
+          225,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rows": [
+          [
+            1,
+            0,
+            2,
+            15.8,
+            66.75,
+            74.2,
+            66.75,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            2,
+            22,
+            7,
+            74.2,
+            66.75,
+            64.6,
+            79.5,
+            48.6,
+            95.25,
+            null,
+            null
+          ],
+          [
+            1,
+            0,
+            4,
+            48.6,
+            92.25,
+            48.6,
+            181.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            2,
+            0,
+            7,
+            15.8,
+            130.5,
+            48.6,
+            123.75,
+            83.8,
+            113.25,
+            null,
+            null
+          ],
+          [
+            2,
+            0,
+            7,
+            159.44,
+            63.965,
+            128.96,
+            76.46000000000001,
+            92.765,
+            81.60499999999999,
+            null,
+            null
+          ],
+          [
+            7,
+            12,
+            7,
+            92.765,
+            81.60499999999999,
+            92.765,
+            133.79000000000002,
+            91.495,
+            166.13,
+            75.62,
+            185.24
+          ],
+          [
+            1,
+            0,
+            32,
+            122.61,
+            80.87,
+            122.61,
+            175.685,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            2,
+            0,
+            7,
+            120.07,
+            178.625,
+            136.57999999999998,
+            172.745,
+            148.64499999999998,
+            166.865,
+            null,
+            null
+          ],
+          [
+            2,
+            7,
+            8,
+            139.755,
+            152.16500000000002,
+            147.375,
+            163.925,
+            153.725,
+            177.89,
+            null,
+            null
+          ],
+          [
+            2,
+            7,
+            0,
+            151.185,
+            73.52000000000001,
+            157.535,
+            156.575,
+            181.66500000000005,
+            183.035,
+            null,
+            null
+          ]
+        ]
+      }
+    ],
+    "parsedRootRows": [
+      [
+        1,
+        0,
+        0,
+        16,
+        36.4,
+        102,
+        36.4,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        32,
+        70,
+        14.69,
+        70,
+        51.43,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        0,
+        108,
+        36.4,
+        184,
+        36.4,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        32,
+        128,
+        14.69,
+        128,
+        48.09,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        2,
+        15.8,
+        66.75,
+        74.2,
+        66.75,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        2,
+        22,
+        7,
+        74.2,
+        66.75,
+        64.6,
+        79.5,
+        48.6,
+        95.25,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        4,
+        48.6,
+        92.25,
+        48.6,
+        181.5,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        2,
+        0,
+        7,
+        15.8,
+        130.5,
+        48.6,
+        123.75,
+        83.8,
+        113.25,
+        null,
+        null
+      ],
+      [
+        2,
+        0,
+        7,
+        159.44,
+        63.965,
+        128.96,
+        76.46000000000001,
+        92.765,
+        81.60499999999999,
+        null,
+        null
+      ],
+      [
+        7,
+        12,
+        7,
+        92.765,
+        81.60499999999999,
+        92.765,
+        133.79000000000002,
+        91.495,
+        166.13,
+        75.62,
+        185.24
+      ],
+      [
+        1,
+        0,
+        32,
+        122.61,
+        80.87,
+        122.61,
+        175.685,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        2,
+        0,
+        7,
+        120.07,
+        178.625,
+        136.57999999999998,
+        172.745,
+        148.64499999999998,
+        166.865,
+        null,
+        null
+      ],
+      [
+        2,
+        7,
+        8,
+        139.755,
+        152.16500000000002,
+        147.375,
+        163.925,
+        153.725,
+        177.89,
+        null,
+        null
+      ],
+      [
+        2,
+        7,
+        0,
+        151.185,
+        73.52000000000001,
+        157.535,
+        156.575,
+        181.66500000000005,
+        183.035,
+        null,
+        null
+      ]
+    ],
+    "adjustmentRowIdentity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "adjustedRows": [
+      [
+        1,
+        0,
+        0,
+        16,
+        36.4,
+        102,
+        36.4,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        32,
+        70,
+        14.69,
+        70,
+        51.43,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        0,
+        108,
+        36.4,
+        184,
+        36.4,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        32,
+        128,
+        14.69,
+        128,
+        48.09,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        2,
+        15.8,
+        66.75,
+        74.2,
+        66.75,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        2,
+        22,
+        7,
+        74.2,
+        66.75,
+        64.6,
+        79.5,
+        48.6,
+        95.25,
+        null,
+        null
+      ],
+      [
+        1,
+        0,
+        304,
+        48.6,
+        92.25,
+        48.6,
+        181.5,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        2,
+        0,
+        7,
+        15.8,
+        130.5,
+        48.6,
+        123.75,
+        83.8,
+        113.25,
+        null,
+        null
+      ],
+      [
+        2,
+        0,
+        7,
+        159.44,
+        63.965,
+        128.96,
+        76.46000000000001,
+        92.765,
+        81.60499999999999,
+        null,
+        null
+      ],
+      [
+        7,
+        12,
+        7,
+        92.765,
+        81.60499999999999,
+        92.765,
+        133.79000000000002,
+        91.495,
+        166.13,
+        75.62,
+        185.24
+      ],
+      [
+        1,
+        0,
+        32,
+        122.61,
+        80.87,
+        122.61,
+        175.685,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        2,
+        0,
+        7,
+        120.07,
+        178.625,
+        136.57999999999998,
+        172.745,
+        148.64499999999998,
+        166.865,
+        null,
+        null
+      ],
+      [
+        2,
+        7,
+        8,
+        139.755,
+        152.16500000000002,
+        147.375,
+        163.925,
+        153.725,
+        177.89,
+        null,
+        null
+      ],
+      [
+        2,
+        7,
+        0,
+        151.185,
+        73.52000000000001,
+        157.535,
+        156.575,
+        181.66500000000005,
+        183.035,
+        null,
+        null
+      ]
+    ],
+    "mappingChecks": {
+      "twoActualTopParts": true,
+      "originalChildNames": true,
+      "actualPartLengths": true,
+      "actualParserConcatenation": true,
+      "adjustmentPreservesRowIdentityAndOrder": true,
+      "adjustedRowsAreDrawingRows": true,
+      "actualRows": true
+    },
+    "mappingVerified": true
+  },
+  "comparison": {
+    "mappingVerified": true,
+    "performed": true,
+    "exactJSONNumericFieldAndPointComparison": true,
+    "parts": [
+      {
+        "part": "grass",
+        "baselineRoot": "hkcs_m83f0",
+        "candidateRangeZeroBased": [
+          0,
+          3
+        ],
+        "baselineRangeZeroBased": [
+          0,
+          3
+        ],
+        "allFieldsExactlyEqual": true,
+        "differentCandidateRawZeroBased": [],
+        "rows": [
+          {
+            "candidateRawZeroBased": 0,
+            "baselineRawZeroBased": 0,
+            "sourceLeaf": {
+              "name": "hkcs_m8279-p03-s04",
+              "rowZeroBased": 0,
+              "data": "1:0:0:16:40:102:40"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 1,
+            "baselineRawZeroBased": 1,
+            "sourceLeaf": {
+              "name": "hkcs_m8279-p03-s04",
+              "rowZeroBased": 1,
+              "data": "1:0:32:70:14:70:58"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 2,
+            "baselineRawZeroBased": 2,
+            "sourceLeaf": {
+              "name": "hkcs_m8279-p03-s04",
+              "rowZeroBased": 2,
+              "data": "1:0:0:108:40:184:40"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 3,
+            "baselineRawZeroBased": 3,
+            "sourceLeaf": {
+              "name": "hkcs_m8279-p03-s04",
+              "rowZeroBased": 3,
+              "data": "1:0:32:128:14:128:54"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          }
+        ]
+      },
+      {
+        "part": "body",
+        "baselineRoot": "u83f0-var-001",
+        "candidateRangeZeroBased": [
+          4,
+          13
+        ],
+        "baselineRangeZeroBased": [
+          3,
+          12
+        ],
+        "allFieldsExactlyEqual": true,
+        "differentCandidateRawZeroBased": [],
+        "rows": [
+          {
+            "candidateRawZeroBased": 4,
+            "baselineRawZeroBased": 3,
+            "sourceLeaf": {
+              "name": "u5b50-01",
+              "rowZeroBased": 0,
+              "data": "1:0:2:16:29:89:29"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 5,
+            "baselineRawZeroBased": 4,
+            "sourceLeaf": {
+              "name": "u5b50-01",
+              "rowZeroBased": 1,
+              "data": "2:22:7:89:29:77:46:57:67"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 6,
+            "baselineRawZeroBased": 5,
+            "sourceLeaf": {
+              "name": "u5b50-01",
+              "rowZeroBased": 2,
+              "data": "1:0:4:57:63:57:182"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 7,
+            "baselineRawZeroBased": 6,
+            "sourceLeaf": {
+              "name": "u5b50-01",
+              "rowZeroBased": 3,
+              "data": "2:0:7:16:114:57:105:101:91"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 8,
+            "baselineRawZeroBased": 7,
+            "sourceLeaf": {
+              "name": "u74dc-t",
+              "rowZeroBased": 0,
+              "data": "2:0:7:144:19:96:36:39:43"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 9,
+            "baselineRawZeroBased": 8,
+            "sourceLeaf": {
+              "name": "u74dc-t",
+              "rowZeroBased": 1,
+              "data": "7:12:7:39:43:39:114:37:158:12:184"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 10,
+            "baselineRawZeroBased": 9,
+            "sourceLeaf": {
+              "name": "u74dc-t",
+              "rowZeroBased": 2,
+              "data": "1:0:32:86:42:86:171"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 11,
+            "baselineRawZeroBased": 10,
+            "sourceLeaf": {
+              "name": "u74dc-t",
+              "rowZeroBased": 3,
+              "data": "2:0:7:82:175:108:167:127:159"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 12,
+            "baselineRawZeroBased": 11,
+            "sourceLeaf": {
+              "name": "u74dc-t",
+              "rowZeroBased": 4,
+              "data": "2:7:8:113:139:125:155:135:174"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          },
+          {
+            "candidateRawZeroBased": 13,
+            "baselineRawZeroBased": 12,
+            "sourceLeaf": {
+              "name": "u74dc-t",
+              "rowZeroBased": 5,
+              "data": "2:7:0:131:32:141:145:179:181"
+            },
+            "checks": {
+              "transformedRawExactlyEqual": true,
+              "callNamesAndArgsExactlyEqual": true,
+              "originalPPointsExactlyEqual": true,
+              "perCallPPointsExactlyEqual": true
+            },
+            "firstDifferences": {
+              "transformedRaw": null,
+              "callNamesAndArgs": null,
+              "originalPPoints": null,
+              "perCallPPoints": null
+            }
+          }
+        ]
+      }
+    ],
+    "anyPartDifferent": false,
+    "allPartsExactlyEqual": true,
+    "oldPOverwritten": false,
+    "reuseApproved": false,
+    "protocol": "Exact deep comparison of actual capture JSON numeric fields and ordered arrays. No tolerance, rounding, smoothing or polygon substitution is applied; ordinary unused NaN tail slots serialize to null and are counted separately.",
+    "comparisonScope": "Only these exact source recipes, pinned engine and actual parent captures; not an assertion for other compositions or engine revisions."
+  },
+  "metadataRows": [],
+  "originalParentsReexecuted": 0,
+  "parentPolygonsGivenToCandidateVM": false,
+  "parentPolygonsOverwritten": false,
+  "compiledRevealPathsOrClocksDerived": false,
+  "privateMediaInputs": false,
+  "privateMediaFilesWritten": 0,
+  "HTTPRequests": 0,
+  "newServer": 0,
+  "newBrowser": 0,
+  "approval": {
+    "partReuse": false,
+    "wholeShape": false,
+    "membership": false,
+    "sourceOrder": false,
+    "direction": false,
+    "sourceClock": false,
+    "nativeAnimation": false,
+    "runtime": false
+  },
+  "nativeApproval": false,
+  "runtimeApplied": false,
+  "limits": [
+    "The candidate is explicitly local and mixed. Exact source provenance or exact per-part P/Q equality does not turn it into a public original whole or an official derived stroke source.",
+    "Kage global adjustment was allowed to run normally. Differences would remain recorded with row IDs rather than being overwritten with old parent P.",
+    "Actual top-level parser output, flattening and adjustment row identity verify the grass/body index mapping; the comparison is not based on row-count assumption alone.",
+    "Even if all per-part fields match, a new whole still requires native shape, membership, source order/direction, clock and animation review before any reuse or registration approval.",
+    "No app pipeline, source family, renderer, shared comparator or registration implementation is created or changed by this capture."
+  ]
+}
